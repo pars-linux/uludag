@@ -15,11 +15,14 @@
 #include <arpa/inet.h>
 #include <net/if.h>
 
+#include <qfile.h>
 #include <qpushbutton.h>
 #include <qradiobutton.h>
 #include <kcombobox.h>
 #include <qlineedit.h>
+#include <qtimer.h>
 
+#include <kprocess.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 
@@ -48,19 +51,54 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
 
 void DeviceSettings::slotApply()
 {
-    int ret = set_iface( _dev.ascii(),
-                         ipaddr->text().ascii(),
-                         // we can ommit broadcast and netmask.
-                         broadcast->text().length() ? broadcast->text().ascii() : 0,
-                         netmask->text().length() ? netmask->text().ascii() : 0
-        );
+    /* Manual Settings */
+    if ( manualButton->isChecked() ) {
+        int ret = set_iface( _dev.ascii(),
+                             ipaddr->text().ascii(),
+                             // we can ommit broadcast and netmask.
+                             broadcast->text().length() ? broadcast->text().ascii() : 0,
+                             netmask->text().length() ? netmask->text().ascii() : 0
+            );
 
-    if ( ret < 0 ) {
-        QString err = i18n( "Failed to configure device: " ) + _dev;
-        KMessageBox::error( this, err, i18n( "Error!" ) );
+        if ( ret < 0 ) {
+            QString err = i18n( "Failed to configure device: " ) + _dev;
+            KMessageBox::error( this, err, i18n( "Error!" ) );
+        }
+    }
+    /* Automatic (DHCP) */
+    else if ( automaticButton->isChecked() ) {
+        // I don't like to invoke programs directly
+        // but we have no chance for now,
+        // this is clearly a bad hack :(.
+
+        QFile pidfile( "/var/run/dhcpcd-" + _dev + ".pid" );
+        if ( pidfile.exists() ) {
+            KProcess killdhcpcd;
+            killdhcpcd << "/sbin/dhcpcd" << "-k" << _dev;
+            killdhcpcd.start();
+            killdhcpcd.wait();
+
+            // how ugly... wait 2 seconds to dhcpcd to finish its work...
+            if ( killdhcpcd.normalExit() )
+                QTimer::singleShot( 2000, this, SLOT( startDhcpcd() ) );
+            else
+                printf( "failed (kill)\n" );
+        }
+        else
+            startDhcpcd();
     }
 
     done( 0 );
+}
+
+void DeviceSettings::startDhcpcd() {
+    KProcess startdhcpcd;
+    startdhcpcd << "/sbin/dhcpcd" << _dev;
+    startdhcpcd.start();
+    startdhcpcd.wait();
+
+    if ( !startdhcpcd.normalExit() )
+        printf( "failed (start)\n" );
 }
 
 void DeviceSettings::slotCancel()
