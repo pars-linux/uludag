@@ -14,6 +14,6 @@ MO dosyasını güncellemek gerektiğinde:
   ./getpo
   ./mergepo tr_TR.utf-8
   cd ../locale/tr_TR.utf-8/LC_MESSAGES
-# (po dosyasının çevirisini tamamlayın)
+# (po dosyası açın ve çevirisini tamamlayın)
   compilepo tr_TR.utf-8
   

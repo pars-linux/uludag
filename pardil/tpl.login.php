@@ -59,9 +59,9 @@
                   <td>
                     <b>&raquo;</b> <a href="#"><?php echo _('Forgot your password?'); ?></a>
                     <br/>
-                    <b>&raquo;</b> <a href="#"><?php echo _('Request activation code'); ?></a>
+                    <b>&raquo;</b> <a href="#"><?php echo _('Need activation?'); ?></a>
                     <br/>
-                    <b>&raquo;</b> <a href="register.php"><?php echo _('Not registered?'); ?></a>
+                    <b>&raquo;</b> <a href="register.php"><?php echo _('Not a registered user?'); ?></a>
                   </td>
                 </tr>
               </table>
