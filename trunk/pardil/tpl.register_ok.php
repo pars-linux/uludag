@@ -17,6 +17,9 @@
             <?php echo _('You need to activate your account by clicking (or visiting) the URL sent to your e-mail address.'); ?>
           </p>
           <?php } ?>
+          <p>
+            <b>&raquo;</b> <a href="login.php"><?php echo _('Go to login page'); ?></a>
+          </p>
         </div>
       </div>
 <?php

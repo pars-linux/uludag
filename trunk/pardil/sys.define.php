@@ -8,7 +8,7 @@
   define('MSG_DATABASE_SELECT_ERROR', '<b>Ölümcül Hata:</b> Veritabanı seçimi yapılamadı.');
 
   define('CONF_DOMAIN', 'pardil');
-  define('CONF_LOCALE', 'tr_TR.utf-8');
+  define('CONF_LOCALE', 'tr_TR.utf8');
 
   define('CONF_NAME', 'Pardil');
   define('CONF_TITLE', 'Pardus İyileştirme Listesi');
