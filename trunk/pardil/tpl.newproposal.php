@@ -40,6 +40,16 @@
           document.getElementById('new_content_title').value = '';
         }
       }
+      function delete_section(id, msg) {
+        if (confirm(msg)) {
+          var el = document.getElementById(id);
+          el.name = '';
+          el.value = '';
+          document.getElementById('new_content_title_add').value = '';
+          document.getElementById('new_content_title').value = '';
+          document.getElementById('new_content_title_add').click();
+        }
+      }
     </script>
   </head>
   <body>
@@ -112,13 +122,14 @@
                 <tr>
                   <td class="label">
                     <?php
+                      $str_title1 = substr($str_title, 0, strpos($str_title, '_'));
                       $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') - 1);
                       printf(_('Section: %s'), urldecode($str_title2));
                     ?>
-                    <a href="javascript:if (confirm('<?php printf(_('Section \\\'%s\\\' will be removed.\\nAre you sure?'), $str_title2); ?>')) { var el = document.getElementById('new_content[<?php printf('%s', addslashes($str_title)); ?>]'); el.name = ''; el.value = ''; document.getElementById('new_content_title_add').value = ''; document.getElementById('new_content_title').value = ''; document.getElementById('new_content_title_add').click(); }" title="<?php echo _('Remove Section'); ?>">[x]</a>
+                    <a href="javascript:delete_section('new_content_<?php echo $str_title1; ?>', '<?php printf(_('Section \\\'%s\\\' will be removed.\\nAre you sure?'), $str_title2); ?>');" title="<?php echo _('Remove Section'); ?>">[x]</a>
                   </td>
                   <td>
-                    <textarea id="new_content[<?php echo $str_title; ?>]" name="new_content[<?php echo $str_title; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php printf('%s', htmlspecialchars($str_body)); ?></textarea>
+                    <textarea id="new_content_<?php echo $str_title1; ?>" name="new_content[<?php echo $str_title; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php printf('%s', htmlspecialchars($str_body)); ?></textarea>
                   </td>
                 </tr>
               <?php      
