@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -50,11 +51,11 @@
 [% IF operations.size > 0 %]
   <table border cellpadding="4">
     <tr>
-      <th>Who</th>
-      <th>When</th>
-      <th>What</th>
-      <th>Removed</th>
-      <th>Added</th>
+      <th>Kim</th>
+      <th>Ne Zaman</th>
+      <th>Neyi</th>
+      <th>Çıkarmış</th>
+      <th>Eklemiş</th>
     </tr>
 
     [% FOREACH operation = operations %]
@@ -70,7 +71,7 @@
             <td>
               [% IF change.attachid %]
                 <a href="attachment.cgi?id=[% change.attachid %]&amp;action=view">
-                Attachment #[% change.attachid %]</a>
+                Eklenti numarası [% change.attachid %]</a>
               [% END %]
               [% change.field %]
             </td>
