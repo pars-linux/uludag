@@ -17,12 +17,12 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
-  #                 Ville Skytt� <ville.skytta@iki.fi>
+  #                 Ville Skyttä <ville.skytta@iki.fi>
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Enter Bug"
-  h2 = "This page lets you enter a new bug into Bugzilla."
+  title = "Hata Raporu Girişi"
+  h2 = "Bugzilla' ya yeni hata raporlarını bu sayfadan girebilirsiniz."
 %]
 
 <form method="post" action="post_bug.cgi">
@@ -49,17 +49,17 @@
   </tr>
 
   <tr>
-    <td align="right" valign="top"><strong>Reporter:</strong></td>
+    <td align="right" valign="top"><strong>Raporlayan:</strong></td>
     <td valign="top">[% reporter FILTER html %]</td>
     
-    <td align="right" valign="top"><strong>Product:</strong></td>
+    <td align="right" valign="top"><strong>Ürün:</strong></td>
     <td valign="top">[% product FILTER html %]</td>
   </tr>
   
   [%# We can't use the select block in these two cases for various reasons. %]
   <tr>
     <td align="right" valign="top">
-      <strong>Version:</strong>
+      <strong>Sürüm:</strong>
     </td>
     <td>
       <select name="version" size="5">
@@ -74,7 +74,7 @@
     <td align="right" valign="top">
       <strong>
         <a href="describecomponents.cgi?product=[% product FILTER url_quote %]">
-          Component</a>:
+          Bileşen</a>:
       </strong>
     </td>
     <td>
@@ -95,23 +95,23 @@
   </tr>
   
   <tr>
-    [% sel = { description => 'Platform', name => 'rep_platform' } %]
+    [% sel = { description => 'Donanım', name => 'rep_platform' } %]
     [% INCLUDE select %]
     
-    [% sel = { description => 'OS', name => 'op_sys' } %]
+    [% sel = { description => 'İşletim Sistemi', name => 'op_sys' } %]
     [% INCLUDE select %]
   </tr>
   
   <tr>  
   [% IF Param('letsubmitterchoosepriority') %]
-    [% sel = { description => 'Priority', name => 'priority' } %]
+    [% sel = { description => 'Öncelik', name => 'priority' } %]
     [% INCLUDE select %]
   [% ELSE %]
     <input type="hidden" name="priority" 
            value="[% default.priority FILTER html %]">
   [% END %]
 
-  [% sel = { description => 'Severity', name => 'bug_severity' } %]
+  [% sel = { description => 'Önem', name => 'bug_severity' } %]
   [% INCLUDE select %]    
   </tr>
   
@@ -134,13 +134,13 @@
   <tr>
     <td align="right">
       <strong>
-        <a href="/bugzilla/bug_status.html#assigned_to">Assigned To</a>:
+        <a href="/bugzilla/bug_status.html#assigned_to">Atanan Kişi</a>:
       </strong>
     </td>
     <td colspan="3">
       <input name="assigned_to" size="32" 
              value="[% assigned_to FILTER html %]">
-      (Leave blank to assign to default component owner)
+      (Varsayılan bileşen sahibine atamak için boş bırakın)
     </td>
   </tr>
   
@@ -157,7 +157,7 @@
   </tr>
 
   <tr>
-    <td align="right"><strong>URL:</strong></td>
+    <td align="right"><strong>Web Adresi:</strong></td>
     <td colspan="3">
       <input name="bug_file_loc" size="60" 
              value="[% bug_file_loc FILTER html %]">
@@ -165,13 +165,13 @@
   </tr>
   
   <tr>
-    <td align="right"><strong>Summary:</strong></td>
+    <td align="right"><strong>Özet:</strong></td>
     <td colspan="3">
       <input name="short_desc" size="60" value="[% short_desc FILTER html %]">
     </td>
   </tr>
   
-  <tr><td align="right" valign="top"><strong>Description:</strong></td>
+  <tr><td align="right" valign="top"><strong>Açıklama:</strong></td>
     <td colspan="3">
       <textarea wrap="hard" name="comment" rows="10" cols="80">
         [% comment FILTER html %]</textarea>
@@ -208,13 +208,13 @@
   <tr>
     <td></td>
     <td colspan="3">
-      <input type="submit" value="    Commit    " 
+      <input type="submit" value="    Onayla        " 
              onclick="if (this.form.short_desc.value == '') 
-             { alert('Please enter a summary sentence for this bug.'); 
+             { alert('Lütfen bu hata raporu için bir özet giriniz.'); 
                return false; } return true;">
       &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="submit" name="maketemplate" 
-             value="Remember values as bookmarkable template">
+             value="Bu değerleri işaretlenebilir şablon olarak hatırla">
     </td>
   </tr>
 
@@ -223,9 +223,9 @@
     <td></td>
     <td colspan="3">
       <br>
-      We've made a guess at your operating system and platform. 
-      Please check them and, if we got it wrong, email 
-      [% Param('maintainer') %].
+      Kulandığınız işletim sistemi ve donanımla ilgili bir tahminde bulunarak ilgili alanları otomatik işaretledik. 
+      Lütfen bunların doğrukuğunu kontrol edin ve eğer hatalı ise  
+      [% Param('maintainer') %] adresine bir e-posta atarak bildirin.
     </td>
   </tr>
 [% END %]

@@ -35,7 +35,7 @@
     'dupe' => "Duplicate notation added to bug $id" , 
     'dep' => "Checking for dependency changes on bug $id" , 
     'votes' => "Bug $id confirmed by number of votes" , 
-    'created' => "Bug $id has been added to the database" , 
+    'created' => "$id numaralı hara taporu veritabanına kaydedildi." , 
   } 
 %]
 
@@ -46,7 +46,7 @@
       [% mail %]
     </td>
     <td>
-      <a href="show_bug.cgi?id=[% id %]">Back To BUG# [% id %]</a>
+      <a href="show_bug.cgi?id=[% id %]">[% id %] Numaralı Hataya Dönüş</a>
     </td>
   </tr>
 </table>
