@@ -450,7 +450,10 @@ def yap(template):
 	try:
 		for t in dosyalar:
 			ensure_path(t)
-			svn_fetch(depo,t)
+			try:
+				svn_fetch(depo,t)
+			except:
+				print "'%s' getirilemedi!" % (t)
 	except:
 		pass
 	# create documents
