@@ -36,7 +36,7 @@ public:
 
 private:
     int _conn;
-    char* sendString( const string& str ) const;
+    char* recvResult() const;
 };
 
 #endif
