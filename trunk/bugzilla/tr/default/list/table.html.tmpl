@@ -33,9 +33,9 @@
   #%]
 [% abbrev = 
   {
-    "severity"          => { maxlength => 3 , title => "Sev" } , 
-    "priority"          => { maxlength => 3 , title => "Pri" } , 
-    "platform"          => { maxlength => 3 , title => "Plt" } , 
+    "severity"          => { maxlength => 3 , title => "Önem" } , 
+    "priority"          => { maxlength => 3 , title => "Öncelik" } , 
+    "platform"          => { maxlength => 3 , title => "Donanım" } , 
     "status"            => { maxlength => 4 } , 
     "reporter"          => { maxlength => 30 , ellipsis => "..." } , 
     "owner"             => { maxlength => 30 , ellipsis => "..." } , 
@@ -46,9 +46,9 @@
     "status_whiteboard" => { title => "StatusSummary" , wrap => 1 } , 
     "component"         => { maxlength => 8 , title => "Comp" } , 
     "product"           => { maxlength => 8 } , 
-    "version"           => { maxlength => 5 , title => "Vers" } , 
+    "version"           => { maxlength => 5 , title => "Sürüm" } , 
     "os"                => { maxlength => 4 } , 
-    "target_milestone"  => { title => "TargetM" } , 
+    "target_milestone"  => { title => "Hedef" } , 
   }
 %]
 
@@ -69,7 +69,7 @@
 
     <tr align="left">
       <th colspan="[% splitheader ? 2 : 1 %]">
-        <a href="buglist.cgi?[% urlquerypart FILTER html %]&amp;order=bugs.bug_id">ID</a>
+        <a href="buglist.cgi?[% urlquerypart FILTER html %]&amp;order=bugs.bug_id">Numara</a>
       </th>
 
       [% IF splitheader %]

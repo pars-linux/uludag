@@ -21,7 +21,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Full Text Bug Listing"
+  title = "Detaylı Hata Raporu Listeleme"
 %]
 
 [% IF bugs.first %]
@@ -30,7 +30,7 @@
   [% END %]
 [% ELSE %]
   <p>
-    You'd have more luck if you gave me some bug numbers.
+    Birkaç hata raporu numarası verebilseydiniz biraz daha şansınız olabilirdi.
   </p>
 [% END %]
 
@@ -52,34 +52,34 @@
   <table width="100%">
     <tr>
       <td>
-        <b>Bug#:</b>
+        <b>Hata Kayıt Numarası:</b>
         <a href="show_bug.cgi?id=[% bug.bug_id %]">[% bug.bug_id %]</a>
       </td>
-      [% PROCESS cell attr = { description => "Product", 
+      [% PROCESS cell attr = { description => "Ürün", 
                                name => "product" } %]
-      [% PROCESS cell attr = { description => "Version", 
+      [% PROCESS cell attr = { description => "Sürüm", 
                                name => "version" } %]
-      [% PROCESS cell attr = { description => "Platform", 
+      [% PROCESS cell attr = { description => "Donanım", 
                                name => "rep_platform" } %]
     </tr>
     
     <tr>
-      [% PROCESS cell attr = { description => "OS/Version", 
+      [% PROCESS cell attr = { description => "İşletim sistemi/Sürümü", 
                                name => "op_sys" } %]
-      [% PROCESS cell attr = { description => "Status", 
+      [% PROCESS cell attr = { description => "Durum", 
                                name => "bug_status" } %]
-      [% PROCESS cell attr = { description => "Severity", 
+      [% PROCESS cell attr = { description => "Önem", 
                                name => "bug_severity" } %]
-      [% PROCESS cell attr = { description => "Priority", 
+      [% PROCESS cell attr = { description => "Öncelik", 
                                name => "priority" } %]
     </tr>
     
     <tr>
-      [% PROCESS cell attr = { description => "Resolution", 
+      [% PROCESS cell attr = { description => "Çözüm", 
                                name => "resolution" } %]
-      [% PROCESS cell attr = { description => "Assigned To", 
+      [% PROCESS cell attr = { description => "Atanan Kişi", 
                                name => "assigned_to" } %]
-      [% PROCESS cell attr = { description => "Reported By", 
+      [% PROCESS cell attr = { description => "Raporlayan", 
                                name => "reporter" } %]
       [% IF Param('useqacontact') %]
         [% PROCESS cell attr = { description => "QA Contact", 
@@ -89,13 +89,13 @@
     
     <tr>
       <td colspan="2">
-        <b>Component:</b>&nbsp;
+        <b>Bileşen:</b>&nbsp;
         [% bug.component %]
       </td>
     
       <td colspan="2">
       [% IF Param('usetargetmilestone') %]
-          <b>Target Milestone:</b>&nbsp;
+          <b>Hedef Mihenk Taşı:</b>&nbsp;
           [% bug.target_milestone FILTER html %]
       [% END %]
       </td>
@@ -110,14 +110,14 @@
     
     <tr>
       <td colspan="4">
-        <b>Summary:</b>&nbsp;[% bug.short_desc FILTER html %]
+        <b>Özet:</b>&nbsp;[% bug.short_desc FILTER html %]
       </td>
     </tr>
      
     [% IF use_keywords %]
       <tr>
         <td colspan="4">
-          <b>Keywords: </b>&nbsp;[% bug.keywords FILTER html %]
+          <b>Anahtar Kelimeler: </b>&nbsp;[% bug.keywords FILTER html %]
         </td>
       </tr>
     [% END %]
@@ -125,7 +125,7 @@
     [% IF Param("usestatuswhiteboard") %]
       <tr>
         <td colspan="4">
-          <b>Status Whiteboard:</b>&nbsp;
+          <b>Durum Tahtası:</b>&nbsp;
           [% bug.status_whiteboard FILTER html %]
         </td>
       </tr>
@@ -133,7 +133,7 @@
 
     <tr>
       <td colspan="4">
-        <b>Description:</b>
+        <b>Açıklama:</b>
       </td>
     </tr>
   </table>
