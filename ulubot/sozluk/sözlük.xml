@@ -3,7 +3,7 @@
 <copyright>http://www.uludag.org.tr</copyright>
 
 <term>
-<s>Picture element</s>
+<s>Picture element</s><s>pel</s>
 <t>Görüntü öğesi</t>
 </term>
 <term>
@@ -4684,10 +4684,6 @@
 <t>Önsöz</t>
 </term>
 <term>
-<s>Post Meridiem</s>
-<t>Öğleden Sonra</t><t>ÖS</t>
-</term>
-<term>
 <s>Polynomial</s>
 <t>Çokterimli</t>
 </term>
@@ -5914,7 +5910,7 @@
 <t>Noktasal Kestirim</t>
 </term>
 <term>
-<s>PM</s>
+<s>PM</s><s>Post Meridiem</s>
 <t>Öğleden Sonra</t><t>ÖS</t>
 </term>
 <term>
@@ -6108,11 +6104,11 @@
 </term>
 <term>
 <s>peer</s>
-<t>uç</t>
+<t>uç</t><t>eş</t>
 </term>
 <term>
 <s>peer-to-peer</s>
-<t>uçtan-uca</t>
+<t>uçtan-uca</t><t>eşler arası</t>
 </term>
 <term>
 <s>main</s>
@@ -7023,21 +7019,6 @@
 <s>original</s>
 <t>özgün</t>
 </term>
-	
-	
- (v)	
- (n)	
-	
- 	
-	
-	
-	
-	
-	
-outline	
-outline (font)	dış çizgi
-	
-
 <term>
 <s>orphan control</s>
 <t>yalnız ilk satır</t>
@@ -7205,7 +7186,8 @@ outline (font)	dış çizgi
 <term>
 <s>page</s>
 <t>sayfa</t>
-</term>                                                                                                                                               <term>
+</term>
+<term>
 <s>page break</s>
 <t>sayfa sonu</t>
 </term>
@@ -7373,5 +7355,132 @@ outline (font)	dış çizgi
 <s>pause</s>
 <t>duraklamak</t>
 </term>
-
+<term>
+<s>peak</s>
+<t>doruk</t>
+</term>
+<term>
+<s>pending</s>
+<t>beklemede</t>
+</term>
+<term>
+<s>penetration</s>
+<t>yaygınlık</t>
+</term>
+<term>
+<s>percent</s>
+<t>yüzde</t>
+</term>
+<term>
+<s>perforated</s>
+<t>delikli</t>
+</term>
+<term>
+<s>perform</s>
+<t>gerçekleştirmek</t>
+</term>
+<term>
+<s>performance</s>
+<t>başarım</t>
+</term>
+<term>
+<s>period</s>
+<t>dönem</t>
+</term>
+<term>
+<s>peripheral</s>
+<t>çevresel</t><t>çevre</t>
+</term>
+<term>
+<s>peripheral bus</s>
+<t>çevre veriyolu</t>
+</term>
+<term>
+<s>peripheral control unit</s>
+<t>çevre denetim birimi</t>
+</term>
+<term>
+<s>peripheral equipment</s>
+<t>çevre donatımı</t>
+</term>
+<term>
+<s>peripheral interface</s>
+<t>çevre donatımı arayüzü</t>
+</term>
+<term>
+<s>peripheral processor</s>
+<t>çevre işlemcisi</t>
+</term>
+<term>
+<s>parmanent</s>
+<t>kalıcı</t>
+</term>
+<term>
+<s>permanent connection</s>
+<t>kalıcı bağlantı</t>
+</term>
+<term>
+<s>permanent error</s>
+<t>kalıcı hata</t>
+</term>
+<term>
+<s>permanent file</s>
+<t>sabit kütük</t>
+</term>
+<term>
+<s>permanent magnet</s>
+<t>doğal mıknatıs</t>
+</term>
+<term>
+<s>permit</s>
+<t>izin</t>
+</term>
+<term>
+<s>personal computer</s><s>PC</s>
+<t>kişisel bilgisayar</t>
+</term>
+<term>
+<s>phase</s>
+<t>evre</t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
 </ud_sözlük>

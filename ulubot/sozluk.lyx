@@ -194,12 +194,38 @@ Kayýtlý sözlükleri ve sözcük sayýlarýný görmek için
 Çevrimdýþý Kullaným
 \layout Standard
 
-Sözlük istemcisi uygulamasý ve sözlüðün veritabaný dosyalarý subversion
- deposudan indirilebilir olacak.
- Ýstemci ile saðlanan sözlük arayüzünden sorgulama yapýlabilecek.
+Sözlük istemcisi uygulamasý 
+\begin_inset Quotes eld
+\end_inset 
+
+gözlük
+\begin_inset Quotes erd
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+http://svn.uludag.org.tr/uludag/trunk/gozluk/
+\end_inset 
+
+ (henüz geliþtirilme aþamasýnda) ve sözlüðün veritabaný dosyalarý
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+http://svn.uludag.org.tr/uludag/trunk/ulubot/sozluk/
+\end_inset 
+
+ subversion deposudan indirilebilir.
+ Ýstemci uygulamasý tamamlandýðýnda, saðlanan sözlük arayüzünden sorgulama
+ yapýlabilecek.
  Ekleme, çýkarma, düzeltme gibi deðiþiklikler yetkisi olan kiþiler tarafýndan
- istemci ile yapýlacak ve bu deðiþiklikler kiþinin kendi subversion deposundaki
- dosyalara yansýyacak.
+ yapýlacak ve bu deðiþiklikler kiþinin kendi subversion deposundaki dosyalara
+ yansýyacak.
  Ana depoya gönderme yetkisi olan kiþi deðiþiklikleri onayladýðýnda, depoyu
  kullanan herkese gönderilecek bir mail ile güncellemeler bildirilecek.
 \layout Subsection
