@@ -1,0 +1,205 @@
+# Turkish translations for PACKAGE package
+# PACKAGE paketi için Türkçe çeviriler.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#  <bahadir@sinus.homelinux.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-04-02 01:16+0300\n"
+"PO-Revision-Date: 2005-04-02 01:12+0300\n"
+"Last-Translator:  <bahadir@sinus.homelinux.org>\n"
+"Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+msgid "test"
+msgstr ""
+
+msgid "Username should be written."
+msgstr ""
+
+msgid "Password should be written."
+msgstr ""
+
+msgid "Wrong username or password."
+msgstr ""
+
+msgid "User account is not activated."
+msgstr ""
+
+msgid "User Login"
+msgstr ""
+
+msgid "Title should be written."
+msgstr ""
+
+msgid "Abstract should be written."
+msgstr ""
+
+#, php-format
+msgid "Section \"%s\" should be written. If you don't want it, remove it."
+msgstr ""
+
+msgid "At least one section should be created."
+msgstr ""
+
+msgid "Release info should be written."
+msgstr ""
+
+msgid "New Proposal"
+msgstr ""
+
+msgid "Registration Complete"
+msgstr ""
+
+msgid "Real name should be written."
+msgstr ""
+
+msgid "Username is in use."
+msgstr ""
+
+msgid "Password should be written twice."
+msgstr ""
+
+msgid "Passwords should be same."
+msgstr ""
+
+msgid "E-mail address should be written."
+msgstr ""
+
+msgid "E-mail address should be valid."
+msgstr ""
+
+msgid "User Registration"
+msgstr ""
+
+msgid "You are not allowed to perform this operation."
+msgstr ""
+
+msgid "Session Information:"
+msgstr ""
+
+msgid "Username:"
+msgstr ""
+
+msgid "Password:"
+msgstr ""
+
+msgid "Login &raquo;"
+msgstr ""
+
+msgid "Forgot your password?"
+msgstr ""
+
+msgid "Request activation code"
+msgstr ""
+
+msgid "Not registered?"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "Abstract:"
+msgstr ""
+
+msgid "New Section:"
+msgstr ""
+
+msgid "Add &raquo;"
+msgstr ""
+
+msgid ""
+"Proposal should be written in sections.<br/>Write section title and then "
+"push \"Add &raquo;\" button."
+msgstr ""
+
+#, php-format
+msgid "Section: %s"
+msgstr ""
+
+#, php-format
+msgid "Section \\'%s\\' will be removed.\\nAre you sure?"
+msgstr ""
+
+msgid "Remove Section"
+msgstr ""
+
+msgid "Notes:"
+msgstr ""
+
+msgid "Release Info:"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Reset Form"
+msgstr ""
+
+msgid "Submit &raquo;"
+msgstr ""
+
+msgid "Abstract"
+msgstr ""
+
+msgid "Identity"
+msgstr ""
+
+msgid "Status:"
+msgstr ""
+
+msgid "Id:"
+msgstr ""
+
+msgid "Version:"
+msgstr ""
+
+msgid "Last Update:"
+msgstr ""
+
+msgid "Releated Proposals:"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Maintainers"
+msgstr ""
+
+msgid "Contents"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Revision History"
+msgstr ""
+
+msgid "You've successfully registered."
+msgstr ""
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your e-mail address."
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "E-Mail Address:"
+msgstr ""
+
+msgid "Password (again):"
+msgstr ""
+
+msgid "Register &raquo;"
+msgstr ""
