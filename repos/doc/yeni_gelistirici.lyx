@@ -1,9 +1,13 @@
 #LyX 1.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 221
 \textclass article
+\begin_preamble
+\tolerance 10000
+\usepackage{hyperref}
+\end_preamble
 \language turkish
 \inputencoding auto
-\fontscheme default
+\fontscheme pslatex
 \graphics default
 \paperfontsize default
 \spacing single 
@@ -24,7 +28,7 @@
 \papersides 1
 \paperpagestyle default
 
-\layout Author
+\layout Title
 
 Yeni Geliþtirici Kýlavuzu
 \layout Author
@@ -33,7 +37,7 @@ Barýþ Metin <baris@uludag.org.tr>, A.
  Murat Eren <meren@uludag.org.tr>
 \layout Abstract
 
-Bu belge yeni bir geliþtircnin Uludað projesi geliþtirme sürecine dahil
+Bu belge yeni bir geliþtiricinin Uludað projesi geliþtirme sürecine dahil
  olmak için bilmesi ve yapmasý gerekenleri tarif etmektedir.
 \layout Abstract
 \pagebreak_top \pagebreak_bottom 
@@ -207,7 +211,7 @@ Nasýl yapýlýr
 
  belgeleri hazýrlayabilirsiniz.
  Web sayfalarýmýzýn güncellenmesinde bize yardýmcý olabilirsiniz ya da web
- sayfalarýmýzýn Ýngilizce, Almanca, Ispanyolca gidi yabancý dillerdeki çeviriler
+ sayfalarýmýzýn Ýngilizce, Almanca, Ýspanyolca gidi yabancý dillerdeki çeviriler
 inin güncel olmasýný saðlayabilirsiniz.
 \layout Subsubsection
 
