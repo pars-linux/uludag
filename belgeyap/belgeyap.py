@@ -323,6 +323,12 @@ def ensure_dir(dname):
 		os.mkdir(dname, 0755)
 	os.chdir(dname)
 
+def remove_file(name):
+	try:
+		os.unlink(name)
+	except:
+		pass
+
 def svn_fetch(repo,fname):
 	print "'%s' getiriliyor..." % (repo + fname)
 	# init
@@ -435,8 +441,8 @@ def yap(template):
 	# tek ve cok sayfaliya ayir
 	c.cut(dizin + ".html")
 	# gereksiz dosyaları temizle
-	os.unlink(dizin + ".haux")
-	os.unlink(dizin + ".htoc")
+	remove_file(dizin + ".haux")
+	remove_file(dizin + ".htoc")
 	os.unlink(belge)
 	basename = belge
 	if basename[-4:] == ".lyx":
