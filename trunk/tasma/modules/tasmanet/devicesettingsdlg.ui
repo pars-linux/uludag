@@ -239,23 +239,6 @@
                                         <property name="name">
                                             <cstring>unnamed</cstring>
                                         </property>
-                                        <spacer>
-                                            <property name="name">
-                                                <cstring>spacer13</cstring>
-                                            </property>
-                                            <property name="orientation">
-                                                <enum>Horizontal</enum>
-                                            </property>
-                                            <property name="sizeType">
-                                                <enum>Expanding</enum>
-                                            </property>
-                                            <property name="sizeHint">
-                                                <size>
-                                                    <width>85</width>
-                                                    <height>16</height>
-                                                </size>
-                                            </property>
-                                        </spacer>
                                         <widget class="QLayoutWidget">
                                             <property name="name">
                                                 <cstring>layout18</cstring>
