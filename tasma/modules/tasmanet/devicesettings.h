@@ -28,6 +28,8 @@ protected slots:
     void automaticToggled( bool on );
     void manualToggled( bool on );
 
+    void startDhcpcd();
+
 private:
     QString _dev;
     bool _wifi;
