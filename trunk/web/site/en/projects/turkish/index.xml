@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Turkish</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+      This project will be responsible for the full Turkish support of the Uludag distribution. Project will carry out software development related to UTF-8 compatibility on one hand, while doing localization and translation on the other hand.
+      </para>
+    </abstract>
+
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Within the scope of Uludag Turkish Project:
+	<numberedlist>
+	  <listitem>The upstream will be contacted in order to make the necessary changes in the source code for UTF-8 compatibility, in case the upstream does not comply compatibility will be provided via patches,</listitem>
+	  <listitem>The lexicon to be used for translation will be chosen or built, the guidelines for translators will be compiled and a translation manual will be prepared,</listitem>
+	  <listitem>All the user visible components of the packages (package descriptions, messages, help pages, HOW-TO documents, manuals, etc.) will be translated,</listitem>  
+	  <listitem>All the documents for users and developers will be determined and classified,</listitem>
+	  <listitem>The acceptance test for the contributed translations and documents will be carried out, the relevant process will be defined and a manual will be prepared,</listitem>
+	</numberedlist>
+	Project contact: Ayşe Genç, <email>ayse@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

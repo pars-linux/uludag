@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Grafik &amp; Medya</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        Ulusal Dağıtım projesinde kullanılacak tüm görsel ve işitsel malzeme bu proje kapsamında hazırlanacak ya da hazırlatılacaktır.
+      </para>
+    </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Ulusal Dağıtım Grafik &amp; Medya Projesi kapsamında:
+	<numberedlist>
+	  <listitem>Seçili masaüstü için arkaplan, ikonlar, imleçler, görsel ve işitsel uyarılar tasarlanacak,</listitem>
+	  <listitem>Seçili pencere yöneticisi için pencere unsurları tasarlanacak,</listitem>
+	  <listitem>Seçili masaüstü ve pencere sistemi için font ve renk grupları belirlenecek, gerekirse font tasarımı yapılacak,</listitem>
+	  <listitem>Yukarıdaki işlemler mümkünse birden fazla tema için yinelenecek,</listitem>
+	  <listitem>Yerelde üretilen (örneğin Yapılandırma Araçları projesinin ürünleri) uygulamalar için görsel ve işitsel öğeler yukarıdaki temalara uygun olarak tasarlanacak,</listitem>
+	  <listitem>Gerekli durumlarda kaynağından alınan uygulamalar için görsel ve işitsel öğeler yine yukarıdaki temalara uygun olarak tasarlanacak,</listitem>
+	  <listitem>Kurulumun grafik ve medya işleri yapılacak,</listitem>
+	  <listitem>Belgelerin grafik ve medya işleri yapılacak,</listitem>
+	  <listitem>Dağıtım için görsel öğeler kuralları belirlenecek ve kılavuzu hazırlanacak,</listitem>
+	  <listitem>Katkıcılardan gelen görsel ve işitsel öğelerin kabul testleri yürütülecek, bu testler için süreç tanımı yapılacak ve kılavuz hazırlanacak,</listitem>
+	  <listitem>Gerekirse halkla ilişkiler, tanıtım ve pazarlama için görsel ve işitsel öğeler tasarlanacak ya da tasarlatılacak.</listitem>
+	</numberedlist>
+        Proje iletişim: Ayşe Genç, <email>ayse@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

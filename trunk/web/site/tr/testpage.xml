@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book SYSTEM "style/uludagbook.dtd" [
+<!ENTITY projectname "Uludağ">
+]>
+<!-- 
+     kitap tanımları
+     id: belgeler_kurulum, oluşturulacak dosya adı olarak kullanılabilir
+         bu yüzden bu değeri olabildiğince 'belgeye özel' seçmeye çalışın
+-->
+<book version="0.1" lang="tr" id="belgeler_kurulum" type="webpage">
+<!-- kitap hakkında bilgiler: olması zorunlu: bir tane -->
+  <bookinfo>
+<!-- kitap başlığı (kapak adı): olması zorulu: bir tane -->
+    <title>Uludağ Linux Kurulum Dökümanı</title>
+<!-- yazarlar: en az bir tane olmalı -->
+    <author author_id="1" author_id="value">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+        <email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+    <author author_id="defaultValue">
+      <firstname/>
+      <lastname/>
+    </author>
+    <author author_id="defaultValue">
+      <firstname/>
+      <lastname/>
+    </author>
+    <author author_id="defaultValue">
+      <firstname/>
+      <lastname/>
+    </author>
+    <author author_id="defaultValue">
+      <firstname/>
+      <lastname/>
+    </author>
+    <author author_id="1">
+      <firstname>Görkem</firstname>
+      <lastname>Çetin</lastname>
+      <address>
+        <email>gorkem@behcesehir.edu.tr</email>
+        <web>http://www.gorkemcetin.com</web>
+        <web/>
+      </address>
+    </author>
+<!-- 
+         publish date: son yayınlanma tarihi 
+         bu değer bir revision olmasa bile değiştirilebilir,
+	 yalnızca son güncelleme tarihini anlatıyor.
+
+	 revision history: sürüm bilgileri
+    -->
+    <pubdate>2004-01-05</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+        <date>2004-01-02</date>
+      </revision>
+    </revhistory>
+<!-- kitap özeti: olmalı: 1 tane -->
+    <abstract>
+<!-- bir paragraf -->
+      <para>
+        Bu kitap pek güzel bir kitaptır. Yaşasın bu kitap...
+      </para>
+    </abstract>
+  </bookinfo>
+<!-- kitap bölümleri: en az bir tane olmalı -->
+  <chapter>
+<!-- chapter hakkında bilgiler -->
+    <chapterinfo>
+      <title>Kuruluma Adım Adım giriş</title>
+      <abstract>
+        <para>
+	  Bölümde kurulum teknik detaylar da göz önüne alınarak detaylı bir şekilde anlatılacaktır.
+	</para>
+      </abstract>
+    </chapterinfo>
+<!-- sect1: birinci seviye alt bölüm: chapter'in altında en az bir tane olmalı
+         her seviye section'da mutlaka bir title ve en az bir para bulunmalıdır. 
+     -->
+    <sect1>
+      <title>Kurulum için ön hazırlıklar</title>
+      <para>
+        Hazırlık <em>yapmak</em> önemlidir. Önce <underline>CD</underline>'yi alın ve <strong>uzun uzun</strong> seyredin. Birazdan kurulumu onunla yapacaksiniz :). Bana ulaşmak için <email>baris@uludag.org.tr</email> adresimi de kullanabilirsiniz.
+	<note>
+	  Burası bir not bölümü....
+	</note>
+	<attention>
+	  Burası Dikkaaat! bölümü...
+	</attention>
+      </para>
+<!-- sect2: ikinci seviye alt bölüm: yalnız sect1'in altında olabilir -->
+      <sect2>
+        <title>Bios'u ayarlamayı unutmayın!</title>
+        <para>
+          Önce BIOS'u ayarlamak gerekiyor. Bunun için aşağıdaki adımları sırası ile yapın.
+          <!-- numaralandırılmış liste -->
+          <numberedlist><listitem>Sağ gözünüzü sol elinizle kapatın</listitem><listitem>Sol ayağınızı ayağa kaldırın</listitem><listitem>Gerisini bilmiyorum :)</listitem></numberedlist>
+	  İşte yapılacaklar bunlar. Ama bunları beğenmediyseniz bölümün devamında daha geniş bir anlatım var.
+	</para>
+<!-- sect3: üçüncü seviye alt bölüm: yalnız sect2'nin altında olabilir -->
+        <sect3>
+          <title>Daha mı teknik olsun? (Ama ne kadar tekinik?)</title>
+          <para>
+	    İşte Vatandaş! Teknik bilgiler burda. Al sana teknik bir liste:
+	    <orderedlist><listitem>Sector, disk MBR falan... Çok teknik yani</listitem><listitem>Sonra bootsector, A20 sorunu, protected mode gibi...</listitem></orderedlist>
+	  </para>
+        </sect3>
+        <footer>
+          <para>
+	    Bu bölümün footer'ı da bu olsun :)
+	  </para>
+        </footer>
+      </sect2>
+    </sect1>
+    <sect1>
+      <title>Disk Bölümlemek Zor İştir</title>
+      <para>
+        Bu bölümü okumak için önce <link thispage="Kurulum için ön hazırlıklar">hazırlıklar</link> bölümünü okumalısınız. O bölümü okudunuz ama yeterli gelmedi öyle mi? O zaman <link url="http://www.kurulumdunyasi.com">kurulum dunyasını</link> okuyun.
+      </para>
+      <para>
+        <!-- grafik bir dosya dışındaki bir bileşene bağlantıdır.
+	     aslında align=left hatalı, data ile sunumu birbirine karıştırıyor.
+	-->
+	<graphic source="/img/penguin.gif" align="left"/> Soldaki resim de pek nadide bir resimdir.
+	<!-- program bir kod bloğudur -->
+        <program>
+	  <![CDATA[
+	   #include <zope.h>
+	   int main(int argc, char** argv)
+	   {
+	     zope_init();
+	     zope_hobarey("Yo man!");
+	     zope_finalize();
+	   }
+	   ]]>
+	</program>
+	
+	<!-- işletim sistemi komutları -->
+	<command>
+	  <![CDATA[
+	   $ sudo su -
+	   # ./dunyayi_kurtar
+	   Dünyayı kurtarmak için hazırlanılıyor.............
+	   Dünya kurtarılma aşaması 1. 2. 3. 4. 5.
+	   Segmentation fault (core dumped)
+	   ]]>
+	</command>
+      </para>
+    </sect1>
+  </chapter>
+  <footer>
+    <para>
+      Footer için bazı yazılar işte ....
+    </para>
+  </footer>
+</book>

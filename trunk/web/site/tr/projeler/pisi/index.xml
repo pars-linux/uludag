@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Paket Yönetim Sistemi</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        Paket Yönetim Sistemi, paketlerin sisteme sorunsuz bir şekilde eklenip çıkarılmasını sağlayan uygulama/yapılandırma aracıdır. Paket Yönetim Sistemi, oluşturulması planlanan yönetim çerçevesinin (önemli) bir bileşenidir.
+      </para>
+    </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Ulusal Dağıtım Paket Yönetim Sistemi Projesi kapsamında:
+	<numberedlist>
+	  <listitem>Paket Yönetim Sistemi için kullanıcı gerekleri belirlenecek,</listitem>
+          <listitem>Bu gereklerle bağlantılı olarak paketlerin sağlaması gereken özellikler, paket metadata içerisinde yer alması gereken öğeler, paketlerin ayar ve yapılandırma gereksinimleri tespit edilecek,</listitem>
+          <listitem>Paket oluşturucular ve katkıcıların Paket Yönetim Sistemi çerçevesine uygun paketler hazırlaması için kurallar belirlenecek ve geliştirici kılavuzu hazırlanacak,</listitem>
+	  <listitem>Belirlenen kullanıcı gereklerine uygun olarak Paket Yönetim Sistemi tasarımı yapılacak,</listitem>
+	  <listitem>Tasarım çerçevesinde Paket Yönetim Sistemi kodlaması yapılacak,</listitem>
+	  <listitem>Referans sistemde testten geçirerek Paket Yönetim Sistemi için müşteri kabulü yapılacak.</listitem>
+	</numberedlist>
+	
+	Proje iletişim: Alp Öztarhan, <email>alp@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

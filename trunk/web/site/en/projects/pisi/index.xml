@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Package Management System</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+	Package Management System is the application/configuration tool that is used to add and remove the packages to/from the system flawlessly. Package Management System is a (very important) component of the planned management framework.
+      </para>
+    </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Within the scope of Uludag Package Management System Project:
+	<numberedlist>
+	  <listitem>The user requirements for the Package Management System will be determined,</listitem>
+          <listitem>The features to be provided by the packages, components of package metadata, configuration features of packages will be identified in line with these requirements,</listitem>
+          <listitem>The guidelines for preparing packages in accordance with the Package Management System framework will be determined and a packager/developer manual will be prepared,</listitem>
+	  <listitem>The Package Management System will be designed according to the user requirements,</listitem>
+	  <listitem>The Package Management System will be coded according to the above design,</listitem>
+	  <listitem>The Package Management System will be tested on the reference system for final acceptance.</listitem>
+	</numberedlist>
+
+	Project contact: Alp Öztarhan, <email>alp@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

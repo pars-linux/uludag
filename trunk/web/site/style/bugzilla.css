@@ -1,0 +1,112 @@
+* {
+  font-size: 10pt;
+  font-family: verdana, arial, sans, sans serif;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  border: none;
+}
+
+a { text-decoration: none; }
+p { margin-top: 1em; margin-bottom: 1em;}
+
+.title {
+  display: block;
+  font-weight: bold;
+}
+
+.footer {
+  display: block;
+  margin: 1em;
+  padding: 1em;
+  border: thin dashed;
+}
+
+table.header  {
+  width: 100%;
+}
+td.header {
+  background: #e0970b;
+  border-bottom: thin solid;
+  border-color: black;
+}
+td.headerleft {
+background: #e0970b;
+border-bottom: thin solid;
+border-color: black;
+padding-left: 5pt;
+padding-right: 5pt;
+width: 50px;
+}
+.header a {
+color: white;
+font-size: 35pt;
+font-weight: bold;
+font-family: trebuchet  ms, arial, sans, sans serif;
+text-decoration: none;
+}
+.headerdesc {
+border-bottom: thin solid;
+border-color: black;
+padding-left: 5pt;
+padding-bottom: 2pt;
+padding-top: 2pt;
+font-family: trebuchet  ms, arial, sans, sans serif;
+}
+
+td.leftmenu {
+display: block;
+background: #eeeeee;
+padding: 5pt;
+margin-left: 1em;
+margin-top: 0em;
+vertical-align: top;
+border: solid 1px black;
+border-top:none;
+width: 131pt;
+}
+.leftbox a {
+display: list-item;
+list-style-type: circle;
+text-decoration: none;
+font-weight: bold;
+color: #e0970b;
+margin-left: 1em;
+}
+.leftbox input {
+margin: 1em;
+border: 1px solid #294563;
+}
+.submenu a {
+display: list-item;
+list-style-type: circle;
+text-decoration: none;
+font-weight: normal;
+color: #193553;
+margin-left: 2em;
+}
+/* icerik bolumu */
+table.content {
+height: 80%;
+}
+td.content {
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 3pt;
+vertical-align: top;
+}
+/* en alt bolum */
+.pagefooter {
+text-align: center;
+border-top: thin solid;
+border-bottom: thin solid;
+border-color: #999999;
+padding: 2pt;
+margin: 0;
+background: #5c597e;
+color: white;
+}

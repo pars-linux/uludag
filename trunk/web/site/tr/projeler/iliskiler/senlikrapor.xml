@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "uludagbook.dtd"
+[
+<!ENTITY projectname "Uludağ Linux">
+]>
+
+<book version="0.1" lang="tr" id="linuxsenlik" type="webpage">
+
+  <!-- kitap hakkında bilgiler: olması zorunlu: bir tane -->
+  <bookinfo>
+    <!-- kitap başlığı (kapak adı): olması zorulu: bir tane -->
+    <title>2004 Linux ve Özgür Yazılım Şenliği</title>
+
+    <!-- yazarlar: en az bir tane olmalı -->
+    <author author_id="1">
+      <firstname>Zerrin</firstname>
+      <lastname>Çakmakkaya</lastname>
+      <address>
+	<email>zerrin@uludag.org.tr</email>
+      </address>
+    </author>
+    
+    <pubdate>2004-03-09</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-03-09</date>
+      </revision>
+    </revhistory>
+
+    <!-- kitap özeti: olmalı: 1 tane -->
+    <abstract>
+	    <!-- bir paragraf -->
+	    <para>
+		    LKD'nin düzenlediği Linux ve Özgür Yazılım Şenliğinin  birincisi 16-19 Mayıs 2002'de Ankara'da, ikincisi 1-4 Mayıs 2003'te İstanbul'da, herbirine yaklaşık 1500 katılımcı ile, gerçekleşmiştir. Üçüncüsü bu yıl 13-16 Mayıs'ta Ankara'da Milli kütüphanede yapılacak olan şenlikte, Linux ve özgür yazılımlar hakkında geniş bilgilerin sunulduğu seminerler verilecek, çeşitli etkinlikler düzenlenecektir.
+	    </para>
+    </abstract>
+  </bookinfo>
+
+
+  <!-- kitap bölümleri: en az bir tane olmalı -->
+  <chapter>
+  <!-- chapter hakkında bilgiler -->
+  <chapterinfo>
+  <title>LKD Nedir?</title>
+  </chapterinfo>
+  <sect1>
+  <title> </title>
+  <para>
+	  Türkiye'deki Linux gönüllülerinin ilk defa 1. Türkiye'de İnternet Konferansı'nda (1995) bir araya gelerek oluşturduğu ve 2000 yılına kadar faaliyetlerine bir İnternet Topluluğu olarak devam eden grubun dernekleşmesi ile Linux Kullanıcıları Derneği(LKD) kurulmuştur. İnternet Konferansları, Akademik Bilişim Konferansları ve İnternet Haftaları gibi etkinliklerde katılımcı olarak yer alan LKD'nin amacı, Linux ve özgür yazılımların ülkemizde de kullanımının yaygınlaşması ve geliştirilmesine katkıda bulunmak, benzer amaçları destekleyen birey, kurum ve oluşumlar ile işbirliğine girmektir.
+   </para>
+   </sect1>
+  </chapter>
+  <chapter>
+    <!-- chapter hakkında bilgiler -->
+    <chapterinfo>
+	    <title>Projemizde Şenlikle İlgili Düşünceler</title>
+      <abstract>
+      <para>	      
+      "Yaygın dağıtım" misyonunun bir parçası olarak, Linux'u daha geniş kitlelere ulaştırmak Uludağ Projesinin temel amaçları arasında yer almaktadır. Aynı amaca yönelik olarak LKD tarafından düzenlenen bu şenliğe, yaratıcı fikirler oluşturup daha etkin bir şenlik yapma konusunda, projemiz elinden geldiğince destek olacaktır. 
+	</para>
+      </abstract>
+    </chapterinfo>
+
+    <sect1>
+	    <title> </title>
+	<para>
+		Linux ve Özgür Yazılım Şenliği'nde Uludağ projesinin ne şekilde yer alabileceği ile ilgili bazı öneriler:
+		 
+<orderedlist>
+	<listitem>Sponsor olmak için gereken 2.000$ destek LKD'ye doğrudan sağlanarak Uludağ logosunun diğer sponsor IBM ile aynı büyüklükte afişe yerleştirilmesi sağlanabilir.(TÜBİTAK'ın da sponsor olabileceği gibi bir ihtimal olduğundan, bizim "Uludağ" adı ile gitmemiz uygun olacaktır)</listitem>
+	<listitem>İstanbul'dan veya Türkiye'nin her yerinden şenlik treni kaldırılabilir. Bu işin maliyetini karşılamak için TCDD'ye sponsor olması önerilebilir.</listitem>
+	<listitem>Şenlik yerinde bilgisayar müzesi açılabilir.</listitem>
+	<listitem>Ankara içindeki okullardan toplu halde öğrenciler getirilip eğlendirilebilir, öğretmenlere Linux eğitimi verilebilir. Bunun için okullardan şehiriçi toplu taşıma araçları kaldırılması gerekir.</listitem>
+	<listitem>Şenliği ciddi bir toplantı havasından çıkarıp gerçek bir şenlik yapabilmek için Milli Kütüphane önü panayır alanına çevirilerek, yemek satışları yaptırılabilir, eğlenceli gösteriler ve yarışmalar düzenlenebilir. LKD'nin Etkinlik Çalışma Grubu'nun bu konudaki çalışmalarına katılarak, onlarla etkileşimli değişik fikirler üretilebilir.</listitem>
+	<listitem>Şenlik duyuruları için TV ve basın ile ilişkiye geçilebilir. Tren projesi CNN Türk ve NTV'de haber olarak yayınlanabilir. Görkem Çetin'in televizyon programında zaten şenlik konusu gündeme gelecektir. TV ve basın ile ilgili bazı konularda LKD Yönetim Kurulu Başkanı Mustafa Akgül'den yardım istenebilir.</listitem>
+	<listitem>Yine şenlik duyurusu için Ankara'daki büyük alışveriş merkezlerinde penguenler gezdirilerek, el ilanları dağıtılabilir.
+	</listitem>
+	<listitem>Linux CD'leri bastırılıp dağıtılabilir, "Kap PC'ni Gel" tipi Linux kurma partileri yapılabilir. Ancak ciddi insan gücü gerektirdiğinden bu işi yapmak için gönüllüleri kullanmak gerek. Bizim bu işe koyulmamız yerine 1. şenlikte de yapılan bu uygulamayı Şenlik Çalışma Grubuna hatırlatmak daha yerinde olur. Kullanıcıların makinalarına zarar gelmeyecek şekilde, iyi eğitilmiş 15-20 üniversite öğrencisi ile bu iş yapılabilir. Ethem Derman ve Murathan Bostancı'nın bu konuda yardımcı olabileceği düşünülüyor. Diğer üniversitelerin Linux kulüpleri de olabilir.</listitem>
+	<listitem>Çeşitli promosyonlar olabilir, Uludağ logolu defter, kalem, araba kokusu gibi.</listitem>	
+	<listitem>PTT ile görüşüp özel pul/zarf vb. çıkartmak mümkün olabilir.</listitem>
+</orderedlist>
+	</para>
+</sect1>
+</chapter>
+</book>

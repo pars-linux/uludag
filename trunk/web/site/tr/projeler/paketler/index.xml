@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Paketler</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        "Paket" uygulama yazılımlarının bağımsız olarak ve kolaylıkla sisteme eklenip çıkarılabilmesi için oluşturulan dosyalara verilen isimdir. Paketler Projesi, Ulusal Dağıtım'da yer alacak paketleri belirlemek, kaynak kodlarından hareketle ve Ulusal Dağıtım hedefleri ile uyum içerisinde bu paketleri oluşturmaktan sorumludur.
+      </para>
+    </abstract>
+
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Ulusal Dağıtım Paketler Projesi kapsamında:
+	<numberedlist>
+	  <listitem>Sürümlerin niteliklerine göre içerecekleri paketlerin listesi belirlenecek,</listitem>
+	  <listitem>Bu paketler, kaynak kodundan hareketle, yamalar, ayarlar ve yapılandırmalar eklenmesi yolu ile sürüm içerisinde yer almaya hazır hale getirilecek,</listitem>
+	  <listitem>Özellikle UTF-8 uyumluluğu ve Türkçe desteği konusunda gerekli yama ve ayarlar yaptırılacak/yapılacak,</listitem>
+	  <listitem>Paketle ilgili olarak bağımlılıklar, istenenler, sunulanlar, çelişkiler, vb. paket metadata, gerekli durumlarda başlat betikleri (initscript) oluşturulacak,</listitem>
+	  <listitem>Paket Yönetim Sistemi çerçevesine uygun olarak ve metadata katkısı ile kaynak ve sayısal paketler oluşturulacak,</listitem>
+	  <listitem>Referans sistemde paketin işletim sistemi ve diğer paketler ile sorunsuz çalıştığı test edilecek,</listitem>
+	  <listitem>Sürümlerin zamanlamasına (alfa, beta ve RC safhaları) koşut olarak paketlerin özellik dondurma, hata ayıklama vb. merhaleleri tanımlanacak ve yürütülecek,</listitem>
+	  <listitem>Güncelleme ve diğer amaçlarla erişilecek olan paket ambarı oluşturulacak, işler ve erişilebilir durumda tutulacak,</listitem>
+	  <listitem>Katkıcılardan gelen paketlerin kabul testleri yürütülecek, bu testler için süreç tanımı yapılacak ve kılavuz hazırlanacak.</listitem>
+	</numberedlist>
+        Proje iletişim: Barış Metin, <email>baris@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+</book>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Human-Computer Interaction</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+	Since developing an easily installable and usable distribution is among our main goals, the Human-Computer Interaction project is among our foremost projects.
+      </para>
+    </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Within the scope of Uludag Human-Computer Interaction Project:
+	      <numberedlist>
+	        <listitem>The paper mock-ups for the applications, systems, etc. will be designed and built,</listitem>
+	        <listitem>The usability tests will be carried out, usability reports will be written,</listitem>
+	        <listitem>Usability and HCI support will be provided to other project, Installer, Configuration Tools and Graphics &amp; Media projects being at the forefront,</listitem>
+	        <listitem>The usability and HCI guidelines for the distribution will be determined, a usability manual will be prepared,</listitem>
+	        <listitem>The usability and HCI tests for the contributed applications will be carried out, the relevant process will be defined and a manual will be prepared.</listitem>
+	      </numberedlist>
+	      Project contact: Ayşe Genç, <email>ayse@uludag.org.tr</email>
+	    </para>
+    </sect1>
+  </chapter>
+
+</book>

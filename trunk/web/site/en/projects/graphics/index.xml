@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Graphics &amp; Media</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+	All visual and audio material that will be used in the Uludag project will be created in this project.
+      </para>
+    </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Within the scope of Uludag Graphics &amp; Media Project:
+	<numberedlist>
+	  <listitem>The backgrounds, icons, pointers, visual and audio warnings will be designed for the select desktop,</listitem>
+	  <listitem>The window features will be dsigned for the select window manager,</listitem>
+	  <listitem>The font and color scheme will be determined for the select desktop and window manager, in case fonts will be designed,</listitem>
+	  <listitem>The above steps will be carried out for more than one theme, if possible,</listitem>
+	  <listitem>The visual and audio components for the in-house developed software (such as the products of the Configuration Tools project) will be designed in accordance with  the above mentioned themes,</listitem>
+	  <listitem>The visual and audio components for the applications fetched from upstream will be designed in accordance with  the above mentioned themes, may need arise,</listitem>
+	  <listitem>The graphics and media tasks for the installer will be carried out,</listitem>
+	  <listitem>The graphics and media tasks for the documentation will be carried out,</listitem>
+	  <listitem>The guidelines for the visual features of distribution will be determined and a manual will be prepared,</listitem>
+	  <listitem>The acceptance test for the contributed visual and audio material will be carried out, the relevant process will be defined and a manual will be prepared,</listitem>
+	  <listitem>The visual and audio components for public relations, promotion and marketing will be designed, may need arise.</listitem>
+	</numberedlist>
+        Project contact: Ayşe Genç, <email>ayse@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>
