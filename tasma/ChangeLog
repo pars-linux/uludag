@@ -4,3 +4,7 @@
 
 2005-02-07 Barış Metin <baris@uludag.org.tr>
 	* Tasma now shows aboutData() of current module, if provided by module.
+
+2005-02-15 Barış Metin <baris@uludag.org.tr>
+	* Added tasmanet.
+	* Released version 0.2
