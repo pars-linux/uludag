@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-28 16:02+0200\n"
-"PO-Revision-Date: 2005-01-28 16:02+0200\n"
+"POT-Creation-Date: 2005-02-05 23:02+0200\n"
+"PO-Revision-Date: 2005-03-05 23:03+0200\n"
 "Last-Translator: Zerrin Cakmakkaya <zerrin@uludag.org.tr>\n"
 "Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -86,19 +86,11 @@ msgstr ""
 "sağ düğmeler olarak işlev görenler etkilenir. Örneğin, üç düğmeli bir "
 "fareniz varsa orta düğme etkilenmez."
 
-#: wallpaperdlg.cpp:82
+#: wallpaperdlg.cpp:90
 msgid "WallpaperDlg"
 msgstr "WallpaperDlg"
 
-#: wallpaperdlg.cpp:83
-msgid "Preview :"
-msgstr "Önizleme :"
-
-#: wallpaperdlg.cpp:84
-msgid "pix_wallpaper"
-msgstr "pix_wallpaper"
-
-#: wallpaperdlg.cpp:85
+#: wallpaperdlg.cpp:91
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish :)."
@@ -107,9 +99,21 @@ msgstr ""
 "size güzel görünümlü duvar kağıtları sunar, bunlardan birini seçebilirsiniz, "
 "istediğiniz gibi :)."
 
-#: wallpaperdlg.cpp:86
+#: wallpaperdlg.cpp:92
 msgid "Wallpaper :"
 msgstr "Duvar Kağıdı :"
+
+#: wallpaperdlg.cpp:93
+msgid "Preview :"
+msgstr "Önizleme :"
+
+#: wallpaperdlg.cpp:94
+msgid "pix_wallpaper"
+msgstr "pix_wallpaper"
+
+#: wallpaperdlg.cpp:95
+msgid "Don't change desktop background!"
+msgstr "Masaüstü arkaplan resmini değiştirme!"
 
 #: welcomedlg.cpp:75
 msgid "WelcomeDlg"
