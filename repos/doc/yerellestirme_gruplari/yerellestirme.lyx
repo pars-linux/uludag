@@ -6,6 +6,7 @@
 \fontscheme default
 \graphics default
 \paperfontsize default
+\spacing single 
 \papersize Default
 \paperpackage a4
 \use_geometry 0
@@ -15,7 +16,7 @@
 \paperorientation portrait
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
+\paragraph_separation skip
 \defskip medskip
 \quotes_language english
 \quotes_times 2
@@ -49,21 +50,6 @@ Giriþ
 
 Yerelleþtirme çalýþmalarý çoðunlukla çeviri çalýþmalarý olarak da adlandýrýlýrla
 r.
- Çalýþmalar iki ana grupta toplanmýþlardýr.
-\layout Itemize
-
-Resmi yerelleþtirme gruplarý
-\layout Itemize
-
-Bireysel Çalýþmalar
-\layout Standard
-
-Resmi yerelleþtirme çalýþmalarý, yerelleþtirmesi yapýlan açýk kaynak kodlu
- yazýlým tarafýndan tanýnan Türkçe yerelleþtirme projelerini listelemektedir.
- Bireysel çalýþmalar ise bir ya da daha fazla kiþinin bir çalýþma (proje)
- grubu altýnda toplanmadan yaptýklarý çalýþmalarý ifade eder.
- Bireysel çalýþmalarýn çokluðu ve iletiþim adreslerin deðiþken olabilmeleri
- nedeni ile bu belge yalnýzca resmi yerelleþtirme çalýþmalarýný listeler.
  Listede bulunmayan yerelleþtirme çalýþmalarýndan bizi haberdar etmek için
  uludag@uludag.org.tr adresine e-posta gönderebilirsiniz.
 \layout Standard
@@ -89,34 +75,13 @@ collapsed true
  Ayrýca eksik veya deðiþmiþ olan yerelleþtirme grubu baðlantýlarý ya da
  eklenmesini istediðiniz yerelleþtirme çalýþmalarý ile ilgili olarak belge
  yazarlarýna e-posta yolu ile ulaþabilirsiniz.
+\layout Standard
+
+Yerelleþtirme çalýþmalarý kategoriler halinde, alfabetik bir sýra ile listelenmi
+þtir.
 \layout Section
 
 Resmi Yerelleþtirme Gruplarý
-\layout Subsection
-
-belgeler.org
-\layout Standard
-
-
-\begin_inset Graphics
-	filename logo/belgelerlogo.png
-
-\end_inset 
-
-
-\layout Standard
-
-Özgür lisansa sahip pek çok belgenin Türkçe çevirilerinin yaný sýra özgün
- belgeler ile zengin bir belge arþivi oluþturuyorlar.
-\layout Description
-
-Web\SpecialChar ~
-Sayfalarý: 
-\begin_inset LatexCommand \url{www.belgeler.org}
-
-\end_inset 
-
-
 \layout Subsection
 
 GNOME Türkiye
@@ -311,6 +276,34 @@ Sayfasý:
 Durum\SpecialChar ~
 Sayfasý: 
 \begin_inset LatexCommand \url{http://developer.postgresql.org/~petere/nlsstatus/#tcurrent}
+
+\end_inset 
+
+
+\layout Section
+
+Belgeleme çalýþmalarý
+\layout Subsection
+
+belgeler.org
+\layout Standard
+
+
+\begin_inset Graphics
+	filename logo/belgelerlogo.png
+
+\end_inset 
+
+
+\layout Standard
+
+Özgür lisansa sahip pek çok belgenin Türkçe çevirilerinin yaný sýra özgün
+ belgeler ile zengin bir belge arþivi oluþturuyorlar.
+\layout Description
+
+Web\SpecialChar ~
+Sayfalarý: 
+\begin_inset LatexCommand \url{www.belgeler.org}
 
 \end_inset 
 
