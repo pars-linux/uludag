@@ -76,11 +76,11 @@ body {
 #menubar .title *:first-child {
   color: #cb1717
 }
-/* ugo */
-.ugo h1 {
+/* proposal */
+.proposal h1 {
   display: none;
 }
-.ugo h2, .ugo h2 a, .ugo h2 a:hover {
+.proposal h2, .proposal h2 a, .proposal h2 a:hover {
   font-family: Verdana, Sans, sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -88,54 +88,54 @@ body {
   border-bottom: 0px;
 }
 
-.ugo dt span.no {
+.proposal dt span.no {
   color: #cb1717;
 }
 
-.ugo dl.contents {
+.proposal dl.contents {
   color: #cb1717;
   font-weight: bold;
 }
 
-.ugo .revisions h3 {
+.proposal .revisions h3 {
   margin-left: 15px;
 }
-.ugo .revisions h3 a {
+.proposal .revisions h3 a {
   color: #cb1717;
   font-weight: bold;
 }
-.ugo .revisions p {
+.proposal .revisions p {
   margin-left: 30px;
 }
 
-.ugo ul {
+.proposal ul {
   list-style: url(images/li-square.png);
 }
-.ugo ol {
+.proposal ol {
   color: #cb1717;
   font-weight: bold;
 }
-.ugo ol li {
+.proposal ol li {
   margin-bottom: 2px;
 }
-.ugo ol li.square {
+.proposal ol li.square {
   list-style: url(images/li-square.png);
   margin-bottom: 2px;
 }
-.ugo a {
+.proposal a {
   font-weight: normal;
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #aaa;
   margin-bottom: 2px;
 }
-.ugo a:hover {
+.proposal a:hover {
   font-weight: normal;
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
-.ugo .hr {
+.proposal .hr {
   border-top: 1px solid #aaa;
 }
 

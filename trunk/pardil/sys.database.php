@@ -7,7 +7,6 @@
     die('Configuration error.');
   }
 
-
   function database_query_scalar($str_sql) {
     $res_sql = mysql_query($str_sql);
     $arr_fetch = mysql_fetch_array($res_sql, MYSQL_NUM);
