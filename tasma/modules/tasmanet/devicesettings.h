@@ -12,12 +12,12 @@
 #ifndef DEVICE_SETTINGS_H
 #define DEVICE_SETTINGS_H
 
+#include "device.h"
 #include "devicesettingsdlg.h"
 
-class QRegExp;
 class QValidator;
 
-class DeviceSettings : public DeviceSettingsDlg
+class DeviceSettings : public DeviceSettingsDlg, public Device
 {
     Q_OBJECT
 
@@ -34,23 +34,14 @@ protected slots:
     void automaticToggled( bool on );
     void manualToggled( bool on );
 
-    int startDhcpcd();
-
     void addDns();
     void removeDns();
 
 private:
-    QRegExp *rx;
-    QValidator *validator;
     QString _dev;
     bool _wifi;
-    int sockets_open();
-    int set_iface( const char *dev, const char *ip,
-		   const char *bc, const char *nm );
-    int set_default_route( const char *ip );
+    QValidator *validator;
     void writeSettings();
-    QStringList getDnsList();
-    int writeDnsList();
 
 };
 
