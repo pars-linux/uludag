@@ -7,7 +7,7 @@
 
   require('class.template.php');
 
-  $_PCONF['title'] = CONF_NAME . ' - ' . _('Registration Complete');
+  $_PCONF['title'] = CONF_NAME . ' - ' . __('Registration Complete');
   $obj_page = new template('tpl.register_ok.php');
   $obj_page->setvar('bln_activation', (proc_getopt('register_activation_required') == 'true'));
   $obj_page->flush();

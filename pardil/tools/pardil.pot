@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-02 18:28+0300\n"
+"POT-Creation-Date: 2005-04-02 21:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,9 @@ msgid "User account is not activated."
 msgstr ""
 
 msgid "User Login"
+msgstr ""
+
+msgid "Logged Out"
 msgstr ""
 
 msgid "Title should be written."
@@ -99,6 +102,18 @@ msgid "Need activation?"
 msgstr ""
 
 msgid "Not a registered user?"
+msgstr ""
+
+msgid "You Have Logged Out"
+msgstr ""
+
+msgid "You have successfully logged out"
+msgstr ""
+
+msgid "Go to main page"
+msgstr ""
+
+msgid "Go to login page"
 msgstr ""
 
 msgid "Title:"
@@ -186,9 +201,6 @@ msgstr ""
 msgid ""
 "You need to activate your account by clicking (or visiting) the URL sent to "
 "your e-mail address."
-msgstr ""
-
-msgid "Go to login page"
 msgstr ""
 
 msgid "Name:"

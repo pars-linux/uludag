@@ -21,16 +21,16 @@
       <div id="content">
         <div class="proposal">
           <h1><?php printf('%s', $arr_proposal['title']); ?></h1>
-          <h2><?php echo _('Abstract'); ?></h2>
+          <h2><?php echo __('Abstract'); ?></h2>
           <p><?php printf('%s', $arr_proposal['abstract']); ?></p>
-          <h2><?php echo _('Identity'); ?></h2>
+          <h2><?php echo __('Identity'); ?></h2>
           <ul class="list-square">
-            <li><b><?php echo _('Status:'); ?></b> <?php printf('%s', _($str_proposal_status)); ?></li>
-            <li><b><?php echo _('Id:'); ?></b> <?php printf('%04d', $arr_proposal['id']); ?></li>
-            <li><b><?php echo _('Version:'); ?></b> <?php printf('%.2f', $arr_proposal['version']); ?></li>
-            <li><b><?php echo _('Last Update:'); ?></b> <?php printf('%s', $arr_proposal['timestamp']); ?></li>
+            <li><b><?php echo __('Status:'); ?></b> <?php echo __($str_proposal_status); ?></li>
+            <li><b><?php echo __('Id:'); ?></b> <?php printf('%04d', $arr_proposal['id']); ?></li>
+            <li><b><?php echo __('Version:'); ?></b> <?php printf('%.2f', $arr_proposal['version']); ?></li>
+            <li><b><?php echo __('Last Update:'); ?></b> <?php printf('%s', $arr_proposal['timestamp']); ?></li>
             <li>
-              <b><?php echo _('Releated Proposals:'); ?></b>
+              <b><?php echo __('Releated Proposals:'); ?></b>
               <?php
                 if (count($arr_releated) > 0) {
                   foreach ($arr_releated as $arr_item) {
@@ -38,12 +38,12 @@
                   }
                 }
                 else {
-                  echo _('None');
+                  echo __('None');
                 }
               ?>
             </li>
           </ul>
-          <h2><?php echo _('Maintainers'); ?></h2>
+          <h2><?php echo __('Maintainers'); ?></h2>
           <ul class="list-square">
             <?php
               if (count($arr_maintainers) > 0) {
@@ -52,20 +52,20 @@
                 }
               }
               else {
-                printf('<li>%s</li>', _('None'));
+                printf('<li>%s</li>', __('None'));
               }
             ?>
           </ul>
           <div class="hr"></div>
-          <h2><?php echo _('Contents'); ?></h2>
+          <h2><?php echo __('Contents'); ?></h2>
           <ul>
             <?php
               foreach ($arr_proposal_content as $arr_item) {
                 printf('<li><a href="#content%d">%s</a></li>', $arr_item['no'], $arr_item['title']);
               }
             ?>
-            <li><a href="#contentNotes"><?php echo _('Notes'); ?></a></li>
-            <li><a href="#contentRevisionHistory"><?php echo _('Revision History'); ?></a></li>
+            <li><a href="#contentNotes"><?php echo __('Notes'); ?></a></li>
+            <li><a href="#contentRevisionHistory"><?php echo __('Revision History'); ?></a></li>
           </ul>
           <div class="hr"></div>
           <?php
@@ -75,7 +75,7 @@
             }
           ?>
           <div class="hr"></div>
-          <h2><a name="contentNotes"><?php echo _('Notes'); ?></a></h2>
+          <h2><a name="contentNotes"><?php echo __('Notes'); ?></a></h2>
           <dl>
           <?php
             foreach ($arr_notes as $arr_item) {
@@ -84,7 +84,7 @@
           ?>
           </dl>
           <div class="hr"></div>
-          <h2><a name="contentRevisionHistory"><?php echo _('Revision History'); ?></a></h2>
+          <h2><a name="contentRevisionHistory"><?php echo __('Revision History'); ?></a></h2>
           <div class="revisions">
             <?php
               foreach ($arr_revisions as $arr_item) {
