@@ -1,3 +1,6 @@
 1. Template desteği
 2. Gettext desteği
+  - Ondalıklı sayılardaki nokta yerine virgül kullanan bir 
+    yerel kulanıldığında (mesela tr_TR), SQL sorgularında
+    sorun yaşanabiliyor. Bu hata giderilmeli.
 3. Daha fazla OOP!
