@@ -333,6 +333,12 @@ def ensure_dir(dname):
 		os.mkdir(dname, 0755)
 	os.chdir(dname)
 
+def ensure_path(fname):
+	if fname.find("/") != -1:
+		t = fname.split("/")
+		if not os.path.exists(t[0]):
+			os.mkdir(t[0], 0755)
+
 def remove_file(name):
 	try:
 		os.unlink(name)
@@ -443,6 +449,7 @@ def yap(template):
 	# fetch images if necessary
 	try:
 		for t in dosyalar:
+			ensure_path(t)
 			svn_fetch(depo,t)
 	except:
 		pass
