@@ -14,12 +14,16 @@
 
 #include "devicesettingsdlg.h"
 
+class QRegExp;
+class QValidator;
+
 class DeviceSettings : public DeviceSettingsDlg
 {
     Q_OBJECT
 
 public:
     DeviceSettings( QWidget *parent, QString dev, bool wifi );
+    ~DeviceSettings();
 
 protected slots:
     void slotApply();
@@ -34,6 +38,8 @@ protected slots:
     void removeDns();
 
 private:
+    QRegExp *rx;
+    QValidator *validator;
     QString _dev;
     bool _wifi;
     int sockets_open();

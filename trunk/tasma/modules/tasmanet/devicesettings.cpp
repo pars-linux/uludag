@@ -42,6 +42,14 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
       _dev( dev ),
       _wifi( wifi )
 {
+    // ip validator
+    rx = new QRegExp( "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}" );
+    QValidator *validator = new QRegExpValidator( *rx, this );
+
+    ipaddr->setValidator( validator );
+    defaultgw->setValidator( validator );
+    broadcast->setValidator( validator );
+    netmask->setValidator( validator );
 
     // fill automatic types, for now only DHCP is supported
     automaticCombo->insertItem( "DHCP" );
@@ -324,10 +332,9 @@ QStringList DeviceSettings::getDnsList()
     while ( -1 != res_file.readLine( line, 1024 ) ) {
         line = line.stripWhiteSpace();
         if ( line.startsWith( "nameserver" ) ) {
-            QRegExp rx( "\\d+\\.\\d+\\.\\d+\\.\\d+" );
-            int index = rx.search( line );
+            int index = rx->search( line );
             if ( index >= 0 ) {
-                dnsList.append( rx.cap() );
+                dnsList.append( rx->cap() );
             }
         }
     }
@@ -344,8 +351,6 @@ void DeviceSettings::removeDns()
 
 void DeviceSettings::addDns()
 {
-    QRegExp rx( "\\d+\\.\\d+\\.\\d+\\.\\d+" );
-    QValidator *validator = new QRegExpValidator( rx, this );
     QString newdns = KInputDialog::getText( i18n( "Add new nameserver" ),
                                             i18n( "Add a new name server." ),
                                             QString::null,
@@ -355,5 +360,11 @@ void DeviceSettings::addDns()
                                             validator );
 
     dnsListBox->insertItem( newdns );
+}
+
+DeviceSettings::~DeviceSettings()
+{
+    delete rx;
+    delete validator;
 }
 
