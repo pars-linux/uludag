@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
   
 [%# INTERFACE:
@@ -53,7 +54,7 @@
 [% row_field_disp = field_descs.$row_field || row_field %]
 
 [% title = BLOCK %]
-  Report: 
+  Rapor: 
   [% IF tbl_field %]
     [% tbl_field_disp FILTER html %]
   [% END %]
@@ -84,7 +85,7 @@
 
   [% FOREACH tbl = tbl_names %]    
     [% IF tbl == "-total-" %]
-      [% tbl_disp = "Total" %]
+      [% tbl_disp = "Toplam" %]
     [% ELSE %]
       [% tbl_disp = tbl %]
     [% END %]
@@ -120,10 +121,10 @@
   <table>
     <tr>
       <td>
-        [% formats = [ { name => "pie",   description => "Pie" },
-                       { name => "bar",   description => "Bar" },
-                       { name => "line",  description => "Line" },
-                       { name => "table", description => "Table" } ] %]
+        [% formats = [ { name => "pie",   description => "Pasta" },
+                       { name => "bar",   description => "Çubuk" },
+                       { name => "line",  description => "Çizgi" },
+                       { name => "table", description => "Tablo" } ] %]
 
         [% formaturl = "report.cgi?$switchbase&width=$width&height=$height" _ 
                        "&action=wrap" %]
@@ -148,13 +149,13 @@
           [% format FILTER html %][% END %]
         <td align="center">
           <a href="[% sizeurl %]&amp;width=[% width %]&amp;height=
-                   [% height + 100 %]">Taller</a><br>
+                   [% height + 100 %]">Daha Uzun</a><br>
           <a href="[% sizeurl %]&amp;width=[% width - 100 %]&amp;height=
-                   [% height %]">Thinner</a> * 
+                   [% height %]">Daha İnce</a> * 
           <a href="[% sizeurl %]&amp;width=[% width + 100 %]&amp;height=
-                   [% height %]">Fatter</a>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                   [% height %]">Daha Geniş</a>&nbsp;&nbsp;&nbsp;&nbsp;<br>
           <a href="[% sizeurl %]&amp;width=[% width %]&amp;height=
-                   [% height - 100 %]">Shorter</a><br>
+                   [% height - 100 %]">Daha Kısa</a><br>
         </td>
       [% END %]
     <tr>
@@ -162,12 +163,11 @@
 
   <p>
     [% IF format == "table" %]
-      <a href="query.cgi?[% switchbase %]&amp;format=report-table">Edit 
-      this report</a>
+      <a href="query.cgi?[% switchbase %]&amp;format=report-table">Bu raporu düzenle</a>
     [% ELSE %]
       <a href="query.cgi?[% switchbase %]&amp;chart_format=
         [% format %]&amp;format=report-graph&amp;cumulate=[% cumulate %]">
-        Edit this report
+        Bu raporu düzenle
       </a>
     [% END %]
   </p>

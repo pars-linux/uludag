@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -27,7 +28,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Create Chart"
+  title = "Grafik Oluştur"
 %]
 
 [% PROCESS "reports/series-common.html.tmpl" 
@@ -65,16 +66,16 @@ function subcatSelected() {
     [% IF NOT category OR category.size == 0 %]
       <tr>
         <td>
-          <i>No data sets exist, or none are visible to you.</i>
+          <i>Veri bulunamadı, ya da size gösterilemiyor.</i>
         </td>
       </tr>
     [% ELSE %]
       <tr>
-        <th>Category:</th>
+        <th>Kategori:</th>
         <th></th>
-        <th>Sub-category:</th>
+        <th>Alt Kategori:</th>
         <th></th>
-        <th>Name:</th>
+        <th>İsim:</th>
         <th><br>
         </th>
       </tr>
@@ -118,7 +119,7 @@ function subcatSelected() {
         </td>
 
         <td align="center" valign="middle"> 
-          <input type="submit" name="action-add" value="Add To List"><br>
+          <input type="submit" name="action-add" value="Listeye Ekle"><br>
         </td>
       </tr>
     [% END %]
@@ -132,15 +133,15 @@ function subcatSelected() {
     subcatSelected();
   </script>
 
-  <h3>List Of Data Sets To Plot</h3>
+  <h3>Çizdirilecek Veri Setinin Listesi</h3>
 
   [% IF chart.lines.size > 0 %]
     <table cellspacing="2" cellpadding="2">
       <tr>
-        <th style="width: 5em;">Select</th>
-        <th>Label</th>
+        <th style="width: 5em;">Seç</th>
+        <th>Etiket</th>
         <th></th>
-        <th>Data Set</th>
+        <th>Veri Seti</th>
         <th></th>
       </tr>
       
@@ -189,13 +190,13 @@ function subcatSelected() {
             <td align="center">
               [% IF user.id == series.creator OR UserInGroup("admin") %]
                <a href="chart.cgi?action=edit&series_id=
-                       [% series.series_id %]">Edit</a> |
+                       [% series.series_id %]">Düzenle</a> |
               [% END %]
               <a href="buglist.cgi?cmdtype=dorem&amp;namedcmd=
                 [% series.category FILTER url_quote %]%20/%20
                 [% series.subcategory FILTER url_quote %]%20/%20
                 [% series.name FILTER url_quote -%]&amp;series_id=
-                [% series.series_id %]&amp;remaction=runseries">Run Search</a>
+                [% series.series_id %]&amp;remaction=runseries">Aramayı Başlat</a>
             </td>        
           </tr>
         [% END %]
@@ -226,40 +227,41 @@ function subcatSelected() {
 
       <tr>
         <td valign="bottom" style="text-align: center;">
-          <input type="submit" name="action-sum" value="Sum" 
+          <input type="submit" name="action-sum" value="Toplam" 
                  style="width: 5em;"><br>
-          <input type="submit" name="action-remove" value="Remove"
+          <input type="submit" name="action-remove" value="Çıkar"
                  style="width: 5em;">
         </td>
 
         <td style="text-align: right; vertical-align: bottom;">
-          <b>Cumulate:</b> 
+          <b>Kümülatif:</b> 
           <input type="checkbox" name="cumulate" value="1"
           [% " checked" IF chart.cumulate %]>
         </td>
 
         <td></td>
         <td valign="bottom"> 
-          <b>Date Range:</b> 
+          <b>Tarih Aralığı:</b> 
           <input type="text" size="12" name="datefrom" 
             value="[% time2str("%Y-%m-%d", chart.datefrom) IF chart.datefrom%]">
-          <b>to</b> 
+          <b>ile</b> 
           <input type="text" size="12" name="dateto" 
             value="[% time2str("%Y-%m-%d", chart.dateto) IF chart.dateto %]">
+           <b>arası</b>
         </td>
 
         <td style="text-align: right" valign="bottom">
-          <input type="submit" name="action-wrap" value="Chart This List">
+          <input type="submit" name="action-wrap" value="Bu Listenin Grafiğini Çıkar">
         </td>
       </tr>
     </table>
   [% ELSE %]
-  <p><i>None</i></p>
+  <p><i>Hiçbiri</i></p>
   [% END %]  
 </form>
 
 [% IF UserInGroup('editbugs') %]
-  <h3><a href="query.cgi?format=create-series">Create New Data Set</a></h3>
+  <h3><a href="query.cgi?format=create-series">Yeni Veri Seti Oluştur</a></h3>
 [% END %]                 
 
 [% PROCESS global/footer.html.tmpl %]
