@@ -16,6 +16,8 @@
 #include <net/if.h>
 
 #include <qpushbutton.h>
+#include <qradiobutton.h>
+#include <kcombobox.h>
 #include <qlineedit.h>
 
 #include <klocale.h>
@@ -29,6 +31,15 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
       _dev( dev ),
       _wifi( wifi )
 {
+
+    // fill automatic types, for now only DHCP is supported
+    automaticCombo->insertItem( "DHCP" );
+
+    connect( automaticButton, SIGNAL( toggled( bool ) ),
+             this, SLOT( automaticToggled( bool ) ) );
+    connect( manualButton, SIGNAL( toggled( bool ) ),
+             this, SLOT( manualToggled( bool ) ) );
+
     connect( applyButton, SIGNAL( clicked() ),
              this, SLOT( slotApply() ) );
     connect( cancelButton, SIGNAL( clicked() ),
@@ -120,4 +131,29 @@ int DeviceSettings::set_iface( const char *dev, const char *ip,
     }
 
     return 0;
+}
+
+void DeviceSettings::automaticToggled( bool on )
+{
+    if ( on ) {
+        // automatic choosen, disable manual settings...
+        manualButton->setChecked( false );
+        ipaddr->setEnabled( false );
+        broadcast->setEnabled( false );
+        netmask->setEnabled( false );
+
+        automaticCombo->setEnabled( true );
+    }
+}
+
+void DeviceSettings::manualToggled( bool on )
+{
+    if ( on ) {
+        automaticButton->setChecked( false );
+        automaticCombo->setEnabled( false );
+
+        ipaddr->setEnabled( true );
+        broadcast->setEnabled( true );
+        netmask->setEnabled( true );
+    }
 }

@@ -25,6 +25,9 @@ protected slots:
     void slotApply();
     void slotCancel();
 
+    void automaticToggled( bool on );
+    void manualToggled( bool on );
+
 private:
     QString _dev;
     bool _wifi;

@@ -141,6 +141,9 @@
                                 <property name="name">
                                     <cstring>automaticCombo</cstring>
                                 </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
                             </widget>
                         </hbox>
                     </widget>
