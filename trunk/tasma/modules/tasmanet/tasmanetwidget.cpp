@@ -53,7 +53,7 @@ void TasmaNetWidget::updateInterfaces()
 
     QFile net_file( PROC_NET_DEV );
     QString line;
-    QPixmap _icon = DesktopIcon( "network_local", KIcon::SizeMedium );
+    QPixmap _icon = DesktopIcon( "network_local", KIcon::SizeLarge );
 
     if ( !net_file.exists() || !net_file.open( IO_ReadOnly ) )
         return;
