@@ -186,9 +186,9 @@ CREATE TABLE `pardil_roles` (
 -- Tablo döküm verisi `pardil_roles`
 -- 
 
-INSERT INTO `pardil_roles` (`id`, `name`, `level`) VALUES (1, 'Proje Yöneticisi', 1);
-INSERT INTO `pardil_roles` (`id`, `name`, `level`) VALUES (2, 'Geliştirici', 2);
-INSERT INTO `pardil_roles` (`id`, `name`, `level`) VALUES (3, 'Destekçi', 3);
+INSERT INTO `pardil_roles` (`id`, `name`, `level`) VALUES (1, 'Project Manager', 1);
+INSERT INTO `pardil_roles` (`id`, `name`, `level`) VALUES (2, 'Developer', 2);
+INSERT INTO `pardil_roles` (`id`, `name`, `level`) VALUES (3, 'Contributor', 3);
 
 -- --------------------------------------------------------
 
@@ -207,9 +207,9 @@ CREATE TABLE `pardil_status` (
 -- Tablo döküm verisi `pardil_status`
 -- 
 
-INSERT INTO `pardil_status` (`id`, `name`) VALUES (1, 'Onay Bekliyor');
-INSERT INTO `pardil_status` (`id`, `name`) VALUES (2, 'Aktif');
-INSERT INTO `pardil_status` (`id`, `name`) VALUES (3, 'Askıda');
+INSERT INTO `pardil_status` (`id`, `name`) VALUES (1, 'Pending');
+INSERT INTO `pardil_status` (`id`, `name`) VALUES (2, 'Active');
+INSERT INTO `pardil_status` (`id`, `name`) VALUES (3, 'Locked');
 
 -- --------------------------------------------------------
 
