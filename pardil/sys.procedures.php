@@ -234,7 +234,7 @@
 
     $str_date = ($str_date != '') ? $str_date : date('Y.m.d H:i:s');
     $dbl_version = 1.0;
-    $str_sql = sprintf('INSERT INTO pardil_revisions (pardil, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil_id, $int_sender, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
+    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil_id, $int_sender, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
     mysql_query($str_sql);
 
     $int_status = ($bln_approve) ? 2 : 1;
@@ -254,7 +254,7 @@
 
   function proc_revision_new($int_pardil, $int_revisor, $dbl_version, $str_content, $str_notes, $str_info, $str_date='') {
     $str_date = ($str_date != '') ? $str_date : date('Y.m.d H:i:s');
-    $str_sql = sprintf('INSERT INTO pardil_revisions (pardil, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil, $int_sender, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
+    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil, $int_sender, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
     mysql_query($str_sql);
     return mysql_insert_id();
   }
@@ -283,22 +283,22 @@
       return false;
     }
     // Pardil_Images
-    $str_sql = sprintf('DELETE FROM pardil_images WHERE pardil=%d', $int_pardil);
+    $str_sql = sprintf('DELETE FROM pardil_images WHERE proposal=%d', $int_pardil);
     mysql_query($str_sql);
     // Pardil_Maintainers
-    $str_sql = sprintf('DELETE FROM pardil_maintainers WHERE pardil=%d', $int_pardil);
+    $str_sql = sprintf('DELETE FROM pardil_maintainers WHERE proposal=%d', $int_pardil);
     mysql_query($str_sql);
     // Pardil_R_Releated
-    $str_sql = sprintf('DELETE FROM pardil_r_releated WHERE pardil=%d OR pardil2=%d', $int_pardil, $int_pardil);
+    $str_sql = sprintf('DELETE FROM pardil_r_releated WHERE proposal=%d OR proposal2=%d', $int_pardil, $int_pardil);
     mysql_query($str_sql);
     // Pardil_R_Roles
-    $str_sql = sprintf('DELETE FROM pardil_r_releated WHERE pardil=%d', $int_pardil);
+    $str_sql = sprintf('DELETE FROM pardil_r_releated WHERE proposal=%d', $int_pardil);
     mysql_query($str_sql);
     // Pardil_R_Status
-    $str_sql = sprintf('DELETE FROM pardil_r_status WHERE pardil=%d', $int_pardil);
+    $str_sql = sprintf('DELETE FROM pardil_r_status WHERE proposal=%d', $int_pardil);
     mysql_query($str_sql);
     // Pardil_Revisions
-    $str_sql = sprintf('DELETE FROM pardil_revisions WHERE pardil=%d', $int_pardil);
+    $str_sql = sprintf('DELETE FROM pardil_revisions WHERE proposal=%d', $int_pardil);
     mysql_query($str_sql);
     // Pardil_Main
     $str_sql = sprintf('DELETE FROM pardil_main WHERE id=%d', $int_pardil);

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Sunucu: localhost
--- Çıktı Tarihi: Mart 21, 2005 at 10:07 PM
+-- Çıktı Tarihi: Mart 21, 2005 at 10:29 PM
 -- Server sürümü: 4.0.22
 -- PHP Sürümü: 5.0.2
 -- 
@@ -19,7 +19,7 @@
 DROP TABLE IF EXISTS `pardil_images`;
 CREATE TABLE `pardil_images` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `ugo` int(10) unsigned NOT NULL default '0',
+  `proposal` int(10) unsigned NOT NULL default '0',
   `image` longblob NOT NULL,
   `content_type` varchar(20) NOT NULL default '',
   PRIMARY KEY  (`id`)
@@ -49,7 +49,7 @@ CREATE TABLE `pardil_main` (
 -- Tablo döküm verisi `pardil_main`
 -- 
 
-INSERT INTO `pardil_main` (`id`, `sender`, `title`, `abstract`) VALUES (1, 2, 'Pardil: Pardus İyileştirme Listesi', '<a href="http://www.gentoo.org/proj/en/glep/">GLEP</a> (Gentoo Linux Enchancement Proposals) ya da <a href="http://python.org/peps/">PEP</a> (Python Enhancement Proposals) gibi bir sistem kurulması fikri Uludağ listesinde ortaya atılmıştı. Bu uygulama, projeler ile ilgili öneri ve fikirlerin kaybolup gitmemesi için, onları somut, fikir bütünlüğü ve tutarlılık arz eden bir belge olarak saklanılabileceği ve insanların da onları görüntüleyebileceği bir alt yapının gerekliliğini karşılamayı hedeflemektedir.');
+INSERT INTO `pardil_main` (`id`, `sender`, `title`, `abstract`) VALUES (1, 1, 'Pardil: Pardus İyileştirme Listesi', '<a href="http://www.gentoo.org/proj/en/glep/">GLEP</a> (Gentoo Linux Enchancement Proposals) ya da <a href="http://python.org/peps/">PEP</a> (Python Enhancement Proposals) gibi bir sistem kurulması fikri Uludağ listesinde ortaya atılmıştı. Bu uygulama, projeler ile ilgili öneri ve fikirlerin kaybolup gitmemesi için, onları somut, fikir bütünlüğü ve tutarlılık arz eden bir belge olarak saklanılabileceği ve insanların da onları görüntüleyebileceği bir alt yapının gerekliliğini karşılamayı hedeflemektedir.');
 INSERT INTO `pardil_main` (`id`, `sender`, `title`, `abstract`) VALUES (2, 1, 'Pardus Proje Yönetimi', 'Bu öneri, Ulusal Dağıtım Projesi ile ilgili bir alt proje başlatılması için gereken şartlar ve izlenmesi gereken prosedür hakkında bilgi vermeyi amaçlamaktadır.');
 
 -- --------------------------------------------------------
@@ -61,7 +61,7 @@ INSERT INTO `pardil_main` (`id`, `sender`, `title`, `abstract`) VALUES (2, 1, 'P
 DROP TABLE IF EXISTS `pardil_maintainers`;
 CREATE TABLE `pardil_maintainers` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `ugo` int(10) unsigned NOT NULL default '0',
+  `proposal` int(10) unsigned NOT NULL default '0',
   `user` int(10) unsigned NOT NULL default '0',
   `timestampB` datetime NOT NULL default '0000-00-00 00:00:00',
   `timestampE` datetime NOT NULL default '9999-12-31 23:59:59',
@@ -72,8 +72,8 @@ CREATE TABLE `pardil_maintainers` (
 -- Tablo döküm verisi `pardil_maintainers`
 -- 
 
-INSERT INTO `pardil_maintainers` (`id`, `ugo`, `user`, `timestampB`, `timestampE`) VALUES (1, 1, 1, '2005-03-11 17:00:00', '9990-12-31 23:59:59');
-INSERT INTO `pardil_maintainers` (`id`, `ugo`, `user`, `timestampB`, `timestampE`) VALUES (2, 1, 1, '2005-03-11 17:30:00', '9999-12-31 23:59:59');
+INSERT INTO `pardil_maintainers` (`id`, `proposal`, `user`, `timestampB`, `timestampE`) VALUES (1, 1, 1, '2005-03-11 17:00:00', '9990-12-31 23:59:59');
+INSERT INTO `pardil_maintainers` (`id`, `proposal`, `user`, `timestampB`, `timestampE`) VALUES (2, 2, 1, '2005-03-11 17:30:00', '9999-12-31 23:59:59');
 
 -- --------------------------------------------------------
 
@@ -84,8 +84,8 @@ INSERT INTO `pardil_maintainers` (`id`, `ugo`, `user`, `timestampB`, `timestampE
 DROP TABLE IF EXISTS `pardil_r_releated`;
 CREATE TABLE `pardil_r_releated` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `ugo` int(10) unsigned NOT NULL default '0',
-  `ugo2` int(10) unsigned NOT NULL default '0',
+  `proposal` int(10) unsigned NOT NULL default '0',
+  `proposal2` int(10) unsigned NOT NULL default '0',
   `timestampB` datetime NOT NULL default '0000-00-00 00:00:00',
   `timestampE` datetime NOT NULL default '9999-12-31 23:59:59',
   PRIMARY KEY  (`id`)
@@ -95,7 +95,7 @@ CREATE TABLE `pardil_r_releated` (
 -- Tablo döküm verisi `pardil_r_releated`
 -- 
 
-INSERT INTO `pardil_r_releated` (`id`, `ugo`, `ugo2`, `timestampB`, `timestampE`) VALUES (1, 2, 1, '2000-01-01 00:00:00', '9999-12-31 23:59:59');
+INSERT INTO `pardil_r_releated` (`id`, `proposal`, `proposal2`, `timestampB`, `timestampE`) VALUES (1, 2, 1, '2000-01-01 00:00:00', '9999-12-31 23:59:59');
 
 -- --------------------------------------------------------
 
@@ -106,20 +106,18 @@ INSERT INTO `pardil_r_releated` (`id`, `ugo`, `ugo2`, `timestampB`, `timestampE`
 DROP TABLE IF EXISTS `pardil_r_roles`;
 CREATE TABLE `pardil_r_roles` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `ugo` int(10) unsigned NOT NULL default '0',
+  `proposal` int(10) unsigned NOT NULL default '0',
   `user` int(10) unsigned NOT NULL default '0',
   `role` int(10) unsigned NOT NULL default '0',
   `timestampB` datetime NOT NULL default '0000-00-00 00:00:00',
   `timestampE` datetime NOT NULL default '9999-12-31 23:59:59',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM COMMENT='UGO - Rol ilişkileri' AUTO_INCREMENT=3 ;
+) TYPE=MyISAM COMMENT='UGO - Rol ilişkileri' AUTO_INCREMENT=1 ;
 
 -- 
 -- Tablo döküm verisi `pardil_r_roles`
 -- 
 
-INSERT INTO `pardil_r_roles` (`id`, `ugo`, `user`, `role`, `timestampB`, `timestampE`) VALUES (1, 1, 1, 1, '2005-03-11 19:20:00', '9999-12-31 23:59:59');
-INSERT INTO `pardil_r_roles` (`id`, `ugo`, `user`, `role`, `timestampB`, `timestampE`) VALUES (2, 1, 1, 1, '2005-03-12 00:20:00', '9999-12-31 23:59:59');
 
 -- --------------------------------------------------------
 
@@ -130,7 +128,7 @@ INSERT INTO `pardil_r_roles` (`id`, `ugo`, `user`, `role`, `timestampB`, `timest
 DROP TABLE IF EXISTS `pardil_r_status`;
 CREATE TABLE `pardil_r_status` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `ugo` int(10) unsigned NOT NULL default '0',
+  `proposal` int(10) unsigned NOT NULL default '0',
   `status` int(10) unsigned NOT NULL default '0',
   `timestampB` datetime NOT NULL default '0000-00-00 00:00:00',
   `timestampE` datetime NOT NULL default '9999-12-31 23:59:59',
@@ -141,8 +139,8 @@ CREATE TABLE `pardil_r_status` (
 -- Tablo döküm verisi `pardil_r_status`
 -- 
 
-INSERT INTO `pardil_r_status` (`id`, `ugo`, `status`, `timestampB`, `timestampE`) VALUES (1, 1, 2, '2000-01-01 00:00:00', '9999-12-31 23:59:59');
-INSERT INTO `pardil_r_status` (`id`, `ugo`, `status`, `timestampB`, `timestampE`) VALUES (2, 2, 2, '2000-01-01 00:00:00', '9999-12-31 23:59:59');
+INSERT INTO `pardil_r_status` (`id`, `proposal`, `status`, `timestampB`, `timestampE`) VALUES (1, 1, 2, '2000-01-01 00:00:00', '9999-12-31 23:59:59');
+INSERT INTO `pardil_r_status` (`id`, `proposal`, `status`, `timestampB`, `timestampE`) VALUES (2, 2, 2, '2000-01-01 00:00:00', '9999-12-31 23:59:59');
 
 -- --------------------------------------------------------
 
@@ -153,7 +151,7 @@ INSERT INTO `pardil_r_status` (`id`, `ugo`, `status`, `timestampB`, `timestampE`
 DROP TABLE IF EXISTS `pardil_revisions`;
 CREATE TABLE `pardil_revisions` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `ugo` int(10) unsigned NOT NULL default '0',
+  `proposal` int(10) unsigned NOT NULL default '0',
   `revisor` int(10) unsigned NOT NULL default '0',
   `version` double NOT NULL default '0.1',
   `content` text NOT NULL,
@@ -161,14 +159,14 @@ CREATE TABLE `pardil_revisions` (
   `info` varchar(250) NOT NULL default '',
   `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM COMMENT='Öneri revizyonları' AUTO_INCREMENT=3 ;
+) TYPE=MyISAM COMMENT='Öneri revizyonları' AUTO_INCREMENT=21 ;
 
 -- 
 -- Tablo döküm verisi `pardil_revisions`
 -- 
 
-INSERT INTO `pardil_revisions` (`id`, `ugo`, `revisor`, `version`, `content`, `notes`, `info`, `timestamp`) VALUES (1, 1, 1, 1, '<section>\r\n  <title>Problem</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Kapsam</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Çözüm</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', '<note>a</note>\r\n<note>b</note>\r\n<note>c</note>', 'İlk sürüm.', '2005-03-12 02:08:39');
-INSERT INTO `pardil_revisions` (`id`, `ugo`, `revisor`, `version`, `content`, `notes`, `info`, `timestamp`) VALUES (2, 2, 1, 1, '<section>\r\n  <title>Prosedür</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Proje Grupları</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Şartlar</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', '...', 'İlk sürüm.', '2000-01-01 00:00:00');
+INSERT INTO `pardil_revisions` (`id`, `proposal`, `revisor`, `version`, `content`, `notes`, `info`, `timestamp`) VALUES (3, 1, 1, 1, '<section>\r\n  <title>Problem</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Kapsam</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Çözüm</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', '<note>a</note>\r\n<note>b</note>\r\n<note>c</note>', 'İlk sürüm.', '2005-03-12 02:08:39');
+INSERT INTO `pardil_revisions` (`id`, `proposal`, `revisor`, `version`, `content`, `notes`, `info`, `timestamp`) VALUES (20, 2, 1, 1, '<section>\r\n  <title>Prosedür</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Proje Grupları</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Şartlar</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', '...', 'İlk sürüm.', '2000-01-01 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -235,4 +233,4 @@ CREATE TABLE `users` (
 -- 
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `name`, `level`) VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'ugos@uludag.org.tr', 'Pardil Admin', 0);
-        
+

@@ -3,7 +3,6 @@
   require('sys.database.php');
   require('sys.procedures.php');
 
-
   // Denetimler
   $arr_errors = array();
   if (isset($_POST['pardil_new']) && !isset($_POST['pardil_new_content_title_add'])) {
@@ -65,7 +64,7 @@
         <span class="title">Yeni pardil</span>
       </div>
       <div id="content">
-        <div class="pardil">
+        <div class="proposal">
           <h1>ÜGÖ Ekle</h1>
           <p>&nbsp;</p>
           <form action="new.php" method="post">
