@@ -18,6 +18,9 @@
 #include <qpushbutton.h>
 #include <qlineedit.h>
 
+#include <klocale.h>
+#include <kmessagebox.h>
+
 #include "devicesettings.h"
 #include "devicesettings.moc"
 
@@ -36,11 +39,15 @@ void DeviceSettings::slotApply()
 {
     int ret = set_iface( _dev.ascii(),
                          ipaddr->text().ascii(),
-                         broadcast->text().ascii(),
-                         netmask->text().ascii() );
+                         // we can ommit broadcast and netmask.
+                         broadcast->text().length() ? broadcast->text().ascii() : 0,
+                         netmask->text().length() ? netmask->text().ascii() : 0
+        );
 
-    if ( ret < 0 )
-        qDebug( "HATA...\n" );
+    if ( ret < 0 ) {
+        QString err = i18n( "Failed to configure device: " ) + _dev;
+        KMessageBox::error( this, err, i18n( "Error!" ) );
+    }
 
     done( 0 );
 }
@@ -80,26 +87,36 @@ int DeviceSettings::set_iface( const char *dev, const char *ip,
     if ( skfd < 0 )
         return -1;
 
+    // enable (up) device
     strcpy( ifr.ifr_name, dev );
+    ifr.ifr_flags |= IFF_UP | IFF_RUNNING;
+    if ( ioctl( skfd, SIOCSIFFLAGS, &ifr ) < 0 ) {
+        return -1;
+    }
+
     memset( &sin, 0, sizeof( struct sockaddr ) );
     sin.sin_family = AF_INET;
-    inet_aton( ip, &(sin.sin_addr) );
 
+    inet_aton( ip, &(sin.sin_addr) );
     memcpy( &ifr.ifr_addr, &sin, sizeof( struct sockaddr ));
     if ( ioctl( skfd, SIOCSIFADDR, &ifr ) < 0 ) {
         return -1;
     }
 
-    inet_aton( bc, &(sin.sin_addr) );
-    memcpy( &ifr.ifr_addr, &sin, sizeof(struct sockaddr) );
-    if ( ioctl( skfd, SIOCSIFBRDADDR, &ifr ) ) {
-        return -1;
+    if ( bc ) {
+        inet_aton( bc, &(sin.sin_addr) );
+        memcpy( &ifr.ifr_addr, &sin, sizeof(struct sockaddr) );
+        if ( ioctl( skfd, SIOCSIFBRDADDR, &ifr ) ) {
+            return -1;
+        }
     }
 
-    inet_aton( nm, &(sin.sin_addr) );
-    memcpy( &ifr.ifr_addr, &sin, sizeof(struct sockaddr) );
-    if ( ioctl( skfd, SIOCSIFNETMASK, &ifr ) ) {
-        return -1;
+    if ( nm ) {
+        inet_aton( nm, &(sin.sin_addr) );
+        memcpy( &ifr.ifr_addr, &sin, sizeof(struct sockaddr) );
+        if ( ioctl( skfd, SIOCSIFNETMASK, &ifr ) ) {
+            return -1;
+        }
     }
 
     return 0;
