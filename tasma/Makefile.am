@@ -1,5 +1,6 @@
 
-SUBDIRS = tasma \
+SUBDIRS = comarrpc \
+	tasma \
 	applnk
 
 rctasmapicsdir = $(kde_datadir)/tasma/pics
