@@ -60,6 +60,7 @@ class Cutter:
 	def get_nodes (self, lines):
 		# hevea ciktisinda dokuman bolumlerini ayir
 		nodes = []
+		node = None
 		flag = 0
 		p = re.compile ("<!--SEC END -->")
 		for line in lines:
@@ -89,7 +90,8 @@ class Cutter:
 					flag = 1
 				else:
 					node.lines.append (line)
-		nodes.append (node)
+		if node:
+			nodes.append (node)
 		self.fix_levels (nodes)
 		return nodes
 	
@@ -132,11 +134,11 @@ class Cutter:
 				if size > 60:
 					self.mark_cut (nodes, i)
 		# index linkleri icin numaralama
-		index = 0
+		index = -1
 		for node in nodes:
-			node.index = index
 			if node.cut == 1:
 				index += 1
+			node.index = index
 		# bolumleri sayfalara ayir
 		sects = []
 		index = 0
@@ -144,7 +146,7 @@ class Cutter:
 		for i, node in enumerate (nodes):
 			if node.cut == 1:
 				if sect != None:
-					if sect.toc == 0:
+					if sect.toc == 0 and node.lvl > sect.lvl:
 						last_lvl = sect.lvl
 						while nodes[i]:
 							if nodes[i].lvl > last_lvl:
@@ -286,6 +288,11 @@ class Cutter:
 		# bolumleri ayiralim
 		doc.head = self.get_header (doc.lines)
 		doc.nodes = self.get_nodes (doc.lines)
+		if len (doc.nodes) == 0:
+			# ozel durum, bolumsuz belge
+			self.write_html (doc.lines, html_name)
+			self.write_html (doc.lines, "index.html")
+			return
 		# hevea ciktisini duzeltelim
 		self.write_html (doc.lines, html_name)
 		# cok sayfali halini olusturalim
