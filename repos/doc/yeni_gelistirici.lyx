@@ -124,7 +124,13 @@ Yazýlým geliþtirme, hata ayýklama
 Yazýlým geliþtrme konusundaki bilginizi ve emeðinizi bu alanda çalýþan kaynak
  temizleme ve yenilikçi teknolojiler ekiplerine yardýmcý olarak aktarabilirsiniz.
  Onlara nasýl yardýmcý olabileceðinizi en iyi kendileri söyleyeceklerdir.
- Uludað e-posta listeleri size bu konuda yardýmcý olacaktýr.
+ 
+\begin_inset LatexCommand \url{http://liste.uludag.org.tr/cgi-bin/mailman/listinfo}
+
+\end_inset 
+
+ adresi yardýmý ile üye olabileceðiniz Uludað e-posta listeleri size bu
+ konuda yardýmcý olacaktýr.
 \layout Standard
 
 Web sayafalarýndan ulaþýlabilecek Uludað hata takip sistemini kullanarak
@@ -134,16 +140,16 @@ Web sayafalarýndan ulaþýlabilecek Uludað hata takip sistemini kullanarak
 Çeviri
 \layout Standard
 
-Özgür yazýlýmlarýn yerelleþtirilmesi ve tam bir Türkçe ile kullanýlabilmeleri
- bir diðer ihtiyacýmýz.
- Bunun için hemen her büyük özgür yazýlým için oluþturulan yerelleþtirme
- ekipleri ile birlikte çalýþabilirsiniz.
+Özgür yazýlýmlarýn yerelleþtirilmesi, doðru ve eksiksiz bir Türkçe ile kullanýla
+bilmeleri bir diðer ihtiyacýmýz.
+ Bunun için hemen her büyük özgür yazýlým projesi için oluþturulmuþ olan
+ yerelleþtirme ekipleri ile birlikte çalýþabilirsiniz.
  Öncelikli olarak Uludað için seçtiðimiz yazýlýmlarýn yerelleþtirme çalýþmalarýn
 a destek olmanýz bize doðrudan fayda saðlayacaktýr.
 \layout Standard
 
-Kýsaca yerelleþtirme çalýþmalarýna destek olun.
- Ham çevirinin ötesinde çeviri kalitelerini de arttýrmaya çalýþýn.
+Kýsaca yerelleþtirme çalýþmalarýna destek olun; ham çevirinin ötesinde çeviriler
+in kalitelerini de arttýrmaya çalýþýn.
  Çeviri çalýþmalarýna destek olmakla sadece Ulusal Daðýtým'a deðil, mevcut
  tüm Linux daðýtýmlarýnada sorunsuz Türkçe'ye sahip paketler kazandýrarak
  önemli bir misyonun parçasý olabilirsiniz.
@@ -165,16 +171,25 @@ Seçtiðimiz yazýlýmlarý test ederek hata bildiriminde bulunabilirsiniz.
  Hatalarý diðer daðýtýmlarda kontrol ederek durumu raporlayabilirsiniz.
  Diðer daðýtýmlarda da bu sorunun olduðunu bilmek doðru bir çözüm üretmek
  konusunda bize yardýmcý olabilir.
- Eðer sorun test ettiðiniz bir daðýtýmda çözülmüþ (veya hiç yok) ise çözüme
- ulaþmamýz o daðýtýmý inceleyerek daha rahat olacaktýr.
+ Eðer sorun test ettiðiniz bir daðýtýmda çözülmüþ (veya hiç yok) ise, çözüme
+ ulaþmamýz o daðýtýmýn yazýlýmla ilgili yaptýðý çalýþmalarý inceleyerek
+ daha hýzlý olacaktýr.
+ Hata takip sistemimize 
+\begin_inset LatexCommand \url{http://bugs.uludag.org.tr/}
+
+\end_inset 
+
+ adresinden eriþebilirsiniz.
 \layout Subsubsection
 
 Grafik Tasarým, Çoklu ortam
 \layout Standard
 
-Eðer bu konuda yeteneðiniz varsa daðýtým içerisinde kullanýlacak logo, ikon
- setleri, yazý tipleri, renk temalarý gibi grafik bilgisi gerektiren konularda
- yardýmcý olabilirsiniz.
+Eðer bu konuda yeteneðiniz varsa daðýtým içerisinde kullanýlacak ikon setleri,
+ yazý tipleri, renk temalarý gibi grafik bilgisi gerektiren konularda yardýmcý
+ olabilirsiniz.
+ Çalýþmalarýnýzda ihtiyaç duyabileceðiniz görsel materyal konusunda e-posta
+ listelerimiz yoluyla bizden yardým isteyebilirsiniz.
 \layout Subsubsection
 
 Belgeleme
@@ -191,6 +206,9 @@ Nasýl yapýlýr
 \end_inset 
 
  belgeleri hazýrlayabilirsiniz.
+ Web sayfalarýmýzýn güncellenmesinde bize yardýmcý olabilirsiniz ya da web
+ sayfalarýmýzýn Ýngilizce, Almanca, Ispanyolca gidi yabancý dillerdeki çeviriler
+inin güncel olmasýný saðlayabilirsiniz.
 \layout Subsubsection
 
 Tanýtým
@@ -323,13 +341,13 @@ Subversion depolarý
 
 Uludað kapsamýndaki geliþtirme süreci Subversion sürüm kontrol sistemi üzerinden
  gerçekleþtirilmektedir.
- Subversion açýk kaynak kodlu bir sürüm takip sistemidir Bir yazýlým projesi
- üzerinde birden fazla uygulama geliþtiricisinin birbirlerinin yaptýklarý
- deðiþiklikleri bozma kaygýsý olmadan bir arada çalýþabilmelerini saðlayan
- bir geliþtirme altyapýsýdýr.
- Subversion sayesinde herhangi bir yazýlým geliþim süreci geriye dönük takip
- edilebilmekte, zaman içerisinde yapýlan deðiþiklikler gözlenebilmekte,
- herhangi bir zamanki versiyona kolayca dönülebilmektedir.
+ Subversion açýk kaynak kodlu bir sürüm takip sistemidir.
+ Bir yazýlým projesi üzerinde birden fazla uygulama geliþtiricisinin birbirlerin
+in yaptýklarý deðiþiklikleri bozma kaygýsý olmadan bir arada çalýþabilmelerini
+ saðlayan bir geliþtirme altyapýsýdýr.
+ Bu sayede herhangi bir yazýlýmýn geliþim süreci geriye dönük takip edilebilmekt
+e, zaman içerisinde yapýlan deðiþiklikler gözlenebilmekte, herhangi bir
+ zamanki versiyona kolayca dönülebilmektedir.
 \layout Standard
 
 Uludað bünyesinde þu anda kullandýðýmýz iki adet subversion deposu bulunuyor.
@@ -430,7 +448,18 @@ collapsed true
 Sistemimde subversion olup olmadýðýný nasýl anlayabilirim?
 \layout Standard
 
-Sisteminizde subversion olup olmadýðýný en hýzlý þekilde '''svn --version'''
+Sisteminizde subversion olup olmadýðýný en hýzlý þekilde 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\series bold 
+svn --version
+\series default 
+
+\begin_inset Quotes erd
+\end_inset 
+
  komutunun çýktýsýna bakarak öðrenebilirsiniz.
  Þuna benzer bir þeyler görmeniz iyiye iþarettir:
 \layout LyX-Code
@@ -485,7 +514,7 @@ Eðer yoksa,
 
 \end_inset 
 
- adresinden daðýtýmýnýz ya da iþletim sisteminiz için hazýrlanmýþ olan pakedi
+ adresinden daðýtýmýnýz ya da iþletim sisteminiz için hazýrlanmýþ olan paketi
  alarak sisteminize kurabilirsiniz.
 \layout Subsubsection
 
@@ -493,19 +522,18 @@ Depo nedir?
 \layout Standard
 
 Depo (repository), herkesin üzerinde çalýþtýðý yazýlým(lar)ýn son sürümünün,
- son sürümden önceki tüm sürümlerin ve sürümler arasý deðiþikliklerin kullanýcý,
- tarih ve sebep bilgileri ile beraber saklandýðý ve çeþitli yöntemlerle
- eriþilebilen bir disk alanýdýr.
+ son sürümden önceki tüm sürümlerinin ve sürümler arasý deðiþikliklerin
+ kullanýcý, tarih ve sebep bilgileri ile beraber saklandýðý ve çeþitli yöntemler
+le eriþilebilen bir disk alanýdýr.
  
 \layout Subsubsection
 
 Depoda hangi dizinlerin olduðunu nasýl görebilirim?
 \layout Standard
 
-Sizin de belirttiðiniz gibi, bir depo, içerisinde birden fazla dizin ya
- da içerebilir.
+Sizin de belirttiðiniz gibi, bir depo, içerisinde birden fazla dizin içerebilir.
  Deponun hiyerarþisi, diskimiz üzerindeki bir dizinin içi gibidir.
- Böylece deponun tamamýný diskinize almadan gzip, sadece üzerinde çalýþmak
+ Böylece deponun tamamýný diskinize almadan gezip, sadece üzerinde çalýþmak
  ya da göz atmak istediðiniz kýsmýn kopyasýný diskinize alabilirsiniz.
  Depo içerisindeki dizinler ve dosyalarýn listesini 
 \begin_inset Quotes eld
@@ -606,7 +634,20 @@ $
 Depodaki bir dizinin kopyasýný nasýl alabilirim?
 \layout Standard
 
-Tüm depoyu almak için aþaðýdaki komut kullanýlabilir.
+Deponun bir kopyasýnýn oluþturulmasý esnasýnda 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\series bold 
+svn co
+\series default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+ komutu kullanýlýr.
+ Kopya oluþtuktan sonra bir daha bu komut kopya üzerinde iþlem yapýlmaz.
 \layout LyX-Code
 
 $ svn co http://svn.uludag.org.tr/uludag
@@ -689,7 +730,7 @@ Dosyalarýn yanlarýndaki iþaretler ne anlama geliyor?
 
 SVN ile çalýþýrken, güncelleme, sorgulama gibi iþlemler esnasýnda dosyalarýn
  yanýnda bir önceki örnekte de olduðu gibi kendinden sonraki dosya ile ilgili
- ne gibi bir deðiþiklik olduðunu size haber vermek içindirler:.
+ ne gibi bir deðiþiklik olduðunu size haber vermek içindirler.
 \layout Standard
 
 Dosyalarýn yanýnda 
@@ -859,11 +900,19 @@ n", buf);
 ~/work/[...]/trunk/COMAR/comar $ 
 \layout Subsubsection
 
-Yeni bir dosya ekledim fakat yanýnda ? yazýyor...
+Yeni bir dosya ekledim fakat yanýnda 
+\begin_inset Quotes eld
+\end_inset 
+
+?
+\begin_inset Quotes erd
+\end_inset 
+
+ var...
 \layout Standard
 
 Deponun kopyasý üzerinde çalýþýrken yeni bir dosya yaratmak istediðinizde,
- dosyayý 
+ 
 \begin_inset Quotes eld
 \end_inset 
 
@@ -899,13 +948,25 @@ svn del
 \begin_inset Quotes erd
 \end_inset 
 
- gibi kardeþleri de vardýr) lokal kopyanýzý bunun depoya eklenmesini istediðiniz
-e dair haberdar etmeniz gerekir.
- Örneðin lokal kopyanýzdaki uygulamayý derleyip denemek istiyorsunuz, bu
- durumda çalýþma kopyanýzda asýl depoya göndermeyi istemeyeceðiniz Makefile'ler,
- *.m4 dosyalarý gibi sadece sizi ilgilendiren dosyayalar oluþacaktýr.
+ gibi kardeþleri de vardýr) lokal kopyanýzý bu dosyanýn depoya eklenmesini
+ istediðinize dair haberdar etmeniz gerekir.
+ Buna neden gerek olduðunu þöyle açýklamaya çalýþalým: Örneðin lokal kopyanýzdak
+i uygulamayý derleyip denemek istiyorsunuz, bu durumda çalýþma kopyanýzda,
+ asýl depoya göndermeyi istemeyeceðiniz Makefile'ler, *.m4 dosyalarý gibi
+ sadece sizi ilgilendiren dosyayalar oluþacaktýr.
  Böyle durumlarda eklediðiniz dosyalarýn, depoya da eklenmemesi büyük avantaj
- ve kolaylýk saðlar; svn add komutu ile 
+ ve kolaylýk saðlar, çünkü siz yazýlýmýn kaynak kodunu deðiþtirip, yeniden
+ derleyip uygun olduðunda depoya göndermeye karar verdiðinizde diðer dosyalarýn
+ depoya gitmeyeceðini bilirsiniz.
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+svn add
+\begin_inset Quotes erd
+\end_inset 
+
+ komutu ile 
 \emph on 
 eklenmesini istediðiniz
 \emph default 
@@ -959,7 +1020,11 @@ Yaptýðýnýz deðiþiklikleri istediðiniz an
 \begin_inset Quotes eld
 \end_inset 
 
+
+\series bold 
 svn revert
+\series default 
+
 \begin_inset Quotes erd
 \end_inset 
 
@@ -1068,8 +1133,8 @@ iniz.
 .
 \layout Standard
 
-Metin editörüne deðiþiklikleri yazýp, kaydedip editörü kapattýðýnýz anda
- svn yerel kopyanýzdaki deðiþiklikleri depoya göndermeye baþlar.
+Metin editörüne deðiþiklikleri yazýp, yazdýklarýnýzý kaydedip editörü kapattýðýn
+ýz anda svn yerel kopyanýzdaki deðiþiklikleri depoya göndermeye baþlar.
 \layout Subsubsection
 
 Baþka hangi komutlar var?
