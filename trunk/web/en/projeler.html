@@ -3,18 +3,18 @@
 
 <h1>Projects</h1>
 <ul>
-	<li><a href="#comar">Çomar</a></li>
-	<li><a href="#pisi">Pisi</a></li>
-	<li><a href="#yali">Yalı</a></li>
+	<li><a href="#comar">COMAR</a></li>
+	<li><a href="#pisi">PISI</a></li>
+	<li><a href="#yali">YALI</a></li>
 	<li><a href="#paketler">Packages</a></li>
 </ul>
 
-<h3 id="comar">Çomar</h3>
+<h3 id="comar">COMAR</h3>
 <p>
 COMAR (COnfiguration MAnageR), is a configuration framework which will function
 as a middle layer between package configurations. Packages will tell the jobs
-they can handle to the Çomar. They also ask the jobs or information they need
-from other packages from Çomar. These jobs would be specified within the Çomar's
+they can handle to the COMAR. They also ask the jobs or information they need
+from other packages from COMAR. These jobs would be specified within the COMAR's
 object model (OM) as a hierarchical class tree.
 </p>
 <p>
@@ -28,31 +28,31 @@ open the web connection (port 80) to the Apache.
 </p>
 <p>
 Since modifying the applications themselves is hard and would tie them to
-Çomar too much, we are going to use scripts written in a custom language
-called Çomar Scripting Language (CSL). These scripts will come with the
-package and provide the Çomar objects. Upon a call from Çomar, they'll
+COMAR too much, we are going to use scripts written in a custom language
+called COMAR Scripting Language (CSL). These scripts will come with the
+package and provide the COMAR objects. Upon a call from COMAR, they'll
 handle modifying package's configuration files according to the request,
 sending signals to the application or restarting it when necessary.
 </p>
 <p>
-There would be a Çomar daemon for keeping track of the requests, handling
+There would be a COMAR daemon for keeping track of the requests, handling
 atomicity of transactions, retrying them when they failed for temporary
 problems. It will also make it easy to implement remote objects, and
 Access Control Lists (ACLs) over local and remote objects.
 </p>
 
-<h3 id="pisi">Pisi</h3>
+<h3 id="pisi">PISI</h3>
 <p>
 PISI (Packages Installed Succesfully as Intented) is our package management
 system. It will handle installing and removing packages from network or
-installation media. Pisi will be based on Çomar. Dependencies could be either
-packages/libraries or Çomar classes. It is also possible to request a package
+installation media. PISI will be based on COMAR. Dependencies could be either
+packages/libraries or COMAR classes. It is also possible to request a package
 by classes it provides. Thus a user will be able to install a program for
 handling a MIME type or serving emails without knowing the names of required
 package names.
 </p>
 
-<h3 id="yali">Yalı</h3>
+<h3 id="yali">YALI</h3>
 <p>
 YALI (Yet Another Linux Installer) is our installer. It will install the
 base system and user's selection of packages to an install target and recover
