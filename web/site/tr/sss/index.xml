@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Sıkça Sorulanlar</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        Ulusal Dağıtım projesi 'sıkça sorulan sorular' listesi. Bu belge sürekli güncel tutularak proje ile ilgili merak edilenleri cevaplamayı amaçlamaktadır.
+      </para>
+    </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <title>Dağıtımın adı "Uludağ" mı olacak?</title>
+      <para>
+        Hayır. Uludağ, yalnızca, ulusal dağıtım oluşturma projesine verdiğimiz isim.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Ulusal Dağıtım'ın arkasında kim var? Sürekliliği nasıl sağlanacak?</title>
+      <para>
+        Ulusal Dağıtım projesi TÜBİTAK UEKAE bünyesinde başlatılmıştır. Dağıtımın oluşturulması ve çıkarılması bu proje kapsamında gerçekleştirilecektir. Projenin hedeflerinden birisi dağıtımı destekleyecek sürdürülebilir bir organizasyonun kurulması olarak belirlenmiştir. Bu şekilde sürekli dış kaynağa gereksinim duymadan, geliştirilecek iş modeli çerçevesinde kaynak yaratabilen ve dağıtımın sürekliliğini sağlayan bir yapı oluşturulabilecektir.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Ulusal Dağıtım Linux'tan farklı mı?</title>
+      <para>
+        Linux, yalnızca bir işletim sistemi çekirdeği projesidir. Bir Linux dağıtımı çok farklı kaynaklarda oluşturulan çekirdeği, araçları ve uygulama yazılımlarını toplayarak birlikte çalışabilirliklerini sağlayan, ortak bir yönetim çerçevesi ile birleştiren bir bütündür. Sıradan kullanıcının çekirdeği ve araçları tek tek edinip birlikte çalışmalarını sağlaması zorunluluğunu ortadan kaldırır. Ulusal Dağıtım bir Linux dağıtımı olduğundan Linux çekirdeğini ve ilintili araçları kullanır. Ancak bu derlemeye değer katarak kolay kurulabilir ve kullanılabilir hale getirir.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Ulusal Dağıtım ne zaman çıkacak?</title>
+      <para>
+        Tam teşekküllü işletim sistemi dağıtımının çıkış tarihi 2004 yılı sonu olarak planlanmaktadır. Ancak açık kaynak yöntemi ile geliştirme yapılacağından çıkış tarihi öncesinde deneme sürümlerine, yazılımlara ve tasarım dokümanlarına web sitesinden erişmek mümkün olabilecektir. Ayrıca sürümün çıkması öncesinde çeşitli projeler kapsamında Ulusal Dağıtım'ın kullanımına başlanacağı tahmin edilmektedir.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Ulusal Dağıtım satılacak mı?</title>
+      <para>
+        Ulusal Dağıtım'ın genel kullanıma dönük sürümü GPL lisanslama yöntemi ile yayınlanacak ve ücretsiz olarak edinilebilecektir. Ulusal Dağıtım kapsamıda yürütülecek tüm projelerde ve hazırlanan tüm yazılımlarda GPL lisanslama yönteminin kullanılması ilk seçenek olacaktır.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Açık kaynak ne demek? GPL nedir?</title>
+      <para>
+        Açık kaynak yazılımı aldığınızda kaynak kodu da birlikte gelir. Bu şekilde programın nasıl çalıştığını görebilir, isterseniz değişiklik yapabilir, değiştirilmiş halini kullanabilir ve dağıtabilirsiniz. Açık kaynak yazılım ile güvenliğinizden emin, verilerinize sahip, performansınızı kontrol edebilir halde olursunuz. <link url="http://www.google.com/search?q=gpl&amp;hl=tr&amp;meta=lr=lang_tr">GPL</link> (Genel Kamu Lisansı) açık kaynak yazılımın size sağladığı bu özgürlüklerin tümünden yaralanmanızı garanti altına alan lisans anlaşmasıdır. Özgür Yazılım Derneği (<link url="http://www.fsf.org/home.tr.html">www.fsf.org</link>) tarafından hazırlanıp dağıtılan  bu standart lisans anlaşması ile yazılımınızın gerçek sahibi olabilirsiniz.
+      </para>
+    </sect1>
+
+  </chapter>
+
+</book>
+

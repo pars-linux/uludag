@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Contributor Relations</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+	Being an open source software development project, Uludag will attract valuable outsider contribution. Contributor Relations project is for guiding and directing these contributor.
+      </para>
+    </abstract>
+
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Within the scope of Uludag Contributor Relations Project:
+	<numberedlist>
+	  <listitem>The roles for contributors, such as developer, tester, bug provider, feature requester, etc. will be identified and described,</listitem>
+	  <listitem>The external contributors will be monitored, guided, contacted and managed within the open source etiquette,</listitem>
+	  <listitem>The relations with the open source will be strengthened, important occasions (meetings, conferences, etc.) will be attended,</listitem>
+	  <listitem>The guidelines and criteria for all external contribution will be determined, manuals will be prepared.</listitem>
+	</numberedlist>
+
+	Project contact: Zerrin Çakmakkaya, <email>zerrin@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

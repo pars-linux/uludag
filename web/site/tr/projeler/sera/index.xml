@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Sera</title>
+
+    <author author_id="1">
+      <firstname>Zerrin</firstname>
+      <lastname>Çakmakkaya</lastname>
+      <address>
+        <email>zerrin@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Alp</firstname>
+      <lastname>Öztarhan</lastname>
+      <address>
+	<email>alp@uludag.org.tr</email>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        Sera projesi, dağarcıktan sürüm oluşturmayı kolaylaştıran yazılımlar ve yöntemler üretmeyi hedefliyor. Sera projesinin girdisi Paketler, Paket Yönetim Sistemi ve Kurulum projelerinden elde edilecek. 
+     </para>
+   </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Ulusal Dağıtım Sera Projesi kapsamında:
+	<numberedlist>
+	  <listitem> Paket yönetim sistemi, paket listesi ve kurulum programı parametrelerini alıp, dağarcıktan bir dağıtım CD'si imajı oluşturma işini yapan yazılımlar üretilecek</listitem>
+	  <listitem> Kullanıcıya özel dağıtımların, istenilen paketler seçilerek kolayca oluşturulabilmesini sağlayacak yazılımlar üretilecek</listitem>
+	</numberedlist>
+      	
+      Proje iletişim: Murat Eren, <email>meren@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

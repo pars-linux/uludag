@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+  <!ENTITY projectname "Uludağ">
+]>
+
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>About Us</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="2">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+        <email>baris@uludag.org.tr</email>
+	<web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-09</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-09</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+      Uludag project aims to develop an operating system distribution based on Linux kernel, incorporating software developed through the open source software methodology, targeting the desktop user in the initial stage.
+      </para>
+    </abstract>
+  </bookinfo>
+
+
+  <chapter>
+    <sect1>
+      <title>Uludag Mission</title>
+      <para>
+	The following observations are made in light of the role played by the operating systems in the information technology arena, the industries these indirectly affect and development of them in particular in Turkey:
+
+        <orderedlist>
+          <listitem>To achieve national independence, security and savings; an operating system platform, which supports an open and standard data format, which has an open source to allow security auditing and which may be distributed widespread without causing a financial burden, is a necessity</listitem>
+    <listitem>Turkey's activities in the area of information technologies have to be guided towards value-added projects and research &amp; development based high-technology production.</listitem>
+    <listitem>The local know-how, which is both a prerequisite and consequence of this, has to be accumulated, both in technological and business-related.</listitem>
+    <listitem>It is preferred to determine the direction of technological development, change the weight of different technological areas and to guide the roadmap of the said operating system platform depending on the national priorities.</listitem>
+    </orderedlist>
+
+    It has been decided to start a project to develop a Linux-based operating system distribution based on these observations.
+      </para>
+    </sect1>
+    <sect1>
+    <title>Uludag Vision</title>
+      <para>
+	Certain higher level decisions and observations had to be made at the early stages of national operating system distribution development. These can only be made by positioning the future state of Uludag with respect to its environment:
+    <orderedlist>
+      <listitem> Uludag releases will be widespread in different vertical markets, for different uses, selected by different segments of the society, will be used and distributed extensively.</listitem>
+      <listitem> The team that design and develop Uludag is going to operate on a not-for-profit mantra, still the organization will be sustainable through use of business models developed and exploited by the same team.</listitem>
+      <listitem> Uludag developers will provide practical and innovative solutions to the existing problems, thus making original contributions to the global Linux and open source community .</listitem>
+    </orderedlist>
+    </para>
+    </sect1>
+    <sect1>
+    <title>Uludag Goals</title>
+    <para>
+    To achieve the above listed position, is based on a sound market analysis and strong product design. In this respect, all Uludag releases will provide the following:
+    <orderedlist>
+    <listitem> Full Turkish support, both in terms of character (UTF-8) and font compatibilities, and making all the messages and documents visible to the user in Turkish.</listitem>
+    <listitem> Being easily installable and usable, as compared to other Linux distributions and competing operating systems.</listitem>
+    <listitem> A human-centric task-based design, in contrast to the existing technology-centric tool-based ones, with a modular structure for flexibility and higher performance.</listitem>
+    </orderedlist>
+    </para>
+    </sect1>
+    </chapter>
+</book>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+  <!ENTITY projectname "Ulusal Dağıtım">
+  <!ENTITY adres "Erişim Adresi : ">
+]>
+
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>&projectname; Servisleri</title>
+
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+        <email>baris@uludag.org.tr</email>
+	<web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-04-27</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-04-27</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        &projectname; projesi tarafından sunulan servislerin kısa bir listesi. Her servis için daha fazla bilgi servisin erişim adresinden temin edilebilir.
+      </para>
+    </abstract>
+  </bookinfo>
+
+
+  <chapter>
+    <chapterinfo>
+        <title>Servisler</title>
+        <abstract>Proje tarafından sunulan, geliştirme sürecine katkıda bulunmak, bu süreci izlemek isteyenlere yardımcı olacak servislerin listesi.</abstract>
+    </chapterinfo>
+
+    <sect1>
+      <title>Web Sayfaları</title>
+      <para>
+         &adres; <link  url="/">http://www.uludag.org.tr</link>
+      </para>
+      <para>
+         Proje web sayfalarının yayını <link  url="/">www.uludag.org.tr</link> adresinden yapılmaktadır. Proje ile ilgili edinilebilecek <em>statik; yöneticiler, geliştiriciler ve destekleyiciler tarafından üzerinde anlaşılmış</em> içeriğin sunumu işlevini üstlenmektedir.
+      </para>
+    </sect1>
+    
+    <sect1>
+      <title>Portal</title>
+      <para>
+         &adres; <link  url="http://portal.uludag.org.tr">http://portal.uludag.org.tr</link>
+      </para>
+      <para>
+        &projectname; ve Dünya'dan Linux, Özgür Yazılım ve Açık Kaynak haberlerine ulaşabilmek için bir merkez.
+      </para>
+    </sect1>
+ 
+    <sect1>
+      <title>E-Posta Listeleri</title>
+      <para>
+         &adres; <link url="/listeler/">http://www.uludag.org.tr/listeler</link>, <link  url="http://liste.uludag.org.tr/">http://liste.uludag.org.tr (Arşivler)</link> 
+      </para>
+      <para>
+         Konularına göre ayrılmış e-posta listeleri ile öncelikli olarak &projectname; ve geliştirme süreci konularının tartışılarak güçlendirilmeleri amacı güdülmüştür.
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Subversion</title>
+      <para>
+         &adres; <link  url="http://svn.uludag.org.tr">http://svn.uludag.org.tr</link>, <link url="http://www.uludag.org.tr/uludag-xml/">http://www.uludag.org.tr/uludag-xml/ (web gösterimi)</link>
+      </para>
+      <para>
+         Gelişim sürecinin ve gelişme aşamasındaki ürünlerin paylaşılmasında en önemli rolü oynayacak sürüm kontol sistemi servisidir.
+      </para>
+    </sect1>
+    
+    <sect1>
+      <title>Bugzilla</title>
+      <para>
+         &adres; <link  url="http://bugs.uludag.org.tr">http://bugs.uludag.org.tr</link>
+      </para>
+      <para>
+         Yaygın olarak kullanılan hata takip sistemi Bugzilla, &projectname; projesinin de hata takip sistemi seçimidir. &projectname; projesi servisleri, geliştirme araçları ve geliştirme ürünleri ile ilgili geliştirme istekleri (enhancements) ve hatalar (bugs) buradan takip edilebilir, güncellenebilir veya yenileri eklenebilir. 
+      </para>
+    </sect1>
+    
+    <sect1>
+      <title>Wiki</title>
+      <para>
+         &adres; <link  url="http://wiki.uludag.org.tr">http://wiki.uludag.org.tr</link>
+      </para>
+      <para>
+         Yaygın katılım ile özgün bir içerik oluşturmayı amaçlayan wiki servisidir.
+      </para>
+    </sect1>  
+
+    <sect1>
+      <title>Jabber</title>
+      <para>
+         &adres; <link  url="http://jabber.uludag.org.tr">http://jabber.uludag.org.tr</link>
+      </para>
+      <para>
+         &projectname; hızlı mesajlaşma servisidir.
+      </para>
+    </sect1>  
+
+  </chapter>
+	   
+</book>

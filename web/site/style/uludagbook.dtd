@@ -1,0 +1,106 @@
+<!-- 
+  Uludağ XML Dökümanları için DTD (Document Template Definition)
+  
+  Barış Metin <baris@uludag.org.tr>
+-->
+
+<!--
+  Elementleri bu şekilde sınıflandırmak düzgün bir sıra düzeni
+  (hiyerarşi) yaratıyor. Gentoo GuideXML'de de kullanılmış, 
+  güzel de olmuş :). Sınıflar için aynı isimleri kullanacağım.
+-->
+<!ENTITY % style.class "em|underline|strong">
+<!ENTITY % link.class "link|email">
+<!ENTITY % list.class "numberedlist|orderedlist|descriptivelist">
+<!-- simdilik yalnizca para'nin icerisinde kullanilanlar (logic?)-->
+<!ENTITY % logic.class "graphic|note|attention|program|command|reference|quote"> 
+<!ENTITY % all.class "%style.class;|%link.class;|%list.class;|%logic.class;">
+
+
+<!ELEMENT book (bookinfo, chapter+, footer?)>
+
+<!-- bookinfo -->
+<!ELEMENT bookinfo (title, author+, pubdate, revhistory, abstract)>
+<!ELEMENT title (#PCDATA)>
+<!-- author -->
+<!ELEMENT author (firstname, lastname, address?)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT address (email+, web*)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
+<!-- author -->
+<!ELEMENT pubdate (#PCDATA)>
+<!-- revhistory -->
+<!ELEMENT revhistory (revision+)>
+<!ELEMENT revision (revnumber, date)>
+<!ELEMENT revnumber (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!-- revhistory -->
+<!ELEMENT abstract (para+)>
+<!-- bookinfo -->
+
+
+<!ELEMENT chapter (chapterinfo?, sect1+, footer?)>
+<!ELEMENT chapterinfo (title, abstract)>
+<!ELEMENT sect1 (title?, para+, sect2*, footer?)>
+<!ELEMENT sect2 (title?, para+, sect3*, footer?)>
+<!ELEMENT sect3 (title?, para+, footer?)>
+<!ELEMENT footer (para)>
+
+<!ELEMENT para (#PCDATA|%all.class;)*>
+
+<!ELEMENT graphic EMPTY>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT attention (#PCDATA)>
+<!ELEMENT program (#PCDATA)>
+<!ELEMENT command (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT reference (#PCDATA)*>
+<!ELEMENT quote (#PCDATA)*>
+
+<!-- style.class -->
+<!ELEMENT em (#PCDATA)*>
+<!ELEMENT underline (#PCDATA)*>
+<!ELEMENT strong (#PCDATA)*>
+
+<!-- list.class -->
+<!ELEMENT numberedlist (listitem+)>
+<!ELEMENT orderedlist (listitem+)>
+<!ELEMENT descriptivelist (listitem+)>
+<!ELEMENT listitem (#PCDATA|%all.class;)*>
+
+
+<!-- Attribute'lar -->
+<!ATTLIST book
+          version NMTOKEN #REQUIRED
+	  lang (tr | en) #IMPLIED
+	  id CDATA #IMPLIED
+	  type (webpage | guide) #REQUIRED>
+
+<!ATTLIST author
+          author_id NMTOKEN #REQUIRED>
+
+<!ATTLIST revision
+          author_id NMTOKEN #REQUIRED>
+
+<!ATTLIST chapter
+	  id CDATA #IMPLIED>
+<!ATTLIST sect1
+	  id CDATA #IMPLIED>
+<!ATTLIST sect2
+	  id CDATA #IMPLIED>
+<!ATTLIST sect3
+	  id CDATA #IMPLIED>
+
+<!ATTLIST graphic 
+          source CDATA #REQUIRED
+	  align (left | right | top | bottom) #IMPLIED>
+
+<!ATTLIST link
+          thispage CDATA #IMPLIED
+	  url CDATA #IMPLIED>
+
+
+<!NOTATION jpeg SYSTEM "image/jpeg">
+<!NOTATION png SYSTEM "image/png">

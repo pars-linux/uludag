@@ -1,0 +1,190 @@
+* {
+  font-size: 10pt;
+  font-family: verdana, arial, sans, sans serif;
+  margin: 0px;
+  border: none;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: navy;
+}
+
+#footer {
+  margin-top: 8em;
+  margin-bottom: 1em;
+  padding: 0.5em 1em 0.5em;
+  border: 1px navy solid;
+  clear: both;
+  background: rgb(88%,90%,92%);
+  font-size: 80%;
+}
+
+#svn {
+  margin: 3em;
+}
+
+#rev {
+  margin-right: 3px;
+  padding-left: 3px;
+  text-align: left;
+  font-size: 120%;
+}
+
+#dir a {
+  text-decoration: none;
+  color: black;
+}
+
+#file a {
+  text-decoration: none;
+  color: black;
+}
+
+#path {
+  margin: 3px;
+  padding: 3px;
+  background: #FFCC66;
+  font-size: 120%;
+}
+
+#updir {
+  margin: 3px;
+  padding: 3px;
+  margin-left: 3em;
+  background: #FFEEAA;
+}
+
+#file {
+  margin: 3px;
+  padding: 3px;
+  margin-left: 3em;
+  background: rgb(95%,95%,95%);
+}
+
+#file:hover {
+  margin: 3px;
+  padding: 3px;
+  margin-left: 3em;
+  background: rgb(100%,100%,90%);
+/*  border: 1px black solid; */
+}
+
+#dir {
+  margin: 3px;
+  padding: 3px;
+  margin-left: 3em;
+  background: rgb(90%,90%,90%);
+}
+
+#dir:hover {
+  margin: 3px;
+  padding: 3px;
+  margin-left: 3em;
+  background: rgb(100%,100%,80%);
+/*  border: 1px black solid; */
+}
+
+
+/* uludag web sayfalarindan alinti */
+table.header  {
+  width: 100%;
+}
+td.header {
+  background: #e0970b;
+  border-bottom: thin solid;
+  border-color: black;
+}
+td.headerleft {
+background: #e0970b;
+border-bottom: thin solid;
+border-color: black;
+padding-left: 5pt;
+padding-right: 5pt;
+width: 50px;
+}
+.header a {
+color: white;
+font-size: 35pt;
+font-weight: bold;
+font-family: trebuchet  ms, arial, sans, sans serif;
+text-decoration: none;
+}
+.headerdesc {
+border-bottom: thin solid;
+border-color: black;
+padding-left: 5pt;
+padding-bottom: 2pt;
+padding-top: 2pt;
+font-family: trebuchet  ms, arial, sans, sans serif;
+}
+
+td.leftmenu {
+display: block;
+background: #eeeeee;
+padding: 5pt;
+margin-left: 1em;
+margin-top: 0em;
+vertical-align: top;
+border: solid 1px black;
+border-top:none;
+width: 131pt;
+}
+.leftbox a {
+display: list-item;
+list-style-type: circle;
+text-decoration: none;
+font-weight: bold;
+color: #e0970b;
+margin-left: 1em;
+}
+.leftbox input {
+margin: 1em;
+border: 1px solid #294563;
+}
+.submenu a {
+display: list-item;
+list-style-type: circle;
+text-decoration: none;
+font-weight: normal;
+color: #193553;
+margin-left: 2em;
+}
+/* icerik bolumu */
+table.content {
+height: 80%;
+}
+td.content {
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 3pt;
+vertical-align: top;
+}
+/* icerik bolumu */
+table.content {
+height: 80%;
+}
+td.content {
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 3pt;
+vertical-align: top;
+}/* en alt bolum */
+.pagefooter {
+text-align: center;
+border-top: thin solid;
+border-bottom: thin solid;
+border-color: #999999;
+padding: 2pt;
+margin: 0;
+margin-top: 1em;
+background: #5c597e;
+color: white;
+}
+
+img { border: 0; }
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Kalite Güvence</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        Ulusal Dağıtım sürümlerinin ve süreçlerinin kalitesi ve standartlara uygunluğunu sağlayacak, izleyecek ve yönetecek olan Kalite Güvence projesidir. Bu proje değer katmayan süreçler içerse de ürün ve üretim açısından merkezi öneme sahiptir.
+      </para>
+    </abstract>
+
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Ulusal Dağıtım Kalite Güvence Projesi kapsamında:
+        <numberedlist>
+	  <listitem>Tüm projelerde izlenecek süreçler belirlenecek, kriterleri tanımlanacak, tutarlılıkları sağlanacak ve belgelenecek,</listitem>
+	  <listitem>Başarı ölçütleri belirlenecek, ölçme süreçleri oluşturulacak ve yürütülecek,</listitem>
+	  <listitem>Dış standartlar izlenecek, iç standartlar oluşturulacak ve belgelenecek,</listitem>
+	  <listitem>Ulusal Dağıtım iç, dış ve geliştirici web sitelerinin enformasyon mimarisi ve içerik yönetimi yapılacak, belgeler sisteminin enformasyon mimarisi ve içerik yönetimi yapılacak,</listitem>
+	  <listitem>Tüm projelerde oluşturulacak belgelerin ve klavuzların kalite kıstasları ve standartlara uygunluğu izlenecek, bu belgelerin hazırlanma işi yaptırılacak ve eşgüdümü sağlanacak,</listitem>
+	  <listitem>Tüm dış katkılar için kalite güvence kıstasları ve kuralları belirlenecek, kılavuzlar oluşturulacak.</listitem>
+        </numberedlist>
+        Proje iletişim: Zerrin Çakmakkaya, <email>zerrin@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

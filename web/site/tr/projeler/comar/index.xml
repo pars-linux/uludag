@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Yapılandırma Araçları</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+        Yapılandırma araçları, işletim sistemi ve uygulama özelliklerini yapılandırmak ve kullanıcının isteklerine uygun çalışabilir hale getirmek için kullanılan destekleyici araçlardır (uygulamalardır). Araçların bir bütün olarak çalışabilmesi için gerekli altyapı (yönetim çerçevesi) da bu kapsamda ele alınmaktadır.
+      </para>
+    </abstract>
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Ulusal Dağıtım Yapılandırma Araçları Projesi kapsamında:
+	<numberedlist>
+	  <listitem>Yapılandırma aracı kullanma durumunda olan uygulamalar belirlenecek,</listitem>
+	  <listitem>Bunlardan işletim sistemine dahil olan/olması gerekenler seçilerek alt-sistemler tanımlanacak,</listitem>
+	  <listitem>Alt-sistemler ve diğer uygulamaların yapılandırma gerekleri ve özellikleri belirlenecek,</listitem>
+	  <listitem>Yapılandırma işine temel oluşturacak yönetim çerçevesi altyapısı tasarlanacak,</listitem>
+	  <listitem>Yönetim çerçevesi altyapısına uygun olarak yapılandırma çerçevesi belirlenecek ve yapılandırma araçları tasarlanacak,</listitem>
+	  <listitem>Yapılandırma araçları en uygun yöntem ve dil kullanılarak kodlanacak,</listitem>
+	  <listitem>Yapılandırma araçları referans sistem üzerinde test edilerek müşteri kabulleri yapılacak,</listitem>
+	  <listitem>Gerekli durumlarda paketlere dahil edilmesi gereken yapılandırma özellikleri belirlenerek Paketler projesine iletilecek,</listitem>
+	  <listitem>Uygulama geliştiriciler ve katkıcıların yönetim çerçevesine uygun yazılımlar geliştirmesi ve paketler hazırlaması için kurallar belirlenecek ve geliştirici kılavuzu hazırlanacak.</listitem>
+	</numberedlist>
+        Proje iletişim: Alp Öztarhan, <email>alp@uludag.org.tr</email>
+      </para>
+    </sect1>
+
+    <sect1>
+      <title>Dökümanlar</title>
+      <para>
+        <note>Henüz tasarım aşamasını tamamlamamış olan proje ile ilgili dökümanlar güncel olmayabilir.</note>
+	ÇOMAR tasarımına ve geliştirmesine katkıda bulunmak için <link url="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/comar-devel">comar-devel listesine</link> üye olup görüşlerinizi paylaşabilirsiniz.
+      </para>
+      <para>
+      	 <link url="comar.xml">ÇOMAR (Configuration by Objects: Modify And Restart)</link>
+      </para>
+      <para>
+      	 <link url="comar_uygulama.xml">ÇOMAR Yeniden</link>
+      </para>
+    </sect1>
+  </chapter>
+
+</book>

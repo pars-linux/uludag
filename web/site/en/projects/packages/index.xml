@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE book SYSTEM "http://www.uludag.org.tr/style/uludagbook.dtd"
+[
+]>
+
+<book version="0.1" lang="tr" type="webpage">
+
+  <bookinfo>
+    <title>Packages</title>
+
+    <author author_id="1">
+      <firstname>Erkan</firstname>
+      <lastname>Tekman</lastname>
+      <address>
+        <email>tekman@uludag.org.tr</email>
+      </address>
+    </author>
+    <author author_id="1">
+      <firstname>Barış</firstname>
+      <lastname>Metin</lastname>
+      <address>
+	<email>baris@uludag.org.tr</email>
+        <web>http://www.metin.org</web>
+      </address>
+    </author>
+
+    <pubdate>2004-01-10</pubdate>
+    <revhistory>
+      <revision author_id="1">
+        <revnumber>1.0</revnumber>
+	<date>2004-01-10</date>
+      </revision>
+    </revhistory>
+
+    <abstract>
+      <para>
+	A "package" is a file that is formed in order application software to be independently and easily added to and removed from the system. Packages Project is responsible for determining the packages that Uludag will include, and forming the packages from the source code and in line with Uludag's goals.
+      </para>
+    </abstract>
+
+  </bookinfo>
+
+  <chapter>
+    <sect1>
+      <para>
+        Within the scope of Uludag Packages Project:
+	<numberedlist>
+	  <listitem>The packages to be included in different releases will be determined,</listitem>
+	  <listitem>These packages will be prepared for the distribution, originating from the source code, by applying patches, and adding configuration features,</listitem>
+	  <listitem>Patches and configuration will be added especially for UTF-8 compatibility and Turkish support,</listitem>
+	  <listitem>The package metadata, such as dependence, requirements, provides, inconsistency, etc. and for necessary cases initscripts will be formed,</listitem>
+	  <listitem>Source and binary packages will be formed by he addition of metadata an in accord with the Package Management Systeö framework,</listitem>
+	  <listitem>The packages will be tested on the reference system for co-operation with the operating system and other packages,</listitem>
+	  <listitem>The feature freeze, bug fix, etc. stages will be defined in conjunction with the timing of releases (alpha, beta and RC phases),</listitem>
+	  <listitem>The package repository that will be used for update and other purposes will be built, will be kept operating and accessible,</listitem>
+	  <listitem>The acceptance test for the contributed packages will be carried out, the relevant process will be defined and a manual will be prepared.</listitem>
+	</numberedlist>
+        Project contact: Barış Metin, <email>baris@uludag.org.tr</email>
+      </para>
+    </sect1>
+  </chapter>
+</book>
