@@ -356,10 +356,16 @@ int Device::setWirelessInterface( const char *dev, int mode, const char *essid )
     config->has_mode = 1;
     switch( mode ) {
     case Auto:
+        config->mode = IW_MODE_AUTO;
+        break;
+    case Adhoc:
         config->mode = IW_MODE_ADHOC;
         break;
+    case Infra:
+        config->mode = IW_MODE_INFRA;
+        break;
     default:
-        config->mode = IW_MODE_AUTO;
+        config->mode = IW_MODE_INFRA;
     }
 
     strncpy(config->essid, essid, sizeof(config->essid)/sizeof(char) );
