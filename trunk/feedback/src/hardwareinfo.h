@@ -19,20 +19,11 @@
 
 class HardwareInfo : public HardwareInfoDlg
 {
-	Q_OBJECT
 public:
 	HardwareInfo( QWidget *parent = 0, const char* name = 0 );
 	~HardwareInfo();
 
 	bool permit;
-private:
-	QHttp http;
-	QFile file;
-	void HardwareInfo::httpConnect( QString url, QString path, QFile *file);
-
-protected slots:
-	void done( bool error );
-	void stateChanged ( int state );
 };
 
 #endif // HARDWAREINFO_H

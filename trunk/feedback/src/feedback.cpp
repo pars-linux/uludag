@@ -18,7 +18,7 @@
 #include <qcheckbox.h>
 #include <qbuttongroup.h>
 #include <qmessagebox.h>
-#include <qtextedit.h>
+#include <qfile.h>
 
 #include "welcome.h"
 #include "question.h"
@@ -31,25 +31,31 @@
 Feedback::Feedback( QWidget *parent, const char *name )
     : KWizard( parent, name, true)
 {
+	int page_number = 0;
+
 	setCaption( kapp->caption() );
 
-	/* Welcome */
+	locale = new KLocale( PACKAGE );
+	locale->setLanguage( KLocale::defaultLanguage() );
+
+	
+	/* Welcome Page */
 	welcome = new Welcome( this );
 	addPage( welcome, i18n( "Welcome" ) );
-	setHelpEnabled( QWizard::page( 0 ), false );
+	setHelpEnabled( QWizard::page( page_number ), false );
 	
-	/* Experience */
+	/* Experience Page */
 	experience = new Question( this, 0, i18n("Experience") );
-	
+
 	experience->questionOne->setText( i18n( "&Starter" ));
 	experience->questionTwo->setText( i18n( "&User" ));
 	experience->questionThree->setText( i18n( "&Poweruser" ));
 	experience->questionFour->setText( i18n( "&Master of the known universe" ));
 
 	addPage( experience, i18n( "Ease of Use" ));
-	setHelpEnabled( QWizard::page( 1 ), false );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
 							
-	/* Ease Of Use */
+	/* Ease Of Use Page */
 	ease_of_use = new Question( this, 0, i18n("Ease Of Use") );
 
 	ease_of_use->questionOne->setText( i18n( "&Very Good" ));
@@ -58,9 +64,9 @@ Feedback::Feedback( QWidget *parent, const char *name )
 	ease_of_use->questionFour->setText( i18n( "&Useless" ));
 				
 	addPage( ease_of_use, i18n( "Ease of Use" ));
-	setHelpEnabled( QWizard::page( 2 ), false );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
 
-	/* Visual Attractiveness */
+	/* Visual Attractiveness Page */
 	visual_attractiveness = new Question( this, 0, "Visual Attractiveness");
 
 	visual_attractiveness->questionOne->setText( i18n( "&Very Good" ));
@@ -69,9 +75,9 @@ Feedback::Feedback( QWidget *parent, const char *name )
 	visual_attractiveness->questionFour->setText( i18n( "&Useless" ));
 	
 	addPage( visual_attractiveness, i18n( "Visual Attractiveness" ));
-	setHelpEnabled( QWizard::page( 3 ), false );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
 
-	/* Organization/Layout */
+	/* Organization/Layout Page */
 	organization_layout = new Question( this, 0, "Organization/Layout" );
 
 	organization_layout->questionOne->setText( i18n( "&Very Good" ));
@@ -80,23 +86,20 @@ Feedback::Feedback( QWidget *parent, const char *name )
 	organization_layout->questionFour->setText( i18n( "&Very bad" ));
 
 	addPage( organization_layout, i18n( "Organization/Layout" ) );
-	setHelpEnabled( QWizard::page( 4 ), false );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
 
-	/* Hardware Info */	
+	/* Hardware Info Page */	
 	hardwareinfo = new HardwareInfo( this );
 	addPage( hardwareinfo, i18n( "Hardware Info" ) );
-	setHelpEnabled( QWizard::page( 5 ), false );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
 
-	/* Goodbye */
+	/* Goodbye Page */
 	goodbye = new Goodbye( this );
 	addPage( goodbye, i18n( "Thank You" ) );
-	setHelpEnabled( QWizard::page( 6 ), false );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
 
 	/* Finish */
-	setFinishEnabled( QWizard::page( 6 ), true );
-
-	locale = new KLocale( PACKAGE );
-	locale->setLanguage( KLocale::defaultLanguage() );
+	setFinishEnabled( QWizard::page( page_number ), true );
 }
 
 Feedback::~Feedback()
@@ -114,29 +117,55 @@ void Feedback::next()
 
 void Feedback::back()
 {
-    QWizard::back();
+	QWizard::back();
 }
 
 void Feedback::accept()
 {
-	/* Iterate over pages and send [ if permitted by the user ] answers to the server */
-	if( hardwareinfo->permit )
-	{			
-	    proc = new KProcess();
-	    proc->clearArguments();
+	/* FIXME: Get current user's home path */
+	QFile file( "/home/caglar/pardus_information.xml" );
 
-	    *proc << "/home/caglar/feedback/src/grab_information";
-		proc->start();
-
-		for( int i=1; i < pageCount() - 2 ; ++i )
-		{
-			QMessageBox::information( this, i18n("Sent To Server"), i18n("%1").arg( dynamic_cast<Question*>( page(i) )->buttonGroup->selectedId() ));
-    	}
+	if ( !file.open( IO_WriteOnly ) )
+	{
+		QMessageBox::warning( this, i18n("Cannot write file"), i18n("Permission Denied!") );
+		exit(0);
 	}
+
+	QDomDocument doc( "FeedbackML" );
+	QDomElement rootElement = doc.createElement( "question" );
+	QDomElement pageElement;
+
+	doc.appendChild( rootElement );
+
+	for( int i=1; i < pageCount() - 2 ; ++i )
+	{
+		pageElement = doc.createElement( "information" );
+		pageElement.setAttribute( "question", i );
+		pageElement.setAttribute( "answer", dynamic_cast<Question*>( page(i) )->buttonGroup->selectedId() );
+		rootElement.appendChild( pageElement );
+	}
+
+	QTextStream stream( &file );
+	stream << doc.toString().local8Bit();
+	file.close();
+
+	/* Append collected hardware information to xml file, if permitted by the user */
+	if( hardwareinfo->permit )
+	{
+		proc = new KProcess();
+		proc->clearArguments();
+
+		/* FIXME: Install grab_information into PATH and use current user's home as an argument */
+		*proc << "grab_information";
+		*proc << "/home/caglar";
+		if ( !proc->start() )
+			QMessageBox::warning( this, i18n("Cannot write file"), i18n("Hardware information cannot collected") );
+	}
+	
 	exit(0);
 }
 
 void Feedback::reject()
 {
-    exit(0);
+	exit(0);
 }
