@@ -184,7 +184,7 @@ KDE masaüstü ortamýnýn yerelleþtirme çalýþmalarýný yürütüyor ve tanýtýmýný
 
 Web\SpecialChar ~
 Sayfalarý: 
-\begin_inset LatexCommand \url{http://kde.linux-sevenler.org}
+\begin_inset LatexCommand \url{http://www.kde.org.tr}
 
 \end_inset 
 
@@ -193,7 +193,7 @@ Sayfalarý:
 
 E-Posta\SpecialChar ~
 Listesi: 
-\begin_inset LatexCommand \url{https://mail.kde.org/mailman/listinfo/kde-i18n-tr}
+\begin_inset LatexCommand \url{http://www.kde.org.tr/mailman/listinfo/yerellestirme}
 
 \end_inset 
 
@@ -209,7 +209,16 @@ Mozilla projesi tarafýndan geliþtirilen internet araçlarýna Türkçe desteði
 
 Web\SpecialChar ~
 Sayfalarý: 
-\begin_inset LatexCommand \url{http://mozilla.linux-sevenler.org}
+\begin_inset LatexCommand \url{http://www.mozilla.org.tr}
+
+\end_inset 
+
+
+\layout Description
+
+E-Posta\SpecialChar ~
+Listesi: 
+\begin_inset LatexCommand \url{http://lists.mozilla.org.tr/mailman/listinfo/mozilla}
 
 \end_inset 
 
