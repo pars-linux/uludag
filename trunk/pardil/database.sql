@@ -265,6 +265,9 @@ CREATE TABLE `options` (
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new_approved', '10', 'Önerinin otomatik olarak onaylanması için gereken en düşük kullanıcı seviyesi.');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new', '200', 'Öneri eklemek için gereken en düşük kullanıcı seviyesi.');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('register_activation_required', 'true', 'Kayıt sonrası aktivasyon gerekliliği.');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_name', 'Pardil', 'Site adı');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_title', 'Pardus İyileştirme Listesi', 'Site başlığı');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_url', 'http://sinus.homelinus.org/pardil/', 'Site adresi');
 
 -- 
 -- Tablo yapısı : `activation`
@@ -283,3 +286,15 @@ CREATE TABLE `activation` (
 -- 
 
 INSERT INTO `activation` (`user`, `code`, `status`) VALUES (1, 'c4ca4238a0b923820dcc509a6f75849b', 1);
+
+
+-- 
+-- Tablo yapısı : `passwords`
+-- 
+
+CREATE TABLE `passwords` (
+  `user` int(10) unsigned NOT NULL default '0',
+  `code` varchar(32) NOT NULL default '',
+  `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`user`)
+) TYPE=MyISAM COMMENT='Şifre sıfırlama kodları';

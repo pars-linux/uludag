@@ -12,9 +12,13 @@
           <p>
             <?php echo __('You\'ve successfully registered.'); ?>
           </p>
-          <?php if ($bln_activation) { ?>
+          <?php if ($bln_activation && $bln_mail) { ?>
           <p>
             <?php echo __('You need to activate your account by clicking (or visiting) the URL sent to your e-mail address.'); ?>
+          </p>
+          <?php } elseif ($bln_activation && !$bln_mail) { ?>
+          <p>
+            <?php echo __('A problem occured in our mail server while sending your activation code. Please contact server administrator.'); ?>
           </p>
           <?php } ?>
           <p>

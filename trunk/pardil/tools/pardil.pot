@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-02 21:35+0300\n"
+"POT-Creation-Date: 2005-04-03 13:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,6 +75,16 @@ msgid "E-mail address should be written."
 msgstr ""
 
 msgid "E-mail address should be valid."
+msgstr ""
+
+#, php-format
+msgid "%s Account Activation"
+msgstr ""
+
+#, php-format
+msgid ""
+"Hello,\\nTo complete your registration at %1$s, please visit the address "
+"below:\\n\\n%2$s\\n\\nThanks,\\n%3$s Team"
 msgstr ""
 
 msgid "User Registration"
@@ -201,6 +211,11 @@ msgstr ""
 msgid ""
 "You need to activate your account by clicking (or visiting) the URL sent to "
 "your e-mail address."
+msgstr ""
+
+msgid ""
+"A problem occured in our mail server while sending your activation code. "
+"Please contact server administrator."
 msgstr ""
 
 msgid "Name:"

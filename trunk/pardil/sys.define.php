@@ -10,8 +10,5 @@
   define('CONF_DOMAIN', 'pardil');
   define('CONF_LOCALE', 'tr_TR.utf8');
 
-  define('CONF_NAME', 'Pardil');
-  define('CONF_TITLE', 'Pardus İyileştirme Listesi');
-
   $_PCONF = array();
 ?>
