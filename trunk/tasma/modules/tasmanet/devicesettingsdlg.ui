@@ -8,9 +8,21 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>338</width>
-            <height>262</height>
+            <width>340</width>
+            <height>266</height>
         </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>340</width>
+            <height>260</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>340</width>
+            <height>32767</height>
+        </size>
     </property>
     <property name="caption">
         <string>DeviceSettingsDlg</string>
@@ -24,7 +36,7 @@
                 <x>1</x>
                 <y>2</y>
                 <width>335</width>
-                <height>259</height>
+                <height>263</height>
             </rect>
         </property>
         <grid>
@@ -261,7 +273,7 @@
                         <cstring>tab</cstring>
                     </property>
                     <attribute name="title">
-                        <string>Adwanced</string>
+                        <string>Advanced</string>
                     </attribute>
                     <widget class="QLayoutWidget">
                         <property name="name">

@@ -30,6 +30,7 @@ protected slots:
 
     void startDhcpcd();
 
+    void addDns();
     void removeDns();
 
 private:
