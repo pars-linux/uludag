@@ -20,7 +20,15 @@ class KAboutData;
 class Interface : public KIconViewItem
 {
 public:
-    Interface( KIconView *parent, const QString& name, const QPixmap& icon );
+    Interface( KIconView *parent, const QString& name,
+	       const QPixmap& icon, const QString& dev, bool i );
+
+    const QString device() const { return _dev; };
+    const bool isWifi() const { return _wifi; };
+
+private:
+    const QString _dev;
+    bool _wifi;
 
 };
 
