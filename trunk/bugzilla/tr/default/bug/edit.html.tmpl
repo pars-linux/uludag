@@ -18,6 +18,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Vaskin Kissoyan <vkissoyan@yahoo.com>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -32,7 +33,7 @@
     /* XXX this should really be updated to use the DOM Core's
      * createElement, but finding a container isn't trivial */
     document.write('[<a href="#add_comment" onclick="replyToComment(' + 
-        id + ');">reply<' + '/a>]');
+        id + ');">yanıtla<' + '/a>]');
   }
 
   /* Adds the reply text to the `comment' textarea */
@@ -125,14 +126,14 @@
   <table cellspacing="1" cellpadding="1" border="0">
     <tr>
       <td align="right">
-        <b>[% terms.Bug %]#:</b>
+        <b>[% terms.Bug %] Numarası:</b>
       </td>
       <td>
         <a href="[% Param('urlbase') %]show_bug.cgi?id=[% bug.bug_id %]">
           [% bug.bug_id %]</a>
           [% IF Param("usebugaliases") %]
-            <label title="a name for the [% terms.bug %] that can be used in place of its ID number, f.e. when adding it to a list of dependencies">
-              <b>alias:</b>
+            <label title="[% terms.bug %] numarası yerine kullanmak için bir isim verebilirsiniz, bu özellikle bağımlılık lstelerine eklerken işinize yarabilir">
+              <b>takma ad:</b>
               <input name="alias" value="[% bug.alias FILTER html %]" size="20" maxlength="20">
             </label>
           [% END %]
@@ -141,12 +142,12 @@
       <td>&nbsp;</td>
 
       <td align="right">
-        <b><u>H</u>ardware:</b>
+        <b><u>D</u>onanım:</b>
       </td>
-      [% PROCESS select selname => "rep_platform" accesskey => "h" %]
+      [% PROCESS select selname => "rep_platform" accesskey => "d" %]
 
       <td align="right">
-        <b>Reporter:</b>
+        <b>Raporlayan:</b>
       </td>
       <td>
         <a href="mailto:[% bug.reporter.email FILTER html %]">
@@ -156,20 +157,20 @@
 
     <tr>
       <td align="right">
-        <b><u>P</u>roduct:</b>
+        <b><u>Ü</u>rün:</b>
       </td>
-      [% PROCESS select selname => "product" accesskey => "p" %]
+      [% PROCESS select selname => "product" accesskey => "ü" %]
 
       <td align="right">
-        <b><u>O</u>S:</b>
+        <b>İşlet<u>i</u>m Sistemi:</b>
       </td>
-      [% PROCESS select selname => "op_sys" accesskey => "o" %]
+      [% PROCESS select selname => "op_sys" accesskey => "i" %]
 
       <td align="right">
-        <b><u>A</u>dd&nbsp;CC:</b>
+        <b><u>C</u>c&nbsp;ekle:</b>
       </td>
       <td>
-        <input name="newcc" size="30" value="" accesskey="a">
+        <input name="newcc" size="30" value="" accesskey="c">
       </td>
     </tr>
 
@@ -179,13 +180,13 @@
       <td align="right">
         <b>
           <a href="describecomponents.cgi?product=[% bug.product FILTER url_quote %]">
-            Co<u>m</u>ponent</a>:
+            <u>B</u>ileşen</a>:
         </b>
       </td>
-      [% PROCESS select selname => "component" accesskey => "m" %]
+      [% PROCESS select selname => "component" accesskey => "b" %]
 
       <td align="right">
-        <b>Version:</b>
+        <b>Sürüm:</b>
       </td>
       [% PROCESS select selname => "version" %]
 
@@ -200,7 +201,7 @@
         [% END %]
         </select>
         <br>
-        <input type="checkbox" name="removecc">Remove selected CCs
+        <input type="checkbox" name="removecc">Seçili CC alanlarını sil
         <br>
       [% ELSE %]
         <input type="hidden" name="cc" value="">
@@ -211,22 +212,22 @@
     <tr>
       <td align="right">
         <b>
-          <a href="page.cgi?id=fields.html#status">Status</a>:
+          <a href="page.cgi?id=fields.html#status">Durum</a>:
         </b>
       </td>
       <td>[% bug.bug_status FILTER html %]</td>
       <td>&nbsp;</td>
 
       <td align="right">
-        <b><a href="page.cgi?id=fields.html#priority">Pr<u>i</u>ority</a>:</b>
+        <b><a href="page.cgi?id=fields.html#priority">Ö<u>n</u>celik</a>:</b>
       </td>
-      [% PROCESS select selname => "priority" accesskey => "i" %]
+      [% PROCESS select selname => "priority" accesskey => "n" %]
     </tr>
 
     <tr>
       <td align="right">
         <b>
-          <a href="page.cgi?id=fields.html#resolution">Resolution</a>:
+          <a href="page.cgi?id=fields.html#resolution">Çözüm</a>:
         </b>
       </td>
       <td>
@@ -238,7 +239,7 @@
       <td>&nbsp;</td>
 
       <td align="right">
-        <b><a href="page.cgi?id=fields.html#bug_severity">Severity</a>:</b>
+        <b><a href="page.cgi?id=fields.html#bug_severity">Önem</a>:</b>
       </td>
       [% PROCESS select selname = "bug_severity" %]
 
@@ -247,7 +248,7 @@
     <tr>
       <td align="right">
         <b>
-          <a href="page.cgi?id=fields.html#assigned_to">Assigned&nbsp;To</a>:
+          <a href="page.cgi?id=fields.html#assigned_to">Atanan&nbsp;Kişi</a>:
         </b>
       </td>
       <td>[% bug.assigned_to.identity FILTER html %]</td>
@@ -259,7 +260,7 @@
             [% IF bug.milestoneurl %]
               <a href="[% bug.milestoneurl FILTER html %]">
             [% END %]
-            Target Milestone[% "</a>" IF bug.milestoneurl %]:
+            Hedef Mihenk Taşı[% "</a>" IF bug.milestoneurl %]:
           </b>
         </td>
         [% PROCESS select selname = "target_milestone" %]
@@ -273,10 +274,10 @@
    [% IF Param('useqacontact') %]
      <tr>
        <td align="right">
-       <b><u>Q</u>A Contact:</b>
+       <b><u>K</u>alite Takımı:</b>
        </td>
        <td colspan="7">
-         <input name="qa_contact" accesskey="q"
+         <input name="qa_contact" accesskey="k"
                 value="[% bug.qa_contact.login FILTER html %]" size="60">
        </td>
      </tr>
@@ -289,12 +290,12 @@
            AND NOT bug.bug_file_loc.match("^(javascript|data)") %]
           <a href="[% bug.bug_file_loc FILTER html %]"><u>U</u>RL</a>:
         [% ELSE %]
-          <u>U</u>RL:
+          <u>W</u>eb Adresi:
         [% END %]
       </b>
     </td>
     <td colspan="5">
-      <input name="bug_file_loc" accesskey="u"
+      <input name="bug_file_loc" accesskey="w"
              value="[% bug.bug_file_loc FILTER html %]" size="60">
     </td>
     <td rowspan="4" colspan="2" valign="top">
@@ -308,10 +309,10 @@
 
   <tr>
     <td align="right">
-      <b><u>S</u>ummary:</b>
+      <b><u>Ö</u>zet:</b>
     </td>
     <td colspan="5">
-      <input name="short_desc" accesskey="s"
+      <input name="short_desc" accesskey="ö"
              value="[% bug.short_desc FILTER html %]" size="60">
     </td>
   </tr>
@@ -319,10 +320,10 @@
   [% IF Param('usestatuswhiteboard') %]
     <tr>
       <td align="right">
-        <b>Status <u>W</u>hiteboard:</b>
+        <b>Kara<u>t</u>ahta Durumu:</b>
       </td>
       <td colspan="5">
-        <input name="status_whiteboard" accesskey="w"
+        <input name="status_whiteboard" accesskey="t"
                value="[% bug.status_whiteboard FILTER html %]" size="60">
       </td>
     </tr>
@@ -332,10 +333,10 @@
     <tr>
       <td align="right">
         <b>
-          <a href="describekeywords.cgi"><u>K</u>eywords</a>:
+          <a href="describekeywords.cgi">Anahtar Ke<u>l</u>imeler</a>:
         </b>
       <td colspan="5">
-        <input name="keywords" accesskey="k"
+        <input name="keywords" accesskey="l"
                value="[% bug.keywords.join(', ') FILTER html %]" size="60">
       </td>
     </tr>
@@ -412,22 +413,20 @@
   <table>
     <tr>
     [% PROCESS dependencies 
-       dep = { title => "depends on", fieldname => "dependson" } %]
+       dep = { title => "bağlı olduğu", fieldname => "dependson" } %]
       <td rowspan="2">
-        <a href="showdependencytree.cgi?id=[% bug.bug_id %]">Show
-        dependency tree</a>
+        <a href="showdependencytree.cgi?id=[% bug.bug_id %]">Bağımlılık ağacını göster</a>
 
         [% IF Param('webdotbase') %]
           <br>
-          <a href="showdependencygraph.cgi?id=[% bug.bug_id %]">Show
-          dependency graph</a>
+          <a href="showdependencygraph.cgi?id=[% bug.bug_id %]">Bağımlılık grafiğini göster</a>
         [% END %]
       </td>
     </tr>
 
     <tr>
     [% PROCESS dependencies accesskey = "b"
-       dep = { title => "<u>b</u>locks", fieldname => "blocked" } %]
+       dep = { title => "<u>b</u>lokladığı", fieldname => "blocked" } %]
     </tr>
   </table>
 
@@ -435,7 +434,7 @@
   <table>
     <tr>
       <th>
-        <a href="page.cgi?id=voting.html">Votes</a>:
+        <a href="page.cgi?id=voting.html">Oylar</a>:
       </th>
       <td>
         [% bug.votes %]&nbsp;&nbsp;&nbsp;
@@ -451,7 +450,7 @@
 [%# *** Comments Groups *** %]
 
   <br>
-  <b>Additional <u>C</u>omments:</b>
+  <b>Diğer <u>Y</u>orumlar:</b>
   [% IF Param("insidergroup") && UserInGroup(Param("insidergroup")) %]
     <input type="checkbox" name="commentprivacy" value="1"
            id="newcommentprivacy"> Private
@@ -459,7 +458,7 @@
   <br>
   <a name="add_comment"></a>
   <textarea wrap="hard" name="comment" id="comment" rows="10" cols="80"
-            accesskey="c"></textarea>
+            accesskey="y"></textarea>
   <br>
 
   [% IF bug.groups.size > 0 %]
@@ -530,13 +529,13 @@
 <table>
   <tr>
     <td align="left">
-      <b><a name="c0" href="#c0">Description</a>:</b>&nbsp;&nbsp;<script 
+      <b><a name="c0" href="#c0">Açıklama</a>:</b>&nbsp;&nbsp;<script 
         type="text/javascript" language="JavaScript"><!-- 
           addReplyLink(0);
         //--></script>
     </td>
     <td align="right" width="100%">
-      Opened: [% bug.creation_ts FILTER time %]
+      Açılma Zamanı: [% bug.creation_ts FILTER time %]
     </td>
   </tr>
 </table>

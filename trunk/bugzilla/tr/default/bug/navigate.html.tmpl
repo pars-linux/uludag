@@ -17,44 +17,45 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% IF bug_list && bug_list.size > 0 %]
   [% this_bug_idx = lsearch(bug_list, bug.bug_id) %]
-  <b>[% terms.Bug %] List:</b>
+  <b>[% terms.Bug %] Listesi:</b>
   [% IF this_bug_idx != -1 %]
     ([% this_bug_idx + 1 %] of [% bug_list.size %])
   [% END %]
 
-  <a href="show_bug.cgi?id=[% bug_list.first %]">First</a>
-  <a href="show_bug.cgi?id=[% bug_list.last %]">Last</a>
+  <a href="show_bug.cgi?id=[% bug_list.first %]">İlk</a>
+  <a href="show_bug.cgi?id=[% bug_list.last %]">Son</a>
 
   [% IF bug.bug_id %]
     [% IF this_bug_idx != -1 %]
       [% IF this_bug_idx > 0 %]
         [% prev_bug = this_bug_idx - 1 %]
-        <a href="show_bug.cgi?id=[% bug_list.$prev_bug %]">Prev</a>
+        <a href="show_bug.cgi?id=[% bug_list.$prev_bug %]">Önceki</a>
       [% ELSE %]
-        <i><font color="#777777">Prev</font></i>
+        <i><font color="#777777">Önceki</font></i>
       [% END %]
 
       [% IF this_bug_idx + 1 < bug_list.size %]
         [% next_bug = this_bug_idx + 1 %]
-        <a href="show_bug.cgi?id=[% bug_list.$next_bug %]">Next</a>
+        <a href="show_bug.cgi?id=[% bug_list.$next_bug %]">Sonraki</a>
       [% ELSE %]
-        <i><font color="#777777">Next</font></i>
+        <i><font color="#777777">Sonraki</font></i>
       [% END %]
     [% ELSE %]
-      (This [% terms.bug %] is not in your list)
+      (Bu [% terms.bug %] bildirimi sizin listenizde bulunmamaktadır)
     [% END %]
   [% ELSE %]
     &nbsp;&nbsp;
   [% END %]
 
-  &nbsp;&nbsp;<a href="buglist.cgi?regetlastlist=1">Show list</a>
+  &nbsp;&nbsp;<a href="buglist.cgi?regetlastlist=1">Listeyi göster</a>
 [% END %]
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="query.cgi">Search page</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enter_bug.cgi">Enter new [% terms.bug %]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="query.cgi">Arama sayfası</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enter_bug.cgi">Yeni [% terms.bug %] bildirimi</a>

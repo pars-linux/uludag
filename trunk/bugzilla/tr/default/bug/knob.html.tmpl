@@ -18,6 +18,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Vaskin Kissoyan <vkissoyan@yahoo.com>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -27,8 +28,8 @@
   <br>
   <input type="radio" id="knob-leave" name="knob" value="none" checked="checked">
   <label for="knob-leave">
-    Leave as <b>[% bug.bug_status FILTER html %]&nbsp;
-                [% bug.resolution FILTER html %]</b>
+    <b>[% bug.bug_status FILTER html %]&nbsp;
+       [% bug.resolution FILTER html %]</b>  olarak bırak
   </label>
   <br>
 
@@ -48,9 +49,9 @@
       [% IF bug.bug_status != "ASSIGNED" && bug.user.canconfirm %]
         <input type="radio" id="knob-accept" name="knob" value="accept">
         <label for="knob-accept">
-          Accept [% terms.bug %] (
-          [% IF bug.isunconfirmed %]confirm [% terms.bug %], [% END %]change
-          status to <b>ASSIGNED</b>)
+          [% terms.bug %] bildirimini kabul et(
+          [% IF bug.isunconfirmed %] [% terms.bug %] bildirimini onayla, [% END %]hata
+          durumunu <b>ATANMIŞ</b> olarak değiştir)
         </label>
         <br>
         [% knum = knum + 1 %]
@@ -59,8 +60,8 @@
       [% IF bug.resolution %]
         <input type="radio" id="knob-clear" name="knob" value="clearresolution">
         <label for="knob-clear">
-          Clear the resolution (remove the current resolution of
-          <b>[% bug.resolution FILTER html %]</b>)
+          Çözümü temizle (
+          <b>[% bug.resolution FILTER html %]</b> için çözüm bilgisini kaldır)
         </label>
         <br>
         [% knum = knum + 1 %]
@@ -131,7 +132,7 @@
            (bug.resolution == "MOVED" && bug.user.canmove) %]
         <input type="radio" id="knob-reopen" name="knob" value="reopen">
         <label for="knob-reopen">
-          Reopen [% terms.bug %]
+          [% terms.bug %] bildirimini tekrar aç
         </label>
         <br>
         [% knum = knum + 1 %]
@@ -139,7 +140,7 @@
       [% IF bug.bug_status == "RESOLVED" %]
         <input type="radio" id="knob-verify" name="knob" value="verify">
         <label for="knob-verify">
-          Mark [% terms.bug %] as <b>VERIFIED</b>
+          [% terms.bug %] bildirimini <b>DOĞRULANMIŞ</b> olarak işaretle
         </label>
         <br>
         [% knum = knum + 1 %]
@@ -147,7 +148,7 @@
       [% IF bug.bug_status != "CLOSED" %]
         <input type="radio" id="knob-close" name="knob" value="close">
         <label for="knob-close">
-          Mark [% terms.bug %] as <b>CLOSED</b>
+          [% terms.bug %] bildirimini <b>KAPANMIŞ</b> olarak işaretle
         </label>
         <br>
         [% knum = knum + 1 %]
@@ -155,14 +156,14 @@
     [% END %]
   [% END %]
 
-  <input type="submit" value="Commit">
+  <input type="submit" value="Onayla">
   <input type="hidden" name="form_name" value="process_bug">
   <p>
     <font size="+1">
       <b>
-        <a href="show_activity.cgi?id=[% bug.bug_id %]">View [% terms.Bug %] Activity</a>
+        <a href="show_activity.cgi?id=[% bug.bug_id %]">[% terms.Bug %] Faaliyetini Görüntüle</a>
         &nbsp; | &nbsp;
-        <a href="long_list.cgi?buglist=[% bug.bug_id %]">Format For Printing</a>
+        <a href="long_list.cgi?buglist=[% bug.bug_id %]">Yazıcı Dostu Sayfa</a>
       </b>
     </font>
 

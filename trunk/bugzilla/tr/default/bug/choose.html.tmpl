@@ -17,19 +17,20 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-   title = "Search by $terms.bug number"
+   title = "$terms.bug numarası ile arama"
  %]
 
 <form method="get" action="show_bug.cgi">
   <p>
-    You may find a single [% terms.bug %] by entering its [% terms.bug %] id here:
+    Tekil bir [% terms.bug %] bildirimini [% terms.bug %] numarasını girerek bulabilirsiniz:
     <input name="id" size="6">
-    <input type="submit" value="Show Me This [% terms.Bug %]">
+    <input type="submit" value="Bana Bu [% terms.Bug %] Bildirimini Göster">
   </p>
 </form>
 
