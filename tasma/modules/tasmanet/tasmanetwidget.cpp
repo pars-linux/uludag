@@ -15,6 +15,8 @@
 #include <kiconloader.h>
 #include <qfile.h>
 #include <qtimer.h>
+#include <qpair.h>
+#include <qptrlist.h>
 
 #include "devicesettings.h"
 #include "tasmanetwidget.h"
@@ -51,7 +53,7 @@ void TasmaNetWidget::updateInterfaces()
 
     QFile net_file( PROC_NET_DEV );
     QString line;
-    QStringList devices;
+    QPixmap _icon = DesktopIcon( "network_local", KIcon::SizeMedium );
 
     if ( !net_file.exists() || !net_file.open( IO_ReadOnly ) )
         return;
@@ -65,38 +67,38 @@ void TasmaNetWidget::updateInterfaces()
     struct wireless_info info;
     while ( -1 != net_file.readLine( line, 1024 ) ) {
         QString dev( line.left( line.findRev( ':' ) ).stripWhiteSpace() );
+        QString text( dev );
+        bool isWifi = false;
+
         if ( dev == "lo" ) continue;
 
         if ( iw_get_basic_config( sock, dev.ascii(), &(info.b) ) >= 0 ) {
             // wireless
-            dev += i18n( " (wireless)" );
+            text += i18n( " (wireless)" );
+            isWifi= true;
         }
 
-        devices.push_back( dev );
+        Interface *iface;
+        iface = new Interface( this, text, _icon, dev, isWifi );
     }
 
     net_file.close();
-
-    QPixmap _icon = DesktopIcon( "network_local", KIcon::SizeMedium );
-    QStringList::iterator it;
-    for ( it = devices.begin(); it != devices.end(); ++it ) {
-        Interface *iface;
-        iface = new Interface( this, *it, _icon );
-    }
-
 }
 
 void TasmaNetWidget::interfaceSelected( QIconViewItem* item )
 {
-    DeviceSettings *settings = new DeviceSettings( this );
+    Interface *iface = static_cast<Interface*>( item );
+    DeviceSettings *settings = new DeviceSettings( this, iface->device(), iface->isWifi() );
     settings->setCaption( item->text() );
 
-    settings->show();
+    settings->exec();
 }
 
 Interface::Interface( KIconView *parent, const QString& text,
-                      const QPixmap& icon )
-    : KIconViewItem( parent, text, icon )
+                      const QPixmap& icon, const QString& dev, bool wf )
+    : KIconViewItem( parent, text, icon ),
+      _dev( dev ),
+      _wifi( wf )
 {
 
 }

@@ -16,8 +16,22 @@
 
 class DeviceSettings : public DeviceSettingsDlg
 {
+    Q_OBJECT
+
 public:
-    DeviceSettings( QWidget *parent = 0, const char *name = 0 );
+    DeviceSettings( QWidget *parent, QString dev, bool wifi );
+
+protected slots:
+    void slotApply();
+    void slotCancel();
+
+private:
+    QString _dev;
+    bool _wifi;
+    int sockets_open();
+    int set_iface( const char *dev, const char *ip,
+		   const char *bc, const char *nm );
+
 };
 
 #endif // DEVICE_SETTINGS_H
