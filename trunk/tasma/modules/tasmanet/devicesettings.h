@@ -34,7 +34,7 @@ protected slots:
     void automaticToggled( bool on );
     void manualToggled( bool on );
 
-    void startDhcpcd();
+    int startDhcpcd();
 
     void addDns();
     void removeDns();
