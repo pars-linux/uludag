@@ -34,6 +34,9 @@ A.
 
 Bu belgede Uludað Projesi Kalite Takýmý'nýn amacýndan, nasýl bu takýmýn
  bir üyesi olunabileceðinden bahsedilmeye çalýþýlmýþtýr.
+ Eðer kalite@uludag.org.tr e-posta listesine üye olacaksanýz, bu belgeyi okurken
+ lütfen kafanýzdaki kalite tanýmýný bir kenara býrakýnýz ve belgeyi sonuna
+ kadar okuyunuz.
 \layout Abstract
 \pagebreak_top \pagebreak_bottom 
 
@@ -82,8 +85,12 @@ n ihtiyaçlara örnek olarak gösterilebilir.
  Projenin e-posta listesinde bulunmanýz, fikir beyanýnda bulunmanýz ve geliþmele
 ri takip etmeniz bile, projenin bir destekçisi ve geliþtiricisi olarak nitelenme
 nize yeterlidir; bu takýmýn iþi bu katkýnýzý ihtiyaç duyulan noktalara kanalize
- ederek projeye gelen katký kalitesini arttýrmak ve belirli bir seviyenin
- altýna inmemesini saðlamaya çalýþmaktýr.
+ ederek 
+\series bold 
+projeye gelen katký kalitesini arttýrmak ve belirli bir seviyenin altýna
+ inmemesini saðlamaya çalýþmak
+\series default 
+týr.
 \layout Section
 
 Kalite Takýmý Üyesi Olmak Ýstiyorum!
@@ -110,10 +117,13 @@ collapsed true
  Bu sayede listedeki diðer katýlýmcýlar ve geliþtiriciler, karþýlaþtýklarý
  sorunlarýn sizin çözebileceðiniz kýsmý ile ilgili sizden yardým isteyebilecekle
 rdir.
- Bu anlamda kalite@uludag.org.tr listesi ve arþivleri diðer listelerden farklý
- olarak, sosyal bir insan kaynaklarý bilgi ambarý olarak projeye yardým
- etmeye hazýr insanlarýn bilgilerini barýndýran bir iletiþim listesi olarak
- görülebilir.
+ Bu anlamda 
+\series bold 
+kalite@uludag.org.tr listesi ve arþivleri diðer listelerden farklý olarak,
+ sosyal bir insan kaynaklarý bilgi ambarý olarak projeye yardým etmeye hazýr
+ insanlarýn bilgilerini barýndýran bir iletiþim listesi olarak görülebilir
+\series default 
+.
  Eðer yardým etmeyi gerçekten istiyorsanýz, yardýma ihtiyaç olduðunda sizi
  bulabilmemiz için bu listede olmanýz ve bilgilerinizi göndermeniz gerçekten
  çok önemlidir.
@@ -124,44 +134,70 @@ rdir.
 E-posta Listesine Üye Oldum, Ne Yazayým?
 \layout Standard
 
-Bu E-posta listesine üyelik iþlemlerinizi tam olarak bitirdikten sonra e-posta
- listesine yukarda da bahsetmeye çalýþtýðýmýz gibi kendinizi tanýtan bir
- mesaj atmalýsýnýz.
+Bu e-posta listesine üyelik iþlemlerinizi tam olarak bitirdikten sonra e-posta
+ listesine yukarda da bahsetmeye çalýþtýðýmýz gibi 
+\series bold 
+kendinizi tanýtan bir mesaj
+\series default 
+ atmalýsýnýz.
  Bu mesajýn içeriðinde bulunmasý gerekenlerin en önemlileri bizim için ne
  yapabileceðiniz ve bize ortalama ne kadar vakit ayýrabileceðiniz bilgisi.
- Aþaðýda bize yardým edebileceðiniz alanlarýn bir listesi var:
+ Aþaðýda bize yardým edebileceðiniz alanlarýn bir listesini görebilirsiniz:
 \layout Itemize
 
-Belgelendirme: Belgelerimizi gözden geçirip hata raporlayabilir, belgelendirme
- çalýþmalarýna katýlabilir, belgelerimizi uluslararasýlaþtýrabilirsiniz,
- uygulamalar için kýlavuzlar yazabilir, çeþitli tanýtým ve reklam materyallerini
-n hazýrlanmasýna talip olabilirsiniz.
+
+\series bold 
+Belgelendirme
+\series default 
+: Belgelerimizi gözden geçirip hata raporlayabilir, belgelendirme çalýþmalarýna
+ katýlabilir, belgelerimizi uluslararasýlaþtýrabilirsiniz, uygulamalar için
+ kýlavuzlar yazabilir, çeþitli tanýtým ve reklam materyallerinin hazýrlanmasýna
+ talip olabilirsiniz.
 \layout Itemize
 
-Web Sayfalarý: Web sayfalarýnýn güncellenmesi, uluslararasýlaþtýrýlmasý,
- haberlerin güncellenmesi, bültenlerin hazýrlanmasý ve duyurulmasý ile ilgileneb
-ilirsiniz.
+
+\series bold 
+Web Sayfalarý
+\series default 
+: Web sayfalarýnýn güncellenmesi, uluslararasýlaþtýrýlmasý, haberlerin güncellen
+mesi, bültenlerin hazýrlanmasý ve duyurulmasý ile ilgilenebilirsiniz.
 \layout Itemize
 
-Yazýlým Geliþtirme: Bize hakim olduðunuz ve yazýlým geliþtirmekten keyif
- aldýðýnýz programlama dillerini, eðer varsa daha önce geliþtirdiðiniz ya
- da katký verdiðiniz projeleri anlatabilirsiniz.
+
+\series bold 
+Yazýlým Geliþtirme
+\series default 
+: Bize hakim olduðunuz ve yazýlým geliþtirmekten keyif aldýðýnýz programlama
+ dillerini, eðer varsa daha önce geliþtirdiðiniz ya da katký verdiðiniz
+ projeleri anlatabilirsiniz.
 \layout Itemize
 
-Test: Geliþtirilen uygulamalarý, uygulama arayüzlerinin kullanýlabilirliðini,
+
+\series bold 
+Test
+\series default 
+: Geliþtirilen uygulamalarý, uygulama arayüzlerinin kullanýlabilirliðini,
  daðýtýmýn beta sürümlerini ve kök dosya sistemlerini test edebilirsiniz.
  Bu sayede biz de üzerinde özellikle durulmasý, yoðun bir þekilde test edilmesi,
  farklý donanýmlarda denenmesi gereken yeni uygulamalar için sizden bu konuda
  yardým isteyebiliriz.
 \layout Itemize
 
-Paketler: Uzun zamandýr kullandýðýnýz ve hakkýnda birikime sahip olduðunuz
- çeþitli uygulamalarýn daðýtýmýn içerisinde yer alan ya da yer almasýný
- istediðiniz paketlerine talip olabililrsiniz.
+
+\series bold 
+Paketler
+\series default 
+: Uzun zamandýr kullandýðýnýz ve hakkýnda birikime sahip olduðunuz çeþitli
+ uygulamalarýn daðýtýmýn içerisinde yer alan ya da yer almasýný istediðiniz
+ paketlerine talip olabililrsiniz.
  Bu paketin tüm sorumluluðunun size devredilmesini isteyebilirsiniz.
 \layout Itemize
 
-Tanýtým: Uludað Projesi ve Pardus'u tanýtmak için seminerlere gidebilirsiniz.
+
+\series bold 
+Tanýtým
+\series default 
+: Uludað Projesi ve Pardus'u tanýtmak için seminerlere gidebilirsiniz.
  Bu sayede biz, örneðin, sizin bulunduðunuz ildeki üniversiteden gelen seminer
  isteklerini size yönlendirebilir, bir Uludað Geliþtiricisi olarak bizi
  etkinliklerde temsil etmenizi isteyebiliriz.
@@ -171,6 +207,10 @@ Yukardaki alanlarýn dýþýnda sizin aklýnýza gelenler olabilir, onlarý da
  e-postanýza ekleyebilir ve o alanda ne gibi çalýþmalarda bulunabileceðinizi
  listeye söyleyebilirsiniz.
  Örnek bir ileti þu þekilde olabilir:
+\newline 
+
+\newline 
+
 \layout LyX-Code
 
   Merhaba,
@@ -229,10 +269,15 @@ için patch gönderebilirim.
 
 \layout Standard
 
-Bu þekilde açýklayýcý bir e-posta, içeriðinden ve yardým konularýndan baðýmsýz
- olarak bizim için son derece deðerlidir; çünkü artýk herkes Necati Demir'den
- ne zaman hangi konularda yardým isteyebileceklerini ve ne kadarlýk bir
- yardým alabileceklerini artýk biliyor olurlar.
+Lütfen e-postanýza bize haftada ortalama kaç saat ayýrabileceðiniz eklemeyi
+ unutmayýnýz.
+ Bu þekilde açýklayýcý bir e-posta, içeriðinden, ayýrabileceðiniz zamandan
+ ve yardým konularýndan baðýmsýz olarak bizim için 
+\series bold 
+son derece deðerli ve önemlidir
+\series default 
+; çünkü artýk herkes Necati Demir'den ne zaman hangi konularda yardým isteyebile
+ceklerini ve ne kadarlýk bir yardým alabileceklerini artýk biliyor olurlar.
 \layout Standard
 
 Bu e-posta listesine üye olarak kalite ekibine katýlmak demek, 
