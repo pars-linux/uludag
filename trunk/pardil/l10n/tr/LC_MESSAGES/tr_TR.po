@@ -28,6 +28,27 @@ msgstr "Künye"
 msgid "Status:"
 msgstr "Durum:"
 
+#: tpl.proposal.php:41
+msgid "Active"
+msgstr "Aktif"
+
+#: tpl.proposal.php:41
+msgid "Pending"
+msgstr "Onay Bekliyor"
+
+#: tpl.proposal.php:41
+msgid "Locked"
+msgstr "Kilitli"
+
+msgid "Project Manager"
+msgstr "Proje Yöneticisi"
+
+msgid "Developer"
+msgstr "Geliştirici"
+
+msgid "Contributor"
+msgstr "Destekçi"
+
 #: tpl.proposal.php:42
 msgid "Id:"
 msgstr "No:"
