@@ -10,7 +10,7 @@ Uludağ haftalık bültenine hoşgeldiniz.
 
 <p>
 Kaynak temizleme dökümanında bahsedilen ve depodaki yazılımların (bir
-kısmının) derlenmiş hallerini barındıran uludag-0.0.2.tar.bz2 [1]
+kısmının) derlenmiş hallerini barındıran uludag-0.0.3.tar.bz2 [1]
 dosyasını hazırlandı. Dosya, kaynak temizleme sürecine destek olmak
 isteyen geliştiricilerin güncel yazılımlar ile çalışarak hızlıca bir
 temizleme sistemi hazırlayabilmelerini amaçlıyor.
