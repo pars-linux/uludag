@@ -267,7 +267,12 @@ int DeviceSettings::set_iface( const char *dev, const char *ip,
 
     // enable (up) device
     strcpy( ifr.ifr_name, dev );
-    ifr.ifr_flags = IFF_UP | IFF_RUNNING | ~IFF_NOARP | IFF_MULTICAST | IFF_BROADCAST;
+    ifr.ifr_flags = IFF_UP;
+    ifr.ifr_flags |= IFF_RUNNING;
+    ifr.ifr_flags |= IFF_BROADCAST;
+    ifr.ifr_flags |= IFF_MULTICAST;
+    ifr.ifr_flags &= ~IFF_NOARP;
+    ifr.ifr_flags &= ~IFF_PROMISC;
     if ( ioctl( skfd, SIOCSIFFLAGS, &ifr ) < 0 ) {
         return -1;
     }
