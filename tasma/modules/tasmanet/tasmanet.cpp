@@ -32,7 +32,8 @@ TasmaNet::TasmaNet( QWidget* parent, const char *name )
     TasmaNetAbout = new KAboutData (  "tasmanet",  I18N_NOOP(  "TASMA Network Configuration Module" ),  "0.1",
                                       I18N_NOOP(  "TASMA Network Configuration Module" ),  KAboutData::License_GPL,
                                       I18N_NOOP(  "(c) 2005, TUBITAK - UEKAE" ) );
-    TasmaNetAbout->addAuthor(  "Barış Metin",  I18N_NOOP(  "Current Maintainer" ),  "baris@uludag.org.tr" );
+    TasmaNetAbout->addAuthor( "Barış Metin",  I18N_NOOP( "Current Maintainer" ),  "baris@uludag.org.tr" );
+    TasmaNetAbout->addAuthor( "Necati Demir", I18N_NOOP( "Contributor" ), "ndemir@demir.web.tr" );
     TasmaNetAbout->setTranslator( "Barış Metin", "baris@uludag.org.tr" );
 
     setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
