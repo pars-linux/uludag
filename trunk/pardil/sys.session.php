@@ -1,27 +1,56 @@
 <?php
+  // Süresi geçmiş geçici şifreleri yoket
+  proc_password_expire(getop('temp_password_timeout'));
+  
+  // Süresi geçmiş oturumları yoket
+  proc_session_expire(getop('session_timeout'));
+  
+  // Oturum bilgiler
   $_PSESSION = array();
   
-  // 900 saniye hareketsiz olan oturumları kaldır.
-  proc_session_expire($_PCONF['session_timeout']);
-  
-  // 900 saniye hareketsiz olan şifre sıfırlama taleplerini sil.
-  proc_password_expire($_PCONF['temporary_password_timeout']);
+  // Oturum etiketi
+  $str_session_label = getop('session_label');
 
-  if (isset($_COOKIE['pardil_session']) && strlen($_COOKIE['pardil_session']) == 32) {
-    $str_sql = sprintf('SELECT users.id, sessions.id AS session, users.username, users.email, users.name, users.level FROM users INNER JOIN sessions ON users.id=sessions.user WHERE sessions.id="%s"', addslashes($_COOKIE['pardil_session']));
+  // Açık oturum var mı, kontrol et
+  if (isset($_COOKIE[$str_session_label]) && strlen($_COOKIE[$str_session_label]) == 32) {
+  
+    // Oturum kodu kontrolü
+    $str_sql = sprintf('SELECT users.id, sessions.id AS session, users.username, users.email, users.name, users.level FROM users INNER JOIN sessions ON users.id=sessions.user WHERE sessions.id="%s"', $_COOKIE[$str_session_label]);
     $res_sql = mysql_query($str_sql);
+    
     if (mysql_num_rows($res_sql) == 1) {
-      if (isset($_GET['exit']) || isset($_GET['logout']) || isset($_GET['quit'])) {
-        proc_session_delete($_PSESSION['session']);
-        setcookie('pardil_session', '');
-        header('Location: logout.php');
-        exit;
-      }
+    
+      // Eğer oturum kodu veritabanında buluyorsa:
+      // 1. Sorgudan gelen tüm bilgileri bir kenara yaz
       $_PSESSION = mysql_fetch_array($res_sql, MYSQL_ASSOC);
-      // Oturum bilgisini güncelle.
-      proc_session_update($_PSESSION['id']);
+      
+      // 2. Oturum bilgisini tazele
+      proc_session_init($_PSESSION['id']);
+      
     }
+    else {
+    
+      // Oturum kodu veritabanında bulunmuyorsa,
+      // 1. Oturum ömrü dolmuştur
+      // 2. Sevgili ziyaretçimiz bir iş çevirmektedir
+      
+    }
+    
   }
 
-  
+  // Açık bir oturum varsa ve çıkış isteği yapıldıysa
+  if (isset($_PSESSION['id']) && isset($_GET['logout'])) {
+    
+    // Oturumu yoket
+    proc_session_delete($_PSESSION['session']);
+
+    // Çerezi yoket
+    setcookie($str_session_label, '');
+
+    // Ziyaretçiyi çıkış sayfasına yönlendir
+    header('Location: logout.php');
+    exit;
+    
+  }
+
 ?>

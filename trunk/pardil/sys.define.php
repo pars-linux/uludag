@@ -10,5 +10,4 @@
   define('CONF_DOMAIN', 'pardil');
   define('CONF_LOCALE', 'tr_TR.utf8');
 
-  $_PCONF = array();
 ?>
