@@ -23,12 +23,13 @@
   #                 Chris Pratt
   #                 Tom Schutter
   #                 Chris Yeh
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
   
 [% PROCESS global/variables.none.tmpl %] 
-[% INCLUDE global/header.html.tmpl title = "$terms.Bug Writing Guidelines" %] 
+[% INCLUDE global/header.html.tmpl title = "$terms.Bug Bildirim Kılavuzu" %] 
 
-<h3>Why You Should Read This</h3>
+<h3>Neden Bunu Okumalısınız</h3>
 
 <blockquote>
   <p>Simply put, the more effectively you report [% terms.abug %], the more
@@ -41,7 +42,7 @@
   every sentence may precisely apply to your software project.</p>
 </blockquote>
 
-<h3>How to Write a Useful [% terms.Bug %] Report</h3>
+<h3>Nasıl Başarılı Bir [% terms.Bug %] Raporu Yazabilirsiniz</h3>
 
 <blockquote>
   <p>Useful [% terms.bug %] reports are ones that get [% terms.bugs %] fixed. 
@@ -147,10 +148,10 @@
     "Other" if your OS isn't listed.</p>
   </blockquote>
 
-  <p><b>How important is the [% terms.bug %]?</b></p>
+  <p><b>[% terms.bug %] ne kadar önemli ?</b></p>
 
   <blockquote>
-    <p><b>Severity: How damaging is the [% terms.bug %]?</b><br>
+    <p><b>Tutarlılık: [% terms.bug %] sistem bütünlüğünü ne kadar bozuyor ?</b><br>
      This item defaults to 'normal'. If you're not sure what severity your
     [% terms.bug %] deserves, click on the Severity link. You'll see a
     description of each severity rating.<br>
@@ -176,10 +177,10 @@
     commas, as long as those people have [% terms.Bugzilla %] accounts.</p>
   </blockquote>
 
-  <p><b>What else can you tell the engineer about the [% terms.bug %]?</b></p>
+  <p><b>Geliştiricilere [% terms.bug %] hakkında başka neler söyleyebilirsiniz?</b></p>
 
   <blockquote>
-    <p><b>Summary:</b> <b>How would you describe the [% terms.bug %], in 
+    <p><b>Özet:</b> <b>How would you describe the [% terms.bug %], in 
     approximately 60 or fewer characters?</b><br>
      A good summary should <b>quickly and uniquely identify [% terms.abug %]
     report</b>. Otherwise, an engineer cannot meaningfully identify your
@@ -193,7 +194,7 @@
     <br>
      [ <a href="#summary">Tell Me More</a> ]<br>
     <br>
-     <b>Description:</b><br>
+     <b>Açıklama:</b><br>
      Please provide a detailed problem report in this field. Your 
      [% terms.bug %]'s recipients will most likely expect the following 
      information:</p>
@@ -302,7 +303,7 @@ PowerPC unmapped memory exception at 0B512BD0 NSGetFactory+055F0
 </blockquote>
 <hr>
 
-<h3>More Information on Writing Good [% terms.Bugs %]</h3>
+<h3>Başarılı [% terms.Bugs %] Raporları Yazmak Hakkında Daha Fazla Bilgi</h3>
 
 <blockquote>
   <p><b><a name="tips"></a> 1. General Tips for a Useful [% terms.Bug %] 

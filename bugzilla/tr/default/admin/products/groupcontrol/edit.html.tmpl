@@ -17,13 +17,14 @@
   # Rights Reserved.
   #
   # Contributor(s): Joel Peshkin <bugreport@peshkin.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% filt_product = product FILTER html %]
 [% PROCESS global/header.html.tmpl
-  title = "Edit Group Controls for '$filt_product'"
+  title = "'$filt_product' için Grup Kontrollerinin Düzenlenmesi"
 %]
 
 <form method="post" action="editproducts.cgi">
@@ -32,10 +33,10 @@
 
   <table id="form" cellspacing="0" cellpadding="4" border="1">
     <tr bgcolor="#6666ff">
-      <th>Group</th>
-      <th>Entry</th>
-      <th>MemberControl</th>
-      <th>OtherControl</th>
+      <th>Gurup</th>
+      <th>Giriş</th>
+      <th>ÜyeKontrolü</th>
+      <th>DiğerKontroller</th>
       <th>Canedit</th>
       <th>[% terms.Bugs %]</th>
     </tr>
@@ -128,8 +129,7 @@
 
 
 <p>
-These settings control the relationship of the groups to this
-product.
+Buradaki ayarlar gurupların bu ürünle ilişkilerini kontrol etmektedir.
 <p>
 If any group has <b>Entry</b> selected, then this product will
 restrict [% terms.bug %] entry to only those users who are members of all the
