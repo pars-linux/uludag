@@ -7,6 +7,20 @@ ULUSAL DAĞITIM WEB ARAÇLARI
 Bu program bir dizin hiyerarşisindeki html dosyalarını
 verilen bir şablona uygun hale getirir.
 
+cd web
+../web_araclari/sablonla.py
+
+biçiminde çalıştırılmalıdır.
+
+[ bulten_yap.py ]
+
+Bu program verilen düz metin bülten yazılarından bültenleri,
+bülten indeksini ve RSS kaynağını oluşturur.
+
+cd web/bulten/
+../../web_araclari/bulten_yap.py
+
+biçiminde çalıştırılmalıdır.
 
 [ belgeyap.py ]
 
