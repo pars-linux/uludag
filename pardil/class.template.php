@@ -1,12 +1,19 @@
 <?php
 
   /*
-    Kullanım:
     $obj_page = new template('tpl.page.php');
-    $obj_page->setvar('myvar', $my_variable);
+    // Argüman olarak gönderilen şablonu kullan.
+    
+    $obj_page->setvar('myvar1', $my_variable1);
+    $obj_page->setvar('myvar2', $my_variable2);
+    // Şablon içinde kullanılabilecek değişkenler
+
     $obj_page->flush();
-    // ya da:
+    // Sayfayı oluştur ve ekrana dök
+    
     // echo $obj_name->generate();
+    // Ya da sadece oluştur :)
+
   */
   
   class template {

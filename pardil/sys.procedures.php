@@ -1,9 +1,16 @@
 <?php
   // INSERT & UPDATE & DELETE
+  
+  /*
+    INSERT, UPDATE, DELETE komutları için hazırlanan bu fonksiyonlar, kod içinde 
+    doğrudan SQL komutu kullanılmasını engellemek için hazırlanmıştır.
+    Ayrıca, ileride Stored Procedure destekli bir veritabanı yöneticisine geçildiğinde 
+    fonksiyonların SP'lere dönüştürülmesi zor olmayacaktır.
+  */
 
   // Pardil_Status
   // Durum çeşitleri
-  // 1 - Onay Bekleyen,2 - Onaylanmış, 3 - Askıya Alınan
+  // 1 - Onay Bekleyen, 2 - Onaylanmış, 3 - Kilitli
   function proc_status_new($str_status) {
     $str_sql = sprintf('INSERT INTO pardil_status (name) VALUES ("%s")', $str_status);
     mysql_query($str_sql);
