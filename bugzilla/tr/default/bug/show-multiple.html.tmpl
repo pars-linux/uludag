@@ -82,7 +82,7 @@
       [% PROCESS cell attr = { description => "Raporlayan", 
                                name => "reporter" } %]
       [% IF Param('useqacontact') %]
-        [% PROCESS cell attr = { description => "QA Contact", 
+        [% PROCESS cell attr = { description => "Kalite Sorumlusu", 
                                  name => "qa_contact" } %]
       [% END %]
     </tr>
@@ -103,7 +103,7 @@
     
     <tr>
       <td colspan="4">
-        <b>URL:</b>&nbsp;
+        <b>Web Adresi:</b>&nbsp;
         <a href="[% bug.bug_file_loc FILTER html %]">
                  [% bug.bug_file_loc FILTER html %]</a> 
     </tr>

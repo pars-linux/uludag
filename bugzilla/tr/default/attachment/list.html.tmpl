@@ -22,11 +22,11 @@
 <br>
 <table cellspacing="0" cellpadding="4" border="1">
   <tr>
-    <th bgcolor="#cccccc" align="left">Attachment</th>
-    <th bgcolor="#cccccc" align="left">Type</th>
-    <th bgcolor="#cccccc" align="left">Modified</th>
-    <th bgcolor="#cccccc" align="left">Status</th>
-    <th bgcolor="#cccccc" align="left">Actions</th>
+    <th bgcolor="#cccccc" align="left">Eklenti</th>
+    <th bgcolor="#cccccc" align="left">Dosya Tipi</th>
+    <th bgcolor="#cccccc" align="left">Değiştirilme Tarihi</th>
+    <th bgcolor="#cccccc" align="left">Durumu</th>
+    <th bgcolor="#cccccc" align="left">İşlemler</th>
   </tr>
 
   [% FOREACH attachment = attachments %]
@@ -71,10 +71,10 @@
 
   <tr>
     <td colspan="4">
-      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Create a New Attachment</a> (proposed patch, testcase, etc.)
+      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Yeni Bir Eklenti Oluştur</a> (önerilen yama, test ortamı, v.b.)
     </td>
     <td colspan="1">
-      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=viewall">View All</a>
+      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=viewall">Tümünü Göster</a>
     </td>
   </tr>
 </table>
