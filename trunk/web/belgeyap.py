@@ -119,56 +119,6 @@ class Document:
 		f.writelines (yeni)
 		f.close ()
 	
-	def retouch_html (self, name):
-		print "Retouching '%s'" % (name)
-		f = file (name, "r")
-		lines = f.readlines ()
-		f.close ()
-		f1 = file (name, "w")
-		f = codecs.EncodedFile (f1, "utf-8", "utf-8")
-		p = re.compile ("Table of Contents")
-		p1 = re.compile ("Abstract")
-		for tline in self.template:
-			if tline.find ("$content$") != -1:
-				flag = 0
-				for line in lines:
-					if flag == 0:
-						if line.find ("<!--HEVEA") != -1 or line.find ("<BODY") != -1:
-							flag = 1
-							f.write (line)
-					elif flag == 1:
-						if line.find ("<!--FOOTER-->") != -1 or line.find ("</BODY>") != -1:
-							flag = 2
-						t = p.search (line)
-						if t:
-							line = line[:t.start()] + "İçindekiler" + line[t.end():]
-						t = p1.search (line)
-						if t:
-							line = line[:t.start()] + "Özet" + line[t.end():]
-						f.write (line)
-					else:
-						break
-			else:
-				f.write (tline)
-		f1.close ()
-		os.chmod (name, 0755)
-
-	def retouch_all (self, name):
-		list = []
-		f = file (name, "r")
-		lines = f.readlines ()
-		f.close ()
-		for line in lines:
-			line = line.strip ("\r\n")
-			line = line[line.find("\t") + 1:]
-			for item in list:
-				if str(item) == str(line):
-					break;
-			else:
-				list.append (line)
-		for item in list:
-			Document.retouch_html (self, item)
-	
 	def export (self):
 		# lyx dosyasindan diger formatlari yaratir
 		print "Exporting '%s'..." % (self.lyx_name)
@@ -182,13 +132,9 @@ class Document:
 		Document.get_info (self)
 		# simdi html ciktilar
 		html_name = self.base_name + ".html"
-		os.spawnlp (os.P_WAIT, "hevea", "hevea", "-fix", self.base_name + ".tex", "-o", "index.html")
-		os.spawnlp (os.P_WAIT, "iconv", "iconv", "-f", "iso-8859-9", "-t", "utf-8", "index.html", "-o", html_name)
-		os.spawnlp (os.P_WAIT, "hacha", "hacha", "-hrf", html_name, "-o", "index.html")
+		os.spawnlp (os.P_WAIT, "hevea", "hevea", "-fix", self.base_name + ".tex", "-o", html_name)
+		os.spawnlp (os.P_WAIT, "../sayfakes.py", "../sayfakes.py", html_name)
 		# html header footer duzeltmeleri
-		Document.retouch_html (self, html_name)
-		Document.retouch_html (self, "index.html")
-		Document.retouch_all (self, self.base_name + ".hrf")
 		os.chdir ("..")
 
 class Index:

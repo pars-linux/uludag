@@ -20,6 +20,8 @@ class CutNode:
 		self.lines = []
 		self.name = ""
 		self.level = ""
+		self.lvl = 0
+		self.cut = 0
 
 class CutSection:
 	def __init__ (self):
@@ -43,6 +45,14 @@ class Cutter:
 					break
 			head.append (line)
 		return head
+	
+	def fix_levels (self, nodes):
+		levels = { "section": 0, "subsection": 1, "subsubsection": 2, "subsubsubsection": 3 }
+		for node in nodes:
+			if levels.has_key (node.level):
+				node.lvl = levels[node.level]
+			else:
+				print "unknown node", node.level, node.name
 	
 	def get_nodes (self, lines):
 		# hevea ciktisinda dokuman bolumlerini ayir
@@ -77,6 +87,7 @@ class Cutter:
 				else:
 					node.lines.append (line)
 		nodes.append (node)
+		self.fix_levels (nodes)
 		return nodes
 	
 	def make_sect_name (self, index):
@@ -85,27 +96,63 @@ class Cutter:
 		else:
 			return "node_" + str (index) + ".html"
 	
+	def sub_lines (self, nodes, i):
+		t = 0
+		lvl = nodes[i].lvl
+		while nodes[i]:
+			t += len (nodes[i].head) + len (nodes[i].lines)
+			i += 1
+			if i >= len (nodes) or nodes[i].lvl <= lvl:
+				break
+		return t
+	
+	def mark_cut (self, nodes, i):
+		lvl = nodes[i].lvl
+		while nodes[i]:
+			if nodes[i].lvl == (lvl + 1):
+				nodes[i].cut = 1
+			i += 1
+			if i >= len (nodes) or nodes[i].lvl <= lvl:
+				break
+	
 	def make_sects (self, nodes):
+		# bolumleri sapta
+		t = 0
+		for node in nodes:
+			t += len (node.head) + len (node.lines)
+		if t > 60:
+			for node in nodes:
+				if node.lvl == 0:
+					node.cut = 1
+			for i, node in enumerate (nodes):
+				size = self.sub_lines (nodes, i)
+				if size > 60:
+					self.mark_cut (nodes, i)
 		# bolumleri sayfalara ayir
 		sects = []
-		sect = None
-		sep = nodes[0].level
 		index = 0
+		sect = None
 		for node in nodes:
-			if node.level == sep:
+			if node.cut == 1:
 				if sect != None:
 					sects.append (sect)
 				sect = CutSection ()
 				sect.index = index
 				sect.file_name = self.make_sect_name (index)
 				index += 1
+			else:
+				if sect == None:
+					sect = CutSection ()
+					sect.index = index
+					sect.file_name = self.make_sect_name (index)
+					index += 1
 			sect.lines += node.head
 			sect.lines += node.lines
 		sects.append (sect)
 		return sects
 	
 	def fix_links (self, doc):
-		# linkleri tasindiklari dosyalara yoneltelim
+		# linkleri yeni tasindiklari dosyalara yoneltelim
 		links = {}
 		p = re.compile ("NAME=\"")
 		for sect in doc.sects:
@@ -233,6 +280,6 @@ for o, v in opts:
 if args == []:
 	usage ()
 
-c = Cutter ("belge.tmpl")
+c = Cutter ("../belge.tmpl")
 for name in args:
 	c.cut (name)
