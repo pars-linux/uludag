@@ -26,15 +26,8 @@
 Wallpaper::Wallpaper( QWidget *parent, const char* name )
     : WallpaperDlg( parent, name )
 {
-    selectedPaper = "pardus.jpg";
+    selectedPaper = "";
     mDirs = KGlobal::dirs();
-
-    QImage wp;
-    QString file = locate( "wallpaper",  "pardus.jpg" );
-    wp.load(  file );
-    wp = wp.smoothScale(  140,  105 );
-    QPixmap pix(  wp );
-    pix_wallpaper->setPixmap(  pix );
 
     QStringList lst = mDirs->findAllResources( "wallpaper",  "*",  false,  true );
     int i = 0;
@@ -65,6 +58,9 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 
     connect( m_urlWallpaperBox, SIGNAL( activated( int ) ),
              this, SLOT( paperSelected( int ) ) );
+
+
+    emit paperSelected( 0 );
 }
 
 void Wallpaper::paperSelected( int item )
