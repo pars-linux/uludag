@@ -14,44 +14,18 @@
     
     Örnek Kullanım:
     ===============
-    <?php
-      require('class.xmlhttprequest.php');
+    http://haftalik.net/classes/xhr/example.xmlhttprequest.php
 
-      function test($str_text) {
-        echo strtoupper($str_text);
-      }
-
-      $obj_xhr = new xmlhttprequest();
-      $obj_xhr->str_url = 'xhr.php';
-      $obj_xhr->register_func('test', 'cb_test');
-      $obj_xhr->handle_request();
-    ?>
-     <html>
-       <head>
-         <script>
-           function cb_test(r) {
-             alert(r.responseText);
-           }
-           <?php echo $obj_xhr->js_code(); ?>
-         </script>
-       </head>
-       <body>
-         <input type="text" id="mytext" value="merhaba!"/>
-         <button onclick="xhr_test(document.getElementById('mytext').value)">Dene!</button>
-       </body>
-     </html>
-
-
-     Notlar:
-     =======
-     XMLHTTPRequest özelliği Mozilla, Opera, Safari, IE gibi tarayıcılar 
-     tarafından desteklenmektedir. Yazılan kod, Mozilla'da sorunsuz 
-     çalışmaktadır, diğer tarayıcılarda çalışması için ek kod gerekir.
+    Notlar:
+    =======
+    XMLHTTPRequest özelliği Mozilla, Opera, Safari, IE gibi tarayıcılar 
+    tarafından desteklenmektedir. Yazılan kod, Mozilla'da sorunsuz 
+    çalışmaktadır, diğer tarayıcılarda çalışması için ek kod gerekir.
      
-     Cross-Browser XMLHTTPRequest desteği için bir JS sınıfı bulunmaktadır, 
-     ancak ne yazık ki GPL lisansıyla dağıtılmamaktadır.
+    Cross-Browser XMLHTTPRequest desteği için bir JS sınıfı bulunmaktadır, 
+    ancak ne yazık ki GPL lisansıyla dağıtılmamaktadır.
 
-     (http://www.scss.com.au/family/andrew/webdesign/xmlhttprequest/)
+    (http://www.scss.com.au/family/andrew/webdesign/xmlhttprequest/)
   */
 
   class xmlhttprequest {
