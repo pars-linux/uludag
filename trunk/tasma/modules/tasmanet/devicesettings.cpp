@@ -172,7 +172,7 @@ void DeviceSettings::slotApply()
         if ( !defaultgw->text().isEmpty() ) {
             ret =  setDefaultRoute( defaultgw->text().ascii() );
             if ( ret < 0 ) {
-                // succeed = false;
+                succeed = false;
                 kdDebug() << "tasmanet: set_default_route() failed\n";
             }
         }
