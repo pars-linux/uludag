@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-26 23:49+0200\n"
+"POT-Creation-Date: 2005-02-07 02:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,6 +60,10 @@ msgstr ""
 
 #: main.cpp:69
 msgid "Module Developers"
+msgstr ""
+
+#: tasmamainwin.cpp:76
+msgid "About Current Module"
 msgstr ""
 
 #: tmoduleview.cpp:57

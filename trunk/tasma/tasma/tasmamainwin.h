@@ -50,6 +50,7 @@ protected slots:
 			 const QString& icon_path,
 			 const QString& text ); // Configuration module selected
     void backToCategory(); // go back from moduleview to category view.
+    void aboutModule(); // about current active module.
 
 private:
     QHBox *_hbox;
@@ -58,7 +59,8 @@ private:
     QWidgetStack *_wstack;
     TCategoryView *_categoryview;
     AboutView *_about;
-
+    KAction *_about_module;
+    KCModule *_currentModule;
     QListViewItem *_currentCategory;
 
 };

@@ -21,6 +21,7 @@
 #include <klistview.h>
 #include <kservicegroup.h>
 #include <kcmodule.h>
+#include <kaboutapplication.h>
 
 #include "aboutview.h"
 #include "tcategoryview.h"
@@ -32,7 +33,9 @@
 
 TasmaMainWin::TasmaMainWin( const char* name )
     : KMainWindow( 0, name, WStyle_ContextHelp ),
-      _moduleview( 0 )
+      _moduleview( 0 ),
+      _currentModule( 0 ),
+      _currentCategory( 0 )
 {
     setupActions();
 
@@ -69,6 +72,13 @@ TasmaMainWin::TasmaMainWin( const char* name )
 void TasmaMainWin::setupActions()
 {
     KStdAction::quit( this,  SLOT( close() ),  actionCollection() );
+
+    _about_module = new KAction( i18n( "About Current Module" ), 0,
+                                this, SLOT( aboutModule() ), actionCollection(),
+                                "help_about_module" );
+
+    _about_module->setEnabled( false );
+
     createGUI( "tasmaui.rc" );
 }
 
@@ -95,12 +105,23 @@ void TasmaMainWin::categorySelected( QListViewItem* category )
 
     // set the current category
     _currentCategory = category;
+
+    // no module is selected
+    _about_module->setEnabled( false );
 }
 
 void TasmaMainWin::moduleSelected( KCModule *module, const QString& icon_path, const QString& text )
 {
     if ( _moduleview ) {
         delete _moduleview;
+    }
+
+    _currentModule = module;
+    if ( _currentModule->aboutData() ) {
+        _about_module->setEnabled( true );
+    }
+    else {
+        _about_module->setEnabled( false );
     }
 
     _moduleview = new TModuleView( this, module, icon_path, text );
@@ -114,4 +135,10 @@ void TasmaMainWin::backToCategory()
        funny, but works :) */
     _index->setSelected( _currentCategory, false );
     _index->setSelected( _currentCategory, true );
+}
+
+void TasmaMainWin::aboutModule()
+{
+    KAboutApplication about( _currentModule->aboutData() );
+    about.exec();
 }
