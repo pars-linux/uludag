@@ -66,6 +66,7 @@ int Device::setInterface( const char *dev, const char *ip,
     struct ifreq ifr;
     struct sockaddr_in sin;
     int skfd;
+    int ret = 0;
 
     skfd = sockets_open();
     if ( skfd < 0 )
@@ -80,7 +81,7 @@ int Device::setInterface( const char *dev, const char *ip,
     ifr.ifr_flags &= ~IFF_NOARP;
     ifr.ifr_flags &= ~IFF_PROMISC;
     if ( ioctl( skfd, SIOCSIFFLAGS, &ifr ) < 0 ) {
-        return -1;
+        ret = -1;
     }
 
     memset( &sin, 0, sizeof( struct sockaddr ) );
@@ -89,14 +90,14 @@ int Device::setInterface( const char *dev, const char *ip,
     inet_aton( ip, &(sin.sin_addr) );
     memcpy( &ifr.ifr_addr, &sin, sizeof( struct sockaddr ));
     if ( ioctl( skfd, SIOCSIFADDR, &ifr ) < 0 ) {
-        return -1;
+        ret = -1;
     }
 
     if ( bc ) {
         inet_aton( bc, &(sin.sin_addr) );
         memcpy( &ifr.ifr_addr, &sin, sizeof(struct sockaddr) );
         if ( ioctl( skfd, SIOCSIFBRDADDR, &ifr ) ) {
-            return -1;
+            ret = -1;
         }
     }
 
@@ -104,11 +105,12 @@ int Device::setInterface( const char *dev, const char *ip,
         inet_aton( nm, &(sin.sin_addr) );
         memcpy( &ifr.ifr_addr, &sin, sizeof(struct sockaddr) );
         if ( ioctl( skfd, SIOCSIFNETMASK, &ifr ) ) {
-            return -1;
+            ret = -1;
         }
     }
 
-    return 0;
+    close( skfd );
+    return ret;
 }
 
 
@@ -117,8 +119,11 @@ int Device::setDefaultRoute( const char *ip )
     struct rtentry route;
     struct sockaddr_in singw, sindst;
     int skfd;
+    int ret = 0;
 
     skfd = sockets_open();
+    if ( skfd < 0 )
+        return -1;
 
     memset( &singw, 0, sizeof( struct sockaddr ) );
     memset( &sindst, 0, sizeof( struct sockaddr ) );
@@ -133,10 +138,11 @@ int Device::setDefaultRoute( const char *ip )
     route.rt_gateway = *(struct sockaddr *)&singw;
     route.rt_flags = RTF_GATEWAY;
     if( ioctl( skfd, SIOCADDRT, &route ) < 0) {
-        return -1;
+        ret = -1;
     }
 
-    return 0;
+    close( skfd );
+    return ret;
 }
 
 
@@ -189,11 +195,22 @@ const char* Device::getIP( const char *dev )
     struct sockaddr_in *sin;
     struct ifreq ifr;
     int skfd = sockets_open();
+
+    if ( skfd < 0 )
+        return "";
+
     strcpy( ifr.ifr_name, dev );
 
-    ioctl( skfd, SIOCGIFADDR, &ifr );
-    sin = (struct sockaddr_in *)&ifr.ifr_addr;
-    return inet_ntoa( sin->sin_addr );
+    if ( ioctl( skfd, SIOCGIFADDR, &ifr ) != 0 ) {
+        sin = (struct sockaddr_in *)&ifr.ifr_addr;
+        close( skfd );
+        return inet_ntoa( sin->sin_addr );
+    }
+    else {
+        close( skfd );
+        return "";
+    }
+
 }
 
 
@@ -202,11 +219,22 @@ const char* Device::getNetmask( const char *dev )
     struct sockaddr_in *sin;
     struct ifreq ifr;
     int skfd = sockets_open();
+
+    if ( skfd < 0 )
+        return "";
+
     strcpy( ifr.ifr_name, dev );
 
-    ioctl( skfd, SIOCGIFNETMASK, &ifr );
-    sin = (struct sockaddr_in *)&ifr.ifr_addr;
-    return inet_ntoa( sin->sin_addr );
+    if ( ioctl( skfd, SIOCGIFNETMASK, &ifr ) != 0 ) {
+        sin = (struct sockaddr_in *)&ifr.ifr_addr;
+        close( skfd );
+        return inet_ntoa( sin->sin_addr );
+    }
+    else {
+        close( skfd );
+        return "";
+    }
+
 }
 
 
@@ -215,11 +243,22 @@ const char* Device::getBroadcast( const char *dev )
     struct sockaddr_in *sin;
     struct ifreq ifr;
     int skfd = sockets_open();
+
+    if ( skfd < 0 )
+        return "";
+
     strcpy( ifr.ifr_name, dev );
 
-    ioctl( skfd, SIOCGIFBRDADDR, &ifr );
-    sin = (struct sockaddr_in *)&ifr.ifr_addr;
-    return inet_ntoa( sin->sin_addr );
+    if ( ioctl( skfd, SIOCGIFBRDADDR, &ifr ) != 0 ) {
+        sin = (struct sockaddr_in *)&ifr.ifr_addr;
+        close( skfd );
+        return inet_ntoa( sin->sin_addr );
+    }
+    else {
+        close( skfd );
+        return "";
+    }
+
 }
 
 int Device::startDhcpcd( const char *dev )
@@ -262,6 +301,10 @@ const QRegExp Device::getRx() const
 const char * Device::getESSID( const char *dev )
 {
     int skfd = sockets_open();
+
+    if ( skfd < 0 )
+        return "";
+
     wireless_config *config = new wireless_config;
 
     if ( iw_get_basic_config( skfd, dev, config ) != -1 ) {
@@ -270,6 +313,7 @@ const char * Device::getESSID( const char *dev )
         }
     }
 
+    close( skfd );
     return "";
 }
 
@@ -277,6 +321,10 @@ const char* Device::getWirelessMode( const char *dev )
 {
     QString _mode;
     int skfd = sockets_open();
+
+    if ( skfd < 0 )
+        return "";
+
     wireless_config *config = new wireless_config;
 
     if ( iw_get_basic_config( skfd, dev, config ) != -1 ) {
@@ -297,5 +345,6 @@ const char* Device::getWirelessMode( const char *dev )
         }
     }
 
+    close( skfd );
     return _mode.ascii();
 }
