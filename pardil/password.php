@@ -31,7 +31,7 @@
     $str_code = proc_password_new($int_userno);
     
     $str_subject = sprintf(__('%s Temporary Password'), $_PCONF['site_name']);
-    $str_body = sprintf(__("Hello,\nYou have requested a temporary password for your account at %1\$s.\n\nYour temporary password is: %2\$s\n\nThis temporary password does not effect your primary password.\n\nThanks,\n%3\$s Team"), $_PCONF['site_url'], $str_code, $_PCONF['site_name']);
+    $str_body = sprintf(__("Hello,\n\nYou have requested a temporary password for your account at %1\$s.\n\nYour temporary password is: %2\$s\n\nThis temporary password does not effect your primary password.\n\nThanks,\n%3\$s Team"), $_PCONF['site_url'], $str_code, $_PCONF['site_name']);
     $bln_mail = mail($_POST['password_email'], $str_subject, $str_body);
       
     if ($bln_mail) {
