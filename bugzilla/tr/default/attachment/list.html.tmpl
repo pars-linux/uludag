@@ -17,19 +17,20 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 <br>
 <table cellspacing="0" cellpadding="4" border="1">
   <tr>
-    <th bgcolor="#cccccc" align="left">Attachment</th>
-    <th bgcolor="#cccccc" align="left">Type</th>
-    <th bgcolor="#cccccc" align="left">Created</th>
-    <th bgcolor="#cccccc" align="left">Size</th>
+    <th bgcolor="#cccccc" align="left">Eklenti</th>
+    <th bgcolor="#cccccc" align="left">Dosya Tipi</th>
+    <th bgcolor="#cccccc" align="left">Oluşturuşma Tarihi</th>
+    <th bgcolor="#cccccc" align="left">Boyutu</th>
     [% IF show_attachment_flags %]
-      <th bgcolor="#cccccc" align="left">Flags</th>
+      <th bgcolor="#cccccc" align="left">Flamalar</th>
     [% END %]
-    <th bgcolor="#cccccc" align="left">Actions</th>
+    <th bgcolor="#cccccc" align="left">İşlemler</th>
   </tr>
   [% canseeprivate = !Param("insidergroup") || UserInGroup(Param("insidergroup")) %]
   [% FOREACH attachment = attachments %]
@@ -70,13 +71,13 @@
       
       <td valign="top">
         [% IF attachment.canedit %]
-          <a href="attachment.cgi?id=[% attachment.attachid %]&amp;action=edit">Edit</a>
+          <a href="attachment.cgi?id=[% attachment.attachid %]&amp;action=edit">Düzenle</a>
         [% END %]
         [% IF attachment.ispatch && patchviewerinstalled %]
           [% IF attachment.canedit %]
             |
           [% END %]
-          <a href="attachment.cgi?id=[% attachment.attachid %]&amp;action=diff">Diff</a>
+          <a href="attachment.cgi?id=[% attachment.attachid %]&amp;action=diff">Farklılığını Çıkar</a>
         [% END %]
       </td>
     </tr>
@@ -85,15 +86,15 @@
 
   <tr>
     <td colspan="[% show_attachment_flags ? 5 : 4 %]">
-      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Create a New Attachment</a> (proposed patch, testcase, etc.)
+      <a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Yeni Bir Dosya Eklentisi Oluştur</a> (önerilen yama v.b.)
     </td>
     [% IF attachments.size %]
       <td>
-        <a href="attachment.cgi?bugid=[% bugid %]&amp;action=viewall">View All</a>
+        <a href="attachment.cgi?bugid=[% bugid %]&amp;action=viewall">Hepsini Görüntüle</a>
       </td>
     [% ELSE %]
       <td class="bz_disabled">
-        View All
+        Hepsini Görüntüle
       </td>
     [% END %]
   </tr>
