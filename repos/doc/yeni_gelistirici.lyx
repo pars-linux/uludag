@@ -24,7 +24,7 @@
 \papersides 1
 \paperpagestyle default
 
-\layout Title
+\layout Author
 
 Yeni Geliþtirici Kýlavuzu
 \layout Author
@@ -261,13 +261,16 @@ Baþvuruyu gelistirici@uludag.org.tr adresine veya sorumluluðunu almak istediðini
  yazýlýmýn geliþtiricisine doðrudan bir e-posta ile yapabilirsiniz.
 \layout Standard
 
-Eðer üzerinde çalýþtýðýnýz belirli bir paket varsa baþvuru e-postanýzda
- bu paket ile ilgili çalýþmalarýnýzý, fakat her durumda Uluzilla'da kullandýðýný
-z e-posta adresini bildirmelisiniz.
+Eðer üzerinde zaren çalýþtýðýnýz bir paket varsa baþvuru e-postanýzda bu
+ paket ile ilgili daha önceki çalýþmalarýnýzý da yazabilirsiniz.
+ Fakat her durumda Uluzilla'da kullandýðýnýz e-posta adresini bildirmelisiniz.
 \layout Standard
 
 Baþvuru e-postasýna hesabýnýz için kullanacaðýnýz kullanýcý adý ve parolanýzýn
  þifrelenmiþ bir halini (htpasswd ile oluþturulmuþ) eklemelisiniz.
+ Bu sayede düzmetin halini sadece sizin bildiðiniz parolanýzýn þifrelenmiþ
+ halini bize göndermiþ olursunuz ve kimlik denetimi gerektiren yerlere kullanýcý
+ adýnýzý ve þifrenizi ekleyebiliriz.
 \layout Subsubsection
 
 htpasswd ile parola oluþturma
