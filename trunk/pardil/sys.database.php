@@ -21,7 +21,7 @@
   function database_updateStr($arr_update) {
     $arr_tmp = array();
     foreach ($arr_update as $str_column => $mix_value) {
-      $arr_tmp[] = sprintf('%s="%s"', $str_column, $mix_value);
+      $arr_tmp[] = sprintf('%s="%s"', $str_column, addslashes($mix_value));
     }
     return join(', ', $arr_tmp);
   }

@@ -10,8 +10,13 @@
         <div class="proposal">
           <h2><?php echo _('Registration Complete'); ?></h2>
           <p>
-            ...
+            <?php echo _('You\'ve successfully registered.'); ?>
           </p>
+          <?php if ($bln_activation) { ?>
+          <p>
+            <?php echo _('You need to activate your account by clicking (or visiting) the URL sent to your e-mail address.'); ?>
+          </p>
+          <?php } ?>
         </div>
       </div>
 <?php
