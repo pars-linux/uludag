@@ -30,13 +30,13 @@ class KNazarBalloon;
 
 class knazar : public KSystemTray, virtual public DCOPNazarIface
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    knazar();
-    virtual ~knazar();
+	knazar();
+	virtual ~knazar();
 public slots:
-    void protect_from_harmfull_looks();
-    void release_the_protection();
+	void protect_from_harmfull_looks();
+	void release_the_protection();
 	void send_nazar();
 	void about();
 private:

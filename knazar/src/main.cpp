@@ -26,24 +26,23 @@
 #include <kcmdlineargs.h>
 #include <klocale.h>
 
-static const char description[] =
-    I18N_NOOP("KDE Nazar Application");
+static const char description[] = I18N_NOOP("KDE Nazar Application");
 
 static const char version[] = "0.1";
 
 static KCmdLineOptions options[] =
 {
-    KCmdLineLastOption
+	KCmdLineLastOption
 };
 
 int main(int argc, char **argv)
 {
-    KAboutData about("knazar", I18N_NOOP("knazar"), version, description,
-		     KAboutData::License_GPL, "(C) 2005 S.Çağlar Onur", 0, 0, "caglar@uludag.org.tr");
-    about.addAuthor( "S.Çağlar Onur", 0, "caglar@uludag.org.tr" );
+	KAboutData about("knazar", I18N_NOOP("knazar"), version, description,
+	KAboutData::License_GPL, "(C) 2005 S.Çağlar Onur", 0, 0, "caglar@uludag.org.tr");
+	about.addAuthor( "S.Çağlar Onur", 0, "caglar@uludag.org.tr" );
 
 	KCmdLineArgs::init(argc, argv, &about);
-    KCmdLineArgs::addCmdLineOptions( options );
+	KCmdLineArgs::addCmdLineOptions( options );
 
 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
