@@ -1,0 +1,5 @@
+# -*- coding: utf-8 -*-
+depo = "https://svn.uludag.org.tr/paketler/repos/doc/"
+belge = "TMI.lyx"
+isim = "Temel Masaüstü İhtiyaçları"
+dizin = "masaustu"

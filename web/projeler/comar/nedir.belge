@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+depo = "https://svn.uludag.org.tr/uludag/trunk/COMAR/"
+belge = "comar_nedir.lyx"
+isim = "ÇOMAR Nedir?"
+dizin = "nedir"
+ikonlar = "../../../images"
+sablon = "../belge.tmpl"
