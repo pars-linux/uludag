@@ -23,7 +23,7 @@ if($formsubmitted) {
 	exit();
 }
 ?>
-<form action="?">
+<form action="?" name="addgroup">
 <input type="hidden" name="action" value="addgroup">
 <input type="hidden" name="formsubmitted" value="true">
 <table>
@@ -52,7 +52,7 @@ if($formsubmitted) {
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="submit" value="EKLE">
+			<input type="submit" value="EKLE" onClick="if(!document.addgroup.grpname.value.length){alert('Grup adı boş olamaz.');return false;}">
 		</td>
 	</tr>
 </table>

@@ -20,7 +20,7 @@ if($formsubmitted)
 $resultGrp = mysql_query("select pardul.group.name, pardul.group.managed_by from pardul.group where pardul.group.id = '$grpid'");
 $rowGrp = mysql_fetch_row($resultGrp);
 ?>
-<form action="?">
+<form action="?" name="editgroup">
 <input type="hidden" name="action" value="editgroup">
 <input type="hidden" name="formsubmitted" value="true">
 <input type="hidden" name="grpid" value="<?echo $grpid;?>">
@@ -44,7 +44,7 @@ $rowGrp = mysql_fetch_row($resultGrp);
 			$resultadmins = mysql_query("select u.id, u.rname from user u, role r where u.role_id=r.id and r.rolename='sub_admin'");
 			while(($rowadmins = mysql_fetch_row($resultadmins))) {
 				if($rowadmins[0] == $rowGrp[1])
-					echo "<option value='$rowadmins[0]'>$rowadmins[1]</option>\n";
+					echo "<option value='$rowadmins[0]' selected>$rowadmins[1]</option>\n";
 				else
 					echo "<option value='$rowadmins[0]'>$rowadmins[1]</option>\n";
 			}
@@ -54,7 +54,7 @@ $rowGrp = mysql_fetch_row($resultGrp);
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="submit" value="KAYDET">
+			<input type="submit" value="KAYDET" onClick="if(!document.editgroup.grpname.value.length){alert('Grup adı boş olamaz.');return false;}">
 		</td>
 	</tr>
 </table>

@@ -27,6 +27,9 @@ $grpmanager = $HTTP_GET_VARS[grpmanager];
 $grpid = $HTTP_GET_VARS[grpid];
 $formsubmitted = $HTTP_GET_VARS[formsubmitted];
 $approved = $HTTP_GET_VARS[approved];
+$newbrand = $HTTP_GET_VARS[newbrand];
+$brandname = $HTTP_GET_VARS[brandname];
+$brandid = $HTTP_GET_VARS[brandid];
 
 if($action == "login")
 	require("login.php");
@@ -48,6 +51,8 @@ $roleid = $HTTP_SESSION_VARS[roleid];
 <title>ParDul-Yönetim</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../pardul.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="../js/pardul.js">
+</script>
 </head>
 <?if(!$loggedin) {?>
 <body>
@@ -128,7 +133,12 @@ Girdiğiniz kullanıcı adı ve/veya parola yanlış.
 			<table>
 				<tr>
 					<td align="center">
-					<?require("$action.php");?>
+					<?
+					if(!file_exists("$action.php"))
+						echo "pardul bunun nasıl yapılacağını bilmiyor: $action";
+					else
+						require("$action.php");
+					?>
 					</td>
 				</tr>
 			</table>
