@@ -118,6 +118,8 @@ msgid ""
 "Proposal should be written in sections.<br/>Write section title and then "
 "push \"Add &raquo;\" button."
 msgstr ""
+"Öneri bölümler halinde yazılmalıdır.<br/>Başlığı yazın ve "
+"sonra da \"Ekle &raquo;\" düğmesine basın."
 
 #, php-format
 msgid "Section: %s"
@@ -125,7 +127,7 @@ msgstr "Bölğm: %s"
 
 #, php-format
 msgid "Section \\'%s\\' will be removed.\\nAre you sure?"
-msgstr ""
+msgstr "\\'%s\\ bölümü kaldırılacak.\\nEmin misiniz?"
 
 msgid "Remove Section"
 msgstr "Bölümü Kaldır"
@@ -182,12 +184,14 @@ msgid "Revision History"
 msgstr "Sürüm Geçmişi"
 
 msgid "You've successfully registered."
-msgstr ""
+msgstr "Başarılı bir şekilde kayıt oldunuz"
 
 msgid ""
 "You need to activate your account by clicking (or visiting) the URL sent to "
 "your e-mail address."
 msgstr ""
+"E-posta adresinize gönderilen adrese tıklayarak (ya da adresi "
+"ziyaret ederek) hesabınızı aktifleştirmeniz gerekmektedir."
 
 msgid "Name:"
 msgstr "İsim:"

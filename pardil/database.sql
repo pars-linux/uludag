@@ -256,7 +256,7 @@ CREATE TABLE `options` (
   `comment` tinytext NOT NULL,
   PRIMARY KEY  (`opt`),
   FULLTEXT KEY `option` (`opt`)
-) TYPE=MyISAM COMMENT='Seçenekler' AUTO_INCREMENT=3;
+) TYPE=MyISAM COMMENT='Seçenekler' AUTO_INCREMENT=4;
 
 -- 
 -- Tablo döküm verisi `options`
@@ -264,6 +264,7 @@ CREATE TABLE `options` (
 
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new_approved', '10', 'Önerinin otomatik olarak onaylanması için gereken en düşük kullanıcı seviyesi.');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new', '200', 'Öneri eklemek için gereken en düşük kullanıcı seviyesi.');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('register_activation_required', 'true', 'Kayıt sonrası aktivasyon gerekliliği.');
 
 -- 
 -- Tablo yapısı : `activation`
