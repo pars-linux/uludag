@@ -6,7 +6,7 @@ Type=Application
 DocPath=tasma/index.html
 X-KDE-StartupNotify=true
 
-Name=Uludag Configuration Center
-Name[tr]=Uludağ Yapılandırma Merkezi
+Name=Pardus Configuration Center
+Name[tr]=Pardus Yapılandırma Merkezi
 
 Categories=Qt;KDE;Core
