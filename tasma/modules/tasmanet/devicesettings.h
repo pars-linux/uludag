@@ -39,6 +39,9 @@ protected slots:
 
     void slotStartDhcpcd();
 
+    void slotScanWifi();
+    void slotEssidSelected( int );
+
 private:
     QString _dev;
     bool _wifi;

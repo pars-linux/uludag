@@ -9,6 +9,8 @@
   Please read the COPYING file.
 */
 
+#include <iwlib.h>
+
 class QStringList;
 class QRegExp;
 
@@ -64,6 +66,11 @@ public:
 
 
     /**
+     * scan for wireless networks
+     */
+    QStringList scanWifiNetwork( const char *dev );
+
+    /**
      * Get ESSID for device if it's set
      */
     const char *getESSID( const char *dev );
@@ -109,6 +116,7 @@ private:
      * Open a socket for us to communicate with kernel
      */
     int sockets_open();
+    void free_scan_results( wireless_scan *results );
 
     QRegExp *rx;
 };

@@ -57,6 +57,14 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
         else if ( mode == Infra ) {
             wifiModeCombo->setCurrentItem( 2 );
         }
+
+        slotScanWifi();
+
+        connect( wifiScanBtn, SIGNAL( clicked() ),
+                 this, SLOT( slotScanWifi() ) );
+
+        connect( essidList, SIGNAL( selected( int ) ),
+                 this, SLOT( slotEssidSelected( int ) ) );
     }
     else {
         // remove Wireless page
@@ -317,4 +325,23 @@ void DeviceSettings::slotIPChanged()
 void DeviceSettings::slotStartDhcpcd()
 {
     startDhcpcd( _dev.ascii() );
+}
+
+void DeviceSettings::slotScanWifi()
+{
+    essidList->clear();
+
+    // fill wifiNetworks list
+    QStringList networks = scanWifiNetwork( _dev.ascii() );
+    QStringList::ConstIterator end = networks.end();
+    for ( QStringList::ConstIterator it = networks.begin();
+          it != end; ++it ) {
+        essidList->insertItem( *it );
+    }
+
+}
+
+void DeviceSettings::slotEssidSelected( int index )
+{
+    essid->setText( essidList->text( index ) );
 }
