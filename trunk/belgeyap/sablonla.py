@@ -24,10 +24,11 @@ class Sablon:
 		self.c_end = "<!-- SAYFA İÇERİK SONU -->"
 		t = self.get_content(tmplfile)
 		if t == None:
-			print "Şablon dosyası problemli!"
+			print "'%s' şablon dosyası problemli!" % (tmplfile)
 			sys.exit(2)
 		self.tmpl_head = t[0]
 		self.tmpl_foot = t[2]
+		self.tmpl_file = tmplfile
 	
 	def get_content(self,fname):
 		f = file(fname, "r")
@@ -63,6 +64,9 @@ class Sablon:
 		return lines2
 	
 	def modify_file(self,fname):
+		# dont touch template file
+		if fname == self.tmpl_file:
+			return
 		# html files only
 		if fname.find(".") == -1:
 			return
@@ -70,7 +74,7 @@ class Sablon:
 			return
 		fc = self.get_content(fname)
 		if fc == None:
-			print "'%s' içerik başlangıç/bitiş belirteçlerine sahip değil!"
+			print "'%s' içerik başlangıç/bitiş belirteçlerine sahip değil!" % (fname)
 			return
 		# modify file according to the new template
 		print "'%s' değiştiriliyor..." % (fname)
@@ -104,7 +108,7 @@ try:
 except:
 	usage()
 
-tmpl = "template.html"
+tmpl = "./template.html"
 dirname = "."
 
 for o, v in opts:
