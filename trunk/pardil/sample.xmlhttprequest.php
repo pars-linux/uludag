@@ -20,25 +20,16 @@
 
   $obj_xhr = new xmlhttprequest();
   $obj_xhr->str_url = 'sample.xmlhttprequest.php';
-  $obj_xhr->register_func('test1');
-  $obj_xhr->register_func('test2');
-  $obj_xhr->register_func('test3');
-  $obj_xhr->register_func('test4');
-  $obj_xhr->handle();
+  $obj_xhr->register_func('test1', 'cb_test');
+  $obj_xhr->register_func('test2', 'cb_test');
+  $obj_xhr->register_func('test3', 'cb_test');
+  $obj_xhr->register_func('test4', 'cb_test');
+  $obj_xhr->handle_request();
 ?>
 <html>
   <head>
     <script>
-      function cb_test1(r) {
-        document.getElementById('mytext_s').value = r.responseText;
-      }
-      function cb_test2(r) {
-        document.getElementById('mytext_s').value = r.responseText;
-      }
-      function cb_test3(r) {
-        document.getElementById('mytext_s').value = r.responseText;
-      }
-      function cb_test4(r) {
+      function cb_test(r) {
         document.getElementById('mytext_s').value = r.responseText;
       }
       <?php echo $obj_xhr->js_code(); ?>

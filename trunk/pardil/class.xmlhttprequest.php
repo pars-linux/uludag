@@ -7,10 +7,10 @@
     Açıklama:
     =========
     PHP'de tanımlı bir fonksiyonu, JS kodu içinden çağırmak gerektiğinde,
-    XHR nesnesi yaratılır, yazılan PHP fonksiyonu nesneye tanıtılır. JS kodu 
-    içinde 'xhr_<php_fonk_ismi>' fonksiyonu çağrıldığında, ilgili PHP sayfası 
-    arkaplanda çağrılır. PHP fonksiyonu çalıştırılır ve 'cb_<php_fonk_ismi>' 
-    isimli JS fonksiyonu, PHP fonksiyonundan dönen değer ile çalıştırılır.
+    XHR nesnesi yaratılır, yazılan PHP & JS fonksiyonları nesneye tanıtılır. 
+    JS kodu içinde 'xhr_<php_fonk_ismi>' fonksiyonu çağrıldığında, ilgili PHP 
+    sayfası arkaplanda çağrılır. PHP fonksiyonu çalıştırılır ve tanıtılan JS  
+    JS fonksiyonu, PHP fonksiyonundan dönen değer ile çalıştırılır.
     
     Örnek Kullanım:
     ===============
@@ -23,8 +23,8 @@
 
       $obj_xhr = new xmlhttprequest();
       $obj_xhr->str_url = 'xhr.php';
-      $obj_xhr->register_func('test');
-      $obj_xhr->handle();
+      $obj_xhr->register_func('test', 'cb_test');
+      $obj_xhr->handle_request();
     ?>
      <html>
        <head>
@@ -56,27 +56,40 @@
 
   class xmlhttprequest {
     public $str_url = '';
-    private $arr_functions = array();
+    private $arr_functions_php = array();
+    private $arr_functions_js = array();
 
     // Gerekli JS kodunu üreten method
     public function js_code() {
-      $str_code = 'function xhr_callback(x_f, x_a) {
+      $str_code = 'function xhr_escape(str_in) {
+                     var str_out = \'\';
+                     for (var i = 0; i < str_in.length; i++) {
+                       if (( 33 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 47) || (58 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 64) || (91 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 96) || (123 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 127)) {
+                         str_out += escape(str_in.charAt(i));
+                       }
+                       else {
+                         str_out += str_in.charAt(i);
+                       }
+                     }
+                     return str_out;
+                   }
+                   function xhr_callback(x_php, x_js, x_arg) {
                      var req = new XMLHttpRequest();
                      if (req) {
                        req.onreadystatechange = function() {
                          if (req.readyState == 4) {
                            if (req.status == 200) {
                              // ok
-                             eval(\'cb_\' + x_f + \'(req)\');
+                             eval(x_js + \'(req)\');
                            }
                            else {
                              // error
                            }
                          }
                        };
-                       var post = \'op=\' + x_f;
-                       for (var i = 0; i < x_a.length; i++) {
-                         post += \'&ar[]=\' + x_a[i];
+                       var post = \'op=\' + x_php;
+                       for (var i = 0; i < x_arg.length; i++) {
+                         post += \'&arg[]=\' + xhr_escape(x_arg[i]);
                        }
                        req.open(\'POST\', \'' . $this->str_url .'\');
                        req.setRequestHeader(\'Content-Type\', \'application/x-www-form-urlencoded\');
@@ -85,21 +98,24 @@
                      }
                    }
                   ';
-      foreach ($this->arr_functions as $str_name) {
-        $str_code .= sprintf("function xhr_%1\$s() {\nxhr_callback('%1\$s', xhr_%1\$s.arguments);\n}\n", $str_name);
+      for ($i = 0; $i < count($this->arr_functions_php); $i++) {
+        $str_f_php = $this->arr_functions_php[$i];
+        $str_f_js = $this->arr_functions_js[$i];
+        $str_code .= sprintf("function xhr_%1\$s() {\nxhr_callback('%1\$s', '%2\$s', xhr_%1\$s.arguments);\n}\n", $str_f_php, $str_f_js);
       }
       return $str_code;
     }
 
     // PHP fonksiyonunu kayıt eden method
-    public function register_func($str_name) {
-      $this->arr_functions[] = $str_name;
+    public function register_func($str_php_func, $str_js_func) {
+      $this->arr_functions_php[] = $str_php_func;
+      $this->arr_functions_js[] = $str_js_func;
     }
 
     // XMLHTTPRequest sorgusunu saptayıp gerekli işlemleri yapan method
-    public function handle() {
-      if (isset($_POST['op']) && in_array($_POST['op'], $this->arr_functions)) {
-        call_user_func_array($_POST['op'], $_POST['ar']);
+    public function handle_request() {
+      if (isset($_POST['op']) && in_array($_POST['op'], $this->arr_functions_php)) {
+        call_user_func_array($_POST['op'], $_POST['arg']);
         exit;
       }
     }
