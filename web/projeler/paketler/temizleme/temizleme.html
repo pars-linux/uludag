@@ -151,18 +151,19 @@ hazırlanabilir.<BR>
 
 <H3><A NAME="htoc3">2.1</A>&nbsp;&nbsp;Kuluçka Dağıtım (Gentoo) Kurulumu</H3><!--SEC END -->
 
-<EM>Kuluçka Dağıtım</EM> kurulumu için HD tarafından hazırlanan <B><EM></EM></B><A HREF="http://www.uludag.org.tr/uludag/"><B><EM><TT>http://www.uludag.org.tr/uludag/</TT></EM></B></A><B><EM>uludag-0.0.3.tar.bz2</EM></B>
-dosyası indirilmelidir. Bu dosya Uludağ Geliştiricileri tarafından
-kaynak temizleme sürecinde kullanılmak üzere oluşturulan <EM>Kuluçka
-Dağıtım</EM>ı, derlenmiş paketleri ile içerir.<BR>
+<EM>Kuluçka Dağıtım</EM> kurulumu için HD tarafından hazırlanan <B><EM></EM></B><A HREF="ftp://ftp.uludag.org.tr/pub/pardus/rootfs/"><B><EM><TT>ftp://ftp.uludag.org.tr/pub/pardus/rootfs/</TT></EM></B></A>
+adresinden son Pardus kök dosyası indirilmelidir. Bu dosya Uludağ
+Geliştiricileri tarafından kaynak temizleme sürecinde kullanılmak
+üzere oluşturulan <EM>Kuluçka Dağıtım</EM>ı, derlenmiş paketleri ile
+içerir.<BR>
 <BR>
 Geliştirici sabit diskinde uygun bölümlemeyi yapmalı ve bu bölüme
-<EM>uludag-0.0.3.tar.bz2</EM> dosyasını açmalıdır. Sistem yeniden başlatılmadan
-ve <EM>Uludağ Kuluçka Tabanı</EM> kullanılmaya başlamadan önce <B><EM>/etc/fstab</EM></B>
+Pardus kök dosyasını açmalıdır. Sistem yeniden başlatılmadan ve <EM>Uludağ
+Kuluçka Tabanı</EM> kullanılmaya başlamadan önce <B><EM>/etc/fstab</EM></B>
 dosyası disk bölümlerine göre düzenlenmeli ve sistemde bulunan <B>önyükleyici</B>
-tekrar ayarlanmalıdır. <EM>uludag-0.0.3.tar.bz2</EM> arşivi içerisinde
-<B>grub</B> <EM>önyükleyicisi</EM> bulunur<EM>. Grub</EM> yapılandırma
-dosyası <B><EM>/boot/grub/grub.conf</EM></B> dosyasıdır<EM>. </EM><BR>
+tekrar ayarlanmalıdır. Kök dosya arşivi içerisinde <B>grub</B>
+<EM>önyükleyicisi</EM> bulunur<EM>. Grub</EM> yapılandırma dosyası <B><EM>/boot/grub/grub.conf</EM></B>
+dosyasıdır<EM>. </EM><BR>
 <BR>
 <EM>Uludağ Kuluçka Tabanı</EM> için öntanımlı root kullanıcısı şifresi
 <B><EM>``uludag''</EM></B> dır.<BR>
@@ -337,12 +338,12 @@ dosyasında KEYMAP değeri aşağıdaki şekilde düzenlenir.<BR>
 <B>CONSOLETRANSLATION=''8859-9''</B><BR>
 <BR>
 Terminalde unicode desteği için ise terminale``%G'' escape karakteri
-<EM>echo -e``033%G''</EM> komutu ile gönderilir.
+<EM>echo -e``&#92;033%G''</EM> komutu ile gönderilir.
 Bunun için <B>/etc/issue</B> dosyası kullanılabilir. Dosyayı uygun
 içerik ile oluşturmak için basitçe aşağıdaki komut kullanılabilir.<BR>
 <BR>
-<B># echo -e ``0332J033[f033%GUludağ
-Linux'a Hoşgeldiniz''  /etc/issue</B><BR>
+<B># echo -e ``&#92;0332J&#92;033[f&#92;033%GUludağ
+Linux'a Hoşgeldiniz'' &gt; /etc/issue</B><BR>
 <BR>
 <!--TOC subsubsection Grafik Ekranda Türkçe desteği-->
 
@@ -456,16 +457,16 @@ kaynak ilk ele alındığında hazırlanır. Takip dosyası içerisinde kaynak
 sorumlusu(maintainer) ve kaynağın o sıradaki durumu listelenir. Örnek
 takip dosyasını yapısı şu şekildedir.
 </OL>
-PAKET=paket adı<BR>
-VERSIYON=versiyon numaras<BR>
-SORUMLU=eposta adresi<BR>
-BUGZILLA= Uluzilla URL'si <BR>
-CEVIRI= % cinsinden alınan yol <BR>
-UTF8= % cinsinden alınan yol  <BR>
-YAPILANDIRMA= % cinsinden alınan yol <BR>
-GRAFIK_MEDYA= % cinsinden alınan yol <BR>
-HATALAR= % cinsinden alınan yol <BR>
-KULLANIŞLILIK= % cinsinden alınan yol<BR>
+PAKET=&lt;paket adı&gt;<BR>
+VERSIYON=&lt;versiyon numaras&gt;<BR>
+SORUMLU=&lt;eposta adresi&gt;<BR>
+BUGZILLA=&lt; Uluzilla URL'si &gt;<BR>
+CEVIRI=&lt; % cinsinden alınan yol &gt;<BR>
+UTF8=&lt; % cinsinden alınan yol &gt; <BR>
+YAPILANDIRMA=&lt; % cinsinden alınan yol &gt;<BR>
+GRAFIK_MEDYA=&lt; % cinsinden alınan yol &gt;<BR>
+HATALAR=&lt; % cinsinden alınan yol &gt;<BR>
+KULLANIŞLILIK=&lt; % cinsinden alınan yol&gt;<BR>
 <BR>
 <!--TOC subsubsection Yapılanların gönderilmesi-->
 
@@ -500,7 +501,7 @@ paketin sorumlusuna göndererek çalışmalarının depoya girmesini sağlayabil
 ismi verilen paket yöneticisinin metodlarına direk erişmek için kullanılan
 arayüze verilen isim hemde paket veritabanını oluşturan kurulum betiği
 dosyalarının adıdır. <EM>ebuild</EM> yazılımı aşağıdaki metodlara sahiptir
- <EM>ebuild</EM> <B>paketadı</B> <B><EM>metod </EM></B>;
+&lt; <EM>ebuild</EM> <B>paketadı</B> <B><EM>metod &gt;</EM></B>;
 <UL><LI>
 <B>setup:</B> Paket için gerekli tüm sistem gerekliliklerini kontrol
 eder.

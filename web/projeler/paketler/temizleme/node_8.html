@@ -84,12 +84,12 @@ dosyasında KEYMAP değeri aşağıdaki şekilde düzenlenir.<BR>
 <B>CONSOLETRANSLATION=''8859-9''</B><BR>
 <BR>
 Terminalde unicode desteği için ise terminale``%G'' escape karakteri
-<EM>echo -e``033%G''</EM> komutu ile gönderilir.
+<EM>echo -e``&#92;033%G''</EM> komutu ile gönderilir.
 Bunun için <B>/etc/issue</B> dosyası kullanılabilir. Dosyayı uygun
 içerik ile oluşturmak için basitçe aşağıdaki komut kullanılabilir.<BR>
 <BR>
-<B># echo -e ``0332J033[f033%GUludağ
-Linux'a Hoşgeldiniz''  /etc/issue</B><BR>
+<B># echo -e ``&#92;0332J&#92;033[f&#92;033%GUludağ
+Linux'a Hoşgeldiniz'' &gt; /etc/issue</B><BR>
 <BR>
 
 <H4><A NAME="htoc10">2.6.2</A>&nbsp;&nbsp;Grafik Ekranda Türkçe desteği</H4>
