@@ -9,9 +9,6 @@
   Please read the COPYING file.
 */
 
-#include <sstream>
-#include <iostream>
-
 #include <kapplication.h>
 #include <klocale.h>
 #include <kprocess.h>
