@@ -9,6 +9,8 @@
   Please read the COPYING file.
 */
 
+#include <iwlib.h> // PROC_NET_DEV, iw*()
+
 #include <kaboutdata.h>
 #include <kiconloader.h>
 #include <qfile.h>
@@ -18,8 +20,6 @@
 #include "tasmanetwidget.h"
 #include "tasmanetwidget.moc"
 
-const QCString TasmaNetWidget::PROC_NET_DEV( "/proc/net/dev" );
-const QCString TasmaNetWidget::PROC_NET_WIRELESS( "/proc/net/wireless" );
 
 TasmaNetWidget::TasmaNetWidget( QWidget *parent, const char *name )
     : KIconView( parent, name )
@@ -50,7 +50,6 @@ void TasmaNetWidget::updateInterfaces()
     clear();
 
     QFile net_file( PROC_NET_DEV );
-    QFile wifi_file( PROC_NET_WIRELESS );
     QString line;
     QStringList devices;
 
@@ -61,32 +60,22 @@ void TasmaNetWidget::updateInterfaces()
     net_file.readLine( line, 1024 );
     net_file.readLine( line, 1024 );
 
+    // get the devicenames, also check for wireless extentions.
+    int sock = iw_sockets_open();
+    struct wireless_info info;
     while ( -1 != net_file.readLine( line, 1024 ) ) {
         QString dev( line.left( line.findRev( ':' ) ).stripWhiteSpace() );
         if ( dev == "lo" ) continue;
+
+        if ( iw_get_basic_config( sock, dev.ascii(), &(info.b) ) >= 0 ) {
+            // wireless
+            dev += i18n( " (wireless)" );
+        }
 
         devices.push_back( dev );
     }
 
     net_file.close();
-
-    if ( wifi_file.exists() && wifi_file.open( IO_ReadOnly ) ) {
-        // pass header lines
-        wifi_file.readLine( line, 1024 );
-        wifi_file.readLine( line, 1024 );
-
-        while ( -1 != wifi_file.readLine( line, 1024 ) ) {
-            QString dev( line.left( line.findRev( ':' ) ).stripWhiteSpace() );
-
-            QStringList::iterator it;
-            for ( it = devices.begin(); it != devices.end(); ++it ) {
-                if ( *it == dev )
-                    *it = dev + i18n( " (wireless)" );
-            }
-        }
-
-        wifi_file.close();
-    }
 
     QPixmap _icon = DesktopIcon( "network_local", KIcon::SizeMedium );
     QStringList::iterator it;
