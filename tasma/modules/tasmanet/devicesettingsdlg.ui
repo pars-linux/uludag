@@ -8,20 +8,20 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>340</width>
-            <height>266</height>
+            <width>350</width>
+            <height>270</height>
         </rect>
     </property>
     <property name="minimumSize">
         <size>
-            <width>340</width>
-            <height>260</height>
+            <width>350</width>
+            <height>270</height>
         </size>
     </property>
     <property name="maximumSize">
         <size>
-            <width>340</width>
-            <height>32767</height>
+            <width>350</width>
+            <height>270</height>
         </size>
     </property>
     <property name="caption">
@@ -33,10 +33,10 @@
         </property>
         <property name="geometry">
             <rect>
-                <x>1</x>
-                <y>2</y>
-                <width>335</width>
-                <height>263</height>
+                <x>5</x>
+                <y>4</y>
+                <width>341</width>
+                <height>261</height>
             </rect>
         </property>
         <grid>
@@ -105,7 +105,7 @@
                             <rect>
                                 <x>10</x>
                                 <y>10</y>
-                                <width>300</width>
+                                <width>311</width>
                                 <height>150</height>
                             </rect>
                         </property>
