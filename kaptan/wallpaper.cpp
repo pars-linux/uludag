@@ -33,7 +33,8 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 
     QStringList lst = mDirs->findAllResources( "wallpaper",  "*",  false,  true );
     int i = 0;
-    for ( QStringList::ConstIterator it = lst.begin(); it != lst.end(); ++it )
+    QStringList::ConstIterator end = lst.end();
+    for ( QStringList::ConstIterator it = lst.begin(); it != end; ++it )
     {
         //build fileCaption from filename
         QString fileCaption;
@@ -69,8 +70,9 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 
 void Wallpaper::paperSelected( int item )
 {
+    QMap<QString, int>::ConstIterator end = papers.end();
     for ( QMap<QString, int>::ConstIterator it = papers.begin();
-          it != papers.end();
+          it != end;
           ++it )
     {
         if ( it.data() == item )
