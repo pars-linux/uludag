@@ -67,6 +67,7 @@
   }
   else {
     // Formu göster...
+    $_PCONF['title'] = CONF_NAME . ' - ' . _('New Proposal');
     $obj_page = new template('tpl.newproposal.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();

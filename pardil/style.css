@@ -36,6 +36,12 @@ body {
   padding: 10px 10px 10px 190px;
 }
 
+/* Header */
+
+#header img {
+  border-width: 0px;
+}
+
 /* Menubar */
 
 #menubar .arrowL, #menubar .arrowR {
@@ -137,6 +143,11 @@ body {
 }
 
 /* Forms */
+fieldset {
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+}
 table.form {
   font-family: Verdana, Sans, sans-serif;
   font-size: 11px;

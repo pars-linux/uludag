@@ -1,14 +1,13 @@
 <?php
+
   require('sys.define.php');
   require('sys.gettext.php');
   require('sys.database.php');
   require('sys.procedures.php');
-  require('sys.session.php');
-  
+
   require('class.template.php');
 
-  $_PCONF['title'] = CONF_TITLE;
-  $obj_page = new template('tpl.index.php');
-  $obj_page->setvar('_PSESSION', $_PSESSION);
+  $_PCONF['title'] = CONF_NAME . ' - ' . _('Registration Complete');
+  $obj_page = new template('tpl.register_ok.php');
   $obj_page->flush();
 ?>

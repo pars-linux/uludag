@@ -44,6 +44,7 @@
       $this->arr_variables[$str_name] = $mix_value;
     }
     public function generate() {
+      global $_PSESSION, $_PCONF;
       foreach ($this->arr_variables as $str_name => $mix_value) {
         $$str_name = $mix_value;
       }
