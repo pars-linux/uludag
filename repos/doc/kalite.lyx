@@ -119,4 +119,121 @@ rdir.
  çok önemlidir.
  Bu listeye üye olup hakkýnýzda bilinmesi gerekenleri listeye gönderdikten
  sonra sizden en iyi þekilde faydalanma sorumluluðunu bize devretmiþ olursunuz.
+\layout Section
+
+E-posta Listesine Üye Oldum, Ne Yazayým?
+\layout Standard
+
+Bu E-posta listesine üyelik iþlemlerinizi tam olarak bitirdikten sonra e-posta
+ listesine yukarda da bahsetmeye çalýþtýðýmýz gibi kendinizi tanýtan bir
+ mesaj atmalýsýnýz.
+ Bu mesajýn içeriðinde bulunmasý gerekenlerin en önemlileri bizim için ne
+ yapabileceðiniz ve bize ortalama ne kadar vakit ayýrabileceðiniz bilgisi.
+ Aþaðýda bize yardým edebileceðiniz alanlarýn bir listesi var:
+\layout Itemize
+
+Belgelendirme: Belgelerimizi gözden geçirip hata raporlayabilir, belgelendirme
+ çalýþmalarýna katýlabilir, belgelerimizi uluslararasýlaþtýrabilirsiniz,
+ uygulamalar için kýlavuzlar yazabilir, çeþitli tanýtým ve reklam materyallerini
+n hazýrlanmasýna talip olabilirsiniz.
+\layout Itemize
+
+Web Sayfalarý: Web sayfalarýnýn güncellenmesi, uluslararasýlaþtýrýlmasý,
+ haberlerin güncellenmesi, bültenlerin hazýrlanmasý ve duyurulmasý ile ilgileneb
+ilirsiniz.
+\layout Itemize
+
+Yazýlým Geliþtirme: Bize hakim olduðunuz ve yazýlým geliþtirmekten keyif
+ aldýðýnýz programlama dillerini söyleyebilirsiniz.
+\layout Itemize
+
+Test: Geliþtirilen uygulamalarýn, daðýtýmýn beta sürümlerinin hatalarýný
+ test edebilirsiniz.
+ Bu sayede biz de üzerinde özellikle durulmasý, yoðun bir þekilde test edilmesi,
+ farklý donanýmlarda denenmesi gereken yeni uygulamalar için sizden bu konuda
+ yardým isteyebiliriz.
+\layout Itemize
+
+Paketler: Uzun zamandýr kullandýðýnýz ve hakkýnda birikime sahip olduðunuz
+ çeþitli uygulamalarýn daðýtýmýn içerisinde yer alan ya da yer almasýný
+ istediðiniz paketlerine talip olabililrsiniz.
+ Bu paketin tüm sorumluluðunun size devredilmesini isteyebilirsiniz.
+\layout Itemize
+
+Tanýtým: Uludað Projesi ve Pardus'u tanýtmak için seminerlere gidebilirsiniz.
+ Bu sayede biz, örneðin, sizin bulunduðunuz ildeki üniversiteden gelen seminer
+ isteklerini size yönlendirebilir, bir Uludað Geliþtiricisi olarak bizi
+ etkinliklerde temsil etmenizi isteyebiliriz.
+\layout Standard
+
+Yukardaki alanlarýn dýþýnda sizin aklýnýza gelenler olabilir, onlarý da
+ e-postanýza ekleyebilir ve o alanda ne gibi çalýþmalarda bulunabileceðinizi
+ listeye söyleyebilirsiniz.
+ Örnek bir ileti þu þekilde olabilir:
+\layout LyX-Code
+
+Merhaba,
+\layout LyX-Code
+
+\layout LyX-Code
+
+Ben Necati Demir, Çanakkale Onsekiz Mart Üniversitesi'nde bilgisayar
+\layout LyX-Code
+
+mühendisliði bölümü 4.
+ sýnýfta okuyorum.
+ Size aþaðýdaki konularda
+\layout LyX-Code
+
+yardým etmek üzere haftada ortalama 5 saatimi ayýrabilirim:
+\layout LyX-Code
+
+\layout LyX-Code
+
+  Yazýlým Geliþtirme: Python ve C biliyorum.
+ Yazýlým geliþtirme
+\layout LyX-Code
+
+ihtiyaçlarýnda sorumluluk alabilirim.
+\layout LyX-Code
+
+  Belgelendirme: Ýyi düzeyde Ýngilizce bilgisine sahibim, sizin için
+\layout LyX-Code
+
+çeviri yapabilirim.
+\layout LyX-Code
+
+  Test: Yazýlan uygulamalar için test yapabilirim, bulduðum hatalar
+\layout LyX-Code
+
+için patch gönderebilirim.
+\layout LyX-Code
+
+  Tanýtým: Üniversitemde Uludað/Pardus seminerleri düzenleyebilir,
+\layout LyX-Code
+
+öðrencilere ve akademisyenlere projeyi tanýtabilirim.
+\layout LyX-Code
+
+\layout LyX-Code
+
+\layout LyX-Code
+
+\layout Standard
+
+Bu þekilde açýklayýcý bir e-posta, içeriðinden ve yardým konularýndan baðýmsýz
+ olarak bizim için son derece deðerlidir; çünkü artýk herkes Necati Demir'den
+ ne zaman hangi konularda yardým isteyebileceklerini ve ne kadarlýk bir
+ yardým alabileceklerini artýk biliyor olurlar.
+\layout Standard
+
+Bu e-posta listesine üye olarak kalite ekibine katýlmak demek, 
+\begin_inset Quotes eld
+\end_inset 
+
+elimi taþýn altýna sokmaya hazýrým!
+\begin_inset Quotes erd
+\end_inset 
+
+ demektir.
 \the_end
