@@ -1,0 +1,211 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>DeviceSettingsDlg</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>DeviceSettingsDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>332</width>
+            <height>282</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>DeviceSettingsDlg</string>
+    </property>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout9</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>330</width>
+                <height>280</height>
+            </rect>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <spacer row="1" column="0">
+                <property name="name">
+                    <cstring>spacer2</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>71</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QPushButton" row="1" column="2">
+                <property name="name">
+                    <cstring>cancelButton</cstring>
+                </property>
+                <property name="text">
+                    <string>Cancel</string>
+                </property>
+            </widget>
+            <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="3">
+                <property name="name">
+                    <cstring>groupBox</cstring>
+                </property>
+                <property name="title">
+                    <string> Device Settings </string>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout6</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>20</x>
+                            <y>140</y>
+                            <width>280</width>
+                            <height>70</height>
+                        </rect>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout4</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>ipLabel</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>IP Address : </string>
+                                    </property>
+                                </widget>
+                                <widget class="QLineEdit">
+                                    <property name="name">
+                                        <cstring>lineEdit1</cstring>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout5</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>netmaskLabel</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Netmask : </string>
+                                    </property>
+                                </widget>
+                                <widget class="QLineEdit">
+                                    <property name="name">
+                                        <cstring>lineEdit2</cstring>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QButtonGroup">
+                    <property name="name">
+                        <cstring>typeGroup</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>300</width>
+                            <height>110</height>
+                        </rect>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="title">
+                        <string>TCP/IP Settings</string>
+                    </property>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>280</width>
+                                <height>80</height>
+                            </rect>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout2</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QRadioButton">
+                                        <property name="name">
+                                            <cstring>automaticButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Automatic</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <property name="name">
+                                            <cstring>automaticCombo</cstring>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>manualButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Manual</string>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                </widget>
+            </widget>
+            <widget class="QPushButton" row="1" column="1">
+                <property name="name">
+                    <cstring>applyButton</cstring>
+                </property>
+                <property name="text">
+                    <string>Apply</string>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

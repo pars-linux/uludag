@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell tasmanet
+Icon=network_local
+Type=Application
+
+X-KDE-ModuleType=Library
+X-KDE-Library=tasmanet
+X-KDE-ParentApp=tasma
+
+Name=Tasma Network
+
+Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network
