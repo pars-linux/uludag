@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -30,12 +31,12 @@
 
 <table>
   <tr>
-    <th align="right">The 'My [% terms.bugs %]' link:</th>
+    <th align="right">'Benim Hata Kayıtlarım' bağı:</th>
     <td>
       <select name="mybugslink">
-        <option value="1">should appear on the footer of every page</option>
+        <option value="1">her sayfanın altında gösterilsin</option>
         <option value="0"
-          [% " selected" IF NOT mybugslink %]>should not be displayed
+          [% " selected" IF NOT mybugslink %]>gösterilmesin
         </option>
       </select>
     </td>
@@ -45,13 +46,13 @@
   [% IF queries.size %]
     [% FOREACH query = queries %]
       <tr>
-        <th align="right">Your search named '[% query.name FILTER html %]':</th>
+        <th align="right">'[% query.name FILTER html %]' isimli kayıtlı aramanız:</th>
         <td>
           <select name="query-[% loop.index %]">
-            <option value="0">should only appear in the search page</option>
+            <option value="0">sadece arama sayfasında gösterilsin</option>
             <option value="1"
               [% " selected" IF query.footer %]>
-              should appear on the footer of every page
+              her sayfanın altında gösterilsin
             </option>
           </select>
         </td>
@@ -65,10 +66,9 @@
     <tr>
       <td colspan="4">
         <br>
-        If you create remembered queries using the
-        <a href="query.cgi">search page</a>,
-        you can then come to this page and choose to have some of them
-        appear in the footer of each [% terms.Bugzilla %] page.
+        Eğer <a href="query.cgi">arama sayfasında</a>,
+        bir aramanızı kaydederseniz; bu sayfaya geri gelerek kayıtlı aramanızın
+        her [% terms.Bugzilla %] sayfasında gösterilmesini tanımlayabilirsiniz.
         <br>
         <br>
       </td>

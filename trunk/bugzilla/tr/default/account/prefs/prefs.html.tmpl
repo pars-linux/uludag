@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -36,7 +37,7 @@
 
 [% filtered_login = user.login FILTER html %]
 [% PROCESS global/header.html.tmpl
-   title = "User Preferences"
+   title = "Kullanıcı Tercihleri"
    h2 = filtered_login
    style = "td.selected_tab {
               border-width: 2px 2px 0px;
@@ -48,13 +49,13 @@
             }"
  %]
 
-[% tabs = [ { name => "account", description => "Account settings", 
+[% tabs = [ { name => "account", description => "Hesap Ayarları", 
               saveable => "1" },
-            { name => "email", description => "Email settings", 
+            { name => "email", description => "E-posta Ayarları", 
               saveable => "1" },
-            { name => "saved-searches", description => "Saved searches", 
+            { name => "saved-searches", description => "Kayıtlı Aramalar", 
               saveable => "1" },
-            { name => "permissions", description => "Permissions", 
+            { name => "permissions", description => "Yetkiler", 
               saveable => "0" } ] %]
 
 <center>
@@ -84,13 +85,13 @@
   <p>
     <font color="red">
       The changes to your 
-      [% current_tab.description FILTER lower %] have been saved.
+      [% current_tab.description FILTER lower %] kaydedildi.
     </font>
   </p>
   [% IF email_changes_saved %]
     <p>
-      An email has been sent to both old and new email 
-      addresses to confirm the change of email address.
+      E-posta adresi değişikliğinin onaylanması için hem eski hem de yeni e-posta
+      adreslerine birer onay e-postası gönderildi.
     </p>
   [% END %]
 [% END %]
@@ -110,7 +111,7 @@
       <tr>
         <td width="150"></td>
         <td>
-          <input type="submit" value="Submit Changes">
+          <input type="submit" value="Değişiklikleri Kaydet">
          </td>
       </tr>
     </table>

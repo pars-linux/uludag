@@ -18,6 +18,7 @@
   #
   # Contributor(s): Toms Baugis <toms.baugis@tietoenator.com>
   #                 Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -40,34 +41,34 @@
     [% current_bug_idx = lsearch(bug_list, bug.bug_id) %]
 
     [% IF current_bug_idx > 0 %]
-      <link rel="First" href="show_bug.cgi?id=[% bug_list.first %]">
+      <link rel="İlk" href="show_bug.cgi?id=[% bug_list.first %]">
     [% prev_bug = current_bug_idx - 1 %]
-      <link rel="Prev" href="show_bug.cgi?id=[% bug_list.$prev_bug %]">
+      <link rel="Önceki" href="show_bug.cgi?id=[% bug_list.$prev_bug %]">
     [% END %]
 
     [% IF current_bug_idx + 1 < bug_list.size %]
       [% next_bug = current_bug_idx + 1 %]
-      <link rel="Next" href="show_bug.cgi?id=[% bug_list.$next_bug %]">
-      <link rel="Last" href="show_bug.cgi?id=[% bug_list.last %]">
+      <link rel="Sonraki" href="show_bug.cgi?id=[% bug_list.$next_bug %]">
+      <link rel="Son" href="show_bug.cgi?id=[% bug_list.last %]">
     [% END %]
   [% END %]
 
 
   [%# *** Dependencies, Votes, Activity, Print-version *** %]
   [% IF bug %]
-    <link rel="Show" title="Dependency Tree"
+    <link rel="Show" title="Bağımlılık Ağacı"
           href="showdependencytree.cgi?id=[% bug.bug_id %]">
-    <link rel="Show" title="Dependency Graph"
+    <link rel="Show" title="Bağımlılık Grafiği"
           href="showdependencygraph.cgi?id=[% bug.bug_id %]">
 
     [% IF use_votes %]
-      <link rel="Show" title="Votes ([% bug.votes %])"
+      <link rel="Show" title="Oylar ([% bug.votes %])"
             href="votes.cgi?action=show_bug&amp;bug_id=[% bug.bug_id %]">
     [% END %]
 
       <link rel="Show" title="[% terms.Bug %] Activity"
             href="show_activity.cgi?id=[% bug.bug_id %]">
-      <link rel="Show" title="Printer-Friendly Version"
+      <link rel="Show" title="Yazdırılabilir Sayfa"
             href="long_list.cgi?buglist=[% bug.bug_id %]">
   [% END %]
 
@@ -75,31 +76,31 @@
   [%# *** Saved Searches *** %]
   [% IF user.showmybugslink %]
     [% user_login = user.login FILTER url_quote %]
-    <link rel="Saved&nbsp;Searches" title="My [% terms.Bugs %]"
+    <link rel="Saved&nbsp;Searches" title="Benim Hata Raporlarım"
           href="[% Param('mybugstemplate').replace('%userid%', user_login) %]">
   [% END %]
 
   [% FOREACH q = user.queries %]
-    <link rel="Saved&nbsp;Searches" 
+    <link rel="Kayıtlı&nbsp;Aramalar" 
           title="[% q.name FILTER html %]"
           href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=[% q.name FILTER url_quote %]">
   [% END %]
 
   [%# *** Bugzilla Administration Tools *** %]
   [% IF user.login %] 
-    [% '<link rel="Administration" title="Parameters"    
+    [% '<link rel="Administration" title="Parametreler"    
               href="editparams.cgi">' IF user.groups.tweakparams %]
-    [% '<link rel="Administration" title="Users"    
+    [% '<link rel="Administration" title="Kullanıcılar"    
               href="editusers.cgi">' IF user.groups.editusers %]
-    [% '<link rel="Administration" title="Products"      
+    [% '<link rel="Administration" title="Ürünler"      
               href="editproducts.cgi">' IF user.groups.editcomponents %]
-    [% '<link rel="Administration" title="Flag Types"   
+    [% '<link rel="Administration" title="Flama Türleri"   
               href="editflagtypes.cgi">' IF user.groups.editcomponents %]
-    [% '<link rel="Administration" title="Groups"        
+    [% '<link rel="Administration" title="Gruplar"        
               href="editgroups.cgi">' IF user.groups.creategroups %]
-    [% '<link rel="Administration" title="Keywords"      
+    [% '<link rel="Administration" title="Anahtar Kelimeler"      
               href="editkeywords.cgi">' IF user.groups.editkeywords %]
-    [% '<link rel="Administration" title="Sanity Check"  
+    [% '<link rel="Administration" title="Tutarlılık Kontrolü"  
               href="sanitycheck.cgi">' IF user.groups.tweakparams %]
   [% END %]  
 [% END %]

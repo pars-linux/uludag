@@ -17,35 +17,35 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
-<p>Your saved searches are as follows:</p>
+<p>Kayıtlı aramalarınız aşağıdaki gibidir:</p>
 
 <blockquote>
   <table border="1" cellpadding="3">  
     <tr>
       <th>
-        Search
+        Arama
       </th>
       <th>
-        Run
+        Çalıştır
       </th>
       <th>
-        Edit
+        Değiştir
       </th>
       <th>
-        Forget
+        Unut
       </th>
       <th>
-        Show in
-        Footer
+        Sayfa Altında Göster
       </th>
     </tr>
     <tr>
-      <td>My Bugs</td>
+      <td>Benim Hata Raporlarım</td>
       <td>
         [% filtered_username = user.login FILTER url_quote %]
-        <a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Run</a>
+        <a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Çalıştır</a>
       </td>
       <td>
         &nbsp;
@@ -64,14 +64,14 @@
       <tr>
         <td>[% q.name FILTER html %]</td>
         <td>
-          <a href="buglist.cgi?[% q.query FILTER html %]">Run</a>
+          <a href="buglist.cgi?[% q.query FILTER html %]">Çalıştır</a>
         </td>
         <td>
-          <a href="query.cgi?[% q.query FILTER html %]&known_name=[% q.name FILTER url_quote %]">Edit</a>
+          <a href="query.cgi?[% q.query FILTER html %]&known_name=[% q.name FILTER url_quote %]">Değiştir</a>
         </td>
         <td>
           <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
-                   [% q.name FILTER html %]">Forget</a>
+                   [% q.name FILTER html %]">Unut</a>
         </td>
         <td align="center">
           <input type="checkbox" 

@@ -18,6 +18,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Toms Baugis <toms@myrealbox.com>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -30,18 +31,18 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Login"
+  title = "Giriş"
 %]
 
 <p>
-  I need a legitimate login and password to continue.
+  Kayıtlı e-posta adresiniz ve parolanızla giriş yapabilirsiniz.
 </p>
 
 <form action="[% target FILTER html %]" method="POST">
   <table>
     <tr>
       <td align="right">
-        <b>Login:</b>
+        <b>E-posta Adresi:</b>
       </td>
       <td>
         <input size="35" name="Bugzilla_login">
@@ -49,7 +50,7 @@
     </tr>
     <tr>
       <td align="right">
-        <b>Password:</b>
+        <b>Parola:</b>
       </td>
       <td>
         <input type="password" size="35" name="Bugzilla_password">
@@ -63,7 +64,7 @@
         <td>
           <input type="checkbox" name="Bugzilla_remember" value="on"
                  [% "checked" IF Param('rememberlogin') == "defaulton" %]>
-          Remember my Login
+          Giriş bilgilerimi hatırla
         </td>
       </tr>
     [% END %]
@@ -72,14 +73,14 @@
       <tr>
         <td align="right">
           <b>
-             Restrict this session<br>
-             to this IP address:
+             Bu sezonu<br>
+             sadece şu IP adresi ile sınırla:
           </b>
         </td>
         <td>
           <input type="checkbox" name="Bugzilla_restrictlogin"
                  checked="checked">
-          (Using this option improves security)
+          (Bu seçeneği kullanmak güvenliği artırır)
         </td>
       </tr>
     [% END %]
@@ -88,11 +89,11 @@
   [% PROCESS "global/hidden-fields.html.tmpl"
      exclude="^Bugzilla_(login|password|restrictlogin)$" %]
 
-  <input type="submit" name="GoAheadAndLogIn" value="Login">
+  <input type="submit" name="GoAheadAndLogIn" value="Giriş">
   
   <p>
-    (Note: you should make sure cookies are enabled for this site. 
-    Otherwise, you will frequently be required to re-login.)
+    (Not: Bu site için çerezleri kabul etmeniz gereklidir. 
+    Aksi takdirde sıklıkla yeniden giriş yapmanız istenecektir.)
   </p>
 </form>
 
@@ -105,18 +106,17 @@
 
   [% IF Param("createemailregexp") %]
     <p>
-      If you don't have a [% terms.Bugzilla %] account, you can
-      <a href="createaccount.cgi">create a new account</a>.
+      Eğer bir [% terms.Bugzilla %] hesabınız yoksa, 
+      <a href="createaccount.cgi">hemen bir tane oluşturabilirsiniz</a>.
     </p>
   [% END %]
 
   <form method="get" action="token.cgi">
     <input type="hidden" name="a" value="reqpw">
-    If you have an account, but have forgotten your password,
-    enter your login name below and submit a request
-    to change your password.<br>
+    Hesabınız varsa ama parolanızı hatırlamıyorsanız,
+    e-posta adresinizi aşağıya girerek parolanızın değiştirilmesini talep edebilirsiniz.<br>
     <input size="35" name="loginname">
-    <input type="submit" value="Submit Request">
+    <input type="submit" value="Değişiklik Talebini Gönder">
   </form>
 
   <hr>
