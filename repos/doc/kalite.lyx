@@ -1,11 +1,16 @@
 #LyX 1.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 221
 \textclass article
+\begin_preamble
+\tolerance 10000
+\usepackage{hyperref}
+\end_preamble
 \language turkish
 \inputencoding auto
-\fontscheme default
+\fontscheme pslatex
 \graphics default
 \paperfontsize default
+\spacing single 
 \papersize Default
 \paperpackage a4
 \use_geometry 0
@@ -15,7 +20,7 @@
 \paperorientation portrait
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
+\paragraph_separation skip
 \defskip medskip
 \quotes_language english
 \quotes_times 2
@@ -26,8 +31,7 @@
 \layout Title
 
 Uludað Projesi, Ýlk Adýmlar
-\layout Title
-
+\newline 
 (Kalite Takýmý)
 \layout Author
 
