@@ -12,7 +12,7 @@
 */
 
 
-if($roleid != "1") {
+if(GetRoleName($roleid) != "admin") {
 	echo "Grup silme işlemi için yetkiniz yok.";
 	exit;
 }

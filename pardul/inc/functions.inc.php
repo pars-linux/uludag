@@ -28,9 +28,8 @@ function ListGroups($resultGrps, $printFor) {
 		if($i%2 == 1)
 			echo "<tr>\n";
 		echo "<td><a href=\"?action=brands&grpid=$rowGrps[0]\">$rowGrps[1]</a>";
-		if($printFor == "admin" || $printFor == "sub_admin") {
-			echo "&nbsp;&nbsp;<a href=\"?action=editgroup&grpid=$rowGrps[0]\">[Düzenle]</a>";
-			if($printFor == "admin")
+		if($printFor == "admin") {
+			echo "&nbsp;&nbsp;<a href=\"?action=editgroup&grpid=$rowGrps[0]\">[Düzenle]</a>\n";
 			echo "&nbsp;<a href=\"?action=delgroup&grpid=$rowGrps[0]\">[Sil]</a>";
 		}
 		echo "</td>\n";
