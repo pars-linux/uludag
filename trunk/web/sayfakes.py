@@ -22,12 +22,15 @@ class CutNode:
 		self.level = ""
 		self.lvl = 0
 		self.cut = 0
+		self.index = 0
 
 class CutSection:
 	def __init__ (self):
 		self.lines = []
 		self.index = 0
 		self.file_name = ""
+		self.lvl = 0
+		self.toc = 0
 
 class Cutter:
 	img_path = "../images"
@@ -128,22 +131,51 @@ class Cutter:
 				size = self.sub_lines (nodes, i)
 				if size > 60:
 					self.mark_cut (nodes, i)
+		# index linkleri icin numaralama
+		index = 0
+		for node in nodes:
+			node.index = index
+			if node.cut == 1:
+				index += 1
 		# bolumleri sayfalara ayir
 		sects = []
 		index = 0
 		sect = None
-		for node in nodes:
+		for i, node in enumerate (nodes):
 			if node.cut == 1:
 				if sect != None:
+					if sect.toc == 0:
+						last_lvl = sect.lvl
+						while nodes[i]:
+							if nodes[i].lvl > last_lvl:
+								sect.lines.append ("<UL>")
+								last_lvl = nodes[i].lvl
+							if nodes[i].lvl < last_lvl:
+								sect.lines.append ("</UL>")
+								last_lvl = nodes[i].lvl
+							if nodes[i].lvl > sect.lvl:
+								sect.lines.append ("<LI><A HREF='./%s'>" % self.make_sect_name (nodes[i].index))
+								sect.lines.append (nodes[i].name)
+								sect.lines.append ("</A></LI>")
+							i += 1
+							if i >= len (nodes) or nodes[i].lvl <= sect.lvl:
+								break
+						while last_lvl > sect.lvl:
+							sect.lines.append ("</UL>")
+							last_lvl -= 1
 					sects.append (sect)
 				sect = CutSection ()
 				sect.index = index
+				if node.name == "İçindekiler":
+					sect.toc = 1
+				sect.lvl = node.lvl
 				sect.file_name = self.make_sect_name (index)
 				index += 1
 			else:
 				if sect == None:
 					sect = CutSection ()
 					sect.index = index
+					sect.lvl = node.lvl
 					sect.file_name = self.make_sect_name (index)
 					index += 1
 			sect.lines += node.head
@@ -255,7 +287,7 @@ class Cutter:
 		doc.head = self.get_header (doc.lines)
 		doc.nodes = self.get_nodes (doc.lines)
 		# hevea ciktisini duzeltelim
-		#self.write_html (doc, html_name)
+		self.write_html (doc.lines, html_name)
 		# cok sayfali halini olusturalim
 		doc.sects = self.make_sects (doc.nodes)
 		# linkleri duzeltelim
