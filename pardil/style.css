@@ -22,13 +22,6 @@ body {
 }
 #menu {
   display: none;
-  /*
-  width: 160px;
-  margin: 0px 10px 0px 0px;
-  padding: 10px;
-  float: left;
-  font-family: Verdana, Sans, sans-serif;
-  */
 }
 #content {
   margin: 0px;

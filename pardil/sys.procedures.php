@@ -116,7 +116,7 @@
   // Pardil_Images
   // Önerilere ait resim dosyaları
   function proc_image_new($int_pardil, $str_filecontent, $str_contenttype) {
-    $str_sql = sprintf('INSERT INTO pardil_images (pardil, image, content_type) VALUES (%d, "%s", "%s")', $int_pardil, $str_filecontent, $str_contenttype);
+    $str_sql = sprintf('INSERT INTO pardil_images (proposal, image, content_type) VALUES (%d, "%s", "%s")', $int_pardil, $str_filecontent, $str_contenttype);
     mysql_query($str_sql);
     return mysql_insert_id();
   }
@@ -141,7 +141,7 @@
   function proc_r_relation_new($int_pardil1, $int_pardil2) {
     $str_dateB = date('Y.m.d H:i:s');
     $str_dateE = '9999.12.31 23:59:59';
-    $str_sql = sprintf('INSERT INTO pardil_r_releated (pardil, pardil2, timestampB, timestampE) VALUES (%d, %d, "%s", "%s")', $int_pardil, $int_pardil2, $str_dateB, $str_dateE);
+    $str_sql = sprintf('INSERT INTO pardil_r_releated (proposal, proposal, timestampB, timestampE) VALUES (%d, %d, "%s", "%s")', $int_pardil, $int_pardil2, $str_dateB, $str_dateE);
     mysql_query($str_sql);
     return mysql_insert_id();
   }
@@ -165,7 +165,7 @@
   function proc_r_roles_new($int_pardil, $int_user, $int_role) {
     $str_dateB = date('Y.m.d H:i:s');
     $str_dateE = '9999.12.31 23:59:59';
-    $str_sql = sprintf('INSERT INTO pardil_r_roles (pardil, user, role, timestampB, timestampE) VALUES (%d, %d, %d, "%s", "%s")', $int_pardil, $int_user, $int_role, $str_dateB, $str_dateE);
+    $str_sql = sprintf('INSERT INTO pardil_r_roles (proposal, user, role, timestampB, timestampE) VALUES (%d, %d, %d, "%s", "%s")', $int_pardil, $int_user, $int_role, $str_dateB, $str_dateE);
     mysql_query($str_sql);
     return mysql_insert_id();
   }
@@ -190,10 +190,10 @@
     $str_dateB = date('Y.m.d H:i:s');
     $str_dateE = '9999.12.31 23:59:59';
     // Bir önceki durumu sonlandır
-    $int_prev_id = database_query_scalar(sprintf('SELECT id FROM pardil_r_status WHERE pardil=%d AND timestampB<="%s" AND "%s"<=timestampE', $int_pardil, $str_dateB, $str_dateB));
+    $int_prev_id = database_query_scalar(sprintf('SELECT id FROM pardil_r_status WHERE proposal=%d AND timestampB<="%s" AND "%s"<=timestampE', $int_pardil, $str_dateB, $str_dateB));
     proc_r_status_update($int_prev_id, array('timestampE' => $str_dateB));
     // Yeni durum ekle
-    $str_sql = sprintf('INSERT INTO pardil_r_status (pardil, status, timestampB, timestampE) VALUES (%d, %d, "%s", "%s")', $int_pardil, $int_status, $str_dateB, $str_dateE);
+    $str_sql = sprintf('INSERT INTO pardil_r_status (proposal, status, timestampB, timestampE) VALUES (%d, %d, "%s", "%s")', $int_pardil, $int_status, $str_dateB, $str_dateE);
     mysql_query($str_sql);
     return mysql_insert_id();
   }
@@ -215,7 +215,7 @@
   function proc_maintainers_new($int_pardil, $int_user) {
     $str_dateB = date('Y.m.d H:i:s');
     $str_dateE = '9999.12.31 23:59:59';
-    $str_sql = sprintf('INSERT INTO pardil_maintainers (pardil, user, timestampB, timestampE) VALUES (%d, %d, "%s", "%s")', $int_pardil, $int_user, $str_dateB, $str_dateE);
+    $str_sql = sprintf('INSERT INTO pardil_maintainers (proposal, user, timestampB, timestampE) VALUES (%d, %d, "%s", "%s")', $int_pardil, $int_user, $str_dateB, $str_dateE);
     mysql_query($str_sql);
     return mysql_insert_id();
   }

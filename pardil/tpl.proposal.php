@@ -28,9 +28,6 @@
         ?>
         <span class="title"><span><?php printf('%04d', $arr_proposal['id']); ?></span> <span><?php printf('%s', $arr_proposal['title']); ?></span></span>
       </div>
-      <div id="menu">
-        ...
-      </div>
       <div id="content">
         <div class="proposal">
           <h1><?php printf('%s', $arr_proposal['title']); ?></h1>
