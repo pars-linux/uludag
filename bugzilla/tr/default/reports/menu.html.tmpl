@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -27,47 +28,47 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Reporting and Charting Kitchen"
+  title = "Rapor ve Grafik Mutfağı"
 %]
 
 <p>
-  [% terms.Bugzilla %] allows you to view and track the state of the [% terms.bug %] database in
-  all manner of exciting ways.
+  [% terms.Bugzilla %] ile mevcut [% terms.bug %] veritabanını son derece güçlü biçimde 
+  görüntüleyebilir ve izleyebilirsiniz.
 </p>
 
-<h2>Current State</h2>
+<h2>Mevcut Durum</h2>
 
 <ul>
   <li>
-    <strong><a href="query.cgi">Search</a></strong> -
-    list sets of [% terms.bugs %].
+    <strong><a href="query.cgi">Arama</a></strong> -
+    [% terms.bugs %] raporları içinde tarama.
   </li>
   <li>
     <strong>
-      <a href="query.cgi?format=report-table">Tabular reports</a>
+      <a href="query.cgi?format=report-table">Tablo görünümlü raporlar</a>
     </strong> -
-    tables of [% terms.bug %] counts in 1, 2 or 3 dimensions, as HTML or CSV.
+    HTML ya da CSV dosya biçiminde; 1, 2 ya da 3 boyutlu [% terms.bug %] sayı tabloları.
   </li>
   <li>
     <strong>
-      <a href="query.cgi?format=report-graph">Graphical reports</a>
+      <a href="query.cgi?format=report-graph">Grafiksel raporlar</a>
     </strong> -
-    line graphs, bar and pie charts.
+    çizgi, çubuk ve pasta grafikleri.
   </li>
 </ul>
 
-<h2>Change Over Time</h2>
+<h2>Gerçekleşen Değişiklikler</h2>
 
 <ul>
   <li>
-    <strong><a href="reports.cgi">Old Charts</a></strong> - 
-    plot the status and/or resolution of [% terms.bugs %] against
-    time, for each product in your database.
+    <strong><a href="reports.cgi">Eski Grafikler</a></strong> - 
+    Veritabanındaki her bir ürün için süreç içerisinde girilmiş 
+    [% terms.bugs %] durum ve/veya çözümlerinin çizimi.
   </li>
   [% IF UserInGroup(Param("chartgroup")) %]
     <li>
-      <strong><a href="chart.cgi">New Charts</a></strong> - 
-      plot any arbitrary search against time. Far more powerful.
+      <strong><a href="chart.cgi">Yeni Grafikler</a></strong> - 
+      Sürecin grafiğinin belirlediğiniz arama ile çizdirilmesi.
     </li>
   [% END %]
 </ul>

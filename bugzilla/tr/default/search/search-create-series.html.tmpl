@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -28,7 +29,7 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Create New Data Set"
+  title = "Yeni Veri Seti Oluşturma"
   onload = "selectProduct(document.forms['chartform']);"
 %]
 
@@ -37,14 +38,14 @@
 [% PROCESS search/form.html.tmpl %]
 
 <p>
-  <input type="submit" name="action-search" value="Run Search">
-  to see which [% terms.bugs %] would be included in this data set.
+  Bu veri setinde hangi hataların dahil edileceğini görmek için
+  <input type="submit" name="action-search" value="Aramayı Çalıştır">
 </p>
     
 <h3>Data Set Parameters</h3>
       
 [% PROCESS reports/series.html.tmpl 
-   button_name = "Create Data Set" %]
+   button_name = "Yeni Veri Setini Oluştur" %]
   <input type="hidden" name="action" value="create">
 
 <script language="JavaScript" type="text/javascript">

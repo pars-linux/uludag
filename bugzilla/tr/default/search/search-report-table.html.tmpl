@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -27,18 +28,18 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Generate Tabular Report"
+  title = "Tablo Görünümlü Rapor Oluşturma"
   onload = "selectProduct(document.forms['reportform']);"
 %]
 
 [% PROCESS "search/search-report-select.html.tmpl" %]
 
 <p>
-  Choose one or more fields as your axes, and then refine your set of 
-  [% terms.bugs %] using the rest of the form.
+  Bir ya da daha çok ekseni belirleyin ve formun kalanını kullanarak 
+  [% terms.bugs %] setinin daha net görüntülenmesini sağlayın.
 </p>
 
-[% button_name = "Generate Report" %]
+[% button_name = "Raporu Oluştur" %]
 
 <form method="get" action="report.cgi" name="reportform">
 
@@ -47,21 +48,21 @@
     <td>
     </td>
     <td align="center">
-      <b>Horizontal Axis:</b>
+      <b>Dikey Eksen:</b>
       [% PROCESS select name = 'x_axis_field' %]
     </td>
   </tr>
 
   <tr>
     <td valign="middle" align="center">
-      <b>Vertical Axis:</b><br>
+      <b>Yatay Eksen:</b><br>
       [% PROCESS select name = 'y_axis_field' %]
     </td>
     <td width="150" height="150">
       <table border="1" width="100%" height="100%">
         <tr>
           <td align="center" valign="middle">
-            <b>Multiple Tables:</b><br>
+            <b>Çoklu Tablo:</b><br>
             [% PROCESS select name = 'z_axis_field' %]
           </td>
         </tr>
