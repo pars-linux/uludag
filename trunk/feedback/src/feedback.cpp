@@ -22,6 +22,7 @@
 #include <qbuttongroup.h>
 #include <qmessagebox.h>
 #include <qfile.h>
+#include <qdir.h>
 
 #include "welcome.h"
 #include "question.h"
@@ -125,11 +126,11 @@ void Feedback::back()
 
 void Feedback::accept()
 {
-	std::stringstream tmp;
-	tmp << getenv("HOME") << "/pardus_information.xml";
-	std::string xmlfileloc = tmp.str();
 
-	QFile file( xmlfileloc );
+	QString xmlfile = QDir::homeDirPath ();
+	xmlfile.append( "/pardus_information.xml" );
+	
+	QFile file( xmlfile );
 	
 	if ( !file.open( IO_WriteOnly ) )
 	{
@@ -162,7 +163,7 @@ void Feedback::accept()
 		proc->clearArguments();
 
 		*proc << "./grab_information";
-		*proc << getenv("HOME");
+		*proc << QDir::homeDirPath ();
 		proc->setUseShell(true, "/bin/sh");
 		
 		if ( !proc->start() )
