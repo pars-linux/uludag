@@ -39,7 +39,7 @@
 #include "knazarballoon.h"
 
 knazar::knazar()
-    : DCOPObject( "DCOPNazarIface" ), KSystemTray( 0, "knazar" ),
+    : DCOPObject( "DCOPNazarIface" ), KSystemTray( 0, "knazar" )
 {
 	// Insert TrayIcon
 	trayIcon = KSystemTray::loadIcon( "knazar" );
