@@ -18,6 +18,7 @@
   #
   # Contributor(s): Terry Weissman <terry@mozilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -27,28 +28,27 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Delete Keyword"
+  title = "Anahtar Kelime Silinmesi"
 %]
 
 <p>
   [% IF bug_count == 1 %]
-    There is one [% terms.bug %] with this keyword set.
+    Bu anahtar kelime seti ile ilişkili bir [% terms.bug %] bildirimi bulunmaktadır.
   [% ELSE %]
-    There are [% bug_count %] [%+terms.bugs %] with
-    this keyword set.
+    Bu anahtar kelime seti ile ilişkili [% bug_count %] [%+terms.bugs %] bildirimi bulunmaktadır.
   [% END %]
   
-  Are you <b>sure</b> you want to delete
-  the <code>[% name FILTER html %]</code> keyword?
+  <code>[% name FILTER html %]</code> isimli anahtar kelimeyi silmek istediğinize
+  <b>emin misiniz</b>?
 </p>
 
 <form method="post" action="editkeywords.cgi">
   <input type="hidden" name="id" value="[% keyword_id %]">
   <input type="hidden" name="action" value="delete">
   <input type="hidden" name="reallydelete" value="1">
-  <input type="submit" value="Yes, really delete the keyword">
+  <input type="submit" value="Evet, gerçekten sil">
 </form>
 
-<p><a href="editkeywords.cgi">Edit other keywords</a>.</p>
+<p><a href="editkeywords.cgi">Diğer anahtar kelimeleri değiştir</a>.</p>
 
 [% PROCESS global/footer.html.tmpl %] 

@@ -18,6 +18,7 @@
   #
   # Contributor(s): Terry Weissman <terry@mozilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -33,7 +34,7 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Select keyword"
+  title = "Anahtar kelime seçimi"
 %]
 
 [% max_table_size = 50 %]
@@ -41,10 +42,10 @@
 [% BLOCK table_header %]
   <table border="1" cellpadding="4" cellspacing="0">
     <tr bgcolor="#6666FF">
-      <th align="left">Edit keyword ...</th>
-      <th align="left">Description</th>
+      <th align="left">Anahtar kelime düzenle ...</th>
+      <th align="left">Açıklama</th>
       <th align="left">[% terms.Bugs %]</th>
-      <th align="left">Action</th>
+      <th align="left">İşlem</th>
     </tr>
 [% END %]
 
@@ -74,11 +75,11 @@
       [% IF keyword.bug_count %]
         [% keyword.bug_count %]
       [% ELSE %]
-        none
+        hiçbiri
       [% END %]
     </td>
     <th valign="top">
-      <a href="editkeywords.cgi?action=delete&amp;id=[% keyword.id %]">Delete</a>
+      <a href="editkeywords.cgi?action=delete&amp;id=[% keyword.id %]">Sil</a>
     </th>
   </tr>
 
@@ -88,8 +89,8 @@
 [% END %]
 
   <tr>
-    <td valign="top" colspan="3">Add a new keyword</td>
-    <td><a href="editkeywords.cgi?action=add">Add</a></td>
+    <td valign="top" colspan="3">Yeni bir anahtar kelime ekle</td>
+    <td><a href="editkeywords.cgi?action=add">Ekle</a></td>
   </tr>
 
 [% PROCESS table_footer %]
