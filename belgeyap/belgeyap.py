@@ -51,11 +51,6 @@ class CutSection:
 		self.toc = 0
 
 class Cutter:
-	def __init__ (self, html_tmpl):
-		f = file (html_tmpl, "r")
-		self.template = f.readlines ()
-		f.close ()
-	
 	def get_header (self, lines):
 		# hevea ciktisinda dokuman basligini bul
 		head = []
@@ -236,19 +231,19 @@ class Cutter:
 					lines2.append (line)
 			sect.lines = lines2
 	
-	def write_html (self, lines, file_name):
+	def write_html(self, lines, file_name):
 		# verilen satirlari sablona gore dosyaya yaz
-		f = file (file_name, "w")
+		f = file(file_name, "w")
 		fe = codecs.EncodedFile (f, "utf-8", "utf-8")
-		for tline in self.template:
-			if tline.find ("$content$") != -1:
-				for line in lines:
-					fe.write (line)
-			else:
-				fe.write (tline)
-		f.close ()
-		# apache ssi xbithack icin gerekli
-		os.chmod (file_name, 0755)
+		fe.write("<html><head>")
+		fe.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">")
+		fe.write("</head><body>")
+		fe.write("<!-- SAYFA İÇERİK BAŞI -->")
+		for line in lines:
+			fe.write(line)
+		fe.write("<!-- SAYFA İÇERİK SONU -->")
+		fe.write("</body></html>")
+		f.close()
 	
 	def make_navbar (self, pi, ni):
 		# navigasyon butonlari icin html kodu olustur
@@ -439,7 +434,6 @@ def bilgibas(name,dname,date):
 	print ""
 
 def yap(template,clean_flag):
-	sablon = "belge.tmpl"
 	ikonlar = "../../images"
 	tamir = 1
 	# open document template and get information
@@ -447,7 +441,7 @@ def yap(template,clean_flag):
 	exec(f)
 	f.close()
 	# open html template
-	c = Cutter(sablon)
+	c = Cutter()
 	c.img_path = ikonlar
 	# prepare directory
 	ensure_dir(dizin)
@@ -498,9 +492,8 @@ def usage():
 	print "Opsiyonel parametreler:"
 	print '  dosyalar = [ "dosya1.png", "dosya2.png" ]'
 	print '  ikonlar = "../../images/"'
-	print '  sablon = "belge.tmpl"'
-	print "Ek dosyaları depodan almak, navigasyon ikonları, yada belge"
-	print "şablonunun adını değiştirmek için kullanabilirsiniz."
+	print "Ek dosyaları depodan almak, ve navigasyon ikonlarının"
+	print "yerini belirtmek için kullanabilirsiniz."
 	print ""
 	print "Hata raporlarını gurer @ uludag.org.tr ye gönderin."
 	sys.exit(2)

@@ -1,5 +1,14 @@
 
-belgeyap.py
+ULUSAL DAĞITIM WEB ARAÇLARI
+===========================
+
+[ sablonla.py ]
+
+Bu program bir dizin hiyerarşisindeki html dosyalarını
+verilen bir şablona uygun hale getirir.
+
+
+[ belgeyap.py ]
 
 Bu program verilen bir tanım dosyasındaki bilgilere göre
 bir LyX belgesini subversion'dan çeker, tek ve çok sayfalı
@@ -26,14 +35,9 @@ Opsiyonel değişkenler:
 dosyalar	belgenin yanında resim dosyaları varsa
 			dosyalar = [ "d1.png", "d2.jpg" ] biçiminde
 			yazıp getirtebilirsiniz
-sablon		html çıktıları için şablon
-			öntanımlı = belge.tmpl
 ikonlar		çok sayfalı html çıktısı için navigasyon
 			ikonlarının belgeye göre yeri
 			öntanımlı = ../../images/
-
-Şablon formatı:
-html şablonu içinde $content$ satırı belge içeriğiyle değiştirilir.
 
 İkonlar:
 nav_back.png, nav_forward.png, nav_home.png, nav_toc.png
