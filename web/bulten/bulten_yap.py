@@ -93,7 +93,7 @@ def gen_rss(index, logs):
 
 	# first line is title
         entry_title = file.readline()
-        entry_link = "http://svn.uludag.org.tr/trunk/web/bulten/"+basename(logs[i])
+        entry_link = "http://www.uludag.org.tr/bulten/arsiv/"+basename(logs[i])[:-3]+"html"
         entry_desc = file.read()
         mtime = index.get_mtime(logs[i])
         entry_date = ctime(mtime)
