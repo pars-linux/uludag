@@ -281,7 +281,7 @@ CREATE TABLE `activation` (
   `status` tinyint(1) NOT NULL default '0',
   `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`user`)
-) TYPE=MyISAM COMMENT='Aktivasyon kodları', AUTO_INCREMENT=2;
+) TYPE=MyISAM COMMENT='Aktivasyon kodları' AUTO_INCREMENT=2;
 
 -- 
 -- Tablo döküm verisi `activation`
