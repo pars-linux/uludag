@@ -13,8 +13,9 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 #include <arpa/inet.h>
-#include <net/if.h>
 #include <net/route.h>
+#include <iwlib.h>
+#include <wireless.h>
 
 #include <qstringlist.h>
 #include <qfile.h>
@@ -256,4 +257,45 @@ int Device::killDhcpcd( const char *dev )
 const QRegExp Device::getRx() const
 {
     return *rx;
+}
+
+const char * Device::getESSID( const char *dev )
+{
+    int skfd = sockets_open();
+    wireless_config *config = new wireless_config;
+
+    if ( iw_get_basic_config( skfd, dev, config ) != -1 ) {
+        if ( config->essid_on ) {
+            return config->essid;
+        }
+    }
+
+    return "";
+}
+
+const char* Device::getWirelessMode( const char *dev )
+{
+    QString _mode;
+    int skfd = sockets_open();
+    wireless_config *config = new wireless_config;
+
+    if ( iw_get_basic_config( skfd, dev, config ) != -1 ) {
+        if ( config->has_mode == 1 ) {
+            switch( config->mode ) {
+            case IW_MODE_ADHOC:
+                _mode = "Ad-Hoc";
+                break;
+            case IW_MODE_AUTO:
+                _mode = "Auto";
+                break;
+            default:
+                _mode = "";
+            }
+        }
+        else {
+            _mode = "";
+        }
+    }
+
+    return _mode.ascii();
 }
