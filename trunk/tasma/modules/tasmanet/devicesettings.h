@@ -30,6 +30,8 @@ protected slots:
 
     void startDhcpcd();
 
+    void removeDns();
+
 private:
     QString _dev;
     bool _wifi;
@@ -38,6 +40,7 @@ private:
 		   const char *bc, const char *nm );
     int set_default_route( const char *ip );
     void writeSettings();
+    QStringList getDnsList();
 
 };
 
