@@ -14,6 +14,7 @@
 #include <sys/ioctl.h>
 #include <arpa/inet.h>
 #include <net/if.h>
+#include <net/route.h>
 
 #include <qfile.h>
 #include <qpushbutton.h>
@@ -87,14 +88,20 @@ void DeviceSettings::slotApply()
 {
     /* Manual Settings */
     if ( manualButton->isChecked() ) {
-        int ret = set_iface( _dev.ascii(),
+        // SET IP
+        int ret1 = set_iface( _dev.ascii(),
                              ipaddr->text().ascii(),
                              // we can ommit broadcast and netmask.
                              broadcast->text().length() ? broadcast->text().ascii() : 0,
                              netmask->text().length() ? netmask->text().ascii() : 0
             );
+        // SET ROUTE
+        int ret2 = 0;
+        if ( !defaultgw->text().isEmpty() ) {
+            set_default_route( defaultgw->text().ascii() );
+        }
 
-        if ( ret < 0 ) {
+        if ( ret1 < 0 || ret2 < 0) {
             QString err = i18n( "Failed to configure device: " ) + _dev;
             KMessageBox::error( this, err, i18n( "Error!" ) );
         }
@@ -153,6 +160,7 @@ void DeviceSettings::writeSettings()
 }
 
 
+
 void DeviceSettings::slotCancel()
 {
     reject();
@@ -190,7 +198,7 @@ int DeviceSettings::set_iface( const char *dev, const char *ip,
 
     // enable (up) device
     strcpy( ifr.ifr_name, dev );
-    ifr.ifr_flags |= IFF_UP | IFF_RUNNING;
+    ifr.ifr_flags = IFF_UP | IFF_RUNNING | ~IFF_NOARP | IFF_MULTICAST | IFF_BROADCAST;
     if ( ioctl( skfd, SIOCSIFFLAGS, &ifr ) < 0 ) {
         return -1;
     }
@@ -223,6 +231,34 @@ int DeviceSettings::set_iface( const char *dev, const char *ip,
     return 0;
 }
 
+int DeviceSettings::set_default_route( const char *ip )
+{
+    struct rtentry route;
+    struct sockaddr_in singw, sindst;
+    int skfd;
+
+    skfd = sockets_open();
+
+    memset( &singw, 0, sizeof( struct sockaddr ) );
+    memset( &sindst, 0, sizeof( struct sockaddr ) );
+    singw.sin_family = AF_INET;
+    sindst.sin_family = AF_INET;
+
+    sindst.sin_addr.s_addr = INADDR_ANY;
+    singw.sin_addr.s_addr = inet_addr( ip );
+
+    memset( &route, 0, sizeof( struct rtentry ) );
+    route.rt_dst = *(struct sockaddr *)&sindst;
+    route.rt_gateway = *(struct sockaddr *)&singw;
+    route.rt_flags = RTF_GATEWAY;
+    if( ioctl( skfd, SIOCADDRT, &route ) < 0) {
+        return -1;
+    }
+
+    return 0;
+}
+
+
 void DeviceSettings::automaticToggled( bool on )
 {
     if ( on ) {
@@ -231,6 +267,7 @@ void DeviceSettings::automaticToggled( bool on )
         ipaddr->setEnabled( false );
         broadcast->setEnabled( false );
         netmask->setEnabled( false );
+        defaultgw->setEnabled( false );
 
         automaticCombo->setEnabled( true );
     }
@@ -245,5 +282,7 @@ void DeviceSettings::manualToggled( bool on )
         ipaddr->setEnabled( true );
         broadcast->setEnabled( true );
         netmask->setEnabled( true );
+        defaultgw->setEnabled( true );
     }
 }
+
