@@ -119,27 +119,28 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
 
 void DeviceSettings::slotApply()
 {
+    bool succeed = true;
+
     /* Manual Settings */
     if ( manualButton->isChecked() ) {
         // SET IP
-        int ret1 = set_iface( _dev.ascii(),
+        int ret = set_iface( _dev.ascii(),
                              ipaddr->text().ascii(),
                              // we can ommit broadcast and netmask.
                              broadcast->text().length() ? broadcast->text().ascii() : 0,
                              netmask->text().length() ? netmask->text().ascii() : 0
             );
+        if ( ret < 0 ) succeed = false;
+
         // SET ROUTE
-        int ret2 = 0;
         if ( !defaultgw->text().isEmpty() ) {
-            set_default_route( defaultgw->text().ascii() );
+            ret =  set_default_route( defaultgw->text().ascii() );
+            if ( ret < 0 ) succeed = false;
         }
 
-        if ( ret1 < 0 || ret2 < 0) {
-            QString err = i18n( "Failed to configure device: " ) + _dev;
-            KMessageBox::error( this, err, i18n( "Error!" ) );
-        }
+        ret = writeDnsList();
+        if ( ret < 0 ) succeed = false;
 
-        writeDnsList();
     }
     /* Automatic (DHCP) */
     else if ( automaticButton->isChecked() ) {
@@ -165,6 +166,16 @@ void DeviceSettings::slotApply()
     }
 
     writeSettings();
+
+    if ( succeed ) {
+        QString msg = i18n( "Successfully configured device: " ) + _dev;
+        KMessageBox::information( this, msg, i18n( "Done!" ) );
+    }
+    else {
+        QString msg = i18n( "Failed to configure device: " ) + _dev;
+        KMessageBox::error( this, msg, i18n( "Error!" ) );
+    }
+
     done( 0 );
 }
 
