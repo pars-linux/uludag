@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kaptan
+Icon=kaptan
+Type=Application
+DocPath=kaptan/index.html
+X-KDE-StartupNotify=true
+
+Name=Kaptan Desktop
+Name[tr]=Kaptan Masaüstü
+
+Categories=Qt;KDE;Core
