@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -42,19 +43,19 @@
 
   <table id="filter">
     <tr>
-      <th>Requester:</th>
+      <th>Talep Eden:</th>
       <td><input type="text" name="requester" value="[% cgi.param('requester') FILTER html %]" size="20"></td>
-      <th>Product:</th>
+      <th>Ürün:</th>
       <td>
         <select name="product" onchange="selectProduct(this.form, 'product', 'component', 'Any');">
-          <option value="">Any</option>
+          <option value="">Herhangi Birisi</option>
           [% FOREACH item = products %]
             <option value="[% item FILTER html %]"
                     [% "selected" IF cgi.param('product') == item %]>[% item FILTER html %]</option>
           [% END %]
         </select>
       </td>
-      <th>Flag:</th>
+      <th>Flama:</th>
       <td>
         [% PROCESS "global/select-menu.html.tmpl"
                     name="type"
@@ -75,25 +76,25 @@
 
     </tr>
     <tr>
-      <th>Requestee:</th>
+      <th>Talep Edilen:</th>
       <td><input type="text" name="requestee" value="[% cgi.param('requestee') FILTER html %]" size="20"></td>
-      <th>Component:</th>
+      <th>Bileşen:</th>
       <td>
         <select name="component">
-          <option value="">Any</option>
+          <option value="">Herhangi Birisi</option>
           [% FOREACH item = components %]
             <option value="[% item FILTER html %]" [% "selected" IF cgi.param('component') == item %]>
               [% item FILTER html %]</option>
           [% END %]
         </select>
       </td>
-      <th>Group By:</th>
+      <th>Gruplama Sırası:</th>
       <td>
         [% groups = {
-            "Requester" => 'requester' ,
-            "Requestee" => 'requestee',
-            "Flag" => 'type' ,
-            "Product/Component" => 'category'
+            "Talep Eden" => 'requester' ,
+            "Talep Edilen" => 'requestee',
+            "Flama" => 'type' ,
+            "Ürün/Bileşent" => 'category'
           } %]
         [% PROCESS "global/select-menu.html.tmpl" name="group" options=groups default=cgi.param('group') %]
       </td>
@@ -105,23 +106,23 @@
 [% END %]
 
 [% column_headers = {
-      "type"       => "Flag" ,
-      "status"     => "Status" ,
+      "type"       => "Flama" ,
+      "status"     => "Durum" ,
       "bug"        => "$terms.Bug" ,
-      "attachment" => "Attachment" ,
-      "requester"  => "Requester" ,
-      "requestee"  => "Requestee" ,
-      "created"    => "Created" ,
-      "category"   => "Product/Component"    } %]
+      "attachment" => "Eklenti" ,
+      "requester"  => "Talep Eden" ,
+      "requestee"  => "Talep Edilen" ,
+      "created"    => "Oluşturulma Zamanı" ,
+      "category"   => "Ürün/Bileşen"    } %]
 
 [% DEFAULT display_columns = ["requester", "requestee", "type", "bug", "attachment", "created"]
-           group_field     = "Requestee"
+           group_field     = "Talep Edilen"
            group_value     = ""
 %]
 
 
 [% PROCESS global/header.html.tmpl
-  title="Request Queue"
+  title="Talep Sırası"
   h2=filter_form
   style = "
     table.requests th { text-align: left; }
@@ -137,7 +138,7 @@
 
 [% IF requests.size == 0 %]
   <p>
-    No requests.
+    Talep bulunmamaktadır.
   </p>
 [% ELSE %]
   [% FOREACH request = requests %]

@@ -37,47 +37,46 @@
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% DEFAULT title = "Error" %]
+[% DEFAULT title = "Hata" %]
 
 [% error_message = BLOCK %]
   [% IF    error == "account_creation_disabled" %]
-    [% title = "Account Creation Disabled" %]
-    User account creation has been disabled or restricted.
+    [% title = "Hesap Oluşturma Devre Dışı" %]
+    Yeni kullanıcı hesabı oluşturma devre dışı bırakılmış ya da engellenmiş.
     <hr>
-    New accounts must be created by an administrator.
+    Yeni hesaplar sistem yöneticisi tarafından oluşturulmalıdır.
 
   [% ELSIF error == "account_disabled" %]
-    [% title = "Account Disabled" %]
+    [% title = "Hesabınız Devre Dışı" %]
     [% disabled_reason FILTER none %]
     <hr>
-    If you believe your account should be restored, please
-    send email to [% Param("maintainer") %] explaining why.
+    Hesabınızın tekrar açılması gerektiğine inanıyorsanız, lütfen
+    [% Param("maintainer") %] adresine sebebini açıklayan bir e-posta gönderin.
 
   [% ELSIF error == "account_exists" %]
-    [% title = "Account Already Exists" %]
-    There is already an account with
+    [% title = "Hesap Zaten Var" %]
+    Başvurduğunuz
     [% IF email %]
-      the login name [% email FILTER html %].
+      [% email FILTER html %] hesabı zaten tanımlı.
     [% ELSE %]
-      that login name.
+      hesab zaten tanımlı.
     [% END %]
 
   [% ELSIF error == "account_inexistent" %]
-    [% title = "Account Does Not Exist" %]
-    There is no [% terms.Bugzilla %] account with that login name.
+    [% title = "Hesap Bulunamadı" %]
+    Bu kullanıcı adı ile kayıtlı bir [% terms.Bugzilla %] hesabı bulunamaktadır.
 
   [% ELSIF error == "alias_has_comma_or_space" %]
-    [% title = "Invalid Characters In Alias" %]
-    The alias you entered, <em>[% alias FILTER html %]</em>,
-    contains one or more commas or spaces.  Aliases cannot contain
-    commas or spaces because those characters are used to separate
-    aliases from each other in lists.  Please choose another alias
-    that does not contain commas and spaces.
+    [% title = "Takma Adda Geçersiz Karekterler" %]
+    Belirtmiş olduğunuz <em>[% alias FILTER html %]</em> takma adı,
+    bir ya da daha fazla virgül, ya da boşluk karekteri içermektedir. Takma adlar
+    virgül ya da boşluk içeremezler çünkü bu karekterler diğer takma adları birbirinden ayırmakta 
+    kullanılmaktadır.  Lütfen virgül ya da bpluk içermeyen başka bir takmaad seçin.
 
   [% ELSIF error == "alias_in_use" %]
-    [% title = "Alias In Use" %]
-    [% bug_link FILTER none %] has already taken the alias 
-    <em>[% alias FILTER html %]</em>.  Please choose another one.
+    [% title = "Takma Ad Zaten Tanımlı" %]
+    [% bug_link FILTER none %] için zaten 
+    <em>[% alias FILTER html %]</em> takma adı tanımlı. Lütfen aşkabir tane seçin.
 
   [% ELSIF error == "alias_is_numeric" %]
     [% title = "Alias Is Numeric" %]
@@ -98,19 +97,19 @@
     created.
 
   [% ELSIF error == "authorization_failure" %]
-    [% title = "Authorization Failed" %]
-    You are not allowed to [% action FILTER html %].
+    [% title = "Kullanıcı Doğrulaması Hatası" %]
+    [% action FILTER html %] için izniniz bulunmamaktadır.
 
   [% ELSIF error == "attachment_access_denied" %]
-    [% title = "Access Denied" %]
-    You are not authorized to access this attachment.
+    [% title = "Erişim Engellendi" %]
+    Bu eklentiye erişme izniniz bulunmamaktadır.
 
   [% ELSIF error == "bug_access_denied" %]
-    [% title = "Access Denied" %]
-    You are not authorized to access [% terms.bug %] #[% bug_id FILTER html %].
+    [% title = "Erişim Engellendi" %]
+    [% bug_id FILTER html %] numaralı [% terms.bug %] için erişim izniniz bulunmamaktadır.
 
   [% ELSIF error == "bug_access_query" %]
-    [% title = "Access Denied" %]
+    [% title = "Erişim Engellendi" %]
     You are not authorized to access [% terms.bug %] #[% bug_id FILTER html %].
     To see this [% terms.bug %], you must
     first <a href="show_bug.cgi?id=
@@ -122,12 +121,12 @@
     You may not search, or create saved searches, without any search terms.
 
   [% ELSIF error == "bugs_not_changed" %]
-    [% title = BLOCK %][% terms.Bugs %] Not Changed[% END %]
+    [% title = BLOCK %][% terms.Bugs %] Değiştirilmedi% END %]
     Um, you apparently did not change anything on the selected [% terms.bugs %].
 
   [% ELSIF error == "chart_too_large" %]
-    [% title = "Chart Too Large" %]
-    Sorry, but 2000 x 2000 is the maximum size for a chart.
+    [% title = "Tablo Çok Geniş" %]
+    Üzgünüz, bir tablonun en büyük boyutu 2000 x 2000 olabilir.
 
   [% ELSIF error == "comment_required" %]
     [% title = "Comment Required" %]
@@ -166,7 +165,7 @@
     Email address confirmation failed.
 
   [% ELSIF error == "entry_access_denied" %]
-    [% title = "Permission Denied" %]
+    [% title = "Erişim Engellendi" %]
     Sorry; you do not have the permissions necessary to enter [% terms.abug %]
     against the [% product FILTER html %] product.
 
@@ -175,7 +174,7 @@
     You did not specify a file to attach.
 
   [% ELSIF error == "file_too_large" %]
-    [% title = "File Too Large" %]
+    [% title = "Dosya Çok Büyük" %]
     The file you are trying to attach is [% filesize FILTER html %] 
     kilobytes (KB) in size.
     Non-patch attachments cannot be more than [% Param('maxattachmentsize') %]
@@ -267,11 +266,11 @@
     You entered <tt>[% value FILTER html %]</tt>, which isn't.
     
   [% ELSIF error == "illegal_date" %]
-    [% title = "Illegal Date" %]
-    '<tt>[% date FILTER html %]</tt>' is not a legal date.
+    [% title = "Geçersiz Tarih" %]
+    '<tt>[% date FILTER html %]</tt>' geçersiz bir tarih girişidir.
     
   [% ELSIF error == "illegal_email_address" %]
-    [% title = "Invalid Email Address" %]
+    [% title = "Geçersiz E-posta Adresis" %]
     The e-mail address you entered (<b>[% addr FILTER html %]</b>) 
     didn't pass our syntax checking for a legal email address. 
     [%+ Param('emailregexpdesc') %]
@@ -294,7 +293,7 @@
     0 and 1.
 
   [% ELSIF error == "illegal_query_name" %]
-    [% title = "Illegal Search Name" %]
+    [% title = "Geçersiz Arama Adı" %]
     The name of your search cannot contain any of the following characters: 
     &lt;, &gt;, &amp;.
 
@@ -319,7 +318,7 @@
     [% terms.bugs %].
     
   [% ELSIF error == "invalid_attach_id" %]
-    [% title = "Invalid Attachment ID" %]
+    [% title = "Geçersiz Eklenti Numarası" %]
     The attachment id [% attach_id FILTER html %] is invalid.
 
   [% ELSIF error == "invalid_bug_id_non_existent" %]
@@ -327,7 +326,7 @@
     [% terms.Bug %] #[% bug_id FILTER html %] does not exist.
     
   [% ELSIF error == "invalid_bug_id_or_alias" %]
-    [% title = BLOCK %]Invalid [% terms.Bug %] ID[% END %]
+    [% title = BLOCK %]Geçersiz [% terms.Bug %] Numarası[% END %]
     [% IF bug_id %]
       '[% bug_id FILTER html %]' is not a valid [% terms.bug %] number
       [% IF Param("usebugaliases") %]
@@ -390,7 +389,7 @@
     Girdiğiniz kullanıcı adı ya da parola geçerli değildir.
 
   [% ELSIF error == "keyword_access_denied" %]
-    [% title = "Access Denied" %]
+    [% title = "Erişim Engellendi" %]
     Sorry, you aren't a member of the 'editkeywords' group, and so
     you aren't allowed to add, modify or delete keywords.
 
@@ -411,8 +410,8 @@
     You may not use commas or whitespace in a keyword name.
      
   [% ELSIF error == "login_needed_for_password_change" %]
-    [% title = "Login Name Required" %]
-    You must enter a login name when requesting to change your password.
+    [% title = "Kullanıcı Adı Boş Geçilemez" %]
+    Parola değişikliği talebi için kullanıcı adını girmelisiniz.
 
   [% ELSIF error == "milestone_required" %]
     [% title = "Milestone Required" %]
@@ -431,8 +430,8 @@
     You must enter a description for the attachment.
     
   [% ELSIF error == "missing_category" %]
-    [% title = "Missing Category" %]
-    You did not specify a category for this series.
+    [% title = "Eksik Kategori" %]
+    Bu seri için bir kategori belirlemediniz.
                 
   [% ELSIF error == "missing_content_type" %]
     [% title = "Missing Content-Type" %]
@@ -479,8 +478,8 @@
     Attachment #[% attach_id FILTER html %] must be a patch.
 
   [% ELSIF error == "missing_subcategory" %]
-    [% title = "Missing Subcategory" %]
-    You did not specify a subcategory for this series.
+    [% title = "Eksik Alt KAtegori" %]
+    Bu seri için bir alt kategori belirlemediniz.
                 
   [% ELSIF error == "need_component" %]
     [% title = "Component Required" %]
@@ -573,26 +572,24 @@
     been given access to any.
 
   [% ELSIF error == "old_password_incorrect" %]
-    [% title = "Incorrect Old Password" %]
-    You did not enter your old password correctly.
+    [% title = "Geçersiz Eski Parola" %]
+    Girdiğiniz eski parola hatalıdır.
 
   [% ELSIF error == "old_password_required" %]
-    [% title = "Old Password Required" %]
-    You must enter your old password to change your email address.
+    [% title = "Eski Parola Boş Geçilemez" %]
+    E-posta adresini değiştirebilmek için eski parolanızı girmelisiniz.
 
   [% ELSIF error == "passwords_dont_match" %]
-    [% title = "Passwords Don't Match" %]
-    The two passwords you entered did not match.
+    [% title = "Parolalar Turmuyor" %]
+    Girdiğiniz iki parolabirbirinden farklı.
 
   [% ELSIF error == "password_too_long" %]
-    [% title = "Password Too Long" %]
-    The password is more than 16 characters long. It must be no more than
-    16 characters.
+    [% title = "Parola Çok Uzun" %]
+    Parolanız 16 karekterden uzun. Daha kısa bir parola belirleyiniz.
 
   [% ELSIF error == "password_too_short" %]
-    [% title = "Password Too Short" %]
-    The password is less than three characters long. It must be at least
-    three characters.
+    [% title = "Parola Çok Kısa" %]
+    Parolanız üç karekterden kısa. En az üç karekter olmalı.
 
   [% ELSIF error == "patch_too_large" %]
     [% title = "File Too Large" %]
