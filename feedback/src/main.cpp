@@ -19,23 +19,24 @@ static const char* const description = I18N_NOOP( "Feedback" );
 
 static KCmdLineOptions options[] =
 {
-    { "h", "help", 0 },
-    KCmdLineLastOption
+	{ "h", "help", 0 },
+	KCmdLineLastOption
 };
 
 int main( int argc, char* argv[] )
 {
-    KAboutData aboutData( PACKAGE, description,
-			 VERSION, description, KAboutData::License_GPL,
-			 "(c) 2004 TUBITAK/UEKAE", 0, 0, "caglar@uludag.org.tr" );
-    aboutData.addAuthor( "S.Çağlar Onur", 0, "caglar@uludag.org.tr" );
-    KCmdLineArgs::init( argc, argv, &aboutData );
-    KCmdLineArgs::addCmdLineOptions( options );
-    KApplication app;
+	KAboutData aboutData( PACKAGE, description,
+		VERSION, description, KAboutData::License_GPL,
+		"(c) 2004 TUBITAK/UEKAE", 0, 0, "caglar@uludag.org.tr" );
+	aboutData.addAuthor( "S.Çağlar Onur", 0, "caglar@uludag.org.tr" );
 
-    Feedback *k = new Feedback();
-    k->setFixedSize( 675, 450 );
-    k->show();
+	KCmdLineArgs::init( argc, argv, &aboutData );
+	KCmdLineArgs::addCmdLineOptions( options );
+	KApplication app;
 
-    return app.exec();
+	Feedback *k = new Feedback();
+	k->setFixedSize( 675, 450 );
+	k->show();
+
+	return app.exec();
 }

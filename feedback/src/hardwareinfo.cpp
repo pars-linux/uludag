@@ -29,7 +29,7 @@ HardwareInfo::HardwareInfo( QWidget *parent, const char* name )
 						.arg(file.name()));
 	}	
 	connect(&http, SIGNAL(done(bool)), this, SLOT(done(bool)));
-    connect(&http, SIGNAL(stateChanged(int)), this, SLOT(stateChanged(int)));
+	connect(&http, SIGNAL(stateChanged(int)), this, SLOT(stateChanged(int)));
 
 	httpConnect( "tux.uludag.org.tr", "/index.php", &file );
 
@@ -43,9 +43,9 @@ void HardwareInfo::httpConnect( QString url, QString path, QFile *file)
 {
 	if( permit )
 	{
-	    QHttpRequestHeader header( "POST", path );
-    	header.setValue( "Host", url );
-	    header.setContentType( "text/html" );
+		QHttpRequestHeader header( "POST", path );
+		header.setValue( "Host", url );
+		header.setContentType( "text/html" );
 
 		http.setHost ( url );
 		http.request( header, QCString("?pardus=m"), file );
@@ -57,7 +57,7 @@ void HardwareInfo::done( bool error )
 	if ( error )
 		QMessageBox::warning( this, i18n("HTTP Get"), i18n("Error %1").arg(http.errorString()));
 
-//	QString result(http.readAll());
+//  QString result(http.readAll());
 //  QMessageBox::information( this, i18n("Sent To Server"), result);
 
 	file.close();

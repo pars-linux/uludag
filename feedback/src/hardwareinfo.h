@@ -19,9 +19,9 @@
 
 class HardwareInfo : public HardwareInfoDlg
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    HardwareInfo( QWidget *parent = 0, const char* name = 0 );
+	HardwareInfo( QWidget *parent = 0, const char* name = 0 );
 	~HardwareInfo();
 
 	bool permit;

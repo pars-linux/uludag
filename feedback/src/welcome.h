@@ -17,7 +17,7 @@
 class Welcome : public WelcomeDlg
 {
 public:
-    Welcome( QWidget *parent = 0, const char* name = 0 );
+	Welcome( QWidget *parent = 0, const char* name = 0 );
 };
 
 #endif // WELCOME_H

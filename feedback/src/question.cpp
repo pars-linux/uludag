@@ -15,7 +15,7 @@
 #include "question.h"
 
 Question::Question( QWidget *parent, const char* name, QString title )
-    : QuestionDlg( parent, name )
+	: QuestionDlg( parent, name )
 {
 	questionLabel->setText( i18n( title ));
 }

@@ -31,18 +31,18 @@ class Feedback : public KWizard
     Q_OBJECT
 
 public:
-    Feedback( QWidget* parent=0, const char *name=0 );
-    ~Feedback();
+	Feedback( QWidget* parent=0, const char *name=0 );
+	~Feedback();
 
-    virtual void next();
-    virtual void back();
+	virtual void next();
+	virtual void back();
 
 public slots:
-    virtual void accept();
-    virtual void reject();
+	virtual void accept();
+	virtual void reject();
 
 private:
-    KLocale *locale;
+	KLocale *locale;
 	KProcess *proc;
 
 	Welcome *welcome;

@@ -17,7 +17,7 @@
 class Question : public QuestionDlg
 {
 public:
-    Question ( QWidget *parent = 0, const char* name = 0, QString title = "Pardus Linux" );
+	Question ( QWidget *parent = 0, const char* name = 0, QString title = "Pardus Linux" );
 };
 
 #endif // QUESTION_H
