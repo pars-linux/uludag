@@ -152,8 +152,8 @@ msgid "Abstract should be written."
 msgstr "Özet yazılmalı."
 
 #: newproposal.php:38
-msgid "Section %s should be written. If you don't want it, remove it."
-msgstr "%s bölümü boş bırakılamaz. Bölümü istemiyorsanız kaldırın."
+msgid "Section \"%s\" should be written. If you don't want it, remove it."
+msgstr "\"%s\" bölümü boş bırakılamaz. Bölümü istemiyorsanız kaldırın."
 
 #: newproposal.php:44
 msgid "At least one section should be created."
