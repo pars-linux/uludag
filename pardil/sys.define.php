@@ -4,7 +4,7 @@
   define('CONF_DATABASE_PASS', '');
   define('CONF_DATABASE_NAME', 'pardil');
 
-  define('MSG_DATABASE_CONNECT_ERROR', '<b>Ölümcül Hata:</b> Veritabanı baðlantısı kurulamadı.');
+  define('MSG_DATABASE_CONNECT_ERROR', '<b>Ölümcül Hata:</b> Veritabanı bağlantısı kurulamadı.');
   define('MSG_DATABASE_SELECT_ERROR', '<b>Ölümcül Hata:</b> Veritabanı seçimi yapılamadı.');
 
   define('CONF_LOCALE', 'tr_TR');
