@@ -9,6 +9,9 @@
   Please read the COPYING file.
 */
 
+#include <sstream>
+#include <iostream>
+
 #include <kapplication.h>
 #include <klocale.h>
 #include <kprocess.h>
@@ -122,9 +125,12 @@ void Feedback::back()
 
 void Feedback::accept()
 {
-	/* FIXME: Get current user's home path */
-	QFile file( "/home/caglar/pardus_information.xml" );
+	std::stringstream tmp;
+	tmp << getenv("HOME") << "/pardus_information.xml";
+	std::string xmlfileloc = tmp.str();
 
+	QFile file( xmlfileloc );
+	
 	if ( !file.open( IO_WriteOnly ) )
 	{
 		QMessageBox::warning( this, i18n("Cannot write file"), i18n("Permission Denied!") );
@@ -155,9 +161,10 @@ void Feedback::accept()
 		proc = new KProcess();
 		proc->clearArguments();
 
-		/* FIXME: Install grab_information into PATH and use current user's home as an argument */
-		*proc << "grab_information";
-		*proc << "/home/caglar";
+		*proc << "./grab_information";
+		*proc << getenv("HOME");
+		proc->setUseShell(true, "/bin/sh");
+		
 		if ( !proc->start() )
 			QMessageBox::warning( this, i18n("Cannot write file"), i18n("Hardware information cannot collected") );
 	}
