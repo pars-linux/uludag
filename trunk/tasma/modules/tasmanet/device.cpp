@@ -14,7 +14,6 @@
 #include <sys/ioctl.h>
 #include <arpa/inet.h>
 #include <net/route.h>
-#include <iwlib.h>
 #include <wireless.h>
 
 #include <qstringlist.h>
@@ -373,4 +372,46 @@ int Device::setWirelessInterface( const char *dev, int mode, const char *essid )
     }
 
     return 0;
+}
+
+void Device::free_scan_results( wireless_scan *results )
+{
+    wireless_scan *ws = results;
+
+    while (ws) {
+        wireless_scan *d = ws;
+        ws = ws->next;
+        free (d);
+    }
+}
+
+QStringList Device::scanWifiNetwork( const char *dev )
+{
+    wireless_scan_head wsh;
+    wireless_scan *ws;
+    int skfd = sockets_open();
+
+    int ret = iw_scan( skfd, ( char* )dev, WIRELESS_EXT, &wsh );
+    if ( ( ret == -1 ) && ( errno == ENODATA ) ) {
+        // wait for device for one more second :).
+        sleep( 1 );
+
+        ret = iw_scan ( skfd, ( char* )dev, WIRELESS_EXT, &wsh );
+
+        if ( ret == -1 ) {
+            close ( skfd );
+            return QStringList();
+        }
+    }
+
+    // iterate over results
+    QStringList networks;
+    ws = wsh.result;
+    while( ws ) {
+        networks.append( ws->b.essid );
+        ws = ws->next;
+    }
+    free_scan_results(wsh.result);
+
+    return networks;
 }
