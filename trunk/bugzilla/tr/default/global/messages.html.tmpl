@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# This is a list of all the possible messages. Please keep them in
@@ -29,24 +30,24 @@
 
 [% message = BLOCK %]
   [% IF    message_tag == "buglist_adding_field" %]
-    [% title = "Adding field to search page..." %]
-    [% link  = "Click here if the page does not redisplay automatically." %]
+    [% title = "Alanı arama sayfasına eklemek..." %]
+    [% link  = "Sayfa otomatik olarak yeniden yüklenmezse burayı tıklayın." %]
 
   [% ELSIF message_tag == "buglist_load_named_query" %]
     [% title = BLOCK %]
-      Loading your search named [% namedcmd FILTER html %]
+    [% namedcmd FILTER html %] isimli aramanız yükleniyor
     [% END %]
-    [% link  = "Click here if the page does not redisplay automatically." %]
+    [% link  = "Sayfa otomatik olarak yeniden yüklenmezse burayı tıklayın." %]
 
   [% ELSIF message_tag == "buglist_updated_named_query" %]
-    OK, your search named <code>[% queryname FILTER html %]</code> is updated.
+    <code>[% queryname FILTER html %]</code> isimli arama kaydınız güncellendi.
 
   [% ELSIF message_tag == "buglist_new_default_query" %]
-    OK, you now have a new default search.  You may
-    also bookmark the result of any individual search.
+    Yeni varsayılan arama tipiniz kaydedildi.  Ayrıca dilerseniz
+    arama sonuçlarını favorilerinize de kaydedebilirsiniz.
 
   [% ELSIF message_tag == "buglist_new_named_query" %]
-    OK, you have a new search named <code>[% queryname FILTER html %]</code>.
+    <code>[% queryname FILTER html %]</code> isimli yeni arama kaydınız kaydedildi.
 
   [% ELSIF message_tag == "buglist_query_gone" %]
     [% title = "Search is gone" %]
@@ -83,12 +84,12 @@
    Your old account settings have been reinstated.
 
   [% ELSIF message_tag == "logged_out" %]
-    [% title = "Logged Out" %]
+    [% title = "Çıkış Yapıldı" %]
     [% url = "query.cgi?GoAheadAndLogIn=1" %]
-    [% link = "Log in again." %]
-    <b>Your login has been forgotten</b>.
-    The cookie that was remembering your login is now gone. You will be
-    prompted for a login the next time it is required.
+    [% link = "Tekrar giriş." %]
+    <b>Giriş bilgileriniz unutuldu</b>.
+    Hesap bilgilerinizi içeren çerez silindi. Tekrar giriş yapmak
+    istediğinizde parolanızı girmeniz gerekecektir.
 
   [% ELSIF message_tag == "login_changed" %]
     [% title = "$terms.Bugzilla Login Changed" %]
