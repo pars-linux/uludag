@@ -23,15 +23,18 @@ class Wallpaper : public WallpaperDlg
 
 public:
     Wallpaper( QWidget *parent = 0, const char* name = 0 );
+    bool changeWallpaper();
     void setWallpaper();
 
 protected slots:
     void paperSelected( int );
+    void checkChanged( bool change );
 
 private:
     KStandardDirs *mDirs;
     QMap<QString, int> papers;
     QString selectedPaper;
+    bool changePaper;
 };
 
 #endif // WELCOME_H
