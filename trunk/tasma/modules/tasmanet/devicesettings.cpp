@@ -19,7 +19,8 @@
 #include <qfile.h>
 #include <qpushbutton.h>
 #include <qradiobutton.h>
-#include <kcombobox.h>
+#include <qcombobox.h>
+#include <qlistbox.h>
 #include <qlineedit.h>
 #include <qtimer.h>
 
@@ -39,6 +40,9 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
 
     // fill automatic types, for now only DHCP is supported
     automaticCombo->insertItem( "DHCP" );
+
+    // clear DNS list
+    dnsListBox->clear();
 
 
     // get device information from kernel.
@@ -268,6 +272,9 @@ void DeviceSettings::automaticToggled( bool on )
         broadcast->setEnabled( false );
         netmask->setEnabled( false );
         defaultgw->setEnabled( false );
+        dnsListBox->setEnabled( false );
+        addDnsButton->setEnabled( false );
+        removeDnsButton->setEnabled( false );
 
         automaticCombo->setEnabled( true );
     }
@@ -283,6 +290,9 @@ void DeviceSettings::manualToggled( bool on )
         broadcast->setEnabled( true );
         netmask->setEnabled( true );
         defaultgw->setEnabled( true );
+        dnsListBox->setEnabled( true );
+        addDnsButton->setEnabled( true );
+        removeDnsButton->setEnabled( true );
     }
 }
 
