@@ -346,4 +346,22 @@
     
     return true;
   }
+
+
+  /* Ayarlar */
+
+  function proc_getopt($str_key) {
+    return database_query_scalar(sprintf('SELECT value FROM options WHERE opt="%s"', addslashes($str_key)));
+  }
+  function proc_setopt($str_key, $str_value) {
+    $mix_value = database_query_scalar(sprintf('SELECT value FROM options WHERE opt="%s"', addslashes($str_key)));
+    if ($mix_value === false) {
+      $str_sql = sprintf('INSERT INTO options (opt,value) VALUES ("%s","%s")', addslashes($str_key), addslashes($str_value));
+    }
+    else {
+      $str_sql = sprintf('UPDATE options SET value="%s" WHERE opt="%s"', addslashes($str_value), addslashes($str_key));
+    }
+    mysql_query($str_sql);
+    return true;
+  }
 ?>

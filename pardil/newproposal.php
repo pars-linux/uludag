@@ -5,6 +5,13 @@
   require('sys.procedures.php');
   require('sys.session.php');
 
+  // Erişim seviyesi kontrolü
+  $int_level = proc_getopt('level_proposal_new');
+  if ($int_level > $_PSESSION['level']) {
+    header('Location: denied.php');
+    exit;
+  }
+
   require('class.template.php');
 
   // Denetimler
@@ -38,6 +45,9 @@
 
   if (count($arr_errors) == 0 && isset($_POST['new_proposal']) && !isset($_POST['new_content_title_add'])) {
     // Öneri ekleme işlemleri...
+
+    $int_level = proc_getopt('level_proposal_new_approved');
+
     printf('<b>Başlık:</b> %s<br/>', htmlspecialchars($_POST['new_title']));
     printf('<b>Özet:</b> %s<br/>', htmlspecialchars($_POST['new_abstract']));
     $str_content = '';
@@ -53,6 +63,7 @@
     }
     printf('<b>Notlar:</b> %s<br/>', htmlspecialchars($str_notes));
     printf('<b>Sürüm Bilgisi:</b> %s<br/>', $_POST['new_info']);
+    printf('<b>Öneri Durumu:</b> %s<br/>', (($int_level > $_PSESSION['level']) ? 'Onaylanması gerek' :'Otomatik onaylancak'));
   }
   else {
     // Formu göster...
