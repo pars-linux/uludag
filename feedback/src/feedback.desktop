@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=feedback
+Icon=feedback_pardus
+Type=Application
+DocPath=feedback/index.html
+X-KDE-StartupNotify=true
+
+Name=Feedback
+Name[tr]=Feedback
+
+Categories=Qt;KDE;Core
