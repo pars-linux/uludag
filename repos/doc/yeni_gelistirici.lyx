@@ -79,7 +79,8 @@ Kaba hatlarý ile projenin iki tür görevi yerine getirmesi gerektiðini söylemek
  yanlýþ olmayacaktýr.
  Her daðýtýmýn yaptýðý gibi yazýlýmlarý bir araya getirmek ve bunun için
  gerekli alt yapýyý hazýrlama ve ayakta tutma iþlerinin yaný sýra daðýtýmýn
- ruhunu oluþturacak yeni araçlar ve teknolojiler geliþtiriyoruz.
+ ruhunu oluþturacak yeni araçlar ve teknolojiler geliþtirmek yapmamýz gerekenler
+ arasýndadýr.
 \layout Standard
 
 
@@ -119,14 +120,15 @@ Daha sonra tanýmlý yöntemlere göre geliþtirmeye yardýmcý olabilirsiniz.
  haberdar olmamýz gerekiyor.
 \layout Standard
 
-Ýhtiyaçlarýmýz belli.
+Ýhtiyaçlarýmýz aþaðýdaki maddeler ile özetlenebilir.
 \layout Subsection
 
 Yazýlým geliþtirme, hata ayýklama
 \layout Standard
 
-Yazýlým geliþtrme konusundaki bilginizi ve emeðinizi bu alanda çalýþan kaynak
- temizleme ve yenilikçi teknolojiler ekiplerine yardýmcý olarak aktarabilirsiniz.
+Yazýlým geliþtirme konusundaki bilginizi ve emeðinizi bu alanda çalýþan
+ kaynak temizleme ve yenilikçi teknolojiler ekiplerine yardýmcý olarak aktarabil
+irsiniz.
  Onlara nasýl yardýmcý olabileceðinizi en iyi kendileri söyleyeceklerdir.
  
 \begin_inset LatexCommand \url{http://liste.uludag.org.tr/cgi-bin/mailman/listinfo}
@@ -333,10 +335,10 @@ Pardus için çalýþmakta olan ve bu belgede tarif edilen geliþtirici sorumluluklar
 yeni geliþtirici baþvurusu
 \emph default 
  yapabilir.
- Genellikle iletiþim e-posta listeleri üzerinden yazýlý olarak gerçekleþtirildið
-i için geliþtiricinin baþvurusunun kabul edilebilmesi için kararlýlýðýnýn
- ve çalýþma yönteminin gözlenmiþ olmasý gerekmektedir.
- Bunun için baþvurmadan önce kendiniz için uygun bir iþ seçip üzerinde çalýþmaya
+ Genellikle iletiþim e-posta listeleri üzerinden yazýlý olarak gerçekleþtiriliyo
+r; geliþtiricinin baþvurusunun kabul edilebilmesi için kararlýlýðýnýn ve
+ çalýþma yönteminin gözlenmiþ olmasý gerekmektedir.
+ Bu nedenle baþvurmadan önce kendiniz için uygun bir iþ seçip üzerinde çalýþmaya
  baþlayabilirsiniz.
  Çalýþmalarýnýzý diðer geliþtiriciler ile paylaþarak yaptýklarýnýzýn incelenmesi
 ni saðlamanýz diðer geliþtiricilerin sizi tanýmalarýný saðlayacaktýr.
@@ -347,8 +349,18 @@ ni saðlamanýz diðer geliþtiricilerin sizi tanýmalarýný saðlayacaktýr.
  ve bir rapor halinde sunmak iyi bir baþlangýç noktasý olabilir.
 \layout Standard
 
-Baþvuru metninizde mutlaka sizin çalýþmalarýnýzdan haberdar olan ve size
- referans olabilecek bir pardus geliþtiricisini iþaret ediyor olmalýsýnýz.
+Bunun yanýnda, projeye destek vermek isteyenlerin kendilerini tanýtýp özellikler
+ine uygun bir iþ seçmek için kullanabilecekleri kalite e-posta listesi
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Kalite e-posta listesine http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite
+ adresinden ulaþýlabilir.
+\end_inset 
+
+ bulunmaktadýr.
 \layout Subsection
 
 Baþvuru nasýl yapýlýr?
@@ -370,9 +382,13 @@ hata kontrol siteminde kullandýðýnýz e-posta adresini/kullanýcý adýný
 \layout Enumerate
 
 uzmanlýk alanlarýnýzý
+\layout Enumerate
+
+sizin çalýþmalarýnýzdan haberdar olan ve size referans olabilecek bir pardus
+ geliþtiricisini
 \layout Standard
 
-bildirmelisiniz.
+bildirmeniz gerekiyor.
 \layout Standard
 
 Baþvuru e-postasýna hesabýnýz için kullanacaðýnýz kullanýcý adý ve parolanýzýn
