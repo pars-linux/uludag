@@ -231,48 +231,153 @@ Muhtemelen yardým edebileceðiniz konularýn listesi yukarýdakiler ile sýnýrlý
 \layout Section
 
 Geliþtiricinin sorumluluðu nedir?
+\layout Standard
+
+Aslýnda bu sorunun cevabý üzerinde çalýþmaya baþladýðýnýz konuya göre oldukça
+ deðiþken olabilir.
+ Fakat genel olarak tüm geliþtiricilerin temel sorumluluklarýndan bahsedebiliriz.
+ Aslýnda burada tarif edilen sorumluluklar temelde birden fazla geliþtiricinin
+ bir arada, uyum içerisinde çalýþabilmesi için gerekli olan maddelerdir.
+ Bu yüzden aþaðýdaki maddeler genel geçer olarak kabul edilebilse de çalýþma
+ ortamýnýza ve arkadaþlarýnýza alýþtýkça birlikte çalýþmak için bir yöntem
+ bulabilirsiniz.
+\layout Subsubsection
+
+Süreklilik
+\layout Standard
+
+Bir geliþtiricinin üzerinde çalýþtýðý projelerde sürekli olarak çalýþabilmeyi
+ göze almasý gerekiyor.
+ Burada süreklilik ile ifade edilen 7/24 bir çalýþma deðil, fakat üzerinde
+ çalýþýlan konunun devamlýlýðýnýn saðlanmasý.
+ Bir iþletim sistemi projesinde parçalar birbirleri ile sýký bir þekilde
+ baðlý olduðu için geliþtiricilerin de birbirlerinin hýzlarýna ayak uydurabilmel
+eri gerekiyor.
+\layout Subsubsection
+
+Doðruluk
+\layout Standard
+
+Proje içerisinde birden fazla geliþtirici ile ayný konu üzerinde çalýþýyor
+ olabilirsiniz.
+ Bunun yanýnda sizin çalýþmalarýnýzdan etkilenen baþka geliþtiriciler de
+ olabilir.
+ Bu yüzden çalýþmalarýnýzýn yalnýzca sürekliliði deðil, diðer geliþtiricileri
+ etkilediði oranda doðruluðu da önemlidir.
+ Eðer çalýþmanýzý ana geliþtirme depolarýndan biri üzerinde yürütüyorsanýz,
+ iþin her aþamasýnda sizinle birlikte çalýþan ve çalýþmalarýnýzdan etkilenen
+ diðer geliþtiricileri de göz önüne almalýsýnýz.
+ Yaptýðýnýz bir deðiþikliðin, az da olsa, diðer geliþtiricilerin iþlerini
+ yapmasýna engel olmamasýný saðlamalýsýnýz.
+\layout Subsubsection
+
+Kararlýlýk
+\layout Standard
+
+Üzerinde çalýþtýðýnýz konuda eðer karar verme yetkisi sizde ise kararlarýnýzý
+ çok sýk bir þekilde deðiþtirmeniz diðer geliþtiricilerin geliþimi takip
+ etmesini, fakat daha önemlisi size baðýmlý olan geliþtiricilerin çalýþmalarýný
+ güçleþtirecektir.
+ Bu yüzden kararlarýnýzý iyi düþünerek ve diðer geliþtiricilerin de fikirlerini
+ alarak vermeniz faydalý olacaktýr.
+\layout Standard
+
+Yine de bir noktada kararýnýzý deðiþtirmeniz gerektiðini hissederseniz,
+ bunu diðer geliþtiricilere de haber vererek ve eski çalýþmalarýnýz eðer
+ kullanýlýyorsa onlara zarar vermeyerek, ayrý bir 
+\begin_inset Quotes eld
+\end_inset 
+
+deneysel
+\begin_inset Quotes erd
+\end_inset 
+
+ alanda gerçekleþtirebilirsiniz.
+\layout Subsubsection
+
+Ýletiþim
+\layout Standard
+
+Aldýðýnýz kararlardan, attýðýnýz adýmlardan küçük de olsa yaptýðýnýz deðiþiklikl
+erden diðer geliþtiricileri haberdar etmek faydalý olacaktýr.
+ Böylelikle üzerinde çalýþtýðýnýz konuya (her zaman ihtiyaç duyulan) yeni
+ geliþtiricileri daha kolay adapte edebilir, birlikte çalýþtýðýnýz geliþtiricile
+r ile daha uyumlu ve hýzlý çalýþabilirsiniz.
+ Bu sayede ileride yardýma ihtiyacýnýz olduðunda baþka bir geliþtirici yaptýklar
+ýnýzdan haberdar olduðu için sorununuza daha hýzlý çözüm üretebilmesini
+ de saylayabilirsiniz.
+ Ýletiþim için e-posta listelerini, hazýrlayacaðýnýz belgeleri veya yaptýðýnýz
+ deðiþikliklere ekleyeceðiniz açýklama bilgilerini (subversion gönderim
+ mesajlarý gibi) kullanabilirsiniz.
 \layout Section
 
 Yeni geliþtirici baþvurusu
 \layout Standard
 
-Bir Pardus geliþtiricisi olmak vb.
- vb...
+Yeni bir geliþtiriciye her zaman yer vardýr.
+ Siz de bir Pardus geliþtiricisi olmak için baþvurabilir ve resmi bir geliþtiric
+i olabilirsiniz.
+ Yeni bir geliþtirici olmanýn sorumluluðunu kabul etmek ön þart olmakla
+ birlikte her zaman yeterli olmayacaktýr.
+ Fakat sorumluluk daðýtmak ve yeni geliþtiricileri kabul etmek konusunda
+ hevesli olduðumuzu açýkça belirtebiliriz.
+ Detaylar için okumaya devam edin...
 \layout Subsection
 
 Kim baþvurabilir?
 \layout Standard
 
-Paketler deposundaki yazýlýmlar üzerinde çalýþan, yama ve çözüm önerileri
- getiren, 'Kaynak Temizleme Kýlavuzu'na göre çalýþmayý kabul eden herkes
- Paketler Deposu hesabý için baþvurabilir.
+Pardus için çalýþmakta olan ve bu belgede tarif edilen geliþtirici sorumluluklar
+ýný kabul eden herkes 
+\emph on 
+yeni geliþtirici baþvurusu
+\emph default 
+ yapabilir.
+ Genellikle iletiþim e-posta listeleri üzerinden yazýlý olarak gerçekleþtirildið
+i için geliþtiricinin baþvurusunun kabul edilebilmesi için kararlýlýðýnýn
+ ve çalýþma yönteminin gözlenmiþ olmasý gerekmektedir.
+ Bunun için baþvurmadan önce kendiniz için uygun bir iþ seçip üzerinde çalýþmaya
+ baþlayabilirsiniz.
+ Çalýþmalarýnýzý diðer geliþtiriciler ile paylaþarak yaptýklarýnýzýn incelenmesi
+ni saðlamanýz diðer geliþtiricilerin sizi tanýmalarýný saðlayacaktýr.
 \layout Standard
 
-Seçilen yazýlýmlarýn sorunlarýný raporlamak, raporlanan sorunlar için çözüm
- üretmek baþvurunun kabul edilmesi için gerekli iþlerdir.
+Örneðin, þu anki paketler deposundaki yazýlýmlar üzerinde çalýþmak, yama
+ ve çözüm önerileri getirmek, diðer çözüm önerilerini inceleyerek test etmek
+ ve bir rapor halinde sunmak iyi bir baþlangýç noktasý olabilir.
 \layout Standard
 
-Baþvuruyu yapan kiþinin yalnýzca tek bir sorun üzerinde çalýþmasý deðil
- uzun süreli bir çalýþmayý üstlenebilmesi gerekir.
- Eðer tek bir sorun üzerinde, bir süre için çalýþmak istiyorsanýz subversion
- hesabýna baþvurmayýn, fakat lütfen çalýþmalarýnýzý paylaþmaya devam edin.
+Baþvuru metninizde mutlaka sizin çalýþmalarýnýzdan haberdar olan ve size
+ referans olabilecek bir pardus geliþtiricisini iþaret ediyor olmalýsýnýz.
 \layout Subsection
 
 Baþvuru nasýl yapýlýr?
 \layout Standard
 
-Baþvuruyu gelistirici@uludag.org.tr adresine veya sorumluluðunu almak istediðiniz
- yazýlýmýn geliþtiricisine doðrudan bir e-posta ile yapabilirsiniz.
+Baþvuruyu gelistirici@uludag.org.tr adresine bir e-posta ile yapabilirsiniz.
 \layout Standard
 
-Eðer üzerinde zaren çalýþtýðýnýz bir paket varsa baþvuru e-postanýzda bu
- paket ile ilgili daha önceki çalýþmalarýnýzý da yazabilirsiniz.
- Fakat her durumda Uluzilla'da kullandýðýnýz e-posta adresini bildirmelisiniz.
+Baþvuru e-postanýzda;
+\layout Enumerate
+
+Pardus üzerinde çalýþmakta olduðunuz geliþtirme konularýný
+\layout Enumerate
+
+çalýþmak istediðiniz diðer konularý
+\layout Enumerate
+
+hata kontrol siteminde kullandýðýnýz e-posta adresini/kullanýcý adýný
+\layout Enumerate
+
+uzmanlýk alanlarýnýzý
+\layout Standard
+
+bildirmelisiniz.
 \layout Standard
 
 Baþvuru e-postasýna hesabýnýz için kullanacaðýnýz kullanýcý adý ve parolanýzýn
  þifrelenmiþ bir halini (htpasswd ile oluþturulmuþ) eklemelisiniz.
- Bu sayede düzmetin halini sadece sizin bildiðiniz parolanýzýn þifrelenmiþ
+ Bu sayede düz metin halini sadece sizin bildiðiniz parolanýzýn þifrelenmiþ
  halini bize göndermiþ olursunuz ve kimlik denetimi gerektiren yerlere kullanýcý
  adýnýzý ve þifrenizi ekleyebiliriz.
 \layout Subsubsection
@@ -397,10 +502,7 @@ Paketler deposu Pardus için yeni bir paket yönetim sistemi hazýrlanana kadar
  ihtimal ile yeni bir yapý oluþturulacaktýr.
  Fakat þu anda iþletim sistemine eklenecek yazýlýmlara dair yapýlan iyileþtirmel
 er bu depo kullanýlarak yapacaktýr.
-\layout Subsection
-
-Depo kullaným kurallarý
-\layout Subsection
+\layout Section
 
 Subversion kullanýmý
 \layout Standard
@@ -419,7 +521,7 @@ collapsed true
 
 \end_inset 
 
- mevcuttur, ayrýca projenin kendi sitesindeki
+ mevcuttur, ayrýca subversion projensinin kendi sitesindeki
 \begin_inset Foot
 collapsed true
 
@@ -1351,6 +1453,193 @@ komutlarý kullanýlabilir veya
 \end_inset 
 
  adresinden Subversion kitabý okunabilir.
+\layout Section
+
+Subversion kullaným kurallarý
+\layout Standard
+
+Subversion deposu tüm geliþticilerin ortak olarak kullandýklarý bir alandýr.
+ Bir arada çalýþabilmek için geliþtiricilerin depoyu etkin, doðru ve bir
+ düzen içerisinde kullanabiliyor olmalarý gerekir.
+\layout Standard
+
+Subversion kullaným kurallarý, Uludað depolarýna yazma hakký olan geliþtiriciler
+in uymalarý gereken kurallardýr.
+\layout Subsection
+
+Her zaman güncel bir depo ile çalýþýn
+\layout Standard
+
+Geliþtirici sayýsý arttýkça subversion deposu üzerindeki güncellemeler de
+ sýklaþacaktýr.
+ Diðer geliþmelerden haberdar olmak ve yaptýklarýnýzýn diðer yapýlanlar
+ ile çakýþmasýný önlemek için çalýþmaya baþlamadan önce mutlaka 
+\emph on 
+svn update
+\emph default 
+ komutu ile deponuzu güncelleyin.
+\layout Subsection
+
+Göndermeden önce düþünün
+\layout Standard
+
+Yaptýðýnýz deðiþiklikleri Subversion deposuna göndermeden
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+gönderim = commit.
+ svn commit komutu ile gerçekleþtirilen eylem.
+\end_inset 
+
+ önce iki defa düþünün.
+ Depoya gönderdiðiniz veriler tüm geliþtiricilere ulaþacak ve onlarýn çalýþmalar
+ýný etkileyecektir.
+ Bu yüzden aþaðýdaki maddelere uyulmasý büyük önem taþýr.
+\layout Enumerate
+
+Çalýþmayan bir kodu subversion deposuna göndermeyin.
+\layout Enumerate
+
+Göndermeden önce mutlaka son deðiþiklikleri almak için 
+\emph on 
+svn update
+\emph default 
+ ile deponuzu güncelleyin.
+ Yaptýðýnýz deðiþikliklerin diðerleri ile çakýþmadýðýna emin olun.
+\layout Enumerate
+
+Ne gönderdiðinize dikkat edin.
+ Bunun için gönderimden önce mutlaka 
+\emph on 
+svn commit
+\emph default 
+ komutu ile gönderdiðiniz dosyalarý kontrol edin.
+\layout Enumerate
+
+Depoya doðru bilgiyi gönderdiðinize emin olun.
+ Gönderdiðiniz bilgilerin istediðinizden farklý bir iþ yapadýðýný kontrol
+ edin.
+ 
+\emph on 
+svn diff
+\emph default 
+ komutu ile gönderdiðiniz bilgilerin neleri deðiþtirdiðini kontrol edin.
+\layout Enumerate
+
+Yaptýðýnýz deðiþiklikleri mutlaka test edin.
+ Hatta iki defa test edin.
+\layout Subsection
+
+Gönderimlerinize açýklayýcý mesajlar ekleyin
+\layout Standard
+
+Gönderimlerde kullanýlan açýklama mesajlarý yapýlan deðiþikliðe odaklanmalý
+ ve mümkün olduðunca açýklayýcý olmalýdýr.
+ Mümkün olduðunca yalnýzca üzerinde deðiþiklik yaptýðýnýz dosyalar ile ilgili
+ açýklama mesajlarý eklemeye çalýþýn.
+ Bununla birlikte, konu dahilinde, svn diff komutunun çýktýsýndan elde edilemeye
+cek tüm bilgiyi açýklama mesajýnýzda anlatabilirsiniz.
+\layout Standard
+
+Doðru bir açýklama mesajý eklememek yapýlan deðiþikliðin anlaþýlmasýný güçleþtir
+ecektir.
+\layout Subsection
+
+Çalýþma planlarýna uyun
+\layout Standard
+
+Eðer daðýtým genelinde veya üzerinde çalýþtýðýnýz bileþenin ana geliþtiricisi
+ bir çalýþma/zaman planý ortaya koymuþsa gönderimlerinizde bu plana uyun.
+\layout Standard
+
+Örneðin bir uygulama geliþtiricisi belirli bir zamanda uygulamaya yeni özellik
+ eklemeyi durdurup yalnýzca bilinen hatalarýn giderilmesi üzerinde çalýþmak
+ isteyebilir.
+ Yaptýðýnýz deðiþikliðin bu kurala uymasý beklenir.
+\layout Standard
+
+Eðer yaptýðýnýz deðiþikliðin plana uyup uymadýðýný kestiremiyorsanýz mutlaka
+ ilgili e-posta listesine veya ana geliþtiriciye baþvurun.
+\layout Subsection
+
+Birden fazla bileþeni etkileyen bir deðiþiklik yaptýysanýz tüm geliþticileri
+ bu deðiþiklikten haberdar edin.
+\layout Standard
+
+Tüm geliþtiricilerin yaptýðýnýz 
+\begin_inset Quotes eld
+\end_inset 
+
+büyük
+\begin_inset Quotes erd
+\end_inset 
+
+ güncellemeden haberdar olmalarý için konu ile ilgili e-posta listesine
+ mutlaka bir duyuru iletisi gönderin.
+\layout Subsection
+
+Yaptýðýnýz deðiþikliðin sorumluluðunu alýn
+\layout Standard
+
+Eðer yaptýðýnýz güncelleme herhangi bir sorun çýkartýyorsa bunun sorumluluðunu
+ alýn ve çözülmesini kendiniz veya yardým alarak saðlayýn.
+\layout Subsection
+
+Genel kabullere saygý duyun
+\layout Standard
+
+Geliþtirici tartýþmalarýnda kabul edilen genel kurallara uyun ve yaptýðýnýz
+ deðiþikliðin bu kurallarý bozmadýðýna emin olun.
+ Emin olmadýðýnýz durumlarda her zaman 
+\begin_inset Quotes eld
+\end_inset 
+
+iletiþim
+\begin_inset Quotes erd
+\end_inset 
+
+ yolunu seçebilirsiniz.
+\layout Subsection
+
+Hata kontrol sistemindeki bir hatayý çözerken hata numarasýný girin.
+\layout Standard
+
+Eðer yaptýðýnýz güncelleme raporlanmýþ bir hatayý çözüyorsa, hata kontrol
+ sistemini depodaki güncellemeler ile senkron tutabilmek için hangi hatayý
+ çözdüðünüzü bildirin ve daha sonra hata kontrol sistemindeki hatayý kapatýn.
+\layout Subsection
+
+Kendi sorumluluðunuzda olan dosyalarý güncelleyin
+\layout Standard
+
+Yalnýzda kendi sorumluluðunuzda olan dosyalarý güncelleyin.
+ Eðer bir baþka geliþtiricinin sorumluluðunda olan dosyalarda bir hata bulduysan
+ýz, göndermeden önce sorumlu geliþtiriciye doðrudan ulaþarak veya e-posta
+ listelerinde diðer geliþtiricilerin fikirlerini alarak depoyu güncelleme
+ yoluna gidin.
+ Eðer sorumlu geliþtirici yaptýðýnýz deðiþiklikleri kabul etmez ise saygý
+ gösterin.
+\layout Subsection
+
+Sonradan oluþturulan dosyalarý depoya eklemeyin
+\layout Standard
+
+Derleme araçlarýnýn sonradan oluþturduðu Makefile, Makefile.in, configure
+ betikleri, vb.
+ dosyalarý depoya eklemeyin.
+ Bu dosyalar her geliþtiricinin makinasýnda farklý þekillerde yeniden oluþturula
+cak ve diðer geliþtiriciler tarafýndan bir güncelleme olarak algýlanacaktýr.
+ Bu dosyalarýn depoya eklenmesi genellikle hata olarak algýlanýr.
+\layout Subsection
+
+Güncellemeleri atomik yapýn
+\layout Standard
+
+Bir iyileþtirme/güncelleme ile ilgili tüm deðiþiklikleri bir anda gönderin.
+ Gönderimleri ayrý ayrý yapmak diðer geliþtiricilerin kafalarýný karýþtýrabilir
+ ve yaptýðýnýz iyileþtirmeleri kaçýrmalarýna neden olabilir.
 \layout Bibliography
 \bibitem {key-3}
 
@@ -1387,4 +1676,10 @@ Fox, Tammy & Pennington, Havoc (2003).
 KDE (2004).
  Applying For a KDE CVS Account.
  http://developer.kde.org/documentation/misc/applycvsaccount.php
+\layout Bibliography
+\bibitem {key-10}
+
+KDE (2004).
+ KDE CVS Commit Policy.
+ http://developer.kde.org/policies/commitpolicy.html
 \the_end
