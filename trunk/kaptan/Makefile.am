@@ -1,30 +1,22 @@
-SUBDIRS=po
+SUBDIRS = $(TOPSUBDIRS)
 
-bin_PROGRAMS = kaptan
+$(top_srcdir)/configure.in: configure.in.in $(top_srcdir)/subdirs
+	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.in ;
 
-kaptan_SOURCES = welcomedlg.ui welcome.cpp \
-	mousesetupdlg.ui mouse.cpp \
-	wallpaperdlg.ui wallpaper.cpp \
-	goodbyedlg.ui goodbye.cpp \
-	kaptan.cpp main.cpp
+$(top_srcdir)/subdirs:
+	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common subdirs
 
-INCLUDES = $(all_includes)
+$(top_srcdir)/acinclude.m4: $(top_srcdir)/admin/acinclude.m4.in $(top_srcdir)/admin/libtool.m4.in
+	@cd $(top_srcdir) && cat admin/acinclude.m4.in admin/libtool.m4.in > acinclude.m4
 
-kaptan_LDADD = -lkdeui
-kaptan_LDFLAGS = $(all_libraries)
+MAINTAINERCLEANFILES = subdirs configure.in acinclude.m4 configure.files 
 
-METASOURCES = AUTO
+package-messages:
+	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common package-messages
+	$(MAKE) -C po merge
 
-xdg_apps_DATA = kaptan.desktop
+EXTRA_DIST = admin $LICENSEFILE$ configure.in.in
 
-KDE_ICON=AUTO
-
-kaptan_pics_data_DATA = kaptan_pardus.png kaptan.png \
-	mouse_rh.png mouse_lh.png \
-	kaptan_goodbye.png
-kaptan_pics_datadir = $(kde_datadir)/kaptan/pics
-
-podir=po
-COMMAND=$(XGETTEXT) --foreign-user --from-code=utf-8 -C -ci18n -ki18n -ktr2i18n -kI18N_NOOP -kI18N_NOOP2 -kaliasLocale
-messages:
-	$(COMMAND) *.cpp *.h -o $(podir)/kaptan.pot
+dist-hook:
+	cd $(top_distdir) && perl admin/am_edit -padmin
+	cd $(top_distdir) && $(MAKE) -f admin/Makefile.common subdirs

@@ -30,6 +30,12 @@ Kaptan::Kaptan( QWidget *parent, const char *name )
 {
     setCaption( kapp->caption() );
 
+    /* Kaptan sadece ilk açılışta çalışsın */
+    KConfig *config = kapp->config();
+    config->setGroup("General");
+    config->writeEntry("RunOnStart", false);
+    config->sync();
+    
     welcome = new Welcome( this );
     addPage( welcome, i18n( "Welcome" ) );
     setHelpEnabled( QWizard::page( 0 ), false );
