@@ -18,6 +18,7 @@
   #
   # Contributor(s): Bradley Baetz <bbaetz@student.usyd.edu.au>
   #                 J. Paul Reed <preed@sigkill.com>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -41,18 +42,18 @@
 [% mail = SendBugMail(mailing_bugid, mailrecipients) %]
 
 [% PROCESS emails
-   description = "Email sent to"
+   description = "Gönderilen e-posta adresi"
    names = mail.sent
 %]
 <br>
 [% PROCESS emails
-   description = "Excluding"
+   description = "Dışarda bırakılan e-posta adresi"
    names = mail.excluded
 %]
 <br>
 <center>
-  If you wish to tweak the kinds of mail [% terms.Bugzilla %] sends you, you can
-  <a href="userprefs.cgi?tab=email">change your preferences</a>.
+  [% terms.Bugzilla %] tarafından size uyarı e-postaları gönderilmesini istiyorsanız, bunu
+  <a href="userprefs.cgi?tab=email">tercihlerinizde</a> belirtebilirsiniz.
 </center>
 
 

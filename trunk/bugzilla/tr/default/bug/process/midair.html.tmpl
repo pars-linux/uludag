@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -40,11 +41,11 @@
   [% PROCESS bug/process/header.html.tmpl %]
 [% END %]
 
-<h1>Mid-air collision detected!</h1>
+<h1>Hata Bildirimi Çakışması Tespit Edildi!</h1>
 
 <p>
-  Someone else has made changes to this [% terms.bug %] at the same time you were trying to.
-  The changes made were:
+  Bu [% terms.bug %] için siz değişiklik yapmaya çalıştığınız sırada bir başkası tarafından aynı [% terms.bug %] değiştirildi.
+  Yapılan değişiklikler:
 </p>
 
 <p>
@@ -53,7 +54,7 @@
 
 [% IF comments.size > start_at %]
 <p>
-  Added comments:
+  Eklenen yorumlar
   <blockquote>
     [% PROCESS "bug/comments.html.tmpl" %]
   </blockquote>
@@ -61,21 +62,21 @@
 [% END %]
 
 <p>
-You have the following choices:
+Aşağıdakilerden birisini seçebilirsiniz:
 </p>
 
 <ul>
   <li>
     <form method="post" action="process_bug.cgi">
       [% PROCESS "global/hidden-fields.html.tmpl" exclude="^Bugzilla_(login|password)$" %]
-      <input type="submit" value="Submit my changes anyway">
-        This will cause all of the above changes to be overwritten
+      <input type="submit" value="Değişikliklerimi yine de gönder">
+        Bu, girdiğiniz bilgilerin yukardaki değişikliklerin üzerine yazılmasına neden olacaktır
         [% ", except for the added comment(s)" IF comments.size > start_at %].
     </form>
   </li>
   <li>
-    <a href="show_bug.cgi?id=[% bug_id %]">Throw away my changes,
-      and revisit [% terms.bug %] [%+ bug_id %]</a>
+    <a href="show_bug.cgi?id=[% bug_id %]">Değişikliklerimi boş ver,
+      [%+ bug_id %] numaralı [% terms.bug %] bildirimini tekrar ziyaret aç</a>
   </li>
 </ul>
 
