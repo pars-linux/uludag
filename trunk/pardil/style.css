@@ -6,6 +6,10 @@ body {
   background-color: #ffffff;
   font-family: Verdana, Sans, sans-serif;
 }
+* {
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 11px;
+}
 #container {
   margin: 25px;
   padding: 0px;
@@ -40,7 +44,7 @@ body {
   font-family: Verdana, Sans, sans-serif;
   font-size: 12px;
   font-weight: bold;
-  line-height: 13px;
+  /*line-height: 13px;*/
   color: #666;
   text-decoration: none;
 }
