@@ -36,6 +36,7 @@ private:
     int sockets_open();
     int set_iface( const char *dev, const char *ip,
 		   const char *bc, const char *nm );
+    void writeSettings();
 
 };
 

@@ -25,6 +25,7 @@
 #include <kprocess.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kconfig.h>
 
 #include "devicesettings.h"
 #include "devicesettings.moc"
@@ -38,6 +39,26 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
     // fill automatic types, for now only DHCP is supported
     automaticCombo->insertItem( "DHCP" );
 
+
+    // get device information from kernel.
+    struct sockaddr_in *sin;
+    struct ifreq ifr;
+    int skfd = sockets_open();
+    strcpy( ifr.ifr_name, _dev.ascii() );
+    // IP
+    ioctl( skfd, SIOCGIFADDR, &ifr );
+    sin = (struct sockaddr_in *)&ifr.ifr_addr;
+    ipaddr->setText( inet_ntoa( sin->sin_addr ) );
+    // Broadcast
+    ioctl( skfd, SIOCGIFBRDADDR, &ifr );
+    sin = (struct sockaddr_in *)&ifr.ifr_addr;
+    broadcast->setText( inet_ntoa( sin->sin_addr ) );
+    // Netmask
+    ioctl( skfd, SIOCGIFNETMASK, &ifr );
+    sin = (struct sockaddr_in *)&ifr.ifr_addr;
+    netmask->setText( inet_ntoa( sin->sin_addr ) );
+
+
     connect( automaticButton, SIGNAL( toggled( bool ) ),
              this, SLOT( automaticToggled( bool ) ) );
     connect( manualButton, SIGNAL( toggled( bool ) ),
@@ -47,6 +68,19 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
              this, SLOT( slotApply() ) );
     connect( cancelButton, SIGNAL( clicked() ),
              this, SLOT( slotCancel() ) );
+
+    KConfig *config = new KConfig( "tasmanetrc" );
+    config->setGroup( _dev );
+    QString _connType;
+    _connType = config->readEntry( "ConnectionType", "Automatic" );
+    if ( _connType == "Automatic" ) {
+        automaticButton->setChecked( true );
+    }
+    else if ( _connType == "Manual" ) {
+        manualButton->setChecked( true );
+    }
+
+    delete config;
 }
 
 void DeviceSettings::slotApply()
@@ -88,6 +122,7 @@ void DeviceSettings::slotApply()
             startDhcpcd();
     }
 
+    writeSettings();
     done( 0 );
 }
 
@@ -100,6 +135,23 @@ void DeviceSettings::startDhcpcd() {
     if ( !startdhcpcd.normalExit() )
         printf( "failed (start)\n" );
 }
+
+
+void DeviceSettings::writeSettings()
+{
+    KConfig *config = new KConfig( "tasmanetrc" );
+    config->setGroup( _dev );
+
+    if ( manualButton->isChecked() ) {
+        config->writeEntry( "ConnectionType", "Manual" );
+    }
+    else if ( automaticButton->isChecked() ) {
+        config->writeEntry( "ConnectionType", "Automatic" );
+    }
+
+    delete config;
+}
+
 
 void DeviceSettings::slotCancel()
 {
