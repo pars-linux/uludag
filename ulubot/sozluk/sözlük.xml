@@ -7,6 +7,10 @@
 <t>Görüntü öğesi</t>
 </term>
 <term>
+<s>pixel</s>
+<t>piksel</t>
+</term>
+<term>
 <s>Chained list</s>
 <t>Zincirleme liste</t>
 </term>
@@ -231,10 +235,6 @@
 <term>
 <s>Warning</s>
 <t>Uyarı</t>
-</term>
-<term>
-<s>Terminal</s>
-<t>Uçbirim</t>
 </term>
 <term>
 <s>All rights reserved</s>
@@ -474,10 +474,6 @@
 <term>
 <s>Case study</s>
 <t>Örnek olay incelemesi</t>
-</term>
-<term>
-<s>Preface</s>
-<t>Önsöz</t>
 </term>
 <term>
 <s>Bring to front</s>
@@ -7442,6 +7438,446 @@
 <term>
 <s>phase</s>
 <t>evre</t>
+</term>
+<term>
+<s>photoconductor</s>
+<t>fotoiletken</t>
+</term>
+<term>
+<s>photorealism</s>
+<t>fotogerçekçilik</t>
+</term>
+<term>
+<s>photorealistic</s>
+<t>fotogerçekçi</t>
+</term>
+<term>
+<s>phrase</s>
+<t>tümce(*)</t><t>ibare</t><t>deyim</t>
+</term>
+<term>
+<s>physical</s>
+<t>fiziksel</t>
+</term>
+<term>
+<s>pica</s>
+<t>pika</t><t>12 puntoluk harf</t>
+</term>
+<term>
+<s>picker</s>
+<t>seçici</t><t>toplayıcı</t>
+</term>
+<term>
+<s>picture</s>
+<t>resim</t><t>görüntü</t>
+</term>
+<term>
+<s>pie chart</s>
+<t>dairesel çizim</t>
+</term>
+<term>
+<s>pin</s>
+<t>iğne</t><t>bacak</t>
+</term>
+<term>
+<s>pipeline</s>
+<t>ardışık düzen</t>
+</term>
+<term>
+<s>piping</s>
+<t>yöneltme</t>
+</term>
+<term>
+<s>piracy</s>
+<t>korsanlık</t>
+</term>
+<term>
+<s>pitch</s>
+<t>karakter sıklığı</t>
+</term>
+<term>
+<s>place holder</s>
+<t>yer tutucu</t>
+</term>
+<term>
+<s>Plain text</s>
+<t>düz metin</t>
+</term>
+<term>
+<s>platform</s>
+<t>düzlem</t><t>platform</t>
+</term>
+<term>
+<s>plot</s>
+<t>çizmek</t>
+</term>
+<term>
+<s>plotter</s>
+<t>(grafik)çizici</t>
+</term>
+<term>
+<s>plug</s>
+<t>fiş</t>
+</term>
+<term>
+<s>plug and play</s><s>plug and go</s>
+<t>tak çalıştır</t><t>tak ve kullan</t>
+</term>
+<term>
+<s>plug compatible</s>
+<t>tümüyle uyumlu</t>
+</term>
+<term>
+<s>plug-in</s>
+<t>uyumlu ek (yazılım)</t>
+</term>
+<term>
+<s>Point Of Sale</s><s>POS</s>
+<t>satış noktası/t>
+</term>
+<term>
+<s>point of sales terminal</s><s>POS terminal</s>
+<t>satış uçbirimi</t>
+</term>
+<term>
+<s>polar</s>
+<t>kutuplu</t><t>kutupsal</t>
+</term>
+<term>
+<s>polarize</s>
+<t>kutuplamak</t>
+</term>
+<term>
+<s>polar axis</s>
+<t>kutup ekseni</t>
+</term>
+<term>
+<s>polar coordinates</s>
+<t>kutupsal koordinatlar</t>
+</term>
+<term>
+<s>polar curve</s>
+<t>kutup eğrisi</t>
+</term>
+<term>
+<s>polar form</s>
+<t>kutupsal biçim</t><t>trigonometrik biçim</t>
+</term>
+<term>
+<s>polar grid</s>
+<t>kutupsal ızgara</t>
+</term>
+<term>
+<s>polar plot</s>
+<t>kutupsal çizim</t>
+</term>
+<term>
+<s>poll</s>
+<t>oylamak</t><t>anket yapmak</t><t>sorgulamak</t>
+</term>
+<term>
+<s>pool</s>
+<t>havuz</t>
+</term>
+<term>
+<s>pop up menu</s>
+<t>açılır menü</t>
+</term>
+<term>
+<s>pop up message</s>
+<t>beliren ileti</t>
+</term>
+<term>
+<s>pop up window</s>
+<t>beliren pencere</t>
+</term>
+<term>
+<s>port</s>
+<t>kapı</t>
+</term>
+<term>
+<s>portability</s>
+<t>taşınırlık</t>
+</term>
+<term>
+<s>portable</s>
+<t>taşınır</t>
+</term>
+<term>
+<s>portrait</s>
+<t>düşey (sayfa düzeni)</t>
+</term>
+<term>
+<s>position</s>
+<t>konum</t>
+</term>
+<term>
+<s>positioning time</s>
+<t>konumlanma süresi</t>
+</term>
+<term>
+<s>postmortem</s>
+<t>işlem sonrası</t>
+</term>
+<term>
+<s>posterization</s>
+<t>gri sayısını azaltma</t>
+</term>
+<term>
+<s>PostScript</s>
+<t>PostScript</t>
+</term>
+<term>
+<s>power off</s>
+<t>kapamak</t>
+</term>
+<term>
+<s>power on</s>
+<t>açmak</t>
+</term>
+<term>
+<s>Power On Self Test</s><t>POST</t>
+<t>otomatik sınama</t>
+</term>
+<term>
+<s>power socket</s>
+<t>priz</t>
+</term>
+<term>
+<s>power strip</s>
+<t>anahtarlı uzatma kablosu</t>
+</term>
+<term>
+<s>power supply</s>
+<t>güç kaynağı</t>
+</term>
+<term>
+<s>power typing</s>
+<t>serbest yazma</t>
+</term>
+<term>
+<s>power-on indicator</s>
+<t>açık göstergesi</t>
+</term>
+<term>
+<s>powers</s>
+<t>(matematiksel fonksiyon) üst</t>
+</term>
+<term>
+<s>pragmatics</s>
+<t>kullanımbilim</t>
+</term>
+<term>
+<s>pre</s>
+<t>ön</t>
+</term>
+<term>
+<s>precedence</s>
+<t>öncelik</t>
+</term>
+<term>
+<s>precision</s>
+<t>duyarlık</t>
+</term>
+<term>
+<s>precompile</s>
+<t>ön derleme</t>
+</term>
+<term>
+<s>predefine</s>
+<t>önceden tanımlamak</t>
+</term>
+<term>
+<s>predict</s>
+<t>öngörmek</t>
+</term>
+<term>
+<s>Preferences</s>
+<t>Tercihler</t>
+</term>
+<term>
+<s>preliminary checklist</s>
+<t>ön denetim listesi</t>
+</term>
+<term>
+<s>preparation</s>
+<t>hazırlık</t>
+</term>
+<term>
+<s>prepress</s>
+<t>baskı öncesi</t>
+</term>
+<term>
+<s>preprocessor</s>
+<t>önişlemci</t>
+</term>
+<term>
+<s>preselected choice</s>
+<t>vurgulu seçenek</t>
+</term>
+<term>
+<s>presentation</s>
+<t>sunu</t>
+</term>
+<term>
+<s>preset</s>
+<t>önceden belirlenmiş</t><t>önayarlı</t>
+</term>
+<term>
+<s>press</s>
+<t>basmak</t>
+</term>
+<term>
+<s>Preview</s>
+<t>Önizleme</t>
+</term>
+<term>
+<s>Previous</s>
+<t>Önceki</t>
+</term>
+<term>
+<s>primary</s>
+<t>birincil</t>
+</term>
+<term>
+<s>prime number</s>
+<t>asal sayı</t>
+</term>
+<term>
+<s>primitive object</s>
+<t>ilkel nesne</t>
+</term>
+<term>
+<s>print</s>
+<t>yazdırmak</t>
+</term>
+<term>
+<s>Print Manager</s>
+<t>Yazdırma Yöneticisi</t>
+</term>
+<term>
+<s>print queue</s>
+<t>yazıcı kuyruğu</t>
+</term>
+<term>
+<s>Print Layout</s>
+<t>Yazdırma düzeni</t>
+</term>
+<term>
+<s>Print Screen</s>
+<t>Ekran Yaz</t>
+</term>
+<term>
+<s>print spooler</s>
+<t>yazdırma kuyruklayıcısı</t>
+</term>
+<term>
+<s>printout</s>
+<t>(yazılı) çıktı</t>
+</term>
+<term>
+<s>priority</s>
+<t>öncelik</t>
+</term>
+<term>
+<s>privacy</s>
+<t>kişisel gizlilik</t>
+</term>
+<term>
+<s>privacy lock</s>
+<t>erişim kilidi</t>
+</term>
+<term>
+<s>private</s>
+<t>özel</t>
+</term>
+<term>
+<s>privilege</s>
+<t>ayrıcalık</t>
+</term>
+<term>
+<s>procedure</s>
+<t>yordam</t>
+</term>
+<term>
+<s>process</s>
+<t>işlem</t><t>süreç</t>
+</term>
+<term>
+<s>processing</s>
+<t>işleme</t><t>işlem</t>
+</term>
+<term>
+<s>processor</s>
+<t>işlemci</t>
+</term>
+<term>
+<s>production</s>
+<t>üretim</t>
+</term>
+<term>
+<s>profile</s>
+<t>profil</t>
+</term>
+<term>
+<s>generator</s>
+<t>üreteç</t>
+</term>
+<term>
+<s>program-described data</s>
+<t>programda tanımlanan veri</t>
+</term>
+<term>
+<s>progressive</s>
+<t>aşamalı</t>
+</term>
+<term>
+<s>projection</s>
+<t>izdüşüm</t>
+</term>
+<term>
+<s>prologue</s>
+<t>öndeyiş</t>
+</term>
+<term>
+<s>prompt</s>
+<t>istem</t><t>istemde bulunmak</t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
+</term>
+<term>
+<s></s>
+<t></t>
 </term>
 <term>
 <s></s>
