@@ -1,3 +1,5 @@
+SUBDIRS=po
+
 kde_module_LTLIBRARIES = kcm_tasmanet.la
 
 kcm_tasmanet_la_SOURCES = devicesettingsdlg.ui devicesettings.cpp tasmanetwidget.cpp tasmanet.cpp
@@ -10,3 +12,10 @@ INCLUDES= $(all_includes)
 METASOURCES = AUTO
 
 xdg_apps_DATA = tasmanet.desktop
+
+podir=po
+
+COMMAND=$(XGETTEXT) --foreign-user -C -ci18n -ki18n -ktr2i18n -kI18N_NOOP -kI18N_NOOP2 -kaliasLocale
+messages:
+	$(COMMAND) *.cpp *.h -o $(podir)/tasmanet.pot
+
