@@ -1,8 +1,11 @@
 <?php
+
   require('sys.define.php');
-  require('sys.database.php');
   require('sys.gettext.php');
-  
+  require('sys.database.php');
+  require('sys.procedures.php');
+  require('sys.session.php');
+
   require('class.template.php');
 
   // Öneri No

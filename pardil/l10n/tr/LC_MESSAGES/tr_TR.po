@@ -3,14 +3,11 @@ msgstr ""
 "Project-Id-Version: Pardil Türkçe Dil Paketi\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2005-03-16 14:46+0200\n"
-"Last-Translator: Bahadır <bahadir@haftalik.net>\n"
+"Last-Translator: Bahadır Kandemir <bahadir@haftalik.net>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
-"X-Poedit-SourceCharset: utf-8\n"
 
 #: tpl.proposal.php:5
 msgid "Proposal %04d - %s"
@@ -162,3 +159,48 @@ msgstr "En az bir bölüm oluşturulmalı."
 #: newproposal.php:45
 msgid "Release info should be written."
 msgstr "Sürüm bilgisi yazılmalı."
+
+#: tpl.login.php:20
+msgid "User Login"
+msgstr "Kullanıcı Girişi"
+
+#: tpl.login.php:40
+msgid "Username:"
+msgstr "Kullanıcı Adı:"
+
+#: tpl.login.php:47
+msgid "Password:"
+msgstr "Şifre:"
+
+#: tpl.login.php:60
+msgid "Login &raquo;"
+msgstr "Giriş &raquo;"
+
+#: login.php:12
+msgid "Username should be written."
+msgstr "Kullanıcı adı yazılmalı."
+
+#: login.php:16
+msgid "Password should be written."
+msgstr "Şifre yazılmalı."
+
+#: login.php:16
+msgid "Wrong username or password."
+msgstr "Hatalı kullanıcı adı ya da şifre."
+
+#: login.php:32
+msgid "Logged in."
+msgstr "Giriş yapıldı."
+
+#: tpl.login.php:70
+msgid "Forgot your password?"
+msgstr "Şifrenizi mi unuttunuz?"
+
+#: tpl.login.php:72
+msgid "Not registered?"
+msgstr "Kayıtlı değil misiniz?"
+
+#: tpl.index.php:25
+msgid "Session Information:"
+msgstr "Oturum Bilgisi:"
+
