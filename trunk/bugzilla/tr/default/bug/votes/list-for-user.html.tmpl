@@ -17,13 +17,14 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% IF !header_done %]
   [% h2 = voting_user.login FILTER html %]
-  [% PROCESS global/header.html.tmpl title = "Show Votes" %]
+  [% PROCESS global/header.html.tmpl title = "Oyları Göster" %]
 [% ELSE %]
   <hr>
 [% END %]
@@ -33,7 +34,7 @@
 [% IF votes_recorded %]
   <p>
     <font color="red">
-      The changes to your votes have been saved.
+      Oylarınızdaki değişiklikler kaydedildi.
     </font>
   </p>
 [% ELSE %]
@@ -46,9 +47,9 @@
     <table cellspacing="4">
       <tr>
         <td></td>
-        <th>Votes</th>
-        <th>[% terms.Bug %] #</th>
-        <th>Summary</th>
+        <th>Oylar</th>
+        <th>[% terms.Bug %] numarası</th>
+        <th>Özet</th>
       </tr>
 
       [% onevoteproduct = 0 %]
@@ -116,7 +117,7 @@
     </table>
 
     [% IF canedit %]
-      <input type="submit" value="Change My Votes">
+      <input type="submit" value="Oylarımı Değiştir">
       <br>
       <br>
       To change your votes,
@@ -127,7 +128,7 @@
       [% IF onevoteproduct %]
         change the checkbox
       [% END %]
-      and then click <b>Change My Votes</b>.
+      and then click <b>Oylarımı Değiştir</b>.
     [% END %]
   </form>
 [% ELSE %]
@@ -142,7 +143,7 @@
 [% END %]
 
 <p>
-  <a href="page.cgi?id=voting.html">Help with voting</a>.
+  <a href="page.cgi?id=voting.html">Oylama hakkında yardım</a>.
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
