@@ -402,6 +402,15 @@ def retouch_lyx(lyxname):
 	f.writelines(yeni)
 	f.close()
 
+def fix_hevea():
+	ff = [
+	"\\newcommand{\\textless}{\\@print{&lt;}}",
+	"\\newcommand{\\textgreater}{\\@print{&gt;}}",
+	"\\newcommand{\\textbackslash}{\\@print{&#92;}}" ]
+	f = file("duzeltmeler.hva", "w")
+	f.writelines(ff)
+	f.close()
+
 def export(lyxname, dname):
 	# pdf ve latex cikti
 	print "'%s' oluşturuluyor..." % (dname + ".pdf")
@@ -415,7 +424,8 @@ def export(lyxname, dname):
 	os.spawnlp(os.P_WAIT, "lyx", "lyx", "-e", "latex", lyxname);
 	# simdi html ciktilar
 	print "'%s' oluşturuluyor..." % (dname + ".html")
-	os.spawnlp(os.P_WAIT, "hevea", "hevea", "-fix", texname, "-o", dname + ".html")
+	fix_hevea()
+	os.spawnlp(os.P_WAIT, "hevea", "hevea", "-fix", "duzeltmeler.hva", texname, "-o", dname + ".html")
 
 def bilgibas(name,dname,date):
 	pdf_size = str(os.stat(dname + ".pdf")[ST_SIZE] / 1024)
@@ -469,6 +479,7 @@ def yap(template,clean_flag):
 		if basename[-4:] == ".lyx":
 			basename = basename[0:-4]
 		os.unlink(basename + ".tex")
+		os.unlink("duzeltmeler.hva")
 	# indekse eklemek icin html kodu bas
 	bilgibas(isim,dizin,dt)
 	# leave directory
