@@ -20,6 +20,7 @@
     <title><?php echo _('New Proposal'); ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="icon" type="image/png" href="favicon.png">
     <script type="text/javascript">
       /*
         JS'nin escape() fonksiyonu UTF-8 formatındaki harfleri de kodluyor,

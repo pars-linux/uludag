@@ -20,6 +20,7 @@
     <title><?php echo _('User Login'); ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="icon" type="image/png" href="favicon.png">
   </head>
   <body>
     <div id="container">
