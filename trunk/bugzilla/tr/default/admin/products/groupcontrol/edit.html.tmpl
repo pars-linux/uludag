@@ -24,7 +24,7 @@
 
 [% filt_product = product FILTER html %]
 [% PROCESS global/header.html.tmpl
-  title = "'$filt_product' için Gurup Kontrollerinin Düzenlenmesi"
+  title = "'$filt_product' için Grup Kontrollerinin Düzenlenmesi"
 %]
 
 <form method="post" action="editproducts.cgi">
@@ -33,7 +33,7 @@
 
   <table id="form" cellspacing="0" cellpadding="4" border="1">
     <tr bgcolor="#6666ff">
-      <th>Gurup</th>
+      <th>Grup</th>
       <th>Giriş</th>
       <th>ÜyeKontrolü</th>
       <th>DiğerKontroller</th>
@@ -129,7 +129,7 @@
 
 
 <p>
-Buradaki ayarlar gurupların bu ürünle ilişkilerini kontrol etmektedir.
+Buradaki ayarlar grupların bu ürünle ilişkilerini kontrol etmektedir.
 <p>
 If any group has <b>Entry</b> selected, then this product will
 restrict [% terms.bug %] entry to only those users who are members of all the
