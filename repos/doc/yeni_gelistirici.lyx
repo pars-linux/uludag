@@ -77,9 +77,9 @@ Geliþtirici kimdir?
 
 Kaba hatlarý ile projenin iki tür görevi yerine getirmesi gerektiðini söylemek
  yanlýþ olmayacaktýr.
- Her daðýtýmýn yaptýðý yazýlýmlarý bir araya getirmek ve bunun için gerekli
- alt yapýyý hazýrlama ve ayakta tutma iþleri yerine getirmenin yaný sýra
- daðýtýmýn ruhunu oluþturacan yeni araçlar ve teknolojiler geliþtiriyoruz.
+ Her daðýtýmýn yaptýðý gibi yazýlýmlarý bir araya getirmek ve bunun için
+ gerekli alt yapýyý hazýrlama ve ayakta tutma iþlerinin yaný sýra daðýtýmýn
+ ruhunu oluþturacak yeni araçlar ve teknolojiler geliþtiriyoruz.
 \layout Standard
 
 
@@ -93,7 +93,7 @@ Geliþtirici
  hata kontrolleri, görsel materyaller, çeviri çalýþmalarý, vb.
  pek çok alanda çalýþma yapýlmasýnýn gerektiðinin farkýndayýz.
  Pardus içerisinde de tüm bu çalýþmalara ihtiyacýmýz var.
-\layout Subsection
+\layout Subsection*
 
 Nasýl baþlayacaðým?
 \layout Standard
@@ -109,7 +109,7 @@ rý ve yapýlanlarý izlemek, yayýnlanan dökümanlarý incelemek, yapýlan hata
 Daha sonra tanýmlý yöntemlere göre geliþtirmeye yardýmcý olabilirsiniz.
  Yazýlýmlarý test ederek hata raporlarýna yorumlarýnýzý ve çözüm önerilerinizi
  ekleyebilir, bulduðunuz yeni hatalarý bildirebilirsiniz.
- Yenilikçi teknolojilerin geliþtirilmesine katkýda bulunabilir yeni özellikler
+ Yenilikçi teknolojilerin geliþtirilmesine katkýda bulunabilir, yeni özellikler
  ekleyebilirsiniz.
  Ya da süreçte iþlemediðini (yavaþ iþlediðini) düþündüðünüz bir adýma destek
  olabilir, onu hýzlandýrabilirsiniz.
@@ -120,7 +120,7 @@ Daha sonra tanýmlý yöntemlere göre geliþtirmeye yardýmcý olabilirsiniz.
 \layout Standard
 
 Ýhtiyaçlarýmýz belli.
-\layout Subsubsection
+\layout Subsection
 
 Yazýlým geliþtirme, hata ayýklama
 \layout Standard
@@ -137,9 +137,9 @@ Yazýlým geliþtrme konusundaki bilginizi ve emeðinizi bu alanda çalýþan kaynak
  konuda yardýmcý olacaktýr.
 \layout Standard
 
-Web sayafalarýndan ulaþýlabilecek Uludað hata takip sistemini kullanarak
+Web sayfalarýndan ulaþýlabilecek Uludað hata takip sistemini kullanarak
  raporlanmýþ hatalarý inceleyebilir ve çözüm getirebilirsiniz.
-\layout Subsubsection
+\layout Subsection
 
 Çeviri
 \layout Standard
@@ -155,7 +155,7 @@ a destek olmanýz bize doðrudan fayda saðlayacaktýr.
 Kýsaca yerelleþtirme çalýþmalarýna destek olun; ham çevirinin ötesinde çeviriler
 in kalitelerini de arttýrmaya çalýþýn.
  Çeviri çalýþmalarýna destek olmakla sadece Ulusal Daðýtým'a deðil, mevcut
- tüm Linux daðýtýmlarýnada sorunsuz Türkçe'ye sahip paketler kazandýrarak
+ tüm Linux daðýtýmlarýna da sorunsuz Türkçe'ye sahip paketler kazandýrarak
  önemli bir misyonun parçasý olabilirsiniz.
 \layout Standard
 
@@ -166,7 +166,7 @@ Belli baþlý çeviri gruplarýna yardým etmek için
 
  adresindeki yerelleþtirme çalýþmalarý listesinden ilgi duyduðunuz yerelleþtirme
  çalýþmalarýna ulaþabilirsiniz.
-\layout Subsubsection
+\layout Subsection
 
 Test ve hata bildirimleri
 \layout Standard
@@ -184,7 +184,7 @@ Seçtiðimiz yazýlýmlarý test ederek hata bildiriminde bulunabilirsiniz.
 \end_inset 
 
  adresinden eriþebilirsiniz.
-\layout Subsubsection
+\layout Subsection
 
 Grafik Tasarým, Çoklu ortam
 \layout Standard
@@ -194,7 +194,7 @@ Eðer bu konuda yeteneðiniz varsa daðýtým içerisinde kullanýlacak ikon setleri,
  olabilirsiniz.
  Çalýþmalarýnýzda ihtiyaç duyabileceðiniz görsel materyal konusunda e-posta
  listelerimiz yoluyla bizden yardým isteyebilirsiniz.
-\layout Subsubsection
+\layout Subsection
 
 Belgeleme
 \layout Standard
@@ -210,10 +210,10 @@ Nasýl yapýlýr
 \end_inset 
 
  belgeleri hazýrlayabilirsiniz.
- Web sayfalarýmýzýn güncellenmesinde bize yardýmcý olabilirsiniz ya da web
- sayfalarýmýzýn Ýngilizce, Almanca, Ýspanyolca gidi yabancý dillerdeki çeviriler
-inin güncel olmasýný saðlayabilirsiniz.
-\layout Subsubsection
+ Web sayfalarýmýzýn güncellenmesinde bize yardýmcý olabilirsiniz ya da sayfalarý
+mýzýn Ýngilizce, Almanca, Ýspanyolca gidi yabancý dillerdeki çevirilerinin
+ güncel olmasýný saðlayabilirsiniz.
+\layout Subsection
 
 Tanýtým
 \layout Standard
@@ -238,10 +238,10 @@ Aslýnda bu sorunun cevabý üzerinde çalýþmaya baþladýðýnýz konuya göre oldukça
  Fakat genel olarak tüm geliþtiricilerin temel sorumluluklarýndan bahsedebiliriz.
  Aslýnda burada tarif edilen sorumluluklar temelde birden fazla geliþtiricinin
  bir arada, uyum içerisinde çalýþabilmesi için gerekli olan maddelerdir.
- Bu yüzden aþaðýdaki maddeler genel geçer olarak kabul edilebilse de çalýþma
+ Bu yüzden aþaðýdaki maddeler genel geçer olarak kabul edilebilse de, çalýþma
  ortamýnýza ve arkadaþlarýnýza alýþtýkça birlikte çalýþmak için bir yöntem
  bulabilirsiniz.
-\layout Subsubsection
+\layout Subsection
 
 Süreklilik
 \layout Standard
@@ -253,7 +253,7 @@ Bir geliþtiricinin üzerinde çalýþtýðý projelerde sürekli olarak çalýþabilmeyi
  Bir iþletim sistemi projesinde parçalar birbirleri ile sýký bir þekilde
  baðlý olduðu için geliþtiricilerin de birbirlerinin hýzlarýna ayak uydurabilmel
 eri gerekiyor.
-\layout Subsubsection
+\layout Subsection
 
 Doðruluk
 \layout Standard
@@ -269,7 +269,7 @@ Proje içerisinde birden fazla geliþtirici ile ayný konu üzerinde çalýþýyor
  diðer geliþtiricileri de göz önüne almalýsýnýz.
  Yaptýðýnýz bir deðiþikliðin, az da olsa, diðer geliþtiricilerin iþlerini
  yapmasýna engel olmamasýný saðlamalýsýnýz.
-\layout Subsubsection
+\layout Subsection
 
 Kararlýlýk
 \layout Standard
@@ -293,7 +293,7 @@ deneysel
 \end_inset 
 
  alanda gerçekleþtirebilirsiniz.
-\layout Subsubsection
+\layout Subsection
 
 Ýletiþim
 \layout Standard
@@ -521,7 +521,7 @@ collapsed true
 
 \end_inset 
 
- mevcuttur, ayrýca subversion projensinin kendi sitesindeki
+ mevcuttur, ayrýca subversion projesinin kendi sitesindeki
 \begin_inset Foot
 collapsed true
 
@@ -552,7 +552,7 @@ collapsed true
  da proje hakkýnda bilgi alýnabilir.
  Bu kýsýmda pratik kullanýma iliþkin sýk ihtiyaç duyulan komutlar örneklerle
  anlatýlmaya çalýþýlacaktýr.
-\layout Subsubsection
+\layout Subsection
 
 Sistemimde subversion olup olmadýðýný nasýl anlayabilirim?
 \layout Standard
@@ -625,7 +625,7 @@ Eðer yoksa,
 
  adresinden daðýtýmýnýz ya da iþletim sisteminiz için hazýrlanmýþ olan paketi
  alarak sisteminize kurabilirsiniz.
-\layout Subsubsection
+\layout Subsection
 
 Depo nedir?
 \layout Standard
@@ -635,7 +635,7 @@ Depo (repository), herkesin üzerinde çalýþtýðý yazýlým(lar)ýn son sürümünün,
  kullanýcý, tarih ve sebep bilgileri ile beraber saklandýðý ve çeþitli yöntemler
 le eriþilebilen bir disk alanýdýr.
  
-\layout Subsubsection
+\layout Subsection
 
 Depoda hangi dizinlerin olduðunu nasýl görebilirim?
 \layout Standard
@@ -738,7 +738,7 @@ sectionedParser.py
 \layout LyX-Code
 
 $ 
-\layout Subsubsection
+\layout Subsection
 
 Depodaki bir dizinin kopyasýný nasýl alabilirim?
 \layout Standard
@@ -788,7 +788,7 @@ A COMAR/CSL
 \layout LyX-Code
 
 ...
-\layout Subsubsection
+\layout Subsection
 
 Bendeki kopyanýn güncel olup olmadýðýný nasýl anlayabilirim?
 \layout Standard
@@ -832,7 +832,7 @@ Updated to revision 158.
 \layout LyX-Code
 
 ~/work/uludag/[...]/uludag/trunk $
-\layout Subsubsection
+\layout Subsection
 
 Dosyalarýn yanlarýndaki iþaretler ne anlama geliyor?
 \layout Standard
@@ -900,7 +900,7 @@ C
 \series default 
  Çakýþmýþ (depodan aldýðýnýz son güncelleme sizin yerel yaptýðýnýz deðiþiklikler
  ile çakýþmýþ)
-\layout Subsubsection
+\layout Subsection
 
 Bir takým dosyayý deðiþtirdim, þimdi ne yapacaðým?
 \layout Standard
@@ -1007,7 +1007,7 @@ n", buf);
 \layout LyX-Code
 
 ~/work/[...]/trunk/COMAR/comar $ 
-\layout Subsubsection
+\layout Subsection
 
 Yeni bir dosya ekledim fakat yanýnda 
 \begin_inset Quotes eld
@@ -1120,7 +1120,7 @@ A yenibetik.csl
 \layout LyX-Code
 
 ~/work/[...]/COMARd/csl/sample $ 
-\layout Subsubsection
+\layout Subsection
 
 Deðiþtirdiðim dosyalar eski hallerine dönsünler istiyorum.
 \layout Standard
@@ -1197,7 +1197,7 @@ Reverted 'COMARd/COMARValue.py'
 \layout LyX-Code
 
 ~/work/[...]/trunk/COMAR/comar $
-\layout Subsubsection
+\layout Subsection
 
 Deðiþtirdiðim dosyalarý göndermek istiyorum?
 \layout Standard
@@ -1244,7 +1244,7 @@ iniz.
 
 Metin editörüne deðiþiklikleri yazýp, yazdýklarýnýzý kaydedip editörü kapattýðýn
 ýz anda svn yerel kopyanýzdaki deðiþiklikleri depoya göndermeye baþlar.
-\layout Subsubsection
+\layout Subsection
 
 Baþka hangi komutlar var?
 \layout Standard
@@ -1448,7 +1448,7 @@ komutlarý kullanýlabilir veya
 \end_inset 
 
  adresinden Sýklýkla Sorulan Sorularý yada 
-\begin_inset LatexCommand \url{http://subversion.tigris.org/project_faq.html}
+\begin_inset LatexCommand \url{http://svnbook.red-bean.com}
 
 \end_inset 
 
@@ -1513,19 +1513,9 @@ svn update
 Ne gönderdiðinize dikkat edin.
  Bunun için gönderimden önce mutlaka 
 \emph on 
-svn commit
-\emph default 
- komutu ile gönderdiðiniz dosyalarý kontrol edin.
-\layout Enumerate
-
-Depoya doðru bilgiyi gönderdiðinize emin olun.
- Gönderdiðiniz bilgilerin istediðinizden farklý bir iþ yapadýðýný kontrol
- edin.
- 
-\emph on 
 svn diff
 \emph default 
- komutu ile gönderdiðiniz bilgilerin neleri deðiþtirdiðini kontrol edin.
+ komutu ile gönderdiðiniz deðiþiklikleri kontrol edin.
 \layout Enumerate
 
 Yaptýðýnýz deðiþiklikleri mutlaka test edin.
@@ -1623,7 +1613,7 @@ Yalnýzca kendi sorumluluðunuzda olan dosyalarý güncelleyin.
  gösterin.
 \layout Subsection
 
-Sonradan oluþturulan dosyalarý depoya eklemeyin
+Otomatik oluþturulan dosyalarý depoya eklemeyin
 \layout Standard
 
 Derleme araçlarýnýn sonradan oluþturduðu Makefile, Makefile.in, configure
