@@ -136,16 +136,18 @@ void GozlukWin::writeDict( const QString& dictFile )
 
         // sources
         QStringList srcs( entry->getSources() );
-        QStringList::Iterator sit = srcs.begin();
-        for ( ; sit != srcs.end(); ++sit ) {
+        QStringList::ConstIterator sit = srcs.begin();
+        QStringList::ConstIterator send = srcs.end();
+        for ( ; sit != send; ++sit ) {
             str << "<s>" << *sit << "</s>";
         }
 
         // translations
         str << "\n";
         QStringList trans( entry->getTranslations() );
-        QStringList::Iterator it = trans.begin();
-        for ( ; it != trans.end(); ++it ) {
+        QStringList::ConstIterator it = trans.begin();
+        QStringList::ConstIterator tend = trans.end();
+        for ( ; it != tend; ++it ) {
             str << "<t>" << *it << "</t>";
         }
 
@@ -197,8 +199,9 @@ void GozlukWin::searchSource( const QString& text )
 
         if ( searchEnglish ) {
             QStringList srcs( entry->getSources() );
-            QStringList::Iterator sit = srcs.begin();
-            for ( ; sit != srcs.end(); ++sit ) { // search in sources list
+            QStringList::ConstIterator sit = srcs.begin();
+            QStringList::ConstIterator send = srcs.end();
+            for ( ; sit != send; ++sit ) { // search in sources list
                 // fill words list
                 if ( (*sit).lower().startsWith( *s ) ) {
                     item = new QListViewItem( words, *sit );
@@ -211,8 +214,9 @@ void GozlukWin::searchSource( const QString& text )
         }
         else { // Turkish search. Search in translations.
             QStringList trans( entry->getTranslations() );
-            QStringList::Iterator it = trans.begin();
-            for ( ; it != trans.end(); ++it ) {
+            QStringList::ConstIterator it = trans.begin();
+            QStringList::ConstIterator tend = trans.end();
+            for ( ; it != tend; ++it ) {
                 if ( (*it).lower().startsWith( *s ) ) {
                     item = new QListViewItem( words, *it );
                 }
@@ -240,8 +244,9 @@ void GozlukWin::showWord()
     // sources
     str = QString::fromUtf8( "<em>İngilizce:</em><br>" );
     QStringList srcs( currentEntry->getSources() );
-    QStringList::Iterator sit = srcs.begin();
-    for ( ; sit != srcs.end(); ++sit ) {
+    QStringList::ConstIterator sit = srcs.begin();
+    QStringList::ConstIterator send = srcs.end();
+    for ( ; sit != send; ++sit ) {
         str += "<b>" + *sit + "</b><br>";
     }
     str += "<br>";
@@ -249,8 +254,9 @@ void GozlukWin::showWord()
     // translations
     str += QString::fromUtf8( "<em>Türkçe:</em>" );
     QStringList trans( currentEntry->getTranslations() );
-    QStringList::Iterator it = trans.begin();
-    for ( ; it != trans.end(); ++it ) {
+    QStringList::ConstIterator it = trans.begin();
+    QStringList::ConstIterator tend = trans.end();
+    for ( ; it != tend; ++it ) {
         str += "<br>" + *it;
 
     }
@@ -275,8 +281,9 @@ void GozlukWin::showFromList( QListViewItem* item )
 
         if ( searchEnglish ) {
             QStringList srcs( entry->getSources() );
-            QStringList::Iterator sit = srcs.begin();
-            for ( ; sit != srcs.end(); ++sit ) { // search in sources list
+            QStringList::ConstIterator sit = srcs.begin();
+            QStringList::ConstIterator send = srcs.end();
+            for ( ; sit != send; ++sit ) { // search in sources list
                 // if found set current
                 if ( s->lower() == (*sit).lower() )
                     currentEntry = entry;
@@ -284,8 +291,9 @@ void GozlukWin::showFromList( QListViewItem* item )
         }
         else { // Turkish search. Search in translations.
             QStringList trans( entry->getTranslations() );
-            QStringList::Iterator it = trans.begin();
-            for ( ; it != trans.end(); ++it ) {
+            QStringList::ConstIterator it = trans.begin();
+            QStringList::ConstIterator tend = trans.end();
+            for ( ; it != tend; ++it ) {
                 if ( s->lower() == (*it).lower() )
                     currentEntry = entry;
             }
