@@ -114,7 +114,7 @@
     </td>
   </tr>
 </table>
-<noscript>If you had Javascript active, you could toggle all of these with one click.<br></noscript>
+<noscript>Tarayıcınız Javascript destekleseydi, tamamını bir seferde işaretleyebilirdiniz.<br></noscript>
 <script type="text/javascript">
 <!--
 function SetCheckboxes(setting) {
@@ -131,8 +131,8 @@ function SetCheckboxes(setting) {
   }
 }
 
-document.write('<input type="button" value="Enable All Mail" onclick="SetCheckboxes(true); return false;">\n');
-document.write('<input type="button" value="Disable All Mail" onclick="SetCheckboxes(false); return false;">\n');
+document.write('<input type="button" value="Tüm E-postaları Etkin Kıl" onclick="SetCheckboxes(true); return false;">\n');
+document.write('<input type="button" value="Tüm E-postaları Etkisiz Kıl" onclick="SetCheckboxes(false); return false;">\n');
 // -->
 </script>
 <hr>
@@ -153,14 +153,14 @@ document.write('<input type="button" value="Disable All Mail" onclick="SetCheckb
 
   <tr>
     <td align="center" width="10%">
-      <b>Reporter</b>
+      <b>Raporlayan</b>
     </td>
     <td align="center" width="10%">
-      <b>Assignee</b>
+      <b>Atanan</b>
     </td>
     [% IF useqacontact %]
       <td align="center" width="10%">
-        <b>QA Contact</b>
+        <b>Kalite Sorumlusu</b>
       </td>
     [% END %]
     <td align="center" width="10%">
@@ -168,7 +168,7 @@ document.write('<input type="button" value="Disable All Mail" onclick="SetCheckb
     </td>
     [% IF usevotes %]
       <td align="center" width="10%">
-        <b>Voter</b>
+        <b>Oylayan</b>
       </td>
     [% END %]
   </tr>

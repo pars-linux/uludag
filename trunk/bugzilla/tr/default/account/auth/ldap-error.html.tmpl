@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Bradley Baetz <bbaetz@acm.org>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -29,22 +30,22 @@
 
 [% SWITCH auth_err_tag %]
   [% CASE "cannot_retreive_attr" %]
-    The specified LDAP attribute [% info.attr FILTER html %] was not found.
+    [% info.attr FILTER html %] LDAP özelliği bulunamadı.
 
   [% CASE "connect_failed" %]
-    An error occurred while trying to connect to the LDAP server.
+    LDAP sunucusuna bağlantı sırasında bir hata oluştu.
     [% IF info.errstr %]
-      The error from the server was: <tt>[% info.errstr FILTER html %]</tt>.
+      Sunucudan dönen hata mesajı: <tt>[% info.errstr FILTER html %]</tt>.
     [% END %]
 
   [% CASE "no_userid" %]
-    [% terms.Bugzilla %] created a new account for you, but then could not find the
-    new userid.
+    [% terms.Bugzilla %] sizin için yeni bir hesap oluşturdu, ancak daha sonra yeni kullanıcı numarasını
+    bulamadı.
 
   [% CASE "server_not_defined" %]
-    The LDAP server for authentication has not been defined.
+    Kimlik doğrulaması için LDAP sunucusu tanımlı değil.
 
   [% CASE %]
-    Unhandled authentication error: <tt>[% auth_err_tag FILTER html %]</tt>
+    Tanımlanmamış kimlik doğrulaması hatası: <tt>[% auth_err_tag FILTER html %]</tt>
 
 [% END %]
