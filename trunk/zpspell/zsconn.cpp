@@ -48,6 +48,7 @@ ZSConn::ZSConn()
 ZSConn::~ZSConn()
 {
     if ( _conn ) {
+        shutdown( _conn, SHUT_RDWR );
         close( _conn );
     }
 }
