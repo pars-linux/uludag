@@ -2,14 +2,14 @@
 
 .arka {
 	font-family: Geneva, Arial, Helvetica, sans-serif;
-	background-image: url(./images/back.png);
+	background-image: url(./images/back.jpg);
 	background-repeat: repeat-x;
 	background-color: #FFFFFF;
 	margin: 0;
 }
 
 .arkayan {
-	background-image: url(./images/arka.png);
+	background-image: url(./images/arka.jpg);
 	background-repeat: repeat-x;
 	background-color: #FFFFFF;
 }
