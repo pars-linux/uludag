@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE
@@ -29,29 +30,27 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% title = BLOCK %]
-Create a new [% terms.Bugzilla %] account
+Yeni bir [% terms.Bugzilla %] hesabı tanımlama
 [% END %]
 [% PROCESS global/header.html.tmpl %]
 
 <p>
-  To create a [% terms.Bugzilla %] account, all you need to do is
-  enter a legitimate e-mail address. The account will be created, and
-  its password will be mailed to you. <b>You will not be able to log
-  in until you receive the password.</b> If it doesn't arrive within a
-  reasonable amount of time, you can contact the maintainer of
-  this [% terms.Bugzilla %] installation
-  at <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a>.
+  Yeni bir [% terms.Bugzilla %] hesabı tanımlamak için tek yapmanız gereken,
+  geçerli e-posta adresinizi girmektir. Hesabınız otomatik olarak oluşturulacak ve
+  parolanız girdiğiniz bu adrese gönderilecektir. <b>Parolanız gelene kadar giriş yapamazsınız
+  .</b> Eğer kabul edilebilir bir zaman içinde parolanız gönderilmezse, [% terms.Bugzilla %] yöneticisine
+  <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> adresine e-posta göndererek ulaşabilirsiniz.
 </p>
 
 <p>
-  Optionally you may enter your real name as well.
+  Dilerseniz adınızı ve soyadınızı da belirtebilirsiniz.
 </p>
 
 <form method="get" action="createaccount.cgi">
   <table>
     <tr>
       <td align="right">
-        <b>E-mail address:</b>
+        <b>E-posta Adresi:</b>
       </td>
       <td>
         <input size="35" name="login">
@@ -61,7 +60,7 @@ Create a new [% terms.Bugzilla %] account
 
     <tr>
       <td align="right">
-        <b>Real name:</b>
+        <b>Ad Soyad:</b>
       </td>
       <td>
         <input size="35" name="realname">
@@ -69,7 +68,7 @@ Create a new [% terms.Bugzilla %] account
     </tr>
   </table>
   <br>
-  <input type="submit" value="Create Account">
+  <input type="submit" value="Hesabı Oluştur">
 </form>
 
 [% PROCESS global/footer.html.tmpl %]
