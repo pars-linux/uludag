@@ -27,7 +27,7 @@
         if ($mix_user !== false) {
           // Bilgiler  doğru
           $str_session = proc_session_update($mix_user);
-          setcookie('pardil_session', $str_session);
+          setcookie('pardil', $str_session);
           header('Location: index.php');
           exit;
         }
@@ -37,15 +37,15 @@
       }
       else {
         $int_activation = database_query_scalar(sprintf('SELECT status FROM activation WHERE user=%d', $mix_user));
-        $str_act_required = proc_getopt('register_activation_required');
+        $str_act_required = getop('register_activation_required');
         if ($int_activation == 0 && $str_act_required == 'true') {
           // Aktivasyon gerek.
           $arr_errors['password'] = __('User account is not activated.');
         }
         else {
           // Bilgiler doğru
-          $str_session = proc_session_update($mix_user);
-          setcookie('pardil_session', $str_session);
+          $str_session = proc_session_init($mix_user);
+          setcookie('pardil', $str_session);
           header('Location: index.php');
           exit;
         }
