@@ -67,7 +67,7 @@ bool DictReader::endElement ( const QString &nsUri,
     else if ( qName == "d" )
         inD = false;
     else if ( qName == QString::fromUtf8( "ud_sözlük" ) )
-        inUdSozluk == false;
+        inUdSozluk = false;
 
     return true;
 }
