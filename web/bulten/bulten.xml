@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Wed, 16 Mar 2005 09:28:11 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 27 Şubat 2005
+<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Mon, 21 Mar 2005 01:19:03 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 21 Mart 2005
+</title><link>http://www.uludag.org.tr/bulten/arsiv/21032005.html</link><description>
+&lt;p&gt;
+Merhaba,
+&lt;/p&gt;
+
+&lt;p&gt;
+Uludağ Projesi bültenine hoşgeldiniz.
+&lt;/p&gt;
+
+&lt;p&gt;
+Uludağ Projesi'nin yeni web sayfaları[1] daha geniş bir içerik ve yeni
+tasarımı ile yayına girdi. Web sayfasının önceki halinde de yer alan kimi
+kısımların içeriklerinin genişletilmesinin yanında "Sıkça Sorulan Sorular"[2],
+"Basında Uludağ Projesi"[3] ve "Ürünler"[4] web sitesine yeni
+eklenen kısımlar oldular.
+&lt;/p&gt;
+
+&lt;p&gt;
+ 1. &lt;a href="http://www.uludag.org.tr/"&gt;http://www.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
+ 2. &lt;a href="http://www.uludag.org.tr/sss.html"&gt;http://www.uludag.org.tr/sss.html&lt;/a&gt;&lt;br&gt;
+ 3. &lt;a href="http://www.uludag.org.tr/basin/"&gt;http://www.uludag.org.tr/basin/&lt;/a&gt;&lt;br&gt;
+ 4. &lt;a href="http://www.uludag.org.tr/urunler/"&gt;http://www.uludag.org.tr/urunler/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Pardus Çalışan CD'nin 1.0 tam sürümü duyuruldu, Çalışan CD ile ilgili
+bilgilere [5] sayfasından ulaşabilirsiniz.
+&lt;/p&gt;
+
+&lt;p&gt;
+ 5. &lt;a href="http://www.uludag.org.tr/urunler/pardus_calisan_cd_1.0.html"&gt;http://www.uludag.org.tr/urunler/pardus_calisan_cd_1.0.html&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Yeni FTP sunucumuz[6] hizmete girdi, geçtiğimiz hafta duyurulan Pardus Kök Dosya
+Sistemi'nin 0.0.5 versiyonu da FTP sunucumuzda görüşleriniz için yerini[7] aldı.
+&lt;/p&gt;
+
+&lt;p&gt;
+ 6. &lt;a href="ftp://ftp.uludag.org.tr/"&gt;ftp://ftp.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
+ 7. &lt;a href="ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.5/"&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.5/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+LINUXnet dergisi[8] bu ay Pardus Çalışan CD 1.0 veriyor, ayrıca dergi
+içerisinde geliştiricilerin proje ile ilgili sorulara yanıtları ve Pardus ile
+ilgili yorumlar da yer alıyor.
+&lt;/p&gt;
+
+&lt;p&gt;
+ 8. &lt;a href="http://www.linuxnet.com.tr/"&gt;http://www.linuxnet.com.tr/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Uludağ Projesi Kalite Takımı[9] üyeleri ile yapılanan uluslararasılaştırma (u18a)
+takımı Ali Erdinç Köroğlu önderliğinde Uludağ web sayfaları ve belgelerinin
+İngilizce'ye çevrilmesi çalışmalarına başladı[10]. u18a çalışmalarına destek
+olmak için ekibin tartışma listesine[11] üye olabilirsiniz.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+ 9.  &lt;a href="http://www.uludag.org.tr/projeler/kalite/"&gt;http://www.uludag.org.tr/projeler/kalite/&lt;/a&gt;&lt;br&gt;
+ 10. &lt;a href="http://www.uludag.org.tr/eng/"&gt;http://www.uludag.org.tr/eng/&lt;/a&gt;&lt;br&gt;
+ 11. &lt;a href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/u18a-en/"&gt;http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/u18a-en/&lt;/a&gt;&lt;br&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Ayrıca Kalite Takımı üyelerinden Faruk Eskicioğlu "Pardus Donanım Uyumluluğu
+Listesi" (Pardul), Bahadır Kandemir de "Uludağ Gelişim Önerileri Sistemi"
+(UGÖS) uygulamalarını geliştirmeye başladılar. Pardul, Pardus'un donanım
+uyumluluğu ile ilgili bir bilgi tabanını oluşturmayı ve bu bilgiyi kullanıcılara
+ulaştırmayı hedeflerken, UGÖS proje ile ilgili önerilerin bütünlük arz eden
+bir şekilde dile getirilebileceği ve değerlendirilebileceği bir platform
+sunmayı hedefliyor, henüz geiştirme aşamasında olan UGÖS'ün ekran görüntülerine [12] adresinden
+ulaşabilirsiniz.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+ 12. &lt;a href="http://haftalik.net/blog/?p=4"&gt;http://haftalik.net/blog/?p=4&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+KDE 3.4'ün duyurulması ile beraber paketler depomuzdaki[13] güncellemeler de
+hız kazandı. Paketler deposundaki güncellemeleri takip etmek için SVN
+değişikliklerinin gönderildiği e-posta listesine[14] üye olabilirsiniz.
+&lt;/p&gt;
+
+&lt;p&gt;
+ 13. &lt;a href="https://svn.uludag.org.tr/paketler/"&gt;https://svn.uludag.org.tr/paketler/&lt;/a&gt;&lt;br&gt;
+ 14. &lt;a href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/paketler-commits"&gt;http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/paketler-commits&lt;/a&gt;
+&lt;/p&gt;
+paketler deposu
+
+&lt;p&gt;Uludağ geliştiricilerinden Barış Metin, 2 Nisan günü saat 13:30'da, EMO İstanbul
+Şubesi'nde[15] Linux Kullanıcıları Derneği[16] tarafından düzenlenen Uludağ
+Projesi'nin hedefleri, gelişimi ve Pardus'u konu
+alan bir seminer veriyor[17]. Seminer herkesin katılımına açık ve ücretsiz.&lt;/p&gt;
+
+
+&lt;p&gt;
+ 15. &lt;a href="http://seminer.linux.org.tr/yer.php?yer_id=12"&gt;http://seminer.linux.org.tr/yer.php?yer_id=12&lt;/a&gt;&lt;br&gt;
+ 16. &lt;a href="http://www.linux.org.tr/"&gt;http://www.linux.org.tr/&lt;/a&gt;&lt;br&gt;
+ 17. &lt;a href="http://seminer.linux.org.tr/"&gt;http://seminer.linux.org.tr/&lt;/a&gt;
+&lt;/p&gt;
+</description><guid isPermaLink="true">http://www.uludag.org.tr/bulten/arsiv/21032005.html</guid><pubDate>Mon, 21 Mar 2005 01:12:01 GMT</pubDate></item><item><title>Uludağ Haftalık Bülteni - 27 Şubat 2005
 </title><link>http://www.uludag.org.tr/bulten/arsiv/27022005.html</link><description>
 &lt;p&gt;
 Merhaba,
