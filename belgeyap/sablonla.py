@@ -20,6 +20,7 @@ import getopt
 
 class Sablon:
 	def __init__(self,tmplfile):
+		self.fake = 0
 		self.c_start = "<!-- SAYFA İÇERİK BAŞI -->"
 		self.c_end = "<!-- SAYFA İÇERİK SONU -->"
 		t = self.get_content(tmplfile)
@@ -78,6 +79,8 @@ class Sablon:
 			return
 		# modify file according to the new template
 		print "'%s' değiştiriliyor..." % (fname)
+		if self.fake == 1:
+			return
 		lines2 = self.fix_paths(fname, self.tmpl_head)
 		lines2 += fc[1]
 		lines2 += self.fix_paths(fname, self.tmpl_foot)
@@ -104,16 +107,19 @@ def usage():
 
 # main
 try:
-	opts, args = getopt.gnu_getopt(sys.argv[1:], "h", ["help"])
+	opts, args = getopt.gnu_getopt(sys.argv[1:], "hf", ["help", "fake"])
 except:
 	usage()
 
 tmpl = "./template.html"
 dirname = "."
+opt_fake = 0
 
 for o, v in opts:
 	if o in ("-h", "--help"):
 		usage()
+	if o in ("-f", "--fake"):
+		opt_fake = 1
 
 if len(args) > 0:
 	dirname = args[0]
@@ -121,4 +127,5 @@ if len(args) > 1:
 	tmpl = args[1]
 
 s = Sablon(tmpl)
+s.fake = opt_fake
 s.modify_dir(dirname)
