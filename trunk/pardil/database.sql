@@ -246,3 +246,21 @@ CREATE TABLE `sessions` (
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM COMMENT='Oturum bilgileri';
 
+-- 
+-- Tablo yapısı : `options`
+-- 
+
+CREATE TABLE `options` (
+  `opt` varchar(40) NOT NULL default '',
+  `value` tinytext NOT NULL,
+  `comment` tinytext NOT NULL,
+  PRIMARY KEY  (`opt`),
+  FULLTEXT KEY `option` (`opt`)
+) TYPE=MyISAM COMMENT='Seçenekler';
+
+-- 
+-- Tablo döküm verisi `options`
+-- 
+
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new_approved', '10', 'Önerinin otomatik olarak onaylanması için gereken en düşük kullanıcı seviyesi.');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new', '200', 'Öneri eklemek için gereken en düşük kullanıcı seviyesi.');
