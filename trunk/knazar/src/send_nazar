@@ -1,0 +1,2 @@
+#!/bin/bash
+dcop knazar DCOPNazarIface send_nazar
