@@ -55,6 +55,7 @@ def gen_html(index, logs):
 
     index_html = open("index.html", "w")
     index_html.write(header_text)
+    index_html.write("<center> <p><b>Bülten Arşivi</b></p>")
 
     for i in range(entry_count):
 	hname = Entry(logs[i]).html_name()
@@ -65,9 +66,12 @@ def gen_html(index, logs):
 		
 	# then write to archive
 	hfile = open(ARCHIVE+"/"+hname, "w")
+	hfile.write(archive_header)
 	hfile.write(Entry(logs[i]).content())
+	hfile.write(footer_text)
 	hfile.close()
 
+    index_html.write("</center>")
     index_html.write(footer_text)
     index_html.close()
 
