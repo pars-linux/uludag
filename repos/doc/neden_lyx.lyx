@@ -20,7 +20,7 @@
 \paperorientation portrait
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
+\paragraph_separation skip
 \defskip medskip
 \quotes_language english
 \quotes_times 2
@@ -33,7 +33,11 @@
 Neden Lyx?
 \layout Author
 
-Uludað Belge Cüceleri
+Gürer Özen
+\layout Standard
+
+Uludað projesi kapasamýnda ürettiðimiz belgeleri Lyx ile hazýrlýyoruz.
+ Bu kararý almamýzýn nedenleri aþaðýdaki maddeler ile özetlenebilir.
 \layout Enumerate
 
 Lyx (
