@@ -8,4 +8,5 @@
   define('MSG_DATABASE_SELECT_ERROR', '<b>Ölümcül Hata:</b> Veritabanı seçimi yapılamadı.');
 
   define('CONF_LOCALE', 'tr_TR');
+  define('CONF_TITLE', 'Pardus İyileştirme Listesi');
 ?>

@@ -9,8 +9,13 @@
 
   function database_query_scalar($str_sql) {
     $res_sql = mysql_query($str_sql);
-    $arr_fetch = mysql_fetch_array($res_sql, MYSQL_NUM);
-    return $arr_fetch[0];
+    if (mysql_num_rows($res_sql) == 1) {
+      $arr_fetch = mysql_fetch_array($res_sql, MYSQL_NUM);
+      return $arr_fetch[0];
+    }
+    else {
+      return false;
+    }
   }
   
   function database_updateStr($arr_update) {

@@ -234,3 +234,15 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `name`, `level`) VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'ugos@uludag.org.tr', 'Pardil Admin', 0);
 
+
+-- 
+-- Tablo yapısı : `sessions`
+-- 
+
+CREATE TABLE `sessions` (
+  `id` varchar(32) NOT NULL default '',
+  `user` int(10) unsigned NOT NULL default '0',
+  `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='Oturum bilgileri';
+

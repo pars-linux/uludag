@@ -1,11 +1,12 @@
 <?php
   require('sys.define.php');
+  require('sys.gettext.php');
   require('sys.database.php');
   require('sys.procedures.php');
-  require('sys.gettext.php');
-  
+  require('sys.session.php');
+
   require('class.template.php');
-  
+
   // Denetimler
   $arr_errors = array();
   if (isset($_POST['new_proposal']) && !isset($_POST['new_content_title_add'])) {
