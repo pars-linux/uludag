@@ -139,11 +139,13 @@ function ListBrands($resultBrands, $printFor) {
 		$i++;
 		if($i%2 == 1)
 			echo "<tr>\n";
-		echo "<td><a href=\"?action=brands&grpid=$rowBrands[0]\">$rowBrands[1]</a>";
-		if($printFor == "admin" || IsManaggedBy($userid, $grpid)) {
-			echo "&nbsp;&nbsp;<a href=\"?action=editgroup&grpid=$rowBrands[0]\">[Düzenle]</a>\n";
-			echo "&nbsp;<a href=\"?action=delgroup&grpid=$rowBrands[0]\">[Sil]</a>";
+		echo "<td><a href=\"?action=statusentries&grpid=$grpid&brandid=$rowBrands[0]\">$rowBrands[1]</a>";
+		if($printFor == "admin") {
+			echo "&nbsp;&nbsp;<a href=\"?action=editbrand&brandid=$rowBrands[0]\">[Düzenle]</a>\n";
+			echo "&nbsp;<a href=\"?action=delbrand&brandid=$rowBrands[0]&grpid=$grpid\">[Sil]</a>";
 		}
+		if(IsManaggedBy($userid, $grpid))
+			echo "&nbsp;<a href=\"?action=delbrand&brandid=$rowBrands[0]&grpid=$grpid\">[Sil]</a>";
 		echo "</td>\n";
 		if($i%2 == 0)
 			echo "</tr>\n";
@@ -154,6 +156,26 @@ function GetGroupName($grpid) {
 	$resultgroup = mysql_query("select name from pardul.group where id = '$grpid'");
 	$rowgroup = mysql_fetch_row($resultgroup);
 	return $rowgroup[0];
+}
+//------------------------------------------------------------
+function GetBrandName($brandid) {
+	$resultbrand = mysql_query("select name from brand where id = '$brandid'");
+	$rowbrand = mysql_fetch_row($resultbrand);
+	return $rowbrand[0];
+}
+//------------------------------------------------------------
+function IsBrandGroup($brandid, $groupid){
+	$resultgrbr = mysql_query("select count(*) from group_brand where group_id='$groupid' and brand_id='$brandid'");
+	$rowgrbr = mysql_fetch_row($resultgrbr);
+	return $rowgrbr[0];
+}
+//------------------------------------------------------------
+function IsBrand($brandname) {
+	$resultbrand = mysql_query("select id from brand where name='$brandname'");
+	if(mysql_num_rows($resultbrand) == 0)
+		return 0;
+	$rowbrand = mysql_fetch_row($resultbrand);
+	return $rowbrand[0];
 }
 //------------------------------------------------------------
 ?>

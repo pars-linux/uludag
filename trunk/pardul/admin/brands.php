@@ -15,10 +15,10 @@
 
 <table border="1">
 <?
-$resultBrands = mysql_query("select brand.id, brand.name from brand, group_brand where brand.id = group_brand.brand_id and group_brand.group_id='$grpid'");
+$resultBrands = mysql_query("select brand.id, brand.name from brand, group_brand where brand.id = group_brand.brand_id and group_brand.group_id='$grpid' order by brand.name");
 ListBrands($resultBrands, GetRoleName($roleid));
 ?>
-<?if($roleid == "1") {?>
+<?if(GetRoleName($roleid) == "admin" || IsManaggedBy($userid, $grpid)) {?>
 	<tr>
 	<td colspan="2">
 	<br>
@@ -31,7 +31,7 @@ ListBrands($resultBrands, GetRoleName($roleid));
 	</tr>
 	<tr>
 	<td colspan="2">
-	<b><?echo GetGroupName($grpid);?></b> grubuna yeni marka eklemek için <a href="?action=addbrand">tıklayınız</a>.
+	<b><?echo GetGroupName($grpid);?></b> grubuna yeni marka eklemek için <a href="?action=addbrand&grpid=<?echo $grpid;?>">tıklayınız</a>.
 	</td>
 	</tr>
 <?}?>
