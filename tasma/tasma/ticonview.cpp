@@ -56,9 +56,11 @@ void TIconView::setCategory( const QString& path )
     if ( !category || !category->isValid() )
         return;
 
+    TIconViewItem *_item;
     KServiceGroup::List list = category->entries(  true,  true );
     KServiceGroup::List::ConstIterator it = list.begin();
-    for (  ; it != list.end(); ++it )
+    KServiceGroup::List::ConstIterator end = list.end();
+    for (  ; it != end; ++it )
     {
         KSycocaEntry *p = (  *it );
         if (  p->isType(  KST_KService ) )
@@ -69,9 +71,9 @@ void TIconView::setCategory( const QString& path )
 
             if (  minfo->icon() )
                 _icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
-            TIconViewItem* _item = new TIconViewItem( this,
-                                                   minfo->moduleName(),
-                                                   _icon, minfo );
+            _item = new TIconViewItem( this,
+                                       minfo->moduleName(),
+                                       _icon, minfo );
 
         } // ignore second level subGroups!
     }
