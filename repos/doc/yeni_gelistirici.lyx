@@ -1614,7 +1614,7 @@ Eðer yaptýðýnýz güncelleme raporlanmýþ bir hatayý çözüyorsa, hata kontrol
 Kendi sorumluluðunuzda olan dosyalarý güncelleyin
 \layout Standard
 
-Yalnýzda kendi sorumluluðunuzda olan dosyalarý güncelleyin.
+Yalnýzca kendi sorumluluðunuzda olan dosyalarý güncelleyin.
  Eðer bir baþka geliþtiricinin sorumluluðunda olan dosyalarda bir hata bulduysan
 ýz, göndermeden önce sorumlu geliþtiriciye doðrudan ulaþarak veya e-posta
  listelerinde diðer geliþtiricilerin fikirlerini alarak depoyu güncelleme
@@ -1637,7 +1637,8 @@ cak ve diðer geliþtiriciler tarafýndan bir güncelleme olarak algýlanacaktýr.
 Güncellemeleri atomik yapýn
 \layout Standard
 
-Bir iyileþtirme/güncelleme ile ilgili tüm deðiþiklikleri bir anda gönderin.
+Bir iyileþtirme/güncelleme ile ilgili tüm deðiþiklikleri bir anda gönderin,
+ subversion birden fazla dosyayý ayný anda göndermenize izin verecektir.
  Gönderimleri ayrý ayrý yapmak diðer geliþtiricilerin kafalarýný karýþtýrabilir
  ve yaptýðýnýz iyileþtirmeleri kaçýrmalarýna neden olabilir.
 \layout Bibliography
