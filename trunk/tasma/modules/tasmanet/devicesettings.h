@@ -29,6 +29,8 @@ protected slots:
     void slotApply();
     void slotCancel();
 
+    void slotIPChanged();
+
     void automaticToggled( bool on );
     void manualToggled( bool on );
 
@@ -48,6 +50,7 @@ private:
     int set_default_route( const char *ip );
     void writeSettings();
     QStringList getDnsList();
+    int writeDnsList();
 
 };
 

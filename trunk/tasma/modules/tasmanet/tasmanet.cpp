@@ -41,7 +41,7 @@ TasmaNet::TasmaNet( QWidget* parent, const char *name )
 
     mainWidget = new TasmaNetWidget( this );
     v->addWidget( mainWidget );
-    //setButtons();
+    setButtons( KCModule::Help );
     load();
 }
 
