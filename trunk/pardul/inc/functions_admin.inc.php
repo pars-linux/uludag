@@ -21,4 +21,10 @@ function GetRoleName($roleid) {
 	return $row[0];
 }
 //------------------------------------------------------------
+function IsManaggedBy($userid, $groupid) {
+	$result = mysql_query("select count(*) from pardul.groups where id='$groupid' and managged_by='$userid'");
+	$row = mysql_fetch_row($result);
+	return $row[0];
+}
+//------------------------------------------------------------
 ?>
