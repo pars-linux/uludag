@@ -44,9 +44,11 @@ TModuleCategoryList::TModuleCategoryList( QWidget *parent, const char *name )
     }
 
     // iterate over group list.
+    TModuleGroup *_mg;
     KServiceGroup::List list = group->entries( true, true );
     KServiceGroup::List::ConstIterator it = list.begin();
-    for ( ; it != list.end(); ++it )
+    KServiceGroup::List::ConstIterator end = list.end();
+    for ( ; it != end; ++it )
     {
         KSycocaEntry *p = ( *it );
         // we're just going to deal with toplevel ServiceGroups here
@@ -62,10 +64,10 @@ TModuleCategoryList::TModuleCategoryList( QWidget *parent, const char *name )
             if ( _group->icon() )
                 _icon = DesktopIcon( _group->icon(),  KIcon::SizeLarge );
 
-            TModuleGroup *_mg = new TModuleGroup( this,
-                                                  _group->caption(),
-                                                  _icon,
-                                                  _group );
+            _mg = new TModuleGroup( this,
+                                    _group->caption(),
+                                    _icon,
+                                    _group );
         }
     }
     list.clear();
