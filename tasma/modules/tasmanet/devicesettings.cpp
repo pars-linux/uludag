@@ -31,6 +31,7 @@
 #include <kmessagebox.h>
 #include <kinputdialog.h>
 #include <kconfig.h>
+#include <kdebug.h>
 
 #include "devicesettings.h"
 #include "devicesettings.moc"
@@ -130,16 +131,25 @@ void DeviceSettings::slotApply()
                              broadcast->text().length() ? broadcast->text().ascii() : 0,
                              netmask->text().length() ? netmask->text().ascii() : 0
             );
-        if ( ret < 0 ) succeed = false;
+        if ( ret < 0 ) {
+            succeed = false;
+            kdDebug() << "tasmanet: set_iface() failed\n";
+        }
 
         // SET ROUTE
         if ( !defaultgw->text().isEmpty() ) {
             ret =  set_default_route( defaultgw->text().ascii() );
-            if ( ret < 0 ) succeed = false;
+            if ( ret < 0 ) {
+                succeed = false;
+                kdDebug() << "tasmanet: set_default_route() failed\n";
+            }
         }
 
         ret = writeDnsList();
-        if ( ret < 0 ) succeed = false;
+        if ( ret < 0 ) {
+            succeed = false;
+            kdDebug() << "tasmanet: writeDnsList() failed\n";
+        }
 
     }
     /* Automatic (DHCP) */
@@ -156,13 +166,21 @@ void DeviceSettings::slotApply()
             killdhcpcd.wait();
 
             // how ugly... wait 2 seconds to dhcpcd to finish its work...
-            if ( killdhcpcd.normalExit() )
+            if ( killdhcpcd.normalExit() ) {
                 QTimer::singleShot( 2000, this, SLOT( startDhcpcd() ) );
-            else
-                printf( "failed (kill)\n" );
+            }
+            else {
+                succeed = false;
+                kdDebug() << "tasmanet: killdhcpd failed.\n";
+            }
+
         }
-        else
-            startDhcpcd();
+        else {
+            if ( startDhcpcd() < 0 ) {
+                succeed = false;
+                kdDebug() << "tasmanet: startDhcpcd() failed.\n";
+            }
+        }
     }
 
     writeSettings();
@@ -179,14 +197,17 @@ void DeviceSettings::slotApply()
     done( 0 );
 }
 
-void DeviceSettings::startDhcpcd() {
+int DeviceSettings::startDhcpcd() {
     KProcess startdhcpcd;
     startdhcpcd << "/sbin/dhcpcd" << _dev;
     startdhcpcd.start();
     startdhcpcd.wait();
 
-    if ( !startdhcpcd.normalExit() )
-        printf( "failed (start)\n" );
+    if ( !startdhcpcd.normalExit() ) {
+        return -1;
+    }
+
+    return 0;
 }
 
 
