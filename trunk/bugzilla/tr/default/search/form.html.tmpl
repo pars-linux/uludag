@@ -318,14 +318,14 @@ function selectProduct(f) {
 </script>
 
 [% query_variants = [ 
-  { value => "allwordssubstr", description => "contains all of the words/strings" },
-  { value => "anywordssubstr", description => "contains any of the words/strings" },
-  { value => "substring", description => "contains the string" },
-  { value => "casesubstring", description => "contains the string (exact case)" },
-  { value => "allwords", description => "contains all of the words" },
-  { value => "anywords", description => "contains any of the words" },
-  { value => "regexp", description => "matches the regexp" },
-  { value => "notregexp", description => "doesn't match the regexp" } ] %]
+  { value => "allwordssubstr", description => "söz dizimi ya da kelimelerin tamamını içeren" },
+  { value => "anywordssubstr", description => "söz dizimi ya da kelimelerin herhangi bir kısmını içeren" },
+  { value => "substring", description => "söz dizimini içeren" },
+  { value => "casesubstring", description => "söz dizimini tam olarak içeren" },
+  { value => "allwords", description => "kelimelerin tamamını içeren" },
+  { value => "anywords", description => "kelimelerden herhangi birisini içeren" },
+  { value => "regexp", description => "düzenli ifadeye uyan" },
+  { value => "notregexp", description => "düzenli ifadeye uymayan" } ] %]
      
 [%# *** Summary *** %]
 
@@ -430,9 +430,9 @@ function selectProduct(f) {
       <td>
         <select name="keywords_type">
         [% FOREACH qv = [ 
-          { name => "allwords", description => "contains all of the keywords" },
-          { name => "anywords", description => "contains any of the keywords" },
-          { name => "nowords",  description => "contains none of the keywords" } ] %]
+          { name => "allwords", description => "anahtar kelimelerin tamamını içeren" },
+          { name => "anywords", description => "anahtar kelimelerin herhangi birini içeren" },
+          { name => "nowords",  description => "anahtar kelimelerin herhangi birini içermeyen" } ] %]
 
           <option value="[% qv.name %]"
             [% " selected" IF default.keywords_type.0 == qv.name %]>
@@ -554,10 +554,10 @@ function selectProduct(f) {
     <td>
       <select name="emailtype[% n %]">
       [% FOREACH qv = [ 
-        { name => "substring", description => "contains" },
-        { name => "exact", description => "is" },
-        { name => "regexp", description => "matches regexp" },
-        { name => "notregexp", description => "doesn't match regexp" } ] %]
+        { name => "substring", description => "içeren" },
+        { name => "exact", description => "olan" },
+        { name => "regexp", description => "düzenli ifadaye uyan" },
+        { name => "notregexp", description => "düzenli ifadeye uymayan" } ] %]
         
         <option value="[% qv.name %]"
           [% " selected" IF default.emailtype.$n == qv.name %]>[% qv.description %]</option>
@@ -582,10 +582,10 @@ function selectProduct(f) {
   <tr>
     <td>
       <select name="bugidtype">
-        <option value="include"[% " selected" IF default.bugidtype.0 == "include" %]>Only include</option>
-        <option value="exclude"[% " selected" IF default.bugidtype.0 == "exclude" %]>Exclude</option>
+        <option value="include"[% " selected" IF default.bugidtype.0 == "include" %]>Sadece içerdiği</option>
+        <option value="exclude"[% " selected" IF default.bugidtype.0 == "exclude" %]>İçermediği</option>
       </select>
-      bugs numbered: 
+      hata raporu numaraları: 
     </td>
     <td>
       <input type="text" name="bug_id" value="[% default.bug_id.0 FILTER html %]" size="20">
@@ -593,15 +593,15 @@ function selectProduct(f) {
   </tr>
   <tr>
     <td></td>
-    <td>(comma-separated list)</td>
+    <td>(virgülle ayrılmış liste)</td>
   </tr>
   [% IF Param('usevotes') %]
     <tr>
       <td align="right">
-        Only bugs with at least:
+        En az:
       </td>
       <td>
-        <input name="votes" size="3" value="[% default.votes.0 FILTER html %]"> votes
+        <input name="votes" size="3" value="[% default.votes.0 FILTER html %]"> oy almış hata raporları
       </td>
     </tr>
   [% END %]
@@ -624,7 +624,7 @@ function selectProduct(f) {
 </dl>
 
 <dl>
-  <dt>Only bugs where any of the fields</dt>
+  <dt>Sadece aşağıdaki alan(lar)ı</dt>
   <dd>
     <select name="chfield" multiple="multiple" size="4">
     [% FOREACH field = chfield %]
@@ -635,13 +635,13 @@ function selectProduct(f) {
     </select>
   </dd>
 
-  <dt>were changed between</dt>
+  <dt>değiştirildiği tarih aralığı</dt>
   <dd>
     <input name="chfieldfrom" size="10" value="[% default.chfieldfrom.0 FILTER html %]">
-    and <input name="chfieldto" size="10" value="[% default.chfieldto.0 FILTER html %]">
-    <br>(YYYY-MM-DD)
+    ve <input name="chfieldto" size="10" value="[% default.chfieldto.0 FILTER html %]">
+    <br>(YYYY-AA-GG)
   </dd>
-  <dt>to this value: (optional)</dt>
+  <dt>bu değer olan: (seçeneğe bağlı)</dt>
   <dd>
     <input name="chfieldvalue" size="20" value="[% default.chfieldvalue.0 FILTER html %]">
   </dd>

@@ -30,7 +30,7 @@
   
 [% filtered_product = product FILTER html %]
 [% PROCESS global/header.html.tmpl 
-  title = "Components for $product"
+  title = "$product için Bileşenler"
   h2 = filtered_product %]
 
 [% IF Param("useqacontact") %]
@@ -44,10 +44,10 @@
 [% ELSE %]
   <table>
     <tr>
-      <th align="left">Component</th>
-      <th align="left">Default Owner</th>
+      <th align="left">Bileşen</th>
+      <th align="left">Varsayılan Sahibi</th>
       [% IF Param("useqacontact") %]
-        <th align="left">Default QA Contact</th>
+        <th align="left">Varsayılan Kalite Sorumlusu      </th>
       [% END %]
     </tr>
 

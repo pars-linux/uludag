@@ -260,22 +260,20 @@
   <table>
     <tr>
     [% PROCESS dependencies 
-       dep = { title => "depends on", fieldname => "dependson" } %]
+       dep = { title => "bağımlılık gösterdiği", fieldname => "dependson" } %]
       <td rowspan="2">
-        <a href="showdependencytree.cgi?id=[% bug.bug_id %]">Show 
-        dependency tree</a>  
+        <a href="showdependencytree.cgi?id=[% bug.bug_id %]">Bağımlılık ağacını göster</a>  
 
         [% IF Param('webdotbase') %]  
           <br>
-          <a href="showdependencygraph.cgi?id=[% bug.bug_id %]">Show 
-          dependency graph</a>
+          <a href="showdependencygraph.cgi?id=[% bug.bug_id %]">Bağımlılık grafiğini göster</a>
         [% END %]
       </td>
     </tr>
 
     <tr>
     [% PROCESS dependencies 
-       dep = { title => "blocks", fieldname => "blocked" } %]
+       dep = { title => "blokladığı", fieldname => "blocked" } %]
     </tr>
   </table>
   [% END %]
@@ -461,9 +459,9 @@
   <p>
     <font size="+1">
       <b>
-        <a href="show_activity.cgi?id=[% bug.bug_id %]">View Bug Activity</a>
+        <a href="show_activity.cgi?id=[% bug.bug_id %]">Hata Raporu Etkinliğini Göster</a>
         &nbsp; | &nbsp;
-        <a href="long_list.cgi?buglist=[% bug.bug_id %]">Format For Printing</a>
+        <a href="long_list.cgi?buglist=[% bug.bug_id %]">Yazıcı İçin Biçimlendir</a>
       </b>
     </font>
 
@@ -481,7 +479,7 @@
   <tr>
     <td align="left">
       <b>
-        <a name="c0" href="#c0">Description</a>:
+        <a name="c0" href="#c0">Açıklama</a>:
       </b>
     </td>
     <td align="right" width="100%">
@@ -509,7 +507,7 @@
 [%############################################################################%]
 
 [% BLOCK dependencies %]
-  <th align="right">Bug [% bug.bug_id %] [%+ dep.title %]:</th>
+  <th align="right">Hata Numarası [% bug.bug_id %] [%+ dep.title %]:</th>
   <td>
   [% FOREACH depbug = bug.${dep.fieldname} %]
     [% GetBugLink(depbug, depbug) %][% " " %]

@@ -28,7 +28,7 @@
  %]
  
 [% PROCESS global/header.html.tmpl 
-  title = "Bugzilla Keyword Descriptions"
+  title = "Bugzilla Anahtar Kelime Açıklamaları"
 %]
 
 [% FOREACH keyword = keywords %]
@@ -39,9 +39,9 @@
     
     <table border="1" cellpadding="4" cellspacing="0">
       <tr bgcolor="#6666FF">
-        <th align="left">Name</th>
-        <th align="left">Description</th>
-        <th align="left">Bugs</th>
+        <th align="left">İsim</th>
+        <th align="left">Açıklama</th>
+        <th align="left">Hata Raporları</th>
       </tr>
   [% END %]  
   
@@ -68,7 +68,7 @@
 
 [% IF caneditkeywords %]
   <p>
-    <a href="editkeywords.cgi">Edit keywords</a>.
+    <a href="editkeywords.cgi">Anahtar kelimeleri düzenle</a>.
   </p>
 [% END %]
 
