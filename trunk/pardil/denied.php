@@ -7,6 +7,7 @@
   
   require('class.template.php');
 
+  $_PCONF['title'] = CONF_NAME . ' - ' . _('Access Denied');
   $obj_page = new template('tpl.denied.php');
   $obj_page->flush();
 ?>

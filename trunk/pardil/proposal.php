@@ -97,6 +97,8 @@
     $arr_revisions_list[] = $arr_fetch;
   }
 
+  $_PCONF['title'] = CONF_NAME . ' - ' . $arr_pardil_fetch['title'];
+
   $obj_page = new template('tpl.proposal.php');
   
   $obj_page->setvar('arr_proposal', $arr_pardil_fetch);
