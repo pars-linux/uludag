@@ -102,10 +102,20 @@ class Cutter:
 					# yeni bolum
 					node = CutNode ()
 					node.level = line.split () [1]
-					node.name = line [line.find (" ", 8) + 1:line.rfind ("-->")]
-					flag = 1
+					if line.find("-->") != -1:
+						node.name = line [line.find (" ", 8) + 1:line.rfind ("-->")]
+						flag = 1
+					else:
+						node.name = line [line.find(" ", 8):]
+						flag = 3
 				else:
 					node.lines.append (line)
+			elif flag == 3:
+				if line.find("-->") != -1:
+					node.name += line [:line.rfind ("-->")]
+					flag = 2
+				else:
+					node.name += line[:]
 		if node:
 			nodes.append (node)
 		self.fix_levels (nodes)
@@ -245,16 +255,16 @@ class Cutter:
 		t = "<table class='navbar'><tbody><tr>"
 		if pi != -1:
 			if pi == 0:
-				t += "<td class='navbut'><a href='index.html'><img src='" + self.img_path + "/nav_back.png' border=0>Önceki sayfa</a></td>"
+				t += "<td class='navbut'><a href='index.html'><img src='" + self.img_path + "/nav_back.png' border=0> Önceki sayfa</a></td>"
 			else:
-				t += "<td class='navbut'><a href='node_" + str (pi) + ".html'><img src='" + self.img_path + "/nav_back.png' border=0>Önceki sayfa</a></td>"
+				t += "<td class='navbut'><a href='node_" + str (pi) + ".html'><img src='" + self.img_path + "/nav_back.png' border=0> Önceki sayfa</a></td>"
 		else:
-			t += "<td class='navhide'><img src='" + self.img_path + "/nav_back.png'>Önceki sayfa</td>"
-		t += "<td class='navbut'><a href='index.html'><img src='" + self.img_path + "/nav_home.png' border=0>Başlangıç</a></td>"
+			t += "<td class='navhide'><img src='" + self.img_path + "/nav_back.png'> Önceki sayfa</td>"
+		t += "<td class='navbut'><a href='index.html'><img src='" + self.img_path + "/nav_home.png' border=0> Başlangıç</a></td>"
 		if ni != -1:
-			t += "<td class='navbut'><a href='node_" + str (ni) + ".html'><img src='" + self.img_path + "/nav_forward.png' border=0>Sonraki sayfa</a></td>"
+			t += "<td class='navbut'><a href='node_" + str (ni) + ".html'><img src='" + self.img_path + "/nav_forward.png' border=0> Sonraki sayfa</a></td>"
 		else:
-			t += "<td class='navhide'><img src='" + self.img_path + "/nav_forward.png'>Sonraki sayfa</td>"
+			t += "<td class='navhide'><img src='" + self.img_path + "/nav_forward.png'> Sonraki sayfa</td>"
 		t += "</tr></tbody></table>\n"
 		return t
 	
