@@ -244,7 +244,7 @@ CREATE TABLE `sessions` (
   `user` int(10) unsigned NOT NULL default '0',
   `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM COMMENT='Oturum bilgileri';
+) TYPE=MyISAM COMMENT='Oturum bilgileri' AUTO_INCREMENT=1;
 
 -- 
 -- Tablo yapısı : `options`
@@ -256,7 +256,7 @@ CREATE TABLE `options` (
   `comment` tinytext NOT NULL,
   PRIMARY KEY  (`opt`),
   FULLTEXT KEY `option` (`opt`)
-) TYPE=MyISAM COMMENT='Seçenekler';
+) TYPE=MyISAM COMMENT='Seçenekler' AUTO_INCREMENT=3;
 
 -- 
 -- Tablo döküm verisi `options`
@@ -264,3 +264,20 @@ CREATE TABLE `options` (
 
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new_approved', '10', 'Önerinin otomatik olarak onaylanması için gereken en düşük kullanıcı seviyesi.');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_new', '200', 'Öneri eklemek için gereken en düşük kullanıcı seviyesi.');
+
+-- 
+-- Tablo yapısı : `activation`
+-- 
+
+CREATE TABLE `activation` (
+  `user` int(10) unsigned NOT NULL default '0',
+  `code` varchar(32) NOT NULL default '',
+  `status` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`user`)
+) TYPE=MyISAM COMMENT='Aktivasyon kodları', AUTO_INCREMENT=2;
+
+-- 
+-- Tablo döküm verisi `activation`
+-- 
+
+INSERT INTO `activation` (`user`, `code`, `status`) VALUES (1, 'c4ca4238a0b923820dcc509a6f75849b', 1);

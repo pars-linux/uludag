@@ -39,6 +39,10 @@
   $res_sql = mysql_query($str_sql);
   $arr_pardil_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC);
 
+  //
+  // $arr_pardil_fetch['abstract'] = htmlspecialchars($arr_pardil_fetch['abstract']);
+  //
+
   // Öneri İçeriği ve İçindekiler Listesi:
   $arr_pardil_fetch['content'] = '<?xml version="1.0" encoding="utf-8"?><pardil>' . $arr_pardil_fetch['content'] . '</pardil>';
   $res_xml = simplexml_load_string($arr_pardil_fetch['content']);
@@ -47,9 +51,19 @@
   foreach ($res_xml->children() as $res_node) {
     $str_title = $res_node->title;
     $str_body = substr($res_node->body->asXML(), 6, strlen($res_node->body->asXML()) - 13);
+    //
+    // $str_title = htmlspecialchars($str_title);
+    // $str_body = htmlspecialchars($str_body);
+    //
     $arr_pardil_content[] = array('no' => $int_pardil_content, 'title' => $str_title, 'body' => $str_body);
     $int_pardil_content++;
   }
+  // ÖNEMLİ NOT:
+  // Şimdilik, veritabanından gelen kod aynen ekrana yazdırılıyor, çünkü
+  // HTML kodu içeriyor. Bu XSS saldırılarına sebep olabilir. İleride, 
+  // veritabanından gelen kod XSL'den geçirilecek ve çıktısı ekrana 
+  // yazdırılacak. XSL dönüşümü öncesi tabii ki DTD kullanılacak.
+  // Aynı mevzu "Öneri Notları" için de geçerli.
 
   // Öneri Notları
   $arr_pardil_fetch['notes'] = '<?xml version="1.0" encoding="utf-8"?><notes>' . $arr_pardil_fetch['notes'] . '</notes>';
@@ -57,7 +71,11 @@
   $int_pardil_notes = 1;
   $arr_pardil_notes = array();
   foreach ($res_xml->children() as $res_node) {
-    $arr_pardil_notes[] = array('no' => $int_pardil_notes, 'body' => $res_node->asXML());
+    $str_body = substr($res_node->asXML(), 6, strlen($res_node->asXML()) - 13);
+    //
+    // $str_body = htmlspecialchars($str_body);
+    //
+    $arr_pardil_notes[] = array('no' => $int_pardil_notes, 'body' => $str_body);
     $int_pardil_notes++;
   }
 

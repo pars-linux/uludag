@@ -18,15 +18,23 @@
     }
 
     if (strlen($_POST['username']) > 0 && strlen($_POST['password']) > 0) {
-      $mix_user = database_query_scalar(sprintf('SELECT id FROM users WHERE username="%s" AND password="%s"', addslashes($_POST['username']), md5(addslashes($_POST['password']))));
+      $mix_user = database_query_scalar(sprintf('SELECT id FROM users WHERE username="%s" AND password="%s"', addslashes($_POST['username']), md5($_POST['password'])));
       if ($mix_user === false) {
         $arr_errors['password'] = _('Wrong username or password.');
       }
       else {
-        $str_session = proc_session_update($mix_user);
-        setcookie('pardil_session', $str_session);
-        header('Location: index.php');
-        exit;
+        $int_activation = database_query_scalar(sprintf('SELECT status FROM activation WHERE user=%d', $mix_user));
+        $str_act_required = proc_getopt('register_activation_required');
+        if ($int_activation == 0 && $str_act_required == 'true') {
+          // Aktivasyon gerek.
+          $arr_errors['password'] = _('User account is not activated.');
+        }
+        else {
+          $str_session = proc_session_update($mix_user);
+          setcookie('pardil_session', $str_session);
+          header('Location: index.php');
+          exit;
+        }
       }
     }
   }

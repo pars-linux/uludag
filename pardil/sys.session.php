@@ -1,6 +1,9 @@
 <?php
   $_PSESSION = array();
   
+  // 900 saniye hareketsiz olan oturumları kaldır.
+  proc_session_expire(900);
+
   if (isset($_COOKIE['pardil_session']) && strlen($_COOKIE['pardil_session']) == 32) {
     $str_sql = sprintf('SELECT users.id, sessions.id AS session, users.username, users.email, users.name, users.level FROM users INNER JOIN sessions ON users.id=sessions.user WHERE sessions.id="%s"', addslashes($_COOKIE['pardil_session']));
     $res_sql = mysql_query($str_sql);
@@ -17,7 +20,5 @@
     }
   }
 
-  // 900 saniye hareketsiz olan oturumları kaldır.
-  proc_session_expire(900);
   
 ?>

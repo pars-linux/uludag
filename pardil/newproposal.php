@@ -30,7 +30,7 @@
       foreach ($_POST['new_content'] as $str_title => $str_body) {
         if (strlen($str_body) == 0) {
           $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') + 1);
-          $arr_errors['new_content'][$str_title] = sprintf(_('Section "%s" should be written. If you don\'t want it, remove it.'), urldecode($str_title2));
+          $arr_errors['new_content'][$str_title] = sprintf(_('Section "%s" should be written. If you don\'t want it, remove it.'), htmlspecialchars(urldecode($str_title2)));
         }
       }
     }
@@ -62,7 +62,7 @@
       $str_notes .= sprintf('<note>%s</note>', $str_note);
     }
     printf('<b>Notlar:</b> %s<br/>', htmlspecialchars($str_notes));
-    printf('<b>Sürüm Bilgisi:</b> %s<br/>', $_POST['new_info']);
+    printf('<b>Sürüm Bilgisi:</b> %s<br/>', htmlspecialchars($_POST['new_info']));
     printf('<b>Öneri Durumu:</b> %s<br/>', (($int_level > $_PSESSION['level']) ? 'Onaylanması gerek' :'Otomatik onaylancak'));
   }
   else {

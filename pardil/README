@@ -1,1 +1,10 @@
 Pardil: Pardus İyileştirme Listesi
+
+
+Notlar:
+=======
+POST, GET, COOKIE'den gelen verilerdeki tırnak işareti, PHP tarafından 
+otomatik olarak \" işaretine çevrilmemektedir. SQL sorgusu hazırlarken 
+addslashes() fonksiyonunu kullanmayı unutmayın.
+
+Ve, ekrana birşey yazdırırken, htmlspecialchars() kullanmayı unutmayın...

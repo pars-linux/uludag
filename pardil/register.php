@@ -38,10 +38,21 @@
     }
   }
 
+
   if (isset($_POST['register']) && count($arr_errors) == 0) {
     // İşlem
-    // ...
+
+    $int_status = (proc_getopt('register_activation_required') == 'true') ? 0 : 1;
+    $int_user = proc_user_new($_POST['register_username'], md5($_POST['register_password']), $_POST['register_email'], $_POST['register_name'], 1);
+    proc_activation_new($int_user, $int_status);
+
+    if ($int_status == 0) {
+      // E-posta gönderimi
+
+    }
+
     header('Location: register_ok.php');
+    exit;
   }
   else {
     $_PCONF['title'] = CONF_NAME . ' - ' . _('User Registration');
