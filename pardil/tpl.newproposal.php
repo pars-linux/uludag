@@ -1,3 +1,18 @@
+<?php
+  function print_error($str_name, $str_sub='') {
+    global $arr_errors;
+    if ($str_sub == '') {
+      if (isset($arr_errors[$str_name])) {
+        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name]);
+      }
+    }
+    else {
+      if (isset($arr_errors[$str_name][$str_sub])) {
+        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name][$str_sub]);
+      }
+    }
+  }
+?>
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="tr">
@@ -5,6 +20,27 @@
     <title><?php echo _('New Proposal'); ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript">
+      function p_escape(str_in) {
+        var str_out = '';
+        for (var i = 0; i < str_in.length; i++) {
+          if ((33 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 47) || (58 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 64) || (91 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 96) || (123 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 127)) {
+            str_out += escape(str_in.charAt(i));
+          }
+          else {
+            str_out += str_in.charAt(i);
+          }
+        }
+        return str_out;
+      }
+      function new_section() {
+        if (document.getElementById('new_content_title').value != '') {
+          document.getElementById('new_content_i').value = parseInt(document.getElementById('new_content_i').value) + 1;
+          document.getElementById('new_content_title').name = 'new_content[' + p_escape(document.getElementById('new_content_i').value + '_' + document.getElementById('new_content_title').value) + ']';
+          document.getElementById('new_content_title').value = '';
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="container">
@@ -39,12 +75,22 @@
                 <td class="label">&nbsp;</td>
                 <td>&nbsp;</td>
               </tr>
+              <?php
+              /*
+                JS destekli dinamik bölüm oluşturma ile ilgili not:
+                ===================================================
+
+                Eğer, bölüm adresi ilgili alana yazıldıktan sonra, "Ekle >>" (ya da "Add >>") düğmesine basılırsa, 
+                "new_content[başlık]" adında bir form elemanı yaratılır ve form gönderimi yapılır. Form gönderiminin 
+                ardından sayfa yeniden yüklendiğinde, "new_content" dizisinin her elemanı için bir textarea oluşturulur. 
+              */
+              ?>
               <tr>
                 <td class="label"><?php echo _('New Section:'); ?></td>
                 <td>
                   <input type="hidden" id="new_content_i" name="new_content_i" value="<?php printf('%d', (isset($_POST['new_content_i']) ? $_POST['new_content_i'] : 0)); ?>"/>
                   <input type="text" id="new_content_title" size="25" style="width: 340px;" onkeypress="if (event.which == 13 || event.keyCode == 13) { document.getElementById('new_content_title_add').click(); }"/>
-                  <button id="new_content_title_add" type="submit" name="new_content_title_add" value="true" onclick="if (document.getElementById('new_content_title').value != '') { document.getElementById('new_content_i').value = parseInt(document.getElementById('new_content_i').value) + 1; document.getElementById('new_content_title').name = 'new_content[' + document.getElementById('new_content_i').value + '_' + document.getElementById('new_content_title').value + ']'; document.getElementById('new_content_title').value = '' ; }"><?php echo _('Add &raquo;'); ?></button>
+                  <button id="new_content_title_add" type="submit" name="new_content_title_add" value="true" onclick="new_section();"><?php echo _('Add &raquo;'); ?></button>
                 </td>
               </tr>
               <tr>
@@ -66,13 +112,13 @@
                 <tr>
                   <td class="label">
                     <?php
-                      $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') + 1);
-                      printf(_('Section: %s'), $str_title2);
+                      $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') - 1);
+                      printf(_('Section: %s'), urldecode($str_title2));
                     ?>
                     <a href="javascript:if (confirm('<?php printf(_('Section \\\'%s\\\' will be removed.\\nAre you sure?'), $str_title2); ?>')) { var el = document.getElementById('new_content[<?php printf('%s', addslashes($str_title)); ?>]'); el.name = ''; el.value = ''; document.getElementById('new_content_title_add').value = ''; document.getElementById('new_content_title').value = ''; document.getElementById('new_content_title_add').click(); }" title="<?php echo _('Remove Section'); ?>">[x]</a>
                   </td>
                   <td>
-                    <textarea id="new_content[<?php printf('%s', addslashes($str_title)); ?>]" name="new_content[<?php printf('%s', addslashes($str_title)); ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php printf('%s', htmlspecialchars($str_body)); ?></textarea>
+                    <textarea id="new_content[<?php echo $str_title; ?>]" name="new_content[<?php echo $str_title; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php printf('%s', htmlspecialchars($str_body)); ?></textarea>
                   </td>
                 </tr>
               <?php      
