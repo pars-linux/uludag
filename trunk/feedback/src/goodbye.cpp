@@ -12,6 +12,6 @@
 #include "goodbye.h"
 
 Goodbye::Goodbye( QWidget *parent, const char* name )
-    : GoodbyeDlg( parent, name )
+	: GoodbyeDlg( parent, name )
 {
 }

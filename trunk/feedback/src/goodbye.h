@@ -17,7 +17,7 @@
 class Goodbye : public GoodbyeDlg
 {
 public:
-    Goodbye( QWidget *parent = 0, const char* name = 0 );
+	Goodbye( QWidget *parent = 0, const char* name = 0 );
 };
 
 #endif // GOODBYE_H

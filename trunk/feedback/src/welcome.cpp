@@ -12,6 +12,6 @@
 #include "welcome.h"
 
 Welcome::Welcome( QWidget *parent, const char* name )
-    : WelcomeDlg( parent, name )
+	: WelcomeDlg( parent, name )
 {
 }
