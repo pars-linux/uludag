@@ -1,0 +1,22 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+DocPath=kcontrol/icons/index.html
+Icon=icons
+Exec=kcmshell icons
+
+X-KDE-ModuleType=Library
+X-KDE-Library=icons
+X-KDE-FactoryName=icons
+X-KDE-ParentApp=tasma
+
+Name=Icons
+Name[tr]=Simgeler
+
+Comment=Customize KDE Icons
+Comment[tr]=KDE Simgelerini Özelleştirir
+
+Keywords=icons,effects,size,hicolor,locolor
+Keywords[tr]=simgeler,efektler,boyut,yüksek renk,düşük renk
+
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
