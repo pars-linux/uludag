@@ -23,6 +23,7 @@
 #include <qlistbox.h>
 #include <qlineedit.h>
 #include <qtimer.h>
+#include <qregexp.h>
 
 #include <kprocess.h>
 #include <klocale.h>
@@ -31,6 +32,8 @@
 
 #include "devicesettings.h"
 #include "devicesettings.moc"
+
+#define RESOLV_CONF "/etc/resolv.conf"
 
 DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
     : DeviceSettingsDlg( parent ),
@@ -41,8 +44,17 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
     // fill automatic types, for now only DHCP is supported
     automaticCombo->insertItem( "DHCP" );
 
-    // clear DNS list
+    // fill dnsListBox
     dnsListBox->clear();
+    QStringList dnsList = getDnsList();
+    QStringList::ConstIterator end = dnsList.end();
+    for ( QStringList::ConstIterator it = dnsList.begin();
+          it != end; ++it ) {
+        dnsListBox->insertItem( *it );
+    }
+
+    connect( removeDnsButton, SIGNAL( clicked() ),
+             this, SLOT( removeDns() ) );
 
 
     // get device information from kernel.
@@ -294,5 +306,35 @@ void DeviceSettings::manualToggled( bool on )
         addDnsButton->setEnabled( true );
         removeDnsButton->setEnabled( true );
     }
+}
+
+QStringList DeviceSettings::getDnsList()
+{
+    QStringList dnsList;
+    QFile res_file( RESOLV_CONF ); // resolv.conf
+    QString line;
+
+    if (  !res_file.exists() || !res_file.open(  IO_ReadOnly ) )
+        return QStringList();
+
+    while ( -1 != res_file.readLine( line, 1024 ) ) {
+        line = line.stripWhiteSpace();
+        if ( line.startsWith( "nameserver" ) ) {
+            QRegExp rx( "\\d+\\.\\d+\\.\\d+\\.\\d+" );
+            int index = rx.search( line );
+            if ( index >= 0 ) {
+                dnsList.append( rx.cap() );
+            }
+        }
+    }
+
+    res_file.close();
+    return dnsList;
+}
+
+void DeviceSettings::removeDns()
+{
+    dnsListBox->removeItem(
+        dnsListBox->currentItem() );
 }
 
