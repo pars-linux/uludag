@@ -24,10 +24,12 @@
 #include <qlineedit.h>
 #include <qtimer.h>
 #include <qregexp.h>
+#include <qvalidator.h>
 
 #include <kprocess.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kinputdialog.h>
 #include <kconfig.h>
 
 #include "devicesettings.h"
@@ -53,6 +55,8 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
         dnsListBox->insertItem( *it );
     }
 
+    connect( addDnsButton, SIGNAL( clicked() ),
+             this, SLOT( addDns() ) );
     connect( removeDnsButton, SIGNAL( clicked() ),
              this, SLOT( removeDns() ) );
 
@@ -336,5 +340,20 @@ void DeviceSettings::removeDns()
 {
     dnsListBox->removeItem(
         dnsListBox->currentItem() );
+}
+
+void DeviceSettings::addDns()
+{
+    QRegExp rx( "\\d+\\.\\d+\\.\\d+\\.\\d+" );
+    QValidator *validator = new QRegExpValidator( rx, this );
+    QString newdns = KInputDialog::getText( i18n( "Add new nameserver" ),
+                                            i18n( "Add a new name server." ),
+                                            QString::null,
+                                            0,
+                                            this,
+                                            "getDNSdialog",
+                                            validator );
+
+    dnsListBox->insertItem( newdns );
 }
 
