@@ -1425,7 +1425,9 @@ $ svn help add
 \layout LyX-Code
 
 add: Put files and directories under version control, scheduling them for
- addition to repository.
+\layout LyX-Code
+
+addition to repository.
   They will be added in next commit.
  usage: add PATH...
 \layout LyX-Code
