@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-28 16:02+0200\n"
+"POT-Creation-Date: 2005-02-05 23:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,26 +80,30 @@ msgid ""
 "have a tree-button mouse, the middle buttons is unaffected."
 msgstr ""
 
-#: wallpaperdlg.cpp:82
+#: wallpaperdlg.cpp:90
 msgid "WallpaperDlg"
 msgstr ""
 
-#: wallpaperdlg.cpp:83
-msgid "Preview :"
-msgstr ""
-
-#: wallpaperdlg.cpp:84
-msgid "pix_wallpaper"
-msgstr ""
-
-#: wallpaperdlg.cpp:85
+#: wallpaperdlg.cpp:91
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish :)."
 msgstr ""
 
-#: wallpaperdlg.cpp:86
+#: wallpaperdlg.cpp:92
 msgid "Wallpaper :"
+msgstr ""
+
+#: wallpaperdlg.cpp:93
+msgid "Preview :"
+msgstr ""
+
+#: wallpaperdlg.cpp:94
+msgid "pix_wallpaper"
+msgstr ""
+
+#: wallpaperdlg.cpp:95
+msgid "Don't change desktop background!"
 msgstr ""
 
 #: welcomedlg.cpp:75
