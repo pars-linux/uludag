@@ -60,10 +60,11 @@
     [%+ terms.bugs %] are shown.
 
   [% ELSIF message_tag == "change_columns" %]
-    [% title = "Change columns" %]
-    Resubmitting your search with new columns...
-    Click <a href="[% redirect_url FILTER html %]">here</a>
-    if the page does not automatically refresh.
+    [% title = "Kolon değişikliği" %]
+    Aramanız yeni kolonlarla tekrarlanıyor...
+    Sayfa kendisini otomatik olarak yeniden yüklemezse 
+    <a href="[% redirect_url FILTER html %]">burayı</a> 
+    tıklayın.
 
   [% ELSIF message_tag == "emailold_change_cancelled" %]
     [% title = "Cancel Request to Change Email Address" %]
@@ -100,47 +101,47 @@
     Your request has been cancelled.
 
   [% ELSIF message_tag == "password_change_request" %]
-    [% title = "Request to Change Password" %]
-    A token for changing your password has been emailed to you.
-    Follow the instructions in that email to change your password.
+    [% title = "Parola Değişikliği Talebi" %]
+    Parola değişikliği onayı için size bir e-posta gönderildi.
+    Parolanızı değiştirmek için bu e-postada yazan talimatları uygulamalısınız.
 
   [% ELSIF message_tag == "password_changed" %]
-    [% title = "Password Changed" %]
-    Your password has been changed.
+    [% title = "Parola Değiştirildi" %]
+    Parolanız değiştirildi.
 
   [% ELSIF message_tag == "flag_type_created" %]
-    [% title = "Flag Type Created" %]
-      The flag type <em>[% name FILTER html %]</em> has been created.
-      <a href="editflagtypes.cgi">Back to flag types.</a>
+    [% title = "Flama Tipi Oluşturuldu" %]
+      <em>[% name FILTER html %]</em> isimli yeni flama tipi oluşturuldu.
+      <a href="editflagtypes.cgi">Flama tiplerine dönüş.</a>
     
   [% ELSIF message_tag == "flag_type_changes_saved" %]
-    [% title = "Flag Type Changes Saved" %]
+    [% title = "Flama Tipi Değişiklikleri Kaydedildi" %]
     <p>
-      Your changes to the flag type <em>[% name FILTER html %]</em> 
-      have been saved.
-      <a href="editflagtypes.cgi">Back to flag types.</a>
+      <em>[% name FILTER html %]</em> isimli flamada yaptığınız 
+      değişiklikler kaydedildi.
+      <a href="editflagtypes.cgi">Flama tiplerine dönüş.</a>
     </p>
     
   [% ELSIF message_tag == "flag_type_deleted" %]
     [% title = "Flama Tipi Silindi" %]
     <p>
-      The flag type <em>[% name FILTER html %]</em> has been deleted.
-      <a href="editflagtypes.cgi">Back to flag types.</a>
+      <em>[% name FILTER html %]</em> isimli flama tipi silindi.
+      <a href="editflagtypes.cgi">Flama tiplerine dönüş.</a>
     </p>
     
   [% ELSIF message_tag == "flag_type_deactivated" %]
-    [% title = "Flag Type Deactivated" %]
+    [% title = "Flama Tipi Pasif Hale Getirildi" %]
     <p>
-      The flag type <em>[% flag_type.name FILTER html %]</em> 
-      has been deactivated.
-      <a href="editflagtypes.cgi">Back to flag types.</a>
+      <em>[% flag_type.name FILTER html %]</em> isimli flama tipi 
+      pasif hale getirildi.
+      <a href="editflagtypes.cgi">Flama tiplerine dönüş.</a>
     </p>
     
   [% ELSIF message_tag == "product_invalid" %]
     [% title = "$terms.Bugzilla Component Descriptions" %]
-    The product <em>[% product FILTER html %]</em> does not exist
-    or you don't have access to it. The following is a list of the
-    products you can choose from.
+    <em>[% product FILTER html %]</em> isimli bir ürün ya da 
+    bu ürüneerişim hakkınız bulunmamaktadır. Seçebileceğiniz ürünlerin 
+    listesi şu şekildedir.
 
   [% ELSIF message_tag == "series_created" %]
     [% title = "Series Created" %]
@@ -155,7 +156,7 @@
       <a href="query.cgi?format=create-series">create another series</a>.
     
   [% ELSIF message_tag == "shutdown" %]
-    [% title = "$terms.Bugzilla is Down" %]
+    [% title = "$terms.Bugzilla Kapalıdır" %]
     [% Param("shutdownhtml") %]
     
   [% ELSE %]

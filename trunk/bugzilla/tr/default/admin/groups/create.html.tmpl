@@ -20,20 +20,21 @@
   #                 Joel Peshkin <bugreport@peshkin.net>
   #                 Jacob Steenhagen <jake@bugzilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
 
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Add group"
-  h2 = "This page allows you to define a new user group."
+  title = "Yeni gurup ekle"
+  h2 = "Bu sayfa yeni bir kullanıcı gurubu ekleminizi sağlamaktadır."
 %]
 
 <form method="post" action="editgroups.cgi">
   <table border="1" cellpadding="4" cellspacing="0"><tr>
-    <th>New Name</th>
-    <th>New Description</th>
-    <th>New User RegExp</th>
-    <th>Use For [% terms.Bugs %]</th>
+    <th>Yeni İsim</th>
+    <th>Yeni Açıklama</th>
+    <th>Yeni Kullanıcı RegExp</th>
+    <th>Kullanılacak [% terms.Bugs %] Bildirimleri</th>
   </tr><tr>
     <td><input size="20" name="name"></td>
     <td><input size="40" name="desc"></td>
@@ -43,8 +44,8 @@
 
   <input type="checkbox" name="insertnew" value="1"
     [% IF Param("makeproductgroups") %] checked[% END %]>
-    Insert new group into all existing products.<p>
-  <input type="submit" value="Add">
+    Yeni gurubu mevcut tüm ürünlere ekle.<p>
+  <input type="submit" value="Ekle">
   <input type="hidden" name="action" value="new">
 </form>
 
