@@ -13,6 +13,7 @@
 
 
 include("globals.inc.php");
+include("functions_admin.inc.php");
 //------------------------------------------------------------
 function MYSQLConnect() {
 	global $MYSQLHOST, $MYSQLUSER, $MYSQLPASSWORD, $DATABASENAME;
@@ -129,6 +130,30 @@ function PrintGroup($groupid) {
 	$col1[1] = "Grup Adı";
 	$col1[2] = "Sorumlu";
 	PrintColoumnsAsTable($col1, $resultgroup);
+}
+//------------------------------------------------------------
+function ListBrands($resultBrands, $printFor) {
+	$i = 0;
+	global $userid, $grpid;
+	while(($rowBrands = mysql_fetch_row($resultBrands))) {
+		$i++;
+		if($i%2 == 1)
+			echo "<tr>\n";
+		echo "<td><a href=\"?action=brands&grpid=$rowBrands[0]\">$rowBrands[1]</a>";
+		if($printFor == "admin" || IsManaggedBy($userid, $grpid)) {
+			echo "&nbsp;&nbsp;<a href=\"?action=editgroup&grpid=$rowBrands[0]\">[Düzenle]</a>\n";
+			echo "&nbsp;<a href=\"?action=delgroup&grpid=$rowBrands[0]\">[Sil]</a>";
+		}
+		echo "</td>\n";
+		if($i%2 == 0)
+			echo "</tr>\n";
+	}
+}
+//------------------------------------------------------------
+function GetGroupName($grpid) {
+	$resultgroup = mysql_query("select name from pardul.group where id = '$grpid'");
+	$rowgroup = mysql_fetch_row($resultgroup);
+	return $rowgroup[0];
 }
 //------------------------------------------------------------
 ?>

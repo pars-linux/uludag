@@ -15,8 +15,9 @@
 
 
 include("../inc/functions.inc.php");
-include("../inc/functions_admin.inc.php");
+
 $link = MYSQLConnect();
+
 $action = $HTTP_GET_VARS[action];
 if($action == "")
 	$action = $HTTP_POST_VARS[action];
@@ -26,7 +27,8 @@ $grpmanager = $HTTP_GET_VARS[grpmanager];
 $grpid = $HTTP_GET_VARS[grpid];
 $formsubmitted = $HTTP_GET_VARS[formsubmitted];
 $approved = $HTTP_GET_VARS[approved];
-	if($action == "login")
+
+if($action == "login")
 	require("login.php");
 else {
 	session_start();
@@ -36,6 +38,7 @@ else {
 		exit;
 	}
 }
+
 $loggedin = $HTTP_SESSION_VARS[loggedin];
 $userid = $HTTP_SESSION_VARS[userid];
 $roleid = $HTTP_SESSION_VARS[roleid];
