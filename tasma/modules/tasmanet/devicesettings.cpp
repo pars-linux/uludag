@@ -44,12 +44,17 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
 {
     // ip validator
     rx = new QRegExp( "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}" );
-    QValidator *validator = new QRegExpValidator( *rx, this );
+    validator = new QRegExpValidator( *rx, this );
 
     ipaddr->setValidator( validator );
     defaultgw->setValidator( validator );
     broadcast->setValidator( validator );
     netmask->setValidator( validator );
+
+    // if ipaddr is changed we should recalculate broadcast and netmask
+    // for now we just clear it.
+    connect( ipaddr, SIGNAL( textChanged( const QString& ) ),
+             this, SLOT( slotIPChanged() ) );
 
     // fill automatic types, for now only DHCP is supported
     automaticCombo->insertItem( "DHCP" );
@@ -133,6 +138,8 @@ void DeviceSettings::slotApply()
             QString err = i18n( "Failed to configure device: " ) + _dev;
             KMessageBox::error( this, err, i18n( "Error!" ) );
         }
+
+        writeDnsList();
     }
     /* Automatic (DHCP) */
     else if ( automaticButton->isChecked() ) {
@@ -343,6 +350,25 @@ QStringList DeviceSettings::getDnsList()
     return dnsList;
 }
 
+int DeviceSettings::writeDnsList()
+{
+    QFile res_file( RESOLV_CONF ); // resolv.conf
+
+    if (  !res_file.exists() || !res_file.open(  IO_WriteOnly|IO_Truncate ) )
+        return -1;
+
+    QTextStream str( &res_file );
+    unsigned int num = dnsListBox->count();
+    for ( unsigned int row = 0; row < num; ++row ) {
+        QString line = "nameserver " + dnsListBox->text( row );
+        str << "nameserver " + dnsListBox->text( row ) + "\n";
+    }
+
+    res_file.close();
+
+    return 0;
+}
+
 void DeviceSettings::removeDns()
 {
     dnsListBox->removeItem(
@@ -368,3 +394,11 @@ DeviceSettings::~DeviceSettings()
     delete validator;
 }
 
+void DeviceSettings::slotIPChanged()
+{
+    // if broadcast and netmask is modified, user knows what he/she is doing
+    if ( !broadcast->isModified() )
+        broadcast->clear();
+    if ( !netmask->isModified() )
+        netmask->clear();
+}
