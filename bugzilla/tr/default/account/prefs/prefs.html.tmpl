@@ -55,7 +55,7 @@
               saveable => "1" },
             { name => "footer", description => "Sayfa sonu", 
               saveable => "1" },
-            { name => "permissions", description => "İzinlers", 
+            { name => "permissions", description => "İzinler", 
               saveable => "0" } ] %]
 
 <center>
@@ -84,8 +84,7 @@
 [% IF changes_saved %]
   <p>
     <font color="red">
-      The changes to your 
-      [% current_tab.description FILTER lower %] have been saved.
+      [% current_tab.description FILTER lower %] için yaptığınız değişiklikler kaydedilmiştir.
     </font>
   </p>
   [% IF changes_saved != 1 %]
@@ -118,7 +117,7 @@
       <tr>
         <td width="150"></td>
         <td>
-          <input type="submit" value="Submit Changes">
+          <input type="submit" value="Değişiklikleri Kaydet">
          </td>
       </tr>
     </table>
