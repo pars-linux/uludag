@@ -34,7 +34,7 @@ int main( int argc, char* argv[] )
     KApplication app;
 
     Kaptan *k = new Kaptan();
-    k->setFixedSize( 480, 400 );
+    k->setFixedSize( 490, 400 );
     k->show();
 
     return app.exec();
