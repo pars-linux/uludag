@@ -1,0 +1,174 @@
+/* Page layout */
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #ffffff;
+  font-family: Verdana, Sans, sans-serif;
+}
+#container {
+  margin: 25px;
+  padding: 0px;
+}
+#header {
+  margin-bottom: 10px;
+}
+#menubar {
+  border: 1px solid #bbb;
+  background-color: #eee;
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 11px;
+  padding: 3px;
+}
+#menu {
+  display: none;
+  /*
+  width: 160px;
+  margin: 0px 10px 0px 0px;
+  padding: 10px;
+  float: left;
+  font-family: Verdana, Sans, sans-serif;
+  */
+}
+#content {
+  margin: 0px;
+  padding: 0px;
+}
+#footer {
+  clear: both;
+  padding: 10px 10px 10px 190px;
+}
+
+/* Menubar */
+
+#menubar .arrowL, #menubar .arrowR {
+  width: 20px;
+  display: block;
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 13px;
+  color: #666;
+  text-decoration: none;
+}
+#menubar a.arrowL:hover, #menubar a.arrowR:hover {
+  color: #000;
+  text-decoration: none;
+}
+#menubar span.arrowL:hover, #menubar span.arrowR:hover {
+  color: #666;
+  text-decoration: none;
+}
+#menubar .arrowL {
+  float: left;
+  text-align: left;
+}
+#menubar .arrowR {
+  float: right;
+  text-align: right;
+}
+#menubar .title {
+  padding: 0px 20px 0px 20px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+#menubar .title *:first-child {
+  color: #cb1717
+}
+/* ugo */
+.ugo h1 {
+  display: none;
+}
+.ugo h2, .ugo h2 a, .ugo h2 a:hover {
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  border-bottom: 0px;
+}
+
+.ugo dt span.no {
+  color: #cb1717;
+}
+
+.ugo dl.contents {
+  color: #cb1717;
+  font-weight: bold;
+}
+
+.ugo .revisions h3 {
+  margin-left: 15px;
+}
+.ugo .revisions h3 a {
+  color: #cb1717;
+  font-weight: bold;
+}
+.ugo .revisions p {
+  margin-left: 30px;
+}
+
+.ugo ul {
+  list-style: url(images/li-square.png);
+}
+.ugo ol {
+  color: #cb1717;
+  font-weight: bold;
+}
+.ugo ol li {
+  margin-bottom: 2px;
+}
+.ugo ol li.square {
+  list-style: url(images/li-square.png);
+  margin-bottom: 2px;
+}
+.ugo a {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 2px;
+}
+.ugo a:hover {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+.ugo .hr {
+  border-top: 1px solid #aaa;
+}
+
+/* Forms */
+table.form {
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 11px;
+  color: #000;
+  width: 100%;
+}
+
+table.form td input, table.form td textarea, table.form td select {
+  background-color: #eee;
+  border: 1px solid #999;
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 11px;
+}
+
+table.form td.label {
+  font-weight: bold;
+  color: #cb1717;
+  width: 160px;
+}
+table.form td.error {
+  color: #f00;
+}
+table.form td.info {
+  color: #666;
+}
+/*
+table.form td input[type='text'], table.form td input[type='password'], table.form td textarea, table.form td select {
+  min-width: 300px;
+  max-width: 800px;
+  width: 80%;
+}
+*/
