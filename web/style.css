@@ -164,3 +164,18 @@ h1 {
 	padding-bottom: 1em;
 	border-bottom: thin dashed #33A8FF;
 }
+
+.navbar {
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
+.navbut {
+	color: #000000;
+	padding-right: 2em;
+}
+
+.navhide {
+	color: #909090;
+	padding-right: 2em;
+}
