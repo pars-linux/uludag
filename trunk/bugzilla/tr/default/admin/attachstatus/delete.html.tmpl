@@ -24,29 +24,29 @@
 [% name = name FILTER html %]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Confirm Delete of Attachment Status '$name'" 
+  title = "'$name' isimli Eklenti Durumunu sil" 
 %]
 
 <p>
-   [% attachcount %] attachments have the status '[% name %]'. If you delete
-   it, those attachments will lose this status.
+   [% attachcount %] eklentinin durumu '[% name %]' 'dur. Bunu silerseniz,
+   eklentiler bu durumlarını kaybederler.
 </p>
 
 <table>
    <tr>
       <td colspan=2>
-         Do you really want to delete this status?
+         Bu durumu silmek istediğinize emin misiniz?
       </td>
    </tr>
    <tr>
       <td>
          <a href="editattachstatuses.cgi?action=delete&id=[% id %]">
-            Yes, delete
+            Evet, sil
          </a>
       </td>
       <td align="right">
          <a href="editattachstatuses.cgi">
-            No, don't delete
+            Hayır, silme
          </a>
       </td>
    </tr>

@@ -31,19 +31,19 @@
   <tr>
     <td>
       [% IF has_bits.size %]
-        You have the following permission bits set on your account:
+        Hesabınızda aşağıdaki izin tanımları bulunmaktadır:
         <ul>
           [% FOREACH bit_description = has_bits %]
             <li>[% bit_description %]</li>
           [% END %]
         </ul>
       [% ELSE %]
-        There are no permission bits set on your account.
+        Hesabınızda herhangi bir izin tanımı bulunmamaktadır.
       [% END %]
 
       [% IF set_bits.size %]
-        And you can turn on or off the following bits for
-        <a href="editusers.cgi">other users</a>:
+        Ve
+        <a href="editusers.cgi">diğer kullanıcılar</a> için aşağıdaki izin tanımlarını açabilir ya da kapatabilirsiniz:
         <p>
           <ul>
           [% FOREACH bit_description = set_bits %]

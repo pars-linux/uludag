@@ -28,7 +28,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Edit Attachment Status"
+  title = "Eklenti Durumu Düzenleme"
   style = "
     th { text-align: right; vertical-align: top; }
     td { text-align: left; vertical-align: top; }
@@ -48,21 +48,21 @@
     </tr>
 
     <tr>
-      <th>Description:</th>
+      <th>Açıklama:</th>
       <td>
         <textarea name="desc" rows="4" cols="50">[% desc FILTER html %]</textarea>
       </td>
     </tr>
 
     <tr>
-      <th>Sort Key:</th>
+      <th>Dizim Aahtarı:</th>
       <td>
         <input type="text" name="sortkey" value="[% sortkey %]" size="5" maxlength="5">
       </td>
     </tr>
 
     <tr>
-      <th>Product:</th>
+      <th>Ürün:</th>
       <td>
         [% product FILTER html %]
       </td>
@@ -71,7 +71,7 @@
     <tr>
       <th></th>
       <td>
-        <input type="submit" value="Update">
+        <input type="submit" value="Güncelle">
       </td>
     </tr>
 

@@ -30,7 +30,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl 
-  title = 'Administer Attachment Statuses'
+  title = 'Eklentş Durumu Yönetimi'
   message = message
   style = "
     th { text-align: left; }
@@ -40,11 +40,11 @@
 <table cellspacing="0" cellpadding="4" border="1">
 
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Sort Key</th>
-    <th>Product</th>
-    <th>Action(s)</th>
+    <th>İsim</th>
+    <th>Açıklama</th>
+    <th>Dizim anahtarı</th>
+    <th>Ürün</th>
+    <th>İşlem(ler)</th>
   </tr>
 
   [% FOREACH statusdef = statusdefs %]
@@ -56,13 +56,13 @@
       <td>[% statusdef.product FILTER html %]</td>
       <td>
         <a href="editattachstatuses.cgi?action=edit&id=[% statusdef.id %]">
-            Edit</a>
+            Düzenle</a>
         &nbsp;|&nbsp;
         <a href="editattachstatuses.cgi?action=confirmdelete&id=[% statusdef.id %]" 
          onclick="return confirmDelete([% statusdef.attachcount %],
                                        '[% statusdef.name FILTER js %]',
                                        [% statusdef.id %]);">
-            Delete</a>
+            Sil</a>
       </td>
     </tr>
 
@@ -71,7 +71,7 @@
   <tr>
     <td colspan="4"></td>
     <td>
-      <a href="editattachstatuses.cgi?action=create">Create</a>
+      <a href="editattachstatuses.cgi?action=create">Oluştur</a>
     </td>
   </tr>
 
@@ -80,14 +80,14 @@
   function confirmDelete(attachcount, name, id)
   {
     if (attachcount > 0) {
-        msg = attachcount + ' attachments have the status ' +
-              name + '.  If you delete it, those attachments ' +
-              'will lose this status.  Do you really want to ' +
-              'delete this status?';
+        msg = attachcount + ' eklentinin durumu ' +
+              name + ' dur.  Bunu silerseniz, eklentiler ' +
+              'bu durumlarını kaybederler.  Bu durum kaydını gerçekten ' +
+              'silmek istiyor musunuz?';
     }
     else {
-        msg = 'Are you sure you want to delete attachment status ' +
-              name + '?';
+        msg = 'Gerçekten ' +
+              name + ' isimli eklenti durumunu silmek istiyor musunuz?';
     }
     if (confirm(msg)) {
       location.href = "editattachstatuses.cgi?action=delete&id=" + id;
