@@ -73,6 +73,7 @@ a:hover {
 	width:32%;
 	float:left;
 	text-align:left;
+	vertical-align:top;
 }
 
 .bottom  p {
