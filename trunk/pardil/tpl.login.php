@@ -57,7 +57,7 @@
                 <tr>
                   <td class="label">&nbsp;</td>
                   <td>
-                    <b>&raquo;</b> <a href="#"><?php echo __('Forgot your password?'); ?></a>
+                    <b>&raquo;</b> <a href="password.php"><?php echo __('Forgot your password?'); ?></a>
                     <br/>
                     <b>&raquo;</b> <a href="#"><?php echo __('Need activation?'); ?></a>
                     <br/>

@@ -256,7 +256,7 @@ CREATE TABLE `options` (
   `comment` tinytext NOT NULL,
   PRIMARY KEY  (`opt`),
   FULLTEXT KEY `option` (`opt`)
-) TYPE=MyISAM COMMENT='Seçenekler' AUTO_INCREMENT=4;
+) TYPE=MyISAM COMMENT='Seçenekler';
 
 -- 
 -- Tablo döküm verisi `options`
@@ -268,6 +268,8 @@ INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('register_activation_r
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_name', 'Pardil', 'Site adı');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_title', 'Pardus İyileştirme Listesi', 'Site başlığı');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_url', 'http://sinus.homelinus.org/pardil/', 'Site adresi');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('temporary_password_timeout', '900', 'Geçici şifre ömrü (saniye cinsinden)');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('session_timeout', '900', 'Oturum ömrü (saniye cinsinden)');
 
 -- 
 -- Tablo yapısı : `activation`
@@ -289,12 +291,12 @@ INSERT INTO `activation` (`user`, `code`, `status`) VALUES (1, 'c4ca4238a0b92382
 
 
 -- 
--- Tablo yapısı : `passwords`
+-- Tablo yapısı : `temp_passwords`
 -- 
 
-CREATE TABLE `passwords` (
+CREATE TABLE `temp_passwords` (
   `user` int(10) unsigned NOT NULL default '0',
-  `code` varchar(32) NOT NULL default '',
+  `password` varchar(10) NOT NULL default '',
   `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`user`)
-) TYPE=MyISAM COMMENT='Şifre sıfırlama kodları';
+) TYPE=MyISAM COMMENT='Geçici şifreler';

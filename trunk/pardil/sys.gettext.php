@@ -11,5 +11,10 @@
     global $obj_gettext;
     return $obj_gettext->translate($str_text);
   }
+  
+  function __e($str_text) {
+    global $obj_gettext;
+    echo $obj_gettext->translate($str_text);
+  }
 
 ?>
