@@ -268,7 +268,7 @@ INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('register_activation_r
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_name', 'Pardil', 'Site adı');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_title', 'Pardus İyileştirme Listesi', 'Site başlığı');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_url', 'http://sinus.homelinus.org/pardil/', 'Site adresi');
-INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('temporary_password_timeout', '900', 'Geçici şifre ömrü (saniye cinsinden)');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('temp_password_timeout', '900', 'Geçici şifre ömrü (saniye cinsinden)');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('session_timeout', '900', 'Oturum ömrü (saniye cinsinden)');
 
 -- 
