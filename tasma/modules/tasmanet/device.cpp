@@ -136,6 +136,9 @@ int Device::setDefaultRoute( const char *ip )
     route.rt_dst = *(struct sockaddr *)&sindst;
     route.rt_gateway = *(struct sockaddr *)&singw;
     route.rt_flags = RTF_GATEWAY;
+
+    /* del the route if its set before */
+    ioctl( skfd, SIOCDELRT, &route );
     if( ioctl( skfd, SIOCADDRT, &route ) < 0) {
         ret = -1;
     }
