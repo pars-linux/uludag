@@ -9,10 +9,10 @@
       <div id="content">
         <div class="proposal">
           <p>
-            <b>&raquo;</b> <a href="login.php"><?php echo _('User Login'); ?></a>
+            <b>&raquo;</b> <a href="login.php"><?php echo __('User Login'); ?></a>
           </p>
           <p>
-            <b><?php echo _('Session Information:'); ?></b>
+            <b><?php echo __('Session Information:'); ?></b>
           </p>
           <?php
             echo '<pre>';

@@ -4,20 +4,17 @@
       <div id="menubar">
         <span class="arrowL">&#171;</span>
         <span class="arrowR">&#187;</span>
-        <span class="title"><?php echo __('Registration Complete'); ?></span>
+        <span class="title"><?php echo __('Logged Out'); ?></span>
       </div>
       <div id="content">
         <div class="proposal">
-          <h2><?php echo __('Registration Complete'); ?></h2>
+          <h2><?php echo __('You Have Logged Out'); ?></h2>
           <p>
-            <?php echo __('You\'ve successfully registered.'); ?>
+            <?php echo __('You have successfully logged out'); ?>
           </p>
-          <?php if ($bln_activation) { ?>
           <p>
-            <?php echo __('You need to activate your account by clicking (or visiting) the URL sent to your e-mail address.'); ?>
-          </p>
-          <?php } ?>
-          <p>
+            <b>&raquo;</b> <a href="index.php"><?php echo __('Go to main page'); ?></a>
+            <br/>
             <b>&raquo;</b> <a href="login.php"><?php echo __('Go to login page'); ?></a>
           </p>
         </div>

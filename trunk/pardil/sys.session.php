@@ -11,7 +11,7 @@
       if (isset($_GET['exit']) || isset($_GET['logout']) || isset($_GET['quit'])) {
         proc_session_delete($_PSESSION['session']);
         setcookie('pardil_session', '');
-        header('Location: login.php');
+        header('Location: logout.php');
         exit;
       }
       $_PSESSION = mysql_fetch_array($res_sql, MYSQL_ASSOC);

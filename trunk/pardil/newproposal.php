@@ -19,27 +19,27 @@
   if (isset($_POST['new_proposal']) && !isset($_POST['new_content_title_add'])) {
     // Başlık
     if (strlen($_POST['new_title']) == 0) {
-      $arr_errors['new_title'] = _('Title should be written.');
+      $arr_errors['new_title'] = __('Title should be written.');
     }
     // Özet
     if (strlen($_POST['new_abstract']) == 0) {
-      $arr_errors['new_abstract'] = _('Abstract should be written.');
+      $arr_errors['new_abstract'] = __('Abstract should be written.');
     }
     // Bölümler
     if (isset($_POST['new_content'])) {
       foreach ($_POST['new_content'] as $str_title => $str_body) {
         if (strlen($str_body) == 0) {
           $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') + 1);
-          $arr_errors['new_content'][$str_title] = sprintf(_('Section "%s" should be written. If you don\'t want it, remove it.'), htmlspecialchars(urldecode($str_title2)));
+          $arr_errors['new_content'][$str_title] = sprintf(__('Section "%s" should be written. If you don\'t want it, remove it.'), htmlspecialchars(urldecode($str_title2)));
         }
       }
     }
     else {
-      $arr_errors['new_content_title'] = _('At least one section should be created.');
+      $arr_errors['new_content_title'] = __('At least one section should be created.');
     }
     // Sürüm Notları
     if (strlen($_POST['new_info']) == 0) {
-      $arr_errors['new_info'] = _('Release info should be written.');
+      $arr_errors['new_info'] = __('Release info should be written.');
     }
   }
 
@@ -67,7 +67,7 @@
   }
   else {
     // Formu göster...
-    $_PCONF['title'] = CONF_NAME . ' - ' . _('New Proposal');
+    $_PCONF['title'] = CONF_NAME . ' - ' . __('New Proposal');
     $obj_page = new template('tpl.newproposal.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
