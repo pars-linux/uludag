@@ -17,14 +17,15 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [%# Define strings that will serve as the title and header of this page %]
-[% title = BLOCK %]Edit Attachment #[% attachid %] for [% terms.Bug %] #[% bugid %][% END %]
-[% h1 = BLOCK %]Edit Attachment #[% attachid %] for
-  [%+ GetBugLink(bugid, "$terms.Bug $bugid") %][% END %]
+[% title = BLOCK %][% bugid %] Numaralı [% terms.Bug %] Raporu İçin Eklenmiş [% attachid %] Numaralı Dosya Eklentisinin Değiştirilmesi[% END %]
+[% h1 = BLOCK %][%+ GetBugLink(bugid, "$bugid Numaralı $terms.Bug ") %] için [% attachid %] numaralı eklentinin değiştirilmesi
+  [% END %]
 [% h2 = BLOCK %][% bugsummary FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -112,7 +113,7 @@
   function switchToMode(mode)
     {
       if (mode == current_mode) {
-        alert('switched to same mode!  This should not happen.');
+        alert('aynı konuma geçildi!  Bunun olmaması gerekiyordu.');
         return;
       }
 
@@ -206,14 +207,14 @@
     <tr>
       <td width="25%">
         <small>
-        <b>Description:</b><br>
+        <b>Açıklama:</b><br>
           <textarea rows="3" cols="25" name="description" wrap="soft">[% description FILTER html %]</textarea><br>
 
-        <b>Filename:</b><br>
+        <b>Dosya Adı:</b><br>
           <input type="text" size="20" name="filename" value="[% filename FILTER html %]"><br>
-        <b>Size: </b>[% datasize FILTER unitconvert %]<br>
+        <b>Boyutu: </b>[% datasize FILTER unitconvert %]<br>
 
-        <b>MIME Type:</b><br>
+        <b>MIME Tipi:</b><br>
           <input type="text" size="20" name="contenttypeentry" value="[% contenttype FILTER html %]"><br>
 
           <input type="checkbox" id="ispatch" name="ispatch" value="1"
@@ -237,7 +238,7 @@
         </div>
 
         <input type="submit" value="Submit"><br><br>
-        <strong>Actions:</strong> <a href="attachment.cgi?id=[% attachid %]">View</a>
+        <strong>İşlemler:</strong> <a href="attachment.cgi?id=[% attachid %]">Göster</a>
         [% IF ispatch && patchviewerinstalled %]
          | <a href="attachment.cgi?id=[% attachid %]&action=diff">Diff</a>
         [% END %]

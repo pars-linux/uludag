@@ -17,14 +17,15 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [%# Define strings that will serve as the title and header of this page %]
-[% title = BLOCK %]Create New Attachment for [% terms.Bug %] #[% bugid %][% END %]
-[% h1 = BLOCK %]Create New Attachment for
-  [%+ GetBugLink(bugid, "$terms.Bug $bugid") %][% END %]
+[% title = BLOCK %][% bugid %] numaralı [% terms.Bug %] Raporu İçin Yeni Dosya Eklentisi[% END %]
+[% h1 = BLOCK %]
+  [%+ GetBugLink(bugid, "$terms.Bug $bugid") %] İçin Yeni Dosya Eklentisi Oluşturma[% END %]
 [% h2 = BLOCK %][% bugsummary FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -53,16 +54,16 @@
 
   <table class="attachment_entry">
     <tr>
-      <th>File:</th>
+      <th>Dosya:</th>
       <td>
-        <em>Enter the path to the file on your computer.</em><br>
+        <em>Dosyanın bilgisayarınızda bulunduğu yeri bulun.</em><br>
         <input type="file" name="data" size="50">
       </td>
     </tr>
     <tr>
-      <th>Description:</th>
+      <th>Açıklama:</th>
       <td>
-        <em>Describe the attachment briefly.</em><br>
+        <em>Dosya eklentisini kısa açıklayın.</em><br>
         <input type="text" name="description" size="60" maxlength="200">
       </td>
     </tr>
@@ -72,45 +73,45 @@
       </td>
     </tr>
     <tr>
-      <th>Content Type:</th>
+      <th>İçerik Türü:</th>
       <td>
-        <em>If the attachment is a patch, check the box below.</em><br>
+        <em>Dosya eklentisi bir yama ise, aşağıdaki kutucuğu işaretleyin.</em><br>
         <input type="checkbox" id="ispatch" name="ispatch" value="1"
                onchange="setContentTypeDisabledState();">
-        <label for="ispatch">patch</label><br><br>
+        <label for="ispatch">yama</label><br><br>
 
-        <em>Otherwise, choose a method for determining the content type.</em><br>
+        <em>Ya da, içerik türüne karar verebilmek için aşağıdakilerden birini seçin.</em><br>
         <input type="radio" id="autodetect"
                name="contenttypemethod" value="autodetect">
-          <label for="autodetect">auto-detect</label><br>
+          <label for="autodetect">otomatik algıla</label><br>
         <input type="radio" id="list"
                name="contenttypemethod" value="list">
-          <label for="list">select from list:</label>
+          <label for="list">listeden seç:</label>
           <select name="contenttypeselection"
                   onchange="this.form.contenttypemethod[1].checked = true;">
             [% PROCESS "attachment/content-types.html.tmpl" %]
           </select><br>
         <input type="radio" id="manual"
                      name="contenttypemethod" value="manual">
-          <label for="manual">enter manually:</label>
+          <label for="manual">elle gir:</label>
           <input type="text" name="contenttypeentry" size="30" maxlength="200"
                  onchange="if (this.value) this.form.contenttypemethod[2].checked = true;">
       </td>
     </tr>
     [% IF (Param("insidergroup") && UserInGroup(Param("insidergroup"))) %]
       <tr>
-        <th>Privacy:</th>
+        <th>Gizlilik:</th>
         <td>
-          <em>If the attachment is private, check the box below.</em><br>
+          <em>Eklentinin gizli kalması gerekiyorsa, aşağıdaki kutucuğu işaretleyin.</em><br>
           <input type="checkbox" name="isprivate" id="isprivate" value="1">
-        <label for="isprivate">Private</label>
+        <label for="isprivate">Gizli</label>
         </td>
       </tr>
     [% END %]
     <tr>
-      <th>Obsoletes:</th>
+      <th>Eskitme:</th>
       <td>
-        <em>(optional) Check each existing attachment made obsolete by your new attachment.</em><br>
+        <em>(isteğe bağlı) Mevcut tüm eklentilerin sizin yeni eklentiniz tarafından eskitildiğini kontrol et.</em><br>
         [% IF attachments.size %]
           [% FOREACH attachment = attachments %]
             [% IF ((attachment.isprivate == 0) || (Param("insidergroup")
@@ -121,32 +122,32 @@
             [% END %]
           [% END %]
         [% ELSE %]
-            [no attachments can be made obsolete]
+            [herhangi bir eklenti eskitilemez]
         [% END %]
       </td>
     </tr>
 
     [% IF (user.id != bugassignee_id) AND user.groups.editbugs %]
       <tr>
-        <th>Reassignment:</th>
+        <th>Tekrar Atama:</th>
         <td>
-          <em>If you want to assign this [% terms.bug %] to yourself,
-              check the box below.</em><br>
+          <em>Bu [% terms.bug %] raporunu kendinize tekrar atamak istiyorsanız,
+              aşağıdaki kutucuğu işaretleyin.</em><br>
           <input type="checkbox" id="takebug" name="takebug" value="1">
-          <label for="takebug">take [% terms.bug %]</label>
+          <label for="takebug">[% terms.bug %] raporunu al</label>
         </td>
       </tr>
     [% END %]
     <tr>
-      <th>Comment:</th>
+      <th>Yorum:</th>
       <td>
-        <em>(optional) Add a comment about this attachment to the [% terms.bug %].</em><br>
+        <em>(isteğe bağlı) [% terms.bug %] eklentisi hakkında bir yorum ekle.</em><br>
         <textarea wrap="soft" name="comment" rows="6" cols="80"></textarea>
       </td>
     </tr>
     <tr>
       <th>&nbsp;</th>
-      <td><input type="submit" value="Submit"></td>
+      <td><input type="submit" value="Gönder"></td>
     </tr>
   </table>
 

@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -31,7 +32,7 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Changes Submitted"
+  title = "Değişiklikler Gönderildi"
   style = "th { text-align: left; }"
 %]
 
@@ -39,30 +40,30 @@
   <tr>
     <td>
       <h2>
-        <a title="[% description FILTER html %]" href="attachment.cgi?id=[% attachid %]&amp;action=edit">Attachment #[% attachid %]</a>
-        to <a href="show_bug.cgi?id=[% bugid %]">[% terms.Bug %] #[% bugid %]</a> Created
+        <a href="show_bug.cgi?id=[% bugid %]">[% bugid %] Numaralı [% terms.Bug %]</a> için 
+        <a title="[% description FILTER html %]" href="attachment.cgi?id=[% attachid %]&amp;action=edit">[% attachid %] Numaralı Eklenti</a>
+        Oluşturuldu
       </h2>
 
       [% PROCESS "bug/process/bugmail.html.tmpl" mailing_bugid = bugid %]
 
       [% IF contenttypemethod == 'autodetect' %]
         <p>
-          <b>Note:</b> [% terms.Bugzilla %] automatically detected the content type
-          <em>[% contenttype %]</em> for this attachment.  If this is
-          incorrect, correct the value by
-          <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">editing the attachment</a>.
+          <b>Not:</b> [% terms.Bugzilla %] bu eklentinin içerik türünü
+          <em>[% contenttype %]</em> olarak algıladı.  Eğer içerik türü hatalıysa, 
+          <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">eklentiyi değiştirerek</a> değeri düzeltebilirsiniz.
         </p>
       [% END %]
     </td>
     <td>
-      <a href="show_bug.cgi?id=[% bugid %]">Go back to [% terms.bug %] #[% bugid %]</a>
+      <a href="show_bug.cgi?id=[% bugid %]">[% bugid %] numaralı [% terms.bug %] raporuna dönüş</a>
     </td>
   </tr>
 </table>
 
 <p>
-<a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Create
- Another Attachment to [% terms.Bug %] #[% bugid %]</a>
+<a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">
+ [% bugid %] Numaralı [% terms.Bug %] Raporu İçin Başka Bir Dosya Eklentisi Oluşturma</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
