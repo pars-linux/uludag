@@ -144,11 +144,12 @@ ilirsiniz.
 \layout Itemize
 
 Yazýlým Geliþtirme: Bize hakim olduðunuz ve yazýlým geliþtirmekten keyif
- aldýðýnýz programlama dillerini söyleyebilirsiniz.
+ aldýðýnýz programlama dillerini, eðer varsa daha önce geliþtirdiðiniz ya
+ da katký verdiðiniz projeleri anlatabilirsiniz.
 \layout Itemize
 
-Test: Geliþtirilen uygulamalarýn, daðýtýmýn beta sürümlerinin hatalarýný
- test edebilirsiniz.
+Test: Geliþtirilen uygulamalarý, uygulama arayüzlerinin kullanýlabilirliðini,
+ daðýtýmýn beta sürümlerini ve kök dosya sistemlerini test edebilirsiniz.
  Bu sayede biz de üzerinde özellikle durulmasý, yoðun bir þekilde test edilmesi,
  farklý donanýmlarda denenmesi gereken yeni uygulamalar için sizden bu konuda
  yardým isteyebiliriz.
@@ -172,12 +173,12 @@ Yukardaki alanlarýn dýþýnda sizin aklýnýza gelenler olabilir, onlarý da
  Örnek bir ileti þu þekilde olabilir:
 \layout LyX-Code
 
-Merhaba,
+  Merhaba,
 \layout LyX-Code
 
 \layout LyX-Code
 
-Ben Necati Demir, Çanakkale Onsekiz Mart Üniversitesi'nde bilgisayar
+  Ben Necati Demir, Çanakkale Onsekiz Mart Üniversitesi'nde bilgisayar
 \layout LyX-Code
 
 mühendisliði bölümü 4.
@@ -195,6 +196,13 @@ yardým etmek üzere haftada ortalama 5 saatimi ayýrabilirim:
 \layout LyX-Code
 
 ihtiyaçlarýnda sorumluluk alabilirim.
+ Daha önce Google API'sini
+\layout LyX-Code
+
+kullanan açýk kaynak kodlu, çok büyük olmayan bir uygulamayý
+\layout LyX-Code
+
+Python ile geliþtirmiþtim.
 \layout LyX-Code
 
   Belgelendirme: Ýyi düzeyde Ýngilizce bilgisine sahibim, sizin için
