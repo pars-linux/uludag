@@ -42,7 +42,19 @@
             <li><b><?php echo _('Id:'); ?></b> <?php printf('%04d', $arr_proposal['id']); ?></li>
             <li><b><?php echo _('Version:'); ?></b> <?php printf('%.2f', $arr_proposal['version']); ?></li>
             <li><b><?php echo _('Last Update:'); ?></b> <?php printf('%s', $arr_proposal['timestamp']); ?></li>
-            <li><b><?php echo _('Releated Proposals:'); ?></b> <?php printf('%s', ($str_releated_list) ? $str_releated_list : _('None')); ?></li>
+            <li>
+              <b><?php echo _('Releated Proposals:'); ?></b>
+              <?php
+                if (count($arr_releated) > 0) {
+                  foreach ($arr_releated as $arr_item) {
+                    printf('<a href="?id=%d">%s</a>', $arr_item['id'], $arr_item['title']);
+                  }
+                }
+                else {
+                  echo _('None');
+                }
+              ?>
+            </li>
           </ul>
           <h2><?php echo _('Maintainers'); ?></h2>
           <ul class="list-square">

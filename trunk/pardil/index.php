@@ -56,19 +56,18 @@
     $int_pardil_notes++;
   }
 
-  // Bağımlantılı Başlıklar:
+  // Bağlantılı Başlıklar:
   $str_sql = sprintf('SELECT pardil_main2.id, pardil_main2.title FROM pardil_main INNER JOIN pardil_r_releated ON pardil_r_releated.proposal=pardil_main.id INNER JOIN pardil_main AS pardil_main2 ON pardil_main2.id=pardil_r_releated.proposal2 WHERE pardil_main.id=%d AND pardil_r_releated.timestampB<="%s" AND pardil_r_releated.timestampE>="%s"', $int_pardil_id, $str_time, $str_time);
   $res_sql = mysql_query($str_sql);
-  $arr_list = array();
+  $arr_releated_list = array();
   while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
-    $arr_list[] = sprintf('<a href="?id=%d">%s</a>', $arr_fetch['id'], $arr_fetch['title']);
+    $arr_releated_list[] = $arr_fetch;
   }
   $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title FROM pardil_main INNER JOIN pardil_r_releated ON pardil_r_releated.proposal=pardil_main.id INNER JOIN pardil_main AS pardil_main2 ON pardil_main2.id=pardil_r_releated.proposal2 WHERE pardil_main2.id=%d AND pardil_r_releated.timestampB<="%s" AND pardil_r_releated.timestampE>="%s"', $int_pardil_id, $str_time, $str_time);
   $res_sql = mysql_query($str_sql);
   while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
-    $arr_list[] = sprintf('<a href="?id=%d">%s</a>', $arr_fetch['id'], $arr_fetch['title']);
+    $arr_releated_list[] = $arr_fetch;
   }
-  $str_releated_list = join(', ', $arr_list);
 
   // Öneri Durumu:
   $str_sql = sprintf('SELECT pardil_status.name FROM pardil_main INNER JOIN pardil_r_status ON pardil_r_status.proposal=pardil_main.id INNER JOIN pardil_status ON pardil_r_status.status=pardil_status.id WHERE pardil_main.id=%d AND timestampB<="%s" AND timestampE>="%s"', $int_pardil_id, $str_time, $str_time);
@@ -101,6 +100,7 @@
   $obj_page->setvar('str_proposal_status', $str_pardil_status);
   $obj_page->setvar('arr_proposal_content', $arr_pardil_content);
   $obj_page->setvar('arr_maintainers', $arr_maintainer_list);
+  $obj_page->setvar('arr_releated', $arr_releated_list);
   $obj_page->setvar('arr_notes', $arr_pardil_notes);
   $obj_page->setvar('arr_revisions', $arr_revisions_list);
   
