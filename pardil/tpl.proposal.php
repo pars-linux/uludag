@@ -98,7 +98,7 @@
           <div class="revisions">
             <?php
               foreach ($arr_revisions as $arr_item) {
-                printf('<h3><a href="?id=%d&amp;rev=%0.2f">%0.2f</a></h3>', $int_proposal['id'], $arr_item['version'], $arr_item['version']);
+                printf('<h3><a href="?id=%d&amp;rev=%0.2f">%0.2f</a></h3>', $arr_proposal['id'], $arr_item['version'], $arr_item['version']);
                 printf('<p>%s (<a href="mailto:%s">%s</a>)</p>', $arr_item['info'], $arr_item['pardil_revisor_mail'], $arr_item['pardil_revisor']);
               }
             ?>

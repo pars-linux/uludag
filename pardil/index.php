@@ -42,7 +42,9 @@
   $int_pardil_content = 1;
   $arr_pardil_content = array();
   foreach ($res_xml->children() as $res_node) {
-    $arr_pardil_content[] = array('no' => $int_pardil_content, 'title' => $res_node->title, 'body' => $res_node->body->asXML());
+    $str_title = $res_node->title;
+    $str_body = substr($res_node->body->asXML(), 6, strlen($res_node->body->asXML()) - 13);
+    $arr_pardil_content[] = array('no' => $int_pardil_content, 'title' => $str_title, 'body' => $str_body);
     $int_pardil_content++;
   }
 
