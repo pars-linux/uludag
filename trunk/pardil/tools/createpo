@@ -18,7 +18,7 @@ if [ -z "$1" ]; then
 fi
 
 
-WORKDIR=../locale
+WORKDIR=../locales
 LOCALEDIR=$WORKDIR/$1/LC_MESSAGES
 
 mkdir -p $LOCALEDIR
