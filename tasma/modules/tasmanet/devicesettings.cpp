@@ -105,8 +105,8 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
 
     KConfig *config = new KConfig( "tasmanetrc" );
     config->setGroup( _dev );
-    QString _connType;
-    _connType = config->readEntry( "ConnectionType", "Automatic" );
+    QString _connType = config->readEntry( "ConnectionType", "Automatic" );
+    defaultgw->setText( config->readEntry( "DefaultGateway", "" ) );
     if ( _connType == "Automatic" ) {
         automaticButton->setChecked( true );
     }
@@ -186,6 +186,8 @@ void DeviceSettings::writeSettings()
 
     if ( manualButton->isChecked() ) {
         config->writeEntry( "ConnectionType", "Manual" );
+        if ( defaultgw->isModified() )
+            config->writeEntry( "DefaultGateway", defaultgw->text() );
     }
     else if ( automaticButton->isChecked() ) {
         config->writeEntry( "ConnectionType", "Automatic" );
