@@ -39,8 +39,6 @@ protected slots:
 private:
     KAboutData *_aboutData;
     QTimer *_timer;
-    static const QCString PROC_NET_DEV;
-    static const QCString PROC_NET_WIRELESS;
 };
 
 #endif // TASMA_NET_WIDGET_H
