@@ -12,6 +12,22 @@
 class QStringList;
 class QRegExp;
 
+/* Modes of operation */
+#define IW_MODE_AUTO    0       /* Let the driver decides */
+#define IW_MODE_ADHOC   1       /* Single cell network */
+#define IW_MODE_INFRA   2       /* Multi cell network, roaming, ... (aka. Managed) */
+#define IW_MODE_MASTER  3       /* Synchronisation master or Access Point */
+#define IW_MODE_REPEAT  4       /* Wireless Repeater (forwarder) */
+#define IW_MODE_SECOND  5       /* Secondary master/repeater (backup) */
+#define IW_MODE_MONITOR 6       /* Passive monitor (listen only) */
+
+
+enum WIFI_MODE {
+    Auto = 0,
+    Adhoc,
+    Infra
+};
+
 class Device
 {
 
@@ -55,7 +71,12 @@ public:
     /**
      * Get mode for wireless device.
      */
-    const char *getWirelessMode( const char *dev );
+    WIFI_MODE getWirelessMode( const char *dev );
+
+    /**
+     * Set wireless interface.
+     */
+    int setWirelessInterface( const char *dev, int mode, const char *essid );
 
     /**
      * Read resolv.conf and return the nameserver list
@@ -81,6 +102,7 @@ public:
      * return the regexp object used for IP validation
      */
     const QRegExp getRx() const;
+
 
 private:
     /**

@@ -43,15 +43,19 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
         // fill wireless modes
         wifiModeCombo->insertItem( "Auto" );
         wifiModeCombo->insertItem( "Ad-Hoc" );
+        wifiModeCombo->insertItem( "Managed" ); // Infra == Managed
 
         // get wireless information from kernel
         essid->setText( getESSID( _dev.ascii() ) );
-        QString mode = getWirelessMode( _dev.ascii() );
-        if ( mode == "Auto" ) {
+        WIFI_MODE mode = getWirelessMode( _dev.ascii() );
+        if ( mode == Auto ) {
             wifiModeCombo->setCurrentItem( 0 );
         }
-        else if ( mode == "Ad-Hoc" ) {
+        else if ( mode == Adhoc ) {
             wifiModeCombo->setCurrentItem( 1 );
+        }
+        else if ( mode == Infra ) {
+            wifiModeCombo->setCurrentItem( 2 );
         }
     }
     else {
@@ -123,6 +127,25 @@ void DeviceSettings::slotApply()
 {
     bool succeed = true;
 
+    if ( _wifi ) {
+        int mode = IW_MODE_INFRA;
+        int cur = wifiModeCombo->currentItem();
+
+        if ( cur == 0 ) {
+            mode = IW_MODE_AUTO;
+        }
+        else if ( cur == 1 ) {
+            mode = IW_MODE_ADHOC;
+        }
+        else if ( cur == 2 ) {
+            mode = IW_MODE_INFRA;
+        }
+
+        setWirelessInterface( _dev.ascii(),
+                              mode,
+                              essid->text().ascii() );
+    }
+
     /* Manual Settings */
     if ( manualButton->isChecked() ) {
         // SET IP
@@ -173,11 +196,12 @@ void DeviceSettings::slotApply()
             }
             else {
                 // how ugly... wait 2 seconds to dhcpcd to finish its work...
-                QTimer::singleShot( 2000, this, SLOT( startDhcpcd() ) );
+                QTimer::singleShot( 2000, this, SLOT( slotStartDhcpcd() ) );
             }
         }
-
-        if ( startDhcpcd( _dev.ascii() ) < 0 ) succeed = false;
+        else {
+            if ( startDhcpcd( _dev.ascii() ) < 0 ) succeed = false;
+        }
     }
 
     writeSettings();
@@ -288,4 +312,9 @@ void DeviceSettings::slotIPChanged()
         broadcast->clear();
     if ( !netmask->isModified() )
         netmask->clear();
+}
+
+void DeviceSettings::slotStartDhcpcd()
+{
+    startDhcpcd( _dev.ascii() );
 }

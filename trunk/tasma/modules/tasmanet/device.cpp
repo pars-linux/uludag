@@ -201,15 +201,10 @@ const char* Device::getIP( const char *dev )
 
     strcpy( ifr.ifr_name, dev );
 
-    if ( ioctl( skfd, SIOCGIFADDR, &ifr ) != 0 ) {
-        sin = (struct sockaddr_in *)&ifr.ifr_addr;
-        close( skfd );
-        return inet_ntoa( sin->sin_addr );
-    }
-    else {
-        close( skfd );
-        return "";
-    }
+    ioctl( skfd, SIOCGIFADDR, &ifr );
+    sin = (struct sockaddr_in *)&ifr.ifr_addr;
+    close( skfd );
+    return inet_ntoa( sin->sin_addr );
 
 }
 
@@ -225,15 +220,10 @@ const char* Device::getNetmask( const char *dev )
 
     strcpy( ifr.ifr_name, dev );
 
-    if ( ioctl( skfd, SIOCGIFNETMASK, &ifr ) != 0 ) {
-        sin = (struct sockaddr_in *)&ifr.ifr_addr;
-        close( skfd );
-        return inet_ntoa( sin->sin_addr );
-    }
-    else {
-        close( skfd );
-        return "";
-    }
+    ioctl( skfd, SIOCGIFNETMASK, &ifr );
+    sin = (struct sockaddr_in *)&ifr.ifr_addr;
+    close( skfd );
+    return inet_ntoa( sin->sin_addr );
 
 }
 
@@ -249,15 +239,10 @@ const char* Device::getBroadcast( const char *dev )
 
     strcpy( ifr.ifr_name, dev );
 
-    if ( ioctl( skfd, SIOCGIFBRDADDR, &ifr ) != 0 ) {
-        sin = (struct sockaddr_in *)&ifr.ifr_addr;
-        close( skfd );
-        return inet_ntoa( sin->sin_addr );
-    }
-    else {
-        close( skfd );
-        return "";
-    }
+    ioctl( skfd, SIOCGIFBRDADDR, &ifr );
+    sin = (struct sockaddr_in *)&ifr.ifr_addr;
+    close( skfd );
+    return inet_ntoa( sin->sin_addr );
 
 }
 
@@ -317,13 +302,13 @@ const char * Device::getESSID( const char *dev )
     return "";
 }
 
-const char* Device::getWirelessMode( const char *dev )
+WIFI_MODE Device::getWirelessMode( const char *dev )
 {
-    QString _mode;
+    WIFI_MODE _mode = Auto;
     int skfd = sockets_open();
 
     if ( skfd < 0 )
-        return "";
+        return _mode;
 
     wireless_config *config = new wireless_config;
 
@@ -331,20 +316,61 @@ const char* Device::getWirelessMode( const char *dev )
         if ( config->has_mode == 1 ) {
             switch( config->mode ) {
             case IW_MODE_ADHOC:
-                _mode = "Ad-Hoc";
+                _mode = Adhoc;
                 break;
             case IW_MODE_AUTO:
-                _mode = "Auto";
+                _mode = Auto;
+                break;
+            case IW_MODE_INFRA:
+                _mode = Infra;
                 break;
             default:
-                _mode = "";
+                _mode = Infra;
             }
         }
         else {
-            _mode = "";
+            _mode = Infra;
         }
     }
 
     close( skfd );
-    return _mode.ascii();
+    return _mode;
+}
+
+
+int Device::setWirelessInterface( const char *dev, int mode, const char *essid )
+{
+    int skfd = sockets_open();
+
+    if ( skfd < 0 )
+        return -1;
+
+    wireless_config *config = new wireless_config;
+
+    strncpy( config->name, dev, sizeof(config->name) );
+
+
+    // no key for now :)
+    config->has_key = 0;
+
+
+    config->has_mode = 1;
+    switch( mode ) {
+    case Auto:
+        config->mode = IW_MODE_ADHOC;
+        break;
+    default:
+        config->mode = IW_MODE_AUTO;
+    }
+
+    strncpy(config->essid, essid, sizeof(config->essid)/sizeof(char) );
+    config->has_essid = 1;
+    config->essid_on = 1;
+
+
+    if(iw_set_basic_config( skfd, dev, config ) < 0) {
+        return -1;
+    }
+
+    return 0;
 }

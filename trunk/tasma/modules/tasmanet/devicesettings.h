@@ -37,6 +37,8 @@ protected slots:
     void addDns();
     void removeDns();
 
+    void slotStartDhcpcd();
+
 private:
     QString _dev;
     bool _wifi;
