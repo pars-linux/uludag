@@ -40,6 +40,15 @@ Giriþ
 
 Döküman Uludað projesi tarafýndan hazýrlanan (geliþtirilen) program kaynak
  dosyalarý için bir yazým yöntemi tarif eder.
+\layout Standard
+
+Dökümanda tarif edilen kurallar tavsiye edilen kurallardýr.
+ Mevcut bir kaynak kod üzerinde çalýþmayý düþünüyorsanýz uygulamanýn ana
+ geliþtiricinin takip ettiði yazým kurallarýna uymanýz gerekir.
+ Sýfýrdan bir uygulama geliþtiriyorsanýz buradaki kurallarý benimsemenizi
+ isteriz.
+ Fakat daha anlaþýlýr olduðunu düþündüðünüz bir yazým kuralýnýz varsa kendi
+ geliþtirdiðiniz uygulama için, istediðiniz yazým kuralýný kullanabilirsiniz.
 \layout Section
 
 Genel Kurallar
