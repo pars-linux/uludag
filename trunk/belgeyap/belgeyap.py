@@ -235,14 +235,16 @@ class Cutter:
 		# verilen satirlari sablona gore dosyaya yaz
 		f = file(file_name, "w")
 		fe = codecs.EncodedFile (f, "utf-8", "utf-8")
-		fe.write("<html><head>")
-		fe.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">")
-		fe.write("</head><body>")
-		fe.write("<!-- SAYFA İÇERİK BAŞI -->")
+		fe.write("<html><head>\n")
+		fe.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n")
+		fe.write("</head><body>\n")
+		fe.write("<!-- SAYFA İÇERİK BAŞI -->\n")
+		fe.write("<div class=\"belge\">\n")
 		for line in lines:
 			fe.write(line)
-		fe.write("<!-- SAYFA İÇERİK SONU -->")
-		fe.write("</body></html>")
+		fe.write("</div>\n")
+		fe.write("<!-- SAYFA İÇERİK SONU -->\n")
+		fe.write("</body></html>\n")
 		f.close()
 	
 	def make_navbar (self, pi, ni):
