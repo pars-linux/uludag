@@ -13,6 +13,7 @@
 #define FEEDBACK_H
 
 #include <kwizard.h>
+#include <qdom.h>
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>

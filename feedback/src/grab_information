@@ -36,12 +36,11 @@ NETWORK_NAME=`uhinv -vdf text --filter-class="network controller" | egrep Name |
 
 UPTIME=`cat /proc/uptime 2>/dev/null | cut -d " " -f 1 | sed -e 's/[ ]//'`
 
-echo "<!DOCTYPE FeedbackML>" > pardus_information.xml
-echo "<feedback>" >> pardus_information.xml
+echo "<feedback>" >> $1/pardus_information.xml
 
 for i in "MODULES" "CPU_VENDOR" "CPU_ARCH" "CPU_MODEL" "CPU_FLAGS" "CPU_NUMBER" "CPU_RELEASE" "CPU_MHZ" "RAM" "DISPLAY_VENDOR" "DISPLAY_NAME" "AUDIO_VENDOR" "AUDIO_NAME" "NETWORK_VENDOR" "NETWORK_NAME" "UPTIME"
 do
-	echo "	<information name=\"$i\" value=\"$(eval echo \$$i)\"/>" >> pardus_information.xml
+	echo " <information name=\"$i\" value=\"$(eval echo \$$i)\" />" >> $1/pardus_information.xml
 done
-echo "</feedback>" >> pardus_information.xml
+echo "</feedback>" >> $1/pardus_information.xml 
 

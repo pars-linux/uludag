@@ -15,6 +15,7 @@
 
 #include "feedback.h"
 
+/* Any better name? */
 static const char* const description = I18N_NOOP( "Feedback" );
 
 static KCmdLineOptions options[] =
@@ -25,6 +26,8 @@ static KCmdLineOptions options[] =
 
 int main( int argc, char* argv[] )
 {
+
+	/* Initialize */
 	KAboutData aboutData( PACKAGE, description,
 		VERSION, description, KAboutData::License_GPL,
 		"(c) 2004 TUBITAK/UEKAE", 0, 0, "caglar@uludag.org.tr" );
@@ -35,8 +38,9 @@ int main( int argc, char* argv[] )
 	KApplication app;
 
 	Feedback *k = new Feedback();
-	k->setFixedSize( 675, 450 );
+	k->setFixedSize( 675, 400 );
 	k->show();
 
+	/* Enter Main Loop */
 	return app.exec();
 }
