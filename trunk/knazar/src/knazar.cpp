@@ -47,19 +47,19 @@ knazar::knazar()
 
 	// Initialize and Register KNazar DCOP Interface so any KDE program can make Nazar easily
 	if ( !kapp->dcopClient()->isRegistered() )
-    {
-        kapp->dcopClient()->registerAs( "knazar" );
-        kapp->dcopClient()->setDefaultObject( objId() );
-    }
+	{
+        	kapp->dcopClient()->registerAs( "knazar" );
+	        kapp->dcopClient()->setDefaultObject( objId() );
+	}
 
 
 	// Build PopupMenu
-    KPopupMenu* menu = contextMenu();
+	KPopupMenu* menu = contextMenu();
 
-    ( new KAction( i18n( "Protect" ), "ledgreen", 0, this, SLOT( protect_from_harmfull_looks() ), this ) )->plug( menu );
-    ( new KAction( i18n( "Release" ), "ledred", 0, this, SLOT( release_the_protection() ), this ) )->plug( menu );
-    menu->insertSeparator();
-    ( new KAction( i18n( "About" ), "about", 0, this, SLOT( about() ), this ) )->plug( menu );
+	( new KAction( i18n( "Protect" ), "ledgreen", 0, this, SLOT( protect_from_harmfull_looks() ), this ) )->plug( menu );
+	( new KAction( i18n( "Release" ), "ledred", 0, this, SLOT( release_the_protection() ), this ) )->plug( menu );
+	menu->insertSeparator();
+	( new KAction( i18n( "About" ), "about", 0, this, SLOT( about() ), this ) )->plug( menu );
 
 	// Initialize variables
 	protection_working = true;
@@ -76,11 +76,11 @@ void knazar::protect_from_harmfull_looks()
 {
 	if ( protection_working == false )
 	{
-		KMessageBox::information( 0, i18n("KNazar is starting to protect your Pardus Linux from harmfull looks..." ));
+		KMessageBox::information( 0, i18n( "KNazar is starting to protect your Pardus Linux from harmfull looks..." ));
 			    
 		setPixmap( trayIcon );
 		protection_working = true;
-		QToolTip::add( this, i18n("knazar - No Harmfull look allowed!" ));
+		QToolTip::add( this, i18n( "knazar - No Harmfull look allowed!" ));
 	}
 }
 
@@ -93,13 +93,13 @@ void knazar::release_the_protection()
 
 		// Convert trayIcon to gray
 		QImage iconImage = trayIcon.convertToImage();
-	    KIconEffect::toGray( iconImage, 0.90 );
+		KIconEffect::toGray( iconImage, 0.90 );
 		QPixmap convertedTrayIcon;
 		convertedTrayIcon.convertFromImage( iconImage );
 
 		setPixmap( convertedTrayIcon );
 		protection_working = false;
-        QToolTip::add( this, i18n( "knazar - You are completely demilitarized..." ));
+		QToolTip::add( this, i18n( "knazar - You are completely demilitarized..." ));
 	}
 }
 
@@ -115,8 +115,8 @@ void knazar::send_nazar()
 	else
 		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar Received and it HARMED!</b></nobr><br><nobr></nobr></qt>" ), QString::null );
 	
-    balloon->setAnchor( mapToGlobal( pos() ));
-    balloon->show();
+	balloon->setAnchor( mapToGlobal( pos() ));
+	balloon->show();
 	
 	KWin::setOnAllDesktops( balloon->winId(), true );
 	
@@ -128,7 +128,7 @@ void knazar::send_nazar()
 
 void knazar::about()
 {
-    KMessageBox::information( 0, i18n( "KNazar is a usefull part of the Pardus Linux" ));
+	KMessageBox::information( 0, i18n( "KNazar is a usefull part of the Pardus Linux" ));
 }		
 
 #include "knazar.moc"
