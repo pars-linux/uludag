@@ -46,6 +46,17 @@ public:
      */
     const char *getBroadcast( const char *dev );
 
+
+    /**
+     * Get ESSID for device if it's set
+     */
+    const char *getESSID( const char *dev );
+
+    /**
+     * Get mode for wireless device.
+     */
+    const char *getWirelessMode( const char *dev );
+
     /**
      * Read resolv.conf and return the nameserver list
      */

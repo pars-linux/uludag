@@ -15,6 +15,7 @@
 #include <qcombobox.h>
 #include <qlistbox.h>
 #include <qlineedit.h>
+#include <qtabwidget.h>
 #include <qtimer.h>
 #include <qregexp.h>
 #include <qvalidator.h>
@@ -37,6 +38,27 @@ DeviceSettings::DeviceSettings( QWidget *parent, QString dev, bool wifi )
 {
     // fill automatic types, for now only DHCP is supported
     automaticCombo->insertItem( "DHCP" );
+
+    if ( wifi ) {
+        // fill wireless modes
+        wifiModeCombo->insertItem( "Auto" );
+        wifiModeCombo->insertItem( "Ad-Hoc" );
+
+        // get wireless information from kernel
+        essid->setText( getESSID( _dev.ascii() ) );
+        QString mode = getWirelessMode( _dev.ascii() );
+        if ( mode == "Auto" ) {
+            wifiModeCombo->setCurrentItem( 0 );
+        }
+        else if ( mode == "Ad-Hoc" ) {
+            wifiModeCombo->setCurrentItem( 1 );
+        }
+    }
+    else {
+        // remove Wireless page
+        tabWidget->removePage( tabWidget->page( 0 ) );
+    }
+
 
     connect( automaticButton, SIGNAL( toggled( bool ) ),
              this, SLOT( automaticToggled( bool ) ) );
