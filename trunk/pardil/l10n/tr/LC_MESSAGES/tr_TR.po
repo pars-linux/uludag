@@ -204,3 +204,10 @@ msgstr "Kayıtlı değil misiniz?"
 msgid "Session Information:"
 msgstr "Oturum Bilgisi:"
 
+#: tpl.denied.php:22
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+#: tpl.denied.php:24
+msgid "You are not allowed to perform this operation."
+msgstr "Bu işlemi yapma yetkiniz yok."
