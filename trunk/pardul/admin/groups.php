@@ -15,8 +15,12 @@
 
 <table border="1">
 <?
-$resultGrps = mysql_query("select id, name from pardul.group");
-ListGroups($resultGrps, "admin");
+$roleName = GetRoleName($roleid);
+if($roleName == "admin")
+	$resultGrps = mysql_query("select id, name from pardul.group");
+else if($roleName == "sub_admin")
+	$resultGrps = mysql_query("select id, name from pardul.group where managed_by='$userid'");
+ListGroups($resultGrps, $roleName);
 ?>
 <?if($roleid == "1") {?>
 	<tr>

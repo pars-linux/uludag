@@ -13,12 +13,10 @@
 
 
 
-if($roleid != "1") {
+if(GetRoleName($roleid) != "admin") {
 	echo "Grup ekleme işlemi için yetkiniz yok.";
 	exit;
 }
-?>
-<?
 if($formsubmitted) {
 	mysql_query("INSERT INTO `group` ( `id` , `name` , `managed_by` ) VALUES ('', '$grpname', '$grpmanager')");
 	require("groups.php");
