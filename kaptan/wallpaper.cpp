@@ -10,6 +10,7 @@
 */
 
 #include <qlabel.h>
+#include <qcheckbox.h>
 #include <qstringlist.h>
 #include <qpixmap.h>
 #include <qimage.h>
@@ -26,6 +27,7 @@
 Wallpaper::Wallpaper( QWidget *parent, const char* name )
     : WallpaperDlg( parent, name )
 {
+    changePaper = true;
     selectedPaper = "";
     mDirs = KGlobal::dirs();
 
@@ -58,6 +60,8 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 
     connect( m_urlWallpaperBox, SIGNAL( activated( int ) ),
              this, SLOT( paperSelected( int ) ) );
+    connect( checkChange, SIGNAL( toggled( bool ) ),
+             this, SLOT( checkChanged( bool ) ) );
 
 
     emit paperSelected( 0 );
@@ -108,4 +112,24 @@ void Wallpaper::setWallpaper()
     DCOPRef wall( "kdesktop",  "KBackgroundIface" );
     DCOPReply reply = wall.call(  "setWallpaper", selectedPaper, 6 );
 
+}
+
+void Wallpaper::checkChanged( bool dontChange )
+{
+    if ( dontChange ) {
+        changePaper = false;
+        m_urlWallpaperBox->setEnabled( false );
+    }
+    else {
+        changePaper = true;
+        m_urlWallpaperBox->setEnabled( true );
+    }
+}
+
+bool Wallpaper::changeWallpaper()
+{
+    if ( changePaper )
+        return true;
+    else
+        return false;
 }
