@@ -21,6 +21,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script type="text/javascript">
+      /*
+        JS'nin escape() fonksiyonu UTF-8 formatındaki harfleri de kodluyor,
+        ki bu hiç hoşuma gitmiyor...
+      */
       function p_escape(str_in) {
         var str_out = '';
         for (var i = 0; i < str_in.length; i++) {
@@ -38,6 +42,10 @@
           document.getElementById('new_content_i').value = parseInt(document.getElementById('new_content_i').value) + 1;
           document.getElementById('new_content_title').name = 'new_content[' + p_escape(document.getElementById('new_content_i').value + '_' + document.getElementById('new_content_title').value) + ']';
           document.getElementById('new_content_title').value = '';
+          return true;
+        }
+        else {
+          return false;
         }
       }
       function delete_section(id, msg) {
@@ -70,14 +78,14 @@
               <tr>
                 <td class="label"><?php echo _('Title:'); ?></td>
                 <td>
-                  <input type="text" name="new_title" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_title'])) ? $_POST['new_title'] : ''; ?>"/>
+                  <input type="text" name="new_title" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_title'])) ? htmlspecialchars($_POST['new_title']) : ''; ?>"/>
                 </td>
               </tr>
               <?php print_error('new_title'); ?>
               <tr>
                 <td class="label"><?php echo _('Abstract:'); ?></td>
                 <td>
-                  <textarea name="new_abstract" cols="25" rows="7" style="width: 400px; height: 200px;"></textarea>
+                  <textarea name="new_abstract" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo (!isset($arr_errors['new_abstract'])) ? htmlspecialchars($_POST['new_abstract']) : ''; ?></textarea>
                 </td>
               </tr>
               <?php print_error('new_abstract'); ?>
@@ -100,7 +108,7 @@
                 <td>
                   <input type="hidden" id="new_content_i" name="new_content_i" value="<?php printf('%d', (isset($_POST['new_content_i']) ? $_POST['new_content_i'] : 0)); ?>"/>
                   <input type="text" id="new_content_title" size="25" style="width: 340px;" onkeypress="if (event.which == 13 || event.keyCode == 13) { document.getElementById('new_content_title_add').click(); }"/>
-                  <button id="new_content_title_add" type="submit" name="new_content_title_add" value="true" onclick="new_section();"><?php echo _('Add &raquo;'); ?></button>
+                  <button id="new_content_title_add" type="submit" name="new_content_title_add" value="true" onclick="return new_section();"><?php echo _('Add &raquo;'); ?></button>
                 </td>
               </tr>
               <tr>
@@ -129,7 +137,7 @@
                     <a href="javascript:delete_section('new_content_<?php echo $str_title1; ?>', '<?php printf(_('Section \\\'%s\\\' will be removed.\\nAre you sure?'), $str_title2); ?>');" title="<?php echo _('Remove Section'); ?>">[x]</a>
                   </td>
                   <td>
-                    <textarea id="new_content_<?php echo $str_title1; ?>" name="new_content[<?php echo $str_title; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php printf('%s', htmlspecialchars($str_body)); ?></textarea>
+                    <textarea id="new_content_<?php echo $str_title1; ?>" name="new_content[<?php echo $str_title; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo htmlspecialchars($str_body); ?></textarea>
                   </td>
                 </tr>
               <?php      
@@ -144,7 +152,7 @@
               <tr>
                 <td class="label"><?php echo _('Notes:');  ?></td>
                 <td>
-                  <textarea name="new_notes" cols="25" rows="7" style="width: 400px; height: 120px;"><?php if (!isset($arr_errors['new_notes'])) printf('%s', htmlspecialchars($_POST['new_notes'])); ?></textarea>
+                  <textarea name="new_notes" cols="25" rows="7" style="width: 400px; height: 120px;"><?php echo (!isset($arr_errors['new_notes'])) ? htmlspecialchars($_POST['new_notes']) : ''; ?></textarea>
                 </td>
               </tr>
               <?php print_error('new_notes'); ?>
@@ -155,7 +163,7 @@
               <tr>
                 <td class="label"><?php echo _('Release Info:'); ?></td>
                 <td>
-                  <input type="text" name="new_info" size="25" style="width: 400px;" value="<?php if (!isset($arr_errors['new_info'])) printf('%s', $_POST['new_info']); ?>"/>
+                  <input type="text" name="new_info" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_info'])) ? htmlspecialchars($_POST['new_info']) : ''; ?>"/>
                 </td>
               </tr>
               <?php print_error('new_info'); ?>
