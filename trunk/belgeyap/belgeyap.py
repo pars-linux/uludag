@@ -428,7 +428,7 @@ def bilgibas(name,dname,date):
 	print "</tr>"
 	print ""
 
-def yap(template):
+def yap(template,clean_flag):
 	sablon = "belge.tmpl"
 	ikonlar = "../../images"
 	tamir = 1
@@ -461,13 +461,14 @@ def yap(template):
 	# tek ve cok sayfaliya ayir
 	c.cut(dizin + ".html")
 	# gereksiz dosyaları temizle
-	remove_file(dizin + ".haux")
-	remove_file(dizin + ".htoc")
-	os.unlink(belge)
-	basename = belge
-	if basename[-4:] == ".lyx":
-		basename = basename[0:-4]
-	os.unlink(basename + ".tex")
+	if clean_flag == 1:
+		remove_file(dizin + ".haux")
+		remove_file(dizin + ".htoc")
+		os.unlink(belge)
+		basename = belge
+		if basename[-4:] == ".lyx":
+			basename = basename[0:-4]
+		os.unlink(basename + ".tex")
 	# indekse eklemek icin html kodu bas
 	bilgibas(isim,dizin,dt)
 	# leave directory
@@ -495,16 +496,20 @@ def usage():
 
 # main
 try:
-	opts, args = getopt.gnu_getopt(sys.argv[1:], "h", ["help"])
+	opts, args = getopt.gnu_getopt(sys.argv[1:], "hn", ["help", "noclean"])
 except:
 	usage()
+
+opt_clean = 1
 
 for o, v in opts:
 	if o in ("-h", "--help"):
 		usage()
+	if o in ("-n", "--noclean"):
+		opt_clean = 0
 
 if args == []:
 	usage()
 
 for name in args:
-	yap(name)
+	yap(name, opt_clean)
