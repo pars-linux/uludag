@@ -4,6 +4,7 @@
   require('sys.gettext.php');
   require('sys.database.php');
   require('sys.procedures.php');
+  require('sys.pconf.php');
   require('sys.session.php');
 
   require('class.template.php');
@@ -115,7 +116,7 @@
     $arr_revisions_list[] = $arr_fetch;
   }
 
-  $_PCONF['title'] = CONF_NAME . ' - ' . $arr_pardil_fetch['title'];
+  $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . $arr_pardil_fetch['title'];
 
   $obj_page = new template('tpl.proposal.php');
   

@@ -3,6 +3,7 @@
   require('sys.gettext.php');
   require('sys.database.php');
   require('sys.procedures.php');
+  require('sys.pconf.php');
   require('sys.session.php');
 
   // Erişim seviyesi kontrolü
@@ -67,7 +68,7 @@
   }
   else {
     // Formu göster...
-    $_PCONF['title'] = CONF_NAME . ' - ' . __('New Proposal');
+    $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . __('New Proposal');
     $obj_page = new template('tpl.newproposal.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();

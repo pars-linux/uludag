@@ -4,7 +4,7 @@
       <div id="menubar">
         <span class="arrowL">&#171;</span>
         <span class="arrowR">&#187;</span>
-        <span class="title"><?php echo CONF_TITLE; ?></span>
+        <span class="title"><?php echo $_PCONF['title']; ?></span>
       </div>
       <div id="content">
         <div class="proposal">

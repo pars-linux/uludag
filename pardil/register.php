@@ -4,6 +4,7 @@
   require('sys.gettext.php');
   require('sys.database.php');
   require('sys.procedures.php');
+  require('sys.pconf.php');
 
   require('class.template.php');
 
@@ -44,18 +45,26 @@
 
     $int_status = (proc_getopt('register_activation_required') == 'true') ? 0 : 1;
     $int_user = proc_user_new($_POST['register_username'], md5($_POST['register_password']), $_POST['register_email'], $_POST['register_name'], 1);
-    proc_activation_new($int_user, $int_status);
+    $str_code = proc_activation_new($int_user, $int_status);
 
     if ($int_status == 0) {
       // E-posta gönderimi
-
+      $str_subject = sprintf(__('%s Account Activation'), CONF_NAME);
+      $str_body = sprintf(__('Hello,\nTo complete your registration at %1$s, please visit the address below:\n\n%2$s\n\nThanks,\n%3$s Team'), $_PCONF['site_url'], $str_code, $_PCONF['site_name']);
+      $bln_mail = mail($_POST['register_email'], $str_subject, $str_body);
+      
+      if ($bln_mail) {
+        header('Location: register_ok.php');
+        exit;
+      }
+      else {
+        header('Location: register_ok.php?nomail=1');
+        exit;
+      }
     }
-
-    header('Location: register_ok.php');
-    exit;
   }
   else {
-    $_PCONF['title'] = CONF_NAME . ' - ' . __('User Registration');
+    $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . __('User Registration');
     $obj_page = new template('tpl.register.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
