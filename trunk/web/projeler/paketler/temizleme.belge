@@ -4,5 +4,4 @@ belge = "kaynak_temizleme.lyx"
 isim = "Kaynak Temizleme Kılavuzu"
 dizin = "temizleme"
 ikonlar = "../../../images"
-sablon = "../belge.tmpl"
 tamir = 0

@@ -5,5 +5,4 @@ dosyalar = [ "logo/belgelerlogo.png", "logo/debianlogo.png", "logo/fedoralogo.pn
 isim = "Yerelleştirme Çalışmaları"
 dizin = "y10me"
 ikonlar = "../../../images"
-sablon = "../belge.tmpl"
 tamir = 0
