@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -29,9 +30,9 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Changes made to $terms.bug $bug_id"
-  h1 = "Activity log"
-  h2 = "$terms.Bug <a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a>"
+  title = "$bug_id numaralı $terms.bug için değişiklikler kaydedildi"
+  h1 = "Faaliyet raporu"
+  h2 = "$terms.Bug numarası <a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a>"
  %]
 
 <br>
@@ -39,8 +40,7 @@
 [% PROCESS bug/activity/table.html.tmpl %]
 
 <p>
-  <a href="show_bug.cgi?id=[% bug_id %]">Back to [% terms.bug %] 
-  [%+ bug_id %]</a>
+  <a href="show_bug.cgi?id=[% bug_id %]">[%+ bug_id %] numaralı [% terms.bug %] sayfasına geri dönüş</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
