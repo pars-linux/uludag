@@ -66,10 +66,17 @@ Z_CHECK_RESULT ZSConn::checkString( const string& str ) const
         }
     }
 
-    stringstream strstream;
-    strstream << str.length() << " " << str;
+    // new scope for temp. variables
+    {
+      stringstream strstream;
+      strstream << str.length() << " " << str;
+      string checkStr = strstream.str();
+      if ( send(_conn, checkStr.c_str(), checkStr.length(), 0) == -1) {
+        perror("send()");
+      }
+    }
 
-    string check = sendString( strstream.str() );
+    string check = recvResult();
 
     if ( check == "5 DOGRU" ) {
         return Z_TRUE;
@@ -80,14 +87,10 @@ Z_CHECK_RESULT ZSConn::checkString( const string& str ) const
     return Z_UNKNOWN;
 }
 
-char* ZSConn::sendString( const string& str ) const
+char* ZSConn::recvResult() const
 {
-    if ( send(_conn, str.c_str(), str.length(), 0) == -1) {
-        perror("send()");
-    }
-
     // FIXME: dönüş değeri 10 karakterden büyük olursa?
-    // test, bla bla.
+    // ZemberekServer protokolü belirlendikten sonra düzeltilecek.
     char *ret = new char[11];
     int numbytes=recv(_conn, ret, 10, 0);
     ret[numbytes]='\0';
