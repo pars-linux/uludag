@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s):     John Vandenberg <zeroj@null.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -24,19 +25,19 @@
 [% expiration_ts = token_ts + (max_token_age * 86400) %]
 From: bugzilla-admin-daemon
 To: [% emailaddress %]
-Subject: [% terms.Bugzilla %] Change Email Address Request
+Subject: [% terms.Bugzilla %] E-posta Adresi Değişikliği Talebi
 
-[%+ terms.Bugzilla %] has received a request to change the email address
-for the account [% oldemailaddress %] to your address.
+[%+ terms.Bugzilla %] , [% oldemailaddress %] olarak tanımlı bir hesabın e-posta adresini
+sizinki olarak değiştirmekle ilgili bir talep aldı.
 
-To confirm the change, visit the following link:
+Değişikliği onaylamak için aşağıdaki adresi ziyaret edin:
 
 [%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cfmem
 
-If you are not the person who made this request, or you wish to cancel
-this request, visit the following link:
+Bu talebi yapan siz değilseniz, ya da talebinizi iptal etmek istiyorsanız,
+aşağıdaki adresi ziyaret ediniz:
 
 [%+ Param('urlbase') %]token.cgi?t=[% token FILTER url_quote %]&a=cxlem
 
-If you do nothing, the request will lapse after [%+ max_token_age %] days 
-(at precisely [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) %]).
+Herhangi bir şey yapmazsanız, bu talep [%+ max_token_age %] gün sonra 
+(tam olarak [%+ time2str("%H:%M on the %o of %B, %Y", expiration_ts) %] tarihinde) geçersiz olacaktır.
