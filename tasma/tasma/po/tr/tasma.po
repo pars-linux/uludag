@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tasma 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-26 23:49+0200\n"
-"PO-Revision-Date: 2005-01-26 23:50+0200\n"
+"POT-Creation-Date: 2005-02-07 02:34+0200\n"
+"PO-Revision-Date: 2005-02-07 02:34+0200\n"
 "Last-Translator: Barış Metin <baris@uludag.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,6 +69,10 @@ msgstr "KDE Geliştiricileri"
 #: main.cpp:69
 msgid "Module Developers"
 msgstr "Modül Geliştiricileri"
+
+#: tasmamainwin.cpp:76
+msgid "About Current Module"
+msgstr "Şimdiki Modül Hakkında"
 
 #: tmoduleview.cpp:57
 msgid "&Back"
