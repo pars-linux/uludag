@@ -9,7 +9,7 @@
 
 . ./gettext.conf
 
-XGETTEXT_OPTIONS="--keyword=_ --keyword=__ -keyword=N_ --keyword=N__ --language=PHP --default-domain=$APP_NAME --no-location --from-code=utf-8"
+XGETTEXT_OPTIONS="--keyword=_ --keyword=__ --keyword=N_ --keyword=N__ --keyword=__e --language=PHP --default-domain=$APP_NAME --no-location --from-code=utf-8"
 echo "XGETTEXT_OPTIONS: $XGETTEXT_OPTIONS"
 
 cd ../..

@@ -4,6 +4,7 @@
   require('sys.gettext.php');
   require('sys.database.php');
   require('sys.procedures.php');
+  require('sys.pconf.php');
   require('sys.session.php');
 
   require('class.template.php');
@@ -21,7 +22,18 @@
     if (strlen($_POST['username']) > 0 && strlen($_POST['password']) > 0) {
       $mix_user = database_query_scalar(sprintf('SELECT id FROM users WHERE username="%s" AND password="%s"', addslashes($_POST['username']), md5($_POST['password'])));
       if ($mix_user === false) {
-        $arr_errors['password'] = __('Wrong username or password.');
+        // Hatalı ise, geçici şifreyle karşılaştır
+        $mix_user = database_query_scalar(sprintf('SELECT users.id FROM temp_passwords INNER JOIN users ON users.id=temp_passwords.user WHERE users.username="%s" AND temp_passwords.password="%s"', addslashes($_POST['username']), addslashes($_POST['password'])));
+        if ($mix_user !== false) {
+          // Bilgiler  doğru
+          $str_session = proc_session_update($mix_user);
+          setcookie('pardil_session', $str_session);
+          header('Location: index.php');
+          exit;
+        }
+        else {
+          $arr_errors['password'] = __('Wrong username or password.');
+        }
       }
       else {
         $int_activation = database_query_scalar(sprintf('SELECT status FROM activation WHERE user=%d', $mix_user));
@@ -31,6 +43,7 @@
           $arr_errors['password'] = __('User account is not activated.');
         }
         else {
+          // Bilgiler doğru
           $str_session = proc_session_update($mix_user);
           setcookie('pardil_session', $str_session);
           header('Location: index.php');

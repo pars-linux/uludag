@@ -158,16 +158,43 @@
   // Activation
   // Aktivasyon kodları & durumları
   function proc_activation_new($int_user, $int_status) {
+    $str_date = date('Y-m-d H:i:s');
     $str_code = md5(microtime() . $int_user);
-    $str_sql = sprintf('INSERT INTO activation (user, code, status) VALUES (%d, "%s", %d)', $int_user, $str_code, $int_status);
+    $str_sql = sprintf('INSERT INTO activation (user, code, status, timestamp) VALUES (%d, "%s", %d, "%s")', $int_user, $str_code, $int_status, $str_date);
     mysql_query($str_sql);
     return true;
   }
   function proc_activation_update($int_user, $int_status) {
-    $str_sql = sprintf('UPDATE activation SET status=%d WHERE %d=%d', $int_status, $int_user);
+    $str_date = date('Y-m-d H:i:s');
+    $str_sql = sprintf('UPDATE activation SET status=%d,timestamp="%s" WHERE user=%d', $int_status, $str_date, $int_user);
     mysql_query($str_sql);
     return true;
   }
+  function proc_activation_expire($int_timeout) {
+    //
+  }
+  
+  // Password
+  // Şifre hatırlatma kodları
+  function proc_password_new($int_user) {
+    $str_date = date('Y-m-d H:i:s');
+    $str_code = substr(md5(microtime() . $int_user), 0, 10);
+    $str_sql = sprintf('INSERT INTO temp_passwords (user, password, timestamp) VALUES (%d, "%s", "%s")', $int_user, $str_code, $str_date);
+    mysql_query($str_sql);
+    return $str_code;
+  }
+  function proc_password_delete($int_user) {
+    $str_sql = sprintf('DELETE FROM temp_passwords WHERE user=%d', $int_user);
+    mysql_query($str_sql);
+    return true;;
+  }
+  function proc_password_expire($int_timeout) {
+    $str_date = date('Y-m-d H:i:s');
+    $str_sql = sprintf('DELETE FROM temp_passwords WHERE Unix_Timestamp("%s")-Unix_Timestamp(timestamp) > %d', $str_date, $int_timeout);
+    mysql_query($str_sql);
+    return true;
+  }
+  
   
   // Pardil_Images
   // Önerilere ait resim dosyaları
