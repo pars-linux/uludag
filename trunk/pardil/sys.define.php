@@ -1,8 +1,8 @@
 <?php
   define('CONF_DATABASE_HOST', 'localhost');
-  define('CONF_DATABASE_USER', 'ugo');
-  define('CONF_DATABASE_PASS', '123456aaa');
-  define('CONF_DATABASE_NAME', 'ugos');
+  define('CONF_DATABASE_USER', 'pardil_user');
+  define('CONF_DATABASE_PASS', '');
+  define('CONF_DATABASE_NAME', 'pardil');
 
   define('CONF_LOCALE', 'tr_TR.utf8');
 
