@@ -24,10 +24,10 @@ msgid "Username should be written."
 msgstr "Kullanıcı adı yazılmalı."
 
 msgid "Password should be written."
-msgstr "Şifre yazılmalı."
+msgstr "Parola yazılmalı."
 
 msgid "Wrong username or password."
-msgstr "Hatalı kullanıcı adı ya da şifre."
+msgstr "Hatalı kullanıcı adı ya da parola."
 
 msgid "User account is not activated."
 msgstr "Kullanıcı hesabı aktive edilmemiş."
@@ -58,7 +58,7 @@ msgid "New Proposal"
 msgstr "Yeni Öneri"
 
 msgid "Change Password"
-msgstr "Şifre Değiştir"
+msgstr "Parola Değiştir"
 
 msgid "E-mail address should be written."
 msgstr "E-posta adresi yazılmalı."
@@ -71,7 +71,7 @@ msgstr "E-posta adresi veritabanında bulunamadı.."
 
 #, php-format
 msgid "%s Temporary Password"
-msgstr "%s Geçici Şifresi"
+msgstr "%s Geçici Parolası"
 
 #, php-format
 msgid ""
@@ -88,17 +88,17 @@ msgid ""
 msgstr ""
 "Merhaba,\n"
 "\n"
-"%1$s adresindeki hesabınız için geçici şifre talebinde bulundunuz.\n"
+"%1$s adresindeki hesabınız için geçici parola talebinde bulundunuz.\n"
 "\n"
-"Geçici şifreniz: %2$s\n"
+"Geçici parolanız: %2$s\n"
 "\n"
-"Bu geçici şifre asıl şifrenizi etkilemez.\n"
+"Bu geçici parola asıl parolanızı etkilemez.\n"
 "\n"
 "Teşekkürler,\n"
 "%3$s Ekibi"
 
 msgid "Create Temporary Password"
-msgstr "Geçici Şifre Yarat"
+msgstr "Geçici Parola Yarat"
 
 msgid "Registration Complete"
 msgstr "Kayıt Tamamlandı"
@@ -110,10 +110,10 @@ msgid "Username is in use."
 msgstr "Kullanıcı adı kullanımda."
 
 msgid "Password should be written twice."
-msgstr "Şifre iki kere yazılmalı."
+msgstr "Parola iki kere yazılmalı."
 
 msgid "Passwords should be same."
-msgstr "Şifreler aynı olmalı."
+msgstr "Parolalar aynı olmalı."
 
 #, php-format
 msgid "%s Account Activation"
@@ -152,13 +152,13 @@ msgid "Username:"
 msgstr "Kullanıcı Adı:"
 
 msgid "Password:"
-msgstr "Şifre:"
+msgstr "Parola:"
 
 msgid "Login &raquo;"
 msgstr "Giriş &raquo;"
 
 msgid "Forgot your password?"
-msgstr "Şifrenizi mi unuttunuz?"
+msgstr "Parolanızı mı unuttunuz?"
 
 msgid "Need activation?"
 msgstr "Aktivasyona mı ihtiyacınız var?"
@@ -224,21 +224,21 @@ msgid "Submit &raquo;"
 msgstr "Gönder &raquo;"
 
 msgid "Password Reset Code Sent"
-msgstr "Şifre Sıfırlama Kodu Gönderildi"
+msgstr "Parola Sıfırlama Kodu Gönderildi"
 
 msgid ""
 "In this page, you can create a temporary password. With this temporary "
 "password, you can login to your account to change your primary password."
 msgstr ""
-"Bu sayfada, geçici bir şifre yaratabilirsiniz. Bu geçici şifre ile "
-"hesabınıza giriş yapabilir ve asıl şifrenizi değiştirebilirsiniz."
+"Bu sayfada, geçici bir parola yaratabilirsiniz. Bu geçici parola ile "
+"hesabınıza giriş yapabilir ve asıl parolanızı değiştirebilirsiniz."
 
 #, php-format
 msgid ""
 "This temporary password does not effect your primary password, and will be "
 "disabled after %d seconds."
 msgstr ""
-"Bu geçici şifre, asıl şifrenizi etkilemez, ve %d saniye sonra iptal edilir."
+"Bu geçici parola, asıl parolanızı etkilemez, ve %d saniye sonra iptal edilir."
 
 msgid "E-Mail Address:"
 msgstr "E-Posta Adresi:"
@@ -300,7 +300,7 @@ msgid "Name:"
 msgstr "İsim:"
 
 msgid "Password (again):"
-msgstr "Şifre (tekrar):"
+msgstr "Parola (tekrar):"
 
 msgid "Register &raquo;"
 msgstr "Kayıt &raquo;"
