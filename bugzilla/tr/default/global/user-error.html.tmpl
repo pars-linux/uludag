@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [%# INTERFACE:
@@ -385,8 +386,8 @@
     registered for a [% terms.Bugzilla %] account.
 
   [% ELSIF error == "invalid_username_or_password" %]
-    [% title = "Invalid Username Or Password" %]
-    The username or password you entered is not valid.
+    [% title = "Geçersiz Kullanıcı Adı Veya Parola" %]
+    Girdiğiniz kullanıcı adı ya da parola geçerli değildir.
 
   [% ELSIF error == "keyword_access_denied" %]
     [% title = "Access Denied" %]
@@ -772,7 +773,7 @@
 </table>
 
 <p>
-  Please press <b>Back</b> and try again.
+  Lütfen <b>geri dönüp</b> tekrar deneyiniz.
 </p>
 
 [%# If a saved search fails, people want the ability to edit or delete it. 

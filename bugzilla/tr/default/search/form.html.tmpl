@@ -598,7 +598,7 @@ function selectProduct(f) {
       <fieldset>
         <legend>
           <strong>
-            Email and Numbering
+           E-posta ve Numaralandırma
           </strong>
         </legend>
 
@@ -612,7 +612,7 @@ function selectProduct(f) {
 <table cellspacing="0" cellpadding="0">
   <tr>
     <td>
-      Any of:
+      Herhangi biri:
     </td>
   </tr>
   <tr>
@@ -621,7 +621,7 @@ function selectProduct(f) {
              id="emailassigned_to[% n %]" value="1"
              [% " checked" IF default.emailassigned_to.$n %]>
       <label for="emailassigned_to[% n %]">
-        [% terms.bug %] owner
+        hatanın sahibi
       </label>
     </td>
   </tr>
@@ -631,7 +631,7 @@ function selectProduct(f) {
              id="emailreporter[% n %]" value="1"
              [% " checked" IF default.emailreporter.$n %]>
       <label for="emailreporter[% n %]">
-        reporter
+        raporlayan
       </label>
     </td>
   </tr>
@@ -642,7 +642,7 @@ function selectProduct(f) {
              id="emailqa_contact[% n %]" value="1"
              [% " checked" IF default.emailqa_contact.$n %]>
       <label for="emailqa_contact[% n %]">
-        QA contact
+        kalite ekibi
       </label>
     </td>
   </tr>
@@ -653,7 +653,7 @@ function selectProduct(f) {
              id="emailcc[% n %]" value="1"
              [% " checked" IF default.emailcc.$n %]>
       <label for="emailcc[% n %]">
-        CC list member
+        CC liste üyesi
       </label>
     </td>
   </tr>
@@ -663,7 +663,7 @@ function selectProduct(f) {
                id="emaillongdesc[% n %]" value="1"
                [% " checked" IF default.emaillongdesc.$n %]>
       <label for="emaillongdesc[% n %]">
-        commenter
+        yorumlayan
       </label>
     </td>
   </tr>
@@ -671,10 +671,10 @@ function selectProduct(f) {
     <td>
       <select name="emailtype[% n %]">
       [% FOREACH qv = [
-        { name => "substring", description => "contains" },
-        { name => "exact", description => "is" },
-        { name => "regexp", description => "matches regexp" },
-        { name => "notregexp", description => "doesn't match regexp" } ] %]
+        { name => "substring", description => "içeren" },
+        { name => "exact", description => "olan" },
+        { name => "regexp", description => "regexp tutan" },
+        { name => "notregexp", description => "regexp tutmayan" } ] %]
 
         <option value="[% qv.name %]"
           [% " selected" IF default.emailtype.$n == qv.name %]>[% qv.description %]</option>
@@ -699,8 +699,8 @@ function selectProduct(f) {
   <tr>
     <td>
       <select name="bugidtype">
-        <option value="include"[% " selected" IF default.bugidtype.0 == "include" %]>Only include</option>
-        <option value="exclude"[% " selected" IF default.bugidtype.0 == "exclude" %]>Exclude</option>
+        <option value="include"[% " selected" IF default.bugidtype.0 == "include" %]>içeren</option>
+        <option value="exclude"[% " selected" IF default.bugidtype.0 == "exclude" %]>içermeyen</option>
       </select>
       [% terms.bugs %] numbered:
     </td>
@@ -710,15 +710,15 @@ function selectProduct(f) {
   </tr>
   <tr>
     <td></td>
-    <td>(comma-separated list)</td>
+    <td>(virgül-ayrımlı liste)</td>
   </tr>
   [% IF Param('usevotes') %]
     <tr>
       <td align="right">
-        Only [% terms.bugs %] with at least:
+        En az :
       </td>
       <td>
-        <input name="votes" size="3" value="[% default.votes.0 FILTER html %]"> votes
+        <input name="votes" size="3" value="[% default.votes.0 FILTER html %]"> oy alan hatalar
       </td>
     </tr>
   [% END %]
@@ -732,7 +732,7 @@ function selectProduct(f) {
 
     <td valign="top">
       <fieldset>
-        <legend><strong>[% terms.Bug %] Changes</strong></legend>
+        <legend><strong>[% terms.Bug %] Değişiklikleri</strong></legend>
 
 
 <dl class="bug_changes">
