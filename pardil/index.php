@@ -1,6 +1,9 @@
 <?php
   require('sys.define.php');
   require('sys.database.php');
+  require('sys.gettext.php');
+  
+  require('class.template.php');
 
   // Öneri No
   $int_pardil_id = (isset($_GET['id'])) ? $_GET['id'] : 1;
@@ -89,108 +92,17 @@
   while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
     $arr_revisions_list[] = $arr_fetch;
   }
+
+  $obj_page = new template('tpl.proposal.php');
+  
+  $obj_page->setvar('arr_proposal', $arr_pardil_fetch);
+  $obj_page->setvar('arr_proposal_prev', $arr_pardil_prev);
+  $obj_page->setvar('arr_proposal_next', $arr_pardil_next);
+  $obj_page->setvar('str_proposal_status', $str_pardil_status);
+  $obj_page->setvar('arr_proposal_content', $arr_pardil_content);
+  $obj_page->setvar('arr_maintainers', $arr_maintainer_list);
+  $obj_page->setvar('arr_notes', $arr_pardil_notes);
+  $obj_page->setvar('arr_revisions', $arr_revisions_list);
+  
+  $obj_page->flush();
 ?>
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="tr">
-  <head>
-    <title><?php printf('Öneri %04d - %s', $arr_pardil_fetch['id'], $arr_pardil_fetch['title']); ?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-  </head>
-  <body>
-    <div id="container">
-      <div id="header">
-        <img src="images/logo2.png" alt="pardilS"/>
-      </div>
-      <div id="menubar">
-        <?php
-          if (isset($arr_pardil_prev)) {
-            printf('<a href="?id=%d" class="arrowL" title="%04d - %s">&#171</a>', $arr_pardil_prev['id'], $arr_pardil_prev['id'], $arr_pardil_prev['title']);
-          }
-          else {
-            printf('<span class="arrowL">&#171;</span>');
-          }
-          if (isset($arr_pardil_next)) {
-            printf('<a href="?id=%d" class="arrowR" title="%04d - %s">&#187</a>', $arr_pardil_next['id'], $arr_pardil_next['id'], $arr_pardil_next['title']);
-          }
-          else {
-            printf('<span class="arrowR">&#187;</span>');
-          }
-        ?>
-        <span class="title"><span><?php printf('%04d', $arr_pardil_fetch['id']); ?></span> <span><?php printf('%s', $arr_pardil_fetch['title']); ?></span></span>
-      </div>
-      <div id="menu">
-        ...
-      </div>
-      <div id="content">
-        <div class="proposal">
-          <h1><?php printf('%s', $arr_pardil_fetch['title']); ?></h1>
-          <h2>Özet</h2>
-          <p><?php printf('%s', $arr_pardil_fetch['abstract']); ?></p>
-          <h2>Künye</h2>
-          <ul class="list-square">
-            <li><b>Durum:</b> <?php printf('%s', $str_pardil_status); ?></li>
-            <li><b>No:</b> <?php printf('%04d', $arr_pardil_fetch['id']); ?></li>
-            <li><b>Sürüm:</b> <?php printf('%.2f', $arr_pardil_fetch['version']); ?></li>
-            <li><b>Son Güncelleme:</b> <?php printf('%s', $arr_pardil_fetch['timestamp']); ?></li>
-            <li><b>Bağlantılı Öneriler:</b> <?php printf('%s', ($str_releated_list) ? $str_releated_list : 'Yok'); ?></li>
-          </ul>
-          <h2>Sorumlular</h2>
-          <ul class="list-square">
-            <?php
-              if (count($arr_maintainer_list) > 0) {
-                foreach ($arr_maintainer_list as $arr_item) {
-                  printf('<li>%s (<a href="mailto:%s">%s</a>)</li>', $arr_item['name'], $arr_item['email'], $arr_item['email']);
-                }
-              }
-              else {
-                printf('<li>Yok</li>');
-              }
-            ?>
-          </ul>
-          <div class="hr"></div>
-          <h2>İçindekiler</h2>
-          <ul>
-            <?php
-              foreach ($arr_pardil_content as $arr_item) {
-                printf('<li><a href="#content%d">%s</a></li>', $arr_item['no'], $arr_item['title']);
-              }
-            ?>
-            <li><a href="#contentNotes">Notlar</a></li>
-            <li><a href="#contentRevisionHistory">Sürüm Geçmişi</a></li>
-          </ul>
-          <div class="hr"></div>
-          <?php
-            foreach ($arr_pardil_content as $arr_item) {
-              printf('<h2><a name="content%d">%s</a></h2>', $arr_item['no'], $arr_item['title']);
-              printf('<div>%s</div>', $arr_item['body']);
-            }
-          ?>
-          <div class="hr"></div>
-          <h2><a name="contentNotes">Notlar</a></h2>
-          <dl>
-          <?php
-            foreach ($arr_pardil_notes as $arr_item) {
-              printf('<dt><span class="no">[%d]</span> <span>%s</span></dt>', $arr_item['no'], $arr_item['body']);
-            }
-          ?>
-          </dl>
-          <div class="hr"></div>
-          <h2><a name="contentRevisionHistory">Sürüm Geçmişi</a></h2>
-          <div class="revisions">
-            <?php
-              foreach ($arr_revisions_list as $arr_item) {
-                printf('<h3><a href="?id=%d&amp;rev=%0.2f">%0.2f</a></h3>', $int_pardil_id, $arr_item['version'], $arr_item['version']);
-                printf('<p>%s (<a href="mailto:%s">%s</a>)</p>', $arr_item['info'], $arr_item['pardil_revisor_mail'], $arr_item['pardil_revisor']);
-              }
-            ?>
-          </div>
-        </div>
-      </div>
-      <div id="footer">
-        &nbsp;
-      </div>
-    </div>
-  </body>
-</html>

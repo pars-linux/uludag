@@ -1,8 +1,6 @@
 <?php
-  setlocale(LC_ALL, 'tr_TR');
-  bindtextdomain('tr_TR', './l10n');
-  bind_textdomain_codeset('tr_TR', 'UTF-8');
-  textdomain('tr_TR');
-
-  printf(gettext('Hello!'));
+  setlocale(LC_MESSAGES, CONF_LOCALE);
+  bindtextdomain(CONF_LOCALE, './l10n');
+  bind_textdomain_codeset(CONF_LOCALE, 'UTF-8');
+  textdomain(CONF_LOCALE);
 ?>

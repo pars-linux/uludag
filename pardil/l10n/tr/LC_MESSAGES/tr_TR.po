@@ -12,6 +12,54 @@ msgstr ""
 "X-Poedit-Country: TURKEY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: sys.gettext.php:7
-msgid "Hello!"
-msgstr "Merhaba!"
+#: tpl.proposal.php:5
+msgid "Proposal %04d - %s"
+msgstr "Öneri %04d - %s"
+
+#: tpl.proposal.php:37
+msgid "Abstract"
+msgstr "Özet"
+
+#: tpl.proposal.php:39
+msgid "Identity"
+msgstr "Künye"
+
+#: tpl.proposal.php:41
+msgid "Status:"
+msgstr "Durum:"
+
+#: tpl.proposal.php:42
+msgid "Id:"
+msgstr "No:"
+
+#: tpl.proposal.php:43
+msgid "Version:"
+msgstr "Sürüm:"
+
+#: tpl.proposal.php:44
+msgid "Last Update:"
+msgstr "Son Güncelleme:"
+
+#: tpl.proposal.php:45
+msgid "Releated Proposals:"
+msgstr "Bağlantılı Öneriler:"
+
+#: tpl.proposal.php:45
+msgid "None"
+msgstr "Yok"
+
+#: tpl.proposal.php:47
+msgid "Maintainers"
+msgstr "Sorumlular"
+
+#: tpl.proposal.php:61
+msgid "Contents"
+msgstr "İçindekiler"
+
+#: tpl.proposal.php:68
+msgid "Notes"
+msgstr "Notlar"
+
+#: tpl.proposal.php:69
+msgid "Revision History"
+msgstr "Sürüm Geçmişi"

@@ -4,12 +4,8 @@
   define('CONF_DATABASE_PASS', '');
   define('CONF_DATABASE_NAME', 'pardil');
 
-  define('CONF_LOCALE', 'tr_TR.utf8');
+  define('MSG_DATABASE_CONNECT_ERROR', '<b>Ã–lÃ¼mcÃ¼l Hata:</b> VeritabanÄ± baÃ°lantÄ±sÄ± kurulamadÄ±.');
+  define('MSG_DATABASE_SELECT_ERROR', '<b>Ã–lÃ¼mcÃ¼l Hata:</b> VeritabanÄ± seÃ§imi yapÄ±lamadÄ±.');
 
-  define('MSG_DATABASE_CONNECT_ERROR', '<b>Ölümcül Hata:</b> Veritabanı bağlantısı kurulamadı.');
-  define('MSG_DATABASE_SELECT_ERROR', '<b>Ölümcül Hata:</b> Veritabanı seçimi yapılamadı.');
-
-
-  // l10n
-  setlocale(LC_ALL, CONF_LOCALE);
+  define('CONF_LOCALE', 'tr_TR');
 ?>
