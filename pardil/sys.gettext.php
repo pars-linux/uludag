@@ -1,6 +1,6 @@
 <?php
   setlocale(LC_ALL, CONF_LOCALE);
-  bindtextdomain(CONF_DOMAIN, './locale');
+  bindtextdomain(CONF_DOMAIN, './locales');
   bind_textdomain_codeset(CONF_DOMAIN, 'utf-8');
   textdomain(CONF_DOMAIN);
 ?>

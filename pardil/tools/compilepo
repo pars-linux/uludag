@@ -16,7 +16,7 @@ if [ -z "$1" ]; then
  exit 1
 fi
 
-WORKDIR=../locale
+WORKDIR=../locales
 LOCALEDIR=$WORKDIR/$1
 
 if [ ! -d $LOCALEDIR ]; then
