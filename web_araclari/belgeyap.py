@@ -55,8 +55,11 @@ class Cutter:
 		# hevea ciktisinda dokuman basligini bul
 		head = []
 		for line in lines:
-			if line [:7] == "<!--TOC":
-					break
+			t = line.find("<!--TOC")
+			if t != -1:
+				if t > 0:
+					head.append(line[:t])
+				break
 			head.append (line)
 		return head
 	
@@ -77,7 +80,9 @@ class Cutter:
 		for line in lines:
 			if flag == 0:
 				# ilk bolumu ariyoruz
-				if line [:7] == "<!--TOC":
+				t = line.find("<!--TOC")
+				if t != -1:
+					line = line[t:]
 					node = CutNode ()
 					node.level = line.split () [1]
 					node.name = line [line.find (" ", 8) + 1:line.rfind ("-->")]
