@@ -17,35 +17,36 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
   
 [% types = [
   { name => "noop", description => "---" },
-  { name => "equals", description => "is equal to" },
-  { name => "notequals", description => "is not equal to" },
-  { name => "anyexact", description => "is equal to any of the strings" },
-  { name => "substring", description => "contains the string" },
-  { name => "casesubstring", description => "contains the string (exact case)" },
-  { name => "notsubstring", description => "does not contain the string" },
-  { name => "allwordssubstr", description => "contains all of the strings" },
-  { name => "anywordssubstr", description => "contains any of the strings" },
-  { name => "regexp", description => "contains regexp" },
-  { name => "notregexp", description => "does not contain regexp" },
-  { name => "lessthan", description => "is less than" },
-  { name => "greaterthan", description => "is greater than" },
-  { name => "anywords", description => "contains any of the words" },
-  { name => "allwords", description => "contains all of the words" },
-  { name => "nowords", description => "contains none of the words" },
-  { name => "changedbefore", description => "changed before" },
-  { name => "changedafter", description => "changed after" },
-  { name => "changedfrom", description => "changed from" },
-  { name => "changedto", description => "changed to" },
-  { name => "changedby", description => "changed by" },
-  { name => "matches", description => "matches" } ] %]
+  { name => "equals", description => "eşit olan" },
+  { name => "notequals", description => "eşit olmayan" },
+  { name => "anyexact", description => "söz dizimlerinden herhangi birisine eşit olan" },
+  { name => "substring", description => "söz dizimini içeren" },
+  { name => "casesubstring", description => "söz dizimini aynen içeren" },
+  { name => "notsubstring", description => "söz dizimini içermeyen" },
+  { name => "allwordssubstr", description => "söz diziminin tamamını içeren" },
+  { name => "anywordssubstr", description => "söz diziminin herhangi bir kısmını içeren" },
+  { name => "regexp", description => "regexp içeren" },
+  { name => "notregexp", description => "regexp içermeyen" },
+  { name => "lessthan", description => "küçük olan" },
+  { name => "greaterthan", description => "büyük olan" },
+  { name => "anywords", description => "kelimelerin herhangi birisini içeren" },
+  { name => "allwords", description => "kelimelerin hepsini içeren" },
+  { name => "nowords", description => "kelimelerin hiçbirini içermeyen" },
+  { name => "changedbefore", description => "değişme tarihi önce olan" },
+  { name => "changedafter", description => "değişme tarihi sonra olan" },
+  { name => "changedfrom", description => "değiştirilen kişi" },
+  { name => "changedto", description => "atanan kişi" },
+  { name => "changedby", description => "değiştiren kişi" },
+  { name => "matches", description => "uyan" } ] %]
 
   <p>
     <strong>
-      Advanced Searching Using Boolean Charts:
+      Boole Karekterler Kullanarak Gelişmiş Arama:
     </strong>
   </p>
 
@@ -82,14 +83,14 @@
       
       [% UNLESS loop.last %]
         <td align="center"> 
-          Or 
+          Veya 
         </td>    
       </tr>
       <tr>
       [% ELSE %]
         <td>
           [% newor = colnum + 1 %]
-          <input type="submit" value="Or" 
+          <input type="submit" value="Veya" 
                  name="cmd-add[% "${chartnum}-${rownum}-${newor}" %]" [% jsmagic %]>
         </td>
       [% END %]
@@ -99,16 +100,16 @@
     
     [% UNLESS loop.last %]
     <tr>
-      <td>And</td>
+      <td>Ve</td>
     </tr>    
     [% ELSE %]
     <tr>
       <td>
         [% newand = rownum + 1; newchart = chartnum + 1 %]
-        <input type="submit" value="And" 
+        <input type="submit" value="Ve" 
                name="cmd-add[% "${chartnum}-${newand}-0" %]" [% jsmagic %]> 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" value="Add another boolean chart" 
+        <input type="submit" value="Bir başka boole karekteri ekle" 
                name="cmd-add[% newchart %]-0-0" [% jsmagic %]>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </td>

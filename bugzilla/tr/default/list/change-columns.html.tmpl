@@ -17,25 +17,26 @@
   # Rights Reserved.
   #
   # Contributor(s): Dave Lawrence <dkl@redhat.com>
+  # Translator		: Baris Ozyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Change Columns"
+  title = "Kolonları Değiştir"
 %]
 
 <p>
-  Select the columns you wish to appear in your [% terms.bug %] lists. Note that
-  this feature requires cookies to work.
+  [% terms.Bug %] listelerinde gösterilecek kolonları aşağıdan seçebilirsiniz. 
+  Bu özelliğin çalışabilmesi için tarayıcınızın çerezleri kabul etmesi gereklidir.
 </p>
 
 [% PROCESS "global/field-descs.none.tmpl" %]
-[% field_descs.short_short_desc     = "Summary (first 60 characters)" %]
-[% field_descs.short_desc           = "Full Summary" %]
-[% field_descs.assigned_to_realname = "Assignee Realname" %]
-[% field_descs.reporter_realname    = "Reporter Realname" %]
-[% field_descs.qa_contact_realname  = "QA Contact Realname" %]
+[% field_descs.short_short_desc     = "Özet (ilk 60 karekter)" %]
+[% field_descs.short_desc           = "Tam Özet" %]
+[% field_descs.assigned_to_realname = "Atananın Adı Soyadı" %]
+[% field_descs.reporter_realname    = "Raporlayanın Adı Soyadı" %]
+[% field_descs.qa_contact_realname  = "Kalite Sorumlusu Adı Soyadı" %]
 
 <form action="colchange.cgi">
   <input type="hidden" name="rememberedquery" value="[% buffer FILTER html %]">
@@ -52,26 +53,26 @@
     <input id="nosplitheader" type="radio" name="splitheader" value="0"
       [% "checked='checked'" IF NOT splitheader %]>
     <label for="nosplitheader">
-      Normal headers (prettier)
+      Normal başlıklar (daha şık)
     </label>
     <br>
 
     <input id="splitheader" type="radio" name="splitheader" value="1"
       [% "checked='checked'" IF splitheader %]>
     <label for="splitheader">
-      Stagger headers (often makes list more compact)
+      Bölümlenmiş başlıklars (listeyi daha da sıkıştırır)
     </label>
   </p>
 
   <p>
-    <input type="submit" value="Change Columns">
+    <input type="submit" value="Kolonları Değiştir">
   </p>
 </form>
 
 <form action="colchange.cgi">
   <input type="hidden" name="rememberedquery" value="[% buffer FILTER html %]">
   <input type="hidden" name="resetit" value="1">
-  <input type="submit" value="Reset to [% terms.Bugzilla %] default">
+  <input type="submit" value="[% terms.Bugzilla %] Varsayılanına Çevir">
 </form>
 
 [% PROCESS global/footer.html.tmpl %]
