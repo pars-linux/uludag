@@ -66,7 +66,7 @@ void AboutView::updateView( const QRect& rect )
     f_title.setPointSize( 25 );
     p.setFont( f_title );
     p.drawText( 15 + lw, lh/2 - 5, "Pardus" );
-    p.drawText( 15 + lw, lh/2 + 30, I18N_NOOP( "Configuration Center" ) );
+    p.drawText( 15 + lw, lh/2 + 30, i18n( "Configuration Center" ) );
 
     if ( height() > 350 )
     {
