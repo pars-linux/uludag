@@ -321,14 +321,14 @@ function selectProduct(f) {
 </script>
 
 [% query_variants = [
-  { value => "allwordssubstr", description => "contains all of the words/strings" },
-  { value => "anywordssubstr", description => "contains any of the words/strings" },
-  { value => "substring", description => "contains the string" },
-  { value => "casesubstring", description => "contains the string (exact case)" },
-  { value => "allwords", description => "contains all of the words" },
-  { value => "anywords", description => "contains any of the words" },
-  { value => "regexp", description => "matches the regexp" },
-  { value => "notregexp", description => "doesn't match the regexp" } ] %]
+  { value => "allwordssubstr", description => "sözcük/söz dizimlerinin tamamını içeren" },
+  { value => "anywordssubstr", description => "sözcük/söz dizimlerinden herhangi birisini içeren" },
+  { value => "substring", description => "söz dizimini içeren" },
+  { value => "casesubstring", description => "söz dizimini aynen içeren" },
+  { value => "allwords", description => "sözcüklerin hepsini içeren" },
+  { value => "anywords", description => "sözcüklerin herhangi birisini içeren" },
+  { value => "regexp", description => "regexp aynısı olan" },
+  { value => "notregexp", description => "regexp farklı olan" } ] %]
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
@@ -340,7 +340,7 @@ function selectProduct(f) {
 
 <table>
   <tr>
-    <th align="right"><u>S</u>Özet:</th>
+    <th align="right"><u>Ö</u>zet:</th>
     <td>
       <select name="short_desc_type">
       [% FOREACH qv = query_variants %]
@@ -350,7 +350,7 @@ function selectProduct(f) {
       </select>
     </td>
     <td>
-      <input name="short_desc" size="40" accesskey="s"
+      <input name="short_desc" size="40" accesskey="ö"
              value="[% default.short_desc.0 FILTER html %]">
       <script language="JavaScript" type="text/javascript"> <!--
           document.forms['queryform'].short_desc.focus(); 
@@ -373,12 +373,12 @@ function selectProduct(f) {
           <td valign="top">
             <table>
               <tr valign="bottom">
-                <th align="left"><u>P</u>Ürün:</th>
+                <th align="left"><u>Ü</u>rün:</th>
               </tr>
               <tr valign="top">
                 [%# Can't use the select block here because of the onChange %]
                 <td align="left">
-                  <label for="product" accesskey="p">
+                  <label for="product" accesskey="ü">
                     <select name="product" multiple="multiple" size="5" id="product"
                             onchange="selectProduct(this.form);">
                     [% FOREACH p = product %]
@@ -420,12 +420,12 @@ function selectProduct(f) {
           <td valign="top">
             <table>
               <tr valign="bottom">
-                <th align="left"><u>V</u>Sürüm:</th>
+                <th align="left"><u>S</u>ürüm:</th>
               </tr>
               <tr valign="top">
                 [% PROCESS select sel = { name => 'version',
                                           size => 5,
-                                          accesskey => 'v' } %]
+                                          accesskey => 's' } %]
               </tr>
             </table>
           </td>
@@ -433,12 +433,12 @@ function selectProduct(f) {
           <td valign="top">
             <table>
               <tr valign="bottom">
-                <th align="left"><u>T</u>Hedef:</th>
+                <th align="left"><u>H</u>edef:</th>
               </tr>
               <tr valign="top">
                 [% PROCESS select sel = { name => 'target_milestone',
                                           size => 5,
-                                          accesskey => 't' } %]
+                                          accesskey => 'h' } %]
               </tr>
             </table>
           </td>
@@ -451,12 +451,12 @@ function selectProduct(f) {
 [%# *** Comment URL Whiteboard Keywords *** %]
 
   [% FOREACH field = [
-    { name => "long_desc", description => "A&nbsp;<u>C</u>omment",
-      accesskey => 'c' },
-    { name => "bug_file_loc", description => "The&nbsp;<u>U</u>RL",
-      accesskey => 'u' },
-    { name => "status_whiteboard", description => "<u>W</u>hiteboard",
-      accesskey => 'w' } ] %]
+    { name => "long_desc", description => "<u>Y</u>orum",
+      accesskey => 'y' },
+    { name => "bug_file_loc", description => "<u>W</u>eb Adresi",
+      accesskey => 'w' },
+    { name => "status_whiteboard", description => "<u>K</u>aratahta",
+      accesskey => 'k' } ] %]
 
     [% UNLESS field.name == 'status_whiteboard' AND NOT Param('usestatuswhiteboard') %]
     <tr>
@@ -482,14 +482,14 @@ function selectProduct(f) {
   [% IF have_keywords %]
     <tr>
       <th align="right">
-        <a href="describekeywords.cgi"><u>K</u>eywords</a>:
+        <a href="describekeywords.cgi"><u>A</u>nahtar Kelimeler</a>:
       </th>
       <td>
         <select name="keywords_type">
         [% FOREACH qv = [
-          { name => "allwords", description => "contains all of the keywords" },
-          { name => "anywords", description => "contains any of the keywords" },
-          { name => "nowords",  description => "contains none of the keywords" } ] %]
+          { name => "allwords", description => "tüm anahtar kelimeleri içeren" },
+          { name => "anywords", description => "anahtar kelimelerden herhangi birisini içeren" },
+          { name => "nowords",  description => "anahtar kelimelerden hiçbirisini içermeyen" } ] %]
 
           <option value="[% qv.name %]"
             [% " selected" IF default.keywords_type.0 == qv.name %]>
@@ -498,7 +498,7 @@ function selectProduct(f) {
         </select>
       </td>
       <td>
-        <input name="keywords" size="40" accesskey="k"
+        <input name="keywords" size="40" accesskey="a"
                value="[% default.keywords.0 FILTER html %]">
       </td>
     </tr>
@@ -514,12 +514,12 @@ function selectProduct(f) {
     <td>
       <table>
         <tr>
-          <th align="left">St<u>a</u>tus:</th>
+          <th align="left"><u>D</u>urum:</th>
         </tr>
         <tr valign="top">
           [% PROCESS select sel = { name => 'bug_status',
                                     size => 7,
-                                    accesskey => 'a' } %]
+                                    accesskey => 'd' } %]
         </tr>
       </table>
     </td>
@@ -527,61 +527,61 @@ function selectProduct(f) {
       <table>
         <tr>
           <th align="left">
-            <u>R</u>esolution:
+            <u>Ç</u>özüm:
           </th>
         </tr>
         <tr valign="top">
           [% PROCESS select sel = { name => 'resolution',
                                     size => 7,
-                                    accesskey => 'r' } %]
+                                    accesskey => 'ç' } %]
         </tr>
       </table>
     </td>
     <td>
       <table>
         <tr>
-          <th align="left">S<u>e</u>verity:</th>
+          <th align="left">Ö<u>n</u>em:</th>
         </tr>
         <tr valign="top">
           [% PROCESS select sel = { name => 'bug_severity',
                                     size => 7,
-                                    accesskey => 'e' } %]
+                                    accesskey => 'n' } %]
         </tr>
       </table>
     </td>
     <td>
       <table>
         <tr>
-          <th align="left">Pr<u>i</u>ority:</th>
+          <th align="left">Ön<u>c</u>elik:</th>
         </tr>
         <tr valign="top">
           [% PROCESS select sel = { name => 'priority',
                                     size => 7,
-                                    accesskey => 'i' } %]
+                                    accesskey => 'c' } %]
         </tr>
       </table>
     </td>
     <td>
       <table>
         <tr>
-          <th align="left"><u>H</u>ardware:</th>
+          <th align="left">D<u>o</u>nanım:</th>
         </tr>
         <tr valign="top">
           [% PROCESS select sel = { name => 'rep_platform',
                                     size => 7,
-                                    accesskey => 'h' } %]
+                                    accesskey => 'o' } %]
         </tr>
       </table>
     </td>
     <td>
       <table>
         <tr>
-          <th align="left"><u>O</u>S:</th>
+          <th align="left">İ<u>ş</u>letim Sistemi:</th>
         </tr>
         <tr valign="top">
           [% PROCESS select sel = { name => 'op_sys',
                                     size => 7,
-                                    accesskey => 'o' } %]
+                                    accesskey => 'ş' } %]
         </tr>
       </table>
     </td>
@@ -736,13 +736,13 @@ function selectProduct(f) {
 
 
 <dl class="bug_changes">
-  <dt>Only [% terms.bugs %] changed between:</dt>
+  <dt>Değiştirilme tarih aralığı sadece:</dt>
   <dd>
     <input name="chfieldfrom" size="10" value="[% default.chfieldfrom.0 FILTER html %]">
-    and <input name="chfieldto" size="10" value="[% default.chfieldto.0 FILTER html %]">
-    <br>(YYYY-MM-DD or relative dates)
+    ile <input name="chfieldto" size="10" value="[% default.chfieldto.0 FILTER html %]">
+    <br>(YYYY-AA-GG şeklinde giriniz)arasında olan [% terms.bug %] bildirimleri
   </dd>
-  <dt>where one or more of the following changed:</dt>
+  <dt>aşağıdaki alanlardan biri ya da birkaçı değişmiş olan:</dt>
   <dd>
     <select name="chfield" multiple="multiple" size="4">
     [% FOREACH field = chfield %]
@@ -752,9 +752,9 @@ function selectProduct(f) {
     [% END %]
     </select>
   </dd>
-  <dt>and the new value was:</dt>
+  <dt>ve değişen yeni değer:</dt>
   <dd>
-    <input name="chfieldvalue" size="20" value="[% default.chfieldvalue.0 FILTER html %]">
+    <input name="chfieldvalue" size="20" value="[% default.chfieldvalue.0 FILTER html %]"> olan
   </dd>
 </dl>
 
