@@ -144,7 +144,7 @@
       { name = 'Other',       
         description = 'Any field not mentioned above changes' } ] %]
     <tr>
-      [% FOREACH role = [ "Reporter", "Owner", "QAcontact", "CClist", "Voter" ] 
+      [% FOREACH role = [ "Raporlayan", "Sahibi", "QAcontact", "CClist", "Oylayan" ] 
        %]
         [% NEXT IF role == "QAcontact" AND NOT useqacontact %]
         <td align="center">

@@ -26,29 +26,29 @@
     ([% this_bug_idx + 1 %] of [% bug_list.size %])
   [% END %]
   
-  <a href="show_bug.cgi?id=[% bug_list.first %]">First</a>
-  <a href="show_bug.cgi?id=[% bug_list.last %]">Last</a>
+  <a href="show_bug.cgi?id=[% bug_list.first %]">İlk</a>
+  <a href="show_bug.cgi?id=[% bug_list.last %]">Son</a>
 
   [% IF this_bug_idx != -1 %]
     [% IF this_bug_idx > 0 %]
       [% prev_bug = this_bug_idx - 1 %]
-      <a href="show_bug.cgi?id=[% bug_list.$prev_bug %]">Prev</a>
+      <a href="show_bug.cgi?id=[% bug_list.$prev_bug %]">Önceki</a>
     [% ELSE %]
-      <i><font color="#777777">Prev</font></i>
+      <i><font color="#777777">Önceki</font></i>
     [% END %]
 
     [% IF this_bug_idx + 1 < bug_list.size %]
       [% next_bug = this_bug_idx + 1 %]
-      <a href="show_bug.cgi?id=[% bug_list.$next_bug %]">Next</a>
+      <a href="show_bug.cgi?id=[% bug_list.$next_bug %]">Sonraki</a>
     [% ELSE %]
-      <i><font color="#777777">Next</font></i>
+      <i><font color="#777777">Sonraki</font></i>
     [% END %]
   [% ELSE %]
-    (This bug is not in your list)
+    (Bu hata raporu listenizde bulunmamaktadır)
   [% END %]
   
-  &nbsp;&nbsp;<a href="buglist.cgi?regetlastlist=1">Show list</a>
+  &nbsp;&nbsp;<a href="buglist.cgi?regetlastlist=1">Listeyi göster</a>
 [% END %]
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="query.cgi">Query page</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enter_bug.cgi">Enter new bug</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="query.cgi">Sorgulama sayfası</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="enter_bug.cgi">Yeni hata raporu girişi</a>

@@ -22,8 +22,8 @@
 [% filtered_desc = bug.short_desc FILTER html %]
 [% UNLESS header_done %]
   [% PROCESS global/header.html.tmpl 
-    title = "Bug $bug.bug_id - $bug.short_desc"
-    h1 = "Bugzilla Bug $bug.bug_id"
+    title = "Hata Raporu $bug.bug_id - $bug.short_desc"
+    h1 = "Bugzilla $bug.bug_id Numaralı Hata Raporu"
     h2 = filtered_desc
     header_html = navigation_links
    %]
@@ -44,7 +44,7 @@
   <table cellspacing="1" cellpadding="1" border="0">
     <tr>      
       <td align="right">
-        <b>Bug#:</b>
+        <b>Hata Raporu Numarası:</b>
       </td>
       <td>
         <a href="[% Param('urlbase') %]show_bug.cgi?id=[% bug.bug_id %]">
@@ -54,12 +54,12 @@
       <td>&nbsp;</td>
 
       <td align="right">
-        <b>Platform:</b>
+        <b>Donanım:</b>
       </td>
       [% PROCESS select selname = "rep_platform" %]
       
       <td align="right">
-        <b>Reporter:</b>
+        <b>Raporlayan:</b>
       </td>
       <td>
         [% bug.reporter FILTER html %]
@@ -68,17 +68,17 @@
     
     <tr>
       <td align="right">
-        <b>Product:</b>
+        <b>Ürün:</b>
       </td>
       [% PROCESS select selname => "product" %]
       
       <td align="right">
-        <b>OS:</b>
+        <b>İşletim Sistemi:</b>
       </td>
       [% PROCESS select selname => "op_sys" %]
 
       <td align="right">
-        <b>Add&nbsp;CC:</b>
+        <b>CC&nbsp;Ekle:</b>
       </td>
       <td>
         <input name="newcc" size="30" value="">
@@ -91,7 +91,7 @@
       <td align="right">
         <b>
           <a href="describecomponents.cgi?product=[% bug.product FILTER url_quote %]">
-            Component</a>:
+            Bileşen</a>:
         </b>
       </td>
       <td>
@@ -107,7 +107,7 @@
       <td>&nbsp;</td>
  
       <td align="right">
-        <b>Version:</b>
+        <b>Sürüm:</b>
       </td>
       [% PROCESS select selname => "version"  %]
       
@@ -133,14 +133,14 @@
     <tr>
       <td align="right">
         <b>
-          <a href="/bugzilla/bug_status.html">Status</a>:
+          <a href="/bugzilla/bug_status.html">Durum</a>:
         </b>
       </td>
       <td>[% bug.bug_status FILTER html %]</td>      
       <td>&nbsp;</td>
       
       <td align="right">
-        <b><a href="/bugzilla/bug_status.html#priority">Priority</a>:</b>
+        <b><a href="/bugzilla/bug_status.html#priority">Öncelik</a>:</b>
       </td>
       [% PROCESS select selname => "priority" %]
     </tr>
@@ -148,14 +148,14 @@
     <tr>
       <td align="right">
         <b>
-          <a href="/bugzilla/bug_status.html">Resolution</a>:
+          <a href="/bugzilla/bug_status.html">Çözüm</a>:
         </b>
       </td>
       <td>[% bug.resolution FILTER html %]</td>      
       <td>&nbsp;</td>
       
       <td align="right">
-        <b><a href="/bugzilla/bug_status.html#severity">Severity</a>:</b>
+        <b><a href="/bugzilla/bug_status.html#severity">Önem</a>:</b>
       </td>
       [% PROCESS select selname = "bug_severity" %]
       
@@ -164,7 +164,7 @@
     <tr>
       <td align="right">
         <b>
-          <a href="/bugzilla/bug_status.html#assigned_to">Assigned&nbsp;To</a>:
+          <a href="/bugzilla/bug_status.html#assigned_to">Atanan&nbsp;Kişi</a>:
         </b>
       </td>
       <td>[% bug.assigned_to FILTER html %]</td>
@@ -173,7 +173,7 @@
       [% IF Param("usetargetmilestone") && bug.target_milestone %]
         <td align="right">
           <b>
-            <a href="[% bug.milestoneurl FILTER html %]">Target Milestone</a>:
+            <a href="[% bug.milestoneurl FILTER html %]">Hedef Mihenk Taşı</a>:
           </b>
         </td>
         [% PROCESS select selname = "target_milestone" %]
@@ -202,7 +202,7 @@
         [% IF bug.bug_file_loc %]
           <a href="[% bug.bug_file_loc FILTER html %]">URL</a>:
         [% ELSE %]
-          URL:
+          Web Adresi:
         [% END %]
       </b>
     </td>
@@ -214,7 +214,7 @@
   
   <tr>
     <td align="right">
-      <b>Summary:</b>
+      <b>Özet:</b>
     </td>
     <td colspan="7">
       <input name="short_desc" 
@@ -225,7 +225,7 @@
   [% IF Param('usestatuswhiteboard') %] 
     <tr>
       <td align="right">
-        <b>Status Whiteboard:</b>
+        <b>Durum Tahtası:</b>
       </td>
       <td colspan="7">
         <input name="status_whiteboard" 
@@ -238,7 +238,7 @@
     <tr>
       <td align="right">
         <b>
-          <a href="describekeywords.cgi">Keywords</a>:
+          <a href="describekeywords.cgi">Anahtar Kelimeler</a>:
         </b>
       <td colspan="7">
         <input name="keywords" 
@@ -284,14 +284,14 @@
   <table>
     <tr>
       <th>
-        <a href="/bugzilla/votehelp.html">Votes</a>:
+        <a href="/bugzilla/votehelp.html">Oylar</a>:
       </th>
       <td>
         [% bug.votes %]&nbsp;&nbsp;&nbsp;
-        <a href="votes.cgi?action=show_bug&amp;bug_id=[% bug.bug_id %]">Show 
-        votes for this bug</a>&nbsp;&nbsp;&nbsp;
-        <a href="votes.cgi?action=show_user&amp;bug_id=[% bug.bug_id %]">Vote 
-        for this bug</a>
+        <a href="votes.cgi?action=show_bug&amp;bug_id=[% bug.bug_id %]">Bu
+        hata raporu için kullanılan oyları göster</a>&nbsp;&nbsp;&nbsp;
+        <a href="votes.cgi?action=show_user&amp;bug_id=[% bug.bug_id %]">Bu 
+        hata raporu için oy kullan</a>
       </td>
     </tr>
   </table>
@@ -300,7 +300,7 @@
 [%# *** Comments Groups *** %]
 
   <br>
-  <b>Additional Comments:</b>
+  <b>Diğer Yorumlar:</b>
   <br>
   <textarea wrap="hard" name="comment" rows="10" cols="80"
             accesskey="c"></textarea>
@@ -308,9 +308,9 @@
 
   [% IF groups.size > 0 %]
     <br>
-    <b>Only users in all of the selected groups can view this bug:</b>
+    <b>Bu hata raporunu sadece seçili guruplardaki kullanıcılar görebilir:</b>
     <br>
-    <font size="-1">(Unchecking all boxes makes this a public bug.)</font>
+    <font size="-1">(Bütün kutucuklardaki işaretleri kaldırmak bu hata raporunu herkes tarafından görülebilir yapar.)</font>
     <br>
     <br>
 
@@ -325,15 +325,15 @@
 
     [% IF NOT user.inallgroups %]
       <b>
-        Only members of a group can change the visibility of a bug for 
-        that group
+        Bir hata mesajının başka guruplar tarafından görünülebilirliğini sadece 
+        ilgili gurubun üyeleri değiştirebilir
       </b>
     <br>
     [% END %]
 
     [% IF bug.inagroup %]
       <p>
-        <b>But users in the roles selected below can always view this bug:</b>
+        <b>Ancak aşağıdaki role sahip kullanıcılar bu hatayı her zaman görüntüleyebilir:</b>
         <br>
         <small>
           (The assignee                                                
@@ -358,8 +358,8 @@
 
   <br>
   <input type="radio" name="knob" value="none" checked="checked">
-  Leave as <b>[% bug.bug_status FILTER html %]&nbsp;
-              [% bug.resolution FILTER html %]</b>
+  <b>[% bug.bug_status FILTER html %]&nbsp;
+              [% bug.resolution FILTER html %]</b> olarak bırak
   <br>
 
   [% knum = 1 %]
@@ -367,7 +367,7 @@
   [% IF bug.bug_status == "UNCONFIRMED" && 
         user.canconfirm %]
     <input type="radio" name="knob" value="confirm">
-    Confirm bug (change status to <b>NEW</b>)
+    Hatayı onayla (durumunu <b>YENİ</b> olarak değiştir)
     <br>
     [% knum = knum + 1 %]
   [% END %]
@@ -376,17 +376,17 @@
     [% IF bug.isopened %]
       [% IF bug.bug_status != "ASSIGNED" && user.canconfirm %]
         <input type="radio" name="knob" value="accept">
-        Accept bug (
-        [% "confirm bug, " IF bug.isunconfirmed %]change
-        status to <b>ASSIGNED</b>)
+        Hata raporunu kabul et (
+        [% "confirm bug, " IF bug.isunconfirmed %]durumunu
+        <b>ATANMIŞ</b> olarak değiştir)
         <br>
         [% knum = knum + 1 %]
       [% END %]
 
       [% IF bug.resolution %]
         <input type="radio" name="knob" value="clearresolution">
-        Clear the resolution (remove the current resolution of
-        <b>[% bug.resolution FILTER html %]</b>)<br>      
+        Çözümü temizle (
+        <b>[% bug.resolution FILTER html %]</b> için mevcut çözümü sil)<br>      
         [% knum = knum + 1 %]
       [% END %]
 

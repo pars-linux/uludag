@@ -23,7 +23,7 @@
 [%# Template Initialization                                                  #%]
 [%############################################################################%]
 
-[% DEFAULT title = "Bug List" %]
+[% DEFAULT title = "Hata Raporları Listesi" %]
 [% style_urls = [ "/bugzilla/css/buglist.css" ] %]
 [% qorder = order FILTER url_quote IF order %]
 
@@ -52,8 +52,8 @@
 
 [% IF toolong %]
   <h2>
-    This list is too long for Bugzilla's little mind; the 
-    Next/Prev/First/Last buttons won't appear on individual bugs.
+    Bu liste Bugzilla' nın küçük aklı için fazlasıyla uzun;  
+    Sonraki/Önceki/İlk/Son düğmeleri tekil hata raporları için görüntülenmez.
   </h2>
 [% END %]
 
@@ -65,7 +65,7 @@
 [%############################################################################%]
 
 [% IF bugs.size > 9 %]
-  [% bugs.size %] bugs found.
+  [% bugs.size %] hata raporu bulundu.
 [% END %]
 
 
@@ -90,18 +90,18 @@
 [%############################################################################%]
 
 [% IF bugs.size == 0 %]
-  Zarro Boogs found.
+  Hiç hata raporu kaydı bulunamadı.
   <p>
-    <a href="query.cgi">Query Page</a>
-    &nbsp;&nbsp;<a href="enter_bug.cgi">Enter New Bug</a>
-    <a href="query.cgi?[% urlquerypart FILTER html %]">Edit this query</a>
+    <a href="query.cgi">Sorgulama Sayfası</a>
+    &nbsp;&nbsp;<a href="enter_bug.cgi">Yeni Hata Raporu Girişi</a>
+    <a href="query.cgi?[% urlquerypart FILTER html %]">Bu sorguyu düzenle</a>
   </p>
 
 [% ELSIF bugs.size == 1 %]
-  One bug found.
+  Bir hata raporu bulundu.
 
 [% ELSE %]
-  [% bugs.size %] bugs found.
+  [% bugs.size %] hata raporu bulundu.
 
 [% END %]
 
@@ -130,24 +130,23 @@
 [% IF bugs.size > 0 %]
   <form method="post" action="long_list.cgi">
     <input type="hidden" name="buglist" value="[% buglist %]">
-    <input type="submit" value="Long Format">
+    <input type="submit" value="Uzun Biçim">
 
-    <a href="query.cgi">Query Page</a> &nbsp;&nbsp;
-    <a href="enter_bug.cgi">Enter New Bug</a> &nbsp;&nbsp;
-    <a href="colchange.cgi?[% urlquerypart FILTER html %]">Change Columns</a> &nbsp;&nbsp;
+    <a href="query.cgi">Sorgulama Sayfası</a> &nbsp;&nbsp;
+    <a href="enter_bug.cgi">Yeni Hata Raporu Girişi</a> &nbsp;&nbsp;
+    <a href="colchange.cgi?[% urlquerypart FILTER html %]">Kolonları Değiştir</a> &nbsp;&nbsp;
 
     [% IF bugs.size > 1 && caneditbugs && !dotweak %]
       <a href="buglist.cgi?[% urlquerypart FILTER html %]
-        [%- "&order=$qorder" FILTER html IF order %]&amp;tweak=1">Change Several 
-        Bugs at Once</a>
+        [%- "&order=$qorder" FILTER html IF order %]&amp;tweak=1">Birden Çok Hata Raporunu Tek Seferde Değiştir</a>
       &nbsp;&nbsp;
     [% END %]
 
     [% IF bugowners %]
-      <a href="mailto:[% bugowners %]">Send Mail to Bug Owners</a> &nbsp;&nbsp;
+      <a href="mailto:[% bugowners %]">Hata Raporu Sahiplerine E-posta Gönder</a> &nbsp;&nbsp;
     [% END %]
 
-    <a href="query.cgi?[% urlquerypart FILTER html %]">Edit this Query</a> &nbsp;&nbsp;
+    <a href="query.cgi?[% urlquerypart FILTER html %]">Bu Sorguyu Düzenle</a> &nbsp;&nbsp;
 
   </form>
 
