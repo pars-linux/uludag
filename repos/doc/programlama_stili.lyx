@@ -70,7 +70,7 @@ Dosya baþýnda lisans bölümü ve açýklama bölümü iki ayrý yorum bölümü olarak
 C/C++ için örnek lisans ve kýsa açýklama baþlýðý;
 \layout LyX-Code
 
-/* Copyright (c) 2004, TUBITAK/UEKAE
+/* Copyright (C) 2004, TUBITAK/UEKAE
 \newline 
  * 
 \newline 
@@ -106,7 +106,7 @@ C/C++ için örnek lisans ve kýsa açýklama baþlýðý;
 Python programlarý için örnek lisans ve açýklama baþlýðý;
 \layout LyX-Code
 
-#  Copyright (c) 2004, TUBITAK/UEKAE
+#  Copyright (C) 2004, TUBITAK/UEKAE
 \newline 
 #
 \newline 
@@ -331,7 +331,7 @@ Daha sonra tip tanýmlarý (typedef) ve en son genel geðiþkenlerin tanýmý
 \layout Standard
 
 Tüm bunlardan sonra baþlýk dosyalarý (.h dosyalarý) için fonksiyon bildirimleri
- (decleration), gerçekleþtirme dosyalarý (C için .c, C++ için .cpp dosyalarý)
+ (declaration), gerçekleme dosyalarý (C için .c, C++ için .cpp dosyalarý)
  için fonksiyon tanýmlarý (definition) yazýlmalýdýr.
 \layout Subsection
 
@@ -369,7 +369,7 @@ populate_module_list( const char* path )
 Parantezler
 \layout Standard
 
-Fonksiyon bildirimlerinde ve çaðýrýmlarýnda parantezler mutlaka fonksiyon
+Fonksiyon bildirimlerinde ve çaðýrýlarýnda parantezler mutlaka fonksiyon
  adý ile bitiþik yazýlýr.
 \layout LyX-Code
 
@@ -479,5 +479,5 @@ genel kurallara uymak þartý ile
 \layout Standard
 
 Python yazým stili için http://www.python.org/peps/pep-0008.html adresindeki
- döküman kullanýlýr.
+ doküman kullanýlýr.
 \the_end
