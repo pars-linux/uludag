@@ -41,6 +41,9 @@ TIconView::TIconView( QWidget *parent, const char* name )
     f.setWeight( QFont::Bold );
     setFont( f );
 
+    connect( this, SIGNAL( executed( QIconViewItem* ) ),
+             this, SLOT( slotItemSelected( QIconViewItem* ) ) );
+
 }
 
 void TIconView::setCategory( const QString& path )
@@ -70,8 +73,6 @@ void TIconView::setCategory( const QString& path )
                                                    minfo->moduleName(),
                                                    _icon, minfo );
 
-            connect( this, SIGNAL( executed( QIconViewItem* ) ),
-                     this, SLOT( slotItemSelected( QIconViewItem* ) ) );
         } // ignore second level subGroups!
     }
     list.clear();
