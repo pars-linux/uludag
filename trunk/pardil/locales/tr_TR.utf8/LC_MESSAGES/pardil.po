@@ -18,188 +18,192 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Access Denied"
-msgstr ""
+msgstr "Erişim Engellendi"
 
 msgid "Username should be written."
-msgstr ""
+msgstr "Kullanıcı adı yazılmalı."
 
 msgid "Password should be written."
-msgstr ""
+msgstr "Şifre yazılmalı."
 
 msgid "Wrong username or password."
-msgstr ""
+msgstr "Hatalı kullanıcı adı ya da şifre."
 
 msgid "User account is not activated."
-msgstr ""
+msgstr "Kullanıcı hesabı aktive edilmemiş."
 
 msgid "User Login"
-msgstr ""
+msgstr "Kullanıcı Girişi"
 
 msgid "Title should be written."
-msgstr ""
+msgstr "Başlık yazılmalı."
 
 msgid "Abstract should be written."
-msgstr ""
+msgstr "Özet yazılmalı."
 
 #, php-format
 msgid "Section \"%s\" should be written. If you don't want it, remove it."
-msgstr ""
+msgstr "\"%s\" bölümü yazılmalı. İstemiyorsanız, bölümü kaldırın."
 
 msgid "At least one section should be created."
-msgstr ""
+msgstr "En az bir bölüm yaratılmalı."
 
 msgid "Release info should be written."
-msgstr ""
+msgstr "Sürüm bilgisi yazılmalı."
 
 msgid "New Proposal"
-msgstr ""
+msgstr "Yeni Öneri"
 
 msgid "Registration Complete"
-msgstr ""
+msgstr "Kayıt Tamamlandı"
 
 msgid "Real name should be written."
-msgstr ""
+msgstr "Gerçek isim yazılmalı."
 
 msgid "Username is in use."
-msgstr ""
+msgstr "Kullanıcı adı kullanımda."
 
 msgid "Password should be written twice."
-msgstr ""
+msgstr "Şifre iki kere yazılmalı."
 
 msgid "Passwords should be same."
-msgstr ""
+msgstr "Şifreler aynı olmalı."
 
 msgid "E-mail address should be written."
-msgstr ""
+msgstr "E-posta adresi yazılmalı."
 
 msgid "E-mail address should be valid."
-msgstr ""
+msgstr "E-posta adresi geçerli olmalı."
 
 msgid "User Registration"
-msgstr ""
+msgstr "Kullanıcı Kaydı"
 
 msgid "You are not allowed to perform this operation."
-msgstr ""
+msgstr "Bu işlemi yapma izniniz yok."
 
 msgid "Session Information:"
-msgstr ""
+msgstr "Oturum Bilgisi:"
 
 msgid "Username:"
-msgstr ""
+msgstr "Kullanıcı Adı:"
 
 msgid "Password:"
-msgstr ""
+msgstr "Şifre:"
 
 msgid "Login &raquo;"
-msgstr ""
+msgstr "Giriş &raquo;"
 
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Şifrenizi mi unuttunuz?"
 
 msgid "Need activation?"
-msgstr ""
+msgstr "Aktivasyona mı ihtiyacınız var?"
 
 msgid "Not a registered user?"
-msgstr ""
+msgstr "Kayıtlı kullanıcı değil misiniz?"
 
 msgid "Title:"
-msgstr ""
+msgstr "Başlık:"
 
 msgid "Abstract:"
-msgstr ""
+msgstr "Özet:"
 
 msgid "New Section:"
-msgstr ""
+msgstr "Yeni Bölüm:"
 
 msgid "Add &raquo;"
-msgstr ""
+msgstr "Ekle &raquo;"
 
 msgid ""
 "Proposal should be written in sections.<br/>Write section title and then "
 "push \"Add &raquo;\" button."
 msgstr ""
+"Öneri bölümler halinde yazılmalı.<br/>Başlığı yazın ve "
+"sonra da \"Elşe &raquo;\" düğmesine basın."
 
 #, php-format
 msgid "Section: %s"
-msgstr ""
+msgstr "Bölüm: %s"
 
 #, php-format
 msgid "Section \\'%s\\' will be removed.\\nAre you sure?"
-msgstr ""
+msgstr "\\'%s\\' bölümü kaldırılacak.\\nEmin misiniz?"
 
 msgid "Remove Section"
-msgstr ""
+msgstr "Bölümü Kaldır"
 
 msgid "Notes:"
-msgstr ""
+msgstr "Notlar:"
 
 msgid "Release Info:"
-msgstr ""
+msgstr "Sürüm Bilgisi:"
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Emin misiniz?"
 
 msgid "Reset Form"
-msgstr ""
+msgstr "Formu Sıfırla"
 
 msgid "Submit &raquo;"
-msgstr ""
+msgstr "Gönder &raquo;"
 
 msgid "Abstract"
-msgstr ""
+msgstr "Özet"
 
 msgid "Identity"
-msgstr ""
+msgstr "Künye"
 
 msgid "Status:"
-msgstr ""
+msgstr "Durum:"
 
 msgid "Id:"
-msgstr ""
+msgstr "No:"
 
 msgid "Version:"
-msgstr ""
+msgstr "Sürüm:"
 
 msgid "Last Update:"
-msgstr ""
+msgstr "Son Güncelleme:"
 
 msgid "Releated Proposals:"
-msgstr ""
+msgstr "Bağlantılı Öneriler:"
 
 msgid "None"
-msgstr ""
+msgstr "Yok"
 
 msgid "Maintainers"
-msgstr ""
+msgstr "Sorumlular"
 
 msgid "Contents"
-msgstr ""
+msgstr "İçindekiler"
 
 msgid "Notes"
-msgstr ""
+msgstr "Notlar"
 
 msgid "Revision History"
-msgstr ""
+msgstr "Sürüm Geçmişi"
 
 msgid "You've successfully registered."
-msgstr ""
+msgstr "Başarılı bir şekilde kayıt oldunuz."
 
 msgid ""
 "You need to activate your account by clicking (or visiting) the URL sent to "
 "your e-mail address."
 msgstr ""
+"Hesabınızı, e-posta adresinize gönderilen adrese tıklayarak (ya da "
+"adresi ziyaret ederek) aktive etmeniz gerekmektedir."
 
 msgid "Go to login page"
-msgstr ""
+msgstr "Giriş sayfasına git"
 
 msgid "Name:"
-msgstr ""
+msgstr "İsim:"
 
 msgid "E-Mail Address:"
-msgstr ""
+msgstr "E-Posta Adresi:"
 
 msgid "Password (again):"
-msgstr ""
+msgstr "Şifre (tekrar):"
 
 msgid "Register &raquo;"
-msgstr ""
+msgstr "Kayıt &raquo;"
