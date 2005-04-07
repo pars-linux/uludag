@@ -12,33 +12,27 @@
       }
     }
   }
-
+  
   include('tpl.header.php');
 ?>
       <div id="menubar">
         <span class="arrowL">&#171;</span>
         <span class="arrowR">&#187;</span>
-        <span class="title"><?php echo __('Create Temporary Password'); ?></span>
+        <span class="title"><?php echo __('Account Activation'); ?></span>
       </div>
       <div id="content">
         <div class="proposal">
-          <p>
-            <?php __e('In this page, you can create a temporary password. With this temporary password, you can login to your account to change your primary password.'); ?>
-          </p>
-          <p>
-            <?php printf(__('This temporary password does not effect your primary password, and will be disabled after %d seconds.'), getop('temp_password_timeout')); ?>
-          </p>
-          <form action="password.php" method="post">
+          <form action="activation.php" method="post">
             <fieldset>
-              <input type="hidden" name="password" value="1"/>
+              <input type="hidden" name="activation" value="1"/>
               <table class="form">
                 <tr>
                   <td class="label"><?php echo __('E-Mail Address:'); ?></td>
                   <td>
-                    <input type="text" name="password_email" size="25" value="" />
+                    <input type="text" name="activation_email" size="25" value="" />
                   </td>
                 </tr>
-                <?php print_error('password_email'); ?>
+                <?php print_error('activation_email'); ?>
                 <tr>
                   <td class="label">&nbsp;</td>
                   <td>&nbsp;</td>
@@ -46,7 +40,7 @@
                 <tr>
                   <td class="label">&nbsp;</td>
                   <td class="info">
-                    <button type="submit"><b><?php echo __('Submit &raquo;'); ?></b></button>
+                    <button type="submit"><b><?php echo __('Request Code &raquo;'); ?></b></button>
                   </td>
                 </tr>
               </table>

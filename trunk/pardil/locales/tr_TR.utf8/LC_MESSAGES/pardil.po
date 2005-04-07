@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-05 22:19+0300\n"
+"POT-Creation-Date: 2005-04-07 21:10+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -16,6 +16,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Account Activation"
+msgstr "Hesap Aktivasyonu"
+
+msgid "Invalid activation data. Please double check URL."
+msgstr "Geçersiz aktivasyon bilgisi. Lütfen adresi iki kez kontrol edin."
+
+msgid "Activation code is not valid."
+msgstr "Aktivasyon kodu geçerli değil."
+
+msgid "Account is already activated."
+msgstr "Kullanıcı hesabı zaten aktive edilmiş."
+
+msgid "E-mail address should be written."
+msgstr "E-posta adresi yazılmalı."
+
+msgid "E-mail address should be valid."
+msgstr "E-posta adresi geçerli olmalı."
+
+msgid "Activation is not required."
+msgstr "Aktivasyon gerekmiyor."
+
+msgid "E-mail address does not exist in database."
+msgstr "E-posta adresi veritabanında bulunamadı."
+
+#, php-format
+msgid "%s Account Activation"
+msgstr "%s Hesap Aktivasyonu"
+
+#, php-format
+msgid ""
+"Hello,\n"
+"\n"
+"To complete your registration at %1$s, please visit the address below:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Thanks,\n"
+"%3$s Team"
+msgstr ""
+"Merhaba,\n"
+"\n"
+"%1$s adresindeki kaydınızı tamamlamak için, lütfen aşağıdaki adresi ziyaret "
+"edin:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Teşekkürler,\n"
+"%3$s Ekibi"
 
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
@@ -59,12 +108,6 @@ msgstr "Yeni Öneri"
 
 msgid "Change Password"
 msgstr "Parola Değiştir"
-
-msgid "E-mail address should be written."
-msgstr "E-posta adresi yazılmalı."
-
-msgid "E-mail address should be valid."
-msgstr "E-posta adresi geçerli olmalı."
 
 msgid "E-mail address not found in database."
 msgstr "E-posta adresi veritabanında bulunamadı.."
@@ -115,33 +158,40 @@ msgstr "Parola iki kere yazılmalı."
 msgid "Passwords should be same."
 msgstr "Parolalar aynı olmalı."
 
-#, php-format
-msgid "%s Account Activation"
-msgstr "%s Hesap Aktivasyonu"
-
-#, php-format
-msgid ""
-"Hello,\n"
-"\n"
-"To complete your registration at %1$s, please visit the address below:\n"
-"\n"
-"%2$s\n"
-"\n"
-"Thanks,\n"
-"%3$s Team"
-msgstr ""
-"Merhaba,\n"
-"\n"
-"%1$s adresindeki kaydınızı tamamlamak için, lütfen aşağıdaki adresi ziyaret "
-"edin:\n"
-"\n"
-"%2$s\n"
-"\n"
-"Teşekkürler,\n"
-"%3$s Ekibi"
-
 msgid "User Registration"
 msgstr "Kullanıcı Kaydı"
+
+msgid "Account Activated"
+msgstr "Hesap Aktive Edildi"
+
+msgid "Your registration is now complete."
+msgstr "Kaydınız tamamlandı."
+
+msgid "Go to login page"
+msgstr "Giriş sayfasına git"
+
+msgid "Activation Code Sent"
+msgstr "Aktivasyon Kodu Gönderildi"
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your e-mail address."
+msgstr ""
+"Hesabınızı, e-posta adresinize gönderilen adrese tıklayarak (ya da adresi "
+"ziyaret ederek) aktive etmeniz gerekmektedir."
+
+msgid ""
+"A problem occured in our mail server while sending your activation code. "
+"Please contact server administrator."
+msgstr ""
+"Aktivasyon kodunuzu gönderirken, posta sunucumuzda bir hata oluştu. Lütfen "
+"sunucu yöneticisiyle irtibata geçin."
+
+msgid "E-Mail Address:"
+msgstr "E-Posta Adresi:"
+
+msgid "Request Code &raquo;"
+msgstr "Kod Talep Et &raquo;"
 
 msgid "You are not allowed to perform this operation."
 msgstr "Bu işlemi yapma izniniz yok."
@@ -175,9 +225,6 @@ msgstr "Başarılı bir şekilde çıkış yaptınız."
 
 msgid "Go to main page"
 msgstr "Ana sayfaya git"
-
-msgid "Go to login page"
-msgstr "Giriş sayfasına git"
 
 msgid "Title:"
 msgstr "Başlık:"
@@ -241,9 +288,6 @@ msgid ""
 msgstr ""
 "Bu geçici parola, asıl parolanızı etkilemez, ve %d saniye sonra iptal edilir."
 
-msgid "E-Mail Address:"
-msgstr "E-Posta Adresi:"
-
 msgid "Abstract"
 msgstr "Özet"
 
@@ -282,20 +326,6 @@ msgstr "Sürüm Geçmişi"
 
 msgid "You've successfully registered."
 msgstr "Başarılı bir şekilde kayıt oldunuz."
-
-msgid ""
-"You need to activate your account by clicking (or visiting) the URL sent to "
-"your e-mail address."
-msgstr ""
-"Hesabınızı, e-posta adresinize gönderilen adrese tıklayarak (ya da adresi "
-"ziyaret ederek) aktive etmeniz gerekmektedir."
-
-msgid ""
-"A problem occured in our mail server while sending your activation code. "
-"Please contact server administrator."
-msgstr ""
-"Aktivasyon kodunuzu gönderirken, posta sunucumuzda bir hata oluştu. Lütfen "
-"sunucu yöneticisiyle irtibata geçin."
 
 msgid "Name:"
 msgstr "İsim:"
