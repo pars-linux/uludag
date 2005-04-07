@@ -17,6 +17,15 @@
     mysql_query($str_sql);
     return true;
   }
+  
+  // Aktivasyon kodunu güncelleme
+  function proc_activation_renew($int_user) {
+    $str_date = date('Y-m-d H:i:s');
+    $str_code = md5(microtime() . $int_user);
+    $str_sql = sprintf('UPDATE activation SET code="%s",timestamp="%s" WHERE user=%d', $str_code, $str_date, $int_user);
+    mysql_query($str_sql);
+    return $str_code;
+  }
 
   // Süresi geçmiş aktivasyon bilgilerine bakarak kullanıcı hesabını yoketme
   function proc_activation_expire($int_timeout) {

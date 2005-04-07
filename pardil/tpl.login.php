@@ -59,7 +59,7 @@
                   <td>
                     <b>&raquo;</b> <a href="password.php"><?php echo __('Forgot your password?'); ?></a>
                     <br/>
-                    <b>&raquo;</b> <a href="#"><?php echo __('Need activation?'); ?></a>
+                    <b>&raquo;</b> <a href="activation.php"><?php echo __('Need activation?'); ?></a>
                     <br/>
                     <b>&raquo;</b> <a href="register.php"><?php echo __('Not a registered user?'); ?></a>
                   </td>

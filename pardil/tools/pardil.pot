@@ -8,13 +8,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-05 22:19+0300\n"
+"POT-Creation-Date: 2005-04-07 21:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+msgid "Account Activation"
+msgstr ""
+
+msgid "Invalid activation data. Please double check URL."
+msgstr ""
+
+msgid "Activation code is not valid."
+msgstr ""
+
+msgid "Account is already activated."
+msgstr ""
+
+msgid "E-mail address should be written."
+msgstr ""
+
+msgid "E-mail address should be valid."
+msgstr ""
+
+msgid "Activation is not required."
+msgstr ""
+
+msgid "E-mail address does not exist in database."
+msgstr ""
+
+#, php-format
+msgid "%s Account Activation"
+msgstr ""
+
+#, php-format
+msgid ""
+"Hello,\n"
+"\n"
+"To complete your registration at %1$s, please visit the address below:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Thanks,\n"
+"%3$s Team"
+msgstr ""
 
 msgid "Access Denied"
 msgstr ""
@@ -59,12 +99,6 @@ msgstr ""
 msgid "Change Password"
 msgstr ""
 
-msgid "E-mail address should be written."
-msgstr ""
-
-msgid "E-mail address should be valid."
-msgstr ""
-
 msgid "E-mail address not found in database."
 msgstr ""
 
@@ -104,23 +138,35 @@ msgstr ""
 msgid "Passwords should be same."
 msgstr ""
 
-#, php-format
-msgid "%s Account Activation"
-msgstr ""
-
-#, php-format
-msgid ""
-"Hello,\n"
-"\n"
-"To complete your registration at %1$s, please visit the address below:\n"
-"\n"
-"%2$s\n"
-"\n"
-"Thanks,\n"
-"%3$s Team"
-msgstr ""
-
 msgid "User Registration"
+msgstr ""
+
+msgid "Account Activated"
+msgstr ""
+
+msgid "Your registration is now complete."
+msgstr ""
+
+msgid "Go to login page"
+msgstr ""
+
+msgid "Activation Code Sent"
+msgstr ""
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your e-mail address."
+msgstr ""
+
+msgid ""
+"A problem occured in our mail server while sending your activation code. "
+"Please contact server administrator."
+msgstr ""
+
+msgid "E-Mail Address:"
+msgstr ""
+
+msgid "Request Code &raquo;"
 msgstr ""
 
 msgid "You are not allowed to perform this operation."
@@ -154,9 +200,6 @@ msgid "You have successfully logged out"
 msgstr ""
 
 msgid "Go to main page"
-msgstr ""
-
-msgid "Go to login page"
 msgstr ""
 
 msgid "Title:"
@@ -216,9 +259,6 @@ msgid ""
 "disabled after %d seconds."
 msgstr ""
 
-msgid "E-Mail Address:"
-msgstr ""
-
 msgid "Abstract"
 msgstr ""
 
@@ -256,16 +296,6 @@ msgid "Revision History"
 msgstr ""
 
 msgid "You've successfully registered."
-msgstr ""
-
-msgid ""
-"You need to activate your account by clicking (or visiting) the URL sent to "
-"your e-mail address."
-msgstr ""
-
-msgid ""
-"A problem occured in our mail server while sending your activation code. "
-"Please contact server administrator."
 msgstr ""
 
 msgid "Name:"
