@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-09 20:24+0300\n"
+"POT-Creation-Date: 2005-04-09 21:26+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -196,6 +196,9 @@ msgstr "Kod Talep Et &raquo;"
 
 msgid "You are not allowed to perform this operation."
 msgstr "Bu işlemi yapma izniniz yok."
+
+msgid "Proposals"
+msgstr "Öneriler"
 
 msgid "Session Information:"
 msgstr "Oturum Bilgisi:"

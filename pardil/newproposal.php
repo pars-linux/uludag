@@ -7,7 +7,7 @@
   require('sys.session.php');
 
   // Erişim seviyesi kontrolü
-  $int_level = proc_getopt('level_proposal_new');
+  $int_level = getop('level_proposal_new');
   if ($int_level > $_PSESSION['level']) {
     header('Location: denied.php');
     exit;
@@ -47,7 +47,7 @@
   if (count($arr_errors) == 0 && isset($_POST['new_proposal']) && !isset($_POST['new_content_title_add'])) {
     // Öneri ekleme işlemleri...
 
-    $int_level = proc_getopt('level_proposal_new_approved');
+    $int_level = getop('level_proposal_new_approved');
 
     printf('<b>Başlık:</b> %s<br/>', htmlspecialchars($_POST['new_title']));
     printf('<b>Özet:</b> %s<br/>', htmlspecialchars($_POST['new_abstract']));
@@ -68,7 +68,7 @@
   }
   else {
     // Formu göster...
-    $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . __('New Proposal');
+    $_PCONF['title'] = getop('site_name') . ' - ' . __('New Proposal');
     $obj_page = new template('tpl.newproposal.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
