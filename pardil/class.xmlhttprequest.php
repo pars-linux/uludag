@@ -28,6 +28,8 @@
     (http://www.scss.com.au/family/andrew/webdesign/xmlhttprequest/)
   */
 
+  require('class.json.php');
+
   class xmlhttprequest {
     public $str_url = '';
     private $arr_functions_php = array();
@@ -54,7 +56,9 @@
                          if (req.readyState == 4) {
                            if (req.status == 200) {
                              // ok
-                             eval(x_js + \'(req)\');
+                             jsobjstr = req.responseText;
+                             eval(\'window.jsobj = \' + jsobjstr);
+                             eval(x_js + \'(x_php, jsobj, req)\');
                            }
                            else {
                              // error
@@ -89,7 +93,9 @@
     // XMLHTTPRequest sorgusunu saptayıp gerekli işlemleri yapan method
     public function handle_request() {
       if (isset($_POST['op']) && in_array($_POST['op'], $this->arr_functions_php)) {
-        call_user_func_array($_POST['op'], $_POST['arg']);
+        $obj_json = new JSON();
+        $str_obj = call_user_func_array($_POST['op'], $_POST['arg']);
+        echo $obj_json->encode($str_obj);
         exit;
       }
     }
