@@ -13,6 +13,7 @@
   $_PCONF['temp_password_timeout'] = 900;
 
   $_PCONF['register_activation_required'] = 'true';
+  $_PCONF['addresschange_activation_required'] = 'true';
   
   $_PCONF['level_proposal_new'] = 1;
   $_PCONF['level_proposal_new_approved'] = 3;
