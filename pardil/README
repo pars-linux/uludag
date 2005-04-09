@@ -3,8 +3,8 @@ Pardil: Pardus İyileştirme Listesi
 
 Kurulum:
 ========
-1. "sys.define.php" dosyasını açın ve MySQL bağlantı bilgilerini girin.
-2. "database.sql" dosyasını, 2. adımda belirttiğiniz veritabanında çalıştırın.
+1. "cfg/sys.define.php" dosyasını açın ve MySQL bağlantı bilgilerini girin.
+2. "sql/database.sql" dosyasını, 2. adımda belirttiğiniz veritabanında çalıştırın.
 3. "options" tablosundaki "site_url" değerine, Pardil'in çalışacağı web adresini girin.
 
 Notlar:
