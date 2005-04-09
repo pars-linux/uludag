@@ -1,5 +1,5 @@
 <?php
-  setlocale(LC_ALL, CONF_LOCALE);
+  setlocale(LC_MESSAGES, CONF_LOCALE);
 
   require('class.gettext.php');
   require('class.streams.php');
