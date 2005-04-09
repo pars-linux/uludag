@@ -1,12 +1,12 @@
 <?php
 
-  require('sys.define.php');
-  require('sys.gettext.php');
-  require('sys.database.php');
-  require('sys.procedures.php');
-  require('sys.pconf.php');
+  require('cfg/sys.define.php');
+  require('sys/sys.gettext.php');
+  require('sys/sys.database.php');
+  require('sys/sys.procedures.php');
+  require('sys/sys.pconf.php');
 
-  require('class.template.php');
+  require('class/class.template.php');
 
   $arr_errors = array();
   if (isset($_GET['code'])) {
@@ -31,7 +31,7 @@
   }
   else {
     $_PCONF['title'] = getop('site_name') . ' - ' . __('Account Activation');
-    $obj_page = new template('tpl.activate.php');
+    $obj_page = new template('tpl/tpl.activate.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
   }

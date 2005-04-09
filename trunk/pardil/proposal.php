@@ -1,13 +1,13 @@
 <?php
 
-  require('sys.define.php');
-  require('sys.gettext.php');
-  require('sys.database.php');
-  require('sys.procedures.php');
-  require('sys.pconf.php');
-  require('sys.session.php');
+  require('cfg/sys.define.php');
+  require('sys/sys.gettext.php');
+  require('sys/sys.database.php');
+  require('sys/sys.procedures.php');
+  require('sys/sys.pconf.php');
+  require('sys/sys.session.php');
 
-  require('class.template.php');
+  require('class/class.template.php');
 
   // Öneri No
   $int_pardil_id = (isset($_GET['id'])) ? $_GET['id'] : 1;
@@ -117,7 +117,7 @@
 
   $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . $arr_pardil_fetch['title'];
 
-  $obj_page = new template('tpl.proposal.php');
+  $obj_page = new template('tpl/tpl.proposal.php');
   
   $obj_page->setvar('arr_proposal', $arr_pardil_fetch);
   $obj_page->setvar('arr_proposal_prev', $arr_pardil_prev);
