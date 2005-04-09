@@ -20,7 +20,7 @@
 
   // Revizyon:
   $dbl_pardil_rev = (isset($_GET['rev'])) ? $_GET['rev'] : $dbl_pardil_lastrev;
-  $str_pardil_rev_date = database_query_scalar(sprintf('SELECT timestamp FROM pardil_revisions WHERE proposal=%d AND version>%f ORDER BY version DESC LIMIT 1', $int_pardil_id, $dbl_pardil_rev));
+  $str_pardil_rev_date = database_query_scalar(sprintf('SELECT timestamp FROM pardil_revisions WHERE proposal=%d ORDER BY version DESC LIMIT 1', $int_pardil_id));
 
   // Önceki ve sonraki öneriler:
   $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title FROM pardil_main INNER JOIN pardil_r_status ON pardil_r_status.proposal=pardil_main.id WHERE pardil_r_status.status=2 AND pardil_main.id<%d ORDER BY pardil_main.id DESC LIMIT 1', $int_pardil_id);
