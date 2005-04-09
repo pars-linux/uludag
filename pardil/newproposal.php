@@ -1,10 +1,10 @@
 <?php
-  require('sys.define.php');
-  require('sys.gettext.php');
-  require('sys.database.php');
-  require('sys.procedures.php');
-  require('sys.pconf.php');
-  require('sys.session.php');
+  require('cfg/sys.define.php');
+  require('sys/sys.gettext.php');
+  require('sys/sys.database.php');
+  require('sys/sys.procedures.php');
+  require('sys/sys.pconf.php');
+  require('sys/sys.session.php');
 
   // Erişim seviyesi kontrolü
   $int_level = getop('level_proposal_new');
@@ -13,7 +13,7 @@
     exit;
   }
 
-  require('class.template.php');
+  require('class/class.template.php');
 
   // Denetimler
   $arr_errors = array();
@@ -69,7 +69,7 @@
   else {
     // Formu göster...
     $_PCONF['title'] = getop('site_name') . ' - ' . __('New Proposal');
-    $obj_page = new template('tpl.newproposal.php');
+    $obj_page = new template('tpl/tpl.newproposal.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
   }

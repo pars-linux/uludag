@@ -1,13 +1,13 @@
 <?php
 
-  require('sys.define.php');
-  require('sys.gettext.php');
-  require('sys.database.php');
-  require('sys.procedures.php');
-  require('sys.pconf.php');
-  require('sys.session.php');
+  require('cfg/sys.define.php');
+  require('sys/sys.gettext.php');
+  require('sys/sys.database.php');
+  require('sys/sys.procedures.php');
+  require('sys/sys.pconf.php');
+  require('sys/sys.session.php');
 
-  require('class.template.php');
+  require('class/class.template.php');
 
   $arr_errors = array();
   if (isset($_POST['login'])) {
@@ -55,7 +55,7 @@
 
   if (!isset($_POST['login']) || count($arr_errors) > 0) {
     $_PCONF['title'] = getop('site_name') . ' - ' . __('User Login');
-    $obj_page = new template('tpl.login.php');
+    $obj_page = new template('tpl/tpl.login.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
   }
