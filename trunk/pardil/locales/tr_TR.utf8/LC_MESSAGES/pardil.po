@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-07 21:10+0300\n"
+"POT-Creation-Date: 2005-04-09 20:24+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -29,14 +29,18 @@ msgstr "Aktivasyon kodu geçerli değil."
 msgid "Account is already activated."
 msgstr "Kullanıcı hesabı zaten aktive edilmiş."
 
+#, php-format
+msgid "You are allowed to use this form at most %1$d times in %2$d seconds."
+msgstr "Bu formu %2$d saniye içinde en fazla %1$d kere kullanabilirsiniz."
+
+msgid "Activation is not required."
+msgstr "Aktivasyon gerekmiyor."
+
 msgid "E-mail address should be written."
 msgstr "E-posta adresi yazılmalı."
 
 msgid "E-mail address should be valid."
 msgstr "E-posta adresi geçerli olmalı."
-
-msgid "Activation is not required."
-msgstr "Aktivasyon gerekmiyor."
 
 msgid "E-mail address does not exist in database."
 msgstr "E-posta adresi veritabanında bulunamadı."
@@ -106,8 +110,8 @@ msgstr "Sürüm bilgisi yazılmalı."
 msgid "New Proposal"
 msgstr "Yeni Öneri"
 
-msgid "Change Password"
-msgstr "Parola Değiştir"
+msgid "Create Temporary Password"
+msgstr "Geçici Parola Yarat"
 
 msgid "E-mail address not found in database."
 msgstr "E-posta adresi veritabanında bulunamadı.."
@@ -139,9 +143,6 @@ msgstr ""
 "\n"
 "Teşekkürler,\n"
 "%3$s Ekibi"
-
-msgid "Create Temporary Password"
-msgstr "Geçici Parola Yarat"
 
 msgid "Registration Complete"
 msgstr "Kayıt Tamamlandı"
@@ -271,8 +272,8 @@ msgstr "Formu Sıfırla"
 msgid "Submit &raquo;"
 msgstr "Gönder &raquo;"
 
-msgid "Password Reset Code Sent"
-msgstr "Parola Sıfırlama Kodu Gönderildi"
+msgid "Temporary Password Sent"
+msgstr "Geçici Parola Gönderildi"
 
 msgid ""
 "In this page, you can create a temporary password. With this temporary "

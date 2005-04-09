@@ -11,9 +11,9 @@
   }
   
   // Süresi geçen kayıtları yoketme
-  function proc_floodcontrol_expire($int_timeout) {
+  function proc_floodcontrol_expire($str_label, $int_timeout) {
     $str_date = date('Y-m-d H:i:s');
-    $str_sql = sprintf('DELETE FROM floodcontrol WHERE Unix_Timestamp("%s")-Unix_Timestamp(timestamp) > %d', $str_date, $int_timeout);
+    $str_sql = sprintf('DELETE FROM floodcontrol WHERE label="%s" AND Unix_Timestamp("%s")-Unix_Timestamp(timestamp) > %d', $str_label, $str_date, $int_timeout);
     mysql_query($str_sql);
     return true;
   }
