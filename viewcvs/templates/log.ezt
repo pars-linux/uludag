@@ -16,11 +16,11 @@
   <hr size=1 noshade>
 
   [is roottype "svn"]
-    [is entries.filename where][else]Filename: [entries.filename]<br>[end]
+    [is entries.filename where][else]Dosya adı: [entries.filename]<br>[end]
   [end]
 
   [is entries.state "dead"]
-    Revision <b>[entries.rev]</b>
+    Sürüm <b>[entries.rev]</b>
   [else]
     <a name="rev[entries.rev]"></a>
     [for entries.tag_names]<a name="[entries.tag_names]"></a>
@@ -30,9 +30,9 @@
 
     Revision [is roottype "svn"]<a href="[entries.revision_href]"><b>[entries.rev]</b></a>[else]<b>[entries.rev]</b>[end]
     [is pathtype "file"] - 
-      (<a href="[entries.view_href]">view</a>)
-      (<a href="[entries.download_href]">download</a>)
-      [if-any entries.download_text_href](<a href="[entries.download_text_href]">as text</a>)[end]
+      (<a href="[entries.view_href]">göster</a>)
+      (<a href="[entries.download_href]">indir</a>)
+      [if-any entries.download_text_href](<a href="[entries.download_text_href]">metin olarak indir</a>)[end]
       [# if you don't want to allow annotation, then remove this line]
       [is roottype "svn"][else](<a href="[entries.annotate_href]">annotate</a>)[end]
 
@@ -51,11 +51,11 @@
 
   <br>
 
+  <i>[entries.author]</i> tarafından <i>[entries.date_str]</i> tarihinde ([entries.ago] önce) 
+  
   [is roottype "svn"]
-    [if-index entries last]Added[else]Modified[end]
+    [if-index entries last]eklendi[else]düzenlendi[end]
   [end]
-
-  <i>[entries.date_str]</i> ([entries.ago] ago) by <i>[entries.author]</i>
 
   [if-any entries.branches]
     <br>Branch:
@@ -88,23 +88,23 @@
 
   [is roottype "svn"]
     [if-any entries.size]
-    <br>File length: [entries.size] byte(s)</b>
+    <br>Dosya uzunluğu: [entries.size] bayt</b>
     [end]
 
     [if-any entries.copy_path]
-    <br>Copied from: <a href="[entries.copy_href]">[entries.copy_path]</a> revision [entries.copy_rev]
+    <br>[entries.copy_rev] sürümüne ait <a href="[entries.copy_href]">[entries.copy_path]</a> dosyasından kopyalandı
     [end]
   [end]
 
   [is entries.state "dead"]
-    <br><b><i>FILE REMOVED</i></b>
+    <br><b><i>DOSYA SİLİNMİŞTİR</i></b>
   [else]
    [is pathtype "file"]
     [if-any entries.prev]
-      <br>Diff to <a href="[entries.diff_to_prev_href]">previous [entries.prev]</a>
+      <br>[entries.prev] sürümüyle <a href="[entries.diff_to_prev_href]">farkları göster</a>
       [if-any human_readable]
       [else]
-        (<a href="[entries.diff_to_prev_href]&amp;diff_format=h">colored</a>)
+        (<a href="[entries.diff_to_prev_href]&amp;diff_format=h">renklendirilmiş</a>)
       [end]
     [end]
 
@@ -113,7 +113,7 @@
         , to <a href="[entries.diff_to_branch_href]">branch point [entries.branch_point]</a>
         [if-any human_readable]
         [else]
-           (<a href="[entries.diff_to_branch_href]&amp;diff_format=h">colored</a>)
+           (<a href="[entries.diff_to_branch_href]&amp;diff_format=h">renklendirilmiş</a>)
         [end]
       [end]
   
@@ -121,7 +121,7 @@
         , to <a href="[entries.diff_to_main_href]">next main [entries.next_main]</a>
         [if-any human_readable]
         [else]
-           (<a href="[entries.diff_to_main_href]&amp;diff_format=h">colored</a>)
+           (<a href="[entries.diff_to_main_href]&amp;diff_format=h">renklendirilmiş</a>)
         [end]
       [end]
     [end]
@@ -131,7 +131,7 @@
         to <a href="[entries.diff_to_sel_href]">selected [rev_selected]</a>
       [if-any human_readable]
       [else]
-        (<a href="[entries.diff_to_sel_href]&amp;diff_format=h">colored</a>)
+        (<a href="[entries.diff_to_sel_href]&amp;diff_format=h">renklendirilmiş</a>)
       [end]
     [end]
    [end]
