@@ -35,7 +35,7 @@
   }
 
   // Öneri:
-  $str_time = date('Y.m.d H:i:s');
+  $str_time = date('Y-m-d H:i:s');
   $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title, pardil_main.abstract, pardil_revisions.content, pardil_revisions.notes, pardil_revisions.version, pardil_revisions.timestamp FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d AND pardil_revisions.version=%f', $int_pardil_id, $dbl_pardil_rev);
   $res_sql = mysql_query($str_sql);
   $arr_pardil_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC);
