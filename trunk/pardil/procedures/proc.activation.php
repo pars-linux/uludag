@@ -7,7 +7,7 @@
     $str_code = md5(microtime() . $int_user);
     $str_sql = sprintf('INSERT INTO activation (user, code, status, timestamp) VALUES (%d, "%s", %d, "%s")', $int_user, $str_code, $int_status, $str_date);
     mysql_query($str_sql);
-    return true;
+    return $str_code;
   }
   
   // Kullanıcının aktivasyon durumunu değiştirme
