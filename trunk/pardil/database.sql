@@ -270,6 +270,7 @@ INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_title', 'Pardus 
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_url', 'http://sinus.homelinus.org/pardil/', 'Site adresi');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('temp_password_timeout', '900', 'Geçici şifre ömrü (saniye cinsinden)');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('session_timeout', '900', 'Oturum ömrü (saniye cinsinden)');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('addresschange_activation_required', 'true', '');
 
 -- 
 -- Tablo yapısı : `activation`
@@ -300,3 +301,16 @@ CREATE TABLE `temp_passwords` (
   `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`user`)
 ) TYPE=MyISAM COMMENT='Geçici şifreler';
+
+
+-- 
+-- Tablo yapısı : `floodcontrol`
+-- 
+
+CREATE TABLE `floodcontrol` (
+  `no` int(10) unsigned NOT NULL auto_increment,
+  `label` varchar(25) NOT NULL default '',
+  `ip` varchar(15) NOT NULL default '',
+  `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`no`)
+) TYPE=MyISAM COMMENT='Olası saldırıları engellemek için kullanılacak kütük' AUTO_INCREMENT=1 ;
