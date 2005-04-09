@@ -8,10 +8,18 @@
 
   require('class.template.php');
 
+  //
+  $int_floodcontrol_t = 10 * 60;
+  $int_floodcontrol_m = 3;
+  proc_floodcontrol_expire('password', $int_floodcontrol_t);
+
   $arr_errors = array();
 
   if (isset($_POST['password'])) {
-    if (strlen($_POST['password_email']) == 0) {
+    if (proc_floodcontrol_check('password', $_SERVER['REMOTE_ADDR']) >= $int_floodcontrol_m) {
+      $arr_errors['password_email'] = sprintf(__('You are allowed to use this form at most %1$d times in %2$d seconds.'), $int_floodcontrol_m, $int_floodcontrol_t);
+    }
+    elseif (strlen($_POST['password_email']) == 0) {
       $arr_errors['password_email'] = __('E-mail address should be written.');
     }
     elseif (!preg_match('/^.+@.+(\..+)*$/', $_POST['password_email'])) {
@@ -26,6 +34,9 @@
   }
 
   if (isset($_POST['password']) && count($arr_errors) == 0) {
+    // Şifre gönderildiğinde, flood kayıtlarıne ekle.
+    proc_floodcontrol_add('password', $_SERVER['REMOTE_ADDR']);
+
     // İşlem
     $int_userno = database_query_scalar(sprintf('SELECT id FROM users WHERE email="%s"', addslashes($_POST['password_email'])));
     $str_code = proc_password_new($int_userno);

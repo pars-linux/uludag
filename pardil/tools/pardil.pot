@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-07 21:10+0300\n"
+"POT-Creation-Date: 2005-04-09 20:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,13 +28,17 @@ msgstr ""
 msgid "Account is already activated."
 msgstr ""
 
+#, php-format
+msgid "You are allowed to use this form at most %1$d times in %2$d seconds."
+msgstr ""
+
+msgid "Activation is not required."
+msgstr ""
+
 msgid "E-mail address should be written."
 msgstr ""
 
 msgid "E-mail address should be valid."
-msgstr ""
-
-msgid "Activation is not required."
 msgstr ""
 
 msgid "E-mail address does not exist in database."
@@ -96,7 +100,7 @@ msgstr ""
 msgid "New Proposal"
 msgstr ""
 
-msgid "Change Password"
+msgid "Create Temporary Password"
 msgstr ""
 
 msgid "E-mail address not found in database."
@@ -118,9 +122,6 @@ msgid ""
 "\n"
 "Thanks,\n"
 "%3$s Team"
-msgstr ""
-
-msgid "Create Temporary Password"
 msgstr ""
 
 msgid "Registration Complete"
@@ -245,7 +246,7 @@ msgstr ""
 msgid "Submit &raquo;"
 msgstr ""
 
-msgid "Password Reset Code Sent"
+msgid "Temporary Password Sent"
 msgstr ""
 
 msgid ""
