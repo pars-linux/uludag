@@ -29,6 +29,8 @@
 
   }
 
+  $_PCONF['site_url'] = (substr($_PCONF['site_url'], -1, 1) == '/') ? $_PCONF['site_url'] : $_PCONF['site_url'] . '/';
+
   //
   function getop($str_label) {
   
