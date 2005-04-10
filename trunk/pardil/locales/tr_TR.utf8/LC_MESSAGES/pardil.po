@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-10 14:14+0300\n"
+"POT-Creation-Date: 2005-04-10 22:36+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -72,6 +72,9 @@ msgstr ""
 
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
+
+msgid "Installination"
+msgstr "Kurulum"
 
 msgid "Username should be written."
 msgstr "Kullanıcı adı yazılmalı."
@@ -245,6 +248,37 @@ msgstr "Öneriler"
 
 msgid "Session Information:"
 msgstr "Oturum Bilgisi:"
+
+msgid "MySQL Host:"
+msgstr "MySQL Adresi:"
+
+msgid "MySQL User:"
+msgstr "MySQL Kullanıcısı:"
+
+msgid "MySQL Password:"
+msgstr "MySQL Parolası:"
+
+msgid "MySQL Database:"
+msgstr "MySQL Veritabanı"
+
+msgid "Site Name:"
+msgstr "Site Adı:"
+
+msgid "Site Title:"
+msgstr "Site Başlığı:"
+
+msgid "Site URL:"
+msgstr "Site Adresi:"
+
+#, php-format
+msgid "Recommended: %s"
+msgstr "Tavsiye Edilen: %s"
+
+msgid "Admin Password:"
+msgstr "Yönetici Parolası:"
+
+msgid "Install &raquo;"
+msgstr "Kur &raquo;"
 
 msgid "Username:"
 msgstr "Kullanıcı Adı:"
