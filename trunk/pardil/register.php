@@ -50,7 +50,7 @@
     if ($int_status == 0) {
       // E-posta gönderimi
       $str_subject = sprintf(__('%s Account Activation'), getop('site_name'));
-      $str_url = $_PCONF['site_url'] . '/activate.php?code=' . $str_code . '&user=' . $int_user;
+      $str_url = $_PCONF['site_url'] . 'activate.php?code=' . $str_code . '&user=' . $int_user;
       $str_body = sprintf(__("Hello,\n\nTo complete your registration at %1\$s, please visit the address below:\n\n%2\$s\n\nThanks,\n%3\$s Team"), getop('site_url'), $str_url, getop('site_name'));
       $bln_mail = mail($_POST['register_email'], $str_subject, $str_body);
       
