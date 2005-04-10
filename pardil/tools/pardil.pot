@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-09 21:26+0300\n"
+"POT-Creation-Date: 2005-04-10 14:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -140,6 +140,49 @@ msgid "Passwords should be same."
 msgstr ""
 
 msgid "User Registration"
+msgstr ""
+
+msgid "You must provide at least one recipient email address."
+msgstr ""
+
+#, php-format
+msgid "%s mailer is not supported."
+msgstr ""
+
+#, php-format
+msgid "Could not execute: %s"
+msgstr ""
+
+msgid "Could not instantiate mail function."
+msgstr ""
+
+#, php-format
+msgid "The following From address failed: %s"
+msgstr ""
+
+#, php-format
+msgid "SMTP Error: The following recipients failed: %s"
+msgstr ""
+
+msgid "SMTP Error: Data not accepted."
+msgstr ""
+
+msgid "SMTP Error: Could not authenticate."
+msgstr ""
+
+msgid "SMTP Error: Could not connect to SMTP host."
+msgstr ""
+
+#, php-format
+msgid "Could not access file: %s"
+msgstr ""
+
+#, php-format
+msgid "File Error: Could not open file: %s"
+msgstr ""
+
+#, php-format
+msgid "Unknown encoding: %s"
 msgstr ""
 
 msgid "Account Activated"

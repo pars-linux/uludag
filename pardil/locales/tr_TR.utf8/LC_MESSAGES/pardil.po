@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-09 21:26+0300\n"
+"POT-Creation-Date: 2005-04-10 14:14+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -161,6 +161,49 @@ msgstr "Parolalar aynı olmalı."
 
 msgid "User Registration"
 msgstr "Kullanıcı Kaydı"
+
+msgid "You must provide at least one recipient email address."
+msgstr "En az bir alıcı adresi belirtmelisiniz."
+
+#, php-format
+msgid "%s mailer is not supported."
+msgstr "%s e-posta göndericisi desteklenmemektedir."
+
+#, php-format
+msgid "Could not execute: %s"
+msgstr "Komut çalıştırılamıyor: %s"
+
+msgid "Could not instantiate mail function."
+msgstr "E-posta fonksiyonu kullanılamıyor."
+
+#, php-format
+msgid "The following From address failed: %s"
+msgstr "Gönderici adresi kabul edilmedi: %s"
+
+#, php-format
+msgid "SMTP Error: The following recipients failed: %s"
+msgstr "SMTP Hatası: Alıcı adresi kabul edilmedi: %s"
+
+msgid "SMTP Error: Data not accepted."
+msgstr "SMTP Hatası: Veri kabul edilmedi."
+
+msgid "SMTP Error: Could not authenticate."
+msgstr "SMTP Hatası: Kimlik doğrulama yapılamadı."
+
+msgid "SMTP Error: Could not connect to SMTP host."
+msgstr "SMTP Hatası: SMTP sunucuya bağlanılamadı."
+
+#, php-format
+msgid "Could not access file: %s"
+msgstr "Dosyaya erişilemedi: %s"
+
+#, php-format
+msgid "File Error: Could not open file: %s"
+msgstr "Dosya açılamadı: %s"
+
+#, php-format
+msgid "Unknown encoding: %s"
+msgstr "Bilinmeyen karakter kodlaması: %s"
 
 msgid "Account Activated"
 msgstr "Hesap Aktive Edildi"
