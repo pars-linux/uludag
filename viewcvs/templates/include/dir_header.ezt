@@ -1,6 +1,6 @@
 [# setup page definitions]
   [define location][rootname][if-any where]: [where][end][end]
-  [define page_title][cfg.general.main_title] - directory - [location][end]
+  [define page_title][cfg.general.main_title] - dizin - [location][end]
   [define help_href][docroot]/help_[if-any where]dir[else]root[end]view.html[end]
 [# end]
 
@@ -12,20 +12,20 @@
 [end]
 
 <table>
-<tr><td>Current directory:</td><td><b>[nav_path]</b></td></tr>
+<tr><td>Bulunduğunuz dizin:</td><td><b>[nav_path]</b></td></tr>
 
 [is roottype "svn"]
 <tr>
-  <td>Current revision:</td>
+  <td>Görüntülenen sürüm:</td>
   <td><a href="[tree_rev_href]">[tree_rev]</a></td>
 </tr>
 <tr>
-  <td>Jump to directory revision:</td>
+  <td>Dizin sürümünü göster:</td>
   <td>
     <form method=get action="[jump_rev_action]">
     [jump_rev_hidden_values]
     <input type="text" name="rev" value="[jump_rev]">
-    <input type=submit value="Go">
+    <input type=submit value="Göster">
     </form>
   </td>
 </tr>
@@ -37,13 +37,13 @@
 <tr><td>Current search:</td><td><b>[search_re]</b></td></tr>
 [end]
 [if-any num_files]
-<tr><td>Files shown:</td><td><b>[files_shown]</b>
+<tr><td>Gösterilen dosyalar:</td><td><b>[files_shown]</b>
 [is num_dead "0"]
 [else]
   [if-any attic_showing]
-    (<a href="[hide_attic_href]">Hide [num_dead] dead files</a>)
+    (<a href="[hide_attic_href]">[num_dead] ölü dosyayı sakla</a>)
   [else]
-    (<a href="[show_attic_href]">Show [num_dead] dead files</a>)
+    (<a href="[show_attic_href]">[num_dead] ölü dosyayı göster</a>)
   [end]
 [end]
 </td></tr>
