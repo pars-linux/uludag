@@ -53,8 +53,11 @@ ZSConn::~ZSConn()
     }
 }
 
-Z_CHECK_RESULT ZSConn::checkString( const string& str ) const
+
+ZString ZSConn::checkString( const string& str, int offset ) const
 {
+    ZString zstr( str, offset );
+
     // pislikleri temizle, bunlar ispell'e gönderilen komutlar.
     // şimdilik işimiz yok bunlarla
     string flags( "*&@+-~#!%`^" );
@@ -62,37 +65,113 @@ Z_CHECK_RESULT ZSConn::checkString( const string& str ) const
     string::iterator end = flags.end();
     for ( ; it != end; ++it ) {
         if ( str[0] == *it ) {
-            return Z_UNKNOWN;
+            zstr.setStatus( Z_UNKNOWN );
+            return zstr;
         }
     }
 
-    // new scope for temp. variables
-    {
-      stringstream strstream;
-      strstream << str.length() << " " << str;
-      string checkStr = strstream.str();
-      if ( send(_conn, checkStr.c_str(), checkStr.length(), 0) == -1) {
-        perror("send()");
-      }
+
+    zstr.setStatus( spellCheck( zstr.str() ) );
+
+    if ( zstr.status() == Z_FALSE ) {
+        zstr.setSuggestions( getSuggestions( zstr.str() ) );
+        if ( zstr.suggestionCount() != 0 ) {
+            zstr.setStatus( Z_SUGGESTION );
+        }
     }
 
-    string check = recvResult();
-
-    if ( check == "5 DOGRU" ) {
-        return Z_TRUE;
-    } else if ( check == "6 YANLIS" ) {
-        return Z_FALSE;
-    }
-
-    return Z_UNKNOWN;
+    return zstr;
 }
+
+enum Z_CHECK_RESULT ZSConn::spellCheck( const string& str ) const
+{
+    stringstream strstream;
+    strstream << str.length()+2 << " * " << str;
+    string checkStr = strstream.str();
+    if ( send(_conn, checkStr.c_str(), checkStr.length(), 0) == -1) {
+        perror("send()");
+    }
+
+    switch ( *(recvResult()) ) {
+    case '*':
+        return Z_TRUE;
+        break;
+    case '#':
+        return Z_FALSE;
+        break;
+    default:
+        return Z_UNKNOWN;
+        break;
+    }
+}
+
+vector<string> ZSConn::getSuggestions(const string& str ) const
+{
+    stringstream strstream;
+    strstream << str.length()+2 << " & " << str;
+    string checkStr = strstream.str();
+    if ( send( _conn, checkStr.c_str(), checkStr.length(), 0 ) == -1 ) {
+        perror( "send()" );
+    }
+
+    vector<string> suggestions;
+    string result = recvResult();
+
+    if ( result[0] != '&' ) {
+        return suggestions;
+    }
+
+    string::iterator it = result.begin();
+    string::iterator end = result.end();
+    bool start = false;
+    string tmp;
+    for ( ; it != end; ++it ) {
+        if ( *it == '(' ) {
+            start = true;
+            continue;
+        }
+
+        if ( !start ) continue;
+
+
+        if ( *it == ',' ) {
+            suggestions.push_back( tmp );
+            tmp.erase();
+            continue;
+        } else if ( *it == ')' ) {
+            suggestions.push_back( tmp );
+            break;
+        }
+
+        tmp += *it;
+    }
+
+    return suggestions;
+}
+
 
 char* ZSConn::recvResult() const
 {
-    // FIXME: dönüş değeri 10 karakterden büyük olursa?
-    // ZemberekServer protokolü belirlendikten sonra düzeltilecek.
-    char *ret = new char[11];
-    int numbytes=recv(_conn, ret, 10, 0);
+    int numbytes = 0;
+    string buf("");
+
+    int size = 0;
+    while (true) {
+        char s;
+        numbytes = recv (_conn, &s, 1, 0);
+
+        // ' ' boşluk karakteri hiç gelmezse???
+        if (s == ' ') {
+            char *endptr;
+            size = strtol (buf.c_str() , &endptr, 0);
+            buf.erase();
+            break;
+        }
+
+        buf += s;
+    }
+    static char *ret = new char[size];
+    numbytes = recv (_conn, ret, size, 0);
     ret[numbytes]='\0';
 
     return ret;
