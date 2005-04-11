@@ -14,6 +14,7 @@
 */
 
 #include <iostream>
+#include <sstream>
 #include <getopt.h>
 
 #include "zstring.h"
@@ -24,39 +25,71 @@ using namespace std;
 
 static const string desc = "@(#) Zemberek Turkish spell checker ";
 
+
+static void checkAndPrint( ZSConn& zemberek, const string str, int offset )
+{
+    ZString zstr = zemberek.checkString( str, offset );
+    switch ( zstr.status() ) {
+    case Z_TRUE:
+        cout << "*" << endl;
+        break;
+    case Z_FALSE:
+        cout << "# " << zstr.str() << " 0" << endl;
+        break;
+    case Z_SUGGESTION:
+        cout << "& " <<
+            zstr.str() << " " <<
+            zstr.suggestionCount() << " " <<
+            zstr.offset() << ": " <<
+            zstr.suggestionString() << endl;
+        break;
+    default:
+        break;
+    }
+}
+
 /* Ispell style interactive mode */
-int z_interactive_mode( ZSConn& zemberek )
+static int z_interactive_mode( ZSConn& zemberek )
 {
     cout << desc << VERSION << endl;
 
-    string str;
     while ( true ) {
-        str = "";
-        cin >> str;
+        char buf[BUFSIZ];
+        char *t;
 
-        if ( str.empty() )
-            return 0;
+        cin.getline( buf, BUFSIZ );
+        t = buf;
+        int offset = 0, count = 0;
+        bool inWord = true;
+        string str( "" );
+        while ( *t ) {
+            if ( *t == ' ' || *t == '\t' ) {
 
-        // offset bilgisini de alarak birden fazla string gönderebilmeliyiz...
-        ZString zstr = zemberek.checkString( str, 0 );
-        switch ( zstr.status() ) {
-        case Z_TRUE:
-            cout << "*" << endl << endl;
-            break;
-        case Z_FALSE:
-            cout << "# " << zstr.str() << " 0" << endl << endl;
-            break;
-        case Z_SUGGESTION:
-            cout << "& " <<
-                zstr.str() << " " <<
-                zstr.suggestionCount() << " " <<
-                zstr.offset() << ": " <<
-                zstr.suggestionString() << endl << endl;
-            break;
-        default:
-            break;
+                if ( !(str.empty()) ) {
+                    checkAndPrint( zemberek, str, offset );
+                }
+
+                inWord = false;
+                str.erase();
+                goto CONTINUE_LOOP;
+            }
+
+            if ( !inWord ) {
+                offset = count;
+                inWord = true;
+            }
+
+            str += *t;
+        CONTINUE_LOOP:
+            ++t; ++count;
         }
 
+        // process the last word (if any)
+        if ( !(str.empty()) ) {
+            checkAndPrint( zemberek, str, offset );
+        }
+
+        cout << endl;
     }
 
     return 0;
