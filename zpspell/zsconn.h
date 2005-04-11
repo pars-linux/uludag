@@ -16,15 +16,10 @@
 #ifndef ZSCONN_H
 #define ZSCONN_H
 
-#include <string>
+#include "zstring.h"
 
 using namespace std;
 
-enum Z_CHECK_RESULT {
-    Z_TRUE = 0,
-    Z_FALSE,
-    Z_UNKNOWN
-};
 
 class ZSConn
 {
@@ -32,10 +27,13 @@ public:
     ZSConn();
     ~ZSConn();
 
-    Z_CHECK_RESULT checkString( const string& str ) const;
+    ZString checkString( const string& str, int offset ) const;
 
 private:
     int _conn;
+
+    enum Z_CHECK_RESULT spellCheck( const string& str ) const;
+    vector<string> getSuggestions (const string& str ) const;
     char* recvResult() const;
 };
 

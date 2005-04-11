@@ -16,6 +16,7 @@
 #include <iostream>
 #include <getopt.h>
 
+#include "zstring.h"
 #include "zsconn.h"
 #include "config.h"
 
@@ -36,12 +37,21 @@ int z_interactive_mode( ZSConn& zemberek )
         if ( str.empty() )
             return 0;
 
-        switch ( zemberek.checkString( str ) ) {
+        // offset bilgisini de alarak birden fazla string gönderebilmeliyiz...
+        ZString zstr = zemberek.checkString( str, 0 );
+        switch ( zstr.status() ) {
         case Z_TRUE:
             cout << "*" << endl << endl;
             break;
         case Z_FALSE:
-            cout << "# " << str << " 1 ZEMBEREK" << endl << endl;
+            cout << "# " << zstr.str() << " 0" << endl << endl;
+            break;
+        case Z_SUGGESTION:
+            cout << "& " <<
+                zstr.str() << " " <<
+                zstr.suggestionCount() << " " <<
+                zstr.offset() << ": " <<
+                zstr.suggestionString() << endl << endl;
             break;
         default:
             break;
@@ -74,6 +84,7 @@ int main( int argc, char** argv )
         return z_interactive_mode( zemberek );
     }
 
+/*
     for ( int i = 1; i < argc; ++i ) {
         string str( argv[i] );
         cout << str;
@@ -90,6 +101,7 @@ int main( int argc, char** argv )
         }
 
     }
+*/
 
     return 0;
 }
