@@ -3,7 +3,7 @@
     XMLHTTPRequest örneği
   */
   
-  require('class.xmlhttprequest.php');
+  require('class/class.xmlhttprequest.php');
 
   function test1($str_text) {
     return $str_text;
@@ -28,7 +28,7 @@
       function cb_test(fname, jsobj, req) {
         document.getElementById('mytext_s').value = jsobj;
       }
-      <?php echo $obj_xhr->js_code(); ?>
+      <?php echo $obj_xhr->js_code(true); ?>
     </script>
   </head>
   <body>
