@@ -20,7 +20,7 @@
   [if-any roots]
     <form method=get action="[change_root_action]">
       [change_root_hidden_values]
-      <b>Project Root:</b>
+      <b>Depo:</b>
       <select name="root" onchange="submit()">
         [define cvs_root_options][end]
         [define svn_root_options][end]
@@ -46,7 +46,7 @@
           <optgroup label="Subversion Repositories">[svn_root_options]</optgroup>
         [end]
       </select>
-      <input type=submit value="Go">
+      <input type=submit value="Göster">
     </form>
   [else]
     &nbsp;
