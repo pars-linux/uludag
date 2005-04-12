@@ -26,7 +26,7 @@ using namespace std;
 static const string desc = "@(#) Zemberek Turkish spell checker ";
 
 
-static void checkAndPrint( ZSConn& zemberek, const string str, int offset )
+static int checkAndPrint( ZSConn& zemberek, const string str, int offset )
 {
     ZString zstr = zemberek.checkString( str, offset );
     switch ( zstr.status() ) {
@@ -44,8 +44,11 @@ static void checkAndPrint( ZSConn& zemberek, const string str, int offset )
             zstr.suggestionString() << endl;
         break;
     default:
+    	return -1;
         break;
     }
+
+    return 0;
 }
 
 /* Ispell style interactive mode */
@@ -59,14 +62,14 @@ static int z_interactive_mode( ZSConn& zemberek )
 
         cin.getline( buf, BUFSIZ );
         t = buf;
-        int offset = 0, count = 0;
+        int offset = 0, count = 0, ret = 0;
         bool inWord = true;
         string str( "" );
         while ( *t ) {
             if ( *t == ' ' || *t == '\t' ) {
 
                 if ( !(str.empty()) ) {
-                    checkAndPrint( zemberek, str, offset );
+                    ret = checkAndPrint( zemberek, str, offset );
                 }
 
                 inWord = false;
@@ -86,10 +89,10 @@ static int z_interactive_mode( ZSConn& zemberek )
 
         // process the last word (if any)
         if ( !(str.empty()) ) {
-            checkAndPrint( zemberek, str, offset );
+            ret = checkAndPrint( zemberek, str, offset );
         }
 
-        cout << endl;
+	if ( ret == 0 ) cout << endl;
     }
 
     return 0;
