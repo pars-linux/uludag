@@ -79,6 +79,7 @@
 		<a href="./sss.html#cd_yazimi">Pardus'u CD'ye yazarken dikkat etmem gereken şeyler nelerdir?</a><br>
 		<a href="./sss.html#kurumsal">Kurumumda Pardus kullanmak istiyorum, kurumsal destek veriyor musunuz?</a><br>
 		<a href="./sss.html#macinthos">Pardus'u Macintosh bilgisayarımda da çalıştırabilir miyim?</a><br><br>
+		<a href="./sss.html#grub">Pardus açılırken "grub>" yazan siyah bir ekranda takılıyor, ne yapmalıyım?</a><br><br>
 
 		<span class="baslik">
            <img src="./images/bullet-krm.png" width="11" height="11"> Lisanslama ve Dağıtım</span><br><br>
@@ -280,6 +281,21 @@ Macintosh'larda kullanılan PowerPC işlemci platformuna yönelik bir sürüm ha
 planlarımız arasında yok.
 <br><br><br>
 		
+
+		<a name="grub" href="./sss.html#top"><i>Pardus açılırken "grub>" yazan siyah bir ekranda takılıyor, ne yapmalıyım?</i></a><br><br>
+
+		Seyrek de olsa bazı durumlarda (örneğin CD nin düzgün okunamaması) Çalışan CD açılırken Grub önyükleyicisi kendi ayarlarını düzgün yükleyemiyor ve örneğin şu şekilde bir mesaj ekrana yazılıyor
+
+[Minimal BASH-like line editing is supported. For the first word. TAB
+lists possible command completios. Anywhere else TAB lists the possible
+completions of a device/Filename. ]
+grub>
+
+Bazı sistemlerde grub'a bir kaç komutu elle girerek sistemi açmak mümkün olabiliyor. Yukarıdaki gibi bir sorunla karşılaşırsanız, Çalışan CD 1.0 için şu komutları girerek sistemi açmayı deneyiniz.
+
+grub>root (cd)
+grub>kernel (cd)/boot/kernel-2.6.10-uludag root=/dev/ram0 init=/linuxrc cdroot quiet
+grub>initrd (cd)/boot/initrd.gz
 
 		<!-- Lisanslama ve Dağıtım -->
 		
