@@ -60,7 +60,8 @@ ZString ZSConn::checkString( const string& str, int offset ) const
 
     // pislikleri temizle, bunlar ispell'e gönderilen komutlar.
     // şimdilik işimiz yok bunlarla
-    string flags( "*&@+-~#!%`^" );
+    // bir de ^ var ama o kullanılıyor bizim için...
+    string flags( "*&@+-~#!%`" );
     string::iterator it = flags.begin();
     string::iterator end = flags.end();
     for ( ; it != end; ++it ) {

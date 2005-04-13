@@ -65,10 +65,18 @@ static int z_interactive_mode( ZSConn& zemberek )
         t = buf;
         int offset = 0, count = 0, ret = 0;
         bool inWord = true;
+
+        // FIXME!
+        // bu işler aslen zsconn'da yapılıyor.
+        // belki buraya taşımak gereklidir?
+        if ( *t == '^' && count == 0 ) {
+            inWord == false;
+            ++t; ++count, ++offset;
+        }
+
         string str( "" );
         while ( *t ) {
             if ( *t == ' ' || *t == '\t' ) {
-
                 if ( !(str.empty()) ) {
                     ret = checkAndPrint( zemberek, str, offset );
                 }
@@ -76,8 +84,7 @@ static int z_interactive_mode( ZSConn& zemberek )
                 inWord = false;
                 str.erase();
                 goto CONTINUE_LOOP;
-            } else if ( *t == '^' ) goto IGNORE_CHAR; // FIXME! bu işler aslen zsconn'da yapılıyor.
-                                                        // belki buraya taşımak gereklidir.
+            } 
 
             if ( !inWord ) {
                 offset = count;
@@ -87,7 +94,6 @@ static int z_interactive_mode( ZSConn& zemberek )
             str += *t;
         CONTINUE_LOOP:
             ++count;
-        IGNORE_CHAR:
             ++t;
         }
 
