@@ -1,6 +1,5 @@
 #include <iostream>
 #include <sstream>
-#include <algorithm>
 
 #include "zstring.h"
 
@@ -49,14 +48,6 @@ int ZString::suggestionCount() const
 
 const string ZString::suggestionString() const
 {
-/*
-    stringstream sstr;
-
-    copy( _suggestions.begin(), _suggestions.end(),
-          ostream_iterator<string>(sstr, ", "));
-    return sstr.str();
-*/
-
     stringstream sstr;
 
     vector<string>::const_iterator it = _suggestions.begin();
@@ -75,6 +66,4 @@ const vector<string>& ZString::suggestions() const
 {
     return _suggestions;
 }
-
-
 
