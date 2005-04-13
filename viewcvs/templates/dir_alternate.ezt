@@ -4,7 +4,7 @@
 <thead>
 <tr>
   <th class="vc_header[is sortby "rev"]_sort[end]">
-    <a href="[sortby_rev_href]#dirlist">Rev.
+    <a href="[sortby_rev_href]#dirlist">Sürüm
     [is sortby "rev"]
       <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
         width="13" height="13" border="0"
@@ -13,7 +13,7 @@
     </a>
   </th>
   <th class="vc_header[is sortby "file"]_sort[end]" colspan=2>
-    <a href="[sortby_file_href]#dirlist">File
+    <a href="[sortby_file_href]#dirlist">Dosya/Dizin
     [is sortby "file"]
       <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
         width="13" height="13" border="0"
@@ -22,7 +22,7 @@
     </a>
   </th>
   <th class="vc_header[is sortby "date"]_sort[end]">
-    <a href="[sortby_date_href]#dirlist">Age
+    <a href="[sortby_date_href]#dirlist">Son güncelleme
     [is sortby "date"]
       <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
         width="13" height="13" border="0"
@@ -31,7 +31,7 @@
     </a>
   </th>
   <th class="vc_header[is sortby "author"]_sort[end]">
-    <a href="[sortby_author_href]#dirlist">Author
+    <a href="[sortby_author_href]#dirlist">Değişikliği yapan
     [is sortby "author"]
       <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
         width="13" height="13" border="0"
@@ -41,7 +41,7 @@
   </th>
 [is cfg.options.show_logs "1"]
   <th class="vc_header[is sortby "log"]_sort[end]">
-    <a href="[sortby_log_href]#dirlist">Last log entry
+    <a href="[sortby_log_href]#dirlist">Son değişimin açıklaması
     [is sortby "log"]
       <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
         width="13" height="13" border="0"
@@ -61,7 +61,7 @@
       <a name="[rows.anchor]" href="[is rows.type "dir"][rows.href][else][rows.rev_href][end]">
       <img src="[docroot]/images/[is rows.type "dir"]dir[else][is rows.state "dead"]broken[else]text[end][end].png" alt="" border=0 width=16 height=16>
       [rows.name][is rows.type "dir"]/[end]</a>
-      [is rows.state "dead"](dead)[end]
+      [is rows.state "dead"](ölü)[end]
       [end]
     </td>
     [if-any rows.graph_href]

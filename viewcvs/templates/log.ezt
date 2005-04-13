@@ -65,7 +65,7 @@
   [end]
 
   [if-any entries.tags]
-    <br>CVS Tags:
+    <br>Etiketler:
     [for entries.tags]
       <a href="[entries.tags.href]"><b>[entries.tags.name]</b></a>[if-index entries.tags last][else],[end]
     [end]
@@ -81,7 +81,7 @@
   [if-any entries.prev]
     [if-any entries.changed]
       [is roottype "cvs"]
-      <br>Changes since <b>[entries.prev]: [entries.changed] lines</b>
+      <br><b>[entries.prev] sürümüne göre değişen satır: [entries.changed]</b>
       [end]
     [end]
   [end]

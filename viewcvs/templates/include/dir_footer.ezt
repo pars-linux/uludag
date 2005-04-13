@@ -31,7 +31,7 @@
             [end]
             </optgroup>
             </select>
-            <input type="submit" value="Show">
+            <input type="submit" value="Göster">
           </form>
         </td>
       </tr>
@@ -69,7 +69,7 @@
           <td>
             <form method=get action="[search_tag_action]">
               [search_tag_hidden_values]
-              <input type="submit" value="Show all files">
+              <input type="submit" value="Tüm dosyaları göster">
             </form>
           </td>
         </tr>

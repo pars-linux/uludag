@@ -16,16 +16,16 @@
 <table width="100%" border="0" cellspacing="1" cellpadding="2">
 <thead>
 <tr>
-  <th align="left" class="vc_header[is logsort "rev"]_sort[end]">Revision</th>
+  <th align="left" class="vc_header[is logsort "rev"]_sort[end]">Sürüm</th>
   [is pathtype "file"]
-  <th align="left" class="vc_header">Tasks</th>
-  <th align="left" class="vc_header">Diffs</th>
+  <th align="left" class="vc_header">Görevler</th>
+  <th align="left" class="vc_header">Farklılıklar</th>
   [end]
   [is roottype "cvs"]
-  <th align="left" class="vc_header">Branches/<br>Tags</th>
+  <th align="left" class="vc_header">Branches/<br>Etiketler</th>
   [end]
-  <th align="left" class="vc_header[is logsort "date"]_sort[end]">Age</th>
-  <th align="left" class="vc_header">Author</th>
+  <th align="left" class="vc_header[is logsort "date"]_sort[end]">Son güncelleme</th>
+  <th align="left" class="vc_header">Değişikliği yapan</th>
 </tr>
 </thead>
 [for entries]
@@ -41,16 +41,16 @@
     [is pathtype "file"]
       <td>
       [# Tasks column]
-        <a href="[entries.view_href]"><b>View</b></a><br>
-        <a href="[entries.download_href]"><b>Download</b></a><br>
-        [if-any entries.download_text_href]<a href="[entries.download_text_href]"><b>As text</b></a><br>[end]
+        <a href="[entries.view_href]"><b>göster</b></a><br>
+        <a href="[entries.download_href]"><b>indir</b></a><br>
+        [if-any entries.download_text_href]<a href="[entries.download_text_href]"><b>metin olarak indir</b></a><br>[end]
 
         [# if you don't want to allow annotation, then remove this line]
         [is roottype "svn"][else]<a href="[entries.annotate_href]"><b>Annotate</b></a><br>[end]
       </td>
       <td>
       [is entries.state "dead"]
-        <b><i>FILE REMOVED</i></b>
+        <b><i>DOSYA SİLİNMİŞTİR</i></b>
       [else]
       [# if you don't want to allow select for diffs then remove this section]
       [is entries.rev rev_selected]
@@ -59,17 +59,17 @@
       <a href="[entries.sel_for_diff_href]"><b>[[]select&nbsp;for&nbsp;diffs]</b></a><br>
       [end]
         [if-any entries.diff_to_sel_href]
-          <a href="[entries.diff_to_sel_href]"><b>Diff&nbsp;to&nbsp;selected&nbsp;[rev_selected]</b></a>
+          <a href="[entries.diff_to_sel_href]"><b>Seçili&nbsp;[rev_selected]&nbsp;sürümüyle&nbsp;farklılıkları&nbsp;göster</b></a>
           [if-any human_readable]
           [else]
-            (<a href="[entries.diff_to_sel_href]&amp;diff_format=h"><b>colored</b></a>)
+            (<a href="[entries.diff_to_sel_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
           [end]<br />
         [end]
         [if-any entries.prev]
-          <a href="[entries.diff_to_prev_href]"><b>Diff&nbsp;to&nbsp;previous&nbsp;[entries.prev]</b></a>
+          <a href="[entries.diff_to_prev_href]"><b>Önceki&nbsp;[entries.prev]&nbsp;sürümüyle&nbsp;farklılıkları&nbsp;göster</b></a>
           [if-any human_readable]
           [else]
-            (<a href="[entries.diff_to_prev_href]&amp;diff_format=h"><b>colored</b></a>)
+            (<a href="[entries.diff_to_prev_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
           [end]<br />
         [end]
       [end]  
@@ -96,14 +96,14 @@
         <a href="[entries.diff_to_main_href]"><b>Diff&nbsp;to&nbsp;next&nbsp;MAIN&nbsp;[entries.next_main]</b></a>
         [if-any human_readable]
         [else]
-          (<a href="[entries.diff_to_main_href]&amp;diff_format=h"><b>colored</b></a>)
+          (<a href="[entries.diff_to_main_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
         [end]<br />
       [end]
       [if-any entries.branch_point]
         <a href="[entries.diff_to_branch_href]"><b>Diff&nbsp;to&nbsp;branch&nbsp;point&nbsp;[entries.branch_point]</b></a>
         [if-any human_readable]
         [else]
-          (<a href="[entries.diff_to_branch_href]&amp;diff_format=h"><b>colored</b></a>)
+          (<a href="[entries.diff_to_branch_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
         [end]<br />
       [end]
 
@@ -112,7 +112,7 @@
         <form method=get action="[branch_select_action]" >
           [branch_select_hidden_values]
           <select name="only_with_tag" onChange="submit()">
-          <option value="" [is view_tag ""]selected[end]>Show all tags</option>
+          <option value="" [is view_tag ""]selected[end]>Tüm etiketleri göster</option>
           [for entries.tags]
             <option [is view_tag entries.tags.name]selected[end]>[entries.tags.name]</option>
           [end]
@@ -126,9 +126,9 @@
     [# Time column]
     <td>
       [is roottype "svn"]
-        [if-index entries last]Added[else]Modified[end]
+        [if-index entries last]eklendi[else]düzenlendi[end]
       [end]
-      [entries.ago] ago<br><i>[entries.date_str]</i>
+      [entries.ago] önce<br><i>[entries.date_str]</i>
       [is roottype "cvs"]
         [if-any entries.prev]
           [if-any entries.changed]
@@ -147,13 +147,13 @@
   <tr class="vc_row_[if-index entries even]even[else]odd[end]">
     <td colspan=5>
       [is roottype "svn"]
-        [is entries.filename where][else]<b>File name: </b>[entries.filename]<br>[end]
+        [is entries.filename where][else]<b>Dosya adı: </b>[entries.filename]<br>[end]
         [if-any entries.size]
-          <b>File length: </b>[entries.size] byte(s)<br>
+          <b>Dosya uzunluğu: [entries.size] bayt<br>
         [end]
 
         [if-any entries.copy_path]
-           <b>Copied from: </b><a href="[entries.copy_href]">[entries.copy_path]</a> revision [entries.copy_rev]<br>
+           [entries.copy_rev] sürümüne ait <a href="[entries.copy_href]">[entries.copy_path]</a> dosyasından kopyalandı<br>
         [end]
       [end]
 
