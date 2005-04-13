@@ -14,7 +14,6 @@
 */
 
 #include <iostream>
-#include <sstream>
 #include <getopt.h>
 
 #include "zstring.h"
@@ -61,6 +60,8 @@ static int z_interactive_mode( ZSConn& zemberek )
         char *t;
 
         cin.getline( buf, BUFSIZ );
+        if ( strlen(buf) == 0 ) break;
+
         t = buf;
         int offset = 0, count = 0, ret = 0;
         bool inWord = true;
