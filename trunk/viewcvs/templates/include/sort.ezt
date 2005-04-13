@@ -2,12 +2,12 @@
 <a name=logsort></a>
 <form method=get action="[logsort_action]">
   [logsort_hidden_values]
-  Sort log by:
+  Sırala:
   <select name="logsort" onchange="submit()">
-    <option value="cvs" [is logsort "cvs"]selected[end]>Not sorted</option>
-    <option value="date" [is logsort "date"]selected[end]>Commit date</option>
-    <option value="rev" [is logsort "rev"]selected[end]>Revision</option>
+    <option value="cvs" [is logsort "cvs"]selected[end]>Düzensiz</option>
+    <option value="date" [is logsort "date"]selected[end]>Tarihe göre</option>
+    <option value="rev" [is logsort "rev"]selected[end]>Sürüme göre</option>
   </select>
-  <input type=submit value="  Sort  ">
+  <input type=submit value="  Sırala  ">
 </form>
 

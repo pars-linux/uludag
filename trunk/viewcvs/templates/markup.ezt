@@ -7,22 +7,22 @@
 [include "include/header.ezt" "markup"]
 
 <div class="vc_summary">
-File: [nav_file]
+Dosya: [nav_file]
 
-(<a href="[download_href]"><b>download</b></a>)
-[if-any download_text_href](<a href="[download_text_href]"><b>as text</b></a>)[end]
+(<a href="[download_href]"><b>indir</b></a>)
+[if-any download_text_href](<a href="[download_text_href]"><b>metin olarak indir</b></a>)[end]
 
 <br>
 
 [if-any log]
-  Revision: <b>[rev]</b>[if-any vendor_branch] <i>(vendor branch)</i>[end],
-  <i>[date_str]</i> ([ago] ago) by <i>[author]</i>
+  Sürüm: <b>[rev]</b>[if-any vendor_branch] <i>(vendor branch)</i>[end],
+  <i>[date_str]</i> ([ago] önce) by <i>[author]</i>
   
   [if-any branches]
     <br>Branch: <b>[branches]</b>
   [end]
   [if-any tags]
-    <br>CVS Tags: <b>[tags]</b>
+    <br>Etiketler: <b>[tags]</b>
   [end]
   [if-any branch_points]
     <br>Branch point for: <b>[branch_points]</b>
@@ -33,16 +33,16 @@ File: [nav_file]
     [end]
   [end]
   [is roottype "svn"]
-    <br>File size: [size] byte(s)
+    <br>Dosya boyutu: [size] bayt
   [end]
   [is state "dead"]
-    <br><b><i>FILE REMOVED</i></b>
+    <br><b><i>DOSYA SİLİNMİŞTİR</i></b>
   [end]
   <pre class="vc_log">[log]</pre>
 [else]
-  Revision: <b>[rev]</b><br>
+  Sürüm: <b>[rev]</b><br>
   [if-any tag]
-    Tag: <b>[tag]</b><br>
+    Etiket: <b>[tag]</b><br>
   [end]
 [end]
 </div>

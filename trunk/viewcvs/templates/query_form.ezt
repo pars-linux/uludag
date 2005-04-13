@@ -1,6 +1,6 @@
 [# setup page definitions]
   [define location][rootname][if-any where]: [where][end][end]
-  [define page_title][cfg.general.main_title] - query - [location][end]
+  [define page_title][cfg.general.main_title] - sorgu - [location][end]
   [define help_href][docroot]/help_rootview.html[end]
 [# end]
 
@@ -44,11 +44,11 @@
     <th align="right" valign="top">Subdirectory:</th>
     <td>
       <input type="text" name="dir" value="[dir]" /><br />
-      (you can list multiple directories separated by commas)
+      (virgüllerle ayırarak birden fazla dizin listeletebilirsiniz)
     </td>
   </tr>
   <tr>
-    <th align="right" valign="top">File:</th>
+    <th align="right" valign="top">Dosya:</th>
     <td>
       <input type="text" name="file" value="[file]" /><br />
       <label for="file_match_exact">
@@ -74,7 +74,7 @@
     </td>
   </tr>
   <tr>
-    <th align="right" valign="top">Who</th>
+    <th align="right" valign="top">Kim</th>
     <td>
       <input type="text" name="who" value="[who]" /><br />
       <label for="who_match_exact">
@@ -100,17 +100,17 @@
     </td>
   </tr>
   <tr>
-    <th align="right" valign="top">Sort By:</th>
+    <th align="right" valign="top">Sıralama:</th>
     <td>
       <select name="querysort">
-        <option value="date" [is querysort "date"]selected="selected"[end]>Date</option>
-        <option value="author" [is querysort "author"]selected="selected"[end]>Author</option>
-        <option value="file" [is querysort "file"]selected="selected"[end]>File</option>
+        <option value="date" [is querysort "date"]selected="selected"[end]>Tarihe göre</option>
+        <option value="author" [is querysort "author"]selected="selected"[end]>Author'a göre</option>
+        <option value="file" [is querysort "file"]selected="selected"[end]>Dosyaya göre</option>
       </select>
     </td>
   </tr>
   <tr>
-    <th align="right" valign="top">Date:</th>
+    <th align="right" valign="top">Tarih:</th>
     <td>
       <table border="0" cellspacing="0" cellpadding="0">
         <tr>
@@ -125,33 +125,33 @@
         <tr>
           <td><input type="radio" name="date" id="date_day"
                  value="day" [is date "day"]checked="checked"[end] /></td>
-          <td><label for="date_day">In the last day</label></td>
+          <td><label for="date_day">Son 24 saat içinde</label></td>
         </tr>
         <tr>
           <td><input type="radio" name="date" id="date_week"
                  value="week" [is date "week"]checked="checked"[end] /></td>
-          <td><label for="date_week">In the last week</label></td>
+          <td><label for="date_week">Son bir hafta içinde</label></td>
         </tr>
         <tr>
           <td><input type="radio" name="date" id="date_month"
                  value="month" [is date "month"]checked="checked"[end] /></td>
-          <td><label for="date_month">In the last month</label></td>
+          <td><label for="date_month">Son bir ay içinde</label></td>
         </tr>
         <tr>
           <td><input type="radio" name="date" id="date_all"
                  value="all" [is date "all"]checked="checked"[end] /></td>
-          <td><label for="date_all">Since the beginning of time</label></td>
+          <td><label for="date_all">Başlangıçtan bu yana</label></td>
         </tr>
         <tr>
           <td><input type="radio" name="date" id="date_explicit"
                  value="explicit" [is date "explicit"]checked="checked"[end] /></td>
           <td>
-            <label for="date_explicit">Between</label>
+            <label for="date_explicit">Arasında</label>
             <input type="text" name="mindate" value="[mindate]" size="20" />
-            and
+            ve
             <input type="text" name="maxdate" value="[maxdate]" size="20" />
             <br />
-            (use the form <b>yyyy-mm-dd hh:mm:ss</b>)
+            (<b>yyyy-aa-gg sa:sn:sl</b> biçemini kullanınız)
           </td>
         </tr>
       </table>
@@ -159,7 +159,7 @@
   </tr>
   <tr>
     <td></td>
-    <td><input type="submit" value="Search" /></td>
+    <td><input type="submit" value="Ara" /></td>
   </tr>
 </table>
 </div>
