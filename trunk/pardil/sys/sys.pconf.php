@@ -1,8 +1,6 @@
 <?php
 
   // Varsayılan değerler:
-  $_PCONF = array();
-
   $_PCONF['site_name'] = 'Pardil';
   $_PCONF['site_title'] = 'Pardus İyileştirme Listesi';
   $_PCONF['site_url'] = 'http://pardil.uludag.org.tr/';
@@ -24,7 +22,7 @@
 
   // Veritabanındaki tüm değerleri bir diziye yükle
   while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_NUM)) {
-  
+    if ($arr_fetch[0] == 'root') { continue; }
     $_PCONF[$arr_fetch[0]] = $arr_fetch[1];
 
   }
