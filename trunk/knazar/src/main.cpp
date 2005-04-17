@@ -1,6 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by S.Çağlar Onur                                   *
- *   caglar@uludag.org.tr                                                  *
+ *   Copyright (C) 2005 by TUBITAK/UEKAE                                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -38,7 +37,7 @@ static KCmdLineOptions options[] =
 int main(int argc, char **argv)
 {
 	KAboutData about("knazar", I18N_NOOP("knazar"), version, description,
-	KAboutData::License_GPL, "(C) 2005 S.Çağlar Onur", 0, 0, "caglar@uludag.org.tr");
+	KAboutData::License_GPL, "(C) 2005 TUBITAK/UEKAE", 0, 0, "bilgi@uludag.org.tr");
 	about.addAuthor( "S.Çağlar Onur", 0, "caglar@uludag.org.tr" );
 
 	KCmdLineArgs::init(argc, argv, &about);
