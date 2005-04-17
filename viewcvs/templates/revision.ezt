@@ -1,6 +1,6 @@
 [# setup page definitions]
   [define location][rootname][if-any where]: [where][end][end]
-  [define page_title][cfg.general.main_title] - revision - [location][end]
+  [define page_title][cfg.general.main_title] - sürüm - [location][end]
   [define help_href][docroot]/help_rootview.html[end]
 [# end]
 
@@ -23,7 +23,7 @@
     </td>
   </tr>
   <tr align=left>
-    <th>Author:</th>
+    <th>Değişikliği yapan:</th>
     <td>[author]</td>
   </tr>
   <tr align=left>
@@ -32,20 +32,20 @@
   </tr>
 </table>
 
-<p><b>Log Message:</b></p>
+<p><b>Değişiklik açıklaması:</b></p>
    <pre class="vc_log">[log]</pre>
 
 <hr noshade>
 
-<p><b>Changed paths:</b></p>
+<p><b>Değişen dosyalar/dizinler:</b></p>
 <table border="0" cellspacing="1" cellpadding="2">
   <thead>
   <tr align=left>
-    <th class="vc_header_sort">Path</th>
-    <th class="vc_header">Action</th>
-    <th class="vc_header">Text Changes</th>
+    <th class="vc_header_sort">Adres</th>
+    <th class="vc_header">Hareket</th>
+    <th class="vc_header">Metin Changes</th>
     <th class="vc_header">Prop Changes</th>
-    <th class="vc_header">Diff to Previous</th>
+    <th class="vc_header">Önceki sürümle farklar</th>
   </tr>
   </thead>
   <tbody>
@@ -73,7 +73,7 @@
         <td align=center>[is changes.prop_mods "1"]X[else]&nbsp;[end]</td>
       [end]
         [if-any changes.diff_href]
-          <td align=center><a href="[changes.diff_href]&amp;r1=[rev]&amp;r2=[changes.prev_rev]&amp;p1=[changes.filename]&amp;p2=[changes.prev_path]">(diff to previous)</a></td>
+          <td align=center><a href="[changes.diff_href]&amp;r1=[rev]&amp;r2=[changes.prev_rev]&amp;p1=[changes.filename]&amp;p2=[changes.prev_path]">(önceki sürümle farklar)</a></td>
         [else]
           <td align=center>&nbsp;</td>
         [end]
@@ -81,7 +81,7 @@
     [end]
   [else]
     <tr>
-    <td colspan="5">No changed paths.</td>
+    <td colspan="5">Değişiklik yok.</td>
     </tr>
   [end]
   </tbody>

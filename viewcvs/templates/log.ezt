@@ -1,6 +1,6 @@
 [# setup page definitions]
   [define location][rootname][if-any where]: [where][end][end]
-  [define page_title][cfg.general.main_title] - log - [location][end]
+  [define page_title][cfg.general.main_title] - dosya geçmişi - [location][end]
   [define help_href][docroot]/help_log.html[end]
 [# end]
 
@@ -28,25 +28,25 @@
     [for entries.branch_names]<a name="[entries.branch_names]"></a>
     [end]
 
-    Revision [is roottype "svn"]<a href="[entries.revision_href]"><b>[entries.rev]</b></a>[else]<b>[entries.rev]</b>[end]
+    Sürüm [is roottype "svn"]<a href="[entries.revision_href]"><b>[entries.rev]</b></a>[else]<b>[entries.rev]</b>[end]
     [is pathtype "file"] - 
       (<a href="[entries.view_href]">göster</a>)
       (<a href="[entries.download_href]">indir</a>)
       [if-any entries.download_text_href](<a href="[entries.download_text_href]">metin olarak indir</a>)[end]
       [# if you don't want to allow annotation, then remove this line]
-      [is roottype "svn"][else](<a href="[entries.annotate_href]">annotate</a>)[end]
+      [is roottype "svn"][else](<a href="[entries.annotate_href]">ek açıklama</a>)[end]
 
       [# if you don't want to allow select for diffs then remove this section]
       [is entries.rev rev_selected]
-        - <b>[[]selected]</b>
+        - <b>[[]seçildi]</b>
       [else]
-        - <a href="[entries.sel_for_diff_href]">[[]select for diffs]</a>
+        - <a href="[entries.sel_for_diff_href]">[[]farklar için seç]</a>
       [end]
     [end]
   [end]
 
   [if-any entries.vendor_branch]
-    <i>(vendor branch)</i>
+    <i>(vendor bölümü)</i>
   [end]
 
   <br>
@@ -58,7 +58,7 @@
   [end]
 
   [if-any entries.branches]
-    <br>Branch:
+    <br>Bölüm:
     [for entries.branches]
       <a href="[entries.branches.href]"><b>[entries.branches.name]</b></a>[if-index entries.branches last][else],[end]
     [end]

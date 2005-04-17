@@ -4,12 +4,12 @@
   <table>
     [if-any has_tags]
       <tr>
-        <td> Show files using tag: </td>
+        <td> Etiketli dosyaları göster: </td>
         <td>
           <form method=get action="[search_tag_action]">
             [search_tag_hidden_values]
             <select name=only_with_tag onchange="submit()">
-            <option value="">Select Branch</option>
+            <option value="">Bölüm seçin</option>
             [if-any branch_tags]
               <optgroup label="Branches">
               [for branch_tags]
@@ -41,7 +41,7 @@
     [else]
       [is cfg.options.use_re_search "1"]
         <tr>
-          <td>Show files containing the regular expression:</td>
+          <td>Düzenli ifadeyi içeren dosyaları göster:</td>
           <td>
             <form method=get action="[search_tag_action]">
               [search_tag_hidden_values]
@@ -80,7 +80,7 @@
 
 [# if you want to disable tarball generation remove the following: ]
 [if-any tarball_href]
-  <a href="[tarball_href]">Download tarball</a>
+  <a href="[tarball_href]">.tar indir</a>
 [end]
 
 [include "footer.ezt"]

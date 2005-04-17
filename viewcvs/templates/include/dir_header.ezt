@@ -31,10 +31,10 @@
 </tr>
 [end]
 [if-any view_tag]
-<tr><td>Current tag:</td><td><b>[view_tag]</b></td></tr>
+<tr><td>Seçili etiket:</td><td><b>[view_tag]</b></td></tr>
 [end]
 [if-any search_re]
-<tr><td>Current search:</td><td><b>[search_re]</b></td></tr>
+<tr><td>Seçili arama:</td><td><b>[search_re]</b></td></tr>
 [end]
 [if-any num_files]
 <tr><td>Gösterilen dosyalar:</td><td><b>[files_shown]</b>
@@ -51,8 +51,8 @@
 
 [if-any queryform_href]
 <tr>
-  <td>Query:</td>
-  <td><a href="[queryform_href]">Query revision history</a></td>
+  <td>Sorgu:</td>
+  <td><a href="[queryform_href]">Sorgu geçmişi</a></td>
 </tr>
 [end]
 </table>
@@ -65,7 +65,7 @@
         <input type=submit value="Go to:">
         <select name=dir_pagestart  onchange="submit()">
           [for picklist]
-            <option [is picklist.count dir_pagestart]selected[end] value="[picklist.count]">Page [picklist.page]: [picklist.start] to [picklist.end]</option>
+            <option [is picklist.count dir_pagestart]selected[end] value="[picklist.count]">Sayfa [picklist.page]: [picklist.start] - [picklist.end]</option>
           [end]
         </select>
       </form>

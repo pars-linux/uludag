@@ -14,7 +14,7 @@
   [is roottype "cvs"]
   [# For subversion, the branch field is not used ]
   <tr>
-    <th align="right" valign="top">Branch:</th>
+    <th align="right" valign="top">Bölüm:</th>
     <td>
       <input type="text" name="branch" value="[branch]" /><br />
       <label for="branch_match_exact">
