@@ -1,6 +1,6 @@
 [# setup page definitions]
   [define location][rootname][if-any where]: [where][end][end]
-  [define page_title][cfg.general.main_title] - log - [location][end]
+  [define page_title][cfg.general.main_title] - dosya geçmişi - [location][end]
   [define help_href][docroot]/help_logtable.html[end]
 [# end]
 
@@ -22,9 +22,9 @@
   <th align="left" class="vc_header">Farklılıklar</th>
   [end]
   [is roottype "cvs"]
-  <th align="left" class="vc_header">Branches/<br>Etiketler</th>
+  <th align="left" class="vc_header">Bölümler/<br>Etiketler</th>
   [end]
-  <th align="left" class="vc_header[is logsort "date"]_sort[end]">Son güncelleme</th>
+  <th align="left" class="vc_header[is logsort "date"]_sort[end]">Son değişiklik</th>
   <th align="left" class="vc_header">Değişikliği yapan</th>
 </tr>
 </thead>
@@ -46,7 +46,7 @@
         [if-any entries.download_text_href]<a href="[entries.download_text_href]"><b>metin olarak indir</b></a><br>[end]
 
         [# if you don't want to allow annotation, then remove this line]
-        [is roottype "svn"][else]<a href="[entries.annotate_href]"><b>Annotate</b></a><br>[end]
+        [is roottype "svn"][else]<a href="[entries.annotate_href]"><b>Ek açıklama</b></a><br>[end]
       </td>
       <td>
       [is entries.state "dead"]
@@ -54,9 +54,9 @@
       [else]
       [# if you don't want to allow select for diffs then remove this section]
       [is entries.rev rev_selected]
-        <b>[[]selected]</b><br>
+        <b>[[]seçildi]</b><br>
       [else]
-      <a href="[entries.sel_for_diff_href]"><b>[[]select&nbsp;for&nbsp;diffs]</b></a><br>
+      <a href="[entries.sel_for_diff_href]"><b>[[]farklar için seç]</b></a><br>
       [end]
         [if-any entries.diff_to_sel_href]
           <a href="[entries.diff_to_sel_href]"><b>Seçili&nbsp;[rev_selected]&nbsp;sürümüyle&nbsp;farklılıkları&nbsp;göster</b></a>
@@ -79,7 +79,7 @@
     <td>
       [# Branches column]
       [if-any entries.vendor_branch]
-        <i>vendor branch</i><br>
+        <i>vendor bölümü</i><br>
       [end]
       [if-any entries.branches]
         [for entries.branches]

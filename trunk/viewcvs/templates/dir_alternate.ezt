@@ -22,7 +22,7 @@
     </a>
   </th>
   <th class="vc_header[is sortby "date"]_sort[end]">
-    <a href="[sortby_date_href]#dirlist">Son güncelleme
+    <a href="[sortby_date_href]#dirlist">Son değişiklik
     [is sortby "date"]
       <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
         width="13" height="13" border="0"
@@ -41,7 +41,7 @@
   </th>
 [is cfg.options.show_logs "1"]
   <th class="vc_header[is sortby "log"]_sort[end]">
-    <a href="[sortby_log_href]#dirlist">Son değişimin açıklaması
+    <a href="[sortby_log_href]#dirlist">Son değişikliğin açıklaması
     [is sortby "log"]
       <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
         width="13" height="13" border="0"
