@@ -20,7 +20,7 @@
       <label for="branch_match_exact">
         <input type="radio" name="branch_match" id="branch_match_exact"
            value="exact" [is branch_match "exact"]checked="checked"[end] />
-        Exact match
+        Birebir eşleşme
       </label>
       <label for="branch_match_glob">
         <input type="radio" name="branch_match" id="branch_match_glob"
@@ -30,12 +30,12 @@
       <label for="branch_match_regex">
         <input type="radio" name="branch_match" id="branch_match_regex"
            value="regex" [is branch_match "regex"]checked="checked"[end] />
-        Regex match
+        Düzenli ifade eşleşsin
       </label>
       <label for="branch_match_notregex">
         <input type="radio" name="branch_match" id="branch_match_notregex"
            value="notregex" [is branch_match "notregex"]checked="checked"[end] />
-        Regex doesn't match
+        Düzenli ifade eşleşmesin
       </label>
     </td>
   </tr>
@@ -54,7 +54,7 @@
       <label for="file_match_exact">
         <input type="radio" name="file_match" id="file_match_exact"
            value="exact" [is file_match "exact"]checked="checked"[end] />
-        Exact match
+        Birebir eşleşme
       </label>
       <label for="file_match_glob">
         <input type="radio" name="file_match" id="file_match_glob"
@@ -64,12 +64,12 @@
       <label for="file_match_regex">
         <input type="radio" name="file_match" id="file_match_regex"
            value="regex" [is file_match "regex"]checked="checked"[end] />
-        Regex match
+        Düzenli ifade eşleşsin
       </label>
       <label for="file_match_notregex">
         <input type="radio" name="file_match" id="file_match_notregex"
            value="notregex" [is file_match "notregex"]checked="checked"[end] />
-        Regex doesn't match
+        Düzenli ifade eşleşmesin
       </label>
     </td>
   </tr>
@@ -80,7 +80,7 @@
       <label for="who_match_exact">
         <input type="radio" name="who_match" id="who_match_exact"
            value="exact" [is who_match "exact"]checked="checked"[end] />
-        Exact match
+        Birebir eşleşme
       </label>
       <label for="who_match_glob">
         <input type="radio" name="who_match" id="who_match_glob"
@@ -90,21 +90,21 @@
       <label for="who_match_regex">
         <input type="radio" name="who_match" id="who_match_regex"
            value="regex" [is who_match "regex"]checked="checked"[end] />
-        Regex match
+        Düzenli ifade eşleşsin
       </label>
       <label for="who_match_notregex">
         <input type="radio" name="who_match" id="who_match_notregex"
            value="notregex" [is who_match "notregex"]checked="checked"[end] />
-        Regex doesn't match
+        Düzenli ifade eşleşmesin
       </label>
     </td>
   </tr>
   <tr>
-    <th align="right" valign="top">Sıralama:</th>
+    <th align="right" valign="top">Sırala:</th>
     <td>
       <select name="querysort">
         <option value="date" [is querysort "date"]selected="selected"[end]>Tarihe göre</option>
-        <option value="author" [is querysort "author"]selected="selected"[end]>Author'a göre</option>
+        <option value="author" [is querysort "author"]selected="selected"[end]>Değişikliği yapana göre</option>
         <option value="file" [is querysort "file"]selected="selected"[end]>Dosyaya göre</option>
       </select>
     </td>
