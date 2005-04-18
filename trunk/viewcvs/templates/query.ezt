@@ -30,17 +30,14 @@
     <b>"ahmet", "mehmet"</b> şeklinde olacaktır.
   </p>
   <p>                           
-    Wildcard and regular expression searches are entered in a similar
-    way to the quoted requests.  You must quote any wildcard or
-    regular expression request, and a command charactor preceeds the
-    first quote.  The command charactor <b>l</b> is for wildcard
-    searches, and the wildcard charactor is a percent (<b>%</b>).  The
-    command charactor for regular expressions is <b>r</b>, and is
-    passed directly to MySQL, so you'll need to refer to the MySQL
-    manual for the exact regex syntax.  It is very similar to Perl.  A
-    wildard search for all files with a <i>.py</i> extention is:
-    <b>l"%.py"</b> in the <i>File</i> input box.  The same search done
-    with a regular expression is: <b>r".*\.py"</b>.
+    Joker ve düzenli ifade aramaları tırnak işaretli değerlerde benzer yazılırlar.
+    Tüm joker ve düzenli ifade değerlerini ve komut karakterlerini  tırnak işareti 
+    içinde yazmalısınız.  Joker aramalar için komut karakteri <b>l</b> ve joker 
+    karakteri ise yüzde (<b>%</b>) işaretidir. 
+    Düzenli ifadeler için komut karakteri <b>r</b>'dir ve doğrudan MySQL'e işletilir, 
+    yani kullanımı için MySQL el kitabına bakmanız gerekebilir. Perl'e çok benzer bir yapısı vardır. 
+    <i>.py</i> uzantılı tüm dosyalar için sorgu şu şekildedir: <b>l"%.py"</b> (<i>Dosya</i> 
+    metin alanına yazılacak). Aynı sorgunun düzenli ifadelerle oluşturulmuşu ise şöyle: <b>r".*\.py"</b>.
   </p>
   <p>                  
     Virgüllerle ayırmak şartıyla tüm arama şekillerini karıştırarak kullanabilirsiniz.
@@ -119,22 +116,22 @@
           <tr>
            <td><input type=radio name=date value=day
 		  [is date "day"]checked[end]></td>
-           <td>Son 1 gün içinde</td>
+           <td>Son 24 saat içinde</td>
           </tr>
           <tr>
            <td><input type=radio name=date value=week
 		  [is date "week"]checked[end]></td>
-           <td>Son 1 hafta içinde</td>
+           <td>Son bir hafta içinde</td>
           </tr>
           <tr>
            <td><input type=radio name=date value=month
 		  [is date "month"]checked[end]></td>
-           <td>Son 1 ay içinde</td>
+           <td>Son bir ay içinde</td>
           </tr>
           <tr>
            <td><input type=radio name=date value=all
 		  [is date "all"]checked[end]></td>
-           <td>Başlangıçtan itibaren</td>
+           <td>Başlangıçtan bu yana</td>
           </tr>
          </table>
         </td>

@@ -8,10 +8,10 @@
 
 <p><b>[english_query]</b></p>
 [# <!-- {sql} --> ]
-<p><a href="[queryform_href]">Modify query</a></p>
-<p><a href="[backout_href]">Show commands which could be used to back out these changes</a></p>
+<p><a href="[queryform_href]">Sorguyu düzenle</a></p>
+<p><a href="[backout_href]">Bu değişikliklerden vazgeçmek için kullanılabilecek komutları göster</a></p>
 
-<p><b>+[plus_count]/-[minus_count]</b> lines changed.</p>
+<p><b>+[plus_count]/-[minus_count]</b> satır değişmiş.</p>
 
 [if-any commits]
 <table width="100%" border="0" cellspacing="1" cellpadding="2">
@@ -20,11 +20,11 @@
    <th align="left" class="vc_header">Sürüm</th>
    <th align="left" class="vc_header[is querysort "file"]_sort[end]">Dosya</th>
 [if-any show_branch]
-   <th align="left" class="vc_header">Branch</th>
+   <th align="left" class="vc_header">Bölüm</th>
 [end]
    <th align="left" class="vc_header">+/-</th>
    <th align="left" class="vc_header[is querysort "date"]_sort[end]">Tarih</th>
-   <th align="left" class="vc_header[is querysort "author"]_sort[end]">Author</th>
+   <th align="left" class="vc_header[is querysort "author"]_sort[end]">Değişikliği yapan</th>
 [# uncommment, if you want a separate Description column: (also see below)
    <th align="left" class="vc_header">Açıklama</th>
 ]

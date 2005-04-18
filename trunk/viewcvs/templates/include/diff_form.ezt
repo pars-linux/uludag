@@ -11,10 +11,10 @@
   <tr>
   <td>&nbsp;</td>
   <td>
-  Diffs between
+  Aradaki farklar
 [if-any tags]
   <select name="r1">
-    <option value="text" selected>Metin alanını kullanın</option>
+    <option value="text" selected>Metin alanını kullan</option>
   [for tags]
     <option value="[tags.rev]:[tags.name]">[tags.name]</option>
   [end]
@@ -28,7 +28,7 @@
   and
 [if-any tags]
   <select name="r2">
-    <option value="text" selected>Metin alanını kullanın</option>
+    <option value="text" selected>Metin alanını kullan</option>
   [for tags]
     <option value="[tags.rev]:[tags.name]">[tags.name]</option>
   [end]
