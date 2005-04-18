@@ -84,7 +84,7 @@ static int z_interactive_mode( ZSConn& zemberek )
                 inWord = false;
                 str.erase();
                 goto CONTINUE_LOOP;
-            } 
+            }
 
             if ( !inWord ) {
                 offset = count;
@@ -130,8 +130,28 @@ int main( int argc, char** argv )
         return z_interactive_mode( zemberek );
     }
 
-/*
     for ( int i = 1; i < argc; ++i ) {
+        ZString zstr = zemberek.checkString( argv[i], 0 );
+        switch ( zstr.status() ) {
+        case Z_TRUE:
+            cout << zstr.str() << ": doğru" << endl;
+            break;
+        case Z_FALSE:
+            cout << zstr.str() << ": yanlış (öneri yok)" << endl;
+            break;
+        case Z_SUGGESTION:
+            cout << zstr.str() << ": yanlış (" <<
+                zstr.suggestionString() << ")" << endl;
+            break;
+        default:
+            return -1;
+            break;
+        }
+    }
+
+    return 0;
+/*
+
         string str( argv[i] );
         cout << str;
 
@@ -148,6 +168,4 @@ int main( int argc, char** argv )
 
     }
 */
-
-    return 0;
 }
