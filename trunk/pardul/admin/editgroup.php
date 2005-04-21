@@ -15,8 +15,14 @@ if(GetRoleName($roleid) != "admin") {
 	echo "Grup düzenleme işlemi için yetkiniz yok.";
 	exit;
 }
-if($formsubmitted)
-	mysql_query("update `group` set `name`='$grpname', `managed_by`='$grpmanager' where `id`='$grpid'");
+if($formsubmitted) {
+	if(IsGroup($grpname))
+		echo "Sistemde <b>$grpname</b> grubu zaten var.<br>";
+	else
+		mysql_query("update `group` set `name`='$grpname', `managed_by`='$grpmanager' where `id`='$grpid'");
+	require("groups.php");
+	exit();
+}
 $resultGrp = mysql_query("select pardul.group.name, pardul.group.managed_by from pardul.group where pardul.group.id = '$grpid'");
 $rowGrp = mysql_fetch_row($resultGrp);
 ?>
