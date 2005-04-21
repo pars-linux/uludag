@@ -141,7 +141,7 @@ function ListBrands($resultBrands, $printFor) {
 			echo "<tr>\n";
 		echo "<td><a href=\"?action=statusentries&grpid=$grpid&brandid=$rowBrands[0]\">$rowBrands[1]</a>";
 		if($printFor == "admin") {
-			echo "&nbsp;&nbsp;<a href=\"?action=editbrand&brandid=$rowBrands[0]\">[Düzenle]</a>\n";
+			echo "&nbsp;&nbsp;<a href=\"?action=editbrand&brandid=$rowBrands[0]&grpid=$grpid\">[Düzenle]</a>\n";
 			echo "&nbsp;<a href=\"?action=delbrand&brandid=$rowBrands[0]&grpid=$grpid\">[Sil]</a>";
 		}
 		if(IsManaggedBy($userid, $grpid))
@@ -176,6 +176,14 @@ function IsBrand($brandname) {
 		return 0;
 	$rowbrand = mysql_fetch_row($resultbrand);
 	return $rowbrand[0];
+}
+//------------------------------------------------------------
+function IsGroup($groupname) {
+	$resultgroup = mysql_query("select id from pardul.group where name='$groupname'");
+	if(mysql_num_rows($resultgroup) == 0)
+		return 0;
+	$rowgroup = mysql_fetch_row($resultgroup);
+	return $rowgroup[0];
 }
 //------------------------------------------------------------
 ?>

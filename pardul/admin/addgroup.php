@@ -18,7 +18,10 @@ if(GetRoleName($roleid) != "admin") {
 	exit;
 }
 if($formsubmitted) {
-	mysql_query("INSERT INTO `group` ( `id` , `name` , `managed_by` ) VALUES ('', '$grpname', '$grpmanager')");
+	if(IsGroup($grpname))
+		echo "Sistemde <b>$grpname</b> grubu zaten var.<br>";
+	else
+		mysql_query("INSERT INTO `group` ( `id` , `name` , `managed_by` ) VALUES ('', '$grpname', '$grpmanager')");
 	require("groups.php");
 	exit();
 }
