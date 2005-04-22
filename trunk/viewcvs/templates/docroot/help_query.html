@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
  "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html><head>
-  <title>ViewCVS Help: Query The Commit Database</title>
+  <title>ViewCVS Yardım: Veritabanı Sorgulama</title>
 </head>
 
 <body background="images/chalk.jpg">
@@ -10,55 +10,49 @@
     <td width="1%"><a href=".."><img border=0
         src="images/logo.png"></a>
     </td>
-    <td><h1>ViewCVS Help: Query The Commit Database</h1></td>
+    <td><h1>ViewCVS Yardım: Veritabanı Sorgulama</h1></td>
   </tr>
   <tr><td width="1%" valign="top" bgcolor="#ffffff">
-     <h3>Other&nbsp;Help:</h3>
-     <a href="help_rootview.html">General</a><br>
-     <a href="help_dirview.html">Directory&nbsp;View</a><br>
-     <a href="help_log.html">Classic&nbsp;Log&nbsp;View</a><br>
-     <a href="help_logtable.html">Alternative&nbsp;Log&nbsp;View</a><br>
-     <b>Query&nbsp;Database</b>
+       <h3>Yardım</h3>
+       <a href="help_rootview.html">Genel</a><br>
+       <a href="help_dirview.html">Dizin&nbsp;Gösterimi</a><br>
+       <a href="help_log.html">Klasik&nbsp;Kayıt&nbsp;Gösterimi</a><br>
+       <a href="help_logtable.html">Alternatif&nbsp;Kayıt&nbsp;Gösterimi</a><br>
+       <b>Veritabanı&nbsp;Sorgulama</b>
 
-     <h3>Internet</h3>
-     <a href="http://viewcvs.sf.net/index.html">Home</a><br>
-     <a href="http://viewcvs.sf.net/upgrading.html">Upgrading</a><br>
-     <a href="http://viewcvs.sf.net/contributing.html">Contributing</a><br>
-     <a href="http://viewcvs.sf.net/license-1.html">License</a><br>
+       <h3>İnternet</h3>
+       <a href="http://viewcvs.sf.net/index.html">Anasayfa</a><br>
+       <a href="http://viewcvs.sf.net/upgrading.html">Güncelleme</a><br>
+       <a href="http://viewcvs.sf.net/contributing.html">Geliştirme</a><br>
+       <a href="http://viewcvs.sf.net/license-1.html">Lisans</a><br>
   </td><td colspan=2>
 
   <p> 
-    Select your parameters for querying the CVS commit database in the
-    form at the top of the page.  You
-    can search for multiple matches by typing a comma-seperated list
-    into the text fields.  Regular expressions, and wildcards are also
-    supported.  Blank text input fields are treated as wildcards.
+    Gönderim veritabanını sorgulamak için parametreleri belirleyin. Metin 
+    alanlarına virgülle ayrılmış değerler girerek çoklu eşleşen arayabilirsiniz. 
+    Düzenli ifadeler ve joker karakteri desteklenmektedir. Boş metin alanları joker 
+    karakter olarak algılanacaktır.
   </p>
   <p>
-    Any of the text entry fields can take a comma-seperated list of
-    search arguments.  For example, to search for all commits from
-    authors <i>jpaint</i> and <i>gstein</i>, just type: <code>jpaint,
-    gstein</code> in the <i>Author</i> input box.  If you are searching
-    for items containing spaces or quotes, you will need to quote your
-    request.  For example, the same search above with quotes is:
-    <code>"jpaint", "gstein"</code>.
+    Tüm metin alanlarında virgülle ayrılmış değerler kullanabilirsiniz. Örneğin; 
+    <i>ahmet</i> ve <i>mehmet</i> tarafından yapılan gönderimleri aramak için, 
+    <i>Değişikliği yapan</i> alanına <b>ahmet,mehmet</b> yazmak yeterlidir. 
+    Eğer boşluk ve/veya tırnak işareti içeren bir öğe arıyorsanız isteğinizi tırnak işareti 
+    içine almalısınız. Örneğin; tırnak işaretleriyle beraber yukarıdaki sorgunun aynısı 
+    <b>"ahmet", "mehmet"</b> şeklinde olacaktır.
   </p>
   <p>                           
-    Wildcard and regular expression searches are entered in a similar
-    way to the quoted requests.  You must quote any wildcard or
-    regular expression request, and a command character preceeds the
-    first quote.  The command character <code>l</code>(lowercase L) is for wildcard
-    searches, and the wildcard character is a percent (<code>%</code>).  The
-    command character for regular expressions is <code>r</code>, and is
-    passed directly to MySQL, so you'll need to refer to the MySQL
-    manual for the exact regex syntax.  It is very similar to Perl.  A
-    wildard search for all files with a <i>.py</i> extention is:
-    <code>l"%.py"</code> in the <i>File</i> input box.  The same search done
-    with a regular expression is: <code>r".*\.py"</code>.
+    Joker ve düzenli ifade aramaları tırnak işaretli değerlerde benzer yazılırlar.
+    Tüm joker ve düzenli ifade değerlerini ve komut karakterlerini  tırnak işareti 
+    içinde yazmalısınız.  Joker aramalar için komut karakteri <b>l</b> ve joker 
+    karakteri ise yüzde (<b>%</b>) işaretidir. 
+    Düzenli ifadeler için komut karakteri <b>r</b>'dir ve doğrudan MySQL'e işletilir, 
+    yani kullanımı için MySQL el kitabına bakmanız gerekebilir. Perl'e çok benzer bir yapısı vardır. 
+    <i>.py</i> uzantılı tüm dosyalar için sorgu şu şekildedir: <b>l"%.py"</b> (<i>Dosya</i> 
+    metin alanına yazılacak). Aynı sorgunun düzenli ifadelerle oluşturulmuşu ise şöyle: <b>r".*\.py"</b>.
   </p>
   <p>                  
-    All search types can be mixed, as long as they are seperated by
-    commas.
+    Virgüllerle ayırmak şartıyla tüm arama şekillerini karıştırarak kullanabilirsiniz.
   </p>                                                    
   </td></tr></table>
 </body></html>
