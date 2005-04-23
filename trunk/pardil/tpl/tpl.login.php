@@ -1,18 +1,4 @@
 <?php
-  function print_error($str_name, $str_sub='') {
-    global $arr_errors;
-    if ($str_sub == '') {
-      if (isset($arr_errors[$str_name])) {
-        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name]);
-      }
-    }
-    else {
-      if (isset($arr_errors[$str_name][$str_sub])) {
-        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name][$str_sub]);
-      }
-    }
-  }
-
   include('tpl.header.php');
 ?>
       <div id="menubar">
@@ -20,54 +6,34 @@
         <span class="arrowR">&#187;</span>
         <span class="title"><?php echo __('User Login'); ?></span>
       </div>
+      <div id="menu">
+        &nbsp;
+      </div>
       <div id="content">
-        <div class="proposal">
-          <form action="login.php" method="post">
-            <fieldset>
-              <input type="hidden" name="login" value="1"/>
-              <table class="form">
-                <tr>
-                  <td class="label"><?php echo __('Username:'); ?></td>
-                  <td>
-                    <input type="text" name="username" size="25" value="<?php echo (!isset($arr_errors['username'])) ? htmlspecialchars($_POST['username'], ENT_QUOTES) : ''; ?>" />
-                  </td>
-                </tr>
-                <?php print_error('username'); ?>
-                <tr>
-                  <td class="label"><?php echo __('Password:'); ?></td>
-                  <td>
-                    <input type="password" name="password" size="25" value="<?php echo (!isset($arr_errors['password'])) ? htmlspecialchars($_POST['password'], ENT_QUOTES) : ''; ?>" />
-                  </td>
-                </tr>
-                <?php print_error('password'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td class="info">
-                    <button type="submit"><b><?php echo __('Login &raquo;'); ?></b></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>
-                    <b>&raquo;</b> <a href="password.php"><?php echo __('Forgot your password?'); ?></a>
-                    <br/>
-                    <b>&raquo;</b> <a href="activation.php"><?php echo __('Need activation?'); ?></a>
-                    <br/>
-                    <b>&raquo;</b> <a href="register.php"><?php echo __('Not a registered user?'); ?></a>
-                  </td>
-                </tr>
-              </table>
-            </fieldset>
-          </form>
-        </div>
+        <form action="login.php" method="post">
+          <fieldset>
+            <label for=""><?php echo __('Username:'); ?></label>
+            <br/>
+            <input type="text" name="username" size="25" value="<?php echo (!isset($arr_errors['username'])) ? htmlspecialchars($_POST['username'], ENT_QUOTES) : ''; ?>" />
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'username'); ?>
+            <br/>
+            <label for=""><?php echo __('Password:'); ?></label>
+            <br/>
+            <input type="password" name="password" size="25" value="<?php echo (!isset($arr_errors['password'])) ? htmlspecialchars($_POST['password'], ENT_QUOTES) : ''; ?>" />
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'password'); ?>
+            <br/>
+            <button type="submit" name="login" value="1"><b><?php echo __('Login &raquo;'); ?></b></button>
+            <p>
+              <b>&raquo;</b> <a href="password.php"><?php echo __('Forgot your password?'); ?></a>
+              <br/>
+              <b>&raquo;</b> <a href="activation.php"><?php echo __('Need activation?'); ?></a>
+              <br/>
+              <b>&raquo;</b> <a href="register.php"><?php echo __('Not a registered user?'); ?></a>
+            </p>
+          </fieldset>
+        </form>
       </div>
 <?php
   include('tpl.footer.php');

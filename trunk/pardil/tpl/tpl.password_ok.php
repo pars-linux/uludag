@@ -6,10 +6,11 @@
         <span class="arrowR">&#187;</span>
         <span class="title"><?php echo __('Create Temporary Password'); ?></span>
       </div>
+      <div id="menu">
+        &nbsp;
+      </div>
       <div id="content">
-        <div class="proposal">
-          <h2><?php echo __('Temporary Password Sent'); ?></h2>
-        </div>
+        <h2><?php echo __('Temporary Password Sent'); ?></h2>
       </div>
 <?php
   include('tpl.footer.php');

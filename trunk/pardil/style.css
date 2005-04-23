@@ -1,197 +1,141 @@
-/* Page layout */
-
 body {
+  background-color: #e5ebef;
+  color: #335783;
   margin: 0px;
   padding: 0px;
-  background-color: #ffffff;
-  font-family: Verdana, Sans, sans-serif;
+  text-align: center;
 }
 * {
-  font-family: Verdana, Sans, sans-serif;
+  font-family: verdana, sans-serif;
   font-size: 11px;
 }
+
 #container {
-  margin: 25px;
-  padding: 0px;
-}
-#header {
-  margin-bottom: 10px;
-}
-#menubar {
-  border: 1px solid #bbb;
-  background-color: #eee;
-  font-family: Verdana, Sans, sans-serif;
-  font-size: 11px;
-  padding: 3px;
-}
-#menu {
-  display: none;
+  margin: 20px auto;
+  width: 90%;
+  min-width: 450px;
+  max-width: 1000px;
 }
 #content {
-  margin: 0px;
-  padding: 0px;
+  padding: 15px;
+  border: 1px solid #7b93af;
+  background-color: #fff;
+  text-align: left;
+  color: #000;
+  margin-right: 205px;
+  min-height: 400px;
+}
+#menu {
+  float: right;
+  width: 160px;
+  padding: 15px;
+  border: 1px solid #7b93af;
+  background-color: #fff;
+  text-align: left;
+  color: #000;
+  min-height: 400px;
+}
+#header {
+  text-align: left;
+  margin-bottom: 15px;
+}
+#logo {
+  padding: 5px 15px;
+  border: 1px solid #7b93af;
+  background-color: #fff;
+}
+#logo a {
+  color: #000;
+  font-family: verdana, sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 5px;
+  text-decoration: none;
+  border-width: 0px;
+}
+#logo a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+}
+#menubar {
+  display: none;
 }
 #footer {
   clear: both;
-  padding: 10px 10px 10px 190px;
+  text-align: center;
+  margin-top: 20px;
+}
+.seperate {
+  clear: both;
 }
 
-/* Header */
+h1 {
+  font-size: 25px;
+}
+h2 {
+  font-size: 15px;
+}
 
-#header img {
+input[type="text"], input[type="password"], textarea {
+  margin: 1px 0px;
+  padding: 3px;
+  border: 1px solid #7b93af;
+  background-color: #f2f6f8;
+  color: #000;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  border: 1px solid #f00;
+}
+label {
+  font-weight: bold;
+}
+legend {
+  font-family: verdana, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+fieldset {
+  border: 1px solid #aaa;
+  padding: 20px 10px;
+  margin: 0px;
+  border-width: 0px;
+}
+fieldset input[type="text"], fieldset textarea {
+}
+button.default {
+  font-weight: bold;
+}
+.error {
+  color: #f00;
+}
+
+a img {
   border-width: 0px;
 }
 
-/* Menubar */
-
-#menubar .arrowL, #menubar .arrowR {
-  width: 20px;
-  display: block;
-  font-family: Verdana, Sans, sans-serif;
+code {
+  font-family: courier new, monospace;
   font-size: 12px;
-  font-weight: bold;
-  line-height: 13px;
-  color: #666;
-  text-decoration: none;
 }
-#menubar a.arrowL:hover, #menubar a.arrowR:hover {
-  color: #000;
-  text-decoration: none;
+
+.justified {
+  text-align: justify;
 }
-#menubar span.arrowL:hover, #menubar span.arrowR:hover {
-  color: #666;
-  text-decoration: none;
-}
-#menubar .arrowL {
-  float: left;
-  text-align: left;
-}
-#menubar .arrowR {
-  float: right;
-  text-align: right;
-}
-#menubar .title {
-  padding: 0px 20px 0px 20px;
-  display: block;
+.centered {
   text-align: center;
-  font-weight: bold;
-}
-#menubar .title *:first-child {
-  color: #cb1717
-}
-/* proposal */
-.proposal h1 {
-  display: none;
-}
-.proposal h2, .proposal h2 a, .proposal h2 a:hover {
-  font-family: Verdana, Sans, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
-  border-bottom: 0px;
 }
 
-.proposal dt span.no {
-  color: #cb1717;
-}
-
-.proposal dl.contents {
-  color: #cb1717;
-  font-weight: bold;
-}
-
-.proposal .revisions h3 {
-  margin-left: 15px;
-}
-.proposal .revisions h3 a {
-  color: #cb1717;
-  font-weight: bold;
-}
-.proposal .revisions p {
-  margin-left: 30px;
-}
-
-.proposal ul {
-  list-style: url(images/li-square.png);
-}
-.proposal ol {
-  color: #cb1717;
-  font-weight: bold;
-}
-.proposal ol li {
-  margin-bottom: 2px;
-}
-.proposal ol li.square {
-  list-style: url(images/li-square.png);
-  margin-bottom: 2px;
-}
-.proposal a {
+a {
   font-weight: normal;
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #aaa;
   margin-bottom: 2px;
 }
-.proposal a:hover {
+a:hover {
   font-weight: normal;
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
-.proposal .hr {
-  border-top: 1px solid #aaa;
-}
 
-/* Forms */
-fieldset {
-  margin: 0px;
-  padding: 0px;
-  border-width: 0px;
-}
-table.form {
-  font-family: Verdana, Sans, sans-serif;
-  font-size: 11px;
-  color: #000;
-  width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-table.form td input, table.form td textarea, table.form td select {
-  background-color: #eee;
-  border: 1px solid #999;
-  font-family: Verdana, Sans, sans-serif;
-  font-size: 11px;
-}
-
-table.form td.label {
-  font-weight: bold;
-  color: #cb1717;
-  width: 160px;
-}
-table.form td.error {
-  color: #f00;
-}
-table.form td.info {
-  color: #666;
-}
-table.form td input[type='text'], table.form td input[type='password'], table.form td textarea, table.form td select {
-/*
-  min-width: 300px;
-  max-width: 700px;
-  width: 80%;
-*/
-}
-table.form td.help {
-  width: 15px;
-}
-table.form td.help span {
-  font-family: Verdana, Sans, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  color: #f00;
-  border: 1px solid #999;
-  margin: 1px 0px 1px 3px;
-  padding: 1px 2px 1px 2px;
-  cursor: help;
-}
