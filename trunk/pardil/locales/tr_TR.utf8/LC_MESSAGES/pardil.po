@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-23 20:18+0300\n"
+"POT-Creation-Date: 2005-04-23 23:18+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -73,6 +73,43 @@ msgstr ""
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
 
+msgid "Proposal Updated"
+msgstr "Öneri Güncellendi"
+
+msgid "Title should be written."
+msgstr "Başlık yazılmalı."
+
+msgid "Abstract should be written."
+msgstr "Özet yazılmalı."
+
+#, php-format
+msgid "Section \"%s\" should be written. If you don't want it, remove it."
+msgstr "\"%s\" bölümü yazılmalı. İstemiyorsanız, bölümü kaldırın."
+
+msgid "At least one section should be created."
+msgstr "En az bir bölüm yaratılmalı."
+
+msgid "Release info should be written."
+msgstr "Sürüm bilgisi yazılmalı."
+
+msgid "Release number should be written."
+msgstr "Sürüm numarası yazılmalı."
+
+msgid "Release number is not valid."
+msgstr "Sürüm numarası geçerli değil."
+
+#, php-format
+msgid "New release number should be greater than %.2f"
+msgstr "Yeni sürüm numarası %.2f'den büyük olmalı."
+
+#, php-format
+msgid ""
+"New release number should be greater than latest revision number (%.2f)."
+msgstr "Yeni sürüm numarası en son sürüm numarasından büyük olmalı (%.2f)."
+
+msgid "Edit Proposal"
+msgstr "Öneriyi Düzenle"
+
 msgid "Installination"
 msgstr "Kurulum"
 
@@ -97,24 +134,11 @@ msgstr "Çıkış Yapıldı"
 msgid "New Proposal Submitted"
 msgstr "Yeni Öneri Gönderildi"
 
-msgid "Title should be written."
-msgstr "Başlık yazılmalı."
-
-msgid "Abstract should be written."
-msgstr "Özet yazılmalı."
-
-#, php-format
-msgid "Section \"%s\" should be written. If you don't want it, remove it."
-msgstr "\"%s\" bölümü yazılmalı. İstemiyorsanız, bölümü kaldırın."
-
-msgid "At least one section should be created."
-msgstr "En az bir bölüm yaratılmalı."
-
-msgid "Release info should be written."
-msgstr "Sürüm bilgisi yazılmalı."
-
 msgid "New Proposal"
 msgstr "Yeni Öneri"
+
+msgid "Proposal Not Found"
+msgstr "Öneri Bulunamadı"
 
 msgid "Create Temporary Password"
 msgstr "Geçici Parola Yarat"
@@ -246,6 +270,67 @@ msgstr "Kod Talep Et &raquo;"
 msgid "You are not allowed to perform this operation."
 msgstr "Bu işlemi yapma izniniz yok."
 
+msgid "You've successfully updated a proposal."
+msgstr "Öneriyi başarılı bir şekilde güncellediniz."
+
+msgid "This updated is saved as a new revision of proposal."
+msgstr "Bu güncelleme, önerinin yeni bir sürümü olarak eklendi."
+
+msgid "View proposal"
+msgstr "Öneriyi görüntüle"
+
+msgid "Section:"
+msgstr "Bölüm:"
+
+msgid "Remove section"
+msgstr "Bölümü kaldır"
+
+msgid "Remove section?"
+msgstr "Bölüm kaldırılsın mı?"
+
+msgid "Title:"
+msgstr "Başlık:"
+
+msgid "Abstract:"
+msgstr "Özet:"
+
+msgid "New Section:"
+msgstr "Yeni Bölüm:"
+
+msgid "Add &raquo;"
+msgstr "Ekle &raquo;"
+
+msgid ""
+"Proposal should be written in sections.<br/>Write section title and then "
+"push \"Add &raquo;\" button."
+msgstr ""
+"Öneri bölümler halinde yazılmalı.<br/>Başlığı yazın ve sonra da \"Ekle "
+"&raquo;\" düğmesine basın."
+
+msgid "Notes:"
+msgstr "Notlar:"
+
+msgid "Release Info:"
+msgstr "Sürüm Bilgisi:"
+
+msgid "Release Number:"
+msgstr "Sürüm Numarası:"
+
+msgid "New Release:"
+msgstr "Yeni Sürüm:"
+
+msgid "Save this update as a new release."
+msgstr "Bu güncellemeyi yeni bir sürüm olarak kaydet."
+
+msgid "Are you sure?"
+msgstr "Emin misiniz?"
+
+msgid "Reset Form"
+msgstr "Formu Sıfırla"
+
+msgid "Submit &raquo;"
+msgstr "Gönder &raquo;"
+
 msgid "Proposals"
 msgstr "Öneriler"
 
@@ -316,54 +401,12 @@ msgstr "Yeni bir öneriyi başarılı bir şekilde gönderdiniz."
 msgid "New proposal is automatically approved and marked as active."
 msgstr "Yeni öneri otomatik olarak onaylandı ve aktif olarak işaretlendi."
 
-msgid "View proposal"
-msgstr "Öneriyi görüntüle"
-
 msgid "New proposal marked as pending. It needs to be reviewed by a moderator."
-msgstr "Yeni öneri beklemeye alındı. Bir moderatör tarafından incelenmesi gerekiyor."
-
-msgid "Section:"
-msgstr "Bölüm:"
-
-msgid "Remove section"
-msgstr "Bölümü kaldır"
-
-msgid "Remove section?"
-msgstr "Bölüm kaldırılsın mı?"
-
-msgid "Title:"
-msgstr "Başlık:"
-
-msgid "Abstract:"
-msgstr "Özet:"
-
-msgid "New Section:"
-msgstr "Yeni Bölüm:"
-
-msgid "Add &raquo;"
-msgstr "Ekle &raquo;"
-
-msgid ""
-"Proposal should be written in sections.<br/>Write section title and then "
-"push \"Add &raquo;\" button."
 msgstr ""
-"Öneri bölümler halinde yazılmalı.<br/>Başlığı yazın ve sonra da \"Ekle "
-"&raquo;\" düğmesine basın."
+"Yeni öneri beklemeye alındı. Bir moderatör tarafından incelenmesi gerekiyor."
 
-msgid "Notes:"
-msgstr "Notlar:"
-
-msgid "Release Info:"
-msgstr "Sürüm Bilgisi:"
-
-msgid "Are you sure?"
-msgstr "Emin misiniz?"
-
-msgid "Reset Form"
-msgstr "Formu Sıfırla"
-
-msgid "Submit &raquo;"
-msgstr "Gönder &raquo;"
+msgid "This proposal or revision does not exist."
+msgstr "Bu öneri veya sürüm bulunmuyor."
 
 msgid "Temporary Password Sent"
 msgstr "Geçici Parola Gönderildi"
@@ -426,4 +469,3 @@ msgstr "İsim:"
 
 msgid "Register &raquo;"
 msgstr "Kayıt &raquo;"
-

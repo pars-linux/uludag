@@ -17,7 +17,7 @@
 
   // Denetimler
   $arr_errors = array();
-  if (isset($_POST['new_proposal']) && !isset($_POST['new_content_title_add'])) {
+  if (isset($_POST['new_proposal'])) {
     // Başlık
     if (strlen($_POST['new_title']) == 0) {
       $arr_errors['new_title'] = __('Title should be written.');

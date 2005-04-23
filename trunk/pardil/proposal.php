@@ -9,8 +9,21 @@
 
   require('class/class.template.php');
 
+  // ID & sürüm kontrolü
+  if (!isset($_GET['id'])) {
+    header('Location: notfound.php');
+    exit;
+  }
+  if (isset($_GET['rev'])) {
+    $int_count = database_query_scalar(sprintf('SELECT Count(*) FROM pardil_revisions WHERE proposal=%d', $_GET['id']));
+    if ($int_count == 0) {
+      header('Location: notfound.php');
+      exit;
+    }
+  }
+
   // Öneri No
-  $int_pardil_id = (isset($_GET['id'])) ? $_GET['id'] : 1;
+  $int_pardil_id = $_GET['id'];
 
   // Son Revizyon:
   $str_sql = sprintf('SELECT pardil_revisions.version FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d ORDER BY pardil_revisions.id DESC', $int_pardil_id);

@@ -45,7 +45,7 @@
     $str_date = addslashes($str_date);
   
     $str_date = ($str_date != '') ? $str_date : date('Y-m-d H:i:s');
-    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil, $int_sender, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
+    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil, $int_revisor, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
     mysql_query($str_sql);
     return mysql_insert_id();
   }
