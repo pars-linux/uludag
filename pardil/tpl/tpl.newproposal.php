@@ -1,18 +1,4 @@
 <?php
-  function print_error($str_name, $str_sub='') {
-    global $arr_errors;
-    if ($str_sub == '') {
-      if (isset($arr_errors[$str_name])) {
-        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name]);
-      }
-    }
-    else {
-      if (isset($arr_errors[$str_name][$str_sub])) {
-        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name][$str_sub]);
-      }
-    }
-  }
-
   include('tpl.header.php');
 ?>
     <script type="text/javascript">
@@ -26,6 +12,11 @@
     
       function new_section() {
         var title = document.getElementById('new_content_new_title').value;
+
+        if (title.length == 0) {
+          return;
+        }
+        
         var count = parseInt(document.getElementById('new_content_count').value);
         
         count++;
@@ -33,19 +24,17 @@
 
         var el_sections = document.getElementById('sections');
         el_sections.innerHTML += ' \
-                  <table width="100%" class="form" id="section_' + count + '"> \
-                    <tr> \
-                      <td class="label"> \
-                        <?php printf(__('Section:')); ?> ' + xhr_htmlspecialchars(title) + ' \
-                        <a href="javascript:remove_section(\'section_' + count + '\')" title="<?php __e('Remove section'); ?>">[x]</a> \
-                      </td> \
-                      <td> \
-                        <input type="hidden" name="new_content_title[' + count + ']" value="' + title + '" /> \
-                        <textarea name="new_content_body[' + count + ']" cols="25" rows="7" style="width: 400px; height: 200px;"></textarea> \
-                      </td> \
-                    </tr> \
-                  </table>';
-                  
+                  <div id="section_' + count + '"> \
+                    <label for=""> \
+                      <?php printf(__('Section:')); ?> ' + xhr_htmlspecialchars(title) + ' \
+                      <a href="javascript:remove_section(\'section_' + count + '\')" title="<?php __e('Remove section'); ?>">[x]</a> \
+                    </label> \
+                    <br/> \
+                    <input type="hidden" name="new_content_title[' + count + ']" value="' + title + '" /> \
+                    <textarea name="new_content_body[' + count + ']" cols="25" rows="7" style="width: 400px; height: 200px;"></textarea> \
+                    <br/> \
+                  </div>';
+
         document.getElementById('new_content_new_title').value = '';
       }
       function remove_section(id) {
@@ -61,119 +50,75 @@
         <span class="arrowR">&#187;</span>
         <span class="title"><?php echo __('New Proposal'); ?></span>
       </div>
+      <div id="menu">
+        &nbsp;
+      </div>
       <div id="content">
-        <div class="proposal">
-          <p>&nbsp;</p>
-          <form action="newproposal.php" method="post">
-            <fieldset>
-              <input type="hidden" name="new_proposal" value="1"/>
-              <table class="form">
-                <tr>
-                  <td class="label"><?php echo __('Title:'); ?></td>
-                  <td>
-                    <input type="text" name="new_title" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_title'])) ? htmlspecialchars($_POST['new_title'], ENT_QUOTES) : ''; ?>"/>
-                  </td>
-                </tr>
-                <?php print_error('new_title'); ?>
-                <tr>
-                  <td class="label"><?php echo __('Abstract:'); ?></td>
-                  <td>
-                    <textarea name="new_abstract" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo (!isset($arr_errors['new_abstract'])) ? htmlspecialchars($_POST['new_abstract'], ENT_QUOTES) : ''; ?></textarea>
-                  </td>
-                </tr>
-                <?php print_error('new_abstract'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label"><?php echo __('New Section:'); ?></td>
-                  <td>
-                    <input type="hidden" id="new_content_count" name="new_content_count" value="<?php printf('%d', (isset($_POST['new_content_count']) ? $_POST['new_content_count'] : 0)); ?>"/>
-                    <input type="text" id="new_content_new_title" size="25" style="width: 340px;" onkeypress="if (event.which == 13 || event.keyCode == 13) { new_section(); }"/>
-                    <button type="button" onclick="new_section();"><?php echo __('Add &raquo;'); ?></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td class="info"><?php echo __('Proposal should be written in sections.<br/>Write section title and then push "Add &raquo;" button.'); ?></td>
-                </tr>
-                <?php print_error('new_content_new_title'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td style="padding: 0px;" colspan="2">
-                  <div id="sections">
-                <?php
-                  if (isset($_POST['new_content_title'])) {
-                    $arr_keys = array_keys($_POST['new_content_title']);
-                    foreach ($arr_keys as $int_num) {
-                      $str_title = $_POST['new_content_title'][$int_num];
-                      $str_body = $_POST['new_content_body'][$int_num];
+        <form action="newproposal.php" method="post">
+          <fieldset>
+            <label for=""><?php echo __('Title:'); ?></label>
+            <br/>
+            <input type="text" name="new_title" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_title'])) ? htmlspecialchars($_POST['new_title'], ENT_QUOTES) : ''; ?>"/>
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'new_title'); ?>
+            <br/>
+            <label for=""><?php echo __('Abstract:'); ?></label>
+            <br/>
+            <textarea name="new_abstract" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo (!isset($arr_errors['new_abstract'])) ? htmlspecialchars($_POST['new_abstract'], ENT_QUOTES) : ''; ?></textarea>
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'new_abstract'); ?>
+            <br/>
+            <label for=""><?php echo __('New Section:'); ?></label>
+            <br/>
+            <input type="hidden" id="new_content_count" name="new_content_count" value="<?php printf('%d', (isset($_POST['new_content_count']) ? $_POST['new_content_count'] : 0)); ?>"/>
+            <input type="text" id="new_content_new_title" size="25" style="width: 340px;" onkeypress="if (event.which == 13 || event.keyCode == 13) { new_section(); }"/>
+            <button type="button" onclick="new_section();"><?php echo __('Add &raquo;'); ?></button>
+            <div class="info">
+              <?php echo __('Proposal should be written in sections.<br/>Write section title and then push "Add &raquo;" button.'); ?>
+            </div>
+            <?php print_error('<div class="error">%s</div>', 'new_content_new_title'); ?>
+            <br/>
+            <div id="sections">
+              <?php
+                if (isset($_POST['new_content_title'])) {
+                  $arr_keys = array_keys($_POST['new_content_title']);
+                  foreach ($arr_keys as $int_num) {
+                    $str_title = $_POST['new_content_title'][$int_num];
+                    $str_body = $_POST['new_content_body'][$int_num];
                 ?>
-                  <table width="100%" class="form" id="section_<?php echo $int_num; ?>">
-                    <tr>
-                      <td class="label">
-                        <?php
-                          echo __('Section:') . ' ' . htmlspecialchars($str_title);
-                        ?>
-                        <a href="javascript:remove_section('section_<?php echo $int_num; ?>')" title="<?php __e('Remove section'); ?>">[x]</a>
-                      </td>
-                      <td>
-                        <input type="hidden" name="new_content_title[<?php echo $int_num; ?>]" value="<?php echo htmlspecialchars($str_title); ?>" />
-                        <textarea name="new_content_body[<?php echo $int_num; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo htmlspecialchars($str_body); ?></textarea>
-                      </td>
-                    </tr>
-                    <?php
-                      print_error('new_content_title', $int_num);
-                    ?>
-                  </table>
-                <?php      
-                    }
+                  <div id="section_<?php echo $int_num; ?>">
+                    <label for="">
+                      <?php echo __('Section:') . ' ' . htmlspecialchars($str_title); ?>
+                      <a href="javascript:remove_section('section_<?php echo $int_num; ?>')" title="<?php __e('Remove section'); ?>">[x]</a>
+                    </label>
+                    <br/>
+                    <input type="hidden" name="new_content_title[<?php echo $int_num; ?>]" value="<?php echo htmlspecialchars($str_title); ?>" />
+                    <textarea name="new_content_body[<?php echo $int_num; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo htmlspecialchars($str_body); ?></textarea>
+                    <br/>
+                    <?php print_error('<div class="error">%s</div>', 'new_content_title', $int_num); ?>
+                  </div>
+              <?php      
                   }
-                ?>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label"><?php echo __('Notes:');  ?></td>
-                  <td>
-                    <textarea name="new_notes" cols="25" rows="7" style="width: 400px; height: 120px;"><?php echo (!isset($arr_errors['new_notes'])) ? htmlspecialchars($_POST['new_notes'], ENT_QUOTES) : ''; ?></textarea>
-                  </td>
-                </tr>
-                <?php print_error('new_notes'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label"><?php echo __('Release Info:'); ?></td>
-                  <td>
-                    <input type="text" name="new_info" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_info'])) ? htmlspecialchars($_POST['new_info'], ENT_QUOTES) : ''; ?>"/>
-                  </td>
-                </tr>
-                <?php print_error('new_info'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td class="info">
-                    <button type="reset" onclick="return confirm('<?php echo __('Are you sure?'); ?>');"><?php echo __('Reset Form'); ?></button>
-                    <button type="submit"><b><?php echo __('Submit &raquo;'); ?></b></button>
-                  </td>
-                </tr>
-              </table>
-            </fieldset>
-          </form>
-        </div>
+                }
+              ?>
+            </div>
+            <br/>
+            <label for=""><?php echo __('Notes:');  ?></label>
+            <br/>
+            <textarea name="new_notes" cols="25" rows="7" style="width: 400px; height: 120px;"><?php echo (!isset($arr_errors['new_notes'])) ? htmlspecialchars($_POST['new_notes'], ENT_QUOTES) : ''; ?></textarea>
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'new_notes'); ?>
+            <br/>
+            <label for=""><?php echo __('Release Info:'); ?></label>
+            <br/>
+            <input type="text" name="new_info" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_info'])) ? htmlspecialchars($_POST['new_info'], ENT_QUOTES) : ''; ?>"/>
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'new_info'); ?>
+            <br/>
+            <button type="reset" onclick="return confirm('<?php echo __('Are you sure?'); ?>');"><?php echo __('Reset Form'); ?></button>
+            <button type="submit" name="new_proposal" value="1"><?php echo __('Submit &raquo;'); ?></button>
+          </fieldset>
+        </form>
       </div>
 <?php
   include('tpl.footer.php');

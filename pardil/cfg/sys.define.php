@@ -14,4 +14,6 @@
 
   $_PCONF['root'] = realpath(dirname(__FILE__) . '/..');
 
+
+  include('sys/sys.common.php')
 ?>

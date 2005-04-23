@@ -1,18 +1,4 @@
 <?php
-  function print_error($str_name, $str_sub='') {
-    global $arr_errors;
-    if ($str_sub == '') {
-      if (isset($arr_errors[$str_name])) {
-        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name]);
-      }
-    }
-    else {
-      if (isset($arr_errors[$str_name][$str_sub])) {
-        printf('<tr><td class="label">&nbsp;</td><td class="error">%s</td></tr>', $arr_errors[$str_name][$str_sub]);
-      }
-    }
-  }
-  
   include('tpl.header.php');
 ?>
       <div id="menubar">
@@ -20,68 +6,41 @@
         <span class="arrowR">&#187;</span>
         <span class="title"><?php echo __('User Registration'); ?></span>
       </div>
+      <div id="menu">
+        &nbsp;
+      </div>
       <div id="content">
-        <div class="proposal">
-          <form action="register.php" method="post">
-            <fieldset>
-              <input type="hidden" name="register" value="1"/>
-              <table class="form">
-                <tr>
-                  <td class="label"><?php echo __('Name:'); ?></td>
-                  <td>
-                    <input type="text" name="register_name" size="25" value="<?php echo (!isset($arr_errors['register_name'])) ? htmlspecialchars($_POST['register_name'], ENT_QUOTES) : ''; ?>" />
-                  </td>
-                </tr>
-                <?php print_error('register_name'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label"><?php echo __('Username:'); ?></td>
-                  <td>
-                    <input type="text" name="register_username" size="25" value="<?php echo (!isset($arr_errors['register_username'])) ? htmlspecialchars($_POST['register_username'], ENT_QUOTES) : ''; ?>" />
-                  </td>
-                </tr>
-                <?php print_error('register_username'); ?>
-                <tr>
-                  <td class="label"><?php echo __('E-Mail Address:'); ?></td>
-                  <td>
-                    <input type="text" name="register_email" size="25" value="<?php echo (!isset($arr_errors['register_email'])) ? htmlspecialchars($_POST['register_email'], ENT_QUOTES) : ''; ?>" />
-                  </td>
-                </tr>
-                <?php print_error('register_email'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label"><?php echo __('Password:'); ?></td>
-                  <td>
-                    <input type="password" name="register_password" size="25" value="<?php echo (!isset($arr_errors['register_password'])) ? htmlspecialchars($_POST['register_password'], ENT_QUOTES) : ''; ?>" />
-                  </td>
-                </tr>
-                <tr>
-                  <td class="label"><?php echo __('Password (again):'); ?></td>
-                  <td>
-                    <input type="password" name="register_password2" size="25" value="<?php echo (!isset($arr_errors['register_password'])) ? htmlspecialchars($_POST['register_password'], ENT_QUOTES) : ''; ?>" />
-                  </td>
-                </tr>
-                <?php print_error('register_password'); ?>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td class="label">&nbsp;</td>
-                  <td class="info">
-                    <button type="submit"><b><?php echo __('Register &raquo;'); ?></b></button>
-                  </td>
-                </tr>
-              </table>
-            </fieldset>
-          </form>
-        </div>
+        <form action="register.php" method="post">
+          <fieldset>
+            <label for=""><?php echo __('Name:'); ?></label>
+            <br/>
+            <input type="text" name="register_name" size="25" value="<?php echo (!isset($arr_errors['register_name'])) ? htmlspecialchars($_POST['register_name'], ENT_QUOTES) : ''; ?>" />
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'register_name'); ?>
+            <br/>
+            <label for=""><?php echo __('Username:'); ?></label>
+            <br/>
+            <input type="text" name="register_username" size="25" value="<?php echo (!isset($arr_errors['register_username'])) ? htmlspecialchars($_POST['register_username'], ENT_QUOTES) : ''; ?>" />
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'register_username'); ?>
+            <br/>
+            <label for=""><?php echo __('E-Mail Address:'); ?></label>
+            <br/>
+            <input type="text" name="register_email" size="25" value="<?php echo (!isset($arr_errors['register_email'])) ? htmlspecialchars($_POST['register_email'], ENT_QUOTES) : ''; ?>" />
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'register_email'); ?>
+            <br/>
+            <label for=""><?php echo __('Password:'); ?></label>
+            <br/>
+            <input type="password" name="register_password" size="25" value="<?php echo (!isset($arr_errors['register_password'])) ? htmlspecialchars($_POST['register_password'], ENT_QUOTES) : ''; ?>" />
+            <br/>
+            <input type="password" name="register_password2" size="25" value="<?php echo (!isset($arr_errors['register_password'])) ? htmlspecialchars($_POST['register_password'], ENT_QUOTES) : ''; ?>" />
+            <br/>
+            <?php print_error('<div class="error">%s</div>', 'register_password'); ?>
+            <br/>
+            <button type="submit" name="register" value="1"><?php echo __('Register &raquo;'); ?></button>
+          </fieldset>
+        </form>
       </div>
 <?php
   include('tpl.footer.php');
