@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-23 20:18+0300\n"
+"POT-Creation-Date: 2005-04-23 23:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,6 +63,43 @@ msgstr ""
 msgid "Access Denied"
 msgstr ""
 
+msgid "Proposal Updated"
+msgstr ""
+
+msgid "Title should be written."
+msgstr ""
+
+msgid "Abstract should be written."
+msgstr ""
+
+#, php-format
+msgid "Section \"%s\" should be written. If you don't want it, remove it."
+msgstr ""
+
+msgid "At least one section should be created."
+msgstr ""
+
+msgid "Release info should be written."
+msgstr ""
+
+msgid "Release number should be written."
+msgstr ""
+
+msgid "Release number is not valid."
+msgstr ""
+
+#, php-format
+msgid "New release number should be greater than %.2f"
+msgstr ""
+
+#, php-format
+msgid ""
+"New release number should be greater than latest revision number (%.2f)."
+msgstr ""
+
+msgid "Edit Proposal"
+msgstr ""
+
 msgid "Installination"
 msgstr ""
 
@@ -87,23 +124,10 @@ msgstr ""
 msgid "New Proposal Submitted"
 msgstr ""
 
-msgid "Title should be written."
-msgstr ""
-
-msgid "Abstract should be written."
-msgstr ""
-
-#, php-format
-msgid "Section \"%s\" should be written. If you don't want it, remove it."
-msgstr ""
-
-msgid "At least one section should be created."
-msgstr ""
-
-msgid "Release info should be written."
-msgstr ""
-
 msgid "New Proposal"
+msgstr ""
+
+msgid "Proposal Not Found"
 msgstr ""
 
 msgid "Create Temporary Password"
@@ -222,6 +246,65 @@ msgstr ""
 msgid "You are not allowed to perform this operation."
 msgstr ""
 
+msgid "You've successfully updated a proposal."
+msgstr ""
+
+msgid "This updated is saved as a new revision of proposal."
+msgstr ""
+
+msgid "View proposal"
+msgstr ""
+
+msgid "Section:"
+msgstr ""
+
+msgid "Remove section"
+msgstr ""
+
+msgid "Remove section?"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "Abstract:"
+msgstr ""
+
+msgid "New Section:"
+msgstr ""
+
+msgid "Add &raquo;"
+msgstr ""
+
+msgid ""
+"Proposal should be written in sections.<br/>Write section title and then "
+"push \"Add &raquo;\" button."
+msgstr ""
+
+msgid "Notes:"
+msgstr ""
+
+msgid "Release Info:"
+msgstr ""
+
+msgid "Release Number:"
+msgstr ""
+
+msgid "New Release:"
+msgstr ""
+
+msgid "Save this update as a new release."
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Reset Form"
+msgstr ""
+
+msgid "Submit &raquo;"
+msgstr ""
+
 msgid "Proposals"
 msgstr ""
 
@@ -292,51 +375,10 @@ msgstr ""
 msgid "New proposal is automatically approved and marked as active."
 msgstr ""
 
-msgid "View proposal"
-msgstr ""
-
 msgid "New proposal marked as pending. It needs to be reviewed by a moderator."
 msgstr ""
 
-msgid "Section:"
-msgstr ""
-
-msgid "Remove section"
-msgstr ""
-
-msgid "Remove section?"
-msgstr ""
-
-msgid "Title:"
-msgstr ""
-
-msgid "Abstract:"
-msgstr ""
-
-msgid "New Section:"
-msgstr ""
-
-msgid "Add &raquo;"
-msgstr ""
-
-msgid ""
-"Proposal should be written in sections.<br/>Write section title and then "
-"push \"Add &raquo;\" button."
-msgstr ""
-
-msgid "Notes:"
-msgstr ""
-
-msgid "Release Info:"
-msgstr ""
-
-msgid "Are you sure?"
-msgstr ""
-
-msgid "Reset Form"
-msgstr ""
-
-msgid "Submit &raquo;"
+msgid "This proposal or revision does not exist."
 msgstr ""
 
 msgid "Temporary Password Sent"

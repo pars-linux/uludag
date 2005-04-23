@@ -28,7 +28,7 @@
           <p><?php printf('%s', $arr_proposal['abstract']); ?></p>
           <h2><?php echo __('Identity'); ?></h2>
           <ul class="list-square">
-            <li><b><?php echo __('Status:'); ?></b> <?php echo __($str_proposal_status); ?></li>
+            <li><b><?php echo __('Status:'); ?></b> <?php echo $str_proposal_status; ?></li>
             <li><b><?php echo __('Id:'); ?></b> <?php printf('%04d', $arr_proposal['id']); ?></li>
             <li><b><?php echo __('Version:'); ?></b> <?php printf('%.2f', $arr_proposal['version']); ?></li>
             <li><b><?php echo __('Last Update:'); ?></b> <?php printf('%s', $arr_proposal['timestamp']); ?></li>
