@@ -44,27 +44,30 @@
     }
   }
 
-  if (count($arr_errors) == 0 && isset($_POST['new_proposal']) && !isset($_POST['new_content_title_add'])) {
+  if (count($arr_errors) == 0 && isset($_POST['new_proposal'])) {
     // Öneri ekleme işlemleri...
 
-    $int_level = getop('level_proposal_new_approved');
-
-    printf('<b>Başlık:</b> %s<br/>', htmlspecialchars($_POST['new_title']));
-    printf('<b>Özet:</b> %s<br/>', htmlspecialchars($_POST['new_abstract']));
     $str_content = '';
-    foreach ($_POST['new_content'] as $str_title => $str_body) {
-      $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') - 1);
-      $str_content .= sprintf('<section><title>%s</title><body>%s</body></section>', urldecode($str_title2), $str_body);
+    foreach ($_POST['new_content_title'] as $int_num => $str_title) {
+      $str_body = $_POST['new_content_body'][$int_num];
+      $str_content .= sprintf('<section><title>%s</title><body>%s</body></section>', $str_title, $str_body);
     }
-    printf('<b>Bölümler:</b> %s<br/>', htmlspecialchars($str_content));
-    $arr_notes = explode("\n", str_replace("\r", '', $_POST['new_notes']));
     $str_notes = '';
+    $arr_notes = explode("\n", str_replace("\r", '', $_POST['new_notes']));
     foreach ($arr_notes as $str_note) {
       $str_notes .= sprintf('<note>%s</note>', $str_note);
     }
-    printf('<b>Notlar:</b> %s<br/>', htmlspecialchars($str_notes));
-    printf('<b>Sürüm Bilgisi:</b> %s<br/>', htmlspecialchars($_POST['new_info']));
-    printf('<b>Öneri Durumu:</b> %s<br/>', (($int_level > $_PSESSION['level']) ? 'Onaylanması gerek' :'Otomatik onaylancak'));
+
+    if ($_PSESSION['level'] >= getop('level_proposal_new_approved')) {
+      $bln_approve = true;
+    }
+    else {
+      $bln_approve = false;
+    }
+    $int_proposal = proc_main_new($_PSESSION['id'], $_POST['new_title'], $_POST['new_abstract'], $str_content, $str_notes, $_POST['new_info'], $bln_approve, '');
+
+    header('Location: newproposal_ok.php?proposal=' . $int_proposal . '&approved=' . ($bln_approve ? 1 : 0));
+    exit;
   }
   else {
     // Formu göster...

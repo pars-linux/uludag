@@ -1,0 +1,35 @@
+<?php
+  include('tpl.header.php');
+?>
+      <div id="menubar">
+        <span class="arrowL">&#171;</span>
+        <span class="arrowR">&#187;</span>
+        <span class="title"><?php echo __('New Proposal Submitted'); ?></span>
+      </div>
+      <div id="menu">
+        &nbsp;
+      </div>
+      <div id="content">
+        <h2><?php echo __('New Proposal Submitted'); ?></h2>
+        <p>
+          <?php echo __('You\'ve successfully submitted a new proposal.'); ?>
+        </p>
+        <?php if ($bln_approved) { ?>
+        <p>
+          <?php echo __('New proposal is automatically approved and marked as active.'); ?>
+        </p>
+        <p>
+          <b>&raquo;</b> <a href="proposal.php?id=<?php echo $int_proposal; ?>"><?php echo __('View proposal'); ?></a>
+        </p>
+        <?php } else { ?>
+        <p>
+          <?php echo __('New proposal marked as pending. It needs to be reviewed by a moderator.'); ?>
+        </p>
+        <p>
+          <b>&raquo;</b> <a href="proposal.php?id=<?php echo $int_proposal; ?>"><?php echo __('View proposal'); ?></a>
+        </p>
+        <?php } ?>
+      </div>
+<?php
+  include('tpl.footer.php');
+?>
