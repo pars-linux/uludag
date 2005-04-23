@@ -16,41 +16,43 @@
   include('tpl.header.php');
 ?>
     <script type="text/javascript">
-      /*
-        JS'nin escape() fonksiyonu UTF-8 formatındaki harfleri de kodluyor,
-        ki bu hiç hoşuma gitmiyor...
-      */
-      function p_escape(str_in) {
-        var str_out = '';
-        for (var i = 0; i < str_in.length; i++) {
-          if ((33 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 47) || (58 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 64) || (91 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 96) || (123 <= str_in.charCodeAt(i) && str_in.charCodeAt(i) <= 127)) {
-            str_out += escape(str_in.charAt(i));
-          }
-          else {
-            str_out += str_in.charAt(i);
-          }
-        }
-        return str_out;
+      function xhr_htmlspecialchars(s) {
+        s = s.replace(/&/g, '&amp;')
+        s = s.replace(/</g, '&lt;')
+        s = s.replace(/>/g, '&gt;')
+        s = s.replace(/"/g, '&quot;')
+        return s;
       }
+    
       function new_section() {
-        if (document.getElementById('new_content_title').value != '') {
-          document.getElementById('new_content_i').value = parseInt(document.getElementById('new_content_i').value) + 1;
-          document.getElementById('new_content_title').name = 'new_content[' + p_escape(document.getElementById('new_content_i').value + '_' + document.getElementById('new_content_title').value) + ']';
-          document.getElementById('new_content_title').value = '';
-          return true;
-        }
-        else {
-          return false;
-        }
+        var title = document.getElementById('new_content_new_title').value;
+        var count = parseInt(document.getElementById('new_content_count').value);
+        
+        count++;
+        document.getElementById('new_content_count').value = count;
+
+        var el_sections = document.getElementById('sections');
+        el_sections.innerHTML += ' \
+                  <table width="100%" class="form" id="section_' + count + '"> \
+                    <tr> \
+                      <td class="label"> \
+                        <?php printf(__('Section:')); ?> ' + xhr_htmlspecialchars(title) + ' \
+                        <a href="javascript:remove_section(\'section_' + count + '\')" title="<?php __e('Remove section'); ?>">[x]</a> \
+                      </td> \
+                      <td> \
+                        <input type="hidden" name="new_content_title[' + count + ']" value="' + title + '" /> \
+                        <textarea name="new_content_body[' + count + ']" cols="25" rows="7" style="width: 400px; height: 200px;"></textarea> \
+                      </td> \
+                    </tr> \
+                  </table>';
+                  
+        document.getElementById('new_content_new_title').value = '';
       }
-      function delete_section(id, msg) {
-        if (confirm(msg)) {
-          var el = document.getElementById(id);
-          el.name = '';
-          el.value = '';
-          document.getElementById('new_content_title_add').value = '';
-          document.getElementById('new_content_title').value = '';
-          document.getElementById('new_content_title_add').click();
+      function remove_section(id) {
+        if (confirm('<?php __e('Remove section?'); ?>')) {
+          var el_sections = document.getElementById('sections');
+          var el_table = document.getElementById(id);
+          el_sections.removeChild(el_table);
         }
       }
     </script>
@@ -61,6 +63,7 @@
       </div>
       <div id="content">
         <div class="proposal">
+          <p>&nbsp;</p>
           <form action="newproposal.php" method="post">
             <fieldset>
               <input type="hidden" name="new_proposal" value="1"/>
@@ -83,58 +86,57 @@
                   <td class="label">&nbsp;</td>
                   <td>&nbsp;</td>
                 </tr>
-                <?php
-                /*
-                  JS destekli dinamik bölüm oluşturma ile ilgili not:
-                  ===================================================
-  
-                  Eğer, bölüm adresi ilgili alana yazıldıktan sonra, "Ekle >>" (ya da "Add >>") düğmesine basılırsa, 
-                  "new_content[başlık]" adında bir form elemanı yaratılır ve form gönderimi yapılır. Form gönderiminin 
-                  ardından sayfa yeniden yüklendiğinde, "new_content" dizisinin her elemanı için bir textarea oluşturulur. 
-                */
-                ?>
                 <tr>
                   <td class="label"><?php echo __('New Section:'); ?></td>
                   <td>
-                    <input type="hidden" id="new_content_i" name="new_content_i" value="<?php printf('%d', (isset($_POST['new_content_i']) ? $_POST['new_content_i'] : 0)); ?>"/>
-                    <input type="text" id="new_content_title" size="25" style="width: 340px;" onkeypress="if (event.which == 13 || event.keyCode == 13) { document.getElementById('new_content_title_add').click(); }"/>
-                    <button id="new_content_title_add" type="submit" name="new_content_title_add" value="true" onclick="return new_section();"><?php echo __('Add &raquo;'); ?></button>
+                    <input type="hidden" id="new_content_count" name="new_content_count" value="<?php printf('%d', (isset($_POST['new_content_count']) ? $_POST['new_content_count'] : 0)); ?>"/>
+                    <input type="text" id="new_content_new_title" size="25" style="width: 340px;" onkeypress="if (event.which == 13 || event.keyCode == 13) { new_section(); }"/>
+                    <button type="button" onclick="new_section();"><?php echo __('Add &raquo;'); ?></button>
                   </td>
                 </tr>
                 <tr>
                   <td class="label">&nbsp;</td>
                   <td class="info"><?php echo __('Proposal should be written in sections.<br/>Write section title and then push "Add &raquo;" button.'); ?></td>
                 </tr>
-                <?php print_error('new_content_title'); ?>
+                <?php print_error('new_content_new_title'); ?>
                 <tr>
                   <td class="label">&nbsp;</td>
                   <td>&nbsp;</td>
                 </tr>
+                <tr>
+                  <td style="padding: 0px;" colspan="2">
+                  <div id="sections">
                 <?php
-                  if (isset($_POST['new_content'])) {
-                    $arr_keys = array_keys($_POST['new_content']);
-                    natsort($arr_keys);
-                    foreach ($arr_keys as $str_title) {
-                      $str_body = $_POST['new_content'][$str_title];
+                  if (isset($_POST['new_content_title'])) {
+                    $arr_keys = array_keys($_POST['new_content_title']);
+                    foreach ($arr_keys as $int_num) {
+                      $str_title = $_POST['new_content_title'][$int_num];
+                      $str_body = $_POST['new_content_body'][$int_num];
                 ?>
-                  <tr>
-                    <td class="label">
-                      <?php
-                        $str_title1 = substr($str_title, 0, strpos($str_title, '_'));
-                        $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') - 1);
-                        printf(__('Section: %s'), urldecode($str_title2));
-                      ?>
-                      <a href="javascript:delete_section('new_content_<?php echo $str_title1; ?>', '<?php printf(__('Section \\\'%s\\\' will be removed.\\nAre you sure?'), $str_title2); ?>');" title="<?php echo __('Remove Section'); ?>">[x]</a>
-                    </td>
-                    <td>
-                      <textarea id="new_content_<?php echo $str_title1; ?>" name="new_content[<?php echo $str_title; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo htmlspecialchars($str_body, ENT_QUOTES); ?></textarea>
-                    </td>
-                  </tr>
+                  <table width="100%" class="form" id="section_<?php echo $int_num; ?>">
+                    <tr>
+                      <td class="label">
+                        <?php
+                          echo __('Section:') . ' ' . htmlspecialchars($str_title);
+                        ?>
+                        <a href="javascript:remove_section('section_<?php echo $int_num; ?>')" title="<?php __e('Remove section'); ?>">[x]</a>
+                      </td>
+                      <td>
+                        <input type="hidden" name="new_content_title[<?php echo $int_num; ?>]" value="<?php echo htmlspecialchars($str_title); ?>" />
+                        <textarea name="new_content_body[<?php echo $int_num; ?>]" cols="25" rows="7" style="width: 400px; height: 200px;"><?php echo htmlspecialchars($str_body); ?></textarea>
+                      </td>
+                    </tr>
+                    <?php
+                      print_error('new_content_title', $int_num);
+                    ?>
+                  </table>
                 <?php      
-                      print_error('new_content', $str_title);
                     }
                   }
                 ?>
+                    </div>
+                  </td>
+                </tr>
                 <tr>
                   <td class="label">&nbsp;</td>
                   <td>&nbsp;</td>

@@ -27,16 +27,16 @@
       $arr_errors['new_abstract'] = __('Abstract should be written.');
     }
     // Bölümler
-    if (isset($_POST['new_content'])) {
-      foreach ($_POST['new_content'] as $str_title => $str_body) {
+    if (isset($_POST['new_content_title']) && count($_POST['new_content_title']) > 0) {
+      foreach ($_POST['new_content_title'] as $int_num => $str_title) {
+        $str_body = $_POST['new_content_body'][$int_num];
         if (strlen($str_body) == 0) {
-          $str_title2 = substr($str_title, strpos($str_title, '_') + 1, strlen($str_title) - strpos($str_title, '_') + 1);
-          $arr_errors['new_content'][$str_title] = sprintf(__('Section "%s" should be written. If you don\'t want it, remove it.'), htmlspecialchars(urldecode($str_title2)));
+          $arr_errors['new_content_title'][$int_num] = sprintf(__('Section "%s" should be written. If you don\'t want it, remove it.'), htmlspecialchars($str_title));
         }
       }
     }
     else {
-      $arr_errors['new_content_title'] = __('At least one section should be created.');
+      $arr_errors['new_content_new_title'] = __('At least one section should be created.');
     }
     // Sürüm Notları
     if (strlen($_POST['new_info']) == 0) {
