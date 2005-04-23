@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-23 14:26+0300\n"
+"POT-Creation-Date: 2005-04-23 20:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,6 +82,9 @@ msgid "User Login"
 msgstr ""
 
 msgid "Logged Out"
+msgstr ""
+
+msgid "New Proposal Submitted"
 msgstr ""
 
 msgid "Title should be written."
@@ -283,6 +286,18 @@ msgstr ""
 msgid "Go to main page"
 msgstr ""
 
+msgid "You've successfully submitted a new proposal."
+msgstr ""
+
+msgid "New proposal is automatically approved and marked as active."
+msgstr ""
+
+msgid "View proposal"
+msgstr ""
+
+msgid "New proposal marked as pending. It needs to be reviewed by a moderator."
+msgstr ""
+
 msgid "Section:"
 msgstr ""
 
@@ -378,9 +393,6 @@ msgid "You've successfully registered."
 msgstr ""
 
 msgid "Name:"
-msgstr ""
-
-msgid "Password (again):"
 msgstr ""
 
 msgid "Register &raquo;"
