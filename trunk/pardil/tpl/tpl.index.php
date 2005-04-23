@@ -15,7 +15,9 @@
           <br/>
           <b>&raquo;</b> <a href="newproposal.php"><?php echo __('New Proposal'); ?></a>
           <br/>
+          <!--
           <b>&raquo;</b> <a href="proposal.php"><?php echo __('Proposals'); ?></a>
+          -->
         </p>
         <p>
           <b><?php echo __('Session Information:'); ?></b>
