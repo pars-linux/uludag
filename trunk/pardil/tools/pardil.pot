@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-10 22:36+0300\n"
+"POT-Creation-Date: 2005-04-23 14:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -283,6 +283,15 @@ msgstr ""
 msgid "Go to main page"
 msgstr ""
 
+msgid "Section:"
+msgstr ""
+
+msgid "Remove section"
+msgstr ""
+
+msgid "Remove section?"
+msgstr ""
+
 msgid "Title:"
 msgstr ""
 
@@ -298,17 +307,6 @@ msgstr ""
 msgid ""
 "Proposal should be written in sections.<br/>Write section title and then "
 "push \"Add &raquo;\" button."
-msgstr ""
-
-#, php-format
-msgid "Section: %s"
-msgstr ""
-
-#, php-format
-msgid "Section \\'%s\\' will be removed.\\nAre you sure?"
-msgstr ""
-
-msgid "Remove Section"
 msgstr ""
 
 msgid "Notes:"

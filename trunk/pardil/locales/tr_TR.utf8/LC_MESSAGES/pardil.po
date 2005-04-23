@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-10 22:36+0300\n"
+"POT-Creation-Date: 2005-04-23 14:26+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -307,6 +307,15 @@ msgstr "Başarılı bir şekilde çıkış yaptınız."
 msgid "Go to main page"
 msgstr "Ana sayfaya git"
 
+msgid "Section:"
+msgstr "Bölüm:"
+
+msgid "Remove section"
+msgstr "Bölümü kaldır"
+
+msgid "Remove section?"
+msgstr "Bölüm kaldırılsın mı?"
+
 msgid "Title:"
 msgstr "Başlık:"
 
@@ -325,17 +334,6 @@ msgid ""
 msgstr ""
 "Öneri bölümler halinde yazılmalı.<br/>Başlığı yazın ve sonra da \"Ekle "
 "&raquo;\" düğmesine basın."
-
-#, php-format
-msgid "Section: %s"
-msgstr "Bölüm: %s"
-
-#, php-format
-msgid "Section \\'%s\\' will be removed.\\nAre you sure?"
-msgstr "\\'%s\\' bölümü kaldırılacak.\\nEmin misiniz?"
-
-msgid "Remove Section"
-msgstr "Bölümü Kaldır"
 
 msgid "Notes:"
 msgstr "Notlar:"
@@ -416,3 +414,4 @@ msgstr "Parola (tekrar):"
 
 msgid "Register &raquo;"
 msgstr "Kayıt &raquo;"
+
