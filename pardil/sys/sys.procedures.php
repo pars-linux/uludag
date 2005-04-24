@@ -1,10 +1,22 @@
 <?php
 
   // 'procedures' dizini altındaki tüm prosedür tanımlarını yükle
-  $arr_files = scandir('procedures');
-  for ($i = 0; $i < count($arr_files); $i++) {
-    if (substr($arr_files[$i], 0, 5) == 'proc.') {
-      include('procedures/' . $arr_files[$i]);
+
+  if (function_exists('scandir')) {
+    $arr_files = scandir('procedures');
+    for ($i = 0; $i < count($arr_files); $i++) {
+      if (substr($arr_files[$i], 0, 5) == 'proc.') {
+        include('procedures/' . $arr_files[$i]);
+      }
+    }
+  }
+  else {
+    $str_dir = "procedures";
+    $res_dir  = opendir($str_dir);
+    while (false !== ($str_fname = readdir($res_dir))) {
+      if (substr($str_fname, 0, 5) == 'proc.') {
+        include('procedures/' . $str_fname);
+      }
     }
   }
 

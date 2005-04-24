@@ -1,26 +1,6 @@
 <?php
   include('tpl.header.php');
 ?>
-      <div id="menubar">
-        <?php
-          if (isset($arr_proposal_prev)) {
-            printf('<a href="?id=%d" class="arrowL" title="%04d - %s">&#171</a>', $arr_proposal_prev['id'], $arr_proposal_prev['id'], $arr_proposal_prev['title']);
-          }
-          else {
-            printf('<span class="arrowL">&#171;</span>');
-          }
-          if (isset($arr_proposal_next)) {
-            printf('<a href="?id=%d" class="arrowR" title="%04d - %s">&#187</a>', $arr_proposal_next['id'], $arr_proposal_next['id'], $arr_proposal_next['title']);
-          }
-          else {
-            printf('<span class="arrowR">&#187;</span>');
-          }
-        ?>
-        <span class="title"><span><?php printf('%04d', $arr_proposal['id']); ?></span> <span><?php printf('%s', $arr_proposal['title']); ?></span></span>
-      </div>
-      <div id="menu">
-        &nbsp;
-      </div>
       <div id="content">
         <div class="proposal">
           <h1><?php printf('%s', $arr_proposal['title']); ?></h1>

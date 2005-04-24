@@ -1,14 +1,6 @@
 <?php
   include('tpl.header.php');
 ?>
-      <div id="menubar">
-        <span class="arrowL">&#171;</span>
-        <span class="arrowR">&#187;</span>
-        <span class="title"><?php echo __('Create Temporary Password'); ?></span>
-      </div>
-      <div id="menu">
-        &nbsp;
-      </div>
       <div id="content">
         <p>
           <?php __e('In this page, you can create a temporary password. With this temporary password, you can login to your account to change your primary password.'); ?>

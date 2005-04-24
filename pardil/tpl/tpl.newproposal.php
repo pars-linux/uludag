@@ -45,14 +45,6 @@
         }
       }
     </script>
-      <div id="menubar">
-        <span class="arrowL">&#171;</span>
-        <span class="arrowR">&#187;</span>
-        <span class="title"><?php echo __('New Proposal'); ?></span>
-      </div>
-      <div id="menu">
-        &nbsp;
-      </div>
       <div id="content">
         <form action="newproposal.php" method="post">
           <fieldset>

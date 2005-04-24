@@ -35,6 +35,8 @@
   $dbl_pardil_rev = (isset($_GET['rev'])) ? $_GET['rev'] : $dbl_pardil_lastrev;
 
   // Önceki ve sonraki öneriler:
+  // İleri - Geri türü bağlantılar kullanılabilir...
+  /*
   $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title FROM pardil_main INNER JOIN pardil_r_status ON pardil_r_status.proposal=pardil_main.id WHERE pardil_r_status.status=2 AND pardil_main.id<%d ORDER BY pardil_main.id DESC LIMIT 1', $int_pardil_id);
   $res_sql = mysql_query($str_sql);
   if (mysql_num_rows($res_sql) == 1) {
@@ -45,6 +47,7 @@
   if (mysql_num_rows($res_sql) == 1) {
     $arr_pardil_next = mysql_fetch_array($res_sql, MYSQL_ASSOC);
   }
+  */
 
   // Öneri:
   $str_time = date('Y-m-d H:i:s');
@@ -133,8 +136,10 @@
   $obj_page = new template('tpl/tpl.proposal.php');
   
   $obj_page->setvar('arr_proposal', $arr_pardil_fetch);
+  /*
   $obj_page->setvar('arr_proposal_prev', $arr_pardil_prev);
   $obj_page->setvar('arr_proposal_next', $arr_pardil_next);
+  */
   $obj_page->setvar('str_proposal_status', $str_pardil_status);
   $obj_page->setvar('arr_proposal_content', $arr_pardil_content);
   $obj_page->setvar('arr_maintainers', $arr_maintainer_list);
