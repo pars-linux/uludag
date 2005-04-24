@@ -14,12 +14,13 @@
     header('Location: notfound.php');
     exit;
   }
-  if (isset($_GET['rev'])) {
-    $int_count = database_query_scalar(sprintf('SELECT Count(*) FROM pardil_revisions WHERE proposal=%d', $_GET['id']));
-    if ($int_count == 0) {
-      header('Location: notfound.php');
-      exit;
-    }
+  elseif (!query_proposal_exists($_GET['id'])) {
+    header('Location: notfound.php');
+    exit;
+  }
+  if (isset($_GET['rev']) && !query_revision_exists($_GET['id'], $_GET['rev'])) {
+    header('Location: notfound.php');
+    exit;
   }
 
   // Öneri No
