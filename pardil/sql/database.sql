@@ -271,6 +271,8 @@ INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('temp_password_timeout
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('session_timeout', '900', 'Oturum ömrü (saniye cinsinden)');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('addresschange_activation_required', 'true', '');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_edit', '10', 'Önerileri bakıcı olmadan değitştirebilmek için gereken en düşük kullanıcı seviyesi.');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('min_username_length', '5', 'En kısa kullanıcı ismi uzunluğu.');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('min_password_length', '6', 'En kısa şifre uzunluğu.');
 
 -- 
 -- Tablo yapısı : `activation`

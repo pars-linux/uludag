@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-24 20:20+0300\n"
+"POT-Creation-Date: 2005-04-24 20:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,10 +166,18 @@ msgstr ""
 msgid "Passwords should be same."
 msgstr ""
 
+#, php-format
+msgid "Password should be at least %d chars long."
+msgstr ""
+
 msgid "User Profile"
 msgstr ""
 
 msgid "Registration Complete"
+msgstr ""
+
+#, php-format
+msgid "Username should be at least %d chars long."
 msgstr ""
 
 msgid "Username is in use."

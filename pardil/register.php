@@ -17,6 +17,9 @@
     if (strlen($_POST['register_username']) == 0) {
       $arr_errors['register_username'] = __('Username should be written.');
     }
+    elseif (strlen($_POST['register_username']) < getop('min_username_length')) {
+      $arr_errors['register_username'] = sprintf(__('Username should be at least %d chars long.'), getop('min_username_length'));
+    }
     else {
       $mix_userno = database_query_scalar(sprintf('SELECT id FROM users WHERE username="%s"', addslashes($_POST['register_username'])));
       if ($mix_userno !== false) {
@@ -29,6 +32,9 @@
     }
     elseif ($_POST['register_password'] != $_POST['register_password2']) {
       $arr_errors['register_password'] = __('Passwords should be same.');
+    }
+    elseif (strlen($_POST['register_password']) < getop('min_password_length')) {
+      $arr_errors['register_password'] = sprintf(__('Password should be at least %d chars long.'), getop('min_password_length'));
     }
 
     if (strlen($_POST['register_email']) == 0) {
