@@ -46,7 +46,7 @@
         [if-any entries.download_text_href]<a href="[entries.download_text_href]"><b>metin olarak indir</b></a><br>[end]
 
         [# if you don't want to allow annotation, then remove this line]
-        [is roottype "svn"][else]<a href="[entries.annotate_href]"><b>Ek açıklama</b></a><br>[end]
+        [is roottype "svn"][else]<a href="[entries.annotate_href]"><b>ek açıklama</b></a><br>[end]
       </td>
       <td>
       [is entries.state "dead"]
@@ -87,20 +87,20 @@
         [end]
       [end]
       [if-any entries.branch_points]
-        Branch point for:
+        Bölüm:
         [for entries.branch_points]
           <a href="[entries.branch_points.href]"><b>[entries.branch_points.name]</b></a><br>
         [end]
       [end]
       [if-any entries.next_main]
-        <a href="[entries.diff_to_main_href]"><b>Diff&nbsp;to&nbsp;next&nbsp;MAIN&nbsp;[entries.next_main]</b></a>
+        <a href="[entries.diff_to_main_href]"><b>Sonraki&nbsp;MAIN&nbsp;[entries.next_main]&nbsp;ile&nbsp;farklılıkları&nbsp;göster</b></a>
         [if-any human_readable]
         [else]
           (<a href="[entries.diff_to_main_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
         [end]<br />
       [end]
       [if-any entries.branch_point]
-        <a href="[entries.diff_to_branch_href]"><b>Diff&nbsp;to&nbsp;branch&nbsp;point&nbsp;[entries.branch_point]</b></a>
+        <a href="[entries.diff_to_branch_href]"><b>Bölüm&nbsp;[entries.branch_point]&nbsp;ile&nbsp;farklılıkları&nbsp;göster</b></a>
         [if-any human_readable]
         [else]
           (<a href="[entries.diff_to_branch_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
@@ -132,7 +132,7 @@
       [is roottype "cvs"]
         [if-any entries.prev]
           [if-any entries.changed]
-            <br>Changes since <b>[entries.prev]: [entries.changed] lines</b>
+            <br><b>[entries.prev]'den bu yana değişiklik: [entries.changed] satır</b>
           [end]
         [end]
       [end]
