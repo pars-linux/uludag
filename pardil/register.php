@@ -1,10 +1,6 @@
 <?php
-
-  require('cfg/sys.define.php');
-  require('sys/sys.gettext.php');
-  require('sys/sys.database.php');
-  require('sys/sys.procedures.php');
-  require('sys/sys.pconf.php');
+  $_NOSESSION = true;
+  require('sys.common.php');
 
   require('class/class.template.php');
 
