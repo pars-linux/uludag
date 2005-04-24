@@ -15,7 +15,7 @@ Dosya: [nav_file]
 <br>
 
 [if-any log]
-  Sürüm: <b>[rev]</b>[if-any vendor_branch] <i>(vendor branch)</i>[end], <i>[author]</i> tarafından 
+  Sürüm: <b>[rev]</b>[if-any vendor_branch] <i>(vendor bölümü)</i>[end], <i>[author]</i> tarafından 
   <i>[date_str]</i> tarihinde ([ago] önce)
   
   [if-any branches]
@@ -29,7 +29,7 @@ Dosya: [nav_file]
   [end]
   [is roottype "cvs"]
     [if-any changed]
-      <br>Changes since <b>[prev]: [changed] lines</b>
+      <br><b>[prev]'den beri değişiklik: [changed] satır</b>
     [end]
   [end]
   [is roottype "svn"]

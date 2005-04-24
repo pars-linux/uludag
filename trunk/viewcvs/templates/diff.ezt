@@ -140,7 +140,7 @@
 [else]
       <table border=1>
         <tr>
-          <td>Legend:<br>
+          <td>Renkler:<br>
             <table border=0 cellspacing=0 cellpadding=1>
               <tr>
                 <td align=center class="vc_diff_remove">[rev1]. sürüme göre silinen satırlar</td>

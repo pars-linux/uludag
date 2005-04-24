@@ -118,7 +118,7 @@
       [end]
   
       [if-any entries.next_main]
-        , to <a href="[entries.diff_to_main_href]">next main [entries.next_main]</a>
+        , <a href="[entries.diff_to_main_href]">sonraki main [entries.next_main]</a>
         [if-any human_readable]
         [else]
            (<a href="[entries.diff_to_main_href]&amp;diff_format=h">renklendirilmiş</a>)
@@ -127,8 +127,7 @@
     [end]
 
     [if-any entries.diff_to_sel_href]
-      [if-any entries.prev], [else]<br>Diff[end]
-        to <a href="[entries.diff_to_sel_href]">selected [rev_selected]</a>
+      [if-any entries.prev], [else]<br>Seçili&nbsp;[rev_selected]&nbsp;sürümüyle&nbsp;farklılıkları&nbsp;<a href="[entries.diff_to_sel_href]">göster</a>[end]
       [if-any human_readable]
       [else]
         (<a href="[entries.diff_to_sel_href]&amp;diff_format=h">renklendirilmiş</a>)
