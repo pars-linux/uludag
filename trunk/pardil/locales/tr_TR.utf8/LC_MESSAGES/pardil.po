@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-24 20:29+0300\n"
+"POT-Creation-Date: 2005-04-24 20:36+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -187,7 +187,7 @@ msgid "Passwords should be same."
 msgstr "Parolalar aynı olmalı."
 
 msgid "Password should be at least %d chars long."
-msgstr "Parola en az %6 karakter uzunluğunda olmalı."
+msgstr "Parola en az %d karakter uzunluğunda olmalı."
 
 msgid "User Profile"
 msgstr "Kullanıcı Bilgileri"
@@ -195,6 +195,7 @@ msgstr "Kullanıcı Bilgileri"
 msgid "Registration Complete"
 msgstr "Kayıt Tamamlandı"
 
+#, php-format
 msgid "Username should be at least %d chars long."
 msgstr "Kullanıcı adı en az %d karakter uzunluğunda olmalı."
 
