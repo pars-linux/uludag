@@ -3,11 +3,10 @@
   // Pardil_Main, Pardil_Revisions
 
   // Yeni öneri ekle
-  function proc_main_new($int_sender, $str_title, $str_abstract, $str_content, $str_notes, $str_info, $bln_approve=false, $str_date='') {
+  function proc_main_new($int_sender, $str_title, $str_abstract, $str_content, $str_info, $bln_approve=false, $str_date='') {
     $str_title = addslashes($str_title); // Metindeki tırnak işaretleri sorun yatarmasın...
     $str_abstract = addslashes($str_abstract);
     $str_contente = addslashes($str_contents);
-    $str_notes = addslashes($str_notes);
     $str_info = addslashes($str_info);
     $str_date = addslashes($str_date);
     
@@ -17,7 +16,7 @@
 
     $str_date = ($str_date != '') ? $str_date : date('Y-m-d H:i:s');
     $dbl_version = 1.0;
-    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil_id, $int_sender, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
+    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, info, timestamp) VALUES (%d, %d, %f, "%s", "%s", "%s")', $int_pardil_id, $int_sender, $dbl_version, $str_content, $str_info, $str_date);
     mysql_query($str_sql);
 
     $int_status = ($bln_approve) ? 2 : 1;
@@ -38,14 +37,13 @@
   }
 
   // Öneriye yeni revizyon ekle
-  function proc_revision_new($int_pardil, $int_revisor, $dbl_version, $str_content, $str_notes, $str_info, $str_date='') {
+  function proc_revision_new($int_pardil, $int_revisor, $dbl_version, $str_content, $str_info, $str_date='') {
     $str_content = addslashes($str_content); // Metindeki tırnak işaretleri sorun yatarmasın...
-    $str_notes = addslashes($str_notes);
     $str_info = addslashes($str_info);
     $str_date = addslashes($str_date);
   
     $str_date = ($str_date != '') ? $str_date : date('Y-m-d H:i:s');
-    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, notes, info, timestamp) VALUES (%d, %d, %f, "%s","%s", "%s", "%s")', $int_pardil, $int_revisor, $dbl_version, $str_content, $str_notes, $str_info, $str_date);
+    $str_sql = sprintf('INSERT INTO pardil_revisions (proposal, revisor, version, content, info, timestamp) VALUES (%d, %d, %f, "%s", "%s", "%s")', $int_pardil, $int_revisor, $dbl_version, $str_content, $str_info, $str_date);
     mysql_query($str_sql);
     return mysql_insert_id();
   }

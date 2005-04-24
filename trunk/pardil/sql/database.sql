@@ -271,6 +271,7 @@ INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('site_url', 'http://si
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('temp_password_timeout', '900', 'Geçici şifre ömrü (saniye cinsinden)');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('session_timeout', '900', 'Oturum ömrü (saniye cinsinden)');
 INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('addresschange_activation_required', 'true', '');
+INSERT INTO `options` (`opt`, `value`, `comment`) VALUES ('level_proposal_edit', '10', 'Önerileri bakıcı olmadan değitştirebilmek için gereken en düşük kullanıcı seviyesi.');
 
 -- 
 -- Tablo yapısı : `activation`

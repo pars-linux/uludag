@@ -95,12 +95,6 @@
               ?>
             </div>
             <br/>
-            <label for=""><?php echo __('Notes:');  ?></label>
-            <br/>
-            <textarea name="new_notes" cols="25" rows="7" style="width: 400px; height: 120px;"><?php echo (!isset($arr_errors['new_notes'])) ? htmlspecialchars($_POST['new_notes'], ENT_QUOTES) : ''; ?></textarea>
-            <br/>
-            <?php print_error('<div class="error">%s</div>', 'new_notes'); ?>
-            <br/>
             <label for=""><?php echo __('Release Info:'); ?></label>
             <br/>
             <input type="text" name="new_info" size="25" style="width: 400px;" value="<?php echo (!isset($arr_errors['new_info'])) ? htmlspecialchars($_POST['new_info'], ENT_QUOTES) : ''; ?>"/>

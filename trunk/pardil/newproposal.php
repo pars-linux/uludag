@@ -52,11 +52,6 @@
       $str_body = $_POST['new_content_body'][$int_num];
       $str_content .= sprintf('<section><title>%s</title><body>%s</body></section>', $str_title, $str_body);
     }
-    $str_notes = '';
-    $arr_notes = explode("\n", str_replace("\r", '', $_POST['new_notes']));
-    foreach ($arr_notes as $str_note) {
-      $str_notes .= sprintf('<note>%s</note>', $str_note);
-    }
 
     if ($_PSESSION['level'] >= getop('level_proposal_new_approved')) {
       $bln_approve = true;
@@ -64,7 +59,7 @@
     else {
       $bln_approve = false;
     }
-    $int_proposal = proc_main_new($_PSESSION['id'], $_POST['new_title'], $_POST['new_abstract'], $str_content, $str_notes, $_POST['new_info'], $bln_approve, '');
+    $int_proposal = proc_main_new($_PSESSION['id'], $_POST['new_title'], $_POST['new_abstract'], $str_content, $_POST['new_info'], $bln_approve, '');
 
     header('Location: newproposal_ok.php?proposal=' . $int_proposal . '&approved=' . ($bln_approve ? 1 : 0));
     exit;

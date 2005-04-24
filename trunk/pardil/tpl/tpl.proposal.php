@@ -47,7 +47,6 @@
                 printf('<li><a href="#content%d">%s</a></li>', $arr_item['no'], $arr_item['title']);
               }
             ?>
-            <li><a href="#contentNotes"><?php echo __('Notes'); ?></a></li>
             <li><a href="#contentRevisionHistory"><?php echo __('Revision History'); ?></a></li>
           </ul>
           <div class="hr"></div>
@@ -57,15 +56,6 @@
               printf('<div>%s</div>', $arr_item['body']);
             }
           ?>
-          <div class="hr"></div>
-          <h2><a name="contentNotes"><?php echo __('Notes'); ?></a></h2>
-          <dl>
-          <?php
-            foreach ($arr_notes as $arr_item) {
-              printf('<dt><span class="no">[%d]</span> <span>%s</span></dt>', $arr_item['no'], $arr_item['body']);
-            }
-          ?>
-          </dl>
           <div class="hr"></div>
           <h2><a name="contentRevisionHistory"><?php echo __('Revision History'); ?></a></h2>
           <div class="revisions">

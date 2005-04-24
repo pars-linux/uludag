@@ -27,10 +27,7 @@
   $int_pardil_id = $_GET['id'];
 
   // Son Revizyon:
-  $str_sql = sprintf('SELECT pardil_revisions.version FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d ORDER BY pardil_revisions.id DESC', $int_pardil_id);
-  $res_sql = mysql_query($str_sql);
-  $arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC);
-  $dbl_pardil_lastrev = $arr_fetch['version'];
+  $dbl_pardil_lastrev = query_revision_latest($int_pardil_id);
 
   // Revizyon:
   $dbl_pardil_rev = (isset($_GET['rev'])) ? $_GET['rev'] : $dbl_pardil_lastrev;
@@ -51,10 +48,7 @@
   */
 
   // Öneri:
-  $str_time = date('Y-m-d H:i:s');
-  $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title, pardil_main.abstract, pardil_revisions.content, pardil_revisions.notes, pardil_revisions.version, pardil_revisions.timestamp FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d AND pardil_revisions.version=%f', $int_pardil_id, $dbl_pardil_rev);
-  $res_sql = mysql_query($str_sql);
-  $arr_pardil_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC);
+  $arr_pardil_fetch = query_proposal_data($int_pardil_id, $dbl_pardil_rev);
 
   //
   // $arr_pardil_fetch['abstract'] = htmlspecialchars($arr_pardil_fetch['abstract']);
@@ -82,60 +76,23 @@
   // yazdırılacak. XSL dönüşümü öncesi tabii ki DTD kullanılacak.
   // Aynı mevzu "Öneri Notları" için de geçerli.
 
-  // Öneri Notları
-  $arr_pardil_fetch['notes'] = '<?xml version="1.0" encoding="utf-8"?><notes>' . $arr_pardil_fetch['notes'] . '</notes>';
-  $res_xml = simplexml_load_string($arr_pardil_fetch['notes']);
-  $int_pardil_notes = 1;
-  $arr_pardil_notes = array();
-  foreach ($res_xml->children() as $res_node) {
-    $str_body = substr($res_node->asXML(), 6, strlen($res_node->asXML()) - 13);
-    //
-    // $str_body = htmlspecialchars($str_body);
-    //
-    $arr_pardil_notes[] = array('no' => $int_pardil_notes, 'body' => $str_body);
-    $int_pardil_notes++;
-  }
 
   // Bağlantılı Başlıklar:
-  $str_sql = sprintf('SELECT pardil_main2.id, pardil_main2.title FROM pardil_main INNER JOIN pardil_r_releated ON pardil_r_releated.proposal=pardil_main.id INNER JOIN pardil_main AS pardil_main2 ON pardil_main2.id=pardil_r_releated.proposal2 WHERE pardil_main.id=%d AND pardil_r_releated.timestampB<="%s" AND pardil_r_releated.timestampE>="%s"', $int_pardil_id, $str_time, $str_time);
-  $res_sql = mysql_query($str_sql);
-  $arr_releated_list = array();
-  while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
-    $arr_releated_list[] = $arr_fetch;
-  }
-  $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title FROM pardil_main INNER JOIN pardil_r_releated ON pardil_r_releated.proposal=pardil_main.id INNER JOIN pardil_main AS pardil_main2 ON pardil_main2.id=pardil_r_releated.proposal2 WHERE pardil_main2.id=%d AND pardil_r_releated.timestampB<="%s" AND pardil_r_releated.timestampE>="%s"', $int_pardil_id, $str_time, $str_time);
-  $res_sql = mysql_query($str_sql);
-  while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
-    $arr_releated_list[] = $arr_fetch;
-  }
+  $arr_releated_list = query_proposal_releated($int_pardil_id);
 
   // Öneri Durumu:
-  $str_sql = sprintf('SELECT pardil_status.name FROM pardil_main INNER JOIN pardil_r_status ON pardil_r_status.proposal=pardil_main.id INNER JOIN pardil_status ON pardil_r_status.status=pardil_status.id WHERE pardil_main.id=%d AND timestampB<="%s" AND timestampE>="%s"', $int_pardil_id, $str_time, $str_time);
-  $res_sql = mysql_query($str_sql);
-  $arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC);
-  $str_pardil_status = $arr_fetch['name'];
-
+  $str_pardil_status = query_proposal_status($int_pardil_id);
 
   // Sorumlular:
-  $str_sql = sprintf('SELECT name, email FROM pardil_main INNER JOIN pardil_maintainers ON pardil_maintainers.proposal=pardil_main.id INNER JOIN users ON users.id=pardil_maintainers.user WHERE pardil_main.id=%d AND pardil_maintainers.timestampB<="%s" AND pardil_maintainers.timestampE>="%s"', $int_pardil_id, $str_time, $str_time);
-  $res_sql = mysql_query($str_sql);
-  $arr_maintainer_list = array();
-  while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
-    $arr_maintainer_list[] = $arr_fetch;
-  }
+  $arr_maintainer_list = query_proposal_maintainers($int_pardil_id);
 
   // Sürüm Geçmişi:
-  $str_sql = sprintf('SELECT pardil_revisions.version, pardil_revisions.info, pardil_revisions_r_users.name AS pardil_revisor, pardil_revisions_r_users.email AS pardil_revisor_mail, pardil_revisions.timestamp FROM pardil_revisions INNER JOIN users AS pardil_revisions_r_users ON pardil_revisions_r_users.id=pardil_revisions.revisor WHERE pardil_revisions.proposal=%d ORDER BY pardil_revisions.timestamp DESC', $int_pardil_id);
-  $res_sql = mysql_query($str_sql);
-  $arr_revisions_list = array();
-  while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
-    $arr_revisions_list[] = $arr_fetch;
-  }
+  $arr_revisions_list = query_proposal_revisions($int_pardil_id);
 
+  // Temayı yükle
   $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . $arr_pardil_fetch['title'];
-
   $obj_page = new template('tpl/tpl.proposal.php');
-  
+
   $obj_page->setvar('arr_proposal', $arr_pardil_fetch);
   /*
   $obj_page->setvar('arr_proposal_prev', $arr_pardil_prev);
@@ -145,7 +102,6 @@
   $obj_page->setvar('arr_proposal_content', $arr_pardil_content);
   $obj_page->setvar('arr_maintainers', $arr_maintainer_list);
   $obj_page->setvar('arr_releated', $arr_releated_list);
-  $obj_page->setvar('arr_notes', $arr_pardil_notes);
   $obj_page->setvar('arr_revisions', $arr_revisions_list);
   
   $obj_page->flush();
