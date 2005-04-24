@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-23 23:18+0300\n"
+"POT-Creation-Date: 2005-04-24 16:16+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -307,9 +307,6 @@ msgstr ""
 "Öneri bölümler halinde yazılmalı.<br/>Başlığı yazın ve sonra da \"Ekle "
 "&raquo;\" düğmesine basın."
 
-msgid "Notes:"
-msgstr "Notlar:"
-
 msgid "Release Info:"
 msgstr "Sürüm Bilgisi:"
 
@@ -333,6 +330,9 @@ msgstr "Gönder &raquo;"
 
 msgid "Proposals"
 msgstr "Öneriler"
+
+msgid "Proposals:"
+msgstr "Öneriler:"
 
 msgid "Session Information:"
 msgstr "Oturum Bilgisi:"
@@ -455,9 +455,6 @@ msgstr "Sorumlular"
 msgid "Contents"
 msgstr "İçindekiler"
 
-msgid "Notes"
-msgstr "Notlar"
-
 msgid "Revision History"
 msgstr "Sürüm Geçmişi"
 
@@ -469,3 +466,9 @@ msgstr "İsim:"
 
 msgid "Register &raquo;"
 msgstr "Kayıt &raquo;"
+
+#~ msgid "Notes:"
+#~ msgstr "Notlar:"
+
+#~ msgid "Notes"
+#~ msgstr "Notlar"
