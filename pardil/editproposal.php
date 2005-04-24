@@ -24,10 +24,7 @@
   $int_pardil_id = $_GET['id'];
 
   // Son Revizyon:
-  $str_sql = sprintf('SELECT pardil_revisions.version FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d ORDER BY pardil_revisions.id DESC', $int_pardil_id);
-  $res_sql = mysql_query($str_sql);
-  $arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC);
-  $dbl_pardil_lastrev = $arr_fetch['version'];
+  $dbl_pardil_lastrev = query_revision_latest($int_pardil_id);
 
   // Revizyon:
   $dbl_pardil_rev = (isset($_GET['rev'])) ? $_GET['rev'] : $dbl_pardil_lastrev;
@@ -36,10 +33,10 @@
   $int_level = getop('level_proposal_edit');
 
   // Bakıcı mı değil mi?
-  $int_count = database_query_scalar(sprintf('SELECT Count(*) FROM pardil_maintainers WHERE TimestampB<=Now() AND Now() <=TimestampE AND user=%d AND proposal=%d', $_PSESSION['id'], $_GET['id']));
+  $bln_maintainer = query_proposal_is_maintainer($int_pardil_id, $_PSESSION['id']);
 
   // Seviyesi yeterli değilse veya bakıcı değilse izin verme
-  if ($int_level > $_PSESSION['level'] && $int_count == 0) {
+  if ($int_level > $_PSESSION['level'] && $bln_maintainer) {
     header('Location: denied.php');
     exit;
   }

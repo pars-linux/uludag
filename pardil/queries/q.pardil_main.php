@@ -20,7 +20,7 @@
 
   // Öneri
   function query_proposal_data($int_id, $dbl_rev) {
-    $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title, pardil_main.abstract, pardil_revisions.content, pardil_revisions.version, pardil_revisions.timestamp FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d AND pardil_revisions.version=%f', $int_id, $dbl_rev);
+    $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title, pardil_main.abstract, pardil_revisions.content, pardil_revisions.version, pardil_revisions.timestamp, pardil_revisions.info FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d AND pardil_revisions.version=%f', $int_id, $dbl_rev);
     $res_sql = mysql_query($str_sql);
     return mysql_fetch_array($res_sql, MYSQL_ASSOC);
   }
@@ -59,6 +59,13 @@
       $arr_maintainer_list[] = $arr_fetch;
     }
     return $arr_maintainer_list; 
+  }
+
+  // Sorumlu mu değil mi...
+  function query_proposal_is_maintainer($int_id, $int_user) {
+    $str_date = date('Y-m-d H:i:s');
+    $str_sql = sprintf('SELECT Count(*) FROM pardil_maintainers WHERE TimestampB<="%1$s" AND "%1$s" <=TimestampE AND user=%2$d AND proposal=%3$d', $str_date, $int_user, $int_id);
+    return (database_query_scalar($str_sql) == 1);
   }
  
   // Sürüm Geçmişi:

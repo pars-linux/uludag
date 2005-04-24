@@ -155,7 +155,6 @@ CREATE TABLE `pardil_revisions` (
   `revisor` int(10) unsigned NOT NULL default '0',
   `version` double NOT NULL default '0.1',
   `content` text NOT NULL,
-  `notes` text NOT NULL,
   `info` varchar(250) NOT NULL default '',
   `timestamp` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`id`)
@@ -165,8 +164,8 @@ CREATE TABLE `pardil_revisions` (
 -- Tablo döküm verisi `pardil_revisions`
 -- 
 
-INSERT INTO `pardil_revisions` (`id`, `proposal`, `revisor`, `version`, `content`, `notes`, `info`, `timestamp`) VALUES (3, 1, 1, 1, '<section>\r\n  <title>Problem</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Kapsam</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Çözüm</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', '<note>a</note>\r\n<note>b</note>\r\n<note>c</note>', 'İlk sürüm.', '2005-03-12 02:08:39');
-INSERT INTO `pardil_revisions` (`id`, `proposal`, `revisor`, `version`, `content`, `notes`, `info`, `timestamp`) VALUES (20, 2, 1, 1, '<section>\r\n  <title>Prosedür</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Proje Grupları</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Şartlar</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', '...', 'İlk sürüm.', '2000-01-01 00:00:00');
+INSERT INTO `pardil_revisions` (`id`, `proposal`, `revisor`, `version`, `content`, `info`, `timestamp`) VALUES (3, 1, 1, 1, '<section>\r\n  <title>Problem</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Kapsam</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Çözüm</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', 'İlk sürüm.', '2005-03-12 02:08:39');
+INSERT INTO `pardil_revisions` (`id`, `proposal`, `revisor`, `version`, `content`, `info`, `timestamp`) VALUES (20, 2, 1, 1, '<section>\r\n  <title>Prosedür</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Proje Grupları</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>\r\n<section>\r\n  <title>Şartlar</title>\r\n  <body>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n    <p>...</p>\r\n  </body>\r\n</section>', 'İlk sürüm.', '2000-01-01 00:00:00');
 
 -- --------------------------------------------------------
 
