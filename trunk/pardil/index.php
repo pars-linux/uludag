@@ -8,10 +8,22 @@
   
   require('class/class.template.php');
 
+  // Erişim seviyesi
+  $int_level = getop('level_proposal_edit');
+
   $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title FROM pardil_main');
   $res_sql = mysql_query($str_sql);
   $arr_list = array();
   while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC)) {
+    // Bakıcı mı değil mi?
+    $bln_maintainer = query_proposal_is_maintainer($arr_fetch['id'], $_PSESSION['id']);
+    // Seviyesi yeterli değilse veya bakıcı değilse izin verme
+    if ($int_level > $_PSESSION['level'] && !$bln_maintainer) {
+      $arr_fetch['edit'] = false;
+    }
+    else {
+      $arr_fetch['edit'] = true;
+    }
     $arr_list[] = $arr_fetch;
   }
 

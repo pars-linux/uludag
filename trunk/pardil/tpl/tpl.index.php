@@ -17,7 +17,8 @@
         <ul>
           <?php
             foreach ($arr_list as $arr_item) {
-              printf('<li><a href="proposal.php?id=%d">%s</a></li>', $arr_item['id'], $arr_item['title']);
+              $str_edit = ($arr_item['edit']) ? '<a href="editproposal.php?id=' . $arr_item['id'] . '">[Düzenle]</a>' : '';
+              printf('<li><a href="proposal.php?id=%d">%s</a> %s</li>', $arr_item['id'], $arr_item['title'], $str_edit);
             }
           ?>
         </ul>

@@ -35,8 +35,8 @@
   // Bakıcı mı değil mi?
   $bln_maintainer = query_proposal_is_maintainer($int_pardil_id, $_PSESSION['id']);
 
-  // Seviyesi yeterli değilse veya bakıcı değilse izin verme
-  if ($int_level > $_PSESSION['level'] && $bln_maintainer) {
+  // Seviyesi yeterli değilse ve bakıcı değilse izin verme
+  if ($int_level > $_PSESSION['level'] && !$bln_maintainer) {
     header('Location: denied.php');
     exit;
   }
