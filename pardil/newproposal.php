@@ -61,6 +61,11 @@
     }
     $int_proposal = proc_main_new($_PSESSION['id'], $_POST['new_title'], $_POST['new_abstract'], $str_content, $_POST['new_info'], $bln_approve, '');
 
+    if ($bln_approve) {
+      // Onay yetkisi varsa, sorumlu olarak ata.
+      proc_maintainers_new($int_proposal, $_PSESSION['id']);
+    }
+
     header('Location: newproposal_ok.php?proposal=' . $int_proposal . '&approved=' . ($bln_approve ? 1 : 0));
     exit;
   }
