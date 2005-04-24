@@ -56,6 +56,7 @@
               printf('<div>%s</div>', $arr_item['body']);
             }
           ?>
+          <br/>
           <div class="hr"></div>
           <h2><a name="contentRevisionHistory"><?php echo __('Revision History'); ?></a></h2>
           <div class="revisions">

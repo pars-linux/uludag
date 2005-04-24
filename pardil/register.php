@@ -63,6 +63,10 @@
         exit;
       }
     }
+    else {
+      header('Location: register_ok.php');
+      exit;
+    }
   }
   else {
     $_PCONF['title'] = getop('site_name') . ' - ' . __('User Registration');

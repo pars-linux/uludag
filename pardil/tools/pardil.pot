@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-24 16:16+0300\n"
+"POT-Creation-Date: 2005-04-24 20:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,19 +154,25 @@ msgid ""
 "%3$s Team"
 msgstr ""
 
-msgid "Registration Complete"
+msgid "Profile Update Complete"
 msgstr ""
 
 msgid "Real name should be written."
-msgstr ""
-
-msgid "Username is in use."
 msgstr ""
 
 msgid "Password should be written twice."
 msgstr ""
 
 msgid "Passwords should be same."
+msgstr ""
+
+msgid "User Profile"
+msgstr ""
+
+msgid "Registration Complete"
+msgstr ""
+
+msgid "Username is in use."
 msgstr ""
 
 msgid "User Registration"
@@ -395,6 +401,24 @@ msgid ""
 "disabled after %d seconds."
 msgstr ""
 
+msgid "You've successfully updated your profile."
+msgstr ""
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your new e-mail address."
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid ""
+"If you don't want to change your password, leave these two fields empty."
+msgstr ""
+
+msgid "Update &raquo;"
+msgstr ""
+
 msgid "Abstract"
 msgstr ""
 
@@ -429,9 +453,6 @@ msgid "Revision History"
 msgstr ""
 
 msgid "You've successfully registered."
-msgstr ""
-
-msgid "Name:"
 msgstr ""
 
 msgid "Register &raquo;"
