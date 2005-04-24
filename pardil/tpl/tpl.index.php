@@ -12,6 +12,16 @@
           -->
         </p>
         <p>
+          <b><?php echo __('Proposals:'); ?></b>
+        </p>
+        <ul>
+          <?php
+            foreach ($arr_list as $arr_item) {
+              printf('<li><a href="proposal.php?id=%d">%s</a></li>', $arr_item['id'], $arr_item['title']);
+            }
+          ?>
+        </ul>
+        <p>
           <b><?php echo __('Session Information:'); ?></b>
         </p>
         <?php

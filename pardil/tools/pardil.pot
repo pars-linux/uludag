@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-23 23:18+0300\n"
+"POT-Creation-Date: 2005-04-24 16:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -281,9 +281,6 @@ msgid ""
 "push \"Add &raquo;\" button."
 msgstr ""
 
-msgid "Notes:"
-msgstr ""
-
 msgid "Release Info:"
 msgstr ""
 
@@ -306,6 +303,9 @@ msgid "Submit &raquo;"
 msgstr ""
 
 msgid "Proposals"
+msgstr ""
+
+msgid "Proposals:"
 msgstr ""
 
 msgid "Session Information:"
@@ -423,9 +423,6 @@ msgid "Maintainers"
 msgstr ""
 
 msgid "Contents"
-msgstr ""
-
-msgid "Notes"
 msgstr ""
 
 msgid "Revision History"
