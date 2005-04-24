@@ -97,11 +97,6 @@
       $str_body = $_POST['new_content_body'][$int_num];
       $str_content .= sprintf('<section><title>%s</title><body>%s</body></section>', $str_title, $str_body);
     }
-    $str_notes = '';
-    $arr_notes = explode("\n", str_replace("\r", '', $_POST['new_notes']));
-    foreach ($arr_notes as $str_note) {
-      $str_notes .= sprintf('<note>%s</note>', $str_note);
-    }
 
     if ($_POST['new_newrelease']) {
       // Yeni sürüm
@@ -113,7 +108,7 @@
                           );
       proc_main_update($int_pardil_id, $arr_update);
       // Sürümü ekle
-      proc_revision_new($int_pardil_id, $_PSESSION['id'], $_POST['new_releaseno'], $str_content, $str_notes, $_POST['new_info'], '');
+      proc_revision_new($int_pardil_id, $_PSESSION['id'], $_POST['new_releaseno'], $str_content, $_POST['new_info'], '');
       
       header('Location: editproposal_ok.php?proposal=' . $int_pardil_id . '&revision=' . $_POST['new_releaseno'] . '&newrevision=1');
       exit;
@@ -130,7 +125,6 @@
       $int_revision_id = database_query_scalar(sprintf('SELECT id FROM pardil_revisions WHERE proposal=%d and version=%f', $int_pardil_id, $dbl_pardil_rev));
       $arr_update = array(
                           'content' => $str_content,
-                          'notes' => $str_notes,
                           'info' => $_POST['new_info']
                           );
       proc_revision_update($int_revision_id, $arr_update);
@@ -152,11 +146,9 @@
   }
   else {
     // Sayfa ilk defa açılıyorsa...
+
     // Öneri bilgilerini topla...
-    $str_time = date('Y-m-d H:i:s');
-    $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title, pardil_main.abstract, pardil_revisions.content, pardil_revisions.notes, pardil_revisions.version, pardil_revisions.timestamp, pardil_revisions.info FROM pardil_main INNER JOIN pardil_revisions ON pardil_main.id=pardil_revisions.proposal WHERE pardil_main.id=%d AND pardil_revisions.version=%f', $int_pardil_id, $dbl_pardil_rev);
-    $res_sql = mysql_query($str_sql);
-    $arr_pardil_fetch = mysql_fetch_array($res_sql, MYSQL_ASSOC);
+    $arr_pardil_fetch = query_proposal_data($int_pardil_id, $dbl_pardil_rev);
 
     // Öneri İçeriği ve İçindekiler Listesi:
     $arr_pardil_fetch['content'] = '<?xml version="1.0" encoding="utf-8"?><pardil>' . $arr_pardil_fetch['content'] . '</pardil>';
@@ -170,18 +162,6 @@
       $int_pardil_content++;
     }
     
-    // Öneri Notları
-    $arr_pardil_fetch['notes'] = '<?xml version="1.0" encoding="utf-8"?><notes>' . $arr_pardil_fetch['notes'] . '</notes>';
-    $res_xml = simplexml_load_string($arr_pardil_fetch['notes']);
-    $int_pardil_notes = 1;
-    $str_pardil_notes = '';
-    foreach ($res_xml->children() as $res_node) {
-      $str_body = substr($res_node->asXML(), 6, strlen($res_node->asXML()) - 13);
-      $arr_pardil_notes[] = trim($str_body);
-      $int_pardil_notes++;
-    }
-    $str_pardil_notes = join("\n", $arr_pardil_notes);
-
     // Formu göster...
     $_PCONF['title'] = getop('site_name') . ' - ' . __('Edit Proposal');
     $obj_page = new template('tpl/tpl.editproposal.php');
@@ -189,7 +169,6 @@
     $obj_page->setvar('dbl_pardil_rev', $dbl_pardil_rev);
     $obj_page->setvar('arr_pardil_fetch', $arr_pardil_fetch);
     $obj_page->setvar('arr_pardil_content', $arr_pardil_content);
-    $obj_page->setvar('str_pardil_notes', $str_pardil_notes);
     $obj_page->setvar('bln_first', true);
     $obj_page->flush();
   }
