@@ -1,10 +1,5 @@
 <?php
-  require('cfg/sys.define.php');
-  require('sys/sys.gettext.php');
-  require('sys/sys.database.php');
-  require('sys/sys.procedures.php');
-  require('sys/sys.pconf.php');
-  require('sys/sys.session.php');
+  require('sys.common.php');
 
   // Erişim seviyesi kontrolü
   $int_level = getop('level_proposal_new');
