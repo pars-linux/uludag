@@ -13,3 +13,6 @@
       <div id="header">
         <div id="logo"><a href="index.php"><img src="images/logo2.png" alt="Pardil"/></a></div>
       </div>
+      <div id="menu">
+        &nbsp;
+      </div>

@@ -1,14 +1,6 @@
 <?php
   include('tpl.header.php');
 ?>
-      <div id="menubar">
-        <span class="arrowL">&#171;</span>
-        <span class="arrowR">&#187;</span>
-        <span class="title"><?php echo __('Logged Out'); ?></span>
-      </div>
-      <div id="menu">
-        &nbsp;
-      </div>
       <div id="content">
         <h2><?php echo __('You Have Logged Out'); ?></h2>
         <p>

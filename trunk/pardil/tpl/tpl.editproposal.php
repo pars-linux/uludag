@@ -45,14 +45,6 @@
         }
       }
     </script>
-      <div id="menubar">
-        <span class="arrowL">&#171;</span>
-        <span class="arrowR">&#187;</span>
-        <span class="title"><?php echo __('Edit Proposal'); ?></span>
-      </div>
-      <div id="menu">
-        &nbsp;
-      </div>
       <div id="content">
         <form action="editproposal.php?id=<?php echo $int_pardil_id; ?>&rev=<?php echo $dbl_pardil_rev; ?>" method="post">
           <fieldset>
