@@ -26,7 +26,7 @@
         $mix_user = database_query_scalar(sprintf('SELECT users.id FROM temp_passwords INNER JOIN users ON users.id=temp_passwords.user WHERE users.username="%s" AND temp_passwords.password="%s"', addslashes($_POST['username']), addslashes($_POST['password'])));
         if ($mix_user !== false) {
           // Bilgiler  doğru
-          $str_session = proc_session_update($mix_user);
+          $str_session = proc_session_init($mix_user);
           setcookie('pardil', $str_session);
           header('Location: index.php');
           exit;
