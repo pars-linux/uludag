@@ -27,6 +27,9 @@
       elseif ($_POST['profile_password'] != $_POST['profile_password2']) {
         $arr_errors['profile_password'] = __('Passwords should be same.');
       }
+      elseif (strlen($_POST['profile_password']) < getop('min_password_length')) {
+        $arr_errors['profile_password'] = sprintf(__('Password should be at least %d chars long.'), getop('min_password_length'));
+      }
     }
 
     if (strlen($_POST['profile_email']) == 0) {
