@@ -5,6 +5,8 @@
         <p>
           <b>&raquo;</b> <a href="login.php"><?php echo __('User Login'); ?></a>
           <br/>
+          <b>&raquo;</b> <a href="profile.php"><?php echo __('User Profile'); ?></a>
+          <br/>
           <b>&raquo;</b> <a href="newproposal.php"><?php echo __('New Proposal'); ?></a>
           <br/>
           <!--
