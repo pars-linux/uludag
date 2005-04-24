@@ -22,9 +22,12 @@
         count++;
         document.getElementById('new_content_count').value = count;
 
+        var el_newsection = document.createElement('DIV');
         var el_sections = document.getElementById('sections');
-        el_sections.innerHTML += ' \
-                  <div id="section_' + count + '"> \
+        el_sections.appendChild(el_newsection);
+
+        el_newsection.id = 'section_' + count;
+        el_newsection.innerHTML = ' \
                     <label for=""> \
                       <?php printf(__('Section:')); ?> ' + xhr_htmlspecialchars(title) + ' \
                       <a href="javascript:remove_section(\'section_' + count + '\')" title="<?php __e('Remove section'); ?>">[x]</a> \
@@ -32,8 +35,7 @@
                     <br/> \
                     <input type="hidden" name="new_content_title[' + count + ']" value="' + title + '" /> \
                     <textarea name="new_content_body[' + count + ']" cols="25" rows="7" style="width: 400px; height: 200px;"></textarea> \
-                    <br/> \
-                  </div>';
+                    <br/>';
 
         document.getElementById('new_content_new_title').value = '';
       }
