@@ -1,5 +1,5 @@
 .proposal h1 {
-  display: none;
+  /*display: none;*/
 }
 .proposal h2, .proposal h2 a, .proposal h2 a:hover {
   font-family: Verdana, Sans, sans-serif;
