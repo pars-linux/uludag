@@ -62,7 +62,7 @@
     [else]
       <form method=get action="[dir_paging_action]">
         [dir_paging_hidden_values]
-        <input type=submit value="Go to:">
+        <input type=submit value="Git:">
         <select name=dir_pagestart  onchange="submit()">
           [for picklist]
             <option [is picklist.count dir_pagestart]selected[end] value="[picklist.count]">Sayfa [picklist.page]: [picklist.start] - [picklist.end]</option>

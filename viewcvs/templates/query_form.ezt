@@ -20,12 +20,12 @@
       <label for="branch_match_exact">
         <input type="radio" name="branch_match" id="branch_match_exact"
            value="exact" [is branch_match "exact"]checked="checked"[end] />
-        Birebir eşleşme
+        Birebir eşleştir
       </label>
       <label for="branch_match_glob">
         <input type="radio" name="branch_match" id="branch_match_glob"
            value="glob" [is branch_match "glob"]checked="checked"[end] />
-        Glob pattern match
+        Kalıp eşleştir
       </label>
       <label for="branch_match_regex">
         <input type="radio" name="branch_match" id="branch_match_regex"
@@ -54,12 +54,12 @@
       <label for="file_match_exact">
         <input type="radio" name="file_match" id="file_match_exact"
            value="exact" [is file_match "exact"]checked="checked"[end] />
-        Birebir eşleşme
+        Birebir eşleştir
       </label>
       <label for="file_match_glob">
         <input type="radio" name="file_match" id="file_match_glob"
            value="glob" [is file_match "glob"]checked="checked"[end] />
-        Glob pattern match
+        Kalıp eşleştir
       </label>
       <label for="file_match_regex">
         <input type="radio" name="file_match" id="file_match_regex"
@@ -80,12 +80,12 @@
       <label for="who_match_exact">
         <input type="radio" name="who_match" id="who_match_exact"
            value="exact" [is who_match "exact"]checked="checked"[end] />
-        Birebir eşleşme
+        Birebir eşleştir
       </label>
       <label for="who_match_glob">
         <input type="radio" name="who_match" id="who_match_glob"
            value="glob" [is who_match "glob"]checked="checked"[end] />
-        Glob pattern match
+        Kalıp eşleştir
       </label>
       <label for="who_match_regex">
         <input type="radio" name="who_match" id="who_match_regex"
