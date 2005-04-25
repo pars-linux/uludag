@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="<?php echo $_PCONF['site_url']; ?>proposal.css" type="text/css" />
     <link rel="icon" type="image/png" href="<?php echo $_PCONF['site_url']; ?>images/favicon.png"/>
     <script type="text/javascript" src="<?php echo $_PCONF['site_url']; ?>class/m_xhr.js"></script>
-    <script>
+    <script type="text/javascript">
+      <?php if (isset($_PSESSION['id'])) { ?>
       function tr_session() {
         // Belirli periyotlarla oturumu güncelleyen XHR süreci
         // Bir sayfada, uzun süre hareketsiz kalındığında oturumun 
@@ -23,9 +24,12 @@
           window.status = new Date().toString();
         }
       }
+      <?php } ?>
       
       function init() {
-        setTimeout('tr_session()', 10000);
+        <?php if (isset($_PSESSION['id'])) { ?>
+         setTimeout('tr_session()', 10000);
+        <?php } ?>
       }
     </script>
   </head>
