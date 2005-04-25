@@ -5,47 +5,32 @@
   
   require('class/class.xmlhttprequest.php');
 
-  function toolbar() {
+  function toolbar($str_o) {
     $arr_toolbar = array();
     $arr_toolbar[] = array('Ana Sayfa', 'home');
     $arr_toolbar[] = array('İletişim', 'contact');
     return $arr_toolbar;
   }
-  function load_app($str_app) {
-    $arr_apps = array();
-    $arr_apps['home'] = "<div>Burası <strong>Ana sayfa</strong></div><br/><form><input type='text2 name='query' value='Aranacak metin' /></form>";
-    $arr_apps['contact'] = "<div>Burası <strong>İletişim</strong> sayfası</div><br/>";
-    return $arr_apps[$str_app];
-  }
 
   $obj_xhr = new xmlhttprequest();
-  $obj_xhr->str_url = 'example.xmlhttprequest.php';
-  $obj_xhr->register_func('toolbar', 'cb_toolbar');
-  $obj_xhr->register_func('load_app', 'cb_load_app');
+  $obj_xhr->register_func('toolbar');
   $obj_xhr->handle_request();
 ?>
 <html>
   <head>
+    <script type="text/javascript" src="class/m_xhr.js"></script>
     <script>
-      function tr_load_app(app) {
-        document.getElementById('infobar').innerHTML = 'Lütfen bekleyin...';
-        xhr_load_app(app);
+      function tr_toolbar() {
+        xhr_php_process('example.xmlhttprequest.php', 'toolbar', '', 'cb_toolbar');
       }
-      function cb_toolbar(fname, jsobj, req) {
+      function cb_toolbar(op, req, obj) {
         var s = '';
-        for (var k in jsobj) {
-          s += '<a href="javascript:tr_load_app(\'' + jsobj[k][1] + '\')">' + jsobj[k][0] + '</a> ';
+        for (var k in obj) {
+          s += '<a href="javascript:tr_load_app(\'' + obj[k][1] + '\')">' + obj[k][0] + '</a> ';
         }
         document.getElementById('toolbar').innerHTML = s;
       }
-      function cb_load_app(fname, jsobj, req) {
-        document.getElementById('app').innerHTML = jsobj;
-        document.getElementById('infobar').innerHTML = '&nbsp;';
-      }
-      
-      <?php echo $obj_xhr->js_code(true); ?>
-
-      document.onload = xhr_toolbar();
+      document.onload = tr_toolbar();
     </script>
   </head>
   <body>
