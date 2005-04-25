@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-25 15:09+0300\n"
+"POT-Creation-Date: 2005-04-25 15:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -316,13 +316,19 @@ msgstr ""
 msgid "Submit &raquo;"
 msgstr ""
 
+msgid "Session Information:"
+msgstr ""
+
+msgid "Username:"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
 msgid "Proposals"
 msgstr ""
 
 msgid "Proposals:"
-msgstr ""
-
-msgid "Session Information:"
 msgstr ""
 
 msgid "MySQL Host:"
@@ -354,9 +360,6 @@ msgid "Admin Password:"
 msgstr ""
 
 msgid "Install &raquo;"
-msgstr ""
-
-msgid "Username:"
 msgstr ""
 
 msgid "Password:"
