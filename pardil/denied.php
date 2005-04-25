@@ -1,10 +1,10 @@
 <?php
 
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
   
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . __('Access Denied');
-  $obj_page = new template('tpl/tpl.denied.php');
+  $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.denied.php');
   $obj_page->flush();
 ?>

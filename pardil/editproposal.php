@@ -1,7 +1,9 @@
 <?php
 
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
 
+  require(dirname(__FILE__) . '/class/class.template.php');
+    
   // ID & sürüm kontrolü
   if (!isset($_GET['id'])) {
     header('Location: notfound.php');
@@ -37,7 +39,6 @@
     exit;
   }
 
-  require('class/class.template.php');
 
   // Denetimler
   $arr_errors = array();
@@ -130,7 +131,7 @@
   elseif (count($arr_errors) > 0 && isset($_POST['edit_proposal'])) {
     // Formu göster...
     $_PCONF['title'] = getop('site_name') . ' - ' . __('Edit Proposal');
-    $obj_page = new template('tpl/tpl.editproposal.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.editproposal.php');
     $obj_page->setvar('int_pardil_id', $int_pardil_id);
     $obj_page->setvar('dbl_pardil_rev', $dbl_pardil_rev);
     $obj_page->setvar('arr_errors', $arr_errors);
@@ -156,8 +157,9 @@
     }
     
     // Formu göster...
+
     $_PCONF['title'] = getop('site_name') . ' - ' . __('Edit Proposal');
-    $obj_page = new template('tpl/tpl.editproposal.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.editproposal.php');
     $obj_page->setvar('int_pardil_id', $int_pardil_id);
     $obj_page->setvar('dbl_pardil_rev', $dbl_pardil_rev);
     $obj_page->setvar('arr_pardil_fetch', $arr_pardil_fetch);

@@ -1,8 +1,8 @@
 <?php
 
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
 
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   $int_floodcontrol_t = 10 * 60;
   $int_floodcontrol_m = 3;
@@ -58,7 +58,7 @@
   }
   else {
     $_PCONF['title'] = getop('site_name') . ' - ' . __('Account Activation');
-    $obj_page = new template('tpl/tpl.activation.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.activation.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
   }

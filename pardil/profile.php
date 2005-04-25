@@ -1,8 +1,8 @@
 <?php
 
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
 
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   if (!isset($_PSESSION['id'])) {
     header('Location: denied.php');
@@ -80,7 +80,7 @@
     // Hata varsa...
 
     $_PCONF['title'] = getop('site_name') . ' - ' . __('User Profile');
-    $obj_page = new template('tpl/tpl.profile.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.profile.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->setvar('bln_first', false);
     $obj_page->flush();
@@ -91,7 +91,7 @@
     $arr_user = query_user_data($_PSESSION['id']);
     
     $_PCONF['title'] = getop('site_name') . ' - ' . __('User Profile');
-    $obj_page = new template('tpl/tpl.profile.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.profile.php');
     $obj_page->setvar('bln_first', true);
     $obj_page->setvar('arr_user', $arr_user);
     $obj_page->flush();

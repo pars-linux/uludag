@@ -1,8 +1,8 @@
 <?php
   $_NOSESSION = true;
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
 
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   $arr_errors = array();
   if (isset($_POST['register'])) {
@@ -72,7 +72,7 @@
   }
   else {
     $_PCONF['title'] = getop('site_name') . ' - ' . __('User Registration');
-    $obj_page = new template('tpl/tpl.register.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.register.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
   }

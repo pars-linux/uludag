@@ -1,5 +1,5 @@
 <?php
-  include('tpl.header.php');
+  include(dirname(__FILE__) . '/tpl.header.php');
 ?>
       <div id="content">
         <p>
@@ -7,5 +7,5 @@
         </p>
       </div>
 <?php
-  include('tpl.footer.php');
+  include(dirname(__FILE__) . '/tpl.footer.php');
 ?>

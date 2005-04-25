@@ -1,5 +1,5 @@
 <?php
-  include('tpl.header.php');
+  include(dirname(__FILE__) . '/tpl.header.php');
 ?>
     <script type="text/javascript">
       function xhr_htmlspecialchars(s) {
@@ -48,7 +48,7 @@
       }
     </script>
       <div id="content">
-        <form action="newproposal.php" method="post">
+        <form action="<?php echo $_PCONF['site_url']; ?>newproposal.php" method="post">
           <fieldset>
             <label for=""><?php echo __('Title:'); ?></label>
             <br/>
@@ -109,5 +109,5 @@
         </form>
       </div>
 <?php
-  include('tpl.footer.php');
+  include(dirname(__FILE__) . '/tpl.footer.php');
 ?>

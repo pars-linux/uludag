@@ -1,8 +1,8 @@
 <?php
 
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
 
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   // ID & sürüm kontrolü
   if (!isset($_GET['id'])) {
@@ -86,7 +86,7 @@
 
   // Temayı yükle
   $_PCONF['title'] = $_PCONF['site_name'] . ' - ' . $arr_pardil_fetch['title'];
-  $obj_page = new template('tpl/tpl.proposal.php');
+  $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.proposal.php');
 
   $obj_page->setvar('arr_proposal', $arr_pardil_fetch);
   /*

@@ -1,8 +1,8 @@
 <?php
-  include('tpl.header.php');
+  include(dirname(__FILE__) . '/tpl.header.php');
 ?>
       <div id="content">
-        <form action="profile.php" method="post">
+        <form action="<?php echo $_PCONF['site_url']; ?>profile.php" method="post">
           <fieldset>
             <?php if ($bln_first) { ?>
               <label for=""><?php echo __('Name:'); ?></label>
@@ -52,5 +52,5 @@
         </form>
       </div>
 <?php
-  include('tpl.footer.php');
+  include(dirname(__FILE__) . '/tpl.footer.php');
 ?>
