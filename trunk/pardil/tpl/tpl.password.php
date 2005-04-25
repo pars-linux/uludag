@@ -1,5 +1,5 @@
 <?php
-  include('tpl.header.php');
+  include(dirname(__FILE__) . '/tpl.header.php');
 ?>
       <div id="content">
         <p>
@@ -8,7 +8,7 @@
         <p>
           <?php printf(__('This temporary password does not effect your primary password, and will be disabled after %d seconds.'), getop('temp_password_timeout')); ?>
         </p>
-        <form action="password.php" method="post">
+        <form action="<?php echo $_PCONF['site_url']; ?>password.php" method="post">
           <fieldset>
             <label for=""><?php echo __('E-Mail Address:'); ?></label>
             <br/>
@@ -21,5 +21,5 @@
         </form>
       </div>
 <?php
-  include('tpl.footer.php');
+  include(dirname(__FILE__) . '/tpl.footer.php');
 ?>

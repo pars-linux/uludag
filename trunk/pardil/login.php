@@ -1,8 +1,8 @@
 <?php
 
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
 
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   $arr_errors = array();
   if (isset($_POST['login'])) {
@@ -50,7 +50,7 @@
 
   if (!isset($_POST['login']) || count($arr_errors) > 0) {
     $_PCONF['title'] = getop('site_name') . ' - ' . __('User Login');
-    $obj_page = new template('tpl/tpl.login.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.login.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
   }

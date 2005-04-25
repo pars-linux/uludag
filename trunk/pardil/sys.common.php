@@ -1,11 +1,11 @@
 <?php
-  require('cfg/sys.define.php');
-  require('sys/sys.lib.php');
-  require('sys/sys.gettext.php');
-  require('sys/sys.database.php');
-  require('sys/sys.procedures.php');
-  require('sys/sys.pconf.php');
+  require(dirname(__FILE__) . '/cfg/sys.define.php');
+  require(dirname(__FILE__) . '/sys/sys.lib.php');
+  require(dirname(__FILE__) . '/sys/sys.gettext.php');
+  require(dirname(__FILE__) . '/sys/sys.database.php');
+  require(dirname(__FILE__) . '/sys/sys.procedures.php');
+  require(dirname(__FILE__) . '/sys/sys.pconf.php');
   if (!isset($_NOSESSION)) {
-    require('sys/sys.session.php');
+    require(dirname(__FILE__) . '/sys/sys.session.php');
   }
 ?>

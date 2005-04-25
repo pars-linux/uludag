@@ -11,6 +11,4 @@
   define('CONF_LOCALE', 'tr_TR.utf8');
 
   $_PCONF = array();
-
-  $_PCONF['root'] = realpath(dirname(__FILE__) . '/..');
 ?>

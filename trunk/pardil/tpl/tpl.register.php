@@ -1,8 +1,8 @@
 <?php
-  include('tpl.header.php');
+  include(dirname(__FILE__) . '/tpl.header.php');
 ?>
       <div id="content">
-        <form action="register.php" method="post">
+        <form action="<?php echo $_PCONF['site_url']; ?>register.php" method="post">
           <fieldset>
             <label for=""><?php echo __('Name:'); ?></label>
             <br/>
@@ -35,5 +35,5 @@
         </form>
       </div>
 <?php
-  include('tpl.footer.php');
+  include(dirname(__FILE__) . '/tpl.footer.php');
 ?>

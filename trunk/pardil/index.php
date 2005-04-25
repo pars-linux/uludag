@@ -1,7 +1,7 @@
 <?php
-  require('sys.common.php');
+  require(dirname(__FILE__). '/sys.common.php');
   
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   // Erişim seviyesi
   $int_level = getop('level_proposal_edit');
@@ -23,7 +23,7 @@
   }
 
   $_PCONF['title'] = $_PCONF['site_title'];
-  $obj_page = new template('tpl/tpl.index.php');
+  $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.index.php');
   $obj_page->setvar('_PSESSION', $_PSESSION);
   $obj_page->setvar('arr_list', $arr_list);
   $obj_page->flush();

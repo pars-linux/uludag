@@ -1,8 +1,8 @@
 <?php
 
-  require('sys.common.php');
+  require(dirname(__FILE__) . '/sys.common.php');
 
-  require('class/class.template.php');
+  require(dirname(__FILE__) . '/class/class.template.php');
 
   //
   $int_floodcontrol_t = 10 * 60;
@@ -52,7 +52,7 @@
   }
   else {
     $_PCONF['title'] = getop('site_name') . ' - ' . __('Create Temporary Password');
-    $obj_page = new template('tpl/tpl.password.php');
+    $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.password.php');
     $obj_page->setvar('arr_errors', $arr_errors);
     $obj_page->flush();
   }

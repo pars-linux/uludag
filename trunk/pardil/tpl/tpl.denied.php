@@ -1,5 +1,5 @@
 <?php
-  include('tpl.header.php');
+  include(dirname(__FILE__) . '/tpl.header.php');
 ?>
       <div id="content">
         <h2><?php echo __('Access Denied'); ?></h2>
@@ -8,5 +8,5 @@
         </p>
       </div>
 <?php
-  include('tpl.footer.php');
+  include(dirname(__FILE__) . '/tpl.footer.php');
 ?>

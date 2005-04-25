@@ -28,7 +28,7 @@
     (http://www.scss.com.au/family/andrew/webdesign/xmlhttprequest/)
   */
 
-  require('class/class.json.php');
+  require(dirname(__FILE__) . '/class.json.php');
 
   class xmlhttprequest {
     public $str_url = '';

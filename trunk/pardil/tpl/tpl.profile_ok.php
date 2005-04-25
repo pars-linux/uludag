@@ -1,5 +1,5 @@
 <?php
-  include('tpl.header.php');
+  include(dirname(__FILE__) . '/tpl.header.php');
 ?>
       <div id="content">
         <h2><?php echo __('Profile Update Complete'); ?></h2>
@@ -16,9 +16,9 @@
         </p>
         <?php } ?>
         <p>
-          <b>&raquo;</b> <a href="index.php"><?php echo __('Go to main page'); ?></a>
+          <b>&raquo;</b> <a href="<?php echo $_PCONF['site_url']; ?>index.php"><?php echo __('Go to main page'); ?></a>
         </p>
       </div>
 <?php
-  include('tpl.footer.php');
+  include(dirname(__FILE__) . '/tpl.footer.php');
 ?>
