@@ -20,9 +20,7 @@
         if (obj == 'true') {
           setTimeout('tr_session()', 10000);
           // Oturum bilgileri bir kutuya yazdırılabilir...
-          /*
           window.status = new Date().toString();
-          */
         }
       }
       
@@ -37,5 +35,13 @@
         <div id="logo"><a href="<?php echo $_PCONF['site_url']; ?>index.php"><img src="<?php echo $_PCONF['site_url']; ?>images/logo2.png" alt="Pardil"/></a></div>
       </div>
       <div id="menu">
-        &nbsp;
+        <?php if (isset($_PSESSION['id'])) { ?>
+        <div>
+          <b><?php echo __('Session Information:'); ?></b>
+          <br/>
+          <br/>
+          <b><?php echo __('Username:'); ?></b> <?php echo $_PSESSION['username']; ?>
+          <a href="<?php echo $_PCONF['site_url']; ?>index.php?logout=1" title="<?php echo __('Logout'); ?>">[x]</a>
+        </div>
+        <?php } ?>
       </div>

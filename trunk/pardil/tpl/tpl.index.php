@@ -24,14 +24,6 @@
             }
           ?>
         </ul>
-        <p>
-          <b><?php echo __('Session Information:'); ?></b>
-        </p>
-        <?php
-          echo '<pre>';
-          print_r($_PSESSION);
-          echo '</pre>';
-        ?>
       </div>
 <?php
   include(dirname(__FILE__) . '/tpl.footer.php');
