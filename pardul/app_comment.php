@@ -11,11 +11,14 @@
   Please read the COPYING file.
 */
 
-
-
-$MYSQLSERVER = "localhost";
-$MYSQLUSER = "root";
-$MYSQLPASSWORD = "";
-$DATABASENAME = "pardul";
-$APPL_URL = "http://localhost/pardul";
+$grpbrnd = GetGrpBrnd($modelid);
+$grpid = GroupGrpBrnd($grpbrnd);
+$brandid = BrandGrpBrnd($grpbrnd);
+if(GetRoleName($roleid) != "admin" && !IsManaggedBy($userid, $grpid)) {
+	echo "olmaz.<br>";
+	exit;
+}
+mysql_query("update comment set status='ACTIVE' where id='$commentid'");
+require("statusentries.php");
+exit();
 ?>

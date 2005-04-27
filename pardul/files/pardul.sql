@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Mar 20, 2005 at 10:49 PM
+-- Generation Time: Apr 28, 2005 at 12:12 AM
 -- Server version: 4.0.22
--- PHP Version: 4.3.9
+-- PHP Version: 4.3.10
 -- 
 -- Database: `pardul`
 -- 
@@ -16,13 +16,17 @@
 -- Table structure for table `brand`
 -- 
 
-DROP TABLE IF EXISTS `brand`;
 CREATE TABLE `brand` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(32) NOT NULL default '',
   PRIMARY KEY  (`id`),
-  KEY `name` (`name`)
+  UNIQUE KEY `name_2` (`name`)
 ) TYPE=MyISAM;
+
+-- 
+-- Dumping data for table `brand`
+-- 
+
 
 -- --------------------------------------------------------
 
@@ -30,7 +34,6 @@ CREATE TABLE `brand` (
 -- Table structure for table `comment`
 -- 
 
-DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL auto_increment,
   `mpvs_id` int(11) NOT NULL default '0',
@@ -38,22 +41,15 @@ CREATE TABLE `comment` (
   `emailaddr` varchar(64) NOT NULL default '',
   `rname` varchar(64) NOT NULL default '',
   `entry_date` date NOT NULL default '0000-00-00',
+  `status` enum('ACTIVE','PASSIVE') NOT NULL default 'ACTIVE',
   PRIMARY KEY  (`id`),
   KEY `model_id` (`mpvs_id`)
 ) TYPE=MyISAM;
 
--- --------------------------------------------------------
-
 -- 
--- Table structure for table `function`
+-- Dumping data for table `comment`
 -- 
 
-DROP TABLE IF EXISTS `function`;
-CREATE TABLE `function` (
-  `id` int(11) NOT NULL auto_increment,
-  `name` varchar(16) NOT NULL default '',
-  PRIMARY KEY  (`id`)
-) TYPE=MyISAM;
 
 -- --------------------------------------------------------
 
@@ -61,15 +57,20 @@ CREATE TABLE `function` (
 -- Table structure for table `group`
 -- 
 
-DROP TABLE IF EXISTS `group`;
 CREATE TABLE `group` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(32) NOT NULL default '',
   `managed_by` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_2` (`name`),
   KEY `name` (`name`),
   KEY `managed_by` (`managed_by`)
 ) TYPE=MyISAM;
+
+-- 
+-- Dumping data for table `group`
+-- 
+
 
 -- --------------------------------------------------------
 
@@ -77,7 +78,6 @@ CREATE TABLE `group` (
 -- Table structure for table `group_brand`
 -- 
 
-DROP TABLE IF EXISTS `group_brand`;
 CREATE TABLE `group_brand` (
   `id` int(11) NOT NULL auto_increment,
   `group_id` int(11) NOT NULL default '0',
@@ -87,13 +87,17 @@ CREATE TABLE `group_brand` (
   KEY `brand_id` (`brand_id`)
 ) TYPE=MyISAM;
 
+-- 
+-- Dumping data for table `group_brand`
+-- 
+
+
 -- --------------------------------------------------------
 
 -- 
 -- Table structure for table `model`
 -- 
 
-DROP TABLE IF EXISTS `model`;
 CREATE TABLE `model` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(32) NOT NULL default '',
@@ -104,13 +108,17 @@ CREATE TABLE `model` (
   KEY `groupbrand_id` (`groupbrand_id`)
 ) TYPE=MyISAM;
 
+-- 
+-- Dumping data for table `model`
+-- 
+
+
 -- --------------------------------------------------------
 
 -- 
 -- Table structure for table `model_pv_status`
 -- 
 
-DROP TABLE IF EXISTS `model_pv_status`;
 CREATE TABLE `model_pv_status` (
   `id` int(11) NOT NULL auto_increment,
   `model_id` int(11) NOT NULL default '0',
@@ -122,18 +130,27 @@ CREATE TABLE `model_pv_status` (
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM;
 
+-- 
+-- Dumping data for table `model_pv_status`
+-- 
+
+
 -- --------------------------------------------------------
 
 -- 
 -- Table structure for table `pardus_version`
 -- 
 
-DROP TABLE IF EXISTS `pardus_version`;
 CREATE TABLE `pardus_version` (
   `id` int(11) NOT NULL auto_increment,
   `pv_text` varchar(32) NOT NULL default '',
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM;
+
+-- 
+-- Dumping data for table `pardus_version`
+-- 
+
 
 -- --------------------------------------------------------
 
@@ -141,7 +158,6 @@ CREATE TABLE `pardus_version` (
 -- Table structure for table `role`
 -- 
 
-DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
   `id` int(11) NOT NULL auto_increment,
   `rolename` varchar(32) NOT NULL default '',
@@ -149,19 +165,12 @@ CREATE TABLE `role` (
   UNIQUE KEY `rolename` (`rolename`)
 ) TYPE=MyISAM;
 
--- --------------------------------------------------------
-
 -- 
--- Table structure for table `role_function`
+-- Dumping data for table `role`
 -- 
 
-DROP TABLE IF EXISTS `role_function`;
-CREATE TABLE `role_function` (
-  `id` int(11) NOT NULL auto_increment,
-  `role_id` int(11) NOT NULL default '0',
-  `function_id` int(11) NOT NULL default '0',
-  PRIMARY KEY  (`id`)
-) TYPE=MyISAM;
+INSERT INTO `role` VALUES (1, 'admin');
+INSERT INTO `role` VALUES (2, 'sub_admin');
 
 -- --------------------------------------------------------
 
@@ -169,7 +178,6 @@ CREATE TABLE `role_function` (
 -- Table structure for table `status`
 -- 
 
-DROP TABLE IF EXISTS `status`;
 CREATE TABLE `status` (
   `id` int(11) NOT NULL auto_increment,
   `status_name` varchar(16) NOT NULL default '',
@@ -177,13 +185,17 @@ CREATE TABLE `status` (
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM;
 
+-- 
+-- Dumping data for table `status`
+-- 
+
+
 -- --------------------------------------------------------
 
 -- 
 -- Table structure for table `user`
 -- 
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL auto_increment,
   `username` varchar(32) NOT NULL default '',
@@ -191,5 +203,14 @@ CREATE TABLE `user` (
   `rname` varchar(32) NOT NULL default '',
   `emailaddr` varchar(128) NOT NULL default '',
   `role_id` int(11) NOT NULL default '0',
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `username` (`username`)
 ) TYPE=MyISAM;
+
+-- 
+-- Dumping data for table `user`
+-- 
+
+INSERT INTO `user` VALUES (1, 'pardul', '529bb242552ea639', 'pardul', 'pardul@pardul.pardul', 1);
+INSERT INTO `user` VALUES (2, 'farukesk', '5668a61a05d9c04b', 'Faruk Eskicio&#287;lu', 'farukesk@multi-task.net', 2);
+INSERT INTO `user` VALUES (3, 'meren', '606717496665bcba', 'A.Murat Eren', 'meren@uludag.org.tr', 2);
