@@ -11,7 +11,14 @@
   Please read the COPYING file.
 */
 
-
-
-$APPL_URL = "http://localhost/pardul/admin";
+$grpbrnd = GetGrpBrnd($modelid);
+$grpid = GroupGrpBrnd($grpbrnd);
+$brandid = BrandGrpBrnd($grpbrnd);
+if(GetRoleName($roleid) != "admin" && !IsManaggedBy($userid, $grpid)) {
+	echo "olmaz.<br>";
+	exit;
+}
+mysql_query("update model_pv_status set status='ACTIVE' where id='$statusentryid'");
+require("statusentries.php");
+exit();
 ?>

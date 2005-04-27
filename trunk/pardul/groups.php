@@ -16,10 +16,7 @@
 <table border="1">
 <?
 $roleName = GetRoleName($roleid);
-if($roleName == "admin")
-	$resultGrps = mysql_query("select id, name from pardul.group order by name");
-else if($roleName == "sub_admin")
-	$resultGrps = mysql_query("select id, name from pardul.group where managed_by='$userid' order by name");
+$resultGrps = mysql_query("select id, name from pardul.group order by name");
 ListGroups($resultGrps, $roleName);
 ?>
 <?if($roleName == "admin") {?>

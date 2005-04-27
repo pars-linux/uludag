@@ -1,3 +1,5 @@
+<?
+
 /*
   Copyright (c) 2005, Faruk Eskicioğlu (farukesk at multi-task.net)
 
@@ -8,3 +10,15 @@
 
   Please read the COPYING file.
 */
+
+$grpbrnd = GetGrpBrnd($modelid);
+$grpid = GroupGrpBrnd($grpbrnd);
+$brandid = BrandGrpBrnd($grpbrnd);
+if(GetRoleName($roleid) != "admin" && !IsManaggedBy($userid, $grpid)) {
+	echo "olmaz.<br>";
+	exit;
+}
+mysql_query("update model set status='ACTIVE' where id='$modelid'");
+require("statusentries.php");
+exit();
+?>

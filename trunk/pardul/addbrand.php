@@ -50,43 +50,28 @@ if($formsubmitted) {
 	require("brands.php");
 	exit();
 }
+$addbrand = new HTML_QuickForm('addbrand', 'get', '');
+$addbrand->addElement('hidden', 'action', 'addbrand');
+$addbrand->addElement('hidden', 'formsubmitted', 'true');
+$addbrand->addElement('hidden', 'newbrand', 'false');
+$addbrand->addElement('hidden', 'grpid', $grpid);
+$s =& $addbrand->createElement('select','brandid','Eklemek istediğiniz markaları seçiniz: ');
+$s->setMultiple(true);
+$resultbrands = mysql_query("select id, name from brand order by name");
+while(($rowbrands=mysql_fetch_row($resultbrands))) {
+	if(!IsBrandGroup($rowbrands[0], $grpid))
+		$opts[$rowbrands[0]] = $rowbrands[1];
+}
+$s->loadArray($opts, $selected);
+$addbrand->addElement($s);
+$addbrand->addElement('submit', 'btnSave', 'KAYDET');
+$addbrand->display();
+$addbrand2 = new HTML_QuickForm('addbrand2', 'get', '');
+$addbrand2->addElement('hidden', 'action', 'addbrand');
+$addbrand2->addElement('hidden', 'formsubmitted', 'true');
+$addbrand2->addElement('hidden', 'newbrand', 'true');
+$addbrand2->addElement('hidden', 'grpid', $grpid);
+$addbrand2->addElement('text', 'brandname', 'Eklemek istediğiniz marka listede yok ise marka<br>ismini yazıp "Yeni Marka" butonunu tıklayınız.');
+$addbrand2->addElement('submit', 'btnSave', 'YENİ MARKA');
+$addbrand2->display();
 ?>
-<form action="?" name="addbrand">
-<input type="hidden" name="action" value="addbrand">
-<input type="hidden" name="formsubmitted" value="true">
-<input type="hidden" name="newbrand" value="false">
-<input type="hidden" name="grpid" value="<?echo $grpid;?>">
-<table>
-	<tr>
-		<td>
-			Eklemek istediğiniz markaları seçiniz:
-		</td>
-		<td>
-			<select name="brandid[]" multiple>
-			<?
-			$resultbrands = mysql_query("select id, name from brand order by name");
-			while(($rowbrands=mysql_fetch_row($resultbrands))) {
-				if(!IsBrandGroup($rowbrands[0], $grpid))
-					echo "<option value='$rowbrands[0]'>$rowbrands[1]</option>\n";
-			}
-			?>
-			</select>
-		</td>
-		<td>
-			<input type="submit" value="EKLE">
-		</td>
-	<tr>
-	</tr>
-	<tr>
-		<td>
-		Eklemek istediğiniz marka listede yok ise<br>marka ismini yazıp "Yeni Marka" butonunu tıklayınız.
-		</td>
-		<td>
-			<input type="text" name="brandname">
-		</td>
-		<td>
-			<input type="button" value="Yeni Marka" onClick="if(!document.addbrand.brandname.value.length){alert('Marka adı boş olamaz.');return false;}document.addbrand.newbrand.value=true;document.addbrand.submit();">
-		</td>
-	</tr>
-</table>
-</form>

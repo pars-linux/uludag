@@ -10,12 +10,12 @@
 
   Please read the COPYING file.
 */
-
-
-
-$MYSQLSERVER = "localhost";
-$MYSQLUSER = "root";
-$MYSQLPASSWORD = "";
-$DATABASENAME = "pardul";
-$APPL_URL = "http://localhost/pardul";
+if(GetRoleName($roleid) != "admin" && !IsManaggedBy($userid, $grpid)) {
+	echo "olmaz..";
+	exit;
+}
+mysql_query("delete from comment where id='$commentid'");
+mysql_query("optimize table comment");
+require("statusentries.php");
+exit();
 ?>
