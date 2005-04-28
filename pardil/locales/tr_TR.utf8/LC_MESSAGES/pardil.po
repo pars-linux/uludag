@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-25 15:23+0300\n"
+"POT-Creation-Date: 2005-04-28 16:49+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -330,6 +330,9 @@ msgstr "Sürüm Numarası:"
 msgid "New Release:"
 msgstr "Yeni Sürüm:"
 
+msgid "This is not the latest revision of proposal, so you may not use it to create new revision."
+msgstr "Bu, önerinin son revizyonu değil, bu yüzden yeni bir revizyon yaratırken kullanamazsınız."
+
 msgid "Save this update as a new release."
 msgstr "Bu güncellemeyi yeni bir sürüm olarak kaydet."
 
@@ -347,6 +350,10 @@ msgstr "Oturum Bilgisi:"
 
 msgid "Username:"
 msgstr "Kullanıcı Adı:"
+
+#, fuzzy
+msgid "Edit Profile"
+msgstr "Öneriyi Düzenle"
 
 msgid "Logout"
 msgstr "Çıkış Yap"
