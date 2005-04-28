@@ -44,7 +44,7 @@
           <b><?php echo __('Session Information:'); ?></b>
           <br/>
           <br/>
-          <b><?php echo __('Username:'); ?></b> <?php echo $_PSESSION['username']; ?>
+          <b><?php echo __('Username:'); ?></b> <a href="profile.php" title="<?php echo __('Edit Profile'); ?>"><?php echo $_PSESSION['username']; ?></a>
           <a href="<?php echo $_PCONF['site_url']; ?>index.php?logout=1" title="<?php echo __('Logout'); ?>">[x]</a>
         </div>
         <?php } ?>

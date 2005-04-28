@@ -99,12 +99,20 @@
               <br/>
               <label for=""><?php echo __('Release Number:'); ?></label>
               <br/>
+              <?php if ($dbl_pardil_rev != $dbl_pardil_lastrev) { ?>
+              <input type="text" name="new_releaseno" size="15" style="width: 40px;" value="<?php echo $dbl_pardil_rev; ?>" readonly="readonly"/>
+              <?php } else { ?>
               <input type="text" name="new_releaseno" size="15" style="width: 40px;" value="<?php echo $dbl_pardil_rev; ?>"/>
+              <?php } ?>
               <br/>
               <br/>
               <label for=""><?php echo __('New Release:'); ?></label>
               <br/>
+              <?php if ($dbl_pardil_rev != $dbl_pardil_lastrev) { ?>
+              <?php echo __('This is not the latest revision of proposal, so you may not use it to create new revision.'); ?>
+              <?php } else { ?>
               <input type="checkbox" name="new_newrelease" value="yes"/> <?php echo __('Save this update as a new release.'); ?>
+              <?php } ?>
               <br/>
               <br/>
             <?php } else { ?>

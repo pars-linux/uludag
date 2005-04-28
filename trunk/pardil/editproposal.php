@@ -92,7 +92,7 @@
       $str_content .= sprintf('<section><title>%s</title><body>%s</body></section>', $str_title, $str_body);
     }
 
-    if ($_POST['new_newrelease']) {
+    if ($_POST['new_newrelease'] == 'yes' && $dbl_pardil_rev == $dbl_pardil_lastrev) {
       // Yeni sürüm
 
       // Başlık ve özeti güncelle
@@ -162,6 +162,7 @@
     $obj_page = new template(dirname(__FILE__) . '/tpl/tpl.editproposal.php');
     $obj_page->setvar('int_pardil_id', $int_pardil_id);
     $obj_page->setvar('dbl_pardil_rev', $dbl_pardil_rev);
+    $obj_page->setvar('dbl_pardil_lastrev', $dbl_pardil_lastrev);
     $obj_page->setvar('arr_pardil_fetch', $arr_pardil_fetch);
     $obj_page->setvar('arr_pardil_content', $arr_pardil_content);
     $obj_page->setvar('bln_first', true);
