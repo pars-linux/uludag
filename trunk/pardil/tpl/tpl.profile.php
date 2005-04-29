@@ -14,6 +14,14 @@
               <br/>
               <input type="text" name="profile_email" size="25" value="<?php echo htmlspecialchars($arr_user['email'], ENT_QUOTES); ?>" />
               <br/>
+              <div class="info">
+                <?php
+                  if (getop('addresschange_activation_required') == 'true') {
+                    echo __('If you change your e-mail address, you will need to activate your account again.');
+                  }
+                ?>
+              </div>
+              <br/>
               <br/>
               <label for=""><?php echo __('Password:'); ?></label>
               <br/>
