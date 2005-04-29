@@ -68,18 +68,21 @@
       $arr_errors['new_info'] = __('Release info should be written.');
     }
     // Sürüm Numarası
-    if (strlen($_POST['new_releaseno']) == 0) {
-      $arr_errors['new_releaseno'] = __('Release number should be written.');
-    }
-    elseif (strval(floatval($_POST['new_releaseno'])) != $_POST['new_releaseno']) {
-      $arr_errors['new_releaseno'] = __('Release number is not valid.');
-    }
-    // Yeni Sürüm
-    if ($_POST['new_newrelease'] == 'yes' && floatval($_POST['new_releaseno']) == floatval($_GET['rev'])) {
-      $arr_errors['new_releaseno'] = sprintf(__('New release number should be greater than %.2f'), $_GET['rev']);
-    }
-    elseif ($_POST['new_newrelease'] == 'yes' && floatval($_POST['new_releaseno']) <= $dbl_pardil_lastrev) {
-      $arr_errors['new_releaseno'] = sprintf(__('New release number should be greater than latest revision number (%.2f).'), $dbl_pardil_lastrev);
+    // Sadece son sürüm üzerinde çalışılıyorsa kontrol et.
+    if ($dbl_pardil_rev == $dbl_pardil_lastrev) {
+      if (strlen($_POST['new_releaseno']) == 0) {
+        $arr_errors['new_releaseno'] = __('Release number should be written.');
+      }
+      elseif (strval(floatval($_POST['new_releaseno'])) != $_POST['new_releaseno']) {
+        $arr_errors['new_releaseno'] = __('Release number is not valid.');
+      }
+      // Yeni Sürüm
+      if ($_POST['new_newrelease'] == 'yes' && floatval($_POST['new_releaseno']) == floatval($_GET['rev'])) {
+        $arr_errors['new_releaseno'] = sprintf(__('New release number should be greater than %.2f'), $_GET['rev']);
+      }
+      elseif ($_POST['new_newrelease'] == 'yes' && floatval($_POST['new_releaseno']) <= $dbl_pardil_lastrev) {
+        $arr_errors['new_releaseno'] = sprintf(__('New release number should be greater than latest revision number (%.2f).'), $dbl_pardil_lastrev);
+      }
     }
   }
 
@@ -115,6 +118,7 @@
                           'abstract' => $_POST['new_abstract']
                           );
       proc_main_update($int_pardil_id, $arr_update);
+
       // Sürümü güncelle
       $int_revision_id = database_query_scalar(sprintf('SELECT id FROM pardil_revisions WHERE proposal=%d and version=%f', $int_pardil_id, $dbl_pardil_rev));
       $arr_update = array(
