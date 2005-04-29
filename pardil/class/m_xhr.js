@@ -1,10 +1,11 @@
+
 function xhr_php_process(x_url, x_op, x_arg, x_handler) {
   var req = new XMLHttpRequest();
   if (req) {
     req.onreadystatechange = function() {
       if (req.readyState == 4) {
         if (req.status == 200) {
-          // ok
+          // Tamam
           var el = document.getElementById('debug');
           if (el) {
             el.innerHTML = req.responseText;
@@ -13,7 +14,7 @@ function xhr_php_process(x_url, x_op, x_arg, x_handler) {
           eval(x_handler + "(x_op, req, o)");
         }
         else {
-          // error
+          // Sunucu ile iletişimde sorun olduğunda...
         }
       }
     };

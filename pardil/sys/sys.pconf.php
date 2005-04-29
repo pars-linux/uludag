@@ -17,24 +17,22 @@
   $_PCONF['level_proposal_new_approved'] = 3;
 
   // Veritabanından gelen değerler:
-  $str_sql = 'SELECT opt,value FROM options';
+  $str_sql = 'SELECT opt, value FROM options';
   $res_sql = mysql_query($str_sql);
 
   // Veritabanındaki tüm değerleri bir diziye yükle
   while ($arr_fetch = mysql_fetch_array($res_sql, MYSQL_NUM)) {
-    if ($arr_fetch[0] == 'root') { continue; }
     $_PCONF[$arr_fetch[0]] = $arr_fetch[1];
 
   }
-
+  
+  // site_url'de belirtilen adresin sonund "/" yoksa ekle.
   $_PCONF['site_url'] = (substr($_PCONF['site_url'], -1, 1) == '/') ? $_PCONF['site_url'] : $_PCONF['site_url'] . '/';
 
-  //
+  // İstenen ayarı döndüren fonksiyon
   function getop($str_label) {
-  
     global $_PCONF;
     return $_PCONF[$str_label];
-
   }
 
 ?>
