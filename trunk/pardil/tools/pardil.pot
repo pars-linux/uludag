@@ -8,12 +8,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-29 14:26+0300\n"
+"POT-Creation-Date: 2005-04-29 19:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Account Activation"
@@ -321,6 +321,9 @@ msgstr ""
 msgid "Submit &raquo;"
 msgstr ""
 
+msgid "Session data updated."
+msgstr ""
+
 msgid "Session Information:"
 msgstr ""
 
@@ -480,4 +483,13 @@ msgid "You've successfully registered."
 msgstr ""
 
 msgid "Register &raquo;"
+msgstr ""
+
+msgid "Could not connect to database server."
+msgstr ""
+
+msgid "Could not select database."
+msgstr ""
+
+msgid "Eksik konfigürasyon."
 msgstr ""

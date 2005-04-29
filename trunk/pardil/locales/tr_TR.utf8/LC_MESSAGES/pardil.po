@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-29 14:26+0300\n"
+"POT-Creation-Date: 2005-04-29 19:36+0300\n"
 "PO-Revision-Date: 2005-04-02 18:28+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
 "Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
@@ -349,6 +349,9 @@ msgstr "Formu Sıfırla"
 msgid "Submit &raquo;"
 msgstr "Gönder &raquo;"
 
+msgid "Session data updated."
+msgstr "Oturum bilgisi güncellendi."
+
 msgid "Session Information:"
 msgstr "Oturum Bilgisi:"
 
@@ -517,3 +520,12 @@ msgstr "Başarılı bir şekilde kayıt oldunuz."
 
 msgid "Register &raquo;"
 msgstr "Kayıt &raquo;"
+
+msgid "Could not connect to database server."
+msgstr "Veritabanı sunucusuna bağlanılamadı."
+
+msgid "Could not select database."
+msgstr "Veritabanı seçilemedi."
+
+msgid "Missing configuration."
+msgstr "Eksik konfigürasyon."
