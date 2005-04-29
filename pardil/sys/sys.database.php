@@ -5,7 +5,7 @@
     mysql_select_db(CONF_DATABASE_NAME) or die(__('Could not select database.'));
   }
   else {
-    die(__e('Eksik konfigürasyon.'));
+    die(__e('Missing configuration.'));
   }
 
   /*

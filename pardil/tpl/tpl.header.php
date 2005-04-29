@@ -19,16 +19,17 @@
       }
       function cb_session(op, req, obj) {
         if (obj == 'true') {
-          setTimeout('tr_session()', 10000);
+          setTimeout('tr_session()', 30000);
           // Oturum bilgileri bir kutuya yazdırılabilir...
-          window.status = new Date().toString();
+          window.status = '<?php echo __('Session data updated.'); ?>';
+          setTimeout("window.status = '';", 2500);
         }
       }
       <?php } ?>
       
       function init() {
         <?php if (isset($_PSESSION['id'])) { ?>
-         setTimeout('tr_session()', 10000);
+         setTimeout('tr_session()', 30000);
         <?php } ?>
       }
     </script>
