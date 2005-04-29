@@ -15,10 +15,10 @@
     }
 
     if (strlen($_POST['username']) > 0 && strlen($_POST['password']) > 0) {
-      $mix_user = database_query_scalar(sprintf('SELECT id FROM users WHERE username="%s" AND password="%s"', addslashes($_POST['username']), md5($_POST['password'])));
+      $mix_user = query_user_validate($_POST['username'], $_POST['password']);
       if ($mix_user === false) {
         // Hatalı ise, geçici şifreyle karşılaştır
-        $mix_user = database_query_scalar(sprintf('SELECT users.id FROM temp_passwords INNER JOIN users ON users.id=temp_passwords.user WHERE users.username="%s" AND temp_passwords.password="%s"', addslashes($_POST['username']), addslashes($_POST['password'])));
+        $mix_user = query_user_validate_tmp($_POST['username'], $_POST['password']);
         if ($mix_user !== false) {
           // Bilgiler  doğru
           $str_session = proc_session_init($mix_user);
@@ -31,7 +31,7 @@
         }
       }
       else {
-        $int_activation = database_query_scalar(sprintf('SELECT status FROM activation WHERE user=%d', $mix_user));
+        $int_activation = query_user_validate($mix_user);
         $str_act_required = getop('register_activation_required');
         if ($int_activation == 0 && $str_act_required == 'true') {
           // Aktivasyon gerek.

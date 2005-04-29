@@ -120,7 +120,7 @@
       proc_main_update($int_pardil_id, $arr_update);
 
       // Sürümü güncelle
-      $int_revision_id = database_query_scalar(sprintf('SELECT id FROM pardil_revisions WHERE proposal=%d and version=%f', $int_pardil_id, $dbl_pardil_rev));
+      $int_revision_id = query_proposal_revisionid($int_pardil_id, $dbl_pardil_rev);
       $arr_update = array(
                           'content' => $str_content,
                           'info' => $_POST['new_info']

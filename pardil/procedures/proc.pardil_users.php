@@ -3,7 +3,7 @@
   // Yeni kullanıcı ekle
   function proc_user_new($str_username, $str_password, $str_email, $str_name, $int_level) {
     $str_username = addslashes($str_username); // Metindeki tırnak işaretleri sorun yatarmasın...
-    $str_password = addslashes($str_password);
+    $str_password = md5($str_password);
     $str_email = addslashes($str_email);
     $str_name = addslashes($str_name);
 

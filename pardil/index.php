@@ -6,6 +6,7 @@
   // Erişim seviyesi
   $int_level = getop('level_proposal_edit');
 
+  // Bu liste, Pardil'i test etmek isteyenler için oluşturulan geçici bir liste.
   $str_sql = sprintf('SELECT pardil_main.id, pardil_main.title FROM pardil_main');
   $res_sql = mysql_query($str_sql);
   $arr_list = array();

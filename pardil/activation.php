@@ -10,7 +10,7 @@
 
   $arr_errors = array();
   if (isset($_POST['activation'])) {
-    $mix_status = database_query_scalar(sprintf('SELECT status FROM activation INNER JOIN users ON users.id = activation.user WHERE users.email="%s"', addslashes($_POST['activation_email'])));
+    $mix_status = query_activation_status_e($_POST['activation_email']);
     if (proc_floodcontrol_check('activation', $_SERVER['REMOTE_ADDR']) >= $int_floodcontrol_m) {
       $arr_errors['activation_email'] = sprintf(__('You are allowed to use this form at most %1$d times in %2$d seconds.'), $int_floodcontrol_m, $int_floodcontrol_t);
     }
@@ -38,7 +38,7 @@
   
     // İşlem
 
-    $int_user = database_query_scalar(sprintf('SELECT id FROM users WHERE email="%s"', addslashes($_POST['activation_email'])));
+    $int_user = query_user_e2i($_POST['activation_email']);
     $str_code = proc_activation_renew($int_user);
 
     // E-posta gönderimi

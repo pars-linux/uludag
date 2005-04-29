@@ -9,7 +9,7 @@
     if (!isset($_GET['user']) || strlen($_GET['code']) != 32) {
       $arr_errors['activation_code'] = __('Invalid activation data. Please double check URL.');
     }
-    $mix_status = database_query_scalar(sprintf('SELECT status FROM activation INNER JOIN users ON users.id = activation.user WHERE users.id=%d AND activation.code="%s"', addslashes($_GET['user']), addslashes($_GET['code'])));
+    $mix_status = query_activation_status_uc($_GET['user'], $_GET['code']);
     if ($mix_status === false) {
       $arr_errors['activation_code'] = __('Activation code is not valid.');
     }

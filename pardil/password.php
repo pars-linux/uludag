@@ -22,7 +22,7 @@
       $arr_errors['password_email'] = __('E-mail address should be valid.');
     }
     else {
-      $mix_userno = database_query_scalar(sprintf('SELECT id FROM users WHERE email="%s"', addslashes($_POST['password_email'])));
+      $mix_userno = query_user_e2i($_POST['password_email']);
       if ($mix_userno === false) {
         $arr_errors['password_email'] = __('E-mail address not found in database.');
       }
@@ -34,7 +34,7 @@
     proc_floodcontrol_add('password', $_SERVER['REMOTE_ADDR']);
 
     // İşlem
-    $int_userno = database_query_scalar(sprintf('SELECT id FROM users WHERE email="%s"', addslashes($_POST['password_email'])));
+    $int_userno = query_user_e2i($_POST['password_email']);
     $str_code = proc_password_new($int_userno);
     
     $str_subject = sprintf(__('%s Temporary Password'), getop('site_name'));
