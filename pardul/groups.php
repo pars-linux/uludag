@@ -9,6 +9,11 @@
   (at your option) any later version.
 
   Please read the COPYING file.
+  
+  
+  -- groups.php
+  kök kategorileri listeler.
+  
 */
 
 ?>

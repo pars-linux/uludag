@@ -9,6 +9,14 @@
   (at your option) any later version.
 
   Please read the COPYING file.
+
+
+ -- index.php
+ 
+ uygulamadaki (login formundan gelen istekler dışındaki) bütün istekler buraya
+ yönlendirilir. isteğin neyle ilgili olduğu bilgisi $action değişkeninde tutulur
+ ve "$action.php" dosyası require edilir.
+
 */
 
 
@@ -20,6 +28,11 @@ require_once "HTML/Table.php";
 require_once 'HTML/Menu.php';
 
 $link = MYSQLConnect();
+
+/*
+ set edilsin ya da edilmesin bütün post/get_vars verileri burada alınır. set edilen
+ gerekli veriler "$action.php" tarafından kullanılır.
+*/
 
 $action = $HTTP_GET_VARS[action];
 if(!isset($action))
@@ -53,21 +66,22 @@ $commentid = $HTTP_GET_VARS[commentid];
 
 
 
-if(!isset($action))
-	$action = 'groups';
+if(!isset($action))     // $action set edilmemişse
+	$action = 'groups'; // yapılacak en mantıklı şey kök kategoriyi göstermek
 session_start();
 if($action == "logoff") {
 	session_destroy();
 	header("Location: $APPL_URL");
 }
+
 $userid = $HTTP_SESSION_VARS[userid];
 $roleid = $HTTP_SESSION_VARS[roleid];
 $loggedin = $HTTP_SESSION_VARS[loggedin];
 
-if($loggedin) {
+if($loggedin) { // login olunmuşsa göstermemiz gereken bir menü ve rolName var.
 	$roleName = GetRoleName($roleid);
 	$menuItems = array(0 => array('title' => 'Gruplar', 'url' => '?action=groups'));
-	if(GetRoleName($roleid)=='admin') {
+	if(GetRoleName($roleid)=='admin') { // 
 		$to_push = array('title' => 'Yöneticiler', 'url' => '?action=admins');
 		array_push($menuItems, $to_push);
 		$to_push = array('title' => 'Parametreler', 'url' => '?action=parameters');
@@ -100,7 +114,7 @@ echo "
 	<tr>
 		<td align=\"left\" valign=\"top\" width=\"10%\">
 ";
-if($loggedin)
+if($loggedin) // login olunmuşsa menüyü bas
 	$menu->show();
 else
 	echo "
@@ -116,7 +130,7 @@ echo "
 if(!file_exists("$action.php"))
 	echo "pardul bunun nasıl yapılacağını bilmiyor: $action";
 else
-	require("$action.php");
+	require("$action.php"); // ilgili .php dosyasını require et
 echo "
 	</tr>
 	</table>
