@@ -9,6 +9,11 @@
   (at your option) any later version.
 
   Please read the COPYING file.
+
+
+  -- brands.php
+  $grpid kök kategorisindeki markaları listeler.
+  
 */
 
 ?>

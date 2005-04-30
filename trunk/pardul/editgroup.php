@@ -9,6 +9,12 @@
   (at your option) any later version.
 
   Please read the COPYING file.
+  
+  -- editgroup.php
+  kök kategori düzenleme işlemini yapar. form verileri index.php üzerinden yine
+  buraya yönlendirilir. $formsubmitted set edilmişse insert işlemi yapılır
+  edilmemişse kök kategori düzenleme formu ekrana basılır.
+  
 */
 
 if(GetRoleName($roleid) != "admin") {

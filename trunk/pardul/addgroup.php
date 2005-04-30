@@ -9,6 +9,12 @@
   (at your option) any later version.
 
   Please read the COPYING file.
+  
+  -- addgroup.php
+  kök kategori ekleme işlemini yapar. form verileri index.php üzerinden yine
+  buraya yönlendirilir. $formsubmitted set edilmişse insert işlemi yapılır
+  edilmemişse kök kategori ekleme formu ekrana basılır.
+  
 */
 
 
