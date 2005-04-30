@@ -212,5 +212,3 @@ CREATE TABLE `user` (
 -- 
 
 INSERT INTO `user` VALUES (1, 'pardul', '529bb242552ea639', 'pardul', 'pardul@pardul.pardul', 1);
-INSERT INTO `user` VALUES (2, 'farukesk', '5668a61a05d9c04b', 'Faruk Eskicio&#287;lu', 'farukesk@multi-task.net', 2);
-INSERT INTO `user` VALUES (3, 'meren', '606717496665bcba', 'A.Murat Eren', 'meren@uludag.org.tr', 2);
