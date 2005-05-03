@@ -1,7 +1,7 @@
 <?php
 
   function query_activation_status_uc($int_user, $str_code) {
-    $str_sql = sprintf('SELECT status FROM activation INNER JOIN users ON users.id = activation.user WHERE users.id=%d AND activation.code="%s"', addslashes($int_id), addslashes($str_code));
+    $str_sql = sprintf('SELECT status FROM activation INNER JOIN users ON users.id = activation.user WHERE users.id=%d AND activation.code="%s"', addslashes($int_user), addslashes($str_code));
     return database_query_scalar($str_sql);
   }
   
