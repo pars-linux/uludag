@@ -31,7 +31,7 @@
         }
       }
       else {
-        $int_activation = query_user_validate($mix_user);
+        $int_activation = query_activation_status_i($mix_user);
         $str_act_required = getop('register_activation_required');
         if ($int_activation == 0 && $str_act_required == 'true') {
           // Aktivasyon gerek.
