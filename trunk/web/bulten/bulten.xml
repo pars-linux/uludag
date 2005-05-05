@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Thu, 05 May 2005 14:03:20 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 05 Mayıs 2005
+<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Thu, 05 May 2005 16:06:22 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 05 Mayıs 2005
 </title><link>http://www.uludag.org.tr/bulten/arsiv/05052005.html</link><description>
 &lt;p&gt;
 Merhaba,
@@ -20,9 +20,9 @@ Ayrıca bu ayki CHIP Dergisi[03]'nin içinden bir adet de Pardus Çalışan CD 1
 
 &lt;/p&gt;
 &lt;p&gt;
-01. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
-02. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/pub/pardus/calisan/1.1/&lt;/a&gt;&lt;br&gt;
-03. &lt;a href=""&gt;http://www.chip.com.tr/&lt;/a&gt;
+01. &lt;a href="ftp://ftp.uludag.org.tr/"&gt;ftp://ftp.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
+02. &lt;a href="ftp://ftp.uludag.org.tr/pub/pardus/calisan/1.1/"&gt;ftp://ftp.uludag.org.tr/pub/pardus/calisan/1.1/&lt;/a&gt;&lt;br&gt;
+03. &lt;a href="http://www.chip.com.tr/"&gt;http://www.chip.com.tr/&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p&gt; Kullanıcıların hata bildirimlerinde bulunabilmeleri ve Pardus platformunu
@@ -46,25 +46,25 @@ bazıları şöyle:&lt;br&gt;&lt;br&gt;
 * Firefox-1.0.3
 &lt;/p&gt;
 &lt;p&gt;
-04. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/&lt;/a&gt;&lt;br&gt;
-05. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/&lt;/a&gt;&lt;br&gt;
-06. &lt;a href=""&gt;http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/&lt;/a&gt;
+04. &lt;a href="ftp://ftp.uludag.org.tr/pub/pardus/rootfs/"&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/&lt;/a&gt;&lt;br&gt;
+05. &lt;a href="ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/"&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/&lt;/a&gt;&lt;br&gt;
+06. &lt;a href="http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/"&gt;http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p&gt; Bahadır Kandemir'in geliştirdiği Pardus İyileştirme Listesi (Pardil)[07]
 deneme aşamasına geldi. Pardil'in son durumu [08] adresinden incelenebilir.&lt;/p&gt;
 &lt;p&gt;
-07. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/pardil/&lt;/a&gt;&lt;br&gt;
-08. &lt;a href=""&gt;http://haftalik.net/projects/pardil/&lt;/a&gt;
+07. &lt;a href="http://svn.uludag.org.tr/uludag/trunk/pardil/"&gt;http://svn.uludag.org.tr/uludag/trunk/pardil/&lt;/a&gt;&lt;br&gt;
+08. &lt;a href="http://haftalik.net/projects/pardil/"&gt;http://haftalik.net/projects/pardil/&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p&gt; Ahmet Aygün, ViewCVS[09] isimli uygulamanın yerelleştirme çalışmalarını sona
 erdirdi. Yerelleştirilmiş template dosyalarına [10] adresinden, Türkçe çalışan
 uygulamaya da [11] adresinden ulaşabilirsiniz.&lt;/p&gt;
 &lt;p&gt;
-09. &lt;a href=""&gt;http://viewcvs.sourceforge.net/&lt;/a&gt;&lt;br&gt;
-10. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/viewcvs/&lt;/a&gt;&lt;br&gt;
-11. &lt;a href=""&gt;http://svn.uludag.org.tr/viewcvs/&lt;/a&gt;
+09. &lt;a href="http://viewcvs.sourceforge.net/"&gt;http://viewcvs.sourceforge.net/&lt;/a&gt;&lt;br&gt;
+10. &lt;a href="http://svn.uludag.org.tr/uludag/trunk/viewcvs/"&gt;http://svn.uludag.org.tr/uludag/trunk/viewcvs/&lt;/a&gt;&lt;br&gt;
+11. &lt;a href="http://svn.uludag.org.tr/viewcvs/"&gt;http://svn.uludag.org.tr/viewcvs/&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p&gt; Zemberek-Pardus[12] çalışmalarında hızla yol alınmaya devam ediyor.
@@ -75,10 +75,10 @@ beraber tüm KDE uygulamaları da Türkçe imla denetimi yapabilecek. Ayrıca 0.
 sürüm numaralı kök dosya sisteminde KDE ve OpenOffice.org eklentisi hazır
 geliyor.&lt;/p&gt;
 &lt;p&gt;
-12. &lt;a href=""&gt;http://www.uludag.org.tr/eng/projeler/masaustu/zemberek-pardus/&lt;/a&gt;&lt;br&gt;
-13. &lt;a href=""&gt;http://svn.uludag.org.tr/paketler/trunk/uludag/zemberek-server/&lt;/a&gt; &lt;br&gt;
-14. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/zpspell/&lt;/a&gt;&lt;br&gt;
-15. &lt;a href=""&gt;http://lists.kde.org/?l=kde-cvs&amp;m=111401706321668&amp;w=2&lt;/a&gt;
+12. &lt;a href="http://www.uludag.org.tr/eng/projeler/masaustu/zemberek-pardus/"&gt;http://www.uludag.org.tr/eng/projeler/masaustu/zemberek-pardus/&lt;/a&gt;&lt;br&gt;
+13. &lt;a href="http://svn.uludag.org.tr/paketler/trunk/uludag/zemberek-server/"&gt;http://svn.uludag.org.tr/paketler/trunk/uludag/zemberek-server/&lt;/a&gt; &lt;br&gt;
+14. &lt;a href="http://svn.uludag.org.tr/uludag/trunk/zpspell/"&gt;http://svn.uludag.org.tr/uludag/trunk/zpspell/&lt;/a&gt;&lt;br&gt;
+15. &lt;a href="http://lists.kde.org/?l=kde-cvs&amp;m=111401706321668&amp;w=2"&gt;http://lists.kde.org/?l=kde-cvs&amp;m=111401706321668&amp;w=2&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Pardus Donanım Uyumluluğu Listesi (Pardul) uygulamasının geliştiricisi
@@ -87,9 +87,9 @@ denenme aşamasına geldiğini, arayüz ile ilgili çalışmalarda yardım edebi
 kişilere ihtiyaç olduğunu duyurdu.&lt;/p&gt;
 
 &lt;p&gt;
-16. &lt;a href=""&gt;http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite&lt;/a&gt;&lt;br&gt;
-17. &lt;a href=""&gt;http://liste.uludag.org.tr/kalite/2005-May/000245.html&lt;/a&gt;&lt;br&gt;
-18. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/pardul/&lt;/a&gt;
+16. &lt;a href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite"&gt;http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite&lt;/a&gt;&lt;br&gt;
+17. &lt;a href="http://liste.uludag.org.tr/kalite/2005-May/000245.html"&gt;http://liste.uludag.org.tr/kalite/2005-May/000245.html&lt;/a&gt;&lt;br&gt;
+18. &lt;a href="http://svn.uludag.org.tr/uludag/trunk/pardul/"&gt;http://svn.uludag.org.tr/uludag/trunk/pardul/&lt;/a&gt;
 &lt;/p&gt;
 </description><guid isPermaLink="true">http://www.uludag.org.tr/bulten/arsiv/05052005.html</guid><pubDate>Thu, 5 May 2005 14:00:59 GMT</pubDate></item><item><title>Uludağ Haftalık Bülteni - 21 Mart 2005
 </title><link>http://www.uludag.org.tr/bulten/arsiv/21032005.html</link><description>
