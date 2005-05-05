@@ -1,5 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Mon, 21 Mar 2005 01:19:03 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 21 Mart 2005
+<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Thu, 05 May 2005 14:03:20 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 05 Mayıs 2005
+</title><link>http://www.uludag.org.tr/bulten/arsiv/05052005.html</link><description>
+&lt;p&gt;
+Merhaba,
+&lt;/p&gt;
+
+&lt;p&gt; Uludağ bültenine hoşgeldiniz.&lt;/p&gt;
+
+&lt;p&gt; Pardus'un Çalışan CD'sinin 1.0 sürümünün ardından küçük hata
+düzeltmelerini içeren 1.1 versiyonu FTP sunucumuzdaki[01] yerini[02] aldı.
+Ayrıca bu ayki CHIP Dergisi[03]'nin içinden bir adet de Pardus Çalışan CD 1.1
+çıkıyor. 1.0 ile 1.1 arasındaki farklar şunlar:&lt;br&gt;&lt;br&gt;
+ * X öntanımlı olarak v4l modülü yükleyecek şekilde ayarlandı&lt;br&gt;
+ * Firefox yerimleri Türkçe'ye çevrildi&lt;br&gt;
+ * NTFS modülü parametreleri yeni biçime uygun olarak yazıldı&lt;br&gt;
+ * Gtk-QT-engine öntanımlı yazıtipi boyutu değiştirildi&lt;br&gt;
+ * Mozilla ve türevi tarayıcılar için Java eklentisi sembolik bağı düzeltildi&lt;br&gt;
+ * Gconf ve bazı modem sürücüleri için /etc altındaki sembolik bağlar düzeltildi
+
+&lt;/p&gt;
+&lt;p&gt;
+01. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
+02. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/pub/pardus/calisan/1.1/&lt;/a&gt;&lt;br&gt;
+03. &lt;a href=""&gt;http://www.chip.com.tr/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt; Kullanıcıların hata bildirimlerinde bulunabilmeleri ve Pardus platformunu
+deneyebilmeleri için duyurulan kök dosya sistemleri[04] 0.0.6 sürümüne
+ulaştı[05]. Bu sürüm, kurulumu kolaylaştırması ümidi ile basit bir
+belge[06] ile beraber duyuruldu. Bu sürüm ile beraber gelen yeniliklerden
+bazıları şöyle:&lt;br&gt;&lt;br&gt;
+* Glibc-2.3.4.20041102&lt;br&gt;
+* Gcc-3.3.5.20050130&lt;br&gt;
+* Xorg-X11 6.8.2&lt;br&gt;
+* KDE 3.4&lt;br&gt;
+* Qt-3.3.4&lt;br&gt;
+* OpenOffice-1.9.95 + Zemberek&lt;br&gt;
+* Zemberek Server - KDE Zemberek Entegrasyonu&lt;br&gt;
+* Mplayer-1.0pre7&lt;br&gt;
+* Gimp-2.2.6&lt;br&gt;
+* Imposter-0.3&lt;br&gt;
+* Konversation-0.17&lt;br&gt;
+* K3b-0.11.18&lt;br&gt;
+* Thunderbird-1.0.2&lt;br&gt;
+* Firefox-1.0.3
+&lt;/p&gt;
+&lt;p&gt;
+04. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/&lt;/a&gt;&lt;br&gt;
+05. &lt;a href=""&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/&lt;/a&gt;&lt;br&gt;
+06. &lt;a href=""&gt;http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt; Bahadır Kandemir'in geliştirdiği Pardus İyileştirme Listesi (Pardil)[07]
+deneme aşamasına geldi. Pardil'in son durumu [08] adresinden incelenebilir.&lt;/p&gt;
+&lt;p&gt;
+07. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/pardil/&lt;/a&gt;&lt;br&gt;
+08. &lt;a href=""&gt;http://haftalik.net/projects/pardil/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt; Ahmet Aygün, ViewCVS[09] isimli uygulamanın yerelleştirme çalışmalarını sona
+erdirdi. Yerelleştirilmiş template dosyalarına [10] adresinden, Türkçe çalışan
+uygulamaya da [11] adresinden ulaşabilirsiniz.&lt;/p&gt;
+&lt;p&gt;
+09. &lt;a href=""&gt;http://viewcvs.sourceforge.net/&lt;/a&gt;&lt;br&gt;
+10. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/viewcvs/&lt;/a&gt;&lt;br&gt;
+11. &lt;a href=""&gt;http://svn.uludag.org.tr/viewcvs/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt; Zemberek-Pardus[12] çalışmalarında hızla yol alınmaya devam ediyor.
+zemberek_server[13] ve zspell istemcisi[14] uygulamaları tamamlanırken,
+Zemberek'in KDE yaması KDE deposuna dahil edildi[15]. Bundan sonraki KDE
+sürümleri zemberek_server ve zspell kullanabiliyor olacak; OpenOffice.org ile
+beraber tüm KDE uygulamaları da Türkçe imla denetimi yapabilecek. Ayrıca 0.0.6
+sürüm numaralı kök dosya sisteminde KDE ve OpenOffice.org eklentisi hazır
+geliyor.&lt;/p&gt;
+&lt;p&gt;
+12. &lt;a href=""&gt;http://www.uludag.org.tr/eng/projeler/masaustu/zemberek-pardus/&lt;/a&gt;&lt;br&gt;
+13. &lt;a href=""&gt;http://svn.uludag.org.tr/paketler/trunk/uludag/zemberek-server/&lt;/a&gt; &lt;br&gt;
+14. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/zpspell/&lt;/a&gt;&lt;br&gt;
+15. &lt;a href=""&gt;http://lists.kde.org/?l=kde-cvs&amp;m=111401706321668&amp;w=2&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Pardus Donanım Uyumluluğu Listesi (Pardul) uygulamasının geliştiricisi
+Faruk Eskicioğlu Kalite listesine[16] attığı e-posta[17] ile uygulamanın[18]
+denenme aşamasına geldiğini, arayüz ile ilgili çalışmalarda yardım edebilecek
+kişilere ihtiyaç olduğunu duyurdu.&lt;/p&gt;
+
+&lt;p&gt;
+16. &lt;a href=""&gt;http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite&lt;/a&gt;&lt;br&gt;
+17. &lt;a href=""&gt;http://liste.uludag.org.tr/kalite/2005-May/000245.html&lt;/a&gt;&lt;br&gt;
+18. &lt;a href=""&gt;http://svn.uludag.org.tr/uludag/trunk/pardul/&lt;/a&gt;
+&lt;/p&gt;
+</description><guid isPermaLink="true">http://www.uludag.org.tr/bulten/arsiv/05052005.html</guid><pubDate>Thu, 5 May 2005 14:00:59 GMT</pubDate></item><item><title>Uludağ Haftalık Bülteni - 21 Mart 2005
 </title><link>http://www.uludag.org.tr/bulten/arsiv/21032005.html</link><description>
 &lt;p&gt;
 Merhaba,
