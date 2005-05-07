@@ -121,7 +121,7 @@
     You may not search, or create saved searches, without any search terms.
 
   [% ELSIF error == "bugs_not_changed" %]
-    [% title = BLOCK %][% terms.Bugs %] Değiştirilmedi% END %]
+    [% title = BLOCK %][% terms.Bugs %] Değiştirilmedi [% END %]
     Um, you apparently did not change anything on the selected [% terms.bugs %].
 
   [% ELSIF error == "chart_too_large" %]
