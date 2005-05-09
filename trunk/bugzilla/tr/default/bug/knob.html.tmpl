@@ -49,7 +49,7 @@
       [% IF bug.bug_status != "ASSIGNED" && bug.user.canconfirm %]
         <input type="radio" id="knob-accept" name="knob" value="accept">
         <label for="knob-accept">
-          [% terms.bug %] bildirimini kabul et(
+          [% terms.bug %] bildirimini kabul et (
           [% IF bug.isunconfirmed %] [% terms.bug %] bildirimini onayla, [% END %]hata
           durumunu <b>ATANMIŞ</b> olarak değiştir)
         </label>
