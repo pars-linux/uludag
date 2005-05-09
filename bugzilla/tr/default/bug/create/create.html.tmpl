@@ -148,7 +148,7 @@ function set_assign_to() {
 
   <tr>
   [% IF Param('letsubmitterchoosepriority') %]
-    [% sel = { description => 'Öncelik', name => 'priority' } %]
+    [% sel = { description => 'Öncelik (P1&nbsp;en&nbsp;yüksek)', name => 'priority' } %]
     [% INCLUDE select %]
   [% ELSE %]
     <input type="hidden" name="priority"
