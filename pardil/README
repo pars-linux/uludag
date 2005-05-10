@@ -7,6 +7,7 @@ Kurulum:
 2. "sql/database.sql" dosyasını, 2. adımda belirttiğiniz veritabanına aktarın.
 3. "options" tablosundaki "site_url" değerine, Pardil'in çalışacağı web adresini girin.
 
+
 Notlar:
 =======
 POST, GET, COOKIE'den gelen verilerdeki tırnak işareti, PHP tarafından 
@@ -14,6 +15,13 @@ otomatik olarak \" işaretine çevrilmemektedir. SQL sorgusu hazırlarken
 addslashes() fonksiyonunu kullanmayı unutmayın.
 
 Ve, ekrana birşey yazdırırken, htmlspecialchars() kullanmayı unutmayın...
+
+PHP'nin dışarıdan gelen değişkenkerdeki tırnak (") işaretini otomatik 
+"escape" etmesi, .htaccess dosyasındaki ayarlar sayesinde engellenmektedir. 
+
+Eğer web sunucusu, bu ayarları dikkate almıyorsa, Pardil düzgün 
+çalışmayacaktır. Pardil'in bulunduğu dizin için, Apache konfigürasyon 
+dosyasına "AllowOverride All" ayarı eklenmelidir.
 
 
 Dizinler:

@@ -8,12 +8,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-29 19:36+0300\n"
+"POT-Creation-Date: 2005-05-10 12:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Account Activation"
@@ -100,9 +100,6 @@ msgstr ""
 msgid "Edit Proposal"
 msgstr ""
 
-msgid "Installination"
-msgstr ""
-
 msgid "Username should be written."
 msgstr ""
 
@@ -184,6 +181,12 @@ msgid "Username is in use."
 msgstr ""
 
 msgid "User Registration"
+msgstr ""
+
+msgid ""
+"PHP's Magic Quotes option is set to ON, this is bad. It seems that this web "
+"server does not read .htaccess file. Please contact your server "
+"administrator."
 msgstr ""
 
 msgid "You must provide at least one recipient email address."
@@ -342,37 +345,6 @@ msgstr ""
 msgid "Proposals:"
 msgstr ""
 
-msgid "MySQL Host:"
-msgstr ""
-
-msgid "MySQL User:"
-msgstr ""
-
-msgid "MySQL Password:"
-msgstr ""
-
-msgid "MySQL Database:"
-msgstr ""
-
-msgid "Site Name:"
-msgstr ""
-
-msgid "Site Title:"
-msgstr ""
-
-msgid "Site URL:"
-msgstr ""
-
-#, php-format
-msgid "Recommended: %s"
-msgstr ""
-
-msgid "Admin Password:"
-msgstr ""
-
-msgid "Install &raquo;"
-msgstr ""
-
 msgid "Password:"
 msgstr ""
 
@@ -491,5 +463,5 @@ msgstr ""
 msgid "Could not select database."
 msgstr ""
 
-msgid "Eksik konfigürasyon."
+msgid "Missing configuration."
 msgstr ""
