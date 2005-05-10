@@ -3,6 +3,14 @@
   if (defined('CONF_DATABASE_HOST')) {
     mysql_connect(CONF_DATABASE_HOST, CONF_DATABASE_USER, CONF_DATABASE_PASS) or die(__('Could not connect to database server.'));
     mysql_select_db(CONF_DATABASE_NAME) or die(__('Could not select database.'));
+    
+    $str_mysql_version = '4.1.0';
+    if (version_compare($str_mysql_version, mysql_get_server_info()) == 1) {
+      mysql_query('SET NAMES utf8');
+    }
+    else {
+      //die(sprintf(__('MySQL %s or higher required.'), $str_mysql_version));
+    }
   }
   else {
     die(__e('Missing configuration.'));
