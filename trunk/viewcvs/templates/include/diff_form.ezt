@@ -11,7 +11,6 @@
   <tr>
   <td>&nbsp;</td>
   <td>
-  Aradaki farklar
 [if-any tags]
   <select name="r1">
     <option value="text" selected>Metin alanını kullan</option>
@@ -24,8 +23,7 @@
 [else]
   <input type="text" size="12" name="r1" value="[tr1]">
 [end]
-
-  and
+  ve
 [if-any tags]
   <select name="r2">
     <option value="text" selected>Metin alanını kullan</option>
@@ -38,6 +36,7 @@
 [else]
   <input type="text" size="12" name="r2" value="[tr1]">
 [end]
+arasındaki farkları göster
   </td>
   </tr>
   <tr>
