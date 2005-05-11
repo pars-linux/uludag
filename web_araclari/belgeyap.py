@@ -406,9 +406,11 @@ def retouch_lyx(lyxname):
 
 def fix_hevea():
 	ff = [
-	"\\newcommand{\\textless}{\\@print{&lt;}}",
-	"\\newcommand{\\textgreater}{\\@print{&gt;}}",
-	"\\newcommand{\\textbackslash}{\\@print{&#92;}}" ]
+	"\\newcommand{\\textless}{\\@print{&lt;}}\n",
+	"\\newcommand{\\textgreater}{\\@print{&gt;}}\n",
+	"\\newcommand{\\textbackslash}{\\@print{&#92;}}\n",
+	"\\newcommand{\\textasciitilde}{\\@print{&#126;}\n}"
+	]
 	f = file("duzeltmeler.hva", "w")
 	f.writelines(ff)
 	f.close()
