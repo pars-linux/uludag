@@ -49,8 +49,7 @@
 
 <H1 ALIGN=center>Yeni Geliştirici Kılavuzu</H1>
 
-<H3 ALIGN=center>Barış Metin baris@uludag.org.tr, A. Murat
-Eren meren@uludag.org.tr</H3>
+<H3 ALIGN=center>Barış Metin &lt;baris@uludag.org.tr&gt;, A. Murat Eren &lt;meren@uludag.org.tr&gt;</H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belge yeni bir geliştiricinin Uludağ projesi geliştirme sürecine
 dahil olmak için bilmesi ve yapması gerekenleri tarif etmektedir.<BR>
@@ -409,7 +408,7 @@ ekleyebilirsiniz.<BR>
 
 Bunun için aşağıdaki komutu kullanabilirsiniz.
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-perl&nbsp;-e&nbsp;"print&nbsp;crypt('parolanız','xy'),"n";"</TT><SUP><A NAME="text2" HREF="#note2"><TT>2</TT></A></SUP><TT>
+perl&nbsp;-e&nbsp;"print&nbsp;crypt('parolanız','xy'),&#92;"&#92;n&#92;";"</TT><SUP><A NAME="text2" HREF="#note2"><TT>2</TT></A></SUP><TT>
 </TT></DL></DIV>
 Komut yalnızca parolanızı oluşturacaktır. E-postanızda kullanmak istediğiniz
 kullanıcı adını da belirtmeniz gerekir.<BR>
@@ -482,7 +481,8 @@ Sisteminizde subversion olup olmadığını en hızlı şekilde ``<B>svn
 --version</B>'' komutunun çıktısına bakarak öğrenebilirsiniz. Şuna benzer
 bir şeyler görmeniz iyiye işarettir:
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-evreniz@jaco:$&nbsp;svn&nbsp;--version<BR>
+evreniz@jaco:&#126;
+$&nbsp;svn&nbsp;--version<BR>
 <BR>
 svn,&nbsp;version&nbsp;1.0.3&nbsp;(r9775)<BR>
 <BR>
@@ -510,7 +510,8 @@ The&nbsp;following&nbsp;repository&nbsp;access&nbsp;(RA)&nbsp;modules&nbsp;are&n
 <BR>
 &nbsp;&nbsp;-&nbsp;handles&nbsp;'svn'&nbsp;schema<BR>
 <BR>
-evreniz@jaco:$&nbsp;
+evreniz@jaco:&#126;
+$&nbsp;
 </TT></DL></DIV>
 Eğer yoksa, <A HREF="http://subversion.tigris.org/project_packages.html"><TT>http://subversion.tigris.org/project_packages.html</TT></A>
 adresinden dağıtımınız ya da işletim sisteminiz için hazırlanmış olan
@@ -623,6 +624,7 @@ taktirde bulunduğunuz dizinin içindeki dosyalar ve dizinlerin tamamı
 güncellenir. Ayrıcı komutun sonuna güncellenmesini istediğiniz dizinin
 ya da tek dosyanın adresini ekleyebilirsiniz.
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;
 /work/uludag/[...]/uludag/trunk&nbsp;$&nbsp;svn&nbsp;update<BR>
 <BR>
 U&nbsp;tasma/modules/tasmanet/device.cpp&nbsp;<BR>
@@ -635,6 +637,7 @@ U&nbsp;tasma/modules/tasmanet/devicesettings.h&nbsp;<BR>
 <BR>
 Updated&nbsp;to&nbsp;revision&nbsp;158.<BR>
 <BR>
+&#126;
 /work/uludag/[...]/uludag/trunk&nbsp;$
 </TT></DL></DIV>
 <!--TOC subsection Dosyaların yanlarındaki işaretler ne anlama geliyor?-->
@@ -667,6 +670,7 @@ komutlar gibi bu da sonuna ekleyeceğiniz bir URI ile çalışabilir.
 Aşağıda deponun son güncel kopyasına bir dosya eklendiği, bir dosya
 silindiği, iki dosyanın da değiştirilmiş olduğu görünüyor:
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
 <BR>
 A&nbsp;COMARd/csl/degisiklik<BR>
@@ -677,15 +681,18 @@ M&nbsp;COMARd/COMARValue.py<BR>
 <BR>
 M&nbsp;comar-call/rpc.c<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status&nbsp;COMARd/csl/COMARValue.py<BR>
 <BR>
 M&nbsp;COMARd/COMARValue.py<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$
 </TT></DL></DIV>
 Ayrıca değiştirdiğiniz dosyalarda neyi değiştirdiğinizi de ``<B>svn
 diff</B>'' komutu ile öğrenebilirsiniz:
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;diff&nbsp;comar-call/rpc.c<BR>
 <BR>
 Index:&nbsp;comar-call/rpc.c<BR>
@@ -710,8 +717,9 @@ Index:&nbsp;comar-call/rpc.c<BR>
 <BR>
 &nbsp;&nbsp;}&nbsp;<BR>
 <BR>
-&nbsp;&nbsp;printf("RECV[%s]nn",&nbsp;buf);&nbsp;<BR>
+&nbsp;&nbsp;printf("RECV[%s]&#92;n&#92;n",&nbsp;buf);&nbsp;<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;
 </TT></DL></DIV>
 <!--TOC subsection Yeni bir dosya ekledim fakat yanında ``?'' var...-->
@@ -733,22 +741,28 @@ diğer dosyaların depoya gitmeyeceğini bilirsiniz. ``svn add''
 komutu ile <EM>eklenmesini istediğiniz</EM> dosyaları depoya eklersiniz.
 ``<B>svn del</B>'' ayrıca açıklanmayacaktır.
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;status<BR>
 <BR>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;touch&nbsp;yenibetik.csl<BR>
 <BR>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;status<BR>
 <BR>
 ?&nbsp;yenibetik.csl<BR>
 <BR>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;add&nbsp;yenibetik.csl<BR>
 <BR>
 A&nbsp;yenibetik.csl<BR>
 <BR>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;status&nbsp;<BR>
 <BR>
 A&nbsp;yenibetik.csl<BR>
 <BR>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;
 </TT></DL></DIV>
 <!--TOC subsection Değiştirdiğim dosyalar eski hallerine dönsünler istiyorum.-->
@@ -758,6 +772,7 @@ A&nbsp;yenibetik.csl<BR>
 Yaptığınız değişiklikleri istediğiniz an ``<B>svn revert</B>''
 komutu yardımı ile son kopyadaki orjinaline döndürebilirsiniz:
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
 <BR>
 A&nbsp;COMARd/csl/degisiklik<BR>
@@ -768,10 +783,12 @@ M&nbsp;COMARd/COMARValue.py<BR>
 <BR>
 M&nbsp;comar-call/rpc.c&nbsp;<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;revert&nbsp;comar-call/rpc.c<BR>
 <BR>
 Reverted&nbsp;'comar-call/rpc.c'<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
 <BR>
 A&nbsp;COMARd/csl/degisiklik<BR>
@@ -780,11 +797,13 @@ D&nbsp;COMARd/csl/loader.py<BR>
 <BR>
 M&nbsp;COMARd/COMARValue.py<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$
 </TT></DL></DIV>
 Ayrıca dosyaların tümünü özyinelemeli şekilde eski hallerine döndürmek
 de mümkündür...
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;revert&nbsp;.&nbsp;-R&nbsp;<BR>
 <BR>
 Reverted&nbsp;'COMARd/csl/degisiklik'<BR>
@@ -793,8 +812,10 @@ Reverted&nbsp;'COMARd/csl/loader.py'&nbsp;<BR>
 <BR>
 Reverted&nbsp;'COMARd/COMARValue.py'<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
 <BR>
+&#126;
 /work/[...]/trunk/COMAR/comar&nbsp;$
 </TT></DL></DIV>
 <!--TOC subsection Değiştirdiğim dosyaları göndermek istiyorum?-->
@@ -812,10 +833,13 @@ içerisinde yazdığı bir dosyayı favori metin editörünüzde açar. Favori
 metin editörü olarak açtığı metin editörünü değiştirmek için svn'in
 kullandığı SVN_EDITOR isimli ortam değişkeninden faydalanabilirsiniz:
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;SVN_EDITOR="vi"&nbsp;svn&nbsp;commit&nbsp;<BR>
 <BR>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;SVN_EDITOR="mcedit"&nbsp;svn&nbsp;commit<BR>
 <BR>
+&#126;
 /work/[...]/COMARd/csl/sample&nbsp;$&nbsp;SVN_EDITOR="kwrite"&nbsp;svn&nbsp;commit<BR>
 <BR>
 .<BR>
@@ -1109,8 +1133,7 @@ kaynak gösterilmek koşulu ile kullanılması serbesttir.
 <em><br>
 <strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
 Bilgi ve önerileriniz için
-<a href="mailto:bilgi%20at%20uludag.org.tr">bilgi
-at uludag.org.tr</a>
+<a href="mailto:bilgi%20at%20uludag.org.tr">bilgi at uludag.org.tr</a>
 </p>
 <br>
 
