@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="<?php echo $_PCONF['site_url']; ?>style.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo $_PCONF['site_url']; ?>proposal.css" type="text/css" />
     <link rel="icon" type="image/png" href="<?php echo $_PCONF['site_url']; ?>images/favicon.png"/>
-    <script type="text/javascript" src="<?php echo $_PCONF['site_url']; ?>class/m_xhr.js"></script>
+    <script type="text/javascript" src="<?php echo $_PCONF['site_url']; ?>class/json.js"></script>
+    <script type="text/javascript" src="<?php echo $_PCONF['site_url']; ?>class/xhr.js"></script>
     <script type="text/javascript">
       <?php if (isset($_PSESSION['id'])) { ?>
       function tr_session() {
@@ -15,7 +16,7 @@
         // Bir sayfada, uzun süre hareketsiz kalındığında oturumun 
         // kapanmasını engellemek için kulanılıyor.
         // TODO: Fare & klavye hareketlerine duyarlı hale getirilecek...
-        xhr_php_process('<?php echo $_PCONF['site_url']; ?>xhr/xhr.session.php', 'session', '', 'cb_session');
+        xhr_process('<?php echo $_PCONF['site_url']; ?>xhr/xhr.session.php', 'session', '', 'cb_session');
       }
       function cb_session(op, req, obj) {
         if (obj == 'true') {

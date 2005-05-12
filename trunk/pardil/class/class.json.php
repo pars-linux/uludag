@@ -136,12 +136,12 @@
                     return sprintf('"%s"', $ascii);
                     
                 case 'array':
-                    // As per JSON spec if any array key is not an integer we must treat the the whole array as an object. 
-            		// We also try to catch a sparsely populated associative array with numeric keys here because some JS 
-            		// engines will create an array with empty indexes up to max_index which can cause memory issues 
-            		// and because the keys, which may be relevant, will be remapped otherwise.
-            		//
-                    // As per the ECMA and JSON specification an object may have any string as a property. Unfortunately due to a 
+                    // As per JSON spec if any array key is not an integer we must treat the the whole array as an object.
+                    // We also try to catch a sparsely populated associative array with numeric keys here because some JS
+                    // engines will create an array with empty indexes up to max_index which can cause memory issues
+                    // and because the keys, which may be relevant, will be remapped otherwise.
+                    //
+                    // As per the ECMA and JSON specification an object may have any string as a property. Unfortunately due to a
                     // hole in the ECMA specification if the key is a ECMA reserved word or starts with a digit the parameter is only
                     // accessible using ECMAScript's bracket notation.  
                     
