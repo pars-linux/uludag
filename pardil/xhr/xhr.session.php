@@ -1,11 +1,9 @@
 <?php
   
-  require(dirname(__FILE__) . '/../sys.common.php');
   require(dirname(__FILE__) . '/../class/class.xmlhttprequest.php');
 
   function session($str_o) {
-    // Bu dosya, oturum yönetimi kodunu içeriyor,
-    // başka birşey yapmaya gerek yok :)
+    require(dirname(__FILE__) . '/../sys.common.php');
     return "true";
   }
 

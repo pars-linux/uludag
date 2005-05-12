@@ -42,8 +42,8 @@
     // XMLHTTPRequest sorgusunu saptayıp gerekli işlemleri yapan method
     public function handle_request() {
       if (isset($_POST['op']) && in_array($_POST['op'], $this->arr_functions_php)) {
-        $obj_json = new JSON();
-        $str_obj = call_user_func_array($_POST['op'], $_POST['arg']);
+        $obj_json = new JSON(JSON_LOOSE_TYPE);
+        $str_obj = call_user_func($_POST['op'], $obj_json->decode($_POST['arg']));
         echo $obj_json->encode($str_obj);
         exit;
       }
