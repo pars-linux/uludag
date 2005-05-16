@@ -33,7 +33,6 @@
 
 #include "dictreader.h"
 #include "gozluksettings.h"
-#include "newtermdialog.h"
 #include "editdialog.h"
 #include "anapencere.h"
 
@@ -48,7 +47,7 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 	QPopupMenu *menuSecenekler = new QPopupMenu(this);
 	menuSecenekler->insertItem(QString::fromUtf8("Ye&ni Kelime"),this, SLOT( yeniKelime() ),CTRL+Key_N);
 	menuSecenekler->insertItem(QString::fromUtf8("S&eçiliyi Düzenle"), this, SLOT( kelimeDuzenle() ), CTRL+Key_E);
-	menuSecenekler->insertItem(QString::fromUtf8("Seçiliyi Sil"), this, SLOT( seciliSil() ), CTRL+Key_E);
+	menuSecenekler->insertItem(QString::fromUtf8("Seçiliyi Sil"), this, SLOT( seciliSil() ), CTRL+Key_D);
 	menuSecenekler->insertItem(QString::fromUtf8("Dışarı Aktar"), this, SLOT( exportToXml() ), CTRL+Key_S);
 	menuSecenekler->insertSeparator();
 	menuSecenekler->insertItem(QString::fromUtf8("Ya&pılandır"), this, SLOT( settings() ), CTRL+Key_P);
@@ -121,26 +120,42 @@ void anaPencere::popupSag()
 
 void anaPencere::seciliSil()
 {
-	// nothing... yet :P
+	// önce bi uyarı göstermeli :)
+	if (!QMessageBox::question(this, QString::fromUtf8("Uyarı! Silmek üzeresiniz..."),
+			QString::fromUtf8("Bu kelimeyi silmek istediğinizden emin misiniz?"),
+			QString::fromUtf8("&Evet"),
+			QString::fromUtf8("&Hayır"),
+			QString::null,0,1) )
+	{
+		//  eh, sil dedi...
+		entries.remove(currentEntry);
+		// tazeleme
+		lviewListe->clear();
+		searchSource( lineSatir->text() );
+	}
+			
+	
 }
 
 void anaPencere::yeniKelime()
 {
-	newTerm a(this);
+	TransDef *yenisi = new TransDef();
+	editTerm a(this,"yenisi",yenisi);
 	if (a.exec() == QDialog::Accepted)
 	{
-		TransDef *yenisi = new TransDef();
 		for (QStringList::Iterator it = a.sList->begin(); it != a.sList->end(); ++it)
 			yenisi->addSource( *it );
 		
 		for (QStringList::Iterator it = a.tList->begin(); it != a.tList->end(); ++it)
 			yenisi->addTranslation( *it );
 		
-		for (QStringList::Iterator it = a.dList->begin(); it != a.dList->end(); ++it)
-			yenisi->setDefinition( *it );
+		// Fixed
+		QStringList::Iterator it = a.dList->begin();
+		yenisi->setDefinition( *it );
 			
 		entries.append( yenisi );
 	}
+	else delete yenisi; // kullanmadiysan sil... sonra bi daha istersin :)
 }
 
 void anaPencere::exportToXml()
@@ -160,8 +175,21 @@ void anaPencere::exportToXml()
 
 void anaPencere::kelimeDuzenle()
 {
-	editTerm e(this);
-	e.exec();
+	editTerm e(this, "myEditDialog:P", currentEntry);
+	if (e.exec() == QDialog::Accepted)
+	{
+		// not a lot to do ;)
+		currentEntry->temizle(); // lists are cleared
+		for (QStringList::Iterator it = e.sList->begin(); it != e.sList->end(); ++it)
+			currentEntry->addSource( *it );
+		
+		for (QStringList::Iterator it = e.tList->begin(); it != e.tList->end(); ++it)
+			currentEntry->addTranslation( *it );
+		
+		// Fixed
+		QStringList::Iterator it = e.dList->begin();
+		currentEntry->setDefinition( *it );
+	}
 }
 
 void anaPencere::settings()

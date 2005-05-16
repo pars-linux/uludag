@@ -39,6 +39,7 @@
 class TransDef {
 
 public:
+
     void addSource( const QString s ) {
 	sources.append( s);
     }
@@ -48,11 +49,18 @@ public:
     void setDefinition( const QString d ) {
 	definition = d;
     }
-
     QStringList getSources() const { return sources; }
     QStringList getTranslations() const { return translations; }
     QString getDefinition() const { return definition; }
-
+    
+    // güncelleme için:
+    
+    void temizle()
+    {
+    	sources.clear();
+    	translations.clear();
+    }
+	
 private:
     QStringList sources; // sources string list
     QStringList translations; // translations list

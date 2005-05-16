@@ -22,11 +22,12 @@
 #include <qpushbutton.h>
 #include <qpopupmenu.h>
 #include <qcursor.h>
+#include <qstringlist.h>
 #include "editdialog.h"
 
 
-editTerm::editTerm(QWidget *parent, const char *name):
-					QDialog(parent,name)
+editTerm::editTerm(QWidget *parent, const char *name, TransDef *entry)
+					: QDialog(parent,name)
 {
 	this->setCaption(QString::fromUtf8("Kelime Düzenleme"));
 	
@@ -36,13 +37,24 @@ editTerm::editTerm(QWidget *parent, const char *name):
 	ySource = new QLineEdit(boxSource);
 	lSource = new QListBox(boxSource);
 	
+	QStringList a = entry->getSources();
+	for (QStringList::Iterator it=a.begin(); it!=a.end(); ++it)
+		lSource->insertItem(*it);
+	
 	boxTrans = new QVGroupBox(QString::fromUtf8("Karşılıklar Listesi"), this);
 	yTrans = new QLineEdit(boxTrans);
 	lTrans = new QListBox(boxTrans);
 	
+	a = entry->getTranslations();
+	for (QStringList::Iterator it=a.begin(); it!=a.end(); ++it)
+		lTrans->insertItem(*it);
+	
 	boxDef = new QVGroupBox(QString::fromUtf8("Tanımlar Listesi"), this);
 	yDef = new QLineEdit(boxDef);
 	lDef = new QListBox(boxDef);
+	
+	if (entry->getDefinition() != NULL)
+		lDef->insertItem(entry->getDefinition());
 	
 	ana->addWidget(boxSource);
 	ana->addWidget(boxTrans);
@@ -101,7 +113,7 @@ void editTerm::listeKaydet()
 		tList->append(lTrans->text(i));
 	
 	for (uint i=0;i<lDef->count();i++)
-		dList->append(lDef->text(i));
+		dList->append(lDef->text(i)); 
 }
 
 void editTerm::sPopup()

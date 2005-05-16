@@ -1,0 +1,12 @@
+16 Mayıs 2005
+Son gelişmeler
+- Düzenleme, silme olayları tamamlandı
+- Düzenleme ve yeni kelime ekleme pencereleri birleştirildi
+- Eski newtermdialog.* ve gozlukwin.* dosyaları kaldırıldı
+- Bir kaç bugfix :)
+
+15 Mayıs 2005
+Eklenenler
+- yeni kelime ekleme olayı
+- disariya export etme olayı
+- arayüz düzenlendi
