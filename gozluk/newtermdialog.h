@@ -17,6 +17,7 @@
 
 */
 
+
 #ifndef SOZLUKTERMDIALOG_K_H
 #define SOZLUKTERMDIALOG_K_H
 
