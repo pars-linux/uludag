@@ -27,12 +27,13 @@
 #include <qstringlist.h>
 #include <qpushbutton.h>
 #include <qpopupmenu.h>
+#include "anapencere.h"
 
 class editTerm:public QDialog
 {
 	Q_OBJECT
 	public:
-		editTerm(QWidget *parent = 0, const char *name = 0);
+		editTerm(QWidget *parent = 0, const char *name = 0, TransDef *entry=0);
 		QStringList *sList, *tList, *dList;
 	private:
 		QLineEdit *ySource, *yTrans, *yDef;
