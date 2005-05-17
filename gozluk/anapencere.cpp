@@ -45,20 +45,28 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 	// menü
 	
 	QPopupMenu *menuSecenekler = new QPopupMenu(this);
-	menuSecenekler->insertItem(QString::fromUtf8("Ye&ni Kelime"),this, SLOT( yeniKelime() ),CTRL+Key_N);
+	QPopupMenu *menuDosya = new QPopupMenu(this);
+	
+	menuDosya->insertItem(QString::fromUtf8("Yeni Sözlük"), this, SLOT( yeniSozluk() ), CTRL+Key_N);
+	menuDosya->insertItem(QString::fromUtf8("Sözlük Dosyası Aç"), this, SLOT( sozlukAc() ), CTRL+Key_O);
+	menuDosya->insertItem(QString::fromUtf8("Dışarı Aktar"), this, SLOT( exportToXml() ), CTRL+Key_S);
+	menuDosya->insertSeparator();
+	menuDosya->insertItem(QString::fromUtf8("Ya&pılandır"), this, SLOT( settings() ), CTRL+Key_P);
+	menuDosya->insertSeparator();
+	menuDosya->insertItem(QString::fromUtf8("Kapat"), this, SLOT( close() ), CTRL+Key_Q);
+	
+	menuSecenekler->insertItem(QString::fromUtf8("Ye&ni Kelime"),this, SLOT( yeniKelime() ),CTRL+SHIFT+Key_N);
 	menuSecenekler->insertItem(QString::fromUtf8("S&eçiliyi Düzenle"), this, SLOT( kelimeDuzenle() ), CTRL+Key_E);
 	menuSecenekler->insertItem(QString::fromUtf8("Seçiliyi Sil"), this, SLOT( seciliSil() ), CTRL+Key_D);
-	menuSecenekler->insertItem(QString::fromUtf8("Dışarı Aktar"), this, SLOT( exportToXml() ), CTRL+Key_S);
-	menuSecenekler->insertSeparator();
-	menuSecenekler->insertItem(QString::fromUtf8("Ya&pılandır"), this, SLOT( settings() ), CTRL+Key_P);
-	menuSecenekler->insertSeparator();
-	menuSecenekler->insertItem(QString::fromUtf8("Kapat"), this, SLOT( close() ), CTRL+Key_Q);
+	
+	
 	
 	QPopupMenu *menuAbout = new QPopupMenu(this);
 	menuAbout->insertItem(QString::fromUtf8("Gözlük Hakkında"), this, SLOT( about() ), Key_F1);
 	
 	QMenuBar *menu = new QMenuBar(this);
-	menu->insertItem(QString::fromUtf8("&Seçenekler"), menuSecenekler);
+	menu->insertItem(QString::fromUtf8("&Dosya"), menuDosya);
+	menu->insertItem(QString::fromUtf8("Düze&nle"), menuSecenekler);
 	menu->insertItem(QString::fromUtf8("&Hakkında"), menuAbout);
 
 	// liste popup menüsü
@@ -107,13 +115,61 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 	connect(lineSatir, SIGNAL( returnPressed() ), this, SLOT( showWord() ) );
 	connect(lviewListe, SIGNAL( selectionChanged( QListViewItem * ) ), this, SLOT( showFromList( QListViewItem* ) ) );
 	connect(radioEng, SIGNAL( toggled( bool ) ), this, SLOT( langChanged( bool ) ) );
-	connect( lviewListe, SIGNAL( rightButtonClicked(QListViewItem *, const QPoint & , int)), this, SLOT( popupSag() ));
+	connect(lviewListe, SIGNAL( rightButtonClicked(QListViewItem *, const QPoint & , int)), this, SLOT( popupSag() ));
 	
 	currentEntry = new TransDef();
-	readDict();
+	readDict(QString::null);
+	
+	edited = FALSE;
 	
 	this->resize(550,400);
 		
+}
+
+
+void anaPencere::yeniSozluk()
+{
+	// eger su anki sözlük edit edilmişse, kaydetmesi için bir şans ver:)
+	while (getEdited())
+	{
+		if (!QMessageBox::warning(this, QString::fromUtf8("Değişiklikler kaydedilmedi!"),
+				QString::fromUtf8("Bu sözlük dosyasındaki değişiklikleri kaydetmek ister misiniz?"),
+				QString::fromUtf8("&Evet"),
+				QString::fromUtf8("&Hayır"),
+				QString::null,0,1))
+		{
+			exportToXml();
+		}
+		else setEdited( FALSE );
+	}
+	entries.clear();
+	lviewListe->clear();
+	statusBar()->message(QString::fromUtf8("Yeni sözlük açıldı..."),3000);
+}
+void anaPencere::sozlukAc()
+{
+	while (getEdited())
+	{
+		if (!QMessageBox::warning(this, QString::fromUtf8("Değişiklikler kaydedilmedi!"),
+				QString::fromUtf8("Bu sözlük dosyasındaki değişiklikleri kaydetmek ister misiniz?"),
+				QString::fromUtf8("&Evet"),
+				QString::fromUtf8("&Hayır"),
+				QString::null,0,1))
+		{
+			exportToXml();
+		}
+		else setEdited( FALSE );
+	}
+	QFileDialog *dosyaAc = new QFileDialog(this,"ac",TRUE);
+	dosyaAc->setCaption(QString::fromUtf8("Sözlük dosyasını seçin"));
+	if (dosyaAc->exec() == QDialog::Accepted)
+	{
+		entries.clear();
+		readDict(dosyaAc->selectedFile());
+		searchEnglish = radioEng->isChecked();
+		lviewListe->clear();
+		searchSource( lineSatir->text() );
+	}
 }
 
 void anaPencere::popupSag() 
@@ -136,9 +192,8 @@ void anaPencere::seciliSil()
 		// tazeleme
 		lviewListe->clear();
 		searchSource( lineSatir->text() );
+		setEdited( TRUE );
 	}
-			
-	
 }
 
 void anaPencere::yeniKelime()
@@ -160,6 +215,8 @@ void anaPencere::yeniKelime()
 		statusBar()->message(QString::fromUtf8("Yeni kelime eklendi"),3000);
 		lviewListe->clear();
 		searchSource( lineSatir->text() );
+		// edited
+		setEdited( TRUE );
 	}
 	else delete yenisi; // kullanmadiysan sil... sonra bi daha istersin :)
 }
@@ -175,6 +232,8 @@ void anaPencere::exportToXml()
 	{
 		fileName = kayitAni->selectedFile();
 		writeDict(fileName);
+		// edited->saved
+		setEdited( FALSE );
 	}
 	
 }
@@ -198,8 +257,12 @@ void anaPencere::kelimeDuzenle()
 		
 		lviewListe->clear();
 		searchSource( lineSatir->text() );
+		showWord();
 		
 		statusBar()->message(QString::fromUtf8("Kelime düzenlendi..."),3000);
+		
+		// edited
+		setEdited( TRUE );
 	}
 }
 
@@ -207,22 +270,24 @@ void anaPencere::settings()
 {
 	 GozlukSettings gs(this); // parenthood :D
     if ( gs.exec() == QDialog::Accepted )
-        readDict();
+        readDict(QString::null);
 }
 
 void anaPencere::about()
 {
 	QMessageBox::information(this,QString::fromUtf8("Gözlük Hakkında"),
-	QString::fromUtf8("Uludağ/Pardus, Sözlük Programı\nMayıs, 2005"));
+	QString::fromUtf8("Uludağ/Pardus, Gözlük Programı\nMayıs, 2005"));
 }
 
 
-void anaPencere::readDict()
+void anaPencere::readDict(QString sozlukDosyasi)
 {
 	QSettings settings;
+	QString dictFile;
 	settings.setPath("Uludag", "Gozluk");
-	QString dictFile = settings.readEntry( "sozluk/xml", "none");
-	
+	if (sozlukDosyasi == QString::null)
+		dictFile = settings.readEntry( "sozluk/xml", "none");
+	else dictFile = sozlukDosyasi;
 	DictReader dictreader( this );
 	QFile file( dictFile );
 	
@@ -291,7 +356,8 @@ void anaPencere::writeDict( const QString& dictFile )
 
         str << "\n</term>\n";
     }
-
+	 // son hamle
+	 str << QString::fromUtf8("</ud_sözlük>");
     file.close();
 }
 
