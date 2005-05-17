@@ -17,10 +17,10 @@ bool DictReader::startDocument ()
     return true;
 }
 
-bool DictReader::startElement ( const QString &nsUri,
-                                const QString &localName,
-                                const QString &qName,
-                                const QXmlAttributes &attrs )
+bool DictReader::startElement ( const QString& /* nsUri */,
+                                const QString& /* localName */,
+                                const QString& qName,
+                                const QXmlAttributes& /* attrs */ )
 {
     if ( inUdSozluk ) {
         if ( qName == "term" )
@@ -52,9 +52,9 @@ bool DictReader::characters ( const QString &ch )
     return true;
 }
 
-bool DictReader::endElement ( const QString &nsUri,
-                              const QString &localName,
-                              const QString &qName )
+bool DictReader::endElement ( const QString& /* nsUri */,
+                              const QString& /* localName */,
+                              const QString& qName )
 {
     if ( qName == "term" ) {
         emit signalEndTerm();
