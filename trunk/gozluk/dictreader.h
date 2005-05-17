@@ -23,14 +23,14 @@ public:
 	: QObject( parent ) {};
     
     bool startDocument();
-    bool startElement (const QString &nsUri,
-		       const QString &localName,
-		       const QString &qName,
-		       const QXmlAttributes &attrs);
-    bool characters (const QString &ch);
-    bool endElement (const QString &nsUri,
-		     const QString &localName,
-		     const QString &qName);
+    bool startElement (const QString&,
+		       const QString&,
+		       const QString&,
+		       const QXmlAttributes&);
+    bool characters (const QString&);
+    bool endElement (const QString&,
+		     const QString&,
+		     const QString&);
 
 signals:
     void signalSource (const QString);
