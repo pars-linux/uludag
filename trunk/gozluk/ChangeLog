@@ -1,4 +1,13 @@
-17 Mayıs 2005
+17 Mayıs 2005 ( Akşam ) :)
+- Yeni sözlük oluşturma, varolan sözlük dosyasını açma 
+  gibi özellikler eklendi. 
+- Menüler tekrar düzenlendi, dosya işlemleri için yeni bir
+  menü oluşturuldu
+- Ayar penceresindeki öntanımlı sözlük dosyası için dosya
+  seçme penceresi eklendi...
+- bir kaç ufacık, minicik bugfix daha :) 
+
+17 Mayıs 2005 ( Sabah )
 - StatusBar() ile kullanıcıya feedback sağlandı
 
 16 Mayıs 2005

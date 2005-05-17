@@ -27,9 +27,10 @@ public:
 protected slots:
     void slotApply();
     void slotCancel();
-
+	 void slotDir();
 private:
     QLineEdit *sozlukPath;
+    QPushButton *dirButton;
     QPushButton *applyButton;
     QPushButton *cancelButton;
 };

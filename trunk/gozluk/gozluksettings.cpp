@@ -11,6 +11,7 @@
 
 #include <qlabel.h>
 #include <qlayout.h>
+#include <qfiledialog.h>
 #include <qsettings.h>
 
 #include "gozluksettings.h"
@@ -20,13 +21,17 @@ GozlukSettings::GozlukSettings( QWidget *parent, const char *name )
 {
     setCaption( QString::fromUtf8( "Gözlük Yapılandırması" ) );
 
-    QVBoxLayout *vbox = new QVBoxLayout( this, 10 );
-
+    QVBoxLayout *vbox = new QVBoxLayout( this, 6 );
+	 
+	 QLabel *pathLabel = new QLabel ( QString::fromUtf8( "Öntanımlı sözlük dosyası" ), this );
+	 vbox->addWidget( pathLabel );
+	 
     QHBoxLayout *hbox1 = new QHBoxLayout( vbox, 5 );
-    QLabel *pathLabel = new QLabel ( QString::fromUtf8( "Sözlük dosyası :" ), this );
     sozlukPath = new QLineEdit( this );
-    hbox1->addWidget( pathLabel );
+    dirButton = new QPushButton(QString::fromUtf8("Gözat"), this);
+    
     hbox1->addWidget( sozlukPath );
+    hbox1->addWidget( dirButton );
 
     QHBoxLayout *hbox2 = new QHBoxLayout( vbox, 5 );
     applyButton = new QPushButton( "Tamam", this );
@@ -38,6 +43,8 @@ GozlukSettings::GozlukSettings( QWidget *parent, const char *name )
              this, SLOT( slotApply() ) );
     connect( cancelButton, SIGNAL( clicked() ),
              this, SLOT( slotCancel() ) );
+             
+    connect( dirButton, SIGNAL( clicked() ), this, SLOT( slotDir() ) );
 
     // get xml file
     QSettings settings;
@@ -46,6 +53,16 @@ GozlukSettings::GozlukSettings( QWidget *parent, const char *name )
     if ( dictFile )
         sozlukPath->setText( dictFile );
 
+}
+
+void GozlukSettings::slotDir()
+{
+	QFileDialog *dosyaAc = new QFileDialog(this,"ac",TRUE);
+	dosyaAc->setCaption(QString::fromUtf8("Öntanımlı olacak dosyayı seçin"));
+	if (dosyaAc->exec() == QDialog::Accepted)
+	{
+		sozlukPath->setText(dosyaAc->selectedFile());
+	}
 }
 
 void GozlukSettings::slotApply()

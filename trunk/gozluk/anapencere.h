@@ -80,6 +80,7 @@ class anaPencere:public QMainWindow
 		QListView *lviewListe;
 		QVGroupBox *gboxAnlam;
 		QPopupMenu *lPopup;
+		bool edited;
 		
 		QPtrList<TransDef> entries;
 		TransDef *currentEntry;
@@ -88,6 +89,12 @@ class anaPencere:public QMainWindow
 	public:
 		anaPencere(QWidget *parent=0, const char *name=0);
 		~anaPencere();
+		
+		void setEdited( bool newState )
+		{ edited = newState; }
+		
+		bool getEdited() { return edited; }
+		
 	protected slots:
 		void yeniKelime();
 		void kelimeDuzenle();
@@ -96,6 +103,9 @@ class anaPencere:public QMainWindow
 		void about();
 		void exportToXml();
 		void popupSag();
+		
+		void yeniSozluk();
+		void sozlukAc();
 		
 		void setCurrentSource( const QString s );
 		void addCurrentTranslation( const QString t );
@@ -107,7 +117,7 @@ class anaPencere:public QMainWindow
 		void langChanged( bool );
 		
 	protected:
-		void readDict();
+		void readDict(QString dictFile);
 		void writeDict(const QString& dictFile);
 };
 
