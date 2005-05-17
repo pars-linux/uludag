@@ -29,7 +29,7 @@
 #include <qxml.h>
 #include <qsettings.h>
 #include <qcursor.h>
-
+#include <qstatusbar.h>
 
 #include "dictreader.h"
 #include "gozluksettings.h"
@@ -98,6 +98,9 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 	lviewListe->header()->hide();
 	ana->addWidget(lviewListe);
 	
+	// statusbar :D
+	statusBar()->message(QString::fromUtf8("Gözlük'e Hoşgeldiniz!"),2000);
+	
 	
 	// connections
 	connect(lineSatir, SIGNAL( textChanged( const QString& ) ), this, SLOT( searchSource( const QString& ) ) );
@@ -121,14 +124,15 @@ void anaPencere::popupSag()
 void anaPencere::seciliSil()
 {
 	// önce bi uyarı göstermeli :)
-	if (!QMessageBox::question(this, QString::fromUtf8("Uyarı! Silmek üzeresiniz..."),
+	if (!QMessageBox::warning(this, QString::fromUtf8("Uyarı! Silmek üzeresiniz..."),
 			QString::fromUtf8("Bu kelimeyi silmek istediğinizden emin misiniz?"),
 			QString::fromUtf8("&Evet"),
 			QString::fromUtf8("&Hayır"),
-			QString::null,0,1) )
+			QString::null,1,0) )
 	{
 		//  eh, sil dedi...
 		entries.remove(currentEntry);
+		statusBar()->message(QString::fromUtf8("Kelime silindi..."),3000);
 		// tazeleme
 		lviewListe->clear();
 		searchSource( lineSatir->text() );
@@ -152,8 +156,10 @@ void anaPencere::yeniKelime()
 		// Fixed
 		QStringList::Iterator it = a.dList->begin();
 		yenisi->setDefinition( *it );
-			
 		entries.append( yenisi );
+		statusBar()->message(QString::fromUtf8("Yeni kelime eklendi"),3000);
+		lviewListe->clear();
+		searchSource( lineSatir->text() );
 	}
 	else delete yenisi; // kullanmadiysan sil... sonra bi daha istersin :)
 }
@@ -189,6 +195,11 @@ void anaPencere::kelimeDuzenle()
 		// Fixed
 		QStringList::Iterator it = e.dList->begin();
 		currentEntry->setDefinition( *it );
+		
+		lviewListe->clear();
+		searchSource( lineSatir->text() );
+		
+		statusBar()->message(QString::fromUtf8("Kelime düzenlendi..."),3000);
 	}
 }
 
