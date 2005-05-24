@@ -29,13 +29,16 @@ GozlukSettings::GozlukSettings( QWidget *parent, const char *name )
     QHBoxLayout *hbox1 = new QHBoxLayout( vbox, 5 );
     sozlukPath = new QLineEdit( this );
     dirButton = new QPushButton(QString::fromUtf8("Gözat"), this);
+    dirButton->setAutoDefault( FALSE );
     
     hbox1->addWidget( sozlukPath );
     hbox1->addWidget( dirButton );
 
     QHBoxLayout *hbox2 = new QHBoxLayout( vbox, 5 );
     applyButton = new QPushButton( "Tamam", this );
+    applyButton->setAutoDefault( FALSE );
     cancelButton = new QPushButton( QString::fromUtf8( "İptal" ), this );
+    cancelButton->setAutoDefault( FALSE );
     hbox2->addWidget( applyButton );
     hbox2->addWidget( cancelButton );
 

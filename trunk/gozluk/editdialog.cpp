@@ -23,7 +23,10 @@
 #include <qpopupmenu.h>
 #include <qcursor.h>
 #include <qstringlist.h>
+#include <qvbuttongroup.h>
 #include "editdialog.h"
+#include "cikar.xpm"
+#include "ekle.xpm"
 
 
 editTerm::editTerm(QWidget *parent, const char *name, TransDef *entry)
@@ -33,28 +36,54 @@ editTerm::editTerm(QWidget *parent, const char *name, TransDef *entry)
 	
 	QVBoxLayout *ana = new QVBoxLayout(this,5);
 	
-	boxSource = new QVGroupBox(QString::fromUtf8("Anlam Listesi"),this);
-	ySource = new QLineEdit(boxSource);
+	satir = new QLineEdit(this);
+	ana->addWidget(satir);
+	
+	boxSource = new QHGroupBox(QString::fromUtf8("Anlam Listesi"),this);
+	QVButtonGroup *sourceButtons = new QVButtonGroup(boxSource);
+	sourceButtons->setFrameStyle(QFrame::NoFrame);
+	sourceButtons->setInsideMargin(0);
+	sourceButtons->setInsideSpacing(1);
+	bsEkle = new QPushButton(QPixmap(ekle_xpm),QString::fromUtf8("Ekle"),sourceButtons);
+	bsCikar = new QPushButton(QPixmap(cikar_xpm),QString::fromUtf8("Çıkar"),sourceButtons);
+	bsEkle->setAutoDefault(false);
+	bsCikar->setAutoDefault(false);
 	lSource = new QListBox(boxSource);
 	
 	QStringList a = entry->getSources();
 	for (QStringList::Iterator it=a.begin(); it!=a.end(); ++it)
 		lSource->insertItem(*it);
 	
-	boxTrans = new QVGroupBox(QString::fromUtf8("Karşılıklar Listesi"), this);
-	yTrans = new QLineEdit(boxTrans);
+		
+	boxTrans = new QHGroupBox(QString::fromUtf8("Karşılıklar Listesi"), this);
+	QVButtonGroup *transButtons = new QVButtonGroup(boxTrans);
+	transButtons->setFrameStyle(QFrame::NoFrame);
+	transButtons->setInsideMargin(0);
+	transButtons->setInsideSpacing(1);
+	btEkle = new QPushButton(QPixmap(ekle_xpm),QString::fromUtf8("Ekle"),transButtons);
+	btCikar = new QPushButton(QPixmap(cikar_xpm),QString::fromUtf8("Çıkar"),transButtons);
+	btEkle->setAutoDefault(false);
+	btCikar->setAutoDefault(false);
 	lTrans = new QListBox(boxTrans);
 	
 	a = entry->getTranslations();
 	for (QStringList::Iterator it=a.begin(); it!=a.end(); ++it)
 		lTrans->insertItem(*it);
 	
-	boxDef = new QVGroupBox(QString::fromUtf8("Tanımlar Listesi"), this);
-	yDef = new QLineEdit(boxDef);
+	boxDef = new QHGroupBox(QString::fromUtf8("Tanımlar Listesi"), this);
+	
+	QVButtonGroup *defButtons = new QVButtonGroup(boxDef);
+	defButtons->setFrameStyle(QFrame::NoFrame);
+	defButtons->setInsideMargin(0);
+	defButtons->setInsideSpacing(1);
+	bdEkle = new QPushButton(QPixmap(ekle_xpm),QString::fromUtf8("Ekle"),defButtons);
+	bdCikar = new QPushButton(QPixmap(cikar_xpm),QString::fromUtf8("Çıkar"),defButtons);
+	bdEkle->setAutoDefault(false);
+	bdCikar->setAutoDefault(false);
 	lDef = new QListBox(boxDef);
 	
 	if (entry->getDefinition() != NULL)
-		lDef->insertItem(entry->getDefinition());
+		lDef->insertItem(entry->getDefinition()); 
 	
 	ana->addWidget(boxSource);
 	ana->addWidget(boxTrans);
@@ -73,7 +102,7 @@ editTerm::editTerm(QWidget *parent, const char *name, TransDef *entry)
 	iptal->setAutoDefault(false); // bu iki defaultlar kabus :)
 	buttons->addWidget(iptal);
 	
-	this->resize(250,390);
+	this->resize(300,370);
 	
 	// stringLists
 	
@@ -81,26 +110,18 @@ editTerm::editTerm(QWidget *parent, const char *name, TransDef *entry)
 	tList = new QStringList();
 	dList = new QStringList();
 	
-	// popups
-	
-	sSil = new QPopupMenu(this); sSil->insertItem("Sil",this,SLOT( sCikar() ));
-	tSil = new QPopupMenu(this); tSil->insertItem("Sil",this,SLOT( tCikar() ));
-	dSil = new QPopupMenu(this); dSil->insertItem("Sil",this,SLOT( dCikar() ));
-	
-	
 	// connections
-	connect( ySource, SIGNAL( returnPressed() ), this, SLOT( sEkle() ) );
-	connect( yTrans , SIGNAL( returnPressed() ), this, SLOT( tEkle() ) );
-	connect( yDef   , SIGNAL( returnPressed() ), this, SLOT( dEkle() ) ); 
+	
+	connect( bsEkle, SIGNAL( clicked() ), this, SLOT( sEkle() ) );
+	connect( bsCikar,SIGNAL( clicked() ), this, SLOT( sCikar()) );
+	connect( btEkle, SIGNAL( clicked() ), this, SLOT( tEkle() ) );
+	connect( btCikar,SIGNAL( clicked() ), this, SLOT( tCikar()) );
+	connect( bdEkle, SIGNAL( clicked() ), this, SLOT( dEkle() ) );
+	connect( bdCikar,SIGNAL( clicked() ), this, SLOT( dCikar()) ); 
 	
 	connect( iptal,  SIGNAL( clicked() ), this, SLOT( reject() ) );
 	connect( kaydet, SIGNAL( clicked() ), this, SLOT( accept() ) );
 	connect( kaydet, SIGNAL( clicked() ), this, SLOT( listeKaydet() ) );
-
-	connect( lSource, SIGNAL( rightButtonClicked(QListBoxItem*, const QPoint & )), this, SLOT( sPopup() ));
-	connect( lTrans,  SIGNAL( rightButtonClicked(QListBoxItem*, const QPoint & )), this, SLOT( tPopup() ));
-	connect( lDef,    SIGNAL( rightButtonClicked(QListBoxItem*, const QPoint & )), this, SLOT( dPopup() ));
-
 }
 
 void editTerm::listeKaydet()
@@ -116,34 +137,26 @@ void editTerm::listeKaydet()
 		dList->append(lDef->text(i)); 
 }
 
-void editTerm::sPopup()
-{ sSil->exec(QCursor::pos() ); }
-
-void editTerm::tPopup()
-{ tSil->exec(QCursor::pos() ); }
-
-void editTerm::dPopup()
-{ dSil->exec(QCursor::pos() ); }
 
 void editTerm::sEkle()
 { 
-	if (ySource->text() != "")
-		lSource->insertItem( ySource->text() );
-	ySource->setText("");
+	if (satir->text() != "")
+		lSource->insertItem( satir->text() );
+	satir->setText("");
 }
 
 void editTerm::tEkle()
 {
-	if (yTrans->text() != "")
-		lTrans->insertItem( yTrans->text() );
-	yTrans->setText("");
+	if (satir->text() != "")
+		lTrans->insertItem( satir->text() );
+	satir->setText("");
 }
 
 void editTerm::dEkle()
 {
-	if (yDef->text() != "")
-		lDef->insertItem( yDef->text() );
-	yDef->setText("");
+	if (satir->text() != "")
+		lDef->insertItem( satir->text() );
+	satir->setText("");
 }
 
 void editTerm::sCikar()
