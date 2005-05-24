@@ -393,6 +393,9 @@ void anaPencere::searchSource( const QString& text )
     // clean all found words first;
     lviewListe->clear();
 
+    if (text.isEmpty())
+            return;
+
     QString *s = new QString( text );
     QListViewItem *item = NULL;
 
