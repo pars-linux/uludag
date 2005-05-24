@@ -21,7 +21,7 @@
 #define SOZLUKEDITDIALOG_K_H
 
 #include <qdialog.h>
-#include <qvgroupbox.h>
+#include <qhgroupbox.h>
 #include <qlineedit.h>
 #include <qlistbox.h>
 #include <qstringlist.h>
@@ -36,15 +36,12 @@ class editTerm:public QDialog
 		editTerm(QWidget *parent = 0, const char *name = 0, TransDef *entry=0);
 		QStringList *sList, *tList, *dList;
 	private:
-		QLineEdit *ySource, *yTrans, *yDef;
-		QVGroupBox *boxSource, *boxTrans, *boxDef;
+		QLineEdit *satir;
+		QHGroupBox *boxSource, *boxTrans, *boxDef;
 		QListBox *lSource, *lTrans, *lDef;
 		QPushButton *kaydet, *iptal;
-		QPopupMenu *sSil, *tSil, *dSil;
+		QPushButton *bsEkle, *bsCikar, *btEkle, *btCikar, *bdEkle, *bdCikar;
 	public slots:
-		void sPopup();
-		void tPopup();
-		void dPopup(); 
 		void sEkle();
 		void tEkle();
 		void dEkle();

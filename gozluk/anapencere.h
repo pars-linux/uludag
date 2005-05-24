@@ -119,6 +119,7 @@ class anaPencere:public QMainWindow
 	protected:
 		void readDict(QString dictFile);
 		void writeDict(const QString& dictFile);
+		void closeEvent(QCloseEvent *event);
 };
 
 
