@@ -4,8 +4,13 @@ Copyright (c) 2004 TUBITAK/UEKAE
 Barış Metin <baris@uludag.org.tr>
 Kaya Oğuz <kaya@kuzeykutbu.org>
 
-Gözlük için sozluk.xml dosyasını ulubot svn'sinden indirebilirsiniz.
-http://svn.uludag.org.tr/viewcvs/trunk/ulubot/sozluk/
+Kurulum için dizinde önce qmake, daha sonra make komutlarını verin. 
+İlk çalıştırdığınızda Dosya/Yapılandır seçeneği ile sözlük dosyasının
+yerini belirtebilirsiniz. 
+
+Gözlük için sözlük.xml dosyasını ulubot svn deposundan[1] indirebilirsiniz.
+
+[1] http://svn.uludag.org.tr/uludag/trunk/ulubot/sozluk/sözlük.xml
 
 Lütfen, yorum, öneri, hata vs. kaya@kuzeykutbu.org adresine gönderin ;)
 İlginiz için şimdiden teşekkürler
