@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/paketler/repos/doc/"
+depo = "https://svn.uludag.org.tr/uludag/repos/doc/eng/"
 belge = "bilisim_okur-yazari.lyx"
-isim = "Bilişim Okur Yazarı"
+isim = "Computer Literate"
 dizin = "okuryazar"
