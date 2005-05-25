@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/repos/doc/"
+depo = "https://svn.uludag.org.tr/uludag/repos/doc/eng/"
 belge = "neden_lyx.lyx"
-isim = "Neden LyX?"
+isim = "Why LyX?"
 dizin = "nedenlyx"
