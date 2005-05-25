@@ -6,8 +6,10 @@ Barış Metin <baris@uludag.org.tr>
 Kaya Oğuz <kaya@kuzeykutbu.org>
 
 [ Kullanım için gerekli adımlar ]
-"qmake -project" komutunu sonrasında "qmake" komutundan sonra
-"make" komutunu verdikten ve işlem tamamlandıktan sonra
+$ qmake -project
+$ qmake
+$ make
+Derleme işlemi tamamlandıktan sonra
 "./gozluk" komutuyla uygulamayı çalıştırabilirsiniz.
 
 [ Açıklamalar ]
