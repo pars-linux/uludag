@@ -44,7 +44,7 @@
     of the <em>action</em> variable.
   
   [% ELSIF error == "attachment_already_obsolete" %]
-    [% attachid FILTER html %] numaralı eklenti ([% description FILTER html %]) 
+    [% attach_id FILTER html %] numaralı eklenti ([% description FILTER html %]) 
     zaten eski olarak işaretlenmiş.
 
   [% ELSIF error == "auth_err" %]
