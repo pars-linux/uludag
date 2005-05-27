@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Kullanıcı Girişi</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="jslib/json.js"></script>
+    <script type="text/javascript" src="jslib/xmlhttprequest.js"></script>
+    <script type="text/javascript" src="jslib/xhr.js"></script>
+    <script type="text/javascript" src="giris.js"></script>
+  </head>
+  <body>
+    <fieldset id="grp_giris">
+      <legend>Kullanıcı Girişi:</legend>
+      <label for="txt_isim">İsim:</label>
+      <br/>
+      <input id="txt_isim" type="text" />
+      <br/>
+      <label for="txt_sifre">Şifre:</label>
+      <br/>
+      <input id="txt_sifre" type="text" />
+      <br/>
+      <button type="button" id="btn_giris">Giriş &raquo;</button>
+    </fieldset>
+    <div id="grp_kullanici" style="display: none;">
+      Merhaba!
+    </div>
+  </body>
+</html>

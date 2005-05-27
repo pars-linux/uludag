@@ -1,0 +1,37 @@
+AJAX Kütüphanesi v0.1
+=====================
+
+AJAX, web tarayıcısının sayfayı refresh etmesine gerek kalmadan 
+sunucuya veri göndermesini ve sunucudan veri almasını sağlayan 
+bir metoddur.
+
+Örnek Uygulamalar
+=================
+Python betikleri CGI ile çalıştırılmaktadır. Bu yüzden 
+AJAX uygulamaları, CGI destekli bir dizinde bulunmalıdır
+(mesela "cgi-bin" dizini).
+
+Sohbet uygulamasının çalışması için de, "sohbet.log" 
+dosyasının herkes tarafından yazılabilir olması gerekir. 
+Komut satırında "chmod 777 sohbet.log" yazarak dosyayı 
+yazılabilir yapabilirsiniz.
+
+Test Edilen Tarayıcılar
+=======================
+Firefox 1.0.4
+IE 6.0
+Konqueror 3.4.0
+
+Desteklenmesi Hedeflenen Tarayıcılar
+====================================
+Firefox 1.0+
+Mozilla 1.0+
+IE 5.0+
+Konqueror 3.4.0+
+Opera 7.0+
+Netscape 7.0+
+
+Hata Bildirimi
+==============
+Hata bildirimi, http://bugs.uludag.org.tr adresinde, 
+Pardil -> AJAX başlığı altına yapılabilir.
