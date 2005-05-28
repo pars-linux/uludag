@@ -1,7 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/ulubot/"
-belge = "sozluk.lyx"
-isim = "Sözlük Kılavuzu"
-dizin = "sozluk"
-ikonlar = "../../../images"
-sablon = "../belge.tmpl"

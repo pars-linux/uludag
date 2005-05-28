@@ -1,0 +1,158 @@
+# translation of kaptan.po to Türkçe
+# This file is put in the public domain.
+# Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kaptan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-02-05 23:02+0200\n"
+"PO-Revision-Date: 2005-03-05 23:03+0200\n"
+"Last-Translator: Zerrin Cakmakkaya <zerrin@uludag.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: goodbyedlg.cpp:62
+msgid "GoodbyeDlg"
+msgstr "GoodbyeDlg"
+
+#: goodbyedlg.cpp:63
+msgid "You have finished.... Now you can start using Pardus Linux LiveCD"
+msgstr ""
+"Bitirdiniz.... Şimdi Pardus Linux Çalışan CD'yi kullanmaya başlayabilirsiniz"
+
+#: goodbyedlg.cpp:64
+msgid "pix_goodbye"
+msgstr "pix_goodbye"
+
+#: kaptan.cpp:34
+msgid "Welcome"
+msgstr "Hoş Geldiniz"
+
+#: kaptan.cpp:38
+msgid "Mouse Setup"
+msgstr "Fare Ayarı"
+
+#: kaptan.cpp:42
+msgid "Wallpaper Setup"
+msgstr "Duvar Kağıdı Ayarı"
+
+#: kaptan.cpp:46
+msgid "Congratulations"
+msgstr "Tebrikler"
+
+#: main.cpp:18
+msgid "Kaptan Desktop"
+msgstr "Kaptan Masaüstü"
+
+#: mousesetupdlg.cpp:88
+msgid "MouseSetupDlg"
+msgstr "MouseSetupDlg"
+
+#: mousesetupdlg.cpp:89
+msgid "Button Order"
+msgstr "Düğme Sırası"
+
+#: mousesetupdlg.cpp:90
+msgid "Righ&t handed"
+msgstr "S&ağ el"
+
+#: mousesetupdlg.cpp:91
+msgid "Alt+T"
+msgstr "Alt+T"
+
+#: mousesetupdlg.cpp:92
+msgid "Le&ft handed"
+msgstr "S&ol el"
+
+#: mousesetupdlg.cpp:93
+msgid "Alt+F"
+msgstr "Alt+F"
+
+#: mousesetupdlg.cpp:94
+msgid ""
+"If you are left-handed, you may prefer to swap the functions of the left and "
+"right buttons on your pointing device by choosing the 'Left handed' option "
+"below. If your pointing device has more than two buttons, only those that "
+"function as the left and right buttons are affected. For example, if you "
+"have a tree-button mouse, the middle buttons is unaffected."
+msgstr ""
+"Sol elinizi kullanıyorsanız, imleç aygıtınızın sol ve sağ düğmelerinin "
+"işlevlerini 'sol el' seçeneğini işaretleyerek takas etmeyi tercih "
+"edebilirsiniz. İmlec aygıtınızın ikiden fazla düğmesi varsa, sadece sol ve "
+"sağ düğmeler olarak işlev görenler etkilenir. Örneğin, üç düğmeli bir "
+"fareniz varsa orta düğme etkilenmez."
+
+#: wallpaperdlg.cpp:90
+msgid "WallpaperDlg"
+msgstr "WallpaperDlg"
+
+#: wallpaperdlg.cpp:91
+msgid ""
+"Here, you can select a wallpaper for your desktop background. Pardus "
+"provides eye candy wallpapers, you can select one of them, as you wish :)."
+msgstr ""
+"Buradan, masaüstünüzün artalanı için bir duvar kağıdı seçebilirsiniz. Pardus "
+"size güzel görünümlü duvar kağıtları sunar, bunlardan birini seçebilirsiniz, "
+"istediğiniz gibi :)."
+
+#: wallpaperdlg.cpp:92
+msgid "Wallpaper :"
+msgstr "Duvar Kağıdı :"
+
+#: wallpaperdlg.cpp:93
+msgid "Preview :"
+msgstr "Önizleme :"
+
+#: wallpaperdlg.cpp:94
+msgid "pix_wallpaper"
+msgstr "pix_wallpaper"
+
+#: wallpaperdlg.cpp:95
+msgid "Don't change desktop background!"
+msgstr "Masaüstü arkaplan resmini değiştirme!"
+
+#: welcomedlg.cpp:75
+msgid "WelcomeDlg"
+msgstr "WelcomeDlg"
+
+#: welcomedlg.cpp:76
+msgid "pix_kaptan"
+msgstr "pix_kaptan"
+
+#: welcomedlg.cpp:77
+msgid "pix_pardus"
+msgstr "pix_pardus"
+
+#: welcomedlg.cpp:78
+msgid ""
+"Uludağ project is a GNU/Linux distribution, targeting at computer literate "
+"users' basic desktop needs; with acquiring the strong ideas, architecture "
+"and code of other distributions; with a custom configuration framework which "
+"has the ability to evolve into an autonomous system; for simplifying the "
+"installation and usage of the computers."
+msgstr ""
+"Uludağ projesi, bilişim okur-yazarlığına sahip bilgisayar kullanıcılarının "
+"temel masaüstü ihtiyaçlarını hedefleyerek; mevcut Linux dağıtımlarının üstün "
+"taraflarını kavram, mimari ya da kod olarak kullanan; otonom sisteme "
+"evrilebilecek bir yapılandırma çerçevesi ve araçları ile kurulum, "
+"yapılandırma ve kullanım kolaylığı sağlamak üzere geliştirilen bir GNU/Linux "
+"dağıtımıdır. "
+
+#: welcomedlg.cpp:79
+msgid ""
+"This application, called <b>Kaptan Desktop</b>, will help you with your "
+"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
+"This application will also set some default configuration for a better "
+"desktop :)."
+msgstr ""
+"<b>Kaptan Masaüstü</b> isimli bu uygulama, <b>Pardus</b> masaüstünüz için "
+"basit ancak yeterli ayarları hızlı bir biçimde yapmanızda size yardım "
+"edecektir. Bu uygulama aynı zamanda daha iyi bir masaüstü için bazı "
+"varsayılan yapılandırmayı da ayarlar :)."
+
+#~ msgid "Welcome to Pardus"
+#~ msgstr "Pardus'a Hoş Geldiniz"
