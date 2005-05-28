@@ -1,2 +1,0 @@
-*Daha iyi KDE entegrasyonu için kdelibs/kdecore/kcrash.cpp yamalanmalı ve bir program çökmesi sırasında 
-	DCOP ile knazar'a sinyal göndermeli ve knazar "Bilgisayarınıza Nazar Değdi" demeli.
