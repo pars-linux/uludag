@@ -1,48 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-	<title>:: ulusal dağıtım projesi :: tübitak-uekae ::</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link href="../../stil.css" rel="stylesheet" type="text/css">
-	<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
-	<link rel="alternate" title="Uludağ Bülteni" href="http://www.uludag.org.tr/bulten/bulten.xml" type="application/rss+xml">
-</head>
-
-<body class="arka">
-<table class="arkayan" width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td width="878" align="center" valign="top">
-<table class="arkadalga" width="700" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td width="800" valign="top">
-
-<!-- logo -->
-<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td width="620" height="60">
-<img src="../../images/header3.png" alt="Ulusal Dağıtım Projesi" width="700" height="60">
-</td>
-</tr>
-
-<!-- menüler -->
-<tr>
-<td width="680" height="19" valign="top" bgcolor="#B9D0B3">
-<p class="menubar">
-<a href="../../index.html">Ana Sayfa</a>
-| <a href="../../hakkimizda.html">Hakkımızda</a>
-| <a href="../../projeler/index.html">Projeler</a>
-| <a href="../../belgeler/index.html">Belgeler</a>
-| <a href="../../urunler/index.html">Ürünler</a>
-| <a href="../../sss.html">Sık Sorulanlar</a>
-| <a href="../../iletisim.html">İletişim</a>
-| <a href="../../basin/index.html">Basında Uludağ</a>
-| <a href="../../eng/index.html">English</a>
-</p>
-</tr>
-</table>
-
-<br>
-
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body>
 <!-- SAYFA İÇERİK BAŞI -->
 <div class="belge">
 
@@ -90,35 +48,41 @@ dahil olmak için bilmesi ve yapması gerekenleri tarif etmektedir.<BR>
 <UL><LI>
 <A HREF="#htoc21">5.1&nbsp;&nbsp;Uludağ Deposu</A>
 <LI><A HREF="#htoc22">5.2&nbsp;&nbsp;Paketler Deposu</A>
-</UL>
-<LI><A HREF="#htoc23">6&nbsp;&nbsp;Subversion kullanımı</A>
+<LI><A HREF="#htoc23">5.3&nbsp;&nbsp;Depo dizin sıra düzenleri</A>
 <UL><LI>
-<A HREF="#htoc24">6.1&nbsp;&nbsp;Sistemimde subversion olup olmadığını nasıl anlayabilirim?</A>
-<LI><A HREF="#htoc25">6.2&nbsp;&nbsp;Depo nedir?</A>
-<LI><A HREF="#htoc26">6.3&nbsp;&nbsp;Depoda hangi dizinlerin olduğunu nasıl görebilirim?</A>
-<LI><A HREF="#htoc27">6.4&nbsp;&nbsp;Depodaki bir dizinin kopyasını nasıl alabilirim?</A>
-<LI><A HREF="#htoc28">6.5&nbsp;&nbsp;Bendeki kopyanın güncel olup olmadığını nasıl anlayabilirim?</A>
-<LI><A HREF="#htoc29">6.6&nbsp;&nbsp;Dosyaların yanlarındaki işaretler ne anlama geliyor?</A>
-<LI><A HREF="#htoc30">6.7&nbsp;&nbsp;Bir takım dosyayı değiştirdim, şimdi ne yapacağım?</A>
-<LI><A HREF="#htoc31">6.8&nbsp;&nbsp;Yeni bir dosya ekledim fakat yanında ``?'' var...</A>
-<LI><A HREF="#htoc32">6.9&nbsp;&nbsp;Değiştirdiğim dosyalar eski hallerine dönsünler istiyorum.</A>
-<LI><A HREF="#htoc33">6.10&nbsp;&nbsp;Değiştirdiğim dosyaları göndermek istiyorum?</A>
-<LI><A HREF="#htoc34">6.11&nbsp;&nbsp;Başka hangi komutlar var?</A>
+<A HREF="#htoc24">5.3.1&nbsp;&nbsp;trunk/</A>
+<LI><A HREF="#htoc25">5.3.2&nbsp;&nbsp;tags/</A>
+<LI><A HREF="#htoc26">5.3.3&nbsp;&nbsp;repos/</A>
 </UL>
-<LI><A HREF="#htoc35">7&nbsp;&nbsp;Subversion kullanım kuralları</A>
+</UL>
+<LI><A HREF="#htoc27">6&nbsp;&nbsp;Subversion kullanımı</A>
 <UL><LI>
-<A HREF="#htoc36">7.1&nbsp;&nbsp;Her zaman güncel bir depo ile çalışın</A>
-<LI><A HREF="#htoc37">7.2&nbsp;&nbsp;Göndermeden önce düşünün</A>
-<LI><A HREF="#htoc38">7.3&nbsp;&nbsp;Gönderimlerinize açıklayıcı mesajlar ekleyin</A>
-<LI><A HREF="#htoc39">7.4&nbsp;&nbsp;Çalışma planlarına uyun</A>
-<LI><A HREF="#htoc40">7.5&nbsp;&nbsp;Birden fazla bileşeni etkileyen bir değişiklik yaptıysanız tüm gelişticileri
+<A HREF="#htoc28">6.1&nbsp;&nbsp;Sistemimde subversion olup olmadığını nasıl anlayabilirim?</A>
+<LI><A HREF="#htoc29">6.2&nbsp;&nbsp;Depo nedir?</A>
+<LI><A HREF="#htoc30">6.3&nbsp;&nbsp;Depoda hangi dizinlerin olduğunu nasıl görebilirim?</A>
+<LI><A HREF="#htoc31">6.4&nbsp;&nbsp;Depodaki bir dizinin kopyasını nasıl alabilirim?</A>
+<LI><A HREF="#htoc32">6.5&nbsp;&nbsp;Bendeki kopyanın güncel olup olmadığını nasıl anlayabilirim?</A>
+<LI><A HREF="#htoc33">6.6&nbsp;&nbsp;Dosyaların yanlarındaki işaretler ne anlama geliyor?</A>
+<LI><A HREF="#htoc34">6.7&nbsp;&nbsp;Bir takım dosyayı değiştirdim, şimdi ne yapacağım?</A>
+<LI><A HREF="#htoc35">6.8&nbsp;&nbsp;Yeni bir dosya ekledim fakat yanında ``?'' var...</A>
+<LI><A HREF="#htoc36">6.9&nbsp;&nbsp;Değiştirdiğim dosyalar eski hallerine dönsünler istiyorum.</A>
+<LI><A HREF="#htoc37">6.10&nbsp;&nbsp;Değiştirdiğim dosyaları göndermek istiyorum?</A>
+<LI><A HREF="#htoc38">6.11&nbsp;&nbsp;Başka hangi komutlar var?</A>
+</UL>
+<LI><A HREF="#htoc39">7&nbsp;&nbsp;Subversion kullanım kuralları</A>
+<UL><LI>
+<A HREF="#htoc40">7.1&nbsp;&nbsp;Her zaman güncel bir depo ile çalışın</A>
+<LI><A HREF="#htoc41">7.2&nbsp;&nbsp;Göndermeden önce düşünün</A>
+<LI><A HREF="#htoc42">7.3&nbsp;&nbsp;Gönderimlerinize açıklayıcı mesajlar ekleyin</A>
+<LI><A HREF="#htoc43">7.4&nbsp;&nbsp;Çalışma planlarına uyun</A>
+<LI><A HREF="#htoc44">7.5&nbsp;&nbsp;Birden fazla bileşeni etkileyen bir değişiklik yaptıysanız tüm gelişticileri
 bu değişiklikten haberdar edin.</A>
-<LI><A HREF="#htoc41">7.6&nbsp;&nbsp;Yaptığınız değişikliğin sorumluluğunu alın</A>
-<LI><A HREF="#htoc42">7.7&nbsp;&nbsp;Genel kabullere saygı duyun</A>
-<LI><A HREF="#htoc43">7.8&nbsp;&nbsp;Hata kontrol sistemindeki bir hatayı çözerken hata numarasını girin.</A>
-<LI><A HREF="#htoc44">7.9&nbsp;&nbsp;Kendi sorumluluğunuzda olan dosyaları güncelleyin</A>
-<LI><A HREF="#htoc45">7.10&nbsp;&nbsp;Otomatik oluşturulan dosyaları depoya eklemeyin</A>
-<LI><A HREF="#htoc46">7.11&nbsp;&nbsp;Güncellemeleri atomik yapın</A>
+<LI><A HREF="#htoc45">7.6&nbsp;&nbsp;Yaptığınız değişikliğin sorumluluğunu alın</A>
+<LI><A HREF="#htoc46">7.7&nbsp;&nbsp;Genel kabullere saygı duyun</A>
+<LI><A HREF="#htoc47">7.8&nbsp;&nbsp;Hata kontrol sistemindeki bir hatayı çözerken hata numarasını girin.</A>
+<LI><A HREF="#htoc48">7.9&nbsp;&nbsp;Kendi sorumluluğunuzda olan dosyaları güncelleyin</A>
+<LI><A HREF="#htoc49">7.10&nbsp;&nbsp;Otomatik oluşturulan dosyaları depoya eklemeyin</A>
+<LI><A HREF="#htoc50">7.11&nbsp;&nbsp;Güncellemeleri atomik yapın</A>
 </UL>
 </UL>
 </BLOCKQUOTE>
@@ -466,16 +430,68 @@ büyük bir ihtimal ile yeni bir yapı oluşturulacaktır. Fakat şu anda
 işletim sistemine eklenecek yazılımlara dair yapılan iyileştirmeler
 bu depo kullanılarak yapacaktır.<BR>
 <BR>
+<!--TOC subsection Depo dizin sıra düzenleri-->
+
+<H3><A NAME="htoc23">5.3</A>&nbsp;&nbsp;Depo dizin sıra düzenleri</H3><!--SEC END -->
+
+Her bir Uludağ subversion deposu aşağıdaki dizin sıra düzenine (hiyerarşi)
+sahiptir.<BR>
+<BR>
+Depo içerisinde üç ana dizin bulunur; trunk, tags ve repos.<BR>
+<BR>
+<!--TOC subsubsection trunk/-->
+
+<H4><A NAME="htoc24">5.3.1</A>&nbsp;&nbsp;trunk/</H4><!--SEC END -->
+
+Trunk dizini sürekli çalışmanın yapıldığı dizindir.<BR>
+<BR>
+Her proje modülü (belge, web sayfaları, yazılım projeleri, vb.) trunk/
+altında kendi dizinine sahiptir.<BR>
+<BR>
+<!--TOC subsubsection tags/-->
+
+<H4><A NAME="htoc25">5.3.2</A>&nbsp;&nbsp;tags/</H4><!--SEC END -->
+
+Tags dizini, her hangi bir modül için, trunk altında yapılan işlerin
+etiketlenerek (taglanarak) kopayalandıkları yerdir. Bu dizin de kendi
+içinde 3 dizin barındırır.
+<UL><LI>
+<B>tags/RELEASE/</B>: Yazılımların (veya modüllerin) kendi sürüm
+numaralarını etiketlemek içiin kullandıkları dizindir. Örneğin, tasma'nın
+0.2 sürümü, tags/RELEASE/tasma-0.2 dizininde etiketlenir.
+<LI><B>tags/BLACKHOLE</B>/: Geliştirilmesi durdurulmuş (üzerinde çalışacak
+bir geliştirici olmadığı için veya artık o projeye ihtiyaç duyulmadığı
+için) projelerin ``atıldığı'' bir kara deliktir. Buradaki projeler
+tekrar kullanılmak istendiğinde trunk/ altına kopyalanarak üzerinde
+çalışılır.
+<LI><B>tags/RESTRUCTURED/</B>: Yazılım (veya modül) tümü ile yeniden
+yapılanmaya girmiş ve eski dosyalar artık kullanılmayacaksa modülün
+atılacağı dizindir. Örneğin, yazılımına 28 Mayıs 2005'de yeniden başlanmış
+``abc'' projesi tags/RESTRUCTURED/abc-2005-05-28/ altına taşınır.
+</UL>
+<!--TOC subsubsection repos/-->
+
+<H4><A NAME="htoc26">5.3.3</A>&nbsp;&nbsp;repos/</H4><!--SEC END -->
+
+Repos dizini geliştiricilerin trunk/ altında yapılan çalışmadan farklı,
+deneysel çalışmalarını, aynı modül üzerinde çalışan diğer geliştiricileri
+rahatsız etmeden yürütebilecekleri dizindir. Geliştirici repos/ altına
+kendi dizinini oluşturarak bu dizin içerisinde deneysel çalışmalarını
+yürütebilir.<BR>
+<BR>
+(Yalnızca paketler deposu için geçerli olan bir kural olarak, repos/doc/
+dizini altında bu proje ile ilgili belgeler bulunur.)<BR>
+<BR>
 <!--TOC section Subversion kullanımı-->
 
-<H2><A NAME="htoc23">6</A>&nbsp;&nbsp;Subversion kullanımı</H2><!--SEC END -->
+<H2><A NAME="htoc27">6</A>&nbsp;&nbsp;Subversion kullanımı</H2><!--SEC END -->
 
 Subversion'ın çok ayrıntılı bir kullanım kitabı<SUP><A NAME="text4" HREF="#note4">4</A></SUP> mevcuttur, ayrıca subversion projesinin kendi sitesindeki<SUP><A NAME="text5" HREF="#note5">5</A></SUP> sıkça sorulan sorular sayfasından<SUP><A NAME="text6" HREF="#note6">6</A></SUP> da proje hakkında bilgi alınabilir. Bu kısımda pratik kullanıma ilişkin
 sık ihtiyaç duyulan komutlar örneklerle anlatılmaya çalışılacaktır.<BR>
 <BR>
 <!--TOC subsection Sistemimde subversion olup olmadığını nasıl anlayabilirim?-->
 
-<H3><A NAME="htoc24">6.1</A>&nbsp;&nbsp;Sistemimde subversion olup olmadığını nasıl anlayabilirim?</H3><!--SEC END -->
+<H3><A NAME="htoc28">6.1</A>&nbsp;&nbsp;Sistemimde subversion olup olmadığını nasıl anlayabilirim?</H3><!--SEC END -->
 
 Sisteminizde subversion olup olmadığını en hızlı şekilde ``<B>svn
 --version</B>'' komutunun çıktısına bakarak öğrenebilirsiniz. Şuna benzer
@@ -519,7 +535,7 @@ paketi alarak sisteminize kurabilirsiniz.<BR>
 <BR>
 <!--TOC subsection Depo nedir?-->
 
-<H3><A NAME="htoc25">6.2</A>&nbsp;&nbsp;Depo nedir?</H3><!--SEC END -->
+<H3><A NAME="htoc29">6.2</A>&nbsp;&nbsp;Depo nedir?</H3><!--SEC END -->
 
 Depo (repository), herkesin üzerinde çalıştığı yazılım(lar)ın son
 sürümünün, son sürümden önceki tüm sürümlerinin ve sürümler arası
@@ -528,7 +544,7 @@ ve çeşitli yöntemlerle erişilebilen bir disk alanıdır. <BR>
 <BR>
 <!--TOC subsection Depoda hangi dizinlerin olduğunu nasıl görebilirim?-->
 
-<H3><A NAME="htoc26">6.3</A>&nbsp;&nbsp;Depoda hangi dizinlerin olduğunu nasıl görebilirim?</H3><!--SEC END -->
+<H3><A NAME="htoc30">6.3</A>&nbsp;&nbsp;Depoda hangi dizinlerin olduğunu nasıl görebilirim?</H3><!--SEC END -->
 
 Sizin de belirttiğiniz gibi, bir depo, içerisinde birden fazla dizin
 içerebilir. Deponun hiyerarşisi, diskimiz üzerindeki bir dizinin içi
@@ -586,7 +602,7 @@ $&nbsp;
 </TT></DL></DIV>
 <!--TOC subsection Depodaki bir dizinin kopyasını nasıl alabilirim?-->
 
-<H3><A NAME="htoc27">6.4</A>&nbsp;&nbsp;Depodaki bir dizinin kopyasını nasıl alabilirim?</H3><!--SEC END -->
+<H3><A NAME="htoc31">6.4</A>&nbsp;&nbsp;Depodaki bir dizinin kopyasını nasıl alabilirim?</H3><!--SEC END -->
 
 Deponun bir kopyasının oluşturulması esnasında ``<B>svn co</B>''
 komutu kullanılır. Kopya oluştuktan sonra bir daha bu komut kopya
@@ -615,7 +631,7 @@ A&nbsp;COMAR/CSL<BR>
 </TT></DL></DIV>
 <!--TOC subsection Bendeki kopyanın güncel olup olmadığını nasıl anlayabilirim?-->
 
-<H3><A NAME="htoc28">6.5</A>&nbsp;&nbsp;Bendeki kopyanın güncel olup olmadığını nasıl anlayabilirim?</H3><!--SEC END -->
+<H3><A NAME="htoc32">6.5</A>&nbsp;&nbsp;Bendeki kopyanın güncel olup olmadığını nasıl anlayabilirim?</H3><!--SEC END -->
 
 Son değişikliklerden haberdar olmak ve son sürümü takip etmek için
 düzenli olarak deponun sizdeki kopyasını ``<B>svn update</B>''
@@ -642,7 +658,7 @@ Updated&nbsp;to&nbsp;revision&nbsp;158.<BR>
 </TT></DL></DIV>
 <!--TOC subsection Dosyaların yanlarındaki işaretler ne anlama geliyor?-->
 
-<H3><A NAME="htoc29">6.6</A>&nbsp;&nbsp;Dosyaların yanlarındaki işaretler ne anlama geliyor?</H3><!--SEC END -->
+<H3><A NAME="htoc33">6.6</A>&nbsp;&nbsp;Dosyaların yanlarındaki işaretler ne anlama geliyor?</H3><!--SEC END -->
 
 SVN ile çalışırken, güncelleme, sorgulama gibi işlemler esnasında
 dosyaların yanında bir önceki örnekte de olduğu gibi kendinden sonraki
@@ -662,7 +678,7 @@ yaptığınız değişiklikler ile çakışmış)
 </UL>
 <!--TOC subsection Bir takım dosyayı değiştirdim, şimdi ne yapacağım?-->
 
-<H3><A NAME="htoc30">6.7</A>&nbsp;&nbsp;Bir takım dosyayı değiştirdim, şimdi ne yapacağım?</H3><!--SEC END -->
+<H3><A NAME="htoc34">6.7</A>&nbsp;&nbsp;Bir takım dosyayı değiştirdim, şimdi ne yapacağım?</H3><!--SEC END -->
 
 Kendi kopyanızda ne gibi değişiklikler yaptığınızı görmek istediğinizde
 ``<B>svn status</B>'' komutunu kullanabilirsiniz. Diğer tüm
@@ -724,7 +740,7 @@ Index:&nbsp;comar-call/rpc.c<BR>
 </TT></DL></DIV>
 <!--TOC subsection Yeni bir dosya ekledim fakat yanında ``?'' var...-->
 
-<H3><A NAME="htoc31">6.8</A>&nbsp;&nbsp;Yeni bir dosya ekledim fakat yanında ``?'' var...</H3><!--SEC END -->
+<H3><A NAME="htoc35">6.8</A>&nbsp;&nbsp;Yeni bir dosya ekledim fakat yanında ``?'' var...</H3><!--SEC END -->
 
 Deponun kopyası üzerinde çalışırken yeni bir dosya yaratmak istediğinizde,
 ``<B>svn add</B>'' yardımı ile (bunun ``<B>svn copy</B>'',
@@ -767,7 +783,7 @@ A&nbsp;yenibetik.csl<BR>
 </TT></DL></DIV>
 <!--TOC subsection Değiştirdiğim dosyalar eski hallerine dönsünler istiyorum.-->
 
-<H3><A NAME="htoc32">6.9</A>&nbsp;&nbsp;Değiştirdiğim dosyalar eski hallerine dönsünler istiyorum.</H3><!--SEC END -->
+<H3><A NAME="htoc36">6.9</A>&nbsp;&nbsp;Değiştirdiğim dosyalar eski hallerine dönsünler istiyorum.</H3><!--SEC END -->
 
 Yaptığınız değişiklikleri istediğiniz an ``<B>svn revert</B>''
 komutu yardımı ile son kopyadaki orjinaline döndürebilirsiniz:
@@ -820,7 +836,7 @@ Reverted&nbsp;'COMARd/COMARValue.py'<BR>
 </TT></DL></DIV>
 <!--TOC subsection Değiştirdiğim dosyaları göndermek istiyorum?-->
 
-<H3><A NAME="htoc33">6.10</A>&nbsp;&nbsp;Değiştirdiğim dosyaları göndermek istiyorum?</H3><!--SEC END -->
+<H3><A NAME="htoc37">6.10</A>&nbsp;&nbsp;Değiştirdiğim dosyaları göndermek istiyorum?</H3><!--SEC END -->
 
 Değiştirdiğiniz dosyaların son hallerinden eminseniz, depoya değişikliklerinizin
 yansıması için ``<B>svn commit</B>'' komutunu kullanabilirsiniz.
@@ -852,7 +868,7 @@ başlar.<BR>
 <BR>
 <!--TOC subsection Başka hangi komutlar var?-->
 
-<H3><A NAME="htoc34">6.11</A>&nbsp;&nbsp;Başka hangi komutlar var?</H3><!--SEC END -->
+<H3><A NAME="htoc38">6.11</A>&nbsp;&nbsp;Başka hangi komutlar var?</H3><!--SEC END -->
 
 Subversion'ı subversion komutlarını öğrenmek için de çalıştırabilirsiniz.
 ``<B>svn help</B>'' size kullanabileceğiniz komutların bir listesini
@@ -965,7 +981,7 @@ adresinden Subversion kitabı okunabilir.<BR>
 <BR>
 <!--TOC section Subversion kullanım kuralları-->
 
-<H2><A NAME="htoc35">7</A>&nbsp;&nbsp;Subversion kullanım kuralları</H2><!--SEC END -->
+<H2><A NAME="htoc39">7</A>&nbsp;&nbsp;Subversion kullanım kuralları</H2><!--SEC END -->
 
 Subversion deposu tüm gelişticilerin ortak olarak kullandıkları bir
 alandır. Bir arada çalışabilmek için geliştiricilerin depoyu etkin,
@@ -976,7 +992,7 @@ geliştiricilerin uymaları gereken kurallardır.<BR>
 <BR>
 <!--TOC subsection Her zaman güncel bir depo ile çalışın-->
 
-<H3><A NAME="htoc36">7.1</A>&nbsp;&nbsp;Her zaman güncel bir depo ile çalışın</H3><!--SEC END -->
+<H3><A NAME="htoc40">7.1</A>&nbsp;&nbsp;Her zaman güncel bir depo ile çalışın</H3><!--SEC END -->
 
 Geliştirici sayısı arttıkça subversion deposu üzerindeki güncellemeler
 de sıklaşacaktır. Diğer gelişmelerden haberdar olmak ve yaptıklarınızın
@@ -985,7 +1001,7 @@ diğer yapılanlar ile çakışmasını önlemek için çalışmaya başlamadan
 <BR>
 <!--TOC subsection Göndermeden önce düşünün-->
 
-<H3><A NAME="htoc37">7.2</A>&nbsp;&nbsp;Göndermeden önce düşünün</H3><!--SEC END -->
+<H3><A NAME="htoc41">7.2</A>&nbsp;&nbsp;Göndermeden önce düşünün</H3><!--SEC END -->
 
 Yaptığınız değişiklikleri Subversion deposuna göndermeden<SUP><A NAME="text7" HREF="#note7">7</A></SUP> önce iki defa düşünün. Depoya gönderdiğiniz veriler tüm geliştiricilere
 ulaşacak ve onların çalışmalarını etkileyecektir. Bu yüzden aşağıdaki
@@ -1001,7 +1017,7 @@ ile deponuzu güncelleyin. Yaptığınız değişikliklerin diğerleri ile
 </OL>
 <!--TOC subsection Gönderimlerinize açıklayıcı mesajlar ekleyin-->
 
-<H3><A NAME="htoc38">7.3</A>&nbsp;&nbsp;Gönderimlerinize açıklayıcı mesajlar ekleyin</H3><!--SEC END -->
+<H3><A NAME="htoc42">7.3</A>&nbsp;&nbsp;Gönderimlerinize açıklayıcı mesajlar ekleyin</H3><!--SEC END -->
 
 Gönderimlerde kullanılan açıklama mesajları yapılan değişikliğe odaklanmalı
 ve mümkün olduğunca açıklayıcı olmalıdır. Mümkün olduğunca yalnızca
@@ -1014,7 +1030,7 @@ güçleştirecektir.<BR>
 <BR>
 <!--TOC subsection Çalışma planlarına uyun-->
 
-<H3><A NAME="htoc39">7.4</A>&nbsp;&nbsp;Çalışma planlarına uyun</H3><!--SEC END -->
+<H3><A NAME="htoc43">7.4</A>&nbsp;&nbsp;Çalışma planlarına uyun</H3><!--SEC END -->
 
 Eğer dağıtım genelinde veya üzerinde çalıştığınız bileşenin ana geliştiricisi
 bir çalışma/zaman planı ortaya koymuşsa gönderimlerinizde bu plana
@@ -1031,7 +1047,7 @@ mutlaka ilgili e-posta listesine veya ana geliştiriciye başvurun.<BR>
 <!--TOC subsection Birden fazla bileşeni etkileyen bir değişiklik yaptıysanız tüm gelişticileri
 bu değişiklikten haberdar edin.-->
 
-<H3><A NAME="htoc40">7.5</A>&nbsp;&nbsp;Birden fazla bileşeni etkileyen bir değişiklik yaptıysanız tüm gelişticileri
+<H3><A NAME="htoc44">7.5</A>&nbsp;&nbsp;Birden fazla bileşeni etkileyen bir değişiklik yaptıysanız tüm gelişticileri
 bu değişiklikten haberdar edin.</H3><!--SEC END -->
 
 Tüm geliştiricilerin yaptığınız ``büyük'' güncellemeden haberdar
@@ -1040,14 +1056,14 @@ iletisi gönderin.<BR>
 <BR>
 <!--TOC subsection Yaptığınız değişikliğin sorumluluğunu alın-->
 
-<H3><A NAME="htoc41">7.6</A>&nbsp;&nbsp;Yaptığınız değişikliğin sorumluluğunu alın</H3><!--SEC END -->
+<H3><A NAME="htoc45">7.6</A>&nbsp;&nbsp;Yaptığınız değişikliğin sorumluluğunu alın</H3><!--SEC END -->
 
 Eğer yaptığınız güncelleme herhangi bir sorun çıkartıyorsa bunun sorumluluğunu
 alın ve çözülmesini kendiniz veya yardım alarak sağlayın.<BR>
 <BR>
 <!--TOC subsection Genel kabullere saygı duyun-->
 
-<H3><A NAME="htoc42">7.7</A>&nbsp;&nbsp;Genel kabullere saygı duyun</H3><!--SEC END -->
+<H3><A NAME="htoc46">7.7</A>&nbsp;&nbsp;Genel kabullere saygı duyun</H3><!--SEC END -->
 
 Geliştirici tartışmalarında kabul edilen genel kurallara uyun ve yaptığınız
 değişikliğin bu kuralları bozmadığına emin olun. Emin olmadığınız
@@ -1055,7 +1071,7 @@ durumlarda her zaman ``iletişim'' yolunu seçebilirsiniz.<BR>
 <BR>
 <!--TOC subsection Hata kontrol sistemindeki bir hatayı çözerken hata numarasını girin.-->
 
-<H3><A NAME="htoc43">7.8</A>&nbsp;&nbsp;Hata kontrol sistemindeki bir hatayı çözerken hata numarasını girin.</H3><!--SEC END -->
+<H3><A NAME="htoc47">7.8</A>&nbsp;&nbsp;Hata kontrol sistemindeki bir hatayı çözerken hata numarasını girin.</H3><!--SEC END -->
 
 Eğer yaptığınız güncelleme raporlanmış bir hatayı çözüyorsa, hata
 kontrol sistemini depodaki güncellemeler ile senkron tutabilmek için
@@ -1064,7 +1080,7 @@ hatayı kapatın.<BR>
 <BR>
 <!--TOC subsection Kendi sorumluluğunuzda olan dosyaları güncelleyin-->
 
-<H3><A NAME="htoc44">7.9</A>&nbsp;&nbsp;Kendi sorumluluğunuzda olan dosyaları güncelleyin</H3><!--SEC END -->
+<H3><A NAME="htoc48">7.9</A>&nbsp;&nbsp;Kendi sorumluluğunuzda olan dosyaları güncelleyin</H3><!--SEC END -->
 
 Yalnızca kendi sorumluluğunuzda olan dosyaları güncelleyin. Eğer bir
 başka geliştiricinin sorumluluğunda olan dosyalarda bir hata bulduysanız,
@@ -1075,7 +1091,7 @@ etmez ise saygı gösterin.<BR>
 <BR>
 <!--TOC subsection Otomatik oluşturulan dosyaları depoya eklemeyin-->
 
-<H3><A NAME="htoc45">7.10</A>&nbsp;&nbsp;Otomatik oluşturulan dosyaları depoya eklemeyin</H3><!--SEC END -->
+<H3><A NAME="htoc49">7.10</A>&nbsp;&nbsp;Otomatik oluşturulan dosyaları depoya eklemeyin</H3><!--SEC END -->
 
 Derleme araçlarının sonradan oluşturduğu Makefile, Makefile.in, configure
 betikleri, vb. dosyaları depoya eklemeyin. Bu dosyalar her geliştiricinin
@@ -1085,7 +1101,7 @@ eklenmesi genellikle hata olarak algılanır.<BR>
 <BR>
 <!--TOC subsection Güncellemeleri atomik yapın-->
 
-<H3><A NAME="htoc46">7.11</A>&nbsp;&nbsp;Güncellemeleri atomik yapın</H3><!--SEC END -->
+<H3><A NAME="htoc50">7.11</A>&nbsp;&nbsp;Güncellemeleri atomik yapın</H3><!--SEC END -->
 
 Bir iyileştirme/güncelleme ile ilgili tüm değişiklikleri bir anda
 gönderin, subversion birden fazla dosyayı aynı anda göndermenize izin
@@ -1123,27 +1139,4 @@ belgesinde anlatılmaktadır.
 <!--END NOTES-->
 </div>
 <!-- SAYFA İÇERİK SONU -->
-
-<!-- yayın hakkı -->
-<br>
-<br>
-<p class="not">
-Ulusal Dağıtım sayfalarında bulunan bilgi ve belgelerin,
-kaynak gösterilmek koşulu ile kullanılması serbesttir.
-<em><br>
-<strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
-Bilgi ve önerileriniz için
-<a href="mailto:bilgi%20at%20uludag.org.tr">bilgi at uludag.org.tr</a>
-</p>
-<br>
-
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
-</table>
-
-</body>
-</html>
+</body></html>
