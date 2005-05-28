@@ -1,0 +1,141 @@
+body {
+  background-color: #e5ebef;
+  color: #335783;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+* {
+  font-family: verdana, sans-serif;
+  font-size: 11px;
+}
+
+#container {
+  margin: 20px auto;
+  width: 90%;
+  min-width: 450px;
+  max-width: 1000px;
+}
+#content {
+  padding: 15px;
+  border: 1px solid #7b93af;
+  background-color: #fff;
+  text-align: left;
+  color: #000;
+  margin-right: 205px;
+  min-height: 400px;
+}
+#menu {
+  float: right;
+  width: 160px;
+  padding: 15px;
+  border: 1px solid #7b93af;
+  background-color: #fff;
+  text-align: left;
+  color: #000;
+  min-height: 400px;
+}
+#header {
+  text-align: left;
+  margin-bottom: 15px;
+}
+#logo {
+  padding: 5px 15px;
+  border: 1px solid #7b93af;
+  background-color: #fff;
+}
+#logo a {
+  color: #000;
+  font-family: verdana, sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 5px;
+  text-decoration: none;
+  border-width: 0px;
+}
+#logo a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+}
+#menubar {
+  display: none;
+}
+#footer {
+  clear: both;
+  text-align: center;
+  margin-top: 20px;
+}
+.seperate {
+  clear: both;
+}
+
+h1 {
+  font-size: 22px;
+}
+h2 {
+  font-size: 15px;
+}
+
+input[type="text"], input[type="password"], textarea {
+  margin: 1px 0px;
+  padding: 3px;
+  border: 1px solid #7b93af;
+  background-color: #f2f6f8;
+  color: #000;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  border: 1px solid #f00;
+}
+label {
+  font-weight: bold;
+}
+legend {
+  font-family: verdana, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+fieldset {
+  border: 1px solid #aaa;
+  padding: 20px 10px;
+  margin: 0px;
+  border-width: 0px;
+}
+fieldset input[type="text"], fieldset textarea {
+}
+button.default {
+  font-weight: bold;
+}
+.error {
+  color: #f00;
+}
+
+a img {
+  border-width: 0px;
+}
+
+code {
+  font-family: courier new, monospace;
+  font-size: 12px;
+}
+
+.justified {
+  text-align: justify;
+}
+.centered {
+  text-align: center;
+}
+
+a {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 2px;
+}
+a:hover {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+

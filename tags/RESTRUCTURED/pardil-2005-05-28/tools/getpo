@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# ** --- xgetpo ---
+# **
+# ** This script regenerates main POT file
+# ** 
+# ** taken from www.squirrelmail.org
+# ** Original Author: Philipe Mingo <mingo@rotedic.com>
+
+. ./gettext.conf
+
+XGETTEXT_OPTIONS="--keyword=_ --keyword=__ --keyword=N_ --keyword=N__ --keyword=__e --language=PHP --default-domain=$APP_NAME --no-location --from-code=utf-8"
+echo "XGETTEXT_OPTIONS: $XGETTEXT_OPTIONS"
+
+cd ../..
+
+xgettext ${XGETTEXT_OPTIONS} pardil/*.php pardil/class/*.php pardil/class/phpmailer/*.php pardil/tpl/*.php pardil/sys/*.php pardil/cfg/*.php --output=$APP_NAME/tools/$APP_NAME.pot
+
+cd $APP_NAME/tools

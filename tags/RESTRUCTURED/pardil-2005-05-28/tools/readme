@@ -1,0 +1,19 @@
+İlk defa MO oluştururken:
+=========================
+  cd tools
+  ./getpo
+  ./createpo tr_TR.utf-8
+  cd ../locale/tr_TR.utf-8/LC_MESSAGES
+# (po dosyasının çevirisini yapın)
+  compilepo tr_TR.utf-8
+
+
+MO dosyasını güncellemek gerektiğinde:
+======================================
+  cd tools
+  ./getpo
+  ./mergepo tr_TR.utf-8
+  cd ../locale/tr_TR.utf-8/LC_MESSAGES
+# (po dosyası açın ve çevirisini tamamlayın)
+  compilepo tr_TR.utf-8
+  

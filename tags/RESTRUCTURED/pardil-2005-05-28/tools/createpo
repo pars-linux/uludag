@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# ** -- createpo ---
+# ** 
+# ** This script creates a locale PO file.
+# **
+# ** Usage:   createpo <locale id>
+# ** Example: createpo de_DE
+# **
+# ** Joachim Werner <info@diggin-data.de>
+# **
+
+. ./gettext.conf
+
+if [ -z "$1" ]; then
+ echo "USAGE: createpo [localename]"
+ exit 1
+fi
+
+
+WORKDIR=../locales
+LOCALEDIR=$WORKDIR/$1/LC_MESSAGES
+
+mkdir -p $LOCALEDIR
+
+if [ ! -d $LOCALEDIR ]; then
+    echo "Couldn't create $LOCALEDIR."
+    exit 1
+fi
+
+msginit -l $1 -i $APP_NAME.pot -o $LOCALEDIR/$APP_NAME.po
+
+DCOUNT=`find -name $LOCALEDIR/$APP_NAME.po | wc -l` 
+#if [ $DCOUNT -eq 1 ]; then 
+#fi

@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# ** --- mergepo ---
+# **
+# ** This script merges global POT to locale PO files.
+# ** It creates a backup of the old PO file as vexim_jw.po.bak
+# ** and puts the merged version in vexim_jw.po
+# **
+# ** Usage:   mergepo <locale id>
+# ** Example: mergepo es_ES
+# **
+# ** Philipe Mingo <mingo@rotedic.com>
+# ** Konstantin Riabitsev <icon@duke.edu>
+# **
+
+. gettext.conf
+
+if [ -z "$1" ]; then
+ echo "USAGE: mergepo [localename]"
+ exit 1
+fi
+
+WORKDIR=../locales
+LOCALEDIR=$WORKDIR/$1
+
+if [ ! -d $LOCALEDIR ]; then
+ # lessee if it's been renamed.
+ DCOUNT=`find $WORKDIR/ -name $1* | wc -l` 
+ if [ $DCOUNT -eq 1 ]; then 
+  # aha
+  LOCALEDIR=`find $WORKDIR/ -name $1*`
+ elif [ $DCOUNT -gt 1 ]; then
+  # err out
+  echo "More than one locale matching this name found:"
+  find $WORKDIR/ -name $1*
+  echo "You have to be more specific."
+  exit 1
+ fi
+fi
+
+echo "Merging $LOCALEDIR/LC_MESSAGES/$APP_NAME.po"
+mv $LOCALEDIR/LC_MESSAGES/$APP_NAME.po \
+     $LOCALEDIR/LC_MESSAGES/$APP_NAME.po.bak 
+msgmerge $LOCALEDIR/LC_MESSAGES/$APP_NAME.po.bak ../tools/$APP_NAME.pot > \
+     $LOCALEDIR/LC_MESSAGES/$APP_NAME.po
+
+# msgmerge will split long lines, such as the RCS Id line. If it did split
+# it, join the pieces back together.
+ed -s $LOCALEDIR/LC_MESSAGES/$APP_NAME.po << END
+/^"Project-Id-Version:/v/\\n"$/j\\
+s/""//
+wq
+END
+
+echo "Old po file renamed to $APP_NAME.po.bak"

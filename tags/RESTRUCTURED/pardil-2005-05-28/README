@@ -1,0 +1,40 @@
+Pardil: Pardus İyileştirme Listesi
+
+
+Kurulum:
+========
+1. "cfg/sys.define.php" dosyasını açın ve MySQL bağlantı bilgilerini girin.
+2. "sql/database.sql" dosyasını, 2. adımda belirttiğiniz veritabanına aktarın.
+3. "options" tablosundaki "site_url" değerine, Pardil'in çalışacağı web adresini girin.
+
+
+Notlar:
+=======
+POST, GET, COOKIE'den gelen verilerdeki tırnak işareti, PHP tarafından 
+otomatik olarak \" işaretine çevrilmemektedir. SQL sorgusu hazırlarken 
+addslashes() fonksiyonunu kullanmayı unutmayın.
+
+Ve, ekrana birşey yazdırırken, htmlspecialchars() kullanmayı unutmayın...
+
+PHP'nin dışarıdan gelen değişkenkerdeki tırnak (") işaretini otomatik 
+"escape" etmesi, .htaccess dosyasındaki ayarlar sayesinde engellenmektedir. 
+
+Eğer web sunucusu, bu ayarları dikkate almıyorsa, Pardil düzgün 
+çalışmayacaktır. Pardil'in bulunduğu dizin için, Apache konfigürasyon 
+dosyasına "AllowOverride All" ayarı eklenmelidir.
+
+
+Dizinler:
+=========
+
+cfg/        : Konfigürasyon dosyaları
+sys/        : Sistem dosyaları
+class/      : Sınıflar
+procedures/ : SQL prosedürleri
+queries/    : SQL sorguları
+tpl/        : Sayfa şablonları
+xhr/        : XMLHTTPRequest uygulamaları
+images/     : Resimler, simgeler
+locales     : Yerelleştirme dosyaları
+tools/      : Yerelleştirme araçları (PHP koduna bakarak PO dosyası oluşturan & MO derleyen araçlar)
+sql/        : Veritabanına aktarılması gereken SQL dosyaları

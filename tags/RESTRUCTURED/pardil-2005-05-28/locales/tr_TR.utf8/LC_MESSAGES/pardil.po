@@ -1,0 +1,538 @@
+# Turkish translations for PACKAGE package
+# PACKAGE paketi için Türkçe çeviriler.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#  <bahadir@haftalik.ent>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-10 12:12+0300\n"
+"PO-Revision-Date: 2005-04-02 18:28+0300\n"
+"Last-Translator: Bahadır Kandemir <bahadir@haftalik.ent>\n"
+"Language-Team: Bahadır Kandemir <bahadir@haftalik.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Account Activation"
+msgstr "Hesap Aktivasyonu"
+
+msgid "Invalid activation data. Please double check URL."
+msgstr "Geçersiz aktivasyon bilgisi. Lütfen adresi iki kez kontrol edin."
+
+msgid "Activation code is not valid."
+msgstr "Aktivasyon kodu geçerli değil."
+
+msgid "Account is already activated."
+msgstr "Kullanıcı hesabı zaten aktive edilmiş."
+
+#, php-format
+msgid "You are allowed to use this form at most %1$d times in %2$d seconds."
+msgstr "Bu formu %2$d saniye içinde en fazla %1$d kere kullanabilirsiniz."
+
+msgid "Activation is not required."
+msgstr "Aktivasyon gerekmiyor."
+
+msgid "E-mail address should be written."
+msgstr "E-posta adresi yazılmalı."
+
+msgid "E-mail address should be valid."
+msgstr "E-posta adresi geçerli olmalı."
+
+msgid "E-mail address does not exist in database."
+msgstr "E-posta adresi veritabanında bulunamadı."
+
+#, php-format
+msgid "%s Account Activation"
+msgstr "%s Hesap Aktivasyonu"
+
+#, php-format
+msgid ""
+"Hello,\n"
+"\n"
+"To complete your registration at %1$s, please visit the address below:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Thanks,\n"
+"%3$s Team"
+msgstr ""
+"Merhaba,\n"
+"\n"
+"%1$s adresindeki kaydınızı tamamlamak için, lütfen aşağıdaki adresi ziyaret "
+"edin:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Teşekkürler,\n"
+"%3$s Ekibi"
+
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+msgid "Proposal Updated"
+msgstr "Öneri Güncellendi"
+
+msgid "Title should be written."
+msgstr "Başlık yazılmalı."
+
+msgid "Abstract should be written."
+msgstr "Özet yazılmalı."
+
+#, php-format
+msgid "Section \"%s\" should be written. If you don't want it, remove it."
+msgstr "\"%s\" bölümü yazılmalı. İstemiyorsanız, bölümü kaldırın."
+
+msgid "At least one section should be created."
+msgstr "En az bir bölüm yaratılmalı."
+
+msgid "Release info should be written."
+msgstr "Sürüm bilgisi yazılmalı."
+
+msgid "Release number should be written."
+msgstr "Sürüm numarası yazılmalı."
+
+msgid "Release number is not valid."
+msgstr "Sürüm numarası geçerli değil."
+
+#, php-format
+msgid "New release number should be greater than %.2f"
+msgstr "Yeni sürüm numarası %.2f'den büyük olmalı."
+
+#, php-format
+msgid ""
+"New release number should be greater than latest revision number (%.2f)."
+msgstr "Yeni sürüm numarası en son sürüm numarasından büyük olmalı (%.2f)."
+
+msgid "Edit Proposal"
+msgstr "Öneriyi Düzenle"
+
+msgid "Username should be written."
+msgstr "Kullanıcı adı yazılmalı."
+
+msgid "Password should be written."
+msgstr "Parola yazılmalı."
+
+msgid "Wrong username or password."
+msgstr "Hatalı kullanıcı adı ya da parola."
+
+msgid "User account is not activated."
+msgstr "Kullanıcı hesabı aktive edilmemiş."
+
+msgid "User Login"
+msgstr "Kullanıcı Girişi"
+
+msgid "Logged Out"
+msgstr "Çıkış Yapıldı"
+
+msgid "New Proposal Submitted"
+msgstr "Yeni Öneri Gönderildi"
+
+msgid "New Proposal"
+msgstr "Yeni Öneri"
+
+msgid "Proposal Not Found"
+msgstr "Öneri Bulunamadı"
+
+msgid "Create Temporary Password"
+msgstr "Geçici Parola Yarat"
+
+msgid "E-mail address not found in database."
+msgstr "E-posta adresi veritabanında bulunamadı.."
+
+#, php-format
+msgid "%s Temporary Password"
+msgstr "%s Geçici Parolası"
+
+#, php-format
+msgid ""
+"Hello,\n"
+"\n"
+"You have requested a temporary password for your account at %1$s.\n"
+"\n"
+"Your temporary password is: %2$s\n"
+"\n"
+"This temporary password does not effect your primary password.\n"
+"\n"
+"Thanks,\n"
+"%3$s Team"
+msgstr ""
+"Merhaba,\n"
+"\n"
+"%1$s adresindeki hesabınız için geçici parola talebinde bulundunuz.\n"
+"\n"
+"Geçici parolanız: %2$s\n"
+"\n"
+"Bu geçici parola asıl parolanızı etkilemez.\n"
+"\n"
+"Teşekkürler,\n"
+"%3$s Ekibi"
+
+msgid "Profile Update Complete"
+msgstr "Profil Güncellemesi Tamamlandı"
+
+msgid "Real name should be written."
+msgstr "Gerçek isim yazılmalı."
+
+msgid "Password should be written twice."
+msgstr "Parola iki kere yazılmalı."
+
+msgid "Passwords should be same."
+msgstr "Parolalar aynı olmalı."
+
+#, php-format
+msgid "Password should be at least %d chars long."
+msgstr "Parola en az %d karakter uzunluğunda olmalı."
+
+msgid "User Profile"
+msgstr "Kullanıcı Bilgileri"
+
+msgid "Registration Complete"
+msgstr "Kayıt Tamamlandı"
+
+#, php-format
+msgid "Username should be at least %d chars long."
+msgstr "Kullanıcı adı en az %d karakter uzunluğunda olmalı."
+
+msgid "Username is in use."
+msgstr "Kullanıcı adı kullanımda."
+
+msgid "User Registration"
+msgstr "Kullanıcı Kaydı"
+
+msgid ""
+"PHP's Magic Quotes option is set to ON, this is bad. It seems that this web "
+"server does not read .htaccess file. Please contact your server "
+"administrator."
+msgstr "PHP'nin Magic Quotes seçeneği ON'a ayarlanmış, bu iyi değil. Bu web "
+"sunucusu .htaccess dosyasını okumadığı görülüyor. Lütfen sunucu yöneticiniz "
+"ile görüşün."
+
+msgid "You must provide at least one recipient email address."
+msgstr "En az bir alıcı adresi belirtmelisiniz."
+
+#, php-format
+msgid "%s mailer is not supported."
+msgstr "%s e-posta göndericisi desteklenmemektedir."
+
+#, php-format
+msgid "Could not execute: %s"
+msgstr "Komut çalıştırılamıyor: %s"
+
+msgid "Could not instantiate mail function."
+msgstr "E-posta fonksiyonu kullanılamıyor."
+
+#, php-format
+msgid "The following From address failed: %s"
+msgstr "Gönderici adresi kabul edilmedi: %s"
+
+#, php-format
+msgid "SMTP Error: The following recipients failed: %s"
+msgstr "SMTP Hatası: Alıcı adresi kabul edilmedi: %s"
+
+msgid "SMTP Error: Data not accepted."
+msgstr "SMTP Hatası: Veri kabul edilmedi."
+
+msgid "SMTP Error: Could not authenticate."
+msgstr "SMTP Hatası: Kimlik doğrulama yapılamadı."
+
+msgid "SMTP Error: Could not connect to SMTP host."
+msgstr "SMTP Hatası: SMTP sunucuya bağlanılamadı."
+
+#, php-format
+msgid "Could not access file: %s"
+msgstr "Dosyaya erişilemedi: %s"
+
+#, php-format
+msgid "File Error: Could not open file: %s"
+msgstr "Dosya açılamadı: %s"
+
+#, php-format
+msgid "Unknown encoding: %s"
+msgstr "Bilinmeyen karakter kodlaması: %s"
+
+msgid "Account Activated"
+msgstr "Hesap Aktive Edildi"
+
+msgid "Your registration is now complete."
+msgstr "Kaydınız tamamlandı."
+
+msgid "Go to login page"
+msgstr "Giriş sayfasına git"
+
+msgid "Activation Code Sent"
+msgstr "Aktivasyon Kodu Gönderildi"
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your e-mail address."
+msgstr ""
+"Hesabınızı, e-posta adresinize gönderilen adrese tıklayarak (ya da adresi "
+"ziyaret ederek) aktive etmeniz gerekmektedir."
+
+msgid ""
+"A problem occured in our mail server while sending your activation code. "
+"Please contact server administrator."
+msgstr ""
+"Aktivasyon kodunuzu gönderirken, posta sunucumuzda bir hata oluştu. Lütfen "
+"sunucu yöneticisiyle irtibata geçin."
+
+msgid "E-Mail Address:"
+msgstr "E-Posta Adresi:"
+
+msgid "Request Code &raquo;"
+msgstr "Kod Talep Et &raquo;"
+
+msgid "You are not allowed to perform this operation."
+msgstr "Bu işlemi yapma izniniz yok."
+
+msgid "You've successfully updated a proposal."
+msgstr "Öneriyi başarılı bir şekilde güncellediniz."
+
+msgid "This updated is saved as a new revision of proposal."
+msgstr "Bu güncelleme, önerinin yeni bir sürümü olarak eklendi."
+
+msgid "View proposal"
+msgstr "Öneriyi görüntüle"
+
+msgid "Section:"
+msgstr "Bölüm:"
+
+msgid "Remove section"
+msgstr "Bölümü kaldır"
+
+msgid "Remove section?"
+msgstr "Bölüm kaldırılsın mı?"
+
+msgid "Title:"
+msgstr "Başlık:"
+
+msgid "Abstract:"
+msgstr "Özet:"
+
+msgid "New Section:"
+msgstr "Yeni Bölüm:"
+
+msgid "Add &raquo;"
+msgstr "Ekle &raquo;"
+
+msgid ""
+"Proposal should be written in sections.<br/>Write section title and then "
+"push \"Add &raquo;\" button."
+msgstr ""
+"Öneri bölümler halinde yazılmalı.<br/>Başlığı yazın ve sonra da \"Ekle "
+"&raquo;\" düğmesine basın."
+
+msgid "Release Info:"
+msgstr "Sürüm Bilgisi:"
+
+msgid "Release Number:"
+msgstr "Sürüm Numarası:"
+
+msgid "New Release:"
+msgstr "Yeni Sürüm:"
+
+msgid ""
+"This is not the latest revision of proposal, so you may not use it to create "
+"new revision."
+msgstr ""
+"Bu, önerinin son revizyonu değil, bu yüzden yeni bir revizyon yaratırken "
+"kullanamazsınız."
+
+msgid "Save this update as a new release."
+msgstr "Bu güncellemeyi yeni bir sürüm olarak kaydet."
+
+msgid "Are you sure?"
+msgstr "Emin misiniz?"
+
+msgid "Reset Form"
+msgstr "Formu Sıfırla"
+
+msgid "Submit &raquo;"
+msgstr "Gönder &raquo;"
+
+msgid "Session data updated."
+msgstr "Oturum bilgisi güncellendi."
+
+msgid "Session Information:"
+msgstr "Oturum Bilgisi:"
+
+msgid "Username:"
+msgstr "Kullanıcı Adı:"
+
+msgid "Edit Profile"
+msgstr "Kullanıcı Bilgilerini Düzenle"
+
+msgid "Logout"
+msgstr "Çıkış Yap"
+
+msgid "Proposals"
+msgstr "Öneriler"
+
+msgid "Proposals:"
+msgstr "Öneriler:"
+
+msgid "Password:"
+msgstr "Parola:"
+
+msgid "Login &raquo;"
+msgstr "Giriş &raquo;"
+
+msgid "Forgot your password?"
+msgstr "Parolanızı mı unuttunuz?"
+
+msgid "Need activation?"
+msgstr "Aktivasyona mı ihtiyacınız var?"
+
+msgid "Not a registered user?"
+msgstr "Kayıtlı kullanıcı değil misiniz?"
+
+msgid "You Have Logged Out"
+msgstr "Çıkış Yaptınız"
+
+msgid "You have successfully logged out"
+msgstr "Başarılı bir şekilde çıkış yaptınız."
+
+msgid "Go to main page"
+msgstr "Ana sayfaya git"
+
+msgid "You've successfully submitted a new proposal."
+msgstr "Yeni bir öneriyi başarılı bir şekilde gönderdiniz."
+
+msgid "New proposal is automatically approved and marked as active."
+msgstr "Yeni öneri otomatik olarak onaylandı ve aktif olarak işaretlendi."
+
+msgid "New proposal marked as pending. It needs to be reviewed by a moderator."
+msgstr ""
+"Yeni öneri beklemeye alındı. Bir moderatör tarafından incelenmesi gerekiyor."
+
+msgid "This proposal or revision does not exist."
+msgstr "Bu öneri veya sürüm bulunmuyor."
+
+msgid "Temporary Password Sent"
+msgstr "Geçici Parola Gönderildi"
+
+msgid ""
+"In this page, you can create a temporary password. With this temporary "
+"password, you can login to your account to change your primary password."
+msgstr ""
+"Bu sayfada, geçici bir parola yaratabilirsiniz. Bu geçici parola ile "
+"hesabınıza giriş yapabilir ve asıl parolanızı değiştirebilirsiniz."
+
+#, php-format
+msgid ""
+"This temporary password does not effect your primary password, and will be "
+"disabled after %d seconds."
+msgstr ""
+"Bu geçici parola, asıl parolanızı etkilemez, ve %d saniye sonra iptal edilir."
+
+msgid "You've successfully updated your profile."
+msgstr "Kişisel bilgilerinizi başarılı bir şekilde güncellediniz."
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your new e-mail address."
+msgstr ""
+"Hesabınızı, yeni e-posta adresinize gönderilen adrese tıklayarak (ya da "
+"adresi ziyaret ederek) aktive etmeniz gerekmektedir."
+
+msgid "Name:"
+msgstr "İsim:"
+
+msgid ""
+"If you change your e-mail address, you will need to activate your account "
+"again."
+msgstr ""
+"E-posta adresinizi değiştirirseniz, hesabınızı yeniden aktifleştirmeniz "
+"gerekir."
+
+msgid ""
+"If you don't want to change your password, leave these two fields empty."
+msgstr "Şifrenizi değiştirmek istemiyorsanız, bu iki alanı boş bırakın."
+
+msgid "Update &raquo;"
+msgstr "Güncelle &raquo;"
+
+msgid "Abstract"
+msgstr "Özet"
+
+msgid "Identity"
+msgstr "Künye"
+
+msgid "Status:"
+msgstr "Durum:"
+
+msgid "Id:"
+msgstr "No:"
+
+msgid "Version:"
+msgstr "Sürüm:"
+
+msgid "Last Update:"
+msgstr "Son Güncelleme:"
+
+msgid "Releated Proposals:"
+msgstr "Bağlantılı Öneriler:"
+
+msgid "None"
+msgstr "Yok"
+
+msgid "Maintainers"
+msgstr "Sorumlular"
+
+msgid "Contents"
+msgstr "İçindekiler"
+
+msgid "Revision History"
+msgstr "Sürüm Geçmişi"
+
+msgid "You've successfully registered."
+msgstr "Başarılı bir şekilde kayıt oldunuz."
+
+msgid "Register &raquo;"
+msgstr "Kayıt &raquo;"
+
+msgid "Could not connect to database server."
+msgstr "Veritabanı sunucusuna bağlanılamadı."
+
+msgid "Could not select database."
+msgstr "Veritabanı seçilemedi."
+
+msgid "Missing configuration."
+msgstr "Eksik konfigürasyon."
+
+#~ msgid "Installination"
+#~ msgstr "Kurulum"
+
+#~ msgid "MySQL Host:"
+#~ msgstr "MySQL Adresi:"
+
+#~ msgid "MySQL User:"
+#~ msgstr "MySQL Kullanıcısı:"
+
+#~ msgid "MySQL Password:"
+#~ msgstr "MySQL Parolası:"
+
+#~ msgid "MySQL Database:"
+#~ msgstr "MySQL Veritabanı"
+
+#~ msgid "Site Name:"
+#~ msgstr "Site Adı:"
+
+#~ msgid "Site Title:"
+#~ msgstr "Site Başlığı:"
+
+#~ msgid "Site URL:"
+#~ msgstr "Site Adresi:"
+
+#~ msgid "Recommended: %s"
+#~ msgstr "Tavsiye Edilen: %s"
+
+#~ msgid "Admin Password:"
+#~ msgstr "Yönetici Parolası:"
+
+#~ msgid "Install &raquo;"
+#~ msgstr "Kur &raquo;"

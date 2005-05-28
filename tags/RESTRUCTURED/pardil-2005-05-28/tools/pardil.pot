@@ -1,0 +1,467 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-10 12:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Account Activation"
+msgstr ""
+
+msgid "Invalid activation data. Please double check URL."
+msgstr ""
+
+msgid "Activation code is not valid."
+msgstr ""
+
+msgid "Account is already activated."
+msgstr ""
+
+#, php-format
+msgid "You are allowed to use this form at most %1$d times in %2$d seconds."
+msgstr ""
+
+msgid "Activation is not required."
+msgstr ""
+
+msgid "E-mail address should be written."
+msgstr ""
+
+msgid "E-mail address should be valid."
+msgstr ""
+
+msgid "E-mail address does not exist in database."
+msgstr ""
+
+#, php-format
+msgid "%s Account Activation"
+msgstr ""
+
+#, php-format
+msgid ""
+"Hello,\n"
+"\n"
+"To complete your registration at %1$s, please visit the address below:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Thanks,\n"
+"%3$s Team"
+msgstr ""
+
+msgid "Access Denied"
+msgstr ""
+
+msgid "Proposal Updated"
+msgstr ""
+
+msgid "Title should be written."
+msgstr ""
+
+msgid "Abstract should be written."
+msgstr ""
+
+#, php-format
+msgid "Section \"%s\" should be written. If you don't want it, remove it."
+msgstr ""
+
+msgid "At least one section should be created."
+msgstr ""
+
+msgid "Release info should be written."
+msgstr ""
+
+msgid "Release number should be written."
+msgstr ""
+
+msgid "Release number is not valid."
+msgstr ""
+
+#, php-format
+msgid "New release number should be greater than %.2f"
+msgstr ""
+
+#, php-format
+msgid ""
+"New release number should be greater than latest revision number (%.2f)."
+msgstr ""
+
+msgid "Edit Proposal"
+msgstr ""
+
+msgid "Username should be written."
+msgstr ""
+
+msgid "Password should be written."
+msgstr ""
+
+msgid "Wrong username or password."
+msgstr ""
+
+msgid "User account is not activated."
+msgstr ""
+
+msgid "User Login"
+msgstr ""
+
+msgid "Logged Out"
+msgstr ""
+
+msgid "New Proposal Submitted"
+msgstr ""
+
+msgid "New Proposal"
+msgstr ""
+
+msgid "Proposal Not Found"
+msgstr ""
+
+msgid "Create Temporary Password"
+msgstr ""
+
+msgid "E-mail address not found in database."
+msgstr ""
+
+#, php-format
+msgid "%s Temporary Password"
+msgstr ""
+
+#, php-format
+msgid ""
+"Hello,\n"
+"\n"
+"You have requested a temporary password for your account at %1$s.\n"
+"\n"
+"Your temporary password is: %2$s\n"
+"\n"
+"This temporary password does not effect your primary password.\n"
+"\n"
+"Thanks,\n"
+"%3$s Team"
+msgstr ""
+
+msgid "Profile Update Complete"
+msgstr ""
+
+msgid "Real name should be written."
+msgstr ""
+
+msgid "Password should be written twice."
+msgstr ""
+
+msgid "Passwords should be same."
+msgstr ""
+
+#, php-format
+msgid "Password should be at least %d chars long."
+msgstr ""
+
+msgid "User Profile"
+msgstr ""
+
+msgid "Registration Complete"
+msgstr ""
+
+#, php-format
+msgid "Username should be at least %d chars long."
+msgstr ""
+
+msgid "Username is in use."
+msgstr ""
+
+msgid "User Registration"
+msgstr ""
+
+msgid ""
+"PHP's Magic Quotes option is set to ON, this is bad. It seems that this web "
+"server does not read .htaccess file. Please contact your server "
+"administrator."
+msgstr ""
+
+msgid "You must provide at least one recipient email address."
+msgstr ""
+
+#, php-format
+msgid "%s mailer is not supported."
+msgstr ""
+
+#, php-format
+msgid "Could not execute: %s"
+msgstr ""
+
+msgid "Could not instantiate mail function."
+msgstr ""
+
+#, php-format
+msgid "The following From address failed: %s"
+msgstr ""
+
+#, php-format
+msgid "SMTP Error: The following recipients failed: %s"
+msgstr ""
+
+msgid "SMTP Error: Data not accepted."
+msgstr ""
+
+msgid "SMTP Error: Could not authenticate."
+msgstr ""
+
+msgid "SMTP Error: Could not connect to SMTP host."
+msgstr ""
+
+#, php-format
+msgid "Could not access file: %s"
+msgstr ""
+
+#, php-format
+msgid "File Error: Could not open file: %s"
+msgstr ""
+
+#, php-format
+msgid "Unknown encoding: %s"
+msgstr ""
+
+msgid "Account Activated"
+msgstr ""
+
+msgid "Your registration is now complete."
+msgstr ""
+
+msgid "Go to login page"
+msgstr ""
+
+msgid "Activation Code Sent"
+msgstr ""
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your e-mail address."
+msgstr ""
+
+msgid ""
+"A problem occured in our mail server while sending your activation code. "
+"Please contact server administrator."
+msgstr ""
+
+msgid "E-Mail Address:"
+msgstr ""
+
+msgid "Request Code &raquo;"
+msgstr ""
+
+msgid "You are not allowed to perform this operation."
+msgstr ""
+
+msgid "You've successfully updated a proposal."
+msgstr ""
+
+msgid "This updated is saved as a new revision of proposal."
+msgstr ""
+
+msgid "View proposal"
+msgstr ""
+
+msgid "Section:"
+msgstr ""
+
+msgid "Remove section"
+msgstr ""
+
+msgid "Remove section?"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "Abstract:"
+msgstr ""
+
+msgid "New Section:"
+msgstr ""
+
+msgid "Add &raquo;"
+msgstr ""
+
+msgid ""
+"Proposal should be written in sections.<br/>Write section title and then "
+"push \"Add &raquo;\" button."
+msgstr ""
+
+msgid "Release Info:"
+msgstr ""
+
+msgid "Release Number:"
+msgstr ""
+
+msgid "New Release:"
+msgstr ""
+
+msgid ""
+"This is not the latest revision of proposal, so you may not use it to create "
+"new revision."
+msgstr ""
+
+msgid "Save this update as a new release."
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Reset Form"
+msgstr ""
+
+msgid "Submit &raquo;"
+msgstr ""
+
+msgid "Session data updated."
+msgstr ""
+
+msgid "Session Information:"
+msgstr ""
+
+msgid "Username:"
+msgstr ""
+
+msgid "Edit Profile"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
+msgid "Proposals"
+msgstr ""
+
+msgid "Proposals:"
+msgstr ""
+
+msgid "Password:"
+msgstr ""
+
+msgid "Login &raquo;"
+msgstr ""
+
+msgid "Forgot your password?"
+msgstr ""
+
+msgid "Need activation?"
+msgstr ""
+
+msgid "Not a registered user?"
+msgstr ""
+
+msgid "You Have Logged Out"
+msgstr ""
+
+msgid "You have successfully logged out"
+msgstr ""
+
+msgid "Go to main page"
+msgstr ""
+
+msgid "You've successfully submitted a new proposal."
+msgstr ""
+
+msgid "New proposal is automatically approved and marked as active."
+msgstr ""
+
+msgid "New proposal marked as pending. It needs to be reviewed by a moderator."
+msgstr ""
+
+msgid "This proposal or revision does not exist."
+msgstr ""
+
+msgid "Temporary Password Sent"
+msgstr ""
+
+msgid ""
+"In this page, you can create a temporary password. With this temporary "
+"password, you can login to your account to change your primary password."
+msgstr ""
+
+#, php-format
+msgid ""
+"This temporary password does not effect your primary password, and will be "
+"disabled after %d seconds."
+msgstr ""
+
+msgid "You've successfully updated your profile."
+msgstr ""
+
+msgid ""
+"You need to activate your account by clicking (or visiting) the URL sent to "
+"your new e-mail address."
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid ""
+"If you change your e-mail address, you will need to activate your account "
+"again."
+msgstr ""
+
+msgid ""
+"If you don't want to change your password, leave these two fields empty."
+msgstr ""
+
+msgid "Update &raquo;"
+msgstr ""
+
+msgid "Abstract"
+msgstr ""
+
+msgid "Identity"
+msgstr ""
+
+msgid "Status:"
+msgstr ""
+
+msgid "Id:"
+msgstr ""
+
+msgid "Version:"
+msgstr ""
+
+msgid "Last Update:"
+msgstr ""
+
+msgid "Releated Proposals:"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Maintainers"
+msgstr ""
+
+msgid "Contents"
+msgstr ""
+
+msgid "Revision History"
+msgstr ""
+
+msgid "You've successfully registered."
+msgstr ""
+
+msgid "Register &raquo;"
+msgstr ""
+
+msgid "Could not connect to database server."
+msgstr ""
+
+msgid "Could not select database."
+msgstr ""
+
+msgid "Missing configuration."
+msgstr ""

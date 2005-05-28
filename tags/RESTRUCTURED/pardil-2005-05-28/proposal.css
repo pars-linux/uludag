@@ -1,0 +1,109 @@
+.proposal h1 {
+}
+.proposal h2, .proposal h2 a, .proposal h2 a:hover {
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  border-bottom: 0px;
+}
+
+.proposal dt span.no {
+  color: #cb1717;
+}
+
+.proposal dl.contents {
+  color: #cb1717;
+  font-weight: bold;
+}
+
+.proposal .revisions h3 {
+  margin-left: 15px;
+}
+.proposal .revisions h3 a {
+  color: #cb1717;
+  font-weight: bold;
+}
+.proposal .revisions p {
+  margin-left: 30px;
+}
+
+.proposal ul {
+  list-style: url(images/li-square.png);
+}
+.proposal ol {
+  color: #cb1717;
+  font-weight: bold;
+}
+.proposal ol li {
+  margin-bottom: 2px;
+}
+.proposal ol li.square {
+  list-style: url(images/li-square.png);
+  margin-bottom: 2px;
+}
+.proposal a {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 2px;
+}
+.proposal a:hover {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+.proposal .hr {
+  border-top: 1px solid #aaa;
+}
+
+/* Forms */
+/*
+fieldset {
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+}
+table.form {
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 11px;
+  color: #000;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+table.form td input, table.form td textarea, table.form td select {
+  background-color: #eee;
+  border: 1px solid #999;
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 11px;
+}
+
+table.form td.label {
+  font-weight: bold;
+  color: #cb1717;
+  width: 160px;
+}
+table.form td.error {
+  color: #f00;
+}
+table.form td.info {
+  color: #666;
+}
+table.form td.help {
+  width: 15px;
+}
+table.form td.help span {
+  font-family: Verdana, Sans, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #f00;
+  border: 1px solid #999;
+  margin: 1px 0px 1px 3px;
+  padding: 1px 2px 1px 2px;
+  cursor: help;
+}
+*/

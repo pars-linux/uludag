@@ -1,0 +1,4 @@
+php_value default_charset utf-8
+php_value short_open_tag off
+php_value magic_quotes_gpc off
+php_value register_globals off
