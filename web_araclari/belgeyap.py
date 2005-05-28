@@ -429,7 +429,14 @@ def export(lyxname, dname):
 	# simdi html ciktilar
 	print "'%s' oluşturuluyor..." % (dname + ".html")
 	fix_hevea()
-	os.spawnlp(os.P_WAIT, "hevea", "hevea", "-fix", "duzeltmeler.hva", texname, "-o", dname + ".html")
+	ret = os.spawnlp(os.P_WAIT, "hevea", "hevea", "-fix", "duzeltmeler.hva", texname, "-o", dname + ".html")
+
+        # os.py icerisinde exec edilemediginde 127 donduruyor.
+        # aslinda daha iyi bir yontem hevea'yi cagirmadan once,
+        # calistirilabilir olup olmadigini kontrol etmek olabilir.
+        if ret == 127:
+               sys.stderr.write("\nHATA: hevea programı sisteminizde bulunamadı!\n")
+               sys.exit(1)
 
 def bilgibas(name,dname,date):
 	pdf_size = str(os.stat(dname + ".pdf")[ST_SIZE] / 1024)
