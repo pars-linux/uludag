@@ -158,7 +158,7 @@ esnek
 \size normal 
 Kullanýcýlar tarafýndan yapýlan sorgulamalarda kullanýcýya verilecek detay
  düzeyinin en az iki seviyede ayarlanabilir olmasý saðlanmalý.
- vii.Kullanýcýlarýn sorgulamalarý yaparken 
+ Kullanýcýlarýn sorgulamalarý yaparken 
 \emph on 
 basit-hýzlý
 \emph default 
@@ -357,5 +357,5 @@ programý (
 ) 
 \layout Comment
 
-to be continued...
+devam edilecektir...
 \the_end
