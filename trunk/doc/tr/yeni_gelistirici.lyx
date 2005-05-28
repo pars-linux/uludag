@@ -518,6 +518,92 @@ Paketler deposu Pardus için yeni bir paket yönetim sistemi hazýrlanana kadar
  ihtimal ile yeni bir yapý oluþturulacaktýr.
  Fakat þu anda iþletim sistemine eklenecek yazýlýmlara dair yapýlan iyileþtirmel
 er bu depo kullanýlarak yapacaktýr.
+\layout Subsection
+
+Depo dizin sýra düzenleri
+\layout Standard
+
+Her bir Uludað subversion deposu aþaðýdaki dizin sýra düzenine (hiyerarþi)
+ sahiptir.
+\layout Standard
+
+Depo içerisinde üç ana dizin bulunur; trunk, tags ve repos.
+\layout Subsubsection
+
+trunk/
+\layout Standard
+
+Trunk dizini sürekli çalýþmanýn yapýldýðý dizindir.
+\layout Standard
+
+Her proje modülü (belge, web sayfalarý, yazýlým projeleri, vb.) trunk/ altýnda
+ kendi dizinine sahiptir.
+\layout Subsubsection
+
+tags/
+\layout Standard
+
+Tags dizini, her hangi bir modül için, trunk altýnda yapýlan iþlerin etiketlener
+ek (taglanarak) kopayalandýklarý yerdir.
+ Bu dizin de kendi içinde 3 dizin barýndýrýr.
+\layout Itemize
+
+
+\series bold 
+tags/RELEASE/
+\series default 
+: Yazýlýmlarýn (veya modüllerin) kendi sürüm numaralarýný etiketlemek içiin
+ kullandýklarý dizindir.
+ Örneðin, tasma'nýn 0.2 sürümü, tags/RELEASE/tasma-0.2 dizininde etiketlenir.
+\layout Itemize
+
+
+\series bold 
+tags/BLACKHOLE
+\series default 
+/: Geliþtirilmesi durdurulmuþ (üzerinde çalýþacak bir geliþtirici olmadýðý
+ için veya artýk o projeye ihtiyaç duyulmadýðý için) projelerin 
+\begin_inset Quotes eld
+\end_inset 
+
+atýldýðý
+\begin_inset Quotes erd
+\end_inset 
+
+ bir kara deliktir.
+ Buradaki projeler tekrar kullanýlmak istendiðinde trunk/ altýna kopyalanarak
+ üzerinde çalýþýlýr.
+\layout Itemize
+
+
+\series bold 
+tags/RESTRUCTURED/
+\series default 
+: Yazýlým (veya modül) tümü ile yeniden yapýlanmaya girmiþ ve eski dosyalar
+ artýk kullanýlmayacaksa modülün atýlacaðý dizindir.
+ Örneðin, yazýlýmýna 28 Mayýs 2005'de yeniden baþlanmýþ 
+\begin_inset Quotes eld
+\end_inset 
+
+abc
+\begin_inset Quotes erd
+\end_inset 
+
+ projesi tags/RESTRUCTURED/abc-2005-05-28/ altýna taþýnýr.
+\layout Subsubsection
+
+repos/
+\layout Standard
+
+Repos dizini geliþtiricilerin trunk/ altýnda yapýlan çalýþmadan farklý,
+ deneysel çalýþmalarýný, ayný modül üzerinde çalýþan diðer geliþtiricileri
+ rahatsýz etmeden yürütebilecekleri dizindir.
+ Geliþtirici repos/ altýna kendi dizinini oluþturarak bu dizin içerisinde
+ deneysel çalýþmalarýný yürütebilir.
+\layout Standard
+
+(Yalnýzca paketler deposu için geçerli olan bir kural olarak, repos/doc/
+ dizini altýnda bu proje ile ilgili belgeler bulunur.)
 \layout Section
 
 Subversion kullanýmý
