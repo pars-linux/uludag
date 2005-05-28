@@ -1,0 +1,11 @@
+Kurulum:
+
+1- pardul isminde bir veritabanı yaratın,
+2- pardul veritabanı için files/pardul.sql scriptini çalıştırın,
+3- uygulamayı web sunucusunun ilgili dizinine kopyalayın,
+4- http://sunucu_adi/pardul dizininden çalıştırabilirsiniz
+
+
+
+not-1: uygulamanın çalışması için sisteminizde pear kurulu olmalıdır.
+not-2: yönetici girişi için; "kullanıcı adı: pardul, parola: pardul"
