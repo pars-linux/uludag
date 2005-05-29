@@ -2,26 +2,26 @@
 // {{{ Anadizin ve Anasayfa
 
 	$AnaDizin = "/var/www/pardul";
-	$AnaSayfa = "http://192.168.0.200/pardul";
-	$SSLAnaSayfa = "https://192.168.0.200/pardul";
+	$AnaSayfa = "http://192.168.0.200/pardul"; //http URI
+	$SSLAnaSayfa = "https://192.168.0.200/pardul"; //https URI
 
 	$AdminAnaDizin = "/var/www/pardul/admin";
-	$AdminAnaSayfa = "http://192.168.0.200/pardul/admin";
+	$AdminAnaSayfa = "http://192.168.0.200/pardul/admin"; //http URI
 
 // }}}
 
 // {{{ Tanimli Yollar
 
-	$INI_KapsananDizin      = $AnaDizin.'/kapsanan';
+	$INI_KapsananDizin      = $AnaDizin.'/includes';
 	$INI_TemplateDizin      = $AnaDizin.'/templates';
 	$INI_CompileDizin       = $AnaDizin.'/templates_c';
-	$INI_IslemlerDizin      = $AnaDizin.'/islemler';
-	$INI_ResimlerDizin      = $AnaDizin.'/templates/resimler/Image/sistem/tasarim';
+	$INI_IslemlerDizin      = $AnaDizin.'/libs';
+	$INI_ResimlerDizin      = $AnaDizin.'/images';
 
-	$INI_AdminKapsananDizin = $AdminAnaDizin.'/kapsanan';
+	$INI_AdminKapsananDizin = $AdminAnaDizin.'/includes';
 	$INI_AdminTemplateDizin = $AdminAnaDizin.'/templates';
 	$INI_AdminCompileDizin  = $AdminAnaDizin.'/templates_c';
-	$INI_AdminIslemlerDizin = $AdminAnaDizin.'/islemler';
+	$INI_AdminIslemlerDizin = $AdminAnaDizin.'/libs';
 
 // }}}
 

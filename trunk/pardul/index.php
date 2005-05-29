@@ -1,23 +1,19 @@
 <?
-include("ayar.php");
+include("config.inc.php");
 require_once($INI_OrtakDosyalarDizin.'/functions/mail.php');
 // {{{ SAYFA DEÐÝÞKENÝ AYARLANIYOR
 if (isset($_COOKIE['pardulLang']))
  {
 	$Lisan = $_COOKIE['pardulLang'];
-// 	echo $Lisan;
-//  header("Location: $AnaSayfa");
  } 
  if ($_GET['Lisan']) {
   	$Lisan = $_GET['Lisan'];
-	setcookie('pardulLang',$Lisan, time()+3600000); // 1000 Saat icin dil ayarlandi
+	setcookie('pardulLang',$Lisan, time()+3600000); // 100 Saat icin dil ayarlandi
  } 
  if (!isset($_COOKIE['pardulLang'])&&!$_GET['Lisan']) {	// Kullanici istedigi an degistirebilir...
 	$Lisan = "tr";		// Varsayilan Dil tr
 	setcookie('pardulLang',$Lisan, time()+3600000);
  }
-//  exit;
-// $GLOBALS['Lisan'] = $Lisan;
 $smarty->assign('Lisan',$Lisan);
 if($_GET['Page'])
         {
