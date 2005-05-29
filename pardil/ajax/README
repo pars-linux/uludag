@@ -54,5 +54,6 @@ Netscape 7.0+
 Hata Bildirimi
 ==============
 
-Hata bildirimi, http://bugs.uludag.org.tr adresinde, 
-Pardil -> AJAX başlığı altına yapılabilir.
+Hata bildirimi Uludağ bugzilla'sında [1] bileşen olarak 'ajax' seçilerek yapılabilir.
+
+[1] http://bugs.uludag.org.tr/enter_bug.cgi?product=pardil
