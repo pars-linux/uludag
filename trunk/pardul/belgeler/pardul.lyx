@@ -122,8 +122,14 @@ standart
 namespace
 \emph default 
  ile ilgili dönüþümlerden kaçýnýlmalý ve hata olasýlýðý azaltýlmalýdýr.
- (Örn: fdi dosya formatýndan XML'le çevirim yapýlabilir, ama namespace'lerde
- deðiþiklikten kaçýnýlmalýdýr.
+ (Örn: 
+\series default 
+\size default 
+.
+\series medium 
+\size normal 
+fdi dosya formatýndan XML'le çevirim yapýlabilir, ama namespace'lerde deðiþiklik
+ten kaçýnýlmalýdýr.
 \layout Enumerate
 
 
