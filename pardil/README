@@ -1,2 +1,16 @@
 Pardil: Pardus İyileştirme Listesi
 ==================================
+Pardil, Uludağ Projesi ile ilgili önerilerin kaydının tutulması, hayata 
+geçirilmesi ve gelişiminin izlenmesi amacıyla kullanılacak olan
+öneri yönetim sistemidir.
+
+Pardil'in, gelen önerilerin tartışılması, oylanması, ihtiyaca göre 
+güncellenmesi ve önerileri hayata geçirecek proje gruplarının 
+oluşturulması için bir ortam sunması hedeflenmektedir.
+
+
+Gereksinimler
+=============
+
+- PHP 5.0.0+
+- MySQL 4.1.0+
