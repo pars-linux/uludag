@@ -14,7 +14,7 @@
     
     function SssSoruVarmi($KategoriNo)
     {
-    $Sql = "SELECT * FROM SssSorular WHERE KatNo='$KategoriNo'";
+    $Sql = "SELECT No FROM SssSorular WHERE KatNo='$KategoriNo'";
     $Sonuc = sorgula($Sql);
     if ($Sonuc->numRows()>0)
         return true;
