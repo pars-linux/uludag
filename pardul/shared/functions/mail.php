@@ -133,16 +133,4 @@ function Gonder($Kime,$Dosya='')
        }
     }
 }
-
-
-/*
-$Degiskenler['AdSoyad'] = 'Mesut Özer';
-$Degiskenler['KullaniciAd'] = 'mesut';
-$Degiskenler['Sifre'] = 'tusem';
-$Ornek=new Ileti();
-$Ornek->IcerikHazir('Þifre Hatýrlat',$Degiskenler,'Html');
-$Ornek->Baslik('Þifreniz');
-$Ornek->Gonderen('Admin');
-$Ornek->gonder('mesut@mavibilgisayar.com');
-*/
 ?>

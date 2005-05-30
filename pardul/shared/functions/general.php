@@ -10,7 +10,6 @@
    /**
     *   Looks for the given URL, is it valid?
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $url
     *   @return bool
     */
@@ -38,7 +37,6 @@
     *   Uses PEAR and to query an SQL, this is a practical and shorthand method
     *   which is used for all queries. It includes its formatted error returns as well.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @global $vt Database used.
     *   @param string $Sorgu
     *   @see getir()
@@ -63,7 +61,6 @@
     *   which is used for all queries with function sorgula($Sonuc).
     *   Security Note: stripslashes is applied to all data fetched! No need to redo!
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $Sorgu
     *   @see sorgula()
     *   @return array
@@ -81,7 +78,6 @@
    /**
     *   Time as YmdHis.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @link http://php.net/date PHP date functions
     *   @return string
     */
@@ -94,7 +90,6 @@
    /**
     *   Loks for a specific row, if exests, before DB INSERT
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $TabloAd
     *   @param string $AlanAd1
     *   @param string $AlanDeger1
@@ -121,7 +116,6 @@
     *   Here is a function to help you format bigint dates.
     *   We use javascript calendar with "." seperated dates.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $Tarih
     *   @param string $Nasil
     *   @return integer
@@ -141,7 +135,6 @@
     /**
     *   Uses Simdi() and reformats it.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @see Simdi()
     *   @param string $Tarih
     *   @param string $Format Can be one of (sade:default, gunay, acik, gun, tam, tamgun, dizi
@@ -193,7 +186,6 @@
     /**
     *   Todays date.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @return string
     */
     
@@ -206,7 +198,6 @@
     /**
     *   Uses Simdi() and reformats it.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @see Simdi()
     *   @param string $Tarih
     *   @param string $Format Can be one of (sade:default, gunay, acik, gun, tam, tamgun, dizi
@@ -229,7 +220,6 @@
     /**
     *   Calculates month=x days
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param integer $gelenay     which month
     *   @param integer $gelenyil which year
     *   @return integer
@@ -251,7 +241,6 @@
     /**
     *   Used to remove an obj. from an array
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param array $Dizi
     *   @param mixed $Deger
     *   @return array
@@ -270,7 +259,6 @@
     *   Changes a string to not to include Turkish accents which are not included in latin1 charset.
     *   Use in password etc fields.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $Gelen
     *   @return string
     */
@@ -284,7 +272,6 @@
     /**
     *   Random string generator.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @return mixed if $Format=dizi, returns array, else returns string
     */
 
@@ -307,7 +294,7 @@
     /**
     *   Check to see if the value is numeric.
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
+
     *   @param string $Deger
     *   @return bool
     */
@@ -320,7 +307,6 @@
     /**
     *   extracts file extension from file
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $Dosya
     *   @return string
     */
@@ -334,7 +320,6 @@
     /**
     *   Calculates time between two dates. dates must be given as in Simdi() function
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @see Simdi()
     *   @link http://php.net/date
     *   @param string $Tarih1
@@ -379,7 +364,6 @@
     /**
     *   Checks an post string an evaluate if it is a valied e-mail
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $email
     *   @return bool
     */
