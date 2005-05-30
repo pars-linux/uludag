@@ -27,7 +27,6 @@
     /**
     *   Updates site search hits...
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $ArananSayfaTur
     *   @param string $Kelime
     *   @param integer $SonucSayi 
@@ -57,7 +56,6 @@
     /**
     *   Updates page hits
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $FullPage
     *   @return mixed 
     */
@@ -86,7 +84,6 @@
     /**
     *   Check if a specific page needs Login
     *   @package shared_functions
-    *   @author R. Tolga KORKUNCKAYA <tolga@forsnet.com.tr>
     *   @param string $Pagename
     *   @return string Yes or No
     */
