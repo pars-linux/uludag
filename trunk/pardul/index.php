@@ -1,7 +1,7 @@
 <?
 include("config.inc.php");
 require_once($INI_OrtakDosyalarDizin.'/functions/mail.php');
-// {{{ SAYFA DEÐÝÞKENÝ AYARLANIYOR
+// {{{ SAYFA DEÄžÄ°ÅžKENÄ° AYARLANIYOR
 if (isset($_COOKIE['pardulLang']))
  {
 	$Lisan = $_COOKIE['pardulLang'];
@@ -37,17 +37,17 @@ $SSLSayfa = $SSLAnaSayfa.'/index.php?Page=';
 $smarty->assign('SSLSayfa',$SSLSayfa);
 // }}}
 
-include("$INI_KapsananDizin/veritabani.php");
+include("$INI_KapsananDizin/db.inc.php");
 include("$INI_KapsananDizin/auth.php");
 ob_start();
 include("$INI_KapsananDizin/class.gzip_encode.php");
 
-//{{{ Kullanicý giriþi ile ilgili
-//güvenlik.php dosyasýndan gelen deðiþkenler baþladý
+//{{{ KullanicÄ± giriÅŸi ile ilgili
+//gÃ¼venlik.php dosyasÄ±ndan gelen deÄŸiÅŸkenler baÅŸladÄ±
 $smarty->assign('OturumVar',$OturumVar);
 $smarty->assign('OturumKullaniciAd',$OturumKullaniciAd);
 
-//güvenlik.php dosyasýndan gelen deðiþkenler bitti
+//gÃ¼venlik.php dosyasÄ±ndan gelen deÄŸiÅŸkenler bitti
 if ($OturumKullaniciAd) {
 	$SqlGiris = "SELECT No,AdSoyad FROM Kullanicilar WHERE EPosta='$OturumKullaniciAd'";
 	$SonucGiris = sorgula($SqlGiris);
@@ -67,13 +67,13 @@ $OturumBilgiler['OturumMesaj']			= $OturumMesaj;
 $smarty->assign('OturumBilgiler',$OturumBilgiler);
 
 //}}}
-// {{{ Genel Deðiþkenler
+// {{{ Genel DeÄŸiÅŸkenler
 $Sorgu1 = sorgula("SELECT Isim,Deger FROM Degiskenler");
 while(list($vt_Isim,$vt_Deger) = $Sorgu1->fetchRow()) {
 	$GLOBALS['sistem_'.$vt_Isim] = stripslashes($vt_Deger);
 	$smarty->assign('sistem_'.$vt_Isim,stripslashes($vt_Deger));
 }
-// {{{ Genel Deðiþkenler
+// {{{ Genel DeÄŸiÅŸkenler
 // $Sorgu2 = sorgula("SELECT string,$Lisan FROM lang_templates");
 // while(list($vt_String,$vt_Text) = $Sorgu2->fetchRow()) {
 // 	$GLOBALS['l_'.$vt_String] = stripslashes($vt_Text);
