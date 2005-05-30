@@ -1,0 +1,4 @@
+- Pardil'in RESTRUCTURED dizinine alınmasının sebebi, kullanılan 
+XHR kütüphanelerinin görevini yerine getirmemesidir. XHR 
+kütüphanesi, AJAX kütüphanesi ile değiştirilmiştir. XHR'nin 
+aksine, AJAX UTF-8 uyumludur.

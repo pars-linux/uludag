@@ -1,0 +1,57 @@
+body {
+  background-color: #fff;
+  color: #335783;
+  margin: 0px;
+  padding: 10px;
+}
+* {
+  font-family: verdana, bitstream vera sans, sans-serif;
+  font-size: 11px;
+}
+
+fieldset {
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin: 0px;
+}
+legend {
+  font-weight: bold;
+}
+label {
+  font-weight: bold;
+}
+input[type="text"], input[type='password'], textarea {
+  padding: 3px;
+  border: 1px solid #7b93af;
+  background-color: #f2f6f8;
+  color: #000;
+  margin-bottom: 1px;
+}
+input[type="text"]:focus, input[type='password']:focus, textarea:focus {
+  border: 1px solid #ff7b93;
+}
+button {
+  padding: 1px;
+}
+
+a {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 2px;
+}
+a:hover {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+
+.centered {
+  text-align: center;
+}
+
+a img {
+  border-width: 0px;
+}
