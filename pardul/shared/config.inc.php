@@ -1,6 +1,7 @@
 <?
-    include ("domain.inc.php");
-	$AnaDizin = "/var/www/pardul.uludag.org.tr/htdocs/";
+	include ("domain.inc.php");
+
+	$AnaDizin = "/var/www/pardul.uludag.org.tr/htdocs";
 	$AnaSayfa = "http://$domain"; //http URI
 	$SSLAnaSayfa = "https://$domain"; //https URI
 
