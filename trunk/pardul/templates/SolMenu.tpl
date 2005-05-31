@@ -8,7 +8,7 @@
 	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Anasayfa">{{t}}Anasayfa{{/t}}</a></TD>
    </TR>  
    <TR>
-	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Hakkinda">{{t}}Hakkýmýzda{{/t}}</a></TD>
+	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Hakkinda">{{t}}Pardul Hakkýnda{{/t}}Pardul Hakkýnda</a></TD>
   </TR>                    
   <TR> 
 	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Haberler">{{t}}Haberler{{/t}}</TD>
@@ -17,16 +17,10 @@
 	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Sss">{{t}}Sýk Sorulan Sorular{{/t}}</TD>
    </TR>
    <TR> 
-	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Projeler">{{t}}Projeler{{/t}}Projeler</TD>
-   </TR>
-   <TR> 
 	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Sozluk">{{t}}Terimler Sözlüðü{{/t}}Terimler Sözlüðü</TD>
    </TR>
    <TR> 
 	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Iletisim">{{t}}Görüþ ve Öneri{{/t}}</TD>
-  </TR>
-  <TR> 
-	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Katilim">{{t}}Katilim{{/t}}Katilim</TD></a>
   </TR>
   <TR> 
 	<TD><img src="{{$WebResimler}}/plus.gif" border=0 align="left"><a class="menu" href="{{$SSayfa}}Linkler">{{t}}Baðlantýlar{{/t}}Baðlantýlar</TD></a>

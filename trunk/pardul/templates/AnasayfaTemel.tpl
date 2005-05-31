@@ -1,7 +1,7 @@
 {{strip}}
 {{*debug*}}
 {{$SAYFA_TEMEL_UST_BOLUM}}
-<table cellpadding=5 cellspacing=0 width=780 border=0 bgcolor="#FFFFFF" align="center">
+<table cellpadding=5 cellspacing=0 width=100% border=0 bgcolor="#FFFFFF" align="center" height="70%">
   <tr>
     <td valign=top width="{{$sistem_SayfaSoluEn}}" bgcolor="{{$sistem_SolSutunBg}}">{{$SAYFA_TEMEL_SOL_SUTUN}}</td>
     <td valign=top>

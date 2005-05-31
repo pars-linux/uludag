@@ -1,5 +1,5 @@
 {{strip}}
-<TABLE width="780" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="{{$sistem_Footer}}">
+<TABLE width="100%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="{{$sistem_Footer}}">
   <TR>
    <TD height="3px" bgcolor="#99CC33"></TD></TR>
   <TR>

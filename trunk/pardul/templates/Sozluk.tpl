@@ -1,6 +1,6 @@
 {{strip}}
 {{include file="TableTop.tpl"  bgcolor="#FFFFFF"}}
-<img src="{{$WebResimler}}/terimler_sozlugu.gif" alt="{{t}}Sözlük{{/t}}">
+<h3>{{t}}Terimler Sözlüðü{{/t}}Terimler Sözlüðü(*)</h3>
 <!-- Haber Icerikleri -->
  {{include file="abc.tpl"}}
 <form method="POST" action="{{$Burasi}}">
@@ -14,22 +14,21 @@
  {{if $Anahtar}}
          {{if $Sayi neq 0}}
  {{t}}Aratmýþ olduðunuz kelime :{{/t}} <b>{{$Anahtar}}</b><br>
- {{t}}Toplam Sonuç:{{/t}} <b>{{$Sayi}}</b><br><hr>
+ {{t}}Toplam Sonuç:{{/t}} <b>{{$Sayi}}</b><hr noshade size=1px>
          {{/if}}
  {{/if}}
 <table border=0 width=100% cellpadding=5>
 {{if $Harfler}}
 {{if $Sayi neq 0}}
         {{if $Arama eq 1}}
-<tr><td colspan="2" align="left"> <b>{{t}}Toplam Sonuç:{{/t}}</b> {{$Sayi}}</center><hr><br></td></tr>
+<tr><td colspan="2" align="left"> <b>{{t}}Toplam Sonuç:{{/t}}</b>
+{{$Sayi}}</center><hr noshade size=1px></td></tr>
          {{/if}}
  {{/if}}
  {{foreach item=Harf from=$Harfler name=Harf}}
-
-                 <tr>
-                 <td valign="top">&#187;</td>
-                 <td><b>{{$Harf.Kelime}} :</b> {{$Harf.Aciklama}}</td></tr>
-                 <tr><td colspan=2><hr></td></tr>
+<tr>
+    <td valign="top">&#187;</td>
+    <td><b>{{$Harf.Kelime}} :</b> {{$Harf.Aciklama}}</td></tr>
  {{/foreach}}
 {{/if}}
 {{if $Sayi eq 0 and $Ara}}
