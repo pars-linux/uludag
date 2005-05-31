@@ -12,21 +12,23 @@ $Oturum=new Auth("DB",$guvenlikvt,"",false);
 $Oturum->setSessionname("pardulOturum");
 $Oturum->setShowLogin(false);
 
-$Oturum->setIdle(864000,true);	// simdilik 24 saat sonra degiskene baglanacak
-$Oturum->setExpire(864000,true);	// simdilik 24 saat sonra degiskene baglanacak
+$Oturum->setIdle(864000,true);  // simdilik 24 saat sonra degiskene baglanacak
+$Oturum->setExpire(864000,true);    // simdilik 24 saat sonra degisken ata
 $Oturum->start();
 if ($Oturum->getAuth())
 {
   $OturumKullaniciAd = $Oturum->getUserName();
   $OturumVar = true;
-  $Sql = "SELECT UyelikOnay FROM Kullanicilar WHERE EPosta='$OturumKullaniciAd'";
+  $Sql = "SELECT UyelikOnay FROM Kullanicilar WHERE
+EPosta='$OturumKullaniciAd'";
   $Sonuc = sorgula($Sql);
   list($vt_UyelikOnay) = getir($Sonuc);
   if ($vt_UyelikOnay=='Onaylanmadi') 
   {
      $OturumVar = false;
      $Oturum->logout();
-     $OturumMesaj='Giriş yapabilmek için EPosta adresinize gönderilen aktivasyon işlemini gerçekleştirmelisiniz!';
+     $OturumMesaj='Giriş yapabilmek için EPosta adresinize gönderilen aktivasyon
+işlemini gerçekleştirmelisiniz!';
   }
   else 
     $OturumVar=true;
@@ -40,22 +42,24 @@ $MisafirIp = getenv('REMOTE_ADDR');
 $OzelKod = $_COOKIE['CookieKod'];
 
 if($OturumVar) {
-	sorgula("UPDATE Kullanicilar SET SonGiris=$Simdi WHERE EPosta='$OturumKullaniciAd'");
-	sorgula("DELETE FROM Anonim WHERE Kod='$OzelKod'");
+    sorgula("UPDATE Kullanicilar SET SonGiris=$Simdi WHERE
+EPosta='$OturumKullaniciAd'");
+    sorgula("DELETE FROM anonymous WHERE Kod='$OzelKod'");
 } else {
-	$SqlKod = "SELECT Kod FROM Anonim WHERE Kod='$OzelKod'";
-	$SonucKod = sorgula($SqlKod);
-	if ($SonucKod->numRows()) {
-		sorgula("UPDATE Anonim SET SonGiris=$Simdi WHERE Kod='$OzelKod'");
-	} else {
-		$OzelKod = Rastgele(14);	
-		setcookie('CookieKod',$OzelKod);
-		sorgula("INSERT INTO Anonim SET SonGiris=$Simdi,Kod='$OzelKod',Ip='$MisafirIp'");
-	}
+    $SqlKod = "SELECT Kod FROM anonymous WHERE Kod='$OzelKod'";
+    $SonucKod = sorgula($SqlKod);
+    if ($SonucKod->numRows()) {
+        sorgula("UPDATE anonymous SET SonGiris=$Simdi WHERE Kod='$OzelKod'");
+    } else {
+        $OzelKod = Rastgele(14);    
+        setcookie('CookieKod',$OzelKod);
+        sorgula("INSERT INTO anonymous SET
+SonGiris=$Simdi,Kod='$OzelKod',Ip='$MisafirIp'");
+    }
 }
 /* 
-	Dil Secimi Islemleri Yapiliyor. Buradan Alinan Degisken Degerleri,
-	index.php dosyasindan smarty'e gonderiliyor.
+    Dil Secimi Islemleri Yapiliyor. Buradan Alinan Degisken Degerleri,
+    index.php dosyasindan smarty'e gonderiliyor.
 */
 
 $OturumDurum = $Oturum->getStatus();
