@@ -1,12 +1,11 @@
 <?
-// {{{ Anadizin ve Anasayfa
-
+    include ("domain.inc.php");
 	$AnaDizin = "/var/www/par/pardul";
-	$AnaSayfa = "http://192.168.0.200/par/pardul"; //http URI
-	$SSLAnaSayfa = "https://192.168.0.200/par/pardul"; //https URI
+	$AnaSayfa = "http://$domain"; //http URI
+	$SSLAnaSayfa = "https://$domain"; //https URI
 
 	$AdminAnaDizin = "/var/www/par/pardul/admin";
-	$AdminAnaSayfa = "http://192.168.0.200/par/pardul/admin"; //http URI
+	$AdminAnaSayfa = "http://$domain/admin"; //http URI
 
 // }}}
 
