@@ -1,10 +1,10 @@
 <?
     include ("domain.inc.php");
-	$AnaDizin = "/var/www/par/pardul";
+	$AnaDizin = "/var/www/pardul.uludag.org.tr/htdocs/";
 	$AnaSayfa = "http://$domain"; //http URI
 	$SSLAnaSayfa = "https://$domain"; //https URI
 
-	$AdminAnaDizin = "/var/www/par/pardul/admin";
+	$AdminAnaDizin = "/var/www/pardul.uludag.org.tr/htdocs";
 	$AdminAnaSayfa = "http://$domain/admin"; //http URI
 
 // }}}
