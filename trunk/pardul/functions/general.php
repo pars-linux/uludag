@@ -34,7 +34,7 @@
     
     function AramaHit($ArananSayfaTur,$Kelime,$SonucSayi)
     {
-	$Sql= "SELECT No,Kelime,ArananSayfaTur,AramaSayisi,SonBulunanKayitSayisi FROM ArananKelimeler WHERE Kelime='$Kelime' AND ArananSayfaTur='$ArananSayfaTur'";
+	$Sql= "SELECT No,Kelime,ArananSayfaTur,AramaSayisi,SonBulunanKayitSayisi FROM searchterms WHERE Kelime='$Kelime' AND ArananSayfaTur='$ArananSayfaTur'";
 	$Sonuc=sorgula($Sql);
 	$numrows=$Sonuc->numRows();
 	if($numrows>0){

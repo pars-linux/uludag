@@ -1,7 +1,8 @@
 <?
 include("config.inc.php");
 require_once($INI_OrtakDosyalarDizin.'/functions/mail.php');
-// {{{ SAYFA DEÄžÄ°ÅžKENÄ° AYARLANIYOR
+// error_reporting(E_ALL);
+// {{{ SAYFA DEÐÝÞKENÝ AYARLANIYOR
 if (isset($_COOKIE['pardulLang']))
  {
 	$Lisan = $_COOKIE['pardulLang'];
@@ -35,19 +36,18 @@ $smarty->assign('SSayfa',$SSayfa);
 
 $SSLSayfa = $SSLAnaSayfa.'/index.php?Page=';
 $smarty->assign('SSLSayfa',$SSLSayfa);
-// }}}
 
 include("$INI_KapsananDizin/db.inc.php");
 include("$INI_KapsananDizin/auth.php");
 ob_start();
 include("$INI_KapsananDizin/class.gzip_encode.php");
 
-//{{{ KullanicÄ± giriÅŸi ile ilgili
-//gÃ¼venlik.php dosyasÄ±ndan gelen deÄŸiÅŸkenler baÅŸladÄ±
+//{{{ Kullanicý giriþi ile ilgili
+//güvenlik.php dosyasýndan gelen deðiþkenler baþladý
 $smarty->assign('OturumVar',$OturumVar);
 $smarty->assign('OturumKullaniciAd',$OturumKullaniciAd);
 
-//gÃ¼venlik.php dosyasÄ±ndan gelen deÄŸiÅŸkenler bitti
+//güvenlik.php dosyasýndan gelen deðiþkenler bitti
 if ($OturumKullaniciAd) {
 	$SqlGiris = "SELECT No,AdSoyad FROM Kullanicilar WHERE EPosta='$OturumKullaniciAd'";
 	$SonucGiris = sorgula($SqlGiris);
@@ -66,23 +66,12 @@ $OturumBilgiler['OturumMesaj']			= $OturumMesaj;
 
 $smarty->assign('OturumBilgiler',$OturumBilgiler);
 
-//}}}
-// {{{ Genel DeÄŸiÅŸkenler
 $Sorgu1 = sorgula("SELECT Isim,Deger FROM Degiskenler");
 while(list($vt_Isim,$vt_Deger) = $Sorgu1->fetchRow()) {
 	$GLOBALS['sistem_'.$vt_Isim] = stripslashes($vt_Deger);
 	$smarty->assign('sistem_'.$vt_Isim,stripslashes($vt_Deger));
 }
-// {{{ Genel DeÄŸiÅŸkenler
-// $Sorgu2 = sorgula("SELECT string,$Lisan FROM lang_templates");
-// while(list($vt_String,$vt_Text) = $Sorgu2->fetchRow()) {
-// 	$GLOBALS['l_'.$vt_String] = stripslashes($vt_Text);
-// 	$smarty->assign('l_'.$vt_String,stripslashes($vt_Text));
-// }
-// }}}
-// {{{ Guvenlik...
-// Tum POST ve GET degiskenleri elden geciriliyor ve addslashes ekleniyor.
-// sorgulamada kullanilan fonksiyon cekerken otomatik olarak stripslashes yapiyor.
+
 foreach($HTTP_POST_VARS as $varname => $value)
 	{
 	$HTTP_POST_VARS[$varname]=trim(addslashes($value));
@@ -94,15 +83,13 @@ foreach($HTTP_GET_VARS as $varname => $value)
 	$HTTP_GET_VARS[$varname]=trim(addslashes($value));
 	${"get_".$varname} = $HTTP_GET_VARS[$varname];
 	}
-// }}}
-// {{{ icerikle ilgili dosyalar = islem + tasarim
+
 if(file_exists($INI_TemplateDizin.'/Stil.tpl'))
 	$icerik = $smarty->fetch($INI_TemplateDizin.'/Stil.tpl');
 $Sql = "SELECT BolumIsim,Satir,Sutun FROM KullaniciSayfalar WHERE SayfaIsim='$Page' ORDER BY Sutun,Satir";
 $index_sonuc = $vt->query($Sql);
 if($index_sonuc->numRows()==0)
 	{
-	// islem dosyasi
 	if(file_exists($INI_IslemlerDizin.'/'.$Page.'.php'))
 		{
 		ignore_user_abort(true);
@@ -126,8 +113,7 @@ else	{
 			include($INI_IslemlerDizin.'/'.$IndexSatir['BolumIsim'].'.php');
 			ignore_user_abort(false);
                 }
-		// }}}
-		// {{{ Template dosyasi
+
 		if(file_exists($INI_TemplateDizin.'/'.$IndexSatir['BolumIsim'].'.tpl'))
 			{
 			if($IndexSatir['Sutun'] == 1)
@@ -136,7 +122,7 @@ else	{
 				$SAYFA_TEMEL_ORTA_SUTUN.=$smarty->fetch($INI_TemplateDizin.'/'.$IndexSatir['BolumIsim'].'.tpl');
 			else	$SAYFA_TEMEL_DIGER_SUTUNLAR[$IndexSatir['Sutun']-2].=$smarty->fetch($INI_TemplateDizin.'/'.$IndexSatir['BolumIsim'].'.tpl');
 			}
-		// }}}
+
 		}
 	$smarty->assign('SAYFA_TEMEL_DIGER_SUTUN_SAYI',count($SAYFA_TEMEL_DIGER_SUTUNLAR));
 	if(file_exists($INI_IslemlerDizin.'/Header.php'))
@@ -156,6 +142,6 @@ else	{
 	$smarty->assign('SAYFA_TEMEL_DIGER_SUTUNLAR',$SAYFA_TEMEL_DIGER_SUTUNLAR);
 	$smarty->display('AnasayfaTemel.tpl');
 	}
-// }}}
+
 new gzip_encode();
 ?>

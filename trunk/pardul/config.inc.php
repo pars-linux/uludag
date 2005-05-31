@@ -1,5 +1,5 @@
 <?
-$INI_OrtakDosyalarDizin = '/var/www/pardul/shared';
+$INI_OrtakDosyalarDizin = '/var/www/par/pardul/shared';
 include($INI_OrtakDosyalarDizin.'/config.inc.php');
 require_once($INI_OrtakDosyalarDizin.'/functions/general.php');
 require_once($AnaDizin.'/functions/general.php');
@@ -13,14 +13,11 @@ require(SMARTY_DIR.'Smarty.class.php');
 
 $smarty=new Smarty;
 
-$smarty->left_delimiter = "{{";  // Tek { kullanmak yerine {{ kullanarak, jscriptler icin <literal> tag'indan 
-$smarty->right_delimiter = "}}"; // kurtulmuþ oluyoruz.
+$smarty->left_delimiter = "{{";  // Tek { kullanmak yerine {{ kullanarak,  
+$smarty->right_delimiter = "}}"; //jscriptlerde <literal> tag'indan gerekmiyor
 
-$smarty->config_dir		= $AnaDizin."/lisan";
-// $smarty->config_dir		= $AnaDizin."/".$Lisan";
 $smarty->template_dir	= $INI_TemplateDizin;
 $smarty->compile_dir	= $INI_CompileDizin;
-// $smarty->compile_id		= "tr";
 $smarty->compile_check	= true;
 $smarty->caching		= true;
 $smarty->cache_dir		= $AnaDizin.'/cached';
@@ -39,15 +36,12 @@ $SmartyIletiIcerik->cache_lifetime = 0;
 require("$INI_KapsananDizin/Smarty/smarty_ttranslate.php");
 $smarty->register_block('t', 'smarty_translate');
 
-// }}}
-$IcerikResimler = $AnaSayfa.'/templates/resimler/Image';
-$IcerikBelge = $AnaSayfa.'/templates/resimler/File';
-$WebResimler	= $AnaSayfa.'/templates/resimler/Image/sistem/tasarim';
-$SSLWebResimler = $SSLAnaSayfa.'/templates/resimler/Image/sistem/tasarim';
-$Banners		= $AnaSayfa.'/templates/resimler/banners';
-$SSLBanners		= $SSLAnaSayfa.'/templates/resimler/banners';
+$WebResimler	= $AnaSayfa.'/templates/images';
+$SSLWebResimler = $SSLAnaSayfa.'/templates/images';
+$Banners		= $AnaSayfa.'/templates/banners';
+$SSLBanners		= $SSLAnaSayfa.'/templates/banners';
 $StilAnaSayfa	= $AnaSayfa.'/templates';
-$SunumLogolar	= $AnaSayfa.'/templates/resimler/Image/logo/sunumlar';
+
 if($_SERVER['SERVER_PORT']=="443") 
 {
   $WebResimler	= $SSLWebResimler;
@@ -56,9 +50,6 @@ if($_SERVER['SERVER_PORT']=="443")
 }
 
 $smarty->assign('WebResimler',$WebResimler);
-$smarty->assign('IcerikBelge',$IcerikBelge);
-$smarty->assign('IcerikResimler',$IcerikResimler);
-$smarty->assign('SunumLogolar',$SunumLogolar);
 $smarty->assign('SSLWebResimler',$SSLWebResimler);
 $smarty->assign('Banners',$Banners);
 $smarty->assign('SSLBanners',$SSLBanners);
@@ -68,15 +59,11 @@ $smarty->assign('StilAnaSayfa',$StilAnaSayfa);
 $smarty->assign('AdminAnaSayfa',$AdminAnaSayfa);
 $smarty->assign('AdminAnaDizin',$AdminAnaDizin);
 
-//$HEX 		= array ('#f6c257','#e7edff','#56789e','#e0e5ef','#5c5c5c','#000000','#efeee8','#333333');
-$HEX 		= array ('#396bad','#ffffff','#ffffff','#C9D9ED','#ffffff','#ffffff','#ffffff','#ffffff');
-$smarty->assign('HEX',$HEX);
-
 $Mail		= array();
-	$Mail['bilgi'] 		='bilgi@linux.org.tr';
-	$Mail['Uye'] 		='uye@linux.org.tr';
-	$Mail['bilgi'] 		='admin@linux.org.tr';
-	$Mail['web'] 		='web-cg@linux.org.tr';
+	$Mail['bilgi'] 		='pardul-info@uludag.org.tr';
+	$Mail['Uye'] 		='pardul-uye@uludag.org.tr';
+	$Mail['bilgi'] 		='pardul-admin@uludag.org.tr';
+	$Mail['web'] 		='pardul-web@uludag.org.tr';
 
 $smarty->assign('Mail',$Mail);
 //$smarty->load_filter('output','gzip');

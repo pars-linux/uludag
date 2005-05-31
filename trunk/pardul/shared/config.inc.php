@@ -1,12 +1,12 @@
 <?
 // {{{ Anadizin ve Anasayfa
 
-	$AnaDizin = "/var/www/pardul";
-	$AnaSayfa = "http://192.168.0.200/pardul"; //http URI
-	$SSLAnaSayfa = "https://192.168.0.200/pardul"; //https URI
+	$AnaDizin = "/var/www/par/pardul";
+	$AnaSayfa = "http://192.168.0.200/par/pardul"; //http URI
+	$SSLAnaSayfa = "https://192.168.0.200/par/pardul"; //https URI
 
-	$AdminAnaDizin = "/var/www/pardul/admin";
-	$AdminAnaSayfa = "http://192.168.0.200/pardul/admin"; //http URI
+	$AdminAnaDizin = "/var/www/par/pardul/admin";
+	$AdminAnaSayfa = "http://192.168.0.200/par/pardul/admin"; //http URI
 
 // }}}
 
@@ -15,17 +15,17 @@
 	$INI_KapsananDizin      = $AnaDizin.'/includes';
 	$INI_TemplateDizin      = $AnaDizin.'/templates';
 	$INI_CompileDizin       = $AnaDizin.'/templates_c';
-	$INI_IslemlerDizin      = $AnaDizin.'/libs';
+	$INI_IslemlerDizin      = $AnaDizin.'/lib';
 	$INI_ResimlerDizin      = $AnaDizin.'/images';
 
 	$INI_AdminKapsananDizin = $AdminAnaDizin.'/includes';
 	$INI_AdminTemplateDizin = $AdminAnaDizin.'/templates';
 	$INI_AdminCompileDizin  = $AdminAnaDizin.'/templates_c';
-	$INI_AdminIslemlerDizin = $AdminAnaDizin.'/libs';
+	$INI_AdminIslemlerDizin = $AdminAnaDizin.'/lib';
 
 // }}}
 
-// {{{ Veritabaný
+// {{{ Veritaban
 
 	$AYAR_VTKullanici = 'pardul';
 	$AYAR_VTSifre     = 'a2l3islkjss3lih';
