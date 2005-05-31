@@ -1,15 +1,4 @@
 <?
-//{{{ function SssSoruVarmi($KategoriNo)
-function SssSoruVarmi($KategoriNo)
-{
-  $Sql = "SELECT * FROM SssSorular WHERE KatNo='$KategoriNo'"; 
-  $Sonuc = sorgula($Sql);
-  if ($Sonuc->numRows()>0)
-    return true;
-  else
-    return false;
-}
-//}}}
 //{{{Sss kategorileri bulalým
  $Sql = "SELECT No,Ad FROM SssKategori ORDER BY Sira";
  $Sonuc = sorgula($Sql);

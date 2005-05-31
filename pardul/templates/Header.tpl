@@ -16,12 +16,12 @@ body {
 </style>
 </HEAD>
 <BODY>
-<TABLE border="0" cellpadding="5" cellspacing="0" width="780" bgcolor="#EFEFEF" align="center">
+<TABLE border="0" cellpadding="5" cellspacing="0" width="100%" bgcolor="#EFEFEF" align="center">
  <TR>
   <TD align="center">
-  <table width="100%"><TR><TD><IMG src="{{$WebResimler}}/pardul_logo_100t.gif" border="0"></TD>
+  <table width="100%"><TR><TD><IMG src="{{$WebResimler}}/pardul_logo_100.png" border="0"></TD>
   <TD valign="bottom" width="99%">
-  	<h1>PARDUL<br>Pardus Donaným Uyumluluðu Listesi</h1>
+  	<h1>PARDUL - Pardus Donaným Uyumluluðu Listesi</h1>
   	Pardus kullanmadan önce, sahip olduðunuz donanýmlardan herhangi birisinin Pardus ile çalýþýp çalýþmadýðýný kontrol edebileceðiniz bir arayüz ve veritabaný uygulamasýdýr.
   <TD align="right"><IMG src="{{$WebResimler}}/pardus_logo_100.png" border="0"></TD>
   </TD></TR></table>
