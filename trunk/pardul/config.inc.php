@@ -1,4 +1,5 @@
 <?
+$INI_OrtakDosyalarDizin = '/var/www/pardul.uludag.org.tr/htdocs/shared';
 include($INI_OrtakDosyalarDizin.'/config.inc.php');
 require_once($INI_OrtakDosyalarDizin.'/functions/general.php');
 require_once($AnaDizin.'/functions/general.php');
