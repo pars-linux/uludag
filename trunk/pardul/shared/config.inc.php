@@ -11,6 +11,7 @@
 
 // {{{ Tanimli Yollar
 
+    $INI_OrtakDosyalarDizin = $AnaDizin.'/shared';
 	$INI_KapsananDizin      = $AnaDizin.'/includes';
 	$INI_TemplateDizin      = $AnaDizin.'/templates';
 	$INI_CompileDizin       = $AnaDizin.'/templates_c';
