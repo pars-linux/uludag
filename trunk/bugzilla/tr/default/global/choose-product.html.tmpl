@@ -28,8 +28,8 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% IF target == "enter_bug.cgi" %]
-  [% title = "Enter $terms.Bug" %]
-  [% h2 = BLOCK %]First, you must pick a product on which to enter [% terms.abug %]. [% END %]
+  [% title = "$terms.Bug Girişi" %]
+  [% h2 = BLOCK %]Öncelikle, [% terms.abug %] kaydı girmek istediğiniz ürünü aşağıdan seçmelisiniz. [% END %]
 [% ELSIF target == "describecomponents.cgi" %]
   [% title = "$terms.Bugzilla Component Descriptions" %]
   [% h2 = "Please specify the product whose components you want described." %]
