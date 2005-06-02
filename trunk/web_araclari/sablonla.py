@@ -106,26 +106,27 @@ def usage():
 	sys.exit(2)
 
 # main
-try:
-	opts, args = getopt.gnu_getopt(sys.argv[1:], "hf", ["help", "fake"])
-except:
-	usage()
+if __name__ == "__main__":
+        try:
+                opts, args = getopt.gnu_getopt(sys.argv[1:], "hf", ["help", "fake"])
+        except:
+                usage()
 
-tmpl = "./template.html"
-dirname = "."
-opt_fake = 0
+        tmpl = "./template.html"
+        dirname = "."
+        opt_fake = 0
 
-for o, v in opts:
-	if o in ("-h", "--help"):
-		usage()
-	if o in ("-f", "--fake"):
-		opt_fake = 1
+        for o, v in opts:
+                if o in ("-h", "--help"):
+                        usage()
+                if o in ("-f", "--fake"):
+                        opt_fake = 1
 
-if len(args) > 0:
-	dirname = args[0]
-if len(args) > 1:
-	tmpl = args[1]
+        if len(args) > 0:
+                dirname = args[0]
+        if len(args) > 1:
+                tmpl = args[1]
 
-s = Sablon(tmpl)
-s.fake = opt_fake
-s.modify_dir(dirname)
+        s = Sablon(tmpl)
+        s.fake = opt_fake
+        s.modify_dir(dirname)
