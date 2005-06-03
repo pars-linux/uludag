@@ -12,5 +12,17 @@ oluşturulması için bir ortam sunması hedeflenmektedir.
 Gereksinimler
 =============
 
-- PHP 5.0.0+
-- MySQL 4.1.0+
+Veritabanları:
+--------------
+- PostgreSQL 8.0.0
+- MySQL 4.1.0
+
+Betik İşlemcileri:
+------------------
+- PHP 5.0.0
+  * mysqli
+  * postgresql
+  
+- Python 2.3.0
+  * mysql-python-1.2.0
+  * pygresql-3.6.1

@@ -3,6 +3,10 @@ function xhr_process(x_url, x_op, x_arg, x_handler) {
   if (req) {
     req.onreadystatechange = function() {
       if (req.readyState == 4) {
+        var el_notify = document.getElementById('notifier');
+        if (el_notify) {
+          el_notify.style.visibility = 'hidden';
+        }
         if (req.status == 200) {
           // ok
           var el = document.getElementById('debug');
@@ -15,9 +19,15 @@ function xhr_process(x_url, x_op, x_arg, x_handler) {
         }
         else {
           // error
+          alert('İşlem sırasında, sunucu ile iletişim problemi yaşandı.\n\nDaha sonra tekrar deneyin.');
+          eval(x_handler + "(x_op, null, null)");
         }
       }
     };
+    var el_notify = document.getElementById('notifier');
+    if (el_notify) {
+      el_notify.style.visibility = 'visible';
+    }
     s = stringify(x_arg);
     var post = 'op=' + xescape(x_op) + '&arg=' + xescape(s) + '&';
     req.open('POST', x_url);

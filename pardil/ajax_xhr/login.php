@@ -5,9 +5,11 @@
     $str_pass = $arr_data['pass'];
     $str_session = md5(time() . $str_user);
     if ($str_user == 'Pardus' && $str_pass == 'Linüks') {
+      setcookie('ajax_session', $str_session);
       return array('session' => $str_session, 'user' => $str_user);
     }
-    return 'h';
+    setcookie('ajax_session', '');
+    return false;
   }
 
   require '../ajax_base/xhr.php';
