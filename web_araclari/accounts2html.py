@@ -13,6 +13,7 @@
 # converts SVN account to web page view.
 
 import codecs
+import getopt
 
 accounts_start="""
 <html>
@@ -35,6 +36,10 @@ accounts_end="""
 </body>
 </html>
 """
+
+def usage():
+	print "\n\t%s -a hesap_dosyası -s çıktı_dosyası -t şablon_dosyası\n" % sys.argv[0]
+	sys.exit(0)
 
 class AccountsToHtml:
     def __init__(self, file):
@@ -70,12 +75,24 @@ if __name__ == "__main__":
     import sys
     import sablonla
 
-    try:
-    #FIXME: use getopt
-        tmpl = "./template.html"
-        accountsfile = sys.argv[1]
-        filename = sys.argv[2]
+    accountsfile, filename, tmpl = "", "", ""
 
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "a:o:t:", ["accounts=", "outfile=", "template="])
+    except getopt.GetoptError:
+        usage()
+    for opt, arg in opts:
+        if opt == "-a" or opt == "--accounts":
+            accountsfile = arg
+        if opt == "-o" or opt == "--outfile":
+            filename = arg
+        if opt == "-t" or opt == "--template":
+            tmpl = arg
+
+    if accountsfile == "" or filename == "" or tmpl == "":
+	usage()
+
+    try:
         sablon = sablonla.Sablon(tmpl)
         a2h = AccountsToHtml(accountsfile)
         
