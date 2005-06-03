@@ -70,7 +70,7 @@ input {
 	font-weight: normal;
 }
 td {
-	font-family: Verdana, sans-serif;
+/* 	font-family: Verdana, sans-serif; */
 	font-size: 10px;
 }
 th {
@@ -91,7 +91,7 @@ thead {
 	font-weight: bold;
 }
 body {
-	font-family: Verdana, sans-serif;
+/* 	font-family: Verdana, sans-serif; */
 	font-size: 10px;
 	font-weight: normal;
 	color: #000000;
@@ -158,23 +158,19 @@ a:active        {BACKGROUND: none; COLOR: #003399; FONT-size: 10px; text-decorat
 a:visited       {BACKGROUND: none; COLOR: #003399; FONT-size: 10px; text-decoration: none}
 a:hover         {BACKGROUND: none; COLOR: #FF0000; FONT-size: 10px; text-decoration: underline}
 
-a.menu:link          {BACKGROUND: none; COLOR: #f4f4f4; FONT-size: 10px; text-decoration: none; font-weight: bold;}
-a.menu:active        {BACKGROUND: none; COLOR: #f4f4f4; FONT-size: 10px; text-decoration: none; font-weight: bold;}
-a.menu:visited       {BACKGROUND: none; COLOR: #f4f4f4; FONT-size: 10px; text-decoration: none; font-weight: bold;}
-a.menu:hover         {BACKGROUND: none; COLOR: #ffffff; FONT-size: 10px; text-decoration: none; font-weight: bold;}
+a.menu:link          {BACKGROUND: none; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
+a.menu:hover         {BACKGROUND: none; COLOR: #6E8CD1; FONT-size: 10px; text-decoration: none;}
+a.menu:active        {BACKGROUND: none; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
+a.menu:visited       {BACKGROUND: none; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
 
-.menu         		{cursor: hand; BACKGROUND-color: #2c2e67; COLOR: #FFFFFF; FONT-size: 10px; text-decoration: none; font-weight: bold;}
-.menusec         	{cursor: hand; background-color: #DD0000; COLOR: #ffffff; FONT-size: 10px; text-decoration: none; font-weight: bold;}
+.menu         		{cursor: hand; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
+.menusec         	{cursor: hand; background-color: #DD0000; COLOR: #ffffff; FONT-size: 10px; text-decoration: none;}
 
-.tabbas1        {color: #F4F4F4; background-color: #CC3366; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:33px; letter-spacing:1pt;}
-.tabbas2        {color: #000000; background-color: #FFCC99; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:26px;}
-.tabbas3        {color: #FFFFFF; background-color: #132f3d; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:24px}
+.tabbas1        {color: #666666; background-color: ; font-size:18px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:33px; letter-spacing:1pt; font-family: serif}
+.tabbas2        {color: #000000; background-color: ; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:26px; font-family: serif}
+.tabbas3        {color: #666666; background-color: ; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:24px font-family: serif}
 
-.siparis        {color: #F4F4F4; background-color: #003366; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:24px;}
-
-.kalinsag{text-align:right;font-weight:bold;}
 .tdbaslik{font-weight:bold;color:#000000;}
 .uyari {color: #ff3300; font-size: 12px; font-weight: bold;}
-.bzemin {background-color: #e1e1e1;}
 .tabloliste1 {background-color: #eeeeee;}
 .tabloliste2 {background-color: #ffffff;}
