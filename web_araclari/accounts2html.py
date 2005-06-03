@@ -20,14 +20,15 @@ accounts_start="""
 <body>
 <!-- SAYFA İÇERİK BAŞI -->
 
-Pardus geliştiricileri...
+<p><span class="baslik"> - Pardus Geliştiricileri</span>
+<br>
 
 <table border="0" cellspacing="10">
 """
 account_template="""<tr>
-<td>$NAME$ ($ACCOUNT$)</td>
-<td><a href="mailto:$MAIL$">$MAIL$</a><td>
-<td>$IM$</td>
+<td><span class="isimler">$NAME$ ($ACCOUNT$)</span></td>
+<td><span class="metin"><a href="mailto:$MAIL$">$MAIL$</a></span><td>
+<td><span class="metin">$IM$</span></td>
 </tr>
 """
 accounts_end="""
