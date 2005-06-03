@@ -6,56 +6,41 @@
     <!-- AJAX Base -->
     <script type="text/javascript" src="ajax_base/json.js"></script>
     <script type="text/javascript" src="ajax_base/xhr.js"></script>
+    <script type="text/javascript" src="ajax_init/init.js"></script>
     <!-- Initialization -->
-    <script type="text/javascript" src="init.js"></script>
+    <script type="text/javascript" src="ajax_init/login.js"></script>
     <!-- Triggers -->
     <script type="text/javascript" src="ajax_triggers/login.js"></script>
   </head>
   <body>
-    <div class="centered">
-      <img src="images/grape.png" alt="" />
-      <br/>
-      <p>
-        Pardil'de önemli değişiklikler yapılıyor.
-      </p>
-      <p>
-        Pardil'in üzümünü bir an önce yemek istediğinizi biliyorum, biraz sabredin...
-      </p>
-    <div/>
-    <p>&nbsp;</p>
-    <hr/>
-    <p>&nbsp;</p>
-    <p>
-      Hazır gelmişken Pardil'in AJAX bileşenini test edin :)
-    </p>
-    <p>
-      İsim olarak <em>Pardus</em>, parola olarak <em>Linüks</em> yazın.
-    </p>
-    <p>
-      <strong>Giriş</strong> tuşuna bastığınızda uyarı gelmiyorsa, AJAX bileşeni tarayıcınızda çalışmıyor demektir. 
-      Hemen <a href="http://bugs.uludag.org.tr/enter_bug.cgi?product=pardil">buraya</a> tıklayın 
-      ve hatayı bildirin.
-    </p>
-    <div>
-      <label for="txt_login_user">Kullanıcı Adı</label>
-      <br/>
-      <input type="text" id="txt_login_user" />
-      <br/>
-      <label for="txt_login_pass">Parola</label>
-      <br/>
-      <input type="text" id="txt_login_pass" />
-      <br/>
-      <button type="button" id="btn_login_php">Giriş (PHP)</button>
-      <button type="button" id="btn_login_py">Giriş (Python)</button>
+    <div id="container">
+      <div id="header">
+        <div id="logo"><img src="images/pardil_title.png" alt="" /></div>
+      </div>
+      <div id="menu">
+        <fieldset id="grp_login">
+          <legend>Kullanıcı Girişi</legend>
+          <label for="txt_login_user">Kullanıcı Adı:</label>
+          <br/>
+          <input type="text" id="txt_login_user" />
+          <br/>
+          <label for="txt_login_pass">Parola:</label>
+          <br/>
+          <input type="text" id="txt_login_pass" />
+          <br/>
+          <button type="button" id="btn_login">Giriş &raquo;</button>
+        </fieldset>
+        <div id="grp_user">
+          Merhaba <span id="lbl_user_name"></span>
+        </div>
+        
+      </div>
+      <div id="content">
+        C
+      </div>
+      <div id="footer">
+        F
+      </div>
     </div>
-    <p>
-      Kısaca anlatmak gerekirse; AJAX bileşeni, tarayıcınız ve sunucu arasında veri transferi<br/>
-      yapmaya yarayan bir kütüphanedir. Transfer sırasında sayfanın tamamının yüklenmesi gerekmez.<br/>
-      Herşey sessiz sedasız halledilir.
-    </p>
-    <p>
-      Yukarıdaki formu doldurduğunuzda, form bilgileri sunucuya gönderilir ve sunucudan gelen yanıta<br/>
-      göre size bir uyarı mesajı gösterilir.
-    </p>
   </body>
 </html>

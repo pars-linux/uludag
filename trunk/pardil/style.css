@@ -1,18 +1,40 @@
 body {
-  background-color: #fff;
-  color: #335783;
+  background: #fff url(images/pardus_background.png) no-repeat fixed 50% 50%;
+  color: #000;
   margin: 0px;
-  padding: 10px;
+  padding: 0px;
 }
 * {
   font-family: verdana, bitstream vera sans, sans-serif;
-  font-size: 11px;
+  font-size: 1em;
+}
+#container {
+  padding: 1em;
+  display: none;
+}
+#header {
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+#menu {
+  float: left;
+  width: 15em;
+  padding: 0.5em;
+}
+#content {
+  margin-left: 17em;
+  padding: 0.5em;
+}
+#footer {
+  clear: both;
+  margin-top: 1em;
+  padding: 0.5em;
 }
 
 fieldset {
-  border: 1px solid #aaa;
-  padding: 10px;
-  margin: 0px;
+  border: 0.1em solid #aaa;
+  padding: 0.5em;
+  margin: 0em;
 }
 legend {
   font-weight: bold;
@@ -21,19 +43,20 @@ label {
   font-weight: bold;
 }
 input[type="text"], input[type='password'], textarea {
-  padding: 3px;
-  border: 1px solid #7b93af;
+  padding: 0.2em;
+  border: 0.1em solid #7b93af;
   background-color: #f2f6f8;
   color: #000;
-  margin-bottom: 1px;
+  margin-bottom: 0.3em;
 }
 input[type="text"]:focus, input[type='password']:focus, textarea:focus {
-  border: 1px solid #ff7b93;
+  border: 0.1em solid #ff7b93;
 }
 button {
-  padding: 1px;
+  padding: 0.1em;
 }
 
+/*
 a {
   font-weight: normal;
   color: #000;
@@ -47,11 +70,38 @@ a:hover {
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
-
 .centered {
   text-align: center;
 }
 
 a img {
   border-width: 0px;
+}
+
+#notifier {
+  position: absolute;
+  left: 0em;
+  top: 0em;
+  width: 10em;
+  height; 2em;
+  padding: 0.5em;
+  visibility: hidden;
+  background-color: #f00;
+  color: #fff;
+  font-family: verdana, bitstream vera sans, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+*/
+
+#menu fieldset {
+  border: 0em;
+  padding: 0em;
+  margin: 0em;
+}
+#menu fieldset legend {
+  display: none;
+}
+#menu label {
+  font-weight: normal;
 }
