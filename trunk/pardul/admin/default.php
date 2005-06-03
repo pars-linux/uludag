@@ -11,6 +11,6 @@
       // End -->
   </SCRIPT>
 </HEAD>
-<BODY onLoad="javascript:popUp('<?=$AdminAnaSayfa?>/main.php')">
+<BODY onLoad="javascript:popUp('<?=$AdminAnaSayfa?>/index.php')">
 </BODY>
 </HTML>
