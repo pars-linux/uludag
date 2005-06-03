@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator : Baris Ozyurt <baristuxworkshop.com>
   #%]
 
 [% DEFAULT start_at = 0 mode = "show" %]
@@ -47,8 +48,8 @@
       [% IF count > 0 %]
         <br>
         <span class="bz_comment">
-          ------- <i>Additional Comment
-          <a name="c[% count %]" href="#c[% count %]">#[% count %]</a> From 
+          ------- <i>Diğer Yorumlar
+          <a name="c[% count %]" href="#c[% count %]">Yorum [% count %]</a> Gönderen 
           <a href="mailto:[% comment.email FILTER html %]">
             [% comment.name FILTER html %]</a>
           [%+ comment.time FILTER time %] 
@@ -68,7 +69,7 @@
           <input type="hidden" name="when-[% count %]" value="[% comment.when %]">
           <input type="checkbox" name="isprivate-[% count %]" value="1"
                  id="isprivate-[% count %]"
-          [% " checked=\"checked\"" IF comment.isprivate %]> Private
+          [% " checked=\"checked\"" IF comment.isprivate %]> Özel
         </i>
       [% END %]
       [% IF UserInGroup(Param('timetrackinggroup')) &&

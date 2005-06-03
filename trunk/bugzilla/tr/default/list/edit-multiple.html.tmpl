@@ -17,6 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator : BarisOzyurt <baris@tuxworkshop.com>
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
@@ -111,7 +112,7 @@
 
   [% IF Param("usetargetmilestone") %]
     <tr>
-      <th><label for="target_milestone">Target Milestone:</label></th>
+      <th><label for="target_milestone">Hedef Mihenk Taşı:</label></th>
       <td colspan="3">
         [% PROCESS selectmenu menuname = "target_milestone"
                               menuitems = targetmilestones %]
@@ -168,7 +169,7 @@
 
       <th>
         <label for="keywords">
-          <a href="describekeywords.cgi">Keywords</a>:
+          <a href="describekeywords.cgi">Anahtar Kelimeler</a>:
         </label>
       </th>
       <td colspan="3">
@@ -302,13 +303,13 @@
 
 [% knum = knum + 1 %]
 <input id="knob-reassign" type="radio" name="knob" value="reassign">
-<label for="knob-reassign"><a href="page.cgi?id=fields.html#assigned_to">
-  Reassign</a> [% terms.bugs %] to
+<label for="knob-reassign"> [% terms.Bug %] bildirimini 
 </label>
 <input name="assigned_to"
        value="[% user.login FILTER html %]"
        onchange="document.forms.changeform.knob[[% knum %]].checked = true;"
-       size="32"><br>
+       size="32"> için <a href="page.cgi?id=fields.html#assigned_to">
+  tekrar ata</a> <br>
 
 [% knum = knum + 1 %]
 <input id="knob-reassignbycomponent"
@@ -316,7 +317,7 @@
        name="knob"
        value="reassignbycomponent">
 <label for="knob-reassignbycomponent">
-  Reassign [% terms.bugs %] to owner of selected component
+   [% terms.Bugs %] bildirimini seçili bileşenin sahibine tekrar ata
 </label><br>
 
 <input type="submit" value="Commit">
