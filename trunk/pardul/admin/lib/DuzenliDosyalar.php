@@ -1,6 +1,6 @@
 <?
 // {{{ Kayitli Dosyalar
-$Sorgu1 = sorgula("SELECT No,Isim FROM DuzenliCalisanDosyalar ORDER BY Isim");
+$Sorgu1 = sorgula("SELECT No,Isim FROM crontab ORDER BY Isim");
 for($i=0;list($No,$Isim) = getir($Sorgu1);$i++)
 	{
 	$DuzenliDosyalar[$i]['No'] = $No;
@@ -33,7 +33,7 @@ $smarty->assign('HerGunDakikalar',$HerGunDakikalar);
 // {{{ Bilgiler Guncelleniyor
 if($post_Guncelle&&YetkiKontrol('DuzenliDosyaGuncelleme'))
 	{
-	$Sorgu1 = sorgula("SELECT SonCalisma FROM DuzenliCalisanDosyalar WHERE No='$get_Dosya'");
+	$Sorgu1 = sorgula("SELECT SonCalisma FROM crontab WHERE No='$get_Dosya'");
 	if(list($SonCalisma) = $Sorgu1->fetchRow())
 		{
 		if($post_AktifPasif == "1")	$AktifPasif = 'Aktif';
@@ -56,14 +56,14 @@ if($post_Guncelle&&YetkiKontrol('DuzenliDosyaGuncelleme'))
 			{
 			$ZamanAralik = $post_DakikadaBir*60;
 			}
-		sorgula("UPDATE DuzenliCalisanDosyalar SET AktifPasif='$AktifPasif',SonCalisma='$SonCalisma',ZamanAralik='$ZamanAralik' WHERE No='$get_Dosya'");
+		sorgula("UPDATE crontab SET AktifPasif='$AktifPasif',SonCalisma='$SonCalisma',ZamanAralik='$ZamanAralik' WHERE No='$get_Dosya'");
 		}
 	}
 // }}}
 // {{{ Bilgiler Cekiliyor
 if($get_Dosya)
 	{
-	$Sorgu1 = sorgula("SELECT AktifPasif,Isim,Dosya,Aciklama,SonCalisma,ZamanAralik FROM DuzenliCalisanDosyalar WHERE No='$get_Dosya'");
+	$Sorgu1 = sorgula("SELECT AktifPasif,Isim,Dosya,Aciklama,SonCalisma,ZamanAralik FROM crontab WHERE No='$get_Dosya'");
 	if(list($AktifPasif,$Isim,$Dosya,$Aciklama,$SonCalisma,$ZamanAralik) = $Sorgu1->fetchRow())
 		{
 		$Bilgiler['No'] = $get_Dosya;
@@ -120,7 +120,7 @@ if($get_Dosya)
 			$DefaSayi = intval($post_DefaSayi);
 			$SorguEk = " ORDER BY Zaman DESC LIMIT 10";
 			}
-		$Sorgu1 = sorgula("SELECT Zaman FROM DuzenliCalisanDosyalarTakip WHERE Dosya='$Dosya' $SorguEk");
+		$Sorgu1 = sorgula("SELECT Zaman FROM cronlog WHERE Dosya='$Dosya' $SorguEk");
 		for($i=0;list($Zaman) = $Sorgu1->fetchRow();$i++)
 			{
 			$Bilgiler['Calismalar'][$i] = tarihgetir($Zaman,"tamgun");

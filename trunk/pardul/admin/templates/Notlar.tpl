@@ -25,11 +25,11 @@
 </table>
 </td>
 <td>
-{{if $Notlar}}
+{{if $notes}}
  <table border=0 width=100% align=center cellpadding=5>
   <tr class=tabbas3><td colspan=2><b>KAYITLI ÝPUÇLARI</b></td></tr>
-  {{foreach item=Not from=$Notlar name=Notlar}}
-    {{if $smarty.foreach.Notlar.iteration is odd}} <tr class=tabloliste1> {{else}} <tr class=tabloliste2> {{/if}}
+  {{foreach item=Not from=$notes name=notes}}
+    {{if $smarty.foreach.notes.iteration is odd}} <tr class=tabloliste1> {{else}} <tr class=tabloliste2> {{/if}}
      <td>{{$Not.Mesaj}}</td>
      <td>
        <a href="{{$Burasi}}&Duzenle={{$Not.No}}"><img src="{{$WebAdminResimler}}/duzenle.gif" border=0 alt="Düzenle"></a>&nbsp;&nbsp;

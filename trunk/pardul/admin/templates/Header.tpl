@@ -17,7 +17,7 @@ PARDUL - Yönetici Sayfalarý
 </table>
 <table border=0 height="93%" width="100%">
  <tr>
-  <td width="150" style="border-right: 1px dotted" valign="100%" align=center>{{include file="Menu.tpl"}}
+  <td width="150" style="border-right: 1px dotted" align=center valign="top">{{include file="Menu.tpl"}}
   <br><img src="{{$WebAdminResimler}}/pardul_logo_100t.gif">
   </td>
   <td valign=top>
