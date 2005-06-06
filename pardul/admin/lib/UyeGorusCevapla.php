@@ -1,5 +1,5 @@
 <?
-require_once("$INI_OrtakDosyalarDizin/Fonksiyonlar/ileti.php");
+require_once("$INI_OrtakDosyalarDizin/functions/mail.php");
 	if($get_No) $No = $get_No; else $No = $post_No;
 	//{{{ bilgiler alýnýyor
 	$Sql = "SELECT AdSoyad,EPosta,Mesaj,TarihSaat,Cevap,Cevaplayan,CevapTarih FROM GorusOneri WHERE No='$No'";

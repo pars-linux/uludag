@@ -1,5 +1,5 @@
 {{strip}}
-<table border=0 width="100%">
+<table border=1 width="100%" cellpadding=2>
 {{section name=k loop=$Menuler}}
 {{if $Menuler[k].AltMenuler}}
 {{assign var="S" value=$Menuler[k].Sira}}

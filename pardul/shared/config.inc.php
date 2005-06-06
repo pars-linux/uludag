@@ -5,7 +5,7 @@
 	$AnaSayfa = "http://$domain"; //http URI
 	$SSLAnaSayfa = "https://$domain"; //https URI
 
-	$AdminAnaDizin = "/var/www/pardul.uludag.org.tr/htdocs";
+	$AdminAnaDizin = "/var/www/pardul.uludag.org.tr/htdocs/admin";
 	$AdminAnaSayfa = "http://$domain/admin"; //http URI
 
 // }}}

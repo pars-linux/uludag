@@ -1,16 +1,5 @@
-<script>TamEkran();</script>
 {{include file="HataGoster.tpl" Uyari=$Uyari YetkiHataMesaj=$YetkiHataMesaj}}
-<script type="text/javascript" src="{{$AdminAnaSayfa}}/jscript/fckeditor.js"></script>
-
 {{if $Dizi}}
-<script type="text/javascript">
-window.onload = function()
-{
-	var oFCKeditor = new FCKeditor( 'Mesaj','980','450','Default' ) ;
-	oFCKeditor.BasePath	= 'jscript/' ;
-	oFCKeditor.ReplaceTextarea() ;
-}
-</script>
 <table border=0 width=100% cellpadding=3 style="border-collapse:collapse">
 <tr class="tabbas1">
   <td>Mesaj</td>
@@ -33,7 +22,7 @@ window.onload = function()
  <tr class=tabloliste1>
    <td>
 	
-	<textarea name="Mesaj" rows="5" cols="25"></textarea>
+	<textarea name="Mesaj" rows="10" cols="55"></textarea>
    </td>
  </tr>
  <tr><td colspan=4 align=right><input type="submit" name="Cevapla" value="Cevapla" class=onay>
