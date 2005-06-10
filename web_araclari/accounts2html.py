@@ -39,7 +39,7 @@ accounts_end="""
 """
 
 def usage():
-	print "\n\t%s -a hesap_dosyası -s çıktı_dosyası -t şablon_dosyası\n" % sys.argv[0]
+	print "\n\t%s -a hesap_dosyası -o çıktı_dosyası -t şablon_dosyası\n" % sys.argv[0]
 	sys.exit(0)
 
 class AccountsToHtml:
@@ -65,10 +65,11 @@ class AccountsToHtml:
             yield html
 
     def toHtml(self):
-        tmp = accounts_start
+        tmp = unicode(accounts_start, "utf-8")
         for a in self.accountToHtml():
             tmp += "\n" + a + "\n"
-        tmp += accounts_end
+        tmp += unicode(accounts_end, "utf-8")
+	print tmp
         return tmp
             
         
@@ -97,7 +98,10 @@ if __name__ == "__main__":
         sablon = sablonla.Sablon(tmpl)
         a2h = AccountsToHtml(accountsfile)
         
-        f = codecs.open(filename, "w", "utf-8")
+        f = file(filename, "w")
+	f.write( codecs.BOM_UTF8 )
+	
+	
         f.write(a2h.toHtml())
         f.close()
         
