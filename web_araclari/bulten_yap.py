@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*-
 
 #imports
+import os
+import sys
+
+sys.path.append(os.getcwd())
+
 import codecs
 import time
 import datetime
