@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Thu, 05 May 2005 16:06:22 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 05 Mayıs 2005
+<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Fri, 10 Jun 2005 16:36:04 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 10 Haziran 2005
+</title><link>http://www.uludag.org.tr/bulten/arsiv/06102005.html</link><description>
+&lt;p&gt;
+Merhaba,
+&lt;/p&gt;
+
+&lt;p&gt; Uludağ bültenine hoşgeldiniz.&lt;/p&gt;
+
+&lt;p&gt;Uludağ Projesi'nin ilk çalışanlarından Ayşe Genç ve Zerrin Çakmakkaya proje
+ekibinden ayrılırken, Eray Özkural ve Zemberek[1] projesinin geliştiricilerinden
+Mehmet D. Akın proje ekibine katıldılar. Çekirdek geliştiricilerin son hali [2]
+adresindeki gibi oldu.&lt;/p&gt;
+
+&lt;p&gt;
+01. &lt;a
+href="https://zemberek.dev.java.net"&gt;https://zemberek.dev.java.net/&lt;/a&gt;&lt;br&gt;
+02. &lt;a
+href="http://www.uludag.org.tr/hakkimizda.html"&gt;http://www.uludag.org.tr/hakkimizda.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Pardus Donanım Uyumluluğu Listesi (PARDUL) projesinin sorumluluğunu Faruk
+Eskicioğlu'nun ardından Tolga Korkunçkaya[3] devraldı. [4] adresinden test
+sayfasına, [5] adresinden de kaynak kodlarına ulaşabilrsiniz.&lt;/p&gt;
+
+&lt;p&gt;
+03. &lt;a href="http://blog.korkunckaya.net/"&gt;http://blog.korkunckaya.net/&lt;/a&gt;&lt;br&gt;
+04. &lt;a href="http://pardul.uludag.org.tr/"&gt;http://pardul.uludag.org.tr/&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+05. &lt;a
+href="http://svn.uludag.org.tr/uludag/trunk/pardul/"&gt;http://svn.uludag.org.tr/uludag/trunk/pardul/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;UluBot[6]'un da kullandığı ve [7] adresinden de bir örneğine ulaşabileceğiniz XML
+yapısındaki sözlük dosyalarının düzenlenmesi, içinde kelime aranması gibi
+işlevleri kullanıcıya sunan bir uygulama olan Gözlük[8]'ün sorumluluğunu Kaya
+Oğuz aldı. Kaynak kodlarına [9] adresinden ulaşabilirsiniz.&lt;/p&gt;
+
+&lt;p&gt;
+06. &lt;a
+href="http://svn.uludag.org.tr/uludag/trunk/ulubot/"&gt;http://svn.uludag.org.tr/uludag/trunk/ulubot/&lt;/a&gt;&lt;br&gt;
+07. &lt;a
+href="http://svn.uludag.org.tr/uludag/trunk/ulubot/sozluk/s%c3%b6zl%c3%bck.xml"&gt;http://svn.uludag.org.tr/uludag/trunk/ulubot/sozluk/sözlük.xml&lt;/a&gt;&lt;br&gt;
+08. &lt;a
+href="http://kalite.uludag.org.tr/images/gozluk.png"&gt;http://kalite.uludag.org.tr/images/gozluk.png&lt;/a&gt;&lt;br&gt;
+09. &lt;a
+href="http://svn.uludag.org.tr/uludag/trunk/gozluk/"&gt;http://svn.uludag.org.tr/uludag/trunk/gozluk/&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Kalite Projesi[10]'nin e-posta listesi[11]'ndeki tartışmanın[12] ardından projenin subversion
+depolarında[13] yeniden yapılanmaya gidildi. Bu bağlamda Uludag Deposu'ndaki
+tags klasörü[14] altına,&lt;br&gt;&lt;br&gt;
+
+ * BLACKHOLE: Tümü ile yeniden yapılanmaya girmiş ve eski kodları
+kullanılmayacak olan yazılımların tutulduğu,&lt;br&gt;
+ * RELEASE: Yazılımların sürüm numaraları ile etiketlenmiş hallerinin
+tutulduğu,&lt;br&gt;
+ * RESTRUCTURED: Geliştirilmesi bir nedenle durdurulmuş, geliştirici
+bulunduğu taktirde gelişiminin faydalı olacağı düşünülen yazılımların tutulduğu,&lt;br&gt;&lt;br&gt;
+dizinleri eklendi.&lt;/p&gt;
+
+&lt;p&gt;
+10. &lt;a href="http://kalite.uludag.org.tr"&gt;http://kalite.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
+11. &lt;a
+href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite"&gt;http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite&lt;/a&gt;&lt;br&gt;
+12. &lt;a
+href="http://liste.uludag.org.tr/kalite/2005-May/thread.html#350"&gt;http://liste.uludag.org.tr/kalite/2005-May/thread.html#350&lt;/a&gt;&lt;br&gt;
+13. &lt;a href="http://svn.uludag.org.tr"&gt;http://svn.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
+14. &lt;a
+href="http://svn.uludag.org.tr/uludag/tags/"&gt;http://svn.uludag.org.tr/uludag/tags/&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Son katılımların ardından Uludağ deposuna yazma hakkı olan geliştiricilerin
+listesinin son hali [15] adresindeki gibi oldu.&lt;/p&gt;
+
+&lt;p&gt;
+15. &lt;a
+href="http://www.uludag.org.tr/gelistiriciler.html"&gt;http://www.uludag.org.tr/gelistiriciler.html&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Geliştiricilerin bilgisayarlarına kurarak denemeleri ve buldukları hataları
+bildirlmeleri için hazırlanan Pardus Kök Dosya sistemlerinin 0.0.6 numaralı
+son sürümü[16] FTP sunucumuzda[17]
+yerini aldı. Bu sürüm için geliştirilen basit bir kurulum yardımcı uygulaması ve
+kurulum belgesi ne de [18] ve [19] adreslerinden ulaşabilirsiniz.&lt;/p&gt;
+
+&lt;p&gt;
+16. &lt;a
+href="ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/"&gt;ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/&lt;/a&gt; &lt;br&gt;
+17. &lt;a href="ftp://ftp.uludag.org.tr/"&gt;ftp://ftp.uludag.org.tr/&lt;/a&gt;&lt;br&gt;
+18. &lt;a
+href="http://cekirdek.uludag.org.tr/~meren/temp/rootfs.sh"&gt;http://cekirdek.uludag.org.tr/~meren/temp/rootfs.sh&lt;/a&gt;&lt;br&gt;
+19. &lt;a
+href="http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/"&gt;http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+&lt;/p&gt;
+
+</description><guid isPermaLink="true">http://www.uludag.org.tr/bulten/arsiv/06102005.html</guid><pubDate>Fri, 10 Jun 2005 16:10:04 GMT</pubDate></item><item><title>Uludağ Haftalık Bülteni - 05 Mayıs 2005
 </title><link>http://www.uludag.org.tr/bulten/arsiv/05052005.html</link><description>
 &lt;p&gt;
 Merhaba,
