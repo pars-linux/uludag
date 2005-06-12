@@ -90,7 +90,7 @@ GNOME Turkey
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/gnomelogo.png
+	filename logo/gnomelogo.png
 	clip
 
 \end_inset 
@@ -133,7 +133,7 @@ GNU-TR
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/gnulogo.jpg
+	filename logo/gnulogo.jpg
 	clip
 
 \end_inset 
@@ -166,7 +166,7 @@ KDE Turkey
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/kdelogo.jpg
+	filename logo/kdelogo.jpg
 	clip
 
 \end_inset 
@@ -255,7 +255,7 @@ PostgreSQL Turkish
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/postgresql.png
+	filename logo/postgresql.png
 	clip
 
 \end_inset 
@@ -292,7 +292,7 @@ belgeler.org
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/belgelerlogo.png
+	filename logo/belgelerlogo.png
 	clip
 
 \end_inset 
@@ -320,7 +320,7 @@ Debian GNU/Linux
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/debianlogo.png
+	filename logo/debianlogo.png
 	clip
 
 \end_inset 
@@ -345,7 +345,7 @@ Fedora GNU/Linux
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/fedoralogo.png
+	filename logo/fedoralogo.png
 	clip
 
 \end_inset 
@@ -379,7 +379,7 @@ Mandrake GNU/Linux
 
 
 \begin_inset Graphics
-	filename ../../yerellestirme_gruplari/logo/mandrake.png
+	filename logo/mandrake.png
 	clip
 
 \end_inset 
