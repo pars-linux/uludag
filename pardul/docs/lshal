@@ -1,3 +1,12 @@
+lshal
+R. Tolga KORKUNCKAYA <tolga(at)forsnet.com.tr>
+
+lshal HAL (Hardware Abstraction Layer) sayesinde donanim bilgilerimizi okur,
+pciid lerini verir... Bu pciid'leri Vendor, Subsystem, SubVendor, ve 
+SubSubSystem bilgilerini icerir. pciids veritabanindan okunarak biz kullandigi
+miz donanimin Marka ve Model Bilgilerini de iletmektedir. Asagida ornek bir 
+lshal ciktisi mevcuttur.
+
 
 Dumping 44 device(s) from the Global Device List:
 -------------------------------------------------

@@ -6,6 +6,7 @@ require_once($INI_OrtakDosyalarDizin.'/config.inc.php');
 require_once($INI_OrtakDosyalarDizin.'/functions/general.php');
 $KutuphaneDizin = $INI_KapsananDizin;
 require_once($AdminAnaDizin.'/functions/general.php');
+require_once($AdminAnaDizin.'/functions/hardware.php');
 require_once($INI_OrtakDosyalarDizin.'/functions/mail.php');
 
 define('SMARTY_DIR',"$INI_KapsananDizin/Smarty/");
@@ -33,9 +34,6 @@ $WebResimlerDizin	= $AnaDizin.'/templates/images';
 $WebAdminResimler   = $AdminAnaSayfa.'/images';
 $ASSayfa            = $AdminAnaSayfa.'/index.php?Page=';
 
-
-$WebAdminMenuResimler = $WebAdminResimler.'/menu/';
-$smarty->assign('WebAdminMenuResimler',$WebAdminMenuResimler);
 $smarty->assign('WebUrunResimler',$WebUrunResimler);
 $smarty->assign('WebUrunResimlerDizin',$WebUrunResimlerDizin);
 $smarty->assign('WebNesneler',$WebNesneler);

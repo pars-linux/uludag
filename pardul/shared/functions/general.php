@@ -377,4 +377,244 @@
         }
     }
 
-?>
+    
+    /**
+    *   Jabber Mesaj Fonksiyonu, sistemde tanimli bir jabber kullanicisi araci
+    *   ligi ile diger jabber kullanicilarina otomatik mesaj gonderir.
+    *   @package shared_functions
+    *   @param string $toWhom
+    *   @param string $Message
+    *   @return string
+    *   @link   jabber.class.php    http://jabber.class.php (link???)
+    */
+    
+    function JabberMesaj($toWhom,$Message)
+    {
+    $Error  = "";  // Bos bir hata degiskeni acalim
+    $Jabber = new Jabber();
+    if($Jabber->Connect())
+      $Error    = "Jabber Sunucusuna Baglanamadim!";
+    if($Jabber->SendAuth())
+      $Error    = "Kimlik Dogrulamasi Basarisiz Oldu!"; // Kimlik Dogrulama
+    $Jabber->SendPresence(NULL, NULL, "online");
+    $Jabber->SendMessage("$toWhom",
+                     "normal",
+                     NULL,
+                     array(
+                           "body" => "$Message"
+                          ),
+                     $payload
+                    );
+    $Jabber->Disconnect();
+    return $Error;
+  }
+
+    /**
+    *   Lists all the hardware categories...
+    *   @package shared_functions
+    *   @return array
+    */
+  
+  function KategoriListele()
+  {
+    $KayitliKategoriler = array();
+    $sorgu1 = sorgula("SELECT No,KatAd FROM UrunKategoriler ORDER BY KatAd");
+    $i = 0;
+    while(list($vt_No,$vt_KatAd) = getir($sorgu1))
+    {
+        $KayitliKategoriler[$i]['No'] = $vt_No;
+        $KayitliKategoriler[$i]['KatAd'] = $vt_KatAd;
+        $i++;
+    }
+    return $KayitliKategoriler;
+  }
+  
+  function KategoriSelect($SifirOlsun='')
+{
+  $Kategoriler = array();
+  if ($SifirOlsun=='Sifir') $Kategoriler[0] = 'Tüm Kategoriler';
+  $Sql = "SELECT No,KatAd FROM UrunKategoriler ORDER BY KatAd";
+  $Sonuc = sorgula($Sql);
+  while(list($vt_No,$vt_KatAd)=getir($Sonuc))
+  {
+   $SqlAd = "SELECT Isim FROM UrunKategorilerMenu WHERE AnaNo='0' AND KategoriNo='$vt_No'";
+   list($Isim) = getir(sorgula($SqlAd));
+   if(!$Isim) $Isim = $vt_KatAd;
+   $Kategoriler[$vt_No] = $Isim;
+  }
+  return $Kategoriler;
+}
+
+  function MarkaSelect($KategoriNo=0)
+{
+ $Markalar = array();
+ if ($KategoriNo)
+  $Sql = "SELECT DISTINCT(Marka) FROM Urunler WHERE KatNo='$KategoriNo' ORDER BY Marka";
+ else
+  $Sql = "SELECT DISTINCT(Marka) FROM Urunler ORDER BY Marka";
+ $Sonuc = sorgula($Sql);
+ $j = 0;
+ while(list($Marka)=getir($Sonuc))
+  if ($Marka)
+    $Markalar[$Marka] = $Marka;
+ return $Markalar;
+}
+//}}}
+//{{{ BirimSelect()
+function BirimSelect()
+{
+ $Birimler = array();
+ $Sql = "SELECT DISTINCT(Birim) FROM Urunler ORDER BY Birim";
+ $Sonuc = sorgula($Sql);
+ $j = 0;
+ while(list($Birim)=getir($Sonuc))
+  if ($Birim)
+    $Birimler[$Birim] = $Birim;
+ return $Birimler;
+}
+
+function KategoriAd($KategoriNo)
+{
+  $Sql = "SELECT KatAd FROM UrunKategoriler WHERE No='$KategoriNo'";
+  $Sonuc = sorgula($Sql);
+  list($vt_KatAd) = getir($Sonuc);
+  $Isim = $vt_KatAd;
+  if ($Sonuc->numRows()>0)
+    return $Isim;
+  else
+    return '';
+}
+
+function KategoriMenuAd($KategoriNo)
+{
+  $Sql = "SELECT KatAd FROM UrunKategoriler WHERE No='$KategoriNo'";
+  $Sonuc = sorgula($Sql);
+  list($vt_KatAd) = getir($Sonuc);
+  $SqlAd = "SELECT Isim FROM UrunKategorilerMenu WHERE AnaNo='0' AND KategoriNo='$KategoriNo'";
+  list($Isim) = getir(sorgula($SqlAd));
+  if (!$Isim) $Isim = $vt_KatAd;
+  if ($Sonuc->numRows()>0)
+    return $Isim;
+  else
+    return '';
+}
+
+function OrtakAlanlarBul($UrunKategoriNo,$UrunNo=0)
+{
+  $Sql = "SELECT TabloAd,AlanSirasi,GorunenIsim,SonEk,GirisNot,FiltreAlanlar,ListeAlanlar FROM UrunKategoriler WHERE No='$UrunKategoriNo'";
+  $Sonuc = sorgula($Sql);
+  list($vt_TabloAd,$vt_AlanSirasi,$vt_GorunenIsim,$vt_SonEk,$vt_GirisNot,$vt_FiltreAlanlar,$vt_ListeAlanlar)=getir($Sonuc);
+  $GorunenIsimler = explode('##',$vt_GorunenIsim);
+  $SonEkler       = explode('##',$vt_SonEk);
+  $GirisNotlar    = explode('##',$vt_GirisNot);
+  $FiltreAlanlar  = explode('##',$vt_FiltreAlanlar);
+  $ListeAlanlar   = explode('##',$vt_ListeAlanlar);
+
+  $UrunKategoriAd = KategoriAd($UrunKategoriNo);
+
+
+  $EkOzellikler = array();
+
+  $KategoriAd = KategoriAd($UrunKategoriNo);
+  $TabloAd = 'Urunler_'.$KategoriAd;
+  $Sql = "SELECT * FROM $TabloAd LIMIT 1";
+  $Sonuc = sorgula($Sql);
+  $EkOzellikSayisi = $Sonuc->numCols(); //UrunNo alanýný çýkaralým
+  $Alanlar = $Sonuc->TableInfo();
+  for($i=1;$i<$EkOzellikSayisi;$i++)
+  {
+     $EkOzellikler[$i]['GorunenIsim'] = $GorunenIsimler[$i-1];
+     $EkOzellikler[$i]['SonEk']       = $SonEkler[$i-1];
+     $EkOzellikler[$i]['GirisNot']    = $GirisNotlar[$i-1];
+     $EkOzellikler[$i]['MevcutDegerler'] = array();
+     $AlanAdi = $Alanlar[$i]['name'];
+     $EkOzellikler[$i]['AlanAd']    = $AlanAdi;
+     if (in_array($AlanAdi,$FiltreAlanlar)) $EkOzellikler[$i]['FiltreAlan'] = true; else $EkOzellikler[$i]['FiltreAlan'] = false;
+     if (in_array($AlanAdi,$ListeAlanlar))  $EkOzellikler[$i]['ListeAlan'] = true;  else $EkOzellikler[$i]['ListeAlan'] = false;
+
+
+     if (ereg('flt_',$AlanAdi))
+       $EkOzellikler[$i]['Tip'] = 'Secmeli';
+     else
+       $EkOzellikler[$i]['Tip'] = 'Text';
+     if ($UrunNo)
+     {
+       $SqlDeger = "SELECT $AlanAdi FROM $TabloAd WHERE UrunNo='$UrunNo'";
+       $SonucDeger = sorgula($SqlDeger);
+       list($vt_Deger) = getir($SonucDeger);
+       $EkOzellikler[$i]['Deger'] = $vt_Deger;
+     }
+     if ($UrunKategoriAd=='aksesuarlar'&&$AlanAdi=='kategoriad') //aksesuarlar için ayrý biþey yapmaya mecbur kaldýk
+     {
+        $SqlKategoriler = "SELECT No,KatAd FROM UrunKategorilerORDER BY KatAd";
+        $SonucKategoriler = sorgula($SqlKategoriler);
+        while(list($vt_No,$vt_KatAd) = getir($SonucKategoriler))
+         if ($vt_KatAd<>'aksesuarlar')
+           $EkOzellikler[$i]['MevcutDegerler'][$vt_KatAd] = $vt_KatAd;
+     }
+     else
+     {
+       $SqlDegerler = "SELECT DISTINCT($AlanAdi) FROM $TabloAd WHERE $AlanAdi<>''";
+       $SonucDegerler = sorgula($SqlDegerler);
+       if($AlanAdi=='altkategori') {
+     $SqlNoBul = "SELECT No FROM UrunKategoriler WHERE TabloAd='$TabloAd'";
+     $SonucSqlNoBul = sorgula($SqlNoBul);
+     list($KategoriNumara) = getir($SonucSqlNoBul);
+     $Sql1 = "SELECT Isim FROM UrunKategorilerMenu WHERE KategoriNo='$KategoriNumara' AND AnaNo<>'0'";
+     $SonucBul = sorgula($Sql1);
+     while(list($Isim) = getir($SonucBul))
+          $EkOzellikler[$i]['MevcutDegerler'][$Isim] = $Isim;
+       } else {
+      while(list($vt_MevcutDeger) = getir($SonucDegerler))
+          $EkOzellikler[$i]['MevcutDegerler'][$vt_MevcutDeger] = $vt_MevcutDeger;
+     }
+     }
+  }
+  return $EkOzellikler;
+}
+//}}}
+//{{{YeniUrunGetir($Sayi='Tumu',$KategoriNo=0)
+function YeniUrunGetir($Sayi='Tumu',$KategoriNo=0)
+{
+ global $sistem_UrunYeniKalmaSure;
+ $Simdi = Simdi();
+ $SimdiYil    = substr($Simdi,0,4);
+ $SimdiAy     = substr($Simdi,4,2);
+ $SimdiGun    = substr($Simdi,6,2);
+ $SimdiSaat   = substr($Simdi,8,2);
+ $SimdiDakika = substr($Simdi,10,2);
+ $SimdiSaniye = substr($Simdi,12,2);
+ $KriterSure = 60*60*24*$sistem_UrunYeniKalmaSure;
+ $KriterZaman = date("YmdHis",mktime($SimdiSaat,$SimdiDakika,$SimdiSaniye,$SimdiAy,$SimdiGun,$SimdiYil)-$KriterSure);
+ if ($KategoriNo)
+  $Sql = "SELECT No,GirisTarih FROM Urunler WHERE AktifPasif='Aktif' AND KatNo='$KategoriNo' ORDER BY GirisTarih DESC";
+ else
+  $Sql = "SELECT No,GirisTarih FROM Urunler WHERE AktifPasif='Aktif' ORDER BY GirisTarih DESC";
+ $i = 0;
+ $Sonuc = sorgula($Sql);
+ while(list($No,$GirisTarih)=getir($Sonuc))
+ {
+   if($GirisTarih<$KriterZaman) continue;
+   if(!UrunGecerli($No)) continue;
+   $Urunler[$i]['Bilgi'] = UrunBilgi($No);
+   $i++;
+   if($Sayi<>'Tumu' && $Sayi<=$i) break;
+ }
+ if (($Sayi<>'Tumu') && $Urunler)
+    $Urunler = array_splice($Urunler,0,$Sayi);
+ return $Urunler;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
