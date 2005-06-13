@@ -1,5 +1,5 @@
 <?
-//MEvcut Baþlýklar
+error_reporting(E_WARNING || E_PARSE);
 
 if ($post_BaslikGuncelle)
 {
@@ -55,7 +55,7 @@ if($post_Ad)
 	$post_Ad = eregi_replace("[^a-z0-9]","",$post_Ad);
 	}else{ $post_Ad = Turkcesiz(strtolower($post_Ad)); }
 	}
-include("$AdminAnaDizin/fonksiyonlar/kategori.php");
+// include("$AdminAnaDizin/fonksiyonlar/kategori.php");
 if ($get_KatNo)
 {
   $Sql = "SELECT KatAd FROM UrunKategoriler WHERE No='$get_KatNo'";
