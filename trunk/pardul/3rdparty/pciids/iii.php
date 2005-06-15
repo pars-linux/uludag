@@ -27,7 +27,7 @@ $options = array(
 parse_params();
 
 /* Open the database as we'll need it for authentication soon */
-include("db_pciids.inc.php");
+include("/var/www/pardul.uludag.org.tr/htdocs/3rdparty/db_pciids.inc.php");
 
 
 /* Check modes: 0=default, 1=only approved, 9=admin */
