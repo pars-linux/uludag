@@ -31,6 +31,7 @@
 #include <qcursor.h>
 #include <qstatusbar.h>
 
+#include "gozluk32.xpm"
 #include "dictreader.h"
 #include "gozluksettings.h"
 #include "editdialog.h"
@@ -42,10 +43,11 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 {
 	setCentralWidget(new QWidget(this,"merkez"));
 	this->setCaption(QString::fromUtf8("Gözlük"));
+	this->setIcon(QPixmap(gozluk_xpm));
 	// menü
 	
-	QPopupMenu *menuSecenekler = new QPopupMenu(this);
-	QPopupMenu *menuDosya = new QPopupMenu(this);
+	menuSecenekler = new QPopupMenu(this);
+	menuDosya = new QPopupMenu(this);
 	
 	menuDosya->insertItem(QString::fromUtf8("Yeni Sözlük"), this, SLOT( yeniSozluk() )); 
 	menuDosya->insertItem(QString::fromUtf8("Sözlük Dosyası Aç"), this, SLOT( sozlukAc() ), CTRL+Key_O);
@@ -56,12 +58,13 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 	menuDosya->insertItem(QString::fromUtf8("Kapat"), this, SLOT( close() ), CTRL+Key_Q);
 	
 	menuSecenekler->insertItem(QString::fromUtf8("Ye&ni Kelime"),this, SLOT( yeniKelime() ),CTRL+Key_N);
-	menuSecenekler->insertItem(QString::fromUtf8("S&eçiliyi Düzenle"), this, SLOT( kelimeDuzenle() ), CTRL+Key_E);
-	menuSecenekler->insertItem(QString::fromUtf8("Seçiliyi Sil"), this, SLOT( seciliSil() ), CTRL+Key_D);
+	edit1 = menuSecenekler->insertItem(QString::fromUtf8("S&eçiliyi Düzenle"), this, SLOT( kelimeDuzenle() ), CTRL+Key_E);
+	sil1 = menuSecenekler->insertItem(QString::fromUtf8("Seçiliyi Sil"), this, SLOT( seciliSil() ), CTRL+Key_D);
 	
+	menuSecenekler->setItemEnabled(edit1,false);
+	menuSecenekler->setItemEnabled(sil1,false);
 	
-	
-	QPopupMenu *menuAbout = new QPopupMenu(this);
+	menuAbout = new QPopupMenu(this);
 	menuAbout->insertItem(QString::fromUtf8("Gözlük Hakkında"), this, SLOT( about() ), Key_F1);
 	
 	QMenuBar *menu = new QMenuBar(this);
@@ -71,9 +74,11 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 
 	// liste popup menüsü
 	lPopup = new QPopupMenu(this);
-	lPopup->insertItem(QString::fromUtf8("Düzenle"), this, SLOT( kelimeDuzenle() ) );
-	lPopup->insertItem(QString::fromUtf8("Sil"), this, SLOT( seciliSil() ) );
+	edit2 = lPopup->insertItem(QString::fromUtf8("Düzenle"), this, SLOT( kelimeDuzenle() ) );
+	sil2 = lPopup->insertItem(QString::fromUtf8("Sil"), this, SLOT( seciliSil() ) );
 
+	lPopup->setItemEnabled(edit2,false);
+	lPopup->setItemEnabled(sil2,false);
 	
 	// arayüz
 	QHBoxLayout *ana = new QHBoxLayout(centralWidget(),5); 
@@ -116,6 +121,8 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 	connect(lviewListe, SIGNAL( selectionChanged( QListViewItem * ) ), this, SLOT( showFromList( QListViewItem* ) ) );
 	connect(radioEng, SIGNAL( toggled( bool ) ), this, SLOT( langChanged( bool ) ) );
 	connect(lviewListe, SIGNAL( rightButtonClicked(QListViewItem *, const QPoint & , int)), this, SLOT( popupSag() ));
+	//connect(lviewListe, SIGNAL( selectionChanged() ), this, SLOT(selectionUpdate() ) );
+	connect(lviewListe, SIGNAL( selectionChanged(QListViewItem *) ), this, SLOT(selectionUpdate() ) );
 	
 	currentEntry = new TransDef();
 	readDict(QString::null);
@@ -126,6 +133,23 @@ anaPencere::anaPencere(QWidget *parent, const char *name):
 		
 }
 
+void anaPencere::selectionUpdate()
+{
+	if (lviewListe->childCount() == 0)
+	{
+		menuSecenekler->setItemEnabled(edit1,false);
+		menuSecenekler->setItemEnabled(sil1,false);
+		lPopup->setItemEnabled(edit2,false);
+		lPopup->setItemEnabled(sil2,false);
+	}
+	else
+	{
+		menuSecenekler->setItemEnabled(edit1,true);
+		menuSecenekler->setItemEnabled(sil1,true);
+		lPopup->setItemEnabled(edit2,true);
+		lPopup->setItemEnabled(sil2,true);
+	}
+}
 
 void anaPencere::yeniSozluk()
 {
@@ -279,7 +303,7 @@ void anaPencere::settings()
 void anaPencere::about()
 {
 	QMessageBox::information(this,QString::fromUtf8("Gözlük Hakkında"),
-	QString::fromUtf8("Uludağ/Pardus, Gözlük Programı\nMayıs, 2005"));
+	QString::fromUtf8("Uludağ/Pardus, Gözlük Programı\n2005"));
 }
 
 
@@ -394,7 +418,13 @@ void anaPencere::searchSource( const QString& text )
     lviewListe->clear();
 
     if (text.isEmpty())
-            return;
+	 {
+		menuSecenekler->setItemEnabled(edit1,false);
+		menuSecenekler->setItemEnabled(sil1,false);
+		lPopup->setItemEnabled(edit2,false);
+		lPopup->setItemEnabled(sil2,false);
+		return;
+	 }
 
     QString *s = new QString( text );
     QListViewItem *item = NULL;
@@ -418,6 +448,20 @@ void anaPencere::searchSource( const QString& text )
                 if ( s->lower() == (*sit).lower() )
                     currentEntry = entry;
             }
+				if (lviewListe->childCount() == 0)
+				{
+					menuSecenekler->setItemEnabled(edit1,false);
+					menuSecenekler->setItemEnabled(sil1,false);
+					lPopup->setItemEnabled(edit2,false);
+					lPopup->setItemEnabled(sil2,false);
+				}
+				else
+				{
+					menuSecenekler->setItemEnabled(edit1,true);
+					menuSecenekler->setItemEnabled(sil1,true);
+					lPopup->setItemEnabled(edit2,true);
+					lPopup->setItemEnabled(sil2,true);
+				}
         }
         else { // Turkish search. Search in translations.
             QStringList trans( entry->getTranslations() );
@@ -431,6 +475,20 @@ void anaPencere::searchSource( const QString& text )
                 if ( s->lower() == (*it).lower() )
                     currentEntry = entry;
             }
+				if (lviewListe->childCount() == 0)
+				{
+					menuSecenekler->setItemEnabled(edit1,false);
+					menuSecenekler->setItemEnabled(sil1,false);
+					lPopup->setItemEnabled(edit2,false);
+					lPopup->setItemEnabled(sil2,false);
+				}
+				else
+				{
+					menuSecenekler->setItemEnabled(edit1,true);
+					menuSecenekler->setItemEnabled(sil1,true);
+					lPopup->setItemEnabled(edit2,true);
+					lPopup->setItemEnabled(sil2,true);
+				}
         }
     }
     delete s;

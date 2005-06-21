@@ -79,8 +79,9 @@ class anaPencere:public QMainWindow
 		QRadioButton *radioEng, *radioTur;
 		QListView *lviewListe;
 		QVGroupBox *gboxAnlam;
-		QPopupMenu *lPopup;
+		QPopupMenu *lPopup, *menuSecenekler, *menuDosya, *menuAbout;
 		bool edited;
+		int edit1, edit2, sil1, sil2;
 		
 		QPtrList<TransDef> entries;
 		TransDef *currentEntry;
@@ -106,6 +107,8 @@ class anaPencere:public QMainWindow
 		
 		void yeniSozluk();
 		void sozlukAc();
+		
+		void selectionUpdate();
 		
 		void setCurrentSource( const QString s );
 		void addCurrentTranslation( const QString t );
