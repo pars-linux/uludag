@@ -204,6 +204,12 @@ void anaPencere::popupSag()
 
 void anaPencere::seciliSil()
 {
+	if (lviewListe->currentItem() == 0)
+	{
+		QMessageBox::warning(this,QString::fromUtf8("Ufak bir hata!"),
+		QString::fromUtf8("Listede kelime seçili değil"));
+		return;
+	}
 	// önce bi uyarı göstermeli :)
 	if (!QMessageBox::warning(this, QString::fromUtf8("Uyarı! Silmek üzeresiniz..."),
 			QString::fromUtf8("Bu kelimeyi silmek istediğinizden emin misiniz?"),
@@ -266,6 +272,12 @@ void anaPencere::exportToXml()
 
 void anaPencere::kelimeDuzenle()
 {
+	if (lviewListe->currentItem() == 0)
+	{
+		QMessageBox::warning(this,QString::fromUtf8("Ufak bir hata!"),
+		QString::fromUtf8("Listede kelime seçili değil"));
+		return;
+	}
 	editTerm e(this, "myEditDialog:P", currentEntry);
 	if (e.exec() == QDialog::Accepted)
 	{
