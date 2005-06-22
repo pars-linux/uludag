@@ -11,6 +11,7 @@
 
 import sys, time
 import os
+import codecs
 import ConfigParser
 from qt import *
 
@@ -53,11 +54,37 @@ class GreetWindow(QDialog):
 	
 	def reject(self):
 		sys.exit(0)
-	
+
+def writeU(fname, data):
+	f = codecs.open(fname, "w", "utf-8")
+	f.writelines(data)
+	f.close()
+
+def readU(fname):
+	f = codecs.open(fname, "r", "utf-8")
+	data = f.readlines()
+	f.close()
+	return data
+
 def greet(parent, force=0):
 	d = GreetWindow(parent)
 	d.setModal(True)
-	d.dir.setText(os.getenv("HOME", "/"))
+	if force != 1:
+		try:
+			s = readU(os.path.join(os.getenv("HOME"), ".pisimat"))
+			s1 = s[0].rstrip("\n")
+			s2 = s[1].rstrip("\n")
+			s3 = s[2].rstrip("\n")
+			d.name.setText(s1)
+			d.email.setText(s2)
+			d.dir.setText(s3)
+			return ( s1, s2, s3 )
+		except:
+			d.dir.setText(os.getenv("HOME", "/"))
 	d.show()
 	if QDialog.Accepted == d.exec_loop():
-		return ( str(d.name.text()), str(d.email.text()), str(d.dir.text()) )
+		s1 = unicode(d.name.text())
+		s2 = unicode(d.email.text())
+		s3 = unicode(d.dir.text())
+		writeU(os.path.join(os.getenv("HOME"), ".pisimat"), (s1 + "\n", s2 + "\n", s3 + "\n"))
+		return ( s1, s2, s3 )

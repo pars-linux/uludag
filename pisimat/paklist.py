@@ -14,12 +14,33 @@ import os.path
 from qt import *
 import pakedit
 
+class Pak(QListViewItem):
+	def __init__(self, list, specpath):
+		self.path = specpath
+		dirs = specpath.split("/")
+		pn = dirs[-1]
+		parent = list
+		if len(dirs) > 1:
+			for d in dirs[:-1]:
+				if d != "":
+					parent = self.get_parent(parent, d)
+		QListViewItem.__init__(self, parent, pn)
+	
+	def get_parent(self, parent, item):
+		t = parent.firstChild()
+		while t:
+			if t.text(0) == item:
+				return t
+			t = t.nextSibling()
+		return QListViewItem(parent, item)
+
 class PakList(QVBoxLayout):
 	def __init__(self, *args):
 		QVBoxLayout.__init__(self, *args)
 		self.list = QListView(*args)
 		list = self.list
-		list.addColumn("Path")
+		list.setRootIsDecorated(True)
+		list.addColumn("Package")
 		self.connect(list, SIGNAL("selectionChanged()"), self.change)
 		self.addWidget(list)
 		hb = QHButtonGroup(*args)
@@ -33,10 +54,14 @@ class PakList(QVBoxLayout):
 	
 	def scan_dir(self, dirname):
 		# this func needs luv
+		# reset
+		self.main_path = dirname
+		self.list.clear()
+		# populate the list
 		for root, dirs, files in os.walk(dirname):
 			for f in files:
 				if ".pspec" in f:
-					QListViewItem(self.list, os.path.join(root, f))
+					Pak(self.list, os.path.join(root, f)[len(self.main_path):])
 					# found a package, dont go deeper
 					for d in dirs:
 						dirs.remove(d)
@@ -58,7 +83,7 @@ class PakList(QVBoxLayout):
 		if item == None:
 			return
 		p = pakedit.PakEdit(None)
-		p.edit_pak(str(item.text(0)))
+		p.edit_pak(os.path.join(self.main_path, str(item.path)))
 		p.show()
 		self.winlist.append(p)
 	
