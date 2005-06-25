@@ -16,7 +16,8 @@ header_text = '''
 <head>
 	<title>:: ulusal dağıtım project :: tübitak-uekae ::</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link href="$root$../stil.css" rel="stylesheet" type="text/css">
+	<link href="../../../stil.css" rel="stylesheet" 
+type="text/css">
 	<link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
 </head>
 
