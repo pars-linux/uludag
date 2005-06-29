@@ -9,9 +9,11 @@
 # option) any later version. Please read the COPYING file.
 #
 
-import string
+import os
 from qt import *
 import source
+import actions
+import subpaks
 
 class PakEdit(QMainWindow):
 	def __init__(self, *args):
@@ -21,19 +23,15 @@ class PakEdit(QMainWindow):
 		tab = QTabWidget(self)
 		self.src = source.Source(self)
 		tab.addTab(self.src, "Source")
-		tab.addTab(QLabel("Packages", self), "Packages")
-		self.acts = QTextEdit(self)
+		self.paks = subpaks.SubPaks(self)
+		tab.addTab(self.paks, "Packages")
+		self.acts = actions.Actions(self)
 		tab.addTab(self.acts, "Actions")
 		tab.addTab(QLabel("Config", self), "Config")
 		vb.addWidget(tab)
 	
-	def edit_pak(self, dirname):
-		aname = dirname[:dirname.rfind("/") + 1] + "actions.py"
-		try:
-			f = file(aname)
-			lines = f.readlines()
-			f.close()
-			self.acts.setText(string.join(lines, ""))
-		except:
-			pass
-		self.src.update(dirname)
+	def edit_pak(self, pdir):
+		self.pak_dir = pdir
+		self.src.edit_pak(pdir)
+		self.paks.edit_paks(pdir)
+		self.acts.edit_actions(os.path.join(pdir, "actions.py"))

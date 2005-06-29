@@ -20,12 +20,15 @@ class MainWindow(QMainWindow):
 		self.setCaption("Pisimat - Pisi Package Maker Tool")
 		self.setMinimumSize(540,320)
 		self.pl = paklist.PakList(self)
+	
+	def start(self):
+		a = greet.greet(self)
+		self.pl.scan_dir(a[2])
 
 if __name__ == "__main__":
 	app = QApplication(sys.argv)
+	app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
 	w = MainWindow()
 	w.show()
-	app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
-	a = greet.greet(w)
-	w.pl.scan_dir(a[2])
+	w.start()
 	app.exec_loop()
