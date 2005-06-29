@@ -9,6 +9,7 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import os
 import xml.dom
 import xml.dom.minidom
 from qt import *
@@ -20,10 +21,35 @@ def get_cdata(node, tag):
 		c = ""
 	return c
 
+class Patches(QWidget):
+	def __init__(self, *args):
+		QWidget.__init__(self, *args)
+		vb = QVBoxLayout(self)
+		self.list = QListView(self)
+		self.list.addColumn("Patch")
+		vb.addWidget(self.list)
+		hb = QHButtonGroup(self)
+		vb.addWidget(hb)
+		b = QPushButton("Add Patch", hb)
+		self.connect(b, SIGNAL("clicked()"), self.add_patch)
+		b = QPushButton("Remove Patch", hb)
+		self.connect(b, SIGNAL("clicked()"), self.rem_patch)
+	
+	def add_patch(self):
+		pass
+	
+	def rem_patch(self):
+		pass
+	
+	def edit_patches(self, node):
+		for p in node.getElementsByTagName("Patch"):
+			QListViewItem(self.list, p.firstChild.data)
+
 class Source(QWidget):
 	def __init__(self, *args):
 		QWidget.__init__(self, *args)
-		g = QGridLayout(self, 4, 2, 6)
+		vb = QVBoxLayout(self, 6)
+		g = QGridLayout(vb, 4, 2, 6)
 		lab = QLabel("Name", self)
 		g.addWidget(lab, 0, 0)
 		lab = QLabel("Homepage", self)
@@ -40,12 +66,21 @@ class Source(QWidget):
 		g.addWidget(self.license, 2, 1)
 		self.archive = QLineEdit(self)
 		g.addWidget(self.archive, 3, 1)
+		self.patches = Patches(self)
+		vb.addWidget(self.patches)
 	
-	def update(self, dirname):
-		doc = xml.dom.minidom.parse(dirname)
+	def edit_pak(self, pdir):
+		self.fname = os.path.join(pdir, "pspec.xml")
+		try:
+			doc = xml.dom.minidom.parse(self.fname)
+		except:
+			return
 		src = doc.getElementsByTagName("Source")[0]
 		self.name.setText(get_cdata(src, "Name"))
 		self.home.setText(get_cdata(src, "Homepage"))
 		self.license.setText(get_cdata(src, "License"))
 		self.archive.setText(get_cdata(src, "Archive"))
+		p = src.getElementsByTagName("Patches")
+		if p != []:
+			self.patches.edit_patches(p[0])
 		doc.unlink()
