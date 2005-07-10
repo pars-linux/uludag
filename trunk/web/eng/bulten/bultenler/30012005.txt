@@ -22,7 +22,7 @@ href="http://www.uludag.org.tr/gpl.html">http://www.uludag.org.tr/gpl.html</a><b
    href="http://svn.uludag.org.tr/uludag/">http://svn.uludag.org.tr/uludag</a><br>
 
 3. <a
-   href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/uludag">http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/uludag</a>
+   href="http://liste.uludag.org.tr/mailman/listinfo/uludag">http://liste.uludag.org.tr/mailman/listinfo/uludag</a>
 </p>
 
 <p> sozluk@jabber.uludag.org.tr, jabber adresinden hizmet veren sözlük

@@ -31,7 +31,7 @@ ederiz.
 </p>
 
 <p>
- 3. <a href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite">http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/kalite</a><br>
+ 3. <a href="http://liste.uludag.org.tr/mailman/listinfo/kalite">http://liste.uludag.org.tr/mailman/listinfo/kalite</a><br>
  4. <a href="http://www.uludag.org.tr/kalite/kalite.html">http://www.uludag.org.tr/kalite/kalite.html</a><br>
  5. <a href="http://liste.uludag.org.tr/uludag/2005-February/001139.html">http://liste.uludag.org.tr/uludag/2005-February/001139.html</a>
 </p>
