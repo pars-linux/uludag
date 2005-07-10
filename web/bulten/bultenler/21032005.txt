@@ -63,7 +63,7 @@ olmak için ekibin tartışma listesine[11] üye olabilirsiniz.
 <p>
  9.  <a href="http://www.uludag.org.tr/projeler/kalite/">http://www.uludag.org.tr/projeler/kalite/</a><br>
  10. <a href="http://www.uludag.org.tr/eng/">http://www.uludag.org.tr/eng/</a><br>
- 11. <a href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/u18a-en/">http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/u18a-en/</a><br>
+ 11. <a href="http://liste.uludag.org.tr/mailman/listinfo/u18a-en/">http://liste.uludag.org.tr/mailman/listinfo/u18a-en/</a><br>
 </p>
 
 
@@ -91,7 +91,7 @@ değişikliklerinin gönderildiği e-posta listesine[14] üye olabilirsiniz.
 
 <p>
  13. <a href="https://svn.uludag.org.tr/paketler/">https://svn.uludag.org.tr/paketler/</a><br>
- 14. <a href="http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/paketler-commits">http://liste.uludag.org.tr/cgi-bin/mailman/listinfo/paketler-commits</a>
+ 14. <a href="http://liste.uludag.org.tr/mailman/listinfo/paketler-commits">http://liste.uludag.org.tr/mailman/listinfo/paketler-commits</a>
 </p>
 paketler deposu
 
