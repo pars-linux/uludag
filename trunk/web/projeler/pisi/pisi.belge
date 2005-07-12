@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+depo = "http://svn.uludag.org.tr/uludag/trunk/doc/tr/"
+belge = "pisi.lyx"
+isim = "PİSİ"
+dizin = "pisi"
+ikonlar = "../../../images"
