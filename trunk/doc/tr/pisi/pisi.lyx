@@ -934,11 +934,42 @@ Package:
 \series bold 
 Provides: 
 \series default 
-Paketin saðladýðý 
+Paketin saðladýðý bileþenleri listeler.
+\begin_deeper 
+\layout Itemize
+
+
 \series bold 
-ÇOMAR OM
+COMAR:
 \series default 
- bacaklarýnýn bir listesini verir.
+ COMAR OM bacaðý ve bu bacaðý doðrulayan betiði tarif eder.
+\newline 
+Örnek: <COMAR script=
+\begin_inset Quotes erd
+\end_inset 
+
+interface.py
+\begin_inset Quotes erd
+\end_inset 
+
+>Net.NIC</COMAR>
+\end_deeper 
+\layout Itemize
+
+
+\series bold 
+Requires:
+\series default 
+ Paketin çalýþmak için gerek duyduðu bileþenleri listeler.
+\begin_deeper 
+\layout Itemize
+
+
+\series bold 
+COMAR:
+\series default 
+ COMAR OM bacaðý baðýmlýlýklarý.
+\end_deeper 
 \layout Itemize
 
 
