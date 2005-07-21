@@ -20,7 +20,6 @@
 
 #include "devicesettings.h"
 #include "tasmanetwidget.h"
-#include "tasmanetwidget.moc"
 
 
 TasmaNetWidget::TasmaNetWidget( QWidget *parent, const char *name )
@@ -102,3 +101,5 @@ Interface::Interface( KIconView *parent, const QString& text,
 {
 
 }
+
+#include "tasmanetwidget.moc"

@@ -29,9 +29,7 @@ public:
     virtual void save();
     virtual void defaults();
     virtual QString quickHelp() const;
-    virtual const KAboutData *aboutData () const {
-	return TasmaNetAbout;
-    };
+    virtual const KAboutData *aboutData () const { return TasmaNetAbout; };
 
 public slots:
     void configChanged();
