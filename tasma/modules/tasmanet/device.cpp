@@ -14,6 +14,7 @@
 #include <sys/ioctl.h>
 #include <arpa/inet.h>
 #include <net/route.h>
+#include <iwlib.h>
 #include <wireless.h>
 
 #include <qstringlist.h>
