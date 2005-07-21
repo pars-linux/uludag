@@ -996,28 +996,6 @@ BuildDependency
 
 
 \series bold 
-InstallDependencies
-\series default 
-: Pakedin çalýþabilmesi için gereken baðýmlýlýklarýn bir listesini verir.
- 
-\begin_deeper 
-\layout Itemize
-
-
-\series bold 
-Dependency
-\series default 
-: Bir baðýmlýlýk tanýmlar.
- 
-\series bold 
-BuildDependency
-\series default 
- ile ayný yapýdadýr
-\end_deeper 
-\layout Itemize
-
-
-\series bold 
 Files
 \series default 
 : (*) Pakedin kurulacak dosyalarýnýn tiplerini belirlemek için kullanýlýr.
@@ -1679,24 +1657,11 @@ Provides:
 
 \series bold 
 RuntimeDependencies
-\begin_deeper 
 \layout Itemize
 
 
 \series bold 
 Dependency
-\layout Itemize
-
-
-\series bold 
-InstallDependencies
-\begin_deeper 
-\layout Itemize
-
-
-\series bold 
-Dependency
-\end_deeper 
 \layout Itemize
 
 
@@ -1737,7 +1702,6 @@ Paketin hangi mimari için yapýldýðýný belirtir.
 InstallSize: 
 \series default 
 Paketin sisteme kurulduðunda kaplayacaðý alanýn tahmini boyutunu belirtir.
-\end_deeper 
 \layout Standard
 
 Yukarýda tanýmlanan 
@@ -2523,7 +2487,7 @@ CSL
 Paket Kaldýrmak
 \layout Standard
 
-Bir istemcinin sisteme paket kaldýrmak için izleyeceði yol þöyledir;
+Bir istemcinin, sistemdeki bir paketi kaldýrmak için izleyeceði yol þöyledir;
 \layout Itemize
 
 Sistemdeki ilgili uygulamalardan biri 
@@ -2541,7 +2505,7 @@ PÝSÝ
 \series bold 
 Kurulu Paket Veritabaný
 \series default 
-ndan paketin baþka bir paket tarafýndan gereksinim duyulup duyulmadýðýný
+ndan pakete baþka bir paket tarafýndan gereksinim duyulup duyulmadýðýný
  kontrol eder.
 \layout Itemize
 
