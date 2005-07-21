@@ -48,7 +48,6 @@ TasmaNet::TasmaNet( QWidget* parent, const char *name )
 
 void TasmaNet::load()
 {
-
 }
 
 void TasmaNet::save()
