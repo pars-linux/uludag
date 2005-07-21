@@ -20,12 +20,12 @@
 #include <kicontheme.h>
 #include <kiconloader.h>
 #include <qheader.h> // klistview->header()
+
 // kservice goodies
 #include <kservicegroup.h>
 
 #include "tmodulegroup.h"
 #include "tmodulecategorylist.h"
-#include "tmodulecategorylist.moc"
 
 TModuleCategoryList::TModuleCategoryList( QWidget *parent, const char *name )
     : KListView( parent, name )
@@ -80,3 +80,5 @@ TModuleCategoryList::~TModuleCategoryList()
 {
 
 }
+
+#include "tmodulecategorylist.moc"

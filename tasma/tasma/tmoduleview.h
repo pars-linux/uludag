@@ -77,8 +77,7 @@ public slots:
 private:
     TMContent *contentView;
     KSeparator *_sep;
-    KPushButton *_apply, *_reset, *_default,
-	*_back;
+    KPushButton *_apply, *_reset, *_default, *_back;
     QLabel *_icon, *_moduleName;
 };
 

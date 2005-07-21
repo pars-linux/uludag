@@ -27,7 +27,6 @@
 #include <kcmodule.h>
 
 #include "tmoduleview.h"
-#include "tmoduleview.moc"
 
 TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon_path, const QString& text )
     : QWidget( parent )
@@ -164,3 +163,4 @@ KCModule* TMContent::module() const
     return _module;
 }
 
+#include "tmoduleview.moc"
