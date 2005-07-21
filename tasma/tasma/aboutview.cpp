@@ -15,7 +15,6 @@
 */
 
 #include <qpainter.h>
-#include <qpixmap.h>
 #include <kpixmap.h>
 #include <kpixmapeffect.h>
 #include <kstandarddirs.h>
@@ -35,7 +34,7 @@ AboutView::AboutView( QWidget *parent, const char *name )
     KPixmapEffect::fade( *_pardusLogo, 0.80, Qt::white );
 }
 
-void AboutView::paintEvent( QPaintEvent *e )
+void AboutView::paintEvent( QPaintEvent */*e*/ )
 {
     updateView( geometry() );
 }
