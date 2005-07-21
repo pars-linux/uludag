@@ -25,7 +25,6 @@
 
 #include "tasmamainwin.h"
 #include "main.h"
-#include "main.moc"
 
 TasmaApp::TasmaApp()
     : KUniqueApplication(), tasmawin( 0 )
@@ -89,3 +88,5 @@ int main( int argc, char *argv[] )
 
     return app.exec();
 }
+
+#include "main.moc"

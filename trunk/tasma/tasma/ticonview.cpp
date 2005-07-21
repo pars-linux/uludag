@@ -24,7 +24,6 @@
 #include <krun.h>
 
 #include "ticonview.h"
-#include "ticonview.moc"
 
 TIconView::TIconView( QWidget *parent, const char* name )
     : KIconView( parent, name )
@@ -122,3 +121,5 @@ TIconViewItem::~TIconViewItem()
 {
     delete _moduleinfo;
 }
+
+#include "ticonview.moc"
