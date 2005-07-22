@@ -3,12 +3,19 @@
   Licensed under GNU GPLv2 or later at your option
 */
 
+#include <khtmlview.h>
+#include <khtml_part.h>
+
 #include "packager_ui.h"
 
 Packager_UI::Packager_UI(QWidget* parent, const char* name)
   : Package_Manager(parent,name)
 {
-  // Nothing yet
+  KHTMLPart *khtmlpart =  new KHTMLPart (m_displayFrame);
+  khtmlpart->begin();
+  khtmlpart->write("<a href=\"#test\"><b>Buraya incik boncuk</a>");
+  khtmlpart->end();
+  khtmlpart->view()->resize(400, 50); 
 }
 
 Packager_UI::~Packager_UI()
