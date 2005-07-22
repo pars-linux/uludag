@@ -6,7 +6,7 @@
 #ifndef PACKAGERUI_H
 #define PACKAGERUI_H
 
-#include "packager.h"
+#include "package_manager.h"
 
 class Packager_UI : public Package_Manager
 {
