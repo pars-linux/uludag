@@ -108,7 +108,7 @@
     </spacer>
     <widget class="QLabel">
         <property name="name">
-            <cstring>m_PardusLogo</cstring>
+            <cstring>m_pardusLogo</cstring>
         </property>
         <property name="geometry">
             <rect>
@@ -124,7 +124,7 @@
     </widget>
     <widget class="QFrame">
         <property name="name">
-            <cstring>m_DisplayFrame</cstring>
+            <cstring>m_displayFrame</cstring>
         </property>
         <property name="geometry">
             <rect>
