@@ -662,54 +662,6 @@ level
 
 
 \series bold 
-AdditionalFiles: 
-\series default 
-Kaynak ile gelmeyen ama paketin çalýþmasý, ek özellik kazanmasý v.s.
- için gerekli dosyalarý belirtir.
- ( 
-\emph on 
-örn
-\emph default 
-; init betikleri )
-\begin_deeper 
-\layout Itemize
-
-
-\series bold 
-AdditionalFile:
-\series default 
- Files dizini altýndan alýnacak dosyayý belirtir.
- 
-\series bold 
-target
-\series default 
- attribute dosyanýn nereye konulacaðýný belirtir, zorunludur.
-
-\series bold 
- permission 
-\series default 
-attribute varsa dosyanýn hangi haklarla saklanacaðýný belirtir.
-
-\series bold 
- owner
-\series default 
- attribute varsa dosyanýn sahip/grup bilgilerini belirtir.
- Örnek:
-\newline 
-<AdditionalFile target=
-\begin_inset Quotes erd
-\end_inset 
-
-/etc/bash/
-\begin_inset Quotes erd
-\end_inset 
-
->bashrc</AdditionalFile>
-\end_deeper 
-\layout Itemize
-
-
-\series bold 
 BuildDependencies
 \series default 
 : Pakedi oluþturmak için gereken baðýmlýlýklarý listeler.
@@ -1035,6 +987,54 @@ other
  Örnek:
 \newline 
 <Path fileType="sharedLib">/usr/lib</Path>
+\end_deeper 
+\layout Itemize
+
+
+\series bold 
+AdditionalFiles: 
+\series default 
+Kaynak ile gelmeyen ama paketin çalýþmasý, ek özellik kazanmasý v.s.
+ için gerekli dosyalarý belirtir.
+ ( 
+\emph on 
+örn
+\emph default 
+; init betikleri )
+\begin_deeper 
+\layout Itemize
+
+
+\series bold 
+AdditionalFile:
+\series default 
+ Files dizini altýndan alýnacak dosyayý belirtir.
+ 
+\series bold 
+target
+\series default 
+ attribute dosyanýn nereye konulacaðýný belirtir, zorunludur.
+
+\series bold 
+ permission 
+\series default 
+attribute varsa dosyanýn hangi haklarla saklanacaðýný belirtir.
+
+\series bold 
+ owner
+\series default 
+ attribute varsa dosyanýn sahip/grup bilgilerini belirtir.
+ Örnek:
+\newline 
+<AdditionalFile target=
+\begin_inset Quotes erd
+\end_inset 
+
+/etc/bash/
+\begin_inset Quotes erd
+\end_inset 
+
+>bashrc</AdditionalFile>
 \end_deeper 
 \layout Paragraph
 
