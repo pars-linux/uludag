@@ -27,7 +27,7 @@ QString HtmlWriter::createHtml(const QStringList& packageList)
   for(QStringList::ConstIterator it = packageList.begin(); it != packageList.end(); ++it)
     {
       kdDebug() << "It " << *it << endl;
-      result += QString("\n<a href=\"#%1\">\n"
+      result += QString("\n<font size=-1><a href=\"#%1\">\n"
 			"<table>\n<tr>\n"
 			"<td>Name : %2 Group: %3</td>\n"
 			"</tr>\n<tr>\n"
@@ -40,7 +40,7 @@ QString HtmlWriter::createHtml(const QStringList& packageList)
 			"<td> Summary: %8</td>\n"
 			"</tr>\n"
 			"</table>\n"
-			"</a><hr>\n").
+			"</a></font><hr>\n").
 	arg("foo").arg("Foo").arg("Bar").arg("0.0.1").arg("00.00.00").arg("1234").arg("GPL").arg("Summary");
     }
 
