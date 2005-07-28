@@ -7,9 +7,10 @@
 #define THREADRUNNER_H
 
 #include <qthread.h>
+#include <qstringlist.h>
+#include <kprocess.h>
 
 class QString;
-class KProcess;
 
 class ThreadRunner : public QObject, public QThread
 {
@@ -27,12 +28,15 @@ class ThreadRunner : public QObject, public QThread
   void processExited(int state);
 
  signals:
-  void result(bool success);
+  void searchResults(bool success, const QStringList& results);
 
  private:
+  void parseOutput(KProcess* proc,char * buffer, int len);
+
   KProcess m_process;
   QString m_command;
   QString m_arguments;
+  QStringList m_output;
 };
 
 #endif

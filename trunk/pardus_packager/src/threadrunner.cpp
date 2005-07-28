@@ -11,6 +11,7 @@
 ThreadRunner::ThreadRunner()
 {
   QObject::connect(&m_process,SIGNAL(processExited(int)),this,SLOT(processExited(int)));
+  QObject::connect(&m_process,SIGNAL(receivedStdout(KProcess*, char*, int)),this,SLOT(parseOutput(KProcess*,char*,int)));
 }
 
 ThreadRunner::~ThreadRunner()
@@ -39,12 +40,15 @@ void ThreadRunner::setArguments(const QString& arguments)
   m_arguments = arguments;
 }
 
+void ThreadRunner::parseOutput(KProcess* /*proc*/,char * buffer, int /*len*/)
+{
+  m_output << buffer;
+}
+
 void ThreadRunner::processExited(int state)
 {
-  if( state != 0 )
-    emit result(false);
-  else
-    emit result(true);
+  if(m_command.startsWith("pisi-cli --search"))
+    emit searchResults((bool)state, m_output);
 }
  
 #include "threadrunner.moc"
