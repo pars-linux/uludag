@@ -20,6 +20,8 @@ class PackagerUI : public PackageManager
   ~PackagerUI();
 
  private:
+  void createUI();
+
   KHTMLPart *khtmlPart;
   HtmlWriter *htmlWriter;
 };
