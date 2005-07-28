@@ -7,15 +7,21 @@
 #include <khtml_part.h>
 
 #include "packager_ui.h"
+#include "htmlwriter.h"
 
 Packager_UI::Packager_UI(QWidget* parent, const char* name)
   : Package_Manager(parent,name)
 {
   KHTMLPart *khtmlpart =  new KHTMLPart (m_displayFrame);
+  HtmlWriter *htmlWriter = new HtmlWriter();
+
+  QString html = htmlWriter->createHtml("Foo");
+  html += htmlWriter->createHtml("Foo");
+
   khtmlpart->begin();
-  khtmlpart->write("<a href=\"#test\"><b>Stuff here</a>");
+  khtmlpart->write(html);
   khtmlpart->end();
-  khtmlpart->view()->resize(400, 50); 
+  khtmlpart->view()->resize(400, 150); 
 }
 
 Packager_UI::~Packager_UI()
