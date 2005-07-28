@@ -4,21 +4,28 @@
 */
 
 #include <qstringlist.h>
-#include <kprocess.h>
 
 #include "pisimanager.h"
 
 PisiManager::PisiManager()
 {
+  connect(&threadRunner,SIGNAL(searchResult(bool,const QStringList&)),this,SLOT(searchFinished(bool,const QStringList&)));
 }
 
 PisiManager::~PisiManager()
 {
 }
 
-QStringList PisiManager::searchPackage(const QString& /*package*/)
+void PisiManager::searchPackage(const QString& package)
 {
-  return "";
+  QString command = "pisi-cli --search "+package;
+  threadRunner.setCommand(command);
+  threadRunner.run();
+}
+
+void PisiManager::searchFinished(bool success, const QStringList& results)
+{
+  emit searchResults(success,results);
 }
 
 void PisiManager::removePackage(const QString& /*package*/)

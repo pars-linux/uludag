@@ -8,6 +8,8 @@
 
 #include <qobject.h>
 
+#include "threadrunner.h"
+
 class QStringList;
 class KProcess;
 
@@ -19,14 +21,20 @@ class PisiManager : public QObject
   PisiManager();
   ~PisiManager();
 
-  QStringList searchPackage(const QString& package);
+  void searchPackage(const QString& package);
   void removePackage(const QString& package);
   bool isInstalled(const QString& package);
   
   QString description(const QString& package);
 
+ protected slots:
+  void searchFinished(bool success, const QStringList& results);
+
+ signals:
+  void searchResults(bool success, const QStringList& packageList);
+  
  private:
-  KProcess* m_pisiProcess;
+  ThreadRunner threadRunner;
 };
 
 #endif
