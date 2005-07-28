@@ -99,7 +99,7 @@
                     </size>
                 </property>
                 <property name="frameShape">
-                    <enum>StyledPanel</enum>
+                    <enum>NoFrame</enum>
                 </property>
                 <property name="frameShadow">
                     <enum>Plain</enum>
