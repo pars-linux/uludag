@@ -6,18 +6,18 @@
 #ifndef PACKAGERUI_H
 #define PACKAGERUI_H
 
-#include "package_manager.h"
+#include "packagemanager.h"
 
 class KHTMLPart;
 class HtmlWriter;
 
-class Packager_UI : public Package_Manager
+class PackagerUI : public PackageManager
 {
   Q_OBJECT
 
  public:
-  Packager_UI(QWidget *parent, const char* name);
-  ~Packager_UI();
+  PackagerUI(QWidget *parent, const char* name);
+  ~PackagerUI();
 
  private:
   KHTMLPart *khtmlPart;
