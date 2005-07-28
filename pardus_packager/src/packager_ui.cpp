@@ -21,7 +21,7 @@ Packager_UI::Packager_UI(QWidget* parent, const char* name)
   khtmlpart->begin();
   khtmlpart->write(html);
   khtmlpart->end();
-  khtmlpart->view()->resize(400, 150); 
+  khtmlpart->view()->resize(400, 300); 
 }
 
 Packager_UI::~Packager_UI()
