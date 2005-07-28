@@ -6,6 +6,7 @@
 #include <qstring.h>
 #include <qstringlist.h>
 #include <klocale.h>
+#include <kdebug.h>
 
 #include "htmlwriter.h"
 
@@ -23,24 +24,30 @@ QString HtmlWriter::createHtml(const QStringList& packageList)
     return QString::null;
 
   QString result;
+  int i=1;
 
   for(QStringList::ConstIterator it = packageList.begin(); it != packageList.end(); ++it)
     {
-      result += QString("\n<font size=-2><a href=\"#%1\">\n"
-			"<table>\n<tr>\n"
-			"<td><b>"+i18n("Name")+" :</b> %2 <b>"+i18n("Group")+" :</b> %3</td>\n"
+      result += QString("\n<font size=-2>\n"
+			"<table width=100%>\n<tr>\n"
+			"<td><b>"+i18n("Name")+" :</b> %1 <b>"+i18n("Group")+" :</b> %2</td>\n"
 			"</tr>\n<tr>\n"
-			"<td><b>"+i18n("Version")+" :</b> %4  <b>"+i18n("Install Date")+" :</b> %5</td>\n"
+			"<td><b>"+i18n("Version")+" :</b> %3  <b>"+i18n("Install Date")+" :</b> %4</td>\n"
 			"</tr>\n"
 			"<tr>\n"
-			"<td><b>"+i18n("Size")+" :</b> %6 "+ i18n("bytes")+"  <b>"+i18n("License")+" :</b> %7</td>\n"
+			"<td><b>"+i18n("Size")+" :</b> %5 "+ i18n("bytes")+"  <b>"+i18n("License")+" :</b> %6</td>\n"
 			"</tr>\n"
 			"<tr>\n"
-			"<td> <b>"+i18n("Summary")+" :</b> %8</td>\n"
-			"</tr>\n"
+			"<td> <b>"+i18n("Summary")+" :</b> %7</td></tr>\n"
+			"<tbody>"
+			"<tr><td style=\"background-color: #CCC\" align=\"right\"><a href=\"#\" onclick=\"return toggleItem('table"+QString::number(i)+"')\">More/Less Details</a></td></tr>"
+			"</tbody>"
+			"<tbody class=\"collapse_obj\" id=\"table"+QString::number(i)+"\">"
+			"<tr><td>More info here!</td></tr></tbody>\n"
 			"</table>\n"
-			"</a></font><hr>\n").
-	arg("foo").arg("Foo").arg("Bar").arg("0.0.1").arg("00.00.00").arg("1234").arg("GPL").arg("Summary");
+			"</font><hr>\n").
+	arg("Foo").arg("Bar").arg("0.0.1").arg("00.00.00").arg("1234").arg("GPL").arg("Summary");
+      ++i;
     }
 
   return result;
