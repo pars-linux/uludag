@@ -1,5 +1,5 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>Package Manager</class>
+<class>PackageManager</class>
 <author>İsmail Dönmez</author>
 <widget class="QWidget">
     <property name="name">
@@ -12,6 +12,9 @@
             <width>585</width>
             <height>438</height>
         </rect>
+    </property>
+    <property name="caption">
+        <string>PackageManager</string>
     </property>
     <widget class="QLayoutWidget">
         <property name="name">

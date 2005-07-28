@@ -7,11 +7,11 @@
 #include <khtmlview.h>
 #include <khtml_part.h>
 
-#include "packager_ui.h"
+#include "packagerui.h"
 #include "htmlwriter.h"
 
-Packager_UI::Packager_UI(QWidget* parent, const char* name)
-  : Package_Manager(parent,name)
+PackagerUI::PackagerUI(QWidget* parent, const char* name)
+  : PackageManager(parent,name)
 {
   setCaption(i18n("Package Manager"));
 
@@ -27,10 +27,10 @@ Packager_UI::Packager_UI(QWidget* parent, const char* name)
   khtmlPart->view()->resize(400, 300); 
 }
 
-Packager_UI::~Packager_UI()
+PackagerUI::~PackagerUI()
 {
   delete khtmlPart;
   delete htmlWriter;
 }
 
-#include "packager_ui.moc"
+#include "packagerui.moc"

@@ -8,7 +8,7 @@
 #include <klocale.h>
 #include <kaboutdata.h>
 
-#include "packager_ui.h"
+#include "packagerui.h"
 
 static const KCmdLineOptions options[] = 
   {
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
   //KCmdLineArgs::addCmdLineOptions();
 
   KApplication app(argc,argv);
-  Packager_UI pack(0L,"");
+  PackagerUI pack(0L,"");
 
   app.setMainWidget(&pack);
   pack.show();
