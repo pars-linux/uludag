@@ -8,6 +8,9 @@
 
 #include "package_manager.h"
 
+class KHTMLPart;
+class HtmlWriter;
+
 class Packager_UI : public Package_Manager
 {
   Q_OBJECT
@@ -15,6 +18,10 @@ class Packager_UI : public Package_Manager
  public:
   Packager_UI(QWidget *parent, const char* name);
   ~Packager_UI();
+
+ private:
+  KHTMLPart *khtmlPart;
+  HtmlWriter *htmlWriter;
 };
 
 #endif
