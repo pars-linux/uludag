@@ -13,7 +13,7 @@ Packager_UI::Packager_UI(QWidget* parent, const char* name)
 {
   KHTMLPart *khtmlpart =  new KHTMLPart (m_displayFrame);
   khtmlpart->begin();
-  khtmlpart->write("<a href=\"#test\"><b>Buraya incik boncuk</a>");
+  khtmlpart->write("<a href=\"#test\"><b>Stuff here</a>");
   khtmlpart->end();
   khtmlpart->view()->resize(400, 50); 
 }
