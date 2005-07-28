@@ -27,17 +27,17 @@ QString HtmlWriter::createHtml(const QStringList& packageList)
   for(QStringList::ConstIterator it = packageList.begin(); it != packageList.end(); ++it)
     {
       kdDebug() << "It " << *it << endl;
-      result += QString("\n<font size=-1><a href=\"#%1\">\n"
+      result += QString("\n<font size=-2><a href=\"#%1\">\n"
 			"<table>\n<tr>\n"
-			"<td>Name : %2 Group: %3</td>\n"
+			"<td><b>Name :</b> %2 <b>Group :</b> %3</td>\n"
 			"</tr>\n<tr>\n"
-			"<td>Version: %4  Install Date: %5</td>\n"
+			"<td><b>Version :</b> %4  <b>Install Date :</b> %5</td>\n"
 			"</tr>\n"
 			"<tr>\n"
-			"<td>Size: %6 bytes  License: %7</td>\n"
+			"<td><b>Size :</b> %6 bytes  <b>License :</b> %7</td>\n"
 			"</tr>\n"
 			"<tr>\n"
-			"<td> Summary: %8</td>\n"
+			"<td> <b>Summary :</b> %8</td>\n"
 			"</tr>\n"
 			"</table>\n"
 			"</a></font><hr>\n").
