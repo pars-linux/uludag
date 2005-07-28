@@ -37,13 +37,11 @@ QString HtmlWriter::createHtml(const QStringList& packageList)
 			"<tr>\n"
 			"<td><b>"+i18n("Size")+" :</b> %5 "+ i18n("bytes")+"  <b>"+i18n("License")+" :</b> %6</td>\n"
 			"</tr>\n"
-			"<tr>\n"
-			"<td> <b>"+i18n("Summary")+" :</b> %7</td></tr>\n"
 			"<tbody>"
 			"<tr><td style=\"background-color: #CCC\" align=\"right\"><a href=\"#\" onclick=\"return toggleItem('table"+QString::number(i)+"')\">More/Less Details</a></td></tr>"
 			"</tbody>"
 			"<tbody class=\"collapse_obj\" id=\"table"+QString::number(i)+"\">"
-			"<tr><td>More info here!</td></tr></tbody>\n"
+			"<tr><td><b>"+i18n("Summary")+" :</b> %7</td></tr></tbody>\n"
 			"</table>\n"
 			"</font><hr>\n").
 	arg("Foo").arg("Bar").arg("0.0.1").arg("00.00.00").arg("1234").arg("GPL").arg("Summary");
