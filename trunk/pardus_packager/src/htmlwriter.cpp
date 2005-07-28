@@ -5,7 +5,7 @@
 
 #include <qstring.h>
 #include <qstringlist.h>
-#include <kdebug.h>
+#include <klocale.h>
 
 #include "htmlwriter.h"
 
@@ -26,18 +26,17 @@ QString HtmlWriter::createHtml(const QStringList& packageList)
 
   for(QStringList::ConstIterator it = packageList.begin(); it != packageList.end(); ++it)
     {
-      kdDebug() << "It " << *it << endl;
       result += QString("\n<font size=-2><a href=\"#%1\">\n"
 			"<table>\n<tr>\n"
-			"<td><b>Name :</b> %2 <b>Group :</b> %3</td>\n"
+			"<td><b>"+i18n("Name")+" :</b> %2 <b>"+i18n("Group")+" :</b> %3</td>\n"
 			"</tr>\n<tr>\n"
-			"<td><b>Version :</b> %4  <b>Install Date :</b> %5</td>\n"
+			"<td><b>"+i18n("Version")+" :</b> %4  <b>"+i18n("Install Date")+" :</b> %5</td>\n"
 			"</tr>\n"
 			"<tr>\n"
-			"<td><b>Size :</b> %6 bytes  <b>License :</b> %7</td>\n"
+			"<td><b>"+i18n("Size")+" :</b> %6 "+ i18n("bytes")+"  <b>"+i18n("License")+" :</b> %7</td>\n"
 			"</tr>\n"
 			"<tr>\n"
-			"<td> <b>Summary :</b> %8</td>\n"
+			"<td> <b>"+i18n("Summary")+" :</b> %8</td>\n"
 			"</tr>\n"
 			"</table>\n"
 			"</a></font><hr>\n").
