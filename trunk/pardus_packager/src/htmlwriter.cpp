@@ -28,7 +28,7 @@ QString HtmlWriter::createHtml(const QStringList& packageList)
 
   for(QStringList::ConstIterator it = packageList.begin(); it != packageList.end(); ++it)
     {
-      result += QString("\n<font size=-2>\n"
+      result += QString("\n<font size=-1>\n"
 			"<table width=100%>\n<tr>\n"
 			"<td><b>"+i18n("Name")+" :</b> %1 <b>"+i18n("Group")+" :</b> %2</td>\n"
 			"</tr>\n<tr>\n"
