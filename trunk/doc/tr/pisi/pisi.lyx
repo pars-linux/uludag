@@ -36,7 +36,7 @@ Barýþ Metin
 
 (Pre-Alpha)
 \layout Standard
-\pagebreak_top \pagebreak_bottom 
+\pagebreak_bottom 
 
 \begin_inset LatexCommand \tableofcontents{}
 
@@ -46,6 +46,32 @@ Barýþ Metin
 \layout Section
 
 Giriþ
+\layout Standard
+
+Bu belge Ulusal Daðýtým projesi kapsamýnda geliþtirilen PÝSÝ paket yönetim
+ sistemin, hangi amaçlar ve gerekler ile geliþtirildiðini, genel yapýsýný
+ ve mimarisini anlatýr.
+\layout Standard
+\pagebreak_bottom 
+Belgenin hedef kitlesi PÝSÝ sistemini yakýndan tanýmak isteyen kullanýcýlar,
+ sistem yöneticileri ve PÝSÝ üzerinde çalýþmak isteyen geliþtiricilerdir.
+ Belge bir son kullanýcý belgesi deðildir.
+ Belge kapsamýnda ele alýnan konularý kavrayabilmek için yer yer paket yönetim
+ sistemleri konusunda genel bilgi ve diðer paket yönetim sistemleri üzerinde
+ deneyim gerekmektedir.
+\layout Section
+
+Paket Yöneticisi Gereksinimleri
+\layout Standard
+
+Bu kýsýmda önceki bölümde tanýmlanan paket yöneticisi kavramýnýn, sunmasý
+ beklenen gereksinimler listelenmiþtir.
+\layout Standard
+
+Fakat önce paket ve paket yöneticisi kavramlarýna kýsa bir göz atalým.
+\layout Subsection
+
+Paket Yöneticisi
 \layout Standard
 
 Paket, bir uygulamayý ya da iþletim sisteminin bir parçasýný tüm bileþenleriyle
@@ -62,13 +88,6 @@ rýr.
 Bu paketleri kurup kaldýrmak, çeþitli kaynaklardan temin etmek, sorgulamak,
  sistemdeki deðiþiklikleri takip etmek için, paket yöneticisi adýný verdiðimiz
  bir uygulamaya ihtiyaç vardýr.
-\layout Section
-
-Paket Yöneticisi Gereksinimleri
-\layout Standard
-
-Bu kýsýmda önceki bölümde tanýmlanan paket yöneticisi kavramýnýn, sunmasý
- beklenen gereksinimler listelenmiþtir.
 \layout Subsection
 
 Kullanýcý Gereksinimleri
@@ -2721,54 +2740,6 @@ Paketi imzalama ve imzanýn doðruluðunu kontrol etme.
 ÇOMAR
 \series default 
 'dan kaldýrýlmasý)
-\layout Standard
-
-Bu gerekleri saðlamak için libpisi modülleri aþaðýdaki þekilde gruplanmýþlardýr.
-\layout Itemize
-
-XML
-\layout Itemize
-
-DB
-\layout Itemize
-
-ZIP
-\layout Itemize
-
-Util
-\begin_deeper 
-\layout Itemize
-
-unpack (tar, tar.gz, tar.bz2, zip)
-\layout Itemize
-
-sha1
-\layout Itemize
-
-patch
-\layout Itemize
-
-gpg
-\layout Itemize
-
-fileutils (stat, vb.
- þeyler için)
-\end_deeper 
-\layout Itemize
-
-DepSolver (baðýmlýlýk çözümleyici)
-\layout Itemize
-
-Fetcher
-\layout Itemize
-
-ActionExec (Action betiklerinin çalýþtýrýlmasý)
-\layout Itemize
-
-COMAR
-\layout Itemize
-
-Package (xml, zip, gpg, util modüllerini kullanýyor...)
 \layout Subsection
 
 PÝSÝ Package Builder (GUI)
