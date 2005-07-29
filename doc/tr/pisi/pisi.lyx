@@ -31,11 +31,7 @@ PISI
 (Packages Installed Successfully as Intended)
 \layout Author
 
-S.
- Çaðlar Onur, Onur Küçük, Barýþ Metin, 
-\newline 
-A.
- Murat Eren, Eray Özkural, Gürer Özen
+Barýþ Metin
 \layout Date
 
 (Pre-Alpha)
@@ -1021,10 +1017,9 @@ target
 attribute varsa dosyanýn hangi haklarla saklanacaðýný belirtir.
 
 \series bold 
- owner
+ 
 \series default 
- attribute varsa dosyanýn sahip/grup bilgilerini belirtir.
- Örnek:
+Örnek:
 \newline 
 <AdditionalFile target=
 \begin_inset Quotes erd
@@ -2793,4 +2788,27 @@ files.xml dosyasýný/dosyalarýný oluþturacak.
 \layout Itemize
 
 libpisi kullanarak paket oluþturacak.
+\layout Section
+
+Emeði Geçenler
+\layout Standard
+
+Ýsim sýrasý ile;
+\layout Itemize
+
+S.
+ Çaðlar Onur
+\layout Itemize
+
+Eray Özkural
+\layout Itemize
+
+Gürer Özen
+\layout Itemize
+
+A.
+ Murat Eren
+\layout Itemize
+
+Onur Küçük
 \the_end
