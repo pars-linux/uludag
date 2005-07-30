@@ -1,0 +1,10 @@
+Pardus İyileştirme Listesi
+==========================
+
+Gerekli Yazılımlar:
+ * mod_python-3.1.4
+ * mysql-4.1+
+
+Gerekli Python Modülleri:
+ * mysql-python-1.2.0
+ * cheetah-0.9.17
