@@ -48,26 +48,30 @@
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_10.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_12.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 
 
-<H1 ALIGN=center>ÇOMAR<BR>
-<FONT COLOR=purple>(Configuration Manager)</FONT><BR>
-Nedir?, Yenir mi?</H1>
+<H1 ALIGN=center>ÇOMAR Mimari Belgesi</H1>
 
-<H3 ALIGN=center>Dürtücü Teknolojiler Ar&amp;Ge Labs.</H3>
-<BLOCKQUOTE><B>Özet: </B>
-Bu belge, ÇOMAR'ın ne olduğunu ve ÇOMAR gibi bir altyapıya neden ihtiyaç
-duyulduğunu mimari ve yöntem ile iglili teknik ayrıntılara girmeksizin,
-basit bir dille anlatmayı hedeflemiştir. Çok genel bir giriş teşkil
-etmesi amacıyla en basit anlamda ÇOMAR, bir yapılandırma altyapısı
-olarak tanımlanabilir.<BR>
-<BR>
+<H3 ALIGN=center>Gürer Özen (gurer @ uludag.org.tr)</H3>
 
-<H3><A NAME="htoc11">6.5</A>&nbsp;&nbsp;ÇOMAR sistemde kendi kendine bir takım işler yapacak mı?</H3>
-ÇOMAR sistemde, konfigürasyon değişikliğini, bir uygulamanın tetiklenmesini
-ya da bir servisin yeniden başlatılmasını gerektirecek bir ``olay''
-meydana geldiğinde ya da kullanıcı grafik arayüzlerinden gelecek bir
-çağrı neticesinde çalışacak ve sisteme müdahale edecek, kendi kendine
-bir takım işler yapmayacaktır.<BR>
-<BR>
+<H4>Tasarım Kuralları</H4>
+Sistem modeli tasarlanırken bazı noktalara dikkat edilmesi gerekmektedir.
+<OL type=1><LI>
+Belli uygulamaların değil, bu uygulamaların yaptığı görevlerin yapılandırılması
+gözetilmeli, modelin genelliği yitirilmemelidir.
+<LI>Modelin gelişen teknolojilerle birlikte eskiyip, kullanışsız hale
+gelmemesi için, esnek olması gözetilmelidir.
+<LI>Bununla birlikte, ucu açık, tanımlanmamış bilgi ve görevler modele
+sokulmamalıdır.
+<LI>Burda ayrımı doğru yapabilmek için, görev ve bilgilerin genel kullanıma
+mı, yoksa özel kullanıma mı yönelik olduğu bir kriterdir. Bir nesnenin
+bir görevi eğer üst katmandaki her nesne tarafından kullanılabiliyorsa
+geneldir, açıkça ve kesin olarak tanımlanmalıdır. Eğer görevin kullanımı
+sadece özel bir üst nesne tarafından yapılabiliyorsa, özeldir ve bunun
+bilgisi tanımlanmaya çalışılmak yerine, üst nesneye hedef olarak verilip,
+kendi aralarındaki ilişkileri kendilerinin kurmaları desteklenmelidir.
+<LI>Model, kullanıcı ve görev tabanlı tasarlanmakla birlikte, görev uygulamalarının
+ihtiyaçlarına yönelik teknik bilgiler de taşıyacaktır. Bu durumların
+modelde açıkça belirtilmesi önemlidir.
+</OL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_10.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_12.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

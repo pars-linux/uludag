@@ -45,56 +45,42 @@
 
 <!-- SAYFA İÇERİK BAŞI -->
 <div class="belge">
-<table class='navbar'><tbody><tr><td class='navbut'><a href='node_5.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navhide'><img src='../../../images/nav_forward.png'> Sonraki sayfa</td></tr></tbody></table>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_5.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_7.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 
 
-<H1 ALIGN=center>VÇTD<BR>
-(VÇTD Çomar Tasarımı Değildir)</H1>
+<H1 ALIGN=center>ÇOMAR Mimari Belgesi</H1>
 
-<H3 ALIGN=center>Serdar Köylü, A. Murat Eren, Gürer Özen</H3>
+<H3 ALIGN=center>Gürer Özen (gurer @ uludag.org.tr)</H3>
 
-<H3 ALIGN=center>24 Kasım 2004</H3>
-<H2><A NAME="htoc6">3</A>&nbsp;&nbsp;COMAR</H2>
-Ulusal Dağıtım için geliştirdiğimiz yapılandırma çerçevesinin adı
-olarak COMAR (COnfiguration MAnageR) seçtik. Bu çerçeve içinde, yukardaki
-gereksinimlerden çıkardığımız bileşenler ve ayrıntıları şöyle olacak:<BR>
+<H3><A NAME="htoc6">2.4</A>&nbsp;&nbsp;Özel Yönetim Uygulamaları</H3>
+Linux'un masaüstü ve iş dünyasında kullanımının artmasıyla, bir takım
+genel yapılandırma ve yönetim araçları da geliştirilmiştir. YaST,
+LinuxConf, WebMin gibi bu araçlar kullanıcıya üst seviye bir arabirim
+sunup, kullanıcının burada yaptığı seçimleri uygulamaların alt seviye
+ayarlarına taşımaktadır. İki seviye arasında geçiş yapabilmek için
+gereken bilgiler araçların içinde bir dizi kural olarak kodlanmıştır.<BR>
 <BR>
-
-<H3><A NAME="htoc7">3.1</A>&nbsp;&nbsp;Nesne Modeli</H3>
-Bir işletim sisteminde, uygulamalar arasında eşgüdümü sağlayabilmeye
-yönelik olarak, hangi görev ve bilgilerin bulunduğunu tanımlar. Sistem
-açılışı, donanım tanıma, ağ yapılandırmasından grafik çalışma ortamı,
-veri kaynakları, kullanıcı verilerine kadar, bütün bir işletim sistemi
-haritasındaki yapılandırma ve yönetim sorunlarını kapsar.<BR>
+Bundan başka, bilgisayar ağlarının yaygınlaşmasıyla birlikte, birden
+fazla bilgisayarın merkezi yönetimini yapabilecek IBM Tivoli, HP OpenView,
+CIM, SNMP, OSI CMIP gibi ürün ve çerçeveler ortaya çıkmıştır. Ayrıntılarda
+farkları olmakla birlikte, genel mimarileri, yönetilecek bilgisayarda
+bulunacak ajanlar, yönetim bilgisayarında bir yönetici yazılım, bunlar
+arasında bir iletişim protokolü ve yönetilecek görev ve ayarları belirten
+bilgi modellerinden oluşmaktadır. Yalnızca yapılandırma ile sınırlı
+kalmayıp, hata bulma, performans ve güvenlik değerlendirmeleri, kullanım
+hesaplama gibi işleri de yapmaktadırlar.<BR>
 <BR>
-
-<H3><A NAME="htoc8">3.2</A>&nbsp;&nbsp;CSL</H3>
-CSL (COMAR Scripting Language) nesnelerin yazılacağı betik dilidir.<BR>
-<BR>
-
-<H3><A NAME="htoc9">3.3</A>&nbsp;&nbsp;Betikler</H3>
-Nesne modelindeki işlemlerin uygulamalara aktarılmasını sağlayan,
-CSL ile yazılmış nesnelerdir. Her uygulamanın betikleri, uygulamayı
-dağıtım için paketleyen kişi tarafından hazırlanacak, ve uygulama
-kurulurken, nesne modeline yerleşecektir.<BR>
-<BR>
-
-<H3><A NAME="htoc10">3.4</A>&nbsp;&nbsp;comard</H3>
-Nesne modelini ve üzerindeki betikleri işletecek, profil, transaction,
-erişim yetkilerini sağlayacak, uzak nesneler için gereken ağ bağlantılarını
-kuracak uygulamadır. Uygulamalardan ve uzak nesnelerden gelen çağrıları
-alıp verecek bir iletişim birimi; CSL betiklerini ``parse'' edecek
-bir yorumlayıcı; çağrı ve yorumlanmış betikleri işletecek bir mekanizma;
-gerek betiklerin, gerekse comard'nin, ayar dosyalarına erişim, sistem
-yönetimi, program çalıştırma, veri depolama gibi işlerini yapacak
-bir API den oluşmaktadır.<BR>
-<BR>
-
-<H3><A NAME="htoc11">3.5</A>&nbsp;&nbsp;KGA</H3>
-KGA (Kullanıcı Grafik Arayüzleri), kullanıcının COMAR ve nesne modeli
-üzerinde kavramsal olarak bir bütün oluşturan kısımları tek ve basit
-bir grafik arabirim üzerinde ayarlayabilmesini sağlayan uygulamalardır.
-<table class='navbar'><tbody><tr><td class='navbut'><a href='node_5.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navhide'><img src='../../../images/nav_forward.png'> Sonraki sayfa</td></tr></tbody></table>
+Bu araçlarda gördüğümüz yanlışlar:
+<UL><LI>
+Üst düzey bir model değil, alt düzey ayarlar yöneticiye sunulmaktadır.
+<LI>Yapılandırma problemlerini görev tabanlı değil, uygulama tabanlı ele
+almaktadırlar.
+<LI>Uygulamalara görevi yaptırmak için gereken bilgi uygulamalarda değil
+merkezde (yönetici yazılımın içinde) bulunmaktadır. Bu bilgiler, bir
+arada oldukları ve birden fazla parçaya ait detayları içerdikleri
+için, öngörülmeyen durumlarda hata ortaya çıkarma ihtimalleri artmaktadır.
+</UL>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_5.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_7.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->
 
