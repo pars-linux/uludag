@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Fri, 10 Jun 2005 16:36:04 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 10 Haziran 2005
+<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Tue, 02 Aug 2005 00:24:45 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 2 Ağustos 2005
+</title><link>http://www.uludag.org.tr/bulten/arsiv/02082005.html</link><description>
+&lt;p&gt;
+Merhaba,
+&lt;/p&gt;
+
+&lt;p&gt;
+Uludağ bültenine hoşgeldiniz.
+&lt;/p&gt;
+
+&lt;p&gt;
+Uludağ ekibi [1] büyümeye devam ediyor. Son olarak Eray Özkural[2], İsmail
+Dönmez[3] ve Görkem Çetin[4] de Uludağ projesine dahil oldular.
+&lt;/p&gt;
+
+&lt;p&gt;
+1. &lt;a href="http://www.uludag.org.tr/hakkimizda.html"&gt;http://www.uludag.org.tr/hakkimizda.html&lt;/a&gt;&lt;br&gt;
+2. &lt;a href="http://cekirdek.uludag.org.tr/~eray/"&gt;http://cekirdek.uludag.org.tr/~eray/&lt;/a&gt;&lt;br&gt;
+3. &lt;a href="http://cekirdek.uludag.org.tr/~ismail/"&gt;http://cekirdek.uludag.org.tr/~ismail/&lt;/a&gt;&lt;br&gt;
+4. &lt;a href="http://www.gorkemcetin.com/"&gt;http://www.gorkemcetin.com/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Kısa bir süre önce tasarım belgesi yayınlanan[5] ve alpha sürümüne ulaşan PİSİ'nin kaynak kodları
+Uludağ Deposu[6]'nda yerini aldı[7].
+&lt;/p&gt;
+
+&lt;p&gt;
+5. &lt;a href="http://www.uludag.org.tr/projeler/pisi/pisi/pisi.html"&gt;http://www.uludag.org.tr/projeler/pisi/pisi/pisi.html&lt;/a&gt;&lt;br&gt;
+6. &lt;a href="http://svn.uludag.org.tr/uludag/"&gt;http://svn.uludag.org.tr/uludag/&lt;/a&gt;&lt;br&gt;
+7. &lt;a href="http://svn.uludag.org.tr/uludag/trunk/pisi/"&gt;http://svn.uludag.org.tr/uludag/trunk/pisi/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Pardus Çalışan CD 1.1'de[8] prototip sürümüne[9] yer verilmiş olan ÇOMAR'ın 
+yeni geliştirme sürümünün kaynak kodları[10] Uludağ Deposu'nda
+yayınlandı. Ayrıca güncellenmiş olan belgelerine de [11] adresinden
+ulaşılabilirsiniz.
+&lt;/p&gt;
+
+&lt;p&gt;
+8. &lt;a href="http://www.uludag.org.tr/urunler/pardus_calisan_cd_1.1.html"&gt;http://www.uludag.org.tr/urunler/pardus_calisan_cd_1.1.html&lt;/a&gt;&lt;br&gt;
+9. &lt;a href="http://svn.uludag.org.tr/uludag/tags/BLACKHOLE/comar-prototip/"&gt;http://svn.uludag.org.tr/uludag/tags/BLACKHOLE/comar-prototip/&lt;/a&gt;&lt;br&gt;
+10. &lt;a href="http://svn.uludag.org.tr/uludag/trunk/comar"&gt;http://svn.uludag.org.tr/uludag/trunk/comar/&lt;/a&gt;&lt;br&gt;
+11. &lt;a href="http://www.uludag.org.tr/projeler/comar/"&gt;http://www.uludag.org.tr/projeler/comar/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Pardus'un Kurulum ve Kullanım Kılavuzu'nun yazılmasına başlandı ve bu
+proje için bir e-posta listesi[12] açıldı. Proje
+hakkındaki tüm bilgilere proje sayfasından[13] ulaşabilirsiniz.
+&lt;/p&gt;
+
+&lt;p&gt;
+12. &lt;a href="http://liste.uludag.org.tr/mailman/listinfo/pardus-kilavuz"&gt;http://liste.uludag.org.tr/mailman/listinfo/pardus-kilavuz&lt;/a&gt;&lt;br&gt;
+13. &lt;a href="http://www.uludag.org.tr/projeler/pardus-kilavuz/"&gt;http://www.uludag.org.tr/projeler/pardus-kilavuz/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+KDE Türkiye ekibi[14], Pardus'un da masaüstü ortamı olarak tercih ettiği
+KDE[15]'nin 3.4.2 sürümüne kısa bir zaman kala yoğun bir çalışma ile KDE'nin Türkçe çeviri oranını[16]
+iki haftadan az bir sürede %72'den %81'e çıkarmayı başardı. Kendilerini tebrik ediyor
+ve çalışmalarından ötürü tüm ekibe teşekkür ediyoruz.
+&lt;/p&gt;
+
+&lt;p&gt;
+14. &lt;a href="http://www.kde.org.tr"&gt;http://www.kde.org.tr&lt;/a&gt;&lt;br&gt;
+15. &lt;a href="http://www.kde.org"&gt;http://www.kde.org&lt;/a&gt;&lt;br&gt;
+16. &lt;a href="http://i18n.kde.org/stats/gui/trunk/toplist.php"&gt;http://i18n.kde.org/stats/gui/trunk/toplist.php&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+</description><guid isPermaLink="true">http://www.uludag.org.tr/bulten/arsiv/02082005.html</guid><pubDate>Tue, 2 Aug 2005 00:24:19 GMT</pubDate></item><item><title>Uludağ Haftalık Bülteni - 10 Haziran 2005
 </title><link>http://www.uludag.org.tr/bulten/arsiv/06102005.html</link><description>
 &lt;p&gt;
 Merhaba,
