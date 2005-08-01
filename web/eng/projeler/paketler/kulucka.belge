@@ -1,7 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/doc/eng/"
-belge = "kulucka_dagitim.lyx"
-isim = "Kuluçka Dağıtım Seçimi"
-dizin = "kulucka"
-ikonlar = "../../../images"
-sablon = "../belge.tmpl"

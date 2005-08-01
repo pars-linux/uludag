@@ -1,5 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/doc/tr/"
-belge = "proje_ana_sozlesmesi.lyx"
-isim = "Proje Ana Sözleşmesi"
-dizin = "sozlesme"

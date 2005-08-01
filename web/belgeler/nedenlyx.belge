@@ -1,5 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/doc/tr/"
-belge = "neden_lyx.lyx"
-isim = "Neden LyX?"
-dizin = "nedenlyx"

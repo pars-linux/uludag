@@ -1,5 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/doc/eng/"
-belge = "yeni_gelistirici.lyx"
-isim = "Yeni Geliştirici Klavuzu"
-dizin = "gelistirici"

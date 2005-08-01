@@ -1,6 +1,0 @@
-Bu dizin Pardus ve Pardus bünyesindeki projelerin tanıtımı için kullanılan
-sunum dosyalarını barındırır.
-
-Barındırılacak sunum dosyalarının OpenOffice.org Sunu biçeminde (.sxi) 
-olması gerekmektedir.
-
