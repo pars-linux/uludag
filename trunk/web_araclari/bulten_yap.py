@@ -97,7 +97,7 @@ def gen_rss(index, logs):
 	file = codecs.open(logs[i], encoding="utf-8")
 
 	# first line is title
-        entry_title = file.readline()
+        entry_title = file.readline().strip('\n')
         entry_link = "http://www.uludag.org.tr/bulten/arsiv/"+basename(logs[i])[:-3]+"html"
         entry_desc = file.read()
         mtime = index.get_mtime(logs[i])
