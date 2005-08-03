@@ -4,6 +4,7 @@
   <head>
     <title>$site_title</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <!--
     <link rel="icon" type="image/png" href="images/favicon.png"/>
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="feed.rss" />
@@ -17,15 +18,15 @@
     <div id="container">
       <h1>Title</h1>
       <div id="menu">
-        <h2>Title</h2>
-        <p>
-          Text. <a href="1.html">Link</a>. <a href="2.html">Another Link</a>.
-        </p>
+        #include $site_path + "templates/menu.tpl"
       </div>
       <div id="content">
         <h2>Title</h2>
         <p>
           Text. <a href="1.html">Link</a>. <a href="2.html">Another Link</a>.
+        </p>
+        <p>
+          $test
         </p>
       </div>
     </div>
