@@ -23,13 +23,13 @@ class TasmaNet : public KCModule
 
 public:
     TasmaNet( QWidget *parent = 0, const char* name = 0 );
-    ~TasmaNet() {};
+    ~TasmaNet() {}
 
     virtual void load();
     virtual void save();
     virtual void defaults();
     virtual QString quickHelp() const;
-    virtual const KAboutData *aboutData () const { return TasmaNetAbout; };
+    virtual const KAboutData *aboutData () const { return TasmaNetAbout; }
 
 public slots:
     void configChanged();
