@@ -22,6 +22,11 @@ class mysql_db:
     c = self.conn.cursor()
     c.execute(str)
     return c.fetchall()[0]
+    
+  # Sorgudan yanıt dönmeyecekse kullanılması önerilen fonksiyon...
+  def query_com(self, str):
+    c = self.conn.cursor()
+    c.execute(str)
 
   # SQL komutuna fesat karıştırılmasını önleyen fonksiyon
   def escape(self, s):

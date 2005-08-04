@@ -1,9 +1,9 @@
 0.1
 ===
 
-/ Üyelik sistemi
-  / Kayıt sayfası
-  - Kullanıcı girişi
++ Üyelik sistemi
+  + Kayıt sayfası
+  + Kullanıcı girişi
 
 - Öneri sistemi
   - Öneri ekleme
