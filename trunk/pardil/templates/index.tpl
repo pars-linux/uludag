@@ -16,7 +16,7 @@
   </head>
   <body>
     <div id="container">
-      <h1>Title</h1>
+      <h1>$site_title</h1>
       <div id="menu">
         #include $site_path + "templates/menu.tpl"
       </div>

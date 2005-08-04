@@ -1,0 +1,48 @@
+#menu {
+  float: left;
+  width: 15em;
+}
+#content {
+  padding-left: 16em;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0em;
+}
+
+/* FORM */
+
+form>fieldset>div {
+  margin: 0.5em 0em 0.5em 0em;
+}
+form>fieldset {
+  margin: 1em 0em 1em 0em;
+  padding: 1em 0em 1em 0em;
+  border-width: 0em;
+  border-top: 0.1em solid #aaa;
+}
+form>fieldset>legend {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+form>fieldset>div>label {
+  display: block;
+  width: 15em;
+  float: left;
+}
+form>fieldset>div>input, form>fieldset>button, form>fieldset>div>textarea, form>fieldset>div>select {
+  display: block;
+  margin-left: 15em;
+}
+form>fieldset>div>div.error_msg {
+  color: red;
+  font-size: 0.8em;
+  margin-left: 15em;
+}
+
+form>fieldset>div.required>label {
+  font-weight: bold;
+}
+form>fieldset>div.optional>label {
+  font-weight: normal;
+}
