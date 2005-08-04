@@ -1,0 +1,19 @@
+0.1
+===
+
+/ Üyelik sistemi
+  / Kayıt sayfası
+  - Kullanıcı girişi
+
+- Öneri sistemi
+  - Öneri ekleme
+  - Öneri düzenleme
+  - Öneriye yorum ekleme
+  - Arşiv ve arama sayfası
+
+0.2
+===
+- Üyelik sistemi
+  - Şifre hatırlatma
+  - Şifre değiştirme
+
