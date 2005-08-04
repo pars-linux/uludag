@@ -2,6 +2,7 @@ from cfg_main import site_config
 
 from lib_cheetah import build_page
 from lib_mysql import mysql_db
+from lib_std import pass_hash
 
 from mod_python import Session
 
@@ -22,6 +23,7 @@ def index(req):
   data['site_path'] = site_config['path']
 
   data['errors'] = {}
+  data['status'] = ''
   data['posted_values'] = {}
 
   # Form gönderildiyse...
@@ -36,15 +38,17 @@ def index(req):
       data['errors']['r_username'] = 'Kullanıcı adı boş bırakılamaz.'
     elif not re.match('^[a-zA-Z0-9]{4,32}$', req.form['r_username']):
       data['errors']['r_username'] = 'Kullanıcı adı 4-32 karakter uzunlukta, alfanumerik olmalı.'
-    # TODO:
-    # Aynı isimde kullanıcı olup olmadığını kontrol et.
+    elif db.scalar_query('SELECT Count(*) FROM users WHERE username="%s"' % (db.escape(req.form['r_username']))) > 0:
+      data['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
     
     # E-posta adresini kontrol et.
     if not len(req.form['r_email']):
       data['errors']['r_email'] = 'E-posta adresi boş bırakılamaz.'
-    # TODO:
-    # Aynı e-posta adresine sahip kullanıcı olup olmadığını kontrol et.
-    # E-posta adresi formatına uyup uymadığını kontrol et.
+    # FIXME: E-posta adresi denetiminde kullanılan düzenli ifade, ilgili RFC'ye göre değiştirilebilir...
+    elif not re.match('^(.*@.*){,64}$', req.form['r_email']):
+      data['errors']['r_email'] = 'E-posta adresi geçerli formatta olmalı.'
+    elif db.scalar_query('SELECT Count(*) FROM users WHERE email="%s"' % (db.escape(req.form['r_email']))) > 0:
+      data['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
       
     # Parolayı kontrol et.
     if not len(req.form['r_password']):
@@ -54,6 +58,7 @@ def index(req):
     elif not re.match('^.{6}$', req.form['r_password']):
       data['errors']['r_password'] = 'Parola en az 6 karakter uzunlukta olmalı.'
       
+    """
     # İsmi kontrol et.
     if not len(req.form['r_firstname']):
       data['errors']['r_firstname'] = 'İsim boş bırakılamaz.'
@@ -61,11 +66,17 @@ def index(req):
     # Soyismi kontrol et.
     if not len(req.form['r_lastname']):
       data['errors']['r_lastname'] = 'Soyisim boş bırakılamaz.'
+    """
 
     # Hiç hata yoksa...
     if not len(data['errors']):
-      # Veritabanına kayıt yap...
-      return "Eğer kod eksik olmasaydı, kaydınız yapılacaktı..."
 
+      # Veritabanına kayıt yap...
+      insert_list = {'username': req.form['r_username'], 'password': pass_hash(req.form['r_password']), 'email': req.form['r_email']}
+      db.query_com(db.insert('users', insert_list))
+
+      # İşlem durumunu "bitti" olarak belirle
+      data['status'] = 'done'
+      
   # Sayfayı derle.
   return build_page(site_config['path'] + 'templates/register.tpl', data)

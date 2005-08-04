@@ -37,6 +37,9 @@
           #end if
         #end def
 
+        #if $status == 'done'
+          <p>Kullanıcı kaydı tamamlandı.</p>
+        #else:
         <form action="register.py" method="post">
           <fieldset>
             <legend>Hesap Bilgileri</legend>
@@ -61,6 +64,7 @@
               #echo $printError('r_password')
             </div>
           </fieldset>
+          <!--
           <fieldset>
             <legend>Kişisel Bilgiler</legend>
             <div class="required">
@@ -74,10 +78,12 @@
               #echo $printError('r_lastname')
             </div>
           </fieldset>
+          -->
           <fieldset>
             <button type="submit" name="register" value="1">Kayıt</button>
           </fieldset>
         </form>
+        #end if
       </div>
     </div>
   </body>
