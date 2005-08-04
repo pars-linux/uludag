@@ -21,12 +21,9 @@
         #include $site_path + "templates/menu.tpl"
       </div>
       <div id="content">
-        <h2>Title</h2>
+        <h2>Başlık</h2>
         <p>
-          Text. <a href="1.html">Link</a>. <a href="2.html">Another Link</a>.
-        </p>
-        <p>
-          $test
+          Yazı. <a href="1.html">Köprü</a>. <a href="2.html">Diğer köprü</a>.
         </p>
       </div>
     </div>
