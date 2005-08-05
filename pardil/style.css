@@ -1,27 +1,33 @@
 body {
   margin: 0em;
   padding: 0em;
+  background-color: #f1efeb;
 }
 #container {
   margin: 0em;
-  padding: 1em;
-  background: #fff url(images/menu.bg.png) repeat-y -4.5em 0em;
+  padding: 0em;
 }
 
 #menu {
   float: left;
   width: 18em;
+  padding: 1em;
 }
 #content {
-  padding-left: 20em;
+  padding: 1em 1em 1em 1em;
+  border: 0.1em solid #c9c9c8;
+  margin-left: 20em;
+  background-color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0em;
 }
 
+
 * {
   font-family: Bitstream Vera Sans, Verdana, Tahoma, Sans-Serif;
+  color: #444340;
 }
 
 #menu ul {
