@@ -51,11 +51,11 @@ def index(req):
       # Kullanıcı bilgilerini oturum bilgilerine iliştir
       sess['uid'] = db.scalar_query('SELECT uid FROM users WHERE username="%s"' % (db.escape(req.form['l_username'])))
       sess['username'] = req.form['l_username']
-      sess['groups'] = []
+      sess['groups'] = {}
 
-      rows = db.query('SELECT name FROM groups INNER JOIN rel_groups ON rel_groups.gid=groups.gid INNER JOIN users ON users.uid=rel_groups.uid WHERE users.uid=%d' % (sess['uid']))
+      rows = db.query('SELECT groups.gid, groups.label FROM groups INNER JOIN rel_groups ON rel_groups.gid=groups.gid INNER JOIN users ON users.uid=rel_groups.uid WHERE users.uid=%d' % (sess['uid']))
       for i in rows:
-        sess['groups'].append(i[0])
+        sess['groups'][i[0]] = i[1]
 
       for i in sess.keys():
         data['session'][i] = sess[i]
