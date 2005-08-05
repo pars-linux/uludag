@@ -23,8 +23,9 @@ def index(req):
   sess = Session.Session(req)
   if not sess.is_new():
     sess.load()
-    data['session']['uid'] = sess['uid']
-    data['session']['username'] = sess['username']
+    if sess.has_key('uid'):
+      data['session']['uid'] = sess['uid']
+      data['session']['username'] = sess['username']
 
   # Oturum bilgilerini kaydet.
   sess.save()
