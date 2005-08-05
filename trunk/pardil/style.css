@@ -1,13 +1,42 @@
+body {
+  margin: 0em;
+  padding: 0em;
+}
+#container {
+  margin: 0em;
+  padding: 1em;
+  background: #fff url(images/menu.bg.png) repeat-y -4.5em 0em;
+}
+
 #menu {
   float: left;
-  width: 15em;
+  width: 18em;
 }
 #content {
-  padding-left: 16em;
+  padding-left: 20em;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0em;
+}
+
+* {
+  font-family: Bitstream Vera Sans, Verdana, Tahoma, Sans-Serif;
+}
+
+#menu ul {
+  padding-left: 1em;
+}
+
+#menu a {
+  color: #1e5fb8;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+}
+#menu a:hover {
+  color: #1e5fb8;
+  text-decoration: none;
+  border-bottom: 1px solid #666;
 }
 
 /* FORM */
@@ -41,8 +70,6 @@ form>fieldset>div>div.error_msg {
 }
 
 form>fieldset>div.required>label {
-  font-weight: bold;
 }
 form>fieldset>div.optional>label {
-  font-weight: normal;
 }
