@@ -2,6 +2,8 @@
 #if $session
   <p>
     Hey ${session['username']}! Sesinden tanıdım seni.
+    <br/>
+    <strong>Gruplar:</strong> #echo ', '.join($session['groups'])
   </p>
   <ul>
     <li><a href="logout.py">Çıkış</a></li>
