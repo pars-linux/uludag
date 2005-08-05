@@ -27,9 +27,8 @@ def index(req):
   sess = Session.Session(req)
   if not sess.is_new():
     sess.load()
-    if sess.has_key('uid'):
-      data['session']['uid'] = sess['uid']
-      data['session']['username'] = sess['username']
+    for i in sess.keys():
+      data['session'][i] = sess[i]
 
   # Form gönderildiyse...
   if req.form.has_key('login'):
@@ -52,9 +51,14 @@ def index(req):
       # Kullanıcı bilgilerini oturum bilgilerine iliştir
       sess['uid'] = db.scalar_query('SELECT uid FROM users WHERE username="%s"' % (db.escape(req.form['l_username'])))
       sess['username'] = req.form['l_username']
+      sess['groups'] = []
 
-      data['session']['uid'] = sess['uid']
-      data['session']['username'] = sess['username']
+      rows = db.query('SELECT name FROM groups INNER JOIN rel_groups ON rel_groups.gid=groups.gid INNER JOIN users ON users.uid=rel_groups.uid WHERE users.uid=%d' % (sess['uid']))
+      for i in rows:
+        sess['groups'].append(i[0])
+
+      for i in sess.keys():
+        data['session'][i] = sess[i]
 
       # İşlem durumunu "bitti" olarak belirle
       data['status'] = 'done'
