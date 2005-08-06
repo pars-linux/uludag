@@ -1,0 +1,74 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>GoodbyeDlg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>GoodbyeDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>288</height>
+        </rect>
+    </property>
+    <property name="paletteBackgroundColor">
+        <color>
+            <red>244</red>
+            <green>244</green>
+            <blue>235</blue>
+        </color>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>goodbyeLabel_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>180</x>
+                <y>70</y>
+                <width>400</width>
+                <height>140</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Teşekkürler&lt;/h2&gt;
+Tüm bilgiler toplandı ve Pardus Linux'u hazırlayan
+geliştiricilere gönderilmek üzere hazırlandı. 
+&lt;p&gt;
+Pardus Linux'a verdiğiniz destek için teşekkür ederiz.</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>goodbyePixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2159">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af400000836494441545885e5976d6c1c4719c77f9baec36c734e76ab94ee428abc6d2ce5ac16e5aeb1143b2992af4a055719290e45c201aad68d507168511390008797be2195940ab56e11a91320758a4473a10a3d23157c8854be4a6def2c1cbc41b134a6b1b8131cdd2d3e7527645af3e1ce4e6cd2029ff8c07c19ed8be6ff9bfff33cf302ffefcdb8dccb858585559c931f63329f02d14228c1b2e1af128407b5004c0f2209a60db5e6fb488280385258098f3892900029fcb73aeefcc6af8cf4b63ffd5b8085dfffa69d5a78984ab08dab7d8348822d205260fb50979010500712dec5e7f7fb1e2ae46c10db91fa8173e0c96f1a1fbceec2650116def883cb4cf032b5e07a4c07ce4d83709a33b4a1360ba6db702021a0a688131eaa2651099091c24bb8c4611500a9637cd3c76a8df0b76601b510ce854f388f8cdc6718c66500267ef938b2fc65a20a713dc2528a58292c1d379f21ae875817402a858d20500a5b83d40a4743a0153e8dbecd14cc6a850b480dd9ce2eac364ffbeb339dc67d7b2701aeb824ee06932ffd907f60135569b9aa1db66569f13be18d33b4bceb4054a5e57c0b688d73cd47e1eaabf15219aae76bb4d61567559d6b4d817c57b3619509c914d93bbe8dfaf006cc3353bc3a374bfa7a77d5d474f12f874f577f0b605e6280c5bcb826ae95b04ce013bba1168219c103c7e1d4719892c4be83b5a50f12a2e1c86c91f4570e4254215dad305d3846b21a62df3e80b5b19bd2a1fd74ef19a2242cd491c7c88d15c9a6521f5914bd14e04aea418b253c684f821670743f980e3cf7181c7811368135f9223cb197b826294e496c1ae148ba1eeac614e99e01b82743fc8b51863f7f0b2e108c1d67774e523c318a1d5529cd47ad8ba2ab96e4e7c356546cc435090ad015d0344ac914400867c6c17508cf9489b6f73562ab140e509c9354c6720cdf7f0be1d3c328d7c64521b5c2171671b5845b8f901a9c7abc6e61616105002281528695f0a09883f549e81dc44a08d83908af4d40611466244118a28e0e23b5c233a1a215be29a86a683305b9a343383764109d3da4db92747fff79a2937902a5f0808a52f662015c04982dae432be25a005a113fbd177a7635acefcc10168ec19d0f51fad110dd3bfa988e22bca6038bbd6bc2ac56d82a62e27b7773dbe17132b9d741c3e8a1030d71c046ac653e5cb51c408babd0cab0126da062ac28809746a1d5819f1ec4294f307def2d781aa6c77278a620d0e09902094be22e0d272a6339385b02cb62f4fe4f2d897bc02c6a0d75652c4fc2d9f2da78aec2b82c412da21c45646b1ec94ddd1c7bf000522b6c21b04c480941c56c0c269b752f69d83fdb74422ac5f4e307e8f8ce333027919ae6e20429cd1a5e19bd02d04b00a553a5b5c7c68af866e327df84646f1ff2e8288152a46c1bb1d127d33b8073ad0b5bb20cdffa21da00bbb78f81cf3d0475a89c1ca654cee3cf4af2853c1d5f0391eac22b16a8d018b75a8f2cd6a73f009c5f0290b2bc76515c347b6b4392f273c30813ca51843f59e6e1d7f6224ce8bf671f22521494e2ae4871fc5bbb2008904a2d99ea0172324f7abdc7a806af39aead581deaf84ae0ef4b39e0d795bd3873d5ece39932a94d99a5e765dffd248152f826145e9d20bda58fa0dea80680cccd5d28b70dff862ca5aa5c12f781482bc3b1bdd665495806475c22223554658072ed468c3508a0d2fc9e3f31b214536a1113afe4511aca7545d26da3a205ae568d9df4ecc51c0834781a2a33e3cb015cd35fbb72a6a5d301e9ae2cb2193b9110f4f5f6203524377673f0f0f31cccbdcee053cf22a44469e8bffd2e6681eeedbbe9ded107a643b956c5e3a2b312f0cecae500b36a7add520e3467a6a626c075706d1ba961e04bcf10d41a31ce8f8dc2962c74a6092b50ae56f10136a771358c1c1a42993ef2d723a0973b0b204fe5c5b2326c536a4d618503e55a44e6448efdf93f374e3b9b3ac82620e57a281d32fce99b187ce01986bffb5906f7ec23a84a3abafae8b8b10f6c40878cdf7b00c5f271a5864a2d32973ba055cbca1c10263cf6e05e463f791d95330598abe0eccc62256ce4b92ae18c64626c04df144c9c9e20d37b17b83608c5f813fb19baf526f293395656970b481a4e2e01f4ece8af5e2edb53ae8bdf9ba5f4d471a69fde4ffcf204fe9e7d8828c6df9ca2bb338b3421bd39035b6fa3726498917b77612b41ff27b2f8a66065754526ec7ef4f9b79701f83b779d4c3563bd489a1402d1ee933f7a182be9205f2d532ee6a00edd8f8e904aa678e8eb77b3ef9167713f33407864988957f2a4da7d8ae5718a8571ec1b92ac74b66f4736646ba6b40cc0eaccfc2cb567f06c5234ead83721508a6ab1886ddbc45325ac540a7932cfc1fe6d381bbbf06fceb0ef9167b1dad24485711e7e7c2fbe9ba4582e916af708a288e87479d93ad2b5c1257de7179fc4b2de829567c237dfdc2e8f0ce5a79f3bd61ad42368968e07a8f52e5dc924b942010f0813826c5786286123e62ae48a0544d3e6c1dbfb19fef931048da3c5e25ed1d3d646f757877ee7f40e7cdc308cf85f009a103dbc963bc454707de5541e15854c2b856fa728d78ad8fae2ae2775732b6e42569acb6d28048e6a6ed5a640b4b9f4ed1c78c7e94a9d60f36d5f30561b6f2eeabdd7c5641d67277681b883d3e35b392757c7b52a565d11d6431ca590f321b686a0aeb0b522500d88402b5c0d912dc87466105d5d7f73b6645fc0e4c75cdb316118c63b976a5d16e01210830b6c6246f66386bb992bb791f00d6acd635a2568dc8caa01e034ee0beb93e0da17e8ec7b19d44f684fbf601846f45e1aef0bb002a68530ec61aebc1b616f27aa6c20e1ad6edc9cfc05ea721e3bf94774f4221bbb47696166f1f2f17eed3f06b804042e60d2c21ae67168c5649eb7692504ce1b86f1ee7f3be6ffb4fd134b1d1101c831ecf50000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

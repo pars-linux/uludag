@@ -1,7 +1,5 @@
 bin_PROGRAMS = feedback
 
-bin_SCRIPTS = grab_information
-
 feedback_SOURCES = welcomedlg.ui welcome.cpp \
 	experiencedlg.ui  experience.cpp \
 	purposedlg.ui purpose.cpp \

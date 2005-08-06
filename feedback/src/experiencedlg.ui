@@ -1,0 +1,201 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ExperienceDlg</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ExperienceDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>287</height>
+        </rect>
+    </property>
+    <property name="paletteBackgroundColor">
+        <color>
+            <red>244</red>
+            <green>244</green>
+            <blue>235</blue>
+        </color>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>experienceLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>180</x>
+                <y>70</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Uzmanlık seviyeniz?&lt;/h2&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stepLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>100</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>77</red>
+                <green>77</green>
+                <blue>77</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Adım (1/5)&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>experiencebuttonGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>130</y>
+                <width>400</width>
+                <height>140</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string></string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionOne</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Yeni başlayan kullanıcı</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+            <property name="buttonGroupId">
+                <number>1</number>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionTwo</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>50</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Ev/ofis kullanıcısı</string>
+            </property>
+            <property name="buttonGroupId">
+                <number>0</number>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionThree</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Deneyimli kullanıcı</string>
+            </property>
+            <property name="buttonGroupId">
+                <number>4</number>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionFour</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>110</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Deneyimli sistem yöneticisi</string>
+            </property>
+            <property name="buttonGroupId">
+                <number>3</number>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>experiencePixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="774">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000002cd49444154388da59341681c651cc57fb31d7006976636049915295949c5a90d65038a1ba8a810942d22ae0896503cf4a48d07a9e420553c3408160a8586163151b01124b60a258b124dc042e722d9829211ba30c114be0117bf8fb264fea45f1d0fabf5241efc9fdee1cfe3bdc77bf03fcff91b14ed8f27b1fa2d4486b8e3813560012b603d72abf1016db92bc67c5d7df3f447ce030f172e40b176e9003df51ddb898f08f414f4056d0cea0e64928380b682e742258a9ee7c2690f38e702d0572fe62af1fd460bc440bc461e7a541e9a40acc6cf32366f5c67e2c92679d9a3f3d93c5a65affe43a0cdb03f5283b403376278fd3cac2eb1f1cd02e666820eaa4c1c3d41fae31aaa739de885693acb0bc34551501a28606ffe4b0cd1b3f0d21b70ad4dfa738c4953940892a5b4cfcc104db5987ce73cc9d525b4c810e09400729356b25b9acd4fe6503dc3e50ba7c83a1b68197816c0c363e3eae7e42a23cd327cd72bb3be542a01cc2fb7f7ceafc6a4045c393b47da07bd7f82eae12612d6681c3d8117866c5d6b237d3570dd373e6e70df20034b10b8607a8ab05a23ee26c87a1b73b08eeea688b4912c2318ab53f102c48207a5dc64e541062e43c682ba99e08d8d128d4678614863aac5f4e20a6a2b257cbc4114456c76133cc05890af16eedf03f054c0acf7871deaddee73201ae7e5d9f7a9ed7b84f5e545ecad94fd87c679eee43974a688bf58a4b723042ef4fafdf912406d34fad558085c487f8a5939730aa90444f5061a88a65aac7c3043b27a05f9ab4c94033b7df6922e01348f1d9fab8f8ddec505d94a31b9e1f2ec0c8c54880e365878ef6de4374dd24d40045c8fd6b1e317397ca4776f0b3b3f7c79443af1bba6bbf104c638a9522082ea0b585056a88e8454eb93db8d679a17fda79b1f3ac30fda7b04004551c0f6e66364c96be0bd82c9f62152422b8d5ffd9647eb9f323ef9bde338f63f675aecee38c56e512e6eff1e14bbc59e7ffbfb134d695a792f8ba3280000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
