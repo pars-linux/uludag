@@ -3,6 +3,9 @@ bin_PROGRAMS = feedback
 bin_SCRIPTS = grab_information
 
 feedback_SOURCES = welcomedlg.ui welcome.cpp \
+	experiencedlg.ui  experience.cpp \
+	purposedlg.ui purpose.cpp \
+	usagedlg.ui usage.cpp \
 	questiondlg.ui question.cpp \
 	hardwareinfodlg.ui hardwareinfo.cpp \
 	goodbyedlg.ui goodbye.cpp \
@@ -19,7 +22,7 @@ xdg_apps_DATA = feedback.desktop
 
 KDE_ICON=AUTO
 
-feedback_pics_data_DATA = pardus.png
+feedback_pics_data_DATA = pardus.png feedback.png
 
 feedback_pics_datadir = $(kde_datadir)/feedback/pics
 
