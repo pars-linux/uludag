@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-02-18 00:35+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: feedback.cpp:43
+msgid "Welcome"
+msgstr ""
+
+#: feedback.cpp:47
+msgid "Experience"
+msgstr ""
+
+#: feedback.cpp:49
+msgid "&Starter"
+msgstr ""
+
+#: feedback.cpp:50
+msgid "&User"
+msgstr ""
+
+#: feedback.cpp:51
+msgid "&Poweruser"
+msgstr ""
+
+#: feedback.cpp:52
+msgid "&Master of the known universe"
+msgstr ""
+
+#: feedback.cpp:54 feedback.cpp:65
+msgid "Ease of Use"
+msgstr ""
+
+#: feedback.cpp:58
+msgid "Ease Of Use"
+msgstr ""
+
+#: feedback.cpp:60 feedback.cpp:71 feedback.cpp:82
+msgid "&Very Good"
+msgstr ""
+
+#: feedback.cpp:61 feedback.cpp:72
+msgid "&Good"
+msgstr ""
+
+#: feedback.cpp:62 feedback.cpp:73
+msgid "Nice &Try"
+msgstr ""
+
+#: feedback.cpp:63 feedback.cpp:74
+msgid "&Useless"
+msgstr ""
+
+#: feedback.cpp:76
+msgid "Visual Attractiveness"
+msgstr ""
+
+#: feedback.cpp:83
+msgid "Could Be &Better"
+msgstr ""
+
+#: feedback.cpp:84
+msgid "&Optimization work should be done"
+msgstr ""
+
+#: feedback.cpp:85
+msgid "&Very bad"
+msgstr ""
+
+#: feedback.cpp:87
+msgid "Organization/Layout"
+msgstr ""
+
+#: feedback.cpp:92
+msgid "Hardware Info"
+msgstr ""
+
+#: feedback.cpp:97
+msgid "Thank You"
+msgstr ""
+
+#: feedback.cpp:129 feedback.cpp:161 hardwareinfo.cpp:26
+msgid "Cannot write file"
+msgstr ""
+
+#: feedback.cpp:129
+msgid "Permission Denied!"
+msgstr ""
+
+#: feedback.cpp:161
+msgid "Hardware information cannot collected"
+msgstr ""
+
+#: goodbyedlg.cpp:2169 hardwareinfodlg.cpp:2175 questiondlg.cpp:2201
+#: welcomedlg.cpp:2169
+msgid "Feedback Wizard"
+msgstr ""
+
+#: goodbyedlg.cpp:2172
+msgid ""
+"Thank You!\n"
+"\n"
+"All needed information collected and a file named pardus_information.xml has "
+"been created in your home folder"
+msgstr ""
+
+#: hardwareinfo.cpp:26
+msgid "Error %1 %2"
+msgstr ""
+
+#: hardwareinfo.cpp:57
+msgid "HTTP Get"
+msgstr ""
+
+#: hardwareinfo.cpp:57
+msgid "Error %1"
+msgstr ""
+
+#: hardwareinfo.cpp:68 hardwareinfo.cpp:71 hardwareinfo.cpp:74
+#: hardwareinfo.cpp:77 hardwareinfo.cpp:80
+msgid "HTTP Connecting"
+msgstr ""
+
+#: hardwareinfo.cpp:68
+msgid "Connecting..."
+msgstr ""
+
+#: hardwareinfo.cpp:71
+msgid "Sending Request..."
+msgstr ""
+
+#: hardwareinfo.cpp:74
+msgid "Reading Data..."
+msgstr ""
+
+#: hardwareinfo.cpp:77
+msgid "Closing..."
+msgstr ""
+
+#: hardwareinfo.cpp:80
+msgid "Unconnected..."
+msgstr ""
+
+#: hardwareinfodlg.cpp:2177
+msgid "Collect My Information"
+msgstr ""
+
+#: hardwareinfodlg.cpp:2178
+msgid ""
+"Feedback Wizard will collect some hardware information about your computer, "
+"if you do not want to send these informations to Pardus Linux Developers "
+"unselect the \"Collect My Information\" button below\n"
+"\n"
+"Following informations will be collected;\n"
+"\n"
+"CPU Information\n"
+"Memory Information\n"
+"Display Device Information\n"
+"Network Device Information\n"
+"Loaded Modules List"
+msgstr ""
+
+#: main.cpp:19
+msgid "Feedback"
+msgstr ""
+
+#: questiondlg.cpp:2204
+msgid ""
+"What is your overall \n"
+"impression about Pardus Linux?"
+msgstr ""
+
+#: questiondlg.cpp:2207
+msgid "Useless"
+msgstr ""
+
+#: questiondlg.cpp:2208
+msgid "Nice try"
+msgstr ""
+
+#: questiondlg.cpp:2209
+msgid "Very Good"
+msgstr ""
+
+#: questiondlg.cpp:2210
+msgid "Good"
+msgstr ""
+
+#: welcomedlg.cpp:2170
+msgid ""
+"Welcome to Pardus Linux Feedback Agent\n"
+"\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum ut leo "
+"vitae justo euismod mollis. Integer in mauris. Nullam vulputate mi. Duis "
+"elit dolor, porttitor non, pulvinar vitae, volutpat quis, leo. Quisque massa "
+"lorem, pellentesque quis, rhoncus in, imperdiet id, mauris. Vestibulum ante "
+"ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; "
+"Praesent molestie. Nam scelerisque risus non ante congue vestibulum. Sed "
+"mattis augue ac lectus. Vivamus ultrices. Sed lectus magna, dignissim "
+"dictum, sodales ut, aliquam sit amet, tortor. Aliquam convallis vulputate "
+"dolor. Etiam turpis lacus, lobortis vel, pharetra et, dignissim fringilla, "
+"enim. Nulla dui wisi, volutpat in, sodales in, lobortis at, pede. Maecenas "
+"ante. Vestibulum ullamcorper sapien vitae metus. Pellentesque at eros. "
+"Phasellus id magna. Nullam in velit. Nullam aliquet, purus auctor tempor "
+"adipiscing, diam diam porta nisl, a iaculis nisl urna a enim."
+msgstr ""
+
+#: welcomedlg.cpp:2175
+msgid ""
+"Welcome to Pardus Linux Feedback Agent\n"
+"\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum ut leo "
+"vitae justo euismod mollis. Integer in mauris. Nullam vulputate mi. Duis "
+"elit dolor, porttitor non, pulvinar vitae, volutpat quis, leo."
+msgstr ""

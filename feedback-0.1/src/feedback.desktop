@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=feedback
+Icon=feedback
+Type=Application
+DocPath=feedback/index.html
+X-KDE-StartupNotify=true
+
+Name=Feedback Agent
+Name[tr]=Geribildirim Uygulaması
+
+Categories=Qt;KDE;Core
