@@ -1,0 +1,46 @@
+#!/bin/bash
+
+MODULES=`lsmod | egrep -v "Module"  | cut -d " " -f 1 `
+
+#echo "Xorg Config"
+#cat /etc/X11/xorg.conf | sed -e '/^\s*#/d' | sed -e '/^\s*$/d' | sed -e 's/^\s*//' | sed -e 's/\"//g'
+#echo
+
+CPU_VENDOR=`uhinv -vf text | grep Vendor | head -n 1 | sed -e 's/\s*Vendor:\s*//g'`
+
+CPU_ARCH=`uhinv -vf text | grep Machine | head -n 1 | sed -e 's/\s*Machine:\s*//g'`
+
+CPU_MODEL=`uhinv -vf text | grep Model | head -n 1 | sed -e 's/\s*Model\sName:\s*//g'`
+
+CPU_FLAGS=`grep flags /proc/cpuinfo 2>/dev/null | tail -n 1 | sed -e 's/flags\s*:\s*//g'`
+
+CPU_NUMBER=`uhinv -vf text | grep Number | head -n 1 | sed -e 's/\s*Number\sof\sCPUs:\s*//g'`
+
+CPU_RELEASE=`uhinv -vf text | grep Release | head -n 1 | sed -e 's/\s*Release:\s*//g'`
+
+CPU_MHZ=`cat /proc/cpuinfo  | grep MHz | uniq | cut -d " " -f 3`
+
+RAM=`uhinv -vf text | grep RAM | sed -e 's/\s*Total RAM:\s*//g' | grep -v "Name"`
+
+DISPLAY_VENDOR=`uhinv -vf text --filter-class="display controller" | egrep Vendor | sed -e 's/.*Vendor:\s*//' | while read line; do echo -n "$line|||"; done | sed -e 's/|||$//'`
+
+DISPLAY_NAME=`uhinv -vdf text --filter-class="display controller" | egrep Name | sed -e 's/.*Name:\s*//' | while read line; do echo -n "$line|||"; done | sed -e 's/|||$//'`
+
+AUDIO_VENDOR=`uhinv -vdf text --filter-class="Multimedia audio" | egrep Vendor | sed -e 's/.*Vendor:\s*//' | while read line; do echo -n "$line|||"; done | sed -e 's/|||$//'`
+
+AUDIO_NAME=`uhinv -vdf text --filter-class="Multimedia audio" | egrep Name | sed -e 's/.*Name:\s*//' | while read line; do echo -n "$line|||"; done | sed -e 's/|||$//'`
+
+NETWORK_VENDOR=`uhinv -vdf text --filter-class="network controller" | egrep Vendor | sed -e 's/.*Vendor:\s*//' | while read line; do echo -n "$line|||"; done | sed -e 's/|||$//'`
+
+NETWORK_NAME=`uhinv -vdf text --filter-class="network controller" | egrep Name | sed -e 's/.*Name:\s*//' | while read line; do echo -n "$line|||"; done | sed -e 's/|||$//'`
+
+UPTIME=`cat /proc/uptime 2>/dev/null | cut -d " " -f 1 | sed -e 's/[ ]//'`
+
+echo "<feedback>" >> $1/pardus_information.xml
+
+for i in "MODULES" "CPU_VENDOR" "CPU_ARCH" "CPU_MODEL" "CPU_FLAGS" "CPU_NUMBER" "CPU_RELEASE" "CPU_MHZ" "RAM" "DISPLAY_VENDOR" "DISPLAY_NAME" "AUDIO_VENDOR" "AUDIO_NAME" "NETWORK_VENDOR" "NETWORK_NAME" "UPTIME"
+do
+	echo " <information name=\"$i\" value=\"$(eval echo \$$i)\" />" >> $1/pardus_information.xml
+done
+echo "</feedback>" >> $1/pardus_information.xml 
+
