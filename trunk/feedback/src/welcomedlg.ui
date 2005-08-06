@@ -1,0 +1,77 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>WelcomeDlg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>WelcomeDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>287</height>
+        </rect>
+    </property>
+    <property name="paletteBackgroundColor">
+        <color>
+            <red>244</red>
+            <green>244</green>
+            <blue>235</blue>
+        </color>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>welcomeLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>70</y>
+                <width>420</width>
+                <height>160</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Hoşgeldiniz&lt;/h2&gt;
+
+Bu küçük program sayesinde sadece bir kaç dakika içinde Pardus 
+Linux hakkındaki düşüncelerinizi bize aktarabileceksiniz.
+&lt;p&gt;
+Vereceğiniz bilgiler Pardus'un gelişimine katkıda bulunacaktır. Lütfen
+"İleri" düğmesine tıklayarak devam ediniz.
+&lt;p&gt;</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>welcomePixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2151">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af40000082e494441545885e597616c5d6519c77f679ce27bb6763b47a79c633aed0596ec365bd25ba9e19661ec2518d75912baec832d68601a834331b0118ddb12184842368842c164acc38cb204b62e44b9332ede4b18b6269bbd93cd9d1a164e758de704aae7486f380fec85fae1de766d9da89ffce0f9f2e67d4fcef9ff9ffff37fdef779e1fffd312eb7383333b384e0dc17385bcea169603a0453411282e940120036542360de7a350413e2aaa0948d542350103666fede7afb7dbf343e7fd39ffe2d8199d77fbd9a281ce4ede0061ccfa01a42a382aa40a3071282522080722ecd3fea7d2c04137eaa12f9b1b7f3c95dc6a7aebe785902337ffe83cb78e53592e09a1af5004cab1ea18224aa459e04a01469228872902444148455c15636329d0010ea14cff4504d42e6ba0296c94c38113ee13d3a748f61189721f0eae1c7b9e07f8f2424ad265822a422583aadcf21adc65817211041a16aa386500b9686400b2e30a105d754445ab0815043a1238fd3e2697765be63e93ddb4f035c312fef06af977fcabb62f3ce140dcb57c18db7d0b06a1d4c9ea7e17d0bde99a2e1bd0652ad69fcc46ab8ead37c725d9ee462424355b82055569a8ae843cdca25262a9ba3d0ff7d58d5821e3fc399c9095a3feb2e7963fce45b8367a35700cc7902584c73559a045826d0b305a2106c81078fc0892370c627cd78586ddd60db5855219dacd0be7d0f54133a2703ce9d18a6358a71376fc16ac9317660279d776c43290b39b097e2f151ba72b9cfcc82ce27b0946ad060990e647335131dda015870682ffce030ace9c63a55247d7a1b120554fc00058422645c0fd6e5c8ded88775d746e217f733f8b59bb001ffd811fa5f38c7e8d1215412e14f274db3a04be6e0a7e3262435d224ac399a1834a4d5ba014d81b32568f648c62bc8177b6bb915410195c980e0d83083f77f85f0e93db0cac54608b5e0298b74cac7ae26841a54355d313333b38880a61111c352369c2c829d819ead584ac1ad5be1b72538310ce33e411c131f1c20d482634252375ca2c13515c5830fe3ace9c4eee822db92a5f0d861a2a3c3042238402262cf16c0250293951568214d26400be9be6dd0b5091e7819da0ac42786e1f61d8c0d3e44eee65e8224c1a92b60039108b609911694248c3c7e371b074b6c1cfe1d8870e4c0c338355d51a8e54cc74b1612103e8e16c3522e488a35e5c3f1216872e0d01e54658473f76ec4d1e01f1bc631158106db544430076e53532238360c6f8c81653174ff6d73e00e1021cb481263a10927fde5f164c84830864c25f8494221f1c8ade96470f74e422dd84a619990558ad8a41679bdee236af2cf2a118a30f6f84eda1f7806990c0835f5cd09b29a659c3a7205a0e7088c9447960f1f1bc53521d2e09a90ede9c53fb09f4084ac6d635f9ba173431f5e26036d0506baafc605bc9e5e367ef58720101c1de0dc99324c0494ca45dab70b762e8f8c968901cf84a49a58d8d98f01efcd11082ff8cb67c1557d74dc0cc5f10194097e92e09eae307aaa8232a1efaefb20114645c824c291ddb721be4f283227aa0304674b64577af81a1cb3a6802d5c19c352e09d390f7855b1672397fa184ff864afed9c9bcf7fef35670844704d183d3942b6ad9ba02a78a602a0339f07b785cc9a027e14cc817b40a2c5701a9da60526f4c151f340220d61e043b35bcbb10605f55283d22f86a0be9e4e25544e95100d7e55c8b82dc4286c2db0d246deb8e4814083ad219c185948c036dde58b23f5cffab47714ea0603d5a8e8ded045a421d39263f7e06176bff01bb63ef51c0401a2a1f7d63e22a0fdfa4d74dedc0b28fca9089b4bca4680e7fb0b094412ac98f3403db2e4cc08347bb8b64da4a1ff3b4f1224b51c978e0f63b515b0f29d24a1e047112ea0aeebc4d63074e021c4f4085e791ef442650182d1925a5086aec8b2d1c50a4c25042f0eb1adf8264c05b0b61da520eb7a88c40cf4ddc0d65d4fb2ff916fb0e58e6f134c45b47674d3baae1b1a01525efeee768485ff8d34045389b950012d0d8b3da04c1878643bfb6f69253c3f0a1301dee65e54a34d1846c4e703468e0fe1998ab1f10af90d7dd0ec8299527a7a073bbef439caa78b2cae2e1b08a929394720dfd51b5dceed59d725dbd3cdc853438ceddb41fc4a89d66fde07494aa62d472e57203421bbb6136bfd26827d7bd97fef6da82af46ee8ae37250bab4b4ce8ffd173ef2e2090dddcfff36c3dd7b34c334a61afce503c388893f5084e56f04f164913a1f0e87eb2d91c7b77ddcdd6079f2173fb56c2037b183b5522bb3a43e5cc08a3e512deda2c8b95edbeb93b667df718cc6bc9666666ac733fd9f1fbf2137b5787f5366af6236c9b4ca38dd3d149502e116b61dbafde243e5d0201674d3bc1892203bbefa677f39d544e96c8663c8ae5d17fca7daed9a5ffb1677693dfb8cb308c453de15b7f591f1c7ca83876e8f9a6a05a6b2c45d7763456bae4b2598ae572ada41a15857c0169b46132a4385a46d565be73731f832f3e8fa2d6d7cc9e15f996160af7ef78d5e9d9f265c330d2050acc23d1c5e9e2beb432764d345a264d6202113c3b8b3f5541e94ba75ea86be77b582719d7b7db54292ca91fd5a6c26971e9eee9ffc0bb317f94b51bbf652c35fe368b77f98bc9fb332b9818d984e6eb8c8f5ccf85e0ca742ac2aa0a71354689104dc7280d4155505a08a4bef76bc1d620b6a2b3a3809dcfffd5692bbc8452cfb2aa75c4308c0fe6635d96c03c5f18a4e91a26823e48fa89fc16946bd4ee07c0db01a06a7b8456904c80dd02cdde4572ddaf61f23356b7bf641846f2af303e92c022320dbc1d7611f9fd986a3dd5b819e55c59bb39793348384d63e68f202fd3d23984c5f9d9cbc7473dff31817944e022260d2c631a078589f02e4dc4c07b86617cf8dffef37ffafc035ebb1fe8bb7240c10000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
