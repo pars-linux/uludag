@@ -17,7 +17,7 @@ def index(req):
   if not data['session'].has_key('uid'):
     util.redirect(req, 'error.py?tag=login_required')
 
-  if not req.form.has_key('edit'):
+  if not req.form.has_key('pid'):
     # Yeni öneri
     # Öneri ekleme hakkı olması yeterli.
     if not op_access(db, data['session']['uid'], 'proposals_add'):
@@ -25,11 +25,11 @@ def index(req):
   else:
     # Öneriyi düzenleme, ya da yeni sürüm ekleme
     # Öneri sorumlusu olma ve öneri ekleme hakkı olması gerekli.
-    if not op_access(db, data['session']['uid'], 'proposals_add') or not is_maintainer(db, data['session']['uid'], req.form['edit']):
+    if not op_access(db, data['session']['uid'], 'proposals_add') or not is_maintainer(db, data['session']['uid'], req.form['pid']):
       util.redirect(req, 'error.py?tag=not_maintainer')
     else:
       data['revision'] = 1
-      data['pid'] = int(req.form['edit'])
+      data['pid'] = int(req.form['pid'])
 
       if req.form.has_key('version'):
         data['version'] = req.form['version']
