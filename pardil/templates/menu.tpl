@@ -20,3 +20,7 @@
     <li><a href="register.py">Kayıt</a></li>
   </ul>
 #end if
+  <ul>
+    <li><a href="proposals.py">Öneriler</a></li>
+    <li><a href="new_proposal.py">Öneri Ekle</a></li>
+  </ul>

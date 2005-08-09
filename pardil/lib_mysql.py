@@ -21,6 +21,9 @@ class mysql_db:
   def row_query(self, str):
     c = self.conn.cursor()
     c.execute(str)
+    r = c.fetchall()
+    if not len(r):
+      return ()
     return c.fetchall()[0]
     
   # Sorgudan yanıt dönmeyecekse kullanılması önerilen fonksiyon...

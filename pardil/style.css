@@ -17,6 +17,7 @@ body {
   padding: 1em 1em 1em 1em;
   border: 0.1em solid #c9c9c8;
   margin-left: 20em;
+  margin-right: 1em;
   background-color: #fff;
 }
 
@@ -48,6 +49,17 @@ h1, h2, h3, h4, h5, h6, p {
   border-bottom: 1px solid #666;
 }
 
+#content a {
+  color: #1e5fb8;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa;
+}
+#content a:hover {
+  color: #1e5fb8;
+  text-decoration: none;
+  border-bottom: 1px solid #666;
+}
+
 /* FORM */
 
 form>fieldset>div {
@@ -72,8 +84,14 @@ form>fieldset>div>label {
   float: left;
 }
 form>fieldset>div>input, form>fieldset>button, form>fieldset>div>textarea, form>fieldset>div>select {
+  /*display: block;*/
+  /*margin-left: 15em;*/
+}
+form>fieldset>div>textarea.widetext {
   display: block;
-  margin-left: 15em;
+  margin-left: 0em;
+  width: 35em;
+  height: 25em;
 }
 form>fieldset>div>div.error_msg {
   color: red;
