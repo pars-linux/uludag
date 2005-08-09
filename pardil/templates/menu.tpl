@@ -24,3 +24,9 @@
     <li><a href="proposals.py">Öneriler</a></li>
     <li><a href="new_proposal.py">Öneri Ekle</a></li>
   </ul>
+  Gereksiz kullananlar cezalandırılacak!
+  <ul>
+    <li><a href="new_proposal.py?edit=1&amp;version=1.0">Öneri # 1 - Sürüm 1.0</a></li>
+    <li><a href="new_proposal.py?edit=1&amp;version=1.1">Öneri # 1 - Sürüm 1.1</a></li>
+    <li><a href="new_proposal.py?edit=1">Öneri # 1 - Son Sürüm</a></li>
+  </ul>

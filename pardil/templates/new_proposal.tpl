@@ -20,12 +20,14 @@
     #end if
   #end def
 
-  #if $status == 'done_published'
+  #if $status == 'done'
     <p>Öneri yayında.</p>
-  #else if $status == 'done_pending'
-    <p>Öneri onay için bekletiliyor.</p>
   #else:
   <form action="new_proposal.py" method="post">
+    #if $revision
+    <input type="hidden" name="pid" value="$pid" />
+    <input type="hidden" name="version" value="$version" />
+    #end if
     <fieldset>
       <legend>Öneri Bilgileri</legend>
       <div class="required">
@@ -37,6 +39,7 @@
       <div class="required">
         <label for="p_version">Sürüm:</label>
         <input id="p_version" name="p_version" type="text" value="#echo $printValue('p_version', '') #" />
+        <small>Sürüm numarasını değiştirmezseniz, belirtilen sürümün üzerine yazılır.</small>
         #echo $printError('p_version')
       </div>
       #end if
