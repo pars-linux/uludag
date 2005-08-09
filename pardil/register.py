@@ -30,8 +30,7 @@ def index(req):
     # E-posta adresini kontrol et.
     if not len(req.form['r_email']):
       data['errors']['r_email'] = 'E-posta adresi boş bırakılamaz.'
-    # FIXME: E-posta adresi denetiminde kullanılan düzenli ifade, ilgili RFC'ye göre değiştirilebilir...
-    elif not re.match('^(.*@.*){,64}$', req.form['r_email']):
+    elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', req.form['r_email']):
       data['errors']['r_email'] = 'E-posta adresi geçerli formatta olmalı.'
     elif db.scalar_query('SELECT Count(*) FROM users WHERE email="%s"' % (db.escape(req.form['r_email']))) > 0:
       data['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
