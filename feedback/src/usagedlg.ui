@@ -17,35 +17,6 @@
     </property>
     <widget class="QLabel">
         <property name="name">
-            <cstring>stepLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>160</x>
-                <y>20</y>
-                <width>100</width>
-                <height>21</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>77</red>
-                <green>77</green>
-                <blue>77</blue>
-            </color>
-        </property>
-        <property name="frameShape">
-            <enum>NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Plain</enum>
-        </property>
-        <property name="text">
-            <string>&lt;b&gt;Adım (3/5)&lt;/b&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
             <cstring>usagePixmap</cstring>
         </property>
         <property name="geometry">
@@ -84,22 +55,6 @@
         </property>
         <property name="alignment">
             <set>WordBreak|AlignTop</set>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>usageMiniLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>350</x>
-                <y>100</y>
-                <width>220</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>(Birden fazla şık işaretleyebilirsiniz)</string>
         </property>
     </widget>
     <widget class="QButtonGroup">
@@ -159,6 +114,58 @@
                 </widget>
             </vbox>
         </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stepLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>100</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>77</red>
+                <green>77</green>
+                <blue>77</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Adım (3/6)&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usageMiniLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>350</x>
+                <y>100</y>
+                <width>220</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>56</red>
+                <green>56</green>
+                <blue>56</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>(Birden fazla şık işaretleyebilirsiniz)</string>
+        </property>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>

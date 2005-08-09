@@ -20,35 +20,6 @@
     </property>
     <widget class="QLabel">
         <property name="name">
-            <cstring>stepLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>160</x>
-                <y>20</y>
-                <width>100</width>
-                <height>21</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>77</red>
-                <green>77</green>
-                <blue>77</blue>
-            </color>
-        </property>
-        <property name="frameShape">
-            <enum>NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Plain</enum>
-        </property>
-        <property name="text">
-            <string>&lt;b&gt;Adım (1/5)&lt;/b&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
             <cstring>experiencePixmap</cstring>
         </property>
         <property name="geometry">
@@ -184,10 +155,39 @@
             <set>WordBreak|AlignTop</set>
         </property>
     </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stepLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>100</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>77</red>
+                <green>77</green>
+                <blue>77</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Adım (1/6)&lt;/b&gt;</string>
+        </property>
+    </widget>
 </widget>
 <images>
     <image name="image0">
-        <data format="PNG" length="798">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000002e549444154388da5934d6814671cc67fb319e80cdd9ad99096dd522453ec616aadec9214b3a2d085684991e2b6c56290824a4112e91778e887821f97a207ad522926146c52c49a164a9616750315764b851d25e07bd885094d6007ba740619b22ffaeadb43a83d150f7d4ecfe1e1f7fcff8707fea78c7f8cae5c2862451fd291bddc774109508092a05cbaea0e3610291e64e2f8470e1effda78e6796d02e8eab72f22b9862f6ccc0c2c4e0219581644f7c1975db2128492b82608cf7bad7871d2024e9babfded37ba4d61db23e3d0119044744d0b7b702f520986c390eaad1aa39bf611a423e28be7986b87effc0b588afb6cb7080b156805b0e72c767d86c6cf27b09a829a9363f4bd63d4e767c0afe1ed18a37179b24f6b4d0a8024b7a67b731686c660a40c372adcf96d162b08f0a52413064c1d7e8bd2ce71dc4fce227e9a4648d90b18ab80b89621b688be9c006973e5abfde0371072f5e70018c062eebb533809d4c210d7b4d2cc4fa74c8093972b6bc24eccee9dbb99393a413701860a141c875ad3a7bc6594cad52b58372a042fe50110496ce3784fac5ea0703c1344a74dfe8561c238269eaf506d0a6805cc5ead608521725d1eafdf432ac829522cfbe91440cea4572868370551d6e2d5018f289ba53c52a63435078b010c0d53f23caab7aab88050c00f934ff600e41d0eb90f55efe2dd84d2d036367ff031c5f55b99993e437fdce529cf65fb914ba83f9a2c5c9a626145e2992092e45c0fc067831bdeac87e15acf8465d981c6efc88d2fe3de532c241db6ef7a9fb95307496edfc4ef84f05021d38e9a98ba7e3c0550dab3efc4e8ba81076d139cc500d18da91d9aa0dd9fa1b4a9ccc98fc6c8fc19516d0972528269317ee0d3f3e40b9d475b58f9f5fbd76dbffe79d06abc928d63a3de6e9395123f91e4143494a4d09f857c71a9b463ef79060b5f187dcfaa470000ad3544d17a5ad57749bb6fb3ecafc574522cf9114fe77fe1b9c2376c70af1b86a11e3b537d6fc5d05aa7f5ddbf1cad75cf7fe5fe06938a4c483766f7a30000000049454e44ae426082</data>
+        <data format="PNG" length="799">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000002e649444154388da5934f681c6500c57fb31970862ecd6c083223b474a44526b2d80d5aba8b1e1ad0ead63fd850b0a9e2a13999b62291168aedc5f4a01645e8621113a4312b12a362d901a96ea0c15d6864462974842ccc420f3360688638643fdaaf1d0fb5f5241e7ca77778fc78eff0e07f4ab96732f7b30af9b5b788453fb71c903e48400a900e3de9a1036b92db8524f98ea3539f2a0f3e9ca90059f38b21a4f623cb2d1dcd824e0d540bba3ebd5bd0160bd8023c297054081ce7d9ca97731af0b10a801abdd4bb1ae8fa739310fb9044f4540d7de73912e93112c7347e6d31ba7b826bf908666b34a2fa2bff00c26440df3102fe37d08de0e034fa2f737817dfa1b012b060588cbef101cd4b33687e0be78543f8f3d3035996910320b537f7da75281f863d55586a706da94e210c6909811587d44e3ecfc88149ac93e7082ecee109d10f28770149b3a0a706bd8fc6411658f8e45574dfc3137f6f061c341ab367308546338e71542dcfe25c2e077076deddfcf67c9d1083dae971c214bc1dc3549eaa129836630727884c13965c82eb6d00fc34d1192c3d70b781c428a9e0af46949d3dc449825874715702b44e48fd928b11c724db4b0c5b2584045b92a3dbcee7006c957e5f42b412100d42759b43649a8c3dbd9fca4c03ad1b229e2853751c1acb2e0ee04be0dbe94d7d004583e3ce1dd9df594fd9577e91e1636f5279ec192ecc7ec89614d447b6b0f7ddefa11b107c35c3f286a0a4c2d534adf5014c3d5e1c5d8ce3ad251556366234ef0a697108e7a6e4ca7accde432768bc378ef86d99f66a0c772469de90472efc3c9503a8bc76f8ccfeeddb6e872a98dd10bf97e01d3f423858a0fae418678f8d62fdb186db09b085005563f2e8d4798a43abf7bfb071f9eb7dbadf3e1576bc5d769228cd28c21682562ab025b4a4a03268224a95eb232f4f9c67a7f3be32f090bc0f00c8b20cfeec3dcaefeeeb18ce01baedad68668eb0bd8655fe0173f8738ad64f8aa2c8ffbc69767343c9b22c9faddf30b22cebfbb7dc5f77ba49fdca1408690000000049454e44ae426082</data>
     </image>
 </images>
 <layoutdefaults spacing="6" margin="11"/>
