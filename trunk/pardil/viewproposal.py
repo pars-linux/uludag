@@ -1,14 +1,19 @@
+#!/usr/bin/python
 from cfg_main import site_config
 from lib_cheetah import build_page
 from lib_std import page_init
 
-def index(req):
-  # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
-  db, sess, data = page_init(req)
+import cgi
 
-  if req.form.has_key('no') and req.form.has_key('version'):
-    pid = int(req.form['no'])
-    version = req.form['version']
+def index():
+  # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
+  db, cookie, data = page_init()
+
+  form = cgi.FieldStorage()
+
+  if form.has_key('pid') and form.has_key('version'):
+    pid = int(form.getvalue('pid'))
+    version = form.getvalue('version')
   else:
     data['status'] = 'error'
 
@@ -28,11 +33,10 @@ def index(req):
     # Öneri içeriğinin hangi formatta kayıt edileceğine henüz karar vermedim.
     data['proposal']['content'] = row[3].replace("\n", "<br/>")
 
-    # TODO: 
-    # Sürüm geçmişi eklenecek.
-  
-  # Oturum bilgilerini kaydet.
-  sess.save()
+    # Sürüm geçmişi
+    data['versions'] = db.query('SELECT proposals_versions.version FROM proposals_versions WHERE pid=%d ORDER BY vid DESC' % (pid))
 
   # Sayfayı derle.
-  return build_page(site_config['path'] + 'templates/viewproposal.tpl', data)
+  build_page(site_config['path'] + 'templates/viewproposal.tpl', data)
+
+index()

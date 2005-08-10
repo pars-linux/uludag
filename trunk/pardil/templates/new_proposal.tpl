@@ -24,10 +24,6 @@
     <p>Öneri yayında.</p>
   #else:
   <form action="new_proposal.py" method="post">
-    #if $revision
-    <input type="hidden" name="pid" value="$pid" />
-    <input type="hidden" name="version" value="$version" />
-    #end if
     <fieldset>
       <legend>Öneri Bilgileri</legend>
       <div class="required">
@@ -36,8 +32,13 @@
         #echo $printError('p_title')
       </div>
       #if $revision
+      <input type="hidden" name="pid" value="$pid" />
+      <div class="optional">
+        <label>Mevcut Sürüm No.:</label>
+        <input id="version" name="version" type="text" value="$version" readonly="readonly" />
+      </div>
       <div class="required">
-        <label for="p_version">Sürüm:</label>
+        <label for="p_version">Yeni Sürüm No.:</label>
         <input id="p_version" name="p_version" type="text" value="#echo $printValue('p_version', '') #" />
         <small>Sürüm numarasını değiştirmezseniz, belirtilen sürümün üzerine yazılır.</small>
         #echo $printError('p_version')

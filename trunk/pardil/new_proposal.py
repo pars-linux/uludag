@@ -1,38 +1,44 @@
+#!/usr/bin/python
+
 from cfg_main import site_config
 
 from lib_cheetah import build_page
-from lib_mysql import mysql_db
-from lib_std import *
-
-from mod_python import Session, util
+from lib_std import page_init
+from lib_sql import *
 
 import re
+import cgi
 
-def index(req):
+def index():
   # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
-  db, sess, data = page_init(req)
+  db, cookie, data = page_init()
 
   data['revision'] = 0
 
   if not data['session'].has_key('uid'):
-    util.redirect(req, 'error.py?tag=login_required')
+    print 'Location: error.py?tag=login_required'
+    print ''
 
-  if not req.form.has_key('pid'):
+  form = cgi.FieldStorage()
+
+  if not form.has_key('pid'):
     # Yeni öneri
     # Öneri ekleme hakkı olması yeterli.
     if not op_access(db, data['session']['uid'], 'proposals_add'):
-      util.redirect(req, 'error.py?tag=not_in_authorized_group')
+      print 'Location: error.py?tag=not_in_authorized_group'
+      print ''
   else:
     # Öneriyi düzenleme, ya da yeni sürüm ekleme
     # Öneri sorumlusu olma ve öneri ekleme hakkı olması gerekli.
-    if not op_access(db, data['session']['uid'], 'proposals_add') or not is_maintainer(db, data['session']['uid'], req.form['pid']):
-      util.redirect(req, 'error.py?tag=not_maintainer')
+    if not op_access(db, data['session']['uid'], 'proposals_add') or not is_maintainer(db, data['session']['uid'], form.getvalue('pid')):
+      print 'Location: error.py?tag=not_maintainer'
+      print ''
     else:
       data['revision'] = 1
-      data['pid'] = int(req.form['pid'])
+      data['pid'] = int(form.getvalue('pid'))
 
-      if req.form.has_key('version'):
-        data['version'] = req.form['version']
+      if form.has_key('version'):
+        data['version'] = form.getvalue('version')
       else:
         data['version'] = db.scalar_query('SELECT version FROM proposals_versions WHERE pid=%d ORDER BY vid DESC LIMIT 1' % (data['pid']))
 
@@ -43,19 +49,23 @@ def index(req):
       data['posted_values']['p_content'] = row[2]
 
   # Form gönderildiyse...
-  if req.form.has_key('new_proposal'):
+  if form.has_key('new_proposal'):
 
     # Gönderilen verileri data['posted_values'] içine aktar.
-    for i in req.form.keys():
-      data['posted_values'][i] = req.form[i]
+    for i in form.keys():
+      data['posted_values'][i] = form.getvalue(i)
 
     # Hata denetimi
 
-    if not len(req.form['p_title']):
+    if not len(form.getvalue('p_title', '')):
       data['errors']['p_title'] = 'Başlık boş bırakılamaz.'
+    elif len(form.getvalue('p_title')) > 100:
+      data['errors']['p_title'] = 'Başlık en fazla 100 karakter olabilir.'
     
     if data['revision']:
-      pass
+      if not len(form.getvalue('p_version', '')):
+        data['errors']['p_version'] = 'Sürüm numarası boş bırakılamaz.'
+
     # Hiç hata yoksa...
     if not len(data['errors']):
 
@@ -67,4 +77,6 @@ def index(req):
       data['status'] = 'done'
       
   # Sayfayı derle.
-  return build_page(site_config['path'] + 'templates/new_proposal.tpl', data)
+  build_page(site_config['path'] + 'templates/new_proposal.tpl', data)
+
+index()

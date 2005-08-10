@@ -8,8 +8,8 @@
     </tr>
     #for $i in $proposals
     <tr>
-      <td><a href="viewproposal.py?no=$i.pid&amp;version=$i.version">$i.pid</a></td>
-      <td><a href="viewproposal.py?no=$i.pid&amp;version=$i.version">$i.title</a></td>
+      <td><a href="viewproposal.py?pid=$i.pid&amp;version=$i.version">$i.pid</a></td>
+      <td><a href="viewproposal.py?pid=$i.pid&amp;version=$i.version">$i.title</a></td>
     </tr>
     #end for
   </table>
