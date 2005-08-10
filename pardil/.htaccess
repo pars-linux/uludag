@@ -1,4 +1,4 @@
-AddHandler mod_python .py
-PythonHandler mod_python.publisher
+#AddHandler mod_python .py
+#PythonHandler mod_python.publisher
 DirectoryIndex index.py index.html
-PythonDebug On
+#PythonDebug On

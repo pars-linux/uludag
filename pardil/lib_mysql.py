@@ -5,7 +5,7 @@ class mysql_db:
   def __init__(self, db_host, db_name, db_user, db_pw):
     self.conn = MySQLdb.connect(host=db_host, user=db_user, passwd=db_pw, db=db_name)
 
-  # 
+  # Sorgula...
   def query(self, str):
     c = self.conn.cursor()
     c.execute(str)
@@ -15,16 +15,19 @@ class mysql_db:
   def scalar_query(self, str):
     c = self.conn.cursor()
     c.execute(str)
-    return c.fetchone()[0]
+    r = c.fetchone()
+    if r:
+      return r[0]
+    return ''
     
   # Sorgu sonunda tek satır veri dönecekse, kullanılması önerilen fonksiyon...
   def row_query(self, str):
     c = self.conn.cursor()
     c.execute(str)
-    r = c.fetchall()
-    if not len(r):
-      return ()
-    return c.fetchall()[0]
+    r = c.fetchone()
+    if r:
+      return r
+    return ()
     
   # Sorgudan yanıt dönmeyecekse kullanılması önerilen fonksiyon...
   def query_com(self, str):

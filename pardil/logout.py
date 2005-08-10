@@ -1,24 +1,23 @@
+#!/usr/bin/python
+
 from cfg_main import site_config
-
 from lib_cheetah import build_page
+from lib_std import page_init
 
-from mod_python import Session
-
-def index(req):
+def index():
+  # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
+  db, cookie, data = page_init()
 
   # Oturum bilgilerini yoket.
-  sess = Session.Session(req)
-  sess.delete()
-
-  # Tema motoruna gönderilecek değişken sözlüğünü oluştur.
-  data = {}
-  data['site_title'] = site_config['title']
-  data['site_path'] = site_config['path']
-
-  data['errors'] = {}
-  data['status'] = ''
-  data['posted_values'] = {}
-  data['session'] = {}
+  if data['session']:
+    db.query_com('DELETE FROM sessions WHERE sid="%s"' % (db.escape(data['session']['sid'])))
+    
+    cookie.set('sid', '')
+    cookie.save()
+    
+    data['session'] = {}
 
   # Sayfayı derle.
-  return build_page(site_config['path'] + 'templates/logout.tpl', data)
+  build_page(site_config['path'] + 'templates/logout.tpl', data)
+
+index()
