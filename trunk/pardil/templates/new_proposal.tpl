@@ -38,9 +38,12 @@
         <input id="version" name="version" type="text" value="$version" readonly="readonly" />
       </div>
       <div class="required">
-        <label for="p_version">Yeni Sürüm No.:</label>
-        <input id="p_version" name="p_version" type="text" value="#echo $printValue('p_version', '') #" />
-        <small>Sürüm numarasını değiştirmezseniz, belirtilen sürümün üzerine yazılır.</small>
+        <label for="p_version">Değişiklik Derecesi:</label>
+        <select id="p_version" name="p_version">
+          <option value="3">Düşük</option>
+          <option value="2">Orta</option>
+          <option value="1">Yüksek</option>
+        </select>
         #echo $printError('p_version')
       </div>
       #end if

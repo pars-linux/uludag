@@ -50,7 +50,7 @@ def index():
 
       # Veritabanına kayıt yap...
       insert_list = {'username': form.getvalue('r_username'), 'password': pass_hash(form.getvalue('r_password')), 'email': form.getvalue('r_email')}
-      db.query_com(db.insert('users', insert_list))
+      uid = db.insert('users', insert_list)
 
       # İşlem durumunu "bitti" olarak belirle
       data['status'] = 'done'

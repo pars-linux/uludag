@@ -5,18 +5,17 @@ from cfg_main import site_config
 from lib_cheetah import build_page
 from lib_std import page_init
 from lib_string import pass_hash, html_escape
+from lib_date import *
 
 import random
-import time
 import re
-import md5
 import cgi
 
 def index():
   # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
   db, cookie, data = page_init()
 
-  sid = pass_hash('%d%f' % (time.time(), random.random()))
+  sid = pass_hash('%d%f' % (now(), random.random()))
   uid = ''
 
   form = cgi.FieldStorage()
@@ -53,7 +52,7 @@ def index():
         data['session']['username'] = form.getvalue('l_username')
 
         # Veritabanına yaz...
-        db.query_com('INSERT INTO sessions (sid, uid, timeB) VALUES ("%s", %d, %d)' % (sid, uid, int(time.time())))
+        db.query_com('INSERT INTO sessions (sid, uid, timeB) VALUES ("%s", %d, %d)' % (sid, uid, now()))
 
         # Çerezlere yaz...
         cookie.set('sid', sid)
