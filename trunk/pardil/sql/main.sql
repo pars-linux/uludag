@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Sunucu: localhost
--- Çıktı Tarihi: Ağustos 09, 2005 at 08:31 PM
+-- Çıktı Tarihi: Ağustos 11, 2005 at 05:41 PM
 -- Server sürümü: 4.1.12
 -- PHP Sürümü: 5.0.4
 -- 
@@ -43,13 +43,15 @@ CREATE TABLE proposals (
   uid int(10) unsigned NOT NULL default '0',
   startup datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (pid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=8 ;
 
 -- 
 -- Tablo döküm verisi `proposals`
 -- 
 
 INSERT INTO proposals (pid, uid, startup) VALUES (1, 0, '2005-07-31 18:33:00');
+INSERT INTO proposals (pid, uid, startup) VALUES (2, 1, '2005-08-10 00:00:00');
+INSERT INTO proposals (pid, uid, startup) VALUES (7, 1, '2005-08-11 14:34:21');
 
 -- --------------------------------------------------------
 
@@ -66,14 +68,18 @@ CREATE TABLE proposals_versions (
   timeB datetime NOT NULL default '0000-00-00 00:00:00',
   changelog tinytext collate utf8_turkish_ci NOT NULL,
   PRIMARY KEY  (vid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=8 ;
 
 -- 
 -- Tablo döküm verisi `proposals_versions`
 -- 
 
-INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (1, 1, '1.0', 'Öneri Takip Sistemi', 'Problem\r\n========\r\n\r\n...\r\n\r\nÇözüm\r\n=======\r\n\r\n...\r\n\r\nKapsam\r\n=======\r\n\r\n...', '2005-08-07 15:00:00', '');
-INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (2, 1, '1.1', 'Öneri Takip Sistemi', 'Problem\r\n========\r\n\r\n...\r\n\r\nÇözüm\r\n=======\r\n\r\n...\r\n\r\nKapsam\r\n=======\r\n\r\n...', '2005-08-07 15:00:00', 'Yazım hataları düzeltildi.');
+INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (1, 1, '1.0.0', 'Öneri Takip Sistemi', 'Problem\r\n========\r\n\r\n...\r\n\r\nÇözüm\r\n=======\r\n\r\n...\r\n\r\nKapsam\r\n=======\r\n\r\n...', '2005-08-07 15:00:00', '');
+INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (2, 1, '1.1.0', 'Öneri Takip Sistemi', 'Problem\r\n========\r\n\r\n...\r\n\r\nÇözüm\r\n=======\r\n\r\n...\r\n\r\nKapsam\r\n=======\r\n\r\n...', '2005-08-07 15:00:00', 'Yazım hataları düzeltildi.');
+INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (3, 2, '1.0.0', 'Hede hede sistemi', 'asdfasdf', '0000-00-00 00:00:00', '');
+INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (4, 2, '2.0.0', 'Hede hodo sistemi', 'afasfd', '0000-00-00 00:00:00', '');
+INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (6, 1, '1.1.1', 'Öneri Takip Sistemi', 'Problem\r\n========\r\n\r\n...\r\n\r\nÇözüm\r\n=======\r\n\r\n...\r\n\r\nKapsam\r\n=======\r\n\r\n...', '2005-08-11 14:16:40', 'hebele...');
+INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (7, 7, '1.0.0', 'test', 'test', '2005-08-11 14:34:21', '');
 
 -- --------------------------------------------------------
 
@@ -147,6 +153,7 @@ INSERT INTO rel_rights (relid, rid, gid, timeB, timeE) VALUES (1, 1, 1, '0000-00
 
 CREATE TABLE rights (
   rid int(10) unsigned NOT NULL auto_increment,
+  category varchar(32) collate utf8_turkish_ci NOT NULL default '',
   keyword varchar(32) collate utf8_turkish_ci NOT NULL default '',
   label varchar(100) collate utf8_turkish_ci NOT NULL default '',
   PRIMARY KEY  (rid)
@@ -156,7 +163,25 @@ CREATE TABLE rights (
 -- Tablo döküm verisi `rights`
 -- 
 
-INSERT INTO rights (rid, keyword, label) VALUES (1, 'proposals_add', 'Öneri Ekleme');
+INSERT INTO rights (rid, category, keyword, label) VALUES (1, 'proposals', 'proposals_add', 'Öneri Ekleme');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tablo yapısı : `sessions`
+-- 
+
+CREATE TABLE sessions (
+  sid varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  uid int(10) unsigned NOT NULL default '0',
+  timeB int(15) NOT NULL default '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+-- 
+-- Tablo döküm verisi `sessions`
+-- 
+
+INSERT INTO sessions (sid, uid, timeB) VALUES ('c0a065c6b0c4e0a11490c776594e042a', 1, 1123771107);
 
 -- --------------------------------------------------------
 
@@ -177,4 +202,4 @@ CREATE TABLE users (
 -- Tablo döküm verisi `users`
 -- 
 
-INSERT INTO users (uid, sid, username, password, email) VALUES (1, '', 'bahadir', '9acbbafe2b77d2bae46a3348065967f0', 'bahadir@haftalik.net');
+INSERT INTO users (uid, sid, username, password, email) VALUES (1, '', 'bahadir', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 'bahadir@haftalik.net');
