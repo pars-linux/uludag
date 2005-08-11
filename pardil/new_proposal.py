@@ -5,9 +5,12 @@ from cfg_main import site_config
 from lib_cheetah import build_page
 from lib_std import page_init
 from lib_sql import *
+from lib_date import *
 
 import re
 import cgi
+
+import sys
 
 def index():
   # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
@@ -63,16 +66,42 @@ def index():
       data['errors']['p_title'] = 'Başlık en fazla 100 karakter olabilir.'
     
     if data['revision']:
-      if not len(form.getvalue('p_version', '')):
-        data['errors']['p_version'] = 'Sürüm numarası boş bırakılamaz.'
+      if int(form.getvalue('p_version', '0')) not in range(1, 4):
+        data['errors']['p_version'] = 'Değişiklik derecesi geçerli değil.'
+
+      if not len(form.getvalue('p_changelog', '')):
+        data['errors']['p_changelog'] = 'Sürüm notları boş bırakılamaz.'
 
     # Hiç hata yoksa...
     if not len(data['errors']):
 
-      # Veritabanına kayıt yap...
-      #insert_list = {}
-      #db.query_com(db.insert('users', insert_list))
+      if data['revision']:
+        version = data['version'].split('.')
+        for k,v in enumerate(version):
+          if form.getvalue('p_version') == str(k + 1):
+            version[k] = str(int(v) + 1)
+        version = '.'.join(version)
+      else:
+        version = '1.0.0'
 
+
+      print 'Content-Type: text/html'
+      print ''
+
+      # Veritabanına kayıt yap...
+      if data['revision']:
+        insert_list = {'pid': data['pid'], 'version': version, 'title': form.getvalue('p_title'), 'content': form.getvalue('p_content'), 'timeB': sql_datetime(now()), 'changelog': form.getvalue('p_changelog')}
+        vid = db.insert('proposals_versions', insert_list)
+        print 'Yeni sürüm eklendi:', str(vid)
+      else:
+        insert_list = {'uid': data['session']['uid'], 'startup': sql_datetime(now()) }
+        pid = db.insert('proposals', insert_list)
+        insert_list = {'pid': pid, 'version': version, 'title': form.getvalue('p_title'), 'content': form.getvalue('p_content'), 'timeB': sql_datetime(now()), 'changelog': ''}
+        vid = db.insert('proposals_versions', insert_list)
+        print 'Yeni öneri eklendi:', str(pid)
+
+      sys.exit()
+      
       # İşlem durumunu "bitti" olarak belirle
       data['status'] = 'done'
       

@@ -1,8 +1,7 @@
 from cfg_main import site_config
 from lib_mysql import mysql_db
 from lib_cookie import cookie
-
-import time
+from lib_date import *
 
 def page_init():
   # Veritabanı bağlantısı kur.
@@ -24,13 +23,13 @@ def page_init():
     row = db.row_query('SELECT users.uid, users.username FROM sessions INNER JOIN users ON users.uid = sessions.uid WHERE sessions.sid="%s"' % (db.escape(ck.get('sid'))))
     if row:
       data['session']['sid'] = ck.get('sid')
-      data['session']['uid'] = row[0]
+      data['session']['uid'] = int(row[0])
       data['session']['username'] = row[1]
 
       # Oturum zaman bilgisini güncelle
-      db.query_com('UPDATE sessions SET timeB=%d WHERE sid="%s"' % (int(time.time()), db.escape(ck.get('sid'))))
+      db.query_com('UPDATE sessions SET timeB=%d WHERE sid="%s"' % (now(), db.escape(ck.get('sid'))))
 
   # Süresi geçen oturumları yoket
-  db.query_com('DELETE FROM sessions WHERE %d-timeB > %s' % (int(time.time()), 1800))
+  db.query_com('DELETE FROM sessions WHERE %d-timeB > %s' % (now(), 1800))
 
   return [db, ck, data]

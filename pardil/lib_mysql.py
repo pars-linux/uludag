@@ -15,19 +15,19 @@ class mysql_db:
   def scalar_query(self, str):
     c = self.conn.cursor()
     c.execute(str)
-    r = c.fetchone()
-    if r:
-      return r[0]
-    return ''
+    try:
+      return c.fetchone()[0]
+    except:
+      pass
     
   # Sorgu sonunda tek satır veri dönecekse, kullanılması önerilen fonksiyon...
   def row_query(self, str):
     c = self.conn.cursor()
     c.execute(str)
-    r = c.fetchone()
-    if r:
-      return r
-    return ()
+    try:
+      return c.fetchone()
+    except:
+      pass
     
   # Sorgudan yanıt dönmeyecekse kullanılması önerilen fonksiyon...
   def query_com(self, str):
@@ -44,6 +44,8 @@ class mysql_db:
     values = []
     for k, v in data.items():
       columns.append(k)
-      values.append(""" "%s" """ % (self.escape(v)))
+      values.append(""" "%s" """ % (self.escape(str(v))))
     queryStr = "INSERT INTO %s (%s) VALUES (%s)" % (table, ','.join(columns), ','.join(values))
-    return queryStr
+    
+    self.query_com(queryStr)
+    return self.scalar_query('SELECT LAST_INSERT_ID()')

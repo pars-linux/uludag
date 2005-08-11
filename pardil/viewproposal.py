@@ -19,7 +19,7 @@ def index():
 
   # FIXME:
   # Öneriyi gönderen kişinin adı yazılacak.
-  row = db.row_query('SELECT proposals.pid, proposals_versions.version, proposals_versions.title, proposals_versions.content FROM proposals INNER JOIN proposals_versions ON proposals.pid=proposals_versions.pid WHERE proposals.pid=%d AND proposals_versions.version=%s' % (pid, version))
+  row = db.row_query('SELECT proposals.pid, proposals_versions.version, proposals_versions.title, proposals_versions.content FROM proposals INNER JOIN proposals_versions ON proposals.pid=proposals_versions.pid WHERE proposals.pid=%d AND proposals_versions.version="%s"' % (pid, version))
 
   if not row:
     data['status'] = 'error'
