@@ -1,7 +1,7 @@
 body {
   margin: 0em;
   padding: 0em;
-  background-color: #f1efeb;
+  background-color: #f0f2f5;
 }
 #container {
   margin: 0em;
@@ -15,7 +15,7 @@ body {
 }
 #content {
   padding: 1em 1em 1em 1em;
-  border: 0.1em solid #c9c9c8;
+  border: 0.1em solid #adb9ca;
   margin-left: 20em;
   margin-right: 1em;
   background-color: #fff;
@@ -103,3 +103,39 @@ form>fieldset>div.required>label {
 }
 form>fieldset>div.optional>label {
 }
+
+/* Content Style */
+
+#content h2, #content h3, #content h4 {
+  color: #597294;
+}
+
+#content ul li {
+  color: #597294;
+  list-style-image: url(images/bullet.png);
+  margin-bottom: 0.2em;
+}
+#content ul li strong {
+  color: #597294;
+}
+#content ul li {
+  color: #000;
+}
+
+/* Menu Style */
+#menu h2, #menu h3, #menu h4 {
+  color: #597294;
+}
+
+#menu ul li {
+  color: #597294;
+  list-style-image: url(images/bullet.png);
+  margin-bottom: 0.2em;
+}
+#menu ul li strong {
+  color: #597294;
+}
+#menu ul li {
+  color: #000;
+}
+
