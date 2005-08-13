@@ -2,6 +2,7 @@
 from cfg_main import site_config
 from lib_cheetah import build_page
 from lib_std import page_init
+from lib_string import html_escape, nl2br
 
 import cgi
 
@@ -25,11 +26,11 @@ def index():
     data['proposal'] = {}
     data['proposal']['pid'] = row[0]
     data['proposal']['version'] = row[1]
-    data['proposal']['title'] = row[2]
+    data['proposal']['title'] = html_escape(row[2])
 
     # FIXME:
     # Öneri içeriğinin hangi formatta kayıt edileceğine henüz karar vermedim.
-    data['proposal']['content'] = row[3].replace("\n", "<br/>")
+    data['proposal']['content'] = nl2br(html_escape(row[3]))
 
     # Sürüm geçmişi
     data['versions'] = db.query('SELECT proposals_versions.version FROM proposals_versions WHERE pid=%d ORDER BY vid DESC' % (pid))

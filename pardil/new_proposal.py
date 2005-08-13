@@ -10,8 +10,6 @@ from lib_date import *
 import re
 import cgi
 
-import sys
-
 def index():
   # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
   db, cookie, data = page_init()
@@ -84,27 +82,20 @@ def index():
       else:
         version = '1.0.0'
 
-
-      print 'Content-Type: text/html'
-      print ''
-
       # Veritabanına kayıt yap...
       if data['revision']:
         insert_list = {'pid': data['pid'], 'version': version, 'title': form.getvalue('p_title'), 'content': form.getvalue('p_content'), 'timeB': sql_datetime(now()), 'changelog': form.getvalue('p_changelog')}
         vid = db.insert('proposals_versions', insert_list)
-        print 'Yeni sürüm eklendi:', str(vid)
+        data['status'] = 'done_revision'
+        data['version'] = version
       else:
         insert_list = {'uid': data['session']['uid'], 'startup': sql_datetime(now()) }
         pid = db.insert('proposals', insert_list)
         insert_list = {'pid': pid, 'version': version, 'title': form.getvalue('p_title'), 'content': form.getvalue('p_content'), 'timeB': sql_datetime(now()), 'changelog': ''}
         vid = db.insert('proposals_versions', insert_list)
-        print 'Yeni öneri eklendi:', str(pid)
+        data['status'] = 'done_new'
+        data['pid'] = pid
 
-      sys.exit()
-      
-      # İşlem durumunu "bitti" olarak belirle
-      data['status'] = 'done'
-      
   # Sayfayı derle.
   build_page(site_config['path'] + 'templates/new_proposal.tpl', data)
 
