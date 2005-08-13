@@ -35,7 +35,7 @@ def index():
     data['versions'] = db.query('SELECT proposals_versions.version FROM proposals_versions WHERE pid=%d ORDER BY vid DESC' % (pid))
     
     # Yorumlar
-    data['comments'] = db.query('SELECT proposals_comments.cid, users.username, proposals_comments.title, proposals_comments.content FROM proposals_comments INNER JOIN users ON users.uid=proposals_comments.uid INNER JOIN proposals_versions ON proposals_versions.vid=proposals_comments.vid WHERE proposals_versions.pid=%d AND proposals_versions.version="%s" ' % (pid, version))
+    data['comments'] = db.query('SELECT proposals_comments.cid, users.username, proposals_comments.title, proposals_comments.content FROM proposals_comments INNER JOIN users ON users.uid=proposals_comments.uid WHERE proposals_comments.pid=%d' % (pid))
 
   else:
     data['status'] = 'error'

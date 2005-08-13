@@ -29,6 +29,10 @@ def page_init():
       # Oturum zaman bilgisini güncelle
       db.query_com('UPDATE sessions SET timeB=%d WHERE sid="%s"' % (now(), db.escape(ck.get('sid'))))
 
+      # Çerez bilgisini güncelle
+      ck.set('sid', data['session']['sid'])
+      ck.save()
+
   # Süresi geçen oturumları yoket
   db.query_com('DELETE FROM sessions WHERE %d-timeB > %s' % (now(), 1800))
 
