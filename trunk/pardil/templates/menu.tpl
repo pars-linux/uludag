@@ -1,4 +1,5 @@
-<h2>Menü</h2>
+<div class="box">
+  <h2>Menü</h2>
 #if $session
   <p>
     Hey ${session['username']}! Sesinden tanıdım seni.
@@ -12,6 +13,9 @@
     <li><a href="register.py">Kayıt</a></li>
   </ul>
 #end if
+</div>
+<div class="box">
+  <h2>Menü</h2>
   <ul>
     <li><a href="admin.py">Yönetici Arabirimi</a></li>
   </ul>
@@ -19,3 +23,4 @@
     <li><a href="proposals.py">Öneriler</a></li>
     <li><a href="new_proposal.py">Öneri Ekle</a></li>
   </ul>
+</div>

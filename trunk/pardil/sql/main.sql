@@ -93,7 +93,7 @@ CREATE TABLE proposals_versions (
 -- Tablo döküm verisi `proposals_versions`
 -- 
 
-INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (1, 1, '1', 'Pardus İyileştirme Listesi', '...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>', '0000-00-00 00:00:00', 'İlk sürüm');
+INSERT INTO proposals_versions (vid, pid, version, title, content, timeB, changelog) VALUES (1, 1, '1.0.0', 'Pardus İyileştirme Listesi', '...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>\r\n...<br/>', '0000-00-00 00:00:00', 'İlk sürüm');
 
 -- --------------------------------------------------------
 
