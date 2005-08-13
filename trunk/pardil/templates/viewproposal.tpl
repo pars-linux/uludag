@@ -12,6 +12,7 @@
   </ul>
   <h3>İçerik</h3>
   $proposal['content']
+  <p>&nbsp;</p>
   <h3>Sürüm Geçmişi</h3>
   <ul>
     #for $i in $versions

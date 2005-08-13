@@ -20,8 +20,16 @@
     #end if
   #end def
 
-  #if $status == 'done'
-    <p>Öneri yayında.</p>
+  #if $status == 'done_revision'
+    <p>$pid numaralı önerinin $version numaralı sürümü eklendi.</p>
+    <ul>
+      <li><a href="viewproposal.py?pid=$pid&amp;version=$version">Öneriyi Göster</a></li>
+    </ul>
+  #else if $status == 'done_new'
+    <p>$pid numaralı öneri eklendi.</p>
+    <ul>
+      <li><a href="viewproposal.py?pid=$pid&amp;version=1.0.0">Öneriyi Göster</a></li>
+    </ul>
   #else:
   <form action="new_proposal.py" method="post">
     <fieldset>
