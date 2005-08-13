@@ -16,7 +16,7 @@
   </head>
   <body>
     <div id="container">
-      <h1><span>$site_title</span></h1>
+      <h1><a href="index.py">$site_title</a></h1>
       <div id="menu">
         #include $site_path + "templates/menu.tpl"
       </div>

@@ -27,7 +27,7 @@
     #if len($comments)
       <ul>
       #for $i in $comments
-        #echo """<li><b>%s</b> (<a href="#">%s</a>)<br/>%s</li>""" % ($i[2], $i[1], $i[3])
+        #echo """<li><div class="r1"><strong>%s</strong> (<a href="#">%s</a>)</div><div class="r2">%s</div</li>""" % ($i[2], $i[1], $i[3])
       #end for
      </ul>
     #else

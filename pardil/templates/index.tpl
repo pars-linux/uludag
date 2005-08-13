@@ -1,8 +1,13 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  <h2>Başlık</h2>
-  <p>
-    Yazı. <a href="1.html">Köprü</a>. <a href="2.html">Diğer köprü</a>.
-  </p>
+  #for $i in $news
+    <div class="news">
+      <div class="logo"><img src="$i.icon" alt="" /></div>
+      <div class="content">
+        <h2>$i.title</h2>
+        $i.content
+      </div>
+    </div>
+  #end for
 </div>
 #include $site_path + "templates/footer.tpl"
