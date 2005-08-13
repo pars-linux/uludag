@@ -13,6 +13,9 @@
   </ul>
 #end if
   <ul>
+    <li><a href="admin.py">Yönetici Arabirimi</a></li>
+  </ul>
+  <ul>
     <li><a href="proposals.py">Öneriler</a></li>
     <li><a href="new_proposal.py">Öneri Ekle</a></li>
   </ul>

@@ -9,7 +9,6 @@
   <h3>Künye</h3>
   <ul>
     <li><strong>Sürüm:</strong> $proposal['version']</li>
-    <li><strong>Etiketler:</strong> <a href="?keys=pisi">PISI</a> <a href="?keys=pisi">COMAR</a> <a href="?keys=pisi">YALI</a></li>
   </ul>
   <h3>İçerik</h3>
   $proposal['content']
@@ -24,11 +23,17 @@
     #end for
   </ul>
   <h3>Yorumlar</h3>
-  <ul>
-    #for $i in $comments
-      #echo """<li><b>%s</b> (<a href="#">%s</a>)<br/>%s</li>""" % ($i[2], $i[1], $i[3])
-    #end for
-  </ul>
+    #if len($comments)
+      <ul>
+      #for $i in $comments
+        #echo """<li><b>%s</b> (<a href="#">%s</a>)<br/>%s</li>""" % ($i[2], $i[1], $i[3])
+      #end for
+     </ul>
+    #else
+      <p>
+        Önerinin bu sürümüne hiç yorum yapılmamış.
+      </p>
+    #end if
   #end if
 </div>
 #include $site_path + "templates/footer.tpl"

@@ -122,6 +122,19 @@ form>fieldset>div.optional>label {
   color: #000;
 }
 
+#content table {
+}
+#content table tr th {
+  text-align: left;
+  background-color: #f0f2f5;
+  color: #597294;
+}
+#content table tr td {
+  padding: 0.2em;
+  text-align: left;
+}
+
+
 /* Menu Style */
 #menu h2, #menu h3, #menu h4 {
   color: #597294;

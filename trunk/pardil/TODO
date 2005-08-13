@@ -11,9 +11,10 @@
   / Öneriye yorum ekleme
   / Arşiv ve arama sayfası
 
-/ Yönetim Arabirimi
-  / Grup yönetimi
-  / Erişim hakları yönetimi
++ Yönetim Arabirimi
+  + Grup yönetimi
+  + Erişim hakları yönetimi
+  + Kullanıcı - Grup yönetimi
 
 0.2
 ===
