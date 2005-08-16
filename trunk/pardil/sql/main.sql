@@ -83,7 +83,10 @@ CREATE TABLE proposals_versions (
   pid int(10) unsigned NOT NULL default '0',
   version varchar(16) collate utf8_turkish_ci NOT NULL default '0',
   title varchar(100) collate utf8_turkish_ci NOT NULL default '',
+  summary text collate utf8_turkish_ci NOT NULL,
+  purpose text collate utf8_turkish_ci NOT NULL,
   content text collate utf8_turkish_ci NOT NULL,
+  solution text collate utf8_turkish_ci NOT NULL,
   timeB datetime NOT NULL default '0000-00-00 00:00:00',
   changelog tinytext collate utf8_turkish_ci NOT NULL,
   PRIMARY KEY  (vid)

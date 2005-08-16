@@ -20,7 +20,7 @@ def index():
     data['status'] = 'error'
 
   if pid and version:
-    row = db.row_query('SELECT proposals.pid, proposals_versions.version, proposals_versions.title, proposals_versions.content FROM proposals INNER JOIN proposals_versions ON proposals.pid=proposals_versions.pid WHERE proposals.pid=%d AND proposals_versions.version="%s"' % (pid, version))
+    row = db.row_query('SELECT proposals.pid, proposals_versions.version, proposals_versions.title, proposals_versions.summary, proposals_versions.purpose, proposals_versions.content, proposals_versions.solution FROM proposals INNER JOIN proposals_versions ON proposals.pid=proposals_versions.pid WHERE proposals.pid=%d AND proposals_versions.version="%s"' % (pid, version))
 
   if row:
     data['proposal'] = {}
@@ -30,7 +30,10 @@ def index():
 
     # FIXME:
     # Öneri içeriğinin hangi formatta kayıt edileceğine henüz karar vermedim.
-    data['proposal']['content'] = nl2br(html_escape(row[3]))
+    data['proposal']['summary'] = nl2br(html_escape(row[3]))
+    data['proposal']['purpose'] = nl2br(html_escape(row[4]))
+    data['proposal']['content'] = nl2br(html_escape(row[5]))
+    data['proposal']['solution'] = nl2br(html_escape(row[6]))
 
     # Sürüm geçmişi
     data['versions'] = db.query('SELECT proposals_versions.version FROM proposals_versions WHERE pid=%d ORDER BY vid DESC' % (pid))
