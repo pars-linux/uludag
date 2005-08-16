@@ -10,8 +10,18 @@
   <ul>
     <li><strong>Sürüm:</strong> $proposal['version']</li>
   </ul>
+  <h3>Özet</h3>
+  <p>
+    $proposal['summary']
+  </p>
+  <h3>Amaç</h3>
+  $proposal['purpose']
+  <p>&nbsp;</p>
   <h3>İçerik</h3>
   $proposal['content']
+  <p>&nbsp;</p>
+  <h3>Çözüm</h3>
+  $proposal['solution']
   <p>&nbsp;</p>
   <h3>Sürüm Geçmişi</h3>
   <ul>

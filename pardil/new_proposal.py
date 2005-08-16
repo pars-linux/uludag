@@ -43,11 +43,14 @@ def index():
       else:
         data['version'] = db.scalar_query('SELECT version FROM proposals_versions WHERE pid=%d ORDER BY vid DESC LIMIT 1' % (data['pid']))
 
-      row = db.row_query('SELECT version, title, content FROM proposals_versions WHERE pid=%d AND version="%s"' % (data['pid'], db.escape(data['version'])))
+      row = db.row_query('SELECT version, title, summary, purpose, content, solution FROM proposals_versions WHERE pid=%d AND version="%s"' % (data['pid'], db.escape(data['version'])))
 
       data['posted_values']['p_version'] = row[0]
       data['posted_values']['p_title'] = row[1]
-      data['posted_values']['p_content'] = row[2]
+      data['posted_values']['p_summary'] = row[2]
+      data['posted_values']['p_purpose'] = row[3]
+      data['posted_values']['p_content'] = row[4]
+      data['posted_values']['p_solution'] = row[5]
 
   # Form gönderildiyse...
   if form.has_key('new_proposal'):
@@ -84,14 +87,14 @@ def index():
 
       # Veritabanına kayıt yap...
       if data['revision']:
-        insert_list = {'pid': data['pid'], 'version': version, 'title': form.getvalue('p_title'), 'content': form.getvalue('p_content'), 'timeB': sql_datetime(now()), 'changelog': form.getvalue('p_changelog')}
+        insert_list = {'pid': data['pid'], 'version': version, 'title': form.getvalue('p_title'), 'summary': form.getvalue('p_summary'), 'purpose': form.getvalue('p_purpose'), 'content': form.getvalue('p_content'), 'solution': form.getvalue('p_solution'), 'timeB': sql_datetime(now()), 'changelog': form.getvalue('p_changelog')}
         vid = db.insert('proposals_versions', insert_list)
         data['status'] = 'done_revision'
         data['version'] = version
       else:
         insert_list = {'uid': data['session']['uid'], 'startup': sql_datetime(now()) }
         pid = db.insert('proposals', insert_list)
-        insert_list = {'pid': pid, 'version': version, 'title': form.getvalue('p_title'), 'content': form.getvalue('p_content'), 'timeB': sql_datetime(now()), 'changelog': ''}
+        insert_list = {'pid': pid, 'version': version, 'title': form.getvalue('p_title'), 'summary': form.getvalue('p_summary'), 'purpose': form.getvalue('p_purpose'), 'content': form.getvalue('p_content'), 'solution': form.getvalue('p_solution'), 'timeB': sql_datetime(now()), 'changelog': form.getvalue('p_changelog')}
         vid = db.insert('proposals_versions', insert_list)
         data['status'] = 'done_new'
         data['pid'] = pid

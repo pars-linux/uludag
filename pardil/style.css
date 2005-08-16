@@ -1,11 +1,16 @@
 body {
   margin: 0em;
   padding: 0em;
-  background-color: #f0f2f5;
+  background-color: #dfe3ea;
+  text-align: center;
 }
 #container {
-  margin: 0em;
+  margin: 3.5em auto;
   padding: 0em;
+  border: 0.1em solid #b2bdcd;
+  background-color: #fff;
+  text-align: left;
+  width: 90%;
 }
 
 #menu {
@@ -15,10 +20,9 @@ body {
 }
 #content {
   padding: 1em 1em 1em 1em;
-  border: 0.1em solid #adb9ca;
   margin-left: 20em;
   margin-right: 1em;
-  background-color: #fff;
+  min-height: 40em;
 }
 
 h1 {
@@ -29,7 +33,7 @@ h1 {
 h1>a {
   padding-left: 125px;
   line-height: 120px;
-  font-size: 2em;
+  font-size: 1.6em;
   color: #597294;
   text-decoration: none;
 }

@@ -57,10 +57,31 @@
       #end if
     </fieldset>
     <fieldset>
+      <legend>Öneri Özeti</legend>
+      <div class="required">
+        <textarea class="widetext" id="p_summary" name="p_summary">#echo $printValue('p_summary', '') #</textarea>
+        #echo $printError('p_summary')
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Amaç</legend>
+      <div class="required">
+        <textarea class="widetext" id="p_purpose" name="p_purpose">#echo $printValue('p_purpose', '') #</textarea>
+        #echo $printError('p_purpose')
+      </div>
+    </fieldset>
+    <fieldset>
       <legend>Öneri İçeriği</legend>
       <div class="required">
         <textarea class="widetext" id="p_content" name="p_content">#echo $printValue('p_content', '') #</textarea>
         #echo $printError('p_content')
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Çözüm</legend>
+      <div class="required">
+        <textarea class="widetext" id="p_solution" name="p_solution">#echo $printValue('p_solution', '') #</textarea>
+        #echo $printError('p_solution')
       </div>
     </fieldset>
     #if $revision
