@@ -28,6 +28,7 @@ class Goodbye;
 class Purpose;
 class Experience;
 class Usage;
+class Opinion;
 
 class Feedback : public KWizard
 {
@@ -50,6 +51,7 @@ private:
 	Welcome *welcome;
 	Question *question;
 	Purpose *purpose;
+    Opinion *opinion;
 	Experience *experience;
 	Usage *usage;
 	HardwareInfo *hardwareinfo;

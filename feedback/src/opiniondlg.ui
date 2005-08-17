@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>OpinionsDlg</class>
+<class>OpinionDlg</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>OpinionsDlg</cstring>
+        <cstring>OpinionDlg</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -17,7 +17,7 @@
     </property>
     <widget class="QLabel">
         <property name="name">
-            <cstring>opinionsPixmap</cstring>
+            <cstring>opinionPixmap</cstring>
         </property>
         <property name="geometry">
             <rect>
@@ -62,7 +62,7 @@
     </widget>
     <widget class="QLabel">
         <property name="name">
-            <cstring>opinionsLabel</cstring>
+            <cstring>opinionLabel</cstring>
         </property>
         <property name="geometry">
             <rect>
@@ -88,7 +88,7 @@
     </widget>
     <widget class="QLabel">
         <property name="name">
-            <cstring>opinionsMiniLabel</cstring>
+            <cstring>opinionMiniLabel</cstring>
         </property>
         <property name="geometry">
             <rect>
@@ -122,7 +122,7 @@ genel kalite, amaca uygunluk, yeterlilik vb)</string>
     </widget>
     <widget class="QTextEdit">
         <property name="name">
-            <cstring>opinionsEdit</cstring>
+            <cstring>opinionEdit</cstring>
         </property>
         <property name="geometry">
             <rect>

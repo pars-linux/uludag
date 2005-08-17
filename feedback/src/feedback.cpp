@@ -19,6 +19,7 @@
 #include "question.h"
 #include "usage.h"
 #include "welcome.h"
+#include "opinion.h"
 
 #include "feedback.h"
 #include "feedback.moc"
@@ -63,6 +64,11 @@ Feedback::Feedback( QWidget *parent, const char *name )
 	addPage( hardwareinfo, i18n( "Hardware Info" ) );
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 
+    /* Opinion Page */	
+	opinion = new Opinion( this );
+	addPage( opinion, i18n( "Opinion Page" ) );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
+    
 	/* Goodbye Page */
 	goodbye = new Goodbye( this );
 	addPage( goodbye, i18n( "Goodbye" ) );
