@@ -59,16 +59,16 @@ Feedback::Feedback( QWidget *parent, const char *name )
 	addPage( question, i18n( "General Ideas" ) );
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 
-	/* Hardware Info Page */	
-	hardwareinfo = new HardwareInfo( this );
-	addPage( hardwareinfo, i18n( "Hardware Info" ) );
-	setHelpEnabled( QWizard::page( ++page_number ), false );
-
     /* Opinion Page */	
 	opinion = new Opinion( this );
 	addPage( opinion, i18n( "Opinion Page" ) );
 	setHelpEnabled( QWizard::page( ++page_number ), false );
     
+	/* Hardware Info Page */	
+	hardwareinfo = new HardwareInfo( this );
+	addPage( hardwareinfo, i18n( "Hardware Info" ) );
+	setHelpEnabled( QWizard::page( ++page_number ), false );
+
 	/* Goodbye Page */
 	goodbye = new Goodbye( this );
 	addPage( goodbye, i18n( "Goodbye" ) );
