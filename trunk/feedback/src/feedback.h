@@ -51,7 +51,7 @@ private:
 	Welcome *welcome;
 	Question *question;
 	Purpose *purpose;
-    Opinion *opinion;
+	Opinion *opinion;
 	Experience *experience;
 	Usage *usage;
 	HardwareInfo *hardwareinfo;
