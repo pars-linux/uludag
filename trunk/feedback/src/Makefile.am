@@ -5,6 +5,7 @@ feedback_SOURCES = welcomedlg.ui welcome.cpp \
 	purposedlg.ui purpose.cpp \
 	usagedlg.ui usage.cpp \
 	questiondlg.ui question.cpp \
+	opiniondlg.ui opinion.cpp \
 	hardwareinfodlg.ui hardwareinfo.cpp \
 	goodbyedlg.ui goodbye.cpp \
 	feedback.cpp main.cpp
