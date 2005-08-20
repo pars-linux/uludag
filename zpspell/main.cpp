@@ -130,6 +130,7 @@ int main( int argc, char** argv )
         return z_interactive_mode( zemberek );
     }
 
+    // non-interactive mode (singlerun)
     for ( int i = 1; i < argc; ++i ) {
         ZString zstr = zemberek.checkString( argv[i], 0 );
         switch ( zstr.status() ) {
@@ -150,22 +151,4 @@ int main( int argc, char** argv )
     }
 
     return 0;
-/*
-
-        string str( argv[i] );
-        cout << str;
-
-        switch ( zemberek.checkString( str ) ) {
-        case Z_TRUE:
-            cout << ": DOGRU" << endl;
-            break;
-        case Z_FALSE:
-            cout << ": YANLIS" << endl;
-            break;
-        default:
-            break;
-        }
-
-    }
-*/
 }
