@@ -28,4 +28,4 @@ feedback_pics_datadir = $(kde_datadir)/feedback/pics
 podir=../po
 COMMAND=$(XGETTEXT) --foreign-user --from-code=utf-8 -C -ci18n -ki18n -ktr2i18n -kI18N_NOOP -kI18N_NOOP2 -kaliasLocale
 messages:
-	$(COMMAND) *.cpp *.h -o $(podir)/feedback.pot
+	$(COMMAND) *.cpp *.h *.ui -o $(podir)/feedback.pot

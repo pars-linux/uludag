@@ -36,42 +36,42 @@ Feedback::Feedback( QWidget *parent, const char *name )
 
 	/* Welcome Page */
 	welcome = new Welcome( this );
-	addPage( welcome, i18n( "Welcome" ) );
+	addPage( welcome, i18n( "Hoşgeldiniz" ) );
 	setHelpEnabled( QWizard::page( page_number ), false );
 	
 	/* Experience Page */
 	experience = new Experience( this, 0 );
-	addPage( experience, i18n( "Experience" ));
+	addPage( experience, i18n( "Uzmanlık Seviyeniz?" ));
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 							
 	/* Purpose Use Page */
 	purpose = new Purpose( this, 0 );
-	addPage( purpose, i18n( "Purpose" ));
+	addPage( purpose, i18n( "Pardus Linux'u ne amaçla kullanıyorsunuz?" ));
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 
 	/* Usage Page */
 	usage = new Usage( this, 0 );
-	addPage( usage, i18n( "Usage" ));
+	addPage( usage, i18n( "Pardus Linux'u nerede kullanıyorsunuz?" ));
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 
 	/*  General Ideas Page */
 	question = new Question( this, 0 );
-	addPage( question, i18n( "General Ideas" ) );
+	addPage( question, i18n( "Pardus hakkındaki genel düşünceleriniz nedir?" ) );
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 
     /* Opinion Page */	
 	opinion = new Opinion( this );
-	addPage( opinion, i18n( "Opinion Page" ) );
+	addPage( opinion, i18n( "Pardus Linux hakkındaki düşünceleriniz?" ) );
 	setHelpEnabled( QWizard::page( ++page_number ), false );
     
 	/* Hardware Info Page */	
 	hardwareinfo = new HardwareInfo( this );
-	addPage( hardwareinfo, i18n( "Hardware Info" ) );
+	addPage( hardwareinfo, i18n( "Donanım bilgileri" ) );
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 
 	/* Goodbye Page */
 	goodbye = new Goodbye( this );
-	addPage( goodbye, i18n( "Goodbye" ) );
+	addPage( goodbye, i18n( "Teşekkürler" ) );
 	setHelpEnabled( QWizard::page( ++page_number ), false );
 
 	/* Finish */
