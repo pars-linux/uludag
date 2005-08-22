@@ -1,6 +1,9 @@
 #LyX 1.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 221
 \textclass article
+\begin_preamble
+\usepackage{hyperref}
+\end_preamble
 \language turkish
 \inputencoding auto
 \fontscheme pslatex
@@ -47,6 +50,105 @@ r.
 
 \layout Section
 
+Actions
+\layout Standard
+
+Bir uygulamanýn ikili bir PÝSÝ paketi haline getirilmesi sürecinde PÝSÝ'nin
+ build sistemi tarafýndan kullanýlan minimum bileþenler, paketlenecek uygulamaný
+n kaynak kodu, 
+\emph on 
+pspec.xml
+\emph default 
+ dosyasý ve 
+\emph on 
+actions.py
+\emph default 
+ dosyasýdýr.
+ Ayrýca varsa yamalar ve ek dosyalar da uygulamanýn kaynak kodunun parçasý
+ olarak düþünülebilir.
+ 
+\series bold 
+pspec.xml
+\series default 
+ dosyasý uygulamanýn kaynak kodunu taþýyan arþiv dosyasýnýn nereden çekileceði,
+ bu arþiv dosyasý açýlýrken hangi yamalarýn uygulanacaðý, bu uygulamayý
+ kimin paketliyor olduðu, uygulamanýn adý, sürüm numarasý gibi meta sayýlabilece
+k bilgilerin saklandýðý dosya iken, bu uygulamanýn derlenmesi ve build edilmesi
+ aþamasýnda yapýlmasý gereken iþlerin tarifi de, bu belgede bahsedilecek
+ olan 
+\series bold 
+Actions API
+\series default 
+'dan faydalanan 
+\series bold 
+actions.py
+\series default 
+ dosyasýdýr.
+ Örnek bir actions.py dosyasý aþaðýdaki gibidir:
+\layout LyX-Code
+
+#!/usr/bin/python 
+\layout LyX-Code
+
+# -*- coding: utf-8 -*-
+\layout LyX-Code
+
+\layout LyX-Code
+
+from pisi.actionsapi import autotools
+\layout LyX-Code
+
+from pisi.actionsapi import pisitools
+\layout LyX-Code
+
+from pisi.actionsapi import get
+\layout LyX-Code
+
+\layout LyX-Code
+
+\layout LyX-Code
+
+def setup():
+\layout LyX-Code
+
+    autotools.configure("--enable-nls --bindir=/bin --with-rmt=/usr/sbin/rmt")
+\layout LyX-Code
+
+\layout LyX-Code
+
+def build():
+\layout LyX-Code
+
+    autotools.make()
+\layout LyX-Code
+
+\layout LyX-Code
+
+def install():
+\layout LyX-Code
+
+    autotools.rawInstall("DESTDIR=%s" % get.installDIR())
+\layout LyX-Code
+
+    pisitools.dodoc("ChangeLog", "NEWS", "README", "INSTALL")
+\layout LyX-Code
+
+    pisitools.remove("/usr/share/man/man1/mt.1")
+\layout LyX-Code
+
+    pisitools.removeDir("/usr/libexec")
+\layout LyX-Code
+
+\layout Standard
+
+actions.py dosyasý ile ilgili daha fazla bilgi PÝSÝ Mimari Belgesi'nden alýnabili
+r.
+ 
+\layout Standard
+
+Bu belgede Actions API üzerinde durulacaktýr.
+\layout Section
+
 Actions API
 \layout Standard
 
@@ -62,7 +164,8 @@ actions.py
 \emph default 
  isimli dosya içerisinden paket yapýcýlarýn kullanabileceði fonksiyonlarý
  barýndýran kütüphanedir.
- Paket yapýlýrken bu kütüphane dýþýnda herhangi bir Python modülü kullanýlmaz.
+ Paket yapýlýrken bu kütüphane dýþýnda herhangi bir Python modülü kullanýlmamasý
+ þiddetle tavsiye edilir, fakat paketleyici bu konuda özgürdür.
 \layout Standard
 
 
@@ -1030,7 +1133,8 @@ gnuconfig_update
 (None)
 \layout Standard
 
-copy newest config.* onto source's 
+En yeni config.* dosyalarýný kaynak üzerine kopyalar.
+ 
 \layout Subsection
 
 libtoolize
