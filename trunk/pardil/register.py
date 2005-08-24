@@ -20,7 +20,8 @@ def index():
 
     # Gönderilen verileri data['posted_values'] içine aktar.
     for i in form.keys():
-      data['posted_values'][i] = form[i]
+      data['posted_values'][i] = form.getvalue(i)
+      
     # Kullanıcı adını kontrol et.
     if not len(form.getvalue('r_username', '')):
       data['errors']['r_username'] = 'Kullanıcı adı boş bırakılamaz.'
