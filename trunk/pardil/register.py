@@ -40,7 +40,7 @@ def index():
     # Parolayı kontrol et.
     if not len(form.getvalue('r_password', '')):
       data['errors']['r_password'] = 'Parola boş bırakılamaz.'
-    elif form['r_password'] != form.getvalue('r_password2'):
+    elif form.getvalue('r_password') != form.getvalue('r_password2'):
       data['errors']['r_password'] = 'İki parola, birbiriyle aynı olmalı.'
     elif not re.match('^.{6}$', form.getvalue('r_password')):
       data['errors']['r_password'] = 'Parola en az 6 karakter uzunlukta olmalı.'
