@@ -9,16 +9,13 @@
   #end def
 
   #def printValue($s, $t='')
-    #if not $errors.has_key($s) and $posted_values.has_key($s)
-      #echo $posted_values[$s]
+    #if not $errors.has_key($s) and $posted.has_key($s)
+      #echo $posted[$s]
     #else
       #echo $t
     #end if
   #end def
 
-  #if $status == 'done'
-    <p>Kullanıcı girişi başarılı.</p>
-  #else:
   <form action="login.py" method="post">
     <fieldset>
       <legend>Hesap Bilgileri</legend>
@@ -34,9 +31,8 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="login" value="1">Giriş</button>
+      <button type="submit" name="action" value="login">Giriş</button>
     </fieldset>
   </form>
-  #end if
 </div>
 #include $site_path + "templates/footer.tpl"

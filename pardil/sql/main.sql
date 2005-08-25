@@ -61,8 +61,8 @@ CREATE TABLE proposals_comments (
   cid int(10) unsigned NOT NULL auto_increment,
   pid int(10) unsigned NOT NULL default '0',
   uid int(10) unsigned NOT NULL default '0',
-  title varchar(100) collate utf8_turkish_ci NOT NULL default '',
   content text collate utf8_turkish_ci NOT NULL,
+  timeB datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (cid)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=2 ;
 

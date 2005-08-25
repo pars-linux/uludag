@@ -1,6 +1,6 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  <h2>Yeni Öneri</h2>
+  <h2>Yeni Sürüm</h2>
 
   #def printError($s)
     #if $errors.has_key($s)
@@ -16,13 +16,27 @@
     #end if
   #end def
 
-  <form action="new_proposal.py" method="post">
+  <form action="edit_proposal.py" method="post">
     <fieldset>
       <legend>Öneri Bilgileri</legend>
       <div class="required">
         <label for="p_title">Başlık:</label>
-        <input type="text" id="p_title" name="p_title" size="35" value="#echo $printValue('p_title', '') #" />
+        <input type="text" id="p_title" name="p_title" value="#echo $printValue('p_title', '') #" size="35" />
         #echo $printError('p_title')
+      </div>
+      <input type="hidden" name="pid" value="$pid" />
+      <div class="optional">
+        <label>Mevcut Sürüm No.:</label>
+        <input id="version" name="version" type="text" value="$version" readonly="readonly" />
+      </div>
+      <div class="required">
+        <label for="p_version">Değişiklik Derecesi:</label>
+        <select id="p_version" name="p_version">
+          <option value="3">Düşük</option>
+          <option value="2">Orta</option>
+          <option value="1">Yüksek</option>
+        </select>
+        #echo $printError('p_version')
       </div>
     </fieldset>
     <fieldset>
@@ -54,7 +68,14 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="action" value="new">Gönder</button>
+      <legend>Sürüm Notları</legend>
+      <div class="required">
+        <textarea class="widetext" id="p_changelog" name="p_changelog" cols="60" rows="5">#echo $printValue('p_changelog', '') #</textarea>
+        #echo $printError('p_changelog')
+      </div>
+    </fieldset>
+    <fieldset>
+      <button type="submit" name="action" value="edit">Gönder</button>
     </fieldset>
   </form>
 </div>

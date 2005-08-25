@@ -1,50 +1,105 @@
 #!/usr/bin/python
-from cfg_main import site_config
-from lib_cheetah import build_page
-from lib_std import page_init
-from lib_string import html_escape, nl2br
+# -*- coding: utf-8 -*-
 
-import cgi
+from pardilskel import pardil_page
+from cfg_main import site_config
+
+from pyonweb.libstring import *
+from lib_date import *
+
+p = pardil_page()
+
+p.name = 'pardil_viewproposals'
+p.title = site_config['title']
 
 def index():
-  # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
-  db, cookie, data = page_init()
-
-  form = cgi.FieldStorage()
-
-  #if form.has_key('pid') and form.has_key('version'):
-  try:
-    pid = int(form.getvalue('pid'))
-    version = form.getvalue('version')
-  except:
-    data['status'] = 'error'
+  pid = int(p.form['pid'])
+  version = p.form['version']
 
   if pid and version:
-    row = db.row_query('SELECT proposals.pid, proposals_versions.version, proposals_versions.title, proposals_versions.summary, proposals_versions.purpose, proposals_versions.content, proposals_versions.solution FROM proposals INNER JOIN proposals_versions ON proposals.pid=proposals_versions.pid WHERE proposals.pid=%d AND proposals_versions.version="%s"' % (pid, version))
+    q = """SELECT
+             proposals.pid,
+             proposals_versions.version,
+             proposals_versions.title,
+             proposals_versions.summary,
+             proposals_versions.purpose,
+             proposals_versions.content,
+             proposals_versions.solution
+           FROM proposals
+             INNER JOIN proposals_versions ON proposals.pid=proposals_versions.pid
+           WHERE
+             proposals.pid=%d AND
+             proposals_versions.version="%s"
+        """ % (pid, version)
+    row = p.db.row_query(q)
 
-  if row:
-    data['proposal'] = {}
-    data['proposal']['pid'] = row[0]
-    data['proposal']['version'] = row[1]
-    data['proposal']['title'] = html_escape(row[2])
+    if row:
+      p['proposal'] = {}
+      p['proposal']['pid'] = row[0]
+      p['proposal']['version'] = html_escape(row[1])
+      p['proposal']['title'] = html_escape(row[2])
 
-    # FIXME:
-    # Öneri içeriğinin hangi formatta kayıt edileceğine henüz karar vermedim.
-    data['proposal']['summary'] = nl2br(html_escape(row[3]))
-    data['proposal']['purpose'] = nl2br(html_escape(row[4]))
-    data['proposal']['content'] = nl2br(html_escape(row[5]))
-    data['proposal']['solution'] = nl2br(html_escape(row[6]))
+      # FIXME:
+      # Öneri içeriğinin hangi formatta kayıt edileceğine henüz karar vermedim.
+      p['proposal']['summary'] = nl2br(html_escape(row[3]))
+      p['proposal']['purpose'] = nl2br(html_escape(row[4]))
+      p['proposal']['content'] = nl2br(html_escape(row[5]))
+      p['proposal']['solution'] = nl2br(html_escape(row[6]))
 
-    # Sürüm geçmişi
-    data['versions'] = db.query('SELECT proposals_versions.version FROM proposals_versions WHERE pid=%d ORDER BY vid DESC' % (pid))
+      # Sürüm geçmişi
+      q = """SELECT proposals_versions.version
+             FROM proposals_versions
+             WHERE pid=%d
+             ORDER BY vid DESC
+          """ % (pid)
+      rows = p.db.query(q)
+      
+      p['versions'] = []
+      for i in rows:
+        p['versions'].append(i[0])
     
-    # Yorumlar
-    data['comments'] = db.query('SELECT proposals_comments.cid, users.username, proposals_comments.title, proposals_comments.content FROM proposals_comments INNER JOIN users ON users.uid=proposals_comments.uid WHERE proposals_comments.pid=%d' % (pid))
+      # Yorumlar
+      q = """SELECT
+               proposals_comments.cid,
+               users.username,
+               proposals_comments.content
+             FROM proposals_comments
+               INNER JOIN users ON users.uid=proposals_comments.uid
+             WHERE proposals_comments.pid=%d
+          """ % (pid)
+      rows = p.db.query(q)
 
+      p['comments'] = []
+      for i in rows:
+        p['comments'].append({'user': i[1], 'comment': nl2br(html_escape(i[2]))})
+
+      # Yorum ekleme
+      if p.access('proposals_comment'):
+        p['may_comment'] = 1
+      else:
+        p['may_comment'] = 0
+
+      p.template = site_config['path'] + 'templates/viewproposal.tpl'
+    else:
+     p.template = site_config['path'] + 'templates/viewproposal.error.tpl'
   else:
-    data['status'] = 'error'
+    p.template = site_config['path'] + 'templates/viewproposal.error.tpl'
 
-  # Sayfayı derle.
-  build_page(site_config['path'] + 'templates/viewproposal.tpl', data)
+def comment():
+  if 'sid' not in p['session']:
+    p.http.redirect('error.py?tag=not_logged_in')
+  if not p.access('proposals_comment'):
+    p.http.redirect('error.py?tag=not_in_authorized_group')
 
-index()
+  insert_list = {'pid': p.form['pid'],
+                 'uid': p['session']['uid'],
+                 'content': p.form['p_comment'],
+                 'timeB': sql_datetime(now())}
+  p.db.insert('proposals_comments', insert_list)
+
+  p.http.redirect('viewproposal.py?pid=%s&version=%s' % (p.form['pid'], p.form['version']))
+
+p.actions = {'default': index,
+             'comment': comment}
+
+p.build()

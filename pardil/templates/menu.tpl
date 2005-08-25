@@ -5,7 +5,7 @@
     Hey ${session['username']}! Sesinden tanıdım seni.
   </p>
   <ul>
-    <li><a href="logout.py">Çıkış</a></li>
+    <li><a href="login.py?action=logout">Çıkış</a></li>
   </ul>
   #else
   <ul>

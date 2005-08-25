@@ -1,62 +1,57 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+from pardilskel import pardil_page
 from cfg_main import site_config
 
-from lib_cheetah import build_page
-from lib_std import page_init
-from lib_string import pass_hash
-
 import re
-import cgi
+
+p = pardil_page()
+
+p.name = 'pardil_register'
+p.title = site_config['title']
 
 def index():
-  # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
-  db, cookie, data = page_init()
+  p.template = site_config['path'] + 'templates/register.tpl'
 
-  form = cgi.FieldStorage()
+def register():
+  p.template = site_config['path'] + 'templates/register.tpl'
 
-  # Form gönderildiyse...
-  if form.has_key('register'):
-
-    # Gönderilen verileri data['posted_values'] içine aktar.
-    for i in form.keys():
-      data['posted_values'][i] = form.getvalue(i)
-      
-    # Kullanıcı adını kontrol et.
-    if not len(form.getvalue('r_username', '')):
-      data['errors']['r_username'] = 'Kullanıcı adı boş bırakılamaz.'
-    elif not re.match('^[a-zA-Z0-9]{4,32}$', form.getvalue('r_username')):
-      data['errors']['r_username'] = 'Kullanıcı adı 4-32 karakter uzunlukta, alfanumerik olmalı.'
-    elif db.scalar_query('SELECT Count(*) FROM users WHERE username="%s"' % (db.escape(form.getvalue('r_username')))) > 0:
-      data['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
+  # Kullanıcı adını kontrol et.
+  if not len(p.form['r_username']):
+    p['errors']['r_username'] = 'Kullanıcı adı boş bırakılamaz.'
+  elif not re.match('^[a-zA-Z0-9]{4,32}$', p.form['r_username']):
+    p['errors']['r_username'] = 'Kullanıcı adı 4-32 karakter uzunlukta, alfanumerik olmalı.'
+  elif p.db.scalar_query('SELECT Count(*) FROM users WHERE username="%s"' % (p.db.escape(p.form['r_username']))) > 0:
+    p['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
    
-    # E-posta adresini kontrol et.
-    if not len(form.getvalue('r_email', '')):
-      data['errors']['r_email'] = 'E-posta adresi boş bırakılamaz.'
-    elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', form.getvalue('r_email')):
-      data['errors']['r_email'] = 'E-posta adresi geçerli formatta olmalı.'
-    elif db.scalar_query('SELECT Count(*) FROM users WHERE email="%s"' % (db.escape(form.getvalue('r_email')))) > 0:
-      data['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
+  # E-posta adresini kontrol et.
+  if not len(p.form['r_email']):
+    p['errors']['r_email'] = 'E-posta adresi boş bırakılamaz.'
+  elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', p.form['r_email']):
+    p['errors']['r_email'] = 'E-posta adresi geçerli formatta olmalı.'
+  elif p.db.scalar_query('SELECT Count(*) FROM users WHERE email="%s"' % (p.db.escape(p.form['r_email']))) > 0:
+    p['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
       
-    # Parolayı kontrol et.
-    if not len(form.getvalue('r_password', '')):
-      data['errors']['r_password'] = 'Parola boş bırakılamaz.'
-    elif form.getvalue('r_password') != form.getvalue('r_password2'):
-      data['errors']['r_password'] = 'İki parola, birbiriyle aynı olmalı.'
-    elif not re.match('^.{6,10}$', form.getvalue('r_password')):
-      data['errors']['r_password'] = 'Parola en az 6, en fazla 10 karakter uzunluğunda olmalı.'
+  # Parolayı kontrol et.
+  if not len(p.form['r_password']):
+    p['errors']['r_password'] = 'Parola boş bırakılamaz.'
+  elif p.form['r_password'] != p.form['r_password2']:
+    p['errors']['r_password'] = 'İki parola, birbiriyle aynı olmalı.'
+  elif not re.match('^.{6,10}$', p.form['r_password']):
+    p['errors']['r_password'] = 'Parola en az 6, en fazla 10 karakter uzunluğunda olmalı.'
       
-    # Hiç hata yoksa...
-    if not len(data['errors']):
+  # Hiç hata yoksa...
+  if not len(p['errors']):
+    # Veritabanına kayıt yap...
+    insert_list = {'username': p.form['r_username'],
+                   'password': p.pass_hash(p.form['r_password']),
+                   'email': p.form['r_email']}
+    uid = db.insert('users', insert_list)
+    p.template = site_config['path'] + 'templates/register.done.tpl'
 
-      # Veritabanına kayıt yap...
-      insert_list = {'username': form.getvalue('r_username'), 'password': pass_hash(form.getvalue('r_password')), 'email': form.getvalue('r_email')}
-      uid = db.insert('users', insert_list)
 
-      # İşlem durumunu "bitti" olarak belirle
-      data['status'] = 'done'
+p.actions = {'default': index,
+            'register': register}
 
-  # Sayfayı derle.
-  build_page(site_config['path'] + 'templates/register.tpl', data)
-
-index()
+p.build()

@@ -95,25 +95,38 @@ form>fieldset>legend {
 input[type='text'], input[type='password'], textarea, select {
   border: 0.1em solid #aaa;
 }
-form>fieldset>div>label {
+
+fieldset>div>label:first-child {
   display: block;
-  width: 15em;
+  width: 13em;
+  clear: left;
   float: left;
+  line-height: 1.7em;
 }
-form>fieldset>div>input, form>fieldset>button, form>fieldset>div>textarea, form>fieldset>div>select {
-  /*display: block;*/
-  /*margin-left: 15em;*/
+fieldset>div>label {
+  display: block;
+  float: left;
+  clear: both;
+  margin-right: 0.5em;
 }
+fieldset>div>input, fieldset>div>select, fieldset>div>textarea, fieldset>div>div {
+  display: block;
+  float: left;
+  margin-right: 0.5em;
+}
+/*
 form>fieldset>div>textarea.widetext {
   display: block;
   margin-left: 0em;
   width: 35em;
   height: 25em;
 }
+*/
 form>fieldset>div>div.error_msg {
+  clear: both;
+  margin-left: 15em;
   color: red;
   font-size: 0.8em;
-  margin-left: 15em;
 }
 
 form>fieldset>div.required>label {

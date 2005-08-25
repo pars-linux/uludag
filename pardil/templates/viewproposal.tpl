@@ -1,10 +1,5 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  #if $status == 'error':
-    <p>
-      Bu numaraya sahip bir öneri yok.
-    </p>
-  #else:
   <h2>Öneri $proposal['pid'] - $proposal['title']</h2>
   <h3>Künye</h3>
   <ul>
@@ -26,10 +21,10 @@
   <h3>Sürüm Geçmişi</h3>
   <ul>
     #for $i in $versions
-      #if $i[0] == $proposal['version']
-        #echo """<li>%s</li>""" % ($i[0])
+      #if $i == $proposal['version']
+        #echo """<li>%s</li>""" % ($i)
       #else
-        #echo """<li><a href="viewproposal.py?pid=%d&amp;version=%s">%s</a></li>""" % ($proposal['pid'], $i[0], $i[0])
+        #echo """<li><a href="viewproposal.py?pid=%d&amp;version=%s">%s</a></li>""" % ($proposal['pid'], $i, $i)
       #end if
     #end for
   </ul>
@@ -37,7 +32,7 @@
     #if len($comments)
       <ul>
       #for $i in $comments
-        #echo """<li><div class="r1"><strong>%s</strong> (<a href="#">%s</a>)</div><div class="r2">%s</div</li>""" % ($i[2], $i[1], $i[3])
+        #echo """<li><div class="r1"><a href="#">%s</a>:</div><div class="r2">%s</div</li>""" % ($i['user'], $i['comment'])
       #end for
      </ul>
     #else
@@ -45,6 +40,20 @@
         Önerinin bu sürümüne hiç yorum yapılmamış.
       </p>
     #end if
+  #if $may_comment
+  <form action="viewproposal.py" method="post">
+    <input type="hidden" name="pid" value="$proposal['pid']" />
+    <input type="hidden" name="version" value="$proposal['version']" />
+    <fieldset>
+      <legend>Yorum</legend>
+      <div class="required">
+        <textarea class="widetext" id="p_comment" name="p_comment" cols="60" rows="5"></textarea>
+      </div>
+    </fieldset>
+    <fieldset>
+      <button type="submit" name="action" value="comment">Gönder</button>
+    </fieldset>
+  </form>
   #end if
 </div>
 #include $site_path + "templates/footer.tpl"
