@@ -1,18 +1,20 @@
 #!/usr/bin/python
-from cfg_main import site_config
-from lib_cheetah import build_page
-from lib_std import page_init
+# -*- coding: utf-8 -*-
 
-import cgi
+from pardilskel import pardil_page
+from cfg_main import site_config
+
+p = pardil_page()
+
+p.name = 'pardil_error'
+p.title = site_config['title']
 
 def index():
-  # Veritabanı bağlantısı kur, oturum aç, temel template bilgilerini yükle
-  db, cookie, data = page_init()
 
-  form = cgi.FieldStorage()
-  data['keyword'] = form.getvalue('tag')
+  p['keyword'] = p.form['tag']
 
-  # Sayfayı derle.
-  build_page(site_config['path'] + 'templates/error.tpl', data)
+  p.template = site_config['path'] + 'templates/error.tpl'
 
-index()
+p.actions = {'default': index}
+
+p.build()

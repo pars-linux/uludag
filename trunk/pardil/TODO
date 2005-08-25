@@ -9,15 +9,16 @@
   + Öneri ekleme
   + Öneri düzenleme
   + Katı öneri formatı kuralları
-  / Öneriye yorum ekleme
+  + Öneriye yorum ekleme
   / Arşiv ve arama sayfası
 
 + Yönetim Arabirimi
+  - Kullanıcı yönetimi
   + Grup yönetimi
   + Erişim hakları yönetimi
   + Kullanıcı - Grup yönetimi
-
-- Hoş bir arayüz
+  - Öneri yönetimi
+  - Yorum yönetimi
 
 - "Pardil Nasıl Kullanılır?" sayfası
 
@@ -25,6 +26,7 @@
 ===
 
 - Üyelik sistemi
+  - E-posta ile aktivasyon
   - Şifre hatırlatma
   - Şifre değiştirme
 
@@ -35,6 +37,5 @@
 0.3
 ===
 
-- Üyelik sistemi
-  - Üye yönetimi
-  - Grup yönetimi
+- Arayüz
+  - Asp.net'teki DataGrid'in işini yapacak bir sınıf

@@ -1,20 +1,23 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from pardilskel import pardil_page
 from cfg_main import site_config
-from lib_cheetah import build_page
-from lib_std import page_init
+
+p = pardil_page()
+
+p.name = 'pardil_index'
+p.title = site_config['title']
 
 def index():
-  # Veritabanı bağlantısı kur, oturum aç, temel template bilgilerini yükle
-  db, cookie, data = page_init()
+  p['news'] = []
+  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
+  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
+  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
+  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
 
-  data['news'] = []
-  data['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
-  data['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
-  data['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
-  data['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
+  p.template = site_config['path'] + 'templates/index.tpl'
 
+p.actions = {'default': index}
 
-  # Sayfayı derle.
-  build_page(site_config['path'] + 'templates/index.tpl', data)
-
-index()
+p.build()

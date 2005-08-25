@@ -7,14 +7,13 @@
   #end def
 
   #def printValue($s, $t='')
-    #if not $errors.has_key($s) and $posted_values.has_key($s)
-      #echo $posted_values[$s]
+    #if not $errors.has_key($s) and $posted.has_key($s)
+      #echo $posted[$s]
     #else
       #echo $t
     #end if
   #end def
   <h2>Gruplar</h2>
-  #if $status == 'list' or $status == ''
   <div style="float: right;">
     <form method="post" action="admin_groups.py">
       <fieldset>
@@ -26,7 +25,7 @@
         </div>
       </fieldset>
       <fieldset>
-        <button type="submit" name="insert" value="1">Ekle</button>
+        <button type="submit" name="action" value="insert">Ekle</button>
       </fieldset>
     </form>
   </div>
@@ -40,48 +39,9 @@
     <tr>
       <td>$i.gid</td>
       <td>$i.label</td>
-      <td>[<a href="admin_groups.py?delete=$i.gid">Sil</a>]</td>
+      <td>[<a href="admin_groups.py?action=delete&amp;delete=$i.gid">Sil</a>]</td>
     </tr>
     #end for
   </table>
-  #else if $status == 'delete_confirm'
-    <p>
-      Eğer bir grubu silerseniz, grup ile ilişkili tüm erişim hakları da silinir.<br/>
-      $gid numaralı "$label" grubunu silmek istediğinizden emin misiniz?
-    </p>
-    <ul>
-      <li><a href="admin_groups.py?delete=$gid&amp;confirm=no">Hayır</a></li>
-      <li><a href="admin_groups.py?delete=$gid&amp;confirm=yes">Evet</a></li>
-    </ul>
-  #else if $status == 'delete_yes'
-    <p>
-      $gid numaralı "$label" grubu silindi.<br/>
-      Grup ile ilişkili tüm erişim hakları kaldırıldı.
-    </p>
-    <ul>
-      <li><a href="admin_groups.py">Listeye Dön</a></li>
-    </ul>
-  #else if $status == 'delete_no'
-    <p>
-      Silme işlemi iptal edildi.
-    </p>
-    <ul>
-      <li><a href="admin_groups.py">Listeye Dön</a></li>
-    </ul>
-  #else if $status == 'error'
-    <p>
-      $gid numaralı bir grup bulunmuyor.
-    </p>
-    <ul>
-      <li><a href="admin_groups.py">Listeye Dön</a></li>
-    </ul>
-  #else if $status == 'insert'
-    <p>
-      $gid numaralı "$label" grubu listeye eklendi.
-    </p>
-    <ul>
-      <li><a href="admin_groups.py">Listeye Dön</a></li>
-    </ul>
-  #end if
 </div>
 #include $site_path + "templates/footer.tpl"

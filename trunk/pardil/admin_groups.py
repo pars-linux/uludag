@@ -1,71 +1,67 @@
 #!/usr/bin/python
-from cfg_main import site_config
-from lib_cheetah import build_page
-from lib_std import page_init
-from lib_sql import op_access
+# -*- coding: utf-8 -*-
 
-import cgi
+from pardilskel import pardil_page
+from cfg_main import site_config
+
+p = pardil_page()
+
+p.name = 'pardil_index'
+p.title = site_config['title']
+
+# OLMAZSA OLMAZ!
+if 'sid' not in p['session']:
+  p.http.redirect('error.py?tag=login_required')
+if not p.access('administrate'):
+  p.http.redirect('error.py?tag=not_in_authorized_group')
+# OLMAZSA OLMAZ!
 
 def index():
-  # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
-  db, cookie, data = page_init()
+  p['groups'] = []
+  list = p.db.query('SELECT gid, label FROM groups ORDER BY gid ASC')
+  for i in list:
+    p['groups'].append({'gid': i[0], 'label': i[1]})
 
-  # OLMAZSA OLMAZ!
-  if not data['session'].has_key('uid'):
-    print 'Location: error.py?tag=login_required'
-    print ''
-    
-  if not op_access(db, data['session']['uid'], 'administrate'):
-    print 'Location: error.py?tag=not_in_authorized_group'
-    print ''
-  # OLMAZSA OLMAZ!
+  p.template = site_config['path'] + 'templates/admin/groups.tpl'
 
-  form = cgi.FieldStorage()
-  
-  if form.has_key('delete'):
-    try:
-      data['gid'] = int(form.getvalue('delete'))
-    except:
-      data['status'] = 'error'
-    else:
-      data['label'] = db.scalar_query('SELECT label FROM groups WHERE gid=%d' % (data['gid']))
-      if not data['label']:
-        data['status'] = 'error'
-      else:
-        if form.has_key('confirm'):
-          if form.getvalue('confirm') == 'yes':
-            db.query_com('DELETE FROM rel_groups WHERE gid=%d' % (data['gid']))
-            db.query_com('DELETE FROM rel_rights WHERE gid=%d' % (data['gid']))
-            db.query_com('DELETE FROM groups WHERE gid=%d' % (data['gid']))
-            data['status'] = 'delete_yes'
-          else:
-            data['status'] = 'delete_no'
-        else:
-          data['status'] = 'delete_confirm'
-  elif form.has_key('insert'):
-    if not len(form.getvalue('g_label', '')):
-      data['errors']['g_label'] = 'Grup adı boş bırakılamaz.'
-    elif db.scalar_query('SELECT Count(*) FROM groups WHERE label="%s"' % (db.escape(form.getvalue('g_label') ) )) > 0:
-      data['errors']['g_label'] = 'Bu isimde bir grup zaten var.'
-      
-    if not (data['errors']):
-      data['label'] = form.getvalue('g_label')
-      data['gid'] = db.insert('groups', {'label': data['label']})
-      data['status'] = 'insert'
-    else:
-      data['status'] = 'list'
-      data['groups'] = []
-      list = db.query('SELECT gid, label FROM groups ORDER BY gid ASC')
-      for i in list:
-        data['groups'].append({'gid': i[0], 'label': i[1]})
+def delete():
+  try:
+    p['gid'] = int(p.form['delete'])
+  except:
+    p.template = site_config['path'] + 'templates/admin/groups.error.tpl'
   else:
-    data['groups'] = []
-    list = db.query('SELECT gid, label FROM groups ORDER BY gid ASC')
-    for i in list:
-      data['groups'].append({'gid': i[0], 'label': i[1]})
+    p['label'] = p.db.scalar_query('SELECT label FROM groups WHERE gid=%d' % (p['gid']))
+    if not p['label']:
+      p.template = site_config['path'] + 'templates/admin/groups.error.tpl'
+    else:
+      if 'confirm' in p.form:
+        if p.form['confirm'] == 'yes':
+          p.db.query_com('DELETE FROM rel_groups WHERE gid=%d' % (p['gid']))
+          p.db.query_com('DELETE FROM rel_rights WHERE gid=%d' % (p['gid']))
+          p.db.query_com('DELETE FROM groups WHERE gid=%d' % (p['gid']))
+          p.template = site_config['path'] + 'templates/admin/groups.delete_yes.tpl'
+        else:
+          p.template = site_config['path'] + 'templates/admin/groups.delete_no.tpl'
+      else:
+        p.template = site_config['path'] + 'templates/admin/groups.delete_confirm.tpl'
 
-  # Sayfayı derle.
-  build_page(site_config['path'] + 'templates/admin/groups.tpl', data)
+def insert():
+  if not len(p.form['g_label']):
+    p['errors']['g_label'] = 'Grup adı boş bırakılamaz.'
+  elif p.db.scalar_query('SELECT Count(*) FROM groups WHERE label="%s"' % (p.db.escape(p.form['g_label'] ) )) > 0:
+    p['errors']['g_label'] = 'Bu isimde bir grup zaten var.'
+      
+  if not len(p['errors']):
+    p['label'] = p.form['g_label']
+    p['gid'] = p.db.insert('groups', {'label': p['label']})
+    p.template = site_config['path'] + 'templates/admin/groups.insert.tpl'
+  else:
+    p.template = site_config['path'] + 'templates/admin/groups.tpl'
+    index()
 
 
-index()
+p.actions = {'default': index,
+             'delete': delete,
+             'insert': insert}
+
+p.build()

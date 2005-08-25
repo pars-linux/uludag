@@ -7,14 +7,13 @@
   #end def
 
   #def printValue($s, $t='')
-    #if not $errors.has_key($s) and $posted_values.has_key($s)
-      #echo $posted_values[$s]
+    #if not $errors.has_key($s) and $posted.has_key($s)
+      #echo $posted[$s]
     #else
       #echo $t
     #end if
   #end def
   <h2>Kullanıcı Grupları</h2>
-  #if $status == 'list' or $status == ''
   <div style="float: right; ">
   <form method="post" action="admin_usergroups.py">
     <fieldset>
@@ -49,7 +48,7 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="insert" value="1">Ekle</button>
+      <button type="submit" name="action" value="insert">Ekle</button>
     </fieldset>
   </form>
   </div>
@@ -65,46 +64,9 @@
       <td>$i.relid</td>
       <td>$i.group</td>
       <td>$i.username</td>
-      <td>[<a href="admin_usergroups.py?delete=$i.relid">Sil</a>]</td>
+      <td>[<a href="admin_usergroups.py?action=delete&amp;delete=$i.relid">Sil</a>]</td>
     </tr>
     #end for
   </table>
-  #else if $status == 'delete_confirm'
-    <p>
-      $user isimli kullanıcı $group grubundan çıkarılsın mı?
-    </p>
-    <ul>
-      <li><a href="admin_usergroups.py?delete=$relid&amp;confirm=no">Hayır</a></li>
-      <li><a href="admin_usergroups.py?delete=$relid&amp;confirm=yes">Evet</a></li>
-    </ul>
-  #else if $status == 'delete_yes'
-    <p>
-      $user isimli kullanıcı $group grubundan çıkarıldı.
-    </p>
-    <ul>
-      <li><a href="admin_usergroups.py">Listeye Dön</a></li>
-    </ul>
-  #else if $status == 'delete_no'
-    <p>
-      Silme işlemi iptal edildi.
-    </p>
-    <ul>
-      <li><a href="admin_usergroups.py">Listeye Dön</a></li>
-    </ul>
-  #else if $status == 'error'
-    <p>
-      $relid numaralı bir grup-kullanıcı kaydı bulunmuyor.
-    </p>
-    <ul>
-      <li><a href="admin_usergroups.py">Listeye Dön</a></li>
-    </ul>
-  #else if $status == 'insert'
-    <p>
-      $user isimli kullanıcı $group grubuna eklendi.
-    </p>
-    <ul>
-      <li><a href="admin_usergroups.py">Listeye Dön</a></li>
-    </ul>
-  #end if
 </div>
 #include $site_path + "templates/footer.tpl"

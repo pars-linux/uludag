@@ -1,101 +1,86 @@
 #!/usr/bin/python
-from cfg_main import site_config
-from lib_cheetah import build_page
-from lib_std import page_init
-from lib_sql import op_access
+# -*- coding: utf-8 -*-
 
-import cgi
+from pardilskel import pardil_page
+from cfg_main import site_config
+
+p = pardil_page()
+
+p.name = 'pardil_index'
+p.title = site_config['title']
+
+# OLMAZSA OLMAZ!
+if 'sid' not in p['session']:
+  p.http.redirect('error.py?tag=login_required')
+if not p.access('administrate'):
+  p.http.redirect('error.py?tag=not_in_authorized_group')
+# OLMAZSA OLMAZ!
 
 def index():
-  # Veritabanı bağlantısı kur, oturum aç, template bilgilerini yükle
-  db, cookie, data = page_init()
+  p['rel_groups'] = []
+  list = p.db.query('SELECT rel_groups.relid, groups.label, users.username FROM rel_groups INNER JOIN groups ON groups.gid=rel_groups.gid INNER JOIN users ON users.uid=rel_groups.uid ORDER BY groups.label, users.username ASC')
+  for i in list:
+    p['rel_groups'].append({'relid': i[0], 'group': i[1], 'username': i[2]})
 
-  # OLMAZSA OLMAZ!
-  if not data['session'].has_key('uid'):
-    print 'Location: error.py?tag=login_required'
-    print ''
-    
-  if not op_access(db, data['session']['uid'], 'administrate'):
-    print 'Location: error.py?tag=not_in_authorized_group'
-    print ''
-  # OLMAZSA OLMAZ!
+  p['groups'] = []
+  list = p.db.query('SELECT gid, label FROM groups ORDER BY gid ASC')
+  for i in list:
+    p['groups'].append({'gid': i[0], 'label': i[1]})
 
-  form = cgi.FieldStorage()
-  
-  if form.has_key('delete'):
-    try:
-      data['relid'] = int(form.getvalue('delete'))
-    except:
-      data['status'] = 'error'
-    else:
-      data['group'] = db.scalar_query('SELECT groups.label FROM groups INNER JOIN rel_groups ON rel_groups.gid=groups.gid WHERE rel_groups.relid=%d' % (data['relid']))
-      data['user'] = db.scalar_query('SELECT users.username FROM users INNER JOIN rel_groups ON rel_groups.uid=users.uid WHERE rel_groups.relid=%d' % (data['relid']))
-      if not data['group'] or not data['user']:
-        data['status'] = 'error'
-      else:
-        if form.has_key('confirm'):
-          if form.getvalue('confirm') == 'yes':
-            db.query_com('DELETE FROM rel_groups WHERE relid=%d' % (data['relid']))
-            data['status'] = 'delete_yes'
-          else:
-            data['status'] = 'delete_no'
-        else:
-          data['status'] = 'delete_confirm'
-  elif form.has_key('insert'):
-    try:
-      uid = int(form.getvalue('u_user'))
-      gid = int(form.getvalue('u_group'))
-    except:
-      data['errors']['u_user'] = 'Geçersiz kullanıcı numarası.'
+  p['users'] = []
+  list = p.db.query('SELECT uid, username FROM users ORDER BY username ASC')
+  for i in list:
+    p['users'].append({'uid': i[0], 'username': i[1]})
 
-    if db.scalar_query('SELECT Count(*) FROM users WHERE uid=%d' % (uid)) == 0:
-      data['errors']['u_user'] = 'Geçersiz kullanıcı numarası.'
-    elif db.scalar_query('SELECT Count(*) FROM groups WHERE gid=%d' % (gid)) == 0:
-      data['errors']['u_group'] = 'Geçersiz grup numarası.'
-    elif db.scalar_query('SELECT Count(*) FROM rel_groups WHERE gid=%d AND uid=%d' % (gid, uid)) > 0:
-      data['errors']['u_user'] = 'Kullanıcı zaten bu gruba dahil.'
-      
-    if not len(data['errors']):
-      data['status'] = 'insert'
+  p.template = site_config['path'] + 'templates/admin/usergroups.tpl'
 
-      data['group'] = db.scalar_query('SELECT groups.label FROM groups WHERE gid=%d' % (gid))
-      data['user'] = db.scalar_query('SELECT users.username FROM users WHERE uid=%d' % (uid))
-
-      data['relid'] = db.insert('rel_groups', {'gid': gid, 'uid': uid})
-      data['status'] = 'insert'
-    else:
-      data['rel_groups'] = []
-      list = db.query('SELECT rel_groups.relid, groups.label, users.username FROM rel_groups INNER JOIN groups ON groups.gid=rel_groups.gid INNER JOIN users ON users.uid=rel_groups.uid ORDER BY groups.label, users.username ASC')
-      for i in list:
-        data['rel_groups'].append({'relid': i[0], 'group': i[1], 'username': i[2]})
-
-      data['groups'] = []
-      list = db.query('SELECT gid, label FROM groups ORDER BY gid ASC')
-      for i in list:
-        data['groups'].append({'gid': i[0], 'label': i[1]})
-
-      data['users'] = []
-      list = db.query('SELECT uid, username FROM users ORDER BY username ASC')
-      for i in list:
-        data['users'].append({'uid': i[0], 'username': i[1]})
+def delete():
+  try:
+    p['relid'] = int(p.form['delete'])
+  except:
+    p.template = site_config['path'] + 'templates/admin/usergroups.error.tpl'
   else:
-    data['rel_groups'] = []
-    list = db.query('SELECT rel_groups.relid, groups.label, users.username FROM rel_groups INNER JOIN groups ON groups.gid=rel_groups.gid INNER JOIN users ON users.uid=rel_groups.uid ORDER BY groups.label, users.username ASC')
-    for i in list:
-      data['rel_groups'].append({'relid': i[0], 'group': i[1], 'username': i[2]})
+    p['group'] = p.db.scalar_query('SELECT groups.label FROM groups INNER JOIN rel_groups ON rel_groups.gid=groups.gid WHERE rel_groups.relid=%d' % (p['relid']))
+    p['user'] = p.db.scalar_query('SELECT users.username FROM users INNER JOIN rel_groups ON rel_groups.uid=users.uid WHERE rel_groups.relid=%d' % (p['relid']))
+    if not p['group'] or not p['user']:
+      p.template = site_config['path'] + 'templates/admin/usergroups.error.tpl'
+    else:
+      if 'confirm' in p.form:
+        if p.form['confirm'] == 'yes':
+          p.db.query_com('DELETE FROM rel_groups WHERE relid=%d' % (p['relid']))
+          p.template = site_config['path'] + 'templates/admin/usergroups.delete_yes.tpl'
+        else:
+          p.template = site_config['path'] + 'templates/admin/usergroups.delete_no.tpl'
+      else:
+        p.template = site_config['path'] + 'templates/admin/usergroups.delete_confirm.tpl'
 
-    data['groups'] = []
-    list = db.query('SELECT gid, label FROM groups ORDER BY gid ASC')
-    for i in list:
-      data['groups'].append({'gid': i[0], 'label': i[1]})
+def insert():
+  try:
+    uid = int(p.form['u_user'])
+    gid = int(p.form['u_group'])
+  except:
+    p['errors']['u_user'] = 'Geçersiz kullanıcı numarası.'
+  else:
+    if p.db.scalar_query('SELECT Count(*) FROM users WHERE uid=%d' % (uid)) == 0:
+      p['errors']['u_user'] = 'Geçersiz kullanıcı numarası.'
+    elif p.db.scalar_query('SELECT Count(*) FROM groups WHERE gid=%d' % (gid)) == 0:
+      p['errors']['u_group'] = 'Geçersiz grup numarası.'
+    elif p.db.scalar_query('SELECT Count(*) FROM rel_groups WHERE gid=%d AND uid=%d' % (gid, uid)) > 0:
+      p['errors']['u_user'] = 'Kullanıcı zaten bu gruba dahil.'
+     
+  if not len(p['errors']):
+    p.template = site_config['path'] + 'templates/admin/usergroups.insert.tpl'
 
-    data['users'] = []
-    list = db.query('SELECT uid, username FROM users ORDER BY username ASC')
-    for i in list:
-      data['users'].append({'uid': i[0], 'username': i[1]})
+    p['group'] = p.db.scalar_query('SELECT groups.label FROM groups WHERE gid=%d' % (gid))
+    p['user'] = p.db.scalar_query('SELECT users.username FROM users WHERE uid=%d' % (uid))
 
-  # Sayfayı derle.
-  build_page(site_config['path'] + 'templates/admin/usergroups.tpl', data)
+    p['relid'] = p.db.insert('rel_groups', {'gid': gid, 'uid': uid})
+  else:  
+    p.template = site_config['path'] + 'templates/admin/usergroups.tpl'
+    index()
 
+p.actions = {'default': index,
+             'delete': delete,
+             'insert': insert}
 
-index()
+p.build()
