@@ -101,6 +101,8 @@ class pardil_page(page):
     return 'sid' in self.data['session']
 
   def access(self, key):
+    if not self.logged():
+      return 0
     key = self.db.escape(key)
     q = """SELECT Count(*)
            FROM rel_rights
