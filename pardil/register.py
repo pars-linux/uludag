@@ -3,6 +3,7 @@
 
 from pardilskel import pardil_page
 from cfg_main import site_config
+from pyonweb.libstring import *
 
 import re
 
@@ -43,11 +44,15 @@ def register():
       
   # Hiç hata yoksa...
   if not len(p['errors']):
-    # Veritabanına kayıt yap...
+    # Üye kaydı yap...
     insert_list = {'username': p.form['r_username'],
-                   'password': p.pass_hash(p.form['r_password']),
+                   'password': pass_hash(p.form['r_password']),
                    'email': p.form['r_email']}
-    uid = db.insert('users', insert_list)
+    uid = p.db.insert('users', insert_list)
+    # "Kullanıcılar" grubuna ekle
+    insert_list = {'uid': uid,
+                   'gid': 5}
+    p.db.insert('rel_groups', insert_list)
     p.template = site_config['path'] + 'templates/register.done.tpl'
 
 
