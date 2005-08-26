@@ -7,7 +7,7 @@ body {
 #container {
   margin: 3.5em auto;
   padding: 0em;
-  border: 0.1em solid #b2bdcd;
+  border: 1px solid #b2bdcd;
   background-color: #fff;
   text-align: left;
   width: 90%;
@@ -86,14 +86,14 @@ form>fieldset {
   margin: 1em 0em 1em 0em;
   padding: 1em 0em 1em 0em;
   border-width: 0em;
-  border-top: 0.1em solid #aaa;
+  border-top: 1px solid #aaa;
 }
 form>fieldset>legend {
   font-size: 1.2em;
   font-weight: bold;
 }
 input[type='text'], input[type='password'], textarea, select {
-  border: 0.1em solid #aaa;
+  border: 1px solid #aaa;
 }
 
 fieldset>div>label:first-child {
@@ -179,7 +179,7 @@ form>fieldset>div.optional>label {
 }
 
 #content .news {
-  border-bottom: 0.1em dashed #d4dbe3;
+  border-bottom: 1px dashed #d4dbe3;
   margin-bottom: 1.5em;
   min-height: 100px;
 }
@@ -215,7 +215,7 @@ form>fieldset>div.optional>label {
 
 .box {
   padding: 0.5em;
-  border: 0.1em solid #adb9ca;
+  border: 1px solid #adb9ca;
   background-color: #fff;
   margin-bottom: 1em;
 }

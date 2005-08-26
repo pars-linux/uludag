@@ -13,60 +13,47 @@
       #echo $t
     #end if
   #end def
-  <h2>Erişim Hakları</h2>
-  <div style="float: right; ">
-  <form method="post" action="admin_rights.py">
-    <fieldset>
-      <legend>Erişim Hakkı Ekle</legend>
-      <div class="required">
-        <label for="r_group">Grup:</label>
-        <select name="r_group" id="r_group">
-          <option value="0">Grup Seçin</option>
-          #for $i in $groups
-            #if $i.gid == $printValue('r_group')
-              <option value="$i.gid" selected="selected">$i.label</option>
-            #else
-              <option value="$i.gid">$i.label</option>
-            #end if
-          #end for
-        </select>
-        #echo $printError('r_group')
-      </div>
-      <div class="required">
-        <label for="r_right">Hak:</label>
-        <select name="r_right" id="r_right">
-          <option value="0">Hak Seçin</option>
-          #for $i in $rights
-            #if $i.rid == $printValue('r_right')
-              <option value="$i.rid" selected="selected">$i.label</option>
-            #else
-              <option value="$i.rid">$i.label</option>
-            #end if
-          #end for
-        </select>
-        #echo $printError('r_right')
-      </div>
-    </fieldset>
-    <fieldset>
-      <button type="submit" name="action" value="insert">Ekle</button>
-    </fieldset>
-  </form>
+  <h2>Erişim Kodları</h2>
+  <div style="float: right;">
+    <form method="post" action="admin_rights.py">
+      <fieldset>
+        <legend>Erişim Kodu Ekle</legend>
+        <div class="required">
+          <label for="r_category">Kategori:</label>
+          <input type="text" id="r_category" name="r_category" value="" />
+          #echo $printError('r_category')
+        </div>
+        <div class="required">
+          <label for="r_keyword">Kod:</label>
+          <input type="text" id="r_keyword" name="r_keyword" value="" />
+          #echo $printError('r_keyword')
+        </div>
+        <div class="required">
+          <label for="r_label">Etiket:</label>
+          <input type="text" id="r_labe" name="r_label" value="" />
+          #echo $printError('r_label')
+        </div>
+      </fieldset>
+      <fieldset>
+        <button type="submit" name="action" value="insert">Ekle</button>
+      </fieldset>
+    </form>
   </div>
   <table>
     <tr>
       <th>No</th>
       <th>Kategori</th>
-      <th>Grup Adı</th>
-      <th>Erişim Adı</th>
+      <th>Kod</th>
+      <th>Etiket</th>
       <th>&nbsp;</th>
     </tr>
-    #for $i in $rel_rights
+    #for $i in $rights
     <tr>
-      <td>$i.relid</td>
+      <td>$i.rid</td>
       <td>$i.category</td>
-      <td>$i.group</td>
-      <td>$i.right</td>
-      <td>[<a href="admin_rights.py?action=delete&amp;delete=$i.relid">Sil</a>]</td>
+      <td>$i.keyword</td>
+      <td>$i.label</td>
+      <td>[<a href="admin_rights.py?action=delete&amp;delete=$i.rid">Sil</a>]</td>
     </tr>
     #end for
   </table>

@@ -32,7 +32,7 @@ def index():
   for i in list:
     p['rights'].append({'rid': i[0], 'label': i[1]})
 
-  p.template = site_config['path'] + 'templates/admin/rights.tpl'
+  p.template = site_config['path'] + 'templates/admin/userrights.tpl'
 
 def delete():
   try:
@@ -43,16 +43,16 @@ def delete():
     p['group'] = p.db.scalar_query('SELECT groups.label FROM groups INNER JOIN rel_rights ON rel_rights.gid=groups.gid WHERE rel_rights.relid=%d' % (p['relid']))
     p['right'] = p.db.scalar_query('SELECT rights.label FROM rights INNER JOIN rel_rights ON rel_rights.rid=rights.rid WHERE rel_rights.relid=%d' % (p['relid']))
     if not p['group'] or not p['right']:
-      p.template = site_config['path'] + 'templates/admin/rights.error.tpl'
+      p.template = site_config['path'] + 'templates/admin/userrights.error.tpl'
     else:
       if 'confirm' in p.form:
         if p.form['confirm'] == 'yes':
           p.db.query_com('DELETE FROM rel_rights WHERE relid=%d' % (p['relid']))
-          p.template = site_config['path'] + 'templates/admin/rights.delete_yes.tpl'
+          p.template = site_config['path'] + 'templates/admin/userrights.delete_yes.tpl'
         else:
-          p.template = site_config['path'] + 'templates/admin/rights.delete_no.tpl'
+          p.template = site_config['path'] + 'templates/admin/userrights.delete_no.tpl'
       else:
-        p.template = site_config['path'] + 'templates/admin/rights.delete_confirm.tpl'
+        p.template = site_config['path'] + 'templates/admin/userrights.delete_confirm.tpl'
 
 def insert():
   try:
@@ -69,14 +69,14 @@ def insert():
       p['errors']['r_right'] = 'Bu grup bu hakka zaten sahip.'
      
   if not len(p['errors']):
-    p.template = site_config['path'] + 'templates/admin/rights.insert.tpl'
+    p.template = site_config['path'] + 'templates/admin/userrights.insert.tpl'
 
     p['group'] = p.db.scalar_query('SELECT groups.label FROM groups WHERE gid=%d' % (gid))
     p['right'] = p.db.scalar_query('SELECT rights.label FROM rights WHERE rid=%d' % (rid))
 
     p['relid'] = p.db.insert('rel_rights', {'gid': gid, 'rid': rid})
   else:  
-    p.template = site_config['path'] + 'templates/admin/rights.tpl'
+    p.template = site_config['path'] + 'templates/admin/userrights.tpl'
     index()
 
 p.actions = {'default': index,

@@ -36,9 +36,9 @@ def delete():
     else:
       if 'confirm' in p.form:
         if p.form['confirm'] == 'yes':
-          p.db.query_com('DELETE FROM rel_groups WHERE gid=%d' % (p['gid']))
-          p.db.query_com('DELETE FROM rel_rights WHERE gid=%d' % (p['gid']))
-          p.db.query_com('DELETE FROM groups WHERE gid=%d' % (p['gid']))
+          #p.db.query_com('DELETE FROM rel_groups WHERE gid=%d' % (p['gid']))
+          #p.db.query_com('DELETE FROM rel_rights WHERE gid=%d' % (p['gid']))
+          #p.db.query_com('DELETE FROM groups WHERE gid=%d' % (p['gid']))
           p.template = site_config['path'] + 'templates/admin/groups.delete_yes.tpl'
         else:
           p.template = site_config['path'] + 'templates/admin/groups.delete_no.tpl'
