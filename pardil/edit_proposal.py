@@ -13,11 +13,9 @@ p = pardil_page()
 p.name = 'pardil_editproposal'
 p.title = site_config['title']
 
-# Erişim kontrolü değiştirilmeli...
 if 'sid' not in p['session']:
   p.http.redirect('error.py?tag=login_required')
-if not p.access('proposals_add'):
-  p.http.redirect('error.py?tag=not_in_authorized_group')
+
 
 def index():
   try:
@@ -25,6 +23,15 @@ def index():
     p['version'] = p.form['version']
   except:
     p.http.redirect('error.py?tag=proposal_not_found')
+   
+  # Öneri sorumlusu mu
+  q = """SELECT Count(*)
+         FROM rel_maintainers
+         WHERE
+           uid=%d AND pid=%d
+      """ % (p['session']['uid'], p['pid'])
+  if not p.db.scalar_query(q):
+    p.http.redirect('error.py?tag=not_maintainer')
 
   q = """SELECT
            version, title, summary, purpose, content, solution
@@ -51,6 +58,15 @@ def edit():
     p['version'] = p.form['version']
   except:
     p.http.redirect('error.py?tag=proposal_not_found')
+
+  # Öneri sorumlusu mu
+  q = """SELECT Count(*)
+         FROM rel_maintainers
+         WHERE
+           uid=%d AND pid=%d
+      """ % (p['session']['uid'], p['pid'])
+  if not p.db.scalar_query(q):
+    p.http.redirect('error.py?tag=not_maintainer')
 
   p.template = 'edit_proposal.tpl'
 

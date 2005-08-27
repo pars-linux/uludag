@@ -1,7 +1,7 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
   <h2>Öneriler</h2>
-  <table>
+  <table width="100%">
     <tr>
       <th>No</th>
       <th>Başlık</th>

@@ -12,7 +12,6 @@ p = pardil_page()
 p.name = 'pardil_newproposal'
 p.title = site_config['title']
 
-# Erişim kontrolü değiştirilmeli...
 if 'sid' not in p['session']:
   p.http.redirect('error.py?tag=login_required')
 if not p.access('proposals_add'):
@@ -24,6 +23,9 @@ def new():
   if 'p_title' not in p.form or not re.match('^.{10,100}$', p.form['p_title']):
     p['errors']['p_title'] = 'Başlık 10-100 karakter arası olmalı.'
 
+  if 'p_summary' not in p.form or not len(p.form['p_summary']):
+    p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
+
   # Hiç hata yoksa...
   if not len(p['errors']):
     version = '1.0.0'
@@ -33,9 +35,16 @@ def new():
             'startup': sql_datetime(now())
             }
     pid = p.db.insert('proposals', list)
+
+    # Öneri hemen yayınlansın mı...
+    if p.access('proposals_publish'):
+      online = 1
+    else:
+      online = 0
     
     list = {
             'pid': pid,
+            'online': online,
             'version': version,
             'title': p.form['p_title'],
             'summary': p.form['p_summary'],

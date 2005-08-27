@@ -13,6 +13,7 @@ def index():
   versions = []
   q = """SELECT max(vid)
          FROM proposals_versions
+         WHERE online = 1
          GROUP BY pid
       """
   for row in p.db.query(q):
@@ -27,7 +28,9 @@ def index():
            FROM proposals
              INNER JOIN proposals_versions
                ON proposals.pid=proposals_versions.pid
-           WHERE proposals_versions.vid IN (%s)
+           WHERE
+             proposals_versions.vid IN (%s) AND
+             online = 1
            ORDER BY proposals.pid ASC
         """ % (','.join(versions))
     list = p.db.query(q)

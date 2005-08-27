@@ -23,6 +23,7 @@ def index():
   if pid and version:
     q = """SELECT
              proposals.pid,
+             proposals_versions.online,
              proposals_versions.version,
              proposals_versions.title,
              proposals_versions.summary,
@@ -41,18 +42,21 @@ def index():
     if row:
       p['proposal'] = {
                        'pid': row[0],
-                       'version': html_escape(row[1]),
-                       'title': html_escape(row[2]),
-                       'summary': nl2br(html_escape(row[3])),
-                       'purpose': nl2br(html_escape(row[4])),
-                       'content': nl2br(html_escape(row[5])),
-                       'solution': nl2br(html_escape(row[6]))
+                       'online': row[1],
+                       'version': html_escape(row[2]),
+                       'title': html_escape(row[3]),
+                       'summary': nl2br(html_escape(row[4])),
+                       'purpose': nl2br(html_escape(row[5])),
+                       'content': nl2br(html_escape(row[6])),
+                       'solution': nl2br(html_escape(row[7]))
                        }
 
       # Sürüm geçmişi
       q = """SELECT proposals_versions.version
              FROM proposals_versions
-             WHERE pid=%d
+             WHERE
+               pid=%d AND
+               online = 1
              ORDER BY vid DESC
           """ % (pid)
       rows = p.db.query(q)
@@ -60,6 +64,27 @@ def index():
       p['versions'] = []
       for i in rows:
         p['versions'].append(i[0])
+
+      # Sorumlular
+      q = """SELECT
+               users.uid,
+               users.username
+             FROM users
+               INNER JOIN rel_maintainers
+                 ON rel_maintainers.uid=users.uid
+             WHERE
+               rel_maintainers.pid=%d
+             ORDER BY users.username ASC
+          """ % (pid)
+      rows = p.db.query(q)
+
+      p['maintainers'] = []
+      for i in rows:
+        l = {
+             'uid': i[0],
+             'user': i[1]
+             }
+        p['maintainers'].append(l)
     
       # Yorumlar
       q = """SELECT

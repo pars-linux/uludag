@@ -2,7 +2,7 @@
 <div id="content">
   <h2>Erişim Kodları</h2>
   <p>
-    $rid numaralı bir erişim kodu bulunmuyor.
+    Belirtilen erişim kodu bulunamadı.
   </p>
   <ul>
     <li><a href="admin_rights.py">Listeye Dön</a></li>

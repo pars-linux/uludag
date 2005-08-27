@@ -8,6 +8,7 @@
   <ul>
     <li><a href="admin_usergroups.py">Kullanıcı Grupları</a></li>
     <li><a href="admin_userrights.py">Erişim Hakları</a></li>
+    <li><a href="admin_maintainers.py">Öneri Sorumluları</a></li>
   </ul>
   <ul>
     <li><a href="admin_comments.py">Yorumlar</a></li>
