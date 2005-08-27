@@ -78,8 +78,11 @@ def index():
           """ % (pid)
       rows = p.db.query(q)
 
+      p['is_maintainer'] = 0
       p['maintainers'] = []
       for i in rows:
+        if 'uid' in p['session'] and p['session']['uid'] == i[0]:
+          p['is_maintainer'] = 1
         l = {
              'uid': i[0],
              'user': i[1]
