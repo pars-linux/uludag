@@ -80,6 +80,7 @@ INSERT INTO proposals_comments (cid, pid, uid, title, content) VALUES (1, 1, 1, 
 
 CREATE TABLE proposals_versions (
   vid int(10) unsigned NOT NULL auto_increment,
+  online tinyint(4) NOT NULL default '0',
   pid int(10) unsigned NOT NULL default '0',
   version varchar(16) collate utf8_turkish_ci NOT NULL default '0',
   title varchar(100) collate utf8_turkish_ci NOT NULL default '',
