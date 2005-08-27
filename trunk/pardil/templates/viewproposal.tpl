@@ -29,6 +29,12 @@
       #echo ', '.join($list)
     </li>
   </ul>
+  #if $is_maintainer
+  <h3>Yönetim</h3>
+  <ul>
+    <li><a href="edit_proposal.py?pid=$proposal.pid&amp;version=$proposal.version">Yeni Sürüm</a></li>
+  </ul>
+  #end if
   <h3>Özet</h3>
   <p>
     $proposal.summary
