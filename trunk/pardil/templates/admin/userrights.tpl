@@ -66,7 +66,7 @@
       <td>$i.category</td>
       <td>$i.group</td>
       <td>$i.right</td>
-      <td>[<a href="admin_userrights.py?action=delete&amp;delete=$i.relid">Sil</a>]</td>
+      <td>[<a href="admin_userrights.py?action=delete&amp;relid=$i.relid">Sil</a>]</td>
     </tr>
     #end for
   </table>

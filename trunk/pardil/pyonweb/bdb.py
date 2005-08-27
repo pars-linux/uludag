@@ -39,11 +39,11 @@ class bdb:
     return self.db.items()
     
   def __iter__(self):
+    self.index = 0
     return self
    
   def next(self):
     if self.index == self.__len__():
-      self.index = 0
       raise StopIteration
     r = self.db.keys()[self.index]
     self.index = self.index + 1

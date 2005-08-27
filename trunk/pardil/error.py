@@ -13,7 +13,7 @@ def index():
 
   p['keyword'] = p.form['tag']
 
-  p.template = site_config['path'] + 'templates/error.tpl'
+  p.template = 'error.tpl'
 
 p.actions = {'default': index}
 

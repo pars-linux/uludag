@@ -64,7 +64,7 @@
       <td>$i.relid</td>
       <td>$i.group</td>
       <td>$i.username</td>
-      <td>[<a href="admin_usergroups.py?action=delete&amp;delete=$i.relid">Sil</a>]</td>
+      <td>[<a href="admin_usergroups.py?action=delete&amp;relid=$i.relid">Sil</a>]</td>
     </tr>
     #end for
   </table>

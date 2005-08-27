@@ -13,29 +13,42 @@ p.name = 'pardil_register'
 p.title = site_config['title']
 
 def index():
-  p.template = site_config['path'] + 'templates/register.tpl'
+  p.template = 'register.tpl'
 
 def register():
-  p.template = site_config['path'] + 'templates/register.tpl'
+  p.template = 'register.tpl'
 
   # Kullanıcı adını kontrol et.
-  if not len(p.form['r_username']):
+  if 'r_username' not in p.form or not len(p.form['r_username']):
     p['errors']['r_username'] = 'Kullanıcı adı boş bırakılamaz.'
   elif not re.match('^[a-zA-Z0-9]{4,32}$', p.form['r_username']):
     p['errors']['r_username'] = 'Kullanıcı adı 4-32 karakter uzunlukta, alfanumerik olmalı.'
-  elif p.db.scalar_query('SELECT Count(*) FROM users WHERE username="%s"' % (p.db.escape(p.form['r_username']))) > 0:
-    p['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
+  else:
+    q = """SELECT Count(*)
+           FROM users
+           WHERE username="%s"
+        """ % (p.db.escape(p.form['r_username']))
+    if p.db.scalar_query(q) > 0:
+      p['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
    
   # E-posta adresini kontrol et.
-  if not len(p.form['r_email']):
+  if 'r_email' not in p.form or not len(p.form['r_email']):
     p['errors']['r_email'] = 'E-posta adresi boş bırakılamaz.'
   elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', p.form['r_email']):
     p['errors']['r_email'] = 'E-posta adresi geçerli formatta olmalı.'
-  elif p.db.scalar_query('SELECT Count(*) FROM users WHERE email="%s"' % (p.db.escape(p.form['r_email']))) > 0:
-    p['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
+  else:
+    q = """SELECT Count(*)
+           FROM users
+           WHERE email="%s"
+        """ % (p.db.escape(p.form['r_email']))
+    if p.db.scalar_query(q) > 0:
+      p['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
       
   # Parolayı kontrol et.
-  if not len(p.form['r_password']):
+  if 'r_password' not in p.form or \
+     'r_password2' not in p.form or \
+     not len(p.form['r_password']) or \
+     not len(p.form['r_password2']):
     p['errors']['r_password'] = 'Parola boş bırakılamaz.'
   elif p.form['r_password'] != p.form['r_password2']:
     p['errors']['r_password'] = 'İki parola, birbiriyle aynı olmalı.'
@@ -44,19 +57,27 @@ def register():
       
   # Hiç hata yoksa...
   if not len(p['errors']):
+
     # Üye kaydı yap...
-    insert_list = {'username': p.form['r_username'],
-                   'password': pass_hash(p.form['r_password']),
-                   'email': p.form['r_email']}
-    uid = p.db.insert('users', insert_list)
+    list = {
+            'username': p.form['r_username'],
+            'password': pass_hash(p.form['r_password']),
+            'email': p.form['r_email']
+            }
+    uid = p.db.insert('users', list)
+    
     # "Kullanıcılar" grubuna ekle
-    insert_list = {'uid': uid,
-                   'gid': 5}
-    p.db.insert('rel_groups', insert_list)
-    p.template = site_config['path'] + 'templates/register.done.tpl'
+    list = {
+            'uid': uid,
+            'gid': 5
+            }
+    p.db.insert('rel_groups', list)
+    p.template = 'register.done.tpl'
 
 
-p.actions = {'default': index,
-            'register': register}
+p.actions = {
+             'default': index,
+             'register': register
+             }
 
 p.build()

@@ -7,7 +7,12 @@ def pass_hash(s):
   
 def html_escape(s):
   s2 = s.replace('&', '&amp;')
-  list = {'"': '&quot;', "'": '&apos;', '<': '&lt;', '>': '&gt;'}
+  list = {
+          '"': '&quot;',
+          "'": '&apos;',
+          '<': '&lt;',
+          '>': '&gt;'
+          }
   for f, t in list.items():
     s2 = s2.replace(f, t)
   return s2

@@ -39,7 +39,7 @@
     <tr>
       <td>$i.gid</td>
       <td>$i.label</td>
-      <td>[<a href="admin_groups.py?action=delete&amp;delete=$i.gid">Sil</a>]</td>
+      <td>[<a href="admin_groups.py?action=delete&amp;gid=$i.gid">Sil</a>]</td>
     </tr>
     #end for
   </table>

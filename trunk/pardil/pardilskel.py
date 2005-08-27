@@ -63,14 +63,17 @@ class pardil_page(page):
       sid = self.db.escape(self.cookie['sid'])
       q = """SELECT users.uid, users.username
              FROM users
-               INNER JOIN sessions ON sessions.uid = users.uid
+               INNER JOIN sessions
+                 ON sessions.uid = users.uid
              WHERE sessions.sid = "%s"
           """ % (sid)
       r = self.db.row_query(q)
       if r:
-        self.data['session'] = {'sid': self.cookie['sid'],
+        self.data['session'] = {
+                                'sid': self.cookie['sid'],
                                 'uid': int(r[0]),
-                                'username': r[1]}
+                                'username': r[1]
+                                }
         q = """UPDATE sessions
                SET timeB=%d
                WHERE sid = "%s"
@@ -106,9 +109,12 @@ class pardil_page(page):
     key = self.db.escape(key)
     q = """SELECT Count(*)
            FROM rel_rights
-             INNER JOIN rights ON rights.rid=rel_rights.rid
-             INNER JOIN rel_groups ON rel_groups.gid=rel_rights.gid
-             INNER JOIN users ON users.uid=rel_groups.uid
+             INNER JOIN rights
+               ON rights.rid=rel_rights.rid
+             INNER JOIN rel_groups
+               ON rel_groups.gid=rel_rights.gid
+             INNER JOIN users
+               ON users.uid=rel_groups.uid
            WHERE
              users.uid=%d AND rights.keyword="%s"
         """ % (self.data['session']['uid'], key)
@@ -128,10 +134,12 @@ class pardil_page(page):
 
   def build(self):
     self.run()
+
+    tpl = site_config['path'] + 'templates/' + self.template
   
     print 'Content-type: text/html'
     print ''
-    print build_template(self.template, self.data)
+    print build_template(tpl, self.data)
 
   def begin(self):
     self.data['site_title'] = self.title

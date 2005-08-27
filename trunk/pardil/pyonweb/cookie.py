@@ -49,11 +49,11 @@ class cookie:
     return self.c.items()
     
   def __iter__(self):
+    self.index = 0
     return self
     
   def next(self):
     if self.index == len(self.c):
-      self.index = 0
       raise StopIteration
     r = self.c.keys()[self.index]
     self.index = self.index + 1
