@@ -4,7 +4,7 @@
   <p>
     <strong>Öneri:</strong> $pid
   </p>
-  <table>
+  <table width="100%">
     <tr>
       <th>Tarih</th>
       <th>Gönderen</th>

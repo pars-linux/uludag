@@ -14,7 +14,7 @@
     #end if
   #end def
   <h2>Gruplar</h2>
-  <div style="float: right;">
+  <div>
     <form method="post" action="admin_groups.py">
       <fieldset>
         <legend>Grup Ekle</legend>
@@ -29,7 +29,7 @@
       </fieldset>
     </form>
   </div>
-  <table>
+  <table width="100%">
     <tr>
       <th>No</th>
       <th>Grup Adı</th>

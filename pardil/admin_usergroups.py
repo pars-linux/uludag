@@ -83,7 +83,7 @@ def delete():
             INNER JOIN rel_groups
               ON rel_groups.uid=users.uid
           WHERE rel_groups.relid=%d
-       """ % (p['relid']
+       """ % (p['relid'])
 
   p['group'] = p.db.scalar_query(q1)
   p['user'] = p.db.scalar_query(q2)
