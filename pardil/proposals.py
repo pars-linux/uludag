@@ -10,9 +10,12 @@ p.name = 'pardil_proposals'
 p.title = site_config['title']
 
 def index():
-
   versions = []
-  for row in p.db.query('SELECT max(vid) FROM proposals_versions GROUP BY pid'):
+  q = """SELECT max(vid)
+         FROM proposals_versions
+         GROUP BY pid
+      """
+  for row in p.db.query(q):
     versions.append(str(row[0]))
 
   p['proposals'] = []
@@ -22,17 +25,21 @@ def index():
              proposals_versions.version,
              proposals_versions.title
            FROM proposals
-             INNER JOIN proposals_versions ON proposals.pid=proposals_versions.pid
+             INNER JOIN proposals_versions
+               ON proposals.pid=proposals_versions.pid
            WHERE proposals_versions.vid IN (%s)
            ORDER BY proposals.pid ASC
         """ % (','.join(versions))
     list = p.db.query(q)
     for i in list:
-      p['proposals'].append({'pid': i[0],
-                             'version': i[1],
-                             'title': i[2]})
+      l = {
+           'pid': i[0],
+           'version': i[1],
+           'title': i[2]
+           }
+      p['proposals'].append(l)
 
-  p.template = site_config['path'] + 'templates/proposals.tpl'
+  p.template = 'proposals.tpl'
 
 p.actions = {'default': index}
 p.build()

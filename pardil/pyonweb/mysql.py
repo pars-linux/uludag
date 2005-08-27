@@ -14,7 +14,12 @@ import MySQLdb
 class mysql:
 
   def __init__(self, db_host, db_name, db_user, db_pw):
-    self.conn = MySQLdb.connect(host=db_host, user=db_user, passwd=db_pw, db=db_name)
+    self.conn = MySQLdb.connect(
+                                host=db_host,
+                                user=db_user,
+                                passwd=db_pw,
+                                db=db_name
+                                )
 
   # Sorgula...
   def query(self, str):
@@ -56,7 +61,8 @@ class mysql:
     for k, v in data.items():
       columns.append(k)
       values.append(""" "%s" """ % (self.escape(str(v))))
-    queryStr = "INSERT INTO %s (%s) VALUES (%s)" % (table, ','.join(columns), ','.join(values))
+    q = """INSERT INTO %s (%s)
+           VALUES (%s)""" % (table, ','.join(columns), ','.join(values))
     
-    self.query_com(queryStr)
+    self.query_com(q)
     return self.scalar_query('SELECT LAST_INSERT_ID()')

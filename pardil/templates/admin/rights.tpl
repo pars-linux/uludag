@@ -53,7 +53,7 @@
       <td>$i.category</td>
       <td>$i.keyword</td>
       <td>$i.label</td>
-      <td>[<a href="admin_rights.py?action=delete&amp;delete=$i.rid">Sil</a>]</td>
+      <td>[<a href="admin_rights.py?action=delete&amp;rid=$i.rid">Sil</a>]</td>
     </tr>
     #end for
   </table>

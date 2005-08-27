@@ -43,11 +43,11 @@ class page:
     return self.data.items()
     
   def __iter__(self):
+    self.index = 0
     return self
     
   def next(self):
     if self.index == len(self.data):
-      self.index = 0
       raise StopIteration
     r = self.data.keys()[self.index]
     self.index = self.index + 1

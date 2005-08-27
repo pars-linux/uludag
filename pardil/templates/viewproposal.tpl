@@ -1,5 +1,19 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
+  #def printError($s)
+    #if $errors.has_key($s)
+      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+    #end if
+  #end def
+
+  #def printValue($s, $t='')
+    #if not $errors.has_key($s) and $posted.has_key($s)
+      #echo $posted[$s]
+    #else
+      #echo $t
+    #end if
+  #end def
+
   <h2>Öneri $proposal['pid'] - $proposal['title']</h2>
   <h3>Künye</h3>
   <ul>
@@ -48,6 +62,7 @@
       <legend>Yorum</legend>
       <div class="required">
         <textarea class="widetext" id="p_comment" name="p_comment" cols="60" rows="5"></textarea>
+        #echo $printError('p_comment')
       </div>
     </fieldset>
     <fieldset>

@@ -16,7 +16,7 @@ def index():
   p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
   p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
 
-  p.template = site_config['path'] + 'templates/index.tpl'
+  p.template = 'index.tpl'
 
 p.actions = {'default': index}
 
