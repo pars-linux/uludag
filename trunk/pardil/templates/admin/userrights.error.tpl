@@ -2,7 +2,7 @@
 <div id="content">
   <h2>Erişim Hakları</h2>
     <p>
-      $relid numaralı bir erişim hakkı bulunmuyor.
+      Belirtilen erişim hakkı bulunamadı.
     </p>
     <ul>
       <li><a href="admin_userrights.py">Listeye Dön</a></li>

@@ -37,7 +37,7 @@ def index():
   p.template = 'admin/rights.tpl'
 
 def delete():
-  if 'rid' not in p.form or not len(p.form['rid']):
+  if 'rid' in p.form and re.match('^[0-9]+$', p.form['rid']):
     p['rid'] = int(p.form['rid'])
   else:
     p.template = 'admin/rights.error.tpl'

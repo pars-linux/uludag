@@ -14,31 +14,41 @@
     #end if
   #end def
 
-  <h2>Öneri $proposal['pid'] - $proposal['title']</h2>
+  <h2>Öneri $proposal.pid - $proposal.title</h2>
   <h3>Künye</h3>
   <ul>
-    <li><strong>Sürüm:</strong> $proposal['version']</li>
+    <li><strong>Sürüm:</strong> $proposal.version</li>
+    #if not $proposal.online
+    <li><strong>Durum:</strong> Öneri Yayınlanmıyor</li>
+    #end if
+    <li><strong>Sorumlular:</strong>
+      #set $list = []
+      #for $i in $maintainers
+        $list.append("""<a href="#">%s</a>""" % $i.user)
+      #end for
+      #echo ', '.join($list)
+    </li>
   </ul>
   <h3>Özet</h3>
   <p>
-    $proposal['summary']
+    $proposal.summary
   </p>
   <h3>Amaç</h3>
-  $proposal['purpose']
+  $proposal.purpose
   <p>&nbsp;</p>
   <h3>İçerik</h3>
-  $proposal['content']
+  $proposal.content
   <p>&nbsp;</p>
   <h3>Çözüm</h3>
-  $proposal['solution']
+  $proposal.solution
   <p>&nbsp;</p>
   <h3>Sürüm Geçmişi</h3>
   <ul>
     #for $i in $versions
-      #if $i == $proposal['version']
+      #if $i == $proposal.version
         #echo """<li>%s</li>""" % ($i)
       #else
-        #echo """<li><a href="viewproposal.py?pid=%d&amp;version=%s">%s</a></li>""" % ($proposal['pid'], $i, $i)
+        #echo """<li><a href="viewproposal.py?pid=%d&amp;version=%s">%s</a></li>""" % ($proposal.pid, $i, $i)
       #end if
     #end for
   </ul>
@@ -56,8 +66,8 @@
     #end if
   #if $may_comment
   <form action="viewproposal.py" method="post">
-    <input type="hidden" name="pid" value="$proposal['pid']" />
-    <input type="hidden" name="version" value="$proposal['version']" />
+    <input type="hidden" name="pid" value="$proposal.pid" />
+    <input type="hidden" name="version" value="$proposal.version" />
     <fieldset>
       <legend>Yorum</legend>
       <div class="required">

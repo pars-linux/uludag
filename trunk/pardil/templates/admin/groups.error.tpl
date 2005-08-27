@@ -2,7 +2,7 @@
 <div id="content">
   <h2>Gruplar</h2>
   <p>
-    $gid numaralı bir grup bulunmuyor.
+    Belirtilen grup bulunamadı.
   </p>
   <ul>
     <li><a href="admin_groups.py">Listeye Dön</a></li>
