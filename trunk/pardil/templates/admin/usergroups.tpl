@@ -14,7 +14,7 @@
     #end if
   #end def
   <h2>Kullanıcı Grupları</h2>
-  <div style="float: right; ">
+  <div>
   <form method="post" action="admin_usergroups.py">
     <fieldset>
       <legend>Gruba Kullanıcı Ekle</legend>
@@ -52,7 +52,7 @@
     </fieldset>
   </form>
   </div>
-  <table>
+  <table width="100%">
     <tr>
       <th>No</th>
       <th>Grup Adı</th>

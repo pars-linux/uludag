@@ -14,7 +14,7 @@
     #end if
   #end def
   <h2>Erişim Hakları</h2>
-  <div style="float: right; ">
+  <div>
   <form method="post" action="admin_userrights.py">
     <fieldset>
       <legend>Erişim Hakkı Ekle</legend>
@@ -52,7 +52,7 @@
     </fieldset>
   </form>
   </div>
-  <table>
+  <table width="100%">
     <tr>
       <th>No</th>
       <th>Kategori</th>
