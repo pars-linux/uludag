@@ -21,12 +21,12 @@
       <legend>Hesap Bilgileri</legend>
       <div class="required">
         <label for="l_username">Kullanıcı Adı:</label>
-        <input type="text" id="l_username" name="l_username" value="#echo $printValue('l_username', '') #" /> (test)
+        <input type="text" id="l_username" name="l_username" value="#echo $printValue('l_username', '') #" />
         #echo $printError('l_username')
       </div>
       <div class="required">
         <label for="l_password">Parola:</label>
-        <input type="password" id="l_password" name="l_password" value="#echo $printValue('l_password', '') #" /> (test)
+        <input type="password" id="l_password" name="l_password" value="#echo $printValue('l_password', '') #" />
         #echo $printError('l_password')
       </div>
     </fieldset>
