@@ -78,7 +78,11 @@ def delete():
   try:
     p['relid'] = int(p.form['relid'])
   except:
-    p.template = 'admin/rights.error.tpl'
+    p.template = 'admin/userrights.error.tpl'
+    return
+
+  if p['relid'] == 1:
+    p.template = 'admin/userrights.error.tpl'
     return
 
   q = """SELECT groups.label
