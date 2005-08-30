@@ -79,35 +79,36 @@ def delete():
     p['relid'] = int(p.form['relid'])
   except:
     p.template = 'admin/rights.error.tpl'
+    return
+
+  q = """SELECT groups.label
+         FROM groups
+           INNER JOIN rel_rights
+             ON rel_rights.gid=groups.gid
+         WHERE rel_rights.relid=%d
+      """ % (p['relid'])
+  p['group'] = p.db.scalar_query(q)
+  q = """SELECT rights.label
+         FROM rights
+           INNER JOIN rel_rights
+             ON rel_rights.rid=rights.rid
+         WHERE rel_rights.relid=%d
+      """ % (p['relid'])
+  p['right'] = p.db.scalar_query(q)
+  if not p['group'] or not p['right']:
+    p.template = 'admin/userrights.error.tpl'
   else:
-    q = """SELECT groups.label
-           FROM groups
-             INNER JOIN rel_rights
-               ON rel_rights.gid=groups.gid
-           WHERE rel_rights.relid=%d
-        """ % (p['relid'])
-    p['group'] = p.db.scalar_query(q)
-    q = """SELECT rights.label
-           FROM rights
-             INNER JOIN rel_rights
-               ON rel_rights.rid=rights.rid
-           WHERE rel_rights.relid=%d
-        """ % (p['relid'])
-    p['right'] = p.db.scalar_query(q)
-    if not p['group'] or not p['right']:
-      p.template = 'admin/userrights.error.tpl'
-    else:
-      if 'confirm' in p.form:
-        if p.form['confirm'] == 'yes':
-          q = """DELETE FROM rel_rights
-                 WHERE relid=%d
-              """ % (p['relid'])
-          p.db.query_com(q)
-          p.template = 'admin/userrights.delete_yes.tpl'
-        else:
-          p.template = 'admin/userrights.delete_no.tpl'
+    if 'confirm' in p.form:
+      if p.form['confirm'] == 'yes':
+        q = """DELETE FROM rel_rights
+               WHERE relid=%d
+            """ % (p['relid'])
+        p.db.query_com(q)
+        p.template = 'admin/userrights.delete_yes.tpl'
       else:
-        p.template = 'admin/userrights.delete_confirm.tpl'
+        p.template = 'admin/userrights.delete_no.tpl'
+    else:
+      p.template = 'admin/userrights.delete_confirm.tpl'
 
 def insert():
   try:

@@ -64,9 +64,9 @@ def index():
   p.template = 'admin/usergroups.tpl'
 
 def delete():
-  if 'relid' not in p.form or not len(p.form['relid']):
+  try:
     p['relid'] = int(p.form['relid'])
-  else:
+  except:
     p.template = 'admin/usergroups.error.tpl'
     return
 
