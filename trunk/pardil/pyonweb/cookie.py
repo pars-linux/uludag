@@ -15,7 +15,7 @@ import Cookie
 class cookie:
 
   def __init__(self):
-    self.c = Cookie.SmartCookie()
+    self.c = Cookie.SimpleCookie(()
     self.index = 0
     try:
       cr = os.environ['HTTP_COOKIE']
