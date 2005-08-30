@@ -70,6 +70,10 @@ def delete():
     p.template = 'admin/usergroups.error.tpl'
     return
 
+  if p['relid'] == 1:
+    p.template = 'admin/usergroups.error.tpl'
+    return
+
   q1 = """SELECT
             groups.label
           FROM groups
