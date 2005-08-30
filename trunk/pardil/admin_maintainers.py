@@ -29,36 +29,37 @@ def index():
     versions.append(str(row[0]))
 
   p['rel_maintainers'] = []
-  q = """SELECT
-           rel_maintainers.relid,
-           proposals.pid,
-           proposals_versions.title,
-           users.username
-         FROM rel_maintainers
-           INNER JOIN proposals
-             ON proposals.pid = rel_maintainers.pid
-           INNER JOIN proposals_versions
-             ON proposals_versions.pid = proposals.pid
-           INNER JOIN users
-             ON users.uid = rel_maintainers.uid
-           WHERE
-             proposals_versions.vid IN (%s) AND
-             proposals_versions.online = 1
-         ORDER BY proposals.pid, users.username ASC
-      """ % (','.join(versions))
-
-  list = p.db.query(q)
-  for i in list:
-    l = {
-         'relid': i[0],
-         'pid': i[1],
-         'proposal': i[2],
-         'username': i[3]
-         }
-    p['rel_maintainers'].append(l)
-
   p['proposals'] = []
+
   if len(versions):
+    q = """SELECT
+             rel_maintainers.relid,
+             proposals.pid,
+             proposals_versions.title,
+             users.username
+           FROM rel_maintainers
+             INNER JOIN proposals
+               ON proposals.pid = rel_maintainers.pid
+             INNER JOIN proposals_versions
+               ON proposals_versions.pid = proposals.pid
+             INNER JOIN users
+               ON users.uid = rel_maintainers.uid
+             WHERE
+               proposals_versions.vid IN (%s) AND
+               proposals_versions.online = 1
+           ORDER BY proposals.pid, users.username ASC
+        """ % (','.join(versions))
+
+    list = p.db.query(q)
+    for i in list:
+      l = {
+           'relid': i[0],
+           'pid': i[1],
+           'proposal': i[2],
+           'username': i[3]
+           }
+      p['rel_maintainers'].append(l)
+
     q = """SELECT
              proposals.pid AS _pid,
              proposals_versions.version,

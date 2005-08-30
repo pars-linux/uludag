@@ -26,7 +26,7 @@ def index():
              ON groups.gid=rel_groups.gid
            INNER JOIN users
              ON users.uid=rel_groups.uid
-         ORDER BY groups.label, users.username ASC
+         ORDER BY groups.gid, users.username ASC
       """
   list = p.db.query(q)
   for i in list:
