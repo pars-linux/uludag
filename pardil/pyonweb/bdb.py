@@ -29,6 +29,9 @@ class bdb:
   def __setitem__(self, key, value):
     self.db.put(key, value)
 
+  def __delitem__(self, key):
+    self.db.delete(key)
+
   def __len__(self):
     return self.db.stat()['nkeys']
 
