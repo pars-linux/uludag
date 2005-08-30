@@ -37,10 +37,3 @@
 
 - Öneri sistemi
   - Önerilere resim/yama iliştirme
-
-
-0.3
-===
-
-- Arayüz
-  - Asp.net'teki DataGrid'in işini yapacak bir sınıf
