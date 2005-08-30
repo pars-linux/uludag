@@ -20,11 +20,20 @@ if not p.access('proposals_add'):
 def new():
   p.template = 'new_proposal.tpl'
 
-  if 'p_title' not in p.form or not re.match('^.{10,100}$', p.form['p_title']):
-    p['errors']['p_title'] = 'Başlık 10-100 karakter arası olmalı.'
+  if 'p_title' not in p.form or not len(p.form['p_title']):
+    p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
 
   if 'p_summary' not in p.form or not len(p.form['p_summary']):
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
+
+  if 'p_purpose' not in p.form or not len(p.form['p_purpose']):
+    p['errors']['p_purpose'] = 'Amaç boş bırakılamaz.'
+    
+  if 'p_content' not in p.form or not len(p.form['p_content']):
+    p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
+
+  if 'p_solution' not in p.form or not len(p.form['p_solution']):
+    p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
 
   # Hiç hata yoksa...
   if not len(p['errors']):
