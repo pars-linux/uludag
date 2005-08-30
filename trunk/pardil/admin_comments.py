@@ -47,9 +47,9 @@ def index():
   p.template = 'admin/comments.tpl'
   
 def comments():
-  if 'pid' in p.form and re.match('^[0-9]+$', p.form['pid']):
+  try:
     p['pid'] = int(p.form['pid'])
-  else:
+  except:
     p.template = 'admin/comments.error.tpl'
     return
 

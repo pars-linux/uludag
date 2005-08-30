@@ -34,9 +34,9 @@ def index():
   p.template = 'admin/groups.tpl'
 
 def delete():
-  if 'gid' in p.form and re.match('^[0-9]+$', p.form['gid']):
+  try:
     p['gid'] = int(p.form['gid'])
-  else:
+  except:
     p.template = 'admin/groups.error.tpl'
     return
 

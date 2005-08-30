@@ -93,9 +93,9 @@ def index():
   p.template = 'admin/maintainers.tpl'
 
 def delete():
-  if 'relid' in p.form and re.match('^[0-9]+$', p.form['relid']):
+  try:
     p['relid'] = int(p.form['relid'])
-  else:
+  except:
     p.template = 'admin/maintainers.error.tpl'
     return
 
