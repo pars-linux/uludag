@@ -2,7 +2,8 @@
   <h2>Menü</h2>
 #if $session
   <p>
-    Hey ${session['username']}! Sesinden tanıdım seni.
+    <strong>Kullanıcı:</strong><br/>
+    ${session['username']}
   </p>
   <ul>
     <li><a href="login.py?action=logout">Çıkış</a></li>

@@ -54,7 +54,7 @@
       </div>
     </fieldset>
     <fieldset>
-      <legend>Öneri İçeriği</legend>
+      <legend>Öneri Detayları</legend>
       <div class="required">
         <textarea class="widetext" id="p_content" name="p_content" cols="60" rows="10">#echo $printValue('p_content', '') #</textarea>
         #echo $printError('p_content')

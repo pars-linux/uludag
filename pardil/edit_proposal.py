@@ -72,8 +72,18 @@ def edit():
 
   if 'p_title' not in p.form or not len(p.form['p_title']):
     p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
-  elif len(p.form['p_title']) > 100:
-    p['errors']['p_title'] = 'Başlık en fazla 100 karakter olabilir.'
+
+  if 'p_summary' not in p.form or not len(p.form['p_summary']):
+    p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
+
+  if 'p_purpose' not in p.form or not len(p.form['p_purpose']):
+    p['errors']['p_purpose'] = 'Amaç boş bırakılamaz.'
+    
+  if 'p_content' not in p.form or not len(p.form['p_content']):
+    p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
+
+  if 'p_solution' not in p.form or not len(p.form['p_solution']):
+    p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
     
   if not re.match('^[0-9]+$', p.form['p_version']) or \
      int(p.form['p_version']) not in range(1, 4):
