@@ -23,7 +23,6 @@ def index():
   if pid and version:
     q = """SELECT
              proposals.pid,
-             proposals_versions.online,
              proposals_versions.version,
              proposals_versions.title,
              proposals_versions.summary,
@@ -42,21 +41,19 @@ def index():
     if row:
       p['proposal'] = {
                        'pid': row[0],
-                       'online': row[1],
-                       'version': html_escape(row[2]),
-                       'title': html_escape(row[3]),
-                       'summary': nl2br(html_escape(row[4])),
-                       'purpose': nl2br(html_escape(row[5])),
-                       'content': nl2br(html_escape(row[6])),
-                       'solution': nl2br(html_escape(row[7]))
+                       'version': html_escape(row[1]),
+                       'title': html_escape(row[2]),
+                       'summary': nl2br(html_escape(row[3])),
+                       'purpose': nl2br(html_escape(row[4])),
+                       'content': nl2br(html_escape(row[5])),
+                       'solution': nl2br(html_escape(row[6]))
                        }
 
       # Sürüm geçmişi
       q = """SELECT proposals_versions.version
              FROM proposals_versions
              WHERE
-               pid=%d AND
-               online = 1
+               pid=%d
              ORDER BY vid DESC
           """ % (pid)
       rows = p.db.query(q)

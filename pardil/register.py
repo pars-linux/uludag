@@ -4,6 +4,8 @@
 from pardilskel import pardil_page
 from cfg_main import site_config
 from pyonweb.libstring import *
+from pyonweb.libdate import *
+from pyonweb.mail import sendmail
 
 import re
 
@@ -58,22 +60,29 @@ def register():
   # Hiç hata yoksa...
   if not len(p['errors']):
 
-    # Üye kaydı yap...
+    
+    # "Users - Pending" tablosuna ekle
+    act_code = pass_hash(str(time.time()))
     list = {
             'username': p.form['r_username'],
             'password': pass_hash(p.form['r_password']),
-            'email': p.form['r_email']
+            'email': p.form['r_email'],
+            'timeB': sql_datetime(now()),
+            'code': act_code
             }
-    uid = p.db.insert('users', list)
-    
-    # "Kullanıcılar" grubuna ekle
-    list = {
-            'uid': uid,
-            'gid': 5
-            }
-    p.db.insert('rel_groups', list)
-    p.template = 'register.done.tpl'
+    p.db.insert('users_pending', list)
 
+
+    # E-posta gönder
+
+    t = "Pardil - Üyelik Aktivasyonu"
+    link = site_config['url'] + 'activate.py?code=' + act_code
+    b = "Merhaba,\n\nKayıt işlemini tamamlamak için aşağıdaki adresi ziyaret edin:\n%s\n\nPardil" % (link)
+    sendmail(site_config['mail'], p.form['r_email'], t, b)
+
+    p['debug'] = b
+    p.template = "register.done.tpl"
+    
 
 p.actions = {
              'default': index,

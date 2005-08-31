@@ -24,7 +24,7 @@ def login():
       
   if 'l_password' not in p.form or not len(p.form['l_password']):
     p['errors']['l_password'] = 'Parola boş bırakılamaz.'
-
+  
   if not len(p['errors']):
     uid = p.login(p.form['l_username'], p.form['l_password'])
     if uid:
