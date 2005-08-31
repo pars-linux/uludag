@@ -42,11 +42,15 @@ def new():
     # Öneri hemen yayınlansın mı...
     if p.access('proposals_publish'):
       version = '1.0.0'
+      
+      # Öneriler tablosuna ekle
       list = {
               'uid': p['session']['uid'],
               'startup': sql_datetime(now())
               }
       pid = p.db.insert('proposals', list)
+
+      # İlk sürümü ekle
       list = {
               'pid': pid,
               'version': version,
@@ -59,6 +63,14 @@ def new():
               'changelog': p.form['p_changelog']
               }
       vid = p.db.insert('proposals_versions', list)
+      
+      # Kişiyi öneri sorumlusu olarak ata
+      list = {
+              'uid': p['session']['uid'],
+              'pid': pid
+              }
+      p.db.insert('rel_maintainers', list)
+      
       p['pid'] = pid
       p['version'] = version
     else:
