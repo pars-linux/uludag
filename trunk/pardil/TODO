@@ -4,6 +4,7 @@
 + Üyelik sistemi
   + Kayıt sayfası
   + Kullanıcı girişi
+  + E-posta ile aktivasyon
 
 / Öneri sistemi
   + Öneri ekleme
@@ -24,14 +25,15 @@
 
 - "Pardil Nasıl Kullanılır?" sayfası
 
-- Arayüzde düzenlemeler
+- Arayüz
+  - CSS değişiklikleri
+  - Hata mesajları
 
 
 0.2
 ===
 
 - Üyelik sistemi
-  - E-posta ile aktivasyon
   - Şifre hatırlatma
   - Şifre değiştirme
 

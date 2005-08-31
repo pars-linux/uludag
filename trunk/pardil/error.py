@@ -11,7 +11,15 @@ p.title = site_config['title']
 
 def index():
 
-  p['keyword'] = p.form['tag']
+  errors = {
+            'login_required': 'Bu işlemi yapmadan önce giriş yapmalısınız.',
+            'not_in_authorized_group': 'Bu işlemi yapma yetkisine sahip bir gruba üye olmalısınız.'
+            }
+
+  if p.form['tag'] in errors:
+    p['keyword'] = errors[p.form['tag']]
+  else:
+    p['keyword'] = p.form['tag']
 
   p.template = 'error.tpl'
 

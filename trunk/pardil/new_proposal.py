@@ -37,36 +37,44 @@ def new():
 
   # Hiç hata yoksa...
   if not len(p['errors']):
-    version = '1.0.0'
 
-    list = {
-            'uid': p['session']['uid'],
-            'startup': sql_datetime(now())
-            }
-    pid = p.db.insert('proposals', list)
 
     # Öneri hemen yayınlansın mı...
     if p.access('proposals_publish'):
-      online = 1
+      version = '1.0.0'
+      list = {
+              'uid': p['session']['uid'],
+              'startup': sql_datetime(now())
+              }
+      pid = p.db.insert('proposals', list)
+      list = {
+              'pid': pid,
+              'version': version,
+              'title': p.form['p_title'],
+              'summary': p.form['p_summary'],
+              'purpose': p.form['p_purpose'],
+              'content': p.form['p_content'],
+              'solution': p.form['p_solution'],
+              'timeB': sql_datetime(now()),
+              'changelog': p.form['p_changelog']
+              }
+      vid = p.db.insert('proposals_versions', list)
+      p['pid'] = pid
+      p['version'] = version
     else:
-      online = 0
-    
-    list = {
-            'pid': pid,
-            'online': online,
-            'version': version,
-            'title': p.form['p_title'],
-            'summary': p.form['p_summary'],
-            'purpose': p.form['p_purpose'],
-            'content': p.form['p_content'],
-            'solution': p.form['p_solution'],
-            'timeB': sql_datetime(now()),
-            'changelog': p.form['p_changelog']
-            }
-    vid = p.db.insert('proposals_versions', list)
-
-    p['pid'] = pid
-    p['version'] = version
+      list = {
+              'uid': p['session']['uid'],
+              'title': p.form['p_title'],
+              'summary': p.form['p_summary'],
+              'purpose': p.form['p_purpose'],
+              'content': p.form['p_content'],
+              'solution': p.form['p_solution'],
+              'timeB': sql_datetime(now())
+              }
+      p.db.insert('proposals_pending', list)
+      p['pid'] = 0
+      p['version'] = 0
+      
     p.template = 'new_proposal.done.tpl'
 
 def index():

@@ -1,7 +1,8 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  <h2>Kullanıcı Kaydı</h2>
-  <p>Kullanıcı kaydı tamamlandı.</p>
-  $debug
+  <h2>Üyelik Aktivasyonu</h2>
+  <p>
+    Aktivasyon başarıyla tamamlandı.
+  </p>
 </div>
 #include $site_path + "templates/footer.tpl"

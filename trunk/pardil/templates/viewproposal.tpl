@@ -18,9 +18,6 @@
   <h3>Künye</h3>
   <ul>
     <li><strong>Sürüm:</strong> $proposal.version</li>
-    #if not $proposal.online
-    <li><strong>Durum:</strong> Öneri Yayınlanmıyor</li>
-    #end if
     <li><strong>Sorumlular:</strong>
       #set $list = []
       #for $i in $maintainers
