@@ -1,14 +1,5 @@
--- phpMyAdmin SQL Dump
--- version 2.6.2-pl1
--- http://www.phpmyadmin.net
--- 
--- Sunucu: localhost
--- Çıktı Tarihi: Ağustos 13, 2005 at 05:26 AM
 -- Server sürümü: 4.1.12
--- PHP Sürümü: 5.0.4
--- 
 -- Veritabanı: `pardil_py`
--- 
 
 -- --------------------------------------------------------
 
@@ -20,7 +11,7 @@ CREATE TABLE groups (
   gid int(10) unsigned NOT NULL auto_increment,
   label varchar(32) collate utf8_turkish_ci NOT NULL default '',
   PRIMARY KEY  (gid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=6;
 
 -- 
 -- Tablo döküm verisi `groups`
@@ -43,7 +34,7 @@ CREATE TABLE proposals (
   uid int(10) unsigned NOT NULL default '0',
   startup datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (pid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=2;
 
 -- 
 -- Tablo döküm verisi `proposals`
@@ -64,7 +55,7 @@ CREATE TABLE proposals_comments (
   content text collate utf8_turkish_ci NOT NULL,
   timeB datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (cid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=2;
 
 -- 
 -- Tablo döküm verisi `proposals_comments`
@@ -80,7 +71,6 @@ INSERT INTO proposals_comments (cid, pid, uid, title, content) VALUES (1, 1, 1, 
 
 CREATE TABLE proposals_versions (
   vid int(10) unsigned NOT NULL auto_increment,
-  online tinyint(4) NOT NULL default '0',
   pid int(10) unsigned NOT NULL default '0',
   version varchar(16) collate utf8_turkish_ci NOT NULL default '0',
   title varchar(100) collate utf8_turkish_ci NOT NULL default '',
@@ -216,3 +206,38 @@ CREATE TABLE users (
 
 INSERT INTO users (uid, username, password, email) VALUES (1, 'pardil', 'b7b5d272b4f7fb67bd323c3b2f86bcb2', 'pardil@uludag.org.tr');
 INSERT INTO users (uid, username, password, email) VALUES (2, 'test', '0ed2aa90d35d6ef925c40d26b90ad970', 'test@test.test');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tablo yapısı : `proposals_pending`
+-- 
+
+CREATE TABLE `proposals_pending` (
+  `tpid` int(10) unsigned NOT NULL auto_increment,
+  `uid` int(10) unsigned NOT NULL default '0',
+  `title` varchar(100) collate utf8_turkish_ci NOT NULL default '',
+  `summary` text collate utf8_turkish_ci NOT NULL,
+  `purpose` text collate utf8_turkish_ci NOT NULL,
+  `content` text collate utf8_turkish_ci NOT NULL,
+  `solution` text collate utf8_turkish_ci NOT NULL,
+  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`tpid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tablo yapısı : `users_pending`
+-- 
+
+CREATE TABLE `users_pending` (
+  `pid` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  `password` varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  `email` varchar(64) collate utf8_turkish_ci NOT NULL default '',
+  `code` varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`pid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+        
