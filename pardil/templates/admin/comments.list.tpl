@@ -1,9 +1,10 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
   <h2>Önerilere Yapılan Yorumlar</h2>
-  <p>
-    <strong>Öneri:</strong> $pid
-  </p>
+  <ul>
+    <li><strong>Öneri:</strong> $pid</li>
+    <li><a href="admin_comments.py">Listeye Dön</a></li>
+  </ul>
   <table width="100%">
     <tr>
       <th>Tarih</th>
