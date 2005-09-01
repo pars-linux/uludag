@@ -93,6 +93,7 @@ form>fieldset>legend {
   font-weight: bold;
 }
 input[type='text'], input[type='password'], textarea, select {
+  font-family: Courier New, Monospace;
   border: 1px solid #aaa;
 }
 

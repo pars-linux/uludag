@@ -39,7 +39,7 @@
   <h3>Amaç</h3>
   $proposal.purpose
   <p>&nbsp;</p>
-  <h3>İçerik</h3>
+  <h3>Detaylar</h3>
   $proposal.content
   <p>&nbsp;</p>
   <h3>Çözüm</h3>

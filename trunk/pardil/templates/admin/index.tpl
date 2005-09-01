@@ -11,6 +11,10 @@
     <li><a href="admin_maintainers.py">Öneri Sorumluları</a></li>
   </ul>
   <ul>
+    <li><a href="admin_p_proposals.py">Onay Bekleyen Öneriler</a></li>
+    <li><a href="admin_proposals.py">Tüm Öneriler</a></li>
+  </ul>
+  <ul>
     <li><a href="admin_comments.py">Yorumlar</a></li>
   </ul>
   <p>
