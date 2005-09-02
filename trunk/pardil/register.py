@@ -6,6 +6,7 @@ from cfg_main import site_config
 from pyonweb.libstring import *
 from pyonweb.libdate import *
 from pyonweb.mail import sendmail
+from pyonweb.template import build_template
 
 import re
 import random
@@ -74,8 +75,10 @@ def register():
     # E-posta gönder
 
     t = "Pardil - Üyelik Aktivasyonu"
-    link = site_config['url'] + 'activate.py?code=' + act_code
-    b = "Merhaba,\n\nKayıt işlemini tamamlamak için aşağıdaki adresi ziyaret edin:\n%s\n\nPardil" % (link)
+    list = {
+            'link': site_config['url'] + 'activate.py?code=' + act_code
+            }
+    b = build_template(site_config['path'] + 'templates/email/register.tpl', list)
     sendmail(site_config['mail'], p.form.getvalue('r_email'), t, b)
 
     p['debug'] = b
