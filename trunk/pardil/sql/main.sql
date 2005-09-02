@@ -241,3 +241,11 @@ CREATE TABLE `users_pending` (
   PRIMARY KEY  (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
         
+
+CREATE TABLE users_passcodes (
+  id int(10) unsigned NOT NULL auto_increment,
+  uid int(10) unsigned NOT NULL default '0',
+  code varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  timeB int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;

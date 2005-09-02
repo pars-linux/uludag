@@ -8,6 +8,7 @@ from pyonweb.libdate import *
 from pyonweb.mail import sendmail
 
 import re
+import random
 
 p = pardil_page()
 
@@ -59,7 +60,7 @@ def register():
 
     
     # "Users - Pending" tablosuna ekle
-    act_code = pass_hash(str(time.time()))
+    act_code = pass_hash(str(random.random()))
     list = {
             'username': p.form.getvalue('r_username'),
             'password': pass_hash(p.form.getvalue('r_password')),
