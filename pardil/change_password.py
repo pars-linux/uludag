@@ -56,9 +56,11 @@ def code():
       
       # E-posta gönder
       t = "Pardil - Şifre Değiştirme Kodu"
-      link = site_config['url'] + 'change_password.py?action=change'
-      b  = "Merhaba,\n\nŞifrenizi değiştirmek için, aşağıdaki adresi ziyaret edin:\n\n%s\n\n" % (link)
-      b += "Yeni şifrenizle birlikte, aşağıdaki şifre değiştirme kodunu girin:\n\n%s\n\nPardil" % (acode)
+      list = {
+              'link': site_config['url'] + 'change_password.py?action=change',
+              'code': acode
+              }
+      b = build_template(site_config['path'] + 'templates/email/change_password.tpl', list)
       sendmail(site_config['mail'], p.form.getvalue('c_email'), t, b)
 
       p['mode'] = 'change'
