@@ -14,6 +14,7 @@ from pyonweb.cookie import cookie
 from pyonweb.mysql import mysql
 from pyonweb.http import http
 from pyonweb.libstring import *
+from pyonweb.libdate import *
 from pyonweb.template import build_template
 
 from cfg_main import site_config
