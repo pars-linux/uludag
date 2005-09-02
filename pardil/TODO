@@ -5,6 +5,7 @@
   + Kayıt sayfası
   + Kullanıcı girişi
   + E-posta ile aktivasyon
+  + Unutulan şifreyi değiştirme
 
 / Öneri sistemi
   + Öneri ekleme
@@ -34,7 +35,6 @@
 ===
 
 - Üyelik sistemi
-  - Şifre hatırlatma
   - Şifre değiştirme
 
 - Öneri sistemi
