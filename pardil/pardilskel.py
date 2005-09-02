@@ -47,6 +47,13 @@ class pardil_page(page):
         """ % (int(time.time()), 1800)
     self.db.query_com(q)
 
+    # Remove expired password reset codes
+    q = """DELETE
+           FROM users_passcodes
+           WHERE %d - timeB > %d
+        """ % (int(time.time()), 1800)
+    self.db.query_com(q)
+
     # Posted
     self.data['posted'] = {}
     for i in self.form:

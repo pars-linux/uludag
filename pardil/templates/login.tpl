@@ -34,5 +34,8 @@
       <button type="submit" name="action" value="login">Giriş</button>
     </fieldset>
   </form>
+  <ul>
+    <li><a href="change_password.py">Şifremi Unuttum</a></li>
+  </ul>
 </div>
 #include $site_path + "templates/footer.tpl"
