@@ -9,7 +9,7 @@
 #
 # Please read the COPYING file.
 
-from pyonweb.form import form
+import cgi
 
 class page:
 
@@ -17,7 +17,7 @@ class page:
     self.index = 0
     self.data = {}
     self.actions = {}
-    self.form = form()
+    self.form = cgi.FieldStorage()
 
     self.init()
 
@@ -65,8 +65,8 @@ class page:
   def run(self):
     self.begin()
 
-    if 'action' in self.form and self.form['action'] in self.actions:
-      self.act = self.form['action']
+    if self.form.getvalue('action', '') in self.actions:
+      self.act = self.form.getvalue('action')
     else:
       self.act = 'default'
 

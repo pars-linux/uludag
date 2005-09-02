@@ -17,16 +17,16 @@ def index():
 def login():
   p.template = 'login.tpl'
 
-  if 'l_username' not in p.form or not len(p.form['l_username']):
+  if not len(p.form.getvalue('l_username', '')):
     p['errors']['l_username'] = 'Kullanıcı adı boş bırakılamaz.'
-  elif not re.match('^[a-zA-Z0-9]{4,32}$', p.form['l_username']):
+  elif not re.match('^[a-zA-Z0-9]{4,32}$', p.form.getvalue('l_username')):
     p['errors']['l_username'] = 'Kullanıcı adı 4-32 karakter uzunlukta, alfanumerik olmalı.'
       
-  if 'l_password' not in p.form or not len(p.form['l_password']):
+  if not len(p.form.getvalue('l_password', '')):
     p['errors']['l_password'] = 'Parola boş bırakılamaz.'
   
   if not len(p['errors']):
-    uid = p.login(p.form['l_username'], p.form['l_password'])
+    uid = p.login(p.form.getvalue('l_username'), p.form.getvalue('l_password'))
     if uid:
       p.template = 'login.done.tpl'
     else:

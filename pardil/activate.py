@@ -10,12 +10,12 @@ p.name = 'pardil_activate'
 p.title = site_config['title']
 
 def index():
-  if 'code' in p.form and len(p.form['code']) == 32:
+  if len(p.form.getvalue('code', '')) == 32:
     q = """SELECT
              username, password, email
            FROM users_pending
            WHERE code = "%s"
-        """ % (p.db.escape(p.form['code']))
+        """ % (p.db.escape(p.form.getvalue('code')))
     row = p.db.row_query(q)
 
     if row:
@@ -38,7 +38,7 @@ def index():
       q = """DELETE
              FROM users_pending
              WHERE code = "%s"
-          """ % (p.db.escape(p.form['code']))
+          """ % (p.db.escape(p.form.getvalue('code')))
       p.db.query_com(q)
 
       p.template = 'activate.tpl'

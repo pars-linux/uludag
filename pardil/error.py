@@ -16,10 +16,10 @@ def index():
             'not_in_authorized_group': 'Bu işlemi yapma yetkisine sahip bir gruba üye olmalısınız.'
             }
 
-  if p.form['tag'] in errors:
-    p['keyword'] = errors[p.form['tag']]
+  if p.form.getvalue('tag', '') in errors:
+    p['keyword'] = errors[p.form.getvalue('tag')]
   else:
-    p['keyword'] = p.form['tag']
+    p['keyword'] = p.form.getvalue('tag', '')
 
   p.template = 'error.tpl'
 

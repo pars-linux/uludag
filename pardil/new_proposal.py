@@ -20,19 +20,19 @@ if not p.access('proposals_add'):
 def new():
   p.template = 'new_proposal.tpl'
 
-  if 'p_title' not in p.form or not len(p.form['p_title']):
+  if not len(p.form.getvalue('p_title', '')):
     p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
 
-  if 'p_summary' not in p.form or not len(p.form['p_summary']):
+  if not len(p.form.getvalue('p_summary', '')):
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
 
-  if 'p_purpose' not in p.form or not len(p.form['p_purpose']):
+  if not len(p.form.getvalue('p_purpose', '')):
     p['errors']['p_purpose'] = 'Amaç boş bırakılamaz.'
     
-  if 'p_content' not in p.form or not len(p.form['p_content']):
+  if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
-  if 'p_solution' not in p.form or not len(p.form['p_solution']):
+  if not len(p.form.getvalue('p_solution', '')):
     p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
 
   # Hiç hata yoksa...
@@ -54,13 +54,13 @@ def new():
       list = {
               'pid': pid,
               'version': version,
-              'title': p.form['p_title'],
-              'summary': p.form['p_summary'],
-              'purpose': p.form['p_purpose'],
-              'content': p.form['p_content'],
-              'solution': p.form['p_solution'],
+              'title': p.form.getvalue('p_title'),
+              'summary': p.form.getvalue('p_summary'),
+              'purpose': p.form.getvalue('p_purpose'),
+              'content': p.form.getvalue('p_content'),
+              'solution': p.form.getvalue('p_solution'),
               'timeB': sql_datetime(now()),
-              'changelog': p.form['p_changelog']
+              'changelog': p.form.getvalue('p_changelog')
               }
       vid = p.db.insert('proposals_versions', list)
       
@@ -76,11 +76,11 @@ def new():
     else:
       list = {
               'uid': p['session']['uid'],
-              'title': p.form['p_title'],
-              'summary': p.form['p_summary'],
-              'purpose': p.form['p_purpose'],
-              'content': p.form['p_content'],
-              'solution': p.form['p_solution'],
+              'title': p.form.getvalue('p_title'),
+              'summary': p.form.getvalue('p_summary'),
+              'purpose': p.form.getvalue('p_purpose'),
+              'content': p.form.getvalue('p_content'),
+              'solution': p.form.getvalue('p_solution'),
               'timeB': sql_datetime(now())
               }
       p.db.insert('proposals_pending', list)

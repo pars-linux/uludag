@@ -76,7 +76,7 @@ def index():
 
 def delete():
   try:
-    p['relid'] = int(p.form['relid'])
+    p['relid'] = int(p.form.getvalue('relid'))
   except:
     p.template = 'admin/userrights.error.tpl'
     return
@@ -103,7 +103,7 @@ def delete():
     p.template = 'admin/userrights.error.tpl'
   else:
     if 'confirm' in p.form:
-      if p.form['confirm'] == 'yes':
+      if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM rel_rights
                WHERE relid=%d
             """ % (p['relid'])
@@ -116,8 +116,8 @@ def delete():
 
 def insert():
   try:
-    rid = int(p.form['r_right'])
-    gid = int(p.form['r_group'])
+    rid = int(p.form.getvalue('r_right'))
+    gid = int(p.form.getvalue('r_group'))
   except:
     p['errors']['r_right'] = 'Geçersiz erişim hakkı numarası.'
   else:
