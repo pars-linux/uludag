@@ -9,6 +9,7 @@ import random
 from pyonweb.libstring import *
 from pyonweb.libdate import *
 from pyonweb.mail import sendmail
+from pyonweb.template import build_template
 
 p = pardil_page()
 
