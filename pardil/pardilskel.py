@@ -43,22 +43,22 @@ class pardil_page(page):
     # Remove expired sessions
     q = """DELETE
            FROM sessions
-           WHERE %d - timeB > %d
-        """ % (int(time.time()), site_config['session_timeout'])
+           WHERE time_to_sec(now() - timeB) > %d
+        """ % (site_config['session_timeout'])
     self.db.query_com(q)
 
     # Remove expired password reset codes
     q = """DELETE
            FROM users_passcodes
-           WHERE %d - timeB > %d
-        """ % (int(time.time()), site_config['passcode_timeout'])
+           WHERE time_to_sec(now() - timeB) > %d
+        """ % (site_config['passcode_timeout'])
     self.db.query_com(q)
 
     # Remove expired registration data
     q = """DELETE
            FROM users_pending
-           WHERE %d - timeB > %d
-        """ % (int(time.time()), site_config['activation_timeout'])
+           WHERE time_to_sec(now() - timeB) > %d
+        """ % (site_config['activation_timeout'])
     self.db.query_com(q)
 
     # Posted
@@ -90,9 +90,9 @@ class pardil_page(page):
                                 'username': r[1]
                                 }
         q = """UPDATE sessions
-               SET timeB=%d
+               SET timeB="%d"
                WHERE sid = "%s"
-            """ % (int(time.time()), sid)
+            """ % (sql_datetime(now()), sid)
         self.db.query_com(q)
     else:
       self.data['session'] = {}
@@ -109,7 +109,7 @@ class pardil_page(page):
       sid = pass_hash(str(time.time()))
       d = {'sid': sid,
            'uid': int(uid),
-           'timeB': int(time.time())}
+           'timeB': sql_datetime(now())}
       self.db.insert('sessions', d)
       self.cookie['sid'] = sid
     self.init_session()

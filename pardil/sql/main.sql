@@ -179,7 +179,7 @@ INSERT INTO rights (rid, category, keyword, label) VALUES (4, 'Öneriler', 'prop
 CREATE TABLE sessions (
   sid varchar(32) collate utf8_turkish_ci NOT NULL default '',
   uid int(10) unsigned NOT NULL default '0',
-  timeB int(15) NOT NULL default '0'
+  timeB int(10) unsigned NOT NULL default '0',
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 -- 
@@ -237,7 +237,7 @@ CREATE TABLE `users_pending` (
   `password` varchar(32) collate utf8_turkish_ci NOT NULL default '',
   `email` varchar(64) collate utf8_turkish_ci NOT NULL default '',
   `code` varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  timeB int(10) unsigned NOT NULL default '0',
+  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
         
@@ -246,6 +246,6 @@ CREATE TABLE users_passcodes (
   id int(10) unsigned NOT NULL auto_increment,
   uid int(10) unsigned NOT NULL default '0',
   code varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  timeB int(10) unsigned NOT NULL default '0',
+  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
