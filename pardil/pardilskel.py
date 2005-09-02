@@ -91,7 +91,7 @@ class pardil_page(page):
                                 'username': r[1]
                                 }
         q = """UPDATE sessions
-               SET timeB="%d"
+               SET timeB="%s"
                WHERE sid = "%s"
             """ % (sql_datetime(now()), sid)
         self.db.query_com(q)
