@@ -237,7 +237,7 @@ CREATE TABLE `users_pending` (
   `password` varchar(32) collate utf8_turkish_ci NOT NULL default '',
   `email` varchar(64) collate utf8_turkish_ci NOT NULL default '',
   `code` varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
+  timeB int(10) unsigned NOT NULL default '0',
   PRIMARY KEY  (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
         

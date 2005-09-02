@@ -9,3 +9,7 @@ site_config['db_host'] = 'localhost'
 site_config['db_name'] = 'pardil_py'
 site_config['db_user'] = 'pardil_py'
 site_config['db_pass'] = ''
+
+site_config['session_timeout'] = 1800
+site_config['passcode_timeout'] = 1800
+site_config['activation_timeout'] = 86400
