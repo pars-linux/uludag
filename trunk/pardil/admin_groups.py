@@ -35,7 +35,7 @@ def index():
 
 def delete():
   try:
-    p['gid'] = int(p.form['gid'])
+    p['gid'] = int(p.form.getvalue('gid'))
   except:
     p.template = 'admin/groups.error.tpl'
     return
@@ -50,7 +50,7 @@ def delete():
     p.template = 'admin/groups.error.tpl'
   else:
     if 'confirm' in p.form:
-      if p.form['confirm'] == 'yes':
+      if p.form.getvalue('confirm', '') == 'yes':
         #p.db.query_com('DELETE FROM rel_groups WHERE gid=%d' % (p['gid']))
         #p.db.query_com('DELETE FROM rel_rights WHERE gid=%d' % (p['gid']))
         #p.db.query_com('DELETE FROM groups WHERE gid=%d' % (p['gid']))
@@ -61,18 +61,18 @@ def delete():
       p.template = 'admin/groups.delete_confirm.tpl'
 
 def insert():
-  if 'g_label' not in p.form or not len(p.form['g_label']):
+  if not len(p.form.getvalue('g_label', '')):
     p['errors']['g_label'] = 'Grup adı boş bırakılamaz.'
   else:
     q = """SELECT Count(*)
            FROM groups
            WHERE label="%s"
-        """ % (p.db.escape(p.form['g_label']))
+        """ % (p.db.escape(p.form.getvalue('g_label')))
     if p.db.scalar_query(q) > 0:
       p['errors']['g_label'] = 'Bu isimde bir grup zaten var.'
       
   if not len(p['errors']):
-    p['label'] = p.form['g_label']
+    p['label'] = p.form.getvalue('g_label')
 
     list = {
             'label': p['label']

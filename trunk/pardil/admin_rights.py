@@ -38,7 +38,7 @@ def index():
 
 def delete():
   try:
-    p['rid'] = int(p.form['rid'])
+    p['rid'] = int(p.form.getvalue('rid'))
   except:
     p.template = 'admin/rights.error.tpl'
     return
@@ -54,7 +54,7 @@ def delete():
     p.template = 'admin/rights.error.tpl'
   else:
     if 'confirm' in p.form:
-      if p.form['confirm'] == 'yes':
+      if p.form.getvalue('confirm', '') == 'yes':
         #p.db.query_com('DELETE FROM rel_rights WHERE rid=%d' % (p['rid']))
         #p.db.query_com('DELETE FROM rights WHERE rid=%d' % (p['rid']))
         p.template = 'admin/rights.delete_yes.tpl'
@@ -64,29 +64,29 @@ def delete():
       p.template = 'admin/rights.delete_confirm.tpl'
 
 def insert():
-  if 'r_category' not in p.form or not len(p.form['r_category']):
+  if not len(p.form.getvalue('r_category', '')):
     p['errors']['r_category'] = 'Kategori boş bırakılamaz.'
     
-  if 'r_keyword' not in p.form or not len(p.form['r_keyword']):
+  if not len(p.form.getvalue('r_keyword', '')):
     p['errors']['r_keyword'] = 'Erişim kodu boş bırakılamaz.'
   else:
     q = """SELECT Count(*)
            FROM rights
            WHERE keyword="%s"
-        """ % (p.db.escape(p.form['r_keyword']))
+        """ % (p.db.escape(p.form.getvalue('r_keyword')))
     if p.db.scalar_query(q) > 0:
       p['errors']['r_keyword'] = 'Bu isimde bir kod zaten var.'
     
-  if 'r_label' not in p.form or not len(p.form['r_label']):
+  if not len(p.form.getvalue('r_label', '')):
     p['errors']['r_label'] = 'Etiket boş bırakılamaz.'
       
   if not len(p['errors']):
-    p['label'] = p.form['r_label']
+    p['label'] = p.form.getvalue('r_label')
     
     list = {
-            'category': p.form['r_category'],
-            'keyword': p.form['r_keyword'],
-            'label': p.form['r_label']
+            'category': p.form.getvalue('r_category'),
+            'keyword': p.form.getvalue('r_keyword'),
+            'label': p.form.getvalue('r_label')
             }
     p['rid'] = p.db.insert('rights', list)
 

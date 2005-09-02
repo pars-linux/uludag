@@ -37,7 +37,7 @@ def index():
 
 def view():
   try:
-    tpid = int(p.form['tpid'])
+    tpid = int(p.form.getvalue('tpid'))
   except:
     p.template = 'admin/pending_proposals.error.tpl'
     return
@@ -76,19 +76,22 @@ def view():
  
 def publish():
     
-  if 'p_title' not in p.form or not len(p.form['p_title']):
+  if not len(p.form.getvalue('uid', '')):
+    p['errors']['uid'] = 'Kullanıcı numarası belirtilmemiş.'
+    
+  if not len(p.form.getvalue('p_title', '')):
     p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
 
-  if 'p_summary' not in p.form or not len(p.form['p_summary']):
+  if not len(p.form.getvalue('p_summary', '')):
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
 
-  if 'p_purpose' not in p.form or not len(p.form['p_purpose']):
+  if not len(p.form.getvalue('p_purpose', '')):
     p['errors']['p_purpose'] = 'Amaç boş bırakılamaz.'
     
-  if 'p_content' not in p.form or not len(p.form['p_content']):
+  if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
-  if 'p_solution' not in p.form or not len(p.form['p_solution']):
+  if not len(p.form.getvalue('p_solution', '')):
     p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
 
   # Hiç hata yoksa...
@@ -99,7 +102,7 @@ def publish():
       
     # Öneriler tablosuna ekle
     list = {
-            'uid': p.form['uid'],
+            'uid': p.form.getvalue('p_uid'),
             'startup': sql_datetime(now())
             }
     pid = p.db.insert('proposals', list)
@@ -108,20 +111,20 @@ def publish():
     list = {
             'pid': pid,
             'version': version,
-            'title': p.form['p_title'],
-            'summary': p.form['p_summary'],
-            'purpose': p.form['p_purpose'],
-            'content': p.form['p_content'],
-            'solution': p.form['p_solution'],
+            'title': p.form.getvalue('p_title'),
+            'summary': p.form.getvalue('p_summary'),
+            'purpose': p.form.getvalue('p_purpose'),
+            'content': p.form.getvalue('p_content'),
+            'solution': p.form.getvalue('p_solution'),
             'timeB': sql_datetime(now()),
-            'changelog': p.form['p_changelog']
+            'changelog': p.form.getvalue('p_changelog')
             }
     vid = p.db.insert('proposals_versions', list)
     
     if 'p_maintainer' in p.form:
       # Kişiyi öneri sorumlusu olarak ata
       list = {
-              'uid': p.form['p_uid'],
+              'uid': p.form.getvalue('p_uid'),
               'pid': pid
               }
       p.db.insert('rel_maintainers', list)
@@ -133,7 +136,7 @@ def publish():
     q = """DELETE
            FROM proposals_pending
            WHERE tpid = %d
-        """ % (int(p.form['p_tpid']))
+        """ % (int(p.form.getvalue('p_tpid')))
     p.db.query_com(q)
     
     p.template = 'admin/pending_proposals.publish.tpl'
@@ -146,7 +149,7 @@ def delete():
   q = """DELETE
          FROM proposals_pending
          WHERE tpid = %d
-      """ % (int(p.form['p_tpid']))
+      """ % (int(p.form.getvalue('p_tpid')))
   p.db.query_com(q)
     
   p.template = 'admin/pending_proposals.delete.tpl'

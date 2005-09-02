@@ -14,8 +14,8 @@ p.title = site_config['title']
 
 def index():
   try:
-    pid = int(p.form['pid'])
-    version = p.form['version']
+    pid = int(p.form.getvalue('pid'))
+    version = p.form.getvalue('version')
   except:
     p.template = 'viewproposal.error.tpl'
     return
@@ -124,22 +124,22 @@ def comment():
   if not p.access('proposals_comment'):
     p.http.redirect('error.py?tag=not_in_authorized_group')
 
-  if 'p_comment' not in p.form or not len(p.form['p_comment']):
+  if not len(p.form.getvalue('p_comment', '')):
     p['errors']['p_comment'] = 'Yorum yazmadınız.'
 
-  if 'pid' not in p.form or not len(p.form['pid']):
+  if not len(p.form.getvalue('pid', '')):
     p['errors']['p_comment'] = 'Hangi öneriye yorum yapıldığı belirsiz.'
 
   if not len(p['errors']):
     list = {
-            'pid': p.form['pid'],
+            'pid': p.form.getvalue('pid'),
             'uid': p['session']['uid'],
-            'content': p.form['p_comment'],
+            'content': p.form.getvalue('p_comment'),
             'timeB': sql_datetime(now())
             }
     p.db.insert('proposals_comments', list)
 
-    p.http.redirect('viewproposal.py?pid=%s&version=%s' % (p.form['pid'], p.form['version']))
+    p.http.redirect('viewproposal.py?pid=%s&version=%s' % (p.form.getvalue('pid'), p.form.getvalue('version')))
   else:
     index()
 

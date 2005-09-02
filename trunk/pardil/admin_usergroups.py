@@ -65,7 +65,7 @@ def index():
 
 def delete():
   try:
-    p['relid'] = int(p.form['relid'])
+    p['relid'] = int(p.form.getvalue('relid'))
   except:
     p.template = 'admin/usergroups.error.tpl'
     return
@@ -95,7 +95,7 @@ def delete():
     p.template = 'admin/usergroups.error.tpl'
   else:
     if 'confirm' in p.form:
-      if p.form['confirm'] == 'yes':
+      if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM rel_groups
                WHERE relid=%d
             """ % (p['relid'])
@@ -108,8 +108,8 @@ def delete():
 
 def insert():
   try:
-    uid = int(p.form['u_user'])
-    gid = int(p.form['u_group'])
+    uid = int(p.form.getvalue('u_user'))
+    gid = int(p.form.getvalue('u_group'))
   except:
     p['errors']['u_user'] = 'Geçersiz kullanıcı numarası.'
   else:

@@ -19,8 +19,8 @@ if 'sid' not in p['session']:
 
 def index():
   try:
-    p['pid'] = int(p.form['pid'])
-    p['version'] = p.form['version']
+    p['pid'] = int(p.form.getvalue('pid'))
+    p['version'] = p.form.getvalue('version')
   except:
     p.http.redirect('error.py?tag=proposal_not_found')
    
@@ -54,8 +54,8 @@ def index():
 
 def edit():
   try:
-    p['pid'] = int(p.form['pid'])
-    p['version'] = p.form['version']
+    p['pid'] = int(p.form.getvalue('pid'))
+    p['version'] = p.form.getvalue('version')
   except:
     p.http.redirect('error.py?tag=proposal_not_found')
 
@@ -70,26 +70,25 @@ def edit():
 
   p.template = 'edit_proposal.tpl'
 
-  if 'p_title' not in p.form or not len(p.form['p_title']):
+  if not len(p.form.getvalue('p_title', '')):
     p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
 
-  if 'p_summary' not in p.form or not len(p.form['p_summary']):
+  if not len(p.form.getvalue('p_summary', '')):
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
 
-  if 'p_purpose' not in p.form or not len(p.form['p_purpose']):
+  if not len(p.form.getvalue('p_purpose', '')):
     p['errors']['p_purpose'] = 'Amaç boş bırakılamaz.'
     
-  if 'p_content' not in p.form or not len(p.form['p_content']):
+  if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
-  if 'p_solution' not in p.form or not len(p.form['p_solution']):
+  if not len(p.form.getvalue('p_solution', '')):
     p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
     
-  if not re.match('^[0-9]+$', p.form['p_version']) or \
-     int(p.form['p_version']) not in range(1, 4):
+  if int(p.form.getvalue('p_version', 0)) not in range(1, 4):
     p['errors']['p_version'] = 'Değişiklik derecesi geçerli değil.'
 
-  if 'p_changelog' not in p.form or not len(p.form['p_changelog']):
+  if not len(p.form.getvalue('p_changelog', '')):
     p['errors']['p_changelog'] = 'Sürüm notları boş bırakılamaz.'
 
   # Hiç hata yoksa...
@@ -97,20 +96,20 @@ def edit():
 
     version = p['version'].split('.')
     for k,v in enumerate(version):
-      if p.form['p_version'] == str(k + 1):
+      if p.form.getvalue('p_version', '') == str(k + 1):
         version[k] = str(int(v) + 1)
     version = '.'.join(version)
 
     list = {
             'pid': p['pid'],
             'version': version,
-            'title': p.form['p_title'],
-            'summary': p.form['p_summary'],
-            'purpose': p.form['p_purpose'],
-            'content': p.form['p_content'],
-            'solution': p.form['p_solution'],
+            'title': p.form.getvalue('p_title'),
+            'summary': p.form.getvalue('p_summary'),
+            'purpose': p.form.getvalue('p_purpose'),
+            'content': p.form.getvalue('p_content'),
+            'solution': p.form.getvalue('p_solution'),
             'timeB': sql_datetime(now()),
-            'changelog': p.form['p_changelog']
+            'changelog': p.form.getvalue('p_changelog')
             }
     vid = p.db.insert('proposals_versions', list)
 

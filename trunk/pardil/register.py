@@ -21,40 +21,37 @@ def register():
   p.template = 'register.tpl'
 
   # Kullanıcı adını kontrol et.
-  if 'r_username' not in p.form or not len(p.form['r_username']):
+  if not len(p.form.getvalue('r_username', '')):
     p['errors']['r_username'] = 'Kullanıcı adı boş bırakılamaz.'
-  elif not re.match('^[a-zA-Z0-9]{4,32}$', p.form['r_username']):
+  elif not re.match('^[a-zA-Z0-9]{4,32}$', p.form.getvalue('r_username')):
     p['errors']['r_username'] = 'Kullanıcı adı 4-32 karakter uzunlukta, alfanumerik olmalı.'
   else:
     q = """SELECT Count(*)
            FROM users
            WHERE username="%s"
-        """ % (p.db.escape(p.form['r_username']))
+        """ % (p.db.escape(p.form.getvalue('r_username')))
     if p.db.scalar_query(q) > 0:
       p['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
    
   # E-posta adresini kontrol et.
-  if 'r_email' not in p.form or not len(p.form['r_email']):
+  if not len(p.form.getvalue('r_email', '')):
     p['errors']['r_email'] = 'E-posta adresi boş bırakılamaz.'
-  elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', p.form['r_email']):
+  elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', p.form.getvalue('r_email')):
     p['errors']['r_email'] = 'E-posta adresi geçerli formatta olmalı.'
   else:
     q = """SELECT Count(*)
            FROM users
            WHERE email="%s"
-        """ % (p.db.escape(p.form['r_email']))
+        """ % (p.db.escape(p.form.getvalue('r_email')))
     if p.db.scalar_query(q) > 0:
       p['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
       
   # Parolayı kontrol et.
-  if 'r_password' not in p.form or \
-     'r_password2' not in p.form or \
-     not len(p.form['r_password']) or \
-     not len(p.form['r_password2']):
+  if not len(p.form.getvalue('r_password', '')) or not len(p.form.getvalue('r_password2', '')):
     p['errors']['r_password'] = 'Parola boş bırakılamaz.'
-  elif p.form['r_password'] != p.form['r_password2']:
+  elif p.form.getvalue('r_password') != p.form.getvalue('r_password2'):
     p['errors']['r_password'] = 'İki parola, birbiriyle aynı olmalı.'
-  elif not re.match('^.{6,10}$', p.form['r_password']):
+  elif not re.match('^.{6,10}$', p.form.getvalue('r_password')):
     p['errors']['r_password'] = 'Parola en az 6, en fazla 10 karakter uzunluğunda olmalı.'
       
   # Hiç hata yoksa...
@@ -64,9 +61,9 @@ def register():
     # "Users - Pending" tablosuna ekle
     act_code = pass_hash(str(time.time()))
     list = {
-            'username': p.form['r_username'],
-            'password': pass_hash(p.form['r_password']),
-            'email': p.form['r_email'],
+            'username': p.form.getvalue('r_username'),
+            'password': pass_hash(p.form.getvalue('r_password')),
+            'email': p.form.getvalue('r_email'),
             'timeB': sql_datetime(now()),
             'code': act_code
             }
@@ -78,7 +75,7 @@ def register():
     t = "Pardil - Üyelik Aktivasyonu"
     link = site_config['url'] + 'activate.py?code=' + act_code
     b = "Merhaba,\n\nKayıt işlemini tamamlamak için aşağıdaki adresi ziyaret edin:\n%s\n\nPardil" % (link)
-    sendmail(site_config['mail'], p.form['r_email'], t, b)
+    sendmail(site_config['mail'], p.form.getvalue('r_email'), t, b)
 
     p['debug'] = b
     p.template = "register.done.tpl"

@@ -48,7 +48,7 @@ def index():
   
 def comments():
   try:
-    p['pid'] = int(p.form['pid'])
+    p['pid'] = int(p.form.getvalue('pid'))
   except:
     p.template = 'admin/comments.error.tpl'
     return
@@ -75,11 +75,10 @@ def comments():
   p.template = 'admin/comments.list.tpl'
 
 def delete():
-  if 'pid' in p.form and re.match('^[0-9]+$', p.form['pid']) and \
-     'cid' in p.form and re.match('^[0-9]+$', p.form['cid']):
-    p['cid'] = int(p.form['cid'])
-    p['pid'] = int(p.form['pid'])
-  else:
+  try:
+    p['cid'] = int(p.form.getvalue('cid'))
+    p['pid'] = int(p.form.getvalue('pid'))
+  except:
     p.template = 'admin/comments.error.tpl'
     return
 
@@ -95,7 +94,7 @@ def delete():
     p.template = 'admin/comments.error.tpl'
   else:
     if 'confirm' in p.form:
-      if p.form['confirm'] == 'yes':
+      if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM proposals_comments
                WHERE cid=%d
             """ % (p['cid'])

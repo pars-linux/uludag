@@ -50,7 +50,8 @@ class pardil_page(page):
     # Posted
     self.data['posted'] = {}
     for i in self.form:
-      self.data['posted'][i] = html_escape(self.form[i])
+      if not self.form[i].file:
+        self.data['posted'][i] = html_escape(self.form.getvalue(i, ''))
 
     # Errors
     self.data['errors'] = {}

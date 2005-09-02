@@ -92,7 +92,7 @@ def index():
 
 def delete():
   try:
-    p['relid'] = int(p.form['relid'])
+    p['relid'] = int(p.form.getvalue('relid'))
   except:
     p.template = 'admin/maintainers.error.tpl'
     return
@@ -115,7 +115,7 @@ def delete():
     p.template = 'admin/maintainers.error.tpl'
   else:
     if 'confirm' in p.form:
-      if p.form['confirm'] == 'yes':
+      if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM rel_maintainers
                WHERE relid=%d
             """ % (p['relid'])
@@ -128,8 +128,8 @@ def delete():
 
 def insert():
   try:
-    uid = int(p.form['m_user'])
-    pid = int(p.form['m_proposal'])
+    uid = int(p.form.getvalue('m_user'))
+    pid = int(p.form.getvalue('m_proposal'))
   except:
     p['errors']['m_user'] = 'Geçersiz kullanıcı numarası.'
   else:
