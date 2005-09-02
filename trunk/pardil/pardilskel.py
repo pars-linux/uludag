@@ -44,14 +44,21 @@ class pardil_page(page):
     q = """DELETE
            FROM sessions
            WHERE %d - timeB > %d
-        """ % (int(time.time()), 1800)
+        """ % (int(time.time()), site_config['session_timeout'])
     self.db.query_com(q)
 
     # Remove expired password reset codes
     q = """DELETE
            FROM users_passcodes
            WHERE %d - timeB > %d
-        """ % (int(time.time()), 1800)
+        """ % (int(time.time()), site_config['passcode_timeout'])
+    self.db.query_com(q)
+
+    # Remove expired registration data
+    q = """DELETE
+           FROM users_pending
+           WHERE %d - timeB > %d
+        """ % (int(time.time()), site_config['activation_timeout'])
     self.db.query_com(q)
 
     # Posted
