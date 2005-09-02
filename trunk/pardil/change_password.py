@@ -51,7 +51,7 @@ def code():
       list = {
               'uid': uid,
               'code': acode,
-              'timeB': now()
+              'timeB': sql_datetime(now())
               }
       p.db.insert('users_passcodes', list)
       
