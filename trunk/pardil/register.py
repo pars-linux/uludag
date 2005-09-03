@@ -38,7 +38,7 @@ def register():
   # E-posta adresini kontrol et.
   if not len(p.form.getvalue('r_email', '')):
     p['errors']['r_email'] = 'E-posta adresi boş bırakılamaz.'
-  elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', p.form.getvalue('r_email')):
+  elif not re.match('^[A-Za-z0-9_\.-]+@([A-Za-z0-9]+(\-*[A-Za-z0-9]+)*\.)+[A-Za-z]{2,4}$', p.form.getvalue('r_email')):
     p['errors']['r_email'] = 'E-posta adresi geçerli formatta olmalı.'
   else:
     q = """SELECT Count(*)
