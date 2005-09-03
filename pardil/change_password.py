@@ -32,7 +32,7 @@ def code():
 
   if not len(p.form.getvalue('c_email', '')):
     p['errors']['c_email'] = 'E-posta adresi boş bırakılamaz.'
-  elif not re.match('^[a-z0-9_\.-]+@([a-z0-9]+(\-*[a-z0-9]+)*\.)+[a-z]{2,4}$', p.form.getvalue('c_email')):
+  elif not re.match('^[A-Za-z0-9_\.-]+@([A-Za-z0-9]+(\-*[A-Za-z0-9]+)*\.)+[A-Za-z]{2,4}$', p.form.getvalue('c_email')):
     p['errors']['c_email'] = 'E-posta adresi geçerli formatta olmalı.'
 
   if not len(p['errors']):
