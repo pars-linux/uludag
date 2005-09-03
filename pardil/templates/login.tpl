@@ -31,7 +31,8 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="action" value="login">Giriş</button>
+      <input type="hidden" name="action" value="login" />
+      <button type="submit">Giriş</button>
     </fieldset>
   </form>
   <ul>

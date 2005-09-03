@@ -56,7 +56,8 @@
     </fieldset>
     -->
     <fieldset>
-      <button type="submit" name="action" value="register">Kayıt</button>
+      <input type="hidden" name="action" value="register" />
+      <button type="submit">Kayıt</button>
     </fieldset>
   </form>
 </div>

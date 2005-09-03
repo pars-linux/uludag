@@ -54,7 +54,8 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="action" value="new">Gönder</button>
+      <input type="hidden" name="action" value="new" />
+      <button type="submit">Gönder</button>
     </fieldset>
   </form>
 </div>

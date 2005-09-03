@@ -25,7 +25,8 @@
         </div>
       </fieldset>
       <fieldset>
-        <button type="submit" name="action" value="insert">Ekle</button>
+        <input type="hidden" name="action" value="insert" />
+        <button type="submit">Ekle</button>
       </fieldset>
     </form>
   </div>
