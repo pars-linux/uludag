@@ -35,7 +35,8 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="action" value="code">Kodu Gönder &raquo;</button>
+      <input type="hidden" name="action" value="code" />
+      <button type="submit">Kodu Gönder &raquo;</button>
     </fieldset>
   </form>
   #elif $mode == 'change'
@@ -59,7 +60,8 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="action" value="change">Şifreyi Değiştir &raquo;</button>
+      <input type="hidden" name="action" value="change" />
+      <button type="submit">Şifreyi Değiştir &raquo;</button>
     </fieldset>
   </form>
   #end if

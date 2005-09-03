@@ -79,7 +79,8 @@
       </div>
     </fieldset>
     <fieldset>
-      <button type="submit" name="action" value="comment">Gönder</button>
+      <input type="hidden" name="action" value="comment" />
+      <button type="submit">Gönder</button>
     </fieldset>
   </form>
   #end if
