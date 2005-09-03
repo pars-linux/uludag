@@ -75,6 +75,7 @@ class pardil_page(page):
     self.template = ''
 
   def init_session(self):
+    self.data['session'] = {}
     if self.cookie['sid'] != '':
       sid = self.db.escape(self.cookie['sid'])
       q = """SELECT users.uid, users.username
@@ -95,8 +96,6 @@ class pardil_page(page):
                WHERE sid = "%s"
             """ % (sql_datetime(now()), sid)
         self.db.query_com(q)
-    else:
-      self.data['session'] = {}
     
   def login(self, u, p):
     u = self.db.escape(u)
