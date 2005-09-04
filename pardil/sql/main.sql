@@ -169,7 +169,15 @@ INSERT INTO rights (rid, category, keyword, label) VALUES (1, 'Yönetim', 'admin
 INSERT INTO rights (rid, category, keyword, label) VALUES (2, 'Öneriler', 'proposals_add', 'Öneri ekleyebilir.');
 INSERT INTO rights (rid, category, keyword, label) VALUES (3, 'Öneriler', 'proposals_comment', 'Önerilere yorum ekleyebilir.');
 INSERT INTO rights (rid, category, keyword, label) VALUES (4, 'Öneriler', 'proposals_vote', 'Önerilere oy verebilir.');
-
+INSERT INTO rights VALUES (6, 'Öneriler', 'proposals_publish', 'Gönderdiği öneriler hemen yayınlanır.');
+INSERT INTO rights VALUES (7, 'Yönetim', 'administrate_usergroups', 'Kullanıcı gruplarını değiştirebilir.');
+INSERT INTO rights VALUES (8, 'Yönetim', 'administrate_userrights', 'Erişim haklarını değiştirebilir.');
+INSERT INTO rights VALUES (9, 'Yönetim', 'administrate_maintainers', 'Öneri sorumlularını değiştirebilir.');
+INSERT INTO rights VALUES (10, 'Yönetim', 'administrate_pending', 'Öneri yayınlayabilir.');
+INSERT INTO rights VALUES (11, 'Yönetim', 'administrate_comments', 'Yorumları silebilir.');
+INSERT INTO rights VALUES (12, 'Yönetim', 'administrate_groups', 'Sisteme grup ekleyebilir.');
+INSERT INTO rights VALUES (13, 'Yönetim', 'administrate_rights', 'Sisteme erişim hakkı ekleyebilir.');
+INSERT INTO rights VALUES (14, 'Yönetim', 'administrate_proposals', 'Önerilere müdahale edebilir.');
 -- --------------------------------------------------------
 
 -- 

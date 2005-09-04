@@ -13,7 +13,8 @@ p.title = site_config['title']
 # OLMAZSA OLMAZ!
 if 'sid' not in p['session']:
   p.http.redirect('error.py?tag=login_required')
-if not p.access('administrate'):
+if not p.access('administrate_comments') and \
+   not p.site_admin():
   p.http.redirect('error.py?tag=not_in_authorized_group')
 # OLMAZSA OLMAZ!
 
