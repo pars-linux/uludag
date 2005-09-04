@@ -13,7 +13,8 @@ p.title = site_config['title']
 # OLMAZSA OLMAZ!
 if 'sid' not in p['session']:
   p.http.redirect('error.py?tag=login_required')
-if not p.access('administrate'):
+if not p.access('administrate_userrights') and \
+   not p.site_admin():
   p.http.redirect('error.py?tag=not_in_authorized_group')
 # OLMAZSA OLMAZ!
 
@@ -60,15 +61,16 @@ def index():
 
   p['rights'] = []
   q = """SELECT
-           rid, label
+           rid, category, label
          FROM rights
-         ORDER BY category, keyword ASC
+         ORDER BY category, label ASC
       """
   list = p.db.query(q)
   for i in list:
     l = {
          'rid': i[0],
-         'label': i[1]
+         'category': i[1],
+         'label': i[2]
          }
     p['rights'].append(l)
 
@@ -78,10 +80,6 @@ def delete():
   try:
     p['relid'] = int(p.form.getvalue('relid'))
   except:
-    p.template = 'admin/userrights.error.tpl'
-    return
-
-  if p['relid'] == 1:
     p.template = 'admin/userrights.error.tpl'
     return
 

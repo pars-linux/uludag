@@ -38,9 +38,9 @@
           <option value="0">Hak Seçin</option>
           #for $i in $rights
             #if $i.rid == $printValue('r_right')
-              <option value="$i.rid" selected="selected">$i.label</option>
+              <option value="$i.rid" selected="selected">$i.category - $i.label</option>
             #else
-              <option value="$i.rid">$i.label</option>
+              <option value="$i.rid">$i.category - $i.label</option>
             #end if
           #end for
         </select>

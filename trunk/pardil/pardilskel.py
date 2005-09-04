@@ -118,6 +118,17 @@ class pardil_page(page):
   def logged(self):
     return 'sid' in self.data['session']
 
+  def site_admin(self):
+    if not self.logged():
+      return 0
+    q = """SELECT Count(*)
+           FROM rel_groups
+           WHERE
+             uid=%d AND
+             gid=1
+        """ % (self.data['session']['uid'])
+    return self.db.scalar_query(q)
+    
   def access(self, key):
     if not self.logged():
       return 0
