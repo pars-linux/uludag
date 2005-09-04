@@ -44,22 +44,22 @@ class pardil_page(page):
     # Remove expired sessions
     q = """DELETE
            FROM sessions
-           WHERE unix_timestamp(now()) - unix_timestamp(timeB) > %d
-        """ % (site_config['session_timeout'])
+           WHERE unix_timestamp("%s") - unix_timestamp(timeB) > %d
+        """ % (sql_datetime(now()), site_config['session_timeout'])
     self.db.query_com(q)
 
     # Remove expired password reset codes
     q = """DELETE
            FROM users_passcodes
-           WHERE unix_timestamp(now()) - unix_timestamp(timeB) > %d
-        """ % (site_config['passcode_timeout'])
+           WHERE unix_timestamp("%s") - unix_timestamp(timeB) > %d
+        """ % (sql_datetime(now()), site_config['passcode_timeout'])
     self.db.query_com(q)
 
     # Remove expired registration data
     q = """DELETE
            FROM users_pending
-           WHERE unix_timestamp(now()) - unix_timestamp(timeB) > %d
-        """ % (site_config['activation_timeout'])
+           WHERE unix_timestamp("%s") - unix_timestamp(timeB) > %d
+        """ % (sql_datetime(now()), site_config['activation_timeout'])
     self.db.query_com(q)
 
     # Posted
