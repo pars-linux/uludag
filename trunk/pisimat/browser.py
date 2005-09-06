@@ -16,6 +16,8 @@ import os
 sys.path.append('.')
 import pisi.specfile
 
+import editor
+
 class PSpec(QListViewItem):
     def __init__(self, parent, path):
         sf = pisi.specfile.SpecFile()
@@ -38,6 +40,14 @@ class Browser(QListView):
         self.addColumn("Version")
         self.addColumn("Packager")
         self.addColumn("Summary")
+        self.connect(self, SIGNAL("doubleClicked(QListViewItem *, const QPoint &, int)"), self._doubleclick)
+        self.winlist = []
+    
+    def _doubleclick(self, a, b):
+        pak = self.get_selected()
+        if pak:
+            ed = editor.Editor(pak.path, pak.name)
+            self.winlist.append(ed)
     
     def collect_pspecs(self, dirname):
         # clear old entries

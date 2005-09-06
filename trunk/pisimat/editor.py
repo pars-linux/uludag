@@ -9,9 +9,13 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import sys
 import os
 from qt import *
 from qtext import *
+
+sys.path.append('.')
+import pisi.api
 
 import templates
 import config
@@ -54,10 +58,10 @@ class Editor(QMainWindow):
         file_.insertItem("Close", self.close, self.CTRL + self.Key_Q)
         pisi = QPopupMenu(self)
         bar.insertItem("&Pisi", pisi)
-        pisi.insertItem("Fetch", self.close, self.CTRL + self.Key_F)
-        pisi.insertItem("Unpack", self.close, self.CTRL + self.Key_U)
-        pisi.insertItem("Compile", self.close, self.CTRL + self.Key_C)
-        pisi.insertItem("Build", self.close, self.CTRL + self.Key_B)
+        pisi.insertItem("Fetch", self.do_fetch, self.CTRL + self.Key_F)
+        pisi.insertItem("Unpack", self.do_unpack, self.CTRL + self.Key_U)
+        pisi.insertItem("Compile", self.do_compile, self.CTRL + self.Key_C)
+        pisi.insertItem("Build", self.do_build, self.CTRL + self.Key_B)
         # editing area
         tab = QTabWidget(self)
         tab.setTabPosition(tab.Bottom)
@@ -70,6 +74,18 @@ class Editor(QMainWindow):
         tab.addTab(self.pisi_out, "Pisi Output")
         # show window
         self.show()
+    
+    def do_fetch(self):
+        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "unpack")
+    
+    def do_unpack(self):
+        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "buildaction")
+    
+    def do_compile(self):
+        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "installaction")
+    
+    def do_build(self):
+        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "buildpackages")
     
     def save(self):
         self.spec_ed.save_changes()

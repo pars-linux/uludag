@@ -13,6 +13,9 @@ import sys
 import os
 from qt import *
 
+sys.path.append('.')
+import pisi.api
+
 import config
 import browser
 import editor
@@ -58,7 +61,6 @@ class MainWindow(QMainWindow):
         ed = editor.Editor(pdir, pname)
         ed.save()
         self.winlist.append(ed)
-
     
     def import_ebuild(self):
         pass
@@ -71,6 +73,7 @@ class MainWindow(QMainWindow):
 
 
 def main():
+    pisi.api.init()
     app = QApplication(sys.argv)
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     w = MainWindow()
