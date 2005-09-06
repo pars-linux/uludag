@@ -1,10 +1,14 @@
-Şimdi bu böyle bi pisi pakedi oluşturucu grafik arabirim
-için kendi halinde bi girişim oluyor.
+Gerekenler:
+PyQt, QScintilla
 
-Belirlenen bir çalışma dizini içindeki .pspec dosyalarını
-bulup listeliyor, listeden seçip editlemek ya da create ile
-yeni paket oluşturmak mümkün. Edit penceresi şimdilik sadece
-actions.py ile pspec bilgilerinin bir kısmını gösteriyor.
+Çalıştırmak için:
+cd uludag/trunk/pisi
+../pisimat/pisimat.py
 
-Yavaş yavaş adam edicem ben bunu. Arada qt+pyqt de öğrenmiş
-oldum :p
+Kullanım:
+PSpec dizini olarak pisi deposunu seçin, ad ve emalinizi girin.
+Paket listesi gelecek. Herhangi bi pakete çift tıklar yada menüden
+editi seçerseniz yeni bir pencerede paket düzenleyici gelir.
+Menüden New Package seçerseniz, o an seçili olan paketin bulunduğu
+dizin içinde yeni bir paket oluşturulur, adını girdikten sonra standart
+şablonlu bir paket düzenleyici gelir.
