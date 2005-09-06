@@ -49,27 +49,24 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H4><A NAME="htoc26">4.9.4</A>&nbsp;&nbsp;Bağımlılık çözmek</H4>
-TODO: Ayrıntılı algoritmik anlatım gerekiyor<BR>
-<BR>
-<B>PİSİ</B> içerisinde paket bağımlılığı, doğrudan paket isim ve
-sürüm numarasına bağımlılık olarak tanımlanmıştır. Bu yüzden paket
-bağımlılığının çözümü depo veritabanından bağımlılığı oluşturan paketleri
-iteratif olarak çıkarmak ile sınırlıdır.<BR>
-<BR>
-Paketler için tanımlanan bir diğer bağımlılık tipi ise <B>ÇOMAR
-OM</B> (Object Model) bacaklarına olan bağımlılıktır. Bu bağımlılığın
-çözümü için Kurulu Paketler ve Depo veritabanları sorgulanarak ilgili
-<B>OM</B> bacağını sağlayan bir paketin sistemde kurulu durumda
-olup olmadığı bilgisi çıkartılır. Eğer yoksa ilgili <B>OM</B> bacağını
-sağlayan paketlerin bir listesi sunulur.<BR>
-<BR>
+<H4><A NAME="htoc26">4.9.3</A>&nbsp;&nbsp;Paket Kaldırmak</H4>
+Bir istemcinin, sistemdeki bir paketi kaldırmak için izleyeceği yol
+şöyledir;
+<UL><LI>
+Sistemdeki ilgili uygulamalardan biri <B>PİSİ</B>'ye paket kaldırmak
+için istekte bulunur.
+<LI><B>PİSİ</B>, kendi yapılandırma dosyasını işleyerek, <B>Kurulu
+Paket Veritabanı</B>ndan pakete başka bir paket tarafından gereksinim
+duyulup duyulmadığını kontrol eder.
+<LI><B>PİSİ</B> paketi kaldırır. 
+<LI><B>ÇOMAR</B>'a ilgili <B>CSL</B> betiklerini kaldırması için silinen
+paket ile ilgili bilgi verir.
+</UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_27.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_29.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

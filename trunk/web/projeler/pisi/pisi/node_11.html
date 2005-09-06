@@ -49,90 +49,12 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H5>Source</H5>
-<UL><LI>
-<B>Name</B>: (*) Uygulamanın adı.
-<LI><B>Homepage:</B> Uygulamanın web sitesinin URL'sini belirtir.
-<LI><B>Summary:</B> (*) Tek satırlık açıklayıcı bilgi. Çoklu dil desteğine
-sahiptir.
-<LI><B>Description:</B> (*) Uygulama hakkında özet açıklama.
-Çoklu dil desteğine sahiptir.
-<LI><B>IsA:</B> Paketin bir kategori/sistem/kolleksiyon'a aitliğini
-belirtir. <EM>Örn:</EM> ``k3b is a KDE program''
-<LI><B>PartOf:</B> Paketin hangi bütünün/grubun parçası olduğunu belirtir.
-Aitlik özellikleri için Freshmeat'in Trove kategorileri örnek verilebilir.
-Örn: ``LyX and TeTex are parts of Tex:Distrubiton''<BR>
-<B>IsA</B> ve <B>ParfOf</B> bir <B>PİSİ</B> paketinin farklı
-türdeki aitliklerini ifade eder. <B>PartOf</B> ile belirtilen bir
-<B>Component</B>'in tümünü sisteme kurabilirsiniz. Fakat <B>IsA</B>
-ile belirtilen aitlikleri yanlızca sorgulayabilirsiniz.<BR>
-<EM>Source ve Package</EM> tagları içerisinde yalnızca birer tane <B>PartOf</B>
-tanımlanabiliyor olmasına karşın, birden fazla <B>IsA</B> tanımlanabilir.
-<LI><B>Packager:</B> (*) Paketi oluşturan kişilerin adı/soyadı
-ve e-posta adresi belirtir.
-<UL><LI>
-<B>Name:</B> (*) Paket oluşturan kişinin adı ve soyadı.
-<LI><B>Email:</B> (*) Paket oluşturan kişinin e-posta adresi.
-</UL>
-<LI><B>License</B>: (*) Uygulamanın lisansını belirtir (GPL, BSD,
-vb).
-<LI><B>Archive:</B> (*) Uygulamanın orjinal kaynak kodunun bulunduğu
-URL'yi belirtir. <B>archType</B> arşiv tipini (tar.gz, tar.bz2,
-zip, vb) belirtirken, <B>sha1sum</B>, sha1 ile alınmış özet değerini
-belirtir. Her iki attribute (archType ve sha1sum) zorunludur.
-<LI><B>Patches</B>: Orjinal koda uygulanacak yamaların <B>sıralı</B>
-bir listesini içerir. Yamalar bu bölümde tanımlanan sıra ile kaynak
-koda uygulanır.
-<UL><LI>
-<B>Patch</B>: Yamanın dosya adını içerir. <B>compressionType</B>
-ile varsa sıkıştırma biçimi (gz, bz2, vb) verilebilir. <B>level</B>
-ile yamanın patch komutuna seviye verilebilir, level verilmez ise
-seviye 0 olarak kabul edilir. Örnek:<BR>
-&lt;Patch compressionType="gz" level="1"&gt;popt-1.7-uclibc.patch.gz&lt;/Patch&gt;
-</UL>
-<LI><B>AdditionalFiles:</B> Kaynak ile gelmeyen ama paketin çalışması,
-ek özellik kazanması v.s. için gerekli dosyaları belirtir. ( <EM>örn</EM>;
-init betikleri )
-<UL><LI>
-<B>AdditionalFile:</B> Files dizini altından alınacak dosyayı belirtir.
-<B>target</B> attribute dosyanın nereye konulacağını belirtir, zorunludur.
-<B>permission</B> attribute varsa dosyanın hangi haklarla saklanacağını
-belirtir. <B>owner</B> attribute varsa dosyanın sahip/grup bilgilerini
-belirtir. Örnek:<BR>
-&lt;AdditionalFile target=''/etc/bash/''&gt;bashrc&lt;/AdditionalFile&gt;
-</UL>
-<LI><B>BuildDependencies</B>: Pakedi oluşturmak için gereken bağımlılıkları
-listeler.
-<UL><LI>
-<B>Dependency</B>: Bir bağımlılığı tanımlar. Burada bahsedilen bağımlılık
-paket bağımlılığı olabilir. <B>versionFrom</B> ve <B>versionTo</B>
-attribute bilgileri ile paketin hangi sürüm numarasına bağımlı olduğu
-ifade edilebilir. Örnek:<BR>
-&lt;Dependency versionFrom="1.8"&gt;automake&lt;/Dependency&gt;
-</UL>
-<LI><B>History</B>: (*) Pakete yapılan güncellemelerin bir listesini
-verir. <B>History</B> altındaki güncellemeleri belirten <B>Update</B>
-taglarının mutlaka tarihe göre sıralı olması gerekmektedir. En son
-güncelleme en üstte bulunmalıdır. Çünkü en son güncellemeden alınan
-<B>Version</B> ve <B>Release</B> bilgisi pakete uygulanacaktır.
-<UL><LI>
-<B>Update</B>: (*) Bir güncellemeyi tarif eder.
-<UL><LI>
-<B>Type:</B> Güncellemenin tipini belirtir (<B><EM>Security,
-Bug, Enhancement, Normal</EM></B> v.s). Eğer bu etiket tanımlı değilse tip
-<B><EM>Normal</EM></B> olarak kabul edilir.
-<LI><B>Date</B>: (*) Güncellemenin tarihi.
-<LI><B>Version:</B> (*) Uygulamanın sürüm numarası.
-<LI><B>Release:</B> (*) Pakedin sürüm numarası.
-</UL>
-</UL>
-</UL>
+<H5>PISI</H5>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_10.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_12.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

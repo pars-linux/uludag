@@ -49,67 +49,20 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H3><A NAME="htoc20">4.7</A>&nbsp;&nbsp;İkili Paket Deposu</H3>
-Oluşturulan ikili paketler <B>PSPEC</B> dosyalarının tutulduğu hiyerarşik
-yapının aynısına sahip bir depoda sunulacaktır. Paketlerin içerisinde
-bulunan <EM>metadata.xml</EM> dosyaları depodaki paketlerden alınarak
-ve birleştirilerek <B>pisi-index.xml</B> isminde bir içerik (depo
-içeriği) dosyası düzenli aralıklar ile oluşturulacaktır<BR>
+<H3><A NAME="htoc20">4.6</A>&nbsp;&nbsp;Component ( PartOf )</H3>
+FIXME: Daha anlamlı cümleler ve temiz anlatım<BR>
 <BR>
-İçeriğinde mevcut sürümün bilgilerini içerecek bir dosya oluşturulacaktır.
-Bu dosya dağıtımın tüm paketleri için şu bilgileri içerecektir;
-<UL><LI>
-<B>Name</B>
-<LI><B>Summary</B> 
-<LI><B>Description</B>
-<LI><B>Version </B>
-<LI><B>Release </B>
-<LI><B>License</B>
-<LI><B>RuntimeDependencies</B>
-<LI><B>InstallDependencies</B>
-<LI><B>Provides </B>
-<LI><B>History</B>
-<LI><B>Conflicts</B>
-<LI><B>PackageSize </B>
-<LI><B>InstalledSize</B>
-</UL>
-<B>pisi-index.xml</B> dosyasının biçimi XML'dir. Dosyanın doğrulanması
-için kullanılabilecek bilgi <EM>pisi-index.dtd</EM> dosyasında tanımlanmıştır.<BR>
-<BR>
-Bu dosya değiştirilmeyecek ve sadece Dağıtım Sürüm değiştirdiği zaman
-yenisi oluşturulacaktır. Aktif sürüm sırasında tüm değişiklikler <B>ChangeSet</B>
-olarak sunulacaktır. İstemci bilgisayarlarca çekilecek ve bağımlılık
-çözme, paket veritabanını arama, paket kurma/kaldırma işlemleri bu
-dosyaların <B>pisi.index</B> ile birleştirilmesi yardımı ile yapılacaktır. <BR>
-<BR>
-<B>ChangeSet</B>'ler <B>pisi.index</B> dosyasına yama olarak sunulacaklardır.
-Kolay oluşturulan, az bant genişliği isteyen ve efektif olmaları açısından
-içeriklerini <B>pisi.index</B>'in bir önceki revizyonlarından olan
-farkları arttırımsal (incremental) olarak oluşturacaktır.<BR>
-<BR>
-Kullanıcı bilgisayarında oluşturulacak depo veritabanı <B>pisi.index</B>
-ve <B>Changeset</B>'ler yardımı ile yaratılacaktır. Kullanıcının
-depodaki paketlerin en güncel bilgilerini alabilmesi için depo veritabanını
-düzenli olarak güncellemesi gerekmektedir. Bu işlem bir arkaplan uygulaması
-ile otomatik olarak yaptırılabilir.<BR>
-<BR>
-Depoya eklenecek ikili paketler geliştiriciden alınmayacak, <B>PİSİ</B>
-derleme ortamı tarafından hazırlanıp uygun görülen depoya yerleştirilecektir.
-Böylece geliştiricinin sisteminden kaynaklanabilecek olası problemlerin
-(sürüm farklılıkları, sorunlu ya da güvensiz yazılımlar vs.) önüne
-geçilecektir.<BR>
-<BR>
-<B>PİSİ</B> istemcisi birden fazla depo ile çalışabilecektir. Birden
-fazla depo tanımlanması durumunda öncelikli depo her zaman <B>Pardus
-Resmi Deposu</B> olacaktır. Diğer depolar eşit önceliğe sahip olacaklardır
-ve kullanıcı elle belirtmediği sürece tüm depolarda bulunan paketler
-resmi depodan alınacaktır.<BR>
+Bir paketler bütününden oluşan anlamlı ve kurulabilir birliği temsil
+eder. Yani uygulamaları kapsüller. Örneğin KDE Component'ı içinde
+kdebase, kdepim, kdemultimedia v.s gibi kaynakları bulundurur, kdebase
+ise kcontrol, konqueror v.s. gibi paketlerden oluşur. Bu bilgi kullanılarak
+örneğin KDE Component'ını sisteme kur, kaldır, güncelle gibi eylemler
+gerçekleştirilebilir.<BR>
 <BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_21.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_23.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

@@ -49,23 +49,33 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H4><A NAME="htoc25">4.9.3</A>&nbsp;&nbsp;Paket Kaldırmak</H4>
-Bir istemcinin, sistemdeki bir paketi kaldırmak için izleyeceği yol şöyledir;
+<H4><A NAME="htoc25">4.9.2</A>&nbsp;&nbsp;Paket Kurmak </H4>
+<IMG SRC="images/pisi-istemci.png"><BR>
+<BR>
+Bir istemcinin sisteme paket kurmak için izleyeceği yol şöyledir;
 <UL><LI>
-Sistemdeki ilgili uygulamalardan biri <B>PİSİ</B>'ye paket kaldırmak
+Sistemdeki ilgili uygulamalardan biri <B>PİSİ</B>'ye paket kurması
 için istekte bulunur.
-<LI><B>PİSİ</B>, kendi yapılandırma dosyasını işleyerek, <B>Kurulu
-Paket Veritabanı</B>ndan pakete başka bir paket tarafından gereksinim
-duyulup duyulmadığını kontrol eder.
-<LI><B>PİSİ</B> paketi kaldırır. 
-<LI><B>ÇOMAR</B>'a ilgili <B>CSL</B> betiklerini kaldırması için silinen
-paket ile ilgili bilgi verir.
+<LI><B>PİSİ</B>, kendi yapılandırma dosyasını işleyerek, kendi yapılandırma
+dosyasının içindeki bilgilerin ışığında <B>Paket Deposu</B>ndan
+deponun durumu ile ilgili bilgileri (<B>ChangeSet</B>ler ve kullanıcı
+yeni bir depo kullanmaya başladıysa <B>pisi-index.xml</B>) alır.
+<LI>Gerekiyorsa <B>Depo</B>dan aldığı bilgileri <B>Depo Veritaban</B>ına
+yerleştirir.
+<LI><B>PİSİ</B> istenen paketin kurulması için gerekli olan bilgileri,
+ihtiyaç duyulan paketleri belirler. Gerekli olan paketleri <B>Paket
+Deposu</B>ndan çekerek sisteme kurar. Eğer çakışan paketler var ise bunları
+çözer.
+<LI><B>PİSİ</B> Kurulacak paketi <B>Paket Deposu</B>ndan çeker ve
+çektiği paketin doğruluğunu kontrol ederek sisteme kurar. Kurduğu
+paket ile ilgili bilgileri <B>Kurulu Paket Veritabanı</B>'na yerleştirir.
+<LI>Paketlerin yanında taşıdığı <B>CSL</B> betiklerini <B>ÇOMAR</B>'a
+verir.
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_26.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_28.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
