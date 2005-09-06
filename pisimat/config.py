@@ -10,7 +10,10 @@
 #
 
 import sys
+import os
 from qt import *
+
+import utils
 
 # default settings
 name = u"Pars Paketçioğlu"
@@ -50,9 +53,49 @@ class ConfigWindow(QDialog):
         self.dir.setText(s)
     
     def accept(self):
+        import config
         if self.name.text() == "" or self.email.text() == "" or self.dir.text() == "":
             return
         QDialog.accept(self)
+        config.name = unicode(self.name.text())
+        config.email = unicode(self.email.text())
+        config.pspec_folder = unicode(self.dir.text())
+        save()
     
     def reject(self):
-        sys.exit(0)
+        self.hide()
+
+
+def cfgfilename():
+    return os.path.join(os.getenv("HOME"), ".pisimat")
+
+def show():
+    import config
+    a = ConfigWindow()
+    a.name.setText(config.name)
+    a.email.setText(config.email)
+    a.dir.setText(config.pspec_folder)
+    a.exec_loop()
+
+def load():
+    import config
+    try:
+        data = utils.load(cfgfilename())
+    except:
+        a = ConfigWindow()
+        a.exec_loop()
+        return
+    lines = data.split('\n')
+    for line in lines:
+        pair = line.split('=')
+        if pair:
+            if pair[0] == "name":
+                config.name = pair[1]
+            elif pair[0] == "email":
+                config.email = pair[1]
+            elif pair[0] == "pspec_folder":
+                config.pspec_folder = pair[1]
+
+def save():
+    data = "name=%s\nemail=%s\npspec_folder=%s\n" % (name, email, pspec_folder)
+    utils.save(cfgfilename(), data)
