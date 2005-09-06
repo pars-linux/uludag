@@ -19,7 +19,7 @@ import utils
 
 class SpecEd(utils.TextEd):
     def __init__(self, path, name):
-        utils.TextEd.__init__(self, path, "pspec.xml", QextScintillaLexerHTML())
+        utils.TextEd.__init__(self, path, "pspec.xml", utils.HTMLLexer())
         if not self.loaded:
             data = { "PACKAGE":  name, "NAME": config.name, "EMAIL": config.email, "DATE": "2005-08-06" }
             self.setText(templates.pspec_xml % (data))
@@ -27,7 +27,7 @@ class SpecEd(utils.TextEd):
 
 class ActionEd(utils.TextEd):
     def __init__(self, path, name):
-        utils.TextEd.__init__(self, path, "actions.py", QextScintillaLexerPython())
+        utils.TextEd.__init__(self, path, "actions.py", utils.PythonLexer())
         if not self.loaded:
             data = { "PACKAGE":  name, "NAME": config.name, "EMAIL": config.email }
             self.setText(templates.actions_py % (data))
