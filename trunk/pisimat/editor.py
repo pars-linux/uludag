@@ -64,16 +64,28 @@ class Editor(QMainWindow):
         pisi.insertItem("Build", self.do_build, self.CTRL + self.Key_B)
         # editing area
         tab = QTabWidget(self)
+        self.tab = tab
         tab.setTabPosition(tab.Bottom)
         self.setCentralWidget(tab)
+        # pspec tab
         self.spec_ed = SpecEd(path, name)
+        self.connect(self.spec_ed, SIGNAL("textChanged()"), self._spec_tab)
         tab.addTab(self.spec_ed, "pspec.xml")
+        # actions tab
         self.action_ed = ActionEd(path, name)
+        self.connect(self.action_ed, SIGNAL("textChanged()"), self._action_tab)
         tab.addTab(self.action_ed, "actions.py")
+        # blah
         self.pisi_out = PisiOut(path)
         tab.addTab(self.pisi_out, "Pisi Output")
         # show window
         self.show()
+    
+    def _spec_tab(self):
+        self.tab.changeTab(self.spec_ed, "*pspec.xml")
+    
+    def _action_tab(self):
+        self.tab.changeTab(self.action_ed, "*actions.py")
     
     def do_fetch(self):
         pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "unpack")
@@ -89,4 +101,6 @@ class Editor(QMainWindow):
     
     def save(self):
         self.spec_ed.save_changes()
+        self.tab.changeTab(self.spec_ed, "pspec.xml")
         self.action_ed.save_changes()
+        self.tab.changeTab(self.action_ed, "actions.py")

@@ -55,10 +55,14 @@ class Browser(QListView):
         # populate the list
         for root, dirs, files in os.walk(dirname):
             if "pspec.xml" in files:
-                PSpec(self, root)
-                # found a package, dont go deeper
-                for d in dirs:
-                    dirs.remove(d)
+                try:
+                    PSpec(self, root)
+                    # found a package, dont go deeper
+                    for d in dirs:
+                        dirs.remove(d)
+                except Exception, inst:
+                    print "Broken package", root
+                    print inst
             # dont walk into the versioned stuff
             if ".svn" in dirs:
                 dirs.remove(".svn")
