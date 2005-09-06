@@ -1,6 +1,9 @@
 #LyX 1.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 221
 \textclass article
+\begin_preamble
+\usepackage{hyperref}
+\end_preamble
 \language turkish
 \inputencoding auto
 \fontscheme pslatex
@@ -100,7 +103,7 @@ collapsed true
 \layout Standard
 
 
-\begin_inset LatexCommand \url[http://www.uludag.org.tr/belgeler/okuryazar/okuryazar.html]{}
+\begin_inset LatexCommand \url{http://www.uludag.org.tr/belgeler/okuryazar/okuryazar.html}
 
 \end_inset 
 
@@ -1969,8 +1972,8 @@ files/
 \layout Itemize
 
 acpid.init
-
 \layout Itemize
+
 acpid-1.0.2-branch.patch
 \end_deeper 
 \layout Itemize
