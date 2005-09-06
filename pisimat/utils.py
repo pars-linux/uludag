@@ -25,11 +25,32 @@ def save(filename, data):
     f.write(data)
     f.close()
 
+class HTMLLexer(QextScintillaLexerHTML):
+    def __init__(self):
+        QextScintillaLexerHTML.__init__(self)
+        self.myfont = QFont("Sans", 10)
+    
+    def font(self, style):
+        return self.myfont
+
+
+class PythonLexer(QextScintillaLexerPython):
+    def __init__(self):
+        QextScintillaLexerPython.__init__(self)
+        self.myfont = QFont("Sans", 10)
+    
+    def font(self, style):
+        return self.myfont
+
+
 class TextEd(QextScintilla):
     def __init__(self, path, name, lexer=None):
         # standart setup
         QextScintilla.__init__(self)
         self.setUtf8(True)
+        self.setAutoIndent(1)
+        self.setIndentationWidth(4)
+        self.setIndentationsUseTabs(0)
         # try to load file
         self.filename = os.path.join(path, name)
         try:
@@ -41,7 +62,6 @@ class TextEd(QextScintilla):
         # syntax highlighting
         self.mylexer = lexer
         if lexer:
-            # FIXME: fix font issue
             self.setLexer(lexer)
     
     def save_changes(self):
