@@ -1969,15 +1969,8 @@ files/
 \layout Itemize
 
 acpid.init
-\end_deeper 
+
 \layout Itemize
-
-
-\series bold 
-patches/
-\begin_deeper 
-\layout Itemize
-
 acpid-1.0.2-branch.patch
 \end_deeper 
 \layout Itemize
