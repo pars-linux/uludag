@@ -49,60 +49,38 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H3><A NAME="htoc31">4.11</A>&nbsp;&nbsp;libpisi</H3>
-Paket veritabanının ana yüklenicisi libpisi kütüphanesi olacaktır.
-Kütüphanenin temel görevleri aşağıdaki liste ile özetlenebilir.
+<H3><A NAME="htoc28">4.10</A>&nbsp;&nbsp;Veritabanları</H3>
+FIXME: Ayrıntılı tanım eklenecek<BR>
+<BR>
+İstemci makinadaki paket veritabanı aşağıdaki bölümlere sahip olacaktır.
+Veritabanları <B><EM>BerkeleyDB</EM></B> veritabanlarıdır.<BR>
+<BR>
+Beta versiyonda tek bir depo desteklenecektir.
 <UL><LI>
-Bir paketi sisteme kurma
-<LI>Sistemden bir paketi kaldırma
-<LI>Verilen bir <B>PİSİ</B> paketini açma
-<LI>Verilen bir <B>PİSİ</B> paketi içerisinden yalnızca bir dosyayı/dizini
-çıkarma (metadata.xml dosyası veya install/ dizini gibi)
-<LI>Bağımlılık çözümleme
-<LI>Depo veritabanını sorgulama
-<LI>Kurulu paketler veritabanını sorgulama
-<LI>Verilen bir ikili paketi sorgulama
-<LI>İkili paketler deposundan bir paketi çekme/alma (fetch).
-<LI><B>PSPEC</B> dosyalarını okuma/işleme/oluşturma.
-<LI><B>PSPEC</B> dosyasında belirtilen bir uygulama kaynağını çekme/alma
-(fetch)
-<LI>Farklı dosya tiplerini (zip, tar, tar.gz, tar.bz2) açma
-<LI>Action betiklerini çalıştırma
-<LI>İkili <B>PİSİ</B> paketi oluşturma
-<LI>Kurulu paketler veritabanını güncelleme (yeni girdi ekleme, girdi
-silme veya bir girdiyi güncelleme)
-<LI>Dosya sistemini paket işlemleri için sorgulama (bir paketin kurulumu
-için diskte yeteri kadar boş yer bulunuyor mu?)
-<LI>Dosya özetlerini (hash) oluşturma ve doğruluklarını kontrol etme.
-<LI>Paketi imzalama ve imzanın doğruluğunu kontrol etme.
-<LI><B>ÇOMAR</B> sistemi ile iletişim kurma (CSL betiklerinin <B>ÇOMAR</B>'a
-bildirilmesi, betiklerin <B>ÇOMAR</B>'dan kaldırılması)
+<B>Kurulu Paketler Veritabanı:</B> <EM>Paket adı, sürüm numarası,
+hangi depodan kurulduğu ve dosyalar (files.xml)</EM> bölümlerini içerecektir.
+<LI><B>Depo Veritabanları:</B> Birden fazla depo veritabanı olabilir.
+Her depo için <B>pisi-index.xml</B> dosyası içeriği depo veritabanına
+aktarılacaktır.
+<LI><B>Kaynak Veritabanları</B>
 </UL>
-Bu gerekleri sağlamak için libpisi modülleri aşağıdaki şekilde gruplanmışlardır.
-<UL><LI>
-XML
-<LI>DB
-<LI>ZIP
-<LI>Util
-<UL><LI>
-unpack (tar, tar.gz, tar.bz2, zip)
-<LI>sha1
-<LI>patch
-<LI>gpg
-<LI>fileutils (stat, vb. şeyler için)
-</UL>
-<LI>DepSolver (bağımlılık çözümleyici)
-<LI>Fetcher
-<LI>ActionExec (Action betiklerinin çalıştırılması)
-<LI>COMAR
-<LI>Package (xml, zip, gpg, util modüllerini kullanıyor...)
-</UL>
+
+<H4><A NAME="htoc29">4.10.1</A>&nbsp;&nbsp;Kurulum Veritabanı</H4>
+FIXME: Ayrıntılı tanım eklenecek<BR>
+<BR>
+
+<H4><A NAME="htoc30">4.10.2</A>&nbsp;&nbsp;Depo Veritabanları</H4>
+FIXME: Ayrıntılı tanım eklenecek<BR>
+<BR>
+
+<H4><A NAME="htoc31">4.10.3</A>&nbsp;&nbsp;Kaynak Veritabanları</H4>
+FIXME: Ayrıntılı tanım eklenecek<BR>
+<BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_29.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_31.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

@@ -49,56 +49,46 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H3><A NAME="htoc16">4.4</A>&nbsp;&nbsp;PSPEC Deposu</H3>
-Paketleri oluşturmak için gerekli <B>PSPEC</B> dosyaları hiyerarşik
-bir yapıda bir <EM>subversion</EM> deposunda sunulacaktır. Geliştirme
-işlemleri bu depo üzerinde yapılacaktır. <B>PSPEC</B> deposunda
-paketler <EM>``</EM><B>ilk harflerine göre</B><EM>''</EM> konumlandırılırlar.
-Her paket kendine ait bir dizinde <B>PSPEC</B> dosyası, paket oluşturma
-için gerekli olan ek dosyalar ve yamaların içinde bulunduğu files<B>/</B>
-dizini ve paket oluşturmada kullanılacak betiklerin bulunduğu actions<B>/</B>
-dizinine sahiptir.<BR>
+<H3><A NAME="htoc16">4.3</A>&nbsp;&nbsp;files.xml</H3>
+Kaynak derlendikten sonra oluşan dosyaların oluşturulan pakete göre
+<B>(Package)</B> sınıflandırılması gerekmektedir. Tek bir kaynaktan
+birden fazla paket oluşturulması, kaynağın derlenmesinden sonra oluşan
+dosyaların sınıflandırılması ile olur.<BR>
 <BR>
-Bir geliştiricinin <B>Pardus Linux</B>'a paket yapması için yalnızca
-<B>PSPEC</B> depo sıradüzeninde paket için gerekli olan dosyaları
-sağlaması yeterlidir. <B>Pardus Linux</B>'un belirli zamanlarda
-kullanıcılara sunulacak sürümlerini oluşturmak için bu <B>PSPEC</B>
-deposundaki bu bilgiler kullanılarak <B>PİSİ</B> paketleri oluşturulacaktır. <BR>
+files.xml dosyası paket geliştirme aracı/araçları ile oluşturularak
+paket içerisine yerleştirilir.
+<UL><LI>
+<B>Files</B>
+<UL><LI>
+<B>Package:</B> Dosya serisinin hangi <B><EM>SubPackage</EM></B>'i
+oluşturduğunu belirtir. (örn. mysql-devel, mysql-client, mysql-server
+, mysql-doc)
+<LI><B>File:</B> Pakete dahil edilecek bir dosyayı tarif eder.
+<UL><LI>
+<B>Path:</B> Dosyanın, paket içerisindeki yerini belirtir. <B>PISI</B>
+gereklerinden biri paketin belirtilen konuma kurulabilmesi olduğu
+için konum bilgisi bağımlı (rölatif) olarak verilir.
+<LI><B>Type</B><A NAME="FType"></A><B>:</B> Dosyanın tipini belirtir. Paket sisteme
+kurulduğunda, veritabanına bu tip tanımı ile işaretlenerek yerleştirilecektir.
+Bu tip tanımları şunlardan birisi olabileceği gibi boş da bırakılabilir:
+<FONT COLOR=navy>executable, conf, doc, sharedLib, localeData, programData,
+header</FONT>.
+<LI><B>Size:</B> Dosyanın byte cinsinden boyutunu saklar.
+<LI><B>SHA1Sum: Path</B> ile belirtilen dosyanın SHA1 algoritması ile
+elde edilmiş <EM>cryptographic</EM> özet değerini saklar.
+</UL>
+</UL>
+</UL>
+files.xml dosyalarının doğrulanması için kullanılabilecek bilgi <EM>pisi-files.dtd</EM>
+dosyasında tanımlanmıştır.<BR>
 <BR>
-Bir yazılımın birden fazla sürümünün depoya eklenmesi gerekiyorsa,
-farklı paket isimleri ile depoya yerleştirilirler. (gtk1, gtk2 gibi...)<BR>
+TODO: Örnek <BR>
 <BR>
-
-<H4><A NAME="htoc17">4.4.1</A>&nbsp;&nbsp;Örnek PSPEC Deposu Sıradüzeni</H4>
-<UL><LI>
-<B>a</B>/
-<UL><LI>
-<B>a</B>cpid/
-<UL><LI>
-pspec.xml
-<LI>actions.py
-<LI>ChangeLog
-<LI><B>files/</B>
-<UL><LI>
-acpid.init
-</UL>
-<LI><B>patches/</B>
-<UL><LI>
-acpid-1.0.2-branch.patch
-</UL>
-<LI><B>comar/</B>
-<UL><LI>
-acpid.csl
-</UL>
-</UL>
-</UL>
-</UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_18.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_20.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

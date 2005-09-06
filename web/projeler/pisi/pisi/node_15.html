@@ -49,57 +49,144 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H5>Örnek bir actions.py dosyası:</H5>
+<H5>Örnek bir PSPEC Dosyası</H5>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;gnuconfig</FONT><BR>
+<FONT SIZE=2>&lt;?xml&nbsp;version="1.0"&nbsp;encoding="utf-8"&nbsp;standalone="no"?&gt;</FONT><BR>
 <BR>
-<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools</FONT><BR>
+<FONT SIZE=2>&lt;!DOCTYPE&nbsp;PSPEC&nbsp;SYSTEM&nbsp;&nbsp;&nbsp;&nbsp;"http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd"&gt;</FONT><BR>
 <BR>
-<FONT SIZE=2>def&nbsp;setup():</FONT><BR>
+<FONT SIZE=2>&lt;PISI&gt;</FONT><BR>
 <BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;gnuconfig.gnuconfig_update()</FONT><BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;Source&gt;</FONT><BR>
 <BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.configure(``--with-nls'')</FONT><BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Name&gt;popt&lt;/Name&gt;</FONT><BR>
 <BR>
-<FONT SIZE=2>def&nbsp;build():</FONT><BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Homepage&gt;http://www.rpm.org/&lt;/Homepage&gt;</FONT><BR>
 <BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.make()</FONT><BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Packager&gt;</FONT><BR>
 <BR>
-<FONT SIZE=2>def&nbsp;install():</FONT><BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Pardus&nbsp;Man&lt;/Name&gt;</FONT><BR>
 <BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.install()&nbsp;</FONT><BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;bilgi@uludag.org.tr&lt;/Email&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Packager&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;License&gt;As-Is&lt;/License&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;IsA&gt;library:util:optparser&lt;/IsA&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;PartOf&gt;rpm:archive&lt;/PartOf&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Summary&nbsp;xml:lang=''en''&gt;Popt&nbsp;command&nbsp;line&nbsp;option&nbsp;parser&lt;/Summary&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Description&nbsp;xml:lang=''en''&gt;Command&nbsp;line&nbsp;option&nbsp;parsing&nbsp;library.</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While&nbsp;it&nbsp;is&nbsp;similiar&nbsp;to&nbsp;getopt(3),&nbsp;it&nbsp;contains&nbsp;a&nbsp;number&nbsp;of&nbsp;enhancements,&nbsp;including:</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1)&nbsp;popt&nbsp;is&nbsp;fully&nbsp;reentrant</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2)&nbsp;popt&nbsp;can&nbsp;parse&nbsp;arbitrary&nbsp;argv[]&nbsp;style&nbsp;arrays&nbsp;while&nbsp;getopt(2)&nbsp;makes&nbsp;this&nbsp;quite&nbsp;difficult</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3)&nbsp;popt&nbsp;allows&nbsp;users&nbsp;to&nbsp;alias&nbsp;command&nbsp;line&nbsp;arguments</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4)&nbsp;popt&nbsp;provides&nbsp;convience&nbsp;functions&nbsp;for&nbsp;parsing&nbsp;strings&nbsp;into&nbsp;argv[]&nbsp;style&nbsp;arrays</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Description&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Archive&nbsp;type="targz"&nbsp;sha1sum="66f3c77b87a160951b180447f4a6dce68ad2f71b"&gt;ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/popt-1.7.tar.gz&lt;/Archive&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Patches&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Patch&nbsp;compressionType="gz"&nbsp;level="1"&gt;popt-1.7-uclibc.patch.gz&lt;/Patch&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Patches&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;BuildDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&nbsp;versionFrom="1.8"&gt;automake&lt;/Dependency&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/BuildDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;History&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;06/14/2005&lt;/Date&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Release&gt;3&lt;/Release&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;06/10/2005&lt;/Date&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Release&gt;2&lt;/Release&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&lt;/History&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;/Source&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;Package&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;popt&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;RuntimeDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&gt;gettext&lt;/Dependency&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/RuntimeDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Files&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="sharedLib"&gt;/usr/lib&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="doc"&gt;/usr/share/doc&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="doc"&gt;/usr/share/man&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="localedata"&gt;/usr/share/locale&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="header"&gt;/usr/include/popt.h&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Files&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;/Package&gt;</FONT><BR>
+<BR>
+<FONT SIZE=2>&lt;/PISI&gt;</FONT><BR>
 <BR>
 
 </TT></DL></DIV>
-
-<H4><A NAME="htoc13">4.1.3</A>&nbsp;&nbsp;ChangeLog Dosyası</H4>
-Pakedin sürümlerindeki değişikliklerin açıklamalarını içerir. Bu dosya
-bilindik <B>ChangeLog</B> stilindedir ve <B>PSPEC</B> içindeki
-<B>History</B> bilgisi ile ilgili değildir.<BR>
+Yukarıdaki örnek dosyada <EM>Package</EM> içerisinde tanımlanmayan taglar
+<EM>Source</EM> içerisinden alınarak kullanılacaktır. Bir kaynak paketten
+birden fazla ikili (binary) paket oluşturmak için <EM>Package</EM> etiketleri
+farklı isimler (Name) verilerek arttırılabilir. <EM>Paketler</EM> <B>Files</B>
+içerisinde bulunan <B>Path</B> taglarına göre bölümlendirilecektir.<BR>
 <BR>
 
-<H3><A NAME="htoc14">4.2</A>&nbsp;&nbsp;metadata.xml</H3>
-<B>Metadata</B> dosyası bir uygulamanın paket haline geldikten sonra
-yanında taşıyacağı ve paket ile ilgili bilgileri barındıran dosyadır. <BR>
+<H4><A NAME="htoc13">4.1.2</A>&nbsp;&nbsp;actions.py Dosyası</H4>
+Bu dosya bir Python betiği olup, kaynağın kurulması, derlenmesi, test
+edilmesi, sisteme kurulması gibi işlevleri yerine getiren fonksiyonlardan
+oluşur. <BR>
 <BR>
-<B>Metadata</B> dosyası sadece oluşturulan paket ile ilgili bilgileri
-tutmaktan sorumludur. Paket hakkında temel bilgi bu dosyadan alınacaktır.<BR>
+Paketin oluşturulması sırasında derleme sistemi <B>actions.py</B>
+içerisindeki 3 fonksiyon adını arar ve çalıştırır; <B>setup,
+build, install</B>. Bu fonksiyonlardan install'ın tanımlanması zorunlu
+olmakla birlikte setup ve build sadece tanımlanmışsa çalıştırılır. <BR>
 <BR>
-Bu bilgilerin büyük kısmı <B>PSPEC</B> dosyasının işlenmesi sonucu
-ile <B>Metadata</B> dosyasına yazılmaktadır. <B>Metadata PSPEC</B>
-dosyasından alınan bilgilerin yanında kaynak derlendikten ve paket
-oluşturulduktan sonra alınabilecek diğer bilgileri de içerir (paketin
-kurulduktan sonra sistemde kaplayacağı alanın boyutu gibi).<BR>
-<BR>
-<B>Metadata</B> dosyasının içeriği şöyle tanımlanmıştır;<BR>
-<BR>
-<B>PISI</B><BR>
+<B>actions.py</B>'ler tarafından kullanılmak üzere <B>PİSİ</B>
+tarafından hazır bir <B>API</B> ActionsAPI adında sunulacaktır.<BR>
 <BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_14.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_16.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

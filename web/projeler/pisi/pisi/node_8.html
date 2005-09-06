@@ -49,40 +49,20 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H2><A NAME="htoc8">3</A>&nbsp;&nbsp;Neden PİSİ?</H2>
-Hali hazırda varolan ve geniş bir kullanım oranına sahip paket yöneticileri
-(RPM, DPKG ve Portage) yukarda saydığımız gereksinimlerin kimilerini
-bizim olması gerektiğini düşündüğümüz basitlikte yerine getirememekte,
-kimilerini de hiç vaad etmemektedirler. Bu paket yöneticilerinin geliştirilmesi
-ve istenen noktaya getirilmeye çalışılması yeni ve ayakları yere daha
-sağlam basan bir paket yöneticisini yeniden yazmaktan daha kolay değildir.<BR>
-<BR>
-Daha önemlisi, varolan paket yöneticilerinin paket formatlarında <EM>görev</EM>leri
-ve <EM>bilgi</EM>leri birbirinden düzgün bir biçimde ayrılmadıkları
-görülmektedir. Bu araçlar basit olarak hazırlanmış ve zaman içinde
-ortaya çıkan ihtiyaçları karşılamak için sürekli yeni özellikler eklenerek
-bugünkü hallerine gelmişlerdir. Bunun getirdiği karmaşıklığı temizlemek
-için aşağıdaki iki ilkeyi temel alan yeni bir paket yöneticisinin
-yazılmasına verilmiştir:
+<H3><A NAME="htoc8">2.6</A>&nbsp;&nbsp;Kurumsal Gereksinimler</H3>
 <UL><LI>
-<B>Kurulum ve yapılandırma birbirinden ayrı iki görevdir</B>. Kurulum,
-yalnızca programların kurulumu, güncellenmesi ve kaldırılması esnasında
-iş görürken, yapılandırma hem kurulumda hem de çalışan sistemde söz
-konusudur. Bu ayrı görevleri sorumluluk sınırları belirlenmiş ayrı
-araçların yerine getirmesi uygundur. Uludağ projesi için yapılandırma
-işlerini yürütecek araç <B>ÇOMAR</B>'dır. <B>PİSİ</B> bu görevleri
-<B>ÇOMAR</B>'a devredecektir.
-<LI><B>Paket meta bilgileri ile paketin derlenme ve kurulumunu yöneten
-betikler iç içe geçmemelidir</B>. Varolan paket yöneticilerinde paket
-tanımlama dosyaları kod ile bilginin birbirine karıştığı, araçlarla
-işlemesi, içinden bilgi çıkarılması zor, net ve kesin tanımlanmamış
-biçimlerdedir.
+Paket yöneticisi birden fazla paket kaynağı ile aynı anda sorunsuz
+bir şekilde çalışabilmelidir.
+<LI>Kurumlar ya da bireyler tarafından <EM>ön tanımlı depoda da bulunan</EM>
+kimi paketlerin değiştirilmiş versiyonlarının bulunduğu depolar <EM>overlay</EM>
+olarak tanımlanabilmelidir.
+<LI>Ön tanımlı depoda <EM>bulunmayan</EM> çeşitli paketlerin bulunduğu depolar
+<EM>addon</EM> olarak tanımlanabilmelidir.
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_7.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_9.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

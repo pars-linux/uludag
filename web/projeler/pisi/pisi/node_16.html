@@ -49,26 +49,57 @@
 
 
 <H1 ALIGN=center>PISI<BR>
-(Packages Installed Succesfully as Intented)</H1>
+(Packages Installed Successfully as Intended)</H1>
 
-<H3 ALIGN=center>S. Çağlar Onur, Onur Küçük, Barış Metin, A. Murat Eren, Eray Özkural,
-Gürer Özen</H3>
+<H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Pre-Alpha)</H3>
-<H5>Source: Bu bölümdeki bilgiler PSPEC dosyasının
-<EM>Source</EM> bölümünden alınır.</H5><!--SEC END -->
+<H5>Örnek bir actions.py dosyası:</H5>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;gnuconfig</FONT><BR>
+<BR>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;setup():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;gnuconfig.gnuconfig_update()</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.configure(``--with-nls'')</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;build():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.make()</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;install():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.install()&nbsp;</FONT><BR>
+<BR>
 
-<UL><LI>
-<B>Name</B>
-<LI><B>Homepage</B>
-<LI><B>Summary</B>
-<LI><B>Description</B>
-<LI><B>Packager</B>
-<UL><LI>
-<B>Name</B>
-<LI><B>Email</B>
-</UL>
-</UL>
+</TT></DL></DIV>
+
+<H4><A NAME="htoc14">4.1.3</A>&nbsp;&nbsp;ChangeLog Dosyası</H4>
+Pakedin sürümlerindeki değişikliklerin açıklamalarını içerir. Bu dosya
+bilindik <B>ChangeLog</B> stilindedir ve <B>PSPEC</B> içindeki
+<B>History</B> bilgisi ile ilgili değildir.<BR>
+<BR>
+
+<H3><A NAME="htoc15">4.2</A>&nbsp;&nbsp;metadata.xml</H3>
+<B>Metadata</B> dosyası bir uygulamanın paket haline geldikten sonra
+yanında taşıyacağı ve paket ile ilgili bilgileri barındıran dosyadır. <BR>
+<BR>
+<B>Metadata</B> dosyası sadece oluşturulan paket ile ilgili bilgileri
+tutmaktan sorumludur. Paket hakkında temel bilgi bu dosyadan alınacaktır.<BR>
+<BR>
+Bu bilgilerin büyük kısmı <B>PSPEC</B> dosyasının işlenmesi sonucu
+ile <B>Metadata</B> dosyasına yazılmaktadır. <B>Metadata PSPEC</B>
+dosyasından alınan bilgilerin yanında kaynak derlendikten ve paket
+oluşturulduktan sonra alınabilecek diğer bilgileri de içerir (paketin
+kurulduktan sonra sistemde kaplayacağı alanın boyutu gibi).<BR>
+<BR>
+<B>Metadata</B> dosyasının içeriği şöyle tanımlanmıştır;<BR>
+<BR>
+<B>PISI</B><BR>
+<BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_15.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_17.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->
