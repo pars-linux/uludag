@@ -26,6 +26,8 @@ class MainWindow(QMainWindow):
         bar = self.menuBar()
         file_ = QPopupMenu(self)
         bar.insertItem("&File", file_)
+        file_.insertItem("Settings", config.show, self.CTRL + self.Key_S)
+        file_.insertSeparator()
         file_.insertItem("New Package", self.new_pak, self.CTRL + self.Key_N)
         file_.insertItem("Import Ebuild", self.import_ebuild, self.CTRL + self.Key_I)
         file_.insertItem("Edit Package", self.edit_pak, self.CTRL + self.Key_E)
@@ -73,6 +75,7 @@ def main():
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     w = MainWindow()
     w.show()
+    config.load()
     w.browser.collect_pspecs(config.pspec_folder)
     app.exec_loop()
 
