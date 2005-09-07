@@ -4,6 +4,7 @@
 from pardilskel import pardil_page
 from cfg_main import site_config
 import re
+from math import ceil
 
 p = pardil_page()
 
@@ -18,13 +19,19 @@ if not p.access('administrate_rights') and \
   p.http.redirect('error.py?tag=not_in_authorized_group')
 # OLMAZSA OLMAZ!
 
+# Sayfalama
+p['pag_now'] = int(p.form.getvalue('start', '0'))
+p['pag_total'] = ceil(float(p.db.scalar_query("SELECT Count(*) FROM rights")) / float(site_config['pag_perpage']))
+
 def index():
   p['rights'] = []
+  
   q = """SELECT
            rid, category, keyword, label
          FROM rights
          ORDER BY rid ASC
-      """
+         LIMIT %d, %d
+      """ % (p['pag_now'] * site_config['pag_perpage'], site_config['pag_perpage'])
   list = p.db.query(q)
   for i in list:
     l = {

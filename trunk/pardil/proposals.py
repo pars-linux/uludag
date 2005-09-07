@@ -3,11 +3,16 @@
 
 from pardilskel import pardil_page
 from cfg_main import site_config
+from math import ceil
 
 p = pardil_page()
 
 p.name = 'pardil_proposals'
 p.title = site_config['title']
+
+# Sayfalama
+p['pag_now'] = int(p.form.getvalue('start', '0'))
+p['pag_total'] = ceil(float(p.db.scalar_query("SELECT Count(*) FROM proposals")) / float(site_config['pag_perpage']))
 
 def index():
   versions = []
@@ -30,7 +35,8 @@ def index():
            WHERE
              proposals_versions.vid IN (%s)
            ORDER BY proposals.pid ASC
-        """ % (','.join(versions))
+           LIMIT %d, %d
+        """ % (','.join(versions), p['pag_now'] * site_config['pag_perpage'], site_config['pag_perpage'])
     list = p.db.query(q)
     for i in list:
       l = {

@@ -4,6 +4,7 @@
 from pardilskel import pardil_page
 from cfg_main import site_config
 import re
+from math import ceil
 
 p = pardil_page()
 
@@ -18,12 +19,17 @@ if not p.access('administrate_groups') and \
   p.http.redirect('error.py?tag=not_in_authorized_group')
 # OLMAZSA OLMAZ!
 
+# Sayfalama
+p['pag_now'] = int(p.form.getvalue('start', '0'))
+p['pag_total'] = ceil(float(p.db.scalar_query("SELECT Count(*) FROM groups")) / float(site_config['pag_perpage']))
+
 def index():
   p['groups'] = []
   q = """SELECT gid, label
          FROM groups
          ORDER BY gid ASC
-      """
+         LIMIT %d, %d
+      """ % (p['pag_now'] * site_config['pag_perpage'], site_config['pag_perpage'])
   list = p.db.query(q)
   for i in list:
     l = {

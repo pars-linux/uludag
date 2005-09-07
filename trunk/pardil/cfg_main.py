@@ -13,3 +13,5 @@ site_config['db_pass'] = ''
 site_config['session_timeout'] = 1800
 site_config['passcode_timeout'] = 1800
 site_config['activation_timeout'] = 86400
+
+site_config['pag_perpage'] = 25

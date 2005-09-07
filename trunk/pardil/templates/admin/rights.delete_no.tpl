@@ -5,7 +5,7 @@
     Silme işlemi iptal edildi.
   </p>
   <ul>
-    <li><a href="admin_rights.py">Listeye Dön</a></li>
+    <li><a href="admin_rights.py?start=$pag_now">Listeye Dön</a></li>
   </ul>
 </div>
 #include $site_path + "templates/footer.tpl"
