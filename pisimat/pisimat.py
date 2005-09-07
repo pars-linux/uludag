@@ -85,9 +85,11 @@ class MainWindow(QMainWindow):
     
     def new_pak(self):
         pak = self.browser.get_selected()
-        if not pak:
-            return
-        dlg = NewPakWindow(pak.path[:pak.path.rfind('/')])
+        if pak:
+            path = pak.path[:pak.path.rfind('/')]
+        else:
+            path = config.pspec_folder
+        dlg = NewPakWindow(path)
         dlg.exec_loop()
         if not dlg.pname:
             return
