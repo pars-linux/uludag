@@ -81,6 +81,18 @@ class Editor(QMainWindow):
         # show window
         self.show()
     
+    def closeEvent(self, ce):
+        if self.spec_ed.textModified or self.action_ed.textModified:
+            r = QMessageBox.question(self, "Files are not saved!",
+                "Package '%s' is modified.\nDo you want to save it?" % (self.pak_name),
+                "&Save", "&Exit without saving", "&Dont exit")
+            if r == 2:
+                ce.ignore()
+                return
+            if r == 0:
+                self.save()
+        ce.accept()
+    
     def _spec_tab(self):
         self.tab.changeTab(self.spec_ed, "*pspec.xml")
     
