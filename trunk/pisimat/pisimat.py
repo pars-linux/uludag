@@ -20,6 +20,45 @@ import config
 import browser
 import editor
 
+class NewPakWindow(QDialog):
+    def __init__(self, path):
+        QDialog.__init__(self)
+        self.setCaption("New Package Settings")
+        vb = QVBoxLayout(self, 6)
+        g = QGridLayout(vb, 2, 2, 6)
+        lab = QLabel("Name", self)
+        g.addWidget(lab, 0, 0)
+        lab = QLabel("Folder", self)
+        g.addWidget(lab, 1, 0)
+        self.name = QLineEdit(self)
+        g.addWidget(self.name, 0, 1)
+        hb = QHBoxLayout(self, 1)
+        self.dir = QLineEdit(self)
+        self.dir.setText(path)
+        hb.addWidget(self.dir)
+        b = QPushButton("...", self)
+        self.connect(b, SIGNAL("clicked()"), self.ask_file)
+        hb.addWidget(b)
+        g.addLayout(hb, 1, 1)
+        b = QPushButton("OK", self)
+        b.setDefault(True)
+        self.connect(b, SIGNAL("clicked()"), self.accept)
+        vb.addWidget(b)
+        self.pname = None
+        self.pdir = None
+    
+    def ask_file(self):
+        s = QFileDialog.getExistingDirectory(self.dir.text(), self, "lala", "Choose package folder", False)
+        self.dir.setText(s)
+    
+    def accept(self):
+        if not self.name.text() or not self.dir.text():
+            return
+        QDialog.accept(self)
+        self.pname = unicode(self.name.text())
+        self.pdir = unicode(self.dir.text())
+
+
 class MainWindow(QMainWindow):
     def __init__(self, *args):
         QMainWindow.__init__(self, *args)
@@ -48,17 +87,16 @@ class MainWindow(QMainWindow):
         pak = self.browser.get_selected()
         if not pak:
             return
-        # FIXME: show and ask for folder too
-        t = QInputDialog.getText("Create a new package", "Name", QLineEdit.Normal)
-        if t[1] == False:
+        dlg = NewPakWindow(pak.path[:pak.path.rfind('/')])
+        dlg.exec_loop()
+        if not dlg.pname:
             return
-        pname = str(t[0])
-        pdir = os.path.join(pak.path[:pak.path.rfind('/')], pname)
+        pdir = os.path.join(dlg.pdir, dlg.pname)
         if os.path.exists(pdir):
             print "Doh!"
             return
         os.mkdir(pdir)
-        ed = editor.Editor(pdir, pname)
+        ed = editor.Editor(pdir, dlg.pname)
         ed.save()
         self.winlist.append(ed)
     

@@ -46,7 +46,7 @@ class Editor(QMainWindow):
     def __init__(self, path, name):
         QMainWindow.__init__(self)
         self.setMinimumSize(540, 320)
-        self.setCaption(name + " - pisimat")
+        self.setCaption(name + " - " + path + " - pisimat")
         self.pak_path = path
         self.pak_name = name
         # menu
