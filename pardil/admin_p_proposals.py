@@ -6,6 +6,7 @@ from cfg_main import site_config
 from pyonweb.libstring import *
 from pyonweb.libdate import *
 import re
+from math import ceil
 
 p = pardil_page()
 
@@ -20,13 +21,18 @@ if not p.access('administrate_pending') and \
   p.http.redirect('error.py?tag=not_in_authorized_group')
 # OLMAZSA OLMAZ!
 
+# Sayfalama
+p['pag_now'] = int(p.form.getvalue('start', '0'))
+p['pag_total'] = ceil(float(p.db.scalar_query("SELECT Count(*) FROM proposals_pending")) / float(site_config['pag_perpage']))
+
 def index():
   p['pending'] = []
   q = """SELECT
            tpid, title, timeB
          FROM proposals_pending
          ORDER BY tpid ASC
-      """
+         LIMIT %d, %d
+      """ % (p['pag_now'] * site_config['pag_perpage'], site_config['pag_perpage'])
   list = p.db.query(q)
   for i in list:
     l = {

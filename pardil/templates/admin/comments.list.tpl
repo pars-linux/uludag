@@ -3,7 +3,7 @@
   <h2>Önerilere Yapılan Yorumlar</h2>
   <ul>
     <li><strong>Öneri:</strong> $pid</li>
-    <li><a href="admin_comments.py">Listeye Dön</a></li>
+    <li><a href="admin_comments.py?start=$pag_now">Listeye Dön</a></li>
   </ul>
   <table width="100%">
     <tr>
@@ -17,7 +17,7 @@
       <td>$i.date</td>
       <td>$i.user</td>
       <td><textarea>$i.content</textarea></td>
-      <td>[<a href="admin_comments.py?action=delete&amp;pid=$pid&amp;cid=$i.cid">Sil</a>]</td>
+      <td>[<a href="admin_comments.py?action=delete&amp;pid=$pid&amp;cid=$i.cid&amp;start=$pag_now">Sil</a>]</td>
     </tr>
     #end for
   </table>

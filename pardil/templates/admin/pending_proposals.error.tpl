@@ -5,7 +5,7 @@
     Belirtilen öneri/yorum bulunamadı.
   </p>
   <ul>
-    <li><a href="admin_p_proposals.py">Listeye Dön</a></li>
+    <li><a href="admin_p_proposals.py?start=$pag_now">Listeye Dön</a></li>
   </ul>
 </div>
 #include $site_path + "templates/footer.tpl"

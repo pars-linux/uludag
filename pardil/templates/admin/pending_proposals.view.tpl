@@ -71,6 +71,7 @@
       </div>
     </fieldset>
     <fieldset>
+      <input type="hidden" name="start" value="$pag_start" />
       <button type="submit" name="action" value="publish"><strong>Yayınla</strong></button>
       <button type="submit" name="action" value="delete">Sil</button>
     </fieldset>

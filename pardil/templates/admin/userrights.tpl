@@ -67,9 +67,19 @@
       <td>$i.category</td>
       <td>$i.group</td>
       <td>$i.right</td>
-      <td>[<a href="admin_userrights.py?action=delete&amp;relid=$i.relid">Sil</a>]</td>
+      <td>[<a href="admin_userrights.py?action=delete&amp;relid=$i.relid&amp;start=$pag_now">Sil</a>]</td>
     </tr>
     #end for
   </table>
+  <p>&nbsp;</p>
+  <p style="text-align: center;">
+    #for $i in range(0, $pag_total)
+      #if $i == $pag_now
+        <b>#echo $i+1 #</b>
+      #else
+        <a href="admin_userrights.py?start=$i">#echo $i+1 #</a>
+      #end if
+    #end for
+  </p>
 </div>
 #include $site_path + "templates/footer.tpl"
