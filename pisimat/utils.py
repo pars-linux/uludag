@@ -51,11 +51,14 @@ class TextEd(QextScintilla):
         self.setAutoIndent(1)
         self.setIndentationWidth(4)
         self.setIndentationsUseTabs(0)
+        self.textModified = False
+        self.connect(self, SIGNAL("textChanged()"), self._modified)
         # try to load file
         self.filename = os.path.join(path, name)
         try:
             data = load(self.filename)
             self.setText(data)
+            self.textModified = False
             self.loaded = True
         except:
             self.loaded = False
@@ -64,8 +67,11 @@ class TextEd(QextScintilla):
         if lexer:
             self.setLexer(lexer)
     
+    def _modified(self):
+        self.textModified = True
+    
     def save_changes(self):
-        if self.isModified():
+        if self.textModified():
             data = self.text()
             save(self.filename, unicode(data))
-            self.setModified(False)
+            self.textModified = False
