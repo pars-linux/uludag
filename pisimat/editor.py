@@ -10,8 +10,9 @@
 #
 
 import sys
-import os
 import re
+import os
+import tempfile
 import sha
 from qt import *
 from qtext import *
@@ -20,6 +21,7 @@ sys.path.append('.')
 import pisi.api
 import pisi.context
 import pisi.uri
+import pisi.specfile
 from pisi.fetcher import fetch_url
 
 import templates
@@ -29,9 +31,27 @@ import utils
 class SpecEd(utils.TextEd):
     def __init__(self, path, name):
         utils.TextEd.__init__(self, path, "pspec.xml", utils.HTMLLexer())
+        self.setupAPI()
         if not self.loaded:
             data = { "PACKAGE":  name, "NAME": config.name, "EMAIL": config.email, "DATE": "2005-08-06" }
             self.setText(templates.pspec_xml % (data))
+    
+    def setupAPI(self):
+        api = QextScintillaAPIs()
+        api.add("Patch")
+        api.add("Dependency")
+        api.add("AdditionalFile")
+        self.myapi = api
+        self.setAutoCompletionAPIs(self.myapi)
+        self.setAutoCompletionSource(self.AcsAPIs)
+        self.setAutoCompletionThreshold(1)
+    
+    def contextMenuEvent(self, event):
+        line = self.lineAt(event.pos())
+        if line == -1:
+            utils.TextEd.contextMenuEvent(self, event)
+            return
+        event.accept()
 
 
 class ActionEd(utils.TextEd):
@@ -42,9 +62,8 @@ class ActionEd(utils.TextEd):
             self.setText(templates.actions_py % (data))
 
 
-class PisiOut(utils.TextEd):
-    def __init__(self, path):
-        utils.TextEd.__init__(self, path, "debug.txt")
+class PisiOut(QTextEdit):
+    pass
 
 
 class Editor(QMainWindow):
@@ -52,6 +71,7 @@ class Editor(QMainWindow):
         QMainWindow.__init__(self)
         self.setMinimumSize(540, 320)
         self.setCaption(name + " - " + path + " - pisimat")
+        self.statusBar()
         self.pak_path = path
         self.pak_name = name
         # menu
@@ -66,6 +86,8 @@ class Editor(QMainWindow):
         tools.insertItem("Fetch source", self.tools_fetch)
         pisi = QPopupMenu(self)
         bar.insertItem("&Pisi", pisi)
+        pisi.insertItem("Validate PSpec", self.pisi_validate, self.CTRL + self.Key_V)
+        pisi.insertSeparator()
         pisi.insertItem("Fetch", self.pisi_fetch, self.CTRL + self.Key_F)
         pisi.insertItem("Unpack", self.pisi_unpack, self.CTRL + self.Key_U)
         pisi.insertItem("Compile", self.pisi_compile, self.CTRL + self.Key_C)
@@ -84,7 +106,7 @@ class Editor(QMainWindow):
         self.connect(self.action_ed, SIGNAL("textChanged()"), self._action_tab)
         tab.addTab(self.action_ed, "actions.py")
         # blah
-        self.pisi_out = PisiOut(path)
+        self.pisi_out = PisiOut()
         tab.addTab(self.pisi_out, "Pisi Output")
         # show window
         self.show()
@@ -137,6 +159,22 @@ class Editor(QMainWindow):
         else:
             data = data[:m.end(1)] + " sha1sum='" + digest + "'" + data[m.end(1):]
         self.spec_ed.setText(data)
+    
+    def pisi_validate(self):
+        data = unicode(self.spec_ed.text())
+        f = tempfile.NamedTemporaryFile()
+        s = data.encode("utf-8")
+        f.write(s)
+        f.flush()
+        sf = pisi.specfile.SpecFile()
+        try:
+            sf.read(f.name)
+            self.statusBar().message("pspec.xml is validated by pisi.")
+        except Exception, inst:
+            self.pisi_out.append("\n==> pspec.xml errors:\n")
+            self.pisi_out.append(unicode(inst))
+            self.statusBar().message("pspec.xml is invalid!")
+            self.tab.setCurrentPage(2)
     
     def pisi_fetch(self):
         pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "unpack")
