@@ -82,6 +82,18 @@ class ActionEd(utils.TextEd):
         if not self.loaded:
             data = { "PACKAGE":  name, "NAME": config.name, "EMAIL": config.email }
             self.setText(templates.actions_py % (data))
+        self.setupAPI()
+    
+    def setupAPI(self):
+        api = QextScintillaAPIs()
+        for item in templates.actions_apis:
+            api.add(item)
+        for item in templates.actions_funcs:
+            api.add(item)
+        self.myapi = api
+        self.setAutoCompletionAPIs(self.myapi)
+        self.setAutoCompletionSource(self.AcsAPIs)
+        self.setAutoCompletionThreshold(2)
 
 
 class PisiOut(QTextEdit):

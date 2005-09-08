@@ -102,6 +102,71 @@ pspec_xml = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
 </PISI>
 """
 
+actions_apis = [
+    "actionsapi",
+    "autotools",
+    "pisitools",
+    "shelltools"
+]
+
+actions_funcs = [
+    "configure",
+    "rawConfigure",
+    "compile",
+    "make",
+    "install",
+    "rawInstall",
+    "aclocal",
+    "autoconf",
+    "automake",
+    "autoheader",
+    "dobin",
+    "dodir",
+    "dodoc",
+    "doexe",
+    "dohard",
+    "dohtml",
+    "doinfo",
+    "dojar",
+    "dolib",
+    "dolib_a",
+    "dolib_so",
+    "doman",
+    "domo",
+    "domove",
+    "dosed",
+    "dosbin",
+    "dosym",
+    "insinto",
+    "newdoc",
+    "newman",
+    "remove",
+    "removeDir",
+    "can_access_file",
+    "can_access_directory",
+    "makedirs",
+    "echo",
+    "chmod",
+    "chown",
+    "sym",
+    "unlink",
+    "unlinkDir",
+    "move",
+    "copy",
+    "copytree",
+    "touch",
+    "cd",
+    "ls",
+    "export",
+    "isLink",
+    "isFile",
+    "isDirectory",
+    "realPath",
+    "baseName",
+    "dirName",
+    "system"
+]
+
 actions_py = u"""#!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
