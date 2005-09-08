@@ -18,8 +18,9 @@ from qtext import *
 
 sys.path.append('.')
 import pisi.api
-import pisi.sourcefetcher
+import pisi.context
 import pisi.uri
+from pisi.fetcher import fetch_url
 
 import templates
 import config
@@ -114,13 +115,14 @@ class Editor(QMainWindow):
             QMessageBox.warning(self, "Fetch error", "Archive URI is not specified")
             return
         uri = pisi.uri.URI(m.groups()[1])
-        fetcher = pisi.sourcefetcher.SourceFetcher(uri)
-        try:
-            fetcher.fetch()
-        except:
-            QMessageBox.warning(self, "Fetch error", "Cannot fetch URI")
-            return
-        f = file(os.path.join(fetcher.dest, uri.filename()))
+        fname = os.path.join(pisi.context.config.archives_dir(), uri.filename())
+        if not os.access(fname, os.R_OK):
+            try:
+                fetch_url(uri, pisi.context.config.archives_dir())
+            except:
+                QMessageBox.warning(self, "Fetch error", "Cannot fetch URI")
+                return
+        f = file(fname)
         s = sha.new(f.read())
         digest = s.hexdigest()
         f.close()
