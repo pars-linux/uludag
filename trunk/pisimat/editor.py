@@ -67,12 +67,23 @@ class PisiOut(QTextEdit):
     pass
 
 
+class MyThread(QThread):
+    def run(self):
+        import editor
+        editor.glob_ui.out = self.win.pisi_out
+        editor.glob_ui.win = self.win
+        pisi.api.build_until(self.path, self.stage)
+        self.win.pisi_out.append("\n==> Job finished.\n")
+
+
 class Editor(QMainWindow):
     def __init__(self, path, name):
         QMainWindow.__init__(self)
         self.setMinimumSize(540, 320)
         self.setCaption(name + " - " + path + " - pisimat")
-        self.statusBar()
+        sb = self.statusBar()
+        self.progress = QProgressBar(100, self)
+        sb.addWidget(self.progress)
         self.pak_path = path
         self.pak_name = name
         # menu
@@ -90,8 +101,8 @@ class Editor(QMainWindow):
         pisi.insertItem("Validate PSpec", self.pisi_validate, self.CTRL + self.Key_V)
         pisi.insertSeparator()
         pisi.insertItem("Fetch", self.pisi_fetch, self.CTRL + self.Key_F)
-        pisi.insertItem("Unpack", self.pisi_unpack, self.CTRL + self.Key_U)
-        pisi.insertItem("Compile", self.pisi_compile, self.CTRL + self.Key_C)
+        pisi.insertItem("Compile", self.pisi_unpack, self.CTRL + self.Key_U)
+        pisi.insertItem("Install", self.pisi_compile, self.CTRL + self.Key_C)
         pisi.insertItem("Build", self.pisi_build, self.CTRL + self.Key_B)
         # editing area
         tab = QTabWidget(self)
@@ -178,19 +189,100 @@ class Editor(QMainWindow):
             self.tab.setCurrentPage(2)
     
     def pisi_fetch(self):
-        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "unpack")
+        self.pisi_out.append("\n==> Fetching...")
+        self.tab.setCurrentPage(2)
+        a = MyThread()
+        self.tatak = a
+        a.win = self
+        a.path = os.path.join(self.pak_path, "pspec.xml")
+        a.stage = "unpack"
+        a.start()
     
     def pisi_unpack(self):
-        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "buildaction")
+        self.pisi_out.append("\n==> Compiling...")
+        self.tab.setCurrentPage(2)
+        a = MyThread()
+        self.tatak = a
+        a.win = self
+        a.path = os.path.join(self.pak_path, "pspec.xml")
+        a.stage = "buildaction"
+        a.start()
     
     def pisi_compile(self):
-        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "installaction")
+        self.pisi_out.append("\n==> Installing...")
+        self.tab.setCurrentPage(2)
+        a = MyThread()
+        self.tatak = a
+        a.win = self
+        a.path = os.path.join(self.pak_path, "pspec.xml")
+        a.stage = "installaction"
+        a.start()
     
     def pisi_build(self):
-        pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "buildpackages")
+        self.pisi_out.append("\n==> Building...")
+        self.tab.setCurrentPage(2)
+        a = MyThread()
+        self.tatak = a
+        a.win = self
+        a.path = os.path.join(self.pak_path, "pspec.xml")
+        a.stage = "buildpackages"
+        a.start()
     
     def save(self):
         self.spec_ed.save_changes()
         self.tab.changeTab(self.spec_ed, "pspec.xml")
         self.action_ed.save_changes()
         self.tab.changeTab(self.action_ed, "actions.py")
+
+
+class UI:
+    def display(self, msg, color):
+        try:
+            self.out.append(unicode(msg.encode("utf-8")))
+        except:
+            print msg
+    
+    def info(self, msg, verbose=False):
+        self.display(msg, "blue")
+    
+    def debug(self, msg):
+        self.display(msg, "black")
+    
+    def warning(self, msg):
+        self.display(msg, "purple")
+        
+    def error(self, msg):
+        self.display("!!! " + msg, "red")
+    
+    def action(self, msg):
+        self.display(msg, "green")
+    
+    def confirm(self, msg):
+        self.display(msg + " auto-confirmed.", "red")
+        return True
+    
+    class Progress:
+        def __init__(self, size):
+            self.total = size
+            self.percent = 0
+        
+        def update(self, size):
+            if not self.total:
+                return 100
+        
+            percent = (size * 100) / self.total
+            if percent and self.percent is not percent:
+                self.percent = percent
+                return percent
+            else:
+                return 0
+    
+    def display_progress(self, pd):
+        self.win.statusBar().clear()
+        self.win.progress.setProgress(pd['percent'])
+
+
+glob_ui = UI()
+
+def setup_pisi():
+    pisi.api.init(database=False, options=None, ui=glob_ui)
