@@ -11,11 +11,15 @@
 
 import sys
 import os
+import re
+import sha
 from qt import *
 from qtext import *
 
 sys.path.append('.')
 import pisi.api
+import pisi.sourcefetcher
+import pisi.uri
 
 import templates
 import config
@@ -56,12 +60,15 @@ class Editor(QMainWindow):
         file_.insertItem("Save", self.save, self.CTRL + self.Key_S)
         file_.insertSeparator()
         file_.insertItem("Close", self.close, self.CTRL + self.Key_Q)
+        tools = QPopupMenu(self)
+        bar.insertItem("&Tools", tools)
+        tools.insertItem("Fetch source", self.tools_fetch)
         pisi = QPopupMenu(self)
         bar.insertItem("&Pisi", pisi)
-        pisi.insertItem("Fetch", self.do_fetch, self.CTRL + self.Key_F)
-        pisi.insertItem("Unpack", self.do_unpack, self.CTRL + self.Key_U)
-        pisi.insertItem("Compile", self.do_compile, self.CTRL + self.Key_C)
-        pisi.insertItem("Build", self.do_build, self.CTRL + self.Key_B)
+        pisi.insertItem("Fetch", self.pisi_fetch, self.CTRL + self.Key_F)
+        pisi.insertItem("Unpack", self.pisi_unpack, self.CTRL + self.Key_U)
+        pisi.insertItem("Compile", self.pisi_compile, self.CTRL + self.Key_C)
+        pisi.insertItem("Build", self.pisi_build, self.CTRL + self.Key_B)
         # editing area
         tab = QTabWidget(self)
         self.tab = tab
@@ -99,16 +106,46 @@ class Editor(QMainWindow):
     def _action_tab(self):
         self.tab.changeTab(self.action_ed, "*actions.py")
     
-    def do_fetch(self):
+    def tools_fetch(self):
+        p = re.compile("<Archive(.*)>(.*)</Archive>")
+        data = unicode(self.spec_ed.text())
+        m = p.search(data)
+        if not m or m.groups()[1] == "":
+            QMessageBox.warning(self, "Fetch error", "Archive URI is not specified")
+            return
+        uri = pisi.uri.URI(m.groups()[1])
+        fetcher = pisi.sourcefetcher.SourceFetcher(uri)
+        try:
+            fetcher.fetch()
+        except:
+            QMessageBox.warning(self, "Fetch error", "Cannot fetch URI")
+            return
+        f = file(os.path.join(fetcher.dest, uri.filename()))
+        s = sha.new(f.read())
+        digest = s.hexdigest()
+        f.close()
+        p2 = re.compile("sha1sum=\"(.*)\"")
+        p3 = re.compile("sha1sum='(.*)'")
+        m2 = p2.search(data, m.start(1), m.end(1))
+        m3 = p3.search(data, m.start(1), m.end(1))
+        if m2:
+            data = data[:m2.start(1)] + digest + data[m2.end(1):]
+        elif m3:
+            data = data[:m3.start(1)] + digest + data[m3.end(1):]
+        else:
+            data = data[:m.end(1)] + " sha1sum='" + digest + "'" + data[m.end(1):]
+        self.spec_ed.setText(data)
+    
+    def pisi_fetch(self):
         pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "unpack")
     
-    def do_unpack(self):
+    def pisi_unpack(self):
         pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "buildaction")
     
-    def do_compile(self):
+    def pisi_compile(self):
         pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "installaction")
     
-    def do_build(self):
+    def pisi_build(self):
         pisi.api.build_until(os.path.join(self.pak_path, "pspec.xml"), "buildpackages")
     
     def save(self):
