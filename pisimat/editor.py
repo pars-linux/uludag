@@ -99,6 +99,7 @@ class Editor(QMainWindow):
         tools = QPopupMenu(self)
         bar.insertItem("&Tools", tools)
         tools.insertItem("Fetch source", self.tools_fetch)
+        tools.insertItem("Fill paths", self.tools_paths)
         pisi = QPopupMenu(self)
         bar.insertItem("&Pisi", pisi)
         pisi.insertItem("Validate PSpec", self.pisi_validate, self.CTRL + self.Key_V)
@@ -174,6 +175,28 @@ class Editor(QMainWindow):
         else:
             data = data[:m.end(1)] + " sha1sum='" + digest + "'" + data[m.end(1):]
         self.spec_ed.setText(data)
+    
+    def tools_paths(self):
+        pb = pisi.api.prepare_for_build(os.path.join(self.pak_path, "pspec.xml"))
+        dirname = pb.bctx.pkg_install_dir()
+        paths = ""
+        for root, dirs, files in os.walk(dirname):
+            relroot = root[len(dirname):]
+            if relroot != "":
+                paths += "\t\t<Path fileType='executable'>%s</Path>\n" % (relroot)
+            if relroot.startswith("/usr/share/locale") or relroot.startswith("/usr/share/man") or relroot.startswith("/usr/share/doc"):
+                for d in dirs:
+                    dirs.remove(d)
+        if paths == "":
+            return
+        p = re.compile(".*<Files>.*\n")
+        data = unicode(self.spec_ed.text())
+        m = p.search(data)
+        if m:
+            data = data[:m.end()] + paths + data[m.end():]
+            self.spec_ed.setText(data)
+        else:
+            QMessageBox.warning(self, "Fill error", "No <Files> tag!")
     
     def pisi_validate(self):
         data = unicode(self.spec_ed.text())
