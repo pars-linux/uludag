@@ -38,9 +38,10 @@ class SpecEd(utils.TextEd):
     
     def setupAPI(self):
         api = QextScintillaAPIs()
-        api.add("Patch")
-        api.add("Dependency")
-        api.add("AdditionalFile")
+        for item in templates.pspec_tags:
+            api.add(item)
+        for item in templates.pspec_attributes:
+            api.add(item)
         self.myapi = api
         self.setAutoCompletionAPIs(self.myapi)
         self.setAutoCompletionSource(self.AcsAPIs)
