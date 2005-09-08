@@ -72,8 +72,11 @@ class MyThread(QThread):
         import editor
         editor.glob_ui.out = self.win.pisi_out
         editor.glob_ui.win = self.win
-        pisi.api.build_until(self.path, self.stage)
-        self.win.pisi_out.append("\n==> Job finished.\n")
+        try:
+            pisi.api.build_until(self.path, self.stage)
+            self.win.pisi_out.append("\n==> Job finished.\n")
+        except Exception, inst:
+            self.win.pisi_out.append("\n*** Error:\n" + str(inst) + "\n")
 
 
 class Editor(QMainWindow):
@@ -280,6 +283,8 @@ class UI:
     def display_progress(self, pd):
         self.win.statusBar().clear()
         self.win.progress.setProgress(pd['percent'])
+        if pd['percent'] == 100:
+            self.win.progress.hide()
 
 
 glob_ui = UI()
