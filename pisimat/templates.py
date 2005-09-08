@@ -50,6 +50,19 @@ pspec_attributes = [
     "fileType"
 ]
 
+pspec_filetypes = [
+    "doc",
+    "executable",
+    "data",
+    "library",
+    "header",
+    "man",
+    "config",
+    "other",
+    "localedata",
+    "info"
+]
+
 pspec_xml = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE PISI SYSTEM "http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd">
 

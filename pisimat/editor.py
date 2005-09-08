@@ -42,6 +42,8 @@ class SpecEd(utils.TextEd):
             api.add(item)
         for item in templates.pspec_attributes:
             api.add(item)
+        for item in templates.pspec_filetypes:
+            api.add(item)
         self.myapi = api
         self.setAutoCompletionAPIs(self.myapi)
         self.setAutoCompletionSource(self.AcsAPIs)
@@ -52,6 +54,25 @@ class SpecEd(utils.TextEd):
         if line == -1:
             utils.TextEd.contextMenuEvent(self, event)
             return
+        str = unicode(self.text(line))
+        p1 = re.compile("<Path.*fileType='(.*)'.*>")
+        p2 = re.compile("<Path.*fileType=\"(.*)\".*>")
+        m = p1.search(str)
+        if not m:
+            m = p2.search(str)
+        if not m:
+            utils.TextEd.contextMenuEvent(self, event)
+            return
+        pm = QPopupMenu(self)
+        for i, item in enumerate(templates.pspec_filetypes):
+            if item != m.groups()[0]:
+                pm.insertItem("fileType='%s'" % (item), i)
+        i = pm.exec_loop(QCursor.pos())
+        if i == -1:
+            return
+        self.setSelection(line, m.start(1), line, m.end(1))
+        self.removeSelectedText()
+        self.insertAt(templates.pspec_filetypes[i], line, m.start(1))
         event.accept()
 
 
