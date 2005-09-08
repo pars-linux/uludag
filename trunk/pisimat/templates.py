@@ -9,6 +9,47 @@
 # option) any later version. Please read the COPYING file.
 #
 
+pspec_tags = [
+    "PISI",
+    "Source",
+    "Package",
+    "Name",
+    "Homepage",
+    "Packager",
+    "Email",
+    "License",
+    "IsA",
+    "PartOf",
+    "Summary",
+    "Description",
+    "Patches",
+    "Patch",
+    "AdditionalFiles",
+    "AdditionalFile",
+    "BuildDependencies",
+    "Dependency",
+    "History",
+    "Update",
+    "Date",
+    "Version",
+    "Release",
+    "RuntimeDependencies",
+    "Files",
+    "Path"
+]
+
+pspec_attributes = [
+    "xml:lang",
+    "type",
+    "sha1sum",
+    "version",
+    "versionFrom",
+    "versionTo",
+    "compressionType",
+    "level",
+    "fileType"
+]
+
 pspec_xml = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE PISI SYSTEM "http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd">
 
