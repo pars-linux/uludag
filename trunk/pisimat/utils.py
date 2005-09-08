@@ -71,7 +71,7 @@ class TextEd(QextScintilla):
         self.textModified = True
     
     def save_changes(self):
-        if self.textModified():
+        if self.textModified:
             data = self.text()
             save(self.filename, unicode(data))
             self.textModified = False
