@@ -13,9 +13,6 @@ import sys
 import os
 from qt import *
 
-sys.path.append('.')
-import pisi.api
-
 import config
 import browser
 import editor
@@ -113,12 +110,12 @@ class MainWindow(QMainWindow):
 
 
 def main():
-    pisi.api.init()
     app = QApplication(sys.argv)
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     w = MainWindow()
     w.show()
     config.load()
+    editor.setup_pisi()
     w.browser.collect_pspecs(config.pspec_folder)
     app.exec_loop()
 
