@@ -14,7 +14,9 @@
   TIconView implementation.
 */
 
+#include <assert.h>
 #include <qstring.h>
+#include <qapplication.h>
 #include <kicontheme.h>
 #include <kiconloader.h>
 #include <kservicegroup.h>
@@ -22,6 +24,7 @@
 #include <kcmoduleinfo.h>
 #include <kcmoduleloader.h>
 #include <krun.h>
+#include <kdebug.h>
 
 #include "ticonview.h"
 
@@ -82,7 +85,7 @@ void TIconView::setCategory( const QString& path )
 void TIconView::slotItemSelected( QIconViewItem* item )
 {
     TIconViewItem *_item = static_cast<TIconViewItem*>( item );
-
+    
     _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ) );
 
     /* tricky:
@@ -97,6 +100,39 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 
     connect( this, SIGNAL( executed( QIconViewItem* ) ),
              this, SLOT( slotItemSelected( QIconViewItem* ) ) );
+}
+
+void TIconView::contentsMousePressEvent(QMouseEvent* e)
+{
+  if(e->button() == LeftButton)
+    {
+      dragPos = e->pos();
+      dragItem = static_cast<TIconViewItem*>(findItem(e->pos()));
+    }
+  KIconView::contentsMousePressEvent(e);
+}
+
+void TIconView::contentsMouseMoveEvent(QMouseEvent* e)
+{
+  if(e->state() && LeftButton)
+    {
+      int distance = (e->pos() - dragPos).manhattanLength();
+      if(distance > QApplication::startDragDistance())
+	startDrag();
+    }
+  // This creates a mouse pointer problem don't do this
+  //KIconView::contentsMouseMoveEvent(e);
+}
+
+void TIconView::startDrag()
+{
+  if(dragItem)
+    {
+      QStrList uri;
+      uri.append(dragItem->moduleinfo()->fileName().local8Bit());
+      QUriDrag* drag = new QUriDrag(uri, this);
+      drag->drag();
+    }
 }
 
 TIconView::~TIconView()
@@ -114,6 +150,7 @@ TIconViewItem::TIconViewItem( TIconView *parent, const QString& text,
 
 KCModuleInfo* TIconViewItem::moduleinfo() const
 {
+    assert(_moduleinfo != NULL);
     return _moduleinfo;
 }
 
