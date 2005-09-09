@@ -56,8 +56,17 @@ signals:
 protected slots:
     void slotItemSelected( QIconViewItem* item );
 
+protected:
+    void contentsMousePressEvent(QMouseEvent* e);
+    void contentsMouseMoveEvent(QMouseEvent* e);
+
 private:
     KCModule* _module;
+
+    QPoint dragPos;
+    TIconViewItem* dragItem;
+    
+    void startDrag();
 
 };
 
