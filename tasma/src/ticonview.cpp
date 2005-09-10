@@ -43,8 +43,7 @@ TIconView::TIconView( QWidget *parent, const char* name )
     f.setWeight( QFont::Bold );
     setFont( f );
 
-    connect( this, SIGNAL( executed( QIconViewItem* ) ),
-             this, SLOT( slotItemSelected( QIconViewItem* ) ) );
+    connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( slotItemSelected( QIconViewItem* ) ) );
 
 }
 
@@ -88,18 +87,10 @@ void TIconView::slotItemSelected( QIconViewItem* item )
     
     _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
 
-    /* tricky:
-       if we don't disconnect before emitting this signal,
-       signal will be emitted for all TIconViewItem(s) loaded.
-       But why?*/
-    disconnect( SIGNAL( executed( QIconViewItem* ) ) );
-
     if ( _module ) {
         emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text() );
     }
 
-    connect( this, SIGNAL( executed( QIconViewItem* ) ),
-             this, SLOT( slotItemSelected( QIconViewItem* ) ) );
 }
 
 void TIconView::contentsMousePressEvent(QMouseEvent* event)
