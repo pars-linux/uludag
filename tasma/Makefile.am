@@ -1,6 +1,6 @@
 
 SUBDIRS = comarrpc \
-	tasma \
+	src \
 	applnk \
 	modules
 
