@@ -57,6 +57,7 @@ protected slots:
     void slotItemSelected( QIconViewItem* item );
 
 protected:
+    void contentsMouseDoubleClickEvent (QMouseEvent *event);
     void contentsMousePressEvent(QMouseEvent* event);
     void contentsMouseMoveEvent(QMouseEvent* event);
 

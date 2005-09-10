@@ -29,7 +29,7 @@
 #include "tmoduleview.h"
 
 TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon_path, const QString& text )
-    : QWidget( parent )
+  : QWidget( parent )
 {
     contentView = new TMContent( this, module );
 
@@ -153,8 +153,6 @@ TMContent::TMContent( QWidget *parent, KCModule *module )
 
 TMContent::~TMContent()
 {
-    delete _module;
-
     delete contentWidget;
 }
 
