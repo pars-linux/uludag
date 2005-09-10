@@ -86,7 +86,7 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 {
     TIconViewItem *_item = static_cast<TIconViewItem*>( item );
     
-    _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ) );
+    _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
 
     /* tricky:
        if we don't disconnect before emitting this signal,
@@ -102,26 +102,26 @@ void TIconView::slotItemSelected( QIconViewItem* item )
              this, SLOT( slotItemSelected( QIconViewItem* ) ) );
 }
 
-void TIconView::contentsMousePressEvent(QMouseEvent* e)
+void TIconView::contentsMousePressEvent(QMouseEvent* event)
 {
-  if(e->button() == LeftButton)
+  if(event->button() == LeftButton)
     {
-      dragPos = e->pos();
-      dragItem = static_cast<TIconViewItem*>(findItem(e->pos()));
+      dragPos = event->pos();
+      dragItem = static_cast<TIconViewItem*>(findItem(event->pos()));
     }
-  KIconView::contentsMousePressEvent(e);
+  KIconView::contentsMousePressEvent(event);
 }
 
-void TIconView::contentsMouseMoveEvent(QMouseEvent* e)
+void TIconView::contentsMouseMoveEvent(QMouseEvent* event)
 {
-  if(e->state() && LeftButton)
+  if(event->state() && LeftButton)
     {
-      int distance = (e->pos() - dragPos).manhattanLength();
+      int distance = (event->pos() - dragPos).manhattanLength();
       if(distance > QApplication::startDragDistance())
 	startDrag();
     }
   // This creates a mouse pointer problem don't do this
-  //KIconView::contentsMouseMoveEvent(e);
+  //KIconView::contentsMouseMoveEvent(event);
 }
 
 void TIconView::startDrag()
@@ -130,8 +130,8 @@ void TIconView::startDrag()
     {
       QStrList uri;
       uri.append(dragItem->moduleinfo()->fileName().local8Bit());
-      QUriDrag* drag = new QUriDrag(uri, this);
-      drag->drag();
+      QUriDrag* uriDrag = new QUriDrag(uri, this);
+      uriDrag->drag();
     }
 }
 
