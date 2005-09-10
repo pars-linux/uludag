@@ -29,7 +29,7 @@
 #include "ticonview.h"
 
 TIconView::TIconView( QWidget *parent, const char* name )
-    : KIconView( parent, name )
+  : KIconView( parent, name ), _module(0L)
 {
     setResizeMode( Adjust );
     setItemsMovable( false );
@@ -51,7 +51,7 @@ void TIconView::setCategory( const QString& path )
 {
     this->clear();
 
-    QPixmap _icon = DesktopIcon(  "go",  KIcon::SizeMedium ); // defaultIcon
+    QPixmap _icon = DesktopIcon( "go", KIcon::SizeMedium ); // defaultIcon
 
     KServiceGroup::Ptr category = KServiceGroup::group( path );
     if ( !category || !category->isValid() )
@@ -84,13 +84,23 @@ void TIconView::setCategory( const QString& path )
 void TIconView::slotItemSelected( QIconViewItem* item )
 {
     TIconViewItem *_item = static_cast<TIconViewItem*>( item );
-    
+  
     _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
 
     if ( _module ) {
         emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text() );
     }
 
+}
+
+void TIconView::contentsMouseDoubleClickEvent (QMouseEvent *event)
+{
+  if(_module)
+    {
+      delete _module;
+      _module = 0L;
+    }
+  KIconView::contentsMouseDoubleClickEvent(event);
 }
 
 void TIconView::contentsMousePressEvent(QMouseEvent* event)
@@ -128,7 +138,7 @@ void TIconView::startDrag()
 
 TIconView::~TIconView()
 {
-    delete _module;
+  delete _module;
 }
 
 
