@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2004,2005 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -11,17 +11,13 @@
 
 /*
   tasma - main.cpp
-  Create a TasmaApp and run mainloop.
+  Create a TasmaApp and run main loop.
 */
 
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <kglobalsettings.h>
 #include <kconfig.h>
-
-//splash
-//#include <kstandarddirs.h>
-//#include <qsplashscreen.h>
 
 #include "tasmamainwin.h"
 #include "main.h"
@@ -64,26 +60,13 @@ int main( int argc, char *argv[] )
     KAboutData aboutData( "tasma", I18N_NOOP( "TASMA - Pardus Configuration Center" ), VERSION,
                           I18N_NOOP( "Pardus Configuration Center" ), KAboutData::License_GPL,
                           I18N_NOOP( "(c) 2005, TUBITAK - UEKAE" ) );
-    aboutData.addAuthor( "Barış Metin", I18N_NOOP( "Current Maintainer" ), "baris@uludag.org.tr" );
+    aboutData.addAuthor( "İsmail Dönmez", I18N_NOOP( "Current Maintainer" ), "ismail@uludag.org.tr" );
+    aboutData.addAuthor( "Barış Metin", I18N_NOOP( "Old Maintainer" ), "baris@uludag.org.tr" );
     aboutData.addAuthor( I18N_NOOP( "KDE Developers" ), I18N_NOOP( "Module Developers" ) );
     aboutData.setTranslator( "Barış Metin", "baris@uludag.org.tr" );
     KCmdLineArgs::init( argc, argv, &aboutData );
 
     TasmaApp app;
-
-/*
-    // Create and initialize splash screen
-    QSplashScreen * splash = new QSplashScreen(
-        QPixmap( locate( "data", "tasma/splash.png" )));
-    splash->message( I18N_NOOP( "TASMA - Uludag Configuration Center" ),
-                     Qt::AlignCenter | Qt::AlignBottom );
-    splash->show();
-    // Show splash screen
-    sleep(2);
-    // delete splash screen
-    delete splash;
-*/
-
     app.mainWidget()->show();
 
     return app.exec();

@@ -153,7 +153,7 @@ TMContent::TMContent( QWidget *parent, KCModule *module )
 
 TMContent::~TMContent()
 {
-    delete contentWidget;
+  delete contentWidget;
 }
 
 KCModule* TMContent::module() const

@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2004,2005 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -95,11 +95,9 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 
 void TIconView::contentsMouseDoubleClickEvent (QMouseEvent *event)
 {
-  if(_module)
-    {
-      delete _module;
-      _module = 0L;
-    }
+  delete _module;
+  _module = 0L;
+  
   KIconView::contentsMouseDoubleClickEvent(event);
 }
 
