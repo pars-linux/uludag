@@ -1,8 +1,8 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  #def printError($s)
+  #def errorCl($s)
     #if $errors.has_key($s)
-      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+      #echo "error"
     #end if
   #end def
 
@@ -15,12 +15,22 @@
   #end def
   <h2>Erişim Hakları</h2>
   <div>
+    #if len($errors)
+    <p>
+      Formda bazı hatalar bulunuyor, lütfen gerekli düzeltmeleri yapın ve formu tekrar gönderin.
+    </p>
+    <ul class="errors">
+      #for $e,$v in $errors.items()
+        <li>$v</li>
+      #end for
+    </ul>
+    #end if
   <form method="post" action="admin_userrights.py">
     <fieldset>
       <legend>Erişim Hakkı Ekle</legend>
       <div class="required">
         <label for="r_group">Grup:</label>
-        <select name="r_group" id="r_group">
+        <select class="$errorCl('r_group')" name="r_group" id="r_group">
           <option value="0">Grup Seçin</option>
           #for $i in $groups
             #if $i.gid == $printValue('r_group')
@@ -30,11 +40,10 @@
             #end if
           #end for
         </select>
-        #echo $printError('r_group')
       </div>
       <div class="required">
         <label for="r_right">Hak:</label>
-        <select name="r_right" id="r_right">
+        <select class="$errorCl('r_right')" name="r_right" id="r_right">
           <option value="0">Hak Seçin</option>
           #for $i in $rights
             #if $i.rid == $printValue('r_right')
@@ -44,7 +53,6 @@
             #end if
           #end for
         </select>
-        #echo $printError('r_right')
       </div>
     </fieldset>
     <fieldset>
@@ -55,14 +63,18 @@
   </div>
   <table width="100%">
     <tr>
-      <th>No</th>
+      <th width="25">No</th>
       <th>Kategori</th>
       <th>Grup Adı</th>
       <th>Erişim Adı</th>
-      <th>&nbsp;</th>
+      <th width="30">&nbsp;</th>
     </tr>
-    #for $i in $rel_rights
-    <tr>
+    #for $c, $i in enumerate($rel_rights)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td>$i.relid</td>
       <td>$i.category</td>
       <td>$i.group</td>

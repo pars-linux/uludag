@@ -1,8 +1,9 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  #def printError($s)
+
+  #def errorCl($s)
     #if $errors.has_key($s)
-      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+      #echo "error"
     #end if
   #end def
 
@@ -68,14 +69,23 @@
       </p>
     #end if
   #if $may_comment
+  #if len($errors)
+  <p>
+    Formda bazı hatalar bulunuyor, lütfen gerekli düzeltmeleri yapın ve formu tekrar gönderin.
+  </p>
+  <ul class="errors">
+    #for $e,$v in $errors.items()
+      <li>$v</li>
+    #end for
+  </ul>
+  #end if
   <form action="viewproposal.py" method="post">
     <input type="hidden" name="pid" value="$proposal.pid" />
     <input type="hidden" name="version" value="$proposal.version" />
     <fieldset>
       <legend>Yorum</legend>
       <div class="required">
-        <textarea class="widetext" id="p_comment" name="p_comment" cols="60" rows="5"></textarea>
-        #echo $printError('p_comment')
+        <textarea class="widetext $errorCl('p_comment')" id="p_comment" name="p_comment" cols="60" rows="5"></textarea>
       </div>
     </fieldset>
     <fieldset>

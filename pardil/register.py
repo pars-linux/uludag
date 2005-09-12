@@ -76,12 +76,13 @@ def register():
 
     t = "Pardil - Üyelik Aktivasyonu"
     list = {
-            'link': site_config['url'] + 'activate.py?code=' + act_code
+            'link': site_config['url'] + 'activate.py?code=' + act_code,
+            'time': num2str(site_config['activation_timeout'])
             }
     b = build_template(site_config['path'] + 'templates/email/register.tpl', list)
     sendmail(site_config['mail'], p.form.getvalue('r_email'), t, b)
 
-    p['debug'] = b
+    p['time'] = num2str(site_config['activation_timeout'])
     p.template = "register.done.tpl"
     
 

@@ -10,10 +10,14 @@
       <th>Tarih</th>
       <th>Gönderen</th>
       <th>Yorum</th>
-      <th>&nbsp;</th>
+      <th width="30">&nbsp;</th>
     </tr>
-    #for $i in $comments
-    <tr>
+    #for $c, $i in enumerate($comments)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td>$i.date</td>
       <td>$i.user</td>
       <td><textarea>$i.content</textarea></td>

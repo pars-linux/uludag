@@ -1,8 +1,8 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  #def printError($s)
+  #def errorCl($s)
     #if $errors.has_key($s)
-      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+      #echo "error"
     #end if
   #end def
 
@@ -15,13 +15,22 @@
   #end def
   <h2>Gruplar</h2>
   <div>
+    #if len($errors)
+    <p>
+      Formda bazı hatalar bulunuyor, lütfen gerekli düzeltmeleri yapın ve formu tekrar gönderin.
+    </p>
+    <ul class="errors">
+      #for $e,$v in $errors.items()
+        <li>$v</li>
+      #end for
+    </ul>
+    #end if
     <form method="post" action="admin_groups.py">
       <fieldset>
         <legend>Grup Ekle</legend>
         <div class="required">
           <label for="g_label">Grup Adı:</label>
-          <input type="text" id="g_label" name="g_label" value="" />
-          #echo $printError('g_label')
+          <input class="$errorCl('g_label')" type="text" id="g_label" name="g_label" value="" />
         </div>
       </fieldset>
       <fieldset>
@@ -32,12 +41,16 @@
   </div>
   <table width="100%">
     <tr>
-      <th>No</th>
+      <th width="25">No</th>
       <th>Grup Adı</th>
-      <th>&nbsp;</th>
+      <th width="30">&nbsp;</th>
     </tr>
-    #for $i in $groups
-    <tr>
+    #for $c, $i in enumerate($groups)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td>$i.gid</td>
       <td>$i.label</td>
       <td>[<a href="admin_groups.py?action=delete&amp;gid=$i.gid&amp;start=$pag_now">Sil</a>]</td>

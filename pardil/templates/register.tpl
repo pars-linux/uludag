@@ -2,9 +2,9 @@
 <div id="content">
   <h2>Kullanıcı Kaydı</h2>
 
-  #def printError($s)
+  #def errorCl($s)
     #if $errors.has_key($s)
-      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+      #echo "error"
     #end if
   #end def
 
@@ -16,45 +16,37 @@
     #end if
   #end def
 
+  #if len($errors)
+  <p>
+    Formda bazı hatalar bulunuyor, lütfen gerekli düzeltmeleri yapın ve formu tekrar gönderin.
+  </p>
+  <ul class="errors">
+    #for $e,$v in $errors.items()
+      <li>$v</li>
+    #end for
+  </ul>
+  #end if
   <form action="register.py" method="post">
     <fieldset>
       <legend>Hesap Bilgileri</legend>
       <div class="required">
         <label for="r_username">Kullanıcı Adı:</label>
-        <input type="text" id="r_username" name="r_username" value="#echo $printValue('r_username', '') #" />
-        #echo $printError('r_username')
+        <input class="$errorCl('r_username')" type="text" id="r_username" name="r_username" value="#echo $printValue('r_username', '') #" />
       </div>
       <div class="required">
         <label for="r_email">E-Posta Adresi:</label>
-        <input type="text" id="r_email" name="r_email" value="#echo $printValue('r_email', '') #" />
-        #echo $printError('r_email')
+        <input class="$errorCl('r_email')" type="text" id="r_email" name="r_email" value="#echo $printValue('r_email', '') #" />
       </div>
       <div class="sep">&nbsp;</div>
       <div class="required">
         <label for="r_password">Parola:</label>
-        <input type="password" id="r_password" name="r_password" value="#echo $printValue('r_password', '') #" />
+        <input class="$errorCl('r_password')" type="password" id="r_password" name="r_password" value="#echo $printValue('r_password', '') #" />
       </div>
       <div class="required">
         <label for="r_password2">Tekrar Parola:</label>
-        <input type="password" id="r_password2" name="r_password2" value="#echo $printValue('r_password', '') #" />
-        #echo $printError('r_password')
+        <input class="$errorCl('r_password')" type="password" id="r_password2" name="r_password2" value="#echo $printValue('r_password', '') #" />
       </div>
     </fieldset>
-    <!--
-    <fieldset>
-      <legend>Kişisel Bilgiler</legend>
-      <div class="required">
-        <label for="r_firstname">İsim:</label>
-        <input type="text" id="r_firstname" name="r_firstname" value="#echo $printValue('r_firstname', '') #" />
-        #echo $printError('r_firstname')
-      </div>
-      <div class="required">
-        <label for="r_lastname">Soyisim:</label>
-        <input type="text" id="r_lastname" name="r_lastname" value="#echo $printValue('r_lastname', '') #" />
-        #echo $printError('r_lastname')
-      </div>
-    </fieldset>
-    -->
     <fieldset>
       <input type="hidden" name="action" value="register" />
       <button type="submit">Kayıt</button>

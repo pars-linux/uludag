@@ -3,12 +3,16 @@
   <h2>Onay Bekleyen Öneriler</h2>
   <table width="100%">
     <tr>
-      <th>No</th>
+      <th width="25">No</th>
       <th>Başlık</th>
-      <th>&nbsp;</th>
+      <th width="40">&nbsp;</th>
     </tr>
-    #for $i in $pending
-    <tr>
+    #for $c, $i in enumerate($pending)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td>$i.tpid</td>
       <td>$i.title</td>
       <td><a href="admin_p_proposals.py?action=view&amp;tpid=$i.tpid&amp;start=$pag_now">Görüntüle</a></td>
