@@ -59,11 +59,13 @@ def code():
       t = "Pardil - Şifre Değiştirme Kodu"
       list = {
               'link': site_config['url'] + 'change_password.py?action=change',
-              'code': acode
+              'code': acode,
+              'time': num2str(site_config['activation_timeout'])
               }
       b = build_template(site_config['path'] + 'templates/email/change_password.tpl', list)
       sendmail(site_config['mail'], p.form.getvalue('c_email'), t, b)
 
+      p['time'] = num2str(site_config['activation_timeout'])
       p['mode'] = 'change'
       
 def change():

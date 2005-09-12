@@ -1,8 +1,8 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  #def printError($s)
+  #def errorCl($s)
     #if $errors.has_key($s)
-      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+      #echo "error"
     #end if
   #end def
 
@@ -15,12 +15,22 @@
   #end def
   <h2>Öneri Sorumluları</h2>
   <div>
+    #if len($errors)
+    <p>
+      Formda bazı hatalar bulunuyor, lütfen gerekli düzeltmeleri yapın ve formu tekrar gönderin.
+    </p>
+    <ul class="errors">
+      #for $e,$v in $errors.items()
+        <li>$v</li>
+      #end for
+    </ul>
+    #end if
   <form method="post" action="admin_maintainers.py">
     <fieldset>
       <legend>Sorumlu Ekle</legend>
       <div class="required">
         <label for="m_proposal">Öneri:</label>
-        <select name="m_proposal" id="m_proposal">
+        <select class="$errorCl('m_proposal')" name="m_proposal" id="m_proposal">
           <option value="0">Öneri Seçin</option>
           #for $i in $proposals
             #if $i.pid == $printValue('m_proposal')
@@ -30,11 +40,10 @@
             #end if
           #end for
         </select>
-        #echo $printError('m_proposal')
       </div>
       <div class="required">
         <label for="m_user">Kullanıcı:</label>
-        <select name="m_user" id="m_user">
+        <select class="$errorCl('m_user')" name="m_user" id="m_user">
           <option value="0">Kullanıcıyı Seçin</option>
           #for $i in $users
             #if $i.uid == $printValue('m_user')
@@ -44,7 +53,6 @@
             #end if
           #end for
         </select>
-        #echo $printError('m_user')
       </div>
     </fieldset>
     <fieldset>
@@ -55,13 +63,17 @@
   </div>
   <table width="100%">
     <tr>
-      <th>No</th>
+      <th width="25">No</th>
       <th>Öneri</th>
       <th>Kullanıcı Adı</th>
-      <th>&nbsp;</th>
+      <th width="30">&nbsp;</th>
     </tr>
-    #for $i in $rel_maintainers
-    <tr>
+    #for $c, $i in enumerate($rel_maintainers)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td>$i.relid</td>
       <td>$i.proposal</td>
       <td>$i.username</td>

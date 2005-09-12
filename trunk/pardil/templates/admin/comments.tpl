@@ -3,11 +3,15 @@
   <h2>Önerilere Yapılan Yorumlar</h2>
   <table width="100%">
     <tr>
-      <th>No</th>
+      <th width="25">No</th>
       <th>Başlık</th>
     </tr>
-    #for $i in $proposals
-    <tr>
+    #for $c, $i in enumerate($proposals)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td><a href="admin_comments.py?action=comments&amp;pid=$i.pid&amp;start=$pag_now">$i.pid</a></td>
       <td><a href="admin_comments.py?action=comments&amp;pid=$i.pid&amp;start=$pag_now">$i.title</a></td>
     </tr>

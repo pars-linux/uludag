@@ -3,11 +3,15 @@
   <h2>Öneriler</h2>
   <table width="100%">
     <tr>
-      <th>No</th>
+      <th width="25">No</th>
       <th>Başlık</th>
     </tr>
-    #for $i in $proposals
-    <tr>
+    #for $c,$i in enumerate($proposals)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td><a href="viewproposal.py?pid=$i.pid&amp;version=$i.version">$i.pid</a></td>
       <td><a href="viewproposal.py?pid=$i.pid&amp;version=$i.version">$i.title</a></td>
     </tr>

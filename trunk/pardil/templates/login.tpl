@@ -2,9 +2,9 @@
 <div id="content">
   <h2>Kullanıcı Girişi</h2>
 
-  #def printError($s)
+  #def errorCl($s)
     #if $errors.has_key($s)
-      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+      #echo "error"
     #end if
   #end def
 
@@ -16,18 +16,26 @@
     #end if
   #end def
 
+  #if len($errors)
+  <p>
+    Formda bazı hatalar bulunuyor, lütfen gerekli düzeltmeleri yapın ve formu tekrar gönderin.
+  </p>
+  <ul class="errors">
+    #for $e,$v in $errors.items()
+      <li>$v</li>
+    #end for
+  </ul>
+  #end if
   <form action="login.py" method="post">
     <fieldset>
       <legend>Hesap Bilgileri</legend>
       <div class="required">
         <label for="l_username">Kullanıcı Adı:</label>
-        <input type="text" id="l_username" name="l_username" value="#echo $printValue('l_username', '') #" />
-        #echo $printError('l_username')
+        <input class="$errorCl('l_username')" type="text" id="l_username" name="l_username" value="#echo $printValue('l_username', '') #" />
       </div>
       <div class="required">
         <label for="l_password">Parola:</label>
-        <input type="password" id="l_password" name="l_password" value="#echo $printValue('l_password', '') #" />
-        #echo $printError('l_password')
+        <input class="$errorCl('l_password')" type="password" id="l_password" name="l_password" value="#echo $printValue('l_password', '') #" />
       </div>
     </fieldset>
     <fieldset>

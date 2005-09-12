@@ -72,6 +72,7 @@ class pardil_page(page):
     self.data['errors'] = {}
 
     self.data['site_path'] = site_config['path']
+    self.data['site_url'] = site_config['url']
     self.template = ''
 
   def init_session(self):

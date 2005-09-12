@@ -1,8 +1,8 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  #def printError($s)
+  #def errorCl($s)
     #if $errors.has_key($s)
-      #echo """<div class="error_msg">%s</div>""" % ($errors[$s])
+      #echo "error"
     #end if
   #end def
 
@@ -15,12 +15,22 @@
   #end def
   <h2>Kullanıcı Grupları</h2>
   <div>
+    #if len($errors)
+    <p>
+      Formda bazı hatalar bulunuyor, lütfen gerekli düzeltmeleri yapın ve formu tekrar gönderin.
+    </p>
+    <ul class="errors">
+      #for $e,$v in $errors.items()
+        <li>$v</li>
+      #end for
+    </ul>
+    #end if
   <form method="post" action="admin_usergroups.py">
     <fieldset>
       <legend>Gruba Kullanıcı Ekle</legend>
       <div class="required">
         <label for="u_group">Grup:</label>
-        <select name="u_group" id="u_group">
+        <select class="$errorCl('u_group')" name="u_group" id="u_group">
           <option value="0">Grup Seçin</option>
           #for $i in $groups
             #if $i.gid == $printValue('u_group')
@@ -30,11 +40,10 @@
             #end if
           #end for
         </select>
-        #echo $printError('u_group')
       </div>
       <div class="required">
         <label for="u_user">Kullanıcı:</label>
-        <select name="u_user" id="u_user">
+        <select class="$errorCl('u_user')" name="u_user" id="u_user">
           <option value="0">Kullanıcıyı Seçin</option>
           #for $i in $users
             #if $i.uid == $printValue('u_user')
@@ -44,7 +53,6 @@
             #end if
           #end for
         </select>
-        #echo $printError('u_user')
       </div>
     </fieldset>
     <fieldset>
@@ -55,13 +63,17 @@
   </div>
   <table width="100%">
     <tr>
-      <th>No</th>
+      <th width="25">No</th>
       <th>Grup Adı</th>
       <th>Kullanıcı Adı</th>
-      <th>&nbsp;</th>
+      <th width="30">&nbsp;</th>
     </tr>
-    #for $i in $rel_groups
-    <tr>
+    #for $c, $i in enumerate($rel_groups)
+      #if $c % 2
+      <tr class="odd">
+      #else
+      <tr class="even">
+      #end if
       <td>$i.relid</td>
       <td>$i.group</td>
       <td>$i.username</td>
