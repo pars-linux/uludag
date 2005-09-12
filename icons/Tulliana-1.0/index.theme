@@ -1,7 +1,7 @@
 [Icon Theme]
 Name=Tulliana
-Comment=Pardus GNU/Linux icon theme
-Comment[tr]=Pardus GNU/Linux simge teması
+Comment=Pardus icon theme
+Comment[tr]=Pardus simge teması
 DisplayDepth=32
 
 Inherits=hicolor
