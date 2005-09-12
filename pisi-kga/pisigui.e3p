@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-3.8.dtd">
+<!-- Project file for project pisigui -->
+<!-- Saved: 2002-01-01, 00:46:12 -->
+<!-- Copyright (C) 2002 ,  -->
+<Project version="3.8">
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <UIType>Kde</UIType>
+  <Description></Description>
+  <Author></Author>
+  <EmaIl></EmaIl>
+  <Sources>
+    <Source>
+      <Name>setup.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>pisi_kga.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>Preferences.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>ThreadRunner.py</Name>
+    </Source>
+  </Sources>
+  <Forms>
+    <Form>
+      <Dir>src</Dir>
+      <Name>MainWidget.ui</Name>
+    </Form>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <MainScript>
+    <Name>setup.py</Name>
+  </MainScript>
+  <Vcs>
+    <VcsType>Subversion</VcsType>
+    <VcsOptions>{'status': [], 'log': [], 'global': [], 'update': [], 'remove': [], 'add': [], 'tag': [], 'export': [], 'diff': [], 'commit': [], 'checkout': [], 'history': []}</VcsOptions>
+    <VcsOtherData>{'standardLayout': 1}</VcsOtherData>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+  </FiletypeAssociations>
+</Project>

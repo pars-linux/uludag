@@ -1,0 +1,555 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>MainWindow</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>Pisi KGA</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>700</width>
+            <height>619</height>
+        </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>700</width>
+            <height>600</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>700</width>
+            <height>32767</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Pisi KGA</string>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>10</y>
+                <width>360</width>
+                <height>47</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>18</red>
+                <green>34</green>
+                <blue>144</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Program Ekle ve Kaldır&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame10</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>280</x>
+                <y>70</y>
+                <width>410</width>
+                <height>450</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>220</red>
+                <green>220</green>
+                <blue>220</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>GroupBoxPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <widget class="KSeparator">
+            <property name="name">
+                <cstring>kSeparator3_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>390</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>GroupBoxPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>8</number>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>progIcon</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>19</x>
+                    <y>73</y>
+                    <width>64</width>
+                    <height>64</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>moreInfoLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>142</x>
+                    <y>194</y>
+                    <width>150</width>
+                    <height>66</height>
+                </rect>
+            </property>
+            <property name="midLineWidth">
+                <number>1</number>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>warningLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>280</y>
+                    <width>220</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>&lt;font color="#ff0000"&gt;Bu program kurulu değil. Kurmak için aşağıdaki düğmeye tıklayabilirsiniz.&lt;/font&gt;</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>installButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>150</x>
+                    <y>340</y>
+                    <width>60</width>
+                    <height>29</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>K&amp;ur</string>
+            </property>
+        </widget>
+        <widget class="KActiveLabel">
+            <property name="name">
+                <cstring>progNameLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>10</y>
+                    <width>241</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>220</red>
+                    <green>220</green>
+                    <blue>220</blue>
+                </color>
+            </property>
+        </widget>
+        <widget class="KActiveLabel">
+            <property name="name">
+                <cstring>infoLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>80</y>
+                    <width>301</width>
+                    <height>111</height>
+                </rect>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>220</red>
+                    <green>220</green>
+                    <blue>220</blue>
+                </color>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>moreInfoLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>190</y>
+                    <width>110</width>
+                    <height>80</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>VERSİYON
+PAKET BOYU 
+KATEGORİ</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>iconLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="KSeparator">
+        <property name="name">
+            <cstring>kSeparator1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>530</y>
+                <width>670</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>updateSystemButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>490</y>
+                <width>170</width>
+                <height>29</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&amp;Tüm sistemi güncelle</string>
+        </property>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout15</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>560</y>
+                <width>620</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>helpButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Yardım</string>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer1</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>30</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>settingsButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Paket depo&amp;su ayarları</string>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+            <spacer>
+                <property name="name">
+                    <cstring>spacer3</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>90</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout9</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>installOrRemoveButton</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>Paketleri Kur &amp;veya Kaldır</string>
+                        </property>
+                        <property name="autoDefault">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>16</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QPushButton">
+                        <property name="name">
+                            <cstring>closeButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Çı&amp;k</string>
+                        </property>
+                        <property name="autoDefault">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame11</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>70</y>
+                <width>240</width>
+                <height>100</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>220</red>
+                <green>220</green>
+                <blue>220</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>GroupBoxPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <widget class="QComboBox">
+            <item>
+                <property name="text">
+                    <string>Kurulu paketleri göster</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>Güncellemeleri göster</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>Kuruluma hazır paketleri göster</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>selectComboBox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>60</y>
+                    <width>200</width>
+                    <height>27</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout5</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>200</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ara:</string>
+                    </property>
+                </widget>
+                <widget class="KListViewSearchLine">
+                    <property name="name">
+                        <cstring>searchLine</cstring>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </widget>
+    <widget class="KListView">
+        <column>
+            <property name="text">
+                <string>Paketler</string>
+            </property>
+            <property name="clickable">
+                <bool>true</bool>
+            </property>
+            <property name="resizable">
+                <bool>true</bool>
+            </property>
+        </column>
+        <column>
+            <property name="text">
+                <string>Sürüm no</string>
+            </property>
+            <property name="clickable">
+                <bool>true</bool>
+            </property>
+            <property name="resizable">
+                <bool>true</bool>
+            </property>
+        </column>
+        <property name="name">
+            <cstring>listView</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>170</y>
+                <width>240</width>
+                <height>310</height>
+            </rect>
+        </property>
+        <property name="hScrollBarMode">
+            <enum>Auto</enum>
+        </property>
+        <property name="allColumnsShowFocus">
+            <bool>true</bool>
+        </property>
+        <property name="showSortIndicator">
+            <bool>true</bool>
+        </property>
+        <property name="rootIsDecorated">
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kseparator.h</includehint>
+    <includehint>kactivelabel.h</includehint>
+    <includehint>kactivelabel.h</includehint>
+    <includehint>kseparator.h</includehint>
+    <includehint>klistviewsearchline.h</includehint>
+    <includehint>klistview.h</includehint>
+</includehints>
+</UI>
