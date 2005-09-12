@@ -116,7 +116,7 @@
                     <cstring>textLabel6</cstring>
                 </property>
                 <property name="text">
-                    <string>Aşağıdaki liste, Pardus Linux'u güncellerken ya da bir paket kurarken 
+                    <string>Aşağıdaki liste, Pardus'u güncellerken ya da bir paket kurarken 
 kullanılabilecek paket depolarının bir listesini göstermektedir. Bu listeye
 depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
                 </property>
