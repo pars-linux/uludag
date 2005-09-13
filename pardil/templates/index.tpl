@@ -9,8 +9,5 @@
       </div>
     </div>
   #end for
-  #for $a in $acl
-    $a<br/>
-  #end for
 </div>
 #include $site_path + "templates/footer.tpl"
