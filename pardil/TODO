@@ -27,7 +27,7 @@
 - "Pardil Nasıl Kullanılır?" sayfası
 
 / Arayüz
-  - CSS değişiklikleri
+  / CSS değişiklikleri
   / Hata mesajları
 
 
@@ -36,6 +36,8 @@
 
 - Üyelik sistemi
   - Şifre değiştirme
+  - Üyelik bilgilerini değiştirme
 
 - Öneri sistemi
   - Önerilere resim/yama iliştirme
+  - Öneri takibi

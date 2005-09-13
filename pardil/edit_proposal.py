@@ -16,7 +16,6 @@ p.title = site_config['title']
 if 'sid' not in p['session']:
   p.http.redirect('error.py?tag=login_required')
 
-
 def index():
   try:
     p['pid'] = int(p.form.getvalue('pid'))

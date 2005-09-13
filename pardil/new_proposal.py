@@ -14,7 +14,7 @@ p.title = site_config['title']
 
 if 'sid' not in p['session']:
   p.http.redirect('error.py?tag=login_required')
-if not p.access('proposals_add'):
+if 'proposals_add' not in p['acl'] and not p.site_admin():
   p.http.redirect('error.py?tag=not_in_authorized_group')
 
 def new():
@@ -40,7 +40,7 @@ def new():
 
 
     # Öneri hemen yayınlansın mı...
-    if p.access('proposals_publish'):
+    if 'proposals_publish' in p['acl']:
       version = '1.0.0'
       
       # Öneriler tablosuna ekle

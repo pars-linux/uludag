@@ -62,6 +62,9 @@ class pardil_page(page):
         """ % (sql_datetime(now()), site_config['activation_timeout'])
     self.db.query_com(q)
 
+    # Access list
+    self.data['acl'] = self.access_list()
+
     # Posted
     self.data['posted'] = {}
     for i in self.form:
@@ -130,6 +133,26 @@ class pardil_page(page):
         """ % (self.data['session']['uid'])
     return self.db.scalar_query(q)
     
+  def access_list(self):
+    list = []
+    if not self.logged():
+      return list
+    q = """SELECT rights.keyword
+           FROM rel_rights
+             INNER JOIN rights
+               ON rights.rid=rel_rights.rid
+             INNER JOIN rel_groups
+               ON rel_groups.gid=rel_rights.gid
+             INNER JOIN users
+               ON users.uid=rel_groups.uid
+           WHERE
+             users.uid=%d
+        """ % (self.data['session']['uid'])
+    rows = self.db.query(q)
+    for r in rows:
+      list.append(r[0])
+    return list
+
   def access(self, key):
     if not self.logged():
       return 0

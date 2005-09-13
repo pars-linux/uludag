@@ -107,10 +107,7 @@ def index():
         p['comments'].append(l)
 
       # Yorum ekleme
-      if p.access('proposals_comment'):
-        p['may_comment'] = 1
-      else:
-        p['may_comment'] = 0
+      p['may_comment'] = 'proposals_comment' in p['acl']
 
       p.template = 'viewproposal.tpl'
     else:
@@ -121,7 +118,7 @@ def index():
 def comment():
   if 'sid' not in p['session']:
     p.http.redirect('error.py?tag=not_logged_in')
-  if not p.access('proposals_comment'):
+  if 'proposals_comment' not in p['acl']:
     p.http.redirect('error.py?tag=not_in_authorized_group')
 
   if not len(p.form.getvalue('p_comment', '')):

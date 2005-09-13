@@ -14,8 +14,7 @@ p.title = site_config['title']
 # OLMAZSA OLMAZ!
 if 'sid' not in p['session']:
   p.http.redirect('error.py?tag=login_required')
-if not p.access('administrate_userrights') and \
-   not p.site_admin():
+if 'administrate_userrights' not in p['acl'] and not p.site_admin():
   p.http.redirect('error.py?tag=not_in_authorized_group')
 # OLMAZSA OLMAZ!
 
