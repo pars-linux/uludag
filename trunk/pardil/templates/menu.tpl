@@ -1,11 +1,8 @@
 <div class="box">
-  <h2>Menü</h2>
+  <h2>Kullanıcı Menüsü</h2>
 #if $session
-  <p>
-    <strong>Kullanıcı:</strong><br/>
-    ${session['username']}
-  </p>
   <ul>
+    <li><a href="#">${session['username']}</a></li>
     <li><a href="login.py?action=logout">Çıkış</a></li>
   </ul>
   #else
@@ -16,12 +13,11 @@
 #end if
 </div>
 <div class="box">
-  <h2>Menü</h2>
-  <ul>
-    <li><a href="admin.py">Yönetici Arabirimi</a></li>
-  </ul>
+  <h2>Öneriler</h2>
   <ul>
     <li><a href="proposals.py">Öneriler</a></li>
+    #if 'proposals_add' in $acl
     <li><a href="new_proposal.py">Öneri Ekle</a></li>
+    #end if
   </ul>
 </div>
