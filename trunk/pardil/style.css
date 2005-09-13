@@ -40,9 +40,7 @@ body {
   padding-left: 130px;
   background: url(images/uludag.png) no-repeat 0% 0%;
   text-align: right;
-}
-#header h1 span {
-
+  color: #fff;
 }
 
 /* menu */
@@ -79,6 +77,17 @@ body {
 }
 #footer a:hover {
   border-bottom: 1px solid #fff;
+}
+
+/* news */
+.news {
+  min-height: 100px;
+}
+.news .logo {
+  float: left;
+}
+.news .content {
+  padding-left: 80px;
 }
 
 /* table */

@@ -1,11 +1,13 @@
-0.1
-===
+Final
+=====
 
 + Üyelik sistemi
   + Kayıt sayfası
   + Kullanıcı girişi
   + E-posta ile aktivasyon
   + Unutulan şifreyi değiştirme
+  - Şifre değiştirme
+  - Üyelik bilgilerini değiştirme
 
 / Öneri sistemi
   + Öneri ekleme
@@ -13,6 +15,8 @@
   + Katı öneri formatı kuralları
   + Öneriye yorum ekleme
   / Arşiv ve arama sayfası
+  - Önerilere resim/yama iliştirme
+  ? Öneri takibi
 
 + Yönetim Arabirimi
   - Kullanıcı yönetimi
@@ -23,21 +27,10 @@
   / Öneri yönetimi
   + Yorum yönetimi
   + Öneri bakıcısı yönetimi
+  - Haber yönetimi
 
 - "Pardil Nasıl Kullanılır?" sayfası
 
 / Arayüz
   / CSS değişiklikleri
   / Hata mesajları
-
-
-0.2
-===
-
-- Üyelik sistemi
-  - Şifre değiştirme
-  - Üyelik bilgilerini değiştirme
-
-- Öneri sistemi
-  - Önerilere resim/yama iliştirme
-  - Öneri takibi

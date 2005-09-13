@@ -11,10 +11,12 @@ p.title = site_config['title']
 
 def index():
   p['news'] = []
-  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
-  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
-  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
-  p['news'].append({'title': 'Pardil', 'content': '...', 'icon': 'images/icons/bell.png'})
+  n = {
+       'title': 'Pardil',
+       'content': '...',
+       'icon':'images/icons/news.png'
+       }
+  p['news'].append(n)
 
   p.template = 'index.tpl'
 
