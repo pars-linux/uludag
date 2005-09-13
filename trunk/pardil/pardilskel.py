@@ -64,6 +64,7 @@ class pardil_page(page):
 
     # Access list
     self.data['acl'] = self.access_list()
+    self.data['site_admin'] = self.site_admin()
 
     # Posted
     self.data['posted'] = {}
