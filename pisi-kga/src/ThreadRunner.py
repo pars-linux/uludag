@@ -19,8 +19,9 @@ from qt import *
 import pisi.api
 
 class Thread(QThread):
-    def __init__(self):
+    def __init__(self, qObject):
         QThread.__init__(self)
+        self.qObject = qObject
         self.installing = False
         self.upgrading = False
         self.removing = False
@@ -47,7 +48,6 @@ class Thread(QThread):
                 list = []
                 list.append(app)
                 pisi.api.install(list)
-                
             self.install = False
 
         elif self.upgrading:
@@ -67,5 +67,6 @@ class Thread(QThread):
             self.remove = False
             
         else:
-            # WTF?
             pass
+
+        self.qObject.emit(PYSIGNAL("finished()"), ('',''))

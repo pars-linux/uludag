@@ -82,9 +82,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
+        self.connect(self.qObject,PYSIGNAL("finished()"),self.finished)
         
     def finished(self):
-        time.sleep(1)
         self.pDialog.close()
         self.updateListing()
 
@@ -93,9 +93,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         # Not true for multiple apps
         progress = length/self.totalAppCount
         self.pDialog.progressBar.setProgress(progress)
-
-        if progress == 100:
-            self.finished()
         
     def updateDetails(self,selection):
 
@@ -222,7 +219,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def installRemove(self):
         index = self.selectComboBox.currentItem()
         self.installOrRemoveButton.setEnabled(False)
-        self.command = ThreadRunner.Thread()
+        self.command = ThreadRunner.Thread(self.qObject)
 
         self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
         self.pDialog.progressBar.setTotalSteps(100)
