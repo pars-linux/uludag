@@ -18,7 +18,6 @@
 
 # System
 import sys
-import time
 
 # PyQt/PyKDE
 from qt import *
