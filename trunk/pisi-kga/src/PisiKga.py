@@ -18,6 +18,7 @@
 
 # System
 import sys
+import time
 
 # PyQt/PyKDE
 from qt import *
@@ -83,12 +84,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         
     def finished(self):
-        self.pDialog.progressBar.setProgress(100)
-        self.pDialog.progressBar.close()
+        time.sleep(1)
+        self.pDialog.close()
+        self.updateListing()
 
     def updateProgressBar(self, filename, length):
         self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
-        self.pDialog.progressBar.setProgress(self.pDialog.progressBar.progress()+(length/self.totalAppCount))
+        # Not true for multiple apps
+        progress = length/self.totalAppCount
+        self.pDialog.progressBar.setProgress(progress)
+
+        if progress == 100:
+            self.finished()
         
     def updateDetails(self,selection):
 
@@ -143,10 +150,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
             listViewItem = listViewItem.itemBelow()
 
         self.installOrRemoveButton.setEnabled(False)
-                
-    def updateListing(self,index):
+
+    def updateListing(self, index=-1):
         self.listView.clear()
 
+        if index == -1:
+            index = self.selectComboBox.currentItem()
+            
         base = QListViewItem(self.listView,None)
         base.setOpen(True)
         base.setText(0,i18n("Temel"))
@@ -206,9 +216,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
             pass
 
     def installRemoveFinished(self):
-        index = self.selectComboBox.currentItem()
         self.installOrRemoveButton.setEnabled(True)
-        self.updateListing(index)
+        self.updateListing()
         
     def installRemove(self):
         index = self.selectComboBox.currentItem()
@@ -246,11 +255,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
             
 
     def installSingle(self):
-        index = self.selectComboBox.currentItem()
         app = []
         app.append(str(self.listView.currentItem().text(0)))
         pisi.api.install(app)
-        self.updateListing(index)
+        self.updateListing()
         print "Finished installing."
 
     def showSettings(self):
