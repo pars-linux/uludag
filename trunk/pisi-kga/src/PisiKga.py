@@ -82,6 +82,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
+        self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
         self.connect(self.qObject,PYSIGNAL("finished()"),self.finished)
         
     def finished(self):
@@ -93,6 +94,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
         # Not true for multiple apps
         progress = length/self.totalAppCount
         self.pDialog.progressBar.setProgress(progress)
+
+    def pisiError(self, msg):
+        self.pDialog.close()
+        self.command.terminate()
+        self.command.wait()
+        KMessageBox.error(self, msg, u'Pisi Hatası')
         
     def updateDetails(self,selection):
 
@@ -243,14 +250,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         if index == 0: # Remove baby
             self.command.remove(self.selectedItems)
-            
+                        
         elif index == 1: # Upgrade baby
             self.command.upgrade(self.selectedItems)
-	    
+            	    
         elif index == 2: # Install baby
             self.command.install(self.selectedItems)
             
-
     def installSingle(self):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
