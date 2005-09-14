@@ -35,7 +35,7 @@ class PisiUi:
         pass
     
     def error(self, msg):
-        # TODO: Handle this
+        self.qObject.emit(PYSIGNAL("pisiError(str)"),(msg, ''))
         pass
             
     def action(self, msg):

@@ -33,7 +33,7 @@
                     <cstring>progressLabel</cstring>
                 </property>
                 <property name="text">
-                    <string>Current information here</string>
+                    <string>PiSi hazırlanıyor ...</string>
                 </property>
             </widget>
             <spacer>
