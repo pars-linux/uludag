@@ -87,7 +87,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.close()
 
     def updateProgressBar(self, filename, length):
-        print 'On ', filename
+        self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
         self.pDialog.progressBar.setProgress(self.pDialog.progressBar.progress()+(length/self.totalAppCount))
         
     def updateDetails(self,selection):
