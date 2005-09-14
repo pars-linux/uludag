@@ -16,15 +16,11 @@
 ###########################################################################
 
 from qt import *
-from kdecore import *
-
 import pisi.api
-import PisiKga
 
 class Thread(QThread):
-    def __init__(self, qObject):
+    def __init__(self):
         QThread.__init__(self)
-        self.qObject = qObject
         self.installing = False
         self.upgrading = False
         self.removing = False
@@ -50,14 +46,8 @@ class Thread(QThread):
             for app in self.appList:
                 list = []
                 list.append(app)
-                self.qObject.emit(PYSIGNAL("progress(str,str)"), (app, i18n("yüklenen")))
-
-                if pisi.api.install(list):
-                    self.qObject.emit(PYSIGNAL("incrementProgressBar(int)"), (100/count,))
-                else:
-                    self.qObject.emit(PYSIGNAL("error(str, str)"), (app, 'What?'))
-
-            #self.qObject.emit(PYSIGNAL("finished()"), ('',))
+                pisi.api.install(list)
+                
             self.install = False
 
         elif self.upgrading:
@@ -65,14 +55,7 @@ class Thread(QThread):
             for app in self.appList:
                 list = []
                 list.append(app)
-                self.qObject.emit(PYSIGNAL("progress(str,str)"), (app, i18n("güncellenen")))
-
-                if pisi.api.upgrade(list):
-                    self.qObject.emit(PYSIGNAL("incrementProgressBar(int)"), (100/count,))
-                else:
-                    self.qObject.emit(PYSIGNAL("error(str, str)"), (app, 'What?'))
-            
-            #self.qObject.emit(PYSIGNAL("finished()"), ('',))
+                pisi.api.upgrade(list)
             self.upgrade = False
                                                                 
         elif self.removing:
@@ -80,14 +63,7 @@ class Thread(QThread):
             for app in self.appList:
                 list = []
                 list.append(app)
-                self.qObject.emit(PYSIGNAL("progress(str,str)"), (app, i18n("kaldırılan")))
-
-                if pisi.api.remove(list):
-                    self.qObject.emit(PYSIGNAL("incrementProgressBar(int)"), (100/count,))
-                else:
-                    self.qObject.emit(PYSIGNAL("error(str, str)"), (app, 'What?'))
-
-            #self.qObject.emit(PYSIGNAL("finished()"), ('',))
+                pisi.api.remove(list)
             self.remove = False
             
         else:

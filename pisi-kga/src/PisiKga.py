@@ -30,6 +30,7 @@ import MainWindow
 import Preferences
 import ProgressDialog
 import ThreadRunner
+import PisiUi
 
 # Pisi Imports
 import pisi.ui
@@ -71,23 +72,23 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
+        global glob_ui
         self.qObject = QObject()
+        
+        # Init pisi repository
+        glob_ui = PisiUi.PisiUi(self.qObject)
+        pisi.api.init(database=True, options=None, ui=glob_ui)
+        
         self.pDialog = ProgressDialog.ProgressDialog(self)
-
-        self.connect(self.qObject,PYSIGNAL("finished()"),self.finished)
-        self.connect(self.qObject,PYSIGNAL("progress(str,str)"),self.updateProgressBar)
-        self.connect(self.qObject,PYSIGNAL("incrementProgressBar(int)"),self.incrementProgressBar)
-
+        self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
+        
     def finished(self):
         self.pDialog.progressBar.setProgress(100)
         self.pDialog.progressBar.close()
 
-    def updateProgressBar(self, app, action):
-        self.pDialog.progressLabel.setText("<qt>Şu anda %s: <b>%s</b></qt>"%(action,app))
-        
-    def incrementProgressBar(self, length):
-        length = self.pDialog.progressBar.progress()+length
-        self.pDialog.progressBar.setProgress(length)
+    def updateProgressBar(self, filename, length):
+        print 'On ', filename
+        self.pDialog.progressBar.setProgress(self.pDialog.progressBar.progress()+(length/self.totalAppCount))
         
     def updateDetails(self,selection):
 
@@ -107,7 +108,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             size_string = str(size/1024)+" KB"
         else:
             size_string = str(size)+ i18n(" Bytes")
-            
+
         self.moreInfoLabel.setText(QString(": <b>"+self.package.version+"</b><br>: <b>"+size_string+"</b><br>: <b>"+self.package.partof))
             
         if installed:
@@ -148,12 +149,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         base = QListViewItem(self.listView,None)
         base.setOpen(True)
-        base.setText(0,i18n("Base"))
+        base.setText(0,i18n("Temel"))
         base.setPixmap(0,loadIcon('blockdevice', KIcon.Small))
 
         component = QListViewItem(self.listView,None)
         component.setOpen(True)
-        component.setText(0,i18n("Component"))
+        component.setText(0,i18n("Bileşen"))
         component.setPixmap(0,loadIcon('package', KIcon.Small))
         
         if index == 0 :
@@ -212,7 +213,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def installRemove(self):
         index = self.selectComboBox.currentItem()
         self.installOrRemoveButton.setEnabled(False)
-        self.command = ThreadRunner.Thread(self.qObject)
+        self.command = ThreadRunner.Thread()
 
         self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
         self.pDialog.progressBar.setTotalSteps(100)
@@ -232,6 +233,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
             listViewItem = listViewItem.itemBelow()
 
+        self.totalAppCount = len(self.selectedItems)
+        
         if index == 0: # Remove baby
             self.command.remove(self.selectedItems)
             
@@ -272,9 +275,6 @@ class MainApplication(programbase):
     def __init__(self,parent=None,name=None):
         global standalone
         global mainwidget
-
-        # Init pisi repository
-        pisi.api.init()
 
         if standalone:
             QDialog.__init__(self,parent,name)
