@@ -62,10 +62,6 @@ class pardil_page(page):
         """ % (sql_datetime(now()), site_config['activation_timeout'])
     self.db.query_com(q)
 
-    # Access list
-    self.data['acl'] = self.access_list()
-    self.data['site_admin'] = self.site_admin()
-
     # Posted
     self.data['posted'] = {}
     for i in self.form:
@@ -101,6 +97,10 @@ class pardil_page(page):
                WHERE sid = "%s"
             """ % (sql_datetime(now()), sid)
         self.db.query_com(q)
+
+    # Access list
+    self.data['acl'] = self.access_list()
+    self.data['site_admin'] = self.site_admin()
     
   def login(self, u, p):
     u = self.db.escape(u)
