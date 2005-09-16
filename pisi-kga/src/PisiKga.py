@@ -74,6 +74,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         global glob_ui
         self.qObject = QObject()
+        self.command = ThreadRunner.Thread(self)
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
@@ -82,9 +83,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
-        self.connect(self.qObject,PYSIGNAL("finished()"),self.finished)
+        
+    def customEvent(self, event):
+        self.command.wait()
+        if event.type() == 12345:
+            print 'Thread finished: ', self.command.finished()
+            self.finished()
+        else:
+            pass
         
     def finished(self):
+        self.command.wait()
         self.pDialog.forcedClose()
         self.updateListing()
 
@@ -95,9 +104,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
-        self.pDialog.close()
-        self.command.terminate()
-        self.command.wait()
+        self.pDialog.forcedClose()
         KMessageBox.error(self, msg, u'Pisi Hatası')
         
     def updateDetails(self,selection):
@@ -225,11 +232,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def installRemove(self):
         index = self.selectComboBox.currentItem()
         self.installOrRemoveButton.setEnabled(False)
-        self.command = ThreadRunner.Thread(self.qObject)
 
         self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
-        self.pDialog.progressBar.setTotalSteps(100)
-        self.pDialog.setModal(True)
         self.pDialog.show()
         
 	# Get the list of selected items

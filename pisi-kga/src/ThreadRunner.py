@@ -19,12 +19,13 @@ from qt import *
 import pisi.api
 
 class Thread(QThread):
-    def __init__(self, qObject):
+    def __init__(self, widget):
         QThread.__init__(self)
-        self.qObject = qObject
+        self.receiver = widget
         self.installing = False
         self.upgrading = False
         self.removing = False
+        
 
     def install(self,apps):
         self.installing = True
@@ -42,6 +43,7 @@ class Thread(QThread):
         self.start()
         
     def run(self):
+
         if self.installing:
             count = len(self.appList)
             for app in self.appList:
@@ -69,4 +71,7 @@ class Thread(QThread):
         else:
             pass
 
-        self.qObject.emit(PYSIGNAL("finished()"), ('',''))
+        event = QCustomEvent(12345)
+        QThread.postEvent(self.receiver,event)
+        self.msleep(200);
+
