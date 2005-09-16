@@ -68,6 +68,10 @@ def loadIcon(name, group=KIcon.NoGroup):
     return KGlobal.iconLoader().loadIcon(name, group)
 
 ############################################################################
+def loadIconSet(name, group=KIcon.NoGroup):
+        return KGlobal.iconLoader().loadIconSet(name, group)
+
+############################################################################
 class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
@@ -316,6 +320,7 @@ class MainApplication(programbase):
         mainwidget.warningLabel.hide()
         mainwidget.installButton.hide()
         mainwidget.listView.setResizeMode(QListView.LastColumn)
+        mainwidget.clearButton.setIconSet(loadIconSet('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         mainwidget.searchLine.setListView(mainwidget.listView)
         
