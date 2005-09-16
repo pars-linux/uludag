@@ -47,7 +47,7 @@ def I18N_NOOP(str):
 
 ############################################################################
 description = I18N_NOOP("A GUI for PiSi package manager")
-version = "0.4"
+version = "0.5"
 
 ############################################################################
 def AboutData():
@@ -75,6 +75,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         global glob_ui
         self.qObject = QObject()
         self.command = ThreadRunner.Thread(self)
+        self.errorMessage = None
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
@@ -95,6 +96,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def finished(self):
         self.pDialog.forcedClose()
         self.updateListing()
+        if self.errorMessage:
+            KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
+        del self.errorMessage
 
     def updateProgressBar(self, filename, length):
         self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
@@ -103,9 +107,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
-        self.command.wait()
         self.pDialog.forcedClose()
-        KMessageBox.error(self, msg, u'Pisi Hatası')
+        self.errorMessage = msg
         
     def updateDetails(self,selection):
 
@@ -243,6 +246,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         while listViewItem:
             try:
                 if listViewItem.isOn():
+                    print 'Adding ', listViewItem.text(0)
                     self.selectedItems.append(str(listViewItem.text(0)))
             except AttributeError: # This exception is thrown because some items are QListViewItem
                 pass
