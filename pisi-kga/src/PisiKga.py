@@ -111,7 +111,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def pisiError(self, msg):
         self.pDialog.forcedClose()
-        self.errorMessage = msg
+        if self.errorMessage:
+            self.errorMessage = self.errorMessage+msg
+        else:
+            self.errorMessage = msg
         
     def updateDetails(self,selection):
 
