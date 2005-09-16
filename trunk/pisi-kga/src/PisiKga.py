@@ -85,7 +85,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.connect(self.qObject,PYSIGNAL("finished()"),self.finished)
         
     def finished(self):
-        self.pDialog.close()
+        self.pDialog.forcedClose()
         self.updateListing()
 
     def updateProgressBar(self, filename, length):
