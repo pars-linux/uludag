@@ -50,7 +50,7 @@ class Thread(QThread):
                 list = []
                 list.append(app)
                 pisi.api.install(list)
-            self.install = False
+            self.installing = False
 
         elif self.upgrading:
             count = len(self.appList)
@@ -58,7 +58,7 @@ class Thread(QThread):
                 list = []
                 list.append(app)
                 pisi.api.upgrade(list)
-            self.upgrade = False
+            self.upgrading = False
                                                                 
         elif self.removing:
             count = len(self.appList)
@@ -66,12 +66,12 @@ class Thread(QThread):
                 list = []
                 list.append(app)
                 pisi.api.remove(list)
-            self.remove = False
+            self.removing = False
             
         else:
             pass
 
-        event = QCustomEvent(12345)
+        event = QCustomEvent(QEvent.User+1)
         QThread.postEvent(self.receiver,event)
         self.msleep(200);
 

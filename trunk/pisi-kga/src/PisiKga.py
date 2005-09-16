@@ -87,8 +87,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
     def customEvent(self, event):
         self.command.wait()
-        if event.type() == 12345:
-            print 'Thread finished: ', self.command.finished()
+        if event.type() == QEvent.User + 1:
             self.finished()
         else:
             pass
@@ -98,7 +97,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateListing()
         if self.errorMessage:
             KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
-        del self.errorMessage
+        self.errorMessage = None
 
     def updateProgressBar(self, filename, length):
         self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
@@ -267,9 +266,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def installSingle(self):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
-        pisi.api.install(app)
-        self.updateListing()
-        print "Finished installing."
+        self.command.install(app)
 
     def showSettings(self):
         self.pref = Preferences.Preferences(self)
