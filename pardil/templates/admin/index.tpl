@@ -19,6 +19,9 @@
   <ul>
     <li><a href="admin_comments.py">Yorumlar</a></li>
   </ul>
+  <ul>
+    <li><a href="admin_news.py">Haberler</a></li>
+  </ul>
   <p>
     <strong>*</strong> Bu sayfalarda silme işlemi <u>YAPILMAMAKTADIR</u>. 
     Çünkü bu sayfalarda listelenen veritabanı kayıtlarına ihtiyaç duyan 

@@ -257,3 +257,20 @@ CREATE TABLE users_passcodes (
   `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tablo yapısı : `news`
+-- 
+
+CREATE TABLE `news` (
+  `nid` int(10) unsigned NOT NULL auto_increment,
+  `uid` int(10) unsigned NOT NULL default '0',
+  `title` varchar(100) collate utf8_turkish_ci NOT NULL default '',
+  `content` text collate utf8_turkish_ci NOT NULL,
+  `icon` varchar(30) collate utf8_turkish_ci NOT NULL default '',
+  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`nid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+        

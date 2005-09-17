@@ -1,5 +1,6 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
+  <h2>Gruplar</h2>
   <p>
     $gid numaralı "$label" grubu silindi.<br/>
     Grup ile ilişkili tüm erişim hakları kaldırıldı.
