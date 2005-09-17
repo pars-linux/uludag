@@ -1,0 +1,7 @@
+Import( "env" )
+
+env.Program("copy_dom_tree", "copy_dom_tree.cpp")
+env.Program("create_dom_tree", "create_dom_tree.cpp")
+env.Program("parse_xml", "parse_xml.cpp")
+env.Program("part_of_dom_tree", "part_of_dom_tree.cpp")
+env.Program("sax_parser", "sax_parser.cpp")
