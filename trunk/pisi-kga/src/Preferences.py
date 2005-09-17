@@ -34,17 +34,63 @@ class Preferences(PreferencesWidget.PrefsDialog):
         self.networkLabel.setPixmap(PisiKga.loadIcon('network', KIcon.Desktop))
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
-        self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateRemoveButton)
+        self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateButtons)
+        self.connect(self.moveupButton, SIGNAL("clicked()"), self.moveUp)
+        self.connect(self.movedownButton, SIGNAL("clicked()"), self.moveDown)
         self.removeButton.setEnabled(False)
         self.readConfig()
+        self.repoListView.setSorting(-1)
         self.updateListView()
 
-    def updateRemoveButton(self):
+    def updateButtons(self):
         if self.repoListView.currentItem().isSelected():
             self.removeButton.setEnabled(True)
+            self.moveupButton.setEnabled(True)
+            self.movedownButton.setEnabled(True)
         else:
             self.removeButton.setEnabled(False)
-    
+            self.moveupButton.setEnabled(False)
+            self.movedownButton.setEnabled(False)
+
+    def moveUp(self):
+        item = self.repoListView.currentItem()
+        parent = item.itemAbove()
+
+        if not parent:
+            return
+        
+        if parent.itemAbove():
+            item.moveItem(parent.itemAbove())
+        else:
+            self.repoListView.takeItem(item)
+            self.repoListView.insertItem(item)
+            self.repoListView.setSelected(item, True)
+
+        self.updateRepoList()
+        
+    def moveDown(self):
+        item = self.repoListView.currentItem()
+        sibling = item.itemBelow()
+
+        if not sibling:
+            return
+
+        item.moveItem(sibling)
+        self.updateRepoList()
+
+    def updateRepoList(self):
+        newList = []
+
+        firstItem = self.repoListView.firstChild()
+
+        while firstItem:
+            newList.append(str(firstItem.text(0)))
+            newList.append(str(firstItem.text(1)))
+            firstItem = firstItem.itemBelow()
+
+        self.repoList = newList
+        self.writeConfig()
+        
     def addNewRepo(self):
         self.repo = RepoDialog.RepoDialog(self)
         self.repo.setCaption(i18n("PiSi KGA - Yeni Depo Ekle"))
@@ -58,7 +104,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
             newList = QStringList()
             index = 0
 
-            while index <= self.repoList.count()-1:
+            while index <= len(self.repoList)-1:
                 if self.repoList[index] != repoName:
                     newList.append(self.repoList[index])
                     newList.append(self.repoList[index+1])
@@ -82,7 +128,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
         self.repoListView.clear()
         
         index = 0
-        while index <= self.repoList.count()-1:
+        while index <= len(self.repoList)-1:
             item = QListViewItem(self.repoListView,None)
             item.setText(0, self.repoList[index])
             item.setText(1, self.repoList[index+1])
@@ -106,6 +152,19 @@ class Preferences(PreferencesWidget.PrefsDialog):
 
     def updatePisiConfig(self):
         index = 0
-        while index <= self.repoList.count()-1:
-            pisi.api.add_repo(str(self.repoList[index]), str(self.repoList[index+1]))
+        length = len(self.repoList)-1
+
+        if False:
+            while index <= length:
+                print 'Removing repo ',str(self.repoList[index])
+                pisi.api.remove_repo(str(self.repoList[index]))
+                index += 2
+        
+        index = 0
+        while index <= length:
+            print 'Adding repo ',str(self.repoList[index])
+            try:
+                pisi.api.add_repo(str(self.repoList[index]), str(self.repoList[index+1]))
+            except pisi.repodb.Error:
+                pass
             index += 2

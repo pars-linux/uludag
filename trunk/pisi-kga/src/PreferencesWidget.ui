@@ -155,19 +155,54 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
             </rect>
         </property>
         <property name="text">
-            <string>Depolardan paket &amp;bilgilerini güncelle</string>
+            <string>Depolardan paket bilgilerini &amp;güncelle</string>
         </property>
     </widget>
     <widget class="QLayoutWidget">
         <property name="name">
-            <cstring>layout14</cstring>
+            <cstring>Layout1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>450</x>
+                <y>470</y>
+                <width>130</width>
+                <height>33</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="spacing">
+                <number>6</number>
+            </property>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>buttonCancel</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Çık</string>
+                </property>
+                <property name="autoDefault">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout7</cstring>
         </property>
         <property name="geometry">
             <rect>
                 <x>480</x>
                 <y>220</y>
-                <width>96</width>
-                <height>70</height>
+                <width>100</width>
+                <height>140</height>
             </rect>
         </property>
         <vbox>
@@ -186,8 +221,33 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
                 <property name="name">
                     <cstring>removeButton</cstring>
                 </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
                 <property name="text">
                     <string>&amp;Kaldır</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>moveupButton</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="text">
+                    <string>Y&amp;ukarı taşı</string>
+                </property>
+            </widget>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>movedownButton</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="text">
+                    <string>Aşağı &amp;taşı</string>
                 </property>
             </widget>
         </vbox>
@@ -226,41 +286,6 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
                 <height>150</height>
             </rect>
         </property>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>Layout1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>450</x>
-                <y>470</y>
-                <width>130</width>
-                <height>33</height>
-            </rect>
-        </property>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <property name="margin">
-                <number>0</number>
-            </property>
-            <property name="spacing">
-                <number>6</number>
-            </property>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>buttonCancel</cstring>
-                </property>
-                <property name="text">
-                    <string>Çı&amp;k</string>
-                </property>
-                <property name="autoDefault">
-                    <bool>true</bool>
-                </property>
-            </widget>
-        </hbox>
     </widget>
 </widget>
 <connections>

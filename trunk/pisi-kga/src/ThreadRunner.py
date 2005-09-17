@@ -43,7 +43,7 @@ class Thread(QThread):
         self.start()
         
     def run(self):
-
+        
         if self.installing:
             count = len(self.appList)
             for app in self.appList:
