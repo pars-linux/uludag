@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 ## Load the builders
-env = Environment( tools=["default", "generic", "kde"], toolpath=["./admin"])
+env = Environment( tools = ["default", "generic", "kde"], toolpath = ["./admin"])
 
 # Set the build directory so we can do "rm -rf build" to clean up.
 BuildDir("build/src", "src")
