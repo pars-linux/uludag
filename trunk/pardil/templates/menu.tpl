@@ -46,6 +46,9 @@
     #if 'administrate_comments' in $acl or $site_admin
     <li><a href="admin_comments.py">Yorumlar</a></li>
     #end if
+    #if 'administrate_news' in $acl or $site_admin
+    <li><a href="admin_news.py">Haberler</a></li>
+    #end if
   </ul>
 </div>
 #end if

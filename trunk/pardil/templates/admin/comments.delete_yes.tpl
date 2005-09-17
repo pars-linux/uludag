@@ -1,5 +1,6 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
+  <h2>Yorumlar</h2>
   <p>
     "$username" isimli kullanıcının gönderdiği $cid numaralı yorum silindi.<br/>
   </p>
