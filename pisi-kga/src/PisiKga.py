@@ -88,7 +88,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
-        
+
+    def __del__(self):
+        self.command.wait()
+
     def customEvent(self, event):
         self.command.wait()
         if event.type() == QEvent.User + 1:
@@ -252,7 +255,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         while listViewItem:
             try:
                 if listViewItem.isOn():
-                    print 'Adding ', listViewItem.text(0)
                     self.selectedItems.append(str(listViewItem.text(0)))
             except AttributeError: # This exception is thrown because some items are QListViewItem
                 pass
@@ -417,7 +419,8 @@ def main():
 
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
-    myapp.exec_loop()
+    kapp.setMainWidget(myapp)
+    sys.exit(myapp.exec_loop())
     
 ############################################################################
 # Factory function for KControl
