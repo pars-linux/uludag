@@ -1,0 +1,4 @@
+Import( "env" )
+
+env.StaticLibrary("libiksemelpp", ["iksemel.c", "iksemelpp-dom.cpp", "iksemelpp-stack.cpp", "iksemelpp-sax.cpp", "iksemelpp-exception.cpp"])
+env.SharedLibrary("libiksemelpp", ["iksemel.c", "iksemelpp-dom.cpp", "iksemelpp-stack.cpp", "iksemelpp-sax.cpp", "iksemelpp-exception.cpp"])
