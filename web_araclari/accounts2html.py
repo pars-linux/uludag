@@ -22,12 +22,18 @@ accounts_start="""
 
 <p><span class="baslik"> - Pardus Geliştiricileri</span>
 <br>
+<br>
 
 <table border="0" cellspacing="10">
+<tr align="left">
+<th><b>Geliştirici</b></th>
+<th><b>E-posta Adresi</b></th>
+<th><b>Hızlı Mesajlaşma Adresi</b></th>
+</tr>
 """
 account_template="""<tr>
 <td><span class="isimler">$NAME$ ($ACCOUNT$)</span></td>
-<td><span class="metin"><a href="mailto:$MAIL$">$MAIL$</a></span><td>
+<td><span class="metin"><a href="mailto:$MAIL$">$MAIL$</a></span></td>
 <td><span class="metin">$IM$</span></td>
 </tr>
 """
