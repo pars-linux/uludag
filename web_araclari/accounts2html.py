@@ -38,9 +38,12 @@ accounts_end="""
 </html>
 """
 
+class A2HError(Exception):
+    pass
+
 def usage():
-	print "\n\t%s -a hesap_dosyası -o çıktı_dosyası -t şablon_dosyası\n" % sys.argv[0]
-	sys.exit(0)
+    print "\n\t%s -a hesap_dosyası -o çıktı_dosyası -t şablon_dosyası\n" % sys.argv[0]
+    sys.exit(0)
 
 class AccountsToHtml:
     def __init__(self, file):
@@ -56,7 +59,9 @@ class AccountsToHtml:
             try:
                 accountname, name, mail, im = act.split(":")
             except ValueError:
-                return
+                e = "Each entry should have 4 columns.\n"
+                e += "This doesn't: '%s'" % (act)
+                raise A2HError, e
             
             html = html.replace("$NAME$", name)
             html = html.replace("$ACCOUNT$", accountname)
@@ -97,11 +102,8 @@ if __name__ == "__main__":
     try:
         sablon = sablonla.Sablon(tmpl)
         a2h = AccountsToHtml(accountsfile)
-        
-        f = file(filename, "w")
-	f.write( codecs.BOM_UTF8 )
-	
-	
+
+        f = codecs.open(filename, "w", "utf-8")
         f.write(a2h.toHtml())
         f.close()
         
