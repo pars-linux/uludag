@@ -19,7 +19,6 @@
 from qt import *
 import PreferencesWidget
 import RepoDialog
-from kdecore import *
 import PisiKga # for loadIcon
 
 # Pisi imports
@@ -29,17 +28,18 @@ class Preferences(PreferencesWidget.PrefsDialog):
     def __init__(self, parent=None):
         PreferencesWidget.PrefsDialog.__init__(self, parent)
 
-        self.setCaption(i18n("PiSi KGA - Depo Ayarları"))
-        self.infoLabel.setPixmap(PisiKga.loadIcon('info', KIcon.Desktop))
-        self.networkLabel.setPixmap(PisiKga.loadIcon('network', KIcon.Desktop))
+        self.setCaption('PiSi KGA - Depo Ayarları')
+        self.infoLabel.setPixmap(PisiKga.loadIcon('info'))
+        self.networkLabel.setPixmap(PisiKga.loadIcon('network'))
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
         self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateButtons)
         self.connect(self.moveupButton, SIGNAL("clicked()"), self.moveUp)
         self.connect(self.movedownButton, SIGNAL("clicked()"), self.moveDown)
+        self.connect(self.updateRepoButton, SIGNAL("clicked()"), self.updateAllRepos)
         self.removeButton.setEnabled(False)
-        self.readConfig()
         self.repoListView.setSorting(-1)
+        self.readConfig()
         self.updateListView()
 
     def updateButtons(self):
@@ -66,8 +66,8 @@ class Preferences(PreferencesWidget.PrefsDialog):
             self.repoListView.insertItem(item)
             self.repoListView.setSelected(item, True)
 
-        self.updateRepoList()
-        
+        # TODO move in pisi config too
+
     def moveDown(self):
         item = self.repoListView.currentItem()
         sibling = item.itemBelow()
@@ -76,95 +76,52 @@ class Preferences(PreferencesWidget.PrefsDialog):
             return
 
         item.moveItem(sibling)
-        self.updateRepoList()
 
-    def updateRepoList(self):
-        newList = []
+        # TODO move in pisi config too
 
-        firstItem = self.repoListView.firstChild()
-
-        while firstItem:
-            newList.append(str(firstItem.text(0)))
-            newList.append(str(firstItem.text(1)))
-            firstItem = firstItem.itemBelow()
-
-        self.repoList = newList
-        self.writeConfig()
+    def updateAllRepos(self):
+        # TODO progress
+        self.updateRepoButton.setEnabled(False)
         
+        for i in self.repoList:
+            print 'Updating',i
+            pisi.api.update_repo(i)
+
+        self.updateRepoButton.setEnabled(True)
+    
     def addNewRepo(self):
         self.repo = RepoDialog.RepoDialog(self)
-        self.repo.setCaption(i18n("PiSi KGA - Yeni Depo Ekle"))
+        self.repo.setCaption('PiSi KGA - Yeni Depo Ekle')
         self.repo.setModal(True)
         self.connect(self.repo.okButton, SIGNAL("clicked()"), self.processNewRepo)
         self.repo.show()
 
     def removeRepo(self):
-        if self.repoListView.currentItem().isSelected():
-            repoName = self.repoListView.currentItem().text(0)
-            newList = QStringList()
-            index = 0
-
-            while index <= len(self.repoList)-1:
-                if self.repoList[index] != repoName:
-                    newList.append(self.repoList[index])
-                    newList.append(self.repoList[index+1])
-                index += 2
-                
-            self.repoList = newList
-            self.writeConfig()
-            self.updateListView()
-            
+        repoItem = self.repoListView.currentItem()
+        self.repoListView.takeItem(repoItem)
+        pisi.api.remove_repo(repoItem.text(0))
+                    
     def processNewRepo(self):
         repoName = self.repo.repoNameLineEdit.text()
         repoAddress = self.repo.repoAddressLineEdit.text()
-
-        self.repoList.append(repoName)
-        self.repoList.append(repoAddress)
-        self.writeConfig()
-        self.updateListView()
+        pisi.api.add_repo(str(repoName),str(repoAddress))
+        item = QListViewItem(self.repoListView,None)
+        item.moveItem(self.repoListView.lastChild())
+        item.setText(0, str(repoName))
         self.repo.close()
-
+    
     def updateListView(self):
         self.repoListView.clear()
         
-        index = 0
-        while index <= len(self.repoList)-1:
+        index = len(self.repoList)-1
+        while index >= 0:
             item = QListViewItem(self.repoListView,None)
             item.setText(0, self.repoList[index])
-            item.setText(1, self.repoList[index+1])
-            index += 2
+            index -= 1
 
     def readConfig(self):
-        self.config = PisiKga.KGlobal.config()
-        self.repoList = self.config.readListEntry('RepositoryList')
-
-        if self.repoList.isEmpty():
-            self.repoList.append('uludag')
-            self.repoList.append('ftp://ftp.uludag.org.tr/pub/pisi/binary/system/base/pisi-index.xml')
-            self.config.writeEntry('RepositoryList', self.repoList)
-            self.config.sync()
-            self.updatePisiConfig()
-
-    def writeConfig(self):
-        self.config.writeEntry('RepositoryList', self.repoList)
-        self.config.sync()
-        self.updatePisiConfig()
-
-    def updatePisiConfig(self):
-        index = 0
-        length = len(self.repoList)-1
-
-        if False:
-            while index <= length:
-                print 'Removing repo ',str(self.repoList[index])
-                pisi.api.remove_repo(str(self.repoList[index]))
-                index += 2
-        
-        index = 0
-        while index <= length:
-            print 'Adding repo ',str(self.repoList[index])
-            try:
-                pisi.api.add_repo(str(self.repoList[index]), str(self.repoList[index+1]))
-            except pisi.repodb.Error:
-                pass
-            index += 2
+        self.repoList = pisi.api.ctx.repodb.list()
+        if not len(self.repoList):
+            pisi.api.add_repo('uludag', 'ftp://ftp.uludag.org.tr/pub/pisi/binary/system/base/pisi-index.xml')
+            # TODO Make async
+            pisi.api.update_repo('uludag')
