@@ -1,0 +1,4 @@
+2005-08-11 S.Çağlar Onur <caglar@uludag.org.tr>
+	* Removed submount support,
+	* Removed un-needed mount routines (mount process handled by ivman),
+	* Code cleanup,
