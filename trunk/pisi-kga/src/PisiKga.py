@@ -46,7 +46,7 @@ def I18N_NOOP(str):
     return str
 
 ############################################################################
-description = I18N_NOOP("A GUI for PiSi package manager")
+description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
 version = "0.5"
 
 ############################################################################
@@ -64,11 +64,11 @@ def AboutData():
     return about_data
 
 ############################################################################
-def loadIcon(name, group=KIcon.NoGroup):
+def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
 ############################################################################
-def loadIconSet(name, group=KIcon.NoGroup):
+def loadIconSet(name, group=KIcon.Desktop):
         return KGlobal.iconLoader().loadIconSet(name, group)
 
 ############################################################################

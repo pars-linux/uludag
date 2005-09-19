@@ -74,4 +74,3 @@ class Thread(QThread):
         event = QCustomEvent(QEvent.User+1)
         QThread.postEvent(self.receiver,event)
         self.msleep(200);
-
