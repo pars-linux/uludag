@@ -77,7 +77,6 @@ CREATE TABLE proposals_versions (
   summary text collate utf8_turkish_ci NOT NULL,
   purpose text collate utf8_turkish_ci NOT NULL,
   content text collate utf8_turkish_ci NOT NULL,
-  solution text collate utf8_turkish_ci NOT NULL,
   timeB datetime NOT NULL default '0000-00-00 00:00:00',
   changelog tinytext collate utf8_turkish_ci NOT NULL,
   PRIMARY KEY  (vid)
@@ -228,7 +227,6 @@ CREATE TABLE `proposals_pending` (
   `summary` text collate utf8_turkish_ci NOT NULL,
   `purpose` text collate utf8_turkish_ci NOT NULL,
   `content` text collate utf8_turkish_ci NOT NULL,
-  `solution` text collate utf8_turkish_ci NOT NULL,
   `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`tpid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;

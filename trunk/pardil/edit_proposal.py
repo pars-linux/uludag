@@ -33,7 +33,7 @@ def index():
     p.http.redirect('error.py?tag=not_maintainer')
 
   q = """SELECT
-           version, title, summary, purpose, content, solution
+           version, title, summary, purpose, content
          FROM proposals_versions
          WHERE
            pid=%d AND version="%s"
@@ -46,7 +46,6 @@ def index():
                  'p_summary': html_escape(row[2]),
                  'p_purpose': html_escape(row[3]),
                  'p_content': html_escape(row[4]),
-                 'p_solution': html_escape(row[5])
                  }
   
   p.template = 'edit_proposal.tpl'
@@ -81,9 +80,6 @@ def edit():
   if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
-  if not len(p.form.getvalue('p_solution', '')):
-    p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
-    
   if int(p.form.getvalue('p_version', 0)) not in range(1, 4):
     p['errors']['p_version'] = 'Değişiklik derecesi geçerli değil.'
 
@@ -106,7 +102,6 @@ def edit():
             'summary': p.form.getvalue('p_summary'),
             'purpose': p.form.getvalue('p_purpose'),
             'content': p.form.getvalue('p_content'),
-            'solution': p.form.getvalue('p_solution'),
             'timeB': sql_datetime(now()),
             'changelog': p.form.getvalue('p_changelog')
             }

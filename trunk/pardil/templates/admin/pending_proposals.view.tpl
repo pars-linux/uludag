@@ -70,12 +70,6 @@
       </div>
     </fieldset>
     <fieldset>
-      <legend>Çözüm</legend>
-      <div class="required">
-        <textarea class="widetext $errorCl('p_solution')" id="p_solution" name="p_solution" cols="60" rows="10">#echo $printValue('p_solution', '') #</textarea>
-      </div>
-    </fieldset>
-    <fieldset>
       <input type="hidden" name="start" value="$pag_now" />
       <button type="submit" name="action" value="publish"><strong>Yayınla</strong></button>
       <button type="submit" name="action" value="delete">Sil</button>
