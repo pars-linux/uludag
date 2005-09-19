@@ -102,12 +102,13 @@ class Preferences(PreferencesWidget.PrefsDialog):
         pisi.api.remove_repo(repoItem.text(0))
                     
     def processNewRepo(self):
-        repoName = self.repo.repoNameLineEdit.text()
-        repoAddress = self.repo.repoAddressLineEdit.text()
-        pisi.api.add_repo(str(repoName),str(repoAddress))
+        repoName = str(self.repo.repoNameLineEdit.text())
+        repoAddress = str(self.repo.repoAddressLineEdit.text())
+        pisi.api.add_repo(repoName,repoAddress)
         item = QListViewItem(self.repoListView,None)
         item.moveItem(self.repoListView.lastChild())
-        item.setText(0, str(repoName))
+        item.setText(0, repoName)
+        item.setText(1, repoAddress)
         self.repo.close()
     
     def updateListView(self):
@@ -115,8 +116,10 @@ class Preferences(PreferencesWidget.PrefsDialog):
         
         index = len(self.repoList)-1
         while index >= 0:
+            repoName = self.repoList[index]
             item = QListViewItem(self.repoListView,None)
             item.setText(0, self.repoList[index])
+            item.setText(1, pisi.api.ctx.repodb.get_repo(str(repoName)).indexuri.get_uri())
             index -= 1
 
     def readConfig(self):
