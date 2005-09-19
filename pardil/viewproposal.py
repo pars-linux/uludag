@@ -27,8 +27,7 @@ def index():
              proposals_versions.title,
              proposals_versions.summary,
              proposals_versions.purpose,
-             proposals_versions.content,
-             proposals_versions.solution
+             proposals_versions.content
            FROM proposals
              INNER JOIN proposals_versions
                ON proposals.pid=proposals_versions.pid
@@ -45,8 +44,7 @@ def index():
                        'title': html_escape(row[2]),
                        'summary': nl2br(html_escape(row[3])),
                        'purpose': nl2br(html_escape(row[4])),
-                       'content': nl2br(html_escape(row[5])),
-                       'solution': nl2br(html_escape(row[6]))
+                       'content': nl2br(html_escape(row[5]))
                        }
 
       # Sürüm geçmişi

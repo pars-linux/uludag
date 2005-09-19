@@ -66,12 +66,6 @@
       </div>
     </fieldset>
     <fieldset>
-      <legend>Çözüm</legend>
-      <div class="required">
-        <textarea class="widetext $errorCl('p_solution')" id="p_solution" name="p_solution" cols="60" rows="10">#echo $printValue('p_solution', '') #</textarea>
-      </div>
-    </fieldset>
-    <fieldset>
       <legend>Sürüm Notları</legend>
       <div class="required">
         <textarea class="widetext $errorCl('p_changelog')" id="p_changelog" name="p_changelog" cols="60" rows="5">#echo $printValue('p_changelog', '') #</textarea>

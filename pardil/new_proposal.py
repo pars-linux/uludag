@@ -32,9 +32,6 @@ def new():
   if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
-  if not len(p.form.getvalue('p_solution', '')):
-    p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
-
   # Hiç hata yoksa...
   if not len(p['errors']):
 
@@ -58,7 +55,6 @@ def new():
               'summary': p.form.getvalue('p_summary'),
               'purpose': p.form.getvalue('p_purpose'),
               'content': p.form.getvalue('p_content'),
-              'solution': p.form.getvalue('p_solution'),
               'timeB': sql_datetime(now()),
               'changelog': p.form.getvalue('p_changelog')
               }
@@ -80,7 +76,6 @@ def new():
               'summary': p.form.getvalue('p_summary'),
               'purpose': p.form.getvalue('p_purpose'),
               'content': p.form.getvalue('p_content'),
-              'solution': p.form.getvalue('p_solution'),
               'timeB': sql_datetime(now())
               }
       p.db.insert('proposals_pending', list)

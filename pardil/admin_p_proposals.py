@@ -55,8 +55,7 @@ def view():
              proposals_pending.title,
              proposals_pending.summary,
              proposals_pending.purpose,
-             proposals_pending.content,
-             proposals_pending.solution,
+             proposals_pending.content
              proposals_pending.timeB
            FROM proposals_pending
              INNER JOIN users
@@ -72,7 +71,6 @@ def view():
                      'p_summary': nl2br(html_escape(row[3])),
                      'p_purpose': nl2br(html_escape(row[4])),
                      'p_content': nl2br(html_escape(row[5])),
-                     'p_solution': nl2br(html_escape(row[6])),
                      'p_tpid': tpid,
                      'p_uid': row[0],
                      'p_username': row[1],
@@ -97,9 +95,6 @@ def publish():
   if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
-  if not len(p.form.getvalue('p_solution', '')):
-    p['errors']['p_solution'] = 'Çözüm boş bırakılamaz.'
-
   # Hiç hata yoksa...
   if not len(p['errors']):
 
@@ -121,7 +116,6 @@ def publish():
             'summary': p.form.getvalue('p_summary'),
             'purpose': p.form.getvalue('p_purpose'),
             'content': p.form.getvalue('p_content'),
-            'solution': p.form.getvalue('p_solution'),
             'timeB': sql_datetime(now()),
             'changelog': p.form.getvalue('p_changelog')
             }

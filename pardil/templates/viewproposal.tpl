@@ -43,9 +43,6 @@
   <h3>Detaylar</h3>
   $proposal.content
   <p>&nbsp;</p>
-  <h3>Çözüm</h3>
-  $proposal.solution
-  <p>&nbsp;</p>
   <h3>Sürüm Geçmişi</h3>
   <ul>
     #for $i in $versions

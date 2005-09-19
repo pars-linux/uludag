@@ -5,6 +5,9 @@
       <div class="logo"><img src="$i.icon" alt="" /></div>
       <div class="content">
         <h2>$i.title</h2>
+        <p>
+          <strong>Gönderen:</strong> <a href="#">$i.user</a>
+        </p>
         $i.content
       </div>
     </div>
