@@ -1,20 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-###########################################################################
-# setup - description                                                     #
-# ------------------------------                                          #
-# begin     : Pzt Ağu 15 10:07:29 EEST 2005                               #
-# copyright : (C) 2005 by UEKAE/TÜBİTAK                                   #
-# email     : ismail@uludag.org.tr                                        #
-#                                                                         #
-###########################################################################
-#                                                                         #
-#   This program is free software; you can redistribute it and/or modify  #
-#   it under the terms of the GNU General Public License as published by  #
-#   the Free Software Foundation; either version 2 of the License, or     #
-#   (at your option) any later version.                                   #
-#                                                                         #
-###########################################################################
+#
+# Copyright (C) 2005, TUBITAK/UEKAE
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+#
+# Please read the COPYING file.
+#
+#
+# Authors:  İsmail Dönmez <ismail@uludag.org.tr>
 
 import kdedistutils
 
