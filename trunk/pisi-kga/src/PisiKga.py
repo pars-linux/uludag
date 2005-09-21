@@ -107,7 +107,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.errorMessage = None
 
     def updateProgressBar(self, filename, length):
-        self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
+        if filename.endswith(".pisi"):
+            self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
+        else:
+            self.totalAppCount = 1
+            self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b>'%(filename))
+        
         # Not true for multiple apps
         progress = length/self.totalAppCount
         self.pDialog.progressBar.setProgress(progress)
