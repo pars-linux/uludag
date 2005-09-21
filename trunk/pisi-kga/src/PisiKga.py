@@ -77,6 +77,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.qObject = QObject()
         self.command = ThreadRunner.Thread(self)
         self.errorMessage = None
+	self.savedProgress = 0
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
@@ -110,8 +111,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.totalAppCount = 1
             self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b>'%(filename))
 
-        # Not true for multiple apps
-        progress = length/self.totalAppCount
+       	progress = length/self.totalAppCount + self.savedProgress
+	if length == 100:
+           self.savedProgress = self.savedProgress + length/self.totalAppCount
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
