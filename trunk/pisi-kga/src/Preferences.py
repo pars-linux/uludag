@@ -124,3 +124,6 @@ class Preferences(PreferencesWidget.PrefsDialog):
             pisi.api.add_repo('uludag', 'ftp://ftp.uludag.org.tr/pub/pisi/binary/pisi-index.xml')
             # TODO Make async
             pisi.api.update_repo('uludag')
+	    self.repoList = pisi.api.ctx.repodb.list()
+	    self.updateListView()
+
