@@ -24,7 +24,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
     def __init__(self, parent=None):
         PreferencesWidget.PrefsDialog.__init__(self, parent)
 
-        self.setCaption('PiSi KGA - Depo Ayarları')
+        self.setCaption(u'PiSi KGA - Depo Ayarları')
         self.infoLabel.setPixmap(PisiKga.loadIcon('info'))
         self.networkLabel.setPixmap(PisiKga.loadIcon('network'))
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
@@ -121,9 +121,9 @@ class Preferences(PreferencesWidget.PrefsDialog):
     def readConfig(self):
         self.repoList = pisi.api.ctx.repodb.list()
         if not len(self.repoList):
-            pisi.api.add_repo('uludag', 'ftp://ftp.uludag.org.tr/pub/pisi/binary/pisi-index.xml')
-            # TODO Make async
-            pisi.api.update_repo('uludag')
-	    self.repoList = pisi.api.ctx.repodb.list()
-	    self.updateListView()
+            #pisi.api.add_repo('uludag', 'ftp://ftp.uludag.org.tr/pub/pisi/binary/pisi-index.xml')
+	    self.emit(PYSIGNAL("showProgressBar()"),('',))
+            #pisi.api.update_repo('uludag')
+	    #self.repoList = pisi.api.ctx.repodb.list()
+	    #self.updateListView()
 
