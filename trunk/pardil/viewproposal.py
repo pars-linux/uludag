@@ -7,6 +7,8 @@ from cfg_main import site_config
 from pyonweb.libstring import *
 from pyonweb.libdate import *
 
+import re
+
 p = pardil_page()
 
 p.name = 'pardil_viewproposals'
@@ -38,13 +40,18 @@ def index():
     row = p.db.row_query(q)
 
     if row:
+
+      content = html_escape(row[5])
+      content = nl2br(formatText(content))
+      if content.find("<h3>") < 0:
+        content = "<h3>Detaylar</h3>" + content
       p['proposal'] = {
                        'pid': row[0],
                        'version': html_escape(row[1]),
                        'title': html_escape(row[2]),
                        'summary': nl2br(html_escape(row[3])),
                        'purpose': nl2br(html_escape(row[4])),
-                       'content': nl2br(html_escape(row[5]))
+                       'content': content
                        }
 
       # Sürüm geçmişi

@@ -135,3 +135,9 @@ input, select, textarea, select {
 .error {
   border: 1px solid #f00;
 }
+
+.seperator {
+  height: 1em;
+  border-top: 1px solid #ddd;
+  margin-top: 2em;
+}
