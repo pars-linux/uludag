@@ -33,16 +33,18 @@
     <li><a href="edit_proposal.py?pid=$proposal.pid&amp;version=$proposal.version">Yeni Sürüm</a></li>
   </ul>
   #end if
+  <div class="seperator"></div>
   <h3>Özet</h3>
   <p>
     $proposal.summary
   </p>
   <h3>Amaç</h3>
   $proposal.purpose
-  <p>&nbsp;</p>
-  <h3>Detaylar</h3>
+
+  ## İçerik
   $proposal.content
-  <p>&nbsp;</p>
+
+  <div class="seperator"></div>
   <h3>Sürüm Geçmişi</h3>
   <ul>
     #for $i in $versions

@@ -8,11 +8,11 @@
     <!--
     <link rel="icon" type="image/png" href="images/favicon.png"/>
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="feed.rss" />
+    -->
     <script type="text/javascript">
       // <![CDATA[
       // ]]>
     </script>
-    -->
   </head>
   <body>
     <div id="container">
