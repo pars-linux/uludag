@@ -1,0 +1,574 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>yeni_baglanti_sihirbazi</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>yeni_baglanti_sihirbazi</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>640</width>
+            <height>446</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Pardus Yeni Bağlantı Sihirbazına Hoşgeldiniz</string>
+    </property>
+    <widget class="Line">
+        <property name="name">
+            <cstring>line2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>420</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>153</red>
+                <green>153</green>
+                <blue>153</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="Line">
+        <property name="name">
+            <cstring>line2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>230</x>
+                <y>420</y>
+                <width>580</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>153</red>
+                <green>153</green>
+                <blue>153</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>413</y>
+                <width>190</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>153</red>
+                <green>153</green>
+                <blue>153</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>&lt;font size="-2"&gt;Daha fazla bilgi için lütfen Pardus Kurulum ve Kullanım Kılavuzu'na bakın.&lt;/font&gt;</string>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup14</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>51</x>
+                <y>120</y>
+                <width>310</width>
+                <height>51</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="title">
+            <string>buttonGroup14</string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>radioButton24_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>23</y>
+                    <width>270</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>IP adresini elle gir</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>radioButton24</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>-2</y>
+                    <width>270</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>IP adresini otomatik al</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup15</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>270</y>
+                <width>331</width>
+                <height>61</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="title">
+            <string></string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>radioButton24_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>10</y>
+                    <width>270</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>DNS adresini otomatik al</string>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>radioButton24_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>35</y>
+                    <width>270</width>
+                    <height>22</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Aşağıdaki DNS adreslerini kullan:</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame17_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>64</x>
+                <y>336</y>
+                <width>450</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel5_2_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>40</y>
+                    <width>260</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>İkinci tercih edilen DNS adresi:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel5_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>202</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Birinci tercih edilen DNS adresi:</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit2_4_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>230</x>
+                    <y>39</y>
+                    <width>200</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>2</number>
+            </property>
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+            <property name="echoMode">
+                <enum>Normal</enum>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit2_4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>230</x>
+                    <y>9</y>
+                    <width>200</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>2</number>
+            </property>
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+            <property name="echoMode">
+                <enum>Normal</enum>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>78</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>52</red>
+                <green>44</green>
+                <blue>140</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>Bağlantı yapacağınız ethernet kartı ile ilgili bilgileri girin.</string>
+        </property>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame22</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>64</x>
+                <y>170</y>
+                <width>450</width>
+                <height>101</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel5_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>21</x>
+                    <y>68</y>
+                    <width>145</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Öntanımlı geçit adresi:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel5</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>21</x>
+                    <y>8</y>
+                    <width>145</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>IP adresi:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel5_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>21</x>
+                    <y>38</y>
+                    <width>145</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Alt ağ maskesi:</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>231</x>
+                    <y>37</y>
+                    <width>198</width>
+                    <height>27</height>
+                </rect>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>2</number>
+            </property>
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+            <property name="echoMode">
+                <enum>Normal</enum>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>231</x>
+                    <y>6</y>
+                    <width>198</width>
+                    <height>27</height>
+                </rect>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>2</number>
+            </property>
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+            <property name="echoMode">
+                <enum>Normal</enum>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit2_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>231</x>
+                    <y>69</y>
+                    <width>198</width>
+                    <height>27</height>
+                </rect>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>2</number>
+            </property>
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+            <property name="echoMode">
+                <enum>Normal</enum>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>640</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>actions_wizard_png</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>48</width>
+                    <height>48</height>
+                </rect>
+            </property>
+            <property name="pixmap">
+                <pixmap>image0</pixmap>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>80</x>
+                    <y>20</y>
+                    <width>310</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>&lt;h2&gt;Bağlantı bilgilerini girin&lt;/h2&gt;</string>
+            </property>
+        </widget>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2180">89504e470d0a1a0a0000000d49484452000000300000003008060000005702f9870000084b494441546881ed996d6c1c5715861f874db82b82980d96b52b45b016158a432bea10a4382412b5a894a4aa0416fd8143a9f0c78fd8aea5c68e458bdbb4ae0328de1892665d351f0e2d758a30d95a38e44f51a800397c490d34c49192325b9c6646d86546d4cd1ce149cd8f998dc7b36b7b13e7a3917a25ebeadeb973e77dcf39efb9e7ae4ba6a7a7b993db92db0d60b1ed2302b7bb45c213674b4af216c91cbd93bfdf97812e010de8151854a17d163bde1ad2ec9c1e980bf43ce0ab048e47e36c4aacd2d609bc027c71a17daeb50fb7390928f834f01cf01ad0ae20eecf03109dbd7c1d30145b4959f54b5ba878ac02051f033e57e8e38b1dcf4bc05f5c22f043e2aa25f6d5f8d750f408fc09e8162883591ed82090892629ab3e5a07f75761676d6c70814bb7dc03ca5bbc0458135b1ba7fc57292a326d2436c53f23f07d3c224f46e113c07a6030962451fd521d6cac07046bd4021081acbf1f37aa5f9080bfe88ac009e30f269c1e25baf959ca7f7188aa176b886fd0924097057f1638168d13af3e500b1b9bbdb7c775644210d081776fb607f2b2506eb18283624b8bf1dc402cb1b61a3ef900d1efac61f5832749bc7a14fdc8c86a99b059df5b0bf737fb6fea306963998282d3c05478df02e25f54cb2310603c060c8c0e665b120f1f86072b8104c4b612abab26b6390db605155ed830a5c35203262c6c53107833e77687c2960c874531e3702b9885021fdb0dbc7b76df49704e06562420d10615bee5a70cc0060c9c8b824c02f0af42e07320d4758e1724905b6479dd98032f9abf31718e1ff5671dc0f0ff6ccff2d8e0ea306562eb06e2addce1408dc0c783e017db2f48001f6274a67fda82b7f40323307ed8dfcaf2c11b33e031c0b5487c2341cdae3895f7aa2f01c78011a04ec1b25b92859cfcfe0b80b2b3264c9801cb87c1ebe00a9442e2d1721ee82f67ebe31a89246b040e0bfc5ec1376fb4074ac2f7815fcfae85be02fc321a275edd5f0b9bdbbcd960d860819b8588e5657e946f2abfbf607376789453c3829e0505fb04b62b2f555f3389ee10def908ac13c8c49224aafb6a617348b0572d6ffa2404dc1078a2de9c2b90d539d9ab73e27541837b04ce5c8f073a43780b9e0340153094b84b95adefcf1d5261cbfbe073967795573c44144c8a9794264c1807e3a285d882650bca5beddc280d1422b056602816c7075fef81c6cff318800962795b06c1ffd5e0ec6b26f6986064c1cc82657b9b0a5cf15fdea5e0ad1ba58142047e125ba9caaafbab61630570022c1d6c01db0053b0c62c629b635ed59f038fe2ecb049e6a0204aa3fcee4a9c55a067f54b4aecaec4a49cc69551e0bf04c0847b2d04363c5e9080403c56aab0c62da4ab1fe38c858c0b9629de09eb5bb466af10fb6ef94ccc4fdad8865700d91bd653dbdbc3ea7b5693ee3bbce2d8e0c0e7b3222fc44d03657b1b882b2814e2fa81e10a44943f0fe2ce81782102c08ff4d3f6f3c623a722e2f28180237049c1df04de04de71e07b6fbc62df557d9f40a9069380adb0bc1282cceb27e029c5fedefd3437d52b5cd93e3078ec5356b2bc0157101170b9da5b6279633f118878fbe0e647fd40111e38a4e01fe2f259e012f0b6827fe784e79fd0eec81fe5a795c306b16f694014264cccaca7165cc80c650048ed4ed1dcda0c11ea078e0cbc2f483ba829713d4f38ae834261bb5ea0e4e60b812fd4e6ba0f9c027e2ef03b056f13c81a7e1b042e9cfc9909176d7015ce385813a069f10b28e58247a27d7b3bfa799de6a6666a1eaa69c5a50f5796aa8817d5d18877b75311cf7cb9f939f3e34204e62aa082bdc065a06ff41ce8c3de096c672d0448203babeeae7c260720737c86447b473b350fd53488489fb8b20c3c0f0057b530a389eb24305709abc8abe50f089c1f19b6c1d4115b10b8a2d9f6dfcb15dd95f756f5a820898e768c3183ce273aa97db8b601a1073c0f48c0f2e1fe9a09845356c8f2c1f1fb0a768d9e83917d3a23bfb5c1d3ca3fb5ac81561aeba85855d995db273394a1a5a905fdbc4ee7139dd435d6b55ab675d0719d250a2f1507b3922c520379641c0a1e2e2f2b78f9c4717147cf30093ca3e072cc34898a8356aa3d5db1aaa267ae70aa6fac6f90493920c81222ccf244b11a2878239beff80e3dbf22f0885fa0bda7e05c6ebde3e5f5694dd33a2a921525a31746db73240052fb52747775834b7dfaf9f434111ae1266a201a7a1ee83f10f84b0ebcf2694623eaea61a434b523994c76e57942d7e9fe41376d8fb53520ecc565d94dd380137a3e7fc1a5705c4145662c1a5d1edd998c277b72fb668632b4b77ae1d4f95427f58df5ad3229fb45642914af81bc102aa481b0471626e179c0723d4b8a786503cbe988c7e325a669ce0ea7de14a9de1440e39e1fef81082d44f85f316154f439107e5eac0772207216554aed8897c6673ce18793316690ea4dd1f46853232e3db8e4ffca5c0c81ebd040819237a001dfc72a92bb2f008a0e4dd39e0d926869f5526c7a5f9ab61d6dadc08142f8162470b33420ae78e073c28ea89dda726db626fc149bda9da2695b534331248a3e07c2cf8bf5c0acace2ced43e4498264287522a3f9c7483745f9aa66d4df5c00bd744e0a66a2032537d06b24c878aa89913fb788696ed2de8ba4eba2feda558d80b2c2b8ac0add040b8f61164275030c5a67a53346d6b6a05d2e407c4fc27312c56030a5b421af0370c6a43a110a4c3ffc40e989d62d37d6944a4a1ff48ff04f078106fdecf2ac74a4a0a9e03fe6f71c59d03117863c37d582ee4ddc008dcc0fc795bec60e9b03b4702a0e6eb351cea3b84d2142bca56bce3bce7ac0ce25d6c2db4a0072468f1083892bb8185eec6335feaf0b77912bc705251c5964d5bc0e57218ef8745036118b335f16a8696e61644247c25fe50692008631acf13ff01be2d22538264803d61bc791ab8d3da1dff9ffa8f08dceef67fd4882cddf8087d620000000049454e44ae426082</data>
+    </image>
+</images>
+<tabstops>
+    <tabstop>radioButton24</tabstop>
+    <tabstop>radioButton24_2</tabstop>
+    <tabstop>lineEdit2_2</tabstop>
+    <tabstop>lineEdit2_3</tabstop>
+    <tabstop>radioButton24_3</tabstop>
+    <tabstop>radioButton24_2_2</tabstop>
+    <tabstop>lineEdit2</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

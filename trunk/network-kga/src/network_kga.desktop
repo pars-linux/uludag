@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Network KGA
+Name[en]=Network KGA
+Name[tr]=Network KGA
+Comment=Pardus Network Settings Utility
+Comment[en]=Pardus Network Settings Utility
+Comment[tr]=Pardus Ağ Ayarları Aracı
+Icon=network.png
+X-KDE-ModuleType=Library
+X-KDE-Library=network_kga
+X-KDE-FactoryName=network_kga
+X-KDE-RootOnly=false
+Type=Application
+Exec=kcmshell network_kga
+Categories=QT;KDE;X-KDE-settings-system;
