@@ -12,18 +12,6 @@
             <height>623</height>
         </rect>
     </property>
-    <property name="minimumSize">
-        <size>
-            <width>700</width>
-            <height>600</height>
-        </size>
-    </property>
-    <property name="maximumSize">
-        <size>
-            <width>700</width>
-            <height>32767</height>
-        </size>
-    </property>
     <property name="caption">
         <string>Pisi KGA</string>
     </property>

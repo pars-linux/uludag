@@ -84,19 +84,25 @@ class MainApplicationWidget(MainWindow.MainWindow):
         pisi.api.init(database=True, options=None, ui=glob_ui)
         
         self.pDialog = ProgressDialog.ProgressDialog(self)
+	self.pDialog.setModal(True)
+        
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
-
+    
     def __del__(self):
         self.command.wait()
 
     def customEvent(self, event):
         self.command.wait()
-        if event.type() == QEvent.User + 1:
+        if event.type() == QEvent.User+1:
             self.finished()
         else:
             pass
-        
+
+    def showProgressBar(self):
+        print 'Emitted showProgressBar!'
+        self.pDialog.show()
+    
     def finished(self):
         self.pDialog.forcedClose()
         self.updateListing()
@@ -283,6 +289,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def showSettings(self):
         self.pref = Preferences.Preferences(self)
+        self.connect(self.pref,PYSIGNAL("showProgressBar()"),self.showProgressBar)
         self.pref.setModal(True)
         self.pref.show()
         
@@ -307,6 +314,7 @@ class MainApplication(programbase):
         if standalone:
             QDialog.__init__(self,parent,name)
             self.setCaption("PiSi KGA")
+            self.setFixedSize(700,600)
         else:
             KCModule.__init__(self,parent,name)
             # Create a configuration object.
