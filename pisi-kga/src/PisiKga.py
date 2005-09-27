@@ -15,6 +15,7 @@
 
 # System
 import sys
+import math
 
 # PyQt/PyKDE
 from qt import *
@@ -78,6 +79,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command = ThreadRunner.Thread(self)
         self.errorMessage = None
 	self.savedProgress = 0
+        self.oldFilename = None
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
@@ -118,8 +120,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b>'%(filename))
 
        	progress = length/self.totalAppCount + self.savedProgress
-	if length == 100:
+
+        if length == 100 and filename != self.oldFilename:
            self.savedProgress = self.savedProgress + length/self.totalAppCount
+           self.oldFilename = filename
+        elif length == 100 and filename == self.oldFilename:
+            progress -= length/self.totalAppCount
+
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
@@ -271,8 +278,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
             listViewItem = listViewItem.itemBelow()
 
-        self.totalAppCount = len(self.selectedItems)
-        
+        self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
+        print 'Total app count',self.totalAppCount
+                
         if index == 0: # Remove baby
             self.command.remove(self.selectedItems)
                         
