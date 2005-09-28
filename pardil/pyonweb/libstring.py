@@ -42,6 +42,3 @@ def num2str(n):
       s += "%d %s " % (floor(n / i), j)
       n -= i * floor(n / i)
   return s
-
-def formatText(s):
-    return re.sub("(\r?\n)*(.*)\r?\n=+\r?\n(\r?\n)*", "<h3>\\2</h3>", s)
