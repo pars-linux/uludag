@@ -117,7 +117,7 @@ def publish():
             'purpose': p.form.getvalue('p_purpose'),
             'content': p.form.getvalue('p_content'),
             'timeB': sql_datetime(now()),
-            'changelog': p.form.getvalue('p_changelog')
+            'changelog': "İlk sürüm."
             }
     vid = p.db.insert('proposals_versions', list)
     
