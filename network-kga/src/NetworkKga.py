@@ -44,8 +44,8 @@ class MainWidget(KWizard):
         self.insertPage(self.page, 'FirstPage', 0)
         self.setTitle(self.page,"")
         self.insertPage(self.page2, 'SecondPage',1)
-        self.setFixedSize(640,433)
-        self.page.setFixedSize(640,433)
+        self.setFixedSize(640,445)
+        self.page.setFixedSize(640,445)
 
     def layOutTitleRow(self, layout, title):
         KWizard.layOutTitleRow(self, layout, title)
