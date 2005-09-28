@@ -55,7 +55,9 @@ def index():
                        }
 
       # Sürüm geçmişi
-      q = """SELECT proposals_versions.version
+      q = """SELECT
+               proposals_versions.version,
+               proposals_versions.changelog
              FROM proposals_versions
              WHERE
                pid=%d
@@ -65,7 +67,11 @@ def index():
       
       p['versions'] = []
       for i in rows:
-        p['versions'].append(i[0])
+        l = {
+             'version': i[0],
+             'log': i[1]
+             }
+        p['versions'].append(l)
 
       # Sorumlular
       q = """SELECT

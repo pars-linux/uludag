@@ -48,10 +48,10 @@
   <h3>Sürüm Geçmişi</h3>
   <ul>
     #for $i in $versions
-      #if $i == $proposal.version
-        #echo """<li>%s</li>""" % ($i)
+      #if $i.version == $proposal.version
+        #echo """<li>%s - %s</li>""" % ($i.version, $i.log)
       #else
-        #echo """<li><a href="viewproposal.py?pid=%d&amp;version=%s">%s</a></li>""" % ($proposal.pid, $i, $i)
+        #echo """<li><a href="viewproposal.py?pid=%d&amp;version=%s">%s</a> - %s</li>""" % ($proposal.pid, $i.version, $i.version, $i.log)
       #end if
     #end for
   </ul>
