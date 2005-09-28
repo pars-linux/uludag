@@ -5,6 +5,7 @@ from pardilskel import pardil_page
 from cfg_main import site_config
 
 from pyonweb.libstring import *
+from pyonweb.textutils import formatText
 from pyonweb.libdate import *
 
 import re
@@ -41,8 +42,7 @@ def index():
 
     if row:
 
-      content = html_escape(row[5])
-      content = nl2br(formatText(content))
+      content = formatText(row[5])
       if content.find("<h3>") < 0:
         content = "<h3>Detaylar</h3>" + content
       p['proposal'] = {

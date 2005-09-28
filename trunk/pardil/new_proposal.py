@@ -85,6 +85,9 @@ def new():
     p.template = 'new_proposal.done.tpl'
 
 def index():
+  p['posted'] = {
+                 'p_content': "Başlık\n======\nYazı\n\nBaşlık\n======\nYazı",
+                 }
   p.template = 'new_proposal.tpl'
 
 p.actions = {
