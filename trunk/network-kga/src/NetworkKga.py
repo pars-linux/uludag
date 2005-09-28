@@ -42,12 +42,10 @@ class MainWidget(KWizard):
         self.page = FirstPage.FirstPage()
         self.page2 = EthernetPage.yeni_baglanti_sihirbazi()
         self.insertPage(self.page, 'FirstPage', 0)
-        self.setTitle(self.page,"Sayfa 1/3")
-        self.setNextEnabled(self.page, True)
+        self.setTitle(self.page,"")
         self.insertPage(self.page2, 'SecondPage',1)
         self.setFixedSize(640,433)
         self.page.setFixedSize(640,433)
-        self.show()
     # Add other methods, slots and signals here.
 
 ############################################################################
@@ -57,18 +55,18 @@ class MainWidget(KWizard):
 standalone = __name__=='__main__'
 
 if standalone:
-    programbase = None
+    programbase = MainWidget
 else:
     programbase = KCModule
     
-class MainApplication:
+class MainApplication(programbase):
     ########################################################################
     def __init__(self,parent=None,name=None):
         global standalone
         if standalone:
             pass
-            QDialog.__init__(self, parent)
-            self.setFixedSize(653,500)
+            MainWidget.__init__(self, parent)
+            self.show()
         else:
             KCModule.__init__(self,parent,name)
             # Create a configuration object.
@@ -81,13 +79,11 @@ class MainApplication:
         KGlobal.iconLoader().addAppDir("network_kga")
         
         if standalone:
-            #toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
-            mainwidget = MainWidget(self)
+            mainwidget = self            
         else:
             toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
             mainwidget = MainWidget(self)
-            
-        toplayout.addWidget(mainwidget)
+            toplayout.addWidget(mainwidget)
 
         self.aboutus = KAboutApplication(self)
                 
@@ -106,10 +102,6 @@ class MainApplication:
         
         # Save configuration here
         self.__saveOptions()
-
-    ########################################################################
-    def slotCloseButton(self):
-        self.close()
 
     ########################################################################
     def __loadOptions(self):
