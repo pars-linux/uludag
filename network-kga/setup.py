@@ -23,6 +23,6 @@ kdedistutils.setup(name="network_kga",
     min_kde_version = "3.4.0",
     min_qt_version = "3.3.0",
     license = "GPL",
-    application_data = ['src/NetworkKga.py','src/MainWindow.ui'],
+    application_data = ['src/NetworkKga.py','src/MainWindow.ui', 'src/FirstWidget.ui', 'src/FirstWindow.py', 'src/EthernetPage.ui'],
     executable_links = [('network_kga','NetworkKga.py')],
     kcontrol_modules = [ ('src/network_kga.desktop','NetworkKga.py')] )
