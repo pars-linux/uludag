@@ -248,109 +248,6 @@ seçeneklerin birisine tıklayarak belirtin.</string>
         </property>
         <widget class="QLabel">
             <property name="name">
-                <cstring>textLabel3</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>111</x>
-                    <y>11</y>
-                    <width>417</width>
-                    <height>29</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>&lt;h3&gt;Doğrudan bağlantı&lt;/h3&gt;</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>directConnectionLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>111</x>
-                    <y>38</y>
-                    <width>417</width>
-                    <height>41</height>
-                </rect>
-            </property>
-            <property name="paletteForegroundColor">
-                <color>
-                    <red>140</red>
-                    <green>140</green>
-                    <blue>140</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>Eğer bilgisayarınız doğrudan yerel ağ üzerinden internete 
-bağlanacaksa bu seçeneği tıklayın (ethernet bağlantısı vb).</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel3_2_2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>111</x>
-                    <y>91</y>
-                    <width>418</width>
-                    <height>29</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>&lt;h3&gt;Kablosuz bağlantı&lt;/h3&gt;</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>wirelessConnectionLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>111</x>
-                    <y>120</y>
-                    <width>418</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="paletteForegroundColor">
-                <color>
-                    <red>140</red>
-                    <green>140</green>
-                    <blue>140</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>Bir kablosuz bağlantı yapmak için bu seçeneği tıklayın.</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>dialupConnectionLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>111</x>
-                    <y>182</y>
-                    <width>418</width>
-                    <height>41</height>
-                </rect>
-            </property>
-            <property name="paletteForegroundColor">
-                <color>
-                    <red>140</red>
-                    <green>140</green>
-                    <blue>140</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>Bir modem üzerinden herhangi bir servis sağlayıcıya 
-çevirmeli ağ bağlantısı yapmak için bu seçeneği tıklayın.</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
                 <cstring>directConnectionIcon</cstring>
             </property>
             <property name="geometry">
@@ -407,18 +304,139 @@ bağlanacaksa bu seçeneği tıklayın (ethernet bağlantısı vb).</string>
         </widget>
         <widget class="QLabel">
             <property name="name">
-                <cstring>textLabel3_2</cstring>
+                <cstring>directConnectionLabel</cstring>
             </property>
             <property name="geometry">
                 <rect>
                     <x>111</x>
-                    <y>151</y>
+                    <y>38</y>
+                    <width>417</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>140</red>
+                    <green>140</green>
+                    <blue>140</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>Eğer bilgisayarınız doğrudan yerel ağ üzerinden internete 
+bağlanacaksa bu seçeneği tıklayın (ethernet bağlantısı vb).</string>
+            </property>
+            <property name="indent">
+                <number>5</number>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>directConnectionLabelTop</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>10</y>
+                    <width>417</width>
+                    <height>29</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>&lt;h3&gt;Doğrudan bağlantı&lt;/h3&gt;</string>
+            </property>
+            <property name="indent">
+                <number>5</number>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>wirelessConnectionLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>111</x>
+                    <y>120</y>
+                    <width>418</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>140</red>
+                    <green>140</green>
+                    <blue>140</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>Bir kablosuz bağlantı yapmak için bu seçeneği tıklayın.</string>
+            </property>
+            <property name="indent">
+                <number>5</number>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>wirelessConnectionLabelTop</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>111</x>
+                    <y>91</y>
+                    <width>418</width>
+                    <height>29</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>&lt;h3&gt;Kablosuz bağlantı&lt;/h3&gt;</string>
+            </property>
+            <property name="indent">
+                <number>5</number>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>dialupConnectionLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>111</x>
+                    <y>182</y>
+                    <width>418</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>140</red>
+                    <green>140</green>
+                    <blue>140</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>Bir modem üzerinden herhangi bir servis sağlayıcıya 
+çevirmeli ağ bağlantısı yapmak için bu seçeneği tıklayın.</string>
+            </property>
+            <property name="indent">
+                <number>5</number>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>dialupConnectionLabelTop</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>150</y>
                     <width>418</width>
                     <height>29</height>
                 </rect>
             </property>
             <property name="text">
                 <string>&lt;h3&gt;Çevirmeli bağlantı (servis sağlayıcı gerektirir)&lt;/h3&gt;</string>
+            </property>
+            <property name="indent">
+                <number>5</number>
             </property>
         </widget>
     </widget>
