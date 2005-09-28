@@ -45,8 +45,7 @@ def formatText(s):
         if m:
             #print "Block %d is a list" % (i + 1)
             #
-            f = re.findall("\* (.*)", block)
-            body.append("<ul><li>%s</li></ul>" % "</li><li>".join(f))
+            body.append("<ul>%s</ul>" % formatList(block))
             #
             continue
         m = re.match(":.*\n(\s+.*)+", block)
@@ -86,3 +85,42 @@ def formatText(s):
         body.append("<p>%s</p>" % "<br/>".join(links))
 
     return "\n".join(body)
+
+def formatList(s):
+    depth = 0
+    last = [0]
+    source = s.strip("\n").split("\n")
+    list = []
+
+    for line in source:
+        m = re.findall("(\s*)(\*?) (.*)", line)[0]
+        if m[1]:
+            if len(m[0]) > last[-1]:
+                depth += 1
+                last.append(len(m[0]))
+            elif len(m[0]) < last[-1]:
+                while len(m[0]) != last[-1]:
+                    depth -= 1
+                    last.pop()
+            list.append([depth, m[2]])
+        else:
+            list[-1][1] += " " + m[2]
+
+    new = ""
+    for i in range(len(list)):
+        ul = 0
+        new += "<li>%s" % (list[i][1])
+        if i + 1 < len(list) and list[i][0] < list[i+1][0]:
+            new += "<ul>"
+            ul = 1
+        elif i + 1 < len(list) and list[i][0] > list[i+1][0]:
+            for j in range(list[i][0] - list[i+1][0]):
+                new += "</li>"
+                new += "</ul>"
+        if not ul:
+            new += "</li>"
+
+    if list[-1][0]:
+        new += "</ul></li>" * list[-1][0]
+
+    return new
