@@ -58,7 +58,7 @@ class MainWidget(KWizard):
         self.page.setFixedSize(640,445)
         self.page2.setFixedSize(640,445)
 
-        self.setNextEnabled(self.page, False)
+        #self.setNextEnabled(self.page, False)
 
     # Hide top title
     def layOutTitleRow(self, layout, title):
