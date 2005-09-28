@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>EthernetPage</class>
+<class>EthernetWidget</class>
 <widget class="QWidget">
     <property name="name">
-        <cstring>Ethernet Page</cstring>
+        <cstring>EthernetWidget</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -11,9 +11,6 @@
             <width>640</width>
             <height>446</height>
         </rect>
-    </property>
-    <property name="caption">
-        <string>Ethernet Page</string>
     </property>
     <widget class="Line">
         <property name="name">
@@ -98,63 +95,6 @@
     </widget>
     <widget class="QButtonGroup">
         <property name="name">
-            <cstring>buttonGroup14</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>51</x>
-                <y>120</y>
-                <width>310</width>
-                <height>51</height>
-            </rect>
-        </property>
-        <property name="frameShape">
-            <enum>NoFrame</enum>
-        </property>
-        <property name="title">
-            <string>buttonGroup14</string>
-        </property>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>ipManualButton</cstring>
-            </property>
-            <property name="enabled">
-                <bool>true</bool>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>23</y>
-                    <width>270</width>
-                    <height>22</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>IP adresini elle gir</string>
-            </property>
-        </widget>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>ipAutobutton</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>-2</y>
-                    <width>270</width>
-                    <height>22</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>IP adresini otomatik al</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-        </widget>
-    </widget>
-    <widget class="QButtonGroup">
-        <property name="name">
             <cstring>buttonGroup15</cstring>
         </property>
         <property name="geometry">
@@ -206,29 +146,6 @@
                 <string>Aşağıdaki DNS adreslerini kullan:</string>
             </property>
         </widget>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>40</x>
-                <y>78</y>
-                <width>420</width>
-                <height>40</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>52</red>
-                <green>44</green>
-                <blue>140</blue>
-            </color>
-        </property>
-        <property name="text">
-            <string>Bağlantı yapacağınız ethernet kartı ile ilgili bilgileri girin.</string>
-        </property>
     </widget>
     <widget class="QFrame">
         <property name="name">
@@ -291,127 +208,85 @@
             </property>
         </widget>
     </widget>
-    <widget class="QFrame">
+    <widget class="QButtonGroup">
         <property name="name">
-            <cstring>frame17_2</cstring>
-        </property>
-        <property name="enabled">
-            <bool>false</bool>
+            <cstring>buttonGroup14</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>64</x>
-                <y>336</y>
-                <width>450</width>
-                <height>70</height>
+                <x>51</x>
+                <y>120</y>
+                <width>310</width>
+                <height>51</height>
             </rect>
         </property>
         <property name="frameShape">
-            <enum>Box</enum>
+            <enum>NoFrame</enum>
         </property>
-        <property name="frameShadow">
-            <enum>Plain</enum>
+        <property name="title">
+            <string>buttonGroup14</string>
         </property>
-        <widget class="QLabel">
+        <widget class="QRadioButton">
             <property name="name">
-                <cstring>firstDnsAddress</cstring>
+                <cstring>ipAutobutton</cstring>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>202</width>
-                    <height>20</height>
+                    <x>10</x>
+                    <y>-2</y>
+                    <width>270</width>
+                    <height>22</height>
                 </rect>
             </property>
             <property name="text">
-                <string>Birinci tercih edilen DNS adresi:</string>
+                <string>IP adresini otomatik al</string>
             </property>
-            <property name="buddy" stdset="0">
-                <cstring>lineEdit2_4</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit">
-            <property name="name">
-                <cstring>firstDnsAddressEdit</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>230</x>
-                    <y>9</y>
-                    <width>200</width>
-                    <height>24</height>
-                </rect>
-            </property>
-            <property name="backgroundOrigin">
-                <enum>WidgetOrigin</enum>
-            </property>
-            <property name="frameShape">
-                <enum>LineEditPanel</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Sunken</enum>
-            </property>
-            <property name="lineWidth">
-                <number>2</number>
-            </property>
-            <property name="frame">
+            <property name="checked">
                 <bool>true</bool>
             </property>
-            <property name="echoMode">
-                <enum>Normal</enum>
-            </property>
         </widget>
-        <widget class="QLabel">
+        <widget class="QRadioButton">
             <property name="name">
-                <cstring>secondDnsAddress</cstring>
+                <cstring>ipManualButton</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>20</x>
-                    <y>40</y>
-                    <width>190</width>
-                    <height>20</height>
+                    <x>10</x>
+                    <y>23</y>
+                    <width>270</width>
+                    <height>22</height>
                 </rect>
             </property>
             <property name="text">
-                <string>İkinci tercih edilen DNS adresi:</string>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>lineEdit2_4_2</cstring>
+                <string>IP adresini elle gir</string>
             </property>
         </widget>
-        <widget class="QLineEdit">
-            <property name="name">
-                <cstring>secondDnsAddressEdit</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>230</x>
-                    <y>39</y>
-                    <width>200</width>
-                    <height>24</height>
-                </rect>
-            </property>
-            <property name="backgroundOrigin">
-                <enum>WidgetOrigin</enum>
-            </property>
-            <property name="frameShape">
-                <enum>LineEditPanel</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Sunken</enum>
-            </property>
-            <property name="lineWidth">
-                <number>2</number>
-            </property>
-            <property name="frame">
-                <bool>true</bool>
-            </property>
-            <property name="echoMode">
-                <enum>Normal</enum>
-            </property>
-        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>78</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>52</red>
+                <green>44</green>
+                <blue>140</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>Bağlantı yapacağınız ethernet kartı ile ilgili bilgileri girin.</string>
+        </property>
     </widget>
     <widget class="QFrame">
         <property name="name">
@@ -482,25 +357,6 @@
             </property>
             <property name="echoMode">
                 <enum>Normal</enum>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>subNetMask</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>21</x>
-                    <y>38</y>
-                    <width>145</width>
-                    <height>24</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Alt ağ maskesi:</string>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>lineEdit2_2</cstring>
             </property>
         </widget>
         <widget class="QLineEdit">
@@ -582,6 +438,147 @@
             </property>
             <property name="echoMode">
                 <enum>Normal</enum>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>subNetMask</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>21</x>
+                    <y>38</y>
+                    <width>145</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Alt ağ maskesi:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEdit2_2</cstring>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>dnsManualFrame</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>64</x>
+                <y>336</y>
+                <width>450</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>Box</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>firstDnsAddress</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>202</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Birinci tercih edilen DNS adresi:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEdit2_4</cstring>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>firstDnsAddressEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>230</x>
+                    <y>9</y>
+                    <width>200</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>2</number>
+            </property>
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+            <property name="echoMode">
+                <enum>Normal</enum>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>secondDnsAddressEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>230</x>
+                    <y>39</y>
+                    <width>200</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>LineEditPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>2</number>
+            </property>
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+            <property name="echoMode">
+                <enum>Normal</enum>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>secondDnsAddress</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>40</y>
+                    <width>190</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>İkinci tercih edilen DNS adresi:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEdit2_4_2</cstring>
             </property>
         </widget>
     </widget>
