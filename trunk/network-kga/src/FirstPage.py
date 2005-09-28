@@ -30,16 +30,18 @@ class FirstPage(FirstWidget.FirstWidget):
             if self.currentWidget.startswith(name):
                 pass
             elif name and event.button() & Qt.LeftButton:
-                self.resetWidgetColors()
                 if name.startswith('direct'):
+                    self.resetWidgetColors()
                     self.currentWidget = 'directConnectionLabelTop'
                     self.directConnectionLabelTop.setBackgroundMode(Qt.PaletteHighlight)
                     self.directConnectionLabel.setBackgroundMode(Qt.PaletteLight)
                 elif name.startswith('wireless'):
+                    self.resetWidgetColors()
                     self.currentWidget = 'wirelessConnectionLabelTop'
                     self.wirelessConnectionLabelTop.setBackgroundMode(Qt.PaletteHighlight)
                     self.wirelessConnectionLabel.setBackgroundMode(Qt.PaletteLight)
                 elif name.startswith('dialup'):
+                    self.resetWidgetColors()
                     self.currentWidget = 'dialupConnectionLabelTop'
                     self.dialupConnectionLabelTop.setBackgroundMode(Qt.PaletteHighlight)
                     self.dialupConnectionLabel.setBackgroundMode(Qt.PaletteLight)
