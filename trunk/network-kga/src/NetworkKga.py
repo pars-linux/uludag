@@ -29,7 +29,7 @@ version = "0.0.1"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("network_kga", "network_kga", version, \
+    about_data = KAboutData("network", "network_kga", version, \
         description, KAboutData.License_GPL, "(C) 2005 UEAKE/TÜBİTAK", None, None,\
         "ismail@uludag.org.tr")
     about_data.addAuthor("İsmail Dönmez", None, "ismail@uludag.org.tr")
@@ -46,7 +46,13 @@ class MainWidget(KWizard):
         self.insertPage(self.page2, 'SecondPage',1)
         self.setFixedSize(640,433)
         self.page.setFixedSize(640,433)
-    # Add other methods, slots and signals here.
+
+    def layOutTitleRow(self, layout, title):
+        KWizard.layOutTitleRow(self, layout, title)
+        iter = layout.iterator()
+        while iter.current():
+            iter.current().widget().hide()
+            iter.next()
 
 ############################################################################
 # The base class that we use depends on whether this is running inside
