@@ -48,7 +48,7 @@ class MainWidget(KWizard):
     def __init__(self,parent=None):
         KWizard.__init__(self,parent,"network-kga")
         self.setCaption(u'Pardus Ağ Ayarları Aracı')
-
+                
         self.page = FirstPage.FirstPage()
         self.page2 = EthernetPage.EthernetPage()
         self.insertPage(self.page, 'FirstPage', 0)
@@ -57,6 +57,8 @@ class MainWidget(KWizard):
         self.setFixedSize(0,0) # This is just to make main windows unresizable, following lines will take care of size
         self.page.setFixedSize(640,445)
         self.page2.setFixedSize(640,445)
+
+        self.setNextEnabled(self.page, False)
 
     # Hide top title
     def layOutTitleRow(self, layout, title):
