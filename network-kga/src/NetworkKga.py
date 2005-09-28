@@ -55,10 +55,7 @@ class MainWidget(KWizard):
         self.setFixedSize(640,445)
         self.page.setFixedSize(640,445)
 
-        self.page.directConnectionIcon.setPixmap(loadIcon("network"))
-        self.page.wirelessConnectionIcon.setPixmap(loadIcon("wireless"))
-        self.page.dialupConnectionIcon.setPixmap(loadIcon("dialup"))
-
+    # Hide top title
     def layOutTitleRow(self, layout, title):
         KWizard.layOutTitleRow(self, layout, title)
         iter = layout.iterator()
