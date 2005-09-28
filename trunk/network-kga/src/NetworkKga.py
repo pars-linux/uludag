@@ -36,6 +36,14 @@ def AboutData():
     return about_data
 
 ############################################################################
+def loadIcon(name, group=KIcon.Desktop):
+        return KGlobal.iconLoader().loadIcon(name, group)
+
+############################################################################
+def loadIconSet(name, group=KIcon.Desktop):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+            
+############################################################################
 class MainWidget(KWizard):
     def __init__(self,parent=None):
         KWizard.__init__(self,parent,"Pardus Ağ Ayarları Aracı")
@@ -46,6 +54,10 @@ class MainWidget(KWizard):
         self.insertPage(self.page2, 'SecondPage',1)
         self.setFixedSize(640,445)
         self.page.setFixedSize(640,445)
+
+        self.page.directConnectionIcon.setPixmap(loadIcon("network"))
+        self.page.wirelessConnectionIcon.setPixmap(loadIcon("wireless"))
+        self.page.dialupConnectionIcon.setPixmap(loadIcon("dialup"))
 
     def layOutTitleRow(self, layout, title):
         KWizard.layOutTitleRow(self, layout, title)
