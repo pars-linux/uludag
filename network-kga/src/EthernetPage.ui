@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>yeni_baglanti_sihirbazi</class>
-<widget class="QDialog">
+<class>EthernetPage</class>
+<widget class="QWidget">
     <property name="name">
-        <cstring>yeni_baglanti_sihirbazi</cstring>
+        <cstring>Ethernet Page</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -11,9 +11,6 @@
             <width>640</width>
             <height>446</height>
         </rect>
-    </property>
-    <property name="caption">
-        <string>Pardus Yeni Bağlantı Sihirbazına Hoşgeldiniz</string>
     </property>
     <widget class="Line">
         <property name="name">

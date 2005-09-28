@@ -46,14 +46,17 @@ def loadIconSet(name, group=KIcon.Desktop):
 ############################################################################
 class MainWidget(KWizard):
     def __init__(self,parent=None):
-        KWizard.__init__(self,parent,"Pardus Ağ Ayarları Aracı")
+        KWizard.__init__(self,parent,"network-kga")
+        self.setCaption(u'Pardus Ağ Ayarları Aracı')
+
         self.page = FirstPage.FirstPage()
-        self.page2 = EthernetPage.yeni_baglanti_sihirbazi()
+        self.page2 = EthernetPage.EthernetPage()
         self.insertPage(self.page, 'FirstPage', 0)
-        self.setTitle(self.page,"")
         self.insertPage(self.page2, 'SecondPage',1)
-        self.setFixedSize(640,445)
+
+        self.setFixedSize(0,0) # This is just to make main windows unresizable, following lines will take care of size
         self.page.setFixedSize(640,445)
+        self.page2.setFixedSize(640,445)
 
     # Hide top title
     def layOutTitleRow(self, layout, title):
