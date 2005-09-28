@@ -18,6 +18,16 @@ Final
   - Önerilere resim/yama iliştirme
   ? Öneri takibi
   - Öneri ekleme sayfasına önizleme desteği
+  / Daha fazla markup! 
+    + Başlıklar (1 Seviye)
+    + Paragraflar
+    + Alıntılar (Blockquote)
+    + Kod bloğu
+    + Listeler (+ Dallanabilir)
+    / Referanslar
+    - Paragraf içi formatlama
+    - Resim
+    ? Tablolar
 
 + Yönetim Arabirimi
   - Kullanıcı yönetimi
