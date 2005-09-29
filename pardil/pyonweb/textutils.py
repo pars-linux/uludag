@@ -12,115 +12,119 @@
 import re
 
 def formatText(s):
-    source = [i.strip("\n") for i in s.replace("\r", "").split("\n\n")]
-    body = []
+    return "".join(formatBlock(s))
+
+def formatBlock(s):
+    s = s.replace("\r", "")
+    source = [i for i in s.split("\n\n") if i]
+    new = []
     links = []
 
-    for i, block in enumerate(source):
-        m = re.match("(.*)\n=+", block)
+    for block in source:
+        # Titles
+        m = re.findall("^(.*)\n=+$", block)
         if m:
-            #print "Block %d is a title" % (i + 1)
-            #
-            f = re.findall("(.*)\n=+", block)
-            body.append("<h3>%s</h3>" % f[0])
-            #
+            new.append("<h3>%s</h3>" % m[0])
             continue
-        m = re.match("(\s+.*)+", block)
+        # Subtitles
+        m = re.findall("^(.*)\n\-+$", block)
         if m:
-            #print "Block %d is a blockquote" % (i + 1)
-            #
+            new.append("<h4>%s</h4>" % m[0])
+            continue
+        # Blockquotes - style 1
+        if block[0] == " ":
             f = re.findall("\s+(.*)", block)
-            body.append("<blockquote>%s</blockquote>" % " ".join(f))
-            #
+            new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(f))
             continue
-        m = re.match("(> .*)+", block)
-        if m:
-            #print "Block %d is another blockquote" % (i + 1)
-            #
+        # Blockquotes - style 2
+        if block[0] == ">":
             f = re.findall("> (.*)", block)
-            body.append("<blockquote>%s</blockquote>" % " ".join(f))
-            #
+            new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(f))
             continue
-        m = re.match("(\* .*)+", block)
-        if m:
-            #print "Block %d is a list" % (i + 1)
-            #
-            body.append("<ul>%s</ul>" % formatList(block))
-            #
+        # Code
+        if block[:3] == "::\n":
+            new.append("<pre><code>%s</code></pre>" % block[3:])
             continue
-        m = re.match(":.*\n(\s+.*)+", block)
-        if m:
-            #print "Block %d is a code" % (i + 1)
-            #
-            f = re.findall("(\s+.*)", block)
-            body.append("<code><pre>%s</pre></code>" % "".join(f)[1:])
-            #
+        # RAW Data
+        if block[:6] == ":raw:\n":
+            new.append("<pre>%s</pre>" % block[6:])
             continue
+        # Unordered list
+        if block[0] in ["*", "#"]:
+            new.append(formatList(block))
+            continue
+        # Reference
         m = re.match("\[[0-9]+\] (.+) <.+>", block)
         if m:
-            #print "Block %d is a link" % (i + 1)
-            #
             f = re.findall("\[([0-9]+)\] (.+) <(.*)>", block)
             ref = "[%s] %s &lt;<a href=\"%s\">%s</a>&gt;"
             for l in f:
                 links.append(ref % (l[0], l[1], l[2], l[2]))
-            #
-            continue
-        m = re.match("\+\-+.*\-+\+", block)
-        if m:
-            #print "Block %d is a table" % (i + 1)
-            #
-            body.append("<pre>%s</pre>" % block)
-            #
-            continue
-        m = re.match(".+", block)
-        if m:
-            #print "Block %d is a paragraph" % (i + 1)
-            #
-            body.append("<p>%s</p>" % block)
-            #
-   
-    if len(links): 
-        body.append("<h3>Referanslar</h3>")
-        body.append("<p>%s</p>" % "<br/>".join(links))
+        # Paragraph
+        new.append("<p>%s</p>" % block)
 
-    return "\n".join(body)
+    if len(links): 
+        new.append("<h3>Referanslar</h3>")
+        new.append("<p>%s</p>" % "<br/>".join(links))
+
+    return new
 
 def formatList(s):
-    depth = 0
-    last = [0]
-    source = s.strip("\n").split("\n")
-    list = []
 
-    for line in source:
-        m = re.findall("(\s*)(\*?) (.*)", line)[0]
-        if m[1]:
-            if len(m[0]) > last[-1]:
-                depth += 1
-                last.append(len(m[0]))
-            elif len(m[0]) < last[-1]:
-                while len(m[0]) != last[-1]:
-                    depth -= 1
-                    last.pop()
-            list.append([depth, m[2]])
-        else:
-            list[-1][1] += " " + m[2]
+    re_spaces = lambda x: len(re.findall("(\s*)([\*|#]?) (.*)", x)[0][0])
+    re_content = lambda x: re.findall("(\s*)([\*|#]?) (.*)", x)[0][2]
+    re_sign = lambda x: re.findall("(\s*)([\*|#]?) (.*)", x)[0][1]
+
+    s = re.sub("\n\s+([^\*\s#].+)", "<br/>\\1", s)
+
+    lines = s.split("\n")
+
+    indent = [0]
+    indent_s = []
 
     new = ""
-    for i in range(len(list)):
-        ul = 0
-        new += "<li>%s" % (list[i][1])
-        if i + 1 < len(list) and list[i][0] < list[i+1][0]:
-            new += "<ul>"
-            ul = 1
-        elif i + 1 < len(list) and list[i][0] > list[i+1][0]:
-            for j in range(list[i][0] - list[i+1][0]):
-                new += "</li>"
-                new += "</ul>"
-        if not ul:
-            new += "</li>"
+    if s[0] == "*":
+        new += "<ul>"
+        indent_s.append("*")
+    else:
+        new += "<ol>"
+        indent_s.append("#")
 
-    if list[-1][0]:
-        new += "</ul></li>" * list[-1][0]
+    for i in range(len(lines)):
+        m = re_content(lines[i])
+        l = re_spaces(lines[i])
+        close = 1
+        new += "<li>%s" % m
+        if i + 1 < len(lines) and re_spaces(lines[i]) < re_spaces(lines[i+1]):
+            if re_sign(lines[i+1]) == "*":
+                new += "<ul>"
+                indent_s.append("*")
+            else:
+                new += "<ol>"
+                indent_s.append("#")
+            indent.append(re_spaces(lines[i+1]))
+            close = 0
+
+        if close:
+            new += "</li>"
+        
+        if i + 1 < len(lines) and re_spaces(lines[i]) > re_spaces(lines[i+1]):
+            while re_spaces(lines[i+1]) < indent[-1]:
+                indent.pop()
+                if indent_s.pop() == "*":
+                    new += "</ul></li>"
+                else:
+                    new += "</ol></li>"
+
+    for i in range(len(indent) - 1):
+        if indent_s.pop() == "*":
+            new += "</ul></li>"
+        else:
+            new += "</ol></li>"
+
+    if indent_s.pop() == "*":
+        new += "</ul>"
+    else:
+        new += "</ol>"
 
     return new
