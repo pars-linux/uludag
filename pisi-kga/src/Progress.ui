@@ -6,11 +6,23 @@
     </property>
     <property name="geometry">
         <rect>
-            <x>0</x>
+            <x>5</x>
             <y>0</y>
-            <width>475</width>
-            <height>94</height>
+            <width>460</width>
+            <height>100</height>
         </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>460</width>
+            <height>100</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>460</width>
+            <height>100</height>
+        </size>
     </property>
     <widget class="QLayoutWidget">
         <property name="name">
@@ -18,7 +30,7 @@
         </property>
         <property name="geometry">
             <rect>
-                <x>30</x>
+                <x>20</x>
                 <y>10</y>
                 <width>420</width>
                 <height>70</height>
