@@ -86,8 +86,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         pisi.api.init(database=True, options=None, ui=glob_ui)
         
         self.pDialog = ProgressDialog.ProgressDialog(self)
-	self.pDialog.setModal(True)
-        
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
     
@@ -140,12 +138,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         if selection.childCount():
             return
-        
-        self.package = pisi.packagedb.get_package(selection.text(0))
+
+        installed = pisi.packagedb.inst_packagedb.has_package(selection.text(0))
+        if installed:
+            self.package = pisi.packagedb.inst_packagedb.get_package(selection.text(0))
+        else:
+            self.package = pisi.packagedb.get_package(selection.text(0))
+            
         self.progNameLabel.setText(QString("<qt><h1>"+self.package.name.capitalize()+"</h1></qt>"))
         self.infoLabel.setText(self.package.summary)
         
-        installed = pisi.packagedb.inst_packagedb.has_package(self.package.name)
         size = self.package.installedSize
         
         if size >= 1024*1024:
