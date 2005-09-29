@@ -41,15 +41,9 @@
       </div>
     </fieldset>
     <fieldset>
-      <legend>Amaç</legend>
+      <legend>Öneri İçeriği</legend>
       <div class="required">
-        <textarea class="widetext $errorCl('p_purpose')" id="p_purpose" name="p_purpose" cols="60" rows="10">#echo $printValue('p_purpose', '') #</textarea>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Öneri Detayları</legend>
-      <div class="required">
-        <textarea class="widetext $errorCl('p_content')" id="p_content" name="p_content" cols="60" rows="10">#echo $printValue('p_content', '') #</textarea>
+        <textarea class="widetext $errorCl('p_content')" id="p_content" name="p_content" cols="60" rows="30">#echo $printValue('p_content', '') #</textarea>
       </div>
     </fieldset>
     <fieldset>

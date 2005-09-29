@@ -54,8 +54,7 @@ def view():
              users.username,
              proposals_pending.title,
              proposals_pending.summary,
-             proposals_pending.purpose,
-             proposals_pending.content
+             proposals_pending.content,
              proposals_pending.timeB
            FROM proposals_pending
              INNER JOIN users
@@ -68,20 +67,19 @@ def view():
     if row:
       p['posted'] = {
                      'p_title': html_escape(row[2]),
-                     'p_summary': nl2br(html_escape(row[3])),
-                     'p_purpose': nl2br(html_escape(row[4])),
-                     'p_content': nl2br(html_escape(row[5])),
+                     'p_summary': html_escape(row[3]),
+                     'p_content': html_escape(row[4]),
                      'p_tpid': tpid,
                      'p_uid': row[0],
                      'p_username': row[1],
-                     'p_timeB': row[7]
+                     'p_timeB': row[5]
                      }
     p.template = 'admin/pending_proposals.view.tpl'
  
 def publish():
     
-  if not len(p.form.getvalue('uid', '')):
-    p['errors']['uid'] = 'Kullanıcı numarası belirtilmemiş.'
+  if not len(p.form.getvalue('p_uid', '')):
+    p['errors']['p_uid'] = 'Kullanıcı numarası belirtilmemiş.'
     
   if not len(p.form.getvalue('p_title', '')):
     p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
@@ -89,9 +87,6 @@ def publish():
   if not len(p.form.getvalue('p_summary', '')):
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
 
-  if not len(p.form.getvalue('p_purpose', '')):
-    p['errors']['p_purpose'] = 'Amaç boş bırakılamaz.'
-    
   if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
@@ -113,8 +108,6 @@ def publish():
             'pid': pid,
             'version': version,
             'title': p.form.getvalue('p_title'),
-            'summary': p.form.getvalue('p_summary'),
-            'purpose': p.form.getvalue('p_purpose'),
             'content': p.form.getvalue('p_content'),
             'timeB': sql_datetime(now()),
             'changelog': "İlk sürüm."

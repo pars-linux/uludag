@@ -26,9 +26,6 @@ def new():
   if not len(p.form.getvalue('p_summary', '')):
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
 
-  if not len(p.form.getvalue('p_purpose', '')):
-    p['errors']['p_purpose'] = 'Amaç boş bırakılamaz.'
-    
   if not len(p.form.getvalue('p_content', '')):
     p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
 
@@ -53,7 +50,6 @@ def new():
               'version': version,
               'title': p.form.getvalue('p_title'),
               'summary': p.form.getvalue('p_summary'),
-              'purpose': p.form.getvalue('p_purpose'),
               'content': p.form.getvalue('p_content'),
               'timeB': sql_datetime(now()),
               'changelog': "İlk sürüm."
@@ -74,7 +70,6 @@ def new():
               'uid': p['session']['uid'],
               'title': p.form.getvalue('p_title'),
               'summary': p.form.getvalue('p_summary'),
-              'purpose': p.form.getvalue('p_purpose'),
               'content': p.form.getvalue('p_content'),
               'timeB': sql_datetime(now())
               }
@@ -86,7 +81,7 @@ def new():
 
 def index():
   p['posted'] = {
-                 'p_content': "Başlık\n======\nYazı\n\nBaşlık\n======\nYazı",
+                 'p_content': "Amaç\n====\n\nYazı\n\nDetaylar\n========\n\nYazı",
                  }
   p.template = 'new_proposal.tpl'
 
