@@ -71,11 +71,6 @@ def formatBlock(s):
     return new
 
 def formatList(s):
-
-    re_spaces = lambda x: len(re.findall("(\s*)([\*|#]?) (.*)", x)[0][0])
-    re_content = lambda x: re.findall("(\s*)([\*|#]?) (.*)", x)[0][2]
-    re_sign = lambda x: re.findall("(\s*)([\*|#]?) (.*)", x)[0][1]
-
     s = re.sub("\n\s+([^\*\s#].+)", "<br/>\\1", s)
 
     lines = s.split("\n")
@@ -91,31 +86,37 @@ def formatList(s):
         new += "<ol>"
         indent_s.append("#")
 
+    regex = lambda x: re.findall("(\s*)([\*|#]?) (.*)", x)[0]
+
     for i in range(len(lines)):
-        m = re_content(lines[i])
-        l = re_spaces(lines[i])
+        r1 = regex(lines[i])
         close = 1
-        new += "<li>%s" % m
-        if i + 1 < len(lines) and re_spaces(lines[i]) < re_spaces(lines[i+1]):
-            if re_sign(lines[i+1]) == "*":
-                new += "<ul>"
-                indent_s.append("*")
-            else:
-                new += "<ol>"
-                indent_s.append("#")
-            indent.append(re_spaces(lines[i+1]))
-            close = 0
+        new += "<li>%s" % r1[2]
+
+        if i + 1 < len(lines):
+            r2 = regex(lines[i+1])
+
+            if len(r1[0]) < len(r2[0]):
+                if r2[1] == "*":
+                    new += "<ul>"
+                    indent_s.append("*")
+                else:
+                    new += "<ol>"
+                    indent_s.append("#")
+                indent.append(len(r2[0]))
+                close = 0
 
         if close:
             new += "</li>"
         
-        if i + 1 < len(lines) and re_spaces(lines[i]) > re_spaces(lines[i+1]):
-            while re_spaces(lines[i+1]) < indent[-1]:
-                indent.pop()
-                if indent_s.pop() == "*":
-                    new += "</ul></li>"
-                else:
-                    new += "</ol></li>"
+        if i + 1 < len(lines):
+            if len(r1[0]) > len(r2[0]):
+                while len(r2[0]) < indent[-1]:
+                    indent.pop()
+                    if indent_s.pop() == "*":
+                        new += "</ul></li>"
+                    else:
+                        new += "</ol></li>"
 
     for i in range(len(indent) - 1):
         if indent_s.pop() == "*":
