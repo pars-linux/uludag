@@ -38,8 +38,6 @@
   <p>
     $proposal.summary
   </p>
-  <h3>Amaç</h3>
-  $proposal.purpose
 
   ## İçerik
   $proposal.content

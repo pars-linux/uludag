@@ -29,7 +29,6 @@ def index():
              proposals_versions.version,
              proposals_versions.title,
              proposals_versions.summary,
-             proposals_versions.purpose,
              proposals_versions.content
            FROM proposals
              INNER JOIN proposals_versions
@@ -42,16 +41,12 @@ def index():
 
     if row:
 
-      content = formatText(row[5])
-      if content.find("<h3>") < 0:
-        content = "<h3>Detaylar</h3>" + content
       p['proposal'] = {
                        'pid': row[0],
                        'version': html_escape(row[1]),
                        'title': html_escape(row[2]),
                        'summary': nl2br(html_escape(row[3])),
-                       'purpose': nl2br(html_escape(row[4])),
-                       'content': content
+                       'content': formatText(row[4])
                        }
 
       # Sürüm geçmişi
