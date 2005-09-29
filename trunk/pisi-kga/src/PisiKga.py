@@ -104,7 +104,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.show()
     
     def finished(self):
-        self.pDialog.forcedClose()
+        self.pDialog.close()
         self.updateListing()
         if self.errorMessage:
             KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
@@ -128,7 +128,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
-        self.pDialog.forcedClose()
+        self.pDialog.close()
         if self.errorMessage:
             self.errorMessage = self.errorMessage+msg
         else:
