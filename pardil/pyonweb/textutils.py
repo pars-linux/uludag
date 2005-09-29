@@ -60,6 +60,7 @@ def formatBlock(s):
             ref = "[%s] %s &lt;<a href=\"%s\">%s</a>&gt;"
             for l in f:
                 links.append(ref % (l[0], l[1], l[2], l[2]))
+            continue
         # Paragraph
         new.append("<p>%s</p>" % block)
 
