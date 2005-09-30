@@ -15,6 +15,7 @@
 from qt import *
 import PreferencesWidget
 import RepoDialog
+import ThreadRunner
 import PisiKga # for loadIcon
 
 # Pisi imports
@@ -23,7 +24,7 @@ import pisi.api
 class Preferences(PreferencesWidget.PrefsDialog):
     def __init__(self, parent=None):
         PreferencesWidget.PrefsDialog.__init__(self, parent)
-
+        self.command = ThreadRunner.Thread(parent)
         self.setCaption(u'PiSi KGA - Depo Ayarları')
         self.infoLabel.setPixmap(PisiKga.loadIcon('info'))
         self.networkLabel.setPixmap(PisiKga.loadIcon('network'))
@@ -122,8 +123,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
         self.repoList = pisi.api.ctx.repodb.list()
         if not len(self.repoList):
             pisi.api.add_repo('uludag', 'ftp://ftp.uludag.org.tr/pub/pisi/binary/pisi-index.xml')
-	    self.emit(PYSIGNAL("showProgressBar()"),('',))
-            pisi.api.update_repo('uludag')
-	    self.repoList = pisi.api.ctx.repodb.list()
-	    self.updateListView()
+            self.command.updateRepo('uludag')
+	    #self.repoList = pisi.api.ctx.repodb.list()
+	    #self.updateListView()
 

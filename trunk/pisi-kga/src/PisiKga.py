@@ -80,6 +80,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.errorMessage = None
 	self.savedProgress = 0
         self.oldFilename = None
+        self.updatedRepo = None
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
@@ -93,9 +94,14 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command.wait()
 
     def customEvent(self, event):
+        #print 'Got customEvent with id',event.type()
         self.command.wait()
         if event.type() == QEvent.User+1:
             self.finished()
+        elif event.type() == QEvent.User+2:
+            self.pDialog.setCaption(u'Depolar Güncelleniyor')
+            self.updatedRepo = event.data()
+            self.pDialog.show()
         else:
             pass
 
@@ -115,7 +121,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
         else:
             self.totalAppCount = 1
-            self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b>'%(filename))
+            self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b>'%(self.updatedRepo))
 
        	progress = length/self.totalAppCount + self.savedProgress
 
