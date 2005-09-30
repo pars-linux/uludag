@@ -29,5 +29,5 @@ tasmaprinters.desktop \
 tasmaprivacy.desktop \
 tasmaproxy.desktop \
 tasmascreensaver.desktop \
-tasmastyle.desktop
-
+tasmastyle.desktop \
+tasmapisi.desktop 
