@@ -45,7 +45,7 @@ def I18N_NOOP(str):
 
 ############################################################################
 description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
-version = "1.0alpha1"
+version = "1.0_alpha1"
 
 ############################################################################
 def AboutData():
