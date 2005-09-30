@@ -77,13 +77,10 @@ class Preferences(PreferencesWidget.PrefsDialog):
         # TODO move in pisi config too
 
     def updateAllRepos(self):
-        # TODO progress
         self.updateRepoButton.setEnabled(False)
         
         for i in self.repoList:
-            print 'Updating',i
-            pisi.api.update_repo(i)
-
+            self.command.updateRepo(i)
         self.updateRepoButton.setEnabled(True)
     
     def addNewRepo(self):
@@ -119,11 +116,14 @@ class Preferences(PreferencesWidget.PrefsDialog):
             item.setText(1, pisi.api.ctx.repodb.get_repo(str(repoName)).indexuri.get_uri())
             index -= 1
 
+    def customEvent(self,event):
+        if event.type() == QEvent.User+3:
+            self.repoList = pisi.api.ctx.repodb.list()
+            self.updateListView()
+            
     def readConfig(self):
         self.repoList = pisi.api.ctx.repodb.list()
         if not len(self.repoList):
             pisi.api.add_repo('uludag', 'ftp://ftp.uludag.org.tr/pub/pisi/binary/pisi-index.xml')
             self.command.updateRepo('uludag')
-	    #self.repoList = pisi.api.ctx.repodb.list()
-	    #self.updateListView()
 

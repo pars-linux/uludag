@@ -81,12 +81,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
 	self.savedProgress = 0
         self.oldFilename = None
         self.updatedRepo = None
+        self.pref = None
+        self.pDialog = ProgressDialog.ProgressDialog(self)
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
         pisi.api.init(database=True, options=None, ui=glob_ui)
         
-        self.pDialog = ProgressDialog.ProgressDialog(self)
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
     
@@ -94,7 +95,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command.wait()
 
     def customEvent(self, event):
-        #print 'Got customEvent with id',event.type()
         self.command.wait()
         if event.type() == QEvent.User+1:
             self.finished()
@@ -104,17 +104,22 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.pDialog.show()
         else:
             pass
-
-    def showProgressBar(self):
-        print 'Emitted showProgressBar!'
-        self.pDialog.show()
     
     def finished(self):
         self.pDialog.close()
+        self.resetProgressBar()
         self.updateListing()
         if self.errorMessage:
             KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
         self.errorMessage = None
+
+        event = QCustomEvent(QEvent.User+3)
+        kapp.postEvent(self.pref,event)
+
+    def resetProgressBar(self):
+        self.savedProgress = 0
+        self.pDialog.progressBar.setProgress(0)
+        self.pDialog.progressLabel.setText(u'PiSi Hazırlanıyor...')
 
     def updateProgressBar(self, filename, length):
         if filename.endswith(".pisi"):
@@ -305,7 +310,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def showSettings(self):
         self.pref = Preferences.Preferences(self)
-        self.connect(self.pref,PYSIGNAL("showProgressBar()"),self.showProgressBar)
         self.pref.setModal(True)
         self.pref.show()
         

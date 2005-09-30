@@ -1,12 +1,12 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>Progress</class>
+<class>ProgressDialog</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>Progress</cstring>
+        <cstring>ProgressDialog</cstring>
     </property>
     <property name="geometry">
         <rect>
-            <x>5</x>
+            <x>0</x>
             <y>0</y>
             <width>460</width>
             <height>100</height>
@@ -23,6 +23,12 @@
             <width>460</width>
             <height>100</height>
         </size>
+    </property>
+    <property name="caption">
+        <string>Progress</string>
+    </property>
+    <property name="modal">
+        <bool>true</bool>
     </property>
     <widget class="QLayoutWidget">
         <property name="name">
