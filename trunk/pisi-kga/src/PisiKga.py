@@ -38,16 +38,13 @@ import pisi.packagedb
 import pisi.installdb
 import pisi.repodb
 
-############################################################################
 # Workaround the fact that PyKDE provides no I18N_NOOP as KDE
 def I18N_NOOP(str):
     return str
 
-############################################################################
 description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
 version = "1.0_alpha1"
 
-############################################################################
 def AboutData():
     global version,description
     
@@ -61,28 +58,25 @@ def AboutData():
     about_data.addCredit("Simon Edwards", I18N_NOOP("PyKDEExtension'ın yazarı"),"simon@simonzone.com")
     return about_data
 
-############################################################################
 def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
-############################################################################
 def loadIconSet(name, group=KIcon.Desktop):
         return KGlobal.iconLoader().loadIconSet(name, group)
 
-############################################################################
 class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
         global glob_ui
         self.qObject = QObject()
-        self.command = ThreadRunner.Thread(self)
         self.errorMessage = None
 	self.savedProgress = 0
         self.oldFilename = None
         self.updatedRepo = None
         self.pref = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
+        self.command = ThreadRunner.Thread(self)
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
@@ -314,9 +308,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pref.show()
         
 
-############################################################################
-# The base class that we use depends on whether this is running inside
-# kcontrol or as a standalone application.
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
 
@@ -326,7 +317,6 @@ else:
     programbase = KCModule
     
 class MainApplication(programbase):
-    ########################################################################
     def __init__(self,parent=None,name=None):
         global standalone
         global mainwidget
@@ -371,12 +361,9 @@ class MainApplication(programbase):
 
         self.aboutus = KAboutApplication(self)
 
-    ########################################################################
     def __del__(self):
         pass
 
-    ########################################################################
-    # KDialogBase method
     def exec_loop(self):
         global programbase
         
@@ -388,16 +375,6 @@ class MainApplication(programbase):
         # Save configuration here
         self.__saveOptions()
 
-    ########################################################################
-    # KDialogBase method
-    def slotUser1(self):
-        self.aboutus.show()
-
-    ########################################################################
-    def slotCloseButton(self):
-        self.close()
-
-    ########################################################################
     def __loadOptions(self):
         global kapp
         config = kapp.config()
@@ -409,7 +386,6 @@ class MainApplication(programbase):
         if size.isEmpty()==False:
             self.resize(size)
 
-    #######################################################################
     def __saveOptions(self):
         global kapp
         config = kapp.config()
@@ -418,7 +394,6 @@ class MainApplication(programbase):
         config.writeEntry("ListBoxSelection",mainwidget.selectComboBox.currentItem())
         config.sync()
 
-    #######################################################################
     # KControl virtual void methods
     def load(self):
         pass
@@ -437,7 +412,6 @@ class MainApplication(programbase):
         # Only supply a Help button. Other choices are Default and Apply.
         return KCModule.Help
 
-############################################################################
 # This is the entry point used when running this module outside of kcontrol.
 def main():
     global kapp
@@ -454,7 +428,6 @@ def main():
     kapp.setMainWidget(myapp)
     sys.exit(myapp.exec_loop())
     
-############################################################################
 # Factory function for KControl
 def create_pisi_kga(parent,name):
     global kapp
@@ -462,6 +435,5 @@ def create_pisi_kga(parent,name):
     kapp = KApplication.kApplication()
     return MainApplication(parent, name)
 
-############################################################################
 if standalone:
     main()

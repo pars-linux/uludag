@@ -23,7 +23,9 @@ class Thread(QThread):
         self.upgrading = False
         self.removing = False
         self.updatingRepo = False
-        
+
+    def __del__(self):
+        self.wait()
 
     def install(self,apps):
         self.installing = True
