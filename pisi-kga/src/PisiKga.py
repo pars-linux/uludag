@@ -86,7 +86,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
-        pisi.api.init(database=True, options=None, ui=glob_ui)
+        pisi.api.init(database=True, options=None, ui=glob_ui, comar=False)
         
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
