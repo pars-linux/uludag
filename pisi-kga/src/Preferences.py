@@ -12,11 +12,13 @@
 #
 # Authors: İsmail Dönmez <ismail@uludag.org.tr>
 
+from kdeui import *
 from qt import *
 import PreferencesWidget
 import RepoDialog
 import ThreadRunner
 import PisiKga # for loadIcon
+from pisi import repodb
 
 # Pisi imports
 import pisi.api
@@ -98,7 +100,11 @@ class Preferences(PreferencesWidget.PrefsDialog):
     def processNewRepo(self):
         repoName = str(self.repo.repoNameLineEdit.text())
         repoAddress = str(self.repo.repoAddressLineEdit.text())
-        pisi.api.add_repo(repoName,repoAddress)
+        try:
+            pisi.api.add_repo(repoName,repoAddress)
+        except repodb.Error:
+            KMessageBox.error(self,u"<qt>Depo <b>%s</b> zaten var!</qt>"%(repoName), u"Pisi Hatası")
+            return
         item = QListViewItem(self.repoListView,None)
         item.moveItem(self.repoListView.lastChild())
         item.setText(0, repoName)
