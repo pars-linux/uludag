@@ -45,7 +45,7 @@ def I18N_NOOP(str):
 
 ############################################################################
 description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
-version = "0.5"
+version = "1.0"
 
 ############################################################################
 def AboutData():
@@ -56,9 +56,9 @@ def AboutData():
                             "(C) 2005 UEKAE/TÜBİTAK", None, None, "ismail@uludag.org.tr")
     
     about_data.addAuthor("İsmail Dönmez", None, "ismail@uludag.org.tr")
-    about_data.addCredit(I18N_NOOP("Madcat"), I18N_NOOP("Helping with my Python troubles"), None)
-    about_data.addCredit(I18N_NOOP("PiSi Authors"),  I18N_NOOP("The reason this application exists"), None)
-    about_data.addCredit("Simon Edwards", I18N_NOOP("Author of beautiful PyKDE extensions"),"simon@simonzone.com")
+    about_data.addCredit(I18N_NOOP("Gürer Özen"), I18N_NOOP("Python kodlama yardımı"), None)
+    about_data.addCredit(I18N_NOOP("Barış Metin"),  I18N_NOOP("PiSi API konusunda yardım"), None)
+    about_data.addCredit("Simon Edwards", I18N_NOOP("PyKDEExtension'ın yazarı"),"simon@simonzone.com")
     return about_data
 
 ############################################################################
@@ -119,12 +119,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
        	progress = length/self.totalAppCount + self.savedProgress
 
-        if length == 100 and filename != self.oldFilename:
+	if length == 100 and filename == self.oldFilename:
+            return
+        elif length == 100 and filename != self.oldFilename:
            self.savedProgress = self.savedProgress + length/self.totalAppCount
            self.oldFilename = filename
-        elif length == 100 and filename == self.oldFilename:
-            progress -= length/self.totalAppCount
-
+        
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
