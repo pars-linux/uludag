@@ -15,7 +15,8 @@
 
 import kdedistutils
 
-kdedistutils.setup(name="pisi_kga",
+kdedistutils.setup(
+    name="pisi_kga",
     version="0.5",
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
@@ -25,8 +26,9 @@ kdedistutils.setup(name="pisi_kga",
     license = "GPL",
     application_data = ['src/PisiKga.py','src/Preferences.py','src/PreferencesWidget.ui',
                         'src/ThreadRunner.py','src/RepoDialog.ui','src/MainWindow.ui',
-                        'src/Progress.ui','src/ProgressDialog.py','src/PisiUi.py'],
+                        'src/ProgressDialog.ui','src/PisiUi.py'],
     executable_links = [('pisi_kga','PisiKga.py')],
     docbooks = [ ('doc/en','en') ],
     i18n = ('po',['src']),
-    kcontrol_modules = [ ('src/pisi_kga.desktop','PisiKga.py')] )
+    kcontrol_modules = [ ('src/pisi_kga.desktop','PisiKga.py')],
+    )
