@@ -20,7 +20,7 @@ msgid "GoodbyeDlg"
 msgstr ""
 
 #: goodbyedlg.cpp:63
-msgid "You have finished.... Now you can start using Pardus Linux LiveCD"
+msgid "You have finished.... Now you can start using Pardus Linux"
 msgstr ""
 
 #: goodbyedlg.cpp:64
