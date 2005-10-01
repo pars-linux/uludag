@@ -36,7 +36,7 @@
                     <cstring>goodbyeDesc</cstring>
                 </property>
                 <property name="text">
-                    <string>You have finished.... Now you can start using Pardus Linux LiveCD</string>
+                    <string>You have finished.... Now you can start using Pardus Linux</string>
                 </property>
                 <property name="alignment">
                     <set>WordBreak|AlignCenter</set>

@@ -20,9 +20,9 @@ msgid "GoodbyeDlg"
 msgstr "GoodbyeDlg"
 
 #: goodbyedlg.cpp:63
-msgid "You have finished.... Now you can start using Pardus Linux LiveCD"
+msgid "You have finished.... Now you can start using Pardus Linux"
 msgstr ""
-"Bitirdiniz.... Şimdi Pardus Linux Çalışan CD'yi kullanmaya başlayabilirsiniz"
+"Bitirdiniz.... Şimdi Pardus Linux ile çalışmaya başlayabilirsiniz"
 
 #: goodbyedlg.cpp:64
 msgid "pix_goodbye"
