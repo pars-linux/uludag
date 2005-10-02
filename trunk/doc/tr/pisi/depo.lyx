@@ -1,0 +1,341 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\language turkish
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Title
+
+Pardus Depo Politikasý
+\layout Standard
+
+Belge Pardus paket depolarýný ve bu depolar üzerinde uyulmasý gereken kurallarý
+ listeler.
+\layout Standard
+
+Belge yalnýzca bir kullaným alanýna yönelik hazýrlanan Pardus iþletim sistemi
+ daðýtýmý için kurallarý tarif eder.
+ Farklý kullaným alanlarýna yönelik, farklý Pardus daðýtýmlarý (Pardus,
+ Pardus Sunucu, vb.) bulunabilir.
+ Belgede anlatýlan kurallar her Pardus daðýtýmý için ayrý ayrý uygulanýr.
+\layout Section
+
+Ýkili paket depolarý
+\layout Standard
+
+Ýkili paket depolarý PÝSÝ paketlerinin derlenmiþ ve kurluma hazýr hallerinin
+ bulunduðu depolardýr.
+ Pardus içerisinde o sýradaki daðýtým sürümü tarafýndan kullanýlan iki depo
+ vardýr:
+\layout Enumerate
+
+Kararlý (stable) depo
+\layout Enumerate
+
+Geliþtirme (development) deposu
+\layout Standard
+
+Bu ilk depo isminden anlaþýlacaðý üzere yayýnlanmýþ olan kararlý Pardus
+ sürümünün paketlerini barýndýrýr.
+ Bu depo sürüm çýkana kadar oluþturulmaz veya tümü ile boþ býrakýlýr.
+\layout Standard
+
+Geliþtirme deposu ise bir sonraki kararlý sürüm için hazýrlanmakta olan
+ PÝSÝ paketlerini içerisinde barýndýrýr.
+\layout Standard
+
+Yeni sürümler yayýnlandýkça kararlý olarak iþaretlenmiþ birden fazla depo
+ olabilmesine karþýn, bir kullaným alanýna/kullanýcý kitlesine hazýrlanan
+ Pardus sürümü için yalnýzca bir tane geliþtirme deposu bulunur.
+ Geliþtirme deposu yeterli olgunluða kavuþtuðunda ve sürüm tarihi geldiðinde,
+ geliþtirme deposu kopyalanarak sürüm için kararlý paket deposu oluþturulur.
+ Bundan sonra geliþtirme deposu bir sonraki sürüm için geliþtirmenin yapýldýðý
+ alan olarak görevine devam eder.
+\layout Standard
+
+Kararlý depo üzerinde, yazýlýmlarýn sürüm güncellemeleri ve depoya yeni
+ bir yazýlýmýn/paketin eklenmesi yalnýzca deponun kararlýlýðýný ve iþlevini
+ korumak için yapýlýr.
+ Kararlý sürümde yapýlan güncellemelerin amacý yeni özellikleri kararlý
+ sürüme kazandýrmak deðil, sürümün kararlýlýðýný korumak içindir.
+ Burada yapýlacak güncellemelerde programlar arasý iliþkilerin bozulmamasýna
+ azami önem göstermek gerekmektedir.
+ API ve ABI'ýn korunmasý esas olarak kabul edilir.
+\layout Standard
+
+Bir kararlý depo içerisinde her hangi bir paketin yalnýzca 
+\series bold 
+tek bir sürüm
+\series default 
+ü bulunabilir.
+ Eðer yazýlýmlarýn farklý sürümlerinin depoda bulunmasý gerekiyorsa bu pakete
+ 
+\series bold 
+farklý bir isim
+\series default 
+ verilerek çözülür.
+ Örneðin; gtk1 ve gtk2 paketleri farklý paket isimleri ile depoda bulunmalýdýr.
+\layout Subsection
+
+Depo isimlendirmesi
+\layout Standard
+
+Her kararlý sürüm, sürüm adý ve sürüm numarasýndan oluþan bir depo ismi
+ ile anýlýr.
+ Örneðin; Pardus 1.0 sürümü için depo ismi 
+\begin_inset Quotes eld
+\end_inset 
+
+pardus-1.0
+\begin_inset Quotes erd
+\end_inset 
+
+ dýr.
+\layout Standard
+
+Geliþtirme deposu ise bir kullaným alaný için hazýrlanan Pardus için her
+ zaman ayný ismi alýr.
+ Örneðin; Pardus isimli iþletim sistemi daðýtýmý için geliþtirme deposunun
+ ismi her zaman 
+\begin_inset Quotes eld
+\end_inset 
+
+pardus-devel
+\begin_inset Quotes erd
+\end_inset 
+
+ olarak isimlendirilecektir.
+ Bu isim, geliþtirilmekte olan bir sonraki sürümün numarasýndan baðýmsýzdýr
+ ve tektir.
+\layout Section
+
+Kaynak paket depolarý
+\layout Standard
+
+Kaynak paket depolarý PÝSÝ kaynak dizinlerinin bulunduðu depolardýr.
+ Paketler üzerinde yapýlan tüm geliþtirme kaynak paket depolarý üzerinden
+ yürütülür.
+ PÝSÝ paketleri bu kaynaklar kullanýlarak oluþturulur ve ikili depoya yerleþtiri
+lir.
+ Bu yüzden, ikili paket depolarý ile ilgili kurallar doðrudan kaynak paket
+ depolarýna da uygulanýr.
+\layout Standard
+
+Kaynak paket depolarýnýn isimlendirmesi de ikili depolar ile özdeþtir.
+\layout Standard
+
+Kaynak paket depolarý, ikili paket depolarýndan farklý olarak Subversion
+ sürüm kontrol sistemi üzerinde barýndýrýlýr.
+ Kararlý sürüm oluþturulacaðý zaman geliþtirme deposu etiketlenir (taglanýr)
+ ve etiketlenmiþ kaynaklardan ikili PÝSÝ paketleri oluþturularak sürüm için
+ kararlý ikili paket deposu oluþturulur.
+\layout Section
+
+Paket geliþtiricileri için kurallar
+\layout Standard
+
+Paket geliþtiricileri Subversion üzerinde bulunan kaynak paket depolarý
+ üzerinde çalýþýrlar.
+ Yazýlýmlarýn kaynak kodlarýndan PÝSÝ paketlerinin oluþturulmasý için gerekli
+ olan geliþtirme, paket geliþtiricileri tarafýndan yürütülür.
+\layout Standard
+
+Paket geliþtiricileri 3 farklý sorumluluk grubu ile listelenebilir.
+\layout Enumerate
+
+
+\series bold 
+Depo geliþtiricisi
+\series default 
+: Depo geliþtiricileri tüm depodan sorumlu olan ve tüm depo üzerinde iþlem
+ yapmaya yetkili kiþilerdir.
+\layout Enumerate
+
+
+\series bold 
+Kategori geliþtiricisi
+\series default 
+: PÝSÝ kaynaklarý tasarým belgesinde anlatýldýðý gibi bir kategori (Category
+ / PartOf) tanýmý yaparlar.
+ Kategori geliþticisi belirli bir kategoriye uyan tüm paketlerden sorumu
+ olan ve bu paketler üzerinde iþlem yapma yetkisine sahip geliþtiricidir.
+ Örnek kategoriler arasýnda, 
+\emph on 
+system/base, system/devel, dekstop/kde
+\emph default 
+ sayýlabilir.
+\layout Enumerate
+
+
+\series bold 
+Paket geliþtiricisi
+\series default 
+: Paket geliþtiricisi yalnýzca sorumluluðunu almýþ olduðu paketler üzerinde
+ iþlem yapma yetkisine sahiptir.
+\layout Standard
+
+Sorumluluk gruplarý sorunlarýn hýzlý bir þekilde giderilebilmesi ve farklý
+ boyutlarda kararlarýn hýzlý bir þekilde alýnabilmesi için oluþturulmuþtur.
+ Herhangi bir geliþtirici, sorumluluðunu aþan bir müdahale yapmak istediði
+ zaman izin isteyerek çalýþabilir.
+ Üzerinde anlaþýlmýþ konularda yapýlan düzeltmeler/güncellemeler genellike
+ izin istemeye gerek duyulmadan kabul edilir :).
+\layout Subsection
+
+Genel kurallar
+\layout Itemize
+
+Kaynak paket deposu üzerinde çalýþan geliþtiricilerin paket deposu kurallarýna
+ ve yayýnlanmýþ bir sürüm zaman planý varsa bu zaman planýna uymasý gerekir.
+\layout Itemize
+
+Paket geliþtiricileri hazýrladýklarý PÝSÝ kaynak dizinlerini hazýrlarlar,
+ fakat PÝSÝ kaynaklarýnýn .pisi ikili paketlerine dönüþtürülmesi doðrudan
+ paket geliþtiricileri tarafýndan gerçekleþtirilmez.
+ Bununla birlikte, geliþtiricinin kaynak paketi sisteminde oluþturduðu,
+ test ettiði ve sorunlarýndan arýndýrdýðý kabul edilir.
+\layout Itemize
+
+Geliþtiriciler üzerinde çalýþtýklarý kaynak paket deposunun en güncel versiyonu
+ ile çalýþmak zorundadýrlar.
+ Bu hem kararlý sürümde, hem de geliþtirme sürümünde yapýlan çalýþma için
+ geçerlidir.
+ 
+\layout Itemize
+
+Geliþtiriciler depoya gönderdikleri her paketten sorumludurlar, paketin
+ derlenebilir, sorunsuz ve çalýþýr olduðundan emin olmak zorundadýrlar.
+ Paket tüm testleri geçmelidir.
+\layout Itemize
+
+Eksik veya tamamlanmamýþ paketler depoya asla gönderilmemelidir.
+ Her paketin pspec.xml, actions.py dosyalarý doðru olarak yazýlmýþ olmalý.
+ Yamalarý ve ek dosyalarý files/ dizini altýnda bulunmalý.
+ COMAR betikleri ise comar/ dizini içerisinde bulunmalýdýr.
+ Paket derlenebiliyor ve kurulabiliyor olmalýdýr.
+\layout Itemize
+
+Geliþtirici paket güncellemelerinde pakete ait olan ChangeLog dosyasýný
+ düzgün, anlaþýlýr þekilde güncellemelidir.
+\layout Itemize
+
+Geliþtirici ayný anda birden fazla paket ile ilgili depoya gönderim yapmamalýdýr.
+ Örneðin; Bir geliþtirici 8 paket üzerinde birden deðiþiklik yaptý ise,
+ her paket için ayrý ayrý gönderimde bulunmalýdýr (yani toplamda 8 ayrý
+ gönderim).
+ Kýsaca gönderimler atomik olmalýdýr.
+\layout Itemize
+
+Bir geliþtirici bir baþka geliþtiricinin paketine acil durumlar dýþýnda
+ (güvenlik açýðý, geliþtiriciye uzun zamandýr ulaþamama gibi) müdahale etmemelid
+ir.
+ Bu kural KATEGORÝ sorumlulularý için ise sorumlu olduðu kategori dýþýndaki
+ paketleri kapsamaktadýr.
+ Bunun yerine ilgili paket ile ilgili düzeltmesini paket sorumlusuna veya
+ KATEGORÝ sorumlusuna göndermeli ve sorunun ne olduðunu ve nasýl çözüldüðünü
+ ayrýntýlý þekilde tarif etmelidir.
+\layout Itemize
+
+Depo'ya paket için gerekli yamalar, ek dosyalar veya post/pre betikleri,
+ PSPEC dosyasý, actions.py ve ÇOMAR betikleri dýþýnda hiçbir þey konmamalýdýr.
+ Paketin kaynak kodu, geliþtiricinin fotoðrafý ya da uygulamaya ait ekran
+ görüntüsü de bu kurala dahildir :).
+\layout Subsection
+
+Paket isimlendirme kurallarý
+\layout Standard
+
+Paket isimlerindirmesi ile ilgili kurallar pisi kaynak dizinindeki package_versi
+ons.tex belgesinde detaylý olarak anlatýlmaktadýr.
+ Bu bölümde kýsaca bir PÝSÝ paketinin isimlendirmesi anlatýlacaktýr.
+ Bu kural serisine uymayan isimlendirmeler hatalý kabul edilir.
+\layout Enumerate
+
+Bir pisi paketinin isimlendirme kuralý þu þekilde formülize edilebilir.
+ PAKET-VERSÝYON{_sonekNUMARA}-REVIZYON.
+ 
+\layout Enumerate
+
+Paket ismi ana geliþtiricinin pakete verdiði isimdir, deðiþtirilemez fakat
+ geniþletilebilir (kaynaðýnýn paketlenmesi sýrasýnda oluþturulacak bir alt
+ paket gcc-doc olarak isimlendirilebilir)
+\layout Enumerate
+
+Paket versiyonu ana geliþtiricinin pakete verdiði sürüm numarasýdýr, deðiþtirile
+mez.
+ (util-linuz-2.4z, kernel-2.6.9.4, gcc-3.3.6 gibi)
+\layout Enumerate
+
+_sonek ile belirtilen kýsým 
+\begin_inset Quotes eld
+\end_inset 
+
+alpha
+\begin_inset Quotes erd
+\end_inset 
+
+, 
+\begin_inset Quotes eld
+\end_inset 
+
+beta
+\begin_inset Quotes erd
+\end_inset 
+
+, 
+\begin_inset Quotes eld
+\end_inset 
+
+pre
+\begin_inset Quotes erd
+\end_inset 
+
+, 
+\begin_inset Quotes eld
+\end_inset 
+
+rc
+\begin_inset Quotes erd
+\end_inset 
+
+ ve 
+\begin_inset Quotes eld
+\end_inset 
+
+p [patch level]
+\begin_inset Quotes erd
+\end_inset 
+
+ den biri olabilir.
+ Bunlarýn kendi arasýnda sýralamasý þöyledir; alpha < beta < pre < rc <
+ Son eksiz paket < p.
+ (1.1_alpha1 < 1.1_beta1 < 1.1 < 1.1_p4 )
+\layout Enumerate
+
+Revizyon geliþtirici tarafýndan pakete verilen ve devamlý artan bir sayýdýr.
+ Pakete yapýlan deðiþikliklerde bu revizyon numarasý 
+\bar under 
+her zaman
+\bar default 
+ arttýrýlmalýdýr.
+\the_end
