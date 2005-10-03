@@ -29,6 +29,13 @@
   <form action="new_proposal.py" method="post">
     <fieldset>
       <legend>Öneri Bilgileri</legend>
+      <div class="optional">
+        <label for="p_pid">Öneri Numarası:</label>
+        <input class="$errorCl('p_pid')" type="text" id="p_pid" name="p_pid" size="20" value="#echo $printValue('p_pid', '') #" />
+        <div>
+          <small>Öneri numarasının otomatik atanmasını istiyorsanız, burayı boş bırakın.</small>
+        </div>
+      </div>
       <div class="required">
         <label for="p_title">Başlık:</label>
         <input class="$errorCl('p_title')" type="text" id="p_title" name="p_title" size="35" value="#echo $printValue('p_title', '') #" />

@@ -55,7 +55,8 @@ def view():
              proposals_pending.title,
              proposals_pending.summary,
              proposals_pending.content,
-             proposals_pending.timeB
+             proposals_pending.timeB,
+             proposals_pending.pid
            FROM proposals_pending
              INNER JOIN users
                ON users.uid = proposals_pending.uid
@@ -72,12 +73,25 @@ def view():
                      'p_tpid': tpid,
                      'p_uid': row[0],
                      'p_username': row[1],
-                     'p_timeB': row[5]
+                     'p_timeB': row[5],
+                     'p_pid': row[6]
                      }
     p.template = 'admin/pending_proposals.view.tpl'
  
 def publish():
     
+  try:
+    t_pid = int(p.form.getvalue('p_pid', 0))
+  except:
+    p['errors']['p_pid'] = 'Öneri numarası rakamlardan oluşmalı.'
+  else:
+    q = """SELECT Count(*)
+           FROM proposals
+           WHERE pid = %d
+        """ % (t_pid)
+    if p.db.scalar_query(q):
+      p['errors']['p_pid'] = 'Bu numaraya sahip bir öneri var.'
+
   if not len(p.form.getvalue('p_uid', '')):
     p['errors']['p_uid'] = 'Kullanıcı numarası belirtilmemiş.'
     
@@ -101,7 +115,12 @@ def publish():
             'uid': p.form.getvalue('p_uid'),
             'startup': sql_datetime(now())
             }
-    pid = p.db.insert('proposals', list)
+    if t_pid:
+      list['pid'] = t_pid
+      p.db.insert('proposals', list)
+      pid = t_pid
+    else:
+      pid = p.db.insert('proposals', list)
 
     # İlk sürümü ekle
     list = {
