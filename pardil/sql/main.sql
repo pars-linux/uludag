@@ -223,6 +223,7 @@ INSERT INTO users (uid, username, password, email) VALUES (2, 'test', '0ed2aa90d
 CREATE TABLE `proposals_pending` (
   `tpid` int(10) unsigned NOT NULL auto_increment,
   `uid` int(10) unsigned NOT NULL default '0',
+  `pid` int(10) unsigned NOT NULL default '0',
   `title` varchar(100) collate utf8_turkish_ci NOT NULL default '',
   `summary` text collate utf8_turkish_ci NOT NULL,
   `purpose` text collate utf8_turkish_ci NOT NULL,

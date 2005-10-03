@@ -20,6 +20,18 @@ if 'proposals_add' not in p['acl'] and not p.site_admin():
 def new():
   p.template = 'new_proposal.tpl'
 
+  try:
+    t_pid = int(p.form.getvalue('p_pid', 0))
+  except:
+    p['errors']['p_pid'] = 'Öneri numarası rakamlardan oluşmalı.'
+  else:
+    q = """SELECT Count(*)
+           FROM proposals
+           WHERE pid = %d
+        """ % (t_pid)
+    if p.db.scalar_query(q):
+      p['errors']['p_pid'] = 'Bu numaraya sahip bir öneri var.'
+    
   if not len(p.form.getvalue('p_title', '')):
     p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
 
@@ -42,7 +54,12 @@ def new():
               'uid': p['session']['uid'],
               'startup': sql_datetime(now())
               }
-      pid = p.db.insert('proposals', list)
+      if t_pid:
+        list['pid'] = t_pid
+        p.db.insert('proposals', list)
+        pid = t_pid
+      else:
+        pid = p.db.insert('proposals', list)
 
       # İlk sürümü ekle
       list = {
@@ -67,6 +84,7 @@ def new():
       p['version'] = version
     else:
       list = {
+              'pid': t_pid,
               'uid': p['session']['uid'],
               'title': p.form.getvalue('p_title'),
               'summary': p.form.getvalue('p_summary'),
