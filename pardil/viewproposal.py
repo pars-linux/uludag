@@ -18,10 +18,21 @@ p.title = site_config['title']
 def index():
   try:
     pid = int(p.form.getvalue('pid'))
-    version = p.form.getvalue('version')
+    version = p.form.getvalue('version', 0)
   except:
     p.template = 'viewproposal.error.tpl'
     return
+
+  if not version:
+    q = """SELECT
+             version
+           FROM proposals_versions
+           WHERE
+             pid=%d
+           ORDER BY vid DESC
+           LIMIT 1
+        """ % (pid)
+    version = p.db.scalar_query(q)
 
   if pid and version:
     q = """SELECT
