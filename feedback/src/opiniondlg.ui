@@ -31,6 +31,79 @@
             <bool>true</bool>
         </property>
     </widget>
+    <widget class="QTextEdit">
+        <property name="name">
+            <cstring>opinionEdit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>173</x>
+                <y>160</y>
+                <width>380</width>
+                <height>100</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>opinionLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>60</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Your opinions about Pardus?&lt;/h2&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>opinionMiniLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>100</y>
+                <width>400</width>
+                <height>41</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>56</red>
+                <green>56</green>
+                <blue>56</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>230</red>
+                <green>230</green>
+                <blue>230</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>(Ease of installation and use, capability of software,
+general quality, adoptability, suitability to requirements, etc)</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignBottom|AlignRight</set>
+        </property>
+    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>stepLabel</cstring>
@@ -57,80 +130,7 @@
             <enum>Plain</enum>
         </property>
         <property name="text">
-            <string>&lt;b&gt;Adım (5/6)&lt;/b&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>opinionLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>170</x>
-                <y>60</y>
-                <width>420</width>
-                <height>40</height>
-            </rect>
-        </property>
-        <property name="font">
-            <font>
-            </font>
-        </property>
-        <property name="text">
-            <string>&lt;h2&gt;Pardus Linux hakkında düşünceleriniz?&lt;/h2&gt;</string>
-        </property>
-        <property name="textFormat">
-            <enum>RichText</enum>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>opinionMiniLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>260</x>
-                <y>100</y>
-                <width>290</width>
-                <height>41</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>56</red>
-                <green>56</green>
-                <blue>56</blue>
-            </color>
-        </property>
-        <property name="paletteBackgroundColor">
-            <color>
-                <red>230</red>
-                <green>230</green>
-                <blue>230</blue>
-            </color>
-        </property>
-        <property name="text">
-            <string>(Kurulum, kullanım kolaylığı, içerdiği yazılımlar, 
-genel kalite, amaca uygunluk, yeterlilik vb)</string>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignBottom|AlignRight</set>
-        </property>
-    </widget>
-    <widget class="QTextEdit">
-        <property name="name">
-            <cstring>opinionEdit</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>173</x>
-                <y>160</y>
-                <width>380</width>
-                <height>100</height>
-            </rect>
+            <string>&lt;b&gt;Step 5 of 6&lt;/b&gt;</string>
         </property>
     </widget>
 </widget>
