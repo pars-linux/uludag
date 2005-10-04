@@ -91,29 +91,6 @@
     </widget>
     <widget class="QLabel">
         <property name="name">
-            <cstring>usageMiniLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>300</x>
-                <y>100</y>
-                <width>270</width>
-                <height>24</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>56</red>
-                <green>56</green>
-                <blue>56</blue>
-            </color>
-        </property>
-        <property name="text">
-            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
             <cstring>usageLabel</cstring>
         </property>
         <property name="geometry">
@@ -165,6 +142,22 @@
         </property>
         <property name="text">
             <string>&lt;b&gt;Step 3 of 6&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usageMiniLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>300</x>
+                <y>100</y>
+                <width>270</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
         </property>
     </widget>
 </widget>
