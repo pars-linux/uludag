@@ -31,32 +31,6 @@
             <bool>true</bool>
         </property>
     </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>usageLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>170</x>
-                <y>60</y>
-                <width>420</width>
-                <height>40</height>
-            </rect>
-        </property>
-        <property name="font">
-            <font>
-            </font>
-        </property>
-        <property name="text">
-            <string>&lt;h2&gt;Pardus Linux'u nerede kullanıyorsunuz?&lt;/h2&gt;</string>
-        </property>
-        <property name="textFormat">
-            <enum>RichText</enum>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
-    </widget>
     <widget class="QButtonGroup">
         <property name="name">
             <cstring>usagebuttonGroup</cstring>
@@ -93,7 +67,7 @@
                         <cstring>usagecheckBoxOne</cstring>
                     </property>
                     <property name="text">
-                        <string>Evde</string>
+                        <string>At home</string>
                     </property>
                 </widget>
                 <widget class="QCheckBox">
@@ -101,7 +75,7 @@
                         <cstring>usagecheckBoxTwo</cstring>
                     </property>
                     <property name="text">
-                        <string>İşyerinde</string>
+                        <string>At work</string>
                     </property>
                 </widget>
                 <widget class="QCheckBox">
@@ -109,11 +83,60 @@
                         <cstring>usagecheckBoxThree</cstring>
                     </property>
                     <property name="text">
-                        <string>Okulda</string>
+                        <string>At school</string>
                     </property>
                 </widget>
             </vbox>
         </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usageMiniLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>300</x>
+                <y>100</y>
+                <width>270</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>56</red>
+                <green>56</green>
+                <blue>56</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usageLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>60</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Where do you use Pardus?&lt;/h2&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
     </widget>
     <widget class="QLabel">
         <property name="name">
@@ -141,30 +164,7 @@
             <enum>Plain</enum>
         </property>
         <property name="text">
-            <string>&lt;b&gt;Adım (3/6)&lt;/b&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>usageMiniLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>350</x>
-                <y>100</y>
-                <width>220</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>56</red>
-                <green>56</green>
-                <blue>56</blue>
-            </color>
-        </property>
-        <property name="text">
-            <string>(Birden fazla şık işaretleyebilirsiniz)</string>
+            <string>&lt;b&gt;Step 3 of 6&lt;/b&gt;</string>
         </property>
     </widget>
 </widget>
