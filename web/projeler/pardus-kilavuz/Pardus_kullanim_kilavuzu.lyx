@@ -85,7 +85,7 @@ Pardus Çalýþan CD'ye sahip olmak...
 
 Pardus Çalýþan CD' yi elinizde tutuyor olabilirsiniz bu durumda ikinci kýsýma
  geçebilirsiniz.
- Eðer hazýr bir çalýþan CD'ye sahip deðilseniz kendi çalýþan CD' nizi elde
+ Eðer hazýr bir çalýþan CD'ye sahip deðilseniz kendi çalýþan CD'nizi elde
  etmek için izlemeniz gereken yol bu bölümde anlatýlacak.
 \layout Standard
 
@@ -108,18 +108,17 @@ md5sum dosya_adi yani md5sum pardus-calisan_cd.1.0b.iso
 
 komutunu verdiðinizde aldýðýnýz sonuç MD5SUM dosyasýndaki ile ayný olmalý.
  Aksi takdirde çektiðiniz dosyada bir bozulma olmuþ demektir.
-\layout Standard
-
-( Windows kullanýcýlarý MD5SUM kontrolü için GPL lisanslý MD5summer adlý
- yazýlýmý kullanabilirler.
- )
+ Windows kullanýcýlarý ise MD5SUM kontrolü için www.md5summer.org adresinden
+ temin edilebilecek GPL lisanslý MD5summer adlý yazýlýmý bu iþlem için kullanabi
+lirler.
+ 
 \layout Standard
 
 Çektiðiniz ISO dosyasýnýn MD5SUM kontrolünü yaptýktan sonra ISO imajýný
  CD'ye yazmalýsýnýz.
  Kullandýðýnýz CD Yazma Programýna göre ifade ediliþ tarzý farklýlýklar
- gösterse de burada dikkat etmeniz gereken ISO dosyasýný CD'ye direkt kopyalamak
- deðil 
+ gösterse de burada dikkat etmeniz gereken ISO dosyasýný CD'ye doðrudan
+ kopyalamak deðil 
 \begin_inset Quotes eld
 \end_inset 
 
@@ -138,7 +137,7 @@ bootable CD oluþturma
  seçeneklerini seçmiþ olmanýzdýr.
 \layout Section
 
-Pardus Ýle çalýþmaya baþlamadan önce...
+Pardus ile çalýþmaya baþlamadan önce...
 \layout Standard
 
 Pardus ile çalýþmaya baþlamak için bilgisayarýnýzýn BIOS ayarlarýný kullanarak
@@ -151,22 +150,25 @@ first boot device
 \begin_inset Quotes erd
 \end_inset 
 
- (çalýþmayý deneyeceði ilk aygýt) olarak CDROM'unuzu seçmelisiniz.
+ (çalýþmayý deneyeceði ilk aygýt) olarak CD-ROM'unuzu seçmelisiniz.
+ Genellikle bilgisayarlarýn fabrika çýkýþ ayarlarýnda bilgisayar ilk önce
+ CD-ROM sürücüsünden açýlacak þekilde yapýlandýrýldýðý için bu iþleme ihtiyaç
+ duymayabilirsiniz.
  Daha sonra bilgisayarýnýzý yeniden baþlatacaksýnýz.
- Bilgisayarýnýz bundan böyle baþlamak için önce CDROM'u tarayacak böylece
- sabit diskinizde kurulu olan iþletim sistemi ile deðil de CD üzerindeki
- Pardus ile çalýþmaya baþlayacaksýnýz.
+ Bilgisayarýnýz bundan böyle baþlamak için önce CD-ROM'u tarayacak, böylece
+ sabit diskinizde kurulu olan iþletim sistemi ile yerine CD üzerindeki Pardus
+ ile çalýþmaya baþlayacaksýnýz.
 \layout Standard
 
 Dizüstü bilgisayar kullanýcýlarý, bilgisayarlarlarýnýn üreticilerinin belirledið
 i özel tuþ kombinasyonlarýný kullanarak baþlangýç aygýtýný seçebilirler,
  bilgisayarýnýzýn kullaným klavuzundan ya da teknik destek biriminden bilgisayar
-ýnýzý CDROMdan baþlatmak için hangi tuþ kombinasyonunu kullanacaðýnýzý öðrenebil
-irsiniz.
+ýnýzý CD-ROM'dan baþlatmak için hangi tuþlarý kullanacaðýnýzý öðrenebilirsiniz.
 \layout Standard
 
-Bilgisayarýnýz CD üzerinde çalýþtýrýlabilir bir ortam bulamazsa otomatikman
- ikinci sýradaki aygýta geçecektir, BIOSta 
+Bilgisayarýnýz CD üzerinde çalýþtýrýlabilir bir ortam bulamazsa kendiliðinden
+ ikinci sýradaki aygýta geçecektir.
+ BIOS'ta 
 \begin_inset Quotes eld
 \end_inset 
 

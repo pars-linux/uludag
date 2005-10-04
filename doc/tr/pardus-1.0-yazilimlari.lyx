@@ -175,8 +175,12 @@ Kullanýlabilirlik
  Her iki masaüstü de temel kullanýcý ihtiyaçlarýný karþýlayabilir nitelikte.
  Yine de KDE kullanýcýlarýn bu temel ihtiyaçlarýnýn karþýlanmasý konusunda
  biraz daha hassas.
- Örneðin GNOME 2.6 sürümünde nautilus dosya yöneticisi içerisinden bir dosyayý
- sürükleyip býrakarak kýsa yol oluþturmak mümkün olmuyordu.
+ Örneðin GNOME 2.6 sürümünde 
+\series default 
+N
+\series medium 
+autilus dosya yöneticisi içerisinden bir dosyayý sürükleyip býrakarak kýsa
+ yol oluþturmak mümkün olmuyordu.
 
 \series default 
  GNOME'un yeni sürümlerinde kullanýlabilirlik konusunda her ne kadar detaylý
@@ -338,13 +342,13 @@ Adres defteri
 Kaddressbook
 \layout Subsection
 
-Ajanda
+Günlük
 \layout Itemize
 
 Korganizer
 \layout Subsection
 
-Haber kanallarý istemcisi
+Haber gruplarý
 \layout Itemize
 
 Knode
@@ -383,7 +387,7 @@ Konferans
 Gnomemeeting (-)
 \layout Subsection
 
-Dosya trasferi
+Dosya transferi
 \layout Itemize
 
 KGet
@@ -395,11 +399,11 @@ Web sayfalarý düzenleyicisi (+)
 Çoklu ortam
 \layout Itemize
 
-Müzik CDsi çalýcýsý
+Müzik CD'si çalýcýsý
 \begin_deeper 
 \layout Itemize
 
-KSCD
+KsCD
 \end_deeper 
 \layout Itemize
 
@@ -407,13 +411,13 @@ Müzik dosyalarý çalýcýsý
 \begin_deeper 
 \layout Itemize
 
-Amarok (*)
+aMarok (*)
 \layout Itemize
 
-juk
+Juk
 \layout Itemize
 
-xmms(-)
+Xmms(-)
 \layout Itemize
 
 Noatun
@@ -442,7 +446,7 @@ RealPlayer
 \end_deeper 
 \layout Itemize
 
-Dosya biçimi düzenleyici
+Müzik CD'si dönüþtürücü
 \begin_deeper 
 \layout Itemize
 
@@ -510,6 +514,8 @@ Ofis
 Kelime iþlem programlarýndan OpenOffice.org'un daðýtým çýktýðý anda kararlý
  2.0 sürümüne sahip olmasý beklenmiyor, ancak halihazýrda kullanýlan beta
  sürümün de yeteri kadar kararlý olduðu belirtiliyor.
+ Bu nedenle daðýtýmda OpenOffice.org'un asgari 2.0 RC1 sürümü kullanýlacaktýr.
+ 
 \layout Itemize
 
 Kelime iþlemci
@@ -536,7 +542,7 @@ OpenOffice.org Impress
 \end_deeper 
 \layout Itemize
 
-Diagram
+Diagram çizimi
 \begin_deeper 
 \layout Itemize
 
@@ -548,9 +554,6 @@ Dosya yöneticisi
 \layout Itemize
 
 Konqueror
-\layout Itemize
-
-KFloppy
 \layout Subsection
 
 Metin düzenleyici
@@ -592,7 +595,7 @@ KDict
 Oyun
 \layout Itemize
 
-KDE Games
+KDE Games altýndan seçilen oyunlar
 \layout Itemize
 
 KTouch
@@ -602,4 +605,13 @@ Komut satýrý emülasyonu
 \layout Itemize
 
 Konsole
+\layout Subsection
+
+Sistem uygulamalarý
+\layout Itemize
+
+Kfloppy (disket biçimlendirici)
+\layout Itemize
+
+Qtparted (sabit disk biçimlendirici)
 \the_end
