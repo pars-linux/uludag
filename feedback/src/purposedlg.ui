@@ -117,7 +117,7 @@
                                 <cstring>checkBox2_4</cstring>
                             </property>
                             <property name="text">
-                                <string>Entertainment</string>
+                                <string>Entertainment purposes</string>
                             </property>
                         </widget>
                         <widget class="QCheckBox">
@@ -125,62 +125,13 @@
                                 <cstring>checkBox2_2_2</cstring>
                             </property>
                             <property name="text">
-                                <string>Education</string>
+                                <string>Educational purposes</string>
                             </property>
                         </widget>
                     </vbox>
                 </widget>
             </hbox>
         </widget>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>purposeLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>170</x>
-                <y>60</y>
-                <width>420</width>
-                <height>40</height>
-            </rect>
-        </property>
-        <property name="font">
-            <font>
-            </font>
-        </property>
-        <property name="text">
-            <string>&lt;h2&gt;How and where do you use Pardus?&lt;/h2&gt;</string>
-        </property>
-        <property name="textFormat">
-            <enum>RichText</enum>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>purposeMiniLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>310</x>
-                <y>100</y>
-                <width>260</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="paletteBackgroundColor">
-            <color>
-                <red>230</red>
-                <green>230</green>
-                <blue>230</blue>
-            </color>
-        </property>
-        <property name="text">
-            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
-        </property>
     </widget>
     <widget class="QLabel">
         <property name="name">
@@ -209,6 +160,48 @@
         </property>
         <property name="text">
             <string>&lt;b&gt;Step 2 of 6&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>purposeMiniLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>310</x>
+                <y>100</y>
+                <width>260</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>purposeLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>60</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Why do you use Pardus?&lt;/h2&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
         </property>
     </widget>
 </widget>
