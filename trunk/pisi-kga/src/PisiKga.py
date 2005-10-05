@@ -86,9 +86,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
     
     def customEvent(self, event):
-        if event.type() == QEvent.User+1:
+        if event.type() == QEvent.User+1: # from ThreadRunner
             self.finished()
-        elif event.type() == QEvent.User+2:
+        elif event.type() == QEvent.User+2: # from Preferences
             self.pDialog.setCaption(u'Depolar Güncelleniyor')
             self.updatedRepo = event.data()
             self.pDialog.show()
@@ -331,19 +331,14 @@ class MainApplication(programbase):
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
         KGlobal.iconLoader().addAppDir("pisi_kga")
-        
-        if standalone:
-            toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
-            mainwidget = MainApplicationWidget(self)
-        else:
-            toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
-            mainwidget = MainApplicationWidget(self)
 
+        mainwidget = MainApplicationWidget(self)
+        toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
         mainwidget.warningLabel.hide()
         mainwidget.installButton.hide()
         mainwidget.listView.setResizeMode(QListView.LastColumn)
-        mainwidget.clearButton.setIconSet(loadIconSet('locationbar_erase', KIcon.Small))
+        mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         mainwidget.searchLine.setListView(mainwidget.listView)
         
