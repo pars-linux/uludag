@@ -26,7 +26,7 @@ import pisi.api
 class Preferences(PreferencesWidget.PrefsDialog):
     def __init__(self, parent=None):
         PreferencesWidget.PrefsDialog.__init__(self, parent)
-        self.command = ThreadRunner.Thread(parent)
+        self.command = ThreadRunner.MyThread(parent)
         self.setCaption(u'PiSi KGA - Depo Ayarları')
         self.infoLabel.setPixmap(PisiKga.loadIcon('info'))
         self.networkLabel.setPixmap(PisiKga.loadIcon('network'))
