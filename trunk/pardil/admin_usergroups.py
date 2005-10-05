@@ -47,8 +47,7 @@ def index():
   q = """SELECT
            gid, label
          FROM groups
-         ORDER BY gid ASC
-      """
+         ORDER BY gid ASC"""
   list = p.db.query(q)
   for i in list:
     l = {
@@ -61,8 +60,7 @@ def index():
   q = """SELECT
            uid, username
          FROM users
-         ORDER BY username ASC
-      """
+         ORDER BY username ASC"""
   list = p.db.query(q)
   for i in list:
     p['users'].append({'uid': i[0], 'username': i[1]})
@@ -85,27 +83,24 @@ def delete():
           FROM groups
             INNER JOIN rel_groups
              ON rel_groups.gid=groups.gid
-          WHERE rel_groups.relid=%d
-       """ % (p['relid'])
+          WHERE rel_groups.relid=%s"""
   q2 = """SELECT
             users.username
           FROM users
             INNER JOIN rel_groups
               ON rel_groups.uid=users.uid
-          WHERE rel_groups.relid=%d
-       """ % (p['relid'])
+          WHERE rel_groups.relid=%s"""
 
-  p['group'] = p.db.scalar_query(q1)
-  p['user'] = p.db.scalar_query(q2)
+  p['group'] = p.db.scalar_query(q1, p['relid'])
+  p['user'] = p.db.scalar_query(q2, p['relid'])
   if not p['group'] or not p['user']:
     p.template = 'admin/usergroups.error.tpl'
   else:
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM rel_groups
-               WHERE relid=%d
-            """ % (p['relid'])
-        p.db.query_com(q)
+               WHERE relid=%s"""
+        p.db.query_com(q, p['relid'])
         p.template = 'admin/usergroups.delete_yes.tpl'
       else:
         p.template = 'admin/usergroups.delete_no.tpl'
@@ -121,21 +116,18 @@ def insert():
   else:
     q1 = """SELECT Count(*)
             FROM users
-            WHERE uid=%d
-         """  % (uid)
+            WHERE uid=%s"""
     q2 = """SELECT Count(*)
             FROM groups
-            WHERE gid=%d
-         """  % (gid)
+            WHERE gid=%s"""
     q3 = """SELECT Count(*)
             FROM rel_groups
-            WHERE gid=%d AND uid=%d
-         """ % (gid, uid)
-    if p.db.scalar_query(q1) == 0:
+            WHERE gid=%s AND uid=%s"""
+    if p.db.scalar_query(q1, uid) == 0:
       p['errors']['u_user'] = 'Geçersiz kullanıcı numarası.'
-    elif p.db.scalar_query(q2) == 0:
+    elif p.db.scalar_query(q2, gid) == 0:
       p['errors']['u_group'] = 'Geçersiz grup numarası.'
-    elif p.db.scalar_query(q3) > 0:
+    elif p.db.scalar_query(q3, (gid, uid)) > 0:
       p['errors']['u_user'] = 'Kullanıcı zaten bu gruba dahil.'
      
   if not len(p['errors']):
@@ -143,14 +135,12 @@ def insert():
 
     q = """SELECT label
            FROM groups
-           WHERE gid=%d
-        """ % (gid)
-    p['group'] = p.db.scalar_query(q)
+           WHERE gid=%s"""
+    p['group'] = p.db.scalar_query(q, gid)
     q = """SELECT username
            FROM users
-           WHERE uid=%d
-        """ % (uid)
-    p['user'] = p.db.scalar_query(q)
+           WHERE uid=%s"""
+    p['user'] = p.db.scalar_query(q, uid)
 
     list = {
             'gid': gid,

@@ -30,9 +30,8 @@ def register():
   else:
     q = """SELECT Count(*)
            FROM users
-           WHERE username="%s"
-        """ % (p.db.escape(p.form.getvalue('r_username')))
-    if p.db.scalar_query(q) > 0:
+           WHERE username=%s"""
+    if p.db.scalar_query(q, p.form.getvalue('r_username')) > 0:
       p['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
    
   # E-posta adresini kontrol et.
@@ -43,9 +42,8 @@ def register():
   else:
     q = """SELECT Count(*)
            FROM users
-           WHERE email="%s"
-        """ % (p.db.escape(p.form.getvalue('r_email')))
-    if p.db.scalar_query(q) > 0:
+           WHERE email=%s"""
+    if p.db.scalar_query(q, p.form.getvalue('r_email')) > 0:
       p['errors']['r_email'] = 'E-posta adresi başkası tarafından kullanılıyor.'
       
   # Parolayı kontrol et.

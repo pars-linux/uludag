@@ -27,8 +27,7 @@ def index():
   versions = []
   q = """SELECT max(vid)
          FROM proposals_versions
-         GROUP BY pid
-      """
+         GROUP BY pid"""
   for row in p.db.query(q):
     versions.append(str(row[0]))
 
@@ -88,8 +87,7 @@ def index():
   q = """SELECT
            uid, username
          FROM users
-         ORDER BY username ASC
-      """
+         ORDER BY username ASC"""
   list = p.db.query(q)
   for i in list:
     p['users'].append({'uid': i[0], 'username': i[1]})
@@ -105,27 +103,24 @@ def delete():
 
   q1 = """SELECT pid
           FROM rel_maintainers
-          WHERE relid=%d
-       """ % (p['relid'])
+          WHERE relid=%s"""
   q2 = """SELECT
             users.username
           FROM users
             INNER JOIN rel_maintainers
               ON rel_maintainers.uid=users.uid
-          WHERE rel_maintainers.relid=%d
-       """ % (p['relid'])
+          WHERE rel_maintainers.relid=%s"""
 
-  p['pid'] = p.db.scalar_query(q1)
-  p['user'] = p.db.scalar_query(q2)
+  p['pid'] = p.db.scalar_query(q1, p['relid'])
+  p['user'] = p.db.scalar_query(q2, p['relid'])
   if not p['pid'] or not p['user']:
     p.template = 'admin/maintainers.error.tpl'
   else:
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM rel_maintainers
-               WHERE relid=%d
-            """ % (p['relid'])
-        p.db.query_com(q)
+               WHERE relid=%s"""
+        p.db.query_com(q, p['relid'])
         p.template = 'admin/maintainers.delete_yes.tpl'
       else:
         p.template = 'admin/maintainers.delete_no.tpl'
@@ -141,21 +136,18 @@ def insert():
   else:
     q1 = """SELECT Count(*)
             FROM users
-            WHERE uid=%d
-         """  % (uid)
+            WHERE uid=%s"""
     q2 = """SELECT Count(*)
             FROM proposals
-            WHERE pid=%d
-         """  % (pid)
+            WHERE pid=%s"""
     q3 = """SELECT Count(*)
             FROM rel_maintainers
-            WHERE pid=%d AND uid=%d
-         """ % (pid, uid)
-    if p.db.scalar_query(q1) == 0:
+            WHERE pid=%s AND uid=%s"""
+    if p.db.scalar_query(q1, uid) == 0:
       p['errors']['m_user'] = 'Geçersiz kullanıcı numarası.'
-    elif p.db.scalar_query(q2) == 0:
+    elif p.db.scalar_query(q2, pid) == 0:
       p['errors']['m_proposal'] = 'Geçersiz öneri numarası.'
-    elif p.db.scalar_query(q3) > 0:
+    elif p.db.scalar_query(q3, (pid, uid)) > 0:
       p['errors']['m_user'] = 'Kullanıcı zaten bu önerinin sorumlusu.'
      
   if not len(p['errors']):
@@ -165,9 +157,8 @@ def insert():
 
     q = """SELECT username
            FROM users
-           WHERE uid=%d
-        """ % (uid)
-    p['user'] = p.db.scalar_query(q)
+           WHERE uid=%s"""
+    p['user'] = p.db.scalar_query(q, uid)
 
     list = {
             'pid': pid,

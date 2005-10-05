@@ -44,23 +44,20 @@ class pardil_page(page):
     # Remove expired sessions
     q = """DELETE
            FROM sessions
-           WHERE unix_timestamp("%s") - unix_timestamp(timeB) > %d
-        """ % (sql_datetime(now()), site_config['session_timeout'])
-    self.db.query_com(q)
+           WHERE unix_timestamp(%s) - unix_timestamp(timeB) > %s"""
+    self.db.query_com(q, (sql_datetime(now()), site_config['session_timeout']))
 
     # Remove expired password reset codes
     q = """DELETE
            FROM users_passcodes
-           WHERE unix_timestamp("%s") - unix_timestamp(timeB) > %d
-        """ % (sql_datetime(now()), site_config['passcode_timeout'])
-    self.db.query_com(q)
+           WHERE unix_timestamp(%s) - unix_timestamp(timeB) > %s"""
+    self.db.query_com(q, (sql_datetime(now()), site_config['passcode_timeout']))
 
     # Remove expired registration data
     q = """DELETE
            FROM users_pending
-           WHERE unix_timestamp("%s") - unix_timestamp(timeB) > %d
-        """ % (sql_datetime(now()), site_config['activation_timeout'])
-    self.db.query_com(q)
+           WHERE unix_timestamp(%s) - unix_timestamp(timeB) > %s"""
+    self.db.query_com(q, (sql_datetime(now()), site_config['activation_timeout']))
 
     # Posted
     self.data['posted'] = {}
@@ -83,9 +80,8 @@ class pardil_page(page):
              FROM users
                INNER JOIN sessions
                  ON sessions.uid = users.uid
-             WHERE sessions.sid = "%s"
-          """ % (sid)
-      r = self.db.row_query(q)
+             WHERE sessions.sid=%s"""
+      r = self.db.row_query(q, sid)
       if r:
         self.data['session'] = {
                                 'sid': self.cookie['sid'],
@@ -93,10 +89,9 @@ class pardil_page(page):
                                 'username': r[1]
                                 }
         q = """UPDATE sessions
-               SET timeB="%s"
-               WHERE sid = "%s"
-            """ % (sql_datetime(now()), sid)
-        self.db.query_com(q)
+               SET timeB=%s
+               WHERE sid=%s"""
+        self.db.query_com(q, (sql_datetime(now()), sid))
 
     # Access list
     self.data['acl'] = self.access_list()
@@ -107,9 +102,8 @@ class pardil_page(page):
     p = pass_hash(self.db.escape(p))
     q = """SELECT uid
            FROM users
-           WHERE username = "%s" AND password = "%s"
-        """ % (u, p)
-    uid = self.db.scalar_query(q)
+           WHERE username=%s AND password=%s"""
+    uid = self.db.scalar_query(q, (u, p))
     if uid:
       sid = pass_hash(str(time.time()))
       d = {'sid': sid,
@@ -129,10 +123,9 @@ class pardil_page(page):
     q = """SELECT Count(*)
            FROM rel_groups
            WHERE
-             uid=%d AND
-             gid=1
-        """ % (self.data['session']['uid'])
-    return self.db.scalar_query(q)
+             uid=%s AND
+             gid=1"""
+    return self.db.scalar_query(q, self.data['session']['uid'])
     
   def access_list(self):
     list = []
@@ -147,9 +140,8 @@ class pardil_page(page):
              INNER JOIN users
                ON users.uid=rel_groups.uid
            WHERE
-             users.uid=%d
-        """ % (self.data['session']['uid'])
-    rows = self.db.query(q)
+             users.uid=%s"""
+    rows = self.db.query(q, self.data['session']['uid'])
     for r in rows:
       list.append(r[0])
     return list
@@ -167,17 +159,15 @@ class pardil_page(page):
              INNER JOIN users
                ON users.uid=rel_groups.uid
            WHERE
-             users.uid=%d AND rights.keyword="%s"
-        """ % (self.data['session']['uid'], key)
-    return self.db.scalar_query(q)
+             users.uid=%s AND rights.keyword=%s"""
+    return self.db.scalar_query(q, (self.data['session']['uid'], key))
     
   def logout(self):
     if 'sid' in self.data['session']:
       sid = self.db.escape(self.data['session']['sid'])
       q = """DELETE FROM sessions
-             WHERE sid = "%s"
-          """ % (sid)
-      self.db.query_com(q)
+             WHERE sid=%s"""
+      self.db.query_com(q, sid)
       
       self.cookie['sid'] = ''
 

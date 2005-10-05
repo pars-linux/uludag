@@ -22,39 +22,40 @@ class mysql:
                                 )
 
   # Sorgula...
-  def query(self, str):
+  def query(self, str, par=()):
     c = self.conn.cursor()
-    c.execute(str)
+    c.execute(str, par)
     return c.fetchall()
    
   # Satır/hücre sayısı bilinmiyorsa kullanılması önerilen fonksiyon...
-  def scalar_query(self, str):
+  def scalar_query(self, str, par=()):
     c = self.conn.cursor()
-    c.execute(str)
+    c.execute(str, par)
     try:
       return c.fetchone()[0]
     except:
       return
     
   # Sorgu sonunda tek satır veri dönecekse, kullanılması önerilen fonksiyon...
-  def row_query(self, str):
+  def row_query(self, str, par=()):
     c = self.conn.cursor()
-    c.execute(str)
+    c.execute(str, par)
     try:
       return c.fetchone()
     except:
       return
     
   # Sorgudan yanıt dönmeyecekse kullanılması önerilen fonksiyon...
-  def query_com(self, str):
+  def query_com(self, str, par=()):
     c = self.conn.cursor()
-    c.execute(str)
+    c.execute(str, par)
 
   # SQL komutuna fesat karıştırılmasını önleyen fonksiyon
   def escape(self, s):
     return MySQLdb.escape_string(s)
   
   # Dict. tipindeki veriyi INSERT komutuna dönüştüren fonksiyon
+  # Sorguyu biz oluşturduğumuz için, % operatörü ile sokuşturma yapıyoruz.
   def insert(self, table, data):
     columns = []
     values = []

@@ -55,16 +55,15 @@ def delete():
 
   q = """SELECT title
          FROM news
-         WHERE nid=%d
-      """ % (p['nid'])
-  p['title'] = p.db.scalar_query(q)
+         WHERE nid=%s"""
+  p['title'] = p.db.scalar_query(q, p['nid'])
 
   if not p['title']:
     p.template = 'admin/news.error.tpl'
   else:
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
-        p.db.query_com('DELETE FROM news WHERE nid=%d' % (p['nid']))
+        p.db.query_com('DELETE FROM news WHERE nid=%s', p['nid'])
         p.template = 'admin/news.delete_yes.tpl'
       else:
         p.template = 'admin/news.delete_no.tpl'
@@ -128,15 +127,14 @@ def edit():
 
       q = """UPDATE news
              SET
-               title="%s",
-               content="%s",
-               icon="%s"
-             WHERE nid=%d
-          """ % (p.db.escape(p['title']),
-                 p.db.escape(p.form.getvalue('n_body')),
-                 p.db.escape(p.form.getvalue('n_icon')),
-                 p['nid'])
-      p.db.query_com(q)
+               title=%s,
+               content=%s,
+               icon=%s
+             WHERE nid=%s"""
+      p.db.query_com(q, (p['title'],
+                         p.form.getvalue('n_body'),
+                         p.form.getvalue('n_icon'),
+                         p['nid']))
     
       p['mode'] = 'done'
     else:
@@ -144,9 +142,8 @@ def edit():
   else:
     q = """SELECT title, content, icon
            FROM news
-           WHERE nid=%d
-        """ % (p['nid'])
-    row = p.db.row_query(q)
+           WHERE nid=%s"""
+    row = p.db.row_query(q, p['nid'])
 
     p['posted'] = {
                    'n_title': html_escape(row[0]),

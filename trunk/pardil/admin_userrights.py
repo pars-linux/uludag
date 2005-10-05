@@ -54,8 +54,7 @@ def index():
            gid,
            label
          FROM groups
-         ORDER BY gid ASC
-      """
+         ORDER BY gid ASC"""
   list = p.db.query(q)
   for i in list:
     l = {
@@ -68,8 +67,7 @@ def index():
   q = """SELECT
            rid, category, label
          FROM rights
-         ORDER BY category, label ASC
-      """
+         ORDER BY category, label ASC"""
   list = p.db.query(q)
   for i in list:
     l = {
@@ -92,25 +90,22 @@ def delete():
          FROM groups
            INNER JOIN rel_rights
              ON rel_rights.gid=groups.gid
-         WHERE rel_rights.relid=%d
-      """ % (p['relid'])
-  p['group'] = p.db.scalar_query(q)
+         WHERE rel_rights.relid=%s"""
+  p['group'] = p.db.scalar_query(q, p['relid'])
   q = """SELECT rights.label
          FROM rights
            INNER JOIN rel_rights
              ON rel_rights.rid=rights.rid
-         WHERE rel_rights.relid=%d
-      """ % (p['relid'])
-  p['right'] = p.db.scalar_query(q)
+         WHERE rel_rights.relid=%s"""
+  p['right'] = p.db.scalar_query(q, p['relid'])
   if not p['group'] or not p['right']:
     p.template = 'admin/userrights.error.tpl'
   else:
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM rel_rights
-               WHERE relid=%d
-            """ % (p['relid'])
-        p.db.query_com(q)
+               WHERE relid=%s"""
+        p.db.query_com(q, p['relid'])
         p.template = 'admin/userrights.delete_yes.tpl'
       else:
         p.template = 'admin/userrights.delete_no.tpl'
@@ -126,21 +121,18 @@ def insert():
   else:
     q1 = """SELECT Count(*)
             FROM rights
-            WHERE rid=%d
-         """ % (rid)
+            WHERE rid=%s"""
     q2 = """SELECT Count(*)
             FROM groups
-            WHERE gid=%d
-         """ % (gid)
+            WHERE gid=%s"""
     q3 = """SELECT Count(*)
             FROM rel_rights
-            WHERE gid=%d AND rid=%d
-         """ % (gid, rid)
-    if p.db.scalar_query(q1) == 0:
+            WHERE gid=%s AND rid=%s"""
+    if p.db.scalar_query(q1, rid) == 0:
       p['errors']['r_right'] = 'Geçersiz erişim hakkı numarası.'
-    elif p.db.scalar_query(q2) == 0:
+    elif p.db.scalar_query(q2, gid) == 0:
       p['errors']['r_group'] = 'Geçersiz grup numarası.'
-    elif p.db.scalar_query(q3) > 0:
+    elif p.db.scalar_query(q3, (gid, rid)) > 0:
       p['errors']['r_right'] = 'Bu grup bu hakka zaten sahip.'
      
   if not len(p['errors']):
@@ -148,15 +140,13 @@ def insert():
     
     q = """SELECT label
            FROM groups
-           WHERE gid=%d
-        """ % (gid)
-    p['group'] = p.db.scalar_query(q)
+           WHERE gid=%s"""
+    p['group'] = p.db.scalar_query(q, gid)
 
     q = """SELECT label
            FROM rights
-           WHERE rid=%d
-        """ % (rid)
-    p['right'] = p.db.scalar_query(q)
+           WHERE rid=%s"""
+    p['right'] = p.db.scalar_query(q, rid)
 
     list = {
             'gid': gid,
