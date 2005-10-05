@@ -130,6 +130,6 @@ class Preferences(PreferencesWidget.PrefsDialog):
     def readConfig(self):
         self.repoList = pisi.api.ctx.repodb.list()
         if not len(self.repoList):
-            pisi.api.add_repo('uludag', 'ftp://ftp.uludag.org.tr/pub/pisi/binary/pisi-index.xml')
+            pisi.api.add_repo('uludag', 'http://paketler.uludag.org.tr/pisi-index.xml')
             self.command.updateRepo('uludag')
 
