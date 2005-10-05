@@ -84,6 +84,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
+
+        # Sanity check
+        if not len(pisi.api.ctx.repodb.list()):
+            self.showSettings()
+        
     
     def customEvent(self, event):
         if event.type() == QEvent.User+1: # from ThreadRunner
