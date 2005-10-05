@@ -13,49 +13,20 @@
 # Authors:  İsmail Dönmez <ismail@uludag.org.tr>
 
 from qt import *
+from pisi.ui import UI
 
-class PisiUi:
+class PisiUi(UI):
 
     def __init__(self, qObject):
+        UI.__init__(self)
         self.qObject = qObject
 
-    def display(self, msg, color):
-        pass
-                
-    def info(self, msg, verbose=False):
-        pass
-        
-    def debug(self, msg):
-        pass
-    
-    def warning(self, msg):
-        pass
-    
     def error(self, msg):
         self.qObject.emit(PYSIGNAL("pisiError(str)"),(msg, ''))
-            
-    def action(self, msg):
-        pass
             
     def confirm(self, msg):
         return True
 
-    class Progress:
-        def __init__(self, size):
-            self.total = size
-            self.percent = 0
-            
-        def update(self, size):
-            if not self.total:
-                return 100
-                    
-            percent = (size * 100) / self.total
-            if percent and self.percent is not percent:
-                self.percent = percent
-                return percent
-            else:
-                return 0
-            
     def display_progress(self, pd):
         #print 'Filename',pd['filename'],'Percent',pd['percent']
         self.qObject.emit(PYSIGNAL("updateProgressBar(str,str)"), (pd['filename'], pd['percent']))
