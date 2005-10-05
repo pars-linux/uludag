@@ -427,54 +427,6 @@ bağlantı kurabilirsiniz.</string>
             </widget>
         </widget>
     </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>pushButton5_2_2_2_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>480</x>
-                <y>210</y>
-                <width>110</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Özellikler</string>
-        </property>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>pushButton5_2_2_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>479</x>
-                <y>250</y>
-                <width>110</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Bağlantıyı kes</string>
-        </property>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>pushButton5_3_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>480</x>
-                <y>290</y>
-                <width>110</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Sil</string>
-        </property>
-    </widget>
     <widget class="Line">
         <property name="name">
             <cstring>line13</cstring>
@@ -495,6 +447,63 @@ bağlantı kurabilirsiniz.</string>
         </property>
         <property name="orientation">
             <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>propertiesButton</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>210</y>
+                <width>110</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Özellikler</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>disconnectButton</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>479</x>
+                <y>250</y>
+                <width>110</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Bağlantıyı kes</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>deleteButton</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>480</x>
+                <y>290</y>
+                <width>110</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Sil</string>
         </property>
     </widget>
 </widget>
