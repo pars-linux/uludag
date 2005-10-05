@@ -57,4 +57,5 @@ class PisiUi:
                 return 0
             
     def display_progress(self, pd):
+        #print 'Filename',pd['filename'],'Percent',pd['percent']
         self.qObject.emit(PYSIGNAL("updateProgressBar(str,str)"), (pd['filename'], pd['percent']))

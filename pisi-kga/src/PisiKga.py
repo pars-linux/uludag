@@ -43,7 +43,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
-version = "1.0_alpha1"
+version = "1.0_alpha2"
 
 def AboutData():
     global version,description
@@ -76,7 +76,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updatedRepo = None
         self.pref = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
-        self.command = ThreadRunner.Thread(self)
+        self.command = ThreadRunner.MyThread(self)
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self.qObject)
@@ -85,11 +85,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
         self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
     
-    def __del__(self):
-        self.command.wait()
-
     def customEvent(self, event):
-        self.command.wait()
         if event.type() == QEvent.User+1:
             self.finished()
         elif event.type() == QEvent.User+2:

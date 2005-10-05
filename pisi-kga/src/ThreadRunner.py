@@ -14,18 +14,16 @@
 
 from qt import *
 import pisi.api
+from threading import *
 
-class Thread(QThread):
+class MyThread(Thread):
     def __init__(self, widget):
-        QThread.__init__(self)
+        Thread.__init__(self, group=None, target=None, name=None)
         self.receiver = widget
         self.installing = False
         self.upgrading = False
         self.removing = False
         self.updatingRepo = False
-
-    def __del__(self):
-        self.wait()
 
     def install(self,apps):
         self.installing = True
@@ -74,13 +72,11 @@ class Thread(QThread):
             event = QCustomEvent(QEvent.User+2)
             event.setData(self.repo)
             QThread.postEvent(self.receiver,event)
-            self.msleep(200)
             pisi.api.update_repo(self.repo)
             self.updatingRepo = False
         else:
             pass
 
-        #print 'Here?'
         event = QCustomEvent(QEvent.User+1)
         QThread.postEvent(self.receiver,event)
-        self.msleep(200);
+
