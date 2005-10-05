@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# Barış Metin <baris@uludag.org.tr>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tasmanet\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-02 13:45+0200\n"
+"PO-Revision-Date: 2005-03-02 13:45+0200\n"
+"Last-Translator: Barış Metin <baris@uludag.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: devicesettings.cpp:218
+msgid "Successfully configured device: "
+msgstr "Aygıt başarı ile yapılandırıldı: "
+
+#: devicesettings.cpp:219
+msgid "Done!"
+msgstr "Başarı!"
+
+#: devicesettings.cpp:222
+msgid "Failed to configure device: "
+msgstr "Aygıt yapılandırması başarısız oldu: "
+
+#: devicesettings.cpp:223
+msgid "Error!"
+msgstr "Hata!"
+
+#: devicesettings.cpp:298
+msgid "Add new nameserver"
+msgstr "Yeni alan adı sunucusu"
+
+#: devicesettings.cpp:299
+msgid "Add a new name server."
+msgstr "Yeni bir alan adı sunucusu ekleyin"
+
+#: devicesettingsdlg.cpp:261
+msgid "DeviceSettingsDlg"
+msgstr "DeviceSettingsDlg"
+
+#: devicesettingsdlg.cpp:262
+msgid "Apply"
+msgstr "Uygula"
+
+#: devicesettingsdlg.cpp:263
+msgid "Cancel"
+msgstr "İptal"
+
+#: devicesettingsdlg.cpp:264
+msgid "Mode: "
+msgstr "Mod: "
+
+#: devicesettingsdlg.cpp:265
+msgid "ESSID:"
+msgstr "ESSID:"
+
+#: devicesettingsdlg.cpp:267 devicesettingsdlg.cpp:280
+msgid "New Item"
+msgstr "Yeni Öğe"
+
+#: devicesettingsdlg.cpp:268
+msgid "Update"
+msgstr "Güncelle"
+
+#: devicesettingsdlg.cpp:269
+msgid "Wireless"
+msgstr "Kablosuz"
+
+#: devicesettingsdlg.cpp:271
+msgid "Automatic"
+msgstr "Otomatik"
+
+#: devicesettingsdlg.cpp:272
+msgid "Manual"
+msgstr "Elle"
+
+#: devicesettingsdlg.cpp:273
+msgid "IP Address : "
+msgstr "IP Adresi : "
+
+#: devicesettingsdlg.cpp:274
+msgid "Default Gateway:"
+msgstr "Varsayılan Ağ Geçidi: "
+
+#: devicesettingsdlg.cpp:275
+msgid "TCP/IP"
+msgstr "TCP/IP"
+
+#: devicesettingsdlg.cpp:276
+msgid "DNS Servers"
+msgstr "Alan Adı Sunucuları"
+
+#: devicesettingsdlg.cpp:277
+msgid "Add"
+msgstr "Ekle"
+
+#: devicesettingsdlg.cpp:278
+msgid "Remove"
+msgstr "Sil"
+
+#: devicesettingsdlg.cpp:281
+msgid "Broadcast : "
+msgstr "Broadcast : "
+
+#: devicesettingsdlg.cpp:282
+msgid "Netmask : "
+msgstr "Netmask : "
+
+#: devicesettingsdlg.cpp:283
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: tasmanet.cpp:32 tasmanet.cpp:33
+msgid "TASMA Network Configuration Module"
+msgstr "TASMA Ağ Yapılandırma Modülü"
+
+#: tasmanet.cpp:34
+msgid "(c) 2005, TUBITAK - UEKAE"
+msgstr "(c) 2005, TÜBİTAK - UEKAE"
+
+#: tasmanet.cpp:35 tasmanetwidget.cpp:33
+msgid "Current Maintainer"
+msgstr "Programın Şimdiki Yöneticisi"
+
+#: tasmanet.cpp:36
+msgid "Contributor"
+msgstr "Katkıcı"
+
+#: tasmanet.cpp:64
+msgid "A network configuration module for TASMA."
+msgstr "TASMA için bir ağ yapılandırma modülü."
+
+#: tasmanetwidget.cpp:29
+msgid "tasmanet"
+msgstr "tasmanet"
+
+#: tasmanetwidget.cpp:30
+msgid "TASMA Network Devices Module"
+msgstr "TASMA Ağ Aygıtları Modülü"
+
+#: tasmanetwidget.cpp:32
+msgid "(c) 2005 TUBITAK/UEKAE"
+msgstr "(c) 2005 TÜBİTAK/UEKAE"
+
+#: tasmanetwidget.cpp:77
+msgid " (wireless)"
+msgstr " (kablosuz)"
+
+#~ msgid "Device Settings"
+#~ msgstr "Aygıt Yapılandırması"
