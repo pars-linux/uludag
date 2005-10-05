@@ -19,8 +19,9 @@ from kdecore import *
 from kdeui import *
 
 import kdedesigner
-import FirstPage
+import NewConnection
 import EthernetPage
+import MainWindow
 
 description = "Pardus Ağ Ayarları Aracı"
 version = "0.0.1"
@@ -44,21 +45,9 @@ def loadIconSet(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIconSet(name, group)
             
 ############################################################################
-class MainWidget(KWizard):
+class MainWidget(MainWindow.MainWindow):
     def __init__(self,parent=None):
-        KWizard.__init__(self,parent,"network-kga")
-        self.setCaption(u'Pardus Ağ Ayarları Aracı')
-                
-        self.page = FirstPage.FirstPage()
-        self.page2 = EthernetPage.EthernetPage()
-        self.insertPage(self.page, 'FirstPage', 0)
-        self.insertPage(self.page2, 'SecondPage',1)
-
-        self.setFixedSize(0,0) # This is just to make main windows unresizable, following lines will take care of size
-        self.page.setFixedSize(640,445)
-        self.page2.setFixedSize(640,445)
-
-        #self.setNextEnabled(self.page, False)
+        MainWindow.MainWindow.__init__(self,parent)
 
     # Hide top title
     def layOutTitleRow(self, layout, title):
