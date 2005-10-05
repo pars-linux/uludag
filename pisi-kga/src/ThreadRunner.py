@@ -48,24 +48,15 @@ class MyThread(Thread):
     def run(self):
         
         if self.installing:
-            for app in self.appList:
-                list = []
-                list.append(app)
-                pisi.api.install(list)
+            pisi.api.install(self.appList)
             self.installing = False
 
         elif self.upgrading:
-            for app in self.appList:
-                list = []
-                list.append(app)
-                pisi.api.upgrade(list)
+            pisi.api.upgrade(appList)
             self.upgrading = False
                                                                 
         elif self.removing:
-            for app in self.appList:
-                list = []
-                list.append(app)
-                pisi.api.remove(list)
+            pisi.api.remove(self.appList)
             self.removing = False
 
         elif self.updatingRepo:
@@ -79,4 +70,3 @@ class MyThread(Thread):
 
         event = QCustomEvent(QEvent.User+1)
         QThread.postEvent(self.receiver,event)
-
