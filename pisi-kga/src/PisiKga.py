@@ -350,7 +350,7 @@ class MainApplication(programbase):
         mainwidget.searchLine.setListView(mainwidget.listView)
 
 	if not standalone:
-   	    mainwidget.updateListing(listBoxSelection)
+   	    mainwidget.updateListing(0)
    
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
