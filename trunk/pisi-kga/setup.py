@@ -28,7 +28,6 @@ kdedistutils.setup(
                         'src/ThreadRunner.py','src/RepoDialog.ui','src/MainWindow.ui',
                         'src/ProgressDialog.ui','src/PisiUi.py'],
     executable_links = [('pisi_kga','PisiKga.py')],
-    docbooks = [ ('doc/en','en') ],
     i18n = ('po',['src']),
     kcontrol_modules = [ ('src/pisi_kga.desktop','PisiKga.py')],
     )
