@@ -48,7 +48,9 @@ def loadIconSet(name, group=KIcon.Desktop):
 class MainWidget(MainWindow.MainWindow):
     def __init__(self,parent=None):
         MainWindow.MainWindow.__init__(self,parent)
-
+	self.wizardLabel.setPixmap(loadIcon("wizard"))
+	self.localNetworkLabel.setPixmap(loadIcon("network"))
+	
     # Hide top title
     def layOutTitleRow(self, layout, title):
         KWizard.layOutTitleRow(self, layout, title)
