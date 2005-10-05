@@ -50,6 +50,8 @@ class MainWidget(MainWindow.MainWindow):
         MainWindow.MainWindow.__init__(self,parent)
 	self.wizardLabel.setPixmap(loadIcon("wizard"))
 	self.localNetworkLabel.setPixmap(loadIcon("network"))
+        self.wirelessLabel.setPixmap(loadIcon("remote"))
+	self.wirelessDisconnectedLabel.setPixmap(loadIcon("socket"))
 	
     # Hide top title
     def layOutTitleRow(self, layout, title):
