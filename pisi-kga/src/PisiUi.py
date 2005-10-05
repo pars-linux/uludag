@@ -17,16 +17,19 @@ from pisi.ui import UI
 
 class PisiUi(UI):
 
-    def __init__(self, qObject):
+    def __init__(self, parent):
         UI.__init__(self)
-        self.qObject = qObject
+        self.receiver = parent
 
     def error(self, msg):
-        self.qObject.emit(PYSIGNAL("pisiError(str)"),(msg, ''))
+        event = QCustomEvent(QEvent.User+4)
+        event.setData(msg)
+        QThread.postEvent(self.receiver,event)
             
     def confirm(self, msg):
         return True
 
     def display_progress(self, pd):
-        #print 'Filename',pd['filename'],'Percent',pd['percent']
-        self.qObject.emit(PYSIGNAL("updateProgressBar(str,str)"), (pd['filename'], pd['percent']))
+        event = QCustomEvent(QEvent.User+5)
+        event.setData(QString(pd['filename'])+QString(" ")+QString.number(pd['percent']))
+        QThread.postEvent(self.receiver,event)

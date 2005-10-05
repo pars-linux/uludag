@@ -132,4 +132,3 @@ class Preferences(PreferencesWidget.PrefsDialog):
         if not len(self.repoList):
             pisi.api.add_repo('uludag', 'http://paketler.uludag.org.tr/pisi-index.xml')
             self.command.updateRepo('uludag')
-
