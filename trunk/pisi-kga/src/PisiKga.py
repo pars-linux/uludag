@@ -147,6 +147,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if selection.childCount():
             return
 
+        icon =  pisi.packagedb.get_package(selection.text(0)).icon
+        if icon:
+            self.iconLabel.setPixmap(loadIcon(icon))
+        else:
+            self.iconLabel.setPixmap(loadIcon("package"))
+                  
         installed = pisi.packagedb.inst_packagedb.has_package(selection.text(0))
         if installed:
             self.package = pisi.packagedb.inst_packagedb.get_package(selection.text(0))
