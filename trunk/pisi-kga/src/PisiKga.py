@@ -43,7 +43,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
-version = "1.0_alpha2"
+version = "1.0_alpha3"
 
 def AboutData():
     global version,description
@@ -69,7 +69,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
         global glob_ui
-        self.qObject = QObject()
         self.errorMessage = None
 	self.savedProgress = 0
         self.oldFilename = None
@@ -79,12 +78,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command = ThreadRunner.MyThread(self)
         
         # Init pisi repository
-        glob_ui = PisiUi.PisiUi(self.qObject)
+        glob_ui = PisiUi.PisiUi(self)
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=False)
         
-        self.connect(self.qObject,PYSIGNAL("updateProgressBar(str,str)"),self.updateProgressBar)
-        self.connect(self.qObject,PYSIGNAL("pisiError(str)"),self.pisiError)
-
         # Sanity check
         if not len(pisi.api.ctx.repodb.list()):
             self.showSettings()
@@ -97,6 +93,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.pDialog.setCaption(u'Depolar Güncelleniyor')
             self.updatedRepo = event.data()
             self.pDialog.show()
+        elif event.type() == QEvent.User+4: # from PisiUI
+            self.pisiError(event.data())
+        elif event.type() == QEvent.User+5: # from PisiUI
+            filename = event.data().section(' ',0,0)
+            percent = event.data().section(' ',1,1).toInt()[0]
+            self.updateProgressBar(filename, percent)
         else:
             pass
     
@@ -117,7 +119,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressLabel.setText(u'PiSi Hazırlanıyor...')
 
     def updateProgressBar(self, filename, length):
-        if filename.endswith(".pisi"):
+        if filename.endsWith(".pisi"):
             self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b>'%(filename))
         else:
             self.totalAppCount = 1
