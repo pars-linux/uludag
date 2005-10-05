@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell comartest
+Icon=kmenu
+Type=Application
+DocPath=tasma/comartest/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=comartest
+X-KDE-ParentApp=tasma
+
+Name=Comar Test
+
+Categories=Qt;KDE;X-KDE-settings-uludag
