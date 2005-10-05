@@ -61,9 +61,8 @@ def view():
              INNER JOIN users
                ON users.uid = proposals_pending.uid
            WHERE
-             tpid=%d
-        """ % (tpid)
-    row = p.db.row_query(q)
+             tpid=%s"""
+    row = p.db.row_query(q, tpid)
 
     if row:
       p['posted'] = {
@@ -87,9 +86,8 @@ def publish():
   else:
     q = """SELECT Count(*)
            FROM proposals
-           WHERE pid = %d
-        """ % (t_pid)
-    if p.db.scalar_query(q):
+           WHERE pid=%s"""
+    if p.db.scalar_query(q, t_pid):
       p['errors']['p_pid'] = 'Bu numaraya sahip bir öneri var.'
 
   if not len(p.form.getvalue('p_uid', '')):
@@ -147,9 +145,8 @@ def publish():
     # Bekleyen öneriyi yoket
     q = """DELETE
            FROM proposals_pending
-           WHERE tpid = %d
-        """ % (int(p.form.getvalue('p_tpid')))
-    p.db.query_com(q)
+           WHERE tpid=%s"""
+    p.db.query_com(q, p.form.getvalue('p_tpid'))
     
     p.template = 'admin/pending_proposals.publish.tpl'
 
@@ -160,9 +157,8 @@ def delete():
   # Bekleyen öneriyi yoket
   q = """DELETE
          FROM proposals_pending
-         WHERE tpid = %d
-      """ % (int(p.form.getvalue('p_tpid')))
-  p.db.query_com(q)
+         WHERE tpid=%s"""
+  p.db.query_com(q, p.form.getvalue('p_tpid'))
     
   p.template = 'admin/pending_proposals.delete.tpl'
 

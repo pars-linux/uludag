@@ -27,18 +27,16 @@ def index():
   q = """SELECT Count(*)
          FROM rel_maintainers
          WHERE
-           uid=%d AND pid=%d
-      """ % (p['session']['uid'], p['pid'])
-  if not p.db.scalar_query(q):
+           uid=%s AND pid=%s"""
+  if not p.db.scalar_query(q, (p['session']['uid'], p['pid'])):
     p.http.redirect('error.py?tag=not_maintainer')
 
   q = """SELECT
            version, title, summary, content
          FROM proposals_versions
          WHERE
-           pid=%d AND version="%s"
-      """ % (p['pid'], p.db.escape(p['version']))
-  row = p.db.row_query(q)
+           pid=%s AND version=%s"""
+  row = p.db.row_query(q, (p['pid'], p['version']))
 
   p['posted'] = {
                  'p_version': html_escape(row[0]),
@@ -60,9 +58,8 @@ def edit():
   q = """SELECT Count(*)
          FROM rel_maintainers
          WHERE
-           uid=%d AND pid=%d
-      """ % (p['session']['uid'], p['pid'])
-  if not p.db.scalar_query(q):
+           uid=%s AND pid=%s"""
+  if not p.db.scalar_query(q, (p['session']['uid'], p['pid'])):
     p.http.redirect('error.py?tag=not_maintainer')
 
   p.template = 'edit_proposal.tpl'

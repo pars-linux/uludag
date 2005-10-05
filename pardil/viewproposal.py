@@ -28,11 +28,10 @@ def index():
              version
            FROM proposals_versions
            WHERE
-             pid=%d
+             pid=%s
            ORDER BY vid DESC
-           LIMIT 1
-        """ % (pid)
-    version = p.db.scalar_query(q)
+           LIMIT 1"""
+    version = p.db.scalar_query(q, pid)
 
   if pid and version:
     q = """SELECT
@@ -45,10 +44,9 @@ def index():
              INNER JOIN proposals_versions
                ON proposals.pid=proposals_versions.pid
            WHERE
-             proposals.pid=%d AND
-             proposals_versions.version="%s"
-        """ % (pid, version)
-    row = p.db.row_query(q)
+             proposals.pid=%s AND
+             proposals_versions.version=%s"""
+    row = p.db.row_query(q, (pid, version))
 
     if row:
 
@@ -66,10 +64,9 @@ def index():
                proposals_versions.changelog
              FROM proposals_versions
              WHERE
-               pid=%d
-             ORDER BY vid DESC
-          """ % (pid)
-      rows = p.db.query(q)
+               pid=%s
+             ORDER BY vid DESC"""
+      rows = p.db.query(q, pid)
       
       p['versions'] = []
       for i in rows:
@@ -87,10 +84,9 @@ def index():
                INNER JOIN rel_maintainers
                  ON rel_maintainers.uid=users.uid
              WHERE
-               rel_maintainers.pid=%d
-             ORDER BY users.username ASC
-          """ % (pid)
-      rows = p.db.query(q)
+               rel_maintainers.pid=%s
+             ORDER BY users.username ASC"""
+      rows = p.db.query(q, pid)
 
       p['is_maintainer'] = 0
       p['maintainers'] = []
@@ -111,9 +107,8 @@ def index():
              FROM proposals_comments
                INNER JOIN users
                  ON users.uid=proposals_comments.uid
-             WHERE proposals_comments.pid=%d
-          """ % (pid)
-      rows = p.db.query(q)
+             WHERE proposals_comments.pid=%s"""
+      rows = p.db.query(q, pid)
 
       p['comments'] = []
       for i in rows:

@@ -21,8 +21,7 @@ def index():
            INNER JOIN users
              ON users.uid=news.uid
          ORDER BY nid DESC
-         LIMIT 10
-      """
+         LIMIT 10"""
   list = p.db.query(q)
   for i in list:
     n = {

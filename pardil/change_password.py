@@ -39,11 +39,10 @@ def code():
     q = """SELECT uid
            FROM users
            WHERE
-             email="%s" AND
-             username="%s"
-        """ % (p.db.escape(p.form.getvalue('c_email')), \
-               p.db.escape(p.form.getvalue('c_username')))
-    uid = p.db.scalar_query(q)
+             email=%s AND
+             username=%s"""
+    uid = p.db.scalar_query(q, (p.form.getvalue('c_email'),
+                                p.form.getvalue('c_username')))
     if not uid:
       p['errors']['c_email'] = 'Hatalı e-posta adresi ya da kullanıcı adı.'
     else:
@@ -88,22 +87,19 @@ def change():
   if not len(p['errors']):
     q = """SELECT uid
            FROM users_passcodes
-           WHERE code="%s"
-        """ % (p.db.escape(p.form.getvalue('c_code')))
-    uid = p.db.scalar_query(q)
+           WHERE code=%s"""
+    uid = p.db.scalar_query(q, p.form.getvalue('c_code'))
     if not uid:
       p['errors']['c_code'] = 'Geçersiz kod.'
     else:
       q = """UPDATE users
-             SET password="%s"
-             WHERE uid=%s
-          """ % (p.db.escape(pass_hash(p.form.getvalue('c_password'))), uid)
-      p.db.query_com(q)
+             SET password=%s
+             WHERE uid=%s"""
+      p.db.query_com(q, (pass_hash(p.form.getvalue('c_password')), uid))
       q = """DELETE
              FROM users_passcodes
-             WHERE uid=%s
-          """ % (uid)
-      p.db.query_com(q)
+             WHERE uid=%s"""
+      p.db.query_com(q, uid)
       p['mode'] = 'done'
 
 

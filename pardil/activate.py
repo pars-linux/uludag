@@ -14,9 +14,8 @@ def index():
     q = """SELECT
              username, password, email
            FROM users_pending
-           WHERE code = "%s"
-        """ % (p.db.escape(p.form.getvalue('code')))
-    row = p.db.row_query(q)
+           WHERE code=%s"""
+    row = p.db.row_query(q, p.form.getvalue('code'))
 
     if row:
       # Üye kaydı yap...
@@ -37,9 +36,8 @@ def index():
       # "Users - Pending" tablosundan sil
       q = """DELETE
              FROM users_pending
-             WHERE code = "%s"
-          """ % (p.db.escape(p.form.getvalue('code')))
-      p.db.query_com(q)
+             WHERE code=%s"""
+      p.db.query_com(q, p.form.getvalue('code'))
 
       p.template = 'activate.tpl'
     else:

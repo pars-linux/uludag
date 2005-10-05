@@ -26,8 +26,7 @@ def index():
   versions = []
   q = """SELECT max(vid)
          FROM proposals_versions
-         GROUP BY pid
-      """
+         GROUP BY pid"""
   for row in p.db.query(q):
     versions.append(str(row[0]))
 
@@ -68,10 +67,9 @@ def comments():
          FROM proposals_comments
            INNER JOIN users
              ON users.uid=proposals_comments.uid
-         WHERE proposals_comments.pid = %d
-         ORDER BY proposals_comments.timeB ASC
-      """ % (p['pid'])
-  list = p.db.query(q)
+         WHERE proposals_comments.pid=%s
+         ORDER BY proposals_comments.timeB ASC"""
+  list = p.db.query(q, p['pid'])
   for i in list:
     p['comments'].append({'cid': i[0],
                           'date': i[1],
@@ -92,9 +90,8 @@ def delete():
          FROM users
            INNER JOIN proposals_comments
              ON proposals_comments.uid = users.uid
-         WHERE cid=%d
-      """ % (p['cid'])
-  p['username'] = p.db.scalar_query(q)
+         WHERE cid=%s"""
+  p['username'] = p.db.scalar_query(q, p['cid'])
 
   if not p['username']:
     p.template = 'admin/comments.error.tpl'
@@ -102,9 +99,8 @@ def delete():
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
         q = """DELETE FROM proposals_comments
-               WHERE cid=%d
-            """ % (p['cid'])
-        p.db.query_com(q)
+               WHERE cid=%s"""
+        p.db.query_com(q, p['cid'])
         p.template = 'admin/comments.delete_yes.tpl'
       else:
         p.template = 'admin/comments.delete_no.tpl'

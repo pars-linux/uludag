@@ -27,9 +27,8 @@ def new():
   else:
     q = """SELECT Count(*)
            FROM proposals
-           WHERE pid = %d
-        """ % (t_pid)
-    if p.db.scalar_query(q):
+           WHERE pid=%s"""
+    if p.db.scalar_query(q, t_pid):
       p['errors']['p_pid'] = 'Bu numaraya sahip bir öneri var.'
     
   if not len(p.form.getvalue('p_title', '')):

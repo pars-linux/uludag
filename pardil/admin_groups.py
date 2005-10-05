@@ -48,18 +48,17 @@ def delete():
 
   q = """SELECT label
          FROM groups
-         WHERE gid=%d
-      """ % (p['gid'])
-  p['label'] = p.db.scalar_query(q)
+         WHERE gid=%s"""
+  p['label'] = p.db.scalar_query(q, p['gid'])
 
   if not p['label']:
     p.template = 'admin/groups.error.tpl'
   else:
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
-        #p.db.query_com('DELETE FROM rel_groups WHERE gid=%d' % (p['gid']))
-        #p.db.query_com('DELETE FROM rel_rights WHERE gid=%d' % (p['gid']))
-        #p.db.query_com('DELETE FROM groups WHERE gid=%d' % (p['gid']))
+        #p.db.query_com('DELETE FROM rel_groups WHERE gid=%s', p['gid'])
+        #p.db.query_com('DELETE FROM rel_rights WHERE gid=%s', p['gid'])
+        #p.db.query_com('DELETE FROM groups WHERE gid=%s', p['gid'])
         p.template = 'admin/groups.delete_yes.tpl'
       else:
         p.template = 'admin/groups.delete_no.tpl'
@@ -72,9 +71,8 @@ def insert():
   else:
     q = """SELECT Count(*)
            FROM groups
-           WHERE label="%s"
-        """ % (p.db.escape(p.form.getvalue('g_label')))
-    if p.db.scalar_query(q) > 0:
+           WHERE label=%s"""
+    if p.db.scalar_query(q, p.form.getvalue('g_label')) > 0:
       p['errors']['g_label'] = 'Bu isimde bir grup zaten var.'
       
   if not len(p['errors']):

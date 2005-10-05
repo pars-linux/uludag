@@ -53,17 +53,16 @@ def delete():
   q = """SELECT
            label
          FROM rights
-         WHERE rid=%d
-      """ % (p['rid'])
-  p['label'] = p.db.scalar_query(q)
+         WHERE rid=%s"""
+  p['label'] = p.db.scalar_query(q, p['rid'])
 
   if not p['label']:
     p.template = 'admin/rights.error.tpl'
   else:
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
-        #p.db.query_com('DELETE FROM rel_rights WHERE rid=%d' % (p['rid']))
-        #p.db.query_com('DELETE FROM rights WHERE rid=%d' % (p['rid']))
+        #p.db.query_com('DELETE FROM rel_rights WHERE rid=%s', p['rid'])
+        #p.db.query_com('DELETE FROM rights WHERE rid=%s', p['rid'])
         p.template = 'admin/rights.delete_yes.tpl'
       else:
         p.template = 'admin/rights.delete_no.tpl'
@@ -79,9 +78,8 @@ def insert():
   else:
     q = """SELECT Count(*)
            FROM rights
-           WHERE keyword="%s"
-        """ % (p.db.escape(p.form.getvalue('r_keyword')))
-    if p.db.scalar_query(q) > 0:
+           WHERE keyword=%s"""
+    if p.db.scalar_query(q, p.form.getvalue('r_keyword')) > 0:
       p['errors']['r_keyword'] = 'Bu isimde bir kod zaten var.'
     
   if not len(p.form.getvalue('r_label', '')):
