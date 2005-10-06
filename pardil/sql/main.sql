@@ -132,7 +132,6 @@ CREATE TABLE rights (
 -- Tablo döküm verisi `rights`
 -- 
 
-INSERT INTO rights (rid, category, keyword, label) VALUES (1, 'Yönetim', 'administrate', 'Yönetici sayfasına erişebilir.');
 INSERT INTO rights (rid, category, keyword, label) VALUES (2, 'Bildiriler', 'proposals_add', 'Bildiri ekleyebilir.');
 INSERT INTO rights (rid, category, keyword, label) VALUES (3, 'Bildiriler', 'proposals_comment', 'Bildirilere yorum ekleyebilir.');
 INSERT INTO rights (rid, category, keyword, label) VALUES (4, 'Bildiriler', 'proposals_vote', 'Bildirilere oy verebilir.');
