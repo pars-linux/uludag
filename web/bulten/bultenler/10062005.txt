@@ -1,6 +1,6 @@
 Uludağ Haftalık Bülteni - 6 Ekim 2005 
 
-Merhaba,
+<p>Merhaba,
 
 <p>Bu geç kalmış bültende okuyabileceğiniz gibi Ulusal Dağıtım Projesi ciddi
 gelişmelerle ilerliyor. Bir yandan Pardus Kurulan CD'nin ortaya çıkışı
