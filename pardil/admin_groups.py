@@ -45,6 +45,11 @@ def delete():
   except:
     p.template = 'admin/groups.error.tpl'
     return
+    
+  # 1 ve 2. gruplar silinemez :)
+  if p['gid'] in [1, 2]:
+    p.template = 'admin/groups.error.tpl'
+    return
 
   q = """SELECT label
          FROM groups
@@ -56,9 +61,9 @@ def delete():
   else:
     if 'confirm' in p.form:
       if p.form.getvalue('confirm', '') == 'yes':
-        #p.db.query_com('DELETE FROM rel_groups WHERE gid=%s', p['gid'])
-        #p.db.query_com('DELETE FROM rel_rights WHERE gid=%s', p['gid'])
-        #p.db.query_com('DELETE FROM groups WHERE gid=%s', p['gid'])
+        p.db.query_com('DELETE FROM rel_groups WHERE gid=%s', p['gid'])
+        p.db.query_com('DELETE FROM rel_rights WHERE gid=%s', p['gid'])
+        p.db.query_com('DELETE FROM groups WHERE gid=%s', p['gid'])
         p.template = 'admin/groups.delete_yes.tpl'
       else:
         p.template = 'admin/groups.delete_no.tpl'

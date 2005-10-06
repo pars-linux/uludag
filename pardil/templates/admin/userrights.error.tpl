@@ -2,7 +2,7 @@
 <div id="content">
   <h2>Erişim Hakları</h2>
     <p>
-      Belirtilen erişim hakkı kaydı yok ya da silinmesi mümkün değil.
+      Belirtilen erişim hakkı kaydı yok.
     </p>
     <ul>
       <li><a href="admin_userrights.py?start=$pag_now">Listeye Dön</a></li>

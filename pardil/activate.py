@@ -27,9 +27,10 @@ def index():
       uid = p.db.insert('users', list)
 
       # "Kullanıcılar" grubuna ekle
+      # Kullanıcılar grubu silinemez bir gruptur ve numarası 2'dir
       list = {
               'uid': uid,
-              'gid': 5
+              'gid': 2
               }
       p.db.insert('rel_groups', list)
 
