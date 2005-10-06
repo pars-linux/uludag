@@ -53,45 +53,42 @@
 
 <H3 ALIGN=center>Barış Metin</H3>
 
-<H3 ALIGN=center>(Pre-Alpha)</H3>
-<H5>Package</H5>
-<UL><LI>
-<B>Name</B>
-<LI><B>Summary</B>
-<LI><B>Description</B>
-<LI><B>License</B>
-<LI><B>History</B>
-<UL><LI>
-<B>Update</B>
-<UL><LI>
-<B>Type</B>
-<LI><B>Date</B>
-<LI><B>Version</B>
-<LI><B>Release</B>
-</UL>
-</UL>
-<LI><B>Conflicts</B>
-<LI><B>Provides:</B> Paketin hangi OM bacaklarını sağladığını belirtir.
-<LI><B>RuntimeDependencies</B>
-<LI><B>Dependency</B>
-<LI><B>Files</B>
-<UL><LI>
-<B>Path</B>
-</UL>
-<LI><B>Distribution:</B> Paketin ait olduğu dağıtımı belirtir (Pardus).
-<LI><B>DistributionRelease:</B> Paketin ait olduğu dağıtımın hangi sürümü
-için oluşturduğunu belirtir (1.0).
-<LI><B>Architecture:</B> Paketin hangi mimari için yapıldığını belirtir.
-<LI><B>InstallSize:</B> Paketin sisteme kurulduğunda kaplayacağı alanın
-tahmini boyutunu belirtir.
-</UL>
-Yukarıda tanımlanan <B>Metadata</B> dosyası, belirlenecek paket
-formatının içinde <B><EM>XML</EM></B> dosyası olarak tutulacaktır.
-<B>Metadata</B> XML dosyalarının yapısı <B>PSPEC</B> dosyası ile
-hemen hemen aynıdır. Yalnızca Metadata paket oluşumundan sonra elimizde
-olan bazı ek bilgileri de içerir. <BR>
+<H3 ALIGN=center>(Alpha)</H3>
+<H3><A NAME="htoc18">4.3</A>&nbsp;&nbsp;İkili PİSİ Paketi</H3>
+<B>PİSİ</B> paketleri ikili bir biçimde sunulacaktır. Bu bölüm paketlerin
+biçemini (format) ve içerdiklerini tanımlamaktadır.<BR>
 <BR>
-<UL><LI><A HREF='./node_19.html'>files.xml</A></LI><LI><A HREF='./node_20.html'>PSPEC Deposu</A></LI><UL><LI><A HREF='./node_20.html'>Örnek PSPEC Deposu Sıradüzeni</A></LI></UL><LI><A HREF='./node_21.html'>Category ( IsA )</A></LI><LI><A HREF='./node_22.html'>Component ( PartOf )</A></LI><LI><A HREF='./node_23.html'>İkili Paket Deposu</A></LI><LI><A HREF='./node_24.html'>PİSİ Paketinin Yapısı</A></LI><LI><A HREF='./node_25.html'>Süreçlerin Tarifi</A></LI><UL><LI><A HREF='./node_26.html'>Paket Oluşturmak</A></LI><LI><A HREF='./node_27.html'>Paket Kurmak </A></LI><LI><A HREF='./node_28.html'>Paket Kaldırmak</A></LI><LI><A HREF='./node_29.html'>Bağımlılık çözmek</A></LI></UL><LI><A HREF='./node_30.html'>Veritabanları</A></LI><UL><LI><A HREF='./node_30.html'>Kurulum Veritabanı</A></LI><LI><A HREF='./node_30.html'>Depo Veritabanları</A></LI><LI><A HREF='./node_30.html'>Kaynak Veritabanları</A></LI></UL><LI><A HREF='./node_31.html'>libpisi</A></LI><LI><A HREF='./node_32.html'>PİSİ Package Builder (GUI)</A></LI></UL><table class='navbar'><tbody><tr><td class='navbut'><a href='node_17.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_19.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+<B>PİSİ</B> paketi, içerisinde aşağıdaki bölümler olan bir <EM>PK-ZIP</EM>
+paketidir. Bu sayede paketler standart araçlar ile açılabilir/erişilebilir
+olacaklardır.
+<UL><LI>
+<B>metadata.xml:</B> <B>PSPEC</B> dosyasından alınacak ve üzerine
+eklenecek bilgiler ile oluşturulacak Meta bilgisi
+<LI><B>files.xml:</B> Paket içerisinde bulunan dosyaların bir listesi
+<LI><B>comar/ dizini:</B> ÇOMAR betikleri
+<LI><B>install/ dizini:</B> Paketin kurulu biçimi. Paketin sisteme kurulumu
+bu dizinin belirtilen dizine açılır.
+</UL>
+Alt bölümler ikili PİSİ paketi içerisindeki bileşenleri detaylı olarak
+anlatmaktadır.<BR>
+<BR>
+
+<H4><A NAME="htoc19">4.3.1</A>&nbsp;&nbsp;metadata.xml</H4>
+<B>Metadata</B> dosyası bir uygulamanın paket haline geldikten sonra
+yanında taşıyacağı ve paket ile ilgili bilgileri barındıran dosyadır. <BR>
+<BR>
+<B>Metadata</B> dosyası sadece oluşturulan paket ile ilgili bilgileri
+tutmaktan sorumludur. Paket hakkında temel bilgi bu dosyadan alınacaktır.<BR>
+<BR>
+Bu bilgilerin büyük kısmı <B>PSPEC</B> dosyasının işlenmesi sonucu
+ile <B>Metadata</B> dosyasına yazılmaktadır. <B>Metadata PSPEC</B>
+dosyasından alınan bilgilerin yanında kaynak derlendikten ve paket
+oluşturulduktan sonra alınabilecek diğer bilgileri de içerir (paketin
+kurulduktan sonra sistemde kaplayacağı alanın boyutu gibi).<BR>
+<BR>
+<B>Metadata</B> dosyasının içeriği şöyle tanımlanmıştır;<BR>
+<BR>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_17.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_19.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->
 

@@ -53,22 +53,55 @@
 
 <H3 ALIGN=center>Barış Metin</H3>
 
-<H3 ALIGN=center>(Pre-Alpha)</H3>
-<H5>Source: Bu bölümdeki bilgiler PSPEC dosyasının
-<EM>Source</EM> bölümünden alınır.</H5><!--SEC END -->
+<H3 ALIGN=center>(Alpha)</H3>
+<H5>Örnek bir actions.py dosyası:</H5>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;gnuconfig</FONT><BR>
+<BR>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;setup():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;gnuconfig.gnuconfig_update()</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.configure(``--with-nls'')</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;build():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.make()</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;install():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.install()&nbsp;</FONT><BR>
+<BR>
 
-<UL><LI>
-<B>Name</B>
-<LI><B>Homepage</B>
-<LI><B>Summary</B>
-<LI><B>Description</B>
-<LI><B>Packager</B>
-<UL><LI>
-<B>Name</B>
-<LI><B>Email</B>
-</UL>
-</UL>
-<table class='navbar'><tbody><tr><td class='navbut'><a href='node_16.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_18.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+</TT></DL></DIV>
+
+<H4><A NAME="htoc15">4.2.3</A>&nbsp;&nbsp;ChangeLog Dosyası</H4>
+Pakedin sürümlerindeki değişikliklerin açıklamalarını içerir. Bu dosya
+bilindik <B>ChangeLog</B> stilindedir ve <B>PSPEC</B> içindeki
+<B>History</B> bilgisi ile ilgili değildir.<BR>
+<BR>
+
+<H4><A NAME="htoc16">4.2.4</A>&nbsp;&nbsp;files Dizini</H4>
+Kaynak paket içerisinde bulunan files dizini kaynak arşivine uygulanacak
+yamaları, kurulum sırasında sistemin belirli bir yerine kopyalanması
+gereken ve paketle birlikte gelen ek dosyaları barındırır. Burada
+bulunan tüm dosyalar PSPEC içerisindeki ilgili oldukları bölümlerde
+tanımlanmalıdır.<BR>
+<BR>
+
+<H4><A NAME="htoc17">4.2.5</A>&nbsp;&nbsp;comar Dizini</H4>
+Kaynak paket içerisinde bulunan comar dizini adından da kolayca anlaşılabilecek
+basit bir amaç ile oluşturulmuştur. Dizin ÇOMAR'a kayıt edilecek olan
+betik dosyalarının bulunduğu dizindir. ÇOMAR betikleri PSPEC içerisinde
+tarif edilir.<BR>
+<BR>
+Bu dizin içerisindeki dosyalar ikili paketin sisteme kurulması ile
+kullanılabilir olacağı için, comar dizini içerisindeki ÇOMAR betikleri
+ikili pakete aynen kopyalanır.<BR>
+<BR>
+<UL><LI><A HREF='./node_18.html'>İkili PİSİ Paketi</A></LI><UL><LI><A HREF='./node_18.html'>metadata.xml</A></LI></UL></UL><table class='navbar'><tbody><tr><td class='navbut'><a href='node_16.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_18.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->
 
