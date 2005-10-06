@@ -13,7 +13,7 @@
 #end if
 </div>
 <div class="box">
-  <h2>Öneriler</h2>
+  <h2>Bildiriler</h2>
   <ul>
     <li><a href="proposals.py">Bildiriler</a></li>
     #if 'proposals_add' in $acl
