@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Wed, 03 Aug 2005 01:56:32 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 2 Ağustos 2005</title><link>http://www.uludag.org.tr/bulten/arsiv/02082005.html</link><description>
+<rss version="2.0"><channel><title>Uludağ Bülteni</title><link>http://www.uludag.org.tr</link><description>Uludağ Bülteni</description><lastBuildDate>Thu, 06 Oct 2005 19:50:53 GMT</lastBuildDate><generator>PyRSS2Gen-0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Uludağ Haftalık Bülteni - 6 Ekim 2005 </title><link>http://www.uludag.org.tr/bulten/arsiv/10062005.html</link><description>
+Merhaba,
+
+&lt;p&gt;Bu geç kalmış bültende okuyabileceğiniz gibi Ulusal Dağıtım Projesi ciddi
+gelişmelerle ilerliyor. Bir yandan Pardus Kurulan CD'nin ortaya çıkışı
+yaklaşırken diğer yandan da birlikte çalışma kültürüne dair çok değerli tecrübeler yaşanıyor ve kayda geçiyor.
+
+&lt;p&gt;Bülten yayınlayamadığımız dönemde olan somut gelişmelere bakarsak:
+
+&lt;p&gt;Pardus Kullanım Kılavuzu'nun tüm bölümleri hazır, Kurulan CD ile kullanılmak üzere düzeltmelerin yapılmasına başlandı.
+
+&lt;p&gt;Pardus'un kendi yazılım arşivini oluşturacak ve paketlerini yönetecek sistemi &lt;a href="http://www.uludag.org.tr/projeler/pisi/index.html" target="_blank"&gt;PİSİ&lt;/a&gt;(1)'nin artık bir sürüm numarası var: 1.0_alpha5. Tıpkı &lt;a href="http://www.uludag.org.tr/projeler/comar/index.html" target="_blank"&gt;ÇOMAR&lt;/a&gt;(2)'ın 1.0_alpha3'e ulaşmış olması gibi.
+
+&lt;p&gt;&lt;a href="http://svn.uludag.org.tr/uludag/trunk/doc/tr/pisi/depo.lyx"&gt;Depo politikası&lt;/a&gt;(3) da Pisi'nin kullanımını yönlendirmek üzere belirli kriterlere göre şekillendirildi ve &lt;a href="http://svn.uludag.org.tr/uludag/trunk/doc/tr/pardus-1.0-yazilimlari.lyx"&gt;yazılım seçimi&lt;/a&gt;(4) ile birlikte yayınlandı.
+
+&lt;p&gt;Sevgili geliştiriciler, bu gelişmenin sonuçlarını denemek, olası hatalar, beklentileriniz ya da yeni fikirlerle sürece katılmak için bugün yayınlanan kök dosya sistemimizden yararlanabilirsiniz. 
+
+&lt;p&gt;Kök dosya sistemi oluşturulmasında Pisi de fiilen kullanılmaya başlanmış oldu... Geliştiricilerin bu sürece katılmak için yaptıklarını görmek ister misiniz?
+
+&lt;p&gt;&lt;pre&gt;
+----e-posta----
+Kimden: Gökçen Eraslan
+Kime: kalite listesi (5)
+Tarih: 8 Eylül 2005
+Konu: [Kalite] pisi paketi hazırlasak?
+Selamlar,
+
+- Pisi ve yeni geliştirici belgelerini okumuş olan,
+- Bilgisayarında rootfs kullanan,
+- Pardus'un gelişimine katkıda bulunmak isteyen,
+- pisi paketleri oluşturma sürecine yardım etmek isteyen,
+- ebuild'lerden kopya çekebilen :)
+- pisi pakedi hazırlamanın kolay olduğunu düşünen,
+
+birisi olsa, (mesela ben) yardımcı olabilir mi? Başka şartlar gerekli midir? 
+Ne yapması gerekir?
+
+İyi çalışmalar..
+--
+Gökçen Eraslan
+Eskişehir Anadolu Üniversitesi
+----e-posta----
+&lt;/pre&gt;
+
+&lt;p&gt;Bu e-postayı attıktan sonra Gökçen Eraslan, Ahmet Aygün, Bahadır Kandemir ve Timu Eren'le birlikte paketlerin Pisi ile hazırlanıp depolanması sürecine katılmış oldu.
+
+&lt;p&gt;Bu sırada Tuğrul Duran da S. Soytetir ve A. Erdinç Köroğlu ile birlikte Pisi paketlerinin yazılım bilgilerini yazarak, yerelleştirerek tamamlamaya çalışıyor... Böylece tüm yazılım ve dosyalar hakkında Türkçe bilgiler kullanıcılara sunulabilecek.
+
+&lt;p&gt;&lt;a href="http://kalite.uludag.org.tr/"&gt;Kalite projesi&lt;/a&gt;nin(6) başarılı
+işlevselliğini gösteren bu gelişmeler sayesinde şu anda &lt;a
+href="http://paketler.uludag.org.tr/"&gt;paket deposu&lt;/a&gt;nda(6) 328 adet ikili paket bulunuyor.
+
+&lt;p&gt;Bütün bu gelişmeler basının gözünden kaçmadı ve popüler bilim dergisi Focus, Ekim ayında kapak konusu olarak Pardus'u seçti.
+
+&lt;p&gt;İşbölümündeki yenilikler ekibe Koray Löker'in katılımı ile sürdü ama
+bununla sınırlı kalmadı. A. Murat Eren 15 Eylül günü B. Duygu Özpolat ile hayatını birleştirerek bir kişinin daha gece ve 
+gündüzlerinin tüm konusunu Pardus olarak değiştirmeyi başardı. B. Duygu Özpolat'a sabır, genç çifte mutluluklar diliyoruz.
+
+&lt;p&gt;Son günlerde bir Pardus etkisi de kde-look.org sitesinde yaşanıyor. KDE
+kullanıcıları, 3.5 serisini kullanabilmeye başlamanın heyecanıyla görsel
+yeniliklere bakarken &lt;a
+href="http://svn.uludag.org.tr/uludag/trunk/icons/Tulliana-1.0/"&gt;Tulliana&lt;/a&gt;(7) ile karşılaşıyorlar.
+
+&lt;p&gt;Pardus'un Nuvola tabanlı biricik simge seti Tulliana, yayınlandığı ilk 12
+saat içinde en çok oy alan KDE görselleri arasında 4. sıraya yerleşti(8). 1000'den fazla kullanıcının gösterdiği ilgi ve beğeni 'simgesel' ama ciddi bir moral desteği oldu, tam yol devam!
+
+&lt;p&gt;Bunlar bülteni yazmaya başladığımızdaki gelişmeler... Şu anda yeni
+gelişmeler yaşanıyor... Haber okumak yerine haber olabilirsiniz... İlk adım
+yönteme karar vermek. Jabber, irc, e-posta listeleri... Hangisi daha uygun
+karar verip mesajınızı atın(9). Bekliyoruz!
+&lt;br&gt;
+
+&lt;p&gt;Ulusal Dağıtım Projesi Çekirdek ekibi.
+&lt;p&gt;Kaynakça:
+&lt;br&gt;(1)http://www.uludag.org.tr/projeler/pisi/index.html
+&lt;br&gt;(2)http://www.uludag.org.tr/projeler/comar/index.html
+&lt;br&gt;(3)http://svn.uludag.org.tr/uludag/trunk/doc/tr/pisi/depo.lyx
+&lt;br&gt;(4)http://svn.uludag.org.tr/uludag/trunk/doc/tr/pardus-1.0-yazilimlari.lyx
+&lt;br&gt;(5)http://kalite.uludag.org.tr/
+&lt;br&gt;(6)http://paketler.uludag.org.tr/
+&lt;br&gt;(7)http://svn.uludag.org.tr/uludag/trunk/icons/Tulliana-1.0/
+&lt;br&gt;(8)http://www.kde-look.org/content/show.php?content=29610
+&lt;br&gt;(9)http://www.uludag.org.tr/iletisim.html
+</description><guid isPermaLink="true">http://www.uludag.org.tr/bulten/arsiv/10062005.html</guid><pubDate>Thu, 6 Oct 2005 19:48:56 GMT</pubDate></item><item><title>Uludağ Haftalık Bülteni - 2 Ağustos 2005</title><link>http://www.uludag.org.tr/bulten/arsiv/02082005.html</link><description>
 &lt;p&gt;
 Merhaba,
 &lt;/p&gt;
