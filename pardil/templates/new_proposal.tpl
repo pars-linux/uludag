@@ -1,6 +1,6 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  <h2>Yeni Öneri</h2>
+  <h2>Yeni Bildiri</h2>
 
   #def errorCl($s)
     #if $errors.has_key($s)
@@ -28,12 +28,12 @@
   #end if
   <form action="new_proposal.py" method="post">
     <fieldset>
-      <legend>Öneri Bilgileri</legend>
+      <legend>Bildiri Künyesi</legend>
       <div class="optional">
-        <label for="p_pid">Öneri Numarası:</label>
+        <label for="p_pid">Bildiri Numarası:</label>
         <input class="$errorCl('p_pid')" type="text" id="p_pid" name="p_pid" size="20" value="#echo $printValue('p_pid', '') #" />
         <div>
-          <small>Öneri numarasının otomatik atanmasını istiyorsanız, burayı boş bırakın.</small>
+          <small>Bildiri numarasının otomatik atanmasını istiyorsanız, burayı boş bırakın.</small>
         </div>
       </div>
       <div class="required">
@@ -42,13 +42,13 @@
       </div>
     </fieldset>
     <fieldset>
-      <legend>Öneri Özeti</legend>
+      <legend>Bildiri Özeti</legend>
       <div class="required">
         <textarea class="widetext $errorCl('p_summary')" id="p_summary" name="p_summary" cols="60" rows="5">#echo $printValue('p_summary', '') #</textarea>
       </div>
     </fieldset>
     <fieldset>
-      <legend>Öneri İçeriği</legend>
+      <legend>Bildiri İçeriği</legend>
       <div class="required">
         <textarea class="widetext $errorCl('p_content')" id="p_content" name="p_content" cols="60" rows="30">#echo $printValue('p_content', '') #</textarea>
       </div>

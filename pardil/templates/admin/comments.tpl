@@ -1,6 +1,6 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  <h2>Önerilere Yapılan Yorumlar</h2>
+  <h2>Bildirilere Yapılan Yorumlar</h2>
   <table width="100%">
     <tr>
       <th width="25">No</th>

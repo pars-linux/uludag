@@ -13,7 +13,7 @@
       #echo $t
     #end if
   #end def
-  <h2>Öneri Sorumluları</h2>
+  <h2>Bildiri Sorumluları</h2>
   <div>
     #if len($errors)
     <p>
@@ -29,9 +29,9 @@
     <fieldset>
       <legend>Sorumlu Ekle</legend>
       <div class="required">
-        <label for="m_proposal">Öneri:</label>
+        <label for="m_proposal">Bildiri:</label>
         <select class="$errorCl('m_proposal')" name="m_proposal" id="m_proposal">
-          <option value="0">Öneri Seçin</option>
+          <option value="0">Bildiri Seçin</option>
           #for $i in $proposals
             #if $i.pid == $printValue('m_proposal')
               <option value="$i.pid" selected="selected">$i.title</option>
@@ -64,7 +64,7 @@
   <table width="100%">
     <tr>
       <th width="25">No</th>
-      <th>Öneri</th>
+      <th>Bildiri</th>
       <th>Kullanıcı Adı</th>
       <th width="30">&nbsp;</th>
     </tr>

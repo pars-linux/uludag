@@ -8,12 +8,12 @@
   <ul>
     <li><a href="admin_usergroups.py">Kullanıcı Grupları</a></li>
     <li><a href="admin_userrights.py">Erişim Hakları</a></li>
-    <li><a href="admin_maintainers.py">Öneri Sorumluları</a></li>
+    <li><a href="admin_maintainers.py">Bildiri Sorumluları</a></li>
   </ul>
   <ul>
-    <li><a href="admin_p_proposals.py">Onay Bekleyen Öneriler</a></li>
+    <li><a href="admin_p_proposals.py">Onay Bekleyen Bildiriler</a></li>
     <!--
-    <li><a href="admin_proposals.py">Tüm Öneriler</a></li>
+    <li><a href="admin_proposals.py">Tüm Bildiriler</a></li>
     -->
   </ul>
   <ul>

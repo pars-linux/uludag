@@ -23,13 +23,13 @@ def new():
   try:
     t_pid = int(p.form.getvalue('p_pid', 0))
   except:
-    p['errors']['p_pid'] = 'Öneri numarası rakamlardan oluşmalı.'
+    p['errors']['p_pid'] = 'Bildiri numarası rakamlardan oluşmalı.'
   else:
     q = """SELECT Count(*)
            FROM proposals
            WHERE pid=%s"""
     if p.db.scalar_query(q, t_pid):
-      p['errors']['p_pid'] = 'Bu numaraya sahip bir öneri var.'
+      p['errors']['p_pid'] = 'Bu numaraya sahip bir bildiri var.'
     
   if not len(p.form.getvalue('p_title', '')):
     p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
@@ -38,17 +38,17 @@ def new():
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
 
   if not len(p.form.getvalue('p_content', '')):
-    p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
+    p['errors']['p_content'] = 'Bildiri detayları boş bırakılamaz.'
 
   # Hiç hata yoksa...
   if not len(p['errors']):
 
 
-    # Öneri hemen yayınlansın mı...
+    # Bildiri hemen yayınlansın mı...
     if 'proposals_publish' in p['acl']:
       version = '1.0.0'
       
-      # Öneriler tablosuna ekle
+      # Bildiriler tablosuna ekle
       list = {
               'uid': p['session']['uid'],
               'startup': sql_datetime(now())
@@ -72,7 +72,7 @@ def new():
               }
       vid = p.db.insert('proposals_versions', list)
       
-      # Kişiyi öneri sorumlusu olarak ata
+      # Kişiyi bildiri sorumlusu olarak ata
       list = {
               'uid': p['session']['uid'],
               'pid': pid
