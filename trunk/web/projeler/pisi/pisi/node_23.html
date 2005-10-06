@@ -53,13 +53,16 @@
 
 <H3 ALIGN=center>Barış Metin</H3>
 
-<H3 ALIGN=center>(Pre-Alpha)</H3>
-<H3><A NAME="htoc21">4.7</A>&nbsp;&nbsp;İkili Paket Deposu</H3>
-Oluşturulan ikili paketler <B>PSPEC</B> dosyalarının tutulduğu hiyerarşik
-yapının aynısına sahip bir depoda sunulacaktır. Paketlerin içerisinde
-bulunan <EM>metadata.xml</EM> dosyaları depodaki paketlerden alınarak
-ve birleştirilerek <B>pisi-index.xml</B> isminde bir içerik (depo
-içeriği) dosyası düzenli aralıklar ile oluşturulacaktır<BR>
+<H3 ALIGN=center>(Alpha)</H3>
+<H4><A NAME="htoc25">4.4.2</A>&nbsp;&nbsp;İkili PİSİ Deposu</H4>
+İkili PİSİ paketlerinin bulundurulduğu depodur. İkili PİSİ Deposu
+da ``Pardus Depo Politikası'' belgesinde anlatıldığı gibi Kaynak
+PİSİ Deposu ile özdeş bir görünüm sergiler. <BR>
+<BR>
+İkili PİSİ Deposu paketlerin istemciler tarafından ulaşılabilir olması
+için bir paket indeksi sağlar. Paketlerin içerisinde bulunan <EM>metadata.xml</EM>
+dosyaları depodaki paketlerden alınarak ve birleştirilerek <B>pisi-index.xml</B>
+isminde bir içerik (depo içeriği) dosyası düzenli aralıklar ile oluşturulacaktır.<BR>
 <BR>
 İçeriğinde mevcut sürümün bilgilerini içerecek bir dosya oluşturulacaktır.
 Bu dosya dağıtımın tüm paketleri için şu bilgileri içerecektir;
@@ -81,11 +84,12 @@ Bu dosya dağıtımın tüm paketleri için şu bilgileri içerecektir;
 <B>pisi-index.xml</B> dosyasının biçimi XML'dir. Dosyanın doğrulanması
 için kullanılabilecek bilgi <EM>pisi-index.dtd</EM> dosyasında tanımlanmıştır.<BR>
 <BR>
-Bu dosya değiştirilmeyecek ve sadece Dağıtım Sürüm değiştirdiği zaman
-yenisi oluşturulacaktır. Aktif sürüm sırasında tüm değişiklikler <B>ChangeSet</B>
-olarak sunulacaktır. İstemci bilgisayarlarca çekilecek ve bağımlılık
-çözme, paket veritabanını arama, paket kurma/kaldırma işlemleri bu
-dosyaların <B>pisi.index</B> ile birleştirilmesi yardımı ile yapılacaktır. <BR>
+İkeriki sürümlerde; bu dosya değiştirilmeyecek ve sadece Dağıtım Sürüm
+değiştirdiği zaman yenisi oluşturulacaktır. Aktif sürüm sırasında
+tüm değişiklikler <B>ChangeSet</B> olarak sunulacaktır. İstemci
+bilgisayarlarca çekilecek ve bağımlılık çözme, paket veritabanını
+arama, paket kurma/kaldırma işlemleri bu dosyaların <B>pisi.index</B>
+ile birleştirilmesi yardımı ile yapılacaktır. <BR>
 <BR>
 <B>ChangeSet</B>'ler <B>pisi.index</B> dosyasına yama olarak sunulacaklardır.
 Kolay oluşturulan, az bant genişliği isteyen ve efektif olmaları açısından
