@@ -1,6 +1,6 @@
 #include $site_path + "templates/header.tpl"
 <div id="content">
-  <h2>Öneri Sorumluları</h2>
+  <h2>Bildiri Sorumluları</h2>
     <p>
       Silme işlemi iptal edildi.
     </p>

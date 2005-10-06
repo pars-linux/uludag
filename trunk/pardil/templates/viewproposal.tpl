@@ -15,7 +15,7 @@
     #end if
   #end def
 
-  <h2>Öneri $proposal.pid - $proposal.title</h2>
+  <h2>Bildiri $proposal.pid - $proposal.title</h2>
   <h3>Künye</h3>
   <ul>
     <li><strong>Sürüm:</strong> $proposal.version</li>
@@ -62,7 +62,7 @@
      </ul>
     #else
       <p>
-        Önerinin bu sürümüne hiç yorum yapılmamış.
+        Bildiriye hiç yorum yapılmamış.
       </p>
     #end if
   #if $may_comment

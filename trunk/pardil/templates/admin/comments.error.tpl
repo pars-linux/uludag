@@ -2,7 +2,7 @@
 <div id="content">
   <h2>Yorumlar</h2>
   <p>
-    Belirtilen öneri/yorum bulunamadı.
+    Belirtilen bildiri/yorum bulunamadı.
   </p>
   <ul>
     <li><a href="admin_comments.py?start=$pag_now">Listeye Dön</a></li>

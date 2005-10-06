@@ -23,7 +23,7 @@ def index():
   except:
     p.http.redirect('error.py?tag=proposal_not_found')
    
-  # Öneri sorumlusu mu
+  # Bildiri sorumlusu mu?
   q = """SELECT Count(*)
          FROM rel_maintainers
          WHERE
@@ -54,7 +54,7 @@ def edit():
   except:
     p.http.redirect('error.py?tag=proposal_not_found')
 
-  # Öneri sorumlusu mu
+  # Bildiri sorumlusu mu?
   q = """SELECT Count(*)
          FROM rel_maintainers
          WHERE
@@ -71,7 +71,7 @@ def edit():
     p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
 
   if not len(p.form.getvalue('p_content', '')):
-    p['errors']['p_content'] = 'Öneri detayları boş bırakılamaz.'
+    p['errors']['p_content'] = 'Bildiri detayları boş bırakılamaz.'
 
   if int(p.form.getvalue('p_version', 0)) not in range(1, 4):
     p['errors']['p_version'] = 'Değişiklik derecesi geçerli değil.'

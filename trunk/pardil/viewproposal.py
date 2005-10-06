@@ -137,7 +137,7 @@ def comment():
     p['errors']['p_comment'] = 'Yorum yazmadınız.'
 
   if not len(p.form.getvalue('pid', '')):
-    p['errors']['p_comment'] = 'Hangi öneriye yorum yapıldığı belirsiz.'
+    p['errors']['p_comment'] = 'Hangi bildiriye yorum yapıldığı belirsiz.'
 
   if not len(p['errors']):
     list = {

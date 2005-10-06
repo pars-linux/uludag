@@ -15,9 +15,9 @@
 <div class="box">
   <h2>Öneriler</h2>
   <ul>
-    <li><a href="proposals.py">Öneriler</a></li>
+    <li><a href="proposals.py">Bildiriler</a></li>
     #if 'proposals_add' in $acl
-    <li><a href="new_proposal.py">Öneri Ekle</a></li>
+    <li><a href="new_proposal.py">Bildiri Ekle</a></li>
     #end if
   </ul>
 </div>
@@ -38,10 +38,10 @@
     <li><a href="admin_userrights.py">Grup Hakları</a></li>
     #end if
     #if 'administrate_maintainers' in $acl or $site_admin
-    <li><a href="admin_maintainers.py">Öneri Sorumluları</a></li>
+    <li><a href="admin_maintainers.py">Bildiri Sorumluları</a></li>
     #end if
     #if 'administrate_pending' in $acl or $site_admin
-    <li><a href="admin_p_proposals.py">Bekleyen Öneriler</a></li>
+    <li><a href="admin_p_proposals.py">Bekleyen Bildiriler</a></li>
     #end if
     #if 'administrate_comments' in $acl or $site_admin
     <li><a href="admin_comments.py">Yorumlar</a></li>

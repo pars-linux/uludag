@@ -28,7 +28,7 @@
   #end if
   <form action="edit_proposal.py" method="post">
     <fieldset>
-      <legend>Öneri Bilgileri</legend>
+      <legend>Bildiri Künyesi</legend>
       <div class="required">
         <label for="p_title">Başlık:</label>
         <input class="$errorCl('p_title')" type="text" id="p_title" name="p_title" value="#echo $printValue('p_title', '') #" size="35" />
@@ -48,13 +48,13 @@
       </div>
     </fieldset>
     <fieldset>
-      <legend>Öneri Özeti</legend>
+      <legend>Bildiri Özeti</legend>
       <div class="required">
         <textarea class="widetext $errorCl('p_summary')" id="p_summary" name="p_summary" cols="60" rows="5">#echo $printValue('p_summary', '') #</textarea>
       </div>
     </fieldset>
     <fieldset>
-      <legend>Öneri İçeriği</legend>
+      <legend>Bildiri İçeriği</legend>
       <div class="required">
         <textarea class="widetext $errorCl('p_content')" id="p_content" name="p_content" cols="60" rows="30">#echo $printValue('p_content', '') #</textarea>
       </div>
