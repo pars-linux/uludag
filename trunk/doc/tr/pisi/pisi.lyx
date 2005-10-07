@@ -2162,7 +2162,7 @@ Type
  Bu tip tanýmlarý þunlardan birisi olabileceði gibi boþ da býrakýlabilir:
  
 \noun on 
-executable, conf, doc, sharedLib, localeData, programData, header
+executable, config, doc, man, info, library, data, localedata, header
 \noun default 
 .
 \layout Itemize
