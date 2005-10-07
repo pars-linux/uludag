@@ -34,6 +34,11 @@ Actions API
 
 A.
  Murat Eren (meren@uludag.org.tr)
+\layout Author
+
+
+\emph on 
+(alpha)
 \layout Abstract
 
 Bu belgede Actions API tanýtýlmýþ ve içerisindeki fonksiyonlarýn iþlevleri
@@ -141,8 +146,21 @@ def install():
 
 \layout Standard
 
-actions.py dosyasý ile ilgili daha fazla bilgi PÝSÝ Mimari Belgesi'nden alýnabili
-r.
+actions.py dosyasý ile ilgili daha fazla bilgi PÝSÝ Mimari Belgesi
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+
+\begin_inset LatexCommand \url{http://www.uludag.org.tr/projeler/pisi/pisi/pisi.html}
+
+\end_inset 
+
+
+\end_inset 
+
+'nden alýnabilir.
  
 \layout Standard
 
@@ -272,6 +290,41 @@ ecek çeþitli ortam deðiþkenlerinin ve paket ile ilgili bilgilerin elde edilmesi
 
 Kde: KDE uygulamalarý için derleme öncesi yapýlandýrma, derleme ve kurulum
  iþlevlerini sunar.
+\layout Description
+
+Perlmodules: Perl modüllerinin kurulumu için gerekli iþlevleri sunar.
+\layout Description
+
+Pythonmodules: Python modüllerinin derlenmesi, kurulmasý, çalýþtýrýlmasý
+ gibi iþlevleri sunar.
+\layout Description
+
+Scons: 
+\emph on 
+Scons
+\emph default 
+ yeni nesil bir yazýlým inþa aracýdýr, geliþtiricilere geleneksel 
+\emph on 
+autoconf/automake
+\emph default 
+ araçlarýnýn yerini alabilecek bir yapý sunar.
+ 
+\emph on 
+autotools
+\emph default 
+ modülünün 
+\emph on 
+autoconf/automake
+\emph default 
+ için sunduklarýný, 
+\emph on 
+Scons
+\emph default 
+ modülü de 
+\emph on 
+scons
+\emph default 
+ ile inþa edilmiþ uygulamalar için sunar.
 \layout Standard
 
 Takip eden bölümlerde bu modüller içerisindeki fonksiyonlar tek tek açýklanmýþ
@@ -982,6 +1035,32 @@ sourceFile
 pisitools.remove("/usr/lib/libdb_cxx.so")
 \layout Subsection
 
+rename
+\layout LyX-Code
+
+
+\emph on 
+(sourceFile, destinationFile)
+\layout Standard
+
+
+\emph on 
+install
+\emph default 
+ dizini içerisindeki yolu 
+\emph on 
+sourceFile
+\emph default 
+ ile verilen dosyayý, bulunduðu dizinde 
+\emph on 
+destinationFile
+\emph default 
+ olarak isimlendirir.
+\layout Itemize
+
+pisitools.rename("/usr/bin/bash", "bash.old")
+\layout Subsection
+
 removeDir
 \layout LyX-Code
 
@@ -998,7 +1077,7 @@ install
 \emph on 
 destinationDirectory
 \emph default 
- ile verilmiþ olan dizini ve alt dizinlerini siler.
+ ile verilmiþ olan dizini tüm içeriði ile beraber siler.
 \layout Itemize
 
 pisitools.removeDir("/usr/lib")
@@ -1015,8 +1094,31 @@ configure
 (parameters = '')
 \layout Standard
 
-configure source with given parameters = "--with-nls --with-libusb --with-someth
-ing-usefull"
+Kaynaðý 
+\emph on 
+parameters 
+\emph default 
+ile verilen parametreler ve PÝSÝ'nin ön tanýmlý yapýlandýrma parametreleri
+ ile yapýlandýrýr.
+ Fonksiyonun parametreli ile ya da parametresiz çaðýrýldýðý farketmeksizin,
+ her durumda 
+\emph on 
+prefix, host, mandir, infodir, datadir, sysconfdir, localstatedir 
+\emph default 
+parametreleri öntanýmlý deðerleri 
+\emph on 
+configure
+\emph default 
+ betiðine gönderilir.
+ Bu öntanýmlý deðerler 
+\begin_inset Quotes eld
+\end_inset 
+
+PisiKaynakDizini/pisi/actionsapi/variables.py
+\begin_inset Quotes erd
+\end_inset 
+
+ içerisinden görüntülenebilir.
 \layout Subsection
 
 rawConfigure
@@ -1027,8 +1129,21 @@ rawConfigure
 (parameters = '', prefix='')
 \layout Standard
 
-configure source with given parameters = "--prefix=/usr --libdir=/usr/lib
- --with-nls"
+Kaynaðý parameters ile verilen parametreler ile hiç bir öntanýmlý yapýlandýrma
+ parametresi olmaksýzýn yapýlandýrýr.
+\layout Itemize
+
+autotools.rawConfigure()
+\layout Itemize
+
+autotools.rawConfigure("--prefix %s/usr --with-doxywizard" % get.installDIR())
+\layout Itemize
+
+autotools.rawConfigure("--enable-nls --enable-freetype --disable-xmltest
+\begin_inset Quotes erd
+\end_inset 
+
+)
 \layout Subsection
 
 compile
@@ -1047,7 +1162,23 @@ make
 (parameters = '')
 \layout Standard
 
-make source with given parameters = "all" || "doc" etc.
+Kaynaðý 
+\emph on 
+parameters
+\emph default 
+ ile verilen parametreler ile inþa eder.
+\layout Itemize
+
+autotools.make()
+\layout Itemize
+
+autotools.make("local-all")
+\layout Itemize
+
+autotools.make("LIBS=%s" % get.LDFLAGS())
+\layout Itemize
+
+autotools.make("-j1")
 \layout Subsection
 
 install
@@ -1058,7 +1189,18 @@ install
 (parameters = '')
 \layout Standard
 
-install source into install directory with given parameters
+Kaynaðý 
+\emph on 
+parameters 
+\emph default 
+ile verilen parametreler ve PÝSÝ'nin ön tanýmlý kurulum parametreleri ile
+ kurulum dizini içerisine kurar.
+\layout Itemize
+
+autotools.install()
+\layout Itemize
+
+autotools.install("libdir=%s/usr/lib" % get.installDIR())
 \layout Subsection
 
 rawInstall
@@ -1069,8 +1211,17 @@ rawInstall
 (parameters = '')
 \layout Standard
 
-install source into install directory with given parameters = PREFIX=%s
- % get.installDIR()
+Kaynaðý verilen parametreler ile kurulum dizini içerisine kurar.
+\layout Itemize
+
+autotools.rawInstall("DESTDIR=%s" % get.installDIR())
+\layout Itemize
+
+autotools.rawInstall("DESTDIR=
+\backslash 
+"%s
+\backslash 
+" docdir=/usr/share/doc/%s/html" % (get.installDIR(), get.srcTAG()))
 \layout Subsection
 
 aclocal
@@ -1081,7 +1232,24 @@ aclocal
 (parameters = '')
 \layout Standard
 
-generates an aclocal.m4 based on the contents of configure.in.
+
+\emph on 
+configure.in
+\emph default 
+ dosyasýnýn içeriðine göre bir 
+\emph on 
+aclocal.m4
+\emph default 
+ oluþturmak için çaðýrýlýr.
+\layout Itemize
+
+autotools.aclocal("-I cmulocal -I config")
+\layout Itemize
+
+autotools.aclocal("-I m4")
+\layout Itemize
+
+autotools.aclocal()
 \layout Subsection
 
 autoconf
@@ -1092,7 +1260,14 @@ autoconf
 (parameters = '')
 \layout Standard
 
-generates a configure script
+
+\emph on 
+configure
+\emph default 
+ betiðinin yaratýlmasý için çaðýrýlýr.
+\layout Itemize
+
+autotools.autoconf()
 \layout Subsection
 
 automake
@@ -1103,7 +1278,20 @@ automake
 (parameters = '')
 \layout Standard
 
-generates a makefile
+
+\emph on 
+makefile
+\emph default 
+ dosyasýnýn yaratýlmasý için çaðýrýlýr.
+\layout Itemize
+
+autotools.automake("-afc")
+\layout Itemize
+
+autotools.automake("--add-missing")
+\layout Itemize
+
+autotools.autoconf()
 \layout Section
 \pagebreak_top 
 Libtools
@@ -1888,4 +2076,121 @@ install
 
 \emph on 
 (None)
+\layout Section
+\pagebreak_top 
+Perlmodules
+\layout Subsection
+
+configure
+\layout LyX-Code
+
+
+\emph on 
+(parameters = '')
+\layout Standard
+
+Perl kaynaðýný verilen parametreler ile yapýlandýrýr.
+\layout Itemize
+
+perlmodules.configure("/usr")
+\layout Itemize
+
+perlmodules.configure()
+\layout Subsection
+
+make
+\layout LyX-Code
+
+
+\emph on 
+(parameters = '')
+\layout Standard
+
+Perl kaynaðýný verilen parametreler ile derler.
+\layout Itemize
+
+perlmodules.make()
+\layout Subsection
+
+install
+\layout LyX-Code
+
+
+\emph on 
+(parameters = 'install')
+\layout Standard
+
+Perl kaynaðýný verilen parametreler ile kurar.
+\layout Itemize
+
+perlmodules.install()
+\layout Section
+\pagebreak_top 
+Pythonmodules
+\layout Subsection
+
+compile
+\layout LyX-Code
+
+
+\emph on 
+(parameters = '')
+\layout Standard
+
+Kaynaðý verilen parametreler ile derler.
+\layout Subsection
+
+install
+\layout LyX-Code
+
+
+\emph on 
+(parameters = '')
+\layout Standard
+
+
+\emph on 
+parameters 
+\emph default 
+ile belirtilen kaynak için 
+\emph on 
+python setup.py install
+\emph default 
+ komutunu install dizini içerisinde çalýþtýrýr.
+\layout Subsection
+
+run
+\layout LyX-Code
+
+
+\emph on 
+(parameters = '')
+\layout Standard
+
+
+\emph on 
+parameters
+\emph default 
+ ile belirtilen kaynaðý python ile iþletir.
+\layout Section
+\pagebreak_top 
+Scons
+\layout Subsection
+
+make
+\layout LyX-Code
+
+
+\emph on 
+(parameters = '')
+\layout LyX-Code
+
+\layout Subsection
+
+install
+\layout LyX-Code
+
+
+\emph on 
+(parameters = 'install')
 \the_end
