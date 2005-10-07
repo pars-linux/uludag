@@ -558,9 +558,6 @@ KATEGORİ</string>
         <property name="text">
             <string>&amp;Tüm sistemi güncelle</string>
         </property>
-        <property name="accel">
-            <string>Alt+T</string>
-        </property>
     </widget>
 </widget>
 <connections>
