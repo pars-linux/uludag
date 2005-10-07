@@ -2142,22 +2142,6 @@ qtLIBDIR
 (None)
 \layout Subsection
 
-existBinary
-\layout LyX-Code
-
-
-\emph on 
-(bin)
-\layout Subsection
-
-getBinutilsInfo
-\layout LyX-Code
-
-
-\emph on 
-(util)
-\layout Subsection
-
 AR
 \layout LyX-Code
 
