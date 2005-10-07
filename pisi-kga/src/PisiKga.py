@@ -87,15 +87,15 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
     
     def customEvent(self, event):
-        if event.type() == QEvent.User+1: # from ThreadRunner
+        if event.type() == QEvent.User+1:
             self.finished()
-        elif event.type() == QEvent.User+2: # from Preferences
+        elif event.type() == QEvent.User+2:
             self.pDialog.setCaption(u'Depolar Güncelleniyor')
             self.updatedRepo = event.data()
             self.pDialog.show()
-        elif event.type() == QEvent.User+4: # from PisiUI
+        elif event.type() == QEvent.User+4:
             self.pisiError(event.data())
-        elif event.type() == QEvent.User+5: # from PisiUI
+        elif event.type() == QEvent.User+5:
             filename = event.data().section(' ',0,0)
             percent = event.data().section(' ',1,1).toInt()[0]
             self.updateProgressBar(filename, percent)

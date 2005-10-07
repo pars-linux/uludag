@@ -14,6 +14,7 @@
 
 from qt import *
 import pisi.api
+import pisi.fetcher
 
 class MyThread(QThread):
     def __init__(self, widget):
@@ -46,24 +47,37 @@ class MyThread(QThread):
             
     def run(self):
         
-        if self.installing:
-            pisi.api.install(self.appList)
-            self.installing = False
+        try:
 
-        elif self.upgrading:
-            pisi.api.upgrade(appList)
-            self.upgrading = False
-                                                                
-        elif self.removing:
-            pisi.api.remove(self.appList)
-            self.removing = False
+            if self.installing:
+                pisi.api.install(self.appList)
+                self.installing = False
 
-        elif self.updatingRepo:
-            event = QCustomEvent(QEvent.User+2)
-            event.setData(self.repo)
+            elif self.upgrading:
+                pisi.api.upgrade(appList)
+                self.upgrading = False
+                
+            elif self.removing:
+                pisi.api.remove(self.appList)
+                self.removing = False
+                
+            elif self.updatingRepo:
+                event = QCustomEvent(QEvent.User+2)
+                event.setData(self.repo)
+                QThread.postEvent(self.receiver,event)
+                pisi.api.update_repo(self.repo)
+                self.updatingRepo = False
+
+        except pisi.fetcher.FetchError:
+            event = QCustomEvent(QEvent.User+4)
+            event.setData(u'PiSi KGA depoya bağlanamadı!')
             QThread.postEvent(self.receiver,event)
-            pisi.api.update_repo(self.repo)
-            self.updatingRepo = False
+
+            # Fake finish event, sigh...
+            event = QCustomEvent(QEvent.User+1)
+            QThread.postEvent(self.receiver,event)
+            
+            return
         else:
             pass
 
