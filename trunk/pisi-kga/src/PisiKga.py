@@ -221,6 +221,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
         component.setOpen(True)
         component.setText(0,i18n("Bileşen"))
         component.setPixmap(0,loadIcon('package', KIcon.Small))
+
+        # Check if updateSystemButton should be enabled
+        if len(pisi.api.list_upgradable()) > 0:
+            self.updateSystemButton.setEnabled(True)
+        else:
+            self.updateSystemButton.setEnabled(False)
         
         if index == 0 :
             # Show only installed apps
@@ -235,6 +241,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 item.setText(1,pisi.packagedb.get_package(pack).version)
 
         elif index == 1:
+            # Only upgrades
             list = pisi.api.list_upgradable()
             list.sort()
             for pack in list:

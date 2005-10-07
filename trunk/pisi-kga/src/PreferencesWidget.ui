@@ -38,7 +38,7 @@
             <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Paket Deposu Ayarları&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
         </property>
     </widget>
-    <widget class="QPushButton">
+    <widget class="KPushButton">
         <property name="name">
             <cstring>pushButton12</cstring>
         </property>
@@ -142,7 +142,7 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
             <bool>true</bool>
         </property>
     </widget>
-    <widget class="QPushButton">
+    <widget class="KPushButton">
         <property name="name">
             <cstring>updateRepoButton</cstring>
         </property>
@@ -180,7 +180,7 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
             <property name="spacing">
                 <number>6</number>
             </property>
-            <widget class="QPushButton">
+            <widget class="KPushButton">
                 <property name="name">
                     <cstring>buttonCancel</cstring>
                 </property>
@@ -209,7 +209,7 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
-            <widget class="QPushButton">
+            <widget class="KPushButton">
                 <property name="name">
                     <cstring>addButton</cstring>
                 </property>
@@ -217,7 +217,7 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
                     <string>Ek&amp;le</string>
                 </property>
             </widget>
-            <widget class="QPushButton">
+            <widget class="KPushButton">
                 <property name="name">
                     <cstring>removeButton</cstring>
                 </property>
@@ -228,7 +228,7 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
                     <string>&amp;Kaldır</string>
                 </property>
             </widget>
-            <widget class="QPushButton">
+            <widget class="KPushButton">
                 <property name="name">
                     <cstring>moveupButton</cstring>
                 </property>
@@ -239,7 +239,7 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
                     <string>Y&amp;ukarı taşı</string>
                 </property>
             </widget>
-            <widget class="QPushButton">
+            <widget class="KPushButton">
                 <property name="name">
                     <cstring>movedownButton</cstring>
                 </property>

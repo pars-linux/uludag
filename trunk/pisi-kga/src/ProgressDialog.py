@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ProgressDialog.ui'
 #
-# Created: Cum Eyl 30 14:36:55 2005
+# Created: Cum Eki 7 13:55:16 2005
 #      by: The PyQt User Interface Compiler (pyuic) 3.15
 #
 # WARNING! All changes made in this file will be lost!
