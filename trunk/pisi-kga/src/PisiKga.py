@@ -355,9 +355,6 @@ class MainApplication(programbase):
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         mainwidget.searchLine.setListView(mainwidget.listView)
 
-	if not standalone:
-   	    mainwidget.updateListing(0)
-   
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
@@ -367,6 +364,9 @@ class MainApplication(programbase):
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
 
         self.aboutus = KAboutApplication(self)
+
+        if not standalone:
+            mainwidget.updateListing(0)
 
     def __del__(self):
         pass
