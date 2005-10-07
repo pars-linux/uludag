@@ -15,22 +15,6 @@
     <property name="caption">
         <string>Pisi KGA</string>
     </property>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>updateSystemButton</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>60</x>
-                <y>490</y>
-                <width>170</width>
-                <height>29</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&amp;Tüm sistemi güncelle</string>
-        </property>
-    </widget>
     <widget class="QFrame">
         <property name="name">
             <cstring>frame11</cstring>
@@ -205,7 +189,7 @@
                 <string>&lt;font color="#ff0000"&gt;Bu program kurulu değil. Kurmak için aşağıdaki düğmeye tıklayabilirsiniz.&lt;/font&gt;</string>
             </property>
         </widget>
-        <widget class="QPushButton">
+        <widget class="KPushButton">
             <property name="name">
                 <cstring>installButton</cstring>
             </property>
@@ -401,7 +385,7 @@ KATEGORİ</string>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QPushButton">
+                    <widget class="KPushButton">
                         <property name="name">
                             <cstring>helpButton</cstring>
                         </property>
@@ -426,7 +410,7 @@ KATEGORİ</string>
                             </size>
                         </property>
                     </spacer>
-                    <widget class="QPushButton">
+                    <widget class="KPushButton">
                         <property name="name">
                             <cstring>settingsButton</cstring>
                         </property>
@@ -461,7 +445,7 @@ KATEGORİ</string>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QPushButton">
+                    <widget class="KPushButton">
                         <property name="name">
                             <cstring>installOrRemoveButton</cstring>
                         </property>
@@ -492,7 +476,7 @@ KATEGORİ</string>
                             </size>
                         </property>
                     </spacer>
-                    <widget class="QPushButton">
+                    <widget class="KPushButton">
                         <property name="name">
                             <cstring>closeButton</cstring>
                         </property>
@@ -554,6 +538,28 @@ KATEGORİ</string>
         </property>
         <property name="text">
             <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Program Ekle ve Kaldır&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="KPushButton">
+        <property name="name">
+            <cstring>updateSystemButton</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>490</y>
+                <width>170</width>
+                <height>29</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&amp;Tüm sistemi güncelle</string>
+        </property>
+        <property name="accel">
+            <string>Alt+T</string>
         </property>
     </widget>
 </widget>
