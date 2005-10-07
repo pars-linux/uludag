@@ -57,20 +57,26 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc17">3.14</A>&nbsp;&nbsp;domove</H3>
+<H3><A NAME="htoc17">3.14</A>&nbsp;&nbsp;dosed</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(sourceFile,&nbsp;destination,&nbsp;destinationFile&nbsp;=&nbsp;'')</EM>
+<EM>(sourceFile,&nbsp;findPattern,&nbsp;replacePattern&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-<EM>install</EM> dizini içerisindeki yolu <EM>sourceFile</EM> ile verilen
-dosyayı, yine <EM>install</EM> dizini içerisindeki yolu <EM>destination</EM>
-ile verilen dizin içerisine eğer belirtilmişse <EM>destinationFile</EM>
-ismi ile taşır.
+<EM>work</EM> dizini içerisindeki yolu verilen <EM>sourceFile</EM> içerisinde
+istenen değişiklikleri yapar (FIXME: dosed dökümantasyonunun biraz
+daha genişletilmesi gerekli).
 <UL><LI>
-pisitools.domove("/usr/bin/passwd", "/bin/")
-<LI>pisitools.domove("/usr/bin/yacc", "/usr/bin",
-"yacc.bison")
-<LI>pisitools.domove("/usr/docs/", "/usr/share/doc/%s/html/"
-% get.srcTAG())
+pisitools.dosed("gcc/version.c", "&lt;URL:http://gcc.gnu.org/bugs.html&gt;"
+, "&lt;URL:http://bugs.uludag.org.tr&gt;")
+<LI>pisitools.dosed("sshd_config", "(?m)(#UsePAM
+).*", r"UsePAM yes")
+<LI>pisitools.dosed("unix/Makefile", "-O3",
+get.CFLAGS())
+<LI>pisitools.dosed("Make.Rules", "HAVE_NDBM_H=yes",
+"HAVE_NDBM_H=no")
+<LI>pisitools.dosed("Makefile.def", "CC=cc",
+"CC=%s" % get.CC())
+<LI>pisitools.dosed("automake.texi", "(?m)(@setfilename.*)automake",
+r"&#92;1automake1.7")
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_16.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_18.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

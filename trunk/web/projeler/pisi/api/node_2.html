@@ -61,23 +61,25 @@ hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <EM>Actions API</EM>, PİSİ paketlerinin oluşturulması esnasında paketi
 oluşturacak kaynağın hangi işlemlere tabi tutulacağına dair bilgilerin
 Python programlama dili ile yazıldığı <EM>actions.py</EM> isimli dosya
-içerisinden paket yapıcıların kullanabileceği fonksiyonları barındıran
+içerisinden, paket yapıcıların kullanabileceği fonksiyonları barındıran
 kütüphanedir. Paket yapılırken bu kütüphane dışında herhangi bir Python
 modülü kullanılmaması şiddetle tavsiye edilir, fakat paketleyici bu
 konuda özgürdür.<BR>
 <BR>
 <EM>actions.py</EM> isimli dosya, kaynak koddan bir ikili ve kurulmaya
 hazır PİSİ paketi oluşturma sürecini tarif eden bir dosyadır. Bu dosya
-içerisinde yapılacak tarifin doğru şekilde yapılabilmesi için paket
-yapıcının, yapmakta olduğu paketi yeterince tanıması gereklidir. Bu
-kaynağın daha önce paketlendiği dağıtımların paket sistemlerinin spec
-dosyalarına göz atarak hızlı bir şekilde paketin nasıl oluşturulması
-gerektiğine dair fikir sahibi olmak mümkündür, fakat bunu PİSİ'nin
-diğer paket yöneticileri ile arasında organik bir bağ olduğu şeklinde
-yorumlanması yanlış olur.<BR>
+içerisinde beklenen tarifin doğru şekilde yapılabilmesi için paket
+yapıcının, yapmakta olduğu paketi yeterince tanıması gereklidir. Öte
+yandan paket yapıcı için bu kaynağın daha önce paketlendiği dağıtımların
+paket sistemlerinin spec dosyalarına göz atarak hızlı bir şekilde
+paketin nasıl oluşturulması gerektiğine dair fikir sahibi olması da
+mümkündür, fakat bunun PİSİ'nin diğer paket yöneticileri ile arasında
+organik bir bağ olduğu şeklinde yorumlanması yanlış olur; çünkü PİSİ
+diğer paket yöneticilerinin hiç birisi ile arasında bir ilişki olmayan
+yeni bir paket yöneticisidir.<BR>
 <BR>
 Actions API içerisinde paket yapıcılara sunulan fonksiyonlar amaçlarına
-göre birbirinden ayrılmış, ayrı modüller içerisinde toplanmışlardır.
+göre birbirinden ayrılmış ve ayrı modüller içerisinde toplanmışlardır.
 Her bir modülün <EM>actions.py</EM> içerisinden dahil edildiğinde hangi
 fonksiyonları sunduğu ve bu fonksiyonların özellikleri sonraki başlıklarda
 incelenmiştir. Bununla beraber modüllerin basitçe amaçları şu şekilde
@@ -116,18 +118,19 @@ ve kurulum işlevlerini sunar.
 gibi işlevleri sunar.
 <DT><B>Scons:</B><DD><EM>Scons</EM> yeni nesil bir yazılım inşa aracıdır, geliştiricilere
 geleneksel <EM>autoconf/automake</EM> araçlarının yerini alabilecek
-bir yapı sunar. <EM>autotools</EM> modülünün <EM>autoconf/automake</EM>
-için sunduklarını, <EM>Scons</EM> modülü de <EM>scons</EM> ile inşa edilmiş
-uygulamalar için sunar.
+bir yapı sunar. <EM>Autotools</EM> modülünün <EM>autoconf/automake</EM>
+için sunduklarını, <EM>Scons</EM> modülü de <EM>scons</EM> ile inşa edilmek
+üzere hazırlanmış uygulamalar için sunar.
 </DL>
-Takip eden bölümlerde bu modüller içerisindeki fonksiyonlar tek tek
-açıklanmış ve örneklenmiş, en son bölümde de örnek bir <EM>actions.py</EM>
-dosyası verilmiştir. Fonksiyonlar modüllerin altbaşlıkları olarak
-gösterilmiştir, fonksiyon ismini takip eden satırda fonksiyonun aldığı
-parametreler belirtilmiş (bir fonksiyon hiç parametre almadığı None
-kelimesi ile gösterilmiştir), takip eden paragrafta nasıl bir işlev
-sunduğu açıklanmış, bu açıklamanın ardından da örnek bir kullanımı
-verilmiştir.<BR>
+Takip eden bölümlerde modüllerle ilgili açıklamalar yer almaktadır.
+Fonksiyonlar modüllerin altbaşlıkları olarak gösterilmiştir, fonksiyon
+ismini takip eden satırda fonksiyonun aldığı parametreler belirtilmiş
+(bir fonksiyon hiç parametre almadığı <EM>None</EM> belirtimi ile ifade
+edilmiştir), takip eden paragrafta nasıl bir işlev sunduğu açıklanmış,
+bu açıklamanın ardından da örnek bir kullanımı verilmiştir.<BR>
+<BR>
+Actions API kullanımı ya da PİSİ için paket oluşturma ile ilgili sorularınızı
+PİSİ E-posta Listesi<SUP><A NAME="text2" HREF="node_93.html#note2">2</A></SUP>'nde sorabilirsiniz.<BR>
 <BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_1.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_3.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

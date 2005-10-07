@@ -57,16 +57,38 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc36">4.9</A>&nbsp;&nbsp;automake</H3>
+<H2><A NAME="htoc36">5</A>&nbsp;&nbsp;Libtools</H2>
+
+<H3><A NAME="htoc37">5.1</A>&nbsp;&nbsp;preplib</H3>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(sourceDirectory&nbsp;=&nbsp;'/usr/lib')</EM>
+</TT></DL></DIV>
+
+<H3><A NAME="htoc38">5.2</A>&nbsp;&nbsp;preplib_so</H3>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(sourceDirectory)</EM>
+</TT></DL></DIV>
+
+<H3><A NAME="htoc39">5.3</A>&nbsp;&nbsp;gnuconfig_update</H3>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(None)</EM>
+</TT></DL></DIV>
+En yeni config.* dosyalarını kaynak üzerine kopyalar. <BR>
+<BR>
+
+<H3><A NAME="htoc40">5.4</A>&nbsp;&nbsp;libtoolize</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-<EM>makefile</EM> dosyasının yaratılması için çağırılır.
-<UL><LI>
-autotools.automake("-afc")
-<LI>autotools.automake("--add-missing")
-<LI>autotools.autoconf()
-</UL>
+Bir kaynağı libtool kullanabilecek hale getirir. Bunun, için kaynak
+dizininde ``/usr/bin/libtoolize'' uygulamasını <EM>parameters</EM>
+ile verilmiş parametreler ile çağırır.<BR>
+<BR>
+
+<H3><A NAME="htoc41">5.5</A>&nbsp;&nbsp;gen_usr_ldscript</H3>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(dynamicLib)</EM>
+</TT></DL></DIV>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_35.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_37.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

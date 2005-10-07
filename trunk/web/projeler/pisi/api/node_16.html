@@ -57,18 +57,20 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc16">3.13</A>&nbsp;&nbsp;domo</H3>
+<H3><A NAME="htoc16">3.13</A>&nbsp;&nbsp;domove</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(sourceFile,&nbsp;locale,&nbsp;destinationFile&nbsp;)</EM>
+<EM>(sourceFile,&nbsp;destination,&nbsp;destinationFile&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-<EM>work</EM> dizini içerisindeki yolu <EM>sourceFile</EM> ile verilen
-bir <EM>po</EM> dosyasını, <EM>locale</EM> ile belirlenen dil için derleyerek
-bir <EM>mo</EM> dosyası oluşturur ve bu dosyayı <EM>install</EM> altındaki
-<EM>/usr/share/locale/LOCALE/LC_MESSAGES</EM> dizini içerisine <EM>destinationFile</EM>
-ile verilen isimle kopyalar.
+<EM>install</EM> dizini içerisindeki yolu <EM>sourceFile</EM> ile verilen
+dosyayı, yine <EM>install</EM> dizini içerisindeki yolu <EM>destination</EM>
+ile verilen dizin içerisine eğer belirtilmişse <EM>destinationFile</EM>
+ismi ile taşır.
 <UL><LI>
-pisitools.domo("po/tr.po", "tr",
-"pam_login.mo")
+pisitools.domove("/usr/bin/passwd", "/bin/")
+<LI>pisitools.domove("/usr/bin/yacc", "/usr/bin",
+"yacc.bison")
+<LI>pisitools.domove("/usr/docs/", "/usr/share/doc/%s/html/"
+% get.srcTAG())
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_15.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_17.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

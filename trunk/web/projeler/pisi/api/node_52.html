@@ -57,15 +57,14 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc57">6.14</A>&nbsp;&nbsp;system</H3>
+<H3><A NAME="htoc57">6.15</A>&nbsp;&nbsp;isLink</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(command)</EM>
+<EM>(sourceFile)</EM>
 </TT></DL></DIV>
-command ile verilen komutu kabuğa işletir, kabukten dönen sonuç geridönüş
-değeridir.
+Tam you <EM>sourceFile</EM> ile verilen dosyanın link olup olmadığı
+bilgisini döndürür.
 <UL><LI>
-shelltools.system("./update-pciids.sh &amp;&gt; /dev/null")
-<LI>shelltools.system("python setup.py build")
+shelltools.isLink(get.installDIR() + '/maybe/link')
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_51.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_53.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

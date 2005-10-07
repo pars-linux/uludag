@@ -57,13 +57,17 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc11">3.8</A>&nbsp;&nbsp;dojar</H3>
+<H3><A NAME="htoc11">3.8</A>&nbsp;&nbsp;dolib</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(None)</EM>
+<EM>(sourceFile,&nbsp;destinationDirectory&nbsp;=&nbsp;'/usr/lib')</EM>
 </TT></DL></DIV>
-jar dosyalarını <EM>/usr/share/PACKAGE/lib</EM> altına kopyalar ve <EM>/usr/share/PACKAGE/classpath.env</EM>
-içerisine ekler (FIXME).<BR>
-<BR>
+<EM>work</EM> dizini içerisindeki bir kütüphaneyi öntanımlı olarak <EM>install</EM>
+dizini altında <EM>/usr/lib</EM> içerisine kopyalar.
+<UL><LI>
+pisitools.dolib("libz.a")
+<LI>pisitools.dolib("lib/libpci.a")
+<LI>pisitools.dolib("libbz2.so.1.0.2", "/lib")
+</UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_10.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_12.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

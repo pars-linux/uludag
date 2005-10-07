@@ -57,17 +57,14 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc50">6.7</A>&nbsp;&nbsp;move</H3>
+<H3><A NAME="htoc50">6.8</A>&nbsp;&nbsp;copy</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile,&nbsp;destinationFile)</EM>
 </TT></DL></DIV>
-Tam yolu <EM>sourceFile</EM> ile verilmiş dosya ya da dizini tam yolu
-<EM>destinationFile</EM> ile verilmiş dosya ya da dizine taşır. Metakarakter
-kulanılabilir.
+Tam yolu <EM>sourceFile</EM> ile verilmiş olan bir dosyayı tam oylu
+<EM>destinationFile</EM> ile verilmiş bir dosya olarak kopyalar.
 <UL><LI>
-shelltools.move("ac-wrapper.sh", "%s/usr/lib/misc/"
-% get.installDIR())
-<LI>shelltools.move("proc/*.h", "%s/usr/include/proc/"
+shelltools.copy("Makefile.pre.in", "%s/usr/lib/python2.3/config/"
 % get.installDIR())
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_44.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_46.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>

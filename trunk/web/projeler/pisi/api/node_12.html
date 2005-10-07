@@ -57,16 +57,16 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc12">3.9</A>&nbsp;&nbsp;dolib</H3>
+<H3><A NAME="htoc12">3.9</A>&nbsp;&nbsp;dolib_a</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile,&nbsp;destinationDirectory&nbsp;=&nbsp;'/usr/lib')</EM>
 </TT></DL></DIV>
-<EM>work</EM> dizini içerisindeki bir kütüphaneyi öntanımlı olarak <EM>install</EM>
-dizini altında <EM>/usr/lib</EM> içerisine kopyalar.
+<EM>work</EM> dizini içerisindeki bir statik kütüphaneyi öntanımlı olarak
+<EM>install</EM> dizini altında <EM>/usr/lib</EM> içerisine gerekli dosya
+izinleri ile kopyalar.
 <UL><LI>
-pisitools.dolib("libz.a")
-<LI>pisitools.dolib("lib/libpci.a")
-<LI>pisitools.dolib("libbz2.so.1.0.2", "/lib")
+pisitools.dolib_a("lib/libpci.a")
+<LI>pisitools.dolib_a("libdb1.a")
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_11.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_13.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
