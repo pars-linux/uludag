@@ -42,10 +42,15 @@ class Preferences(PreferencesWidget.PrefsDialog):
         self.updateListView()
 
     def updateButtons(self):
+    	if self.repoListView.childCount() > 1:
+            moreThanOne = True
+        else:
+            moreThanOne = False
+		
         if self.repoListView.currentItem().isSelected():
-            self.removeButton.setEnabled(True)
-            self.moveupButton.setEnabled(True)
-            self.movedownButton.setEnabled(True)
+            self.removeButton.setEnabled(moreThanOne)
+            self.moveupButton.setEnabled(moreThanOne)
+            self.movedownButton.setEnabled(moreThanOne)
         else:
             self.removeButton.setEnabled(False)
             self.moveupButton.setEnabled(False)
