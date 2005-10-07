@@ -59,8 +59,12 @@ Actions
 \layout Standard
 
 Bir uygulamanýn ikili bir PÝSÝ paketi haline getirilmesi sürecinde PÝSÝ'nin
- build sistemi tarafýndan kullanýlan minimum bileþenler, paketlenecek uygulamaný
-n kaynak kodu, 
+ inþa (
+\emph on 
+build
+\emph default 
+) sistemi tarafýndan kullanýlan minimum bileþenler, paketlenecek uygulamanýn
+ kaynak kodu, 
 \emph on 
 pspec.xml
 \emph default 
@@ -72,13 +76,16 @@ actions.py
  Ayrýca varsa yamalar ve ek dosyalar da uygulamanýn kaynak kodunun parçasý
  olarak düþünülebilir.
  
+\layout Standard
+
+
 \series bold 
 pspec.xml
 \series default 
  dosyasý uygulamanýn kaynak kodunu taþýyan arþiv dosyasýnýn nereden çekileceði,
  bu arþiv dosyasý açýlýrken hangi yamalarýn uygulanacaðý, bu uygulamayý
- kimin paketliyor olduðu, uygulamanýn adý, sürüm numarasý gibi meta sayýlabilece
-k bilgilerin saklandýðý dosya iken, bu uygulamanýn derlenmesi ve build edilmesi
+ kimin paketlemiþ olduðu, uygulamanýn adý, sürüm numarasý gibi meta sayýlabilece
+k bilgilerin saklandýðý dosya iken, bu uygulamanýn derlenmesi ve inþa edilmesi
  aþamasýnda yapýlmasý gereken iþlerin tarifi de, bu belgede bahsedilecek
  olan 
 \series bold 
@@ -88,14 +95,38 @@ Actions API
 \series bold 
 actions.py
 \series default 
- dosyasýdýr.
- Örnek bir actions.py dosyasý aþaðýdaki gibidir:
+ dosyasý içerisinde yer alýr.
+ Örnek bir 
+\series bold 
+actions.py
+\series default 
+ dosyasý aþaðýdaki gibidir:
 \layout LyX-Code
 
 #!/usr/bin/python 
 \layout LyX-Code
 
 # -*- coding: utf-8 -*-
+\layout LyX-Code
+
+# 
+\layout LyX-Code
+
+# Copyright 2005 TUBITAK/UEKAE 
+\layout LyX-Code
+
+# Licensed under the GNU General Public License, version 2.
+ 
+\layout LyX-Code
+
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+ 
+\layout LyX-Code
+
+# 
+\layout LyX-Code
+
+# Gökçen Eraslan <gokcene@anadolu.edu.tr> 
 \layout LyX-Code
 
 \layout LyX-Code
@@ -146,7 +177,11 @@ def install():
 
 \layout Standard
 
-actions.py dosyasý ile ilgili daha fazla bilgi PÝSÝ Mimari Belgesi
+
+\series bold 
+actions.py
+\series default 
+ dosyasý ile ilgili daha fazla bilgi PÝSÝ Mimari Belgesi
 \begin_inset Foot
 collapsed true
 
@@ -164,7 +199,21 @@ collapsed true
  
 \layout Standard
 
-Bu belgede Actions API üzerinde durulacaktýr.
+Bu belgede 
+\series bold 
+actions.py
+\series default 
+ dosyasý içerisinde uygulamanýn yapýlandýrýlmasý, inþa edilmesi ve paketlenmek
+ üzere kurulumu iþlevlerinin gerçekleþtirilebilmesi için Actions API tarafýndan
+ saðlananlar üzerinde durulacaktýr.
+\layout Standard
+
+Belge içerisinde sýk sýk bahsedilen kurulum (install) iþlemi, uygulamanýn
+ gerçek sisteme kurulumu ile karýþtýrýlmamalýdýr.
+ Bu belgede bahsedilen kurulum iþlemi aksi belirtilmediði sürece, uygulamanýn
+ paketlenmesinden bir önceki aþama olan ve bu paket gerçek sistemde kurulurken
+ hangi dosyanýn nereye gitmesi gerektiðinin anlaþýlmasý için yapýlan sanal
+ bir kurulum iþlemidir.
 \layout Section
 
 Actions API
@@ -180,7 +229,7 @@ Actions API
 \emph on 
 actions.py
 \emph default 
- isimli dosya içerisinden paket yapýcýlarýn kullanabileceði fonksiyonlarý
+ isimli dosya içerisinden, paket yapýcýlarýn kullanabileceði fonksiyonlarý
  barýndýran kütüphanedir.
  Paket yapýlýrken bu kütüphane dýþýnda herhangi bir Python modülü kullanýlmamasý
  þiddetle tavsiye edilir, fakat paketleyici bu konuda özgürdür.
@@ -192,16 +241,18 @@ actions.py
 \emph default 
  isimli dosya, kaynak koddan bir ikili ve kurulmaya hazýr PÝSÝ paketi oluþturma
  sürecini tarif eden bir dosyadýr.
- Bu dosya içerisinde yapýlacak tarifin doðru þekilde yapýlabilmesi için
- paket yapýcýnýn, yapmakta olduðu paketi yeterince tanýmasý gereklidir.
- Bu kaynaðýn daha önce paketlendiði daðýtýmlarýn paket sistemlerinin spec
- dosyalarýna göz atarak hýzlý bir þekilde paketin nasýl oluþturulmasý gerektiðin
-e dair fikir sahibi olmak mümkündür, fakat bunu PÝSÝ'nin diðer paket yöneticiler
-i ile arasýnda organik bir bað olduðu þeklinde yorumlanmasý yanlýþ olur.
+ Bu dosya içerisinde beklenen tarifin doðru þekilde yapýlabilmesi için paket
+ yapýcýnýn, yapmakta olduðu paketi yeterince tanýmasý gereklidir.
+ Öte yandan paket yapýcý için bu kaynaðýn daha önce paketlendiði daðýtýmlarýn
+ paket sistemlerinin spec dosyalarýna göz atarak hýzlý bir þekilde paketin
+ nasýl oluþturulmasý gerektiðine dair fikir sahibi olmasý da mümkündür,
+ fakat bunun PÝSÝ'nin diðer paket yöneticileri ile arasýnda organik bir
+ bað olduðu þeklinde yorumlanmasý yanlýþ olur; çünkü PÝSÝ diðer paket yöneticile
+rinin hiç birisi ile arasýnda bir iliþki olmayan yeni bir paket yöneticisidir.
 \layout Standard
 
 Actions API içerisinde paket yapýcýlara sunulan fonksiyonlar amaçlarýna
- göre birbirinden ayrýlmýþ, ayrý modüller içerisinde toplanmýþlardýr.
+ göre birbirinden ayrýlmýþ ve ayrý modüller içerisinde toplanmýþlardýr.
  Her bir modülün 
 \emph on 
 actions.py
@@ -310,7 +361,7 @@ autoconf/automake
  araçlarýnýn yerini alabilecek bir yapý sunar.
  
 \emph on 
-autotools
+Autotools
 \emph default 
  modülünün 
 \emph on 
@@ -324,23 +375,49 @@ Scons
 \emph on 
 scons
 \emph default 
- ile inþa edilmiþ uygulamalar için sunar.
+ ile inþa edilmek üzere hazýrlanmýþ uygulamalar için sunar.
 \layout Standard
 
-Takip eden bölümlerde bu modüller içerisindeki fonksiyonlar tek tek açýklanmýþ
- ve örneklenmiþ, en son bölümde de örnek bir 
-\emph on 
-actions.py
-\emph default 
- dosyasý verilmiþtir.
+Takip eden bölümlerde modüllerle ilgili açýklamalar yer almaktadýr.
  Fonksiyonlar modüllerin altbaþlýklarý olarak gösterilmiþtir, fonksiyon
  ismini takip eden satýrda fonksiyonun aldýðý parametreler belirtilmiþ (bir
- fonksiyon hiç parametre almadýðý None kelimesi ile gösterilmiþtir), takip
- eden paragrafta nasýl bir iþlev sunduðu açýklanmýþ, bu açýklamanýn ardýndan
- da örnek bir kullanýmý verilmiþtir.
+ fonksiyon hiç parametre almadýðý 
+\emph on 
+None
+\emph default 
+ belirtimi ile ifade edilmiþtir), takip eden paragrafta nasýl bir iþlev
+ sunduðu açýklanmýþ, bu açýklamanýn ardýndan da örnek bir kullanýmý verilmiþtir.
+\layout Standard
+
+Actions API kullanýmý ya da PÝSÝ için paket oluþturma ile ilgili sorularýnýzý
+ PÝSÝ E-posta Listesi
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+
+\begin_inset LatexCommand \url{http://liste.uludag.org.tr/mailman/listinfo/pisi}
+
+\end_inset 
+
+
+\end_inset 
+
+'nde sorabilirsiniz.
 \layout Section
 \pagebreak_top 
 Pisitools
+\layout Standard
+
+Pisitools modülü bir paket yapýcýnýn en çok ihyiyaç duyabileceði iþlevleri
+ barýndýran modüldür.
+ Ayrýca, paket yapýcýnýn çaðýrdýðý fonksiyonlardaki parametrelerin baþýna
+ otomatik olarak çalýþma dizinlerini ekleyerek onun sistemin gerçek dosyalarýna
+ eriþmeden sanal bir dizin içerisinde çalýþabilmesine olanak saðlar.
+ Pisitools modülünün sunduðu bu rahatlýk kimi durumlarda engelleyici olabilmekte
+dir, bu gibi durumda da tüm kontrolü paket yapýcýya býrakan Shelltools modülü
+ içerisindeki iþlevlerden yararlanýlabilir.
 \layout Subsection
 
 dobin
@@ -359,11 +436,20 @@ work
 \emph on 
 sourceFile
 \emph default 
- ile verilen bir çalýþtýrýlabilir dosyayý öntanýmlý olarak /bin, 
+ ile verilen bir çalýþtýrýlabilir 
 \emph on 
 destinationDirectory
 \emph default 
  parametresi ile tam yolu verilmiþ dizin içerisine koyar.
+ Bu parametrenin öntanýmlý deðeri 
+\begin_inset Quotes eld
+\end_inset 
+
+/usr/bin
+\begin_inset Quotes erd
+\end_inset 
+
+ dizinidir.
 \layout Itemize
 
 pisitools.dobin("sed/sed
@@ -388,7 +474,11 @@ dodir
 \emph on 
 Install
 \emph default 
- dizini içerisine verilen isimde bir dizini oluþturur.
+ dizini içerisine 
+\emph on 
+destinationDirectory
+\emph default 
+ ile belirtilmiþ isimde bir dizini oluþturur.
 \layout Itemize
 
 pisitools.dodir("/usr/include/awk")
@@ -541,25 +631,6 @@ install
 \layout Itemize
 
 pisitools.doinfo("*.info")
-\layout Subsection
-
-dojar
-\layout LyX-Code
-
-
-\emph on 
-(None)
-\layout Standard
-
-jar dosyalarýný 
-\emph on 
-/usr/share/PACKAGE/lib
-\emph default 
- altýna kopyalar ve 
-\emph on 
-/usr/share/PACKAGE/classpath.env 
-\emph default 
-içerisine ekler (FIXME).
 \layout Subsection
 
 dolib
@@ -1291,7 +1362,7 @@ autotools.automake("-afc")
 autotools.automake("--add-missing")
 \layout Itemize
 
-autotools.autoconf()
+autotools.automake()
 \layout Section
 \pagebreak_top 
 Libtools
@@ -1331,6 +1402,22 @@ libtoolize
 
 \emph on 
 (parameters = '')
+\layout Standard
+
+Bir kaynaðý libtool kullanabilecek hale getirir.
+ Bunun, için kaynak dizininde 
+\begin_inset Quotes eld
+\end_inset 
+
+/usr/bin/libtoolize
+\begin_inset Quotes erd
+\end_inset 
+
+ uygulamasýný 
+\emph on 
+parameters
+\emph default 
+ ile verilmiþ parametreler ile çaðýrýr.
 \layout Subsection
 
 gen_usr_ldscript
@@ -1342,6 +1429,28 @@ gen_usr_ldscript
 \layout Section
 \pagebreak_top 
 Shelltools
+\layout Standard
+
+Pisitools ile yer yer benzer iþlevler sunar (örneðin 
+\emph on 
+pisitools.domove()
+\emph default 
+ ile 
+\emph on 
+shelltools.move()
+\emph default 
+ teorik olarak ayný iþlevi sunarlar).
+ Fakat shelltools modülü, pisitools modülünün paket yapýcýya sunduðu rahatlýðý
+ sunmaz.
+ Pisitools modülü ile çalýþýlýrken, fonksiyon çaðrýlarýna çalýþma dizinleri
+ otomatik olarak eklenirken, shelltools ile paket yapýcý daha özgürdür ve
+ biraz daha dikkat etmek zorundadýr, çünkü çalýþma dizini dýþýnda kalan,
+ sistemin gerçek dosyalarýna da eriþme þansý vardýr.
+\layout Standard
+
+Paket yapýcýlarýn gerekmediði sürece shelltools modülünü kullanmamalarý,
+ bunun yerine eüer mümkünse ihtiyaç duyduklarý iþlevleri pisitools modülünden
+ karþýlamalarý beklenir.
 \layout Subsection
 
 can_access_file
@@ -1365,7 +1474,7 @@ shelltools.can_access_file("/usr/share/terminfo/%s" % termfile)
 if shelltools.can_access_file("/usr/share/terminfo/%s" % termfile):
 \layout LyX-Code
 
-    do_something_here
+    # eðer dosya eriþilebilir ise burda bir þeyler yap..
 \layout Subsection
 
 can_access_directory
@@ -1426,7 +1535,7 @@ shelltools.chmod("config/config.sub")
 shelltools.chmod(get.installDIR() + "/lib/libz.so.*")
 \layout Itemize
 
-helltools.chmod("%s/usr/lib/misc/pt_chown" % get.installDIR(), 4711)
+shelltools.chmod("%s/usr/lib/misc/pt_chown" % get.installDIR(), 4711)
 \layout Itemize
 
 shelltools.chmod(get.installDIR() + "/etc/ssh/sshd_config", 0600)
@@ -1608,7 +1717,11 @@ shelltools.ls(get.installDIR() + "/usr/lib/*w.*")
 for file in shelltools.ls(get.installDIR() + "/usr/lib/*w.*"):
 \layout LyX-Code
 
-    do_something_with_file_here..
+    #burada 
+\emph on 
+file
+\emph default 
+ ile bir þeyler yapýn..
 \layout Itemize
 
 shelltools.ls(get.installDIR() + "/bin/")
@@ -1658,9 +1771,6 @@ command ile verilen komutu kabuða iþletir, kabukten dönen sonuç geridönüþ
 \layout Itemize
 
 shelltools.system("./update-pciids.sh &> /dev/null")
-\layout Itemize
-
-shelltools.system("python setup.py build")
 \layout Subsection
 
 isLink
@@ -1762,6 +1872,10 @@ symlink
 \layout Section
 \pagebreak_top 
 Get
+\layout Standard
+
+Get modülü, paket inþa ortamýndaki sabit deðerleri, dinamik deðerleri ve
+ ortam deðiþkenlerini okumak için kullanýlýr.
 \layout Subsection
 
 pkgDIR
@@ -1781,6 +1895,9 @@ work
 install
 \emph default 
  dizinlerinin olduðu dizinin tam yolunu döndürür.
+\layout Itemize
+
+get.pkgDIR()
 \layout Subsection
 
 workDIR
@@ -1796,6 +1913,9 @@ workDIR
 work
 \emph default 
  dizininin tam yolunu döndürür.
+\layout Itemize
+
+get.workDIR()
 \layout Subsection
 
 installDIR
@@ -1811,6 +1931,9 @@ installDIR
 install
 \emph default 
  dizininin tam yolunu döndürür.
+\layout Itemize
+
+get.installDIR()
 \layout Subsection
 
 srcNAME
@@ -1821,7 +1944,15 @@ srcNAME
 (None)
 \layout Standard
 
-Kaynak paketinin adýný döndürür (automake-wrapper-1.7-3 için, automake-wrapper).
+Kaynak paketinin adýný döndürür (
+\emph on 
+automake-wrapper-1.7-3
+\emph default 
+ için,
+\emph on 
+ automake-wrapper
+\emph default 
+).
 \layout Subsection
 
 srcVERSION
@@ -1832,7 +1963,15 @@ srcVERSION
 (None)
 \layout Standard
 
-Paketin kaynak versiyonunu döndürür (automake-wrapper-1.7-3 için, 1.7).
+Paketin kaynak versiyonunu döndürür (
+\emph on 
+automake-wrapper-1.7-3
+\emph default 
+ için, 
+\emph on 
+1.7
+\emph default 
+).
 \layout Subsection
 
 srcRELEASE
@@ -1843,8 +1982,16 @@ srcRELEASE
 (None)
 \layout Standard
 
-Paket kayanðýnýn daðýtým tarafýndan çýkarýlmýþ kaçýncý sürümü olduðunu döndürür
- (automake-wrapper-1.7-3 için, 3)
+Paket kaynaðýnýn daðýtým tarafýndan çýkarýlmýþ kaçýncý sürümü olduðunu döndürür
+ (
+\emph on 
+automake-wrapper-1.7-3
+\emph default 
+ için, 
+\emph on 
+3
+\emph default 
+)
 \layout Subsection
 
 srcTAG
@@ -1856,7 +2003,15 @@ srcTAG
 \layout Standard
 
 Paket adý + '-' + mainstream sürüm numarasý + '-' + daðýtým sürüm numarasý'ndna
- oluþan ismi döndürür (automake-wrapper-1.7-3 için, automake-wrapper-1.7-3).
+ oluþan ismi döndürür (
+\emph on 
+automake-wrapper-1.7-3
+\emph default 
+ için, 
+\emph on 
+automake-wrapper-1.7-3
+\emph default 
+).
 \layout Subsection
 
 srcDIR
@@ -1963,7 +2118,31 @@ defaultprefixDIR
 (None)
 \layout Subsection
 
-exists_binary
+kdeDIR
+\layout LyX-Code
+
+
+\emph on 
+(None)
+\layout Subsection
+
+qtDIR
+\layout LyX-Code
+
+
+\emph on 
+(None)
+\layout Subsection
+
+qtLIBDIR
+\layout LyX-Code
+
+
+\emph on 
+(None)
+\layout Subsection
+
+existBinary
 \layout LyX-Code
 
 
