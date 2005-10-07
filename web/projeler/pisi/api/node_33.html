@@ -50,19 +50,23 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc33">4.7</A>&nbsp;&nbsp;aclocal</H3>
+<H3><A NAME="htoc33">4.6</A>&nbsp;&nbsp;rawInstall</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-generates an aclocal.m4 based on the contents of configure.in.<BR>
-<BR>
+Kaynağı verilen parametreler ile kurulum dizini içerisine kurar.
+<UL><LI>
+autotools.rawInstall("DESTDIR=%s" % get.installDIR())
+<LI>autotools.rawInstall("DESTDIR=&#92;"%s&#92;"
+docdir=/usr/share/doc/%s/html" % (get.installDIR(), get.srcTAG()))
+</UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_32.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_34.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

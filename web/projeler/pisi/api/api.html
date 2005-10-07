@@ -49,7 +49,7 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
@@ -85,89 +85,107 @@ hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <LI><A HREF="#htoc22">3.19&nbsp;&nbsp;newdoc</A>
 <LI><A HREF="#htoc23">3.20&nbsp;&nbsp;newman</A>
 <LI><A HREF="#htoc24">3.21&nbsp;&nbsp;remove</A>
-<LI><A HREF="#htoc25">3.22&nbsp;&nbsp;removeDir</A>
+<LI><A HREF="#htoc25">3.22&nbsp;&nbsp;rename</A>
+<LI><A HREF="#htoc26">3.23&nbsp;&nbsp;removeDir</A>
 </UL>
-<LI><A HREF="#htoc26">4&nbsp;&nbsp;Autotools</A>
+<LI><A HREF="#htoc27">4&nbsp;&nbsp;Autotools</A>
 <UL><LI>
-<A HREF="#htoc27">4.1&nbsp;&nbsp;configure</A>
-<LI><A HREF="#htoc28">4.2&nbsp;&nbsp;rawConfigure</A>
-<LI><A HREF="#htoc29">4.3&nbsp;&nbsp;compile</A>
-<LI><A HREF="#htoc30">4.4&nbsp;&nbsp;make</A>
-<LI><A HREF="#htoc31">4.5&nbsp;&nbsp;install</A>
-<LI><A HREF="#htoc32">4.6&nbsp;&nbsp;rawInstall</A>
-<LI><A HREF="#htoc33">4.7&nbsp;&nbsp;aclocal</A>
-<LI><A HREF="#htoc34">4.8&nbsp;&nbsp;autoconf</A>
-<LI><A HREF="#htoc35">4.9&nbsp;&nbsp;automake</A>
+<A HREF="#htoc28">4.1&nbsp;&nbsp;configure</A>
+<LI><A HREF="#htoc29">4.2&nbsp;&nbsp;rawConfigure</A>
+<LI><A HREF="#htoc30">4.3&nbsp;&nbsp;compile</A>
+<LI><A HREF="#htoc31">4.4&nbsp;&nbsp;make</A>
+<LI><A HREF="#htoc32">4.5&nbsp;&nbsp;install</A>
+<LI><A HREF="#htoc33">4.6&nbsp;&nbsp;rawInstall</A>
+<LI><A HREF="#htoc34">4.7&nbsp;&nbsp;aclocal</A>
+<LI><A HREF="#htoc35">4.8&nbsp;&nbsp;autoconf</A>
+<LI><A HREF="#htoc36">4.9&nbsp;&nbsp;automake</A>
 </UL>
-<LI><A HREF="#htoc36">5&nbsp;&nbsp;Libtools</A>
+<LI><A HREF="#htoc37">5&nbsp;&nbsp;Libtools</A>
 <UL><LI>
-<A HREF="#htoc37">5.1&nbsp;&nbsp;preplib</A>
-<LI><A HREF="#htoc38">5.2&nbsp;&nbsp;preplib_so</A>
-<LI><A HREF="#htoc39">5.3&nbsp;&nbsp;gnuconfig_update</A>
-<LI><A HREF="#htoc40">5.4&nbsp;&nbsp;libtoolize</A>
-<LI><A HREF="#htoc41">5.5&nbsp;&nbsp;gen_usr_ldscript</A>
+<A HREF="#htoc38">5.1&nbsp;&nbsp;preplib</A>
+<LI><A HREF="#htoc39">5.2&nbsp;&nbsp;preplib_so</A>
+<LI><A HREF="#htoc40">5.3&nbsp;&nbsp;gnuconfig_update</A>
+<LI><A HREF="#htoc41">5.4&nbsp;&nbsp;libtoolize</A>
+<LI><A HREF="#htoc42">5.5&nbsp;&nbsp;gen_usr_ldscript</A>
 </UL>
-<LI><A HREF="#htoc42">6&nbsp;&nbsp;Shelltools</A>
+<LI><A HREF="#htoc43">6&nbsp;&nbsp;Shelltools</A>
 <UL><LI>
-<A HREF="#htoc43">6.1&nbsp;&nbsp;can_access_file</A>
-<LI><A HREF="#htoc44">6.2&nbsp;&nbsp;can_access_directory</A>
-<LI><A HREF="#htoc45">6.3&nbsp;&nbsp;makedirs</A>
-<LI><A HREF="#htoc46">6.4&nbsp;&nbsp;chmod</A>
-<LI><A HREF="#htoc47">6.5&nbsp;&nbsp;unlink</A>
-<LI><A HREF="#htoc48">6.6&nbsp;&nbsp;unlinkDir</A>
-<LI><A HREF="#htoc49">6.7&nbsp;&nbsp;move</A>
-<LI><A HREF="#htoc50">6.8&nbsp;&nbsp;copy</A>
-<LI><A HREF="#htoc51">6.9&nbsp;&nbsp;copytree</A>
-<LI><A HREF="#htoc52">6.10&nbsp;&nbsp;touch</A>
-<LI><A HREF="#htoc53">6.11&nbsp;&nbsp;cd</A>
-<LI><A HREF="#htoc54">6.12&nbsp;&nbsp;ls</A>
-<LI><A HREF="#htoc55">6.13&nbsp;&nbsp;export</A>
-<LI><A HREF="#htoc56">6.14&nbsp;&nbsp;system</A>
-<LI><A HREF="#htoc57">6.15&nbsp;&nbsp;isLink</A>
-<LI><A HREF="#htoc58">6.16&nbsp;&nbsp;realPath</A>
-<LI><A HREF="#htoc59">6.17&nbsp;&nbsp;baseName</A>
-<LI><A HREF="#htoc60">6.18&nbsp;&nbsp;dirName</A>
-<LI><A HREF="#htoc61">6.19&nbsp;&nbsp;sym</A>
+<A HREF="#htoc44">6.1&nbsp;&nbsp;can_access_file</A>
+<LI><A HREF="#htoc45">6.2&nbsp;&nbsp;can_access_directory</A>
+<LI><A HREF="#htoc46">6.3&nbsp;&nbsp;makedirs</A>
+<LI><A HREF="#htoc47">6.4&nbsp;&nbsp;chmod</A>
+<LI><A HREF="#htoc48">6.5&nbsp;&nbsp;unlink</A>
+<LI><A HREF="#htoc49">6.6&nbsp;&nbsp;unlinkDir</A>
+<LI><A HREF="#htoc50">6.7&nbsp;&nbsp;move</A>
+<LI><A HREF="#htoc51">6.8&nbsp;&nbsp;copy</A>
+<LI><A HREF="#htoc52">6.9&nbsp;&nbsp;copytree</A>
+<LI><A HREF="#htoc53">6.10&nbsp;&nbsp;touch</A>
+<LI><A HREF="#htoc54">6.11&nbsp;&nbsp;cd</A>
+<LI><A HREF="#htoc55">6.12&nbsp;&nbsp;ls</A>
+<LI><A HREF="#htoc56">6.13&nbsp;&nbsp;export</A>
+<LI><A HREF="#htoc57">6.14&nbsp;&nbsp;system</A>
+<LI><A HREF="#htoc58">6.15&nbsp;&nbsp;isLink</A>
+<LI><A HREF="#htoc59">6.16&nbsp;&nbsp;realPath</A>
+<LI><A HREF="#htoc60">6.17&nbsp;&nbsp;baseName</A>
+<LI><A HREF="#htoc61">6.18&nbsp;&nbsp;dirName</A>
+<LI><A HREF="#htoc62">6.19&nbsp;&nbsp;sym</A>
 </UL>
-<LI><A HREF="#htoc62">7&nbsp;&nbsp;Get</A>
+<LI><A HREF="#htoc63">7&nbsp;&nbsp;Get</A>
 <UL><LI>
-<A HREF="#htoc63">7.1&nbsp;&nbsp;pkgDIR</A>
-<LI><A HREF="#htoc64">7.2&nbsp;&nbsp;workDIR</A>
-<LI><A HREF="#htoc65">7.3&nbsp;&nbsp;installDIR</A>
-<LI><A HREF="#htoc66">7.4&nbsp;&nbsp;srcNAME</A>
-<LI><A HREF="#htoc67">7.5&nbsp;&nbsp;srcVERSION</A>
-<LI><A HREF="#htoc68">7.6&nbsp;&nbsp;srcRELEASE</A>
-<LI><A HREF="#htoc69">7.7&nbsp;&nbsp;srcTAG</A>
-<LI><A HREF="#htoc70">7.8&nbsp;&nbsp;srcDIR</A>
-<LI><A HREF="#htoc71">7.9&nbsp;&nbsp;HOST</A>
-<LI><A HREF="#htoc72">7.10&nbsp;&nbsp;CFLAGS</A>
-<LI><A HREF="#htoc73">7.11&nbsp;&nbsp;CXXFLAGS</A>
-<LI><A HREF="#htoc74">7.12&nbsp;&nbsp;LDFLAGS</A>
-<LI><A HREF="#htoc75">7.13&nbsp;&nbsp;docDIR</A>
-<LI><A HREF="#htoc76">7.14&nbsp;&nbsp;sbinDIR</A>
-<LI><A HREF="#htoc77">7.15&nbsp;&nbsp;infoDIR</A>
-<LI><A HREF="#htoc78">7.16&nbsp;&nbsp;manDIR</A>
-<LI><A HREF="#htoc79">7.17&nbsp;&nbsp;dataDIR</A>
-<LI><A HREF="#htoc80">7.18&nbsp;&nbsp;confDIR</A>
-<LI><A HREF="#htoc81">7.19&nbsp;&nbsp;localstateDIR</A>
-<LI><A HREF="#htoc82">7.20&nbsp;&nbsp;defaultprefixDIR</A>
-<LI><A HREF="#htoc83">7.21&nbsp;&nbsp;exists_binary</A>
-<LI><A HREF="#htoc84">7.22&nbsp;&nbsp;getBinutilsInfo</A>
-<LI><A HREF="#htoc85">7.23&nbsp;&nbsp;AR</A>
-<LI><A HREF="#htoc86">7.24&nbsp;&nbsp;AS</A>
-<LI><A HREF="#htoc87">7.25&nbsp;&nbsp;CC</A>
-<LI><A HREF="#htoc88">7.26&nbsp;&nbsp;CXX</A>
-<LI><A HREF="#htoc89">7.27&nbsp;&nbsp;LD</A>
-<LI><A HREF="#htoc90">7.28&nbsp;&nbsp;NM</A>
-<LI><A HREF="#htoc91">7.29&nbsp;&nbsp;RANLIB</A>
-<LI><A HREF="#htoc92">7.30&nbsp;&nbsp;F77</A>
-<LI><A HREF="#htoc93">7.31&nbsp;&nbsp;GCJ</A>
+<A HREF="#htoc64">7.1&nbsp;&nbsp;pkgDIR</A>
+<LI><A HREF="#htoc65">7.2&nbsp;&nbsp;workDIR</A>
+<LI><A HREF="#htoc66">7.3&nbsp;&nbsp;installDIR</A>
+<LI><A HREF="#htoc67">7.4&nbsp;&nbsp;srcNAME</A>
+<LI><A HREF="#htoc68">7.5&nbsp;&nbsp;srcVERSION</A>
+<LI><A HREF="#htoc69">7.6&nbsp;&nbsp;srcRELEASE</A>
+<LI><A HREF="#htoc70">7.7&nbsp;&nbsp;srcTAG</A>
+<LI><A HREF="#htoc71">7.8&nbsp;&nbsp;srcDIR</A>
+<LI><A HREF="#htoc72">7.9&nbsp;&nbsp;HOST</A>
+<LI><A HREF="#htoc73">7.10&nbsp;&nbsp;CFLAGS</A>
+<LI><A HREF="#htoc74">7.11&nbsp;&nbsp;CXXFLAGS</A>
+<LI><A HREF="#htoc75">7.12&nbsp;&nbsp;LDFLAGS</A>
+<LI><A HREF="#htoc76">7.13&nbsp;&nbsp;docDIR</A>
+<LI><A HREF="#htoc77">7.14&nbsp;&nbsp;sbinDIR</A>
+<LI><A HREF="#htoc78">7.15&nbsp;&nbsp;infoDIR</A>
+<LI><A HREF="#htoc79">7.16&nbsp;&nbsp;manDIR</A>
+<LI><A HREF="#htoc80">7.17&nbsp;&nbsp;dataDIR</A>
+<LI><A HREF="#htoc81">7.18&nbsp;&nbsp;confDIR</A>
+<LI><A HREF="#htoc82">7.19&nbsp;&nbsp;localstateDIR</A>
+<LI><A HREF="#htoc83">7.20&nbsp;&nbsp;defaultprefixDIR</A>
+<LI><A HREF="#htoc84">7.21&nbsp;&nbsp;exists_binary</A>
+<LI><A HREF="#htoc85">7.22&nbsp;&nbsp;getBinutilsInfo</A>
+<LI><A HREF="#htoc86">7.23&nbsp;&nbsp;AR</A>
+<LI><A HREF="#htoc87">7.24&nbsp;&nbsp;AS</A>
+<LI><A HREF="#htoc88">7.25&nbsp;&nbsp;CC</A>
+<LI><A HREF="#htoc89">7.26&nbsp;&nbsp;CXX</A>
+<LI><A HREF="#htoc90">7.27&nbsp;&nbsp;LD</A>
+<LI><A HREF="#htoc91">7.28&nbsp;&nbsp;NM</A>
+<LI><A HREF="#htoc92">7.29&nbsp;&nbsp;RANLIB</A>
+<LI><A HREF="#htoc93">7.30&nbsp;&nbsp;F77</A>
+<LI><A HREF="#htoc94">7.31&nbsp;&nbsp;GCJ</A>
 </UL>
-<LI><A HREF="#htoc94">8&nbsp;&nbsp;Kde</A>
+<LI><A HREF="#htoc95">8&nbsp;&nbsp;Kde</A>
 <UL><LI>
-<A HREF="#htoc95">8.1&nbsp;&nbsp;configure</A>
-<LI><A HREF="#htoc96">8.2&nbsp;&nbsp;make</A>
-<LI><A HREF="#htoc97">8.3&nbsp;&nbsp;install</A>
+<A HREF="#htoc96">8.1&nbsp;&nbsp;configure</A>
+<LI><A HREF="#htoc97">8.2&nbsp;&nbsp;make</A>
+<LI><A HREF="#htoc98">8.3&nbsp;&nbsp;install</A>
+</UL>
+<LI><A HREF="#htoc99">9&nbsp;&nbsp;Perlmodules</A>
+<UL><LI>
+<A HREF="#htoc100">9.1&nbsp;&nbsp;configure</A>
+<LI><A HREF="#htoc101">9.2&nbsp;&nbsp;make</A>
+<LI><A HREF="#htoc102">9.3&nbsp;&nbsp;install</A>
+</UL>
+<LI><A HREF="#htoc103">10&nbsp;&nbsp;Pythonmodules</A>
+<UL><LI>
+<A HREF="#htoc104">10.1&nbsp;&nbsp;compile</A>
+<LI><A HREF="#htoc105">10.2&nbsp;&nbsp;install</A>
+<LI><A HREF="#htoc106">10.3&nbsp;&nbsp;run</A>
+</UL>
+<LI><A HREF="#htoc107">11&nbsp;&nbsp;Scons</A>
+<UL><LI>
+<A HREF="#htoc108">11.1&nbsp;&nbsp;make</A>
+<LI><A HREF="#htoc109">11.2&nbsp;&nbsp;install</A>
 </UL>
 </UL>
 </BLOCKQUOTE>
@@ -216,8 +234,7 @@ def&nbsp;install():<BR>
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;pisitools.removeDir("/usr/libexec")</TT></DL></DIV>
 
-actions.py dosyası ile ilgili daha fazla bilgi PİSİ Mimari Belgesi'nden
-alınabilir. <BR>
+actions.py dosyası ile ilgili daha fazla bilgi PİSİ Mimari Belgesi<SUP><A NAME="text1" HREF="#note1">1</A></SUP>'nden alınabilir. <BR>
 <BR>
 Bu belgede Actions API üzerinde durulacaktır.<BR>
 <BR>
@@ -278,6 +295,14 @@ duyulabilecek çeşitli ortam değişkenlerinin ve paket ile ilgili bilgilerin
 elde edilmesi için işlevler sunar.
 <DT><B>Kde:</B><DD>KDE uygulamaları için derleme öncesi yapılandırma, derleme
 ve kurulum işlevlerini sunar.
+<DT><B>Perlmodules:</B><DD>Perl modüllerinin kurulumu için gerekli işlevleri sunar.
+<DT><B>Pythonmodules:</B><DD>Python modüllerinin derlenmesi, kurulması, çalıştırılması
+gibi işlevleri sunar.
+<DT><B>Scons:</B><DD><EM>Scons</EM> yeni nesil bir yazılım inşa aracıdır, geliştiricilere
+geleneksel <EM>autoconf/automake</EM> araçlarının yerini alabilecek
+bir yapı sunar. <EM>autotools</EM> modülünün <EM>autoconf/automake</EM>
+için sunduklarını, <EM>Scons</EM> modülü de <EM>scons</EM> ile inşa edilmiş
+uygulamalar için sunar.
 </DL>
 Takip eden bölümlerde bu modüller içerisindeki fonksiyonlar tek tek
 açıklanmış ve örneklenmiş, en son bölümde de örnek bir <EM>actions.py</EM>
@@ -603,126 +628,170 @@ olan dosyayı siler.
 <UL><LI>
 pisitools.remove("/usr/lib/libdb_cxx.so")
 </UL>
+<!--TOC subsection rename-->
+
+<H3><A NAME="htoc25">3.22</A>&nbsp;&nbsp;rename</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(sourceFile,&nbsp;destinationFile)</EM>
+</TT></DL></DIV>
+<EM>install</EM> dizini içerisindeki yolu <EM>sourceFile</EM> ile verilen
+dosyayı, bulunduğu dizinde <EM>destinationFile</EM> olarak isimlendirir.
+<UL><LI>
+pisitools.rename("/usr/bin/bash", "bash.old")
+</UL>
 <!--TOC subsection removeDir-->
 
-<H3><A NAME="htoc25">3.22</A>&nbsp;&nbsp;removeDir</H3><!--SEC END -->
+<H3><A NAME="htoc26">3.23</A>&nbsp;&nbsp;removeDir</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(destinationDirectory)</EM>
 </TT></DL></DIV>
 <EM>install</EM> dizini içerisindeki yolu <EM>destinationDirectory</EM>
-ile verilmiş olan dizini ve alt dizinlerini siler.
+ile verilmiş olan dizini tüm içeriği ile beraber siler.
 <UL><LI>
 pisitools.removeDir("/usr/lib")
 </UL>
 <!--TOC section Autotools-->
 
-<H2><A NAME="htoc26">4</A>&nbsp;&nbsp;Autotools</H2><!--SEC END -->
+<H2><A NAME="htoc27">4</A>&nbsp;&nbsp;Autotools</H2><!--SEC END -->
 
 <!--TOC subsection configure-->
 
-<H3><A NAME="htoc27">4.1</A>&nbsp;&nbsp;configure</H3><!--SEC END -->
+<H3><A NAME="htoc28">4.1</A>&nbsp;&nbsp;configure</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-configure source with given parameters = "--with-nls --with-libusb
---with-something-usefull"<BR>
+Kaynağı <EM>parameters</EM> ile verilen parametreler ve PİSİ'nin ön
+tanımlı yapılandırma parametreleri ile yapılandırır. Fonksiyonun parametreli
+ile ya da parametresiz çağırıldığı farketmeksizin, her durumda <EM>prefix,
+host, mandir, infodir, datadir, sysconfdir, localstatedir</EM> parametreleri
+öntanımlı değerleri <EM>configure</EM> betiğine gönderilir. Bu öntanımlı
+değerler ``PisiKaynakDizini/pisi/actionsapi/variables.py'' içerisinden
+görüntülenebilir.<BR>
 <BR>
 <!--TOC subsection rawConfigure-->
 
-<H3><A NAME="htoc28">4.2</A>&nbsp;&nbsp;rawConfigure</H3><!--SEC END -->
+<H3><A NAME="htoc29">4.2</A>&nbsp;&nbsp;rawConfigure</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'',&nbsp;prefix='')</EM>
 </TT></DL></DIV>
-configure source with given parameters = "--prefix=/usr --libdir=/usr/lib
---with-nls"<BR>
-<BR>
+Kaynağı parameters ile verilen parametreler ile hiç bir öntanımlı
+yapılandırma parametresi olmaksızın yapılandırır.
+<UL><LI>
+autotools.rawConfigure()
+<LI>autotools.rawConfigure("--prefix %s/usr --with-doxywizard"
+% get.installDIR())
+<LI>autotools.rawConfigure("--enable-nls --enable-freetype --disable-xmltest'')
+</UL>
 <!--TOC subsection compile-->
 
-<H3><A NAME="htoc29">4.3</A>&nbsp;&nbsp;compile</H3><!--SEC END -->
+<H3><A NAME="htoc30">4.3</A>&nbsp;&nbsp;compile</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
 <!--TOC subsection make-->
 
-<H3><A NAME="htoc30">4.4</A>&nbsp;&nbsp;make</H3><!--SEC END -->
+<H3><A NAME="htoc31">4.4</A>&nbsp;&nbsp;make</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-make source with given parameters = "all" || "doc"
-etc.<BR>
-<BR>
+Kaynağı <EM>parameters</EM> ile verilen parametreler ile inşa eder.
+<UL><LI>
+autotools.make()
+<LI>autotools.make("local-all")
+<LI>autotools.make("LIBS=%s" % get.LDFLAGS())
+<LI>autotools.make("-j1")
+</UL>
 <!--TOC subsection install-->
 
-<H3><A NAME="htoc31">4.5</A>&nbsp;&nbsp;install</H3><!--SEC END -->
+<H3><A NAME="htoc32">4.5</A>&nbsp;&nbsp;install</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-install source into install directory with given parameters<BR>
-<BR>
+Kaynağı <EM>parameters</EM> ile verilen parametreler ve PİSİ'nin ön
+tanımlı kurulum parametreleri ile kurulum dizini içerisine kurar.
+<UL><LI>
+autotools.install()
+<LI>autotools.install("libdir=%s/usr/lib" % get.installDIR())
+</UL>
 <!--TOC subsection rawInstall-->
 
-<H3><A NAME="htoc32">4.6</A>&nbsp;&nbsp;rawInstall</H3><!--SEC END -->
+<H3><A NAME="htoc33">4.6</A>&nbsp;&nbsp;rawInstall</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-install source into install directory with given parameters = PREFIX=%s
-% get.installDIR()<BR>
-<BR>
+Kaynağı verilen parametreler ile kurulum dizini içerisine kurar.
+<UL><LI>
+autotools.rawInstall("DESTDIR=%s" % get.installDIR())
+<LI>autotools.rawInstall("DESTDIR=&#92;"%s&#92;"
+docdir=/usr/share/doc/%s/html" % (get.installDIR(), get.srcTAG()))
+</UL>
 <!--TOC subsection aclocal-->
 
-<H3><A NAME="htoc33">4.7</A>&nbsp;&nbsp;aclocal</H3><!--SEC END -->
+<H3><A NAME="htoc34">4.7</A>&nbsp;&nbsp;aclocal</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-generates an aclocal.m4 based on the contents of configure.in.<BR>
-<BR>
+<EM>configure.in</EM> dosyasının içeriğine göre bir <EM>aclocal.m4</EM>
+oluşturmak için çağırılır.
+<UL><LI>
+autotools.aclocal("-I cmulocal -I config")
+<LI>autotools.aclocal("-I m4")
+<LI>autotools.aclocal()
+</UL>
 <!--TOC subsection autoconf-->
 
-<H3><A NAME="htoc34">4.8</A>&nbsp;&nbsp;autoconf</H3><!--SEC END -->
+<H3><A NAME="htoc35">4.8</A>&nbsp;&nbsp;autoconf</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-generates a configure script<BR>
-<BR>
+<EM>configure</EM> betiğinin yaratılması için çağırılır.
+<UL><LI>
+autotools.autoconf()
+</UL>
 <!--TOC subsection automake-->
 
-<H3><A NAME="htoc35">4.9</A>&nbsp;&nbsp;automake</H3><!--SEC END -->
+<H3><A NAME="htoc36">4.9</A>&nbsp;&nbsp;automake</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-generates a makefile<BR>
-<BR>
+<EM>makefile</EM> dosyasının yaratılması için çağırılır.
+<UL><LI>
+autotools.automake("-afc")
+<LI>autotools.automake("--add-missing")
+<LI>autotools.autoconf()
+</UL>
 <!--TOC section Libtools-->
 
-<H2><A NAME="htoc36">5</A>&nbsp;&nbsp;Libtools</H2><!--SEC END -->
+<H2><A NAME="htoc37">5</A>&nbsp;&nbsp;Libtools</H2><!--SEC END -->
 
 <!--TOC subsection preplib-->
 
-<H3><A NAME="htoc37">5.1</A>&nbsp;&nbsp;preplib</H3><!--SEC END -->
+<H3><A NAME="htoc38">5.1</A>&nbsp;&nbsp;preplib</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceDirectory&nbsp;=&nbsp;'/usr/lib')</EM>
 </TT></DL></DIV>
 <!--TOC subsection preplib_so-->
 
-<H3><A NAME="htoc38">5.2</A>&nbsp;&nbsp;preplib_so</H3><!--SEC END -->
+<H3><A NAME="htoc39">5.2</A>&nbsp;&nbsp;preplib_so</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceDirectory)</EM>
 </TT></DL></DIV>
 <!--TOC subsection gnuconfig_update-->
 
-<H3><A NAME="htoc39">5.3</A>&nbsp;&nbsp;gnuconfig_update</H3><!--SEC END -->
+<H3><A NAME="htoc40">5.3</A>&nbsp;&nbsp;gnuconfig_update</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -731,25 +800,25 @@ En yeni config.* dosyalarını kaynak üzerine kopyalar. <BR>
 <BR>
 <!--TOC subsection libtoolize-->
 
-<H3><A NAME="htoc40">5.4</A>&nbsp;&nbsp;libtoolize</H3><!--SEC END -->
+<H3><A NAME="htoc41">5.4</A>&nbsp;&nbsp;libtoolize</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
 <!--TOC subsection gen_usr_ldscript-->
 
-<H3><A NAME="htoc41">5.5</A>&nbsp;&nbsp;gen_usr_ldscript</H3><!--SEC END -->
+<H3><A NAME="htoc42">5.5</A>&nbsp;&nbsp;gen_usr_ldscript</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(dynamicLib)</EM>
 </TT></DL></DIV>
 <!--TOC section Shelltools-->
 
-<H2><A NAME="htoc42">6</A>&nbsp;&nbsp;Shelltools</H2><!--SEC END -->
+<H2><A NAME="htoc43">6</A>&nbsp;&nbsp;Shelltools</H2><!--SEC END -->
 
 <!--TOC subsection can_access_file-->
 
-<H3><A NAME="htoc43">6.1</A>&nbsp;&nbsp;can_access_file</H3><!--SEC END -->
+<H3><A NAME="htoc44">6.1</A>&nbsp;&nbsp;can_access_file</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
@@ -767,7 +836,7 @@ if&nbsp;shelltools.can_access_file("/usr/share/terminfo/%s"&nbsp;%&nbsp;termfile
 </TT></DL></DIV>
 <!--TOC subsection can_access_directory-->
 
-<H3><A NAME="htoc44">6.2</A>&nbsp;&nbsp;can_access_directory</H3><!--SEC END -->
+<H3><A NAME="htoc45">6.2</A>&nbsp;&nbsp;can_access_directory</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(destinationDirectory)</EM>
@@ -777,7 +846,7 @@ olup olmadığını bilgisini döndürür.<BR>
 <BR>
 <!--TOC subsection makedirs-->
 
-<H3><A NAME="htoc45">6.3</A>&nbsp;&nbsp;makedirs</H3><!--SEC END -->
+<H3><A NAME="htoc46">6.3</A>&nbsp;&nbsp;makedirs</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(destinationDirectory)</EM>
@@ -790,7 +859,7 @@ shelltools.makedirs("%s/build" % get.workDIR())
 </UL>
 <!--TOC subsection chmod-->
 
-<H3><A NAME="htoc46">6.4</A>&nbsp;&nbsp;chmod</H3><!--SEC END -->
+<H3><A NAME="htoc47">6.4</A>&nbsp;&nbsp;chmod</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile,&nbsp;mode&nbsp;=&nbsp;0755)</EM>
@@ -807,7 +876,7 @@ get.installDIR(), 4711)
 </UL>
 <!--TOC subsection unlink-->
 
-<H3><A NAME="htoc47">6.5</A>&nbsp;&nbsp;unlink</H3><!--SEC END -->
+<H3><A NAME="htoc48">6.5</A>&nbsp;&nbsp;unlink</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
@@ -818,7 +887,7 @@ shelltools.unlink(get.workDIR() + '/' + get.srcDIR() + "/missing")
 </UL>
 <!--TOC subsection unlinkDir-->
 
-<H3><A NAME="htoc48">6.6</A>&nbsp;&nbsp;unlinkDir</H3><!--SEC END -->
+<H3><A NAME="htoc49">6.6</A>&nbsp;&nbsp;unlinkDir</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceDirectory)</EM>
@@ -830,7 +899,7 @@ shelltools.unlinkDir(get.workDIR() + "/tmpbuild")
 </UL>
 <!--TOC subsection move-->
 
-<H3><A NAME="htoc49">6.7</A>&nbsp;&nbsp;move</H3><!--SEC END -->
+<H3><A NAME="htoc50">6.7</A>&nbsp;&nbsp;move</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile,&nbsp;destinationFile)</EM>
@@ -846,7 +915,7 @@ shelltools.move("ac-wrapper.sh", "%s/usr/lib/misc/"
 </UL>
 <!--TOC subsection copy-->
 
-<H3><A NAME="htoc50">6.8</A>&nbsp;&nbsp;copy</H3><!--SEC END -->
+<H3><A NAME="htoc51">6.8</A>&nbsp;&nbsp;copy</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile,&nbsp;destinationFile)</EM>
@@ -859,7 +928,7 @@ shelltools.copy("Makefile.pre.in", "%s/usr/lib/python2.3/config/"
 </UL>
 <!--TOC subsection copytree-->
 
-<H3><A NAME="htoc51">6.9</A>&nbsp;&nbsp;copytree</H3><!--SEC END -->
+<H3><A NAME="htoc52">6.9</A>&nbsp;&nbsp;copytree</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(source,&nbsp;destination,&nbsp;sym=False)</EM>
@@ -874,7 +943,7 @@ shelltools.copytree("include/linux/", "%s/usr/include/linux/"
 </UL>
 <!--TOC subsection touch-->
 
-<H3><A NAME="htoc52">6.10</A>&nbsp;&nbsp;touch</H3><!--SEC END -->
+<H3><A NAME="htoc53">6.10</A>&nbsp;&nbsp;touch</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
@@ -887,7 +956,7 @@ shelltools.touch(get.workDIR() + "aclocal.m4")
 </UL>
 <!--TOC subsection cd-->
 
-<H3><A NAME="htoc53">6.11</A>&nbsp;&nbsp;cd</H3><!--SEC END -->
+<H3><A NAME="htoc54">6.11</A>&nbsp;&nbsp;cd</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(directoryName&nbsp;=&nbsp;'')</EM>
@@ -901,7 +970,7 @@ shelltools.cd("build_unix")
 </UL>
 <!--TOC subsection ls-->
 
-<H3><A NAME="htoc54">6.12</A>&nbsp;&nbsp;ls</H3><!--SEC END -->
+<H3><A NAME="htoc55">6.12</A>&nbsp;&nbsp;ls</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(source)</EM>
@@ -922,7 +991,7 @@ shelltools.ls(get.installDIR() + "/bin/")
 </UL>
 <!--TOC subsection export-->
 
-<H3><A NAME="htoc55">6.13</A>&nbsp;&nbsp;export</H3><!--SEC END -->
+<H3><A NAME="htoc56">6.13</A>&nbsp;&nbsp;export</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(key,&nbsp;value)</EM>
@@ -937,7 +1006,7 @@ shelltools.export("WANT_AUTOCONF", "2.5")
 </UL>
 <!--TOC subsection system-->
 
-<H3><A NAME="htoc56">6.14</A>&nbsp;&nbsp;system</H3><!--SEC END -->
+<H3><A NAME="htoc57">6.14</A>&nbsp;&nbsp;system</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(command)</EM>
@@ -950,7 +1019,7 @@ shelltools.system("./update-pciids.sh &amp;&gt; /dev/null")
 </UL>
 <!--TOC subsection isLink-->
 
-<H3><A NAME="htoc57">6.15</A>&nbsp;&nbsp;isLink</H3><!--SEC END -->
+<H3><A NAME="htoc58">6.15</A>&nbsp;&nbsp;isLink</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
@@ -962,7 +1031,7 @@ shelltools.isLink(get.installDIR() + '/maybe/link')
 </UL>
 <!--TOC subsection realPath-->
 
-<H3><A NAME="htoc58">6.16</A>&nbsp;&nbsp;realPath</H3><!--SEC END -->
+<H3><A NAME="htoc59">6.16</A>&nbsp;&nbsp;realPath</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
@@ -974,7 +1043,7 @@ shelltools.realPath(get.installDIR() + link)
 </UL>
 <!--TOC subsection baseName-->
 
-<H3><A NAME="htoc59">6.17</A>&nbsp;&nbsp;baseName</H3><!--SEC END -->
+<H3><A NAME="htoc60">6.17</A>&nbsp;&nbsp;baseName</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
@@ -987,7 +1056,7 @@ shelltools.baseName(shelltools.realPath(link))
 </UL>
 <!--TOC subsection dirName-->
 
-<H3><A NAME="htoc60">6.18</A>&nbsp;&nbsp;dirName</H3><!--SEC END -->
+<H3><A NAME="htoc61">6.18</A>&nbsp;&nbsp;dirName</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
@@ -998,7 +1067,7 @@ tamamıdır).<BR>
 <BR>
 <!--TOC subsection sym-->
 
-<H3><A NAME="htoc61">6.19</A>&nbsp;&nbsp;sym</H3><!--SEC END -->
+<H3><A NAME="htoc62">6.19</A>&nbsp;&nbsp;sym</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile,&nbsp;destinationFile)</EM>
@@ -1008,11 +1077,11 @@ ile verilmiş bir <EM>symlink</EM> oluşturur.<BR>
 <BR>
 <!--TOC section Get-->
 
-<H2><A NAME="htoc62">7</A>&nbsp;&nbsp;Get</H2><!--SEC END -->
+<H2><A NAME="htoc63">7</A>&nbsp;&nbsp;Get</H2><!--SEC END -->
 
 <!--TOC subsection pkgDIR-->
 
-<H3><A NAME="htoc63">7.1</A>&nbsp;&nbsp;pkgDIR</H3><!--SEC END -->
+<H3><A NAME="htoc64">7.1</A>&nbsp;&nbsp;pkgDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -1022,7 +1091,7 @@ olduğu dizinin tam yolunu döndürür.<BR>
 <BR>
 <!--TOC subsection workDIR-->
 
-<H3><A NAME="htoc64">7.2</A>&nbsp;&nbsp;workDIR</H3><!--SEC END -->
+<H3><A NAME="htoc65">7.2</A>&nbsp;&nbsp;workDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -1031,7 +1100,7 @@ olduğu dizinin tam yolunu döndürür.<BR>
 <BR>
 <!--TOC subsection installDIR-->
 
-<H3><A NAME="htoc65">7.3</A>&nbsp;&nbsp;installDIR</H3><!--SEC END -->
+<H3><A NAME="htoc66">7.3</A>&nbsp;&nbsp;installDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -1040,7 +1109,7 @@ olduğu dizinin tam yolunu döndürür.<BR>
 <BR>
 <!--TOC subsection srcNAME-->
 
-<H3><A NAME="htoc66">7.4</A>&nbsp;&nbsp;srcNAME</H3><!--SEC END -->
+<H3><A NAME="htoc67">7.4</A>&nbsp;&nbsp;srcNAME</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -1049,7 +1118,7 @@ Kaynak paketinin adını döndürür (automake-wrapper-1.7-3 için, automake-wra
 <BR>
 <!--TOC subsection srcVERSION-->
 
-<H3><A NAME="htoc67">7.5</A>&nbsp;&nbsp;srcVERSION</H3><!--SEC END -->
+<H3><A NAME="htoc68">7.5</A>&nbsp;&nbsp;srcVERSION</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -1059,7 +1128,7 @@ Paketin kaynak versiyonunu döndürür (automake-wrapper-1.7-3 için,
 <BR>
 <!--TOC subsection srcRELEASE-->
 
-<H3><A NAME="htoc68">7.6</A>&nbsp;&nbsp;srcRELEASE</H3><!--SEC END -->
+<H3><A NAME="htoc69">7.6</A>&nbsp;&nbsp;srcRELEASE</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -1069,7 +1138,7 @@ döndürür (automake-wrapper-1.7-3 için, 3)<BR>
 <BR>
 <!--TOC subsection srcTAG-->
 
-<H3><A NAME="htoc69">7.7</A>&nbsp;&nbsp;srcTAG</H3><!--SEC END -->
+<H3><A NAME="htoc70">7.7</A>&nbsp;&nbsp;srcTAG</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
@@ -1079,197 +1148,288 @@ numarası'ndna oluşan ismi döndürür (automake-wrapper-1.7-3 için, automake-
 <BR>
 <!--TOC subsection srcDIR-->
 
-<H3><A NAME="htoc70">7.8</A>&nbsp;&nbsp;srcDIR</H3><!--SEC END -->
+<H3><A NAME="htoc71">7.8</A>&nbsp;&nbsp;srcDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection HOST-->
 
-<H3><A NAME="htoc71">7.9</A>&nbsp;&nbsp;HOST</H3><!--SEC END -->
+<H3><A NAME="htoc72">7.9</A>&nbsp;&nbsp;HOST</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection CFLAGS-->
 
-<H3><A NAME="htoc72">7.10</A>&nbsp;&nbsp;CFLAGS</H3><!--SEC END -->
+<H3><A NAME="htoc73">7.10</A>&nbsp;&nbsp;CFLAGS</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection CXXFLAGS-->
 
-<H3><A NAME="htoc73">7.11</A>&nbsp;&nbsp;CXXFLAGS</H3><!--SEC END -->
+<H3><A NAME="htoc74">7.11</A>&nbsp;&nbsp;CXXFLAGS</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection LDFLAGS-->
 
-<H3><A NAME="htoc74">7.12</A>&nbsp;&nbsp;LDFLAGS</H3><!--SEC END -->
+<H3><A NAME="htoc75">7.12</A>&nbsp;&nbsp;LDFLAGS</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection docDIR-->
 
-<H3><A NAME="htoc75">7.13</A>&nbsp;&nbsp;docDIR</H3><!--SEC END -->
+<H3><A NAME="htoc76">7.13</A>&nbsp;&nbsp;docDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection sbinDIR-->
 
-<H3><A NAME="htoc76">7.14</A>&nbsp;&nbsp;sbinDIR</H3><!--SEC END -->
+<H3><A NAME="htoc77">7.14</A>&nbsp;&nbsp;sbinDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection infoDIR-->
 
-<H3><A NAME="htoc77">7.15</A>&nbsp;&nbsp;infoDIR</H3><!--SEC END -->
+<H3><A NAME="htoc78">7.15</A>&nbsp;&nbsp;infoDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection manDIR-->
 
-<H3><A NAME="htoc78">7.16</A>&nbsp;&nbsp;manDIR</H3><!--SEC END -->
+<H3><A NAME="htoc79">7.16</A>&nbsp;&nbsp;manDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection dataDIR-->
 
-<H3><A NAME="htoc79">7.17</A>&nbsp;&nbsp;dataDIR</H3><!--SEC END -->
+<H3><A NAME="htoc80">7.17</A>&nbsp;&nbsp;dataDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection confDIR-->
 
-<H3><A NAME="htoc80">7.18</A>&nbsp;&nbsp;confDIR</H3><!--SEC END -->
+<H3><A NAME="htoc81">7.18</A>&nbsp;&nbsp;confDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection localstateDIR-->
 
-<H3><A NAME="htoc81">7.19</A>&nbsp;&nbsp;localstateDIR</H3><!--SEC END -->
+<H3><A NAME="htoc82">7.19</A>&nbsp;&nbsp;localstateDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection defaultprefixDIR-->
 
-<H3><A NAME="htoc82">7.20</A>&nbsp;&nbsp;defaultprefixDIR</H3><!--SEC END -->
+<H3><A NAME="htoc83">7.20</A>&nbsp;&nbsp;defaultprefixDIR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection exists_binary-->
 
-<H3><A NAME="htoc83">7.21</A>&nbsp;&nbsp;exists_binary</H3><!--SEC END -->
+<H3><A NAME="htoc84">7.21</A>&nbsp;&nbsp;exists_binary</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(bin)</EM>
 </TT></DL></DIV>
 <!--TOC subsection getBinutilsInfo-->
 
-<H3><A NAME="htoc84">7.22</A>&nbsp;&nbsp;getBinutilsInfo</H3><!--SEC END -->
+<H3><A NAME="htoc85">7.22</A>&nbsp;&nbsp;getBinutilsInfo</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(util)</EM>
 </TT></DL></DIV>
 <!--TOC subsection AR-->
 
-<H3><A NAME="htoc85">7.23</A>&nbsp;&nbsp;AR</H3><!--SEC END -->
+<H3><A NAME="htoc86">7.23</A>&nbsp;&nbsp;AR</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection AS-->
 
-<H3><A NAME="htoc86">7.24</A>&nbsp;&nbsp;AS</H3><!--SEC END -->
+<H3><A NAME="htoc87">7.24</A>&nbsp;&nbsp;AS</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection CC-->
 
-<H3><A NAME="htoc87">7.25</A>&nbsp;&nbsp;CC</H3><!--SEC END -->
+<H3><A NAME="htoc88">7.25</A>&nbsp;&nbsp;CC</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection CXX-->
 
-<H3><A NAME="htoc88">7.26</A>&nbsp;&nbsp;CXX</H3><!--SEC END -->
+<H3><A NAME="htoc89">7.26</A>&nbsp;&nbsp;CXX</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection LD-->
 
-<H3><A NAME="htoc89">7.27</A>&nbsp;&nbsp;LD</H3><!--SEC END -->
+<H3><A NAME="htoc90">7.27</A>&nbsp;&nbsp;LD</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection NM-->
 
-<H3><A NAME="htoc90">7.28</A>&nbsp;&nbsp;NM</H3><!--SEC END -->
+<H3><A NAME="htoc91">7.28</A>&nbsp;&nbsp;NM</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection RANLIB-->
 
-<H3><A NAME="htoc91">7.29</A>&nbsp;&nbsp;RANLIB</H3><!--SEC END -->
+<H3><A NAME="htoc92">7.29</A>&nbsp;&nbsp;RANLIB</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection F77-->
 
-<H3><A NAME="htoc92">7.30</A>&nbsp;&nbsp;F77</H3><!--SEC END -->
+<H3><A NAME="htoc93">7.30</A>&nbsp;&nbsp;F77</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection GCJ-->
 
-<H3><A NAME="htoc93">7.31</A>&nbsp;&nbsp;GCJ</H3><!--SEC END -->
+<H3><A NAME="htoc94">7.31</A>&nbsp;&nbsp;GCJ</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC section Kde-->
 
-<H2><A NAME="htoc94">8</A>&nbsp;&nbsp;Kde</H2><!--SEC END -->
+<H2><A NAME="htoc95">8</A>&nbsp;&nbsp;Kde</H2><!--SEC END -->
 
 <!--TOC subsection configure-->
 
-<H3><A NAME="htoc95">8.1</A>&nbsp;&nbsp;configure</H3><!--SEC END -->
+<H3><A NAME="htoc96">8.1</A>&nbsp;&nbsp;configure</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
 <!--TOC subsection make-->
 
-<H3><A NAME="htoc96">8.2</A>&nbsp;&nbsp;make</H3><!--SEC END -->
+<H3><A NAME="htoc97">8.2</A>&nbsp;&nbsp;make</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
 <!--TOC subsection install-->
 
-<H3><A NAME="htoc97">8.3</A>&nbsp;&nbsp;install</H3><!--SEC END -->
+<H3><A NAME="htoc98">8.3</A>&nbsp;&nbsp;install</H3><!--SEC END -->
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(None)</EM>
 </TT></DL></DIV>
+<!--TOC section Perlmodules-->
+
+<H2><A NAME="htoc99">9</A>&nbsp;&nbsp;Perlmodules</H2><!--SEC END -->
+
+<!--TOC subsection configure-->
+
+<H3><A NAME="htoc100">9.1</A>&nbsp;&nbsp;configure</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'')</EM>
+</TT></DL></DIV>
+Perl kaynağını verilen parametreler ile yapılandırır.
+<UL><LI>
+perlmodules.configure("/usr")
+<LI>perlmodules.configure()
+</UL>
+<!--TOC subsection make-->
+
+<H3><A NAME="htoc101">9.2</A>&nbsp;&nbsp;make</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'')</EM>
+</TT></DL></DIV>
+Perl kaynağını verilen parametreler ile derler.
+<UL><LI>
+perlmodules.make()
+</UL>
+<!--TOC subsection install-->
+
+<H3><A NAME="htoc102">9.3</A>&nbsp;&nbsp;install</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'install')</EM>
+</TT></DL></DIV>
+Perl kaynağını verilen parametreler ile kurar.
+<UL><LI>
+perlmodules.install()
+</UL>
+<!--TOC section Pythonmodules-->
+
+<H2><A NAME="htoc103">10</A>&nbsp;&nbsp;Pythonmodules</H2><!--SEC END -->
+
+<!--TOC subsection compile-->
+
+<H3><A NAME="htoc104">10.1</A>&nbsp;&nbsp;compile</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'')</EM>
+</TT></DL></DIV>
+Kaynağı verilen parametreler ile derler.<BR>
+<BR>
+<!--TOC subsection install-->
+
+<H3><A NAME="htoc105">10.2</A>&nbsp;&nbsp;install</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'')</EM>
+</TT></DL></DIV>
+<EM>parameters</EM> ile belirtilen kaynak için <EM>python setup.py
+install</EM> komutunu install dizini içerisinde çalıştırır.<BR>
+<BR>
+<!--TOC subsection run-->
+
+<H3><A NAME="htoc106">10.3</A>&nbsp;&nbsp;run</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'')</EM>
+</TT></DL></DIV>
+<EM>parameters</EM> ile belirtilen kaynağı python ile işletir.<BR>
+<BR>
+<!--TOC section Scons-->
+
+<H2><A NAME="htoc107">11</A>&nbsp;&nbsp;Scons</H2><!--SEC END -->
+
+<!--TOC subsection make-->
+
+<H3><A NAME="htoc108">11.1</A>&nbsp;&nbsp;make</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'')</EM></TT></DL></DIV>
+<!--TOC subsection install-->
+
+<H3><A NAME="htoc109">11.2</A>&nbsp;&nbsp;install</H3><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<EM>(parameters&nbsp;=&nbsp;'install')</EM>
+</TT></DL></DIV>
+<!--BEGIN NOTES document-->
+<HR WIDTH="50%" SIZE=1><DL><DT><A NAME="note1" HREF="#text1"><FONT SIZE=5>1</FONT></A><DD><A HREF="http://www.uludag.org.tr/projeler/pisi/pisi/pisi.html"><TT>http://www.uludag.org.tr/projeler/pisi/pisi/pisi.html</TT></A>
+</DL>
+<!--END NOTES-->
 </div>
 <!-- SAYFA İÇERİK SONU -->
 

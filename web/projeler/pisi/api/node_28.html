@@ -50,19 +50,24 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc28">4.2</A>&nbsp;&nbsp;rawConfigure</H3>
+<H3><A NAME="htoc28">4.1</A>&nbsp;&nbsp;configure</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(parameters&nbsp;=&nbsp;'',&nbsp;prefix='')</EM>
+<EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-configure source with given parameters = "--prefix=/usr --libdir=/usr/lib
---with-nls"<BR>
+Kaynağı <EM>parameters</EM> ile verilen parametreler ve PİSİ'nin ön
+tanımlı yapılandırma parametreleri ile yapılandırır. Fonksiyonun parametreli
+ile ya da parametresiz çağırıldığı farketmeksizin, her durumda <EM>prefix,
+host, mandir, infodir, datadir, sysconfdir, localstatedir</EM> parametreleri
+öntanımlı değerleri <EM>configure</EM> betiğine gönderilir. Bu öntanımlı
+değerler ``PisiKaynakDizini/pisi/actionsapi/variables.py'' içerisinden
+görüntülenebilir.<BR>
 <BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_27.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_29.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

@@ -50,19 +50,24 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc34">4.8</A>&nbsp;&nbsp;autoconf</H3>
+<H3><A NAME="htoc34">4.7</A>&nbsp;&nbsp;aclocal</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(parameters&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-generates a configure script<BR>
-<BR>
+<EM>configure.in</EM> dosyasının içeriğine göre bir <EM>aclocal.m4</EM>
+oluşturmak için çağırılır.
+<UL><LI>
+autotools.aclocal("-I cmulocal -I config")
+<LI>autotools.aclocal("-I m4")
+<LI>autotools.aclocal()
+</UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_33.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_35.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->
