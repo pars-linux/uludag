@@ -14,11 +14,10 @@
 
 from qt import *
 import pisi.api
-from threading import *
 
-class MyThread(Thread):
+class MyThread(QThread):
     def __init__(self, widget):
-        Thread.__init__(self, group=None, target=None, name=None)
+        QThread.__init__(self)
         self.receiver = widget
         self.installing = False
         self.upgrading = False
