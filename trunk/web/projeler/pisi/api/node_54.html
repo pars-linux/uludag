@@ -50,22 +50,21 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc59">6.17</A>&nbsp;&nbsp;baseName</H3>
+<H3><A NAME="htoc59">6.16</A>&nbsp;&nbsp;realPath</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 <EM>(sourceFile)</EM>
 </TT></DL></DIV>
-<EM>sourceFile</EM> ile verilen dosya yolunun gösterdiği dosyanın adını
-döndürür (os.path.basename()). Aşağıdaki örnekteki gibi durumlarda
-kullanılabilir.
+Tam you <EM>sourceFile</EM> ile verilen linkin işaret ettiği gerçek
+dizinin yolunu döndürür.
 <UL><LI>
-shelltools.baseName(shelltools.realPath(link))
+shelltools.realPath(get.installDIR() + link)
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_53.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_55.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

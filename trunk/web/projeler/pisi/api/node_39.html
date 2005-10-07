@@ -50,20 +50,28 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc44">6.2</A>&nbsp;&nbsp;can_access_directory</H3>
+<H3><A NAME="htoc44">6.1</A>&nbsp;&nbsp;can_access_file</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(destinationDirectory)</EM>
+<EM>(sourceFile)</EM>
 </TT></DL></DIV>
-Tam yolu <EM>destinationDirectory</EM> ile verilmiş olan dizinin erişilebilir
-olup olmadığını bilgisini döndürür.<BR>
+Tam yolu <EM>sourceFile</EM> ile verilmiş olan dosyanın erişilebilir
+olup olmadığını bilgisini döndürür.
+<UL><LI>
+shelltools.can_access_file("/usr/share/terminfo/%s"
+% termfile)
+</UL>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+if&nbsp;shelltools.can_access_file("/usr/share/terminfo/%s"&nbsp;%&nbsp;termfile):<BR>
 <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;do_something_here
+</TT></DL></DIV>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_38.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_40.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

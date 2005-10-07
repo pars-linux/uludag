@@ -50,30 +50,23 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc54">6.12</A>&nbsp;&nbsp;ls</H3>
+<H3><A NAME="htoc54">6.11</A>&nbsp;&nbsp;cd</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(source)</EM>
+<EM>(directoryName&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-Tam yolu <EM>source</EM> ile verilen dizin ya da dosyaların bir listesini
-döndürür, bu liste içerisindeki her bir dosya üzerinde bir işlem yapmak
-gerektiği durumlarda kullanılabilir, metakarakterlerden yararlanılabilir.
+Çalışma dizinini tam yolu <EM>directoryName</EM> ile verilen dizin içerisine
+değiştirir.
 <UL><LI>
-shelltools.ls(get.installDIR() + "/usr/lib/*w.*")
-</UL>
-<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-for&nbsp;file&nbsp;in&nbsp;shelltools.ls(get.installDIR()&nbsp;+&nbsp;"/usr/lib/*w.*"):<BR>
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;do_something_with_file_here..
-</TT></DL></DIV>
-<UL><LI>
-shelltools.ls(get.installDIR() + "/bin/")
+shelltools.cd("build_unix")
+<LI>shelltools.cd("%s/build-default-i686-pc-linux-gnu-nptl"
+% get.workDIR())
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_48.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_50.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

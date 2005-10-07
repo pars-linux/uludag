@@ -50,26 +50,22 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc46">6.4</A>&nbsp;&nbsp;chmod</H3>
+<H3><A NAME="htoc46">6.3</A>&nbsp;&nbsp;makedirs</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(sourceFile,&nbsp;mode&nbsp;=&nbsp;0755)</EM>
+<EM>(destinationDirectory)</EM>
 </TT></DL></DIV>
-Tam yolu <EM>sourceFile</EM> ile verilen dosyanın izinlerini değiştirir.
-Metakarakter kullanılabilir.
+Tam yolu <EM>destinationDirectory</EM> ile verilmiş olan dizini oluşturur.
 <UL><LI>
-shelltools.chmod("config/config.sub")
-<LI>shelltools.chmod(get.installDIR() + "/lib/libz.so.*")
-<LI>helltools.chmod("%s/usr/lib/misc/pt_chown" %
-get.installDIR(), 4711)
-<LI>shelltools.chmod(get.installDIR() + "/etc/ssh/sshd_config",
-0600)
+shelltools.makedirs("%s/build" % get.workDIR())
+<LI>shelltools.makedirs("%s/build-default-i686-pc-linux-gnu-nptl"
+% get.workDIR())
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_40.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_42.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

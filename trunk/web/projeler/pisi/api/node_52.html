@@ -50,21 +50,22 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc57">6.15</A>&nbsp;&nbsp;isLink</H3>
+<H3><A NAME="htoc57">6.14</A>&nbsp;&nbsp;system</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(sourceFile)</EM>
+<EM>(command)</EM>
 </TT></DL></DIV>
-Tam you <EM>sourceFile</EM> ile verilen dosyanın link olup olmadığı
-bilgisini döndürür.
+command ile verilen komutu kabuğa işletir, kabukten dönen sonuç geridönüş
+değeridir.
 <UL><LI>
-shelltools.isLink(get.installDIR() + '/maybe/link')
+shelltools.system("./update-pciids.sh &amp;&gt; /dev/null")
+<LI>shelltools.system("python setup.py build")
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_51.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_53.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

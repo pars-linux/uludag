@@ -50,22 +50,24 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)</H3>
+<H3 ALIGN=center><EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc52">6.10</A>&nbsp;&nbsp;touch</H3>
+<H3><A NAME="htoc52">6.9</A>&nbsp;&nbsp;copytree</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(sourceFile)</EM>
+<EM>(source,&nbsp;destination,&nbsp;sym=False)</EM>
 </TT></DL></DIV>
-Tam yolu <EM>sourceFile</EM> ile verilen dosyanın son erişim tarihini
-erişim anı yapar, eğer dosya yoksa onu yaratır.
+Tam yolu <EM>source</EM> ile verilmiş olan dizini, tam yolu <EM>destination</EM>
+ile verilmiş hedefe kopyalar.
 <UL><LI>
-shelltools.touch(get.workDIR() + "aclocal.m4")
-<LI>shelltools.touch("gcc/c-gperf.h")
+shelltools.copytree("include/linux/", "%s/usr/include/linux/"
+% get.installDIR())
+<LI>shelltools.copytree("include/asm-generic/", "%s/usr/include/asm-generic/"
+% get.installDIR())
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_46.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_48.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
