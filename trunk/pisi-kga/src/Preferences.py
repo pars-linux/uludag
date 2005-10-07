@@ -18,7 +18,6 @@ import PreferencesWidget
 import RepoDialog
 import ThreadRunner
 import PisiKga # for loadIcon
-from pisi import repodb
 
 # Pisi imports
 import pisi.api
@@ -59,7 +58,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
     def moveUp(self):
         item = self.repoListView.currentItem()
         parent = item.itemAbove()
-
+        
         if not parent:
             return
         
@@ -70,7 +69,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
             self.repoListView.insertItem(item)
             self.repoListView.setSelected(item, True)
 
-        # TODO move in pisi config too
+        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(parent.text(0)))
 
     def moveDown(self):
         item = self.repoListView.currentItem()
@@ -81,7 +80,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
 
         item.moveItem(sibling)
 
-        # TODO move in pisi config too
+        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(sibling.text(0)))
 
     def updateAllRepos(self):
         self.updateRepoButton.setEnabled(False)
