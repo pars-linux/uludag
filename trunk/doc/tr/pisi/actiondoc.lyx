@@ -127,7 +127,9 @@ actions.py
 \layout LyX-Code
 
 # Gökçen Eraslan <gokcene@anadolu.edu.tr> 
-\layout LyX-Code
+\newline 
+
+\newline 
 
 \layout LyX-Code
 
@@ -138,9 +140,9 @@ from pisi.actionsapi import pisitools
 \layout LyX-Code
 
 from pisi.actionsapi import get
-\layout LyX-Code
+\newline 
 
-\layout LyX-Code
+\newline 
 
 \layout LyX-Code
 
@@ -148,6 +150,8 @@ def setup():
 \layout LyX-Code
 
     autotools.configure("--enable-nls --bindir=/bin --with-rmt=/usr/sbin/rmt")
+\newline 
+
 \layout LyX-Code
 
 \layout LyX-Code
@@ -156,6 +160,8 @@ def build():
 \layout LyX-Code
 
     autotools.make()
+\newline 
+
 \layout LyX-Code
 
 \layout LyX-Code
