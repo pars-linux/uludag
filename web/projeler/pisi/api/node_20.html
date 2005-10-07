@@ -57,18 +57,21 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc20">3.17</A>&nbsp;&nbsp;dosym</H3>
+<H3><A NAME="htoc20">3.17</A>&nbsp;&nbsp;insinto</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(sourceFile,&nbsp;destinationFile)</EM>
+<EM>(destinationDirectory,&nbsp;sourceFile,&nbsp;&nbsp;destinationFile&nbsp;=&nbsp;'')</EM>
 </TT></DL></DIV>
-<EM>install</EM> dizini içerisinde göstereceği yol <EM>sourceFile</EM>
-ile verilmiş olan ve <EM>install</EM> dizin içerisindeki yolu <EM>destinationFile</EM>
-ile verilmiş bir <EM>symlink</EM> oluşturur.
+<EM>work</EM> dizini içerisindeki yolu <EM>sourceFile</EM> ile verilmiş
+olan bir dosyayı <EM>install</EM> dizini içerisindeki yolu <EM>destinationDirectory</EM>
+ile verilmiş olan dizin içerisine, eğer verilmişse <EM>destinationFile</EM>
+ismi ile, eğer verilmemişse kendi adı ile kopyalar. Dosyanın <EM>work</EM>
+dizini içerisindeki <EM>uid</EM>/<EM>guid</EM> ve izinleri korunur. <EM>destinationFile</EM>
+parametresi kullanılmamışsa, <EM>soruceFile</EM> için metakarakter kullanılabilir.
 <UL><LI>
-pisitools.dosym("gzip", "/bin/gunzip")
-<LI>pisitools.dosym("libdb1.so.2", "/usr/lib/libdb.so.2")
-<LI>pisitools.dosym("../bin/lsmod", "/sbin/lsmod")
-<LI>pisitools.dosym("/usr/X11R6/include/X11", "/usr/include/X11")
+pisitools.insinto("/opt/rar/bin", "rar")
+<LI>pisitools.insinto("/etc/", "doc/nanorc.sample",
+"nanorc")
+<LI>pisitools.insinto("/etc/hotplug", "etc/hotplug/*map")
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_19.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_21.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

@@ -57,18 +57,19 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc14">3.11</A>&nbsp;&nbsp;dolib_so</H3>
+<H3><A NAME="htoc14">3.11</A>&nbsp;&nbsp;doman</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(sourceFile,&nbsp;destinationDirectory&nbsp;=&nbsp;'/usr/lib')</EM>
+<EM>(*sourceFiles)</EM>
 </TT></DL></DIV>
-<EM>work</EM> dizini içerisindeki bir paylaşımlı kütüphaneyi öntanımlı
-olarak <EM>install</EM> dizini altında <EM>/usr/lib</EM> içerisine gerekli
-dosya izinleri ile kopyalar.
+<EM>work</EM> dizini içerisinden yolu verilen dosya ya da dosya listesini
+<EM>install</EM> dizni altındaki <EM>/usr/share/man/</EM> altına kopyalar.
+Metakarakter kullanılabilir.
 <UL><LI>
-pisitools.dolib_so("libdb1.so.2")
+pisitools.doman("logrotate.8")
+<LI>pisitools.doman("doc/bash.1", "doc/bashbug.1",
+"doc/builtins.1", "doc/rbash.1")
+<LI>pisitools.doman("*.[1-8]")
 </UL>
-insert the static library into /usr/lib with permission 0755<BR>
-<BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_13.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_15.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

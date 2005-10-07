@@ -57,23 +57,17 @@ açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
 hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <BR>
 
-<H3><A NAME="htoc55">6.12</A>&nbsp;&nbsp;ls</H3>
+<H3><A NAME="htoc55">6.13</A>&nbsp;&nbsp;export</H3>
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<EM>(source)</EM>
+<EM>(key,&nbsp;value)</EM>
 </TT></DL></DIV>
-Tam yolu <EM>source</EM> ile verilen dizin ya da dosyaların bir listesini
-döndürür, bu liste içerisindeki her bir dosya üzerinde bir işlem yapmak
-gerektiği durumlarda kullanılabilir, metakarakterlerden yararlanılabilir.
+<EM>key</EM> ile tanımlanmış isimdeki bir ortam değişkenini <EM>value</EM>
+değeri ile set eder.
 <UL><LI>
-shelltools.ls(get.installDIR() + "/usr/lib/*w.*")
-</UL>
-<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-for&nbsp;file&nbsp;in&nbsp;shelltools.ls(get.installDIR()&nbsp;+&nbsp;"/usr/lib/*w.*"):<BR>
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;do_something_with_file_here..
-</TT></DL></DIV>
-<UL><LI>
-shelltools.ls(get.installDIR() + "/bin/")
+shelltools.export("WANT_AUTOCONF", "2.5")
+<LI>shelltools.export("CXX", get.CXX())
+<LI>shelltools.export("LDFLAGS", get.LDFLAGS() + "-Wl,-z,now")
+<LI>shelltools.export("LC_ALL", "C")
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_49.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_51.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>

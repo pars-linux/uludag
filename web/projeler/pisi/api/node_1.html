@@ -59,21 +59,35 @@ hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 
 <H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Actions</H2>
 Bir uygulamanın ikili bir PİSİ paketi haline getirilmesi sürecinde
-PİSİ'nin build sistemi tarafından kullanılan minimum bileşenler, paketlenecek
-uygulamanın kaynak kodu, <EM>pspec.xml</EM> dosyası ve <EM>actions.py</EM>
-dosyasıdır. Ayrıca varsa yamalar ve ek dosyalar da uygulamanın kaynak
-kodunun parçası olarak düşünülebilir. <B>pspec.xml</B> dosyası uygulamanın
-kaynak kodunu taşıyan arşiv dosyasının nereden çekileceği, bu arşiv
-dosyası açılırken hangi yamaların uygulanacağı, bu uygulamayı kimin
-paketliyor olduğu, uygulamanın adı, sürüm numarası gibi meta sayılabilecek
-bilgilerin saklandığı dosya iken, bu uygulamanın derlenmesi ve build
-edilmesi aşamasında yapılması gereken işlerin tarifi de, bu belgede
-bahsedilecek olan <B>Actions API</B>'dan faydalanan <B>actions.py</B>
-dosyasıdır. Örnek bir actions.py dosyası aşağıdaki gibidir:
+PİSİ'nin inşa (<EM>build</EM>) sistemi tarafından kullanılan minimum
+bileşenler, paketlenecek uygulamanın kaynak kodu, <EM>pspec.xml</EM>
+dosyası ve <EM>actions.py</EM> dosyasıdır. Ayrıca varsa yamalar ve ek
+dosyalar da uygulamanın kaynak kodunun parçası olarak düşünülebilir. <BR>
+<BR>
+<B>pspec.xml</B> dosyası uygulamanın kaynak kodunu taşıyan arşiv
+dosyasının nereden çekileceği, bu arşiv dosyası açılırken hangi yamaların
+uygulanacağı, bu uygulamayı kimin paketlemiş olduğu, uygulamanın adı,
+sürüm numarası gibi meta sayılabilecek bilgilerin saklandığı dosya
+iken, bu uygulamanın derlenmesi ve inşa edilmesi aşamasında yapılması
+gereken işlerin tarifi de, bu belgede bahsedilecek olan <B>Actions
+API</B>'dan faydalanan <B>actions.py</B> dosyası içerisinde yer alır.
+Örnek bir <B>actions.py</B> dosyası aşağıdaki gibidir:
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 #!/usr/bin/python&nbsp;<BR>
 <BR>
 #&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<BR>
+<BR>
+#&nbsp;<BR>
+<BR>
+#&nbsp;Copyright&nbsp;2005&nbsp;TUBITAK/UEKAE&nbsp;<BR>
+<BR>
+#&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2.&nbsp;<BR>
+<BR>
+#&nbsp;See&nbsp;the&nbsp;file&nbsp;http://www.gnu.org/copyleft/gpl.txt.&nbsp;<BR>
+<BR>
+#&nbsp;<BR>
+<BR>
+#&nbsp;Gökçen&nbsp;Eraslan&nbsp;&lt;gokcene@anadolu.edu.tr&gt;&nbsp;<BR>
 <BR>
 from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools<BR>
 <BR>
@@ -99,9 +113,19 @@ def&nbsp;install():<BR>
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;pisitools.removeDir("/usr/libexec")</TT></DL></DIV>
 
-actions.py dosyası ile ilgili daha fazla bilgi PİSİ Mimari Belgesi<SUP><A NAME="text1" HREF="node_93.html#note1">1</A></SUP>'nden alınabilir. <BR>
+<B>actions.py</B> dosyası ile ilgili daha fazla bilgi PİSİ Mimari
+Belgesi<SUP><A NAME="text1" HREF="node_93.html#note1">1</A></SUP>'nden alınabilir. <BR>
 <BR>
-Bu belgede Actions API üzerinde durulacaktır.<BR>
+Bu belgede <B>actions.py</B> dosyası içerisinde uygulamanın yapılandırılması,
+inşa edilmesi ve paketlenmek üzere kurulumu işlevlerinin gerçekleştirilebilmesi
+için Actions API tarafından sağlananlar üzerinde durulacaktır.<BR>
+<BR>
+Belge içerisinde sık sık bahsedilen kurulum (install) işlemi, uygulamanın
+gerçek sisteme kurulumu ile karıştırılmamalıdır. Bu belgede bahsedilen
+kurulum işlemi aksi belirtilmediği sürece, uygulamanın paketlenmesinden
+bir önceki aşama olan ve bu paket gerçek sistemde kurulurken hangi
+dosyanın nereye gitmesi gerektiğinin anlaşılması için yapılan sanal
+bir kurulum işlemidir.<BR>
 <BR>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='index.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_2.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
