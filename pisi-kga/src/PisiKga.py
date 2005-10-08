@@ -215,12 +215,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
         base = QListViewItem(self.listView,None)
         base.setOpen(True)
         base.setText(0,i18n("Temel"))
-        base.setPixmap(0,loadIcon('blockdevice', KIcon.Small))
+        base.setPixmap(0,loadIcon('package_system', KIcon.Small))
 
         component = QListViewItem(self.listView,None)
         component.setOpen(True)
         component.setText(0,i18n("Bileşen"))
         component.setPixmap(0,loadIcon('package', KIcon.Small))
+
+        other = QListViewItem(self.listView,None)
+        other.setOpen(True)
+        other.setText(0,i18n("Diğerleri"))
+        other.setPixmap(0,loadIcon('package', KIcon.Small))
+                                
 
         # Check if updateSystemButton should be enabled
         if len(pisi.api.list_upgradable()) > 0:
@@ -237,6 +243,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     partof = base
                 elif pisi.packagedb.get_package(pack).partof == 'component':
                     partof = component
+                else:
+                    partof = other
+                    
                 item = QCheckListItem(partof,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
 
@@ -249,8 +258,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     partof = base
                 elif pisi.packagedb.get_package(pack).partof == 'component':
                     partof = component
-                    item = QCheckListItem(partof,pack,QCheckListItem.CheckBox)
-                    item.setText(1,pisi.packagedb.get_package(pack).version)
+                else:
+                    partof = other
+
+                item = QCheckListItem(partof,pack,QCheckListItem.CheckBox)
+                item.setText(1,pisi.packagedb.get_package(pack).version)
         
         elif index == 2 :
             # Show only not-installed apps
@@ -264,6 +276,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                             partof = base
                         elif pisi.packagedb.get_package(pack).partof == 'component':
                             partof = component
+                        else:
+                            partof = other
+
                         item = QCheckListItem(partof,pack,QCheckListItem.CheckBox)
                         item.setText(1,pisi.packagedb.get_package(pack).version)
 
