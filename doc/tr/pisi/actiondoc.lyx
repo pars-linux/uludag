@@ -34,8 +34,7 @@ Actions API
 
 A.
  Murat Eren (meren@uludag.org.tr)
-\layout Author
-
+\newline 
 
 \emph on 
 (alpha)
@@ -1600,7 +1599,11 @@ sourceFile
 destinationFile
 \emph default 
  ile verilmiþ dosya ya da dizine taþýr.
- Metakarakter kulanýlabilir.
+ 
+\emph on 
+sourceFile 
+\emph default 
+içinde metakarakterler kulanýlabilir.
 \layout Itemize
 
 shelltools.move("ac-wrapper.sh", "%s/usr/lib/misc/" % get.installDIR())
@@ -1626,9 +1629,17 @@ sourceFile
 destinationFile
 \emph default 
  ile verilmiþ bir dosya olarak kopyalar.
+ 
+\emph on 
+sourceFile 
+\emph default 
+içinde metakarakterler kulanýlabilir.
 \layout Itemize
 
 shelltools.copy("Makefile.pre.in", "%s/usr/lib/python2.3/config/" % get.installDIR())
+\layout Itemize
+
+shelltools.copy("scripts/*", "%s/usr/bin/" % get.installDIR())
 \layout Subsection
 
 copytree
