@@ -21,6 +21,7 @@ import PisiKga # for loadIcon
 
 # Pisi imports
 import pisi.api
+import pisi.repodb
 
 class Preferences(PreferencesWidget.PrefsDialog):
     def __init__(self, parent=None):
@@ -106,7 +107,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
         repoAddress = str(self.repo.repoAddressLineEdit.text())
         try:
             pisi.api.add_repo(repoName,repoAddress)
-        except repodb.Error:
+        except pisi.repodb.Error:
             KMessageBox.error(self,u"<qt>Depo <b>%s</b> zaten var!</qt>"%(repoName), u"Pisi Hatası")
             return
         item = QListViewItem(self.repoListView,None)
