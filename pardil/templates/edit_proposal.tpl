@@ -26,7 +26,7 @@
     #end for
   </ul>
   #end if
-  <form action="edit_proposal.py" method="post">
+  <form action="edit_proposal.py" method="post" id="proposal_form">
     <fieldset>
       <legend>Bildiri Künyesi</legend>
       <div class="required">
