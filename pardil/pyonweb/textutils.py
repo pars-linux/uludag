@@ -14,6 +14,18 @@ import re
 def formatText(s):
     return "".join(formatBlock(s))
 
+def escapeHTML(s):
+  s2 = s.replace('&', '&amp;')
+  list = {
+          '"': '&quot;',
+          "'": '&apos;',
+          '<': '&lt;',
+          '>': '&gt;'
+          }
+  for f, t in list.items():
+    s2 = s2.replace(f, t)
+  return s2
+
 def formatBlock(s):
     s = s.replace("\r", "")
     source = [i for i in s.split("\n\n") if i]
@@ -24,30 +36,38 @@ def formatBlock(s):
         # Titles
         m = re.findall("^(.*)\n=+$", block)
         if m:
+            m[0] = escapeHTML(m[0])
             new.append("<h3>%s</h3>" % m[0])
             continue
         # Subtitles
         m = re.findall("^(.*)\n\-+$", block)
         if m:
+            m[0] = escapeHTML(m[0])
             new.append("<h4>%s</h4>" % m[0])
             continue
         # Blockquotes - style 1
         if block[0] == " ":
             f = re.findall("\s+(.*)", block)
+            for i in f:
+                f[i] = escapeHTML(f[i])
             new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(f))
             continue
         # Blockquotes - style 2
         if block[0] == ">":
             f = re.findall("> (.*)", block)
+            for i in f:
+                f[i] = escapeHTML(f[i])
             new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(f))
             continue
         # Code
         if block[:3] == "::\n":
-            new.append("<pre><code>%s</code></pre>" % block[3:])
+            m = escapeHTML(block[3:])
+            new.append("<pre><code>%s</code></pre>" % m)
             continue
         # RAW Data
         if block[:6] == ":raw:\n":
-            new.append("<pre>%s</pre>" % block[6:])
+            m = escapeHTML(block[6:])
+            new.append("<pre>%s</pre>" % m)
             continue
         # Unordered list
         if block[0] in ["*", "#"]:
@@ -59,10 +79,13 @@ def formatBlock(s):
             f = re.findall("\[([0-9]+)\] (.+) <(.*)>", block)
             ref = "[%s] %s &lt;<a href=\"%s\">%s</a>&gt;"
             for l in f:
+                for i in l:
+                  l[i] = escapeHTML(l[i])
                 links.append(ref % (l[0], l[1], l[2], l[2]))
             continue
         # Paragraph
-        new.append("<p>%s</p>" % block)
+        m = escapeHTML(block)
+        new.append("<p>%s</p>" % m)
 
     if len(links): 
         new.append("<h3>Referanslar</h3>")
@@ -91,7 +114,7 @@ def formatList(s):
     for i in range(len(lines)):
         r1 = regex(lines[i])
         close = 1
-        new += "<li>%s" % r1[2]
+        new += "<li>%s" % escapeHTML(r1[2])
 
         if i + 1 < len(lines):
             r2 = regex(lines[i+1])
