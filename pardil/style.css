@@ -147,3 +147,6 @@ code {
     background-color: #eee;
     border: 1px solid #aaa;
 }
+pre {
+    font-family: courier new, monospace;
+}
