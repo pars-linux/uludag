@@ -21,7 +21,6 @@
     #end if
   </ul>
 </div>
-#if 'administrate' in $acl or $site_admin
 <div class="box">
   <h2>Yönetim</h2>
   <ul>
@@ -51,4 +50,3 @@
     #end if
   </ul>
 </div>
-#end if
