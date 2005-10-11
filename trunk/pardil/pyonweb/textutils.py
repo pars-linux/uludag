@@ -28,7 +28,7 @@ def escapeHTML(s):
 
 def formatBlock(s):
     s = s.replace("\r", "")
-    source = [i for i in s.split("\n\n") if i]
+    source = [i.strip("\n") for i in s.split("\n\n") if i]
     new = []
     links = []
 
