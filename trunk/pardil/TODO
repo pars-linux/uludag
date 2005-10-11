@@ -16,6 +16,7 @@ Final
   + Öneriye yorum ekleme
   / Arşiv ve arama sayfası
   - Önerilere resim/yama iliştirme
+  / Bekleyen önerileri oylama
   ? Öneri takibi
   + Öneri ekleme sayfasına önizleme desteği
   / Daha fazla markup! 
@@ -24,7 +25,7 @@ Final
     + Alıntılar (Blockquote)
     + Kod bloğu
     + Listeler (Sıralı, sırasız)
-    / Referanslar
+    + Referanslar
     - Paragraf içi formatlama
     - Resim
     ? Tablolar
@@ -35,13 +36,19 @@ Final
   + Erişim kodu yönetimi
   + Erişim hakları yönetimi
   + Kullanıcı - Grup yönetimi
-  / Öneri yönetimi
+  ? Öneri yönetimi
   + Yorum yönetimi
   + Öneri bakıcısı yönetimi
   + Haber yönetimi
 
-- "Pardil Nasıl Kullanılır?" sayfası
-
 / Arayüz
   / CSS değişiklikleri
   / Hata mesajları
+
+
+------------------------------------------------
++ = Özellik eklendi.
+/ = Çalışma sürüyor.
+? = Özelliğin eklenip eklenmeyeceği belli değil.
+- = Henüz bir çalışma yok.
+------------------------------------------------
