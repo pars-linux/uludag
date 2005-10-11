@@ -89,7 +89,7 @@ def formatBlock(s):
     return new
 
 def formatList(s):
-    s = re.sub("\n\s+([^\*\s#].+)", "<br/>\\1", s)
+    s = re.sub("\n\s+([^\*\s#].+)", "<<BRK>>\\1", s)
 
     lines = s.split("\n")
 
@@ -109,7 +109,9 @@ def formatList(s):
     for i in range(len(lines)):
         r1 = regex(lines[i])
         close = 1
-        new += "<li>%s" % escapeHTML(r1[2])
+
+        # Iğrencim
+        new += "<li>%s" % escapeHTML(r1[2]).replace("&lt;&lt;BRK&gt;gt;", "<br/>")
 
         if i + 1 < len(lines):
             r2 = regex(lines[i+1])
