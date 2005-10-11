@@ -150,3 +150,7 @@ code {
 pre {
     font-family: courier new, monospace;
 }
+
+.r2 {
+    min-height: 2em;
+}
