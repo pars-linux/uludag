@@ -27,6 +27,10 @@
 \layout Title
 
 Pardus Depo Politikasý
+\layout Author
+
+T.
+ Barýþ Metin
 \layout Standard
 
 Belge Pardus paket depolarýný ve bu depolar üzerinde uyulmasý gereken kurallarý
@@ -127,6 +131,70 @@ pardus-devel
  olarak isimlendirilecektir.
  Bu isim, geliþtirilmekte olan bir sonraki sürümün numarasýndan baðýmsýzdýr
  ve tektir.
+\layout Subsection
+
+Depoya yeni bir paket eklenmesi
+\layout Standard
+
+Paket depolarýna yeni bir paket eklemek için bazý þartlarýn yerine getirilmiþ
+ olmasý gerekmektedir.
+ Ýki farklý depo (kararlý ve geliþtirme) için farklý kurallar söz konusudur.
+ Temel kural olarak yeni bir paketin her zaman 
+\series bold 
+ilk önce geliþtirme deposuna eklenir
+\series default 
+.
+\layout Standard
+
+Geliþtirme deposuna eklenen paket kaynaðýnýn paketin geliþtiricisi tarafýndan
+ denenmiþ olmasý gerekir.
+ Derlenmeyen ve/veya kurulamayan paket depoya eklenmez.
+ Geliþtirme deposuna eklenen paketin kararlýlýðý ve daðýtýma uygunluðu kontrol
+ edilir, sorunlarý giderilir, paket kararlý depoya eklenmek için hazýrlanýr.
+ Sorunlarýn giderilmesi bölümünde dikkate alýnabilecek bir sorunlar listesi
+ aþaðýda listelenmiþtir.
+ Paket sorunlarý ve yazýlým sorunlarý ve paketlenen yazýlým sorunlarý iki
+ ayrý madde ile anlatýlýr.
+\layout Itemize
+
+Paket sorunlarý:
+\begin_deeper 
+\layout Itemize
+
+Oluþturulan ikili paketler fazla büyük (monolitik).
+ Birden fazla pakete bölünebilir mi?
+\end_deeper 
+\layout Itemize
+
+Yazýlým sorunlarý:
+\begin_deeper 
+\layout Itemize
+
+Utf-8 uyumsuzluklarý
+\layout Itemize
+
+Türkçe çeviri eksikliði
+\layout Itemize
+
+Uygulama grafikleri masaüstü ile uyumlu mu?
+\layout Itemize
+
+Ön tanýmlý yapýlandýrma seçenekleri
+\layout Itemize
+
+Yazýlýmýn bilinen veya yeni bulunan hatalarý
+\layout Itemize
+
+Kullanýþlýlýk sorunlarý
+\end_deeper 
+\layout Standard
+
+Geliþtirme deposuna eklenen paketin sorunlarý giderildikten sonra kararlý
+ depoya eklenmeye hak kazanýr.
+ Fakat geliþtirme deposuna eklenen tüm paketlerin ileride kararlý depoya
+ ekleneceði garantisi yoktur.
+ Kararlý depoya geçiþe sürümün kurallarý çerçevesinde sürüm yöneticisi karar
+ verir.
 \layout Section
 
 Kaynak paket depolarý
@@ -338,4 +406,11 @@ Revizyon geliþtirici tarafýndan pakete verilen ve devamlý artan bir sayýdýr.
 her zaman
 \bar default 
  arttýrýlmalýdýr.
+\layout Section
+
+Belgeye katýda bulunanlar
+\layout Itemize
+
+S.
+ Çaðlar Onur
 \the_end
