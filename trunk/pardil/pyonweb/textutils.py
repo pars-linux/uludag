@@ -36,28 +36,24 @@ def formatBlock(s):
         # Titles
         m = re.findall("^(.*)\n=+$", block)
         if m:
-            m[0] = escapeHTML(m[0])
-            new.append("<h3>%s</h3>" % m[0])
+            new.append("<h3>%s</h3>" % escapeHTML(m[0]))
             continue
         # Subtitles
         m = re.findall("^(.*)\n\-+$", block)
         if m:
-            m[0] = escapeHTML(m[0])
-            new.append("<h4>%s</h4>" % m[0])
+            new.append("<h4>%s</h4>" % escapeHTML(m[0]))
             continue
         # Blockquotes - style 1
         if block[0] == " ":
             f = re.findall("\s+(.*)", block)
-            for i in f:
-                f[i] = escapeHTML(f[i])
-            new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(f))
+            nf = [escapeHTML(i) for i in f]
+            new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(nf))
             continue
         # Blockquotes - style 2
         if block[0] == ">":
             f = re.findall("> (.*)", block)
-            for i in f:
-                f[i] = escapeHTML(f[i])
-            new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(f))
+            nf = [escapeHTML(i) for i in f]
+            new.append("<blockquote><p>%s</p></blockquote>" % "<br/>".join(nf))
             continue
         # Code
         if block[:3] == "::\n":
@@ -79,9 +75,8 @@ def formatBlock(s):
             f = re.findall("\[([0-9]+)\] (.+) <(.*)>", block)
             ref = "[%s] %s &lt;<a href=\"%s\">%s</a>&gt;"
             for l in f:
-                for i in l:
-                  l[i] = escapeHTML(l[i])
-                links.append(ref % (l[0], l[1], l[2], l[2]))
+                nl = [escapeHTML(i) for i in l]
+                links.append(ref % (nl[0], nl[1], nl[2], nl[2]))
             continue
         # Paragraph
         m = escapeHTML(block)
