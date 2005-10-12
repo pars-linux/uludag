@@ -50,7 +50,8 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center><EM>(alpha)</EM></H3>
+<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)<BR>
+<EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
@@ -62,9 +63,12 @@ hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
 <EM>(sourceFile,&nbsp;destinationFile)</EM>
 </TT></DL></DIV>
 Tam yolu <EM>sourceFile</EM> ile verilmiş olan bir dosyayı tam oylu
-<EM>destinationFile</EM> ile verilmiş bir dosya olarak kopyalar.
+<EM>destinationFile</EM> ile verilmiş bir dosya olarak kopyalar. <EM>sourceFile</EM>
+içinde metakarakterler kulanılabilir.
 <UL><LI>
 shelltools.copy("Makefile.pre.in", "%s/usr/lib/python2.3/config/"
+% get.installDIR())
+<LI>shelltools.copy("scripts/*", "%s/usr/bin/"
 % get.installDIR())
 </UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_44.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_46.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>

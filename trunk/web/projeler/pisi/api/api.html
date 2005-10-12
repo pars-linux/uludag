@@ -49,7 +49,8 @@
 
 <H1 ALIGN=center>Actions API</H1>
 
-<H3 ALIGN=center><EM>(alpha)</EM></H3>
+<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)<BR>
+<EM>(alpha)</EM></H3>
 <BLOCKQUOTE><B>Özet: </B>
 Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
 açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
@@ -948,8 +949,8 @@ shelltools.unlinkDir(get.workDIR() + "/tmpbuild")
 <EM>(sourceFile,&nbsp;destinationFile)</EM>
 </TT></DL></DIV>
 Tam yolu <EM>sourceFile</EM> ile verilmiş dosya ya da dizini tam yolu
-<EM>destinationFile</EM> ile verilmiş dosya ya da dizine taşır. Metakarakter
-kulanılabilir.
+<EM>destinationFile</EM> ile verilmiş dosya ya da dizine taşır. <EM>sourceFile</EM>
+içinde metakarakterler kulanılabilir.
 <UL><LI>
 shelltools.move("ac-wrapper.sh", "%s/usr/lib/misc/"
 % get.installDIR())
@@ -964,9 +965,12 @@ shelltools.move("ac-wrapper.sh", "%s/usr/lib/misc/"
 <EM>(sourceFile,&nbsp;destinationFile)</EM>
 </TT></DL></DIV>
 Tam yolu <EM>sourceFile</EM> ile verilmiş olan bir dosyayı tam oylu
-<EM>destinationFile</EM> ile verilmiş bir dosya olarak kopyalar.
+<EM>destinationFile</EM> ile verilmiş bir dosya olarak kopyalar. <EM>sourceFile</EM>
+içinde metakarakterler kulanılabilir.
 <UL><LI>
 shelltools.copy("Makefile.pre.in", "%s/usr/lib/python2.3/config/"
+% get.installDIR())
+<LI>shelltools.copy("scripts/*", "%s/usr/bin/"
 % get.installDIR())
 </UL>
 <!--TOC subsection copytree-->
