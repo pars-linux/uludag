@@ -147,6 +147,8 @@ input, select, textarea, select {
     background-color: #eee;
     border: 1px solid #aaa;
     font-family: courier new, monospace;
+    margin-right: 1em;
+    padding: 1em;
 }
 pre {
     font-family: courier new, monospace;
