@@ -54,8 +54,8 @@
       </div>
     </fieldset>
     <fieldset>
-      <input type="hidden" name="action" value="new" />
-      <button type="submit">Gönder</button>
+      <input type="hidden" name="action" value="preview" />
+      <button type="submit">Görüntüle &raquo;</button>
     </fieldset>
   </form>
 </div>
