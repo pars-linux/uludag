@@ -111,7 +111,7 @@ def formatList(s):
         close = 1
 
         # Iğrencim
-        new += "<li>%s" % escapeHTML(r1[2]).replace("&lt;&lt;BRK&gt;gt;", "<br/>")
+        new += "<li>%s" % escapeHTML(r1[2]).replace("&lt;&lt;BRK&gt;&gt;", "<br/>")
 
         if i + 1 < len(lines):
             r2 = regex(lines[i+1])
