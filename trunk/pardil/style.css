@@ -157,3 +157,7 @@ pre {
 .r2 {
     min-height: 2em;
 }
+
+.widetext {
+    width: 80%;
+}
