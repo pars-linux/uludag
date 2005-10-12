@@ -5,6 +5,9 @@ from pardilskel import pardil_page
 from cfg_main import site_config
 
 from pyonweb.libstring import *
+from pyonweb.textutils import formatText
+
+from pyonweb.libstring import *
 from pyonweb.libdate import *
 import re
 
@@ -102,8 +105,54 @@ def edit():
     p['version'] = version
     p.template = 'edit_proposal.done.tpl'
 
+def preview():
+  try:
+    p['pid'] = int(p.form.getvalue('pid'))
+    p['version'] = p.form.getvalue('version')
+  except:
+    p.http.redirect('error.py?tag=proposal_not_found')
+
+  # Bildiri sorumlusu mu?
+  q = """SELECT Count(*)
+         FROM rel_maintainers
+         WHERE
+           uid=%s AND pid=%s"""
+  if not p.db.scalar_query(q, (p['session']['uid'], p['pid'])):
+    p.http.redirect('error.py?tag=not_maintainer')
+
+  p.template = 'edit_proposal.tpl'
+
+  if not len(p.form.getvalue('p_title', '')):
+    p['errors']['p_title'] = 'Başlık boş bırakılamaz.'
+
+  if not len(p.form.getvalue('p_summary', '')):
+    p['errors']['p_summary'] = 'Özet boş bırakılamaz.'
+
+  if not len(p.form.getvalue('p_content', '')):
+    p['errors']['p_content'] = 'Bildiri detayları boş bırakılamaz.'
+
+  if int(p.form.getvalue('p_version', 0)) not in range(1, 4):
+    p['errors']['p_version'] = 'Değişiklik derecesi geçerli değil.'
+
+  if not len(p.form.getvalue('p_changelog', '')):
+    p['errors']['p_changelog'] = 'Sürüm notları boş bırakılamaz.'
+
+  # Hiç hata yoksa...
+  if not len(p['errors']):
+    p.template = 'edit_proposal.view.tpl'
+
+    p['proposal'] = {
+                     'title': html_escape(p.form.getvalue("p_title", "")),
+                     'summary': nl2br(html_escape(p.form.getvalue("p_summary", ""))),
+                     'content': formatText(p.form.getvalue("p_content", ""))
+                     }
+  else:
+    p.template = 'edit_proposal.tpl'
+    
+
 p.actions = {
              'default': index,
-             'edit': edit
+             'edit': edit,
+             'preview': preview
              }
 p.build()
