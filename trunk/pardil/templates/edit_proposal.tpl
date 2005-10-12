@@ -67,7 +67,6 @@
     </fieldset>
     <fieldset>
       <input type="hidden" name="action" value="edit" />
-      <button type="button" onclick="post_to_window('proposal_form', 'preview', 'previewproposal.py')">Görüntüle</button>
       <button type="submit">Gönder</button>
     </fieldset>
   </form>

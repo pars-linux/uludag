@@ -11,18 +11,6 @@
     -->
     <script type="text/javascript">
       // <![CDATA[
-      function post_to_window(form, name, url) {
-        form = document.getElementById(form);
-        backup_url = form.action;
-        
-        window.open(url, name, 'width=750,height=700,left=50,top=5,screenX=50,screenY=50');
-        form.target = name;
-        form.action = url;
-        form.submit()
-
-        form.target = "";
-        form.action = backup_url;
-      }
       // ]]>
     </script>
   </head>
