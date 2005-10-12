@@ -143,9 +143,10 @@ input, select, textarea, select {
 }
 
 
-pre code {
+.code {
     background-color: #eee;
     border: 1px solid #aaa;
+    font-family: courier new, monospace;
 }
 pre {
     font-family: courier new, monospace;
