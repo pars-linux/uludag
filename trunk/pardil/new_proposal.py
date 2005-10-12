@@ -130,13 +130,13 @@ def preview():
 
   # Hiç hata yoksa...
   if not len(p['errors']):
-      p.template = 'previewproposal.tpl'
+    p.template = 'new_proposal.view.tpl'
 
-      p['proposal'] = {
-                   'title': html_escape(p.form.getvalue("p_title", "")),
-                   'summary': nl2br(html_escape(p.form.getvalue("p_summary", ""))),
-                   'content': formatText(p.form.getvalue("p_content", ""))
-                   }
+    p['proposal'] = {
+                     'title': html_escape(p.form.getvalue("p_title", "")),
+                     'summary': nl2br(html_escape(p.form.getvalue("p_summary", ""))),
+                     'content': formatText(p.form.getvalue("p_content", ""))
+                     }
   else:
     p.template = 'new_proposal.tpl'
 
