@@ -58,7 +58,7 @@ def formatBlock(s):
         # Code
         if block[:3] == "::\n":
             m = escapeHTML(block[3:])
-            new.append("<pre><code>%s</code></pre>" % m)
+            new.append("<pre class=\"code\"><code>%s</code></pre>" % m)
             continue
         # RAW Data
         if block[:6] == ":raw:\n":
