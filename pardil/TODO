@@ -16,9 +16,12 @@ Final
   + Öneriye yorum ekleme
   / Arşiv ve arama sayfası
   - Önerilere resim/yama iliştirme
-  / Bekleyen önerileri oylama
+  / Bekleyen öneriler
+    / Bekleyen önerileri izleyebilme
+    / Önerileri oylama
+    - Öneriyi gönderen kişinin, öneri içeriğini değiştirebilmesine imkan verme
   ? Öneri takibi
-  + Öneri ekleme sayfasına önizleme desteği
+  / Öneri ekleme sayfasına önizleme desteği
   / Daha fazla markup! 
     + Başlıklar (1 Seviye)
     + Paragraflar
@@ -32,6 +35,7 @@ Final
 
 + Yönetim Arabirimi
   - Kullanıcı yönetimi
+    - Hesap kapama
   + Grup yönetimi
   + Erişim kodu yönetimi
   + Erişim hakları yönetimi
@@ -44,6 +48,7 @@ Final
 / Arayüz
   / CSS değişiklikleri
   / Hata mesajları
+  - "Yukarıdaki resimde ne yazdığını söyle de robot olmadığını anlayayım" özelliği
 
 
 ------------------------------------------------
