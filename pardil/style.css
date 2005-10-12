@@ -143,7 +143,7 @@ input, select, textarea, select {
 }
 
 
-code {
+pre code {
     background-color: #eee;
     border: 1px solid #aaa;
 }
