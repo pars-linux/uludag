@@ -1247,15 +1247,11 @@ Update
 release
 \series default 
  (*) attribute paketin sürüm numarasý.
-\begin_deeper 
-\begin_deeper 
-\layout Itemize
-
 
 \series bold 
-Type:
+ type
 \series default 
- Güncellemenin tipini belirtir (
+ attribute güncellemenin tipini belirtir (
 \series bold 
 \emph on 
 Security, Bug, Enhancement, Normal
@@ -1269,6 +1265,8 @@ Normal
 \series default 
 \emph default 
  olarak kabul edilir.
+\begin_deeper 
+\begin_deeper 
 \layout Itemize
 
 
@@ -1553,17 +1551,20 @@ en
 \begin_inset Quotes erd
 \end_inset 
 
+ type=
+\begin_inset Quotes erd
+\end_inset 
+
+Bug
+\begin_inset Quotes erd
+\end_inset 
+
 >
 \layout LyX-Code
 
 
 \size scriptsize 
         <Date>2005-07-01</Date>
-\layout LyX-Code
-
-
-\size scriptsize 
-        <Type>Bug</Type>
 \layout LyX-Code
 
 
