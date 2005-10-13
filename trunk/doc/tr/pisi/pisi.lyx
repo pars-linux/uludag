@@ -621,9 +621,6 @@ pspec.xml
 actions.py
 \layout Itemize
 
-ChangeLog
-\layout Itemize
-
 
 \series bold 
 files/
@@ -956,84 +953,6 @@ versionTo
 \newline 
 <Dependency versionFrom="1.8">automake</Dependency>
 \end_deeper 
-\layout Itemize
-
-
-\series bold 
-History
-\series default 
-: (*) Pakete yapýlan güncellemelerin bir listesini verir.
- 
-\series bold 
-History
-\series default 
- altýndaki güncellemeleri belirten 
-\series bold 
-Update
-\series default 
- taglarýnýn mutlaka tarihe göre sýralý olmasý gerekmektedir.
- En son güncelleme en üstte bulunmalýdýr.
- Çünkü en son güncellemeden alýnan 
-\series bold 
-Version
-\series default 
- ve 
-\series bold 
-Release
-\series default 
- bilgisi pakete uygulanacaktýr.
-\begin_deeper 
-\layout Itemize
-
-
-\series bold 
-Update
-\series default 
-: (*) Bir güncellemeyi tarif eder.
-\begin_deeper 
-\layout Itemize
-
-
-\series bold 
-Type:
-\series default 
- Güncellemenin tipini belirtir (
-\series bold 
-\emph on 
-Security, Bug, Enhancement, Normal
-\series default 
-\emph default 
- v.s).
- Eðer bu etiket tanýmlý deðilse tip 
-\series bold 
-\emph on 
-Normal
-\series default 
-\emph default 
- olarak kabul edilir.
-\layout Itemize
-
-
-\series bold 
-Date
-\series default 
-: (*) Güncellemenin tarihi.
-\layout Itemize
-
-
-\series bold 
-Version:
-\series default 
- (*) Uygulamanýn sürüm numarasý.
-\layout Itemize
-
-
-\series bold 
-Release:
-\series default 
- (*) Pakedin sürüm numarasý.
-\end_deeper 
-\end_deeper 
 \layout Subparagraph
 
 Package:
@@ -1303,6 +1222,83 @@ attribute varsa dosyanýn hangi haklarla saklanacaðýný belirtir.
 
 >bashrc</AdditionalFile>
 \end_deeper 
+\layout Subparagraph
+
+History: (*) 
+\series medium 
+Pakete yapýlan güncellemelerin bir listesini verir.
+ History altýndaki güncellemeleri belirten 
+\bar under 
+Update taglarýnýn mutlaka tarihe göre sýralý olmasý gerekmektedir
+\bar default 
+.
+ En son güncelleme en üstte bulunmalýdýr.
+ Çünkü en son güncellemeden alýnan Version ve Release bilgisi pakete uygulanacak
+týr.
+\layout Itemize
+
+
+\series bold 
+Update
+\series default 
+: (*) Bir güncellemeyi tarif eder.
+ 
+\series bold 
+release
+\series default 
+ (*) attribute paketin sürüm numarasý.
+\begin_deeper 
+\begin_deeper 
+\layout Itemize
+
+
+\series bold 
+Type:
+\series default 
+ Güncellemenin tipini belirtir (
+\series bold 
+\emph on 
+Security, Bug, Enhancement, Normal
+\series default 
+\emph default 
+ v.s).
+ Eðer bu etiket tanýmlý deðilse tip 
+\series bold 
+\emph on 
+Normal
+\series default 
+\emph default 
+ olarak kabul edilir.
+\layout Itemize
+
+
+\series bold 
+Date
+\series default 
+: (*) Güncellemenin tarihi.
+\layout Itemize
+
+
+\series bold 
+Version:
+\series default 
+ (*) Uygulamanýn sürüm numarasý.
+\layout Itemize
+
+
+\series bold 
+Name:
+\series default 
+ (*) Güncellemeyi yapan kiþinin adýdýr.
+\layout Itemize
+
+
+\series bold 
+Email:
+\series default 
+ (*) Güncellemeyi yapan kiþinin e-posta adresidir.
+\end_deeper 
+\end_deeper 
 \layout Paragraph
 
 Örnek bir PSPEC Dosyasý
@@ -1470,67 +1466,7 @@ en
 
 
 \size scriptsize 
-    <History>
-\layout LyX-Code
-
-
-\size scriptsize 
-      <Update>
-\layout LyX-Code
-
-
-\size scriptsize 
-        <Date>06/14/2005</Date>
-\layout LyX-Code
-
-
-\size scriptsize 
-        <Version>1.7</Version>
-\layout LyX-Code
-
-
-\size scriptsize 
-        <Release>3</Release>
-\layout LyX-Code
-
-
-\size scriptsize 
-      </Update>
-\layout LyX-Code
-
-
-\size scriptsize 
-      <Update>
-\layout LyX-Code
-
-
-\size scriptsize 
-        <Date>06/10/2005</Date>
-\layout LyX-Code
-
-
-\size scriptsize 
-        <Version>1.7</Version>
-\layout LyX-Code
-
-
-\size scriptsize 
-        <Release>2</Release>
-\layout LyX-Code
-
-
-\size scriptsize 
-      </Update>
-\layout LyX-Code
-
-
-\size scriptsize 
-   </History>
-\layout LyX-Code
-
-
-\size scriptsize 
-  </Source>
+ </Source>
 \layout LyX-Code
 
 \layout LyX-Code
@@ -1598,6 +1534,104 @@ en
 
 \size scriptsize 
   </Package>
+\layout LyX-Code
+
+\layout LyX-Code
+
+
+\size scriptsize 
+  <History>
+\layout LyX-Code
+
+
+\size scriptsize 
+      <Update release=
+\begin_inset Quotes erd
+\end_inset 
+
+2
+\begin_inset Quotes erd
+\end_inset 
+
+>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Date>2005-07-01</Date>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Type>Bug</Type>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Version>1.7</Version>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Comment>paths fixed.</Comment>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Name>Barýþ Metin</Name>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Email>baris@uludag.org.tr</Email>
+\layout LyX-Code
+
+
+\size scriptsize 
+      </Update>
+\layout LyX-Code
+
+
+\size scriptsize 
+      <Update release=
+\begin_inset Quotes erd
+\end_inset 
+
+1
+\begin_inset Quotes erd
+\end_inset 
+
+>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Date>2005-06-10</Date>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Version>1.7</Version>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Comment>first release.</Comment>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Name>Barýþ Metin</Name>
+\layout LyX-Code
+
+
+\size scriptsize 
+        <Email>baris@uludag.org.tr</Email>
+\layout LyX-Code
+
+
+\size scriptsize 
+      </Update>
 \layout LyX-Code
 
 
@@ -1731,25 +1765,6 @@ def install():
 
 \size scriptsize 
     autotools.install() 
-\layout Subsubsection
-
-ChangeLog Dosyasý
-\layout Standard
-
-Pakedin sürümlerindeki deðiþikliklerin açýklamalarýný içerir.
- Bu dosya bilindik 
-\series bold 
-ChangeLog
-\series default 
- stilindedir ve 
-\series bold 
-PSPEC
-\series default 
- içindeki 
-\series bold 
-History
-\series default 
- bilgisi ile ilgili deðildir.
 \layout Subsubsection
 
 files Dizini
