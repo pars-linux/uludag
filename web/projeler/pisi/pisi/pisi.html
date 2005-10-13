@@ -75,32 +75,31 @@
 <UL><LI>
 <A HREF="#htoc13">4.2.1&nbsp;&nbsp;PSPEC Dosyası</A>
 <LI><A HREF="#htoc14">4.2.2&nbsp;&nbsp;actions.py Dosyası</A>
-<LI><A HREF="#htoc15">4.2.3&nbsp;&nbsp;ChangeLog Dosyası</A>
-<LI><A HREF="#htoc16">4.2.4&nbsp;&nbsp;files Dizini</A>
-<LI><A HREF="#htoc17">4.2.5&nbsp;&nbsp;comar Dizini</A>
+<LI><A HREF="#htoc15">4.2.3&nbsp;&nbsp;files Dizini</A>
+<LI><A HREF="#htoc16">4.2.4&nbsp;&nbsp;comar Dizini</A>
 </UL>
-<LI><A HREF="#htoc18">4.3&nbsp;&nbsp;İkili PİSİ Paketi</A>
+<LI><A HREF="#htoc17">4.3&nbsp;&nbsp;İkili PİSİ Paketi</A>
 <UL><LI>
-<A HREF="#htoc19">4.3.1&nbsp;&nbsp;metadata.xml</A>
-<LI><A HREF="#htoc20">4.3.2&nbsp;&nbsp;files.xml</A>
-<LI><A HREF="#htoc21">4.3.3&nbsp;&nbsp;install Dizini</A>
-<LI><A HREF="#htoc22">4.3.4&nbsp;&nbsp;comar Dizini</A>
+<A HREF="#htoc18">4.3.1&nbsp;&nbsp;metadata.xml</A>
+<LI><A HREF="#htoc19">4.3.2&nbsp;&nbsp;files.xml</A>
+<LI><A HREF="#htoc20">4.3.3&nbsp;&nbsp;install Dizini</A>
+<LI><A HREF="#htoc21">4.3.4&nbsp;&nbsp;comar Dizini</A>
 </UL>
-<LI><A HREF="#htoc23">4.4&nbsp;&nbsp;Paket Depoları</A>
+<LI><A HREF="#htoc22">4.4&nbsp;&nbsp;Paket Depoları</A>
 <UL><LI>
-<A HREF="#htoc24">4.4.1&nbsp;&nbsp;Kaynak PİSİ Deposu</A>
-<LI><A HREF="#htoc25">4.4.2&nbsp;&nbsp;İkili PİSİ Deposu</A>
+<A HREF="#htoc23">4.4.1&nbsp;&nbsp;Kaynak PİSİ Deposu</A>
+<LI><A HREF="#htoc24">4.4.2&nbsp;&nbsp;İkili PİSİ Deposu</A>
 </UL>
-<LI><A HREF="#htoc26">4.5&nbsp;&nbsp;Süreçlerin Tarifi</A>
+<LI><A HREF="#htoc25">4.5&nbsp;&nbsp;Süreçlerin Tarifi</A>
 <UL><LI>
-<A HREF="#htoc27">4.5.1&nbsp;&nbsp;Paket Oluşturmak</A>
-<LI><A HREF="#htoc28">4.5.2&nbsp;&nbsp;Paket Kurmak </A>
-<LI><A HREF="#htoc29">4.5.3&nbsp;&nbsp;Paket Kaldırmak</A>
-<LI><A HREF="#htoc30">4.5.4&nbsp;&nbsp;Bağımlılık Çözmek</A>
+<A HREF="#htoc26">4.5.1&nbsp;&nbsp;Paket Oluşturmak</A>
+<LI><A HREF="#htoc27">4.5.2&nbsp;&nbsp;Paket Kurmak </A>
+<LI><A HREF="#htoc28">4.5.3&nbsp;&nbsp;Paket Kaldırmak</A>
+<LI><A HREF="#htoc29">4.5.4&nbsp;&nbsp;Bağımlılık Çözmek</A>
 </UL>
-<LI><A HREF="#htoc31">4.6&nbsp;&nbsp;Veritabanları</A>
+<LI><A HREF="#htoc30">4.6&nbsp;&nbsp;Veritabanları</A>
 </UL>
-<LI><A HREF="#htoc32">5&nbsp;&nbsp;Diğer Yazarlar</A>
+<LI><A HREF="#htoc31">5&nbsp;&nbsp;Diğer Yazarlar</A>
 </UL>
 
 
@@ -421,7 +420,6 @@ fontconfig kaynak dizini içerisinde aşağıdaki dosyalar bulunur:
 <UL><LI>
 pspec.xml
 <LI>actions.py
-<LI>ChangeLog
 <LI><B>files/</B>
 <UL><LI>
 fontconfig-2.1-slighthint.patch
@@ -524,22 +522,6 @@ attribute bilgileri ile paketin hangi sürüm numarasına bağımlı olduğu
 ifade edilebilir. Örnek:<BR>
 &lt;Dependency versionFrom="1.8"&gt;automake&lt;/Dependency&gt;
 </UL>
-<LI><B>History</B>: (*) Pakete yapılan güncellemelerin bir listesini
-verir. <B>History</B> altındaki güncellemeleri belirten <B>Update</B>
-taglarının mutlaka tarihe göre sıralı olması gerekmektedir. En son
-güncelleme en üstte bulunmalıdır. Çünkü en son güncellemeden alınan
-<B>Version</B> ve <B>Release</B> bilgisi pakete uygulanacaktır.
-<UL><LI>
-<B>Update</B>: (*) Bir güncellemeyi tarif eder.
-<UL><LI>
-<B>Type:</B> Güncellemenin tipini belirtir (<B><EM>Security,
-Bug, Enhancement, Normal</EM></B> v.s). Eğer bu etiket tanımlı değilse tip
-<B><EM>Normal</EM></B> olarak kabul edilir.
-<LI><B>Date</B>: (*) Güncellemenin tarihi.
-<LI><B>Version:</B> (*) Uygulamanın sürüm numarası.
-<LI><B>Release:</B> (*) Pakedin sürüm numarası.
-</UL>
-</UL>
 </UL>
 <!--TOC subparagraph Package: (*) Uygulamadan oluşturulacak bir pakedi
 tanımlar. Her PSPEC dosyası en az bir Package etiketi
@@ -611,6 +593,31 @@ belirtir. Örnek:<BR>
 &lt;AdditionalFile target=''/etc/bash/''&gt;bashrc&lt;/AdditionalFile&gt;
 </UL>
 </UL>
+<!--TOC subparagraph History: (*) Pakete yapılan güncellemelerin bir listesini
+verir. History altındaki güncellemeleri belirten Update
+taglarının mutlaka tarihe göre sıralı olması gerekmektedir.
+En son güncelleme en üstte bulunmalıdır. Çünkü en son güncellemeden
+alınan Version ve Release bilgisi pakete uygulanacaktır.-->
+
+<H5>History: (*) Pakete yapılan güncellemelerin bir listesini
+verir. History altındaki güncellemeleri belirten Update
+taglarının mutlaka tarihe göre sıralı olması gerekmektedir.
+En son güncelleme en üstte bulunmalıdır. Çünkü en son güncellemeden
+alınan Version ve Release bilgisi pakete uygulanacaktır.</H5><!--SEC END -->
+
+<UL><LI>
+<B>Update</B>: (*) Bir güncellemeyi tarif eder. <B>release</B>
+(*) attribute paketin sürüm numarası.
+<UL><LI>
+<B>Type:</B> Güncellemenin tipini belirtir (<B><EM>Security,
+Bug, Enhancement, Normal</EM></B> v.s). Eğer bu etiket tanımlı değilse tip
+<B><EM>Normal</EM></B> olarak kabul edilir.
+<LI><B>Date</B>: (*) Güncellemenin tarihi.
+<LI><B>Version:</B> (*) Uygulamanın sürüm numarası.
+<LI><B>Name:</B> (*) Güncellemeyi yapan kişinin adıdır.
+<LI><B>Email:</B> (*) Güncellemeyi yapan kişinin e-posta adresidir.
+</UL>
+</UL>
 <!--TOC paragraph Örnek bir PSPEC Dosyası-->
 
 <H5>Örnek bir PSPEC Dosyası</H5><!--SEC END -->
@@ -672,31 +679,7 @@ belirtir. Örnek:<BR>
 <BR>
 &nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/BuildDependencies&gt;</FONT><BR>
 <BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;History&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;06/14/2005&lt;/Date&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Release&gt;3&lt;/Release&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;06/10/2005&lt;/Date&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Release&gt;2&lt;/Release&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&lt;/History&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&lt;/Source&gt;</FONT><BR>
+&nbsp;<FONT SIZE=2>&lt;/Source&gt;</FONT><BR>
 <BR>
 &nbsp;<FONT SIZE=2>&nbsp;&lt;Package&gt;</FONT><BR>
 <BR>
@@ -723,6 +706,38 @@ belirtir. Örnek:<BR>
 &nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Files&gt;</FONT><BR>
 <BR>
 &nbsp;<FONT SIZE=2>&nbsp;&lt;/Package&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;History&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&nbsp;release=''2''&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;2005-07-01&lt;/Date&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Type&gt;Bug&lt;/Type&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Comment&gt;paths&nbsp;fixed.&lt;/Comment&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Barış&nbsp;Metin&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;baris@uludag.org.tr&lt;/Email&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&nbsp;release=''1''&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;2005-06-10&lt;/Date&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Comment&gt;first&nbsp;release.&lt;/Comment&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Barış&nbsp;Metin&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;baris@uludag.org.tr&lt;/Email&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
 <BR>
 <FONT SIZE=2>&lt;/PISI&gt;</FONT><BR>
 <BR>
@@ -775,17 +790,9 @@ tarafından hazır bir <B>API</B> ActionsAPI adında sunulacaktır.<BR>
 <BR>
 
 </TT></DL></DIV>
-<!--TOC subsubsection ChangeLog Dosyası-->
-
-<H4><A NAME="htoc15">4.2.3</A>&nbsp;&nbsp;ChangeLog Dosyası</H4><!--SEC END -->
-
-Pakedin sürümlerindeki değişikliklerin açıklamalarını içerir. Bu dosya
-bilindik <B>ChangeLog</B> stilindedir ve <B>PSPEC</B> içindeki
-<B>History</B> bilgisi ile ilgili değildir.<BR>
-<BR>
 <!--TOC subsubsection files Dizini-->
 
-<H4><A NAME="htoc16">4.2.4</A>&nbsp;&nbsp;files Dizini</H4><!--SEC END -->
+<H4><A NAME="htoc15">4.2.3</A>&nbsp;&nbsp;files Dizini</H4><!--SEC END -->
 
 Kaynak paket içerisinde bulunan files dizini kaynak arşivine uygulanacak
 yamaları, kurulum sırasında sistemin belirli bir yerine kopyalanması
@@ -795,7 +802,7 @@ tanımlanmalıdır.<BR>
 <BR>
 <!--TOC subsubsection comar Dizini-->
 
-<H4><A NAME="htoc17">4.2.5</A>&nbsp;&nbsp;comar Dizini</H4><!--SEC END -->
+<H4><A NAME="htoc16">4.2.4</A>&nbsp;&nbsp;comar Dizini</H4><!--SEC END -->
 
 Kaynak paket içerisinde bulunan comar dizini adından da kolayca anlaşılabilecek
 basit bir amaç ile oluşturulmuştur. Dizin ÇOMAR'a kayıt edilecek olan
@@ -808,7 +815,7 @@ ikili pakete aynen kopyalanır.<BR>
 <BR>
 <!--TOC subsection İkili PİSİ Paketi-->
 
-<H3><A NAME="htoc18">4.3</A>&nbsp;&nbsp;İkili PİSİ Paketi</H3><!--SEC END -->
+<H3><A NAME="htoc17">4.3</A>&nbsp;&nbsp;İkili PİSİ Paketi</H3><!--SEC END -->
 
 <B>PİSİ</B> paketleri ikili bir biçimde sunulacaktır. Bu bölüm paketlerin
 biçemini (format) ve içerdiklerini tanımlamaktadır.<BR>
@@ -829,7 +836,7 @@ anlatmaktadır.<BR>
 <BR>
 <!--TOC subsubsection metadata.xml-->
 
-<H4><A NAME="htoc19">4.3.1</A>&nbsp;&nbsp;metadata.xml</H4><!--SEC END -->
+<H4><A NAME="htoc18">4.3.1</A>&nbsp;&nbsp;metadata.xml</H4><!--SEC END -->
 
 <B>Metadata</B> dosyası bir uygulamanın paket haline geldikten sonra
 yanında taşıyacağı ve paket ile ilgili bilgileri barındıran dosyadır. <BR>
@@ -910,7 +917,7 @@ bir koşulda el ile oluşturulması gerekmemektedir.<BR>
 <BR>
 <!--TOC subsubsection files.xml-->
 
-<H4><A NAME="htoc20">4.3.2</A>&nbsp;&nbsp;files.xml</H4><!--SEC END -->
+<H4><A NAME="htoc19">4.3.2</A>&nbsp;&nbsp;files.xml</H4><!--SEC END -->
 
 Kaynak derlendikten sonra oluşan dosyaların, oluşturulan pakete göre
 <B>(Package)</B> sınıflandırılması gerekmektedir. Tek bir kaynaktan
@@ -933,7 +940,7 @@ için konum bilgisi bağımlı (rölatif) olarak verilir.
 <LI><B>Type</B><A NAME="FType"></A><B>:</B> Dosyanın tipini belirtir. Paket sisteme
 kurulduğunda, veritabanına bu tip tanımı ile işaretlenerek yerleştirilecektir.
 Bu tip tanımları şunlardan birisi olabileceği gibi boş da bırakılabilir:
-<FONT COLOR=navy>executable, conf, doc, sharedLib, localeData, programData,
+<FONT COLOR=navy>executable, config, doc, man, info, library, data, localedata,
 header</FONT>.
 <LI><B>Size:</B> Dosyanın byte cinsinden boyutunu saklar.
 <LI><B>SHA1Sum: Path</B> ile belirtilen dosyanın SHA1 algoritması ile
@@ -947,21 +954,21 @@ bir koşulda el ile oluşturulması gerekmemektedir.<BR>
 <BR>
 <!--TOC subsubsection install Dizini-->
 
-<H4><A NAME="htoc21">4.3.3</A>&nbsp;&nbsp;install Dizini</H4><!--SEC END -->
+<H4><A NAME="htoc20">4.3.3</A>&nbsp;&nbsp;install Dizini</H4><!--SEC END -->
 
 İkili paketin sisteme kurulmak üzere hazırlanmış/derlenmiş bileşenleri
 install/ dizini içerisinde bulunur.<BR>
 <BR>
 <!--TOC subsubsection comar Dizini-->
 
-<H4><A NAME="htoc22">4.3.4</A>&nbsp;&nbsp;comar Dizini</H4><!--SEC END -->
+<H4><A NAME="htoc21">4.3.4</A>&nbsp;&nbsp;comar Dizini</H4><!--SEC END -->
 
 Kaynak paketten alınan ÇOMAR betikleri comar/ dizininde bulunur ve
 kurulum sırasında ÇOMAR'a kayıt edilir.<BR>
 <BR>
 <!--TOC subsection Paket Depoları-->
 
-<H3><A NAME="htoc23">4.4</A>&nbsp;&nbsp;Paket Depoları</H3><!--SEC END -->
+<H3><A NAME="htoc22">4.4</A>&nbsp;&nbsp;Paket Depoları</H3><!--SEC END -->
 
 PİSİ için tanımlanmış iki farklı paket deposu bulunmaktadır:
 <UL><LI>
@@ -973,7 +980,7 @@ belgesini inceleyebilirsiniz.<BR>
 <BR>
 <!--TOC subsubsection Kaynak PİSİ Deposu-->
 
-<H4><A NAME="htoc24">4.4.1</A>&nbsp;&nbsp;Kaynak PİSİ Deposu</H4><!--SEC END -->
+<H4><A NAME="htoc23">4.4.1</A>&nbsp;&nbsp;Kaynak PİSİ Deposu</H4><!--SEC END -->
 
 Paketleri oluşturmak için gerekli PİSİ kaynak paketleri hiyerarşik
 bir yapıda bir <EM>subversion</EM> deposunda sunulmaktadır. Geliştirme
@@ -983,7 +990,7 @@ bileşenin altına yerleştirlir.<BR>
 <BR>
 <!--TOC subsubsection İkili PİSİ Deposu-->
 
-<H4><A NAME="htoc25">4.4.2</A>&nbsp;&nbsp;İkili PİSİ Deposu</H4><!--SEC END -->
+<H4><A NAME="htoc24">4.4.2</A>&nbsp;&nbsp;İkili PİSİ Deposu</H4><!--SEC END -->
 
 İkili PİSİ paketlerinin bulundurulduğu depodur. İkili PİSİ Deposu
 da ``Pardus Depo Politikası'' belgesinde anlatıldığı gibi Kaynak
@@ -1046,14 +1053,14 @@ resmi depodan alınacaktır.<BR>
 <BR>
 <!--TOC subsection Süreçlerin Tarifi-->
 
-<H3><A NAME="htoc26">4.5</A>&nbsp;&nbsp;Süreçlerin Tarifi</H3><!--SEC END -->
+<H3><A NAME="htoc25">4.5</A>&nbsp;&nbsp;Süreçlerin Tarifi</H3><!--SEC END -->
 
 Süreç tarifi paket sisteminin en temel görevlerini, tasarımı özetlemek
 amacı ile anlatır.<BR>
 <BR>
 <!--TOC subsubsection Paket Oluşturmak-->
 
-<H4><A NAME="htoc27">4.5.1</A>&nbsp;&nbsp;Paket Oluşturmak</H4><!--SEC END -->
+<H4><A NAME="htoc26">4.5.1</A>&nbsp;&nbsp;Paket Oluşturmak</H4><!--SEC END -->
 
 <IMG SRC="pisi001.gif"><BR>
 <BR>
@@ -1090,7 +1097,7 @@ Derleme Çiftliği</B> tarafından ikili paket veya paketler haline getirilir.
 </UL>
 <!--TOC subsubsection Paket Kurmak -->
 
-<H4><A NAME="htoc28">4.5.2</A>&nbsp;&nbsp;Paket Kurmak </H4><!--SEC END -->
+<H4><A NAME="htoc27">4.5.2</A>&nbsp;&nbsp;Paket Kurmak </H4><!--SEC END -->
 
 <IMG SRC="pisi002.gif"><BR>
 <BR>
@@ -1116,7 +1123,7 @@ verir. Kurulum için gerekli ``post install'' (kurulum sonrası)
 </UL>
 <!--TOC subsubsection Paket Kaldırmak-->
 
-<H4><A NAME="htoc29">4.5.3</A>&nbsp;&nbsp;Paket Kaldırmak</H4><!--SEC END -->
+<H4><A NAME="htoc28">4.5.3</A>&nbsp;&nbsp;Paket Kaldırmak</H4><!--SEC END -->
 
 Bir istemcinin, sistemdeki bir paketi kaldırmak için izleyeceği yol
 şöyledir;
@@ -1133,7 +1140,7 @@ betiklerini kaldırması için silinen paket ile ilgili bilgi verir.
 </UL>
 <!--TOC subsubsection Bağımlılık Çözmek-->
 
-<H4><A NAME="htoc30">4.5.4</A>&nbsp;&nbsp;Bağımlılık Çözmek</H4><!--SEC END -->
+<H4><A NAME="htoc29">4.5.4</A>&nbsp;&nbsp;Bağımlılık Çözmek</H4><!--SEC END -->
 
 PİSİ içerisinde kulanılan bağımlılık çözme algoritması, kaynak içerindeki
 detaylı belge (doc/dependency.tex) ile anlatılmıştır.<BR>
@@ -1152,7 +1159,7 @@ sağlayan paketlerin bir listesi sunulur.<BR>
 <BR>
 <!--TOC subsection Veritabanları-->
 
-<H3><A NAME="htoc31">4.6</A>&nbsp;&nbsp;Veritabanları</H3><!--SEC END -->
+<H3><A NAME="htoc30">4.6</A>&nbsp;&nbsp;Veritabanları</H3><!--SEC END -->
 
 İstemci makinadaki paket veritabanı aşağıdaki bölümlere sahip olacaktır.
 Veritabanları <B><EM>BerkeleyDB</EM></B> veritabanlarıdır. Veritabanları,
@@ -1165,7 +1172,7 @@ TODO: Veritabanlarının açıklamaları gerekiyor.<BR>
 <BR>
 <!--TOC section Diğer Yazarlar-->
 
-<H2><A NAME="htoc32">5</A>&nbsp;&nbsp;Diğer Yazarlar</H2><!--SEC END -->
+<H2><A NAME="htoc31">5</A>&nbsp;&nbsp;Diğer Yazarlar</H2><!--SEC END -->
 
 İsim sırası ile;
 <UL><LI>

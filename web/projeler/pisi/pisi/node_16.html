@@ -54,140 +54,25 @@
 <H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Alpha)</H3>
-<H5>Örnek bir PSPEC Dosyası</H5>
-<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-<FONT SIZE=2>&lt;?xml&nbsp;version="1.0"&nbsp;encoding="utf-8"&nbsp;standalone="no"?&gt;</FONT><BR>
-<BR>
-<FONT SIZE=2>&lt;!DOCTYPE&nbsp;PSPEC&nbsp;SYSTEM&nbsp;&nbsp;&nbsp;&nbsp;"http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd"&gt;</FONT><BR>
-<BR>
-<FONT SIZE=2>&lt;PISI&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&lt;Source&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Name&gt;popt&lt;/Name&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Homepage&gt;http://www.rpm.org/&lt;/Homepage&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Packager&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Pardus&nbsp;Man&lt;/Name&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;bilgi@uludag.org.tr&lt;/Email&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Packager&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;License&gt;As-Is&lt;/License&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;IsA&gt;library:util:optparser&lt;/IsA&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;PartOf&gt;rpm:archive&lt;/PartOf&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Summary&nbsp;xml:lang=''en''&gt;Popt&nbsp;command&nbsp;line&nbsp;option&nbsp;parser&lt;/Summary&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Description&nbsp;xml:lang=''en''&gt;Command&nbsp;line&nbsp;option&nbsp;parsing&nbsp;library.</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While&nbsp;it&nbsp;is&nbsp;similiar&nbsp;to&nbsp;getopt(3),&nbsp;it&nbsp;contains&nbsp;a&nbsp;number&nbsp;of&nbsp;enhancements,&nbsp;including:</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1)&nbsp;popt&nbsp;is&nbsp;fully&nbsp;reentrant</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2)&nbsp;popt&nbsp;can&nbsp;parse&nbsp;arbitrary&nbsp;argv[]&nbsp;style&nbsp;arrays&nbsp;while&nbsp;getopt(2)&nbsp;makes&nbsp;this&nbsp;quite&nbsp;difficult</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3)&nbsp;popt&nbsp;allows&nbsp;users&nbsp;to&nbsp;alias&nbsp;command&nbsp;line&nbsp;arguments</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4)&nbsp;popt&nbsp;provides&nbsp;convience&nbsp;functions&nbsp;for&nbsp;parsing&nbsp;strings&nbsp;into&nbsp;argv[]&nbsp;style&nbsp;arrays</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Description&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Archive&nbsp;type="targz"&nbsp;sha1sum="66f3c77b87a160951b180447f4a6dce68ad2f71b"&gt;ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/popt-1.7.tar.gz&lt;/Archive&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Patches&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Patch&nbsp;compressionType="gz"&nbsp;level="1"&gt;popt-1.7-uclibc.patch.gz&lt;/Patch&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Patches&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;BuildDependencies&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&nbsp;versionFrom="1.8"&gt;automake&lt;/Dependency&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/BuildDependencies&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;History&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;06/14/2005&lt;/Date&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Release&gt;3&lt;/Release&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;06/10/2005&lt;/Date&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Release&gt;2&lt;/Release&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&lt;/History&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&lt;/Source&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&lt;Package&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;popt&lt;/Name&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;RuntimeDependencies&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&gt;gettext&lt;/Dependency&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/RuntimeDependencies&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Files&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="sharedLib"&gt;/usr/lib&lt;/Path&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="doc"&gt;/usr/share/doc&lt;/Path&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="doc"&gt;/usr/share/man&lt;/Path&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="localedata"&gt;/usr/share/locale&lt;/Path&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="header"&gt;/usr/include/popt.h&lt;/Path&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Files&gt;</FONT><BR>
-<BR>
-&nbsp;<FONT SIZE=2>&nbsp;&lt;/Package&gt;</FONT><BR>
-<BR>
-<FONT SIZE=2>&lt;/PISI&gt;</FONT><BR>
-<BR>
+<H5>History: (*) Pakete yapılan güncellemelerin bir listesini
+verir. History altındaki güncellemeleri belirten Update
+taglarının mutlaka tarihe göre sıralı olması gerekmektedir.
+En son güncelleme en üstte bulunmalıdır. Çünkü en son güncellemeden
+alınan Version ve Release bilgisi pakete uygulanacaktır.</H5><!--SEC END -->
 
-</TT></DL></DIV>
-Yukarıdaki örnek dosyada <EM>Package</EM> içerisinde tanımlanmayan taglar
-<EM>Source</EM> içerisinden alınarak kullanılacaktır. Bir kaynak paketten
-birden fazla ikili (binary) paket oluşturmak için <EM>Package</EM> etiketleri
-farklı isimler (Name) verilerek arttırılabilir. <EM>Paketler</EM> <B>Files</B>
-içerisinde bulunan <B>Path</B> taglarına göre bölümlendirilecektir.<BR>
-<BR>
-
-<H4><A NAME="htoc14">4.2.2</A>&nbsp;&nbsp;actions.py Dosyası</H4>
-Bu dosya bir Python betiği olup, kaynağın kurulması, derlenmesi, test
-edilmesi, sisteme kurulması gibi işlevleri yerine getiren fonksiyonlardan
-oluşur. <BR>
-<BR>
-Paketin oluşturulması sırasında derleme sistemi <B>actions.py</B>
-içerisindeki 3 fonksiyon adını arar ve çalıştırır; <B>setup,
-build, install</B>. Bu fonksiyonlardan install'ın tanımlanması zorunlu
-olmakla birlikte setup ve build sadece tanımlanmışsa çalıştırılır. <BR>
-<BR>
-<B>actions.py</B>'ler tarafından kullanılmak üzere <B>PİSİ</B>
-tarafından hazır bir <B>API</B> ActionsAPI adında sunulacaktır.<BR>
-<BR>
+<UL><LI>
+<B>Update</B>: (*) Bir güncellemeyi tarif eder. <B>release</B>
+(*) attribute paketin sürüm numarası.
+<UL><LI>
+<B>Type:</B> Güncellemenin tipini belirtir (<B><EM>Security,
+Bug, Enhancement, Normal</EM></B> v.s). Eğer bu etiket tanımlı değilse tip
+<B><EM>Normal</EM></B> olarak kabul edilir.
+<LI><B>Date</B>: (*) Güncellemenin tarihi.
+<LI><B>Version:</B> (*) Uygulamanın sürüm numarası.
+<LI><B>Name:</B> (*) Güncellemeyi yapan kişinin adıdır.
+<LI><B>Email:</B> (*) Güncellemeyi yapan kişinin e-posta adresidir.
+</UL>
+</UL>
 <table class='navbar'><tbody><tr><td class='navbut'><a href='node_15.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_17.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->

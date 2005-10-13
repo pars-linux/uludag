@@ -54,41 +54,48 @@
 <H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Alpha)</H3>
-<H3><A NAME="htoc18">4.3</A>&nbsp;&nbsp;İkili PİSİ Paketi</H3>
-<B>PİSİ</B> paketleri ikili bir biçimde sunulacaktır. Bu bölüm paketlerin
-biçemini (format) ve içerdiklerini tanımlamaktadır.<BR>
+<H5>Örnek bir actions.py dosyası:</H5>
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;gnuconfig</FONT><BR>
 <BR>
-<B>PİSİ</B> paketi, içerisinde aşağıdaki bölümler olan bir <EM>PK-ZIP</EM>
-paketidir. Bu sayede paketler standart araçlar ile açılabilir/erişilebilir
-olacaklardır.
-<UL><LI>
-<B>metadata.xml:</B> <B>PSPEC</B> dosyasından alınacak ve üzerine
-eklenecek bilgiler ile oluşturulacak Meta bilgisi
-<LI><B>files.xml:</B> Paket içerisinde bulunan dosyaların bir listesi
-<LI><B>comar/ dizini:</B> ÇOMAR betikleri
-<LI><B>install/ dizini:</B> Paketin kurulu biçimi. Paketin sisteme kurulumu
-bu dizinin belirtilen dizine açılır.
-</UL>
-Alt bölümler ikili PİSİ paketi içerisindeki bileşenleri detaylı olarak
-anlatmaktadır.<BR>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;setup():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;gnuconfig.gnuconfig_update()</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.configure(``--with-nls'')</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;build():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.make()</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;install():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.install()&nbsp;</FONT><BR>
 <BR>
 
-<H4><A NAME="htoc19">4.3.1</A>&nbsp;&nbsp;metadata.xml</H4>
-<B>Metadata</B> dosyası bir uygulamanın paket haline geldikten sonra
-yanında taşıyacağı ve paket ile ilgili bilgileri barındıran dosyadır. <BR>
+</TT></DL></DIV>
+
+<H4><A NAME="htoc15">4.2.3</A>&nbsp;&nbsp;files Dizini</H4>
+Kaynak paket içerisinde bulunan files dizini kaynak arşivine uygulanacak
+yamaları, kurulum sırasında sistemin belirli bir yerine kopyalanması
+gereken ve paketle birlikte gelen ek dosyaları barındırır. Burada
+bulunan tüm dosyalar PSPEC içerisindeki ilgili oldukları bölümlerde
+tanımlanmalıdır.<BR>
 <BR>
-<B>Metadata</B> dosyası sadece oluşturulan paket ile ilgili bilgileri
-tutmaktan sorumludur. Paket hakkında temel bilgi bu dosyadan alınacaktır.<BR>
+
+<H4><A NAME="htoc16">4.2.4</A>&nbsp;&nbsp;comar Dizini</H4>
+Kaynak paket içerisinde bulunan comar dizini adından da kolayca anlaşılabilecek
+basit bir amaç ile oluşturulmuştur. Dizin ÇOMAR'a kayıt edilecek olan
+betik dosyalarının bulunduğu dizindir. ÇOMAR betikleri PSPEC içerisinde
+tarif edilir.<BR>
 <BR>
-Bu bilgilerin büyük kısmı <B>PSPEC</B> dosyasının işlenmesi sonucu
-ile <B>Metadata</B> dosyasına yazılmaktadır. <B>Metadata PSPEC</B>
-dosyasından alınan bilgilerin yanında kaynak derlendikten ve paket
-oluşturulduktan sonra alınabilecek diğer bilgileri de içerir (paketin
-kurulduktan sonra sistemde kaplayacağı alanın boyutu gibi).<BR>
+Bu dizin içerisindeki dosyalar ikili paketin sisteme kurulması ile
+kullanılabilir olacağı için, comar dizini içerisindeki ÇOMAR betikleri
+ikili pakete aynen kopyalanır.<BR>
 <BR>
-<B>Metadata</B> dosyasının içeriği şöyle tanımlanmıştır;<BR>
-<BR>
-<table class='navbar'><tbody><tr><td class='navbut'><a href='node_17.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_19.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+<UL><LI><A HREF='./node_19.html'>İkili PİSİ Paketi</A></LI><UL><LI><A HREF='./node_19.html'>metadata.xml</A></LI></UL></UL><table class='navbar'><tbody><tr><td class='navbut'><a href='node_17.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_19.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->
 
