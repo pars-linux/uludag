@@ -3,6 +3,10 @@ body {
   padding: 0em;
 }
 
+* {
+    font-family: Bitstream Vera Sans, Verdana, Tahoma, Sans;
+}
+
 #container {
   padding: 0em;
   margin: 0em;
