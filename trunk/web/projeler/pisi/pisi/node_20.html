@@ -54,95 +54,21 @@
 <H3 ALIGN=center>Barış Metin</H3>
 
 <H3 ALIGN=center>(Alpha)</H3>
-<H5>Package</H5>
+<H5>Source: Bu bölümdeki bilgiler PSPEC dosyasının
+<EM>Source</EM> bölümünden alınır.</H5><!--SEC END -->
+
 <UL><LI>
 <B>Name</B>
+<LI><B>Homepage</B>
 <LI><B>Summary</B>
 <LI><B>Description</B>
-<LI><B>License</B>
-<LI><B>History</B>
+<LI><B>Packager</B>
 <UL><LI>
-<B>Update</B>
-<UL><LI>
-<B>Type</B>
-<LI><B>Date</B>
-<LI><B>Version</B>
-<LI><B>Release</B>
+<B>Name</B>
+<LI><B>Email</B>
 </UL>
 </UL>
-<LI><B>Conflicts</B>
-<LI><B>Provides:</B> Paketin hangi OM bacaklarını sağladığını belirtir.
-<LI><B>RuntimeDependencies</B>
-<LI><B>Dependency</B>
-<LI><B>Files</B>
-<UL><LI>
-<B>Path</B>
-</UL>
-<LI><B>Build</B>: Paketin derleneme sayısını gösterir. Bu değer derleme
-sistemi tarafından otomatik olarak hesaplanır.
-<LI><B>Distribution:</B> Paketin ait olduğu dağıtımı belirtir (Pardus).
-<LI><B>DistributionRelease:</B> Paketin ait olduğu dağıtımın hangi sürümü
-için oluşturduğunu belirtir (1.0).
-<LI><B>Architecture:</B> Paketin hangi mimari için yapıldığını belirtir.
-<LI><B>InstallSize:</B> Paketin sisteme kurulduğunda kaplayacağı alanın
-tahmini boyutunu belirtir.
-</UL>
-Yukarıda tanımlanan <B>Metadata</B> dosyası, belirlenecek paket
-formatının içinde <B><EM>XML</EM></B> dosyası olarak tutulacaktır.
-<B>Metadata</B> XML dosyalarının yapısı <B>PSPEC</B> dosyası ile
-hemen hemen aynıdır. Yalnızca Metadata paket oluşumundan sonra elimizde
-olan bazı ek bilgileri de içerir. <BR>
-<BR>
-metadata.xml dosyaları otomatik olarak PİSİ derleme sistemi tarafından
-oluşturulur ve ikili paket içerisine dahil edilir. Bu dosyanın hiç
-bir koşulda el ile oluşturulması gerekmemektedir.<BR>
-<BR>
-
-<H4><A NAME="htoc20">4.3.2</A>&nbsp;&nbsp;files.xml</H4>
-Kaynak derlendikten sonra oluşan dosyaların, oluşturulan pakete göre
-<B>(Package)</B> sınıflandırılması gerekmektedir. Tek bir kaynaktan
-birden fazla paket oluşturulması, kaynağın derlenmesinden sonra oluşan
-dosyaların sınıflandırılması ile olur.<BR>
-<BR>
-files.xml dosyası paket geliştirme aracı/araçları ile oluşturularak
-paket içerisine yerleştirilir.
-<UL><LI>
-<B>Files</B>
-<UL><LI>
-<B>Package:</B> Dosya serisinin hangi <B><EM>SubPackage</EM></B>'i
-oluşturduğunu belirtir. (örn. mysql-devel, mysql-client, mysql-server
-, mysql-doc)
-<LI><B>File:</B> Pakete dahil edilecek bir dosyayı tarif eder.
-<UL><LI>
-<B>Path:</B> Dosyanın, paket içerisindeki yerini belirtir. <B>PISI</B>
-gereklerinden biri paketin belirtilen konuma kurulabilmesi olduğu
-için konum bilgisi bağımlı (rölatif) olarak verilir.
-<LI><B>Type</B><A NAME="FType"></A><B>:</B> Dosyanın tipini belirtir. Paket sisteme
-kurulduğunda, veritabanına bu tip tanımı ile işaretlenerek yerleştirilecektir.
-Bu tip tanımları şunlardan birisi olabileceği gibi boş da bırakılabilir:
-<FONT COLOR=navy>executable, conf, doc, sharedLib, localeData, programData,
-header</FONT>.
-<LI><B>Size:</B> Dosyanın byte cinsinden boyutunu saklar.
-<LI><B>SHA1Sum: Path</B> ile belirtilen dosyanın SHA1 algoritması ile
-elde edilmiş <EM>cryptographic</EM> özet değerini saklar.
-</UL>
-</UL>
-</UL>
-files.xml dosyaları otomatik olarak PİSİ derleme sistemi tarafından
-oluşturulur ve ikili paket içerisine dahil edilir. Bu dosyanın hiç
-bir koşulda el ile oluşturulması gerekmemektedir.<BR>
-<BR>
-
-<H4><A NAME="htoc21">4.3.3</A>&nbsp;&nbsp;install Dizini</H4>
-İkili paketin sisteme kurulmak üzere hazırlanmış/derlenmiş bileşenleri
-install/ dizini içerisinde bulunur.<BR>
-<BR>
-
-<H4><A NAME="htoc22">4.3.4</A>&nbsp;&nbsp;comar Dizini</H4>
-Kaynak paketten alınan ÇOMAR betikleri comar/ dizininde bulunur ve
-kurulum sırasında ÇOMAR'a kayıt edilir.<BR>
-<BR>
-<UL><LI><A HREF='./node_21.html'>Paket Depoları</A></LI><UL><LI><A HREF='./node_22.html'>Kaynak PİSİ Deposu</A></LI><LI><A HREF='./node_23.html'>İkili PİSİ Deposu</A></LI></UL><LI><A HREF='./node_24.html'>Süreçlerin Tarifi</A></LI><UL><LI><A HREF='./node_25.html'>Paket Oluşturmak</A></LI><LI><A HREF='./node_26.html'>Paket Kurmak </A></LI><LI><A HREF='./node_27.html'>Paket Kaldırmak</A></LI><LI><A HREF='./node_28.html'>Bağımlılık Çözmek</A></LI></UL><LI><A HREF='./node_29.html'>Veritabanları</A></LI></UL><table class='navbar'><tbody><tr><td class='navbut'><a href='node_19.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_21.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_19.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_21.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
 </div>
 <!-- SAYFA İÇERİK SONU -->
 
