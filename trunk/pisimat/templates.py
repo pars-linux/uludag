@@ -32,7 +32,7 @@ pspec_tags = [
     "Update",
     "Date",
     "Version",
-    "Release",
+    "Comment",
     "RuntimeDependencies",
     "Files",
     "Path"
@@ -47,7 +47,8 @@ pspec_attributes = [
     "versionTo",
     "compressionType",
     "level",
-    "fileType"
+    "fileType",
+    "release"
 ]
 
 pspec_filetypes = [
@@ -60,7 +61,8 @@ pspec_filetypes = [
     "config",
     "other",
     "localedata",
-    "info"
+    "info",
+    "all"
 ]
 
 pspec_xml = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
@@ -77,94 +79,152 @@ pspec_xml = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
         <License>GPL-2</License>
         <IsA></IsA>
         <PartOf></PartOf>
-        <Summary xml:lang="en">An application</Summary>
-        <Description xml:lang="en">An application</Description>
+        <Summary>An application</Summary>
+        <Description>An application</Description>
         <Archive type="tarbz" sha1sum="12">http://uludag.org.tr/nothing.tar.bz2</Archive>
         <Patches>
         </Patches>
         <BuildDependencies>
         </BuildDependencies>
-        <History>
-            <Update>
-                <Date>%(DATE)s</Date>
-                <Version>1.0</Version>
-                <Release>1</Release>
-            </Update>
-        </History>
     </Source>
 
     <Package>
         <Name>%(PACKAGE)s</Name>
+        <RuntimeDependencies>
+        </RuntimeDependencies>
         <Files>
             <Path fileType="data">/</Path>
         </Files>
    </Package>
+
+   <History>
+        <Update release="1">
+            <Date>%(DATE)s</Date>
+            <Version>1.0</Version>
+            <Comment>First release.</Comment>
+            <Name>%(NAME)s</Name>
+            <Email>%(EMAIL)s</Email>
+        </Update>
+    </History>
 </PISI>
 """
 
-actions_apis = [
-    "actionsapi",
-    "autotools",
-    "pisitools",
-    "shelltools"
-]
+pspec_release = """
+        <Update release="%(RELEASE)s">
+            <Date>%(DATE)s</Date>
+            <Version>%(VERSION)s</Version>
+            <Comment>Update</Comment>
+            <Name>%(NAME)s</Name>
+            <Email>%(EMAIL)s</Email>
+        </Update>"""
 
-actions_funcs = [
-    "configure",
-    "rawConfigure",
-    "compile",
-    "make",
-    "install",
-    "rawInstall",
-    "aclocal",
-    "autoconf",
-    "automake",
-    "autoheader",
-    "dobin",
-    "dodir",
-    "dodoc",
-    "doexe",
-    "dohard",
-    "dohtml",
-    "doinfo",
-    "dojar",
-    "dolib",
-    "dolib_a",
-    "dolib_so",
-    "doman",
-    "domo",
-    "domove",
-    "dosed",
-    "dosbin",
-    "dosym",
-    "insinto",
-    "newdoc",
-    "newman",
-    "remove",
-    "removeDir",
-    "can_access_file",
-    "can_access_directory",
-    "makedirs",
-    "echo",
-    "chmod",
-    "chown",
-    "sym",
-    "unlink",
-    "unlinkDir",
-    "move",
-    "copy",
-    "copytree",
-    "touch",
-    "cd",
-    "ls",
-    "export",
-    "isLink",
-    "isFile",
-    "isDirectory",
-    "realPath",
-    "baseName",
-    "dirName",
-    "system"
+actions_api = [
+    # get
+    "get.curDIR",
+    "get.curKERNEL",
+    "get.ENV",
+    "get.pkgDIR",
+    "get.workDIR",
+    "get.installDIR",
+    "get.srcNAME",
+    "get.srcVERSION",
+    "get.srcRELEASE",
+    "get.srcTAG",
+    "get.srcDIR",
+    "get.HOST",
+    "get.CHOST",
+    "get.CFLAGS",
+    "get.CXXFLAGS",
+    "get.LDFLAGS",
+    "get.docDIR",
+    "get.sbinDIR",
+    "get.infoDIR",
+    "get.manDIR",
+    "get.dataDIR",
+    "get.confDIR",
+    "get.localstateDIR",
+    "get.defaultprefixDIR",
+    "get.kdeDIR",
+    "get.qtDIR",
+    "get.qtLIBDIR",
+    "get.existBinary",
+    "get.getBinutilsInfo",
+    "get.AR",
+    "get.AS",
+    "get.CC",
+    "get.CXX",
+    "get.LD",
+    "get.NM",
+    "get.RANLIB",
+    "get.F77",
+    "get.GCJ",
+    # pisitools
+    "pisitools.dobin",
+    "pisitools.dodir",
+    "pisitools.dodoc",
+    "pisitools.doexe",
+    "pisitools.dohard",
+    "pisitools.dohtml",
+    "pisitools.doinfo",
+    "pisitools.dolib",
+    "pisitools.dolib_a",
+    "pisitools.dolib_so",
+    "pisitools.doman",
+    "pisitools.domo",
+    "pisitools.domove",
+    "pisitools.rename",
+    "pisitools.dosed",
+    "pisitools.dosbin",
+    "pisitools.dosym",
+    "pisitools.insinto",
+    "pisitools.newdoc",
+    "pisitools.newman",
+    "pisitools.remove",
+    "pisitools.removeDir",
+    # libtools
+    "libtools.preplib",
+    "libtools.gnuconfig_update",
+    "libtools.libtoolize",
+    "libtools.gen_usr_ldscript",
+    # shelltools
+    "shelltools.can_access_file",
+    "shelltools.can_access_directory",
+    "shelltools.makedirs",
+    "shelltools.echo",
+    "shelltools.chmod",
+    "shelltools.chown",
+    "shelltools.sym",
+    "shelltools.unlink",
+    "shelltools.unlinkDir",
+    "shelltools.move",
+    "shelltools.copy",
+    "shelltools.copytree",
+    "shelltools.touch",
+    "shelltools.cd",
+    "shelltools.ls",
+    "shelltools.export",
+    "shelltools.isLink",
+    "shelltools.isFile",
+    "shelltools.isDirectory",
+    "shelltools.realPath",
+    "shelltools.baseName",
+    "shelltools.dirName",
+    "shelltools.system",
+    # pythonmodules
+    "pythonmodules.compile",
+    "pythonmodules.install",
+    "pythonmodules.run",
+    # perlmodules
+    "perlmodules.configure",
+    "perlmodules.make",
+    "perlmodules.install",
+    # kde
+    "kde.configure",
+    "kde.make",
+    "kde.install",
+    # scons
+    "scons.make",
+    "scons.install"
 ]
 
 actions_py = u"""#!/usr/bin/python

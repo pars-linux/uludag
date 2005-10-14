@@ -28,12 +28,18 @@ import templates
 import config
 import utils
 
+import time
+
+def getDate():
+    return time.strftime("%Y-%m-%d")
+
+
 class SpecEd(utils.TextEd):
     def __init__(self, path, name):
         utils.TextEd.__init__(self, path, "pspec.xml", utils.HTMLLexer())
         self.setupAPI()
         if not self.loaded:
-            data = { "PACKAGE":  name, "NAME": config.name, "EMAIL": config.email, "DATE": "2005-08-06" }
+            data = { "PACKAGE":  name, "NAME": config.name, "EMAIL": config.email, "DATE": getDate() }
             self.setText(templates.pspec_xml % (data))
     
     def setupAPI(self):
@@ -86,9 +92,7 @@ class ActionEd(utils.TextEd):
     
     def setupAPI(self):
         api = QextScintillaAPIs()
-        for item in templates.actions_apis:
-            api.add(item)
-        for item in templates.actions_funcs:
+        for item in templates.actions_api:
             api.add(item)
         self.myapi = api
         self.setAutoCompletionAPIs(self.myapi)
@@ -133,6 +137,7 @@ class Editor(QMainWindow):
         bar.insertItem("&Tools", tools)
         tools.insertItem("Fetch source", self.tools_fetch)
         tools.insertItem("Fill paths", self.tools_paths)
+        tools.insertItem("Add release", self.add_release)
         pisi = QPopupMenu(self)
         bar.insertItem("&Pisi", pisi)
         pisi.insertItem("Validate PSpec", self.pisi_validate, self.CTRL + self.Key_V)
@@ -207,6 +212,35 @@ class Editor(QMainWindow):
             data = data[:m3.start(1)] + digest + data[m3.end(1):]
         else:
             data = data[:m.end(1)] + " sha1sum='" + digest + "'" + data[m.end(1):]
+        self.spec_ed.setText(data)
+    
+    def add_release(self):
+        data = unicode(self.spec_ed.text())
+        p = re.compile("<History>")
+        m = p.search(data)
+        if not m:
+            QMessageBox.warning(self, "Add release error", "No <History> tag!")
+            return
+        dict = {
+            "NAME": config.name,
+            "EMAIL": config.email,
+            "DATE": getDate(),
+            "RELEASE": "unknown",
+            "VERSION": "unknown"
+        }
+        verm = re.search("<Version>(.*)</Version>", data)
+        relm = re.search("release='(.*)'", data)
+        if not relm:
+            relm = re.search('release="(.*)"', data)
+        if verm:
+            dict["VERSION"] = data[verm.start(1):verm.end(1)]
+        if relm:
+            try:
+                dict["RELEASE"] = str(int(data[relm.start(1):relm.end(1)]) + 1)
+            except:
+                pass
+        reltext = templates.pspec_release % dict
+        data = data[:m.end()] + reltext + data[m.end():]
         self.spec_ed.setText(data)
     
     def tools_paths(self):
