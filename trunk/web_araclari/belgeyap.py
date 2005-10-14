@@ -417,119 +417,119 @@ def fix_hevea():
 
 def export(lyxname, dname):
 	# pdf ve latex cikti
-	print "'%s' oluşturuluyor..." % (dname + ".pdf")
-	os.spawnlp(os.P_WAIT, "lyx", "lyx", "-e", "pdf2", lyxname);
-	basename = lyxname[:]
-	if basename[-4:] == ".lyx":
-		basename = basename[0:-4]
-	shutil.move(basename + ".pdf", dname + ".pdf")
-	texname = basename + ".tex"
-	print "'%s' oluşturuluyor..." % (texname)
-	os.spawnlp(os.P_WAIT, "lyx", "lyx", "-e", "latex", lyxname);
-	# simdi html ciktilar
-	print "'%s' oluşturuluyor..." % (dname + ".html")
-	fix_hevea()
-	ret = os.spawnlp(os.P_WAIT, "hevea", "hevea", "-fix", "duzeltmeler.hva", texname, "-o", dname + ".html")
+    print "'%s' oluşturuluyor..." % (dname + ".pdf")
+    os.spawnlp(os.P_WAIT, "lyx", "lyx", "-e", "pdf2", lyxname);
+    basename = lyxname[:]
+    if basename[-4:] == ".lyx":
+        basename = basename[0:-4]
+    shutil.move(basename + ".pdf", dname + ".pdf")
+    texname = basename + ".tex"
+    print "'%s' oluşturuluyor..." % (texname)
+    os.spawnlp(os.P_WAIT, "lyx", "lyx", "-e", "latex", lyxname);
+    # simdi html ciktilar
+    print "'%s' oluşturuluyor..." % (dname + ".html")
+    fix_hevea()
+    ret = os.spawnlp(os.P_WAIT, "hevea", "hevea", "-fix", "duzeltmeler.hva", texname, "-o", dname + ".html")
 
         # os.py icerisinde exec edilemediginde 127 donduruyor.
         # aslinda daha iyi bir yontem hevea'yi cagirmadan once,
         # calistirilabilir olup olmadigini kontrol etmek olabilir.
         if ret == 127:
-               sys.stderr.write("\nHATA: hevea programı sisteminizde bulunamadı!\n")
-               sys.exit(1)
+            sys.stderr.write("\nHATA: hevea programı sisteminizde bulunamadı!\n")
+            sys.exit(1)
 
 def bilgibas(name,dname,date):
-	pdf_size = str(os.stat(dname + ".pdf")[ST_SIZE] / 1024)
-	print ""
-	print "<tr>"
-	print '<td align="left"><b>%s</b> (%s)</td>' % (name, date)
-	print '<td><a href="./%s/index.html">HTML</a></td>' % (dname)
-	print '<td><a href="./%s/%s.html">HTML (tek sayfa)</a></td>' % (dname,dname)
-	print '<td><a href="./%s/%s.pdf">PDF (%s KB)</a></td>' % (dname,dname,pdf_size)
-	print "</tr>"
-	print ""
+    pdf_size = str(os.stat(dname + ".pdf")[ST_SIZE] / 1024)
+    print ""
+    print "<tr>"
+    print '<td align="left"><b>%s</b> (%s)</td>' % (name, date)
+    print '<td><a href="./%s/index.html">HTML</a></td>' % (dname)
+    print '<td><a href="./%s/%s.html">HTML (tek sayfa)</a></td>' % (dname,dname)
+    print '<td><a href="./%s/%s.pdf">PDF (%s KB)</a></td>' % (dname,dname,pdf_size)
+    print "</tr>"
+    print ""
 
 def yap(template,clean_flag):
-	ikonlar = "../../images"
-	tamir = 1
-	# open document template and get information
-	f = file(template)
-	exec(f)
-	f.close()
-	# open html template
-	c = Cutter()
-	c.img_path = ikonlar
-	# prepare directory
-	ensure_dir(dizin)
-	# fetch the document
-	dt = svn_fetch(depo,belge)
-	# fix some problems if necessary
-	if tamir == 1:
-		retouch_lyx(belge)
+    ikonlar = "../../images"
+    tamir = 1
+    # open document template and get information
+    f = file(template)
+    exec(f)
+    f.close()
+    # open html template
+    c = Cutter()
+    c.img_path = ikonlar
+    # prepare directory
+    ensure_dir(dizin)
+    # fetch the document
+    dt = svn_fetch(depo,belge)
+    # fix some problems if necessary
+    if tamir == 1:
+        retouch_lyx(belge)
 	# fetch images if necessary
-	try:
-		for t in dosyalar:
-			ensure_path(t)
-			try:
-				svn_fetch(depo,t)
-			except:
-				print "'%s' getirilemedi!" % (t)
-	except:
-		pass
-	# create documents
-	export(belge,dizin)
-	# tek ve cok sayfaliya ayir
-	c.cut(dizin + ".html")
-	# gereksiz dosyaları temizle
-	if clean_flag == 1:
-		remove_file(dizin + ".haux")
-		remove_file(dizin + ".htoc")
-		os.unlink(belge)
-		basename = belge
-		if basename[-4:] == ".lyx":
-			basename = basename[0:-4]
-		os.unlink(basename + ".tex")
-		os.unlink("duzeltmeler.hva")
-	# indekse eklemek icin html kodu bas
-	bilgibas(isim,dizin,dt)
-	# leave directory
-	os.chdir("..")
+    try:
+        for t in dosyalar:
+            ensure_path(t)
+            try:
+                svn_fetch(depo,t)
+            except:
+                print "'%s' getirilemedi!" % (t)
+    except:
+        pass
+    # create documents
+    export(belge,dizin)
+    # tek ve cok sayfaliya ayir
+    c.cut(dizin + ".html")
+    # gereksiz dosyaları temizle
+    if clean_flag == 1:
+        remove_file(dizin + ".haux")
+        remove_file(dizin + ".htoc")
+        os.unlink(belge)
+        basename = belge
+        if basename[-4:] == ".lyx":
+            basename = basename[0:-4]
+        os.unlink(basename + ".tex")
+        os.unlink("duzeltmeler.hva")
+    # indekse eklemek icin html kodu bas
+    bilgibas(isim,dizin,dt)
+    # leave directory
+    os.chdir("..")
 
 def usage():
-	print "Kullanım: belgeyap.py <belgeşablonu>..."
-	print "Örnek şablon dosyası içeriği:"
-	print "  # -*- coding: utf-8 -*-"
-	print "  depo = \"http://svn.uludag.org.tr/uludag/path/\""
-	print "  belge = \"örnek.lyx\""
-	print "  isim = \"Şablon Örneği Belgesi\""
-	print "  dizin = \"ornek\""
-	print "Bu örnek, 'ornek' dizini içinde depodan aldığı belgenin"
-	print "html (tek sayfa, çok sayfa) ve pdf sürümlerini oluşturur."
-	print "Opsiyonel parametreler:"
-	print '  dosyalar = [ "dosya1.png", "dosya2.png" ]'
-	print '  ikonlar = "../../images/"'
-	print "Ek dosyaları depodan almak, ve navigasyon ikonlarının"
-	print "yerini belirtmek için kullanabilirsiniz."
-	print ""
-	print "Hata raporlarını gurer @ uludag.org.tr ye gönderin."
-	sys.exit(2)
+    print "Kullanım: belgeyap.py <belgeşablonu>..."
+    print "Örnek şablon dosyası içeriği:"
+    print "  # -*- coding: utf-8 -*-"
+    print "  depo = \"http://svn.uludag.org.tr/uludag/path/\""
+    print "  belge = \"örnek.lyx\""
+    print "  isim = \"Şablon Örneği Belgesi\""
+    print "  dizin = \"ornek\""
+    print "Bu örnek, 'ornek' dizini içinde depodan aldığı belgenin"
+    print "html (tek sayfa, çok sayfa) ve pdf sürümlerini oluşturur."
+    print "Opsiyonel parametreler:"
+    print '  dosyalar = [ "dosya1.png", "dosya2.png" ]'
+    print '  ikonlar = "../../images/"'
+    print "Ek dosyaları depodan almak, ve navigasyon ikonlarının"
+    print "yerini belirtmek için kullanabilirsiniz."
+    print ""
+    print "Hata raporlarını gurer @ uludag.org.tr ye gönderin."
+    sys.exit(2)
 
 # main
 try:
-	opts, args = getopt.gnu_getopt(sys.argv[1:], "hn", ["help", "noclean"])
+    opts, args = getopt.gnu_getopt(sys.argv[1:], "hn", ["help", "noclean"])
 except:
-	usage()
+    usage()
 
 opt_clean = 1
 
 for o, v in opts:
-	if o in ("-h", "--help"):
-		usage()
-	if o in ("-n", "--noclean"):
-		opt_clean = 0
+    if o in ("-h", "--help"):
+        usage()
+    if o in ("-n", "--noclean"):
+        opt_clean = 0
 
 if args == []:
-	usage()
+    usage()
 
 for name in args:
-	yap(name, opt_clean)
+    yap(name, opt_clean)

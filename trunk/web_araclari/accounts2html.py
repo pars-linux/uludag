@@ -80,7 +80,7 @@ class AccountsToHtml:
         for a in self.accountToHtml():
             tmp += "\n" + a + "\n"
         tmp += unicode(accounts_end, "utf-8")
-	print tmp
+        print tmp
         return tmp
             
         
@@ -103,7 +103,7 @@ if __name__ == "__main__":
             tmpl = arg
 
     if accountsfile == "" or filename == "" or tmpl == "":
-	usage()
+        usage()
 
     try:
         sablon = sablonla.Sablon(tmpl)
