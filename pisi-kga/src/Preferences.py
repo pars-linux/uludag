@@ -42,7 +42,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
         self.updateListView()
 
     def updateButtons(self):
-    	if self.repoListView.childCount() > 1:
+        if self.repoListView.childCount() > 1:
             moreThanOne = True
         else:
             moreThanOne = False
