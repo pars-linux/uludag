@@ -70,7 +70,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         global glob_ui
         self.errorMessage = None
-	self.savedProgress = 0
+        self.savedProgress = 0
         self.oldFilename = None
         self.updatedRepo = None
         self.pref = None
@@ -125,9 +125,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.totalAppCount = 1
             self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b>'%(self.updatedRepo))
 
-       	progress = length/self.totalAppCount + self.savedProgress
+        progress = length/self.totalAppCount + self.savedProgress
 
-	if length == 100 and filename == self.oldFilename:
+        if length == 100 and filename == self.oldFilename:
             return
         elif length == 100 and filename != self.oldFilename:
            self.savedProgress = self.savedProgress + length/self.totalAppCount
@@ -376,7 +376,7 @@ class MainApplication(programbase):
         mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         mainwidget.searchLine.setListView(mainwidget.listView)
-	mainwidget.searchLine.setSearchColumns([0])
+        mainwidget.searchLine.setSearchColumns([0])
 
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
