@@ -148,14 +148,14 @@ input, select, textarea, select {
 }
 
 
-.code {
+pre.code {
     background-color: #eee;
     border: 1px solid #aaa;
     font-family: courier new, monospace;
     margin-right: 1em;
     padding: 1em;
 }
-pre {
+pre code {
     font-family: courier new, monospace;
 }
 
