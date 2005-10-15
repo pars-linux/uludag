@@ -155,7 +155,7 @@ pre.code {
     margin-right: 1em;
     padding: 1em;
 }
-pre code {
+pre code, pre {
     font-family: courier new, monospace;
 }
 
