@@ -136,6 +136,7 @@ form>fieldset>div>input {
 }
 input, select, textarea, select {
   border: 1px solid #aaa;
+  font-family: courier new, monospace;
 }
 .error {
   border: 1px solid #f00;
