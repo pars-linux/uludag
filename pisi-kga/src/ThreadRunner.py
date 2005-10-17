@@ -68,7 +68,7 @@ class MyThread(QThread):
                 pisi.api.update_repo(self.repo)
                 self.updatingRepo = False
 
-        except pisi.fetcher.FetchError:
+        except:
             event = QCustomEvent(QEvent.User+4)
             event.setData(u'PiSi KGA depoya bağlanamadı!')
             QThread.postEvent(self.receiver,event)
