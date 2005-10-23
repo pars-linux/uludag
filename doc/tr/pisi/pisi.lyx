@@ -2255,7 +2255,7 @@ subversion
 \emph default 
  deposunda sunulmaktadýr.
  Geliþtirme iþlemleri bu depo üzerinde yapýlýr.
- Kanak PÝSÝ deposunda paketler bileþenler altýna konumlandýrýlýrlar.
+ Kaynak PÝSÝ deposunda paketler bileþenler altýna konumlandýrýlýrlar.
  Her kaynak paket ait olduðu bileþenin altýna yerleþtirlir.
 \layout Subsubsection
 
@@ -2372,7 +2372,7 @@ pisi-index.dtd
  dosyasýnda tanýmlanmýþtýr.
 \layout Standard
 
-Ýkeriki sürümlerde; bu dosya deðiþtirilmeyecek ve sadece Daðýtým Sürüm deðiþtird
+Ýleriki sürümlerde; bu dosya deðiþtirilmeyecek ve sadece Daðýtým Sürüm deðiþtird
 iði zaman yenisi oluþturulacaktýr.
  Aktif sürüm sýrasýnda tüm deðiþiklikler 
 \series bold 
@@ -2748,7 +2748,7 @@ pre remove
 Baðýmlýlýk Çözmek
 \layout Standard
 
-PÝSÝ içerisinde kulanýlan baðýmlýlýk çözme algoritmasý, kaynak içerindeki
+PÝSÝ içerisinde kulanýlan baðýmlýlýk çözme algoritmasý, kaynak içersindeki
  detaylý belge (doc/dependency.tex) ile anlatýlmýþtýr.
 \layout Standard
 
