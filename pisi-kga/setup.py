@@ -21,7 +21,7 @@ kdedistutils.setup(
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
     url="http://www.uludag.org.tr/projects/pisi",
-    min_kde_version = "3.4.0",
+#    min_kde_version = "3.4.0",
     min_qt_version = "3.3.0",
     license = "GPL",
     application_data = ['src/PisiKga.py','src/Preferences.py','src/PreferencesWidget.ui',
