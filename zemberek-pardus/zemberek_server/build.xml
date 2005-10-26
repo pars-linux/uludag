@@ -114,7 +114,7 @@
                 <attribute name="Main-Class"
                     value="net.zemberek.server.Server"/>
                 <attribute name="Class-Path"
-                    value=". lib/netty2.jar lib/zemberek_minimal-0.5.1.jar"/>
+                    value=". lib/netty2.jar lib/zemberek-0.6.jar"/>
             </manifest>
         </jar>
 
