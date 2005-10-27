@@ -34,7 +34,9 @@ PISI
 (Packages Installed Successfully as Intended)
 \layout Author
 
-Barýþ Metin
+S.
+ Çaðlar Onur, Barýþ Metin, Eray Özkural, Gürer Özen, A.
+ Murat Eren, Onur Küçük
 \layout Date
 
 (Alpha)
@@ -46,6 +48,13 @@ Barýþ Metin
 \end_inset 
 
 
+\layout Section*
+
+Deðiþim\SpecialChar ~
+Tarihi
+\layout Standard
+
+27 October 2005: Yazarlarý yaygýn biçimde yaz (Eray)
 \layout Section
 
 Giriþ
@@ -2805,21 +2814,4 @@ Diðer Yazarlar
 \layout Standard
 
 Ýsim sýrasý ile;
-\layout Itemize
-
-S.
- Çaðlar Onur
-\layout Itemize
-
-Eray Özkural
-\layout Itemize
-
-Gürer Özen
-\layout Itemize
-
-A.
- Murat Eren
-\layout Itemize
-
-Onur Küçük
 \the_end
