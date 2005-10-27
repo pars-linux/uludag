@@ -29,7 +29,7 @@
 
 \layout Title
 
-PISI
+PISI Paket Yöneticisi: Gereklilikler ve Tasarým (Versiyon 0.2)
 \newline 
 (Packages Installed Successfully as Intended)
 \layout Author
@@ -48,13 +48,6 @@ S.
 \end_inset 
 
 
-\layout Section*
-
-Deðiþim\SpecialChar ~
-Tarihi
-\layout Standard
-
-27 October 2005: Yazarlarý yaygýn biçimde yaz (Eray)
 \layout Section
 
 Giriþ
@@ -2808,10 +2801,14 @@ PÝSÝ temel iþlevlerini yerine getirmek için birden fazla veri tabaný kullanýr.
 \layout Standard
 
 TODO: Veritabanlarýnýn açýklamalarý gerekiyor.
-\layout Section
+\layout Section*
 
-Diðer Yazarlar
+Deðiþim\SpecialChar ~
+Tarihi
 \layout Standard
 
-Ýsim sýrasý ile;
+0.2: Yazarlarý yaygýn biçimde yaz, önemsiz düzenlemeler (Eray)
+\layout Standard
+
+0.1: Ýlk versiyon
 \the_end
