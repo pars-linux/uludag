@@ -7,8 +7,8 @@ import java.util.StringTokenizer;
 //import org.apache.commons.logging.LogFactory;
 
 /**
- * İçinde hex sayılar olan bir stringi byte dizisine dönüştürür. Veya byte
- * dizisini içinde hex sayılar olan stringe dönüştürür
+ * Ä°Ã§inde hex sayÄ±lar olan bir stringi byte dizisine dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r. Veya byte
+ * dizisini iÃ§inde hex sayÄ±lar olan stringe dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r
  */
 
 public class HexConverter {
@@ -18,7 +18,7 @@ public class HexConverter {
    /** Hex karakterler */
    public final static char hexChars[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
-   /** Bu tablo da Hex karakterlerin rakamsal karşılığını tutar */
+   /** Bu tablo da Hex karakterlerin rakamsal karÅŸÄ±lÄ±ÄŸÄ±nÄ± tutar */
    public final static byte hexValTable[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
    		                                     -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
    		                                     -1,-1,-1,-1,-1,-1,0,1,2,3,4,5,6,7,8,9,-1,-1,-1,-1,-1,-1,-1,10,
@@ -32,7 +32,7 @@ public class HexConverter {
    		                                     -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
    		                                     -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 
-   /** Bu dizideki elemalar "indis" değerlerinin Hex string karşılığını tutar */
+   /** Bu dizideki elemalar "indis" deÄŸerlerinin Hex string karÅŸÄ±lÄ±ÄŸÄ±nÄ± tutar */
    public final static String byteVal[] = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
                                            "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13",
                                            "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D",
@@ -59,12 +59,12 @@ public class HexConverter {
                                            "E6", "E7", "E8", "E9", "EA", "EB", "EC", "ED", "EE", "EF",
                                            "F0", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9",
                                            "FA", "FB", "FC", "FD", "FE", "FF" };
-    /** prettyprint için parametre */ 
+    /** prettyprint iÃ§in parametre */ 
     public static int PRINT_ASCII_VALUES = 0;
 
     /**
-     * Bir byte dizisini hex sayılar string'ine dönüştürür. Stringde default olarak boşluk yoktur
-     * @param array Hex string'e dönüştürülecek giriş dizisi
+     * Bir byte dizisini hex sayÄ±lar string'ine dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r. Stringde default olarak boÅŸluk yoktur
+     * @param array Hex string'e dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lecek giriÅŸ dizisi
      * @return : Hexadecimal String
      */
     public static String byteArrayToHexString(byte array[]) {
@@ -79,18 +79,18 @@ public class HexConverter {
 			}
 		}
 		catch(RuntimeException e){
-			//log.error("byte dizisi Hex String'e dönüştürülemedi",e);
+			//log.error("byte dizisi Hex String'e dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lemedi",e);
 			return "";
 		}
 		return new String(strBuffer);
 	}
 
     /**
-     * Bir byte dizisini hex sayılar string'ine dönüştürür.
-     * Her hex digit arasına default olarak boşluk karakteri koyar
+     * Bir byte dizisini hex sayÄ±lar string'ine dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r.
+     * Her hex digit arasÄ±na default olarak boÅŸluk karakteri koyar
      *
-     * @param array Hex string'e dönüştürülecek giriş dizisi
-     * @param spacer : hex değerler arasına konacak ayıraç karakteri özel olarak belirlenmek isterse buraya girilmelidir.
+     * @param array Hex string'e dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lecek giriÅŸ dizisi
+     * @param spacer : hex deÄŸerler arasÄ±na konacak ayÄ±raÃ§ karakteri Ã¶zel olarak belirlenmek isterse buraya girilmelidir.
      * @return : Hexadecimal String
      */
     public static String byteArrayToHexString(byte array[], String spacer) {
@@ -112,12 +112,12 @@ public class HexConverter {
     }
     
     /**
-     * Pretty Print As Hex. Ofset ve ascii değerlerini de basar ve istenilen aralıklarla satırlara böler
-     * @param array : Giriş disizi
-     * @param type  : şimdilik ihmal ediliyor (çeşitli default türler olacak)
-     * @param bytesPerColumn : 80 lik bir text ekranda görülebilmesi için 16 verin, daha büyükler için 25 olabilir.
-     *                         isterseniz kafanıza göre de takılabilirsiniz.
-     * @return şık string :)
+     * Pretty Print As Hex. Ofset ve ascii deÄŸerlerini de basar ve istenilen aralÄ±klarla satÄ±rlara bÃ¶ler
+     * @param array : GiriÅŸ disizi
+     * @param type  : ÅŸimdilik ihmal ediliyor (Ã§eÅŸitli default tÃ¼rler olacak)
+     * @param bytesPerColumn : 80 lik bir text ekranda gÃ¶rÃ¼lebilmesi iÃ§in 16 verin, daha bÃ¼yÃ¼kler iÃ§in 25 olabilir.
+     *                         isterseniz kafanÄ±za gÃ¶re de takÄ±labilirsiniz.
+     * @return ÅŸÄ±k string :)
      */
 	public static String byteArrayToPrettyHexString(byte array[], int type, int bytesPerColumn) {
 		if(array == null) return "Array is null.";
@@ -126,30 +126,30 @@ public class HexConverter {
 		String spacer = " ";
 		boolean showAscii = true;
 		boolean showByteCount = true;
-		// Başta yazılan index bilgisinin uzunluğu ne olacak?
+		// BaÅŸta yazÄ±lan index bilgisinin uzunluÄŸu ne olacak?
 		int lengthDigitCount = calculateDigitCount(array.length);
 
 		if (bytesPerColumn < 1) bytesPerColumn = 1;
 		if (spacer != null) spacerLen = spacer.length();
 
-		// uygun uzunlukta bufferimizi oluşturalım
+		// uygun uzunlukta bufferimizi oluÅŸturalÄ±m
 		StringBuffer str = new StringBuffer(array.length * (4 + spacerLen) + (array.length/bytesPerColumn)*(lengthDigitCount+4) );
 
-		// kaç segment olacağını hesaplayalım
+		// kaÃ§ segment olacaÄŸÄ±nÄ± hesaplayalÄ±m
 		int segments = array.length / bytesPerColumn ;
 
-		if(array.length % bytesPerColumn != 0) segments++; // eğer sonda fazlalık kalırsa o da bir segment edecek
+		if(array.length % bytesPerColumn != 0) segments++; // eÄŸer sonda fazlalÄ±k kalÄ±rsa o da bir segment edecek
 
-		// Giriş bilgisini yazalım.
+		// GiriÅŸ bilgisini yazalÄ±m.
 		str.append("\nDizi Boyu: " + array.length +"\n" );
-		// Her satır için gerekli işlemi tekrarlayacağız
+		// Her satÄ±r iÃ§in gerekli iÅŸlemi tekrarlayacaÄŸÄ±z
 		// Bu dizi indeksi
 		int index = 0;
 		int expectedLen = bytesPerColumn*2+(bytesPerColumn*spacer.length());
 
-		// Her segment için
+		// Her segment iÃ§in
 		for(int i=0; i<segments; i++){
-			// kaçıncı byte'den başlıyoruz onu yazalım.
+			// kaÃ§Ä±ncÄ± byte'den baÅŸlÄ±yoruz onu yazalÄ±m.
 			if(showByteCount == true){
 				str.append(padSpace(""+index,lengthDigitCount)+ ": ");
 			}
@@ -157,10 +157,10 @@ public class HexConverter {
 			int strLen = 0;
 
 			for(int j=0; j<bytesPerColumn && index<array.length; j++){
-				// Hex değerimizi ve spacer'i ekleyelim.
+				// Hex deÄŸerimizi ve spacer'i ekleyelim.
 				str.append(byteVal[array[index++] & 0xFF]);
 				if(spacer != null) str.append(spacer);
-                strLen += spacer.length() + 2 ; //her byte için 2+spacerlen karakter
+                strLen += spacer.length() + 2 ; //her byte iÃ§in 2+spacerlen karakter
 			}
 			String pad = getSpacesForPadding(strLen, expectedLen);
 			str.append(pad);
@@ -174,7 +174,7 @@ public class HexConverter {
 		return str.toString().trim();
 	}
     /**
-     * Verilen sayının stringhalinde kaç dijit buluacağını hesaplar (log10 len) aslında.
+     * Verilen sayÄ±nÄ±n stringhalinde kaÃ§ dijit buluacaÄŸÄ±nÄ± hesaplar (log10 len) aslÄ±nda.
      * @param len
      * @return
      */
@@ -190,10 +190,10 @@ public class HexConverter {
 	}
    
 	/**
-	 * Verilen String'in boyu len olana dek sağdan boşluk ekler
+	 * Verilen String'in boyu len olana dek saÄŸdan boÅŸluk ekler
 	 * @param str
 	 * @param len
-	 * @return boşluk padlenmiş string
+	 * @return boÅŸluk padlenmiÅŸ string
 	 */
 	private static String padSpace(String str, int len){
 		int padCount = len - str.length();
@@ -202,7 +202,7 @@ public class HexConverter {
 		return str;
 	}
     /**
-     * Bu da len-strlen uzunlukta boşluklarla doldurulmuş bir String döndürür. Pretty print için maymun olduk.
+     * Bu da len-strlen uzunlukta boÅŸluklarla doldurulmuÅŸ bir String dÃ¶ndÃ¼rÃ¼r. Pretty print iÃ§in maymun olduk.
      * @param strLen
      * @param len
      * @return
@@ -216,7 +216,7 @@ public class HexConverter {
 	}
     
 	/**
-	 * verilen byte değerinin ASCII karşılığını String olarak döndürür. byteVal>126 için "." döner.
+	 * verilen byte deÄŸerinin ASCII karÅŸÄ±lÄ±ÄŸÄ±nÄ± String olarak dÃ¶ndÃ¼rÃ¼r. byteVal>126 iÃ§in "." dÃ¶ner.
 	 * @param byteVal
 	 * @return
 	 */
@@ -229,10 +229,10 @@ public class HexConverter {
     }
 
     /**
-     * İçinde hex sayılar olan bir string'i byte dizisine dönüştürür. Default olarak Stringin içinde rakamlar
-     * arasında boşluk olmadığını kabul eder.
-     * @param str : Giriş Hex stringi
-     * @return : byte[] cinsinden, hex stringinin içindeki  sayısal değerler
+     * Ä°Ã§inde hex sayÄ±lar olan bir string'i byte dizisine dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r. Default olarak Stringin iÃ§inde rakamlar
+     * arasÄ±nda boÅŸluk olmadÄ±ÄŸÄ±nÄ± kabul eder.
+     * @param str : GiriÅŸ Hex stringi
+     * @return : byte[] cinsinden, hex stringinin iÃ§indeki  sayÄ±sal deÄŸerler
      * @throws NumberFormatException
      */
     public static byte[] hexStringToByteArray(String str) throws NumberFormatException{
@@ -244,33 +244,33 @@ public class HexConverter {
 		byte[] strBuf = str.getBytes();
 		byte[] buf = new byte[len/2];
 		if ((str.length() % 2) != 0){
-		   //log.error("Boşluksuz Hex Stringler'in boyu mutlaka çift olmalıdır");
-		   throw new NumberFormatException("Hex String uzunluğu çift olmalı. String: " + str  + " Boy :" + str.length());
+		   //log.error("BoÅŸluksuz Hex Stringler'in boyu mutlaka Ã§ift olmalÄ±dÄ±r");
+		   throw new NumberFormatException("Hex String uzunluÄŸu Ã§ift olmalÄ±. String: " + str  + " Boy :" + str.length());
 		}
 		try {
 			for (int i= 0; i < len; i += 2) {
 				byte firstNibble= hexValTable[strBuf[k++]];
 				byte secondNibble= hexValTable[strBuf[k++]];
 				if(firstNibble == -1 || secondNibble== -1){
-					//log.error("String Illegal Hex karakter taşıyor.");
-					throw new NumberFormatException("String Illegal Hex karakter taşıyor. String: " + str );
+					//log.error("String Illegal Hex karakter taÅŸÄ±yor.");
+					throw new NumberFormatException("String Illegal Hex karakter taÅŸÄ±yor. String: " + str );
 				}
 				buf[j++]= (byte) (firstNibble * 16 + secondNibble);
 			}
 		} catch (RuntimeException e) {
 			//log.error("Hex String byte dizisine donusturulemedi!" + str, e);
-			throw new NumberFormatException("Hatalı hex string. String: " + str );
+			throw new NumberFormatException("HatalÄ± hex string. String: " + str );
 
 		}
 		return buf;
     }
 
     /**
-     * İçinde hex sayılar olan bir string'i byte dizisine dönüştürür. spacer Stringindeki karakterleri ayıraç kabul eder.
-     * @param str : Giriş Hex stringi
-     * @param spacer : hex değerler arasındaki ayıraç karakteri özel olarak belirlenmek isterse buraya girilmelidir.
-     *                 null veya "" ise bitişik Stringler için çalşır (ancak bu iş için tek parametreli versiyon kullanılmalı)
-     * @return : byte[] cinsinden, hex stringinin içindeki  sayısal değerler
+     * Ä°Ã§inde hex sayÄ±lar olan bir string'i byte dizisine dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r. spacer Stringindeki karakterleri ayÄ±raÃ§ kabul eder.
+     * @param str : GiriÅŸ Hex stringi
+     * @param spacer : hex deÄŸerler arasÄ±ndaki ayÄ±raÃ§ karakteri Ã¶zel olarak belirlenmek isterse buraya girilmelidir.
+     *                 null veya "" ise bitiÅŸik Stringler iÃ§in Ã§alÅŸÄ±r (ancak bu iÅŸ iÃ§in tek parametreli versiyon kullanÄ±lmalÄ±)
+     * @return : byte[] cinsinden, hex stringinin iÃ§indeki  sayÄ±sal deÄŸerler
      * @throws NumberFormatException
      */
     public static byte[] hexStringToByteArray(String str, String spacer) throws NumberFormatException{
@@ -299,27 +299,27 @@ public class HexConverter {
 			}
 		} catch (RuntimeException e){
 			//log.error("Hex String byte dizisine donusturulemedi!" + str, e);
-			throw new NumberFormatException("Hatalı Hex String: "+ str);
+			throw new NumberFormatException("HatalÄ± Hex String: "+ str);
 		}
         return array;
     }
 
 
-    // ---------- Diğer Primitif Dönüşümler ----------------------------
+    // ---------- DiÄŸer Primitif DÃ¶nÃ¼ÅŸÃ¼mler ----------------------------
     /**
-     * Verilen bir long sayıyı Hex String'e dönüştürür. (Big Endian)
-     * @param input hex string'e dönüştürülecek long cinsinden giriş.
-     * @return long girişin Hex String karşılığı
+     * Verilen bir long sayÄ±yÄ± Hex String'e dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r. (Big Endian)
+     * @param input hex string'e dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lecek long cinsinden giriÅŸ.
+     * @return long giriÅŸin Hex String karÅŸÄ±lÄ±ÄŸÄ±
      */
     public static String longToHexString(long input) {
-        ByteBuffer buf = ByteBuffer.allocate(8); // Long değer 8 byte
+        ByteBuffer buf = ByteBuffer.allocate(8); // Long deÄŸer 8 byte
         buf.putLong(0, input);
         buf.flip();
         return byteArrayToHexString(buf.array(), null);
     }
 
     public static String shortToHexString(short input) {
-		ByteBuffer buf = ByteBuffer.allocate(2); // Long değer 8 byte
+		ByteBuffer buf = ByteBuffer.allocate(2); // Long deÄŸer 8 byte
 		buf.putShort(0, input);
 		buf.flip();
 		return byteArrayToHexString(buf.array(), null);
@@ -330,9 +330,9 @@ public class HexConverter {
 	}
 
 	/**
-     * Verilen bir Hex String'in long sayı değerini döndürür.
+     * Verilen bir Hex String'in long sayÄ± deÄŸerini dÃ¶ndÃ¼rÃ¼r.
      * @param inputStr: Hex String
-     * @return : Hex String'in long karşılığı.
+     * @return : Hex String'in long karÅŸÄ±lÄ±ÄŸÄ±.
      */
     public static long hexStringToLong(String inputStr) {
         byte[] tempbuff = hexStringToByteArray(inputStr, null);
@@ -343,21 +343,21 @@ public class HexConverter {
     }
 
     /**
-     * Verilen bir int sayıyı Hex String'e dönüştürür.
-     * @param input hex string'e dönüştürülecek int cinsinden giriş.
-     * @return int girişin Hex String karşılığı
+     * Verilen bir int sayÄ±yÄ± Hex String'e dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r.
+     * @param input hex string'e dÃ¶nÃ¼ÅŸtÃ¼rÃ¼lecek int cinsinden giriÅŸ.
+     * @return int giriÅŸin Hex String karÅŸÄ±lÄ±ÄŸÄ±
      */
     public static String intToHexString(int input) {
-        ByteBuffer buf = ByteBuffer.allocate(4); //int değer 4 byte
+        ByteBuffer buf = ByteBuffer.allocate(4); //int deÄŸer 4 byte
         buf.putInt(0, input);
         buf.flip();
         return byteArrayToHexString(buf.array(), null);
     }
 
     /**
-     * Verilen bir Hex String'in int sayı değerini döndürür.
+     * Verilen bir Hex String'in int sayÄ± deÄŸerini dÃ¶ndÃ¼rÃ¼r.
      * @param inputStr: Hex String
-     * @return : Hex String'in int karşılığı.
+     * @return : Hex String'in int karÅŸÄ±lÄ±ÄŸÄ±.
      */
     public static int hexStringToInt(String inputStr) {
         byte[] tempbuff = hexStringToByteArray(inputStr, null);
@@ -368,9 +368,9 @@ public class HexConverter {
     }
 
     /**
-     * Verilen bir Hex String'in byte sayı değerini döndürür.
+     * Verilen bir Hex String'in byte sayÄ± deÄŸerini dÃ¶ndÃ¼rÃ¼r.
      * @param inputStr: Hex String
-     * @return : Hex String'in int karşılığı.
+     * @return : Hex String'in int karÅŸÄ±lÄ±ÄŸÄ±.
      */
     public static byte hexStringToByte(String inputStr) {
         byte[] tempbuff = hexStringToByteArray(inputStr, null);

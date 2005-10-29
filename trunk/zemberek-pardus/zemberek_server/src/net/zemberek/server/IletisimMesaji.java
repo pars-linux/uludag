@@ -52,13 +52,13 @@ public class IletisimMesaji implements Message {
      */
     public boolean read(ByteBuffer buffer) throws MessageParseException {
         try {
-            // Once mesaj boyunu oku. Mesaj boyu da string olarak geldiði için
-            // rakam olduðu müddetçe oku.
+            // Once mesaj boyunu oku. Mesaj boyu da string olarak geldiÄŸi iÃ§in
+            // rakam olduÄŸu mÃ¼ddetÃ§e oku.
             if (false == boyOkundu) {
                 while (buffer.hasRemaining()) {
                     byte read = buffer.get();
                     if (read >= '0' && read <= '9') {
-                        if (idx > 6) throw new MessageParseException("Mesaj boyu çok büyük!. ");
+                        if (idx > 6) throw new MessageParseException("Mesaj boyu Ã§ok bÃ¼yÃ¼k!. ");
                         temp[idx++] = (byte)(read);
                     } else
                         break;
@@ -100,7 +100,7 @@ public class IletisimMesaji implements Message {
         else
             yazilacakMiktar = mesajBytes.length;
         
-        //System.out.println("Buffera yazýldý index " + index + " yazýlacak miktar " + yazilacakMiktar + " Remaining " + buffer.remaining() + " Kalan " + kalan );
+        //System.out.println("Buffera yazÄ±ldÄ± index " + index + " yazÄ±lacak miktar " + yazilacakMiktar + " Remaining " + buffer.remaining() + " Kalan " + kalan );
         buffer.put(mesajBytes, index, yazilacakMiktar);
         index = index + yazilacakMiktar;
         kalan = kalan - yazilacakMiktar;

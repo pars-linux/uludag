@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 /**
- * Sistemde ortak kullanýlan nesnelerin referanslarýný tutmak için kullanýlýr.
+ * Sistemde ortak kullanÄ±lan nesnelerin referanslarÄ±nÄ± tutmak iÃ§in kullanÄ±lÄ±r.
  * Genel konfigurasyon bilgileri de burada tutulur.
  */
 
@@ -19,7 +19,7 @@ public class Config {
         FileInputStream fileStream;
         try {
             fileStream = new FileInputStream(confFile);
-            System.out.println(confFile + " isimli konfigürasyon dosyasi okundu.");
+            System.out.println(confFile + " isimli konfigÃ¼rasyon dosyasi okundu.");
             properties = new Properties();
             properties.load(fileStream);
             serverPort = getPropertyValue("SERVER_PORT", serverPort);

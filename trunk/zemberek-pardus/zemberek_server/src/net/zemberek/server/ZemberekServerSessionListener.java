@@ -27,7 +27,7 @@ public class ZemberekServerSessionListener implements SessionListener{
 
     public void connectionEstablished(Session session) {
         if(session.getSocketAddressString().indexOf("127.0.0.1") == -1){
-            System.out.println("Zemberek sunucusu sadece yerel soket üzerinden hizmet verir. " + session.getSocketAddressString());
+            System.out.println("Zemberek sunucusu sadece yerel soket Ã¼zerinden hizmet verir. " + session.getSocketAddressString());
             session.close();
             return;
         }
@@ -46,7 +46,7 @@ public class ZemberekServerSessionListener implements SessionListener{
 
         ZemberekSession zemberekSession = (ZemberekSession) sessionList.get(session);
         if (zemberekSession == null) {
-            System.out.println("Session listede bulunamadý");
+            System.out.println("Session listede bulunamadÄ±");
             return;
         }
         zemberekSession.messageReceived(session, message);
@@ -57,7 +57,7 @@ public class ZemberekServerSessionListener implements SessionListener{
 
         ZemberekSession zemberekSession = (ZemberekSession) sessionList.get(session);
         if (zemberekSession == null) {
-            System.out.println("Session listede bulunamadý");
+            System.out.println("Session listede bulunamadÄ±");
             return;
         }
         zemberekSession.messageSent(session, message);
@@ -67,7 +67,7 @@ public class ZemberekServerSessionListener implements SessionListener{
     public void sessionIdle(Session session) {
         ZemberekSession zemberekSession = (ZemberekSession) sessionList.get(session);
         if (zemberekSession == null) {
-            System.out.println("Session listede bulunamadý");
+            System.out.println("Session listede bulunamadÄ±");
             return;
         }
         zemberekSession.sessionIdle(session);
@@ -78,7 +78,7 @@ public class ZemberekServerSessionListener implements SessionListener{
     public void exceptionCaught(Session session, Throwable cause) {
         ZemberekSession zemberekSession = (ZemberekSession) sessionList.get(session);
         if (zemberekSession == null) {
-            //log.debug("Session listede bulunamadý");
+            //log.debug("Session listede bulunamadÄ±");
             return;
         }
         zemberekSession.exceptionCaught(session,cause);

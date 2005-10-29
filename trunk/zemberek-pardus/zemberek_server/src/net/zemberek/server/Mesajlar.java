@@ -20,7 +20,7 @@ public class Mesajlar {
             byte[] govde = mesaj.getBytes("UTF-8");
             String boy = ""  + (govde.length);
             byte[] boyBuffer = boy.getBytes();
-            // toplam mesaj boyumuz "boy + boþluk + UTf-8 kodlanmýþ Stringin byte hali" þeklinde  
+            // toplam mesaj boyumuz "boy + boÅŸluk + UTf-8 kodlanmÄ±ÅŸ Stringin byte hali" ÅŸeklinde  
             byte[] mesajBytes = new byte[govde.length + boyBuffer.length + 1];
             System.arraycopy(boyBuffer, 0, mesajBytes, 0, boyBuffer.length);
             mesajBytes[boyBuffer.length] = ' ';
@@ -59,6 +59,6 @@ public class Mesajlar {
 //       mesajlar.put(new Short(mesaj.getTip()),mesaj);
 //       log.info(mesaj.getTip() + " tipindeki mesaj kaydedildi");
 //       }
-//       else log.error(mesaj.getTip() + " tipindeki mesaj daha ï¿½nce kaydedildi");
+//       else log.error(mesaj.getTip() + " tipindeki mesaj daha Ã¶nce kaydedildi");
     }
 }

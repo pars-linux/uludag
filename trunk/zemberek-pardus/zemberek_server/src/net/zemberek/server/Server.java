@@ -97,7 +97,7 @@ public class Server implements ZemberekSessionListener {
     }
 
     public void zemberekSessionReady(ZemberekSession session) {
-        System.out.println("Bir istemci bağlandı. ");
+        System.out.println("Bir istemci baÄŸlandÄ±. ");
        } 
  
     public void messageReceived(ZemberekSession session, ZemberekMesaji mesaj) {

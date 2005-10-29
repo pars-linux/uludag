@@ -1,5 +1,5 @@
 /*
- * Created on 20.Şub.2005
+ * Created on 20.Åub.2005
  *
  */
 package net.zemberek.server;
