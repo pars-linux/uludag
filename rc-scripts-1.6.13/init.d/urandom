@@ -1,0 +1,40 @@
+#!/sbin/runscript
+# Copyright © 2005  TUBITAK/UEKAE
+# Licensed under the GNU General Public License, version 2.
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+#
+# Original work belongs Gentoo Linux
+
+depend() {
+	need localmount
+}
+
+start() {
+	[[ -c /dev/urandom ]] || return
+	if [[ -f /var/run/random-seed ]] ; then
+		cat /var/run/random-seed > /dev/urandom
+	fi
+	if ! rm -f /var/run/random-seed &> /dev/null ; then
+		ewarn "Skipping /var/run/random-seed initialization (ro root?)"
+		return 0
+	fi
+	ebegin "Initializing random number generator"
+	umask 077
+	dd if=/dev/urandom of=/var/run/random-seed count=1 &> /dev/null
+	eend $? "Error initializing random number generator"
+	umask 022
+}
+
+stop() {
+	[[ -n ${CDBOOT} ]] && return 0
+
+	ebegin "Saving random seed"
+	# Carry a random seed from shut-down to start-up;
+	# see documentation in linux/drivers/char/random.c
+	umask 077
+	dd if=/dev/urandom of=/var/run/random-seed count=1 &> /dev/null
+	eend $? "Failed to save random seed"
+}
+
+
+# vim:ts=4
