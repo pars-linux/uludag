@@ -1,0 +1,123 @@
+#!/sbin/runscript
+# Copyright © 2005  TUBITAK/UEKAE
+# Licensed under the GNU General Public License, version 2.
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+#
+# Original work belongs Gentoo Linux
+
+depend() {
+	need checkroot hostname
+	use isapnp
+}
+
+load_modules() {
+	local x=
+	local i=0
+	local retval=0
+	local modules=
+	local modargs=
+	local modcount=0
+	local config="$1"
+
+	[ -z "${config}" ] && return 0
+	[ ! -r "${config}" ] && return 0
+
+	# Loop over every line in $config
+	eval $(awk '
+		BEGIN {
+			COUNT = 0 # Make sure COUNT is set
+		}
+
+		$0 !~ /(^[[:space:]]*(#|$))/ {
+			if (MODULES == "")
+				MODULES = $1
+			else
+				MODULES = MODULES " " $1
+			
+			# Not the greatest method to remove $1 from $0, but it works
+			sub(/^[[:space:]]*[^[:space:]]*[[:space:]]*/, "")
+			ARGS[COUNT] = $0
+			COUNT++
+		}
+		
+		END {
+			# 'eval' will make sure these are set to proper bash variables
+			print "modcount=" COUNT
+			print "modules=\"" MODULES "\""
+			for (x = 0;x < COUNT;x++)
+				print "modargs[" x "]=\"" ARGS[x] "\""
+		}
+	' "${config}")
+
+	if [ "${modcount}" -gt 0 ]
+	then
+		einfo "Using ${config} as config:"
+		
+		for x in ${modules}
+		do
+			ebegin "  Loading module ${x}"
+			modprobe -q ${x} ${modargs[${i}]} &>/dev/null
+			retval=$?
+			eend ${retval} "  Failed to load ${x}"
+			
+			i=$((i+1))
+			[ "${retval}" -eq 0 ] || modcount=$((modcount-1))
+		done
+
+		einfo "Autoloaded ${modcount} module(s)"
+	fi
+
+	return 0
+}
+
+start() {
+	local KV=$(uname -r)
+	local KV_MAJOR=$(KV_major "${KV}")
+	local KV_MINOR=$(KV_minor "${KV}")
+	local KV_MICRO=$(KV_micro "${KV}")
+
+	# Should not fail if kernel do not have module
+	# support compiled in ...
+	[ -f /proc/modules ] || return 0
+
+	# Here we should fail, as a modular kernel do need
+	# depmod command ...
+	if [ ! -x /sbin/depmod ]
+	then
+		eerror "ERROR:  system is missing /sbin/depmod !"
+		return 1
+	fi
+
+	if [ -z "${CDBOOT}" ] && touch /etc/modules.conf 2> /dev/null
+	then
+		ebegin "Calculating module dependencies"
+		/sbin/modules-update &>/dev/null
+		eend $? "Failed to calculate module dependencies"
+	fi
+
+	local autoload=""
+	if [[ -f /etc/modules.autoload && ! -L /etc/modules.autoload ]]; then
+		autoload=/etc/modules.autoload
+	else
+		local x
+		for x in "${KV}" ${KV_MAJOR}.${KV_MINOR}.${KV_MICRO} ${KV_MAJOR}.${KV_MINOR} ; do
+			if [[ -f /etc/modules.autoload.d/kernel-"${x}" ]] ; then
+				autoload="/etc/modules.autoload.d/kernel-${x}"
+				break
+			fi
+		done
+	fi
+	[[ -n ${autoload} ]] && load_modules "${autoload}"
+
+	#
+	# Just in case a sysadmin prefers generic symbolic links in
+	# /lib/modules/boot for boot time modules we will load these modules
+	#
+	if [ -n "$(modprobe -l -t boot)" ]
+	then
+		modprobe -a -t boot \*  &>/dev/null
+	fi
+}
+
+
+# vim:ts=4
