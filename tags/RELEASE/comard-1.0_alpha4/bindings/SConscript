@@ -1,0 +1,8 @@
+#!/usr/bin/python
+
+Import('env')
+
+libcomar = env.SharedLibrary("libcomar", [ "libcomar.c" ])
+hav = env.Program("hav", [ "libcomar.c", "hav.c" ])
+
+Return('libcomar hav')
