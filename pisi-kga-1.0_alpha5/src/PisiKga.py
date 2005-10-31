@@ -43,7 +43,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
-version = "1.0_alpha4"
+version = "1.0_alpha5"
 
 def AboutData():
     global version,description
