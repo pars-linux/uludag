@@ -20,7 +20,7 @@
 # 2. Eğer yoksa boş bir partition yaratın, ya da bir
 # disk bölümünüzü kurulum için belirleyin ve formatlayın.
 # 3. Bu disk bölümünü bir yere mount edin.
-# 4. Betiği çalıştırın..
+# 4. Betiği root olarak çalıştırın..
 # 5. Bol şans ve teşekkürler.
 #
 
@@ -2260,7 +2260,7 @@ X3Nob3J0AHNwcmludGZAQEdMSUJDXzIuMABfX2RhdGFfc3RhcnQAZGV0ZWN0X2JsYW5rAF9Kdl9S
 ZWdpc3RlckNsYXNzZXMAZGV0ZWN0X2JzZF9kaXNrbGFiZWwAZGV0ZWN0X2V4dDIzAHJlYWRAQEdM
 SUJDXzIuMABfX2dtb25fc3RhcnRfXwBzdHJjcHlAQEdMSUJDXzIuMAA="""
 
-FILE, DIR  = "dosya", "dizin"
+FILE, DIR, = "dosya", "dizin"
 disktype   = "/tmp/disktype"
 rootFsSize = 2602288 #ext3
 
@@ -2279,30 +2279,32 @@ infoText = """
     Çıkmak için şimdi \033[31mCTRL+C\033[0m'ye basabilirsiniz.
 """
 
-def getVal(msg, type):
+def getVal(msg, type=None):
     isfile = os.path.isfile
     isdir  = os.path.isdir
 
     val = raw_input(msg)
 
-    if type is FILE and isfile(val):
+    if type is FILE and isfile(val) and val[0] == "/":
         return val.strip()
     elif type is DIR and isdir(val):
         return val.strip()
-    else:
-        print "\n\033[31m  Girdiğiniz %s bulunamadı.\
-               \n  Kontrol edip tekrar deneyiniz...\033[0m\n" % type
-        sys.exit(1)
+    elif type is None:
+          return val.strip()
+            
+    print "\n\033[31m  Girdiğiniz %s bulunamadı.\
+           \n  Kontrol edip tekrar deneyiniz...\033[0m\n" % type
+    sys.exit(1)
 
 def getSwapPartition():
     for p in open("/proc/partitions", "r").readlines()[2:]:
         if len(p.split()[3]) > 3:
-            for line in os.popen("sudo %s /dev/%s" % (disktype, p.split()[3]), "r").readlines():
+            for line in os.popen("%s /dev/%s" % (disktype, p.split()[3]), "r").readlines():
                 if line.find("Swap") > 0:
                     return p.split()[3]
 
 def getPartitionType(partition, fs=None):
-    for l in os.popen("sudo %s %s" % (disktype, partition), "r").readlines():
+    for l in os.popen("%s %s" % (disktype, partition), "r").readlines():
         if l.find("Ext3")     >= 0: fs = "ext3"
         if l.find("Ext2")     >= 0: fs = "ext2"
         if l.find("ReiserFS") >= 0: fs = "reiserfs"
@@ -2310,6 +2312,7 @@ def getPartitionType(partition, fs=None):
 
 def getRootPartition(mountpoint):
     h = {}
+    mountpoint = mountpoint.rstrip("/")
     for l in os.popen("mount", "r").readlines():
         h[l.split()[2]] = l.split()[0]
     if not h.has_key(mountpoint):
@@ -2323,8 +2326,9 @@ def getPartitionAvSize(partition):
     return int(os.popen("df %s" % partition).readlines()[1].split()[3])
 
 def getFromUser():
-    return (getVal("RootFS dosyasının tam yolunu giriniz : ", FILE), 
-            getVal("Kurulum yapılacağı yolu giriniz      : ", DIR))
+    return (getVal("RootFS dosyasının *tam* yolunu giriniz : ", FILE), 
+            getVal("Kurulum yapılacağı yolu giriniz        : ", DIR),
+            getVal("Bir kullanıcı adı giriniz (ör: uludag) : "))
 
 def getGrubStyle(d):
     h = {}
@@ -2342,7 +2346,7 @@ if __name__ == "__main__":
     open(disktype, "w").write(base64.decodestring(diskTypeData))
     os.chmod(disktype, 0755)
 
-    rootFsFile, installDir = getFromUser()
+    rootFsFile, installDir, userName = getFromUser()
     swapPartition = getSwapPartition()
     rootPartition = getRootPartition(installDir)
     rootPartitionType = getPartitionType(rootPartition)
@@ -2354,59 +2358,73 @@ if __name__ == "__main__":
     print infoText % (rootFsFile, rootFsSize, installDir, rootPartition,\
                       rootPartitionType, rootPartitionAvSize, swapPartition)
   
-    pid = 0
- 
-    if not pid > 0:
-        try: raw_input()
-        except KeyboardInterrupt: sys.exit(0)
+    try: raw_input()
+    except KeyboardInterrupt: sys.exit(0)
 
     pid = os.fork()
     if pid > 0:
         os.chdir(installDir)
-        os.system("sudo tar jxf %s" % rootFsFile)
+        os.system("tar jxf %s" % rootFsFile)
         os.remove(disktype)
         sys.exit(0)
 
     percent = 0
 
     while os.path.exists(disktype):
-        sys.stderr.write("\r    Yaklaşık Tamamlanan: %%%d  " % \
+        sys.stdout.write("\r    Yaklaşık Tamamlanan: %%%d  " % \
           ((100 * (rootPartitionAvSize - getPartitionAvSize(rootPartition))) / rootFsSize))
         sys.stdout.flush()
         time.sleep(2)
-    sys.stderr.write("\r    Kurulum Tamamlandı : %%%d\n" % 100)
+    sys.stdout.write("\r    Kurulum Tamamlandı : %%%d\n" % 100)
+    sys.stdout.flush()
     print "    Ayarlar yapılıyor...\n"
 
     #--
 
-    print "    * Uludağ kullanıcısının ev dizini ayarlanıyor.."
-    os.system("sudo chown -R uludag:users %s/home/uludag" % installDir)
+    print "    \033[32m*\033[0m %s kullanıcısının ev dizini ayarlanıyor.." % userName
+    os.system("sed -i 's/uludag/%s/g' %s/etc/shadow" % (userName, installDir))
+    os.system("sed -i 's/uludag/%s/g' %s/etc/passwd" % (userName, installDir))
+    os.system("sed -i 's/uludag/%s/g' %s/etc/group" % (userName, installDir))
+    if not os.path.exists("%(id)s/home/%(un)s" % {'id': installDir, 'un': userName}):
+        os.system("mv %(id)s/home/uludag %(id)s/home/%(un)s" % {'id': installDir, 'un': userName})
+    os.chown("%s/home/%s" % (installDir, userName), 1000, 100)
+    for root, dirs, files in os.walk("%s/home/%s" % (installDir, userName)):
+        for file in files:
+            os.chown(os.path.join(root, file), 1000, 100)
+        for dir in dirs:
+            os.chown(os.path.join(root, dir), 1000, 100)
 
     #--
 
-    print "    * /etc/fstab ayarlanıyor.."
-    os.system("sudo sed -i 's/ROOT/%s/g' %s/etc/fstab" % \
+    print "    \033[32m*\033[0m /etc/fstab ayarlanıyor.."
+    os.system("sed -i 's/ROOT/%s/g' %s/etc/fstab" % \
              (os.path.basename(rootPartition), installDir))
     if swapPartition:
-        os.system("sudo sed -i 's/SWAP/%s/g' %s/etc/fstab" % \
+        os.system("sed -i 's/SWAP/%s/g' %s/etc/fstab" % \
                  (swapPartition, installDir))
     if rootPartitionType:
-        os.system("sudo sed -i 's/reiserfs/%s/g' %s/etc/fstab" % \
+        os.system("sed -i 's/reiserfs/%s/g' %s/etc/fstab" % \
                  (rootPartitionType, installDir))
 
     #--
 
-    print "    * /boot/grub/grub.conf ayarlanıyor.."
-    os.system("sudo sed -i 's/root\=ROOT/root\=\/%s\/%s/g' %s/boot/grub/grub.conf" % \
+    print "    \033[32m*\033[0m /boot/grub/grub.conf ayarlanıyor.."
+    os.system("sed -i 's/root\=ROOT/root\=\/%s\/%s/g' %s/boot/grub/grub.conf" % \
              (rootPartition.split("/")[1], rootPartition.split("/")[2], installDir))
-    os.system("sudo sed -i 's/ROOT\/grub/(%s)\/boot\/grub/g' %s/boot/grub/grub.conf" % \
+    os.system("sed -i 's/ROOT\/grub/(%s)\/boot\/grub/g' %s/boot/grub/grub.conf" % \
              (getGrubStyle(os.path.basename(rootPartition)), installDir))
-    os.system("sudo sed -i 's/ROOT/(%s)/g' %s/boot/grub/grub.conf" % \
+    os.system("sed -i 's/ROOT/(%s)/g' %s/boot/grub/grub.conf" % \
              (getGrubStyle(os.path.basename(rootPartition)), installDir))
     
-    #--
+    #561 (bahadır kandemir)
 
-    print "\n    Kurulum ve yapılandırmalar sona erdi. Eğer bilgisayarınızı yeniden başlatmadan önce grub'ı MBR'a yazdırmanız gerekiyorsa, lütfen nasıl yapıldığını araştırın ya da bize sorun. Tüm sorularınızı irc.freenode.org'daki #pardus-devel kanalında ya da http://liste.uludag.org.tr/ adresinden ulaşabileceğiniz pardus-teknik e-posta listesinde sorabilirsiniz.\n    Desteğiniz için teşekkürler."
+    print "    \033[32m*\033[0m /etc/profile ayarlanıyor.."
+    os.system("echo '' >> %s/etc/profile" % installDir)
+    os.system("echo 'export INPUTRC=/etc/inputrc' >> %s/etc/profile" % installDir)
+
+
+
+    print "\n    Kurulum ve yapılandırmalar sona erdi.\n\n    * Eğer bilgisayarınızı yeniden başlatmadan önce grub'ı MBR'a yazdırmanız gerekiyorsa, lütfen nasıl yapıldığını araştırın ya da bize sorun. Hazırda kullandığınız diğer bir Linux dağıtımı varsa, Grub'ı MBR'ye yazdırmak yerine açılışta tercih edebilmek için RootFS'i onun menüsüne eklemek isteyebilirsiniz; RootFS için gerekli açılış bilgilerini %s/boot/grub/grub.conf dosyası içerisinden alabilirsiniz.\n\n    * RootFS'teki kullanıcı adınız '%s'. Hem kullanıcınız hem de root kullanıcısının ve öntanımlı parolaların 'uludag' olduğunu unutmayın ve sistem açıldıktan sonra değiştirmeyi lütfen ihmal etmeyin.\n\n    * Tüm sorularınızı irc.freenode.org'daki #pardus-devel kanalında ya da http://liste.uludag.org.tr/ adresinden ulaşabileceğiniz pardus-teknik e-posta listesinde sorabilirsiniz.\n\n    Desteğiniz için teşekkürler." % (installDir, userName)
 
     sys.exit(0)
 
