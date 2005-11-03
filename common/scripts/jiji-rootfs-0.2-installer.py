@@ -2341,6 +2341,10 @@ def getGrubStyle(d):
 
 if __name__ == "__main__":
 
+    if os.getuid():
+        print "\n\033[31m    Betiği lütfen root kullanıcısı ile çalıştırın\033[0m\n"
+        sys.exit(1)
+
     print "\n  Pardus RootFS \033[32m0.2\033[0m Kurulum Yardımcısına Hoşgeldiniz..\n"
 
     open(disktype, "w").write(base64.decodestring(diskTypeData))
