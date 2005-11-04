@@ -134,6 +134,9 @@ start() {
 	# Check for /etc/resolv.conf, and create if missing
 	#
 	[[ -f /etc/resolv.conf ]] || touch /etc/resolv.conf &> /dev/null
+
+    # Set RTC for mplayer, bug #470
+    echo 1024 > /proc/sys/dev/rtc/max-user-freq
 }
 
 
