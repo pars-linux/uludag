@@ -12,127 +12,127 @@
             <height>156</height>
         </rect>
     </property>
-    <widget class="QLayoutWidget">
+    <property name="caption">
+        <string>RepoDialog</string>
+    </property>
+    <grid>
         <property name="name">
-            <cstring>layout11</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>10</x>
-                <y>10</y>
-                <width>360</width>
-                <height>140</height>
-            </rect>
-        </property>
-        <grid>
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout11</cstring>
             </property>
-            <widget class="QLabel" row="0" column="0">
+            <grid>
                 <property name="name">
-                    <cstring>textLabel1</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="text">
-                    <string>Depo Adı:</string>
-                </property>
-            </widget>
-            <widget class="QLabel" row="2" column="0">
-                <property name="name">
-                    <cstring>textLabel2</cstring>
-                </property>
-                <property name="text">
-                    <string>Depo Adresi:</string>
-                </property>
-            </widget>
-            <widget class="KLineEdit" row="1" column="0">
-                <property name="name">
-                    <cstring>repoNameLineEdit</cstring>
-                </property>
-            </widget>
-            <widget class="KLineEdit" row="3" column="0">
-                <property name="name">
-                    <cstring>repoAddressLineEdit</cstring>
-                </property>
-            </widget>
-            <widget class="QLayoutWidget" row="4" column="0">
-                <property name="name">
-                    <cstring>layout10</cstring>
-                </property>
-                <hbox>
+                <widget class="QLabel" row="0" column="0">
                     <property name="name">
-                        <cstring>unnamed</cstring>
+                        <cstring>textLabel1</cstring>
                     </property>
-                    <spacer>
+                    <property name="text">
+                        <string>Depo Adı:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Depo Adresi:</string>
+                    </property>
+                </widget>
+                <widget class="KLineEdit" row="1" column="0">
+                    <property name="name">
+                        <cstring>repoNameLineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="KLineEdit" row="3" column="0">
+                    <property name="name">
+                        <cstring>repoAddressLineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="4" column="0">
+                    <property name="name">
+                        <cstring>layout10</cstring>
+                    </property>
+                    <hbox>
                         <property name="name">
-                            <cstring>spacer8</cstring>
+                            <cstring>unnamed</cstring>
                         </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>80</width>
-                                <height>20</height>
-                            </size>
-                        </property>
-                    </spacer>
-                    <widget class="KPushButton">
-                        <property name="name">
-                            <cstring>okButton</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Tamam</string>
-                        </property>
-                    </widget>
-                    <spacer>
-                        <property name="name">
-                            <cstring>spacer10</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>30</width>
-                                <height>20</height>
-                            </size>
-                        </property>
-                    </spacer>
-                    <widget class="KPushButton">
-                        <property name="name">
-                            <cstring>cancelButton</cstring>
-                        </property>
-                        <property name="text">
-                            <string>İpta&amp;l</string>
-                        </property>
-                    </widget>
-                    <spacer>
-                        <property name="name">
-                            <cstring>spacer9</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>60</width>
-                                <height>20</height>
-                            </size>
-                        </property>
-                    </spacer>
-                </hbox>
-            </widget>
-        </grid>
-    </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer8</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>80</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>okButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Tamam</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer10</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>30</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>cancelButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>İpta&amp;l</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer9</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>60</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
 </widget>
 <connections>
     <connection>
