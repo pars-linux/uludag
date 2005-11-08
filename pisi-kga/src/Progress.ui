@@ -36,9 +36,9 @@
         </property>
         <property name="geometry">
             <rect>
-                <x>20</x>
+                <x>90</x>
                 <y>10</y>
-                <width>420</width>
+                <width>350</width>
                 <height>70</height>
             </rect>
         </property>
@@ -77,6 +77,25 @@
                 </property>
             </widget>
         </vbox>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>pixmapLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>30</y>
+                <width>32</width>
+                <height>32</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>INFO OLACAK</string>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
