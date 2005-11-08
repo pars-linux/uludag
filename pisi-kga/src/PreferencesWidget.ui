@@ -12,32 +12,12 @@
             <height>513</height>
         </rect>
     </property>
+    <property name="caption">
+        <string>PrefsDialog</string>
+    </property>
     <property name="sizeGripEnabled">
         <bool>true</bool>
     </property>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>360</width>
-                <height>47</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>18</red>
-                <green>34</green>
-                <blue>144</blue>
-            </color>
-        </property>
-        <property name="text">
-            <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Paket Deposu Ayarları&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
-        </property>
-    </widget>
     <widget class="KPushButton">
         <property name="name">
             <cstring>pushButton12</cstring>
@@ -52,19 +32,6 @@
         </property>
         <property name="text">
             <string>&amp;Yardım</string>
-        </property>
-    </widget>
-    <widget class="KSeparator">
-        <property name="name">
-            <cstring>kSeparator1_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>-10</x>
-                <y>440</y>
-                <width>730</width>
-                <height>20</height>
-            </rect>
         </property>
     </widget>
     <widget class="QLayoutWidget">
@@ -122,41 +89,6 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
                 </property>
             </widget>
         </hbox>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>networkLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>530</x>
-                <y>30</y>
-                <width>40</width>
-                <height>40</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Network</string>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
-    <widget class="KPushButton">
-        <property name="name">
-            <cstring>updateRepoButton</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>358</x>
-                <y>400</y>
-                <width>220</width>
-                <height>29</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Depolardan paket bilgilerini &amp;güncelle</string>
-        </property>
     </widget>
     <widget class="QLayoutWidget">
         <property name="name">
@@ -287,6 +219,106 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
             </rect>
         </property>
     </widget>
+    <widget class="KPushButton">
+        <property name="name">
+            <cstring>updateRepoButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>328</x>
+                <y>400</y>
+                <width>250</width>
+                <height>29</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Depolardan paket bilgilerini &amp;güncelle</string>
+        </property>
+        <property name="accel">
+            <string>Alt+G</string>
+        </property>
+    </widget>
+    <widget class="KSeparator">
+        <property name="name">
+            <cstring>kSeparator1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-10</x>
+                <y>440</y>
+                <width>730</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-10</x>
+                <y>0</y>
+                <width>630</width>
+                <height>71</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>GroupBoxPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>13</y>
+                    <width>360</width>
+                    <height>47</height>
+                </rect>
+            </property>
+            <property name="paletteForegroundColor">
+                <color>
+                    <red>18</red>
+                    <green>34</green>
+                    <blue>144</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Paket Deposu Ayarları&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>networkLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>538</x>
+                    <y>18</y>
+                    <width>40</width>
+                    <height>40</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Network</string>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </widget>
 </widget>
 <connections>
     <connection>
@@ -298,7 +330,14 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
 </connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>kseparator.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kseparator.h</includehint>
 </includehints>
 </UI>
