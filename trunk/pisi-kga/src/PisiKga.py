@@ -159,7 +159,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             self.package = pisi.packagedb.get_package(selection.text(0))
             
-        self.progNameLabel.setText(QString("<qt><h1>"+self.package.name.capitalize()+"</h1></qt>"))
+        self.progNameLabel.setText(QString("<qt><h1>"+self.package.name+"</h1></qt>"))
         self.infoLabel.setText(self.package.summary)
         
         size = self.package.installedSize
