@@ -1,0 +1,8 @@
+Python DOM binding for iksemel.
+
+iksemel is included and compiled built-in to the module.
+
+to compile and install:
+sudo scons install prefix=/
+
+then you can import piksemel module.

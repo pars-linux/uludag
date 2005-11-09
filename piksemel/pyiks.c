@@ -136,7 +136,11 @@ static PyObject *Node_setAttribute(Node *self, PyObject *args);
 static PyObject *Node_getTag(Node *self, PyObject *args);
 static PyObject *Node_getTagData(Node *self, PyObject *args);
 static PyObject *Node_tags(Node *self, PyObject *args);
-static PyObject *Node_childs(Node *self);
+static PyObject *Node_firstChild(Node *self);
+static PyObject *Node_parent(Node *self);
+static PyObject *Node_root(Node *self);
+static PyObject *Node_next(Node *self);
+static PyObject *Node_previous(Node *self);
 static PyObject *Node_toString(Node *self, PyObject *args);
 static PyObject *Node_toPrettyString(Node *self, PyObject *args);
 static PyObject *Node_appendTag(Node *self, PyObject *args);
@@ -159,8 +163,16 @@ static PyMethodDef Node_methods[] = {
 	  "Return character data of the child tag with given name." },
 	{ "tags", (PyCFunction)Node_tags, METH_VARARGS,
 	  "Iterate over all or optionally only matching tags." },
-	{ "childs", (PyCFunction)Node_childs, METH_NOARGS,
-	  "Iterate over all child nodes." },
+	{ "firstChild", (PyCFunction)Node_firstChild, METH_NOARGS,
+	  "Return first child node." },
+	{ "parent", (PyCFunction)Node_parent, METH_NOARGS,
+	  "Return parent node." },
+	{ "root", (PyCFunction)Node_root, METH_NOARGS,
+	  "Return topmost parent node." },
+	{ "next", (PyCFunction)Node_next, METH_NOARGS,
+	  "Return next sibling node." },
+	{ "previous", (PyCFunction)Node_previous, METH_NOARGS,
+	  "Return previous sibling node." },
 	{ "toString", (PyCFunction)Node_toString, METH_NOARGS,
 	  "Convert a document tree to XML string representation." },
 	{ "toPrettyString", (PyCFunction)Node_toPrettyString, METH_NOARGS,
@@ -451,21 +463,78 @@ Node_tags(Node *self, PyObject *args)
 }
 
 static PyObject *
-Node_childs(Node *self)
+Node_firstChild(Node *self)
 {
-	Iter *iter;
+	iks *child;
 
 	if (iks_type(self->node) != IKS_TAG) {
 		PyErr_SetNone(NotTag);
 		return NULL;
 	}
 
-	iter = PyObject_New(Iter, &Iter_type);
-	iter->doc = self->doc;
-	iter->node = iks_child(self->node);
-	iter->tags = 1;
-	iter->tagname = NULL;
-	return (PyObject *)iter;
+	child = iks_child(self->node);
+	if (!child) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	return new_node(self->doc, child);
+}
+
+static PyObject *
+Node_parent(Node *self)
+{
+	iks *parent;
+
+	parent = iks_parent(self->node);
+	if (!parent) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	return new_node(self->doc, parent);
+}
+
+static PyObject *
+Node_root(Node *self)
+{
+	iks *root;
+
+	root = iks_root(self->node);
+	if (!root) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	return new_node(self->doc, root);
+}
+
+static PyObject *
+Node_next(Node *self)
+{
+	iks *sibling;
+
+	sibling = iks_next(self->node);
+	if (!sibling) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	return new_node(self->doc, sibling);
+}
+
+static PyObject *
+Node_previous(Node *self)
+{
+	iks *sibling;
+
+	sibling = iks_prev(self->node);
+	if (!sibling) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	return new_node(self->doc, sibling);
 }
 
 static PyObject *
