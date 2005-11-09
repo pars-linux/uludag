@@ -16,6 +16,7 @@ distfiles = """
     pyiks.c
     iksemel.c
     iksemel.h
+    README
     perftest.py
     test.py
 """
