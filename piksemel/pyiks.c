@@ -295,6 +295,7 @@ Node_iter(Node *self)
 	iter = PyObject_New(Iter, &Iter_type);
 	iter->node = iks_child(self->node);
 	iter->tags = 0;
+	iter->doc = self->doc;
 	iter->tagname = NULL;
 	return (PyObject *)iter;
 }
@@ -576,6 +577,11 @@ Node_toPrettyString(Node *self, PyObject *args)
 	PyObject *ret;
 	iks *tree;
 	char *str;
+
+	if (iks_type(self->node) != IKS_TAG) {
+		PyErr_SetNone(NotTag);
+		return NULL;
+	}
 
 	tree = iks_new(iks_name(self->node));
 	prettify(tree, self->node);

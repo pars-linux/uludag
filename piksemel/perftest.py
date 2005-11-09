@@ -7,7 +7,7 @@ import timeit
 
 def piksor(name):
     a = iks.parse(name)
-    print "Processing %s" % a.tagName()
+    print "Processing %s" % a.name()
     total = 0
     for b in a.tags():
         size = b.getTagData("Size")
