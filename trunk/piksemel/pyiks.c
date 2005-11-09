@@ -136,6 +136,7 @@ static PyObject *Node_setAttribute(Node *self, PyObject *args);
 static PyObject *Node_getTag(Node *self, PyObject *args);
 static PyObject *Node_getTagData(Node *self, PyObject *args);
 static PyObject *Node_tags(Node *self, PyObject *args);
+static PyObject *Node_childs(Node *self);
 static PyObject *Node_toString(Node *self, PyObject *args);
 static PyObject *Node_toPrettyString(Node *self, PyObject *args);
 static PyObject *Node_appendTag(Node *self, PyObject *args);
@@ -158,6 +159,8 @@ static PyMethodDef Node_methods[] = {
 	  "Return character data of the child tag with given name." },
 	{ "tags", (PyCFunction)Node_tags, METH_VARARGS,
 	  "Iterate over all or optionally only matching tags." },
+	{ "childs", (PyCFunction)Node_childs, METH_NOARGS,
+	  "Iterate over all child nodes." },
 	{ "toString", (PyCFunction)Node_toString, METH_NOARGS,
 	  "Convert a document tree to XML string representation." },
 	{ "toPrettyString", (PyCFunction)Node_toPrettyString, METH_NOARGS,
@@ -312,7 +315,7 @@ Node_data(Node *self)
 		return NULL;
 	}
 
-	ret = Py_BuildValue("i", iks_cdata(self->node));
+	ret = Py_BuildValue("s", iks_cdata(self->node));
 	return ret;
 }
 
@@ -444,6 +447,24 @@ Node_tags(Node *self, PyObject *args)
 	}
 	iter->tags = 1;
 	iter->tagname = name;
+	return (PyObject *)iter;
+}
+
+static PyObject *
+Node_childs(Node *self)
+{
+	Iter *iter;
+
+	if (iks_type(self->node) != IKS_TAG) {
+		PyErr_SetNone(NotTag);
+		return NULL;
+	}
+
+	iter = PyObject_New(Iter, &Iter_type);
+	iter->doc = self->doc;
+	iter->node = iks_child(self->node);
+	iter->tags = 1;
+	iter->tagname = NULL;
 	return (PyObject *)iter;
 }
 
