@@ -1,10 +1,10 @@
 -- Server sürümü: 4.1.12
--- Veritabanı: `pardil_py`
+-- Veritabanı: pardil_py
 
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `groups`
+-- Tablo yapısı : groups
 -- 
 
 CREATE TABLE groups (
@@ -14,7 +14,7 @@ CREATE TABLE groups (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1;
 
 -- 
--- Tablo döküm verisi `groups`
+-- Tablo döküm verisi groups
 -- 
 
 INSERT INTO groups (gid, label) VALUES (1, 'Site Yöneticileri');
@@ -25,7 +25,7 @@ INSERT INTO groups (gid, label) VALUES (4, 'Katkıcılar');
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `proposals`
+-- Tablo yapısı : proposals
 -- 
 
 CREATE TABLE proposals (
@@ -38,7 +38,7 @@ CREATE TABLE proposals (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `proposals_comments`
+-- Tablo yapısı : proposals_comments
 -- 
 
 CREATE TABLE proposals_comments (
@@ -53,7 +53,7 @@ CREATE TABLE proposals_comments (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `proposals_versions`
+-- Tablo yapısı : proposals_versions
 -- 
 
 CREATE TABLE proposals_versions (
@@ -72,7 +72,7 @@ CREATE TABLE proposals_versions (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `rel_groups`
+-- Tablo yapısı : rel_groups
 -- 
 
 CREATE TABLE rel_groups (
@@ -83,7 +83,7 @@ CREATE TABLE rel_groups (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1;
 
 -- 
--- Tablo döküm verisi `rel_groups`
+-- Tablo döküm verisi rel_groups
 -- 
 
 INSERT INTO rel_groups (relid, uid, gid) VALUES (1, 1, 1);
@@ -91,7 +91,7 @@ INSERT INTO rel_groups (relid, uid, gid) VALUES (1, 1, 1);
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `rel_maintainers`
+-- Tablo yapısı : rel_maintainers
 -- 
 
 CREATE TABLE rel_maintainers (
@@ -104,7 +104,7 @@ CREATE TABLE rel_maintainers (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `rel_rights`
+-- Tablo yapısı : rel_rights
 -- 
 
 CREATE TABLE rel_rights (
@@ -117,7 +117,7 @@ CREATE TABLE rel_rights (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `rights`
+-- Tablo yapısı : rights
 -- 
 
 CREATE TABLE rights (
@@ -129,7 +129,7 @@ CREATE TABLE rights (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=5 ;
 
 -- 
--- Tablo döküm verisi `rights`
+-- Tablo döküm verisi rights
 -- 
 
 INSERT INTO rights (rid, category, keyword, label) VALUES (2, 'Bildiriler', 'proposals_add', 'Bildiri ekleyebilir.');
@@ -147,31 +147,31 @@ INSERT INTO rights VALUES (14, 'Yönetim', 'administrate_proposals', 'Bildiriler
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `sessions`
+-- Tablo yapısı : sessions
 -- 
 
 CREATE TABLE sessions (
   sid varchar(32) collate utf8_turkish_ci NOT NULL default '',
   uid int(10) unsigned NOT NULL default '0',
-  timeB int(10) unsigned NOT NULL default '0',
+  timeB int(10) unsigned NOT NULL default '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `users`
+-- Tablo yapısı : users
 -- 
 
 CREATE TABLE users (
   uid int(10) unsigned NOT NULL auto_increment,
   username varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  `password` varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  password varchar(32) collate utf8_turkish_ci NOT NULL default '',
   email varchar(64) collate utf8_turkish_ci NOT NULL default '',
   PRIMARY KEY  (uid)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci PACK_KEYS=0 AUTO_INCREMENT=1;
 
 -- 
--- Tablo döküm verisi `users`
+-- Tablo döküm verisi users
 -- 
 
 INSERT INTO users (uid, username, password, email) VALUES (1, 'pardil', 'b7b5d272b4f7fb67bd323c3b2f86bcb2', 'pardil@uludag.org.tr');
@@ -179,35 +179,35 @@ INSERT INTO users (uid, username, password, email) VALUES (1, 'pardil', 'b7b5d27
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `proposals_pending`
+-- Tablo yapısı : proposals_pending
 -- 
 
-CREATE TABLE `proposals_pending` (
-  `tpid` int(10) unsigned NOT NULL auto_increment,
-  `uid` int(10) unsigned NOT NULL default '0',
-  `pid` int(10) unsigned NOT NULL default '0',
-  `title` varchar(100) collate utf8_turkish_ci NOT NULL default '',
-  `summary` text collate utf8_turkish_ci NOT NULL,
-  `purpose` text collate utf8_turkish_ci NOT NULL,
-  `content` text collate utf8_turkish_ci NOT NULL,
-  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`tpid`)
+CREATE TABLE proposals_pending (
+  tpid int(10) unsigned NOT NULL auto_increment,
+  uid int(10) unsigned NOT NULL default '0',
+  pid int(10) unsigned NOT NULL default '0',
+  title varchar(100) collate utf8_turkish_ci NOT NULL default '',
+  summary text collate utf8_turkish_ci NOT NULL,
+  purpose text collate utf8_turkish_ci NOT NULL,
+  content text collate utf8_turkish_ci NOT NULL,
+  timeB datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (tpid)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `users_pending`
+-- Tablo yapısı : users_pending
 -- 
 
-CREATE TABLE `users_pending` (
-  `pid` int(10) unsigned NOT NULL auto_increment,
-  `username` varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  `password` varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  `email` varchar(64) collate utf8_turkish_ci NOT NULL default '',
-  `code` varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`pid`)
+CREATE TABLE users_pending (
+  pid int(10) unsigned NOT NULL auto_increment,
+  username varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  password varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  email varchar(64) collate utf8_turkish_ci NOT NULL default '',
+  code varchar(32) collate utf8_turkish_ci NOT NULL default '',
+  timeB datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (pid)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
         
 
@@ -215,23 +215,23 @@ CREATE TABLE users_passcodes (
   id int(10) unsigned NOT NULL auto_increment,
   uid int(10) unsigned NOT NULL default '0',
   code varchar(32) collate utf8_turkish_ci NOT NULL default '',
-  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
+  timeB datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (id)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `news`
+-- Tablo yapısı : news
 -- 
 
-CREATE TABLE `news` (
-  `nid` int(10) unsigned NOT NULL auto_increment,
-  `uid` int(10) unsigned NOT NULL default '0',
-  `title` varchar(100) collate utf8_turkish_ci NOT NULL default '',
-  `content` text collate utf8_turkish_ci NOT NULL,
-  `icon` varchar(30) collate utf8_turkish_ci NOT NULL default '',
-  `timeB` datetime NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`nid`)
+CREATE TABLE news (
+  nid int(10) unsigned NOT NULL auto_increment,
+  uid int(10) unsigned NOT NULL default '0',
+  title varchar(100) collate utf8_turkish_ci NOT NULL default '',
+  content text collate utf8_turkish_ci NOT NULL,
+  icon varchar(30) collate utf8_turkish_ci NOT NULL default '',
+  timeB datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (nid)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
         
