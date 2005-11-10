@@ -145,6 +145,7 @@ static PyObject *Node_toString(Node *self, PyObject *args);
 static PyObject *Node_toPrettyString(Node *self, PyObject *args);
 static PyObject *Node_appendTag(Node *self, PyObject *args);
 static PyObject *Node_appendData(Node *self, PyObject *args);
+static PyObject *Node_appendNode(Node *self, PyObject *args);
 
 static PyMethodDef Node_methods[] = {
 	{ "type", (PyCFunction)Node_type_func, METH_NOARGS,
@@ -181,6 +182,8 @@ static PyMethodDef Node_methods[] = {
 	  "Append a child tag node with given name." },
 	{ "appendData", (PyCFunction)Node_appendData, METH_VARARGS,
 	  "Append a child character data node with given text." },
+	{ "appendNode", (PyCFunction)Node_appendNode, METH_VARARGS,
+	  "Append another document as a child." },
 	{ NULL }
 };
 
@@ -629,6 +632,27 @@ Node_appendData(Node *self, PyObject *args)
 	node = iks_insert_cdata(self->node, value, 0);
 
 	return new_node(self->doc, node);
+}
+
+static PyObject *
+Node_appendNode(Node *self, PyObject *args)
+{
+	iks *child;
+	Node *node;
+
+	if (iks_type(self->node) != IKS_TAG) {
+		PyErr_SetNone(NotTag);
+		return NULL;
+	}
+
+	if (!PyArg_ParseTuple(args, "O!", &Node_type, &node))
+		return NULL;
+
+	child = iks_copy_within(node->node, iks_stack(self->node));
+	iks_insert_node(self->node, node->node);
+
+	Py_INCREF(Py_None);
+	return Py_None;
 }
 
 /*** Module Functions ***/
