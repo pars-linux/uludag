@@ -21,6 +21,14 @@ doc = iks.parseString("<a><blah hede='lala'/></a>")
 blah = doc.getTag("blah")
 print blah.getAttribute("hede"), blah.getAttribute("hodo")
 
+# test append node
+doc1 = iks.parseString("<a>blah</a>")
+doc2 = iks.newDocument("b")
+doc2.appendData("bold text")
+doc1.appendNode(doc2)
+del doc2
+print doc1.toString()
+
 # test iteration
 doc = iks.parse(sys.argv[1])
 for a in doc:
