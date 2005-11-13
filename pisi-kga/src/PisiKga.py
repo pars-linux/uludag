@@ -239,9 +239,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             list = pisi.packagedb.inst_packagedb.list_packages()
             list.sort()
             for pack in list:
-                if pisi.packagedb.get_package(pack).partof == 'base':
+                if pisi.packagedb.get_package(pack).partOf == 'base':
                     partof = base
-                elif pisi.packagedb.get_package(pack).partof == 'component':
+                elif pisi.packagedb.get_package(pack).partOf == 'component':
                     partof = component
                 else:
                     partof = other
@@ -254,9 +254,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             list = pisi.api.list_upgradable()
             list.sort()
             for pack in list:
-                if pisi.packagedb.get_package(pack).partof == 'base':
+                if pisi.packagedb.get_package(pack).partOf == 'base':
                     partof = base
-                elif pisi.packagedb.get_package(pack).partof == 'component':
+                elif pisi.packagedb.get_package(pack).partOf == 'component':
                     partof = component
                 else:
                     partof = other
@@ -272,9 +272,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 list.sort()
                 for pack in list:
                     if  not pisi.packagedb.inst_packagedb.has_package(pack):
-                        if pisi.packagedb.get_package(pack).partof == 'base':
+                        if pisi.packagedb.get_package(pack).partOf == 'base':
                             partof = base
-                        elif pisi.packagedb.get_package(pack).partof == 'component':
+                        elif pisi.packagedb.get_package(pack).partOf == 'component':
                             partof = component
                         else:
                             partof = other
