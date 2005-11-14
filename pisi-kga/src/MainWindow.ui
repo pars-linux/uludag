@@ -608,10 +608,13 @@ Package Category:</string>
                     </property>
                     <widget class="QToolButton">
                         <property name="name">
-                            <cstring>clearButton_2</cstring>
+                            <cstring>clearButton</cstring>
                         </property>
                         <property name="text">
                             <string>&amp;cl</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+C</string>
                         </property>
                     </widget>
                     <widget class="QLabel">
@@ -624,7 +627,7 @@ Package Category:</string>
                     </widget>
                     <widget class="KListViewSearchLine">
                         <property name="name">
-                            <cstring>searchLine_2</cstring>
+                            <cstring>searchLine</cstring>
                         </property>
                     </widget>
                 </hbox>

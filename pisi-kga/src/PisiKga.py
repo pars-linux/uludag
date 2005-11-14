@@ -173,28 +173,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         self.moreInfoLabel.setText(QString(": <b>"+self.package.version+"</b><br>: <b>"+size_string+"</b><br>: <b>"+self.package.partof))
             
-        if installed:
-            self.warningLabel.hide()
-            self.installButton.hide()
-        else:
-            self.warningLabel.show()
-            self.installButton.show()
-            
-
     def updateButtons(self):
         # This is slow but we don't have a better method so ...
         listViewItem = self.listView.firstChild()
 
-        try:
-            if self.listView.currentItem().isOn(): # Make sure this is a QCheckListItem
-                pass
-            if self.listView.currentItem().isSelected():
-                self.installButton.setEnabled(True)
-            else:
-                self.installButton.setEnabled(False)
-        except AttributeError:
-            self.installButton.setEnabled(False)
-        
         while listViewItem:
             try:
                 if listViewItem.isOn():
@@ -209,9 +191,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateListing(self, index=-1):
         self.listView.clear()
 
-        if index == -1:
-            index = self.selectComboBox.currentItem()
-            
         base = QListViewItem(self.listView,None)
         base.setOpen(True)
         base.setText(0,i18n("Temel"))
@@ -288,7 +267,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
             while not item.firstChild():
                 item = item.itemBelow()
             self.listView.setSelected(item.firstChild(), True)
-            self.installButton.setEnabled(True)
         except AttributeError:
             pass
 
@@ -297,37 +275,37 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateListing()
         
     def installRemove(self):
-        index = self.selectComboBox.currentItem()
-        self.installOrRemoveButton.setEnabled(False)
-
-        self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
-        self.pDialog.show()
-        
-	# Get the list of selected items
-        self.selectedItems = []
-        listViewItem = self.listView.firstChild()
-
-        while listViewItem:
-            try:
-                if listViewItem.isOn():
-                    self.selectedItems.append(str(listViewItem.text(0)))
-            except AttributeError: # This exception is thrown because some items are QListViewItem
-                pass
-
-            listViewItem = listViewItem.itemBelow()
-
-        self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
-        print 'Total app count',self.totalAppCount
-                
-        if index == 0: # Remove baby
-            self.command.remove(self.selectedItems)
-                        
-        elif index == 1: # Upgrade baby
-            self.command.upgrade(self.selectedItems)
-            	    
-        elif index == 2: # Install baby
-            self.command.install(self.selectedItems)
-            
+        pass
+#        self.installOrRemoveButton.setEnabled(False)
+#
+#        self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
+#        self.pDialog.show()
+#        
+#	# Get the list of selected items
+#        self.selectedItems = []
+#        listViewItem = self.listView.firstChild()
+#
+#        while listViewItem:
+#            try:
+#                if listViewItem.isOn():
+#                    self.selectedItems.append(str(listViewItem.text(0)))
+#            except AttributeError: # This exception is thrown because some items are QListViewItem
+#                pass
+#
+#            listViewItem = listViewItem.itemBelow()
+#
+#        self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
+#        print 'Total app count',self.totalAppCount
+#                
+#        if index == 0: # Remove baby
+#            self.command.remove(self.selectedItems)
+#                        
+#        elif index == 1: # Upgrade baby
+#            self.command.upgrade(self.selectedItems)
+#            	    
+#        elif index == 2: # Install baby
+#            self.command.install(self.selectedItems)
+           
     def installSingle(self):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
@@ -370,8 +348,6 @@ class MainApplication(programbase):
         mainwidget = MainApplicationWidget(self)
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
-        mainwidget.warningLabel.hide()
-        mainwidget.installButton.hide()
         mainwidget.listView.setResizeMode(QListView.LastColumn)
         mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
@@ -381,9 +357,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
-        self.connect(mainwidget.selectComboBox,SIGNAL("activated(int)"),mainwidget.updateListing)
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
-        self.connect(mainwidget.installButton,SIGNAL("clicked()"),mainwidget.installSingle)
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
 
         self.aboutus = KAboutApplication(self)
@@ -410,9 +384,7 @@ class MainApplication(programbase):
         config = kapp.config()
         config.setGroup("General")
         size = config.readSizeEntry("Geometry")
-        listBoxSelection = config.readNumEntry("ListBoxSelection",0)
-        mainwidget.selectComboBox.setCurrentItem(listBoxSelection)
-        mainwidget.updateListing(listBoxSelection)
+        mainwidget.updateListing(0)
         if size.isEmpty()==False:
             self.resize(size)
 
@@ -421,7 +393,6 @@ class MainApplication(programbase):
         config = kapp.config()
         config.setGroup("General")
         config.writeEntry("Geometry", self.size())
-        config.writeEntry("ListBoxSelection",mainwidget.selectComboBox.currentItem())
         config.sync()
 
     # KControl virtual void methods
