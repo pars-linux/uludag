@@ -66,181 +66,6 @@
     </widget>
     <widget class="QFrame">
         <property name="name">
-            <cstring>frame10</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>360</x>
-                <y>210</y>
-                <width>330</width>
-                <height>270</height>
-            </rect>
-        </property>
-        <property name="paletteBackgroundColor">
-            <color>
-                <red>220</red>
-                <green>220</green>
-                <blue>220</blue>
-            </color>
-        </property>
-        <property name="frameShape">
-            <enum>GroupBoxPanel</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Raised</enum>
-        </property>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>progIcon</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>19</x>
-                    <y>73</y>
-                    <width>64</width>
-                    <height>64</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-            <property name="scaledContents">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>moreInfoLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>170</y>
-                    <width>130</width>
-                    <height>60</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Package Version:
-Package Size: 
-Package Category:</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>moreInfoLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>150</x>
-                    <y>170</y>
-                    <width>150</width>
-                    <height>66</height>
-                </rect>
-            </property>
-            <property name="midLineWidth">
-                <number>1</number>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>iconLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>80</y>
-                    <width>70</width>
-                    <height>50</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-        </widget>
-        <widget class="KActiveLabel">
-            <property name="name">
-                <cstring>infoLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>80</x>
-                    <y>80</y>
-                    <width>240</width>
-                    <height>90</height>
-                </rect>
-            </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>220</red>
-                    <green>220</green>
-                    <blue>220</blue>
-                </color>
-            </property>
-            <property name="backgroundOrigin">
-                <enum>ParentOrigin</enum>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-        </widget>
-        <widget class="KActiveLabel">
-            <property name="name">
-                <cstring>progNameLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>14</y>
-                    <width>260</width>
-                    <height>30</height>
-                </rect>
-            </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>220</red>
-                    <green>220</green>
-                    <blue>220</blue>
-                </color>
-            </property>
-            <property name="font">
-                <font>
-                    <pointsize>12</pointsize>
-                    <bold>1</bold>
-                </font>
-            </property>
-            <property name="text">
-                <string>Package name</string>
-            </property>
-        </widget>
-        <widget class="KSeparator">
-            <property name="name">
-                <cstring>kSeparator3_2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>4</x>
-                    <y>43</y>
-                    <width>320</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="frameShape">
-                <enum>GroupBoxPanel</enum>
-            </property>
-            <property name="frameShadow">
-                <enum>Sunken</enum>
-            </property>
-            <property name="lineWidth">
-                <number>8</number>
-            </property>
-        </widget>
-    </widget>
-    <widget class="QFrame">
-        <property name="name">
             <cstring>frame11</cstring>
         </property>
         <property name="geometry">
@@ -607,12 +432,183 @@ Package Category:</string>
             </widget>
         </hbox>
     </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame10</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>210</y>
+                <width>330</width>
+                <height>270</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>220</red>
+                <green>220</green>
+                <blue>220</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>GroupBoxPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <widget class="KActiveLabel">
+            <property name="name">
+                <cstring>progNameLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>14</y>
+                    <width>260</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>220</red>
+                    <green>220</green>
+                    <blue>220</blue>
+                </color>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>12</pointsize>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>Package name</string>
+            </property>
+        </widget>
+        <widget class="KSeparator">
+            <property name="name">
+                <cstring>kSeparator3_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>4</x>
+                    <y>43</y>
+                    <width>320</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>GroupBoxPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="lineWidth">
+                <number>8</number>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>progIcon</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>74</y>
+                    <width>16</width>
+                    <height>78</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>iconLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="KActiveLabel">
+            <property name="name">
+                <cstring>infoLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>128</x>
+                    <y>74</y>
+                    <width>190</width>
+                    <height>100</height>
+                </rect>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>220</red>
+                    <green>220</green>
+                    <blue>220</blue>
+                </color>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>ParentOrigin</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>moreInfoLabelDetails</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>150</x>
+                    <y>170</y>
+                    <width>150</width>
+                    <height>60</height>
+                </rect>
+            </property>
+            <property name="midLineWidth">
+                <number>1</number>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>moreInfoLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>170</y>
+                    <width>130</width>
+                    <height>60</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Package Version:
+Package Size:</string>
+            </property>
+        </widget>
+    </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>kactivelabel.h</includehint>
-    <includehint>kactivelabel.h</includehint>
-    <includehint>kseparator.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>klistviewsearchline.h</includehint>
     <includehint>kpushbutton.h</includehint>
@@ -621,5 +617,8 @@ Package Category:</string>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
+    <includehint>kactivelabel.h</includehint>
+    <includehint>kseparator.h</includehint>
+    <includehint>kactivelabel.h</includehint>
 </includehints>
 </UI>

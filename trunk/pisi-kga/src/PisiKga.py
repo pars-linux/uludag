@@ -160,7 +160,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.package = pisi.packagedb.get_package(selection.text(0))
             
         self.progNameLabel.setText(QString("<qt><h1>"+self.package.name+"</h1></qt>"))
-        self.infoLabel.setText(self.package.summary)
+        self.infoLabel.setText(self.package.summary['en'])
         
         size = self.package.installedSize
         
@@ -171,7 +171,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             size_string = str(size)+ i18n(" Bytes")
 
-        self.moreInfoLabel.setText(QString(": <b>"+self.package.version+"</b><br>: <b>"+size_string+"</b><br>: <b>"+self.package.partof))
+        self.moreInfoLabelDetails.setText(QString(self.package.version+"<br>"+size_string))
             
     def updateButtons(self):
         # This is slow but we don't have a better method so ...
