@@ -14,7 +14,6 @@
 
 from qt import *
 import pisi.api
-import pisi.fetcher
 
 class MyThread(QThread):
     def __init__(self, widget):
@@ -78,8 +77,7 @@ class MyThread(QThread):
             QThread.postEvent(self.receiver,event)
             
             return
-        else:
-            pass
 
+        # Finished so send back finished event
         event = QCustomEvent(QEvent.User+1)
         QThread.postEvent(self.receiver,event)
