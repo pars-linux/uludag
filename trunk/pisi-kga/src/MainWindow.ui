@@ -286,9 +286,6 @@ Package Category:</string>
                         <property name="text">
                             <string>&amp;Show Installed Packages</string>
                         </property>
-                        <property name="accel">
-                            <string>Alt+S</string>
-                        </property>
                     </widget>
                     <widget class="QRadioButton" row="1" column="0">
                         <property name="name">
@@ -297,9 +294,6 @@ Package Category:</string>
                         <property name="text">
                             <string>Sho&amp;w Updates</string>
                         </property>
-                        <property name="accel">
-                            <string>Alt+W</string>
-                        </property>
                     </widget>
                     <widget class="QRadioButton" row="2" column="0">
                         <property name="name">
@@ -307,9 +301,6 @@ Package Category:</string>
                         </property>
                         <property name="text">
                             <string>Show Pa&amp;ckages Ready to Install</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+C</string>
                         </property>
                     </widget>
                 </grid>
@@ -410,9 +401,6 @@ Package Category:</string>
                         <property name="text">
                             <string>&amp;cl</string>
                         </property>
-                        <property name="accel">
-                            <string>Alt+C</string>
-                        </property>
                     </widget>
                     <widget class="QLabel">
                         <property name="name">
@@ -465,9 +453,6 @@ Package Category:</string>
                 <property name="text">
                     <string>&amp;Update everything</string>
                 </property>
-                <property name="accel">
-                    <string>Alt+U</string>
-                </property>
             </widget>
             <widget class="KPushButton">
                 <property name="name">
@@ -483,9 +468,6 @@ Package Category:</string>
                 </property>
                 <property name="text">
                     <string>Repository setti&amp;ngs</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+N</string>
                 </property>
             </widget>
         </hbox>
@@ -533,9 +515,6 @@ Package Category:</string>
                         </property>
                         <property name="text">
                             <string>&amp;Help</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+H</string>
                         </property>
                     </widget>
                     <spacer>
@@ -592,9 +571,6 @@ Package Category:</string>
                         <property name="text">
                             <string>&amp;Install Package(s)</string>
                         </property>
-                        <property name="accel">
-                            <string>Alt+I</string>
-                        </property>
                         <property name="autoDefault">
                             <bool>true</bool>
                         </property>
@@ -622,9 +598,6 @@ Package Category:</string>
                         </property>
                         <property name="text">
                             <string>&amp;Quit</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+Q</string>
                         </property>
                         <property name="autoDefault">
                             <bool>true</bool>
