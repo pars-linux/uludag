@@ -45,39 +45,25 @@ class MyThread(QThread):
         self.start()
             
     def run(self):
-        
-        try:
-
-            if self.installing:
-                pisi.api.install(self.appList)
-                self.installing = False
-
-            elif self.upgrading:
-                pisi.api.upgrade(appList)
-                self.upgrading = False
-                
-            elif self.removing:
-                pisi.api.remove(self.appList)
-                self.removing = False
-                
-            elif self.updatingRepo:
-                event = QCustomEvent(QEvent.User+2)
-                event.setData(self.repo)
-                QThread.postEvent(self.receiver,event)
-                pisi.api.update_repo(self.repo)
-                self.updatingRepo = False
-
-        except:
-            event = QCustomEvent(QEvent.User+4)
-            event.setData(u'PiSi KGA depoya bağlanamadı!')
-            QThread.postEvent(self.receiver,event)
-
-            # Fake finish event, sigh...
-            event = QCustomEvent(QEvent.User+1)
-            QThread.postEvent(self.receiver,event)
+        if self.installing:
+            pisi.api.install(self.appList)
+            self.installing = False
             
-            return
+        elif self.upgrading:
+            pisi.api.upgrade(appList)
+            self.upgrading = False
+            
+        elif self.removing:
+            pisi.api.remove(self.appList)
+            self.removing = False
+            
+        elif self.updatingRepo:
+            event = QCustomEvent(QEvent.User+2)
+            event.setData(self.repo)
+            QThread.postEvent(self.receiver,event)
+            pisi.api.update_repo(self.repo)
 
+        
         # Finished so send back finished event
         event = QCustomEvent(QEvent.User+1)
         QThread.postEvent(self.receiver,event)
