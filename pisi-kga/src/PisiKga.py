@@ -99,7 +99,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif event.type() == QEvent.User+5:
             filename = event.data().section(' ',0,0)
             percent = event.data().section(' ',1,1).toInt()[0]
-            rate = event.data().section(' ',2,2)
+            rate = event.data().section(' ',2,2).toInt()[0]
             symbol = event.data().section(' ',3,3)
             self.updateProgressBar(filename, percent, rate, symbol)
         else:
@@ -123,10 +123,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateProgressBar(self, filename, length, rate, symbol):
         if filename.endsWith(".pisi"):
-            self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b> (Hız: %s %s)'%(filename,rate,symbol))
+            self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b> (Hız: %d %s)'%(filename,rate,symbol))
         else:
             self.totalAppCount = 1
-            self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b> (Hız: %s %s)'%(self.updatedRepo,rate,symbol))
+            self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b> (Hız: %d %s)'%(self.updatedRepo,rate,symbol))
 
         progress = length/self.totalAppCount + self.savedProgress
 
