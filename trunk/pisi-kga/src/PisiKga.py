@@ -229,7 +229,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 for pack in list:
                     item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                     item.setText(1,pisi.packagedb.get_package(pack).version)
-            self.installOrRemoveButton.setText("Remove Package(s)");
+            self.installOrRemoveButton.setText("Install Package(s)");
 
         item = self.listView.firstChild()
 
