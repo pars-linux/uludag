@@ -15,137 +15,6 @@
     <property name="caption">
         <string>Pisi KGA</string>
     </property>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout15</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>20</x>
-                <y>550</y>
-                <width>660</width>
-                <height>30</height>
-            </rect>
-        </property>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QLayoutWidget">
-                <property name="name">
-                    <cstring>layout8</cstring>
-                </property>
-                <hbox>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="KPushButton">
-                        <property name="name">
-                            <cstring>helpButton</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Help</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+H</string>
-                        </property>
-                    </widget>
-                    <spacer>
-                        <property name="name">
-                            <cstring>spacer1</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>30</width>
-                                <height>20</height>
-                            </size>
-                        </property>
-                    </spacer>
-                </hbox>
-            </widget>
-            <spacer>
-                <property name="name">
-                    <cstring>spacer3</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>245</width>
-                        <height>20</height>
-                    </size>
-                </property>
-            </spacer>
-            <widget class="QLayoutWidget">
-                <property name="name">
-                    <cstring>layout9</cstring>
-                </property>
-                <hbox>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="KPushButton">
-                        <property name="name">
-                            <cstring>installOrRemoveButton</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>false</bool>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Install Package(s)</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+I</string>
-                        </property>
-                        <property name="autoDefault">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                    <spacer>
-                        <property name="name">
-                            <cstring>spacer2</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>16</width>
-                                <height>20</height>
-                            </size>
-                        </property>
-                    </spacer>
-                    <widget class="KPushButton">
-                        <property name="name">
-                            <cstring>closeButton</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Quit</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+Q</string>
-                        </property>
-                        <property name="autoDefault">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </hbox>
-            </widget>
-        </hbox>
-    </widget>
     <widget class="QFrame">
         <property name="name">
             <cstring>frame5</cstring>
@@ -194,19 +63,6 @@
                 <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Program Ekle ve Kaldır&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
             </property>
         </widget>
-    </widget>
-    <widget class="KSeparator">
-        <property name="name">
-            <cstring>kSeparator1_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>20</x>
-                <y>530</y>
-                <width>670</width>
-                <height>20</height>
-            </rect>
-        </property>
     </widget>
     <widget class="QFrame">
         <property name="name">
@@ -460,65 +316,6 @@ Package Category:</string>
             </widget>
         </grid>
     </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout6</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>360</x>
-                <y>490</y>
-                <width>320</width>
-                <height>28</height>
-            </rect>
-        </property>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>updateSystemButton</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="sizePolicy">
-                    <sizepolicy>
-                        <hsizetype>5</hsizetype>
-                        <vsizetype>5</vsizetype>
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                    </sizepolicy>
-                </property>
-                <property name="text">
-                    <string>&amp;Update everything</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+U</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>settingsButton</cstring>
-                </property>
-                <property name="sizePolicy">
-                    <sizepolicy>
-                        <hsizetype>5</hsizetype>
-                        <vsizetype>5</vsizetype>
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                    </sizepolicy>
-                </property>
-                <property name="text">
-                    <string>Repository setti&amp;ngs</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+N</string>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
     <widget class="KListView">
         <column>
             <property name="text">
@@ -634,19 +431,222 @@ Package Category:</string>
             </widget>
         </grid>
     </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>490</y>
+                <width>320</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="KPushButton">
+                <property name="name">
+                    <cstring>updateSystemButton</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>&amp;Update everything</string>
+                </property>
+                <property name="accel">
+                    <string>Alt+U</string>
+                </property>
+            </widget>
+            <widget class="KPushButton">
+                <property name="name">
+                    <cstring>settingsButton</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>Repository setti&amp;ngs</string>
+                </property>
+                <property name="accel">
+                    <string>Alt+N</string>
+                </property>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="KSeparator">
+        <property name="name">
+            <cstring>kSeparator1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>530</y>
+                <width>670</width>
+                <height>20</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout15</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>550</y>
+                <width>670</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout8</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="KPushButton">
+                        <property name="name">
+                            <cstring>helpButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Help</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+H</string>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer1</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>30</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </hbox>
+            </widget>
+            <spacer>
+                <property name="name">
+                    <cstring>spacer3</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>245</width>
+                        <height>20</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout9</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="KPushButton">
+                        <property name="name">
+                            <cstring>installOrRemoveButton</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Install Package(s)</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+I</string>
+                        </property>
+                        <property name="autoDefault">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>16</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="KPushButton">
+                        <property name="name">
+                            <cstring>closeButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Quit</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+Q</string>
+                        </property>
+                        <property name="autoDefault">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+        </hbox>
+    </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kseparator.h</includehint>
     <includehint>kactivelabel.h</includehint>
     <includehint>kactivelabel.h</includehint>
     <includehint>kseparator.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>klistviewsearchline.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kseparator.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
 </includehints>
 </UI>
