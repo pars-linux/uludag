@@ -76,6 +76,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pref = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.command = ThreadRunner.MyThread(self)
+        self.selectedItems = []
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self)
@@ -173,20 +174,19 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         self.moreInfoLabelDetails.setText(QString(self.package.version+"<br>"+size_string))
             
-    def updateButtons(self):
-        # This is slow but we don't have a better method so ...
-        listViewItem = self.listView.firstChild()
-
-        while listViewItem:
-            try:
-                if listViewItem.isOn():
+    def updateButtons(self, listViewItem):
+        text = listViewItem.text(0)
+        
+        if listViewItem.isOn():
+            self.installOrRemoveButton.setEnabled(True)
+            self.selectedItems.append(text)
+        else:
+            if self.selectedItems.index(text):
+                self.selectedItems.remove(text)
+                if len(self.selectedItems):
                     self.installOrRemoveButton.setEnabled(True)
-                    return
-            except AttributeError: # This exception is thrown because some items are QListViewItem
-                pass
-            listViewItem = listViewItem.itemBelow()
-
-        self.installOrRemoveButton.setEnabled(False)
+                else:
+                    self.installOrRemoveButton.setEnabled(False)
 
     def updateListing(self, index=0):
         self.listView.clear()
@@ -245,36 +245,23 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateListing()
         
     def installRemove(self):
-        pass
-#        self.installOrRemoveButton.setEnabled(False)
-#
-#        self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
-#        self.pDialog.show()
-#        
-#	# Get the list of selected items
-#        self.selectedItems = []
-#        listViewItem = self.listView.firstChild()
-#
-#        while listViewItem:
-#            try:
-#                if listViewItem.isOn():
-#                    self.selectedItems.append(str(listViewItem.text(0)))
-#            except AttributeError: # This exception is thrown because some items are QListViewItem
-#                pass
-#
-#            listViewItem = listViewItem.itemBelow()
-#
-#        self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
-#        print 'Total app count',self.totalAppCount
-#                
-#        if index == 0: # Remove baby
-#            self.command.remove(self.selectedItems)
-#                        
-#        elif index == 1: # Upgrade baby
-#            self.command.upgrade(self.selectedItems)
-#            	    
-#        elif index == 2: # Install baby
-#            self.command.install(self.selectedItems)
+        self.installOrRemoveButton.setEnabled(False)
+
+        self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
+        self.pDialog.show()
+        
+        self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
+        print 'Total app count',self.totalAppCount
+        return
+                
+        if index == 0: # Remove baby
+            self.command.remove(self.selectedItems)
+                        
+        elif index == 1: # Upgrade baby
+            self.command.upgrade(self.selectedItems)
+            	    
+        elif index == 2: # Install baby
+            self.command.install(self.selectedItems)
            
     def installSingle(self):
         app = []
