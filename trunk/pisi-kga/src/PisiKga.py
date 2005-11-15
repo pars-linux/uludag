@@ -243,6 +243,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateListing()
         
     def installRemove(self):
+        index = mainwidget.selectionGroup.selectedId()
         self.installOrRemoveButton.setEnabled(False)
 
         self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
