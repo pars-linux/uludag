@@ -108,7 +108,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def finished(self):
         self.pDialog.close()
         self.resetProgressBar()
-        self.updateListing()
+        self.updateListing(mainwidget.selectionGroup.selectedId())
         if self.errorMessage:
             KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
         self.errorMessage = None
@@ -174,21 +174,23 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.moreInfoLabelDetails.setText(QString(self.package.version+"<br>"+size_string))
             
     def updateButtons(self, listViewItem):
-        text = listViewItem.text(0)
-        
-        if listViewItem.isOn():
-            self.installOrRemoveButton.setEnabled(True)
-            self.selectedItems.append(str(text))
-        else:
-            if self.selectedItems.index(text):
+        try:
+            text = str(listViewItem.text(0))
+            if listViewItem.isOn():
+                self.installOrRemoveButton.setEnabled(True)
+                self.selectedItems.append(text)
+            else:
                 self.selectedItems.remove(text)
                 if len(self.selectedItems):
                     self.installOrRemoveButton.setEnabled(True)
                 else:
                     self.installOrRemoveButton.setEnabled(False)
-
+        except:
+            pass
+        
     def updateListing(self, index=0):
         self.listView.clear()
+        self.selectedItems = []
 
         packages = QListViewItem(self.listView,None)
         packages.setOpen(True)
@@ -231,19 +233,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     item.setText(1,pisi.packagedb.get_package(pack).version)
             self.installOrRemoveButton.setText("Install Package(s)");
 
-        item = self.listView.firstChild()
-
+        # Select first item in the list
         try:
-            while not item.firstChild():
-                item = item.itemBelow()
-            self.listView.setSelected(item.firstChild(), True)
-        except AttributeError:
+            self.listView.setSelected(packages.firstChild(),True)
+        except:
             pass
 
     def installRemoveFinished(self):
         self.selectedItems = []
         self.installOrRemoveButton.setEnabled(True)
-        self.updateListing()
+        self.updateListing(self.selectionGroup.selectedId())
         
     def installRemove(self):
         index = mainwidget.selectionGroup.selectedId()
@@ -318,7 +317,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
-        self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateButtons)
+        self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
 
