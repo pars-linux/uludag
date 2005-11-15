@@ -25,8 +25,13 @@ class PisiUi(UI):
         event = QCustomEvent(QEvent.User+4)
         event.setData(msg)
         QThread.postEvent(self.receiver,event)
+
+    def ack(self, msg):
+        print msg
+        return True
             
     def confirm(self, msg):
+        print msg
         return True
 
     def display_progress(self, pd):
