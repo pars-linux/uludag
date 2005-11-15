@@ -252,7 +252,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
         print 'Total app count',self.totalAppCount
-        return
                 
         if index == 0: # Remove baby
             self.command.remove(self.selectedItems)
