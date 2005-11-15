@@ -209,6 +209,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for pack in list:
                 item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
+            self.installOrRemoveButton.setText("Remove Package(s)");
 
         elif index == 1:
             # Only upgrades
@@ -217,6 +218,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for pack in list:
                 item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
+            self.installOrRemoveButton.setText("Upgrade Package(s)");
         
         elif index == 2 :
             # Show only not-installed apps
@@ -227,6 +229,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 for pack in list:
                     item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                     item.setText(1,pisi.packagedb.get_package(pack).version)
+            self.installOrRemoveButton.setText("Remove Package(s)");
 
         item = self.listView.firstChild()
 
