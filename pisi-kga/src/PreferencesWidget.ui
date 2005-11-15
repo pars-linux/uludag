@@ -12,9 +12,6 @@
             <height>513</height>
         </rect>
     </property>
-    <property name="caption">
-        <string>PrefsDialog</string>
-    </property>
     <property name="sizeGripEnabled">
         <bool>true</bool>
     </property>
@@ -233,9 +230,6 @@ depo ekleyerek farklı paketlerin kurulumunu sağlayabilirsiniz.</string>
         </property>
         <property name="text">
             <string>Depolardan paket bilgilerini &amp;güncelle</string>
-        </property>
-        <property name="accel">
-            <string>Alt+G</string>
         </property>
     </widget>
     <widget class="KSeparator">
