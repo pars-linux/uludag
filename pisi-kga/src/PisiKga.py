@@ -176,7 +176,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         if listViewItem.isOn():
             self.installOrRemoveButton.setEnabled(True)
-            self.selectedItems.append(text)
+            self.selectedItems.append(str(text))
         else:
             if self.selectedItems.index(text):
                 self.selectedItems.remove(text)
