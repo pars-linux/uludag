@@ -145,9 +145,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
     def updateDetails(self,selection):
 
-        if selection.childCount():
-            return
-
         icon =  pisi.packagedb.get_package(selection.text(0)).icon
         if icon:
             self.iconLabel.setPixmap(loadIcon(icon))
@@ -195,6 +192,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         packages.setOpen(True)
         packages.setText(0,i18n("Packages"))
         packages.setPixmap(0,loadIcon('package_system', KIcon.Small))
+        packages.setSelectable(False)
 
         # Check if updateSystemButton should be enabled
         if len(pisi.api.list_upgradable()) > 0:
@@ -316,7 +314,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
-        self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
+        self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateButtons)
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
 
