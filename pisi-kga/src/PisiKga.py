@@ -239,6 +239,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             pass
 
     def installRemoveFinished(self):
+        self.selectedItems = []
         self.installOrRemoveButton.setEnabled(True)
         self.updateListing()
         
