@@ -43,7 +43,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
-version = "1.0_alpha5"
+version = "1.0_beta1"
 
 def AboutData():
     global version,description
@@ -188,7 +188,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         self.installOrRemoveButton.setEnabled(False)
 
-    def updateListing(self, index=-1):
+    def updateListing(self, index=0):
         self.listView.clear()
 
         packages = QListViewItem(self.listView,None)
@@ -312,6 +312,9 @@ class MainApplication(programbase):
         # load our icons and images.
         KGlobal.iconLoader().addAppDir("pisi_kga")
 
+        # About object
+        self.aboutus = KAboutApplication(self)
+
         mainwidget = MainApplicationWidget(self)
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
@@ -321,16 +324,15 @@ class MainApplication(programbase):
         mainwidget.searchLine.setListView(mainwidget.listView)
         mainwidget.searchLine.setSearchColumns([0])
 
+        self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
 
-        self.aboutus = KAboutApplication(self)
-
-        if not standalone:
-            mainwidget.updateListing(0)
+        mainwidget.selectionGroup.setButton(0);
+        mainwidget.updateListing(0);
 
     def __del__(self):
         pass
@@ -347,20 +349,10 @@ class MainApplication(programbase):
         self.__saveOptions()
 
     def __loadOptions(self):
-        global kapp
-        config = kapp.config()
-        config.setGroup("General")
-        size = config.readSizeEntry("Geometry")
-        mainwidget.updateListing(0)
-        if size.isEmpty()==False:
-            self.resize(size)
+        pass
 
     def __saveOptions(self):
-        global kapp
-        config = kapp.config()
-        config.setGroup("General")
-        config.writeEntry("Geometry", self.size())
-        config.sync()
+        pass
 
     # KControl virtual void methods
     def load(self):

@@ -64,74 +64,6 @@
             </property>
         </widget>
     </widget>
-    <widget class="QFrame">
-        <property name="name">
-            <cstring>frame11</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>360</x>
-                <y>70</y>
-                <width>330</width>
-                <height>122</height>
-            </rect>
-        </property>
-        <property name="paletteBackgroundColor">
-            <color>
-                <red>220</red>
-                <green>220</green>
-                <blue>220</blue>
-            </color>
-        </property>
-        <property name="frameShape">
-            <enum>GroupBoxPanel</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Raised</enum>
-        </property>
-        <grid>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QButtonGroup" row="1" column="0">
-                <property name="name">
-                    <cstring>buttonGroup</cstring>
-                </property>
-                <property name="title">
-                    <string></string>
-                </property>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QRadioButton" row="0" column="0">
-                        <property name="name">
-                            <cstring>showInstalledButton</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Show Installed Packages</string>
-                        </property>
-                    </widget>
-                    <widget class="QRadioButton" row="1" column="0">
-                        <property name="name">
-                            <cstring>showUpdatesButton</cstring>
-                        </property>
-                        <property name="text">
-                            <string>Sho&amp;w Updates</string>
-                        </property>
-                    </widget>
-                    <widget class="QRadioButton" row="2" column="0">
-                        <property name="name">
-                            <cstring>showInstallableButton</cstring>
-                        </property>
-                        <property name="text">
-                            <string>Show Pa&amp;ckages Ready to Install</string>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-        </grid>
-    </widget>
     <widget class="KListView">
         <column>
             <property name="text">
@@ -605,6 +537,74 @@
 Package Size:</string>
             </property>
         </widget>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame11</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>360</x>
+                <y>70</y>
+                <width>330</width>
+                <height>122</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>220</red>
+                <green>220</green>
+                <blue>220</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>GroupBoxPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QButtonGroup" row="1" column="0">
+                <property name="name">
+                    <cstring>selectionGroup</cstring>
+                </property>
+                <property name="title">
+                    <string></string>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QRadioButton" row="0" column="0">
+                        <property name="name">
+                            <cstring>showInstalledButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Show Installed Packages</string>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton" row="1" column="0">
+                        <property name="name">
+                            <cstring>showUpdatesButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Sho&amp;w Updates</string>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton" row="2" column="0">
+                        <property name="name">
+                            <cstring>showInstallableButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Show Pa&amp;ckages Ready to Install</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </grid>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
