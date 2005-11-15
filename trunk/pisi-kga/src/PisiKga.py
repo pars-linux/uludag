@@ -191,21 +191,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateListing(self, index=-1):
         self.listView.clear()
 
-        base = QListViewItem(self.listView,None)
-        base.setOpen(True)
-        base.setText(0,i18n("Temel"))
-        base.setPixmap(0,loadIcon('package_system', KIcon.Small))
-
-        component = QListViewItem(self.listView,None)
-        component.setOpen(True)
-        component.setText(0,i18n("Bileşen"))
-        component.setPixmap(0,loadIcon('package', KIcon.Small))
-
-        other = QListViewItem(self.listView,None)
-        other.setOpen(True)
-        other.setText(0,i18n("Diğerleri"))
-        other.setPixmap(0,loadIcon('package', KIcon.Small))
-                                
+        packages = QListViewItem(self.listView,None)
+        packages.setOpen(True)
+        packages.setText(0,i18n("Packages"))
+        packages.setPixmap(0,loadIcon('package_system', KIcon.Small))
 
         # Check if updateSystemButton should be enabled
         if len(pisi.api.list_upgradable()) > 0:
@@ -218,14 +207,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             list = pisi.packagedb.inst_packagedb.list_packages()
             list.sort()
             for pack in list:
-                if pisi.packagedb.get_package(pack).partOf == 'base':
-                    partof = base
-                elif pisi.packagedb.get_package(pack).partOf == 'component':
-                    partof = component
-                else:
-                    partof = other
-                    
-                item = QCheckListItem(partof,pack,QCheckListItem.CheckBox)
+                item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
 
         elif index == 1:
@@ -233,14 +215,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             list = pisi.api.list_upgradable()
             list.sort()
             for pack in list:
-                if pisi.packagedb.get_package(pack).partOf == 'base':
-                    partof = base
-                elif pisi.packagedb.get_package(pack).partOf == 'component':
-                    partof = component
-                else:
-                    partof = other
-
-                item = QCheckListItem(partof,pack,QCheckListItem.CheckBox)
+                item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
         
         elif index == 2 :
@@ -250,16 +225,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 list = pkg_db.list_packages()
                 list.sort()
                 for pack in list:
-                    if  not pisi.packagedb.inst_packagedb.has_package(pack):
-                        if pisi.packagedb.get_package(pack).partOf == 'base':
-                            partof = base
-                        elif pisi.packagedb.get_package(pack).partOf == 'component':
-                            partof = component
-                        else:
-                            partof = other
-
-                        item = QCheckListItem(partof,pack,QCheckListItem.CheckBox)
-                        item.setText(1,pisi.packagedb.get_package(pack).version)
+                    item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
+                    item.setText(1,pisi.packagedb.get_package(pack).version)
 
         item = self.listView.firstChild()
 
