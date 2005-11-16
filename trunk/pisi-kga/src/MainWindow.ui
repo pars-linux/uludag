@@ -60,7 +60,7 @@
                 </color>
             </property>
             <property name="text">
-                <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Program Ekle ve Kaldır&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
+                <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Add or Remove Software&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
             </property>
         </widget>
     </widget>
@@ -210,6 +210,12 @@
                 <property name="text">
                     <string>&amp;Update everything</string>
                 </property>
+                <property name="accel">
+                    <string>Alt+U</string>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>Click on this button if you want to update your system</string>
+                </property>
             </widget>
             <widget class="KPushButton">
                 <property name="name">
@@ -226,21 +232,14 @@
                 <property name="text">
                     <string>Repository setti&amp;ngs</string>
                 </property>
+                <property name="accel">
+                    <string>Alt+N</string>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
+                </property>
             </widget>
         </hbox>
-    </widget>
-    <widget class="KSeparator">
-        <property name="name">
-            <cstring>kSeparator1_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>20</x>
-                <y>530</y>
-                <width>670</width>
-                <height>20</height>
-            </rect>
-        </property>
     </widget>
     <widget class="QLayoutWidget">
         <property name="name">
@@ -328,8 +327,14 @@
                         <property name="text">
                             <string>&amp;Install Package(s)</string>
                         </property>
+                        <property name="accel">
+                            <string>Alt+I</string>
+                        </property>
                         <property name="autoDefault">
                             <bool>true</bool>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>You can:&lt;ul&gt;&lt;li&gt;Install a package,&lt;li&gt;Update a package,&lt;li&gt;Delete a package&lt;/ul&gt;from here</string>
                         </property>
                     </widget>
                     <spacer>
@@ -389,35 +394,6 @@
         <property name="frameShadow">
             <enum>Raised</enum>
         </property>
-        <widget class="KActiveLabel">
-            <property name="name">
-                <cstring>progNameLabel</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>14</y>
-                    <width>260</width>
-                    <height>30</height>
-                </rect>
-            </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>220</red>
-                    <green>220</green>
-                    <blue>220</blue>
-                </color>
-            </property>
-            <property name="font">
-                <font>
-                    <pointsize>12</pointsize>
-                    <bold>1</bold>
-                </font>
-            </property>
-            <property name="text">
-                <string>Package name</string>
-            </property>
-        </widget>
         <widget class="KSeparator">
             <property name="name">
                 <cstring>kSeparator3_2</cstring>
@@ -537,6 +513,38 @@
 Package Size:</string>
             </property>
         </widget>
+        <widget class="KActiveLabel">
+            <property name="name">
+                <cstring>progNameLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>14</y>
+                    <width>260</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>220</red>
+                    <green>220</green>
+                    <blue>220</blue>
+                </color>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>12</pointsize>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>Package name</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>The name of the package</string>
+            </property>
+        </widget>
     </widget>
     <widget class="QFrame">
         <property name="name">
@@ -585,6 +593,12 @@ Package Size:</string>
                         <property name="text">
                             <string>&amp;Show Installed Packages</string>
                         </property>
+                        <property name="accel">
+                            <string>Alt+S</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Only show installed packages in your compter</string>
+                        </property>
                     </widget>
                     <widget class="QRadioButton" row="1" column="0">
                         <property name="name">
@@ -592,6 +606,12 @@ Package Size:</string>
                         </property>
                         <property name="text">
                             <string>Sho&amp;w Updates</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+W</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Only show packages that can be updated</string>
                         </property>
                     </widget>
                     <widget class="QRadioButton" row="2" column="0">
@@ -601,10 +621,29 @@ Package Size:</string>
                         <property name="text">
                             <string>Show Pa&amp;ckages Ready to Install</string>
                         </property>
+                        <property name="accel">
+                            <string>Alt+C</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Only show packages which are going to be installed</string>
+                        </property>
                     </widget>
                 </grid>
             </widget>
         </grid>
+    </widget>
+    <widget class="KSeparator">
+        <property name="name">
+            <cstring>kSeparator1_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>530</y>
+                <width>670</width>
+                <height>20</height>
+            </rect>
+        </property>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
@@ -613,12 +652,12 @@ Package Size:</string>
     <includehint>klistviewsearchline.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
-    <includehint>kseparator.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
-    <includehint>kactivelabel.h</includehint>
     <includehint>kseparator.h</includehint>
     <includehint>kactivelabel.h</includehint>
+    <includehint>kactivelabel.h</includehint>
+    <includehint>kseparator.h</includehint>
 </includehints>
 </UI>
