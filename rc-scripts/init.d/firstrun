@@ -4,25 +4,15 @@
 # Licensed under the GNU General Public License, version 2.
 # See the file http://www.gnu.org/copyleft/gpl.txt.
 
+depend() {
+    after comar
+}
+
 start() {
         ebegin "First run service starting, please be patient..."
 
-        # 05gcc fix
-        echo "PATH=\"/usr/i686-pc-linux-gnu/gcc-bin/3.4.4\"" > /etc/env.d/05gcc
-        echo "ROOTPATH=\"/usr/i686-pc-linux-gnu/gcc-bin/3.4.4\"" >> /etc/env.d/05gcc
-        echo "MANPATH=\"/usr/share/gcc-data/i686-pc-linux-gnu/3.4.4/man\"" >> /etc/env.d/05gcc
-        echo "INFOPATH=\"/usr/share/gcc-data/i686-pc-linux-gnu/3.4.4/info\"" >> /etc/env.d/05gcc
-        echo "LDPATH=\"/usr/lib/gcc/i686-pc-linux-gnu/3.4.4\"" >> /etc/env.d/05gcc
-
-        # ld.so.conf fix
-        echo "/usr/lib" > /etc/ld.so.conf
-        echo "/usr/lib/opengl/xorg-x11/lib" >> /etc/ld.so.conf
-        echo "/usr/qt/3/lib"  >> /etc/ld.so.conf
-        echo "/usr/kde/3.4/lib"  >> /etc/ld.so.conf
-        echo "/usr/lib/gcc/i686-pc-linux-gnu/3.4.4/" >> /etc/ld.so.conf
-
-        ldconfig
         /usr/sbin/update-environ.py
+        ldconfig
 
         # fix for some zip problems (see bug #622)
         chmod 1777 /tmp
@@ -30,6 +20,8 @@ start() {
         chmod 700 /root/
         
         # Run postinstall scripts
+        export LC_ALL=tr_TR.UTF-8
+        export LANG=tr_TR.UTF-8
         pisi configure-pending
 
         # configure xorg
@@ -43,7 +35,7 @@ start() {
         rc-update add hald default 
         rc-update add xdm default
 
-    # Calculate deptree
+        # Calculate deptree
         depscan.sh
         eend $?
 }
