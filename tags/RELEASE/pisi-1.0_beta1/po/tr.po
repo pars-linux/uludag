@@ -20,7 +20,7 @@ msgstr ""
 
 #: pisi-cli:31
 msgid "Keyboard Interrupt: Exiting..."
-msgstr "Klavye kesmesi: Çıkıyor... "
+msgstr "Klavyeden kesinti yapıldı: Program durduruluyor... "
 
 #: pisi-cli:34
 msgid "Fatal Error. Program Terminated."
@@ -46,18 +46,18 @@ msgstr "Genel yardım için lütfen 'pisi help' komutunu kullanınız. "
 
 #: pisi-cli:52
 msgid "Traceback:"
-msgstr "Geri-iz: "
+msgstr "Geriye yönelik izleme:"
 
 #: pisi-cli:55
 msgid "Use --debug to see a traceback."
-msgstr "Bir geri iz (traceback) görmek için lütfen --debug seçeneğini kullanın. "
+msgstr "Bir geri izleme (traceback) görmek için lütfen --debug seçeneğini kullanın. "
 
 #: pisi/actionsapi/autotools.py:36
 msgid ""
 "Please attach the config.log to your bug report:\n"
 "%s/config.log"
 msgstr ""
-"Lütfen hata raporunuza config.log'u iliştiriniz:\n"
+"Lütfen hata raporunuza aşağıdaki config.log dosyasını iliştiriniz:\n"
 "%s/config.log"
 
 # pisi/actionsapi/autotools.py:75 :85
@@ -65,7 +65,7 @@ msgstr ""
 #: pisi/actionsapi/kde.py:66 pisi/actionsapi/perlmodules.py:53
 #: pisi/actionsapi/perlmodules.py:56
 msgid "Configure failed."
-msgstr "Yapılandırma başarısızlığa uğradı."
+msgstr "Yapılandırma işlemi tamamlanamadı."
 
 # pisi/actionsapi/autotools.py:77 :87
 #: pisi/actionsapi/autotools.py:77 pisi/actionsapi/autotools.py:87
@@ -77,33 +77,33 @@ msgstr "Yapılandırma betiği bulunamadı."
 #: pisi/actionsapi/perlmodules.py:62 pisi/actionsapi/perlmodules.py:71
 #: pisi/actionsapi/pythonmodules.py:50 pisi/actionsapi/scons.py:40
 msgid "Make failed."
-msgstr "İnşa başarısızlığa uğradı."
+msgstr "Derleme işlemi tamamlanamadı."
 
 # pisi/actionsapi/autotools.py:119 :127
 #: pisi/actionsapi/autotools.py:119 pisi/actionsapi/autotools.py:127
 #: pisi/actionsapi/kde.py:80 pisi/actionsapi/pythonmodules.py:55
 #: pisi/actionsapi/scons.py:44
 msgid "Install failed."
-msgstr "Yerleştirme başarısızlığa uğgradı."
+msgstr "Sisteme kurulum işlemi tamamlanamadı."
 
 # pisi/actionsapi/autotools.py:121 :129
 #: pisi/actionsapi/autotools.py:121 pisi/actionsapi/autotools.py:129
 #: pisi/actionsapi/kde.py:82
 msgid "No Makefile found."
-msgstr "Makefile bulunamadı."
+msgstr "Makefile dosyası bulunamadı."
 
 #: pisi/actionsapi/autotools.py:134
 msgid "Running aclocal failed."
-msgstr "aclocal çalıştırılamadı."
+msgstr "aclocal programı çalıştırılamadı."
 
 # pisi/actionsapi/autotools.py:139 :144
 #: pisi/actionsapi/autotools.py:139 pisi/actionsapi/autotools.py:144
 msgid "Running autoconf failed."
-msgstr "autoconf çalıştırılamadı."
+msgstr "autoconf programı çalıştırılamadı."
 
 #: pisi/actionsapi/autotools.py:149
 msgid "Running automake failed."
-msgstr "automake çalıştırılamadı."
+msgstr "automake programı çalıştırılamadı."
 
 #: pisi/actionsapi/autotools.py:154
 msgid "Running autoheader failed."
@@ -111,11 +111,11 @@ msgstr "autoheader çalıştırılamadı."
 
 #: pisi/actionsapi/get.py:159
 msgid "Util %s cannot be found"
-msgstr "Araç %s bulunamıyor"
+msgstr "%s aracı bulunamıyor"
 
 #: pisi/actionsapi/get.py:161
 msgid "Warning: %s does not exist, using plain name %s"
-msgstr "Uyarı: %s yok, düz ad %s kullanılıyor"
+msgstr "Uyarı: %s yok, bunun yerine %s kullanılıyor"
 
 #: pisi/actionsapi/kde.py:35
 msgid ""
@@ -124,12 +124,12 @@ msgid ""
 "%s/config.log"
 msgstr ""
 "\n"
-"Lütfen hata raporunuza config.log'u iliştiriniz:\n"
+"Lütfen hata raporunuza aşağıdaki config.log dosyasını iliştiriniz:\n"
 "%s/config.log"
 
 #: pisi/actionsapi/libtools.py:39
 msgid "Running ldconfig failed."
-msgstr "ldconfig çalıştırılamadı"
+msgstr "ldconfig programı çalıştırılamadı"
 
 #: pisi/actionsapi/libtools.py:50
 msgid "GNU Config Update Finished."
@@ -137,25 +137,25 @@ msgstr "GNU config güncellemesi bitti"
 
 #: pisi/actionsapi/libtools.py:54
 msgid "Running libtoolize failed."
-msgstr "libtoolize çalıştırılamadı"
+msgstr "libtoolize çalıştırılamadı."
 
 # pisi/actionsapi/autotools.py:119 :127
 #: pisi/actionsapi/perlmodules.py:65
 msgid "perl build failed."
-msgstr "perl build başarısızlığa uğgradı."
+msgstr "perl build tamamlanamadı."
 
 # pisi/actionsapi/autotools.py:119 :127
 #: pisi/actionsapi/perlmodules.py:74
 msgid "perl install failed."
-msgstr "perl install başarısızlığa uğgradı."
+msgstr "perl install tamamlanamadı."
 
 #: pisi/actionsapi/pisitools.py:132
 msgid "ActionsAPI [doman]: Wrong man page file: %s"
-msgstr "ActionsAPI [doman]: Yanlış man sayfası dosyası: %s"
+msgstr "ActionsAPI [doman]: Yanlış kılavuz sayfası dosyası: %s"
 
 #: pisi/actionsapi/pisitools.py:170
 msgid "ActionsAPI [rename]: No such file or directory: %s"
-msgstr "ActionsAPI [rename]: Böyle bir dosya ya da dizin bulunamadıy: %s"
+msgstr "ActionsAPI [rename]: Böyle bir dosya ya da dizin bulunamadı: %s"
 
 #: pisi/actionsapi/pisitools.py:187
 msgid "File does not exist or permission denied: %s"
@@ -170,7 +170,7 @@ msgstr "ActionsAPI [dosym]: %s dosyası bulunamadı."
 #: pisi/actionsapi/pisitoolsfunctions.py:60
 #: pisi/actionsapi/pisitoolsfunctions.py:73
 msgid "Insufficient arguments."
-msgstr "Yetersiz argümanlar"
+msgstr "Yetersiz sayıda argüman."
 
 #: pisi/actionsapi/pythonmodules.py:67
 msgid "Running %s failed."
@@ -254,19 +254,19 @@ msgstr "%s çalıştırılıyor"
 
 #: pisi/api.py:194 pisi/comariface.py:33
 msgid "COMAR: comard not fully installed"
-msgstr "COMAR: comard tam olarak yerleştirilmedi"
+msgstr "COMAR: comard tam olarak kurulamadı"
 
 #: pisi/api.py:206
 msgid "File %s not found"
-msgstr "Dosya %s bulunamadı."
+msgstr "'%s' dosyası bulunamadı."
 
 #: pisi/api.py:228
 msgid "Package %s not found"
-msgstr "Paket %s bulunamadı."
+msgstr "'%s' paketi bulunamadı."
 
 #: pisi/api.py:235
 msgid "* Building index of PISI files under %s"
-msgstr "* %s altındaki PISI dosyalarının bir endeksi yapılıyor."
+msgstr "* %s dizini altındaki PISI dosyalarının indeksi yaratılıyor."
 
 #: pisi/api.py:238
 msgid "* Index file written"
@@ -274,19 +274,19 @@ msgstr "* İndeks dosyası yazıldı."
 
 #: pisi/api.py:243
 msgid "Repo %s added to system."
-msgstr "Depo %s sisteme eklendi."
+msgstr "'%s' deposu sisteme eklendi."
 
 #: pisi/api.py:248
 msgid "Repo %s removed from system."
-msgstr "Depo %s sistemden çıkarıldı."
+msgstr "'%s' deposu sistemden çıkarıldı."
 
 #: pisi/api.py:250
 msgid "Repository %s does not exist. Cannot remove."
-msgstr "Depo %s yok. Kaldırılamıyor."
+msgstr "'%s' deposu yok. Kaldırılamıyor."
 
 #: pisi/api.py:255
 msgid "* Updating repository: %s"
-msgstr "Depo %s güncelleniyor."
+msgstr "'%s' deposu güncelleniyor."
 
 #: pisi/api.py:259
 msgid ""
@@ -294,19 +294,19 @@ msgid ""
 "* Package database updated."
 msgstr ""
 "\n"
-"* Paket veritabani güncellendi."
+"* Paket veritabanı güncellendi."
 
 #: pisi/archive.py:83
 msgid "Archive type not recognized"
-msgstr "Arşiv tipi tanınmadı"
+msgstr "Arşiv tipi bilinmiyor"
 
 #: pisi/atomicoperations.py:77
 msgid "Installing %s, version %s, release %s, build %s"
-msgstr "%s paketi, versiyon %s, sürüm %s, inşa %s yerleştiriliyor."
+msgstr "%s paketi, versiyon %s, sürüm %s, inşa %s kuruluyor."
 
 #: pisi/atomicoperations.py:110
 msgid "Package conflicts %s"
-msgstr "Paket %s ile çatışmakta."
+msgstr "'%s' paketi ile çakışıyor."
 
 #: pisi/atomicoperations.py:115
 msgid "Dependencies for %s not satisfied"
@@ -314,15 +314,15 @@ msgstr "%s için bağımlılıklar sağlanmadı."
 
 #: pisi/atomicoperations.py:117
 msgid "Package not installable"
-msgstr "Paket yerleştirilebilir durumda değil."
+msgstr "Paket sisteme kurulabilir durumda değil."
 
 #: pisi/atomicoperations.py:148
 msgid "Re-install same version package?"
-msgstr "Aynı versiyona sahip paketi yeniden yerleştireyim mi?"
+msgstr "Aynı versiyona sahip paket yeniden sisteme kurulsun mu?"
 
 #: pisi/atomicoperations.py:149
 msgid "Package re-install declined"
-msgstr "Paket yeniden yerleştirmeye izin verilmedi."
+msgstr "Paketin sisteme yeniden kurulmasına izin verilmedi."
 
 #: pisi/atomicoperations.py:155
 msgid "Upgrading to new upstream version"
@@ -370,7 +370,7 @@ msgstr "%s saklanıyor"
 
 #: pisi/atomicoperations.py:257
 msgid "Regenerating /etc/ld.so.cache..."
-msgstr "/etc/ld.so.cache yeniden yaratılıyor..."
+msgstr "/etc/ld.so.cache yeniden oluşturuluyor..."
 
 #: pisi/atomicoperations.py:260
 msgid "Bypassing ldconfig"
@@ -378,15 +378,15 @@ msgstr "ldconfig esgeçiliyor"
 
 #: pisi/atomicoperations.py:294
 msgid "Package URI: %s"
-msgstr "Paket URI'ı: %s"
+msgstr "Paket adresi: %s"
 
 #: pisi/atomicoperations.py:299
 msgid "Package %s not found in any active repository."
-msgstr "Paket %s hiç bir etkin repo'da bulunamadı."
+msgstr "'%s' isimli paket hiç bir etkin paket deposunda bulunamadı."
 
 #: pisi/atomicoperations.py:314
 msgid "Removing package %s"
-msgstr "%s paketi kaldırılıyor."
+msgstr "'%s' paketi kaldırılıyor."
 
 #: pisi/atomicoperations.py:316
 msgid "Trying to remove nonexistent package "
@@ -398,7 +398,7 @@ msgstr "Dosya ya da bağ olmayan '%s' kaldırılmıyor."
 
 #: pisi/atomicoperations.py:433
 msgid "Metadata XML '%s' cannot be found"
-msgstr "Metadata XML %s bulunamıyor"
+msgstr "%s metadata XML dosyası bulunamıyor"
 
 #: pisi/atomicoperations.py:441
 msgid "MetaData format wrong (%s)"
@@ -422,7 +422,7 @@ msgstr "Tamam."
 
 #: pisi/build.py:80
 msgid "Path %s belongs in multiple packages"
-msgstr "Yol %s birden çok pakete ait"
+msgstr "'%s' yolu birden çok pakete ait"
 
 #: pisi/build.py:146
 msgid "Building PISI source package: %s"
@@ -438,7 +438,7 @@ msgstr "IceCream bulundu. Lütfen artalan sürecinizin çalıştığından emin 
 
 #: pisi/build.py:192
 msgid "CCache detected..."
-msgstr "CCache bulundu..."
+msgstr "C derleyici önbellek sistemi (CCache) bulundu..."
 
 #: pisi/build.py:196
 msgid "PartOf tag not defined, looking for component"
@@ -470,7 +470,7 @@ msgstr " açıldı (%s)"
 
 #: pisi/build.py:227
 msgid "Setting up source..."
-msgstr "Kaynak kuruluyor"
+msgstr "Kaynak kuruluyor..."
 
 #: pisi/build.py:232
 msgid "Building source..."
@@ -478,7 +478,7 @@ msgstr "Kaynak inşa ediliyor..."
 
 #: pisi/build.py:237
 msgid "Installing..."
-msgstr "Yerleştiriliyor..."
+msgstr "Kuruluyor..."
 
 #: pisi/build.py:256
 msgid "Unable to read Action Script (%s): %s"
@@ -597,7 +597,7 @@ msgstr "(evet/hayır)"
 
 #: pisi/cli/__init__.py:129
 msgid "Installed %s"
-msgstr "%s yerleştirildi "
+msgstr "%s kuruldu"
 
 #: pisi/cli/__init__.py:131
 msgid "Removed %s"
@@ -1138,7 +1138,7 @@ msgstr "Tip: %s, Hash: %s"
 
 #: pisi/cli/commands.py:985
 msgid "Path '%s' does not belong to an installed package"
-msgstr "Yol '%s' yerleştirilmiş bir pakete ait değil"
+msgstr "'%s' yolu kurulmuş bir pakete ait değil"
 
 #: pisi/cli/commands.py:997
 msgid "Searching for %s"
@@ -1261,7 +1261,7 @@ msgstr "COMAR kayıt hatası!"
 
 #: pisi/comariface.py:55
 msgid "Running post-install script for %s"
-msgstr "%s için yerleştirme-sonrası betiği çalıştırılıyor."
+msgstr "%s için kurulum-sonrası betiği çalıştırılıyor."
 
 #: pisi/comariface.py:64
 msgid "COMAR.call_package(System.Package.postInstall, %s) failed!: %s"
@@ -1374,11 +1374,11 @@ msgstr "SpecFile %s bozuk"
 
 #: pisi/installdb.py:60
 msgid "installed"
-msgstr "yerleşik"
+msgstr "kurulu"
 
 #: pisi/installdb.py:60
 msgid "installed-pending"
-msgstr "yerleşik-beklemede"
+msgstr "kurulu-beklemede"
 
 #: pisi/installdb.py:61
 msgid "purged"
@@ -1398,11 +1398,11 @@ msgstr ""
 
 #: pisi/installdb.py:69
 msgid "Distribution: %s, Install Time: %s\n"
-msgstr "Dağıtım: %s, Yerleştime Zamanı: %s\n"
+msgstr "Dağıtım: %s, Kurulum Zamanı: %s\n"
 
 #: pisi/installdb.py:146
 msgid "Already installed"
-msgstr "Halihazırda yerleştirilmiş."
+msgstr "Halihazırda kurulmuş."
 
 #: pisi/lockeddbshelve.py:42
 msgid "Cannot attain read or write access to database %s"
@@ -1424,7 +1424,7 @@ msgstr "İnşa: %s, Dağıtım: %s, Dağıtım Sürümü: %s\n"
 
 #: pisi/metadata.py:60
 msgid "Architecture: %s, Installed Size: %s\n"
-msgstr "Mimari: %s, Yerleşik boyut: %s\n"
+msgstr "Mimari: %s, Kurulu Boyut: %s\n"
 
 #: pisi/operations.py:64
 msgid "Mixing file names and package names not supported yet."
@@ -1436,11 +1436,11 @@ msgid ""
 "in the respective order to satisfy extra dependencies:\n"
 msgstr ""
 "Bağımlılıkları sağlamak için bu minimal paket listesi\n"
-" verilen sırada yerleştirilecek:\n"
+" verilen sırada kurulacak:\n"
 
 #: pisi/operations.py:109 pisi/operations.py:238
 msgid "Do you want to continue?"
-msgstr "Devan etmek istiyor musunuz?"
+msgstr "Devam etmek istiyor musunuz?"
 
 #: pisi/operations.py:110
 msgid "External dependencies not satisfied"
@@ -1449,11 +1449,11 @@ msgstr "Dış bağımlılıklar sağlanmadı."
 # pisi/api.py:168 :215
 #: pisi/operations.py:122 pisi/operations.py:196
 msgid "No packages to install."
-msgstr "Yerleştirilecek paket yok."
+msgstr "Kurulacak paket yok."
 
 #: pisi/operations.py:149
 msgid "Installation order: "
-msgstr "Yerleştirme sırası: "
+msgstr "Kurulma sırası: "
 
 #: pisi/operations.py:171
 msgid "Selected packages %s and %s are in conflict."
@@ -1473,7 +1473,7 @@ msgid ""
 "in the respective order to satisfy dependencies:\n"
 msgstr ""
 "Bağımlılıkları sağlamak için bu minimal paket listesi verilen sırada\n"
-"yerleştirilecek:\n"
+":\n"
 
 #: pisi/operations.py:261
 msgid "Warning: package *name* ends with '.pisi'"
@@ -1481,7 +1481,7 @@ msgstr "Uyarı: paket *adı* '.pisi' ile bitiyor."
 
 #: pisi/operations.py:263
 msgid "Package %s is not installed."
-msgstr "Paket %s yerleştirilmemis."
+msgstr "'%s' paketi kurulu değil."
 
 #: pisi/operations.py:281
 msgid "Package %s is already at its latest version %s, release %s, build %s."
