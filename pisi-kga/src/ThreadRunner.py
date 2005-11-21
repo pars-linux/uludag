@@ -14,6 +14,7 @@
 
 from qt import *
 import pisi.api
+import pisi.fetcher
 
 class MyThread(QThread):
     def __init__(self, widget):
@@ -45,24 +46,29 @@ class MyThread(QThread):
         self.start()
             
     def run(self):
-        if self.installing:
-            pisi.api.install(self.appList)
-            self.installing = False
-            
-        elif self.upgrading:
-            pisi.api.upgrade(appList)
-            self.upgrading = False
-            
-        elif self.removing:
-            pisi.api.remove(self.appList)
-            self.removing = False
-            
-        elif self.updatingRepo:
-            event = QCustomEvent(QEvent.User+2)
-            event.setData(self.repo)
-            QThread.postEvent(self.receiver,event)
-            pisi.api.update_repo(self.repo)
+        try:
+            if self.installing:
+                pisi.api.install(self.appList)
+                self.installing = False
+                
+            elif self.upgrading:
+                pisi.api.upgrade(appList)
+                self.upgrading = False
+                
+            elif self.removing:
+                pisi.api.remove(self.appList)
+                self.removing = False
+                
+            elif self.updatingRepo:
+                event = QCustomEvent(QEvent.User+2)
+                event.setData(self.repo)
+                QThread.postEvent(self.receiver,event)
+                pisi.api.update_repo(self.repo)
 
+        except pisi.fetcher.FetchError, e:
+            event = QCustomEvent(QEvent.User+4)
+            event.setData(str(e))
+            QThread.postEvent(self.receiver,event)
         
         # Finished so send back finished event
         event = QCustomEvent(QEvent.User+1)
