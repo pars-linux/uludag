@@ -65,9 +65,9 @@ class MyThread(QThread):
                 QThread.postEvent(self.receiver,event)
                 pisi.api.update_repo(self.repo)
 
-        except pisi.fetcher.FetchError, e:
+        except Exception,e:
             event = QCustomEvent(QEvent.User+4)
-            event.setData(str(e))
+            event.setData(unicode(e))
             QThread.postEvent(self.receiver,event)
         
         # Finished so send back finished event
