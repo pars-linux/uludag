@@ -12,9 +12,6 @@
             <height>325</height>
         </rect>
     </property>
-    <property name="caption">
-        <string>WelcomeDlg</string>
-    </property>
     <widget class="QLayoutWidget">
         <property name="name">
             <cstring>layout6</cstring>

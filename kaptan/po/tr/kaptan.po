@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-05 23:02+0200\n"
+"POT-Creation-Date: 2005-11-21 09:56+0200\n"
 "PO-Revision-Date: 2005-03-05 23:03+0200\n"
 "Last-Translator: Zerrin Cakmakkaya <zerrin@uludag.org.tr>\n"
 "Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
@@ -15,32 +15,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 
-#: goodbyedlg.cpp:62
+#: goodbyedlg.cpp:63
 msgid "GoodbyeDlg"
 msgstr "GoodbyeDlg"
-
-#: goodbyedlg.cpp:63
-msgid "You have finished.... Now you can start using Pardus Linux"
-msgstr ""
-"Bitirdiniz.... Şimdi Pardus Linux ile çalışmaya başlayabilirsiniz"
 
 #: goodbyedlg.cpp:64
 msgid "pix_goodbye"
 msgstr "pix_goodbye"
 
-#: kaptan.cpp:34
+#: goodbyedlg.cpp:65
+msgid ""
+"<center>\n"
+"You have finished!  Now you can start using Pardus Linux<br>\n"
+"<a href=\"#tasma\">If you want to change more settings click here to start "
+"<b>Tasma</b></a>\n"
+"</center>"
+msgstr ""
+"<center>\n"
+"Başarıyla bitirdiniz! Şimdi Pardus'unuzu kullanmaya başlayabilirsiniz<br>\n"
+"<a href=\"#tasma\">Eğer daha fazla ayarı değiştirmek isterseniz <b>Tasma</b>'yı başlatmak için buraya tıklayın</a>\n"
+"</center>"
+
+#: kaptan.cpp:40
 msgid "Welcome"
 msgstr "Hoş Geldiniz"
 
-#: kaptan.cpp:38
+#: kaptan.cpp:44
 msgid "Mouse Setup"
 msgstr "Fare Ayarı"
 
-#: kaptan.cpp:42
+#: kaptan.cpp:48
 msgid "Wallpaper Setup"
 msgstr "Duvar Kağıdı Ayarı"
 
-#: kaptan.cpp:46
+#: kaptan.cpp:52
 msgid "Congratulations"
 msgstr "Tebrikler"
 
@@ -154,5 +162,3 @@ msgstr ""
 "edecektir. Bu uygulama aynı zamanda daha iyi bir masaüstü için bazı "
 "varsayılan yapılandırmayı da ayarlar :)."
 
-#~ msgid "Welcome to Pardus"
-#~ msgstr "Pardus'a Hoş Geldiniz"

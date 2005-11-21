@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-05 23:02+0200\n"
+"POT-Creation-Date: 2005-11-21 10:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,31 +15,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: goodbyedlg.cpp:62
-msgid "GoodbyeDlg"
-msgstr ""
-
 #: goodbyedlg.cpp:63
-msgid "You have finished.... Now you can start using Pardus Linux"
+msgid "GoodbyeDlg"
 msgstr ""
 
 #: goodbyedlg.cpp:64
 msgid "pix_goodbye"
 msgstr ""
 
-#: kaptan.cpp:34
+#: goodbyedlg.cpp:65
+msgid ""
+"<center>\n"
+"You have finished!  Now you can start using Pardus Linux<br>\n"
+"<a href=\"#tasma\">If you want to change more setting click here to start "
+"<b>Tasma</b></a>\n"
+"</center>"
+msgstr ""
+
+#: kaptan.cpp:40
 msgid "Welcome"
 msgstr ""
 
-#: kaptan.cpp:38
+#: kaptan.cpp:44
 msgid "Mouse Setup"
 msgstr ""
 
-#: kaptan.cpp:42
+#: kaptan.cpp:48
 msgid "Wallpaper Setup"
 msgstr ""
 
-#: kaptan.cpp:46
+#: kaptan.cpp:52
 msgid "Congratulations"
 msgstr ""
 
