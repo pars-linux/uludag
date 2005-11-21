@@ -113,8 +113,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
         self.errorMessage = None
 
-        event = QCustomEvent(QEvent.User+3)
-        kapp.postEvent(self.pref,event)
+        if(self.pref):
+            event = QCustomEvent(QEvent.User+3)
+            kapp.postEvent(self.pref,event)
 
     def resetProgressBar(self):
         self.savedProgress = 0
