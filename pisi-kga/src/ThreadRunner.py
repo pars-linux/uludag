@@ -14,7 +14,6 @@
 
 from qt import *
 import pisi.api
-import pisi.fetcher
 
 class MyThread(QThread):
     def __init__(self, widget):
