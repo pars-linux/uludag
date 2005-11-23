@@ -34,15 +34,11 @@ def index():
   if len(versions):
     q = """SELECT
              proposals.pid AS _pid,
-             proposals_versions.title,
-             Count(*)
+             proposals_versions.title
            FROM proposals
              INNER JOIN proposals_versions
                ON proposals.pid=proposals_versions.pid
-             INNER proposals_comments
-               ON proposals_comments.pid=proposals.pid
            WHERE proposals_versions.vid IN (%s)
-           GROUP BY proposals.pid, proposals_versions.title
            ORDER BY proposals.pid ASC
            LIMIT %d, %d
         """ % (','.join(versions), p['pag_now'] * site_config['pag_perpage'], site_config['pag_perpage'])
@@ -50,8 +46,7 @@ def index():
     for i in list:
       l = {
            'pid': i[0],
-           'title': i[1],
-           'total': i[2]
+           'title': i[1]
            }
       p['proposals'].append(l)
   p.template = 'admin/comments.tpl'

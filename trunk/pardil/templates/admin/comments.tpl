@@ -5,7 +5,6 @@
     <tr>
       <th width="25">No</th>
       <th>Başlık</th>
-      <th width="40">Yorum</th>
     </tr>
     #for $c, $i in enumerate($proposals)
       #if $c % 2
@@ -15,7 +14,6 @@
       #end if
       <td><a href="admin_comments.py?action=comments&amp;pid=$i.pid&amp;start=$pag_now">$i.pid</a></td>
       <td><a href="admin_comments.py?action=comments&amp;pid=$i.pid&amp;start=$pag_now">$i.title</a></td>
-      <td>$i.total</td>
     </tr>
     #end for
   </table>
