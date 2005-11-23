@@ -16,9 +16,9 @@ Final
   + Öneriye yorum ekleme
   / Arşiv ve arama sayfası
   - Önerilere resim/yama iliştirme
-  / Bekleyen öneriler
-    / Bekleyen önerileri izleyebilme
-    / Önerileri oylama
+  ? Bekleyen öneriler
+    - Bekleyen önerileri izleyebilme
+    - Önerileri oylama
     - Öneriyi gönderen kişinin, öneri içeriğini değiştirebilmesine imkan verme
   ? Öneri takibi
   + Öneri ekleme sayfasına önizleme desteği
