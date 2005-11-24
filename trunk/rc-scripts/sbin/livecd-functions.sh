@@ -178,7 +178,8 @@ livecd_fix_inittab() {
 	else
 		if [ "${LIVECD_CONSOLE}" = "tty0" -o "${LIVECD_CONSOLE}" = "" ]
 		then
-			for x in 1 2 3 4 5 6
+			#for x in 1 2 3 4 5 6
+			for x in 2 3 4 5 6
 			do
 				echo "c${x}:12345:respawn:/sbin/agetty -nl /bin/bashlogin 38400 tty${x} linux" >> /etc/inittab
 			done	
