@@ -11,5 +11,4 @@ domainname
 hostname
 localmount
 net.lo
-serial
 sysklogd
