@@ -178,14 +178,18 @@ then
 
 	if [ "$(get_KV)" -ge "$(KV_to_int '2.6.0')" ] ; then
 		if [[ -d /sys ]] ; then
-			ebegin "Mounting sysfs at /sys"
-			if [[ ${RC_USE_FSTAB} = "yes" ]] ; then
-				mntcmd=$(get_mount_fstab /sys)
+			if [[ -d /sys/devices ]]; then
+				ewarn "/sys is already mounted"
 			else
-				unset mntcmd
+				ebegin "Mounting sysfs at /sys"
+				if [[ ${RC_USE_FSTAB} = "yes" ]] ; then
+					mntcmd=$(get_mount_fstab /sys)
+				else
+					unset mntcmd
+				fi
+				try mount -n ${mntcmd:--t sysfs sysfs /sys}
+				eend $?
 			fi
-			try mount -n ${mntcmd:--t sysfs sysfs /sys}
-			eend $?
 		else
 			ewarn "No /sys to mount sysfs needed in 2.6 and later kernels!"
 		fi
