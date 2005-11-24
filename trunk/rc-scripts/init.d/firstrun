@@ -17,7 +17,7 @@ start() {
         # Run postinstall scripts
         export LC_ALL=tr_TR.UTF-8
         export LANG=tr_TR.UTF-8
-        pisi configure-pending
+        pisi configure-pending 2>&1 &> /root/pisi.log
 
         # configure xorg
         /sbin/xorg.py
