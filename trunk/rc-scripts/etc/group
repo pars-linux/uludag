@@ -45,6 +45,6 @@ slocate::245:
 utmp:x:406:
 messagebus:x:441:
 haldaemon:x:442:haldaemon
-plugdev:x:443:haldaemon
+plugdev:x:443:
 nogroup::65533:
 nobody::65534:
