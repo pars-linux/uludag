@@ -91,7 +91,7 @@ start() {
 	if [ -z "${CDBOOT}" ] && touch /etc/modules.conf 2> /dev/null
 	then
 		ebegin "Calculating module dependencies"
-        if grep -qs automatically /etc/modules.conf ;
+        if grep -qs automatically /etc/modules.conf ; then
 		    /sbin/modules-update --force &>/dev/null
         else
 		    /sbin/modules-update &>/dev/null
