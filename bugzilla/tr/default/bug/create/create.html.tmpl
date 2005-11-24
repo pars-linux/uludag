@@ -122,7 +122,7 @@ function set_assign_to() {
       </strong>
     </td>
     <td>
-      <select name="component" onchange="set_assign_to();" size="5">
+      <select name="component" onchange="set_assign_to();" size="10">
         [%- FOREACH c = component_ %]
           <option value="[% c.name FILTER html %]"
             [% " selected=\"selected\"" IF c.name == default.component_ %]>
