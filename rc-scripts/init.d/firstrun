@@ -14,11 +14,6 @@ start() {
         /usr/sbin/update-environ.py
         ldconfig
 
-        # fix for some zip problems (see bug #622)
-        chmod 1777 /tmp
-        chmod 1777 /var/tmp
-        chmod 700 /root/
-        
         # Run postinstall scripts
         export LC_ALL=tr_TR.UTF-8
         export LANG=tr_TR.UTF-8
