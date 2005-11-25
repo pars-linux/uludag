@@ -11,7 +11,7 @@ depend() {
 start() {
         ebegin "First run service starting, please be patient..."
 
-        /usr/sbin/update-environ.py
+        /usr/bin/update-environ.py
         ldconfig
 
         # Run postinstall scripts
