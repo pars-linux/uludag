@@ -125,6 +125,7 @@ def publish():
             'pid': pid,
             'version': version,
             'title': p.form.getvalue('p_title'),
+            'summary': p.form.getvalue('p_summary'),
             'content': p.form.getvalue('p_content'),
             'timeB': sql_datetime(now()),
             'changelog': "İlk sürüm."
