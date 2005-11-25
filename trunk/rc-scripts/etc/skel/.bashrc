@@ -49,11 +49,7 @@ esac
 [ -f /etc/profile.d/bash-completion ] && source /etc/profile.d/bash-completion
 [ -f /etc/profile.d/mc ] && source /etc/profile.d/mc
 
-if [ "$EUID" = 0 ] || [ "`/bin/whoami`" = 'root' ]; then
-	export PS1='\[\033[01;32m\]\u@\h \[\033[01;33m\]\W \$ \[\033[00m\]'
-else
-	export PS1='\[\033[01;31m\]\h \[\033[01;34m\]\W \$ \[\033[00m\]'
-fi
+source /etc/bashrc
 
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0
 
