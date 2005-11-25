@@ -89,64 +89,35 @@ def formatBlock(s):
     return new
 
 def formatList(s):
-    s = re.sub("\n\s+([^\*\s#].+)", "<<BRK>>\\1", s)
+    t = s.strip()
 
-    lines = s.split("\n")
-
-    indent = [0]
-    indent_s = []
-
-    new = ""
-    if s[0] == "*":
-        new += "<ul>"
-        indent_s.append("*")
+    if t[0] == "*":
+        tag = "ul"
     else:
-        new += "<ol>"
-        indent_s.append("#")
+        tag = "ol"
 
-    regex = lambda x: re.findall("(\s*)([\*|#]?) (.*)", x)[0]
+    r = "<%s>" % tag
+    r += formatList_r("\n" + t)
+    r += "</%s>" % tag
 
-    for i in range(len(lines)):
-        r1 = regex(lines[i])
-        close = 1
+    return r
 
-        # Iğrencim
-        new += "<li>%s" % escapeHTML(r1[2]).replace("&lt;&lt;BRK&gt;&gt;", "<br/>")
-
-        if i + 1 < len(lines):
-            r2 = regex(lines[i+1])
-
-            if len(r1[0]) < len(r2[0]):
-                if r2[1] == "*":
-                    new += "<ul>"
-                    indent_s.append("*")
-                else:
-                    new += "<ol>"
-                    indent_s.append("#")
-                indent.append(len(r2[0]))
-                close = 0
-
-        if close:
-            new += "</li>"
-        
-        if i + 1 < len(lines):
-            if len(r1[0]) > len(r2[0]):
-                while len(r2[0]) < indent[-1]:
-                    indent.pop()
-                    if indent_s.pop() == "*":
-                        new += "</ul></li>"
-                    else:
-                        new += "</ol></li>"
-
-    for i in range(len(indent) - 1):
-        if indent_s.pop() == "*":
-            new += "</ul></li>"
-        else:
-            new += "</ol></li>"
-
-    if indent_s.pop() == "*":
-        new += "</ul>"
-    else:
-        new += "</ol>"
-
-    return new
+def formatList_r(s, d=0):
+    r = ""
+    t = re.sub("\n\s+([^\*\s#].+)", "<br>\\1", s)
+    list = [i.strip() for i in re.split("\n\s{%d}[\*#]" % d, t) if i.strip()]
+    for i in list:
+        tnl = i.split("\n")
+        r += "<li>%s" % tnl[0]
+        if len(tnl) > 1:
+            if tnl[1].strip()[0] == "*":
+                r += "<ul>"
+            else:
+                r += "<ol>"
+            r += formatList_r("\n" + "\n".join(tnl[1:]), d+2)
+            if tnl[1].strip()[0] == "*":
+                r += "</ul>"
+            else:
+                r += "</ol>"
+        r += "</li>"
+    return r
