@@ -210,9 +210,6 @@
                 <property name="text">
                     <string>&amp;Update everything</string>
                 </property>
-                <property name="accel">
-                    <string>Alt+U</string>
-                </property>
                 <property name="toolTip" stdset="0">
                     <string>Click on this button if you want to update your system</string>
                 </property>
@@ -231,9 +228,6 @@
                 </property>
                 <property name="text">
                     <string>Repository setti&amp;ngs</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+N</string>
                 </property>
                 <property name="toolTip" stdset="0">
                     <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
@@ -326,9 +320,6 @@
                         </property>
                         <property name="text">
                             <string>&amp;Install Package(s)</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+I</string>
                         </property>
                         <property name="autoDefault">
                             <bool>true</bool>
@@ -593,9 +584,6 @@ Package Size:</string>
                         <property name="text">
                             <string>&amp;Show Installed Packages</string>
                         </property>
-                        <property name="accel">
-                            <string>Alt+S</string>
-                        </property>
                         <property name="toolTip" stdset="0">
                             <string>Only show installed packages in your compter</string>
                         </property>
@@ -607,9 +595,6 @@ Package Size:</string>
                         <property name="text">
                             <string>Sho&amp;w Updates</string>
                         </property>
-                        <property name="accel">
-                            <string>Alt+W</string>
-                        </property>
                         <property name="toolTip" stdset="0">
                             <string>Only show packages that can be updated</string>
                         </property>
@@ -620,9 +605,6 @@ Package Size:</string>
                         </property>
                         <property name="text">
                             <string>Show Pa&amp;ckages Ready to Install</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+C</string>
                         </property>
                         <property name="toolTip" stdset="0">
                             <string>Only show packages which are going to be installed</string>
@@ -646,6 +628,14 @@ Package Size:</string>
         </property>
     </widget>
 </widget>
+<connections>
+    <connection>
+        <sender>clearButton</sender>
+        <signal>clicked()</signal>
+        <receiver>searchLine</receiver>
+        <slot>clear()</slot>
+    </connection>
+</connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
