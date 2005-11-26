@@ -32,7 +32,7 @@ class PisiUi(UI):
     def confirm(self, msg):
         return True
 
-    def display_progress(self, filename, percent, rate, symbol):
+    def display_progress(self, filename, percent, rate, symbol, eta):
         event = QCustomEvent(QEvent.User+5)
         event.setData(QString(filename)+QString(" ")+QString.number(percent)+QString(" ")+QString.number(rate)+QString(" ")+QString(symbol))
         QThread.postEvent(self.receiver,event)
