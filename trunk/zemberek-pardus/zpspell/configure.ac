@@ -1,5 +1,5 @@
 AC_INIT
-AM_INIT_AUTOMAKE(zpspell,0.1)
+AM_INIT_AUTOMAKE(zpspell,0.2)
 AM_CONFIG_HEADER(config.h)
 
 dnl C++ program
