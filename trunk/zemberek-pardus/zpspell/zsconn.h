@@ -34,7 +34,7 @@ private:
 
     enum Z_CHECK_RESULT spellCheck( const string& str ) const;
     vector<string> getSuggestions (const string& str ) const;
-    char* recvResult() const;
+    string recvResult() const;
 };
 
 #endif
