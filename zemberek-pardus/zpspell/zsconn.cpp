@@ -171,7 +171,7 @@ char* ZSConn::recvResult() const
 
         buf += s;
     }
-    static char *ret = new char[size];
+    static char *ret = new char[size+1];
     numbytes = recv (_conn, ret, size, 0);
     ret[numbytes]='\0';
 
