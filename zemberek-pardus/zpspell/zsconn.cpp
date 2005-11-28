@@ -93,7 +93,7 @@ enum Z_CHECK_RESULT ZSConn::spellCheck( const string& str ) const
         perror("send()");
     }
 
-    switch ( *(recvResult()) ) {
+    switch ( recvResult()[0] ) {
     case '*':
         return Z_TRUE;
         break;
@@ -151,7 +151,7 @@ vector<string> ZSConn::getSuggestions(const string& str ) const
 }
 
 
-char* ZSConn::recvResult() const
+string ZSConn::recvResult() const
 {
     int numbytes = 0;
     string buf("");
@@ -171,9 +171,12 @@ char* ZSConn::recvResult() const
 
         buf += s;
     }
-    static char *ret = new char[size+1];
+    char *ret = new char[size+1];
     numbytes = recv (_conn, ret, size, 0);
     ret[numbytes]='\0';
 
-    return ret;
+    string result = ret;
+    delete ret;
+
+    return result;
 }
