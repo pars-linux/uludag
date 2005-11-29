@@ -61,7 +61,7 @@ int main( int argc, char *argv[] )
                           I18N_NOOP( "Pardus Configuration Center" ), KAboutData::License_GPL,
                           I18N_NOOP( "(c) 2005, TUBITAK - UEKAE" ) );
     aboutData.addAuthor( "İsmail Dönmez", I18N_NOOP( "Current Maintainer" ), "ismail@uludag.org.tr" );
-    aboutData.addAuthor( "Barış Metin", I18N_NOOP( "Old Maintainer" ), "baris@uludag.org.tr" );
+    aboutData.addAuthor( "Barış Metin", I18N_NOOP( "Old Maintainer & Original Author" ), "baris@uludag.org.tr" );
     aboutData.addAuthor( I18N_NOOP( "KDE Developers" ), I18N_NOOP( "Module Developers" ) );
     aboutData.setTranslator( "Barış Metin", "baris@uludag.org.tr" );
     KCmdLineArgs::init( argc, argv, &aboutData );
