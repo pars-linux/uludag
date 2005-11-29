@@ -29,6 +29,7 @@ import Preferences
 import ProgressDialog
 import ThreadRunner
 import PisiUi
+import SuccessInstalled
 
 # Pisi Imports
 import pisi.ui
@@ -108,9 +109,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def finished(self):
         self.pDialog.close()
         self.resetProgressBar()
-        self.updateListing(mainwidget.selectionGroup.selectedId())
-        if self.errorMessage:
+
+        if not self.errorMessage:
+            success = SuccessInstalled.SuccessInstalled(self)
+            for i in self.selectedItems:
+                success.infoBrowser.append(i+ u" yüklendi.")
+                success.show()
+        else:
             KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
+
+        self.updateListing(mainwidget.selectionGroup.selectedId())
         self.errorMessage = None
 
         if(self.pref):
@@ -176,7 +184,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             size_string = str(size)+ i18n(" Bytes")
 
-        self.moreInfoLabelDetails.setText(QString(self.package.version+"<br>"+size_string))
+        self.moreInfoLabelDetails.setText(QString(u"Programın Versiyonu : <b>"+self.package.version+"</b><br>"+u"Programın Boyutu :<b> "+size_string+"</b>"))
             
     def updateButtons(self, listViewItem):
         try:
@@ -216,7 +224,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for pack in list:
                 item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
-            self.installOrRemoveButton.setText("Remove Package(s)");
+            self.installOrRemoveButton.setText(u"Paket(ler)i Kaldır");
 
         elif index == 1:
             # Only upgrades
@@ -225,7 +233,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for pack in list:
                 item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
-            self.installOrRemoveButton.setText("Upgrade Package(s)");
+            self.installOrRemoveButton.setText(u"Paket(ler)i Güncelle");
         
         elif index == 2 :
             # Show only not-installed apps
@@ -236,7 +244,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 for pack in list:
                     item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                     item.setText(1,pisi.packagedb.get_package(pack).version)
-            self.installOrRemoveButton.setText("Install Package(s)");
+            self.installOrRemoveButton.setText(u"Paket(ler)i Yükle");
 
         # Select first item in the list
         try:
@@ -295,7 +303,6 @@ class MainApplication(programbase):
         if standalone:
             QDialog.__init__(self,parent,name)
             self.setCaption("PiSi KGA")
-            self.setFixedSize(700,600)
         else:
             KCModule.__init__(self,parent,name)
             # Create a configuration object.
