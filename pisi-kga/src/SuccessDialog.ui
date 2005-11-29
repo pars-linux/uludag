@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>SuccessInstall</class>
+<class>SuccessDialog</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>SuccessInstall</cstring>
+        <cstring>SuccessDialog</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -11,9 +11,6 @@
             <width>480</width>
             <height>461</height>
         </rect>
-    </property>
-    <property name="caption">
-        <string>Paketler başarıyla yüklendi</string>
     </property>
     <grid>
         <property name="name">

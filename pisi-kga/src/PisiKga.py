@@ -29,7 +29,7 @@ import Preferences
 import ProgressDialog
 import ThreadRunner
 import PisiUi
-import SuccessInstalled
+import Success
 
 # Pisi Imports
 import pisi.ui
@@ -111,7 +111,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.resetProgressBar()
 
         if not self.errorMessage:
-            success = SuccessInstalled.SuccessInstalled(self)
+            success = Success.Success(self)
             for i in self.selectedItems:
                 success.infoBrowser.append(i+ u" yüklendi.")
                 success.show()
