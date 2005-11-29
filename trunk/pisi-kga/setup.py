@@ -26,7 +26,7 @@ kdedistutils.setup(
     license = "GPL",
     application_data = ['src/PisiKga.py','src/Preferences.py','src/PreferencesWidget.ui',
                         'src/ThreadRunner.py','src/RepoDialog.ui','src/MainWindow.ui',
-                        'src/Progress.ui','src/ProgressDialog.py','src/SuccessInstall.ui','src/SuccessInstalled.py',
+                        'src/Progress.ui','src/ProgressDialog.py','src/SuccessDialog.ui','src/Success.py',
                         'src/PisiUi.py'],
     executable_links = [('pisi-kga','PisiKga.py')],
     i18n = ('po',['src']),
