@@ -207,7 +207,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         packages = QListViewItem(self.listView,None)
         packages.setOpen(True)
-        packages.setText(0,i18n("Packages"))
+        packages.setText(0,i18n("Paketler"))
         packages.setPixmap(0,loadIcon('package_system', KIcon.Small))
         packages.setSelectable(False)
 
@@ -351,11 +351,22 @@ class MainApplication(programbase):
         self.__saveOptions()
 
     def __loadOptions(self):
-        pass
+        global kapp
+        config = kapp.config()
+        config.setGroup("General")
+        size = config.readSizeEntry("Geometry")
+        if not size.isEmpty():
+            self.resize(700,600)
+        else:
+            self.resize(size)
 
     def __saveOptions(self):
-        pass
-
+        global kapp
+        config = kapp.config()
+        config.setGroup("General")
+        config.writeEntry("Geometry", self.size())
+        config.sync()
+        
     # KControl virtual void methods
     def load(self):
         pass
