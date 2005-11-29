@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>707</width>
-            <height>594</height>
+            <width>703</width>
+            <height>606</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,74 +19,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout15</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer3</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>245</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout9</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="KPushButton">
-                            <property name="name">
-                                <cstring>installOrRemoveButton</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>Paket(ler)i &amp;Yükle</string>
-                            </property>
-                            <property name="autoDefault">
-                                <bool>true</bool>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>You can:&lt;ul&gt;&lt;li&gt;Install a package,&lt;li&gt;Update a package,&lt;li&gt;Delete a package&lt;/ul&gt;from here</string>
-                            </property>
-                        </widget>
-                        <widget class="KPushButton">
-                            <property name="name">
-                                <cstring>closeButton</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Çık</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+ç</string>
-                            </property>
-                            <property name="autoDefault">
-                                <bool>true</bool>
-                            </property>
-                        </widget>
-                    </hbox>
-                </widget>
-            </hbox>
-        </widget>
         <widget class="QFrame" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>frame5</cstring>
@@ -223,32 +155,6 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QLayoutWidget" row="0" column="0">
-                            <property name="name">
-                                <cstring>layout6</cstring>
-                            </property>
-                            <hbox>
-                                <property name="name">
-                                    <cstring>unnamed</cstring>
-                                </property>
-                                <widget class="QLabel">
-                                    <property name="name">
-                                        <cstring>iconLabel</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Icon</string>
-                                    </property>
-                                </widget>
-                                <widget class="QLabel">
-                                    <property name="name">
-                                        <cstring>progNameLabel</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>&lt;p align="left"&gt;Program Name&lt;/p&gt;</string>
-                                    </property>
-                                </widget>
-                            </hbox>
-                        </widget>
                         <widget class="QLayoutWidget" row="1" column="0">
                             <property name="name">
                                 <cstring>layout10</cstring>
@@ -308,6 +214,32 @@ Program Version: Bar</string>
                                     </property>
                                 </spacer>
                             </vbox>
+                        </widget>
+                        <widget class="QLayoutWidget" row="0" column="0">
+                            <property name="name">
+                                <cstring>layout11</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>iconLabel</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Icon</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>progNameLabel</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;p align="center"&gt;Program Name&lt;/p&gt;</string>
+                                    </property>
+                                </widget>
+                            </hbox>
                         </widget>
                     </grid>
                 </widget>
@@ -464,6 +396,79 @@ Program Version: Bar</string>
                 </widget>
             </vbox>
         </widget>
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout15</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>245</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout9</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>installOrRemoveButton</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>Paket(ler)i &amp;Yükle</string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>You can:&lt;ul&gt;&lt;li&gt;Install a package,&lt;li&gt;Update a package,&lt;li&gt;Delete a package&lt;/ul&gt;from here</string>
+                            </property>
+                        </widget>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>closeButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Çık</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+ç</string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="KSeparator" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>kSeparator1</cstring>
+            </property>
+        </widget>
     </grid>
 </widget>
 <connections>
@@ -476,12 +481,13 @@ Program Version: Bar</string>
 </connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
     <includehint>ktextbrowser.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klistviewsearchline.h</includehint>
     <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kseparator.h</includehint>
 </includehints>
 </UI>
