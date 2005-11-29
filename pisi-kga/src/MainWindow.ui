@@ -257,7 +257,7 @@
                                 <property name="name">
                                     <cstring>unnamed</cstring>
                                 </property>
-                                <widget class="KActiveLabel">
+                                <widget class="KTextBrowser">
                                     <property name="name">
                                         <cstring>infoLabel</cstring>
                                     </property>
@@ -270,6 +270,9 @@
                                     </property>
                                     <property name="backgroundOrigin">
                                         <enum>ParentOrigin</enum>
+                                    </property>
+                                    <property name="frameShape">
+                                        <enum>NoFrame</enum>
                                     </property>
                                     <property name="text">
                                         <string>Here goes summary</string>
@@ -475,7 +478,7 @@ Program Version: Bar</string>
 <includehints>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
-    <includehint>kactivelabel.h</includehint>
+    <includehint>ktextbrowser.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klistviewsearchline.h</includehint>
