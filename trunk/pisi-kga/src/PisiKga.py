@@ -99,7 +99,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif event.type() == QEvent.User+5:
             filename = event.data().section(' ',0,0)
             percent = event.data().section(' ',1,1).toInt()[0]
-            rate = event.data().section(' ',2,2).toInt()[0]
+            rate = int(str(event.data().section(' ',2,2)).split('.')[0])
             symbol = event.data().section(' ',3,3)
             self.updateProgressBar(filename, percent, rate, symbol)
         else:
