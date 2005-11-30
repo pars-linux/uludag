@@ -157,7 +157,7 @@ then
 	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
 
 	# Fallback/default is Turkish, but we also support English
-	if /usr/bin/test $syslang = "en"; then
+	if /usr/bin/test $sys_lang = "en"; then
 		sys_keymap="us"
 		sys_font="iso01.16"
 		sys_trans="8859-1"
