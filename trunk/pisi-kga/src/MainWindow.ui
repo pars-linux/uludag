@@ -442,9 +442,6 @@ Program Version: Bar</string>
                             <property name="autoDefault">
                                 <bool>true</bool>
                             </property>
-                            <property name="toolTip" stdset="0">
-                                <string>You can:&lt;ul&gt;&lt;li&gt;Install a package,&lt;li&gt;Update a package,&lt;li&gt;Delete a package&lt;/ul&gt;from here</string>
-                            </property>
                         </widget>
                         <widget class="KPushButton">
                             <property name="name">
