@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-11-21 10:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: goodbyedlg.cpp:63
+msgid "GoodbyeDlg"
+msgstr ""
+
+#: goodbyedlg.cpp:64
+msgid "pix_goodbye"
+msgstr ""
+
+#: goodbyedlg.cpp:65
+msgid ""
+"<center>\n"
+"You have finished!  Now you can start using Pardus Linux<br>\n"
+"<a href=\"#tasma\">If you want to change more setting click here to start "
+"<b>Tasma</b></a>\n"
+"</center>"
+msgstr ""
+
+#: kaptan.cpp:40
+msgid "Welcome"
+msgstr ""
+
+#: kaptan.cpp:44
+msgid "Mouse Setup"
+msgstr ""
+
+#: kaptan.cpp:48
+msgid "Wallpaper Setup"
+msgstr ""
+
+#: kaptan.cpp:52
+msgid "Congratulations"
+msgstr ""
+
+#: main.cpp:18
+msgid "Kaptan Desktop"
+msgstr ""
+
+#: mousesetupdlg.cpp:88
+msgid "MouseSetupDlg"
+msgstr ""
+
+#: mousesetupdlg.cpp:89
+msgid "Button Order"
+msgstr ""
+
+#: mousesetupdlg.cpp:90
+msgid "Righ&t handed"
+msgstr ""
+
+#: mousesetupdlg.cpp:91
+msgid "Alt+T"
+msgstr ""
+
+#: mousesetupdlg.cpp:92
+msgid "Le&ft handed"
+msgstr ""
+
+#: mousesetupdlg.cpp:93
+msgid "Alt+F"
+msgstr ""
+
+#: mousesetupdlg.cpp:94
+msgid ""
+"If you are left-handed, you may prefer to swap the functions of the left and "
+"right buttons on your pointing device by choosing the 'Left handed' option "
+"below. If your pointing device has more than two buttons, only those that "
+"function as the left and right buttons are affected. For example, if you "
+"have a tree-button mouse, the middle buttons is unaffected."
+msgstr ""
+
+#: wallpaperdlg.cpp:90
+msgid "WallpaperDlg"
+msgstr ""
+
+#: wallpaperdlg.cpp:91
+msgid ""
+"Here, you can select a wallpaper for your desktop background. Pardus "
+"provides eye candy wallpapers, you can select one of them, as you wish :)."
+msgstr ""
+
+#: wallpaperdlg.cpp:92
+msgid "Wallpaper :"
+msgstr ""
+
+#: wallpaperdlg.cpp:93
+msgid "Preview :"
+msgstr ""
+
+#: wallpaperdlg.cpp:94
+msgid "pix_wallpaper"
+msgstr ""
+
+#: wallpaperdlg.cpp:95
+msgid "Don't change desktop background!"
+msgstr ""
+
+#: welcomedlg.cpp:75
+msgid "WelcomeDlg"
+msgstr ""
+
+#: welcomedlg.cpp:76
+msgid "pix_kaptan"
+msgstr ""
+
+#: welcomedlg.cpp:77
+msgid "pix_pardus"
+msgstr ""
+
+#: welcomedlg.cpp:78
+msgid ""
+"Uludağ project is a GNU/Linux distribution, targeting at computer literate "
+"users' basic desktop needs; with acquiring the strong ideas, architecture "
+"and code of other distributions; with a custom configuration framework which "
+"has the ability to evolve into an autonomous system; for simplifying the "
+"installation and usage of the computers."
+msgstr ""
+
+#: welcomedlg.cpp:79
+msgid ""
+"This application, called <b>Kaptan Desktop</b>, will help you with your "
+"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
+"This application will also set some default configuration for a better "
+"desktop :)."
+msgstr ""
