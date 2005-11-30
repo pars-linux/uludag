@@ -150,15 +150,34 @@ then
 	[ -c /dev/null ] && dev_null=1 || dev_null=0
 	[ -c /dev/console ] && dev_console=1 || dev_console=0
 
-    # Setup fonts - Pardus
+    # Setup fonts and keymap here, so we have language support in init scripts
     /usr/bin/kbd_mode -u
     echo -e "\033%G"
-    /bin/loadkeys trq &> /dev/null
-    /usr/bin/setfont -f iso09.16 -m 8859-9
 
-    echo
-    echo -e "${GOOD}Pardus; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
-    echo
+	syslang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+
+	# Fallback/default is Turkish, but we also support English
+	if /usr/bin/test $syslang = "en"; then
+		/bin/loadkeys us &> /dev/null
+	    /usr/bin/setfont -f iso01.16 -m 8859-1
+		/usr/bin/sed -i 's/KEYMAP=.*/KEYMAP="us"/' /etc/conf.d/keymaps
+		/usr/bin/sed -i 's/CONSOLEFONT=.*/CONSOLEFONT="iso01.16"/' /etc/conf.d/consolefont
+		/usr/bin/sed -i 's/CONSOLETRANSLATION=.*/CONSOLETRANSLATION="8859-1"/' /etc/conf.d/consolefont
+		/usr/bin/sed -i 's/LANG=.*/LANG=en_US.UTF-8/' /etc/env.d/03locale
+		/usr/bin/sed -i 's/LC_ALL=.*/LC_ALL=en_US.UTF-8/' /etc/env.d/03locale
+	else
+		/bin/loadkeys trq &> /dev/null
+		/usr/bin/setfont -f iso09.16 -m 8859-9
+		/usr/bin/sed -i 's/KEYMAP=.*/KEYMAP="trq"/' /etc/conf.d/keymaps
+		/usr/bin/sed -i 's/CONSOLEFONT=.*/CONSOLEFONT="iso09.16"/' /etc/conf.d/consolefont
+		/usr/bin/sed -i 's/CONSOLETRANSLATION=.*/CONSOLETRANSLATION="8859-9"/' /etc/conf.d/consolefont
+		/usr/bin/sed -i 's/LANG=.*/LANG=tr_TR.UTF-8/' /etc/env.d/03locale
+		/usr/bin/sed -i 's/LC_ALL=.*/LC_ALL=tr_TR.UTF-8/' /etc/env.d/03locale
+	fi
+	
+	echo
+	echo -e "${GOOD}Pardus Beta; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
+	echo
 
 	check_statedir /proc
 
