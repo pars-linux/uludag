@@ -85,47 +85,14 @@ void Kaptan::back()
 // FINISHED - set defaults...
 void Kaptan::accept()
 {
-    // Kicker değişkenlerini ayarlayalım...
-    // 	- İkonların üzerine gelince büyüme efektini aç...
-    KConfig kickerconf("kickerrc", false, false);
-    kickerconf.setGroup("buttons");
-    kickerconf.writeEntry("EnableIconZoom", true);
-    kickerconf.sync();
-
-    // Kicker'ı DCOP ile dürtelim ki yeni ayarları yüklesin
-    if (!kapp->dcopClient()->isAttached())
-        kapp->dcopClient()->attach();
-
-    QByteArray data;
-    QCString appname;
-    if (DefaultScreen(qt_xdisplay()) == 0)
-        appname = "kicker";
-    else
-        appname.sprintf("kicker-screen-%d", DefaultScreen(qt_xdisplay()));
-    kapp->dcopClient()->send( appname, "kicker", "configure()", data );
-
     // KDE değişkenlerini ayarlayalım...
     // 	- Düğmeler üzerinde simgeleri görünsün
     // 	- Combo'lar açılırken efektli açılsın
-    // 	- Renk şeması lipstikwhite olsun
     KGlobal::config()->setGroup("KDE");
     KGlobal::config()->writeEntry("ShowIconsOnPushButtons", true,true, true);
     KGlobal::config()->writeEntry("EffectAnimateCombo", true, true, true);
-    KGlobal::config()->writeEntry("colorScheme", "lipstikwhite.kcsrc", true, true, true);
 
     KGlobal::config()->sync();
 
-    exit(0);
-}
-
-// CANCELED
-void Kaptan::reject()
-{
-    exit(0);
-}
-
-// WINDOW CLOSED
-void Kaptan::closeEvent(QCloseEvent* e)
-{
     exit(0);
 }
