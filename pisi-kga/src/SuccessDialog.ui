@@ -12,16 +12,19 @@
             <height>461</height>
         </rect>
     </property>
+    <property name="caption">
+        <string>Program Ekle ve Kaldır</string>
+    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="KTextBrowser" row="3" column="0">
+        <widget class="KTextBrowser" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>infoBrowser</cstring>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -42,7 +45,7 @@
                 </widget>
                 <widget class="QLabel">
                     <property name="name">
-                        <cstring>textLabel1</cstring>
+                        <cstring>infoLabel</cstring>
                     </property>
                     <property name="sizePolicy">
                         <sizepolicy>
@@ -80,7 +83,7 @@
                 </spacer>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="0">
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout3</cstring>
             </property>
@@ -132,8 +135,41 @@
                 </size>
             </property>
         </spacer>
+        <widget class="QPushButton" row="4" column="1">
+            <property name="name">
+                <cstring>pushButton2</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Tamam</string>
+            </property>
+        </widget>
+        <spacer row="4" column="0">
+            <property name="name">
+                <cstring>spacer4_2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>351</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
     </grid>
 </widget>
+<connections>
+    <connection>
+        <sender>pushButton2</sender>
+        <signal>clicked()</signal>
+        <receiver>SuccessDialog</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>ktextbrowser.h</includehint>

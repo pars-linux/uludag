@@ -78,6 +78,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.command = ThreadRunner.MyThread(self)
         self.selectedItems = []
+        self.operation = None
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self)
@@ -112,9 +113,20 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         if not self.errorMessage:
             success = Success.Success(self)
+            if self.operation == "install":
+                success.infoLabel.setText(u"Seçilen paketler başarıyla yüklendi!")
+                text = u" yüklendi"
+            elif self.operation == "remove":
+                success.infoLabel.setText(u"Seçilen paketler başarıyla kaldırıldı!")                
+                text = u" kaldırıldı"
+            else:
+                success.infoLabel.setText(u"Seçilen paketler başarıyla güncellendi!")
+                text = u" güncellendi"
+            
             for i in self.selectedItems:
-                success.infoBrowser.append(i+ u" yüklendi.")
-                success.show()
+                success.infoBrowser.append(i+text)
+            self.operation = None
+            success.show()
         else:
             KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
 
@@ -265,15 +277,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.show()
         
         self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
-        print 'Total app count',self.totalAppCount
-                
+
         if index == 0: # Remove baby
+            self.operation = "remove"
             self.command.remove(self.selectedItems)
                         
         elif index == 1: # Upgrade baby
+            self.operation = "upgrade"
             self.command.upgrade(self.selectedItems)
             	    
         elif index == 2: # Install baby
+            self.operation = "install"
             self.command.install(self.selectedItems)
            
     def installSingle(self):
