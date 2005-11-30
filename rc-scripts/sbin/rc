@@ -154,27 +154,31 @@ then
     /usr/bin/kbd_mode -u
     echo -e "\033%G"
 
-	syslang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
 
 	# Fallback/default is Turkish, but we also support English
 	if /usr/bin/test $syslang = "en"; then
-		/bin/loadkeys us &> /dev/null
-	    /usr/bin/setfont -f iso01.16 -m 8859-1
-		/usr/bin/sed -i 's/KEYMAP=.*/KEYMAP="us"/' /etc/conf.d/keymaps
-		/usr/bin/sed -i 's/CONSOLEFONT=.*/CONSOLEFONT="iso01.16"/' /etc/conf.d/consolefont
-		/usr/bin/sed -i 's/CONSOLETRANSLATION=.*/CONSOLETRANSLATION="8859-1"/' /etc/conf.d/consolefont
-		/usr/bin/sed -i 's/LANG=.*/LANG=en_US.UTF-8/' /etc/env.d/03locale
-		/usr/bin/sed -i 's/LC_ALL=.*/LC_ALL=en_US.UTF-8/' /etc/env.d/03locale
+		sys_keymap="us"
+		sys_font="iso01.16"
+		sys_trans="8859-1"
+		sys_locale="en_US.UTF-8"
 	else
-		/bin/loadkeys trq &> /dev/null
-		/usr/bin/setfont -f iso09.16 -m 8859-9
-		/usr/bin/sed -i 's/KEYMAP=.*/KEYMAP="trq"/' /etc/conf.d/keymaps
-		/usr/bin/sed -i 's/CONSOLEFONT=.*/CONSOLEFONT="iso09.16"/' /etc/conf.d/consolefont
-		/usr/bin/sed -i 's/CONSOLETRANSLATION=.*/CONSOLETRANSLATION="8859-9"/' /etc/conf.d/consolefont
-		/usr/bin/sed -i 's/LANG=.*/LANG=tr_TR.UTF-8/' /etc/env.d/03locale
-		/usr/bin/sed -i 's/LC_ALL=.*/LC_ALL=tr_TR.UTF-8/' /etc/env.d/03locale
+		sys_keymap="trq"
+		sys_font="iso09.16"
+		sys_trans="8859-9"
+		sys_locale="tr_TR.UTF-8"
 	fi
-	
+
+	/bin/loadkeys $sys_keymap &> /dev/null
+    /usr/bin/setfont -f $sys_font -m $sys_trans
+	sed -i "s/KEYMAP=.*/KEYMAP=$sys_keymap/" /etc/conf.d/keymaps
+	sed -i "s/CONSOLEFONT=.*/CONSOLEFONT=$sys_font/" /etc/conf.d/consolefont
+	sed -i "s/CONSOLETRANSLATION=.*/CONSOLETRANSLATION=$sys_trans/" /etc/conf.d/consolefont
+	sed -i "s/LANG=.*/LANG=$sys_locale/" /etc/env.d/03locale
+	sed -i "s/LC_ALL=.*/LC_ALL=$sys_locale/" /etc/env.d/03locale
+
+	export LC_ALL=$sys_locale
+
 	echo
 	echo -e "${GOOD}Pardus Beta; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
 	echo
