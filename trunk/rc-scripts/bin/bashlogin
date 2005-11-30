@@ -1,8 +1,6 @@
 #!/bin/bash
 # 
-# This is only installed by baselayout when USE=livecd to enable
-# serial consoles for some architectures
-#
+# A workaround for livecd consoles to autologin users
 
 cat /etc/motd 2>/dev/null
 export HOME=/root
