@@ -38,7 +38,6 @@ public:
 
 public slots:
     virtual void accept();
-    virtual void reject();
 
 private:
     KLocale *locale;
@@ -47,8 +46,6 @@ private:
     Wallpaper *wallpaper;
     Goodbye *goodbye;
 
-protected:
-    virtual void closeEvent(QCloseEvent*);
 };
 
 #endif // KAPTAN_H
