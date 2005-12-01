@@ -150,6 +150,9 @@ then
 	[ -c /dev/null ] && dev_null=1 || dev_null=0
 	[ -c /dev/console ] && dev_console=1 || dev_console=0
 
+	echo -e "${GOOD}Pardus Beta; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
+	echo
+
 	check_statedir /proc
 
 	ebegin "Mounting proc at /proc"
@@ -189,10 +192,6 @@ then
 	sed -i "s/LC_ALL=.*/LC_ALL=$sys_locale/" /etc/env.d/03locale
 
 	export LC_ALL=$sys_locale
-
-	echo
-	echo -e "${GOOD}Pardus Beta; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
-	echo
 
 	# Read off the kernel commandline to see if there's any special settings
 	# especially check to see if we need to set the  CDBOOT environment variable
