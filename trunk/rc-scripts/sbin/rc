@@ -150,7 +150,7 @@ then
 	[ -c /dev/null ] && dev_null=1 || dev_null=0
 	[ -c /dev/console ] && dev_console=1 || dev_console=0
 
-	echo
+    echo -e "\033%G"
 	echo -e "${GOOD}Pardus Beta; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
 	echo
 
@@ -167,7 +167,6 @@ then
 
     # Setup fonts and keymap here, so we have language support in init scripts
     /usr/bin/kbd_mode -u
-    echo -e "\033%G"
 
 	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
 
