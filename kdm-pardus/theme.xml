@@ -10,11 +10,11 @@
 
 <!-- makina adı -->
 <item type="rect">
-	<pos anchor="nw" x="0" y="0" width="box" height="box"/>
+	<pos anchor="nw" x="0" y="%50" width="box" height="box"/>
 	<box orientation="vertical" xpadding="0" ypadding="0">
 		<item type="label">
-			<normal color="#9fafbf" font="Serif Bold 32"/>
-			<text>[ %h ]</text>
+			<normal color="#9fafbf" font="Serif Bold 28"/>
+			<text>&lt; %h &gt;</text>
 		</item>
 	</box>
 </item>
@@ -22,7 +22,7 @@
 <!-- saat -->
 <item type="label" id="clock">
 	<normal color="#8f9faf" font="Sans 16"/>
-	<pos anchor="nw" x="0" y="%6"/>
+	<pos anchor="nw" x="5" y="%55"/>
 	<text>%c</text>
 </item>
 
@@ -40,32 +40,26 @@ kdm fix edilene kadar disabled
 -->
 
 <item type="pixmap" id="shutdown_button" button="true">
-    <pos y="-74" x="10" anchor="nw" width="64" height="64"/>
+    <pos y="%76" x="%48" anchor="nw" width="64" height="64"/>
     <normal file="exit.png" tint="#dddddd"/>
     <prelight file="exit.png"/>
     <active file="exit.png" tint="#e07070"/>
 </item>
 
 <item type="label">
-    <pos x="86" y="-58" anchor="nw" width="100%" height="100%"/>
-    <normal color="#000000" font="Sans Bold 22"/>
-    <stock type="quit"/>
-</item>
-
-<item type="label">
-    <pos x="84" y="-60" anchor="nw" width="100%" height="100%"/>
+    <pos x="%53" y="%78" anchor="nw" width="100%" height="100%"/>
     <normal color="#F0E0D0" font="Sans Bold 22"/>
     <stock type="quit"/>
 </item>
 
 <!-- kullanıcı listesi -->
 <item type="rect" id="userlist">
-  <pos anchor="nw" x="%10" y="%25" height="300" width="200"/>
+  <pos anchor="nw" x="%68" y="%55" height="250" width="200"/>
 </item>
 
 <!-- kullanıcı ve parola alanları -->
 <item type="rect">
-	<pos anchor="nw" x="%57" y="%43" height="box" width="box"/>
+	<pos anchor="nw" x="%45" y="%61" height="box" width="box"/>
 	<box orientation="vertical" homogeneous="false" spacing="10">
 		<pos height="box" width="box"/>
 		<item type="rect">
@@ -96,18 +90,18 @@ kdm fix edilene kadar disabled
 
 <!-- hata mesajı -->
 <item type="label" id="pam-error">
-	<pos anchor="c" x="%65" y="55%"/>
+	<pos anchor="c" x="%50" y="72%"/>
 	<normal color="#FFFFFF" font="Sans Bold 18"/>
 </item>
 
 <!-- capslock uyarısı -->
 <item type="rect" id="caps-lock-warning">
 	<normal color="#252525" alpha="0.5"/>
-	<pos anchor="c" x="65%" y="72%" width="box" height="box"/>
-	<box orientation="vertical" xpadding="5" ypadding="5">
+	<pos anchor="nw" x="%1" y="77%" width="box" height="box"/>
+	<box orientation="vertical" xpadding="6" ypadding="6">
 		<item type="label">
 			<normal color="#ffffff" font="Sans Bold 12"/>
-			<pos anchor="n" x="50%"/>
+			<pos anchor="nw" x="0" y="0"/>
 			<stock type="caps-lock-warning"/>
 		</item>
 	</box>
