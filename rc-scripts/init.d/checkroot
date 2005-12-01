@@ -85,6 +85,44 @@ start() {
 		fi
 	fi
 
+
+# FIXME: find a better way to set locale
+# Dirty but works for now. 
+     # Setup fonts and keymap here, so we have language support in init scripts
+     /usr/bin/kbd_mode -u
+ 
+ 	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+ 
+ 	# Fallback/default is Turkish, but we also support English
+ 	if /usr/bin/test $sys_lang = "en"; then
+ 		sys_keymap="us"
+ 		sys_font="iso01.16"
+ 		sys_trans="8859-1"
+ 		sys_locale="en_US.UTF-8"
+ 	else
+ 		sys_keymap="trq"
+ 		sys_font="iso09.16"
+ 		sys_trans="8859-9"
+ 		sys_locale="tr_TR.UTF-8"
+ 	fi
+ 
+ 	/bin/loadkeys $sys_keymap &> /dev/null
+     /usr/bin/setfont -f $sys_font -m $sys_trans
+ 	sed -i "s/KEYMAP=.*/KEYMAP=$sys_keymap/" /etc/conf.d/keymaps
+ 	sed -i "s/CONSOLEFONT=.*/CONSOLEFONT=$sys_font/" /etc/conf.d/consolefont
+ 	sed -i "s/CONSOLETRANSLATION=.*/CONSOLETRANSLATION=$sys_trans/" /etc/conf.d/consolefont
+ 	sed -i "s/LANG=.*/LANG=$sys_locale/" /etc/env.d/03locale
+ 	sed -i "s/LC_ALL=.*/LC_ALL=$sys_locale/" /etc/env.d/03locale
+ 
+ 	export LC_ALL=$sys_locale
+ 
+ 	# For /etc/profile.env
+ 	# /usr/bin/update-environ.py &> /dev/null
+ 
+ 	sed -i "s/LANG=.*/LANG=$sys_locale/" /etc/profile.env
+ 	sed -i "s/LC_ALL=.*/LC_ALL=$sys_locale/" /etc/profile.env
+# end dirty
+
 	if [[ ${BOOT} == "yes" ]] ; then
 		local x=
 		local y=
