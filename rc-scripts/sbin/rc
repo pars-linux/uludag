@@ -195,8 +195,11 @@ then
 	export LC_ALL=$sys_locale
 
 	# For /etc/profile.env
-	/usr/bin/update-environ.py &> /dev/null
-	
+	# /usr/bin/update-environ.py &> /dev/null
+
+	sed -i "s/LANG=.*/LANG=$sys_locale/" /etc/profile.env
+	sed -i "s/LC_ALL=.*/LC_ALL=$sys_locale/" /etc/profile.env
+
 	# Read off the kernel commandline to see if there's any special settings
 	# especially check to see if we need to set the  CDBOOT environment variable
 	# Note: /proc MUST be mounted
