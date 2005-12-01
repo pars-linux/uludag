@@ -150,6 +150,17 @@ then
 	[ -c /dev/null ] && dev_null=1 || dev_null=0
 	[ -c /dev/console ] && dev_console=1 || dev_console=0
 
+	check_statedir /proc
+
+	ebegin "Mounting proc at /proc"
+	if [[ ${RC_USE_FSTAB} = "yes" ]] ; then
+		mntcmd=$(get_mount_fstab /proc)
+	else
+		unset mntcmd
+	fi
+	try mount -n ${mntcmd:--t proc proc /proc}
+	eend $?
+
     # Setup fonts and keymap here, so we have language support in init scripts
     /usr/bin/kbd_mode -u
     echo -e "\033%G"
@@ -182,17 +193,6 @@ then
 	echo
 	echo -e "${GOOD}Pardus Beta; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
 	echo
-
-	check_statedir /proc
-
-	ebegin "Mounting proc at /proc"
-	if [[ ${RC_USE_FSTAB} = "yes" ]] ; then
-		mntcmd=$(get_mount_fstab /proc)
-	else
-		unset mntcmd
-	fi
-	try mount -n ${mntcmd:--t proc proc /proc}
-	eend $?
 
 	# Read off the kernel commandline to see if there's any special settings
 	# especially check to see if we need to set the  CDBOOT environment variable
