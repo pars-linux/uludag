@@ -183,9 +183,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progNameLabel.setText(QString("<qt><h1>"+self.package.name+"</h1></qt>"))
 
         try:
-            self.infoLabel.setText(self.package.summary['tr'])
+            self.infoLabel.setText(self.package.summary['tr']+"<br><br><br>"+self.package.description['tr'])
         except:
-            self.infoLabel.setText(self.package.summary['en'])
+            self.infoLabel.setText(self.package.summary['en']+"<br><br><br>"+self.package.description['en'])
         
         size = self.package.installedSize
         
