@@ -32,7 +32,7 @@ named::40:named
 mysql:x:60:
 postgres::70:
 cdrw::80:haldaemon
-apache:x:81:
+apache:x:81:apache
 nut::84:
 usb::85:haldaemon
 vpopmail:x:89:
