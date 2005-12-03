@@ -222,19 +222,20 @@
  <Exclude>
   <Filename>kde-KControl.desktop</Filename>
   <Filename>kde-Help.desktop</Filename>
+  <Filename>kde-kaptan.desktop</Filename>
  </Exclude>
  <Menu>
   <Name>.hidden</Name>
   <Include>
    <Filename>kde-KControl.desktop</Filename>
    <Filename>kde-Help.desktop</Filename>
+   <Filename>kde-kaptan.desktop</Filename>
   </Include>
  </Menu>
  <Layout>
   <Merge type="menus" />
   <Menuname>Programs</Menuname>
   <Merge type="files" />
-  <Filename>kde-fireglcontrol.kdelnk</Filename>
   <Filename>kde-Kfind.desktop</Filename>
   <Filename>kde-Home.desktop</Filename>
   <Filename>kde-tasma.desktop</Filename>
