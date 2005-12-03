@@ -283,6 +283,9 @@ Masaüst
 
 Temel masaüstü ihtiyaçlarý, projenin amaçlarý ve iþ planý göz önüne alýnarak
  hazýrlanmýþ yazýlým seçimleri aþaðýdaki gibidir.
+\layout Standard
+
+
 \begin_inset Foot
 collapsed false
 
@@ -511,11 +514,16 @@ Kooka (?)
 Ofis
 \layout Standard
 
-Kelime iþlem programlarýndan OpenOffice.org'un daðýtým çýktýðý anda kararlý
- 2.0 sürümüne sahip olmasý beklenmiyor, ancak halihazýrda kullanýlan beta
- sürümün de yeteri kadar kararlý olduðu belirtiliyor.
- Bu nedenle daðýtýmda OpenOffice.org'un asgari 2.0 RC1 sürümü kullanýlacaktýr.
- 
+Kelime iþlem programlarýndan OpenOffice.org'un, daðýtým çýktýðý zaman 2.0.1
+ sürümüne sahip olmasý ve ofis yazýlýmlarýnýn içinde 
+\begin_inset Quotes eld
+\end_inset 
+
+Amiral Gemisi
+\begin_inset Quotes erd
+\end_inset 
+
+ olarak görev yapmasý bekleniyor.
 \layout Itemize
 
 Kelime iþlemci
