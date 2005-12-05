@@ -1,5 +1,0 @@
-./autostart
-./configure
-make
-As root:
-make install
