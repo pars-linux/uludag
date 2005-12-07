@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-21 09:56+0200\n"
+"POT-Creation-Date: 2005-12-07 15:32+0200\n"
 "PO-Revision-Date: 2005-03-05 23:03+0200\n"
 "Last-Translator: Zerrin Cakmakkaya <zerrin@uludag.org.tr>\n"
 "Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
@@ -16,14 +16,10 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 
 #: goodbyedlg.cpp:63
-msgid "GoodbyeDlg"
-msgstr "GoodbyeDlg"
-
-#: goodbyedlg.cpp:64
 msgid "pix_goodbye"
 msgstr "pix_goodbye"
 
-#: goodbyedlg.cpp:65
+#: goodbyedlg.cpp:64
 msgid ""
 "<center>\n"
 "You have finished!  Now you can start using Pardus Linux<br>\n"
@@ -33,7 +29,8 @@ msgid ""
 msgstr ""
 "<center>\n"
 "Başarıyla bitirdiniz! Şimdi Pardus'unuzu kullanmaya başlayabilirsiniz<br>\n"
-"<a href=\"#tasma\">Eğer daha fazla ayarı değiştirmek isterseniz <b>Tasma</b>'yı başlatmak için buraya tıklayın</a>\n"
+"<a href=\"#tasma\">Eğer daha fazla ayarı değiştirmek isterseniz <b>Tasma</"
+"b>'yı başlatmak için buraya tıklayın</a>\n"
 "</center>"
 
 #: kaptan.cpp:40
@@ -46,7 +43,7 @@ msgstr "Fare Ayarı"
 
 #: kaptan.cpp:48
 msgid "Wallpaper Setup"
-msgstr "Duvar Kağıdı Ayarı"
+msgstr "Duvar Kâğıdı Ayarı"
 
 #: kaptan.cpp:52
 msgid "Congratulations"
@@ -57,30 +54,18 @@ msgid "Kaptan Desktop"
 msgstr "Kaptan Masaüstü"
 
 #: mousesetupdlg.cpp:88
-msgid "MouseSetupDlg"
-msgstr "MouseSetupDlg"
-
-#: mousesetupdlg.cpp:89
 msgid "Button Order"
 msgstr "Düğme Sırası"
 
-#: mousesetupdlg.cpp:90
+#: mousesetupdlg.cpp:89
 msgid "Righ&t handed"
 msgstr "S&ağ el"
 
-#: mousesetupdlg.cpp:91
-msgid "Alt+T"
-msgstr "Alt+T"
-
-#: mousesetupdlg.cpp:92
+#: mousesetupdlg.cpp:90
 msgid "Le&ft handed"
 msgstr "S&ol el"
 
-#: mousesetupdlg.cpp:93
-msgid "Alt+F"
-msgstr "Alt+F"
-
-#: mousesetupdlg.cpp:94
+#: mousesetupdlg.cpp:91
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
 "right buttons on your pointing device by choosing the 'Left handed' option "
@@ -88,54 +73,46 @@ msgid ""
 "function as the left and right buttons are affected. For example, if you "
 "have a tree-button mouse, the middle buttons is unaffected."
 msgstr ""
-"Sol elinizi kullanıyorsanız, imleç aygıtınızın sol ve sağ düğmelerinin "
-"işlevlerini 'sol el' seçeneğini işaretleyerek takas etmeyi tercih "
-"edebilirsiniz. İmlec aygıtınızın ikiden fazla düğmesi varsa, sadece sol ve "
-"sağ düğmeler olarak işlev görenler etkilenir. Örneğin, üç düğmeli bir "
-"fareniz varsa orta düğme etkilenmez."
+"Sol elinizi kullanıyorsanız, farenizin sol ve sağ düğmelerinin işlevlerini "
+"'sol el' seçeneğini işaretleyerek değiştirmeyi tercih edebilirsiniz. "
+"Farenizin ikiden fazla düğmesi varsa, sadece sol ve sağ düğme işlevini "
+"görenler etkilenir. Örneğin, üç düğmeli bir fareniz varsa orta düğme "
+"etkilenmez."
 
 #: wallpaperdlg.cpp:90
-msgid "WallpaperDlg"
-msgstr "WallpaperDlg"
-
-#: wallpaperdlg.cpp:91
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish :)."
 msgstr ""
-"Buradan, masaüstünüzün artalanı için bir duvar kağıdı seçebilirsiniz. Pardus "
-"size güzel görünümlü duvar kağıtları sunar, bunlardan birini seçebilirsiniz, "
+"Buradan, masaüstünüz için bir duvar kâğıdı seçebilirsiniz. Pardus "
+"size güzel görünümlü duvar kâğıtları sunar. Bunlardan birini seçebilirsiniz, "
 "istediğiniz gibi :)."
 
-#: wallpaperdlg.cpp:92
+#: wallpaperdlg.cpp:91
 msgid "Wallpaper :"
-msgstr "Duvar Kağıdı :"
+msgstr "Duvar Kâğıdı :"
 
-#: wallpaperdlg.cpp:93
+#: wallpaperdlg.cpp:92
 msgid "Preview :"
 msgstr "Önizleme :"
 
-#: wallpaperdlg.cpp:94
+#: wallpaperdlg.cpp:93
 msgid "pix_wallpaper"
 msgstr "pix_wallpaper"
 
-#: wallpaperdlg.cpp:95
+#: wallpaperdlg.cpp:94
 msgid "Don't change desktop background!"
 msgstr "Masaüstü arkaplan resmini değiştirme!"
 
 #: welcomedlg.cpp:75
-msgid "WelcomeDlg"
-msgstr "WelcomeDlg"
-
-#: welcomedlg.cpp:76
 msgid "pix_kaptan"
 msgstr "pix_kaptan"
 
-#: welcomedlg.cpp:77
+#: welcomedlg.cpp:76
 msgid "pix_pardus"
 msgstr "pix_pardus"
 
-#: welcomedlg.cpp:78
+#: welcomedlg.cpp:77
 msgid ""
 "Uludağ project is a GNU/Linux distribution, targeting at computer literate "
 "users' basic desktop needs; with acquiring the strong ideas, architecture "
@@ -150,7 +127,7 @@ msgstr ""
 "yapılandırma ve kullanım kolaylığı sağlamak üzere geliştirilen bir GNU/Linux "
 "dağıtımıdır. "
 
-#: welcomedlg.cpp:79
+#: welcomedlg.cpp:78
 msgid ""
 "This application, called <b>Kaptan Desktop</b>, will help you with your "
 "basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
@@ -161,4 +138,5 @@ msgstr ""
 "basit ancak yeterli ayarları hızlı bir biçimde yapmanızda size yardım "
 "edecektir. Bu uygulama aynı zamanda daha iyi bir masaüstü için bazı "
 "varsayılan yapılandırmayı da ayarlar :)."
+
 
