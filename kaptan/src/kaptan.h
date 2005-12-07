@@ -30,6 +30,7 @@ public:
     ~Kaptan();
 
     virtual void next();
+    virtual void back();
 
 public slots:
     virtual void accept();

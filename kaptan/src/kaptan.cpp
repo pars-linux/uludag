@@ -13,7 +13,7 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <kconfig.h>
-#include <dcopclient.h>
+#include <kpushbutton.h>
 
 #include "welcome.h"
 #include "mouse.h"
@@ -68,9 +68,18 @@ void Kaptan::next()
     else if ( currentPage() == wallpaper ) {
         if ( wallpaper->changeWallpaper() )
             wallpaper->setWallpaper();
+            cancelButton()->hide();
     }
 
     QWizard::next();
+}
+
+void Kaptan::back()
+{
+  if ( currentPage() == goodbye )
+    cancelButton()->show();
+
+  QWizard::back();
 }
 
 void Kaptan::accept()
