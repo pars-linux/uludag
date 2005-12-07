@@ -34,7 +34,7 @@ int main( int argc, char* argv[] )
     KApplication app;
 
     Kaptan *k = new Kaptan();
-    k->setFixedSize( 490, 400 );
+    k->resize( 490, 400 );
     
     app.setMainWidget(k);
     k->show();
