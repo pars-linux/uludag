@@ -15,15 +15,12 @@
 #include <kconfig.h>
 #include <dcopclient.h>
 
-#include <X11/Xlib.h>
-
 #include "welcome.h"
 #include "mouse.h"
 #include "wallpaper.h"
 #include "goodbye.h"
 
 #include "kaptan.h"
-#include "kaptan.moc"
 
 Kaptan::Kaptan( QWidget *parent, const char *name )
     : KWizard( parent, name, true)
@@ -54,13 +51,12 @@ Kaptan::Kaptan( QWidget *parent, const char *name )
 
     setFinishEnabled( QWizard::page( 3 ), true );
 
-    locale = new KLocale( PACKAGE );
+    locale = new KLocale( "kaptan" );
     locale->setLanguage( KLocale::defaultLanguage() );
 }
 
 Kaptan::~Kaptan()
 {
-
 }
 
 void Kaptan::next()
@@ -77,12 +73,6 @@ void Kaptan::next()
     QWizard::next();
 }
 
-void Kaptan::back()
-{
-    QWizard::back();
-}
-
-// FINISHED - set defaults...
 void Kaptan::accept()
 {
     // KDE değişkenlerini ayarlayalım...
@@ -94,5 +84,7 @@ void Kaptan::accept()
 
     KGlobal::config()->sync();
 
-    exit(0);
+    QWizard::accept();
 }
+
+#include "kaptan.moc"

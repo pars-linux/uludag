@@ -12,10 +12,6 @@
 #ifndef KAPTAN_H
 #define KAPTAN_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <kwizard.h>
 
 class KLocale;
@@ -34,7 +30,6 @@ public:
     ~Kaptan();
 
     virtual void next();
-    virtual void back();
 
 public slots:
     virtual void accept();
