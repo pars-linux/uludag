@@ -12,6 +12,7 @@
 #include <qfile.h>
 #include <qlabel.h>
 #include <qcheckbox.h>
+#include <qpushbutton.h>
 #include <qstringlist.h>
 #include <qpixmap.h>
 #include <qimage.h>
@@ -61,6 +62,7 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
     for(; it != papers.constEnd(); ++it)
       m_urlWallpaperBox->insertItem(it.key());
 
+    connect( testWallpaper, SIGNAL( clicked() ), this , SLOT( setWallpaper() ) );
     connect( m_urlWallpaperBox, SIGNAL( activated( int ) ), this, SLOT( paperSelected( int ) ) );
     connect( checkChange, SIGNAL( toggled( bool ) ), this, SLOT( checkChanged( bool ) ) );
 

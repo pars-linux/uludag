@@ -23,6 +23,8 @@ class Wallpaper : public WallpaperDlg
 public:
     Wallpaper( QWidget *parent = 0, const char* name = 0 );
     bool changeWallpaper();
+
+public slots:
     void setWallpaper();
 
 protected slots:
