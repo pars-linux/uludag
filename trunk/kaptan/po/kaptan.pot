@@ -1,46 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2005-12-07 19:05+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-12-07 20:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
-#: kaptan.cpp:40
-msgid "Welcome"
-msgstr ""
-
-#: kaptan.cpp:44
-msgid "Mouse Setup"
-msgstr ""
-
-#: kaptan.cpp:48
-msgid "Wallpaper Setup"
-msgstr ""
-
-#: kaptan.cpp:52
-msgid "Congratulations"
-msgstr ""
-
-#: main.cpp:18
-msgid "Kaptan Desktop"
-msgstr ""
+"Content-Transfer-Encoding: 8bit\n"
 
 #. i18n: file goodbyedlg.ui line 32
-#: rc.cpp:3
+#: goodbyedlg.cpp:63 rc.cpp:3
 #, no-c-format
 msgid "pix_goodbye"
 msgstr ""
 
 #. i18n: file goodbyedlg.ui line 64
-#: rc.cpp:6
+#: goodbyedlg.cpp:64 rc.cpp:6
 #, no-c-format
 msgid ""
 "<center>\n"
@@ -50,8 +32,28 @@ msgid ""
 "</center>"
 msgstr ""
 
+#: kaptan.cpp:37
+msgid "Welcome"
+msgstr ""
+
+#: kaptan.cpp:41
+msgid "Mouse Setup"
+msgstr ""
+
+#: kaptan.cpp:45
+msgid "Wallpaper Setup"
+msgstr ""
+
+#: kaptan.cpp:49
+msgid "Congratulations"
+msgstr ""
+
+#: main.cpp:18
+msgid "Kaptan Desktop"
+msgstr ""
+
 #. i18n: file mousesetupdlg.ui line 24
-#: rc.cpp:12
+#: mousesetupdlg.cpp:92 rc.cpp:12
 #, no-c-format
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
@@ -62,69 +64,81 @@ msgid ""
 msgstr ""
 
 #. i18n: file mousesetupdlg.ui line 55
-#: rc.cpp:15
+#: mousesetupdlg.cpp:93 rc.cpp:15
 #, no-c-format
 msgid "Button Order"
 msgstr ""
 
 #. i18n: file mousesetupdlg.ui line 106
-#: rc.cpp:18
+#: mousesetupdlg.cpp:94 rc.cpp:18
 #, no-c-format
 msgid "Righ&t handed"
 msgstr ""
 
 #. i18n: file mousesetupdlg.ui line 117
-#: rc.cpp:21
+#: mousesetupdlg.cpp:95 rc.cpp:21
 #, no-c-format
 msgid "Le&ft handed"
 msgstr ""
 
-#. i18n: file wallpaperdlg.ui line 49
-#: rc.cpp:24
+#. i18n: file wallpaperdlg.ui line 16
+#: rc.cpp:24 wallpaperdlg.cpp:92
+#, no-c-format
+msgid "WallpaperDlg"
+msgstr ""
+
+#. i18n: file wallpaperdlg.ui line 44
+#: rc.cpp:27 wallpaperdlg.cpp:93
 #, no-c-format
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish :)."
 msgstr ""
 
-#. i18n: file wallpaperdlg.ui line 77
-#: rc.cpp:27
+#. i18n: file wallpaperdlg.ui line 55
+#: rc.cpp:30 wallpaperdlg.cpp:94
 #, no-c-format
 msgid "Wallpaper :"
 msgstr ""
 
-#. i18n: file wallpaperdlg.ui line 109
-#: rc.cpp:30
+#. i18n: file wallpaperdlg.ui line 87
+#: rc.cpp:33 wallpaperdlg.cpp:95
 #, no-c-format
 msgid "Preview :"
 msgstr ""
 
-#. i18n: file wallpaperdlg.ui line 132
-#: rc.cpp:33
+#. i18n: file wallpaperdlg.ui line 110
+#: rc.cpp:36 wallpaperdlg.cpp:96
 #, no-c-format
 msgid "pix_wallpaper"
 msgstr ""
 
-#. i18n: file wallpaperdlg.ui line 142
-#: rc.cpp:36
+#. i18n: file wallpaperdlg.ui line 120
+#: rc.cpp:39 wallpaperdlg.cpp:97
 #, no-c-format
 msgid "Don't change desktop background!"
 msgstr ""
 
-#. i18n: file welcomedlg.ui line 16
-#: rc.cpp:39
+#. i18n: file wallpaperdlg.ui line 145
+#: rc.cpp:42 wallpaperdlg.cpp:98
 #, no-c-format
-msgid "WelcomeDlg"
+msgid "&Test Wallpaper"
 msgstr ""
 
-#. i18n: file welcomedlg.ui line 44
-#: rc.cpp:42
+#. i18n: file wallpaperdlg.ui line 148
+#: rc.cpp:45 wallpaperdlg.cpp:99
+#, no-c-format
+msgid "Alt+T"
+msgstr ""
+
+#. i18n: file welcomedlg.ui line 41
+#: rc.cpp:48 welcomedlg.cpp:72
 #, no-c-format
 msgid "pix_pardus"
 msgstr ""
 
-#. i18n: file welcomedlg.ui line 52
-#: rc.cpp:45
+#. i18n: file welcomedlg.ui line 49
+#: rc.cpp:51 welcomedlg.cpp:73
 #, no-c-format
 msgid ""
 "Uludag project is a GNU/Linux distribution, targeting at computer literate "
@@ -134,14 +148,14 @@ msgid ""
 "installation and usage of the computers."
 msgstr ""
 
-#. i18n: file welcomedlg.ui line 75
-#: rc.cpp:48
+#. i18n: file welcomedlg.ui line 72
+#: rc.cpp:54 welcomedlg.cpp:74
 #, no-c-format
 msgid "pix_kaptan"
 msgstr ""
 
-#. i18n: file welcomedlg.ui line 89
-#: rc.cpp:51
+#. i18n: file welcomedlg.ui line 86
+#: rc.cpp:57 welcomedlg.cpp:75
 #, no-c-format
 msgid ""
 "This application, called <b>Kaptan Desktop</b>, will help you with your "
