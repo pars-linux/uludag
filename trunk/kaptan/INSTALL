@@ -1,0 +1,4 @@
+make -f admin/Makefile.common
+./configure
+make
+sudo make install
