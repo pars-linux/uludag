@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-07 15:32+0200\n"
+"POT-Creation-Date: 2005-12-07 19:05+0200\n"
 "PO-Revision-Date: 2005-03-05 23:03+0200\n"
 "Last-Translator: Zerrin Cakmakkaya <zerrin@uludag.org.tr>\n"
 "Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
@@ -14,24 +14,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-
-#: goodbyedlg.cpp:63
-msgid "pix_goodbye"
-msgstr "pix_goodbye"
-
-#: goodbyedlg.cpp:64
-msgid ""
-"<center>\n"
-"You have finished!  Now you can start using Pardus Linux<br>\n"
-"<a href=\"#tasma\">If you want to change more settings click here to start "
-"<b>Tasma</b></a>\n"
-"</center>"
-msgstr ""
-"<center>\n"
-"Başarıyla bitirdiniz! Şimdi Pardus'unuzu kullanmaya başlayabilirsiniz<br>\n"
-"<a href=\"#tasma\">Eğer daha fazla ayarı değiştirmek isterseniz <b>Tasma</"
-"b>'yı başlatmak için buraya tıklayın</a>\n"
-"</center>"
 
 #: kaptan.cpp:40
 msgid "Welcome"
@@ -53,19 +35,31 @@ msgstr "Tebrikler"
 msgid "Kaptan Desktop"
 msgstr "Kaptan Masaüstü"
 
-#: mousesetupdlg.cpp:88
-msgid "Button Order"
-msgstr "Düğme Sırası"
+#. i18n: file goodbyedlg.ui line 32
+#: rc.cpp:3
+#, no-c-format
+msgid "pix_goodbye"
+msgstr "pix_goodbye"
 
-#: mousesetupdlg.cpp:89
-msgid "Righ&t handed"
-msgstr "S&ağ el"
+#. i18n: file goodbyedlg.ui line 64
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"<center>\n"
+"You have finished!  Now you can start using Pardus Linux<br>\n"
+"<a href=\"#tasma\">If you want to change more settings click here to start "
+"<b>Tasma</b></a>\n"
+"</center>"
+msgstr ""
+"<center>\n"
+"Başarıyla bitirdiniz! Şimdi Pardus'unuzu kullanmaya başlayabilirsiniz<br>\n"
+"<a href=\"#tasma\">Eğer daha fazla ayarı değiştirmek isterseniz <b>Tasma</"
+"b>'yı başlatmak için buraya tıklayın</a>\n"
+"</center>"
 
-#: mousesetupdlg.cpp:90
-msgid "Le&ft handed"
-msgstr "S&ol el"
-
-#: mousesetupdlg.cpp:91
+#. i18n: file mousesetupdlg.ui line 24
+#: rc.cpp:12
+#, no-c-format
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
 "right buttons on your pointing device by choosing the 'Left handed' option "
@@ -79,42 +73,76 @@ msgstr ""
 "görenler etkilenir. Örneğin, üç düğmeli bir fareniz varsa orta düğme "
 "etkilenmez."
 
-#: wallpaperdlg.cpp:90
+#. i18n: file mousesetupdlg.ui line 55
+#: rc.cpp:15
+#, no-c-format
+msgid "Button Order"
+msgstr "Düğme Sırası"
+
+#. i18n: file mousesetupdlg.ui line 106
+#: rc.cpp:18
+#, no-c-format
+msgid "Righ&t handed"
+msgstr "S&ağ el"
+
+#. i18n: file mousesetupdlg.ui line 117
+#: rc.cpp:21
+#, no-c-format
+msgid "Le&ft handed"
+msgstr "S&ol el"
+
+#. i18n: file wallpaperdlg.ui line 49
+#: rc.cpp:24
+#, no-c-format
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish :)."
 msgstr ""
-"Buradan, masaüstünüz için bir duvar kâğıdı seçebilirsiniz. Pardus "
-"size güzel görünümlü duvar kâğıtları sunar. Bunlardan birini seçebilirsiniz, "
+"Buradan, masaüstünüz için bir duvar kâğıdı seçebilirsiniz. Pardus size güzel "
+"görünümlü duvar kâğıtları sunar. Bunlardan birini seçebilirsiniz, "
 "istediğiniz gibi :)."
 
-#: wallpaperdlg.cpp:91
+#. i18n: file wallpaperdlg.ui line 77
+#: rc.cpp:27
+#, no-c-format
 msgid "Wallpaper :"
 msgstr "Duvar Kâğıdı :"
 
-#: wallpaperdlg.cpp:92
+#. i18n: file wallpaperdlg.ui line 109
+#: rc.cpp:30
+#, no-c-format
 msgid "Preview :"
 msgstr "Önizleme :"
 
-#: wallpaperdlg.cpp:93
+#. i18n: file wallpaperdlg.ui line 132
+#: rc.cpp:33
+#, no-c-format
 msgid "pix_wallpaper"
 msgstr "pix_wallpaper"
 
-#: wallpaperdlg.cpp:94
+#. i18n: file wallpaperdlg.ui line 142
+#: rc.cpp:36
+#, no-c-format
 msgid "Don't change desktop background!"
 msgstr "Masaüstü arkaplan resmini değiştirme!"
 
-#: welcomedlg.cpp:75
-msgid "pix_kaptan"
-msgstr "pix_kaptan"
+#. i18n: file welcomedlg.ui line 16
+#: rc.cpp:39
+#, no-c-format
+msgid "WelcomeDlg"
+msgstr "Hoş Geldiniz"
 
-#: welcomedlg.cpp:76
+#. i18n: file welcomedlg.ui line 44
+#: rc.cpp:42
+#, no-c-format
 msgid "pix_pardus"
 msgstr "pix_pardus"
 
-#: welcomedlg.cpp:77
+#. i18n: file welcomedlg.ui line 52
+#: rc.cpp:45
+#, no-c-format
 msgid ""
-"Uludağ project is a GNU/Linux distribution, targeting at computer literate "
+"Uludag project is a GNU/Linux distribution, targeting at computer literate "
 "users' basic desktop needs; with acquiring the strong ideas, architecture "
 "and code of other distributions; with a custom configuration framework which "
 "has the ability to evolve into an autonomous system; for simplifying the "
@@ -127,7 +155,15 @@ msgstr ""
 "yapılandırma ve kullanım kolaylığı sağlamak üzere geliştirilen bir GNU/Linux "
 "dağıtımıdır. "
 
-#: welcomedlg.cpp:78
+#. i18n: file welcomedlg.ui line 75
+#: rc.cpp:48
+#, no-c-format
+msgid "pix_kaptan"
+msgstr "pix_kaptan"
+
+#. i18n: file welcomedlg.ui line 89
+#: rc.cpp:51
+#, no-c-format
 msgid ""
 "This application, called <b>Kaptan Desktop</b>, will help you with your "
 "basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
@@ -138,5 +174,3 @@ msgstr ""
 "basit ancak yeterli ayarları hızlı bir biçimde yapmanızda size yardım "
 "edecektir. Bu uygulama aynı zamanda daha iyi bir masaüstü için bazı "
 "varsayılan yapılandırmayı da ayarlar :)."
-
-
