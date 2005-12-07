@@ -11,6 +11,7 @@
 
 #include <X11/Xlib.h>
 
+#include <fixx11h.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
 #include <qlabel.h>
