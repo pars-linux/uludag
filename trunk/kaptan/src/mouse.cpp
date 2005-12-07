@@ -9,6 +9,8 @@
   Please read the COPYING file.
 */
 
+#include <X11/Xlib.h>
+
 #include <kstandarddirs.h>
 #include <kconfig.h>
 #include <qlabel.h>
@@ -16,9 +18,6 @@
 #include <qpixmap.h>
 
 #include "mouse.h"
-
-#include <X11/Xlib.h>
-
 
 MouseSetup::MouseSetup( QWidget *parent, const char* name )
     : MouseSetupDlg( parent, name )
@@ -29,10 +28,8 @@ MouseSetup::MouseSetup( QWidget *parent, const char* name )
     // right-handed default
     setHandedness( RIGHT_HANDED );
 
-    connect( leftHanded, SIGNAL( clicked() ),
-             this, SLOT( slotLeftHanded() ) );
-    connect( rightHanded, SIGNAL( clicked() ),
-             this, SLOT( slotRightHanded() ) );
+    connect( leftHanded, SIGNAL( clicked() ), this, SLOT( slotLeftHanded() ) );
+    connect( rightHanded, SIGNAL( clicked() ), this, SLOT( slotRightHanded() ) );
 }
 
 MouseSetup::~MouseSetup()
