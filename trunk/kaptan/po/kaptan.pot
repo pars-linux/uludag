@@ -1,32 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
-# This file is put in the public domain.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-07 15:32+0200\n"
+"POT-Creation-Date: 2005-12-07 19:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-#: goodbyedlg.cpp:63
-msgid "pix_goodbye"
-msgstr ""
-
-#: goodbyedlg.cpp:64
-msgid ""
-"<center>\n"
-"You have finished!  Now you can start using Pardus Linux<br>\n"
-"<a href=\"#tasma\">If you want to change more settings click here to start "
-"<b>Tasma</b></a>\n"
-"</center>"
-msgstr ""
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: kaptan.cpp:40
 msgid "Welcome"
@@ -48,19 +33,26 @@ msgstr ""
 msgid "Kaptan Desktop"
 msgstr ""
 
-#: mousesetupdlg.cpp:88
-msgid "Button Order"
+#. i18n: file goodbyedlg.ui line 32
+#: rc.cpp:3
+#, no-c-format
+msgid "pix_goodbye"
 msgstr ""
 
-#: mousesetupdlg.cpp:89
-msgid "Righ&t handed"
+#. i18n: file goodbyedlg.ui line 64
+#: rc.cpp:6
+#, no-c-format
+msgid ""
+"<center>\n"
+"You have finished!  Now you can start using Pardus Linux<br>\n"
+"<a href=\"#tasma\">If you want to change more settings click here to start "
+"<b>Tasma</b></a>\n"
+"</center>"
 msgstr ""
 
-#: mousesetupdlg.cpp:90
-msgid "Le&ft handed"
-msgstr ""
-
-#: mousesetupdlg.cpp:91
+#. i18n: file mousesetupdlg.ui line 24
+#: rc.cpp:12
+#, no-c-format
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
 "right buttons on your pointing device by choosing the 'Left handed' option "
@@ -69,46 +61,88 @@ msgid ""
 "have a tree-button mouse, the middle buttons is unaffected."
 msgstr ""
 
-#: wallpaperdlg.cpp:90
+#. i18n: file mousesetupdlg.ui line 55
+#: rc.cpp:15
+#, no-c-format
+msgid "Button Order"
+msgstr ""
+
+#. i18n: file mousesetupdlg.ui line 106
+#: rc.cpp:18
+#, no-c-format
+msgid "Righ&t handed"
+msgstr ""
+
+#. i18n: file mousesetupdlg.ui line 117
+#: rc.cpp:21
+#, no-c-format
+msgid "Le&ft handed"
+msgstr ""
+
+#. i18n: file wallpaperdlg.ui line 49
+#: rc.cpp:24
+#, no-c-format
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish :)."
 msgstr ""
 
-#: wallpaperdlg.cpp:91
+#. i18n: file wallpaperdlg.ui line 77
+#: rc.cpp:27
+#, no-c-format
 msgid "Wallpaper :"
 msgstr ""
 
-#: wallpaperdlg.cpp:92
+#. i18n: file wallpaperdlg.ui line 109
+#: rc.cpp:30
+#, no-c-format
 msgid "Preview :"
 msgstr ""
 
-#: wallpaperdlg.cpp:93
+#. i18n: file wallpaperdlg.ui line 132
+#: rc.cpp:33
+#, no-c-format
 msgid "pix_wallpaper"
 msgstr ""
 
-#: wallpaperdlg.cpp:94
+#. i18n: file wallpaperdlg.ui line 142
+#: rc.cpp:36
+#, no-c-format
 msgid "Don't change desktop background!"
 msgstr ""
 
-#: welcomedlg.cpp:75
-msgid "pix_kaptan"
+#. i18n: file welcomedlg.ui line 16
+#: rc.cpp:39
+#, no-c-format
+msgid "WelcomeDlg"
 msgstr ""
 
-#: welcomedlg.cpp:76
+#. i18n: file welcomedlg.ui line 44
+#: rc.cpp:42
+#, no-c-format
 msgid "pix_pardus"
 msgstr ""
 
-#: welcomedlg.cpp:77
+#. i18n: file welcomedlg.ui line 52
+#: rc.cpp:45
+#, no-c-format
 msgid ""
-"Uludağ project is a GNU/Linux distribution, targeting at computer literate "
+"Uludag project is a GNU/Linux distribution, targeting at computer literate "
 "users' basic desktop needs; with acquiring the strong ideas, architecture "
 "and code of other distributions; with a custom configuration framework which "
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
 
-#: welcomedlg.cpp:78
+#. i18n: file welcomedlg.ui line 75
+#: rc.cpp:48
+#, no-c-format
+msgid "pix_kaptan"
+msgstr ""
+
+#. i18n: file welcomedlg.ui line 89
+#: rc.cpp:51
+#, no-c-format
 msgid ""
 "This application, called <b>Kaptan Desktop</b>, will help you with your "
 "basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
