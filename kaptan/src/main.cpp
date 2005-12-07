@@ -22,7 +22,7 @@ static KCmdLineOptions options[] =
     KCmdLineLastOption
 };
 
-int main( int argc, char* argv[] )
+int main( int argc, char** argv )
 {
     KAboutData aboutData( "kaptan", description,
 			 "1.0", description, KAboutData::License_GPL,
@@ -33,11 +33,11 @@ int main( int argc, char* argv[] )
     KCmdLineArgs::addCmdLineOptions( options );
     KApplication app;
 
-    Kaptan *k = new Kaptan();
-    k->resize( 490, 400 );
+    Kaptan *kaptanDesktop = new Kaptan();
+    kaptanDesktop->resize( 490, 400 );
     
-    app.setMainWidget(k);
-    k->show();
+    app.setMainWidget(kaptanDesktop);
+    kaptanDesktop->show();
 
     return app.exec();
 }
