@@ -14,7 +14,6 @@
 
 #include "wallpaperdlg.h"
 
-class KStandardDirs;
 class QString;
 
 class Wallpaper : public WallpaperDlg
@@ -31,8 +30,7 @@ protected slots:
     void checkChanged( bool change );
 
 private:
-    KStandardDirs *mDirs;
-    QMap<QString, int> papers;
+    QMap<QString, QString> papers;
     QString selectedPaper;
     bool changePaper;
 };

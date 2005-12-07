@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2004,2005 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -9,18 +9,23 @@
   Please read the COPYING file.
 */
 
+#include <qfile.h>
 #include <qlabel.h>
 #include <qcheckbox.h>
 #include <qstringlist.h>
 #include <qpixmap.h>
 #include <qimage.h>
 #include <qmap.h>
+#include <qtextstream.h>
+
+#include <dcopref.h>
 #include <kcombobox.h>
+#include <kdebug.h>
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <kstringhandler.h>
 #include <kconfig.h>
-#include <dcopref.h>
+
 
 #include "wallpaper.h"
 
@@ -29,65 +34,48 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 {
     changePaper = true;
     selectedPaper = "";
-    mDirs = KGlobal::dirs();
+    
+    QStringList lst = KGlobal::dirs()->findAllResources( "wallpaper",  "*.desktop",  false /* no recursion */,  true /* unique files */ );
 
-    QStringList lst = mDirs->findAllResources( "wallpaper",  "*",  false,  true );
-    int i = 0;
-    QStringList::ConstIterator end = lst.end();
-    for ( QStringList::ConstIterator it = lst.begin(); it != end; ++it )
-    {
-        //build fileCaption from filename
-        QString fileCaption;
-        QString fileName;
-        int slash = ( *it ).findRev( '/' ) + 1;
-        int endDot = ( *it ).findRev( '.' );
+    for(QStringList::Iterator it = lst.begin(); it != lst.end(); ++it)
+      {
+	if((*it).endsWith(".svgz.desktop"))
+	  {
+	    // We can't show SVG
+	  }
+	else
+	  {
+	    QFile desktopFile(*it);
+	    QTextStream stream(&desktopFile);
+	    desktopFile.open(IO_ReadOnly);
+	    
+	    for(int i=0; i < 3; ++i)
+	      stream.readLine();
+	    
+	    papers.insert(stream.readLine().remove("Name="), (*it).remove(".desktop"));
+	    desktopFile.close();
+	  }
+      }
 
-        fileName = ( *it ).mid( slash );
+    QMap<QString, QString>::ConstIterator it = papers.begin();
+    for(; it != papers.constEnd(); ++it)
+      m_urlWallpaperBox->insertItem(it.key());
 
-        // strip the extension if it exists
-        if ( endDot != -1 && endDot > slash )
-            fileCaption = ( *it ).mid( slash,  endDot - slash );
-        else
-            fileCaption = ( *it ).mid( slash );
-
-        fileCaption.replace( '_',  ' ' );
-        fileCaption = KStringHandler::capwords( fileCaption );
-
-
-        m_urlWallpaperBox->insertItem( fileCaption );
-        papers[fileName] = i; i++;
-
-    }
-
-    connect( m_urlWallpaperBox, SIGNAL( activated( int ) ),
-             this, SLOT( paperSelected( int ) ) );
-    connect( checkChange, SIGNAL( toggled( bool ) ),
-             this, SLOT( checkChanged( bool ) ) );
+    connect( m_urlWallpaperBox, SIGNAL( activated( int ) ), this, SLOT( paperSelected( int ) ) );
+    connect( checkChange, SIGNAL( toggled( bool ) ), this, SLOT( checkChanged( bool ) ) );
 
 
-    emit paperSelected( 0 );
+    emit paperSelected(0);
 }
 
 void Wallpaper::paperSelected( int item )
 {
-    QMap<QString, int>::ConstIterator end = papers.end();
-    for ( QMap<QString, int>::ConstIterator it = papers.begin();
-          it != end;
-          ++it )
-    {
-        if ( it.data() == item )
-        {
-            QImage wp;
-            QString file = locate( "wallpaper", it.key() );
-            wp.load( file );
-            wp = wp.smoothScale( 140, 105 );
-            QPixmap pix( wp );
-            pix_wallpaper->setPixmap( pix );
-
-            selectedPaper = it.key();
-            break;
-        }
-    }
+  QString file = papers[m_urlWallpaperBox->text(item)];
+  QImage wp(file);
+  wp = wp.smoothScale( 140, 105 );
+  QPixmap pix( wp );
+  pix_wallpaper->setPixmap( pix );
+  selectedPaper = file;
 }
 
 void Wallpaper::setWallpaper()
