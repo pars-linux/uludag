@@ -266,7 +266,8 @@ Sorumluluk gruplarý sorunlarýn hýzlý bir þekilde giderilebilmesi ve farklý
  boyutlarda kararlarýn hýzlý bir þekilde alýnabilmesi için oluþturulmuþtur.
  Herhangi bir geliþtirici, sorumluluðunu aþan bir müdahale yapmak istediði
  zaman izin isteyerek çalýþabilir.
- Üzerinde anlaþýlmýþ konularda yapýlan düzeltmeler/güncellemeler genellike
+ Üzerinde anlaþýlmýþ konularda yapýlan düzeltmeler/güncellemeler (örneðin
+ uluslararasýlaþtýrma, yerelleþtirme ya da sözdizimi hatalarý gibi) genellike
  izin istemeye gerek duyulmadan kabul edilir :).
 \layout Subsection
 
@@ -277,7 +278,7 @@ Kaynak paket deposu üzerinde çalýþan geliþtiricilerin paket deposu kurallarýna
  ve yayýnlanmýþ bir sürüm zaman planý varsa bu zaman planýna uymasý gerekir.
 \layout Itemize
 
-Paket geliþtiricileri hazýrladýklarý PÝSÝ kaynak dizinlerini hazýrlarlar,
+Paket geliþtiricileri hazýrladýklarý PÝSÝ kaynak dizinlerini oluþtururlar,
  fakat PÝSÝ kaynaklarýnýn .pisi ikili paketlerine dönüþtürülmesi doðrudan
  paket geliþtiricileri tarafýndan gerçekleþtirilmez.
  Bununla birlikte, geliþtiricinin kaynak paketi sisteminde oluþturduðu,
@@ -299,7 +300,7 @@ Geliþtiriciler depoya gönderdikleri her paketten sorumludurlar, paketin
 Eksik veya tamamlanmamýþ paketler depoya asla gönderilmemelidir.
  Her paketin pspec.xml, actions.py dosyalarý doðru olarak yazýlmýþ olmalý.
  Yamalarý ve ek dosyalarý files/ dizini altýnda bulunmalý.
- COMAR betikleri ise comar/ dizini içerisinde bulunmalýdýr.
+ ÇOMAR betikleri ise comar/ dizini içerisinde bulunmalýdýr.
  Paket derlenebiliyor ve kurulabiliyor olmalýdýr.
 \layout Itemize
 
@@ -308,7 +309,7 @@ Geliþtirici paket güncellemelerinde pakete ait olan ChangeLog dosyasýný
 \layout Itemize
 
 Geliþtirici ayný anda birden fazla paket ile ilgili depoya gönderim yapmamalýdýr.
- Örneðin; Bir geliþtirici 8 paket üzerinde birden deðiþiklik yaptý ise,
+ Örneðin; bir geliþtirici 8 paket üzerinde birden deðiþiklik yaptý ise,
  her paket için ayrý ayrý gönderimde bulunmalýdýr (yani toplamda 8 ayrý
  gönderim).
  Kýsaca gönderimler atomik olmalýdýr.
@@ -340,7 +341,7 @@ ons.tex belgesinde detaylý olarak anlatýlmaktadýr.
 \layout Enumerate
 
 Bir pisi paketinin isimlendirme kuralý þu þekilde formülize edilebilir.
- PAKET-VERSÝYON{_sonekNUMARA}-REVIZYON.
+ PAKET-VERSÝYON{_sonekNUMARA}-REVÝZYON.
  
 \layout Enumerate
 
