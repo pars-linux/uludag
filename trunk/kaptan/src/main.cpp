@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2004,2005 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -26,8 +26,9 @@ static KCmdLineOptions options[] =
 int main( int argc, char* argv[] )
 {
     KAboutData aboutData( "kaptan", description,
-			 "0.2", description, KAboutData::License_GPL,
-			 "(c) 2004 TUBITAK/UEKAE", 0, 0, "baris@uludag.org.tr" );
+			 "1.0", description, KAboutData::License_GPL,
+			 "(c) 2004,2005 TUBİTAK/UEKAE", 0, 0, "ismail@uludag.org.tr" );
+    aboutData.addAuthor( "İsmail Dönmez", 0, "ismail@uludag.org.tr" );
     aboutData.addAuthor( "Barış Metin", 0, "baris@uludag.org.tr" );
     KCmdLineArgs::init( argc, argv, &aboutData );
     KCmdLineArgs::addCmdLineOptions( options );
