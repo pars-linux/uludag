@@ -19,7 +19,6 @@ static const char* const description = I18N_NOOP( "Kaptan Desktop" );
 
 static KCmdLineOptions options[] =
 {
-    { "h", "yardim...", 0 },
     KCmdLineLastOption
 };
 
