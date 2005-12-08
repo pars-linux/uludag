@@ -62,9 +62,6 @@ def AboutData():
 def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
-def loadIconSet(name, group=KIcon.Desktop):
-        return KGlobal.iconLoader().loadIconSet(name, group)
-
 class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
