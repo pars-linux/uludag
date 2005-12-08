@@ -79,7 +79,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command = ThreadRunner.MyThread(self)
         self.selectedItems = []
         self.totalSelectedSize = 0
+        self.confirmed = None
         self.operation = None
+        self.operationInfo = None
         
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self)
@@ -103,6 +105,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif event.type() == QEvent.User+4:
             self.pisiError(event.data())
         elif event.type() == QEvent.User+5:
+            self.operationInfo = event.data()
+        elif event.type() == QEvent.User+6:
+            self.showConfirm()
+        elif event.type() == QEvent.User+7:
             filename = event.data().section(' ',0,0)
             percent = event.data().section(' ',1,1).toInt()[0]
             rate = int(str(event.data().section(' ',2,2)).split('.')[0])
@@ -111,10 +117,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             pass
     
+    def showConfirm(self):
+        self.confirmed = KMessageBox.warningContinueCancel(self, self.operationInfo, "PiSi Info")
+    
     def finished(self):
         self.pDialog.close()
         self.resetProgressBar()
-        if not self.errorMessage:
+
+        if self.confirmed == KMessageBox.Cancel:
+            pass
+        elif not self.errorMessage:
             success = Success.Success(self)
             if not len(self.selectedItems):
                 success.infoLabel.setText(u"Tüm depolar başarıyla güncellendi!")
