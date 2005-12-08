@@ -194,7 +194,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif size >= 1024:
             size_string = str(size/1024)+" KB"
         else:
-            size_string = str(size)+ i18n(" Bytes")
+            size_string = str(size)+ i18n(" Byte")
 
         self.moreInfoLabelDetails.setText(QString(u"Programın Versiyonu : <b>"+self.package.version+"</b><br>"+u"Programın Boyutu :<b> "+size_string+"</b>"))
             
@@ -212,10 +212,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     self.installOrRemoveButton.setEnabled(False)
         except:
             pass
+
+    def updateSelectionInfo(self):
+        if len(self.selectedItems):
+            self.selectionInfo.setText(u"%d paket seçili" % len(self.selectedItems))
+        else:
+            self.selectionInfo.setText(u"Hiçbir paket seçili değil")
         
     def updateListing(self, index=0):
         self.listView.clear()
         self.selectedItems = []
+
+        self.updateSelectionInfo()
 
         packages = QListViewItem(self.listView,None)
         packages.setOpen(True)
@@ -344,6 +352,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
+        self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
 
