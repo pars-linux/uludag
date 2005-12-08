@@ -378,9 +378,6 @@ Program Version: Bar</string>
                             <property name="text">
                                 <string>Paket(ler)i &amp;Yükle</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+Y</string>
-                            </property>
                             <property name="autoDefault">
                                 <bool>true</bool>
                             </property>
@@ -402,9 +399,6 @@ Program Version: Bar</string>
                             </property>
                             <property name="text">
                                 <string>&amp;Herşeyi Güncelle</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+H</string>
                             </property>
                             <property name="toolTip" stdset="0">
                                 <string>Click on this button if you want to update your system</string>
