@@ -78,6 +78,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.command = ThreadRunner.MyThread(self)
         self.selectedItems = []
+        self.totalSelectedSize = 0
         self.operation = None
         
         # Init pisi repository
@@ -201,11 +202,19 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateButtons(self, listViewItem=None):
         try:
             text = str(listViewItem.text(0))
+
+            if pisi.packagedb.inst_packagedb.has_package(text):
+                self.package = pisi.packagedb.inst_packagedb.get_package(text)
+            else:
+                self.package = pisi.packagedb.get_package(text)
+        
             if listViewItem.isOn():
                 self.installOrRemoveButton.setEnabled(True)
                 self.selectedItems.append(text)
+                self.totalSelectedSize += self.package.installedSize
             else:
                 self.selectedItems.remove(text)
+                self.totalSelectedSize -= self.package.installedSize
                 if len(self.selectedItems):
                     self.installOrRemoveButton.setEnabled(True)
                 else:
@@ -215,7 +224,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateSelectionInfo(self):
         if len(self.selectedItems):
-            self.selectionInfo.setText(u"%d paket seçili" % len(self.selectedItems))
+            if self.totalSelectedSize >= 1024*1024 :
+                self.selectionInfo.setText(u"%d paket seçili, toplam %d MB" % (len(self.selectedItems), self.totalSelectedSize/(1024*1024)))
+            elif self.totalSelectedSize >= 1024 :
+                self.selectionInfo.setText(u"%d paket seçili, toplam %d KB" % (len(self.selectedItems), self.totalSelectedSize/(1024)))
+            else:
+                self.selectionInfo.setText(u"%d paket seçili, toplam %d Byte" % (len(self.selectedItems), self.totalSelectedSize))
         else:
             self.selectionInfo.setText(u"Hiçbir paket seçili değil")
         
@@ -298,6 +312,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif index == 2: # Install baby
             self.operation = "install"
             self.command.install(self.selectedItems)
+
+    def updateSystem(self):
+        self.installOrRemoveButton.setEnabled(False)
+
+        self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
+        self.pDialog.show()
+                                
+        list = pisi.api.list_upgradable()
+        self.totalAppCount = len(list)
+        self.operation = "upgrade"            
+        self.command.upgrade(list)
            
     def installSingle(self):
         app = []
@@ -356,6 +381,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
+        self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
 
         mainwidget.selectionGroup.setButton(0);
         mainwidget.updateListing(0);
@@ -379,7 +405,7 @@ class MainApplication(programbase):
         config = kapp.config()
         config.setGroup("General")
         size = config.readSizeEntry("Geometry")
-        if not size.isEmpty():
+        if size.isEmpty():
             self.resize(700,600)
         else:
             self.resize(size)
