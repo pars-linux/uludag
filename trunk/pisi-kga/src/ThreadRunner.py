@@ -51,7 +51,7 @@ class MyThread(QThread):
                 self.installing = False
                 
             elif self.upgrading:
-                pisi.api.upgrade(appList)
+                pisi.api.upgrade(self.appList)
                 self.upgrading = False
                 
             elif self.removing:
