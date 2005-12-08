@@ -24,7 +24,7 @@ import pisi.api
 import pisi.repodb
 
 class Preferences(PreferencesWidget.PrefsDialog):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, forceRepoUpdate=False):
         PreferencesWidget.PrefsDialog.__init__(self, parent)
         self.command = ThreadRunner.MyThread(parent)
         self.setCaption(u'PiSi KGA - Depo Ayarları')
@@ -38,6 +38,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
         self.connect(self.updateRepoButton, SIGNAL("clicked()"), self.updateAllRepos)
         self.removeButton.setEnabled(False)
         self.repoListView.setSorting(-1)
+        self.forceRepoUpdate = forceRepoUpdate
         self.readConfig()
         self.updateListView()
 
@@ -135,5 +136,7 @@ class Preferences(PreferencesWidget.PrefsDialog):
     def readConfig(self):
         self.repoList = pisi.api.ctx.repodb.list()
         if not len(self.repoList):
-            pisi.api.add_repo('uludag', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')
-            self.command.updateRepo('uludag')
+            pisi.api.add_repo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')
+            self.command.updateRepo('pardus-devel')
+        elif self.forceRepoUpdate:
+            self.updateAllRepos()
