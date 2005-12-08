@@ -89,7 +89,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if not len(pisi.api.ctx.repodb.list()):
             self.showSettings()
         
-    
     def customEvent(self, event):
         if event.type() == QEvent.User+1:
             self.finished()
@@ -379,7 +378,9 @@ class MainApplication(programbase):
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
-        self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateSelectionInfo)        
+        self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateSelectionInfo)
+        self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateButtons)
+        self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
         self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
