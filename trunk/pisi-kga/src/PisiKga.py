@@ -119,6 +119,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
     def showConfirm(self):
         self.confirmed = KMessageBox.warningContinueCancel(self, self.operationInfo, "PiSi Info")
+        event = QCustomEvent(QEvent.User+8)
+        if self.confirmed == KMessageBox.Cancel:
+            event.setData("False")
+            self.finished()
+        else:
+            event.setData("True")
+        kapp.postEvent(glob_ui,event)
     
     def finished(self):
         self.pDialog.close()

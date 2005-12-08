@@ -14,13 +14,20 @@
 
 from qt import *
 from pisi.ui import UI
+import time
 
-class PisiUi(UI):
+class PisiUi(UI,QObject):
 
     def __init__(self, parent):
         UI.__init__(self)
+        QObject.__init__(self)
         self.receiver = parent
+        self.confirmed = None
 
+    def customEvent(self, event):
+        if event == QEvent.User+8:
+            self.confirmed = event.data()
+        
     def error(self, msg):
         event = QCustomEvent(QEvent.User+4)
         event.setData(msg)
@@ -35,7 +42,14 @@ class PisiUi(UI):
         event = QCustomEvent(QEvent.User+6)
         event.setData(msg)
         QThread.postEvent(self.receiver,event)        
-        return False
+        
+        while not self.confirmed:
+           time.sleep(3)
+        
+        if self.confirmed:
+            return True
+        else:
+            return False
 
     def display_progress(self, filename, percent, rate, symbol, eta):
         event = QCustomEvent(QEvent.User+7)
