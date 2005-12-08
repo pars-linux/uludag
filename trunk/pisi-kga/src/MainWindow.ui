@@ -102,7 +102,10 @@
                                         <cstring>showInstalledButton</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>&amp;Yüklü Paketleri Göster</string>
+                                        <string>&amp;Kurulu Paketleri Göster</string>
+                                    </property>
+                                    <property name="accel">
+                                        <string>Alt+K</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show installed packages in your compter</string>
@@ -113,7 +116,10 @@
                                         <cstring>showUpdatesButton</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Hazır &amp;Güncellemeleri Göster</string>
+                                        <string>&amp;Güncellenebilir Paketleri Göster</string>
+                                    </property>
+                                    <property name="accel">
+                                        <string>Alt+G</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show packages that can be updated</string>
@@ -124,7 +130,10 @@
                                         <cstring>showInstallableButton</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>&amp;Tüm Paketleri Göster</string>
+                                        <string>Kurulu &amp;Olmayan Paketleri Göster</string>
+                                    </property>
+                                    <property name="accel">
+                                        <string>Alt+O</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show packages which are going to be installed</string>

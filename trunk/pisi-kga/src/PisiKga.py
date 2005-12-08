@@ -277,8 +277,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 list = pkg_db.list_packages()
                 list.sort()
                 for pack in list:
-                    item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
-                    item.setText(1,pisi.packagedb.get_package(pack).version)
+                    if not pisi.packagedb.inst_packagedb.has_package(pack):
+                        item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
+                        item.setText(1,pisi.packagedb.get_package(pack).version)
             self.installOrRemoveButton.setText(u"Paket(ler)i Yükle");
 
         # Select first item in the list
