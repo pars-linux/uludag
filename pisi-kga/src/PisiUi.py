@@ -26,10 +26,11 @@ class PisiUi(UI):
         event.setData(msg)
         QThread.postEvent(self.receiver,event)
 
-    def ack(self, msg):
-        return True
-            
+    def info(self, msg):
+        print 'Info', msg
+
     def confirm(self, msg):
+        print 'Confirm', msg
         return True
 
     def display_progress(self, filename, percent, rate, symbol, eta):
