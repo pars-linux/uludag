@@ -128,6 +128,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         kapp.postEvent(glob_ui,event)
     
     def finished(self):
+        self.searchLine.clear()
         self.pDialog.close()
         self.resetProgressBar()
 
@@ -264,6 +265,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.listView.clear()
         self.selectedItems = []
 
+        self.searchLine.clear()
         self.updateButtons()
         self.updateSelectionInfo()
 
