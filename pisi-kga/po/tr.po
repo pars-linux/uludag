@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-08 20:11+0200\n"
+"POT-Creation-Date: 2005-12-08 20:20+0200\n"
 "PO-Revision-Date: 2005-12-08 20:08+0200\n"
 "Last-Translator: İsmail Dönmez <ismail@uludag.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -230,85 +230,6 @@ msgstr "Program Ekle ve Kaldır"
 msgid "Pisi KGA is already running!"
 msgstr "PiSi KGA halihazırda çalışıyor!"
 
-#: src/update_wizard.py:702 src/update_wizard_fast_updates.py:55
-#: src/update_wizard_custom_updates.py:55
-msgid "Welcome to PISI update wizard"
-msgstr "PiSi güncelleme sihirbazına hoşgeldiniz"
-
-#: src/update_wizard.py:703
-msgid ""
-"We suggest you to keep your system updated to increase your privacy. Please\n"
-"choose your update methodology below."
-msgstr ""
-
-#: src/update_wizard.py:706
-msgid ""
-"In this method, you can select which packages \n"
-"to update, including packages with security \n"
-"updates. Click on \"Custom Update\" button if you \n"
-"want to make a fine selection."
-msgstr ""
-
-#: src/update_wizard.py:710
-msgid ""
-"With fast update, only very essential and critial \n"
-"updates are downloaded and installed to your \n"
-"computer. Choose this method if you don't have \n"
-"much time, but want to keep the system secure."
-msgstr ""
-
-#: src/update_wizard.py:714
-msgid "Fast update (only security updates)"
-msgstr ""
-
-#: src/update_wizard.py:715
-msgid "Custom update"
-msgstr ""
-
-#: src/update_wizard.py:716
-msgid "PISI Update Wizard"
-msgstr ""
-
-#: src/update_wizard_fast_updates.py:38 src/update_wizard_fast_updates.py:58
-#: src/update_wizard_custom_updates.py:38
-#: src/update_wizard_custom_updates.py:58
-msgid "Package name"
-msgstr "Paket ismi"
-
-#: src/update_wizard_fast_updates.py:40 src/update_wizard_fast_updates.py:59
-#: src/update_wizard_custom_updates.py:40
-#: src/update_wizard_custom_updates.py:59
-msgid "New Version"
-msgstr "Yeni Versiyon"
-
-#: src/update_wizard_fast_updates.py:41 src/update_wizard_fast_updates.py:60
-#: src/update_wizard_custom_updates.py:41
-#: src/update_wizard_custom_updates.py:60
-msgid "Old version"
-msgstr "Eski Versiyon"
-
-#: src/update_wizard_fast_updates.py:56 src/update_wizard_custom_updates.py:56
-msgid ""
-"Please choose the packages to be updated and click on \"Next\" button. \n"
-"We strongly recommend you to update all the packages shown below."
-msgstr ""
-
-#: src/update_wizard_fast_updates.py:63 src/update_wizard_custom_updates.py:63
-msgid "kdebase"
-msgstr ""
-
-#: src/update_wizard_fast_updates.py:66 src/update_wizard_custom_updates.py:66
-msgid "openoffice.org"
-msgstr ""
-
-#: src/update_wizard_fast_updates.py:68 src/update_wizard_custom_updates.py:68
-msgid "Total install size:"
-msgstr ""
-
-#: src/update_wizard_fast_updates.py:69
-msgid "Fast updates (only security)"
-msgstr ""
-
 #: src/Success.py:17
 msgid "Show more information >>"
 msgstr "Daha fazla bilgi göster >>"
@@ -316,10 +237,6 @@ msgstr "Daha fazla bilgi göster >>"
 #: src/Success.py:20
 msgid "Show less information <<"
 msgstr "Daha az bilgi göster <<"
-
-#: src/update_wizard_custom_updates.py:69
-msgid "Custom updates"
-msgstr ""
 
 #: src/SuccessDialog.py:71
 msgid "PiSi KGA"
@@ -340,3 +257,4 @@ msgstr "&Daha fazla bilgi göster >>"
 #: src/SuccessDialog.py:75
 msgid "&Ok"
 msgstr "&Tamam"
+
