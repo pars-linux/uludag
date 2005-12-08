@@ -104,9 +104,6 @@
                                     <property name="text">
                                         <string>&amp;Kurulu Paketleri Göster</string>
                                     </property>
-                                    <property name="accel">
-                                        <string>Alt+K</string>
-                                    </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show installed packages in your compter</string>
                                     </property>
@@ -118,9 +115,6 @@
                                     <property name="text">
                                         <string>&amp;Güncellenebilir Paketleri Göster</string>
                                     </property>
-                                    <property name="accel">
-                                        <string>Alt+G</string>
-                                    </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show packages that can be updated</string>
                                     </property>
@@ -131,9 +125,6 @@
                                     </property>
                                     <property name="text">
                                         <string>Kurulu &amp;Olmayan Paketleri Göster</string>
-                                    </property>
-                                    <property name="accel">
-                                        <string>Alt+O</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show packages which are going to be installed</string>
@@ -347,9 +338,6 @@ Program Version: Bar</string>
                             </property>
                             <property name="text">
                                 <string>Paket(ler)i &amp;Yükle</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+Y</string>
                             </property>
                             <property name="autoDefault">
                                 <bool>true</bool>
