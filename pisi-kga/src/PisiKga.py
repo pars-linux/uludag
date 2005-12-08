@@ -266,7 +266,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateButtons()
         self.updateSelectionInfo()
 
-        packages = QListViewItem(self.listView,None)
+        packages = KListViewItem(self.listView,None)
         packages.setOpen(True)
         packages.setText(0,i18n("Paketler"))
         packages.setPixmap(0,loadIcon('package_system', KIcon.Small))
@@ -395,7 +395,7 @@ class MainApplication(programbase):
         mainwidget = MainApplicationWidget(self)
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
-        mainwidget.listView.setResizeMode(QListView.LastColumn)
+        mainwidget.listView.setResizeMode(KListView.LastColumn)
         mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         mainwidget.searchLine.setListView(mainwidget.listView)
@@ -472,7 +472,7 @@ def main():
     KCmdLineArgs.init(sys.argv,about_data)
 
     if not KUniqueApplication.start():
-        print i18n("Pisi KGA is already running!")
+        print u"Pisi KGA zaten çalışıyor!"
         return
 
     kapp = KUniqueApplication(True, True, True)
