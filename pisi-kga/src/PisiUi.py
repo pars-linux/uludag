@@ -45,7 +45,7 @@ class PisiUi(UI,QObject):
         
         # Sleep the thread until user confirms
         while not self.confirmed:
-           time.sleep(3)
+           time.sleep(1)
         
         if self.confirmed:
             return True
