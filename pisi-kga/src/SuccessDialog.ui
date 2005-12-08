@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Program Ekle ve Kaldır</string>
+        <string>PiSi KGA</string>
     </property>
     <grid>
         <property name="name">
@@ -37,7 +37,7 @@
                         <cstring>infoPixmap</cstring>
                     </property>
                     <property name="text">
-                        <string>INFO DÜĞMESİ</string>
+                        <string>Info Button</string>
                     </property>
                     <property name="scaledContents">
                         <bool>true</bool>
@@ -55,13 +55,8 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="font">
-                        <font>
-                            <family>Bitstream Vera Sans</family>
-                        </font>
-                    </property>
                     <property name="text">
-                        <string>Tüm paketler başarıyla yüklendi!</string>
+                        <string>All packages are successfully installed!</string>
                     </property>
                 </widget>
                 <spacer>
@@ -96,7 +91,7 @@
                         <cstring>showButton</cstring>
                     </property>
                     <property name="text">
-                        <string>Daha fazla bilgi göster &gt;&gt;</string>
+                        <string>Show &amp;More Information &gt;&gt;</string>
                     </property>
                 </widget>
                 <spacer>
@@ -140,7 +135,7 @@
                 <cstring>pushButton2</cstring>
             </property>
             <property name="text">
-                <string>&amp;Tamam</string>
+                <string>&amp;Ok</string>
             </property>
         </widget>
         <spacer row="4" column="0">

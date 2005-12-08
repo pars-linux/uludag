@@ -12,6 +12,7 @@
 #
 #
 # Authors:  İsmail Dönmez <ismail@uludag.org.tr>
+# Resistence is futile, turn on god damn Unicode on!
 
 # System
 import sys
@@ -42,7 +43,7 @@ import pisi.repodb
 def I18N_NOOP(str):
     return str
 
-description = I18N_NOOP("PiSi paket yöneticisi için arayüz")
+description = I18N_NOOP("GUI for PiSi package manager")
 version = "1.0_rc2"
 
 def AboutData():
@@ -53,9 +54,9 @@ def AboutData():
                             "(C) 2005 UEKAE/TÜBİTAK", None, None, "ismail@uludag.org.tr")
     
     about_data.addAuthor("İsmail Dönmez", None, "ismail@uludag.org.tr")
-    about_data.addCredit(I18N_NOOP("Gürer Özen"), I18N_NOOP("Python kodlama yardımı"), None)
-    about_data.addCredit(I18N_NOOP("Barış Metin"),  I18N_NOOP("PiSi API konusunda yardım"), None)
-    about_data.addCredit("Simon Edwards", I18N_NOOP("PyKDEExtension'ın yazarı"),"simon@simonzone.com")
+    about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
+    about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi api"), None)
+    about_data.addCredit("Simon Edwards", I18N_NOOP("Author of PyKDEeXtensions"),"simon@simonzone.com")
     return about_data
 
 def loadIcon(name, group=KIcon.Desktop):
@@ -93,7 +94,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if event.type() == QEvent.User+1:
             self.finished()
         elif event.type() == QEvent.User+2:
-            self.pDialog.setCaption(u'Depolar Güncelleniyor')
+            self.pDialog.setCaption(i18n("Updating repositories"))
             self.updatedRepo = event.data()
             self.pDialog.show()
         elif event.type() == QEvent.User+4:
@@ -131,24 +132,24 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif not self.errorMessage:
             success = Success.Success(self)
             if not len(self.selectedItems):
-                success.infoLabel.setText(u"Tüm depolar başarıyla güncellendi!")
+                success.infoLabel.setText(i18n("All repositories are successfully updated!"))
                 success.showButton.hide()
             elif self.operation == "install":
-                success.infoLabel.setText(u"Seçilen paketler başarıyla yüklendi!")
-                text = u" yüklendi"
+                success.infoLabel.setText(i18n("All selected packages are successfully installed!"))
+                text = i18n("installed")
             elif self.operation == "remove":
-                success.infoLabel.setText(u"Seçilen paketler başarıyla kaldırıldı!")                
-                text = u" kaldırıldı"
+                success.infoLabel.setText(i18n("All selected packages are successfully removed!"))
+                text = i18n("removed")
             else:
-                success.infoLabel.setText(u"Seçilen paketler başarıyla güncellendi!")
-                text = u" güncellendi"
+                success.infoLabel.setText(i18n("All selected packages are successfully updated!"))
+                text = i18n("updated")
             
             for i in self.selectedItems:
-                success.infoBrowser.append(i+text)
+                success.infoBrowser.append(i+" "+text)
             self.operation = None
             success.show()
         else:
-            KMessageBox.error(self, self.errorMessage, u'Pisi Hatası')
+            KMessageBox.error(self, self.errorMessage, i18n("PiSi Error"))
 
         self.updateListing(mainwidget.selectionGroup.selectedId())
         self.errorMessage = None
@@ -156,17 +157,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def resetProgressBar(self):
         self.savedProgress = 0
         self.pDialog.progressBar.setProgress(0)
-        self.pDialog.progressLabel.setText(u'PiSi Hazırlanıyor...')
+        self.pDialog.progressLabel.setText(i18n("Preparing PiSi..."))
 
     def updateProgressBar(self, filename, length, rate, symbol):
         if rate < 0:
             rate = 0
             
         if filename.endsWith(".pisi"):
-            self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b> (Hız: %d %s)'%(filename,rate,symbol))
+            self.pDialog.progressLabel.setText(i18n('Now installing <b>%1</b> (Speed: %2 %3)').arg(filename).arg(rate).arg(symbol))
         else:
             self.totalAppCount = 1
-            self.pDialog.progressLabel.setText(u'Şu anda güncellenen depo: <b>%s</b> (Hız: %d %s)'%(self.updatedRepo,rate,symbol))
+            self.pDialog.progressLabel.setText(i18n('Updating repo <b>%1</b> (Speed: %2 %3)').arg(self.updatedRepo).arg(rate).arg(symbol))
 
         progress = length/self.totalAppCount + self.savedProgress
 
@@ -215,7 +216,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             size_string = str(size)+ i18n(" Byte")
 
-        self.moreInfoLabelDetails.setText(QString(u"Programın Versiyonu : <b>"+self.package.version+"</b><br>"+u"Programın Boyutu :<b> "+size_string+"</b>"))
+        self.moreInfoLabelDetails.setText(i18n("Program Version :")+" <b>"+self.package.version+"</b><br>"+i18n("Program Size :")+"<b> "+size_string+"</b>")
             
     def updateButtons(self, listViewItem=None):
         try:
@@ -243,13 +244,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateSelectionInfo(self):
         if len(self.selectedItems):
             if self.totalSelectedSize >= 1024*1024 :
-                self.selectionInfo.setText(u"%d paket seçili, toplam %d MB" % (len(self.selectedItems), self.totalSelectedSize/(1024*1024)))
+                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 MB').arg(len(self.selectedItems)).arg(self.totalSelectedSize/(1024*1024)))
             elif self.totalSelectedSize >= 1024 :
-                self.selectionInfo.setText(u"%d paket seçili, toplam %d KB" % (len(self.selectedItems), self.totalSelectedSize/(1024)))
+                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 KB').arg(len(self.selectedItems)).arg(self.totalSelectedSize/(1024)))
             else:
-                self.selectionInfo.setText(u"%d paket seçili, toplam %d Byte" % (len(self.selectedItems), self.totalSelectedSize))
+                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 Bytes').arg(len(self.selectedItems)).arg(self.totalSelectedSize))
         else:
-            self.selectionInfo.setText(u"Hiçbir paket seçili değil")
+            self.selectionInfo.setText(i18n("No package selected"))
         
     def updateListing(self, index=0):
         self.listView.clear()
@@ -261,7 +262,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         packages = KListViewItem(self.listView,None)
         packages.setOpen(True)
-        packages.setText(0,i18n("Paketler"))
+        packages.setText(0,i18n("Packages"))
         packages.setPixmap(0,loadIcon('package_system', KIcon.Small))
         packages.setSelectable(False)
 
@@ -278,7 +279,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for pack in list:
                 item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
-            self.installOrRemoveButton.setText(u"Paket(ler)i Kaldır");
+            self.installOrRemoveButton.setText(i18n("Remove package(s)"))
 
         elif index == 1:
             # Only upgrades
@@ -287,7 +288,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for pack in list:
                 item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                 item.setText(1,pisi.packagedb.get_package(pack).version)
-            self.installOrRemoveButton.setText(u"Paket(ler)i Güncelle");
+            self.installOrRemoveButton.setText(i18n("Update package(s)"))
         
         elif index == 2 :
             # Show only not-installed apps
@@ -299,7 +300,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     if not pisi.packagedb.inst_packagedb.has_package(pack):
                         item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
                         item.setText(1,pisi.packagedb.get_package(pack).version)
-            self.installOrRemoveButton.setText(u"Paket(ler)i Yükle");
+            self.installOrRemoveButton.setText(i18n("Install package(s)"))
 
         # Select first item in the list
         try:
@@ -316,7 +317,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         index = mainwidget.selectionGroup.selectedId()
         self.installOrRemoveButton.setEnabled(False)
 
-        self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
+        self.pDialog.setCaption(i18n("Add or Remove Programs"))
         self.pDialog.show()
         
         self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
@@ -336,7 +337,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateSystem(self):
         self.installOrRemoveButton.setEnabled(False)
 
-        self.pDialog.setCaption(i18n("Program Ekle ve Kaldır"))
+        self.pDialog.setCaption(i18n("Add or Remove Programs"))
         self.pDialog.show()
                                 
         list = pisi.api.list_upgradable()
@@ -458,7 +459,7 @@ def main():
     KCmdLineArgs.init(sys.argv,about_data)
 
     if not KUniqueApplication.start():
-        print u"Pisi KGA zaten çalışıyor!"
+        print i18n("Pisi KGA is already running!")
         return
 
     kapp = KUniqueApplication(True, True, True)

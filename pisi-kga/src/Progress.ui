@@ -63,7 +63,7 @@
                 <cstring>progressLabel</cstring>
             </property>
             <property name="text">
-                <string>&lt;h3&gt;PiSi hazırlanıyor ...&lt;/h3&gt;</string>
+                <string>&lt;h3&gt;Preparing PiSi...&lt;/h3&gt;</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignCenter</set>

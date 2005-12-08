@@ -52,7 +52,7 @@
                         </color>
                     </property>
                     <property name="text">
-                        <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Program Ekle ve Kaldır&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
+                        <string>&lt;b&gt;&lt;&gt;&lt;h1&gt;Add or Remove Programs&lt;/h1&gt;&lt;/font&gt;&lt;/b&gt;</string>
                     </property>
                 </widget>
             </hbox>
@@ -102,7 +102,7 @@
                                         <cstring>showInstalledButton</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>&amp;Kurulu Paketleri Göster</string>
+                                        <string>Show &amp;installed packages</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show installed packages in your compter</string>
@@ -113,7 +113,7 @@
                                         <cstring>showUpdatesButton</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>&amp;Güncellenebilir Paketleri Göster</string>
+                                        <string>Show Available &amp;Updates</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show packages that can be updated</string>
@@ -124,7 +124,7 @@
                                         <cstring>showInstallableButton</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Kurulu &amp;Olmayan Paketleri Göster</string>
+                                        <string>Show &amp;Not-Installed Packages</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show packages which are going to be installed</string>
@@ -267,7 +267,7 @@ Program Version: Bar</string>
                                 </sizepolicy>
                             </property>
                             <property name="text">
-                                <string>&amp;Herşeyi Güncelle</string>
+                                <string>&amp;Update Everything</string>
                             </property>
                             <property name="toolTip" stdset="0">
                                 <string>Click on this button if you want to update your system</string>
@@ -286,7 +286,7 @@ Program Version: Bar</string>
                                 </sizepolicy>
                             </property>
                             <property name="text">
-                                <string>Depo &amp;Ayarları</string>
+                                <string>&amp;Repository Settings</string>
                             </property>
                             <property name="toolTip" stdset="0">
                                 <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
@@ -337,7 +337,10 @@ Program Version: Bar</string>
                                 <bool>false</bool>
                             </property>
                             <property name="text">
-                                <string>Paket(ler)i &amp;Yükle</string>
+                                <string>Install Package(s)</string>
+                            </property>
+                            <property name="accel">
+                                <string></string>
                             </property>
                             <property name="autoDefault">
                                 <bool>true</bool>
@@ -348,10 +351,7 @@ Program Version: Bar</string>
                                 <cstring>closeButton</cstring>
                             </property>
                             <property name="text">
-                                <string>&amp;Çık</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+ç</string>
+                                <string>&amp;Quit</string>
                             </property>
                             <property name="autoDefault">
                                 <bool>true</bool>
@@ -411,7 +411,7 @@ Program Version: Bar</string>
                                         <cstring>textLabel1_2</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>Paket Ara:</string>
+                                        <string>Search package:</string>
                                     </property>
                                 </widget>
                                 <widget class="KListViewSearchLine">
@@ -426,7 +426,7 @@ Program Version: Bar</string>
                 <widget class="KListView">
                     <column>
                         <property name="text">
-                            <string>Paket</string>
+                            <string>Package</string>
                         </property>
                         <property name="clickable">
                             <bool>true</bool>
@@ -437,7 +437,7 @@ Program Version: Bar</string>
                     </column>
                     <column>
                         <property name="text">
-                            <string>Versiyon</string>
+                            <string>Version</string>
                         </property>
                         <property name="clickable">
                             <bool>true</bool>
@@ -473,7 +473,7 @@ Program Version: Bar</string>
                         <cstring>selectionInfo</cstring>
                     </property>
                     <property name="text">
-                        <string>Hiçbir paket seçili değil</string>
+                        <string>No package selected</string>
                     </property>
                 </widget>
             </vbox>
