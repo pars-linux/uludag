@@ -143,6 +143,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressLabel.setText(u'PiSi Hazırlanıyor...')
 
     def updateProgressBar(self, filename, length, rate, symbol):
+        if rate < 0:
+            rate = 0
+            
         if filename.endsWith(".pisi"):
             self.pDialog.progressLabel.setText(u'Şu anda işlenilen dosya: <b>%s</b> (Hız: %d %s)'%(filename,rate,symbol))
         else:
