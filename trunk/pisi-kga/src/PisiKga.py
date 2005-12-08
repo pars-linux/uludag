@@ -114,10 +114,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def finished(self):
         self.pDialog.close()
         self.resetProgressBar()
-
         if not self.errorMessage:
             success = Success.Success(self)
-            if self.operation == "install":
+            if not len(self.selectedItems):
+                success.infoLabel.setText(u"Tüm depolar başarıyla güncellendi!")
+                success.showButton.hide()
+            elif self.operation == "install":
                 success.infoLabel.setText(u"Seçilen paketler başarıyla yüklendi!")
                 text = u" yüklendi"
             elif self.operation == "remove":
