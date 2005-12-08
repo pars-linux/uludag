@@ -76,8 +76,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.totalSelectedSize = 0
         self.confirmed = None
         self.operation = None
-        self.operationInfo = None
-        
+        self.operationInfo = None    
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self)
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=False)
@@ -88,7 +87,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         list = pkg_db.list_packages()
             
         if not len(pisi.api.ctx.repodb.list()) or not len(list): 
-            self.showSettings(forceRepoUpdate=True)
+            self.command.updateRepo(repo)
         
     def customEvent(self, event):
         if event.type() == QEvent.User+1:
@@ -349,11 +348,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
         self.command.install(app)
-
-    def showSettings(self, forceRepoUpdate=False):
-        # FIXME
-        pass
-        
 
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
