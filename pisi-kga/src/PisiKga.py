@@ -86,8 +86,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=False)
         
         # Sanity check
-        if not len(pisi.api.ctx.repodb.list()):
-            self.showSettings()
+        repo = pisi.context.repodb.list()[0]
+        pkg_db = pisi.packagedb.get_db(repo)
+        list = pkg_db.list_packages()
+            
+        if not len(pisi.api.ctx.repodb.list()) or not len(list): 
+            self.showSettings(forceRepoUpdate=True)
         
     def customEvent(self, event):
         if event.type() == QEvent.User+1:
@@ -332,8 +336,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         app.append(str(self.listView.currentItem().text(0)))
         self.command.install(app)
 
-    def showSettings(self):
-        self.pref = Preferences.Preferences(self)
+    def showSettings(self, forceRepoUpdate=False):
+        self.pref = Preferences.Preferences(self, forceRepoUpdate)
         self.pref.setModal(True)
         self.pref.show()
         
