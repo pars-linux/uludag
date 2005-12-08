@@ -14,7 +14,7 @@
 
 from kdeui import *
 from qt import *
-import PreferencesWidget
+import PreferencesDialog
 import RepoDialog
 import ThreadRunner
 import PisiKga # for loadIcon
@@ -23,9 +23,9 @@ import PisiKga # for loadIcon
 import pisi.api
 import pisi.repodb
 
-class Preferences(PreferencesWidget.PrefsDialog):
+class Preferences(PreferencesDialog.PrefsDialog):
     def __init__(self, parent=None, forceRepoUpdate=False):
-        PreferencesWidget.PrefsDialog.__init__(self, parent)
+        PreferencesDialog.PrefsDialog.__init__(self, parent)
         self.command = ThreadRunner.MyThread(parent)
         self.setCaption(u'PiSi KGA - Depo Ayarları')
         self.infoLabel.setPixmap(PisiKga.loadIcon('info'))
