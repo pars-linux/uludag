@@ -236,7 +236,7 @@ Program Version: Bar</string>
                                         <cstring>progNameLabel</cstring>
                                     </property>
                                     <property name="text">
-                                        <string>&lt;p align="center"&gt;Program Name&lt;/p&gt;</string>
+                                        <string>&lt;p align="left"&gt;Program Name&lt;/p&gt;</string>
                                     </property>
                                 </widget>
                             </hbox>
