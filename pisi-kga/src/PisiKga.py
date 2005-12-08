@@ -25,7 +25,6 @@ import kdedesigner
 
 # Local imports
 import MainWindow
-import Preferences
 import ProgressDialog
 import ThreadRunner
 import PisiUi
@@ -71,7 +70,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.savedProgress = 0
         self.oldFilename = None
         self.updatedRepo = None
-        self.pref = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
         self.command = ThreadRunner.MyThread(self)
         self.selectedItems = []
@@ -155,10 +153,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         self.updateListing(mainwidget.selectionGroup.selectedId())
         self.errorMessage = None
-
-        if(self.pref):
-            event = QCustomEvent(QEvent.User+3)
-            kapp.postEvent(self.pref,event)
 
     def resetProgressBar(self):
         self.savedProgress = 0
@@ -357,9 +351,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command.install(app)
 
     def showSettings(self, forceRepoUpdate=False):
-        self.pref = Preferences.Preferences(self, forceRepoUpdate)
-        self.pref.setModal(True)
-        self.pref.show()
+        # FIXME
+        pass
         
 
 # Are we running as a separate standalone application or in KControl?
@@ -409,7 +402,6 @@ class MainApplication(programbase):
         self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateButtons)
         self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
-        self.connect(mainwidget.settingsButton,SIGNAL("clicked()"),mainwidget.showSettings)
         self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
 
         mainwidget.selectionGroup.setButton(0);
