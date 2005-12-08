@@ -198,7 +198,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         self.moreInfoLabelDetails.setText(QString(u"Programın Versiyonu : <b>"+self.package.version+"</b><br>"+u"Programın Boyutu :<b> "+size_string+"</b>"))
             
-    def updateButtons(self, listViewItem):
+    def updateButtons(self, listViewItem=None):
         try:
             text = str(listViewItem.text(0))
             if listViewItem.isOn():
@@ -211,7 +211,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 else:
                     self.installOrRemoveButton.setEnabled(False)
         except:
-            pass
+            self.installOrRemoveButton.setEnabled(False)
 
     def updateSelectionInfo(self):
         if len(self.selectedItems):
@@ -223,6 +223,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.listView.clear()
         self.selectedItems = []
 
+        self.updateButtons()
         self.updateSelectionInfo()
 
         packages = QListViewItem(self.listView,None)
