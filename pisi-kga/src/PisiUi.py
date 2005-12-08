@@ -43,6 +43,7 @@ class PisiUi(UI,QObject):
         event.setData(msg)
         QThread.postEvent(self.receiver,event)        
         
+        # Sleep the thread until user confirms
         while not self.confirmed:
            time.sleep(3)
         
