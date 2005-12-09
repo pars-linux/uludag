@@ -69,6 +69,8 @@ msgid ""
 "Program Name: Foo\n"
 "Program Version: Bar"
 msgstr ""
+"Program Adı: Foo\n"
+"Program Sürümü: Bar"
 
 #: src/MainWindow.py:197
 msgid "Icon"
@@ -240,11 +242,11 @@ msgstr "Daha az bilgi göster <<"
 
 #: src/SuccessDialog.py:71
 msgid "PiSi KGA"
-msgstr ""
+msgstr "Program Ekle Kaldır"
 
 #: src/SuccessDialog.py:72
 msgid "Info Button"
-msgstr ""
+msgstr "Bilgi Düğmesi"
 
 #: src/SuccessDialog.py:73
 msgid "All packages are successfully installed!"
