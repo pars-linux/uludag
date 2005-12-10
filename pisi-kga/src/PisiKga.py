@@ -80,7 +80,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.operationInfo = None    
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self)
-        pisi.api.init(database=True, options=None, ui=glob_ui, comar=False)
+        pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
         
         # Sanity check
         repo = pisi.context.repodb.list()[0]
@@ -181,7 +181,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def pisiError(self, msg):
         # Re-init database because we finalized it in our exception handler
-        pisi.api.init(database=True, options=None, ui=glob_ui, comar=False)
+        pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
 
         self.pDialog.close()
         if self.errorMessage:
