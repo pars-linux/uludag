@@ -180,6 +180,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
+        # Re-init database because we finalized it in our exception handler
+        pisi.api.init(database=True, options=None, ui=glob_ui, comar=False)
+
         self.pDialog.close()
         if self.errorMessage:
             self.errorMessage = self.errorMessage+msg
