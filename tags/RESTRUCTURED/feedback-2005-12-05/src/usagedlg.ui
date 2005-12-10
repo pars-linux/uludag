@@ -117,6 +117,22 @@
     </widget>
     <widget class="QLabel">
         <property name="name">
+            <cstring>usageMiniLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>300</x>
+                <y>100</y>
+                <width>270</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
             <cstring>stepLabel</cstring>
         </property>
         <property name="geometry">
@@ -141,23 +157,7 @@
             <enum>Plain</enum>
         </property>
         <property name="text">
-            <string>&lt;b&gt;Step 3 of 6&lt;/b&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>usageMiniLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>300</x>
-                <y>100</y>
-                <width>270</width>
-                <height>24</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
+            <string>&lt;b&gt;Step 3 of 7&lt;/b&gt;</string>
         </property>
     </widget>
 </widget>
