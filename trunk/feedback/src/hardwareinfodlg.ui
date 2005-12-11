@@ -1,0 +1,119 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>HardwareInfoDlg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>HardwareInfoDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>287</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoPixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>hardwareInfoBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>230</x>
+                <y>240</y>
+                <width>340</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&amp;Do not send my computer's hardware information</string>
+        </property>
+        <property name="accel">
+            <string>Alt+D</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>50</y>
+                <width>420</width>
+                <height>180</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Computer information&lt;/h2&gt;
+Pardus Hardware CollectInfo Wizard will now gather information from
+your hardware, including CPU, memory and network cards. This 
+information will be sent to Pardus Development Center, in order to
+build more stable and secure Pardus. You will need an internet
+access for this operation to complete. 
+
+&lt;b&gt;Note that we will not collect any of your personal documents.&lt;/b&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stepLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>100</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>77</red>
+                <green>77</green>
+                <blue>77</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Step 6 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2202">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af400000861494441545885e597516c5be515c77f176ed975498a8daac941ad640f574aa2546a223ad5a19b568b4ee0d087da2ad21ca169890041600c259a54350141c324c005554b40687518508707e21b1824add625d1bad641ed92a0368933d2c50ca22462596c1a2bfea0979e3df8264d4a80ed690ffb5e8ebe7bafbeffff9cffffdc732ffcbf2f6dbd8b22720357f83127db2b71fb379032c11b808b09f006e162276c09c284095b02309a008fbdf700130a7cf6de07e359efe7e507bb4e6ab76dfcc77712900b7ddbd0bd1d8cc4ef647b4863c28452a3706869082e99e033e0120590e5fdb7ddcf28d21fa7f2deac3a4a4bdb93daf77f70655d02f2c9989b9ce30ca3f1dbd91280f3713b73133c0118350b998fc60b20a376a6a3854c93138a6a5f1052bd00f458796af43014f7c3fe43303b2858dedff2cb86c7354d5b87c0d4cc4b0cc67e4576967c2e8b4329f24ae1b0f2f61ef2b90c8e2b90560a2f0649a5a8b6a0c752042ce8b41421eca81b98962208242c68dae927ed29b1bc9b1b776a8fdff921c00dab74d71835f753520d4ae1d81e817bea70fce218182e1c9e50e1fa150758e0adac076f39d5f74719de5a428d0d16d20d4c20a41b0c9755d2f0e210b3071e21ac1b44cf0fe27566f4e4078fee5fcf781b253e945f3a5a2772b44e64664ae4331119ee13111139dd25d2de274bbdc70afba5a54258beffd98cc8672263471b450ed6c9d2f0591111193ad25888cf35ca5829d2566188dcef7f6d19575fc56123b9ce0d0e6f108a146cf6c2a140c1e56f1d81e77ba0141c73b3f0642de869fa4fa5090009a508bb4b18de5e49d5cfdaa0d485e38371dab73b0802f113096a4fa569ef8eb3273b4762315bbc0cba22018b9962545ecb5f34c15909d3c360417ec204dd80c50c6433401a264698f58556c003406c3a4dc90993f6c8adf04a920c6982281296226438c84f0e13cc65312d08e4f2b788c875048a5d4528a539b605a1bb05bc55b0af0187cf80fd0d30ade0ad26c83949663294bcd94e8fa508ead06b6bdf6b15b48fbd5983eb47358cefdc43bda70cc78b5d38cecf12570543f62ae5fcda2b402ef4ed96672357975a82220783b2f45c5d41dbcb0b2222b2d01211f95264e86e8fc8738fc8fbbb9c22bb9c727c87210b3b0c395661c8cc0e43da2a90a90ae4ecc1c835af2c88bc508a0cf990c33e6466b7e76f7279e1c6b515d8ecbf154b690e5f08541e87918253712876c11b515c2349c6ef2ba7ca024e98d4e806710b82b6eb833a76cb152a5172c284c96170388847ca0b990341c044dd4cb14b5b6bc20f3a36313d4bcf5f5aa99acf12cb6669de5b42beb49ad4e1164c4be1340c0674a8330c7a75fb30bbef975bcf540559124ad1f4520b3c7d8ccae934a65580312da8b7b899eee88d8075ad02936c6a3a3188ebd2c71c99cf1200d817c2716a9c4ea5881439f19696d1f07c1f8edf1c233c98a1d3ce28bd2f44fde93c251d791a9e38ceb8af8cb061101de8056709a94a3f411b26a4436f2eeba0a2fe7b6b2a90188c6d0ae90586861dabefa825de588da14347364be8c3119a1ebc134387c8c38df8b38a234a11cd2a120f5551954a91500a80d432b99331c29b4b68b5966502a7e2a6cc7472237079a502e19c729a5681a1b2236762d4fea47165bffa7eb93f42a7528474683f9f247cef61e23945583700683ae067d0edc17b573d89b9f40a7808c85a4a7395d614af31610c5cc62a10d302d22986491734b6c000bbd520f1caa32b9a56ce6789bff32cca82584e51ebf6d0336d10b414a80c5593d73cd06941d082d933d1b504827a68d3f59926465354ed6fb20d06469141eb037b302d08ef6e20dad145342954bf7c9cea741a6541eb636d9840cd8128257b43e072119b9f23c8b5ca9a40c9a26b2d0153c56f59f1809d59d9c524308bdbe9c4b4a0f9b121e2a3058da3af35c1de306c0566ab88cdcd1102c6dd850ca3cfd4801e26dd1d03ebbaca02e9b75b0d56af995dee3f376e41ce7a90d551fe7056e413290ca62f45e48f63228f85449ede236d7795894c2dc9e15243e4d5e3d2f770486449442ed8cf4e8dc9c2bd8765bd7397ee70d600dcb84cc0ebd61f544a6dbdb88aa9a143ef7b1d6c79f755acad0e8a7d3f84db7438779ac4c8049f4ea4d1af7e4ae547939c5e4c53f3f8ebb059874d1be87faa96d8a12718983eb5e6bc8b56a13bce17d169ce58932b1234dc1f9d5bcfed756e37d97d4178390d4fd5c225050f34529dcde3dd5149f5be664c1dc2773782a7044e0e12bbaf8a80b39ad67b82f647c9daeeead7a1f68da9a5351ec8fbbdefd5d95a2f7743c430486df3d2fb6607a9b234b3e747487637435139c6f3316acb2a69adaba2b9639cfc9e2a782d49a2bb95fa6d5eda4f44191ee8275d51c6f5ddd5ba3798c1e31c5ee30111718c1d3df4d190cf90439eb59abdb0c32933bb3dd2f74444c676b8e5850a6761d0f476899c9b11191791dea182678e1c93b6dd1e593ae85f57fba95d6e91e4fbcf2c8f63ed3a12bbd32f36f41a6f7516c77359b05b27080c6e76d3505646f3c00041a0bfc8a0d91fa0bfc8897f7a9696c1010cbbccd103119adeeec40014accc8a468f07e3d7cda75dfbeaefd6342dff350236893d9c8afd8e7f1ab7f3f6b390cdd0a31435ce7ae2f3ed04ac6b532f617f709a36c95efb75db6f180414f660324879dcd43fd2f6151ebad959f390a6690bcb78dff463720b93c930eeea9ff3a7e82e3e4ddf949f9fc391536472195c4a915ecce0b5209953545b8a842a90e8b414410bfa9d06b53b0364fcfe7fb9ee6d7a97f9f1dfb3b53ca969da57abb1d625b08a8806949222c2166af96bcc832fa415fe0ffc30d2095b033012077700463ba12202a4afb0aff90c73c3afb3adea5d4dd3b2df86f31f2d11d920223f950b7dafcb65f9bb9c7bff0b5910916497c8825c95735d9fcb653927e3679f1211dfb2c9be6b7d6b05be81085c41670337b3888b62741659a2980cf085a66957ffdb33ffa7ebdfb7dfaabc4aa090c30000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
