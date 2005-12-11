@@ -171,9 +171,13 @@ class Window(QMainWindow):
         but = QPushButton("Cancel", hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
+        self.w_name = self.basic.name.edit
+        self.w_device = self.basic.device.device
+        self.device_list = {}
+        
         self.show()
         
-        self.basic.name.edit.setText(unicode(name))
+        self.w_name.setText(unicode(name))
         
         self.comar = comar.Link()
         self.comar.call_package("Net.Link.modes", link_name, id=3)
@@ -188,8 +192,8 @@ class Window(QMainWindow):
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
     
     def slotAccept(self):
-        name = self.basic.name.edit.text()
-        device = str(self.basic.device.device.currentText()).split(" ")[0]
+        name = self.w_name.text()
+        device = self.device_list[str(self.basic.device.device.currentText())]
         address = self.basic.address.address.edit.text()
         self.comar.call("Net.Link.setConnection", [ "name", name, "device", device ])
         self.comar.call("Net.Link.setAddress", [ "name", name, "address", address ])
@@ -203,11 +207,13 @@ class Window(QMainWindow):
         if reply[0] == self.comar.RESULT:
             if reply[1] == 1:
                 for item in reply[2].split("\n"):
-                    if item != self.device:
-                        self.basic.device.device.insertItem(item)
+                    uid, info = item.split(" ", 1)
+                    if uid != self.device:
+                        self.w_device.insertItem(info)
+                        self.device_list[info] = uid
             elif reply[1] == 2:
-                addr = reply[2].split(" ")
-                self.basic.address.address.edit.setText(addr[0])
+                addr = reply[2].split("\n")
+                self.basic.address.address.edit.setText(addr[1])
             elif reply[1] == 3:
                 self.modes = reply[2]
                 if not "remote" in self.modes:
@@ -215,6 +221,8 @@ class Window(QMainWindow):
                 if not "auto" in self.modes:
                     self.basic.address.r2.setEnabled(False)
             elif reply[1] == 4:
-                self.device = reply[2]
-                self.basic.device.device.insertItem(self.device)
+                name, uid, info = reply[2].split("\n")
+                self.device = uid
+                self.w_device.insertItem(info)
+                self.device_list[info] = uid
                 self.comar.call_package("Net.Link.deviceList", self.link_name, id=1)

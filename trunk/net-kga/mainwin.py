@@ -14,18 +14,9 @@ import connection
 import comar
 import widgets
 
-unique = 100
-unique2 = 100000
-
 class Connection(QListBoxItem):
     def __init__(self, box, comar, name, link_name):
-        global unique
-        global unique2
         QListBoxItem.__init__(self, box)
-        self.cid = unique
-        unique += 1
-        self.cid2 = unique2
-        unique2 += 1
         self.comar = comar
         self.name = name
         self.link_name = link_name
@@ -37,8 +28,8 @@ class Connection(QListBoxItem):
         self.f1.setBold(True)
         self.f1.setPointSize(self.f1.pointSize() + 4)
         self.pix = QPixmap("ether.png")
-        comar.call_package("Net.Link.connectionInfo", link_name, [ "name", name ], id=self.cid)
-        comar.call_package("Net.Link.getAddress", link_name, [ "name", name ], id=self.cid2)
+        comar.call_package("Net.Link.connectionInfo", link_name, [ "name", name ], id=2)
+        comar.call_package("Net.Link.getAddress", link_name, [ "name", name ], id=3)
     
     def paint(self, painter):
         fm = QFontMetrics(self.f1)
@@ -48,7 +39,7 @@ class Connection(QListBoxItem):
         painter.drawText(32 + 9, 3 + fm.ascent(), unicode(self.name))
         painter.setFont(self.f2)
         painter.drawText(32 + 9, 3 + fm.height() + 3 + fm2.ascent(),
-            "%s, %s" % (self.device, self.device_name))
+            "%s" % (self.device_name))
         painter.drawText(32 + 9, 3 + fm.height() + 3 + fm2.height() + 3 + fm2.ascent()
             , "Offline, " + self.address)
         painter.drawPixmap(3, 3, self.pix)
@@ -93,22 +84,22 @@ class Widget(QVBox):
                 for conn in reply[2].split("\n"):
                     if conn != "None":
                         Connection(self.links, self.comar, conn, reply[3])
-            elif reply[1] >= 100 and reply[1] < 100000:
+            elif reply[1] == 2:
+                name, dev, devname = reply[2].split("\n")
                 conn = self.links.firstItem()
                 while conn:
-                    if conn.cid == reply[1]:
-                        dev = reply[2].split(" ", 1)
-                        conn.device = dev[0]
-                        conn.device_name = dev[1]
+                    if conn.name == name:
+                        conn.device = dev
+                        conn.device_name = devname
                         self.links.updateItem(conn)
                         return
                     conn = conn.next()
-            elif reply[1] >= 100000:
+            elif reply[1] == 3:
+                name, addr = reply[2].split("\n")
                 conn = self.links.firstItem()
                 while conn:
-                    if conn.cid2 == reply[1]:
-                        addr = reply[2].split(" ", 1)
-                        conn.address = addr[0]
+                    if conn.name == name:
+                        conn.address = addr
                         self.links.updateItem(conn)
                         return
                     conn = conn.next()
