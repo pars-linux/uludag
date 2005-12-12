@@ -1,3 +1,4 @@
+# translation of tr.po to Türkçe
 # translation of tr.po to
 # Turkish translations for PiSi KGA package
 # PiSi KGA paketi için Türkçe çeviriler.
@@ -6,18 +7,19 @@
 #
 # cartman <ismail@uludag.org.tr>, 2005.
 # İsmail Dönmez <ismail@uludag.org.tr>, 2005.
+# Eray Ozkural <eray@uludag.org.tr>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon Dec 12 23:29:45 2005\n"
-"PO-Revision-Date: 2005-12-08 20:08+0200\n"
-"Last-Translator: İsmail Dönmez <ismail@uludag.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2005-12-12 23:32+0200\n"
+"Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11\n"
 
 #: src/MainWindow.py:71 src/MainWindow.py:192
@@ -38,11 +40,11 @@ msgstr "Paket(ler)i Yükle"
 
 #: src/MainWindow.py:189
 msgid "&Quit"
-msgstr ""
+msgstr "&Çık"
 
 #: src/MainWindow.py:190
 msgid "&Search"
-msgstr ""
+msgstr "&Ara"
 
 #: src/MainWindow.py:191
 msgid "Alt+S"
@@ -90,7 +92,7 @@ msgstr ""
 
 #: src/MainWindow.py:205
 msgid "Icon"
-msgstr ""
+msgstr "İkon"
 
 #: src/MainWindow.py:206
 msgid "<p align=\"left\">Program Name</p>"
@@ -125,18 +127,16 @@ msgstr ""
 "ekliyebilirsiniz"
 
 #: src/MainWindow.py:213
-#, fuzzy
 msgid "<b><><h2>Add, Upgrade or Remove Programs</h2></font></b>"
-msgstr "<b><><h1>Program Ekle ve Kaldır</h1></font></b>"
+msgstr "<b><><h1>Program Ekle, Yükselt veya Kaldır</h1></font></b>"
 
 #: src/PisiKga.py:97
 msgid "Updating repositories"
 msgstr "Depolar güncelleniyor"
 
 #: src/PisiKga.py:116
-#, fuzzy
 msgid "PiSi Info"
-msgstr "PiSi Hatası"
+msgstr "PiSi Hata"
 
 #: src/PisiKga.py:135
 msgid "All repositories are successfully updated!"
@@ -262,17 +262,3 @@ msgstr "&Daha fazla bilgi göster >>"
 msgid "&Ok"
 msgstr "&Tamam"
 
-#~ msgid "Search package:"
-#~ msgstr "Paket ara:"
-
-#~ msgid "GUI for PiSi package manager"
-#~ msgstr "PiSi paket yöneticisi için arayüz"
-
-#~ msgid "Python coding help"
-#~ msgstr "Python yardımı"
-
-#~ msgid "Helping with PiSi api"
-#~ msgstr "PiSi konusunda yardım"
-
-#~ msgid "Author of PyKDEeXtensions"
-#~ msgstr "PyKDEeXtensions'ın yazarı"
