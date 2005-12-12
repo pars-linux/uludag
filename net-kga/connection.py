@@ -195,8 +195,10 @@ class Window(QMainWindow):
         name = self.w_name.text()
         device = self.device_list[str(self.basic.device.device.currentText())]
         address = self.basic.address.address.edit.text()
+        gateway = self.basic.address.gateway.edit.text()
         self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ])
-        self.comar.call_package("Net.Link.setAddress", self.link_name, [ "name", name, "address", address ])
+        self.comar.call_package("Net.Link.setAddress", self.link_name, [
+            "name", name, "mode", "manual", "address", address, "gateway", gateway ])
         self.close(True)
     
     def slotCancel(self):
