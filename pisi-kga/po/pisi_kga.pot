@@ -1,135 +1,128 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR ORGANIZATION
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-08 20:20+0200\n"
+"POT-Creation-Date: Mon Dec 12 23:29:45 2005\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
 
-#: src/MainWindow.py:157 src/MainWindow.py:208
+
+#: src/MainWindow.py:71 src/MainWindow.py:192
 msgid "Package"
 msgstr ""
 
-#: src/MainWindow.py:158 src/MainWindow.py:209
+#: src/MainWindow.py:72 src/MainWindow.py:193
 msgid "Version"
 msgstr ""
 
-#: src/MainWindow.py:185
+#: src/MainWindow.py:186
 msgid "Pisi KGA"
 msgstr ""
 
-#: src/MainWindow.py:186
-msgid "<b><><h1>Add or Remove Programs</h1></font></b>"
-msgstr ""
-
-#: src/MainWindow.py:188
-msgid "Show &installed packages"
+#: src/MainWindow.py:187
+msgid "Install Package(s)"
 msgstr ""
 
 #: src/MainWindow.py:189
-msgid "Only show installed packages in your compter"
+msgid "&Quit"
 msgstr ""
 
 #: src/MainWindow.py:190
-msgid "Show Available &Updates"
+msgid "&Search"
 msgstr ""
 
 #: src/MainWindow.py:191
+msgid "Alt+S"
+msgstr ""
+
+#: src/MainWindow.py:194 src/PisiKga.py:253
+msgid "No package selected"
+msgstr ""
+
+#: src/MainWindow.py:196
+msgid "Show &installed packages"
+msgstr ""
+
+#: src/MainWindow.py:197
+msgid "Only show installed packages in your compter"
+msgstr ""
+
+#: src/MainWindow.py:198
+msgid "Show Available &Updates"
+msgstr ""
+
+#: src/MainWindow.py:199
 msgid "Only show packages that can be updated"
 msgstr ""
 
-#: src/MainWindow.py:192
+#: src/MainWindow.py:200
 msgid "Show &Not-Installed Packages"
 msgstr ""
 
-#: src/MainWindow.py:193
+#: src/MainWindow.py:201
 msgid "Only show packages which are going to be installed"
 msgstr ""
 
-#: src/MainWindow.py:194
-msgid "Here goes summary"
+#: src/MainWindow.py:202
+msgid "Here goes summary and description?"
 msgstr ""
 
-#: src/MainWindow.py:195
+#: src/MainWindow.py:203
 msgid ""
 "Program Name: Foo\n"
 "Program Version: Bar"
 msgstr ""
 
-#: src/MainWindow.py:197
+#: src/MainWindow.py:205
 msgid "Icon"
 msgstr ""
 
-#: src/MainWindow.py:198
+#: src/MainWindow.py:206
 msgid "<p align=\"left\">Program Name</p>"
 msgstr ""
 
-#: src/MainWindow.py:199
+#: src/MainWindow.py:207
 msgid "&Update Everything"
 msgstr ""
 
-#: src/MainWindow.py:200
+#: src/MainWindow.py:208
+msgid "Alt+U"
+msgstr ""
+
+#: src/MainWindow.py:209
 msgid "Click on this button if you want to update your system"
 msgstr ""
 
-#: src/MainWindow.py:201
+#: src/MainWindow.py:210
 msgid "&Repository Settings"
 msgstr ""
 
-#: src/MainWindow.py:202
-msgid ""
-"Click here to add, modify or delete a repository, <br>i.e the server "
-"locations where new software can be fetched."
+#: src/MainWindow.py:211
+msgid "Alt+R"
 msgstr ""
 
-#: src/MainWindow.py:203
-msgid "Install Package(s)"
+#: src/MainWindow.py:212
+msgid "Click here to add, modify or delete a repository, <br>i.e the server locations where new software can be fetched."
 msgstr ""
 
-#: src/MainWindow.py:206
-msgid "&cl"
-msgstr ""
-
-#: src/MainWindow.py:207
-msgid "Search package:"
-msgstr ""
-
-#: src/MainWindow.py:210 src/PisiKga.py:253
-msgid "No package selected"
-msgstr ""
-
-#: src/Progress.py:54
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr ""
-
-#: src/PisiKga.py:46
-msgid "GUI for PiSi package manager"
-msgstr ""
-
-#: src/PisiKga.py:57
-msgid "Python coding help"
-msgstr ""
-
-#: src/PisiKga.py:58
-msgid "Helping with PiSi api"
-msgstr ""
-
-#: src/PisiKga.py:59
-msgid "Author of PyKDEeXtensions"
+#: src/MainWindow.py:213
+msgid "<b><><h2>Add, Upgrade or Remove Programs</h2></font></b>"
 msgstr ""
 
 #: src/PisiKga.py:97
 msgid "Updating repositories"
+msgstr ""
+
+#: src/PisiKga.py:116
+msgid "PiSi Info"
 msgstr ""
 
 #: src/PisiKga.py:135
@@ -181,11 +174,11 @@ msgid " Byte"
 msgstr ""
 
 #: src/PisiKga.py:219
-msgid "Program Version :"
+msgid "Program Size :"
 msgstr ""
 
 #: src/PisiKga.py:219
-msgid "Program Size :"
+msgid "Program Version :"
 msgstr ""
 
 #: src/PisiKga.py:247
@@ -224,6 +217,10 @@ msgstr ""
 msgid "Pisi KGA is already running!"
 msgstr ""
 
+#: src/Progress.py:54
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr ""
+
 #: src/Success.py:17
 msgid "Show more information >>"
 msgstr ""
@@ -251,3 +248,4 @@ msgstr ""
 #: src/SuccessDialog.py:75
 msgid "&Ok"
 msgstr ""
+
