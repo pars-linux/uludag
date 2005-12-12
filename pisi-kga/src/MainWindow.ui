@@ -411,7 +411,7 @@ Program Version: Bar</string>
                                         <property name="sizeHint">
                                             <size>
                                                 <width>41</width>
-                                                <height>80</height>
+                                                <height>45</height>
                                             </size>
                                         </property>
                                     </spacer>
