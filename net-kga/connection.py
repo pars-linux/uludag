@@ -195,8 +195,8 @@ class Window(QMainWindow):
         name = self.w_name.text()
         device = self.device_list[str(self.basic.device.device.currentText())]
         address = self.basic.address.address.edit.text()
-        self.comar.call("Net.Link.setConnection", [ "name", name, "device", device ])
-        self.comar.call("Net.Link.setAddress", [ "name", name, "address", address ])
+        self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ])
+        self.comar.call_package("Net.Link.setAddress", self.link_name, [ "name", name, "address", address ])
         self.close(True)
     
     def slotCancel(self):
@@ -212,8 +212,8 @@ class Window(QMainWindow):
                         self.w_device.insertItem(info)
                         self.device_list[info] = uid
             elif reply[1] == 2:
-                addr = reply[2].split("\n")
-                self.basic.address.address.edit.setText(addr[1])
+                name, addr = reply[2].split("\n")
+                self.basic.address.address.edit.setText(addr)
             elif reply[1] == 3:
                 self.modes = reply[2]
                 if not "remote" in self.modes:
