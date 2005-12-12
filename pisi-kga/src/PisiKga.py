@@ -205,10 +205,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             
         self.progNameLabel.setText(QString("<qt><h1>"+self.package.name+"</h1></qt>"))
 
-        try:
-            self.infoLabel.setText(self.package.summary['tr']+"<br><br><br>"+self.package.description['tr'])
-        except:
-            self.infoLabel.setText(self.package.summary['en']+"<br><br><br>"+self.package.description['en'])
+        self.infoLabel.setText("%s<br><br><br>%s" % (self.package.summary, self.package.description) )
         
         size = self.package.installedSize
         
@@ -332,7 +329,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif index == 1: # Upgrade baby
             self.operation = "upgrade"
             self.command.upgrade(self.selectedItems)
-            	    
+                    
         elif index == 2: # Install baby
             self.operation = "install"
             self.command.install(self.selectedItems)
@@ -387,7 +384,7 @@ class MainApplication(programbase):
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
         mainwidget.listView.setResizeMode(KListView.LastColumn)
-        mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
+        #mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         mainwidget.searchLine.setListView(mainwidget.listView)
         mainwidget.searchLine.setSearchColumns([0])
