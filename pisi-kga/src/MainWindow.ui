@@ -18,6 +18,12 @@
             <height>240</height>
         </size>
     </property>
+    <property name="baseSize">
+        <size>
+            <width>600</width>
+            <height>400</height>
+        </size>
+    </property>
     <property name="caption">
         <string>Pisi KGA</string>
     </property>
