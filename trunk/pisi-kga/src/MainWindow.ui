@@ -27,10 +27,6 @@
     <property name="caption">
         <string>Pisi KGA</string>
     </property>
-    <property name="toolTip" stdset="0">
-        <string>pisi gui</string>
-        <comment>PİSİ Graphical User Interface</comment>
-    </property>
     <vbox>
         <property name="name">
             <cstring>unnamed</cstring>
