@@ -93,6 +93,9 @@
                             <property name="title">
                                 <string></string>
                             </property>
+                            <property name="selectedId" stdset="0">
+                                <number>2</number>
+                            </property>
                             <grid>
                                 <property name="name">
                                     <cstring>unnamed</cstring>
@@ -114,6 +117,9 @@
                                     </property>
                                     <property name="text">
                                         <string>Show Available &amp;Updates</string>
+                                    </property>
+                                    <property name="accel">
+                                        <string>Alt+U</string>
                                     </property>
                                     <property name="toolTip" stdset="0">
                                         <string>Only show packages that can be updated</string>

@@ -402,8 +402,8 @@ class MainApplication(programbase):
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
 
-        mainwidget.selectionGroup.setButton(0);
-        mainwidget.updateListing(0);
+        mainwidget.selectionGroup.setButton(2);
+        mainwidget.updateListing(2);
 
     def __del__(self):
         pass
