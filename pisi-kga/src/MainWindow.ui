@@ -131,39 +131,29 @@
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLayoutWidget">
+                            <widget class="KLineEdit">
                                 <property name="name">
-                                    <cstring>layout9</cstring>
+                                    <cstring>queryEdit</cstring>
                                 </property>
-                                <hbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <widget class="KListViewSearchLine">
-                                        <property name="name">
-                                            <cstring>searchLine</cstring>
-                                        </property>
-                                        <property name="toolTip" stdset="0">
-                                            <string>search box</string>
-                                            <comment>Please enter package name or search terms here</comment>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton">
-                                        <property name="name">
-                                            <cstring>searchButton</cstring>
-                                        </property>
-                                        <property name="text">
-                                            <string>&amp;Search</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string>Alt+S</string>
-                                        </property>
-                                        <property name="toolTip" stdset="0">
-                                            <string>search button</string>
-                                            <comment>Search package name, summary, description</comment>
-                                        </property>
-                                    </widget>
-                                </hbox>
+                                <property name="toolTip" stdset="0">
+                                    <string>search package</string>
+                                    <comment>Enter package name or search terms here</comment>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>searchButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Search</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+S</string>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>search button</string>
+                                    <comment>Search package name, summary, description</comment>
+                                </property>
                             </widget>
                         </hbox>
                     </widget>
@@ -604,7 +594,7 @@ Program Version: Bar</string>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>klistviewsearchline.h</includehint>
+    <includehint>klineedit.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>ktextbrowser.h</includehint>
     <includehint>kpushbutton.h</includehint>
