@@ -123,7 +123,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         kapp.postEvent(glob_ui,event)
     
     def finished(self):
-        self.searchLine.clear()
+        self.queryEdit.clear()
         self.pDialog.close()
         self.resetProgressBar()
 
@@ -252,11 +252,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             self.selectionInfo.setText(i18n("No package selected"))
         
-    def updateListing(self, index=0):
+    def updatePackages(self, list):
         self.listView.clear()
         self.selectedItems = []
 
-        self.searchLine.clear()
+        self.queryEdit.clear()
         self.updateButtons()
         self.updateSelectionInfo()
 
@@ -265,6 +265,19 @@ class MainApplicationWidget(MainWindow.MainWindow):
         packages.setText(0,i18n("Packages"))
         packages.setPixmap(0,loadIcon('package_system', KIcon.Small))
         packages.setSelectable(False)
+
+        list.sort()
+        for pack in list:
+            item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
+            item.setText(1,pisi.packagedb.get_package(pack).version)
+
+        # Select first item in the list
+        try:
+            self.listView.setSelected(packages.firstChild(),True)
+        except:
+            pass
+
+    def updateListing(self, index=0):
 
         # Check if updateSystemButton should be enabled
         if len(pisi.api.list_upgradable()) > 0:
@@ -275,19 +288,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if index == 0 :
             # Show only installed apps
             list = pisi.packagedb.inst_packagedb.list_packages()
-            list.sort()
-            for pack in list:
-                item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
-                item.setText(1,pisi.packagedb.get_package(pack).version)
             self.installOrRemoveButton.setText(i18n("Remove package(s)"))
 
         elif index == 1:
             # Only upgrades
             list = pisi.api.list_upgradable()
-            list.sort()
-            for pack in list:
-                item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
-                item.setText(1,pisi.packagedb.get_package(pack).version)
             self.installOrRemoveButton.setText(i18n("Update package(s)"))
         
         elif index == 2 :
@@ -295,18 +300,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for repo in pisi.context.repodb.list():
                 pkg_db = pisi.packagedb.get_db(repo)
                 list = pkg_db.list_packages()
-                list.sort()
-                for pack in list:
-                    if not pisi.packagedb.inst_packagedb.has_package(pack):
-                        item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
-                        item.setText(1,pisi.packagedb.get_package(pack).version)
             self.installOrRemoveButton.setText(i18n("Install package(s)"))
-
-        # Select first item in the list
-        try:
-            self.listView.setSelected(packages.firstChild(),True)
-        except:
-            pass
+            
+        self.updatePackages(list)
 
     def installRemoveFinished(self):
         self.selectedItems = []
@@ -349,6 +345,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
         self.command.install(app)
+        
+    def searchPackage(self):
+        query = unicode(self.queryEdit.text())
+        result = pisi.api.search_package(query)
+        self.updatePackages(list(result))
 
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
@@ -386,8 +387,6 @@ class MainApplication(programbase):
         mainwidget.listView.setResizeMode(KListView.LastColumn)
         #mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
-        mainwidget.searchLine.setListView(mainwidget.listView)
-        mainwidget.searchLine.setSearchColumns([0])
 
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
@@ -398,6 +397,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
+        self.connect(mainwidget.searchButton,SIGNAL("clicked()"),mainwidget.searchPackage)
 
         mainwidget.selectionGroup.setButton(2);
         mainwidget.updateListing(2);
