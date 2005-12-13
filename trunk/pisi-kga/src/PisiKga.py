@@ -275,7 +275,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         componentNames.sort() # necessary
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
         componentDict = {}
-        componentItems = []
         for component in components:
             componentItem = KListViewItem(self.listView,None)
             componentItem.setOpen(True)
@@ -287,7 +286,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
             componentItem.setPixmap(0,loadIcon('package_system', KIcon.Small))
             componentItem.setSelectable(False)
             componentDict[component.name] = (component, componentItem)
-            componentItems.append(componentItem)
 
         def isApp(package):
             return ('app:gui' in package.isA or 
@@ -313,6 +311,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
             item.setText(1,package.version)
             packageItems.append(item)
             
+        del componentDict    # not used any more
+        
         # erase empty components
             
         # Select first item in the list
@@ -325,6 +325,14 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 compIt = compIt.nextSibling()
         except:
             pass
+
+        compIt = self.listView.firstChild()
+        while compIt:
+            compItNext = compIt.nextSibling()
+            if not compIt.firstChild():
+                comp = self.listView.takeItem(compIt)
+                del comp
+            compIt = compItNext
 
         self.listView.setUpdatesEnabled(True)
 
