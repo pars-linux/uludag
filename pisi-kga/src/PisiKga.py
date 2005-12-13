@@ -268,14 +268,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         # list components
         componentNames = pisi.context.componentdb.list_components()
+        componentNames.sort() # necessary
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
         self.componentDict = {}
         for component in components:
             componentItem = KListViewItem(self.listView,None)
             componentItem.setOpen(True)
-            #if component.localName:
-            #    name = component.localName
-            componentItem.setText(0, unicode(component.name))
+            name = component.name
+            if component.localName:
+                name += u' (%s)' % component.localName
+                #name = unicode(component.localName)
+            componentItem.setText(0, name)
             componentItem.setPixmap(0,loadIcon('package_system', KIcon.Small))
             componentItem.setSelectable(False)
             self.componentDict[component.name] = (component, componentItem)
