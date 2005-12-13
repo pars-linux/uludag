@@ -274,7 +274,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         componentNames = pisi.context.componentdb.list_components()
         componentNames.sort() # necessary
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
-        self.componentDict = {}
+        componentDict = {}
+        componentItems = []
         for component in components:
             componentItem = KListViewItem(self.listView,None)
             componentItem.setOpen(True)
@@ -285,7 +286,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
             componentItem.setText(0, name)
             componentItem.setPixmap(0,loadIcon('package_system', KIcon.Small))
             componentItem.setSelectable(False)
-            self.componentDict[component.name] = (component, componentItem)
+            componentDict[component.name] = (component, componentItem)
+            componentItems.append(componentItem)
 
         def isApp(package):
             return ('app:gui' in package.isA or 
@@ -294,10 +296,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
             
         list.sort()
         self.packages = [] #FIXME: caching the entire package database somehow does not look right :)
+        packageItems = []
         for pack in list:
             parent = self.listView
             # find component
-            for compname, (component, componentItem) in self.componentDict.items():
+            for compname, (component, componentItem) in componentDict.items():
                 if pack in component.packages:
                     parent = componentItem
                     break
@@ -308,10 +311,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     continue   # do not show if not an app
             item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
             item.setText(1,package.version)
+            packageItems.append(item)
+            
+        # erase empty components
             
         # Select first item in the list
         try:
-            self.listView.setSelected(packages.firstChild(),True)
+            compIt = self.listView.firstChild()
+            while compIt:
+                if compIt.firstChild():
+                    self.listView.setSelected(compIt.firstChild(),True)
+                    break
+                compIt = compIt.nextSibling()
         except:
             pass
 
