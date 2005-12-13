@@ -37,6 +37,8 @@ class PisiUi(UI,QObject):
         event = QCustomEvent(QEvent.User+5)
         event.setData(msg)
         QThread.postEvent(self.receiver,event)
+        #print the thing on stdout you don't lose a thing
+        print msg
 
     def confirm(self, msg):
         event = QCustomEvent(QEvent.User+6)
