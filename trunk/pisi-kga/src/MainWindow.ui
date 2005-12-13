@@ -2,14 +2,14 @@
 <class>MainWindow</class>
 <widget class="QWidget">
     <property name="name">
-        <cstring>Pisi KGA</cstring>
+        <cstring>Pisi_KGA</cstring>
     </property>
     <property name="geometry">
         <rect>
             <x>0</x>
             <y>0</y>
             <width>723</width>
-            <height>569</height>
+            <height>581</height>
         </rect>
     </property>
     <property name="minimumSize">
@@ -25,7 +25,7 @@
         </size>
     </property>
     <property name="caption">
-        <string>Pisi KGA</string>
+        <string>PİSİ Graphical User Interface</string>
     </property>
     <vbox>
         <property name="name">
@@ -38,7 +38,7 @@
             <property name="maximumSize">
                 <size>
                     <width>32767</width>
-                    <height>50</height>
+                    <height>40</height>
                 </size>
             </property>
             <property name="paletteBackgroundColor">
@@ -76,7 +76,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>&lt;b&gt;&lt;&gt;&lt;h2&gt;Add, Upgrade or Remove Programs&lt;/h2&gt;&lt;/font&gt;&lt;/b&gt;</string>
+                        <string>&lt;b&gt;&lt;&gt;&lt;h2&gt;Add, Upgrade or Remove Packages&lt;/h2&gt;&lt;/font&gt;&lt;/b&gt;</string>
                     </property>
                 </widget>
             </hbox>
@@ -98,7 +98,7 @@
             </property>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout12</cstring>
+                    <cstring>layout9</cstring>
                 </property>
                 <vbox>
                     <property name="name">
@@ -127,32 +127,74 @@
                         <property name="frameShadow">
                             <enum>Raised</enum>
                         </property>
-                        <hbox>
+                        <vbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="KLineEdit">
+                            <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>queryEdit</cstring>
+                                    <cstring>layout8</cstring>
                                 </property>
-                                <property name="toolTip" stdset="0">
-                                    <string>search package</string>
-                                    <comment>Enter package name or search terms here</comment>
-                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="KLineEdit">
+                                        <property name="name">
+                                            <cstring>queryEdit</cstring>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>search package</string>
+                                            <comment>Enter package name or search terms here</comment>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>searchButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Search</string>
+                                        </property>
+                                        <property name="accel">
+                                            <string>Alt+S</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>search button</string>
+                                            <comment>Search package name, summary, description</comment>
+                                        </property>
+                                    </widget>
+                                </hbox>
                             </widget>
-                            <widget class="QPushButton">
+                            <widget class="QButtonGroup">
                                 <property name="name">
-                                    <cstring>searchButton</cstring>
+                                    <cstring>buttonGroup3</cstring>
                                 </property>
-                                <property name="text">
-                                    <string>&amp;Search</string>
+                                <property name="title">
+                                    <string></string>
                                 </property>
-                                <property name="toolTip" stdset="0">
-                                    <string>search button</string>
-                                    <comment>Search package name, summary, description</comment>
-                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QRadioButton">
+                                        <property name="name">
+                                            <cstring>radioButton4</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Show only applications</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton">
+                                        <property name="name">
+                                            <cstring>radioButton5</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Show all packages</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
                             </widget>
-                        </hbox>
+                        </vbox>
                     </widget>
                     <widget class="KListView">
                         <column>
@@ -272,6 +314,9 @@
                                         <property name="text">
                                             <string>Show &amp;installed packages</string>
                                         </property>
+                                        <property name="accel">
+                                            <string>Alt+I</string>
+                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Only show installed packages in your compter</string>
                                         </property>
@@ -293,6 +338,9 @@
                                         </property>
                                         <property name="text">
                                             <string>Show &amp;not-Installed packages</string>
+                                        </property>
+                                        <property name="accel">
+                                            <string>Alt+N</string>
                                         </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Only show packages which are going to be installed</string>
@@ -337,7 +385,7 @@
                                         </property>
                                         <property name="sizePolicy">
                                             <sizepolicy>
-                                                <hsizetype>3</hsizetype>
+                                                <hsizetype>5</hsizetype>
                                                 <vsizetype>7</vsizetype>
                                                 <horstretch>0</horstretch>
                                                 <verstretch>0</verstretch>
@@ -464,6 +512,9 @@ Program Version: Bar</string>
                                 <property name="text">
                                     <string>&amp;Repository Settings</string>
                                 </property>
+                                <property name="accel">
+                                    <string>Alt+R</string>
+                                </property>
                                 <property name="toolTip" stdset="0">
                                     <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
                                 </property>
@@ -506,7 +557,7 @@ Program Version: Bar</string>
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>245</width>
+                            <width>486</width>
                             <height>20</height>
                         </size>
                     </property>
