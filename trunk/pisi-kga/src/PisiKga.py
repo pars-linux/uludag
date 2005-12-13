@@ -452,7 +452,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.searchButton,SIGNAL("clicked()"),mainwidget.searchPackage)
 
         mainwidget.selectionGroup.setButton(2);
-        mainwidget.categoryGroup.setButton(0);
+        mainwidget.categoryGroup.setButton(1);  #FIXME: should be 0 for 1.0 release
         mainwidget.updateListing();
 
     def __del__(self):
