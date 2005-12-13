@@ -266,7 +266,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.packageList = list
         self.selectedItems = []
 
-        self.queryEdit.clear()
         self.updateButtons()
         self.updateSelectionInfo()
 
