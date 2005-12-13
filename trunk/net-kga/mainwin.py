@@ -11,8 +11,10 @@
 
 from qt import *
 import connection
+import links
 import comar
 import widgets
+
 
 class Connection(QListBoxItem):
     def __init__(self, box, comar, name, link_name):
@@ -105,18 +107,19 @@ class Widget(QVBox):
                     conn = conn.next()
     
     def slotCreate(self):
-        self.comar.get_packages("Net.Link")
-        links = self.comar.read_cmd()
-        connection.Window(self, "new connection", links[2], 1)
+        links.Window(self)
     
     def slotEdit(self):
         conn = self.links.selectedItem()
-        w = connection.Window(self, conn.name, conn.link_name)
+        if conn:
+            w = connection.Window(self, conn.name, conn.link_name)
     
     def slotConnect(self):
         conn = self.links.selectedItem()
-        self.comar.call("Net.Link.setState", [ "name", conn.name, "state", "up" ])
+        if conn:
+            self.comar.call("Net.Link.setState", [ "name", conn.name, "state", "up" ])
     
     def slotDisconnect(self):
         conn = self.links.selectedItem()
-        self.comar.call("Net.Link.setState", [ "name", conn.name, "state", "down" ])
+        if conn:
+            self.comar.call("Net.Link.setState", [ "name", conn.name, "state", "down" ])
