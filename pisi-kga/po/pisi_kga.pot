@@ -8,12 +8,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-13 13:42+0200\n"
+"POT-Creation-Date: 2005-12-13 15:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/Success.py:17
@@ -132,52 +132,48 @@ msgstr ""
 msgid "No package selected"
 msgstr ""
 
-#: src/PisiKga.py:315
+#: src/PisiKga.py:345
 msgid "Remove package(s)"
 msgstr ""
 
-#: src/PisiKga.py:320
+#: src/PisiKga.py:350
 msgid "Update package(s)"
 msgstr ""
 
-#: src/PisiKga.py:327
+#: src/PisiKga.py:357
 msgid "Install package(s)"
 msgstr ""
 
-#: src/PisiKga.py:340 src/PisiKga.py:360
+#: src/PisiKga.py:370 src/PisiKga.py:390
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:499
+#: src/PisiKga.py:531
 msgid "Pisi KGA is already running!"
 msgstr ""
 
-#: src/MainWindow.py:86 src/MainWindow.py:217
+#: src/MainWindow.py:87 src/MainWindow.py:217
 msgid "Package"
 msgstr ""
 
-#: src/MainWindow.py:87 src/MainWindow.py:218
+#: src/MainWindow.py:88 src/MainWindow.py:218
 msgid "Version"
 msgstr ""
 
-#: src/MainWindow.py:208
-msgid "PÄ°SÄ° Graphical User Interface"
-msgstr ""
-
 #: src/MainWindow.py:209
-msgid "Add, Upgrade or Remove Packages"
+msgid "PiSi Graphical User Interface"
 msgstr ""
 
 #: src/MainWindow.py:210
-msgid "search package"
+msgid "Add, Upgrade or Remove Packages"
 msgstr ""
 
 #: src/MainWindow.py:211
-msgid "&Search"
+msgid "search package"
 msgstr ""
 
 #: src/MainWindow.py:212
-msgid "Alt+S"
+msgid "&Search"
 msgstr ""
 
 #: src/MainWindow.py:213
@@ -205,74 +201,58 @@ msgid "Show &installed packages"
 msgstr ""
 
 #: src/MainWindow.py:224
-msgid "Alt+I"
-msgstr ""
-
-#: src/MainWindow.py:225
 msgid "Only show installed packages in your compter"
 msgstr ""
 
-#: src/MainWindow.py:226
+#: src/MainWindow.py:225
 msgid "Show available &updates"
 msgstr ""
 
-#: src/MainWindow.py:227
-msgid "Alt+U"
-msgstr ""
-
-#: src/MainWindow.py:228
+#: src/MainWindow.py:226
 msgid "Only show packages that can be updated"
 msgstr ""
 
-#: src/MainWindow.py:229
+#: src/MainWindow.py:227
 msgid "Show &not-Installed packages"
 msgstr ""
 
-#: src/MainWindow.py:230
-msgid "Alt+N"
-msgstr ""
-
-#: src/MainWindow.py:231
+#: src/MainWindow.py:228
 msgid "Only show packages which are going to be installed"
 msgstr ""
 
-#: src/MainWindow.py:233
+#: src/MainWindow.py:230
 msgid ""
 "Program Name: Foo\n"
 "Program Version: Bar"
 msgstr ""
 
-#: src/MainWindow.py:235
+#: src/MainWindow.py:232
 msgid "Icon"
 msgstr ""
 
-#: src/MainWindow.py:236
+#: src/MainWindow.py:233
 msgid "<p align=\"left\">Program Name</p>"
 msgstr ""
 
-#: src/MainWindow.py:237
+#: src/MainWindow.py:234
 msgid "&Update Everything"
 msgstr ""
 
-#: src/MainWindow.py:238
+#: src/MainWindow.py:235
 msgid "Click on this button if you want to update your system"
 msgstr ""
 
-#: src/MainWindow.py:239
+#: src/MainWindow.py:236
 msgid "&Repository Settings"
 msgstr ""
 
-#: src/MainWindow.py:240
-msgid "Alt+R"
-msgstr ""
-
-#: src/MainWindow.py:241
+#: src/MainWindow.py:237
 msgid ""
 "Click here to add, modify or delete a repository, <br>i.e the server "
 "locations where new software can be fetched."
 msgstr ""
 
-#: src/MainWindow.py:242
+#: src/MainWindow.py:238
 msgid "Install Package(s)"
 msgstr ""
 
