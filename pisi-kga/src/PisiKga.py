@@ -449,6 +449,7 @@ class MainApplication(programbase):
             self.setCaption("PiSi KGA")
         else:
             KCModule.__init__(self,parent,name)
+            KGlobal.locale().insertCatalogue("pisi_kga")
             # Create a configuration object.
             self.config = KConfig("pisi_kga")
             self.setButtons(0)
