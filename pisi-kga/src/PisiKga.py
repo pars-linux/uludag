@@ -473,7 +473,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
         self.connect(mainwidget.searchButton,SIGNAL("clicked()"),mainwidget.searchPackage)
 
-        mainwidget.selectionGroup.setButton(2);
+        mainwidget.selectionGroup.setButton(0);
         mainwidget.categoryGroup.setButton(1); #FIXME: workaround for RC1, should be 0 for 1.0 release
         mainwidget.updateListing();
 
