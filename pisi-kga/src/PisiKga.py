@@ -38,6 +38,7 @@ import pisi.api
 import pisi.packagedb
 import pisi.installdb
 import pisi.repodb
+import pisi.context
 
 # Workaround the fact that PyKDE provides no I18N_NOOP as KDE
 def I18N_NOOP(str):
@@ -265,15 +266,30 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateButtons()
         self.updateSelectionInfo()
 
-        packages = KListViewItem(self.listView,None)
-        packages.setOpen(True)
-        packages.setText(0,i18n("Packages"))
-        packages.setPixmap(0,loadIcon('package_system', KIcon.Small))
-        packages.setSelectable(False)
+        # list components
+        componentNames = pisi.context.componentdb.list_components()
+        components = [pisi.context.componentdb.get_component(x) for x in componentNames]
+        self.componentDict = {}
+        for component in components:
+            componentItem = KListViewItem(self.listView,None)
+            componentItem.setOpen(True)
+            #if component.localName:
+            #    name = component.localName
+            componentItem.setText(0, unicode(component.name))
+            componentItem.setPixmap(0,loadIcon('package_system', KIcon.Small))
+            componentItem.setSelectable(False)
+            self.componentDict[component.name] = (component, componentItem)
 
         list.sort()
         for pack in list:
-            item = QCheckListItem(packages,pack,QCheckListItem.CheckBox)
+            parent = self.listView
+            # find component
+            ix = 0
+            for compname, (component, componentItem) in self.componentDict.items():
+                if pack in component.packages:
+                    parent = componentItem
+                    break
+            item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
             item.setText(1,pisi.packagedb.get_package(pack).version)
 
         # Select first item in the list
