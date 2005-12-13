@@ -330,8 +330,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         while compIt:
             compItNext = compIt.nextSibling()
             if not compIt.firstChild():
-                comp = self.listView.takeItem(compIt)
-                del comp
+                compIt.setVisible(False)
             compIt = compItNext
 
         self.listView.setUpdatesEnabled(True)
