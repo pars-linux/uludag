@@ -331,9 +331,6 @@
                                         <property name="text">
                                             <string>Show available &amp;updates</string>
                                         </property>
-                                        <property name="accel">
-                                            <string>Alt+U</string>
-                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Only show packages that can be updated</string>
                                         </property>
