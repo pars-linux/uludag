@@ -147,9 +147,6 @@
                                 <property name="text">
                                     <string>&amp;Search</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+S</string>
-                                </property>
                                 <property name="toolTip" stdset="0">
                                     <string>search button</string>
                                     <comment>Search package name, summary, description</comment>
@@ -275,9 +272,6 @@
                                         <property name="text">
                                             <string>Show &amp;installed packages</string>
                                         </property>
-                                        <property name="accel">
-                                            <string>Alt+I</string>
-                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Only show installed packages in your compter</string>
                                         </property>
@@ -289,9 +283,6 @@
                                         <property name="text">
                                             <string>Show available &amp;updates</string>
                                         </property>
-                                        <property name="accel">
-                                            <string>Alt+U</string>
-                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Only show packages that can be updated</string>
                                         </property>
@@ -302,9 +293,6 @@
                                         </property>
                                         <property name="text">
                                             <string>Show &amp;not-Installed packages</string>
-                                        </property>
-                                        <property name="accel">
-                                            <string>Alt+N</string>
                                         </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Only show packages which are going to be installed</string>
@@ -457,9 +445,6 @@ Program Version: Bar</string>
                                 <property name="text">
                                     <string>&amp;Update Everything</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+U</string>
-                                </property>
                                 <property name="toolTip" stdset="0">
                                     <string>Click on this button if you want to update your system</string>
                                 </property>
@@ -478,9 +463,6 @@ Program Version: Bar</string>
                                 </property>
                                 <property name="text">
                                     <string>&amp;Repository Settings</string>
-                                </property>
-                                <property name="accel">
-                                    <string>Alt+R</string>
                                 </property>
                                 <property name="toolTip" stdset="0">
                                     <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
@@ -578,9 +560,6 @@ Program Version: Bar</string>
                             </property>
                             <property name="text">
                                 <string>&amp;Quit</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+Q</string>
                             </property>
                             <property name="autoDefault">
                                 <bool>true</bool>
