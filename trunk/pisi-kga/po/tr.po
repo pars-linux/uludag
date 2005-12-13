@@ -172,7 +172,7 @@ msgstr "PİSİ Grafiksel Kullanıcı Arayüzü"
 
 #: src/MainWindow.py:207
 msgid "Add, Upgrade or Remove Packages"
-msgstr "Paket Ekle, Yükselt veya Kaldır"
+msgstr "Paket Ekle, Güncelle veya Kaldır"
 
 #: src/MainWindow.py:208
 msgid "search package"
