@@ -263,6 +263,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.listView.clear()
         self.listView.setUpdatesEnabled(False)
     
+        list = filter(lambda x: x in self.shownPackages, list)
+    
         self.packageList = list
         self.selectedItems = []
 
@@ -347,22 +349,26 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
         if index == 2 :
             # Show only installed apps
-            list = pisi.packagedb.inst_packagedb.list_packages()
+            shownPackages = pisi.packagedb.inst_packagedb.list_packages()
             self.installOrRemoveButton.setText(i18n("Remove package(s)"))
 
         elif index == 1:
             # Only upgrades
-            list = pisi.api.list_upgradable()
+            shownPackages = pisi.api.list_upgradable()
             self.installOrRemoveButton.setText(i18n("Update package(s)"))
         
         elif index == 0 :
             # Show only not-installed apps
+            available = set()
             for repo in pisi.context.repodb.list():
                 pkg_db = pisi.packagedb.get_db(repo)
-                list = pkg_db.list_packages()
+                available.update(pkg_db.list_packages())
+            installed = pisi.packagedb.inst_packagedb.list_packages()
+            shownPackages = list(available - set(installed))
             self.installOrRemoveButton.setText(i18n("Install package(s)"))
             
-        self.updatePackages(list)
+        self.shownPackages = set(shownPackages)
+        self.updatePackages(shownPackages)
 
     def installRemoveFinished(self):
         self.selectedItems = []
