@@ -421,6 +421,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         query.strip()
         if query:
             result = pisi.api.search_package(query)
+            result = result.union( pisi.api.search_package(query, 'en' ) )
 
             for pkg in self.packageList:
                 if pkg.find(query) != -1:
