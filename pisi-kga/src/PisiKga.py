@@ -345,7 +345,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
         index = self.selectionGroup.selectedId()
     
-        if index == 0 :
+        if index == 2 :
             # Show only installed apps
             list = pisi.packagedb.inst_packagedb.list_packages()
             self.installOrRemoveButton.setText(i18n("Remove package(s)"))
@@ -355,7 +355,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             list = pisi.api.list_upgradable()
             self.installOrRemoveButton.setText(i18n("Update package(s)"))
         
-        elif index == 2 :
+        elif index == 0 :
             # Show only not-installed apps
             for repo in pisi.context.repodb.list():
                 pkg_db = pisi.packagedb.get_db(repo)
