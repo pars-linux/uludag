@@ -257,7 +257,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             self.selectionInfo.setText(i18n("No package selected"))
         
+    
     def updatePackages(self, list):
+    
         self.packageList = list
         self.listView.clear()
         self.selectedItems = []
@@ -283,6 +285,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
             componentItem.setSelectable(False)
             self.componentDict[component.name] = (component, componentItem)
 
+        def isApp(package):
+            return ('app:gui' in package.isA or 
+                    'app:console' in package.isA or
+                    'plugin' in package.isA)
+            
         list.sort()
         self.packages = [] #FIXME: caching the entire package database somehow does not look right :)
         for pack in list:
@@ -294,7 +301,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     break
             package = pisi.packagedb.get_package(pack)
             self.packages.append(package)
-
+            if self.categoryGroup.selectedId()==0:
+                if not isApp(package):
+                    continue   # do not show if not an app
             item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
             item.setText(1,package.version)
 
