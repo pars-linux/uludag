@@ -1,4 +1,4 @@
 - We can do better progress dialog using a better algo using pack sizes when pisi reports them (görkem)
-- Search by keyword (cartman)
 - Use notify framework in PisiUI (cartman)
-
+- A special read only mode for normal users (cartman)
+- Use comar to detect internet & disable new installations/updates (cartman)

@@ -85,15 +85,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
         glob_ui = PisiUi.PisiUi(self)
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
         
-        # Sanity check
-        # FIXME user confirmation needed here
         try:
             repo = pisi.context.repodb.list()[0]
             pkg_db = pisi.packagedb.get_db(repo)
             self.packageList = pkg_db.list_packages()
         except:
-            pisi.api.add_repo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')            
-            self.command.updateRepo('pardus-devel')
+            confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
+            if confirm == KMessageBox.Yes:
+                pisi.api.add_repo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')            
+                self.command.updateRepo('pardus-devel')
+            else:
+                KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def customEvent(self, event):
         if event.type() == QEvent.User+1:
