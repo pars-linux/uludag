@@ -384,7 +384,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
 
-        if index == 0: # Remove baby
+        if index == 2: # Remove baby
             self.operation = "remove"
             self.command.remove(self.selectedItems)
                         
@@ -392,7 +392,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.operation = "upgrade"
             self.command.upgrade(self.selectedItems)
                     
-        elif index == 2: # Install baby
+        elif index == 0: # Install baby
             self.operation = "install"
             self.command.install(self.selectedItems)
 
