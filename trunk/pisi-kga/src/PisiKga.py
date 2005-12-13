@@ -86,14 +86,14 @@ class MainApplicationWidget(MainWindow.MainWindow):
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
         
         # Sanity check
-        # FIXME: would be nice if these were put in special try:except
-        repo = pisi.context.repodb.list()[0]
-        pkg_db = pisi.packagedb.get_db(repo)
-        self.packageList = pkg_db.list_packages()
-            
-        if not len(pisi.api.ctx.repodb.list()) or not len(self.packageList): 
-            #FIXME: Here, it might be appropriate to have the user confirm
-            self.command.updateRepo(repo)
+        # FIXME user confirmation needed here
+        try:
+            repo = pisi.context.repodb.list()[0]
+            pkg_db = pisi.packagedb.get_db(repo)
+            self.packageList = pkg_db.list_packages()
+        except:
+            pisi.api.add_repo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')            
+            self.command.updateRepo('pardus-devel')
 
     def customEvent(self, event):
         if event.type() == QEvent.User+1:
