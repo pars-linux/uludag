@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>723</width>
-            <height>581</height>
+            <height>572</height>
         </rect>
     </property>
     <property name="minimumSize">
@@ -38,7 +38,7 @@
             <property name="maximumSize">
                 <size>
                     <width>32767</width>
-                    <height>40</height>
+                    <height>45</height>
                 </size>
             </property>
             <property name="paletteBackgroundColor">
@@ -69,6 +69,12 @@
                             <blue>144</blue>
                         </color>
                     </property>
+                    <property name="font">
+                        <font>
+                            <pointsize>18</pointsize>
+                            <bold>1</bold>
+                        </font>
+                    </property>
                     <property name="frameShape">
                         <enum>NoFrame</enum>
                     </property>
@@ -76,7 +82,7 @@
                         <enum>Plain</enum>
                     </property>
                     <property name="text">
-                        <string>&lt;b&gt;&lt;&gt;&lt;h2&gt;Add, Upgrade or Remove Packages&lt;/h2&gt;&lt;/font&gt;&lt;/b&gt;</string>
+                        <string>Add, Upgrade or Remove Packages</string>
                     </property>
                 </widget>
             </hbox>
@@ -164,7 +170,7 @@
                             </widget>
                             <widget class="QButtonGroup">
                                 <property name="name">
-                                    <cstring>buttonGroup3</cstring>
+                                    <cstring>categoryGroup</cstring>
                                 </property>
                                 <property name="title">
                                     <string></string>
@@ -175,7 +181,7 @@
                                     </property>
                                     <widget class="QRadioButton">
                                         <property name="name">
-                                            <cstring>radioButton4</cstring>
+                                            <cstring>showOnlyAppsButton</cstring>
                                         </property>
                                         <property name="text">
                                             <string>Show only applications</string>
@@ -183,7 +189,7 @@
                                     </widget>
                                     <widget class="QRadioButton">
                                         <property name="name">
-                                            <cstring>radioButton5</cstring>
+                                            <cstring>showAllPackagesButton</cstring>
                                         </property>
                                         <property name="text">
                                             <string>Show all packages</string>
@@ -322,6 +328,9 @@
                                         <property name="text">
                                             <string>Show available &amp;updates</string>
                                         </property>
+                                        <property name="accel">
+                                            <string>Alt+U</string>
+                                        </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Only show packages that can be updated</string>
                                         </property>
@@ -396,7 +405,7 @@
                                             <enum>NoFrame</enum>
                                         </property>
                                         <property name="text">
-                                            <string>Here goes summary and description?</string>
+                                            <string></string>
                                         </property>
                                     </widget>
                                     <widget class="QLabel">
@@ -411,23 +420,6 @@
 Program Version: Bar</string>
                                         </property>
                                     </widget>
-                                    <spacer>
-                                        <property name="name">
-                                            <cstring>spacer3_2</cstring>
-                                        </property>
-                                        <property name="orientation">
-                                            <enum>Vertical</enum>
-                                        </property>
-                                        <property name="sizeType">
-                                            <enum>Fixed</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>41</width>
-                                                <height>45</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
                                 </vbox>
                             </widget>
                             <widget class="QLayoutWidget" row="0" column="0">
