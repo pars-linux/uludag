@@ -259,11 +259,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
     
     def updatePackages(self, list):
-    
-        #self.listView.setUpdatesEnabled(False)
+   
+        self.listView.clear()
+        self.listView.setUpdatesEnabled(False)
     
         self.packageList = list
-        self.listView.clear()
         self.selectedItems = []
 
         self.queryEdit.clear()
@@ -333,7 +333,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 compIt.setVisible(False)
             compIt = compItNext
 
-        #self.listView.setUpdatesEnabled(True)
+        self.listView.setUpdatesEnabled(True)
 
             
     def updateListing(self):
