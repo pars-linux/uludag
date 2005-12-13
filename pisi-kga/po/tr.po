@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-13 08:24+0200\n"
+"POT-Creation-Date: 2005-12-13 09:35+0200\n"
 "PO-Revision-Date: 2005-12-12 23:32+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -50,7 +50,7 @@ msgstr "&Ara"
 msgid "search button"
 msgstr "arama tuşu"
 
-#: src/MainWindow.py:196 src/PisiKga.py:253
+#: src/MainWindow.py:196 src/PisiKga.py:255
 msgid "No package selected"
 msgstr "Hiçbir paket seçili değil"
 
@@ -138,115 +138,127 @@ msgstr "<h3>PiSi hazırlanıyor...</h3>"
 msgid "GUI for PiSi package manager"
 msgstr "PiSi paket yöneticisi için arayüz"
 
+#: src/PisiKga.py:56
+msgid "Author"
+msgstr "Yazar"
+
 #: src/PisiKga.py:57
+msgid "GUI Design & Usability"
+msgstr "Arayüz Dizaynı ve Kullanılabilirlik"
+
+#: src/PisiKga.py:58
+msgid "Intuitive Search Interface"
+msgstr "Yaratıcı Arama Sistemi"
+
+#: src/PisiKga.py:59
 msgid "Python coding help"
 msgstr "Python kodlama yardımı"
 
-#: src/PisiKga.py:58
+#: src/PisiKga.py:60
 msgid "Helping with PiSi api"
 msgstr "PiSi konusunda yardım"
 
-#: src/PisiKga.py:59
+#: src/PisiKga.py:61
 msgid "Author of PyKDEeXtensions"
 msgstr "PyKDEeXtensions'ın yazarı"
 
-#: src/PisiKga.py:97
+#: src/PisiKga.py:99
 msgid "Updating repositories"
 msgstr "Depolar güncelleniyor"
 
-#: src/PisiKga.py:116
+#: src/PisiKga.py:118
 msgid "PiSi Info"
 msgstr "PiSi Bilgi"
 
-#: src/PisiKga.py:135
+#: src/PisiKga.py:137
 msgid "All repositories are successfully updated!"
 msgstr "Tüm depolar başarıyla güncellendi!"
 
-#: src/PisiKga.py:138
+#: src/PisiKga.py:140
 msgid "All selected packages are successfully installed!"
 msgstr "Tüm paketler başarıyla yüklendi!"
 
-#: src/PisiKga.py:139
+#: src/PisiKga.py:141
 msgid "installed"
 msgstr "yüklendi"
 
-#: src/PisiKga.py:141
+#: src/PisiKga.py:143
 msgid "All selected packages are successfully removed!"
 msgstr "Tüm paketler başarıyla kaldırıldı!"
 
-#: src/PisiKga.py:142
+#: src/PisiKga.py:144
 msgid "removed"
 msgstr "kaldırıldı"
 
-#: src/PisiKga.py:144
+#: src/PisiKga.py:146
 msgid "All selected packages are successfully updated!"
 msgstr "Tüm paketler başarıyla güncellendi!"
 
-#: src/PisiKga.py:145
+#: src/PisiKga.py:147
 msgid "updated"
 msgstr "güncellendi"
 
-#: src/PisiKga.py:152
+#: src/PisiKga.py:154
 msgid "PiSi Error"
 msgstr "PiSi Hatası"
 
-#: src/PisiKga.py:160
+#: src/PisiKga.py:162
 msgid "Preparing PiSi..."
 msgstr "PiSi Hazırlanıyor..."
 
-#: src/PisiKga.py:167
+#: src/PisiKga.py:169
 msgid "Now installing <b>%1</b> (Speed: %2 %3)"
 msgstr "Şu anda yüklenilen <b>%1</b> (Hız: %2 %3)"
 
-#: src/PisiKga.py:170
+#: src/PisiKga.py:172
 msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
 msgstr "Güncellenen depo <b>%1</b> (Hız: %2 %3)"
 
-#: src/PisiKga.py:217
+#: src/PisiKga.py:219
 msgid " Byte"
 msgstr "Byte"
 
-#: src/PisiKga.py:219
+#: src/PisiKga.py:221
 msgid "Program Version :"
 msgstr "Programın Versiyonu:"
 
-#: src/PisiKga.py:219
+#: src/PisiKga.py:221
 msgid "Program Size :"
 msgstr "Programın Büyüklüğü:"
 
-#: src/PisiKga.py:247
+#: src/PisiKga.py:249
 msgid "Selected %1 packages, total size %2 MB"
 msgstr "%1 paket seçili, toplam boyut %2 MB"
 
-#: src/PisiKga.py:249
+#: src/PisiKga.py:251
 msgid "Selected %1 packages, total size %2 KB"
 msgstr "%1 paket seçili, toplam %2 KB"
 
-#: src/PisiKga.py:251
+#: src/PisiKga.py:253
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr "%1 paket seçili, toplam %2 Byte"
 
-#: src/PisiKga.py:265
+#: src/PisiKga.py:267
 msgid "Packages"
 msgstr "Paketler"
 
-#: src/PisiKga.py:291
+#: src/PisiKga.py:293
 msgid "Remove package(s)"
 msgstr "Paket(ler)i kaldır"
 
-#: src/PisiKga.py:296
+#: src/PisiKga.py:298
 msgid "Update package(s)"
 msgstr "Paket(ler)i güncelle"
 
-#: src/PisiKga.py:303
+#: src/PisiKga.py:305
 msgid "Install package(s)"
 msgstr "Paket(ler)i yükle"
 
-#: src/PisiKga.py:316 src/PisiKga.py:336
+#: src/PisiKga.py:318 src/PisiKga.py:338
 msgid "Add or Remove Programs"
 msgstr "Program Ekle ve Kaldır"
 
-#: src/PisiKga.py:462
+#: src/PisiKga.py:467
 msgid "Pisi KGA is already running!"
 msgstr "PiSi KGA halihazırda çalışıyor!"
 

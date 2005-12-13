@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-13 08:24+0200\n"
+"POT-Creation-Date: 2005-12-13 09:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "search button"
 msgstr ""
 
-#: src/MainWindow.py:196 src/PisiKga.py:253
+#: src/MainWindow.py:196 src/PisiKga.py:255
 msgid "No package selected"
 msgstr ""
 
@@ -128,115 +128,127 @@ msgstr ""
 msgid "GUI for PiSi package manager"
 msgstr ""
 
+#: src/PisiKga.py:56
+msgid "Author"
+msgstr ""
+
 #: src/PisiKga.py:57
-msgid "Python coding help"
+msgid "GUI Design & Usability"
 msgstr ""
 
 #: src/PisiKga.py:58
-msgid "Helping with PiSi api"
+msgid "Intuitive Search Interface"
 msgstr ""
 
 #: src/PisiKga.py:59
+msgid "Python coding help"
+msgstr ""
+
+#: src/PisiKga.py:60
+msgid "Helping with PiSi api"
+msgstr ""
+
+#: src/PisiKga.py:61
 msgid "Author of PyKDEeXtensions"
 msgstr ""
 
-#: src/PisiKga.py:97
+#: src/PisiKga.py:99
 msgid "Updating repositories"
 msgstr ""
 
-#: src/PisiKga.py:116
+#: src/PisiKga.py:118
 msgid "PiSi Info"
 msgstr ""
 
-#: src/PisiKga.py:135
+#: src/PisiKga.py:137
 msgid "All repositories are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:138
+#: src/PisiKga.py:140
 msgid "All selected packages are successfully installed!"
 msgstr ""
 
-#: src/PisiKga.py:139
+#: src/PisiKga.py:141
 msgid "installed"
 msgstr ""
 
-#: src/PisiKga.py:141
+#: src/PisiKga.py:143
 msgid "All selected packages are successfully removed!"
 msgstr ""
 
-#: src/PisiKga.py:142
+#: src/PisiKga.py:144
 msgid "removed"
 msgstr ""
 
-#: src/PisiKga.py:144
+#: src/PisiKga.py:146
 msgid "All selected packages are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:145
+#: src/PisiKga.py:147
 msgid "updated"
 msgstr ""
 
-#: src/PisiKga.py:152
+#: src/PisiKga.py:154
 msgid "PiSi Error"
 msgstr ""
 
-#: src/PisiKga.py:160
+#: src/PisiKga.py:162
 msgid "Preparing PiSi..."
 msgstr ""
 
-#: src/PisiKga.py:167
+#: src/PisiKga.py:169
 msgid "Now installing <b>%1</b> (Speed: %2 %3)"
 msgstr ""
 
-#: src/PisiKga.py:170
+#: src/PisiKga.py:172
 msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
 msgstr ""
 
-#: src/PisiKga.py:217
+#: src/PisiKga.py:219
 msgid " Byte"
 msgstr ""
 
-#: src/PisiKga.py:219
+#: src/PisiKga.py:221
 msgid "Program Version :"
 msgstr ""
 
-#: src/PisiKga.py:219
+#: src/PisiKga.py:221
 msgid "Program Size :"
 msgstr ""
 
-#: src/PisiKga.py:247
+#: src/PisiKga.py:249
 msgid "Selected %1 packages, total size %2 MB"
 msgstr ""
 
-#: src/PisiKga.py:249
+#: src/PisiKga.py:251
 msgid "Selected %1 packages, total size %2 KB"
 msgstr ""
 
-#: src/PisiKga.py:251
+#: src/PisiKga.py:253
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr ""
 
-#: src/PisiKga.py:265
+#: src/PisiKga.py:267
 msgid "Packages"
 msgstr ""
 
-#: src/PisiKga.py:291
+#: src/PisiKga.py:293
 msgid "Remove package(s)"
 msgstr ""
 
-#: src/PisiKga.py:296
+#: src/PisiKga.py:298
 msgid "Update package(s)"
 msgstr ""
 
-#: src/PisiKga.py:303
+#: src/PisiKga.py:305
 msgid "Install package(s)"
 msgstr ""
 
-#: src/PisiKga.py:316 src/PisiKga.py:336
+#: src/PisiKga.py:318 src/PisiKga.py:338
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:462
+#: src/PisiKga.py:467
 msgid "Pisi KGA is already running!"
 msgstr ""
 
