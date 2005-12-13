@@ -54,7 +54,8 @@ def AboutData():
                             "(C) 2005 UEKAE/TÜBİTAK", None, None, "ismail@uludag.org.tr")
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@uludag.org.tr")
-    about_data.addAuthor(u"Eray Özkural", I18N_NOOP("Intuitive Search Interface"), "eray@uludag.org.tr")
+    about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@uludag.org.tr")
+    about_data.addAuthor("Eray Özkural", I18N_NOOP("Intuitive Search Interface"), "eray@uludag.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
     about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi api"), None)
     about_data.addCredit("Simon Edwards", I18N_NOOP("Author of PyKDEeXtensions"),"simon@simonzone.com")
