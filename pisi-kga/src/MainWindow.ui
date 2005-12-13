@@ -175,6 +175,9 @@
                                 <property name="title">
                                     <string></string>
                                 </property>
+                                <property name="selectedId" stdset="0">
+                                    <number>0</number>
+                                </property>
                                 <vbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
@@ -297,7 +300,7 @@
                                     <string></string>
                                 </property>
                                 <property name="selectedId" stdset="0">
-                                    <number>-1</number>
+                                    <number>2</number>
                                 </property>
                                 <property name="toolTip" stdset="0">
                                     <string>operation mode</string>
