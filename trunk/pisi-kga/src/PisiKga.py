@@ -85,13 +85,15 @@ class MainApplicationWidget(MainWindow.MainWindow):
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
         
         # Sanity check
+        # FIXME: would be nice if these were put in special try:except
         repo = pisi.context.repodb.list()[0]
         pkg_db = pisi.packagedb.get_db(repo)
-        list = pkg_db.list_packages()
+        self.packageList = pkg_db.list_packages()
             
-        if not len(pisi.api.ctx.repodb.list()) or not len(list): 
+        if not len(pisi.api.ctx.repodb.list()) or not len(self.packageList): 
+            #FIXME: Here, it might be appropriate to have the user confirm
             self.command.updateRepo(repo)
-        
+
     def customEvent(self, event):
         if event.type() == QEvent.User+1:
             self.finished()
@@ -255,6 +257,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.selectionInfo.setText(i18n("No package selected"))
         
     def updatePackages(self, list):
+        self.packageList = list
         self.listView.clear()
         self.selectedItems = []
 
@@ -349,12 +352,22 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command.install(app)
         
     def searchPackage(self):
+    
+        # search summary / description
         query = unicode(self.queryEdit.text())
-        if len(query):
+        
+        # search names
+        query.strip()
+        if query:
             result = pisi.api.search_package(query)
+
+            for pkg in self.packageList:
+                if pkg.find(query) != -1:
+                    result.add(pkg)
+        
             self.updatePackages(list(result))
         else:
-            self.updateListing(self.selectionGroup.selectedId())
+            self.updateListing(self.selectionGroup.selectedId()) # get the whole list if blank query            
 
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
