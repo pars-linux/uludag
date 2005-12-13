@@ -423,7 +423,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
             self.updatePackages(list(result))
         else:
-            self.updateListing(self.selectionGroup.selectedId()) # get the whole list if blank query            
+            self.updateListing() # get the whole list if blank query            
 
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
