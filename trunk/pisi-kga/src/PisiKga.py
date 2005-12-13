@@ -348,8 +348,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
     def searchPackage(self):
         query = unicode(self.queryEdit.text())
-        result = pisi.api.search_package(query)
-        self.updatePackages(list(result))
+        if len(query):
+            result = pisi.api.search_package(query)
+            self.updatePackages(list(result))
+        else:
+            self.updateListing(self.selectionGroup.selectedId())
 
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
