@@ -156,7 +156,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             KMessageBox.error(self, self.errorMessage, i18n("PiSi Error"))
 
-        self.updateListing(mainwidget.selectionGroup.selectedId())
+        self.updateListing()
         self.errorMessage = None
 
     def resetProgressBar(self):
@@ -284,16 +284,19 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.componentDict[component.name] = (component, componentItem)
 
         list.sort()
+        self.packages = [] #FIXME: caching the entire package database somehow does not look right :)
         for pack in list:
             parent = self.listView
             # find component
-            ix = 0
             for compname, (component, componentItem) in self.componentDict.items():
                 if pack in component.packages:
                     parent = componentItem
                     break
+            package = pisi.packagedb.get_package(pack)
+            self.packages.append(package)
+
             item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
-            item.setText(1,pisi.packagedb.get_package(pack).version)
+            item.setText(1,package.version)
 
         # Select first item in the list
         try:
@@ -301,14 +304,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
         except:
             pass
 
-    def updateListing(self, index=0):
-
+    def updateListing(self):
+    
         # Check if updateSystemButton should be enabled
         if len(pisi.api.list_upgradable()) > 0:
             self.updateSystemButton.setEnabled(True)
         else:
             self.updateSystemButton.setEnabled(False)
-        
+    
+        index = self.selectionGroup.selectedId()
+    
         if index == 0 :
             # Show only installed apps
             list = pisi.packagedb.inst_packagedb.list_packages()
@@ -331,7 +336,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def installRemoveFinished(self):
         self.selectedItems = []
         self.installOrRemoveButton.setEnabled(True)
-        self.updateListing(self.selectionGroup.selectedId())
+        self.updateListing()
         
     def installRemove(self):
         index = mainwidget.selectionGroup.selectedId()
@@ -426,6 +431,7 @@ class MainApplication(programbase):
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
 
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
+        self.connect(mainwidget.categoryGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
@@ -437,7 +443,8 @@ class MainApplication(programbase):
         self.connect(mainwidget.searchButton,SIGNAL("clicked()"),mainwidget.searchPackage)
 
         mainwidget.selectionGroup.setButton(2);
-        mainwidget.updateListing(2);
+        mainwidget.categoryGroup.setButton(0);
+        mainwidget.updateListing();
 
     def __del__(self):
         pass
