@@ -260,6 +260,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
     def updatePackages(self, list):
     
+        self.listView.setUpdatesEnabled(False)
+    
         self.packageList = list
         self.listView.clear()
         self.selectedItems = []
@@ -306,13 +308,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     continue   # do not show if not an app
             item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
             item.setText(1,package.version)
-
+            
         # Select first item in the list
         try:
             self.listView.setSelected(packages.firstChild(),True)
         except:
             pass
 
+        self.listView.setUpdatesEnabled(True)
+
+            
     def updateListing(self):
     
         # Check if updateSystemButton should be enabled
