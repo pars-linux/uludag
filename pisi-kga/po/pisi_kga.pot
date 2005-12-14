@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 21:27+0200\n"
+"POT-Creation-Date: 2005-12-14 21:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,7 +329,7 @@ msgid "Repository Name"
 msgstr ""
 
 #: src/PreferencesDialog.py:32 src/PreferencesDialog.py:72
-msgid "Repository URL"
+msgid "Address"
 msgstr ""
 
 #: src/PreferencesDialog.py:70
@@ -337,27 +337,48 @@ msgid "PiSi Preferences"
 msgstr ""
 
 #: src/PreferencesDialog.py:73
-msgid "&Add New Repository"
+msgid ""
+"You can see current software repositories and corresponding addresses here"
 msgstr ""
 
 #: src/PreferencesDialog.py:74
-msgid "&Edit Repository"
+msgid "&Add New Repository"
 msgstr ""
 
 #: src/PreferencesDialog.py:75
-msgid "&Remove Repository"
+msgid "Click here to add a new software repository"
 msgstr ""
 
 #: src/PreferencesDialog.py:76
-msgid "&Update All Repositories"
+msgid "&Edit Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:77 src/RepoDialog.py:73 src/SuccessDialog.py:75
-msgid "&Ok"
+#: src/PreferencesDialog.py:77
+msgid "Click here to modify the name or address of a repository"
 msgstr ""
 
 #: src/PreferencesDialog.py:78
-msgid "<b>Add,Edit or Remove Repositories</b>"
+msgid "&Remove Repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:79
+msgid "Click here to delete a repository from the list"
+msgstr ""
+
+#: src/PreferencesDialog.py:80
+msgid "&Update All Repositories"
+msgstr ""
+
+#: src/PreferencesDialog.py:81
+msgid "Click here to update all repositories so that you can use  "
+msgstr ""
+
+#: src/PreferencesDialog.py:82 src/RepoDialog.py:73 src/SuccessDialog.py:75
+msgid "&Ok"
+msgstr ""
+
+#: src/PreferencesDialog.py:83
+msgid "<b>Add, Edit or Remove Repositories</b>"
 msgstr ""
 
 #: src/RepoDialog.py:67
@@ -404,12 +425,20 @@ msgstr ""
 msgid "Show &More Information >>"
 msgstr ""
 
-#: src/UpdateWizardDialog.py:682 src/FastUpdatesDialog.py:49
+#: src/UpdateWizardDialog.py:640 src/FastUpdatesDialog.py:49
 #: src/CustomUpdatesDialog.py:49
 msgid "Welcome to PISI update wizard"
 msgstr ""
 
-#: src/UpdateWizardDialog.py:684
+#: src/UpdateWizardDialog.py:642
+msgid "Custom update"
+msgstr ""
+
+#: src/UpdateWizardDialog.py:643
+msgid "Fast update (only security updates)"
+msgstr ""
+
+#: src/UpdateWizardDialog.py:644
 msgid ""
 "In this method, you can select which packages \n"
 "to update, including packages with security \n"
@@ -417,7 +446,7 @@ msgid ""
 "want to make a fine selection."
 msgstr ""
 
-#: src/UpdateWizardDialog.py:688
+#: src/UpdateWizardDialog.py:648
 msgid ""
 "With fast update, only very essential and critial \n"
 "updates are downloaded and installed to your \n"
@@ -425,22 +454,14 @@ msgid ""
 "much time, but want to keep the system secure."
 msgstr ""
 
-#: src/UpdateWizardDialog.py:692
-msgid "Custom update"
-msgstr ""
-
-#: src/UpdateWizardDialog.py:693
-msgid "Fast update (only security updates)"
-msgstr ""
-
-#: src/UpdateWizardDialog.py:694
+#: src/UpdateWizardDialog.py:652
 msgid ""
 "We suggest you to keep your system updated to increase your privacy. Please\n"
 "choose your update methodology below."
 msgstr ""
 
-#: src/UpdateWizardDialog.py:696
-msgid "PISI Update Wizard"
+#: src/UpdateWizardDialog.py:654
+msgid "PiSi Update Wizard"
 msgstr ""
 
 #: src/FastUpdatesDialog.py:29 src/FastUpdatesDialog.py:50
