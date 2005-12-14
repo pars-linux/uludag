@@ -228,7 +228,6 @@ class Window(QMainWindow):
                 self.w_gateway.setText(gate)
             elif reply[1] == 3:
                 self.modes = reply[2].split(",")
-                print self.modes
                 if not "remote" in self.modes:
                     self.basic.device.remote.setEnabled(False)
                 if not "auto" in self.modes:
