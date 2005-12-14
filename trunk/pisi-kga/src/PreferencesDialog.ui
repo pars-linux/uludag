@@ -78,9 +78,6 @@
                             <property name="text">
                                 <string>&amp;Add New Repository</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+A</string>
-                            </property>
                         </widget>
                         <widget class="KPushButton">
                             <property name="name">
@@ -89,9 +86,6 @@
                             <property name="text">
                                 <string>&amp;Edit Repository</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+E</string>
-                            </property>
                         </widget>
                         <widget class="KPushButton">
                             <property name="name">
@@ -99,9 +93,6 @@
                             </property>
                             <property name="text">
                                 <string>&amp;Remove Repository</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+R</string>
                             </property>
                         </widget>
                         <spacer>
@@ -127,9 +118,6 @@
                             </property>
                             <property name="text">
                                 <string>&amp;Ok</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+O</string>
                             </property>
                         </widget>
                     </vbox>

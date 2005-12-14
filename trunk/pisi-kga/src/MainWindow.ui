@@ -482,7 +482,7 @@ Program Version: Bar</string>
                             </widget>
                             <widget class="KPushButton">
                                 <property name="name">
-                                    <cstring>settingsButton</cstring>
+                                    <cstring>preferencesButton</cstring>
                                 </property>
                                 <property name="sizePolicy">
                                     <sizepolicy>

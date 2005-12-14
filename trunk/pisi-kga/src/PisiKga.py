@@ -27,6 +27,7 @@ import kdedesigner
 # Local imports
 import MainWindow
 import ProgressDialog
+import Preferences
 import ThreadRunner
 import PisiUi
 import Success
@@ -437,6 +438,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             self.updateListing() # get the whole list if blank query            
 
+    def showPreferences(self):
+        self.pref = Preferences.Preferences(self)
+        self.pref.show()
+
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
 
@@ -485,6 +490,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
+        self.connect(mainwidget.preferencesButton,SIGNAL("clicked()"),mainwidget.showPreferences)
         self.connect(mainwidget.searchButton,SIGNAL("clicked()"),mainwidget.searchPackage)
 
         mainwidget.selectionGroup.setButton(0);
