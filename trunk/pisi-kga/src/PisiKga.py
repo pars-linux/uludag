@@ -526,6 +526,9 @@ class MainApplication(programbase):
         # Read only settings
         mainwidget.preferencesButton.setEnabled(not nonPrivMode)
         if nonPrivMode:
+            KMessageBox.information(self,i18n("You don't have root priviliges, PiSi KGA will run in read-only mode."
+                                              "You can't install, update or remove programs in this mode"),
+                                              i18n("Pisi Info"))
             mainwidget.selectionInfo.hide()
 
         if programbase == KCModule:
