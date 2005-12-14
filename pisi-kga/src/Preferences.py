@@ -32,11 +32,14 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.editButton, SIGNAL("clicked()"), self.editRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
         self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateButtons)
+        self.connect(self.updateRepoButton, SIGNAL("clicked()"), self.updateAllRepos)
+        
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
+        
         self.repoListView.setSorting(-1)
         self.updateListView()
-
+        
     def updateButtons(self):
         if self.repoListView.childCount() > 1:
             moreThanOne = True
@@ -53,7 +56,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def updateAllRepos(self):
         self.updateRepoButton.setEnabled(False)
         
-        for i in self.repoList:
+        for i in pisi.context.repodb.list():
             self.command.updateRepo(i)
         self.updateRepoButton.setEnabled(True)
     
@@ -114,6 +117,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             item.setText(0, self.repoList[index])
             item.setText(1, pisi.api.ctx.repodb.get_repo(str(repoName)).indexuri.get_uri())
             index -= 1
+
+        self.updateRepoButton.setEnabled(self.repoListView.childCount() > 0 )
 
     def customEvent(self,event):
         if event.type() == QEvent.User+3:
