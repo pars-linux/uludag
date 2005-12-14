@@ -119,9 +119,8 @@ msgid "<p align=\"left\">Program Name</p>"
 msgstr "<p align=\"left\">Program İsmi</p>"
 
 #: src/MainWindow.py:258
-#, fuzzy
 msgid "&Update System"
-msgstr "Herşeyi &Güncelle"
+msgstr "Sistemi &Güncelle"
 
 #: src/MainWindow.py:259
 msgid "Click on this button if you want to update your system"
@@ -432,9 +431,8 @@ msgid ""
 msgstr ""
 
 #: src/UpdateWizardDialog.py:692
-#, fuzzy
 msgid "Custom update"
-msgstr "güncellendi"
+msgstr ""
 
 #: src/UpdateWizardDialog.py:693
 msgid "Fast update (only security updates)"
