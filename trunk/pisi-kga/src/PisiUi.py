@@ -12,49 +12,65 @@
 #
 # Authors:  İsmail Dönmez <ismail@uludag.org.tr>
 
+from kdecore import i18n
 from qt import *
-from pisi.ui import UI
+import pisi.ui
 import time
 
-class PisiUi(UI,QObject):
+class PisiUi(pisi.ui.UI,QObject):
 
     def __init__(self, parent):
-        UI.__init__(self)
+        pisi.ui.UI.__init__(self)
         QObject.__init__(self)
         self.receiver = parent
         self.confirmed = None
 
-    def customEvent(self, event):
-        if event == QEvent.User+8:
-            self.confirmed = event.data()
+    def customEvent(self, cEvent):
+        if cEvent.type() == QEvent.User+8:
+            self.confirmed = cEvent.data()
         
     def error(self, msg):
-        event = QCustomEvent(QEvent.User+4)
-        event.setData(msg)
-        QThread.postEvent(self.receiver,event)
+        cEvent = QCustomEvent(QEvent.User+4)
+        cEvent.setData(msg)
+        QThread.postEvent(self.receiver,cEvent)
 
     def info(self, msg):
-        event = QCustomEvent(QEvent.User+5)
-        event.setData(msg)
-        QThread.postEvent(self.receiver,event)
-        #print the thing on stdout you don't lose a thing
+        cEvent = QCustomEvent(QEvent.User+5)
+        cEvent.setData(msg)
+        QThread.postEvent(self.receiver,cEvent)
+        # print the thing on stdout you don't lose a thing
         print msg
 
     def confirm(self, msg):
-        event = QCustomEvent(QEvent.User+6)
-        event.setData(msg)
-        QThread.postEvent(self.receiver,event)        
-        
-        # Sleep the thread until user confirms
-        while not self.confirmed:
-           time.sleep(1)
+        cEvent = QCustomEvent(QEvent.User+6)
+        cEvent.setData(msg)
+        QThread.postEvent(self.receiver,cEvent)        
         
         if self.confirmed:
+            self.confirmed = None
             return True
         else:
+            self.confirmed = None
             return False
 
+    def notify(self, event, **keywords):
+        cEvent = QCustomEvent(QEvent.User+11)
+
+        data = None
+        if event == pisi.ui.installing:
+            data = i18n("installing")
+        elif event == pisi.ui.configuring:
+            data = i18n("configuring")
+        elif event == pisi.ui.extracting:
+            data = i18n("extracting")
+        elif event == pisi.ui.removing:
+            data = i18n("removing")
+
+        if data:
+            cEvent.setData(data)
+        QThread.postEvent(self.receiver,cEvent)
+
     def display_progress(self, filename, percent, rate, symbol, eta):
-        event = QCustomEvent(QEvent.User+7)
-        event.setData(QString(filename)+QString(" ")+QString.number(percent)+QString(" ")+QString.number(rate)+QString(" ")+QString(symbol))
-        QThread.postEvent(self.receiver,event)
+        cEvent = QCustomEvent(QEvent.User+7)
+        cEvent.setData(QString(filename)+QString(" ")+QString.number(percent)+QString(" ")+QString.number(rate)+QString(" ")+QString(symbol))
+        QThread.postEvent(self.receiver,cEvent)
