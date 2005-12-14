@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>FastUpdatesDialog</class>
-<widget class="QWizard">
+<widget class="QWidget">
     <property name="name">
         <cstring>FastUpdatesDialog</cstring>
     </property>
@@ -8,140 +8,74 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>561</width>
-            <height>441</height>
+            <width>516</width>
+            <height>298</height>
         </rect>
     </property>
     <property name="caption">
-        <string>Welcome to PISI update wizard</string>
+        <string>Fast Updates (security only)</string>
     </property>
-    <widget class="QWidget">
+    <grid>
         <property name="name">
-            <cstring>WizardPage</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <attribute name="title">
-            <string>Fast updates (only security)</string>
-        </attribute>
-        <widget class="KListView">
-            <column>
-                <property name="text">
-                    <string>Package name</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>false</bool>
-                </property>
-            </column>
-            <column>
-                <property name="text">
-                    <string>New Version</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
-            <column>
-                <property name="text">
-                    <string>Old version</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
-        <item>
-            <property name="text">
-                <string>kdebase</string>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
-        <item>
-            <property name="text">
-                <string>openoffice.org</string>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-            <property name="pixmap">
-                <pixmap></pixmap>
-            </property>
-        </item>
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>kListView1</cstring>
+                <cstring>layout1</cstring>
             </property>
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>70</y>
-                    <width>470</width>
-                    <height>240</height>
-                </rect>
-            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KListView">
+                    <column>
+                        <property name="text">
+                            <string>Package name</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>false</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>New Version</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Old version</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>listView</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Total install size:</string>
+                    </property>
+                </widget>
+            </vbox>
         </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>50</x>
-                    <y>330</y>
-                    <width>120</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Total install size:</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel1_2_2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>493</width>
-                    <height>31</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Please choose the packages to be updated and click on "Next" button. 
-We strongly recommend you to update all the packages shown below.</string>
-            </property>
-        </widget>
-    </widget>
+    </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>

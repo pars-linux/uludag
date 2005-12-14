@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 21:29+0200\n"
+"POT-Creation-Date: 2005-12-14 22:22+0200\n"
 "PO-Revision-Date: 2005-12-13 15:02+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -66,7 +66,7 @@ msgstr "&Temizle"
 msgid "Clear search results"
 msgstr "Arama sonuçlarını temizle"
 
-#: src/MainWindow.py:243 src/PisiKga.py:280
+#: src/MainWindow.py:243 src/PisiKga.py:281
 msgid "No package selected"
 msgstr "Hiçbir paket seçili değil"
 
@@ -142,19 +142,19 @@ msgstr ""
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Yükle"
 
-#: src/PisiUi.py:61 src/PisiKga.py:111
+#: src/PisiUi.py:67 src/PisiKga.py:112
 msgid "installing"
 msgstr "yüklenilen"
 
-#: src/PisiUi.py:63
+#: src/PisiUi.py:69
 msgid "configuring"
 msgstr "ayarlanan"
 
-#: src/PisiUi.py:65
+#: src/PisiUi.py:71
 msgid "extracting"
 msgstr "çıkartılan"
 
-#: src/PisiUi.py:67
+#: src/PisiUi.py:73
 msgid "removing"
 msgstr "kaldırılan"
 
@@ -162,39 +162,39 @@ msgstr "kaldırılan"
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/PisiKga.py:52
+#: src/PisiKga.py:53
 msgid "GUI for PiSi package manager"
 msgstr "PiSi paket yöneticisi için arayüz"
 
-#: src/PisiKga.py:62
+#: src/PisiKga.py:63
 msgid "Author"
 msgstr "Yazar"
 
-#: src/PisiKga.py:63
+#: src/PisiKga.py:64
 msgid "GUI Design & Usability"
 msgstr "Arayüz Tasarımı ve Kullanılabilirlik"
 
-#: src/PisiKga.py:64
+#: src/PisiKga.py:65
 msgid "Intuitive Search Interface"
 msgstr "Yaratıcı Arama Sistemi"
 
-#: src/PisiKga.py:65
+#: src/PisiKga.py:66
 msgid "Python coding help"
 msgstr "Python kodlama yardımı"
 
-#: src/PisiKga.py:66
+#: src/PisiKga.py:67
 msgid "Helping with PiSi api"
 msgstr "PiSi konusunda yardım"
 
-#: src/PisiKga.py:67
+#: src/PisiKga.py:68
 msgid "Author of PyKDEeXtensions"
 msgstr "PyKDEeXtensions'ın yazarı"
 
-#: src/PisiKga.py:88
+#: src/PisiKga.py:89
 msgid "downloading"
 msgstr "indirilen"
 
-#: src/PisiKga.py:100
+#: src/PisiKga.py:101
 msgid ""
 "Looks like PiSi repository database is empty\n"
 "Do you want to update repository now?"
@@ -202,11 +202,11 @@ msgstr ""
 "Görünüşe göre PiSi depo veritabanı boş\n"
 "Depo veritabanını şimdi güncellemek ister misiniz?"
 
-#: src/PisiKga.py:100
+#: src/PisiKga.py:101
 msgid "PiSi Question"
 msgstr "PiSi Soru"
 
-#: src/PisiKga.py:105
+#: src/PisiKga.py:106
 msgid ""
 "You will not be able to install new programs or update old ones until you "
 "update repository."
@@ -214,99 +214,104 @@ msgstr ""
 "Depo veritabanını güncelleyene kadar yeni programlar kuramayacak, eski "
 "programları güncelleyemeyeceksiniz."
 
-#: src/PisiKga.py:113
+#: src/PisiKga.py:114
 msgid "Updating repositories"
 msgstr "Depolar güncelleniyor"
 
-#: src/PisiKga.py:138
+#: src/PisiKga.py:139
 msgid "PiSi Info"
 msgstr "PiSi Bilgi"
 
-#: src/PisiKga.py:157
+#: src/PisiKga.py:158
 msgid "All repositories are successfully updated!"
 msgstr "Tüm depolar başarıyla güncellendi."
 
-#: src/PisiKga.py:160
+#: src/PisiKga.py:161
 msgid "All selected packages are successfully installed!"
 msgstr "Tüm paketler başarıyla yüklendi."
 
-#: src/PisiKga.py:161
+#: src/PisiKga.py:162
 msgid "installed"
 msgstr "yüklendi"
 
-#: src/PisiKga.py:163
+#: src/PisiKga.py:164
 msgid "All selected packages are successfully removed!"
 msgstr "Tüm paketler başarıyla kaldırıldı."
 
-#: src/PisiKga.py:164
+#: src/PisiKga.py:165
 msgid "removed"
 msgstr "kaldırıldı"
 
-#: src/PisiKga.py:166
+#: src/PisiKga.py:167
 msgid "All selected packages are successfully updated!"
 msgstr "Tüm paketler başarıyla güncellendi."
 
-#: src/PisiKga.py:167
+#: src/PisiKga.py:168
 msgid "updated"
 msgstr "güncellendi"
 
-#: src/PisiKga.py:174 src/PisiKga.py:408
+#: src/PisiKga.py:175 src/PisiKga.py:409
 msgid "PiSi Error"
 msgstr "PiSi Hatası"
 
-#: src/PisiKga.py:182
+#: src/PisiKga.py:183
 msgid "Preparing PiSi..."
 msgstr "PiSi Hazırlanıyor..."
 
-#: src/PisiKga.py:189
+#: src/PisiKga.py:190
 msgid "Now %1 <b>%2</b> (Speed: %3 %4)"
 msgstr "Şu anda %1 <b>%2</b> (Hız: %3 %4)"
 
-#: src/PisiKga.py:192
+#: src/PisiKga.py:193
 msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
 msgstr "Güncellenen depo <b>%1</b> (Hız: %2 %3)"
 
-#: src/PisiKga.py:239
+#: src/PisiKga.py:240
 msgid " Byte"
 msgstr " Bayt"
 
-#: src/PisiKga.py:241
+#: src/PisiKga.py:242
 msgid "Program Version :"
 msgstr "Programın Sürümü: "
 
-#: src/PisiKga.py:241
+#: src/PisiKga.py:242
 msgid "Program Size :"
 msgstr "Programın Büyüklüğü: "
 
-#: src/PisiKga.py:274
+#: src/PisiKga.py:275
 msgid "Selected %1 packages, total size %2 MB"
 msgstr "%1 paket seçili, toplam boyut %2 MB"
 
-#: src/PisiKga.py:276
+#: src/PisiKga.py:277
 msgid "Selected %1 packages, total size %2 KB"
 msgstr "%1 paket seçili, toplam %2 KB"
 
-#: src/PisiKga.py:278
+#: src/PisiKga.py:279
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr "%1 paket seçili, toplam %2 bayt"
 
-#: src/PisiKga.py:378
+#: src/PisiKga.py:379
 msgid "Remove package(s)"
 msgstr "Paket(ler)i kaldır"
 
-#: src/PisiKga.py:383
+#: src/PisiKga.py:384
 msgid "Update package(s)"
 msgstr "Paket(ler)i güncelle"
 
-#: src/PisiKga.py:393
+#: src/PisiKga.py:394
 msgid "Install package(s)"
 msgstr "Paket(ler)i yükle"
 
-#: src/PisiKga.py:413
+#: src/PisiKga.py:414
 msgid "Add or Remove Programs"
 msgstr "Program Ekle ve Kaldır"
 
-#: src/PisiKga.py:591
+#: src/PisiKga.py:433 src/FastUpdatesDialog.py:48
+#, fuzzy
+msgid "Fast Updates (security only)"
+msgstr "Hızlı güncelleme (sadece güvenlik güncellemeleri)"
+
+#: src/PisiKga.py:594
 msgid "Pisi KGA is already running!"
 msgstr "PiSi KGA başka bir yerde çalışıyor."
 
@@ -353,8 +358,7 @@ msgstr "PiSi Ayarları"
 #: src/PreferencesDialog.py:73
 msgid ""
 "You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
+msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
 
 #: src/PreferencesDialog.py:74
 msgid "&Add New Repository"
@@ -386,7 +390,8 @@ msgstr "Tüm Depoları &Güncelle"
 
 #: src/PreferencesDialog.py:81
 msgid "Click here to update all repositories so that you can use  "
-msgstr "Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
+msgstr ""
+"Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
 
 #: src/PreferencesDialog.py:82 src/RepoDialog.py:73 src/SuccessDialog.py:75
 msgid "&Ok"
@@ -440,20 +445,15 @@ msgstr "Tüm paketler başarıyla yüklendi!"
 msgid "Show &More Information >>"
 msgstr "&Daha fazla bilgi göster >>"
 
-#: src/UpdateWizardDialog.py:640 src/FastUpdatesDialog.py:49
-#: src/CustomUpdatesDialog.py:49
+#: src/UpdateWizardDialog.py:643 src/CustomUpdatesDialog.py:49
 msgid "Welcome to PISI update wizard"
 msgstr "PiSi güncelleme sihirbazına hoşgeldiniz"
 
-#: src/UpdateWizardDialog.py:642
+#: src/UpdateWizardDialog.py:645
 msgid "Custom update"
 msgstr "Özel güncelle"
 
-#: src/UpdateWizardDialog.py:643
-msgid "Fast update (only security updates)"
-msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
-
-#: src/UpdateWizardDialog.py:644
+#: src/UpdateWizardDialog.py:646
 msgid ""
 "In this method, you can select which packages \n"
 "to update, including packages with security \n"
@@ -465,7 +465,11 @@ msgstr ""
 "belirtebilirsiniz. Seçim yapmak için lütfen \n"
 "\"Özel Güncelleme\" düğmesine tıklayın."
 
-#: src/UpdateWizardDialog.py:648
+#: src/UpdateWizardDialog.py:650
+msgid "Fast update (only security updates)"
+msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
+
+#: src/UpdateWizardDialog.py:651
 msgid ""
 "With fast update, only very essential and critial \n"
 "updates are downloaded and installed to your \n"
@@ -478,7 +482,7 @@ msgstr ""
 "varsa ve bu aynı zamanda sistemi güncel tutmak istiyorsanız\n"
 "bu seçeneği tıklayın."
 
-#: src/UpdateWizardDialog.py:652
+#: src/UpdateWizardDialog.py:655
 msgid ""
 "We suggest you to keep your system updated to increase your privacy. Please\n"
 "choose your update methodology below."
@@ -486,38 +490,30 @@ msgstr ""
 "Sisteminizi sürekli olarak güncel tutmanızı öneririz. Lütfen aşağıdan\n"
 "bir güncelleme yöntemi seçin."
 
-#: src/UpdateWizardDialog.py:654
+#: src/UpdateWizardDialog.py:657
 msgid "PiSi Update Wizard"
 msgstr "PiSi Güncelleme Sihirbazı"
 
-#: src/FastUpdatesDialog.py:29 src/FastUpdatesDialog.py:50
+#: src/FastUpdatesDialog.py:30 src/FastUpdatesDialog.py:49
 #: src/CustomUpdatesDialog.py:35 src/CustomUpdatesDialog.py:53
 msgid "Package name"
 msgstr "Paket adı"
 
-#: src/FastUpdatesDialog.py:31 src/FastUpdatesDialog.py:51
+#: src/FastUpdatesDialog.py:32 src/FastUpdatesDialog.py:50
 #: src/CustomUpdatesDialog.py:37 src/CustomUpdatesDialog.py:54
 msgid "New Version"
 msgstr "Yeni Sürüm"
 
-#: src/FastUpdatesDialog.py:32 src/FastUpdatesDialog.py:52
+#: src/FastUpdatesDialog.py:33 src/FastUpdatesDialog.py:51
 #: src/CustomUpdatesDialog.py:38 src/CustomUpdatesDialog.py:55
 msgid "Old version"
 msgstr "Eski sürüm"
 
-#: src/FastUpdatesDialog.py:55 src/CustomUpdatesDialog.py:58
-msgid "kdebase"
-msgstr "kdebase"
-
-#: src/FastUpdatesDialog.py:58 src/CustomUpdatesDialog.py:61
-msgid "openoffice.org"
-msgstr "openoffice.org"
-
-#: src/FastUpdatesDialog.py:60 src/CustomUpdatesDialog.py:50
+#: src/FastUpdatesDialog.py:52 src/CustomUpdatesDialog.py:50
 msgid "Total install size:"
 msgstr "Toplam kurulum boyu:"
 
-#: src/FastUpdatesDialog.py:61 src/CustomUpdatesDialog.py:51
+#: src/CustomUpdatesDialog.py:51
 msgid ""
 "Please choose the packages to be updated and click on \"Next\" button. \n"
 "We strongly recommend you to update all the packages shown below."
@@ -525,9 +521,13 @@ msgstr ""
 "Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
 "Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
 
-#: src/FastUpdatesDialog.py:63
-msgid "Fast updates (only security)"
-msgstr "Hızlı güncelleme (sadece güvenlik güncellemeleri)"
+#: src/CustomUpdatesDialog.py:58
+msgid "kdebase"
+msgstr "kdebase"
+
+#: src/CustomUpdatesDialog.py:61
+msgid "openoffice.org"
+msgstr "openoffice.org"
 
 #: src/CustomUpdatesDialog.py:63
 msgid "Custom updates"
