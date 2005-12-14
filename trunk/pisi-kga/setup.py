@@ -27,7 +27,7 @@ kdedistutils.setup(
     application_data = ['src/PisiKga.py', 'src/ThreadRunner.py','src/MainWindow.ui',
                         'src/Progress.ui','src/ProgressDialog.py','src/SuccessDialog.ui','src/Success.py',
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
-                        'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py'],
+                        'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py','src/UpdateWizardDialog.ui'],
     executable_links = [('pisi-kga','PisiKga.py')],
     i18n = ('po',['src']),
     kcontrol_modules = [ ('src/pisi_kga.desktop','PisiKga.py')],
