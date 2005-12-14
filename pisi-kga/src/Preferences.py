@@ -15,7 +15,6 @@
 from kdeui import *
 from qt import *
 import PreferencesDialog
-import RepoDialog
 import ThreadRunner
 import PisiKga # for loadIcon
 
@@ -25,14 +24,13 @@ import pisi.repodb
 
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
-        PreferencesDialog.PrefsDialog.__init__(self, parent)
+        PreferencesDialog.PreferencesDialog.__init__(self, parent)
         self.command = ThreadRunner.MyThread(parent)
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
         self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateButtons)
         self.removeButton.setEnabled(False)
         self.repoListView.setSorting(-1)
-        self.readConfig()
         self.updateListView()
 
     def updateButtons(self):
@@ -80,6 +78,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repo.close()
     
     def updateListView(self):
+        self.repoList = pisi.context.repodb.list()
         self.repoListView.clear()
         
         index = len(self.repoList)-1
@@ -95,10 +94,3 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.repoList = pisi.api.ctx.repodb.list()
             self.updateListView()
             
-    def readConfig(self):
-        self.repoList = pisi.api.ctx.repodb.list()
-        if not len(self.repoList):
-            pisi.api.add_repo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')
-            self.command.updateRepo('pardus-devel')
-        elif self.forceRepoUpdate:
-            self.updateAllRepos()
