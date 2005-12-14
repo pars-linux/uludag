@@ -538,7 +538,8 @@ class MainApplication(programbase):
         mainwidget.updateListing();
     
     def showHelp(self):
-        self.helpWidget = HelpDialog.HelpDialog()
+        self.helpWidget = HelpDialog.HelpDialog(self)
+        self.helpWidget.setModal(True)
         self.helpWidget.show()
 
     def exec_loop(self):
