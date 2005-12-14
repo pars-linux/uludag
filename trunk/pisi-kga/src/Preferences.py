@@ -12,9 +12,11 @@
 #
 # Authors: İsmail Dönmez <ismail@uludag.org.tr>
 
+from kdecore import i18n
 from kdeui import *
 from qt import *
 import PreferencesDialog
+import RepoDialog
 import ThreadRunner
 import PisiKga # for loadIcon
 
@@ -53,7 +55,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     
     def addNewRepo(self):
         self.repo = RepoDialog.RepoDialog(self)
-        self.repo.setCaption('PiSi KGA - Yeni Depo Ekle')
+        self.repo.setCaption(i18n("Add New Repository"))
         self.repo.setModal(True)
         self.connect(self.repo.okButton, SIGNAL("clicked()"), self.processNewRepo)
         self.repo.show()
@@ -64,12 +66,12 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         pisi.api.remove_repo(repoItem.text(0))
                     
     def processNewRepo(self):
-        repoName = str(self.repo.repoNameLineEdit.text())
-        repoAddress = str(self.repo.repoAddressLineEdit.text())
+        repoName = str(self.repo.repoName.text())
+        repoAddress = str(self.repo.repoAddress.text())
         try:
             pisi.api.add_repo(repoName,repoAddress)
         except pisi.repodb.Error:
-            KMessageBox.error(self,u"<qt>Depo <b>%s</b> zaten var!</qt>"%(repoName), u"Pisi Hatası")
+            KMessageBox.error(self,i18n('Repository %1 already exists!').arg(repoName), i18n("Pisi Error"))
             return
         item = QListViewItem(self.repoListView,None)
         item.moveItem(self.repoListView.lastChild())
