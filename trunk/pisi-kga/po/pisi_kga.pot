@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 13:25+0200\n"
+"POT-Creation-Date: 2005-12-14 13:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,15 +268,19 @@ msgstr ""
 msgid "Pisi KGA is already running!"
 msgstr ""
 
-#: src/Preferences.py:58
+#: src/Preferences.py:65
 msgid "Add New Repository"
 msgstr ""
 
-#: src/Preferences.py:74
+#: src/Preferences.py:72
+msgid "Edit Repository"
+msgstr ""
+
+#: src/Preferences.py:92
 msgid "Repository %1 already exists!"
 msgstr ""
 
-#: src/Preferences.py:74
+#: src/Preferences.py:92
 msgid "Pisi Error"
 msgstr ""
 
@@ -292,7 +296,7 @@ msgstr ""
 msgid "Repository &Address"
 msgstr ""
 
-#: src/RepoDialog.py:71 src/SuccessDialog.py:75 src/PreferencesDialog.py:75
+#: src/RepoDialog.py:71 src/SuccessDialog.py:75 src/PreferencesDialog.py:77
 msgid "&Ok"
 msgstr ""
 
@@ -320,30 +324,34 @@ msgstr ""
 msgid "Show &More Information >>"
 msgstr ""
 
-#: src/PreferencesDialog.py:30 src/PreferencesDialog.py:70
+#: src/PreferencesDialog.py:31 src/PreferencesDialog.py:71
 msgid "Repository Name"
 msgstr ""
 
-#: src/PreferencesDialog.py:31 src/PreferencesDialog.py:71
+#: src/PreferencesDialog.py:32 src/PreferencesDialog.py:72
 msgid "Repository URL"
 msgstr ""
 
-#: src/PreferencesDialog.py:69
+#: src/PreferencesDialog.py:70
 msgid "PiSi Preferences"
 msgstr ""
 
-#: src/PreferencesDialog.py:72
+#: src/PreferencesDialog.py:73
 msgid "&Add New Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:73
+#: src/PreferencesDialog.py:74
 msgid "&Edit Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:74
+#: src/PreferencesDialog.py:75
 msgid "&Remove Repository"
 msgstr ""
 
 #: src/PreferencesDialog.py:76
-msgid "<h3>Add,Edit and Remove Repositories</h3>"
+msgid "&Update All Repositories"
+msgstr ""
+
+#: src/PreferencesDialog.py:78
+msgid "<b>Add,Edit or Remove Repositories</b>"
 msgstr ""
