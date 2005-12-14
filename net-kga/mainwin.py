@@ -71,12 +71,15 @@ class Widget(QVBox):
         self.setSpacing(6)
         
         self.links = QListBox(self)
+        self.un_id = 0
         
         box = QHBox(self)
         but = QPushButton("Create", box)
         self.connect(but, SIGNAL("clicked()"), self.slotCreate)
         but = QPushButton("Edit", box)
         self.connect(but, SIGNAL("clicked()"), self.slotEdit)
+        but = QPushButton("Delete", box)
+        self.connect(but, SIGNAL("clicked()"), self.slotDelete)
         but = QPushButton("Connect", box)
         self.connect(but, SIGNAL("clicked()"), self.slotConnect)
         but = QPushButton("Disconnect", box)
@@ -103,8 +106,10 @@ class Widget(QVBox):
         reply = self.comar.read_cmd()
         if reply[0] == self.comar.RESULT:
             if reply[1] == 1:
-                for conn in reply[2].split("\n"):
-                    if conn != "None":
+                if reply[2] == "":
+                    self.comar.call_package("Net.Link.deviceList", reply[3], id=5)
+                else:
+                    for conn in reply[2].split("\n"):
                         Connection(self.links, self.comar, conn, reply[3])
             elif reply[1] == 2:
                 name, dev, devname = reply[2].split("\n")
@@ -129,6 +134,11 @@ class Widget(QVBox):
                         conn.online = True
                     self.links.updateItem(conn)
                     return
+            elif reply[1] == 5:
+                uid, dev = reply[2].split(" ", 1)
+                name = "Unconfigured " + str(self.un_id)
+                self.un_id += 1
+                self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
         
         elif reply[0] == self.comar.NOTIFY:
             noti, data = reply[2].split("\n", 1)
@@ -151,6 +161,11 @@ class Widget(QVBox):
         conn = self.links.selectedItem()
         if conn:
             w = connection.Window(self, conn.name, conn.link_name)
+    
+    def slotDelete(self):
+        conn = self.links.selectedItem()
+        if conn:
+            self.comar.call_package("Net.Link.deleteConnection", conn.link_name, [ "name", conn.name ])
     
     def slotConnect(self):
         conn = self.links.selectedItem()
