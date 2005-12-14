@@ -533,6 +533,3 @@ msgstr "openoffice.org"
 msgid "Custom updates"
 msgstr "Özel güncelleme"
 
-#, fuzzy
-#~ msgid "Fast Updates (security only)"
-#~ msgstr "Hızlı güncelleme (sadece güvenlik güncellemeleri)"
