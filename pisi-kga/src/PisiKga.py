@@ -528,6 +528,9 @@ class MainApplication(programbase):
         if nonPrivMode:
             mainwidget.selectionInfo.hide()
 
+        if programbase == KCModule:
+            mainwidget.closeButton.hide()
+
         mainwidget.selectionGroup.setButton(0);
         mainwidget.categoryGroup.setButton(1); #FIXME: workaround for RC1, should be 0 for 1.0 release
         mainwidget.updateListing();
