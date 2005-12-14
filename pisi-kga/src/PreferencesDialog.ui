@@ -45,7 +45,7 @@
                 </column>
                 <column>
                     <property name="text">
-                        <string>Repository URL</string>
+                        <string>Address</string>
                     </property>
                     <property name="clickable">
                         <bool>true</bool>
@@ -82,6 +82,12 @@
                         <property name="text">
                             <string>&amp;Add New Repository</string>
                         </property>
+                        <property name="accel">
+                            <string>Alt+A</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Click here to add a new software repository</string>
+                        </property>
                     </widget>
                     <widget class="KPushButton">
                         <property name="name">
@@ -89,6 +95,12 @@
                         </property>
                         <property name="text">
                             <string>&amp;Edit Repository</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+E</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Click here to modify the name or address of a repository</string>
                         </property>
                     </widget>
                     <widget class="KPushButton">
@@ -149,7 +161,7 @@
             </rect>
         </property>
         <property name="text">
-            <string>&lt;b&gt;Add,Edit or Remove Repositories&lt;/b&gt;</string>
+            <string>&lt;b&gt;Add, Edit or Remove Repositories&lt;/b&gt;</string>
         </property>
     </widget>
 </widget>
