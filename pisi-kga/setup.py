@@ -22,7 +22,7 @@ kdedistutils.setup(
     author_email="ismail@uludag.org.tr",
     url="http://www.uludag.org.tr/projects/pisi",
     min_kde_version = "3.5.0",
-    min_qt_version = "3.3.0",
+    min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/PisiKga.py', 'src/ThreadRunner.py','src/MainWindow.ui',
                         'src/Progress.ui','src/ProgressDialog.py','src/SuccessDialog.ui','src/Success.py',
