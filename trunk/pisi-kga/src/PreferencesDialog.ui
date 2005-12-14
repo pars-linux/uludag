@@ -66,6 +66,9 @@
                 <property name="fullWidth">
                     <bool>true</bool>
                 </property>
+                <property name="toolTip" stdset="0">
+                    <string>You can see current software repositories and corresponding addresses here</string>
+                </property>
             </widget>
             <widget class="QLayoutWidget">
                 <property name="name">
@@ -110,6 +113,12 @@
                         <property name="text">
                             <string>&amp;Remove Repository</string>
                         </property>
+                        <property name="accel">
+                            <string>Alt+R</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Click here to delete a repository from the list</string>
+                        </property>
                     </widget>
                     <widget class="KPushButton">
                         <property name="name">
@@ -117,6 +126,12 @@
                         </property>
                         <property name="text">
                             <string>&amp;Update All Repositories</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+U</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>Click here to update all repositories so that you can use  </string>
                         </property>
                     </widget>
                     <spacer>
