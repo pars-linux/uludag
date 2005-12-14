@@ -121,7 +121,11 @@ class Widget(QVBox):
                     self.links.updateItem(conn)
                     return
             elif reply[1] == 3:
-                name, mode, addr, gate = reply[2].split("\n")
+                name, mode, rest = reply[2].split("\n", 2)
+                if "\n" in rest:
+                    addr, gate = rest.split("\n", 1)
+                else:
+                    addr = rest
                 conn = self.findConn(name)
                 if conn:
                     conn.address = addr
@@ -142,7 +146,6 @@ class Widget(QVBox):
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
         
         elif reply[0] == self.comar.NOTIFY:
-            print reply[2]
             noti, script, data = reply[2].split("\n", 2)
 
             if noti == "Net.Link.stateChanged":
