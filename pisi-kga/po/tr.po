@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 21:16+0200\n"
+"POT-Creation-Date: 2005-12-14 21:27+0200\n"
 "PO-Revision-Date: 2005-12-13 15:02+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -318,17 +318,26 @@ msgstr "Yeni Depo Ekle"
 msgid "Edit Repository"
 msgstr "Depoyu Değiştir"
 
-#: src/Preferences.py:100 src/Preferences.py:118
+#: src/Preferences.py:100 src/Preferences.py:125
 msgid "Repository address is wrong!"
 msgstr "Depo Adresi Yanlış."
 
-#: src/Preferences.py:100 src/Preferences.py:106 src/Preferences.py:118
+#: src/Preferences.py:100 src/Preferences.py:106 src/Preferences.py:125
 msgid "Pisi Error"
 msgstr "PiSi Hatası"
 
 #: src/Preferences.py:106
 msgid "Repository %1 already exists!"
 msgstr "Depo %1 zaten var."
+
+#: src/Preferences.py:112
+msgid "<qt>Do you want to update repository <b>%1</b></qt>"
+msgstr ""
+
+#: src/Preferences.py:112
+#, fuzzy
+msgid "Pisi Question"
+msgstr "PiSi Soru"
 
 #: src/PreferencesDialog.py:31 src/PreferencesDialog.py:71
 msgid "Repository Name"
