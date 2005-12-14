@@ -117,6 +117,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
             rate = int(str(event.data().section(' ',2,2)).split('.')[0])
             symbol = event.data().section(' ',3,3)
             self.updateProgressBar(filename, percent, rate, symbol)
+        elif event.type() == QEvent.User+10:
+            self.updateListing()
         else:
             pass
     
