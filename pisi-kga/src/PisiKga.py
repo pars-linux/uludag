@@ -378,13 +378,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateListing()
         
     def installRemove(self):
+
+        try: # Dependencies might bite us here, http://bugs.uludag.org.tr/show_bug.cgi?id=1170
+            self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
+        except Exception,e:
+            KMessageBox.error(self,unicode(e),i18n("PiSi Error"))
+            return
+                                                
         index = mainwidget.selectionGroup.selectedId()
         self.installOrRemoveButton.setEnabled(False)
-
         self.pDialog.setCaption(i18n("Add or Remove Programs"))
         self.pDialog.show()
-        
-        self.totalAppCount = len(pisi.api.package_graph(self.selectedItems, True).vertices())
 
         if index == 2: # Remove baby
             self.operation = "remove"
