@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>update_wizard</class>
+<class>UpdateWizardDialog</class>
 <widget class="QWizard">
     <property name="name">
-        <cstring>update_wizard</cstring>
+        <cstring>UpdateWizardDialog</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -131,7 +131,7 @@ much time, but want to keep the system secure.</string>
             </widget>
             <widget class="QRadioButton">
                 <property name="name">
-                    <cstring>radioButton1_2</cstring>
+                    <cstring>customUpdateButton</cstring>
                 </property>
                 <property name="geometry">
                     <rect>
@@ -150,7 +150,7 @@ much time, but want to keep the system secure.</string>
             </widget>
             <widget class="QRadioButton">
                 <property name="name">
-                    <cstring>radioButton1</cstring>
+                    <cstring>fastUpdateButton</cstring>
                 </property>
                 <property name="geometry">
                     <rect>

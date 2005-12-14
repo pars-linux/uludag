@@ -8,12 +8,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 16:43+0200\n"
+"POT-Creation-Date: 2005-12-14 20:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/MainWindow.py:93 src/MainWindow.py:241
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Clear search results"
 msgstr ""
 
-#: src/MainWindow.py:243 src/PisiKga.py:271
+#: src/MainWindow.py:243 src/PisiKga.py:278
 msgid "No package selected"
 msgstr ""
 
@@ -128,220 +128,192 @@ msgid ""
 "locations where new software can be fetched."
 msgstr ""
 
-#: src/MainWindow.py:262
-msgid "&YardÄ±m"
-msgstr ""
-
 #: src/MainWindow.py:263
 msgid "Install Package(s)"
 msgstr ""
 
-#: src/PisiUi.py:60
+#: src/PisiUi.py:61
 msgid "installing"
 msgstr ""
 
-#: src/PisiUi.py:62
+#: src/PisiUi.py:63
 msgid "configuring"
 msgstr ""
 
-#: src/PisiUi.py:64
+#: src/PisiUi.py:65
 msgid "extracting"
 msgstr ""
 
-#: src/PisiUi.py:66
+#: src/PisiUi.py:67
 msgid "removing"
-msgstr ""
-
-#: src/PisiKga.py:49
-msgid "GUI for PiSi package manager"
-msgstr ""
-
-#: src/PisiKga.py:59
-msgid "Author"
-msgstr ""
-
-#: src/PisiKga.py:60
-msgid "GUI Design & Usability"
-msgstr ""
-
-#: src/PisiKga.py:61
-msgid "Intuitive Search Interface"
-msgstr ""
-
-#: src/PisiKga.py:62
-msgid "Python coding help"
-msgstr ""
-
-#: src/PisiKga.py:63
-msgid "Helping with PiSi api"
-msgstr ""
-
-#: src/PisiKga.py:64
-msgid "Author of PyKDEeXtensions"
-msgstr ""
-
-#: src/PisiKga.py:85
-msgid "downloading"
-msgstr ""
-
-#: src/PisiKga.py:97
-msgid ""
-"Looks like PiSi repository database is empty\n"
-"Do you want to update repository now?"
-msgstr ""
-
-#: src/PisiKga.py:97
-msgid "PiSi Question"
-msgstr ""
-
-#: src/PisiKga.py:102
-msgid ""
-"You will not be able to install new programs or update old ones until you "
-"update repository."
-msgstr ""
-
-#: src/PisiKga.py:109
-msgid "Updating repositories"
-msgstr ""
-
-#: src/PisiKga.py:134
-msgid "PiSi Info"
-msgstr ""
-
-#: src/PisiKga.py:153
-msgid "All repositories are successfully updated!"
-msgstr ""
-
-#: src/PisiKga.py:156
-msgid "All selected packages are successfully installed!"
-msgstr ""
-
-#: src/PisiKga.py:157
-msgid "installed"
-msgstr ""
-
-#: src/PisiKga.py:159
-msgid "All selected packages are successfully removed!"
-msgstr ""
-
-#: src/PisiKga.py:160
-msgid "removed"
-msgstr ""
-
-#: src/PisiKga.py:162
-msgid "All selected packages are successfully updated!"
-msgstr ""
-
-#: src/PisiKga.py:163
-msgid "updated"
-msgstr ""
-
-#: src/PisiKga.py:170 src/PisiKga.py:396
-msgid "PiSi Error"
-msgstr ""
-
-#: src/PisiKga.py:178
-msgid "Preparing PiSi..."
-msgstr ""
-
-#: src/PisiKga.py:185
-msgid "Now %1 <b>%2</b> (Speed: %3 %4)"
-msgstr ""
-
-#: src/PisiKga.py:188
-msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
-msgstr ""
-
-#: src/PisiKga.py:235
-msgid " Byte"
-msgstr ""
-
-#: src/PisiKga.py:237
-msgid "Program Version :"
-msgstr ""
-
-#: src/PisiKga.py:237
-msgid "Program Size :"
-msgstr ""
-
-#: src/PisiKga.py:265
-msgid "Selected %1 packages, total size %2 MB"
-msgstr ""
-
-#: src/PisiKga.py:267
-msgid "Selected %1 packages, total size %2 KB"
-msgstr ""
-
-#: src/PisiKga.py:269
-msgid "Selected %1 packages, total size %2 Bytes"
-msgstr ""
-
-#: src/PisiKga.py:366
-msgid "Remove package(s)"
-msgstr ""
-
-#: src/PisiKga.py:371
-msgid "Update package(s)"
-msgstr ""
-
-#: src/PisiKga.py:381
-msgid "Install package(s)"
-msgstr ""
-
-#: src/PisiKga.py:401 src/PisiKga.py:419
-msgid "Add or Remove Programs"
-msgstr ""
-
-#: src/PisiKga.py:581
-msgid "Pisi KGA is already running!"
-msgstr ""
-
-#: src/Preferences.py:70
-msgid "Add New Repository"
-msgstr ""
-
-#: src/Preferences.py:77
-msgid "Edit Repository"
-msgstr ""
-
-#: src/Preferences.py:96 src/Preferences.py:114
-msgid "Repository address is wrong!"
-msgstr ""
-
-#: src/Preferences.py:96 src/Preferences.py:102 src/Preferences.py:114
-msgid "Pisi Error"
-msgstr ""
-
-#: src/Preferences.py:102
-msgid "Repository %1 already exists!"
 msgstr ""
 
 #: src/Progress.py:54
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: src/RepoDialog.py:67
-msgid "Repository Dialog"
+#: src/PisiKga.py:51
+msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/RepoDialog.py:68
-msgid "Repository &Name"
+#: src/PisiKga.py:61
+msgid "Author"
 msgstr ""
 
-#: src/RepoDialog.py:69
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
+#: src/PisiKga.py:62
+msgid "GUI Design & Usability"
 msgstr ""
 
-#: src/RepoDialog.py:70
-msgid "Repository &Address"
+#: src/PisiKga.py:63
+msgid "Intuitive Search Interface"
 msgstr ""
 
-#: src/RepoDialog.py:71
-msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+#: src/PisiKga.py:64
+msgid "Python coding help"
 msgstr ""
 
-#: src/RepoDialog.py:73 src/PreferencesDialog.py:77 src/SuccessDialog.py:75
-msgid "&Ok"
+#: src/PisiKga.py:65
+msgid "Helping with PiSi api"
+msgstr ""
+
+#: src/PisiKga.py:66
+msgid "Author of PyKDEeXtensions"
+msgstr ""
+
+#: src/PisiKga.py:87
+msgid "downloading"
+msgstr ""
+
+#: src/PisiKga.py:99
+msgid ""
+"Looks like PiSi repository database is empty\n"
+"Do you want to update repository now?"
+msgstr ""
+
+#: src/PisiKga.py:99
+msgid "PiSi Question"
+msgstr ""
+
+#: src/PisiKga.py:104
+msgid ""
+"You will not be able to install new programs or update old ones until you "
+"update repository."
+msgstr ""
+
+#: src/PisiKga.py:111
+msgid "Updating repositories"
+msgstr ""
+
+#: src/PisiKga.py:136
+msgid "PiSi Info"
+msgstr ""
+
+#: src/PisiKga.py:155
+msgid "All repositories are successfully updated!"
+msgstr ""
+
+#: src/PisiKga.py:158
+msgid "All selected packages are successfully installed!"
+msgstr ""
+
+#: src/PisiKga.py:159
+msgid "installed"
+msgstr ""
+
+#: src/PisiKga.py:161
+msgid "All selected packages are successfully removed!"
+msgstr ""
+
+#: src/PisiKga.py:162
+msgid "removed"
+msgstr ""
+
+#: src/PisiKga.py:164
+msgid "All selected packages are successfully updated!"
+msgstr ""
+
+#: src/PisiKga.py:165
+msgid "updated"
+msgstr ""
+
+#: src/PisiKga.py:172 src/PisiKga.py:406
+msgid "PiSi Error"
+msgstr ""
+
+#: src/PisiKga.py:180
+msgid "Preparing PiSi..."
+msgstr ""
+
+#: src/PisiKga.py:187
+msgid "Now %1 <b>%2</b> (Speed: %3 %4)"
+msgstr ""
+
+#: src/PisiKga.py:190
+msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
+msgstr ""
+
+#: src/PisiKga.py:237
+msgid " Byte"
+msgstr ""
+
+#: src/PisiKga.py:239
+msgid "Program Version :"
+msgstr ""
+
+#: src/PisiKga.py:239
+msgid "Program Size :"
+msgstr ""
+
+#: src/PisiKga.py:272
+msgid "Selected %1 packages, total size %2 MB"
+msgstr ""
+
+#: src/PisiKga.py:274
+msgid "Selected %1 packages, total size %2 KB"
+msgstr ""
+
+#: src/PisiKga.py:276
+msgid "Selected %1 packages, total size %2 Bytes"
+msgstr ""
+
+#: src/PisiKga.py:376
+msgid "Remove package(s)"
+msgstr ""
+
+#: src/PisiKga.py:381
+msgid "Update package(s)"
+msgstr ""
+
+#: src/PisiKga.py:391
+msgid "Install package(s)"
+msgstr ""
+
+#: src/PisiKga.py:411 src/PisiKga.py:429
+msgid "Add or Remove Programs"
+msgstr ""
+
+#: src/PisiKga.py:597
+msgid "Pisi KGA is already running!"
+msgstr ""
+
+#: src/Preferences.py:74
+msgid "Add New Repository"
+msgstr ""
+
+#: src/Preferences.py:81
+msgid "Edit Repository"
+msgstr ""
+
+#: src/Preferences.py:100 src/Preferences.py:118
+msgid "Repository address is wrong!"
+msgstr ""
+
+#: src/Preferences.py:100 src/Preferences.py:106 src/Preferences.py:118
+msgid "Pisi Error"
+msgstr ""
+
+#: src/Preferences.py:106
+msgid "Repository %1 already exists!"
 msgstr ""
 
 #: src/PreferencesDialog.py:31 src/PreferencesDialog.py:71
@@ -372,8 +344,32 @@ msgstr ""
 msgid "&Update All Repositories"
 msgstr ""
 
+#: src/PreferencesDialog.py:77 src/RepoDialog.py:73 src/SuccessDialog.py:75
+msgid "&Ok"
+msgstr ""
+
 #: src/PreferencesDialog.py:78
 msgid "<b>Add,Edit or Remove Repositories</b>"
+msgstr ""
+
+#: src/RepoDialog.py:67
+msgid "Repository Dialog"
+msgstr ""
+
+#: src/RepoDialog.py:68
+msgid "Repository &Name"
+msgstr ""
+
+#: src/RepoDialog.py:69
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr ""
+
+#: src/RepoDialog.py:70
+msgid "Repository &Address"
+msgstr ""
+
+#: src/RepoDialog.py:71
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr ""
 
 #: src/Success.py:17
@@ -398,4 +394,42 @@ msgstr ""
 
 #: src/SuccessDialog.py:74
 msgid "Show &More Information >>"
+msgstr ""
+
+#: src/UpdateWizardDialog.py:685
+msgid "Welcome to PISI update wizard"
+msgstr ""
+
+#: src/UpdateWizardDialog.py:687
+msgid ""
+"In this method, you can select which packages \n"
+"to update, including packages with security \n"
+"updates. Click on \"Custom Update\" button if you \n"
+"want to make a fine selection."
+msgstr ""
+
+#: src/UpdateWizardDialog.py:691
+msgid ""
+"With fast update, only very essential and critial \n"
+"updates are downloaded and installed to your \n"
+"computer. Choose this method if you don't have \n"
+"much time, but want to keep the system secure."
+msgstr ""
+
+#: src/UpdateWizardDialog.py:695
+msgid "Custom update"
+msgstr ""
+
+#: src/UpdateWizardDialog.py:696
+msgid "Fast update (only security updates)"
+msgstr ""
+
+#: src/UpdateWizardDialog.py:697
+msgid ""
+"We suggest you to keep your system updated to increase your privacy. Please\n"
+"choose your update methodology below."
+msgstr ""
+
+#: src/UpdateWizardDialog.py:699
+msgid "PISI Update Wizard"
 msgstr ""
