@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 21:27+0200\n"
+"POT-Creation-Date: 2005-12-14 21:29+0200\n"
 "PO-Revision-Date: 2005-12-13 15:02+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -344,35 +344,57 @@ msgid "Repository Name"
 msgstr "Depo Adı"
 
 #: src/PreferencesDialog.py:32 src/PreferencesDialog.py:72
-msgid "Repository URL"
-msgstr "Depo Adresi"
+msgid "Address"
+msgstr ""
 
 #: src/PreferencesDialog.py:70
 msgid "PiSi Preferences"
 msgstr "PiSi Ayarları"
 
 #: src/PreferencesDialog.py:73
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr ""
+
+#: src/PreferencesDialog.py:74
 msgid "&Add New Repository"
 msgstr "Yeni Depo &Ekle"
 
-#: src/PreferencesDialog.py:74
+#: src/PreferencesDialog.py:75
+msgid "Click here to add a new software repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:76
 msgid "&Edit Repository"
 msgstr "&Depoyu Değiştir"
 
-#: src/PreferencesDialog.py:75
+#: src/PreferencesDialog.py:77
+msgid "Click here to modify the name or address of a repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:78
 msgid "&Remove Repository"
 msgstr "Depoyu &Kaldır"
 
-#: src/PreferencesDialog.py:76
+#: src/PreferencesDialog.py:79
+msgid "Click here to delete a repository from the list"
+msgstr ""
+
+#: src/PreferencesDialog.py:80
 msgid "&Update All Repositories"
 msgstr "Tüm Depoları &Güncelle"
 
-#: src/PreferencesDialog.py:77 src/RepoDialog.py:73 src/SuccessDialog.py:75
+#: src/PreferencesDialog.py:81
+msgid "Click here to update all repositories so that you can use  "
+msgstr ""
+
+#: src/PreferencesDialog.py:82 src/RepoDialog.py:73 src/SuccessDialog.py:75
 msgid "&Ok"
 msgstr "&Tamam"
 
-#: src/PreferencesDialog.py:78
-msgid "<b>Add,Edit or Remove Repositories</b>"
+#: src/PreferencesDialog.py:83
+#, fuzzy
+msgid "<b>Add, Edit or Remove Repositories</b>"
 msgstr "<b>Depo Ekle, Değiştir veya Kaldır</b>"
 
 #: src/RepoDialog.py:67
@@ -419,12 +441,20 @@ msgstr "Tüm paketler başarıyla yüklendi!"
 msgid "Show &More Information >>"
 msgstr "&Daha fazla bilgi göster >>"
 
-#: src/UpdateWizardDialog.py:682 src/FastUpdatesDialog.py:49
+#: src/UpdateWizardDialog.py:640 src/FastUpdatesDialog.py:49
 #: src/CustomUpdatesDialog.py:49
 msgid "Welcome to PISI update wizard"
 msgstr "PiSi güncelleme sihirbazına hoşgeldiniz"
 
-#: src/UpdateWizardDialog.py:684
+#: src/UpdateWizardDialog.py:642
+msgid "Custom update"
+msgstr "Özel güncelle"
+
+#: src/UpdateWizardDialog.py:643
+msgid "Fast update (only security updates)"
+msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
+
+#: src/UpdateWizardDialog.py:644
 msgid ""
 "In this method, you can select which packages \n"
 "to update, including packages with security \n"
@@ -436,7 +466,7 @@ msgstr ""
 "belirtebilirsiniz. Seçim yapmak için lütfen \n"
 "\"Özel Güncelleme\" düğmesine tıklayın."
 
-#: src/UpdateWizardDialog.py:688
+#: src/UpdateWizardDialog.py:648
 msgid ""
 "With fast update, only very essential and critial \n"
 "updates are downloaded and installed to your \n"
@@ -449,15 +479,7 @@ msgstr ""
 "varsa ve bu aynı zamanda sistemi güncel tutmak istiyorsanız\n"
 "bu seçeneği tıklayın."
 
-#: src/UpdateWizardDialog.py:692
-msgid "Custom update"
-msgstr "Özel güncelle"
-
-#: src/UpdateWizardDialog.py:693
-msgid "Fast update (only security updates)"
-msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
-
-#: src/UpdateWizardDialog.py:694
+#: src/UpdateWizardDialog.py:652
 msgid ""
 "We suggest you to keep your system updated to increase your privacy. Please\n"
 "choose your update methodology below."
@@ -465,8 +487,9 @@ msgstr ""
 "Sisteminizi sürekli olarak güncel tutmanızı öneririz. Lütfen aşağıdan\n"
 "bir güncelleme yöntemi seçin."
 
-#: src/UpdateWizardDialog.py:696
-msgid "PISI Update Wizard"
+#: src/UpdateWizardDialog.py:654
+#, fuzzy
+msgid "PiSi Update Wizard"
 msgstr "PiSi Güncelleme Sihirbazı"
 
 #: src/FastUpdatesDialog.py:29 src/FastUpdatesDialog.py:50
@@ -514,3 +537,6 @@ msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
 #, fuzzy
 msgid "Custom updates"
 msgstr "Özel güncelle"
+
+#~ msgid "Repository URL"
+#~ msgstr "Depo Adresi"
