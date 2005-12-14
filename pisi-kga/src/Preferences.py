@@ -27,6 +27,7 @@ import pisi.repodb
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
         PreferencesDialog.PreferencesDialog.__init__(self, parent)
+        self.receiver = parent
         self.command = ThreadRunner.MyThread(parent)
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.editButton, SIGNAL("clicked()"), self.editRepo)
@@ -59,7 +60,11 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         for i in pisi.context.repodb.list():
             self.command.updateRepo(i)
         self.updateRepoButton.setEnabled(True)
-    
+
+        # Let the main listview update itself
+        event = QCustomEvent(QEvent.User+10)
+        QThread.postEvent(self.receiver,event)
+                                            
     def addNewRepo(self):
         self.repo = RepoDialog.RepoDialog(self)
         self.repo.setCaption(i18n("Add New Repository"))
