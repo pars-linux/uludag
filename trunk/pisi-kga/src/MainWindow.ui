@@ -485,7 +485,7 @@ Program Version: Bar</string>
                                     </sizepolicy>
                                 </property>
                                 <property name="text">
-                                    <string>&amp;Update Everything</string>
+                                    <string>&amp;Update System</string>
                                 </property>
                                 <property name="toolTip" stdset="0">
                                     <string>Click on this button if you want to update your system</string>
