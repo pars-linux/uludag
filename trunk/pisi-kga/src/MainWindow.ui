@@ -177,20 +177,6 @@
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="KPushButton">
-                                        <property name="name">
-                                            <cstring>clearButton</cstring>
-                                        </property>
-                                        <property name="text">
-                                            <string></string>
-                                        </property>
-                                        <property name="flat">
-                                            <bool>true</bool>
-                                        </property>
-                                        <property name="toolTip" stdset="0">
-                                            <string>Reset search results</string>
-                                        </property>
-                                    </widget>
                                     <widget class="KLineEdit">
                                         <property name="name">
                                             <cstring>queryEdit</cstring>
@@ -210,6 +196,17 @@
                                         <property name="toolTip" stdset="0">
                                             <string>search button</string>
                                             <comment>Search package name, summary, description</comment>
+                                        </property>
+                                    </widget>
+                                    <widget class="KPushButton">
+                                        <property name="name">
+                                            <cstring>clearButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Clear</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>Clear search results</string>
                                         </property>
                                     </widget>
                                 </hbox>
@@ -629,7 +626,6 @@ Program Version: Bar</string>
     <tabstop>updateSystemButton</tabstop>
     <tabstop>preferencesButton</tabstop>
     <tabstop>installOrRemoveButton</tabstop>
-    <tabstop>clearButton</tabstop>
     <tabstop>closeButton</tabstop>
     <tabstop>showOnlyAppsButton</tabstop>
     <tabstop>showAllPackagesButton</tabstop>
@@ -642,8 +638,8 @@ Program Version: Bar</string>
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>ktextbrowser.h</includehint>
     <includehint>kpushbutton.h</includehint>

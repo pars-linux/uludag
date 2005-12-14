@@ -495,7 +495,6 @@ class MainApplication(programbase):
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
         mainwidget.listView.setResizeMode(KListView.LastColumn)
-        mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         mainwidget.helpButton.hide()
 
