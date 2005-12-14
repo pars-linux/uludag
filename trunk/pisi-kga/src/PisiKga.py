@@ -46,7 +46,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.0_rc2"
+version = "1.0"
 
 def AboutData():
     global version,description
@@ -102,8 +102,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def customEvent(self, event):
         if event.type() == QEvent.User+1:
-            self.finished()
-        elif event.type() == QEvent.User+2:
+            if self.pDialog.progressBar.progress() == 100:
+                self.finished()
+        elif event.type() == QEvent.User+2: 
             self.pDialog.setCaption(i18n("Updating repositories"))
             self.updatedRepo = event.data()
             self.pDialog.show()
@@ -114,16 +115,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif event.type() == QEvent.User+6:
             self.showConfirm()
         elif event.type() == QEvent.User+7:
-            filename = event.data().section(' ',0,0)
-            percent = event.data().section(' ',1,1).toInt()[0]
-            rate = int(str(event.data().section(' ',2,2)).split('.')[0])
-            symbol = event.data().section(' ',3,3)
-            self.updateProgressBar(filename, percent, rate, symbol)
+            self.filename = event.data().section(' ',0,0)
+            self.percent = event.data().section(' ',1,1).toInt()[0]
+            self.rate = int(str(event.data().section(' ',2,2)).split('.')[0])
+            self.symbol = event.data().section(' ',3,3)
+            self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
         elif event.type() == QEvent.User+10:
             self.updateListing()
         elif event.type() == QEvent.User+11:
             if event.data():
                 self.currentOperation = event.data()
+                self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
         else:
             pass
     

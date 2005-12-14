@@ -17,7 +17,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="pisi_kga",
-    version="1.0_rc2",
+    version="1.0",
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
     url="http://www.uludag.org.tr/projects/pisi",
