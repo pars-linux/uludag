@@ -91,11 +91,16 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def processNewRepo(self):
         repoName = str(self.repo.repoName.text())
         repoAddress = str(self.repo.repoAddress.text())
-        try:
-            pisi.api.add_repo(repoName,repoAddress)
-        except pisi.repodb.Error:
-            KMessageBox.error(self,i18n('Repository %1 already exists!').arg(repoName), i18n("Pisi Error"))
+
+        if not repoAddress.endswith("xml"):
+            KMessageBox.error(self,i18n('Repository address is wrong!'), i18n("Pisi Error"))
             return
+        else:
+            try:
+                pisi.api.add_repo(repoName,repoAddress)
+            except pisi.repodb.Error:
+                KMessageBox.error(self,i18n('Repository %1 already exists!').arg(repoName), i18n("Pisi Error"))
+                return
         
         self.updateListView()
         self.repo.close()
