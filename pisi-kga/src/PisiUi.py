@@ -46,6 +46,12 @@ class PisiUi(pisi.ui.UI,QObject):
         cEvent = QCustomEvent(CustomEvent.AskConfirmation)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)        
+
+        # You might be wondering how this code works, as we don't set self.confirmed here
+        # Here is what happens, CustomEvent.AskConfirmation event is sent to main app,
+        # it shows a KMessageBox and thread eventloop waits for it to finish, when the user
+        # confirms it hits CustomEvent.UserConfirmed in customEvent and next we are here in
+        # the Thread and self.confirmed is already set
         
         if self.confirmed:
             self.confirmed = None
