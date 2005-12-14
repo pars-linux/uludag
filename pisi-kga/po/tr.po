@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 13:59+0200\n"
+"POT-Creation-Date: 2005-12-14 14:53+0200\n"
 "PO-Revision-Date: 2005-12-13 15:02+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "Sadece uygulamaları göster"
 msgid "Show all packages"
 msgstr "Bütün paketleri göster"
 
-#: src/MainWindow.py:216 src/PisiKga.py:261
+#: src/MainWindow.py:216 src/PisiKga.py:268
 msgid "No package selected"
 msgstr "Hiçbir paket seçili değil"
 
@@ -134,6 +134,22 @@ msgstr ""
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Yükle"
 
+#: src/PisiUi.py:61
+msgid "installing"
+msgstr "yüklenilen"
+
+#: src/PisiUi.py:63
+msgid "configuring"
+msgstr "ayarlanan"
+
+#: src/PisiUi.py:65
+msgid "extracting"
+msgstr "çıkartılan"
+
+#: src/PisiUi.py:67
+msgid "removing"
+msgstr "kaldırılan"
+
 #: src/Progress.py:54
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
@@ -166,7 +182,11 @@ msgstr "PiSi konusunda yardım"
 msgid "Author of PyKDEeXtensions"
 msgstr "PyKDEeXtensions'ın yazarı"
 
-#: src/PisiKga.py:94
+#: src/PisiKga.py:84
+msgid "downloading"
+msgstr "indirilen"
+
+#: src/PisiKga.py:96
 msgid ""
 "Looks like PiSi repository database is empty\n"
 "Do you want to update repository now?"
@@ -174,11 +194,11 @@ msgstr ""
 "Görünüşe göre PiSi depo veritabanı boş\n"
 "Depo veritabanını şimdi güncellemek ister misiniz?"
 
-#: src/PisiKga.py:94
+#: src/PisiKga.py:96
 msgid "PiSi Question"
 msgstr "PiSi Soru"
 
-#: src/PisiKga.py:99
+#: src/PisiKga.py:101
 msgid ""
 "You will not be able to install new programs or update old ones until you "
 "update repository."
@@ -186,115 +206,115 @@ msgstr ""
 "Depo veritabanını güncelleyene kadar yeni programlar kuramayacak, eski "
 "programları güncelleyemiyeceksiniz."
 
-#: src/PisiKga.py:105
+#: src/PisiKga.py:107
 msgid "Updating repositories"
 msgstr "Depolar güncelleniyor"
 
-#: src/PisiKga.py:124
+#: src/PisiKga.py:131
 msgid "PiSi Info"
 msgstr "PiSi Bilgi"
 
-#: src/PisiKga.py:143
+#: src/PisiKga.py:150
 msgid "All repositories are successfully updated!"
 msgstr "Tüm depolar başarıyla güncellendi!"
 
-#: src/PisiKga.py:146
+#: src/PisiKga.py:153
 msgid "All selected packages are successfully installed!"
 msgstr "Tüm paketler başarıyla yüklendi!"
 
-#: src/PisiKga.py:147
+#: src/PisiKga.py:154
 msgid "installed"
 msgstr "yüklendi"
 
-#: src/PisiKga.py:149
+#: src/PisiKga.py:156
 msgid "All selected packages are successfully removed!"
 msgstr "Tüm paketler başarıyla kaldırıldı!"
 
-#: src/PisiKga.py:150
+#: src/PisiKga.py:157
 msgid "removed"
 msgstr "kaldırıldı"
 
-#: src/PisiKga.py:152
+#: src/PisiKga.py:159
 msgid "All selected packages are successfully updated!"
 msgstr "Tüm paketler başarıyla güncellendi!"
 
-#: src/PisiKga.py:153
+#: src/PisiKga.py:160
 msgid "updated"
 msgstr "güncellendi"
 
-#: src/PisiKga.py:160 src/PisiKga.py:386
+#: src/PisiKga.py:167 src/PisiKga.py:393
 msgid "PiSi Error"
 msgstr "PiSi Hatası"
 
-#: src/PisiKga.py:168
+#: src/PisiKga.py:175
 msgid "Preparing PiSi..."
 msgstr "PiSi Hazırlanıyor..."
 
-#: src/PisiKga.py:175
-msgid "Now installing <b>%1</b> (Speed: %2 %3)"
-msgstr "Şu anda yüklenilen <b>%1</b> (Hız: %2 %3)"
+#: src/PisiKga.py:182
+msgid "Now %1 <b>%2</b> (Speed: %3 %4)"
+msgstr "Şu anda %1 <b>%2</b> (Hız: %3 %4)"
 
-#: src/PisiKga.py:178
+#: src/PisiKga.py:185
 msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
 msgstr "Güncellenen depo <b>%1</b> (Hız: %2 %3)"
 
-#: src/PisiKga.py:225
+#: src/PisiKga.py:232
 msgid " Byte"
 msgstr "Byte"
 
-#: src/PisiKga.py:227
+#: src/PisiKga.py:234
 msgid "Program Version :"
 msgstr "Programın Versiyonu:"
 
-#: src/PisiKga.py:227
+#: src/PisiKga.py:234
 msgid "Program Size :"
 msgstr "Programın Büyüklüğü:"
 
-#: src/PisiKga.py:255
+#: src/PisiKga.py:262
 msgid "Selected %1 packages, total size %2 MB"
 msgstr "%1 paket seçili, toplam boyut %2 MB"
 
-#: src/PisiKga.py:257
+#: src/PisiKga.py:264
 msgid "Selected %1 packages, total size %2 KB"
 msgstr "%1 paket seçili, toplam %2 KB"
 
-#: src/PisiKga.py:259
+#: src/PisiKga.py:266
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr "%1 paket seçili, toplam %2 Byte"
 
-#: src/PisiKga.py:356
+#: src/PisiKga.py:363
 msgid "Remove package(s)"
 msgstr "Paket(ler)i kaldır"
 
-#: src/PisiKga.py:361
+#: src/PisiKga.py:368
 msgid "Update package(s)"
 msgstr "Paket(ler)i güncelle"
 
-#: src/PisiKga.py:371
+#: src/PisiKga.py:378
 msgid "Install package(s)"
 msgstr "Paket(ler)i yükle"
 
-#: src/PisiKga.py:391 src/PisiKga.py:409
+#: src/PisiKga.py:398 src/PisiKga.py:416
 msgid "Add or Remove Programs"
 msgstr "Program Ekle ve Kaldır"
 
-#: src/PisiKga.py:557
+#: src/PisiKga.py:564
 msgid "Pisi KGA is already running!"
 msgstr "PiSi KGA halihazırda çalışıyor!"
 
-#: src/Preferences.py:65
+#: src/Preferences.py:70
 msgid "Add New Repository"
 msgstr "Yeni Depo Ekle"
 
-#: src/Preferences.py:72
+#: src/Preferences.py:77
 msgid "Edit Repository"
 msgstr "Depoyu Değiştir"
 
-#: src/Preferences.py:92
+#: src/Preferences.py:97
 msgid "Repository %1 already exists!"
 msgstr "Depo %1 zaten var!"
 
-#: src/Preferences.py:92
+#: src/Preferences.py:97
 msgid "Pisi Error"
 msgstr "PiSi Hatası"
 

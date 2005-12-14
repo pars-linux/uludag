@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 13:59+0200\n"
+"POT-Creation-Date: 2005-12-14 14:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Show all packages"
 msgstr ""
 
-#: src/MainWindow.py:216 src/PisiKga.py:261
+#: src/MainWindow.py:216 src/PisiKga.py:268
 msgid "No package selected"
 msgstr ""
 
@@ -124,6 +124,22 @@ msgstr ""
 msgid "Install Package(s)"
 msgstr ""
 
+#: src/PisiUi.py:61
+msgid "installing"
+msgstr ""
+
+#: src/PisiUi.py:63
+msgid "configuring"
+msgstr ""
+
+#: src/PisiUi.py:65
+msgid "extracting"
+msgstr ""
+
+#: src/PisiUi.py:67
+msgid "removing"
+msgstr ""
+
 #: src/Progress.py:54
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
@@ -156,131 +172,135 @@ msgstr ""
 msgid "Author of PyKDEeXtensions"
 msgstr ""
 
-#: src/PisiKga.py:94
+#: src/PisiKga.py:84
+msgid "downloading"
+msgstr ""
+
+#: src/PisiKga.py:96
 msgid ""
 "Looks like PiSi repository database is empty\n"
 "Do you want to update repository now?"
 msgstr ""
 
-#: src/PisiKga.py:94
+#: src/PisiKga.py:96
 msgid "PiSi Question"
 msgstr ""
 
-#: src/PisiKga.py:99
+#: src/PisiKga.py:101
 msgid ""
 "You will not be able to install new programs or update old ones until you "
 "update repository."
 msgstr ""
 
-#: src/PisiKga.py:105
+#: src/PisiKga.py:107
 msgid "Updating repositories"
 msgstr ""
 
-#: src/PisiKga.py:124
+#: src/PisiKga.py:131
 msgid "PiSi Info"
 msgstr ""
 
-#: src/PisiKga.py:143
+#: src/PisiKga.py:150
 msgid "All repositories are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:146
+#: src/PisiKga.py:153
 msgid "All selected packages are successfully installed!"
 msgstr ""
 
-#: src/PisiKga.py:147
+#: src/PisiKga.py:154
 msgid "installed"
 msgstr ""
 
-#: src/PisiKga.py:149
+#: src/PisiKga.py:156
 msgid "All selected packages are successfully removed!"
 msgstr ""
 
-#: src/PisiKga.py:150
+#: src/PisiKga.py:157
 msgid "removed"
 msgstr ""
 
-#: src/PisiKga.py:152
+#: src/PisiKga.py:159
 msgid "All selected packages are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:153
+#: src/PisiKga.py:160
 msgid "updated"
 msgstr ""
 
-#: src/PisiKga.py:160 src/PisiKga.py:386
+#: src/PisiKga.py:167 src/PisiKga.py:393
 msgid "PiSi Error"
 msgstr ""
 
-#: src/PisiKga.py:168
+#: src/PisiKga.py:175
 msgid "Preparing PiSi..."
 msgstr ""
 
-#: src/PisiKga.py:175
-msgid "Now installing <b>%1</b> (Speed: %2 %3)"
+#: src/PisiKga.py:182
+msgid "Now %1 <b>%2</b> (Speed: %3 %4)"
 msgstr ""
 
-#: src/PisiKga.py:178
+#: src/PisiKga.py:185
 msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
 msgstr ""
 
-#: src/PisiKga.py:225
+#: src/PisiKga.py:232
 msgid " Byte"
 msgstr ""
 
-#: src/PisiKga.py:227
+#: src/PisiKga.py:234
 msgid "Program Version :"
 msgstr ""
 
-#: src/PisiKga.py:227
+#: src/PisiKga.py:234
 msgid "Program Size :"
 msgstr ""
 
-#: src/PisiKga.py:255
+#: src/PisiKga.py:262
 msgid "Selected %1 packages, total size %2 MB"
 msgstr ""
 
-#: src/PisiKga.py:257
+#: src/PisiKga.py:264
 msgid "Selected %1 packages, total size %2 KB"
 msgstr ""
 
-#: src/PisiKga.py:259
+#: src/PisiKga.py:266
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr ""
 
-#: src/PisiKga.py:356
+#: src/PisiKga.py:363
 msgid "Remove package(s)"
 msgstr ""
 
-#: src/PisiKga.py:361
+#: src/PisiKga.py:368
 msgid "Update package(s)"
 msgstr ""
 
-#: src/PisiKga.py:371
+#: src/PisiKga.py:378
 msgid "Install package(s)"
 msgstr ""
 
-#: src/PisiKga.py:391 src/PisiKga.py:409
+#: src/PisiKga.py:398 src/PisiKga.py:416
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:557
+#: src/PisiKga.py:564
 msgid "Pisi KGA is already running!"
 msgstr ""
 
-#: src/Preferences.py:65
+#: src/Preferences.py:70
 msgid "Add New Repository"
 msgstr ""
 
-#: src/Preferences.py:72
+#: src/Preferences.py:77
 msgid "Edit Repository"
 msgstr ""
 
-#: src/Preferences.py:92
+#: src/Preferences.py:97
 msgid "Repository %1 already exists!"
 msgstr ""
 
-#: src/Preferences.py:92
+#: src/Preferences.py:97
 msgid "Pisi Error"
 msgstr ""
 

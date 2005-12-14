@@ -81,7 +81,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.totalSelectedSize = 0
         self.confirmed = None
         self.operation = None
+        self.currentOperation = i18n("downloading")
         self.operationInfo = None    
+
         # Init pisi repository
         glob_ui = PisiUi.PisiUi(self)
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
@@ -119,6 +121,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.updateProgressBar(filename, percent, rate, symbol)
         elif event.type() == QEvent.User+10:
             self.updateListing()
+        elif event.type() == QEvent.User+11:
+            if event.data():
+                self.currentOperation = event.data()
         else:
             pass
     
@@ -174,7 +179,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             rate = 0
             
         if filename.endsWith(".pisi"):
-            self.pDialog.progressLabel.setText(i18n('Now installing <b>%1</b> (Speed: %2 %3)').arg(filename).arg(rate).arg(symbol))
+            self.pDialog.progressLabel.setText(i18n('Now %1 <b>%2</b> (Speed: %3 %4)').arg(self.currentOperation).arg(filename).arg(rate).arg(symbol))
         else:
             self.totalAppCount = 1
             self.pDialog.progressLabel.setText(i18n('Updating repo <b>%1</b> (Speed: %2 %3)').arg(self.updatedRepo).arg(rate).arg(symbol))
