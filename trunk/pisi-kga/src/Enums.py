@@ -19,8 +19,8 @@ class CustomEvent:
 	RepositoryUpdate = QEvent.User+2
 	PisiError = QEvent.User+3
 	PisiInfo = QEvent.User+4
-	AskConfirmation = QEvent.User+5
-	UpdateProgress = QEvent.User+6
+	PisiNotify = QEvent.User+5
+	AskConfirmation = QEvent.User+6
 	UserConfirmed = QEvent.User+7
-	UpdateListing = QEvent.User+8
-	PisiNotify = QEvent.User+9
+	UpdateProgress = QEvent.User+8
+	UpdateListing = QEvent.User+9
