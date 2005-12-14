@@ -89,6 +89,7 @@ class Widget(QVBox):
         self.comar.call("Net.Link.connections", id=1)
         
         self.comar.ask_notify("Net.Link.stateChanged")
+        self.comar.ask_notify("Net.Link.connectionChanged")
         
         self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
@@ -120,7 +121,7 @@ class Widget(QVBox):
                     self.links.updateItem(conn)
                     return
             elif reply[1] == 3:
-                name, addr = reply[2].split("\n")
+                name, mode, addr = reply[2].split("\n", 2)
                 conn = self.findConn(name)
                 if conn:
                     conn.address = addr
@@ -141,7 +142,8 @@ class Widget(QVBox):
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
         
         elif reply[0] == self.comar.NOTIFY:
-            noti, data = reply[2].split("\n", 1)
+            noti, script, data = reply[2].split("\n", 2)
+
             if noti == "Net.Link.stateChanged":
                 name, state = data.split("\n", 1)
                 if state == "up":
@@ -153,7 +155,16 @@ class Widget(QVBox):
                     conn.online = state
                     self.links.updateItem(conn)
                     return
-    
+            
+            elif noti == "Net.Link.connectionChanged":
+                mode, name = data.split(" ", 1)
+                if mode == "added":
+                    Connection(self.links, self.comar, data, script)
+                elif mode == "deleted":
+                    conn = self.findConn(data)
+                    if conn:
+                        pass
+
     def slotCreate(self):
         links.Window(self)
     
