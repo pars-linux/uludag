@@ -31,7 +31,7 @@ msgstr "Sürüm"
 
 #: src/MainWindow.py:231
 msgid "PiSi Graphical User Interface"
-msgstr "PİSİ Grafiksel Kullanıcı Arayüzü"
+msgstr "PiSi Grafiksel Kullanıcı Arayüzü"
 
 #: src/MainWindow.py:232
 msgid "Add, Upgrade or Remove Packages"
@@ -306,9 +306,8 @@ msgid "Add or Remove Programs"
 msgstr "Program Ekle ve Kaldır"
 
 #: src/PisiKga.py:433 src/FastUpdatesDialog.py:48
-#, fuzzy
 msgid "Fast Updates (only security)"
-msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
+msgstr "Hızlı Güncelleme (sadece güvenlik güncellemeleri)"
 
 #: src/PisiKga.py:594
 msgid "Pisi KGA is already running!"
