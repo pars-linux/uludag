@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 22:24+0200\n"
+"POT-Creation-Date: 2005-12-14 22:27+0200\n"
 "PO-Revision-Date: 2005-12-13 15:02+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -306,7 +306,7 @@ msgstr "Paket(ler)i yükle"
 msgid "Add or Remove Programs"
 msgstr "Program Ekle ve Kaldır"
 
-#: src/PisiKga.py:433
+#: src/PisiKga.py:433 src/FastUpdatesDialog.py:48
 #, fuzzy
 msgid "Fast Updates (only security)"
 msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
@@ -509,11 +509,6 @@ msgstr "Yeni Sürüm"
 msgid "Old version"
 msgstr "Eski sürüm"
 
-#: src/FastUpdatesDialog.py:48
-#, fuzzy
-msgid "Fast Updates (security only)"
-msgstr "Hızlı güncelleme (sadece güvenlik güncellemeleri)"
-
 #: src/FastUpdatesDialog.py:52 src/CustomUpdatesDialog.py:50
 msgid "Total install size:"
 msgstr "Toplam kurulum boyu:"
@@ -537,3 +532,7 @@ msgstr "openoffice.org"
 #: src/CustomUpdatesDialog.py:63
 msgid "Custom updates"
 msgstr "Özel güncelleme"
+
+#, fuzzy
+#~ msgid "Fast Updates (security only)"
+#~ msgstr "Hızlı güncelleme (sadece güvenlik güncellemeleri)"

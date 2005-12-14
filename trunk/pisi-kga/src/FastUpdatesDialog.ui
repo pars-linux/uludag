@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Fast Updates (security only)</string>
+        <string>Fast Updates (only security)</string>
     </property>
     <grid>
         <property name="name">
