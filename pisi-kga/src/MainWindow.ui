@@ -541,7 +541,7 @@ Program Version: Bar</string>
                         <cstring>helpButton</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Yardım</string>
+                        <string>&amp;Help</string>
                     </property>
                 </widget>
                 <spacer>
