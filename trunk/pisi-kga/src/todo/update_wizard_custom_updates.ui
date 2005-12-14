@@ -29,6 +29,22 @@
         </attribute>
         <widget class="QLabel">
             <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>54</x>
+                    <y>325</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Total install size:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
                 <cstring>textLabel1_2_2</cstring>
             </property>
             <property name="geometry">
@@ -38,11 +54,6 @@
                     <width>493</width>
                     <height>31</height>
                 </rect>
-            </property>
-            <property name="font">
-                <font>
-                    <pointsize>9</pointsize>
-                </font>
             </property>
             <property name="text">
                 <string>Please choose the packages to be updated and click on "Next" button. 
@@ -133,22 +144,6 @@ We strongly recommend you to update all the packages shown below.</string>
                     <width>470</width>
                     <height>240</height>
                 </rect>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>54</x>
-                    <y>325</y>
-                    <width>120</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Total install size:</string>
             </property>
         </widget>
     </widget>
