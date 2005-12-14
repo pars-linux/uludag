@@ -56,6 +56,7 @@ class PisiUi(pisi.ui.UI,QObject):
     def notify(self, event, **keywords):
         cEvent = QCustomEvent(QEvent.User+11)
 
+        print event
         data = None
         if event == pisi.ui.installing:
             data = i18n("installing")
