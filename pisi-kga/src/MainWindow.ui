@@ -133,42 +133,11 @@
                         <property name="frameShadow">
                             <enum>Raised</enum>
                         </property>
-                        <vbox>
+                        <grid>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLayoutWidget">
-                                <property name="name">
-                                    <cstring>layout8</cstring>
-                                </property>
-                                <hbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <widget class="KLineEdit">
-                                        <property name="name">
-                                            <cstring>queryEdit</cstring>
-                                        </property>
-                                        <property name="toolTip" stdset="0">
-                                            <string>search package</string>
-                                            <comment>Enter package name or search terms here</comment>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton">
-                                        <property name="name">
-                                            <cstring>searchButton</cstring>
-                                        </property>
-                                        <property name="text">
-                                            <string>&amp;Search</string>
-                                        </property>
-                                        <property name="toolTip" stdset="0">
-                                            <string>search button</string>
-                                            <comment>Search package name, summary, description</comment>
-                                        </property>
-                                    </widget>
-                                </hbox>
-                            </widget>
-                            <widget class="QButtonGroup">
+                            <widget class="QButtonGroup" row="1" column="0">
                                 <property name="name">
                                     <cstring>categoryGroup</cstring>
                                 </property>
@@ -200,7 +169,52 @@
                                     </widget>
                                 </vbox>
                             </widget>
-                        </vbox>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout9</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="KPushButton">
+                                        <property name="name">
+                                            <cstring>clearButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="flat">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>Reset search results</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="KLineEdit">
+                                        <property name="name">
+                                            <cstring>queryEdit</cstring>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>search package</string>
+                                            <comment>Enter package name or search terms here</comment>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>searchButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Search</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>search button</string>
+                                            <comment>Search package name, summary, description</comment>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
                     </widget>
                     <widget class="KListView">
                         <column>
@@ -602,8 +616,25 @@ Program Version: Bar</string>
         </widget>
     </vbox>
 </widget>
+<tabstops>
+    <tabstop>searchButton</tabstop>
+    <tabstop>updateSystemButton</tabstop>
+    <tabstop>preferencesButton</tabstop>
+    <tabstop>installOrRemoveButton</tabstop>
+    <tabstop>clearButton</tabstop>
+    <tabstop>closeButton</tabstop>
+    <tabstop>showOnlyAppsButton</tabstop>
+    <tabstop>showAllPackagesButton</tabstop>
+    <tabstop>showInstallableButton</tabstop>
+    <tabstop>showUpdatesButton</tabstop>
+    <tabstop>showInstalledButton</tabstop>
+    <tabstop>queryEdit</tabstop>
+    <tabstop>listView</tabstop>
+    <tabstop>infoLabel</tabstop>
+</tabstops>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
+    <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>ktextbrowser.h</includehint>

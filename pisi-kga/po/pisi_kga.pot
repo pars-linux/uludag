@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 15:30+0200\n"
+"POT-Creation-Date: 2005-12-14 16:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,111 +16,115 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.py:87 src/MainWindow.py:214
+#: src/MainWindow.py:92 src/MainWindow.py:221
 msgid "Package"
 msgstr ""
 
-#: src/MainWindow.py:88 src/MainWindow.py:215
+#: src/MainWindow.py:93 src/MainWindow.py:222
 msgid "Version"
 msgstr ""
 
-#: src/MainWindow.py:206
+#: src/MainWindow.py:211
 msgid "PiSi Graphical User Interface"
 msgstr ""
 
-#: src/MainWindow.py:207
+#: src/MainWindow.py:212
 msgid "Add, Upgrade or Remove Packages"
 msgstr ""
 
-#: src/MainWindow.py:208
-msgid "search package"
-msgstr ""
-
-#: src/MainWindow.py:209
-msgid "&Search"
-msgstr ""
-
-#: src/MainWindow.py:210
-msgid "search button"
-msgstr ""
-
-#: src/MainWindow.py:212
+#: src/MainWindow.py:214
 msgid "Show only applications"
 msgstr ""
 
-#: src/MainWindow.py:213
+#: src/MainWindow.py:215
 msgid "Show all packages"
 msgstr ""
 
-#: src/MainWindow.py:216 src/PisiKga.py:270
-msgid "No package selected"
+#: src/MainWindow.py:217
+msgid "Reset search results"
 msgstr ""
 
 #: src/MainWindow.py:218
-msgid "operation mode"
+msgid "search package"
 msgstr ""
 
 #: src/MainWindow.py:219
-msgid "Operation mode selector"
+msgid "&Search"
 msgstr ""
 
 #: src/MainWindow.py:220
-msgid "Show &not-Installed packages"
+msgid "search button"
 msgstr ""
 
-#: src/MainWindow.py:221
-msgid "Only show packages which are going to be installed"
-msgstr ""
-
-#: src/MainWindow.py:222
-msgid "Show available &updates"
-msgstr ""
-
-#: src/MainWindow.py:223
-msgid "Only show packages that can be updated"
-msgstr ""
-
-#: src/MainWindow.py:224
-msgid "Show &installed packages"
+#: src/MainWindow.py:223 src/PisiKga.py:270
+msgid "No package selected"
 msgstr ""
 
 #: src/MainWindow.py:225
-msgid "Only show installed packages in your compter"
+msgid "operation mode"
+msgstr ""
+
+#: src/MainWindow.py:226
+msgid "Operation mode selector"
 msgstr ""
 
 #: src/MainWindow.py:227
+msgid "Show &not-Installed packages"
+msgstr ""
+
+#: src/MainWindow.py:228
+msgid "Only show packages which are going to be installed"
+msgstr ""
+
+#: src/MainWindow.py:229
+msgid "Show available &updates"
+msgstr ""
+
+#: src/MainWindow.py:230
+msgid "Only show packages that can be updated"
+msgstr ""
+
+#: src/MainWindow.py:231
+msgid "Show &installed packages"
+msgstr ""
+
+#: src/MainWindow.py:232
+msgid "Only show installed packages in your compter"
+msgstr ""
+
+#: src/MainWindow.py:234
 msgid ""
 "Program Name: Foo\n"
 "Program Version: Bar"
 msgstr ""
 
-#: src/MainWindow.py:229
+#: src/MainWindow.py:236
 msgid "Icon"
 msgstr ""
 
-#: src/MainWindow.py:230
+#: src/MainWindow.py:237
 msgid "<p align=\"left\">Program Name</p>"
 msgstr ""
 
-#: src/MainWindow.py:231
+#: src/MainWindow.py:238
 msgid "&Update Everything"
 msgstr ""
 
-#: src/MainWindow.py:232
+#: src/MainWindow.py:239
 msgid "Click on this button if you want to update your system"
 msgstr ""
 
-#: src/MainWindow.py:233
+#: src/MainWindow.py:240
 msgid "&Repository Settings"
 msgstr ""
 
-#: src/MainWindow.py:234
+#: src/MainWindow.py:241
 msgid ""
 "Click here to add, modify or delete a repository, <br>i.e the server "
 "locations where new software can be fetched."
 msgstr ""
 
-#: src/MainWindow.py:235
+#: src/MainWindow.py:242
 msgid "Install Package(s)"
 msgstr ""
 
@@ -284,7 +288,7 @@ msgstr ""
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:566
+#: src/PisiKga.py:571
 msgid "Pisi KGA is already running!"
 msgstr ""
 
@@ -317,7 +321,7 @@ msgid "Repository &Name"
 msgstr ""
 
 #: src/RepoDialog.py:69
-msgid "Name of the repository e.g <b>pardus-devel</b>"
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr ""
 
 #: src/RepoDialog.py:70
@@ -325,7 +329,7 @@ msgid "Repository &Address"
 msgstr ""
 
 #: src/RepoDialog.py:71
-msgid "Adress of the repository e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr ""
 
 #: src/RepoDialog.py:73 src/SuccessDialog.py:75 src/PreferencesDialog.py:77

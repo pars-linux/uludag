@@ -446,6 +446,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.updatePackages(list(result))
         else:
             self.updateListing() # get the whole list if blank query            
+    
+    def clearSearch(self):
+        self.queryEdit.clear()    
+        self.updateListing()
 
     def showPreferences(self):
         self.pref = Preferences.Preferences(self)
@@ -486,11 +490,12 @@ class MainApplication(programbase):
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
         mainwidget.listView.setResizeMode(KListView.LastColumn)
-        #mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
+        mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
 
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.categoryGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
+        self.connect(mainwidget.clearButton,SIGNAL("clicked()"),mainwidget.clearSearch)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
