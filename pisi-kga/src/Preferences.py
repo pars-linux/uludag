@@ -110,8 +110,12 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         newRepoName = str(self.repo.repoName.text())
         newRepoAddress = str(self.repo.repoAddress.text())
 
-        pisi.api.remove_repo(self.oldRepoName)
-        pisi.api.add_repo(newRepoName,newRepoAddress)
+        if not newRepoName.endswith("xml"):
+            KMessageBox.error(self,i18n('Repository address is wrong!'), i18n("Pisi Error"))
+            return
+        else:                    
+            pisi.api.remove_repo(self.oldRepoName)
+            pisi.api.add_repo(newRepoName,newRepoAddress)
 
         self.updateListView()
         self.repo.close()
