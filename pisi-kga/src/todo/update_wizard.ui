@@ -27,28 +27,6 @@
         <attribute name="title">
             <string>PISI Update Wizard</string>
         </attribute>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel1_2_2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>493</width>
-                    <height>31</height>
-                </rect>
-            </property>
-            <property name="font">
-                <font>
-                    <pointsize>9</pointsize>
-                </font>
-            </property>
-            <property name="text">
-                <string>We suggest you to keep your system updated to increase your privacy. Please
-choose your update methodology below.</string>
-            </property>
-        </widget>
         <widget class="QButtonGroup">
             <property name="name">
                 <cstring>buttonGroup1</cstring>
@@ -96,6 +74,25 @@ choose your update methodology below.</string>
             </widget>
             <widget class="QLabel">
                 <property name="name">
+                    <cstring>pixmapLabel1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>149</y>
+                        <width>48</width>
+                        <height>48</height>
+                    </rect>
+                </property>
+                <property name="pixmap">
+                    <pixmap>image1</pixmap>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
                     <cstring>textLabel1_2</cstring>
                 </property>
                 <property name="geometry">
@@ -105,11 +102,6 @@ choose your update methodology below.</string>
                         <width>340</width>
                         <height>80</height>
                     </rect>
-                </property>
-                <property name="font">
-                    <font>
-                        <pointsize>9</pointsize>
-                    </font>
                 </property>
                 <property name="text">
                     <string>In this method, you can select which packages 
@@ -130,41 +122,11 @@ want to make a fine selection.</string>
                         <height>63</height>
                     </rect>
                 </property>
-                <property name="font">
-                    <font>
-                        <pointsize>9</pointsize>
-                    </font>
-                </property>
                 <property name="text">
                     <string>With fast update, only very essential and critial 
 updates are downloaded and installed to your 
 computer. Choose this method if you don't have 
 much time, but want to keep the system secure.</string>
-                </property>
-            </widget>
-            <widget class="QRadioButton">
-                <property name="name">
-                    <cstring>radioButton1</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>91</x>
-                        <y>152</y>
-                        <width>316</width>
-                        <height>23</height>
-                    </rect>
-                </property>
-                <property name="font">
-                    <font>
-                        <pointsize>11</pointsize>
-                        <bold>1</bold>
-                    </font>
-                </property>
-                <property name="text">
-                    <string>Fast update (only security updates)</string>
-                </property>
-                <property name="checked">
-                    <bool>false</bool>
                 </property>
             </widget>
             <widget class="QRadioButton">
@@ -179,12 +141,6 @@ much time, but want to keep the system secure.</string>
                         <height>23</height>
                     </rect>
                 </property>
-                <property name="font">
-                    <font>
-                        <pointsize>11</pointsize>
-                        <bold>1</bold>
-                    </font>
-                </property>
                 <property name="text">
                     <string>Custom update</string>
                 </property>
@@ -192,25 +148,42 @@ much time, but want to keep the system secure.</string>
                     <bool>true</bool>
                 </property>
             </widget>
-            <widget class="QLabel">
+            <widget class="QRadioButton">
                 <property name="name">
-                    <cstring>pixmapLabel1</cstring>
+                    <cstring>radioButton1</cstring>
                 </property>
                 <property name="geometry">
                     <rect>
-                        <x>20</x>
-                        <y>149</y>
-                        <width>48</width>
-                        <height>48</height>
+                        <x>91</x>
+                        <y>152</y>
+                        <width>316</width>
+                        <height>23</height>
                     </rect>
                 </property>
-                <property name="pixmap">
-                    <pixmap>image1</pixmap>
+                <property name="text">
+                    <string>Fast update (only security updates)</string>
                 </property>
-                <property name="scaledContents">
-                    <bool>true</bool>
+                <property name="checked">
+                    <bool>false</bool>
                 </property>
             </widget>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>493</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>We suggest you to keep your system updated to increase your privacy. Please
+choose your update methodology below.</string>
+            </property>
         </widget>
     </widget>
 </widget>

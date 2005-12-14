@@ -27,28 +27,6 @@
         <attribute name="title">
             <string>Fast updates (only security)</string>
         </attribute>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel1_2_2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>493</width>
-                    <height>31</height>
-                </rect>
-            </property>
-            <property name="font">
-                <font>
-                    <pointsize>9</pointsize>
-                </font>
-            </property>
-            <property name="text">
-                <string>Please choose the packages to be updated and click on "Next" button. 
-We strongly recommend you to update all the packages shown below.</string>
-            </property>
-        </widget>
         <widget class="KListView">
             <column>
                 <property name="text">
@@ -149,6 +127,23 @@ We strongly recommend you to update all the packages shown below.</string>
             </property>
             <property name="text">
                 <string>Total install size:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>493</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Please choose the packages to be updated and click on "Next" button. 
+We strongly recommend you to update all the packages shown below.</string>
             </property>
         </widget>
     </widget>
