@@ -23,22 +23,15 @@ import PisiKga # for loadIcon
 import pisi.api
 import pisi.repodb
 
-class Preferences(PreferencesDialog.PrefsDialog):
-    def __init__(self, parent=None, forceRepoUpdate=False):
+class Preferences(PreferencesDialog.PreferencesDialog):
+    def __init__(self, parent=None):
         PreferencesDialog.PrefsDialog.__init__(self, parent)
         self.command = ThreadRunner.MyThread(parent)
-        self.setCaption(u'PiSi KGA - Depo Ayarları')
-        self.infoLabel.setPixmap(PisiKga.loadIcon('info'))
-        self.networkLabel.setPixmap(PisiKga.loadIcon('network'))
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
         self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateButtons)
-        self.connect(self.moveupButton, SIGNAL("clicked()"), self.moveUp)
-        self.connect(self.movedownButton, SIGNAL("clicked()"), self.moveDown)
-        self.connect(self.updateRepoButton, SIGNAL("clicked()"), self.updateAllRepos)
         self.removeButton.setEnabled(False)
         self.repoListView.setSorting(-1)
-        self.forceRepoUpdate = forceRepoUpdate
         self.readConfig()
         self.updateListView()
 
@@ -50,39 +43,8 @@ class Preferences(PreferencesDialog.PrefsDialog):
 		
         if self.repoListView.currentItem().isSelected():
             self.removeButton.setEnabled(moreThanOne)
-            self.moveupButton.setEnabled(moreThanOne)
-            self.movedownButton.setEnabled(moreThanOne)
         else:
             self.removeButton.setEnabled(False)
-            self.moveupButton.setEnabled(False)
-            self.movedownButton.setEnabled(False)
-
-    def moveUp(self):
-        item = self.repoListView.currentItem()
-        parent = item.itemAbove()
-        
-        if not parent:
-            return
-        
-        if parent.itemAbove():
-            item.moveItem(parent.itemAbove())
-        else:
-            self.repoListView.takeItem(item)
-            self.repoListView.insertItem(item)
-            self.repoListView.setSelected(item, True)
-
-        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(parent.text(0)))
-
-    def moveDown(self):
-        item = self.repoListView.currentItem()
-        sibling = item.itemBelow()
-
-        if not sibling:
-            return
-
-        item.moveItem(sibling)
-
-        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(sibling.text(0)))
 
     def updateAllRepos(self):
         self.updateRepoButton.setEnabled(False)
