@@ -38,6 +38,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
         self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateButtons)
         self.connect(self.updateRepoButton, SIGNAL("clicked()"), self.updateAllRepos)
+        self.connect(self.moveUpButton, SIGNAL("clicked()"), self.moveUp)
+        self.connect(self.moveDownButton, SIGNAL("clicked()"), self.moveDown)
+        
         
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
@@ -54,10 +57,15 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         if self.repoListView.currentItem().isSelected():
             self.editButton.setEnabled(True)
             self.removeButton.setEnabled(moreThanOne)
+            self.moveUpButton.setEnabled(moreThanOne)
+            self.moveDownButton.setEnabled(moreThanOne)
+            
         else:
             self.editButton.setEnabled(False)
             self.removeButton.setEnabled(False)
-
+            self.moveUpButton.setEnabled(False)
+            self.moveDownButton.setEnabled(False)
+            
     def updateAllRepos(self):
         self.updateRepoButton.setEnabled(False)
         
@@ -68,7 +76,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         # Let the main listview update itself
         event = QCustomEvent(CustomEvent.UpdateListing)
         QThread.postEvent(self.receiver,event)
-                                            
+
     def addNewRepo(self):
         self.repo = RepoDialog.RepoDialog(self)
         self.repo.setCaption(i18n("Add New Repository"))
@@ -91,7 +99,33 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         repoItem = self.repoListView.currentItem()
         self.repoListView.takeItem(repoItem)
         pisi.api.remove_repo(repoItem.text(0))
-                    
+
+    def moveUp(self):
+        item = self.repoListView.currentItem()
+        parent = item.itemAbove()
+        
+        if not parent:
+            return
+        
+        if parent.itemAbove():
+            item.moveItem(parent.itemAbove())
+        else:
+            self.repoListView.takeItem(item)
+            self.repoListView.insertItem(item)
+            self.repoListView.setSelected(item, True)
+
+        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(parent.text(0)))
+
+    def moveDown(self):
+        item = self.repoListView.currentItem()
+        sibling = item.itemBelow()
+        
+        if not sibling:
+            return
+        
+        item.moveItem(sibling)
+        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(sibling.text(0)))
+        
     def processNewRepo(self):
         repoName = str(self.repo.repoName.text())
         repoAddress = str(self.repo.repoAddress.text())
