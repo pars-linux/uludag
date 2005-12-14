@@ -332,12 +332,11 @@ msgstr "Depo %1 zaten var."
 
 #: src/Preferences.py:112
 msgid "<qt>Do you want to update repository <b>%1</b></qt>"
-msgstr ""
+msgstr "<qt><b>%1</b> deposunu güncellemek istiyor musunuz?</b></qt>"
 
 #: src/Preferences.py:112
-#, fuzzy
 msgid "Pisi Question"
-msgstr "PiSi Soru"
+msgstr "PiSi Sorusu"
 
 #: src/PreferencesDialog.py:31 src/PreferencesDialog.py:71
 msgid "Repository Name"
@@ -345,7 +344,7 @@ msgstr "Depo Adı"
 
 #: src/PreferencesDialog.py:32 src/PreferencesDialog.py:72
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #: src/PreferencesDialog.py:70
 msgid "PiSi Preferences"
@@ -355,6 +354,7 @@ msgstr "PiSi Ayarları"
 msgid ""
 "You can see current software repositories and corresponding addresses here"
 msgstr ""
+"Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
 
 #: src/PreferencesDialog.py:74
 msgid "&Add New Repository"
@@ -362,7 +362,7 @@ msgstr "Yeni Depo &Ekle"
 
 #: src/PreferencesDialog.py:75
 msgid "Click here to add a new software repository"
-msgstr ""
+msgstr "Yeni bir depo eklemek için burayı tıklayın"
 
 #: src/PreferencesDialog.py:76
 msgid "&Edit Repository"
@@ -370,7 +370,7 @@ msgstr "&Depoyu Değiştir"
 
 #: src/PreferencesDialog.py:77
 msgid "Click here to modify the name or address of a repository"
-msgstr ""
+msgstr "Bir deponun adını ya da adresini değiştirmek için burayı tıklayın"
 
 #: src/PreferencesDialog.py:78
 msgid "&Remove Repository"
@@ -378,7 +378,7 @@ msgstr "Depoyu &Kaldır"
 
 #: src/PreferencesDialog.py:79
 msgid "Click here to delete a repository from the list"
-msgstr ""
+msgstr "Listeden bir depo silmek için burayı tıklayın"
 
 #: src/PreferencesDialog.py:80
 msgid "&Update All Repositories"
@@ -386,14 +386,13 @@ msgstr "Tüm Depoları &Güncelle"
 
 #: src/PreferencesDialog.py:81
 msgid "Click here to update all repositories so that you can use  "
-msgstr ""
+msgstr "Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
 
 #: src/PreferencesDialog.py:82 src/RepoDialog.py:73 src/SuccessDialog.py:75
 msgid "&Ok"
 msgstr "&Tamam"
 
 #: src/PreferencesDialog.py:83
-#, fuzzy
 msgid "<b>Add, Edit or Remove Repositories</b>"
 msgstr "<b>Depo Ekle, Değiştir veya Kaldır</b>"
 
@@ -488,55 +487,48 @@ msgstr ""
 "bir güncelleme yöntemi seçin."
 
 #: src/UpdateWizardDialog.py:654
-#, fuzzy
 msgid "PiSi Update Wizard"
 msgstr "PiSi Güncelleme Sihirbazı"
 
 #: src/FastUpdatesDialog.py:29 src/FastUpdatesDialog.py:50
 #: src/CustomUpdatesDialog.py:35 src/CustomUpdatesDialog.py:53
-#, fuzzy
 msgid "Package name"
-msgstr "Paket"
+msgstr "Paket adı"
 
 #: src/FastUpdatesDialog.py:31 src/FastUpdatesDialog.py:51
 #: src/CustomUpdatesDialog.py:37 src/CustomUpdatesDialog.py:54
-#, fuzzy
 msgid "New Version"
-msgstr "Sürüm"
+msgstr "Yeni Sürüm"
 
 #: src/FastUpdatesDialog.py:32 src/FastUpdatesDialog.py:52
 #: src/CustomUpdatesDialog.py:38 src/CustomUpdatesDialog.py:55
-#, fuzzy
 msgid "Old version"
-msgstr "Sürüm"
+msgstr "Eski sürüm"
 
 #: src/FastUpdatesDialog.py:55 src/CustomUpdatesDialog.py:58
 msgid "kdebase"
-msgstr ""
+msgstr "kdebase"
 
 #: src/FastUpdatesDialog.py:58 src/CustomUpdatesDialog.py:61
 msgid "openoffice.org"
-msgstr ""
+msgstr "openoffice.org"
 
 #: src/FastUpdatesDialog.py:60 src/CustomUpdatesDialog.py:50
 msgid "Total install size:"
-msgstr ""
+msgstr "Toplam kurulum boyu:"
 
 #: src/FastUpdatesDialog.py:61 src/CustomUpdatesDialog.py:51
 msgid ""
 "Please choose the packages to be updated and click on \"Next\" button. \n"
 "We strongly recommend you to update all the packages shown below."
 msgstr ""
+"Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
+"Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
 
 #: src/FastUpdatesDialog.py:63
-#, fuzzy
 msgid "Fast updates (only security)"
-msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
+msgstr "Hızlı güncelleme (sadece güvenlik güncellemeleri)"
 
 #: src/CustomUpdatesDialog.py:63
-#, fuzzy
 msgid "Custom updates"
-msgstr "Özel güncelle"
-
-#~ msgid "Repository URL"
-#~ msgstr "Depo Adresi"
+msgstr "Özel güncelleme"
