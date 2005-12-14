@@ -70,6 +70,3 @@ class MyThread(QThread):
             event.setData(unicode(e))
             QThread.postEvent(self.receiver,event)
         
-        # Finished so send back finished event
-        event = QCustomEvent(QEvent.User+1)
-        QThread.postEvent(self.receiver,event)
