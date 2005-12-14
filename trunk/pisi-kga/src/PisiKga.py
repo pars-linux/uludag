@@ -364,7 +364,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
         # Check if updateSystemButton should be enabled
         if len(pisi.api.list_upgradable()) > 0:
-            self.updateSystemButton.setEnabled((not nonprivMode))
+            self.updateSystemButton.setEnabled(not nonprivMode)
         else:
             self.updateSystemButton.setEnabled(False)
     
