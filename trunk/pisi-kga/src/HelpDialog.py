@@ -12,11 +12,20 @@
 #
 # Authors:  İsmail Dönmez <ismail@uludag.org.tr>
 
-from kdecore import KURL
+from qt import *
+from kdecore import *
 from khtml import *
 
-class HelpDialog(KHTMLPart):
+class HelpDialog(QDialog):
     def __init__(self, parent=None):
-        KHTMLPart.__init__(self)
-        self.view().resize(500,600)
-        self.openURL(KURL("file:///home/cartman/SVN/pisi-kga/help/tr/main_help.html"))
+        QDialog.__init__(self)
+        self.setCaption("PiSi KGA Help")
+        self.layout = QGridLayout(self)
+        self.htmlPart = KHTMLPart(self)
+        self.resize(500,600)
+        self.layout.addWidget(self.htmlPart.view(),1,1)
+        self.htmlPart.openURL(KURL(locate("data","pisi_kga/help/tr/main_help.html")))
+
+    # Workaround http://www.opensubscriber.com/message/pykde%40mats.imk.fraunhofer.de/1917266.html
+    def close(self, alsoDelete = 1):  
+           return QDialog.close(self, 1)
