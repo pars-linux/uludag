@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=PiSi KGA
-Name[en]=PiSi KGA
-Name[tr]=PiSi KGA
+Name[en]=Add,Update or Remove Programs
+Name[tr]=Program Ekle,Güncelle ve Kaldır
 Comment=PiSi Package Manager Graphical User Interface
 Comment[en]=PiSi Package Manager Graphical User Interface
 Comment[tr]=PiSi Paket Yöneticisi Kullanıcı Grafik Arayüzü
-Icon=daemons.png
+Icon=pisi_kga
 X-KDE-ModuleType=Library
 X-KDE-Library=pisi_kga
 X-KDE-FactoryName=pisi_kga
