@@ -142,7 +142,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.close()
         self.resetProgressBar()
 
-        if self.confirmed == KMessageBox.Cancel:
+        if self.confirmed == KMessageBox.No:
             pass
         elif not self.errorMessage:
             success = Success.Success(self)
