@@ -29,8 +29,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         PreferencesDialog.PreferencesDialog.__init__(self, parent)
         self.command = ThreadRunner.MyThread(parent)
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
+        self.connect(self.editButton, SIGNAL("clicked()"), self.editRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
         self.connect(self.repoListView, SIGNAL("selectionChanged()"), self.updateButtons)
+        self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
         self.repoListView.setSorting(-1)
         self.updateListView()
@@ -42,8 +44,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             moreThanOne = False
 		
         if self.repoListView.currentItem().isSelected():
+            self.editButton.setEnabled(True)
             self.removeButton.setEnabled(moreThanOne)
         else:
+            self.editButton.setEnabled(False)
             self.removeButton.setEnabled(False)
 
     def updateAllRepos(self):
@@ -60,6 +64,17 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.repo.okButton, SIGNAL("clicked()"), self.processNewRepo)
         self.repo.show()
 
+    def editRepo(self):
+        self.repo = RepoDialog.RepoDialog(self)
+        self.repo.setCaption(i18n("Edit Repository"))
+        self.oldRepoName = self.repoListView.currentItem().text(0)
+        self.oldRepoAddress = self.repoListView.currentItem().text(1)
+        self.repo.repoName.setText(self.oldRepoName)
+        self.repo.repoAddress.setText(self.oldRepoAddress)
+        self.repo.setModal(True)
+        self.connect(self.repo.okButton, SIGNAL("clicked()"), self.updateRepoSettings)
+        self.repo.show()
+                        
     def removeRepo(self):
         repoItem = self.repoListView.currentItem()
         self.repoListView.takeItem(repoItem)
@@ -73,12 +88,21 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         except pisi.repodb.Error:
             KMessageBox.error(self,i18n('Repository %1 already exists!').arg(repoName), i18n("Pisi Error"))
             return
-        item = QListViewItem(self.repoListView,None)
-        item.moveItem(self.repoListView.lastChild())
-        item.setText(0, repoName)
-        item.setText(1, repoAddress)
+        
+        self.updateListView()
         self.repo.close()
-    
+
+    def updateRepoSettings(self):
+        # FIXME there should be a better way to do this
+        newRepoName = str(self.repo.repoName.text())
+        newRepoAddress = str(self.repo.repoAddress.text())
+
+        pisi.api.remove_repo(self.oldRepoName)
+        pisi.api.add_repo(newRepoName,newRepoAddress)
+
+        self.updateListView()
+        self.repo.close()
+   
     def updateListView(self):
         self.repoList = pisi.context.repodb.list()
         self.repoListView.clear()
