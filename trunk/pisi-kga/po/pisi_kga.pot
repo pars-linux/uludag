@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 21:16+0200\n"
+"POT-Creation-Date: 2005-12-14 21:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -304,16 +304,24 @@ msgstr ""
 msgid "Edit Repository"
 msgstr ""
 
-#: src/Preferences.py:100 src/Preferences.py:118
+#: src/Preferences.py:100 src/Preferences.py:125
 msgid "Repository address is wrong!"
 msgstr ""
 
-#: src/Preferences.py:100 src/Preferences.py:106 src/Preferences.py:118
+#: src/Preferences.py:100 src/Preferences.py:106 src/Preferences.py:125
 msgid "Pisi Error"
 msgstr ""
 
 #: src/Preferences.py:106
 msgid "Repository %1 already exists!"
+msgstr ""
+
+#: src/Preferences.py:112
+msgid "<qt>Do you want to update repository <b>%1</b></qt>"
+msgstr ""
+
+#: src/Preferences.py:112
+msgid "Pisi Question"
 msgstr ""
 
 #: src/PreferencesDialog.py:31 src/PreferencesDialog.py:71

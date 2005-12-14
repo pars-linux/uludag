@@ -109,6 +109,13 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.updateListView()
         self.repo.close()
 
+        confirm = KMessageBox.questionYesNo(self,i18n('<qt>Do you want to update repository <b>%1</b></qt>').arg(repoName),i18n("Pisi Question"))
+        if confirm == KMessageBox.Yes:
+            self.command.update_repo(repoName)
+            # Let the main listview update itself
+            event = QCustomEvent(CustomEvent.UpdateListing)
+            QThread.postEvent(self.receiver,event)
+
     def updateRepoSettings(self):
         # FIXME there should be a better way to do this
         newRepoName = str(self.repo.repoName.text())
