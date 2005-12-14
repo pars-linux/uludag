@@ -506,7 +506,6 @@ class MainApplication(programbase):
         toplayout.addWidget(mainwidget)
         mainwidget.listView.setResizeMode(KListView.LastColumn)
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
-        mainwidget.helpButton.hide()
 
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.categoryGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
