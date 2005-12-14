@@ -142,6 +142,7 @@ class Widget(QVBox):
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
         
         elif reply[0] == self.comar.NOTIFY:
+            print reply[2]
             noti, script, data = reply[2].split("\n", 2)
 
             if noti == "Net.Link.stateChanged":
@@ -159,11 +160,12 @@ class Widget(QVBox):
             elif noti == "Net.Link.connectionChanged":
                 mode, name = data.split(" ", 1)
                 if mode == "added":
-                    Connection(self.links, self.comar, data, script)
+                    if not self.findConn(name):
+                        Connection(self.links, self.comar, name, script)
                 elif mode == "deleted":
-                    conn = self.findConn(data)
+                    conn = self.findConn(name)
                     if conn:
-                        pass
+                        self.links.removeItem(self.links.index(conn))
 
     def slotCreate(self):
         links.Window(self)
