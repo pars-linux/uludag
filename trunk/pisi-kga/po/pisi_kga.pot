@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 15:25+0200\n"
+"POT-Creation-Date: 2005-12-14 15:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -296,11 +296,11 @@ msgstr ""
 msgid "Edit Repository"
 msgstr ""
 
-#: src/Preferences.py:96
+#: src/Preferences.py:96 src/Preferences.py:114
 msgid "Repository address is wrong!"
 msgstr ""
 
-#: src/Preferences.py:96 src/Preferences.py:102
+#: src/Preferences.py:96 src/Preferences.py:102 src/Preferences.py:114
 msgid "Pisi Error"
 msgstr ""
 
@@ -317,10 +317,18 @@ msgid "Repository &Name"
 msgstr ""
 
 #: src/RepoDialog.py:69
+msgid "Name of the repository e.g <b>pardus-devel</b>"
+msgstr ""
+
+#: src/RepoDialog.py:70
 msgid "Repository &Address"
 msgstr ""
 
-#: src/RepoDialog.py:71 src/SuccessDialog.py:75 src/PreferencesDialog.py:77
+#: src/RepoDialog.py:71
+msgid "Adress of the repository e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr ""
+
+#: src/RepoDialog.py:73 src/SuccessDialog.py:75 src/PreferencesDialog.py:77
 msgid "&Ok"
 msgstr ""
 

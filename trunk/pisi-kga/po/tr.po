@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 15:25+0200\n"
+"POT-Creation-Date: 2005-12-14 15:30+0200\n"
 "PO-Revision-Date: 2005-12-13 15:02+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -310,11 +310,11 @@ msgstr "Yeni Depo Ekle"
 msgid "Edit Repository"
 msgstr "Depoyu Değiştir"
 
-#: src/Preferences.py:96
+#: src/Preferences.py:96 src/Preferences.py:114
 msgid "Repository address is wrong!"
 msgstr "Depo Adresi Yanlış!"
 
-#: src/Preferences.py:96 src/Preferences.py:102
+#: src/Preferences.py:96 src/Preferences.py:102 src/Preferences.py:114
 msgid "Pisi Error"
 msgstr "PiSi Hatası"
 
@@ -331,10 +331,18 @@ msgid "Repository &Name"
 msgstr "&Depo Adı"
 
 #: src/RepoDialog.py:69
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
+
+#: src/RepoDialog.py:70
 msgid "Repository &Address"
 msgstr "&Depo Adresi"
 
-#: src/RepoDialog.py:71 src/SuccessDialog.py:75 src/PreferencesDialog.py:77
+#: src/RepoDialog.py:71
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:73 src/SuccessDialog.py:75 src/PreferencesDialog.py:77
 msgid "&Ok"
 msgstr "&Tamam"
 

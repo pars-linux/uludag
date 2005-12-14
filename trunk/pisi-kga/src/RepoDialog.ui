@@ -37,6 +37,9 @@
                     <property name="buddy" stdset="0">
                         <cstring>repoName</cstring>
                     </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Name of the repository, e.g &lt;b&gt;pardus-devel&lt;/b&gt;</string>
+                    </property>
                 </widget>
                 <widget class="KLineEdit">
                     <property name="name">
@@ -52,6 +55,9 @@
                     </property>
                     <property name="buddy" stdset="0">
                         <cstring>repoAddress</cstring>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Adress of the repository, e.g &lt;b&gt;http://foo.bar.com/pisi-index.xml&lt;/b&gt;</string>
                     </property>
                 </widget>
                 <widget class="KLineEdit">
