@@ -5,7 +5,6 @@
 # Copyright (C) 2005 TUBİTAK/UEKAE
 # This file is distributed under the same license as the PiSi KGA package.
 #
-# cartman <ismail@uludag.org.tr>, 2005.
 # İsmail Dönmez <ismail@uludag.org.tr>, 2005.
 # Eray Ozkural <eray@uludag.org.tr>, 2005.
 msgid ""
