@@ -17,6 +17,7 @@
 # System
 import sys
 import math
+import posix
 
 # PyQt/PyKDE
 from qt import *
@@ -238,6 +239,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.moreInfoLabelDetails.setText(i18n("Program Version :")+" <b>"+self.package.version+"</b><br>"+i18n("Program Size :")+"<b> "+size_string+"</b>")
             
     def updateButtons(self, listViewItem=None):
+
+        if nonprivMode:
+            self.installOrRemoveButton.setEnabled(False)
+            return
+
         try:
             text = str(listViewItem.text(0))
 
@@ -322,7 +328,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
             if self.categoryGroup.selectedId()==0:
                 if not isApp(package):
                     continue   # do not show if not an app
-            item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
+            if not nonprivMode:
+                item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
+            else:
+                item = QListViewItem(parent,pack)
             item.setText(1,package.version)
             packageItems.append(item)
             
@@ -355,7 +364,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
         # Check if updateSystemButton should be enabled
         if len(pisi.api.list_upgradable()) > 0:
-            self.updateSystemButton.setEnabled(True)
+            self.updateSystemButton.setEnabled((not nonprivMode))
         else:
             self.updateSystemButton.setEnabled(False)
     
@@ -514,6 +523,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.preferencesButton,SIGNAL("clicked()"),mainwidget.showPreferences)
         self.connect(mainwidget.searchButton,SIGNAL("clicked()"),mainwidget.searchPackage)
 
+        mainwidget.preferencesButton.setEnabled(not nonprivMode)
         mainwidget.selectionGroup.setButton(0);
         mainwidget.categoryGroup.setButton(1); #FIXME: workaround for RC1, should be 0 for 1.0 release
         mainwidget.updateListing();
@@ -574,6 +584,7 @@ class MainApplication(programbase):
 # This is the entry point used when running this module outside of kcontrol.
 def main():
     global kapp
+    global nonprivMode
     
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
@@ -582,6 +593,7 @@ def main():
         print i18n("Pisi KGA is already running!")
         return
 
+    nonprivMode = posix.getuid()
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
     kapp.setMainWidget(myapp)
