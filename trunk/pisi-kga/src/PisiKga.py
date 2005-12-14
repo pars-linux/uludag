@@ -532,9 +532,6 @@ class MainApplication(programbase):
         self.helpWidget = HelpDialog.HelpDialog()
         self.helpWidget.show()
 
-    def __del__(self):
-        pass
-
     def exec_loop(self):
         global programbase
         
