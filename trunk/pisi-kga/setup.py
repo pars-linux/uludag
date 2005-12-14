@@ -20,7 +20,7 @@ kdedistutils.setup(
     version="1.0",
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
-    url="http://www.uludag.org.tr/projects/pisi",
+    url="http://www.uludag.org.tr/projeler/pisi/index.html",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
