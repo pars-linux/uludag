@@ -10,6 +10,7 @@
 #
 
 from qt import *
+from kdecore import *
 import connection
 import links
 import comar
@@ -30,8 +31,8 @@ class Connection(QListBoxItem):
         self.f2 = QFont()
         self.f1.setBold(True)
         self.f1.setPointSize(self.f1.pointSize() + 4)
-        self.up_pix = QPixmap("net-up.png")
-        self.down_pix = QPixmap("net-down.png")
+        self.up_pix = QPixmap(locate("data", "net_kga/net-up.png"))
+        self.down_pix = QPixmap(locate("data", "net_kga/net-down.png"))
         comar.call_package("Net.Link.connectionInfo", link_name, [ "name", name ], id=2)
         comar.call_package("Net.Link.getAddress", link_name, [ "name", name ], id=3)
         comar.call_package("Net.Link.getState", link_name, [ "name", name ], id=4)
