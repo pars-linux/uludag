@@ -121,7 +121,7 @@ class Widget(QVBox):
                     self.links.updateItem(conn)
                     return
             elif reply[1] == 3:
-                name, mode, addr = reply[2].split("\n", 2)
+                name, mode, addr, gate = reply[2].split("\n")
                 conn = self.findConn(name)
                 if conn:
                     conn.address = addr

@@ -173,6 +173,8 @@ class Window(QMainWindow):
         
         self.w_name = self.basic.name.edit
         self.w_device = self.basic.device.device
+        self.w_address = self.basic.address.address.edit
+        self.w_gateway = self.basic.address.gateway.edit
         self.device_list = {}
         
         self.show()
@@ -193,6 +195,8 @@ class Window(QMainWindow):
     
     def slotAccept(self):
         name = self.w_name.text()
+        if name != self.name:
+            self.comar.call_package("Net.Link.deleteConnection", self.link_name, [ "name", self.name ])
         device = self.device_list[str(self.basic.device.device.currentText())]
         address = self.basic.address.address.edit.text()
         gateway = self.basic.address.gateway.edit.text()
@@ -214,8 +218,9 @@ class Window(QMainWindow):
                         self.w_device.insertItem(info)
                         self.device_list[info] = uid
             elif reply[1] == 2:
-                name, addr = reply[2].split("\n")
-                self.basic.address.address.edit.setText(addr)
+                name, mode, addr, gate = reply[2].split("\n")
+                self.w_address.setText(addr)
+                self.w_gateway.setText(gate)
             elif reply[1] == 3:
                 self.modes = reply[2]
                 if not "remote" in self.modes:
