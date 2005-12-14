@@ -47,6 +47,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         
         self.repoListView.setSorting(-1)
         self.updateListView()
+        self.updateButtons()
         
     def updateButtons(self):
         if self.repoListView.childCount() > 1:
