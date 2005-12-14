@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 20:50+0200\n"
+"POT-Creation-Date: 2005-12-14 21:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Clear search results"
 msgstr ""
 
-#: src/MainWindow.py:243 src/PisiKga.py:279
+#: src/MainWindow.py:243 src/PisiKga.py:280
 msgid "No package selected"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Install Package(s)"
 msgstr ""
 
-#: src/PisiUi.py:61
+#: src/PisiUi.py:61 src/PisiKga.py:111
 msgid "installing"
 msgstr ""
 
@@ -200,99 +200,99 @@ msgid ""
 "update repository."
 msgstr ""
 
-#: src/PisiKga.py:112
+#: src/PisiKga.py:113
 msgid "Updating repositories"
 msgstr ""
 
-#: src/PisiKga.py:137
+#: src/PisiKga.py:138
 msgid "PiSi Info"
 msgstr ""
 
-#: src/PisiKga.py:156
+#: src/PisiKga.py:157
 msgid "All repositories are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:159
+#: src/PisiKga.py:160
 msgid "All selected packages are successfully installed!"
 msgstr ""
 
-#: src/PisiKga.py:160
+#: src/PisiKga.py:161
 msgid "installed"
 msgstr ""
 
-#: src/PisiKga.py:162
+#: src/PisiKga.py:163
 msgid "All selected packages are successfully removed!"
 msgstr ""
 
-#: src/PisiKga.py:163
+#: src/PisiKga.py:164
 msgid "removed"
 msgstr ""
 
-#: src/PisiKga.py:165
+#: src/PisiKga.py:166
 msgid "All selected packages are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:166
+#: src/PisiKga.py:167
 msgid "updated"
 msgstr ""
 
-#: src/PisiKga.py:173 src/PisiKga.py:407
+#: src/PisiKga.py:174 src/PisiKga.py:408
 msgid "PiSi Error"
 msgstr ""
 
-#: src/PisiKga.py:181
+#: src/PisiKga.py:182
 msgid "Preparing PiSi..."
 msgstr ""
 
-#: src/PisiKga.py:188
+#: src/PisiKga.py:189
 msgid "Now %1 <b>%2</b> (Speed: %3 %4)"
 msgstr ""
 
-#: src/PisiKga.py:191
+#: src/PisiKga.py:192
 msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
 msgstr ""
 
-#: src/PisiKga.py:238
+#: src/PisiKga.py:239
 msgid " Byte"
 msgstr ""
 
-#: src/PisiKga.py:240
+#: src/PisiKga.py:241
 msgid "Program Version :"
 msgstr ""
 
-#: src/PisiKga.py:240
+#: src/PisiKga.py:241
 msgid "Program Size :"
 msgstr ""
 
-#: src/PisiKga.py:273
+#: src/PisiKga.py:274
 msgid "Selected %1 packages, total size %2 MB"
 msgstr ""
 
-#: src/PisiKga.py:275
+#: src/PisiKga.py:276
 msgid "Selected %1 packages, total size %2 KB"
 msgstr ""
 
-#: src/PisiKga.py:277
+#: src/PisiKga.py:278
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr ""
 
-#: src/PisiKga.py:377
+#: src/PisiKga.py:378
 msgid "Remove package(s)"
 msgstr ""
 
-#: src/PisiKga.py:382
+#: src/PisiKga.py:383
 msgid "Update package(s)"
 msgstr ""
 
-#: src/PisiKga.py:392
+#: src/PisiKga.py:393
 msgid "Install package(s)"
 msgstr ""
 
-#: src/PisiKga.py:412
+#: src/PisiKga.py:413
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:593
+#: src/PisiKga.py:591
 msgid "Pisi KGA is already running!"
 msgstr ""
 
@@ -396,7 +396,8 @@ msgstr ""
 msgid "Show &More Information >>"
 msgstr ""
 
-#: src/UpdateWizardDialog.py:682
+#: src/UpdateWizardDialog.py:682 src/FastUpdatesDialog.py:49
+#: src/CustomUpdatesDialog.py:49
 msgid "Welcome to PISI update wizard"
 msgstr ""
 
@@ -432,4 +433,45 @@ msgstr ""
 
 #: src/UpdateWizardDialog.py:696
 msgid "PISI Update Wizard"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:29 src/FastUpdatesDialog.py:50
+#: src/CustomUpdatesDialog.py:35 src/CustomUpdatesDialog.py:53
+msgid "Package name"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:31 src/FastUpdatesDialog.py:51
+#: src/CustomUpdatesDialog.py:37 src/CustomUpdatesDialog.py:54
+msgid "New Version"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:32 src/FastUpdatesDialog.py:52
+#: src/CustomUpdatesDialog.py:38 src/CustomUpdatesDialog.py:55
+msgid "Old version"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:55 src/CustomUpdatesDialog.py:58
+msgid "kdebase"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:58 src/CustomUpdatesDialog.py:61
+msgid "openoffice.org"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:60 src/CustomUpdatesDialog.py:50
+msgid "Total install size:"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:61 src/CustomUpdatesDialog.py:51
+msgid ""
+"Please choose the packages to be updated and click on \"Next\" button. \n"
+"We strongly recommend you to update all the packages shown below."
+msgstr ""
+
+#: src/FastUpdatesDialog.py:63
+msgid "Fast updates (only security)"
+msgstr ""
+
+#: src/CustomUpdatesDialog.py:63
+msgid "Custom updates"
 msgstr ""
