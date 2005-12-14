@@ -14,6 +14,7 @@
 
 from qt import *
 import pisi.api
+from Enums import *
 
 class MyThread(QThread):
     def __init__(self, widget):
@@ -59,18 +60,18 @@ class MyThread(QThread):
                 self.removing = False
                 
             elif self.updatingRepo:
-                event = QCustomEvent(QEvent.User+2)
+                event = QCustomEvent(CustomEvent.RepositoryUpdate)
                 event.setData(self.repo)
                 QThread.postEvent(self.receiver,event)
                 pisi.api.update_repo(self.repo)
 
         except Exception,e:
-            pisi.api.finalize()
-            event = QCustomEvent(QEvent.User+4)
+            pisi.api.finalize(CustomEvent.PisiError)
+            event = QCustomEvent()
             event.setData(unicode(e))
             QThread.postEvent(self.receiver,event)
        
         # Send a finish event because PiSi won't notify for database updates
         # FIX pisi instead!
-        event = QCustomEvent(QEvent.User+1)
+        event = QCustomEvent(CustomEvent.Finished)
         QThread.postEvent(self.receiver,event)
