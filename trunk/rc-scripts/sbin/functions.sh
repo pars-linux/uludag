@@ -174,6 +174,23 @@ get_libdir() {
 	echo ${CONF_LIBDIR:=lib}
 }
 
+# Wrapper function for i18n support
+translate() {
+    aux=${*}
+    if test -f /etc/init.$LC_ALL
+    then
+        file=/etc/init.$LC_ALL
+
+        value="$(grep "\"$aux\"" -n $file > /dev/null; if [ $? == 0 ]; then echo $(grep "$aux" -n $file | head -n `awk 'BEGIN{FS=":"}{print $1+1}'` $file |  tail -n 1 | awk 'BEGIN {FS="\""}{print $2}'); else echo $aux; fi)"
+
+        # not translated
+        if [ ! -z "$value" ]
+        then
+            aux=$value
+        fi
+    fi
+}
+
 # void esyslog(char* priority, char* tag, char* message)
 #
 #    use the system logger to log a message
@@ -244,7 +261,8 @@ einfo() {
 einfon() {
 	[[ ${RC_QUIET_STDOUT} == yes ]] && return 0
 	[[ ${RC_ENDCOL} != yes && ${LAST_E_CMD} == ebegin ]] && echo
-	echo -ne " ${GOOD}*${NORMAL} ${RC_INDENTATION}$*"
+	translate ${*}
+	echo -ne " ${GOOD}*${NORMAL} ${RC_INDENTATION}${aux}"
 	LAST_E_CMD=einfon
 	return 0
 }
@@ -254,11 +272,12 @@ einfon() {
 #    show a warning message + log it
 #
 ewarn() {
+	translate ${*}
 	if [[ ${RC_QUIET_STDOUT} == yes ]]; then
-		echo " $*"
+		echo " ${aux}"
 	else
 		[[ ${RC_ENDCOL} != yes && ${LAST_E_CMD} == ebegin ]] && echo
-		echo -e " ${WARN}*${NORMAL} ${RC_INDENTATION}$*"
+		echo -e " ${WARN}*${NORMAL} ${RC_INDENTATION}${aux}"
 	fi
 
 	# Log warnings to system log
@@ -273,11 +292,12 @@ ewarn() {
 #    show an error message + log it
 #
 eerror() {
+	translate ${*}
 	if [[ ${RC_QUIET_STDOUT} == yes ]]; then
-		echo " $*" >/dev/stderr
+		echo " ${aux}" >/dev/stderr
 	else
 		[[ ${RC_ENDCOL} != yes && ${LAST_E_CMD} == ebegin ]] && echo
-		echo -e " ${BAD}*${NORMAL} ${RC_INDENTATION}$*"
+		echo -e " ${BAD}*${NORMAL} ${RC_INDENTATION}${aux}"
 	fi
 
 	# Log errors to system log
@@ -295,13 +315,6 @@ ebegin() {
 	local msg="$*" dots spaces=${RC_DOT_PATTERN//?/ }
 	[[ ${RC_QUIET_STDOUT} == yes ]] && return 0
 
-	if [[ -n ${RC_DOT_PATTERN} ]]; then
-		dots=$(printf "%$(( COLS - 3 - ${#RC_INDENTATION} - ${#msg} - 7 ))s" '')
-		dots=${dots//${spaces}/${RC_DOT_PATTERN}}
-		msg="${msg}${dots}"
-	else
-		msg="${msg} ..."
-	fi
 	einfon "${msg}"
 	[[ ${RC_ENDCOL} == yes ]] && echo
 
