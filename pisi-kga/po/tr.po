@@ -412,7 +412,7 @@ msgstr "&Daha fazla bilgi göster >>"
 
 #: src/UpdateWizardDialog.py:682
 msgid "Welcome to PISI update wizard"
-msgstr ""
+msgstr "PiSi güncelleme sihirbazına hoşgeldiniz"
 
 #: src/UpdateWizardDialog.py:684
 msgid ""
@@ -421,6 +421,10 @@ msgid ""
 "updates. Click on \"Custom Update\" button if you \n"
 "want to make a fine selection."
 msgstr ""
+"Bu yöntemde, güvenlik yamalaarı da dahil olacak \n"
+"şekilde hangi paketlerin güncelleneceğini \n"
+"belirtebilirsiniz. Seçim yapmak için lütfen \n"
+"\"Özel Güncelleme\" düğmesine tıklayın."
 
 #: src/UpdateWizardDialog.py:688
 msgid ""
@@ -429,21 +433,29 @@ msgid ""
 "computer. Choose this method if you don't have \n"
 "much time, but want to keep the system secure."
 msgstr ""
+"Hızlı güncelleme ile sadece en önemli ve gerekli \n"
+"güncellemeler yapılır ve indirilen paketler sisteme\n"
+"kurulur. Eğer az zamanınız ve yavaş internetiniz\n"
+"varsa ve bu aynı zamanda sistemi güncel tutmak istiyorsanız\n"
+"bu seçeneği tıklayın."
 
 #: src/UpdateWizardDialog.py:692
 msgid "Custom update"
-msgstr ""
+msgstr "Özel güncelle"
 
 #: src/UpdateWizardDialog.py:693
 msgid "Fast update (only security updates)"
-msgstr ""
+msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
 
 #: src/UpdateWizardDialog.py:694
 msgid ""
 "We suggest you to keep your system updated to increase your privacy. Please\n"
 "choose your update methodology below."
 msgstr ""
+"Sisteminizi sürekli olarak güncel tutmanızı öneririz. Lütfen aşağıdan\n"
+"bir güncelleme yöntemi seçin."
 
 #: src/UpdateWizardDialog.py:696
 msgid "PISI Update Wizard"
-msgstr ""
+msgstr "PiSi Güncelleme Sihirbazı"
+
