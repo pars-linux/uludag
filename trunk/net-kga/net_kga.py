@@ -24,7 +24,7 @@ version = "1.0_alpha4"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("network_kga", "Network KGA", version, \
+    about_data = KAboutData("net_kga", "Network KGA", version, \
                             description, KAboutData.License_GPL,
                             "(C) 2005 UEKAE/TÜBİTAK", None, None, "gurer@uludag.org.tr")
     
@@ -52,13 +52,13 @@ class MainApplication(programbase):
         else:
             KCModule.__init__(self,parent,name)
             # Create a configuration object.
-            self.config = KConfig("network_kga")
+            self.config = KConfig("net_kga")
             self.setButtons(0)
             self.aboutdata = AboutData()
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        #KGlobal.iconLoader().addAppDir("pisi_kga")
+        KGlobal.iconLoader().addAppDir("net_kga")
 
         mainwidget = mainwin.Widget(self)
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )

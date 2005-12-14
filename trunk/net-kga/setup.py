@@ -16,14 +16,14 @@
 import kdedistutils
 
 kdedistutils.setup(
-    name="network_kga",
+    name="net_kga",
     version="1.0_alpha1",
     author="Gürer Özen",
     author_email="gurer@uludag.org.tr",
     url="http://www.uludag.org.tr/projects/comar",
     min_qt_version = "3.3.0",
     license = "GPL",
-    application_data = ['net_kga.py','mainwin.py','connection.py', 'widgets.py', 'links.py' ],
+    application_data = ['net_kga.py','mainwin.py','connection.py', 'widgets.py', 'links.py', 'net-up.png', 'net-down.png' ],
     executable_links = [('net-kga','net_kga.py')],
     kcontrol_modules = [ ('net_kga.desktop','net_kga.py')],
     )
