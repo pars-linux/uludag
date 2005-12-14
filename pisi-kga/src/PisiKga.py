@@ -34,6 +34,7 @@ import Preferences
 import ThreadRunner
 import PisiUi
 import Success
+import UpdateWizardDialog
 
 # Pisi Imports
 import pisi.ui
@@ -425,14 +426,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateSystem(self):
         self.installOrRemoveButton.setEnabled(False)
-
-        self.pDialog.setCaption(i18n("Add or Remove Programs"))
-        self.pDialog.show()
-                                
-        list = pisi.api.list_upgradable()
-        self.totalAppCount = len(list)
-        self.operation = "upgrade"            
-        self.command.upgrade(list)
+        self.updateDialog = UpdateWizardDialog.UpdateWizardDialog()
+        self.updateDialog.setModal(True)
+        self.updateDialog.show()
            
     def installSingle(self):
         app = []
