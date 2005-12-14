@@ -35,6 +35,7 @@ import ThreadRunner
 import PisiUi
 import Success
 import UpdateWizardDialog
+import FastUpdatesDialog
 
 # Pisi Imports
 import pisi.ui
@@ -427,9 +428,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateSystem(self):
         self.installOrRemoveButton.setEnabled(False)
-        self.updateDialog = UpdateWizardDialog.UpdateWizardDialog()
-        self.updateDialog.setModal(True)
-        self.updateDialog.show()
+        self.updateWizard = UpdateWizardDialog.UpdateWizardDialog()
+        self.fastUpdatesDialog = FastUpdatesDialog.FastUpdatesDialog()
+        self.updateWizard.addPage(self.fastUpdatesDialog, i18n("Fast Updates (security only)"))
+        self.updateWizard.setModal(True)
+        self.updateWizard.show()
            
     def installSingle(self):
         app = []
