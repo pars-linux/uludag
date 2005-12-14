@@ -12,6 +12,7 @@
 #
 # Authors:  İsmail Dönmez <ismail@uludag.org.tr>
 
+import os
 from qt import *
 from kdecore import *
 from khtml import *
@@ -24,8 +25,12 @@ class HelpDialog(QDialog):
         self.htmlPart = KHTMLPart(self)
         self.resize(500,600)
         self.layout.addWidget(self.htmlPart.view(),1,1)
-        self.htmlPart.openURL(KURL(locate("data","pisi_kga/help/tr/main_help.html")))
-
+        
+        if os.environ['LANG'].startswith('tr_TR'):
+            self.htmlPart.openURL(KURL(locate("data","pisi_kga/help/tr/main_help.html")))
+        else:
+            self.htmlPart.openURL(KURL(locate("data","pisi_kga/help/en/main_help.html")))
+            
     # Workaround http://www.opensubscriber.com/message/pykde%40mats.imk.fraunhofer.de/1917266.html
     def close(self, alsoDelete = 1):  
            return QDialog.close(self, 1)
