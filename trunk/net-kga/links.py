@@ -97,3 +97,4 @@ class Window(QMainWindow):
         link = self.links.selectedItem()
         if link:
             connection.Window(self.my_parent, "new connection", link.link_name, 1)
+            self.close(True)
