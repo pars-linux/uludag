@@ -12,9 +12,13 @@
 #
 # Authors: İsmail Dönmez <ismail@uludag.org.tr>
 
+# KDE/Qt imports
 from kdecore import i18n
 from kdeui import *
 from qt import *
+
+# Local imports
+from Enums import *
 import PreferencesDialog
 import RepoDialog
 import ThreadRunner
@@ -62,7 +66,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.updateRepoButton.setEnabled(True)
 
         # Let the main listview update itself
-        event = QCustomEvent(QEvent.User+10)
+        event = QCustomEvent(CustomEvent.UpdateListing)
         QThread.postEvent(self.receiver,event)
                                             
     def addNewRepo(self):
@@ -134,8 +138,3 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         self.updateRepoButton.setEnabled(self.repoListView.childCount() > 0 )
 
-    def customEvent(self,event):
-        if event.type() == QEvent.User+3:
-            self.repoList = pisi.api.ctx.repodb.list()
-            self.updateListView()
-            

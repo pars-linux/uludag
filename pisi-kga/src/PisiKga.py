@@ -25,6 +25,7 @@ from kdeui import *
 import kdedesigner
 
 # Local imports
+from Enums import *
 import HelpDialog
 import MainWindow
 import ProgressDialog
@@ -102,28 +103,28 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def customEvent(self, event):
-        if event.type() == QEvent.User+1:
+        if event.type() == CustomEvent.Finished:
             if self.pDialog.progressBar.progress() == 100:
                 self.finished()
-        elif event.type() == QEvent.User+2: 
+        elif event.type() == CustomEvent.RepositoryUpdate: 
             self.pDialog.setCaption(i18n("Updating repositories"))
             self.updatedRepo = event.data()
             self.pDialog.show()
-        elif event.type() == QEvent.User+4:
+        elif event.type() == CustomEvent.PisiError:
             self.pisiError(event.data())
-        elif event.type() == QEvent.User+5:
+        elif event.type() == CustomEvent.PisiInfo:
             self.operationInfo = event.data()
-        elif event.type() == QEvent.User+6:
+        elif event.type() == CustomEvent.AskConfirmation:
             self.showConfirm()
-        elif event.type() == QEvent.User+7:
+        elif event.type() == CustomEvent.UpdateProgress:
             self.filename = event.data().section(' ',0,0)
             self.percent = event.data().section(' ',1,1).toInt()[0]
             self.rate = int(str(event.data().section(' ',2,2)).split('.')[0])
             self.symbol = event.data().section(' ',3,3)
             self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
-        elif event.type() == QEvent.User+10:
+        elif event.type() == CustomEvent.UpdateListing:
             self.updateListing()
-        elif event.type() == QEvent.User+11:
+        elif event.type() == CustomEvent.PisiNotify:
             if event.data():
                 self.currentOperation = event.data()
                 self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
@@ -132,7 +133,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
     def showConfirm(self):
         self.confirmed = KMessageBox.questionYesNo(self, self.operationInfo, i18n("PiSi Info"))
-        event = QCustomEvent(QEvent.User+8)
+        event = QCustomEvent(CustomEvent.UserConfirmed)
         if self.confirmed == KMessageBox.No:
             event.setData("False")
             self.finished()

@@ -14,6 +14,7 @@
 
 from kdecore import i18n
 from qt import *
+from Enums import *
 import pisi.ui
 import time
 
@@ -26,23 +27,23 @@ class PisiUi(pisi.ui.UI,QObject):
         self.confirmed = None
 
     def customEvent(self, cEvent):
-        if cEvent.type() == QEvent.User+8:
+        if cEvent.type() == CustomEvent.UserConfirmed:
             self.confirmed = cEvent.data()
         
     def error(self, msg):
-        cEvent = QCustomEvent(QEvent.User+4)
+        cEvent = QCustomEvent(CustomEvent.PisiError)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
 
     def info(self, msg):
-        cEvent = QCustomEvent(QEvent.User+5)
+        cEvent = QCustomEvent(CustomEvent.PisiInfo)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
         # print the thing on stdout you don't lose a thing
         print msg
 
     def confirm(self, msg):
-        cEvent = QCustomEvent(QEvent.User+6)
+        cEvent = QCustomEvent(CustomEvent.AskConfirmation)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)        
         
@@ -54,7 +55,7 @@ class PisiUi(pisi.ui.UI,QObject):
             return False
 
     def notify(self, event, **keywords):
-        cEvent = QCustomEvent(QEvent.User+11)
+        cEvent = QCustomEvent(CustomEvent.PisiNotify)
         data = None
         if event == pisi.ui.installing:
             data = i18n("installing")
@@ -65,13 +66,13 @@ class PisiUi(pisi.ui.UI,QObject):
         elif event == pisi.ui.removing:
             data = i18n("removing")
         elif event == pisi.ui.installed or event == pisi.ui.upgraded or event == pisi.ui.removed:
-            cEvent = QCustomEvent(QEvent.User+1)
+            cEvent = QCustomEvent(CustomEvent.Finished)
 
         if data:
             cEvent.setData(data)
         QThread.postEvent(self.receiver,cEvent)
 
     def display_progress(self, filename, percent, rate, symbol, eta):
-        cEvent = QCustomEvent(QEvent.User+7)
+        cEvent = QCustomEvent(CustomEvent.UpdateProgress)
         cEvent.setData(QString(filename)+QString(" ")+QString.number(percent)+QString(" ")+QString.number(rate)+QString(" ")+QString(symbol))
         QThread.postEvent(self.receiver,cEvent)
