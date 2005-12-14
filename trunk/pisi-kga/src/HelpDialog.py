@@ -33,7 +33,7 @@ class HelpDialog(QDialog):
     
     # Workaround http://mats.imk.fraunhofer.de/pipermail/pykde/2005-August/010945.html
     def close(self, alsoDelete = 1):  
-           return QDialog.close(self, 1)
+        return QDialog.close(self, 1)
 
     def __del__(self):
         return QDialog.close(self, 1)
