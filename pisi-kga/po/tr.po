@@ -28,7 +28,7 @@ msgstr "Paket"
 
 #: src/MainWindow.py:88 src/MainWindow.py:215
 msgid "Version"
-msgstr "Versiyon"
+msgstr "Sürüm"
 
 #: src/MainWindow.py:206
 msgid "PiSi Graphical User Interface"
@@ -76,7 +76,7 @@ msgstr "Yüklü &olmayan paketleri göster"
 
 #: src/MainWindow.py:221
 msgid "Only show packages which are going to be installed"
-msgstr "Sadece yüklenicek paketleri göster"
+msgstr "Sadece yüklenecek paketleri göster"
 
 #: src/MainWindow.py:222
 msgid "Show available &updates"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: src/MainWindow.py:229
 msgid "Icon"
-msgstr "İkon"
+msgstr "Simge"
 
 #: src/MainWindow.py:230
 msgid "<p align=\"left\">Program Name</p>"
@@ -116,7 +116,7 @@ msgstr "Herşeyi &Güncelle"
 
 #: src/MainWindow.py:232
 msgid "Click on this button if you want to update your system"
-msgstr "Sisteminizi güncellemek istiyorsanız bu düğmeye basın"
+msgstr "Sisteminizi güncellemek istiyorsanız bu düğmeye tıklayın"
 
 #: src/MainWindow.py:233
 msgid "&Repository Settings"
@@ -128,7 +128,7 @@ msgid ""
 "locations where new software can be fetched."
 msgstr ""
 "Buraya tıklayarak halihazırdaki depoları değiştirebilir ya da yeni depo "
-"ekliyebilirsiniz"
+"ekleyebilirsiniz"
 
 #: src/MainWindow.py:235
 msgid "Install Package(s)"
@@ -164,7 +164,7 @@ msgstr "Yazar"
 
 #: src/PisiKga.py:59
 msgid "GUI Design & Usability"
-msgstr "Arayüz Dizaynı ve Kullanılabilirlik"
+msgstr "Arayüz Tasarımı ve Kullanılabilirlik"
 
 #: src/PisiKga.py:60
 msgid "Intuitive Search Interface"
@@ -204,7 +204,7 @@ msgid ""
 "update repository."
 msgstr ""
 "Depo veritabanını güncelleyene kadar yeni programlar kuramayacak, eski "
-"programları güncelleyemiyeceksiniz."
+"programları güncelleyemeyeceksiniz."
 
 #: src/PisiKga.py:108
 msgid "Updating repositories"
@@ -216,11 +216,11 @@ msgstr "PiSi Bilgi"
 
 #: src/PisiKga.py:152
 msgid "All repositories are successfully updated!"
-msgstr "Tüm depolar başarıyla güncellendi!"
+msgstr "Tüm depolar başarıyla güncellendi."
 
 #: src/PisiKga.py:155
 msgid "All selected packages are successfully installed!"
-msgstr "Tüm paketler başarıyla yüklendi!"
+msgstr "Tüm paketler başarıyla yüklendi."
 
 #: src/PisiKga.py:156
 msgid "installed"
@@ -228,7 +228,7 @@ msgstr "yüklendi"
 
 #: src/PisiKga.py:158
 msgid "All selected packages are successfully removed!"
-msgstr "Tüm paketler başarıyla kaldırıldı!"
+msgstr "Tüm paketler başarıyla kaldırıldı."
 
 #: src/PisiKga.py:159
 msgid "removed"
@@ -236,7 +236,7 @@ msgstr "kaldırıldı"
 
 #: src/PisiKga.py:161
 msgid "All selected packages are successfully updated!"
-msgstr "Tüm paketler başarıyla güncellendi!"
+msgstr "Tüm paketler başarıyla güncellendi."
 
 #: src/PisiKga.py:162
 msgid "updated"
@@ -260,15 +260,15 @@ msgstr "Güncellenen depo <b>%1</b> (Hız: %2 %3)"
 
 #: src/PisiKga.py:234
 msgid " Byte"
-msgstr "Byte"
+msgstr " Bayt"
 
 #: src/PisiKga.py:236
 msgid "Program Version :"
-msgstr "Programın Versiyonu:"
+msgstr "Programın Sürümü: "
 
 #: src/PisiKga.py:236
 msgid "Program Size :"
-msgstr "Programın Büyüklüğü:"
+msgstr "Programın Büyüklüğü: "
 
 #: src/PisiKga.py:264
 msgid "Selected %1 packages, total size %2 MB"
@@ -280,7 +280,7 @@ msgstr "%1 paket seçili, toplam %2 KB"
 
 #: src/PisiKga.py:268
 msgid "Selected %1 packages, total size %2 Bytes"
-msgstr "%1 paket seçili, toplam %2 Byte"
+msgstr "%1 paket seçili, toplam %2 bayt"
 
 #: src/PisiKga.py:365
 msgid "Remove package(s)"
@@ -300,7 +300,7 @@ msgstr "Program Ekle ve Kaldır"
 
 #: src/PisiKga.py:566
 msgid "Pisi KGA is already running!"
-msgstr "PiSi KGA halihazırda çalışıyor!"
+msgstr "PiSi KGA başka bir yerde çalışıyor."
 
 #: src/Preferences.py:70
 msgid "Add New Repository"
@@ -312,7 +312,7 @@ msgstr "Depoyu Değiştir"
 
 #: src/Preferences.py:96 src/Preferences.py:114
 msgid "Repository address is wrong!"
-msgstr "Depo Adresi Yanlış!"
+msgstr "Depo Adresi Yanlış."
 
 #: src/Preferences.py:96 src/Preferences.py:102 src/Preferences.py:114
 msgid "Pisi Error"
@@ -320,7 +320,7 @@ msgstr "PiSi Hatası"
 
 #: src/Preferences.py:102
 msgid "Repository %1 already exists!"
-msgstr "Depo %1 zaten var!"
+msgstr "Depo %1 zaten var."
 
 #: src/RepoDialog.py:67
 msgid "Repository Dialog"
@@ -336,7 +336,7 @@ msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
 
 #: src/RepoDialog.py:70
 msgid "Repository &Address"
-msgstr "&Depo Adresi"
+msgstr "D&epo Adresi"
 
 #: src/RepoDialog.py:71
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
@@ -400,4 +400,4 @@ msgstr "Tüm Depoları &Güncelle"
 
 #: src/PreferencesDialog.py:78
 msgid "<b>Add,Edit or Remove Repositories</b>"
-msgstr "<b>Depo Ekle,Değiştir veya Kaldır</b>"
+msgstr "<b>Depo Ekle, Değiştir veya Kaldır</b>"
