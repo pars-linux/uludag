@@ -40,7 +40,25 @@ kdm fix edilene kadar disabled
 -->
 
 <item type="rect">
-    <pos x="%47" y="%74" anchor="nw" height="box" width="box"/>
+    <pos x="%45" y="%64" anchor="nw" height="box" width="box"/>
+    <box orientation="horizontal" homogenous="false" spacing="8">
+        <item type="pixmap" id="login_button" button="true">
+            <normal file="login.png" tint="#dddddd"/>
+            <prelight file="login.png"/>
+            <active file="login.png" tint="#e07070"/>
+        </item>
+        <item type="label">
+            <pos y="%25"/>
+            <normal color="#F0E0D0" font="Sans Bold 22"/>
+            <stock type="login"/>
+        </item>
+    </box>
+</item>
+
+
+
+<item type="rect">
+    <pos x="%2" y="%74" anchor="nw" height="box" width="box"/>
     <box orientation="horizontal" homogenous="false" spacing="8">
         <item type="pixmap" id="shutdown_button" button="true">
             <normal file="exit.png" tint="#dddddd"/>
@@ -99,14 +117,14 @@ kdm fix edilene kadar disabled
 
 <!-- hata mesajı -->
 <item type="label" id="pam-error">
-	<pos anchor="c" x="%50" y="69%"/>
+	<pos anchor="c" x="%50" y="75%"/>
 	<normal color="#FFFFFF" font="Sans Bold 18"/>
 </item>
 
 <!-- capslock uyarısı -->
 <item type="rect" id="caps-lock-warning">
 	<normal color="#252525" alpha="0.5"/>
-	<pos anchor="nw" x="%1" y="77%" width="box" height="box"/>
+	<pos anchor="nw" x="%42" y="77%" width="box" height="box"/>
 	<box orientation="vertical" xpadding="6" ypadding="6">
 		<item type="label">
 			<normal color="#ffffff" font="Sans Bold 12"/>
