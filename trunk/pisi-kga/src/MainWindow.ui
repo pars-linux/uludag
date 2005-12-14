@@ -27,11 +27,11 @@
     <property name="caption">
         <string>PiSi Graphical User Interface</string>
     </property>
-    <vbox>
+    <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QFrame">
+        <widget class="QFrame" row="0" column="0">
             <property name="name">
                 <cstring>header</cstring>
             </property>
@@ -87,7 +87,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QSplitter">
+        <widget class="QSplitter" row="1" column="0">
             <property name="name">
                 <cstring>splitter2</cstring>
             </property>
@@ -518,7 +518,7 @@ Program Version: Bar</string>
                 </vbox>
             </widget>
         </widget>
-        <widget class="KSeparator">
+        <widget class="KSeparator" row="2" column="0">
             <property name="name">
                 <cstring>kSeparator1</cstring>
             </property>
@@ -531,14 +531,22 @@ Program Version: Bar</string>
                 </sizepolicy>
             </property>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="QLayoutWidget" row="3" column="0">
             <property name="name">
-                <cstring>layout15</cstring>
+                <cstring>layout9</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>helpButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Yardım</string>
+                    </property>
+                </widget>
                 <spacer>
                     <property name="name">
                         <cstring>spacer3</cstring>
@@ -551,7 +559,7 @@ Program Version: Bar</string>
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>486</width>
+                            <width>440</width>
                             <height>20</height>
                         </size>
                     </property>
@@ -614,7 +622,7 @@ Program Version: Bar</string>
                 </widget>
             </hbox>
         </widget>
-    </vbox>
+    </grid>
 </widget>
 <tabstops>
     <tabstop>searchButton</tabstop>
@@ -641,6 +649,7 @@ Program Version: Bar</string>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kseparator.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
 </includehints>

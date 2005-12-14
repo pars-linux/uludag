@@ -25,6 +25,7 @@ from kdeui import *
 import kdedesigner
 
 # Local imports
+import HelpDialog
 import MainWindow
 import ProgressDialog
 import Preferences
@@ -455,6 +456,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pref = Preferences.Preferences(self)
         self.pref.show()
 
+    def showHelp(self):
+        self.helpWidget = HelpDialog.HelpDialog(self)
+        self.helpWidget.show()
+
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
 
@@ -492,11 +497,13 @@ class MainApplication(programbase):
         mainwidget.listView.setResizeMode(KListView.LastColumn)
         mainwidget.clearButton.setPixmap(loadIcon('locationbar_erase', KIcon.Small))
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
+        mainwidget.helpButton.hide()
 
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.categoryGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.clearButton,SIGNAL("clicked()"),mainwidget.clearSearch)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
+        self.connect(mainwidget.helpButton,SIGNAL("clicked()"),self.showHelp)
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateSelectionInfo)
@@ -510,6 +517,10 @@ class MainApplication(programbase):
         mainwidget.selectionGroup.setButton(0);
         mainwidget.categoryGroup.setButton(1); #FIXME: workaround for RC1, should be 0 for 1.0 release
         mainwidget.updateListing();
+    
+    def showHelp(self):
+        self.helpWidget = HelpDialog.HelpDialog()
+        self.helpWidget.show()
 
     def __del__(self):
         pass
