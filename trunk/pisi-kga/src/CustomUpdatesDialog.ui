@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>update_wizard</class>
+<class>CustomUpdatesDialog</class>
 <widget class="QWizard">
     <property name="name">
-        <cstring>update_wizard</cstring>
+        <cstring>CustomUpdatesDialog</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -12,11 +12,6 @@
             <height>441</height>
         </rect>
     </property>
-    <property name="font">
-        <font>
-            <family>Bitstream Vera Sans</family>
-        </font>
-    </property>
     <property name="caption">
         <string>Welcome to PISI update wizard</string>
     </property>
@@ -25,8 +20,41 @@
             <cstring>WizardPage</cstring>
         </property>
         <attribute name="title">
-            <string>Fast updates (only security)</string>
+            <string>Custom updates</string>
         </attribute>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>54</x>
+                    <y>325</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Total install size:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>493</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Please choose the packages to be updated and click on "Next" button. 
+We strongly recommend you to update all the packages shown below.</string>
+            </property>
+        </widget>
         <widget class="KListView">
             <column>
                 <property name="text">
@@ -111,39 +139,6 @@
                     <width>470</width>
                     <height>240</height>
                 </rect>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>50</x>
-                    <y>330</y>
-                    <width>120</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Total install size:</string>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel1_2_2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>493</width>
-                    <height>31</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Please choose the packages to be updated and click on "Next" button. 
-We strongly recommend you to update all the packages shown below.</string>
             </property>
         </widget>
     </widget>
