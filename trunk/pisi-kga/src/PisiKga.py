@@ -430,7 +430,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.installOrRemoveButton.setEnabled(False)
         self.updateWizard = UpdateWizardDialog.UpdateWizardDialog()
         self.fastUpdatesDialog = FastUpdatesDialog.FastUpdatesDialog()
-        self.updateWizard.addPage(self.fastUpdatesDialog, i18n("Fast Updates (security only)"))
+        self.updateWizard.addPage(self.fastUpdatesDialog, i18n("Fast Updates (only security)"))
         self.updateWizard.setModal(True)
         self.updateWizard.show()
            

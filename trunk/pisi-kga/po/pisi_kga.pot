@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-14 22:22+0200\n"
+"POT-Creation-Date: 2005-12-14 22:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -292,8 +292,8 @@ msgstr ""
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:433 src/FastUpdatesDialog.py:48
-msgid "Fast Updates (security only)"
+#: src/PisiKga.py:433
+msgid "Fast Updates (only security)"
 msgstr ""
 
 #: src/PisiKga.py:594
@@ -480,6 +480,10 @@ msgstr ""
 #: src/FastUpdatesDialog.py:33 src/FastUpdatesDialog.py:51
 #: src/CustomUpdatesDialog.py:38 src/CustomUpdatesDialog.py:55
 msgid "Old version"
+msgstr ""
+
+#: src/FastUpdatesDialog.py:48
+msgid "Fast Updates (security only)"
 msgstr ""
 
 #: src/FastUpdatesDialog.py:52 src/CustomUpdatesDialog.py:50
