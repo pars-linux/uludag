@@ -600,7 +600,9 @@ def main():
 # Factory function for KControl
 def create_pisi_kga(parent,name):
     global kapp
+    global nonPrivMode
     
+    nonPrivMode = posix.getuid()
     kapp = KApplication.kApplication()
     return MainApplication(parent, name)
 
