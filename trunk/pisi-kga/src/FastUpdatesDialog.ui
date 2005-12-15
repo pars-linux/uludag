@@ -64,6 +64,24 @@
                     <property name="name">
                         <cstring>listView</cstring>
                     </property>
+                    <property name="selectionMode" stdset="0">
+                        <enum>NoSelection</enum>
+                    </property>
+                    <property name="allColumnsShowFocus">
+                        <bool>true</bool>
+                    </property>
+                    <property name="showSortIndicator">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizeMode">
+                        <enum>LastColumn</enum>
+                    </property>
+                    <property name="fullWidth">
+                        <bool>true</bool>
+                    </property>
+                    <property name="itemsMovable">
+                        <bool>false</bool>
+                    </property>
                 </widget>
                 <widget class="QLabel">
                     <property name="name">
