@@ -306,10 +306,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         for component in components:
             componentItem = KListViewItem(self.listView,None)
             componentItem.setOpen(True)
-            name = component.name
-            if component.localName:
-                name += u' (%s)' % component.localName
-                #name = unicode(component.localName)
+            name = u'(%s)' % component.localName
             componentItem.setText(0, name)
             componentItem.setPixmap(0,loadIcon('package_system', KIcon.Small))
             componentItem.setSelectable(False)
