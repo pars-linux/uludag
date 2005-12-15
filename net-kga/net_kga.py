@@ -14,6 +14,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import mainwin
+import comar
 
 def I18N_NOOP(str):
     return str
@@ -59,8 +60,15 @@ class MainApplication(programbase):
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
         KGlobal.iconLoader().addAppDir("net_kga")
+        
+        try:
+            mainwidget = mainwin.Widget(self)
+        except comar.Error:
+            QMessageBox.warning(self, "Cannot connect to COMAR!",
+                "Please restart COMAR daemon and try again.",
+                QMessageBox.Ok, QMessageBox.NoButton)
+            raise Exception
 
-        mainwidget = mainwin.Widget(self)
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
 
