@@ -2,16 +2,13 @@
 
 # Form implementation generated from reading ui file 'personalinfodlg.ui'
 #
-# Created: Prş Ara 15 14:49:02 2005
+# Created: Prş Ara 15 20:24:58 2005
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
 
 
 from qt import *
-from kdecore import *
-from kdeui import *
-
 
 image0_data = \
     "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a\x00\x00\x00\x0d" \
@@ -244,19 +241,15 @@ class PersonalInfoDlg(QWidget):
         self.hardwareInfoLabel.setTextFormat(QLabel.RichText)
         self.hardwareInfoLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
 
-        LayoutWidget_2 = QWidget(self,"layout9")
-        LayoutWidget_2.setGeometry(QRect(195,150,370,24))
-        layout9 = QHBoxLayout(LayoutWidget_2,11,6,"layout9")
-
-        self.hardwareInfoLabel_2 = QLabel(LayoutWidget_2,"hardwareInfoLabel_2")
+        self.hardwareInfoLabel_2 = QLabel(self,"hardwareInfoLabel_2")
+        self.hardwareInfoLabel_2.setGeometry(QRect(180,150,48,22))
         hardwareInfoLabel_2_font = QFont(self.hardwareInfoLabel_2.font())
         self.hardwareInfoLabel_2.setFont(hardwareInfoLabel_2_font)
         self.hardwareInfoLabel_2.setTextFormat(QLabel.RichText)
         self.hardwareInfoLabel_2.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
-        layout9.addWidget(self.hardwareInfoLabel_2)
 
-        self.lineEdit1 = QLineEdit(LayoutWidget_2,"lineEdit1")
-        layout9.addWidget(self.lineEdit1)
+        self.lineEmail = QLineEdit(self,"lineEmail")
+        self.lineEmail.setGeometry(QRect(225,150,320,22))
 
         self.languageChange()
 
@@ -265,16 +258,19 @@ class PersonalInfoDlg(QWidget):
 
 
     def languageChange(self):
-        self.setCaption(i18n("Feedback Wizard"))
-        self.stepLabel.setText(i18n("<b>Step 7 of 7</b>"))
-        self.hardwareInfoBox_2.setText(i18n("Add me to your Pardus announce list"))
+        self.setCaption(self.__tr("Feedback Wizard"))
+        self.stepLabel.setText(self.__tr("<b>Step 7 of 7</b>"))
+        self.hardwareInfoBox_2.setText(self.__tr("Add me to your Pardus announce list"))
         self.hardwareInfoBox_2.setAccel(QString.null)
-        self.hardwareInfoBox.setText(i18n("I'm a developer, send me your development related e-mails"))
+        self.hardwareInfoBox.setText(self.__tr("I'm a developer, send me your development related e-mails"))
         self.hardwareInfoBox.setAccel(QString.null)
-        self.hardwareInfoBox_3.setText(i18n("Send me security related e-mails"))
+        self.hardwareInfoBox_3.setText(self.__tr("Send me security related e-mails"))
         self.hardwareInfoBox_3.setAccel(QString.null)
-        self.hardwareInfoLabel.setText(i18n("<h2>Your personal information (optional)</h2>\n"
+        self.hardwareInfoLabel.setText(self.__tr("<h2>Your personal information (optional)</h2>\n"
 "You can submit your e-mail address for inclusion in our low traffic\n"
 "announces."))
-        self.hardwareInfoLabel_2.setText(i18n("E-mail:"))
+        self.hardwareInfoLabel_2.setText(self.__tr("E-mail:"))
 
+
+    def __tr(self,s,c = None):
+        return qApp.translate("PersonalInfoDlg",s,c)
