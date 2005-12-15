@@ -107,9 +107,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def customEvent(self, event):
         if event.type() == CustomEvent.Finished:
-            if self.pDialog.progressBar.progress() == 100:
-                self.finished()
-            self.currentOperation = i18n("downloading")
+            self.finished()
+            if self.operation == "remove":
+                self.currentOperation = i18n("removing")
+            else:
+                self.currentOperation = i18n("downloading")
         elif event.type() == CustomEvent.RepositoryUpdate: 
             self.pDialog.setCaption(i18n("Updating repositories"))
             self.updatedRepo = event.data()

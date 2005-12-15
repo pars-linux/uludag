@@ -71,7 +71,6 @@ class MyThread(QThread):
             event.setData(unicode(e))
             QThread.postEvent(self.receiver,event)
        
-        # Send a finish event because PiSi won't notify for database updates
-        # FIX pisi instead!
+        # Send a finish event
         event = QCustomEvent(CustomEvent.Finished)
         QThread.postEvent(self.receiver,event)

@@ -71,8 +71,6 @@ class PisiUi(pisi.ui.UI,QObject):
             data = i18n("extracting")
         elif event == pisi.ui.removing:
             data = i18n("removing")
-        elif event == pisi.ui.installed or event == pisi.ui.upgraded or event == pisi.ui.removed:
-            cEvent = QCustomEvent(CustomEvent.Finished)
 
         if data:
             cEvent.setData(data)
