@@ -101,16 +101,60 @@
             </widget>
         </vbox>
     </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoPixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>171</x>
+                <y>61</y>
+                <width>428</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Your personal information (optional)&lt;/h2&gt;
+You can submit your e-mail address for inclusion in our low traffic
+announces.</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
     <widget class="QLayoutWidget">
         <property name="name">
             <cstring>layout9</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>200</x>
+                <x>195</x>
                 <y>150</y>
                 <width>370</width>
-                <height>25</height>
+                <height>24</height>
             </rect>
         </property>
         <hbox>
@@ -141,50 +185,6 @@
                 </property>
             </widget>
         </hbox>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>hardwareInfoLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>171</x>
-                <y>61</y>
-                <width>428</width>
-                <height>80</height>
-            </rect>
-        </property>
-        <property name="font">
-            <font>
-            </font>
-        </property>
-        <property name="text">
-            <string>&lt;h2&gt;Your personal information (optional)&lt;/h2&gt;
-You can submit your e-mail address for inclusion in our low traffic
-announces.</string>
-        </property>
-        <property name="textFormat">
-            <enum>RichText</enum>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>hardwareInfoPixmap</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>-5</x>
-                <y>0</y>
-                <width>142</width>
-                <height>290</height>
-            </rect>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
     </widget>
 </widget>
 <images>

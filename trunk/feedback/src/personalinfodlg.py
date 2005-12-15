@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'bilgitemini.ui'
+# Form implementation generated from reading ui file 'personalinfodlg.ui'
 #
-# Created: Prş Ara 15 14:17:39 2005
+# Created: Prş Ara 15 14:49:02 2005
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
@@ -233,8 +233,19 @@ class PersonalInfoDlg(QWidget):
         self.hardwareInfoBox_3.setChecked(1)
         layout5.addWidget(self.hardwareInfoBox_3)
 
+        self.hardwareInfoPixmap = QLabel(self,"hardwareInfoPixmap")
+        self.hardwareInfoPixmap.setGeometry(QRect(-5,0,142,290))
+        self.hardwareInfoPixmap.setScaledContents(1)
+
+        self.hardwareInfoLabel = QLabel(self,"hardwareInfoLabel")
+        self.hardwareInfoLabel.setGeometry(QRect(171,61,428,70))
+        hardwareInfoLabel_font = QFont(self.hardwareInfoLabel.font())
+        self.hardwareInfoLabel.setFont(hardwareInfoLabel_font)
+        self.hardwareInfoLabel.setTextFormat(QLabel.RichText)
+        self.hardwareInfoLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
+
         LayoutWidget_2 = QWidget(self,"layout9")
-        LayoutWidget_2.setGeometry(QRect(200,150,370,25))
+        LayoutWidget_2.setGeometry(QRect(195,150,370,24))
         layout9 = QHBoxLayout(LayoutWidget_2,11,6,"layout9")
 
         self.hardwareInfoLabel_2 = QLabel(LayoutWidget_2,"hardwareInfoLabel_2")
@@ -246,17 +257,6 @@ class PersonalInfoDlg(QWidget):
 
         self.lineEdit1 = QLineEdit(LayoutWidget_2,"lineEdit1")
         layout9.addWidget(self.lineEdit1)
-
-        self.hardwareInfoLabel = QLabel(self,"hardwareInfoLabel")
-        self.hardwareInfoLabel.setGeometry(QRect(171,61,428,80))
-        hardwareInfoLabel_font = QFont(self.hardwareInfoLabel.font())
-        self.hardwareInfoLabel.setFont(hardwareInfoLabel_font)
-        self.hardwareInfoLabel.setTextFormat(QLabel.RichText)
-        self.hardwareInfoLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
-
-        self.hardwareInfoPixmap = QLabel(self,"hardwareInfoPixmap")
-        self.hardwareInfoPixmap.setGeometry(QRect(-5,0,142,290))
-        self.hardwareInfoPixmap.setScaledContents(1)
 
         self.languageChange()
 
@@ -273,8 +273,8 @@ class PersonalInfoDlg(QWidget):
         self.hardwareInfoBox.setAccel(QString.null)
         self.hardwareInfoBox_3.setText(i18n("Send me security related e-mails"))
         self.hardwareInfoBox_3.setAccel(QString.null)
-        self.hardwareInfoLabel_2.setText(i18n("E-mail:"))
         self.hardwareInfoLabel.setText(i18n("<h2>Your personal information (optional)</h2>\n"
 "You can submit your e-mail address for inclusion in our low traffic\n"
 "announces."))
+        self.hardwareInfoLabel_2.setText(i18n("E-mail:"))
 
