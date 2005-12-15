@@ -10,4 +10,5 @@ tasma-looknfeel.directory \
 tasma-network.directory \
 tasma-peripherals.directory \
 tasma-sound.directory \
-tasma-useraccount.directory
+tasma-useraccount.directory \
+tasma-system.directory

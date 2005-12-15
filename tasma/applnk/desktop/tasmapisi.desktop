@@ -12,4 +12,4 @@ X-KDE-FactoryName=pisi_kga
 X-KDE-RootOnly=false
 Type=Application
 Exec=kcmshell pisi_kga
-Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-desktop
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
