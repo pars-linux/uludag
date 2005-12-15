@@ -31,4 +31,5 @@ tasmaproxy.desktop \
 tasmascreensaver.desktop \
 tasmastyle.desktop \
 tasmapisi.desktop \
-tasmanetkga.desktop
+tasmanetkga.desktop \
+tasmaksynaptics.desktop
