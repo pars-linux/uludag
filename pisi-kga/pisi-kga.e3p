@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-3.8.dtd">
 <!-- Project file for project pisi-kga -->
-<!-- Saved: 2005-12-12, 22:56:56 -->
+<!-- Saved: 2005-12-15, 16:04:02 -->
 <!-- Copyright (C) 2005 ,  -->
 <Project version="3.8">
   <ProgLanguage mixed="1">Python</ProgLanguage>
   <UIType>Kde</UIType>
   <Description></Description>
-  <VersIon></VersIon>
   <Author></Author>
   <EmaIl></EmaIl>
   <Sources>
@@ -40,21 +39,6 @@
     </Source>
   </Sources>
   <Forms>
-    <Form>
-      <Dir>src</Dir>
-      <Dir>todo</Dir>
-      <Name>update_wizard_fast_updates.ui</Name>
-    </Form>
-    <Form>
-      <Dir>src</Dir>
-      <Dir>todo</Dir>
-      <Name>update_wizard_custom_updates.ui</Name>
-    </Form>
-    <Form>
-      <Dir>src</Dir>
-      <Dir>todo</Dir>
-      <Name>update_wizard.ui</Name>
-    </Form>
     <Form>
       <Dir>src</Dir>
       <Name>Progress.ui</Name>
