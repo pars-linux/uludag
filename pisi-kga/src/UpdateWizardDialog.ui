@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>561</width>
-            <height>441</height>
+            <height>405</height>
         </rect>
     </property>
     <property name="caption">
@@ -26,6 +26,15 @@
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
+            <widget class="QLabel" row="0" column="0">
+                <property name="name">
+                    <cstring>textLabel1_2_2</cstring>
+                </property>
+                <property name="text">
+                    <string>We suggest you to keep your system updated to increase your privacy. Please
+choose your update methodology below.</string>
+                </property>
+            </widget>
             <widget class="QButtonGroup" row="1" column="0">
                 <property name="name">
                     <cstring>buttonGroup1</cstring>
@@ -58,7 +67,6 @@
                     </property>
                     <property name="font">
                         <font>
-                            <pointsize>11</pointsize>
                             <bold>1</bold>
                         </font>
                     </property>
@@ -83,7 +91,6 @@
                     </property>
                     <property name="font">
                         <font>
-                            <pointsize>11</pointsize>
                             <bold>1</bold>
                         </font>
                     </property>
@@ -193,15 +200,6 @@ including packages with security updates. Click on
 "Custom Update" button if you want to make a fine selection.</string>
                     </property>
                 </widget>
-            </widget>
-            <widget class="QLabel" row="0" column="0">
-                <property name="name">
-                    <cstring>textLabel1_2_2</cstring>
-                </property>
-                <property name="text">
-                    <string>We suggest you to keep your system updated to increase your privacy. Please
-choose your update methodology below.</string>
-                </property>
             </widget>
         </grid>
     </widget>
