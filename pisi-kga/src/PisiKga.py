@@ -62,9 +62,10 @@ def AboutData():
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@uludag.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@uludag.org.tr")
-    about_data.addAuthor("Eray Özkural", I18N_NOOP("Intuitive Search Interface"), "eray@uludag.org.tr")
+    about_data.addAuthor("Eray Özkural", I18N_NOOP("Search, Component/Category"), "eray@uludag.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
-    about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi api"), None)
+    about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi API"), None)
+    about_data.addCredit("PİSİ Authors", I18N_NOOP("Authors of PİSİ API"), "pisi@uludag.org.tr")
     about_data.addCredit("Simon Edwards", I18N_NOOP("Author of PyKDEeXtensions"),"simon@simonzone.com")
     return about_data
 
@@ -387,10 +388,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         
         elif index == 0 :
             # Show only not-installed apps
-            available = set()
-            for repo in pisi.context.repodb.list():
-                pkg_db = pisi.packagedb.get_db(repo)
-                available.update(pkg_db.list_packages())
+            available = pisi.api.list_available()
             installed = pisi.packagedb.inst_packagedb.list_packages()
             shownPackages = list(available - set(installed))
             self.installOrRemoveButton.setText(i18n("Install package(s)"))
