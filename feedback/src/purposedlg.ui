@@ -15,22 +15,6 @@
     <property name="caption">
         <string>Feedback wizard</string>
     </property>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>purposePixmap</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>-5</x>
-                <y>0</y>
-                <width>142</width>
-                <height>290</height>
-            </rect>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
     <widget class="QButtonGroup">
         <property name="name">
             <cstring>buttonGroup</cstring>
@@ -202,6 +186,22 @@
         </property>
         <property name="text">
             <string>&lt;b&gt;Step 2 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>purposePixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
         </property>
     </widget>
 </widget>

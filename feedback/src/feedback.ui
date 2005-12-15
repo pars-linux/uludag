@@ -29,22 +29,6 @@
         </attribute>
         <widget class="QLabel">
             <property name="name">
-                <cstring>welcomePixmap</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>0</x>
-                    <y>5</y>
-                    <width>142</width>
-                    <height>290</height>
-                </rect>
-            </property>
-            <property name="scaledContents">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
                 <cstring>welcomeLabel</cstring>
             </property>
             <property name="geometry">
@@ -68,6 +52,22 @@ Please click on "Forward" button for the next step.
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignTop</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>welcomePixmap</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>5</y>
+                    <width>142</width>
+                    <height>290</height>
+                </rect>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
             </property>
         </widget>
     </widget>

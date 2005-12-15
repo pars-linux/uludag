@@ -20,41 +20,6 @@
     </property>
     <widget class="QLabel">
         <property name="name">
-            <cstring>hardwareInfoPixmap</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>-5</x>
-                <y>0</y>
-                <width>142</width>
-                <height>290</height>
-            </rect>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
-    <widget class="QCheckBox">
-        <property name="name">
-            <cstring>hardwareInfoBox</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>230</x>
-                <y>240</y>
-                <width>340</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&amp;Do not send my computer's hardware information</string>
-        </property>
-        <property name="accel">
-            <string>Alt+D</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
             <cstring>hardwareInfoLabel</cstring>
         </property>
         <property name="geometry">
@@ -107,6 +72,41 @@ access for this operation to complete.
         </property>
         <property name="text">
             <string>&lt;b&gt;Step 6 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>hardwareInfoBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>230</x>
+                <y>240</y>
+                <width>340</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&amp;Do not send my computer's hardware information</string>
+        </property>
+        <property name="accel">
+            <string>Alt+D</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoPixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
         </property>
     </widget>
 </widget>
