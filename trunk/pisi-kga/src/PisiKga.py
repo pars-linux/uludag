@@ -109,7 +109,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if event.type() == CustomEvent.Finished:
             if self.pDialog.progressBar.progress() == 100:
                 self.finished()
-            self.currentOperation = i18n("installing")
+            self.currentOperation = i18n("downloading")
         elif event.type() == CustomEvent.RepositoryUpdate: 
             self.pDialog.setCaption(i18n("Updating repositories"))
             self.updatedRepo = event.data()
