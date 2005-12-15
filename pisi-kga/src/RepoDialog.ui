@@ -8,120 +8,109 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>315</width>
-            <height>149</height>
+            <width>323</width>
+            <height>143</height>
         </rect>
     </property>
     <property name="caption">
         <string>Repository Dialog</string>
     </property>
-    <widget class="QLayoutWidget">
+    <grid>
         <property name="name">
-            <cstring>layout4</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>11</y>
-                <width>293</width>
-                <height>90</height>
-            </rect>
-        </property>
-        <vbox>
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout4</cstring>
             </property>
-            <widget class="QLabel">
+            <vbox>
                 <property name="name">
-                    <cstring>textLabel1</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="text">
-                    <string>Repository &amp;Name</string>
-                </property>
-                <property name="buddy" stdset="0">
-                    <cstring>repoName</cstring>
-                </property>
-                <property name="toolTip" stdset="0">
-                    <string>Name of the repository, e.g &lt;b&gt;pardus-devel&lt;/b&gt;</string>
-                </property>
-            </widget>
-            <widget class="KLineEdit">
-                <property name="name">
-                    <cstring>repoName</cstring>
-                </property>
-            </widget>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel2</cstring>
-                </property>
-                <property name="text">
-                    <string>Repository &amp;Address</string>
-                </property>
-                <property name="buddy" stdset="0">
-                    <cstring>repoAddress</cstring>
-                </property>
-                <property name="toolTip" stdset="0">
-                    <string>Adress of the repository, e.g &lt;b&gt;http://foo.bar.com/pisi-index.xml&lt;/b&gt;</string>
-                </property>
-            </widget>
-            <widget class="KLineEdit">
-                <property name="name">
-                    <cstring>repoAddress</cstring>
-                </property>
-            </widget>
-        </vbox>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout3</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>12</x>
-                <y>110</y>
-                <width>293</width>
-                <height>25</height>
-            </rect>
-        </property>
-        <hbox>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Repository &amp;Name</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>repoName</cstring>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Name of the repository, e.g &lt;b&gt;pardus-devel&lt;/b&gt;</string>
+                    </property>
+                </widget>
+                <widget class="KLineEdit">
+                    <property name="name">
+                        <cstring>repoName</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Repository &amp;Address</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>repoAddress</cstring>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Adress of the repository, e.g &lt;b&gt;http://foo.bar.com/pisi-index.xml&lt;/b&gt;</string>
+                    </property>
+                </widget>
+                <widget class="KLineEdit">
+                    <property name="name">
+                        <cstring>repoAddress</cstring>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout3</cstring>
             </property>
-            <spacer>
+            <hbox>
                 <property name="name">
-                    <cstring>spacer5</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="orientation">
-                    <enum>Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>174</width>
-                        <height>16</height>
-                    </size>
-                </property>
-            </spacer>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>okButton</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Ok</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>cancelButton</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Cancel</string>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer5</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>174</width>
+                            <height>16</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>okButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Ok</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>cancelButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
 </widget>
 <connections>
     <connection>
