@@ -1,0 +1,106 @@
+# Copyright © 2005  TUBITAK/UEKAE
+# Licensed under the GNU General Public License, version 2.
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+#
+# Original work belongs Gentoo Linux
+
+# Contributed by Roy Marples (uberlord@gentoo.org)
+
+# char* macchanger_provides(void)
+#
+# Returns a string to change module definition for starting up
+macchanger_provides() {
+	echo "macchanger"
+}
+
+# void macchanger_depend(void)
+#
+# Sets up the dependancies for the module
+macchanger_depend() {
+	before interface wireless
+}
+
+# bool macchanger_check_installed(void)
+#
+# Returns 1 if macchanger is installed, otherwise 0
+macchanger_check_installed() {
+	[[ -x /sbin/macchanger ]] && return 0
+	${1:-false} && eerror "For changing MAC addresses, pisi it macchanger"
+	return 1
+}
+
+# bool macchanger_check_depends(void)
+#
+# Checks to see if we have the needed functions
+macchanger_check_depends() {
+	local f
+
+	for f in interface_variable interface_get_mac_address; do
+		[[ $( type -t ${f} ) == function ]] && continue
+		eerror "macchanger: missing required function ${f}\n"
+		return 1
+	done
+
+	return 0
+}
+
+# bool macchanger_pre_start(char *iface)
+#
+# Configures the MAC address for iface 
+macchanger_pre_start() {
+	local iface=${1} mac opts
+	local ifvar=$( interface_variable ${1} )
+
+	eval mac=\"\$\{mac_${ifvar}\}\"
+	[[ -z ${mac} ]] && return 0
+
+	interface_exists ${iface} true || return 1
+
+	mac=$( echo ${mac} | tr '[:upper:]' '[:lower:]' )
+	case "${mac}" in
+		# specific mac-addr, i wish there were a shorter way to specify this 
+		[0-9a-f][0-9a-f]:[0-9a-f][0-9a-f]:[0-9a-f][0-9a-f]:[0-9a-f][0-9a-f]:[0-9a-f][0-9a-f]:[0-9a-f][0-9a-f]) opts="${opts} --mac=${mac}" ;;
+
+		# increment MAC address, default macchanger behavior
+		increment) opts="${opts}" ;;
+
+		# randomize just the ending bytes
+		random-ending) opts="${opts} -e" ;;
+
+		# keep the same kind of physical layer (eg fibre, copper)
+		random-samekind) opts="${opts} -a" ;;
+
+		# randomize to any known vendor of any physical layer type
+		random-anykind) opts="${opts} -A" ;;
+
+		# fully random bytes
+		random-full) opts="${opts} -r" ;;
+
+		# default case is just to pass on all the options
+		*) opts="${opts} ${mac}" ;;
+	esac
+
+	# The interface needs to be up for macchanger to work most of the time
+	interface_down ${iface}
+
+	ebegin "Changing MAC address of ${iface}"
+	mac=$( /sbin/macchanger ${opts} ${iface} 2>/dev/null | awk '/Faked MAC:/ { print toupper($3) }' )
+
+	# Sometimes the interface needs to be up ....
+	if [[ -z ${mac} ]]; then
+		interface_up ${iface}
+		mac=$( /sbin/macchanger ${opts} ${iface} 2>/dev/null | awk '/Faked MAC:/ { print toupper($3) }' )
+	fi
+
+	if [[ -z ${mac} ]]; then
+		eend 1 "Failed to set MAC address"
+		return 1
+	fi
+
+	eend 0
+	eindent
+	einfo "changed to ${mac}"
+	eoutdent
+
+	return 0 #important
+}
