@@ -52,4 +52,11 @@
 			<Category>X-KDE-tasma-sound</Category>
 		</Include>
 	</Menu>
+    <Menu>
+        <Name>Sistem Ayarları</Name>
+        <Directory>tasma-system.directory</Directory>
+        <Include>
+            <Category>X-KDE-tasma-system</Category>
+        </Include>
+    </Menu>
 </Menu>
