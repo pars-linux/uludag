@@ -92,6 +92,8 @@ class Address(QVBox):
         g2.addWidget(lab, 1, 0)
         self.gateway = widgets.Edit(box)
         g2.addWidget(self.gateway, 1, 1)
+
+        self.slotSwitch("auto")
     
     def slotClicked(self, id):
         if id == 0:
@@ -100,6 +102,14 @@ class Address(QVBox):
         elif id == 1:
             self.address.setEnabled(True)
             self.gateway.setEnabled(True)
+    
+    def slotSwitch(self, mode):
+        if mode == "manual":
+            self.r2.setChecked(True)
+            self.slotClicked(1)
+        else:
+            self.r1.setChecked(True)
+            self.slotClicked(0)
 
 
 class Device(QVBox):
@@ -202,8 +212,12 @@ class Window(QMainWindow):
         address = self.basic.address.address.edit.text()
         gateway = self.basic.address.gateway.edit.text()
         self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ])
-        self.comar.call_package("Net.Link.setAddress", self.link_name, [
-            "name", name, "mode", "manual", "address", address, "gateway", gateway ])
+        if self.basic.address.r1.isChecked():
+            self.comar.call_package("Net.Link.setAddress", self.link_name, [
+                "name", name, "mode", "auto" ])
+        else:
+            self.comar.call_package("Net.Link.setAddress", self.link_name, [
+                "name", name, "mode", "manual", "address", address, "gateway", gateway ])
         if "remote" in self.modes:
             remote = self.basic.device.remote.edit.text()
             self.comar.call_package("Net.Link.setRemote", self.link_name, [
@@ -224,6 +238,7 @@ class Window(QMainWindow):
                         self.device_list[info] = uid
             elif reply[1] == 2:
                 name, mode, addr, gate = reply[2].split("\n")
+                self.basic.address.slotSwitch(mode)
                 self.w_address.setText(addr)
                 self.w_gateway.setText(gate)
             elif reply[1] == 3:
