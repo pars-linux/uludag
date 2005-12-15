@@ -36,4 +36,7 @@ class HelpDialog(QDialog):
         return QDialog.close(self, 1)
 
     def __del__(self):
-        return QDialog.close(self, 1)
+        try:
+            return QDialog.close(self, 1)
+        except:
+            pass
