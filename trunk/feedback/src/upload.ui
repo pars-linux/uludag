@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>PersonalInfoDlg</class>
+<class>UploadDlg</class>
 <widget class="QWidget">
     <property name="name">
-        <cstring>PersonalInfoDlg</cstring>
+        <cstring>UploadDlg</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -20,130 +20,6 @@
     </property>
     <widget class="QLabel">
         <property name="name">
-            <cstring>stepLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>160</x>
-                <y>20</y>
-                <width>100</width>
-                <height>21</height>
-            </rect>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>77</red>
-                <green>77</green>
-                <blue>77</blue>
-            </color>
-        </property>
-        <property name="text">
-            <string>&lt;b&gt;Step 7 of 7&lt;/b&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout5</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>171</x>
-                <y>192</y>
-                <width>428</width>
-                <height>77</height>
-            </rect>
-        </property>
-        <vbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QCheckBox">
-                <property name="name">
-                    <cstring>hardwareInfoBox_2</cstring>
-                </property>
-                <property name="text">
-                    <string>Add me to your Pardus announce list</string>
-                </property>
-                <property name="accel">
-                    <string></string>
-                </property>
-                <property name="checked">
-                    <bool>true</bool>
-                </property>
-            </widget>
-            <widget class="QCheckBox">
-                <property name="name">
-                    <cstring>hardwareInfoBox</cstring>
-                </property>
-                <property name="text">
-                    <string>I'm a developer, send me your development related e-mails</string>
-                </property>
-                <property name="accel">
-                    <string></string>
-                </property>
-                <property name="checked">
-                    <bool>true</bool>
-                </property>
-            </widget>
-            <widget class="QCheckBox">
-                <property name="name">
-                    <cstring>hardwareInfoBox_3</cstring>
-                </property>
-                <property name="text">
-                    <string>Send me security related e-mails</string>
-                </property>
-                <property name="accel">
-                    <string></string>
-                </property>
-                <property name="checked">
-                    <bool>true</bool>
-                </property>
-            </widget>
-        </vbox>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout9</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>200</x>
-                <y>150</y>
-                <width>370</width>
-                <height>25</height>
-            </rect>
-        </property>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>hardwareInfoLabel_2</cstring>
-                </property>
-                <property name="font">
-                    <font>
-                    </font>
-                </property>
-                <property name="text">
-                    <string>E-mail:</string>
-                </property>
-                <property name="textFormat">
-                    <enum>RichText</enum>
-                </property>
-                <property name="alignment">
-                    <set>WordBreak|AlignTop</set>
-                </property>
-            </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>lineEdit1</cstring>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
             <cstring>hardwareInfoLabel</cstring>
         </property>
         <property name="geometry">
@@ -151,7 +27,7 @@
                 <x>171</x>
                 <y>61</y>
                 <width>428</width>
-                <height>80</height>
+                <height>26</height>
             </rect>
         </property>
         <property name="font">
@@ -159,15 +35,55 @@
             </font>
         </property>
         <property name="text">
-            <string>&lt;h2&gt;Your personal information (optional)&lt;/h2&gt;
-You can submit your e-mail address for inclusion in our low traffic
-announces.</string>
+            <string>&lt;h2&gt;Upload&lt;/h2&gt;</string>
         </property>
         <property name="textFormat">
             <enum>RichText</enum>
         </property>
         <property name="alignment">
             <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>labelStatus</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>178</x>
+                <y>90</y>
+                <width>420</width>
+                <height>150</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>buttonRetry</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>174</x>
+                <y>247</y>
+                <width>120</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Retry</string>
+        </property>
+        <property name="on">
+            <bool>false</bool>
         </property>
     </widget>
     <widget class="QLabel">

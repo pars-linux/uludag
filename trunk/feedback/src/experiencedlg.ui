@@ -18,22 +18,6 @@
     <property name="icon">
         <pixmap>image0</pixmap>
     </property>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>experiencePixmap</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>-5</x>
-                <y>0</y>
-                <width>142</width>
-                <height>290</height>
-            </rect>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
     <widget class="QButtonGroup">
         <property name="name">
             <cstring>experiencebuttonGroup</cstring>
@@ -182,6 +166,22 @@
         </property>
         <property name="text">
             <string>&lt;b&gt;Step 1 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>experiencePixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
         </property>
     </widget>
 </widget>

@@ -15,22 +15,6 @@
     <property name="caption">
         <string>Feedback Wizard</string>
     </property>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>opinionPixmap</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>-5</x>
-                <y>0</y>
-                <width>142</width>
-                <height>290</height>
-            </rect>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
     <widget class="QTextEdit">
         <property name="name">
             <cstring>opinionEdit</cstring>
@@ -124,6 +108,22 @@ general quality, adoptability, suitability to requirements, etc)</string>
         </property>
         <property name="text">
             <string>&lt;b&gt;Step 5 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>opinionPixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
         </property>
     </widget>
 </widget>
