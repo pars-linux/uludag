@@ -87,6 +87,7 @@ class Widget(QVBox):
         self.connect(but, SIGNAL("clicked()"), self.slotDisconnect)
         
         self.comar = comar.Link()
+        
         self.comar.call("Net.Link.connections", id=1)
         
         self.comar.ask_notify("Net.Link.stateChanged")
