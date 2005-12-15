@@ -431,6 +431,20 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updateWizard = UpdateWizardDialog.UpdateWizardDialog()
         self.fastUpdatesDialog = FastUpdatesDialog.FastUpdatesDialog()
         self.updateWizard.addPage(self.fastUpdatesDialog, i18n("Fast Updates (only security)"))
+
+        self.securityUpdates = []
+        self.updateList = pisi.api.list_upgradable()
+
+        for app in self.updateList:
+            packageHistory = pisi.packagedb.get_package(app).history[0]
+            if packageHistory.type == "security":
+                self.securityUpdates.append(app)
+                item = QListViewItem(self.fastUpdatesDialog.listView)
+                item.setText(0,app)
+                item.setText(1,packageHistory.version)
+                item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
+            
+        
         self.updateWizard.setModal(True)
         self.updateWizard.show()
            
