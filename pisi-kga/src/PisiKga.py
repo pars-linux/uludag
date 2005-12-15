@@ -36,6 +36,7 @@ import PisiUi
 import Success
 import UpdateWizardDialog
 import FastUpdatesDialog
+import CustomUpdatesDialog
 
 # Pisi Imports
 import pisi.ui
@@ -426,28 +427,46 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.operation = "install"
             self.command.install(self.selectedItems)
 
-    def updateSystem(self):
+    def updateSystemSelection(self):
         self.installOrRemoveButton.setEnabled(False)
         self.updateWizard = UpdateWizardDialog.UpdateWizardDialog()
         self.fastUpdatesDialog = FastUpdatesDialog.FastUpdatesDialog()
+        self.customUpdatesDialog = CustomUpdatesDialog.CustomUpdatesDialog()
+    
         self.updateWizard.addPage(self.fastUpdatesDialog, i18n("Fast Updates (only security)"))
-
-        self.securityUpdates = []
-        self.updateList = pisi.api.list_upgradable()
-
-        for app in self.updateList:
-            packageHistory = pisi.packagedb.get_package(app).history[0]
-            if packageHistory.type == "security":
-                self.securityUpdates.append(app)
-                item = QListViewItem(self.fastUpdatesDialog.listView)
-                item.setText(0,app)
-                item.setText(1,packageHistory.version)
-                item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
-            
+        self.updateWizard.addPage(self.customUpdatesDialog, i18n("Custom Updates"))
+                    
+        self.connect(self.updateWizard.nextButton(),SIGNAL("clicked()"),self.updateSystem)
         
         self.updateWizard.setModal(True)
         self.updateWizard.show()
-           
+                
+
+    def updateSystem(self):
+        self.updateList = pisi.api.list_upgradable()
+        
+        if self.updateWizard.fastUpdateButton.isOn():
+            self.updateWizard.setAppropriate(self.customUpdatesDialog, False)
+            self.updateWizard.showPage(self.fastUpdatesDialog)
+            self.fastUpdatesDialog.listView.clear()
+            self.securityUpdates = []
+            for app in self.updateList:
+                packageHistory = pisi.packagedb.get_package(app).history[0]
+                if packageHistory.type == "security":
+                    self.securityUpdates.append(app)
+                    item = QCheckListItem(self.fastUpdatesDialog.listView,app,QCheckListItem.CheckBox)
+                    item.setText(1,packageHistory.version)
+                    item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
+        else:
+            self.updateWizard.setAppropriate(self.fastUpdatesDialog, False)
+            self.updateWizard.showPage(self.customUpdatesDialog)
+            self.customUpdatesDialog.listView.clear()
+            for app in self.updateList:
+                packageHistory = pisi.packagedb.get_package(app).history[0]
+                item = QCheckListItem(self.customUpdatesDialog.listView,app,QCheckListItem.CheckBox)
+                item.setText(1,packageHistory.version)
+                item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
+                   
     def installSingle(self):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
@@ -532,7 +551,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateButtons)
         self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
-        self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystem)
+        self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystemSelection)
         self.connect(mainwidget.preferencesButton,SIGNAL("clicked()"),mainwidget.showPreferences)
         self.connect(mainwidget.searchButton,SIGNAL("clicked()"),mainwidget.searchPackage)
         
