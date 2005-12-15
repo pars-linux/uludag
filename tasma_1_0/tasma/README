@@ -1,0 +1,18 @@
+
+TASMA is a rewrite of the famous KDE Control Center application
+kcontrol. Although it has some visual approvement over kcontrol, the
+main purpose is to build a configuration GUI for our distribution
+(http://www.uludag.org.tr).
+
+
+Main parts of TASMA:
+
+tasma: Main configuration GUI framework uses regular KCModule
+components.
+
+comarrpc: Shared library for tasma modules to use as a backend COMAR
+(http://www.uludag.org.tr/en/projeler.html).
+
+modules: Our version of kcontrol modules. The reason for us to
+maintain kcontrol modules is that, we need to entegrate them with our
+framework COMAR.
