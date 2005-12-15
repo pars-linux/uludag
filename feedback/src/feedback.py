@@ -18,7 +18,7 @@ from purposedlg import PurposeDlg
 from usagedlg import UsageDlg
 from questiondlg import QuestionDlg
 from opiniondlg import OpinionDlg
-from bilgitemini import PersonalInfoDlg
+from personalinfodlg import PersonalInfoDlg
 from hardwareinfodlg import HardwareInfoDlg
 from upload import UploadDlg
 from goodbyedlg import GoodbyeDlg
