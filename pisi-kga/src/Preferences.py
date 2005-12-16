@@ -32,7 +32,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
         PreferencesDialog.PreferencesDialog.__init__(self, parent)
         self.receiver = parent
-        self.command = ThreadRunner.MyThread(parent)
+        self.command = ThreadRunner.PisiThread(parent)
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.editButton, SIGNAL("clicked()"), self.editRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
@@ -40,8 +40,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.updateRepoButton, SIGNAL("clicked()"), self.updateAllRepos)
         self.connect(self.moveUpButton, SIGNAL("clicked()"), self.moveUp)
         self.connect(self.moveDownButton, SIGNAL("clicked()"), self.moveDown)
-        
-        
+     
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
         
@@ -54,7 +53,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             moreThanOne = True
         else:
             moreThanOne = False
-		
+        
         if self.repoListView.currentItem().isSelected():
             self.editButton.setEnabled(True)
             self.removeButton.setEnabled(moreThanOne)
