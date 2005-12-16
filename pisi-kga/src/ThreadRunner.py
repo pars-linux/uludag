@@ -13,10 +13,13 @@
 # Authors: İsmail Dönmez <ismail@uludag.org.tr>
 
 from qt import *
+
+import pisi
 import pisi.api
+
 from Enums import *
 
-class MyThread(QThread):
+class PisiThread(QThread):
     def __init__(self, widget):
         QThread.__init__(self)
         self.receiver = widget
@@ -65,7 +68,7 @@ class MyThread(QThread):
                 QThread.postEvent(self.receiver,event)
                 pisi.api.update_repo(self.repo)
 
-        except Exception,e:
+        except pisi.Error,e:
             # pisi.api.finalize() crashes
             event = QCustomEvent(CustomEvent.PisiError)
             event.setData(unicode(e))
