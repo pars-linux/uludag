@@ -135,7 +135,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif event.type() == CustomEvent.PisiNotify:
             if event.data():
                 self.currentOperation = event.data()
-                self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
+                # there is no progress bar update here ! -- exa
         else:
             pass
     
@@ -207,7 +207,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
-        # Re-init database because we finalized it in our exception handler
+        # Re-init API, needed for DB recovery -- exa
+        pisi.api.finalize()
         pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
 
         self.pDialog.close()
