@@ -182,7 +182,6 @@ msgid "Python coding help"
 msgstr "Python kodlama yardımı"
 
 #: src/PisiKga.py:68
-#, fuzzy
 msgid "Helping with PiSi API"
 msgstr "PiSi konusunda yardım"
 
@@ -315,7 +314,6 @@ msgid "Fast Updates (only security)"
 msgstr "Hızlı Güncelleme (sadece güvenlik güncellemeleri)"
 
 #: src/PisiKga.py:437 src/CustomUpdatesDialog.py:55
-#, fuzzy
 msgid "Custom Updates"
 msgstr "Özel güncelleme"
 
@@ -326,7 +324,6 @@ msgid ""
 msgstr ""
 
 #: src/PisiKga.py:563
-#, fuzzy
 msgid "Pisi Info"
 msgstr "PiSi Bilgi"
 
@@ -485,7 +482,6 @@ msgid "Fast update (only security updates)"
 msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
 
 #: src/UpdateWizardDialog.py:692
-#, fuzzy
 msgid ""
 "With fast update, only very essential and critial updates are \n"
 "downloaded and installed to your computer. Choose this method \n"
@@ -498,7 +494,6 @@ msgstr ""
 "bu seçeneği tıklayın."
 
 #: src/UpdateWizardDialog.py:695
-#, fuzzy
 msgid ""
 "In this method, you can select which packages to update, \n"
 "including packages with security updates. Click on \n"
