@@ -77,7 +77,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
-        global glob_ui
         self.errorMessage = None
         self.savedProgress = 0
         self.oldFilename = None
@@ -92,8 +91,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.operationInfo = None    
 
         # Init pisi repository
-        glob_ui = PisiUi.PisiUi(self)
-        pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
+        self.pisiui = PisiUi.PisiUi(self)
+        pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
         
         try:
             repo = pisi.context.repodb.list()[0]
@@ -147,7 +146,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.finished()
         else:
             event.setData("True")
-        kapp.postEvent(glob_ui,event)
+        kapp.postEvent(self.pisiui,event)
     
     def finished(self):
         self.queryEdit.clear()
@@ -209,7 +208,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def pisiError(self, msg):
         # Re-init API, needed for DB recovery -- exa
         pisi.api.finalize()
-        pisi.api.init(database=True, options=None, ui=glob_ui, comar=True)
+        pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
 
         self.pDialog.close()
         if self.errorMessage:
