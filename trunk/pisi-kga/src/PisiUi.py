@@ -34,6 +34,11 @@ class PisiUi(pisi.ui.UI,QObject):
         cEvent = QCustomEvent(CustomEvent.PisiError)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
+    
+    def ack(self,msg):
+        cEvent = QCustomEvent(CustomEvent.PisiError)
+        cEvent.setData(msg) 
+        QThread.postEvent(self.receiver,cEvent)
 
     def info(self, msg):
         cEvent = QCustomEvent(CustomEvent.PisiInfo)
