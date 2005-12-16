@@ -67,7 +67,7 @@ class MyThread(QThread):
 
         except Exception,e:
             #pisi.api.finalize()   # this does not work here!! - exa
-            event = QCustomEvent()
+            event = QCustomEvent(CustomEvent.PisiError)
             event.setData(unicode(e))
             QThread.postEvent(self.receiver,event)
        
