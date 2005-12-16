@@ -15,12 +15,13 @@
 from qt import QEvent
 
 class CustomEvent:
-	Finished = QEvent.User+1
-	RepositoryUpdate = QEvent.User+2
-	PisiError = QEvent.User+3
-	PisiInfo = QEvent.User+4
-	PisiNotify = QEvent.User+5
-	AskConfirmation = QEvent.User+6
-	UserConfirmed = QEvent.User+7
-	UpdateProgress = QEvent.User+8
-	UpdateListing = QEvent.User+9
+    (Finished,
+     RepositoryUpdate,
+     PisiError,
+     PisiInfo,
+     PisiNotify,
+     AskConfirmation,
+     UserConfirmed,
+     UpdateProgress,
+     UpdateListing,
+     PisiAck) = range(QEvent.User, QEvent.User+10)
