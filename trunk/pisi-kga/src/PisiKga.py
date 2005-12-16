@@ -82,7 +82,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.oldFilename = None
         self.updatedRepo = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
-        self.command = ThreadRunner.MyThread(self)
+        self.command = ThreadRunner.PisiThread(self)
         self.selectedItems = []
         self.totalSelectedSize = 0
         self.confirmed = None
@@ -94,6 +94,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pisiui = PisiUi.PisiUi(self)
         pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
         
+        msg = unicode("bok")
+        ret = KMessageBox.warningContinueCancel(self, msg, i18n("Warning"))
+
         try:
             repo = pisi.context.repodb.list()[0]
             pkg_db = pisi.packagedb.get_db(repo)
@@ -499,6 +502,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def showHelp(self):
         self.helpWidget = HelpDialog.HelpDialog(self)
         self.helpWidget.show()
+        
+    def runCommand(self):
+        """run a pisi command without blocking the event loop"""
+        pass
 
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'

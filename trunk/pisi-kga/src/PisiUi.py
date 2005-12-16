@@ -12,15 +12,20 @@
 #
 # Authors:  İsmail Dönmez <ismail@uludag.org.tr>
 
+import time
+
 from kdecore import i18n
 from qt import *
+from kdeui import *
+
 from Enums import *
+
 import pisi.ui
-import time
 
 class PisiUi(pisi.ui.UI,QObject):
 
     def __init__(self, parent):
+        self.parent = parent
         pisi.ui.UI.__init__(self)
         QObject.__init__(self)
         self.receiver = parent
@@ -30,13 +35,18 @@ class PisiUi(pisi.ui.UI,QObject):
         if cEvent.type() == CustomEvent.UserConfirmed:
             self.confirmed = cEvent.data()
         
+    def warning(self, msg):
+        pass
+        #TODO: just a try donot worry I know what I am doing -- exa
+        #ret = KMessageBox.warningContinueCancel(self.parent, msg, i18n("Warning"))
+
     def error(self, msg):
         cEvent = QCustomEvent(CustomEvent.PisiError)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
     
     def ack(self,msg):
-        cEvent = QCustomEvent(CustomEvent.PisiError)
+        cEvent = QCustomEvent(CustomEvent.PisiAck)
         cEvent.setData(msg) 
         QThread.postEvent(self.receiver,cEvent)
 
@@ -57,6 +67,8 @@ class PisiUi(pisi.ui.UI,QObject):
         # it shows a KMessageBox and thread eventloop waits for it to finish, when the user
         # confirms it hits CustomEvent.UserConfirmed in customEvent and next we are here in
         # the Thread and self.confirmed is already set
+        
+        # now ask yourself if this is a sane method :)
         
         if self.confirmed:
             self.confirmed = None
