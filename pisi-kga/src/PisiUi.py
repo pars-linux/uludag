@@ -69,6 +69,9 @@ class PisiUi(pisi.ui.UI,QObject):
         # the Thread and self.confirmed is already set
         
         # now ask yourself if this is a sane method :)
+        # unfortunately this is the wrong method, the question
+        # confirm asks does not mean continue/cancel, it can
+        # be anything! -- exa
         
         if self.confirmed:
             self.confirmed = None
