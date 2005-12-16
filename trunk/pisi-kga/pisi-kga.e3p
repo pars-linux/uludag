@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-3.8.dtd">
 <!-- Project file for project pisi-kga -->
-<!-- Saved: 2005-12-15, 16:04:02 -->
-<!-- Copyright (C) 2005 ,  -->
+<!-- Saved: 2005-12-16, 17:44:18 -->
+<!-- Copyright (C) 2005 İsmail Dönmez, Görkem Çetin, Eray Özkural,  -->
 <Project version="3.8">
   <ProgLanguage mixed="1">Python</ProgLanguage>
   <UIType>Kde</UIType>
   <Description></Description>
-  <Author></Author>
+  <VersIon></VersIon>
+  <Author>İsmail Dönmez, Görkem Çetin, Eray Özkural</Author>
   <EmaIl></EmaIl>
   <Sources>
     <Source>
@@ -37,6 +38,46 @@
     <Source>
       <Name>setup.py</Name>
     </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>MainWindow.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>Progress.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>SuccessDialog.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>HelpDialog.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>Enums.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>PreferencesDialog.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>RepoDialog.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>UpdateWizardDialog.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>FastUpdatesDialog.py</Name>
+    </Source>
+    <Source>
+      <Dir>src</Dir>
+      <Name>CustomUpdatesDialog.py</Name>
+    </Source>
   </Sources>
   <Forms>
     <Form>
@@ -50,6 +91,30 @@
     <Form>
       <Dir>src</Dir>
       <Name>MainWindow.ui</Name>
+    </Form>
+    <Form>
+      <Dir>src</Dir>
+      <Name>PreferencesDialog.ui</Name>
+    </Form>
+    <Form>
+      <Dir>src</Dir>
+      <Name>RepoDialog.ui</Name>
+    </Form>
+    <Form>
+      <Dir>src</Dir>
+      <Name>MainWindowalt.ui</Name>
+    </Form>
+    <Form>
+      <Dir>src</Dir>
+      <Name>CustomUpdatesDialog.ui</Name>
+    </Form>
+    <Form>
+      <Dir>src</Dir>
+      <Name>FastUpdatesDialog.ui</Name>
+    </Form>
+    <Form>
+      <Dir>src</Dir>
+      <Name>UpdateWizardDialog.ui</Name>
     </Form>
   </Forms>
   <Translations>
