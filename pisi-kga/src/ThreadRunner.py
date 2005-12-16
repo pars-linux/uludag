@@ -66,7 +66,7 @@ class MyThread(QThread):
                 pisi.api.update_repo(self.repo)
 
         except Exception,e:
-            pisi.api.finalize()
+            # pisi.api.finalize() crashes
             event = QCustomEvent(CustomEvent.PisiError)
             event.setData(unicode(e))
             QThread.postEvent(self.receiver,event)
