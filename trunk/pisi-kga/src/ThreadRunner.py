@@ -95,6 +95,11 @@ class PisiThread(QThread):
             event.setData(unicode(e))
             QThread.postEvent(self.parent,event)
 
+        except Exception,e:
+            event = QCustomEvent(CustomEvent.PisiError)
+            event.setData(unicode(e))
+            QThread.postEvent(self.parent,event)
+
         # Send a finish event
         event = QCustomEvent(CustomEvent.Finished)
         QThread.postEvent(self.parent,event)
