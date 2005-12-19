@@ -29,8 +29,8 @@ kdedistutils.setup(
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
                         'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py','src/UpdateWizardDialog.ui',
                         'src/CustomUpdatesDialog.ui','src/FastUpdatesDialog.ui',
-                        ("/usr/kde/3.5/share/apps/pisi_kga/help",["help"])],
+                        ("/usr/kde/3.5/share/apps/pisi_kga/help",["help"]),("/usr/kde/3.5/share/applications/kde/",["src/pisi_kga.desktop"])],
     executable_links = [('pisi-kga','PisiKga.py')],
     i18n = ('po',['src']),
-    kcontrol_modules = [ ('src/pisi_kga.desktop','PisiKga.py')],
+    kcontrol_modules = [ ('src/pisi_kga_kcm.desktop','PisiKga.py')],
     )
