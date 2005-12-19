@@ -39,10 +39,10 @@ class Connection(QListBoxItem):
     
     def paint(self, painter):
         if self.online:
-            text = i18n("Online") + ", "
+            text = unicode(i18n("Online")) + ", "
             pix = self.up_pix
         else:
-            text = i18n("Offline") + ", "
+            text = unicode(i18n("Offline")) + ", "
             pix = self.down_pix
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
@@ -145,7 +145,7 @@ class Widget(QVBox):
                 if reply[2] == '':
                     return
                 uid, dev = reply[2].split(" ", 1)
-                name = i18n("Unconfigured") + " " + str(self.un_id)
+                name = unicode(i18n("Unconfigured")) + " " + str(self.un_id)
                 self.un_id += 1
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
         
