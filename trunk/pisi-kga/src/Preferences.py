@@ -31,8 +31,7 @@ import pisi.repodb
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
         PreferencesDialog.PreferencesDialog.__init__(self, parent)
-        self.receiver = parent
-        self.command = ThreadRunner.PisiThread(parent)
+        self.parent = parent
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.editButton, SIGNAL("clicked()"), self.editRepo)
         self.connect(self.removeButton, SIGNAL("clicked()"), self.removeRepo)
@@ -67,15 +66,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.moveDownButton.setEnabled(False)
             
     def updateAllRepos(self):
-        self.updateRepoButton.setEnabled(False)
-        
-        for i in pisi.context.repodb.list():
-            self.command.updateRepo(i)
-        self.updateRepoButton.setEnabled(True)
-
-        # Let the main listview update itself
-        event = QCustomEvent(CustomEvent.UpdateListing)
-        QThread.postEvent(self.receiver,event)
+        event = QCustomEvent(CustomEvent.UpdateAllRepos)
+        QThread.postEvent(self.parent,event)
 
     def addNewRepo(self):
         self.repo = RepoDialog.RepoDialog(self)
@@ -145,10 +137,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         confirm = KMessageBox.questionYesNo(self,i18n('<qt>Do you want to update repository <b>%1</b></qt>').arg(repoName),i18n("Pisi Question"))
         if confirm == KMessageBox.Yes:
-            self.command.update_repo(repoName)
-            # Let the main listview update itself
-            event = QCustomEvent(CustomEvent.UpdateListing)
-            QThread.postEvent(self.receiver,event)
+            event = QCustomEvent(CustomEvent.UpdateSingleRepo)
+            event.setData(repoName)
+            QThread.postEvent(self.parent,event)
 
     def updateRepoSettings(self):
         # FIXME there should be a better way to do this
