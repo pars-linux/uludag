@@ -23,7 +23,6 @@ import PisiUi
 class PisiThread(QThread):
     def __init__(self, parent):
         QThread.__init__(self)
-        QObject.__init__(self)
         self.pisiui = PisiUi.PisiUi(parent)
         self.parent = parent
         self.installing = False
