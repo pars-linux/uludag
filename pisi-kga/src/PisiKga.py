@@ -139,7 +139,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif event.type() == CustomEvent.UpdateAllRepos:
             self.command.updateAllRepos()
         else:
-            pass
+            print 'Unhandled event:',event.type()
     
     def showConfirm(self):
         self.confirmed = KMessageBox.questionYesNo(self, self.operationInfo, i18n("PiSi Info"))
@@ -149,7 +149,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.finished()
         else:
             event.setData("True")
-        kapp.postEvent(self.pisiui,event)
+        kapp.postEvent(self.command.pisiui,event)
     
     def finished(self):
         self.queryEdit.clear()
@@ -426,6 +426,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.command.install(self.selectedItems)
 
     def updateSystemSelection(self):
+        self.installOrRemoveButton.setEnabled(False)
+        
+        self.pDialog.setCaption(i18n("Add or Remove Programs"))
+        self.pDialog.show()
+        
+        list = pisi.api.list_upgradable()
+        self.totalAppCount = len(list)
+        self.operation = "upgrade"
+        self.command.upgrade(list)
+
+    if False: # Disabled for rc1, will enable later
         self.installOrRemoveButton.setEnabled(False)
         self.updateWizard = UpdateWizardDialog.UpdateWizardDialog()
         self.fastUpdatesDialog = FastUpdatesDialog.FastUpdatesDialog()
