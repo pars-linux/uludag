@@ -23,6 +23,7 @@ import PisiUi
 class PisiThread(QThread):
     def __init__(self, parent):
         QThread.__init__(self)
+        QObject.__init__(self)
         self.pisiui = PisiUi.PisiUi(parent)
         self.parent = parent
         self.installing = False
@@ -33,7 +34,7 @@ class PisiThread(QThread):
 
     def initDatabase(self):
         pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
-        
+    
     def install(self,apps):
         self.installing = True
         self.appList = apps
