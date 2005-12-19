@@ -131,7 +131,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif event.type() == CustomEvent.UpdateListing:
             self.updateListing()
         elif event.type() == CustomEvent.PisiNotify:
-            if event.data() && self.operation != "remove"
+            if event.data() and self.operation != "remove":
                 self.currentOperation = event.data()
                 self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
         elif event.type() == CustomEvent.UpdateSingleRepo:
