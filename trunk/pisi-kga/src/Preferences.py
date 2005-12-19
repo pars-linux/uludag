@@ -123,7 +123,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         repoAddress = str(self.repo.repoAddress.text())
 
         if not repoAddress.endswith("xml"):
-            KMessageBox.error(self,i18n('Repository address should end with xml suffix.<p>Please try again.'), i18n("Pisi Error"))
+            KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         else:
             try:
@@ -146,8 +146,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         newRepoName = str(self.repo.repoName.text())
         newRepoAddress = str(self.repo.repoAddress.text())
 
-        if not newRepoName.endswith("xml"):
-            KMessageBox.error(self,i18n('Repository address should end with xml suffix.<p>Please try again.'), i18n("Pisi Error"))
+        if not newRepoAddress.endswith("xml"):
+            KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         else:                    
             pisi.api.remove_repo(self.oldRepoName)
