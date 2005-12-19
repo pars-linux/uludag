@@ -442,6 +442,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateSystem(self):
         self.updateList = pisi.api.list_upgradable()
+        self.installSize = 0
         
         if self.updateWizard.fastUpdateButton.isOn():
             self.updateWizard.setAppropriate(self.customUpdatesDialog, False)
@@ -452,18 +453,22 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 packageHistory = pisi.packagedb.get_package(app).history[0]
                 if packageHistory.type == "security":
                     self.securityUpdates.append(app)
+                    self.installSize += pisi.packagedb.inst_packagedb.get_package(app).installedSize
                     item = QListViewItem(self.fastUpdatesDialog.listView,app)
                     item.setText(1,packageHistory.version)
                     item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
+            self.fastUpdatesDialog.installSizeLabel.setText(i18n('Total size: %1 MB').arg(self.installSize/(1024*1024)))
         else:
             self.updateWizard.setAppropriate(self.fastUpdatesDialog, False)
             self.updateWizard.showPage(self.customUpdatesDialog)
             self.customUpdatesDialog.listView.clear()
             for app in self.updateList:
                 packageHistory = pisi.packagedb.get_package(app).history[0]
+                self.installSize += pisi.packagedb.inst_packagedb.get_package(app).installedSize
                 item = QListViewItem(self.customUpdatesDialog.listView,app)
                 item.setText(1,packageHistory.version)
                 item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
+            self.customUpdatesDialog.installSizeLabel.setText(i18n('Total size: %1 MB').arg(self.installSize/(1024*1024)))
                    
     def installSingle(self):
         app = []
