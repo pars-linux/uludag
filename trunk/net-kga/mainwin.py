@@ -142,6 +142,8 @@ class Widget(QVBox):
                     self.links.updateItem(conn)
                     return
             elif reply[1] == 5:
+                if reply[2] == '':
+                    return
                 uid, dev = reply[2].split(" ", 1)
                 name = "Unconfigured " + str(self.un_id)
                 self.un_id += 1
