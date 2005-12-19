@@ -11,5 +11,5 @@ X-KDE-Library=pisi_kga
 X-KDE-FactoryName=pisi_kga
 X-KDE-RootOnly=false
 Type=Application
-Exec=kdesu "pisi-kga > /dev/null"
-Categories=Qt;KDE;System;
+Exec=kcmshell pisi_kga
+Categories=QT;KDE;X-KDE-settings-system;
