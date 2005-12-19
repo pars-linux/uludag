@@ -27,40 +27,43 @@ class Link(QListBoxItem):
         if tmp[0] != comar.RESULT:
             return
         self.link_type, self.name, self.remote_name = tmp[2].split("\n")
+        return
         
         self.f1 = QFont()
         self.f1.setBold(True)
-        self.f1.setPointSize(self.f1.pointSize() + 4)
+        self.f1.setPointSize(self.f1.pointSize() + 1)
         self.pix = QPixmap("ether.png")
     
-    def paint(self, painter):
+    def text(self):
+        return self.name
+    
+    def _paint(self, painter):
         fm = QFontMetrics(self.f1)
         painter.setPen(Qt.black)
         painter.setFont(self.f1)
         painter.drawText(32 + 9, 3 + fm.ascent(), unicode(self.name))
         painter.drawPixmap(3, 3, self.pix)
     
-    def height(self, box):
+    def _height(self, box):
         fm = QFontMetrics(self.f1)
         ts = 3 + fm.height() + 3
         if ts < 32 + 3 + 3:
             ts = 32 + 3 + 3
         return ts
     
-    def width(self, box):
+    def _width(self, box):
         return 100
 
 
-class Window(QMainWindow):
+class Window(QDialog):
     def __init__(self, parent):
-        QMainWindow.__init__(self, parent)
-        self.setMinimumSize(320, 240)
+        QDialog.__init__(self)
+        self.setMinimumSize(260, 180)
         self.setCaption("Connection types")
         self.my_parent = parent
-        vb = QVBox(self)
+        vb = QVBoxLayout(self)
         vb.setSpacing(6)
         vb.setMargin(12)
-        self.setCentralWidget(vb)
         
         self.comar = comar.Link()
         self.comar.get_packages("Net.Link")
@@ -82,19 +85,23 @@ class Window(QMainWindow):
             self.close(True)
             return
         
-        QLabel("Select a connection type:", vb)
+        lab = QLabel("Select a connection type:", self)
+        vb.addWidget(lab)
         
-        self.links = QListBox(vb)
+        self.links = QListBox(self)
+        vb.addWidget(self.links)
         for item in links:
             Link(self.links, self.comar, item)
         
-        but = QPushButton("Create connection", vb)
-        self.connect(but, SIGNAL("clicked()"), self.slotCreate)
+        but = QPushButton("Create connection", self)
+        vb.addWidget(but)
+        self.connect(but, SIGNAL("clicked()"), self.accept)
+        but.setDefault(True)
         
-        self.show()
+        self.exec_loop()
     
-    def slotCreate(self):
+    def accept(self):
         link = self.links.selectedItem()
         if link:
             connection.Window(self.my_parent, "new connection", link.link_name, 1)
-            self.close(True)
+        QDialog.accept(self)
