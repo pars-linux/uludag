@@ -452,7 +452,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 packageHistory = pisi.packagedb.get_package(app).history[0]
                 if packageHistory.type == "security":
                     self.securityUpdates.append(app)
-                    item = QCheckListItem(self.fastUpdatesDialog.listView,app,QCheckListItem.CheckBox)
+                    item = QListViewItem(self.fastUpdatesDialog.listView,app)
                     item.setText(1,packageHistory.version)
                     item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
         else:
@@ -461,7 +461,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.customUpdatesDialog.listView.clear()
             for app in self.updateList:
                 packageHistory = pisi.packagedb.get_package(app).history[0]
-                item = QCheckListItem(self.customUpdatesDialog.listView,app,QCheckListItem.CheckBox)
+                item = QListViewItem(self.customUpdatesDialog.listView,app)
                 item.setText(1,packageHistory.version)
                 item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
                    
