@@ -37,7 +37,7 @@ msgstr "Ağ geçidi:"
 
 #: connection.py:120 connection.py:125
 msgid "Device:"
-msgstr "Cihaz:"
+msgstr "Aygıt:"
 
 #: connection.py:144
 msgid "Name:"
@@ -97,7 +97,7 @@ msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
 #: links.py:62
 msgid "Connection types"
-msgstr "Bağlantı tipleri"
+msgstr "Bağlantı türleri"
 
 #: links.py:76
 msgid "Install network packages!"
