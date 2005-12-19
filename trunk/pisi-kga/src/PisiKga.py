@@ -401,8 +401,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def installRemove(self):
 
         try: # Dependencies might bite us here, http://bugs.uludag.org.tr/show_bug.cgi?id=1170
-            dependencies = pisi.api.package_graph(self.selectedItems, True)
-            self.totalAppCount = len(dependencies.vertices())
+            dependencies = pisi.api.package_graph(self.selectedItems, True).vertices()
+            self.totalAppCount = len(dependencies)
             self.selectedItems = self.selectedItems+dependencies
         except Exception,e:
             KMessageBox.error(self,unicode(e),i18n("PiSi Error"))
