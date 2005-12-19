@@ -25,5 +25,6 @@ kdedistutils.setup(
     license = "GPL",
     application_data = ['net_kga.py','mainwin.py','connection.py', 'widgets.py', 'links.py', 'net-up.png', 'net-down.png' ],
     executable_links = [('net-kga','net_kga.py')],
+    i18n = ('po', ['.']),
     kcontrol_modules = [ ('net_kga.desktop','net_kga.py')],
     )

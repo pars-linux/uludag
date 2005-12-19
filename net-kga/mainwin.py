@@ -39,10 +39,10 @@ class Connection(QListBoxItem):
     
     def paint(self, painter):
         if self.online:
-            text = "Online, "
+            text = i18n("Online") + ", "
             pix = self.up_pix
         else:
-            text = "Offline, "
+            text = i18n("Offline") + ", "
             pix = self.down_pix
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
@@ -75,15 +75,15 @@ class Widget(QVBox):
         self.un_id = 0
         
         box = QHBox(self)
-        but = QPushButton("Create", box)
+        but = QPushButton(i18n("Create"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotCreate)
-        but = QPushButton("Edit", box)
+        but = QPushButton(i18n("Edit"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotEdit)
-        but = QPushButton("Delete", box)
+        but = QPushButton(i18n("Delete"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotDelete)
-        but = QPushButton("Connect", box)
+        but = QPushButton(i18n("Connect"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotConnect)
-        but = QPushButton("Disconnect", box)
+        but = QPushButton(i18n("Disconnect"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotDisconnect)
         
         self.comar = comar.Link()
@@ -145,7 +145,7 @@ class Widget(QVBox):
                 if reply[2] == '':
                     return
                 uid, dev = reply[2].split(" ", 1)
-                name = "Unconfigured " + str(self.un_id)
+                name = i18n("Unconfigured") + " " + str(self.un_id)
                 self.un_id += 1
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
         

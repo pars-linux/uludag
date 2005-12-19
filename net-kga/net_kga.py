@@ -48,10 +48,12 @@ class MainApplication(programbase):
 
         if standalone:
             QDialog.__init__(self,parent,name)
-            self.setCaption("Network Connections")
-            self.setFixedSize(520,420)
+            self.setCaption(i18n("Network Connections"))
+            self.setMinimumSize(520, 420)
+            self.resize(520, 420)
         else:
             KCModule.__init__(self,parent,name)
+            KGlobal.locale().insertCatalogue("net_kga")
             # Create a configuration object.
             self.config = KConfig("net_kga")
             self.setButtons(0)
