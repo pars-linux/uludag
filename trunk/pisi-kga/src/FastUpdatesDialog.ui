@@ -85,7 +85,7 @@
                 </widget>
                 <widget class="QLabel">
                     <property name="name">
-                        <cstring>textLabel2</cstring>
+                        <cstring>installSizeLabel</cstring>
                     </property>
                     <property name="text">
                         <string>Total install size:</string>
