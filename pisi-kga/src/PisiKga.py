@@ -82,20 +82,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.oldFilename = None
         self.updatedRepo = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
-        self.command = ThreadRunner.PisiThread(self)
         self.selectedItems = []
         self.totalSelectedSize = 0
         self.confirmed = None
         self.operation = None
         self.currentOperation = i18n("downloading")
-        self.operationInfo = None    
+        self.operationInfo = None   
 
-        # Init pisi repository
-        self.pisiui = PisiUi.PisiUi(self)
-        pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
-        
-        msg = unicode("bok")
-        ret = KMessageBox.warningContinueCancel(self, msg, i18n("Warning"))
+        # Create a ThreadRunner and init the database
+        self.command = ThreadRunner.PisiThread(self)
+        self.command.initDatabase()
 
         try:
             repo = pisi.context.repodb.list()[0]
@@ -138,6 +134,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
             if event.data():
                 self.currentOperation = event.data()
                 # there is no progress bar update here ! -- exa
+        elif event.type() == CustomEvent.UpdateSingleRepo:
+            self.command.updateRepo(event.data())
+        elif event.type() == CustomEvent.UpdateAllRepos:
+            self.command.updateAllRepos()
         else:
             pass
     
@@ -209,10 +209,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.setProgress(progress)
 
     def pisiError(self, msg):
-        # Re-init API, needed for DB recovery -- exa
-        pisi.api.finalize()
-        pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
-
         self.pDialog.close()
         if self.errorMessage:
             self.errorMessage = self.errorMessage+msg
@@ -503,10 +499,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.helpWidget = HelpDialog.HelpDialog(self)
         self.helpWidget.show()
         
-    def runCommand(self):
-        """run a pisi command without blocking the event loop"""
-        pass
-
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
 

@@ -24,4 +24,6 @@ class CustomEvent:
      UserConfirmed,
      UpdateProgress,
      UpdateListing,
-     PisiAck) = range(QEvent.User, QEvent.User+10)
+     PisiAck,
+     UpdateSingleRepo,
+     UpdateAllRepos) = range(QEvent.User, QEvent.User+12)
