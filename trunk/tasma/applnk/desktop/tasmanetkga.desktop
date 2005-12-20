@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Network KGA
-Name[en]=Network KGA
-Name[tr]=Network KGA
+Name=Network Configuration
+Name[en]=Network Configuration
+Name[tr]=Ağ Yapılandırması
 Comment=Network Configuration User Interface
 Comment[tr]=Ağ Yapılandırması Arayüzü
 Icon=network
