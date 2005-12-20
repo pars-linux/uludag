@@ -14,6 +14,9 @@
 #include <kdialog.h>
 #include <kgenericfactory.h>
 #include <qlistbox.h>
+#include <qradiobutton.h>
+#include <qbuttongroup.h>
+#include <qcheckbox.h>
 #include <qfile.h>
 #include <qregexp.h>
 #include <qlayout.h>
@@ -41,15 +44,17 @@ K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("kcmtasmatv"))
 
     connect(mainWidget->cardList, SIGNAL(selectionChanged()), SLOT(configChanged()));
     connect(mainWidget->tunerList, SIGNAL(selectionChanged()), SLOT(configChanged()));
+    connect(mainWidget->pllGroup, SIGNAL(pressed(int)), SLOT(configChanged()));
+    connect(mainWidget->radioCard, SIGNAL(stateChanged(int)), SLOT(configChanged()));
     load();
 }
 
 void TasmaTv::load()
 {
-    int card, tuner;
+    int card, tuner, pll, radio;
 
     QFile bttv("/etc/modules.d/bttv");
-    QRegExp re(".*card=([0-9]+)( tuner=([0-9]+))?");
+    QRegExp re(".*card=([0-9]+)( tuner=([0-9]+))?( pll=([0-9]))?( radio=([0-9]))?");
 
     if (bttv.open(IO_ReadOnly))
     {
@@ -58,10 +63,14 @@ void TasmaTv::load()
 
 	if (re.search(str) != -1)
 	{
-	    card = re.cap(1).toInt();
+	    card  = re.cap(1).toInt();
 	    tuner = re.cap(3).toInt() + 1;
+	    pll   = re.cap(5).toInt();
+	    radio = re.cap(7).toInt();
 	    mainWidget->cardList->setCurrentItem(card);
 	    mainWidget->tunerList->setCurrentItem(tuner);
+	    mainWidget->pllGroup->setButton(pll);
+	    mainWidget->radioCard->setChecked(radio);
 	}
 	
 	bttv.close();
