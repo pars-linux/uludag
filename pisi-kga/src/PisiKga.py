@@ -100,7 +100,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         except:
             confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
             if confirm == KMessageBox.Yes:
-                pisi.api.add_repo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')            
+                self.command.addRepo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')            
                 self.command.updateRepo('pardus-devel')
             else:
                 KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
