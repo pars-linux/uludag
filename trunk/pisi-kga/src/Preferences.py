@@ -25,7 +25,6 @@ import ThreadRunner
 import PisiKga # for loadIcon
 
 # Pisi imports
-import pisi.api
 import pisi.repodb
 
 class Preferences(PreferencesDialog.PreferencesDialog):
@@ -90,7 +89,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def removeRepo(self):
         repoItem = self.repoListView.currentItem()
         self.repoListView.takeItem(repoItem)
-        pisi.api.remove_repo(repoItem.text(0))
+
+        event = QCustomEvent(PisiCommand.RemoveRepo)
+        event.setData(repoItem.text(0))
+        QThread.postEvent(self.parent,event)
 
     def moveUp(self):
         item = self.repoListView.currentItem()
@@ -106,7 +108,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.repoListView.insertItem(item)
             self.repoListView.setSelected(item, True)
 
-        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(parent.text(0)))
+        event = QCustomEvent(PisiCommand.SwapRepos)
+        event.setData(QString(str(self.repoList.index(item.text(0)))+" "+str(self.repoList.index(parent.text(0)))))
+        QThread.postEvent(self.parent,event)
 
     def moveDown(self):
         item = self.repoListView.currentItem()
@@ -116,7 +120,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             return
         
         item.moveItem(sibling)
-        pisi.api.ctx.repodb.swap(self.repoList.index(item.text(0)), self.repoList.index(sibling.text(0)))
+
+        event = QCustomEvent(PisiCommand.SwapRepos)
+        event.setData(QString(str(self.repoList.index(item.text(0)))+" "+str(self.repoList.index(sibling.text(0)))))
+        QThread.postEvent(self.parent,event)
         
     def processNewRepo(self):
         repoName = str(self.repo.repoName.text())
@@ -126,12 +133,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         else:
-            try:
-                pisi.api.add_repo(repoName,repoAddress)
-            except pisi.repodb.Error:
-                KMessageBox.error(self,i18n('Repository %1 already exists!').arg(repoName), i18n("Pisi Error"))
-                return
-        
+            event = QCustomEvent(PisiCommand.AddRepo)
+            event.setData(QString(repoName+" "+repoAddress))
+            QThread.postEvent(self.parent,event)
+                    
         self.updateListView()
         self.repo.close()
 
@@ -149,9 +154,14 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         if not newRepoAddress.endswith("xml"):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
-        else:                    
-            pisi.api.remove_repo(self.oldRepoName)
-            pisi.api.add_repo(newRepoName,newRepoAddress)
+        else:
+            event = QCustomEvent(PisiCommand.RemoveRepo)
+            event.setData(self.oldRepoName)
+            QThread.postEvent(self.parent,event)
+
+            event = QCustomEvent(PisiCommand.AddRepo)
+            event.setData(newRepoName+" "+newRepoAddress)
+            QThread.postEvent(self.parent,event)
 
         self.updateListView()
         self.repo.close()

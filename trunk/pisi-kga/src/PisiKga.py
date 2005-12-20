@@ -141,7 +141,17 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
         # Now, pisi commands
         elif eventType < PisiCommand.LastEntry :
-            if eventType == PisiCommand.UpdateSingleRepo:
+            if eventType == PisiCommand.AddRepo:
+                repoName = event.data().section(' ',0,0)
+                repoAddress = event.data().section(' ',1,1)
+                self.command.addRepo(repoName,repoAddress)
+            elif eventType == PisiCommand.RemoveRepo:
+                self.command.removeRepo(event.data())
+            elif eventType == PisiCommand.SwapRepos:
+                repo1 = event.data().section(' ',0,0)
+                repo2 = event.data().section(' ',1,1)
+                self.command.swapRepos(repo1.toInt()[0],repo2.toInt()[0])
+            elif eventType == PisiCommand.UpdateSingleRepo:
                 self.command.updateRepo(event.data())
             elif eventType == PisiCommand.UpdateAllRepos:
                 self.command.updateAllRepos()
