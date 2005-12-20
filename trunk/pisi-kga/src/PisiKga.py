@@ -106,38 +106,46 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def customEvent(self, event):
-        if event.type() == CustomEvent.Finished:
-            self.finished()
-            if self.operation == "remove":
-                self.currentOperation = i18n("removing")
-            else:
-                self.currentOperation = i18n("downloading")
-        elif event.type() == CustomEvent.RepositoryUpdate: 
-            self.pDialog.setCaption(i18n("Updating repositories"))
-            self.updatedRepo = event.data()
-            self.pDialog.show()
-        elif event.type() == CustomEvent.PisiError:
-            self.pisiError(event.data())
-        elif event.type() == CustomEvent.PisiInfo:
-            self.operationInfo = event.data()
-        elif event.type() == CustomEvent.AskConfirmation:
-            self.showConfirm()
-        elif event.type() == CustomEvent.UpdateProgress:
-            self.filename = event.data().section(' ',0,0)
-            self.percent = event.data().section(' ',1,1).toInt()[0]
-            self.rate = int(str(event.data().section(' ',2,2)).split('.')[0])
-            self.symbol = event.data().section(' ',3,3)
-            self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
-        elif event.type() == CustomEvent.UpdateListing:
-            self.updateListing()
-        elif event.type() == CustomEvent.PisiNotify:
-            if event.data() and self.operation != "remove":
-                self.currentOperation = event.data()
+        
+        eventType = event.type()
+
+        # First, notification events
+        if eventType < CustomEvent.LastEntry :
+            if eventType == CustomEvent.Finished:
+                self.finished()
+                if self.operation == "remove":
+                    self.currentOperation = i18n("removing")
+                else:
+                    self.currentOperation = i18n("downloading")
+            elif eventType == CustomEvent.RepositoryUpdate: 
+                self.pDialog.setCaption(i18n("Updating repositories"))
+                self.updatedRepo = event.data()
+                self.pDialog.show()
+            elif eventType == CustomEvent.PisiError:
+                self.pisiError(event.data())
+            elif eventType == CustomEvent.PisiInfo:
+                self.operationInfo = event.data()
+            elif eventType == CustomEvent.AskConfirmation:
+                self.showConfirm()
+            elif eventType == CustomEvent.UpdateProgress:
+                self.filename = event.data().section(' ',0,0)
+                self.percent = event.data().section(' ',1,1).toInt()[0]
+                self.rate = int(str(event.data().section(' ',2,2)).split('.')[0])
+                self.symbol = event.data().section(' ',3,3)
                 self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
-        elif event.type() == CustomEvent.UpdateSingleRepo:
-            self.command.updateRepo(event.data())
-        elif event.type() == CustomEvent.UpdateAllRepos:
-            self.command.updateAllRepos()
+            elif eventType == CustomEvent.UpdateListing:
+                self.updateListing()
+            elif eventType == CustomEvent.PisiNotify:
+                if event.data() and self.operation != "remove":
+                    self.currentOperation = event.data()
+                    self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
+        # Now, pisi commands
+        elif eventType < PisiCommand.LastEntry :
+            if eventType == PisiCommand.UpdateSingleRepo:
+                self.command.updateRepo(event.data())
+            elif eventType == PisiCommand.UpdateAllRepos:
+                self.command.updateAllRepos()
+        # Rest
         else:
             print 'Unhandled event:',event.type()
     

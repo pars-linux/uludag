@@ -24,6 +24,12 @@ class CustomEvent:
      UserConfirmed,
      UpdateProgress,
      UpdateListing,
+     PisiAck,
+     LastEntry) = range(QEvent.User, QEvent.User+11)
+
+class PisiCommand:
+    (AddRepo,
      UpdateSingleRepo,
      UpdateAllRepos,
-     PisiAck) = range(QEvent.User, QEvent.User+12)
+     SwapRepos,
+     LastEntry) = range(QEvent.User+12, QEvent.User+17)
