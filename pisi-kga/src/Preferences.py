@@ -66,7 +66,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.moveDownButton.setEnabled(False)
             
     def updateAllRepos(self):
-        event = QCustomEvent(CustomEvent.UpdateAllRepos)
+        event = QCustomEvent(PisiCommand.UpdateAllRepos)
         QThread.postEvent(self.parent,event)
 
     def addNewRepo(self):
@@ -137,7 +137,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         confirm = KMessageBox.questionYesNo(self,i18n('<qt>Do you want to update repository <b>%1</b></qt>').arg(repoName),i18n("Pisi Question"))
         if confirm == KMessageBox.Yes:
-            event = QCustomEvent(CustomEvent.UpdateSingleRepo)
+            event = QCustomEvent(PisiCommand.UpdateSingleRepo)
             event.setData(repoName)
             QThread.postEvent(self.parent,event)
 
