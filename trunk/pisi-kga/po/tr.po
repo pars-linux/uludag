@@ -175,7 +175,7 @@ msgstr "Arayüz Tasarımı ve Kullanılabilirlik"
 
 #: src/PisiKga.py:66
 msgid "Search, Component/Category"
-msgstr ""
+msgstr "Ara, Bileşen/Sınıf"
 
 #: src/PisiKga.py:67
 msgid "Python coding help"
@@ -187,7 +187,7 @@ msgstr "PiSi konusunda yardım"
 
 #: src/PisiKga.py:69
 msgid "Authors of PÄ°SÄ° API"
-msgstr ""
+msgstr "PiSi API Yazarları"
 
 #: src/PisiKga.py:70
 msgid "Author of PyKDEeXtensions"
@@ -318,15 +318,17 @@ msgid "Custom Updates"
 msgstr "Özel güncelleme"
 
 #: src/PisiKga.py:489 src/PisiKga.py:500
-#, fuzzy
 msgid "Total size: %1 MB"
-msgstr "Toplam kurulum boyu:"
+msgstr "Toplam kurulum boyu: %1 MB"
 
 #: src/PisiKga.py:593
 msgid ""
 "You don't have root priviliges, PiSi KGA will run in read-only mode.You "
 "can't install, update or remove programs in this mode"
 msgstr ""
+"Eğer sistem yöneticisi haklarına sahip değilseniz, Program Ekle kaldır " 
+"salt okuma haklarıyla çalışacaktır. Bu nedenle program kuramayacak, "
+"kaldıramayacak ya da güncelleyemeyeceksiniz."
 
 #: src/PisiKga.py:595
 msgid "Pisi Info"
@@ -379,11 +381,11 @@ msgstr "Listeden bir depo silmek için burayı tıklayın"
 
 #: src/PreferencesDialog.py:86
 msgid "Move &Up"
-msgstr ""
+msgstr "&Yukarı Taşı"
 
 #: src/PreferencesDialog.py:87
 msgid "Move &Down"
-msgstr ""
+msgstr "&Aşağı Taşı"
 
 #: src/PreferencesDialog.py:88
 msgid "&Update All Repositories"
@@ -458,6 +460,7 @@ msgstr "Depoyu Değiştir"
 msgid ""
 "<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
 msgstr ""
+"<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
 
 #: src/Preferences.py:133 src/Preferences.py:155
 msgid "Pisi Error"
@@ -544,18 +547,3 @@ msgid ""
 msgstr ""
 "Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
 "Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
-
-#~ msgid "Repository address is wrong!"
-#~ msgstr "Depo Adresi Yanlış."
-
-#~ msgid "Repository %1 already exists!"
-#~ msgstr "Depo %1 zaten var."
-
-#~ msgid "Intuitive Search Interface"
-#~ msgstr "Yaratıcı Arama Sistemi"
-
-#~ msgid "kdebase"
-#~ msgstr "kdebase"
-
-#~ msgid "openoffice.org"
-#~ msgstr "openoffice.org"
