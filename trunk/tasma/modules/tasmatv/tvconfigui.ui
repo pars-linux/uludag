@@ -1069,6 +1069,116 @@
                     </widget>
                 </vbox>
             </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Seçenekler</string>
+                </attribute>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>addOnsGroup</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>180</y>
+                            <width>650</width>
+                            <height>70</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Eklentiler</string>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>radioCard</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>27</x>
+                                <y>28</y>
+                                <width>112</width>
+                                <height>24</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Radyo kartı</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QButtonGroup">
+                    <property name="name">
+                        <cstring>pllGroup</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>10</y>
+                            <width>650</width>
+                            <height>150</height>
+                        </rect>
+                    </property>
+                    <property name="title">
+                        <string>Faz Kilitlemeli Döngü (PLL)</string>
+                    </property>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>pllButton</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>40</x>
+                                <y>40</y>
+                                <width>134</width>
+                                <height>24</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>PLL Kullanma</string>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>mhz28Button</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>40</x>
+                                <y>70</y>
+                                <width>134</width>
+                                <height>24</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>28 Mhz Kristal</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QRadioButton">
+                        <property name="name">
+                            <cstring>mhz35Button</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>40</x>
+                                <y>100</y>
+                                <width>134</width>
+                                <height>24</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>35 Mhz Kristal</string>
+                        </property>
+                        <property name="checked">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                </widget>
+            </widget>
         </widget>
     </grid>
 </widget>
