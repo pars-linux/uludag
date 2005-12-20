@@ -60,10 +60,10 @@ class PisiThread(QThread):
         self.start()
 
     def addRepo(self,repoName,repoAddress):
-        pisi.api.add_repo(str(repoName),str(repoAddress))
+        pisi.api.add_repo(repoName,repoAddress)
 
     def removeRepo(self, repoName):
-        pisi.api.remove_repo(str(repoName))
+        pisi.api.remove_repo(repoName)
        
     def swapRepos(self, repo1, repo2):
         pisi.api.ctx.repodb.swap(repo1, repo2)
