@@ -91,7 +91,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repoListView.takeItem(repoItem)
 
         event = QCustomEvent(PisiCommand.RemoveRepo)
-        event.setData(repoItem.text(0))
+        event.setData(str(repoItem.text(0)))
         QThread.postEvent(self.parent,event)
 
     def moveUp(self):
@@ -109,7 +109,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.repoListView.setSelected(item, True)
 
         event = QCustomEvent(PisiCommand.SwapRepos)
-        event.setData(QString(str(self.repoList.index(item.text(0)))+" "+str(self.repoList.index(parent.text(0)))))
+        event.setData(str(self.repoList.index(item.text(0)))+" "+str(self.repoList.index(parent.text(0))))
         QThread.postEvent(self.parent,event)
 
     def moveDown(self):
@@ -122,7 +122,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         item.moveItem(sibling)
 
         event = QCustomEvent(PisiCommand.SwapRepos)
-        event.setData(QString(str(self.repoList.index(item.text(0)))+" "+str(self.repoList.index(sibling.text(0)))))
+        event.setData(str(self.repoList.index(item.text(0)))+" "+str(self.repoList.index(sibling.text(0))))
         QThread.postEvent(self.parent,event)
         
     def processNewRepo(self):
@@ -134,7 +134,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             return
         else:
             event = QCustomEvent(PisiCommand.AddRepo)
-            event.setData(QString(repoName+" "+repoAddress))
+            event.setData(repoName+" "+repoAddress)
             QThread.postEvent(self.parent,event)
                     
         self.updateListView()
