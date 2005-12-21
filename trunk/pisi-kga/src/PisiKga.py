@@ -41,7 +41,6 @@ import CustomUpdatesDialog
 # Pisi Imports
 import pisi.ui
 import pisi.config
-import pisi.api
 import pisi.packagedb
 import pisi.installdb
 import pisi.repodb
@@ -427,7 +426,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def installRemove(self):
 
         try: # Dependencies might bite us here, http://bugs.uludag.org.tr/show_bug.cgi?id=1170
-            dependencies = pisi.api.package_graph(self.selectedItems, True).vertices()
+            dependencies = self.command.packageGraph(self.selectedItems).vertices()
             self.totalAppCount = len(dependencies)
             self.selectedItems = list(set.union(set(self.selectedItems),set(dependencies)))
         except Exception,e:
@@ -520,8 +519,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         # search names
         query.strip()
         if query:
-            result = pisi.api.search_package(query)
-            result = result.union( pisi.api.search_package(query, 'en' ) )
+            result = self.command.searchPackage(query)
+            result = result.union( self.command.searchPackage(query, 'en' ) )
 
             for pkg in self.packageList:
                 if pkg.find(query) != -1:
