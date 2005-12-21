@@ -392,7 +392,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateListing(self):
     
         # Check if updateSystemButton should be enabled
-        if len(pisi.api.list_upgradable()) > 0:
+        if len(self.command.listUpgradable()) > 0:
             self.updateSystemButton.setEnabled(not nonPrivMode)
         else:
             self.updateSystemButton.setEnabled(False)
@@ -401,18 +401,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
         if index == 2 :
             # Show only installed apps
-            shownPackages = pisi.packagedb.inst_packagedb.list_packages()
+            shownPackages = self.command.listPackages()
             self.installOrRemoveButton.setText(i18n("Remove package(s)"))
 
         elif index == 1:
             # Only upgrades
-            shownPackages = pisi.api.list_upgradable()
+            shownPackages = self.command.listUpgradable()
             self.installOrRemoveButton.setText(i18n("Update package(s)"))
         
         elif index == 0 :
             # Show only not-installed apps
-            available = pisi.api.list_available()
-            installed = pisi.packagedb.inst_packagedb.list_packages()
+            available = self.command.listAvailable()
+            installed = self.command.listPackages()
             shownPackages = list(available - set(installed))
             self.installOrRemoveButton.setText(i18n("Install package(s)"))
             
@@ -457,7 +457,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.setCaption(i18n("Add or Remove Programs"))
         self.pDialog.show()
         
-        list = pisi.api.list_upgradable()
+        list = self.command.listUpgradable()
         self.totalAppCount = len(list)
         self.operation = "upgrade"
         self.command.upgrade(list)
@@ -478,7 +478,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 
 
     def updateSystem(self):
-        self.updateList = pisi.api.list_upgradable()
+        self.updateList = self.command.listUpgradable()
         self.installSize = 0
         
         if self.updateWizard.fastUpdateButton.isOn():
