@@ -44,6 +44,7 @@ postdrop:x:208:
 smmsp:x:209:smmsp
 slocate::245:
 utmp:x:406:
+scanner:x:440:
 messagebus:x:441:
 haldaemon:x:442:haldaemon
 plugdev:x:443:
