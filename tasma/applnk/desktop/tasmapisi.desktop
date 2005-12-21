@@ -11,5 +11,5 @@ X-KDE-Library=pisi_kga
 X-KDE-FactoryName=pisi_kga
 X-KDE-RootOnly=true
 Type=Application
-Exec=kcmshell pisi_kga
+Exec=kcmshell pisi-kga-kcm
 Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
