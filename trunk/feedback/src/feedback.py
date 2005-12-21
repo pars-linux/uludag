@@ -90,6 +90,19 @@ class Form(KWizard):
         self.pageGoodbyeDlg  = GoodbyeDlg()
         self.addPage(self.pageGoodbyeDlg, self.__tr("Goodbye!"))
 
+        # Pixmaps
+        self.pageExperienceDlg.experiencePixmap.setPixmap(self.image_feedback)
+        self.pageGoodbyeDlg.goodbyePixmap.setPixmap(self.image_feedback)
+        self.pageHardwareInfoDlg.hardwareInfoPixmap.setPixmap(self.image_feedback)
+        self.pageOpinionDlg.opinionPixmap.setPixmap(self.image_feedback)
+        self.pageHardwareInfoDlg.hardwareInfoPixmap.setPixmap(self.image_feedback)
+        self.pagePurposeDlg.purposePixmap.setPixmap(self.image_feedback)
+        self.pageQuestionDlg.questionPixmap.setPixmap(self.image_feedback)
+        self.pageUploadDlg.hardwareInfoPixmap.setPixmap(self.image_feedback)
+        self.pageUsageDlg.usagePixmap.setPixmap(self.image_feedback)
+        self.pageWelcomeDlg.welcomePixmap.setPixmap(self.image_feedback)
+        self.pagePersonalInfoDlg.hardwareInfoPixmap.setPixmap(self.image_feedback)
+
         # Buttons
         n = self.nextButton()
         QObject.connect(n, SIGNAL("clicked()"), self.next_clicked)
