@@ -275,18 +275,23 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 self.package = pisi.packagedb.inst_packagedb.get_package(text)
             else:
                 self.package = pisi.packagedb.get_package(text)
-        
-            if listViewItem.isOn():
-                self.installOrRemoveButton.setEnabled(True)
+            
+            if text in self.selectedItems:
+                if not listViewItem.isOn():
+                    self.selectedItems.remove(text)
+                    self.totalSelectedSize -= self.package.installedSize
+                else:
+                    pass
+            elif listViewItem.isOn():
                 self.selectedItems.append(text)
                 self.totalSelectedSize += self.package.installedSize
+                
+            if len(self.selectedItems):
+                self.installOrRemoveButton.setEnabled(True)
             else:
-                self.selectedItems.remove(text)
-                self.totalSelectedSize -= self.package.installedSize
-                if len(self.selectedItems):
-                    self.installOrRemoveButton.setEnabled(True)
-                else:
-                    self.installOrRemoveButton.setEnabled(False)
+                self.installOrRemoveButton.setEnabled(False)
+            
+            self.updateSelectionInfo()
         except:
             pass
 
@@ -579,9 +584,7 @@ class MainApplication(programbase):
         self.connect(mainwidget.helpButton,SIGNAL("clicked()"),self.showHelp)
         self.connect(mainwidget.listView,SIGNAL("selectionChanged(QListViewItem *)"),mainwidget.updateDetails)
         self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateButtons)
-        self.connect(mainwidget.listView,SIGNAL("clicked(QListViewItem *)"),mainwidget.updateSelectionInfo)
         self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateButtons)
-        self.connect(mainwidget.listView,SIGNAL("spacePressed(QListViewItem *)"),mainwidget.updateSelectionInfo)        
         self.connect(mainwidget.installOrRemoveButton,SIGNAL("clicked()"),mainwidget.installRemove)
         self.connect(mainwidget.updateSystemButton,SIGNAL("clicked()"),mainwidget.updateSystemSelection)
         self.connect(mainwidget.preferencesButton,SIGNAL("clicked()"),mainwidget.showPreferences)
