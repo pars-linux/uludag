@@ -137,7 +137,6 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             event.setData(repoName+" "+repoAddress)
             QThread.postEvent(self.parent,event)
                     
-        self.updateListView()
         self.repo.close()
 
         confirm = KMessageBox.questionYesNo(self,i18n('<qt>Do you want to update repository <b>%1</b></qt>').arg(repoName),i18n("Pisi Question"))
