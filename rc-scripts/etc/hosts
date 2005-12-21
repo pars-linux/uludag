@@ -8,7 +8,7 @@
 # and any aliases to this file...
 #
 
-127.0.0.1   localhost
+127.0.0.1   localhost   pardus
 # IPV6 versions of localhost and co
 ::1    localhost
 
