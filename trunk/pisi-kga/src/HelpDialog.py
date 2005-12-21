@@ -20,7 +20,7 @@ from khtml import *
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self)
-        self.setCaption("PiSi KGA Help")
+        self.setCaption(i18n("PiSi KGA Help"))
         self.layout = QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
         self.resize(500,600)
