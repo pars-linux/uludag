@@ -27,8 +27,8 @@
 typedef KGenericFactory<TasmaTv, QWidget > TasmaTvFactory;
 K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("kcmtasmatv"))
 
-  TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
-  : KCModule(TasmaTvFactory::instance(), parent, name)
+TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
+: KCModule(TasmaTvFactory::instance(), parent, name)
 {
     mainWidget = new TvConfig(this);
     
@@ -56,13 +56,12 @@ void TasmaTv::load()
     QFile bttv("/etc/modules.d/bttv");
     QRegExp re(".*card=([0-9]+)( tuner=([0-9]+))?( pll=([0-9]))?( radio=([0-9]))?");
 
-    if (bttv.open(IO_ReadOnly))
-    {
+    if (bttv.open(IO_ReadOnly)) {
+
 	QByteArray ba = bttv.readAll();
 	QCString str(ba.data(), ba.size() + 1);
 
-	if (re.search(str) != -1)
-	{
+	if (re.search(str) != -1) {
 	    card  = re.cap(1).toInt();
 	    if (!re.cap(3).isEmpty())
 		tuner = re.cap(3).toInt() + 1;
