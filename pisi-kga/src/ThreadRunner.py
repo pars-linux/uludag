@@ -79,6 +79,12 @@ class PisiThread(QThread):
     def listAvailable(self):
         return pisi.api.list_available()
 
+    def searchPackage(self,query,language='tr'):
+        return pisi.api.search_package(query,language)
+
+    def packageGraph(self,list,ignoreInstalled=True):
+        return pisi.api.package_graph(list, ignoreInstalled)
+
     def run(self):
         try:
             if self.installing:
