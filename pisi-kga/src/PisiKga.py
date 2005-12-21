@@ -139,6 +139,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 if event.data() and self.operation != "remove":
                     self.currentOperation = event.data()
                     self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
+            elif eventType == CustomEvent.NewRepoAdded:
+                if self.pref:
+                    self.pref.updateListView()
         # Now, pisi commands
         elif eventType < PisiCommand.LastEntry :
             if eventType == PisiCommand.AddRepo:

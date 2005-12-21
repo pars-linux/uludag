@@ -17,6 +17,7 @@ from qt import QEvent
 class CustomEvent:
     (Finished,
      RepositoryUpdate,
+     NewRepoAdded,
      PisiError,
      PisiInfo,
      PisiNotify,
@@ -25,7 +26,7 @@ class CustomEvent:
      UpdateProgress,
      UpdateListing,
      PisiAck,
-     LastEntry) = range(QEvent.User, QEvent.User+11)
+     LastEntry) = range(QEvent.User, QEvent.User+12)
 
 class PisiCommand:
     (AddRepo,
@@ -33,4 +34,4 @@ class PisiCommand:
      UpdateSingleRepo,
      UpdateAllRepos,
      SwapRepos,
-     LastEntry) = range(QEvent.User+12, QEvent.User+18)
+     LastEntry) = range(QEvent.User+13, QEvent.User+19)

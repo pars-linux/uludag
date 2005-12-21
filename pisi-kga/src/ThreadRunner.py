@@ -61,6 +61,8 @@ class PisiThread(QThread):
 
     def addRepo(self,repoName,repoAddress):
         pisi.api.add_repo(repoName,repoAddress)
+        event = QCustomEvent(CustomEvent.NewRepoAdded)
+        QThread.postEvent(self.parent,event)
 
     def removeRepo(self, repoName):
         pisi.api.remove_repo(repoName)
