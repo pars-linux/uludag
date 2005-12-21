@@ -288,7 +288,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 else:
                     self.installOrRemoveButton.setEnabled(False)
         except:
-            self.installOrRemoveButton.setEnabled(False)
+            pass
 
     def updateSelectionInfo(self):
         if len(self.selectedItems):
