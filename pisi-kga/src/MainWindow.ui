@@ -408,35 +408,23 @@
                                     </widget>
                                 </hbox>
                             </widget>
-                            <spacer row="3" column="0">
+                            <spacer row="2" column="0">
                                 <property name="name">
-                                    <cstring>spacer2</cstring>
+                                    <cstring>spacer3_2</cstring>
                                 </property>
                                 <property name="orientation">
                                     <enum>Vertical</enum>
                                 </property>
                                 <property name="sizeType">
-                                    <enum>Expanding</enum>
+                                    <enum>Fixed</enum>
                                 </property>
                                 <property name="sizeHint">
                                     <size>
-                                        <width>21</width>
-                                        <height>80</height>
+                                        <width>20</width>
+                                        <height>20</height>
                                     </size>
                                 </property>
                             </spacer>
-                            <widget class="QLabel" row="2" column="0">
-                                <property name="name">
-                                    <cstring>moreInfoLabelDetails</cstring>
-                                </property>
-                                <property name="midLineWidth">
-                                    <number>1</number>
-                                </property>
-                                <property name="text">
-                                    <string>Program Name: Foo
-Program Version: Bar</string>
-                                </property>
-                            </widget>
                             <widget class="KTextBrowser" row="1" column="0">
                                 <property name="name">
                                     <cstring>infoLabel</cstring>
@@ -466,6 +454,35 @@ Program Version: Bar</string>
                                     <string></string>
                                 </property>
                             </widget>
+                            <widget class="QLabel" row="3" column="0">
+                                <property name="name">
+                                    <cstring>moreInfoLabelDetails</cstring>
+                                </property>
+                                <property name="midLineWidth">
+                                    <number>1</number>
+                                </property>
+                                <property name="text">
+                                    <string>Program Name: Foo
+Program Version: Bar</string>
+                                </property>
+                            </widget>
+                            <spacer row="4" column="0">
+                                <property name="name">
+                                    <cstring>spacer2</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Vertical</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Fixed</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>21</width>
+                                        <height>40</height>
+                                    </size>
+                                </property>
+                            </spacer>
                         </grid>
                     </widget>
                     <widget class="QLayoutWidget">
