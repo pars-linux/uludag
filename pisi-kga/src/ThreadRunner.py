@@ -69,7 +69,16 @@ class PisiThread(QThread):
        
     def swapRepos(self, repo1, repo2):
         pisi.api.ctx.repodb.swap(repo1, repo2)
-        
+    
+    def listUpgradable(self):
+        return pisi.api.list_upgradable()
+
+    def listPackages(self):
+        return pisi.packagedb.inst_packagedb.list_packages()
+
+    def listAvailable(self):
+        return pisi.api.list_available()
+
     def run(self):
         try:
             if self.installing:
