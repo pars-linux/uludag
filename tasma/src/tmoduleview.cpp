@@ -1,6 +1,7 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
-
+  Copyright (c) 2004,2005 TUBITAK/UEKAE
+  Copyright (c) 1999 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
+    
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
