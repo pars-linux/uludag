@@ -95,9 +95,6 @@ void TasmaMainWin::categorySelected( QListViewItem* category )
     if ( _wstack->visibleWidget() != _categoryview ) {
         QWidget *w = _wstack->visibleWidget();
         _wstack->removeWidget( w );
-//don't need any more.
-//        TModuleView *mv = static_cast<TModuleView*>( w );
-//        delete mv;
     }
 
     _wstack->raiseWidget( _categoryview );
