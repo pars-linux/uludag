@@ -33,7 +33,7 @@ METASOURCES = AUTO
 
 KDE_ICON=AUTO
 
-podir=po
+podir=../po
 
 COMMAND=$(XGETTEXT) --foreign-user -C -ci18n -ki18n -ktr2i18n -kI18N_NOOP -kI18N_NOOP2 -kaliasLocale
 messages:
