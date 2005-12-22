@@ -78,7 +78,7 @@ public slots:
     void defaultClicked();
     void contentChanged( bool state );
     void runAsRoot();
-    void rootExited(KProcess*);
+    void killRootProcess();
 
 private:
     TMContent *contentView;
