@@ -158,7 +158,7 @@ void TModuleView::runAsRoot()
   *_proc << "--n"; // Don't keep password.
   *_proc << QString("kcmshell %1 --embed %2 --lang %3").arg(_filename).arg(_embedWidget->winId()).arg(KGlobal::locale()->language());
  
-  connect(_proc, SIGNAL(processExited(KProcess*)), this, SLOT(rootExited(KProcess*)));
+  connect(_proc, SIGNAL(processExited(KProcess*)), this, SLOT(killRootProcess()));
   
   if ( !_proc->start(KProcess::NotifyOnExit) )
     {
@@ -167,7 +167,7 @@ void TModuleView::runAsRoot()
     }
 }
 
-void TModuleView::rootExited(KProcess*)
+void TModuleView::killRootProcess()
 {
   if (_embedWidget->embeddedWinId())
     XDestroyWindow(qt_xdisplay(), _embedWidget->embeddedWinId());
@@ -175,8 +175,12 @@ void TModuleView::rootExited(KProcess*)
   delete _embedWidget;
   _embedWidget = 0;
 
-  delete _proc;
-  _proc = 0;
+  if(_proc)
+    {
+      _proc->kill();
+      delete _proc;
+      _proc = 0;
+    }
 
   delete _embedLayout;
   _embedLayout = 0;
@@ -202,6 +206,8 @@ void TModuleView::contentChanged( bool state )
 
 TModuleView::~TModuleView()
 {
+    killRootProcess();
+    
     delete _apply;
     delete _reset;
 
