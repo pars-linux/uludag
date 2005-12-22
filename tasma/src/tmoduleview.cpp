@@ -169,7 +169,7 @@ void TModuleView::runAsRoot()
 
 void TModuleView::killRootProcess()
 {
-  if (_embedWidget->embeddedWinId())
+  if (_embedWidget &&  _embedWidget->embeddedWinId())
     XDestroyWindow(qt_xdisplay(), _embedWidget->embeddedWinId());
 
   delete _embedWidget;
