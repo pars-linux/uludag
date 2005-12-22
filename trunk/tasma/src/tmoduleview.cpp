@@ -175,12 +175,8 @@ void TModuleView::killRootProcess()
   delete _embedWidget;
   _embedWidget = 0;
 
-  if(_proc)
-    {
-      _proc->kill();
-      delete _proc;
-      _proc = 0;
-    }
+  delete _proc;
+  _proc = 0;
 
   delete _embedLayout;
   _embedLayout = 0;
