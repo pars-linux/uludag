@@ -41,7 +41,7 @@ public:
     void setCategory( const QString& path, const QString& icon, const QString& caption );
 
 signals:
-    void signalModuleSelected( KCModule*, const QString&, const QString& );
+    void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
 
 private:
     CategoryTitle *_title;

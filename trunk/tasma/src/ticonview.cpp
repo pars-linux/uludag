@@ -88,7 +88,8 @@ void TIconView::slotItemSelected( QIconViewItem* item )
     _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
 
     if ( _module ) {
-        emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text() );
+        emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text(),
+                                 _item->moduleinfo()->fileName(), _item->moduleinfo()->needsRootPrivileges());
     }
 
 }

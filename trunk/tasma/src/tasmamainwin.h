@@ -48,7 +48,9 @@ protected slots:
     void categorySelected( QListViewItem *category ); // group/category selected
     void moduleSelected( KCModule *module,
 			 const QString& icon_path,
-			 const QString& text ); // Configuration module selected
+			 const QString& text,
+             const QString& filename,
+             bool needsRootPrivileges); // Configuration module selected
     void backToCategory(); // go back from moduleview to category view.
     void aboutModule(); // about current active module.
 

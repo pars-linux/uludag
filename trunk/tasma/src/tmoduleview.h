@@ -21,11 +21,15 @@
 
 #include <qscrollview.h>
 
+class KProcess;
 class KCModule;
 class KPushButton;
 class KSeparator;
 class QVBoxLayout;
 class QLabel;
+class QXEmbed;
+class QVBox;
+class QVBoxLayout;
 
 class ContentWidget : public QWidget
 {
@@ -61,7 +65,7 @@ class TModuleView : public QWidget
 
 public:
     TModuleView( QWidget *parent, KCModule* module,
-		 const QString& icon_path, const QString& text );
+		 const QString& icon_path, const QString& text, const QString& filename, bool needsRootPrivileges );
 
     ~TModuleView();
 
@@ -73,11 +77,18 @@ public slots:
     void resetClicked();
     void defaultClicked();
     void contentChanged( bool state );
+    void runAsRoot();
+    void rootExited(KProcess*);
 
 private:
     TMContent *contentView;
     KSeparator *_sep;
-    KPushButton *_apply, *_reset, *_default, *_back;
+    KPushButton *_apply, *_reset, *_default, *_back, *_runAsRoot;
+    KProcess *_proc;
+    QXEmbed *_embedWidget;
+    QVBoxLayout *_embedLayout;
+    QVBox *_embedFrame;
+    QString _filename;
     QLabel *_icon, *_moduleName;
 };
 

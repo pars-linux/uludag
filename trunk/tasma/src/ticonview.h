@@ -51,7 +51,7 @@ public:
     void setCategory( const QString& path );
 
 signals:
-    void signalModuleSelected( KCModule*, const QString&, const QString& );
+    void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
 
 protected slots:
     void slotItemSelected( QIconViewItem* item );
