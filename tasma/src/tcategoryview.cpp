@@ -25,8 +25,8 @@ TCategoryView::TCategoryView( QWidget *parent, const char* name )
     _title = new CategoryTitle( this );
 
     _iconview = new TIconView( this );
-    connect ( _iconview, SIGNAL( signalModuleSelected(  KCModule*,  const QString&,  const QString& ) ),
-              this, SIGNAL( signalModuleSelected(  KCModule*,  const QString&,  const QString& ) ) );
+    connect ( _iconview, SIGNAL( signalModuleSelected(  KCModule*,  const QString&,  const QString&, const QString&, bool ) ),
+              this, SIGNAL( signalModuleSelected(  KCModule*,  const QString&,  const QString&, const QString&, bool ) ) );
 
     vbox->addWidget( _title );
     vbox->addWidget( _iconview );

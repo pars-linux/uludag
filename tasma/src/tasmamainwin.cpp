@@ -63,8 +63,8 @@ TasmaMainWin::TasmaMainWin( const char* name )
     _wstack->addWidget( _about );
     _wstack->raiseWidget( _about );
 
-    connect( _categoryview, SIGNAL( signalModuleSelected( KCModule*, const QString&, const QString& ) ),
-             this, SLOT( moduleSelected( KCModule*, const QString&, const QString& ) ) );
+    connect( _categoryview, SIGNAL( signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool ) ),
+             this, SLOT( moduleSelected( KCModule*, const QString&, const QString&, const QString&, bool ) ) );
 
     setCentralWidget( _hbox );
 }
@@ -110,7 +110,7 @@ void TasmaMainWin::categorySelected( QListViewItem* category )
     _about_module->setEnabled( false );
 }
 
-void TasmaMainWin::moduleSelected( KCModule *module, const QString& icon_path, const QString& text )
+void TasmaMainWin::moduleSelected( KCModule *module, const QString& icon_path, const QString& text, const QString& filename, bool needsRootPrivileges)
 {
     if ( _moduleview ) {
         delete _moduleview;
@@ -124,7 +124,7 @@ void TasmaMainWin::moduleSelected( KCModule *module, const QString& icon_path, c
         _about_module->setEnabled( false );
     }
 
-    _moduleview = new TModuleView( this, module, icon_path, text );
+    _moduleview = new TModuleView( this, module, icon_path, text, filename, needsRootPrivileges);
     _wstack->addWidget( _moduleview );
     _wstack->raiseWidget( _moduleview );
 }
