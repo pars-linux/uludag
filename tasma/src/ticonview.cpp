@@ -29,7 +29,7 @@
 #include "ticonview.h"
 
 TIconView::TIconView( QWidget *parent, const char* name )
-  : KIconView( parent, name ), _module(0L)
+  : KIconView( parent, name ), _module(0L), _oldModuleInfo(0L)
 {
     setResizeMode( Adjust );
     setItemsMovable( false );
@@ -49,7 +49,7 @@ TIconView::TIconView( QWidget *parent, const char* name )
 
 void TIconView::setCategory( const QString& path )
 {
-    this->clear();
+    clear();
 
     QPixmap _icon = DesktopIcon( "go", KIcon::SizeMedium ); // defaultIcon
 
@@ -85,19 +85,20 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 {
     TIconViewItem *_item = static_cast<TIconViewItem*>( item );
   
+    if(_oldModuleInfo) KCModuleLoader::unloadModule(*_oldModuleInfo);
     _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
+    _oldModuleInfo = _item->moduleinfo();
 
     if ( _module ) {
         emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text(),
                                  _item->moduleinfo()->fileName(), _item->moduleinfo()->needsRootPrivileges());
     }
-
 }
 
 void TIconView::contentsMouseDoubleClickEvent (QMouseEvent *event)
 {
-  delete _module;
   _module = 0L;
+  _oldModuleInfo = 0L;
   
   KIconView::contentsMouseDoubleClickEvent(event);
 }
