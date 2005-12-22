@@ -66,6 +66,7 @@ private:
 
     QPoint dragPos;
     TIconViewItem* dragItem;
+    KCModuleInfo* _oldModuleInfo; 
     
     void startDrag();
 

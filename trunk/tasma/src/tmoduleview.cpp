@@ -15,6 +15,9 @@
   TModuleView implementation.
 */
 
+#include <X11/Xlib.h>
+#include <fixx11h.h>
+
 #include <qlayout.h>
 #include <qlabel.h>
 #include <qsizepolicy.h>
@@ -22,6 +25,7 @@
 #include <qvbox.h>
 #include <qxembed.h>
 
+#include <kdebug.h>
 #include <kprocess.h>
 #include <kpushbutton.h>
 #include <kstdguiitem.h>
@@ -33,8 +37,6 @@
 #include <kcmodule.h>
 
 #include "tmoduleview.h"
-
-#include <X11/Xlib.h>
 
 TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon_path, const QString& text, const QString& filename, 
                           bool needsRootPrivileges )
@@ -137,12 +139,12 @@ void TModuleView::runAsRoot()
   _embedFrame->setMidLineWidth( 2 );
   _embedLayout->addWidget(_embedFrame,1);
   _embedWidget = new QXEmbed(_embedFrame );
-  this->hide();
+  hide();
   _embedFrame->show();
   QLabel *_busy = new QLabel(i18n("<big>Loading...</big>"), _embedWidget);
   _busy->setAlignment(AlignCenter);
   _busy->setTextFormat(RichText);
-  _busy->setGeometry(0,0, this->width(), this->height());
+  _busy->setGeometry(0,0, width(), height());
   _busy->show();
 
   // run the process
