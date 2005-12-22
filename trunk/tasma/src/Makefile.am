@@ -7,8 +7,6 @@
 #
 # Please read the COPYING file.
 
-SUBDIRS=po
-
 bin_PROGRAMS = tasma
 
 tasma_SOURCES = main.cpp \
