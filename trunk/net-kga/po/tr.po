@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-19 20:10+0200\n"
+"POT-Creation-Date: 2005-12-23 23:48+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -59,39 +59,53 @@ msgstr "Kullan"
 msgid "No device"
 msgstr "Cihaz yok"
 
-#: mainwin.py:42
+#: mainwin.py:41
 msgid "Online"
 msgstr "Bağlı"
 
-#: mainwin.py:45
+#: mainwin.py:44
 msgid "Offline"
 msgstr "Bağlı değil"
 
-#: mainwin.py:78
+#: mainwin.py:81
 msgid "Create"
 msgstr "Oluştur"
 
-#: mainwin.py:84
+#: mainwin.py:87
 msgid "Connect"
 msgstr "Bağlan"
 
-#: mainwin.py:86
+#: mainwin.py:89
 msgid "Disconnect"
 msgstr "Bağlantıyı kes"
 
-#: mainwin.py:148
+#: mainwin.py:152 mainwin.py:183
 msgid "Unconfigured"
 msgstr "Yapılandırılmamış"
 
-#: net_kga.py:22
+#: mainwin.py:196
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"'%s'\n"
+"bağlantısını sileyim mi?"
+
+#: mainwin.py:199
+msgid "Delete connection?"
+msgstr "Bağlantıyı sil?"
+
+#: net_kga.py:23
 msgid "Network connections"
 msgstr "Ağ bağlantıları"
 
-#: net_kga.py:51
+#: net_kga.py:52
 msgid "Network Connections"
 msgstr "Ağ Bağlantılarım"
 
-#: net_kga.py:113
+#: net_kga.py:114
 msgid "Network KGA is already running!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 

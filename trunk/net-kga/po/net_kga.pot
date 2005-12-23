@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-19 20:10+0200\n"
+"POT-Creation-Date: 2005-12-23 23:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,39 +60,51 @@ msgstr ""
 msgid "No device"
 msgstr ""
 
-#: mainwin.py:42
+#: mainwin.py:41
 msgid "Online"
 msgstr ""
 
-#: mainwin.py:45
+#: mainwin.py:44
 msgid "Offline"
 msgstr ""
 
-#: mainwin.py:78
+#: mainwin.py:81
 msgid "Create"
 msgstr ""
 
-#: mainwin.py:84
+#: mainwin.py:87
 msgid "Connect"
 msgstr ""
 
-#: mainwin.py:86
+#: mainwin.py:89
 msgid "Disconnect"
 msgstr ""
 
-#: mainwin.py:148
+#: mainwin.py:152 mainwin.py:183
 msgid "Unconfigured"
 msgstr ""
 
-#: net_kga.py:22
+#: mainwin.py:196
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+
+#: mainwin.py:199
+msgid "Delete connection?"
+msgstr ""
+
+#: net_kga.py:23
 msgid "Network connections"
 msgstr ""
 
-#: net_kga.py:51
+#: net_kga.py:52
 msgid "Network Connections"
 msgstr ""
 
-#: net_kga.py:113
+#: net_kga.py:114
 msgid "Network KGA is already running!"
 msgstr ""
 

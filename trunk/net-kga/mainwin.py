@@ -75,7 +75,6 @@ class Widget(QVBox):
         self.setSpacing(6)
         
         self.links = QListBox(self)
-        self.un_id = 0
         
         box = QHBox(self)
         but = QPushButton(i18n("Create"), box)
@@ -95,9 +94,18 @@ class Widget(QVBox):
         
         self.comar.ask_notify("Net.Link.stateChanged")
         self.comar.ask_notify("Net.Link.connectionChanged")
+        self.comar.ask_notify("Net.Link.deviceChanged")
         
         self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+    
+    def uniqueName(self):
+        id = 0
+        while True:
+            name = unicode(i18n("Unconfigured")) + " " + str(id)
+            if not self.findConn(name):
+                return name
+            id += 1
     
     def findConn(self, name):
         # lame iteration in absence of QListBox's own iterator
@@ -148,8 +156,7 @@ class Widget(QVBox):
                 if reply[2] == '':
                     return
                 uid, dev = reply[2].split(" ", 1)
-                name = unicode(i18n("Unconfigured")) + " " + str(self.un_id)
-                self.un_id += 1
+                name = self.uniqueName()
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
         
         elif reply[0] == self.comar.NOTIFY:
@@ -176,7 +183,14 @@ class Widget(QVBox):
                     conn = self.findConn(name)
                     if conn:
                         self.links.removeItem(self.links.index(conn))
-
+            
+            elif noti == "Net.Link.deviceChanged":
+                type, nettype, uid, info = data.split(" ", 3)
+                if type != "new":
+                    return
+                name = self.uniqueName()
+                self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
+    
     def slotCreate(self):
         links.Window(self)
     
@@ -186,9 +200,11 @@ class Widget(QVBox):
             w = connection.Window(self, conn.name, conn.link_name)
     
     def slotDelete(self):
+        m = i18n("Should I delete the\n'%s'\nconnection?")
         conn = self.links.selectedItem()
         if conn:
-            self.comar.call_package("Net.Link.deleteConnection", conn.link_name, [ "name", conn.name ])
+            if QMessageBox.Ok == QMessageBox.question(self, i18n("Delete connection?"), unicode(m) % conn.name, QMessageBox.Ok, QMessageBox.Cancel):
+                self.comar.call_package("Net.Link.deleteConnection", conn.link_name, [ "name", conn.name ])
     
     def slotConnect(self):
         conn = self.links.selectedItem()
