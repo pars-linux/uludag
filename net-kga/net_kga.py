@@ -14,6 +14,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import mainwin
+from icons import icons
 import comar
 
 def I18N_NOOP(str):
@@ -116,6 +117,7 @@ def main():
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
     kapp.setMainWidget(myapp)
+    icons.load_icons()
     sys.exit(myapp.exec_loop())
     
 # Factory function for KControl

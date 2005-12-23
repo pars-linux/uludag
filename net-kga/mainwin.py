@@ -15,6 +15,7 @@ import connection
 import links
 import comar
 import widgets
+from icons import icons
 
 
 class Connection(QListBoxItem):
@@ -31,8 +32,6 @@ class Connection(QListBoxItem):
         self.f2 = QFont()
         self.f1.setBold(True)
         self.f1.setPointSize(self.f1.pointSize() + 4)
-        self.up_pix = QPixmap(locate("data", "net_kga/net-up.png"))
-        self.down_pix = QPixmap(locate("data", "net_kga/net-down.png"))
         comar.call_package("Net.Link.connectionInfo", link_name, [ "name", name ], id=2)
         comar.call_package("Net.Link.getAddress", link_name, [ "name", name ], id=3)
         comar.call_package("Net.Link.getState", link_name, [ "name", name ], id=4)
@@ -40,26 +39,30 @@ class Connection(QListBoxItem):
     def paint(self, painter):
         if self.online:
             text = unicode(i18n("Online")) + ", "
-            pix = self.up_pix
+            pix = icons.net_on
         else:
             text = unicode(i18n("Offline")) + ", "
-            pix = self.down_pix
+            pix = icons.net_off
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
         painter.setPen(Qt.black)
         painter.setFont(self.f1)
-        painter.drawText(32 + 9, 3 + fm.ascent(), unicode(self.name))
+        painter.drawText(48 + 9, 3 + fm.ascent(), unicode(self.name))
         painter.setFont(self.f2)
-        painter.drawText(32 + 9, 3 + fm.height() + 3 + fm2.ascent(),
+        painter.drawText(48 + 9, 3 + fm.height() + 3 + fm2.ascent(),
             "%s" % (self.device_name))
-        painter.drawText(32 + 9, 3 + fm.height() + 3 + fm2.height() + 3 + fm2.ascent()
+        painter.drawText(48 + 9, 3 + fm.height() + 3 + fm2.height() + 3 + fm2.ascent()
             , text + self.address)
         painter.drawPixmap(3, 3, pix)
     
     def height(self, box):
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
-        return 3 + fm.height() + 3 + fm2.height() + 3 + fm2.height() + 3
+        ts = 3 + fm.height() + 3 + fm2.height() + 3 + fm2.height() + 3
+        ps = 3 + 48 + 3
+        if ts < ps:
+            ts = ps
+        return ts
     
     def width(self, box):
         return 100
