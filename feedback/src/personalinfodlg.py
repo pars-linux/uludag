@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'personalinfodlg.ui'
 #
-# Created: Pzt Ara 19 23:51:43 2005
+# Created: Cum Ara 23 15:04:58 2005
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
@@ -210,10 +210,6 @@ class PersonalInfoDlg(QWidget):
         self.setIcon(self.image0)
 
 
-        self.hardwareInfoPixmap = QLabel(self,"hardwareInfoPixmap")
-        self.hardwareInfoPixmap.setGeometry(QRect(-5,0,142,290))
-        self.hardwareInfoPixmap.setScaledContents(1)
-
         self.hardwareInfoLabel = QLabel(self,"hardwareInfoLabel")
         self.hardwareInfoLabel.setGeometry(QRect(171,61,428,70))
         hardwareInfoLabel_font = QFont(self.hardwareInfoLabel.font())
@@ -228,24 +224,28 @@ class PersonalInfoDlg(QWidget):
         self.hardwareInfoLabel_2.setTextFormat(QLabel.RichText)
         self.hardwareInfoLabel_2.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
 
-        self.lineEmail = QLineEdit(self,"lineEmail")
-        self.lineEmail.setGeometry(QRect(225,150,320,22))
-
         LayoutWidget = QWidget(self,"layout5")
         LayoutWidget.setGeometry(QRect(190,200,400,60))
         layout5 = QVBoxLayout(LayoutWidget,11,6,"layout5")
 
-        self.hardwareInfoBox_2 = QCheckBox(LayoutWidget,"hardwareInfoBox_2")
-        self.hardwareInfoBox_2.setChecked(1)
-        layout5.addWidget(self.hardwareInfoBox_2)
+        self.CheckBoxAnnounce = QCheckBox(LayoutWidget,"CheckBoxAnnounce")
+        self.CheckBoxAnnounce.setChecked(1)
+        layout5.addWidget(self.CheckBoxAnnounce)
 
-        self.hardwareInfoBox_3 = QCheckBox(LayoutWidget,"hardwareInfoBox_3")
-        self.hardwareInfoBox_3.setChecked(1)
-        layout5.addWidget(self.hardwareInfoBox_3)
+        self.CheckBoxSecurity = QCheckBox(LayoutWidget,"CheckBoxSecurity")
+        self.CheckBoxSecurity.setChecked(1)
+        layout5.addWidget(self.CheckBoxSecurity)
 
         self.stepLabel = QLabel(self,"stepLabel")
         self.stepLabel.setGeometry(QRect(160,20,100,21))
         self.stepLabel.setPaletteForegroundColor(QColor(77,77,77))
+
+        self.lineEmail = QLineEdit(self,"lineEmail")
+        self.lineEmail.setGeometry(QRect(225,150,320,22))
+
+        self.hardwareInfoPixmap = QLabel(self,"hardwareInfoPixmap")
+        self.hardwareInfoPixmap.setGeometry(QRect(-5,0,142,290))
+        self.hardwareInfoPixmap.setScaledContents(1)
 
         self.languageChange()
 
@@ -259,9 +259,9 @@ class PersonalInfoDlg(QWidget):
 "You can submit your e-mail address for inclusion in our low traffic\n"
 "announces."))
         self.hardwareInfoLabel_2.setText(i18n("E-mail:"))
-        self.hardwareInfoBox_2.setText(i18n("Add me to your Pardus announce list"))
-        self.hardwareInfoBox_2.setAccel(QString.null)
-        self.hardwareInfoBox_3.setText(i18n("Send me security related e-mails"))
-        self.hardwareInfoBox_3.setAccel(QString.null)
+        self.CheckBoxAnnounce.setText(i18n("Add me to your Pardus announce list"))
+        self.CheckBoxAnnounce.setAccel(QString.null)
+        self.CheckBoxSecurity.setText(i18n("Send me security related e-mails"))
+        self.CheckBoxSecurity.setAccel(QString.null)
         self.stepLabel.setText(i18n("<b>Step 6 of 7</b>"))
 

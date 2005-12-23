@@ -20,22 +20,6 @@
     </property>
     <widget class="QLabel">
         <property name="name">
-            <cstring>hardwareInfoPixmap</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>-5</x>
-                <y>0</y>
-                <width>142</width>
-                <height>290</height>
-            </rect>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
             <cstring>hardwareInfoLabel</cstring>
         </property>
         <property name="geometry">
@@ -88,19 +72,6 @@ announces.</string>
             <set>WordBreak|AlignTop</set>
         </property>
     </widget>
-    <widget class="QLineEdit">
-        <property name="name">
-            <cstring>lineEmail</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>225</x>
-                <y>150</y>
-                <width>320</width>
-                <height>22</height>
-            </rect>
-        </property>
-    </widget>
     <widget class="QLayoutWidget">
         <property name="name">
             <cstring>layout5</cstring>
@@ -119,7 +90,7 @@ announces.</string>
             </property>
             <widget class="QCheckBox">
                 <property name="name">
-                    <cstring>hardwareInfoBox_2</cstring>
+                    <cstring>CheckBoxAnnounce</cstring>
                 </property>
                 <property name="text">
                     <string>Add me to your Pardus announce list</string>
@@ -133,7 +104,7 @@ announces.</string>
             </widget>
             <widget class="QCheckBox">
                 <property name="name">
-                    <cstring>hardwareInfoBox_3</cstring>
+                    <cstring>CheckBoxSecurity</cstring>
                 </property>
                 <property name="text">
                     <string>Send me security related e-mails</string>
@@ -168,6 +139,35 @@ announces.</string>
         </property>
         <property name="text">
             <string>&lt;b&gt;Step 6 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>lineEmail</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>225</x>
+                <y>150</y>
+                <width>320</width>
+                <height>22</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoPixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
         </property>
     </widget>
 </widget>

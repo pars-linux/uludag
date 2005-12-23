@@ -56,7 +56,7 @@
                         </property>
                         <widget class="QCheckBox">
                             <property name="name">
-                                <cstring>checkBox2_3</cstring>
+                                <cstring>checkBoxDaily</cstring>
                             </property>
                             <property name="text">
                                 <string>Daily use</string>
@@ -64,7 +64,7 @@
                         </widget>
                         <widget class="QCheckBox">
                             <property name="name">
-                                <cstring>checkBox2</cstring>
+                                <cstring>checkBoxHobby</cstring>
                             </property>
                             <property name="text">
                                 <string>It's my hobby</string>
@@ -72,7 +72,7 @@
                         </widget>
                         <widget class="QCheckBox">
                             <property name="name">
-                                <cstring>checkBox2_2</cstring>
+                                <cstring>checkBoxInt</cstring>
                             </property>
                             <property name="text">
                                 <string>For internet access</string>
@@ -90,7 +90,7 @@
                         </property>
                         <widget class="QCheckBox">
                             <property name="name">
-                                <cstring>checkBox2_3_2</cstring>
+                                <cstring>checkBoxBus</cstring>
                             </property>
                             <property name="text">
                                 <string>For business</string>
@@ -98,7 +98,7 @@
                         </widget>
                         <widget class="QCheckBox">
                             <property name="name">
-                                <cstring>checkBox2_4</cstring>
+                                <cstring>checkBoxEnt</cstring>
                             </property>
                             <property name="text">
                                 <string>Entertainment purposes</string>
@@ -106,7 +106,7 @@
                         </widget>
                         <widget class="QCheckBox">
                             <property name="name">
-                                <cstring>checkBox2_2_2</cstring>
+                                <cstring>checkBoxEdu</cstring>
                             </property>
                             <property name="text">
                                 <string>Educational purposes</string>
