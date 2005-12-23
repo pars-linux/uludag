@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'purposedlg.ui'
 #
-# Created: Pzt Ara 19 23:31:29 2005
+# Created: Cum Ara 23 15:04:58 2005
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
@@ -32,26 +32,26 @@ class PurposeDlg(QDialog):
 
         layout18 = QVBoxLayout(None,0,6,"layout18")
 
-        self.checkBox2_3 = QCheckBox(LayoutWidget,"checkBox2_3")
-        layout18.addWidget(self.checkBox2_3)
+        self.checkBoxDaily = QCheckBox(LayoutWidget,"checkBoxDaily")
+        layout18.addWidget(self.checkBoxDaily)
 
-        self.checkBox2 = QCheckBox(LayoutWidget,"checkBox2")
-        layout18.addWidget(self.checkBox2)
+        self.checkBoxHobby = QCheckBox(LayoutWidget,"checkBoxHobby")
+        layout18.addWidget(self.checkBoxHobby)
 
-        self.checkBox2_2 = QCheckBox(LayoutWidget,"checkBox2_2")
-        layout18.addWidget(self.checkBox2_2)
+        self.checkBoxInt = QCheckBox(LayoutWidget,"checkBoxInt")
+        layout18.addWidget(self.checkBoxInt)
         layout6.addLayout(layout18)
 
         layout18_2 = QVBoxLayout(None,0,6,"layout18_2")
 
-        self.checkBox2_3_2 = QCheckBox(LayoutWidget,"checkBox2_3_2")
-        layout18_2.addWidget(self.checkBox2_3_2)
+        self.checkBoxBus = QCheckBox(LayoutWidget,"checkBoxBus")
+        layout18_2.addWidget(self.checkBoxBus)
 
-        self.checkBox2_4 = QCheckBox(LayoutWidget,"checkBox2_4")
-        layout18_2.addWidget(self.checkBox2_4)
+        self.checkBoxEnt = QCheckBox(LayoutWidget,"checkBoxEnt")
+        layout18_2.addWidget(self.checkBoxEnt)
 
-        self.checkBox2_2_2 = QCheckBox(LayoutWidget,"checkBox2_2_2")
-        layout18_2.addWidget(self.checkBox2_2_2)
+        self.checkBoxEdu = QCheckBox(LayoutWidget,"checkBoxEdu")
+        layout18_2.addWidget(self.checkBoxEdu)
         layout6.addLayout(layout18_2)
 
         self.purposeMiniLabel = QLabel(self,"purposeMiniLabel")
@@ -83,12 +83,12 @@ class PurposeDlg(QDialog):
     def languageChange(self):
         self.setCaption(i18n("Feedback wizard"))
         self.buttonGroup.setTitle(QString.null)
-        self.checkBox2_3.setText(i18n("Daily use"))
-        self.checkBox2.setText(i18n("It's my hobby"))
-        self.checkBox2_2.setText(i18n("For internet access"))
-        self.checkBox2_3_2.setText(i18n("For business"))
-        self.checkBox2_4.setText(i18n("Entertainment purposes"))
-        self.checkBox2_2_2.setText(i18n("Educational purposes"))
+        self.checkBoxDaily.setText(i18n("Daily use"))
+        self.checkBoxHobby.setText(i18n("It's my hobby"))
+        self.checkBoxInt.setText(i18n("For internet access"))
+        self.checkBoxBus.setText(i18n("For business"))
+        self.checkBoxEnt.setText(i18n("Entertainment purposes"))
+        self.checkBoxEdu.setText(i18n("Educational purposes"))
         self.purposeMiniLabel.setText(i18n("<p align=\"right\">(You can click on multiple items)</p>"))
         self.purposeLabel.setText(i18n("<h2>Why do you use Pardus?</h2>"))
         self.stepLabel.setText(i18n("<b>Step 2 of 7</b>"))

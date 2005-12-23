@@ -5,6 +5,7 @@ from ConfigParser import ConfigParser
 import os
 import sys
 import time
+import urllib
 
 from qt import *
 from kdecore import *
@@ -56,7 +57,7 @@ class Form(KWizard):
         KWizard.__init__(self, parent, name, modal, fl)
 
         self.resize(QSize(600,373).expandedTo(self.minimumSizeHint()))
-        
+          
         # Images
         self.image_feedback = QPixmap("feedback.png")
 
@@ -151,48 +152,102 @@ class Form(KWizard):
 
 class thread_upload(QThread):
     def run(self):
+        upload = {}
         text = ""
-        done = _("<font color=\"#008800\">Done</font><br>\n")
-        failed = _("<font color=\"#ff0000\">Failed</font><br>\n")
         # Collect hardware information
+        upload['hardware'] = ""
         if not w.pageHardwareInfoDlg.hardwareInfoBox.isChecked():
             text += _("Collecting hardware information...")
             w.pageUploadDlg.labelStatus.setText(text)
             stdin, stdout, stderr = os.popen3("uhinv -f text")
             if "".join(stderr):
-                text += failed
+                text += _("<font color=\"#ff0000\">Failed</font><br>\n")
+                text += _("<font color=\"#ff0000\">Be sure that Feedback is fully installed.</font><br>\n")
                 w.pageUploadDlg.labelStatus.setText(text)
                 w.pageUploadDlg.buttonRetry.show()
                 return
             else:
-                text += done
+                text += _("<font color=\"#008800\">Done</font><br>\n")
+                upload['hardware'] = "".join(stdout)
                 w.pageUploadDlg.labelStatus.setText(text)
         # Upload data to dev. center
         text += _("Uploading data...")
         w.pageUploadDlg.labelStatus.setText(text)
+        # Experience
+        upload['exp'] = 0
+        if w.pageExperienceDlg.questionOne.isChecked():
+            upload['exp'] = 1
+        elif w.pageExperienceDlg.questionTwo.isChecked():
+            upload['exp'] = 2
+        elif w.pageExperienceDlg.questionThree.isChecked():
+            upload['exp'] = 3
+        elif w.pageExperienceDlg.questionFour.isChecked():
+            upload['exp'] = 4
+        # Purpose
+        upload['purpose'] = 0
+        if w.pagePurposeDlg.checkBoxDaily.isChecked():
+            upload['purpose'] += 1
+        if w.pagePurposeDlg.checkBoxHobby.isChecked():
+            upload['purpose'] += 2
+        if w.pagePurposeDlg.checkBoxInt.isChecked():
+            upload['purpose'] += 4
+        if w.pagePurposeDlg.checkBoxBus.isChecked():
+            upload['purpose'] += 8
+        if w.pagePurposeDlg.checkBoxEnt.isChecked():
+            upload['purpose'] += 16
+        if w.pagePurposeDlg.checkBoxEdu.isChecked():
+            upload['purpose'] += 32
+        # Usage
+        upload['usage'] = 0
+        if w.pageUsageDlg.usagecheckBoxOne.isChecked():
+            upload['usage'] += 1
+        if w.pageUsageDlg.usagecheckBoxTwo.isChecked():
+            upload['usage'] += 2
+        if w.pageUsageDlg.usagecheckBoxThree.isChecked():
+            upload['usage'] += 4
+        # Question
+        upload['question'] = 0
+        if w.pageQuestionDlg.questionOne.isChecked():
+            upload['question'] = 1
+        elif w.pageQuestionDlg.questionTwo.isChecked():
+            upload['question'] = 2
+        elif w.pageQuestionDlg.questionThree.isChecked():
+            upload['question'] = 3
+        # Opinion
+        upload['opinion'] = str(w.pageOpinionDlg.opinionEdit.text())
+        # Personal
+        upload['email'] = str(w.pagePersonalInfoDlg.lineEmail.text())
+        upload['email_announce'] = w.pagePersonalInfoDlg.CheckBoxAnnounce.isChecked()
+        upload['email_security'] = w.pagePersonalInfoDlg.CheckBoxSecurity.isChecked()
+            
+        # Upload!
         try:
+            raise Error, "err"
             # FIXME
-            pass
+            #params = urllib.urlencode(upload)
+            #f = urllib.urlopen(url_upload, params)
         except:
-            text += failed
+            text += _("<font color=\"#ff0000\">Failed</font><br>\n")
+            text += _("<font color=\"#ff0000\">Be sure that you're connected to the Internet.</font><br>\n")
             w.pageUploadDlg.labelStatus.setText(text)
             w.pageUploadDlg.buttonRetry.show()
             return
         else:
-            text += done
+            text += _("<font color=\"#008800\">Done</font><br>\n")
             w.pageUploadDlg.labelStatus.setText(text)
+
         #
         w.setNextEnabled(w.pageUploadDlg, 1)
 
 def main():
-    global w, url
+    global w, url_upload
 
     conf = ConfigParser()
     try:
         conf.read("/etc/feedback.conf")
-        url = conf.get("general", "url")
+        url_upload = conf.get("general", "url")
     except:
-        url = "http://www.uludag.org.tr/feedback.py"
+        url_upload = "http://www.uludag.org.tr/feedback.py"
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
