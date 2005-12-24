@@ -14,7 +14,6 @@
   TasmaMainWindow implementation.
 */
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <qhbox.h>
 #include <qwidgetstack.h>
