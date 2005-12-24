@@ -39,7 +39,7 @@ class TasmaMainWin : public KMainWindow
 
 public:
     TasmaMainWin( const char* name = 0 );
-    ~TasmaMainWin() {}
+    ~TasmaMainWin();
 
 protected:
     void setupActions(); // menubar and shortcut keys.
