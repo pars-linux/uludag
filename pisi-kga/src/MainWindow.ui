@@ -628,6 +628,14 @@ Program Version: Bar</string>
         </widget>
     </grid>
 </widget>
+<connections>
+    <connection>
+        <sender>queryEdit</sender>
+        <signal>returnPressed(const QString&amp;)</signal>
+        <receiver>searchButton</receiver>
+        <slot>setFocus()</slot>
+    </connection>
+</connections>
 <tabstops>
     <tabstop>searchButton</tabstop>
     <tabstop>updateSystemButton</tabstop>
