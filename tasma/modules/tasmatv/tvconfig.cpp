@@ -91,3 +91,5 @@ void TvConfig::loadModule()
 
     system(cmd);	
 }
+
+#include "tvconfig.moc"
