@@ -25,25 +25,23 @@ from upload import UploadDlg
 from goodbyedlg import GoodbyeDlg
 
 # Gettext
+"""
 import gettext
 t = gettext.translation("feedback", fallback=True)
 _ = t.ugettext
-
-# Workaround the fact that PyKDE provides no I18N_NOOP as KDE
-def I18N_NOOP(str):
-    return str
+"""
 
 def AboutData():
     description = "Pardus Feedback Tool"
-    version = "1.0_rc1"
+    version = "1.0"
 
     about_data = KAboutData("feedback", "Pardus Feedback Tool", version, \
                             description, KAboutData.License_GPL,
                             "(C) 2005 UEKAE/TÜBİTAK", None, None, "bahadir@haftalik.net")
 
-    about_data.addAuthor(I18N_NOOP("Bahadır Kandemir"), None, "bahadir@haftalik.net")
-    about_data.addCredit(I18N_NOOP("S. Çağlar Onur"), "Previous Maintainer", None)
-    about_data.addCredit(I18N_NOOP("Görkem Çetin"),  "Interface Design", None)
+    about_data.addAuthor("Bahadır Kandemir", None, "bahadir@haftalik.net")
+    about_data.addCredit("S. Çağlar Onur", "Previous Maintainer", None)
+    about_data.addCredit("Görkem Çetin",  "Interface Design", None)
     return about_data
 
 def loadIcon(name, group=KIcon.Desktop):
@@ -59,37 +57,37 @@ class Form(KWizard):
         self.resize(QSize(600,373).expandedTo(self.minimumSizeHint()))
           
         # Images
-        self.image_feedback = QPixmap("feedback.png")
+        self.image_feedback = QPixmap(locate("data", "feedback/feedback.png"))
 
         self.pageWelcomeDlg = WelcomeDlg()
-        self.addPage(self.pageWelcomeDlg, self.__tr("Welcome"))
+        self.addPage(self.pageWelcomeDlg, i18n("Welcome"))
 
         self.pageExperienceDlg = ExperienceDlg()
-        self.addPage(self.pageExperienceDlg, self.__tr("Experience"))
+        self.addPage(self.pageExperienceDlg, i18n("Experience"))
 
         self.pagePurposeDlg = PurposeDlg()
-        self.addPage(self.pagePurposeDlg, self.__tr("Purpose"))
+        self.addPage(self.pagePurposeDlg, i18n("Purpose"))
 
         self.pageUsageDlg = UsageDlg()
-        self.addPage(self.pageUsageDlg, self.__tr("Usage"))
+        self.addPage(self.pageUsageDlg, i18n("Usage"))
 
         self.pageQuestionDlg = QuestionDlg()
-        self.addPage(self.pageQuestionDlg, self.__tr("Questions"))
+        self.addPage(self.pageQuestionDlg, i18n("Questions"))
 
         self.pageOpinionDlg = OpinionDlg()
-        self.addPage(self.pageOpinionDlg, self.__tr("Opinions"))
+        self.addPage(self.pageOpinionDlg, i18n("Opinions"))
 
         self.pagePersonalInfoDlg = PersonalInfoDlg()
-        self.addPage(self.pagePersonalInfoDlg, self.__tr("Personal Info"))
+        self.addPage(self.pagePersonalInfoDlg, i18n("Personal Info"))
 
         self.pageHardwareInfoDlg = HardwareInfoDlg()
-        self.addPage(self.pageHardwareInfoDlg, self.__tr("Hardware Info"))
+        self.addPage(self.pageHardwareInfoDlg, i18n("Hardware Info"))
 
         self.pageUploadDlg = UploadDlg()
-        self.addPage(self.pageUploadDlg, self.__tr("Uploading"))
+        self.addPage(self.pageUploadDlg, i18n("Uploading"))
 
         self.pageGoodbyeDlg  = GoodbyeDlg()
-        self.addPage(self.pageGoodbyeDlg, self.__tr("Goodbye!"))
+        self.addPage(self.pageGoodbyeDlg, i18n("Goodbye!"))
 
         # Pixmaps
         self.pageExperienceDlg.experiencePixmap.setPixmap(self.image_feedback)
@@ -157,21 +155,21 @@ class thread_upload(QThread):
         # Collect hardware information
         upload['hardware'] = ""
         if not w.pageHardwareInfoDlg.hardwareInfoBox.isChecked():
-            text += _("Collecting hardware information...")
+            text += i18n("Collecting hardware information...")
             w.pageUploadDlg.labelStatus.setText(text)
             stdin, stdout, stderr = os.popen3("uhinv -f text")
             if "".join(stderr):
-                text += _("<font color=\"#ff0000\">Failed</font><br>\n")
-                text += _("<font color=\"#ff0000\">Be sure that Feedback is fully installed.</font><br>\n")
+                text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
+                text += i18n("<font color=\"#ff0000\">Be sure that Feedback is fully installed.</font><br>\n")
                 w.pageUploadDlg.labelStatus.setText(text)
                 w.pageUploadDlg.buttonRetry.show()
                 return
             else:
-                text += _("<font color=\"#008800\">Done</font><br>\n")
+                text += i18n("<font color=\"#008800\">Done</font><br>\n")
                 upload['hardware'] = "".join(stdout)
                 w.pageUploadDlg.labelStatus.setText(text)
         # Upload data to dev. center
-        text += _("Uploading data...")
+        text += i18n("Uploading data...")
         w.pageUploadDlg.labelStatus.setText(text)
         # Experience
         upload['exp'] = 0
@@ -222,18 +220,18 @@ class thread_upload(QThread):
             
         # Upload!
         try:
-            raise Error, "err"
-            # FIXME
-            #params = urllib.urlencode(upload)
-            #f = urllib.urlopen(url_upload, params)
+            params = urllib.urlencode(upload)
+            f = urllib.urlopen(url_upload, params)
+            if f.read() != '1':
+                raise IOError, "ConnectionError"
         except:
-            text += _("<font color=\"#ff0000\">Failed</font><br>\n")
-            text += _("<font color=\"#ff0000\">Be sure that you're connected to the Internet.</font><br>\n")
+            text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
+            text += i18n("<font color=\"#ff0000\">Be sure that you're connected to the Internet.</font><br>\n")
             w.pageUploadDlg.labelStatus.setText(text)
             w.pageUploadDlg.buttonRetry.show()
             return
         else:
-            text += _("<font color=\"#008800\">Done</font><br>\n")
+            text += i18n("<font color=\"#008800\">Done</font><br>\n")
             w.pageUploadDlg.labelStatus.setText(text)
 
         #
@@ -253,7 +251,7 @@ def main():
     KCmdLineArgs.init(sys.argv,about_data)
 
     if not KUniqueApplication.start():
-        print _("Feedback tool is already running!")
+        print i18n("Feedback tool is already running!")
         return
 
     kapp = KUniqueApplication(True, True, True)
