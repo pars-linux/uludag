@@ -1,0 +1,323 @@
+# Pardus Feedback Tool
+# Copyright (C) 2005 TUBITAK/UEKAE
+# Bahadır Kandemir <bahadir@haftalik.net>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Feedback 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-12-24 14:00+0200\n"
+"PO-Revision-Date: 2005-12-24 13:17+0200\n"
+"Last-Translator: Bahadır Kandemir <bahadir@haftalik.net>\n"
+"Language-Team: Turkish <bahadir@haftalik.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: UTF-8\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: src/feedback.py:63
+msgid "Welcome"
+msgstr "Hoşgeldiniz"
+
+#: src/feedback.py:66
+msgid "Experience"
+msgstr "Deneyim"
+
+#: src/feedback.py:69
+msgid "Purpose"
+msgstr "Amaç"
+
+#: src/feedback.py:72
+msgid "Usage"
+msgstr "Kullanım"
+
+#: src/feedback.py:75
+msgid "Questions"
+msgstr "Sorular"
+
+#: src/feedback.py:78
+msgid "Opinions"
+msgstr "Düşünceler"
+
+#: src/feedback.py:81
+msgid "Personal Info"
+msgstr "Kişisel Bilgiler"
+
+#: src/feedback.py:84
+msgid "Hardware Info"
+msgstr "Donanım Bilgisi"
+
+#: src/feedback.py:87
+msgid "Uploading"
+msgstr "Gönderiliyor"
+
+#: src/feedback.py:90
+msgid "Goodbye!"
+msgstr "Güle güle!"
+
+#: src/feedback.py:133
+msgid "Feedback"
+msgstr "Geribildirim"
+
+#: src/feedback.py:158
+msgid "Collecting hardware information..."
+msgstr "Donanım bilgiis toplanıyor..."
+
+#: src/feedback.py:162 src/feedback.py:228
+msgid "<font color=\"#ff0000\">Failed</font><br>\n"
+msgstr "<font color=\"#ff0000\">Başarısız</font><br>\n"
+
+#: src/feedback.py:163
+msgid ""
+"<font color=\"#ff0000\">Be sure that Feedback is fully installed.</"
+"font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Geribildirim arcının tam olarak kurulu olduğundan "
+"emin olun.</font><br>\n"
+
+#: src/feedback.py:168 src/feedback.py:234
+msgid "<font color=\"#008800\">Done</font><br>\n"
+msgstr "<font color=\"#008800\">Tamam</font><br>\n"
+
+#: src/feedback.py:172
+msgid "Uploading data..."
+msgstr "Veri gönderiliyor..."
+
+#: src/feedback.py:229
+msgid ""
+"<font color=\"#ff0000\">Be sure that you're connected to the Internet.</"
+"font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Internete bağlı olduğunuzdan emin olun.</font><br>\n"
+
+#: src/feedback.py:254
+msgid "Feedback tool is already running!"
+msgstr "Geribildirim aracı zaten çalışıyor!"
+
+#: src/usagedlg.py:69 src/experiencedlg.py:142 src/welcomedlg.py:230
+#: src/questiondlg.py:253 src/personalinfodlg.py:257 src/opiniondlg.py:58
+#: src/hardwareinfodlg.py:238 src/upload.py:245 src/goodbyedlg.py:232
+msgid "Feedback Wizard"
+msgstr "Geribildirim Sihirbazı"
+
+#: src/usagedlg.py:71
+msgid "At home"
+msgstr "Evde"
+
+#: src/usagedlg.py:72
+msgid "At work"
+msgstr "İşte"
+
+#: src/usagedlg.py:73
+msgid "At school"
+msgstr "Okulda"
+
+#: src/usagedlg.py:74 src/purposedlg.py:92
+msgid "<p align=\"right\">(You can click on multiple items)</p>"
+msgstr "<p align=\"right\">(Birden çok seçimde bulunabilirsiniz)</p>"
+
+#: src/usagedlg.py:75
+msgid "<b>Step 3 of 7</b>"
+msgstr "<b>Adım 3/7</b>"
+
+#: src/usagedlg.py:76
+msgid "<h2>Where do you use Pardus?</h2>"
+msgstr "<h2>Pardus'u nerede kullanıyorsunuz?</h2>"
+
+#: src/experiencedlg.py:144
+msgid "Experienced system administrator"
+msgstr "Deneyimli sistem yöneticisi"
+
+#: src/experiencedlg.py:145
+msgid "New user"
+msgstr "Yeni kullanıcı"
+
+#: src/experiencedlg.py:146
+msgid "Home/office productivity user"
+msgstr "Ev/ofis kullanıcısı"
+
+#: src/experiencedlg.py:147
+msgid "Experienced user"
+msgstr "Deneyimli kullanıcı"
+
+#: src/experiencedlg.py:148
+msgid "<h2>What is your experience level?</h2>"
+msgstr "<h2>Deneyim seviyeniz nedir?</h2>"
+
+#: src/experiencedlg.py:149
+msgid "<b>Step 1 of 7</b>"
+msgstr "<b>Adım 1/7</b>"
+
+#: src/welcomedlg.py:231
+msgid ""
+"<h2>Welcome to Pardus</h2>\n"
+"\n"
+"With this small wizard, you can send your messages to Pardus \n"
+"developers and help Pardus be the best Linux in the world.\n"
+"\n"
+"<p>\n"
+"The information you will give here will accelerate Pardus development. \n"
+"Please click on \"Forward\" button for the next step.\n"
+"<p>"
+msgstr ""
+"<h2>Pardus'a Hogeldiniz</h2>\n"
+"\n"
+"Bu ufak sihirbaz ile, Pardus geliştiricilerine mesaj gönderebilir \n"
+"ve Pardus'un dünyadaki en iyi Linux olmasına yardımda bulunabilirsiniz.\n"
+"\n"
+"<p>\n"
+"Sağladığınız bilgiler, Pardus gelişimini hızlandıracaktır. Lütfen\n"
+"\"İleri\" düğmesine basın ve bir sonraki adıma geçin.\n"
+"<p>"
+
+#: src/purposedlg.py:84
+msgid "Feedback wizard"
+msgstr "Geribildirim sihirbazı"
+
+#: src/purposedlg.py:86
+msgid "Daily use"
+msgstr "Günlük kullanım"
+
+#: src/purposedlg.py:87
+msgid "It's my hobby"
+msgstr "Bu benim hobim"
+
+#: src/purposedlg.py:88
+msgid "For internet access"
+msgstr "Internet erişimi için"
+
+#: src/purposedlg.py:89
+msgid "For business"
+msgstr "İş için"
+
+#: src/purposedlg.py:90
+msgid "Entertainment purposes"
+msgstr "Eğlence amaçlı"
+
+#: src/purposedlg.py:91
+msgid "Educational purposes"
+msgstr "Eğitim için"
+
+#: src/purposedlg.py:93
+msgid "<h2>Why do you use Pardus?</h2>"
+msgstr "<h2>Neden Pardus kullanıyorsunuz?</h2>"
+
+#: src/purposedlg.py:94
+msgid "<b>Step 2 of 7</b>"
+msgstr "<b>Adım 2/7</b>"
+
+#: src/questiondlg.py:255
+msgid "Very satisfying. Pardus fulfils my requirements"
+msgstr "Tatmin edici, Pardus tüm ihtiyaçlarımı karşılıyor."
+
+#: src/questiondlg.py:256
+msgid "Good, however it lacks some capabilities"
+msgstr "İyi, ancak bazı eksikleri var"
+
+#: src/questiondlg.py:257
+msgid "It has insufficient areas"
+msgstr "Yetersiz kaldığı yerler var"
+
+#: src/questiondlg.py:258
+msgid "<h2>How does Pardus fit your needs?</h2>"
+msgstr "<h2>Pardus ihtiyaçlarınızı nasıl kaşılıyor?</h2>"
+
+#: src/questiondlg.py:259
+msgid "<b>Step 4 of 7</b>"
+msgstr "<b>Adım 4/7</b>"
+
+#: src/personalinfodlg.py:258
+msgid ""
+"<h2>Your personal information (optional)</h2>\n"
+"You can submit your e-mail address for inclusion in our low traffic\n"
+"announces."
+msgstr ""
+"<h2>Kişisel bilgileriniz (zorunlu değil)</h2>\n"
+"E-posta adresinizi belirterek, düşük trafikli duyurularımızı alabilirsiniz."
+
+#: src/personalinfodlg.py:261
+msgid "E-mail:"
+msgstr "E-posta:"
+
+#: src/personalinfodlg.py:262
+msgid "Add me to your Pardus announce list"
+msgstr "Beni Pardus duyuru listesine ekle."
+
+#: src/personalinfodlg.py:264
+msgid "Send me security related e-mails"
+msgstr "Güvenlik ile ilgili e-postaları gönder."
+
+#: src/personalinfodlg.py:266
+msgid "<b>Step 6 of 7</b>"
+msgstr "<b>Adım 6/7</b>"
+
+#: src/opiniondlg.py:59
+msgid "<h2>Your opinions about Pardus?</h2>"
+msgstr "<h2>Pardus hakkındaki düşünceleriniz?</h2>"
+
+#: src/opiniondlg.py:60
+msgid ""
+"(Ease of installation and use, capability of software,\n"
+"general quality, adoptability, suitability to requirements, etc)"
+msgstr ""
+"(Kurulum ve kullanım kolaylığı, yazılımların yeterliliği, genel \n"
+"kalite, uyumluluk, ihtiyaçların karşılanması, vs.)"
+
+#: src/opiniondlg.py:62
+msgid "<b>Step 5 of 7</b>"
+msgstr "<b>Adım 5/7</b>"
+
+#: src/hardwareinfodlg.py:239
+msgid "&Do not send my computer's hardware information"
+msgstr "Bilgisayarıma ait &donanım bilgilerini gönderme."
+
+#: src/hardwareinfodlg.py:240
+msgid "Alt+D"
+msgstr "Alt+D"
+
+#: src/hardwareinfodlg.py:241
+msgid "<b>Step 7 of 7</b>"
+msgstr "<b>Adım 7/7</b>"
+
+#: src/hardwareinfodlg.py:242
+msgid ""
+"<h2>Computer information</h2>\n"
+"<p>\n"
+"Pardus Hardware CollectInfo Wizard will now gather information from\n"
+"your hardware, including CPU, memory and network cards. This \n"
+"information will be sent to Pardus Development Center, in order to\n"
+"build more stable and secure Pardus. You will need an internet\n"
+"access for this operation to complete. \n"
+"\n"
+"<b>Note that we will not collect any of your personal documents.</b>"
+msgstr ""
+"<h2>Donanım Bilgileri</h2>\n"
+"<p>\n"
+"Pardus Donanım Bilgisi Toplama Sihirbazı, işlemci, bellek ve ağ kartı\n"
+"gibi donanımları tarayacak. Toplanan bilgiler, daha kararlı ve güvenli\n"
+"bir Pardus yaratmak için Pardus Geliştirme Merkezi'ne gönderilecek. İşlemin "
+"tamamlanması için Internet bağlantısı gerekmektedir.\n"
+"\n"
+"<b>Hiçbir kişisel dökümanı toplamayacağız..</b>"
+
+#: src/upload.py:246
+msgid "<h2>Upload</h2>"
+msgstr "<h2>Gönderiliyor</h2>"
+
+#: src/upload.py:247
+msgid "Retry"
+msgstr "Tekrar Dene"
+
+#: src/goodbyedlg.py:233
+msgid ""
+"<h2>Thank you</h2>\n"
+"We have collected all necessary information in order to send \n"
+"to Pardus developers.\n"
+"<p>\n"
+"Thank you for your support to Pardus operating system."
+msgstr ""
+"<h2>Teşekkür Ederiz</h2>\n"
+"Gerekli olan her bilgiyi, Pardus geliştiricilerine göndermek üzere "
+"topladık.\n"
+"<p>\n"
+"Pardus işletim sistemine desteğinizden ötürü teşekkür ederiz."

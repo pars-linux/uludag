@@ -1,0 +1,112 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>UploadDlg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>UploadDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>287</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>171</x>
+                <y>61</y>
+                <width>428</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Upload&lt;/h2&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>labelStatus</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>178</x>
+                <y>90</y>
+                <width>420</width>
+                <height>150</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>buttonRetry</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>174</x>
+                <y>247</y>
+                <width>120</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Retry</string>
+        </property>
+        <property name="on">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoPixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2230">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af40000087d494441545885e5977f4cdcf519c75fa757f3bd5af4cea139329adc4d9a00e10f8ad21456cd405d1474698fd5c423ce08bac5a273065cd2006eaef40f57ead2092ece5e9d963ba3058cb6a5c60eeaea7a2e6df891b640271bd7d906c8d271674bee3eb65ffbde1f77b4a5b275fb6b7fecf3cf93cfe773799ef7f3bcdfcff3f91efcbf2fc7628792ae03ee6677e74a722b96702c022baa60380c2b6a603804fe001c8b80af0a46c2905703c7c390071c37901f80e311c887b133fe2f0a5bf77ee8b8cdf1b76b02d0d1fe1558053b3812fa362b6b1d1c0f439195765a540b27c2906fc10920bfe6f2fedfddc70db193e3297fc26ca3b5e305c76ddfbab028007d3eeac578fec848e8767c55f069289379e4b2f5056024940e3292c974249d69f4b8a13c3f00c77a01d86ba7a876d642561facdf04a70e080a5e6143fdb30e87633100b3bfe293ce9f9098263597c0650c296370d9a9cc1e5273715c1720660c7e2ca2c6506ec35edb506d43c83604811db621e8b488d8860010b6a1a9b48c982fc7f66737973a9ebd6304e0ba2b7877301259c7f24a3006d7ca7a78a00ed7935d607970e505d3e7175c6083bfb401fc85943fdec1d0f21caa9d16e1f9a040d069112d5849c3af4789addf40add3a2fdc8a7f8b3e3cee89f9e58b798f0962a3c9a4a6eab93b6d5495393d2aca4a17e49920e764b9d8794ecdb9ede279369337ffff72969561addd6286dac5372e8902469706b63dabed4a8c97cd45164498f96bdb118806cbdd668ab6f8f34d09576fa7c85d4b9457abe2a1344d2d8acd41a943697a97f8d575ae355f79d6ee9c1020d6e0c4a6349e9bca4e8a43a8a2c4d1559eabad72749ea58edd5643eea5e5bd03d1ff712059c8b6761528ed47004b2cb21360436a48e47c069c1b938cca5c01e8713c34cfb0254023dc65005844ec7f0efeba5f3e1a5f09b21e2f618010c61db506bb9484d0c11984b10b6a16a2e75b3a4ab00647996618cc35510805d4de02f81871a70e55bb0ae0166809d4f83c9211a8f93b3b393bdb6a1c609bd19ee7bed34f7a19df7e0b9ab9aa1d20a1a7c05f07237ae910421931664af31eeaf8d001ded5fa3cdc18bc9d62a696395922fd5a5cb7e76569234db1a4c7379bf4f7a6983f6ac764babddea2ab6942cb6b4bdc8d26cb1a58e223455840e6d0c5ed6ca59694b3e1acd439bf2d0ec1adf9f7576f6fa8515f056de826d1caefc209814ae65e3b03f0c591e78ab1dcf7094b1758594d8c0bede8cea2190517dc049a6e5d295f0efeb85892170b9083f5c480dd00b048008e646b23c0e80ebe7e3ffbcecd65286a281bd073ee0d6b1936c1df80b771b4815af62a2fefb6c9b39c3a9c41cc3c939565d841e6cbe77311d3408bc0b3c7c9d9377cf1b024e089fb7299f390dab2ac97ae545c2e76d00866d786ce9b28b59dfe0e517dfd9ffd5650ab66edfd0988b067d68deea832ee9cd7e35e6a2c922b7bad7ae943e1a943eea4eabfa4eb7668b2d0db606a5a4a42149a16eed595ba0a9624b5bf29124753f5a71a9fca379a8a3c8329a4cde04e09c07d0f349e74d4127446cb032b664752de167cbb19cd09948101c19a6a9ee0e2c27049f6aa42261d86c0ced09434f7d09e5e3e3848d01601ca80162bb43d464e7d066cfd3046ec30df193034b81b39734503367dc111b824e3019cbc7216aef6dbeb4bff2bef0ae3a761843d0099d47a2d4ac6b273467a8755a00343d52c680d787fffe7a7a666297820781846d1c9ea2eaac05220c81c7ba2248c40662e30cd9e304c9540632ad063daf3c0199f3b23309c2bb5a303674ce19eabd3ef69eb408d806e6e2944fc4d2fe801d36046c98feb87d2180803378d3d599f61c1fa7647d5366b683b5cca2eda90a2236d47ca791f61dddb41f1625af7651198b616c687b6e3b11a0fa910e3cf705c0e3a1f3cc0c012e573602e4a47216028898d0cd973490c9ace45814ec69bc6e37111b5a9e19233c92e6b8fdf5a7e1be1ac801a6cbe99c9921088c651b0236b4bf700f386b89bd1702fbaaca02b1b75bac05836876b5f70f577741632e52dfa0f4b9d20fd379490393d233016973853aee2d903e9736e55b52a85bfd4f05d2bf399a9e419a1c55f2c12d5ad4ef9deeea057360b9d7f94363ccf2e12b905a4ee87bffb7ac78ff35cc375d64e5af82db80c307e9193cc1a913319c768cf2cf2618f86282eac677c00ddcb28481e65a42cdcfb1fff4be05fe86edf4303ab88c48ef943d71898286c73b6616537b83d7cbf4435558af4e43732d9c049e6ca43291c25fbc92f2756d849d50f36033e47ae0f7c3840225546657d2f64055e6a3646177f539a13632955ca0815469ceee860cd7f3dd5067590cadf0d3b77307c305e3c48f0c13ddd504ee42f86588da8295b4fda09096b72649dd55086f0cd1b3ab85fa157e3a77b731766080f1a202aeeeaeb6fbaae2e45a430b3420c935baadf9b3d13c4bcdbe859c6d29766b768d4ffdcf053559ecd59622779ae3be6e6968561a93f4d1689adb6d5dea58e3935acb16e57e6ab5578aeef9c5fc73ecb80ac49ad8cb0d7deeb72359a1b904645a27001cc8f6d2505040cb81030480be65162d65950c2c7353797a9aa64f0f6065cadcbe3e48d3ae081660480f9f08d0ecf3c14f5b0e7a1eaabfdfe170a4be062003a282fda1d749b86f27d20a89387b8da1dadd40f8cc56aaeccbaf5ed836d490fee00c648654c0097d964595818831049c16c33e2ff53f0e7d456eea3d4aab7fe4703866e7e3fdab3f26373311ad21b7fc313e6c5fcda9d80da93333b8e60cf1b9381e63889d8be3b7213a6728b70d3d263dfb43767a0ef4b92d6a4b2b899795fdc3b3b6e97d66c67ec7f2c2a8c3e1f86ab1988b2e490e49051ad3262535a981ed17359594fab64b6393d29bcdd2c143d2d63ae9dd6e696355da86379d575203fa6cf03149eeff38e035c02c91f45d1ded7f5349fd5587f77ca9b392a2ddd2595dd4e1ee2f94d4618d1dfa99a4bc79915d6b2d4ac13580c0059c2ce146cee1210b27e74892451cf8d2e1705cfc6f7dfe4fd73f01ec7f32d9cc6229860000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

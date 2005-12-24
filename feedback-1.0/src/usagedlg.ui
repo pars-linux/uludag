@@ -1,0 +1,165 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>UsageDlg</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>UsageDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>286</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>usagebuttonGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>130</y>
+                <width>400</width>
+                <height>120</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string></string>
+        </property>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>18</x>
+                    <y>11</y>
+                    <width>160</width>
+                    <height>100</height>
+                </rect>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>usagecheckBoxOne</cstring>
+                    </property>
+                    <property name="text">
+                        <string>At home</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>usagecheckBoxTwo</cstring>
+                    </property>
+                    <property name="text">
+                        <string>At work</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>usagecheckBoxThree</cstring>
+                    </property>
+                    <property name="text">
+                        <string>At school</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usageMiniLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>300</x>
+                <y>100</y>
+                <width>270</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&lt;p align="right"&gt;(You can click on multiple items)&lt;/p&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stepLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>100</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>77</red>
+                <green>77</green>
+                <blue>77</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Step 3 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usagePixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>usageLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>60</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Where do you use Pardus?&lt;/h2&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
