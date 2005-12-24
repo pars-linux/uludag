@@ -21,7 +21,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("Network connections")
-version = "1.0_alpha4"
+version = "1.0"
 
 def AboutData():
     global version,description
