@@ -416,7 +416,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
             installed = self.command.listPackages()
             shownPackages = list(available - set(installed))
             self.installOrRemoveButton.setText(i18n("Install package(s)"))
-            
+        
+        if not len(shownPackages):
+            mainwidget.infoWidgetStack.raiseWidget(1)
+        else:
+            mainwidget.infoWidgetStack.raiseWidget(0)
+
         self.shownPackages = set(shownPackages)
         self.updatePackages(shownPackages)
 
@@ -532,7 +537,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
             for pkg in self.packageList:
                 if pkg.find(query) != -1:
                     result.add(pkg)
-        
+       
+            if not len(result):
+                mainwidget.infoWidgetStack.raiseWidget(1)
+            else:
+                mainwidget.infoWidgetStack.raiseWidget(0)
+            
             self.updatePackages(list(result))
         else:
             self.updateListing() # get the whole list if blank query            
@@ -616,7 +626,7 @@ class MainApplication(programbase):
 
         if not nonPrivMode and packageToInstall:
             mainwidget.installSinglePackage(packageToInstall)
-    
+
     def showHelp(self):
         self.helpWidget = HelpDialog.HelpDialog(self)
         self.helpWidget.setModal(True)
