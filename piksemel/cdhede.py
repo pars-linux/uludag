@@ -132,7 +132,7 @@ class MainWindow(QMainWindow):
         item = self.list.firstChild()
         while item:
             if item.mark > 0:
-                f.write("%s\n" % item.name)
+                f.write("%s\n" % item.filename)
             item = item.nextSibling()
         f.close()
     
