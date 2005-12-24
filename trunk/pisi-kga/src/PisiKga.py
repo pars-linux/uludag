@@ -423,6 +423,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.installOrRemoveButton.setEnabled(True)
         self.updateListing()
         
+    def installSinglePackage(self,package):
+        self.selectedItems.append(package)
+        self.operation = "install"
+        self.command.install(self.selectedItems)
+                    
     def installRemove(self):
 
         try: # Dependencies might bite us here, http://bugs.uludag.org.tr/show_bug.cgi?id=1170
@@ -606,6 +611,9 @@ class MainApplication(programbase):
         mainwidget.selectionGroup.setButton(0);
         mainwidget.categoryGroup.setButton(1); #FIXME: workaround for RC1, should be 0 for 1.0 release
         mainwidget.updateListing();
+
+        if not nonPrivMode and packageToInstall:
+            mainwidget.installSinglePackage(packageToInstall)
     
     def showHelp(self):
         self.helpWidget = HelpDialog.HelpDialog(self)
@@ -662,9 +670,11 @@ class MainApplication(programbase):
 def main():
     global kapp
     global nonPrivMode
-    
+    global packageToInstall
+
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
+    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
 
     if not KUniqueApplication.start():
         print i18n("Pisi KGA is already running!")
@@ -672,8 +682,14 @@ def main():
 
     nonPrivMode = posix.getuid()
     kapp = KUniqueApplication(True, True, True)
+
+    args = KCmdLineArgs.parsedArgs()
+    if args.isSet("install"):
+        packageToInstall = str(args.getOption("install"))
+
     myapp = MainApplication()
     kapp.setMainWidget(myapp)
+        
     sys.exit(myapp.exec_loop())
     
 # Factory function for KControl
