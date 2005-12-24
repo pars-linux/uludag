@@ -36,10 +36,10 @@ class PisiUi(pisi.ui.UI,QObject):
             self.confirmed = cEvent.data()
         
     def warning(self, msg):
-        pass
-        #TODO: just a try donot worry I know what I am doing -- exa
-        #ret = KMessageBox.warningContinueCancel(self.parent, msg, i18n("Warning"))
-
+        cEvent = QCustomEvent(CustomEvent.PisiWarning)
+        cEvent.setData(msg)
+        QThread.postEvent(self.receiver,cEvent)
+        
     def error(self, msg):
         cEvent = QCustomEvent(CustomEvent.PisiError)
         cEvent.setData(msg)
