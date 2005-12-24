@@ -32,5 +32,4 @@ tasmascreensaver.desktop \
 tasmastyle.desktop \
 tasmapisi.desktop \
 tasmanetkga.desktop \
-tasmaksynaptics.desktop \
 tasmakhotkeys.desktop
