@@ -7,8 +7,6 @@ DocPath=kcontrol/clock/index.html
 
 X-KDE-ModuleType=Library
 X-KDE-Library=clock
-X-KDE-RootOnly=true
-X-KDE-SubstituteUID=true
 X-KDE-ParentApp=tasma
 
 Name=Date & Time
