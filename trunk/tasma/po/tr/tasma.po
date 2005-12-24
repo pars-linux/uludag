@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tasma 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-22 22:33+0200\n"
+"POT-Creation-Date: 2005-12-24 07:24+0200\n"
 "PO-Revision-Date: 2005-02-07 02:34+0200\n"
 "Last-Translator: Barış Metin <baris@uludag.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -46,50 +46,50 @@ msgstr ""
 "gösterilecektir. Buradan bir yapılandırma modülünün simgesine tıklayarak (ya "
 "da çift tıklayarak) o modülü başlatabilirsiniz."
 
-#: main.cpp:60
+#: main.cpp:62
 msgid "TASMA - Pardus Configuration Center"
 msgstr "TASMA - Pardus Yapılandırma Merkezi"
 
-#: main.cpp:61
+#: main.cpp:63
 msgid "Pardus Configuration Center"
 msgstr "Pardus Yapılandırma Merkezi"
 
-#: main.cpp:62
+#: main.cpp:64
 msgid "(c) 2005, TUBITAK - UEKAE"
 msgstr "(c) 2005, TÜBİTAK - UEKAE"
 
-#: main.cpp:63
+#: main.cpp:65
 msgid "Current Maintainer"
 msgstr "Programın Şimdiki Yöneticisi"
 
-#: main.cpp:64
+#: main.cpp:66
 msgid "Old Maintainer & Original Author"
-msgstr ""
+msgstr "Eski Yönetici & İlk Yazarı"
 
-#: main.cpp:65
+#: main.cpp:67
 msgid "KDE Developers"
 msgstr "KDE Geliştiricileri"
 
-#: main.cpp:65
+#: main.cpp:67
 msgid "Module Developers"
 msgstr "Modül Geliştiricileri"
 
-#: tasmamainwin.cpp:76
+#: tasmamainwin.cpp:80
 msgid "About Current Module"
 msgstr "Şimdiki Modül Hakkında"
 
-#: tmoduleview.cpp:67
+#: tmoduleview.cpp:69
 msgid "&Back"
 msgstr "&Geri"
 
-#: tmoduleview.cpp:76
+#: tmoduleview.cpp:78
 msgid "&Reset"
 msgstr "&Sıfırla"
 
-#: tmoduleview.cpp:79
+#: tmoduleview.cpp:81
 msgid "&Administrator Mode"
-msgstr ""
+msgstr "&Yönetici Modu"
 
-#: tmoduleview.cpp:141
+#: tmoduleview.cpp:143
 msgid "<big>Loading...</big>"
-msgstr ""
+msgstr "<big>Yükleniyor...</big>"
