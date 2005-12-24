@@ -7,6 +7,7 @@
 #
 # Please read the COPYING file.
 
+SUBDIRS = pics
 bin_PROGRAMS = tasma
 
 tasma_SOURCES = main.cpp \
@@ -20,9 +21,6 @@ tasma_SOURCES = main.cpp \
 
 tasma_LDADD = $(LIB_KDEUI) $(LIB_KUTILS) $(LIB_KSYCOCA)
 tasma_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-
-rctasmadir = $(kde_datadir)/tasma
-rctasma_DATA = tasmaui.rc tasma_logo.png pardus.png
 
 xdg_apps_DATA = tasma.desktop
 
