@@ -1,0 +1,22 @@
+[Desktop Entry]
+Encoding=UTF-8
+Icon=access
+Type=Application
+Exec=kcmshell kcmaccess
+DocPath=kcontrol/kcmaccess/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=access
+X-KDE-Init=access
+X-KDE-ParentApp=tasma
+
+Name=Accessibility
+Name[tr]=Erişilebilirlik
+
+Comment=Improve accessibility for disabled persons
+Comment[tr]=Görme sorunu olanlar için erişilebilirlik seçenekleri
+
+Keywords=access,accessibility,deaf,impaired,bell,audible bell,visible bell,Keyboard,keys,sticky keys,bounce keys,slow keys,mouse navigation,num pad
+Keywords[tr]=erişim,erişilebilirlik,sağır,özürlü,zil,duyulabilir zil,görünür zil,Klavye,tuşlar,yapışkan tuşlar,zıplayan tuşlar,yavaş tuşlar,fare yönlendirmesi,num pad
+
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization
