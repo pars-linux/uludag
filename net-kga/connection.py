@@ -183,6 +183,8 @@ class Window(QMainWindow):
         
         hb = QHBox(vb)
         hb.setSpacing(12)
+        but = QPushButton(i18n("Connect"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotConnect)
         but = QPushButton(i18n("Accept"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAccept)
         but = QPushButton(i18n("Cancel"), hb)
@@ -211,24 +213,33 @@ class Window(QMainWindow):
         self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
     
-    def slotAccept(self):
+    def setData(self, id=0):
         name = self.w_name.text()
         if unicode(name) != unicode(self.name):
             self.comar.call_package("Net.Link.deleteConnection", self.link_name, [ "name", self.name ])
+        self.name = name
         device = self.device_list[str(self.basic.device.device.currentText())]
         address = self.basic.address.address.edit.text()
         gateway = self.basic.address.gateway.edit.text()
-        self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ])
+        self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ], id)
         if self.basic.address.r1.isChecked():
             self.comar.call_package("Net.Link.setAddress", self.link_name, [
-                "name", name, "mode", "auto" ])
+                "name", name, "mode", "auto" ], id)
         else:
             self.comar.call_package("Net.Link.setAddress", self.link_name, [
-                "name", name, "mode", "manual", "address", address, "gateway", gateway ])
+                "name", name, "mode", "manual", "address", address, "gateway", gateway ], id)
         if "remote" in self.modes:
             remote = self.basic.device.remote.edit.text()
             self.comar.call_package("Net.Link.setRemote", self.link_name, [
-                "name", name, "remote", remote ])
+                "name", name, "remote", remote ], id)
+        self.count = 3
+    
+    def slotConnect(self):
+        self.setData(32)
+        self.hide()
+    
+    def slotAccept(self):
+        self.setData()
         self.close(True)
     
     def slotCancel(self):
@@ -236,6 +247,11 @@ class Window(QMainWindow):
     
     def slotComar(self, sock):
         reply = self.comar.read_cmd()
+        if reply[1] == 32:
+            self.count -= 1
+            if self.count == 0:
+                self.comar.call_package("Net.Link.setState", self.link_name, [ "name", self.name, "state", "up" ])
+                self.close(True)
         if reply[0] == self.comar.RESULT:
             if reply[1] == 1:
                 for item in reply[2].split("\n"):
