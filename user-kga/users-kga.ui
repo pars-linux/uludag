@@ -8,158 +8,145 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>550</width>
-            <height>308</height>
+            <width>557</width>
+            <height>366</height>
         </rect>
-    </property>
-    <property name="caption">
-        <string>Form1</string>
     </property>
     <property name="modal">
         <bool>false</bool>
     </property>
-    <widget class="QLayoutWidget">
+    <grid>
         <property name="name">
-            <cstring>layout19_2</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>27</x>
-                <y>222</y>
-                <width>327</width>
-                <height>28</height>
-            </rect>
-        </property>
-        <hbox>
+        <widget class="QLayoutWidget" row="0" column="0">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout23</cstring>
             </property>
-            <widget class="QPushButton">
+            <hbox>
                 <property name="name">
-                    <cstring>pushButton1_4_2_2_2_2_2</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="text">
-                    <string>&amp;Add User</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+A</string>
-                </property>
-            </widget>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>pushButton1_3_3_2_2_2_2_2</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Edit User</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+E</string>
-                </property>
-            </widget>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>pushButton1_3_2_2_2_2_2_2_2</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Delete User</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+D</string>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
-    <widget class="QTabWidget">
-        <property name="name">
-            <cstring>tabWidget2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>15</x>
-                <y>53</y>
-                <width>520</width>
-                <height>210</height>
-            </rect>
-        </property>
-        <widget class="QWidget">
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&lt;h2&gt;Users and Groups&lt;/h2&gt;</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>200</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout18</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel2</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>Ara:</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>lineEdit1</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0">
             <property name="name">
-                <cstring>tab</cstring>
+                <cstring>layout18</cstring>
             </property>
-            <attribute name="title">
-                <string>User list</string>
-            </attribute>
-            <widget class="QSplitter">
+            <hbox>
                 <property name="name">
-                    <cstring>splitter2</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>9</x>
-                        <y>180</y>
-                        <width>490</width>
-                        <height>26</height>
-                    </rect>
-                </property>
-                <property name="orientation">
-                    <enum>Horizontal</enum>
+                    <cstring>unnamed</cstring>
                 </property>
                 <widget class="QPushButton">
                     <property name="name">
-                        <cstring>pushButton1_4_2_2_2</cstring>
+                        <cstring>pushButton1_2_2_2_2_2_2_2</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Add User</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+A</string>
+                        <string>&amp;Help</string>
                     </property>
                 </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer10</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>31</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
                 <widget class="QPushButton">
                     <property name="name">
-                        <cstring>pushButton1_3_3_2_2_2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Edit User</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+E</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>pushButton1_3_2_2_2_2_2</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Delete User</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+D</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>pushButton1_2_2_2_2_2</cstring>
+                        <cstring>pushButton1_2_2_2_2_2_2</cstring>
                     </property>
                     <property name="text">
                         <string>&amp;Quit</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+Q</string>
-                    </property>
                 </widget>
-            </widget>
-            <widget class="QLayoutWidget">
+            </hbox>
+        </widget>
+        <widget class="QTabWidget" row="1" column="0">
+            <property name="name">
+                <cstring>tabWidget2</cstring>
+            </property>
+            <widget class="QWidget">
                 <property name="name">
-                    <cstring>layout22</cstring>
+                    <cstring>tab</cstring>
                 </property>
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>10</y>
-                        <width>500</width>
-                        <height>160</height>
-                    </rect>
-                </property>
+                <attribute name="title">
+                    <string>User list</string>
+                </attribute>
                 <grid>
                     <property name="name">
                         <cstring>unnamed</cstring>
@@ -351,21 +338,35 @@
                     </widget>
                     <widget class="QLayoutWidget" row="1" column="0">
                         <property name="name">
-                            <cstring>layout19_3</cstring>
+                            <cstring>layout24</cstring>
                         </property>
                         <hbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer6</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>201</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
                             <widget class="QPushButton">
                                 <property name="name">
                                     <cstring>pushButton1_4_2_2_2_2_3</cstring>
                                 </property>
                                 <property name="text">
                                     <string>&amp;Add User</string>
-                                </property>
-                                <property name="accel">
-                                    <string>Alt+A</string>
                                 </property>
                             </widget>
                             <widget class="QPushButton">
@@ -375,9 +376,6 @@
                                 <property name="text">
                                     <string>&amp;Edit User</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+E</string>
-                                </property>
                             </widget>
                             <widget class="QPushButton">
                                 <property name="name">
@@ -386,34 +384,18 @@
                                 <property name="text">
                                     <string>&amp;Delete User</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+D</string>
-                                </property>
                             </widget>
                         </hbox>
                     </widget>
                 </grid>
             </widget>
-        </widget>
-        <widget class="QWidget">
-            <property name="name">
-                <cstring>tab</cstring>
-            </property>
-            <attribute name="title">
-                <string>Group list</string>
-            </attribute>
-            <widget class="QLayoutWidget">
+            <widget class="QWidget">
                 <property name="name">
-                    <cstring>layout23</cstring>
+                    <cstring>tab</cstring>
                 </property>
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>10</y>
-                        <width>500</width>
-                        <height>160</height>
-                    </rect>
-                </property>
+                <attribute name="title">
+                    <string>Group list</string>
+                </attribute>
                 <grid>
                     <property name="name">
                         <cstring>unnamed</cstring>
@@ -527,21 +509,35 @@
                     </widget>
                     <widget class="QLayoutWidget" row="1" column="0">
                         <property name="name">
-                            <cstring>layout19</cstring>
+                            <cstring>layout25</cstring>
                         </property>
                         <hbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer7</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>171</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
                             <widget class="QPushButton">
                                 <property name="name">
                                     <cstring>pushButton1_4_2_2_2_2</cstring>
                                 </property>
                                 <property name="text">
                                     <string>&amp;Add Group</string>
-                                </property>
-                                <property name="accel">
-                                    <string>Alt+A</string>
                                 </property>
                             </widget>
                             <widget class="QPushButton">
@@ -551,9 +547,6 @@
                                 <property name="text">
                                     <string>&amp;Edit Group</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+E</string>
-                                </property>
                             </widget>
                             <widget class="QPushButton">
                                 <property name="name">
@@ -562,120 +555,13 @@
                                 <property name="text">
                                     <string>&amp;Delete Group</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+D</string>
-                                </property>
                             </widget>
                         </hbox>
                     </widget>
                 </grid>
             </widget>
         </widget>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout5</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>370</x>
-                <y>20</y>
-                <width>159</width>
-                <height>40</height>
-            </rect>
-        </property>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel2</cstring>
-                </property>
-                <property name="text">
-                    <string>Ara:</string>
-                </property>
-            </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>lineEdit1</cstring>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>220</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&lt;h2&gt;Users and Groups&lt;/h2&gt;</string>
-        </property>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout18</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>390</x>
-                <y>270</y>
-                <width>140</width>
-                <height>28</height>
-            </rect>
-        </property>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>pushButton1_2_2_2_2_2_2_2</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Help</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+H</string>
-                </property>
-            </widget>
-            <spacer>
-                <property name="name">
-                    <cstring>spacer10</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>31</width>
-                        <height>20</height>
-                    </size>
-                </property>
-            </spacer>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>pushButton1_2_2_2_2_2_2</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Quit</string>
-                </property>
-                <property name="accel">
-                    <string>Alt+Q</string>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
+    </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
