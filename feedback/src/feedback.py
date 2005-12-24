@@ -222,7 +222,8 @@ class thread_upload(QThread):
         try:
             params = urllib.urlencode(upload)
             f = urllib.urlopen(url_upload, params)
-            if f.read() != '1':
+            s = f.read()
+            if s != '1\n':
                 raise IOError, "ConnectionError"
         except:
             text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
