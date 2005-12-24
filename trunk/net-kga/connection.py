@@ -121,16 +121,20 @@ class Device(QVBox):
         
         box = QWidget(self)
         g = QGridLayout(box, 2, 2, 6)
+        g.setColStretch(0, 1)
+        g.setColStretch(1, 10)
         
         lab = QLabel(i18n("Device:"), box)
+        lab.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
         g.addWidget(lab, 0, 0)
         self.device = QComboBox(False, box)
-        
+        self.device.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
         g.addWidget(self.device, 0, 1)
         
-        lab = QLabel("ESS ID:", box)
-        g.addWidget(lab, 1, 0)
+        self.remote_label = QLabel("ESS ID:", box)
+        g.addWidget(self.remote_label, 1, 0)
         self.remote = widgets.Edit(box)
+        self.remote.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
         g.addWidget(self.remote, 1, 1)
 
 
@@ -141,6 +145,7 @@ class BasicTab(QVBox):
         self.setSpacing(6)
 
         hb = QHBox(self)
+        hb.setSpacing(6)
         QLabel(i18n("Name:"), hb)
         self.name = widgets.Edit(hb)
         hb.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
@@ -161,7 +166,7 @@ class Window(QMainWindow):
         self.link_name = link_name
         
         self.setCaption(i18n("Configure network connection"))
-        self.setMinimumSize(620, 420)
+        self.setMinimumSize(580, 380)
         
         vb = QVBox(self)
         vb.setMargin(6)
@@ -246,7 +251,8 @@ class Window(QMainWindow):
             elif reply[1] == 3:
                 self.modes = reply[2].split(",")
                 if not "remote" in self.modes:
-                    self.basic.device.remote.setEnabled(False)
+                    self.basic.device.remote.hide()
+                    self.basic.device.remote_label.hide()
                 if not "auto" in self.modes:
                     self.basic.address.r2.setEnabled(False)
                 if "remote" in self.modes:
