@@ -22,8 +22,8 @@ class Connection(QListBoxItem):
     def __init__(self, box, comar, name, link_name):
         QListBoxItem.__init__(self, box)
         self.comar = comar
-        self.online = "down"
         self.name = name
+        self.online = "down"
         self.link_name = link_name
         self.device = ""
         self.device_name = ""

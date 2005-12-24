@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-23 23:48+0200\n"
+"POT-Creation-Date: 2005-12-24 03:03+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -63,27 +63,27 @@ msgstr "Cihaz yok"
 msgid "Online"
 msgstr "Bağlı"
 
-#: mainwin.py:44
+#: mainwin.py:43
 msgid "Offline"
 msgstr "Bağlı değil"
 
-#: mainwin.py:81
+#: mainwin.py:78
 msgid "Create"
 msgstr "Oluştur"
 
-#: mainwin.py:87
+#: mainwin.py:84
 msgid "Connect"
 msgstr "Bağlan"
 
-#: mainwin.py:89
+#: mainwin.py:86
 msgid "Disconnect"
 msgstr "Bağlantıyı kes"
 
-#: mainwin.py:152 mainwin.py:183
+#: mainwin.py:105
 msgid "Unconfigured"
 msgstr "Yapılandırılmamış"
 
-#: mainwin.py:196
+#: mainwin.py:201
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -93,7 +93,7 @@ msgstr ""
 "'%s'\n"
 "bağlantısını sileyim mi?"
 
-#: mainwin.py:199
+#: mainwin.py:204
 msgid "Delete connection?"
 msgstr "Bağlantıyı sil?"
 
@@ -109,26 +109,26 @@ msgstr "Ağ Bağlantılarım"
 msgid "Network KGA is already running!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
-#: links.py:62
+#: links.py:63
 msgid "Connection types"
 msgstr "Bağlantı türleri"
 
-#: links.py:76
-msgid "Install network packages!"
-msgstr "Ağ programlarını kurun!"
-
-#: links.py:77
-msgid "No package with COMAR network scripts are installed yet."
-msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
-
-#: links.py:84 links.py:106
-msgid "new connection"
-msgstr "yeni bağlantı"
-
-#: links.py:88
+#: links.py:69
 msgid "Select a connection type:"
 msgstr "Bir bağlantı tipi seçin:"
 
-#: links.py:96
+#: links.py:77
 msgid "Create connection"
 msgstr "Bağlantıyı oluştur"
+
+#: links.py:85 links.py:116
+msgid "new connection"
+msgstr "yeni bağlantı"
+
+#: links.py:110
+msgid "Install network packages!"
+msgstr "Ağ programlarını kurun!"
+
+#: links.py:111
+msgid "No package with COMAR network scripts are installed yet."
+msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."

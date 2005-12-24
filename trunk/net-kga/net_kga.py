@@ -125,6 +125,7 @@ def create_net_kga(parent,name):
     global kapp
     
     kapp = KApplication.kApplication()
+    icons.load_icons()
     return MainApplication(parent, name)
 
 if standalone:
