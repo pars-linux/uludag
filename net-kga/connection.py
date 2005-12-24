@@ -183,10 +183,10 @@ class Window(QMainWindow):
         
         hb = QHBox(vb)
         hb.setSpacing(12)
-        but = QPushButton(i18n("Cancel"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         but = QPushButton(i18n("Accept"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAccept)
+        but = QPushButton(i18n("Cancel"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
         self.w_name = self.basic.name.edit
         self.w_device = self.basic.device.device

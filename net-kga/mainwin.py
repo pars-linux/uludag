@@ -184,9 +184,10 @@ class Widget(QVBox):
                         self.links.removeItem(self.links.index(conn))
             
             elif noti == "Net.Link.deviceChanged":
-                type, nettype, uid, info = data.split(" ", 3)
+                type, rest = data.split(" ", 1)
                 if type != "new":
                     return
+                nettype, uid, info = rest.split(" ", 2)
                 name = self.uniqueName()
                 self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
     
