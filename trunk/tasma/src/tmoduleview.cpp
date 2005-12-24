@@ -129,7 +129,7 @@ void TModuleView::runAsRoot()
   delete _embedLayout;
 
   _embedLayout = new QVBoxLayout(parentWidget());
-  _embedFrame = new QVBox(parentWidget() );
+  _embedFrame = new QVBox(parentWidget());
   _embedFrame->setFrameStyle( QFrame::Box | QFrame::Raised );
   QPalette pal( red );
   pal.setColor( QColorGroup::Background, parentWidget()->colorGroup().background() );
@@ -137,7 +137,7 @@ void TModuleView::runAsRoot()
   _embedFrame->setLineWidth( 2 );
   _embedFrame->setMidLineWidth( 2 );
   _embedLayout->addWidget(_embedFrame,1);
-  _embedWidget = new QXEmbed(_embedFrame );
+  _embedWidget = new QXEmbed(_embedFrame);
   hide();
   _embedFrame->show();
   QLabel *_busy = new QLabel(i18n("<big>Loading...</big>"), _embedWidget);
