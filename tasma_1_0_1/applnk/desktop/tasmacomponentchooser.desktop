@@ -1,0 +1,21 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell componentchooser
+Icon=misc
+Type=Application
+
+X-KDE-ModuleType=Library
+X-KDE-Library=componentchooser
+X-KDE-HasReadOnlyMode=false
+X-KDE-ParentApp=tasma
+
+Name=Component Chooser
+Name[tr]=Bileşen Seçici
+
+Comment=Choose the default components for various services
+Comment[tr]=Çeşitli servisler için öntanımlı bileşenleri seçin
+
+Keywords=components,component chooser,resources, email client, terminal emulator
+Keywords[tr]=bileşenler,bileşen seçici,kaynaklar,e-posta istemcisi,terminal emülasyonu
+
+Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop
