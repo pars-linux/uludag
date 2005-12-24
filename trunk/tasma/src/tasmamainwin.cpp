@@ -14,6 +14,7 @@
   TasmaMainWindow implementation.
 */
 
+#include <kdebug.h>
 #include <klocale.h>
 #include <qhbox.h>
 #include <qwidgetstack.h>
@@ -67,6 +68,10 @@ TasmaMainWin::TasmaMainWin( const char* name )
              this, SLOT( moduleSelected( KCModule*, const QString&, const QString&, const QString&, bool ) ) );
 
     setCentralWidget( _hbox );
+}
+
+TasmaMainWin::~TasmaMainWin()
+{
 }
 
 void TasmaMainWin::setupActions()

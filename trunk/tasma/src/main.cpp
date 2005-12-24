@@ -52,6 +52,8 @@ TasmaApp::~TasmaApp()
         config->writeEntry( "Height", tasmawin->height() );
         config->sync();
     }
+    
+    delete tasmawin;
 }
 
 int main( int argc, char *argv[] )
