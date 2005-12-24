@@ -102,7 +102,7 @@ class Links:
     def get_info(self, name):
         if not self.links.has_key(name):
             self.query(self.comar)
-            return Link(name, "net Unknown Remote")
+            return Link(name, "net\nUnknown\nRemote")
         return self.links[name]
     
     def ask_for_create(self, parent):
