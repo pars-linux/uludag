@@ -75,6 +75,7 @@ class Widget(QVBox):
         self.links = QListBox(self)
         
         box = QHBox(self)
+        box.setSpacing(12)
         but = QPushButton(i18n("Create"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotCreate)
         but = QPushButton(i18n("Edit"), box)

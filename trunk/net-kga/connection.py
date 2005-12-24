@@ -177,10 +177,11 @@ class Window(QMainWindow):
         #tab.addTab(self.auth, "Authentication")
         
         hb = QHBox(vb)
-        but = QPushButton(i18n("Accept"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotAccept)
+        hb.setSpacing(12)
         but = QPushButton(i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
+        but = QPushButton(i18n("Accept"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotAccept)
         
         self.w_name = self.basic.name.edit
         self.w_device = self.basic.device.device
