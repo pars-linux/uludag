@@ -24,6 +24,7 @@ class Connection(QListBoxItem):
         self.comar = comar
         self.name = name
         self.online = "down"
+        self.state = "down"
         self.link_name = link_name
         self.device = ""
         self.device_name = ""
@@ -37,10 +38,10 @@ class Connection(QListBoxItem):
         comar.call_package("Net.Link.getState", link_name, [ "name", name ], id=4)
     
     def paint(self, painter):
-        if self.online == "up":
-            text = unicode(i18n("Online")) + ", "
+        if self.state == "up":
+            text = unicode(i18n("Active")) + ", "
         else:
-            text = unicode(i18n("Offline")) + ", "
+            text = unicode(i18n("Inactive")) + ", "
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
         painter.setPen(Qt.black)
@@ -149,6 +150,7 @@ class Widget(QVBox):
                 name, state = reply[2].split("\n")
                 conn = self.findConn(name)
                 if conn:
+                    conn.state = state
                     if state == "up":
                         conn.online = state
                     self.links.updateItem(conn)
@@ -182,6 +184,14 @@ class Widget(QVBox):
                     conn = self.findConn(name)
                     if conn:
                         self.links.removeItem(self.links.index(conn))
+                elif mode == "configured":
+                    type, name = name.split(" ", 1)
+                    if type == "device":
+                        self.comar.call_package("Net.Link.connectionInfo", script, [ "name", name ], id=2)
+                    elif type == "address":
+                        self.comar.call_package("Net.Link.getAddress", script, [ "name", name ], id=3)
+                    elif type == "state":
+                        self.comar.call_package("Net.Link.getState", script, [ "name", name ], id=4)
             
             elif noti == "Net.Link.deviceChanged":
                 type, rest = data.split(" ", 1)
