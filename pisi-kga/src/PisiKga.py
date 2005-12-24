@@ -120,6 +120,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 self.pDialog.setCaption(i18n("Updating repositories"))
                 self.updatedRepo = event.data()
                 self.pDialog.show()
+            elif eventType == CustomEvent.PisiWarning:
+                KMessageBox.information(self,event.data(),i18n("Pisi Info"))
             elif eventType == CustomEvent.PisiError:
                 self.pisiError(event.data())
             elif eventType == CustomEvent.PisiInfo:
@@ -686,6 +688,8 @@ def main():
     args = KCmdLineArgs.parsedArgs()
     if args.isSet("install"):
         packageToInstall = str(args.getOption("install"))
+    else:
+        packageToInstall = None
 
     myapp = MainApplication()
     kapp.setMainWidget(myapp)
