@@ -95,12 +95,14 @@ TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon
     buttons->addWidget( _reset, 0, AlignRight );
 
     // set buttons visibility
+    #if 0
     int b = contentView->module()->buttons();
     if ( !( b & KCModule::Default ) ) _default->hide();
     if ( !( b & KCModule::Apply ) ) {
         _apply->hide();
         _reset->hide();
     }
+    #endif
 
     connect( _back, SIGNAL( clicked() ), parent, SLOT( backToCategory() ) );
 
