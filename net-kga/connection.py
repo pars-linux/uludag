@@ -213,7 +213,7 @@ class Window(QMainWindow):
     
     def slotAccept(self):
         name = self.w_name.text()
-        if name != self.name:
+        if unicode(name) != unicode(self.name):
             self.comar.call_package("Net.Link.deleteConnection", self.link_name, [ "name", self.name ])
         device = self.device_list[str(self.basic.device.device.currentText())]
         address = self.basic.address.address.edit.text()
