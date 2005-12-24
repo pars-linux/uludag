@@ -22,7 +22,7 @@ class Connection(QListBoxItem):
     def __init__(self, box, comar, name, link_name):
         QListBoxItem.__init__(self, box)
         self.comar = comar
-        self.online = False
+        self.online = "down"
         self.name = name
         self.link_name = link_name
         self.device = ""
@@ -37,12 +37,10 @@ class Connection(QListBoxItem):
         comar.call_package("Net.Link.getState", link_name, [ "name", name ], id=4)
     
     def paint(self, painter):
-        if self.online:
+        if self.online == "up":
             text = unicode(i18n("Online")) + ", "
-            pix = icons.net_on
         else:
             text = unicode(i18n("Offline")) + ", "
-            pix = icons.net_off
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
         painter.setPen(Qt.black)
@@ -53,7 +51,7 @@ class Connection(QListBoxItem):
             "%s" % (self.device_name))
         painter.drawText(48 + 9, 3 + fm.height() + 3 + fm2.height() + 3 + fm2.ascent()
             , text + self.address)
-        painter.drawPixmap(3, 3, pix)
+        painter.drawPixmap(3, 3, icons.get_state(links.get_info(self.link_name).type, self.online))
     
     def height(self, box):
         fm = QFontMetrics(self.f1)
@@ -151,7 +149,7 @@ class Widget(QVBox):
                 conn = self.findConn(name)
                 if conn:
                     if state == "up":
-                        conn.online = True
+                        conn.online = state
                     self.links.updateItem(conn)
                     return
             elif reply[1] == 5:
@@ -168,10 +166,6 @@ class Widget(QVBox):
 
             if noti == "Net.Link.stateChanged":
                 name, state = data.split("\n", 1)
-                if state == "up":
-                    state = True
-                else:
-                    state = False
                 conn = self.findConn(name)
                 if conn:
                     conn.online = state

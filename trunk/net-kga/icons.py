@@ -39,5 +39,29 @@ class Icons:
         self.dial_on = self._pix("dialup-online.png")
         self.dial_conn = self._pix("dialup-connecting.png")
         self.dial_off = self._pix("dialup-offline.png")
+    
+    def get_state(self, type, state):
+        if type == "net":
+            if state == "up":
+                return self.net_on
+            elif state == "connecting":
+                return self.net_conn
+            else:
+                return self.net_off
+        elif type == "wifi":
+            if state == "up":
+                return self.wifi_on
+            elif state == "connecting":
+                return self.wifi_conn
+            else:
+                return self.wifi_off
+        elif type == "dialup":
+            if state == "up":
+                return self.dial_on
+            elif state == "connecting":
+                return self.dial_conn
+            else:
+                return self.dial_off
+        return self.net_off
 
 icons = Icons()
