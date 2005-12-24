@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Feedback
+Name[en]=Feedback
+Name[tr]=Geribildirim
+Comment=Comment[en]=Pardus Feedback Tool
+Comment[tr]=Pardus Geribildirim Aracı
+Icon=pardus.png
+Type=Application
+Exec=feedback
+Categories=QT;KDE
