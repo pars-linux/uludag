@@ -12,7 +12,7 @@
 from qt import *
 from kdecore import *
 import connection
-import links
+from links import links
 import comar
 import widgets
 from icons import icons
@@ -90,6 +90,8 @@ class Widget(QVBox):
         
         self.comar = comar.Link()
         
+        links.query(self.comar)
+        
         self.comar.call("Net.Link.connections", id=1)
         
         self.comar.ask_notify("Net.Link.stateChanged")
@@ -158,6 +160,8 @@ class Widget(QVBox):
                 uid, dev = reply[2].split(" ", 1)
                 name = self.uniqueName()
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
+            elif reply[1] > 42:
+                links.slotComar(reply)
         
         elif reply[0] == self.comar.NOTIFY:
             noti, script, data = reply[2].split("\n", 2)
@@ -192,7 +196,7 @@ class Widget(QVBox):
                 self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
     
     def slotCreate(self):
-        links.Window(self)
+        links.ask_for_create(self)
     
     def slotEdit(self):
         conn = self.links.selectedItem()
