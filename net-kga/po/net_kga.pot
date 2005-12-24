@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 03:03+0200\n"
+"POT-Creation-Date: 2005-12-24 21:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,55 +36,55 @@ msgstr ""
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:120 connection.py:125
+#: connection.py:120 connection.py:127
 msgid "Device:"
 msgstr ""
 
-#: connection.py:144
+#: connection.py:149
 msgid "Name:"
 msgstr ""
 
-#: connection.py:163
+#: connection.py:168
 msgid "Configure network connection"
 msgstr ""
 
-#: connection.py:174
+#: connection.py:179
 msgid "Basic"
 msgstr ""
 
-#: connection.py:180
+#: connection.py:186
 msgid "Accept"
 msgstr ""
 
-#: connection.py:199
+#: connection.py:205
 msgid "No device"
 msgstr ""
 
-#: mainwin.py:41
-msgid "Online"
+#: mainwin.py:42
+msgid "Active"
 msgstr ""
 
-#: mainwin.py:43
-msgid "Offline"
+#: mainwin.py:44
+msgid "Inactive"
 msgstr ""
 
-#: mainwin.py:78
+#: mainwin.py:80
 msgid "Create"
 msgstr ""
 
-#: mainwin.py:84
+#: mainwin.py:86
 msgid "Connect"
 msgstr ""
 
-#: mainwin.py:86
+#: mainwin.py:88
 msgid "Disconnect"
 msgstr ""
 
-#: mainwin.py:105
+#: mainwin.py:107
 msgid "Unconfigured"
 msgstr ""
 
-#: mainwin.py:201
+#: mainwin.py:213
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -92,7 +92,7 @@ msgid ""
 "connection?"
 msgstr ""
 
-#: mainwin.py:204
+#: mainwin.py:216
 msgid "Delete connection?"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 03:03+0200\n"
+"POT-Creation-Date: 2005-12-24 21:35+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -35,55 +35,55 @@ msgstr "Adres:"
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
 
-#: connection.py:120 connection.py:125
+#: connection.py:120 connection.py:127
 msgid "Device:"
 msgstr "Aygıt:"
 
-#: connection.py:144
+#: connection.py:149
 msgid "Name:"
 msgstr "İsim:"
 
-#: connection.py:163
+#: connection.py:168
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
-#: connection.py:174
+#: connection.py:179
 msgid "Basic"
 msgstr "Temel"
 
-#: connection.py:180
+#: connection.py:186
 msgid "Accept"
 msgstr "Kullan"
 
-#: connection.py:199
+#: connection.py:205
 msgid "No device"
 msgstr "Cihaz yok"
 
-#: mainwin.py:41
-msgid "Online"
-msgstr "Bağlı"
+#: mainwin.py:42
+msgid "Active"
+msgstr "Açık"
 
-#: mainwin.py:43
-msgid "Offline"
-msgstr "Bağlı değil"
+#: mainwin.py:44
+msgid "Inactive"
+msgstr "Kapalı"
 
-#: mainwin.py:78
+#: mainwin.py:80
 msgid "Create"
 msgstr "Oluştur"
 
-#: mainwin.py:84
+#: mainwin.py:86
 msgid "Connect"
 msgstr "Bağlan"
 
-#: mainwin.py:86
+#: mainwin.py:88
 msgid "Disconnect"
 msgstr "Bağlantıyı kes"
 
-#: mainwin.py:105
+#: mainwin.py:107
 msgid "Unconfigured"
 msgstr "Yapılandırılmamış"
 
-#: mainwin.py:201
+#: mainwin.py:213
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -93,7 +93,7 @@ msgstr ""
 "'%s'\n"
 "bağlantısını sileyim mi?"
 
-#: mainwin.py:204
+#: mainwin.py:216
 msgid "Delete connection?"
 msgstr "Bağlantıyı sil?"
 
