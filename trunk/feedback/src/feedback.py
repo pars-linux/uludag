@@ -24,13 +24,6 @@ from hardwareinfodlg import HardwareInfoDlg
 from upload import UploadDlg
 from goodbyedlg import GoodbyeDlg
 
-# Gettext
-"""
-import gettext
-t = gettext.translation("feedback", fallback=True)
-_ = t.ugettext
-"""
-
 def AboutData():
     description = "Pardus Feedback Tool"
     version = "1.0"
