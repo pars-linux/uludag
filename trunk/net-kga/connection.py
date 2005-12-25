@@ -134,9 +134,14 @@ class Device(QVBox):
         
         self.remote_label = QLabel("", box)
         g.addWidget(self.remote_label, 1, 0)
-        self.remote = widgets.Edit(box)
-        self.remote.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        g.addWidget(self.remote, 1, 1)
+        hb = QHBox(box)
+        hb.setSpacing(3)
+        hb.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
+        self.remote = QComboBox(True, hb)
+        hb.setStretchFactor(self.remote, 4)
+        self.remote_scan = QPushButton(i18n("Scan"), hb)
+        hb.setStretchFactor(self.remote_scan, 1)
+        g.addWidget(hb, 1, 1)
 
 
 class BasicTab(QVBox):
@@ -196,9 +201,12 @@ class Window(QMainWindow):
         self.w_device = self.basic.device.device
         self.w_address = self.basic.address.address.edit
         self.w_gateway = self.basic.address.gateway.edit
-        self.w_remote = self.basic.device.remote.edit
+        self.w_remote = self.basic.device.remote
         self.w_remote_label = self.basic.device.remote_label
+        self.w_remote_scan = self.basic.device.remote_scan
         self.device_list = {}
+        
+        self.connect(self.w_remote_scan, SIGNAL("clicked()"), self.slotScan)
         
         self.w_remote_label.setText(links.get_info(self.link_name).remote_name)
         self.show()
@@ -233,10 +241,14 @@ class Window(QMainWindow):
             self.comar.call_package("Net.Link.setAddress", self.link_name, [
                 "name", name, "mode", "manual", "address", address, "gateway", gateway ], id)
         if "remote" in self.modes:
-            remote = self.basic.device.remote.edit.text()
+            remote = self.basic.device.remote.currentText()
             self.comar.call_package("Net.Link.setRemote", self.link_name, [
                 "name", name, "remote", remote ], id)
         self.count = 3
+    
+    def slotScan(self):
+        if self.device:
+            self.comar.call_package("Net.Link.scanRemote", self.link_name, [ "device", self.device ], id=6)
     
     def slotConnect(self):
         self.setData(32)
@@ -277,6 +289,8 @@ class Window(QMainWindow):
                     self.basic.address.r2.setEnabled(False)
                 if "remote" in self.modes:
                     self.comar.call_package("Net.Link.getRemote", self.link_name, [ "name", self.name ], id=5)
+                if not "scan" in self.modes:
+                    self.basic.device.remote_scan.hide()
             elif reply[1] == 4:
                 name, uid, info = reply[2].split("\n")
                 self.device = uid
@@ -285,4 +299,10 @@ class Window(QMainWindow):
                 self.comar.call_package("Net.Link.deviceList", self.link_name, id=1)
             elif reply[1] == 5:
                 name, remote = reply[2].split("\n")
-                self.w_remote.setText(remote)
+                self.w_remote.setCurrentText(remote)
+            elif reply[1] == 6:
+                old = self.w_remote.currentText()
+                self.w_remote.clear()
+                self.w_remote.insertItem(old)
+                for item in reply[2].split("\n"):
+                    self.w_remote.insertItem(item)
