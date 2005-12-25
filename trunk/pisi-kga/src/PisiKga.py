@@ -210,7 +210,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def resetProgressBar(self):
         self.savedProgress = 0
         self.pDialog.progressBar.setProgress(0)
-        self.pDialog.currentOperationLabel.setText(i18n("<b>Preparing PiSi...</b>"))
+        self.pDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
         self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> Unknown'))
 
@@ -219,10 +219,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
             rate = 0
             
         if filename.endsWith(".pisi"):
-            self.pDialog.currentOperationLabel.setText(i18n('Now %1 <b>%2</b>').arg(self.currentOperation).arg(filename))
+            self.pDialog.setLabelText(i18n('Now %1 <b>%2</b>').arg(self.currentOperation).arg(filename))
         else:
             self.totalAppCount = 1
-            self.pDialog.currentOperationLabel.setText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
+            self.pDialog.setLabelText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
 
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         

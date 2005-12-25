@@ -8,4 +8,7 @@ class ProgressDialog(Progress.Progress):
         animatedPisi = QMovie(locate("data","pisi_kga/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
 
-        
+    def setLabelText(self,text):
+        text = KStringHandler.rPixelSqueeze(text, self.fontMetrics(), self.currentOperationLabel.width()-10)
+        self.currentOperationLabel.setText(text)
+
