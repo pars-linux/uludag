@@ -421,6 +421,14 @@
                     <property name="name">
                         <cstring>infoWidgetStack</cstring>
                     </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>7</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
                     <widget class="QWidget">
                         <property name="name">
                             <cstring>WStackPage</cstring>
@@ -670,6 +678,7 @@ Program Version: Bar</string>
     <tabstop>infoLabel</tabstop>
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>
+<layoutfunctions spacing="KDialog.spacingHint" margin="KDialog.marginHint"/>
 <includehints>
     <includehint>klineedit.h</includehint>
     <includehint>kpushbutton.h</includehint>
