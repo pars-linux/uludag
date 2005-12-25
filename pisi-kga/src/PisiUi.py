@@ -99,5 +99,6 @@ class PisiUi(pisi.ui.UI,QObject):
     def display_progress(self, **kargs):
         cEvent = QCustomEvent(CustomEvent.UpdateProgress)
         cEvent.setData(QString(kargs["filename"])+QString(" ")+QString.number(kargs["percent"])+QString(" ")+
-                        QString.number(kargs["rate"])+QString(" ")+QString(kargs["symbol"]))
+                        QString.number(kargs["rate"])+QString(" ")+QString(kargs["symbol"])+
+                        QString(" ")+QString.number(kargs["downloaded_size"])+QString(" ")+QString.number(kargs["total_size"]))
         QThread.postEvent(self.receiver,cEvent)

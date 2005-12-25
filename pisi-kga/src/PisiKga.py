@@ -133,13 +133,15 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 self.percent = event.data().section(' ',1,1).toInt()[0]
                 self.rate = int(str(event.data().section(' ',2,2)).split('.')[0])
                 self.symbol = event.data().section(' ',3,3)
-                self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
+                self.downloaded = event.data().section(' ',4,4).toInt()[0]
+                self.totalsize = event.data().section(' ',5,5).toInt()[0]
+                self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
             elif eventType == CustomEvent.UpdateListing:
                 self.updateListing()
             elif eventType == CustomEvent.PisiNotify:
                 if event.data() and self.operation != "remove":
                     self.currentOperation = event.data()
-                    self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol)
+                    self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
             elif eventType == CustomEvent.NewRepoAdded:
                 if self.pref:
                     self.pref.updateListView()
@@ -208,17 +210,29 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def resetProgressBar(self):
         self.savedProgress = 0
         self.pDialog.progressBar.setProgress(0)
-        self.pDialog.progressLabel.setText(i18n("Preparing PiSi..."))
+        self.pDialog.currentOperationLabel.setText(i18n("<b>Preparing PiSi...</b>"))
+        self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
+        self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> Unknown'))
 
-    def updateProgressBar(self, filename, length, rate, symbol):
+    def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
         if rate < 0:
             rate = 0
             
         if filename.endsWith(".pisi"):
-            self.pDialog.progressLabel.setText(i18n('Now %1 <b>%2</b> (Speed: %3 %4)').arg(self.currentOperation).arg(filename).arg(rate).arg(symbol))
+            self.pDialog.currentOperationLabel.setText(i18n('Now %1 <b>%2</b>').arg(self.currentOperation).arg(filename))
         else:
             self.totalAppCount = 1
-            self.pDialog.progressLabel.setText(i18n('Updating repo <b>%1</b> (Speed: %2 %3)').arg(self.updatedRepo).arg(rate).arg(symbol))
+            self.pDialog.currentOperationLabel.setText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
+
+        self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
+        
+        if downloaded_size >= 1024*1024:
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 MB / %2 MB').arg(float(downloaded_size)/float(1024*1024)).arg(float(total_size)/float(1024*1024)))
+        elif downloaded_size >= 1024:
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 KB / %2 KB').arg(float(downloaded_size)/float(1024)).arg(float(total_size)/float(1024)))
+        else:
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 Bytes / %2 Bytes').arg(downloaded_size).arg(total_size))
+            
 
         progress = length/self.totalAppCount + self.savedProgress
 

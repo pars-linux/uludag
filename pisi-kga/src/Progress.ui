@@ -19,57 +19,12 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <spacer row="0" column="1">
-            <property name="name">
-                <cstring>spacer2</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>50</height>
-                </size>
-            </property>
-        </spacer>
-        <spacer row="2" column="1">
-            <property name="name">
-                <cstring>spacer1</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>41</height>
-                </size>
-            </property>
-        </spacer>
-        <widget class="QProgressBar" row="3" column="1">
+        <widget class="QProgressBar" row="4" column="1">
             <property name="name">
                 <cstring>progressBar</cstring>
             </property>
         </widget>
-        <widget class="QLabel" row="1" column="1">
-            <property name="name">
-                <cstring>progressLabel</cstring>
-            </property>
-            <property name="text">
-                <string>&lt;h3&gt;Preparing PiSi...&lt;/h3&gt;</string>
-            </property>
-            <property name="alignment">
-                <set>WordBreak|AlignCenter</set>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="4" colspan="1">
+        <widget class="QLabel" row="0" column="0" rowspan="5" colspan="1">
             <property name="name">
                 <cstring>animeLabel</cstring>
             </property>
@@ -86,6 +41,47 @@
                 <bool>true</bool>
             </property>
         </widget>
+        <widget class="QLabel" row="3" column="1">
+            <property name="name">
+                <cstring>sizeLabel</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Downloaded/Rest:&lt;/b&gt; Unknown</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="1">
+            <property name="name">
+                <cstring>speedLabel</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Speed:&lt;/b&gt; Unknown</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="1">
+            <property name="name">
+                <cstring>currentOperationLabel</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;h3&gt;Preparing PiSi...&lt;/h3&gt;</string>
+            </property>
+        </widget>
+        <spacer row="0" column="1">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>41</height>
+                </size>
+            </property>
+        </spacer>
     </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>

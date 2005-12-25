@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-21 20:22+0200\n"
+"POT-Creation-Date: 2005-12-25 03:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,120 +16,129 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/MainWindow.py:104 src/MainWindow.py:228
+#: src/MainWindow.py:83 src/MainWindow.py:257
 msgid "Package"
 msgstr ""
 
-#: src/MainWindow.py:105 src/MainWindow.py:229
+#: src/MainWindow.py:84 src/MainWindow.py:258
 msgid "Version"
 msgstr ""
 
-#: src/MainWindow.py:214
+#: src/MainWindow.py:247
 msgid "PiSi Graphical User Interface"
 msgstr ""
 
-#: src/MainWindow.py:215
+#: src/MainWindow.py:248
 msgid "Add, Upgrade or Remove Packages"
 msgstr ""
 
-#: src/MainWindow.py:217
-msgid "Install Package(s)"
-msgstr ""
-
-#: src/MainWindow.py:221
+#: src/MainWindow.py:250
 msgid "Show only applications"
 msgstr ""
 
-#: src/MainWindow.py:222
+#: src/MainWindow.py:251
 msgid "Show all packages"
 msgstr ""
 
-#: src/MainWindow.py:223
+#: src/MainWindow.py:252
 msgid "search package"
 msgstr ""
 
-#: src/MainWindow.py:224
+#: src/MainWindow.py:253
 msgid "&Search"
 msgstr ""
 
-#: src/MainWindow.py:225
+#: src/MainWindow.py:254
 msgid "search button"
 msgstr ""
 
-#: src/MainWindow.py:226
+#: src/MainWindow.py:255
 msgid "&Clear"
 msgstr ""
 
-#: src/MainWindow.py:227
+#: src/MainWindow.py:256
 msgid "Clear search results"
 msgstr ""
 
-#: src/MainWindow.py:230 src/PisiKga.py:310
+#: src/MainWindow.py:259 src/PisiKga.py:325
 msgid "No package selected"
 msgstr ""
 
-#: src/MainWindow.py:232
+#: src/MainWindow.py:261
 msgid "operation mode"
 msgstr ""
 
-#: src/MainWindow.py:233
+#: src/MainWindow.py:262
 msgid "Operation mode selector"
 msgstr ""
 
-#: src/MainWindow.py:234
+#: src/MainWindow.py:263
 msgid "Show &not-Installed packages"
 msgstr ""
 
-#: src/MainWindow.py:235
+#: src/MainWindow.py:264
 msgid "Only show packages which are going to be installed"
 msgstr ""
 
-#: src/MainWindow.py:236
+#: src/MainWindow.py:265
 msgid "Show available &updates"
 msgstr ""
 
-#: src/MainWindow.py:237
+#: src/MainWindow.py:266
 msgid "Only show packages that can be updated"
 msgstr ""
 
-#: src/MainWindow.py:238
+#: src/MainWindow.py:267
 msgid "Show &installed packages"
 msgstr ""
 
-#: src/MainWindow.py:239
+#: src/MainWindow.py:268
 msgid "Only show installed packages in your compter"
 msgstr ""
 
-#: src/MainWindow.py:240
+#: src/MainWindow.py:269
 msgid "Icon"
 msgstr ""
 
-#: src/MainWindow.py:241
+#: src/MainWindow.py:270
 msgid "<p align=\"left\">Program Name</p>"
 msgstr ""
 
-#: src/MainWindow.py:243
+#: src/MainWindow.py:272
 msgid ""
 "Program Name: Foo\n"
 "Program Version: Bar"
 msgstr ""
 
-#: src/MainWindow.py:245
+#: src/MainWindow.py:274
+msgid ""
+"<center>\n"
+"<h1>PiSi KGA 1.0.1</h1>\n"
+"<br><br>\n"
+"<h1>Pardus Linux v1.0</h1>\n"
+"</center>"
+msgstr ""
+
+#: src/MainWindow.py:279
 msgid "&Update System"
 msgstr ""
 
-#: src/MainWindow.py:246
+#: src/MainWindow.py:280
 msgid "Click on this button if you want to update your system"
 msgstr ""
 
-#: src/MainWindow.py:247
+#: src/MainWindow.py:281
 msgid "&Repository Settings"
 msgstr ""
 
-#: src/MainWindow.py:248
+#: src/MainWindow.py:282
 msgid ""
 "Click here to add, modify or delete a repository, <br>i.e the server "
 "locations where new software can be fetched."
+msgstr ""
+
+#: src/MainWindow.py:284
+msgid "Install Package(s)"
 msgstr ""
 
 #: src/PisiUi.py:87
@@ -144,181 +153,209 @@ msgstr ""
 msgid "extracting"
 msgstr ""
 
-#: src/PisiUi.py:93 src/PisiKga.py:117
+#: src/PisiUi.py:93 src/PisiKga.py:116
 msgid "removing"
 msgstr ""
 
-#: src/Progress.py:54
+#: src/Progress.py:60 src/PisiKga.py:215
+msgid "<b>Downloaded/Rest:</b> Unknown"
+msgstr ""
+
+#: src/Progress.py:61 src/PisiKga.py:214
+msgid "<b>Speed:</b> Unknown"
+msgstr ""
+
+#: src/Progress.py:62
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: src/PisiKga.py:54
+#: src/PisiKga.py:53
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/PisiKga.py:64
+#: src/PisiKga.py:63
 msgid "Author"
 msgstr ""
 
-#: src/PisiKga.py:65
+#: src/PisiKga.py:64
 msgid "GUI Design & Usability"
 msgstr ""
 
-#: src/PisiKga.py:66
+#: src/PisiKga.py:65
 msgid "Search, Component/Category"
 msgstr ""
 
-#: src/PisiKga.py:67
+#: src/PisiKga.py:66
 msgid "Python coding help"
 msgstr ""
 
-#: src/PisiKga.py:68
+#: src/PisiKga.py:67
 msgid "Helping with PiSi API"
 msgstr ""
 
-#: src/PisiKga.py:69
+#: src/PisiKga.py:68
 msgid "Authors of PÄ°SÄ° API"
 msgstr ""
 
-#: src/PisiKga.py:70
+#: src/PisiKga.py:69
 msgid "Author of PyKDEeXtensions"
 msgstr ""
 
-#: src/PisiKga.py:89 src/PisiKga.py:119
+#: src/PisiKga.py:88 src/PisiKga.py:118
 msgid "downloading"
 msgstr ""
 
-#: src/PisiKga.py:101
+#: src/PisiKga.py:100
 msgid ""
 "Looks like PiSi repository database is empty\n"
 "Do you want to update repository now?"
 msgstr ""
 
-#: src/PisiKga.py:101
+#: src/PisiKga.py:100
 msgid "PiSi Question"
 msgstr ""
 
-#: src/PisiKga.py:106
+#: src/PisiKga.py:105
 msgid ""
 "You will not be able to install new programs or update old ones until you "
 "update repository."
 msgstr ""
 
-#: src/PisiKga.py:121
+#: src/PisiKga.py:120
 msgid "Updating repositories"
 msgstr ""
 
-#: src/PisiKga.py:166
+#: src/PisiKga.py:124 src/PisiKga.py:631
+msgid "Pisi Info"
+msgstr ""
+
+#: src/PisiKga.py:169
 msgid "PiSi Info"
 msgstr ""
 
-#: src/PisiKga.py:185
+#: src/PisiKga.py:188
 msgid "All repositories are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:188
+#: src/PisiKga.py:191
 msgid "All selected packages are successfully installed!"
 msgstr ""
 
-#: src/PisiKga.py:189
+#: src/PisiKga.py:192
 msgid "installed"
 msgstr ""
 
-#: src/PisiKga.py:191
+#: src/PisiKga.py:194
 msgid "All selected packages are successfully removed!"
 msgstr ""
 
-#: src/PisiKga.py:192
+#: src/PisiKga.py:195
 msgid "removed"
 msgstr ""
 
-#: src/PisiKga.py:194
+#: src/PisiKga.py:197
 msgid "All selected packages are successfully updated!"
 msgstr ""
 
-#: src/PisiKga.py:195
+#: src/PisiKga.py:198
 msgid "updated"
 msgstr ""
 
-#: src/PisiKga.py:202 src/PisiKga.py:434
+#: src/PisiKga.py:205 src/PisiKga.py:459
 msgid "PiSi Error"
 msgstr ""
 
-#: src/PisiKga.py:210
-msgid "Preparing PiSi..."
+#: src/PisiKga.py:213
+msgid "<b>Preparing PiSi...</b>"
 msgstr ""
 
-#: src/PisiKga.py:217
-msgid "Now %1 <b>%2</b> (Speed: %3 %4)"
+#: src/PisiKga.py:222
+msgid "Now %1 <b>%2</b>"
 msgstr ""
 
-#: src/PisiKga.py:220
-msgid "Updating repo <b>%1</b> (Speed: %2 %3)"
+#: src/PisiKga.py:225
+msgid "Updating repo <b>%1</b>"
 msgstr ""
 
-#: src/PisiKga.py:264
+#: src/PisiKga.py:227
+msgid "<b>Speed:</b> %1 %2"
+msgstr ""
+
+#: src/PisiKga.py:230
+msgid "<b>Downloaded/Rest:</b> %1 MB / %2 MB"
+msgstr ""
+
+#: src/PisiKga.py:232
+msgid "<b>Downloaded/Rest:</b> %1 KB / %2 KB"
+msgstr ""
+
+#: src/PisiKga.py:234
+msgid "<b>Downloaded/Rest:</b> %1 Bytes / %2 Bytes"
+msgstr ""
+
+#: src/PisiKga.py:279
 msgid " Byte"
 msgstr ""
 
-#: src/PisiKga.py:266
+#: src/PisiKga.py:281
 msgid "Program Version :"
 msgstr ""
 
-#: src/PisiKga.py:266
+#: src/PisiKga.py:281
 msgid "Program Size :"
 msgstr ""
 
-#: src/PisiKga.py:304
+#: src/PisiKga.py:319
 msgid "Selected %1 packages, total size %2 MB"
 msgstr ""
 
-#: src/PisiKga.py:306
+#: src/PisiKga.py:321
 msgid "Selected %1 packages, total size %2 KB"
 msgstr ""
 
-#: src/PisiKga.py:308
+#: src/PisiKga.py:323
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr ""
 
-#: src/PisiKga.py:405
+#: src/PisiKga.py:420
 msgid "Remove package(s)"
 msgstr ""
 
-#: src/PisiKga.py:410
+#: src/PisiKga.py:425
 msgid "Update package(s)"
 msgstr ""
 
-#: src/PisiKga.py:417
+#: src/PisiKga.py:432
 msgid "Install package(s)"
 msgstr ""
 
-#: src/PisiKga.py:439 src/PisiKga.py:457
+#: src/PisiKga.py:464 src/PisiKga.py:482
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:471 src/FastUpdatesDialog.py:54
+#: src/PisiKga.py:496 src/FastUpdatesDialog.py:54
 msgid "Fast Updates (only security)"
 msgstr ""
 
-#: src/PisiKga.py:472 src/CustomUpdatesDialog.py:55
+#: src/PisiKga.py:497 src/CustomUpdatesDialog.py:55
 msgid "Custom Updates"
 msgstr ""
 
-#: src/PisiKga.py:497 src/PisiKga.py:508
+#: src/PisiKga.py:522 src/PisiKga.py:533
 msgid "Total size: %1 MB"
 msgstr ""
 
-#: src/PisiKga.py:599
+#: src/PisiKga.py:629
 msgid ""
 "You don't have root priviliges, PiSi KGA will run in read-only mode.You "
 "can't install, update or remove programs in this mode"
 msgstr ""
 
-#: src/PisiKga.py:601
-msgid "Pisi Info"
+#: src/PisiKga.py:703
+msgid "Package to install"
 msgstr ""
 
-#: src/PisiKga.py:671
+#: src/PisiKga.py:706
 msgid "Pisi KGA is already running!"
 msgstr ""
 
