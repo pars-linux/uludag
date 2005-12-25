@@ -227,9 +227,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
         if downloaded_size >= 1024*1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 MB / %2 MB').arg(float(downloaded_size)/float(1024*1024)).arg(float(total_size)/float(1024*1024)))
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 MB / %2 MB').arg(int(float(downloaded_size))/int(float(1024*1024))).arg(int(float(total_size))/int(float(1024*1024))))
         elif downloaded_size >= 1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 KB / %2 KB').arg(float(downloaded_size)/float(1024)).arg(float(total_size)/float(1024)))
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 KB / %2 KB').arg(int(float(downloaded_size))/int(float(1024))).arg(int(float(total_size))/int(float(1024))))
         else:
             self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 Bytes / %2 Bytes').arg(downloaded_size).arg(total_size))
             
