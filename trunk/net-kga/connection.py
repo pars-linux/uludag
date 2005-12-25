@@ -11,6 +11,7 @@
 
 from qt import *
 from kdecore import i18n
+from links import links
 import widgets
 import comar
 
@@ -131,7 +132,7 @@ class Device(QVBox):
         self.device.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
         g.addWidget(self.device, 0, 1)
         
-        self.remote_label = QLabel("ESS ID:", box)
+        self.remote_label = QLabel("", box)
         g.addWidget(self.remote_label, 1, 0)
         self.remote = widgets.Edit(box)
         self.remote.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
@@ -141,6 +142,7 @@ class Device(QVBox):
 class BasicTab(QVBox):
     def __init__(self, parent):
         QVBox.__init__(self, parent)
+        self.my_parent = parent
         self.setMargin(6)
         self.setSpacing(6)
 
@@ -195,8 +197,10 @@ class Window(QMainWindow):
         self.w_address = self.basic.address.address.edit
         self.w_gateway = self.basic.address.gateway.edit
         self.w_remote = self.basic.device.remote.edit
+        self.w_remote_label = self.basic.device.remote_label
         self.device_list = {}
         
+        self.w_remote_label.setText(links.get_info(self.link_name).remote_name)
         self.show()
         
         self.w_name.setText(unicode(name))
