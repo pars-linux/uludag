@@ -645,7 +645,7 @@ class MainApplication(programbase):
             mainwidget.closeButton.hide()
 
         mainwidget.selectionGroup.setButton(0);
-        mainwidget.categoryGroup.setButton(1); #FIXME: workaround for RC1, should be 0 for 1.0 release
+        mainwidget.categoryGroup.setButton(0);
         mainwidget.updateListing();
 
         if not nonPrivMode and packageToInstall:
