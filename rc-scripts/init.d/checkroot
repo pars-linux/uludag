@@ -109,7 +109,8 @@ start() {
 	/bin/loadkeys $sys_keymap &> /dev/null
 	/usr/bin/setfont -f $sys_font -m $sys_trans
 
-	sed -i "s/KEYMAP=.*/KEYMAP=\"$sys_keymap\"/" /etc/conf.d/keymaps
+	# do not change default keymaps settings as yali does it now 
+	# sed -i "s/KEYMAP=.*/KEYMAP=\"$sys_keymap\"/" /etc/conf.d/keymaps
 	sed -i "s/CONSOLEFONT=.*/CONSOLEFONT=\"$sys_font\"/" /etc/conf.d/consolefont
 	sed -i "s/CONSOLETRANSLATION=.*/CONSOLETRANSLATION=\"$sys_trans\"/" /etc/conf.d/consolefont
 	sed -i "s/LANG=.*/LANG=\"$sys_locale\"/" /etc/env.d/03locale
