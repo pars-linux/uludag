@@ -11,6 +11,7 @@
 
 from qt import *
 from kdecore import *
+import stack
 import connection
 from links import links
 import comar
@@ -75,6 +76,15 @@ class Widget(QVBox):
         QVBox.__init__(self, *args)
         self.setMargin(6)
         self.setSpacing(6)
+        
+        self.stack = stack.Window(self)
+        
+        box = QHBox(self)
+        lab = QLabel(i18n("Network connections:"), box)
+        box.setStretchFactor(lab, 5)
+        but = QPushButton(i18n("Settings"), box)
+        self.connect(but, SIGNAL("clicked()"), self.slotSettings)
+        box.setStretchFactor(but, 1)
         
         self.links = QListBox(self)
         
@@ -208,6 +218,10 @@ class Widget(QVBox):
                 nettype, uid, info = rest.split(" ", 2)
                 name = self.uniqueName()
                 self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
+    
+    def slotSettings(self):
+        self.stack.hide()
+        self.stack.show()
     
     def slotCreate(self):
         links.ask_for_create(self)
