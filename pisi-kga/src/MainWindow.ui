@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>780</width>
+            <width>782</width>
             <height>583</height>
         </rect>
     </property>
@@ -239,9 +239,82 @@
                 </grid>
             </widget>
         </widget>
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout9</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>helpButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Help</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>440</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout9</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>installOrRemoveButton</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>Install Package(s)</string>
+                            </property>
+                            <property name="accel">
+                                <string></string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>closeButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Quit</string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </hbox>
+        </widget>
         <widget class="QLayoutWidget" row="1" column="1">
             <property name="name">
-                <cstring>layout11</cstring>
+                <cstring>layout8</cstring>
             </property>
             <vbox>
                 <property name="name">
@@ -503,40 +576,58 @@ Program Version: Bar</string>
                         </grid>
                     </widget>
                 </widget>
-                <widget class="QLayoutWidget">
+                <widget class="QWidgetStack">
                     <property name="name">
-                        <cstring>layout6</cstring>
+                        <cstring>widgetStack4</cstring>
                     </property>
-                    <hbox>
+                    <widget class="QWidget">
                         <property name="name">
-                            <cstring>unnamed</cstring>
+                            <cstring>WStackPage</cstring>
                         </property>
-                        <widget class="KPushButton">
+                        <attribute name="id">
+                            <number>0</number>
+                        </attribute>
+                        <grid>
                             <property name="name">
-                                <cstring>updateSystemButton</cstring>
+                                <cstring>unnamed</cstring>
                             </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Update System</string>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Click on this button if you want to update your system</string>
-                            </property>
-                        </widget>
-                        <widget class="KPushButton">
-                            <property name="name">
-                                <cstring>preferencesButton</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Repository Settings</string>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
-                            </property>
-                        </widget>
-                    </hbox>
+                            <widget class="QLayoutWidget" row="0" column="0">
+                                <property name="name">
+                                    <cstring>layout6</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="KPushButton">
+                                        <property name="name">
+                                            <cstring>updateSystemButton</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>false</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Update System</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>Click on this button if you want to update your system</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="KPushButton">
+                                        <property name="name">
+                                            <cstring>preferencesButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Repository Settings</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                        </grid>
+                    </widget>
                 </widget>
             </vbox>
         </widget>
@@ -552,79 +643,6 @@ Program Version: Bar</string>
                     <verstretch>5</verstretch>
                 </sizepolicy>
             </property>
-        </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout9</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>helpButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Help</string>
-                    </property>
-                </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer3</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>440</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout9</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="KPushButton">
-                            <property name="name">
-                                <cstring>installOrRemoveButton</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>Install Package(s)</string>
-                            </property>
-                            <property name="accel">
-                                <string></string>
-                            </property>
-                            <property name="autoDefault">
-                                <bool>true</bool>
-                            </property>
-                        </widget>
-                        <widget class="KPushButton">
-                            <property name="name">
-                                <cstring>closeButton</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Quit</string>
-                            </property>
-                            <property name="autoDefault">
-                                <bool>true</bool>
-                            </property>
-                        </widget>
-                    </hbox>
-                </widget>
-            </hbox>
         </widget>
     </grid>
 </widget>
@@ -656,12 +674,12 @@ Program Version: Bar</string>
     <includehint>klineedit.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>ktextbrowser.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kseparator.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
 </includehints>
 </UI>
