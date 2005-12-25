@@ -54,8 +54,6 @@ class PisiUi(pisi.ui.UI,QObject):
         cEvent = QCustomEvent(CustomEvent.PisiInfo)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
-        # print the thing on stdout you don't lose a thing
-        print msg
 
     def confirm(self, msg):
         cEvent = QCustomEvent(CustomEvent.AskConfirmation)
@@ -67,12 +65,8 @@ class PisiUi(pisi.ui.UI,QObject):
         # it shows a KMessageBox and thread eventloop waits for it to finish, when the user
         # confirms it hits CustomEvent.UserConfirmed in customEvent and next we are here in
         # the Thread and self.confirmed is already set
-        
-        # now ask yourself if this is a sane method :)
-        # unfortunately this is the wrong method, the question
-        # confirm asks does not mean continue/cancel, it can
-        # be anything! -- exa
-        
+       
+        # This needs more work, check http://bugs.uludag.org.tr/show_bug.cgi?id=1258
         if self.confirmed:
             self.confirmed = None
             return True
