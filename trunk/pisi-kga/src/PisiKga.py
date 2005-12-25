@@ -51,7 +51,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.0.1_beta1"
+version = "1.0.1"
 
 def AboutData():
     global version,description
@@ -734,7 +734,9 @@ def main():
 def create_pisi_kga(parent,name):
     global kapp
     global nonPrivMode
-    
+    global packageToInstall
+   
+    packageToInstall = None
     nonPrivMode = posix.getuid()
     kapp = KApplication.kApplication()
     return MainApplication(parent, name)
