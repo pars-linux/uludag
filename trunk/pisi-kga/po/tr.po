@@ -125,6 +125,11 @@ msgid ""
 "<h1>Pardus Linux v1.0</h1>\n"
 "</center>"
 msgstr ""
+"<center>\n"
+"<h1>PiSi KGA 1.0.1</h1>\n"
+"<br><br>\n"
+"<h1>Pardus Linux v1.0</h1>\n"
+"</center>"
 
 #: src/MainWindow.py:279
 msgid "&Update System"
@@ -168,11 +173,11 @@ msgstr "kaldırılan"
 
 #: src/Progress.py:60 src/PisiKga.py:215
 msgid "<b>Downloaded/Rest:</b> Unknown"
-msgstr ""
+msgstr "<b>İndirilen/Kalan:</b> Bilinmiyor"
 
 #: src/Progress.py:61 src/PisiKga.py:214
 msgid "<b>Speed:</b> Unknown"
-msgstr ""
+msgstr "<b>Hız:</b> Bilinmiyor"
 
 #: src/Progress.py:62
 msgid "<h3>Preparing PiSi...</h3>"
@@ -292,19 +297,19 @@ msgstr "Güncellenen depo <b>%1</b>"
 
 #: src/PisiKga.py:227
 msgid "<b>Speed:</b> %1 %2"
-msgstr ""
+msgstr "<b>Hız:</b> %1 %2"
 
 #: src/PisiKga.py:230
 msgid "<b>Downloaded/Rest:</b> %1 MB / %2 MB"
-msgstr ""
+msgstr "<b>İndirilen/Kalan:</b> %1 MB / %2 MB"
 
 #: src/PisiKga.py:232
 msgid "<b>Downloaded/Rest:</b> %1 KB / %2 KB"
-msgstr ""
+msgstr "<b>İndirilen/Kalan:</b> %1 KB / %2 KB"
 
 #: src/PisiKga.py:234
 msgid "<b>Downloaded/Rest:</b> %1 Bytes / %2 Bytes"
-msgstr ""
+msgstr "<b>İndirilen/Kalan:</b> %1 Bayt / %2 Bayt"
 
 #: src/PisiKga.py:279
 msgid " Byte"
@@ -589,5 +594,3 @@ msgstr ""
 "Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
 "Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
 
-#~ msgid "Preparing PiSi..."
-#~ msgstr "PiSi Hazırlanıyor..."
