@@ -123,6 +123,9 @@ class Widget(QVBox):
     
     def slotComar(self, sock):
         reply = self.comar.read_cmd()
+        self.handleComar(reply)
+    
+    def handleComar(self, reply):
         if reply[0] == self.comar.RESULT:
             if reply[1] == 1:
                 if reply[2] == "":
@@ -224,6 +227,28 @@ class Widget(QVBox):
     def slotConnect(self):
         conn = self.links.selectedItem()
         if conn:
+            # stop other connections on same device
+            item = self.links.firstItem()
+            count = 0
+            while item:
+                if item.online == "up" and item.link_name == conn.link_name and item.device == conn.device:
+                    self.comar.call_package("Net.Link.setState", item.link_name, [ "name", item.name, "state", "down" ], id=6)
+                    count += 1
+                item = item.next()
+            if count:
+                replies = []
+                while 1:
+                    rep = self.comar.read_cmd()
+                    if rep[1] == 6:
+                        count -= 1
+                        if count == 0:
+                            break
+                    else:
+                        replies.append(rep)
+                if replies:
+                    for rep in replies:
+                        self.handleComar(rep)
+            # up up up!
             self.comar.call_package("Net.Link.setState", conn.link_name, [ "name", conn.name, "state", "up" ])
     
     def slotDisconnect(self):
