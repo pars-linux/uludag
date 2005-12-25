@@ -65,6 +65,9 @@ class Connection(QListBoxItem):
     
     def width(self, box):
         return 100
+    
+    def text(self):
+        return self.name
 
 
 class Widget(QVBox):
@@ -127,6 +130,7 @@ class Widget(QVBox):
                 else:
                     for conn in reply[2].split("\n"):
                         Connection(self.links, self.comar, conn, reply[3])
+                    self.links.sort(True)
             elif reply[1] == 2:
                 name, dev, devname = reply[2].split("\n")
                 conn = self.findConn(name)
@@ -180,6 +184,7 @@ class Widget(QVBox):
                 if mode == "added":
                     if not self.findConn(name):
                         Connection(self.links, self.comar, name, script)
+                        self.links.sort(True)
                 elif mode == "deleted":
                     conn = self.findConn(name)
                     if conn:
