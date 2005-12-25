@@ -86,7 +86,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.confirmed = None
         self.operation = None
         self.currentOperation = i18n("downloading")
-        self.operationInfo = None   
+        self.operationInfo = None
+        self.gotExtractEvent = False
 
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
@@ -139,6 +140,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
             elif eventType == CustomEvent.UpdateListing:
                 self.updateListing()
             elif eventType == CustomEvent.PisiNotify:
+                
+                if event.data() == i18n("extracting"):
+                    self.gotExtractEvent = True
+                elif self.gotExtractEvent and event.data() != i18n("configuring"):
+                    self.currentOperation = i18n("downloading")
+            
                 if event.data() and self.operation != "remove":
                     self.currentOperation = event.data()
                     self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
