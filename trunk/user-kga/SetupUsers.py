@@ -149,7 +149,7 @@ class Widget(SetupUsersWidget):
         user = users.User(self.userList.currentText())
         user.delUser()
         self.userList.removeItem(self.userList.currentItem())
-        
+        self.reset()
         
     def slotEditUser(self, item):
         u = item.getUser()
