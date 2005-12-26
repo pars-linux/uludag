@@ -115,8 +115,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 self.finished()
                 if self.operation == "remove":
                     self.currentOperation = i18n("removing")
-                else:
-                    self.currentOperation = i18n("downloading")
             elif eventType == CustomEvent.RepositoryUpdate: 
                 self.pDialog.setCaption(i18n("Updating repositories"))
                 self.updatedRepo = event.data()
@@ -140,12 +138,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
             elif eventType == CustomEvent.UpdateListing:
                 self.updateListing()
             elif eventType == CustomEvent.PisiNotify:
-                
-                if event.data() == i18n("extracting"):
-                    self.gotExtractEvent = True
-                elif self.gotExtractEvent and event.data() != i18n("configuring"):
-                    self.currentOperation = i18n("downloading")
-            
                 if event.data() and self.operation != "remove":
                     self.currentOperation = event.data()
                     self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
