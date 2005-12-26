@@ -107,6 +107,31 @@ class User:
 
         self.__appendGroups()
 
+
+    def updateUser(self):
+        if not self.username or not self.exists() or not self.passwd:
+            return False
+
+        getContent = lambda x: [line for line in open(x, 'r').readlines()]
+        getFp      = lambda x: open(x, 'w')
+    
+        passwd_content, shadow_content = getContent(self.passwd_path), getContent(self.shadow_path)
+    
+        passwd_fp, shadow_fp = getFp(self.passwd_path), getFp(self.shadow_fp)
+    
+        for line in passwd_content:
+            info = line.split(':')
+            if info[0] == self.username:
+                info[4] = self.realname
+            passwd_fp.write(':'.join(info))
+    
+        for line in shadow_content:
+            info = line.split(':')
+            if info[0] == self.username:
+                info[1] = self.__getShadowed()
+            shadow_fp.write(':'.join(info))
+
+
     def delUser(self):
         if not self.username or not self.exists():
             return False
