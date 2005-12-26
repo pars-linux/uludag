@@ -8,7 +8,10 @@
 # any later version.
 #
 # Please read the COPYING file.
-#
+# Copyright (C) 2005, A. Murat Eren
+# Copyright (C) 2005, Barış Metin
+# Copyright (C) 2005, Gürer Özen
+# 
 
 
 from qt import *
@@ -129,7 +132,10 @@ class Widget(SetupUsersWidget):
 
 
     def slotDeleteUser(self):
+        user = users.User(self.userList.currentText())
+        user.delUser()
         self.userList.removeItem(self.userList.currentItem())
+        
         
     def slotEditUser(self, item):
         u = item.getUser()
