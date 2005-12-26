@@ -143,7 +143,7 @@ class User:
 
         self.__removeGroups()
 
-        for file in [self.shadow_path, self.passwd_path, self.group_path]:
+        for file in [self.shadow_path, self.passwd_path]:
             shutil.move(file + '.tmp', file)
 
     def getAvailableUid(self):
