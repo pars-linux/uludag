@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="ulustil.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<script language="javascript1.2">
+window.onerror=null;
+{
+        pardus1 = new Image(); pardus1.src = "images/btn-prd-off.png";
+	pardus2 = new Image(); pardus2.src = "images/btn-prd-on.png";
+	gelistirici1 = new Image(); gelistirici1.src = "images/btn-gel-off.png";
+	gelistirici2 = new Image(); gelistirici2.src = "images/btn-gel-on.png";
+	topluluk1 = new Image(); topluluk1.src = "images/btn-top-off.png";
+	topluluk2 = new Image(); topluluk2.src = "images/btn-top-on.png";
+	belgeler1 = new Image(); belgeler1.src = "images/btn-blg-off.png";
+	belgeler2 = new Image(); belgeler2.src = "images/btn-blg-on.png";
+	lisans1 = new Image(); lisans1.src = "images/btn-lis-off.png";
+	lisans2 = new Image(); lisans2.src = "images/btn-lis-on.png";
+	iletisim1 = new Image(); iletisim1.src = "images/btn-ilt-off.png";
+	iletisim2 = new Image(); iletisim2.src = "images/btn-ilt-on.png";
+}
+	
+wprev = 0;
+hprev = 0;
+xprev = 0;
+yprev = 0;
+
+function active(imgName)
+
+{
+        img1 = eval(imgName + "1.src");
+        document [imgName].src = img1;
+}
+
+
+function inactive(imgName)
+{
+        img2 = eval(imgName + "2.src");
+        document [imgName].src = img2;
+}
+
+
+</script>
+<title>:: pardus ::</title>
+</head>
+<body>
+<TABLE BORDER=0 align="center" CELLPADDING=0 CELLSPACING=0 width="70%">
+<!-- ana menü -->
+  <TR width="850" class="anamenu">
+    <TD width="166" height="58"> <IMG SRC="images/logo.png" WIDTH=166 HEIGHT=58 ALT=""></TD>
+        <TD height="58"> 
+	<a href="index.html" onmouseover="inactive('pardus'); return true;" onmouseout="active('pardus'); return true;"><img src="images/btn-prd-off.png" name="pardus" border="0" height="58" width="86"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="gelistirici.html" onmouseover="inactive('gelistirici'); return true;" onmouseout="active('gelistirici'); return true;"><img src="images/btn-gel-off.png" name="gelistirici" border="0" height="58" width="122"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="topluluk.html" onmouseover="inactive('topluluk'); return true;" onmouseout="active('topluluk'); return true;"><img src="images/btn-top-off.png" name="topluluk" border="0" height="58" width="98"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="belgeler.html" onmouseover="inactive('belgeler'); return true;" onmouseout="active('belgeler'); return true;"><img src="images/btn-blg-off.png" name="belgeler" border="0" height="58" width="96"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="lisans.html" onmouseover="inactive('lisans'); return true;" onmouseout="active('lisans'); return true;"><img src="images/btn-lis-off.png" name="lisans" border="0" height="58" width="88"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="iletisim.html" onmouseover="inactive('iletisim'); return true;" onmouseout="active('iletisim'); return true;"><img src="images/btn-ilt-off.png" name="iletisim" border="0" height="58" width="88"></a>
+	</TD>
+	<TD width="100%"><img src="images/menudolgu.png"></TD>	</tr>
+<!-- ana menü --> 
+<!-- alt menü -->
+<tr><TD width="166" height="35" class="diller">&lt; TÜRKÇE // <a href="eng/index.html">ENGLISH</a> &gt;</TD>
+	     <td colspan="7" class="basfon">
+             <img src="images/baslikgelistir.png">
+
+            </td></tr>
+<tr><TD rowspan="2" colspan="1" class="altmenu">
+<p><a href="gelistirici.html">Geliştirici Ekip</a></p>
+<p><a href="http://svn.uludag.org.tr/viewcvs/">Kaynak Kodlar</a></p>
+<p class="altmenus">İnsan Kaynakları </p>
+</TD>
+<td colspan="7" class="anaalan"> &nbsp;
+<!-- ana alan-->
+<div class="baslik"><img src="images/atac3.png">İnsan Kaynakları</div>
+
+<div class="anayazi">
+Ulusal Dağıtım projesi ile ilgili her türlü istihdam olanağı duyurusu bu sayfadan takip edilebilir. 
+<p>Şu anda açık pozisyon bulunmamaktadır. İlginiz için teşekkür ederiz.</p>
+</div>
+<div class="doldur"></div>
+
+<!-- ana alan-->
+</TD>
+</tr>
+<tr><TD class="dipnot" colspan="7">
+Ulusal Dağıtım sayfalarında bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir
+<//TD>
+</tr>
+<tr><TD><img src="images/solalt.png"></TD><td colspan="7" class="dipbar"><img src="images/tubitak.png" width="80" height="35"> <img src="images/uekae.png" width="80" height="35"><img src="images/pardus.png" width="80" height="35"></td></tr>
+<tr><TD colspan="8" height="30"></TD></tr>
+</table>
+</body>
+</html>
