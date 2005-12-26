@@ -10,4 +10,4 @@ X-KDE-RootOnly=true
 Type=Application
 Icon=kuser
 Exec=kcmshell users_kga
-Categories=QT;KDE;X-KDE-settings-system;
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
