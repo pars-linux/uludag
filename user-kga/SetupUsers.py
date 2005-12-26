@@ -18,6 +18,8 @@ from kdeui import *
 import users
 from setupuserswidget import SetupUsersWidget
 
+import posix
+
 ##
 # Partitioning screen.
 class Widget(SetupUsersWidget):
@@ -64,7 +66,7 @@ class Widget(SetupUsersWidget):
 
     def reset(self):
         self.editingMode = False
-	self.username.setEnabled(True)
+        self.username.setEnabled(True)
         self.username.clear()
         self.realname.clear()
         self.pass1.clear()
@@ -91,7 +93,7 @@ class Widget(SetupUsersWidget):
             self.pass_error.setText("")
 
 
-        if self.username.text() and p1 and p2:
+        if self.username.text() and p1 and p2 and (posix.getuid() == 0):
             self.createButton.setEnabled(True)
         else:
             self.createButton.setEnabled(False)

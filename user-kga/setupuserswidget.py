@@ -12,8 +12,6 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-
-
 class SetupUsersWidget(QWidget):
     def __init__(self,parent = None,name = None,fl = 0):
         QWidget.__init__(self,parent,name,fl)

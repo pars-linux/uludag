@@ -10,6 +10,7 @@
 #
 
 import sys
+
 from qt import *
 from kdecore import *
 from kdeui import *
@@ -63,7 +64,7 @@ class MainApplication(programbase):
         # load our icons and images.
         KGlobal.iconLoader().addAppDir("users_kga")
         
-
+        
         self.mainwidget = SetupUsers.Widget(self)
 
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
