@@ -69,7 +69,6 @@ class Widget(SetupUsersWidget):
         self.realname.clear()
         self.pass1.clear()
         self.pass2.clear()
-	self.createButton.setEnabled(True)
         self.createButton.setText(i18n("&Create User"))
         
     def execute(self,user):

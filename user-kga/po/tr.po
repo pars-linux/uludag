@@ -1,0 +1,179 @@
+#: SetupUsers.py:72
+msgid "&Create User"
+msgstr ""
+
+#: SetupUsers.py:87
+msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
+msgstr ""
+
+#: SetupUsers.py:106
+msgid "<font color=\"#FF6D19\">Password shouldn't be empty"
+msgstr ""
+
+#: SetupUsers.py:125
+msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
+msgstr ""
+
+#: SetupUsers.py:129
+msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
+msgstr ""
+
+#: SetupUsers.py:133
+msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
+msgstr ""
+
+#: SetupUsers.py:164 users-kga.py:153
+msgid "&Edit User"
+msgstr ""
+
+#: setupuserswidget.py:133
+msgid "SetupUsersWidget"
+msgstr ""
+
+#: users-kga.py:66 users-kga.py:133
+msgid "Login"
+msgstr ""
+
+#: users-kga.py:67 users-kga.py:134
+msgid "Full name"
+msgstr ""
+
+#: users-kga.py:68 users-kga.py:135
+msgid "Home dir"
+msgstr ""
+
+#: users-kga.py:69 users-kga.py:136
+msgid "User ID"
+msgstr ""
+
+#: users-kga.py:70 users-kga.py:96 users-kga.py:137 users-kga.py:157
+msgid "Group ID"
+msgstr ""
+
+#: users-kga.py:71 users-kga.py:138
+msgid "Shell"
+msgstr ""
+
+#: users-kga.py:95 users-kga.py:156
+msgid "Group name"
+msgstr ""
+
+#: users-kga.py:97 users-kga.py:158
+msgid "Members"
+msgstr ""
+
+#: users-kga.py:131
+msgid "<h2>Users and Groups</h2>"
+msgstr ""
+
+#: users-kga.py:132
+msgid "Ara:"
+msgstr ""
+
+#: users-kga.py:141 users-kga.py:161
+msgid "gorkem"
+msgstr ""
+
+#: users-kga.py:142
+msgid "Grkem etin"
+msgstr ""
+
+#: users-kga.py:145 users-kga.py:165
+msgid "ahmet"
+msgstr ""
+
+#: users-kga.py:146
+msgid "Ahmet Balkon"
+msgstr ""
+
+#: users-kga.py:149 users-kga.py:169
+msgid "mehmet"
+msgstr ""
+
+#: users-kga.py:150
+msgid "Mehmet Aaolu"
+msgstr ""
+
+#: users-kga.py:152
+msgid "&Add User"
+msgstr ""
+
+#: users-kga.py:154
+msgid "&Delete User"
+msgstr ""
+
+#: users-kga.py:155
+msgid "User list"
+msgstr ""
+
+#: users-kga.py:162
+msgid "500"
+msgstr ""
+
+#: users-kga.py:166
+msgid "501"
+msgstr ""
+
+#: users-kga.py:170
+msgid "502"
+msgstr ""
+
+#: users-kga.py:172
+msgid "&Add Group"
+msgstr ""
+
+#: users-kga.py:173
+msgid "&Edit Group"
+msgstr ""
+
+#: users-kga.py:174
+msgid "&Delete Group"
+msgstr ""
+
+#: users-kga.py:175
+msgid "Group list"
+msgstr ""
+
+#: users_kga.py:21
+msgid "User Management"
+msgstr ""
+
+#: users_kga.py:50
+msgid "Users Management"
+msgstr ""
+
+#: users_kga.py:107
+msgid "Users module is already started!"
+msgstr ""
+
+#: add-new-user.py:99
+msgid "Create or Edit User"
+msgstr ""
+
+#: add-new-user.py:100
+msgid "User information"
+msgstr ""
+
+#: add-new-user.py:101
+msgid "User name:"
+msgstr ""
+
+#: add-new-user.py:102
+msgid "Full name:"
+msgstr ""
+
+#: add-new-user.py:103
+msgid "Password:"
+msgstr ""
+
+#: add-new-user.py:104
+msgid "Confirm password:"
+msgstr ""
+
+#: add-new-user.py:105
+msgid "This account is disabled"
+msgstr ""
+
+#: add-new-user.py:106
+msgid "&Ok"
+msgstr ""
