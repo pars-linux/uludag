@@ -95,7 +95,7 @@ class User:
         user_home_dir = os.path.join('/home', self.username)
         
         if not os.path.exists(user_home_dir):
-            os.system('cp -r %s %s' % ('/etc/skel'), user_home_dir)
+            os.system('cp -r %s %s' % ('/etc/skel', user_home_dir))
         else:
             for file in glob.glob("/etc/skel/.*"):
                 os.system("cp -fdr %s %s" % (file, user_home_dir))
