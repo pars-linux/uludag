@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './setupuserswidget.ui'
 #
-# Created: Pzt Ara 26 10:10:36 2005
+# Created: Pzt Ara 26 13:17:51 2005
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
