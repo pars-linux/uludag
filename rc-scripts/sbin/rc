@@ -162,11 +162,11 @@ then
 		unset mntcmd
 	fi
 	try mount -n ${mntcmd:--t proc proc /proc}
-
- 	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+    
+    sys_lang=`cat /proc/cmdline | awk -F"lang=" '{print $2}' | awk '{print $1}'`
     
 	# Fallback/default is Turkish, but we also support English
- 	if /usr/bin/test $sys_lang = "en"; then
+    if [[ ${sys_lang} = "en" ]]; then
  		sys_keymap="us"
  		sys_font="iso01.16"
  		sys_trans="8859-1"

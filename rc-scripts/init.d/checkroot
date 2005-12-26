@@ -86,10 +86,10 @@ start() {
 	fi
     
 	if grep -qs cdroot /proc/cmdline; then
-		sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+        sys_lang=`cat /proc/cmdline | awk -F"lang=" '{print $2}' | awk '{print $1}'`
         
 		# Fallback/default is Turkish, but we also support English
-		if /usr/bin/test $sys_lang = "en"; then
+        if [[ ${sys_lang} = "en" ]]; then
 			echo "LANG=\"en_US.UTF-8\"" > /etc/env.d/03locale
 			echo "LC_ALL=\"en_US.UTF-8\"" >> /etc/env.d/03locale
 		else
