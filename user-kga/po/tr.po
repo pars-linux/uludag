@@ -1,179 +1,71 @@
 #: SetupUsers.py:72
 msgid "&Create User"
-msgstr ""
+msgstr "Kullanıcı &Yarat"
 
 #: SetupUsers.py:87
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
-msgstr ""
+msgstr "<font color=\"#FF6D19\">Parolalar birbirini tutmuyor!</font>"
 
 #: SetupUsers.py:106
 msgid "<font color=\"#FF6D19\">Password shouldn't be empty"
-msgstr ""
+msgstr "<font color=\"#FF6D19\">Parola boş olamaz"
 
 #: SetupUsers.py:125
-msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
-msgstr ""
+msgid "<font color=\"#ff6d19\">username exists, choose another one!</font>"
+msgstr "<font color=\"#ff6d19\">Kullanıcı adı var, başka bir tane seçin!</font>"
 
 #: SetupUsers.py:129
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
-msgstr ""
+msgstr "<font color=\"#FF6D19\">Kullanıcı adı geçersiz karakterler içeriyor!</font>"
 
 #: SetupUsers.py:133
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
+msgstr "<font color=\"#FF6D19\">Gerçek isim geçersiz karakterler içeriyor!</font>"
 
-#: SetupUsers.py:164 users-kga.py:153
+#: SetupUsers.py:164
 msgid "&Edit User"
-msgstr ""
-
-#: setupuserswidget.py:133
-msgid "SetupUsersWidget"
-msgstr ""
-
-#: users-kga.py:66 users-kga.py:133
-msgid "Login"
-msgstr ""
-
-#: users-kga.py:67 users-kga.py:134
-msgid "Full name"
-msgstr ""
-
-#: users-kga.py:68 users-kga.py:135
-msgid "Home dir"
-msgstr ""
-
-#: users-kga.py:69 users-kga.py:136
-msgid "User ID"
-msgstr ""
-
-#: users-kga.py:70 users-kga.py:96 users-kga.py:137 users-kga.py:157
-msgid "Group ID"
-msgstr ""
-
-#: users-kga.py:71 users-kga.py:138
-msgid "Shell"
-msgstr ""
-
-#: users-kga.py:95 users-kga.py:156
-msgid "Group name"
-msgstr ""
-
-#: users-kga.py:97 users-kga.py:158
-msgid "Members"
-msgstr ""
-
-#: users-kga.py:131
-msgid "<h2>Users and Groups</h2>"
-msgstr ""
-
-#: users-kga.py:132
-msgid "Ara:"
-msgstr ""
-
-#: users-kga.py:141 users-kga.py:161
-msgid "gorkem"
-msgstr ""
-
-#: users-kga.py:142
-msgid "Grkem etin"
-msgstr ""
-
-#: users-kga.py:145 users-kga.py:165
-msgid "ahmet"
-msgstr ""
-
-#: users-kga.py:146
-msgid "Ahmet Balkon"
-msgstr ""
-
-#: users-kga.py:149 users-kga.py:169
-msgid "mehmet"
-msgstr ""
-
-#: users-kga.py:150
-msgid "Mehmet Aaolu"
-msgstr ""
-
-#: users-kga.py:152
-msgid "&Add User"
-msgstr ""
-
-#: users-kga.py:154
-msgid "&Delete User"
-msgstr ""
-
-#: users-kga.py:155
-msgid "User list"
-msgstr ""
-
-#: users-kga.py:162
-msgid "500"
-msgstr ""
-
-#: users-kga.py:166
-msgid "501"
-msgstr ""
-
-#: users-kga.py:170
-msgid "502"
-msgstr ""
-
-#: users-kga.py:172
-msgid "&Add Group"
-msgstr ""
-
-#: users-kga.py:173
-msgid "&Edit Group"
-msgstr ""
-
-#: users-kga.py:174
-msgid "&Delete Group"
-msgstr ""
-
-#: users-kga.py:175
-msgid "Group list"
-msgstr ""
+msgstr "Kullanıcıyı &Düzenle"
 
 #: users_kga.py:21
 msgid "User Management"
-msgstr ""
+msgstr "Kullanıcı Yönetimi"
 
-#: users_kga.py:50
+#: users_kga.py:51
 msgid "Users Management"
-msgstr ""
+msgstr "Kullanıcı Yönetimi"
 
-#: users_kga.py:107
+#: users_kga.py:108
 msgid "Users module is already started!"
-msgstr ""
+msgstr "Kullanıcı yönetim modülü zaten başlamış!"
 
-#: add-new-user.py:99
-msgid "Create or Edit User"
-msgstr ""
+#: setupuserswidget.py:120
+msgid "New User"
+msgstr "Yeni Kullanıcı"
 
-#: add-new-user.py:100
-msgid "User information"
-msgstr ""
+#: setupuserswidget.py:121
+msgid "User Name:"
+msgstr "Kullanıcı Adı:"
 
-#: add-new-user.py:101
-msgid "User name:"
-msgstr ""
+#: setupuserswidget.py:122
+msgid "Password (again):"
+msgstr "Parola (tekrar):"
 
-#: add-new-user.py:102
-msgid "Full name:"
-msgstr ""
-
-#: add-new-user.py:103
+#: setupuserswidget.py:123
 msgid "Password:"
-msgstr ""
+msgstr "Parola:"
 
-#: add-new-user.py:104
-msgid "Confirm password:"
-msgstr ""
+#: setupuserswidget.py:124
+msgid "Real Name:"
+msgstr "Gerçek İsim:"
 
-#: add-new-user.py:105
-msgid "This account is disabled"
-msgstr ""
+#: setupuserswidget.py:126
+msgid "Create User"
+msgstr "Kullanıcıyı Yarat"
 
-#: add-new-user.py:106
-msgid "&Ok"
-msgstr ""
+#: setupuserswidget.py:129
+msgid "Delete Selected User"
+msgstr "Seçili Kullanıcıyı Sil"
+
+#: setupuserswidget.py:130
+msgid "Users:"
+msgstr "Kullanıcılar:"
