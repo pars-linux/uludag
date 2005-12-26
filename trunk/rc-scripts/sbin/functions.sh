@@ -176,8 +176,8 @@ get_libdir() {
 
 # Wrapper function for i18n support
 translate() {
-    sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
-    if /usr/bin/test $sys_lang = "en"; then
+    sys_lang=`cat /proc/cmdline | awk -F"lang=" '{print $2}' | awk '{print $1}'`
+    if [[ ${sys_lang} == "en" ]]; then
         sys_locale="en"
     else
         sys_locale="tr"
@@ -345,7 +345,13 @@ _eend() {
 
 	if [[ ${retval} == 0 ]]; then
 		[[ ${RC_QUIET_STDOUT} == yes ]] && return 0
-		msg="${BRACKET}[ ${GOOD}ok${BRACKET} ]${NORMAL}"
+
+        sys_lang=`cat /proc/cmdline | awk -F"lang=" '{print $2}' | awk '{print $1}'`
+        if [[ ${sys_lang} = "en" ]]; then
+    		msg="${BRACKET}[ ${GOOD}ok${BRACKET} ]${NORMAL}"
+        else
+            msg="${BRACKET}[ ${GOOD}tamam${BRACKET} ]${NORMAL}"
+        fi
 	else
 		if [[ -c /dev/null ]]; then
 			rc_splash "stop" &>/dev/null &
@@ -828,10 +834,16 @@ else
 	(( COLS > 0 )) || (( COLS = 80 ))	# width of [ ok ] == 7
 fi
 
+sys_lang=`cat /proc/cmdline | awk -F"lang=" '{print $2}' | awk '{print $1}'`
+
 if [[ ${RC_ENDCOL} == yes ]]; then
-	ENDCOL=$'\e[A\e['$(( COLS - 7 ))'G'
+    if [[ ${sys_lang} == "en" ]]; then
+	    ENDCOL=$'\e[A\e['$(( COLS - 7 ))'G'
+    else
+        ENDCOL=$'\e[A\e['$(( COLS - 10 ))'G'
+    fi
 else
-	ENDCOL=''
+    ENDCOL=''
 fi
 
 # Setup the colors so our messages all look pretty
