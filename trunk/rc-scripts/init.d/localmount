@@ -30,7 +30,7 @@ start() {
 	if [[ -n ${usbfs} ]] && \
 	   [[ -e /proc/bus/usb && ! -e /proc/bus/usb/devices ]]
 	then
-		ebegin "Mounting USB device filesystem (${usbfs})"
+		ebegin "Mounting USB device filesystem"
 		usbgid=$(awk -F: '/^usb:/{print $3; exit}' /etc/group)
 		mount -t ${usbfs} usbfs /proc/bus/usb \
 			${usbgid:+-o devmode=0664,devgid=${usbgid}}
@@ -38,7 +38,7 @@ start() {
 	fi
 
 	# Swap on loopback devices, and other weirdnesses
-	ebegin "Activating (possibly) more swap"
+	ebegin "Activating more swap"
 	/sbin/swapon -a
 	eend $?
 

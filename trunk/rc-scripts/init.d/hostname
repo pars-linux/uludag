@@ -26,7 +26,7 @@ start() {
 		myhost=${HOSTNAME}
 	fi
 
-	ebegin "Setting hostname to ${myhost}"
+	ebegin "Setting hostname"
 	/bin/hostname "${myhost}"
 	retval=$?
 	eend ${retval} "Failed to set the hostname"

@@ -38,19 +38,14 @@ msgid "Stopping nas"
 msgstr "Ağ ses sistemi durduruluyor"
 
 
-# ./xdm:77 (einfo)
-msgid "Skipping ${EXE}, received 'nox'"
-msgstr "${EXE} atlanıyor."
-
-
 # ./xdm:79 (ebegin)
-msgid "Setting up ${SERVICE}"
-msgstr "${SERVICE} başlatılıyor"
+msgid "Setting up kdm"
+msgstr "kdm başlatılıyor"
 
 
 # ./xdm:97 (ebegin)
-msgid "Stopping ${myservice}"
-msgstr "${myservice} başlatılıyor"
+msgid "Stopping kdm"
+msgstr "kdm başlatılıyor"
 
 
 # ./apmd:7 (eerror)
@@ -84,8 +79,8 @@ msgstr "P2P servisi başlatılıyor"
 
 
 # ./gift:14 (eerror)
-msgid "Failed to start gift. Check ${LOG} for more information"
-msgstr "P2P servisi başlatılamadı. Daha fazla bilgi için ${LOG} dosyasını kontrol edin"
+msgid "Failed to start gift"
+msgstr "P2P servisi başlatılamadı"
 
 
 # ./gift:20 (ebegin)
@@ -234,8 +229,8 @@ msgstr "CLOCK /etc/rc.conf değil /etc/conf.d/clock dosyasında tanımlanmalıd�
 
 
 # ./clock:65 (ebegin)
-msgid "Setting system clock to hardware clock [${TBLURB}]"
-msgstr "Sistem saati donanım saatine ayarlanıyor [${TBLURB}]"
+msgid "Setting system clock to hardware clock"
+msgstr "Sistem saati donanım saatine ayarlanıyor"
 
 
 # ./clock:75 (ewarn)
@@ -244,8 +239,8 @@ msgstr "${errstr}"
 
 
 # ./clock:101 (ebegin)
-msgid "Syncing system clock to hardware clock [${TBLURB}]"
-msgstr "Sistem saati, donanım saatine uyumlu hale getiriliyor [${TBLURB}]"
+msgid "Syncing system clock to hardware clock"
+msgstr "Sistem saati, donanım saatine uyumlu hale getiriliyor"
 
 
 # ./comar:2 (ebegin)
@@ -309,13 +304,13 @@ msgstr "Mdnsd durduruluyor"
 
 
 # ./samba:20 (ebegin)
-msgid "${my_service_name} -> ${signal}: ${daemon}"
-msgstr "${my_service_name} -> ${signal}: ${daemon}"
+msgid "Starting samba"
+msgstr "samba başlatılıyor"
 
 
 # ./samba:36 (ewarn)
-msgid "Error: stopping services (see system logs)"
-msgstr "Hata: servisler durduruluyor (sistem günlüklerine bakın)"
+msgid "Stopping samba"
+msgstr "samba durduruluyor"
 
 
 # ./rsync:6 (ebegin)
@@ -394,13 +389,13 @@ msgstr "/etc/conf.d/slmodem dosyasını düzenlemelisiniz"
 
 
 # ./slmodem:18 (ebegin)
-msgid "Starting slmodemd for ${DEV}"
-msgstr "slmodemd ${DEV} aygıtı için çalıştırılıyor"
+msgid "Starting slmodemd"
+msgstr "slmodemd için çalıştırılıyor"
 
 
 # ./slmodem:30 (eerror)
-msgid "Missing ${MODULE}. Please set up /etc/conf.d/slmodem"
-msgstr "${MODULE} eksik. Lütfen /etc/conf.d/slmodem dosyasını düzenleyin"
+msgid "Missing module. Please set up /etc/conf.d/slmodem"
+msgstr "Modül eksik. Lütfen /etc/conf.d/slmodem dosyasını düzenleyin"
 
 
 # ./slmodem:67 (ebegin)
@@ -409,8 +404,8 @@ msgstr "slmodemd kapatılıyor"
 
 
 # ./slmodem:75 (ebegin)
-msgid "Waiting for ${MODULE} modem driver unload"
-msgstr "${MODULE} modem sürücüsünün sonlanması bekleniyor"
+msgid "Waiting for modem driver unload"
+msgstr "Modem sürücüsünün sonlanması bekleniyor"
 
 
 # ./domainname:8 (ewarn)
@@ -444,13 +439,13 @@ msgstr "Yerel dosya sistemleri tanımlanıyor"
 
 
 # ./localmount:26 (ebegin)
-msgid "Mounting USB device filesystem (${usbfs})"
-msgstr "USB aygıt dosya sistemi tanımlanıyor (${usbfs})"
+msgid "Mounting USB device filesystem"
+msgstr "USB aygıt dosya sistemi bağlanıyor"
 
 
 # ./localmount:34 (ebegin)
-msgid "Activating (possibly) more swap"
-msgstr "Daha fazla takas alanı etkinleştiriliyor"
+msgid "Activating more swap"
+msgstr "Daha fazla takas alanı (varsa) etkinleştiriliyor"
 
 
 # ./consolefont:9 (ebegin)
@@ -469,9 +464,20 @@ msgstr "Coldplug için /etc/hotplug dosyasını düzenlemelisiniz"
 
 
 # ./coldplug:18 (ebegin)
-msgid "Coldplugging $NAME devices"
-msgstr "$NAME aygıtları ayarlanıyor"
+msgid "Coldplugging input devices"
+msgstr "input aygıtları ayarlanıyor"
 
+msgid "Coldplugging isapnp devices"
+msgstr "isapnp aygıtları ayarlanıyor"
+
+msgid "Coldplugging pci devices"
+msgstr "pci aygıtları ayarlanıyor"
+
+msgid "Coldplugging pnp devices"
+msgstr "pnp aygıtları ayarlanıyor"
+
+msgid "Coldplugging usb devices"
+msgstr "usb aygıtları ayarlanıyor"
 
 # ./modules:47 (einfo)
 msgid "Using ${config} as config:"
@@ -484,7 +490,7 @@ msgstr "  ${x} modülü yükleniyor"
 
 
 # ./modules:60 (einfo)
-msgid "Autoloaded ${modcount} module(s)"
+msgid "Autoloaded {modcount} module(s)"
 msgstr "${modcount} modül otomatik olarak yüklendi"
 
 
@@ -509,13 +515,13 @@ msgstr "Ses servisi (esound) durduruluyor"
 
 
 # ./hdparm:11 (ebegin)
-msgid "Running hdparm on $device"
-msgstr "hdparm $device aygıtı için çalıştırılıyor"
+msgid "Running hdparm"
+msgstr "hdparm çalıştırılıyor"
 
 
 # ./hdparm:12 (ewarn)
-msgid "Failed to run hdparm on $device"
-msgstr "hdparm $device aygıtı için çalıştırılamadı"
+msgid "Failed to run hdparm"
+msgstr "hdparm çalıştırılamadı"
 
 # ./hdparm:19 (ebegin)
 msgid "Starting hdparm"
@@ -526,8 +532,8 @@ msgid "You should stop using /etc/hostname and use /etc/conf.d/hostname"
 msgstr "/etc/hostname dosyası yerine /etc/conf.d/hostname dosyasını kullanın"
 
 # ./hostname:22 (ebegin)
-msgid "Setting hostname to ${myhost}"
-msgstr "hostname ${myhost} olarak ayarlanıyor"
+msgid "Setting hostname"
+msgstr "hostname ayarlanıyor"
 
 
 # ./lircmd:6 (ebegin)
@@ -548,16 +554,6 @@ msgstr ""
 # ./855resolution:16 (ebegin)
 msgid "Running 855resolution to replace ${#replace[@]} mode(s)"
 msgstr ""
-
-
-# ./sysklogd:15 (ebegin)
-msgid "sysklogd -> start: ${daemon}"
-msgstr "syskogd -> start: ${daemon}"
-
-
-# ./sysklogd:30 (ebegin)
-msgid "sysklogd -> stop: ${daemon}"
-msgstr "sysklogd -> stop: ${daemon}"
 
 
 # ./netmount:37 (ebegin)
@@ -880,8 +876,8 @@ msgstr "Tüm dosya sisteminin denetlenmesi gerekiyor"
 
 
 # ./alsasound:22 (ewarn)
-msgid "Could not detect custom ALSA settings.  Trying with Discover."
-msgstr "Özel ses kartı ayarları bulunamadı."
+msgid "Could not detect custom ALSA settings. Trying with Discover."
+msgstr "Özel ses kartı ayarları bulunamadı. Discover ile deneniyor"
 
 
 # ./alsasound:26 (einfo)
@@ -892,21 +888,6 @@ msgstr "Hata ! Tüm modüllerin yüklenmesi deneniyor..."
 # ./alsasound:29 (eerror)
 msgid "Unable to find any ALSA drivers. Have you compiled alsa-drivers correctly?"
 msgstr "Hiç ALSA ses sürücüsü bulunamadı. Alsa sürücülerini sisteminize kurdunuz mu?"
-
-
-# ./alsasound:57 (ebegin)
-msgid "  Loading: ${DRIVER}"
-msgstr "  Yükleniyor: ${DRIVER}"
-
-
-# ./alsasound:72 (ebegin)
-msgid "  Loading: ${SEQUENCER}"
-msgstr "  Yükleniyor: ${SEQUENCER}"
-
-
-# ./alsasound:84 (ebegin)
-msgid "  Running: ${alsascrdir}/${TMP}"
-msgstr "  Çalıştırılıyor: ${alsascrdir}/${TMP}"
 
 
 # ./alsasound:91 (eerror)
@@ -962,3 +943,55 @@ msgstr "ALSA ses sürücüleri bellekten siliniyor"
 # ./alsasound:210 (ebegin)
 msgid "Unloading ALSA modules"
 msgstr "ALSA ses sürücüleri bellekten siliniyor"
+
+
+msgid "Activating swap"
+msgstr "Swap etkinleştiriliyor"
+
+msgid "Mounting proc at /proc"
+msgstr "proc /proc dizinine bağlanıyor"
+
+msgid "Mounting sysfs at /sys"
+msgstr "sysfs /sys dizinine bağlanıyor"
+
+msgid "Using existing device nodes in /dev"
+msgstr "/dev altındaki cihaz düğümleri kullanılıyor"
+
+msgid "Mounting /dev for udev"
+msgstr "udev /dev dizinine bağlanıyor"
+
+msgid "Mounting devpts at /dev/pts"
+msgstr "devpts /dev/pts dizinine bağlanıyor"
+
+msgid "Configuring system to use udev"
+msgstr "Sistem udev kullanacak şekilde yapılandırılıyor"
+
+msgid "Starting irqbalance"
+msgstr "irqbalance başlatılıyor"
+
+msgid "Updating inittab"
+msgstr "inittab güncelleniyor"
+
+msgid "Populating /dev with device nodes"
+msgstr "/dev cihaz düğümleri dolduruluyor"
+
+msgid "Setting /sbin/udevsend as hotplug agent"
+msgstr "/sbin/udevsend hotplug sorumlusu olarak ayarlanıyor"
+
+msgid "Using /sbin/hotplug as hotplug agent"
+msgstr "/sbin/hotplug hotplug sorumlusu olarak ayarlanıyor"
+
+msgid "Setting /sbin/udev as hotplug agent"
+msgstr "/sbin/udev hotplug sorumlusu olarak ayarlanıyor"
+
+msgid "Starting system logger"
+msgstr "Sistem kayıt tutucu başlatılıyor"
+
+msgid "Stoping system logger"
+msgstr "Sistem kayıt tutucu durduruluyor"
+
+msgid "Caching service dependencies"
+msgstr "Servis bağımlılıkları hesaplanıyor"
+
+msgid "Failed to cache service dependencies"
+msgstr "Servis bağımlılıkları hesaplanırken hata oluştu"

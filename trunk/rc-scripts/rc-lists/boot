@@ -10,5 +10,4 @@ clock
 domainname
 hostname
 localmount
-net.lo
 sysklogd

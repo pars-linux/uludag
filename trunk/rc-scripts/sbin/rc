@@ -151,7 +151,7 @@ then
 	[ -c /dev/console ] && dev_console=1 || dev_console=0
 
     echo -e "\033%G"
-	echo -e "${GOOD}Pardus Beta; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
+	echo -e "${GOOD}Pardus; ${BRACKET}http://www.uludag.org.tr/${NORMAL}"
 	echo
 
 	check_statedir /proc
@@ -165,40 +165,27 @@ then
 	try mount -n ${mntcmd:--t proc proc /proc}
 	eend $?
 
-#     # Setup fonts and keymap here, so we have language support in init scripts
-#     /usr/bin/kbd_mode -u
-# 
-# 	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
-# 
-# 	# Fallback/default is Turkish, but we also support English
-# 	if /usr/bin/test $sys_lang = "en"; then
-# 		sys_keymap="us"
-# 		sys_font="iso01.16"
-# 		sys_trans="8859-1"
-# 		sys_locale="en_US.UTF-8"
-# 	else
-# 		sys_keymap="trq"
-# 		sys_font="iso09.16"
-# 		sys_trans="8859-9"
-# 		sys_locale="tr_TR.UTF-8"
-# 	fi
-# 
-# 	/bin/loadkeys $sys_keymap &> /dev/null
-#     /usr/bin/setfont -f $sys_font -m $sys_trans
-# 	sed -i "s/KEYMAP=.*/KEYMAP=$sys_keymap/" /etc/conf.d/keymaps
-# 	sed -i "s/CONSOLEFONT=.*/CONSOLEFONT=$sys_font/" /etc/conf.d/consolefont
-# 	sed -i "s/CONSOLETRANSLATION=.*/CONSOLETRANSLATION=$sys_trans/" /etc/conf.d/consolefont
-# 	sed -i "s/LANG=.*/LANG=$sys_locale/" /etc/env.d/03locale
-# 	sed -i "s/LC_ALL=.*/LC_ALL=$sys_locale/" /etc/env.d/03locale
-# 
-# 	export LC_ALL=$sys_locale
-# 
-# 	# For /etc/profile.env
-# 	# /usr/bin/update-environ.py &> /dev/null
-# 
-# 	sed -i "s/LANG=.*/LANG=$sys_locale/" /etc/profile.env
-# 	sed -i "s/LC_ALL=.*/LC_ALL=$sys_locale/" /etc/profile.env
-# 
+ 	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+    
+	# Fallback/default is Turkish, but we also support English
+ 	if /usr/bin/test $sys_lang = "en"; then
+ 		sys_keymap="us"
+ 		sys_font="iso01.16"
+ 		sys_trans="8859-1"
+ 		sys_locale="en_US.UTF-8"
+ 	else
+ 		sys_keymap="trq"
+ 		sys_font="iso09.16"
+ 		sys_trans="8859-9"
+ 		sys_locale="tr_TR.UTF-8"
+ 	fi
+    
+    /usr/bin/kbd_mode -u
+ 	/bin/loadkeys $sys_keymap &> /dev/null
+    /usr/bin/setfont -f $sys_font -m $sys_trans
+    
+    export sys_lang=$sys_locale
+
 	# Read off the kernel commandline to see if there's any special settings
 	# especially check to see if we need to set the  CDBOOT environment variable
 	# Note: /proc MUST be mounted
@@ -313,7 +300,7 @@ then
 			ebegin "Configuring system to use udev"
 			if [[ ${RC_DEVICE_TARBALL} = "yes" ]] && [[ -s /lib/udev-state/devices.tar.bz2 ]]
 			then
-				einfo "  Populating /dev with device nodes ..."
+				einfo "Populating /dev with device nodes"
 				try tar -jxpf /lib/udev-state/devices.tar.bz2 -C /dev
 			fi
 			populate_udev
@@ -321,12 +308,12 @@ then
 			# Setup hotplugging (if possible)
 			if [ -e /proc/sys/kernel/hotplug ] ; then
 				if [ "$(udev_version)" -ge "48" ] ; then
-					einfo "  Setting /sbin/udevsend as hotplug agent ..."
+					einfo "Setting /sbin/udevsend as hotplug agent"
 					echo "/sbin/udevsend" > /proc/sys/kernel/hotplug
 				elif [ -x /sbin/hotplug ] ; then
-					einfo "  Using /sbin/hotplug as hotplug agent ..."
+					einfo "Using /sbin/hotplug as hotplug agent"
 				else
-					einfo "  Setting /sbin/udev as hotplug agent ..."
+					einfo "Setting /sbin/udev as hotplug agent"
 					echo "/sbin/udev" > /proc/sys/kernel/hotplug
 				fi
 			fi
@@ -415,7 +402,7 @@ then
 	# the fstab can be properly parsed.  This first pass we send to /dev/null
 	# in case the user has swap points setup on different partitions.  We 
 	# will run swapon again in localmount and that one will report errors.
-	ebegin "Activating (possible) swap"
+	ebegin "Activating swap"
 	/sbin/swapon -a >& /dev/null
 	eend 0
 
