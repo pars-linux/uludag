@@ -92,11 +92,11 @@ class Links:
     
     def query(self, comar):
         self.comar = comar
-        self.comar.call("Net.Link.linkInfo", id=43)
+        self.comar.call("Net.Link.linkInfo", id=42)
     
     def slotComar(self, reply):
         if reply[0] == self.comar.RESULT:
-            if reply[1] == 43:
+            if reply[1] == 42:
                 self.links[reply[3]] = Link(reply[3], reply[2])
     
     def get_info(self, name):

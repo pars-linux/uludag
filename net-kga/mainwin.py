@@ -77,8 +77,6 @@ class Widget(QVBox):
         self.setMargin(6)
         self.setSpacing(6)
         
-        self.stack = stack.Window(self)
-        
         box = QHBox(self)
         lab = QLabel(i18n("Network connections:"), box)
         box.setStretchFactor(lab, 5)
@@ -103,6 +101,7 @@ class Widget(QVBox):
         
         self.comar = comar.Link()
         
+        self.stack = stack.Window(self, self.comar)
         links.query(self.comar)
         
         self.comar.call("Net.Link.connections", id=1)
@@ -178,8 +177,10 @@ class Widget(QVBox):
                 uid, dev = reply[2].split(" ", 1)
                 name = self.uniqueName()
                 self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
-            elif reply[1] > 42:
+            elif reply[1] == 42:
                 links.slotComar(reply)
+            elif reply[1] > 42:
+                self.stack.slotComar(reply)
         
         elif reply[0] == self.comar.NOTIFY:
             noti, script, data = reply[2].split("\n", 2)
