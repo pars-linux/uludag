@@ -116,6 +116,10 @@ class User:
         Del(self.passwd_path)
         Del(self.shadow_path)
 
+        self.__removeGroups()
+
+        for file in [self.shadow_path, self.passwd_path, self.group_path]:
+            shutil.move(file + '.tmp', file)
 
     def getAvailableUid(self):
         j = map(lambda x: int(x[2]), [line.split(':') for line in open(self.passwd_path, 'r').readlines()])
@@ -139,6 +143,19 @@ class User:
     def realnameIsValid(self):
         not_allowed_chars = '\n' + ':'
         return '' == filter(lambda r: [x for x in not_allowed_chars if x == r], self.realname)
+
+    def __removeGroups(self):
+        group_content = open(self.group_path, 'r').readlines()
+        group_file = open(self.group_path + '.tmp', 'w')
+        for line in group_content:
+            line = line.strip('\n')
+            group_info, group_users = line.split(':')[:-1], line.split(':')[-1:][0].split(',')
+            for group in self.groups:
+                if self.username in group_users:
+                    group_users.remove(self.username)
+            group_users, group_info = ','.join(group_users), ':'.join(group_info)
+            group_file.write(group_info + ':' + group_users + '\n')
+        group_file.close()
 
     def __appendGroups(self):
         group_content = open(self.group_path, 'r').readlines()
