@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'setupuserswidget.ui'
+# Form implementation generated from reading ui file './setupuserswidget.ui'
 #
-# Created: Pzt Ara 26 08:05:48 2005
+# Created: Pzt Ara 26 10:10:36 2005
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
 
 
 from qt import *
+from kdecore import *
 from kdeui import *
 
 
@@ -116,18 +117,15 @@ class SetupUsersWidget(QWidget):
 
     def languageChange(self):
         self.pass_error.setText(QString.null)
-        self.buttonGroup1.setTitle(self.__tr("New User"))
-        self.textLabel1_3.setText(self.__tr("User Name:"))
-        self.textLabel1.setText(self.__tr("Password (again):"))
-        self.textLabel1_2.setText(self.__tr("Password:"))
-        self.textLabel1_4.setText(self.__tr("Real Name:"))
+        self.buttonGroup1.setTitle(i18n("New User"))
+        self.textLabel1_3.setText(i18n("User Name:"))
+        self.textLabel1.setText(i18n("Password (again):"))
+        self.textLabel1_2.setText(i18n("Password:"))
+        self.textLabel1_4.setText(i18n("Real Name:"))
         self.pix.setText(QString.null)
-        self.createButton.setText(self.__tr("Create User"))
+        self.createButton.setText(i18n("Create User"))
         self.createButton.setAccel(QString.null)
-        self.cancelButton.setText(self.__tr("&Cancel"))
-        self.deleteButton.setText(self.__tr("Delete Selected User"))
-        self.textLabel2.setText(self.__tr("Users:"))
+        self.cancelButton.setText(i18n("&Cancel"))
+        self.deleteButton.setText(i18n("Delete Selected User"))
+        self.textLabel2.setText(i18n("Users:"))
 
-
-    def __tr(self,s,c = None):
-        return qApp.translate("SetupUsersWidget",s,c)
