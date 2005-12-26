@@ -8,9 +8,8 @@
 # any later version.
 #
 # Please read the COPYING file.
-# Copyright (C) 2005, İsmail Dönmez (architect and designer)
-# 
-
+#
+# Anonymous 2005
 
 from qt import *
 from kdecore import *
