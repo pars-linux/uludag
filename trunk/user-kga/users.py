@@ -117,7 +117,7 @@ class User:
     
         passwd_content, shadow_content = getContent(self.passwd_path), getContent(self.shadow_path)
     
-        passwd_fp, shadow_fp = getFp(self.passwd_path), getFp(self.shadow_fp)
+        passwd_fp, shadow_fp = getFp(self.passwd_path), getFp(self.shadow_path)
     
         for line in passwd_content:
             info = line.split(':')
