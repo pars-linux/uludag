@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="ulustil.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<script language="javascript1.2">
+window.onerror=null;
+{
+        pardus1 = new Image(); pardus1.src = "images/btn-prd-off.png";
+	pardus2 = new Image(); pardus2.src = "images/btn-prd-on.png";
+	gelistirici1 = new Image(); gelistirici1.src = "images/btn-gel-off.png";
+	gelistirici2 = new Image(); gelistirici2.src = "images/btn-gel-on.png";
+	topluluk1 = new Image(); topluluk1.src = "images/btn-top-off.png";
+	topluluk2 = new Image(); topluluk2.src = "images/btn-top-on.png";
+	belgeler1 = new Image(); belgeler1.src = "images/btn-blg-off.png";
+	belgeler2 = new Image(); belgeler2.src = "images/btn-blg-on.png";
+	lisans1 = new Image(); lisans1.src = "images/btn-lis-off.png";
+	lisans2 = new Image(); lisans2.src = "images/btn-lis-on.png";
+	iletisim1 = new Image(); iletisim1.src = "images/btn-ilt-off.png";
+	iletisim2 = new Image(); iletisim2.src = "images/btn-ilt-on.png";
+}
+	
+wprev = 0;
+hprev = 0;
+xprev = 0;
+yprev = 0;
+
+function active(imgName)
+
+{
+        img1 = eval(imgName + "1.src");
+        document [imgName].src = img1;
+}
+
+
+function inactive(imgName)
+{
+        img2 = eval(imgName + "2.src");
+        document [imgName].src = img2;
+}
+
+
+</script>
+<title>:: pardus ::</title>
+</head>
+<body>
+<TABLE BORDER=0 align="center" CELLPADDING=0 CELLSPACING=0 width="70%">
+<!-- ana menü -->
+  <TR width="850" class="anamenu">
+    <TD width="166" height="58"> <IMG SRC="images/logo.png" WIDTH=166 HEIGHT=58 ALT=""></TD>
+        <TD height="58"> 
+	<a href="index.html" onmouseover="inactive('pardus'); return true;" onmouseout="active('pardus'); return true;"><img src="images/btn-prd-off.png" name="pardus" border="0" height="58" width="86"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="gelistirici.html" onmouseover="inactive('gelistirici'); return true;" onmouseout="active('gelistirici'); return true;"><img src="images/btn-gel-off.png" name="gelistirici" border="0" height="58" width="122"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="topluluk.html" onmouseover="inactive('topluluk'); return true;" onmouseout="active('topluluk'); return true;"><img src="images/btn-top-off.png" name="topluluk" border="0" height="58" width="98"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="belgeler.html" onmouseover="inactive('belgeler'); return true;" onmouseout="active('belgeler'); return true;"><img src="images/btn-blg-off.png" name="belgeler" border="0" height="58" width="96"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="lisans.html" onmouseover="inactive('lisans'); return true;" onmouseout="active('lisans'); return true;"><img src="images/btn-lis-off.png" name="lisans" border="0" height="58" width="88"></a>
+	</TD>
+	<TD height="58"> 
+	<a href="iletisim.html" onmouseover="inactive('iletisim'); return true;" onmouseout="active('iletisim'); return true;"><img src="images/btn-ilt-off.png" name="iletisim" border="0" height="58" width="88"></a>
+	</TD>
+	<TD width="100%"><img src="images/menudolgu.png"></TD>
+	</tr>
+<!-- ana menü --> 
+<!-- alt menü -->
+<tr><TD width="166" height="35" class="diller">&lt; TÜRKÇE // <a href="eng/index.html">ENGLISH</a> &gt;</TD>
+	     <td colspan="7" class="basfon">
+             <img src="images/baslikgelistir.png">
+
+            </td></tr>
+<tr><TD rowspan="2" colspan="1" class="altmenu">
+<p class="altmenus">Geliştirici Ekip
+<p><A href="http://svn.uludag.org.tr/viewcvs/">Kaynak Kodlar</A>
+<p><A href="insankaynaklari.html">İnsan Kaynakları</A>
+</TD>
+<td colspan="7" class="anaalan"> &nbsp;
+<!-- ana alan-->
+<div class="baslik"><img src="images/atac3.png">Kim geliştiriyor Pardus'u?</div>
+
+<div class="anayazi"><img src="images/ekip.png" align="left"><p>
+Pardus, TÜBİTAK / UEKAE tarafından yürütülen Ulusal Dağıtım projesinin ürünüdür. Bu ekibin çekirdeğini oluşturacak, dağıtımın mimarisini hazırlayacak olan geliştiricilerin seçim ve istihdamı, Türkiye'nin Linux geçmişi, mevcut ve planlanan dağıtımlar, açık kaynak camiası ve girişimleri göz önüne alınarak; var olan bilgi birikimi ve deneyimden en üst düzeyde yararlanabilme hedefiyle belirli konularda uzmanlaşmış, takım oyuncusu olarak çalışan farklı sektörlerden insanların bir araya getirilmesiyle sağlandı. Bu sürecin somut gelişimi 2004 yılı başında çekirdek ekibin oluşumu ile başlamış ve ihtiyaçlar geliştikçe dinamik bir yapıda gelişerek devam etmiştir... 
+<p>Bununla birlikte tüm açık kaynak kodlu / özgür sistemlerde olduğu gibi, Pardus'un geliştirilmesine bir çok bağımsız geliştiricinin de katkısı olmaktadır. Bu anlamda çekirdek ekip sorumlu ya da uygulayıcı geliştirici olarak düşünülebilir. Proje dışından Pardus'a katkı verenleri ve Pardus ekosistemini oluşturan araçları görmek için lütfen <a href="topluluk.html">Topluluk</a> sayfasını ziyaret edin.
+</div>
+<div class="baslik"><img src="images/atac3.png">Çekirdek ekip</div>
+
+<table class="gelistiricilistesi">
+<tr>
+<TR>
+<TD colspan="2">
+<strong>Erkan Tekman</strong> (Proje Yöneticisi)
+<br>E-Posta: <a href="tekman [ at ] uludag.org.tr">tekman [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~tekman/" target="_blank">http://cekirdek.uludag.org.tr/~tekman/</a>
+<br>Jabber: tekman [ at ] jabber.uludag.org.tr
+</TD>
+</TR>
+<tr>
+<TD>
+<strong>T. Barış Metin</strong>
+<br>E-Posta: <a href="baris [ at ] uludag.org.tr">baris [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~baris/" target="_blank">http://cekirdek.uludag.org.tr/~baris/</a>
+<br>Jabber: baris [ at ] jabber.uludag.org.tr
+</TD>
+<TD>
+<strong>S. Çağlar Onur</strong>
+<br>E-Posta: <a href="caglar [ at ] uludag.org.tr">caglar [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~caglar/" target="_blank">http://cekirdek.uludag.org.tr/~caglar/</a>
+<br>Jabber: caglar [ at ] jabber.uludag.org.tr
+</TD>
+</tr>
+<tr>
+<TD>
+<strong>A. Murat Eren</strong>
+<br>E-Posta: <a href="meren [ at ] uludag.org.tr">meren [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~meren/" target="_blank">http://cekirdek.uludag.org.tr/~meren/</a>
+<br>Jabber: meren [ at ] jabber.uludag.org.tr
+</TD>
+<TD>
+<strong>Onur Küçük</strong>
+<br>E-Posta: <a href="onur [ at ] uludag.org.tr">onur [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~onur/" target="_blank">http://cekirdek.uludag.org.tr/~onur/</a>
+<br>Jabber: onur [ at ] jabber.uludag.org.tr
+</TD>
+</tr><tr>
+<TD>
+<strong>Gürer Özen</strong>
+<br>E-Posta: <a href="gurer [ at ] uludag.org.tr">gurer [ at ] uludag.org.tr</a>
+<br>Jabber: gurer [ at ] jabber.uludag.org.tr 
+</TD><TD>
+<strong>M. Umut Pulat</strong>
+<br>E-Posta: <a href="umut [ at ] uludag.org.tr">umut [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~umut/" target="_blank">http://cekirdek.uludag.org.tr/~umut/</a>
+<br>Jabber: umut [ at ] jabber.uludag.org.tr
+</TD>
+</tr><tr>
+<TD>
+<strong>İsmail Dönmez</strong>
+<br>E-Posta: <a href="ismail [ at ] uludag.org.tr">ismail [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~ismail/" target="_blank">http://cekirdek.uludag.org.tr/~ismail/</a>
+<br>Jabber: ismail [ at ] jabber.uludag.org.tr 
+</TD>
+<TD>
+<strong>Eray Özkural</strong>
+<br>E-Posta: <a href="eray [ at ] uludag.org.tr">eray [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~eray/" target="_blank">http://cekirdek.uludag.org.tr/~eray/</a>
+<br>Jabber: eray [ at ] jabber.uludag.org.tr
+</TD>
+</tr><tr>
+<TD>
+<strong>Görkem Çetin</strong>
+<br>E-Posta: <a href="gorkem [ at ] uludag.org.tr">gorkem [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~gorkem/" target="_blank">http://cekirdek.uludag.org.tr/~gorkem/</a>
+<br>Jabber: gorkem [ at ] jabber.uludag.org.tr 
+</TD>
+<TD>
+<strong>Mehmet D. Akın</strong>
+<br>E-Posta: <a href="mdakin [ at ] uludag.org.tr">mdakin [ at ] uludag.org.tr</a>
+<br>Jabber: mdakin [ at ] jabber.uludag.org.tr
+</TD>
+</tr><tr>
+<TD>
+<strong>Koray Löker</strong>
+<br>E-Posta: <a href="loker [ at ] uludag.org.tr">loker [ at ] uludag.org.tr</a>
+<br><a href="http://cekirdek.uludag.org.tr/~loker/" target="_blank">http://cekirdek.uludag.org.tr/~loker/</a>
+<br>Jabber: loker [ at ] jabber.uludag.org.tr 
+</TD>
+</tr>
+</table>
+<p>&nbsp;</p>
+
+<!-- ana alan-->
+</td>
+</tr>
+<tr><TD class="dipnot" colspan="7">
+Ulusal Dağıtım sayfalarında bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir
+<//TD>
+</tr>
+<tr><TD><img src="images/solalt.png"></TD><td colspan="7" class="dipbar"><img src="images/tubitak.png" width="80" height="35"> <img src="images/uekae.png" width="80" height="35"><img src="images/pardus.png" width="80" height="35"></td></tr>
+<tr><TD colspan="8" height="30"></TD></tr>
+</table>
+</body>
+</html>
