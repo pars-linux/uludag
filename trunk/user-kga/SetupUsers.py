@@ -70,10 +70,7 @@ class Widget(SetupUsersWidget):
         self.pass1.clear()
         self.pass2.clear()
         
-    def execute(self):
-        user = users.User(str(self.username.text()))
-        user.realname = unicode(self.realname.text())
-        user.password = str(self.pass1.text())
+    def execute(self,user):
         user.addUser()
 
         return True
@@ -128,13 +125,7 @@ class Widget(SetupUsersWidget):
             pass
         i = UserItem(self.userList, user = u)
 
-        # clear all
-        self.username.clear()
-        self.realname.clear()
-        self.pass1.clear()
-        self.pass2.clear()
-
-        self.execute()
+        self.execute(u)
 
 
     def slotDeleteUser(self):

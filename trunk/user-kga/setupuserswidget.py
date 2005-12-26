@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'setupuserswidget.ui'
 #
-# Created: Pzt Ara 26 07:21:43 2005
+# Created: Pzt Ara 26 08:05:48 2005
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
@@ -22,42 +22,12 @@ class SetupUsersWidget(QWidget):
 
 
         SetupUsersWidgetLayout = QGridLayout(self,1,1,11,6,"SetupUsersWidgetLayout")
-        spacer9 = QSpacerItem(20,16,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        SetupUsersWidgetLayout.addItem(spacer9,0,1)
-        spacer12 = QSpacerItem(61,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        SetupUsersWidgetLayout.addItem(spacer12,1,2)
-        spacer12_2 = QSpacerItem(61,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        SetupUsersWidgetLayout.addItem(spacer12_2,1,0)
-        spacer14_2 = QSpacerItem(40,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        SetupUsersWidgetLayout.addItem(spacer14_2,3,0)
-
-        layout5 = QGridLayout(None,1,1,0,6,"layout5")
-        spacer7 = QSpacerItem(20,70,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        layout5.addItem(spacer7,2,1)
-
-        self.deleteButton = QPushButton(self,"deleteButton")
-
-        layout5.addWidget(self.deleteButton,1,1)
-
-        self.userList = QListBox(self,"userList")
-
-        layout5.addMultiCellWidget(self.userList,1,2,0,0)
-
-        self.textLabel2 = QLabel(self,"textLabel2")
-
-        layout5.addMultiCellWidget(self.textLabel2,0,0,0,1)
-
-        SetupUsersWidgetLayout.addLayout(layout5,3,1)
-        spacer11 = QSpacerItem(20,16,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        SetupUsersWidgetLayout.addItem(spacer11,4,1)
-        spacer14 = QSpacerItem(40,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        SetupUsersWidgetLayout.addItem(spacer14,3,2)
 
         self.pass_error = QLabel(self,"pass_error")
         self.pass_error.setTextFormat(QLabel.RichText)
         self.pass_error.setAlignment(QLabel.WordBreak | QLabel.AlignCenter)
 
-        SetupUsersWidgetLayout.addWidget(self.pass_error,2,1)
+        SetupUsersWidgetLayout.addMultiCellWidget(self.pass_error,1,1,0,1)
 
         self.buttonGroup1 = QButtonGroup(self,"buttonGroup1")
         self.buttonGroup1.setColumnLayout(0,Qt.Vertical)
@@ -115,11 +85,25 @@ class SetupUsersWidget(QWidget):
 
         buttonGroup1Layout.addMultiCellLayout(layout2,0,1,2,2)
 
-        SetupUsersWidgetLayout.addWidget(self.buttonGroup1,1,1)
+        SetupUsersWidgetLayout.addMultiCellWidget(self.buttonGroup1,0,0,0,1)
+
+        self.deleteButton = QPushButton(self,"deleteButton")
+
+        SetupUsersWidgetLayout.addWidget(self.deleteButton,3,1)
+        spacer7 = QSpacerItem(20,130,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        SetupUsersWidgetLayout.addItem(spacer7,4,1)
+
+        self.textLabel2 = QLabel(self,"textLabel2")
+
+        SetupUsersWidgetLayout.addMultiCellWidget(self.textLabel2,2,2,0,1)
+
+        self.userList = QListBox(self,"userList")
+
+        SetupUsersWidgetLayout.addMultiCellWidget(self.userList,3,4,0,0)
 
         self.languageChange()
 
-        self.resize(QSize(501,459).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(383,377).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.setTabOrder(self.username,self.realname)
@@ -131,8 +115,6 @@ class SetupUsersWidget(QWidget):
 
 
     def languageChange(self):
-        self.deleteButton.setText(self.__tr("Delete Selected User"))
-        self.textLabel2.setText(self.__tr("Users:"))
         self.pass_error.setText(QString.null)
         self.buttonGroup1.setTitle(self.__tr("New User"))
         self.textLabel1_3.setText(self.__tr("User Name:"))
@@ -143,6 +125,8 @@ class SetupUsersWidget(QWidget):
         self.createButton.setText(self.__tr("Create User"))
         self.createButton.setAccel(QString.null)
         self.cancelButton.setText(self.__tr("&Cancel"))
+        self.deleteButton.setText(self.__tr("Delete Selected User"))
+        self.textLabel2.setText(self.__tr("Users:"))
 
 
     def __tr(self,s,c = None):
