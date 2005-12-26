@@ -25,39 +25,46 @@ class AuthTab(QWidget):
         self.group = group
         group.setExclusive(True)
         
-        r1 = QRadioButton("No authentication", self)
+        r1 = QRadioButton(i18n("No authentication"), self)
         g.addMultiCellWidget(r1, 0, 0, 0, 1, g.AlignTop)
         group.insert(r1, 0)
         
-        r2 = QRadioButton("Passphrase:", self)
+        r2 = QRadioButton(i18n("Passphrase:"), self)
         g.addWidget(r2, 1, 0, g.AlignTop)
         group.insert(r2, 1)
         
         self.phrase = widgets.Edit(self)
         g.addWidget(self.phrase, 1, 1, g.AlignTop)
         
-        r3 = QRadioButton("Login", self)
+        r3 = QRadioButton(i18n("Login"), self)
         g.addWidget(r3, 2, 0, g.AlignTop)
         group.insert(r3, 2)
         
         g2 = QGridLayout(2, 2, 6)
         g.addLayout(g2, 2, 1)
         
-        lab = QLabel("Name:", self)
+        lab = QLabel(i18n("Name:"), self)
         g2.addWidget(lab, 0, 0)
         
         self.name = widgets.Edit(self)
         g2.addWidget(self.name, 0, 1)
         
-        lab = QLabel("Password:", self)
+        lab = QLabel(i18n("Password:"), self)
         g2.addWidget(lab, 1, 0)
         
         self.password = widgets.Edit(self)
         g2.addWidget(self.password, 1, 1)
         
-        r4 = QRadioButton("Key", self)
+        r4 = QRadioButton(i18n("Key"), self)
         g.addMultiCellWidget(r4, 3, 3, 0, 1, g.AlignTop)
         group.insert(r4, 3)
+        
+        # what a hack #2
+        r1.setEnabled(False)
+        r2.setEnabled(False)
+        self.phrase.setEnabled(False)
+        r3.setChecked(True)
+        r4.setEnabled(False)
 
 
 class Address(QVBox):
@@ -181,12 +188,13 @@ class Window(QMainWindow):
         self.setCentralWidget(vb)
         
         tab = QTabWidget(vb)
+        self.tab = tab
         
         self.basic = BasicTab(tab)
         tab.addTab(self.basic, i18n("Basic"))
         
-        #self.auth = AuthTab(tab)
-        #tab.addTab(self.auth, "Authentication")
+        self.auth = AuthTab(tab)
+        tab.addTab(self.auth, i18n("Authentication"))
         
         hb = QHBox(vb)
         hb.setSpacing(12)
@@ -208,7 +216,11 @@ class Window(QMainWindow):
         
         self.connect(self.w_remote_scan, SIGNAL("clicked()"), self.slotScan)
         
-        self.w_remote_label.setText(links.get_info(self.link_name).remote_name)
+        lname = links.get_info(self.link_name).remote_name
+        # what a hack! :)
+        if lname == "Phone number":
+            lname = i18n("Phone number")
+        self.w_remote_label.setText(lname)
         self.show()
         
         self.w_name.setText(unicode(name))
@@ -245,6 +257,12 @@ class Window(QMainWindow):
             self.comar.call_package("Net.Link.setRemote", self.link_name, [
                 "name", name, "remote", remote ], id)
         self.count = 3
+        if "loginauth" in self.modes:
+            u1 = unicode(self.auth.name.edit.text())
+            u2 = unicode(self.auth.password.edit.text())
+            self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
+                "name", name, "user", u1, "password", u2 ], id)
+            self.count += 1
     
     def slotScan(self):
         if self.device:
@@ -291,6 +309,12 @@ class Window(QMainWindow):
                     self.comar.call_package("Net.Link.getRemote", self.link_name, [ "name", self.name ], id=5)
                 if not "scan" in self.modes:
                     self.basic.device.remote_scan.hide()
+                if not "loginauth" in self.modes:
+                    self.tab.removePage(self.tab.page(1))
+                if not "net" in self.modes:
+                    self.basic.address.setEnabled(False)
+                if "loginauth" in self.modes:
+                    self.comar.call_package("Net.Link.getAuthentication", self.link_name, [ "name", self.name ], id=7)
             elif reply[1] == 4:
                 name, uid, info = reply[2].split("\n")
                 self.device = uid
@@ -306,3 +330,7 @@ class Window(QMainWindow):
                 self.w_remote.insertItem(old)
                 for item in reply[2].split("\n"):
                     self.w_remote.insertItem(item)
+            elif reply[1] == 7:
+                name, type, user, password = reply[2].split("\n", 3)
+                self.auth.name.edit.setText(user)
+                self.auth.password.edit.setText(password)
