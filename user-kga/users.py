@@ -75,6 +75,9 @@ class User:
         shadow_file.close()
 
     def addUser(self):
+        if self.exists():
+            return False
+
         passwd_template = "%(username)s:x:%(uid)d:100:%(realname)s:/home/%(username)s:/bin/bash\n"
         shadow_template = "%(username)s:%(shadowedpasswd)s:13094:0:99999:7:::\n"
         self.uid = self.getAvailableUid()
@@ -103,6 +106,16 @@ class User:
         os.system('chown -R %d:%d %s ' % (self.uid, 100, user_home_dir))
 
         self.__appendGroups()
+
+    def delUser(self):
+        if not self.username or not self.exists():
+            return False
+
+        Del = lambda y: map(lambda x: open(y + '.tmp', 'a').write(x), [line for line in open(y, 'r').readlines() if line.split(':')[0] != self.username])
+
+        Del(self.passwd_path)
+        Del(self.shadow_path)
+
 
     def getAvailableUid(self):
         j = map(lambda x: int(x[2]), [line.split(':') for line in open(self.passwd_path, 'r').readlines()])
