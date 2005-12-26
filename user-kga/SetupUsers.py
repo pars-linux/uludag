@@ -52,6 +52,8 @@ class Widget(SetupUsersWidget):
         self.connect(self.cancelButton, SIGNAL("clicked()"),
                      self.reset)
 
+        self.editingMode = False
+        
         f = file("/etc/passwd")
         for line in f.readlines():
             uid = int(line.split(':')[2])
@@ -62,13 +64,13 @@ class Widget(SetupUsersWidget):
 
     def reset(self):
         self.editingMode = False
-        self.createButton.setEnabled(True)
-        self.createButton.setText(i18n("&Create User"))
-        self.username.setEnabled(True)
+	self.username.setEnabled(True)
         self.username.clear()
         self.realname.clear()
         self.pass1.clear()
         self.pass2.clear()
+	self.createButton.setEnabled(True)
+        self.createButton.setText(i18n("&Create User"))
         
     def execute(self,user):
         self.reset()
@@ -99,6 +101,17 @@ class Widget(SetupUsersWidget):
             self.createButton.setEnabled(False)
 
     def slotCreateUser(self):
+
+        if self.editingMode:
+            if self.pass1.text().isEmpty() or self.pass2.text().isEmpty():
+                self.pass_error.setText(i18n('<font color="#FF6D19">Password shouldn\'t be empty'))
+                return
+            u = users.User(str(self.userList.currentText()))
+            u.realname = str(self.realname.text())
+            u.passwd = str(self.pass1.text())
+            u.updateUser()
+            return
+        
         u = users.User()
         u.username = self.username.text().ascii()
         # ignore last character. see bug #887
@@ -152,6 +165,8 @@ class Widget(SetupUsersWidget):
         self.createButton.setText(i18n("&Edit User"))
         self.createButton.setEnabled(True)
         self.username.setEnabled(False)
+
+        self.slotCreateUser()
 
     def slotReturnPressed(self):
         self.slotCreateUser()
