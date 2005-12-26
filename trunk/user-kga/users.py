@@ -171,7 +171,7 @@ class User:
 
     def __removeGroups(self):
         group_content = open(self.group_path, 'r').readlines()
-        group_file = open(self.group_path + '.tmp', 'w')
+        group_file = open(self.group_path, 'w')
         for line in group_content:
             line = line.strip('\n')
             group_info, group_users = line.split(':')[:-1], line.split(':')[-1:][0].split(',')
