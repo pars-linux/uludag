@@ -77,7 +77,10 @@ class PisiUi(pisi.ui.UI,QObject):
     def notify(self, event, **keywords):
         cEvent = QCustomEvent(CustomEvent.PisiNotify)
         data = None
-        if event == pisi.ui.installing:
+        
+        if event == pisi.ui.downloading:
+            data = i18n("downloading")
+        elif event == pisi.ui.installing:
             data = i18n("installing")
         elif event == pisi.ui.configuring:
             data = i18n("configuring")
@@ -85,9 +88,9 @@ class PisiUi(pisi.ui.UI,QObject):
             data = i18n("extracting")
         elif event == pisi.ui.removing:
             data = i18n("removing")
+        else:
+            return
 
-        if data:
-            cEvent.setData(data)
         QThread.postEvent(self.receiver,cEvent)
 
     def display_progress(self, **kargs):
