@@ -17,19 +17,18 @@ import kdedistutils
 
 app_data = [
     'SetupUsers.py',
-    'setupuserswidget.ui',
+    'setupuserswidget.py',
     'users.py',
     'users_kga.py',
     'users_kga.desktop',
-    'images/users.png',
 ]
 
 kdedistutils.setup(
     name="users_kga",
-    version="1.0_alpha1",
-    author="Gürer Özen",
-    author_email="gurer@uludag.org.tr",
-    url="http://www.uludag.org.tr/projects/comar",
+    version="0.1",
+    author="İsmail Dönmez",
+    author_email="ismail@uludag.org.tr",
+    url="http://www.uludag.org.tr/",
     min_qt_version = "3.3.0",
     license = "GPL",
     application_data = app_data,
