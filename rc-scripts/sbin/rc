@@ -156,14 +156,12 @@ then
 
 	check_statedir /proc
 
-	ebegin "Mounting proc at /proc"
 	if [[ ${RC_USE_FSTAB} = "yes" ]] ; then
 		mntcmd=$(get_mount_fstab /proc)
 	else
 		unset mntcmd
 	fi
 	try mount -n ${mntcmd:--t proc proc /proc}
-	eend $?
 
  	sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
     
@@ -184,8 +182,6 @@ then
  	/bin/loadkeys $sys_keymap &> /dev/null
     /usr/bin/setfont -f $sys_font -m $sys_trans
     
-    export sys_lang=$sys_locale
-
 	# Read off the kernel commandline to see if there's any special settings
 	# especially check to see if we need to set the  CDBOOT environment variable
 	# Note: /proc MUST be mounted
