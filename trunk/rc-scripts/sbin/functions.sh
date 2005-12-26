@@ -176,10 +176,17 @@ get_libdir() {
 
 # Wrapper function for i18n support
 translate() {
+    sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+    if /usr/bin/test $sys_lang = "en"; then
+        sys_locale="en"
+    else
+        sys_locale="tr"
+    fi
+
     aux=${*}
-    if test -f /etc/init.$sys_lang
+    if test -f /etc/init.$sys_locale
     then
-        langfile=/etc/init.$sys_lang
+        langfile=/etc/init.$sys_locale
 
         value="$(grep "\"$aux\"" -n $langfile > /dev/null; if [ $? == 0 ]; then echo $(grep "$aux" -n $langfile | head -n `awk 'BEGIN{FS=":"}{print $1+1}'` $langfile |  tail -n 1 | awk 'BEGIN {FS="\""}{print $2}'); else echo $aux; fi)"
 
