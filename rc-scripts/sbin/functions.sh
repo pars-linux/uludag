@@ -177,11 +177,11 @@ get_libdir() {
 # Wrapper function for i18n support
 translate() {
     aux=${*}
-    if test -f /etc/init.$LC_ALL
+    if test -f /etc/init.$sys_lang
     then
-        file=/etc/init.$LC_ALL
+        langfile=/etc/init.$sys_lang
 
-        value="$(grep "\"$aux\"" -n $file > /dev/null; if [ $? == 0 ]; then echo $(grep "$aux" -n $file | head -n `awk 'BEGIN{FS=":"}{print $1+1}'` $file |  tail -n 1 | awk 'BEGIN {FS="\""}{print $2}'); else echo $aux; fi)"
+        value="$(grep "\"$aux\"" -n $langfile > /dev/null; if [ $? == 0 ]; then echo $(grep "$aux" -n $langfile | head -n `awk 'BEGIN{FS=":"}{print $1+1}'` $langfile |  tail -n 1 | awk 'BEGIN {FS="\""}{print $2}'); else echo $aux; fi)"
 
         # not translated
         if [ ! -z "$value" ]
@@ -249,7 +249,8 @@ esetdent() {
 #    show an informative message (with a newline)
 #
 einfo() {
-	einfon "$*\n"
+	translate ${*}
+	einfon "${aux}\n"
 	LAST_E_CMD=einfo
 	return 0
 }

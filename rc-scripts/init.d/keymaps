@@ -68,7 +68,6 @@ start() {
 	[[ -d /dev/vc ]] \
 		&& ttydev=/dev/vc/ \
 		|| ttydev=/dev/tty
-	ebegin "Setting terminal encoding to ${termmsg}"
 	for n in $(seq 1 "${RC_TTY_NUMBER}") ; do
         /sbin/start_unicode ${ttydev}${n}
 		echo -n -e ${termencoding} > ${ttydev}${n}
