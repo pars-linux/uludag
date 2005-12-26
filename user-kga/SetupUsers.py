@@ -13,7 +13,7 @@
 
 from qt import *
 from kdecore import *
-
+from kdeui import *
 
 import users
 from setupuserswidget import SetupUsersWidget
@@ -145,10 +145,12 @@ class Widget(SetupUsersWidget):
 
 
     def slotDeleteUser(self):
-        user = users.User(self.userList.currentText())
-        user.delUser()
-        self.userList.removeItem(self.userList.currentItem())
-        self.reset()
+
+        if KMessageBox.warningContinueCancel(self,i18n('Do you really want to deleter user %1').arg(self.userList.currentText())) == KMessageBox.Continue:
+            user = users.User(self.userList.currentText())
+            user.delUser()
+            self.userList.removeItem(self.userList.currentItem())
+            self.reset()
         
     def slotEditUser(self, item):
         u = item.getUser()
