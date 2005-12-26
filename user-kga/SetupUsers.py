@@ -49,18 +49,32 @@ class Widget(SetupUsersWidget):
         self.connect(self.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
 
+        self.connect(self.cancelButton, SIGNAL("clicked()"),
+                     self.reset)
+
         f = file("/etc/passwd")
         for line in f.readlines():
             uid = int(line.split(':')[2])
             if uid >= 1000 and uid <= 2000:
                 user = users.User(line.split(':')[0])
-                UserItem(self.userList,user)
-                
+                user.realname = unicode(line.split(':')[4])
+                useritem = UserItem(self.userList,user)
 
+    def reset(self):
+        self.editingMode = False
+        self.createButton.setEnabled(True)
+        self.createButton.setText(i18n("&Create User"))
+        self.username.setEnabled(True)
+        self.username.clear()
+        self.realname.clear()
+        self.pass1.clear()
+        self.pass2.clear()
+        
     def execute(self):
-        for i in range(self.userList.count()):
-            u = self.userList.item(i).getUser()
-            u.addUser()
+        user = users.User(str(self.username.text()))
+        user.realname = unicode(self.realname.text())
+        user.password = str(self.pass1.text())
+        user.addUser()
 
         return True
 
@@ -120,13 +134,12 @@ class Widget(SetupUsersWidget):
         self.pass1.clear()
         self.pass2.clear()
 
-        self.checkUsers()
+        self.execute()
 
 
     def slotDeleteUser(self):
         self.userList.removeItem(self.userList.currentItem())
-        self.checkUsers()
-
+        
     def slotEditUser(self, item):
         u = item.getUser()
 
@@ -137,13 +150,10 @@ class Widget(SetupUsersWidget):
 
         self.edititemindex = self.userList.currentItem()
 
-    def checkUsers(self):
-        if self.userList.count():
-#            ctx.screens.enableNext()
-            pass
-        else:
-#            ctx.screens.disableNext()
-            pass
+        self.editingMode = True
+        self.createButton.setText(i18n("&Edit User"))
+        self.createButton.setEnabled(True)
+        self.username.setEnabled(False)
 
     def slotReturnPressed(self):
         self.slotCreateUser()
