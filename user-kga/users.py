@@ -175,9 +175,8 @@ class User:
         for line in group_content:
             line = line.strip('\n')
             group_info, group_users = line.split(':')[:-1], line.split(':')[-1:][0].split(',')
-            for group in self.groups:
-                if self.username in group_users:
-                    group_users.remove(self.username)
+            if self.username in group_users:
+                group_users.remove(self.username)
             group_users, group_info = ','.join(group_users), ':'.join(group_info)
             group_file.write(group_info + ':' + group_users + '\n')
         group_file.close()
