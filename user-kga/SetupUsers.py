@@ -9,7 +9,7 @@
 #
 # Please read the COPYING file.
 #
-# Anonymous 2005
+# All bugs are copyright (C) 2005, İsmail Dönmez <ismail@uludag.org.tr>
 
 from qt import *
 from kdecore import *
