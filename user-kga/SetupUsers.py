@@ -8,6 +8,7 @@
 # any later version.
 #
 # Please read the COPYING file.
+# Copyright (C) 2005, İsmail Dönmez (architect and designer)
 # Copyright (C) 2005, Barış Metin
 # Copyright (C) 2005, Gürer Özen
 # 
