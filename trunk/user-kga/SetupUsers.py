@@ -25,7 +25,7 @@ class Widget(SetupUsersWidget):
     def __init__(self, *args):
         apply(SetupUsersWidget.__init__, (self,) + args)
 
-        self.pix.setPixmap(KGlobal().iconLoader().loadIcon("users", KIcon.Small))
+        self.pix.setPixmap(KGlobal().iconLoader().loadIcon("kuser", KIcon.Panel))
         self.pass_error.setText("")
         self.createButton.setEnabled(False)
 
@@ -71,6 +71,7 @@ class Widget(SetupUsersWidget):
         self.pass2.clear()
         
     def execute(self,user):
+        self.reset()
         user.addUser()
 
         return True
@@ -92,6 +93,9 @@ class Widget(SetupUsersWidget):
         if self.username.text() and p1 and p2:
             self.createButton.setEnabled(True)
         else:
+            self.createButton.setEnabled(False)
+
+        if self.username.text() and self.username.text().isEmpty():
             self.createButton.setEnabled(False)
 
     def slotCreateUser(self):
