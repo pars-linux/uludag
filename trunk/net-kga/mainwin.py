@@ -85,6 +85,7 @@ class Widget(QVBox):
         box.setStretchFactor(but, 1)
         
         self.links = QListBox(self)
+        self.connect(self.links, SIGNAL("doubleClicked(QListBoxItem *)"), self.slotDouble)
         
         box = QHBox(self)
         box.setSpacing(12)
@@ -223,6 +224,10 @@ class Widget(QVBox):
     def slotSettings(self):
         self.stack.hide()
         self.stack.show()
+    
+    def slotDouble(self, conn):
+        if conn:
+            connection.Window(self, conn.name, conn.link_name)
     
     def slotCreate(self):
         links.ask_for_create(self)
