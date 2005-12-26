@@ -19,6 +19,9 @@ class Window(QMainWindow):
         QMainWindow.__init__(self, parent)
         self.comar = comar
         
+        self.old_host = None
+        self.old_dns = None
+        
         self.setCaption(i18n("Network Settings"))
         self.setMinimumSize(280, 320)
         
@@ -36,29 +39,64 @@ class Window(QMainWindow):
         
         widgets.HLine(i18n("Name servers"), vb)
         
-        self.dns = QListBox(vb)
+        vb2 = QVBox(vb)
         
-        hb = QHBox(vb)
-        hb.setSpacing(6)
+        self.dns = QListBox(vb2)
+        
+        hb = QHBox(vb2)
         but = QPushButton(i18n("Add"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
         but = QPushButton(i18n("Remove"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotRemove)
         
+        hb = QWidget(vb)
+        lay = QHBoxLayout(hb)
+        lay.setSpacing(6)
+        lay.addStretch(1)
+        but = QPushButton(i18n("Apply"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotApply)
+        lay.addWidget(but)
+        but = QPushButton(i18n("Cancel"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotCancel)
+        lay.addWidget(but)
+        
         self.comar.call("Net.Stack.getHostNames", id=50)
         self.comar.call("Net.Stack.getNameServers", id=51)
     
+    def slotApply(self):
+        host = unicode(self.host.edit.text())
+        if self.old_host != host:
+            self.comar.call("Net.Stack.setHostNames", [ "hostnames", host ])
+        item = self.dns.firstItem()
+        dns = []
+        while item:
+            dns.append(unicode(item.text()))
+            item = item.next()
+        dns = "\n".join(dns)
+        if self.old_dns != dns:
+            self.comar.call("Net.Stack.setNameServers", [ "nameservers", dns ])
+        self.hide()
+    
+    def slotCancel(self):
+        self.hide()
+    
     def slotAdd(self):
-        pass
+        tmp = QInputDialog.getText(i18n("Add Name Server"), i18n("Name server:"), QLineEdit.Normal, "", self)
+        if tmp[1]:
+            self.dns.insertItem(tmp[0])
     
     def slotRemove(self):
-        pass
+        item = self.dns.selectedItem()
+        if item:
+            self.dns.removeItem(self.dns.index(item))
     
     def slotComar(self, reply):
         if reply[0] == self.comar.RESULT:
             if reply[1] == 51:
                 self.dns.clear()
-                for item in reply[2].split("\n"):
+                self.old_dns = reply[2].split("\n")
+                for item in self.old_dns:
                     self.dns.insertItem(item)
             elif reply[1] == 50:
+                self.old_host = reply[2]
                 self.host.edit.setText(reply[2])
