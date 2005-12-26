@@ -96,6 +96,7 @@ start() {
 			echo "LANG=\"tr_TR.UTF-8\"" > /etc/env.d/03locale
 			echo "LC_ALL=\"tr_TR.UTF-8\"" >> /etc/env.d/03locale
 		fi
+        /usr/bin/update-environ.py
 	fi
 
 	if [[ ${BOOT} == "yes" ]] ; then
