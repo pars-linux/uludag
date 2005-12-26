@@ -173,11 +173,13 @@ class Widget(QVBox):
                     self.links.updateItem(conn)
                     return
             elif reply[1] == 5:
-                if reply[2] == '':
+                if reply[2] == '' or reply[3] == "ppp":
                     return
-                uid, dev = reply[2].split(" ", 1)
-                name = self.uniqueName()
-                self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
+                devs = reply[2].split("\n")
+                for dev in devs:
+                    uid, rest = reply[2].split(" ", 1)
+                    name = self.uniqueName()
+                    self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
             elif reply[1] == 42:
                 links.slotComar(reply)
             elif reply[1] > 42:
