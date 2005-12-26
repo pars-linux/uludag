@@ -1,0 +1,57 @@
+#!/sbin/runscript
+# Copyright © 2005  TUBITAK/UEKAE
+# Licensed under the GNU General Public License, version 2.
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+#
+# Original work belongs Gentoo Linux
+
+depend() {
+	need checkroot modules
+}
+
+start() {
+	local retval=0
+
+	# Start RAID/LVM/EVMS/DM volumes for /usr, /var, etc.
+	# NOTE: this should be done *before* mounting anything
+	[[ -z ${CDBOOT} ]] && start_volumes
+
+	# Setup dm-crypt mappings if any
+	start_addon dm-crypt
+
+	if [[ -f /fastboot ]] || [[ -n ${CDBOOT} ]] ; then
+		rm -f /fastboot
+	else
+		ebegin "Checking all filesystems"
+		if [[ -f /forcefsck ]] ; then
+			ewarn "A full fsck has been forced"
+			fsck -C -R -A -a -f
+			retval=$?
+			rm -f /forcefsck
+		else
+			fsck -C -T -R -A -a
+			retval=$?
+		fi
+		if [[ ${retval} -eq 0 ]] ; then
+			eend 0
+		elif [[ ${retval} -ge 1 && ${retval} -le 3 ]] ; then
+			ewend 1 "Filesystem errors corrected."
+			# Everything should be ok, so return a pass
+			return 0
+		else
+			if [[ ${RC_FORCE_AUTO} == "yes" ]] ; then
+				eend 2 "Fsck could not correct all errors, rerunning"
+				fsck -C -T -R -A -a -y
+				retval=$?
+			fi
+
+			if [[ ${retval} -gt 3 ]] ; then
+				eend 2 "Fsck could not correct all errors, manual repair needed"
+				/sbin/sulogin ${CONSOLE}
+			fi
+		fi
+	fi
+}
+
+
+# vim:ts=4
