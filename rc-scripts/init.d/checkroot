@@ -84,6 +84,17 @@ start() {
 			eend 0
 		fi
 	fi
+    
+    sys_lang=`/usr/bin/sed -e 's/.* lang=//' /proc/cmdline|cut -f1 -s -d " "`
+        
+    # Fallback/default is Turkish, but we also support English
+    if /usr/bin/test $sys_lang = "en"; then
+        echo "LANG=\"en_US.UTF-8\"" > /etc/env.d/03locale
+        echo "LC_ALL=\"en_US.UTF-8\"" >> /etc/env.d/03locale
+    else
+        echo "LANG=\"tr_TR.UTF-8\"" > /etc/env.d/03locale
+        echo "LC_ALL=\"tr_TR.UTF-8\"" >> /etc/env.d/03locale
+    fi
 
 	if [[ ${BOOT} == "yes" ]] ; then
 		local x=
