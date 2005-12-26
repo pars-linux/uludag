@@ -22,6 +22,7 @@ app_data = [
     'widgets.py',
     'links.py',
     'icons.py',
+    'stack.py',
     'images/wireless-online.png',
     'images/wireless-connecting.png',
     'images/wireless-offline.png',
