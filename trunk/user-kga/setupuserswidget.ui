@@ -12,9 +12,6 @@
             <height>459</height>
         </rect>
     </property>
-    <property name="caption">
-        <string>Form1</string>
-    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
@@ -70,7 +67,7 @@
                 </size>
             </property>
         </spacer>
-        <spacer row="4" column="0">
+        <spacer row="3" column="0">
             <property name="name">
                 <cstring>spacer14_2</cstring>
             </property>
@@ -87,7 +84,7 @@
                 </size>
             </property>
         </spacer>
-        <widget class="QLayoutWidget" row="4" column="1">
+        <widget class="QLayoutWidget" row="3" column="1">
             <property name="name">
                 <cstring>layout5</cstring>
             </property>
@@ -135,7 +132,7 @@
                 </widget>
             </grid>
         </widget>
-        <spacer row="5" column="1">
+        <spacer row="4" column="1">
             <property name="name">
                 <cstring>spacer11</cstring>
             </property>
@@ -152,7 +149,7 @@
                 </size>
             </property>
         </spacer>
-        <spacer row="4" column="2">
+        <spacer row="3" column="2">
             <property name="name">
                 <cstring>spacer14</cstring>
             </property>
@@ -202,20 +199,12 @@
                         <string>User Name:</string>
                     </property>
                 </widget>
-                <widget class="QPushButton" row="0" column="2">
-                    <property name="name">
-                        <cstring>createButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Create User</string>
-                    </property>
-                </widget>
                 <widget class="QLineEdit" row="0" column="1">
                     <property name="name">
                         <cstring>username</cstring>
                     </property>
                 </widget>
-                <widget class="QLineEdit" row="3" column="1" rowspan="2" colspan="1">
+                <widget class="QLineEdit" row="3" column="1">
                     <property name="name">
                         <cstring>pass2</cstring>
                     </property>
@@ -223,7 +212,7 @@
                         <enum>Password</enum>
                     </property>
                 </widget>
-                <widget class="QLabel" row="3" column="0" rowspan="2" colspan="1">
+                <widget class="QLabel" row="3" column="0">
                     <property name="name">
                         <cstring>textLabel1</cstring>
                     </property>
@@ -260,7 +249,7 @@
                         <cstring>realname</cstring>
                     </property>
                 </widget>
-                <widget class="QLabel" row="1" column="2" rowspan="3" colspan="1">
+                <widget class="QLabel" row="2" column="2" rowspan="2" colspan="1">
                     <property name="name">
                         <cstring>pix</cstring>
                     </property>
@@ -270,6 +259,35 @@
                     <property name="alignment">
                         <set>AlignCenter</set>
                     </property>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="2" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>layout2</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>createButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Create User</string>
+                            </property>
+                            <property name="accel">
+                                <string></string>
+                            </property>
+                        </widget>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>cancelButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Cancel</string>
+                            </property>
+                        </widget>
+                    </vbox>
                 </widget>
             </grid>
         </widget>
@@ -285,4 +303,7 @@
     <tabstop>deleteButton</tabstop>
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kpushbutton.h</includehint>
+</includehints>
 </UI>
