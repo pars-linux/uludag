@@ -1,2 +1,2 @@
-@start bilgi/index.html
+@start releasenotes-tr.html
 @exit
