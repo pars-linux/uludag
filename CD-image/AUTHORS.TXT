@@ -1,0 +1,54 @@
+
+
+DEVELOPERS:
+-----------
+Erkan Tekman
+A. Murat Eren
+S. Çağlar Onur
+Onur Küçük
+Gürer Özen
+Umut Pulat
+Koray Löker
+Eray Özkural
+Görkem Çetin
+Mehment D. Akın
+İsmail Dönmez
+Barış Metin
+
+
+CONTRIBUTORS:
+-------------
+Ahmet Aygün
+Ali Erdinç Köroğlu
+Arda Çetin
+Bahadır Kandemir
+Barış Özyurt
+Doruk Fişek
+Ekin Meroğlu
+Faruk Eskicioğlu
+Faik Uygur
+Fatih Aşıcı
+Furkan Duman
+Gökçen Eraslan
+Kaya Oğuz
+Serdar Köylü
+Timu Eren
+R. Tolga Korkunçkaya
+Tuğrul Duran
+
+
+TESTERS:
+--------
+Alparslan Sarı
+Baki Turan Atmaca
+Bekir Sonat
+Can Kavaklıoğlu
+Ekin Meroğlu
+Emre Küçükayvaz
+Fahri Dönmez
+Fatih Balcı
+İhsan Çakır
+Kerem Cevahir
+Necdet Yücel
+Oğuz Yarımtepe
+
