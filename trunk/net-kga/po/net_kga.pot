@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 21:35+0200\n"
+"POT-Creation-Date: 2005-12-26 08:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,75 +16,115 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: connection.py:66
+#: connection.py:28
+msgid "No authentication"
+msgstr ""
+
+#: connection.py:32
+msgid "Passphrase:"
+msgstr ""
+
+#: connection.py:39
+msgid "Login"
+msgstr ""
+
+#: connection.py:46 connection.py:163
+msgid "Name:"
+msgstr ""
+
+#: connection.py:52
+msgid "Password:"
+msgstr ""
+
+#: connection.py:58
+msgid "Key"
+msgstr ""
+
+#: connection.py:74
 msgid "Network:"
 msgstr ""
 
-#: connection.py:76
+#: connection.py:84
 msgid "Automatic query (DHCP)"
 msgstr ""
 
-#: connection.py:80
+#: connection.py:88
 msgid "Manual"
 msgstr ""
 
-#: connection.py:87
+#: connection.py:95
 msgid "Address:"
 msgstr ""
 
-#: connection.py:92
+#: connection.py:100
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:120 connection.py:127
+#: connection.py:128 connection.py:135
 msgid "Device:"
 msgstr ""
 
 #: connection.py:149
-msgid "Name:"
+msgid "Scan"
 msgstr ""
 
-#: connection.py:168
+#: connection.py:182
 msgid "Configure network connection"
 msgstr ""
 
-#: connection.py:179
+#: connection.py:194
 msgid "Basic"
 msgstr ""
 
-#: connection.py:186
-msgid "Accept"
+#: connection.py:197
+msgid "Authentication"
 msgstr ""
 
-#: connection.py:205
-msgid "No device"
-msgstr ""
-
-#: mainwin.py:42
-msgid "Active"
-msgstr ""
-
-#: mainwin.py:44
-msgid "Inactive"
-msgstr ""
-
-#: mainwin.py:80
-msgid "Create"
-msgstr ""
-
-#: mainwin.py:86
+#: connection.py:201 mainwin.py:98
 msgid "Connect"
 msgstr ""
 
-#: mainwin.py:88
+#: connection.py:203
+msgid "Accept"
+msgstr ""
+
+#: connection.py:222
+msgid "Phone number"
+msgstr ""
+
+#: connection.py:231
+msgid "No device"
+msgstr ""
+
+#: mainwin.py:43
+msgid "Active"
+msgstr ""
+
+#: mainwin.py:45
+msgid "Inactive"
+msgstr ""
+
+#: mainwin.py:81
+msgid "Network connections:"
+msgstr ""
+
+#: mainwin.py:83
+msgid "Settings"
+msgstr ""
+
+#: mainwin.py:92
+msgid "Create"
+msgstr ""
+
+#: mainwin.py:100
 msgid "Disconnect"
 msgstr ""
 
-#: mainwin.py:107
+#: mainwin.py:120
 msgid "Unconfigured"
 msgstr ""
 
-#: mainwin.py:213
+#: mainwin.py:241
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -92,7 +132,7 @@ msgid ""
 "connection?"
 msgstr ""
 
-#: mainwin.py:216
+#: mainwin.py:244
 msgid "Delete connection?"
 msgstr ""
 
@@ -130,4 +170,28 @@ msgstr ""
 
 #: links.py:111
 msgid "No package with COMAR network scripts are installed yet."
+msgstr ""
+
+#: stack.py:25
+msgid "Network Settings"
+msgstr ""
+
+#: stack.py:33
+msgid "Computer"
+msgstr ""
+
+#: stack.py:37
+msgid "Host name:"
+msgstr ""
+
+#: stack.py:40
+msgid "Name servers"
+msgstr ""
+
+#: stack.py:84
+msgid "Add Name Server"
+msgstr ""
+
+#: stack.py:84
+msgid "Name server:"
 msgstr ""

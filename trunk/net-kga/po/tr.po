@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-24 21:35+0200\n"
+"POT-Creation-Date: 2005-12-26 08:51+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -15,75 +15,115 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: connection.py:66
+#: connection.py:28
+msgid "No authentication"
+msgstr "Doğrulama yok"
+
+#: connection.py:32
+msgid "Passphrase:"
+msgstr "Parola cümlesi"
+
+#: connection.py:39
+msgid "Login"
+msgstr "Giriş"
+
+#: connection.py:46 connection.py:163
+msgid "Name:"
+msgstr "İsim:"
+
+#: connection.py:52
+msgid "Password:"
+msgstr "Parola:"
+
+#: connection.py:58
+msgid "Key"
+msgstr "Anahtar"
+
+#: connection.py:74
 msgid "Network:"
 msgstr "Ağ:"
 
-#: connection.py:76
+#: connection.py:84
 msgid "Automatic query (DHCP)"
 msgstr "Otomatik ayar (DHCP)"
 
-#: connection.py:80
+#: connection.py:88
 msgid "Manual"
 msgstr "Elle ayarla"
 
-#: connection.py:87
+#: connection.py:95
 msgid "Address:"
 msgstr "Adres:"
 
-#: connection.py:92
+#: connection.py:100
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
 
-#: connection.py:120 connection.py:127
+#: connection.py:128 connection.py:135
 msgid "Device:"
 msgstr "Aygıt:"
 
 #: connection.py:149
-msgid "Name:"
-msgstr "İsim:"
+msgid "Scan"
+msgstr "Tara"
 
-#: connection.py:168
+#: connection.py:182
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
-#: connection.py:179
+#: connection.py:194
 msgid "Basic"
 msgstr "Temel"
 
-#: connection.py:186
-msgid "Accept"
-msgstr "Kullan"
+#: connection.py:197
+msgid "Authentication"
+msgstr "Kimlik doğrulama"
 
-#: connection.py:205
-msgid "No device"
-msgstr "Cihaz yok"
-
-#: mainwin.py:42
-msgid "Active"
-msgstr "Açık"
-
-#: mainwin.py:44
-msgid "Inactive"
-msgstr "Kapalı"
-
-#: mainwin.py:80
-msgid "Create"
-msgstr "Oluştur"
-
-#: mainwin.py:86
+#: connection.py:201 mainwin.py:98
 msgid "Connect"
 msgstr "Bağlan"
 
-#: mainwin.py:88
+#: connection.py:203
+msgid "Accept"
+msgstr "Kullan"
+
+#: connection.py:222
+msgid "Phone number"
+msgstr "Telefon"
+
+#: connection.py:231
+msgid "No device"
+msgstr "Aygıt yok"
+
+#: mainwin.py:43
+msgid "Active"
+msgstr "Açık"
+
+#: mainwin.py:45
+msgid "Inactive"
+msgstr "Kapalı"
+
+#: mainwin.py:81
+msgid "Network connections:"
+msgstr "Ağ bağlantıları:"
+
+#: mainwin.py:83
+msgid "Settings"
+msgstr "Genel ayarlar"
+
+#: mainwin.py:92
+msgid "Create"
+msgstr "Oluştur"
+
+#: mainwin.py:100
 msgid "Disconnect"
 msgstr "Bağlantıyı kes"
 
-#: mainwin.py:107
+#: mainwin.py:120
 msgid "Unconfigured"
-msgstr "Yapılandırılmamış"
+msgstr "Ayarlanmamış"
 
-#: mainwin.py:213
+#: mainwin.py:241
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -93,7 +133,7 @@ msgstr ""
 "'%s'\n"
 "bağlantısını sileyim mi?"
 
-#: mainwin.py:216
+#: mainwin.py:244
 msgid "Delete connection?"
 msgstr "Bağlantıyı sil?"
 
@@ -132,3 +172,27 @@ msgstr "Ağ programlarını kurun!"
 #: links.py:111
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
+
+#: stack.py:25
+msgid "Network Settings"
+msgstr "Ağ Ayarları"
+
+#: stack.py:33
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#: stack.py:37
+msgid "Host name:"
+msgstr "Makina adı:"
+
+#: stack.py:40
+msgid "Name servers"
+msgstr "İsim sunucular"
+
+#: stack.py:84
+msgid "Add Name Server"
+msgstr "İsim Sunucusu Ekle"
+
+#: stack.py:84
+msgid "Name server:"
+msgstr "İsim sunucusu:"
