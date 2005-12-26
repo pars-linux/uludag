@@ -146,7 +146,7 @@ class Widget(SetupUsersWidget):
 
     def slotDeleteUser(self):
 
-        if KMessageBox.warningContinueCancel(self,i18n('Do you really want to delete user \'%1\'?').arg(self.userList.currentText())) == KMessageBox.Continue:
+        if KMessageBox.warningContinueCancel(self,i18n('\'%1\' isimli kullanıcıyı silmek istediğinize emin misiniz?').arg(self.userList.currentText())) == KMessageBox.Continue:
             user = users.User(self.userList.currentText())
             user.delUser()
             self.userList.removeItem(self.userList.currentItem())
