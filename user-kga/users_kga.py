@@ -19,16 +19,17 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("User Management")
-version = "1.0"
+version = "0.1"
 
 def AboutData():
     global version,description
     
     about_data = KAboutData("users_kga", "Users KGA", version, \
                             description, KAboutData.License_GPL,
-                            "(C) 2005 UEKAE/TÜBİTAK", None, None, "gurer@uludag.org.tr")
+                            "(C) 2005 UEKAE/TÜBİTAK", None, None, "ismail@uludag.org.tr")
     
-    about_data.addAuthor("Gürer Özen", None, "gurer@uludag.org.tr")
+    about_data.addAuthor("A. Murat Eren", None, "meren@uludag.org.tr")
+    about_data.addAuthor("İsmail Dönmez", None, "ismail@uludag.org.tr")
     return about_data
 
 
