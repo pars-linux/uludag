@@ -165,7 +165,7 @@ msgstr "ayarlanan"
 
 #: src/PisiUi.py:91
 msgid "extracting"
-msgstr "çıkartılan"
+msgstr "indirilen"
 
 #: src/PisiUi.py:93 src/PisiKga.py:116
 msgid "removing"
