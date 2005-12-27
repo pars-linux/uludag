@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     if( args->count() )
     {
         KURL url = KIO::NetAccess::mostLocalURL(args->url(0),0);
-        cout << KURL::encode_string(url.path()) << endl;
+        cout << url.path().local8Bit() << endl;
     }
 
     return 0;
