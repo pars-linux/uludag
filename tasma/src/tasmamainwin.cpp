@@ -121,6 +121,7 @@ void TasmaMainWin::moduleSelected( KCModule *module, const QString& icon_path, c
 {
     if ( _moduleview ) {
         delete _moduleview;
+        _moduleview = 0;
     }
 
     _currentModule = module;
