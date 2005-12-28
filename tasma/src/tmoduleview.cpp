@@ -15,6 +15,8 @@
   TModuleView implementation.
 */
 
+#include <sys/types.h>
+
 #include <X11/Xlib.h>
 #include <fixx11h.h>
 
@@ -81,7 +83,7 @@ TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon
     _runAsRoot = new KPushButton( KGuiItem( i18n( "&Administrator Mode" ), "" ), this );
     _runAsRoot->setFixedSize( _runAsRoot->sizeHint() );
 
-    if( !needsRootPrivileges )
+    if( !needsRootPrivileges or getuid() == 0)
         _runAsRoot->hide();
     
     QHBoxLayout *buttons = new QHBoxLayout( vbox, 5);

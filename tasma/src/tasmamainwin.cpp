@@ -88,6 +88,12 @@ void TasmaMainWin::setupActions()
 
 void TasmaMainWin::categorySelected( QListViewItem* category )
 {
+    if( _moduleview )
+    {
+        delete _moduleview;
+        _moduleview = 0;
+    }
+
     if ( !category ) {
         // clicked on an empty area in listview.
         return;
