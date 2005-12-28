@@ -138,7 +138,6 @@ void TIconView::startDrag()
 
 TIconView::~TIconView()
 {
-  delete _module;
 }
 
 
