@@ -88,9 +88,18 @@ class PisiUi(pisi.ui.UI,QObject):
             data = i18n("extracting")
         elif event == pisi.ui.removing:
             data = i18n("removing")
+        elif event == pisi.ui.installed:
+            data = "installed"
+        elif event == pisi.ui.removed:
+            data = "removed"
+        elif event == pisi.ui.upgraded:
+            data = "upgraded"
+        elif event == pisi.ui.packagestogo:
+            data = keywords["order"]
         else:
             return
 
+        cEvent.setData(data)
         QThread.postEvent(self.receiver,cEvent)
 
     def display_progress(self, **kargs):
