@@ -87,7 +87,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.operation = None
         self.currentOperation = i18n("downloading")
         self.operationInfo = None
-        self.gotExtractEvent = False
+        self.index = 1
+        self.totalApps = None
+        self.packagesOrder = []
 
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
@@ -113,6 +115,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if eventType < CustomEvent.LastEntry :
             if eventType == CustomEvent.Finished:
                 self.finished()
+                self.index = 1
+                self.totalApps = None
                 if self.operation == "remove":
                     self.currentOperation = i18n("removing")
             elif eventType == CustomEvent.RepositoryUpdate: 
@@ -138,9 +142,15 @@ class MainApplicationWidget(MainWindow.MainWindow):
             elif eventType == CustomEvent.UpdateListing:
                 self.updateListing()
             elif eventType == CustomEvent.PisiNotify:
-                if event.data() and self.operation != "remove":
+                if event.data() in ["installed","upgraded","removed"]:
+                    self.index += 1
+                elif isinstance(event.data(),list):
+                    self.packagesOrder = event.data()
+                    self.totalApps = len(self.packagesOrder)
+                elif event.data() and self.operation != "remove":
                     self.currentOperation = event.data()
                     self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
+                
             elif eventType == CustomEvent.NewRepoAdded:
                 if self.pref:
                     self.pref.updateListView()
@@ -183,7 +193,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
             pass
         elif not self.errorMessage:
             success = Success.Success(self)
-            if not len(self.selectedItems):
+            if self.totalApps == 0:
+                KMessageBox.information(self, i18n("No package found to operate on"),i18n("PiSi Info"))
+                return
+            elif self.updatedRepo:
                 success.infoLabel.setText(i18n("All repositories are successfully updated!"))
                 success.showButton.hide()
             elif self.operation == "install":
@@ -196,7 +209,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 success.infoLabel.setText(i18n("All selected packages are successfully updated!"))
                 text = i18n("updated")
             
-            for i in self.selectedItems:
+            for i in self.packagesOrder:
                 success.infoBrowser.append(i+" "+text)
             self.operation = None
             success.show()
@@ -216,9 +229,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
         if rate < 0:
             rate = 0
-            
+
         if filename.endsWith(".pisi"):
-            self.pDialog.setLabelText(i18n('Now %1 <b>%2</b>').arg(self.currentOperation).arg(filename))
+            self.pDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)').arg(self.currentOperation).arg(filename).arg(str(self.index)).arg(self.totalApps))
         else:
             self.totalAppCount = 1
             self.pDialog.setLabelText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
@@ -226,22 +239,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
         if downloaded_size >= 1024*1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 MB / %2 MB').arg(int(float(downloaded_size))/int(float(1024*1024))).arg(int(float(total_size))/int(float(1024*1024))))
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 MB / %2 MB').arg(round(float(downloaded_size)/float(1024*1024),2)).arg(round(float(total_size)/float(1024*1024)),2))
         elif downloaded_size >= 1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 KB / %2 KB').arg(int(float(downloaded_size))/int(float(1024))).arg(int(float(total_size))/int(float(1024))))
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 KB / %2 KB').arg(round(float(downloaded_size)/float(1024),2)).arg(round(float(total_size)/float(1024)),2))
         else:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 Bytes / %2 Bytes').arg(downloaded_size).arg(total_size))
-            
-
-        progress = length/self.totalAppCount + self.savedProgress
-
-        if length == 100 and filename == self.oldFilename:
-            return
-        elif length == 100 and filename != self.oldFilename:
-           self.savedProgress = self.savedProgress + length/self.totalAppCount
-           self.oldFilename = filename
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Rest:</b> %1 Bytes / %2 Bytes').arg(round(downloaded_size,2)).arg(round(total_size,2)))
         
-        self.pDialog.progressBar.setProgress(progress)
+        self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
     def pisiError(self, msg):
         self.pDialog.close()
