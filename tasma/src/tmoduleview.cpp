@@ -161,7 +161,7 @@ void TModuleView::runAsRoot()
   // returns before the module is running and that doesn't work.
   // We also don't have a way to close the module in that case.
   *_proc << "-n"; // Don't keep password.
-  *_proc << QString("kcmshell %1 --embed-proxy %2 --lang %3").arg(_filename).arg(_embedWidget->winId()).arg(KGlobal::locale()->language());
+  *_proc << QString("kcmshell %1 --embed %2 --lang %3").arg(_filename).arg(_embedWidget->winId()).arg(KGlobal::locale()->language());
  
   connect(_proc, SIGNAL(processExited(KProcess*)), this, SLOT(killRootProcess()));
   
