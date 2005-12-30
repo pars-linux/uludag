@@ -1,7 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/doc/eng/"
-belge = "u18a.lyx"
-isim = "Uluslararasılaştırma Kılavuzu"
-dizin = "u18a"
-ikonlar = "../../../images"
-sablon = "../belge.tmpl"
