@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>:: ulusal dağıtım project :: tübitak-uekae ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../../../stil.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../../../images/favicon.ico">
+</head>
+
+<body class="arka">
+<table class="arkayan" width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="878" align="center" valign="top">
+<table class="arkadalga" width="700" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="800" valign="top">
+
+<!-- logo -->
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="620" height="60">
+<img src="../../../../images/header3.png" alt="Ulusal Dağıtım Projesi" width="700" height="60">
+</td>
+</tr>
+
+<!-- menüler -->
+<tr>
+<td width="680" height="19" valign="top" bgcolor="#B9D0B3">
+<p class="menubar">
+<a href="../../../index.html">Home</a>
+| <a href="../../../hakkimizda.html">About</a>
+| <a href="../../../projeler/index.html">Projects</a>
+| <a href="../../../belgeler/index.html">Documents</a>
+| <a href="../../../urunler/index.html">Products</a>
+| <a href="../../../sss.html">FAQ</a>
+| <a href="../../../iletisim.html">Contact Us</a>
+| <a href="../../../basin/index.html">Press</a>
+| <a href="../../../../index.html">Türkçe</a>
+</p>
+</tr>
+</table>
+
+<br>
+
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+
+
+<H1 ALIGN=center>VÇTD<BR>
+(VÇTD Çomar Tasarımı Değildir)</H1>
+
+<H3 ALIGN=center>Serdar Köylü, A. Murat Eren, Gürer Özen</H3>
+
+<H3 ALIGN=center>24 Kasım 2004</H3><!--TOC section İçindekiler-->
+
+<H2>İçindekiler</H2><!--SEC END -->
+
+<UL><LI>
+<A HREF="#htoc1">1&nbsp;&nbsp;Sorun</A>
+<UL><LI>
+<A HREF="#htoc2">1.1&nbsp;&nbsp;Dağıtımların Yaklaşımı</A>
+<LI><A HREF="#htoc3">1.2&nbsp;&nbsp;İşletim Sistemleri</A>
+<LI><A HREF="#htoc4">1.3&nbsp;&nbsp;Uzman Sistemler</A>
+</UL>
+<LI><A HREF="#htoc5">2&nbsp;&nbsp;Gereksinimler</A>
+<LI><A HREF="#htoc6">3&nbsp;&nbsp;COMAR</A>
+<UL><LI>
+<A HREF="#htoc7">3.1&nbsp;&nbsp;Nesne Modeli</A>
+<LI><A HREF="#htoc8">3.2&nbsp;&nbsp;CSL</A>
+<LI><A HREF="#htoc9">3.3&nbsp;&nbsp;Betikler</A>
+<LI><A HREF="#htoc10">3.4&nbsp;&nbsp;comard</A>
+<LI><A HREF="#htoc11">3.5&nbsp;&nbsp;KGA</A>
+</UL>
+</UL>
+
+
+<!--TOC section Sorun-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Sorun</H2><!--SEC END -->
+
+Bir sisteme kurulan uygulamaların, birbirleriyle uyumlu çalışabilmeleri
+için bazı ayarlarının yapılması gereklidir. Bunu otomatik olarak yapabilecek
+bir sistem olmadığında, kullanıcı kendi yapmak istediği işin dışında
+bir takım teknik konularda bilgi kazanmak ve uygulamaları tek tek
+ayarlamak için zaman kaybetmektedir. Bu konudaki nasıl (howto) belgeleri,
+az sayıda belirli senaryo için yazıldıklarından kullanıcıya yardımcı
+olamamaktadır.<BR>
+<BR>
+<!--TOC subsection Dağıtımların Yaklaşımı-->
+
+<H3><A NAME="htoc2">1.1</A>&nbsp;&nbsp;Dağıtımların Yaklaşımı</H3><!--SEC END -->
+
+Varolan Linux dağıtımları, bu sorunu örneğin kurulu uygulamalar (menu),
+fontlar, açılış işlemleri (initscripts) gibi tek tek alt sistemler
+bazında çözmeye çalışmaktadır.<BR>
+<BR>
+Genelde, uygulama paketleri, dosya sistemi üzerinde sabit bir dizine,
+söz konusu alt sisteme neler sağladıklarını kaydetmekte; bu alt sistemi
+kullanacak uygulamalar ise, buraya önceden belirlenmiş biçimde kaydedilen
+dosyaları tarayarak, sağlanan hizmetleri bulmaktadır. Uygulamaların
+entegrasyonu için, ya uygulamalar buradaki standartları bilecek biçimde
+değiştirilmekte, ya da gerekli çevrimi yapacak üçüncü bir yönetici
+uygulama araya sokulmaktadır. Kayıt ve çevrim işlemleri için özel
+veri biçimleri, kabuk, Perl ya da Python betikleri, bazen de bunların
+bir karışımı kullanılmaktadır.<BR>
+<BR>
+Bu yöntemde gördüğümüz noksanlıklar:
+<UL><LI>
+Alt sistemler, bir sistem modeli içinde toplu biçimde tasarlanmadıklarından,
+birbirleriyle ilişkileri eksik kalmakta ve uygulamaları paketleyenlerin
+dikkatinden kaçabilmektedir. Birçok uygulama, bağımsız tek başına
+çalışan sistemler olmayıp, bir işletim sistemi içerisinde bir takım
+görevleri yerine getiren bileşenlerdir. Sistem modeli olmayınca uygulamaların
+bu görevlerini birbirine ekleyerek tek tek uygulamaların toplamından
+daha güçlü bir sistem elde etmek mümkün olmamaktadır.
+<LI>Kapsayıcı bir sistem modeli olmaması kullanıcı ve sistem profilleri
+oluşturmayı ve yönetmeyi zorlaştırmaktadır.
+<LI>Dosya sistemi üzerinden gidilmesi, bazı servislerin ve alt sistem
+yönetici uygulamalarının uzak makinalarda çalışabileceği esnek bir
+tasarıma olanak vermemektedir.
+<LI>Kabuk ve Perl/Python betiklerinin paketleyicinin veya alt sistemin
+tercihine göre karışık olarak kullanılması, paketlerin doğruluğunu
+otomatik olarak denetleyecek programlar yapmayı ve sorunlu paketlerin
+incelenip, entegrasyon hatalarının giderilmesini güçleştirmektedir.
+<LI>Özellikle kabuk betikleri içerisinde değişikliklerin atomik yapılması
+ve o an bir nedenden dolayı yapılamayan işlemlerin yapılabilecekleri
+ana kadar bekletilmesi çok güç olduğundan sık sık alt sistemler hatalı
+ayarlanmakta ve uygulamalar arasında sorunlar çıkmaktadır.
+</UL>
+<!--TOC subsection İşletim Sistemleri-->
+
+<H3><A NAME="htoc3">1.2</A>&nbsp;&nbsp;İşletim Sistemleri</H3><!--SEC END -->
+
+Windows, OS/2, MacOS X gibi ticari işletim sistemlerinde, sistemin
+parçaları ve kullanıcının çalışma ortamını oluşturan uygulamalar genellikle
+tek bir merkezden çıktıkları için, uyum sorunları işletim sisteminin
+çağrıları (API si) üzerinden çözülmektedir. Ayarları toplu halde tutan
+merkezi bir kütük; çokluortam, ağ protokolü, donanım yöneticisi gibi
+parçalar için parçaların yerleşebileceği modül yapıları bulunmaktadır.<BR>
+<BR>
+Bu yöntemde şu noksanlıkları görüyoruz:
+<UL><LI>
+Uygulamaların ayarlarına merkezi erişim sunulması, tek başına istenen
+faydayı getirmemektedir. Bir genel model olmadığı için, bu bilgileri
+kullanmak isteyen kullanıcı yada diğer uygulamaların, bilgiyi sunan
+uygulama ve ayarları hakkında detaylı bilgiye sahip olması sorunu
+hala ortadadır.
+<LI>Uygulamalar ve yönetim sistemi arasında API düzeyinde bir ilişki,
+iki grubu iç içe geçirip direkt bağlantı sağlayacağı için, parçaların
+bağımsızlığını azaltacaktır. Bu da, ayrı ayrı parçaların geliştiricilerinin,
+adam/ay modelinde bağımsız çalışmak yerine, bir araya gelip karşılıklı
+iletişim ve senkronizasyon ile çalışmasına, dolayısıyla geliştirme
+işlerinin ölçeklenebilirliğinin azalmasına yol açmaktadır.
+<LI>Parçaların farklı ellerden çıktıkları ve alternatiflerin bol olduğu
+özgür yazılım modeline uymamaktadır.
+<LI>Dağıtımımıza girecek uygulamaları yeni API leri kullanacak şekilde
+değiştirmek, uygulama kodunu çok iyi incelemeyi, yapılan değişikliklerin
+yeni sorunlara yol açmadığını kapsamlı olarak analiz etmeyi gerektirmektedir.
+Bu da büyük zaman ve emek harcamasına yol açacaktır.
+<LI>Bir alt sistemin yetersiz kaldığı görülüp yeni bir alt sistem yapısı
+geliştirildiğinde, API değişikliğine yol açmamak için API üzerindeki
+değer ve çağrılara kapsamları dışında anlamlar ve görevler yüklenmekte,
+ve API yi öğrenmek ve kullanmak isteyenlerin işi çok zorlaşmaktadır.
+Ya da API değişikliği yapılmakta, ve varolan uygulamaların yeni API
+yi taşınması, eski ve üçüncü parti uygulamalar için uyumluluk katmanları
+hazırlanması gibi fazladan sorunlar çıkmaktadır.
+<LI>Her dile API desteği verebilmek için ya CORBA gibi karmaşıklığı arttıracak
+teknolojiler ya da bakım işlerini yükseltecek çok sayıda ``wrapper''
+hazırlanması gereklidir.
+</UL>
+<!--TOC subsection Uzman Sistemler-->
+
+<H3><A NAME="htoc4">1.3</A>&nbsp;&nbsp;Uzman Sistemler</H3><!--SEC END -->
+
+Linux'un masaüstü ve iş dünyasında kullanımının artmasıyla, bir takım
+genel yapılandırma ve yönetim araçları da geliştirilmiştir. YaST,
+LinuxConf, WebMin gibi bu araçlar kullanıcıya üst seviye bir arabirim
+sunup, kullanıcının burada yaptığı seçimleri uygulamaların alt seviye
+ayarlarına taşımaktadır. İki seviye arasında geçiş yapabilmek için
+gereken bilgiler araçların içinde bir dizi kural olarak kodlanmıştır.<BR>
+<BR>
+Bundan başka, bilgisayar ağlarının yaygınlaşmasıyla birlikte, birden
+fazla bilgisayarın merkezi yönetimini yapabilecek IBM Tivoli, HP OpenView,
+CIM, SNMP, OSI CMIP gibi ürün ve çerçeveler ortaya çıkmıştır. Ayrıntılarda
+farkları olmakla birlikte, genel mimarileri, yönetilecek bilgisayarda
+bulunacak ajanlar, yönetim bilgisayarında bir yönetici yazılım, bunlar
+arasında bir iletişim protokolü ve yönetilecek görev ve ayarları belirten
+bilgi modellerinden oluşmaktadır. Yalnızca yapılandırma ile sınırlı
+kalmayıp, hata bulma, performans ve güvenlik değerlendirmeleri, kullanım
+hesaplama gibi işleri de yapmaktadırlar.<BR>
+<BR>
+Bu sistemler de, kapsayıcı genel bir model yerine, tüm olası ayar
+ve görevleri sunmaya çalışmakta, yönetici yazılımı kullanacak kişinin
+yönetilecek her birimi ve bunlar arasındaki ilişkileri çok iyi bildiğini
+varsaymaktadır. Sorun kullanıcıdan alınıp yöneticiye taşındığında,
+artan miktardan dolayı başedilmez hale gelmektedir. Bu noktada yöneticiye
+yardımcı olacak uzman sistemler sunulmaktadır.<BR>
+<BR>
+Her iki grup yazılım da, kolay kullanılır ve detaylarda boğulmamış
+bir yapılandırma arabirimi sunabilmek için, alt ve üst düzey bilgiler
+arasındaki ilişkileri tanımlayan kural dizileri kullanmakta ve bu
+kurallar, işin uzmanları tarafından, bir elden yönetici yazılımın
+içinde kodlanmaktadır. Yönetici yazılımın bir takım API ler ile bu
+bilgileri üst seviye, bazen üçüncü parti, uygulamalardan alması, bilginin
+parçalarda değil, merkezde bulunduğu gerçeğini değiştirmemektedir.<BR>
+<BR>
+Bu uzman sistem yaklaşımında şu noksanlıkları görmekteyiz:
+<UL><LI>
+Parçaların dinamik olarak değişmesi, eski kurallarda değişikler ve
+yeni kurallar gerektirmekte, kural dizilerini oluşturmayı zorlaştırmaktadır.
+<LI>Çok sayıda ve çeşitli parçalardan oluşan bir sistem için çok sayıda
+kural gerekmekte; kuralların işletilmesi, güncellenmesi, değiştirilmesi
+gittikçe büyüyen bir sorun olmaktadır.
+<LI>Kurallar birden fazla parçanın detaylı bilgilerini bir arada içerdiği
+için, kural yazmak çok zorlaşmakta, kuralların hata içermesi, öngörülmeyen
+durumları ihmal etmesi olasılıkları artmaktadır.
+</UL>
+<!--TOC section Gereksinimler-->
+
+<H2><A NAME="htoc5">2</A>&nbsp;&nbsp;Gereksinimler</H2><!--SEC END -->
+
+Uygulamalar arası uyumlu çalışmayı sağlamak için her uygulama,
+<OL type=1><LI>
+Diğer uygulamaların bilgilerine erişebilmeli,
+<LI>Kendi bilgilerini diğer uygulamalara sunabilmeli,
+<LI>Önceden belirlenmiş görevler içinden neleri yapabildiğini sisteme
+bildirebilmeli,
+<LI>Kendi görevleri dışındaki işlere karışmamalı, bunları ilgili uygulamalardan
+istemeli,
+<LI>Bilgileri değiştiğinde, ilgilenen uygulamaların haberdar edilmesini
+sağlamalıdır.
+</OL>
+Diğer çözümlerin noksanlıklarına takılmadan bunları sağlamak için,
+<OL type=1><LI>
+Uygulamaların çalışmalarını yönetecek bilgiler ve ayarlanması gerektiği
+düşünülen seçenekler genelde uygulama yazarları tarafından önceden
+düşünülerek bir takım ayar dosyalarından okunup kullanılacak duruma
+getirilmiştir. En az emekle entegrasyonu sağlamak ve kapalı kodlu
+üçüncü parti yazılımların da sisteme konabilmesini olanaklı kılmak
+için, uygulamaları oldukları gibi kabul edip, bu ayar dosyalarını
+değiştirmek yoluyla entegre etmek gereklidir.
+<LI>Ayar dosyasından değil de, komut satırından veya benzeri değişik yollarla
+değiştirilen seçenekler ve türlü ayar dosyası biçimleri (ini, XML,
+vs) bulunmaktadır. Ayrıca uygulamalar arası uyum düzeyinde bir ayar,
+alt düzeylerde birden çok ayara karşılık gelebilir. Bu tür implementasyon
+farklılıklarının enkapsüle edilebildiği nesnel bir yaklaşım gerekmektedir.
+<LI>Bir uygulamanın sistemde yapabileceği görevlerin ve alt düzey ayar
+işlemlerinin nasıl yapılacağının bilgisi uygulamanın kendisi ile birlikte
+gelmeli ve uygulamayı en iyi bilen kişi olan paketleyici tarafından
+hazırlanmalıdır. Bu, nesnel yaklaşımla enkapsüle edilmiş ayar işlemlerinin,
+her türlü uygulamanın alt düzey ihtiyaçlarına çevrilebilmesini sağlayacaktır.
+<LI>Nesnel yaklaşımda, uygulamaların bilgilerini ve görevlerini sunacakları
+nesneleri, ve birbirleriyle ilişkilerini gösteren bir model gerekmektedir.
+Bu nesne modelinin hiyerarşik olması, daha kolay kavramayı ve öğrenmeyi
+sağlayacaktır.
+<LI>Nesne modelinde, diğer bilgisayarlardan gelen nesnelerin, birer uzak
+nesne olarak yer alabilmesi ve kullanıcı tarafından aynen yerel nesneler
+gibi yönetilebilmesi, bir ağ yönetim sistemi oluşturmayı çok basit
+bir iş haline getirecektir. Hiyerarşik model burda erişim yetki denetimini
+belli alt sistemler bazında ayarlamayı kolaylaştıracaktır.
+<LI>Aynı görevi yapabilecek birden fazla uygulama olabilir. Duruma göre
+görevlerin hepsine birden yaptırılması, veya içlerinden birinin seçilmesi
+gerekebilir. Seçim için uygulamaların yeteneklerinden başka, o anda
+hangilerinin çalıştığı, hangilerinin çalıştırılabilir olduğu gibi
+kriterlere de bakılması gerekecektir. Uygulama görevi aldığında ise,
+çalışmaya başlayabilmesi için kendi içinde birden fazla işlem yapması
+ve duruma göre nasıl çalışacağına karar vermesi gerekebilir. Bütün
+bu dinamik bilgileri tanımlayabilmek için, iterasyon, karar verme,
+karşılaştırma özellikleri olan bir dil gerekecektir.
+<LI>Bu dilin seçimi özgür bırakıldığında, takip edilmesi zor, çok sayıda
+bağımlılık ortaya çıkmakta; diller arası uyum ve bilgilerin hata giderme
+işlemleri ise çok güçleşmekte olduğundan, tek bir dil üzerinde karar
+verilmelidir.
+<LI>Bu dilin önceki şartları sağlamak için, nesne kavramına sahip olması,
+kontrol edilemeyecek bağımlılık problemleri çıkarabilecek genişleme
+mekanizmaları taşımaması gereklidir. Transaction ve asenkron çalışma
+yapılabilmesi için tüm durumunu (state) içinde taşıyabilen bir script
+dili olması mecburidir.
+<LI>Basit ve öğrenmesi kolay olması, araçlarla işlenebilmesi, IDE ve RAD
+araçları yardımıyla üretilebilir olması, paketleme ve hata giderme
+sürecini çok kısaltacaktır. Uzak işlemler, transaction, profil yönetimi
+ve asenkron çalışma için sentaks kolaylıkları içermesi de olumlu puanlardır.
+<LI>Transaction, uzak nesneler, profil yönetimi, asenkron çalışma, erişim
+yetkileri gibi özellikleri uygulayabilmek için bu dildeki betikleri
+yönetip işletecek bir uygulamaya gerek vardır.
+</OL>
+Toparlarsak, gereksinimlerimizi karşılayabilecek ve diğer benzer sistemlerdeki
+sorunlara düşmeyecek bir yapılandırma yönetim çerçevesi için ihtiyacımız
+olan parçalar, bir nesne modeli (2-5), bir nesne tanımlama dili (6-9),
+uygulamalar için bu dilde yazılmış betikler (1,3) ve bu betikleri
+işletecek bir uygulamadır (10).<BR>
+<BR>
+<!--TOC section COMAR-->
+
+<H2><A NAME="htoc6">3</A>&nbsp;&nbsp;COMAR</H2><!--SEC END -->
+
+Ulusal Dağıtım için geliştirdiğimiz yapılandırma çerçevesinin adı
+olarak COMAR (COnfiguration MAnageR) seçtik. Bu çerçeve içinde, yukardaki
+gereksinimlerden çıkardığımız bileşenler ve ayrıntıları şöyle olacak:<BR>
+<BR>
+<!--TOC subsection Nesne Modeli-->
+
+<H3><A NAME="htoc7">3.1</A>&nbsp;&nbsp;Nesne Modeli</H3><!--SEC END -->
+
+Bir işletim sisteminde, uygulamalar arasında eşgüdümü sağlayabilmeye
+yönelik olarak, hangi görev ve bilgilerin bulunduğunu tanımlar. Sistem
+açılışı, donanım tanıma, ağ yapılandırmasından grafik çalışma ortamı,
+veri kaynakları, kullanıcı verilerine kadar, bütün bir işletim sistemi
+haritasındaki yapılandırma ve yönetim sorunlarını kapsar.<BR>
+<BR>
+<!--TOC subsection CSL-->
+
+<H3><A NAME="htoc8">3.2</A>&nbsp;&nbsp;CSL</H3><!--SEC END -->
+
+CSL (COMAR Scripting Language) nesnelerin yazılacağı betik dilidir.<BR>
+<BR>
+<!--TOC subsection Betikler-->
+
+<H3><A NAME="htoc9">3.3</A>&nbsp;&nbsp;Betikler</H3><!--SEC END -->
+
+Nesne modelindeki işlemlerin uygulamalara aktarılmasını sağlayan,
+CSL ile yazılmış nesnelerdir. Her uygulamanın betikleri, uygulamayı
+dağıtım için paketleyen kişi tarafından hazırlanacak, ve uygulama
+kurulurken, nesne modeline yerleşecektir.<BR>
+<BR>
+<!--TOC subsection comard-->
+
+<H3><A NAME="htoc10">3.4</A>&nbsp;&nbsp;comard</H3><!--SEC END -->
+
+Nesne modelini ve üzerindeki betikleri işletecek, profil, transaction,
+erişim yetkilerini sağlayacak, uzak nesneler için gereken ağ bağlantılarını
+kuracak uygulamadır. Uygulamalardan ve uzak nesnelerden gelen çağrıları
+alıp verecek bir iletişim birimi; CSL betiklerini ``parse'' edecek
+bir yorumlayıcı; çağrı ve yorumlanmış betikleri işletecek bir mekanizma;
+gerek betiklerin, gerekse comard'nin, ayar dosyalarına erişim, sistem
+yönetimi, program çalıştırma, veri depolama gibi işlerini yapacak
+bir API den oluşmaktadır.<BR>
+<BR>
+<!--TOC subsection KGA-->
+
+<H3><A NAME="htoc11">3.5</A>&nbsp;&nbsp;KGA</H3><!--SEC END -->
+
+KGA (Kullanıcı Grafik Arayüzleri), kullanıcının COMAR ve nesne modeli
+üzerinde kavramsal olarak bir bütün oluşturan kısımları tek ve basit
+bir grafik arabirim üzerinde ayarlayabilmesini sağlayan uygulamalardır.
+</div>
+<!-- SAYFA İÇERİK SONU -->
+
+<!-- yayın hakkı -->
+<br>
+<br>
+<p class="not">
+Information and documents on Uludağ Project web pages can be used freely anywhere with original source credit.
+<em><br>
+<strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
+For information and suggestion(s) please write to <a href="mailto:bilgi%20at%20uludag.org.tr">bilgi
+at uludag.org.tr</a>
+</p>
+<br>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>:: ulusal dağıtım project :: tübitak-uekae ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../../../stil.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../../../images/favicon.ico">
+</head>
+
+<body class="arka">
+<table class="arkayan" width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="878" align="center" valign="top">
+<table class="arkadalga" width="700" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="800" valign="top">
+
+<!-- logo -->
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="620" height="60">
+<img src="../../../../images/header3.png" alt="Ulusal Dağıtım Projesi" width="700" height="60">
+</td>
+</tr>
+
+<!-- menüler -->
+<tr>
+<td width="680" height="19" valign="top" bgcolor="#B9D0B3">
+<p class="menubar">
+<a href="../../../index.html">Home</a>
+| <a href="../../../hakkimizda.html">About</a>
+| <a href="../../../projeler/index.html">Projects</a>
+| <a href="../../../belgeler/index.html">Documents</a>
+| <a href="../../../urunler/index.html">Products</a>
+| <a href="../../../sss.html">FAQ</a>
+| <a href="../../../iletisim.html">Contact Us</a>
+| <a href="../../../basin/index.html">Press</a>
+| <a href="../../../../index.html">Türkçe</a>
+</p>
+</tr>
+</table>
+
+<br>
+
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_11.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_13.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+
+
+<H1 ALIGN=center>Uluslararasılaştırma</H1>
+
+
+<H4><A NAME="htoc12">3.1.3</A>&nbsp;&nbsp;İleri Kullanım</H4>
+Tek bir çeviri alanı birçok program için yeterli olsa da, bunun yetersiz
+kaldığı bazı durumlar var. Örneğin bir dizi program aynı hata mesajlarını
+kullanıyorlarsa bunlar tek bir alanda toplanabilir, böylece bir kere
+çevrilmeleri yeterli olur. Kitaplıklarda ise fonksiyonların çağıran
+programın alanından bağımsız, kendi alanlarından çeviri almaları gereklidir.
+Her ne kadar bu sorun textdomain () çağrıları ile çözülebilirse de,
+yavaş ve kullanışsız olur. Bu amaç için:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+char&nbsp;*dgettext&nbsp;(const&nbsp;char&nbsp;*domain_name,&nbsp;const&nbsp;char&nbsp;*msgid);&nbsp;
+</TT></DL></DIV>
+fonksiyonu yardımcı olur. Bununla farklı alanlardan ileti çevirileri
+alabilirsiniz.<BR>
+<BR>
+gettext sistemi yalnızca ileti çevirilerini getirmekle kalmaz, aynı
+zamanda bunları saklandıkları karakter setinden, o anki yerelleştirmenin
+LC_CTYPE ile belirlenen etkin karakter setine de çevirir. Metinleri
+yerelleştirmeye bağlı kalmadan kullanabilen programlar, çevirileri
+UTF-8 karakter setinde isteyebilir. Bunun için,
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+char&nbsp;*bind_textdomain_charset&nbsp;(const&nbsp;char&nbsp;*domain_name,<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;char&nbsp;*codeset);&nbsp;
+</TT></DL></DIV>
+kullanılır. Örneğin:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+bind_textdomain_charset&nbsp;(PACKAGE,&nbsp;"UTF-8");&nbsp;
+</TT></DL></DIV>
+gettext çeviri bulamadığı durumda verilen iletiyi aynen döndürdüğü
+için, bunun kullanıldığı durumlarda program kodundaki metinlerin UTF-8
+olarak tutulması gerektiğine dikkat edin! <BR>
+<BR>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_11.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_13.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+</div>
+<!-- SAYFA İÇERİK SONU -->
+
+<!-- yayın hakkı -->
+<br>
+<br>
+<p class="not">
+Information and documents on Uludağ Project web pages can be used freely anywhere with original source credit.
+<em><br>
+<strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
+For information and suggestion(s) please write to <a href="mailto:bilgi%20at%20uludag.org.tr">bilgi
+at uludag.org.tr</a>
+</p>
+<br>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

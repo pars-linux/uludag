@@ -1,0 +1,834 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>:: ulusal dağıtım project :: tübitak-uekae ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../../../stil.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../../../images/favicon.ico">
+</head>
+
+<body class="arka">
+<table class="arkayan" width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="878" align="center" valign="top">
+<table class="arkadalga" width="700" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="800" valign="top">
+
+<!-- logo -->
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="620" height="60">
+<img src="../../../../images/header3.png" alt="Ulusal Dağıtım Projesi" width="700" height="60">
+</td>
+</tr>
+
+<!-- menüler -->
+<tr>
+<td width="680" height="19" valign="top" bgcolor="#B9D0B3">
+<p class="menubar">
+<a href="../../../index.html">Home</a>
+| <a href="../../../hakkimizda.html">About</a>
+| <a href="../../../projeler/index.html">Projects</a>
+| <a href="../../../belgeler/index.html">Documents</a>
+| <a href="../../../urunler/index.html">Products</a>
+| <a href="../../../sss.html">FAQ</a>
+| <a href="../../../iletisim.html">Contact Us</a>
+| <a href="../../../basin/index.html">Press</a>
+| <a href="../../../../index.html">Türkçe</a>
+</p>
+</tr>
+</table>
+
+<br>
+
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+
+
+<H1 ALIGN=center>Kaynak Temizleme Kılavuzu</H1>
+
+<H3 ALIGN=center>Barış Metin, S. Çağlar Onur</H3>
+<!--TOC section İçindekiler-->
+
+<H2>İçindekiler</H2><!--SEC END -->
+
+<UL><LI>
+<A HREF="#htoc1">1&nbsp;&nbsp;Giriş</A>
+<LI><A HREF="#htoc2">2&nbsp;&nbsp;Hazırlık</A>
+<UL><LI>
+<A HREF="#htoc3">2.1&nbsp;&nbsp;Kuluçka Dağıtım (Gentoo) Kurulumu</A>
+<LI><A HREF="#htoc4">2.2&nbsp;&nbsp;Uludağ Paketler deposu</A>
+<LI><A HREF="#htoc5">2.3&nbsp;&nbsp;make.conf</A>
+<LI><A HREF="#htoc6">2.4&nbsp;&nbsp;Uludağ paket deposunun kuluçka dağıtımda kullanımı</A>
+<LI><A HREF="#htoc7">2.5&nbsp;&nbsp;Yazılımlar</A>
+<LI><A HREF="#htoc8">2.6&nbsp;&nbsp;Türkçe yapılandırması</A>
+<UL><LI>
+<A HREF="#htoc9">2.6.1&nbsp;&nbsp;Metin ekranda Türkçe desteği</A>
+<LI><A HREF="#htoc10">2.6.2&nbsp;&nbsp;Grafik Ekranda Türkçe desteği</A>
+</UL>
+</UL>
+<LI><A HREF="#htoc11">3&nbsp;&nbsp;Araçlar ve Kullanımları</A>
+<UL><LI>
+<A HREF="#htoc12">3.1&nbsp;&nbsp;Bugzilla</A>
+<LI><A HREF="#htoc13">3.2&nbsp;&nbsp;Subversion</A>
+<UL><LI>
+<A HREF="#htoc14">3.2.1&nbsp;&nbsp;Güncel çalışma kopyası</A>
+<LI><A HREF="#htoc15">3.2.2&nbsp;&nbsp;Depo yapısı</A>
+<LI><A HREF="#htoc16">3.2.3&nbsp;&nbsp;Yapılanların gönderilmesi</A>
+</UL>
+<LI><A HREF="#htoc17">3.3&nbsp;&nbsp;Portage: emerge, ebuild</A>
+</UL>
+<LI><A HREF="#htoc18">4&nbsp;&nbsp;İşleyiş</A>
+<UL><LI>
+<A HREF="#htoc19">4.1&nbsp;&nbsp;Takip/Temizleme Süreci</A>
+<UL><LI>
+<A HREF="#htoc20">4.1.1&nbsp;&nbsp;Sorun tespiti</A>
+<LI><A HREF="#htoc21">4.1.2&nbsp;&nbsp;Sorunun kaynağının bulunması</A>
+<LI><A HREF="#htoc22">4.1.3&nbsp;&nbsp;Çözüm araştırması</A>
+<LI><A HREF="#htoc23">4.1.4&nbsp;&nbsp;Çözüm</A>
+<LI><A HREF="#htoc24">4.1.5&nbsp;&nbsp;Yama</A>
+<LI><A HREF="#htoc25">4.1.6&nbsp;&nbsp;Test</A>
+<LI><A HREF="#htoc26">4.1.7&nbsp;&nbsp;Depoya yerleştir</A>
+</UL>
+<LI><A HREF="#htoc27">4.2&nbsp;&nbsp;Temizlenecek problemler</A>
+<LI><A HREF="#htoc28">4.3&nbsp;&nbsp;Temizleme Önerileri</A>
+<LI><A HREF="#htoc29">4.4&nbsp;&nbsp;Yama Nasıl Uygulanır?</A>
+<UL><LI>
+<A HREF="#htoc30">4.4.1&nbsp;&nbsp;Kaynak kodu al/aç.</A>
+<LI><A HREF="#htoc31">4.4.2&nbsp;&nbsp;Yamayı hazırla</A>
+<LI><A HREF="#htoc32">4.4.3&nbsp;&nbsp;Yamayı çalışma kopyasına yerleştir.</A>
+<LI><A HREF="#htoc33">4.4.4&nbsp;&nbsp;Test et.</A>
+<LI><A HREF="#htoc34">4.4.5&nbsp;&nbsp;Ana depoya ekle.</A>
+<LI><A HREF="#htoc35">4.4.6&nbsp;&nbsp;Bugzilla'da ilgili hata girişi kapat.</A>
+<LI><A HREF="#htoc36">4.4.7&nbsp;&nbsp;Changelog'a yapılan değişiklik yazılır.</A>
+<LI><A HREF="#htoc37">4.4.8&nbsp;&nbsp;Ana geliştirici yapılan iyileştirmeden haberdar edilir.</A>
+</UL>
+<LI><A HREF="#htoc38">4.5&nbsp;&nbsp;Yazılım Seçimi ve Sürüm Güncellemeleri Politikası</A>
+</UL>
+</UL>
+
+
+<!--TOC section Giriş-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Giriş</H2><!--SEC END -->
+
+Kaynak Temizleme süreci yazılımları bir araya getirme ve sorunlarını
+giderme işine verdiğimiz takma isimdir. Bu süreç sonunda ürün olarak
+dağıtıma girmeye hazır paketler değil, <B>Uludağ</B> tarafından
+onaylanmış kaynaklar (yazılımlar) çıkartacaktır.<BR>
+<BR>
+Buna göre iş akışı kabaca söyle tarif edilebilir.<BR>
+<BR>
+<B>Kaynak Paket &nbsp;<FONT FACE=symbol>|></FONT>&nbsp; Kaynak Temizleme Süreci &nbsp;<FONT FACE=symbol>|></FONT>&nbsp;
+Uludağ Onaylı Kaynak</B><BR>
+<BR>
+Kaynak temizleme sürecinin bir <EM>Kuluçka Dağıtım</EM> üzerinde gerçekleşeceği
+düşünüldüğünde, giriş-çıkış tablosu aşağıdaki gibi olur.<BR>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=1>
+<TR><TD VALIGN=middle ALIGN=left><DIV ALIGN=center>Girdi</DIV></TD>
+<TD VALIGN=top ALIGN=center NOWRAP>Süreç</TD>
+<TD VALIGN=middle ALIGN=left><DIV ALIGN=center>Çıktı</DIV></TD>
+</TR>
+<TR><TD VALIGN=middle ALIGN=left><DIV ALIGN=center>Orjinal (vanilla) Kaynak + Kuluçka Dağıtım Yamaları</DIV></TD>
+<TD VALIGN=top ALIGN=center NOWRAP>Problemlerin Giderilmesi</TD>
+<TD VALIGN=middle ALIGN=left><DIV ALIGN=center>Orjinal (vanilla) Kaynak + Kuluçka Dağıtım Yamaları + Uludağ Yamaları</DIV></TD>
+</TR></TABLE><BR>
+Bu belge kaynak temizleme süreci ne dahil olan her geliştirici için
+bir kılavuz olmayı amaçlamaktadır.<BR>
+<BR>
+<!--TOC section Hazırlık-->
+
+<H2><A NAME="htoc2">2</A>&nbsp;&nbsp;Hazırlık<A NAME="hazirlik"></A></H2><!--SEC END -->
+
+Kaynak temizleme işi, şu an için, yazılım listemizdeki<SUP><A NAME="text1" HREF="#note1">1</A></SUP> paketlerin kurulu olduğu bir <EM>Kuluçka Dağıtım</EM> üzerinde yapılmaktadır.
+Bir geliştiricinin yazılımlardaki sorunları temizlemeye başlamadan
+önce sistemini bir <B><EM>``Temizleme Sistemi''</EM></B><SUP><A NAME="text2" HREF="#note2">2</A></SUP> olarak hazırlaması gerekmektedir. <EM>Kuluçka Dağıtım</EM> uygun seçenekler
+ile kurularak aşağıdaki şekilde bir <B><EM>Temizleme Sistemi</EM></B>
+hazırlanabilir.<BR>
+<BR>
+<!--TOC subsection Kuluçka Dağıtım (Gentoo) Kurulumu-->
+
+<H3><A NAME="htoc3">2.1</A>&nbsp;&nbsp;Kuluçka Dağıtım (Gentoo) Kurulumu</H3><!--SEC END -->
+
+<EM>Kuluçka Dağıtım</EM> kurulumu için HD tarafından hazırlanan <B><EM></EM></B><A HREF="http://www.uludag.org.tr/uludag/"><B><EM><TT>http://www.uludag.org.tr/uludag/</TT></EM></B></A><B><EM>uludag-0.0.3.tar.bz2</EM></B>
+dosyası indirilmelidir. Bu dosya Uludağ Geliştiricileri tarafından
+kaynak temizleme sürecinde kullanılmak üzere oluşturulan <EM>Kuluçka
+Dağıtım</EM>ı, derlenmiş paketleri ile içerir.<BR>
+<BR>
+Geliştirici sabit diskinde uygun bölümlemeyi yapmalı ve bu bölüme
+<EM>uludag-0.0.3.tar.bz2</EM> dosyasını açmalıdır. Sistem yeniden başlatılmadan
+ve <EM>Uludağ Kuluçka Tabanı</EM> kullanılmaya başlamadan önce <B><EM>/etc/fstab</EM></B>
+dosyası disk bölümlerine göre düzenlenmeli ve sistemde bulunan <B>önyükleyici</B>
+tekrar ayarlanmalıdır. <EM>uludag-0.0.3.tar.bz2</EM> arşivi içerisinde
+<B>grub</B> <EM>önyükleyicisi</EM> bulunur<EM>. Grub</EM> yapılandırma
+dosyası <B><EM>/boot/grub/grub.conf</EM></B> dosyasıdır<EM>. </EM><BR>
+<BR>
+<EM>Uludağ Kuluçka Tabanı</EM> için öntanımlı root kullanıcısı şifresi
+<B><EM>``uludag''</EM></B> dır.<BR>
+<BR>
+İdeal <B><EM>Temizleme Sitemi</EM></B> uludag-kulucka arşivi kullanılarak
+kurulmuş sistemdir. Fakat herhangi bir <B>Gentoo</B> kurulumu da
+aşağıdaki adımlar uygulanarak bir <B><EM>Temizleme Sistemi</EM></B>'ne
+çevirilebilir.<BR>
+<BR>
+<!--TOC subsection Uludağ Paketler deposu-->
+
+<H3><A NAME="htoc4">2.2</A>&nbsp;&nbsp;Uludağ Paketler deposu</H3><!--SEC END -->
+
+Paketler deposu, <EM>kuluçka dağıtım</EM> deposunun <B>Uludağ</B>
+1.0 paketlerinin bir kısmını içeren küçük bir kopyasıdır. Paketler
+deposu kaynak paketlere dair <B>Uludağ</B> tarafından yapılan tüm
+iyileştirmeleri içerir. Temel bir <B>Gentoo</B> kurulumu yaptıktan
+hemen sonra geliştiricinin paket temizlemeye başlayabilmesi için <B><EM>https://svn.uludag.org.tr/paketler/</EM></B>
+adresinden <B>Uludağ</B> kaynak paket deposu indirmesi gerekir.
+Depoyu indirmek için;<BR>
+<BR>
+<EM>$ svn co https://svn.uludag.org.tr/paketler</EM><BR>
+<BR>
+komutunu vermek yeterlidir. Komut, bulunduğunuz dizinde paketler isimli
+yeni bir dizin oluşturacaktır. Yeni dizin <B>Uludağ</B> paketler
+deposunun bir kopyasıdır. Bu kopyaya çalışma kopyası ismi verilir.
+Kurulumun bundan sonraki kısmında <B>Uludağ</B> kaynak paketler
+deposu size yardımcı olacaktır.<BR>
+<BR>
+<!--TOC subsection make.conf-->
+
+<H3><A NAME="htoc5">2.3</A>&nbsp;&nbsp;make.conf</H3><!--SEC END -->
+
+Depo içerisindeki <B>make.conf</B> dosyası <B>Uludağ</B> yazılım
+seçimlerine ve bu yazılımların özelliklerine göre bir <B>Gentoo</B>
+kurulumu için kullanılmalıdır. <B>make.conf</B> dosyasını kullanmak
+için aşağıdaki komut ile dosyayı uygun yere kopyalamak yeterlidir.<BR>
+<BR>
+<B>$ cp paketler_dizini/trunk/make.conf /etc/make.conf</B><BR>
+<BR>
+Bu dosya içerisinde uygun derleme seçenekleri de dahil olmak üzere,
+<B><EM>Temizleme Sistemi</EM></B>'nin ve <B>Uludağ</B> kaynaklarının
+kurulumu için gerekli seçimler yapılmıştır. Buradaki değişkenlerin
+anlamları şöyledir;
+<UL><LI>
+<B>USE:</B> Sisteme kurulacak olan paketlerin hangi özelliklerinin
+istenip, hangi özelliklerinin istenmediğini belirten değişkendir.
+<LI><B>CHOST:</B> İşlemci mimarisini belirten değişkendir. [ P4 için
+i686, P3 için i586, 486 için i486, i386 için i386 gibi ]
+<LI><B>CFLAGS:</B> gcc için derlenecek paketlerin hangi derleyici paremetreleri
+ile derleneceğini belirten değişkendir.
+<LI><B>CXXFLAGS:</B> g++ için derlenecek paketlerin hangi derleyici
+paremetreleri ile derleneceğini belirten değişkendir.
+<LI><B>PORTAGE_TMPDIR:</B> Derlenecek paketin açılacağı, derleneceği
+geçici disk alanını belirten değişkendir.
+<LI><B>PORTDIR:</B> Portage ismi verilen paket deposunun nerede olduğunu
+belirten değişkendir.
+<LI><B>DISTDIR:</B> Çekilen kaynak kodlarının ve büyük yamaların nerede
+olduğunu belirten değişkendir.
+<LI><B>PKGDIR:</B> Eğer mevcut ise binary hale getirilip paketlenmiş
+dosyaların nerede olduğunu belirten değişkendir.
+<LI><B>PORT_LOGDIR:</B> Her paket için ayrı bir log dosyasının nerede
+saklanacağını belirten değişkendir. [ <EM>Kapatılabilir</EM> ]
+<LI><B>PORTDIR_OVERLAY: Gentoo</B> paket deposunun yanında yerel olacak
+tutulacak paket deposunun yerini belirten değişkendir. [ <EM>bkz:
+2.4</EM> ]
+<LI><B>MAKEOPTS:</B> Aynı anda kaç adet <EM>make</EM> sürecinin çalıştırılacağını
+belirten değişkendir. [ <EM>işlemci sayısı + 1 yeterlidir.</EM> ]
+<LI><B>FEATURES:</B> Portage ismi verilen paket yöneticisinin hangi
+özelliklerinin kullanılacağını belirten değişkendir.
+<LI><B>PORTAGE_BINHOST:</B> Binary hale getirilmiş paketleri çekmek
+için kullanılacak sunucunun adresini belirten değişkendir.
+<LI><B>GENTOO_MIRRORS:</B> Kaynak kodlarının çekilmesi için kullanılacak
+sunucunun adresini belirten değişkendir.
+<LI><B>SYNC: Gentoo</B> paket deposunun senkronlanmasi işlemi için kullanılacak
+sunucunun adresini belirten değişkendir.
+</UL>
+<!--TOC subsection Uludağ paket deposunun kuluçka dağıtımda kullanımı-->
+
+<H3><A NAME="htoc6">2.4</A>&nbsp;&nbsp;Uludağ paket deposunun kuluçka dağıtımda kullanımı</H3><!--SEC END -->
+
+<B>Gentoo</B> üzerinde <B>Uludağ</B> kaynaklarını kullanabilmek
+için make.conf dosyası içerisindeki <EM>PORTAGE_OVERLAY</EM> değişkeninin
+tanımlanması gerekmektedir. <EM>PORTAGE_OVERLAY</EM> değişkeni <B>Uludağ</B>
+kaynak paket deposunun çalışma kopyasını işaret ederek depo içerisindeki
+kaynakların kullanılmasını sağlar. Bu sayede kuluçka dağıtım paket
+sistemi öntanımlı olarak <B>Uludağ</B> deposunu kullanacaktır.<BR>
+<BR>
+Eğer <B>Uludağ</B> paketler deposunu /home/user/paketler dizinene
+çektiyseniz; <B>/etc/make.conf</B> dosyası içerisine<B><BR>
+<BR>
+<EM>PORTAGE_OVERLAY=/home/user/paketler/trunk</EM></B><BR>
+<BR>
+satırını eklemek yeterlidir.<BR>
+<BR>
+<!--TOC subsection Yazılımlar-->
+
+<H3><A NAME="htoc7">2.5</A>&nbsp;&nbsp;Yazılımlar</H3><!--SEC END -->
+
+Uludağ yazılımları <EM>temel yazılımlar</EM> ve <EM>uygulama yazılımları</EM>
+olmak üzere iki sınıfa toplanmıştır.<BR>
+<BR>
+Bu sınıflar için uludag-base (temel yazılımlar için) ve uludag-apps
+(uygulama yazılımları için) ebuild dosyaları Uludağ paketler deposuna
+yerleştirilmiştir.<BR>
+<BR>
+Uludağ Temel yazılımlarının kurulumu için aşağıdaki komut yeterlidir.<BR>
+<BR>
+<B># emerge uludag/uludag-base</B><BR>
+<BR>
+Uygulama yazılımları için ise<BR>
+<BR>
+<B># emerge uludag/uludag-apps</B><BR>
+<BR>
+komutu kullanılır. Temel ve uygulama yazılımlarını tümü ile kurmak
+için ise<BR>
+<BR>
+<B># emerge uludag/uludag-all</B><BR>
+<BR>
+komutu kullanılır.<BR>
+<BR>
+Uludağ tarafından seçilen yazılımların listesine depo içerisindeki
+<EM>repos/docs</EM> dizininden ulaşılabilir.<BR>
+<BR>
+Emerge ile uludag paketlerini kurmaya başlamadan önce her paket için
+<EM>digest</EM> ve <EM>Manifest</EM> dosyalarının oluşturulması gerekir.
+<B>ebuild</B>, <EM>digest</EM> parametresi ile, bu iş için kullanılır.
+Deponun trunk/ dizininde, depodaki her paket için bu komutu çalıştırmayı
+kolaylaştıran bir Makefile dosyası bulunmaktadır. İşlemi gerçekleştirmek
+için trunk dizininde;<BR>
+<BR>
+<B># make ebuild_all_digest</B><BR>
+<BR>
+komutunu vermeniz yeterlidir. Bu işlem tüm paketler için kaynak kodları
+da internetten indireceğinden uzun sürecektir.<BR>
+<BR>
+<!--TOC subsection Türkçe yapılandırması-->
+
+<H3><A NAME="htoc8">2.6</A>&nbsp;&nbsp;Türkçe yapılandırması</H3><!--SEC END -->
+
+Türkçe yapılandırma işlemleri, uludag-*.tar.bz2 arşivi kullanılarak
+yapılan kurulumlarda hazır olarak gelir ve tekrar yapılandırma gereksizdir.
+Uludag arşivini kullanmayan kurulumlarda yapılandırma seçeneklerinin
+yukarıda anlatıldığı gibi düzenlenmesi gerekir.<B><BR>
+<BR>
+<EM>Temizleme Sistemi</EM></B>'nin Türkçe UTF-8 ayarları ile yapılandırılması
+ve kullanılması gerekmektedir. Konsolda ve grafik ekranda Türkçe çalışabilmek
+için öncelikle yerel değişkenlerinin Türkçe yapılması amacıyla <B>LC_ALL</B>
+ve <B>LANG</B> yerel değişkenleri <B>tr_TR.UTF-8</B> olarak tanımlanmalıdır.<BR>
+<BR>
+Bu yerel değişkenlerini tanımlamak için <B>/etc/env.d</B> dizini
+altına <EM>03locale</EM> adında bir dosya oluşturarak içerisine aşağıdaki
+satırları yazabilirsiniz.<BR>
+<BR>
+<B>LC_ALL=tr_TR.UTF-8</B><BR>
+<B>LANG=tr_TR.UTF-8</B><BR>
+<BR>
+<!--TOC subsubsection Metin ekranda Türkçe desteği-->
+
+<H4><A NAME="htoc9">2.6.1</A>&nbsp;&nbsp;Metin ekranda Türkçe desteği</H4><!--SEC END -->
+
+Metin ekranda Türkçe desteği için Türkçe klavye haritası <EM>trqu.map.gz</EM>
+ve Türkçe font dosyası <EM>iso09.16.gz</EM> kullanılmalıdır.<BR>
+<BR>
+Klavyenin unicode modunda çalışması için``<EM>kbd_mode -u</EM>''
+komutu kullanılır. Bu özelliği etkin hale getirmek için <B>/etc/rc.conf</B>
+dosyasında KEYMAP değeri aşağıdaki şekilde düzenlenir.<BR>
+<BR>
+<B>KEYMAP="trq" # Türkçe klavye haritası</B><BR>
+<B>UNICODE=''yes''</B><BR>
+<B>CONSOLEFONT="iso09.16.gz" # Türkçe font</B><BR>
+<B>CONSOLETRANSLATION=''8859-9''</B><BR>
+<BR>
+Terminalde unicode desteği için ise terminale``%G'' escape karakteri
+<EM>echo -e``033%G''</EM> komutu ile gönderilir.
+Bunun için <B>/etc/issue</B> dosyası kullanılabilir. Dosyayı uygun
+içerik ile oluşturmak için basitçe aşağıdaki komut kullanılabilir.<BR>
+<BR>
+<B># echo -e ``0332J033[f033%GUludağ
+Linux'a Hoşgeldiniz''  /etc/issue</B><BR>
+<BR>
+<!--TOC subsubsection Grafik Ekranda Türkçe desteği-->
+
+<H4><A NAME="htoc10">2.6.2</A>&nbsp;&nbsp;Grafik Ekranda Türkçe desteği</H4><!--SEC END -->
+
+Grafik ekranda Türkçe desteği için xorg.conf yapılandırma dosyasında
+<EM>Option "XkbLayout" "tr"</EM>
+satırı ile Türkçe klavye desteği verilir.<BR>
+<BR>
+Masaüstü olarak kullanılan KDE'de Türkçe arayüz için kde-i18n paketinin
+<EM>LINGUAS=tr</EM> parametresi ile kurulması gerekmektedir. Aşağıdaki
+komut bunun için yeterlidir.<BR>
+<BR>
+<B># LINGUAS=tr emerge kde-i18n</B><BR>
+<BR>
+<!--TOC section Araçlar ve Kullanımları-->
+
+<H2><A NAME="htoc11">3</A>&nbsp;&nbsp;Araçlar ve Kullanımları</H2><!--SEC END -->
+
+Kurulum ve temel hazırlıktan sonra paket temizlemeye geçilebilir.
+Bunun için kullanılan araçların tanımları ve kullanımı aşağıda anlatılmıştır.<BR>
+<BR>
+<!--TOC subsection Bugzilla-->
+
+<H3><A NAME="htoc12">3.1</A>&nbsp;&nbsp;Bugzilla</H3><!--SEC END -->
+
+<B>Uludağ</B> Bugzilla'sında paketler için ayrı bir kategori bulunur.
+Paketler kategorisi altına her paket ayrı bir bileşen(component) olarak
+yalnızca paket isimleri ile eklenir.<BR>
+<BR>
+<EM>Örneğin</EM>: bash-2.05b-r9 kuluçka dağıtım paketi, sürüm numarası
+olmadan, yalnızca <EM>bash</EM> ismi ile depoya eklenir. Depoya, paket
+sürüm numarası yerine paketin dağıtımın hangi sürümü için hazırlanmış
+olduğu bilgisi girilir. Şu an işlettiğimiz paket temizleme sürümü
+için bu 1.0_pre sürümünü ifade eder.<BR>
+<BR>
+<!--TOC subsection Subversion-->
+
+<H3><A NAME="htoc13">3.2</A>&nbsp;&nbsp;Subversion</H3><!--SEC END -->
+
+Kurulum sırasında kullanılan <B>Uludağ</B> Kaynak Paketler Deposu
+her <B><EM>Temizleme Sistemi'</EM></B>nde zaten hazır olarak bulunur.
+Depodaki paketler kuluçka dağıtımın sunduğu gruplamalara uygun bir
+şekilde kendi dizinlerine yerleştirilmiştir. Bu sayede, kurulum bölümünde
+anlatıldığı gibi, depodaki paketleri alarak tümü ile <EM>Kuluçka
+dağıtım</EM> üzerinde kullanabilme olanağı olur. Ayrı bir depo üzerinde
+çalışmak bize <EM>kuluçka dağıtım</EM> ile karışmadan fakat aynı sistem
+üzerinde gelişmeye ve evrimleşmeye uygun ortamı sağlar.<BR>
+<BR>
+<!--TOC subsubsection Güncel çalışma kopyası-->
+
+<H4><A NAME="htoc14">3.2.1</A>&nbsp;&nbsp;Güncel çalışma kopyası</H4><!--SEC END -->
+
+Depo'dan bir çalışma kopyasının nasıl alınabileceğini zaten biliyoruz.
+Fakat, güncel kaynaklar ile çalışabilmek için geliştirici her çalışma
+öncesi paket deposunu güncellemelidir. Bunun için aşağıdaki komutları
+vermek yeterlidir. Aşağıda adı geçen $ULUDEPO yerel değişkenlerini
+tanımlamak için <B>/etc/env.d</B> dizini altına <EM>33depo</EM> adında
+bir dosya oluşturarak içerisine <EM>ULUDEPO=''Uludağ paketler deposunu
+yolu''</EM> satırını aşağıdaki gibi yazabilirsiniz.<B><BR>
+<BR>
+<EM>ULUDEPO=/home/user/paketler/trunk</EM></B><B><BR>
+<BR>
+<EM>$ cd $ULUDEPO</EM></B><B><BR>
+<BR>
+<EM>$ svn update</EM></B><BR>
+<BR>
+<!--TOC subsubsection Depo yapısı-->
+
+<H4><A NAME="htoc15">3.2.2</A>&nbsp;&nbsp;Depo yapısı</H4><!--SEC END -->
+
+Depo içerisinde üç ana dizin bulunur; trunk, tags ve repos.
+<UL><LI>
+<B>trunk</B> dizini sürekli çalışmanın yapıldığı dizindir. Geliştirici
+yaptığı ve test ettiği tüm yamaları öncelikli olarak trunk dizini
+altındaki kaynak paket deposuna yerleştirir.
+<LI><B>tags</B> dizini kaynak paketlerin belirli bir olgunluğa geldiğinde
+kopyalandıkları dizindir. Bir kaynak paketin sorumlusu (maintainer)
+kaynak paketin kararlılığından emin olduğunda, pakete bir sürüm numarası
+vererek taglar(işaretler).
+<LI><B>repos</B> dizini geliştiricinin kaynak paketler üzerindeki deneysel
+çalışmalarını yaptığı dizindir. Geliştirici repos altına kendi dizinini
+oluşturarak bu dizin içerisinde mevcut kaynak paketlere veya yeni
+bir yazılıma dair deneysel çalışmasını yürütebilir. Repos dizini aynı
+zamanda kaynak temizleme dökümanlarının da içerisinde bulunduğu <EM>docs</EM>
+dizinini de barındırır.
+</UL>
+<B>Uludağ</B> kaynak paket deposunda seçilen kuluçka dağıtıma uygun
+şekilde yerleştirilmiş paket kurma betikleri ve kuluçka dağıtım tarafından
+yapılan yamalar ve öntanımlı ayar dosyaları bulunmaktadır. Paketlerin
+kurulması için gerekli olan bazı dosyalar dinamik olmaları sebebi
+ile depoya yerleştirilmemişlerdir. Bu dosyalar paket kurma işlemi
+sırasında ebuild yazılımı tarafından oluşturularak kullanılacaklardır.<BR>
+<BR>
+Depo içerisindeki her kaynak paket dizininde aşağıdaki dosyalar bulunur.
+<OL type=1><LI>
+<EM>Gentoo ebuild dosyası</EM>: Bu dosya portage tarafından kullanılan
+derleme/kurulum dosyasıdır. Yazılıma yapılan değişiklikleri uygun
+bir şekilde test etmek için kaynak paket sorumlusu ebuild dosyasında
+da bazı güncellemeler yapmaktadır.
+<LI><EM>Yamalar</EM>: <B>Gentoo</B> yamalarının 20 Kb'tan küçük olan ve
+<B>Uludağ</B> tarafından yapılan yamaların tümü <B>files</B> dizini
+altında bulunur. 20 Kb'tan büyük olan yamalar <B>distfiles</B> klasöründe
+sıkıştırılmış halde tutulur. Kaynak sorumlusu bu dosyayı almalı ve
+paketin <B>files</B> klasörüne açmalıdır. 
+<LI><EM>Changelog</EM> dosyası: Uludağ geliştiricileri tarafından yapılanların
+kaydı bu dosyada tutulur. Bu dosya kaynak sorumlusu tarafından ilk
+ihtiyaç duyulduğunda oluşturulur.
+<LI><EM>Takip</EM> dosyası: Takip dosyası kaynak geliştiricisi tarafından
+kaynak ilk ele alındığında hazırlanır. Takip dosyası içerisinde kaynak
+sorumlusu(maintainer) ve kaynağın o sıradaki durumu listelenir. Örnek
+takip dosyasını yapısı şu şekildedir.
+</OL>
+PAKET=paket adı<BR>
+VERSIYON=versiyon numaras<BR>
+SORUMLU=eposta adresi<BR>
+BUGZILLA= Uluzilla URL'si <BR>
+CEVIRI= % cinsinden alınan yol <BR>
+UTF8= % cinsinden alınan yol  <BR>
+YAPILANDIRMA= % cinsinden alınan yol <BR>
+GRAFIK_MEDYA= % cinsinden alınan yol <BR>
+HATALAR= % cinsinden alınan yol <BR>
+KULLANIŞLILIK= % cinsinden alınan yol<BR>
+<BR>
+<!--TOC subsubsection Yapılanların gönderilmesi-->
+
+<H4><A NAME="htoc16">3.2.3</A>&nbsp;&nbsp;Yapılanların gönderilmesi</H4><!--SEC END -->
+
+Uludağ kaynak paket deposunu güncelledikten sonra, geliştirici kaynaklar
+üzerinde çalışmaya başlayabilir. Kaynaklara dair yapılan tüm güncellemenin
+Uludağ deposu üzerinden yapılması zorunludur.<BR>
+<BR>
+İşi biten geliştirici aşağıdaki komut ile yaptıklarını ana depoya
+gönderebilir.<B><BR>
+<BR>
+<EM>$ svn commit</EM></B><BR>
+<BR>
+Komuttan hemen sonra gelen yorum ekleme ekranı yapılan işin tarif
+edilmesi içindir. Yapılan işin burada açıklayıcı bir şekilde tarif
+edilmesi diğer geliştiricilerin yaptıklarımızdan haberdar olmasını
+sağlar. Eğer aynı zamanda üzerinde çalıştığınız kaynak paketin sorumlusu
+iseniz kaynak paket dizinindeki <EM>ChangeLog</EM> dosyasına da yapılanları
+yazmanız gerekir.<BR>
+<BR>
+Paket deposuna yazma hakkı yalnızca geliştiricilere aittir. Fakat
+herkes depoyu kullanım için çekebilir. Depoya yazma hakkı olmayan
+geliştiriciler kaynak paketler üzerinde yaptıkları çalışmaları kaynak
+paketin sorumlusuna göndererek çalışmalarının depoya girmesini sağlayabilirler.<BR>
+<BR>
+<!--TOC subsection Portage: emerge, ebuild-->
+
+<H3><A NAME="htoc17">3.3</A>&nbsp;&nbsp;Portage: emerge, ebuild</H3><!--SEC END -->
+
+<EM>ebuild,</EM> hem seçilen <EM>kuluçka dağıtım</EM>ın <B>portage</B>
+ismi verilen paket yöneticisinin metodlarına direk erişmek için kullanılan
+arayüze verilen isim hemde paket veritabanını oluşturan kurulum betiği
+dosyalarının adıdır. <EM>ebuild</EM> yazılımı aşağıdaki metodlara sahiptir
+ <EM>ebuild</EM> <B>paketadı</B> <B><EM>metod </EM></B>;
+<UL><LI>
+<B>setup:</B> Paket için gerekli tüm sistem gerekliliklerini kontrol
+eder.
+<LI><B>fetch:</B> Paket'in kaynak kodunu ve yamalarını çeker.
+<LI><B>digest:</B> Paketin kaynak kodu ve yamalarının md5sumlarını Manifest
+ve digest-paketismi dosyalarına yazar.
+<LI><B>unpack:</B> Paketin kaynak kodunu <EM>/var/tmp/portage/paketadı</EM>
+klasörüne açar ve yamaları yapar.
+<LI><B>compile:</B> Paketin yamaları uygulanmış kaynak kodunu derler.
+<LI><B>preinst:</B> Paketi gerçek sisteme kurulmadan önce gerekli işlemleri
+yapar.
+<LI><B>install:</B> Paketi kendi sandbox'ının içine kurar.
+<LI><B>postinst:</B> Paket gerçek sisteme kurulduktan sonra gerekli
+işlemleri yapar.
+<LI><B>qmerge:</B> Sandbox'a kurulan paketi gerçek dosya sistemine kurar.
+<LI><B>merge:</B> Sırası ile <B>fetch, unpack, compile, install</B>
+ve <B>qmerge</B> süreçlerini işletir.
+<LI><B>unmerge:</B> Sisteme kurulmuş paketi kaldırır.
+<LI><B>prerm:</B> Sisteme kurulmuş paket kaldırılmadan gerekli işlemleri
+yapar.
+<LI><B>postrm:</B> Sisteme kurulmuş paket kaldırıldıktan sonra gerekli
+işlemleri yapar.
+<LI><B>package:</B> Seçilen paket için <B>fetch, unpack, compile,
+install</B> şüreçlerini işlettikten sonra dosya sistemine kurmak yerine
+derlenmiş halini .tbz2 dosyası haline getirir.
+<LI><B>rpm:</B> Seçilen paket için <B>fetch, unpack, compile, install</B>
+şüreçlerini işlettikten sonra dosya sistemine kurmak yerine derlenmiş
+halini .rpm dosyası haline getirir.
+</UL>
+Bir <EM>ebuild</EM> dosyası ise içerisinde yukarıdaki metodları sağlayacak
+fonksiyonları ve çeşitli değişkenleri barındırır. <EM>ebuild</EM> arayüzü
+bu dosyayı işleyerek sisteme kurulacak paket için gerekli işlemleri
+gerçekleştirir.<BR>
+<BR>
+<EM>Emerge ebuild</EM> arayüzünü kullanan <B>Gentoo</B>'nun paket
+yöneticisine verilen isimdir. Paket kurmak, kaldırmak, özelliklerini
+yada bağımlılıklarını listelemek gibi işlevleri <EM>ebuild</EM> arayüzünü
+kullanarak yerine getirir. <EM>emerge</EM> ile bir paketi kurmadan önce
+<EM>emerge -lvp paketadı</EM> komutu ile kurulacak olan paketin ve getirdiği
+bağımlılıkların listesi alınmalı ve sisteme neler getireceği incelenmelidir.
+Bir paketi sistem kurmak ve eskisini kaldırmak için <EM>emerge paketadı</EM>,
+paketi sadece kaldırmak için <EM>emerge unmerge</EM> <EM>paketadı</EM>
+komutlarını kullanmak yeterlidir. <BR>
+<BR>
+<!--TOC section İşleyiş-->
+
+<H2><A NAME="htoc18">4</A>&nbsp;&nbsp;İşleyiş</H2><!--SEC END -->
+
+Yazılımlar ve yazılımlara yapılan değişiklikler http://svn.uludag.org.tr/paketler
+deposunda saklanmaktadır. Hata bildirimi ve takibi ise <B><EM>http://bugs.uludag.org.tr</EM></B>
+adresinden yayın yapan <B>Uludağ</B> Bugzilla'sı içerisindeki Paketler
+kategorisi kullanılarak yapılır. Her kaynak paket sorumlusu kendi
+paketi için depo ve bugzilla içeriklerini hazırlamak zorundadır.<BR>
+<BR>
+Kaynak paket deposu dağıtıma girecek tüm yazılımları içerir. Kaynak
+paket sorumlusu yalnızca eksik olan içeriği oluşturmalıdır.<BR>
+<BR>
+Sıradan bir kaynak için, kaynak ilk ele alındığında <EM>takip</EM> dosyası
+ve kaynağa dair yapılan ilk işte <EM>Changelog</EM> dosyasının oluşturulması
+yeterlidir. Kaynak pakete dair diğer dosyalar zaten depo içerisinde
+bulunmaktadır.<BR>
+<BR>
+Yeni bir geliştiricinin hazırlık <A HREF="#hazirlik">2</A> bölümünde anlatıldığı
+gibi <B>Uludağ</B> deposunu kullanarak bir <EM>Kuluçka Dağıtım</EM>
+kurulumu yapması ve bu canlı sistem üzerinde sorunların çözümü için
+çalışması gerekir.<BR>
+<BR>
+<!--TOC subsection Takip/Temizleme Süreci-->
+
+<H3><A NAME="htoc19">4.1</A>&nbsp;&nbsp;Takip/Temizleme Süreci</H3><!--SEC END -->
+
+Paketlerin sorunlarının temizleme ve takip süreci aşağıdaki adımların
+izlenmesinden oluşacaktır.<BR>
+<BR>
+<!--TOC subsubsection Sorun tespiti-->
+
+<H4><A NAME="htoc20">4.1.1</A>&nbsp;&nbsp;Sorun tespiti</H4><!--SEC END -->
+
+<EM>Kuluçka dağıtım</EM> seçilen tüm yazılımları sağlar bir şekilde
+derleme/test makina(ları)na kurulur ve bu makinalar üzerinde sorunlar
+(yukarıda listelenen problemler göz önüne alınarak) tespit edilir.
+Yazılımlardaki sorunları tek tek ele almak yerine <B>canlı</B><SUP><A NAME="text3" HREF="#note3">3</A></SUP> bir sistem üzerindeki sorunları gözlemleyip çıkarmak öncelikli olarak
+izlenen yoldur.<BR>
+<BR>
+<!--TOC subsubsection Sorunun kaynağının bulunması-->
+
+<H4><A NAME="htoc21">4.1.2</A>&nbsp;&nbsp;Sorunun kaynağının bulunması</H4><!--SEC END -->
+
+Sorun hangi paketten (veya paketlerden) kaynaklanıyor bulunacak. Bu
+aşamada Bugzilla'ya soruna ilişkin bir giriş yapılacak.<BR>
+<BR>
+<!--TOC subsubsection Çözüm araştırması-->
+
+<H4><A NAME="htoc22">4.1.3</A>&nbsp;&nbsp;Çözüm araştırması</H4><!--SEC END -->
+
+Sorunun çözümü için araştırma yapılacak. Tüm bulgular Bugzilla'daki
+hata girişine eklenecek.<BR>
+<BR>
+<!--TOC subsubsection Çözüm-->
+
+<H4><A NAME="htoc23">4.1.4</A>&nbsp;&nbsp;Çözüm</H4><!--SEC END -->
+
+Sorunun çözümü bulunduğunda yine Bugzilla'daki hata girişine çözüm
+önerisi eklenecek.<BR>
+<BR>
+<!--TOC subsubsection Yama-->
+
+<H4><A NAME="htoc24">4.1.5</A>&nbsp;&nbsp;Yama</H4><!--SEC END -->
+
+Çözümü sağlayan yama yapılacak; yama test edilmek üzere Bugzilla'daki
+hata girişine eklenecek.<BR>
+<BR>
+<!--TOC subsubsection Test-->
+
+<H4><A NAME="htoc25">4.1.6</A>&nbsp;&nbsp;Test</H4><!--SEC END -->
+
+Sorunun çözümü test edilecek ve çalıştığından emin olunacak.<BR>
+<BR>
+<!--TOC subsubsection Depoya yerleştir-->
+
+<H4><A NAME="htoc26">4.1.7</A>&nbsp;&nbsp;Depoya yerleştir</H4><!--SEC END -->
+
+Çözümü sağlayan yama depoya koyulacak; Bugzilla'daki hata kapatılacak.<BR>
+<BR>
+<!--TOC subsection Temizlenecek problemler-->
+
+<H3><A NAME="htoc27">4.2</A>&nbsp;&nbsp;Temizlenecek problemler</H3><!--SEC END -->
+
+Paket temizleme aşamasında yazılımların şu problemlerini ele alacağız.
+<OL type=1><LI>
+<B>Utf-8</B> sorunları
+<LI><B>Türkçe çevirileri</B>
+<LI>Uygulama <B>grafikleri</B>
+<LI><B>Ön tanımlı yapılandırma seçenekleri</B> (yerel ayarları dahil)
+<LI>Yazılımların bilinen ve bizim tarafımızdan bulunan <B>hatalar</B>ı
+(buglar).
+<LI><B>Kullanışlılık yamaları</B>.
+</OL>
+<!--TOC subsection Temizleme Önerileri-->
+
+<H3><A NAME="htoc28">4.3</A>&nbsp;&nbsp;Temizleme Önerileri</H3><!--SEC END -->
+
+Yazılımı değiştiren tüm geliştirme yazılımın ana kaynağı (geliştiricisi)
+ile etkileşimli olarak yapılmalıdır. Yapılan tüm iyileştirmenin ana
+kaynağa iletilerek bir sonraki sürümün daha sorunsuz çıkması sonraki
+çalışmalarda geliştiricinin yazılım üzerindeki iş yükünü azaltacaktır.<BR>
+<BR>
+Problem tiplerine bakıldığında, her problem tipi için bazı çalışmaların
+hali hazırda mevcut olduğu görülebilir. Geliştirici problemlerin çözümü
+için çalışırken mevcut emeği en etkin şekilde kullanmayı amaçlamalıdır.<BR>
+<BR>
+Paket sorumlusu, sorumluluğunda olan paketler için eğer bir yerelleştirme
+çalışması yapılmış veya yapılıyor ise bu çalışmaya destek olmalıdır.
+Bununla birlikte yazılımın utf-8 veya Türkçe yerelleri ile ilgili
+sorunları da direkt olarak yazılımın ana geliştiricisi ile birlikte
+çözülmeye çalışılmalıdır. Bunun için tüm problemlerin çözümlerinin
+aranmasında aşağıdaki adımlar işletilebilir.
+<OL type=1><LI>
+Ana geliştiricinin hata raporları incelenir. Eğer orada böyle bir
+hata bildirilmemiş ise ana geliştirici bilgilendirilir.
+<LI>Bulunan hata diğer <B>Uludağ</B> geliştiricilerinin haberdar olabilmeleri
+ve hatanın takibi için <B><EM>http://bugs.uludag.org.tr</EM></B> 'ye
+raporlanır.
+<LI>Problemin çözümü ana geliştiricinin tartışma listelerinde aranabilir.
+</OL>
+<!--TOC subsection Yama Nasıl Uygulanır?-->
+
+<H3><A NAME="htoc29">4.4</A>&nbsp;&nbsp;Yama Nasıl Uygulanır?</H3><!--SEC END -->
+
+Paket temizleme sürecinde bir geliştiricinin yeni bir yamayı depoya
+eklerken izleyeceği ideal yol aşağıdaki adımlarla tarif edilebilir.<BR>
+<BR>
+<!--TOC subsubsection Kaynak kodu al/aç.-->
+
+<H4><A NAME="htoc30">4.4.1</A>&nbsp;&nbsp;Kaynak kodu al/aç.</H4><!--SEC END -->
+
+<B>Gentoo</B>'da ana geliştiricinin kaynak paketleri ön tanımlı
+olarak <EM>/usr/portage/distfiles</EM> altına kopyalanır. Geliştirici,
+yazılımın kaynak kodu ile çalışmak istediğinde bu dizindeki kaynak
+kod dosyasını uygun bir yere açar.<BR>
+<BR>
+Eğer üzerinde çalışılmak istenen kaynak paket <EM>distfiles</EM> dizini
+içerisinde bulunmuyorsa,<BR>
+<BR>
+<B># emerge -f paket_adi</B><BR>
+<BR>
+komutu ile yazılımın kaynak paketinin ve varsa binary halde gelen
+yamalarının indirilmesi sağlanabilir. Kaynak kodun varsa yamaları
+ile birlikte açılmış halini ebuild yazılımı aracılığı ile <EM>/var/tmp/portage/paketadı</EM>
+klasörüne açmak için<BR>
+<BR>
+<B># ebuild paketadı unpack</B><BR>
+<BR>
+komutu kullanılabilir.<BR>
+<BR>
+<!--TOC subsubsection Yamayı hazırla-->
+
+<H4><A NAME="htoc31">4.4.2</A>&nbsp;&nbsp;Yamayı hazırla</H4><!--SEC END -->
+
+Kaynak kod üzerinde gerekli işlemler yapıldıktan sonra, geliştirici
+yaptığı düzenlemeleri bir yama olarak hazırlayabilmek için başka bir
+dizine ana geliştiricinin kaynak kodunu tekrar açar ve yaptığı düzenlemelerin
+farkını alır. Fark alma işlemi için standart Unix aracı diff, -u parametresi
+ile kullanılır.<BR>
+<BR>
+$ diff -u kaynak_dizini_temiz kaynak_dizini<BR>
+<BR>
+<!--TOC subsubsection Yamayı çalışma kopyasına yerleştir.-->
+
+<H4><A NAME="htoc32">4.4.3</A>&nbsp;&nbsp;Yamayı çalışma kopyasına yerleştir.</H4><!--SEC END -->
+
+Geliştirici tarafından üzerinde çalışılan paketin sorunlarını çözmek
+amacı ile uygulanan yamalar çalışma kopyasındaki paketin kendi klasöründe
+bulunan <B>``files''</B> klasörünün içine uygun bir isim ile
+yerleştirilir [ örneğin; paketadı-versiyonu-sorun.patch gibi ].<BR>
+<BR>
+<!--TOC subsubsection Test et.-->
+
+<H4><A NAME="htoc33">4.4.4</A>&nbsp;&nbsp;Test et.</H4><!--SEC END -->
+
+Üzerinde çalışılan paketin ebuild dosyası bir metin düzenleyici ile
+açılır. ebuild'in <B><EM>src_unpack()</EM></B> fonksiyonunun <SUP><A NAME="text4" HREF="#note4">4</A></SUP> <EM>uygun yerine;</EM>
+<UL><LI>
+<B><EM>http://www.gentoo.org/proj/en/devrel/handbook/handbook.xml?part=2&amp;chap=1</EM></B>
+adresinde bulunan bilgiler doğrultusunda<BR>
+<B><EM>``epatch ${FILESDIR}/${P}-sorun.patch''</EM></B>
+satırı 
+</UL>
+yada,
+<UL><LI>
+<B>``epatch files/paketadı-versiyonu-sorun.patch''</B> satırı
+</UL>
+eklenir.<BR>
+<BR>
+Gerekli yama ebuild dosyasına eklendikten sonra paketin kendi klasörü
+içinde <B><EM>``ebuild paketadı.ebuild digest''</EM></B> komutu
+çalıştırılarak paketin kurulması için gerekli olan <B><EM>Manifest</EM></B>
+ve <B><EM>digest-*</EM></B> dosyaları oluşturulur. Bu noktadan sonra
+geliştirici paketi <B><EM>``emerge paketadı''</EM></B> komutu
+ile sisteme kurabilir.<BR>
+<BR>
+<!--TOC subsubsection Ana depoya ekle.-->
+
+<H4><A NAME="htoc34">4.4.5</A>&nbsp;&nbsp;Ana depoya ekle.</H4><!--SEC END -->
+
+Yama geliştiricinin testlerini geçtikten sonra depo içerisine (svn
+commit ile) eklenir.<BR>
+<BR>
+Yama depoya gönderilmeden önce mutlaka çalıştığından emin olunmalıdır.
+Depo her ne kadar sürekli olarak güncelleniyor olsa da, tüm geliştiricilerin
+depo ile sorunsuz bir şekilde çalışabilmeleri için depodaki kaynakların
+her zaman çalışıyor olması gerekir.<BR>
+<BR>
+Başka bir kişinin sorumluluğunda olan bir yazılım için yama hazırlandığında,
+ekleme işleminden önce kaynak paket sorumlusunun onayı alınmalıdır.<BR>
+<BR>
+<!--TOC subsubsection Bugzilla'da ilgili hata girişi kapat.-->
+
+<H4><A NAME="htoc35">4.4.6</A>&nbsp;&nbsp;Bugzilla'da ilgili hata girişi kapat.</H4><!--SEC END -->
+
+Probleme dair uygun yama test edildiğinde geliştirici daha önce problem
+için açılmış olan bugzilla'daki hata girişini kapatır.<BR>
+<BR>
+<!--TOC subsubsection Changelog'a yapılan değişiklik yazılır.-->
+
+<H4><A NAME="htoc36">4.4.7</A>&nbsp;&nbsp;Changelog'a yapılan değişiklik yazılır.</H4><!--SEC END -->
+
+Changelog dosyasına yapılan işlemler kısa birer açıklama ve bugzilla'daki
+hata numarasına referans verilerek eklenir.<BR>
+<BR>
+<!--TOC subsubsection Ana geliştirici yapılan iyileştirmeden haberdar edilir.-->
+
+<H4><A NAME="htoc37">4.4.8</A>&nbsp;&nbsp;Ana geliştirici yapılan iyileştirmeden haberdar edilir.</H4><!--SEC END -->
+
+Bundan sonra geliştirici, bir sonraki sürümün bu iyileştirmeyi içerebilmesi
+için, ana geliştiriciyi yamadan haberdar etmelidir.<BR>
+<BR>
+<!--TOC subsection Yazılım Seçimi ve Sürüm Güncellemeleri Politikası-->
+
+<H3><A NAME="htoc38">4.5</A>&nbsp;&nbsp;Yazılım Seçimi ve Sürüm Güncellemeleri Politikası</H3><!--SEC END -->
+
+Paketler deposu, <EM>kuluçka dağıtım</EM> deposunun <B>Uludağ</B>
+1.0 paketlerini içeren küçük bir kopyasıdır. Buradaki yazılım seçimleri
+yapılmış ve depoya yerleştirilmiştir. Depoda olan paketlerin daha
+güncel kopyaları ile değiştirilmesi kararları paket sorumlusunun insiyatifindedir,
+fakat bu güncel kopyalar seçilen <EM>Kuluçka Dağıtım</EM>'ın kararlı
+paketleri arasından olmalıdır. Eğer paket versiyonunun değişmesi birden
+fazla paketi etkiliyor ise ( örneğin glibc ) bu karar geliştiriciler
+arasında varılacak karara bağlıdır.<BR>
+<BR>
+Kaynak paket sorumlusu bir yazılımın sürüm numarasını güncellediğinde
+uludag/uludag-base veya uludag/uludag-apps ebuild dosyasındaki sürüm
+numarasını da güncellemelidir.
+<!--BEGIN NOTES document-->
+<HR WIDTH="50%" SIZE=1><DL><DT><A NAME="note1" HREF="#text1"><FONT SIZE=5>1</FONT></A><DD>Uludağ 1.0 için yazılım seçimleri,<EM>Uludağ 1.0 Yazılım Seçimleri</EM>dökümanında
+açıklanmıştır.
+<DT><A NAME="note2" HREF="#text2"><FONT SIZE=5>2</FONT></A><DD>Temizleme Sistemi, geliştiricinin Uludağ onaylı kaynak paket hazırlamak
+için kullanacağı sistemi ifade eder.
+<DT><A NAME="note3" HREF="#text3"><FONT SIZE=5>3</FONT></A><DD><B>Canlı Sistem</B>: Dağıtıma girmek üzere seçilen tüm uygulamaları
+üzerinde çalışır vaziyette bulunduran sistem.
+<DT><A NAME="note4" HREF="#text4"><FONT SIZE=5>4</FONT></A><DD>Ebuild'lerin bazıları bu kurala göreceli olarak uyabilir. Örneğin
+glibc için yamalar sayıca fazla olduğundan direkt yama satırını eklemek
+yerine geliştiriciler bu yama setlerini fonksiyon haline getirmiş
+ve src_unpack içinden çağırmayı tercih etmişlerdir.
+</DL>
+<!--END NOTES-->
+</div>
+<!-- SAYFA İÇERİK SONU -->
+
+<!-- yayın hakkı -->
+<br>
+<br>
+<p class="not">
+Information and documents on Uludağ Project web pages can be used freely anywhere with original source credit.
+<em><br>
+<strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
+For information and suggestion(s) please write to <a href="mailto:bilgi%20at%20uludag.org.tr">bilgi
+at uludag.org.tr</a>
+</p>
+<br>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
