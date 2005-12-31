@@ -50,10 +50,6 @@ public:
     KCModule* module() const;
 
 private:
-    virtual void resizeEvent( QResizeEvent *e ) {
-	QScrollView::resizeEvent( e );
-    }
-
     ContentWidget *contentWidget;
     QVBoxLayout *vbox;
     KCModule *_module;
