@@ -70,6 +70,7 @@ TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon
 
     _back = new KPushButton( KGuiItem( i18n( "&Back" ), "back" ), this );
     _back->setFixedSize( _back->sizeHint() );
+    _back->setDefault(true);
 
     _default = new KPushButton( KStdGuiItem::defaults(), this );
     _default->setFixedSize( _default->sizeHint() );

@@ -137,10 +137,17 @@ void TIconView::startDrag()
 }
 
 TIconView::~TIconView()
-{
+{   
 }
 
+void TIconView::keyPressEvent(QKeyEvent* event)
+{
+    if( event->key() & Qt::Key_Return || event->key() & Qt::Key_Enter )
+        slotItemSelected(currentItem());
 
+    QIconView::keyPressEvent(event);
+}
+    
 TIconViewItem::TIconViewItem( TIconView *parent, const QString& text,
                               const QPixmap& icon, KCModuleInfo* moduleinfo)
     : KIconViewItem( parent, text, icon )
