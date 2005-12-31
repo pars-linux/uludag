@@ -57,10 +57,10 @@ protected slots:
     void slotItemSelected( QIconViewItem* item );
 
 protected:
-    virtual void keyPressEvent( QKeyEvent * e);
-    void contentsMouseDoubleClickEvent (QMouseEvent *event);
-    void contentsMousePressEvent(QMouseEvent* event);
-    void contentsMouseMoveEvent(QMouseEvent* event);
+    virtual void keyPressEvent(QKeyEvent *event);
+    virtual void contentsMouseDoubleClickEvent (QMouseEvent *event);
+    virtual void contentsMousePressEvent(QMouseEvent* event);
+    virtual void contentsMouseMoveEvent(QMouseEvent* event);
 
 private:
     KCModule* _module;
