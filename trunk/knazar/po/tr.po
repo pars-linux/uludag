@@ -71,7 +71,7 @@ msgstr "KNazar Pardus Linux'un çok önemli bir parçasıdır."
 
 #: main.cpp:30
 msgid "KDE Nazar Application"
-msgstr "KDE Naza Uygulaması"
+msgstr "KDE Nazar Uygulaması"
 
 #: main.cpp:41
 msgid "knazar"
