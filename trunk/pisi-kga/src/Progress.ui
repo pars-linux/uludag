@@ -12,6 +12,9 @@
             <height>167</height>
         </rect>
     </property>
+    <property name="caption">
+        <string>Progress</string>
+    </property>
     <property name="modal">
         <bool>true</bool>
     </property>
@@ -46,7 +49,7 @@
                 <cstring>sizeLabel</cstring>
             </property>
             <property name="text">
-                <string>&lt;b&gt;Downloaded/Rest:&lt;/b&gt; Unknown</string>
+                <string>&lt;b&gt;Downloaded/Total:&lt;/b&gt; Unknown</string>
             </property>
         </widget>
         <widget class="QLabel" row="2" column="1">
