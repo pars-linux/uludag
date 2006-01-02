@@ -177,7 +177,7 @@ class Widget(QVBox):
                     return
                 devs = reply[2].split("\n")
                 for dev in devs:
-                    uid, rest = reply[2].split(" ", 1)
+                    uid, rest = dev.split(" ", 1)
                     name = self.uniqueName()
                     self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
             elif reply[1] == 42:
