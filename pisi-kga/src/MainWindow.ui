@@ -545,58 +545,6 @@ Program Version: Bar</string>
                 </sizepolicy>
             </property>
         </widget>
-        <widget class="QWidgetStack" row="0" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>widgetStack5</cstring>
-            </property>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>WStackPage</cstring>
-                </property>
-                <attribute name="id">
-                    <number>0</number>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QLabel" row="0" column="0">
-                        <property name="name">
-                            <cstring>textLabel2</cstring>
-                        </property>
-                        <property name="paletteForegroundColor">
-                            <color>
-                                <red>18</red>
-                                <green>34</green>
-                                <blue>144</blue>
-                            </color>
-                        </property>
-                        <property name="paletteBackgroundColor">
-                            <color>
-                                <red>201</red>
-                                <green>201</green>
-                                <blue>201</blue>
-                            </color>
-                        </property>
-                        <property name="font">
-                            <font>
-                                <pointsize>18</pointsize>
-                                <bold>1</bold>
-                            </font>
-                        </property>
-                        <property name="frameShape">
-                            <enum>NoFrame</enum>
-                        </property>
-                        <property name="frameShadow">
-                            <enum>Plain</enum>
-                        </property>
-                        <property name="text">
-                            <string>Add, Upgrade or Remove Packages</string>
-                        </property>
-                    </widget>
-                </grid>
-            </widget>
-        </widget>
         <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout9</cstring>
