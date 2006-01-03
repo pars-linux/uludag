@@ -77,7 +77,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
         self.errorMessage = None
-        self.savedProgress = 0
         self.oldFilename = None
         self.updatedRepo = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
@@ -220,7 +219,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.errorMessage = None
 
     def resetProgressBar(self):
-        self.savedProgress = 0
         self.pDialog.progressBar.setProgress(0)
         self.pDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
