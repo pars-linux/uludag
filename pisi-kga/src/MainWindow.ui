@@ -19,9 +19,103 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QWidgetStack" row="1" column="0">
+        <widget class="KSeparator" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>kSeparator1</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>1</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>5</verstretch>
+                </sizepolicy>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout9</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>helpButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Help</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>440</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout9</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>installOrRemoveButton</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>Install Package(s)</string>
+                            </property>
+                            <property name="accel">
+                                <string></string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>closeButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Quit</string>
+                            </property>
+                            <property name="autoDefault">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QWidgetStack" row="0" column="0">
             <property name="name">
                 <cstring>widgetStack3</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>7</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
             </property>
             <widget class="QWidget">
                 <property name="name">
@@ -165,14 +259,6 @@
                                 <property name="name">
                                     <cstring>listView</cstring>
                                 </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>7</hsizetype>
-                                        <vsizetype>7</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
                                 <property name="allColumnsShowFocus">
                                     <bool>true</bool>
                                 </property>
@@ -205,7 +291,7 @@
                 </grid>
             </widget>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="1">
+        <widget class="QLayoutWidget" row="0" column="1">
             <property name="name">
                 <cstring>layout8</cstring>
             </property>
@@ -316,7 +402,7 @@
                     </property>
                     <property name="sizePolicy">
                         <sizepolicy>
-                            <hsizetype>5</hsizetype>
+                            <hsizetype>7</hsizetype>
                             <vsizetype>7</vsizetype>
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
@@ -532,92 +618,6 @@ Program Version: Bar</string>
                 </widget>
             </vbox>
         </widget>
-        <widget class="KSeparator" row="2" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>kSeparator1</cstring>
-            </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>1</hsizetype>
-                    <vsizetype>0</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>5</verstretch>
-                </sizepolicy>
-            </property>
-        </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout9</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>helpButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Help</string>
-                    </property>
-                </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer3</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>440</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout9</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="KPushButton">
-                            <property name="name">
-                                <cstring>installOrRemoveButton</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>Install Package(s)</string>
-                            </property>
-                            <property name="accel">
-                                <string></string>
-                            </property>
-                            <property name="autoDefault">
-                                <bool>true</bool>
-                            </property>
-                        </widget>
-                        <widget class="KPushButton">
-                            <property name="name">
-                                <cstring>closeButton</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Quit</string>
-                            </property>
-                            <property name="autoDefault">
-                                <bool>true</bool>
-                            </property>
-                        </widget>
-                    </hbox>
-                </widget>
-            </hbox>
-        </widget>
     </grid>
 </widget>
 <connections>
@@ -646,14 +646,14 @@ Program Version: Bar</string>
 <layoutdefaults spacing="6" margin="11"/>
 <layoutfunctions spacing="KDialog.spacingHint" margin="KDialog.marginHint"/>
 <includehints>
+    <includehint>kseparator.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>ktextbrowser.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kseparator.h</includehint>
-    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
 </includehints>
