@@ -282,7 +282,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             size_string = str(size)+ i18n(" Byte")
 
-        self.moreInfoLabelDetails.setText(i18n("Program Version :")+" <b>"+self.package.version+"</b><br>"+i18n("Program Size :")+"<b> "+size_string+"</b>")
+        self.moreInfoLabelDetails.setText(i18n("Program Version :")+QString(" <b>")+QString(self.package.version)+QString("</b><br>")+i18n("Program Size :")+QString("<b> ")+QString(size_string)+QString("</b>"))
             
     def updateButtons(self, listViewItem=None):
 
