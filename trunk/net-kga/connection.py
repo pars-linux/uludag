@@ -89,8 +89,7 @@ class Address(QVBox):
         g.addWidget(self.r2, 1, 0, g.AlignTop)
         group.insert(self.r2, 1)
         
-        g2 = QGridLayout(2, 2, 6)
-        g.addLayout(g2, 1, 1)
+        g2 = QGridLayout(g, 2, 2, 6)
         
         lab = QLabel(i18n("Address:"), box)
         g2.addWidget(lab, 0, 0)
@@ -101,7 +100,7 @@ class Address(QVBox):
         g2.addWidget(lab, 1, 0)
         self.gateway = widgets.Edit(box)
         g2.addWidget(self.gateway, 1, 1)
-
+        
         self.slotSwitch("auto")
     
     def slotClicked(self, id):
@@ -169,8 +168,6 @@ class BasicTab(QVBox):
         
         self.address = Address(self)
         self.address.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        
-        #self.layout().insertStretch(-1)
 
 
 class Window(QMainWindow):
@@ -192,9 +189,6 @@ class Window(QMainWindow):
         
         self.basic = BasicTab(tab)
         tab.addTab(self.basic, i18n("Basic"))
-        
-        self.auth = AuthTab(tab)
-        tab.addTab(self.auth, i18n("Authentication"))
         
         hb = QHBox(vb)
         hb.setSpacing(12)
@@ -309,8 +303,11 @@ class Window(QMainWindow):
                     self.comar.call_package("Net.Link.getRemote", self.link_name, [ "name", self.name ], id=5)
                 if not "scan" in self.modes:
                     self.basic.device.remote_scan.hide()
-                if not "loginauth" in self.modes:
-                    self.tab.removePage(self.tab.page(1))
+                
+                if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
+                    self.auth = AuthTab(self.tab)
+                    self.tab.addTab(self.auth, i18n("Authentication"))
+                
                 if not "net" in self.modes:
                     self.basic.address.setEnabled(False)
                 if "loginauth" in self.modes:
