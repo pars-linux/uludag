@@ -180,6 +180,7 @@ class Widget(QVBox):
                     uid, rest = dev.split(" ", 1)
                     name = self.uniqueName()
                     self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
+                    Connection(self.links, self.comar, name, reply[3])
             elif reply[1] == 42:
                 links.slotComar(reply)
             elif reply[1] > 42:
