@@ -11,6 +11,7 @@
 
 from qt import *
 from kdecore import *
+from kdeui import *
 import stack
 import connection
 from links import links
@@ -250,7 +251,7 @@ class Widget(QVBox):
         m = i18n("Should I delete the\n'%s'\nconnection?")
         conn = self.links.selectedItem()
         if conn:
-            if QMessageBox.Ok == QMessageBox.question(self, i18n("Delete connection?"), unicode(m) % conn.name, QMessageBox.Ok, QMessageBox.Cancel):
+            if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % conn.name, i18n("Delete connection?")):
                 self.comar.call_package("Net.Link.deleteConnection", conn.link_name, [ "name", conn.name ])
     
     def slotConnect(self):
