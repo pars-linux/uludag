@@ -13,11 +13,13 @@ from qt import *
 
 
 class Edit(QHBox):
-    def __init__(self, parent):
+    def __init__(self, parent, is_password=False):
         QHBox.__init__(self, parent)
         
         self.edit = QLineEdit(self)
         self.setStretchFactor(self.edit, 3)
+        if is_password:
+            self.edit.setEchoMode(QLineEdit.Password)
         
         self.layout().insertStretch(-1, 2)
 
