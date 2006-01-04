@@ -17,54 +17,75 @@ import comar
 
 
 class AuthTab(QWidget):
-    def __init__(self, parent):
+    def __init__(self, parent, modes):
         QWidget.__init__(self, parent)
-        g = QGridLayout(self, 4, 2, 6)
+        self.modes = modes
+        
+        g = QGridLayout(self, 5, 3, 6, 6)
         
         group = QButtonGroup()
         self.group = group
         group.setExclusive(True)
+        self.connect(group, SIGNAL("clicked(int)"), self.slotClicked)
         
         r1 = QRadioButton(i18n("No authentication"), self)
-        g.addMultiCellWidget(r1, 0, 0, 0, 1, g.AlignTop)
+        g.addMultiCellWidget(r1, 0, 0, 0, 2)
         group.insert(r1, 0)
         
         r2 = QRadioButton(i18n("Passphrase:"), self)
-        g.addWidget(r2, 1, 0, g.AlignTop)
+        g.addWidget(r2, 1, 0)
         group.insert(r2, 1)
         
-        self.phrase = widgets.Edit(self)
-        g.addWidget(self.phrase, 1, 1, g.AlignTop)
+        self.phrase = widgets.Edit(self, True)
+        g.addMultiCellWidget(self.phrase, 1, 1, 1, 2)
         
         r3 = QRadioButton(i18n("Login"), self)
-        g.addWidget(r3, 2, 0, g.AlignTop)
+        g.addWidget(r3, 2, 0)
         group.insert(r3, 2)
         
-        g2 = QGridLayout(2, 2, 6)
-        g.addLayout(g2, 2, 1)
-        
         lab = QLabel(i18n("Name:"), self)
-        g2.addWidget(lab, 0, 0)
+        g.addWidget(lab, 2, 1, Qt.AlignRight)
         
         self.name = widgets.Edit(self)
-        g2.addWidget(self.name, 0, 1)
+        g.addWidget(self.name, 2, 2)
+        
+        lab = QLabel("", self)
+        lab.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
+        g.addWidget(lab, 3, 0)
         
         lab = QLabel(i18n("Password:"), self)
-        g2.addWidget(lab, 1, 0)
+        g.addWidget(lab, 3, 1, Qt.AlignRight)
         
-        self.password = widgets.Edit(self)
-        g2.addWidget(self.password, 1, 1)
+        self.password = widgets.Edit(self, True)
+        g.addWidget(self.password, 3, 2)
         
         r4 = QRadioButton(i18n("Key"), self)
-        g.addMultiCellWidget(r4, 3, 3, 0, 1, g.AlignTop)
+        g.addMultiCellWidget(r4, 4, 4, 0, 2)
         group.insert(r4, 3)
         
-        # what a hack #2
-        r1.setEnabled(False)
-        r2.setEnabled(False)
-        self.phrase.setEnabled(False)
-        r3.setChecked(True)
-        r4.setEnabled(False)
+        if not "passauth" in modes:
+            r2.setEnabled(False)
+        if not "loginauth" in modes:
+            r3.setEnabled(False)
+        if not "keyauth" in modes:
+            r4.setEnabled(False)
+        
+        self.slotClicked(0)
+        r1.setChecked(True)
+    
+    def slotClicked(self, id):
+        if id == 0:
+            self.phrase.setEnabled(False)
+            self.name.setEnabled(False)
+            self.password.setEnabled(False)
+        elif id == 1:
+            self.phrase.setEnabled(True)
+            self.name.setEnabled(False)
+            self.password.setEnabled(False)
+        elif id == 2:
+            self.phrase.setEnabled(False)
+            self.name.setEnabled(True)
+            self.password.setEnabled(True)
 
 
 class Address(QVBox):
@@ -74,7 +95,7 @@ class Address(QVBox):
         widgets.HLine(i18n("Network:"), self)
         
         box = QWidget(self)
-        g = QGridLayout(box, 2, 2, 6)
+        g = QGridLayout(box, 3, 2, 6)
         
         group = QButtonGroup()
         self.group = group
@@ -82,24 +103,22 @@ class Address(QVBox):
         self.connect(group, SIGNAL("clicked(int)"), self.slotClicked)
         
         self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), box)
-        g.addMultiCellWidget(self.r1, 0, 0, 0, 1)
+        g.addMultiCellWidget(self.r1, 0, 0, 0, 2)
         group.insert(self.r1, 0)
         
         self.r2 = QRadioButton(i18n("Manual"), box)
-        g.addWidget(self.r2, 1, 0, g.AlignTop)
+        g.addWidget(self.r2, 1, 0)
         group.insert(self.r2, 1)
         
-        g2 = QGridLayout(g, 2, 2, 6)
-        
         lab = QLabel(i18n("Address:"), box)
-        g2.addWidget(lab, 0, 0)
+        g.addWidget(lab, 1, 1, Qt.AlignRight)
         self.address = widgets.Edit(box)
-        g2.addWidget(self.address, 0, 1)
+        g.addWidget(self.address, 1, 2)
         
         lab = QLabel(i18n("Gateway:"), box)
-        g2.addWidget(lab, 1, 0)
+        g.addWidget(lab, 2, 1, Qt.AlignRight)
         self.gateway = widgets.Edit(box)
-        g2.addWidget(self.gateway, 1, 1)
+        g.addWidget(self.gateway, 2, 2)
         
         self.slotSwitch("auto")
     
@@ -305,7 +324,7 @@ class Window(QMainWindow):
                     self.basic.device.remote_scan.hide()
                 
                 if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
-                    self.auth = AuthTab(self.tab)
+                    self.auth = AuthTab(self.tab, self.modes)
                     self.tab.addTab(self.auth, i18n("Authentication"))
                 
                 if not "net" in self.modes:

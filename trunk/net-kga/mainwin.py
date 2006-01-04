@@ -207,6 +207,12 @@ class Widget(QVBox):
                     conn = self.findConn(name)
                     if conn:
                         self.links.removeItem(self.links.index(conn))
+                elif mode == "gotaddress":
+                    name, addr = name.split("\n", 1)
+                    conn = self.findConn(name)
+                    if conn:
+                        conn.address = addr
+                        self.links.updateItem(conn)
                 elif mode == "configured":
                     type, name = name.split(" ", 1)
                     if type == "device":
