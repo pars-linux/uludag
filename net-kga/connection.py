@@ -29,10 +29,12 @@ class AuthTab(QWidget):
         self.connect(group, SIGNAL("clicked(int)"), self.slotClicked)
         
         r1 = QRadioButton(i18n("No authentication"), self)
+        self.r1 = r1
         g.addMultiCellWidget(r1, 0, 0, 0, 2)
         group.insert(r1, 0)
         
         r2 = QRadioButton(i18n("Passphrase:"), self)
+        self.r2 = r2
         g.addWidget(r2, 1, 0)
         group.insert(r2, 1)
         
@@ -40,11 +42,12 @@ class AuthTab(QWidget):
         g.addMultiCellWidget(self.phrase, 1, 1, 1, 2)
         
         r3 = QRadioButton(i18n("Login"), self)
+        self.r3 = r3
         g.addWidget(r3, 2, 0)
         group.insert(r3, 2)
         
-        lab = QLabel(i18n("Name:"), self)
-        g.addWidget(lab, 2, 1, Qt.AlignRight)
+        lab1 = QLabel(i18n("Name:"), self)
+        g.addWidget(lab1, 2, 1, Qt.AlignRight)
         
         self.name = widgets.Edit(self)
         g.addWidget(self.name, 2, 2)
@@ -53,13 +56,14 @@ class AuthTab(QWidget):
         lab.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
         g.addWidget(lab, 3, 0)
         
-        lab = QLabel(i18n("Password:"), self)
-        g.addWidget(lab, 3, 1, Qt.AlignRight)
+        lab2 = QLabel(i18n("Password:"), self)
+        g.addWidget(lab2, 3, 1, Qt.AlignRight)
         
         self.password = widgets.Edit(self, True)
         g.addWidget(self.password, 3, 2)
         
         r4 = QRadioButton(i18n("Key"), self)
+        self.r4 = r4
         g.addMultiCellWidget(r4, 4, 4, 0, 2)
         group.insert(r4, 3)
         
@@ -67,11 +71,12 @@ class AuthTab(QWidget):
             r2.setEnabled(False)
         if not "loginauth" in modes:
             r3.setEnabled(False)
+            lab1.setEnabled(False)
+            lab2.setEnabled(False)
         if not "keyauth" in modes:
             r4.setEnabled(False)
         
-        self.slotClicked(0)
-        r1.setChecked(True)
+        self.slotSwitch(0)
     
     def slotClicked(self, id):
         if id == 0:
@@ -86,6 +91,17 @@ class AuthTab(QWidget):
             self.phrase.setEnabled(False)
             self.name.setEnabled(True)
             self.password.setEnabled(True)
+    
+    def slotSwitch(self, id):
+        if id == 0:
+            self.r1.setChecked(True)
+        elif id == 1:
+            self.r2.setChecked(True)
+        elif id == 2:
+            self.r3.setChecked(True)
+        elif id == 3:
+            self.r4.setChecked(True)
+        self.slotClicked(id)
 
 
 class Address(QVBox):
@@ -270,11 +286,23 @@ class Window(QMainWindow):
             self.comar.call_package("Net.Link.setRemote", self.link_name, [
                 "name", name, "remote", remote ], id)
         self.count = 3
-        if "loginauth" in self.modes:
-            u1 = unicode(self.auth.name.edit.text())
-            u2 = unicode(self.auth.password.edit.text())
-            self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
-                "name", name, "user", u1, "password", u2 ], id)
+        if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
+            r = self.auth.group.selectedId()
+            if r == 0:
+                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
+                    "name", name, "user", "", "password", "", "key", "" ], id)
+            elif r == 1:
+                u1 = unicode(self.auth.phrase.edit.text())
+                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
+                    "name", name, "user", "", "password", u1, "key", "" ], id)
+            elif r == 2:
+                u1 = unicode(self.auth.name.edit.text())
+                u2 = unicode(self.auth.password.edit.text())
+                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
+                    "name", name, "user", u1, "password", u2, "key", "" ], id)
+            elif r == 3:
+                # FIXME: key
+                pass
             self.count += 1
     
     def slotScan(self):
@@ -326,11 +354,10 @@ class Window(QMainWindow):
                 if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
                     self.auth = AuthTab(self.tab, self.modes)
                     self.tab.addTab(self.auth, i18n("Authentication"))
+                    self.comar.call_package("Net.Link.getAuthentication", self.link_name, [ "name", self.name ], id=7)
                 
                 if not "net" in self.modes:
                     self.basic.address.setEnabled(False)
-                if "loginauth" in self.modes:
-                    self.comar.call_package("Net.Link.getAuthentication", self.link_name, [ "name", self.name ], id=7)
             elif reply[1] == 4:
                 name, uid, info = reply[2].split("\n")
                 self.device = uid
@@ -347,6 +374,16 @@ class Window(QMainWindow):
                 for item in reply[2].split("\n"):
                     self.w_remote.insertItem(item)
             elif reply[1] == 7:
-                name, type, user, password = reply[2].split("\n", 3)
-                self.auth.name.edit.setText(user)
-                self.auth.password.edit.setText(password)
+                name, type = reply[2].split("\n", 1)
+                if type == "none":
+                    self.auth.slotSwitch(0)
+                else:
+                    type, rest = type.split("\n", 1)
+                    if type == "passauth":
+                        self.auth.slotSwitch(1)
+                        self.auth.phrase.edit.setText(rest)
+                    elif type == "loginauth":
+                        user, password = rest.split("\n", 1)
+                        self.auth.slotSwitch(2)
+                        self.auth.name.edit.setText(user)
+                        self.auth.password.edit.setText(password)
