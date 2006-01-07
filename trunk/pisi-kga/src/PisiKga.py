@@ -157,15 +157,15 @@ class MainApplicationWidget(MainWindow.MainWindow):
         # Now, pisi commands
         elif eventType < PisiCommand.LastEntry :
             if eventType == PisiCommand.AddRepo:
-                repoName = event.data().split(' ')[0]
-                repoAddress = event.data().split(' ')[1]
+                data = event.data()
+                repoName = data[0]
+                repoAddress = data[1]
                 self.command.addRepo(repoName,repoAddress)
             elif eventType == PisiCommand.RemoveRepo:
                 self.command.removeRepo(event.data())
             elif eventType == PisiCommand.SwapRepos:
-                repo1 = event.data().split(' ')[0]
-                repo2 = event.data().split(' ')[1]
-                self.command.swapRepos(int(repo1),int(repo2))
+                data = event.data()
+                self.command.swapRepos(data[0],data[1])
             elif eventType == PisiCommand.UpdateSingleRepo:
                 self.command.updateRepo(event.data())
             elif eventType == PisiCommand.UpdateAllRepos:
