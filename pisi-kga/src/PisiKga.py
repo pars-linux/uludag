@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005,2006 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -58,7 +58,7 @@ def AboutData():
     
     about_data = KAboutData("pisi_kga", "PiSi KGA", version, \
                             description, KAboutData.License_GPL,
-                            "(C) 2005 UEKAE/TÜBİTAK", None, None, "ismail@uludag.org.tr")
+                            "(C) 2005,2006 UEKAE/TÜBİTAK", None, None, "ismail@uludag.org.tr")
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@uludag.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@uludag.org.tr")
@@ -215,7 +215,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             KMessageBox.error(self, self.errorMessage, i18n("PiSi Error"))
 
-        self.updateListing()
+        self.installRemoveFinished()
         self.errorMessage = None
 
     def resetProgressBar(self):
@@ -337,7 +337,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         list = filter(lambda x: x in self.shownPackages, list)
     
         self.packageList = list
-        self.selectedItems = []
 
         self.updateButtons()
         self.updateSelectionInfo()
@@ -378,6 +377,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     continue   # do not show if not an app
             if not nonPrivMode:
                 item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
+                if item.text(0) in self.selectedItems:
+                    item.setOn(True)
             else:
                 item = QListViewItem(parent,pack)
             item.setText(1,package.version)
@@ -445,7 +446,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def installRemoveFinished(self):
         self.selectedItems = []
-        self.installOrRemoveButton.setEnabled(True)
+        self.totalSelectedSize = 0
+        self.installOrRemoveButton.setEnabled(False)
         self.updateListing()
         
     def installSinglePackage(self,package):
