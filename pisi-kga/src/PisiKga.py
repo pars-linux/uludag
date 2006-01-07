@@ -131,12 +131,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
             elif eventType == CustomEvent.AskConfirmation:
                 self.showConfirm()
             elif eventType == CustomEvent.UpdateProgress:
-                self.filename = event.data().section(' ',0,0)
-                self.percent = event.data().section(' ',1,1).toInt()[0]
-                self.rate = int(str(event.data().section(' ',2,2)).split('.')[0])
-                self.symbol = event.data().section(' ',3,3)
-                self.downloaded = event.data().section(' ',4,4).toInt()[0]
-                self.totalsize = event.data().section(' ',5,5).toInt()[0]
+                args = event.data()
+                self.filename = args["filename"]
+                self.percent = args["percent"]
+                self.rate = round(args["rate"],1)
+                self.symbol = args["symbol"]
+                self.downloaded = args["downloaded_size"]
+                self.totalsize = args["total_size"]
                 self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
             elif eventType == CustomEvent.UpdateListing:
                 self.updateListing()
@@ -228,7 +229,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if rate < 0:
             rate = 0
 
-        if filename.endsWith(".pisi"):
+        if filename.endswith(".pisi"):
             self.pDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)').arg(self.currentOperation).arg(filename).arg(str(self.index)).arg(self.totalApps))
         else:
             self.totalAppCount = 1
@@ -237,11 +238,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
         if downloaded_size >= 1024*1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 MB / %2 MB').arg(round(float(downloaded_size)/float(1024*1024),2)).arg(round(float(total_size)/float(1024*1024)),2))
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 MB / %2 MB').arg(round(float(downloaded_size)/float(1024*1024),1)).arg(round(float(total_size)/float(1024*1024)),1))
         elif downloaded_size >= 1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 KB / %2 KB').arg(round(float(downloaded_size)/float(1024),2)).arg(round(float(total_size)/float(1024)),2))
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 KB / %2 KB').arg(round(float(downloaded_size)/float(1024),1)).arg(round(float(total_size)/float(1024)),1))
         else:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 Bytes / %2 Bytes').arg(round(downloaded_size,2)).arg(round(total_size,2)))
+            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 Bytes / %2 Bytes').arg(round(downloaded_size,1)).arg(round(total_size,1)))
         
         self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
