@@ -109,6 +109,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def customEvent(self, event):
         
         eventType = event.type()
+        eventData = event.data()
 
         # First, notification events
         if eventType < CustomEvent.LastEntry :
@@ -120,35 +121,34 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     self.currentOperation = i18n("removing")
             elif eventType == CustomEvent.RepositoryUpdate: 
                 self.pDialog.setCaption(i18n("Updating repositories"))
-                self.updatedRepo = event.data()
+                self.updatedRepo = eventData
                 self.pDialog.show()
             elif eventType == CustomEvent.PisiWarning:
-                KMessageBox.information(self,event.data(),i18n("Pisi Info"))
+                KMessageBox.information(self,eventData,i18n("Pisi Info"))
             elif eventType == CustomEvent.PisiError:
-                self.pisiError(event.data())
+                self.pisiError(eventData)
             elif eventType == CustomEvent.PisiInfo:
-                self.operationInfo = event.data()
+                self.operationInfo = eventData
             elif eventType == CustomEvent.AskConfirmation:
                 self.showConfirm()
             elif eventType == CustomEvent.UpdateProgress:
-                args = event.data()
-                self.filename = args["filename"]
-                self.percent = args["percent"]
-                self.rate = round(args["rate"],1)
-                self.symbol = args["symbol"]
-                self.downloaded = args["downloaded_size"]
-                self.totalsize = args["total_size"]
+                self.filename = eventData["filename"]
+                self.percent = eventData["percent"]
+                self.rate = round(eventData["rate"],1)
+                self.symbol = eventData["symbol"]
+                self.downloaded = eventData["downloaded_size"]
+                self.totalsize = eventData["total_size"]
                 self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
             elif eventType == CustomEvent.UpdateListing:
                 self.updateListing()
             elif eventType == CustomEvent.PisiNotify:
-                if event.data() in ["installed","upgraded","removed"]:
+                if eventData in ["installed","upgraded","removed"]:
                     self.index += 1
-                elif isinstance(event.data(),list):
-                    self.packagesOrder = event.data()
+                elif isinstance(eventData,list):
+                    self.packagesOrder = eventData
                     self.totalApps = len(self.packagesOrder)
-                elif event.data() and self.operation != "remove":
-                    self.currentOperation = event.data()
+                elif eventData and self.operation != "remove":
+                    self.currentOperation = eventData
                     self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
                 
             elif eventType == CustomEvent.NewRepoAdded:
@@ -157,22 +157,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
         # Now, pisi commands
         elif eventType < PisiCommand.LastEntry :
             if eventType == PisiCommand.AddRepo:
-                data = event.data()
-                repoName = data[0]
-                repoAddress = data[1]
-                self.command.addRepo(repoName,repoAddress)
+                self.command.addRepo(eventData[0],eventData[1])
             elif eventType == PisiCommand.RemoveRepo:
-                self.command.removeRepo(event.data())
+                self.command.removeRepo(eventData)
             elif eventType == PisiCommand.SwapRepos:
-                data = event.data()
-                self.command.swapRepos(data[0],data[1])
+                self.command.swapRepos(eventData[0],eventData[1])
             elif eventType == PisiCommand.UpdateSingleRepo:
-                self.command.updateRepo(event.data())
+                self.command.updateRepo(eventData)
             elif eventType == PisiCommand.UpdateAllRepos:
                 self.command.updateAllRepos()
         # Rest
         else:
-            print 'Unhandled event:',event.type()
+            print 'Unhandled event:',eventType,'with data',eventData
     
     def showConfirm(self):
         self.confirmed = KMessageBox.questionYesNo(self, self.operationInfo, i18n("PiSi Info"))
