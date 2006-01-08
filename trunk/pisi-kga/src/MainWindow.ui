@@ -206,7 +206,7 @@
                                                     <comment>Enter package name or search terms here</comment>
                                                 </property>
                                             </widget>
-                                            <widget class="QPushButton">
+                                            <widget class="KPushButton">
                                                 <property name="name">
                                                     <cstring>searchButton</cstring>
                                                 </property>

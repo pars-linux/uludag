@@ -86,7 +86,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QPushButton">
+                <widget class="KPushButton">
                     <property name="name">
                         <cstring>showButton</cstring>
                     </property>
@@ -130,7 +130,7 @@
                 </size>
             </property>
         </spacer>
-        <widget class="QPushButton" row="4" column="1">
+        <widget class="KPushButton" row="4" column="1">
             <property name="name">
                 <cstring>pushButton2</cstring>
             </property>
