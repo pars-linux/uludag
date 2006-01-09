@@ -14,6 +14,7 @@ from kdecore import i18n
 from links import links
 import widgets
 import comar
+import csapi
 
 
 class AuthTab(QWidget):
@@ -111,7 +112,7 @@ class Address(QVBox):
         widgets.HLine(i18n("Network:"), self)
         
         box = QWidget(self)
-        g = QGridLayout(box, 3, 2, 6)
+        g = QGridLayout(box, 4, 2, 6)
         
         group = QButtonGroup()
         self.group = group
@@ -129,22 +130,61 @@ class Address(QVBox):
         lab = QLabel(i18n("Address:"), box)
         g.addWidget(lab, 1, 1, Qt.AlignRight)
         self.address = widgets.Edit(box)
+        self.connect(self.address.edit, SIGNAL("textChanged(const QString &)"), self.slotMask)
         g.addWidget(self.address, 1, 2)
         
-        lab = QLabel(i18n("Gateway:"), box)
+        lab = QLabel(i18n("Net mask:"), box)
         g.addWidget(lab, 2, 1, Qt.AlignRight)
+        self.netmask = widgets.Edit(box)
+        g.addWidget(self.netmask, 2, 2)
+        
+        lab = QLabel(i18n("Gateway:"), box)
+        g.addWidget(lab, 3, 1, Qt.AlignRight)
         self.gateway = widgets.Edit(box)
-        g.addWidget(self.gateway, 2, 2)
+        g.addWidget(self.gateway, 3, 2)
         
         self.slotSwitch("auto")
+    
+    def maskOK(self, mask):
+        if mask == "":
+            return True
+        m = mask.split(".")
+        if len(m) != 4:
+            return False
+        if m[0] != "255":
+            return False
+        if m[1] != "255" and m[1] != "0":
+            return False
+        if m[2] != "255" and m[2] != "0":
+            return False
+        if m[3] != "255" and m[3] != "0":
+            return False
+        return True
+    
+    def slotMask(self, addr):
+        addr = unicode(addr)
+        mask = self.netmask.edit
+        if "." in addr:
+            cl = csapi.atoi(addr.split(".", 1)[0])
+            m = unicode(mask.text())
+            if not self.maskOK(m):
+                return
+            if cl > 0 and cl < 127:
+                mask.setText("255.0.0.0")
+            elif cl > 127 and cl < 192:
+                mask.setText("255.255.0.0")
+            elif cl > 191 and cl < 224:
+                mask.setText("255.255.255.0")
     
     def slotClicked(self, id):
         if id == 0:
             self.address.setEnabled(False)
             self.gateway.setEnabled(False)
+            self.netmask.setEnabled(False)
         elif id == 1:
             self.address.setEnabled(True)
             self.gateway.setEnabled(True)
+            self.netmask.setEnabled(True)
     
     def slotSwitch(self, mode):
         if mode == "manual":
@@ -273,6 +313,7 @@ class Window(QMainWindow):
         self.name = name
         device = self.device_list[str(self.basic.device.device.currentText())]
         address = self.basic.address.address.edit.text()
+        netmask = self.basic.address.netmask.edit.text()
         gateway = self.basic.address.gateway.edit.text()
         self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ], id)
         if self.basic.address.r1.isChecked():
@@ -280,7 +321,7 @@ class Window(QMainWindow):
                 "name", name, "mode", "auto" ], id)
         else:
             self.comar.call_package("Net.Link.setAddress", self.link_name, [
-                "name", name, "mode", "manual", "address", address, "gateway", gateway ], id)
+                "name", name, "mode", "manual", "address", address, "mask", netmask, "gateway", gateway ], id)
         if "remote" in self.modes:
             remote = self.basic.device.remote.currentText()
             self.comar.call_package("Net.Link.setRemote", self.link_name, [
@@ -335,10 +376,15 @@ class Window(QMainWindow):
                         self.w_device.insertItem(info)
                         self.device_list[info] = uid
             elif reply[1] == 2:
-                name, mode, addr, gate = reply[2].split("\n")
+                name, mode, addr, gate = reply[2].split("\n", 3)
+                mask = ""
+                if "\n" in gate:
+                    gate, mask = gate.split("\n", 1)
                 self.basic.address.slotSwitch(mode)
                 self.w_address.setText(addr)
                 self.w_gateway.setText(gate)
+                if mask:
+                    self.basic.address.netmask.edit.setText(mask)
             elif reply[1] == 3:
                 self.modes = reply[2].split(",")
                 if not "remote" in self.modes:
