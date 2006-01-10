@@ -42,7 +42,7 @@ class Connection(QListBoxItem):
     def paint(self, painter):
         tc = self.listBox().colorGroup().text()
         i = self.listBox().index(self)
-        if i / 2 * 2 == i and not self.isSelected():
+        if i / 2 * 2 != i and not self.isSelected():
             bc = self.listBox().colorGroup().light()
             bc2 = QColor(bc.red() - 15, bc.green() - 15, bc.blue())
             painter.fillRect(painter.window(), QBrush(bc2))
