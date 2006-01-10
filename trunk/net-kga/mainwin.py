@@ -40,13 +40,20 @@ class Connection(QListBoxItem):
         comar.call_package("Net.Link.getState", link_name, [ "name", name ], id=4)
     
     def paint(self, painter):
+        tc = self.listBox().colorGroup().text()
+        i = self.listBox().index(self)
+        if i / 2 * 2 == i:
+            bc = self.listBox().colorGroup().light()
+            bc2 = QColor(bc.red() - 20, bc.green() - 20, bc.blue())
+            painter.fillRect(painter.window(), QBrush(bc2))
+        
         if self.state == "up":
             text = unicode(i18n("Active")) + ", "
         else:
             text = unicode(i18n("Inactive")) + ", "
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
-        painter.setPen(Qt.black)
+        painter.setPen(tc)
         painter.setFont(self.f1)
         painter.drawText(48 + 9, 3 + fm.ascent(), unicode(self.name))
         painter.setFont(self.f2)
