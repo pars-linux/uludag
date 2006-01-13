@@ -1,7 +1,7 @@
 #LyX 1.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 221
 \textclass article
-\language turkish
+\language english
 \inputencoding auto
 \fontscheme default
 \graphics default
@@ -26,11 +26,11 @@
 
 \layout Title
 
-Uludað
+Uludag
 \newline 
-Kuluçka Daðýtým Seçimi
+Incubation Distribution Selection
 \layout Standard
-\pagebreak_bottom 
+
 
 \begin_inset LatexCommand \tableofcontents{}
 
@@ -39,457 +39,327 @@ Kuluçka Daðýtým Seçimi
 
 \layout Section
 
-Amaç
+Goal
 \layout Standard
 
 
 \emph on 
-Kuluçka Daðýtým
+Incubation Distribution
 \emph default 
-, 
+ is the distribution whose packages, patches and knowledge base will be
+ used, by
 \series bold 
-Uludað Projesi
+ Uludag Project
 \series default 
- tarafýndan paketleri, yamalarý ve bilgi birikiminden 
-\begin_inset Quotes eld
-\end_inset 
-
-
+, in the process of building 
 \series bold 
-Uludað Onaylý Kaynak
+'Uludag Approved Source
 \series default 
-
-\begin_inset Quotes erd
-\end_inset 
-
- üretimi sýrasýnda yararlanýlacak olan daðýtýmdýr.
- 
+'.
+ Software to be developed by
 \series bold 
-Uludað
+ Uludag
 \series default 
- tarafýndan geliþtirilecek olan yazýlýmlar bu daðýtým temel alýnarak oluþturulac
-ak geçici çalýþma platformu ve referans sistemde test edilecektir.
- 
+ will be tested on the temporary platform and the reference system which
+ will be based on the Incubation Distribution.
 \layout Standard
 
-
-\series medium 
-Bu döküman seçilecek 
+This document is aimed to analyse the requirements of the
 \emph on 
-Kuluçka Daðýtým
+ Incubation Distribution
 \emph default 
-'ýn hangi kriterleri saðlamasý gerektiðine dair gereklilikleri ve 
-\emph on 
-Kuluçka Daðýtým
-\emph default 
- seçimi gerekliliðini açýklamayý amaçlamaktadýr.
+ and the need for selection of such a distribution.
 \layout Section
 
-Neden
+Reasoning
 \layout Standard
 
-Kaynak temizleme, uygulama entegrasyonu ve referans sistem oluþturma iþlemleri
- çok fazla iþ gücü ve zaman harcanarak yapýlabilecek iþlemlerdir.
- Bir 
+Source cleaning, application integration and building a reference system
+ are intensive and time consuming tasks.
+ The goal of identifying an
 \emph on 
-Kuluçka Daðýtým
+ Incubation Distribution
 \emph default 
- seçilmesindeki amaç, 
+ is to save time and resources, by diverting the required resources for
+ source cleaning and developing a reference system from scratch to other
+ goals of
 \series bold 
-Uludað GNU/Linux
+ Uludag 
 \series default 
- daðýtýmýnýn sýfýrdan bir kaynak temizleme ve referans sistemi kurma çalýþmalarý
-na harcanacak enerjiyi, 
-\series bold 
-Uludað GNU/Linux
-\series default 
- daðýtýmýnýn diðer hedeflerine kaydýrarak zaman ve iþ gücünden tasarruf
- etmektir.
- Bu baþlangýç aþamasýnda çok daha hýzlý yol alýnmasýný saðlayacaktýr.
+Project.
+ This approach will help to make faster progress at early stages.
 \layout Standard
 
-
-\series medium 
-Kaynak temizleme tabaný olarak bir 
+Using an
 \emph on 
-Kuluçka Daðýtým
+ Incubation Distribution
 \emph default 
- kullanýyor olmak, 
-\emph on 
-
-\begin_inset Quotes eld
-\end_inset 
-
-
-\series default 
-X daðýtým tabanlý
-\series medium 
-
-\begin_inset Quotes erd
-\end_inset 
-
-
-\emph default 
- olmak demek deðildir.
- 
-\emph on 
-Kuluçka Daðýtým
-\emph default 
-, 
-\series default 
-\bar under 
-Dürtücü Teknolojiler
-\series medium 
-\bar default 
- olarak adlandýrdýðýmýz daðýtým alt yapýsý oluþana kadar 
+ as a source cleaning base does not mean to be 'X distro based'.
+ Incubation Distribution will be the base for preparing (cleaning) the software
+ to be added to
 \series bold 
-Uludað GNU/Linux
-\series medium 
-'a eklenecek olan yazýlýmlarý hazýrlayacaðýmýz (temizleyeceðimiz) tabaný
- oluþturacaktýr.
- Kýsa bir süre içerisinde 
-\emph on 
-Kuluçka Daðýtým
-\emph default 
- üzerinde yapýlan çalýþmalar ile evrimleþecek ve yeni bir 
+ Pardus GNU
+\series default 
+/Linux, until the distribution infrastructure, which we call innovative/inductiv
+e technologies, is built.
+ Soon, a new
 \series bold 
-Uludað GNU/Linux
-\series medium 
- tabaný oluþacaktýr.
+ Pardus GNU
+\series default 
+/Linux base will form evolving from the work done on the Incubation Distribution.
 \layout Section
 
-Kriterler
+Criteria
 \layout Standard
 
-
+In the ideal situation
 \emph on 
-Kuluçka Daðýtým
+ Incubation Distribution
 \emph default 
-ýn aþaðýdaki kriterleri tümü ile saðlamasý ideal durumdur.
+ would comply with the all criteria listed below.
 \layout Itemize
 
-Seçilecek daðýtým GPL lisanslý bir özgür yazýlým projesi olmalýdýr.
- 
+Selected distribution should be a GPLed free software project.
 \layout Itemize
 
-Seçilecek daðýtým özgür yazýlým felsefesine uygun olarak kamuya açýk olarak
- yürütülmelidir.
+Selected distribution's development process should be open to public, in
+ accordance with the free software philosophy.
 \layout Itemize
 
-Seçilecek daðýtým olabildiðince dosya sistemi hiyerarþisi standartlarýna
- uymalýdýr.
+Selected distribution should, as much as possible, comply with the file
+ system hierarchy standards.
 \layout Itemize
 
-Seçilecek daðýtýmýn geniþ dökümantasyonu ve bilgi birikimi olmalýdýr.
+Selected distribution should have extensive documentation and knowledge
+ base.
 \layout Itemize
 
-Seçilecek daðýtýmýn geniþ topluluk desteði [ e-posta listeleri, forum, irc
- v.s ] olmalýdýr.
+Selected distribution should have good community support [mailing lists,
+ forums, irc etc.]
 \layout Itemize
 
-Secilecek daðýtýmýn minimum çalýþabilen sistemi güncel ve tutarlý olmalýdýr.
+Selected distribution's minimum working system should be up to date and
+ stable.
 \layout Itemize
 
-Seçilecek daðýtým geniþ paket yelpazesine sahip olmalýdýr.
+Selected distribution should have a wide selection of packages.
 \layout Itemize
 
-Seçilecek daðýtýmýn paketleri masaüstü kullanýcýsý için uygun olmalýdýr.
+Selected distribution's package selection should be suitable for desktop
+ user.
 \layout Itemize
 
-Seçilecek daðýtým özelleþtirilebilir ve kullanýlmak istenen amaca uygun
- hale getirilmelidir.
+Selected distribution should be easy to customize for the specific purpose.
 \layout Itemize
 
-Seçilecek daðýtýmýn paketleri olabildiðince güncel olmalýdýr.
+Selected distribution's package selection should be up to date.
 \layout Itemize
 
-Seçilecek daðýtýmýn paket iþleme ve yama yapma politikasý eriþilebilir olmalýdýr.
+Selected distribution's packaging and patching policy should be accessible.
 \layout Itemize
 
-Seçilecek daðýtýmýn paket yönetim sistemi kolay kullanýlabilir olmalýdýr.
+Selected distribution's package management tool should be easy to use.
 \layout Itemize
 
-Seçilecek daðýtýmýn paket yönetim sistemi basit olmalý; paket yöneticisi
- gerektiðinde hýzlýca sistemden çýkartýlabilmelidir.
+Selected distribution's package management system should be simple and it
+ should be possible to take package manager of the system with ease.
 \layout Itemize
 
-Seçilecek daðýtýmýn paketlerinin kaynak kodlarý ve bu paketlere yapýlan
- yamalar kolayca ulaþýlabilir ve kontrol edilebilir olmalýdýr.
+Selected distribution's package sources and patches should be easily accessible
+ and controllable.
 \layout Itemize
 
-Seçilecek daðýtýmda paketlerin baðýmlýlýklarý ve birbirleri ile olan iliþkileri
- çok net bir þekilde ulaþýlýr ve kontrol edilebilir olmalýdýr.
+Selected distribution's package dependencies and relations should be clearly
+ accessible and controllable.
 \layout Itemize
 
-Seçilecek daðýtýmýn paket formatý kurulmuþ herhangi bir yazýlýmý çeþitli
- araçlarla yeniden paket haline getirmeye elveriþli olmalýdýr.
+Package format of the selected distribution should enable repackaging of
+ installed software with the help of various tools.
 \layout Itemize
 
-Seçilecek daðýtýmýn paketlerini diðer daðýtýmlarýn kullandýðý paket formatlarýna
- dönüþtürmek için çeþitli araçlar bulunmalýdýr.
+There should be available tools for converting selected distribution's package
+ format to new formats used by other distributions.
 \layout Section
 
-Sonuç
+Result
 \layout Standard
 
-Yukarýdaki kriterler doðrultusunda 
+In the light of above criteria, it is concluded that for
 \series bold 
-Uludað GNU/Linux
+ Pardus
 \series default 
- Daðýtýmý'nýn Kuluçka Dönemini geçirmesi için en uygun daðýtým alternatiflerinin
- GPL lisansý ile hayatlarýna devam eden ve popüler Linux daðýtýmlarýndan
- 
+ GNU/
+\series bold 
+Linux
+\series default 
+ incubation period most suitable alternatives are GPLed populardistributions
 \series bold 
 \emph on 
-Fedora, Mandrake, Suse, Debian ve Gentoo
+ Fedora, Mandrake, Suse, Debian and Gentoo
 \series default 
 \emph default 
- daðýtýmlarý olabileceði sonucu çýkmýþtýr.
- Bu alternatifler kendi içlerinde birbirleri ile karþýlaþtýrýldýklarýnda
- ortaya çýkan tablo þöyledir;
-\layout Standard
-
-
-\emph on 
-Fedora, Mandrake, Debian ve Suse
-\series medium 
-\emph default 
- 
-\emph on 
-Kuluçka Daðýtým
-\emph default 
- olmak için gerekli sadelikten göreceli olarak uzaktýrlar.
- Ýçerdikleri paket yöneticisi, yapýlandýrma araçlarý ve herbirinin uyguladýðý
- özel yama setleri sebebi ile 
-\emph on 
-Kuluçka Daðýtým
-\emph default 
-'dan 
-\series default 
-Uludað GNU/Linux
-\series medium 
- tabanýna geçiþteki gerekli emek ve iþ gücü olmasý gerektiðinden fazladýr.
- 
+ When these alternatives compared to each other results are as follows;
 \layout Standard
 
 
 \emph on 
-Debian
+Fedora, Mandrake, Debian and Suse
 \emph default 
-'ýn
-\series medium 
- paket yapýlarýnýn karýþýklýðý paket temizleme sürecinde, geliþtiricileri
- zorlayacak yapýya sahiptir.
- 
-\series default 
+ are relatively complex to be an
 \emph on 
-Debian
-\series medium 
+ Incubation Distribution
 \emph default 
- paketleri içinde net olarak neler olup bittiðini görebilmek göreceli olarak
- 
-\series default 
+ Because of their package management and configuration tools and each ones
+ special patches, workload required for transition from
 \emph on 
-Debian
-\series medium 
+ Incubation Distribution
 \emph default 
- tecrübesi ile orantýlýdýr.
- 
+ to
+\series bold 
+ Pardus GNU/Linux
 \series default 
-\emph on 
-Fedora, Mandrake ve Suse
-\series medium 
-\emph default 
-'de ise sahip olunan paket yapýsýnýn yetenekleri sýnýrlý ve yetersizdir.
- Böyle bir sistemden paket yöneticisini çýkarmak, hali hazýrdaki kaynak
- paketler ile çalýþmak ve bu paketler üzerinde deðiþiklik yapmak zor ve
- sorunludur.
- 
+ base is more than necessary.
 \layout Standard
 
-
+Complex structure of
 \emph on 
-Gentoo
-\series medium 
+ Debian
 \emph default 
- dýþýnda kalan tüm daðýtýmlarýnda ayný geliþtirme araçlarýna sahip olmasýna
- raðmen kaynak kod ile çalýþma anlamýnda en rahat ve özelleþtirilebilir
- geliþtirme ortamýný 
-\series default 
+ packages would create difficulties for developers during source cleaning
+ process.
+ Relative
 \emph on 
-Gentoo
-\series medium 
+ Debian
 \emph default 
- saðlamýktadýr.
- Bunun en büyük sebebi 
-\series default 
+ experience is required to be able to see the inner workings of
 \emph on 
-Gentoo
-\series medium 
+ Debian
 \emph default 
- dýþýndaki daðýtýmlarýn belli bir paket formatýna sahip olmalarý ve bu paketleri
- binary halde daðýtmalarýdýr.
- Oysa kaynak kod ile çalýþma zaten 
-\series default 
+ packages.
+ On the other hand,
 \emph on 
-Gentoo
+ Fedora, Mandrake and Suse's
 \emph default 
-'nun
-\series medium 
- doðal iþleyiþ sürecidir.
+ package structure has limited abilities and is inadequate.
+ Excluding the package manager from such a system and working with and modifying
+ source packages is hard and has problems.
 \layout Standard
 
-
-\series medium 
-Paket çeþitliliði açýsýndan bakýldýðýnda 
-\series default 
+Although all distributions have same development tools,
 \emph on 
-Debian
-\series medium 
+ Gentoo
 \emph default 
- ve 
-\series default 
+ provides most suitable development environment and better opportunities
+ for customisation in respect to working directly with the sources.
+ Because all other distributions, a part from
 \emph on 
-Gentoo
-\series medium 
+ Gentoo
 \emph default 
- dýþýnda kalan daðýtýmlarýn resmi paket depolarý yetersizdir.
- Güncel paketleri sisteme kurmak kullanýcýnýn sorumluluðuna býrakýlmýþ ve
- daðýtým tarafýndan kontrol altýna alýnmamýþtýr.
- Yeni paketler ile çalýþmak için kullanýcýlara neredeyse yeni sürümü bekletme
- yolu seçilmiþtir.
- Hatta ayný paket yöneticisini kullanan daðýtýmlar arasýnda ayný paketi
- kullanmak olanaksýz hale gelmiþ ve paketin 
-\series default 
+, have their own package format and packages are distributed in binary form.
+ In contrast,
 \emph on 
-Fedora, Mandrake
-\series medium 
- 
+ Gentoo
 \emph default 
-ve
-\emph on 
- 
-\series default 
-Suse
-\series medium 
-\emph default 
- için ayrý halleri oluþmuþtur.
+ natively works with source code.
 \layout Standard
 
-
+Except
 \emph on 
-Gentoo, Redhat
-\series medium 
+ Debian and Gentoo
 \emph default 
- ve 
-\series default 
+, all other distribution's package repositories are inadequate in respect
+ to richness of package base.
+ Package updates are user's responsibility and not controlled by the distributio
+n.
+ Users are, almost, made have to wait for the next release in order to use
+ the latest packages.
+ Also there are compatibility problems between the distros using same package
+ manager and there are different versions of the same package for
 \emph on 
-Debian
-\series medium 
-\emph default 
- dýþýnda kalan diðer daðýtýmlar geçmiþlerinde birbirlerini taban olarak
- seçmiþ ve gene birbirlerinin yaptýklarý yanlýþlarý sistematik bir þekilde
- tekrarlamýþlardýr.
- 
-\series default 
-\emph on 
-Gentoo
-\series medium 
-\emph default 
- dýþýnda kalan her daðýtým entegrasyon problemlerini ve yazýlým sorunlarýný
- çözmek için kendi yolunu çizmiþ ve bu yollar zaman içinde birbirinden uzaklaþmý
-þ ve daðýtýma özel olmuþlardýr.
+ Fedora, Mandrake and Suse.
 \layout Standard
 
-
-\series medium 
-Bu daðýtýmlarýn dýþýnda kalan 
-\series default 
+All the other distros, except
 \emph on 
-Slackware
-\series medium 
- 
+ Gentoo, Redhat
 \emph default 
-ise geliþmiþ bir paket yöneticisine sahip olmamasý, paket deposunun yeterince
- geniþ olmamasý, derleme iþlemleri için yetersiz ortam saðlamasý ve her
- paketi baðýmsýz olarak ele almasý, paket baðýmlýlýklarýný çözememesi ve
- paketleri özelleþtirememesi sebebi ile 
+ and
 \emph on 
-Kuluçka Daðýtým
+ Debian
 \emph default 
- olarak seçilmemiþtir.
+, were based on each other in the past and systematically repeated the same
+ mistakes.
+ In order to overcome the integration and software problems every distro,
+ except
+\emph on 
+ Gentoo
+\emph default 
+, found their own way and in time these ways drifted away from each other
+ and became distro specific.
 \layout Standard
 
-
-\series medium 
-Bir daðýtým kullanmak yerine 
-\series default 
+Apart from these distributions,
 \emph on 
-LFS
-\series medium 
+ Slackware
 \emph default 
- çözümü uygulamak ise paketlerin birbirleri ile olan entegrasyonu için harcanaca
-k emeðe, özelleþtirilebilir olmalarý için yapýlacak deðiþikliklere ve baðýmlýlýk
- araþtýrmak için harcanacak zamanýn projeye katma deðer olarak geri dönmeyeceði
- göz önüne alýnarak seçilmemiþtir.
+ is not selected as
+\emph on 
+ Incubation Distribution.
+
+\emph default 
+ Because
+\emph on 
+ Slackware
+\emph default 
+ doesn't have an advanced package manager and a wide selection of packages.
+ It doesn't provide an adequate compiling environment, solve the dependencies
+ and customise packages.
 \layout Standard
 
+LFS (Linux From Scratch), instead of using a distribution, approach was
+ not chosen on consideration that time and resources that would be spent
+ on package integration, customisation and dependency solving would not
+ return to the project as value added.
+\layout Standard
 
-\series medium 
-Bu kriterler çerçevesinde aslen bir 
-\series default 
+According to these criteria Gentoo, which is originally an LFS project and
+ more like a meta distribution, was chosen because of the reasons outlined
+ below, as the
 \emph on 
-LFS
-\series medium 
+ Incubation Distribution
 \emph default 
- projesi olan ve bir daðýtýmdan çok meta-daðýtým olma özelliði gösteren
- 
+ for
+\series bold 
+ Pardus GNU/Linux
 \series default 
+ to evolve upon.
+\layout Itemize
+
+Choosing a meta distribution as incubation distribution will make it possible
+ to integrate the Innovative/inductive Technologies with the distribution.
+
+\emph on 
+ Gentoo
+\emph default 
+ has the simplicity to be called a meta distribution and is not a distribution
+ in real sense.
+\layout Itemize
+
+
+\series bold 
 \emph on 
 Gentoo
-\series medium 
+\series default 
 \emph default 
- aþaðýdaki nedenlerden dolayý 
-\series default 
-Uludað GNU/Linux 
-\series medium 
-daðýtýmýnýn bir süre üzerinde evrimleþeceði 
-\emph on 
-Kuluçka Daðýtýmý
-\emph default 
- olarak seçilmiþtir.
-\layout Itemize
-
-Kuluçka olarak bir meta-daðýtým seçmek Dürtücü Teknolojilerin rahatlýkla
- daðýtým ile birleþtirilmesini saðlayacaktýr.
- Gentoo bir meta-daðýtým olarak adlandýrýlabilecek sadeliðe sahiptir ve
- gerçek anlamda bir daðýtým deðildir.
-\layout Itemize
-
-
-\series bold 
-\bar under 
-HD
-\series default 
-\bar default 
-'de þu an yapýlmakta olan 
-\series bold 
-
-\begin_inset Quotes eld
-\end_inset 
-
-Uludað
-\series default 
+ infrastructure, which makes it easy to access and update the source code,
+ will speed up the compiling and testing in the on going process of building
  
 \series bold 
-Onaylý Kaynak
-\begin_inset Quotes erd
-\end_inset 
-
-
+'Uludag Approved Source
 \series default 
- oluþturma sürecinde, kaynak kodlara ulaþýmý ve güncellemeyi kolaylaþtýran
- Gentoo alt yapýsý, yazýlým derleme ve test etme sürecini hýzlandýracaktýr.
+' in
+\series bold 
+ HD.
 \layout Itemize
 
 
@@ -498,10 +368,10 @@ Onaylý Kaynak
 Gentoo
 \series default 
 \emph default 
-, GPL lisanslý bir özgür yazýlým projesidir ve geliþtirilme süreci özgür
- yazýlým felsefesine uygun olarak kamuya açýk olarak yürütülmektedir.
- Yürütme Komitesi altýnda þekillenen çalýþma gruplarý, geliþtiriciler ve
- katkýcýlar ile uyum içinde çalýþabilecek organizasyonel kabiliyete sahiptir.
+ is a GPLed free software project and its development process is open to
+ public in accordance with free software philosophy.
+ Work groups structured under the management committee have the organisational
+ abilities to work in harmony with developers and contributors.
 \layout Itemize
 
 
@@ -510,9 +380,9 @@ Gentoo
 Gentoo
 \series default 
 \emph default 
-, dosya sistemleri hiyerarþi standartlarý baþta olmak üzere birçok standarta
- uymaya çalýþmakta, barýndýrdýðý yazýlýmlar içinde standartlarý göz önüne
- almaktadýr.
+ tries to comply with many standards, starting with file system hierarchy
+ standards and takes these standards into account for included software
+ too.
 \layout Itemize
 
 
@@ -521,7 +391,7 @@ Gentoo
 Gentoo
 \series default 
 \emph default 
-, geniþ ve yeterli dökümantasyona/bilgi birikimine sahiptir.
+ has extensive and adequate documentation and knowledge base.
 \layout Itemize
 
 
@@ -530,7 +400,7 @@ Gentoo
 Gentoo
 \series default 
 \emph default 
-, e-posta listeleri, forum ve IRC kanallarý ile geniþ bir kitleye sahiptir.
+ has a large community with mailing lists, IRC channels and forum.
 \layout Itemize
 
 
@@ -539,7 +409,7 @@ Gentoo
 Gentoo
 \series default 
 \emph default 
-, diðer daðýtýmlar arasýnda paket güncelliði en fazla olan daðýtýmdýr.
+ has the most up to date packages comparing to other distributions.
 \layout Itemize
 
 
@@ -548,8 +418,8 @@ Gentoo
 Gentoo
 \series default 
 \emph default 
- çok geniþ paket yelpazesine sahiptir ve bu paket veritabaný her geçen gün
- hýzla geniþlemeye devam etmektedir.
+ has a wide selection of packages and the package base is rapidly expanding
+ day by day.
 \layout Itemize
 
 
@@ -558,8 +428,32 @@ Gentoo
 Gentoo
 \series default 
 \emph default 
- paketleri masaüstü kullanýcýsý için her türlü ortam/yazýlým/pencere yöneticisi/
-yardýmcý yazýlýmý barýndýrmaktadýr.
+ packages include every multimedia/development/window manager/accessory
+ software for the desktop user.
+\layout Itemize
+
+With
+\emph on 
+ USE
+\emph default 
+ flags,
+\series bold 
+\emph on 
+ Gentoo
+\series default 
+\emph default 
+ provides an environment where it is possible to change the functions/specificat
+ions of every package.
+ With this feature it is the most customisable distribution.
+ In source cleaning process it enables, because of
+\emph on 
+ USE
+\emph default 
+ flags, developers to easily customise the packages according to
+\series bold 
+ Pardus's
+\series default 
+ needs.
 \layout Itemize
 
 
@@ -568,19 +462,32 @@ yardýmcý yazýlýmý barýndýrmaktadýr.
 Gentoo
 \series default 
 \emph default 
- hali hazýrda sahip olduðu 
+ packaging and patching policy is very clear.
+ If a package is compiled with errors or has integration problems, procedure
+ for the developer to follow is same as
 \emph on 
-USE
+ Mandrake
 \emph default 
- bayraklarý ile her paketin iþlevlerini/özelliklerini deðiþtirmeye yarayan
- bir ortam sunmaktadýr ve bu özelliði ile en özelleþtirilebilir daðýtýmdýr.
- 
+ and
 \emph on 
-USE
+ Debian
 \emph default 
- bayraklarý sayesinde paket temizleme sürecinde geliþtiricinin paket özellikleri
-ni Ulusal Daðýtým'ýn ihtiyaçlarý doðrultusunda kolaylýkla deðiþtirmesine
- olanak verir.
+ procedure.
+ This way it becomes possible to integrate
+\emph on 
+ Mandrake
+\emph default 
+ and
+\emph on 
+ Debian
+\emph default 
+ patches by using only
+\series bold 
+\emph on 
+ Gentoo
+\series default 
+\emph default 
+ patches.
 \layout Itemize
 
 
@@ -589,35 +496,26 @@ ni Ulusal Daðýtým'ýn ihtiyaçlarý doðrultusunda kolaylýkla deðiþtirmesine
 Gentoo
 \series default 
 \emph default 
- paket iþleme ve yama yapma politikasý çok açýk ve nettir.
- Eðer bir paket bozuk/hatalý derleniyor yada entegrasyon problemine sahipse
- geliþtiriciler için izlenmesi gereken yol, 
-\series bold 
+ package manager is mature and easy to use.
+ Even tough
 \emph on 
-Mandrake
-\series default 
+ Portage
 \emph default 
- ve 
-\series bold 
+ is mature enough for stable use it is continuously developed by Gentoo
+ Developers by adding new features.
+
 \emph on 
-Debian
-\series default 
+ ebuild's
 \emph default 
- daðýtýmlarýnýn izlediði yoldur.
- Bu sayede sadece Gentoo yamalarý kullanýlarak 
-\series bold 
+, which are the scripts used by
 \emph on 
-Debian
-\series default 
+ Portage
 \emph default 
- ve 
-\series bold 
-\emph on 
-Mandrake
-\series default 
-\emph default 
- yamalarýda bütünleþik bir halde kullanýlabilir hale gelmektedir.
- 
+ to build packages, are written in a language close to human language and
+ relatively informative at the first look.
+ ebuild's provide an easy-to-customise structure and has simple four page
+ specification.
+ Therefore it is a good choice for Package Cleaning process.
 \layout Itemize
 
 
@@ -626,26 +524,43 @@ Mandrake
 Gentoo
 \series default 
 \emph default 
- paket yönetim sistemi geliþkin ve kolay kullanýlabilirdir.
- 
+ can hold different versions of the package repository, called
 \emph on 
-Portage
+ Portage
 \emph default 
- kararlý kullaným için yeterince olgun olmasýna raðmen Gentoo Geliþtiricileri
- tarafýndan çeþitli yeni özellikler eklenmesi için sürekli geliþtirilmektedir.
- Portage tarafýndan kullanýlan paket kurma betikleri olan 
+, on the system.
+ So that,
+\series bold 
+ Pardus GNU
+\series default 
+/Linux packages can mature on a
+\series bold 
 \emph on 
-ebuild
+ Gentoo
+\series default 
 \emph default 
-'ler insan diline yakýn bir dil ile yazýlmýþtýr ve ilk bakýþta göreceli
- olarak geliþtiriciye fikir vermektedir.
- 
+ system which holds
+\series bold 
+ Pardus
+\series default 
+ GNU/Linux versions of the packages too.
+\layout Itemize
+
+With the help of
 \emph on 
-ebuild
+ SLOT
 \emph default 
-'ler gerekli deðiþiklikler için yeterince kolay bir altyapý ve sadece 4
- sayfadan oluþan basit bir söz dizimi kurallarý içermektedir.
- Bu hali ile Paket Temizleme süreci için çok uygun bir seçimdir.
+ variable,
+\series bold 
+\emph on 
+ Gentoo
+\series default 
+\emph default 
+ can host different versions of the same package and its dependencies without
+ interrupting each other.
+ For example a developer can install four different versions of the GNU
+ C Compiler and their dependencies and test if a cleaned package complies
+ with all of them.
 \layout Itemize
 
 
@@ -654,20 +569,38 @@ ebuild
 Gentoo
 \series default 
 \emph default 
- 
+ separates the build-time dependencies from run-time dependencies.
+\layout Itemize
+
+Source codes of
+\series bold 
 \emph on 
-Portage
+ Gentoo
+\series default 
 \emph default 
- ismi verilen paket deposunun deðiþik versiyonlarýný sistemde bulundurabilir.
- Bu sayede 
+ packages and their patches are easily accessible and controllable.
+
 \series bold 
-Uludað GNU/Linux
+\emph on 
+ Gentoo
 \series default 
- Tabaný olgunlaþýncaya kadar güncellenen bir Gentoo sistem üzerinde 
+\emph default 
+ keeps the packages in their original form and patches are stored under
+ files/ folder of the designated directory for each package.
+ If a patch is bigger than
+\emph on 
+ 20Kb
+\emph default 
+ in size it is kept on the own mirrors.
+ It is clearly specified in
 \series bold 
-Uludað GNU/Linux
+\emph on 
+ Gentoo
 \series default 
- Tabanýný oluþturan paketler evrimleþebilir.
+\emph default 
+ package scripts that which patches and in which order to be applied.
+ Because of the tools, which allow partial processing of packages scripts,
+ developers have full control over the source code and package scripts.
 \layout Itemize
 
 
@@ -676,15 +609,31 @@ Uludað GNU/Linux
 Gentoo
 \series default 
 \emph default 
- 
+ can compile packages in
 \emph on 
-SLOT
+ sandbox
 \emph default 
- ismi verilen deðiþkeni ile bir paketin deðiþik versiyonlarýný ve baðýmlýlýklarý
-ný sistemde birbiri ile karýþtýrmadan tutabilir.
- Örneðin geliþtirici GNU C Derleyicisinin 4 farklý versiyonunu ve bunlarýn
- baðýmlýlýklarýný sisteminde tutarak temizlenen paketin bunlar ile uygun
- derlenip derlenemediðini gözlemleyebilir.
+ and also install them in
+\emph on 
+ sandbox
+\emph default 
+ Thanks to this feature, developers can execute compile & install processes
+ without affecting the system they work on.
+\layout Itemize
+
+Dependencies and relations of
+\series bold 
+\emph on 
+ Gentoo
+\series default 
+\emph default 
+ packages are clearly accessible and controllable.
+ With the help of
+\emph on 
+ USE
+\emph default 
+ flags one can keep track of package dependencies, changes in the dependencies
+ and conflicting packages.
 \layout Itemize
 
 
@@ -693,126 +642,34 @@ ný sistemde birbiri ile karýþtýrmadan tutabilir.
 Gentoo
 \series default 
 \emph default 
- bir paketin derlenmesi için gereken paket baðýmlýlýklarý ile çalýþmasý
- için gereken paket baðýmlýlýklarýný ayrý ayrý tutmaktadýr.
+ package format enables re-packaging of any software installed.
+
+\emph on 
+ QuickPkg
+\emph default 
+ tool can re-package every software installed on the system.
 \layout Itemize
 
-
+There are tools to convert
 \series bold 
 \emph on 
-Gentoo
+ Gentoo
 \series default 
 \emph default 
- paketlerinin kaynak kodlarý ve bu paketlere yapýlan yamalar kolayca ulaþýlabili
-r ve kontrol edilebilir durumdadýr.
- 
+ packages into other package formats.
+ Such tools like
+\emph on 
+ RPM
+\emph default 
+ and
+\emph on 
+ dpkg
+\emph default 
+ can run on
 \series bold 
 \emph on 
-Gentoo
+ Gentoo
 \series default 
 \emph default 
- paketleri orijinal halleri ile tutmakta bu paketlere yapýlan ve boyutu
- 
-\emph on 
-20 Kb
-\emph default 
- altýnda olan yamalarý paket veritabanýnda paketin sahip oldugu dizinde
-\emph on 
- files/
-\emph default 
- klasöründe, boyutu büyük olan yamalarý ise kendi yansýlarýnda tutmaktadýr.
- 
-\series bold 
-\emph on 
-Gentoo
-\series default 
-\emph default 
- paket betikleri içinde hangi pakete, hangi yamanýn, hangi sýra ile yapýlacaðý
- açýk ve net bir þekilde belirtilmiþtir.
- 
-\series bold 
-\emph on 
-Gentoo
-\series default 
-\emph default 
- paket betiklerine, bir paketi kurmak için gerekli iþleyiþin sadece bir
- kýsmýný yaptýran araçlar mevcuttur.
- Bu özellikler sayesinde geliþtirici kaynak kod ve paket betikleri üzerinde
- gerekli hakimiyeti kurabilmektedir.
-\layout Itemize
-
-
-\series bold 
-Gentoo
-\series default 
- paketlerini derlerken 
-\emph on 
-sandbox
-\emph default 
- içinde derleyebilir ve gene 
-\emph on 
-sandbox 
-\emph default 
-içine kurulum gerçekleþtirebilir.
- Bu özelliði sayesinde geliþtirici derle & kur süreçlerini çalýþtýðý sisteme
- zarar vermeden gerçekleþtirebilir.
-\layout Itemize
-
-
-\series bold 
-\emph on 
-Gentoo
-\series default 
-\emph default 
- bünyesindeki paketlerin baðýmlýlýklarý ve birbirleri ile olan iliþkileri
- çok net bir þekilde ulaþýlýr ve kontrol edilebilir durumdadýrlar.
- Hangi paketin diðer paketleri gerektirdiði, deðiþik 
-\emph on 
-USE
-\emph default 
- bayraklarý ile paket özelliklerinin/baðýmlýlýklarýnýn nasýl deðiþtiði,
- birbiri ile çakýþan paketlerin hangileri olduðu gibi bilgiler kolayca takip
- edilebilir.
-\layout Itemize
-
-
-\series bold 
-\emph on 
-Gentoo
-\series default 
-\emph default 
- paket formatý kurulmuþ herhangi bir yazýlýmý çeþitli araçlarla yeniden
- paket haline getirmeye elveriþlidir.
- 
-\emph on 
-QuickPkg
-\emph default 
- adý verilen araç ile sisteme kurulmuþ tüm yazýlýmlar tek tek paket haline
- dönüþtürülebilir.
-\layout Itemize
-
-
-\series bold 
-\emph on 
-Gentoo
-\series default 
-\emph default 
- paketlerini diðer daðýtýmlarýn kullandýðý paket formatlarýna dönüþtürmek
- için çeþitli araçlar mevcuttur.
- 
-\emph on 
-RPM
-\emph default 
-, 
-\emph on 
-dpgk
-\emph default 
- gibi araçlar 
-\series bold 
-\emph on 
-Gentoo
-\series default 
-\emph default 
-'da çalýþmakta ve paket formatlarý arasý olabildiðince uyumlu dönüþtürme
- iþlemlerini mümkün kýlmaktadýr.
+ and allow compatible conversions.
 \the_end
