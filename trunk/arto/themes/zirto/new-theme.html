@@ -42,9 +42,9 @@ function submitform() {
 		</tr>
 		<tr>
 			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Lisans </td>
-			<td><select name="theme_licence">
-			{section name=node loop=$licences}
-			<option value="{$licences[node].id}" title="{$licences[node].description}">{$licences[node].name}</option>
+			<td><select name="theme_license">
+			{section name=node loop=$licenses}
+			<option value="{$licenses[node].id}" title="{$licenses[node].description}">{$licenses[node].name}</option>
 			{/section}
   			</select></td>
 		</tr>

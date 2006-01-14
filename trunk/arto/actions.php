@@ -18,7 +18,7 @@ include_once("globals.php");
 		break;
 
 		case "addtheme":
-			if (add_theme($_SESSION["uid"],$_POST["theme_name"],$_POST["theme_type"],$_POST["theme_path"],$_POST["theme_licence"],$_POST["theme_description"],$_POST["theme_note"],$_POST["theme_date"])) header ("location: index.php?userfiles");
+			if (add_theme($_SESSION["uid"],$_POST["theme_name"],$_POST["theme_type"],$_POST["theme_path"],$_POST["theme_license"],$_POST["theme_description"],$_POST["theme_note"],$_POST["theme_date"])) header ("location: index.php?userfiles");
 			else header ("location: index.php?error");
 			break;
 	}

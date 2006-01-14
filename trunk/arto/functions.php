@@ -1,4 +1,5 @@
 <?php
+
     function db_connection($action, $dbhost = "", $dbuser = "", $dbpass = "", $dbname = "", $dbconntype = ""){
         global $db_connection;
 
@@ -73,11 +74,11 @@
             $query="type=".$id;
             if ($subid<>"") $query.=" AND sub_type=".$subid;
         }
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE $query";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE $query AND state='1'";
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
-            $licence = get_licences($assoc_arr['licence']);
+            $licence = get_licences($assoc_arr['license']);
             $return_array[$i] = $assoc_arr;
             $return_array[$i]['comments'] = get_comment_number($assoc_arr['id']);
             $return_array[$i]['release'] = conv_time("db2post", $assoc_arr['release']);
@@ -108,7 +109,7 @@
     function get_licences($id=0){
         global $config;
         if ($id<>0) $query=" WHERE id = '{$id}'";
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}licence".$query;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}license".$query;
         return perform_sql($sql_word);
     }
 
@@ -152,12 +153,10 @@
         return $return_array;
     }
 
-    function get_type_name($type_id){
+    function get_type($type_id){
         global $config;
-        $sql_word = "SELECT type FROM {$config['db']['tableprefix']}types WHERE id='{$type_id}'";
-        $sql_query = @mysql_query($sql_word);
-        $return_string = mysql_fetch_assoc($sql_query);
-        return $return_string['type'];
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}types WHERE id='{$type_id}'";
+        return perform_sql($sql_word);
     }
 
     function update_user($uid,$realname,$web,$email,$password){
@@ -171,15 +170,18 @@
         return $sql_query;
     }
 
-    function add_theme($id,$name,$type,$path,$licence,$description,$note,$date) {
+    function add_theme($id,$name,$type,$path,$license,$description,$note,$date) {
         global $config;
         $name = rtag($name);
         $type = rtag($type);
         $path = rtag($path);
-        $licence = rtag($licence);
+        $license = rtag($license);
         $description = rtag($description);
         $note = rtag($note);
-        $sql_word = "INSERT INTO {$config['db']['tableprefix']}temp VALUES ('', '{$type}', '{$name}', '{$licence}', '{$id}', '{$path}', '{$description}', '{$note}', '{$date}')";
+        $type_details = get_type($type);
+        $subtype = $type;
+        if ($type_details[0]["parent_id"]==0) $subtype=0; else $type=$type_details[0]["parent_id"];
+        $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$description}', '{$note}', '0', '0', '0', '{$date}')";
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
     }
