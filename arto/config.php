@@ -2,8 +2,8 @@
 // Core Config
 $config['core']['title']		= "sanat.pardus";
 $config['core']['desc']			= "Arto yeni sanat o ..";
-$config['core']['path']			= "/var/www/sanat.uludag/arto/";
-$config['core']['url']			= "http://localhost/arto/";
+$config['core']['path']			= "/home/rat/public_html/arto/";
+$config['core']['url']			= "http://localhost/~rat/arto/";
 $config['core']['postperpage']		= "5";
 $config['core']['postsinfeed']		= "10";
 $config['core']['theme']		= "zirto";
@@ -13,9 +13,9 @@ $config['core']['lang']			= "tr";
 // DB Config for MySQL
 $config['db']['hostname']		= "localhost";
 $config['db']['port']			= "3306";
-$config['db']['username']		= "arto";
-$config['db']['password']		= "";
-$config['db']['databasename']		= "arto";
+$config['db']['username']		= "root";
+$config['db']['password']		= "goksel";
+$config['db']['databasename']		= "uludag";
 $config['db']['tableprefix']		= "arto_";
 $config['db']['connectiontype']		= "persistent";
 

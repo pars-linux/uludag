@@ -6,10 +6,12 @@ include_once("globals.php");
 		set_smarty_vars("name",$_SESSION["uname"]);
 	}
 
+	$child_type=get_type($_GET["sid"]);
+	$parent_type=get_type($_GET["cid"]);
 	set_smarty_vars("login_error",$login_error);
 	set_smarty_vars("categories",get_types());
-	set_smarty_vars("sub_type",get_type_name($_GET["sid"]));
-	set_smarty_vars("parent_type",get_type_name($_GET["cid"]));
+	set_smarty_vars("sub_type",$child_type[0]["type"]);
+	set_smarty_vars("parent_type",$parent_type[0]["type"]);
 
 	if (isset($_GET["id"])) {
 		set_smarty_vars("nodes",get_something("single",$_GET["id"]));
@@ -33,7 +35,7 @@ include_once("globals.php");
 
 	elseif (isset($_GET["newtheme"])) {
 		if (session_is_registered("arto")) {
-		set_smarty_vars("licences",get_licences());
+		set_smarty_vars("licenses",get_licences());
 		set_smarty_vars("userdetails",TRUE);
 		}
 		$smarty->display("new-theme.html");
@@ -55,16 +57,14 @@ include_once("globals.php");
 		die();
 	}
 
-	/*
 	elseif (isset($_GET["userfiles"])) {
 		if (session_is_registered("arto")) {
-		$files=get_user_files($_SESSION["uid"]);
+// 		$files=get_user_files($_SESSION["uid"]);
 		set_smarty_vars("userdetails",TRUE);
 		}
-		$smarty->display("userfiles.html"); //userfiles.html doesn't exist :) make me, made me or what you want..
+		$smarty->display("userfiles.html");
 		die();
 	}
-	*/
 	
 	else {
 		set_smarty_vars("nodes",get_something("cat","1"));
