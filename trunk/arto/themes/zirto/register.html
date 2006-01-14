@@ -1,0 +1,79 @@
+{include file="header.html"}
+<script>
+{literal}
+function submitform() {
+			if (frm.username.value.length < 3) { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !');return false;}
+			if (frm.realname.value.length < 6) { alert('Ad Soyad boş ya da eksik !');return false;}
+			if (frm.email.value.length < 8) { alert('E-Mail boş ya da eksik !');return false;}
+			if (frm.password.value.length <= 4) { alert('Parola boş ya da eksik (en az 5 karakter)!');return false;}
+			if (frm.password.value !== frm.password_.value) { alert('Parola ve Parola Tekrar birbirini tutmuyor !'); return false;}
+			return true;
+	}
+{/literal}
+</script>
+<div id="content" class="main_content">
+<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/16x16/down.png"> Yardım </a></span>
+<h4><img src="{$url}{$themepath}/images/48x48/kuser.png" width="48" height="48">Kullanıcı 
+{if $userdetails} Bilgileri {else} Kayıt {/if}
+</h4>
+<div class="main_left" width="300px">
+<form id="frm" action="actions.php?call={if $userdetails}updateuser{else}registeruser{/if}" method="post">
+<table style="margin-bottom: 1em;" class="regtable" width="300px">
+	<tbody>
+		<tr>
+			<td style="width: 120px;"><span style="color: red">[*]</span> Kullanıcı adı </td>
+			<td>
+			<input {if $userdetails} disabled {/if} id="username" name="username" class="register" size="25" value="{$up_user}"></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;"><span style="color: red">[*]</span> Ad Soyad </td>
+			<td><input id="realname" name="realname" size="25" value="{$up_name}"></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;"><span style="color: green">[*]</span> Web adresi</td>
+			<td><input id="web" name="web" class="register" size="25" value="{$up_web}"></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;"><span style="color: red">[*]</span> E-mail</td>
+			<td><input id="email" name="email" class="register" size="25" value="{$up_email}"></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;"><span style="color: red">[*]</span> Parola</td>
+			<td><input id="password" name="password" class="register" size="25" type="password" value="{$up_pass}"></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;"><span style="color: red">[*]</span> Parola(tekrar)</td>
+			<td><input id="password_" name="password_" class="register" size="25" type="password" value="{$up_pass}"></td>
+		</tr>
+	</tbody>
+</table>
+<table style="margin-left: 40px;" width="300px">
+<tr><td align="right"><input onclick="return submitform();" value="{if $userdetails}Güncelle{else}Kayıt{/if}" name="register" type="submit"></td></tr>
+</table>
+</form>
+</div>
+
+<div id="help" class="main_right" width="300px" style="display:none;">
+<table style="margin-bottom: 1em;" class="helptable" width="300px">
+	<tbody>
+		<tr>
+			<td valign="top"><img src="{$url}{$themepath}/images/48x48/help.png"><b> Üye Bilgileri Yardım</b></td>
+		</tr>
+		<tr>
+			<td>Form doldurulurken dikkat edilmesi gereken hususlar;
+			<ul>
+				<li> Kırmızı [*] ile belirtilen alanların doldurulması zorunludur.
+				<li> Kullanıcı adınız sisteme giriş yaparken kullanılacaktır, en az 4 karakterden oluşmalıdır. Üyelikten sonra kullanıcı adı değiştirilemez.
+				<li> E-mail adresinizin geçerli ve aktif olmasına dikkat ediniz. Bu adres üzerinden üyeliğiniz aktifleştirilecektir.
+				<li> Parolanız en az 5 karakterden oluşmalıdır.
+			</ul></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+</div>
+
+
+{include file="footer.html"}

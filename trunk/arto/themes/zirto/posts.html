@@ -1,0 +1,48 @@
+{include file="header.html"}
+<div id="content" class="main_content" >
+<h4>{$parent_type}
+{if $sub_type}
+ > {$sub_type}
+{/if}
+</h4>
+{if $nodes == ""}
+	<div>Bu bölüme ait herhangi bir kayıt bulunamadı.</div>
+{/if}
+{section name=post loop=$nodes}
+<table style="margin-bottom: 1em;" border="0">
+	<tbody>
+		<tr>
+			<td style="width: 120px;">
+			<a href="{$url}?id={$nodes[post].id}">
+				<img src="{$url}/3rdparty/php_thumb/phpThumb.php?src={$url}files/{$nodes[post].path}&w=100" alt="Thumbnail" class="thumbnail">
+			</a>
+			</td>
+			<td>
+			<a href="{$url}?id={$nodes[post].id}"><b>{$nodes[post].name}</b></a><br>
+			<span class="subtitle">
+				<a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a>
+				<br>{$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}
+			</span>
+			{if $nodes[post].rate}
+			<div style="float: left; width: 120px;">
+			{section name="loop" loop=$nodes[post].rate}
+				<img src="{$url}{$themepath}/images/star.png" alt="*">
+			{/section}
+			{/if}
+			<small style="white-space: nowrap;">
+				<a href="{$url}?id={$nodes[post].id}#comments" style="text-decoration: none;">
+					<img src="{$url}{$themepath}/images/16x16/klipper.png" alt="" >
+					[{$nodes[post].comments}] Yorum
+				</a>
+			</small>
+			</div>
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+{/section}
+</div>
+
+
+{include file="footer.html"}
