@@ -1,0 +1,64 @@
+{include file="header.html"}
+	<div id="content" class="narrowcolumn">
+		{section name=post loop=$posts}
+		<div class="post">
+			<h2><a href="{$blogurl}?id={$posts[post].id}" rel="bookmark" title="Permanent Link to {$posts[post].title}">{$posts[post].title}</a></h2>
+			<small>Yazar: <a href="{$blogurl}?author={$posts[post].author_id}">{$posts[post].author}</a> | Tarih: {$posts[post].date.day} <a href="{$blogurl}?date={$posts[post].date.year}{$posts[post].date.month}">{$posts[post].date.monthname} {$posts[post].date.year}</a> - {$posts[post].date.hour}:{$posts[post].date.minute} | Tags: 
+			{section name="loop" loop=$posts[post].category}
+			<a href="{$blogurl}?cat={$posts[post].category[loop].cat_id}" title="{$posts[post].category[loop].name}">{$posts[post].category[loop].name}</a>.
+			{/section}</small>
+			<div class="entry">{$posts[post].text}</div>
+			<p class="postmetadata"><a href="{$blogurl}?id={$posts[post].id}#comments">{$posts[post].comment_number} Yorum</a></p>
+		</div>
+		<p class="menu"><a name="comments" id="comments">&nbsp;</a>Yazı hakkındaki yorumlar&nbsp;</p>
+		<ol class="commentlist">
+		{if $comments == ""}
+			<li class="alt">
+				<p align="center">Bu yazıya hiç yorum yapılmamış.</p>
+			</li>
+		{/if}
+		{section name=comment loop=$comments}
+			<li class="alt">
+				<cite><a rel="external nofollow" href="{$comments[comment].website}">{$comments[comment].author}</a> - [{$comments[comment].email}]</cite>:<br>
+				<small class="commentmetadata">{$comments[comment].date.hour}:{$comments[comment].date.minute} @ {$comments[comment].date.day}-{$comments[comment].date.month}-{$comments[comment].date.year}</small><p>{$comments[comment].comment}</p>
+			</li>
+		{/section}
+		</ol>
+		<p class="menu">Yorum Ekle</p>
+		<form action="{$blogurl}?action=addcomment&id={$posts[post].id}" method="post">
+		<table colspan="2" border="0" cellspacing="3" width="40%">
+			<tbody>
+				<tr>
+					<td class="menu">İsim :</td>
+					<td><input class="form" name="author" value="" type="text"></td>
+				</tr>
+				<tr>
+					<td class="menu">Mail :</td>
+					<td><input class="form" name="email" value="" type="text"></td>
+				</tr>
+				<tr>
+					<td class="menu">Web :</td>
+					<td><input class="form" name="website" value="" type="text"></td>
+				</tr>
+				<tr>
+					<td class="menu">Yorum</td>
+					<td><textarea class="form" name="comment" cols="50" rows="7"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<p align="right">
+							<input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="date">
+							<input class="form" name="stat" value="Yorumla" type="submit">
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		{/section}
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+	</div>
+{include file="footer.html"}

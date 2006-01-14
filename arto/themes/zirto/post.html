@@ -1,0 +1,50 @@
+{include file="header.html"}
+{section name=post loop=$nodes}
+<div>
+<table style="margin-bottom: 1em;" border="0">
+	<tbody>
+		<tr>
+			<td style="width: 220px;">
+			<h2><b><a href="{$url}?id={$nodes[post].id}">{$nodes[post].name}</a></b><br><br></h2>
+			<a href="{$url}?id={$nodes[post].id}">
+				<img src="{$url}/3rdparty/php_thumb/phpThumb.php?src={$url}files/{$nodes[post].path}&w=200" alt="Thumbnail" class="thumbnail">
+			</a>
+			</td>
+			<td>
+			
+			<span class="subtitle">
+				<a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a>
+				<br>{$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}
+			</span>
+			{if $nodes[post].rate}
+			<div style="float: left; width: 120px;">
+			{section name="loop" loop=$nodes[post].rate}
+				<img src="{$url}{$themepath}/images/star.png" alt="*">
+			{/section}
+			{/if}
+			<small style="white-space: nowrap;">
+				<a href="{$url}?id={$nodes[post].id}#comments" style="text-decoration: none;">
+					<img src="{$url}{$themepath}/images/16x16/klipper.png" alt="" >
+					[{$nodes[post].comments}] Yorum
+				</a>
+			</small>
+			</div>
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+{/section}
+<table>
+	<TR>
+		<TD><h2>Yorumlar</h2></TD>
+	</TR>
+	<tr><TD>{if $comments}
+	{section name=xx loop=$comments}
+	<img src="{$url}{$themepath}/images/16x16/klipper.png" alt="" > {$comments[xx].comment}
+	{/section}
+	{else}Bu duvarkağıdı icin yorum yapılmamış..{/if}</TD></tr>
+</table>
+
+</div>
+{include file="footer.html"}
