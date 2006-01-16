@@ -196,4 +196,22 @@
     function rtag($foo){
         return htmlspecialchars($foo,ENT_QUOTES);
     }
+
+    function get_user_files($id){
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE user='{$id}'";
+        return perform_sql($sql_word);
+    }
+
+    function set_types($type, $sub_type){
+        $type = get_type($type);
+        $sub_type = get_type($sub_type);
+
+        $typem = array();
+        $typem[0] = $type[0]["type"]." > ".$sub_type[0]["type"];
+        $typem[1] = $type[0]["type"];
+        $typem[2] = $sub_type[0]["type"];
+
+        return $typem;
+    }
 ?>

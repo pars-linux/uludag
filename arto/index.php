@@ -59,8 +59,12 @@ include_once("globals.php");
 
 	elseif (isset($_GET["userfiles"])) {
 		if (session_is_registered("arto")) {
-// 		$files=get_user_files($_SESSION["uid"]);
-		set_smarty_vars("userdetails",TRUE);
+		$files = get_user_files($_SESSION["uid"]);
+		for($i = 0; $i < count($files); $i++){
+			$files[$i]["types"] = set_types($files[$i]["type"],$files[$i]["sub_type"]);
+			$files[$i]["release"] = conv_time("db2post",$files[$i]["release"]);
+		}
+		set_smarty_vars("uf",$files);
 		}
 		$smarty->display("userfiles.html");
 		die();
