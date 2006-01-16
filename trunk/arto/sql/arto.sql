@@ -100,12 +100,15 @@ CREATE TABLE `arto_types` (
 
 INSERT INTO `arto_types` VALUES (1, 'Duvar Kağıdı', 0, 0);
 INSERT INTO `arto_types` VALUES (2, 'Temalar', 0, 0);
-INSERT INTO `arto_types` VALUES (3, 'Pardus', 1, 0);
-INSERT INTO `arto_types` VALUES (4, 'KDE', 1, 0);
-INSERT INTO `arto_types` VALUES (5, 'KDE', 2, 0);
-INSERT INTO `arto_types` VALUES (6, 'amaroK', 2, 0);
-INSERT INTO `arto_types` VALUES (7, 'Kopete', 2, 0);
-INSERT INTO `arto_types` VALUES (8, 'Ekran Görüntüleri', 1, 0);
+INSERT INTO `arto_types` VALUES (3, 'Müzikler', 0, 0);
+INSERT INTO `arto_types` VALUES (4, 'Pardus', 1, 0);
+INSERT INTO `arto_types` VALUES (5, 'KDE', 1, 0);
+INSERT INTO `arto_types` VALUES (6, 'KDE', 2, 0);
+INSERT INTO `arto_types` VALUES (7, 'amaroK', 2, 0);
+INSERT INTO `arto_types` VALUES (8, 'Kopete', 2, 0);
+INSERT INTO `arto_types` VALUES (9, 'Ekran Görüntüleri', 1, 0);
+INSERT INTO `arto_types` VALUES (10, 'Sistem', 3, 0);
+INSERT INTO `arto_types` VALUES (11, 'Pardus', 3, 0);
 
 -- --------------------------------------------------------
 
