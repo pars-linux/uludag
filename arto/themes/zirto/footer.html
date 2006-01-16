@@ -1,14 +1,14 @@
 							</td>
         				<td width="200" class="sidebar">
 			{section name=cat loop=$categories}
-				<p><img src="{$url}{$themepath}/images/48x48/cat/{$categories[cat].id}.png" width="48" height="48"><a href="?cid={$categories[cat].id}"> {$categories[cat].type}</a></p>
+				<p><img src="{$url}{$themepath}/images/categories/{$categories[cat].id}.png" width="48" height="48"><a href="?cid={$categories[cat].id}"> {$categories[cat].type}</a></p>
   		     	      		<ul>
 					{section name=sub loop=$categories[cat].sub}
 					<li><a href="?cid={$categories[cat].id}&sid={$categories[cat].sub[sub].id}"> {$categories[cat].sub[sub].type}</a></li>
 					{/section}
 					</ul>
 			{/section}
-  		     	     	<p><img src="{$url}{$themepath}/images/48x48/kuser.png" width="48" height="48"> Kullanıcı Girişi </p>
+  		     	     	<p><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48"> Kullanıcı Girişi </p>
 	       	     	<div>
 			{if $username}
 				<div  style="padding-left: 25px;">
