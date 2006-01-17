@@ -17,6 +17,11 @@
         elseif($action == "disconnect"){mysql_close($db_connection);}
     }
 
+    /*
+        show_mysql_errors()
+        It shows nice mysql errors
+        return No_Return;
+    */
     function show_mysql_errors() {
             echo DBCONERROR."<br>";
             echo ERRORMESSAGE."<b>".mysql_error()."</b><br>";
@@ -33,13 +38,23 @@
             else return $return;
     }
 
+    /*
+        set_smarty_vars($varname, $var)
+        It makes variable for using in smarty (in theme files)
+        return No_Return;
+    */
     function set_smarty_vars($varname, $var){
             global $smarty;
             $smarty->assign($varname,$var);
     }
 
+    /*
+        conv_time($type, $value)
+        It returns date with given type, $value is source
+        types are db2post db2rss post2db rss2db
+        return String;
+    */
     function conv_time($type,$value){
-    //types are db2post db2rss post2db rss2db
         if($type == "db2post"){
             $year = substr($value, 0, 4);
             $month = substr($value, 4, 2);
@@ -159,15 +174,26 @@
         return perform_sql($sql_word);
     }
 
-    function update_user($uid,$realname,$web,$email,$password){
+    function update_user($uid="",$realname,$web,$email,$password,$add=0,$uname=""){
         global $config;
         $realname = rtag ($realname);
         $email = rtag ($email);
         $web = rtag ($web);
         $password = rtag ($password);
-        $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}', password='{$password}' WHERE id='$uid'";
+        if ($add) {
+            $sql_word = "INSERT INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3')";
+        }
+        else {
+            $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}', password='{$password}' WHERE id='$uid'";
+        }
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
+    }
+
+    function user_exist($uname){
+        global $config;
+        $sql_word = "SELECT id FROM {$config['db']['tableprefix']}users WHERE uname='$uname'";
+        return perform_sql($sql_word);
     }
 
     function add_theme($id,$name,$type,$path,$license,$description,$note,$date) {
@@ -188,7 +214,7 @@
 
     function get_user_details($user,$pass,$state=FALSE){
         global $config;
-        if (!$state) $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$user' AND password = '$pass' AND state = '0'";
+        if (!$state) $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$user' AND password = '$pass' AND state != '3'";
         else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = '$user' AND uname = '$pass' AND state='0'";
         return perform_sql($sql_word);
     }
