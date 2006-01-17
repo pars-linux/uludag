@@ -241,7 +241,7 @@
         return $typem;
     }
 
-    function mail($from,$to,$subject,$message,$priority,$type = "send"){
+    function sendmail($from,$to,$subject,$message,$priority,$type = "send"){
            $mob = new Mail;
            $mob->From($from);
            $mob->To($to);
