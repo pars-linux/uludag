@@ -38,7 +38,7 @@ include_once("globals.php");
 		            set_smarty_vars("up_pass",$_POST["password"]);
                 }
                 elseif (update_user("",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],1,$_POST["username"])){
-                            //mail($config['core']['email'],$_POST["email"],REGISTER_EMAIL_SUBJECT,$message,"3","get");
+                            sendmail($config['core']['email'],$_POST["email"],REGISTER_EMAIL_SUBJECT,$message,"3","get");
                             set_smarty_vars("info",REGISTER_OK);
                 }
             }

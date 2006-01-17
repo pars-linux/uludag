@@ -46,7 +46,7 @@ class Mail
 	var $fattach = array();
 	var $xheaders = array();
 	var $priorities = array( '1 (Highest)', '2 (High)', '3 (Normal)', '4 (Low)', '5 (Lowest)' );
-	var $charset = "iso-8859-9";
+	var $charset = "utf-8";
 	var $ctencoding = "8bit";
 	var $boundary;
 	var $receipt = 0;
@@ -296,7 +296,7 @@ class Mail
 	function Send () {
 		$this->BuildMail ();
 		$strTo = implode (", ", $this->sendto);
-		return mail ($strTo, $this->xheaders['Subject'], $this->fullBody, $this->headers);
+		return mail($strTo, $this->xheaders['Subject'], $this->fullBody, $this->headers);
 	}
 	
 	function Get () {
