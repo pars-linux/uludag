@@ -1,5 +1,4 @@
 <?
-
 	/* Turkish language File for Arto */
 
 	define ("WARN_WRONG_PASS",	"Kullanıcı Adı ya da Parola Hatalı !!");
@@ -26,5 +25,5 @@
 	define ("LOGIN",		"Giriş");
         define ("USER_EXIST",           "Seçtiğiniz Kullanıcı Adı ile kayıtlı bir kullanıcı mevcut");
         define ("REGISTER_OK",          "Kaydınız alındı, kayıt sırasında verdiğiniz e-posta adresine gerekli bilgiler gönderilmiştir. Kaydınızı tamamlamak için e-postanızı kontrol ediniz. ");
-
+        define ("REGISTER_EMAIL_SUBJECT","Art-o (sanat.uludag.org.tr) kullanıcı bilgileri");
 ?>

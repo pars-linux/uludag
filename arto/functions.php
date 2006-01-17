@@ -240,4 +240,15 @@
 
         return $typem;
     }
+
+    function mail($from,$to,$subject,$message,$priority,$type = "send"){
+           $mob = new Mail;
+           $mob->From($from);
+           $mob->To($to);
+           $mob->Subject($subject);
+           $mob->Body($message, "utf-8");
+           $mob->Priority($priority);
+           if($type = "send"){$mob->Send();}
+           elseif($type = "get"){$mob->Get();}
+    }
 ?>
