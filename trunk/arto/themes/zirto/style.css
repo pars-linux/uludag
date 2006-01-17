@@ -160,9 +160,7 @@ input, select, textarea {
 	padding-left:5px;
 	
 }
-.regtable th,td {
-        text-align:left;
-}
+
 .helptable {
 	background-color: #EEE;
 	border: 0px;
