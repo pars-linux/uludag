@@ -20,10 +20,10 @@ CREATE TABLE `arto_comments` (
   `id` int(11) NOT NULL auto_increment,
   `fid` int(11) NOT NULL default '0',
   `uid` int(11) NOT NULL default '0',
-  `date` tinytext character set utf8 collate utf8_turkish_ci NOT NULL,
-  `comment` text character set utf8 collate utf8_turkish_ci NOT NULL,
+  `date` tinytext NOT NULL,
+  `comment` text NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=1 ;
 
 -- 
 -- Tablo döküm verisi `arto_comments`
@@ -40,19 +40,19 @@ CREATE TABLE `arto_files` (
   `id` int(11) NOT NULL auto_increment,
   `type` int(11) NOT NULL default '0',
   `sub_type` int(11) NOT NULL default '0',
-  `name` varchar(200) character set utf8 collate utf8_turkish_ci NOT NULL default '',
+  `name` varchar(200) NOT NULL default '',
   `license` int(11) NOT NULL default '0',
   `user` int(11) NOT NULL default '0',
   `supervisor` int(11) default '0',
-  `path` varchar(255) character set utf8 collate utf8_turkish_ci NOT NULL default '',
-  `desc` text character set utf8 collate utf8_turkish_ci,
-  `note` varchar(255) character set utf8 collate utf8_turkish_ci default NULL,
-  `rate` set('0','1','2','3','4','5') character set utf8 collate utf8_turkish_ci NOT NULL default '0',
-  `state` set('0','1') character set utf8 collate utf8_turkish_ci NOT NULL default '0',
+  `path` varchar(255) NOT NULL default '',
+  `desc` text,
+  `note` varchar(255) default NULL,
+  `rate` set('0','1','2','3','4','5') NULL default '0',
+  `state` set('0','1') NOT NULL default '0',
   `counter` int(11) NOT NULL default '0',
-  `release` tinytext character set utf8 collate utf8_turkish_ci NOT NULL,
+  `release` tinytext NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='All about files' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM COMMENT='All about files' AUTO_INCREMENT=1 ;
 
 -- 
 -- Tablo döküm verisi `arto_files`
@@ -67,11 +67,11 @@ CREATE TABLE `arto_files` (
 
 CREATE TABLE `arto_license` (
   `id` int(11) NOT NULL auto_increment,
-  `name` varchar(200) character set utf8 collate utf8_turkish_ci NOT NULL default '',
-  `link` varchar(255) character set utf8 collate utf8_turkish_ci NOT NULL default '',
-  `description` varchar(255) character set utf8 collate utf8_turkish_ci NOT NULL default '',
+  `name` varchar(200) NOT NULL default '',
+  `link` varchar(255) NOT NULL default '',
+  `description` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='All about licenses' AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM COMMENT='All about licenses' AUTO_INCREMENT=3 ;
 
 -- 
 -- Tablo döküm verisi `arto_license`
@@ -88,11 +88,11 @@ INSERT INTO `arto_license` VALUES (2, 'GNU General Public License', 'http://crea
 
 CREATE TABLE `arto_types` (
   `id` int(11) NOT NULL auto_increment,
-  `type` varchar(200) character set utf8 collate utf8_turkish_ci NOT NULL default '',
+  `type` varchar(200) NOT NULL default '',
   `parent_id` int(11) NOT NULL default '0',
   `admin` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Theme types' AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM COMMENT='Theme types' AUTO_INCREMENT=9 ;
 
 -- 
 -- Tablo döküm verisi `arto_types`
@@ -118,14 +118,14 @@ INSERT INTO `arto_types` VALUES (11, 'Pardus', 3, 0);
 
 CREATE TABLE `arto_users` (
   `id` int(11) NOT NULL auto_increment,
-  `uname` varchar(30) character set utf8 collate utf8_turkish_ci NOT NULL default '',
-  `password` varchar(30) character set utf8 collate utf8_turkish_ci NOT NULL default '',
-  `name` varchar(120) character set utf8 collate utf8_turkish_ci NOT NULL default '',
-  `email` varchar(200) character set utf8 collate utf8_turkish_ci NOT NULL default '',
-  `web` varchar(200) character set utf8 collate utf8_turkish_ci default NULL,
-  `state` set('0','1','2','3') character set utf8 collate utf8_turkish_ci NOT NULL default '',
+  `uname` varchar(30) NOT NULL default '',
+  `password` varchar(30) NOT NULL default '',
+  `name` varchar(120) NOT NULL default '',
+  `email` varchar(200) NOT NULL default '',
+  `web` varchar(200) default NULL,
+  `state` set('0','1','2','3') NOT NULL default '',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='All about users' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM COMMENT='All about users' AUTO_INCREMENT=2 ;
 
 -- 
 -- Tablo döküm verisi `arto_users`
