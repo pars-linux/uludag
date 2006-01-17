@@ -4,6 +4,7 @@ $config['core']['title']		= "sanat.pardus";
 $config['core']['desc']			= "Arto yeni sanat o ..";
 $config['core']['path']			= "/home/arto/public_html/";
 $config['core']['url']			= "http://localhost/~arto/";
+$config['core']['email']		= "arto@uludag.org.tr";
 $config['core']['postperpage']		= "5";
 $config['core']['postsinfeed']		= "10";
 $config['core']['theme']		= "zirto";
