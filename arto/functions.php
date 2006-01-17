@@ -241,14 +241,19 @@
         return $typem;
     }
 
-    function sendmail($from,$to,$subject,$message,$priority,$type = "send"){
+    function sendmail($from,$to,$subject,$message,$priority){
            $mob = new Mail;
            $mob->From($from);
            $mob->To($to);
            $mob->Subject($subject);
            $mob->Body($message, "utf-8");
            $mob->Priority($priority);
-           if($type = "send"){$mob->Send();}
-           elseif($type = "get"){$mob->Get();}
+           $mob->Send();
+    }
+
+    function get_user_id($username){
+        global $config;
+        $sql_word = "SELECT id FROM {$config['db']['tableprefix']}users WHERE uname='{$username}'";
+        return perform_sql($sql_word);
     }
 ?>
