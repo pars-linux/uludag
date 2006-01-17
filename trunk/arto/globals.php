@@ -20,6 +20,7 @@ $smarty->assign("title", $config['core']['title']);
 $smarty->assign("desc", $config['core']['desc']);
 $smarty->assign("url", $config['core']['url']);
 $smarty->assign("themepath", $config['smarty']['tpldir']."/".$config['core']['theme']);
+$smarty->assign("arto_signature","<a href=\"http://arto.fasafiso.org/\" title=\"Arto v{$config['arto']['version']} ({$config['arto']['builddate']})\">Arto  v{$config['arto']['version']}</a>");
 
 // including arto functions
 include_once("functions.php");

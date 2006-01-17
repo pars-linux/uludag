@@ -57,8 +57,11 @@ img {
 	border-right: thin solid #000000;
 	border-bottom: thin solid #000000;
 	border-left: thin solid #000000;
-	text-align: right;
 
+}
+
+.footbar a {
+        color: #FFFFFF;
 }
 
 .headbar {
