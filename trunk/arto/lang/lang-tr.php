@@ -24,5 +24,7 @@
 	define ("USERNAME",		"Kullanıcı Adı : ");
 	define ("PASSWORD",		"Parola : ");
 	define ("LOGIN",		"Giriş");
+        define ("USER_EXIST",           "Seçtiğiniz Kullanıcı Adı ile kayıtlı bir kullanıcı mevcut");
+        define ("REGISTER_OK",          "Kaydınız alındı, kayıt sırasında verdiğiniz e-posta adresine gerekli bilgiler gönderilmiştir. Kaydınızı tamamlamak için e-postanızı kontrol ediniz. ");
 
 ?>

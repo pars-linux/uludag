@@ -12,12 +12,16 @@ function submitform() {
 {/literal}
 </script>
 <div id="content" class="main_content">
-<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>
+{if !$info}<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>{/if}
 <h4><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48">Kullanıcı 
 {if $userdetails} Bilgileri {else} Kayıt {/if}
 </h4>
 <div class="main_left" width="300px">
-<form id="frm" action="actions.php?call={if $userdetails}updateuser{else}registeruser{/if}" method="post">
+<span class="error">{$error}</span>
+{if $info}
+<span class="info">{$info}</span>
+{else}
+<form id="frm" action="{if $userdetails}actions.php?call=updateuser{else}?register{/if}" method="post">
 <table style="margin-bottom: 1em;" class="regtable" width="300px">
 	<tbody>
 		<tr>
@@ -72,7 +76,7 @@ function submitform() {
 	</tbody>
 </table>
 </div>
-
+{/if}
 </div>
 
 

@@ -29,6 +29,18 @@ include_once("globals.php");
 	}
 
 	elseif (isset($_GET["register"])) {
+            if (isset($_POST["username"])){
+                if (user_exist($_POST["username"])) {
+                            set_smarty_vars("error",USER_EXIST);
+		            set_smarty_vars("up_name",$_POST["realname"]);
+		            set_smarty_vars("up_web",$_POST["web"]);
+		            set_smarty_vars("up_email",$_POST["email"]);
+		            set_smarty_vars("up_pass",$_POST["password"]);
+                }
+                elseif (update_user("",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],1,$_POST["username"])){
+                            set_smarty_vars("info",REGISTER_OK);
+                }
+            }
 		$smarty->display("register.html");
 		die();
 	}

@@ -13,6 +13,7 @@ a:hover {
 	color: #FF3300;
 	text-decoration: underline;
 }
+
 .bar {
 	background-color: #FFFFFF;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -59,6 +60,7 @@ img {
 	text-align: right;
 
 }
+
 .headbar {
 
 	background-color: #B22400;
@@ -71,6 +73,7 @@ img {
 	border-bottom: thin solid #CCCCCC;
 	border-left: thin solid #000000;
 }
+
 .main {
 	background-color: #FFFFFF;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -128,6 +131,7 @@ img.thumbnail {
 	margin-right: 1em;
 	vertical-align:middle;
 }
+
 input.username {
 	padding-left:18px;
 	background-image: url('../../images/stock_person.png');
@@ -158,6 +162,39 @@ input, select, textarea {
 	margin-left: 50px;
 	padding-top:5px;
 	padding-left:5px;
+	
+}
+
+.info {
+    	margin-left: 50px;
+        color: blue;
+}
+
+.error {
+    	margin-left: 50px;
+        color: red;
+}
+
+.filestable {
+	background-color: #EEE;
+	border: 0px;
+	border-bottom: 1px solid #BBB;
+	border-right: 1px solid #BBB;
+	-moz-border-radius : 5px;
+	margin-left: 50px;
+	padding-top:5px;
+	padding-left:5px;
+	
+}
+
+.filestable td {
+        text-align:left;
+	border-top: 1px solid #BBB;
+	
+}
+
+.filestable th {
+        text-align:left;
 	
 }
 
