@@ -1,6 +1,9 @@
 <?php
 include_once("config.php");
 
+//including libmail
+include_once($config['core']['path']."3rdparty/libmail/libmail.php");
+
 // including smarty class and lang file
 include_once($config['core']['path'].$config['smarty']['libdir']."/Smarty.class.php");
 include_once($config['core']['path']."lang/lang-".$config['core']['lang'].".php");
