@@ -31,7 +31,12 @@ def register():
     q = """SELECT Count(*)
            FROM users
            WHERE username=%s"""
+    q2 = """SELECT Count(*)
+            FROM users_pending
+            WHERE username=%s"""
     if p.db.scalar_query(q, p.form.getvalue('r_username')) > 0:
+      p['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
+    elif p.db.scalar_query(q2, p.form.getvalue('r_username')) > 0:
       p['errors']['r_username'] = 'Kullanıcı adı başkası tarafından kullanılıyor.'
    
   # E-posta adresini kontrol et.
