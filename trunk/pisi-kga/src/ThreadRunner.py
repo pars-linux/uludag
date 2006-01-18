@@ -62,7 +62,7 @@ class PisiThread(QThread):
     def addRepo(self,repoName,repoAddress):
         pisi.api.add_repo(repoName,repoAddress)
         event = QCustomEvent(CustomEvent.NewRepoAdded)
-        QThread.postEvent(self.parent,event)
+        self.postEvent(self.parent,event)
 
     def removeRepo(self, repoName):
         pisi.api.remove_repo(repoName)
@@ -102,15 +102,15 @@ class PisiThread(QThread):
             elif self.updatingRepo:
                 event = QCustomEvent(CustomEvent.RepositoryUpdate)
                 event.setData(self.repo)
-                QThread.postEvent(self.parent,event)
+                self.postEvent(self.parent,event)
                 pisi.api.update_repo(self.repo)
                 self.updatingRepo = False
 
             elif self.updatingAllRepos:
-                event = QCustomEvent(CustomEvent.RepositoryUpdate)
                 for repo in self.repoList:
+                    event = QCustomEvent(CustomEvent.RepositoryUpdate)
                     event.setData(repo)
-                    QThread.postEvent(self.parent,event)
+                    self.postEvent(self.parent,event)
                     pisi.api.update_repo(repo)
                 self.updatingAllRepos = False
 
@@ -119,13 +119,8 @@ class PisiThread(QThread):
             self.initDatabase()
             event = QCustomEvent(CustomEvent.PisiError)
             event.setData(unicode(e))
-            QThread.postEvent(self.parent,event)
-
-#        except Exception,e:
-#            event = QCustomEvent(CustomEvent.PisiError)
-#            event.setData(unicode(e))
-#            QThread.postEvent(self.parent,event)
+            self.postEvent(self.parent,event)
 
         # Send a finish event
         event = QCustomEvent(CustomEvent.Finished)
-        QThread.postEvent(self.parent,event)
+        self.postEvent(self.parent,event)
