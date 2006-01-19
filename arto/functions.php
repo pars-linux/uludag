@@ -79,7 +79,7 @@
         get_something($thing, $id="", $subid="")
         if $thing = "cat", it returns entries of given $id (parent) and (if declared) $subid (child)
         if $thing = "single", it returns entry of given $id
-        Also it translates licence, comments and release info
+        Also it translates license, comments and release info
         return Array;
     */
     function get_something($thing, $id="", $subid=""){
@@ -93,13 +93,13 @@
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
-            $licence = get_licences($assoc_arr['license']);
+            $license = get_licenses($assoc_arr['license']);
             $return_array[$i] = $assoc_arr;
             $return_array[$i]['comments'] = get_comment_number($assoc_arr['id']);
             $return_array[$i]['release'] = conv_time("db2post", $assoc_arr['release']);
-            $return_array[$i]['llink'] = $licence[0]['link'];
-            $return_array[$i]['lname'] = $licence[0]['name'];
-            $return_array[$i]['ldesc'] = $licence[0]['description'];
+            $return_array[$i]['llink'] = $license[0]['link'];
+            $return_array[$i]['lname'] = $license[0]['name'];
+            $return_array[$i]['ldesc'] = $license[0]['description'];
         }
         return $return_array;
     }
@@ -117,11 +117,11 @@
     }
 
     /*
-        get_licences($id=0) it returns licences
+        get_licenses($id=0) it returns licenses
         return Array;
         if $id defined it returns String or single Array;
     */
-    function get_licences($id=0){
+    function get_licenses($id=0){
         global $config;
         if ($id<>0) $query=" WHERE id = '{$id}'";
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}license".$query;

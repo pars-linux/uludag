@@ -4,7 +4,7 @@ include_once("globals.php");
 	if (session_is_registered("arto")){
 		set_smarty_vars("username",$_SESSION["user"]);
 		set_smarty_vars("name",$_SESSION["uname"]);
-                set_smarty_vars("level",$_SESSION["state"]);
+		set_smarty_vars("level",$_SESSION["state"]);
 	}
 
 	$child_type=get_type($_GET["sid"]);
@@ -13,7 +13,7 @@ include_once("globals.php");
 	set_smarty_vars("categories",get_types());
 	set_smarty_vars("sub_type",$child_type[0]["type"]);
 	set_smarty_vars("parent_type",$parent_type[0]["type"]);
-        set_smarty_vars("licenses",get_licences());
+        set_smarty_vars("licenses",get_licenses());
 
 	if (isset($_GET["id"])) {
 		set_smarty_vars("nodes",get_something("single",$_GET["id"]));
@@ -42,7 +42,7 @@ include_once("globals.php");
                 elseif (update_user("",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],1,$_POST["username"])){
                             $temporary = get_user_id($_POST["username"]);
                             $activationcode = md5($temporary[0]['id']);
-                            $mail_message = "Merhaba\n\n    Siz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın: {$config['core']['url']}?activateuser&code={$activationcode}\n İptal etmek için tıklayın: {$config['core']['url']}?activateuser&action=del&username={$_POST["username"]}\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
+                            $mail_message = "Merhaba\n\n    Siz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın: {$config['core']['url']}?activateuser&user={$_POST["username"]}&code={$activationcode}\n İptal etmek için tıklayın: {$config['core']['url']}?activateuser&action=delete&user={$_POST["username"]}\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
                             sendmail($config['core']['email'],$_POST["email"],REGISTER_EMAIL_SUBJECT,$mail_message,"3");
                             set_smarty_vars("info",REGISTER_OK);
                 }
@@ -53,6 +53,7 @@ include_once("globals.php");
 
 	elseif (isset($_GET["newtheme"])) {
 		if (session_is_registered("arto")) {
+		set_smarty_vars("licenses",get_licenses());
 		set_smarty_vars("userdetails",TRUE);
 		}
 		$smarty->display("new-theme.html");
@@ -71,6 +72,15 @@ include_once("globals.php");
 		set_smarty_vars("userdetails",TRUE);
 		}
 		$smarty->display("register.html");
+		die();
+	}
+
+	elseif (isset($_GET["activateuser"])) {
+		if (session_is_registered("arto")) {
+		//$details=get_user_details($_SESSION["uid"],$_SESSION["user"],1);
+		//set_smarty_vars("userdetails",TRUE);
+		}
+		//$smarty->display("register.html");
 		die();
 	}
 
@@ -103,8 +113,8 @@ include_once("globals.php");
                             
                         }
                         elseif (isset($_POST["add"])) {
-                            if ($new_path=get_content($_POST["theme_path"],$_POST["theme_id"])) {
-                            if (add_theme($_POST["theme_id"],$_POST["theme_name"],$_POST["theme_type"],$new_path,$_POST["theme_license"],$_POST["theme_description"],$_POST["theme_note"],$_POST["theme_date"],$_SESSION["uid"],1)) set_smarty_vars("status",THEME_ADDED);
+                            if($new_path=get_content($_POST["theme_path"],$_POST["theme_id"])) {
+                            if(add_theme($_POST["theme_id"],$_POST["theme_name"],$_POST["theme_type"],$new_path,$_POST["theme_license"],$_POST["theme_description"],$_POST["theme_note"],$_POST["theme_date"],$_SESSION["uid"],1)) set_smarty_vars("status",THEME_ADDED);
                             else set_smarty_vars("status","hataaaa");//fix me düzgün hata yap
                             }
                             else set_smarty_vars("status",LOGIC_ERROR);//fix me düzgün hata yap
@@ -129,7 +139,7 @@ include_once("globals.php");
             $smarty->display("missions.html");
             die();
         }
-
+	
 	else {
 		set_smarty_vars("nodes",get_something("cat","1"));
 		$smarty->display("posts.html");
