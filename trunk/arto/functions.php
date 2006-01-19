@@ -179,12 +179,12 @@
         $realname = rtag ($realname);
         $email = rtag ($email);
         $web = rtag ($web);
+        if ($password<>"") $attach_sql=", password='{$password}'";
         $password = md5(rtag($password));
         if ($add) {
             $sql_word = "INSERT INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
         }
         else {
-            if ($password<>"") $attach_sql=", password='{$password}'";
             $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}'".$attach_sql." WHERE id='$uid'";
         }
         $sql_query = @mysql_query($sql_word);
