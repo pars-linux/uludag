@@ -23,6 +23,7 @@ function submitform() {
 {if $info}
 <span class="info">{$info}</span>
 {else}
+<span class="info">{$success}</span>
 <form id="frm" action="{if $userdetails}actions.php?call=updateuser{else}?register{/if}" method="post">
 <table style="margin-bottom: 1em;" class="regtable" width="300px">
 	<tbody>

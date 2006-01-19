@@ -62,13 +62,14 @@ include_once("globals.php");
 
 	elseif (isset($_GET["userdetails"])) {
 		if (session_is_registered("arto")) {
-		$details=get_user_details($_SESSION["uid"],$_SESSION["user"]);
+		$details=get_user_details($_SESSION["uid"],$_SESSION["user"],1);
 		set_smarty_vars("name",$details[0]["name"]);
 		set_smarty_vars("up_user",$details[0]["uname"]);
 		set_smarty_vars("up_name",$details[0]["name"]);
 		set_smarty_vars("up_web",$details[0]["web"]);
 		set_smarty_vars("up_email",$details[0]["email"]);
 		set_smarty_vars("userdetails",TRUE);
+                if (isset($_GET["success"])) set_smarty_vars("success",UPDATE_OK);
 		}
 		$smarty->display("register.html");
 		die();

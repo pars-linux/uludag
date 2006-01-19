@@ -27,4 +27,5 @@
         define ("REGISTER_OK",          "Kaydınız alındı, kayıt sırasında verdiğiniz e-posta adresine gerekli bilgiler gönderilmiştir. Kaydınızı tamamlamak için e-postanızı kontrol ediniz. ");
         define ("REGISTER_EMAIL_SUBJECT","Art-o (sanat.uludag.org.tr) kullanıcı bilgileri");
         define ("THEME_ADDED",          "İçerik başarı ile eklendi.");
+        define ("UPDATE_OK",            "Bilgiler güncellendi.");
 ?>

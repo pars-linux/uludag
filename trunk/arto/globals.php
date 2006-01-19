@@ -42,7 +42,7 @@ db_connection('connect', $config['db']['hostname'].':'.$config['db']['port'], $c
 
 if (array_key_exists ('login', $_GET)){
 	$username = rtag($_POST['username']);
-	$password = md5(rtag($_POST['password']));
+	$password = rtag($_POST['password']);
 
 	if ($ird=get_user_details($username,$password)){
 		session_unregister("arto");
