@@ -174,22 +174,18 @@
         return perform_sql($sql_word);
     }
 
-    function update_user($uid="",$realname,$web,$email,$pass,$add=0,$uname=""){
+   function update_user($uid="",$realname,$web,$email,$password,$add=0,$uname=""){
         global $config;
-        $realname = rtag($realname);
-        $email = rtag($email);
-        $web = rtag($web);
-        $password = md5(rtag($pass));
+        $realname = rtag ($realname);
+        $email = rtag ($email);
+        $web = rtag ($web);
+        $password = md5(rtag($password));
         if ($add) {
             $sql_word = "INSERT INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
         }
         else {
-            if(!$pass){
-                $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}', password='{$password}' WHERE id='$uid'";
-            }
-            else{
-                $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}' WHERE id='$uid'";
-            }
+            if ($password<>"") $attach_sql=", password='{$password}'";
+            $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}'".$attach_sql." WHERE id='$uid'";
         }
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
@@ -233,14 +229,12 @@
         else return 0;
     }
 
-    function get_user_details($id,$username,$password = NULL,$state=FALSE){
+    function get_user_details($user,$passo,$state=FALSE){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE 1";
-        if(!$state){$sql_word .= " AND state != '3'";}
-        elseif($state){$sql_word .= " AND state = '{$state}'";}
-        elseif($id){$sql_word .= " AND id = '{$id}'";}
-        elseif($username){$sql_word .= " AND username = '{$username}'";}
-        elseif($password){$sql_word .= " AND password = '{$password}'";}
+        $uname = $passo;
+        $pass = md5($passo);
+        if (!$state) $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$user' AND password = '$pass' AND state != '3'";
+        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = '$user' AND uname = '$uname' AND state='0'";
         return perform_sql($sql_word);
     }
 
