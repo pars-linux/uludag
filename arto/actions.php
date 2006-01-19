@@ -7,7 +7,7 @@ include_once("globals.php");
 			session_unregister("arto");
 			$_SESSION["uname"]=$_POST['realname'];
 			@session_register("arto");
-			header ("location: index.php?userdetails");
+			header ("location: index.php?userdetails&success");
 			}
 			else header ("location: index.php?error");
 		break;
