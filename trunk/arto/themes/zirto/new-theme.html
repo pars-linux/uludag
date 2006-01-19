@@ -1,11 +1,48 @@
 {include file="header.html"}
 <script>
 {literal}
-function submitform() {
-			if (frm.theme_name.value.length < 6) { alert('Tema Adı en az 6 (altı) karakterden oluşmalıdır !');return false;}
-			if (frm.theme_path.value.length == 0) { alert('Tema Konumu boş ya da eksik !');return false;}
-			return true;
-	}
+
+    var arrInput = new Array(0);
+    var arrInputValue = new Array(0);
+
+    function addInput() {
+        if (arrInput.length < 3){
+            arrInput.push(arrInput.length);
+            arrInputValue.push("");
+        }
+        else alert("En fazla 3 (üç) ekstra konum ekleyebilirsiniz!");
+        display();
+    }
+
+    function display() {
+        document.getElementById('path').innerHTML="";
+        for (intI=0;intI<arrInput.length;intI++) {
+            document.getElementById('path').innerHTML+=createInput(arrInput[intI], arrInputValue[intI]);
+        }
+    }
+
+    function saveValue(intId,strValue) {
+        arrInputValue[intId]=strValue;
+    }
+
+    function createInput(id,value) {
+        return "<input type='text' id='theme_subpath"+ id +"' onChange='javascript:saveValue("+ id +",this.value)' value='"+ value +"' class='register' size='35'> <a href='javascript:deleteInput()' style='vertical-align:top'>[-]</a><br>";
+    }
+
+    function deleteInput() {
+        if (arrInput.length > 0) { 
+            arrInput.pop(); 
+            arrInputValue.pop();
+        }
+    display(); 
+    }
+
+    function submitform() {
+	if (frm.theme_name.value.length < 6) { alert('Tema Adı en az 6 (altı) karakterden oluşmalıdır !');return false;}
+	if (frm.theme_path.value.length == 0) { alert('Tema Konumu boş ya da eksik !');return false;}
+	return true;
+    }
+
 {/literal}
 </script>
 <div class="main_content">
@@ -14,7 +51,7 @@ function submitform() {
 {if $userdetails}
 <div class="main_left" width="380px">
 <form id="frm" action="actions.php?call=addtheme" method="post">
-<table style="margin-bottom: 1em;" class="regtable" width="360px">
+<table style="margin-bottom: 1em;" class="regtable" width="380px">
 	<tbody>
 		<tr>
 			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Tema Adı </td>
@@ -37,8 +74,8 @@ function submitform() {
   			</select></td>
 		</tr>
 		<tr>
-			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Konum </td>
-			<td><input id="theme_path" name="theme_path" class="register" size="35" ></td>
+			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Konum <a href="javascript:addInput()">[+]</a></td>
+			<td><input id="theme_path" name="theme_path" class="register" size="35"><span id="path"></span></td>
 		</tr>
 		<tr>
 			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Lisans </td>
