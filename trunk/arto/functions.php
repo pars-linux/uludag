@@ -174,17 +174,22 @@
         return perform_sql($sql_word);
     }
 
-    function update_user($uid="",$realname,$web,$email,$password,$add=0,$uname=""){
+    function update_user($uid="",$realname,$web,$email,$pass,$add=0,$uname=""){
         global $config;
-        $realname = rtag ($realname);
-        $email = rtag ($email);
-        $web = rtag ($web);
-        $password = rtag ($password);
+        $realname = rtag($realname);
+        $email = rtag($email);
+        $web = rtag($web);
+        $password = md5(rtag($pass));
         if ($add) {
             $sql_word = "INSERT INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
         }
         else {
-            $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}', password='{$password}' WHERE id='$uid'";
+            if(!$pass){
+                $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}', password='{$password}' WHERE id='$uid'";
+            }
+            else{
+                $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}' WHERE id='$uid'";
+            }
         }
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
@@ -228,10 +233,14 @@
         else return 0;
     }
 
-    function get_user_details($user,$pass,$state=FALSE){
+    function get_user_details($id,$username,$password = NULL,$state=FALSE){
         global $config;
-        if (!$state) $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$user' AND password = '$pass' AND state != '3'";
-        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = '$user' AND uname = '$pass' AND state='0'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE 1";
+        if(!$state){$sql_word .= " AND state != '3'";}
+        elseif($state){$sql_word .= " AND state = '{$state}'";}
+        elseif($id){$sql_word .= " AND id = '{$id}'";}
+        elseif($username){$sql_word .= " AND username = '{$username}'";}
+        elseif($password){$sql_word .= " AND password = '{$password}'";}
         return perform_sql($sql_word);
     }
 
@@ -289,5 +298,18 @@
         global $config;
         $sql_word = "SELECT id FROM {$config['db']['tableprefix']}users WHERE uname='{$username}'";
         return perform_sql($sql_word);
+    }
+
+    function activate_user($username,$code,$action = "activate"){
+        global $config;
+
+        if($action = "activate") {
+            //$sql_word = "UPDATE INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
+        }
+        elseif($action = "delete"){
+            //$sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}', password='{$password}' WHERE id='$uid'";
+        }
+        //$sql_query = @mysql_query($sql_word);
+        //return $sql_query;
     }
 ?>

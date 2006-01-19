@@ -42,7 +42,7 @@ include_once("globals.php");
                 elseif (update_user("",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],1,$_POST["username"])){
                             $temporary = get_user_id($_POST["username"]);
                             $activationcode = md5($temporary[0]['id']);
-                            $mail_message = "Merhaba\n\n    Siz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın: {$config['core']['url']}?activateuser&user={$_POST["username"]}&code={$activationcode}\n İptal etmek için tıklayın: {$config['core']['url']}?activateuser&action=delete&user={$_POST["username"]}\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
+                            $mail_message = "Merhaba\n\n    Siz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın: {$config['core']['url']}?activateuser&user={$_POST["username"]}&code={$activationcode}\n İptal etmek için tıklayın: {$config['core']['url']}?activateuser&action=delete&user={$_POST["username"]}&code={$activationcode}\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
                             sendmail($config['core']['email'],$_POST["email"],REGISTER_EMAIL_SUBJECT,$mail_message,"3");
                             set_smarty_vars("info",REGISTER_OK);
                 }
@@ -62,13 +62,12 @@ include_once("globals.php");
 
 	elseif (isset($_GET["userdetails"])) {
 		if (session_is_registered("arto")) {
-		$details=get_user_details($_SESSION["uid"],$_SESSION["user"],1);
+		$details=get_user_details($_SESSION["uid"],$_SESSION["user"]);
 		set_smarty_vars("name",$details[0]["name"]);
 		set_smarty_vars("up_user",$details[0]["uname"]);
 		set_smarty_vars("up_name",$details[0]["name"]);
 		set_smarty_vars("up_web",$details[0]["web"]);
 		set_smarty_vars("up_email",$details[0]["email"]);
-		set_smarty_vars("up_pass",$details[0]["password"]);
 		set_smarty_vars("userdetails",TRUE);
 		}
 		$smarty->display("register.html");
@@ -77,10 +76,10 @@ include_once("globals.php");
 
 	elseif (isset($_GET["activateuser"])) {
 		if (session_is_registered("arto")) {
-		//$details=get_user_details($_SESSION["uid"],$_SESSION["user"],1);
-		//set_smarty_vars("userdetails",TRUE);
+		$message = activate_user($_GET['user'],$_GET['code'],$_GET['action']);
+		set_smarty_vars("message",$message);
 		}
-		//$smarty->display("register.html");
+		$smarty->display("message.html");
 		die();
 	}
 
