@@ -21,7 +21,6 @@ from qt import *
 from Enums import *
 import PreferencesDialog
 import RepoDialog
-import ThreadRunner
 import PisiKga # for loadIcon
 
 # Pisi imports
