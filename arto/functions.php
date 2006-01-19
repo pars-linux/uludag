@@ -174,13 +174,13 @@
         return perform_sql($sql_word);
     }
 
-   function update_user($uid="",$realname,$web,$email,$password,$add=0,$uname=""){
+   function update_user($uid="",$realname,$web,$email,$passwordc,$add=0,$uname=""){
         global $config;
         $realname = rtag ($realname);
         $email = rtag ($email);
         $web = rtag ($web);
-        if ($password<>"") $attach_sql=", password='{$password}'";
-        $password = md5(rtag($password));
+        $password = md5(rtag($passwordc));
+        if ($passwordc<>"") $attach_sql=", password='{$password}'";
         if ($add) {
             $sql_word = "INSERT INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
         }
