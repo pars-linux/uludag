@@ -94,19 +94,19 @@ CREATE TABLE `arto_users` (
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM COMMENT='All about users';
 
-INSERT INTO `arto_types` VALUES (1, 'Duvar Kağıdı', 0, 0);
-INSERT INTO `arto_types` VALUES (2, 'Temalar', 0, 0);
-INSERT INTO `arto_types` VALUES (3, 'Müzikler', 0, 0);
-INSERT INTO `arto_types` VALUES (4, 'Pardus', 1, 0);
-INSERT INTO `arto_types` VALUES (5, 'KDE', 1, 0);
-INSERT INTO `arto_types` VALUES (6, 'KDE', 2, 0);
-INSERT INTO `arto_types` VALUES (7, 'amaroK', 2, 0);
-INSERT INTO `arto_types` VALUES (8, 'Kopete', 2, 0);
-INSERT INTO `arto_types` VALUES (9, 'Ekran Görüntüleri', 1, 0);
-INSERT INTO `arto_types` VALUES (10, 'Sistem', 3, 0);
-INSERT INTO `arto_types` VALUES (11, 'Pardus', 3, 0);
+INSERT INTO `arto_types` VALUES (1, 'Duvar Kağıdı', 0);
+INSERT INTO `arto_types` VALUES (2, 'Temalar', 0);
+INSERT INTO `arto_types` VALUES (3, 'Müzikler', 0);
+INSERT INTO `arto_types` VALUES (4, 'Pardus', 1);
+INSERT INTO `arto_types` VALUES (5, 'KDE', 1);
+INSERT INTO `arto_types` VALUES (6, 'KDE', 2);
+INSERT INTO `arto_types` VALUES (7, 'amaroK', 2);
+INSERT INTO `arto_types` VALUES (8, 'Kopete', 2);
+INSERT INTO `arto_types` VALUES (9, 'Ekran Görüntüleri', 1);
+INSERT INTO `arto_types` VALUES (10, 'Sistem', 3);
+INSERT INTO `arto_types` VALUES (11, 'Pardus', 3);
 
-INSERT INTO `arto_users` VALUES (1, 'pardusman', 'sifreyimben', 'PardusMan', 'arto@uludag.org.tr', 'http://sanat.uludag.org.tr', '0');
+INSERT INTO `arto_users` VALUES (1, 'pardusman', 'sifreyimben', 'PardusMan', 'arto@uludag.org.tr', 'http://sanat.uludag.org.tr', '0', '0');
 
 INSERT INTO `arto_license` VALUES (1, 'CC Attribution-ShareAlike', 'http://creativecommons.org/licenses/by-sa/2.0/', 'Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under a license identical to this one.');
 INSERT INTO `arto_license` VALUES (2, 'GNU General Public License', 'http://creativecommons.org/licenses/GPL/2.0/', 'The GNU General Public License is a Free Software license. Like any Free Software license, it grants to you the four following freedoms:\r\n\r\n   0. The freedom to run the program for any purpose.\r\n   1. The freedom to study how the program works and adapt i');
