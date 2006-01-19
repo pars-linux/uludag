@@ -159,7 +159,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             QThread.postEvent(self.parent,event)
 
             event = QCustomEvent(PisiCommand.AddRepo)
-            event.setData(newRepoName+" "+newRepoAddress)
+            data = [newRepoName,newRepoAddress]
+            event.setData(data)
             QThread.postEvent(self.parent,event)
 
         self.updateListView()
