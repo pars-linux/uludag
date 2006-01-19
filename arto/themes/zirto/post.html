@@ -1,43 +1,29 @@
 {include file="header.html"}
 {if $nodes}
 {section name=post loop=$nodes}
-<div>
-<table style="margin-bottom: 1em;" border="0">
-	<tbody>
-		<tr>
-			<td style="width: 220px;">
-			<h2><b><a href="{$url}?id={$nodes[post].id}">{$nodes[post].name}</a></b><br><br></h2>
-			<a href="{$url}?id={$nodes[post].id}">
-				<img src="{$url}/3rdparty/php_thumb/phpThumb.php?src={$url}files/{$nodes[post].path}&w=200" alt="Thumbnail" class="thumbnail">
-			</a>
-			</td>
-			<td>
-			
-			<span class="subtitle">
-				<a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a>
-				<br>{$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}
-			</span>
-			{if $nodes[post].rate}
-			<div style="float: left; width: 120px;">
-			{section name="loop" loop=$nodes[post].rate}
-				<img src="{$url}{$themepath}/images/star.png" alt="*">
-			{/section}
-			{/if}
-			<br>
-			<small style="white-space: nowrap;">
-				<a href="{$url}?id={$nodes[post].id}#comments" style="text-decoration: none;">
-					<img src="{$url}{$themepath}/images/16x16/klipper.png" alt="" >
-					[{$nodes[post].comments}] Yorum
-				</a>
-			</small>
-			</div>
-			</td>
-		</tr>
-		
-	</tbody>
-</table>
-{/section}
-<table>
+<div class="posttable" style="float:left">
+    <div style="margin-bottom:9px;border-bottom: 1px solid;"><b><a href="{$url}?id={$nodes[post].id}">{$nodes[post].name}</a></b></div>
+	<a href="{$url}files/{$nodes[post].path}">
+	   <img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail">
+        </a>
+    <a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a><br>
+    {$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}
+	{if $nodes[post].rate}
+	       {section name="loop" loop=$nodes[post].rate}
+		  <img src="{$url}{$themepath}/images/star.png" alt="*">
+	       {/section}
+	{/if}
+	       <br>
+	       <small style="white-space: nowrap;">
+	           <a href="{$url}?id={$nodes[post].id}#comments" style="text-decoration: none;">
+	               <img src="{$url}{$themepath}/images/16x16/klipper.png" alt="" >
+		          [{$nodes[post].comments}] Yorum
+	           </a>
+	       </small>
+    <p><b>Açıklama</b><br>
+    {$nodes[post].description}</p>
+</div>
+<table class="posttable" style="clear:left;">
 	<TR>
 		<TD><h2>Yorumlar</h2></TD>
 	</TR>
@@ -47,8 +33,7 @@
 	{/section}
 	{else}Bu duvarkağıdı icin yorum yapılmamış..{/if}</TD></tr>
 </table>
-
-</div>
+{/section}
 {else}
 <div><br><br> <span class="error"> Bu kayıt mevcut değil ya da sistemden kaldırılmış </span> </div>
 {/if}

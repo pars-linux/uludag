@@ -1,0 +1,57 @@
+{include file="header.html"}
+{if $auth}
+{if $status}
+    <div><br><br> <span class="info">{ $status }</span> </div>
+{else}
+<div id="content" class="main_content">
+<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>
+<h4><img src="{$url}{$themepath}/images/missions.png" width="48" height="48"> Görevlerim
+</h4>
+<div>
+<table style="margin-bottom: 1em; margin-left: 2em; margin-right: 2em;" class="filestable" width="%95">
+	<tbody>
+		<tr>
+			<th width="3%" style="text-align:center">ID</th>
+                        <th width="27%">Adı</th>
+			<th width="23%">Gönderen</th>
+			<th width="32%">Tipi</th>
+			<th width="15%" style="text-align:center">Tarih</th>
+		</tr>
+{section name=files loop=$uf}
+		<tr align="center">
+			<td width="3%" style="text-align:center">{$uf[files].id}</td>
+                        <td width="27%"><a href="{$url}?missions&tid={$uf[files].id}">{$uf[files].name}</a></td>
+                        <td width="23%"><a href="mailto:{$uf[files].email}">{$uf[files].author}</a></td>
+			<td width="32%">{if $uf[files].types.2}{$uf[files].types.0}{else}{$uf[files].types.1}{/if}</td>
+			<td width="15%" style="text-align:center">{$uf[files].release.day} {$uf[files].release.monthname} {$uf[files].release.year}</td>
+		</tr>
+{/section}
+	</tbody>
+</table>
+</div>
+<div id="help" style="display:none;">
+<table style="margin-bottom: 1em; margin-left: 2em;" class="helptable" width="%95">
+    <tbody>
+	<tr>
+            <td valign="top"><img src="{$url}{$themepath}/images/help.png"><b> Gönderdiklerim Yardım</b></td>
+	</tr>
+	<tr>
+            <td>Gönderdiklerim sayfasında neler var?
+		<ul>
+                    <li> <strong>ID:</strong> Gönderdiğiniz dosyanın sistemdeki numarası, ilkokuldaki öğrenci numarası gibi.
+                    <li> <strong>Adı:</strong> Gönderdiğiniz dosyaya verdiğiniz isim, istisnai durumlarda (hak ihlali vb.) değiştirilebilir.
+                    <li> <strong>Tipi:</strong> Gönderdiğiniz dosyanın kategorilerimizden hangisine ait olduğu.
+                    <li> <strong>Tarih:</strong> Dosyayı gönderdiğiniz tarih.
+                    <li> <strong>Durum:</strong> Dosyanın onaylanıp onaylanmadığını öğrenebileceğiniz kısım. Henüz onaylanmamışsa acele etmeyin.
+		</ul>
+            </td>
+	</tr>
+    </tbody>
+</table>
+</div>
+</div>
+{/if}
+{else}
+<div><br><br> <span class="error"> Bu bölüme girme yetkiniz yok !! </span> </div>
+{/if}
+{include file="footer.html"}

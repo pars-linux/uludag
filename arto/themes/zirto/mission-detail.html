@@ -1,0 +1,91 @@
+{include file="header.html"}
+{if $auth}
+<script>
+{literal}
+function submitform() {
+			if (frm.theme_name.value.length < 6) { alert('Tema Adı en az 6 (altı) karakterden oluşmalıdır !');return false;}
+			if (frm.theme_path.value.length == 0) { alert('Tema Konumu boş ya da eksik !');return false;}
+			return true;
+	}
+{/literal}
+</script>
+<div class="main_content">
+<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>
+<h4><img src="{$url}{$themepath}/images/theme.png">İçerik Ekle</h4>
+<div class="main_left" width="380px">
+<form id="frm" action="?missions&finish" method="post">
+<table style="margin-bottom: 1em;" class="regtable" width="360px">
+	<tbody>
+		<tr>
+			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Tema Adı </td>
+			<td><input id="theme_name" name="theme_name" class="register" size="30" value={$uf[0].name}></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Tema Tipi </td>
+			<td><select name="theme_type">
+			{section name=cat loop=$categories}
+			{if $categories[cat].sub}
+			<optgroup label="{$categories[cat].type}">
+				{section name=sub loop=$categories[cat].sub}
+					<option {if $categories[cat].sub[sub].id==$types.2}SELECTED{/if} value="{$categories[cat].sub[sub].id}" >{$categories[cat].sub[sub].type}</option>
+				{/section}
+			</optgroup>
+			{else}	
+                        <option value="{$categories[cat].id}" {if $categories[cat].sub[sub].id==$types.1}SELECTED{/if}>{$categories[cat].type}</option>
+			{/if}
+			{/section}
+  			</select></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Konum </td>
+			<td><input id="theme_path" name="theme_path" class="register" size="35" ></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Lisans </td>
+			<td><select name="theme_license">
+			{section name=node loop=$licenses}
+			<option value="{$licenses[node].id}" title="{$licenses[node].description}">{$licenses[node].name}</option>
+			{/section}
+  			</select></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;" valign="top"><span style="color: green">[*]</span> Açıklama </td>
+			<td><textarea id="theme_description" name="theme_description" class="register" cols="28" rows="5"></textarea></td>
+		</tr>
+		<tr>
+			<td style="width: 120px;" valign="top"><span style="color: green">[*]</span> Not </td>
+			<td><textarea id="theme_note" name="theme_note" class="register" cols="28" rows="3"></textarea></td>
+		</tr>
+	</tbody>
+</table>
+<table style="margin-left: 40px;" width="360px">
+<input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="theme_date">
+<tr><td align="right"><input onclick="return submitform();" value="Kayıt" name="register" type="submit"></td></tr>
+</table>
+</form>
+</div>
+<div id="help" class="main_right" width="300px" style="display:none;">
+<table style="margin-bottom: 1em;" class="helptable"  width="300px">
+	<tbody>
+		<tr>
+			<td valign="top"><img src="{$url}{$themepath}/images/help.png"><b> Tema Gönderme Yardım</b></td>
+		</tr>
+		<tr>
+			<td><b>Uyarı:</b> Gönderdiğiniz tema, gerekli inceleme yapıldıktan sonra sisteme eklenir.<br>Tema gönderirken dikkat edilmesi gereken hususlar;
+			<ul>
+				<li> Kırmızı [*] ile belirtilen alanların doldurulması zorunludur.
+				<li> Tema, Lisans kısmında belirtilen lisanslardan birine sahip olmalıdır.
+				<li> Konum kısmında belirtilen adres http:// ya da ftp:// gibi tüm adresi birden içermelidir. İnceleme sırasında tema ya ulaşılamaması durumunda sisteme eklenmez ve bekleme listesinden çıkartılır. Eğer tema onaylanmış ve sisteme eklenmiş ise belirttiğiniz konumdan silinmesinde bir sakınca yoktur.
+				<li> Tema, içeriği ya da uyumluluğu uygun görülmez ise sisteme eklenmez.
+				<li> Gönderdiğiniz ve onaylanmış temaları sadece onay veren yetkili sistemden çıkarabilir.
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+{else}
+<div><br><br> <span class="error"> Bu bölüme girme yetkiniz yok !! </span> </div>
+{/if}
+{include file="footer.html"}

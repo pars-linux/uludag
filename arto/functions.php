@@ -196,7 +196,7 @@
         return perform_sql($sql_word);
     }
 
-    function add_theme($id,$name,$type,$path,$license,$description,$note,$date) {
+    function add_theme($id,$name,$type,$path,$license,$description,$note,$date,$ad_id="",$activate=0) {
         global $config;
         $name = rtag($name);
         $type = rtag($type);
@@ -207,15 +207,37 @@
         $type_details = get_type($type);
         $subtype = $type;
         if ($type_details[0]["parent_id"]==0) $subtype=0; else $type=$type_details[0]["parent_id"];
-        $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$description}', '{$note}', '0', '0', '0', '{$date}')";
+
+        if ($activate) $sql_word = "UPDATE {$config['db']['tableprefix']}files SET name='{$name}', type='{$type}', sub_type='{$subtype}', path='{$path}', license='{$license}', description='{$description}', supervisor='{$ad_id}', release='{$date}', state='1' WHERE id='$id'";
+        else $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$description}', '{$note}', '0', '0', '0', '{$date}')";
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
+    }
+
+    function get_content($content,$id) {
+        global $config;
+        if (@fclose(@fopen( $content, "r"))) {
+            $reg_content = array_reverse(preg_split("/[\/.]+/", $content));
+            $content_path=$config['core']['path']."files/".$id.".".$reg_content[0];
+            if (copy($content,$content_path)) {
+                $content = $config['core']['url']."3rdparty/php_thumb/phpThumb.php?src=".$config['core']['url']."files/".$id.".".$reg_content[0]."&w=200";
+                $content_path=$config['core']['path']."files/thumbs/".$id.".".$reg_content[0];
+                if (copy($content,$content_path)) return $id.".".$reg_content[0];
+            }
+        }
+        else return 0;
     }
 
     function get_user_details($user,$pass,$state=FALSE){
         global $config;
         if (!$state) $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$user' AND password = '$pass' AND state != '3'";
         else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = '$user' AND uname = '$pass' AND state='0'";
+        return perform_sql($sql_word);
+    }
+
+    function get_user_something($id,$thing) {
+        global $config;
+        $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}users WHERE id = '$id'";
         return perform_sql($sql_word);
     }
 
@@ -229,15 +251,27 @@
         return perform_sql($sql_word);
     }
 
-    function set_types($type, $sub_type){
+    function get_missions($id,$rid=""){
+        global $config;
+        if ($rid<>"") $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE state='0' AND id='$rid'";
+        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE state='0' ORDER by release DESC";
+        return perform_sql($sql_word);
+    }
+
+    function set_types($type, $sub_type,$target=""){
         $type = get_type($type);
         $sub_type = get_type($sub_type);
 
         $typem = array();
+        if ($target<>"") {
+        $typem[1] = $type[0]["id"];
+        $typem[2] = $sub_type[0]["id"];
+        }
+        else {
         $typem[0] = $type[0]["type"]." > ".$sub_type[0]["type"];
         $typem[1] = $type[0]["type"];
         $typem[2] = $sub_type[0]["type"];
-
+        }
         return $typem;
     }
 

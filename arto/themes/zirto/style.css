@@ -111,7 +111,7 @@ small, .subtitle{
 	margin-bottom: 0.7em;
 }
 
-h2, .h2{
+h2 {
 	color: #444444;
 	font-family: sans-serif;
 	font-size: 1.2em;
@@ -186,8 +186,16 @@ input, select, textarea {
 	-moz-border-radius : 5px;
 	margin-left: 50px;
 	padding-top:5px;
-	padding-left:5px;
-	
+	padding-left:5px;	
+}
+
+.posttable {
+	background-color: #EEE;
+	border-bottom: 1px solid #BBB;
+	border-right: 1px solid #BBB;
+	-moz-border-radius : 5px;
+	margin: 10px;
+	padding:5px;
 }
 
 .filestable td {

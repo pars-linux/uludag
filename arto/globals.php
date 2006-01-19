@@ -50,6 +50,7 @@ if (array_key_exists ('login', $_GET)){
 		$_SESSION["uid"]=$ird[0]['id'];
 		$_SESSION["uname"]=$ird[0]['name'];
 		$_SESSION["user"]=$username;
+                $_SESSION["state"]=$ird[0]['state'];
 		header ("location: ".$_SELF);
 	}
 	else $login_error=USER_OR_PASS_WRONG;
