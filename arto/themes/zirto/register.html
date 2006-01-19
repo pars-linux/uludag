@@ -5,7 +5,7 @@ function submitform() {
 			if (frm.username.value.length < 3) { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !');return false;}
 			if (frm.realname.value.length < 6) { alert('Ad Soyad boş ya da eksik !');return false;}
 			if (frm.email.value.length < 8) { alert('E-Mail boş ya da eksik !');return false;}
-			if (frm.password.value.length <= 4) { alert('Parola boş ya da eksik (en az 5 karakter)!');return false;}
+			//if (frm.password.value.length <= 4) { alert('Parola boş ya da eksik (en az 5 karakter)!');return false;}
 			if (frm.password.value !== frm.password_.value) { alert('Parola ve Parola Tekrar birbirini tutmuyor !'); return false;}
 			return true;
 	}
@@ -46,7 +46,7 @@ function submitform() {
 			<td><input id="password" name="password" class="register" size="25" type="password" value="{$up_pass}"></td>
 		</tr>
 		<tr>
-			<td style="width: 120px;"><span style="color: red">[*]</span> Parola(tekrar)</td>
+			<td style="width: 120px;"><span style="color: red">[*]</span> Parola (tekrar)</td>
 			<td><input id="password_" name="password_" class="register" size="25" type="password" value="{$up_pass}"></td>
 		</tr>
 	</tbody>
@@ -69,7 +69,7 @@ function submitform() {
 				<li> Kırmızı [*] ile belirtilen alanların doldurulması zorunludur.
 				<li> Kullanıcı adınız sisteme giriş yaparken kullanılacaktır, en az 4 karakterden oluşmalıdır. Üyelikten sonra kullanıcı adı değiştirilemez.
 				<li> E-mail adresinizin geçerli ve aktif olmasına dikkat ediniz. Bu adres üzerinden üyeliğiniz aktifleştirilecektir.
-				<li> Parolanız en az 5 karakterden oluşmalıdır.
+				<li> Parolanız en az 5 karakterden oluşmalıdır. Eğer parolanızı değiştirmeyecekseniz bu alanları boş bırakın.
 			</ul></div>
 			</td>
 		</tr>

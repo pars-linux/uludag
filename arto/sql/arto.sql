@@ -3,11 +3,11 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Sunucu: localhost
--- Çıktı Tarihi: Ocak 18, 2006 at 12:08 PM
+-- Çıktı Tarihi: Ocak 19, 2006 at 21:50 PM
 -- Server sürümü: 4.1.14
 -- PHP Sürümü: 5.1.1
 -- 
--- Veritabanı: `uludag`
+-- Veritabanı: `arto`
 -- 
 
 -- --------------------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE `arto_files` (
   `counter` int(11) NOT NULL default '0',
   `release` tinytext NOT NULL,
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM COMMENT='All about files';
+) TYPE=MyISAM;
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `arto_license` (
   `link` varchar(255) NOT NULL default '',
   `description` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM COMMENT='All about licences';
+) TYPE=MyISAM;
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,7 @@ CREATE TABLE `arto_types` (
   `type` varchar(200) NOT NULL default '',
   `parent_id` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM COMMENT='Theme types';
+) TYPE=MyISAM;
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,7 @@ CREATE TABLE `arto_users` (
   `state` set('0','1','2','3') NOT NULL default '',
   `typo` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM COMMENT='All about users';
+) TYPE=MyISAM;
 
 INSERT INTO `arto_types` VALUES (1, 'Duvar Kağıdı', 0);
 INSERT INTO `arto_types` VALUES (2, 'Temalar', 0);
@@ -106,7 +106,7 @@ INSERT INTO `arto_types` VALUES (9, 'Ekran Görüntüleri', 1);
 INSERT INTO `arto_types` VALUES (10, 'Sistem', 3);
 INSERT INTO `arto_types` VALUES (11, 'Pardus', 3);
 
-INSERT INTO `arto_users` VALUES (1, 'pardusman', 'sifreyimben', 'PardusMan', 'arto@uludag.org.tr', 'http://sanat.uludag.org.tr', '0', '0');
+INSERT INTO `arto_users` VALUES (1, 'pardusman', 'ffd03373047a3390328e3d63520f9db6', 'PardusMan', 'arto@uludag.org.tr', 'http://sanat.uludag.org.tr', '0', '0');
 
 INSERT INTO `arto_license` VALUES (1, 'CC Attribution-ShareAlike', 'http://creativecommons.org/licenses/by-sa/2.0/', 'Share Alike. If you alter, transform, or build upon this work, you may distribute the resulting work only under a license identical to this one.');
 INSERT INTO `arto_license` VALUES (2, 'GNU General Public License', 'http://creativecommons.org/licenses/GPL/2.0/', 'The GNU General Public License is a Free Software license. Like any Free Software license, it grants to you the four following freedoms:\r\n\r\n   0. The freedom to run the program for any purpose.\r\n   1. The freedom to study how the program works and adapt i');
