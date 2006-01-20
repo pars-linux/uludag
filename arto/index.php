@@ -19,7 +19,10 @@ include_once("globals.php");
                 if (session_is_registered("arto")) {
                     set_smarty_vars("userdetails",TRUE);
 		}
-		set_smarty_vars("nodes",get_something("single",$_GET["id"]));
+		$nodes = get_something("single",$_GET["id"]);
+		$temp = get_user_something($nodes[0]['id'],"uname");
+		$nodes[0]['user'] = $temp[0]['uname'];
+		set_smarty_vars("nodes",$nodes);
 		set_smarty_vars("comments",get_comments($_GET["id"]));
 		$smarty->display("post.html");
 		die();
