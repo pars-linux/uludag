@@ -9,7 +9,7 @@
 	<div>Bu bölüme ait herhangi bir kayıt bulunamadı.</div>
 {/if}
 {section name=post loop=$nodes}
-<table style="margin-bottom: 1em;" border="0">
+<table style="margin-bottom: 1em;border-bottom: 1px solid #bbb;border-right: 1px solid #bbb;  -moz-border-radius : 6px;" border="0">
 	<tbody>
 		<tr>
 			<td style="width: 120px;">
@@ -31,7 +31,7 @@
 			{/if}
 			<br>
 			<small style="white-space: nowrap;">
-				<img src="{$url}{$themepath}/images/16x16/klipper.png" alt="">{$nodes[post].comments} Yorum Var
+				<img src="{$url}{$themepath}/images/16x16/klipper.png" alt="">[{$nodes[post].comments}] Yorum
 			</small>
 			</div>
 			</td>
@@ -41,6 +41,4 @@
 </table>
 {/section}
 </div>
-
-
 {include file="footer.html"}

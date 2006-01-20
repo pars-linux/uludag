@@ -25,7 +25,7 @@ function submitform() {
                             <strong>Reyting:</strong> {section name="loop" loop=$nodes[post].rate}<img src="{$url}{$themepath}/images/star.png" alt="*">{/section}
                         {/if}<br>
                         <strong>İndirilme:</strong> {$nodes[post].counter}<br>
-                            <img src="{$url}{$themepath}/images/16x16/klipper.png" alt=""><strong>Yorum:</strong> {$nodes[post].comments}
+                        <strong>Yorum:</strong> {$nodes[post].comments}
                         <p><b>Açıklama</b><br>{$nodes[post].description}</p>
                         <hr>
                         <strong>Lisans:</strong> <a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a><br>
