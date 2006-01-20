@@ -2,26 +2,26 @@
 <script>
 {literal}
 function submitform() {
-			if (frm.theme_name.value.length < 6) { alert('Tema Adı en az 6 (altı) karakterden oluşmalıdır !');return false;}
-			if (frm.theme_path.value.length == 0) { alert('Tema Konumu boş ya da eksik !');return false;}
+			if (frm.theme_name.value.length < 6) { alert('İçerik Adı en az 6 (altı) karakterden oluşmalıdır !');return false;}
+			if (frm.theme_path.value.length == 0) { alert('İçerik Konumu boş !!');return false;}
 			return true;
 	}
 {/literal}
 </script>
 <div class="main_content">
-<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>
-<h4><img src="{$url}{$themepath}/images/theme.png">Tema Gönder</h4>
+{if $userdetails}<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>{/if}
+<h4><img src="{$url}{$themepath}/images/theme.png">İçerik Gönder</h4>
 {if $userdetails}
 <div class="main_left" width="380px">
 <form id="frm" action="actions.php?call=addtheme" method="post">
 <table style="margin-bottom: 1em;" class="regtable" width="360px">
 	<tbody>
 		<tr>
-			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Tema Adı </td>
+			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> İçerik Adı </td>
 			<td><input id="theme_name" name="theme_name" class="register" size="30"></td>
 		</tr>
 		<tr>
-			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Tema Tipi </td>
+			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> İçerik Tipi </td>
 			<td><select name="theme_type">
 			{section name=cat loop=$categories}
 			{if $categories[cat].sub}
@@ -39,6 +39,10 @@ function submitform() {
 		<tr>
 			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Konum </td>
 			<td><input id="theme_path" name="theme_path" class="register" size="35" ></td>
+		</tr>
+                <tr>
+			<td style="width: 120px;" valign="top"><span style="color: green">[*]</span> Ek Konum </td>
+			<td><input id="theme_path" name="theme_path2" class="register" size="35" ></td>
 		</tr>
 		<tr>
 			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Lisans </td>
@@ -68,16 +72,15 @@ function submitform() {
 <table style="margin-bottom: 1em;" class="helptable"  width="300px">
 	<tbody>
 		<tr>
-			<td valign="top"><img src="{$url}{$themepath}/images/help.png"><b> Tema Gönderme Yardım</b></td>
+			<td valign="top"><img src="{$url}{$themepath}/images/help.png"><b> İçerik Gönderme Yardım</b></td>
 		</tr>
 		<tr>
-			<td><b>Uyarı:</b> Gönderdiğiniz tema, gerekli inceleme yapıldıktan sonra sisteme eklenir.<br>Tema gönderirken dikkat edilmesi gereken hususlar;
+			<td><b>Uyarı:</b> Gönderdiğiniz içerik, gerekli inceleme yapıldıktan sonra sisteme eklenir.<br>İçerik gönderirken dikkat edilmesi gereken hususlar;
 			<ul>
 				<li> Kırmızı [*] ile belirtilen alanların doldurulması zorunludur.
-				<li> Tema, Lisans kısmında belirtilen lisanslardan birine sahip olmalıdır.
-				<li> Konum kısmında belirtilen adres http:// ya da ftp:// gibi tüm adresi birden içermelidir. İnceleme sırasında tema ya ulaşılamaması durumunda sisteme eklenmez ve bekleme listesinden çıkartılır. Eğer tema onaylanmış ve sisteme eklenmiş ise belirttiğiniz konumdan silinmesinde bir sakınca yoktur.
-				<li> Tema, içeriği ya da uyumluluğu uygun görülmez ise sisteme eklenmez.
-				<li> Gönderdiğiniz ve onaylanmış temaları sadece onay veren yetkili sistemden çıkarabilir.
+				<li> Konum kısmında belirtilen adres http:// ya da ftp:// gibi tüm adresi birden içermelidir. İnceleme sırasında içeriğe ulaşılamaması durumunda sisteme eklenmez ve bekleme listesinden çıkartılır. Eğer içerik onaylanmış ve sisteme eklenmiş ise belirttiğiniz konumdan silinmesinde bir sakınca yoktur.
+                                <li> Ek Konum kısmına, içerik için eklemek istediğiniz diğer dosyaların adresini yazabilirsiniz. Örneğin, gönderdiğiniz içerik bir tema ise(ikon teması, karamba teması gibi); Konuma, temanın ekran görüntüsünün bulunduğu adresi, Ek Konuma da bu temanın kendisinin bulunduğu adresi verebilirsiniz.
+				<li> Gönderdiğiniz ve onaylanmış içerikleri sadece onay veren yetkili sistemden çıkarabilir.
 			</ul>
 			</td>
 		</tr>
@@ -85,7 +88,13 @@ function submitform() {
 </table>
 </div>
 {else}
-Tema gönderebilmek için üye olmanız gerekir. Ücretsiz üyelik için <a href="?register">buraya</a> tıklayın. Üye iseniz sağ taraftaki Kullanıcı Girişi kısmından kullanıcı adınız ve şifreniz ile giriş yapabilirsiniz.
+<table style="margin-bottom: 1em; margin-left: 2em; margin-right: 2em;" class="regtable" width="%90">
+	<tbody>
+		<tr align="center">
+			<td style="text-align:center"><br>İçerik gönderebilmek için üye olmanız gerekir. Ücretsiz üyelik için <a href="?register">buraya</a> tıklayın. Üye iseniz sağ taraftaki Kullanıcı Girişi kısmından kullanıcı adınız ve şifreniz ile giriş yapabilirsiniz.<br><br></td>
+		</tr>
+	</tbody>
+</table>
 {/if}
 </div>
 

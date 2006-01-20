@@ -114,9 +114,10 @@ include_once("globals.php");
                             
                         }
                         elseif (isset($_POST["add"])) {
-                            if($new_path=get_content($_POST["theme_path"],$_POST["theme_id"])) {
-                            if(add_theme($_POST["theme_id"],$_POST["theme_name"],$_POST["theme_type"],$new_path,$_POST["theme_license"],$_POST["theme_description"],$_POST["theme_note"],$_POST["theme_date"],$_SESSION["uid"],1)) set_smarty_vars("status",THEME_ADDED);
-                            else set_smarty_vars("status","hataaaa");//fix me düzgün hata yap
+                            if($new_path=get_content($_POST["theme_path"],$_POST["theme_id"],$_POST["theme_path2"])) {
+                                if ($_POST["theme_path2"]<>"") $newsubpath= "2-".$new_path;
+                                if(add_theme($_POST["theme_id"],$_POST["theme_name"],$_POST["theme_type"],$new_path,$newsubpath,$_POST["theme_license"],$_POST["theme_description"],$_POST["theme_note"],$_POST["theme_date"],$_SESSION["uid"],1)) set_smarty_vars("status",THEME_ADDED);
+                                else set_smarty_vars("status","hataaaa");//fix me düzgün hata yap
                             }
                             else set_smarty_vars("status",LOGIC_ERROR);//fix me düzgün hata yap
                         }
