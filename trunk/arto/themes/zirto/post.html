@@ -10,33 +10,36 @@ function submitform() {
 </script>
 <span style="float:right;"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yorum </a></span>
 {section name=post loop=$nodes}
-<div class="posttable" style="float:left">
-    <div style="margin-bottom:9px;border-bottom: 1px solid;"><b><a href="{$url}?id={$nodes[post].id}">{$nodes[post].name}</a></b></div>
-	<a href="{$url}files/{$nodes[post].path}">
-	   <img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail">
-        </a>
-    <a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a><br>
-    {$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}
-	{if $nodes[post].rate}
-	       {section name="loop" loop=$nodes[post].rate}
-		  <img src="{$url}{$themepath}/images/star.png" alt="*">
-	       {/section}
-	{/if}
-	       <br>
-	       <small style="white-space: nowrap;">
-	           <a href="{$url}?id={$nodes[post].id}#comments" style="text-decoration: none;">
-	               <img src="{$url}{$themepath}/images/16x16/klipper.png" alt="" >
-		          [{$nodes[post].comments}] Yorum
-	           </a>
-	       </small>
-    <p><b>Açıklama</b><br>
-    {$nodes[post].description}</p>
-</div>
-<div id="commentbox" class="posttable" style="float:left;display:none;">
-    <div style="margin-bottom:9px;border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
+<div class="posttable" style="float:left; width: 70%;">
+    <div style="margin-bottom:9px;border-bottom: 1px solid;"><b>{$nodes[post].name}</b></div>
+        <table style="margin-bottom: 1em;">
+            <tbody>
+                <tr>
+		    <td style="width: 30%;" valign="top">
+                        <a href="{$url}files/{$nodes[post].path}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail"></a>
+                    </td>
+		    <td style="width: 70%;">
+                        <strong>Ekleyen:</strong> <a href="{$nodes[post].user}" title="{$nodes[post].user}">{$nodes[post].user}</a><br>
+                        <strong>Tarih:</strong> {$nodes[post].release.day} {$nodes[post].release.monthname} {$nodes[post].release.year} - {$nodes[post].release.hour}:{$nodes[post].release.minute}<br>
+                        {if $nodes[post].rate}
+                            <strong>Reyting:</strong> {section name="loop" loop=$nodes[post].rate}<img src="{$url}{$themepath}/images/star.png" alt="*">{/section}
+                        {/if}<br>
+                        <strong>İndirilme:</strong> {$nodes[post].counter}<br>
+                            <img src="{$url}{$themepath}/images/16x16/klipper.png" alt=""><strong>Yorum:</strong> {$nodes[post].comments}
+                        <p><b>Açıklama</b><br>{$nodes[post].description}</p>
+                        <hr>
+                        <strong>Lisans:</strong> <a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a><br>
+                    </td>
+		</tr>
+            </tbody>
+        </table>
+        <div style="float: left; background: #c0c0c0; width: 100%; -moz-border-radius : 5px; text-align: center; font-size: 20px;"><a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">İndir</a></div>
+    </div>
+<div id="commentbox" class="posttable" style="float: left; display: none; width: 400;">
+    <div style="margin-bottom:9px; border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
     {if $userdetails}
         <form id="frm" action="actions.php?call=addcomment" method="post">
-        <textarea id="comment" name="comment" class="register" cols="32" rows="5"></textarea><br>
+        &nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="73" rows="7"></textarea><br>
         <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="comment_date">
         <input type="hidden" value="{$nodes[post].id}" name="file_id">
         <input onclick="return submitform();" value="Gönder" name="add_comment" type="submit">
@@ -44,7 +47,7 @@ function submitform() {
         {else}Yorum eklemek için kullanıcı girişi yapmalasınız.<br> Üye olmak için <a href="?register">tıklayın</a>{/if}
 </div>
 
-<div class="posttable" style="clear:left;">
+<div class="posttable" style="clear:left; width: 70%;">
     <div style="margin-bottom:9px;border-bottom: 1px solid;"><b>Yorumlar</b></div>
     {if $comments}
 	{section name=xx loop=$comments}
