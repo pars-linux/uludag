@@ -199,36 +199,61 @@
         return perform_sql($sql_word);
     }
 
-    function add_theme($id,$name,$type,$path,$license,$description,$note,$date,$ad_id="",$activate=0) {
+    function add_theme($id,$name,$type,$path,$path2,$license,$description,$note,$date,$ad_id="",$activate=0) {
         global $config;
         $name = rtag($name);
         $type = rtag($type);
         $path = rtag($path);
+        $path2 = rtag($path2);
         $license = rtag($license);
         $description = rtag($description);
         $note = rtag($note);
         $type_details = get_type($type);
         $subtype = $type;
         if ($type_details[0]["parent_id"]==0) $subtype=0; else $type=$type_details[0]["parent_id"];
-
-        if ($activate) $sql_word = "UPDATE {$config['db']['tableprefix']}files SET name='{$name}', type='{$type}', sub_type='{$subtype}', path='{$path}', license='{$license}', description='{$description}', supervisor='{$ad_id}', release='{$date}', state='1' WHERE id='$id'";
-        else $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$description}', '{$note}', '0', '0', '0', '{$date}')";
+        if ($activate) $sql_word = "UPDATE {$config['db']['tableprefix']}files SET name='{$name}', type='{$type}', sub_type='{$subtype}', path='{$path}', path2='{$path2}', license='{$license}', description='{$description}', supervisor='{$ad_id}', release='{$date}', state='1' WHERE id='$id'";
+        else $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$path2}','{$description}', '{$note}', '0', '0', '0', '{$date}')";
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
     }
 
-    function get_content($content,$id) {
+    function get_content($content,$id,$subcontent="") {
         global $config;
         if (@fclose(@fopen( $content, "r"))) {
-            $reg_content = array_reverse(preg_split("/[\/.]+/", $content));
-            $content_path=$config['core']['path']."files/".$id.".".$reg_content[0];
+            $reg_content = pathinfo ($content);
+            $content_path=$config['core']['path']."files/".$id."-".$reg_content['basename'];
             if (copy($content,$content_path)) {
-                $content = $config['core']['url']."3rdparty/php_thumb/phpThumb.php?src=".$config['core']['url']."files/".$id.".".$reg_content[0]."&w=200";
-                $content_path=$config['core']['path']."files/thumbs/".$id.".".$reg_content[0];
-                if (copy($content,$content_path)) return $id.".".$reg_content[0];
+                if (get_file_type($reg_content['extension'])=="image") {
+                    $content = $config['core']['url']."3rdparty/php_thumb/phpThumb.php?src=".$config['core']['url']."files/".$id."-".$reg_content['basename']."&w=200";
+                    $content_path = $config['core']['path']."files/thumbs/".$id."-".$reg_content['basename'];
+                    if (copy($content,$content_path)){
+                        if ($subcontent<>"") {
+                            $reg_subcontent = pathinfo ($subcontent);
+                            $subcontent_path=$config['core']['path']."files/2-".$id."-".$reg_subcontent['basename'];
+                            if (!(copy($subcontent,$subcontent_path))) return 0;
+                        }
+                    return $id."-".$reg_content['basename'];
+                    }
+                }
+                elseif (get_file_type($reg_content['extension'])=="package") {
+                    if ($subcontent<>"") {
+                            $reg_subcontent = pathinfo ($subcontent);
+                            $subcontent_path=$config['core']['path']."files/2-".$id."-".$reg_subcontent['basename'];
+                            if (!copy($subcontent,$subcontent_path)) return 0;
+                    }
+                return $id."-".$reg_content['basename'];
+                }
             }
         }
         else return 0;
+    }
+
+    function get_file_type($extension){
+        $package = array("zip","rar","gz","bz2","sh","tar.gz","tar.bz2","bin","pisi");
+        $image   = array("gif","jpeg","jpg","png","bmp","xmp");
+        foreach ($package as $key) { if ($key==$extension) return "package"; }
+        foreach ($image as $key) { if ($key==$extension) return "image"; }
+        return "undefined";
     }
 
     function get_user_details($user,$passo,$state=FALSE){
@@ -326,4 +351,5 @@
 
         return $message;
     }
+
 ?>
