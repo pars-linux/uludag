@@ -1,0 +1,27 @@
+{include file="header.html"}
+<div id="content" class="main_content">
+<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>
+<h4><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48">{$message.title}
+</h4>
+<div>
+<table style="margin-bottom: 1em; margin-left: 2em; margin-right: 2em;" class="regtable" width="%90">
+	<tbody>
+		<tr align="center">
+			<td style="text-align:center"><br>{$message.message}<br><br></td>
+		</tr>
+	</tbody>
+</table>
+<div id="help" style="display:none;">
+<table style="margin-bottom: 1em; margin-left: 2em;" class="helptable" width="%90">
+    <tbody>
+	<tr>
+            <td valign="top"><img src="{$url}{$themepath}/images/help.png"><b> {$message.title} Yardım</b></td>
+	</tr>
+	<tr>
+            <td>{$message.help}</td>
+	</tr>
+    </tbody>
+</table>
+</div>
+</div>
+{include file="footer.html"}
