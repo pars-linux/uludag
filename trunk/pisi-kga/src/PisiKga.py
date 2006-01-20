@@ -23,6 +23,7 @@ import posix
 from qt import *
 from kdecore import *
 from kdeui import *
+from kio import *
 import kdedesigner
 
 # Local imports
@@ -711,7 +712,7 @@ def main():
 
     args = KCmdLineArgs.parsedArgs()
     if args.isSet("install"):
-        packageToInstall = str(args.getOption("install"))
+        packageToInstall = str(KIO.NetAccess.mostLocalURL(KURL(args.getOption("install")), None).path())
     else:
         packageToInstall = None
 
