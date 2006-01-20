@@ -233,8 +233,10 @@
         global $config;
         $uname = $passo;
         $pass = md5($passo);
+        if ($state<>4) $attach_sql =" AND state = '{$state}'";
+        if ($user<>"") $attach_sql .=" AND id = '{$user}'";
         if (!$state) $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$user' AND password = '$pass' AND state != '3'";
-        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = '$user' AND uname = '$uname' AND state='0'";
+        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$uname'".$attach_sql;
         return perform_sql($sql_word);
     }
 
@@ -294,16 +296,24 @@
         return perform_sql($sql_word);
     }
 
-    function activate_user($username,$code,$action = "activate"){
+    function activate_user($username,$code,$action){
         global $config;
+        if(!$action){$action = "activate";}
+        $dana = get_user_details("",$username,3);
+        if(md5($dana[0]["id"].$config["core"]["secretkey"]) == $code){
+            if($action == "activate"){
+                $sql_word = "UPDATE {$config['db']['tableprefix']}users SET state='2' WHERE id='{$dana[0]["id"]}' LIMIT 1";
+                $message["message"] = ACTIVATE_USER_OK;
+            }
+            elseif($action == "delete"){
+                $sql_word = "DELETE FROM {$config['db']['tableprefix']}users WHERE id='{$dana[0]["id"]}' LIMIT 1";
+                $message["message"] = ACTIVATE_USER_DELETED;
+            }
+            else{$message["message"] = ACTIVATE_USER_ERROR;}
+        }
+        else{$message["message"] = ACTIVATE_USER_ERROR;}
+        $sql_query = mysql_query($sql_word);
 
-        if($action = "activate") {
-            //$sql_word = "UPDATE INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
-        }
-        elseif($action = "delete"){
-            //$sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}', password='{$password}' WHERE id='$uid'";
-        }
-        //$sql_query = @mysql_query($sql_word);
-        //return $sql_query;
+        return $message;
     }
 ?>
