@@ -20,7 +20,7 @@ include_once("globals.php");
                     set_smarty_vars("userdetails",TRUE);
 		}
 		$nodes = get_something("single",$_GET["id"]);
-		$temp = get_user_something($nodes[0]['id'],"uname");
+		$temp = get_user_something($nodes[0]['user'],"uname");
 		$nodes[0]['user'] = $temp[0]['uname'];
 		set_smarty_vars("nodes",$nodes);
 		set_smarty_vars("comments",get_comments($_GET["id"]));
