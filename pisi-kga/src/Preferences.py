@@ -166,7 +166,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repo.close()
    
     def updateListView(self):
-        self.repoList = pisi.context.repodb.list()
+        self.repoList = self.parent.command.getRepoList()
         self.repoListView.clear()
         
         index = len(self.repoList)-1
@@ -174,7 +174,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             repoName = self.repoList[index]
             item = QListViewItem(self.repoListView,None)
             item.setText(0, self.repoList[index])
-            item.setText(1, pisi.api.ctx.repodb.get_repo(str(repoName)).indexuri.get_uri())
+            item.setText(1, self.parent.command.getRepoUri(str(repoName)))
             index -= 1
 
         self.updateRepoButton.setEnabled(self.repoListView.childCount() > 0 )

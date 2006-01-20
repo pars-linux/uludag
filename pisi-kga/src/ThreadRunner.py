@@ -85,6 +85,12 @@ class PisiThread(QThread):
     def packageGraph(self,list,ignoreInstalled=True):
         return pisi.api.package_graph(list, ignoreInstalled)
 
+    def getRepoList(self):
+        return pisi.context.repodb.list()
+    
+    def getRepoUri(self,repoName):
+        return pisi.api.ctx.repodb.get_repo(repoName).indexuri.get_uri()
+        
     def run(self):
         try:
             if self.installing:
