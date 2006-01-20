@@ -16,6 +16,9 @@ include_once("globals.php");
         set_smarty_vars("licenses",get_licenses());
 
 	if (isset($_GET["id"])) {
+                if (session_is_registered("arto")) {
+                    set_smarty_vars("userdetails",TRUE);
+		}
 		set_smarty_vars("nodes",get_something("single",$_GET["id"]));
 		set_smarty_vars("comments",get_comments($_GET["id"]));
 		$smarty->display("post.html");
@@ -53,7 +56,6 @@ include_once("globals.php");
 
 	elseif (isset($_GET["newtheme"])) {
 		if (session_is_registered("arto")) {
-		set_smarty_vars("licenses",get_licenses());
 		set_smarty_vars("userdetails",TRUE);
 		}
 		$smarty->display("new-theme.html");

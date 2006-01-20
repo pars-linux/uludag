@@ -140,6 +140,8 @@
             $assoc_arr = mysql_fetch_assoc($sql_query);
             $return_array[$i] = $assoc_arr;
             $return_array[$i]['date'] = conv_time("db2post", $assoc_arr['date']);
+            $temporary = get_user_something($assoc_arr['uid'],"name");
+            $return_array[$i]['author'] = $temporary[0]['name'];
         }
         return $return_array;
     }
@@ -244,6 +246,14 @@
         global $config;
         $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}users WHERE id = '$id'";
         return perform_sql($sql_word);
+    }
+
+    function add_comment($file_id,$user_id,$date,$comment){
+        global $config;
+        $comment=rtag($comment);
+        $sql_word = "INSERT INTO {$config['db']['tableprefix']}comments VALUES ('', '{$file_id}', '{$user_id}','{$date}', '{$comment}')";
+        $sql_query = @mysql_query($sql_word);
+        return $sql_query;
     }
 
     function rtag($foo){
