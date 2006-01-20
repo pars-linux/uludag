@@ -8,7 +8,7 @@ function submitform() {
 }
 {/literal}
 </script>
-<span style="float:right;"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yorum </a></span>
+<span style="float:right;margin-right:2px;"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yorum </a> </span>
 {section name=post loop=$nodes}
 <div class="posttable" style="float:left; width: 70%;">
     <div style="margin-bottom:9px;border-bottom: 1px solid;"><b>{$nodes[post].name}</b></div>
@@ -19,7 +19,7 @@ function submitform() {
                         <a href="{$url}files/{$nodes[post].path}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail"></a>
                     </td>
 		    <td style="width: 70%;">
-                        <strong>Ekleyen:</strong> <a href="{$nodes[post].user}" title="{$nodes[post].user}">{$nodes[post].user}</a><br>
+                        <strong>Ekleyen:</strong> <a href="{$author}" title="{$author}">{$author}</a><br>
                         <strong>Tarih:</strong> {$nodes[post].release.day} {$nodes[post].release.monthname} {$nodes[post].release.year} - {$nodes[post].release.hour}:{$nodes[post].release.minute}<br>
                         {if $nodes[post].rate}
                             <strong>Reyting:</strong> {section name="loop" loop=$nodes[post].rate}<img src="{$url}{$themepath}/images/star.png" alt="*">{/section}
@@ -33,13 +33,14 @@ function submitform() {
 		</tr>
             </tbody>
         </table>
-        <div style="float: left; background: #c0c0c0; width: 100%; -moz-border-radius : 5px; text-align: center; font-size: 20px;"><a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">İndir</a> (None KB)</div>
+        <div style="float: left; background: #DDD; width: 99%; -moz-border-radius : 10px; text-align: center; border: 1px solid #999;font-size: 10px;padding: 2px;"><b><img src="{$url}images/download.png"> <a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir"><a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>{if $nodes[post].path2} - <img src="{$url}images/download.png"><a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir"> <a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}</b></div>
+        
     </div>
 <div id="commentbox" class="posttable" style="float: left; display: none; width: 400;">
     <div style="margin-bottom:9px; border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
     {if $userdetails}
         <form id="frm" action="actions.php?call=addcomment" method="post">
-        &nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="73" rows="7"></textarea><br>
+        &nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="53" rows="7"></textarea>
         <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="comment_date">
         <input type="hidden" value="{$nodes[post].id}" name="file_id">
         <input onclick="return submitform();" value="Gönder" name="add_comment" type="submit">
