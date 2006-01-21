@@ -297,7 +297,15 @@ class MainApplicationWidget(MainWindow.MainWindow):
         if nonPrivMode:
             self.installOrRemoveButton.setEnabled(False)
             return
+        elif not listViewItem:
+            return
 
+        if listViewItem.type() == QCheckListItem.CheckBoxController:
+            item = listViewItem.firstChild()
+            while item:
+                self.updateButtons(item)
+                item = item.nextSibling()
+            
         try:
             text = str(listViewItem.text(0))
 
@@ -355,7 +363,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
         componentDict = {}
         for component in components:
-            componentItem = KListViewItem(self.listView,None)
+            componentItem = QCheckListItem(self.listView,"",QCheckListItem.CheckBoxController)
             componentItem.setOpen(True)
             name = u'%s' % component.localName
             componentItem.setText(0, name)
