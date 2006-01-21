@@ -66,7 +66,7 @@ def AboutData():
     about_data.addAuthor("Eray Özkural", I18N_NOOP("Search, Component/Category"), "eray@uludag.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
     about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi API"), None)
-    about_data.addCredit("PİSİ Authors", I18N_NOOP("Authors of PİSİ API"), "pisi@uludag.org.tr")
+    about_data.addCredit("PiSi Authors", I18N_NOOP("Authors of PiSi API"), "pisi@uludag.org.tr")
     about_data.addCredit("Simon Edwards", I18N_NOOP("Author of PyKDEeXtensions"),"simon@simonzone.com")
     return about_data
 
@@ -95,17 +95,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command = ThreadRunner.PisiThread(self)
         self.command.initDatabase()
 
-        try:
-            repo = pisi.context.repodb.list()[0]
-            pkg_db = pisi.packagedb.get_db(repo)
-            self.packageList = pkg_db.list_packages()
-        except:
-            confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
-            if confirm == KMessageBox.Yes:
-                self.command.addRepo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')            
-                self.command.updateRepo('pardus-devel')
-            else:
-                KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
+        if not nonPrivMode:
+            try:
+                repo = pisi.context.repodb.list()[0]
+                pkg_db = pisi.packagedb.get_db(repo)
+                self.packageList = pkg_db.list_packages()
+            except:
+                confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
+                if confirm == KMessageBox.Yes:
+                    self.command.addRepo('pardus-devel', 'http://paketler.uludag.org.tr/pardus-devel/pisi-index.xml')            
+                    self.command.updateRepo('pardus-devel')
+                else:
+                    KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def customEvent(self, event):
         
