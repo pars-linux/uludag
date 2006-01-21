@@ -3,7 +3,7 @@
 <script>
 {literal}
 function submitform() {
-			if (frm.comment.value.length == 0) { alert('Boş bir yorum eklenmez !');return false;}
+			if (frm.comment.value.length == 0) { alert('Boş bir yorum eklenemez !');return false;}
 			return true;
 }
 {/literal}
@@ -73,7 +73,7 @@ function submitform() {
         <br>
         <div align="center"><input onclick="return submitform();" value="Gönder" name="add_comment" type="submit"></div>
         </form>
-        {else}Yorum eklemek için kullanıcı girişi yapmalasınız.<br> Üye olmak için <a href="?register">tıklayın</a>{/if}
+        {else}Yorum eklemek için kullanıcı girişi yapmalısınız.<br> Üye olmak için <a href="?register">tıklayın</a>{/if}
 </div>
 
 <div class="posttable" style="clear:left; width: 70%;">
@@ -86,7 +86,7 @@ function submitform() {
         <br>
         <div style="border-bottom:1px solid #BBB"></div>
 	{/section}
-	{else}Bu içerik icin yorum yapılmamış. Sağ üstte bulunan "Yorum Ekle" kısmına tıklayarak yorumunuzu ekleyebilirsiniz.{/if}
+	{else}Bu içerik için yorum yapılmamış. Sağ üstte bulunan 'kalem' simgesine tıklayarak yorumunuzu ekleyebilirsiniz.{/if}
 </div>
 {/section}
 {else}
