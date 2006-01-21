@@ -184,7 +184,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     
     def finished(self):
         self.queryEdit.clear()
-        self.pDialog.close()
+        self.pDialog.closeForced()
         self.resetProgressBar()
 
         if self.confirmed == KMessageBox.No:
@@ -253,7 +253,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
     def pisiError(self, msg):
-        self.pDialog.close()
+        self.pDialog.closeForced()
         if self.errorMessage:
             self.errorMessage = self.errorMessage+msg
         else:
