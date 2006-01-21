@@ -31,4 +31,3 @@ class ProgressDialog(Progress.Progress):
             return
         else:
             Progress.Progress.keyPressEvent(self,event)
-        
