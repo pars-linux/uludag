@@ -171,11 +171,11 @@ msgstr "<b>Hız:</b> %1 %2"
 
 #: src/PisiKga.py:239 src/PisiKga.py:246
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #: src/PisiKga.py:241 src/PisiKga.py:248
 msgid " KB"
-msgstr ""
+msgstr " KB"
 
 #: src/PisiKga.py:243 src/PisiKga.py:250
 msgid " Bytes"
@@ -588,9 +588,3 @@ msgid ""
 msgstr ""
 "Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
 "Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
-
-#~ msgid "<b>Downloaded/Total:</b> %1 MB / %2 MB"
-#~ msgstr "<b>İndirilen/Toplam:</b> %1 MB / %2 MB"
-
-#~ msgid "<b>Downloaded/Total:</b> %1 Bytes / %2 Bytes"
-#~ msgstr "<b>İndirilen/Toplam:</b> %1 Bayt / %2 Bayt"
