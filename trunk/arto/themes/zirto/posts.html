@@ -14,7 +14,7 @@
 		<tr>
 			<td style="width: 120px;">
 			{if $nodes[post].filetype=="image"}
-                            <a href="{$url}files/{$nodes[post].path}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}?id={$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
                             <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px">
                         {/if}
