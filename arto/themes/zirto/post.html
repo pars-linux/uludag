@@ -55,10 +55,10 @@ function submitform() {
         <div style="float: left; background: #DDD; width: 99%; -moz-border-radius : 10px; text-align: center; border: 1px solid #999;font-size: 10px;padding: 2px;">
             <b>
                 <img src="{$url}images/download.png">
-                <a href="?download&file={$nodes[post].path}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>
+                <a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>
                     {if $nodes[post].path2} -
                         <img src="{$url}images/download.png">
-                            <a href="?download&file={$nodes[post].path2}" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}
+                            <a href="download.php?id={$nodes[post].id}&file=2" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}
             </b>
         </div>
         
@@ -77,10 +77,14 @@ function submitform() {
 </div>
 
 <div class="posttable" style="clear:left; width: 70%;">
-    <div style="margin-bottom:9px;border-bottom: 1px solid;"><b>Yorumlar</b></div>
+    <div style="margin-bottom: 9px; border-bottom: 1px solid;"><b>Yorumlar</b></div>
     {if $comments}
 	{section name=xx loop=$comments}
-	<img src="{$url}/images/comment.png" alt="" > {$comments[xx].date.day}.{$comments[xx].date.monthname} - {$comments[xx].date.hour}:{$comments[xx].date.minute} - {$comments[xx].author}<br><span style="margin-left: 20px">{$comments[xx].comment}</span><br><div style="border-bottom:1px solid #BBB"></div>
+	<img src="{$url}/images/comment.png" title="Yoruma bak :)"> {$comments[xx].author} @ {$comments[xx].date.day}.{$comments[xx].date.monthname} - {$comments[xx].date.hour}:{$comments[xx].date.minute}:
+        <br>
+        <span style="margin-left: 2px">{$comments[xx].comment}</span>
+        <br>
+        <div style="border-bottom:1px solid #BBB"></div>
 	{/section}
 	{else}Bu içerik icin yorum yapılmamış. Sağ üstte bulunan "Yorum Ekle" kısmına tıklayarak yorumunuzu ekleyebilirsiniz.{/if}
 </div>
