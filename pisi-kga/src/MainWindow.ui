@@ -140,13 +140,6 @@
                                 <property name="name">
                                     <cstring>searchFrame</cstring>
                                 </property>
-                                <property name="paletteBackgroundColor">
-                                    <color>
-                                        <red>220</red>
-                                        <green>220</green>
-                                        <blue>220</blue>
-                                    </color>
-                                </property>
                                 <property name="frameShape">
                                     <enum>GroupBoxPanel</enum>
                                 </property>
@@ -318,13 +311,6 @@
                                 <property name="name">
                                     <cstring>showModeFrame</cstring>
                                 </property>
-                                <property name="paletteBackgroundColor">
-                                    <color>
-                                        <red>220</red>
-                                        <green>220</green>
-                                        <blue>220</blue>
-                                    </color>
-                                </property>
                                 <property name="frameShape">
                                     <enum>GroupBoxPanel</enum>
                                 </property>
@@ -423,13 +409,6 @@
                                 <property name="name">
                                     <cstring>frame10</cstring>
                                 </property>
-                                <property name="paletteBackgroundColor">
-                                    <color>
-                                        <red>220</red>
-                                        <green>220</green>
-                                        <blue>220</blue>
-                                    </color>
-                                </property>
                                 <property name="frameShape">
                                     <enum>GroupBoxPanel</enum>
                                 </property>
@@ -486,16 +465,6 @@
                                     <widget class="KTextBrowser" row="1" column="0">
                                         <property name="name">
                                             <cstring>infoLabel</cstring>
-                                        </property>
-                                        <property name="paletteBackgroundColor">
-                                            <color>
-                                                <red>220</red>
-                                                <green>220</green>
-                                                <blue>220</blue>
-                                            </color>
-                                        </property>
-                                        <property name="backgroundOrigin">
-                                            <enum>ParentOrigin</enum>
                                         </property>
                                         <property name="frameShape">
                                             <enum>NoFrame</enum>
@@ -651,6 +620,7 @@ Program Version: Bar</string>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>ktextbrowser.h</includehint>

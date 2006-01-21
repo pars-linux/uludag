@@ -90,6 +90,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.index = 1
         self.totalApps = None
         self.packagesOrder = []
+        self.infoLabel.setPaletteBackgroundColor(self.frame10.paletteBackgroundColor())
 
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
