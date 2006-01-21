@@ -469,18 +469,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.setCaption(i18n("Add or Remove Programs"))
         self.pDialog.show()
 
-        if index == 2: # Remove baby
-            self.operation = "remove"
-            self.command.remove(self.selectedItems)
-                        
-        elif index == 1: # Upgrade baby
-            self.operation = "upgrade"
-            self.command.upgrade(self.selectedItems)
-                    
-        elif index == 0: # Install baby
+        if index == 0: # Install baby
             self.operation = "install"
             self.command.install(self.selectedItems)
 
+        elif index == 1: # Upgrade baby
+            self.operation = "upgrade"
+            self.command.upgrade(self.selectedItems)
+                                    
+        elif index == 2: # Remove baby
+            self.operation = "remove"
+            self.command.remove(self.selectedItems)
+                      
     def updateSystemSelection(self):
         self.installOrRemoveButton.setEnabled(False)
         
