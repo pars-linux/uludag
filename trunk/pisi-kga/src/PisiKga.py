@@ -244,7 +244,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         if total_size >= 1024*1024:
             totalText = str(round(float(total_size)/float(1024*1024),1))+ i18n(" MB")
-        elif downloaded_size >= 1024:
+        elif total_size >= 1024:
             totalText = str(round(float(total_size)/float(1024),1)) + i18n(" KB")
         else:
             totalText = str(round(total_size,1)) + i18n(" Bytes")
