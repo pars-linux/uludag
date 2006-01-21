@@ -82,14 +82,15 @@
         Also it translates license, comments and release info
         return Array;
     */
-    function get_something($thing, $id="", $subid=""){
+    function get_something($thing="main", $id="", $subid="",$order="release",$limit=""){
         global $config;
-        if ($thing=="single") $query="id=".$id; 
+        if ($thing=="single") $query="id=".$id." AND ";
         elseif ($thing=="cat") { 
-            $query="type=".$id;
-            if ($subid<>"") $query.=" AND sub_type=".$subid;
+            $query="type=".$id." AND ";
+            if ($subid<>"") $query.=" sub_type=".$subid." AND ";
         }
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE $query AND state='1'";
+        if ($limit<>"") $limitt=" LIMIT ".$limit;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE $query state='1' ORDER by $order DESC".$limitt;
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
@@ -100,6 +101,11 @@
             $return_array[$i]['llink'] = $license[0]['link'];
             $return_array[$i]['lname'] = $license[0]['name'];
             $return_array[$i]['ldesc'] = $license[0]['description'];
+            $temp = get_type($assoc_arr['type']);
+            $return_array[$i]['ltype'] = $temp[0]['type'];
+            $temp = get_type($assoc_arr['sub_type']);
+            $return_array[$i]['lsubtype'] = $temp[0]['type'];
+            $return_array[$i]['filetype'] = get_file_type($assoc_arr['path']);
         }
         return $return_array;
     }
@@ -223,7 +229,7 @@
             $reg_content = pathinfo ($content);
             $content_path=$config['core']['path']."files/".$id."-".$reg_content['basename'];
             if (copy($content,$content_path)) {
-                if (get_file_type($reg_content['extension'])=="image") {
+                if (get_file_type($reg_content['basename'])=="image") {
                     $content = $config['core']['url']."3rdparty/php_thumb/phpThumb.php?src=".$config['core']['url']."files/".$id."-".$reg_content['basename']."&w=200";
                     $content_path = $config['core']['path']."files/thumbs/".$id."-".$reg_content['basename'];
                     if (copy($content,$content_path)){
@@ -235,7 +241,7 @@
                     return $id."-".$reg_content['basename'];
                     }
                 }
-                elseif (get_file_type($reg_content['extension'])=="package") {
+                elseif (get_file_type($reg_content['basename'])=="package") {
                     if ($subcontent<>"") {
                             $reg_subcontent = pathinfo ($subcontent);
                             $subcontent_path=$config['core']['path']."files/2-".$id."-".$reg_subcontent['basename'];
@@ -248,8 +254,10 @@
         else return 0;
     }
 
-    function get_file_type($extension){
-        $package = array("zip","rar","gz","bz2","sh","tar.gz","tar.bz2","bin","pisi");
+    function get_file_type($file){
+        $file = pathinfo ($file);
+        $extension = $file["extension"];
+        $package = array("zip","rar","gz","bz2","sh","tar.gz","tar.bz2","bin","pisi","skz");
         $image   = array("gif","jpeg","jpg","png","bmp","xmp");
         foreach ($package as $key) { if ($key==$extension) return "package"; }
         foreach ($image as $key) { if ($key==$extension) return "image"; }
@@ -350,6 +358,26 @@
         $sql_query = mysql_query($sql_word);
 
         return $message;
+    }
+
+    function get_news($act=0) {
+        global $config;
+        if ($act) $attach_sql=" LIMIT 1";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}news ".$attach_sql;
+        return perform_sql($sql_word);
+    }
+
+    function get_file_something($file,$thing) {
+        global $config;
+        $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}files WHERE path = '$file' OR path2 = '$file'";
+        return perform_sql($sql_word);
+    }
+
+    function count_download($file) {
+        global $config;
+        $file_info= get_file_something($file,"id");
+        $sql_word = "UPDATE {$config['db']['tableprefix']}files SET counter=counter+1 WHERE id='{$file_info[0]["id"]}' LIMIT 1";
+        return $sql_query = mysql_query($sql_word);
     }
 
 ?>

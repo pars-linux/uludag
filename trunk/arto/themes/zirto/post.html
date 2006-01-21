@@ -8,15 +8,28 @@ function submitform() {
 }
 {/literal}
 </script>
-<span style="float:right;margin-right:2px;"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yorum </a> </span>
+<span style="float:right;margin-right:2px;"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yorum Ekle </a> </span>
 {section name=post loop=$nodes}
+<div id="content" class="main_content" >
+<h4><a href="?">Ana Sayfa</a> > <a href="?cid={$nodes[post].type}">{$nodes[post].ltype}</a>
+{if $nodes[post].lsubtype}
+ > <a href="?cid={$nodes[post].type}&sid={$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>
+{/if}
+> <a href="?id={$nodes[post].id}">{$nodes[post].name}</a>
+</h4>
+</div>
+
 <div class="posttable" style="float:left; width: 70%;">
     <div style="margin-bottom:9px;border-bottom: 1px solid;"><b>{$nodes[post].name}</b></div>
         <table style="margin-bottom: 1em;">
             <tbody>
                 <tr>
 		    <td style="width: 30%;" valign="top">
-                        <a href="{$url}files/{$nodes[post].path}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail"></a>
+                        {if $nodes[post].filetype=="image"}
+                            <a href="{$url}files/{$nodes[post].path}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail"></a>
+                        {else}
+                            <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-b.png" alt="Thumbnail" class="thumbnail">
+                        {/if}
                     </td>
 		    <td style="width: 70%;">
                         <strong>Ekleyen:</strong> <a href="{$author}" title="{$author}">{$author}</a><br>
@@ -33,11 +46,19 @@ function submitform() {
 		</tr>
             </tbody>
         </table>
-        <div style="float: left; background: #DDD; width: 99%; -moz-border-radius : 10px; text-align: center; border: 1px solid #999;font-size: 10px;padding: 2px;"><b><img src="{$url}images/download.png"> <a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir"><a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>{if $nodes[post].path2} - <img src="{$url}images/download.png"><a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir"> <a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}</b></div>
+        <div style="float: left; background: #DDD; width: 99%; -moz-border-radius : 10px; text-align: center; border: 1px solid #999;font-size: 10px;padding: 2px;">
+            <b>
+                <img src="{$url}images/download.png">
+                <a href="?download&file={$nodes[post].path}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>
+                    {if $nodes[post].path2} -
+                        <img src="{$url}images/download.png">
+                            <a href="?download&file={$nodes[post].path2}" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}
+            </b>
+        </div>
         
     </div>
 <div id="commentbox" class="posttable" style="float: left; display: none; width: 400;">
-    <div style="margin-bottom:9px; border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
+    <div style="border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
     {if $userdetails}
         <form id="frm" action="actions.php?call=addcomment" method="post">
         &nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="53" rows="7"></textarea>
@@ -54,7 +75,7 @@ function submitform() {
 	{section name=xx loop=$comments}
 	<img src="{$url}/images/comment.png" alt="" > {$comments[xx].date.day}.{$comments[xx].date.monthname} - {$comments[xx].date.hour}:{$comments[xx].date.minute} - {$comments[xx].author}<br><span style="margin-left: 20px">{$comments[xx].comment}</span><br><div style="border-bottom:1px solid #BBB"></div>
 	{/section}
-	{else}Bu duvarkağıdı icin yorum yapılmamış..{/if}
+	{else}Bu içerik icin yorum yapılmamış. Sağ üstte bulunan "Yorum Ekle" kısmına tıklayarak yorumunuzu ekleyebilirsiniz.{/if}
 </div>
 {/section}
 {else}

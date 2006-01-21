@@ -12,7 +12,9 @@ include_once("globals.php");
 	set_smarty_vars("login_error",$login_error);
 	set_smarty_vars("categories",get_types());
 	set_smarty_vars("sub_type",$child_type[0]["type"]);
+        set_smarty_vars("sub_type_id",$_GET["sid"]);
 	set_smarty_vars("parent_type",$parent_type[0]["type"]);
+        set_smarty_vars("parent_type_id",$_GET["cid"]);
         set_smarty_vars("licenses",get_licenses());
 
 	if (isset($_GET["id"])) {
@@ -20,9 +22,9 @@ include_once("globals.php");
                     set_smarty_vars("userdetails",TRUE);
 		}
 		$nodes = get_something("single",$_GET["id"]);
-		$temp = get_user_something($nodes[0]['user'],"uname");
+		$temp = get_user_something($nodes[0]['user'],"name");
 		set_smarty_vars("nodes",$nodes);
-                set_smarty_vars("author",$temp[0]['uname']);
+                set_smarty_vars("author",$temp[0]['name']);
 		set_smarty_vars("comments",get_comments($_GET["id"]));
 		$smarty->display("post.html");
 		die();
@@ -145,10 +147,23 @@ include_once("globals.php");
             $smarty->display("missions.html");
             die();
         }
-	
+
+        elseif (isset($_GET["download"])){
+            $file=rtag($_GET["file"]);
+            if (count_download($file)) header ("location: ".$config['core']['url']."files/".$_GET["file"]);
+            else {
+                $message["title"] = ERROR;
+                $message["message"] = FILE_NOT_FOUND;
+		set_smarty_vars("message",$message);
+		$smarty->display("message.html");
+            }
+            die();
+        }
 	else {
-		set_smarty_vars("nodes",get_something("cat","1"));
-		$smarty->display("posts.html");
+		set_smarty_vars("nodes",get_something("","","","release","4"));
+                set_smarty_vars("nodes2",get_something("","","","counter","4"));
+                set_smarty_vars("news",get_news());
+		$smarty->display("main.html");
 		die();
 	}
 
