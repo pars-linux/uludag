@@ -96,6 +96,7 @@
             $assoc_arr = mysql_fetch_assoc($sql_query);
             $license = get_licenses($assoc_arr['license']);
             $return_array[$i] = $assoc_arr;
+            $return_array[$i]['description'] = nl2br($assoc_arr['description']);
             $return_array[$i]['comments'] = get_comment_number($assoc_arr['id']);
             $return_array[$i]['release'] = conv_time("db2post", $assoc_arr['release']);
             $return_array[$i]['llink'] = $license[0]['link'];
@@ -145,6 +146,7 @@
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
             $return_array[$i] = $assoc_arr;
+            $return_array[$i]['comment'] = nl2br($assoc_arr['comment']);
             $return_array[$i]['date'] = conv_time("db2post", $assoc_arr['date']);
             $temporary = get_user_something($assoc_arr['uid'],"name");
             $return_array[$i]['author'] = $temporary[0]['name'];
@@ -258,7 +260,7 @@
         $file = pathinfo ($file);
         $extension = $file["extension"];
         $package = array("zip","rar","gz","bz2","sh","tar.gz","tar.bz2","bin","pisi","skz");
-        $image   = array("gif","jpeg","jpg","png","bmp","xmp");
+        $image   = array("gif","jpeg","jpg","png","bmp","xpm");
         foreach ($package as $key) { if ($key==$extension) return "package"; }
         foreach ($image as $key) { if ($key==$extension) return "image"; }
         return "undefined";

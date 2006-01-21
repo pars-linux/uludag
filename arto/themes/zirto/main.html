@@ -3,7 +3,7 @@
 {if $nodes == ""}
 	<div>Bu bölüme ait herhangi bir kayıt bulunamadı.</div>
 {/if}
-
+{if $news}
 <div style="border-bottom: 1px solid #ddd;margin-top: 10px; padding-top:5px;padding-bottom:5px">
 <img src="{$url}{$themepath}/images/theme.png" style="float:left; margin-right:5px">
 {section name=po loop=$news}
@@ -11,6 +11,7 @@
 <div style="padding:5px;">{$news[po].news}</div>
 {/section}
 </div>
+{/if}
 <div style ="float: left; width:50%">
 <div style="border-bottom: 1px solid #ddd;width: 95%;margin-bottom:5px"><h2>Son Eklenenler</h2></div>
 {section name=post loop=$nodes}
