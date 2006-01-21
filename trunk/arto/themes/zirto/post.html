@@ -8,7 +8,6 @@ function submitform() {
 }
 {/literal}
 </script>
-<span style="float:right;margin-right:2px;"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yorum Ekle </a> </span>
 {section name=post loop=$nodes}
 <div id="content" class="main_content" >
 <h4><a href="?">Ana Sayfa</a> > <a href="?cid={$nodes[post].type}">{$nodes[post].ltype}</a>
@@ -25,23 +24,30 @@ function submitform() {
             <tbody>
                 <tr>
 		    <td style="width: 30%;" valign="top">
+                        <div align="center">
                         {if $nodes[post].filetype=="image"}
-                            <a href="{$url}files/{$nodes[post].path}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail"></a>
+                            <a href="{$url}preview.php?id={$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" title="Önizleme için tıklayın." class="thumbnail"><br><img src="{$url}images/preview.png" title="Önizleme için tıklayın."></a>
                         {else}
-                            <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-b.png" alt="Thumbnail" class="thumbnail">
+                            <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-b.png" title="Önizleme için tıklayın." class="thumbnail">
                         {/if}
+                        </div>
                     </td>
-		    <td style="width: 70%;">
+		    <td style="width: 60%; vertical-align: top;">
                         <strong>Ekleyen:</strong> <a href="{$author}" title="{$author}">{$author}</a><br>
                         <strong>Tarih:</strong> {$nodes[post].release.day} {$nodes[post].release.monthname} {$nodes[post].release.year} - {$nodes[post].release.hour}:{$nodes[post].release.minute}<br>
                         {if $nodes[post].rate}
-                            <strong>Reyting:</strong> {section name="loop" loop=$nodes[post].rate}<img src="{$url}{$themepath}/images/star.png" alt="*">{/section}
+                            <strong>Reyting:</strong> {section name="loop" loop=$nodes[post].rate}<img src="{$url}{$themepath}/images/star.png" title="*">{/section}
                         {/if}<br>
                         <strong>İndirilme:</strong> {$nodes[post].counter}<br>
                         <strong>Yorum:</strong> {$nodes[post].comments}
                         <p><b>Açıklama</b><br>{$nodes[post].description}</p>
                         <hr>
                         <strong>Lisans:</strong> <a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a><br>
+                    </td>
+		    <td style="width: 10%; vertical-align: top;">
+                        <div align="center"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}images/write.png" title="Yorum Ekle"></a></div>
+                        <div align="center"><a href="#" onclick="tV(document.getElementById('send2friendbox'), this); return false"><img src="{$url}images/mail.png" title="Arkadaşına Gönder"></a></div>
+                        <div align="center"><a href="#" onclick="addfav({$nodes[post].id})"><img src="{$url}images/favs.png" title="Favorilerine Ekle"></a></div>
                     </td>
 		</tr>
             </tbody>
@@ -57,15 +63,15 @@ function submitform() {
         </div>
         
     </div>
-<div id="commentbox" class="posttable" style="float: left; display: none; width: 400;">
+<div id="commentbox" class="posttable" style="float: left; display: none; width: 300;">
     <div style="border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
     {if $userdetails}
         <form id="frm" action="actions.php?call=addcomment" method="post">
-        &nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="53" rows="7"></textarea>
+        &nbsp;&nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="53" rows="7"></textarea>
         <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="comment_date">
         <input type="hidden" value="{$nodes[post].id}" name="file_id">
         <br>
-        <input onclick="return submitform();" value="Gönder" name="add_comment" type="submit">
+        <div align="center"><input onclick="return submitform();" value="Gönder" name="add_comment" type="submit"></div>
         </form>
         {else}Yorum eklemek için kullanıcı girişi yapmalasınız.<br> Üye olmak için <a href="?register">tıklayın</a>{/if}
 </div>
