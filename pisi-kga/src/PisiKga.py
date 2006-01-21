@@ -236,12 +236,20 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
         if downloaded_size >= 1024*1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 MB / %2 MB').arg(round(float(downloaded_size)/float(1024*1024),1)).arg(round(float(total_size)/float(1024*1024)),1))
+            downloadedText = str(round(float(downloaded_size)/float(1024*1024),1))+ i18n(" MB")
         elif downloaded_size >= 1024:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 KB / %2 KB').arg(round(float(downloaded_size)/float(1024),1)).arg(round(float(total_size)/float(1024)),1))
+            downloadedText = str(round(float(downloaded_size)/float(1024),1)) + i18n(" KB")
         else:
-            self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 Bytes / %2 Bytes').arg(round(downloaded_size,1)).arg(round(total_size,1)))
-        
+            downloadedText = str(round(downloaded_size,1)) + i18n(" Bytes")
+
+        if total_size >= 1024*1024:
+            totalText = str(round(float(total_size)/float(1024*1024),1))+ i18n(" MB")
+        elif downloaded_size >= 1024:
+            totalText = str(round(float(total_size)/float(1024),1)) + i18n(" KB")
+        else:
+            totalText = str(round(total_size,1)) + i18n(" Bytes")
+
+        self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
         self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
     def pisiError(self, msg):
