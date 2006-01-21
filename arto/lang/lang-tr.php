@@ -6,6 +6,8 @@
 	define ("DBCONERROR",		"Veritabanı sunucusuna bağlanamadım.");
 	define ("ERRORMESSAGE",		"Hata Mesajı : ");
 	define ("ERRORNUM",		"Hata No : ");
+        define ("ERROR",                "HATA");
+        define ("FILE_NOT_FOUND",       "Ulaşmak istediğiniz dosya bulunamadı, böyle bir dosya sistemde yok ya da kaldırılmış. Linkin doğru olduğuna eminseniz yönetim ile irtibata geçiniz.");
 	define ("USER_OR_PASS_WRONG",	"Kullanıcı ya da Parola Hatalı !!");
 	define ("LOGIC_ERROR",		"Mantıksal Hata !!");
 	define ("WELCOME",		"Hoşgeldiniz");

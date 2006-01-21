@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 2.6.4 - Pardus v1.0
+-- version 2.6.4-pl3
 -- http://www.phpmyadmin.net
 -- 
 -- Sunucu: localhost
--- Çıktı Tarihi: Ocak 19, 2006 at 21:50 PM
--- Server sürümü: 4.1.14
--- PHP Sürümü: 5.1.1
+-- Çıktı Tarihi: Ocak 20, 2006 at 09:48 PM
+-- Server sürümü: 4.0.24
+-- PHP Sürümü: 4.4.0-pl1-gentoo
 -- 
 -- Veritabanı: `arto`
 -- 
@@ -40,6 +40,7 @@ CREATE TABLE `arto_files` (
   `user` int(11) NOT NULL default '0',
   `supervisor` int(11) default '0',
   `path` varchar(255) NOT NULL default '',
+  `path2` varchar(255) default NULL,
   `description` text,
   `note` varchar(255) default NULL,
   `rate` set('0','1','2','3','4','5') NOT NULL default '0',
@@ -47,7 +48,7 @@ CREATE TABLE `arto_files` (
   `counter` int(11) NOT NULL default '0',
   `release` tinytext NOT NULL,
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM;
+) TYPE=MyISAM COMMENT='All about files';
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,7 @@ CREATE TABLE `arto_license` (
   `link` varchar(255) NOT NULL default '',
   `description` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM;
+) TYPE=MyISAM COMMENT='All about licences';
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,7 @@ CREATE TABLE `arto_types` (
   `type` varchar(200) NOT NULL default '',
   `parent_id` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM;
+) TYPE=MyISAM COMMENT='Theme types';
 
 -- --------------------------------------------------------
 
@@ -85,12 +86,22 @@ CREATE TABLE `arto_types` (
 CREATE TABLE `arto_users` (
   `id` int(11) NOT NULL auto_increment,
   `uname` varchar(30) NOT NULL default '',
-  `password` varchar(30) NOT NULL default '',
+  `password` varchar(32) NOT NULL default '',
   `name` varchar(120) NOT NULL default '',
   `email` varchar(200) NOT NULL default '',
   `web` varchar(200) default NULL,
-  `state` set('0','1','2','3') NOT NULL default '',
+  `state` set('0','1','2','3','x') NOT NULL default '',
   `typo` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM COMMENT='All about users';
+
+
+CREATE TABLE `arto_news` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(200) NOT NULL default '',
+  `news` text NOT NULL,
+  `uid` int(11) NOT NULL default '0',
+  `date` tinytext NOT NULL,
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM;
 
