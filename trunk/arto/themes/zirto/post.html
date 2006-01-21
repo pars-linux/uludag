@@ -64,6 +64,7 @@ function submitform() {
         &nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="53" rows="7"></textarea>
         <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="comment_date">
         <input type="hidden" value="{$nodes[post].id}" name="file_id">
+        <br>
         <input onclick="return submitform();" value="Gönder" name="add_comment" type="submit">
         </form>
         {else}Yorum eklemek için kullanıcı girişi yapmalasınız.<br> Üye olmak için <a href="?register">tıklayın</a>{/if}
