@@ -8,6 +8,8 @@
 	define ("ERRORNUM",		"Hata No : ");
         define ("ERROR",                "HATA");
         define ("FILE_NOT_FOUND",       "Ulaşmak istediğiniz dosya bulunamadı, böyle bir dosya sistemde yok ya da kaldırılmış. Linkin doğru olduğuna eminseniz yönetim ile irtibata geçiniz.");
+        define ("DISK_ERROR",           "Belirtilen içerik sisteme eklenemedi. Disk hatası meydana geldi. Verilen konum hatalı ya da disk dolmuş olabilir.");
+        define ("DB_ERROR",           "Belirtilen içerik sisteme eklenemedi. Veritabanı ile ilgili bir hata meydana geldi.");
 	define ("USER_OR_PASS_WRONG",	"Kullanıcı ya da Parola Hatalı !!");
 	define ("LOGIC_ERROR",		"Mantıksal Hata !!");
 	define ("WELCOME",		"Hoşgeldiniz");
@@ -34,4 +36,6 @@
         define ("ACTIVATE_USER_DELETED",            "Kullanıcı veritabanından <strong>tamamen</strong> kaldırıldı. Bu kullanıcı artık işlem yapamaz.");
         define ("ACTIVATE_USER_ERROR",            "Etkinleştirme işlemi sırasında hata oluştu. Lütfen, daha sonra tekrar deneyin. Hatanın tekrar etmesi durumunda yönetim ile irtibata geçerseniz seviniriz.");
         define ("ACTIVATE_USER_TITLE",            "Kullanıcı Etkinleştirme");
+        define ("THEME_ADDED",          "İçerik başarı ile sisteme eklendi. Gönderen kişiye e-posta ile bildirim yapıldı.");
+        define ("THEME_DELETED",        "İçerik sistemden kaldırıldı. Gönderen kişiye e-posta ile bildirim yapıldı.");
 ?>

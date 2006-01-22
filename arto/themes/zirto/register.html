@@ -1,8 +1,27 @@
 {include file="header.html"}
 <script>
 {literal}
-function submitform() {
-			if (frm.username.value.length < 3) { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !');return false;}
+var mikExp = /[$\\@\\\#%\^\&\*\(\)\[\]\+\_\{\}\`\~\ \|\"\!\'\?]/;
+
+function dodacheck(val) {
+    var strPass = val.value;
+    var strLength = strPass.length;
+    var lchar = val.value.charAt((strLength) - 1);
+    if(lchar.search(mikExp) != -1) {
+    var tst = val.value.substring(0, (strLength) - 1);
+    val.value = tst;
+   }
+}
+
+function doanothercheck(form) {
+
+    if(form.value.search(mikExp) !== -1) {
+        alert("Kullanıcı Adı, \n\r\n\r@ $ % ^ & * # ( ) [ ] \\ { + } ` ~ = | \" \' ! ? \n\r\n\r karakterlerinden birini ya da boşluk içeremez !!\n");
+        form.select();
+        form.focus();
+        return false;
+    }
+    if (frm.username.value.length < 3) { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !');return false;}
 			if (frm.realname.value.length < 6) { alert('Ad Soyad boş ya da eksik !');return false;}
 			if (frm.email.value.length < 8) { alert('E-Mail boş ya da eksik !');return false;}
 {/literal}
@@ -10,7 +29,8 @@ function submitform() {
 {literal}
 			if (frm.password.value !== frm.password_.value) { alert('Parola ve Parola Tekrar birbirini tutmuyor !'); return false;}
 			return true;
-	}
+}
+
 {/literal}
 </script>
 <div id="content" class="main_content">
@@ -24,13 +44,13 @@ function submitform() {
 <span class="info">{$info}</span>
 {else}
 <span class="info">{$success}</span>
-<form id="frm" action="{if $userdetails}actions.php?call=updateuser{else}?register{/if}" method="post">
+<form id="frm" action="{if $userdetails}actions.php?call=updateuser{else}?register{/if}" method="post" onSubmit="return doanothercheck(frm.username);">
 <table style="margin-bottom: 1em;" class="regtable" width="300px">
 	<tbody>
 		<tr>
 			<td style="width: 120px;"><span style="color: red">[*]</span> Kullanıcı adı </td>
 			<td>
-			<input {if $userdetails} disabled {/if} id="username" name="username" class="register" size="25" value="{$up_user}"></td>
+			<input {if $userdetails} disabled {/if} id="username" name="username" class="register" size="25" value="{$up_user}" onKeyUp="javascript:dodacheck(frm.username);"></td>
 		</tr>
 		<tr>
 			<td style="width: 120px;"><span style="color: red">[*]</span> Ad Soyad </td>

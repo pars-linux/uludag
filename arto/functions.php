@@ -387,4 +387,11 @@
         $sql_word = "SELECT path, path2 FROM {$config['db']['tableprefix']}files WHERE id = '$id'";
         return perform_sql($sql_word);
     }
+
+    function del_theme($id){
+        global $config;
+        $sql_word = "DELETE FROM {$config['db']['tableprefix']}files WHERE id='{$id}' LIMIT 1";
+        return $sql_query = mysql_query($sql_word);
+    }
+
 ?>

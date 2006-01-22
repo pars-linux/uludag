@@ -3,6 +3,7 @@
 {if $status}
     <div><br><br> <span class="info">{ $status }</span> </div>
 {else}
+{if $uf[0].name}
 <div id="content" class="main_content">
 <span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>
 <h4><img src="{$url}{$themepath}/images/missions.png" width="48" height="48"> Görevlerim
@@ -50,6 +51,9 @@
 </table>
 </div>
 </div>
+{else}
+<div><br><br> <span class="info"> Size atanmış herhangi bir görev bulunmamakta.</span> </div>
+{/if}
 {/if}
 {else}
 <div><br><br> <span class="error"> Bu bölüme girme yetkiniz yok !! </span> </div>
