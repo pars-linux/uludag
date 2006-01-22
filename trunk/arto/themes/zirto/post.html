@@ -26,9 +26,9 @@ function submitform() {
 		    <td style="width: 30%;" valign="top">
                         <div align="center">
                         {if $nodes[post].filetype=="image"}
-                            <a href="{$url}preview.php?id={$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" title="Önizleme için tıklayın." class="thumbnail"><br><img src="{$url}images/preview.png" title="Önizleme için tıklayın."></a>
+                            <a href="{$url}preview.php?id={$nodes[post].id}" target="_blank"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" title="Önizleme için tıklayın." class="thumbnail"><br><img src="{$url}images/preview.png" title="Önizleme için tıklayın."></a>
                         {else}
-                            <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-b.png" title="Önizleme için tıklayın." class="thumbnail">
+                            <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-b.png" title="Önizleme mevcut değil." class="thumbnail">
                         {/if}
                         </div>
                     </td>
@@ -92,4 +92,5 @@ function submitform() {
 {else}
 <div><br><br> <span class="error"> Bu kayıt mevcut değil ya da sistemden kaldırılmış </span> </div>
 {/if}
+{include file="menu.html"}
 {include file="footer.html"}

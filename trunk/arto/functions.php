@@ -382,4 +382,9 @@
         return $sql_query = mysql_query($sql_word);
     }
 
+    function get_preview($id){
+        global $config;
+        $sql_word = "SELECT path, path2 FROM {$config['db']['tableprefix']}files WHERE id = '$id'";
+        return perform_sql($sql_word);
+    }
 ?>
