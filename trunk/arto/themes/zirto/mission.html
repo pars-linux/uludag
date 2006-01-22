@@ -1,5 +1,6 @@
 {include file="header.html"}
 {if $auth}
+{if $uf[0].name}
 <script>
 {literal}
 function submitform() {
@@ -96,6 +97,9 @@ function confirmSubmit(){
 </table>
 </div>
 </div>
+{else}
+<div><br><br> <span class="error"> Böyle bir kayıt yok !!  Sisteme eklenmiş ya da kaldırılmış olabilir .</span> </div>
+{/if}
 {else}
 <div><br><br> <span class="error"> Bu bölüme girme yetkiniz yok !! </span> </div>
 {/if}

@@ -1,8 +1,10 @@
 {include file="header.html"}
 <div id="content" class="main_content">
-<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>
+
+{if $userdetails}<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>{/if}
 <h4><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48">Gönderdiklerim
 </h4>
+{if $userdetails}
 {if $uf}
 <div>
 <table style="margin-bottom: 1em; margin-left: 2em; margin-right: 2em;" class="filestable" width="%90">
@@ -49,6 +51,15 @@
     </tbody>
 </table>
 </div>
+{else}
+<table style="margin-bottom: 1em; margin-left: 2em; margin-right: 2em;" class="regtable" width="%90">
+	<tbody>
+		<tr align="center">
+			<td style="text-align:center"><br>İçerik gönderebilmek için üye olmanız gerekir. Ücretsiz üyelik için <a href="?register">buraya</a> tıklayın. Üye iseniz sağ taraftaki Kullanıcı Girişi kısmından kullanıcı adınız ve şifreniz ile giriş yapabilirsiniz.<br><br></td>
+		</tr>
+	</tbody>
+</table>
+{/if}
 </div>
 {include file="menu.html"}
 {include file="footer.html"}
