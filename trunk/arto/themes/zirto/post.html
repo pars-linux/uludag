@@ -18,21 +18,19 @@ function submitform() {
 </h4>
 </div>
 
-<div class="posttable" style="float:left; width: 70%;">
-    <div style="margin-bottom:9px;border-bottom: 1px solid;"><b>{$nodes[post].name}</b></div>
+<div class="posttable" style="float: left; width: 70%;">
+    <div style="margin-bottom: 9px; border-bottom: 1px solid;"><b>{$nodes[post].name}</b></div>
         <table style="margin-bottom: 1em;">
             <tbody>
                 <tr>
-		    <td style="width: 30%;" valign="top">
-                        <div align="center">
+		    <td style="width: 20%; vertical-align: top; text-align: center;">
                         {if $nodes[post].filetype=="image"}
                             <a href="{$url}preview.php?id={$nodes[post].id}" target="_blank"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" title="Önizleme için tıklayın." class="thumbnail"><br><img src="{$url}images/preview.png" title="Önizleme için tıklayın."></a>
                         {else}
                             <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-b.png" title="Önizleme mevcut değil." class="thumbnail">
                         {/if}
-                        </div>
                     </td>
-		    <td style="width: 60%; vertical-align: top;">
+		    <td style="width: 70%; vertical-align: top;">
                         <strong>Ekleyen:</strong> <a href="{$author}" title="{$author}">{$author}</a><br>
                         <strong>Tarih:</strong> {$nodes[post].release.day} {$nodes[post].release.monthname} {$nodes[post].release.year} - {$nodes[post].release.hour}:{$nodes[post].release.minute}<br>
                         {if $nodes[post].rate}
