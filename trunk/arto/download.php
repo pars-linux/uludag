@@ -1,8 +1,10 @@
 <?php
 include("globals.php");
 
-            $file=rtag($_GET["file"]);
-            if (count_download($file)) header ("location: ".$config['core']['url']."files/".$_GET["file"]);
+            $file = get_filepaths($_GET["id"]);
+            if($file[0]['path2']){$download = $file[0]['path2'];}
+            elseif($file[0]['path2'] == "" && isset($file[0]['path'])){$download = $file[0]['path'];}
+            if (count_download($download)) header ("location: ".$config['core']['url']."files/".$download);
             else {
                 $message["title"] = ERROR;
                 $message["message"] = FILE_NOT_FOUND;
