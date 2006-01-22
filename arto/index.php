@@ -148,17 +148,6 @@ include_once("globals.php");
             die();
         }
 
-        elseif (isset($_GET["download"])){
-            $file=rtag($_GET["file"]);
-            if (count_download($file)) header ("location: ".$config['core']['url']."files/".$_GET["file"]);
-            else {
-                $message["title"] = ERROR;
-                $message["message"] = FILE_NOT_FOUND;
-		set_smarty_vars("message",$message);
-		$smarty->display("message.html");
-            }
-            die();
-        }
 	else {
 		set_smarty_vars("nodes",get_something("","","","release","4"));
                 set_smarty_vars("nodes2",get_something("","","","counter","4"));
