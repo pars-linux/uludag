@@ -37,7 +37,7 @@ app_data = [
 
 kdedistutils.setup(
     name="net_kga",
-    version="1.0_alpha1",
+    version="1.1",
     author="Gürer Özen",
     author_email="gurer@uludag.org.tr",
     url="http://www.uludag.org.tr/projects/comar",
