@@ -594,10 +594,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pref = Preferences.Preferences(self)
         self.pref.show()
 
-    def showHelp(self):
-        self.helpWidget = HelpDialog.HelpDialog(self)
-        self.helpWidget.show()
-        
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'
 
