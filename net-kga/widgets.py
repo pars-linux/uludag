@@ -46,25 +46,14 @@ class HLine(QHBox):
 
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
-        QDialog.__init__(self)
+        QDialog.__init__(self, parent)
         self.setCaption(i18n("Network Manager Help"))
         self.layout = QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
         self.resize(500, 600)
-        self.layout.addWidget(self.htmlPart.view(),1,1)
+        self.layout.addWidget(self.htmlPart.view(), 1, 1)
         
         if os.environ['LANG'].startswith('tr_TR'):
             self.htmlPart.openURL(KURL(locate("data","net_kga/help/tr/main_help.html")))
         else:
             self.htmlPart.openURL(KURL(locate("data","net_kga/help/en/main_help.html")))
-    
-    # Workaround http://mats.imk.fraunhofer.de/pipermail/pykde/2005-August/010945.html
-    def close(self, alsoDelete = 1):
-        return QDialog.close(self, 1)
-    
-    # Same as above
-    def __del__(self):
-        try:
-            return QDialog.close(self, 1)
-        except:
-            pass
