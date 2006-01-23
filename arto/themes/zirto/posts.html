@@ -4,9 +4,9 @@
 {if $username}
 <a href="#">Kullanıcılar</a> > <a href="/user/{$username}">{$username}</a>
 {else}
-<a href="?cid={$parent_type_id}">{$parent_type}</a>
+<a href="/{$parent_type_id}">{$parent_type}</a>
 {if $sub_type}
- > <a href="?cid={$parent_type_id}&sid={$sub_type_id}">{$sub_type}</a>
+ > <a href="/{$parent_type_id}/{$sub_type_id}">{$sub_type}</a>
 {/if}
 {/if}
 </h4>
@@ -19,7 +19,7 @@
 		<tr>
 			<td style="width: 120px;">
 			{if $nodes[post].filetype=="image"}
-                            <a href="{$url}?id={$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}id={$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
                             <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px">
                         {/if}
