@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteRule ^/(.*)/(.*)/(.*) /index.php?cid=$1&sid=$2&id=$3
-RewriteRule ^/(.*)/(.*)/ /index.php?cid=$1&sid=$2
-RewriteRule ^/(.*)/ /index.php?cid=$1
+RewriteRule ^nodes/(.*)/(.*)/(.*) /index.php?cid=$1&sid=$2&id=$3
+RewriteRule ^nodes/(.*)/(.*) /index.php?cid=$1&sid=$2
+RewriteRule ^nodes/(.*) /index.php?cid=$1
+RewriteRule ^node/(.*) /index.php?id=$1
 RewriteRule ^user/(.*) /index.php?showuserpage&uname=$1

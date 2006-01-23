@@ -1,12 +1,12 @@
 {include file="header.html"}
 <div id="content" class="main_content" >
-<h4><a href="/">Ana Sayfa</a> >
+<h4><a href="{$url}">Ana Sayfa</a> >
 {if $username}
-<a href="#">Kullanıcılar</a> > <a href="/user/{$username}">{$username}</a>
+<a href="#">Kullanıcılar</a> > <a href="{$url}user/{$username}">{$username}</a>
 {else}
-<a href="/{$parent_type_id}">{$parent_type}</a>
+<a href="{$url}nodes/{$parent_type_id}/">{$parent_type}</a>
 {if $sub_type}
- > <a href="/{$parent_type_id}/{$sub_type_id}">{$sub_type}</a>
+ > <a href="{$url}nodes/{$parent_type_id}/{$sub_type_id}/">{$sub_type}</a>
 {/if}
 {/if}
 </h4>
@@ -19,15 +19,15 @@
 		<tr>
 			<td style="width: 120px;">
 			{if $nodes[post].filetype=="image"}
-                            <a href="{$url}id={$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}nodes/{$nodes[post].type}/{if $nodes[post].lsubtype}{$nodes[post].sub_type}/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
                             <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px">
                         {/if}
 			</td>
 			<td>
-			<a href="{$url}?id={$nodes[post].id}"><b>{$nodes[post].name}</b></a><br>
+			<a href="{$url}nodes/{$nodes[post].type}{if $nodes[post].lsubtype}/{$nodes[post].sub_type}/{/if}{$nodes[post].id}"><b>{$nodes[post].name}</b></a><br>
 			<span class="subtitle">
-				 <a href="?cid={$nodes[post].type}">{$nodes[post].ltype}</a> {if $nodes[post].lsubtype} - <a href="?cid={$nodes[post].type}&sid={$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>{/if}
+				 <a href="{$url}nodes/{$nodes[post].type}">{$nodes[post].ltype}</a> {if $nodes[post].lsubtype} - <a href="{$url}nodes/{$nodes[post].type}/{$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>{/if}
 				<br>{$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}
 			</span>
 			{if $nodes[post].rate}
