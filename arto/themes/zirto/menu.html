@@ -9,10 +9,10 @@
 					</ul>
 			{/section}
                         <p><img src="{$url}{$themepath}/images/search.png" width="48" height="48"> Arama </p>
-                                        <form action="{$url}?search" method="post">
+                                        <form action="{$url}?search" method="post" id="main" >
 										<p align="center">
-											<input id="search" name="search" class="search" size="25"><br>
-											<input value="Ara" name="sorch" type="submit">
+											<input id="sorch" name="sorch" class="search" size="25"><br>
+											<input value="Ara" name="search" type="submit" onclick="return submitform();">
 										</p>
 									</form>
 			{if $username}

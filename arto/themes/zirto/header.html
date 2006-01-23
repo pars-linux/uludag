@@ -18,6 +18,14 @@
 				src.innerHTML = v ? str.replace(/up/, "down") : str.replace(/down/, "up");
 			}
                 {/literal}
+                </script>
+                <script>
+                {literal}
+                        function submitform() {
+		          	if (main.sorch.value.length == 0) { alert('Aranacak birşey yok !!');return false;}
+			return true;
+	                }
+                {/literal}
 		</script>
 
 	</head>

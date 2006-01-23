@@ -160,8 +160,8 @@ include_once("globals.php");
         }
 
         elseif (isset($_GET["search"])) {
-            set_smarty_vars("searchcriteria", $_POST["search"]);
-            set_smarty_vars("nodes",get_something("search",$_POST["search"],"","release",""));
+            set_smarty_vars("searchcriteria", rtag($_POST["sorch"]));
+            set_smarty_vars("nodes",get_something("search",rtag($_POST["sorch"]),"","release",""));
             $smarty->display("posts.html");
             die();
         }
