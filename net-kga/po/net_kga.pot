@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-26 08:51+0200\n"
+"POT-Creation-Date: 2006-01-23 16:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,115 +16,119 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: connection.py:28
+#: connection.py:32
 msgid "No authentication"
 msgstr ""
 
-#: connection.py:32
+#: connection.py:37
 msgid "Passphrase:"
 msgstr ""
 
-#: connection.py:39
+#: connection.py:45
 msgid "Login"
 msgstr ""
 
-#: connection.py:46 connection.py:163
+#: connection.py:50 connection.py:237
 msgid "Name:"
 msgstr ""
 
-#: connection.py:52
+#: connection.py:60
 msgid "Password:"
 msgstr ""
 
-#: connection.py:58
+#: connection.py:66
 msgid "Key"
 msgstr ""
 
-#: connection.py:74
+#: connection.py:112
 msgid "Network:"
 msgstr ""
 
-#: connection.py:84
+#: connection.py:122
 msgid "Automatic query (DHCP)"
 msgstr ""
 
-#: connection.py:88
+#: connection.py:126
 msgid "Manual"
 msgstr ""
 
-#: connection.py:95
+#: connection.py:130
 msgid "Address:"
 msgstr ""
 
-#: connection.py:100
+#: connection.py:136
+msgid "Net mask:"
+msgstr ""
+
+#: connection.py:141
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:128 connection.py:135
+#: connection.py:202 connection.py:209
 msgid "Device:"
 msgstr ""
 
-#: connection.py:149
+#: connection.py:223
 msgid "Scan"
 msgstr ""
 
-#: connection.py:182
+#: connection.py:254
 msgid "Configure network connection"
 msgstr ""
 
-#: connection.py:194
+#: connection.py:266
 msgid "Basic"
 msgstr ""
 
-#: connection.py:197
-msgid "Authentication"
-msgstr ""
-
-#: connection.py:201 mainwin.py:98
+#: connection.py:270 mainwin.py:106
 msgid "Connect"
 msgstr ""
 
-#: connection.py:203
+#: connection.py:272
 msgid "Accept"
 msgstr ""
 
-#: connection.py:222
+#: connection.py:291
 msgid "Phone number"
 msgstr ""
 
-#: connection.py:231
+#: connection.py:300
 msgid "No device"
 msgstr ""
 
-#: mainwin.py:43
+#: connection.py:402
+msgid "Authentication"
+msgstr ""
+
+#: mainwin.py:51
 msgid "Active"
 msgstr ""
 
-#: mainwin.py:45
+#: mainwin.py:53
 msgid "Inactive"
 msgstr ""
 
-#: mainwin.py:81
+#: mainwin.py:89
 msgid "Network connections:"
 msgstr ""
 
-#: mainwin.py:83
+#: mainwin.py:91
 msgid "Settings"
 msgstr ""
 
-#: mainwin.py:92
+#: mainwin.py:100
 msgid "Create"
 msgstr ""
 
-#: mainwin.py:100
+#: mainwin.py:108
 msgid "Disconnect"
 msgstr ""
 
-#: mainwin.py:120
+#: mainwin.py:128
 msgid "Unconfigured"
 msgstr ""
 
-#: mainwin.py:241
+#: mainwin.py:258
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -132,7 +136,7 @@ msgid ""
 "connection?"
 msgstr ""
 
-#: mainwin.py:244
+#: mainwin.py:261
 msgid "Delete connection?"
 msgstr ""
 
