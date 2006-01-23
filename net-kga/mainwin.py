@@ -107,6 +107,8 @@ class Widget(QVBox):
         self.connect(but, SIGNAL("clicked()"), self.slotConnect)
         but = QPushButton(i18n("Disconnect"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotDisconnect)
+        but = QPushButton(i18n("Help"), box)
+        self.connect(but, SIGNAL("clicked()"), self.slotHelp)
         
         self.comar = comar.Link()
         
@@ -138,6 +140,10 @@ class Widget(QVBox):
                 return item
             item = item.next()
         return None
+    
+    def slotHelp(self):
+        self.helpwin = widgets.HelpDialog(self)
+        self.helpwin.show()
     
     def slotComar(self, sock):
         reply = self.comar.read_cmd()
