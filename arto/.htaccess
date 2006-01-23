@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^content/(.*) /index.php?id=$1
+RewriteRule ^user/(.*) /index.php?showuserpage&uname=$1

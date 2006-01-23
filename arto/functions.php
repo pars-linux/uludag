@@ -89,6 +89,9 @@
             $query="type=".$id." AND ";
             if ($subid<>"") $query.=" sub_type=".$subid." AND ";
         }
+        elseif ($thing=="user") {
+            $query="user=".$id." AND ";
+        }
         if ($limit<>"") $limitt=" LIMIT ".$limit;
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE $query state='1' ORDER by $order DESC".$limitt;
         $sql_query = @mysql_query($sql_word);
@@ -277,9 +280,10 @@
         return perform_sql($sql_word);
     }
 
-    function get_user_something($id,$thing) {
+    function get_user_something($id,$thing,$opt="") {
         global $config;
-        $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}users WHERE id = '$id'";
+        if ($opt=="uname") $attach_sql = " uname = '$id'"; else $attach_sql = " id = '$id'";
+        $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}users WHERE".$attach_sql;
         return perform_sql($sql_word);
     }
 

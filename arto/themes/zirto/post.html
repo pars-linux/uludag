@@ -31,7 +31,7 @@ function submitform() {
                         {/if}
                     </td>
 		    <td style="width: 70%; vertical-align: top;">
-                        <strong>Ekleyen:</strong> <a href="{$author}" title="{$author}">{$author}</a><br>
+                        <strong>Ekleyen:</strong> <a href="user/{$uname}" title="{$author}">{$author}</a><br>
                         <strong>Tarih:</strong> {$nodes[post].release.day} {$nodes[post].release.monthname} {$nodes[post].release.year} - {$nodes[post].release.hour}:{$nodes[post].release.minute}<br>
                         {if $nodes[post].rate}
                             <strong>Reyting:</strong> {section name="loop" loop=$nodes[post].rate}<img src="{$url}{$themepath}/images/star.png" title="*">{/section}
