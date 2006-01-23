@@ -31,3 +31,8 @@ class HelpDialog(QDialog):
         else:
             self.htmlPart.openURL(KURL(locate("data","pisi_kga/help/en/main_help.html")))
 
+    # Workaround http://mats.imk.fraunhofer.de/pipermail/pykde/2005-August/010945.html
+    def __del__(self):
+        del self.htmlPart
+        QDialog.close(self)
+
