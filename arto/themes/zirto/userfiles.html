@@ -19,7 +19,7 @@
 {section name=files loop=$uf}
 		<tr align="center">
 			<td width="5%" style="text-align:center">{$uf[files].id}</td>
-			<td width="35%">{if $uf[files].state == 0}<a href="{$uf[files].path}">{/if}{if $uf[files].state == 1}<a href="{$url}?id={$uf[files].id}">{/if}{$uf[files].name}</a></td>
+			<td width="35%">{if $uf[files].state == 0}<a href="{$uf[files].path}">{/if}{if $uf[files].state == 1}<a href="{$url}node/{$uf[files].id}">{/if}{$uf[files].name}</a></td>
 			<td width="20%">{if $uf[files].types.2}{$uf[files].types.0}{else}{$uf[files].types.1}{/if}</td>
 			<td width="15%" style="text-align:center">{$uf[files].release.day} {$uf[files].release.monthname} {$uf[files].release.year}</td>
 			<td width="5%" style="text-align:center">{if $uf[files].state == 0}<img src="images/pending.png">{/if}{if $uf[files].state == 1}<img src="images/true.png">{/if}</td>

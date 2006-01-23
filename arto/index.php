@@ -153,7 +153,7 @@ include_once("globals.php");
 
         elseif (isset($_GET["showuserpage"])) {
             $temp = get_user_something($_GET["uname"],"id","uname");
-            set_smarty_vars("username", $_GET["uname"]);
+            set_smarty_vars("nameofuser", $_GET["uname"]);
             set_smarty_vars("nodes",get_something("user",$temp[0]["id"],"","release",""));
             $smarty->display("posts.html");
             die();
