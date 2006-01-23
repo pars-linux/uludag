@@ -29,7 +29,7 @@ kdedistutils.setup(
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
                         'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py','src/UpdateWizardDialog.ui',
                         'src/CustomUpdatesDialog.ui','src/FastUpdatesDialog.ui',
-                        ("/usr/kde/3.5/share/apps/pisi_kga/help",["help"]),
+                        'help',
                         ("/usr/kde/3.5/share/applications/kde/",["src/pisi-kga.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/pisi-kga-helper.desktop"]),
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/pisi_kga.png"]),
