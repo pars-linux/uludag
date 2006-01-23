@@ -10,11 +10,11 @@ function submitform() {
 </script>
 {section name=post loop=$nodes}
 <div id="content" class="main_content" >
-<h4><a href="?">Ana Sayfa</a> > <a href="?cid={$nodes[post].type}">{$nodes[post].ltype}</a>
+<h4><a href="{$url}">Ana Sayfa</a> > <a href="{$url}nodes/{$nodes[post].type}">{$nodes[post].ltype}</a>
 {if $nodes[post].lsubtype}
- > <a href="?cid={$nodes[post].type}&sid={$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>
+ > <a href="{$url}nodes/{$nodes[post].type}/{$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>
 {/if}
-> <a href="?id={$nodes[post].id}">{$nodes[post].name}</a>
+> <a href="{$url}nodes/{$nodes[post].type}/{if $nodes[post].lsubtype}{$nodes[post].sub_type}/{/if}{$nodes[post].id}">{$nodes[post].name}</a>
 </h4>
 </div>
 
@@ -31,7 +31,7 @@ function submitform() {
                         {/if}
                     </td>
 		    <td style="width: 70%; vertical-align: top;">
-                        <strong>Ekleyen:</strong> <a href="user/{$uname}" title="{$author}">{$author}</a><br>
+                        <strong>Ekleyen:</strong> <a href="{$url}user/{$uname}" title="{$author}">{$author}</a><br>
                         <strong>Tarih:</strong> {$nodes[post].release.day} {$nodes[post].release.monthname} {$nodes[post].release.year} - {$nodes[post].release.hour}:{$nodes[post].release.minute}<br>
                         {if $nodes[post].rate}
                             <strong>Reyting:</strong> {section name="loop" loop=$nodes[post].rate}<img src="{$url}{$themepath}/images/star.png" title="*">{/section}
@@ -53,10 +53,10 @@ function submitform() {
         <div style="float: left; background: #DDD; width: 99%; -moz-border-radius : 10px; text-align: center; border: 1px solid #999;font-size: 10px;padding: 2px;">
             <b>
                 <img src="{$url}images/download.png">
-                <a href="download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>
+                <a href="{$url}download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>
                     {if $nodes[post].path2} -
                         <img src="{$url}images/download.png">
-                            <a href="download.php?id={$nodes[post].id}&file=2" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}
+                            <a href="{$url}download.php?id={$nodes[post].id}&file=2" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}
             </b>
         </div>
         
@@ -71,7 +71,7 @@ function submitform() {
         <br>
         <div align="center"><input onclick="return submitform();" value="Gönder" name="add_comment" type="submit"></div>
         </form>
-        {else}Yorum eklemek için kullanıcı girişi yapmalısınız.<br> Üye olmak için <a href="?register">tıklayın</a>{/if}
+        {else}Yorum eklemek için kullanıcı girişi yapmalısınız.<br> Üye olmak için <a href="{$url}?register">tıklayın</a>{/if}
 </div>
 
 <div class="posttable" style="clear:left; width: 70%;">
