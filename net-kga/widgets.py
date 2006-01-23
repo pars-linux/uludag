@@ -47,7 +47,7 @@ class HLine(QHBox):
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
-        self.setCaption(i18n("Network Manager Help"))
+        self.setCaption(i18n("Network Connections Help"))
         self.layout = QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
         self.resize(500, 600)

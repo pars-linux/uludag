@@ -26,11 +26,17 @@ version = "1.1"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("net_kga", "Network KGA", version, \
-                            description, KAboutData.License_GPL,
-                            "(C) 2005 UEKAE/TÜBİTAK", None, None, "gurer@uludag.org.tr")
+    about_data = KAboutData("net_kga",
+                            "Network Connections",
+                            version,
+                            description,
+                            KAboutData.License_GPL,
+                            "(C) 2005 UEKAE/TÜBİTAK",
+                            None, None,
+                            "gurer@uludag.org.tr")
     
     about_data.addAuthor("Gürer Özen", None, "gurer@uludag.org.tr")
+    
     return about_data
 
 
@@ -108,12 +114,12 @@ def main():
     global kapp
     
     about_data = AboutData()
-    KCmdLineArgs.init(sys.argv,about_data)
-
+    KCmdLineArgs.init(sys.argv, about_data)
+    
     if not KUniqueApplication.start():
         print i18n("Network KGA is already running!")
         return
-
+    
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
     kapp.setMainWidget(myapp)
