@@ -622,15 +622,15 @@ class MainApplication(programbase):
         # load our icons and images.
         KGlobal.iconLoader().addAppDir("pisi_kga")
 
-        # About object
         self.aboutus = KAboutApplication(self)
+        self.helpWidget = None
 
         mainwidget = MainApplicationWidget(self)
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(mainwidget)
         mainwidget.listView.setResizeMode(KListView.LastColumn)
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
-
+        
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.categoryGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.clearButton,SIGNAL("clicked()"),mainwidget.clearSearch)
@@ -660,8 +660,11 @@ class MainApplication(programbase):
             mainwidget.installSinglePackage(packageToInstall)
 
     def showHelp(self):
-        self.helpWidget = HelpDialog.HelpDialog(self)
-        self.helpWidget.setModal(True)
+        global mainwidget
+        if not self.helpWidget:
+            self.helpWidget = HelpDialog.HelpDialog(mainwidget)
+            # FIXME make non modal
+            self.helpWidget.setModal(True)
         self.helpWidget.show()
 
     def exec_loop(self):
