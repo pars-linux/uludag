@@ -3,6 +3,7 @@
 <h4><a href="{$url}">Ana Sayfa</a> >
 {if $searchcriteria}
 Aranan kelime : "{$searchcriteria}"
+{else}
 {if $nameofuser}
 <a href="#">Kullanıcılar</a> > <a href="{$url}user/{$nameofuser}">{$nameofuser}</a>
 {else}
@@ -20,13 +21,13 @@ Aranan kelime : "{$searchcriteria}"
 		<tr>
 			<td style="width: 120px;">
 			{if $nodes[post].filetype=="image"}
-                            <a href="{$url}nodes/{$nodes[post].type}/{if $nodes[post].lsubtype}{$nodes[post].sub_type}/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
                             <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px">
                         {/if}
 			</td>
 			<td>
-			<a href="{$url}nodes/{$nodes[post].type}{if $nodes[post].lsubtype}/{$nodes[post].sub_type}/{/if}{$nodes[post].id}"><b>{$nodes[post].name}</b></a><br>
+			<a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}"><b>{$nodes[post].name}</b></a><br>
 			<span class="subtitle">
 				 <a href="{$url}nodes/{$nodes[post].type}">{$nodes[post].ltype}</a> {if $nodes[post].lsubtype} - <a href="{$url}nodes/{$nodes[post].type}/{$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>{/if}
 				<br>{$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}

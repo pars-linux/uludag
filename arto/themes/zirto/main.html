@@ -21,13 +21,13 @@
 		<tr>
 			<td style="width: 120px;">
                         {if $nodes[post].filetype=="image"}
-                            <a href="{$url}nodes/{$nodes[post].type}/{if $nodes[post].lsubtype}{$nodes[post].sub_type}/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
-                            <a href="{$url}nodes/{$nodes[post].type}/{if $nodes[post].lsubtype}{$nodes[post].sub_type}/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {/if}
 			</td>
 			<td>
-			<a href="{$url}nodes/{$nodes[post].type}/{if $nodes[post].lsubtype}{$nodes[post].sub_type}/{/if}{$nodes[post].id}"><b>{$nodes[post].name}</b></a><br>
+			<a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}"><b>{$nodes[post].name}</b></a><br>
 			<span class="subtitle">
                                 <a href="{$url}nodes/{$nodes[post].type}">{$nodes[post].ltype}</a> {if $nodes[post].lsubtype} - <a href="{$url}nodes/{$nodes[post].type}/{$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>{/if}
 				<br>{$nodes[post].release.day} {$nodes[post].release.monthname} - {$nodes[post].release.hour}:{$nodes[post].release.minute}
@@ -58,13 +58,13 @@
 		<tr>
 			<td style="width: 120px;">
                         {if $nodes2[post].filetype=="image"}
-                            <a href="{$url}nodes/{$nodes2[post].type}/{if $nodes2[post].lsubtype}{$nodes2[post].sub_type}/{/if}{$nodes2[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes2[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}{if $nodes2[post].lsubtype}nodes/{$nodes2[post].type}/{$nodes2[post].sub_type}/{else}node/{/if}{$nodes2[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes2[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
-                            <a href="{$url}nodes/{$nodes2[post].type}/{if $nodes2[post].lsubtype}{$nodes2[post].sub_type}/{/if}{$nodes2[post].id}"><img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes2[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}{if $nodes2[post].lsubtype}nodes/{$nodes2[post].type}/{$nodes2[post].sub_type}/{else}node/{/if}{$nodes2[post].id}"><img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes2[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {/if}
 			</td>
 			<td>
-			<a href="{$url}nodes/{$nodes2[post].type}/{if $nodes2[post].lsubtype}{$nodes2[post].sub_type}/{/if}{$nodes2[post].id}"><b>{$nodes2[post].name}</b></a><br>
+			<a href="{$url}{if $nodes2[post].lsubtype}nodes/{$nodes2[post].type}/{$nodes2[post].sub_type}/{else}node/{/if}{$nodes2[post].id}"><b>{$nodes2[post].name}</b></a><br>
 			<span class="subtitle">
 				<a href="{$url}nodes/{$nodes2[post].type}">{$nodes2[post].ltype}</a> {if $nodes2[post].lsubtype} - <a href="{$url}nodes/{$nodes2[post].type}/{$nodes2[post].sub_type}">{$nodes2[post].lsubtype}</a>{/if}
 				<br>{$nodes2[post].release.day} {$nodes2[post].release.monthname} - {$nodes2[post].release.hour}:{$nodes2[post].release.minute}
