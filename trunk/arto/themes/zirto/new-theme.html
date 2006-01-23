@@ -2,8 +2,8 @@
 <script>
 {literal}
 function submitform() {
-			if (frm.theme_name.value.length < 6) { alert('İçerik Adı en az 6 (altı) karakterden oluşmalıdır !');return false;}
-			if (frm.theme_path.value.length == 0) { alert('İçerik Konumu boş !!');return false;}
+			if (frm.theme_name.value.length < 6) { alert('İçerik Adı en az 6 (altı) karakterden oluşmalıdır !\n Ayrıntılar için (sağ üst köşede) Yardım a tıklayın');return false;}
+			if (frm.theme_path.value.length < 6) { alert('İçerik Konumu boş.\n Ayrıntılar için (sağ üst köşede) Yardım a tıklayın');return false;}
 			return true;
 	}
 {/literal}
@@ -42,7 +42,7 @@ function submitform() {
 		</tr>
                 <tr>
 			<td style="width: 120px;" valign="top"><span style="color: green">[*]</span> Ek Konum </td>
-			<td><input id="theme_path" name="theme_path2" class="register" size="35" ></td>
+			<td><input id="theme_path2" name="theme_path2" class="register" size="35" ></td>
 		</tr>
 		<tr>
 			<td style="width: 120px;" valign="top"><span style="color: red">[*]</span> Lisans </td>
