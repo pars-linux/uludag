@@ -89,9 +89,9 @@
             $query="type=".$id." AND ";
             if ($subid<>"") $query.=" sub_type=".$subid." AND ";
         }
-        elseif ($thing=="user") {
-            $query="user=".$id." AND ";
-        }
+        elseif ($thing=="user") $query="user=".$id." AND ";
+        elseif ($thing=="search") $query="name LIKE '%".$id."%' OR description LIKE '%".$id."%' AND ";
+
         if ($limit<>"") $limitt=" LIMIT ".$limit;
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE $query state='1' ORDER by $order DESC".$limitt;
         $sql_query = @mysql_query($sql_word);

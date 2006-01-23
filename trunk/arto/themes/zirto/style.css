@@ -147,6 +147,12 @@ input.password {
 	background-repeat: no-repeat;
 	}
 
+input.search {
+	padding-left:18px;
+	background-image: url('../../images/stock_search.png');
+	background-repeat: no-repeat;
+	}
+
 input, select, textarea {
 	background-color: #FFF;
 	border: 0px;
