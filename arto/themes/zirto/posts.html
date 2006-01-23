@@ -1,14 +1,15 @@
 {include file="header.html"}
 <div id="content" class="main_content" >
 <h4><a href="{$url}">Ana Sayfa</a> >
+{if $searchcriteria}
+Aranan kelime : "{$searchcriteria}"
 {if $nameofuser}
 <a href="#">Kullanıcılar</a> > <a href="{$url}user/{$nameofuser}">{$nameofuser}</a>
 {else}
 <a href="{$url}nodes/{$parent_type_id}/">{$parent_type}</a>
 {if $sub_type}
  > <a href="{$url}nodes/{$parent_type_id}/{$sub_type_id}/">{$sub_type}</a>
-{/if}
-{/if}
+{/if}{/if}{/if}
 </h4>
 {if $nodes == ""}
 	<div >Verdiğiniz kriterlere uygun herhangi bir kayıt bulunamadı.</div>

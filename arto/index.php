@@ -159,6 +159,13 @@ include_once("globals.php");
             die();
         }
 
+        elseif (isset($_GET["search"])) {
+            set_smarty_vars("searchcriteria", $_POST["search"]);
+            set_smarty_vars("nodes",get_something("search",$_POST["search"],"","release",""));
+            $smarty->display("posts.html");
+            die();
+        }
+
 	else {
 		set_smarty_vars("nodes",get_something("","","","release","4"));
                 set_smarty_vars("nodes2",get_something("","","","counter","4"));

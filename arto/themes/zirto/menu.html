@@ -8,6 +8,13 @@
 					{/section}
 					</ul>
 			{/section}
+                        <p><img src="{$url}{$themepath}/images/search.png" width="48" height="48"> Arama </p>
+                                        <form action="{$url}?search" method="post">
+										<p align="center">
+											<input id="search" name="search" class="search" size="25"><br>
+											<input value="Ara" name="sorch" type="submit">
+										</p>
+									</form>
 			{if $username}
 				<p><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48"> {$name} </p>
 			{else}
