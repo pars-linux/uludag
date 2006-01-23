@@ -363,7 +363,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
         componentDict = {}
         for component in components:
-            componentItem = QCheckListItem(self.listView,"",QCheckListItem.CheckBoxController)
+            if not nonPrivMode:
+                componentItem = QCheckListItem(self.listView,"",QCheckListItem.CheckBoxController)
+            else:
+                componentItem = QListViewItem(self.listView,None)
             componentItem.setOpen(True)
             name = u'%s' % component.localName
             componentItem.setText(0, name)
