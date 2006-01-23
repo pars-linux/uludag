@@ -32,6 +32,7 @@ app_data = [
     'images/dialup-online.png',
     'images/dialup-connecting.png',
     'images/dialup-offline.png',
+    ("/usr/kde/3.5/share/apps/net_kga/help",["help"])
 ]
 
 kdedistutils.setup(
