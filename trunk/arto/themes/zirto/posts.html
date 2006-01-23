@@ -1,8 +1,8 @@
 {include file="header.html"}
 <div id="content" class="main_content" >
 <h4><a href="{$url}">Ana Sayfa</a> >
-{if $username}
-<a href="#">Kullanıcılar</a> > <a href="{$url}user/{$username}">{$username}</a>
+{if $nameofuser}
+<a href="#">Kullanıcılar</a> > <a href="{$url}user/{$nameofuser}">{$nameofuser}</a>
 {else}
 <a href="{$url}nodes/{$parent_type_id}/">{$parent_type}</a>
 {if $sub_type}

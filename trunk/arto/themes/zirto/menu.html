@@ -1,10 +1,10 @@
 							</td>
         				<td width="200" class="sidebar">
 			{section name=cat loop=$categories}
-				<p><img src="{$url}{$themepath}/images/categories/{$categories[cat].id}.png" width="48" height="48"><a href="{$url}nodes/{$categories[cat].id}/"> {$categories[cat].type}</a></p>
+				<p><img src="{$url}{$themepath}/images/categories/{$categories[cat].id}.png" width="48" height="48"><a href="{$url}nodes/{$categories[cat].id}"> {$categories[cat].type}</a></p>
   		     	      		<ul>
 					{section name=sub loop=$categories[cat].sub}
-					<li><a href="{$url}nodes/{$categories[cat].id}/{$categories[cat].sub[sub].id}/"> {$categories[cat].sub[sub].type}</a></li>
+					<li><a href="{$url}nodes/{$categories[cat].id}/{$categories[cat].sub[sub].id}"> {$categories[cat].sub[sub].type}</a></li>
 					{/section}
 					</ul>
 			{/section}

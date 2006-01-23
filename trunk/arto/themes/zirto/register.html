@@ -44,7 +44,7 @@ function doanothercheck(form) {
 <span class="info">{$info}</span>
 {else}
 <span class="info">{$success}</span>
-<form id="frm" action="{if $userdetails}actions.php?call=updateuser{else}?register{/if}" method="post" onSubmit="return doanothercheck(frm.username);">
+<form id="frm" action="{if $userdetails}{$url}actions.php?call=updateuser{else}?register{/if}" method="post" onSubmit="return doanothercheck(frm.username);">
 <table style="margin-bottom: 1em;" class="regtable" width="300px">
 	<tbody>
 		<tr>
