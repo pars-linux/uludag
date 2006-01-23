@@ -3,6 +3,13 @@
 <h4><a href="{$url}">Ana Sayfa</a> >
 {if $searchcriteria}
 Aranan kelime : "{$searchcriteria}"
+</h4>
+<div align="center">
+    <form action="{$url}?search" method="post" id="main" >
+    <input id="sorch" name="sorch" class="search" size="25">
+    <input value="Ara" name="search" type="submit" onclick="return checksearch();">
+    </form>
+</div><br>
 {else}
 {if $nameofuser}
 <a href="#">Kullanıcılar</a> > <a href="{$url}user/{$nameofuser}">{$nameofuser}</a>
