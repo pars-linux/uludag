@@ -32,7 +32,7 @@ kdedistutils.setup(
                         ("/usr/kde/3.5/share/apps/pisi_kga/help",["help"]),
                         ("/usr/kde/3.5/share/applications/kde/",["src/pisi-kga.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/pisi-kga-helper.desktop"]),
-                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/pisi-kga.png"]),
+                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/pisi_kga.png"]),
                         ("/usr/kde/3.5/share/mimelnk/application/",["src/x-pisi.desktop"])],
     executable_links = [('pisi-kga','PisiKga.py')],
     i18n = ('po',['src']),

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-3.8.dtd">
+<!-- Tasks file for project pisi-kga -->
+<!-- Saved: 2006-01-19, 22:42:25 -->
+<Tasks version="3.8">
+  <Task priority="1" completed="0" bugfix="1">
+    <Description>FIXME: caching the entire package database somehow does not look right :)</Description>
+    <Created>2006-01-19, 22:33:46</Created>
+    <Resource>
+      <Filename>
+        <Dir>src</Dir>
+        <Name>PisiKga.py</Name>
+      </Filename>
+      <Linenumber>361</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>

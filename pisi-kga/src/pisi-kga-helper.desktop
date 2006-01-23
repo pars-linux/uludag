@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=PiSi KGA
-Icon=pisi-kga
+Icon=pisi_kga
 Type=Application
 MimeType=application/x-pisi;
-Exec=kdesu "pisi-kga --install %U"
+Exec=kdesu "pisi_kga --install %U"
