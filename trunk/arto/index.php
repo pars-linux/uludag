@@ -22,9 +22,10 @@ include_once("globals.php");
                     set_smarty_vars("userdetails",TRUE);
 		}
 		$nodes = get_something("single",$_GET["id"]);
-		$temp = get_user_something($nodes[0]['user'],"name");
+		$temp = get_user_something($nodes[0]['user'],"*");
 		set_smarty_vars("nodes",$nodes);
                 set_smarty_vars("author",$temp[0]['name']);
+                set_smarty_vars("uname",$temp[0]['uname']);
 		set_smarty_vars("comments",get_comments($_GET["id"]));
 		$smarty->display("post.html");
 		die();
@@ -147,6 +148,14 @@ include_once("globals.php");
                     set_smarty_vars("auth",FALSE);
                 }
             $smarty->display("missions.html");
+            die();
+        }
+
+        elseif (isset($_GET["showuserpage"])) {
+            $temp = get_user_something($_GET["uname"],"id","uname");
+            set_smarty_vars("username", $_GET["uname"]);
+            set_smarty_vars("nodes",get_something("user",$temp[0]["id"],"","release",""));
+            $smarty->display("posts.html");
             die();
         }
 

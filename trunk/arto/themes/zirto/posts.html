@@ -1,12 +1,17 @@
 {include file="header.html"}
 <div id="content" class="main_content" >
-<h4><a href="?">Ana Sayfa</a> > <a href="?cid={$parent_type_id}">{$parent_type}</a>
+<h4><a href="?">Ana Sayfa</a> >
+{if $username}
+<a href="?users">Kullanıcılar</a> > <a href="user/{$username}">{$username}</a>
+{else}
+<a href="?cid={$parent_type_id}">{$parent_type}</a>
 {if $sub_type}
  > <a href="?cid={$parent_type_id}&sid={$sub_type_id}">{$sub_type}</a>
 {/if}
+{/if}
 </h4>
 {if $nodes == ""}
-	<div>Bu bölüme ait herhangi bir kayıt bulunamadı.</div>
+	<div >Verdiğiniz kriterlere uygun herhangi bir kayıt bulunamadı.</div>
 {/if}
 {section name=post loop=$nodes}
 <table style="margin-bottom: 1em;" border="0">
