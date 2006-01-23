@@ -113,7 +113,7 @@ if __name__ == "__main__":
         f.write(a2h.toHtml())
         f.close()
         
-        sablon.modify_file(filename)
+        sablon.modify_file(filename, False)
     except IndexError:
         print "Usage: %s accounts_file output_file" % sys.argv[0]
 
