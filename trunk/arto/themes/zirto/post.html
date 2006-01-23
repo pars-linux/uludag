@@ -61,10 +61,10 @@ function submitform() {
         </div>
         
     </div>
-<div id="commentbox" class="posttable" style="float: left; display: none; width: 300;">
+<div id="commentbox" class="posttable" style="float: left; display: none; width: 70%;">
     <div style="border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
     {if $userdetails}
-        <form id="frm" action="actions.php?call=addcomment" method="post">
+        <form id="frm" action="{$url}actions.php?call=addcomment" method="post">
         &nbsp;&nbsp;&nbsp;<textarea id="comment" name="comment" class="register" cols="53" rows="7"></textarea>
         <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="comment_date">
         <input type="hidden" value="{$nodes[post].id}" name="file_id">
