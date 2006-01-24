@@ -14,7 +14,6 @@ Olsa iyi olurlar (IEEE-STD-830-1998'de non-functional requirements):
 - Çok gelişmiş özellikleri diğer güvenlik duvarlarına bırakmalı.
 - Geçmiş güvenlik duvarı günlüğünü gösterebilmeli. Bunların hangilerinin bloklandığını belirtmeli.
 - Sistem çekmecesine yerleşebilmeli.
-- Gereksiz çıkışlar yapmamalı, ayağa dolanmamalı. Ninja kadar sessiz olmalı. 
 - Kendi başına da çalışabilmeli.
 - Belli bir IP'ye girişi engelleyebilmeli.
 - ICMP sorgularını engelleyebilmeli.
