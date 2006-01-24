@@ -19,7 +19,7 @@ function submitform() {
 </h4>
 </div>
 
-<div class="posttable" style="float: left; width: 70%;">
+<div class="posttable" style="float: left; width: 96%;">
     <div style="margin-bottom: 9px; border-bottom: 1px solid;"><b>{$nodes[post].name}</b></div>
         <table style="margin-bottom: 1em;">
             <tbody>
@@ -62,7 +62,7 @@ function submitform() {
         </div>
         
     </div>
-<div id="commentbox" class="posttable" style="float: left; display: none; width: 70%;">
+<div id="commentbox" class="posttable" style="float: left; display: none; width: 96%;">
     <div style="border-bottom: 1px solid;"><b>Yorum Ekle</b></div>
     {if $userdetails}
         <form id="frm" action="{$url}actions.php?call=addcomment" method="post">
@@ -75,7 +75,7 @@ function submitform() {
         {else}Yorum eklemek için kullanıcı girişi yapmalısınız.<br> Üye olmak için <a href="{$url}?register">tıklayın</a>{/if}
 </div>
 
-<div class="posttable" style="clear:left; width: 70%;">
+<div class="posttable" style="clear:left; width: 96%;">
     <div style="margin-bottom: 9px; border-bottom: 1px solid;"><b>Yorumlar</b></div>
     {if $comments}
 	{section name=xx loop=$comments}
