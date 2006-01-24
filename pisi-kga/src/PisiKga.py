@@ -187,6 +187,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.queryEdit.clear()
         self.pDialog.closeForced()
         self.resetProgressBar()
+        text = None
 
         if self.confirmed == KMessageBox.No:
             pass
@@ -207,9 +208,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
             else:
                 success.infoLabel.setText(i18n("All selected packages are successfully updated!"))
                 text = i18n("updated")
-            
-            for i in self.packagesOrder:
-                success.infoBrowser.append(i+" "+text)
+
+            if text:
+                for i in self.packagesOrder:
+                    success.infoBrowser.append(i+" "+text)
+                    
             self.operation = None
             success.show()
         else:
