@@ -87,7 +87,7 @@
                 </rect>
             </property>
             <property name="text">
-                <string>It has insufficient areas</string>
+                <string>It does not meet my requirements</string>
             </property>
             <property name="buttonGroupId">
                 <number>2</number>
