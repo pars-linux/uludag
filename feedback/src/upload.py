@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'upload.ui'
 #
-# Created: Pzt Ara 19 23:31:30 2005
+# Created: Sal Oca 24 19:45:13 2006
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
