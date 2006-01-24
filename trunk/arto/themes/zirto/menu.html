@@ -15,34 +15,5 @@
 											<input value="Ara" name="search" type="submit" onclick="return checksearch();">
 										</p>
 									</form>
-			{if $username}
-				<p><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48"> {$name} </p>
-			{else}
-				<p><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48"> Kullanıcı Girişi </p>
-			{/if}
-			<div>
-			{if $username}
-				<div  style="padding-left: 25px;">
-				<a href="{$url}?userdetails"><img src="{$url}images/user.png"> Bilgilerim</a><br>
-				<a href="{$url}?newtheme"><img src="{$url}images/theme.png"> İçerik Gönder!</a><br>
-				<a href="{$url}?userfiles"><img src="{$url}images/userfiles.png"> Gönderdiklerim</a><br>
-                                {if $level<=1}
-                                <a href="{$url}?missions"><img src="{$url}images/missions.png"> Görevlerim</a><br>
-                                {/if}
-				<img src="{$url}images/quit.png"><a href="{$url}?quit"> Çıkış</a>
-				</div>
-			{else}
-				{$login_error}
-									<form action="{$url}?login" method="post">
-										<p align="center">
-											<input id="username" name="username" class="username" size="15"><br>
-											<input id="password" name="password" class="password" size="15" type="password"><br>
-											<input value="Giriş" name="login" type="submit"><br>
-											<a href="{$url}?register" style="font-size: 0.8em;">[Üye Ol]</a>
-										</p>
-									</form>
-									
-			{/if}
-								</div>
-         	   	</td>
+                        </td>
         			</tr>
