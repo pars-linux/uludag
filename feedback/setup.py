@@ -17,7 +17,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="feedback",
-    version="1.0",
+    version="1.0.1",
     author="Bahadır Kandemir",
     author_email="bahadir@haftalik.net",
     min_kde_version = "3.5.0",

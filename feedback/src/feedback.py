@@ -26,7 +26,7 @@ from goodbyedlg import GoodbyeDlg
 
 def AboutData():
     description = "Pardus Feedback Tool"
-    version = "1.0"
+    version = "1.0.1"
 
     about_data = KAboutData("feedback", "Pardus Feedback Tool", version, \
                             description, KAboutData.License_GPL,
@@ -209,8 +209,7 @@ class thread_upload(QThread):
         # Personal
         upload['email'] = str(w.pagePersonalInfoDlg.lineEmail.text())
         upload['email_announce'] = w.pagePersonalInfoDlg.CheckBoxAnnounce.isChecked()
-        upload['email_security'] = w.pagePersonalInfoDlg.CheckBoxSecurity.isChecked()
-            
+
         # Upload!
         try:
             params = urllib.urlencode(upload)
