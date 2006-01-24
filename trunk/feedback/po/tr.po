@@ -134,7 +134,7 @@ msgstr "Yeni kullanıcı"
 
 #: src/experiencedlg.py:146
 msgid "Home/office productivity user"
-msgstr "Ev/ofis kullanıcısı"
+msgstr "Ev ve ofis kullanıcısı"
 
 #: src/experiencedlg.py:147
 msgid "Experienced user"
@@ -142,7 +142,7 @@ msgstr "Deneyimli kullanıcı"
 
 #: src/experiencedlg.py:148
 msgid "<h2>What is your experience level?</h2>"
-msgstr "<h2>Deneyim seviyeniz nedir?</h2>"
+msgstr "<h2>Bilgisayar deneyim seviyeniz nedir?</h2>"
 
 #: src/experiencedlg.py:149
 msgid "<b>Step 1 of 7</b>"
@@ -166,7 +166,7 @@ msgstr ""
 "ve Pardus'un dünyadaki en iyi Linux olmasına yardımda bulunabilirsiniz.\n"
 "\n"
 "<p>\n"
-"Sağladığınız bilgiler, Pardus gelişimini hızlandıracaktır. Lütfen\n"
+"Sağladığınız bilgiler Pardus gelişimini hızlandıracaktır. Lütfen\n"
 "\"İleri\" düğmesine basın ve bir sonraki adıma geçin.\n"
 "<p>"
 
@@ -216,7 +216,7 @@ msgstr "İyi, ancak bazı eksikleri var"
 
 #: src/questiondlg.py:257
 msgid "It has insufficient areas"
-msgstr "Yetersiz kaldığı yerler var"
+msgstr "Genellikle ihtiyaçlarımı karşılamakta yetersiz"
 
 #: src/questiondlg.py:258
 msgid "<h2>How does Pardus fit your needs?</h2>"
@@ -317,7 +317,6 @@ msgid ""
 "Thank you for your support to Pardus operating system."
 msgstr ""
 "<h2>Teşekkür Ederiz</h2>\n"
-"Gerekli olan her bilgiyi, Pardus geliştiricilerine göndermek üzere "
-"topladık.\n"
+"Gerekli olan her bilgiyi Pardus geliştiricilerine gönderdik."
 "<p>\n"
 "Pardus işletim sistemine desteğinizden ötürü teşekkür ederiz."
