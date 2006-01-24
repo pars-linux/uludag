@@ -6,7 +6,7 @@ Aranan kelime : "{$searchcriteria}"
 </h4>
 <div align="center">
     <form action="{$url}?search" method="post" id="main" >
-    <input id="sorch" name="sorch" class="search" size="25">
+    <input id="sorch" name="sorch" class="search" size="25" value="{$searchcriteria}">
     <input value="Ara" name="search" type="submit" onclick="return checksearch();">
     </form>
 </div><br>

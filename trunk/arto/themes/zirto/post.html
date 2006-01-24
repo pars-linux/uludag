@@ -43,9 +43,9 @@ function submitform() {
                         <strong>Lisans:</strong> <a href="{$nodes[post].llink}" title="{$nodes[post].ldesc}">{$nodes[post].lname}</a><br>
                     </td>
 		    <td style="width: 10%; vertical-align: top;">
-                        <div align="center"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}images/write.png" title="Yorum Ekle"></a></div>
-                        <div align="center"><a href="#" onclick="tV(document.getElementById('send2friendbox'), this); return false"><img src="{$url}images/mail.png" title="Arkadaşına Gönder"></a></div>
-                        <div align="center"><a href="#" onclick="addfav({$nodes[post].id})"><img src="{$url}images/favs.png" title="Favorilerine Ekle"></a></div>
+                        <div align="center"><a href="#" onclick="tV(document.getElementById('commentbox'), this); return false"><img src="{$url}images/write.png" title="Yorum Ekle"></a><br>yorum ekle</div>
+                        <div align="center"><a href="#" onclick="tV(document.getElementById('send2friendbox'), this); return false"><img src="{$url}images/mail.png" title="Arkadaşına Gönder"></a><br>arkadaşına gönder</div>
+                        <div align="center"><a href="#" onclick="addfav({$nodes[post].id})"><img src="{$url}images/favs.png" title="Favorilerine Ekle"></a><br>favorilerine ekle</div>
                     </td>
 		</tr>
             </tbody>
