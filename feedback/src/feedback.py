@@ -48,6 +48,7 @@ class Form(KWizard):
         KWizard.__init__(self, parent, name, modal, fl)
 
         self.resize(QSize(600,373).expandedTo(self.minimumSizeHint()))
+        self.setCaption(i18n("Feedback Wizard"))
           
         # Images
         self.image_feedback = QPixmap(locate("data", "feedback/feedback.png"))
