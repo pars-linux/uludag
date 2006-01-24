@@ -226,3 +226,21 @@ input, select, textarea {
 	padding-left:5px;
 	
 }
+
+.userlogin {
+    float:right;
+    -moz-border-radius-bottomleft : 8px;
+    border-bottom:1px solid #bbb;
+    height:15px;
+    padding:4px;
+    text-align:left;
+    background: #eee;
+}
+
+.userprops {
+    border-bottom:1px solid #bbb;
+    height:15px;
+    padding:4px;
+    text-align:left;
+    background: #eee;
+}

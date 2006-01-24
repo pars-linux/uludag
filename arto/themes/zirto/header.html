@@ -47,3 +47,24 @@
         			</tr>
         			<tr>
         				<td class="main">
+<div id="userprops" class="{if $username}userprops{else}userlogin{/if}">
+			{if $username}
+                                <div style="float:left">Hoşgeldiniz {$name}</div>
+				<div  style="padding-left: 10px;float:right">
+				<a href="{$url}?userdetails"><img src="{$url}images/user.png"> Bilgilerim</a> 
+				<a href="{$url}?newtheme"><img src="{$url}images/theme.png"> İçerik Gönder!</a>
+				<a href="{$url}?userfiles"><img src="{$url}images/userfiles.png"> Gönderdiklerim</a>
+                                {if $level<=1}
+                                <a href="{$url}?missions"><img src="{$url}images/missions.png"> Görevlerim</a>
+                                {/if}
+				<img src="{$url}images/quit.png"><a href="{$url}?quit"> Çıkış</a>
+				</div>
+			{else}
+				<form action="{$url}?login" method="post">
+				<input id="username" name="username" class="username" size="10">
+				<input id="password" name="password" class="password" size="10" type="password">
+				<input value="Giriş" name="login" type="submit"> <a style="vertical-align:top;" href="{$url}?register">[Üye Ol]</a></span>
+				</form>
+			{/if}
+			         </div>
+                                
