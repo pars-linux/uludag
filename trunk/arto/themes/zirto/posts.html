@@ -23,6 +23,7 @@ Aranan kelime : "{$searchcriteria}"
 	<div >Verdiğiniz kriterlere uygun herhangi bir kayıt bulunamadı.</div>
 {/if}
 {section name=post loop=$nodes}
+<div style="float:left;width: 330px;{if $smarty.section.post.iteration % 2 == 1}clear:left;{/if}">
 <table style="margin-bottom: 1em;" border="0">
 	<tbody>
 		<tr>
@@ -55,6 +56,7 @@ Aranan kelime : "{$searchcriteria}"
 		
 	</tbody>
 </table>
+</div>
 {/section}
 </div>
 {include file="menu.html"}
