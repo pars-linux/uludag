@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'questiondlg.ui'
 #
-# Created: Pzt Ara 19 23:31:30 2005
+# Created: Sal Oca 24 19:45:13 2006
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
 #
 # WARNING! All changes made in this file will be lost!
@@ -254,7 +254,7 @@ class QuestionDlg(QWidget):
         self.buttonGroup.setTitle(QString.null)
         self.questionOne.setText(i18n("Very satisfying. Pardus fulfils my requirements"))
         self.questionTwo.setText(i18n("Good, however it lacks some capabilities"))
-        self.questionThree.setText(i18n("It has insufficient areas"))
+        self.questionThree.setText(i18n("It does not meet my requirements"))
         self.questionLabel.setText(i18n("<h2>How does Pardus fit your needs?</h2>"))
         self.stepLabel.setText(i18n("<b>Step 4 of 7</b>"))
 
