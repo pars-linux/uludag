@@ -262,7 +262,7 @@
     function get_file_type($file){
         $file = pathinfo ($file);
         $extension = $file["extension"];
-        $package = array("zip","rar","gz","bz2","sh","tar.gz","tar.bz2","bin","pisi","skz","aiz","wav");
+        $package = array("zip","rar","gz","bz2","sh","tar.gz","tar.bz2","bin","pisi","skz","aiz","wav","kcsrc");
         $image   = array("gif","jpeg","jpg","png","bmp","xpm");
         foreach ($package as $key) { if ($key==$extension) return "package"; }
         foreach ($image as $key) { if ($key==$extension) return "image"; }
