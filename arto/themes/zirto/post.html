@@ -15,7 +15,7 @@ function submitform() {
 {if $nodes[post].lsubtype}
  > <a href="{$url}nodes/{$nodes[post].type}/{$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>
 {/if}
-> <a href="{$url}nodes/{$nodes[post].type}/{if $nodes[post].lsubtype}{$nodes[post].sub_type}/{/if}{$nodes[post].id}">{$nodes[post].name}</a>
+> <a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}">{$nodes[post].name}</a>
 </h4>
 </div>
 
