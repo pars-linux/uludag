@@ -144,7 +144,7 @@
     */
     function get_comments($id){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}comments WHERE fid='{$id}' ORDER by date DESC";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}comments WHERE fid='{$id}' ORDER by date";
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
