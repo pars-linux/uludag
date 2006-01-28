@@ -4,6 +4,10 @@ Header("Content-type: text/xml; charset: utf-8");
 if(!$orderby){$orderby = "release";}
 
 echo "<knewstuff>\n";
+
+$category = get_type($cat);
+if($category[0]['parent_id'] == 0){$cat = $category[0]['id'];}
+
 $content = get_something("cat",$cat,"",$orderby,"25");
 
 for($i = 0; $i < count($content); $i++){
