@@ -1,5 +1,6 @@
 <?php
 include("../../globals.php");
 $orderby = "counter";
-include_once("../wallpaper.php");
+$cat = "1";
+include_once("../showxml.php");
 ?>
