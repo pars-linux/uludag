@@ -116,7 +116,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         # First, notification events
         if eventType < CustomEvent.LastEntry :
-            if eventType == CustomEvent.Finished:
+            if eventType == CustomEvent.InitError:
+                KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
+                sys.exit(1)
+            elif eventType == CustomEvent.Finished:
                 self.finished()
                 self.index = 1
                 self.totalApps = None
@@ -240,18 +243,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
         if downloaded_size >= 1024*1024:
-            downloadedText = str(round(float(downloaded_size)/float(1024*1024),1))+ i18n(" MB")
+            downloadedText = str(round(float(downloaded_size)/float(1024*1024),0))+ i18n(" MB")
         elif downloaded_size >= 1024:
-            downloadedText = str(round(float(downloaded_size)/float(1024),1)) + i18n(" KB")
+            downloadedText = str(round(float(downloaded_size)/float(1024),0)) + i18n(" KB")
         else:
-            downloadedText = str(round(downloaded_size,1)) + i18n(" Bytes")
+            downloadedText = str(round(downloaded_size,0)) + i18n(" Bytes")
 
         if total_size >= 1024*1024:
-            totalText = str(round(float(total_size)/float(1024*1024),1))+ i18n(" MB")
+            totalText = str(round(float(total_size)/float(1024*1024),0))+ i18n(" MB")
         elif total_size >= 1024:
-            totalText = str(round(float(total_size)/float(1024),1)) + i18n(" KB")
+            totalText = str(round(float(total_size)/float(1024),0)) + i18n(" KB")
         else:
-            totalText = str(round(total_size,1)) + i18n(" Bytes")
+            totalText = str(round(total_size,0)) + i18n(" Bytes")
 
         self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
         self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
