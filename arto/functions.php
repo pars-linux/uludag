@@ -223,7 +223,7 @@
         $subtype = $type;
         if ($type_details[0]["parent_id"]==0) $subtype=0; else $type=$type_details[0]["parent_id"];
         if ($activate) $sql_word = "UPDATE {$config['db']['tableprefix']}files SET name='{$name}', type='{$type}', sub_type='{$subtype}', path='{$path}', path2='{$path2}', license='{$license}', description='{$description}', supervisor='{$ad_id}', release='{$date}', state='1' WHERE id='$id'";
-        else $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$path2}','{$description}', '{$note}', '0', '0', '0', '{$date}')";
+        else $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$path2}','{$description}', '{$note}', '0', '0', '0', '{$date}','0')";
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
     }
