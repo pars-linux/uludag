@@ -32,7 +32,11 @@ class PisiThread(QThread):
         self.updatingAllRepos = False
 
     def initDatabase(self):
-        pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
+        try:
+            pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
+        except:
+            event = QCustomEvent(CustomEvent.InitError)
+            self.postEvent(self.parent,event)
     
     def install(self,apps):
         self.installing = True
