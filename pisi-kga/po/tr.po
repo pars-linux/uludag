@@ -352,7 +352,6 @@ msgstr ""
 "Program Sürümü: Bar"
 
 #: src/MainWindow.py:269
-#, fuzzy
 msgid ""
 "<center>\n"
 "<h3>PiSi KGA 1.0.1</h3>\n"
