@@ -109,6 +109,7 @@ msgstr ""
 msgid ""
 "Pisi could not be started! Please make sure no other pisi process is running."
 msgstr ""
+"Pisi başlatılamadı! Lütfen Pisi'nin başka biryerde çalışmadığına emin olun."
 
 #: src/PisiKga.py:120 src/Preferences.py:132 src/Preferences.py:153
 msgid "Pisi Error"
@@ -360,9 +361,9 @@ msgid ""
 "</center>"
 msgstr ""
 "<center>\n"
-"<h1>PiSi KGA 1.0.1</h1>\n"
+"<h3>PiSi KGA 1.0.1</h3>\n"
 "<br><br>\n"
-"<h1>Pardus Linux v1.0</h1>\n"
+"<h3>Pardus Linux v1.0</h3>\n"
 "</center>"
 
 #: src/MainWindow.py:274
