@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE knewstuffproviders SYSTEM "knewstuffproviders.dtd">
+<knewstuffproviders>
+    <provider downloadurl="http://download.kde.org/khotnewstuff/wallpaper/wallpaper.xml" downloadurl-score="http://download.kde.org/khotnewstuff/wallpaper/wallpaper-score.xml" downloadurl-downloads="http://download.kde.org/khotnewstuff/wallpaper/wallpaper-downloads.xml" nouploadurl="http://www.kde-look.org/" webaccess="http://www.kde-look.org/">
+        <title>KDE-Look.org Wallpapers</title>
+    </provider>
+    <provider downloadurl="http://sanat.uludag.org.tr/kde/wallpaper/wallpaper.php" downloadurl-score="http://sanat.uludag.org.tr/kde/wallpaper/wallpaper-score.php" downloadurl-downloads="http://sanat.uludag.org.tr/kde/wallpaper/wallpaper-downloads.php" nouploadurl="http://sanat.uludag.org.tr/" webaccess="http://sanat.uludag.org.tr/">
+        <title>Sanat.Uludag.org.tr Duvar Kağıtları</title>
+    </provider>
+</knewstuffproviders>
