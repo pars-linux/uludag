@@ -26,13 +26,13 @@ for($i = 0; $i < count($content); $i++){
     echo "<type>{$content[$i]['type']}</type>\n";
     echo "<author>{$author[0]['name']}</author>\n";
     echo "<email>{$email[0]['email']}</email>\n";
-    echo "<licence>{$content[$i]['lname']}</licence>\n";
-    echo "<summary lang=\"en\">{$content[$i]['description']}</summary>\n";
+    echo "<license>{$content[$i]['lname']}</license>\n";
+    echo "<summary>{$content[$i]['description']}</summary>\n";
     echo "<version></version>\n";
     echo "<release></release>\n";
     echo "<releasedate>{$content[$i]['release']['year']}-{$content[$i]['release']['month']}-{$content[$i]['release']['day']}</releasedate>\n";
-    echo "<preview lang=\"en\">{$config['core']['url']}files/thumbs/{$preview}</preview>\n";
-    echo "<payload lang=\"en\">{$config['core']['url']}files/{$file}</payload>\n";
+    echo "<preview>{$config['core']['url']}files/thumbs/{$preview}</preview>\n";
+    echo "<payload>{$config['core']['url']}files/{$file}</payload>\n";
     echo "<rating>{$content[$i]['rating']}</rating>\n";
     echo "<downloads>{$content[$i]['counter']}</downloads>\n";
     echo "<more>{$config['core']['url']}node/{$content[$i]['id']}</more>\n";
