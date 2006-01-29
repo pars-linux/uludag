@@ -18,7 +18,8 @@ for($i = 0; $i < count($content); $i++){
     if($content[$i]['path'] != "" AND $content[$i]['path2'] == ""){$file = $content[$i]['path'];}
     elseif($content[$i]['path'] != "" AND $content[$i]['path'] != ""){$file = $content[$i]['path2'];}
     if(get_file_type($preview) == "package"){$preview = "no-preview.png";}
-    $content[$i]['rating'] = round($content[$i]['point']/$content[$i]['rated']);
+    if($content[$i]['point'] > 1){$content[$i]['rating'] = round($content[$i]['point']/$content[$i]['rated']);}
+    else{$content[$i]['rating'] = 0;}
 
     echo "<stuff>\n";
     echo "<name>{$content[$i]['name']}</name>\n";
