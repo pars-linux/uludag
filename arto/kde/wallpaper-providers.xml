@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE knewstuffproviders SYSTEM "knewstuffproviders.dtd">
+<knewstuffproviders>
+    <provider downloadurl="http://sanat.uludag.org.tr/kde/wallpaper/wallpaper.xml" downloadurl-score="http://sanat.uludag.org.tr/kde/wallpaper/wallpaper-score.xml" downloadurl-downloads="http://sanat.uludag.org.tr/kde/wallpaper/wallpaper-downloads.xml" nouploadurl="http://sanat.uludag.org.tr/" webaccess="http://sanat.uludag.org.tr/" icon="looknfeel">
+        <title>Sanat.Pardus</title>
+    </provider>
+    <provider downloadurl="http://download.kde.org/khotnewstuff/wallpaper/wallpaper.xml" downloadurl-score="http://download.kde.org/khotnewstuff/wallpaper/wallpaper-score.xml" downloadurl-downloads="http://download.kde.org/khotnewstuff/wallpaper/wallpaper-downloads.xml" nouploadurl="http://www.kde-look.org/" webaccess="http://www.kde-look.org/">
+        <title>KDE-Look.org</title>
+    </provider>
+</knewstuffproviders>
