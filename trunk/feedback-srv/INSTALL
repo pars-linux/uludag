@@ -1,0 +1,13 @@
+Requirements
+============
+
+Python
+Python-Mysql module
+A web server
+
+Steps to Install
+================
+
+1. Create a database and load sql/feedback.sql to it.
+2. Put files in src/ to your web directory
+3. Configure config.py
