@@ -7,9 +7,13 @@
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<link rel="alternate" title="Uludağ Bülteni" href="http://www.uludag.org.tr/bulten/bulten.xml" type="application/rss+xml">
 
+    <script language="JavaScript"><!--
+    function redirect ()    { setTimeout("gidelim()",1500); }
+    function gidelim ()     { window.location.href = "http://www.pardus-wiki.org/index.php/NASIL_Kurulur"; }
+    //--></script>
 </head>
 
-<body class="arka">
+<body onLoad="redirect()" class="arka">
 <table class="arkayan" width="800" border="0" align="center" cellpadding="0" cellspacing="0">
 <tr>
 <td width="878" align="center" valign="top">
@@ -44,98 +48,9 @@
 
 <br>
 
-<!-- SAYFA İÇERİK BAŞI -->
-<table width="695" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="20" height="286" valign="top"><img src="./images/bullet6.png" width="20" height="20" hspace="0" vspace="0" align="top"></td>
-<td width="10" valign="top">&nbsp;</td>
-<td width="661" valign="top" class="metin">
-<p><span class="baslik">
-<font face="Verdana, Arial, Helvetica, sans-serif" name="top">Kurulum Belgesi</font></span><br>
 <br>
-Pardus CD'sine sahip olmanız için dosya sunucumuzdan (FTP) hem  <a href="ftp://ftp.uludag.org.tr/pub/pardus/kurulan/1.0/pardus-1.0.iso">pardus-1.0.iso </a> dosyasını hem de bu dosyanın tam olarak indirildiğini kontrol edebileceğiniz <a href="ftp://ftp.uludag.org.tr/pub/pardus/kurulan/1.0/pardus-1.0.iso.md5sum">özet bilgi dosyası</a>nı indirebilirsiniz. ISO dosyası tüm CD içeriğinin tek bir dosya halinde saklandığı özel bir dosya sistemi türüdür. Özet dosyaları ise genel olarak Internet'ten indirilen verilerin doğru bir şekilde inip inmediğini kontrol edebilmek için kullanılır. Bu kontrol kurulum için şart değildir; ancak yanlış indirilmiş bir dosya ile zaman kaybetmenizi engeller.
-<p>Daha çok ipucu için <a href="http://www.uludag.org.tr/sss.html#md5sum">http://www.uludag.org.tr/sss.html#md5sum</a> adresine bakın.</p>
+<p align="center">Kurulum belgesine yönlendiriliyorsunuz.<br><br>Lütfen bekleyiniz.
 
-<p>&nbsp;
-<p><b>CD'ye yazmak</b>
-
-<p>İndirdiğiniz ISO dosyasını, her zaman kullandığınız CD yazıcınız ile yazabilirsiniz. CD yazmak için kullandığınız uygulamanın yardım menülerinden ISO dosyalarını yazmak için bilgi alabilirsiniz. 
-<p><strong>Dikkat etmeniz gerekenler</strong>: </p>
-<li>Bu dosyayı doğrudan CD içerisinde kopyalar ya da arşiv araçları ile açıp içeriğini CD içerisine yazarsanız bilgisayarı bu CD ile başlatamazsınız.</li>
-<li>Piyasada çok sayıda yazılabilir CD bulunmakta... <strong>pardus-1.0.iso</strong> dosyası standart CD kapasitesi ile neredeyse aynı büyüklüğe sahip olduğu için, basılma işleminin özenli olması daha kurulum aşamasında sorun yaşama olasılığını oldukça azaltacaktır. Bunun için 16X hızla ve kalitesine güvendiğiniz bir marka CD kullanmanız önerilmektedir.</li>
-<p>Daha çok ipucu için <a href="http://www.uludag.org.tr/sss.html#cd_yazimi">http://www.uludag.org.tr/sss.html#cd_yazimi</a> adresine bakın.</p>
-<p>&nbsp;
-<p><b>Hazırlık</b>
-
-<p><a href="http://www.uludag.org.tr/">Pardus</a> kurulumuna başlayabilmek için bilgisayarınızın CD'den açılacak şekilde ayarlanmış olması gerekir. Eğer öyle ise <a href="http://www.uludag.org.tr/">Pardus</a> Kurulum CD'sini CD sürücünüz içerisine koyup bilgisayarınızı yeniden başlatmanız yeterli olacaktır ve aşağıdaki resimde göreceğiniz Sistem Yükleyicisi ekranıyla karşılaşırsınız.
-<br><a href="" onclick="javascript:window.open('http://cekirdek.uludag.org.tr/~caglar/pardus/1.png','Sistem yükleyicisi ekranı','toolbar=no,status=no,scrollbars=yes,location=no,menubar=no,directories=no,width=640,height=480')"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/1.png" alt="Sistem yükleyicisi ekranı" height="105" width="140"></a>
-
-<p>&nbsp;<p><b>Kurulum</b><p>Bilgisayarınız CD'den açıldığında sistem yükleyicisi kurulum sistemini birkaç dakika içerisinde yükleyerek sizi YALI'ya ulaştırır.
-YALI ile kurulum süreci boyunca sol üstte kurulumun aşamalarını takip ederken, sağda bulunan bölümde o an gerçekleşen eylemlerle ilgili bilgileri ya da uyarıları okuyabilirsiniz. Pencerenin altındaki oklar da ekranlar arasında dolaşmanıza yardımcı olurlar.
-<p>İlk adım olarak alttaki resimde göreceğiniz gibi kurulumu başlatmak için Genel Kamu Lisansı şartlarına uymayı kabul etmeniz gerekir.</p>
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/3.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/3.png" alt="Lisans onay ekranı" height="105" width="140"></a>
-<p>Onay verdiğinizde kullandığınız klavye haritasını seçerek disk bölümlendirme ekranına ulaşırsınız. Bu ekranda hangi bölümlendirme yöntemini ve birden fazla sabit diskiniz varsa hangi diske kurulum yapacağınızı belirtebilirsiniz.
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/4.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/4.png" alt="Klavye haritası seçim ekranı" height="105" width="140"></a>
-<a href="http://cekirdek.uludag.org.tr/~caglar/pardus/5.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/5.png" alt="Disk bölümleme ekranı" height="105" width="140"></a>
-
-<p>Otomatik Bölümlendirme seçeneği, diskin tamamı <a href="http://www.uludag.org.tr/">Pardus</a>'a ayrılarak yapılacak kurulumlar için tasarlanmıştır. <strong>DİKKAT</strong>: Bu seçeneği tercih ederseniz diskinizdeki bütün bilgiler silinir! Eğer diskin yalnızca bir bölümüne <a href="http://www.uludag.org.tr/">Pardus</a> kurmak istiyorsanız "<strong>Hayır, diskimi kendim bölümlendireceğim.</strong>" seçeneğini tercih etmelisiniz.
-
-<p><a href="http://www.uludag.org.tr/">Pardus</a> kurulumu ve sonrasındaki normal bir kullanım için yaklaşık <strong>5Gb</strong>'lık bir boş disk bölümü yeterli olacaktır.
-
-<p>&nbsp; <p><b>Disk Bölümlendirme</b>
-
-<p>Bu bölümde disklerinizi ve varsa disk bölümlerinizi görecek, kurulum yapacağınız bölümü seçmekle yetineceksiniz. Kurulum yapılacak disk bölümünü işaretlemek için bölümün üzerine tıklayıp, Düzenle tuşuna basarak Sistem dosyaları seçeneğini kullanmalısınız. 
-<p>En rahat ve tercih edilen kurulum senaryosu <a href="http://www.uludag.org.tr/">Pardus</a> için ayrılmış bir disk bölümünü daha önceden hazırlamış olmak iken, arzu ederseniz tek parça olan
-diskinizi kurulum esnasında YALI ile yeniden boyutlandırarak <a href="http://www.uludag.org.tr/">Pardus</a> için gerekli alanı yaratabilirsiniz.
-
-<p>&nbsp; <p><b>Uygulamaların Kurulumu ve Son</b>
-<p>Disk bölümlendirmenin hemen ardından uygulamaların ve gerekli dosyaların -az önce belirlediğiniz disk bölümüne- kurulmaları işlemi başlar. </p>
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/7.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/7.png" alt="Paket kurulum ekranı" height="105" width="140"></a>
-<p>Bilgisayarınızın performansına bağlı olarak süresi değişecek olan bu işlemin bitimi ile kullanıcıların yapılandırılacağı ekran ile karşılaşacaksınız.</p>
-
-<p>İlk olarak Sistem Yöneticisi (kullanıcı adı root olan yetkili kullanıcı) için bir parola belirlemeniz, sonrasında da sistemi kullanacağınız kullanıcı hesabını açmanız beklenir. Sistem Yöneticisi tüm sistem çapında gerekli olan yapılandırmalar, bakım ve benzeri işlemler için gereken yetkiye sahiptir; bu kullanıcı ile grafik masaüstü ortamını açmamalısınız. Ayrıca kullanıcı adı içerisinde Türkçe karakter kullanmamanız gerekir; bu uluslararası standartların bir gerekliliğidir.
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/9.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/9.png" alt="Yönetici parolası ekranı" height="105" width="140"></a>
-<a href="http://cekirdek.uludag.org.tr/~caglar/pardus/10.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/10.png" alt="Kullanıcı ekleme ekranı" height="105" width="140"></a>
-<p>Tüm kurulum boyunca yaptıklarınız arasından unutmamanız gereken tek şey bu kullanıcıların parolalarıdır; herkes tarafından tahmin edilemeyecek ve aynı zamanda sizin de unutmayacağınız parolaları tercih etmeniz hem güvenliğiniz için hem de sisteme giriş yapabilmeniz için önemlidir.
-
-<p>YALI'nın son aşaması bilgisayarınıza kurulacak sistem yükleyicisi ile ilgilidir.  Eğer sistem yükleyiciler hakkında fikriniz yoksa <a href="http://www.uludag.org.tr/">Pardus</a>'un bir sistem yükleyicisi kurmasına onay vermelisiniz! Bu sayede YALI gerekli düzenlemeleri sizin adınıza yapar. Bu yükleyici, bilgisayarınız açılırken size hangi işletim sisteminiz ile açmak istediğinizi soran bir uygulamadır.
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/11.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/11.png" alt="Sistem yükleyici etkinleştirme ekranı" height="105" width="140"></a>
-<p>Sonrasında bilgisayarınız yeniden başlatılır: kurulum CD'sini sürücünüzden çıkarmayı unutmayın :)
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/12.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/12.png" alt="Yeniden başlatma ekranı" height="105" width="140"></a>
-<p>&nbsp;<p><b>Açılış ve <a href="http://www.uludag.org.tr/">Pardus</a>'a Merhaba</b>
-<p>Eğer her şey yolunda ise, bilgisayarınız tam olarak açıldığında kullanıcı adı ve parolanızı soran bir giriş ekranı ile karşılaşırsınız; <a href="http://www.uludag.org.tr/">Pardus</a> masaüstüne çok az kalmıştır, hatta kendisi bu ekranın hemen arkasındadır.
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/15.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/15.png" alt="Kullanıcı giriş ekranı" height="105" width="140"></a>
-<p>Kurulum esnasında belirlediğiniz kullanıcılardan birisi ve parolası ile yaptığınız girişin ardından sizi pala bıyıklı Kaptan Masaüstü karşılar ve basit başlangıç yapılandırmalarının ardından TASMA isimli yapılandırma merkezimize gönderir. <a href="http://www.uludag.org.tr/">Pardus</a>'un ne kadar kişiselleştirilebileceğine dair güzel bir deneyim TASMA içerisinde sizi beklemektedir. Aynı zamanda Internet'teki depolarımızdan kolayca yeni uygulama kurmanıza ya da güncellemenize olanak sağlayan PiSi'nin grafik arayüzü de diğer tüm yapılandırmalar gibi yine TASMA içerisindedir.
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/17.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/17.png" alt="Kaptan masaüstü" height="105" width="140"></a>
-<a href="http://cekirdek.uludag.org.tr/~caglar/pardus/21.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/21.png" alt="Tasma görüntüsü" height="105" width="140"></a>
-<a href="http://cekirdek.uludag.org.tr/~caglar/pardus/25.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/25.png" alt="PiSi Ekranı" height="105" width="140"></a>
-<p>&nbsp; <p><b><a href="http://www.uludag.org.tr/">Pardus</a>'u Kullanmak</b>
-<p><a href="http://www.uludag.org.tr/">Pardus</a> yalnızca bir işletim sistemi değil, on yıllardır tüm dünyada geliştirilen açık kaynak kodlu ve özgür yazılım projelerinin rafine ve entegre
- edildiği, tespit edilen eksiklerini tamamlamaya yönelik yeni katkılarla kolay kullanılan, Türkçe ile ilgili altyapı sorunları çözülmüş, çeviri kalitesi yükseltilmiş ve tüm masaüstü ihtiyaçlarını karşılamak için hazırlanmış tüm bir çözüm paketidir. 
-<p>Temel grafik düzenlemeler, anında mesajlaşma, e-posta, haber grupları, ofis paketi, Internet gezgini, tüm müzik ve video dosyalarını oynatabileceğiniz, Internet'ten yapılan canlı yayınları, blog sitelerini takip edebileceğiniz yazılımlarla tüm ihtiyaçlarınızı standart kurulumda çözen <a href="http://www.uludag.org.tr/">Pardus</a>, tüm bu işlemler için yalnızca bir CD ile gelir ve yaklaşık yarım saat içinde kurulur.
-<br><a href="http://cekirdek.uludag.org.tr/~caglar/pardus/32.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/32.png" alt="K3B CD/DVD yazma yazılımı" height="105" width="140"></a>
-<a href="http://cekirdek.uludag.org.tr/~caglar/pardus/36.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/36.png" alt="Kontact haber okuyucu" height="105" width="140"></a>
-<a href="http://cekirdek.uludag.org.tr/~caglar/pardus/33.png"><img src="http://cekirdek.uludag.org.tr/~caglar/pardus/thumbs/33.png" alt="Kaffeine ses/görüntü oynatıcı" height="105" width="140"></a>
-<p>Donanımlarınız için hazırlıklıdır, her biri için tek tek sürücü kurmanız gerekmez ve doğal yapısı gereği virüs, trojan, solucan gibi, yazılımlardan et-ki-len-mez :)
-<p>&nbsp;
-<p><b>Sonrası...</b>
-<p><a href="http://www.uludag.org.tr/">Pardus</a> bilişim dünyasının alışageldiğiniz tarzının dışında, tamamen açık olan bir projedir, dolayısıyla geliştiricilere ve katkıcılara ulaşmanın bir çok yolu vardır:
-<p>Bizimle iletişime geçin, <a href="http://liste.uludag.org.tr/">http://liste.uludag.org.tr/</a>: Bu adreste <a href="http://www.uludag.org.tr/">Pardus</a> geliştiricileri, katkıcıları ve takipçilerinin üye olduğu bir çok e-posta listesi mevcuttur. Bu listelere üye olarak hem proje ile ilgili gelişmeleri takip edebilir hem de fikirlerinizi paylaşıp projenin gidişatına katkıda bulunabilirsiniz. E-posta listeleri içerikleri ve amaçlarına göre gruplanmıştır, 'uludag' isimli e-posta listesi ise, genel tartışma ve sohbet listesidir. 'pardus-teknik' <a href="http://www.uludag.org.tr/">Pardus</a> ile ilgili sorularınıza yardım alabileceğiniz listedir. Ayrıca <a href="http://www.uludag.org.tr/hakkimizda.html">geliştiricilerin her biri</a>ne de doğrudan e-posta ile ulaşabilirsiniz. <p>Bizi takip edin, <a href="http://gezegen.uludag.org.tr/">http://gezegen.uludag.org.tr/</a>: Web sayfamız dışında geliştiricilerimizin ve katkıcılarımızın günlüklerinin bir araya getirildiği bir sayfadır bu ve bu adresten en güncel en sıcak haberleri alabilir, belki isterseniz bir yardım çağrısına cevap verebilirsiniz.
-<p>Hataları bildirin, <a href="http://bugs.uludag.org.tr/">http://bugs.uludag.org.tr/</a>: <a href="http://www.uludag.org.tr/">Pardus</a>'ta karşılaştığınız hataların bir daha karşınıza çıkmayacak şekilde düzeltilmesi için hata raporlarınızı geliştiricilere ulaştırabileceğiniz hata takip sistemidir. 
-<p>Forum ya da IRC yoluyla yardım alın, <a href="http://pardus-linux.org">http://pardus-linux.org/</a>: Katkıcılarımız tarafından açılmış resmi olmayan <a href="http://www.uludag.org.tr/">Pardus</a> yardım forumudur. Bu foruma üye olarak sorularınıza yardım alabilirsiniz. Aynı şekilde resmi olmayan sohbet odalarına da irc.freenode.net adresli sunucu üzerinde yaşayan #pardus ve #pardus-devel kanallarından <a href="http://www.uludag.org.tr/">Pardus</a> kullanan insanlara ulaşabilirsiniz.
-<p>Geliştirici ve Kullanıcı Belgeleri, <a href="http://www.pardus-wiki.org">http://pardus-wiki.org/</a>: Geliştiricilerimiz ve katkıcılarımız tarafından hazırlanan Pardus belgelerine ulaşabilirsiniz.
-
-<p><strong>İyi eğlenceler!</strong>
-
-<br><br>
-<br><br>
-</p>
-</td>
-</tr>
-</table>
-<!-- SAYFA İÇERİK SONU -->
-
-<!-- yayın hakkı -->
 <br>
 <br>
 <p class="not">
