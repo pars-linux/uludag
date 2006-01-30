@@ -10,7 +10,11 @@ include("globals.php");
     elseif($_GET['file'] == 2 && $file[0]['path2'] == ""){$hata = TRUE;}
 
     if(!$hata){
-    if(count_download($download)){Header("location: ".$config['core']['url']."files/".$download);}
+    if(count_download($download)){
+         Header("Content-type: application/octet-stream");
+         Header("Content-Disposition: inline, filename={$download}");
+         readfile("{$config['core']['url']}files/{$download}");
+    }
     else{
         $message["title"] = ERROR;
         $message["message"] = FILE_NOT_FOUND;
