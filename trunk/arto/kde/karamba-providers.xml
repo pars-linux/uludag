@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE knewstuffproviders SYSTEM "knewstuffproviders.dtd">
+<knewstuffproviders>
+    <provider downloadurl="http://sanat.uludag.org.tr/kde/karamba/karamba.xml" downloadurl-score="http://sanat.uludag.org.tr/kde/karamba/karamba-score.xml" downloadurl-downloads="http://sanat.uludag.org.tr/kde/karamba/karamba-downloads.xml" nouploadurl="http://sanat.uludag.org.tr/" webaccess="http://sanat.uludag.org.tr/" icon="superkaramba">
+        <title>Sanat.Pardus</title>
+    </provider>
+    <provider downloadurl="http://download.kde.org/khotnewstuff/karamba/karamba.xml" downloadurl-score="http://download.kde.org/khotnewstuff/karamba/karamba-score.xml" downloadurl-downloads="http://download.kde.org/khotnewstuff/karamba/karamba-downloads.xml" nouploadurl="http://www.kde-look.org/" webaccess="http://www.kde-look.org/">
+        <title>KDE-Look.org</title>
+    </provider>
+</knewstuffproviders>
