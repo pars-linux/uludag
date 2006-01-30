@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/paketler/repos/doc/"
+depo = "https://svn.uludag.org.tr/uludag/trunk/doc/tr/"
 belge = "kaynak_temizleme.lyx"
 isim = "Kaynak Temizleme Kılavuzu"
 dizin = "temizleme"
