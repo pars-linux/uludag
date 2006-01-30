@@ -13,7 +13,7 @@ include("globals.php");
     if(count_download($download)){
          Header("Content-type: application/octet-stream");
          Header("Content-Disposition: inline, filename={$download}");
-         readfile("{$config['core']['url']}files/{$download}");
+         readfile($config['core']['url']."files/".$download);
     }
     else{
         $message["title"] = ERROR;
