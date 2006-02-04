@@ -10,7 +10,6 @@ $config['core']['postsinfeed']		= "10";
 $config['core']['theme']		= "zirto";
 $config['core']['temp']			= "tmp";
 $config['core']['lang']			= "tr";
-$config['core']['secretkey']            = "Art-o gelir hoş gelir, leey leey limi limi ley..";
 
 // DB Config for MySQL
 $config['db']['hostname']		= "localhost";
@@ -31,6 +30,6 @@ $config['smarty']['caching']		= "false";
 $config['smarty']['forcecompile']	= "1";
 
 // Arto Config
-$config['arto']['version']		= "0.1";
-$config['arto']['builddate']		= "20060117";
+$config['arto']['version']		= "0.2";
+$config['arto']['builddate']		= "20060204";
 ?>
