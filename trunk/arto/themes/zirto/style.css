@@ -57,7 +57,7 @@ img {
 	border-right: thin solid #000000;
 	border-bottom: thin solid #000000;
 	border-left: thin solid #000000;
-
+        background-image: url('images/altback.png');
 }
 
 .footbar a {
@@ -75,8 +75,15 @@ img {
 	border-right: thin solid #000000;
 	border-bottom: thin solid #CCCCCC;
 	border-left: thin solid #000000;
+       	background-image: url('images/ustback.png');
+
 }
 
+
+.nodetheme {
+      	background-image: url('images/back.png');
+        background-repeat: repeat-y;
+}
 .main {
 	background-color: #FFFFFF;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
