@@ -415,7 +415,7 @@ planlarımız arasında yok.
 
 <br><br>
 <a name='grub' href='./sss.html#top'><i>Pardus açılırken "grub>" yazan siyah bir ekranda takılıyor, ne yapmalıyım?</i></a><br><br>
-Seyrek de olsa bazı durumlarda (örneğin CD nin düzgün okunamaması) Çalışan CD
+Seyrek de olsa bazı durumlarda (örneğin CD nin düzgün okunamaması) Çalışan CD veya Pardus 1.0
 
 açılırken Grub önyükleyicisi kendi ayarlarını düzgün yükleyemiyor ve örneğin şu
 
@@ -441,6 +441,20 @@ grub>initrd (cd)/boot/initrd.gz<br>
 
 <br><br>
 <br><br>
+
+Pardus 1.0 için ise şu komutları
+
+<br><br>
+
+grub>root (cd)<br>
+
+grub>kernel (cd)/boot/kernel-2.6.14.4-15 root=/dev/ram0 cdroot lang=tr video=vesafb:off<br>
+
+grub>initrd (cd)/boot/initrd.gz<br>
+
+<br><br>
+<br><br>
+
 <span class='baslik'><img src='./images/bullet-krm.png' width='11' height='11'>Lisanslama ve Dağıtım</span><br><br><br>
 <a name='lisans' href='./sss.html#top'><i>Pardus'un lisansı nedir?</i></a><br><br>
 		Uludağ projesi tarafından, Pardus'a eklenmek üzere
