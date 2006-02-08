@@ -4,7 +4,7 @@ ob_start();
 echo "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>";
 include_once("globals.php");
 
-$posts = get_something("","","","release","4","db2rss");
+$posts = get_something("","","","release","10","db2rss");
 
 // set content-type to xml
 Header("Content-type: text/xml; charset=utf-8");
@@ -32,12 +32,5 @@ Header("Content-type: text/xml; charset=utf-8");
 </channel>
 </rss>
 <?
-
-/*
-echo "<pre>";
-print_r($posts);
-echo "</pre>";
-*/
-
 ob_end_flush();
 ?>
