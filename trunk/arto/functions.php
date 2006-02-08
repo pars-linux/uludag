@@ -82,7 +82,7 @@
         Also it translates license, comments and release info
         return Array;
     */
-    function get_something($thing="main", $id="", $subid="",$order="release",$limit=""){
+    function get_something($thing="main", $id="", $subid="",$order="release",$limit="",$conv_time="db2post"){
         global $config;
         if ($thing=="single") $query="id=".$id." AND ";
         elseif ($thing=="cat") { 
@@ -101,7 +101,9 @@
             $return_array[$i] = $assoc_arr;
             $return_array[$i]['description'] = nl2br($assoc_arr['description']);
             $return_array[$i]['comments'] = get_comment_number($assoc_arr['id']);
-            $return_array[$i]['release'] = conv_time("db2post", $assoc_arr['release']);
+            $return_array[$i]['release'] = conv_time($conv_time, $assoc_arr['release']);
+            $tmp = get_user_something($return_array[$i]['user'], "uname");
+            $return_array[$i]['author'] = $tmp[0]['uname'];
             $return_array[$i]['llink'] = $license[0]['link'];
             $return_array[$i]['lname'] = $license[0]['name'];
             $return_array[$i]['ldesc'] = $license[0]['description'];
