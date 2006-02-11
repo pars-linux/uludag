@@ -425,7 +425,9 @@
 
     function get_file_author($fileid) {
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = (SELECT user FROM {$config['db']['tableprefix']}files WHERE id='{$fileid}')";
+        $sql_word = "SELECT user FROM {$config['db']['tableprefix']}files WHERE id='{$fileid}'";
+        $temp_sql= perform_sql($sql_word);
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = '{$temp_sql[0]["user"]}'";
         return perform_sql($sql_word);
     }
 
