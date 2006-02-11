@@ -421,7 +421,12 @@
         global $config;
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE state != '3' ORDER BY name";
         return perform_sql($sql_word);
+    }
 
+    function get_file_author($fileid) {
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = (SELECT user FROM {$config['db']['tableprefix']}files WHERE id='{$fileid}')";
+        return perform_sql($sql_word);
     }
 
 ?>
