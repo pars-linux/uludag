@@ -17,7 +17,13 @@ Header("Content-type: text/xml; charset=utf-8");
     <description><?=$config['core']['desc']?></description>
     <pubDate><?php echo date("r"); ?></pubDate>
     <generator>http://arto.fasafiso.org/?version=<?=$config['arto']['version']?></generator>
-    <?php for($i = 0; $i < count($posts); $i++){ ?>
+    <?php
+    for($i = 0; $i < count($posts); $i++){
+        if($posts[$i]['filetype'] == "image"){
+            $desc = "<img src=\"{$config['core']['url']}files/thumbs/{$posts[$i]['path']}\" border=\"none\"><br>\n<strong>Gönderen:</strong> {$posts[$i]['author']}<br>\n<strong>Açıklama:</strong> {$posts[$i]['description']}<br>\n";
+        }
+        else{$desc = "<strong>Gönderen:</strong> {$posts[$i]['author']}<br>\n<strong>Açıklama:</strong> {$posts[$i]['description']}<br>\n";}
+    ?>
     <item>
         <title><?=$posts[$i]['name']?></title>
         <link><?=$config['core']['url']?>?id=<?=$posts[$i]['id']?></link>
@@ -25,8 +31,8 @@ Header("Content-type: text/xml; charset=utf-8");
         <pubDate><?=$posts[$i]['release']?></pubDate>
         <dc:creator><?=$posts[$i]['author']?></dc:creator>
         <guid isPermaLink="true"><?=$config['core']['url']?>?id=<?=$posts[$i]['id']?></guid>
-        <description><?=htmlspecialchars(strip_tags($posts[$i]['description']), ENT_QUOTES)?></description>
-        <content:encoded><?=htmlspecialchars($posts[$i]['description'], ENT_QUOTES)?></content:encoded>
+        <description><?=htmlspecialchars(strip_tags($desc), ENT_QUOTES)?></description>
+        <content:encoded><?=htmlspecialchars($desc, ENT_QUOTES)?></content:encoded>
     </item>
     <?php } ?>
 </channel>
