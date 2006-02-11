@@ -419,7 +419,7 @@
 
     function get_user_list() {
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE state != '3'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE state != '3' ORDER BY name";
         return perform_sql($sql_word);
 
     }
