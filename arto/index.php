@@ -125,6 +125,7 @@ include_once("globals.php");
                                 $temp = get_user_something($nodes[0]['user'],"*");
 
                                 $mail_message = "Merhaba {$temp[0]['name']} ({$temp[0]['uname']})\n\n    {$config['core']['title']} ({$config['core']['url']}) sitesine eklediğiniz \"{$nodes[0]['name']}\" isimli içerik \"{$_POST['reason']}\" nedeni ile sistemden kaldırılmıştır.\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
+
                                 sendmail($config['core']['email'],$_POST["email"],DELETED_EMAIL_SUBJECT,$mail_message,"3");
                             }
                             else set_smarty_vars("status",ERROR);
@@ -140,6 +141,7 @@ include_once("globals.php");
                                 $temp = get_user_something($nodes[0]['user'],"*");
 
                                 $mail_message = "Merhaba {$temp[0]['name']} ({$temp[0]['uname']})\n\n    {$config['core']['title']} ({$config['core']['url']}) sitesine eklediğiniz \"{$nodes[0]['name']}\" isimli içerik sorumlular tarafından uygun görülüp sisteme eklenmiştir. Şu andan itibaren içeriği, bulunduğu yerden silmenizde herhangi bir sakınca yoktur.\n\n İçeriğinize {$config['core']['url']}node/{$nodes[0]['id']} adresinden ulaşabilirsiniz.\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
+
                                 sendmail($config['core']['email'],$temp[0]['email'],ADDED_EMAIL_SUBJECT,$mail_message,"3");
                                 }
                                 else set_smarty_vars("status",DB_ERROR);

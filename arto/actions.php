@@ -18,7 +18,15 @@ include_once("globals.php");
 			break;
 
                 case "addcomment":
-                        if (add_comment($_POST["file_id"],$_SESSION["uid"],$_POST["comment_date"],$_POST["comment"])) header ("location: index.php?id=".$_POST["file_id"]);
+                        if (add_comment($_POST["file_id"],$_SESSION["uid"],$_POST["comment_date"],$_POST["comment"])) {
+                            $comment=rtag($_POST["comment"]);
+                            $temp = get_user_something($_SESSION["uid"],"*");
+                            $temp2 = get_file_author($_POST["file_id"]);
+                            $mail_message = "Merhabalar {$temp2[0]['name']} ({$temp2[0]['uname']}),\n {$config['core']['url']}node/{$_POST["file_id"]} adresindeki içeriğiniz için {$temp[0]['name']} ({$temp[0]['uname']}) tarafından  bir yorum yapılmış: \n\n $comment \n\n İlginiz için teşekkürler.\n Uludağ Projesi";
+
+                            sendmail($config['core']['email'],$temp2[0]['email'],COMMENT_EMAIL_SUBJECT,$mail_message,"3");
+                            header ("location: index.php?id=".$_POST["file_id"]);
+                        }
                         else header ("location: index.php?error");
                 break;
 	}
