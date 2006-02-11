@@ -10,7 +10,7 @@ function submitform() {
 {/literal}
 </script>
 <div class="main_content">
-{if $userdetails}<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/down.png"> Yardım </a></span>{/if}
+{if $userdetails}<span style="float:right;"><a href="#" onclick="tV(document.getElementById('help'), this); return false"><img src="{$url}{$themepath}/images/up.png"> Yardım </a></span>{/if}
 <h4><img src="{$url}{$themepath}/images/theme.png">İçerik Gönder</h4>
 {if $userdetails}
 <div class="main_left" width="380px">
@@ -69,7 +69,7 @@ function submitform() {
 </table>
 </form>
 </div>
-<div id="help" class="main_right" width="300px" style="display:none;">
+<div id="help" class="main_right" width="300px" style="display:block;">
 <table style="margin-bottom: 1em;" class="helptable"  width="300px">
 	<tbody>
 		<tr>

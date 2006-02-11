@@ -168,6 +168,12 @@ include_once("globals.php");
             die();
         }
 
+        elseif (isset($_GET["showusers"])) {
+            set_smarty_vars("users",get_user_list());
+            $smarty->display("userlist.html");
+            die();
+        }
+
 	else {
 		set_smarty_vars("nodes",get_something("","","","release","4"));
                 set_smarty_vars("nodes2",get_something("","","","counter","4"));

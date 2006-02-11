@@ -112,6 +112,8 @@
             $temp = get_type($assoc_arr['sub_type']);
             $return_array[$i]['lsubtype'] = $temp[0]['type'];
             $return_array[$i]['filetype'] = get_file_type($assoc_arr['path']);
+            $return_array[$i]['filesize'] = human_size(filesize($config['core']['path']."files/".$assoc_arr['path']),1);
+            $return_array[$i]['filesize2'] = human_size(filesize($config['core']['path']."files/".$assoc_arr['path2']),1);
         }
         return $return_array;
     }
@@ -331,6 +333,21 @@
         return $typem;
     }
 
+    function human_size( $bytes, $decimal = '2' ) {
+        if( is_numeric( $bytes ) ) {
+                $position = 0;
+                $units = array( " Bytes", " KB", " MB", " GB", " TB" );
+                while( $bytes >= 1024 && ( $bytes / 1024 ) >= 1 ) {
+                    $bytes /= 1024;
+                    $position++;
+                }
+            return round( $bytes, $decimal ) . $units[$position];
+        }
+        else {
+            return "0 Byte";
+        }
+    }
+
     function sendmail($from,$to,$subject,$message,$priority){
            $mob = new Mail;
            $mob->From($from);
@@ -398,6 +415,13 @@
         global $config;
         $sql_word = "DELETE FROM {$config['db']['tableprefix']}files WHERE id='{$id}' LIMIT 1";
         return $sql_query = mysql_query($sql_word);
+    }
+
+    function get_user_list() {
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE state != '3'";
+        return perform_sql($sql_word);
+
     }
 
 ?>
