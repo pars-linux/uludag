@@ -180,6 +180,8 @@ input, select, textarea {
 	}
 
 .regtable {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	background-color: #EEE;
 	border: 0px;
 	border-bottom: 1px solid #BBB;
@@ -202,6 +204,8 @@ input, select, textarea {
 }
 
 .filestable {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	background-color: #EEE;
 	border: 0px;
 	border-bottom: 1px solid #BBB;

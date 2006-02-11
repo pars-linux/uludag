@@ -4,3 +4,4 @@ RewriteRule ^nodes/(.*)/(.*) /index.php?cid=$1&sid=$2
 RewriteRule ^nodes/(.*) /index.php?cid=$1
 RewriteRule ^node/(.*) /index.php?id=$1
 RewriteRule ^user/(.*) /index.php?showuserpage&uname=$1
+RewriteRule ^users/ /index.php?showusers

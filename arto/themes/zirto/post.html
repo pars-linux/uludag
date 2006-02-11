@@ -54,10 +54,10 @@ function submitform() {
         <div style="float: left; background: #DDD; width: 99%; -moz-border-radius : 10px; text-align: center; border: 1px solid #999;font-size: 10px;padding: 2px;">
             <b>
                 <img src="{$url}images/download.png">
-                <a href="{$url}download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a>
+                <a href="{$url}download.php?id={$nodes[post].id}" title="{$nodes[post].name} İndir">{$nodes[post].path}</a> - {$nodes[post].filesize}
                     {if $nodes[post].path2} -
                         <img src="{$url}images/download.png">
-                            <a href="{$url}download.php?id={$nodes[post].id}&file=2" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a>{/if}
+                            <a href="{$url}download.php?id={$nodes[post].id}&file=2" title="{$nodes[post].name} İndir">{$nodes[post].path2}</a> - {$nodes[post].filesize2}{/if}
             </b>
         </div>
         

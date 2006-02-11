@@ -1,0 +1,25 @@
+{include file="header.html"}
+{include file="login.html"}
+<div id="content" class="main_content">
+<h4><img src="{$url}{$themepath}/images/kuser.png" width="48" height="48">{$title} Sanatçıları</h4>
+<div>
+<table style="margin-bottom: 1em; margin-left: 2em; margin-right: 2em;" class="filestable" width="%90">
+	<tbody>
+		<tr>
+			<th width="5%" style="text-align:center">Sıra</th>
+			<th width="35%">Sanatçı</th>
+			<th width="30%">Kişisel Sayfa</th>
+		</tr>
+{section name=uf loop=$users}
+		<tr align="center">
+			<td width="5%" style="text-align:center">{$smarty.section.uf.index_next}</td>
+			<td width="35%"><a href="{$url}user/{$users[uf].uname}">{$users[uf].name}</a></td>
+			<td width="30%"><a href="{$url}user/{$users[uf].web}">{$users[uf].web}&nbsp;</a></td>
+		</tr>
+{/section}
+	</tbody>
+</table>
+</div>
+</div>
+{include file="menu.html"}
+{include file="footer.html"}
