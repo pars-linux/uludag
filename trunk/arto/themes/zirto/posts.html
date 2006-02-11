@@ -14,6 +14,10 @@ Aranan kelime : "{$searchcriteria}"
 {else}
 {if $nameofuser}
 <a href="#">Kullanıcılar</a> > <a href="{$url}user/{$nameofuser}">{$nameofuser}</a>
+<p class="nodetheme">
+Sanatçı : <span style="color: #990000">{$realnameofuser}</span><br>
+Kişisel Sayfa : <a href="{$webofuser}">{$webofuser}</a><br>
+Toplam İçerik : <span style="color: #990000">{$nodes|@count}</span>
 {else}
 <a href="{$url}nodes/{$parent_type_id}/">{$parent_type}</a>
 {if $sub_type}

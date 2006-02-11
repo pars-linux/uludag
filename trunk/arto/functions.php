@@ -303,7 +303,7 @@
 
     function get_user_files($id){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE user='{$id}'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE user='{$id}' ORDER by release DESC";
         return perform_sql($sql_word);
     }
 

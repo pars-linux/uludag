@@ -81,9 +81,13 @@ img {
 
 
 .nodetheme {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
       	background-image: url('images/back.png');
         background-repeat: repeat-y;
 }
+
+
 .main {
 	background-color: #FFFFFF;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -98,17 +102,23 @@ img {
 
 .main_content {
 	margin: -10px 10px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	}
 
 .main_left {
 	float:left;
 	clear: left;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	}
 
 
 .main_right {
 	float:left;
 	clear: right;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	}
 
 small, .subtitle{
@@ -121,7 +131,7 @@ small, .subtitle{
 h2 {
 	color: #444444;
 	font-family: sans-serif;
-	font-size: 1.2em;
+	font-size: 14px;
 	text-decoration: none;
 	margin-bottom: 0px;
 }
@@ -203,6 +213,8 @@ input, select, textarea {
 }
 
 .posttable {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	background-color: #EEE;
 	border-bottom: 1px solid #BBB;
 	border-right: 1px solid #BBB;
@@ -223,6 +235,8 @@ input, select, textarea {
 }
 
 .helptable {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	background-color: #EEE;
 	border: 0px;
 	border-bottom: 1px solid #BBB;
