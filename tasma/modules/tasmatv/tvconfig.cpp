@@ -67,7 +67,8 @@ void TvConfig::saveOptions()
 // TODO: read dmesg for error or success 
 void TvConfig::removeModule()
 {
-    QCString cmd = "/sbin/rmmod bttv";
+    //FIXME: be smart, don't cheat you lazy $%@#!*
+    QCString cmd = "/sbin/rmmod bt878 bttv";
     system(cmd);
 }
 
