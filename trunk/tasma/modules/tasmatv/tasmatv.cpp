@@ -80,8 +80,8 @@ void TasmaTv::load()
 void TasmaTv::save()
 {
     mainWidget->removeModule();
-    mainWidget->loadModule();
     mainWidget->saveOptions();
+    mainWidget->loadModule();
 }
 
 void TasmaTv::defaults()
