@@ -490,34 +490,16 @@ Uludað deposu, proje içerisinde geliþtirilmekte olan ürünlerin tutulduðu
  
 \layout Subsection
 
-Paketler Deposu
+Pardus Deposu
 \layout Standard
 
-Paketler deposu https://svn.uludag.org.tr/paketler adresinde hizmet vermekte
- ve Pardus'un ilk sürümüne girecek olan yazýlýmlar için, kuluçka daðýtým
- kurallarýna uygun bir þekilde
-\begin_inset Foot
-collapsed true
-
+Pardus deposu https://svn.uludag.org.tr/pardus adresinde hizmet verir.
+ Pardus deposu yazýlýmlarýn PiSi paketlerinin bulunduðu kaynak paket depolarýný
+ tutar.
 \layout Standard
 
-Kuluçka daðýtým tanýmý ve seçim kriterleri 'Kuluçla Daðýtým Seçimi' belgesinde
- anlatýlmaktadýr.
-\end_inset 
-
-, temel bir Portage deposu oluþturmaktadýr.
-\layout Standard
-
-Paketler deposu þu an için yalnýzca 'Kaynak Temizleme Kýlavuzu' belgesinde
- anlatýldýðý þekli ile yazýlýmlarýn daðýtýma girmeden önce çözülmesi gereken
- sorunlarýný çözmek için kullanýlmaktadýr.
-\layout Standard
-
-Paketler deposu Pardus için yeni bir paket yönetim sistemi hazýrlanana kadar
- kullanýlacak, bundan sonra iþlevini bu hali ile yitirecek ve büyük bir
- ihtimal ile yeni bir yapý oluþturulacaktýr.
- Fakat þu anda iþletim sistemine eklenecek yazýlýmlara dair yapýlan iyileþtirmel
-er bu depo kullanýlarak yapacaktýr.
+Pardus deposu hakkýnda daha fazla bilgi Pardus Depo Politikasý belgesinden
+ alýnabilir.
 \layout Subsection
 
 Depo dizin sýra düzenleri
