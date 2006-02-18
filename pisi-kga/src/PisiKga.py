@@ -12,7 +12,7 @@
 #
 #
 # Authors:  İsmail Dönmez <ismail@uludag.org.tr>
-# Resistence is futile, turn on god damn Unicode on!
+# Resistence is futile, turn on god damn Unicode!
 
 # System
 import sys
