@@ -168,8 +168,8 @@ void TvConfig::loadModule()
     QCString cmd; 
     int card, tuner, pll, radio = 0;
 
-    card  = tvModel->currentItem();
-    tuner = tunerModel->currentItem();
+    card  = getCard();
+    tuner = getTuner();
     pll   = pllGroup->id(pllGroup->selected());
     
     if (radioCard->isChecked())
