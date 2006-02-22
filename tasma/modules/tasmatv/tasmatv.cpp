@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2005-2006, TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -38,12 +38,14 @@ TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
     TasmaTvAbout = new KAboutData (  I18N_NOOP("tasmatv"),  I18N_NOOP(  "TASMA Tv Card Configuration Module" ),  "0.1",
 				     I18N_NOOP("TASMA Tv Card Configuration Module" ),  
 				     KAboutData::License_GPL,
-				     I18N_NOOP("(c) 2005, TUBITAK - UEKAE" ) );
+				     I18N_NOOP("(c) 2005-2006, TUBITAK - UEKAE" ) );
 
     TasmaTvAbout->addAuthor( "Faik Uygur",  I18N_NOOP( "Current Maintainer" ),  "faikuygur@kuheylan.org" );
 
-    connect(mainWidget->cardList, SIGNAL(selectionChanged()), SLOT(configChanged()));
-    connect(mainWidget->tunerList, SIGNAL(selectionChanged()), SLOT(configChanged()));
+    connect(mainWidget->tvModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
+    connect(mainWidget->tvVendor, SIGNAL(selectionChanged()), SLOT(tvVendorChanged()));
+    connect(mainWidget->tunerModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
+    connect(mainWidget->tunerVendor, SIGNAL(selectionChanged()), SLOT(tunerVendorChanged()));
     connect(mainWidget->pllGroup, SIGNAL(pressed(int)), SLOT(configChanged()));
     connect(mainWidget->radioCard, SIGNAL(stateChanged(int)), SLOT(configChanged()));
     load();
@@ -64,11 +66,12 @@ void TasmaTv::load()
 	if (re.search(str) != -1) {
 	    card  = re.cap(1).toInt();
 	    if (!re.cap(3).isEmpty())
-		tuner = re.cap(3).toInt() + 1;
+		tuner = re.cap(3).toInt();
 	    pll   = re.cap(5).toInt();
 	    radio = re.cap(7).toInt();
-	    mainWidget->cardList->setCurrentItem(card);
-	    mainWidget->tunerList->setCurrentItem(tuner);
+
+	    mainWidget->selectCard(card);
+	    mainWidget->selectTuner(tuner);
 	    mainWidget->pllGroup->setButton(pll);
 	    mainWidget->radioCard->setChecked(radio);
 	}
@@ -86,8 +89,8 @@ void TasmaTv::save()
 
 void TasmaTv::defaults()
 {
-    mainWidget->cardList->setCurrentItem(AUTO_CARD);
-    mainWidget->tunerList->setCurrentItem(AUTO_TUNER);
+    mainWidget->selectCard(AUTO_CARD);
+    mainWidget->selectTuner(AUTO_TUNER);
 }
 
 QString TasmaTv::quickHelp() const
@@ -98,4 +101,14 @@ QString TasmaTv::quickHelp() const
 void TasmaTv::configChanged()
 {
     emit changed(true);
+}
+
+void TasmaTv::tunerVendorChanged()
+{
+    mainWidget->tunerVendorChanged();
+}
+
+void TasmaTv::tvVendorChanged()
+{
+    mainWidget->tvVendorChanged();
 }

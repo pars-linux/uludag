@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2005-2006, TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -12,6 +12,7 @@
 #include <qlistbox.h>
 #include <qradiobutton.h>
 #include <qbuttongroup.h>
+#include <qstringlist.h>
 #include <qcheckbox.h>
 #include <qfile.h>
 #include <kdebug.h>
@@ -21,10 +22,99 @@
 TvConfig::TvConfig( QWidget *parent)
     : TvConfigUI(parent)
 {
+    QStringList cardVendors, tunerVendors;
+
+    cardsDB.getVendors(&cardVendors);
+    tvVendor->clear();
+    tvModel->clear();
+    tvVendor->insertStringList(cardVendors);
+
+    tunersDB.getVendors(&tunerVendors);
+    tunerVendor->clear();
+    tunerModel->clear();
+    tunerVendor->insertStringList(tunerVendors);
 }
 
 TvConfig::~TvConfig()
 {
+}
+
+void TvConfig::tunerVendorChanged()
+{
+    QString vendor = tunerVendor->currentText();
+    QStringList models;
+
+    tunersDB.getTuners(vendor, &models);
+    tunerModel->clear();
+    tunerModel->insertStringList(models);
+}
+
+void TvConfig::tvVendorChanged()
+{
+    QString vendor = tvVendor->currentText();
+    QStringList models;
+
+    cardsDB.getCards(vendor, &models);
+    tvModel->clear();
+    tvModel->insertStringList(models);
+}
+
+void TvConfig::selectCard(int card_id)
+{
+    setCard(card_id);
+}
+
+
+void TvConfig::selectTuner(int tuner_id)
+{
+    setTuner(tuner_id);
+}
+
+int TvConfig::getCard()
+{
+    return cardsDB.getCard(tvModel->currentText());
+}
+
+void TvConfig::setCard(int card_id)
+{
+    QString vendor_name, card_name;
+    QListBoxItem *item;
+
+    cardsDB.getCard(card_id, vendor_name, card_name);
+
+    item = tvVendor->findItem(vendor_name);
+    if (item) {
+	tvVendor->setCurrentItem(item);
+	tvVendorChanged();
+	
+	item = tvModel->findItem(card_name);
+	if (item)
+	    tvModel->setCurrentItem(item);
+    }
+}
+
+int TvConfig::getTuner()
+{
+    return tunersDB.getTuner(tunerModel->currentText());
+}
+
+
+void TvConfig::setTuner(int tuner_id)
+{
+    QString vendor_name, tuner_name;
+    QListBoxItem *item;
+
+    tunersDB.getTuner(tuner_id, vendor_name, tuner_name);
+
+    item = tunerVendor->findItem(vendor_name);
+    if (item) {
+	tunerVendor->setCurrentItem(item);
+	tunerVendorChanged();
+	
+	item = tunerModel->findItem(tuner_name);
+	if (item)
+	    tunerModel->setCurrentItem(item);
+    }
 }
 
 void TvConfig::saveOptions()
@@ -32,8 +122,8 @@ void TvConfig::saveOptions()
     int card, tuner, pll, radio = 0;
     QFile bttv("/etc/modules.d/bttv");
 
-    card = cardList->currentItem();
-    tuner = tunerList->currentItem();
+    card = getCard();
+    tuner = getTuner();
     pll = pllGroup->id(pllGroup->selected());
 
     if (radioCard->isChecked())
@@ -51,7 +141,7 @@ void TvConfig::saveOptions()
 	os << "options bttv card=" << card;
 
 	if (tuner != AUTO_TUNER)
-	    os << " " << "tuner=" << tuner - 1; 
+	    os << " " << "tuner=" << tuner; 
 	if (pll)
 	    os << " " << "pll=" << pll;
 	if (radio)
@@ -78,15 +168,15 @@ void TvConfig::loadModule()
     QCString cmd; 
     int card, tuner, pll, radio = 0;
 
-    card  = cardList->currentItem();
-    tuner = tunerList->currentItem();
+    card  = tvModel->currentItem();
+    tuner = tunerModel->currentItem();
     pll   = pllGroup->id(pllGroup->selected());
     
     if (radioCard->isChecked())
 	radio = 1;
 
     if (tuner != AUTO_TUNER)
-	cmd.sprintf("/sbin/modprobe bttv card=%d tuner=%d pll=%d radio=%d", card, tuner - 1, pll, radio);
+	cmd.sprintf("/sbin/modprobe bttv card=%d tuner=%d pll=%d radio=%d", card, tuner, pll, radio);
     else
 	cmd.sprintf("/sbin/modprobe bttv card=%d pll=%d radio=%d", card, pll, radio);
 

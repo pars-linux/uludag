@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2005-2006, TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 #include "tvconfig.h"
 
 #define AUTO_CARD 0
-#define AUTO_TUNER 0
+#define AUTO_TUNER 4
 
 class KAboutData;
 class TvConfigUI;
@@ -35,6 +35,8 @@ public:
 
 public slots:
     void configChanged();
+    void tvVendorChanged();
+    void tunerVendorChanged();
 
 private:
     TvConfig *mainWidget;
