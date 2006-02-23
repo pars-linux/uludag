@@ -124,6 +124,17 @@ a:hover {
 	color: #000000;
 }
 
+.bultentablo {
+	padding-left: 10px;
+	font-size: 9pt;
+}
+
+.bultenbaslik {
+	font-size: 10pt;
+	font-weight:bold;
+	color: #FFFFFF;
+}
+
 /* belgelere ait stiller */
 
 .gpl {
