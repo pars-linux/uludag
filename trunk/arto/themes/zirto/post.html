@@ -11,11 +11,11 @@ function submitform() {
 </script>
 {section name=post loop=$nodes}
 <div id="content" class="main_content" >
-<h4><a href="{$url}">Ana Sayfa</a> > <a href="{$url}nodes/{$nodes[post].type}">{$nodes[post].ltype}</a>
+<h4><a href="{$url}">Ana Sayfa</a> &raquo; <a href="{$url}nodes/{$nodes[post].type}">{$nodes[post].ltype}</a>
 {if $nodes[post].lsubtype}
- > <a href="{$url}nodes/{$nodes[post].type}/{$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>
+&raquo; <a href="{$url}nodes/{$nodes[post].type}/{$nodes[post].sub_type}">{$nodes[post].lsubtype}</a>
 {/if}
-> <a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}">{$nodes[post].name}</a>
+&raquo; <a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}">{$nodes[post].name}</a>
 </h4>
 </div>
 
