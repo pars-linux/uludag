@@ -112,8 +112,8 @@
             $temp = get_type($assoc_arr['sub_type']);
             $return_array[$i]['lsubtype'] = $temp[0]['type'];
             $return_array[$i]['filetype'] = get_file_type($assoc_arr['path']);
-            $return_array[$i]['filesize'] = human_size(filesize($config['core']['path']."files/".$assoc_arr['path']),1);
-            $return_array[$i]['filesize2'] = human_size(filesize($config['core']['path']."files/".$assoc_arr['path2']),1);
+            $return_array[$i]['filesize'] = file_exists($config['core']['path']."files/".$assoc_arr['path']) ? human_size(filesize($config['core']['path']."files/".$assoc_arr['path']),1) : "0 byte.";
+            $return_array[$i]['filesize2'] = file_exists($config['core']['path']."files/".$assoc_arr['path2']) ? human_size(filesize($config['core']['path']."files/".$assoc_arr['path2']),1) : "0 byte";
         }
         return $return_array;
     }

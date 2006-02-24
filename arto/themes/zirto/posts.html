@@ -1,7 +1,7 @@
 {include file="header.html"}
 {include file="login.html"}
 <div id="content" class="main_content" >
-<h4><a href="{$url}">Ana Sayfa</a> >
+<h4><a href="{$url}">Ana Sayfa</a> &raquo; 
 {if $searchcriteria}
 Aranan kelime : "{$searchcriteria}"
 </h4>
@@ -13,7 +13,7 @@ Aranan kelime : "{$searchcriteria}"
 </div><br>
 {else}
 {if $nameofuser}
-<a href="{$url}users/">Kullanıcılar</a> > <a href="{$url}user/{$nameofuser}">{$nameofuser}</a>
+<a href="{$url}users/">Kullanıcılar</a> &raquo; <a href="{$url}user/{$nameofuser}">{$nameofuser}</a>
 <p class="nodetheme">
 Sanatçı : <span style="color: #990000">{$realnameofuser}</span><br>
 Kişisel Sayfa : <a href="{$webofuser}">{$webofuser}</a><br>
@@ -21,7 +21,7 @@ Toplam İçerik : <span style="color: #990000">{$nodes|@count}</span>
 {else}
 <a href="{$url}nodes/{$parent_type_id}/">{$parent_type}</a>
 {if $sub_type}
- > <a href="{$url}nodes/{$parent_type_id}/{$sub_type_id}">{$sub_type}</a>
+ &raquo; <a href="{$url}nodes/{$parent_type_id}/{$sub_type_id}">{$sub_type}</a>
 {/if}{/if}{/if}
 </h4>
 {if $nodes == ""}
