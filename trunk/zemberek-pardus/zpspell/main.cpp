@@ -113,13 +113,14 @@ int main( int argc, char** argv )
 {
     bool aflag = false;
     int o;
-    while ( ( o = getopt( argc, argv, "a" )) != -1 ) {
+    while ( ( o = getopt( argc, argv, "aBm" )) != -1 ) {
         switch ( o ) {
         case 'a':
             aflag = true;
             break;
         default:
-            cerr << "Bilinmeyen parametre: " << optopt << endl;
+  	    break;
+	    //            cerr << "Bilinmeyen parametre: " << optopt << endl;
         }
     }
 
