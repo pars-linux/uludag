@@ -142,6 +142,13 @@ a:hover {
 	font-size: 9pt;
 }
 
+.form {
+	margin: 1.5em;
+	font-size: 9pt;
+	border:1;
+	text-align: justify;
+}
+
 .belge {
 	font-size: 9pt;
 	text-align: left;
