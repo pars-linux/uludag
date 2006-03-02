@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-02 11:44+0200\n"
+"POT-Creation-Date: 2006-03-02 17:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgid ""
 "Pisi could not be started! Please make sure no other pisi process is running."
 msgstr ""
 
-#: src/PisiKga.py:120 src/Preferences.py:135 src/Preferences.py:156
+#: src/PisiKga.py:120 src/Preferences.py:122 src/Preferences.py:139
 msgid "Pisi Error"
 msgstr ""
 
@@ -483,24 +483,24 @@ msgstr ""
 msgid "Show &More Information >>"
 msgstr ""
 
-#: src/Preferences.py:75
+#: src/Preferences.py:70
 msgid "Add New Repository"
 msgstr ""
 
-#: src/Preferences.py:82
+#: src/Preferences.py:77
 msgid "Edit Repository"
 msgstr ""
 
-#: src/Preferences.py:135 src/Preferences.py:156
+#: src/Preferences.py:122 src/Preferences.py:139
 msgid ""
 "<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
 msgstr ""
 
-#: src/Preferences.py:144
+#: src/Preferences.py:129
 msgid "<qt>Do you want to update repository <b>%1</b></qt>"
 msgstr ""
 
-#: src/Preferences.py:144
+#: src/Preferences.py:129
 msgid "Pisi Question"
 msgstr ""
 
