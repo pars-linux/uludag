@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-28 15:46+0200\n"
+"POT-Creation-Date: 2006-03-02 11:44+0200\n"
 "PO-Revision-Date: 2005-12-13 15:02+0200\n"
 "Last-Translator: Eray Ozkural <eray@uludag.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -111,7 +111,7 @@ msgid ""
 msgstr ""
 "Pisi başlatılamadı! Lütfen Pisi'nin başka biryerde çalışmadığına emin olun."
 
-#: src/PisiKga.py:120 src/Preferences.py:132 src/Preferences.py:153
+#: src/PisiKga.py:120 src/Preferences.py:135 src/Preferences.py:156
 msgid "Pisi Error"
 msgstr "PiSi Hatası"
 
@@ -159,7 +159,7 @@ msgstr "Tüm paketler başarıyla güncellendi."
 msgid "updated"
 msgstr "güncellendi"
 
-#: src/PisiKga.py:222 src/PisiKga.py:490
+#: src/PisiKga.py:222 src/PisiKga.py:492
 msgid "PiSi Error"
 msgstr "PiSi Hatası"
 
@@ -219,131 +219,123 @@ msgstr "%1 paket seçili, toplam %2 KB"
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr "%1 paket seçili, toplam %2 bayt"
 
-#: src/PisiKga.py:351 src/MainWindow.py:254
+#: src/PisiKga.py:351 src/MainWindow.py:231
 msgid "No package selected"
 msgstr "Hiçbir paket seçili değil"
 
-#: src/PisiKga.py:450
+#: src/PisiKga.py:452
 msgid "Remove package(s)"
 msgstr "Paket(ler)i kaldır"
 
-#: src/PisiKga.py:455
+#: src/PisiKga.py:457
 msgid "Update package(s)"
 msgstr "Paket(ler)i güncelle"
 
-#: src/PisiKga.py:462
+#: src/PisiKga.py:464
 msgid "Install package(s)"
 msgstr "Paket(ler)i yükle"
 
-#: src/PisiKga.py:495 src/PisiKga.py:513
+#: src/PisiKga.py:497 src/PisiKga.py:515
 msgid "Add or Remove Programs"
 msgstr "Program Ekle ve Kaldır"
 
-#: src/PisiKga.py:527 src/FastUpdatesDialog.py:54
+#: src/PisiKga.py:529 src/FastUpdatesDialog.py:54
 msgid "Fast Updates (only security)"
 msgstr "Hızlı Güncelleme (sadece güvenlik güncellemeleri)"
 
-#: src/PisiKga.py:528 src/CustomUpdatesDialog.py:55
+#: src/PisiKga.py:530 src/CustomUpdatesDialog.py:55
 msgid "Custom Updates"
 msgstr "Özel güncelleme"
 
-#: src/PisiKga.py:553 src/PisiKga.py:564
+#: src/PisiKga.py:555 src/PisiKga.py:566
 msgid "Total size: %1 MB"
 msgstr "Toplam kurulum boyu: %1 MB"
 
-#: src/PisiKga.py:730
+#: src/PisiKga.py:743
 msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
-#: src/PisiKga.py:733
+#: src/PisiKga.py:746
 msgid "Pisi KGA is already running!"
 msgstr "PiSi KGA başka bir yerde çalışıyor."
 
-#: src/MainWindow.py:97 src/MainWindow.py:252
+#: src/MainWindow.py:81 src/MainWindow.py:229
 msgid "Package"
 msgstr "Paket"
 
-#: src/MainWindow.py:98 src/MainWindow.py:253
+#: src/MainWindow.py:82 src/MainWindow.py:230
 msgid "Version"
 msgstr "Sürüm"
 
-#: src/MainWindow.py:239
+#: src/MainWindow.py:219
 msgid "PiSi Graphical User Interface"
 msgstr "PiSi Grafiksel Kullanıcı Arayüzü"
 
-#: src/MainWindow.py:241
+#: src/MainWindow.py:221
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Yükle"
 
-#: src/MainWindow.py:245
-msgid "Show only applications"
-msgstr "Sadece uygulamaları göster"
-
-#: src/MainWindow.py:246
-msgid "Show all packages"
-msgstr "Bütün paketleri göster"
-
-#: src/MainWindow.py:247
+#: src/MainWindow.py:224
 msgid "search package"
 msgstr "paket ara"
 
-#: src/MainWindow.py:248
+#: src/MainWindow.py:225
 msgid "&Search"
 msgstr "&Ara"
 
-#: src/MainWindow.py:249
+#: src/MainWindow.py:226
 msgid "search button"
 msgstr "arama tuşu"
 
-#: src/MainWindow.py:250
+#: src/MainWindow.py:227
 msgid "&Clear"
 msgstr "&Temizle"
 
-#: src/MainWindow.py:251
+#: src/MainWindow.py:228
 msgid "Clear search results"
 msgstr "Arama sonuçlarını temizle"
 
-#: src/MainWindow.py:256
+#: src/MainWindow.py:233
 msgid "operation mode"
 msgstr "İşlem biçimi"
 
-#: src/MainWindow.py:257
+#: src/MainWindow.py:234
 msgid "Operation mode selector"
 msgstr "İşlem biçimini seçer"
 
-#: src/MainWindow.py:258
+#: src/MainWindow.py:235
 msgid "Show &not-Installed packages"
 msgstr "Yüklü &olmayan paketleri göster"
 
-#: src/MainWindow.py:259
+#: src/MainWindow.py:236
 msgid "Only show packages which are going to be installed"
 msgstr "Sadece yüklenecek paketleri göster"
 
-#: src/MainWindow.py:260
+#: src/MainWindow.py:237
 msgid "Show available &updates"
 msgstr "Hazır &güncellemeleri göster"
 
-#: src/MainWindow.py:261
+#: src/MainWindow.py:238
 msgid "Only show packages that can be updated"
 msgstr "Sadece güncellenebilecek paketleri göster"
 
-#: src/MainWindow.py:262
+#: src/MainWindow.py:239
 msgid "Show &installed packages"
 msgstr "&Yüklü paketleri göster"
 
-#: src/MainWindow.py:263
+#: src/MainWindow.py:240
 msgid "Only show installed packages in your compter"
 msgstr "Sadece &yüklü paketleri göster"
 
-#: src/MainWindow.py:264
+#: src/MainWindow.py:241
 msgid "Icon"
 msgstr "Simge"
 
-#: src/MainWindow.py:265
+#: src/MainWindow.py:242
 msgid "<p align=\"left\">Program Name</p>"
 msgstr "<p align=\"left\">Program İsmi</p>"
 
-#: src/MainWindow.py:267
+#: src/MainWindow.py:244
 msgid ""
 "Program Name: Foo\n"
 "Program Version: Bar"
@@ -351,7 +343,7 @@ msgstr ""
 "Program Adı: Foo\n"
 "Program Sürümü: Bar"
 
-#: src/MainWindow.py:269
+#: src/MainWindow.py:246
 msgid ""
 "<center>\n"
 "<h3>PiSi KGA 1.0.1</h3>\n"
@@ -365,19 +357,19 @@ msgstr ""
 "<h3>Pardus Linux v1.0</h3>\n"
 "</center>"
 
-#: src/MainWindow.py:274
+#: src/MainWindow.py:251
 msgid "&Update System"
 msgstr "Sistemi &Güncelle"
 
-#: src/MainWindow.py:275
+#: src/MainWindow.py:252
 msgid "Click on this button if you want to update your system"
 msgstr "Sisteminizi güncellemek istiyorsanız bu düğmeye tıklayın"
 
-#: src/MainWindow.py:276
-msgid "&Repository Settings"
-msgstr "&Depo Ayarları"
+#: src/MainWindow.py:253
+msgid "Settings..."
+msgstr ""
 
-#: src/MainWindow.py:277
+#: src/MainWindow.py:255
 msgid ""
 "Click here to add, modify or delete a repository, <br>i.e the server "
 "locations where new software can be fetched."
@@ -385,71 +377,86 @@ msgstr ""
 "Buraya tıklayarak halihazırdaki depoları değiştirebilir ya da yeni depo "
 "ekleyebilirsiniz"
 
-#: src/PreferencesDialog.py:28 src/PreferencesDialog.py:77
+#: src/PreferencesDialog.py:48 src/PreferencesDialog.py:116
 msgid "Repository Name"
 msgstr "Depo Adı"
 
-#: src/PreferencesDialog.py:29 src/PreferencesDialog.py:78
+#: src/PreferencesDialog.py:49 src/PreferencesDialog.py:117
 msgid "Address"
 msgstr "Adres"
 
-#: src/PreferencesDialog.py:76
-msgid "PiSi Preferences"
-msgstr "PiSi Ayarları"
+#: src/PreferencesDialog.py:112
+#, fuzzy
+msgid "PiSi Settings"
+msgstr "PiSi Soru"
 
-#: src/PreferencesDialog.py:79
+#: src/PreferencesDialog.py:113
+msgid "List only programs"
+msgstr ""
+
+#: src/PreferencesDialog.py:114
+msgid "Automatically check for updates when started"
+msgstr ""
+
+#: src/PreferencesDialog.py:115
+#, fuzzy
+msgid "General Settings"
+msgstr "&Depo Ayarları"
+
+#: src/PreferencesDialog.py:118
 msgid ""
 "You can see current software repositories and corresponding addresses here"
 msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
 
-#: src/PreferencesDialog.py:80
+#: src/PreferencesDialog.py:119
 msgid "&Add New Repository"
 msgstr "Yeni Depo &Ekle"
 
-#: src/PreferencesDialog.py:81
+#: src/PreferencesDialog.py:120
 msgid "Click here to add a new software repository"
 msgstr "Yeni bir depo eklemek için burayı tıklayın"
 
-#: src/PreferencesDialog.py:82
+#: src/PreferencesDialog.py:121
 msgid "&Edit Repository"
 msgstr "&Depoyu Değiştir"
 
-#: src/PreferencesDialog.py:83
+#: src/PreferencesDialog.py:122
 msgid "Click here to modify the name or address of a repository"
 msgstr "Bir deponun adını ya da adresini değiştirmek için burayı tıklayın"
 
-#: src/PreferencesDialog.py:84
+#: src/PreferencesDialog.py:123
 msgid "&Remove Repository"
 msgstr "Depoyu &Kaldır"
 
-#: src/PreferencesDialog.py:85
+#: src/PreferencesDialog.py:124
 msgid "Click here to delete a repository from the list"
 msgstr "Listeden bir depo silmek için burayı tıklayın"
 
-#: src/PreferencesDialog.py:86
+#: src/PreferencesDialog.py:125
 msgid "Move &Up"
 msgstr "&Yukarı Taşı"
 
-#: src/PreferencesDialog.py:87
+#: src/PreferencesDialog.py:126
 msgid "Move &Down"
 msgstr "&Aşağı Taşı"
 
-#: src/PreferencesDialog.py:88
+#: src/PreferencesDialog.py:127
 msgid "&Update All Repositories"
 msgstr "Tüm Depoları &Güncelle"
 
-#: src/PreferencesDialog.py:89
+#: src/PreferencesDialog.py:128
 msgid "Click here to update all repositories so that you can use  "
 msgstr ""
 "Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
 
-#: src/PreferencesDialog.py:90 src/RepoDialog.py:74 src/SuccessDialog.py:75
-msgid "&Ok"
-msgstr "&Tamam"
+#: src/PreferencesDialog.py:129
+#, fuzzy
+msgid "Repositories"
+msgstr "Depo Adı"
 
-#: src/PreferencesDialog.py:91
-msgid "<b>Add, Edit or Remove Repositories</b>"
-msgstr "<b>Depo Ekle, Değiştir veya Kaldır</b>"
+#: src/PreferencesDialog.py:131
+msgid "F1"
+msgstr ""
 
 #: src/RepoDialog.py:69
 msgid "Repository Dialog"
@@ -470,6 +477,10 @@ msgstr "D&epo Adresi"
 #: src/RepoDialog.py:73
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:74 src/SuccessDialog.py:75
+msgid "&Ok"
+msgstr "&Tamam"
 
 #: src/Success.py:17
 msgid "Show more information >>"
@@ -495,25 +506,25 @@ msgstr "Tüm paketler başarıyla yüklendi!"
 msgid "Show &More Information >>"
 msgstr "&Daha fazla bilgi göster >>"
 
-#: src/Preferences.py:72
+#: src/Preferences.py:75
 msgid "Add New Repository"
 msgstr "Yeni Depo Ekle"
 
-#: src/Preferences.py:79
+#: src/Preferences.py:82
 msgid "Edit Repository"
 msgstr "Depoyu Değiştir"
 
-#: src/Preferences.py:132 src/Preferences.py:153
+#: src/Preferences.py:135 src/Preferences.py:156
 msgid ""
 "<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
 msgstr ""
 "<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
 
-#: src/Preferences.py:141
+#: src/Preferences.py:144
 msgid "<qt>Do you want to update repository <b>%1</b></qt>"
 msgstr "<qt><b>%1</b> deposunu güncellemek istiyor musunuz?</b></qt>"
 
-#: src/Preferences.py:141
+#: src/Preferences.py:144
 msgid "Pisi Question"
 msgstr "PiSi Sorusu"
 
@@ -594,3 +605,15 @@ msgid ""
 msgstr ""
 "Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
 "Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
+
+#~ msgid "Show only applications"
+#~ msgstr "Sadece uygulamaları göster"
+
+#~ msgid "Show all packages"
+#~ msgstr "Bütün paketleri göster"
+
+#~ msgid "PiSi Preferences"
+#~ msgstr "PiSi Ayarları"
+
+#~ msgid "<b>Add, Edit or Remove Repositories</b>"
+#~ msgstr "<b>Depo Ekle, Değiştir veya Kaldır</b>"

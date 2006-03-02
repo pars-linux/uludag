@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-3.8.dtd">
 <!-- Project file for project pisi-kga -->
-<!-- Saved: 2005-12-16, 17:44:18 -->
-<!-- Copyright (C) 2005 İsmail Dönmez, Görkem Çetin, Eray Özkural,  -->
+<!-- Saved: 2006-02-18, 19:27:07 -->
+<!-- Copyright (C) 2006 İsmail Dönmez, Görkem Çetin, Eray Özkural,  -->
 <Project version="3.8">
   <ProgLanguage mixed="1">Python</ProgLanguage>
   <UIType>Kde</UIType>
   <Description></Description>
-  <VersIon></VersIon>
   <Author>İsmail Dönmez, Görkem Çetin, Eray Özkural</Author>
   <EmaIl></EmaIl>
   <Sources>
@@ -99,10 +98,6 @@
     <Form>
       <Dir>src</Dir>
       <Name>RepoDialog.ui</Name>
-    </Form>
-    <Form>
-      <Dir>src</Dir>
-      <Name>MainWindowalt.ui</Name>
     </Form>
     <Form>
       <Dir>src</Dir>
