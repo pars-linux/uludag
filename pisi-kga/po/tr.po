@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-02 11:44+0200\n"
+"POT-Creation-Date: 2006-03-02 17:03+0200\n"
 "PO-Revision-Date: 2006-03-02 13:31+0200\n"
 "Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Pisi could not be started! Please make sure no other pisi process is running."
 msgstr "Pisi başlatılamadı! Lütfen Pisi'nin başka biryerde çalışmadığına emin olun."
 
-#: src/PisiKga.py:120 src/Preferences.py:135 src/Preferences.py:156
+#: src/PisiKga.py:120 src/Preferences.py:122 src/Preferences.py:139
 msgid "Pisi Error"
 msgstr "PiSi Hatası"
 
@@ -499,23 +499,23 @@ msgstr "Tüm paketler başarıyla yüklendi!"
 msgid "Show &More Information >>"
 msgstr "&Daha fazla bilgi göster >>"
 
-#: src/Preferences.py:75
+#: src/Preferences.py:70
 msgid "Add New Repository"
 msgstr "Yeni Depo Ekle"
 
-#: src/Preferences.py:82
+#: src/Preferences.py:77
 msgid "Edit Repository"
 msgstr "Depoyu Değiştir"
 
-#: src/Preferences.py:135 src/Preferences.py:156
+#: src/Preferences.py:122 src/Preferences.py:139
 msgid "<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
 msgstr "<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
 
-#: src/Preferences.py:144
+#: src/Preferences.py:129
 msgid "<qt>Do you want to update repository <b>%1</b></qt>"
 msgstr "<qt><b>%1</b> deposunu güncellemek istiyor musunuz?</b></qt>"
 
-#: src/Preferences.py:144
+#: src/Preferences.py:129
 msgid "Pisi Question"
 msgstr "PiSi Sorusu"
 
