@@ -37,6 +37,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.updateRepoButton, SIGNAL("clicked()"), self.updateAllRepos)
         self.connect(self.moveUpButton, SIGNAL("clicked()"), self.moveUp)
         self.connect(self.moveDownButton, SIGNAL("clicked()"), self.moveDown)
+        self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
      
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
@@ -44,6 +45,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repoListView.setSorting(-1)
         self.updateListView()
         self.updateButtons()
+
+        self.onlyShowPrograms.setChecked(self.parent.getShowOnlyPrograms())
         
     def updateButtons(self):
         if self.repoListView.childCount() > 1:
@@ -179,3 +182,5 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         self.updateRepoButton.setEnabled(self.repoListView.childCount() > 0 )
 
+    def saveSettings(self):
+        self.parent.setShowOnlyPrograms(self.onlyShowPrograms.isChecked())
