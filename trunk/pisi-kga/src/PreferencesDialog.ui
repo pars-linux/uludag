@@ -48,7 +48,7 @@
                             <cstring>onlyShowPrograms</cstring>
                         </property>
                         <property name="text">
-                            <string>Only show desktop related software</string>
+                            <string>Show desktop related applications only</string>
                         </property>
                     </widget>
                     <widget class="QCheckBox" row="1" column="0">
