@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>597</width>
-            <height>364</height>
+            <width>611</width>
+            <height>348</height>
         </rect>
     </property>
     <property name="caption">
@@ -50,6 +50,9 @@
                         <property name="text">
                             <string>Show only desktop applications</string>
                         </property>
+                        <property name="toolTip" stdset="0">
+                            <string>If checked, then pisi will only show desktop applications</string>
+                        </property>
                     </widget>
                     <widget class="QCheckBox" row="1" column="0">
                         <property name="name">
@@ -57,6 +60,9 @@
                         </property>
                         <property name="text">
                             <string>Automatically check for updates when started</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>If checked, then updates for Pardus will be automatically checked and you will be notified</string>
                         </property>
                     </widget>
                     <spacer row="2" column="0">
@@ -176,6 +182,12 @@
                                 <property name="text">
                                     <string>Move &amp;Up</string>
                                 </property>
+                                <property name="accel">
+                                    <string>Alt+U</string>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Click here to move the repository one level up</string>
+                                </property>
                             </widget>
                             <widget class="KPushButton">
                                 <property name="name">
@@ -183,6 +195,12 @@
                                 </property>
                                 <property name="text">
                                     <string>Move &amp;Down</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+D</string>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Click here to move the repository one level down</string>
                                 </property>
                             </widget>
                             <widget class="KPushButton">
