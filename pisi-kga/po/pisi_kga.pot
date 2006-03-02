@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-28 15:46+0200\n"
+"POT-Creation-Date: 2006-03-02 11:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgid ""
 "Pisi could not be started! Please make sure no other pisi process is running."
 msgstr ""
 
-#: src/PisiKga.py:120 src/Preferences.py:132 src/Preferences.py:153
+#: src/PisiKga.py:120 src/Preferences.py:135 src/Preferences.py:156
 msgid "Pisi Error"
 msgstr ""
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "updated"
 msgstr ""
 
-#: src/PisiKga.py:222 src/PisiKga.py:490
+#: src/PisiKga.py:222 src/PisiKga.py:492
 msgid "PiSi Error"
 msgstr ""
 
@@ -209,137 +209,129 @@ msgstr ""
 msgid "Selected %1 packages, total size %2 Bytes"
 msgstr ""
 
-#: src/PisiKga.py:351 src/MainWindow.py:254
+#: src/PisiKga.py:351 src/MainWindow.py:231
 msgid "No package selected"
 msgstr ""
 
-#: src/PisiKga.py:450
+#: src/PisiKga.py:452
 msgid "Remove package(s)"
 msgstr ""
 
-#: src/PisiKga.py:455
+#: src/PisiKga.py:457
 msgid "Update package(s)"
 msgstr ""
 
-#: src/PisiKga.py:462
+#: src/PisiKga.py:464
 msgid "Install package(s)"
 msgstr ""
 
-#: src/PisiKga.py:495 src/PisiKga.py:513
+#: src/PisiKga.py:497 src/PisiKga.py:515
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:527 src/FastUpdatesDialog.py:54
+#: src/PisiKga.py:529 src/FastUpdatesDialog.py:54
 msgid "Fast Updates (only security)"
 msgstr ""
 
-#: src/PisiKga.py:528 src/CustomUpdatesDialog.py:55
+#: src/PisiKga.py:530 src/CustomUpdatesDialog.py:55
 msgid "Custom Updates"
 msgstr ""
 
-#: src/PisiKga.py:553 src/PisiKga.py:564
+#: src/PisiKga.py:555 src/PisiKga.py:566
 msgid "Total size: %1 MB"
 msgstr ""
 
-#: src/PisiKga.py:730
+#: src/PisiKga.py:743
 msgid "Package to install"
 msgstr ""
 
-#: src/PisiKga.py:733
+#: src/PisiKga.py:746
 msgid "Pisi KGA is already running!"
 msgstr ""
 
-#: src/MainWindow.py:97 src/MainWindow.py:252
+#: src/MainWindow.py:81 src/MainWindow.py:229
 msgid "Package"
 msgstr ""
 
-#: src/MainWindow.py:98 src/MainWindow.py:253
+#: src/MainWindow.py:82 src/MainWindow.py:230
 msgid "Version"
 msgstr ""
 
-#: src/MainWindow.py:239
+#: src/MainWindow.py:219
 msgid "PiSi Graphical User Interface"
 msgstr ""
 
-#: src/MainWindow.py:241
+#: src/MainWindow.py:221
 msgid "Install Package(s)"
 msgstr ""
 
-#: src/MainWindow.py:245
-msgid "Show only applications"
-msgstr ""
-
-#: src/MainWindow.py:246
-msgid "Show all packages"
-msgstr ""
-
-#: src/MainWindow.py:247
+#: src/MainWindow.py:224
 msgid "search package"
 msgstr ""
 
-#: src/MainWindow.py:248
+#: src/MainWindow.py:225
 msgid "&Search"
 msgstr ""
 
-#: src/MainWindow.py:249
+#: src/MainWindow.py:226
 msgid "search button"
 msgstr ""
 
-#: src/MainWindow.py:250
+#: src/MainWindow.py:227
 msgid "&Clear"
 msgstr ""
 
-#: src/MainWindow.py:251
+#: src/MainWindow.py:228
 msgid "Clear search results"
 msgstr ""
 
-#: src/MainWindow.py:256
+#: src/MainWindow.py:233
 msgid "operation mode"
 msgstr ""
 
-#: src/MainWindow.py:257
+#: src/MainWindow.py:234
 msgid "Operation mode selector"
 msgstr ""
 
-#: src/MainWindow.py:258
+#: src/MainWindow.py:235
 msgid "Show &not-Installed packages"
 msgstr ""
 
-#: src/MainWindow.py:259
+#: src/MainWindow.py:236
 msgid "Only show packages which are going to be installed"
 msgstr ""
 
-#: src/MainWindow.py:260
+#: src/MainWindow.py:237
 msgid "Show available &updates"
 msgstr ""
 
-#: src/MainWindow.py:261
+#: src/MainWindow.py:238
 msgid "Only show packages that can be updated"
 msgstr ""
 
-#: src/MainWindow.py:262
+#: src/MainWindow.py:239
 msgid "Show &installed packages"
 msgstr ""
 
-#: src/MainWindow.py:263
+#: src/MainWindow.py:240
 msgid "Only show installed packages in your compter"
 msgstr ""
 
-#: src/MainWindow.py:264
+#: src/MainWindow.py:241
 msgid "Icon"
 msgstr ""
 
-#: src/MainWindow.py:265
+#: src/MainWindow.py:242
 msgid "<p align=\"left\">Program Name</p>"
 msgstr ""
 
-#: src/MainWindow.py:267
+#: src/MainWindow.py:244
 msgid ""
 "Program Name: Foo\n"
 "Program Version: Bar"
 msgstr ""
 
-#: src/MainWindow.py:269
+#: src/MainWindow.py:246
 msgid ""
 "<center>\n"
 "<h3>PiSi KGA 1.0.1</h3>\n"
@@ -348,87 +340,99 @@ msgid ""
 "</center>"
 msgstr ""
 
-#: src/MainWindow.py:274
+#: src/MainWindow.py:251
 msgid "&Update System"
 msgstr ""
 
-#: src/MainWindow.py:275
+#: src/MainWindow.py:252
 msgid "Click on this button if you want to update your system"
 msgstr ""
 
-#: src/MainWindow.py:276
-msgid "&Repository Settings"
+#: src/MainWindow.py:253
+msgid "Settings..."
 msgstr ""
 
-#: src/MainWindow.py:277
+#: src/MainWindow.py:255
 msgid ""
 "Click here to add, modify or delete a repository, <br>i.e the server "
 "locations where new software can be fetched."
 msgstr ""
 
-#: src/PreferencesDialog.py:28 src/PreferencesDialog.py:77
+#: src/PreferencesDialog.py:48 src/PreferencesDialog.py:116
 msgid "Repository Name"
 msgstr ""
 
-#: src/PreferencesDialog.py:29 src/PreferencesDialog.py:78
+#: src/PreferencesDialog.py:49 src/PreferencesDialog.py:117
 msgid "Address"
 msgstr ""
 
-#: src/PreferencesDialog.py:76
-msgid "PiSi Preferences"
+#: src/PreferencesDialog.py:112
+msgid "PiSi Settings"
 msgstr ""
 
-#: src/PreferencesDialog.py:79
+#: src/PreferencesDialog.py:113
+msgid "List only programs"
+msgstr ""
+
+#: src/PreferencesDialog.py:114
+msgid "Automatically check for updates when started"
+msgstr ""
+
+#: src/PreferencesDialog.py:115
+msgid "General Settings"
+msgstr ""
+
+#: src/PreferencesDialog.py:118
 msgid ""
 "You can see current software repositories and corresponding addresses here"
 msgstr ""
 
-#: src/PreferencesDialog.py:80
+#: src/PreferencesDialog.py:119
 msgid "&Add New Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:81
+#: src/PreferencesDialog.py:120
 msgid "Click here to add a new software repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:82
+#: src/PreferencesDialog.py:121
 msgid "&Edit Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:83
+#: src/PreferencesDialog.py:122
 msgid "Click here to modify the name or address of a repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:84
+#: src/PreferencesDialog.py:123
 msgid "&Remove Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:85
+#: src/PreferencesDialog.py:124
 msgid "Click here to delete a repository from the list"
 msgstr ""
 
-#: src/PreferencesDialog.py:86
+#: src/PreferencesDialog.py:125
 msgid "Move &Up"
 msgstr ""
 
-#: src/PreferencesDialog.py:87
+#: src/PreferencesDialog.py:126
 msgid "Move &Down"
 msgstr ""
 
-#: src/PreferencesDialog.py:88
+#: src/PreferencesDialog.py:127
 msgid "&Update All Repositories"
 msgstr ""
 
-#: src/PreferencesDialog.py:89
+#: src/PreferencesDialog.py:128
 msgid "Click here to update all repositories so that you can use  "
 msgstr ""
 
-#: src/PreferencesDialog.py:90 src/RepoDialog.py:74 src/SuccessDialog.py:75
-msgid "&Ok"
+#: src/PreferencesDialog.py:129
+msgid "Repositories"
 msgstr ""
 
-#: src/PreferencesDialog.py:91
-msgid "<b>Add, Edit or Remove Repositories</b>"
+#: src/PreferencesDialog.py:131
+msgid "F1"
 msgstr ""
 
 #: src/RepoDialog.py:69
@@ -449,6 +453,10 @@ msgstr ""
 
 #: src/RepoDialog.py:73
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr ""
+
+#: src/RepoDialog.py:74 src/SuccessDialog.py:75
+msgid "&Ok"
 msgstr ""
 
 #: src/Success.py:17
@@ -475,24 +483,24 @@ msgstr ""
 msgid "Show &More Information >>"
 msgstr ""
 
-#: src/Preferences.py:72
+#: src/Preferences.py:75
 msgid "Add New Repository"
 msgstr ""
 
-#: src/Preferences.py:79
+#: src/Preferences.py:82
 msgid "Edit Repository"
 msgstr ""
 
-#: src/Preferences.py:132 src/Preferences.py:153
+#: src/Preferences.py:135 src/Preferences.py:156
 msgid ""
 "<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
 msgstr ""
 
-#: src/Preferences.py:141
+#: src/Preferences.py:144
 msgid "<qt>Do you want to update repository <b>%1</b></qt>"
 msgstr ""
 
-#: src/Preferences.py:141
+#: src/Preferences.py:144
 msgid "Pisi Question"
 msgstr ""
 
