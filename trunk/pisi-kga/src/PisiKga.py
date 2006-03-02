@@ -397,9 +397,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     break
             package = pisi.packagedb.get_package(pack)
             self.packages.append(package)
-            #if self.categoryGroup.selectedId()==0:
-            #    if not isApp(package):
-            #        continue   # do not show if not an app
+
+            if self.getShowOnlyPrograms():
+                if not isApp(package):
+                    continue   # do not show if not an app
+
             if not nonPrivMode:
                 item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
                 if item.text(0) in self.selectedItems:
@@ -599,6 +601,19 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def showPreferences(self):
         self.pref = Preferences.Preferences(self)
         self.pref.show()
+
+    def setShowOnlyPrograms(self,hideLibraries=False):
+        global kapp
+        self.config = kapp.config()
+        self.config.setGroup("General")
+        self.config.writeEntry("HideLibraries",hideLibraries)
+        self.config.sync()
+
+    def getShowOnlyPrograms(self):
+        global kapp
+        self.config = kapp.config()
+        self.config.setGroup("General")
+        return self.config.readBoolEntry("HideLibraries")                                    
 
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=='__main__'

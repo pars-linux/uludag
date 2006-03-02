@@ -45,7 +45,7 @@
                     </property>
                     <widget class="QCheckBox" row="0" column="0">
                         <property name="name">
-                            <cstring>checkBox1</cstring>
+                            <cstring>onlyShowPrograms</cstring>
                         </property>
                         <property name="text">
                             <string>List only programs</string>
