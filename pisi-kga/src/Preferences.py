@@ -21,10 +21,6 @@ from qt import *
 from Enums import *
 import PreferencesDialog
 import RepoDialog
-import PisiKga # for loadIcon
-
-# Pisi imports
-import pisi.repodb
 
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
@@ -67,8 +63,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.moveDownButton.setEnabled(False)
             
     def updateAllRepos(self):
-        event = QCustomEvent(PisiCommand.UpdateAllRepos)
-        QThread.postEvent(self.parent,event)
+        self.parent.command.updateAllRepos()
 
     def addNewRepo(self):
         self.repo = RepoDialog.RepoDialog(self)
@@ -91,11 +86,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def removeRepo(self):
         repoItem = self.repoListView.currentItem()
         self.repoListView.takeItem(repoItem)
-
-        event = QCustomEvent(PisiCommand.RemoveRepo)
-        event.setData(str(repoItem.text(0)))
-        QThread.postEvent(self.parent,event)
-
+        self.parent.command.removeRepo(str(repoItem.text(0)))
+        
     def moveUp(self):
         item = self.repoListView.currentItem()
         parent = item.itemAbove()
@@ -110,9 +102,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.repoListView.insertItem(item)
             self.repoListView.setSelected(item, True)
 
-        event = QCustomEvent(PisiCommand.SwapRepos)
-        event.setData([self.repoList.index(item.text(0)),self.repoList.index(parent.text(0))])
-        QThread.postEvent(self.parent,event)
+        self.parent.command.swapRepos(self.repoList.index(item.text(0)),self.repoList.index(parent.text(0)))
 
     def moveDown(self):
         item = self.repoListView.currentItem()
@@ -122,10 +112,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             return
         
         item.moveItem(sibling)
-
-        event = QCustomEvent(PisiCommand.SwapRepos)
-        event.setData(str(self.repoList.index(item.text(0)))+" "+str(self.repoList.index(sibling.text(0))))
-        QThread.postEvent(self.parent,event)
+        self.parent.command.swapRepos(str(self.repoList.index(item.text(0))),str(self.repoList.index(sibling.text(0))))
         
     def processNewRepo(self):
         repoName = str(self.repo.repoName.text())
@@ -135,17 +122,13 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         else:
-            event = QCustomEvent(PisiCommand.AddRepo)
-            event.setData([repoName,repoAddress])
-            QThread.postEvent(self.parent,event)
+            self.parent.command.addRepo(repoName,repoAddress)
                     
         self.repo.close()
 
         confirm = KMessageBox.questionYesNo(self,i18n('<qt>Do you want to update repository <b>%1</b></qt>').arg(repoName),i18n("Pisi Question"))
         if confirm == KMessageBox.Yes:
-            event = QCustomEvent(PisiCommand.UpdateSingleRepo)
-            event.setData(repoName)
-            QThread.postEvent(self.parent,event)
+            self.parent.command.updateRepo(repoName)
 
     def updateRepoSettings(self):
         # FIXME there should be a better way to do this
@@ -156,14 +139,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         else:
-            event = QCustomEvent(PisiCommand.RemoveRepo)
-            event.setData(self.oldRepoName)
-            QThread.postEvent(self.parent,event)
-
-            event = QCustomEvent(PisiCommand.AddRepo)
-            data = [newRepoName,newRepoAddress]
-            event.setData(data)
-            QThread.postEvent(self.parent,event)
+            self.parent.command.removeRepo(self.oldRepoName)
+            self.parent.command.addRepo(newRepoName,newRepoAddress)
 
         self.updateListView()
         self.repo.close()
