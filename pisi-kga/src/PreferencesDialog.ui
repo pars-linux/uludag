@@ -122,9 +122,6 @@
                         <property name="text">
                             <string>&amp;Show only desktop applications</string>
                         </property>
-                        <property name="accel">
-                            <string>Alt+S</string>
-                        </property>
                         <property name="toolTip" stdset="0">
                             <string>If checked, then pisi will only show desktop applications</string>
                         </property>
@@ -135,9 +132,6 @@
                         </property>
                         <property name="text">
                             <string>&amp;Automatically check for updates when started</string>
-                        </property>
-                        <property name="accel">
-                            <string>Alt+A</string>
                         </property>
                         <property name="toolTip" stdset="0">
                             <string>If checked, then updates for Pardus will be automatically checked and you will be notified</string>
@@ -260,9 +254,6 @@
                                 <property name="text">
                                     <string>Move &amp;Up</string>
                                 </property>
-                                <property name="accel">
-                                    <string>Alt+U</string>
-                                </property>
                                 <property name="toolTip" stdset="0">
                                     <string>Click here to move the repository one level up</string>
                                 </property>
@@ -273,9 +264,6 @@
                                 </property>
                                 <property name="text">
                                     <string>Move &amp;Down</string>
-                                </property>
-                                <property name="accel">
-                                    <string>Alt+D</string>
                                 </property>
                                 <property name="toolTip" stdset="0">
                                     <string>Click here to move the repository one level down</string>
@@ -345,9 +333,6 @@
                             </property>
                             <property name="text">
                                 <string>C&amp;lean disk cache now</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+L</string>
                             </property>
                         </widget>
                         <widget class="QLabel">
@@ -471,9 +456,6 @@ This will not delete installed software or affect your system stability.</string
                             </property>
                             <property name="text">
                                 <string>&amp;Use hard disk cache for downloaded software</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+U</string>
                             </property>
                             <property name="checked">
                                 <bool>false</bool>
