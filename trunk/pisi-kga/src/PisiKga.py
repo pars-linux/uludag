@@ -397,9 +397,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     break
             package = pisi.packagedb.get_package(pack)
             self.packages.append(package)
-            if self.categoryGroup.selectedId()==0:
-                if not isApp(package):
-                    continue   # do not show if not an app
+            #if self.categoryGroup.selectedId()==0:
+            #    if not isApp(package):
+            #        continue   # do not show if not an app
             if not nonPrivMode:
                 item = QCheckListItem(parent,pack,QCheckListItem.CheckBox)
                 if item.text(0) in self.selectedItems:
@@ -638,7 +638,6 @@ class MainApplication(programbase):
         mainwidget.iconLabel.setPixmap(loadIcon('package', KIcon.Desktop))
         
         self.connect(mainwidget.selectionGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
-        self.connect(mainwidget.categoryGroup,SIGNAL("clicked(int)"),mainwidget.updateListing)
         self.connect(mainwidget.clearButton,SIGNAL("clicked()"),mainwidget.clearSearch)
         self.connect(mainwidget.closeButton,SIGNAL("clicked()"),self,SLOT("close()"))
         self.connect(mainwidget.helpButton,SIGNAL("clicked()"),self.showHelp)
@@ -659,7 +658,6 @@ class MainApplication(programbase):
             mainwidget.closeButton.hide()
 
         mainwidget.selectionGroup.setButton(0);
-        mainwidget.categoryGroup.setButton(0);
         mainwidget.updateListing();
 
         if not nonPrivMode and packageToInstall:

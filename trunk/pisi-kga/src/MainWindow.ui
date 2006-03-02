@@ -124,164 +124,139 @@
                 <attribute name="id">
                     <number>0</number>
                 </attribute>
-                <grid>
+                <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLayoutWidget" row="0" column="0">
+                    <widget class="QFrame">
                         <property name="name">
-                            <cstring>layout9</cstring>
+                            <cstring>searchFrame</cstring>
                         </property>
-                        <vbox>
+                        <property name="frameShape">
+                            <enum>GroupBoxPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Raised</enum>
+                        </property>
+                        <grid>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QFrame">
+                            <widget class="QLayoutWidget" row="0" column="0">
                                 <property name="name">
-                                    <cstring>searchFrame</cstring>
+                                    <cstring>layout9</cstring>
                                 </property>
-                                <property name="frameShape">
-                                    <enum>GroupBoxPanel</enum>
-                                </property>
-                                <property name="frameShadow">
-                                    <enum>Raised</enum>
-                                </property>
-                                <grid>
+                                <hbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QButtonGroup" row="1" column="0">
+                                    <widget class="KLineEdit">
                                         <property name="name">
-                                            <cstring>categoryGroup</cstring>
+                                            <cstring>queryEdit</cstring>
                                         </property>
-                                        <property name="title">
-                                            <string></string>
+                                        <property name="toolTip" stdset="0">
+                                            <string>search package</string>
+                                            <comment>Enter package name or search terms here</comment>
                                         </property>
-                                        <property name="selectedId" stdset="0">
-                                            <number>-1</number>
-                                        </property>
-                                        <vbox>
-                                            <property name="name">
-                                                <cstring>unnamed</cstring>
-                                            </property>
-                                            <widget class="QRadioButton">
-                                                <property name="name">
-                                                    <cstring>showOnlyAppsButton</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>Show only applications</string>
-                                                </property>
-                                            </widget>
-                                            <widget class="QRadioButton">
-                                                <property name="name">
-                                                    <cstring>showAllPackagesButton</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>Show all packages</string>
-                                                </property>
-                                            </widget>
-                                        </vbox>
                                     </widget>
-                                    <widget class="QLayoutWidget" row="0" column="0">
+                                    <widget class="KPushButton">
                                         <property name="name">
-                                            <cstring>layout9</cstring>
+                                            <cstring>searchButton</cstring>
                                         </property>
-                                        <hbox>
-                                            <property name="name">
-                                                <cstring>unnamed</cstring>
-                                            </property>
-                                            <widget class="KLineEdit">
-                                                <property name="name">
-                                                    <cstring>queryEdit</cstring>
-                                                </property>
-                                                <property name="toolTip" stdset="0">
-                                                    <string>search package</string>
-                                                    <comment>Enter package name or search terms here</comment>
-                                                </property>
-                                            </widget>
-                                            <widget class="KPushButton">
-                                                <property name="name">
-                                                    <cstring>searchButton</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>&amp;Search</string>
-                                                </property>
-                                                <property name="toolTip" stdset="0">
-                                                    <string>search button</string>
-                                                    <comment>Search package name, summary, description</comment>
-                                                </property>
-                                            </widget>
-                                            <widget class="KPushButton">
-                                                <property name="name">
-                                                    <cstring>clearButton</cstring>
-                                                </property>
-                                                <property name="text">
-                                                    <string>&amp;Clear</string>
-                                                </property>
-                                                <property name="toolTip" stdset="0">
-                                                    <string>Clear search results</string>
-                                                </property>
-                                            </widget>
-                                        </hbox>
+                                        <property name="text">
+                                            <string>&amp;Search</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>search button</string>
+                                            <comment>Search package name, summary, description</comment>
+                                        </property>
                                     </widget>
-                                </grid>
+                                    <widget class="KPushButton">
+                                        <property name="name">
+                                            <cstring>clearButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Clear</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>Clear search results</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
                             </widget>
-                            <widget class="KListView">
-                                <column>
-                                    <property name="text">
-                                        <string>Package</string>
-                                    </property>
-                                    <property name="clickable">
-                                        <bool>true</bool>
-                                    </property>
-                                    <property name="resizable">
-                                        <bool>true</bool>
-                                    </property>
-                                </column>
-                                <column>
-                                    <property name="text">
-                                        <string>Version</string>
-                                    </property>
-                                    <property name="clickable">
-                                        <bool>true</bool>
-                                    </property>
-                                    <property name="resizable">
-                                        <bool>true</bool>
-                                    </property>
-                                </column>
-                                <property name="name">
-                                    <cstring>listView</cstring>
-                                </property>
-                                <property name="allColumnsShowFocus">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="showSortIndicator">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="rootIsDecorated">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="resizeMode">
-                                    <enum>LastColumn</enum>
-                                </property>
-                                <property name="fullWidth">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="itemsMovable">
-                                    <bool>false</bool>
-                                </property>
-                            </widget>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>selectionInfo</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>No package selected</string>
-                                </property>
-                            </widget>
-                        </vbox>
+                        </grid>
                     </widget>
-                </grid>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer4</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Fixed</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>31</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="KListView">
+                        <column>
+                            <property name="text">
+                                <string>Package</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Version</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>listView</cstring>
+                        </property>
+                        <property name="allColumnsShowFocus">
+                            <bool>true</bool>
+                        </property>
+                        <property name="showSortIndicator">
+                            <bool>true</bool>
+                        </property>
+                        <property name="rootIsDecorated">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizeMode">
+                            <enum>LastColumn</enum>
+                        </property>
+                        <property name="fullWidth">
+                            <bool>true</bool>
+                        </property>
+                        <property name="itemsMovable">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>selectionInfo</cstring>
+                        </property>
+                        <property name="text">
+                            <string>No package selected</string>
+                        </property>
+                    </widget>
+                </vbox>
             </widget>
         </widget>
         <widget class="QLayoutWidget" row="0" column="1">
@@ -574,7 +549,10 @@ Program Version: Bar</string>
                                             <cstring>preferencesButton</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>&amp;Repository Settings</string>
+                                            <string>Settings...</string>
+                                        </property>
+                                        <property name="accel">
+                                            <string></string>
                                         </property>
                                         <property name="toolTip" stdset="0">
                                             <string>Click here to add, modify or delete a repository, &lt;br&gt;i.e the server locations where new software can be fetched.</string>
@@ -603,8 +581,6 @@ Program Version: Bar</string>
     <tabstop>preferencesButton</tabstop>
     <tabstop>installOrRemoveButton</tabstop>
     <tabstop>closeButton</tabstop>
-    <tabstop>showOnlyAppsButton</tabstop>
-    <tabstop>showAllPackagesButton</tabstop>
     <tabstop>showInstallableButton</tabstop>
     <tabstop>showUpdatesButton</tabstop>
     <tabstop>showInstalledButton</tabstop>
@@ -617,8 +593,14 @@ Program Version: Bar</string>
 <includehints>
     <includehint>kseparator.h</includehint>
     <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
     <includehint>ktextbrowser.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
 </includehints>
 </UI>
