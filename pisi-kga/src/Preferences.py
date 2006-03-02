@@ -184,3 +184,4 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
     def saveSettings(self):
         self.parent.setShowOnlyPrograms(self.onlyShowPrograms.isChecked())
+        self.parent.updateListing()
