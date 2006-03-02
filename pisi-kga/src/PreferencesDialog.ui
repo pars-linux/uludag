@@ -8,173 +8,313 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>495</width>
-            <height>272</height>
+            <width>597</width>
+            <height>364</height>
         </rect>
     </property>
     <property name="caption">
-        <string>PiSi Preferences</string>
+        <string>PiSi Settings</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
     </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="KListView" row="1" column="0">
-            <column>
-                <property name="text">
-                    <string>Repository Name</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
-            <column>
-                <property name="text">
-                    <string>Address</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QTabWidget" row="0" column="1">
             <property name="name">
-                <cstring>repoListView</cstring>
+                <cstring>tabWidget</cstring>
             </property>
-            <property name="allColumnsShowFocus">
-                <bool>true</bool>
-            </property>
-            <property name="resizeMode">
-                <enum>LastColumn</enum>
-            </property>
-            <property name="fullWidth">
-                <bool>true</bool>
-            </property>
-            <property name="toolTip" stdset="0">
-                <string>You can see current software repositories and corresponding addresses here</string>
-            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>Widget2</cstring>
+                </property>
+                <attribute name="title">
+                    <string>General Settings</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>checkBox1</cstring>
+                        </property>
+                        <property name="text">
+                            <string>List only programs</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="1" column="0">
+                        <property name="name">
+                            <cstring>checkBox2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Automatically check for updates when started</string>
+                        </property>
+                    </widget>
+                    <spacer row="2" column="0">
+                        <property name="name">
+                            <cstring>spacer4</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>31</width>
+                                <height>170</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>Widget3</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Repositories</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="KListView" row="0" column="0">
+                        <column>
+                            <property name="text">
+                                <string>Repository Name</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Address</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>repoListView</cstring>
+                        </property>
+                        <property name="allColumnsShowFocus">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizeMode">
+                            <enum>LastColumn</enum>
+                        </property>
+                        <property name="fullWidth">
+                            <bool>true</bool>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>You can see current software repositories and corresponding addresses here</string>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="0" column="1">
+                        <property name="name">
+                            <cstring>layout3</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>addButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Add New Repository</string>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Click here to add a new software repository</string>
+                                </property>
+                            </widget>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>editButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Edit Repository</string>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Click here to modify the name or address of a repository</string>
+                                </property>
+                            </widget>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>removeButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Remove Repository</string>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Click here to delete a repository from the list</string>
+                                </property>
+                            </widget>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>moveUpButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Move &amp;Up</string>
+                                </property>
+                            </widget>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>moveDownButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Move &amp;Down</string>
+                                </property>
+                            </widget>
+                            <widget class="KPushButton">
+                                <property name="name">
+                                    <cstring>updateRepoButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Update All Repositories</string>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Click here to update all repositories so that you can use  </string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer1</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Vertical</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>41</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </vbox>
+                    </widget>
+                </grid>
+            </widget>
         </widget>
-        <widget class="QLayoutWidget" row="1" column="1">
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout3</cstring>
+                <cstring>Layout1</cstring>
             </property>
-            <vbox>
+            <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="KPushButton">
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QPushButton">
                     <property name="name">
-                        <cstring>addButton</cstring>
+                        <cstring>buttonHelp</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Add New Repository</string>
+                        <string>&amp;Help</string>
                     </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Click here to add a new software repository</string>
+                    <property name="accel">
+                        <string>F1</string>
                     </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>editButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Edit Repository</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Click here to modify the name or address of a repository</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>removeButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Remove Repository</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Click here to delete a repository from the list</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>moveUpButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Move &amp;Up</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>moveDownButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Move &amp;Down</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>updateRepoButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Update All Repositories</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>Click here to update all repositories so that you can use  </string>
+                    <property name="autoDefault">
+                        <bool>true</bool>
                     </property>
                 </widget>
                 <spacer>
                     <property name="name">
-                        <cstring>spacer1</cstring>
+                        <cstring>Horizontal Spacing2</cstring>
                     </property>
                     <property name="orientation">
-                        <enum>Vertical</enum>
+                        <enum>Horizontal</enum>
                     </property>
                     <property name="sizeType">
                         <enum>Expanding</enum>
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>41</width>
+                            <width>20</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="KPushButton">
+                <widget class="QPushButton">
                     <property name="name">
-                        <cstring>kPushButton4</cstring>
+                        <cstring>buttonOk</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Ok</string>
+                        <string>&amp;OK</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
                     </property>
                 </widget>
-            </vbox>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>textLabel1</cstring>
-            </property>
-            <property name="text">
-                <string>&lt;b&gt;Add, Edit or Remove Repositories&lt;/b&gt;</string>
-            </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
         </widget>
     </grid>
 </widget>
 <connections>
     <connection>
-        <sender>kPushButton4</sender>
+        <sender>buttonOk</sender>
         <signal>clicked()</signal>
         <receiver>PreferencesDialog</receiver>
-        <slot>close()</slot>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>PreferencesDialog</receiver>
+        <slot>reject()</slot>
     </connection>
 </connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
-    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
