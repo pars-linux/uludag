@@ -1,0 +1,176 @@
+.onay 	{
+	color: #ffffff;
+	font-size:10px;
+	font-weight: bold;
+	font-family: Verdana, sans-serif;
+	padding: 1;
+	letter-spacing: 2pt;
+	background-color: #2e2e67;
+        border:0;
+        cursor:hand;
+}
+
+.mavi {
+        font-family: Verdana, sans-serif;
+        font-size: 10pt;
+        font-weight: bold;
+        color: #0000ff;
+}
+
+
+.ikaz	{
+	color: #000000;
+	background-color: #CCFFCC;
+	font-size:10px;
+	font-weight: bold;
+	font-family: Verdana, sans-serif;
+	letter-spacing: 3pt;
+	padding: 1;
+        border:0;
+        cursor:hand;
+}
+.sil 	{
+	color: #FFFFFF;
+	background-color: #CC0000;
+	font-size:10px;
+	font-weight: bold;
+	font-family: Verdana, sans-serif;
+	letter-spacing: 3pt;
+	padding: 1;
+        border:0;
+        cursor:hand;
+}
+
+.sayi {
+	font-family: Verdana, sans-serif;
+	text-align: right;
+}
+table {
+	border-collapse: collapse;
+/* 	border-style:none; */
+	}
+textarea {
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	background-color:#f4f4f4;
+}
+legend {
+	font-weight:bold;
+}
+select {
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #003333;
+	background-color: #eaeff5;
+}
+input {
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+}
+td {
+/* 	font-family: Verdana, sans-serif; */
+	font-size: 10px;
+}
+th {
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+	letter-spacing: 1pt;
+	background-color: #669900;
+	color: #FFFFFF;
+	height: 22px;
+}
+thead {
+	background-color: #006633;
+	letter-spacing: 1pt;
+	font-family:verdana, sans-serif;
+	font-size: 12pt;
+	color: #FFFFFF;
+	height: 29px;
+	font-weight: bold;
+}
+body {
+/* 	font-family: Verdana, sans-serif; */
+	font-size: 10px;
+	font-weight: normal;
+	color: #000000;
+}
+
+.secilmis{
+   background-color: #75CF75;
+}
+input.radio{
+    font-family:Verdana, sans-serif;
+    font-size:10px;
+	border-width:0px;
+}
+
+input.checkbox{
+    font-family:Verdana, sans-serif;
+    font-size:10px;
+    border-width:0px;
+}
+
+
+input {
+	color:#655C52;
+	font-family:Verdana, sans-serif;
+	font-size:10px;
+	background-color:#FEFEFE;
+	border-width:1px;
+	border-style:solid;
+	border-color:#655C52;
+	padding-left:2px;
+	padding-right:2px;	
+	}
+textarea {
+	color:#655C52;
+	font-family:Verdana, sans-serif;
+	font-size:10px;
+	background-color:#FEFEFE;
+	border-width:1px;
+	border-style:solid;
+	border-color:#655C52;
+	padding-left:1px;
+	}
+select {
+	color:#655C52;
+	font-family:Verdana, sans-serif;
+	font-size:10px;
+	background-color:#FEFEFE;
+	border-width:1px;
+	border-style:solid;
+	border-color:#655C52;
+	padding-left:1px;
+	}
+input.buton{
+  letter-spacing:2px;
+}
+.temiz {
+	border-style:none;
+	background-color:#e8eeef;
+	text-align:right;
+}
+
+a:link          {BACKGROUND: none; COLOR: #003399; FONT-size: 10px; text-decoration: none}
+a:active        {BACKGROUND: none; COLOR: #003399; FONT-size: 10px; text-decoration: underline}
+a:visited       {BACKGROUND: none; COLOR: #003399; FONT-size: 10px; text-decoration: none}
+a:hover         {BACKGROUND: none; COLOR: #FF0000; FONT-size: 10px; text-decoration: underline}
+
+a.menu:link          {BACKGROUND: none; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
+a.menu:hover         {BACKGROUND: none; COLOR: #6E8CD1; FONT-size: 10px; text-decoration: none;}
+a.menu:active        {BACKGROUND: none; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
+a.menu:visited       {BACKGROUND: none; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
+
+.menu         		{cursor: hand; COLOR: #AA9D0B; FONT-size: 10px; text-decoration: none;}
+.menusec         	{cursor: hand; background-color: #DD0000; COLOR: #ffffff; FONT-size: 10px; text-decoration: none;}
+
+.tabbas1        {color: #666666; background-color: ; font-size:18px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:33px; letter-spacing:1pt; font-family: serif}
+.tabbas2        {color: #000000; background-color: ; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:26px; font-family: serif}
+.tabbas3        {color: #666666; background-color: ; font-size:10px; font-weight: bold; text-decoration: none; padding: 3px; margin: 1px; height:24px font-family: serif}
+
+.tdbaslik{font-weight:bold;color:#000000;}
+.uyari {color: #ff3300; font-size: 12px; font-weight: bold;}
+.tabloliste1 {background-color: #eeeeee;}
+.tabloliste2 {background-color: #ffffff;}
