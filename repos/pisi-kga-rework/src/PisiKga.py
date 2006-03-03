@@ -77,7 +77,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
-        self.pDialog = ProgressDialog.ProgressDialog(self)
+        self.progressDialog = ProgressDialog.ProgressDialog(self)
         self.packagesOrder = []
         
         # Create a ThreadRunner and init the database
@@ -106,44 +106,38 @@ class MainApplicationWidget(MainWindow.MainWindow):
         eventType = event.type()
         eventData = event.data()
 
-        # First, notification events
-        if eventType < CustomEvent.LastEntry :
-            if eventType == CustomEvent.InitError:
-                KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
-                sys.exit(1)
-            elif eventType == CustomEvent.Finished:
-                pass
-                # REDO
-            elif eventType == CustomEvent.PisiWarning:
-                # RETHINK
-                KMessageBox.information(self,eventData,i18n("Pisi Info"))
-            elif eventType == CustomEvent.PisiError:
-                # RETHINK
-                self.pisiError(eventData)
-                # RETHINK
-            elif eventType == CustomEvent.PisiInfo:
-                # RETHINK
-                self.operationInfo = eventData
-                # RETHINK
-            elif eventType == CustomEvent.AskConfirmation:
-                self.showConfirmation(eventData)
-            elif eventType == CustomEvent.UpdateProgress:
-                filename = eventData["filename"]
-                percent = eventData["percent"]
-                rate = round(eventData["rate"],1)
-                symbol = eventData["symbol"]
-                downloaded = eventData["downloaded_size"]
-                totalsize = eventData["total_size"]
-                self.updateProgressBar(filename, percent, rate, symbol, downloaded, totalsize)
-            elif eventType == CustomEvent.UpdateListing:
-                self.updateListing()
-            elif eventType == CustomEvent.PisiNotify:
-                # RETHINK
-        # Rest
+        if eventType == CustomEvent.InitError:
+            KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
+            sys.exit(1)
+        elif eventType == CustomEvent.Finished:
+            pass
+        # REDO
+        elif eventType == CustomEvent.PisiWarning:
+        # RETHINK
+        elif eventType == CustomEvent.PisiError:
+            self.showErrorMessage(eventData)
+        elif eventType == CustomEvent.PisiInfo:
+            # RETHINK
+            self.operationInfo = eventData
+            # RETHINK
+        elif eventType == CustomEvent.AskConfirmation:
+            self.showConfirmationMessage(eventData)
+        elif eventType == CustomEvent.UpdateProgress:
+            filename = eventData["filename"]
+            percent = eventData["percent"]
+            rate = round(eventData["rate"],1)
+            symbol = eventData["symbol"]
+            downloaded = eventData["downloaded_size"]
+            totalsize = eventData["total_size"]
+            self.updateProgressBar(filename, percent, rate, symbol, downloaded, totalsize)
+        elif eventType == CustomEvent.UpdateListing:
+            self.updateListing()
+        elif eventType == CustomEvent.PisiNotify:
+            # RETHINK
         else:
             print 'Unhandled event:',eventType,'with data',eventData
     
-    def showConfirmation(self, question):
+    def showConfirmationMessage(self, question):
         answer = KMessageBox.questionYesNo(self,question,i18n("PiSi Question"))
         event = QCustomEvent(CustomEvent.UserConfirmed)
         if answer == KMessageBox.Yes:
@@ -151,7 +145,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         else:
             event.setData(False)
         QThread.postEvent(self.command.ui,event)
-    
+
+    def showErrorMessage(self, message):
+        self.progressDialog.closeForced()
+        KMessageBox.error(self,message,i18n("PiSi Error"))
+            
     def finished(self):
         # RETHINK
         

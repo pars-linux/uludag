@@ -23,7 +23,7 @@ import PisiUi
 class PisiThread(QThread):
     def __init__(self, parent):
         QThread.__init__(self)
-        self.pisiui = PisiUi.PisiUi(parent)
+        self.ui = PisiUi.PisiUi(parent)
         self.parent = parent
         self.installing = False
         self.upgrading = False
@@ -33,7 +33,7 @@ class PisiThread(QThread):
 
     def initDatabase(self):
         try:
-            pisi.api.init(database=True, options=None, ui=self.pisiui, comar=True)
+            pisi.api.init(database=True, options=None, ui=self.ui, comar=True)
         except:
             event = QCustomEvent(CustomEvent.InitError)
             self.postEvent(self.parent,event)

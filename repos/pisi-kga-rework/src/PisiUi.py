@@ -66,7 +66,6 @@ class PisiUi(pisi.ui.UI,QObject):
         # confirms it hits CustomEvent.UserConfirmed in customEvent and next we are here in
         # the Thread and self.confirmed is already set
        
-        # This needs more work, check http://bugs.uludag.org.tr/show_bug.cgi?id=1258
         if self.confirmed:
             self.confirmed = None
             return True
