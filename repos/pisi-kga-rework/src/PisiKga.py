@@ -84,6 +84,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.command = ThreadRunner.PisiThread(self)
         self.command.initDatabase()
 
+        # Check for empty repo.
+        self.initialCheck()
+
+    def initialCheck(self):
         if not nonPrivMode:
             try:
                 repo = pisi.context.repodb.list()[0]
@@ -92,7 +96,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             except:
                 confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
                 if confirm == KMessageBox.Yes:
-                    self.command.addRepo('pardus', 'http://paketler.uludag.org.tr/pardus-1.0/pisi-index.xml')            
+                    self.command.addRepo('pardus', 'http://paketler.uludag.org.tr/pardus-1.0/pisi-index.xml')
                     self.command.updateRepo('pardus')
                 else:
                     KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
@@ -110,9 +114,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
             elif eventType == CustomEvent.Finished:
                 pass
                 # REDO
-            elif eventType == CustomEvent.RepositoryUpdate:
-                pass
-                # REDO
             elif eventType == CustomEvent.PisiWarning:
                 # RETHINK
                 KMessageBox.information(self,eventData,i18n("Pisi Info"))
@@ -125,7 +126,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 self.operationInfo = eventData
                 # RETHINK
             elif eventType == CustomEvent.AskConfirmation:
-                self.showConfirm()
+                self.showConfirmation(eventData)
             elif eventType == CustomEvent.UpdateProgress:
                 filename = eventData["filename"]
                 percent = eventData["percent"]
@@ -138,15 +139,18 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 self.updateListing()
             elif eventType == CustomEvent.PisiNotify:
                 # RETHINK
-            elif eventType == CustomEvent.NewRepoAdded:
-                if self.pref:
-                    self.pref.updateListView()
         # Rest
         else:
             print 'Unhandled event:',eventType,'with data',eventData
     
-    def showConfirm(self):
-        # RETHINK
+    def showConfirmation(self, question):
+        answer = KMessageBox.questionYesNo(self,question,i18n("PiSi Question"))
+        event = QCustomEvent(CustomEvent.UserConfirmed)
+        if answer == KMessageBox.Yes:
+            event.setData(True)
+        else:
+            event.setData(False)
+        QThread.postEvent(self.command.ui,event)
     
     def finished(self):
         # RETHINK
