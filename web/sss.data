@@ -146,7 +146,7 @@ MD5SUM özet dosyası, indirdiğiniz ISO dosyasının bütünlüğünü kontrol 
 indirme işlemi esnasında herhangi bir zarar görmediğinden emin olmak için kullanılır.
 MD5SUM dosyasına bir metin düzenleyici ile baktığınızda bir karakter dizisi ve dosya
 adı göreceksiniz.
-<a href="ftp://ftp.uludag.org.tr/pub/md5summer.exe">ftp://ftp.uludag.org.tr/pub/md5summer.exe</a>
+<a href="ftp://ftp.pardus.org.tr/pub/md5summer.exe">ftp://ftp.pardus.org.tr/pub/md5summer.exe</a>
 adresindeki program yardımı ile ISO dosyasının özetinin MD5SUM dosyasının içeriği ile
 aynı olduğundan emin olunuz. Eğer özetler aynı değilse bu, ISO dosyasını indirmeniz
 esnasında bağlantıdaki bir sorun nedeni ile bilgisayarınızdaki kopyanın zarar görmüş
@@ -160,9 +160,9 @@ Pardus'u nasıl indirebilirim?
 
 Pardus Çalışan CD'yi edinmek için aşağıdaki bağlantıları kullanabilirsiniz:
 <br><br>
-ISO: <a href="ftp://ftp.uludag.org.tr/pub/pardus/calisan/1.0/pardus_calisan_cd-1.0.iso">ftp://ftp.uludag.org.tr/pub/pardus/calisan/1.0/pardus_calisan_cd-1.0.iso</a>
+ISO: <a href="ftp://ftp.pardus.org.tr/pub/pardus/calisan/1.0/pardus_calisan_cd-1.0.iso">ftp://ftp.pardus.org.tr/pub/pardus/calisan/1.0/pardus_calisan_cd-1.0.iso</a>
 <br>
-MD5SUM: <a href="ftp://ftp.uludag.org.tr/pub/pardus/calisan/1.0/pardus_calisan_cd-1.0.md5sum">ftp://ftp.uludag.org.tr/pub/pardus/calisan_cd/pardus-calisan_cd-1.0.md5sum</a>
+MD5SUM: <a href="ftp://ftp.pardus.org.tr/pub/pardus/calisan/1.0/pardus_calisan_cd-1.0.md5sum">ftp://ftp.pardus.org.tr/pub/pardus/calisan_cd/pardus-calisan_cd-1.0.md5sum</a>
 <br><br>
 Bu iki dosyayı indirdikten sonra <a name="md5sum" href="./sss.html#md5sum">yukarıda</a> anlatılan md5 özet alma işlemini gerçekleştiriniz.
 
@@ -172,7 +172,7 @@ Pardus'u indirmem mümkün değil, bana kargo ile gönderebilir misiniz?
 Ne yazık ki Pardus'un dağıtımını CD gönderme anlamında yapamıyoruz. Fakat Pardus'u Linux CD'leri satan sitelerden temin etme şansınız var.
 Bu sitelerin bir listesine <a href="http://www.linux.org.tr/index.php?Pg=LinuxCDler">http://www.linux.org.tr/index.php?Pg=LinuxCDler</a>
 adresinden ulaşabilirsiniz. Bunun yanında Genel e-posta listemize üye olarak liste üyelerinden bu konuda yardım isteyebilirsiniz.
-Genel e-posta listemize <a href="http://liste.uludag.org.tr/mailman/listinfo/uludag">http://liste.uludag.org.tr/mailman/listinfo/uludag</a>
+Genel e-posta listemize <a href="http://liste.pardus.org.tr/mailman/listinfo/uludag">http://liste.pardus.org.tr/mailman/listinfo/uludag</a>
 adresinden üye olabilirsiniz.
 
 @cd_yazimi
@@ -262,10 +262,10 @@ Pardus'taki uygulamaların kaynak kodlarına nasıl ulaşabilirim?
 
 		Geliştirme sürecinde olan tüm uygulamalar Subversion
 		sürüm kontrol sistemi üzerinden dağıtılmaktadır. <a
-		href="http://svn.uludag.org.tr/uludag">svn.uludag.org.tr/uludag</a>
+		href="http://svn.pardus.org.tr/uludag">svn.pardus.org.tr/uludag</a>
 		deposu Uludağ projesi tarafından geliştirilen
 		yazılımları sunarken, <a
-		href="https://svn.uludag.org.tr/paketler">svn.uludag.org.tr/paketler</a>
+		href="https://svn.pardus.org.tr/paketler">svn.pardus.org.tr/paketler</a>
 		deposu Pardus'a dahil edilen özgür yazılımları ve
 		bunlara yapılan yamaları sunmaktadır.
 
@@ -313,7 +313,7 @@ Pardus'ta Java, Flash gibi eklentiler var mı?
 @logo
 Pardus'un görsel dosyalarına, ekran görüntülerine nasıl ulaşabilirim?
 
-Pardus'a ait görsel dosya ve ekran görüntülerine <a href="http://www.uludag.org.tr/basin/">Basında Uludağ</a> sayfasından ulaşabilirsiniz.<br>
+Pardus'a ait görsel dosya ve ekran görüntülerine <a href="http://www.pardus.org.tr/basin/">Basında Uludağ</a> sayfasından ulaşabilirsiniz.<br>
         <br>
         <a name="gorselmateryal" href="./sss.html#top"><i>Pardus'un
         görsel dosyalarını istediğim gibi kullanabilir miyim?</i></a><br>
@@ -367,7 +367,7 @@ Pardus Çalışan CD ofis uygulamaları yazılımı paketi olan <a href=http://w
 @internet
 Pardus ile e-postalarımı okuyabilir, Internet'te gezebilir miyim?
 
-		Pardus <a href="http://www.uludag.org.tr/belgeler/okuryazar/index.html">Bilişim
+		Pardus <a href="http://www.pardus.org.tr/belgeler/okuryazar/index.html">Bilişim
 		Okur-Yazarı</a> olarak 
 		tanımlanan kullanıcının internet ihtiyaçlarını karşılayacak yazılımlar
 		içermektedir. Pardus içerisindeki çeşitli yazılımlarla  Internet sayfalarını
@@ -413,9 +413,9 @@ Pardus Çalışan CD'de yönetici parolası "uludag" dır.
 @kaynakkod
 Pardus'taki uygulamaların kaynak kodlarını CD içerisinde bulamadım, neredeler?
 		
-Pardus Çalışan CD'deki uygulamaların kaynak kodlarını sürüm kontrol servisimiz olan subversion depomuzdan alabilirsiniz (<a href="https://svn.uludag.org.tr/paketler/">https://svn.uludag.org.tr/paketler/</a>). 
+Pardus Çalışan CD'deki uygulamaların kaynak kodlarını sürüm kontrol servisimiz olan subversion depomuzdan alabilirsiniz (<a href="https://svn.pardus.org.tr/paketler/">https://svn.pardus.org.tr/paketler/</a>). 
 <br><br>
-Subversion kullanımı ile ilgili ayrıntılı bilgi <a href="http://www.uludag.org.tr/belgeler/gelistirici/index.html">Yeni Geliştirici Kılavuzu</a> belgesinden alınabilir.
+Subversion kullanımı ile ilgili ayrıntılı bilgi <a href="http://www.pardus.org.tr/belgeler/gelistirici/index.html">Yeni Geliştirici Kılavuzu</a> belgesinden alınabilir.
 
 @@Hata Raporlama / Yardım
 
