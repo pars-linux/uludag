@@ -38,6 +38,7 @@ import Success
 import UpdateWizardDialog
 import FastUpdatesDialog
 import CustomUpdatesDialog
+import Formatter
 
 # Pisi Imports
 import pisi.ui
@@ -171,30 +172,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
-        if downloaded_size >= 1024*1024:
-            downloadedText = str(round(float(downloaded_size)/float(1024*1024),1))+ i18n(" MB")
-        elif downloaded_size >= 1024:
-            downloadedText = str(round(float(downloaded_size)/float(1024),1)) + i18n(" KB")
-        else:
-            downloadedText = str(round(downloaded_size,1)) + i18n(" Bytes")
-
-        if total_size >= 1024*1024:
-            totalText = str(round(float(total_size)/float(1024*1024),1))+ i18n(" MB")
-        elif total_size >= 1024:
-            totalText = str(round(float(total_size)/float(1024),1)) + i18n(" KB")
-        else:
-            totalText = str(round(total_size,1)) + i18n(" Bytes")
+        downloadedText = FormatNumber(downloaded_size)
+        totalText = FormatNumber(total_size)
 
         self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
         self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
-    def pisiError(self, msg):
-        self.pDialog.closeForced()
-        if self.errorMessage:
-            self.errorMessage = self.errorMessage+msg
-        else:
-            self.errorMessage = msg
-        
     def updateDetails(self,selection):
 
         icon =  pisi.packagedb.get_package(selection.text(0)).icon
@@ -217,13 +200,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.infoLabel.setText(u"%s" % self.package.summary)
         
         size = self.package.installedSize
-        
-        if size >= 1024*1024:
-            size_string = str(size/(1024*1024))+" MB"
-        elif size >= 1024:
-            size_string = str(size/1024)+" KB"
-        else:
-            size_string = str(size)+ i18n(" Byte")
+        size_string = FormatNumber(size)
 
         self.moreInfoLabelDetails.setText(i18n("Program Version :")+QString(" <b>")+QString(self.package.version)+QString("</b><br>")+i18n("Program Size :")+QString("<b> ")+QString(size_string)+QString("</b>"))
             
@@ -270,12 +247,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateSelectionInfo(self):
         if len(self.selectedItems):
-            if self.totalSelectedSize >= 1024*1024 :
-                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 MB').arg(len(self.selectedItems)).arg(self.totalSelectedSize/(1024*1024)))
-            elif self.totalSelectedSize >= 1024 :
-                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 KB').arg(len(self.selectedItems)).arg(self.totalSelectedSize/(1024)))
-            else:
-                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 Bytes').arg(len(self.selectedItems)).arg(self.totalSelectedSize))
+            self.selectionInfo.setText(i18n('Selected %1 packages, total size %s').arg(len(self.selectedItems)).arg(FormatNumber(self.totalSelectedSize)))
         else:
             self.selectionInfo.setText(i18n("No package selected"))
         
@@ -476,7 +448,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     item = QListViewItem(self.fastUpdatesDialog.listView,app)
                     item.setText(1,packageHistory.version)
                     item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
-            self.fastUpdatesDialog.installSizeLabel.setText(i18n('Total size: %1 MB').arg(self.installSize/(1024*1024)))
+            self.fastUpdatesDialog.installSizeLabel.setText(i18n('Total size: %s').arg(FormatNumber(self.installSize)))
         else:
             self.updateWizard.setAppropriate(self.fastUpdatesDialog, False)
             self.updateWizard.showPage(self.customUpdatesDialog)
@@ -487,7 +459,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 item = QListViewItem(self.customUpdatesDialog.listView,app)
                 item.setText(1,packageHistory.version)
                 item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
-            self.customUpdatesDialog.installSizeLabel.setText(i18n('Total size: %1 MB').arg(self.installSize/(1024*1024)))
+            self.customUpdatesDialog.installSizeLabel.setText(i18n('Total size: %s').arg(FormatNumber(self.installSize)))
                    
     def installSingle(self):
         app = []
