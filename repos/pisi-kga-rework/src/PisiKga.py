@@ -77,21 +77,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
-        self.errorMessage = None
-        self.oldFilename = None
-        self.updatedRepo = None
         self.pDialog = ProgressDialog.ProgressDialog(self)
-        self.selectedItems = []
-        self.totalSelectedSize = 0
-        self.confirmed = None
-        self.operation = None
-        self.currentOperation = i18n("downloading")
-        self.operationInfo = None
-        self.index = 1
-        self.totalApps = None
         self.packagesOrder = []
-        self.infoLabel.setPaletteBackgroundColor(self.frame10.paletteBackgroundColor())
-
+        
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
         self.command.initDatabase()
@@ -120,110 +108,49 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
                 sys.exit(1)
             elif eventType == CustomEvent.Finished:
-                self.finished()
-                self.index = 1
-                self.totalApps = None
-                if self.operation == "remove":
-                    self.currentOperation = i18n("removing")
-            elif eventType == CustomEvent.RepositoryUpdate: 
-                self.pDialog.setCaption(i18n("Updating repositories"))
-                self.updatedRepo = eventData
-                self.pDialog.show()
+                pass
+                # REDO
+            elif eventType == CustomEvent.RepositoryUpdate:
+                pass
+                # REDO
             elif eventType == CustomEvent.PisiWarning:
+                # RETHINK
                 KMessageBox.information(self,eventData,i18n("Pisi Info"))
             elif eventType == CustomEvent.PisiError:
+                # RETHINK
                 self.pisiError(eventData)
+                # RETHINK
             elif eventType == CustomEvent.PisiInfo:
+                # RETHINK
                 self.operationInfo = eventData
+                # RETHINK
             elif eventType == CustomEvent.AskConfirmation:
                 self.showConfirm()
             elif eventType == CustomEvent.UpdateProgress:
-                self.filename = eventData["filename"]
-                self.percent = eventData["percent"]
-                self.rate = round(eventData["rate"],1)
-                self.symbol = eventData["symbol"]
-                self.downloaded = eventData["downloaded_size"]
-                self.totalsize = eventData["total_size"]
-                self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
+                filename = eventData["filename"]
+                percent = eventData["percent"]
+                rate = round(eventData["rate"],1)
+                symbol = eventData["symbol"]
+                downloaded = eventData["downloaded_size"]
+                totalsize = eventData["total_size"]
+                self.updateProgressBar(filename, percent, rate, symbol, downloaded, totalsize)
             elif eventType == CustomEvent.UpdateListing:
                 self.updateListing()
             elif eventType == CustomEvent.PisiNotify:
-                if eventData in ["installed","upgraded","removed"]:
-                    self.index += 1
-                elif isinstance(eventData,list):
-                    self.packagesOrder = eventData
-                    self.totalApps = len(self.packagesOrder)
-                elif eventData and self.operation != "remove":
-                    self.currentOperation = eventData
-                    self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
-                
+                # RETHINK
             elif eventType == CustomEvent.NewRepoAdded:
                 if self.pref:
                     self.pref.updateListView()
-        # Now, pisi commands
-        elif eventType < PisiCommand.LastEntry :
-            if eventType == PisiCommand.AddRepo:
-                self.command.addRepo(eventData[0],eventData[1])
-            elif eventType == PisiCommand.RemoveRepo:
-                self.command.removeRepo(eventData)
-            elif eventType == PisiCommand.SwapRepos:
-                self.command.swapRepos(eventData[0],eventData[1])
-            elif eventType == PisiCommand.UpdateSingleRepo:
-                self.command.updateRepo(eventData)
-            elif eventType == PisiCommand.UpdateAllRepos:
-                self.command.updateAllRepos()
         # Rest
         else:
             print 'Unhandled event:',eventType,'with data',eventData
     
     def showConfirm(self):
-        self.confirmed = KMessageBox.questionYesNo(self, self.operationInfo, i18n("PiSi Info"))
-        event = QCustomEvent(CustomEvent.UserConfirmed)
-        if self.confirmed == KMessageBox.No:
-            event.setData("False")
-            self.finished()
-        else:
-            event.setData("True")
-        kapp.postEvent(self.command.pisiui,event)
+        # RETHINK
     
     def finished(self):
-        self.queryEdit.clear()
-        self.pDialog.closeForced()
-        self.resetProgressBar()
-        text = None
-
-        if self.confirmed == KMessageBox.No:
-            pass
-        elif not self.errorMessage:
-            success = Success.Success(self)
-            if self.totalApps == 0:
-                KMessageBox.information(self, i18n("No package found to operate on"),i18n("PiSi Info"))
-                return
-            elif self.updatedRepo:
-                success.infoLabel.setText(i18n("All repositories are successfully updated!"))
-                success.showButton.hide()
-            elif self.operation == "install":
-                success.infoLabel.setText(i18n("All selected packages are successfully installed!"))
-                text = i18n("installed")
-            elif self.operation == "remove":
-                success.infoLabel.setText(i18n("All selected packages are successfully removed!"))
-                text = i18n("removed")
-            else:
-                success.infoLabel.setText(i18n("All selected packages are successfully updated!"))
-                text = i18n("updated")
-
-            if text:
-                for i in self.packagesOrder:
-                    success.infoBrowser.append(i+" "+text)
-                    
-            self.operation = None
-            success.show()
-        else:
-            KMessageBox.error(self, self.errorMessage, i18n("PiSi Error"))
-
-        self.installRemoveFinished()
-        self.errorMessage = None
-
+        # RETHINK
+        
     def resetProgressBar(self):
         self.pDialog.progressBar.setProgress(0)
         self.pDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
@@ -472,15 +399,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updatePackages(shownPackages)
 
     def installRemoveFinished(self):
-        self.selectedItems = []
-        self.totalSelectedSize = 0
-        self.installOrRemoveButton.setEnabled(False)
-        self.updateListing()
+        # RETHINK
         
     def installSinglePackage(self,package):
-        self.selectedItems.append(package)
-        self.operation = "install"
-        self.command.install(self.selectedItems)
+        # RETHINK
                     
     def installRemove(self):
 
