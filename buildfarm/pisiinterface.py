@@ -21,13 +21,7 @@ import pisi.fetcher
 """ BuildFarm Modules """
 import buildfarm.config as config
 import buildfarm.logger as logger
-
-
-Get   = lambda j, w: \
-          [x for x in j.childNodes \
-              if x.nodeType == x.ELEMENT_NODE \
-              if x.tagName == w]
-Strip = lambda x: x.strip("\n\t\t\t").strip("\n\t\t")
+from buildfarm import Get
 
 
 class PisiError(Exception):
