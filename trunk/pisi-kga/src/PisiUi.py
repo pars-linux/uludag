@@ -51,9 +51,7 @@ class PisiUi(pisi.ui.UI,QObject):
         QThread.postEvent(self.receiver,cEvent)
 
     def info(self, msg):
-        cEvent = QCustomEvent(CustomEvent.PisiInfo)
-        cEvent.setData(msg)
-        QThread.postEvent(self.receiver,cEvent)
+        pass
 
     def confirm(self, msg):
         cEvent = QCustomEvent(CustomEvent.AskConfirmation)
@@ -66,7 +64,6 @@ class PisiUi(pisi.ui.UI,QObject):
         # confirms it hits CustomEvent.UserConfirmed in customEvent and next we are here in
         # the Thread and self.confirmed is already set
        
-        # This needs more work, check http://bugs.uludag.org.tr/show_bug.cgi?id=1258
         if self.confirmed:
             self.confirmed = None
             return True

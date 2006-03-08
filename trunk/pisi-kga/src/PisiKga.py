@@ -28,6 +28,7 @@ import kdedesigner
 
 # Local imports
 from Enums import *
+from Formatter import *
 import HelpDialog
 import MainWindow
 import ProgressDialog
@@ -77,25 +78,23 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
-        self.errorMessage = None
-        self.oldFilename = None
-        self.updatedRepo = None
-        self.pDialog = ProgressDialog.ProgressDialog(self)
-        self.selectedItems = []
-        self.totalSelectedSize = 0
-        self.confirmed = None
-        self.operation = None
-        self.currentOperation = i18n("downloading")
-        self.operationInfo = None
-        self.index = 1
-        self.totalApps = None
+        self.progressDialog = ProgressDialog.ProgressDialog(self)
         self.packagesOrder = []
-        self.infoLabel.setPaletteBackgroundColor(self.frame10.paletteBackgroundColor())
-
+        self.selectedItems = []
+        self.currentOperation = None
+        self.currentFile = None
+        self.totalAppCount = 1
+        self.currentAppIndex = 1
+        self.totalSelectedSize = 0
+        
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
         self.command.initDatabase()
 
+        # Check for empty repo.
+        self.initialCheck()
+
+    def initialCheck(self):
         if not nonPrivMode:
             try:
                 repo = pisi.context.repodb.list()[0]
@@ -104,7 +103,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             except:
                 confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
                 if confirm == KMessageBox.Yes:
-                    self.command.addRepo('pardus', 'http://paketler.uludag.org.tr/pardus-1.0/pisi-index.xml')            
+                    self.command.addRepo('pardus', 'http://paketler.uludag.org.tr/pardus-1.0/pisi-index.xml')
                     self.command.updateRepo('pardus')
                 else:
                     KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
@@ -114,157 +113,80 @@ class MainApplicationWidget(MainWindow.MainWindow):
         eventType = event.type()
         eventData = event.data()
 
-        # First, notification events
-        if eventType < CustomEvent.LastEntry :
-            if eventType == CustomEvent.InitError:
-                KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
-                sys.exit(1)
-            elif eventType == CustomEvent.Finished:
-                self.finished()
-                self.index = 1
-                self.totalApps = None
-                if self.operation == "remove":
-                    self.currentOperation = i18n("removing")
-            elif eventType == CustomEvent.RepositoryUpdate: 
-                self.pDialog.setCaption(i18n("Updating repositories"))
-                self.updatedRepo = eventData
-                self.pDialog.show()
-            elif eventType == CustomEvent.PisiWarning:
-                KMessageBox.information(self,eventData,i18n("Pisi Info"))
-            elif eventType == CustomEvent.PisiError:
-                self.pisiError(eventData)
-            elif eventType == CustomEvent.PisiInfo:
-                self.operationInfo = eventData
-            elif eventType == CustomEvent.AskConfirmation:
-                self.showConfirm()
-            elif eventType == CustomEvent.UpdateProgress:
-                self.filename = eventData["filename"]
-                self.percent = eventData["percent"]
-                self.rate = round(eventData["rate"],1)
-                self.symbol = eventData["symbol"]
-                self.downloaded = eventData["downloaded_size"]
-                self.totalsize = eventData["total_size"]
-                self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
-            elif eventType == CustomEvent.UpdateListing:
-                self.updateListing()
-            elif eventType == CustomEvent.PisiNotify:
-                if eventData in ["installed","upgraded","removed"]:
-                    self.index += 1
-                elif isinstance(eventData,list):
-                    self.packagesOrder = eventData
-                    self.totalApps = len(self.packagesOrder)
-                elif eventData and self.operation != "remove":
-                    self.currentOperation = eventData
-                    self.updateProgressBar(self.filename, self.percent, self.rate, self.symbol,self.downloaded,self.totalsize)
-                
-            elif eventType == CustomEvent.NewRepoAdded:
-                if self.pref:
-                    self.pref.updateListView()
-        # Now, pisi commands
-        elif eventType < PisiCommand.LastEntry :
-            if eventType == PisiCommand.AddRepo:
-                self.command.addRepo(eventData[0],eventData[1])
-            elif eventType == PisiCommand.RemoveRepo:
-                self.command.removeRepo(eventData)
-            elif eventType == PisiCommand.SwapRepos:
-                self.command.swapRepos(eventData[0],eventData[1])
-            elif eventType == PisiCommand.UpdateSingleRepo:
-                self.command.updateRepo(eventData)
-            elif eventType == PisiCommand.UpdateAllRepos:
-                self.command.updateAllRepos()
-        # Rest
+        if eventType == CustomEvent.InitError:
+            KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
+            sys.exit(1)
+        elif eventType == CustomEvent.Finished:
+            self.finished()
+        elif eventType == CustomEvent.PisiWarning:
+            pass
+        elif eventType == CustomEvent.PisiError:
+            self.showErrorMessage(eventData)
+        elif eventType == CustomEvent.AskConfirmation:
+            self.showConfirmationMessage(eventData)
+        elif eventType == CustomEvent.UpdateProgress:
+            self.currentFile = eventData["filename"]
+            percent = eventData["percent"]
+            rate = round(eventData["rate"],1)
+            symbol = eventData["symbol"]
+            downloaded = eventData["downloaded_size"]
+            totalsize = eventData["total_size"]
+            self.updateProgressBar(self.currentFile, percent, rate, symbol, downloaded, totalsize)
+        elif eventType == CustomEvent.UpdateListing:
+            self.updateListing()
+        elif eventType == CustomEvent.PisiNotify:
+            if isinstance(eventData,QString):
+                if eventData == i18n("removing"):
+                    self.currentFile = self.packagesOrder[self.currentAppIndex-1]
+                    self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalApps))*100)
+                    
+                self.currentOperation = eventData
+                self.updateProgressText()
+            elif eventData in ["installed","removed","upgraded"]:
+                self.currentAppIndex += 1
+            elif isinstance(eventData,list):
+                self.packagesOrder = eventData
+                self.totalApps = len(self.packagesOrder)
         else:
             print 'Unhandled event:',eventType,'with data',eventData
     
-    def showConfirm(self):
-        self.confirmed = KMessageBox.questionYesNo(self, self.operationInfo, i18n("PiSi Info"))
+    def showConfirmationMessage(self, question):
+        answer = KMessageBox.questionYesNo(self,question,i18n("PiSi Question"))
         event = QCustomEvent(CustomEvent.UserConfirmed)
-        if self.confirmed == KMessageBox.No:
-            event.setData("False")
-            self.finished()
+        if answer == KMessageBox.Yes:
+            event.setData(True)
         else:
-            event.setData("True")
-        kapp.postEvent(self.command.pisiui,event)
-    
+            event.setData(False)
+        QThread.postEvent(self.command.ui,event)
+
+    def showErrorMessage(self, message):
+        KMessageBox.error(self,message,i18n("PiSi Error"))
+            
     def finished(self):
-        self.queryEdit.clear()
-        self.pDialog.closeForced()
+        self.updateListing()
+        self.progressDialog.closeForced()
         self.resetProgressBar()
-        text = None
-
-        if self.confirmed == KMessageBox.No:
-            pass
-        elif not self.errorMessage:
-            success = Success.Success(self)
-            if self.totalApps == 0:
-                KMessageBox.information(self, i18n("No package found to operate on"),i18n("PiSi Info"))
-                return
-            elif self.updatedRepo:
-                success.infoLabel.setText(i18n("All repositories are successfully updated!"))
-                success.showButton.hide()
-            elif self.operation == "install":
-                success.infoLabel.setText(i18n("All selected packages are successfully installed!"))
-                text = i18n("installed")
-            elif self.operation == "remove":
-                success.infoLabel.setText(i18n("All selected packages are successfully removed!"))
-                text = i18n("removed")
-            else:
-                success.infoLabel.setText(i18n("All selected packages are successfully updated!"))
-                text = i18n("updated")
-
-            if text:
-                for i in self.packagesOrder:
-                    success.infoBrowser.append(i+" "+text)
-                    
-            self.operation = None
-            success.show()
-        else:
-            KMessageBox.error(self, self.errorMessage, i18n("PiSi Error"))
-
-        self.installRemoveFinished()
-        self.errorMessage = None
-
+        
     def resetProgressBar(self):
-        self.pDialog.progressBar.setProgress(0)
-        self.pDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
-        self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
-        self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> Unknown'))
+        self.progressDialog.progressBar.setProgress(0)
+        self.progressDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
+        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
+        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> Unknown'))
 
     def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
-        if rate < 0:
-            rate = 0
-
-        if filename.endswith(".pisi"):
-            self.pDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)').arg(self.currentOperation).arg(filename).arg(str(self.index)).arg(self.totalApps))
-        else:
-            self.totalAppCount = 1
-            self.pDialog.setLabelText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
-
-        self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
+        self.updateProgressText()
+        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
-        if downloaded_size >= 1024*1024:
-            downloadedText = str(round(float(downloaded_size)/float(1024*1024),1))+ i18n(" MB")
-        elif downloaded_size >= 1024:
-            downloadedText = str(round(float(downloaded_size)/float(1024),1)) + i18n(" KB")
-        else:
-            downloadedText = str(round(downloaded_size,1)) + i18n(" Bytes")
+        downloadedText = FormatNumber(downloaded_size)
+        totalText = FormatNumber(total_size)
 
-        if total_size >= 1024*1024:
-            totalText = str(round(float(total_size)/float(1024*1024),1))+ i18n(" MB")
-        elif total_size >= 1024:
-            totalText = str(round(float(total_size)/float(1024),1)) + i18n(" KB")
-        else:
-            totalText = str(round(total_size,1)) + i18n(" Bytes")
+        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
+        self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
-        self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
-        self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
-
-    def pisiError(self, msg):
-        self.pDialog.closeForced()
-        if self.errorMessage:
-            self.errorMessage = self.errorMessage+msg
-        else:
-            self.errorMessage = msg
+    def updateProgressText(self):
+        if self.currentFile:
+            self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
+                                             .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
         
     def updateDetails(self,selection):
 
@@ -288,13 +210,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.infoLabel.setText(u"%s" % self.package.summary)
         
         size = self.package.installedSize
-        
-        if size >= 1024*1024:
-            size_string = str(size/(1024*1024))+" MB"
-        elif size >= 1024:
-            size_string = str(size/1024)+" KB"
-        else:
-            size_string = str(size)+ i18n(" Byte")
+        size_string = FormatNumber(size)
 
         self.moreInfoLabelDetails.setText(i18n("Program Version :")+QString(" <b>")+QString(self.package.version)+QString("</b><br>")+i18n("Program Size :")+QString("<b> ")+QString(size_string)+QString("</b>"))
             
@@ -341,12 +257,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateSelectionInfo(self):
         if len(self.selectedItems):
-            if self.totalSelectedSize >= 1024*1024 :
-                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 MB').arg(len(self.selectedItems)).arg(self.totalSelectedSize/(1024*1024)))
-            elif self.totalSelectedSize >= 1024 :
-                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 KB').arg(len(self.selectedItems)).arg(self.totalSelectedSize/(1024)))
-            else:
-                self.selectionInfo.setText(i18n('Selected %1 packages, total size %2 Bytes').arg(len(self.selectedItems)).arg(self.totalSelectedSize))
+            self.selectionInfo.setText(i18n('Selected %1 packages, total size %2').arg(len(self.selectedItems)).arg(FormatNumber(self.totalSelectedSize)))
         else:
             self.selectionInfo.setText(i18n("No package selected"))
         
@@ -472,15 +383,12 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updatePackages(shownPackages)
 
     def installRemoveFinished(self):
-        self.selectedItems = []
-        self.totalSelectedSize = 0
-        self.installOrRemoveButton.setEnabled(False)
-        self.updateListing()
+        pass
+        # RETHINK
         
     def installSinglePackage(self,package):
-        self.selectedItems.append(package)
-        self.operation = "install"
-        self.command.install(self.selectedItems)
+        pass
+        # RETHINK
                     
     def installRemove(self):
 
@@ -494,8 +402,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
                                                 
         index = mainwidget.selectionGroup.selectedId()
         self.installOrRemoveButton.setEnabled(False)
-        self.pDialog.setCaption(i18n("Add or Remove Programs"))
-        self.pDialog.show()
+        self.progressDialog.setCaption(i18n("Add or Remove Programs"))
+        self.progressDialog.show()
 
         if index == 0: # Install baby
             self.operation = "install"
@@ -512,8 +420,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateSystemSelection(self):
         self.installOrRemoveButton.setEnabled(False)
         
-        self.pDialog.setCaption(i18n("Add or Remove Programs"))
-        self.pDialog.show()
+        self.progressDialog.setCaption(i18n("Add or Remove Programs"))
+        self.progressDialog.show()
         
         list = self.command.listUpgradable()
         self.totalAppCount = len(list)
@@ -552,7 +460,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     item = QListViewItem(self.fastUpdatesDialog.listView,app)
                     item.setText(1,packageHistory.version)
                     item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
-            self.fastUpdatesDialog.installSizeLabel.setText(i18n('Total size: %1 MB').arg(self.installSize/(1024*1024)))
+            self.fastUpdatesDialog.installSizeLabel.setText(i18n('Total size: %s').arg(FormatNumber(self.installSize)))
         else:
             self.updateWizard.setAppropriate(self.fastUpdatesDialog, False)
             self.updateWizard.showPage(self.customUpdatesDialog)
@@ -563,7 +471,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 item = QListViewItem(self.customUpdatesDialog.listView,app)
                 item.setText(1,packageHistory.version)
                 item.setText(2,pisi.packagedb.inst_packagedb.get_package(app).history[0].version)
-            self.customUpdatesDialog.installSizeLabel.setText(i18n('Total size: %1 MB').arg(self.installSize/(1024*1024)))
+            self.customUpdatesDialog.installSizeLabel.setText(i18n('Total size: %s').arg(FormatNumber(self.installSize)))
                    
     def installSingle(self):
         app = []
