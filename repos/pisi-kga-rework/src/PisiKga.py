@@ -81,6 +81,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progressDialog = ProgressDialog.ProgressDialog(self)
         self.packagesOrder = []
         self.selectedItems = []
+        self.currentOperation = None
+        self.totalAppCount = 0
+        self.currentAppIndex = 0
         self.totalSelectedSize = 0
         
         # Create a ThreadRunner and init the database
@@ -119,7 +122,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif eventType == CustomEvent.PisiError:
             self.showErrorMessage(eventData)
         elif eventType == CustomEvent.PisiInfo:
-            KMessageBox.information(self,eventData,i18n("PiSi Info"))
+            pass
+            #KMessageBox.information(self,eventData,i18n("PiSi Info"))
         elif eventType == CustomEvent.AskConfirmation:
             self.showConfirmationMessage(eventData)
         elif eventType == CustomEvent.UpdateProgress:
@@ -134,6 +138,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.updateListing()
         elif eventType == CustomEvent.PisiNotify:
             print 'Notify Event ',eventData
+            if isinstance(eventData,str):
+                self.currentOperation = eventData
+            elif isinstance(eventData,list):
+                self.packagesOrder = eventData
+                self.totalApps = len(self.packagesOrder)
         else:
             print 'Unhandled event:',eventType,'with data',eventData
     
@@ -154,28 +163,30 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.resetProgressBar()
         
     def resetProgressBar(self):
-        self.pDialog.progressBar.setProgress(0)
-        self.pDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
-        self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
-        self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> Unknown'))
+        self.progressDialog.progressBar.setProgress(0)
+        self.progressDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
+        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
+        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> Unknown'))
 
     def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
+        # This is truly weak
         if rate < 0:
             rate = 0
 
         if filename.endswith(".pisi"):
-            self.pDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)').arg(self.currentOperation).arg(filename).arg(str(self.index)).arg(self.totalApps))
+            self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
+                                             .arg(self.currentOperation).arg(filename).arg(self.currentAppIndex).arg(self.totalAppCount))
         else:
             self.totalAppCount = 1
-            self.pDialog.setLabelText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
+            self.progressDialog.setLabelText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
 
-        self.pDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
+        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
         downloadedText = FormatNumber(downloaded_size)
         totalText = FormatNumber(total_size)
 
-        self.pDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
-        self.pDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
+        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
+        self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
     def updateDetails(self,selection):
 
@@ -391,8 +402,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
                                                 
         index = mainwidget.selectionGroup.selectedId()
         self.installOrRemoveButton.setEnabled(False)
-        self.pDialog.setCaption(i18n("Add or Remove Programs"))
-        self.pDialog.show()
+        self.progressDialog.setCaption(i18n("Add or Remove Programs"))
+        self.progressDialog.show()
 
         if index == 0: # Install baby
             self.operation = "install"
@@ -409,8 +420,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def updateSystemSelection(self):
         self.installOrRemoveButton.setEnabled(False)
         
-        self.pDialog.setCaption(i18n("Add or Remove Programs"))
-        self.pDialog.show()
+        self.progressDialog.setCaption(i18n("Add or Remove Programs"))
+        self.progressDialog.show()
         
         list = self.command.listUpgradable()
         self.totalAppCount = len(list)
