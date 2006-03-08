@@ -132,9 +132,8 @@ msgid "<b>Downloaded/Total:</b> %1/%2"
 msgstr "<b>İndirilen/Toplam:</b> %1/%2"
 
 #: src/PisiKga.py:193
-#, fuzzy
 msgid "updating repository"
-msgstr "Depoyu Değiştir"
+msgstr "depo güncelleniyor"
 
 #: src/PisiKga.py:195
 msgid "Now %1 <b>%2</b> (%3 of %4)"
@@ -402,6 +401,7 @@ msgid ""
 "If checked, then updates for Pardus will be automatically checked and you "
 "will be notified"
 msgstr ""
+"Eğer etkin ise Pardus güncellemeleri otomatik olarak kontrol edilecek ve bilgi verilecektir"
 
 #: src/PreferencesDialog.py:180
 msgid "&General Settings"
@@ -420,6 +420,9 @@ msgid ""
 "Cleaning up the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
+"Sabit disk önbelleğinin temizlenmesi ile sabit diske indirilen \n"
+"tüm paketler silinecektir. Bu işlem kurulu olan programları silmeyecek\n"
+"ve sistem bütünlüğünü tehlikeye atmayacaktır."
 
 #: src/PreferencesDialog.py:185
 msgid "Cache usage"
@@ -443,7 +446,7 @@ msgstr "2000"
 
 #: src/PreferencesDialog.py:190
 msgid "&Use hard disk cache for downloaded software"
-msgstr ""
+msgstr "İ&ndirilen paketler için sabit disk önbelleğini kullan"
 
 #: src/PreferencesDialog.py:192
 msgid "C&ache"
