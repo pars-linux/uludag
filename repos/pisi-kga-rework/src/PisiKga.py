@@ -142,10 +142,8 @@ class MainApplicationWidget(MainWindow.MainWindow):
                     
                 self.currentOperation = eventData
                 self.updateProgressText()
-
-                if eventData == i18n("installed") or eventData == i18n("removed") or eventData == i18n("upgraded"):
-                    self.currentAppIndex += 1
-                
+            elif eventData in ["installed","removed","upgraded"]:
+                self.currentAppIndex += 1
             elif isinstance(eventData,list):
                 self.packagesOrder = eventData
                 self.totalApps = len(self.packagesOrder)
