@@ -28,7 +28,7 @@ kdedistutils.setup(
                         'src/Progress.ui','src/ProgressDialog.py','src/SuccessDialog.ui','src/Success.py',
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
                         'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py','src/UpdateWizardDialog.ui',
-                        'src/CustomUpdatesDialog.ui','src/FastUpdatesDialog.ui',
+                        'src/CustomUpdatesDialog.ui','src/FastUpdatesDialog.ui','src/Formatter.py',
                         'help',
                         ("/usr/kde/3.5/share/applications/kde/",["src/pisi-kga.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/pisi-kga-helper.desktop"]),

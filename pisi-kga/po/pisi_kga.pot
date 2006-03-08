@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-02 17:03+0200\n"
+"POT-Creation-Date: 2006-03-08 14:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,31 +16,31 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/PisiUi.py:82 src/PisiKga.py:88
+#: src/PisiUi.py:79
 msgid "downloading"
 msgstr ""
 
-#: src/PisiUi.py:84
+#: src/PisiUi.py:81
 msgid "installing"
 msgstr ""
 
-#: src/PisiUi.py:86
+#: src/PisiUi.py:83
 msgid "configuring"
 msgstr ""
 
-#: src/PisiUi.py:88
+#: src/PisiUi.py:85
 msgid "extracting"
 msgstr ""
 
-#: src/PisiUi.py:90 src/PisiKga.py:127
+#: src/PisiUi.py:87 src/PisiKga.py:139
 msgid "removing"
 msgstr ""
 
-#: src/Progress.py:60 src/PisiKga.py:231
+#: src/Progress.py:60 src/PisiKga.py:174
 msgid "<b>Downloaded/Total:</b> Unknown"
 msgstr ""
 
-#: src/Progress.py:61 src/PisiKga.py:230
+#: src/Progress.py:61 src/PisiKga.py:173
 msgid "<b>Speed:</b> Unknown"
 msgstr ""
 
@@ -48,204 +48,133 @@ msgstr ""
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: src/PisiKga.py:54
+#: src/PisiKga.py:55
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/PisiKga.py:64
+#: src/PisiKga.py:65
 msgid "Author"
 msgstr ""
 
-#: src/PisiKga.py:65
+#: src/PisiKga.py:66
 msgid "GUI Design & Usability"
 msgstr ""
 
-#: src/PisiKga.py:66
+#: src/PisiKga.py:67
 msgid "Search, Component/Category"
 msgstr ""
 
-#: src/PisiKga.py:67
+#: src/PisiKga.py:68
 msgid "Python coding help"
 msgstr ""
 
-#: src/PisiKga.py:68
+#: src/PisiKga.py:69
 msgid "Helping with PiSi API"
 msgstr ""
 
-#: src/PisiKga.py:69
+#: src/PisiKga.py:70
 msgid "Authors of PiSi API"
 msgstr ""
 
-#: src/PisiKga.py:70
+#: src/PisiKga.py:71
 msgid "Author of PyKDEeXtensions"
 msgstr ""
 
-#: src/PisiKga.py:105
+#: src/PisiKga.py:104
 msgid ""
 "Looks like PiSi repository database is empty\n"
 "Do you want to update repository now?"
 msgstr ""
 
-#: src/PisiKga.py:105
+#: src/PisiKga.py:104 src/PisiKga.py:154
 msgid "PiSi Question"
 msgstr ""
 
-#: src/PisiKga.py:110
+#: src/PisiKga.py:109
 msgid ""
 "You will not be able to install new programs or update old ones until you "
 "update repository."
 msgstr ""
 
-#: src/PisiKga.py:120
+#: src/PisiKga.py:117
 msgid ""
 "Pisi could not be started! Please make sure no other pisi process is running."
 msgstr ""
 
-#: src/PisiKga.py:120 src/Preferences.py:122 src/Preferences.py:139
+#: src/PisiKga.py:117 src/Preferences.py:122 src/Preferences.py:139
 msgid "Pisi Error"
 msgstr ""
 
-#: src/PisiKga.py:129
-msgid "Updating repositories"
-msgstr ""
-
-#: src/PisiKga.py:133
-msgid "Pisi Info"
-msgstr ""
-
-#: src/PisiKga.py:180 src/PisiKga.py:200
-msgid "PiSi Info"
-msgstr ""
-
-#: src/PisiKga.py:200
-msgid "No package found to operate on"
-msgstr ""
-
-#: src/PisiKga.py:203
-msgid "All repositories are successfully updated!"
-msgstr ""
-
-#: src/PisiKga.py:206
-msgid "All selected packages are successfully installed!"
-msgstr ""
-
-#: src/PisiKga.py:207
-msgid "installed"
-msgstr ""
-
-#: src/PisiKga.py:209
-msgid "All selected packages are successfully removed!"
-msgstr ""
-
-#: src/PisiKga.py:210
-msgid "removed"
-msgstr ""
-
-#: src/PisiKga.py:212
-msgid "All selected packages are successfully updated!"
-msgstr ""
-
-#: src/PisiKga.py:213
-msgid "updated"
-msgstr ""
-
-#: src/PisiKga.py:222 src/PisiKga.py:492
+#: src/PisiKga.py:163 src/PisiKga.py:400
 msgid "PiSi Error"
 msgstr ""
 
-#: src/PisiKga.py:229
+#: src/PisiKga.py:172
 msgid "<b>Preparing PiSi...</b>"
 msgstr ""
 
-#: src/PisiKga.py:238
-msgid "Now %1 <b>%2</b> (%3 of %4)"
-msgstr ""
-
-#: src/PisiKga.py:241
-msgid "Updating repo <b>%1</b>"
-msgstr ""
-
-#: src/PisiKga.py:243
+#: src/PisiKga.py:178
 msgid "<b>Speed:</b> %1 %2"
 msgstr ""
 
-#: src/PisiKga.py:246 src/PisiKga.py:253
-msgid " MB"
-msgstr ""
-
-#: src/PisiKga.py:248 src/PisiKga.py:255
-msgid " KB"
-msgstr ""
-
-#: src/PisiKga.py:250 src/PisiKga.py:257
-msgid " Bytes"
-msgstr ""
-
-#: src/PisiKga.py:259
+#: src/PisiKga.py:183
 msgid "<b>Downloaded/Total:</b> %1/%2"
 msgstr ""
 
-#: src/PisiKga.py:297
-msgid " Byte"
+#: src/PisiKga.py:188
+msgid "Now %1 <b>%2</b> (%3 of %4)"
 msgstr ""
 
-#: src/PisiKga.py:299
+#: src/PisiKga.py:215
 msgid "Program Version :"
 msgstr ""
 
-#: src/PisiKga.py:299
+#: src/PisiKga.py:215
 msgid "Program Size :"
 msgstr ""
 
-#: src/PisiKga.py:345
-msgid "Selected %1 packages, total size %2 MB"
+#: src/PisiKga.py:260
+msgid "Selected %1 packages, total size %2"
 msgstr ""
 
-#: src/PisiKga.py:347
-msgid "Selected %1 packages, total size %2 KB"
-msgstr ""
-
-#: src/PisiKga.py:349
-msgid "Selected %1 packages, total size %2 Bytes"
-msgstr ""
-
-#: src/PisiKga.py:351 src/MainWindow.py:231
+#: src/PisiKga.py:262 src/MainWindow.py:231
 msgid "No package selected"
 msgstr ""
 
-#: src/PisiKga.py:452
+#: src/PisiKga.py:363
 msgid "Remove package(s)"
 msgstr ""
 
-#: src/PisiKga.py:457
+#: src/PisiKga.py:368
 msgid "Update package(s)"
 msgstr ""
 
-#: src/PisiKga.py:464
+#: src/PisiKga.py:375
 msgid "Install package(s)"
 msgstr ""
 
-#: src/PisiKga.py:497 src/PisiKga.py:515
+#: src/PisiKga.py:405 src/PisiKga.py:423
 msgid "Add or Remove Programs"
 msgstr ""
 
-#: src/PisiKga.py:529 src/FastUpdatesDialog.py:54
+#: src/PisiKga.py:437 src/FastUpdatesDialog.py:54
 msgid "Fast Updates (only security)"
 msgstr ""
 
-#: src/PisiKga.py:530 src/CustomUpdatesDialog.py:55
+#: src/PisiKga.py:438 src/CustomUpdatesDialog.py:55
 msgid "Custom Updates"
 msgstr ""
 
-#: src/PisiKga.py:555 src/PisiKga.py:566
-msgid "Total size: %1 MB"
+#: src/PisiKga.py:463 src/PisiKga.py:474
+#, python-format
+msgid "Total size: %s"
 msgstr ""
 
-#: src/PisiKga.py:743
+#: src/PisiKga.py:651
 msgid "Package to install"
 msgstr ""
 
-#: src/PisiKga.py:746
+#: src/PisiKga.py:654
 msgid "Pisi KGA is already running!"
 msgstr ""
 
@@ -358,81 +287,141 @@ msgid ""
 "locations where new software can be fetched."
 msgstr ""
 
-#: src/PreferencesDialog.py:48 src/PreferencesDialog.py:116
+#: src/PreferencesDialog.py:53 src/PreferencesDialog.py:160
 msgid "Repository Name"
 msgstr ""
 
-#: src/PreferencesDialog.py:49 src/PreferencesDialog.py:117
+#: src/PreferencesDialog.py:54 src/PreferencesDialog.py:161
 msgid "Address"
 msgstr ""
 
-#: src/PreferencesDialog.py:112
+#: src/PreferencesDialog.py:153
 msgid "PiSi Settings"
 msgstr ""
 
-#: src/PreferencesDialog.py:113
-msgid "List only programs"
+#: src/PreferencesDialog.py:155
+msgid "F1"
 msgstr ""
 
-#: src/PreferencesDialog.py:114
-msgid "Automatically check for updates when started"
-msgstr ""
-
-#: src/PreferencesDialog.py:115
-msgid "General Settings"
-msgstr ""
-
-#: src/PreferencesDialog.py:118
+#: src/PreferencesDialog.py:162
 msgid ""
 "You can see current software repositories and corresponding addresses here"
 msgstr ""
 
-#: src/PreferencesDialog.py:119
+#: src/PreferencesDialog.py:163
 msgid "&Add New Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:120
+#: src/PreferencesDialog.py:164
 msgid "Click here to add a new software repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:121
+#: src/PreferencesDialog.py:165
 msgid "&Edit Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:122
+#: src/PreferencesDialog.py:166
 msgid "Click here to modify the name or address of a repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:123
+#: src/PreferencesDialog.py:167
 msgid "&Remove Repository"
 msgstr ""
 
-#: src/PreferencesDialog.py:124
+#: src/PreferencesDialog.py:168
 msgid "Click here to delete a repository from the list"
 msgstr ""
 
-#: src/PreferencesDialog.py:125
+#: src/PreferencesDialog.py:169
 msgid "Move &Up"
 msgstr ""
 
-#: src/PreferencesDialog.py:126
+#: src/PreferencesDialog.py:170
+msgid "Click here to move the repository one level up"
+msgstr ""
+
+#: src/PreferencesDialog.py:171
 msgid "Move &Down"
 msgstr ""
 
-#: src/PreferencesDialog.py:127
+#: src/PreferencesDialog.py:172
+msgid "Click here to move the repository one level down"
+msgstr ""
+
+#: src/PreferencesDialog.py:173
 msgid "&Update All Repositories"
 msgstr ""
 
-#: src/PreferencesDialog.py:128
+#: src/PreferencesDialog.py:174
 msgid "Click here to update all repositories so that you can use  "
 msgstr ""
 
-#: src/PreferencesDialog.py:129
-msgid "Repositories"
+#: src/PreferencesDialog.py:175
+msgid "&Repositories"
 msgstr ""
 
-#: src/PreferencesDialog.py:131
-msgid "F1"
+#: src/PreferencesDialog.py:176
+msgid "&Show only desktop applications"
+msgstr ""
+
+#: src/PreferencesDialog.py:177
+msgid "If checked, then pisi will only show desktop applications"
+msgstr ""
+
+#: src/PreferencesDialog.py:178
+msgid "&Automatically check for updates when started"
+msgstr ""
+
+#: src/PreferencesDialog.py:179 src/PreferencesDialog.py:191
+msgid ""
+"If checked, then updates for Pardus will be automatically checked and you "
+"will be notified"
+msgstr ""
+
+#: src/PreferencesDialog.py:180
+msgid "&General Settings"
+msgstr ""
+
+#: src/PreferencesDialog.py:181
+msgid "Cache cleaning"
+msgstr ""
+
+#: src/PreferencesDialog.py:182
+msgid "C&lean disk cache now"
+msgstr ""
+
+#: src/PreferencesDialog.py:183
+msgid ""
+"Cleaning up the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+
+#: src/PreferencesDialog.py:185
+msgid "Cache usage"
+msgstr ""
+
+#: src/PreferencesDialog.py:186
+msgid "Maximum cache size:"
+msgstr ""
+
+#: src/PreferencesDialog.py:187
+msgid "<i>(Use 0 for no limit)</i>"
+msgstr ""
+
+#: src/PreferencesDialog.py:188
+msgid "Mb"
+msgstr ""
+
+#: src/PreferencesDialog.py:189
+msgid "2000"
+msgstr ""
+
+#: src/PreferencesDialog.py:190
+msgid "&Use hard disk cache for downloaded software"
+msgstr ""
+
+#: src/PreferencesDialog.py:192
+msgid "C&ache"
 msgstr ""
 
 #: src/RepoDialog.py:69
@@ -481,6 +470,10 @@ msgstr ""
 
 #: src/SuccessDialog.py:74
 msgid "Show &More Information >>"
+msgstr ""
+
+#: src/Formatter.py:30
+msgid "Less than one kilobyte"
 msgstr ""
 
 #: src/Preferences.py:70
