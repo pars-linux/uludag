@@ -25,7 +25,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/PisiKga.py', 'src/ThreadRunner.py','src/MainWindow.ui',
-                        'src/Progress.ui','src/ProgressDialog.py','src/SuccessDialog.ui','src/Success.py',
+                        'src/Progress.py','src/ProgressDialog.ui','src/SuccessDialog.ui','src/Success.py',
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
                         'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py','src/UpdateWizardDialog.ui',
                         'src/CustomUpdatesDialog.ui','src/FastUpdatesDialog.ui','src/Formatter.py',

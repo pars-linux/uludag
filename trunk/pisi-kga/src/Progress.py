@@ -1,10 +1,10 @@
 from qt import *
 from kdecore import *
-import ProgressDialog
+from ProgressDialog import *
 
-class Progress(ProgressDialog.ProgressDialog):
+class Progress(ProgressDialog):
     def __init__(self, parent=None):
-        ProgressDialog.ProgressDialog.__init__(self)
+        ProgressDialog.__init__(self)
         animatedPisi = QMovie(locate("data","pisi_kga/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
@@ -19,7 +19,7 @@ class Progress(ProgressDialog.ProgressDialog):
         
     def close(self, alsoDelete=False):
         if self.forcedClose:
-            Progress.Progress.close(self,alsoDelete)
+            ProgressDialog.close(self,alsoDelete)
             self.forcedClose = False
             return True
         
@@ -30,4 +30,4 @@ class Progress(ProgressDialog.ProgressDialog):
         if event.key() == Qt.Key_Escape:
             return
         else:
-            Progress.Progress.keyPressEvent(self,event)
+            ProgressDialog.keyPressEvent(self,event)
