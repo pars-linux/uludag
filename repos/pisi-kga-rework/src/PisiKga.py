@@ -81,10 +81,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progressDialog = ProgressDialog.ProgressDialog(self)
         self.packagesOrder = []
         self.selectedItems = []
-        # This sucks, fix PiSi
-        self.currentOperation = i18n("downloading")
+        self.currentOperation = None
         self.currentFile = None
-        self.totalAppCount = 0
+        self.totalAppCount = 1
         self.currentAppIndex = 0
         self.totalSelectedSize = 0
         
@@ -114,6 +113,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         eventType = event.type()
         eventData = event.data()
 
+        #print 'Event Type: ',eventType, 'Event Data:',eventData
         if eventType == CustomEvent.InitError:
             KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
             sys.exit(1)
@@ -179,8 +179,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
     def updateProgressText(self):
-        self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
-                                         .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
+        if self.currentFile:
+            self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
+                                             .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
         
     def updateDetails(self,selection):
 
