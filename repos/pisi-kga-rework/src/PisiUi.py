@@ -51,9 +51,7 @@ class PisiUi(pisi.ui.UI,QObject):
         QThread.postEvent(self.receiver,cEvent)
 
     def info(self, msg):
-        cEvent = QCustomEvent(CustomEvent.PisiInfo)
-        cEvent.setData(msg)
-        QThread.postEvent(self.receiver,cEvent)
+        pass
 
     def confirm(self, msg):
         cEvent = QCustomEvent(CustomEvent.AskConfirmation)

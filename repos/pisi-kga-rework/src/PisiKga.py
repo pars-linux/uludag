@@ -121,9 +121,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
             pass
         elif eventType == CustomEvent.PisiError:
             self.showErrorMessage(eventData)
-        elif eventType == CustomEvent.PisiInfo:
-            pass
-            #KMessageBox.information(self,eventData,i18n("PiSi Info"))
         elif eventType == CustomEvent.AskConfirmation:
             self.showConfirmationMessage(eventData)
         elif eventType == CustomEvent.UpdateProgress:
