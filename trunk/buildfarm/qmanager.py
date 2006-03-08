@@ -64,18 +64,22 @@ class QueueManager:
     def removeFromWaitQueue(self):
         if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
+            self.__serialize(self.waitQueue, "waitQueue")
         
     def removeFromWorkQueue(self, pspec):
         if self.workQueue.__contains__(pspec):
             self.workQueue.remove(pspec)
+            self.__serialize(self.workQueue, "workQueue")
         
     def appendToWorkQueue(self, pspec):
          if not self.workQueue.__contains__(pspec):
-             self.workQueue.append(pspec)
+            self.workQueue.append(pspec)
+            self.__serialize(self.workQueue, "workQueue")
 
     def appendToWaitQueue(self, pspec):
          if not self.waitQueue.__contains__(pspec):
-             self.waitQueue.append(pspec)
+            self.waitQueue.append(pspec)
+            self.__serialize(self.waitQueue, "waitQueue")
 
     def transferToWorkQueue(self, pspec):
         self.appendToWorkQueue(pspec)
