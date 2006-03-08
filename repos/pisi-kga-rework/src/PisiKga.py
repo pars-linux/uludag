@@ -84,7 +84,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.currentOperation = None
         self.currentFile = None
         self.totalAppCount = 1
-        self.currentAppIndex = 0
+        self.currentAppIndex = 1
         self.totalSelectedSize = 0
         
         # Create a ThreadRunner and init the database
@@ -113,7 +113,6 @@ class MainApplicationWidget(MainWindow.MainWindow):
         eventType = event.type()
         eventData = event.data()
 
-        #print 'Event Type: ',eventType, 'Event Data:',eventData
         if eventType == CustomEvent.InitError:
             KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
             sys.exit(1)
@@ -137,8 +136,16 @@ class MainApplicationWidget(MainWindow.MainWindow):
             self.updateListing()
         elif eventType == CustomEvent.PisiNotify:
             if isinstance(eventData,QString):
+                if eventData == i18n("removing"):
+                    self.currentFile = self.packagesOrder[self.currentAppIndex-1]
+                    self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalApps))*100)
+                    
                 self.currentOperation = eventData
                 self.updateProgressText()
+
+                if eventData == i18n("installed") or eventData == i18n("removed") or eventData == i18n("upgraded"):
+                    self.currentAppIndex += 1
+                
             elif isinstance(eventData,list):
                 self.packagesOrder = eventData
                 self.totalApps = len(self.packagesOrder)
