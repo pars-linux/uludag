@@ -81,6 +81,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progressDialog = ProgressDialog.ProgressDialog(self)
         self.packagesOrder = []
         self.selectedItems = []
+        self.totalSelectedSize = 0
         
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
@@ -245,7 +246,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateSelectionInfo(self):
         if len(self.selectedItems):
-            self.selectionInfo.setText(i18n('Selected %1 packages, total size %s').arg(len(self.selectedItems)).arg(FormatNumber(self.totalSelectedSize)))
+            self.selectionInfo.setText(i18n('Selected %1 packages, total size %2').arg(len(self.selectedItems)).arg(FormatNumber(self.totalSelectedSize)))
         else:
             self.selectionInfo.setText(i18n("No package selected"))
         
