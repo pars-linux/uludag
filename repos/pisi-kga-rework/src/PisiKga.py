@@ -81,7 +81,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progressDialog = ProgressDialog.ProgressDialog(self)
         self.packagesOrder = []
         self.selectedItems = []
-        self.currentOperation = None
+        # This sucks, fix PiSi
+        self.currentOperation = i18n("downloading")
+        self.currentFile = None
         self.totalAppCount = 0
         self.currentAppIndex = 0
         self.totalSelectedSize = 0
@@ -124,19 +126,19 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif eventType == CustomEvent.AskConfirmation:
             self.showConfirmationMessage(eventData)
         elif eventType == CustomEvent.UpdateProgress:
-            filename = eventData["filename"]
+            self.currentFile = eventData["filename"]
             percent = eventData["percent"]
             rate = round(eventData["rate"],1)
             symbol = eventData["symbol"]
             downloaded = eventData["downloaded_size"]
             totalsize = eventData["total_size"]
-            self.updateProgressBar(filename, percent, rate, symbol, downloaded, totalsize)
+            self.updateProgressBar(self.currentFile, percent, rate, symbol, downloaded, totalsize)
         elif eventType == CustomEvent.UpdateListing:
             self.updateListing()
         elif eventType == CustomEvent.PisiNotify:
-            print 'Notify Event ',eventData
-            if isinstance(eventData,str):
+            if isinstance(eventData,QString):
                 self.currentOperation = eventData
+                self.updateProgressText()
             elif isinstance(eventData,list):
                 self.packagesOrder = eventData
                 self.totalApps = len(self.packagesOrder)
@@ -156,6 +158,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         KMessageBox.error(self,message,i18n("PiSi Error"))
             
     def finished(self):
+        self.updateListing()
         self.progressDialog.closeForced()
         self.resetProgressBar()
         
@@ -166,17 +169,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> Unknown'))
 
     def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
-        # This is truly weak
-        if rate < 0:
-            rate = 0
-
-        if filename.endswith(".pisi"):
-            self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
-                                             .arg(self.currentOperation).arg(filename).arg(self.currentAppIndex).arg(self.totalAppCount))
-        else:
-            self.totalAppCount = 1
-            self.progressDialog.setLabelText(i18n('Updating repo <b>%1</b>').arg(self.updatedRepo))
-
+        self.updateProgressText()
         self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
         downloadedText = FormatNumber(downloaded_size)
@@ -185,6 +178,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
         self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
+    def updateProgressText(self):
+        self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
+                                         .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
+        
     def updateDetails(self,selection):
 
         icon =  pisi.packagedb.get_package(selection.text(0)).icon
