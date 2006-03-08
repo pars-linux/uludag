@@ -31,7 +31,7 @@ from Enums import *
 from Formatter import *
 import HelpDialog
 import MainWindow
-import ProgressDialog
+import Progress
 import Preferences
 import ThreadRunner
 import PisiUi
@@ -78,7 +78,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
     def __init__(self, parent=None):
         MainWindow.MainWindow.__init__(self, parent, "PiSi KGA")
 
-        self.progressDialog = ProgressDialog.ProgressDialog(self)
+        self.progressDialog = Progress.Progress(self)
         self.packagesOrder = []
         self.selectedItems = []
         self.currentOperation = None

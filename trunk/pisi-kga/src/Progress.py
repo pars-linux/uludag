@@ -1,10 +1,10 @@
 from qt import *
 from kdecore import *
-import Progress
+import ProgressDialog
 
-class ProgressDialog(Progress.Progress):
+class Progress(ProgressDialog.ProgressDialog):
     def __init__(self, parent=None):
-        Progress.Progress.__init__(self)
+        ProgressDialog.ProgressDialog.__init__(self)
         animatedPisi = QMovie(locate("data","pisi_kga/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
