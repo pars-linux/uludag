@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>Progress</class>
+<class>ProgressDialog</class>
 <widget class="QDialog">
     <property name="name">
-        <cstring>Progress</cstring>
+        <cstring>ProgressDialog</cstring>
     </property>
     <property name="geometry">
         <rect>
@@ -11,6 +11,9 @@
             <width>488</width>
             <height>167</height>
         </rect>
+    </property>
+    <property name="caption">
+        <string>Progress</string>
     </property>
     <property name="modal">
         <bool>true</bool>
