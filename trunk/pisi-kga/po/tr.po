@@ -144,9 +144,8 @@ msgid "Program Size :"
 msgstr "Programın Büyüklüğü: "
 
 #: src/PisiKga.py:260
-#, fuzzy
 msgid "Selected %1 packages, total size %2"
-msgstr "%1 paket seçili, toplam %2 KB"
+msgstr "%1 paket seçili, toplam boyut %2"
 
 #: src/PisiKga.py:262 src/MainWindow.py:231
 msgid "No package selected"
@@ -177,9 +176,8 @@ msgid "Custom Updates"
 msgstr "Özel güncelleme"
 
 #: src/PisiKga.py:463 src/PisiKga.py:474
-#, fuzzy, python-format
 msgid "Total size: %s"
-msgstr "Toplam kurulum boyu: %1 MB"
+msgstr "Toplam boyut: %s"
 
 #: src/PisiKga.py:651
 msgid "Package to install"
@@ -357,18 +355,16 @@ msgid "Move &Up"
 msgstr "&Yukarı Taşı"
 
 #: src/PreferencesDialog.py:170
-#, fuzzy
 msgid "Click here to move the repository one level up"
-msgstr "Listeden bir depo silmek için burayı tıklayın"
+msgstr "Depoyu bir satır yukarı kaydırmak için tıklayın"
 
 #: src/PreferencesDialog.py:171
 msgid "Move &Down"
 msgstr "&Aşağı Taşı"
 
 #: src/PreferencesDialog.py:172
-#, fuzzy
 msgid "Click here to move the repository one level down"
-msgstr "Listeden bir depo silmek için burayı tıklayın"
+msgstr "Depoyu bir satır aşağı kaydırmak için tıklayın"
 
 #: src/PreferencesDialog.py:173
 msgid "&Update All Repositories"
@@ -380,22 +376,20 @@ msgstr ""
 "Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
 
 #: src/PreferencesDialog.py:175
-#, fuzzy
 msgid "&Repositories"
-msgstr "Depolar"
+msgstr "&Depolar"
 
 #: src/PreferencesDialog.py:176
 msgid "&Show only desktop applications"
-msgstr ""
+msgstr "&Sadece masaüstü uygulamalarını göster"
 
 #: src/PreferencesDialog.py:177
 msgid "If checked, then pisi will only show desktop applications"
-msgstr ""
+msgstr "Eğer seçili ise, pisi sadece masaüstü uygulamalarını gösterecektir"
 
 #: src/PreferencesDialog.py:178
-#, fuzzy
 msgid "&Automatically check for updates when started"
-msgstr "Her açılışta yazılım güncellemelerini kontrol et"
+msgstr "&Her açılışta yazılım güncellemelerini kontrol et"
 
 #: src/PreferencesDialog.py:179 src/PreferencesDialog.py:191
 msgid ""
@@ -404,17 +398,16 @@ msgid ""
 msgstr ""
 
 #: src/PreferencesDialog.py:180
-#, fuzzy
 msgid "&General Settings"
-msgstr "Genel Ayarlar"
+msgstr "&Genel Ayarlar"
 
 #: src/PreferencesDialog.py:181
 msgid "Cache cleaning"
-msgstr ""
+msgstr "Önbellek temizleme"
 
 #: src/PreferencesDialog.py:182
 msgid "C&lean disk cache now"
-msgstr ""
+msgstr "Ö&nbelleği şimdi temizle"
 
 #: src/PreferencesDialog.py:183
 msgid ""
@@ -424,32 +417,31 @@ msgstr ""
 
 #: src/PreferencesDialog.py:185
 msgid "Cache usage"
-msgstr ""
+msgstr "Önbellek kullanımı"
 
 #: src/PreferencesDialog.py:186
 msgid "Maximum cache size:"
-msgstr ""
+msgstr "Azami önbellek boyutu:"
 
 #: src/PreferencesDialog.py:187
 msgid "<i>(Use 0 for no limit)</i>"
-msgstr ""
+msgstr "<i>(Sınır koymamak için 0 kullanın)</i>"
 
 #: src/PreferencesDialog.py:188
 msgid "Mb"
-msgstr ""
+msgstr "Mb"
 
 #: src/PreferencesDialog.py:189
 msgid "2000"
-msgstr ""
+msgstr "2000"
 
 #: src/PreferencesDialog.py:190
 msgid "&Use hard disk cache for downloaded software"
 msgstr ""
 
 #: src/PreferencesDialog.py:192
-#, fuzzy
 msgid "C&ache"
-msgstr "&Ara"
+msgstr "&Önbellek"
 
 #: src/RepoDialog.py:69
 msgid "Repository Dialog"
@@ -501,7 +493,7 @@ msgstr "&Daha fazla bilgi göster >>"
 
 #: src/Formatter.py:30
 msgid "Less than one kilobyte"
-msgstr ""
+msgstr "Bir kilobayttan az"
 
 #: src/Preferences.py:70
 msgid "Add New Repository"
@@ -602,60 +594,3 @@ msgid ""
 msgstr ""
 "Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
 "Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
-
-#~ msgid "Updating repositories"
-#~ msgstr "Depolar güncelleniyor"
-
-#~ msgid "Pisi Info"
-#~ msgstr "PiSi Bilgi"
-
-#~ msgid "PiSi Info"
-#~ msgstr "PiSi Bilgi"
-
-#~ msgid "No package found to operate on"
-#~ msgstr "Üzerinde işlem yapılacak paket bulunamadı"
-
-#~ msgid "All repositories are successfully updated!"
-#~ msgstr "Tüm depolar başarıyla güncellendi."
-
-#~ msgid "All selected packages are successfully installed!"
-#~ msgstr "Tüm paketler başarıyla yüklendi."
-
-#~ msgid "installed"
-#~ msgstr "yüklendi"
-
-#~ msgid "All selected packages are successfully removed!"
-#~ msgstr "Tüm paketler başarıyla kaldırıldı."
-
-#~ msgid "removed"
-#~ msgstr "kaldırıldı"
-
-#~ msgid "All selected packages are successfully updated!"
-#~ msgstr "Tüm paketler başarıyla güncellendi."
-
-#~ msgid "updated"
-#~ msgstr "güncellendi"
-
-#~ msgid "Updating repo <b>%1</b>"
-#~ msgstr "Güncellenen depo <b>%1</b>"
-
-#~ msgid " MB"
-#~ msgstr " MB"
-
-#~ msgid " KB"
-#~ msgstr " KB"
-
-#~ msgid " Bytes"
-#~ msgstr " Bayt"
-
-#~ msgid " Byte"
-#~ msgstr " Bayt"
-
-#~ msgid "Selected %1 packages, total size %2 MB"
-#~ msgstr "%1 paket seçili, toplam boyut %2 MB"
-
-#~ msgid "Selected %1 packages, total size %2 Bytes"
-#~ msgstr "%1 paket seçili, toplam %2 bayt"
-
-#~ msgid "List only programs"
-#~ msgstr "Sadece masaüstü programlarını listele"
