@@ -165,8 +165,10 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def showErrorMessage(self, message):
         KMessageBox.error(self,message,i18n("PiSi Error"))
+        self.finished()
             
     def finished(self):
+        self.selectedItems = []
         self.updateListing()
         self.progressDialog.closeForced()
         self.resetProgressBar()
