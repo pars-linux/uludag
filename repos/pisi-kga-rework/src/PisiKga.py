@@ -28,6 +28,7 @@ import kdedesigner
 
 # Local imports
 from Enums import *
+from Formatter import *
 import HelpDialog
 import MainWindow
 import ProgressDialog
@@ -38,7 +39,6 @@ import Success
 import UpdateWizardDialog
 import FastUpdatesDialog
 import CustomUpdatesDialog
-import Formatter
 
 # Pisi Imports
 import pisi.ui
@@ -80,6 +80,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
         self.progressDialog = ProgressDialog.ProgressDialog(self)
         self.packagesOrder = []
+        self.selectedItems = []
         
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
@@ -111,16 +112,13 @@ class MainApplicationWidget(MainWindow.MainWindow):
             KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
             sys.exit(1)
         elif eventType == CustomEvent.Finished:
-            pass
-        # REDO
+            self.finished()
         elif eventType == CustomEvent.PisiWarning:
-        # RETHINK
+            pass
         elif eventType == CustomEvent.PisiError:
             self.showErrorMessage(eventData)
         elif eventType == CustomEvent.PisiInfo:
-            # RETHINK
-            self.operationInfo = eventData
-            # RETHINK
+            KMessageBox.information(self,eventData,i18n("PiSi Info"))
         elif eventType == CustomEvent.AskConfirmation:
             self.showConfirmationMessage(eventData)
         elif eventType == CustomEvent.UpdateProgress:
@@ -134,7 +132,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         elif eventType == CustomEvent.UpdateListing:
             self.updateListing()
         elif eventType == CustomEvent.PisiNotify:
-            # RETHINK
+            print 'Notify Event ',eventData
         else:
             print 'Unhandled event:',eventType,'with data',eventData
     
@@ -148,11 +146,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         QThread.postEvent(self.command.ui,event)
 
     def showErrorMessage(self, message):
-        self.progressDialog.closeForced()
         KMessageBox.error(self,message,i18n("PiSi Error"))
             
     def finished(self):
-        # RETHINK
+        self.progressDialog.closeForced()
+        self.resetProgressBar()
         
     def resetProgressBar(self):
         self.pDialog.progressBar.setProgress(0)
@@ -373,9 +371,11 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.updatePackages(shownPackages)
 
     def installRemoveFinished(self):
+        pass
         # RETHINK
         
     def installSinglePackage(self,package):
+        pass
         # RETHINK
                     
     def installRemove(self):
