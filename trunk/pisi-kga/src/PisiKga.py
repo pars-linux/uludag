@@ -83,6 +83,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         self.selectedItems = []
         self.currentOperation = None
         self.currentFile = None
+        self.currentRepo = None
         self.totalAppCount = 1
         self.currentAppIndex = 1
         self.totalSelectedSize = 0
@@ -147,6 +148,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
             elif isinstance(eventData,list):
                 self.packagesOrder = eventData
                 self.totalApps = len(self.packagesOrder)
+        elif eventType == CustomEvent.RepositoryUpdate:
+            self.currentRepo = eventData
+            self.progressDialog.show()
         else:
             print 'Unhandled event:',eventType,'with data',eventData
     
@@ -185,6 +189,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
 
     def updateProgressText(self):
         if self.currentFile:
+            if self.currentFile.endswith(".xml"):
+                self.currentOperation = i18n("updating repository")
+                self.currentFile = self.currentRepo
             self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
                                              .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
         
