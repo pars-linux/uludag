@@ -99,7 +99,7 @@ if __name__ == "__main__":
     newpspecfiles     = r.getChanges(type = "A", filter="pspec.xml")
 
     if len(updatedpspecfiles + newpspecfiles):
-        queue = open(os.path.join(config.workDir, "workQueue"), "w")
+        queue = open(os.path.join(config.workDir, "workQueue"), "a")
         for pspec in updatedpspecfiles + newpspecfiles:
             queue.write("%s\n" % pspec)
         queue.close()  
