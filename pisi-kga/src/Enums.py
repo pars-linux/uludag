@@ -27,4 +27,4 @@ class CustomEvent:
      UpdateProgress,
      UpdateListing,
      PisiAck,
-     LastEntry) = range(QEvent.User, QEvent.User+14)
+     LastEntry) = range(QEvent.User, QEvent.User+13)
