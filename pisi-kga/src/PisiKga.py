@@ -169,6 +169,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
             
     def finished(self):
         self.selectedItems = []
+        self.currentAppIndex = 1
         self.updateListing()
         self.progressDialog.closeForced()
         self.resetProgressBar()
