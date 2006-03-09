@@ -114,6 +114,7 @@ class MainApplicationWidget(MainWindow.MainWindow):
         eventType = event.type()
         eventData = event.data()
 
+        print 'Event Type:',eventType,'Event Data:',eventData
         if eventType == CustomEvent.InitError:
             KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
             sys.exit(1)
@@ -140,7 +141,9 @@ class MainApplicationWidget(MainWindow.MainWindow):
                 if eventData == i18n("removing"):
                     self.currentFile = self.packagesOrder[self.currentAppIndex-1]
                     self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalApps))*100)
-                    
+                elif eventData == i18n("installing"):
+                    if not self.progressDialog.progressBar.progress():
+                        self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalApps))*100)
                 self.currentOperation = eventData
                 self.updateProgressText()
             elif eventData in ["installed","removed","upgraded"]:
