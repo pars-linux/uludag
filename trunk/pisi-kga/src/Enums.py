@@ -18,7 +18,6 @@ class CustomEvent:
     (InitError,
      Finished,
      RepositoryUpdate,
-     NewRepoAdded,
      PisiWarning,
      PisiError,
      PisiInfo,
