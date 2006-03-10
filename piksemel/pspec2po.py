@@ -11,6 +11,7 @@
 
 import os
 import sys
+import re
 import piksemel as iks
 
 po_header = """# SOME DESCRIPTIVE TITLE.
@@ -28,7 +29,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n"
 "Language-Team: LANGUAGE <LL@li.org>\\n"
 "MIME-Version: 1.0\\n"
-"Content-Type: text/plain; charset=CHARSET\\n"
+"Content-Type: text/plain; charset=UTF-8\\n"
 "Content-Transfer-Encoding: 8bit\\n"
 
 """
@@ -42,8 +43,8 @@ msgstr %(str)s
 class Message:
     def __init__(self):
         self.reference = None
-        self.msgid = '""'
-        self.msgstr = '""'
+        self.msgid = None
+        self.msgstr = None
 
 
 class Po:
@@ -52,14 +53,27 @@ class Po:
         if messages:
             self.messages = messages
     
+    def _escape(self, str):
+        if not str:
+            return '""'
+        
+        str = re.sub('"', '\\"', str)
+        
+        parts = str.split("\n")
+        
+        if len(parts) == 1:
+            return '"%s"' % parts[0]
+        
+        return '""' + "".join(map(lambda x: '\n"%s\\n"' % x, parts))
+    
     def save(self, filename):
         f = file(filename, "w")
         f.write(po_header)
         for msg in self.messages:
             dict = {}
             dict["ref"] = msg.reference
-            dict["id"] = msg.msgid
-            dict["str"] = msg.msgstr
+            dict["id"] = self._escape(msg.msgid)
+            dict["str"] = self._escape(msg.msgstr)
             f.write(po_entry % dict)
         f.close()
 
@@ -85,9 +99,9 @@ def extract_pspecs(path, language):
         for item in source.tags("Summary"):
             lang = item.getAttribute("xml:lang")
             if not lang or lang == "en":
-                msg.msgid = '"%s"' % item.firstChild().data()
+                msg.msgid = item.firstChild().data()
             elif lang == language:
-                msg.msgstr = '"%s"' % item.firstChild().data()
+                msg.msgstr = item.firstChild().data()
         messages.append(msg)
         
         msg = Message()
@@ -97,15 +111,19 @@ def extract_pspecs(path, language):
         for item in source.tags("Description"):
             lang = item.getAttribute("xml:lang")
             if not lang or lang == "en":
-                msg.msgid = '"%s"' % item.firstChild().data()
+                msg.msgid = item.firstChild().data()
             elif lang == language:
-                msg.msgstr = '"%s"' % item.firstChild().data()
+                msg.msgstr = item.firstChild().data()
         messages.append(msg)
     
     return messages
 
-if __name__ == "__main__":
+
+def extract(path, language, output):
     po = Po()
-    msgs = extract_pspecs(sys.argv[1], sys.argv[2])
-    po.messages = msgs
-    po.save("lala.po")
+    po.messages = extract_pspecs(path, language)
+    po.save(output)
+
+
+if __name__ == "__main__":
+    extract(sys.argv[1], sys.argv[2], "lala.po")
