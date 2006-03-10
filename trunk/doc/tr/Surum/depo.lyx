@@ -406,7 +406,13 @@ Geliþtirme deposuna eklenen paket kaynaðýnýn paketin geliþtiricisi tarafýndan
  Derlenmeyen ve/veya kurulamayan paket depoya eklenmez.
  Geliþtirme deposuna eklenen paketin kararlýlýðý ve daðýtýma uygunluðu kontrol
  edilir, sorunlarý giderilir, paket kararlý depoya eklenmek için hazýrlanýr.
- Sorunlarýn giderilmesi bölümünde dikkate alýnabilecek bir sorunlar listesi
+\layout Standard
+
+Depoya eklenen paketlerin bilinen bir güvenlik açýðý olmamalýdýr.
+ Varsa, ilgili güvenlik açýðýný gideren yamasý ile birlikte eklenmelidir.
+\layout Standard
+
+Sorunlarýn giderilmesi bölümünde dikkate alýnabilecek bir sorunlar listesi
  aþaðýda listelenmiþtir.
  Paket sorunlarý ve yazýlým sorunlarý ve paketlenen yazýlým sorunlarý iki
  ayrý madde ile anlatýlýr.
