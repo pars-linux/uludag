@@ -58,7 +58,8 @@ class QueueManager:
             return
         
         for line in queue.readlines():            
-            queueName.append(line.strip("\n"))
+            if not line.startswith("#"):
+                queueName.append(line.strip("\n"))
         queue.close()
 
     def removeFromWaitQueue(self):
