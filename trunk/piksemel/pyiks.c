@@ -141,11 +141,14 @@ static PyObject *Node_parent(Node *self);
 static PyObject *Node_root(Node *self);
 static PyObject *Node_next(Node *self);
 static PyObject *Node_previous(Node *self);
+static PyObject *Node_previousTag(Node *self);
 static PyObject *Node_toString(Node *self, PyObject *args);
 static PyObject *Node_toPrettyString(Node *self, PyObject *args);
 static PyObject *Node_appendTag(Node *self, PyObject *args);
+static PyObject *Node_appendSibling(Node *self, PyObject *args);
 static PyObject *Node_appendData(Node *self, PyObject *args);
 static PyObject *Node_appendNode(Node *self, PyObject *args);
+static PyObject *Node_hide(Node *self, PyObject *args);
 
 static PyMethodDef Node_methods[] = {
 	{ "type", (PyCFunction)Node_type_func, METH_NOARGS,
@@ -172,6 +175,8 @@ static PyMethodDef Node_methods[] = {
 	  "Return topmost parent node." },
 	{ "next", (PyCFunction)Node_next, METH_NOARGS,
 	  "Return next sibling node." },
+	{ "previousTag", (PyCFunction)Node_previousTag, METH_NOARGS,
+	  "Return previous sibling tag node." },
 	{ "previous", (PyCFunction)Node_previous, METH_NOARGS,
 	  "Return previous sibling node." },
 	{ "toString", (PyCFunction)Node_toString, METH_NOARGS,
@@ -180,10 +185,14 @@ static PyMethodDef Node_methods[] = {
 	  "Convert a document tree to indented XML string representation." },
 	{ "appendTag", (PyCFunction)Node_appendTag, METH_VARARGS,
 	  "Append a child tag node with given name." },
+	{ "appendSibling", (PyCFunction)Node_appendSibling, METH_VARARGS,
+	  "Append a sibling tag node with given name." },
 	{ "appendData", (PyCFunction)Node_appendData, METH_VARARGS,
 	  "Append a child character data node with given text." },
 	{ "appendNode", (PyCFunction)Node_appendNode, METH_VARARGS,
 	  "Append another document as a child." },
+	{ "hide", (PyCFunction)Node_hide, METH_VARARGS,
+	  "Hide tag from document tree." },
 	{ NULL }
 };
 
@@ -542,6 +551,20 @@ Node_previous(Node *self)
 }
 
 static PyObject *
+Node_previousTag(Node *self)
+{
+	iks *sibling;
+
+	sibling = iks_prev_tag(self->node);
+	if (!sibling) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	return new_node(self->doc, sibling);
+}
+
+static PyObject *
 Node_toString(Node *self, PyObject *args)
 {
 	PyObject *ret;
@@ -616,6 +639,25 @@ Node_appendTag(Node *self, PyObject *args)
 }
 
 static PyObject *
+Node_appendSibling(Node *self, PyObject *args)
+{
+	iks *node;
+	char *name;
+
+	if (iks_type(self->node) != IKS_TAG) {
+		PyErr_SetNone(NotTag);
+		return NULL;
+	}
+
+	if (!PyArg_ParseTuple(args, "s", &name))
+		return NULL;
+
+	node = iks_insert_sibling(self->node, name);
+
+	return new_node(self->doc, node);
+}
+
+static PyObject *
 Node_appendData(Node *self, PyObject *args)
 {
 	iks *node;
@@ -650,6 +692,15 @@ Node_appendNode(Node *self, PyObject *args)
 
 	child = iks_copy_within(node->node, iks_stack(self->node));
 	iks_insert_node(self->node, node->node);
+
+	Py_INCREF(Py_None);
+	return Py_None;
+}
+
+static PyObject *
+Node_hide(Node *self, PyObject *args)
+{
+    iks_hide(self->node);
 
 	Py_INCREF(Py_None);
 	return Py_None;

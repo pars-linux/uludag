@@ -1138,6 +1138,26 @@ iks_insert (iks *x, const char *name)
 }
 
 iks *
+iks_insert_sibling (iks *x, const char *name)
+{
+    iks *y;
+
+    if (!x) return NULL;
+    y = iks_new_within(name, x->s);
+    if (!y) return NULL;
+    
+    if (x->next) x->next->prev = y;
+    y->next = x->next;
+    x->next = y;
+    y->parent = x->parent;
+    y->prev = x;
+    if (IKS_TAG_LAST_CHILD(x->parent) == x)
+        IKS_TAG_LAST_CHILD(x->parent) = y;
+
+    return y;
+}
+
+iks *
 iks_insert_cdata (iks *x, const char *data, size_t len)
 {
 	iks *y;
@@ -1590,9 +1610,9 @@ iks_string (ikstack *s, iks *x)
 					*t++ = ' ';
 					t = my_strcat (t, IKS_ATTRIB_NAME (y), 0);
 					*t++ = '=';
-					*t++ = '\'';
+					*t++ = '"';
 					t = escape (t, IKS_ATTRIB_VALUE (y), strlen (IKS_ATTRIB_VALUE (y)));
-					*t++ = '\'';
+					*t++ = '"';
 					y = y->next;
 				}
 				if (IKS_TAG_CHILDREN (x)) {
