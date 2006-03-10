@@ -56,7 +56,8 @@ def main():
                 except Exception, e:
                     print "HATA: %s" % e
                     logger.error("'%s' için INSTALL işlemi sırasında hata: %s" % (os.path.join(config.workDir, p), e))
-                    qmgr.transferToWaitQueue(pspec)                    
+                    qmgr.transferToWaitQueue(pspec)
+                    newBinaryPackages.remove(p)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
             pisi.finalize()
