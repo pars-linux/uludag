@@ -5,10 +5,10 @@
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `pardul-ActionCompatibility`
+-- Tablo yapısı : `pardulActionCompatibility`
 -- 
 
-CREATE TABLE `pardul-ActionCompatibility` (
+CREATE TABLE `pardulActionCompatibility` (
   `ID` int(11) NOT NULL auto_increment,
   `DistID` int(11) NOT NULL default '0',
   `PlatformID` int(11) NOT NULL default '0',
@@ -21,10 +21,10 @@ CREATE TABLE `pardul-ActionCompatibility` (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `pardul-Categories`
+-- Tablo yapısı : `pardulCategories`
 -- 
 
-CREATE TABLE `pardul-Categories` (
+CREATE TABLE `pardulCategories` (
   `ID` int(11) NOT NULL auto_increment,
   `CategoryName` varchar(32) NOT NULL default '',
   `ParentID` int(11) NOT NULL default '0',
@@ -34,10 +34,10 @@ CREATE TABLE `pardul-Categories` (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `pardul-Distribution`
+-- Tablo yapısı : `pardulDistribution`
 -- 
 
-CREATE TABLE `pardul-Distribution` (
+CREATE TABLE `pardulDistribution` (
   `ID` int(11) NOT NULL auto_increment,
   `DistVersion` varchar(32) NOT NULL default '',
   `DistName` varchar(32) NOT NULL default 'Pardus',
@@ -47,10 +47,10 @@ CREATE TABLE `pardul-Distribution` (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `pardul-Hardwares`
+-- Tablo yapısı : `pardulHardwares`
 -- 
 
-CREATE TABLE `pardul-Hardwares` (
+CREATE TABLE `pardulHardwares` (
   `ID` bigint(20) NOT NULL auto_increment,
   `HWProductName` varchar(250) NOT NULL default '',
   `HWVendorID` bigint(20) NOT NULL default '0',
@@ -68,10 +68,10 @@ CREATE TABLE `pardul-Hardwares` (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `pardul-Platform`
+-- Tablo yapısı : `pardulPlatform`
 -- 
 
-CREATE TABLE `pardul-Platform` (
+CREATE TABLE `pardulPlatform` (
   `ID` int(11) NOT NULL auto_increment,
   `Platform` varchar(32) NOT NULL default '',
   PRIMARY KEY  (`ID`)
@@ -80,10 +80,10 @@ CREATE TABLE `pardul-Platform` (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `pardul-Users`
+-- Tablo yapısı : `pardulUsers`
 -- 
 
-CREATE TABLE `pardul-Users` (
+CREATE TABLE `pardulUsers` (
   `ID` int(11) NOT NULL auto_increment,
   `UserName` varchar(32) NOT NULL default '',
   `UserPass` varchar(32) NOT NULL default '',
@@ -97,10 +97,10 @@ CREATE TABLE `pardul-Users` (
 -- --------------------------------------------------------
 
 -- 
--- Tablo yapısı : `pardul-Vendors`
+-- Tablo yapısı : `pardulVendors`
 -- 
 
-CREATE TABLE `pardul-Vendors` (
+CREATE TABLE `pardulVendors` (
   `id` int(11) NOT NULL auto_increment,
   `VendorName` varchar(200) NOT NULL default '',
   `VendorURL` varchar(200) NOT NULL default '---',

@@ -15,8 +15,8 @@
         global $config;
         $categoryname = rtag($categoryname);
 	$categoryid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Categories VALUES ('','{$categoryname}', '{$parentid}')" :
-        $sql_word = "UPDATE {$config['db']['tableprefix']}Category SET CategoryName='{$categoryname}', ParentID='{$parentid}' WHERE ID='$categoryid'";
-        return @mysql_query($sql_word);
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Categories SET CategoryName='{$categoryname}', ParentID='{$parentid}' WHERE ID='$categoryid'";
+        return mysql_query($sql_word);
     }
 
     function make_distribution($distid="x",$distversion,$distname="Pardus"){
@@ -74,7 +74,7 @@
         return $return_array;
     }
 
-        /*
+    /*
         get_($id) it returns a field from $table which has $id
         $table can be Categories,Distribution,Hardwares,Users,Platform,Vendors,Comments or ActionCompatibility
         return Array;
