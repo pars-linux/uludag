@@ -58,6 +58,7 @@ def main():
                     logger.error("'%s' için INSTALL işlemi sırasında hata: %s" % (os.path.join(config.workDir, p), e))
                     qmgr.transferToWaitQueue(pspec)
                     newBinaryPackages.remove(p)
+                    removeBinaryPackageFromWorkDir(p)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
             pisi.finalize()
@@ -109,6 +110,13 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
         map(lambda package: moveNewPackage(package), [package for package in set(newBinaryPackages) - set(oldBinaryPackages)])
         map(lambda package: moveOldPackage(package), [package for package in set(oldBinaryPackages) - (set(newBinaryPackages) - set(oldBinaryPackages)) if package])
 
+
+def removeBinaryPackageFromWorkDir(package):
+    join   = os.path.join
+    remove = os.remove
+
+    remove(join(config.workDir, package))
+    
 
 if __name__ == "__main__":
     main()
