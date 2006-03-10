@@ -42,6 +42,7 @@ msgstr %(str)s
 class Message:
     def __init__(self):
         self.reference = None
+        self.flags = []
         self.msgid = None
         self.msgstr = None
 
@@ -63,7 +64,12 @@ class Po:
         if len(parts) == 1:
             return '"%s"' % parts[0]
         
-        return '""' + "".join(map(lambda x: '\n"%s\\n"' % x, parts))
+        if str.endswith("\n"):
+            parts = parts[:-1]
+        
+        ret = '""' + "".join(map(lambda x: '\n"%s\\n"' % x, parts))
+        
+        return ret
     
     def save(self, filename):
         f = file(filename, "w")
@@ -76,22 +82,71 @@ class Po:
             f.write(po_entry % dict)
         f.close()
     
+    def _unescape(self, str):
+        str = re.sub('\\\\"', '"', str)
+        str = re.sub('\\\\n', '\n', str)
+        return str
+    
     def load(self, filename):
+        sHeader, sSkip, sComment, sId, sMsg = range(5)
         self.messages = []
         msg = None
+        state = sHeader
+        # Silly state machines are easier to code than dealing with regexps
         for line in file(filename):
             line = line.rstrip("\n")
             
-            if len(line.split()) == 0:
-                if msg:
-                    self.messages.append(msg)
-                msg = Message()
-            
-            if not msg:
+            if state == sHeader:
+                if len(line.split()) == 0:
+                    state = sSkip
                 continue
             
-            if line.startswith("#: "):
-                msg.reference = line[3:]
+            if state == sSkip:
+                if len(line.split()) != 0:
+                    msg = Message()
+                    state = sComment
+                else:
+                    continue
+            
+            if state == sComment:
+                if line.startswith("#: "):
+                    msg.reference = line[3:]
+                    continue
+                elif line.startswith("#, "):
+                    msg.flags = line[3:].split(',')
+                    continue
+                elif line.startswith("msgid "):
+                    state = sId
+                else:
+                    continue
+            
+            if state == sId:
+                if line.startswith("msgstr "):
+                    state = sMsg
+                else:
+                    if line == 'msgid ""':
+                        continue
+                    if not msg.msgid:
+                        msg.msgid = ""
+                    msg.msgid += line[line.find('"')+1:line.rfind('"')]
+            
+            if state == sMsg:
+                if len(line.split()) == 0:
+                    msg.msgid = self._unescape(msg.msgid)
+                    msg.msgstr = self._unescape(msg.msgstr)
+                    self.messages.append(msg)
+                    state = sSkip
+                else:
+                    if not msg.msgstr:
+                        msg.msgstr = ""
+                    if line == 'msgstr ""':
+                        continue
+                    msg.msgstr += line[line.find('"')+1:line.rfind('"')]
+        
+        if msg:
+            msg.msgid = self._unescape(msg.msgid)
+            msg.msgstr = self._unescape(msg.msgstr)
+            self.messages.append(msg)
 
 
 def find_pspecs(path):
@@ -143,10 +198,19 @@ def extract(path, language, output):
 def update(pofile, path):
     po = Po()
     po.load(pofile)
-    for m in po.messages:
-        print m.reference
+    
+    print "not implemented yet"
 
 
 if __name__ == "__main__":
-    extract(sys.argv[1], sys.argv[2], "lala.po")
-    #update("lala.po", None)
+    if len(sys.argv) == 1 or sys.argv[1] == "help":
+        print "Extract translatable strings into a po file:"
+        print "  pspec2po repopath language output_po_file"
+        print "Update pspec translations from a po file:"
+        print "  pspec2po input_po_file repopath"
+    
+    elif len(sys.argv) == 3:
+        update(sys.argv[1], sys.argv[2])
+    
+    elif len(sys.argv) == 4:
+        extract(sys.argv[1], sys.argv[2], sys.argv[3])
