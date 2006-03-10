@@ -189,28 +189,71 @@ def extract_pspecs(path, language):
     
     return messages
 
+pspec_header = """<?xml version="1.0" ?>
+<!DOCTYPE PISI
+  SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+"""
 
-def extract(path, language, output):
+def update_pspecs(path, language, po):
+    for msg in po.messages:
+        if not msg.msgstr:
+            continue
+        if "fuzzy" in msg.flags:
+            continue
+        name, tag = msg.reference.split(':')
+        name = os.path.join(path, name, "pspec.xml")
+        tag = tag.title()
+        doc = iks.parse(name)
+        source = doc.getTag("Source")
+        data = None
+        for item in source.tags(tag):
+            lang = item.getAttribute("xml:lang")
+            if lang == language:
+                item.firstChild().hide()
+                item.appendData(msg.msgstr)
+                data = doc.toString()
+        if not data:
+            if tag == "Description":
+                item = source.getTag("Archive").previousTag()
+            else:
+                item = source.getTag("Description").previousTag()
+            new = item.appendSibling(tag)
+            new.setAttribute("xml:lang", language)
+            new.appendData(msg.msgstr)
+            data = doc.toString()
+        if data:
+            f = file(name, "w")
+            f.write(pspec_header)
+            f.write(data)
+            f.write("\n")
+            f.close()
+
+
+def extract(path, language, pofile):
     po = Po()
     po.messages = extract_pspecs(path, language)
-    po.save(output)
+    po.save(pofile)
 
-def update(pofile, path):
+def update(path, language, pofile):
     po = Po()
     po.load(pofile)
-    
-    print "not implemented yet"
+    update_pspecs(path, language, po)
 
+def usage():
+        print "Extract translatable strings into a po file:"
+        print "  pspec2po extract repopath language output_po_file"
+        print "Update pspec translations from a po file:"
+        print "  pspec2po update repopath language input_po_file"
 
 if __name__ == "__main__":
     if len(sys.argv) == 1 or sys.argv[1] == "help":
-        print "Extract translatable strings into a po file:"
-        print "  pspec2po repopath language output_po_file"
-        print "Update pspec translations from a po file:"
-        print "  pspec2po input_po_file repopath"
+        usage()
     
-    elif len(sys.argv) == 3:
-        update(sys.argv[1], sys.argv[2])
+    elif len(sys.argv) == 5 and sys.argv[1] == "extract":
+        extract(sys.argv[2], sys.argv[3], sys.argv[4])
     
-    elif len(sys.argv) == 4:
-        extract(sys.argv[1], sys.argv[2], sys.argv[3])
+    elif len(sys.argv) == 5 and sys.argv[1] == "update":
+        update(sys.argv[2], sys.argv[3], sys.argv[4])
+    
+    else:
+        usage()
