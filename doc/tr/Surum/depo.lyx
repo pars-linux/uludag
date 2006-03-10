@@ -55,7 +55,7 @@ Belge yalnýzca bir kullaným alanýna yönelik hazýrlanan Pardus iþletim sistemi
 Paket depolarý
 \layout Standard
 
-Pardus daðýtýmýnýn bütünü hazýrlanan yazýlým paketlerinin bir araya getirlmesi
+Pardus daðýtýmýnýn bütünü hazýrlanan yazýlým paketlerinin bir araya getirilmesi
  ile oluþturulur.
  Daðýtýma eklenecek her yazýlýmýn öncelikle Pardus paketi olarak hazýrlanmasý
  gerekir.
@@ -220,14 +220,14 @@ Ana geliþtirmenin yapýldýðý devel alaný kararlý sürümler için dallandýrýlýr.
 \layout Standard
 
 Kararlý sürüm alanlarýndan oluþturulacak sürümün yayýnlanmasý ile kararlý
- sürüm etiketlenir ve üzerinde bundan sonra deðiþiklik yapýlmacak bir etiket
- oluþturulur.
+ sürüm etiketlenir ve üzerinde bundan sonra deðiþiklik yapýlmayacak bir
+ etiket oluþturulur.
 \layout Section
 
 Ýkili paket depolarý
 \layout Standard
 
-Ýkili paket depolarý PÝSÝ paketlerinin derlenmiþ ve kurluma hazýr hallerinin
+Ýkili paket depolarý PÝSÝ paketlerinin derlenmiþ ve kuruluma hazýr hallerinin
  bulunduðu depolardýr.
  Pardus içerisinde o sýradaki daðýtým sürümü tarafýndan kullanýlan üç ikili
  depo vardýr:
@@ -543,10 +543,6 @@ Eksik veya tamamlanmamýþ paketler depoya asla gönderilmemelidir.
  Paket derlenebiliyor ve kurulabiliyor olmalýdýr.
 \layout Itemize
 
-Geliþtirici paket güncellemelerinde pakete ait olan ChangeLog dosyasýný
- düzgün, anlaþýlýr þekilde güncellemelidir.
-\layout Itemize
-
 Geliþtirici ayný anda birden fazla paket ile ilgili depoya gönderim yapmamalýdýr.
  Örneðin; bir geliþtirici 8 paket üzerinde birden deðiþiklik yaptý ise,
  her paket için ayrý ayrý gönderimde bulunmalýdýr (yani toplamda 8 ayrý
@@ -573,8 +569,8 @@ Depo'ya paket için gerekli yamalar, ek dosyalar veya post/pre betikleri,
 Paket isimlendirme kurallarý
 \layout Standard
 
-Paket isimlerindirmesi ile ilgili kurallar pisi kaynak dizinindeki package_versi
-ons.tex belgesinde detaylý olarak anlatýlmaktadýr.
+Paket isimlendirmesi ile ilgili kurallar pisi kaynak dizinindeki package_version
+s.tex belgesinde detaylý olarak anlatýlmaktadýr.
  Bu bölümde kýsaca bir PÝSÝ paketinin isimlendirmesi anlatýlacaktýr.
  Bu kural serisine uymayan isimlendirmeler hatalý kabul edilir.
 \layout Enumerate
