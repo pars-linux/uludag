@@ -31,7 +31,6 @@ msgstr ""
 "MIME-Version: 1.0\\n"
 "Content-Type: text/plain; charset=UTF-8\\n"
 "Content-Transfer-Encoding: 8bit\\n"
-
 """
 
 po_entry = """
@@ -76,6 +75,23 @@ class Po:
             dict["str"] = self._escape(msg.msgstr)
             f.write(po_entry % dict)
         f.close()
+    
+    def load(self, filename):
+        self.messages = []
+        msg = None
+        for line in file(filename):
+            line = line.rstrip("\n")
+            
+            if len(line.split()) == 0:
+                if msg:
+                    self.messages.append(msg)
+                msg = Message()
+            
+            if not msg:
+                continue
+            
+            if line.startswith("#: "):
+                msg.reference = line[3:]
 
 
 def find_pspecs(path):
@@ -124,6 +140,13 @@ def extract(path, language, output):
     po.messages = extract_pspecs(path, language)
     po.save(output)
 
+def update(pofile, path):
+    po = Po()
+    po.load(pofile)
+    for m in po.messages:
+        print m.reference
+
 
 if __name__ == "__main__":
     extract(sys.argv[1], sys.argv[2], "lala.po")
+    #update("lala.po", None)
