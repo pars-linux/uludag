@@ -22,8 +22,14 @@
     <Package>
         <Name>a</Name>
         <Files>
-            <Path fileType="executable">/usr/bin</Path>
-            <Path fileType="data">/usr/share/applications/</Path>
+            <Path fileType="executable">/usr/bin/</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>a-lib</Name>
+        <Files>
+            <Path fileType="library">/usr/lib/</Path>
         </Files>
     </Package>
 
