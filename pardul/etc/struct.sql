@@ -108,3 +108,17 @@ CREATE TABLE `pardulVendors` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+-- 
+-- Tablo yapısı : `pardulComments`
+-- 
+
+CREATE TABLE `pardulComments` (
+  `ID` bigint(20) NOT NULL auto_increment,
+  `HWID` bigint(20) NOT NULL default '0',
+  `UID` int(11) NOT NULL default '0',
+  `Comment` text NOT NULL,
+  `AddDate` varchar(12) NOT NULL default '',
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

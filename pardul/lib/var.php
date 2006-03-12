@@ -23,11 +23,11 @@
     $smarty->force_compile = $config['smarty']['forcecompile'];
     $smarty->clear_all_cache();
 
-    $smarty->assign("pardul-v","v{$config['pardul']['version']} (r{$config['pardul']['build']})");
-    $smarty->assign("pardul-title", $config['core']['title']);
-    $smarty->assign("pardul-desc", $config['core']['desc']);
-    $smarty->assign("pardul-url", $config['core']['url']);
-    $smarty->assign("themepath", "etc/".$config['smarty']['tpldir']."/".$config['core']['theme']);
+    $smarty->assign("pardul_v","v{$config['pardul']['version']} (d{$config['pardul']['build']})");
+    $smarty->assign("pardul_title", $config['core']['title']);
+    $smarty->assign("pardul_desc", $config['core']['desc']);
+    $smarty->assign("pardul_url", $config['core']['url']);
+    $smarty->assign("tp", $config['smarty']['tpldir']."/".$config['core']['theme']);
 
     db_connection('connect', $config['db']['host'].':'.$config['db']['port'], $config['db']['user'], $config['db']['pass'], $config['db']['dbname'], $config['db']['ctype']);
 
