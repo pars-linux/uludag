@@ -1,6 +1,6 @@
 <?php
 
-    /* 
+    /*
         TUBITAK UEKAE 2005-2006 
         Gökmen GÖKSEL gokmen_at_pardus.org.tr
     */
@@ -64,9 +64,6 @@
     function rtag($foo){
         return htmlspecialchars($foo,ENT_QUOTES);
     }
-
-    /*
-        
 
     /*
         conv_time($type,$value)

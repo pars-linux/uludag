@@ -1,3 +1,9 @@
+
+    /*
+        TUBITAK UEKAE 2005-2006
+        Gökmen GÖKSEL gokmen_at_pardus.org.tr
+    */
+
 body {
     font-size: 9pt;
     font-family: "Trebuchet MS", Sans-Serif;
@@ -8,11 +14,31 @@ body {
     text-align: center;
 }
 
+div#head {
+    font-size: 12pt;
+    font-weight: bold;
+    letter-spacing: .5px;
+    border-bottom:1px solid #BBB;
+    padding:1px;
+    margin-bottom:3px;
+}
+
+div#warn {
+    font-size: 12pt;
+    font-weight: bold;
+    color:#FFF;
+    background-color:#FF571F;
+    letter-spacing: .5px;
+    border-bottom:1px solid #BBB;
+    padding:2px;
+    margin-bottom:3px;
+}
+
 div#box {
     text-align: left;
     vertical-align: middle;	
     margin: 0px auto;
-    width: 762px;
+    width: 760px;
     background-color: #ffffff;
 }
 
@@ -34,10 +60,33 @@ div#leftpane {
 
 div#container {
     float:right;
-    width:570px;
+    width:568px;
     background-color:#DDD;
     margin: 5px auto;
     -moz-border-radius : 5px;
     padding:3px;
     border: 1px solid #CCC;
+}
+
+.regtable {
+    background-color: #EEE;
+    border: 0px;
+    border-bottom: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+    -moz-border-radius : 5px;
+    padding:10px;
+    width:100%;
+}
+
+.regtable input{
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    -moz-border-radius : 5px;
+    width:100%;
+    padding:1px;
+
+}
+
+.regtable input:focus{
+    background-color: #FFF;
 }

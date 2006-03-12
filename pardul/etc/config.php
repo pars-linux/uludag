@@ -25,7 +25,7 @@
     $config['db']['ctype']              = "persistent";
 
     $config['smarty']['libdir']         = "lib/smarty";
-    $config['smarty']['tpldir']         = "themes";
+    $config['smarty']['tpldir']         = "etc/themes";
     $config['smarty']['compiledir']     = "tmp";
     $config['smarty']['cachedir']       = "tmp";
     $config['smarty']['plugindir']      = "plugins";
