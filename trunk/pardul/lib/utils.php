@@ -11,7 +11,7 @@
         make_*($parameters) it adds or updates a field with given paramaeters
         return Boolean;
     */
-    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$adddate,$updatedate=$adddate,$status=0,$userid,$suserid){
+    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$adddate,$updatedate,$status=0,$userid,$suserid){
         global $config;
         $productname    = rtag($productname);
         $vendorid       = rtag($vendorid);
@@ -59,9 +59,9 @@
         $realname       = rtag ($realname);
         $email          = rtag ($email);
         $web            = rtag ($web);
-        $password = md5(rtag($passwordc));
+        $password       = md5(rtag($passwordc));
         if ($passwordc<>"") $attach_sql=", UserPass='{$password}'";
-        $uid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'G', '')" :
+        $uid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'G')" :
         $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserName='{$realname}', UserWeb='{$web}', UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
         return @mysql_query($sql_word);
     }
@@ -92,14 +92,14 @@
     */
     function get_categories($parent=0){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Categories WHERE parentID='{$parent}'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Categories WHERE ParentID='{$parent}'";
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
             $return_array[$i] = $assoc_arr;
             $j=0;
             if ($parent==0){
-                if ($subs=get_types($return_array[$i]['id'])) {
+                if ($subs=get_categories($return_array[$i]['id'])) {
                     foreach ( $subs as $sub_type ) {
                         $return_array[$i]['sub'][$j]=$sub_type;
                         $j++;

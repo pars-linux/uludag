@@ -1,0 +1,42 @@
+{include file="header.html"}
+
+                <div id="head">Yeni Kullanıcı</div>
+                {if $error}<div id="warn">{$error}</div>{/if}
+                <form id="frm" action="{$pardul_url}?register_f" method="post" onSubmit="return doanothercheck(frm.username);">
+                <table class="regtable">
+                    <tbody>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Kullanıcı adı </td>
+                            <td>
+                                <input id="username" name="username" size="30" value="{$up_user}" onKeyUp="javascript:dodacheck(frm.username);">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Ad Soyad </td>
+                            <td><input id="realname" name="realname" value="{$up_name}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: green">[*]</span> Web adresi</td>
+                            <td><input id="web" name="web" value="{$up_web}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> E-mail</td>
+                            <td><input id="email" name="email" value="{$up_email}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Parola</td>
+                            <td><input id="password" name="password" type="password"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Parola(tekrar)</td>
+                            <td><input id="password_" name="password_" type="password"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="regtable">
+                    <tr>
+                        <td align="right"><input onclick="return submitform();" value="Kayıt" name="register" type="submit"></td>
+                    </tr>
+                </table>
+                </form>
+{include file="footer.html"}
