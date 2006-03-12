@@ -11,28 +11,54 @@
         make_*($parameters) it adds or updates a field with given paramaeters
         return Boolean;
     */
+    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$adddate,$updatedate=$adddate,$status=0,$userid,$suserid){
+        global $config;
+        $productname    = rtag($productname);
+        $vendorid       = rtag($vendorid);
+        $deviceid       = rtag($deviceid);
+        $bustype        = rtag($bustype);
+        $categoryid     = rtag($categoryid);
+        $adddate        = rtag($adddate);
+        $updatedate     = rtag($updatedate);
+        $adddate        = rtag($adddate);
+        $status         = rtag($status);
+        $userid         = rtag($userid);
+        $suserid        = rtag($suserid);
+        $hwid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendorid}','{$deviceid}','{$bustype}','{$categoryid}','{$adddate}','{$updatedate}','{$status}','{$userid}','{$suserid}')" :
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendorID='{$vendorid}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWAddDate='{$adddate}',HWUpdateDate='{$updatedate}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}' WHERE ID='$hwid'";
+        return mysql_query($sql_word);
+    }
+
     function make_category($categoryid="x",$categoryname,$parentid=0){
         global $config;
-        $categoryname = rtag($categoryname);
-	$categoryid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Categories VALUES ('','{$categoryname}', '{$parentid}')" :
+        $categoryname   = rtag($categoryname);
+        $categoryid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Categories VALUES ('','{$categoryname}', '{$parentid}')" :
         $sql_word = "UPDATE {$config['db']['tableprefix']}Categories SET CategoryName='{$categoryname}', ParentID='{$parentid}' WHERE ID='$categoryid'";
         return mysql_query($sql_word);
     }
 
     function make_distribution($distid="x",$distversion,$distname="Pardus"){
         global $config;
-        $distversion = rtag($distversion);
-        $distname = rtag($distname);
-	$distid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Distribution VALUES ('','{$distversion}', '{$distname}')" :
+        $distversion    = rtag($distversion);
+        $distname       = rtag($distname);
+        $distid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Distribution VALUES ('','{$distversion}', '{$distname}')" :
         $sql_word = "UPDATE {$config['db']['tableprefix']}Distribution SET DistVersion='{$distversion}', DistName='{$distname}' WHERE ID='$distid'";
+        return @mysql_query($sql_word);
+    }
+
+    function make_platform($platformid="x",$platform){
+        global $config;
+        $platform       = rtag($platform);
+        $platformid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Platform VALUES ('','{$platform}')" :
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Platform SET Platform='{$platform}' WHERE ID='$platformid'";
         return @mysql_query($sql_word);
     }
 
     function make_user($uid="x",$realname,$web,$email,$passwordc,$uname=""){
         global $config;
-        $realname = rtag ($realname);
-        $email = rtag ($email);
-        $web = rtag ($web);
+        $realname       = rtag ($realname);
+        $email          = rtag ($email);
+        $web            = rtag ($web);
         $password = md5(rtag($passwordc));
         if ($passwordc<>"") $attach_sql=", UserPass='{$password}'";
         $uid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'G', '')" :
@@ -42,11 +68,21 @@
 
     function make_vendor($vendorid="x",$vendorname,$vendorurl,$vendorvid=''){
         global $config;
-        $vendorname = rtag ($vendorname);
-        $vendorurl = rtag ($vendorurl);
-        $vendorvid = rtag ($vendorvid);
+        $vendorname     = rtag ($vendorname);
+        $vendorurl      = rtag ($vendorurl);
+        $vendorvid      = rtag ($vendorvid);
         $vendorid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Vendors VALUES ('', '{$vendorname}', '{$vendorurl}','{$vendorvid}')" :
         $sql_word = "UPDATE {$config['db']['tableprefix']}Vendors SET VendorName'{$vendorname}', VendorURL='{$vendorurl}', VendorID='{$vendorvid}' WHERE ID='$vendorid'";
+        return @mysql_query($sql_word);
+    }
+
+    function make_comment($commentid="x",$hwid,$uid,$comment,$adddate){
+        global $config;
+        $hwid           = rtag ($hwid);
+        $uid            = rtag ($uid);
+        $comment        = rtag ($comment);
+        $commentid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Comments VALUES ('', '{$hwid}','{$uid}','{$comment}','{$adddate}')" :
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Comments SET HWID'{$hwid}', UID='{$uid}', Comment='{$comment}', AddDate='{$adddate}' WHERE ID='$commentid'";
         return @mysql_query($sql_word);
     }
 

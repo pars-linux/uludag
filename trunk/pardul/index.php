@@ -6,5 +6,6 @@
     */
 
     require ("lib/var.php");
+    $smarty->display("header.html");
 
 ?>

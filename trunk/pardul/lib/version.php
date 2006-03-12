@@ -6,6 +6,6 @@
     */
 
     $config['pardul']['version']        = "0.0.1";
-    $config['pardul']['builddate']      = "20060310";
+    $config['pardul']['build']          = "20060310";
 
 ?>

@@ -52,7 +52,7 @@
         It makes variable for using in smarty (in theme files)
         return No_Return;
     */
-    function set_smarty_vars($varname, $var){
+    function ssv($varname, $var){
         global $smarty;
         $smarty->assign($varname,$var);
     }
