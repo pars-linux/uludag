@@ -68,6 +68,10 @@ div#container {
     border: 1px solid #CCC;
 }
 
+div#result {
+    margin-left:2px;
+}
+
 .regtable {
     background-color: #EEE;
     border: 0px;
@@ -83,7 +87,6 @@ div#container {
     border: 1px solid #CCC;
     -moz-border-radius : 5px;
     width:100%;
-    padding:1px;
 
 }
 

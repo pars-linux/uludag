@@ -21,7 +21,7 @@ function doanothercheck(form) {
         form.focus();
         return false;
     }
-    if (frm.username.value.length < 3)              { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !');return false;}
+    if (frm.username.value.length < 3)              { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !'); frm.username.select(); frm.username.focus(); return false;}
     if (frm.realname.value.length < 6)              { alert('Ad Soyad boş ya da eksik !');return false;}
     if (frm.email.value.length < 8)                 { alert('E-Mail boş ya da eksik !');return false;}
     if (frm.password.value.length <= 4)             { alert('Parola boş ya da eksik (en az 5 karakter)!');return false;}
@@ -34,4 +34,21 @@ function tV(el, src) {
     var str = src.innerHTML;
     el.style.display = v ? "none" : "block";
     src.innerHTML = v ? str.replace(/up/, "down") : str.replace(/down/, "up");
+}
+
+function init () {
+    $('username').onblur = function () {
+    checkuser();
+    }
+}
+
+function checkuser() {
+    var linke='username='+$('username').value;
+    var url ='check.php';
+    var myAjax = new Ajax.Request(url,{method:'get', parameters: linke, onComplete: showit});
+}
+
+function showit(originalRequest){
+    var newData = originalRequest.responseText;
+    $('result').innerHTML = newData;
 }
