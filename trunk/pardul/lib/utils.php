@@ -60,9 +60,10 @@
         $email          = rtag ($email);
         $web            = rtag ($web);
         $password       = md5(rtag($passwordc));
+        if ($uname<>"") if (user_exist($uname)) return 0;
         if ($passwordc<>"") $attach_sql=", UserPass='{$password}'";
         $uid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'G')" :
-        $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserName='{$realname}', UserWeb='{$web}', UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserRealName='{$realname}', UserWeb='{$web}', UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
         return @mysql_query($sql_word);
     }
 
@@ -144,4 +145,14 @@
         return perform_sql($sql_word);
     }
 
+    /*
+        mail_exist($email)
+        it checks the user $email and returns users info
+        return Array;
+    */
+    function mail_exist($email){
+        global $config;
+        $sql_word = "SELECT ID FROM {$config['db']['tableprefix']}Users WHERE UserEmail='$email'";
+        return perform_sql($sql_word);
+    }
 ?>
