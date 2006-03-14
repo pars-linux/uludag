@@ -38,7 +38,7 @@ class RepositoryManager:
             oldwd = os.getcwd()
             os.chdir(config.localPspecRepo)
             logger.info("Yerel pspec deposu güncelleniyor: '%s'" % (config.localPspecRepo))
-            f = os.popen("cat svnup")
+            f = os.popen("svn up")
 
             out = [o.split() for o in f.readlines()]
             if f.close():
