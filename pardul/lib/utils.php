@@ -62,7 +62,7 @@
         $password       = md5(rtag($passwordc));
         if ($uname<>"") if (user_exist($uname)) return 0;
         if ($passwordc<>"") $attach_sql=", UserPass='{$password}'";
-        $uid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'G')" :
+        $uid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'N')" :
         $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserRealName='{$realname}', UserWeb='{$web}', UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
         return @mysql_query($sql_word);
     }
@@ -100,7 +100,7 @@
             $return_array[$i] = $assoc_arr;
             $j=0;
             if ($parent==0){
-                if ($subs=get_categories($return_array[$i]['id'])) {
+                if ($subs=get_categories($return_array[$i]['ID'])) {
                     foreach ( $subs as $sub_type ) {
                         $return_array[$i]['sub'][$j]=$sub_type;
                         $j++;
@@ -116,9 +116,9 @@
         $table can be Categories,Distribution,Hardwares,Users,Platform,Vendors,Comments or ActionCompatibility
         return Array;
     */
-    function get_($id,$table){
+    function get_($id="x",$table){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}{$table} WHERE ID='{$id}'";
+        $id = "x" ? $sql_word = "SELECT * FROM {$config['db']['tableprefix']}{$table}" : $sql_word = "SELECT * FROM {$config['db']['tableprefix']}{$table} WHERE ID='{$id}'";
         return perform_sql($sql_word);
     }
 
@@ -153,6 +153,14 @@
     function mail_exist($email){
         global $config;
         $sql_word = "SELECT ID FROM {$config['db']['tableprefix']}Users WHERE UserEmail='$email'";
+        return perform_sql($sql_word);
+    }
+
+    function get_user_details($user,$pass,$state="x"){
+        global $config;
+        $passx  = md5($pass);
+        $state = "x" ? $attach_sql =" AND UserState != 'N'" : $attach_sql =" AND UserState = '{$state}'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE UserName = '$user' AND UserPass = '$passx'".$attach_sql;
         return perform_sql($sql_word);
     }
 ?>

@@ -1,13 +1,23 @@
-
-            <div id="leftpane">
+<div id="leftpane">
             <div id="leftbox">
+                <li><a href="{$pardul_url}">Ana Sayfa</a>
+                <li><a href="{$pardul_url}?search">Donanım Ara</a>
+                <li><a href="{$pardul_url}?newhardware">Yeni Donanım Ekle</a>
+            </div>
+            <div id="leftbox">
+                {if $UserName}
+                <div id="head">Kullanıcı Bilgileri</div>
+                Hoşgeldiniz {$UserRealName}
+                <div class="register"><a href="?quit">Çıkış</a></div>
+                {else}
                 <div id="head">Kullanıcı Giriş</div>
                 <form action="{$url}?login" method="post">
-                    <input id="uname" class="user" size="10">
-                    <input id="pass" class="pass" size="10" type="password">
+                    <input name="user" class="user" size="10">
+                    <input name="pass" class="pass" size="10" type="password">
                     <input value="Giriş" name="login" type="submit">
-                    <div class="register"><a href="{$url}?register">[Üye Ol]</a></div>
+                    <div class="register"><a href="{$url}?register">Üye Ol</a></div>
                 </form>
+                {/if}
             </div>
             <div id="leftbox"></div>
             </div>

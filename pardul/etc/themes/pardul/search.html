@@ -1,27 +1,29 @@
 {include file="header.html"}
 
    {if $message}<div id="warn">{$message}</div>{else}
-            <script src="lib/scripts/newhardware.js"></script>
-                <div id="head">Yeni Donanım Ekle</div>
-                <form id="frm" action="{$pardul_url}?add_hardware_f" method="post">
+            <script src="lib/scripts/searchhardware.js"></script>
+                <div id="head">Donanım Ara</div>
+                <form id="frm" action="{$pardul_url}?search_f" method="post">
                 <table class="regtable">
                     <tbody>
                         <tr>
-                            <td><span style="color: red">[*]</span> Ürün Adı </td>
-                            <td><input id="p_name" name="p_name" size="30" value="{$p_name}"></td>
+                            <td> Ürün Adı </td>
+                            <td><input id="p_name" name="p_name" size="30"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> Üretici Firma </td>
+                            <td> Üretici Firma </td>
                             <td>
                                 <select name="p_vendor">
+                                <option value="all" SELECTED>Tüm Üreticiler</option>
                                 {section name=node loop=$p_vendor}  <option value="{$p_vendor[node].ID}">{$p_vendor[node].VendorName}</option>
                                 {/section}</select>
                             </td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> Kategori </td>
+                            <td> Kategori </td>
                             <td>
                                 <select name="p_category">
+                                <option value="all" SELECTED>Tüm Kategoriler</option>
                                 {section name=node loop=$p_category}{if $p_category[node].sub}<optgroup label="{$p_category[node].CategoryName}">
                                     {section name=sub loop=$p_category[node].sub}   <option value="{$p_category[node].sub[sub].ID}" >{$p_category[node].sub[sub].CategoryName}</option>
                                     {/section}</optgroup>{else}
@@ -30,43 +32,31 @@
                                 </select>
                         </tr>
                         <tr>
-                            <td><span style="color: green">[*]</span> Aygıt Numarası </td>
-                            <td><input id="p_device_id" name="p_device_id" value="{$p_device_id}"></td>
+                            <td> Aygıt Numarası </td>
+                            <td><input id="p_device_id" name="p_device_id"> </td>
                         </tr>
                         <tr>
-                            <td><span style="color: green">[*]</span> VeriYolu Tipi </td>
-                            <td><input id="p_bus_type" name="p_bus_type" value="{$p_bus_type}"></td>
+                            <td> VeriYolu Tipi </td>
+                            <td><input id="p_bus_type" name="p_bus_type"></td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Test Sonuçları </td>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Test Ürünü </td>
                             <td>
                                 <div class="checkbox">
                                 {section name=node loop=$p_distro}
                                 <div style="float:left;margin-top:3px;border-bottom:1px solid #BBB;border-right:1px solid #BBB;width:160px">
                                 <input type="checkbox" class="checkboks" value="{$p_distro[node].ID}" name="p_distro[]">
                                 {$p_distro[node].DistVersion}
-                                </div><div style="text-align:right;">
-                                <select name="p_state[{$p_distro[node].ID}]">
-                                    <option value="F">Uyumlu</option>
-                                    <option value="S">Ek işlem gerekli</option>
-                                    <option value="N">Uyumlu değil</option>
-                                </select>
                                 </div>
                                 {/section}
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Ek Açıklama </td>
-                            <td>
-                                <textarea id="p_todo" name="p_todo" rows="7"></textarea>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <table class="regtable">
                     <tr>
-                        <td align="right"><input onclick="return submitform();" value="Kayıt" name="register" type="submit"></td>
+                        <td align="right"><input value="Donanım Ara" name="search" type="submit"></td>
                     </tr>
                 </table>
                 </form>
