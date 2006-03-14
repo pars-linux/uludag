@@ -11,14 +11,20 @@
        switch ($key){
             case "register_f":
                 if (isset($_POST["username"])&&isset($_POST["realname"])&&isset($_POST["password"])&&isset($_POST["email"])) {
-                    if (make_user("x",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],$_POST["username"])) echo "basarili!"; else echo "failed";
+                    if (make_user("x",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],$_POST["username"])) ssv("message",SUCCESS); else ssv("message",FAILED);
                 }
                 else {
-                    ssv("error",MISSING_FIELDS);
+                    ssv("message",MISSING_FIELDS);
                 }
+                $smarty->display("newuser.html");
+                die();
                 break;
             case "register":
                 $smarty->display("newuser.html");
+                die();
+                break;
+            case "newhardware":
+                $smarty->display("newhardware.html");
                 die();
                 break;
             case "submitted_var_3":

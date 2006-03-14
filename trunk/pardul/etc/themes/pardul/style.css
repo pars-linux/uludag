@@ -31,7 +31,7 @@ div#warn {
     letter-spacing: .5px;
     border-bottom:1px solid #BBB;
     padding:2px;
-    margin-bottom:3px;
+    -moz-border-radius : 5px;
 }
 
 div#box {
@@ -44,7 +44,7 @@ div#box {
 
 div#leftbox {
     margin: 5px 5px 0px auto;
-    background-color:#EEE;
+    background-color:#DDD;
     width:170px;
     float:left;
     clear:left;
@@ -55,7 +55,29 @@ div#leftbox {
 
 div#leftpane {
     float:left;
-    clear:left; 
+    clear:left;
+}
+
+div#leftpane input{
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    -moz-border-radius : 5px;
+    width:100%;
+    margin-top:2px;
+}
+
+div#leftpane input:focus{
+    background-color: #FFF;
+}
+
+.register {
+    margin-top:2px;
+    border: 1px solid;
+    color: #CCC;
+    background-color:#EEE;
+    font-size: 7pt;
+    text-align:center;
+    -moz-border-radius : 5px;
 }
 
 div#container {
@@ -93,3 +115,21 @@ div#result {
 .regtable input:focus{
     background-color: #FFF;
 }
+
+input.user {
+	padding-left:18px;
+	background-image: url('images/user.png');
+	background-repeat: no-repeat;
+	}
+
+input.pass {
+	padding-left:18px;
+	background-image: url('images/pass.png');
+	background-repeat: no-repeat;
+	}
+
+input.search {
+	padding-left:18px;
+	background-image: url('images/search.png');
+	background-repeat: no-repeat;
+	}

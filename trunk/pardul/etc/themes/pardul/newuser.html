@@ -1,7 +1,7 @@
 {include file="header.html"}
-
+                {if $message}<div id="warn">{$message}</div>{else}
+                <script src="lib/scripts/newuser.js"></script>
                 <div id="head">Yeni Kullanıcı</div>
-                {if $error}<div id="warn">{$error}</div>{/if}
                 <form id="frm" action="{$pardul_url}?register_f" method="post" onSubmit="return doanothercheck(frm.username);">
                 <table class="regtable">
                     <tbody>
@@ -40,4 +40,5 @@
                     </tr>
                 </table>
                 </form>
+                {/if}
 {include file="footer.html"}

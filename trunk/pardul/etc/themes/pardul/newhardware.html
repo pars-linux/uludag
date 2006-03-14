@@ -1,0 +1,46 @@
+{include file="header.html"}
+                {if $message}<div id="warn">{$message}</div>{else}
+                <script src="lib/scripts/newhardware.js"></script>
+                <div id="head">Yeni Donanım Ekle</div>
+                <form id="frm" action="{$pardul_url}?add_hardware_f" method="post">
+                <table class="regtable">
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align:top;"><span style="color: red">[*]</span> Ürün Adı </td>
+                            <td><input id="p_name" name="p_name" size="30" value="{$p_name}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Üretici Firma </td>
+                            <td><input id="p_vendor" name="p_vendor" value="{$p_vendor}"></td>
+                        <!--<td><input id="p_vendor" name="p_vendor" value="{$p_vendor}"></td>  Liste olacak -->
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Kategori </td>
+                            <td><input id="p_category" name="p_category" value="{$p_category}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: green">[*]</span> Aygıt Numarası </td>
+                            <td><input id="p_device_id" name="p_device_id" value="{$p_device_id}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: green">[*]</span> VeriYolu Tipi </td>
+                            <td><input id="p_bus_type" name="p_bus_type" value="{$p_bus_type}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Durumu </td>
+                            <td><input id="p_work_status" name="p_work_status" value="{$p_work_status}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: green">[*]</span> Ek Açıklama </td>
+                            <td><input id="p_todo_note" name="p_todo_note" type="p_todo_note"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="regtable">
+                    <tr>
+                        <td align="right"><input onclick="return submitform();" value="Kayıt" name="register" type="submit"></td>
+                    </tr>
+                </table>
+                </form>
+                {/if}
+{include file="footer.html"}
