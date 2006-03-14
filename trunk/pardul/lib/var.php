@@ -29,6 +29,29 @@
     $smarty->assign("pardul_url", $config['core']['url']);
     $smarty->assign("tp", $config['smarty']['tpldir']."/".$config['core']['theme']);
 
+    session_start();
+
+    if (isset($_GET['quit'])) {
+        session_unregister("pardul");
+        $_SESSION["state"]="";
+        header ("location: ".$_SELF);
+    }
+
     db_connection('connect', $config['db']['host'].':'.$config['db']['port'], $config['db']['user'], $config['db']['pass'], $config['db']['dbname'], $config['db']['ctype']);
 
+    if (array_key_exists ('login', $_GET)){
+        $user = rtag($_POST['user']);
+        $pass = rtag($_POST['pass']);
+
+        if ($ird=get_user_details($user,$pass)){
+            session_unregister("pardul");
+            @session_register("pardul");
+            $_SESSION["uid"]=$ird[0]['ID'];
+            $_SESSION["uname"]=$ird[0]['UserRealName'];
+            $_SESSION["user"]=$user;
+            $_SESSION["state"]=$ird[0]['UserState'];
+            header ("location: ".$_SELF);
+        }
+        else $login_error=USER_OR_PASS_WRONG;
+    }
 ?>
