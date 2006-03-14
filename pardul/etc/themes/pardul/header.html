@@ -13,9 +13,7 @@
         <meta name="generator" content="{$pardul_v}">
         <link rel="shortcut icon" href="{$tp}/images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="{$tp}/style.css" type="text/css" media="screen">
-    <!--<link rel="alternate" type="application/rss+xml" title="{$title} RSS 2.0 Feed" href="{$url}rss.php" /> -->
         <script src="lib/scripts/prototype.js"></script>
-        <script src="lib/scripts/common.js"></script>
     </head>
 
     <body onload="init()">
@@ -23,11 +21,5 @@
             <img src="{$tp}/images/pardul-header.png">
         </div>
         <div id="box">
-            <div id="leftpane">
-            <div id="leftbox">
-                Category List and may be quick help
-            </div>
-            <div id="leftbox">
-            </div>
-            </div>
+            {include file="leftpane.html"}
             <div id="container">
