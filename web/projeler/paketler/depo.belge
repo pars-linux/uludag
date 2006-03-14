@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-depo = "http://svn.uludag.org.tr/uludag/trunk/doc/tr/pisi/"
+depo = "http://svn.uludag.org.tr/uludag/trunk/doc/tr/Surum/"
 belge = "depo.lyx"
 isim = "Pardus Depo Politikası"
 dizin = "depo"
 ikonlar = "../../../images"
+dosyalar = [ "images/depolar.png", "images/kaynakdepo.png" ]
+
 
 
