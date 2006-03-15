@@ -43,21 +43,21 @@ Parola & Kullanıcı Hesabı: Kullanıcı resmini ve parolasını düzenler
 Masaüstü seçenekleri
 --------------------
 Bileşen seçici:
-Çoklu masaüstü:
-Dosya ilişkileri: 
-Görev çubuğu: 
-Paneller: 
-Pencere davranışı: 
+Çoklu masaüstü: Birden fazla masaüstü ayarlarını yapmak için kullanılır
+Dosya ilişkileri: Dosya sonekleri ile eşleşen programları düzenler
+Görev çubuğu: KDE görev çubuğunun davranışını düzenler
+Paneller: KDE panelinin boyut, şekil ve rengini ayarlar
+Pencere davranışı: Pencerelerin odaklama, taşıma ve şeffaflık seçeneklerini ayarlar
 
 Ses ve çokluortam
 -----------------
-Ses sistemi:
-Sistem bildirimleri:
+Ses sistemi: KDE ses sistemini düzenler
+Sistem bildirimleri: Tanımlı bir eylemde çıkartılacak sesi ayarlar
 TV kartı yapılandırması: Kullanılan TV kartının seçeneklerini düzenler
 
 Sistem seçenekleri
 ------------------
-Kullanıcı ekle ve çıkart:
-Program ekle, güncelle ve kaldır:
+Kullanıcı ekle ve çıkart: Sisteme yeni bir kullanıcı eklemek ya da çıkartmak için kullanılır
+Program ekle, güncelle ve kaldır: Program eklemek, güncellemek ya da kaldırmak için kullanılır
 
 
