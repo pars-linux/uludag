@@ -4,7 +4,5 @@ belge = "depo.lyx"
 isim = "Pardus Depo Politikası"
 dizin = "depo"
 ikonlar = "../../../images"
-dosyalar = [ "images/depolar.png", "images/kaynakdepo.png" ]
-
-
+dosyalar = ( "images/depolar.png", "images/kaynakdepo.png" )
 

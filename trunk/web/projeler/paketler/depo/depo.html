@@ -1,53 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<title>:: Pardus :: tübitak-uekae ::</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link href="../../../stil.css" rel="stylesheet" type="text/css">
-	<link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
-	<link rel="alternate" title="Pardus Bülteni" href="http://www.uludag.org.tr/bulten/bulten.xml" type="application/rss+xml">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-
-<body class="arka">
-<table class="arkayan" width="800" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td width="878" align="center" valign="top">
-<table class="arkadalga" width="700" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td width="800" valign="top">
-
-<!-- logo -->
-<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
-<tr>
-<td width="620" height="60">
-<img src="../../../images/header3.png" alt="Pardus" width="700" height="60">
-</td>
-</tr>
-
-<!-- menüler -->
-<tr>
-<td width="680" height="19" valign="top" bgcolor="#B9D0B3">
-<p class="menubar">
-<a href="../../../index.html">Ana Sayfa</a>
-| <a href="../../../hakkimizda.html">Hakkımızda</a>
-| <a href="../../../projeler/index.html">Projeler</a>
-| <a href="../../../belgeler/index.html">Belgeler</a>
-| <a href="../../../urunler/index.html">Ürünler</a>
-| <a href="../../../iletisim.html">İletişim</a>
-| <a href="../../../basin/index.html">Basında Pardus</a>
-| <a href="../../../eng/index.html">English</a>
-</p>
-</tr>
-</table>
-
-<br>
-
+<body>
 <!-- SAYFA İÇERİK BAŞI -->
 <div class="belge">
 
 
 <H1 ALIGN=center>Pardus Depo Politikası</H1>
 
+<H3 ALIGN=center>T. Barış Metin</H3>
 Belge Pardus paket depolarını ve bu depolar üzerinde uyulması gereken
 kuralları listeler.<BR>
 <BR>
@@ -56,39 +18,179 @@ sistemi dağıtımı için kuralları tarif eder. Farklı kullanım alanlarına
 yönelik, farklı Pardus dağıtımları (Pardus, Pardus Sunucu, vb.) bulunabilir.
 Belgede anlatılan kurallar her Pardus dağıtımı için ayrı ayrı uygulanır.<BR>
 <BR>
+<!--TOC section İçindekiler-->
+
+<H2>İçindekiler</H2><!--SEC END -->
+
+<UL><LI>
+<A HREF="#htoc1">1&nbsp;&nbsp;Paket depoları</A>
+<LI><A HREF="#htoc2">2&nbsp;&nbsp;Kaynak deposu</A>
+<UL><LI>
+<A HREF="#htoc3">2.1&nbsp;&nbsp;Kaynak paketler için genel işleyiş</A>
+</UL>
+<LI><A HREF="#htoc4">3&nbsp;&nbsp;İkili paket depoları</A>
+<UL><LI>
+<A HREF="#htoc5">3.1&nbsp;&nbsp;İkili depo kuralları</A>
+<LI><A HREF="#htoc6">3.2&nbsp;&nbsp;Depo isimlendirmesi</A>
+<UL><LI>
+<A HREF="#htoc7">3.2.1&nbsp;&nbsp;Kararlı depo</A>
+<LI><A HREF="#htoc8">3.2.2&nbsp;&nbsp;Kararlı depo için test deposu</A>
+<LI><A HREF="#htoc9">3.2.3&nbsp;&nbsp;Geliştirme deposu</A>
+</UL>
+</UL>
+<LI><A HREF="#htoc10">4&nbsp;&nbsp;Depoya yeni bir paket eklenmesi</A>
+<LI><A HREF="#htoc11">5&nbsp;&nbsp;Paket geliştiricileri için kurallar</A>
+<UL><LI>
+<A HREF="#htoc12">5.1&nbsp;&nbsp;Genel kurallar</A>
+<LI><A HREF="#htoc13">5.2&nbsp;&nbsp;Paket isimlendirme kuralları</A>
+</UL>
+<LI><A HREF="#htoc14">6&nbsp;&nbsp;Belgeye katkıda bulunanlar</A>
+</UL>
+
+
+<!--TOC section Paket depoları-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Paket depoları</H2><!--SEC END -->
+
+Pardus dağıtımının bütünü hazırlanan yazılım paketlerinin bir araya
+getirilmesi ile oluşturulur. Dağıtıma eklenecek her yazılımın öncelikle
+Pardus paketi olarak hazırlanması gerekir.<BR>
+<BR>
+Paketlerin hazırlanması ve kullanıma sunulmaları sürecinde iki farklı
+yapıda paket deposu kullanılır:
+<UL><LI>
+Kaynak paket deposu
+<LI>İkili paket depoları
+</UL>
+<!--TOC section Kaynak deposu-->
+
+<H2><A NAME="htoc2">2</A>&nbsp;&nbsp;Kaynak deposu</H2><!--SEC END -->
+
+Kaynak paket deposu PİSİ kaynak dizinlerinin bulunduğu depodur. Paketler
+üzerinde yapılan tüm geliştirme kaynak paket deposu üzerinden yürütülür.
+PİSİ paketleri bu kaynaklar kullanılarak oluşturulur ve ikili depolara
+yerleştirilir. <BR>
+<BR>
+Pardus içerisinde o sıradaki dağıtım sürümü tarafından kullanılan
+kaynak depoda aşağıdaki gibi iki ana dal bulunur:
+<OL type=1><LI>
+Kararlı (stable) dallar
+<LI>Geliştirme (development) alanı
+</OL>
+<!--TOC paragraph Kararlı dallar-->
+
+<H5>Kararlı dallar</H5><!--SEC END -->
+
+Genel kullanım için yayınlanmış olan dağıtım sürümlerinin kaynak paketlerini
+barındıran dallardır.<BR>
+<BR>
+Her ilk (major) sürüm numarası için bir kararlı kaynak dal oluşturulur.
+Örneğin: Pardus 1.0, 1.1 ve 1.2 sürümleri aynı kararlı kaynak dalı
+üzerinden ikili paketler oluşturularak hazırlanır. <BR>
+<BR>
+Kararlı sürümün yayınlanması ile de kaynak depo sürüm numarası ile
+etiketlenerek (taglanarak) ayrılır. Etiketlenen bu depo üzerinde geliştirme
+yapılmaz, buradan ikili oluşturulmaz.<BR>
+<BR>
+<!--TOC paragraph Geliştirme alanı-->
+
+<H5>Geliştirme alanı</H5><!--SEC END -->
+
+Ana geliştirmenin yapıldığı, yeni özelliklerin ve paketlerin ilk olarak
+eklendiği alandır.<BR>
+<BR>
+Yeni bir paketin ilk adresi geliştirme alanı olacaktır ve Pardus tarafından
+dağıtıldığı sürece geliştirme alanında barınmaya devam edecektir.
+Paket üzerinde yapılan geliştirme ilk bu alana uygulanır, daha sonra
+kararlı dallara aktarılabilir.<BR>
+<BR>
+Yeni dağıtım sürümleri yayınlandıkça kararlı olarak işaretlenmiş birden
+fazla dal olabilmesine karşın, bir kullanım alanına/kullanıcı kitlesine
+hazırlanan Pardus sürümü için yalnızca bir tane geliştirme alanı bulunur.<BR>
+<BR>
+<!--TOC subsection Kaynak paketler için genel işleyiş-->
+
+<H3><A NAME="htoc3">2.1</A>&nbsp;&nbsp;Kaynak paketler için genel işleyiş</H3><!--SEC END -->
+
+Kaynak paket deposu <EM>subversion</EM> sürüm kontrol sistemi üzerinde
+barındırılır. Kararlı sürüm oluşturulacağı zaman geliştirme alanı
+kararlı bir kaynak sistem oluşturmak için dallandırılır (branch) ve
+hazırlanan yeni dal üzerinde kararlı dağıtım sürümü için paketler
+hazırlanır.<BR>
+<BR>
+Kaynak paket deposunun sıradüzeni aşağıdaki gibidir.
+<UL><LI>
+/<B>devel</B>
+<LI><B>/stable</B>
+<UL><LI>
+/<B>stable/pardus-1</B>
+<LI><B>/stable/pardus-2</B>
+<LI>...
+</UL>
+<LI><B>/tags</B>
+<UL><LI>
+<B>/tags/pardus-1.0</B>
+<LI><B>/tags/pardus-1.1</B>
+<LI><B>...</B>
+<LI><B>/tags/pardus-2.0</B>
+<LI><B>...</B>
+</UL>
+</UL>
+Depo yapısının kaba görünümü ise aşağıdaki şekildeki algılanmalıdır.<BR>
+<BR>
+<IMG SRC="images/kaynakdepo.png"><BR>
+<BR>
+Ana geliştirmenin yapıldığı devel alanı kararlı sürümler için dallandırılır.
+Kararlı sürüm geliştirmeleri bu dallar üzerinde yapılır. Gerekiyorsa
+geliştirme alanında yapılan iyileştirmeler, depo ve bileşen sorumlularının
+kontrolünde kararlı dallara aktarılabilir.<BR>
+<BR>
+Kararlı sürüm alanlarından oluşturulacak sürümün yayınlanması ile
+kararlı sürüm etiketlenir ve üzerinde bundan sonra değişiklik yapılmayacak
+bir etiket oluşturulur.<BR>
+<BR>
 <!--TOC section İkili paket depoları-->
 
-<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;İkili paket depoları</H2><!--SEC END -->
+<H2><A NAME="htoc4">3</A>&nbsp;&nbsp;İkili paket depoları</H2><!--SEC END -->
 
-İkili paket depoları PİSİ paketlerinin derlenmiş ve kurluma hazır
+İkili paket depoları PİSİ paketlerinin derlenmiş ve kuruluma hazır
 hallerinin bulunduğu depolardır. Pardus içerisinde o sıradaki dağıtım
-sürümü tarafından kullanılan iki depo vardır:
+sürümü tarafından kullanılan üç ikili depo vardır:
 <OL type=1><LI>
 Kararlı (stable) depo
+<LI>Kararlı depo için test deposu
 <LI>Geliştirme (development) deposu
 </OL>
 Bu ilk depo isminden anlaşılacağı üzere yayınlanmış olan kararlı Pardus
 sürümünün paketlerini barındırır. Bu depo sürüm çıkana kadar oluşturulmaz
 veya tümü ile boş bırakılır.<BR>
 <BR>
+İkinci depo ise kararlı sürüme aktarılmak üzere hazırlanmış olan paketlerin
+test edildiği depodur. İkili paketler kararlı sürüm deposuna aktarılmadan
+önce bu test deposuna aktarılır ve test edilmeleri beklenir. Her paket
+için en az test süresi, depo sorumlusunun insiyatifi saklı tutularak,
+2 haftadır. Güvenlik güncellemeleri bu sınırın dışında tutulur.<BR>
+<BR>
 Geliştirme deposu ise bir sonraki kararlı sürüm için hazırlanmakta
 olan PİSİ paketlerini içerisinde barındırır.<BR>
 <BR>
-Yeni sürümler yayınlandıkça kararlı olarak işaretlenmiş birden fazla
-depo olabilmesine karşın, bir kullanım alanına/kullanıcı kitlesine
-hazırlanan Pardus sürümü için yalnızca bir tane geliştirme deposu
-bulunur. Geliştirme deposu yeterli olgunluğa kavuştuğunda ve sürüm
-tarihi geldiğinde, geliştirme deposu kopyalanarak sürüm için kararlı
-paket deposu oluşturulur. Bundan sonra geliştirme deposu bir sonraki
-sürüm için geliştirmenin yapıldığı alan olarak görevine devam eder.<BR>
+<IMG SRC="images/depolar.png"><BR>
+<BR>
+<!--TOC subsection İkili depo kuralları-->
+
+<H3><A NAME="htoc5">3.1</A>&nbsp;&nbsp;İkili depo kuralları</H3><!--SEC END -->
+
+Her depoda yapılacak güncellemelerde programlar arası ilişkilerin
+bozulmamasına azami önem göstermek gerekmektedir. API ve ABI'ın korunması
+esas olarak kabul edilir.<BR>
 <BR>
 Kararlı depo üzerinde, yazılımların sürüm güncellemeleri ve depoya
 yeni bir yazılımın/paketin eklenmesi yalnızca deponun kararlılığını
 ve işlevini korumak için yapılır. Kararlı sürümde yapılan güncellemelerin
 amacı yeni özellikleri kararlı sürüme kazandırmak değil, sürümün kararlılığını
-korumak içindir. Burada yapılacak güncellemelerde programlar arası
-ilişkilerin bozulmamasına azami önem göstermek gerekmektedir. API
-ve ABI'ın korunması esas olarak kabul edilir.<BR>
+korumak içindir. Yine de, eklenecek/güncellencek paket ile dağıtımın
+hedef kitlesine yönelik, yaygın bir kullanımın alanının sorunları
+gideriliyorsa depo sorumlusunun onayı ile işlem yapılır.<BR>
 <BR>
 Bir kararlı depo içerisinde her hangi bir paketin yalnızca <B>tek
 bir sürüm</B>ü bulunabilir. Eğer yazılımların farklı sürümlerinin depoda
@@ -98,55 +200,101 @@ depoda bulunmalıdır.<BR>
 <BR>
 <!--TOC subsection Depo isimlendirmesi-->
 
-<H3><A NAME="htoc2">1.1</A>&nbsp;&nbsp;Depo isimlendirmesi</H3><!--SEC END -->
+<H3><A NAME="htoc6">3.2</A>&nbsp;&nbsp;Depo isimlendirmesi</H3><!--SEC END -->
 
-Her kararlı sürüm, sürüm adı ve sürüm numarasından oluşan bir depo
-ismi ile anılır. Örneğin; Pardus 1.0 sürümü için depo ismi ``pardus-1.0''
-dır.<BR>
+İkili depolar için aşağıdaki isimler kullanılır.<BR>
 <BR>
+<!--TOC subsubsection Kararlı depo-->
+
+<H4><A NAME="htoc7">3.2.1</A>&nbsp;&nbsp;Kararlı depo</H4><!--SEC END -->
+
+Her kararlı sürüm, sürüm adı ve sürümün ilk (major) numarasından oluşan
+bir depo ismi ile anılır. Örneğin; yayınlanmış olan Pardus 1.0 sürümü
+için ilk sürüm numarası ``1''dir. Bu durumda ikili deponun adı
+``pardus-1'' olacaktır.<BR>
+<BR>
+Aynı ilk sürüm numarasına sahip her yayınlanan sürüm için kararlı
+depo aynı olacaktır. Yukarıdaki örnekten yola çıkarak 1.0, 1.1, 1.2
+depolarının kullanacakları kararlı depo ``pardus-1'' olacaktır.<BR>
+<BR>
+<!--TOC subsubsection Kararlı depo için test deposu-->
+
+<H4><A NAME="htoc8">3.2.2</A>&nbsp;&nbsp;Kararlı depo için test deposu</H4><!--SEC END -->
+
+Bu depo için, kararlı depo adının sonuna ``-test'' son eki getirilir.
+pardus-1 kararlı deposu için oluşturulan test deposu ``pardus-1-test''
+olarak adlandırılır.<BR>
+<BR>
+<!--TOC subsubsection Geliştirme deposu-->
+
+<H4><A NAME="htoc9">3.2.3</A>&nbsp;&nbsp;Geliştirme deposu</H4><!--SEC END -->
+
 Geliştirme deposu ise bir kullanım alanı için hazırlanan Pardus için
 her zaman aynı ismi alır. Örneğin; Pardus isimli işletim sistemi dağıtımı
 için geliştirme deposunun ismi her zaman ``pardus-devel'' olarak
 isimlendirilecektir. Bu isim, geliştirilmekte olan bir sonraki sürümün
 numarasından bağımsızdır ve tektir.<BR>
 <BR>
-<!--TOC section Kaynak paket depoları-->
+<!--TOC section Depoya yeni bir paket eklenmesi-->
 
-<H2><A NAME="htoc3">2</A>&nbsp;&nbsp;Kaynak paket depoları</H2><!--SEC END -->
+<H2><A NAME="htoc10">4</A>&nbsp;&nbsp;Depoya yeni bir paket eklenmesi</H2><!--SEC END -->
 
-Kaynak paket depoları PİSİ kaynak dizinlerinin bulunduğu depolardır.
-Paketler üzerinde yapılan tüm geliştirme kaynak paket depoları üzerinden
-yürütülür. PİSİ paketleri bu kaynaklar kullanılarak oluşturulur ve
-ikili depoya yerleştirilir. Bu yüzden, ikili paket depoları ile ilgili
-kurallar doğrudan kaynak paket depolarına da uygulanır.<BR>
+Paket depolarına yeni bir paket eklemek için bazı şartların yerine
+getirilmiş olması gerekmektedir. İki farklı depo (kararlı ve geliştirme)
+için farklı kurallar söz konusudur. Temel kural olarak yeni bir paketin
+her zaman <B>ilk önce geliştirme deposuna eklenir</B>.<BR>
 <BR>
-Kaynak paket depolarının isimlendirmesi de ikili depolar ile özdeştir.<BR>
+Geliştirme deposuna eklenen paket kaynağının paketin geliştiricisi
+tarafından denenmiş olması gerekir. Derlenmeyen ve/veya kurulamayan
+paket depoya eklenmez. Geliştirme deposuna eklenen paketin kararlılığı
+ve dağıtıma uygunluğu kontrol edilir, sorunları giderilir, paket kararlı
+depoya eklenmek için hazırlanır.<BR>
 <BR>
-Kaynak paket depoları, ikili paket depolarından farklı olarak Subversion
-sürüm kontrol sistemi üzerinde barındırılır. Kararlı sürüm oluşturulacağı
-zaman geliştirme deposu etiketlenir (taglanır) ve etiketlenmiş kaynaklardan
-ikili PİSİ paketleri oluşturularak sürüm için kararlı ikili paket
-deposu oluşturulur.<BR>
+Depoya eklenen paketlerin bilinen bir güvenlik açığı olmamalıdır.
+Varsa, ilgili güvenlik açığını gideren yaması ile birlikte eklenmelidir.<BR>
+<BR>
+Sorunların giderilmesi bölümünde dikkate alınabilecek bir sorunlar
+listesi aşağıda listelenmiştir. Paket sorunları ve yazılım sorunları
+ve paketlenen yazılım sorunları iki ayrı madde ile anlatılır.
+<UL><LI>
+Paket sorunları:
+<UL><LI>
+Oluşturulan ikili paketler fazla büyük (monolitik). Birden fazla pakete
+bölünebilir mi?
+</UL>
+<LI>Yazılım sorunları:
+<UL><LI>
+Utf-8 uyumsuzlukları
+<LI>Türkçe çeviri eksikliği
+<LI>Uygulama grafikleri masaüstü ile uyumlu mu?
+<LI>Ön tanımlı yapılandırma seçenekleri
+<LI>Yazılımın bilinen veya yeni bulunan hataları
+<LI>Kullanışlılık sorunları
+</UL>
+</UL>
+Geliştirme deposuna eklenen paketin sorunları giderildikten sonra
+kararlı depoya eklenmeye hak kazanır. Fakat geliştirme deposuna eklenen
+tüm paketlerin ileride kararlı depoya ekleneceği garantisi yoktur.
+Kararlı depoya geçişe sürümün kuralları çerçevesinde sürüm yöneticisi
+karar verir.<BR>
 <BR>
 <!--TOC section Paket geliştiricileri için kurallar-->
 
-<H2><A NAME="htoc4">3</A>&nbsp;&nbsp;Paket geliştiricileri için kurallar</H2><!--SEC END -->
+<H2><A NAME="htoc11">5</A>&nbsp;&nbsp;Paket geliştiricileri için kurallar</H2><!--SEC END -->
 
-Paket geliştiricileri Subversion üzerinde bulunan kaynak paket depoları
-üzerinde çalışırlar. Yazılımların kaynak kodlarından PİSİ paketlerinin
-oluşturulması için gerekli olan geliştirme, paket geliştiricileri
-tarafından yürütülür.<BR>
+Paket geliştiricileri subversion üzerinde bulunan kaynak deposu üzerinde
+çalışırlar. Yazılımların kaynak kodlarından PİSİ paketlerinin oluşturulması
+için gerekli olan geliştirme, paket geliştiricileri tarafından yürütülür.<BR>
 <BR>
 Paket geliştiricileri 3 farklı sorumluluk grubu ile listelenebilir.
 <OL type=1><LI>
-<B>Depo geliştiricisi</B>: Depo geliştiricileri tüm depodan sorumlu
-olan ve tüm depo üzerinde işlem yapmaya yetkili kişilerdir.
-<LI><B>Kategori geliştiricisi</B>: PİSİ kaynakları tasarım belgesinde
-anlatıldığı gibi bir kategori (Category / PartOf) tanımı yaparlar.
-Kategori gelişticisi belirli bir kategoriye uyan tüm paketlerden sorumu
-olan ve bu paketler üzerinde işlem yapma yetkisine sahip geliştiricidir.
-Örnek kategoriler arasında, <EM>system/base, system/devel, dekstop/kde</EM>
-sayılabilir.
+<B>Depo sorumlusu</B>: Depo sorumluları tüm depodan sorumlu olan
+ve tüm depo üzerinde işlem yapmaya yetkili kişilerdir.
+<LI><B>Bileşen sorumlusu</B>: PİSİ kaynakları tasarım belgesinde anlatıldığı
+gibi bir bileşen tanımı yaparlar. Bileşen sorumlusu belirli bir bileşene
+uyan tüm paketlerden sorumu olan ve bu paketler üzerinde işlem yapma
+yetkisine sahip geliştiricidir. Örnek bileşenler arasında, <EM>system/base,
+system/devel, dekstop/kde</EM> sayılabilir.
 <LI><B>Paket geliştiricisi</B>: Paket geliştiricisi yalnızca sorumluluğunu
 almış olduğu paketler üzerinde işlem yapma yetkisine sahiptir.
 </OL>
@@ -154,18 +302,19 @@ Sorumluluk grupları sorunların hızlı bir şekilde giderilebilmesi ve
 farklı boyutlarda kararların hızlı bir şekilde alınabilmesi için oluşturulmuştur.
 Herhangi bir geliştirici, sorumluluğunu aşan bir müdahale yapmak istediği
 zaman izin isteyerek çalışabilir. Üzerinde anlaşılmış konularda yapılan
-düzeltmeler/güncellemeler genellike izin istemeye gerek duyulmadan
+düzeltmeler/güncellemeler (örneğin uluslararasılaştırma, yerelleştirme
+ya da sözdizimi hataları gibi) genellike izin istemeye gerek duyulmadan
 kabul edilir :).<BR>
 <BR>
 <!--TOC subsection Genel kurallar-->
 
-<H3><A NAME="htoc5">3.1</A>&nbsp;&nbsp;Genel kurallar</H3><!--SEC END -->
+<H3><A NAME="htoc12">5.1</A>&nbsp;&nbsp;Genel kurallar</H3><!--SEC END -->
 
 <UL><LI>
 Kaynak paket deposu üzerinde çalışan geliştiricilerin paket deposu
 kurallarına ve yayınlanmış bir sürüm zaman planı varsa bu zaman planına
 uyması gerekir.
-<LI>Paket geliştiricileri hazırladıkları PİSİ kaynak dizinlerini hazırlarlar,
+<LI>Paket geliştiricileri hazırladıkları PİSİ kaynak dizinlerini oluştururlar,
 fakat PİSİ kaynaklarının .pisi ikili paketlerine dönüştürülmesi doğrudan
 paket geliştiricileri tarafından gerçekleştirilmez. Bununla birlikte,
 geliştiricinin kaynak paketi sisteminde oluşturduğu, test ettiği ve
@@ -178,13 +327,11 @@ derlenebilir, sorunsuz ve çalışır olduğundan emin olmak zorundadırlar.
 Paket tüm testleri geçmelidir.
 <LI>Eksik veya tamamlanmamış paketler depoya asla gönderilmemelidir. Her
 paketin pspec.xml, actions.py dosyaları doğru olarak yazılmış olmalı.
-Yamaları ve ek dosyaları files/ dizini altında bulunmalı. COMAR betikleri
+Yamaları ve ek dosyaları files/ dizini altında bulunmalı. ÇOMAR betikleri
 ise comar/ dizini içerisinde bulunmalıdır. Paket derlenebiliyor ve
 kurulabiliyor olmalıdır.
-<LI>Geliştirici paket güncellemelerinde pakete ait olan ChangeLog dosyasını
-düzgün, anlaşılır şekilde güncellemelidir.
 <LI>Geliştirici aynı anda birden fazla paket ile ilgili depoya gönderim
-yapmamalıdır. Örneğin; Bir geliştirici 8 paket üzerinde birden değişiklik
+yapmamalıdır. Örneğin; bir geliştirici 8 paket üzerinde birden değişiklik
 yaptı ise, her paket için ayrı ayrı gönderimde bulunmalıdır (yani
 toplamda 8 ayrı gönderim). Kısaca gönderimler atomik olmalıdır.
 <LI>Bir geliştirici bir başka geliştiricinin paketine acil durumlar dışında
@@ -201,15 +348,15 @@ ekran görüntüsü de bu kurala dahildir :).
 </UL>
 <!--TOC subsection Paket isimlendirme kuralları-->
 
-<H3><A NAME="htoc6">3.2</A>&nbsp;&nbsp;Paket isimlendirme kuralları</H3><!--SEC END -->
+<H3><A NAME="htoc13">5.2</A>&nbsp;&nbsp;Paket isimlendirme kuralları</H3><!--SEC END -->
 
-Paket isimlerindirmesi ile ilgili kurallar pisi kaynak dizinindeki
-package_versions.tex belgesinde detaylı olarak anlatılmaktadır. Bu
-bölümde kısaca bir PİSİ paketinin isimlendirmesi anlatılacaktır. Bu
-kural serisine uymayan isimlendirmeler hatalı kabul edilir.
+Paket isimlendirmesi ile ilgili kurallar pisi kaynak dizinindeki package_versions.tex
+belgesinde detaylı olarak anlatılmaktadır. Bu bölümde kısaca bir PİSİ
+paketinin isimlendirmesi anlatılacaktır. Bu kural serisine uymayan
+isimlendirmeler hatalı kabul edilir.
 <OL type=1><LI>
 Bir pisi paketinin isimlendirme kuralı şu şekilde formülize edilebilir.
-PAKET-VERSİYON{_sonekNUMARA}-REVIZYON. 
+PAKET-VERSİYON{_sonekNUMARA}-REVİZYON. 
 <LI>Paket ismi ana geliştiricinin pakete verdiği isimdir, değiştirilemez
 fakat genişletilebilir (kaynağının paketlenmesi sırasında oluşturulacak
 bir alt paket gcc-doc olarak isimlendirilebilir)
@@ -217,35 +364,22 @@ bir alt paket gcc-doc olarak isimlendirilebilir)
 değiştirilemez. (util-linuz-2.4z, kernel-2.6.9.4, gcc-3.3.6 gibi)
 <LI>_sonek ile belirtilen kısım ``alpha'', ``beta'', ``pre'',
 ``rc'' ve ``p [patch level]'' den biri olabilir. Bunların
-kendi arasında sıralaması şöyledir; alpha &lt; beta &lt; pre &lt; rc &lt; Son
-eksiz paket &lt; p. (1.1_alpha1 &lt; 1.1_beta1 &lt; 1.1 &lt; 1.1_p4 )
+kendi arasında sıralaması şöyledir; alpha &lt; beta &lt;
+pre &lt; rc &lt; Son eksiz paket &lt; p. (1.1_alpha1
+&lt; 1.1_beta1 &lt; 1.1 &lt; 1.1_p4 )
 <LI>Revizyon geliştirici tarafından pakete verilen ve devamlı artan bir
 sayıdır. Pakete yapılan değişikliklerde bu revizyon numarası her
 zaman arttırılmalıdır.
 </OL>
+<!--TOC section Belgeye katkıda bulunanlar-->
+
+<H2><A NAME="htoc14">6</A>&nbsp;&nbsp;Belgeye katkıda bulunanlar</H2><!--SEC END -->
+
+<UL><LI>
+S. Çağlar Onur
+</UL>
+
 </div>
 <!-- SAYFA İÇERİK SONU -->
-
-<!-- yayın hakkı -->
-<br>
-<br>
-<p class="not">
-Pardus sayfalarında bulunan bilgi ve belgelerin,
-kaynak gösterilmek koşulu ile kullanılması serbesttir.
-<em><br>
-<strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
-Bilgi ve önerileriniz için
-<a href="mailto:bilgi%20at%20uludag.org.tr">bilgi at pardus.org.tr</a>
-</p>
-<br>
-
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
-</table>
-
 </body>
 </html>
