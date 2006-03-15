@@ -166,3 +166,24 @@ input.search {
     margin: 3px;
     width:200px;
 }
+
+.vendor_list {
+    background-color:#FFC;
+    border: 1px solid #aaa;
+    padding: 2px;
+    
+}
+
+.dropmenu {
+    display: none;
+}
+.droppedmenu {
+    display: block; 
+    position: absolute;
+    z-index: 99;
+    background-color: #FBFBF9;
+    border: 1px solid #ccc;
+    padding: 1px;
+    cursor: pointer;
+    width: 365px;
+}

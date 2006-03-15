@@ -11,7 +11,7 @@
         make_*($parameters) it adds or updates a field with given paramaeters
         return Boolean;
     */
-    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$adddate,$updatedate,$status=0,$userid,$suserid){
+    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$date,$status=0,$userid,$suserid=""){
         global $config;
         $productname    = rtag($productname);
         $vendorid       = rtag($vendorid);
@@ -19,13 +19,12 @@
         $bustype        = rtag($bustype);
         $categoryid     = rtag($categoryid);
         $adddate        = rtag($adddate);
-        $updatedate     = rtag($updatedate);
-        $adddate        = rtag($adddate);
+        $date           = rtag($date);
         $status         = rtag($status);
         $userid         = rtag($userid);
         $suserid        = rtag($suserid);
-        $hwid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendorid}','{$deviceid}','{$bustype}','{$categoryid}','{$adddate}','{$updatedate}','{$status}','{$userid}','{$suserid}')" :
-        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendorID='{$vendorid}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWAddDate='{$adddate}',HWUpdateDate='{$updatedate}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}' WHERE ID='$hwid'";
+        $hwid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendorid}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}')" :
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendorID='{$vendorid}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWUpdateDate='{$date}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}' WHERE ID='$hwid'";
         return mysql_query($sql_word);
     }
 
@@ -163,4 +162,11 @@
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE UserName = '$user' AND UserPass = '$passx'".$attach_sql;
         return perform_sql($sql_word);
     }
+
+    function find_vendor($pref) {
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Vendors WHERE VendorName LIKE '$pref%'";
+        return perform_sql($sql_word);
+    }
+
 ?>
