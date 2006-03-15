@@ -23,35 +23,36 @@
     $smarty->force_compile = $config['smarty']['forcecompile'];
     $smarty->clear_all_cache();
 
-    $smarty->assign("pardul_v","v{$config['pardul']['version']} (d{$config['pardul']['build']})");
-    $smarty->assign("pardul_title", $config['core']['title']);
-    $smarty->assign("pardul_desc", $config['core']['desc']);
-    $smarty->assign("pardul_url", $config['core']['url']);
-    $smarty->assign("tp", $config['smarty']['tpldir']."/".$config['core']['theme']);
+    ssv("pardul_v","v{$config['pardul']['version']} (d{$config['pardul']['build']})");
+    ssv("pardul_title", $config['core']['title']);
+    ssv("pardul_desc", $config['core']['desc']);
+    ssv("pardul_url", $config['core']['url']);
+    ssv("tp", $config['smarty']['tpldir']."/".$config['core']['theme']);
+
+    db_connection('connect', $config['db']['host'].':'.$config['db']['port'], $config['db']['user'], $config['db']['pass'], $config['db']['dbname'], $config['db']['ctype']);
 
     session_start();
 
     if (isset($_GET['quit'])) {
-        session_unregister("pardul");
+        session_unregister("pardon");
         $_SESSION["state"]="";
         header ("location: ".$_SELF);
     }
-
-    db_connection('connect', $config['db']['host'].':'.$config['db']['port'], $config['db']['user'], $config['db']['pass'], $config['db']['dbname'], $config['db']['ctype']);
 
     if (array_key_exists ('login', $_GET)){
         $user = rtag($_POST['user']);
         $pass = rtag($_POST['pass']);
 
         if ($ird=get_user_details($user,$pass)){
-            session_unregister("pardul");
-            @session_register("pardul");
+            session_unregister("pardon");
+            @session_register("pardon");
             $_SESSION["uid"]=$ird[0]['ID'];
             $_SESSION["uname"]=$ird[0]['UserRealName'];
             $_SESSION["user"]=$user;
             $_SESSION["state"]=$ird[0]['UserState'];
-            header ("location: ".$_SELF);
+            header ("location: ","index.php");
         }
         else $login_error=USER_OR_PASS_WRONG;
     }
+
 ?>
