@@ -42,7 +42,7 @@ Parola & Kullanıcı Hesabı: Kullanıcı resmini ve parolasını düzenler
 
 Masaüstü seçenekleri
 --------------------
-Bileşen seçici:
+Bileşen seçici: Belirli işlevlere karşılık gelen programları tanımlar
 Çoklu masaüstü: Birden fazla masaüstü ayarlarını yapmak için kullanılır
 Dosya ilişkileri: Dosya sonekleri ile eşleşen programları düzenler
 Görev çubuğu: KDE görev çubuğunun davranışını düzenler
