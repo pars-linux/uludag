@@ -1,4 +1,4 @@
--- 
+
 -- Veritabanı: `pardul`
 -- 
 
@@ -16,7 +16,7 @@ CREATE TABLE `pardulActionCompatibility` (
   `HWState` set('F','S','N') NOT NULL default '',
   `ToDoToWork` text,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -29,7 +29,22 @@ CREATE TABLE `pardulCategories` (
   `CategoryName` varchar(32) NOT NULL default '',
   `ParentID` int(11) NOT NULL default '0',
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=14 ;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tablo yapısı : `pardulComments`
+-- 
+
+CREATE TABLE `pardulComments` (
+  `ID` bigint(20) NOT NULL auto_increment,
+  `HWID` bigint(20) NOT NULL default '0',
+  `UID` int(11) NOT NULL default '0',
+  `Comment` text NOT NULL,
+  `AddDate` varchar(12) NOT NULL default '',
+  PRIMARY KEY  (`ID`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -42,7 +57,7 @@ CREATE TABLE `pardulDistribution` (
   `DistVersion` varchar(32) NOT NULL default '',
   `DistName` varchar(32) NOT NULL default 'Pardus',
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -63,7 +78,7 @@ CREATE TABLE `pardulHardwares` (
   `UserID` int(11) NOT NULL default '0',
   `SuperUserID` int(11) NOT NULL default '0',
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -75,7 +90,7 @@ CREATE TABLE `pardulPlatform` (
   `ID` int(11) NOT NULL auto_increment,
   `Platform` varchar(32) NOT NULL default '',
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -90,9 +105,9 @@ CREATE TABLE `pardulUsers` (
   `UserRealName` varchar(32) NOT NULL default '',
   `UserEmail` varchar(72) NOT NULL default '',
   `UserWeb` varchar(72) NOT NULL default '',
-  `UserState` set('G','SA','A') NOT NULL default 'G',
+  `UserState` set('G','SA','A','N') NOT NULL default 'N',
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -101,24 +116,9 @@ CREATE TABLE `pardulUsers` (
 -- 
 
 CREATE TABLE `pardulVendors` (
-  `id` int(11) NOT NULL auto_increment,
+  `ID` int(11) NOT NULL auto_increment,
   `VendorName` varchar(200) NOT NULL default '',
   `VendorURL` varchar(200) NOT NULL default '---',
   `VendorID` varchar(24) NOT NULL default '---',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
--- 
--- Tablo yapısı : `pardulComments`
--- 
-
-CREATE TABLE `pardulComments` (
-  `ID` bigint(20) NOT NULL auto_increment,
-  `HWID` bigint(20) NOT NULL default '0',
-  `UID` int(11) NOT NULL default '0',
-  `Comment` text NOT NULL,
-  `AddDate` varchar(12) NOT NULL default '',
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=5 ;
