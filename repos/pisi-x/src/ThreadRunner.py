@@ -31,6 +31,12 @@ class PisiThread(QThread):
         self.updatingRepo = False
         self.updatingAllRepos = False
 
+        # Caching mechanism
+        self.databaseDirty = False
+        self.allPackages = []
+        self.newPackages = []
+        self.upgrades = []
+
     def initDatabase(self):
         try:
             pisi.api.init(database=True, options=None, ui=self.ui, comar=True)
@@ -39,47 +45,66 @@ class PisiThread(QThread):
             self.postEvent(self.parent,event)
     
     def install(self,apps):
+        self.databaseDirty = True
         self.installing = True
         self.appList = apps
         self.start()
 
     def upgrade(self,apps):
+        self.databaseDirty = True
         self.upgrading = True
         self.appList = apps
         self.start()
     
     def remove(self,apps):
+        self.databaseDirty = True
         self.removing = True
         self.appList = apps
         self.start()
 
     def updateRepo(self, repo):
+        self.databaseDirty = True
         self.updatingRepo = True
         self.repo = repo
         self.start()
     
     def updateAllRepos(self):
+        self.databaseDirty = True
         self.updatingAllRepos = True
         self.repoList = pisi.context.repodb.list()
         self.start()
 
     def addRepo(self,repoName,repoAddress):
+        self.databaseDirty = True
         pisi.api.add_repo(repoName,repoAddress)
         
     def removeRepo(self, repoName):
+        self.databaseDirty = True
         pisi.api.remove_repo(repoName)
        
     def swapRepos(self, repo1, repo2):
         pisi.api.ctx.repodb.swap(repo1, repo2)
     
     def listUpgradable(self):
-        return pisi.api.list_upgradable()
+        if not len(self.upgrades) or self.databaseDirty:
+            self.upgrades = pisi.api.list_upgradable()
 
+        self.databaseDirty = False
+        return self.upgrades
+        
     def listPackages(self):
-        return pisi.packagedb.inst_packagedb.list_packages()
+        if not len(self.allPackages) or self.databaseDirty:
+            self.allPackages = pisi.packagedb.inst_packagedb.list_packages()
+
+        self.databaseDirty = False
+        return self.allPackages
 
     def listAvailable(self):
-        return list(pisi.api.list_available()-set(self.listPackages()))
+        if not len(self.newPackages) or self.databaseDirty:
+            self.newPackages = list(pisi.api.list_available()-set(self.listPackages()))
+
+        self.databaseDirty = False
+        return self.newPackages
 
     def searchPackage(self,query,language='tr'):
         return pisi.api.search_package(query,language)

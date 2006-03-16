@@ -127,7 +127,8 @@ class MainApplicationWidget(QWidget):
         # Check for empty repo.
         self.initialCheck()
 
-    def updateListing(self,index):
+    def updateListing(self):
+        index = self.comboBox.currentItem()
         if index == 0:
             self.createComponentList(self.command.listPackages())
         elif index == 1:
