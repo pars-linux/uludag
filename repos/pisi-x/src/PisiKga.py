@@ -118,7 +118,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.comboBox,SIGNAL("activated(int)"),self.updateListing)
 
-        self.createComponentList()
+        self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
         self.show()
         
@@ -127,11 +127,13 @@ class MainApplicationWidget(QWidget):
 
     def updateListing(self,index):
         if index == 0:
-            self.createHTML(self.command.listPackages())
+            self.createComponentList(self.command.listPackages())
         elif index == 1:
-            self.createHTML(self.command.listAvailable())
+            self.createComponentList(self.command.listAvailable())
         else:
-            self.createHTML(self.command.listUpgradable())
+            self.createComponentList(self.command.listUpgradable())
+
+        self.listView.setSelected(self.listView.firstChild(),True)
                 
     def initialCheck(self):
         if not nonPrivMode:
@@ -213,7 +215,7 @@ class MainApplicationWidget(QWidget):
         return result
         
     def updateView(self,item):
-        self.createHTML(self.componentDict[item].packages)
+        self.createHTML(self.componentDict[item])
 
     def check(self):
         appsToProcess = []
@@ -228,7 +230,7 @@ class MainApplicationWidget(QWidget):
                 appsToProcess.append(str(element.getAttribute(DOM.DOMString("name"))))
         self.command.remove(appsToProcess)
         
-    def createComponentList(self):
+    def createComponentList(self,packages):
          # Components
          self.listView.clear()
          self.listView.addColumn("Components")
@@ -238,11 +240,16 @@ class MainApplicationWidget(QWidget):
          self.componentDict = {}
          
          for component in components:
-             if component.packages:
+             componentPacks = []
+             for package in packages:
+                 if package in component.packages:
+                     componentPacks.append(package)
+             
+             if len(componentPacks):
                  item = KListViewItem(self.listView)
                  item.setText(0,u"%s" % component.localName)
                  item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-                 self.componentDict[item] = component
+                 self.componentDict[item] = componentPacks
                  
         
     def customEvent(self, event):
