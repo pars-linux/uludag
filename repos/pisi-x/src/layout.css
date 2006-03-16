@@ -1,0 +1,68 @@
+body{
+	font-family: Tahoma, Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
+	margin:10px;
+}
+
+.ad{
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+/* Package Title Style .. */
+.package_title {
+	color:#FFF;
+	font-size:12px;
+	margin-top:2px;
+        background-color:#3c8839;
+	padding-left:2px;
+	background-repeat:no-repeat;
+	background-position:top right;	
+	height:50px;
+	overflow:hidden;
+	cursor:pointer;
+        
+}
+
+.package_title img {
+        border: 0px;
+	vertical-align: top;
+        float:left;
+}
+
+.version_info {
+        float:right;
+        margin-top: 3px;
+        margin-right: 3px;
+        vertical-align:middle;
+}
+
+.installed_button {
+        float:right;
+        margin-right:3px;
+        vertical-align:middle;
+        font-weight: bold;
+}
+
+.checkboks {
+    float:left;
+    background-color:#3c8839;
+    height:50px;
+}
+/* Package info Style */
+.package_info {
+	border:1px solid #3c8839;
+	background-color:#5dd359;
+	visibility:hidden;
+	height:0px;
+	overflow:hidden;
+	position:relative;
+}
+
+/* Package info Content */
+.package_info_content {
+	padding:1px;
+	font-size:12px;	
+	position:relative;
+}
+
