@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'RepoDialog.ui'
 #
-# Created: Prş Mar 16 15:17:24 2006
+# Created: Prş Mar 16 17:28:12 2006
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20060126
 #
 # WARNING! All changes made in this file will be lost!

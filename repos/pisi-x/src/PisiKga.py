@@ -88,7 +88,6 @@ class MainApplicationWidget(QWidget):
         self.currentAppIndex = 1
         self.totalSelectedSize = 0
 
-        self.setCaption("PiSi X")
         self.layout = QGridLayout(self)
         self.buttonLayout = QHBox(self)
         self.leftLayout = QVBox(self)
@@ -98,9 +97,9 @@ class MainApplicationWidget(QWidget):
         self.configButton = KPushButton(i18n("Configure Pisi X"),self.buttonLayout)
         self.installRemoveButton = KPushButton(i18n("InstallPackages"),self.buttonLayout)
 
-        self.comboBox.insertItem("Show installed packages")
-        self.comboBox.insertItem("Show new packages")
-        self.comboBox.insertItem("Show upgrades")
+        self.comboBox.insertItem(i18n("Show installed packages"))
+        self.comboBox.insertItem(i18n("Show new packages"))
+        self.comboBox.insertItem(i18n("Show upgrades"))
 
         self.leftLayout.setMargin(2)
         self.buttonLayout.setMargin(2)
@@ -156,8 +155,8 @@ class MainApplicationWidget(QWidget):
         
         self.htmlPart.begin()
         self.htmlPart.write(head)
-        self.htmlPart.write('''<style type="text/css"><!-- @import url(/home/cartman/pisix/layout.css); --></style>''')
-        self.htmlPart.write('''<script language="JavaScript" src="/home/cartman/pisix/animation.js"></script>''')
+        self.htmlPart.write('''<style type="text/css"><!-- @import url(/home/cartman/SVN/repos/pisi-x/src/layout.css); --></style>''')
+        self.htmlPart.write('''<script language="JavaScript" src="/home/cartman/SVN/repos/pisi-x/src/animation.js"></script>''')
         self.htmlPart.write("</head><body>")
         self.htmlPart.write(self.createHTMLForPackages(packages))
         self.htmlPart.write('''
