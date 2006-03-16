@@ -101,6 +101,8 @@ class MainApplicationWidget(QWidget):
         self.comboBox.insertItem(i18n("Show new packages"))
         self.comboBox.insertItem(i18n("Show upgrades"))
 
+        self.listView.addColumn("Components")
+        
         self.leftLayout.setMargin(2)
         self.buttonLayout.setMargin(2)
         self.leftLayout.setSpacing(5)
@@ -233,7 +235,6 @@ class MainApplicationWidget(QWidget):
     def createComponentList(self,packages):
          # Components
          self.listView.clear()
-         self.listView.addColumn("Components")
          componentNames = pisi.context.componentdb.list_components()
          componentNames.sort()
          components = [pisi.context.componentdb.get_component(x) for x in componentNames]
