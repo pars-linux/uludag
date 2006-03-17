@@ -249,7 +249,7 @@ class MainApplicationWidget(QWidget):
             desc = package.description
             summary = package.summary
             version = package.version
-            size = FormatNumber(package.installedSize)
+            size = FormatNumber(package.packageSize)
             result += template % (style,app,style,app,summary,version,size,style,desc)
             index += 1
 
