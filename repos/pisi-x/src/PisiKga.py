@@ -73,13 +73,15 @@ def loadIcon(name, group=KIcon.Desktop):
 
 class CustomEventListener(DOM.EventListener):
     def handleEvent(self,event):
-        inputElement = DOM.HTMLInputElement(event.currentTarget())
-        name = inputElement.getAttribute(DOM.DOMString("name")).string()
-        checked = inputElement.checked()
-        if checked:
-            print name,'is checked!'
-        else:
-            print name,'is unchecked!'
+        target = event.target()
+        if target.nodeName().string() == "INPUT":
+            inputElement = DOM.HTMLInputElement(target)
+            name = inputElement.getAttribute(DOM.DOMString("name")).string()
+            checked = inputElement.checked()
+            if checked:
+                print name,'is checked!'
+            else:
+                print name,'is unchecked!'
 
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
@@ -109,7 +111,7 @@ class MainApplicationWidget(QWidget):
         self.configButton = KPushButton(i18n("Configure..."),self.buttonLayout)
         self.installRemoveButton = KPushButton(i18n("Install Package(s)"),self.buttonLayout)
         
-        # Read javascript
+       # Read javascript
         js = file("animation.js").read()
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
         js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
@@ -179,12 +181,10 @@ class MainApplicationWidget(QWidget):
                     KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def registerEventHandlers(self):
-        print 'Registering event handlers!'
+        print 'Registering event handler'
         self.eventHandler = CustomEventListener()
-        nodeList = self.htmlPart.document().getElementsByTagName(DOM.DOMString("input"))
-        for i in range(0,nodeList.length()):
-            node = DOM.HTMLInputElement(nodeList.item(i))
-            node.addEventListener(DOM.DOMString("click"),self.eventHandler,False)
+        node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
+        node.addEventListener(DOM.DOMString("click"),self.eventHandler,True)
         
     def createHTML(self,packages):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
