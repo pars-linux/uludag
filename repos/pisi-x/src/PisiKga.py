@@ -72,9 +72,6 @@ def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
 class CustomEventListener(DOM.EventListener):
-    def __init__(self):
-        DOM.EventListener.__init__(self)
-
     def handleEvent(self,event):
         inputElement = DOM.HTMLInputElement(event.currentTarget())
         name = inputElement.getAttribute(DOM.DOMString("name")).string()
