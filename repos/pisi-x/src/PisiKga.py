@@ -71,6 +71,19 @@ def AboutData():
 def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
+class CustomEventListener(DOM.EventListener):
+    def __init__(self):
+        DOM.EventListener.__init__(self)
+
+    def handleEvent(self,event):
+        inputElement = DOM.HTMLInputElement(event.currentTarget())
+        name = inputElement.getAttribute(DOM.DOMString("name")).string()
+        checked = inputElement.checked()
+        if checked:
+            print name,'is checked!'
+        else:
+            print name,'is unchecked!'
+
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent, "PiSi X")
@@ -89,6 +102,7 @@ class MainApplicationWidget(QWidget):
         self.currentAppIndex = 1
         self.totalSelectedSize = 0
         self.possibleError = False
+        self.registered = False
 
         self.layout = QGridLayout(self)
         self.buttonLayout = QHBox(self)
@@ -98,6 +112,9 @@ class MainApplicationWidget(QWidget):
         self.listView = KListView(self.leftLayout)
         self.configButton = KPushButton(i18n("Configure..."),self.buttonLayout)
         self.installRemoveButton = KPushButton(i18n("Install Package(s)"),self.buttonLayout)
+        
+        # On-click event handler
+        self.eventHandler = CustomEventListener()
 
         # Read javascript
         js = file("animation.js").read()
@@ -131,6 +148,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.installRemoveButton,SIGNAL("clicked()"),self.check)
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.comboBox,SIGNAL("activated(int)"),self.updateListing)
+        self.connect(self.htmlPart.view(),SIGNAL("finishedLayout()"),self.registerEventHandlers)
 
         self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
@@ -167,6 +185,14 @@ class MainApplicationWidget(QWidget):
                 else:
                     KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
+    def registerEventHandlers(self):
+        if not self.registered:
+            nodeList = self.htmlPart.document().getElementsByTagName(DOM.DOMString("input"))
+            for i in range(0,nodeList.length()):
+                node = DOM.HTMLInputElement(nodeList.item(i))
+                node.addEventListener(DOM.DOMString("click"),self.eventHandler,False)
+            self.registered = True
+        
     def createHTML(self,packages):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
