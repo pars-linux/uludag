@@ -96,8 +96,8 @@ class MainApplicationWidget(QWidget):
         self.htmlPart = KHTMLPart(self)
         self.comboBox = QComboBox(self.leftLayout)
         self.listView = KListView(self.leftLayout)
-        self.configButton = KPushButton(i18n("Configure Pisi X"),self.buttonLayout)
-        self.installRemoveButton = KPushButton(i18n("InstallPackages"),self.buttonLayout)
+        self.configButton = KPushButton(i18n("Configure..."),self.buttonLayout)
+        self.installRemoveButton = KPushButton(i18n("Install Package(s)"),self.buttonLayout)
 
         # Read javascript
         js = file("animation.js").read()
@@ -142,10 +142,13 @@ class MainApplicationWidget(QWidget):
     def updateListing(self):
         index = self.comboBox.currentItem()
         if index == 0:
+            self.installRemoveButton.setText(i18n("Install Package(s)"))
             self.createComponentList(self.command.listPackages())
         elif index == 1:
+            self.installRemoveButton.setText(i18n("Remove Package(s)"))
             self.createComponentList(self.command.listAvailable())
         else:
+            self.installRemoveButton.setText(i18n("Upgrade Package(s)"))
             self.createComponentList(self.command.listUpgradable())
 
         self.listView.setSelected(self.listView.firstChild(),True)
