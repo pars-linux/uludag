@@ -213,7 +213,7 @@ class MainApplicationWidget(QWidget):
         <div class="checkboks" style="%s"><input type="checkbox" onclick="gorkem_fonksiyonu(this)" name="%s"></div>
         <div class="package_title" style="%s">
         <span class="installed_button"> yüklü </span>
-        <img src="/home/cartman/pisix/pisi_kga.png" width="48px" height="48px"><b>%s</b><br>%s<br>
+        <img src="/home/cartman/SVN/repos/pisi-x/src/pisi_kga.png" width="48px" height="48px"><b>%s</b><br>%s<br>
         <span class="version_info">Sürüm : %s - Paket Boyutu : %s</span>
         </div>
         <div class="package_info" style="%s">
