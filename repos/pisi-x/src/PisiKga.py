@@ -26,7 +26,6 @@ from kdecore import *
 from kdeui import *
 from kio import *
 from khtml import *
-import kdedesigner
 
 # Local imports
 from Enums import *
