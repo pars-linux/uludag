@@ -88,6 +88,7 @@ class MainApplicationWidget(QWidget):
         self.totalAppCount = 1
         self.currentAppIndex = 1
         self.totalSelectedSize = 0
+        self.possibleError = False
 
         self.layout = QGridLayout(self)
         self.buttonLayout = QHBox(self)
@@ -112,7 +113,7 @@ class MainApplicationWidget(QWidget):
         self.comboBox.insertItem(i18n("Show new packages"))
         self.comboBox.insertItem(i18n("Show upgrades"))
 
-        self.listView.addColumn("Components")
+        self.listView.addColumn(i18n("Components"))
         
         self.leftLayout.setMargin(2)
         self.buttonLayout.setMargin(2)
@@ -241,8 +242,16 @@ class MainApplicationWidget(QWidget):
                 divNode = element.parentNode().parentNode()
                 parentNode = divNode.parentNode()
                 parentNode.removeChild(divNode)
-                appsToProcess.append(str(element.getAttribute(DOM.DOMString("name"))))
-        self.command.remove(appsToProcess)
+                appsToProcess.append(str(element.getAttribute(DOM.DOMString("name")).string()))
+        
+        self.progressDialog.show()
+        index = self.comboBox.currentItem()
+        if index == 0:
+            self.command.remove(appsToProcess)
+        elif index == 1:
+            self.command.install(appsToProcess)
+        else:
+            self.command.upgrade(appsToProcess)
         
     def createComponentList(self,packages):
          # Components
@@ -269,7 +278,6 @@ class MainApplicationWidget(QWidget):
         eventType = event.type()
         eventData = event.data()
 
-        print 'Event Type:',eventType,'Event Data:',eventData
         if eventType == CustomEvent.InitError:
             KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
             sys.exit(1)
@@ -322,13 +330,18 @@ class MainApplicationWidget(QWidget):
         QThread.postEvent(self.command.ui,event)
 
     def showErrorMessage(self, message):
+        self.possibleError = True
         KMessageBox.error(self,message,i18n("PiSi Error"))
         self.finished()
             
     def finished(self):
         self.selectedItems = []
         self.currentAppIndex = 1
-        self.updateListing()
+        # Here we don't use updateListing() if there is no error, because we already updated the view
+        # in check() using DOM which is fast, so unless an error occurred there is no need for a refresh
+        if self.possibleError:
+            self.possibleError = False
+            self.updateListing()
         self.progressDialog.closeForced()
         self.resetProgressBar()
         
