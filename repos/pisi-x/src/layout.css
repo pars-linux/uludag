@@ -11,10 +11,8 @@ body{
 
 /* Package Title Style .. */
 .package_title {
-	color:#FFF;
 	font-size:12px;
 	margin-top:2px;
-        background-color:#3c8839;
 	padding-left:2px;
 	background-repeat:no-repeat;
 	background-position:top right;	
@@ -51,8 +49,6 @@ body{
 }
 /* Package info Style */
 .package_info {
-	border:1px solid #3c8839;
-	background-color:#5dd359;
 	visibility:hidden;
 	height:0px;
 	overflow:hidden;

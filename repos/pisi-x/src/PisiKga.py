@@ -18,6 +18,7 @@
 import sys
 import math
 import posix
+import re
 
 # PyQt/PyKDE
 from qt import *
@@ -97,6 +98,16 @@ class MainApplicationWidget(QWidget):
         self.configButton = KPushButton(i18n("Configure Pisi X"),self.buttonLayout)
         self.installRemoveButton = KPushButton(i18n("InstallPackages"),self.buttonLayout)
 
+        # Read javascript
+        js = file("animation.js").read()
+        js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
+        js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
+        self.javascript = re.sub("#533359",KGlobalSettings.highlightColor().name(), js)
+        
+        # Read Css
+        cssFile = file("layout.css").read()
+        self.css = cssFile
+                
         self.comboBox.insertItem(i18n("Show installed packages"))
         self.comboBox.insertItem(i18n("Show new packages"))
         self.comboBox.insertItem(i18n("Show upgrades"))
@@ -160,8 +171,8 @@ class MainApplicationWidget(QWidget):
         
         self.htmlPart.begin()
         self.htmlPart.write(head)
-        self.htmlPart.write('''<style type="text/css"><!-- @import url(/home/cartman/SVN/repos/pisi-x/src/layout.css); --></style>''')
-        self.htmlPart.write('''<script language="JavaScript" src="/home/cartman/SVN/repos/pisi-x/src/animation.js"></script>''')
+        self.htmlPart.write("<style type=\"text/css\">%s</style>" % self.css)
+        self.htmlPart.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
         self.htmlPart.write("</head><body>")
         self.htmlPart.write(self.createHTMLForPackages(packages))
         self.htmlPart.write('''
@@ -182,7 +193,7 @@ class MainApplicationWidget(QWidget):
         <img src="/home/cartman/pisix/pisi_kga.png" width="48px" height="48px"><b>%s</b><br>%s<br>
         <span class="version_info">Sürüm : %s - Paket Boyutu : %s</span>
         </div>
-        <div class="package_info">
+        <div class="package_info" style="%s">
         <div>
         <p>
         %s
@@ -199,10 +210,10 @@ class MainApplicationWidget(QWidget):
 
         for app in packages:
             if index % 2 == 0:
-                style = "background-color:#3cBB39"
+                style = "background-color:%s" % KGlobalSettings.alternateBackgroundColor().name()
             else:
-                style = ""
-
+                style = "background-color:%s" % KGlobalSettings.baseColor().name()
+                
             installed = pisi.packagedb.inst_packagedb.has_package(app)
             if installed:
                 package = pisi.packagedb.inst_packagedb.get_package(app)
@@ -212,7 +223,7 @@ class MainApplicationWidget(QWidget):
             summary = package.summary
             version = package.version
             size = FormatNumber(package.installedSize)
-            result += template % (style,app,style,app,summary,version,size,desc)
+            result += template % (style,app,style,app,summary,version,size,style,desc)
             index += 1
 
         return result
