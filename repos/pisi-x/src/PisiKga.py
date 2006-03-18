@@ -39,6 +39,7 @@ import PisiUi
 
 # Pisi Imports
 import pisi.ui
+import pisi.util
 import pisi.config
 import pisi.packagedb
 import pisi.installdb
@@ -247,7 +248,12 @@ class MainApplicationWidget(QWidget):
             desc = package.description
             summary = package.summary
             version = package.version
-            size = FormatNumber(package.packageSize)
+            size = pisi.packagedb.get_package(app).packageSize
+            if size:
+                tpl = pisi.util.human_readable_size(size)
+                size = "%.2f %s" % (tpl[0], tpl[1])
+            else:
+                size = i18n("N\A")
             result += template % (style,app,style,app,summary,version,size,style,desc)
             index += 1
 
