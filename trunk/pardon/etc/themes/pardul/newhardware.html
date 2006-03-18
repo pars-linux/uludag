@@ -4,13 +4,9 @@
                 <script src="lib/scripts/newhardware.js"></script>
                 <div id="head">Yeni Donanım Ekle</div>
                 <form id="frm" action="{$pardul_url}?newhardware_f" method="post">
-                <input type="hidden" name="userid" value="UserID">
+                <input type="hidden" name="userid" value="{$UserID}">
                 <table class="regtable">
                     <tbody>
-                        <tr>
-                            <td><span style="color: red">[*]</span> Ürün Adı </td>
-                            <td><input id="p_name" name="p_name" size="30" value="{$p_name}"></td>
-                        </tr>
                         <tr>
                             <td><span style="color: red">[*]</span> Üretici Firma </td>
                             <td>
@@ -19,10 +15,15 @@
                                 {section name=node loop=$p_vendor}  <option value="{$p_vendor[node].ID}">{$p_vendor[node].VendorName}</option>
                                 {/section}</select>
                                 --> 
-                                <input type="text" id="p_vendor">
+                                <input type="text" name="p_vendor" id="p_vendor">
                                 <div class="dropmenu" id="dropmen">
-                                <div class="vendor_list" id="p_vendor_list"></div></div>
+                                    <div id="p_vendor_list"></div>
+                                </div>
                             </td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Ürün Adı </td>
+                            <td><input id="p_name" name="p_name" size="30" value="{$p_name}"></td>
                         </tr>
                         <tr>
                             <td><span style="color: red">[*]</span> Kategori </td>
@@ -53,6 +54,7 @@
                                 {$p_distro[node].DistVersion}
                                 </div><div style="text-align:right;">
                                 <select name="p_state[{$p_distro[node].ID}]">
+                                    <option value="X"></option>
                                     <option value="F">Uyumlu</option>
                                     <option value="S">Ek işlem gerekli</option>
                                     <option value="N">Uyumlu değil</option>

@@ -1,4 +1,4 @@
-
+--
 -- Veritabanı: `pardul`
 -- 
 
@@ -13,10 +13,9 @@ CREATE TABLE `pardulActionCompatibility` (
   `DistID` int(11) NOT NULL default '0',
   `PlatformID` int(11) NOT NULL default '0',
   `HWID` bigint(20) NOT NULL default '0',
-  `HWState` set('F','S','N') NOT NULL default '',
-  `ToDoToWork` text,
+  `HWState` set('F','S','N','X') NOT NULL default '',
   PRIMARY KEY  (`ID`)
-) TYPE=MyISAM AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -68,17 +67,18 @@ CREATE TABLE `pardulDistribution` (
 CREATE TABLE `pardulHardwares` (
   `ID` bigint(20) NOT NULL auto_increment,
   `HWProductName` varchar(250) NOT NULL default '',
-  `HWVendorID` bigint(20) NOT NULL default '0',
-  `HWDeviceID` varchar(24) NOT NULL default '',
-  `HWBusType` varchar(24) NOT NULL default '',
+  `HWVendor` varchar(20) NOT NULL default '',
+  `HWDeviceID` varchar(24) NOT NULL default '---',
+  `HWBusType` varchar(24) NOT NULL default '---',
   `HWCategoryID` int(11) NOT NULL default '0',
   `HWAddDate` varchar(12) NOT NULL default '',
   `HWUpdateDate` varchar(12) NOT NULL default '',
   `Status` set('1','0') NOT NULL default '0',
   `UserID` int(11) NOT NULL default '0',
   `SuperUserID` int(11) NOT NULL default '0',
+  `ToDo` text NOT NULL,
   PRIMARY KEY  (`ID`)
-) TYPE=MyISAM AUTO_INCREMENT=1 ;
+) TYPE=MyISAM AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -116,9 +116,6 @@ CREATE TABLE `pardulUsers` (
 -- 
 
 CREATE TABLE `pardulVendors` (
-  `ID` int(11) NOT NULL auto_increment,
-  `VendorName` varchar(200) NOT NULL default '',
-  `VendorURL` varchar(200) NOT NULL default '---',
-  `VendorID` varchar(24) NOT NULL default '---',
-  PRIMARY KEY  (`ID`)
-) TYPE=MyISAM AUTO_INCREMENT=5 ;
+  `VendorName` varchar(25) NOT NULL default '',
+  PRIMARY KEY  (`VendorName`)
+) TYPE=MyISAM;
