@@ -248,7 +248,7 @@ class MainApplicationWidget(QWidget):
             desc = package.description
             summary = package.summary
             version = package.version
-            size = pisi.packagedb.get_package(app).packageSize
+            size = package.packageSize
             if size:
                 tpl = pisi.util.human_readable_size(size)
                 size = "%.2f %s" % (tpl[0], tpl[1])
