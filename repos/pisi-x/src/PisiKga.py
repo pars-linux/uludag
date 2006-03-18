@@ -72,8 +72,8 @@ def loadIcon(name, group=KIcon.Desktop):
 
 class CustomEventListener(DOM.EventListener):
     def handleEvent(self,event):
-        target = event.target()
-        if target.nodeName().string() == "INPUT":
+        try:
+            target = event.target()
             inputElement = DOM.HTMLInputElement(target)
             name = inputElement.getAttribute(DOM.DOMString("name")).string()
             checked = inputElement.checked()
@@ -81,6 +81,8 @@ class CustomEventListener(DOM.EventListener):
                 print name,'is checked!'
             else:
                 print name,'is unchecked!'
+        except:
+            pass
 
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
