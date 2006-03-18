@@ -42,7 +42,9 @@
                 die();
                 break;
             case "newhardware":
-                if ($_SESSION["state"]<>"A") ssv("message",RESCTRICTED_AREA);
+                if (!session_is_registered("pardon")){
+                    if ($_SESSION["state"]<>"A") ssv("message",RESCTRICTED_AREA);
+                }
                 $smarty->display("newhardware.html");
                 die();
                 break;
@@ -50,12 +52,9 @@
                 if ($_SESSION["state"]<>"A") {
                     ssv("message",RESCTRICTED_AREA);
                 }
-                else 
+                else
                     if (isset($_POST["p_name"])&&isset($_POST["p_vendor"])&&isset($_POST["p_category"])) {
-                        if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"])) {
-//                             make_hardware_status(mysql_insert_id(),$_POST["p_distro"],$_POST["p_state"]);
-                            ssv("message",SUCCESS);
-                        }
+                        if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_state"],$_POST["p_todo"])) ssv("message",SUCCESS);
                         else ssv("message",FAILED);
                     }
                     else {

@@ -187,3 +187,15 @@ input.search {
     cursor: pointer;
     width: 365px;
 }
+
+.ozvendorlist {
+    float:left;
+    margin-top:3px;
+    border-bottom:1px solid #BBB;
+    border-right:1px solid #BBB;
+    width:175px;
+    margin-left:2px;
+}
+.ozvendorlist:hover {
+    background-color: #EBCDEF;
+}

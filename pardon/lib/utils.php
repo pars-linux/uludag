@@ -11,8 +11,9 @@
         make_*($parameters) it adds or updates a field with given paramaeters
         return Boolean;
     */
-    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$date,$status=0,$userid,$suserid=""){
+    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$date,$status=0,$userid,$suserid="",$state,$todo){
         global $config;
+
         $productname    = rtag($productname);
         $vendorid       = rtag($vendorid);
         $deviceid       = rtag($deviceid);
@@ -23,9 +24,22 @@
         $status         = rtag($status);
         $userid         = rtag($userid);
         $suserid        = rtag($suserid);
-        $hwid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendorid}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}')" :
-        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendorID='{$vendorid}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWUpdateDate='{$date}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}' WHERE ID='$hwid'";
-        return mysql_query($sql_word);
+        $todo           = rtag($todo);
+
+        $hwid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendorid}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}','{$todo}')" :
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendorID='{$vendorid}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWUpdateDate='{$date}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}', ToDo = '{$todo}' WHERE ID='$hwid'";
+        if (mysql_query($sql_word)) if (make_hardware_status(mysql_insert_id(),$state)) return TRUE; else return FALSE;
+    }
+
+    function make_hardware_status($hwid,$state){
+        global $config;
+        $sql_word = "DELETE FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID='{$hwid}'";
+        $sql_query = @mysql_query($sql_word);
+        foreach ($state as $key => $value){
+            $sql_word = "INSERT INTO {$config['db']['tableprefix']}ActionCompatibility VALUES ('','{$key}','0','{$hwid}','{$value}')";
+            mysql_query($sql_word);
+        }
+        return TRUE;
     }
 
     function make_category($categoryid="x",$categoryname,$parentid=0){
