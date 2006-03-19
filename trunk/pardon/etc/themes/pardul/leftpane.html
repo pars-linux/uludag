@@ -1,12 +1,12 @@
 <div id="leftpane">
             <div id="leftbox"><li><a href="{$pardul_url}">Ana Sayfa</a></div>
-            {if $UserName}
+            {if $UserState=="SA" or $UserState=="A"}
             <div id="leftbox">
                 <li><a href="{$pardul_url}?newhardware">Yeni Donanım Ekle</a>
                 <li><a href="{$pardul_url}?myhardwares">Gönderdiklerim</a>
             </div>
             {/if}
-            {if $UserAdmin}
+            {if $UserState=="A"}
             <div id="leftbox">
                 <li><a href="{$pardul_url}?queue">Onay Bekleyenler</a>
                 <li><a href="{$pardul_url}?users">Kullanıcı Tanımları</a>
@@ -14,7 +14,7 @@
             {/if}
             <div id="leftbox">
                 {if $UserName}
-                <div id="head">Kullanıcı Bilgileri</div>
+                
                 Hoşgeldiniz {$UserRealName}
                 <div class="register"><a href="?quit">Çıkış</a></div>
                 {else}

@@ -11,6 +11,9 @@ body {
     text-align: center;
 }
 
+img {
+    border:0px;
+}
 body, div, span, table, td, th, input,select,option {
     font-size: 9pt;
     font-family: "Trebuchet MS", Sans-Serif;
