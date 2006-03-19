@@ -19,8 +19,10 @@
     if (isset($_GET["vendorpref"])) {
         $vendorlist = find_vendor($_GET["vendorpref"]);
         if ($vendorlist) { 
-            foreach ($vendorlist as $vendor) 
-                echo "<div class=\"ozvendorlist\">".$vendor["VendorName"]."</div>"; 
+            foreach ($vendorlist as $vendor)
+                echo "<div class=\"ozvendorlist\">".$vendor["VendorName"]."</div>";
+//                 Fix me click event add result to p_vendor
+//                 echo "<div class=\"ozvendorlist\" onclick=\"$('p_vendor').value=\'".$vendor["VendorName"]."\'\">".$vendor["VendorName"]."</div>";
         }
         else echo "Üretici bulunamadı<br>Eğer geçerli bir üretici ise yönetici tarafından eklenecektir";
     }

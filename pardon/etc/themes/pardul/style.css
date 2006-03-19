@@ -107,7 +107,7 @@ div#result {
 }
 
 .regtable {
-    background-color: #EEE;
+    background-color: #FFF;
     border: 0px;
     border-bottom: 1px solid #BBB;
     border-right: 1px solid #BBB;
@@ -130,6 +130,21 @@ div#result {
 .regtable input:focus,select:focus,textarea:focus{
     background-color: #FFF;
     border: 1px solid #888;
+}
+
+.restable {
+    background-color: #FFF;
+    border: 0px;
+    border-bottom: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+    -moz-border-radius : 5px;
+    padding:10px;
+    width:100%;
+}
+
+.restable th{
+    text-align:left;
+    border-bottom:1px solid #bbb;
 }
 
 input.user {
@@ -197,5 +212,5 @@ input.search {
     margin-left:2px;
 }
 .ozvendorlist:hover {
-    background-color: #EBCDEF;
+    background-color: #222FFF;
 }

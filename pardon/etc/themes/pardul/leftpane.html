@@ -1,9 +1,11 @@
 <div id="leftpane">
+            <div id="leftbox"><li><a href="{$pardul_url}">Ana Sayfa</a></div>
+            {if $UserName}
             <div id="leftbox">
-                <li><a href="{$pardul_url}">Ana Sayfa</a>
-                <li><a href="{$pardul_url}?search">Donanım Ara</a>
                 <li><a href="{$pardul_url}?newhardware">Yeni Donanım Ekle</a>
+                <li><a href="{$pardul_url}?myhardwares">Gönderdiklerim</a>
             </div>
+            {/if}
             <div id="leftbox">
                 {if $UserName}
                 <div id="head">Kullanıcı Bilgileri</div>
@@ -19,5 +21,4 @@
                 </form>
                 {/if}
             </div>
-            <div id="leftbox"></div>
             </div>
