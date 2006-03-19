@@ -1,8 +1,54 @@
 {include file="header.html"}
                 {if $message}<div id="warn">{$message}</div>{else}
+                <script src="lib/scripts/newhardware.js"></script>
                 <div id="head">{$pardul_title} 'ne Hoşgeldiniz..</div>
                 <div>
                     <p>&nbsp;&nbsp;Bu sayfayı kullanarak mevcut donanımlarınızın Pardus ürünleri ile uyumlu olup olmadığını kontrol edebilir, Pardus ürünlerinden herhangi birini kullandığınız donanım için ise çalışma durumu girişi yapabilirsiniz.</p>
                 </div>
+                <div id="head">Donanım Ara</div>
+                <form id="frm" action="{$pardul_url}?search" method="post">
+                <table class="regtable">
+                    <tbody>
+                        <tr>
+                            <td> Üretici Firma / Marka</td>
+                            <td>
+                                <input type="text" name="p_vendor" id="p_vendor">
+                                <div class="dropmenu" id="dropmen">
+                                    <div id="p_vendor_list"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Ürün Adı / Modeli</td>
+                            <td><input id="p_name" name="p_name" size="30"></td>
+                        </tr>
+                        <tr>
+                            <td> Kategori </td>
+                            <td>
+                                <select name="p_category">
+                                <option value="all_categories" SELECTED>Tüm Kategoriler</option>
+                                {section name=node loop=$p_category}{if $p_category[node].sub}<optgroup label="{$p_category[node].CategoryName}">
+                                    {section name=sub loop=$p_category[node].sub}   <option value="{$p_category[node].sub[sub].ID}" >{$p_category[node].sub[sub].CategoryName}</option>
+                                    {/section}</optgroup>{else}
+                                    <option value="{$p_category[node].ID}">{$p_category[node].CategoryName}</option>{/if}
+                                {/section}
+                                </select>
+                        </tr>
+                        <tr>
+                            <td> Aygıt Numarası </td>
+                            <td><input id="p_device_id" name="p_device_id"></td>
+                        </tr>
+                        <tr>
+                            <td> VeriYolu Tipi </td>
+                            <td><input id="p_bus_type" name="p_bus_type"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="regtable">
+                    <tr>
+                        <td align="right"><input value="Donanım Ara" name="search" type="submit"></td>
+                    </tr>
+                </table>
+                </form>
                 {/if}
 {include file="footer.html"}

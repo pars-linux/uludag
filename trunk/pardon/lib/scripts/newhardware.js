@@ -39,9 +39,8 @@ function init () {
     }
     $('p_vendor').onblur = function () {
      var dropmenu = new Element.ClassNames('dropmen');
-    dropmenu.set("dropmenu");
+     dropmenu.set("dropmenu");
     }
-   
 }
 
 function get_vendorlist() {

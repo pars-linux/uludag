@@ -8,14 +8,14 @@
     require_once ("functions.php");
 
     /*
-        make_*($parameters) it adds or updates a field with given paramaeters
+        make_*($parameters) it adds or updates a field with given parameters
         return Boolean;
     */
-    function make_hardware($hwid="x",$productname,$vendorid,$deviceid,$bustype,$categoryid,$date,$status=0,$userid,$suserid="",$state,$todo){
+    function make_hardware($hwid="x",$productname,$vendor,$deviceid,$bustype,$categoryid,$date,$status=0,$userid,$suserid="",$state,$todo){
         global $config;
 
-        $productname    = rtag($productname);
-        $vendorid       = rtag($vendorid);
+        $productname    = rtag(strtolower($productname));
+        $vendor         = rtag(strtoupper($vendor));
         $deviceid       = rtag($deviceid);
         $bustype        = rtag($bustype);
         $categoryid     = rtag($categoryid);
@@ -26,8 +26,8 @@
         $suserid        = rtag($suserid);
         $todo           = rtag($todo);
 
-        $hwid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendorid}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}','{$todo}')" :
-        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendorID='{$vendorid}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWUpdateDate='{$date}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}', ToDo = '{$todo}' WHERE ID='$hwid'";
+        $hwid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendor}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}','{$todo}')" :
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendor='{$vendor}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWUpdateDate='{$date}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}', ToDo = '{$todo}' WHERE ID='$hwid'";
         if (mysql_query($sql_word)) if (make_hardware_status(mysql_insert_id(),$state)) return TRUE; else return FALSE;
     }
 
@@ -80,13 +80,11 @@
         return @mysql_query($sql_word);
     }
 
-    function make_vendor($vendorid="x",$vendorname,$vendorurl,$vendorvid=''){
+    function make_vendor($act="x",$vendorname){
         global $config;
         $vendorname     = rtag ($vendorname);
-        $vendorurl      = rtag ($vendorurl);
-        $vendorvid      = rtag ($vendorvid);
-        $vendorid = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Vendors VALUES ('', '{$vendorname}', '{$vendorurl}','{$vendorvid}')" :
-        $sql_word = "UPDATE {$config['db']['tableprefix']}Vendors SET VendorName'{$vendorname}', VendorURL='{$vendorurl}', VendorID='{$vendorvid}' WHERE ID='$vendorid'";
+        $act = "x" ? $sql_word = "INSERT INTO {$config['db']['tableprefix']}Vendors VALUES ('{$vendorname}')" :
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Vendors SET VendorName='{$vendorname}' WHERE VendorName='{$vendorname}'";
         return @mysql_query($sql_word);
     }
 
@@ -183,4 +181,23 @@
         return perform_sql($sql_word);
     }
 
+    function find_product($vendor,$name,$category,$deviceid,$bustype) {
+        global $config;
+
+        $name   =       rtag(strtolower($name));
+        $vendor =       rtag(strtoupper($vendor));
+
+        if ($category   <>  "all_categories") $attach_sql .= " AND HWCategoryID = '$category' ";
+        if ($vendor     <>  "") $attach_sql .= " AND HWVendor = '$vendor' ";
+        if ($deviceid   <>  "") $attach_sql .= " AND HWDeviceID = '$deviceid' ";
+        if ($bustype    <>  "") $attach_sql .= " AND HWBusType = '$bustype' ";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares WHERE HWProductName LIKE '%$name%'".$attach_sql." AND Status=1";
+        return perform_sql($sql_word);
+    }
+
+    function get_products_byuser($userid){
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares WHERE UserID = '$userid'";
+        return perform_sql($sql_word);
+    }
 ?>
