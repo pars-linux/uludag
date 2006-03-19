@@ -144,7 +144,6 @@
         return @mysql_query($sql_word);
     }
 
-
     /*
         user_exist($uname)
         it checks the user $uname and returns users info
@@ -195,9 +194,11 @@
         return perform_sql($sql_word);
     }
 
-    function get_products_byuser($userid){
+    function get_products($field,$userid){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares WHERE UserID = '$userid'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares WHERE $field = '$userid'";
         return perform_sql($sql_word);
     }
+
+
 ?>

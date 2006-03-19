@@ -1,0 +1,28 @@
+{include file="header.html"}
+
+   {if !$sr}<div id="warn">NOTFOUND</div>{else}
+                <div id="head">Onay Bekleyenler</div>
+                <table class="restable">
+                    <tbody>
+                        <tr>
+                            <th width="20%"> Gönderen </th>
+                            <th width="15%"> Marka </th>
+                            <th width="15%"> Model </th>
+                            <th width="20%"> Kategori </th>
+                            <th width="5%"> Durum </th>
+                            <th width="5%" alt="Onayla / Reddet"> O / R </th>
+                        </tr>
+                        {section name=node loop=$sr}
+                        <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
+                            <td> </td>
+                            <td> {$sr[node].HWVendor} </td>
+                            <td> {$sr[node].HWProductName} </td>
+                            <td> {section name=mode loop=$p_scat}{if $sr[node].HWCategoryID == $p_scat[mode].ID}{$p_scat[mode].CategoryName}{/if}{/section}</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        {/section}
+                    </tbody>
+                </table>
+                {/if}
+{include file="footer.html"}

@@ -1,0 +1,37 @@
+{include file="header.html"}
+
+   {if !$sr}<div id="warn">NOTFOUND</div>{else}
+                <div id="head">Kullanıcılar</div>
+                <table class="restable">
+                    <tbody>
+                        <tr>
+                            <th width="20%"> Ad/Soyad </th>
+                            <th width="15%"> Kullanıcı Adı </th>
+                            <th width="15%"> E-Mail </th>
+                            <th width="20%"> Web </th>
+                            <th width="5%"> Yetki </th>
+                        </tr>
+                        {section name=node loop=$sr}
+                        <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
+                            <td> {$sr[node].UserRealName} </td>
+                            <td> {$sr[node].UserName} </td>
+                            <td> {$sr[node].UserEmail} </td>
+                            <td> {$sr[node].UserWeb} </td>
+                            <td align="center"> {$sr[node].UserState} </td>
+                        </tr>
+                        {/section}
+                    </tbody>
+                </table>
+                <div id="head">Kısaltmalar</div>
+                <table class="restable">
+                <tr>
+                    <td>
+                    <b> A </b> Admin, tüm haklara sahip kullanıcı.<br>
+                    <b> SA </b> Semi-Admin, donanım gönderme hakkına sahip kullanıcı.<br>
+                    <b> G </b> Guest, misafir kullanıcı-sadece yorum ekleyebilir.<br>
+                    <b> N </b> NotActive, hesabını aktifleştirmemiş kullanıcı<br>
+                    </td>
+                </tr>
+                </table>
+                {/if}
+{include file="footer.html"}
