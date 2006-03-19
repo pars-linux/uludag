@@ -50,7 +50,7 @@
             $_SESSION["uname"]=$ird[0]['UserRealName'];
             $_SESSION["user"]=$user;
             $_SESSION["state"]=$ird[0]['UserState'];
-            header ("location: ","index.php");
+            header ("location: index.php");
         }
         else $login_error=USER_OR_PASS_WRONG;
     }

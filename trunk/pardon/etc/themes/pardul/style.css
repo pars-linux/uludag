@@ -5,15 +5,17 @@
     */
 
 body {
-    font-size: 9pt;
-    font-family: "Trebuchet MS", Sans-Serif;
-    letter-spacing: .5px;
     color:#564b47;
     padding:5px;
     margin:0px;
     text-align: center;
 }
 
+body, div, span, table, td, th, input,select,option {
+    font-size: 9pt;
+    font-family: "Trebuchet MS", Sans-Serif;
+    letter-spacing: .5px;
+}
 a {
     color: #990000;
     text-decoration: none;

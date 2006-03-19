@@ -7,18 +7,22 @@
 
     require ("lib/var.php");
 
+//  Session Check
     if (session_is_registered("pardon")){
         ssv("UserName",$_SESSION["user"]);
         ssv("UserRealName",$_SESSION["uname"]);
         ssv("UserState",$_SESSION["state"]);
         ssv("UserID",$_SESSION["uid"]);
+        if ($_SESSION["state"]=="A") ssv("UserAdmin",TRUE);
     }
 
+//  Get Standarts
     ssv("p_vendor",get_("x","Vendors"));
     ssv("p_distro",get_("x","Distribution"));
     ssv("p_scat",get_("x","Categories"));
     ssv("p_category",get_categories());
 
+//  For All Users (Guest)
     foreach ($_GET as $key => $value){
        switch ($key){
             case "register_f":
@@ -48,6 +52,7 @@
         }
     }
 
+//  For SAdmin Users (SA)
     if (session_is_registered("pardon") AND $_SESSION["state"]=="SA" OR $_SESSION["state"]=="A") {
         foreach ($_GET as $key => $value){
         switch ($key){
@@ -75,12 +80,27 @@
                     break;
                 case "myhardwares":
                     ssv("userpage","x");
-                    ssv("sr",get_products_byuser($_SESSION["uid"]));
+                    ssv("sr",get_products("UserID",$_SESSION["uid"]));
                     $smarty->display("search.html");
                     die();
                     break;
-                case "submitted_var_3":
-                    $$key = $value;
+            }
+        }
+    }
+
+//  For Admin Users (A)
+    if (session_is_registered("pardon") AND $_SESSION["state"]=="A") {
+        foreach ($_GET as $key => $value){
+        switch ($key){
+                case "queue":
+                    ssv("sr",get_products("Status",0));
+                    $smarty->display("queue.html");
+                    die();
+                    break;
+                case "users":
+                    ssv("sr",get_("x","Users"));
+                    $smarty->display("userlist.html");
+                    die();
                     break;
             }
         }
