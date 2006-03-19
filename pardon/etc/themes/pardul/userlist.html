@@ -8,16 +8,16 @@
                             <th width="20%"> Ad/Soyad </th>
                             <th width="15%"> Kullanıcı Adı </th>
                             <th width="15%"> E-Mail </th>
-                            <th width="20%"> Web </th>
                             <th width="5%"> Yetki </th>
+                            <th width="5%"> Sil </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
                             <td> {$sr[node].UserRealName} </td>
                             <td> {$sr[node].UserName} </td>
-                            <td> {$sr[node].UserEmail} </td>
-                            <td> {$sr[node].UserWeb} </td>
+                            <td> <a href="mailto:{$sr[node].UserEmail}">{$sr[node].UserEmail}</a> </td>
                             <td align="center"> {$sr[node].UserState} </td>
+                            <td align="center"> <a href="?users=delete&id={$sr[node].ID}"><img src="{$tp}/images/delete.png"></a> </td>
                         </tr>
                         {/section}
                     </tbody>

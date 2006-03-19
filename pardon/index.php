@@ -13,7 +13,6 @@
         ssv("UserRealName",$_SESSION["uname"]);
         ssv("UserState",$_SESSION["state"]);
         ssv("UserID",$_SESSION["uid"]);
-        if ($_SESSION["state"]=="A") ssv("UserAdmin",TRUE);
     }
 
 //  Get Standarts
@@ -43,7 +42,7 @@
                 die();
                 break;
             case "search":
-                if (isset($_POST["p_name"])&&$_POST["p_vendor"]<>""&&isset($_POST["p_category"])) {
+                if (isset($_POST["p_name"])&&isset($_POST["p_vendor"])&&isset($_POST["p_category"])) {
                     ssv ("sr",find_product($_POST["p_vendor"],$_POST["p_name"],$_POST["p_category"],$_POST["p_device_id"],$_POST["p_bus_type"]));
                 }
                 $smarty->display("search.html");
@@ -68,7 +67,7 @@
                         ssv("message",RESCTRICTED_AREA);
                     }
                     else
-                        if (isset($_POST["p_name"])&&isset($_POST["p_vendor"])&&isset($_POST["p_category"])) {
+                        if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>"") {
                             if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
                             else ssv("message",FAILED);
                         }
@@ -98,6 +97,7 @@
                     die();
                     break;
                 case "users":
+                    #FIX-ME Delete action
                     ssv("sr",get_("x","Users"));
                     $smarty->display("userlist.html");
                     die();
