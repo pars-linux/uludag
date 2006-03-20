@@ -53,14 +53,12 @@ def send(message, pspec = '', type = ''):
                                  'pspec'        : pspec,
                                  'type'         : type}
 
-    print msg
-    
-    #session = smtplib.SMTP(config.smtpServer)
+    session = smtplib.SMTP(config.smtpServer)
 
-    #if config.smtpPassword:
-    #    session.login(config.smtpUser, config.smtpPassword)
+    if config.smtpPassword:
+        session.login(config.smtpUser, config.smtpPassword)
 
-    #smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, msg)
+    smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, msg)
 
 def error(message, pspec):
     send(message, pspec, type = 'error')
