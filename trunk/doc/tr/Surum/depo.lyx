@@ -401,6 +401,28 @@ ilk önce geliþtirme deposuna eklenir
 .
 \layout Standard
 
+Geliþtirme deposuna eklenecek paketler için aþaðýdaki adýmlar izlenir.
+\layout Enumerate
+
+Eklenmesi istenen paket için yeni bir hata kaydý açýlýr.
+ Paketler üsrünü altýndaki 
+\emph on 
+_yeni paket
+\emph default 
+ bileþenine atanýr.
+\layout Enumerate
+
+Paketin sorumluluðunu almak isteyen bir geliþtirici paketi hazýrlar.
+ Ayný hata raporuna paket dosyalarý eklenir.
+\layout Enumerate
+
+Paket üzerinde tartýþýlýr; depoya uygunluðu ve uygunsa hangi bileþen altýna
+ yerleþtirileceði depo ve bileþen sorumlularýnca kararlaþtýrýlýr.
+\layout Enumerate
+
+Paket SVN deposuna eklenir ve hata kaydý kapatýlýr.
+\layout Standard
+
 Geliþtirme deposuna eklenen paket kaynaðýnýn paketin geliþtiricisi tarafýndan
  denenmiþ olmasý gerekir.
  Derlenmeyen ve/veya kurulamayan paket depoya eklenmez.
