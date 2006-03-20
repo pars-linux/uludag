@@ -10,19 +10,34 @@
                             <th width="15%"> Model </th>
                             <th width="20%"> Kategori </th>
                             <th width="5%"> Durum </th>
-                            <th width="5%" alt="Onayla / Reddet"> O / R </th>
+                            <th width="10%" alt="Onayla / Reddet"> O / R </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
-                            <td> </td>
+                            <td> {$sr[node].UserName}</td>
                             <td> {$sr[node].HWVendor} </td>
                             <td> {$sr[node].HWProductName} </td>
                             <td> {section name=mode loop=$p_scat}{if $sr[node].HWCategoryID == $p_scat[mode].ID}{$p_scat[mode].CategoryName}{/if}{/section}</td>
-                            <td> </td>
-                            <td> </td>
+                            <td align="center"> <img src="{$tp}/images/{if $sr[node].HWState >= 1}ok{else}not{/if}.png"></td>
+                            <td align="center">
+                                <a href="?queue&set={$sr[node].ID}"><img src="{$tp}/images/add.png"></a>
+                                <a href="?queue&del={$sr[node].ID}"><img src="{$tp}/images/remove.png"></a>
+                            </td>
                         </tr>
                         {/section}
                     </tbody>
+                </table>
+                <div id="head">Kısaltmalar</div>
+                <table class="restable">
+                <tr>
+                    <td>
+                    <img src="{$tp}/images/ok.png"> Bu donanımın Pardus ürünlerinden en az biri tarafından desteklendiğini gösterir.<br>
+                    <img src="{$tp}/images/not.png"> Bu donanımın Pardus ürünlerinin hiç biri tarafından desteklenmediğini gösterir.<br>
+                    <hr>
+                    <img src="{$tp}/images/add.png"> Bu kayıdın geçerli olduğunu düşünüyorsanız bu tuşu kullanarak ekleyebilirsiniz.<br>
+                    <img src="{$tp}/images/remove.png"> Bu kayıdın geçerli olmadığını düşünüyorsanız bu tuşu kullanarak silebilirsiniz.<br>
+                    </td>
+                </tr>
                 </table>
                 {/if}
 {include file="footer.html"}

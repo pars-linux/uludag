@@ -7,18 +7,27 @@
                         <tr>
                             <th width="25%"> Marka </th>
                             <th width="30%"> Model </th>
-                            <th width="30%"> Kategori </th>
-                            <th width="15%"> Durum </th>
+                            <th width="35%"> Kategori </th>
+                            <th width="5%"> Durum </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
                             <td> {$sr[node].HWVendor} </td>
                             <td> {$sr[node].HWProductName} </td>
                             <td> {section name=mode loop=$p_scat}{if $sr[node].HWCategoryID == $p_scat[mode].ID}{$p_scat[mode].CategoryName}{/if}{/section}</td>
-                            <td> </td>
+                            <td align="center"> <img src="{$tp}/images/{if $sr[node].HWState >= 1}ok{else}not{/if}.png"></td>
                         </tr>
                         {/section}
                     </tbody>
+                </table>
+                <div id="head">Kısaltmalar</div>
+                <table class="restable">
+                <tr>
+                    <td>
+                    <img src="{$tp}/images/ok.png"> Bu donanımın Pardus ürünlerinden en az biri tarafından desteklendiğini gösterir.<br>
+                    <img src="{$tp}/images/not.png"> Bu donanımın Pardus ürünlerinin hiç biri tarafından desteklenmediğini gösterir.<br>
+                    </td>
+                </tr>
                 </table>
                 {/if}
 

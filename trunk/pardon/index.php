@@ -92,12 +92,15 @@
         foreach ($_GET as $key => $value){
         switch ($key){
                 case "queue":
+                    if (isset($_GET["del"])) del_($_GET["del"],"Hardwares");
+                    if (isset($_GET["set"])) activate_($_GET["set"]);
                     ssv("sr",get_products("Status",0));
                     $smarty->display("queue.html");
                     die();
                     break;
                 case "users":
-                    #FIX-ME Delete action
+                    if (isset($_GET["del"])) del_($_GET["users"],"Users");
+                    if (isset($_GET["set"])) set_($_GET["users"],$_GET["set"]);
                     ssv("sr",get_("x","Users"));
                     $smarty->display("userlist.html");
                     die();
