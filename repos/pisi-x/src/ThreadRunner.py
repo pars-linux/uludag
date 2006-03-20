@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 #
 #
-# Authors: İsmail Dönmez <ismail@uludag.org.tr>
+# Authors: İsmail Dönmez <ismail@pardus.org.tr>
 
 from qt import *
 

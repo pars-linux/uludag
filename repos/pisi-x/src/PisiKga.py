@@ -11,7 +11,7 @@
 # Please read the COPYING file.
 #
 #
-# Authors:  İsmail Dönmez <ismail@uludag.org.tr>
+# Authors:  İsmail Dönmez <ismail@pardus.org.tr>
 # Resistence is futile, turn on god damn Unicode!
 
 # System
@@ -51,21 +51,20 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.0.3"
+version = "1.1.0"
 
 def AboutData():
     global version,description
     
-    about_data = KAboutData("pisi_kga", "PiSi X", version, \
-                            description, KAboutData.License_GPL,
-                            "(C) 2005,2006 UEKAE/TÜBİTAK", None, None, "ismail@uludag.org.tr")
+    about_data = KAboutData("pisi_kga", "PiSi X", version, description, KAboutData.License_GPL,
+                            "(C) 2005,2006 UEKAE/TÜBİTAK", None, None, "ismail@pardus.org.tr")
     
-    about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@uludag.org.tr")
-    about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@uludag.org.tr")
-    about_data.addAuthor("Eray Özkural", I18N_NOOP("Search, Component/Category"), "eray@uludag.org.tr")
+    about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@pardus.org.tr")
+    about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
+    about_data.addAuthor("Eray Özkural", I18N_NOOP("Search, Component/Category"), "eray@pardus.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
     about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi API"), None)
-    about_data.addCredit("PiSi Authors", I18N_NOOP("Authors of PiSi API"), "pisi@uludag.org.tr")
+    about_data.addCredit("PiSi Authors", I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
     about_data.addCredit("Simon Edwards", I18N_NOOP("Author of PyKDEeXtensions"),"simon@simonzone.com")
     return about_data
 
@@ -112,7 +111,7 @@ class MainApplicationWidget(QWidget):
         self.comboBox = QComboBox(self.leftLayout)
         self.listView = KListView(self.leftLayout)
         self.configButton = KPushButton(i18n("Configure..."),self.buttonLayout)
-        self.installRemoveButton = KPushButton(i18n("Install Package(s)"),self.buttonLayout)
+        self.installRemoveButton = KPushButton(i18n("Remove Package(s)"),self.buttonLayout)
         
        # Read javascript
         js = file("animation.js").read()
@@ -158,10 +157,10 @@ class MainApplicationWidget(QWidget):
     def updateListing(self):
         index = self.comboBox.currentItem()
         if index == 0:
-            self.installRemoveButton.setText(i18n("Install Package(s)"))
+            self.installRemoveButton.setText(i18n("Remove Package(s)"))
             self.createComponentList(self.command.listPackages())
         elif index == 1:
-            self.installRemoveButton.setText(i18n("Remove Package(s)"))
+            self.installRemoveButton.setText(i18n("Install Package(s)"))
             self.createComponentList(self.command.listAvailable())
         else:
             self.installRemoveButton.setText(i18n("Upgrade Package(s)"))
@@ -178,13 +177,12 @@ class MainApplicationWidget(QWidget):
             except:
                 confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
                 if confirm == KMessageBox.Yes:
-                    self.command.addRepo('pardus', 'http://paketler.uludag.org.tr/pardus-1.0/pisi-index.xml')
+                    self.command.addRepo('pardus', 'http://paketler.pardus.org.tr/pardus-1.0/pisi-index.xml')
                     self.command.updateRepo('pardus')
                 else:
                     KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def registerEventHandlers(self):
-        print 'Registering event handler'
         self.eventHandler = CustomEventListener()
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventHandler,True)
@@ -362,8 +360,7 @@ class MainApplicationWidget(QWidget):
     def showErrorMessage(self, message):
         self.possibleError = True
         KMessageBox.error(self,message,i18n("PiSi Error"))
-        self.finished()
-            
+                    
     def finished(self):
         self.selectedItems = []
         self.currentAppIndex = 1
@@ -378,8 +375,8 @@ class MainApplicationWidget(QWidget):
     def resetProgressBar(self):
         self.progressDialog.progressBar.setProgress(0)
         self.progressDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
-        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> Unknown'))
-        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> Unknown'))
+        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> N/A'))
+        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> N/A'))
 
     def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
         self.updateProgressText()
@@ -431,32 +428,12 @@ class MainApplicationWidget(QWidget):
         self.command.install(app)
         
     def searchPackage(self):
-    
-        # search summary / description
-        query = unicode(self.queryEdit.text())
-        
-        # search names
-        query.strip()
-        if query:
-            result = self.command.searchPackage(query)
-            result = result.union( self.command.searchPackage(query, 'en' ) )
+        # TODO
+        pass
 
-            for pkg in self.packageList:
-                if pkg.find(query) != -1:
-                    result.add(pkg)
-       
-            if not len(result):
-                mainwidget.infoWidgetStack.raiseWidget(1)
-            else:
-                mainwidget.infoWidgetStack.raiseWidget(0)
-            
-            self.updatePackages(list(result))
-        else:
-            self.updateListing() # get the whole list if blank query            
-    
     def clearSearch(self):
-        self.queryEdit.clear()    
-        self.updateListing()
+        # TODO
+        pass
 
     def showPreferences(self):
         self.pref = Preferences.Preferences(self)
@@ -498,10 +475,6 @@ class MainApplication(programbase):
             self.config = KConfig("pisi_kga")
             self.setButtons(0)
             self.aboutdata = AboutData()
-
-        # The appdir needs to be explicitly otherwise we won't be able to
-        # load our icons and images.
-        KGlobal.iconLoader().addAppDir("pisi_kga")
 
         self.aboutus = KAboutApplication(self)
         self.helpWidget = None
@@ -549,10 +522,13 @@ class MainApplication(programbase):
     # KControl virtual void methods
     def load(self):
         pass
+
     def save(self):
         pass
+
     def defaults(self):
         pass        
+
     def sysdefaults(self):
         pass
     
