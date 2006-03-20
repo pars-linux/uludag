@@ -63,17 +63,13 @@
                     die();
                     break;
                 case "newhardware_f":
-                    if ($_SESSION["state"]<>"A") {
-                        ssv("message",RESCTRICTED_AREA);
+                    if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>"") {
+                        if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
+                        else ssv("message",FAILED);
                     }
-                    else
-                        if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>"") {
-                            if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
-                            else ssv("message",FAILED);
-                        }
-                        else {
-                            ssv("message",MISSING_FIELDS);
-                        }
+                    else {
+                        ssv("message",MISSING_FIELDS);
+                    }
                     $smarty->display("newhardware.html");
                     die();
                     break;

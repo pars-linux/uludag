@@ -144,15 +144,19 @@
         return @mysql_query($sql_word);
     }
 
+    function set_($id,$value){
+        global $config;
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='$value' WHERE ID='$id'";
+        return @mysql_query($sql_word);
+    }
 
     function activate_($id){
         global $config;
         $tmp = get_($id,"Hardwares");
         $vendor = $tmp[0]["HWVendor"];
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Vendors WHERE VendorName='$vendor'";
-        echo $sql_word;
         if (mysql_num_rows(mysql_query($sql_word))==0) mysql_query("INSERT INTO {$config['db']['tableprefix']}Vendors VALUES ('{$vendor}')");
-	$sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET Status=1 WHERE ID='$id'";
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET Status=1 WHERE ID='$id'";
         return @mysql_query($sql_word);
     }
     /*
@@ -202,21 +206,31 @@
         if ($deviceid   <>  "") $attach_sql .= " AND HWDeviceID = '$deviceid' ";
         if ($bustype    <>  "") $attach_sql .= " AND HWBusType = '$bustype' ";
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares WHERE HWProductName LIKE '%$name%'".$attach_sql." AND Status=1";
-        return perform_sql($sql_word);
+        $single = perform_sql($sql_word);
+        if ($single) {
+            foreach ($single as $key => $node) {
+                $value = $node["ID"];
+                $sql_word = "SELECT HWState FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID = '$value' AND (HWState = 'F' OR HWState = 'S')";
+                $single[$key]["HWState"] = mysql_num_rows(mysql_query($sql_word));
+            }
+        }
+        return $single;
     }
 
     function get_products($field,$value){
         global $config;
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares WHERE $field = '$value'";
         $single = perform_sql($sql_word);
-        foreach ($single as $key => $node) {
-            $value = $node["UserID"];
-            $sql_word = "SELECT UserRealName FROM {$config['db']['tableprefix']}Users WHERE ID = '$value'";
-            $tmp = mysql_fetch_row(mysql_query($sql_word));
-            $single[$key]["UserName"] = $tmp[0];
-            $value = $node["ID"];
-            $sql_word = "SELECT HWState FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID = '$value' AND (HWState = 'F' OR HWState = 'S')";
-            $single[$key]["HWState"] = mysql_num_rows(mysql_query($sql_word));
+        if ($single) {
+            foreach ($single as $key => $node) {
+                $value = $node["UserID"];
+                $sql_word = "SELECT UserRealName FROM {$config['db']['tableprefix']}Users WHERE ID = '$value'";
+                $tmp = mysql_fetch_row(mysql_query($sql_word));
+                $single[$key]["UserName"] = $tmp[0];
+                $value = $node["ID"];
+                $sql_word = "SELECT HWState FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID = '$value' AND (HWState = 'F' OR HWState = 'S')";
+                $single[$key]["HWState"] = mysql_num_rows(mysql_query($sql_word));
+            }
         }
         return $single;
     }
