@@ -11,7 +11,7 @@
         make_*($parameters) it adds or updates a field with given parameters
         return Boolean;
     */
-    function make_hardware($hwid="x",$productname,$vendor,$deviceid,$bustype,$categoryid,$date,$status=0,$userid,$suserid="",$state,$todo){
+    function make_hardware($hwid="x",$productname,$vendor,$deviceid,$bustype,$categoryid,$date,$status=0,$userid,$suserid="",$distro,$state,$todo){
         global $config;
 
         $productname    = rtag(strtolower($productname));
@@ -28,16 +28,18 @@
 
         if ($hwid == "x") $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendor}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}','{$todo}')"; else 
         $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendor='{$vendor}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWUpdateDate='{$date}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}', ToDo = '{$todo}' WHERE ID='$hwid'";
-        if (mysql_query($sql_word)) if (make_hardware_status(mysql_insert_id(),$state)) return TRUE; else return FALSE;
+        if (mysql_query($sql_word)) if (make_hardware_status(mysql_insert_id(),$state,$distro)) return TRUE; else return FALSE;
     }
 
-    function make_hardware_status($hwid,$state){
+    function make_hardware_status($hwid,$state,$distro){
         global $config;
         $sql_word = "DELETE FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID='{$hwid}'";
         $sql_query = @mysql_query($sql_word);
         foreach ($state as $key => $value){
-            $sql_word = "INSERT INTO {$config['db']['tableprefix']}ActionCompatibility VALUES ('','{$key}','0','{$hwid}','{$value}')";
-            mysql_query($sql_word);
+            foreach ($distro as $subkey) if ($subkey == $key){
+                $sql_word = "INSERT INTO {$config['db']['tableprefix']}ActionCompatibility VALUES ('','{$key}','0','{$hwid}','{$value}')";
+                mysql_query($sql_word);
+            }
         }
         return TRUE;
     }

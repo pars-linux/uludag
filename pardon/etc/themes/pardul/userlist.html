@@ -17,8 +17,8 @@
                             <td> {$sr[node].UserName} </td>
                             <td> <a href="mailto:{$sr[node].UserEmail}">{$sr[node].UserEmail}</a> </td>
                             <td align="center">
-                                <b>{$sr[node].UserState}</b>
-                                <br>[<a href="?users={$sr[node].ID}&set=A">A</a>]-[<a href="?users={$sr[node].ID}&set=SA">SA</a>]-[<a href="?users={$sr[node].ID}&set=G">G</a>]-[<a href="?users={$sr[node].ID}&set=N">N</a>]
+                                <span style="float:left;"><b>{$sr[node].UserState}</b></span>
+                                <span style="float:right;">[<a href="?users={$sr[node].ID}&set=A">A</a>]-[<a href="?users={$sr[node].ID}&set=SA">SA</a>]-[<a href="?users={$sr[node].ID}&set=G">G</a>]-[<a href="?users={$sr[node].ID}&set=N">N</a>]</span>
                             </td>
                             <td align="center"> <a href="?users={$sr[node].ID}&del"><img src="{$tp}/images/delete.png"></a> </td>
                         </tr>

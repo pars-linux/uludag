@@ -1,0 +1,79 @@
+{include file="header.html"}
+
+   {if $message}<div id="warn">{$message}</div>{else}
+                <script src="lib/scripts/newhardware.js"></script>
+                <div id="head">{$sr[0].HWProductName} ayrıntılar</div>
+                <table class="regtable">
+                    <tbody>
+                        <tr>
+                            <td> Üretici Firma </td>
+                            <td>
+                                <input type="text" name="p_vendor" id="p_vendor" value="{$sr[0].HWVendor}" DISABLED>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Ürün Adı </td>
+                            <td><input id="p_name" name="p_name" size="30" value="{$sr[0].HWProductName}" DISABLED></td>
+                        </tr>
+                        <tr>
+                            <td> Kategori </td>
+                            <td>
+                                {section name=node loop=$p_category}
+                                    {if $p_category[node].sub}
+                                        {section name=sub loop=$p_category[node].sub}
+                                            {if $p_category[node].sub[sub].ID == $sr[0].HWCategoryID} <input value="{$p_category[node].sub[sub].CategoryName}" DISABLED> {/if}
+                                        {/section}
+                                    {else}
+                                        {if $p_category[node].ID == $sr[0].HWCategoryID} <input value="{$p_category[node].CategoryName}" DISABLED> {/if}
+                                    {/if}
+                                {/section}
+                                </select>
+                        </tr>
+                        <tr>
+                            <td> Aygıt Numarası </td>
+                                <td><input value="{$sr[0].HWDeviceID}" DISABLED></td>
+                        </tr>
+                        <tr>
+                            <td> VeriYolu Tipi </td>
+                            <td><input value="{$sr[0].HWBusType}" DISABLED></td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Test Sonuçları </td>
+                            <td>
+                                <div class="checkbox">
+                                {section name=node loop=$p_distro}
+                                <div style="float:left;margin-top:3px;border-bottom:1px solid #BBB;border-right:1px solid #BBB;width:160px">
+                                <input type="checkbox" class="checkboks" value="{$p_distro[node].ID}" name="p_distro[]">
+                                {$p_distro[node].DistVersion}
+                                </div><div style="text-align:right;">
+                                <select name="p_state[{$p_distro[node].ID}]">
+                                    <option value="X"></option>
+                                    <option value="F">Uyumlu</option>
+                                    <option value="S">Ek işlem gerekli</option>
+                                    <option value="N">Uyumlu değil</option>
+                                </select>
+                                </div>
+                                {/section}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;padding-top:3px;"> Ek Açıklama </td>
+                            <td>
+                                <textarea rows="7" DISABLED>{$sr[0].ToDo}</textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="regtable">
+                    <tr>
+                        <td align="right">
+                            <input onclick="return submitform();" value="Onayla & Ekle" name="register" type="submit" style="width:150px">
+                            <input onclick="return submitform();" value="Reddet & Sil" name="delete" type="submit" style="width:150px">
+                        </td>
+                    </tr>
+                </table>
+                </form>
+                {/if}
+
+{include file="footer.html"}

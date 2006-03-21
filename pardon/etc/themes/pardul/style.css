@@ -13,12 +13,15 @@ body {
 
 img {
     border:0px;
+    vertical-align:middle;
 }
+
 body, div, span, table, td, th, input,select,option {
     font-size: 9pt;
     font-family: "Trebuchet MS", Sans-Serif;
     letter-spacing: .5px;
 }
+
 a {
     color: #990000;
     text-decoration: none;
