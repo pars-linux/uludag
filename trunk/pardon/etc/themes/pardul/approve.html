@@ -1,0 +1,81 @@
+{include file="header.html"}
+
+   {if $message}<div id="warn">{$message}</div>{else}
+                <script src="lib/scripts/newhardware.js"></script>
+                <div id="head">Donanım Düzenle</div>
+                <form id="frm" action="{$pardul_url}?uphardware_f" method="post">
+                <input type="hidden" name="userid" value="{$UserID}">
+                <table class="regtable">
+                    <tbody>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Üretici Firma </td>
+                            <td>
+                                <input type="text" name="p_vendor" id="p_vendor" value="{$sr[0].HWVendor}">
+                                <div class="dropmenu" id="dropmen">
+                                    <div id="p_vendor_list"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Ürün Adı </td>
+                            <td><input id="p_name" name="p_name" size="30" value="{$sr[0].HWProductName}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: red">[*]</span> Kategori </td>
+                            <td>
+                                <select name="p_category">
+                                {section name=node loop=$p_category}{if $p_category[node].sub}<optgroup label="{$p_category[node].CategoryName}">
+                                    {section name=sub loop=$p_category[node].sub}<option {if $p_category[node].sub[sub].ID == $sr[0].HWCategoryID} SELECTED {/if} value="{$p_category[node].sub[sub].ID}" >{$p_category[node].sub[sub].CategoryName}</option>
+                                    {/section}</optgroup>{else}
+                                    <option value="{$p_category[node].ID}" {if $p_category[node].ID == $sr[0].HWCategoryID} SELECTED {/if} >{$p_category[node].CategoryName}</option>{/if}
+                                {/section}
+                                </select>
+                        </tr>
+                        <tr>
+                            <td><span style="color: green">[*]</span> Aygıt Numarası </td>
+                                <td><input id="p_device_id" name="p_device_id" value="{$sr[0].HWDeviceID}"></td>
+                        </tr>
+                        <tr>
+                            <td><span style="color: green">[*]</span> VeriYolu Tipi </td>
+                            <td><input id="p_bus_type" name="p_bus_type" value="{$sr[0].HWBusType}"></td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Test Sonuçları </td>
+                            <td>
+                                <div class="checkbox">
+                                {section name=node loop=$p_distro}
+                                <div style="float:left;margin-top:3px;border-bottom:1px solid #BBB;border-right:1px solid #BBB;width:160px">
+                                <input type="checkbox" class="checkboks" value="{$p_distro[node].ID}" name="p_distro[]">
+                                {$p_distro[node].DistVersion}
+                                </div><div style="text-align:right;">
+                                <select name="p_state[{$p_distro[node].ID}]">
+                                    <option value="X"></option>
+                                    <option value="F">Uyumlu</option>
+                                    <option value="S">Ek işlem gerekli</option>
+                                    <option value="N">Uyumlu değil</option>
+                                </select>
+                                </div>
+                                {/section}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Ek Açıklama </td>
+                            <td>
+                                <textarea id="p_todo" name="p_todo" rows="7"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="regtable">
+                    <tr>
+                        <td align="right">
+                            <input onclick="return submitform();" value="Onayla & Ekle" name="register" type="submit" style="width:150px">
+                            <input onclick="return submitform();" value="Reddet & Sil" name="delete" type="submit" style="width:150px">
+                        </td>
+                    </tr>
+                </table>
+                </form>
+                {/if}
+
+{include file="footer.html"}

@@ -23,7 +23,7 @@
 
 //  For All Users (Guest)
     foreach ($_GET as $key => $value){
-       switch ($key){
+        switch ($key){
             case "register_f":
                 if (isset($_POST["username"])&&isset($_POST["realname"])&&isset($_POST["password"])&&isset($_POST["email"])) {
                     if (make_user("x",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],$_POST["username"])) {
@@ -41,6 +41,11 @@
                 $smarty->display("newuser.html");
                 die();
                 break;
+            case "detail":
+                ssv("sr",get_($_GET["detail"],"Hardwares"));
+                $smarty->display("details.html");
+                die();
+                break;
             case "search":
                 if (isset($_POST["p_name"])&&isset($_POST["p_vendor"])&&isset($_POST["p_category"])) {
                     ssv ("sr",find_product($_POST["p_vendor"],$_POST["p_name"],$_POST["p_category"],$_POST["p_device_id"],$_POST["p_bus_type"]));
@@ -54,7 +59,7 @@
 //  For SAdmin Users (SA)
     if (session_is_registered("pardon") AND $_SESSION["state"]=="SA" OR $_SESSION["state"]=="A") {
         foreach ($_GET as $key => $value){
-        switch ($key){
+            switch ($key){
                 case "newhardware":
                     if (!session_is_registered("pardon")){
                         if ($_SESSION["state"]<>"A") ssv("message",RESCTRICTED_AREA);
@@ -64,7 +69,7 @@
                     break;
                 case "newhardware_f":
                     if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>"") {
-                        if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
+                        if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_distro"],$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
                         else ssv("message",FAILED);
                     }
                     else {
@@ -76,7 +81,12 @@
                 case "myhardwares":
                     ssv("userpage","x");
                     ssv("sr",get_products("UserID",$_SESSION["uid"]));
-                    $smarty->display("search.html");
+                    $smarty->display("myhardwares.html");
+                    die();
+                    break;
+                case "edit":
+                    ssv("sr",get_($_GET["edit"],"Hardwares"));
+                    $smarty->display("approve.html");
                     die();
                     break;
             }
@@ -86,7 +96,7 @@
 //  For Admin Users (A)
     if (session_is_registered("pardon") AND $_SESSION["state"]=="A") {
         foreach ($_GET as $key => $value){
-        switch ($key){
+            switch ($key){
                 case "queue":
                     if (isset($_GET["del"])) del_($_GET["del"],"Hardwares");
                     if (isset($_GET["set"])) activate_($_GET["set"]);

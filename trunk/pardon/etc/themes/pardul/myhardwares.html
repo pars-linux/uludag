@@ -1,7 +1,7 @@
 {include file="header.html"}
 
    {if !$sr}<div id="warn">NOTFOUND</div>{else}
-                <div id="head">Arama Sonuçları</div>
+                <div id="head">Gönderdiklerim</div>
                 <table class="restable">
                     <tbody>
                         <tr>
@@ -9,13 +9,15 @@
                             <th width="25%"> Marka </th>
                             <th width="35%"> Kategori </th>
                             <th width="5%"> Durum </th>
+                            <th width="5%"> Onay </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
-                            <td> <a href="?detail={$sr[node].ID}">{$sr[node].HWProductName}</a> </td>
+                            <td> <a href="?edit={$sr[node].ID}">{$sr[node].HWProductName}</a> </td>
                             <td> {$sr[node].HWVendor} </td>
                             <td> {section name=mode loop=$p_scat}{if $sr[node].HWCategoryID == $p_scat[mode].ID}{$p_scat[mode].CategoryName}{/if}{/section}</td>
                             <td align="center"> <img src="{$tp}/images/{if $sr[node].HWState >= 1}ok{else}not{/if}.png"></td>
+                            <td align="center"> <img src="{$tp}/images/{if $sr[node].Status  == 1}ok{else}not{/if}.png"></td>
                         </tr>
                         {/section}
                     </tbody>
@@ -24,8 +26,16 @@
                 <table class="restable">
                 <tr>
                     <td>
+                    <div id="head">Durum</div>
                     <img src="{$tp}/images/ok.png"> Bu donanımın Pardus ürünlerinden en az biri tarafından desteklendiğini gösterir.<br>
                     <img src="{$tp}/images/not.png"> Bu donanımın Pardus ürünlerinin hiç biri tarafından desteklenmediğini gösterir.<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <div id="head">Onay Durumu</div>
+                    <img src="{$tp}/images/ok.png"> Bu girdinizin yönetici tarafından onaylanıp sisteme eklendiğini gösterir.<br>
+                    <img src="{$tp}/images/not.png"> Bu girdinizin henüz yönetici tarafından incelenmediğini gösterir. İncelendikten sonra kabul edilmeyen girdiler silinir.<br>
                     </td>
                 </tr>
                 </table>
