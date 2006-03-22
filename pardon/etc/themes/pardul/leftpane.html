@@ -14,14 +14,13 @@
             {/if}
             <div id="leftbox">
                 {if $UserName}
-                
                 Hoşgeldiniz {$UserRealName}
                 <div class="register"><a href="?quit">Çıkış</a></div>
                 {else}
                 <div id="head">Kullanıcı Giriş</div>
                 <form action="{$url}?login" method="post">
-                    <input name="user" class="user" size="10">
-                    <input name="pass" class="pass" size="10" type="password">
+                    Kullanıcı Adı : <input name="user" class="user" size="10">
+                    Parola : <input name="pass" class="pass" size="10" type="password">
                     <input value="Giriş" name="login" type="submit">
                     <div class="register"><a href="{$url}?register">Üye Ol</a></div>
                 </form>
