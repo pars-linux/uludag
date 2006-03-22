@@ -86,7 +86,9 @@
                     die();
                     break;
                 case "edit":
-                    ssv("sr",get_($_GET["edit"],"Hardwares"));
+                    if (check_entry($_SESSION["uid"],$_GET["edit"])){
+                        ssv("sr",get_($_GET["edit"],"Hardwares"));
+                    } else ssv("message","Bu girdi size ait değil ya da sistemden kaldırılmış !!");
                     $smarty->display("approve.html");
                     die();
                     break;
