@@ -15,6 +15,7 @@
     $config['core']['theme']            = "pardul";
     $config['core']['temp']             = "tmp";
     $config['core']['lang']             = "tr";
+    $config['core']['secretkey']        = "secret_key";
 
     $config['db']['host']               = "localhost";
     $config['db']['port']               = "3306";
