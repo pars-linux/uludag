@@ -237,6 +237,12 @@
         return $single;
     }
 
+    function get_user($field,$value){
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE $field = '$value'";
+        $single = perform_sql($sql_word);
+    }
+
     function get_states ($id) {
         global $config;
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID = '$id'";
@@ -247,6 +253,31 @@
         global $config;
         $sql_word = "SELECT ID FROM {$config['db']['tableprefix']}Hardwares WHERE ID = '$eid' AND UserID = '$uid'";
         return mysql_num_rows(mysql_query($sql_word));
+    }
+
+    function sendmail($from,$to,$subject,$message,$priority){
+           $mob = new Mail;
+           $mob->From($from);
+           $mob->To($to);
+           $mob->Subject($subject);
+           $mob->Body($message, "utf-8");
+           $mob->Priority($priority);
+           $mob->Send();
+    }
+
+    function activate_user($username,$code,$action="activate"){
+        global $config;
+        $node = get_user("UserName",$username);
+        if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
+            if($action == "activate"){
+                $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
+                $message = USER_ACTIVATED;
+            }
+            else{$message = ERROR;}
+        }
+        else{$message["message"] = ERROR;}
+        $sql_query = mysql_query($sql_word);
+        return $message;
     }
 
 ?>

@@ -24,12 +24,24 @@
 //  For All Users (Guest)
     foreach ($_GET as $key => $value){
         switch ($key){
+            case "activateuser":
+                if ($_GET['username'] AND $_GET['code']){
+                    if ($msj = activate_user($_GET['username'],$_GET['code'],$_GET['action'])) {
+                        ssv("message",$msj);
+                    }
+                }
+                die();
+                break;
             case "register_f":
                 if (isset($_POST["username"])&&isset($_POST["realname"])&&isset($_POST["password"])&&isset($_POST["email"])) {
                     if (make_user("x",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],$_POST["username"])) {
-                        ssv("message",SUCCESS);
+                        $id=mysql_insert_id();
+                        $activationcode = md5($id.$config["core"]["secretkey"]);
+                            $mail_message = "Merhaba\n\n    Siz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın: {$config['core']['url']}?activateuser&username={$_POST["username"]}&code={$activationcode}\n\n İlginiz için teşekkürler.\n Pardus Projesi";
+                            sendmail($config['core']['email'],$_POST["email"],"Aktivasyon - pardon.pardus.org.tr",$mail_message,"3");
+                        ssv("message",REGISTER_OK);
                     }
-                    else ssv("message",FAILED);
+                    else ssv("message",ERROR);
                 }
                 else {
                     ssv("message",MISSING_FIELDS);
@@ -71,7 +83,7 @@
                 case "newhardware_f":
                     if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>"") {
                         if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_distro"],$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
-                        else ssv("message",FAILED);
+                        else ssv("message",ERROR);
                     }
                     else {
                         ssv("message",MISSING_FIELDS);
@@ -88,7 +100,7 @@
                 case "edit":
                     if (check_entry($_SESSION["uid"],$_GET["edit"])){
                         ssv("sr",get_($_GET["edit"],"Hardwares"));
-                    } else ssv("message","Bu girdi size ait değil ya da sistemden kaldırılmış !!");
+                    } else ssv("message",WRONG_ENTRY);
                     $smarty->display("approve.html");
                     die();
                     break;

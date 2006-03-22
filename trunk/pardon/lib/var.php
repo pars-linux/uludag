@@ -6,6 +6,8 @@
     */
 
     require_once ("etc/config.php");
+    require_once ("etc/lang.php");
+    require_once ("lib/libmail.php");
     require_once ("lib/version.php");
     require_once ("lib/utils.php");
 
