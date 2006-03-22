@@ -23,9 +23,9 @@
                             <td><input id="p_name" name="p_name" size="30"></td>
                         </tr>
                         <tr>
-                            <td> Kategori </td>
+                            <td style="vertical-align:top;padding-top:3px;"> Kategori </td>
                             <td>
-                                <select name="p_category">
+                                <select name="p_category" SIZE=10>
                                 <option value="all_categories" SELECTED>Tüm Kategoriler</option>
                                 {section name=node loop=$p_category}{if $p_category[node].sub}<optgroup label="{$p_category[node].CategoryName}">
                                     {section name=sub loop=$p_category[node].sub}   <option value="{$p_category[node].sub[sub].ID}" >{$p_category[node].sub[sub].CategoryName}</option>

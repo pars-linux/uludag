@@ -237,4 +237,10 @@
         return $single;
     }
 
+    function get_states ($id) {
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID = '$id'";
+        return perform_sql($sql_word);
+    }
+
 ?>

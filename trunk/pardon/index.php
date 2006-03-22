@@ -43,6 +43,7 @@
                 break;
             case "detail":
                 ssv("sr",get_($_GET["detail"],"Hardwares"));
+                ssv("rs",get_states($_GET["detail"]));
                 $smarty->display("details.html");
                 die();
                 break;
