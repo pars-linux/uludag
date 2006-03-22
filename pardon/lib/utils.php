@@ -243,4 +243,10 @@
         return perform_sql($sql_word);
     }
 
+    function check_entry ($uid,$eid){
+        global $config;
+        $sql_word = "SELECT ID FROM {$config['db']['tableprefix']}Hardwares WHERE ID = '$eid' AND UserID = '$uid'";
+        return mysql_num_rows(mysql_query($sql_word));
+    }
+
 ?>
