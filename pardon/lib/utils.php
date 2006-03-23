@@ -35,10 +35,12 @@
         global $config;
         $sql_word = "DELETE FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID='{$hwid}'";
         $sql_query = @mysql_query($sql_word);
-        foreach ($state as $key => $value){
-            foreach ($distro as $subkey) if ($subkey == $key){
-                $sql_word = "INSERT INTO {$config['db']['tableprefix']}ActionCompatibility VALUES ('','{$key}','0','{$hwid}','{$value}')";
-                mysql_query($sql_word);
+        if ($state) {
+            foreach ($state as $key => $value){
+                foreach ($distro as $subkey) if ($subkey == $key){
+                    $sql_word = "INSERT INTO {$config['db']['tableprefix']}ActionCompatibility VALUES ('','{$key}','0','{$hwid}','{$value}')";
+                    mysql_query($sql_word);
+                }
             }
         }
         return TRUE;
@@ -271,13 +273,20 @@
         if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
             if($action == "activate"){
                 $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
-                $message = USER_ACTIVATED;
+                if (mysql_query($sql_word)) $message = ACTIVATE_USER_OK; else $message = ACTIVATE_USER_ERROR;
             }
-            else{$message = ERROR;}
         }
-        else{$message["message"] = ERROR;}
-        $sql_query = mysql_query($sql_word);
+        else {
+            $message = ACTIVATE_USER_ERROR;
+        }
         return $message;
+    }
+
+    function send_activation_mail($id,$username){
+        global $config;
+        $activationcode = md5($id.$config["core"]["secretkey"]);
+        $mail_message = ACTIVATION_MAIL_HEADER."\n {$config['core']['url']}?activateuser&username={$username}&code={$activationcode}\n".ACTIVATION_MAIL_FOOTER;
+        return (sendmail($config['core']['email'],$_POST["email"],ACTIVATION_MAIL_TITLE,$mail_message,"3"));
     }
 
 ?>

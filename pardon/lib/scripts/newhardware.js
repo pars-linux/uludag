@@ -2,26 +2,9 @@
 //  TUBITAK UEKAE 2005-2006
 //  Gökmen GÖKSEL gokmen_at_pardus.org.tr
 
-var mikExp = /[$\\@\\\#%\^\&\*\(\)\[\]\+\_\{\}\`\~\ \|\"\!\'\?]/;
-
-function dodacheck(val) {
-    var strPass = val.value;
-    var strLength = strPass.length;
-    var lchar = val.value.charAt((strLength) - 1);
-    if(lchar.search(mikExp) != -1) {
-    var tst = val.value.substring(0, (strLength) - 1);
-    val.value = tst;
-   }
-}
-
-/* form field lar için düzenle .. */
-
 function doanothercheck(form) {
-    if (frm.username.value.length < 3)              { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !'); frm.username.select(); frm.username.focus(); return false;}
-    if (frm.realname.value.length < 6)              { alert('Ad Soyad boş ya da eksik !');return false;}
-    if (frm.email.value.length < 8)                 { alert('E-Mail boş ya da eksik !');return false;}
-    if (frm.password.value.length <= 4)             { alert('Parola boş ya da eksik (en az 5 karakter)!');return false;}
-    if (frm.password.value !== frm.password_.value) { alert('Parola ve Parola Tekrar birbirini tutmuyor !'); return false;}
+    if (frm.p_vendor.value.length < 3)              { alert('Üretici kısmı boş bırakılamaz !'); frm.p_vendor.select(); frm.p_vendor.focus(); return false;}
+    if (frm.p_name.value.length < 3)                { alert('Ürün Adı boş bırakılamaz !');return false;}
     return true;
 }
 

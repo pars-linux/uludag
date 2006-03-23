@@ -3,7 +3,7 @@
    {if $message}<div id="warn">{$message}</div>{else}
                 <script src="lib/scripts/newhardware.js"></script>
                 <div id="head">Yeni Donanım Ekle</div>
-                <form id="frm" action="{$pardul_url}?newhardware_f" method="post">
+                <form id="frm" action="{$pardul_url}?newhardware_f" method="post" onSubmit="return doanothercheck(frm.p_vendor);">
                 <input type="hidden" name="userid" value="{$UserID}">
                 <table class="regtable">
                     <tbody>
@@ -40,7 +40,7 @@
                             <td><input id="p_bus_type" name="p_bus_type" value="{$p_bus_type}"></td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Test Sonuçları </td>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: red">[*]</span> Test Sonuçları </td>
                             <td>
                                 <div class="checkbox">
                                 {section name=node loop=$p_distro}
