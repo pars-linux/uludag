@@ -26,7 +26,7 @@
         switch ($key){
             case "activateuser":
                 if ($_GET['username'] AND $_GET['code']){
-                    $msj = activate_user($_GET['username'],$_GET['code'],$_GET['action']);
+                    $msj = activate_user($_GET['username'],$_GET['code']);
                     ssv("message",$msj);
                     $smarty->display("welcome.html");
                     die();
@@ -89,8 +89,7 @@
                     die();
                     break;
                 case "myhardwares":
-                    ssv("userpage","x");
-                    ssv("sr",get_products("UserID",$_SESSION["uid"]));
+                    if ($temp=get_products("UserID",$_SESSION["uid"])) ssv("sr",$temp); else ssv("message",NO_RECORD);
                     $smarty->display("myhardwares.html");
                     die();
                     break;
@@ -113,7 +112,7 @@
                 case "queue":
                     if (isset($_GET["del"])) del_($_GET["del"],"Hardwares");
                     if (isset($_GET["set"])) activate_($_GET["set"]);
-                    ssv("sr",get_products("Status",0));
+                    if ($temp=get_products("Status",0)) ssv("sr",$temp); else ssv("message",NO_RECORD);
                     $smarty->display("queue.html");
                     die();
                     break;
