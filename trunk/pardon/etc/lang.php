@@ -42,6 +42,7 @@
         define ("ACTIVATE_USER_DELETED","Kullanıcı veritabanından <strong>tamamen</strong> kaldırıldı. Bu kullanıcı artık işlem yapamaz.");
         define ("ACTIVATE_USER_ERROR",  "Etkinleştirme işlemi sırasında hata oluştu. Lütfen, daha sonra tekrar deneyin. Hatanın tekrar etmesi durumunda yönetim ile irtibata geçerseniz seviniriz.");
         define ("ACTIVATE_USER_TITLE",  "Kullanıcı Etkinleştirme");
+        define ("ACTIVATED_USER",       "Etkinleştirilmiş Hesap !!");
         define ("ACTIVATION_MAIL_HEADER","Merhaba\n\nSiz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın:");
         define ("ACTIVATION_MAIL_FOOTER","\n İlginiz için teşekkürler.\n Pardus Projesi");
         define ("ACTIVATION_MAIL_TITLE", "{$config['core']['title']} - Aktivasyon");

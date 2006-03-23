@@ -242,7 +242,7 @@
     function get_user($field,$value){
         global $config;
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE $field = '$value'";
-        $single = perform_sql($sql_word);
+        return perform_sql($sql_word);
     }
 
     function get_states ($id) {
@@ -270,21 +270,24 @@
     function activate_user($username,$code,$action="activate"){
         global $config;
         $node = get_user("UserName",$username);
-        if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
-            if($action == "activate"){
-                $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
-                echo $sql_word;
-                if (mysql_query($sql_word)) $message = ACTIVATE_USER_OK; else $message = ACTIVATE_USER_ERROR;
+        if ($node[0]["UserState"] == "N") {
+            if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
+                if($action == "activate"){
+                    $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
+                    if (mysql_query($sql_word)) $message = ACTIVATE_USER_OK; else $message = ACTIVATE_USER_ERROR;
+                }
+            }
+            else {
+                $message = ACTIVATE_USER_ERROR;
             }
         }
-        else {
-            $message = ACTIVATE_USER_ERROR2;
-        }
+        else $message = ACTIVATED_USER;
         return $message;
     }
 
     function send_activation_mail($id,$username){
         global $config;
+        echo $id;
         $activationcode = md5($id.$config["core"]["secretkey"]);
         $mail_message = ACTIVATION_MAIL_HEADER."\n {$config['core']['url']}?activateuser&username={$username}&code={$activationcode}\n".ACTIVATION_MAIL_FOOTER;
         sendmail($config['core']['email'],$_POST["email"],ACTIVATION_MAIL_TITLE,$mail_message,"3");
