@@ -62,7 +62,7 @@
                         <tr>
                             <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Ek Açıklama </td>
                             <td>
-                                <textarea id="p_todo" name="p_todo" rows="7"></textarea>
+                                <textarea id="p_todo" name="p_todo" rows="7">{$sr[0].ToDo}</textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -70,8 +70,7 @@
                 <table class="regtable">
                     <tr>
                         <td align="right">
-                            <input onclick="return submitform();" value="Onayla & Ekle" name="register" type="submit" style="width:150px">
-                            <input onclick="return submitform();" value="Reddet & Sil" name="delete" type="submit" style="width:150px">
+                            <input onclick="return submitform();" value="Güncelle" name="register" type="submit" style="width:150px">
                         </td>
                     </tr>
                 </table>

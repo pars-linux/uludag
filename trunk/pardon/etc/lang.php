@@ -12,6 +12,7 @@
 	define ("ERRORNUM",		"Hata No : ");
         define ("ERROR",                "HATA");
         define ("CONFLICT_ERROR",       "Çakışma hatası !!");
+        define ("SENDMAIL_ERROR",       "Mail gönderme sırasında Hata!!");
         define ("WRONG_ENTRY",          "Bu girdi size ait değil ya da sistemden kaldırılmış !!");
         define ("FILE_NOT_FOUND",       "Ulaşmak istediğiniz dosya bulunamadı, böyle bir dosya sistemde yok ya da kaldırılmış. Linkin doğru olduğuna eminseniz yönetim ile irtibata geçiniz.");
         define ("DISK_ERROR",           "Belirtilen içerik sisteme eklenemedi. Disk hatası meydana geldi. Verilen konum hatalı ya da disk dolmuş olabilir.");
@@ -41,5 +42,7 @@
         define ("ACTIVATE_USER_DELETED","Kullanıcı veritabanından <strong>tamamen</strong> kaldırıldı. Bu kullanıcı artık işlem yapamaz.");
         define ("ACTIVATE_USER_ERROR",  "Etkinleştirme işlemi sırasında hata oluştu. Lütfen, daha sonra tekrar deneyin. Hatanın tekrar etmesi durumunda yönetim ile irtibata geçerseniz seviniriz.");
         define ("ACTIVATE_USER_TITLE",  "Kullanıcı Etkinleştirme");
-
+        define ("ACTIVATION_MAIL_HEADER","Merhaba\n\nSiz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın:");
+        define ("ACTIVATION_MAIL_FOOTER","\n İlginiz için teşekkürler.\n Pardus Projesi");
+        define ("ACTIVATION_MAIL_TITLE", "{$config['core']['title']} - Aktivasyon");
 ?>

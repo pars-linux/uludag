@@ -45,12 +45,12 @@
                                     {if $rs[kode].DistID==$p_distro[node].ID}
                                 <div style="border-bottom:1px solid #bbb;">
                                 <div style="float:left;clear:left;">
-                                <b>{$p_distro[node].DistVersion}</b>
+                                <b>Pardus - {$p_distro[node].DistVersion}</b>
                                 </div>
                                 <div style="text-align:right;">
-                                    {if $rs[kode].HWState=="F"}<img src="{$tp}/images/ok.png" style="margin-right:5px;">Uyumlu{/if}
-                                    {if $rs[kode].HWState=="S"}Ek işlem gerekli{/if}
-                                    {if $rs[kode].HWState=="N"}<img src="{$tp}/images/not.png" style="margin-right:5px;">Uyumlu Değil{/if}
+                                    {if $rs[kode].HWState=="F"}Uyumlu<img src="{$tp}/images/ok.png" style="margin-left:5px;">{/if}
+                                    {if $rs[kode].HWState=="S"}Ek işlem gerekli<img src="{$tp}/images/ok.png" style="margin-left:5px;">{/if}
+                                    {if $rs[kode].HWState=="N"}Uyumlu Değil<img src="{$tp}/images/not.png" style="margin-left:5px;">{/if}
                                 </div>
                                 </div>
                                 {/if}
