@@ -3,8 +3,9 @@
    {if $message}<div id="warn">{$message}</div>{else}
                 <script src="lib/scripts/newhardware.js"></script>
                 <div id="head">Donanım Düzenle</div>
-                <form id="frm" action="{$pardul_url}?uphardware_f" method="post">
+                <form id="frm" action="{$pardul_url}?edit_f" method="post">
                 <input type="hidden" name="userid" value="{$UserID}">
+                <input type="hidden" name="p_id" value="{$sr[0].ID}">
                 <table class="regtable">
                     <tbody>
                         <tr>
@@ -45,16 +46,16 @@
                                 <div class="checkbox">
                                 {section name=node loop=$p_distro}
                                 <div style="float:left;margin-top:3px;border-bottom:1px solid #BBB;border-right:1px solid #BBB;width:160px">
-                                <input type="checkbox" class="checkboks" value="{$p_distro[node].ID}" name="p_distro[]">
+                                <input type="checkbox" class="checkboks" value="{$p_distro[node].ID}" name="p_distro[]" {section name=kode loop=$rs}{if $rs[kode].DistID==$p_distro[node].ID}{assign var="control" value=$rs[kode].HWState}CHECKED{/if}{/section}>
                                 {$p_distro[node].DistVersion}
                                 </div><div style="text-align:right;">
                                 <select name="p_state[{$p_distro[node].ID}]">
-                                    <option value="X"></option>
-                                    <option value="F">Uyumlu</option>
-                                    <option value="S">Ek işlem gerekli</option>
-                                    <option value="N">Uyumlu değil</option>
+                                    <option value="F" {if $control=="F"}SELECTED{/if}>Uyumlu</option>
+                                    <option value="S" {if $control=="S"}SELECTED{/if}>Ek işlem gerekli</option>
+                                    <option value="N" {if $control=="N"}SELECTED{/if}>Uyumlu değil</option>
                                 </select>
                                 </div>
+                                {assign var="control" value=""}
                                 {/section}
                                 </div>
                             </td>

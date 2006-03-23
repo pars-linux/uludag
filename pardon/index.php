@@ -58,7 +58,7 @@
                 break;
             case "search":
                 if (isset($_POST["p_name"])&&isset($_POST["p_vendor"])&&isset($_POST["p_category"])) {
-                    ssv ("sr",find_product($_POST["p_vendor"],$_POST["p_name"],$_POST["p_category"],$_POST["p_device_id"],$_POST["p_bus_type"]));
+                    if ($temp=find_product($_POST["p_vendor"],$_POST["p_name"],$_POST["p_category"],$_POST["p_device_id"],$_POST["p_bus_type"])) ssv ("sr",$temp); else ssv("message",NOT_FOUND.MAINLINK);
                 }
                 $smarty->display("search.html");
                 die();
@@ -72,7 +72,7 @@
             switch ($key){
                 case "newhardware":
                     if (!session_is_registered("pardon")){
-                        if ($_SESSION["state"]<>"A") ssv("message",RESCTRICTED_AREA);
+                        if ($_SESSION["state"]<>"A") ssv("message",RESCTRICTED_AREA.MAINLINK);
                     }
                     $smarty->display("newhardware.html");
                     die();
@@ -80,7 +80,7 @@
                 case "newhardware_f":
                     if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>""&&$_POST["p_distro"]<>"") {
                         if (make_hardware("x",$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_distro"],$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
-                        else ssv("message",ERROR);
+                        else ssv("message",ERROR.MAINLINK);
                     }
                     else {
                         ssv("message",MISSING_FIELDS);
@@ -101,6 +101,17 @@
                     $smarty->display("approve.html");
                     die();
                     break;
+                case "edit_f":
+                    if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>""&&$_POST["p_distro"]<>""&&$_POST["p_id"]<>"") {
+                        if (make_hardware($_POST["p_id"],$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_distro"],$_POST["p_state"],$_POST["p_todo"])) header ("location: ?myhardwares");
+                        else ssv("message",ERROR.MAINLINK);
+                    }
+                    else {
+                        ssv("message",MISSING_FIELDS);
+                    }
+                    $smarty->display("myhardwares.html");
+                    die();
+                    break;
             }
         }
     }
@@ -112,7 +123,7 @@
                 case "queue":
                     if (isset($_GET["del"])) del_($_GET["del"],"Hardwares");
                     if (isset($_GET["set"])) activate_($_GET["set"]);
-                    if ($temp=get_products("Status",0)) ssv("sr",$temp); else ssv("message",NO_RECORD);
+                    if ($temp=get_products("Status",0)) ssv("sr",$temp); else ssv("message",NO_QUEUE.MAINLINK);
                     $smarty->display("queue.html");
                     die();
                     break;
