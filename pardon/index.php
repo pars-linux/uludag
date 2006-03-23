@@ -97,6 +97,7 @@
                 case "edit":
                     if (check_entry($_SESSION["uid"],$_GET["edit"])){
                         ssv("sr",get_($_GET["edit"],"Hardwares"));
+                        ssv("rs",get_states($_GET["edit"]));
                     } else ssv("message",WRONG_ENTRY);
                     $smarty->display("approve.html");
                     die();
