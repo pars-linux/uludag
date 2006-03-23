@@ -11,6 +11,8 @@
     require_once ("lib/version.php");
     require_once ("lib/utils.php");
 
+    $config["core"]["secretkey"] = "deneme";
+
     require_once($config['core']['path'].$config['smarty']['libdir']."/Smarty.class.php");
 
     setlocale(LC_TIME,"tr_TR.UTF8");

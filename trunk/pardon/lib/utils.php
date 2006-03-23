@@ -273,11 +273,12 @@
         if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
             if($action == "activate"){
                 $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
+                echo $sql_word;
                 if (mysql_query($sql_word)) $message = ACTIVATE_USER_OK; else $message = ACTIVATE_USER_ERROR;
             }
         }
         else {
-            $message = ACTIVATE_USER_ERROR;
+            $message = ACTIVATE_USER_ERROR2;
         }
         return $message;
     }
@@ -286,7 +287,8 @@
         global $config;
         $activationcode = md5($id.$config["core"]["secretkey"]);
         $mail_message = ACTIVATION_MAIL_HEADER."\n {$config['core']['url']}?activateuser&username={$username}&code={$activationcode}\n".ACTIVATION_MAIL_FOOTER;
-        return (sendmail($config['core']['email'],$_POST["email"],ACTIVATION_MAIL_TITLE,$mail_message,"3"));
+        sendmail($config['core']['email'],$_POST["email"],ACTIVATION_MAIL_TITLE,$mail_message,"3");
+        return true;
     }
 
 ?>
