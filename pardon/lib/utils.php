@@ -38,8 +38,10 @@
         if ($state) {
             foreach ($state as $key => $value){
                 foreach ($distro as $subkey) if ($subkey == $key){
-                    $sql_word = "INSERT INTO {$config['db']['tableprefix']}ActionCompatibility VALUES ('','{$key}','0','{$hwid}','{$value}')";
-                    mysql_query($sql_word);
+                    if ($value<>"X") {
+                        $sql_word = "INSERT INTO {$config['db']['tableprefix']}ActionCompatibility VALUES ('','{$key}','0','{$hwid}','{$value}')";
+                        mysql_query($sql_word);
+                    }
                 }
             }
         }
