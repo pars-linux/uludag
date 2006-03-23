@@ -1,6 +1,6 @@
 {include file="header.html"}
 
-   {if !$sr}<div id="warn">NOTFOUND</div>{else}
+   {if $message}<div id="warn">{$message}</div>{else}
                 <div id="head">Arama Sonuçları</div>
                 <table class="restable">
                     <tbody>

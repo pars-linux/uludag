@@ -26,9 +26,12 @@
         $suserid        = rtag($suserid);
         $todo           = rtag($todo);
 
-        if ($hwid == "x") $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendor}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}','{$todo}')"; else 
+        if ($hwid == "x") $sql_word = "INSERT INTO {$config['db']['tableprefix']}Hardwares VALUES ('','{$productname}','{$vendor}','{$deviceid}','{$bustype}','{$categoryid}','{$date}','','{$status}','{$userid}','{$suserid}','{$todo}')"; else
         $sql_word = "UPDATE {$config['db']['tableprefix']}Hardwares SET HWProductName='{$productname}', HWVendor='{$vendor}',HWDeviceID='{$deviceid}',HWBusType='{$bustype}',HWCategoryID='{$categoryid}',HWUpdateDate='{$date}',Status='{$status}',UserID='{$userid}',SuperUserID='{$suserid}', ToDo = '{$todo}' WHERE ID='$hwid'";
-        if (mysql_query($sql_word)) if (make_hardware_status(mysql_insert_id(),$state,$distro)) return TRUE; else return FALSE;
+        if (mysql_query($sql_word)){
+            if ($hwid == "x") $pid = mysql_insert_id(); else $pid = $hwid;
+            if (make_hardware_status($pid,$state,$distro)) return TRUE; else return FALSE;
+        }
     }
 
     function make_hardware_status($hwid,$state,$distro){
@@ -289,7 +292,6 @@
 
     function send_activation_mail($id,$username){
         global $config;
-        echo $id;
         $activationcode = md5($id.$config["core"]["secretkey"]);
         $mail_message = ACTIVATION_MAIL_HEADER."\n {$config['core']['url']}?activateuser&username={$username}&code={$activationcode}\n".ACTIVATION_MAIL_FOOTER;
         sendmail($config['core']['email'],$_POST["email"],ACTIVATION_MAIL_TITLE,$mail_message,"3");

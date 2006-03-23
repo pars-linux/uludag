@@ -17,10 +17,13 @@
         define ("FILE_NOT_FOUND",       "Ulaşmak istediğiniz dosya bulunamadı, böyle bir dosya sistemde yok ya da kaldırılmış. Linkin doğru olduğuna eminseniz yönetim ile irtibata geçiniz.");
         define ("DISK_ERROR",           "Belirtilen içerik sisteme eklenemedi. Disk hatası meydana geldi. Verilen konum hatalı ya da disk dolmuş olabilir.");
         define ("DB_ERROR",             "Belirtilen içerik sisteme eklenemedi. Veritabanı ile ilgili bir hata meydana geldi.");
+        define ("NOT_FOUND",            "Kriterlerinize uygun kayıt bulunamadı, bu kriterlere uyan kayıt bulunmaması bu donanımın Pardus ürünleri üzerinde çalışmayacağını göstermez.");
+        define ("MAINLINK",             "<br><a href=\"{$config['core']['url']}\"> « Ana Sayfa </a>");
 	define ("LOGIC_ERROR",		"Mantıksal Hata !!");
 	define ("WELCOME",		"Hoşgeldiniz");
 	define ("DOYOUAGREE",		"Onaylıyor musunuz ?");
 	define ("NO_RECORD",		"Kayıt yok");
+        define ("NO_QUEUE",		"Onay bekleyen kayıt yok!!");
 	define ("ADMIN",		"Yetkili");
 	define ("GROUPS",		"Gruplar");
 	define ("CHOICE",		"Seçim");

@@ -8,7 +8,6 @@ function doanothercheck(form) {
     return true;
 }
 
-
 function tV(el, src) {
     var v = el.style.display == "block";
     var str = src.innerHTML;
