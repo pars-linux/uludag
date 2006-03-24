@@ -238,9 +238,9 @@ class MainApplicationWidget(QWidget):
             else:
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
                 
-            installed = pisi.packagedb.inst_packagedb.has_package(app)
+            installed = pisi.packagedb.pkgdb.has_package(app)
             if installed:
-                package = pisi.packagedb.inst_packagedb.get_package(app)
+                package = pisi.packagedb.pkgdb.get_package(app)
             else:
                 package = pisi.packagedb.get_package(app)
             desc = package.description
