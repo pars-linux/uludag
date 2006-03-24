@@ -30,7 +30,6 @@ import kdedesigner
 
 # Local imports
 from Enums import *
-from Formatter import *
 import HelpDialog
 import Progress
 import Preferences
