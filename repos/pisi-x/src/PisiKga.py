@@ -60,6 +60,7 @@ def AboutData():
                             "(C) 2005,2006 UEKAE/TÜBİTAK", None, None, "ismail@pardus.org.tr")
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@pardus.org.tr")
+    about_data.addAuthor("Gökmen Göksel",I18N_NOOP("Author"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
     about_data.addAuthor("Eray Özkural", I18N_NOOP("Search, Component/Category"), "eray@pardus.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
@@ -103,7 +104,7 @@ class MainApplicationWidget(QWidget):
         self.currentAppIndex = 1
         self.totalSelectedSize = 0
         self.possibleError = False
-        
+	
         self.layout = QGridLayout(self)
         self.buttonLayout = QHBox(self)
         self.leftLayout = QVBox(self)
@@ -161,7 +162,7 @@ class MainApplicationWidget(QWidget):
             self.createComponentList(self.command.listPackages())
         elif index == 1:
             self.installRemoveButton.setText(i18n("Install Package(s)"))
-            self.createComponentList(self.command.listAvailable())
+            self.createComponentList(self.command.listNewPackages())
         else:
             self.installRemoveButton.setText(i18n("Upgrade Package(s)"))
             self.createComponentList(self.command.listUpgradable())
