@@ -5,10 +5,11 @@
     */
 
 body {
-    color:#564b47;
-    padding:5px;
-    margin:0px;
-    text-align: center;
+    background-image: url(./images/back.jpg);
+    background-repeat: repeat-x;
+    background-color: #FFFFFF;
+    margin: 0;
+    text-align:center;
 }
 
 img {
@@ -16,7 +17,7 @@ img {
     vertical-align:middle;
 }
 
-body, div, span, table, td, th, input,select,option {
+body,div, span, table, td, th, input,select,option {
     font-size: 9pt;
     font-family: "Trebuchet MS", Sans-Serif;
     letter-spacing: .5px;
@@ -28,7 +29,7 @@ a {
 }
 
 a:hover {
-    color: #FF3300;
+    color: #FFFF00;
     text-decoration: underline;
 }
 
@@ -39,6 +40,13 @@ div#head {
     border-bottom:1px solid #BBB;
     padding:1px;
     margin-bottom:3px;
+}
+
+.pancar {
+    padding-left:1px;
+    background: url(./images/arka.jpg) no-repeat center top;
+    width:1024px;
+    height:500px;
 }
 
 div#warn {
@@ -62,7 +70,7 @@ div#box {
 
 div#leftbox {
     margin: 5px 5px 0px auto;
-    background-color:#FFCE00;
+    background-color:#FF8000;
     color: #000;
     width:170px;
     float:left;
@@ -98,6 +106,11 @@ div#leftpane input:focus{
     font-size: 8pt;
     text-align:center;
     -moz-border-radius : 5px;
+}
+
+.register a:hover {
+    color: #FF3300;
+    text-decoration: underline;
 }
 
 div#container {
