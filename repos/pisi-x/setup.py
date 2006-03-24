@@ -21,8 +21,8 @@ kdedistutils.setup(
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
     url="http://www.uludag.org.tr/projeler/pisi/index.html",
-    min_kde_version = "3.5.0",
-    min_qt_version = "3.3.5",
+    min_kde_version = "3.5.2",
+    min_qt_version = "3.3.6",
     license = "GPL",
     application_data = ['src/pisix.py', 'src/ThreadRunner.py','src/Progress.py','src/ProgressDialog.ui',
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
@@ -35,4 +35,3 @@ kdedistutils.setup(
     executable_links = [('pisix','pisix.py')],
     i18n = ('po',['src']),
     )
-
