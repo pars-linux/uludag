@@ -267,9 +267,9 @@ class MainApplicationWidget(QWidget):
         return result
         
     def registerEventListener(self):
-        self.eventHandler = CustomEventListener(self)
+        self.eventListener = CustomEventListener(self)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
-        node.addEventListener(DOM.DOMString("click"),self.eventHandler,True)
+        node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateCheckboxes(self):
 	if len(self.domNodesToProcess):
