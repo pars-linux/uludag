@@ -214,13 +214,14 @@ class MainApplicationWidget(QWidget):
         <div class="checkboks" style="%s"><input type="checkbox" onclick="gorkem_fonksiyonu(this)" name="%s"></div>
         <div class="package_title" style="%s">
         <span class="installed_button"> yüklü </span>
-        <img src="/home/cartman/SVN/repos/pisi-x/src/pisi_kga.png" width="48px" height="48px"><b>%s</b><br>%s<br>
-        <span class="version_info">Sürüm : %s - Paket Boyutu : %s</span>
+        <img src="/home/rat/miyav/pisi-x/src/pisi_kga.png" style="float:left;" width="48px" height="48px">
+        <b>%s</b><br>%s<br>
         </div>
         <div class="package_info" style="%s">
-        <div>
-        <p>
-        %s
+        <div style="margin-left:25px;">
+        <p><b>Özet :</b>
+        %s<br>
+        <b>Sürüm :</b> %s <br> <b>Paket Boyutu :</b> %s <br><b>Homepage :</b> %s 
         </p>
         </div>
         </div>
@@ -237,7 +238,6 @@ class MainApplicationWidget(QWidget):
                 style = "background-color:%s" % KGlobalSettings.alternateBackgroundColor().name()
             else:
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
-                
             installed = pisi.packagedb.pkgdb.has_package(app)
             if installed:
                 package = pisi.packagedb.pkgdb.get_package(app)
@@ -252,7 +252,7 @@ class MainApplicationWidget(QWidget):
                 size = "%.2f %s" % (tpl[0], tpl[1])
             else:
                 size = i18n("N\A")
-            result += template % (style,app,style,app,summary,version,size,style,desc)
+            result += template % (style,app,style,app,summary,style,desc,version,size,"lala")
             index += 1
 
         return result

@@ -31,8 +31,9 @@ body{
 .version_info {
         float:right;
         margin-top: 3px;
+        margin-bottom: 3px;
         margin-right: 3px;
-        vertical-align:middle;
+        vertical-align:top;
 }
 
 .installed_button {
@@ -46,6 +47,7 @@ body{
     float:left;
     background-color:#3c8839;
     height:50px;
+    width:25px;
 }
 /* Package info Style */
 .package_info {
