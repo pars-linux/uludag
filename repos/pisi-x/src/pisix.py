@@ -155,8 +155,8 @@ class MainApplicationWidget(QWidget):
         self.connect(self.installRemoveButton,SIGNAL("clicked()"),self.check)
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.comboBox,SIGNAL("activated(int)"),self.updateListing)
-        self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventHandlers)
-	self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckables)
+        self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
+	self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         
         self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
@@ -266,12 +266,12 @@ class MainApplicationWidget(QWidget):
 
         return result
         
-    def registerEventHandlers(self):
+    def registerEventListener(self):
         self.eventHandler = CustomEventListener(self)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventHandler,True)
 
-    def updateCheckables(self):
+    def updateCheckboxes(self):
 	if len(self.domNodesToProcess):
 	    document = self.htmlPart.document()
 	    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
