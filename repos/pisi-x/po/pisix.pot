@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-24 22:15+0200\n"
+"POT-Creation-Date: 2006-03-24 22:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,145 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/PisiUi.py:79
-msgid "downloading"
+#: src/pisix.py:52
+msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/PisiUi.py:81 src/PisiKga.py:359
+#: src/pisix.py:61 src/pisix.py:62
+msgid "Author"
+msgstr ""
+
+#: src/pisix.py:63
+msgid "GUI Design & Usability"
+msgstr ""
+
+#: src/pisix.py:64
+msgid "Search, Component/Category"
+msgstr ""
+
+#: src/pisix.py:65
+msgid "Python coding help"
+msgstr ""
+
+#: src/pisix.py:66
+msgid "Helping with PiSi API"
+msgstr ""
+
+#: src/pisix.py:67
+msgid "Authors of PiSi API"
+msgstr ""
+
+#: src/pisix.py:123
+msgid "Configure..."
+msgstr ""
+
+#: src/pisix.py:124 src/pisix.py:172
+msgid "Remove Package(s)"
+msgstr ""
+
+#: src/pisix.py:136
+msgid "Show installed packages"
+msgstr ""
+
+#: src/pisix.py:137
+msgid "Show new packages"
+msgstr ""
+
+#: src/pisix.py:138
+msgid "Show upgrades"
+msgstr ""
+
+#: src/pisix.py:140
+msgid "Components"
+msgstr ""
+
+#: src/pisix.py:175
+msgid "Install Package(s)"
+msgstr ""
+
+#: src/pisix.py:178
+msgid "Upgrade Package(s)"
+msgstr ""
+
+#: src/pisix.py:190
+msgid ""
+"Looks like PiSi repository database is empty\n"
+"Do you want to update repository now?"
+msgstr ""
+
+#: src/pisix.py:190 src/pisix.py:375
+msgid "PiSi Question"
+msgstr ""
+
+#: src/pisix.py:195
+msgid ""
+"You will not be able to install new programs or update old ones until you "
+"update repository."
+msgstr ""
+
+#: src/pisix.py:277
+msgid "N\\A"
+msgstr ""
+
+#: src/pisix.py:333
+msgid ""
+"Pisi could not be started! Please make sure no other pisi process is running."
+msgstr ""
+
+#: src/pisix.py:333 src/Preferences.py:122 src/Preferences.py:139
+msgid "Pisi Error"
+msgstr ""
+
+#: src/pisix.py:355 src/PisiUi.py:87
+msgid "removing"
+msgstr ""
+
+#: src/pisix.py:358 src/PisiUi.py:81
 msgid "installing"
+msgstr ""
+
+#: src/pisix.py:385
+msgid "PiSi Error"
+msgstr ""
+
+#: src/pisix.py:400
+msgid "<b>Preparing PiSi...</b>"
+msgstr ""
+
+#: src/pisix.py:401
+msgid "<b>Speed:</b> N/A"
+msgstr ""
+
+#: src/pisix.py:402
+msgid "<b>Downloaded/Total:</b> N/A"
+msgstr ""
+
+#: src/pisix.py:406
+msgid "<b>Speed:</b> %1 %2"
+msgstr ""
+
+#: src/pisix.py:411
+msgid "<b>Downloaded/Total:</b> %1/%2"
+msgstr ""
+
+#: src/pisix.py:417
+msgid "updating repository"
+msgstr ""
+
+#: src/pisix.py:419
+msgid "Now %1 <b>%2</b> (%3 of %4)"
+msgstr ""
+
+#: src/pisix.py:509
+msgid "Package to install"
+msgstr ""
+
+#: src/pisix.py:512
+msgid "Pisi X is already running!"
+msgstr ""
+
+#: src/PisiUi.py:79
+msgid "downloading"
 msgstr ""
 
 #: src/PisiUi.py:83
@@ -30,143 +163,6 @@ msgstr ""
 
 #: src/PisiUi.py:85
 msgid "extracting"
-msgstr ""
-
-#: src/PisiUi.py:87 src/PisiKga.py:356
-msgid "removing"
-msgstr ""
-
-#: src/PisiKga.py:52
-msgid "GUI for PiSi package manager"
-msgstr ""
-
-#: src/PisiKga.py:61 src/PisiKga.py:62
-msgid "Author"
-msgstr ""
-
-#: src/PisiKga.py:63
-msgid "GUI Design & Usability"
-msgstr ""
-
-#: src/PisiKga.py:64
-msgid "Search, Component/Category"
-msgstr ""
-
-#: src/PisiKga.py:65
-msgid "Python coding help"
-msgstr ""
-
-#: src/PisiKga.py:66
-msgid "Helping with PiSi API"
-msgstr ""
-
-#: src/PisiKga.py:67
-msgid "Authors of PiSi API"
-msgstr ""
-
-#: src/PisiKga.py:68
-msgid "Author of PyKDEeXtensions"
-msgstr ""
-
-#: src/PisiKga.py:124
-msgid "Configure..."
-msgstr ""
-
-#: src/PisiKga.py:125 src/PisiKga.py:173
-msgid "Remove Package(s)"
-msgstr ""
-
-#: src/PisiKga.py:137
-msgid "Show installed packages"
-msgstr ""
-
-#: src/PisiKga.py:138
-msgid "Show new packages"
-msgstr ""
-
-#: src/PisiKga.py:139
-msgid "Show upgrades"
-msgstr ""
-
-#: src/PisiKga.py:141
-msgid "Components"
-msgstr ""
-
-#: src/PisiKga.py:176
-msgid "Install Package(s)"
-msgstr ""
-
-#: src/PisiKga.py:179
-msgid "Upgrade Package(s)"
-msgstr ""
-
-#: src/PisiKga.py:191
-msgid ""
-"Looks like PiSi repository database is empty\n"
-"Do you want to update repository now?"
-msgstr ""
-
-#: src/PisiKga.py:191 src/PisiKga.py:376
-msgid "PiSi Question"
-msgstr ""
-
-#: src/PisiKga.py:196
-msgid ""
-"You will not be able to install new programs or update old ones until you "
-"update repository."
-msgstr ""
-
-#: src/PisiKga.py:278
-msgid "N\\A"
-msgstr ""
-
-#: src/PisiKga.py:334
-msgid ""
-"Pisi could not be started! Please make sure no other pisi process is running."
-msgstr ""
-
-#: src/PisiKga.py:334 src/Preferences.py:122 src/Preferences.py:139
-msgid "Pisi Error"
-msgstr ""
-
-#: src/PisiKga.py:386
-msgid "PiSi Error"
-msgstr ""
-
-#: src/PisiKga.py:401
-msgid "<b>Preparing PiSi...</b>"
-msgstr ""
-
-#: src/PisiKga.py:402
-msgid "<b>Speed:</b> N/A"
-msgstr ""
-
-#: src/PisiKga.py:403
-msgid "<b>Downloaded/Total:</b> N/A"
-msgstr ""
-
-#: src/PisiKga.py:407
-msgid "<b>Speed:</b> %1 %2"
-msgstr ""
-
-#: src/PisiKga.py:412
-msgid "<b>Downloaded/Total:</b> %1/%2"
-msgstr ""
-
-#: src/PisiKga.py:418
-msgid "updating repository"
-msgstr ""
-
-#: src/PisiKga.py:420
-msgid "Now %1 <b>%2</b> (%3 of %4)"
-msgstr ""
-
-#: src/PisiKga.py:549
-msgid "Package to install"
-msgstr ""
-
-#: src/PisiKga.py:552
-msgid "Pisi X is already running!"
 msgstr ""
 
 #: src/ProgressDialog.py:59

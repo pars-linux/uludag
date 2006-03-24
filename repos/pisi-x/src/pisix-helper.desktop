@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=PiSi X
-Icon=pisi_kga
+Icon=pisix
 Type=Application
 MimeType=application/x-pisi;
-Exec=kdesu "pisi_kga --install %u"
+Exec=kdesu "pisix --install %u"

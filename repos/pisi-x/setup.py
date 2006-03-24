@@ -16,7 +16,7 @@
 import kdedistutils
 
 kdedistutils.setup(
-    name="pisi_kga",
+    name="pisix",
     version="1.1.0",
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
@@ -24,17 +24,15 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/PisiKga.py', 'src/ThreadRunner.py','src/MainWindow.ui',
-                        'src/Progress.py','src/ProgressDialog.ui','src/SuccessDialog.ui','src/Success.py',
+    application_data = ['src/pisix.py', 'src/ThreadRunner.py','src/Progress.py','src/ProgressDialog.ui',
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
-                        'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py','src/UpdateWizardDialog.ui',
-                        'src/CustomUpdatesDialog.ui','src/FastUpdatesDialog.ui','src/Formatter.py',
+                        'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py',
                         'help',
-                        ("/usr/kde/3.5/share/applications/kde/",["src/pisi-kga.desktop"]),
-                        ("/usr/kde/3.5/share/applnk/.hidden/",["src/pisi-kga-helper.desktop"]),
+                        ("/usr/kde/3.5/share/applications/kde/",["src/pisix.desktop"]),
+                        ("/usr/kde/3.5/share/applnk/.hidden/",["src/pisix-helper.desktop"]),
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/pisix.png"]),
                         ("/usr/kde/3.5/share/mimelnk/application/",["src/x-pisi.desktop"])],
-    executable_links = [('pisi-kga','PisiKga.py')],
+    executable_links = [('pisix','pisix.py')],
     i18n = ('po',['src']),
-    kcontrol_modules = [ ('src/pisi-kga-kcm.desktop','PisiKga.py')],
     )
+

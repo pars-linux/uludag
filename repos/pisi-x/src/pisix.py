@@ -65,7 +65,6 @@ def AboutData():
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
     about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi API"), None)
     about_data.addCredit("PiSi Authors", I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
-    about_data.addCredit("Simon Edwards", I18N_NOOP("Author of PyKDEeXtensions"),"simon@simonzone.com")
     return about_data
 
 def loadIcon(name, group=KIcon.Desktop):
@@ -450,31 +449,13 @@ class MainApplicationWidget(QWidget):
         self.config.setGroup("General")
         return self.config.readBoolEntry("HideLibraries")                                    
 
-# Are we running as a separate standalone application or in KControl?
-standalone = __name__=='__main__'
-
-if standalone:
-    programbase = QDialog
-else:
-    programbase = KCModule
-    
-class MainApplication(programbase):
+class MainApplication(QDialog):
     def __init__(self,parent=None,name=None):
-        global standalone
-        global mainwidget
+	global mainwidget
 
-        if standalone:
-            QDialog.__init__(self,parent,name)
-            self.setCaption("PiSi X")
-        else:
-            KCModule.__init__(self,parent,name)
-            KGlobal.locale().insertCatalogue("pisi_kga")
-            # Create a configuration object.
-            self.config = KConfig("pisi_kga")
-            self.setButtons(0)
-            self.aboutdata = AboutData()
-
-        self.aboutus = KAboutApplication(self)
+	QDialog.__init__(self,parent,name)
+	self.setCaption("PiSi X")
+	self.aboutus = KAboutApplication(self)
         self.helpWidget = None
 
         mainwidget = MainApplicationWidget(self)
@@ -490,12 +471,9 @@ class MainApplication(programbase):
         self.helpWidget.show()
 
     def exec_loop(self):
-        global programbase
-        
-        # Load configuration here
+	# Load configuration here
         self.__loadOptions()
-        
-        programbase.exec_loop(self)
+        QDialog.exec_loop(self)
         
         # Save configuration here
         self.__saveOptions()
@@ -517,28 +495,10 @@ class MainApplication(programbase):
         config.writeEntry("Geometry", self.size())
         config.sync()
         
-    # KControl virtual void methods
-    def load(self):
-        pass
-
-    def save(self):
-        pass
-
-    def defaults(self):
-        pass        
-
-    def sysdefaults(self):
-        pass
-    
     def aboutData(self):
         # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
     
-    def buttons(self):
-        # Only supply a Help button. Other choices are Default and Apply.
-        return KCModule.Help
-
-# This is the entry point used when running this module outside of kcontrol.
 def main():
     global kapp
     global nonPrivMode
@@ -566,16 +526,5 @@ def main():
         
     sys.exit(myapp.exec_loop())
     
-# Factory function for KControl
-def create_pisi_kga(parent,name):
-    global kapp
-    global nonPrivMode
-    global packageToInstall
-   
-    packageToInstall = None
-    nonPrivMode = posix.getuid()
-    kapp = KApplication.kApplication()
-    return MainApplication(parent, name)
-
-if standalone:
+if __name__ == "__main__":
     main()
