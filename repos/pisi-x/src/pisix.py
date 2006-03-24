@@ -55,7 +55,7 @@ version = "1.1.0"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("pisi_kga", "PiSi X", version, description, KAboutData.License_GPL,
+    about_data = KAboutData("pisix", "PiSi X", version, description, KAboutData.License_GPL,
                             "(C) 2005,2006 UEKAE/TÜBİTAK", None, None, "ismail@pardus.org.tr")
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@pardus.org.tr")

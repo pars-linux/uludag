@@ -5,7 +5,7 @@ from ProgressDialog import *
 class Progress(ProgressDialog):
     def __init__(self, parent=None):
         ProgressDialog.__init__(self)
-        animatedPisi = QMovie(locate("data","pisi_kga/pisianime.gif"))
+        animatedPisi = QMovie(locate("data","pisix/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
 
