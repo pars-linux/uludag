@@ -72,6 +72,11 @@ def AboutData():
 def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
+def getIconPath(name, group=KIcon.Desktop):
+    if not name:
+	name = "package"
+    return KGlobal.iconLoader().iconPath(name,group)
+
 class CustomEventListener(DOM.EventListener):
     def handleEvent(self,event):
         try:
@@ -215,7 +220,7 @@ class MainApplicationWidget(QWidget):
         <div class="checkboks" style="%s"><input type="checkbox" onclick="gorkem_fonksiyonu(this)" name="%s"></div>
         <div class="package_title" style="%s">
         <span class="installed_button"> yüklü </span>
-        <img src="/home/rat/miyav/pisi-x/src/pisi_kga.png" style="float:left;" width="48px" height="48px">
+        <img src="%s" style="float:left;" width="48px" height="48px">
         <b>%s</b><br>%s<br>
         </div>
         <div class="package_info" style="%s">
@@ -230,7 +235,7 @@ class MainApplicationWidget(QWidget):
         <!-- package end -->
         '''
         
-        index = 0
+	index = 0
         style = ''
         packages.sort()
 
@@ -244,16 +249,18 @@ class MainApplicationWidget(QWidget):
                 package = pisi.packagedb.pkgdb.get_package(app)
             else:
                 package = pisi.packagedb.get_package(app)
-            desc = package.description
+	    desc = package.description
             summary = package.summary
             version = package.version
             size = package.packageSize
+	    iconPath = getIconPath(package.icon)
+	    
             if size:
                 tpl = pisi.util.human_readable_size(size)
-                size = "%.2f %s" % (tpl[0], tpl[1])
+                size = "%.0f %s" % (tpl[0], tpl[1])
             else:
                 size = i18n("N\A")
-            result += template % (style,app,style,app,summary,style,desc,version,size,"lala")
+            result += template % (style,app,style,iconPath,app,summary,style,desc,version,size,"lala")
             index += 1
 
         return result
@@ -397,32 +404,6 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
                                              .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
         
-    def updateDetails(self,selection):
-
-        icon =  pisi.packagedb.get_package(selection.text(0)).icon
-        if icon:
-            self.iconLabel.setPixmap(loadIcon(icon))
-        else:
-            self.iconLabel.setPixmap(loadIcon("package"))
-                  
-        installed = pisi.packagedb.inst_packagedb.has_package(selection.text(0))
-        if installed:
-            self.package = pisi.packagedb.inst_packagedb.get_package(selection.text(0))
-        else:
-            self.package = pisi.packagedb.get_package(selection.text(0))
-            
-        self.progNameLabel.setText(QString("<qt><h1>"+self.package.name+"</h1></qt>"))
-
-        if self.package.summary != self.package.description:
-            self.infoLabel.setText(u"%s<br><br>%s" % (self.package.summary, self.package.description) )
-        else:
-            self.infoLabel.setText(u"%s" % self.package.summary)
-        
-        size = self.package.installedSize
-        size_string = FormatNumber(size)
-
-        self.moreInfoLabelDetails.setText(i18n("Program Version :")+QString(" <b>")+QString(self.package.version)+QString("</b><br>")+i18n("Program Size :")+QString("<b> ")+QString(size_string)+QString("</b>"))
-            
     def installSingle(self):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
