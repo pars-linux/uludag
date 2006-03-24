@@ -124,13 +124,13 @@ class MainApplicationWidget(QWidget):
         self.installRemoveButton = KPushButton(i18n("Remove Package(s)"),self.buttonLayout)
         
        # Read javascript
-        js = file("animation.js").read()
+        js = file(str(locate("data","pisix/animation.js"))).read()
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
         js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
         self.javascript = re.sub("#533359",KGlobalSettings.highlightColor().name(), js)
         
         # Read Css
-        cssFile = file("layout.css").read()
+        cssFile = file(str(locate("data","pisix/layout.css"))).read()
         self.css = cssFile
                 
         self.comboBox.insertItem(i18n("Show installed packages"))
