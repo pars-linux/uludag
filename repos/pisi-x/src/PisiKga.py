@@ -549,7 +549,7 @@ def main():
     KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
 
     if not KUniqueApplication.start():
-        print i18n("Pisi KGA is already running!")
+        print i18n("Pisi X is already running!")
         return
 
     nonPrivMode = posix.getuid()

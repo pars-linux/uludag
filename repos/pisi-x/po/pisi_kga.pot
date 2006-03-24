@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-20 14:22+0200\n"
+"POT-Creation-Date: 2006-03-24 22:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "downloading"
 msgstr ""
 
-#: src/PisiUi.py:81 src/PisiKga.py:335
+#: src/PisiUi.py:81 src/PisiKga.py:359
 msgid "installing"
 msgstr ""
 
@@ -32,15 +32,15 @@ msgstr ""
 msgid "extracting"
 msgstr ""
 
-#: src/PisiUi.py:87 src/PisiKga.py:332
+#: src/PisiUi.py:87 src/PisiKga.py:356
 msgid "removing"
 msgstr ""
 
-#: src/PisiKga.py:53
+#: src/PisiKga.py:52
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/PisiKga.py:62
+#: src/PisiKga.py:61 src/PisiKga.py:62
 msgid "Author"
 msgstr ""
 
@@ -68,113 +68,105 @@ msgstr ""
 msgid "Author of PyKDEeXtensions"
 msgstr ""
 
-#: src/PisiKga.py:113
+#: src/PisiKga.py:124
 msgid "Configure..."
 msgstr ""
 
-#: src/PisiKga.py:114 src/PisiKga.py:160
+#: src/PisiKga.py:125 src/PisiKga.py:173
 msgid "Remove Package(s)"
 msgstr ""
 
-#: src/PisiKga.py:126
+#: src/PisiKga.py:137
 msgid "Show installed packages"
 msgstr ""
 
-#: src/PisiKga.py:127
+#: src/PisiKga.py:138
 msgid "Show new packages"
 msgstr ""
 
-#: src/PisiKga.py:128
+#: src/PisiKga.py:139
 msgid "Show upgrades"
 msgstr ""
 
-#: src/PisiKga.py:130
+#: src/PisiKga.py:141
 msgid "Components"
 msgstr ""
 
-#: src/PisiKga.py:163
+#: src/PisiKga.py:176
 msgid "Install Package(s)"
 msgstr ""
 
-#: src/PisiKga.py:166
+#: src/PisiKga.py:179
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: src/PisiKga.py:178
+#: src/PisiKga.py:191
 msgid ""
 "Looks like PiSi repository database is empty\n"
 "Do you want to update repository now?"
 msgstr ""
 
-#: src/PisiKga.py:178 src/PisiKga.py:352
+#: src/PisiKga.py:191 src/PisiKga.py:376
 msgid "PiSi Question"
 msgstr ""
 
-#: src/PisiKga.py:183
+#: src/PisiKga.py:196
 msgid ""
 "You will not be able to install new programs or update old ones until you "
 "update repository."
 msgstr ""
 
-#: src/PisiKga.py:254
+#: src/PisiKga.py:278
 msgid "N\\A"
 msgstr ""
 
-#: src/PisiKga.py:310
+#: src/PisiKga.py:334
 msgid ""
 "Pisi could not be started! Please make sure no other pisi process is running."
 msgstr ""
 
-#: src/PisiKga.py:310 src/Preferences.py:122 src/Preferences.py:139
+#: src/PisiKga.py:334 src/Preferences.py:122 src/Preferences.py:139
 msgid "Pisi Error"
 msgstr ""
 
-#: src/PisiKga.py:362
+#: src/PisiKga.py:386
 msgid "PiSi Error"
 msgstr ""
 
-#: src/PisiKga.py:377
+#: src/PisiKga.py:401
 msgid "<b>Preparing PiSi...</b>"
 msgstr ""
 
-#: src/PisiKga.py:378
+#: src/PisiKga.py:402
 msgid "<b>Speed:</b> N/A"
 msgstr ""
 
-#: src/PisiKga.py:379
+#: src/PisiKga.py:403
 msgid "<b>Downloaded/Total:</b> N/A"
 msgstr ""
 
-#: src/PisiKga.py:383
+#: src/PisiKga.py:407
 msgid "<b>Speed:</b> %1 %2"
 msgstr ""
 
-#: src/PisiKga.py:388
+#: src/PisiKga.py:412
 msgid "<b>Downloaded/Total:</b> %1/%2"
 msgstr ""
 
-#: src/PisiKga.py:394
+#: src/PisiKga.py:418
 msgid "updating repository"
 msgstr ""
 
-#: src/PisiKga.py:396
+#: src/PisiKga.py:420
 msgid "Now %1 <b>%2</b> (%3 of %4)"
 msgstr ""
 
-#: src/PisiKga.py:423
-msgid "Program Version :"
-msgstr ""
-
-#: src/PisiKga.py:423
-msgid "Program Size :"
-msgstr ""
-
-#: src/PisiKga.py:551
+#: src/PisiKga.py:549
 msgid "Package to install"
 msgstr ""
 
-#: src/PisiKga.py:554
-msgid "Pisi KGA is already running!"
+#: src/PisiKga.py:552
+msgid "Pisi X is already running!"
 msgstr ""
 
 #: src/ProgressDialog.py:59
@@ -217,10 +209,6 @@ msgstr ""
 msgid "&Ok"
 msgstr ""
 
-#: src/Formatter.py:30
-msgid "Less than one kilobyte"
-msgstr ""
-
 #: src/Preferences.py:70
 msgid "Add New Repository"
 msgstr ""
@@ -243,7 +231,7 @@ msgid "Pisi Question"
 msgstr ""
 
 #: src/HelpDialog.py:23
-msgid "PiSi KGA Help"
+msgid "PiSi X Help"
 msgstr ""
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:160

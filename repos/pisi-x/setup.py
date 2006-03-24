@@ -17,7 +17,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="pisi_kga",
-    version="1.0.2",
+    version="1.1.0",
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
     url="http://www.uludag.org.tr/projeler/pisi/index.html",
@@ -32,7 +32,7 @@ kdedistutils.setup(
                         'help',
                         ("/usr/kde/3.5/share/applications/kde/",["src/pisi-kga.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/pisi-kga-helper.desktop"]),
-                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/pisi_kga.png"]),
+                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/pisix.png"]),
                         ("/usr/kde/3.5/share/mimelnk/application/",["src/x-pisi.desktop"])],
     executable_links = [('pisi-kga','PisiKga.py')],
     i18n = ('po',['src']),
