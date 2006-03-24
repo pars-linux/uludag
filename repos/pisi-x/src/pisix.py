@@ -165,6 +165,20 @@ class MainApplicationWidget(QWidget):
         # Check for empty repo.
         self.initialCheck()
 
+    def initialCheck(self):
+        if not nonPrivMode:
+            try:
+                repo = pisi.context.repodb.list()[0]
+                pkg_db = pisi.packagedb.get_db(repo)
+                self.packageList = pkg_db.list_packages()
+	    except:
+                confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
+	    if confirm == KMessageBox.Yes:
+		self.command.addRepo('pardus', 'http://paketler.pardus.org.tr/pardus-1.0/pisi-index.xml')
+		self.command.updateRepo('pardus')
+	    else:
+		KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
+
     def updateListing(self):
 	self.domNodesToProcess = []
         index = self.comboBox.currentItem()
@@ -179,35 +193,7 @@ class MainApplicationWidget(QWidget):
             self.createComponentList(self.command.listUpgradable())
 
         self.listView.setSelected(self.listView.firstChild(),True)
-                
-    def initialCheck(self):
-        if not nonPrivMode:
-            try:
-                repo = pisi.context.repodb.list()[0]
-                pkg_db = pisi.packagedb.get_db(repo)
-                self.packageList = pkg_db.list_packages()
-            except:
-                confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
-                if confirm == KMessageBox.Yes:
-                    self.command.addRepo('pardus', 'http://paketler.pardus.org.tr/pardus-1.0/pisi-index.xml')
-                    self.command.updateRepo('pardus')
-                else:
-                    KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
-
-    def registerEventHandlers(self):
-        self.eventHandler = CustomEventListener(self)
-        node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
-        node.addEventListener(DOM.DOMString("click"),self.eventHandler,True)
-
-    def updateCheckables(self):
-	if len(self.domNodesToProcess):
-	    document = self.htmlPart.document()
-	    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
-	    for i in range(0,nodeList.length()):
-		element = DOM.HTMLInputElement(nodeList.item(i))
-		if element.name().string() in self.domNodesToProcess:
-		    element.click()
-		    		    		        
+                		        
     def createHTML(self,packages):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
@@ -280,6 +266,20 @@ class MainApplicationWidget(QWidget):
 
         return result
         
+    def registerEventHandlers(self):
+        self.eventHandler = CustomEventListener(self)
+        node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
+        node.addEventListener(DOM.DOMString("click"),self.eventHandler,True)
+
+    def updateCheckables(self):
+	if len(self.domNodesToProcess):
+	    document = self.htmlPart.document()
+	    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
+	    for i in range(0,nodeList.length()):
+		element = DOM.HTMLInputElement(nodeList.item(i))
+		if element.name().string() in self.domNodesToProcess:
+		    element.click()
+		    		    
     def updateView(self,item):
 	self.createHTML(self.componentDict[item])
 
