@@ -78,19 +78,24 @@ def getIconPath(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().iconPath(name,group)
 
 class CustomEventListener(DOM.EventListener):
-    def handleEvent(self,event):
-        try:
-            target = event.target()
-            inputElement = DOM.HTMLInputElement(target)
-            name = inputElement.getAttribute(DOM.DOMString("name")).string()
-            checked = inputElement.checked()
-            if checked:
-                print name,'is checked!'
-            else:
-                print name,'is unchecked!'
-        except:
-            pass
+    def __init__(self,parent):
+	DOM.EventListener.__init__(self)
+	self.parent = parent
 
+    def handleEvent(self,event):
+	try:
+	    if event.target().nodeName().string() == "INPUT":
+		inputElement = DOM.HTMLInputElement(event.target())
+		name = inputElement.name().string()
+		checked = inputElement.checked()
+		if checked: 
+		    if name not in  self.parent.domNodesToProcess:
+			self.parent.domNodesToProcess.append(name)
+		else:
+		    self.parent.domNodesToProcess.remove(name)
+	except:
+	    pass
+        
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent, "PiSi X")
@@ -102,6 +107,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog = Progress.Progress(self)
         self.packagesOrder = []
         self.selectedItems = []
+	self.domNodesToProcess = []
         self.currentOperation = None
         self.currentFile = None
         self.currentRepo = None
@@ -143,7 +149,7 @@ class MainApplicationWidget(QWidget):
         self.layout.addWidget(self.leftLayout,1,1)
         self.layout.addWidget(self.htmlPart.view(),1,2)
         self.layout.addWidget(self.buttonLayout,2,2)
-        self.layout.setColStretch(1,3)
+        self.layout.setColStretch(1,2)
         self.layout.setColStretch(2,6)
         self.resize(700,500)
 
@@ -152,7 +158,8 @@ class MainApplicationWidget(QWidget):
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.comboBox,SIGNAL("activated(int)"),self.updateListing)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventHandlers)
-
+	self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckables)
+        
         self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
         self.show()
@@ -161,6 +168,7 @@ class MainApplicationWidget(QWidget):
         self.initialCheck()
 
     def updateListing(self):
+	self.domNodesToProcess = []
         index = self.comboBox.currentItem()
         if index == 0:
             self.installRemoveButton.setText(i18n("Remove Package(s)"))
@@ -189,10 +197,19 @@ class MainApplicationWidget(QWidget):
                     KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def registerEventHandlers(self):
-        self.eventHandler = CustomEventListener()
+        self.eventHandler = CustomEventListener(self)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventHandler,True)
-        
+
+    def updateCheckables(self):
+	if len(self.domNodesToProcess):
+	    document = self.htmlPart.document()
+	    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
+	    for i in range(0,nodeList.length()):
+		element = DOM.HTMLInputElement(nodeList.item(i))
+		if element.name().string() in self.domNodesToProcess:
+		    element.click()
+		    		    		        
     def createHTML(self,packages):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
@@ -238,7 +255,7 @@ class MainApplicationWidget(QWidget):
 	index = 0
         style = ''
         packages.sort()
-
+	
         for app in packages:
             if index % 2 == 0:
                 style = "background-color:%s" % KGlobalSettings.alternateBackgroundColor().name()
@@ -266,7 +283,7 @@ class MainApplicationWidget(QWidget):
         return result
         
     def updateView(self,item):
-        self.createHTML(self.componentDict[item])
+	self.createHTML(self.componentDict[item])
 
     def check(self):
         appsToProcess = []
