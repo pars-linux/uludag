@@ -1,5 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+#
+# Copyright (C) 2005,2006 TUBITAK/UEKAE
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+#
+# Please read the COPYING file.
+#
+#
+# Authors:  Bahadır Kandemir <bahadir@pardus.org.tr>
 
 from ConfigParser import ConfigParser
 import os
@@ -30,9 +42,9 @@ def AboutData():
 
     about_data = KAboutData("feedback", "Pardus Feedback Tool", version, \
                             description, KAboutData.License_GPL,
-                            "(C) 2005 UEKAE/TÜBİTAK", None, None, "bahadir@haftalik.net")
+                            "(C) 2005, 2006 UEKAE/TÜBİTAK", None, None, "bahadir@pardus.org.tr")
 
-    about_data.addAuthor("Bahadır Kandemir", None, "bahadir@haftalik.net")
+    about_data.addAuthor("Bahadır Kandemir", None, "bahadir@pardus.org.tr")
     about_data.addCredit("S. Çağlar Onur", "Previous Maintainer", None)
     about_data.addCredit("Görkem Çetin",  "Interface Design", None)
     return about_data
@@ -239,7 +251,7 @@ def main():
         conf.read("/etc/feedback.conf")
         url_upload = conf.get("general", "url")
     except:
-        url_upload = "http://www.uludag.org.tr/feedback.py"
+        url_upload = "http://www.pardus.org.tr/feedback.py"
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)

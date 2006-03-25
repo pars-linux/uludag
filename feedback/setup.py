@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005,2006 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -11,7 +11,7 @@
 # Please read the COPYING file.
 #
 #
-# Authors:  Bahadır Kandemir <bahadir@haftalik.net>
+# Authors:  Bahadır Kandemir <bahadir@pardus.org.tr>
 
 import kdedistutils
 
@@ -29,7 +29,8 @@ kdedistutils.setup(
                         'src/usagedlg.ui', 'src/purposedlg.ui', 'src/hardwareinfodlg.ui', 'src/experiencedlg.ui',
                         'src/questiondlg.ui', 'src/goodbyedlg.ui', 'src/opiniondlg.ui', 'src/welcomedlg.ui',
                         'src/personalinfodlg.ui', 'src/upload.ui', 'src/feedback.png', 'src/feedback.png',
-                        ("/usr/kde/3.5/share/applications/kde/",["src/feedback.desktop"])],
+                        ("/usr/kde/3.5/share/applications/kde/",["src/feedback.desktop"]),
+                        ("/etc/", ["src/feedback.conf"])],
     executable_links = [('feedback','feedback.py')],
     i18n = ('po',['src'])
     )
