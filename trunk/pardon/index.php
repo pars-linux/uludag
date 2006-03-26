@@ -136,7 +136,7 @@
                     break;
                 case "queue_edit_f":
                     if ($_POST["p_name"]<>""&&$_POST["p_vendor"]<>""&&$_POST["p_category"]<>""&&$_POST["p_distro"]<>""&&$_POST["p_id"]<>"") {
-                        if (make_hardware($_POST["p_id"],$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],"",$_POST["p_distro"],$_POST["p_state"],$_POST["p_todo"])){ activate_($_POST["p_id"]); header ("location: ?queue");}
+                        if (make_hardware($_POST["p_id"],$_POST["p_name"],$_POST["p_vendor"],$_POST["p_device_id"],$_POST["p_bus_type"],$_POST["p_category"],$_POST["p_date"],'0',$_POST["userid"],$_POST["suserid"],$_POST["p_distro"],$_POST["p_state"],$_POST["p_todo"])){ activate_($_POST["p_id"]); header ("location: ?queue");}
                         else ssv("message",ERROR.MAINLINK);
                     }
                     else {

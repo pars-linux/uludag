@@ -4,7 +4,9 @@
                 <script src="lib/scripts/newhardware.js"></script>
                 <div id="head">Donanım Düzenle</div>
                 <form id="frm" action="{$pardul_url}?{if $admin}queue_edit_f{else}edit_f{/if}" method="post">
-                <input type="hidden" name="userid" value="{$UserID}">
+                <input type="hidden" name="userid" value="{if $admin}{$sr[0].UserID}{else}{$UserID}{/if}">
+     {if $admin}<input type="hidden" name="suserid" value="{$UserID}">{/if}
+                {if !$admin}<input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="p_date">{/if}
                 <input type="hidden" name="p_id" value="{$sr[0].ID}">
                 <table class="regtable">
                     <tbody>
