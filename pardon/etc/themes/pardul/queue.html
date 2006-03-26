@@ -5,18 +5,18 @@
                 <table class="restable">
                     <tbody>
                         <tr>
-                            <th width="20%"> Gönderen </th>
-                            <th width="15%"> Marka </th>
                             <th width="15%"> Model </th>
+                            <th width="15%"> Üretici </th>
+                            <th width="20%"> Gönderen </th>
                             <th width="20%"> Kategori </th>
                             <th width="5%"> Durum </th>
                             <th width="10%" alt="Onayla / Reddet"> O / R </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
-                            <td> {$sr[node].UserName}</td>
+                            <td> <a href="?queue_edit={$sr[node].ID}">{$sr[node].HWProductName}</a> </td>
                             <td> {$sr[node].HWVendor} </td>
-                            <td> {$sr[node].HWProductName} </td>
+                            <td> {$sr[node].UserName}</td>
                             <td> {section name=mode loop=$p_scat}{if $sr[node].HWCategoryID == $p_scat[mode].ID}{$p_scat[mode].CategoryName}{/if}{/section}</td>
                             <td align="center"> <img src="{$tp}/images/{if $sr[node].HWState >= 1}ok{else}not{/if}.png"></td>
                             <td align="center">
