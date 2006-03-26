@@ -3,7 +3,7 @@
    {if $message}<div id="warn">{$message}</div>{else}
                 <script src="lib/scripts/newhardware.js"></script>
                 <div id="head">Donanım Düzenle</div>
-                <form id="frm" action="{$pardul_url}?edit_f" method="post">
+                <form id="frm" action="{$pardul_url}?{if $admin}queue_edit_f{else}edit_f{/if}" method="post">
                 <input type="hidden" name="userid" value="{$UserID}">
                 <input type="hidden" name="p_id" value="{$sr[0].ID}">
                 <table class="regtable">
@@ -71,7 +71,8 @@
                 <table class="regtable">
                     <tr>
                         <td align="right">
-                            <input onclick="return submitform();" value="Güncelle" name="register" type="submit" style="width:150px">
+                            <input onclick="return submitform();" value="{if $admin}Onayla{else}Güncelle{/if}" name="register" type="submit" style="width:150px">
+                            {if $admin}<a href="?queue&del={$sr[node].ID}"><img src="{$tp}/images/remove.png"> Sil </a>{/if}
                         </td>
                     </tr>
                 </table>
