@@ -5,6 +5,7 @@
                 <div id="head">Yeni Donanım Ekle</div>
                 <form id="frm" action="{$pardul_url}?newhardware_f" method="post" onSubmit="return doanothercheck(frm.p_vendor);">
                 <input type="hidden" name="userid" value="{$UserID}">
+                <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="p_date">
                 <table class="regtable">
                     <tbody>
                         <tr>
