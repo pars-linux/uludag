@@ -52,6 +52,7 @@
                 break;
             case "detail":
                 ssv("sr",get_($_GET["detail"],"Hardwares"));
+                ssv("cm",get_comments($_GET["detail"]));
                 ssv("rs",get_states($_GET["detail"]));
                 $smarty->display("details.html");
                 die();
@@ -112,6 +113,15 @@
                     $smarty->display("myhardwares.html");
                     die();
                     break;
+                case "ac":
+                    if ($_POST["p_comment"]<>""&&$_POST["p_date"]<>""&&$_POST["userid"]<>""&&$_POST["p_id"]<>"") {
+                        if (make_comment("x",$_POST["p_id"],$_POST["userid"],$_POST["p_comment"],$_POST["p_date"])) header ("location: ?detail=".$_POST["p_id"]);
+                        else ssv("message",ERROR);
+                    }
+                    else {
+                        ssv("message",MISSING_FIELDS);
+                    }
+                    break;
             }
         }
     }
@@ -121,8 +131,8 @@
         foreach ($_GET as $key => $value){
             switch ($key){
                 case "queue":
-                    if (isset($_GET["del"])) del_($_GET["del"],"Hardwares");
-                    if (isset($_GET["set"])) activate_($_GET["set"]);
+                    if (isset($_GET["del"])) { if ($_GET["from"]) $link=$_GET["from"]; else $link="queue"; del_($_GET["del"],"Hardwares"); header("location: ?".$link);}
+                    if (isset($_GET["set"])) { if ($_GET["from"]) $link=$_GET["from"]; else $link="queue"; activate_($_GET["set"]); header ("location: ?".$link);}
                     if ($temp=get_products("Status",0)) ssv("sr",$temp); else ssv("message",NO_QUEUE.MAINLINK);
                     $smarty->display("queue.html");
                     die();
@@ -150,6 +160,12 @@
                     if (isset($_GET["set"])) set_($_GET["users"],$_GET["set"]);
                     ssv("sr",get_("x","Users"));
                     $smarty->display("userlist.html");
+                    die();
+                    break;
+                case "hw_list":
+                    ssv("full",TRUE);
+                    if ($temp=get_products("Status",1)) ssv("sr",$temp); else ssv("message",NO_RECORD.MAINLINK);
+                    $smarty->display("queue.html");
                     die();
                     break;
             }

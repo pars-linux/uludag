@@ -66,7 +66,63 @@
                         </tr>
                     </tbody>
                 </table>
+                {if $cm}
+                <div id="head">Yorumlar</div>
+                <table class="regtable">
+                    <tbody>
+                        {section name=node loop=$cm}
+                        <tr style="background:#EEE">
+                            <td style="vertical-align:top;"> Gönderen </td>
+                            <td width="370px">
+                                {$cm[node].UserName} saat {$cm[node].StyledDate.hour}:{$cm[node].StyledDate.minute} sularında.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;"> Yorum </td>
+                            <td width="370px">
+                                <div style="width:370px;">{$cm[node].Comment}</div>
+                            </td>
+                        </tr>
+                        {/section}
+                    </tbody>
+                </table>
+                {/if}
+                {if $UserState}
+                <form id="frm" action="{$pardul_url}?ac" method="post">
+                <input type="hidden" name="userid" value="{$UserID}">
+                <input type="hidden" name="p_id" value="{$sr[0].ID}">
+                <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="p_date">
+                <div id="head">Yorum Ekle</div>
+                <table class="regtable">
+                    <tbody>
+                        <tr style="background:#EEE">
+                            <td style="vertical-align:top;"> Gönderen </td>
+                            <td width="370px">
+                                {$UserRealName}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;"> Yorum </td>
+                            <td width="370px">
+                                <textarea id="p_comment" name="p_comment" rows="4"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="regtable">
+                    <tr>
+                        <td align="right"><input value="Gönder" name="comment" type="submit"></td>
+                    </tr>
+                </table>
                 </form>
+                {else}
+                <table class="regtable">
+                    <tr>
+                        <td>Yorum eklemek için giriş yapmalısınız. Henüz üye değilseniz <a href="?register">buradan</a> üye olabilirsiniz.</td>
+                    </tr>
+                </table>
+                {/if}
+                
                 {/if}
 
 {include file="footer.html"}

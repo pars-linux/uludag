@@ -226,16 +226,18 @@
         return $single;
     }
 
-    function get_products($field,$value){
+    function get_products($field="",$value=""){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares WHERE $field = '$value'";
+        if ($field<>"") $add = " WHERE $field = '$value'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Hardwares ".$add;
         $single = perform_sql($sql_word);
         if ($single) {
             foreach ($single as $key => $node) {
                 $value = $node["UserID"];
-                $sql_word = "SELECT UserRealName FROM {$config['db']['tableprefix']}Users WHERE ID = '$value'";
+                $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE ID = '$value'";
                 $tmp = mysql_fetch_row(mysql_query($sql_word));
-                $single[$key]["UserName"] = $tmp[0];
+                $single[$key]["UserName"] = $tmp[3];
+                $single[$key]["UserEmail"] = $tmp[4];
                 $value = $node["ID"];
                 $sql_word = "SELECT HWState FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID = '$value' AND (HWState = 'F' OR HWState = 'S')";
                 $single[$key]["HWState"] = mysql_num_rows(mysql_query($sql_word));
@@ -254,6 +256,22 @@
         global $config;
         $sql_word = "SELECT * FROM {$config['db']['tableprefix']}ActionCompatibility WHERE HWID = '$id'";
         return perform_sql($sql_word);
+    }
+
+    function get_comments ($id) {
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Comments WHERE HWID = '$id' ORDER by AddDate DESC";
+        $single = perform_sql($sql_word);
+        if ($single) {
+            foreach ($single as $key => $node) {
+                $value = $node["UID"];
+                $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE ID = '$value'";
+                $tmp = mysql_fetch_row(mysql_query($sql_word));
+                $single[$key]["UserName"] = $tmp[3];
+                $single[$key]["StyledDate"] = conv_time("db2post",$single[$key]["AddDate"]);
+            }
+        }
+        return $single;
     }
 
     function check_entry ($uid,$eid){
