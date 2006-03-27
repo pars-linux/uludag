@@ -157,6 +157,10 @@ div#result {
     border: 1px solid #888;
 }
 
+thead td{
+    font-weight:bold;
+    cursor:pointer;
+}
 .restable {
     background-color: #FFF;
     border: 0px;
