@@ -25,13 +25,16 @@ oldBinaryPPath   = join_path(workDir, "/oldBinaries/")
 localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")
 localBinaryRepo  = "/var/cache/pisi/packages/"
 logFile          = join_path(workDir, "buildfarm.log")
+smtpUserInfo     = './smtpUserInfo'
 
 #information for mailer module.
-mailFrom        = "buildfarm@uludag.org.tr"
-ccList          = ["paketler@uludag.org.tr"]
+mailFrom        = "buildfarm@pardus.org.tr"
+ccList          = []
 smtpServer      = 'mail.uludag.org.tr'
-smtpUser        = 'buildfarm'
-smtpPassword    = 'buildfarm'
+try:
+    smtpUser, smtpPassword = open(smtpUserInfo).readline().strip().split(':')
+except:
+    smtpUser, smtpPassword = '', ''    
 
 for dir in workDir, newBinaryPPath, oldBinaryPPath, localBinaryRepo, localPspecRepo:
     if dir and not os.path.isdir(dir):

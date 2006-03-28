@@ -34,6 +34,9 @@ RecInfo = lambda x, y: [i.firstChild.wholeText for i in \
              Get(Get(Get(y, "Source")[0], "Packager")[0], x)]
 
 def send(message, pspec = '', type = ''):
+    if not config.smtpUser or not config.smtpPassword:
+        logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
+        return
     recipientsName, recipientsEmail = [], []
     if pspec:
         dom = mdom.parse(os.path.join(config.localPspecRepo, pspec))
@@ -53,10 +56,18 @@ def send(message, pspec = '', type = ''):
                                  'pspec'        : pspec,
                                  'type'         : type}
 
-    session = smtplib.SMTP(config.smtpServer)
+    try:
+        session = smtplib.SMTP(config.smtpServer)
+    except:
+        logger.error("E-posta gönderimi gerçekleştirilemedi: Sunucuda oturum açılamadı (%s)." % config.smtpServer)
+        return
 
     if config.smtpPassword:
-        session.login(config.smtpUser, config.smtpPassword)
+        try:
+            session.login(config.smtpUser, config.smtpPassword)
+        except smtplib.SMTPAuthenticationError:
+            logger.error("E-posta gönderimi gerçekleştirilemedi: Kimlik doğrulama başarısız.")
+            return
 
     smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, msg)
 
