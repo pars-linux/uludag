@@ -23,6 +23,7 @@ sys.path.append("..")
 """ BuildFarm Modules """
 import buildfarm.config as config
 import buildfarm.logger as logger
+import buildfarm.mailer as mailer
 import buildfarm.qmanager as qmanager
 import buildfarm.pisiinterface as pisiinterface
 
@@ -45,8 +46,10 @@ def main():
             (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
         except Exception, e:
             qmgr.transferToWaitQueue(pspec)
-            print "HATA: %s" % e
-            logger.error("'%s' için BUILD işlemi sırasında hata: %s" % (pspec, e))
+            errmsg = "'%s' için BUILD işlemi sırasında hata: %s" % (pspec, e)
+            print errmsg
+            logger.error(errmsg)
+            mailer.error(errmsg, pspec)
             pisi.finalize()
         else:
             for p in newBinaryPackages:
