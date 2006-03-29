@@ -320,7 +320,10 @@ class MainApplicationWidget(QWidget):
              
              if len(componentPacks):
                  item = KListViewItem(self.listView)
-                 item.setText(0,u"%s" % component.localName)
+                 if component.localName:
+                     item.setText(0,u"%s" % component.localName)
+                 else:
+                     item.setText(0,u"%s" % component.name)
                  item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
                  self.componentDict[item] = componentPacks
                  
