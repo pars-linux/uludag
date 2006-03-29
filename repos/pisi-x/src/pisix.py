@@ -81,8 +81,9 @@ class CustomEventListener(DOM.EventListener):
 	self.parent = parent
 
     def handleEvent(self,event):
+        target = event.target().nodeName().string()
 	try:
-	    if event.target().nodeName().string() == "INPUT":
+            if target == "INPUT":
 		inputElement = DOM.HTMLInputElement(event.target())
 		name = inputElement.name().string()
 		checked = inputElement.checked()
@@ -91,9 +92,12 @@ class CustomEventListener(DOM.EventListener):
 			self.parent.domNodesToProcess.append(name)
 		else:
 		    self.parent.domNodesToProcess.remove(name)
-	except:
-	    pass
-        
+            elif target == "A":
+                link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
+                KRun.runURL(KURL(link),"text/html",False,False);
+        except Exception, e:
+            print e
+                    
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent, "PiSi X")
@@ -261,7 +265,8 @@ class MainApplicationWidget(QWidget):
                 size = "%.0f %s" % (tpl[0], tpl[1])
             else:
                 size = i18n("N\A")
-            result += template % (style,app,style,iconPath,app,summary,style,desc,version,size,"lala")
+            result += template % (style,app,style,iconPath,app,summary,style,desc,version,size,
+                                  "<a href=\"http://www.pardus.org.tr\">http://www.pardus.org.tr</a>")
             index += 1
 
         return result
