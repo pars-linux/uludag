@@ -217,6 +217,7 @@ def update_pspecs(path, language, po):
                 item = source.getTag("Archive").previousTag()
             else:
                 item = source.getTag("Description").previousTag()
+            item = item.appendSiblingData("\n        ")
             new = item.appendSibling(tag)
             new.setAttribute("xml:lang", language)
             new.appendData(msg.msgstr)
