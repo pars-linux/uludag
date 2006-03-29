@@ -59,6 +59,7 @@ iks *iks_new_within (const char *name, ikstack *s);
 iks *iks_insert (iks *x, const char *name);
 iks *iks_insert_sibling (iks *x, const char *name);
 iks *iks_insert_cdata (iks *x, const char *data, size_t len);
+iks *iks_append_cdata(iks *x, const char *data, size_t len);
 iks *iks_insert_attrib (iks *x, const char *name, const char *value);
 iks *iks_insert_node (iks *x, iks *y);
 void iks_hide (iks *x);
