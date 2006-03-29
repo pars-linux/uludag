@@ -94,13 +94,12 @@ class PisiThread(QThread):
         
     def listPackages(self):
         if not len(self.allPackages) or self.databaseDirty:
-            self.allPackages = pisi.packagedb.pkgdb.list_packages()
+            self.allPackages = pisi.context.installdb.list_installed()
 
         self.databaseDirty = False
         return self.allPackages
 
     def listNewPackages(self):
-	print len(pisi.api.list_available())," - ",len(self.listPackages())
         if not len(self.newPackages) or self.databaseDirty:
             self.newPackages = list(pisi.api.list_available()-set(self.listPackages()))
 
