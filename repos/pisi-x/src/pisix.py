@@ -322,6 +322,7 @@ class MainApplicationWidget(QWidget):
              for package in packages:
                  if package in component.packages:
                      componentPacks.append(package)
+                     packages.remove(package)
              
              if len(componentPacks):
                  item = KListViewItem(self.listView)
