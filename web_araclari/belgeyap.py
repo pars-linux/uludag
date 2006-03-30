@@ -32,12 +32,18 @@ def run(*cmd):
     """Run the command without running a shell"""
     return subprocess.call(cmd)
 
+def operation(msg):
+    print "\x1b[34;01m* %s\x1b[0m" % msg
+
+def error(msg):
+    print "\x1b[35;01m* %s\x1b[0m" % msg
+
 #
 # SVN
 #
 
 def svn_fetch(repo_uri, filename):
-    print "'%s' çekiliyor..." % repo_uri
+    operation("'%s' çekiliyor..." % repo_uri)
     # fetch last revision
     data = capture("/usr/bin/svn", "cat", repo_uri)
     f = file(filename, "w")
@@ -57,9 +63,9 @@ def svn_fetch(repo_uri, filename):
 
 def retouch_lyx(lyxname):
     # FIXME: fix regexps, handle hyperref package, and other minor probs
-    print "'%s' düzeltiliyor..." % lyxname
+    operation("'%s' düzeltiliyor..." % lyxname)
     # lyx dosyasini okuyalim
-    f = file(lyxname, "r")
+    f = file(lyxname)
     lyx = f.read()
     f.close()
     # paragraf aralari bosluk olmali
@@ -70,12 +76,26 @@ def retouch_lyx(lyxname):
     f.write(lyx)
     f.close()
 
+def collect_files(lyxname):
+    flag = 0
+    files = []
+    for line in file(lyxname):
+        if flag == 0:
+            if line.startswith("\\begin_inset Graphics"):
+                flag = 1
+        else:
+            parts = line.strip().split()
+            if parts[0] == "filename":
+                files.append(parts[1])
+                flag = 0
+    return files
+
 #
 # PDF
 #
 
 def export_pdf(lyxname, pdfname):
-    print "'%s' oluşturuluyor..." % pdfname
+    operation("'%s' oluşturuluyor..." % pdfname)
     run("/usr/bin/lyx", "-e", "pdf2", lyxname)
     shutil.move(lyxname[:-4] + ".pdf", pdfname)
     return str(os.stat(pdfname)[ST_SIZE] / 1024)
@@ -131,9 +151,9 @@ def export_html(lyxname, htmlname):
     f.write(hevea_fixes)
     f.close()
     texname = lyxname[:-4] + ".tex"
-    print "'%s' oluşturuluyor..." % texname
+    operation("'%s' oluşturuluyor..." % texname)
     run("/usr/bin/lyx", "-e", "latex", lyxname)
-    print "'%s' oluşturuluyor..." % htmlname
+    operation("'%s' oluşturuluyor..." % htmlname)
     run("/usr/bin/hevea", "-fix", "duzeltmeler.hva", texname, "-o", htmlname)
     os.unlink("duzeltmeler.hva")
     os.unlink(texname)
@@ -152,6 +172,7 @@ entry_tmpl = """
 """
 
 def make_document(repo_uri, do_fetch=True):
+    path = os.path.dirname(repo_uri)
     filename = os.path.basename(repo_uri)
     basename = filename[:]
     if basename.endswith(".lyx"):
@@ -161,13 +182,23 @@ def make_document(repo_uri, do_fetch=True):
     
     if do_fetch:
         last_edit = svn_fetch(repo_uri, filename)
-        # FIXME: gereken diğer dosyaları da çek
+        files = collect_files(filename)
+        for name in files:
+            try:
+                os.makedirs(os.path.dirname(name))
+            except OSError, e:
+                if e.errno != 17:
+                    raise
+            svn_fetch(os.path.join(path, name), name)
     else:
         last_edit = "depodan çekmeden bilemem"
     
     retouch_lyx(filename)
     pdf_size = export_pdf(filename, pdfname)
     export_html(filename, htmlname)
+    # FIXME: html resim linklerini düzelt
+    
+    operation("İşlem tamam, belge bilgileri:")
     
     # FIXME: belge adını dosyadan çekmeye çalış
     dict = {
@@ -196,11 +227,11 @@ def main(args):
         return
     
     if not os.path.exists("/usr/bin/hevea"):
-        print "Hata: Belgeleri HTML'e çevirebilmek için 'hevea' paketini kurmalısınız."
+        error("Hata: Belgeleri HTML'e çevirebilmek için 'hevea' paketini kurmalısınız.")
         return
     
     if not os.path.exists("/usr/bin/lyx"):
-        print "Hata: Belgeleri PDF ve HTML'e çevirebilmek için 'lyx' paketini kurmalısınız."
+        error("Hata: Belgeleri PDF ve HTML'e çevirebilmek için 'lyx' paketini kurmalısınız.")
         return
     
     do_fetch = True
