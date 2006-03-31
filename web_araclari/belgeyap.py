@@ -110,6 +110,8 @@ hevea_fixes = """
 \\newcommand{\\textbackslash}{\\@print{&#92;}}
 \\newcommand{\\textasciitilde}{\\@print{&#126;}}
 \\newcommand{\\LyX}{\\@print{LyX}}
+\\renewcommand{\\includegraphics}[1]
+{\\@print{<IMG SRC="}\\@getprint{#1}\\@print{">}}
 """
 
 html_tmpl = u"""<html>
@@ -154,7 +156,7 @@ def export_html(lyxname, htmlname):
     operation("'%s' oluşturuluyor..." % texname)
     run("/usr/bin/lyx", "-e", "latex", lyxname)
     operation("'%s' oluşturuluyor..." % htmlname)
-    run("/usr/bin/hevea", "-fix", "duzeltmeler.hva", texname, "-o", htmlname)
+    run("/usr/bin/hevea", "-fix", "png.hva", "duzeltmeler.hva", texname, "-o", htmlname)
     os.unlink("duzeltmeler.hva")
     os.unlink(texname)
     fix_html(htmlname)
