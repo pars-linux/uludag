@@ -1,2 +1,28 @@
 Buraya 1.1 sürüm notlarında belirtmek istediğimiz önemli maddeler gelecek.
 
+1. Pardus'a hoşgeldiniz
+   - Neden Pardus?
+   - Pardus'un özellikleri
+   - Geribildirimde bulunmak
+2. Temel özellikler
+   - Kolay kullanımlı masaüstü 
+   - Windows ile iletişim ve uyum
+   - Java
+   - Oyunlar ve eğlence
+   - Ağ servisleri
+3. Kurulum gereksinimleri 
+   - Sabit disk 
+   - İşlemci 
+   - Donanım
+   - Bellek
+3. Bu sürümdeki yenilikler 
+   - Daha çok gelişmiş paket yönetim sistemi
+   - Yeni program yönetim arayüzü
+   - Kurulum sistemi YALI'da gelişmeler
+   - Daha çok donanım tanıma olanağı
+   - 1500'den fazla giderilen hata
+   - Yeni 2.6.16 çekirdek
+   - Yeni simge setleri
+   - Yeni araçlar (xorgconf, ..)
+   - Diğer paket güncellemeleri (xorg, gcc, ..)
+
