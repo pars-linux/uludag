@@ -160,6 +160,12 @@ def export_html(lyxname, htmlname):
     os.unlink("duzeltmeler.hva")
     os.unlink(texname)
     fix_html(htmlname)
+    try:
+        os.unlink(lyxname[0:-4] + ".htoc")
+        os.unlink(lyxname[0:-4] + ".haux")
+        os.unlink(lyxname[0:-4] + ".image.tex")
+    except:
+        pass
 
 #
 # Document converter
@@ -198,7 +204,7 @@ def make_document(repo_uri, do_fetch=True):
     retouch_lyx(filename)
     pdf_size = export_pdf(filename, pdfname)
     export_html(filename, htmlname)
-    # FIXME: html resim linklerini düzelt
+    os.unlink(filename)
     
     operation("İşlem tamam, belge bilgileri:")
     
