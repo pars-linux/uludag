@@ -9,14 +9,20 @@
 # option) any later version. Please read the COPYING file.
 #
 
+# Python Modules
 import sys
 
+# QT & KDE Modules
 from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
 
+# UI
 import firewall
+
+# IPTables
+import comar
 
 def I18N_NOOP(str):
     return str
@@ -76,8 +82,47 @@ class MainApplication(programbase):
 
         self.aboutus = KAboutApplication(self)
 
-        self.connect(mainwidget.pushCancel,SIGNAL("clicked()"),self,SLOT("close()"))
+        self.connect(mainwidget.pushCancel, SIGNAL("clicked()"), self, SLOT("close()"))
+        self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.saveAll)
         #self.connect(mainwidget.pushHelp,SIGNAL("clicked()"),self.showHelp)
+
+        self.num = 1
+        self.comar = comar.Link()
+        
+    def addRule(self, port, type='OUTPUT'):
+        self.comar.call_package('Net.Firewall.addRule', 'iptables', ['id', self.num, 'chain', type, 'protocol', 'tcp', 'dport', port])
+        self.comar.read_cmd()
+        self.num += 1
+
+    def saveAll(self):
+        self.comar.call_package('Net.Firewall.cleanRules', 'iptables')
+        self.comar.read_cmd()
+
+        # Outgoing
+        if mainwidget.checkWFS.isChecked():
+            self.addRule(139)
+            
+        if mainwidget.checkMail.isChecked():
+            self.addRule(110)
+            self.addRule(25)
+        
+        if mainwidget.checkFTP.isChecked():
+            self.addRule(21)
+            
+        if mainwidget.checkRemote.isChecked():
+            self.addRule(22)
+            
+        if mainwidget.checkFS.isChecked():
+            self.addRule(10101)
+
+        # Incoming
+        if mainwidget.listPorts.childCount() > 0:
+            item = mainwidget.listPorts.firstChild()
+            while item:
+                self.addRule(item.text(0), 'INPUT')
+                item = item.nextSibling()
+                
+            # TODO: Reject else...
 
     def __del__(self):
         pass
