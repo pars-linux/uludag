@@ -1,0 +1,162 @@
+# Pardus Firewall Interface
+# Copyright (C) 2006, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the FW-KGA package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FW-KGA 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-04-03 13:48+0300\n"
+"PO-Revision-Date: 2006-04-03 13:50+0200\n"
+"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/fw.py:24 src/fw.py:58
+msgid "Pardus Firewall Interface"
+msgstr "Pardus Güvenlik Duvarı Arayüzü"
+
+#: src/fw.py:116
+msgid "Pardus Firewall Interface is already running!"
+msgstr "Pardus Güvenlik Duvarı Arayüzü zaten çalışıyor!"
+
+#: src/firewall.py:1089 src/firewall.py:1163
+msgid "Port"
+msgstr "Port"
+
+#: src/firewall.py:1090 src/firewall.py:1164
+msgid "Description"
+msgstr "Tanım"
+
+#: src/firewall.py:1134
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Pardus Güvenlik Duvarı Grafik Kullanıcı Arayüzü"
+
+#: src/firewall.py:1136 src/firewall.py:1172
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: src/firewall.py:1137
+msgid "&Ok"
+msgstr "&Tamam"
+
+#: src/firewall.py:1138
+msgid "Alt+O"
+msgstr "Alt+T"
+
+#: src/firewall.py:1140
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: src/firewall.py:1141
+msgid "Allow incoming network for the following services:"
+msgstr "Aşağıdaki servislere dışarıdan gelen bağlantılara izin ver:"
+
+#: src/firewall.py:1142
+msgid ""
+"Click here to stop the firewall and \n"
+"allow all incoming connections"
+msgstr ""
+"Güvenlik duvarını kapatmak ve gelen \n"
+"tüm bağlantılara izin vermek için tıklayın."
+
+#: src/firewall.py:1145
+msgid "Windows file sharing (port 139)"
+msgstr "Windows dosya paylaşımı (port 139)"
+
+#: src/firewall.py:1146
+msgid "FTP transfer (ports 20 and 21)"
+msgstr "FTP transferi (20. ve 21. portlar)"
+
+#: src/firewall.py:1147
+msgid "E-mail service"
+msgstr "E-posta servisi"
+
+#: src/firewall.py:1148
+msgid "Remote login (port 22)"
+msgstr "Uzaktan bağlantı (22. port)"
+
+#: src/firewall.py:1149
+msgid "File sharing (p2p)"
+msgstr "Dosya paylaşımı (p2p)"
+
+#: src/firewall.py:1150
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr "<b><font size=\"+1\">Güvenlik duvarı çalışıyor</font></b>"
+
+#: src/firewall.py:1151
+msgid "&Stop firewall"
+msgstr "Gü&venlik duvarını durdur"
+
+#: src/firewall.py:1152
+msgid "Alt+S"
+msgstr "Alt+V"
+
+#: src/firewall.py:1153
+msgid "Firewall Status"
+msgstr "Güvenlik Duvarı Durumu"
+
+#: src/firewall.py:1154
+msgid ""
+"<b>Additionally, you can specify a port you want \n"
+"to receive incoming network traffic. Both tcp and\n"
+"udp connections will be automatically allowed.</b>"
+msgstr ""
+"<b>Ek olarak, hangi portlara bağlantı yapılacağına \n"
+"karar verebilirsiniz. Hiçbir ayar yapılmazsa, tüm\n"
+"TCP ve UDP bağlantılarına izin verilir.</b>"
+
+#: src/firewall.py:1157
+msgid "Description:"
+msgstr "Tanım:"
+
+#: src/firewall.py:1158
+msgid "Port number:"
+msgstr "Port numarası:"
+
+#: src/firewall.py:1159
+msgid "&Add"
+msgstr "&Ekle"
+
+#: src/firewall.py:1160
+msgid "Alt+A"
+msgstr "Alt+E"
+
+#: src/firewall.py:1162
+msgid "Alt+D"
+msgstr "Alt+D"
+
+#: src/firewall.py:1165
+msgid "Incoming Connections"
+msgstr "Gelen Bağlantılar"
+
+#: src/firewall.py:1166
+msgid "<b>Other firewall specific features</b>"
+msgstr "<b>Diğer güvenlik duvarına özgü özellikler</b>"
+
+#: src/firewall.py:1167
+msgid "&Block incoming ICMP (ping) requests"
+msgstr "&Gelen ICMP (ping) taleplerini blokla"
+
+#: src/firewall.py:1168
+msgid "Alt+B"
+msgstr "Alt+G"
+
+#: src/firewall.py:1169
+msgid ""
+"<b>Firewall logs offer a visual way of understanding\n"
+"what happens.</b>"
+msgstr ""
+"<b>Güvenlik duvarı kayıtları, nelerin olup bittiğine\n"
+"dair fikir verebilir.</b>"
+
+#: src/firewall.py:1171
+msgid "Click &here to see the firewall logs"
+msgstr "Güvenlik duvarı kayıtlarını görmek için tıklayın"
+
+#: src/firewall.py:1173
+msgid "Other Features"
+msgstr "Diğer Özellikler"
