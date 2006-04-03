@@ -118,12 +118,18 @@ Returns the top level node.
 
 Returns the next node. If this is the last sibling, returns None.
 
-* nextTag(tagname=None)              !!!!!!!!!!!!!!1
+* nextTag(tagname=None)
 
 Returns the next tag node.
 
 * previous()
-* previousTag(tagname=None)            !!!!!!!!!!!!!!
+
+Returns the previous node. If this is the first sibling, returns None.
+
+* previousTag(tagname=None)
+
+
+
 
 * insertTag(tagname)                   !!!!!!!!!!!!!!1
 * insertData(data)
