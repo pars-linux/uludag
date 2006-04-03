@@ -140,8 +140,9 @@ static PyObject *Node_firstChild(Node *self);
 static PyObject *Node_parent(Node *self);
 static PyObject *Node_root(Node *self);
 static PyObject *Node_next(Node *self);
+static PyObject *Node_nextTag(Node *self, PyObject *args);
 static PyObject *Node_previous(Node *self);
-static PyObject *Node_previousTag(Node *self);
+static PyObject *Node_previousTag(Node *self, PyObject *args);
 static PyObject *Node_toString(Node *self, PyObject *args);
 static PyObject *Node_toPrettyString(Node *self, PyObject *args);
 static PyObject *Node_appendTag(Node *self, PyObject *args);
@@ -174,9 +175,11 @@ static PyMethodDef Node_methods[] = {
 	  "Return parent node." },
 	{ "root", (PyCFunction)Node_root, METH_NOARGS,
 	  "Return topmost parent node." },
+	{ "nextTag", (PyCFunction)Node_nextTag, METH_VARARGS,
+	  "Return next sibling tag node." },
 	{ "next", (PyCFunction)Node_next, METH_NOARGS,
 	  "Return next sibling node." },
-	{ "previousTag", (PyCFunction)Node_previousTag, METH_NOARGS,
+	{ "previousTag", (PyCFunction)Node_previousTag, METH_VARARGS,
 	  "Return previous sibling tag node." },
 	{ "previous", (PyCFunction)Node_previous, METH_NOARGS,
 	  "Return previous sibling node." },
@@ -540,6 +543,30 @@ Node_next(Node *self)
 }
 
 static PyObject *
+Node_nextTag(Node *self, PyObject *args)
+{
+	iks *sibling;
+	char *name = NULL;
+
+	if (!PyArg_ParseTuple(args, "|s", &name))
+		return NULL;
+
+	sibling = iks_next_tag(self->node);
+	if (sibling && name) {
+		while (strcmp(iks_name(sibling), name) != 0) {
+			sibling = iks_next_tag(sibling);
+			if (!sibling) break;
+		}
+	}
+	if (!sibling) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	return new_node(self->doc, sibling);
+}
+
+static PyObject *
 Node_previous(Node *self)
 {
 	iks *sibling;
@@ -554,11 +581,21 @@ Node_previous(Node *self)
 }
 
 static PyObject *
-Node_previousTag(Node *self)
+Node_previousTag(Node *self, PyObject *args)
 {
 	iks *sibling;
+	char *name = NULL;
+
+	if (!PyArg_ParseTuple(args, "|s", &name))
+		return NULL;
 
 	sibling = iks_prev_tag(self->node);
+	if (sibling && name) {
+		while (strcmp(iks_name(sibling), name) != 0) {
+			sibling = iks_prev_tag(sibling);
+			if (!sibling) break;
+		}
+	}
 	if (!sibling) {
 		Py_INCREF(Py_None);
 		return Py_None;
@@ -803,7 +840,7 @@ initpiksemel(void)
 	/* constants */
 	PyModule_AddIntConstant(m, "TAG", IKS_TAG);
 	PyModule_AddIntConstant(m, "ATTRIBUTE", IKS_ATTRIBUTE);
-	PyModule_AddIntConstant(m, "CDATA", IKS_CDATA);
+	PyModule_AddIntConstant(m, "DATA", IKS_CDATA);
 	/* exceptions */
 	ParseError = PyErr_NewException("piksemel.ParseError", NULL, NULL);
 	Py_INCREF(ParseError);

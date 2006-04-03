@@ -14,53 +14,114 @@ option) any later version. Please read the COPYING file.
 Install:
 --------
 
-iksemel is included and compiled built-in to the module.
+You dont need anything other than an installed Python framework.
+iksemel-lite source is included and compiled built-in to the module.
 
-to compile and install:
-sudo scons install prefix=/
+To compile and install:
+# ./setup.py install
 
-then you can import piksemel module.
+then you can import the piksemel module in your python programs.
 
 
 Documentation:
 --------------
 
-Module Constants:
+===> Module Constants:
 
 * TAG
 * ATTRIBUTE
-* DATA           !!!!!!!!!!!!!!!!
+* DATA
 
-Module Exceptions:
+These enumeration constants are used to report the type of the Node objects.
+
+===> Module Exceptions
 
 * ParseError
+
+Raised when given string or file contains invalid XML.
+
 * NotTag
+
+Raised when a function accepting a tag node got another type of object.
+
 * NotData
 
-Module Functions:
+Raised when a function accepting a data node got another type of object.
+
+===> Module Functions:
 
 * parse(filename)
+
+Parses the given XML file, and returns the top level tag's node object.
+
 * parseString(string)
+
+Parses the given XML string and returns the top level tag's node object.
+
 * newDocument(tagname)
 
-Module Objects:
+Creates a new top level tag node object with given tag name.
+
+===> Module Objects:
 
 * Node
 
-Node Object Methods:
+This object represents a node of the XML document tree.
+
+===> Node Object Methods:
 
 * type()
+
+Returns the type of the node.
+
 * data()
+
+Returns character data for data nodes.
+
 * name()
+
+Returns the name of the tag for tag nodes.
+
 * getAttribute(attributename)
+
+Returns the value of the given attribute for tag nodes. If such
+an attribute doesn't exists, returns None.
+
 * getTag(tagname)
+
+Returns the first tag node child with the given name. If such a child
+doesn't exists, returns None.
+
 * getTagData(tagname)
+
+Returns the contained character data from first tag node child with the
+given name.
+
 * tags(tagname=None)
+
+Iterates over child tag nodes. If optional tagname is given, only
+iterates over tags with the given name.
+
 * firstChild()
+
+Returns the first child node.
+
 * parent()
+
+Returns the parent node.
+
 * root()
+
+Returns the top level node.
+
 * next()
+
+Returns the next node. If this is the last sibling, returns None.
+
 * nextTag(tagname=None)              !!!!!!!!!!!!!!1
+
+Returns the next tag node.
+
 * previous()
 * previousTag(tagname=None)            !!!!!!!!!!!!!!
 
@@ -80,6 +141,13 @@ Node Object Methods:
 * toPrettyString()
 
 
-Example:
---------
+Examples:
+---------
 
+* Parsing a file
+
+
+* Creating a document
+
+
+* Modifying a document
