@@ -66,7 +66,8 @@ Creates a new top level tag node object with given tag name.
 
 * Node
 
-This object represents a node of the XML document tree.
+This object represents a node of the XML document tree. If you iterate
+over a node object, you'll get the list of its child nodes.
 
 ===> Node Object Methods:
 
@@ -86,6 +87,11 @@ Returns the name of the tag for tag nodes.
 
 Returns the value of the given attribute for tag nodes. If such
 an attribute doesn't exists, returns None.
+
+* setAttribute(attributename, value)
+
+Sets the given attribute's value for tag nodes. You can give
+the value None for deleting an attribute.
 
 * getTag(tagname)
 
@@ -134,16 +140,27 @@ Returns the previous tag node. If optional tagname is given, returns
 the previous sibling tag node with the given name. Returns None if
 this is the first such sibling.
 
-* insertTag(tagname)                   !!!!!!!!!!!!!!1
+* insertTag(tagname)
+
+Inserts a new child tag node with given name to the child nodes.
+Returns the newly created tag node object.
+
 * insertData(data)
+
+Inserts given character data to the child nodes. Returns the newly
+created data node object.
+
 * insertNode(node)
+
+Inserts given node tree to the child nodes. Returns the newly created
+node object.
+
 * appendTag(tagname)
 * appendData(data)
 * appendNode(node)
 * prependTag(tagname)
 * prependData(data)
 * prependNode(node)
-* setAttribute(attributename, value)
 * hide()
 
 * toString()

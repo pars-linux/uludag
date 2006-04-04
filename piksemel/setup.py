@@ -20,11 +20,12 @@ from distutils.command.install import install
 version='1.0'
 
 distfiles = """
+    README
+    setup.py
     src/iksemel.c
     src/iksemel.h
     src/pyiks.c
-    README
-    setup.py
+    tests/*.py
 """
 
 if 'dist' in sys.argv:
@@ -58,6 +59,7 @@ elif 'test' in sys.argv:
         print "all tests passed :)"
         sys.exit(0)
     sys.exit(1)
+
 
 class Install(install):
     def finalize_options(self):

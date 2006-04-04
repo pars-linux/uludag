@@ -145,11 +145,11 @@ static PyObject *Node_previous(Node *self);
 static PyObject *Node_previousTag(Node *self, PyObject *args);
 static PyObject *Node_toString(Node *self, PyObject *args);
 static PyObject *Node_toPrettyString(Node *self, PyObject *args);
-static PyObject *Node_appendTag(Node *self, PyObject *args);
+static PyObject *Node_insertTag(Node *self, PyObject *args);
 static PyObject *Node_appendSibling(Node *self, PyObject *args);
-static PyObject *Node_appendData(Node *self, PyObject *args);
+static PyObject *Node_insertData(Node *self, PyObject *args);
 static PyObject *Node_appendSiblingData(Node *self, PyObject *args);
-static PyObject *Node_appendNode(Node *self, PyObject *args);
+static PyObject *Node_insertNode(Node *self, PyObject *args);
 static PyObject *Node_hide(Node *self, PyObject *args);
 
 static PyMethodDef Node_methods[] = {
@@ -187,16 +187,16 @@ static PyMethodDef Node_methods[] = {
 	  "Convert a document tree to XML string representation." },
 	{ "toPrettyString", (PyCFunction)Node_toPrettyString, METH_NOARGS,
 	  "Convert a document tree to indented XML string representation." },
-	{ "appendTag", (PyCFunction)Node_appendTag, METH_VARARGS,
-	  "Append a child tag node with given name." },
+	{ "insertTag", (PyCFunction)Node_insertTag, METH_VARARGS,
+	  "Insert a child tag node with given name." },
 	{ "appendSibling", (PyCFunction)Node_appendSibling, METH_VARARGS,
 	  "Append a sibling tag node with given name." },
-	{ "appendData", (PyCFunction)Node_appendData, METH_VARARGS,
-	  "Append a child character data node with given text." },
+	{ "insertData", (PyCFunction)Node_insertData, METH_VARARGS,
+	  "Insert a child character data node with given text." },
 	{ "appendSiblingData", (PyCFunction)Node_appendSiblingData, METH_VARARGS,
 	  "Append a sibling character data node with given text." },
-	{ "appendNode", (PyCFunction)Node_appendNode, METH_VARARGS,
-	  "Append another document as a child." },
+	{ "insertNode", (PyCFunction)Node_insertNode, METH_VARARGS,
+	  "Insert another document as a child." },
 	{ "hide", (PyCFunction)Node_hide, METH_VARARGS,
 	  "Hide tag from document tree." },
 	{ NULL }
@@ -397,7 +397,7 @@ Node_setAttribute(Node *self, PyObject *args)
 		return NULL;
 	}
 
-	if (!PyArg_ParseTuple(args, "ss", &name, &value))
+	if (!PyArg_ParseTuple(args, "sz", &name, &value))
 		return NULL;
 
 	iks_insert_attrib(self->node, name, value);
@@ -660,7 +660,7 @@ Node_toPrettyString(Node *self, PyObject *args)
 }
 
 static PyObject *
-Node_appendTag(Node *self, PyObject *args)
+Node_insertTag(Node *self, PyObject *args)
 {
 	iks *node;
 	char *name;
@@ -693,7 +693,7 @@ Node_appendSibling(Node *self, PyObject *args)
 }
 
 static PyObject *
-Node_appendData(Node *self, PyObject *args)
+Node_insertData(Node *self, PyObject *args)
 {
 	iks *node;
 	char *value;
@@ -727,7 +727,7 @@ Node_appendSiblingData(Node *self, PyObject *args)
 }
 
 static PyObject *
-Node_appendNode(Node *self, PyObject *args)
+Node_insertNode(Node *self, PyObject *args)
 {
 	iks *child;
 	Node *node;
