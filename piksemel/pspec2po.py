@@ -210,17 +210,17 @@ def update_pspecs(path, language, po):
             lang = item.getAttribute("xml:lang")
             if lang == language:
                 item.firstChild().hide()
-                item.appendData(msg.msgstr)
+                item.insertData(msg.msgstr)
                 data = doc.toString()
         if not data:
             if tag == "Description":
                 item = source.getTag("Archive").previousTag()
             else:
                 item = source.getTag("Description").previousTag()
-            item = item.appendSiblingData("\n        ")
-            new = item.appendSibling(tag)
+            item = item.appendData("\n        ")
+            new = item.appendTag(tag)
             new.setAttribute("xml:lang", language)
-            new.appendData(msg.msgstr)
+            new.insertData(msg.msgstr)
             data = doc.toString()
         if data:
             f = file(name, "w")
