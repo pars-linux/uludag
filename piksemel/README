@@ -156,24 +156,31 @@ Inserts given node tree to the child nodes. Returns the newly created
 node object.
 
 * appendTag(tagname)
+
+Create a tag node with given name and append it as the next sibling.
+Returns the newly created tag node object.
+
 * appendData(data)
+
+Appends given character data as the next sibling. Returns the newly
+created data node object.
+
 * appendNode(node)
 * prependTag(tagname)
 * prependData(data)
 * prependNode(node)
+
+Not implemented yet :)
+
 * hide()
 
+Deletes the node from document tree.
+
 * toString()
+
+Returns the XML string representation of node tree.
+
 * toPrettyString()
 
-
-Examples:
----------
-
-* Parsing a file
-
-
-* Creating a document
-
-
-* Modifying a document
+Returns the XML string representation of node tree. Line feeds and
+tabs are inserted into the document to make it look pretty.
