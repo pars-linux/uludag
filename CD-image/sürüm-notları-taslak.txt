@@ -3,11 +3,12 @@ Buraya 1.1 sürüm notlarında belirtmek istediğimiz önemli maddeler gelecek.
 1. Pardus'a hoşgeldiniz
    - Neden Pardus?
    - Pardus'un özellikleri
+   - Siz de katılın
    - Geribildirimde bulunmak
 2. Temel özellikler
    - Kolay kullanımlı masaüstü 
    - Windows ile iletişim ve uyum
-   - Java
+   - Java desteği
    - Oyunlar ve eğlence
    - Ağ servisleri
 3. Kurulum gereksinimleri 
@@ -16,6 +17,7 @@ Buraya 1.1 sürüm notlarında belirtmek istediğimiz önemli maddeler gelecek.
    - Donanım
    - Bellek
 3. Bu sürümdeki yenilikler 
+   - Pardus güvenlik duvarı
    - Daha çok gelişmiş paket yönetim sistemi
    - Yeni program yönetim arayüzü
    - Kurulum sistemi YALI'da gelişmeler
