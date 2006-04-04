@@ -172,7 +172,8 @@ sibling. Returns the newly created tag node object.
 
 * prependData(data)
 
-Not implemented yet :)
+Prepends given character data as the previous sibling. Returns the
+newly created data node object.
 
 * hide()
 
