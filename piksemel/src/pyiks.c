@@ -147,6 +147,7 @@ static PyObject *Node_toString(Node *self, PyObject *args);
 static PyObject *Node_toPrettyString(Node *self, PyObject *args);
 static PyObject *Node_insertTag(Node *self, PyObject *args);
 static PyObject *Node_appendSibling(Node *self, PyObject *args);
+static PyObject *Node_prependTag(Node *self, PyObject *args);
 static PyObject *Node_insertData(Node *self, PyObject *args);
 static PyObject *Node_appendSiblingData(Node *self, PyObject *args);
 static PyObject *Node_insertNode(Node *self, PyObject *args);
@@ -191,6 +192,8 @@ static PyMethodDef Node_methods[] = {
 	  "Insert a child tag node with given name." },
 	{ "appendTag", (PyCFunction)Node_appendSibling, METH_VARARGS,
 	  "Append a sibling tag node with given name." },
+	{ "prependTag", (PyCFunction)Node_prependTag, METH_VARARGS,
+	  "Prepend a sibling tag node with given name." },
 	{ "insertData", (PyCFunction)Node_insertData, METH_VARARGS,
 	  "Insert a child character data node with given text." },
 	{ "appendData", (PyCFunction)Node_appendSiblingData, METH_VARARGS,
@@ -690,6 +693,20 @@ Node_appendSibling(Node *self, PyObject *args)
 		return NULL;
 
 	node = iks_insert_sibling(self->node, name);
+
+	return new_node(self->doc, node);
+}
+
+static PyObject *
+Node_prependTag(Node *self, PyObject *args)
+{
+	iks *node;
+	char *name;
+
+	if (!PyArg_ParseTuple(args, "s", &name))
+		return NULL;
+
+	node = iks_prepend(self->node, name);
 
 	return new_node(self->doc, node);
 }

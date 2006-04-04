@@ -167,7 +167,8 @@ created data node object.
 
 * prependTag(tagname)
 
-Not implemented yet :)
+Create a tag node with given name and append it as the previous
+sibling. Returns the newly created tag node object.
 
 * prependData(data)
 
