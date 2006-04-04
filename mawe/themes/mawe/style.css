@@ -1,0 +1,45 @@
+
+    /**
+    *    TUBITAK UEKAE 2005-2006
+    *    Gökmen GÖKSEL gokmen_at_pardus.org.tr
+    *    Mawe - version 0.3
+    */
+
+fieldset {
+    border: 1px solid #d3d7cf;
+    font-size: small;
+}
+
+legend {
+    background-color: white;
+    font-weight: bold;
+    font-size: 110%;
+    padding-left: .5em;
+    padding-right: .5em;
+    border: 1px solid #d3d7cf;
+}
+
+label {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input,button {
+    border: 1px solid #d3d7cf;
+}
+
+#loginbox {
+    margin-top:30px;
+}
+
+.label {
+    float:left;
+}
+
+.input {
+    float:right;
+}
+
+.bebox {
+    margin:10px;
+}
