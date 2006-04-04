@@ -166,6 +166,9 @@ Appends given character data as the next sibling. Returns the newly
 created data node object.
 
 * prependTag(tagname)
+
+Not implemented yet :)
+
 * prependData(data)
 
 Not implemented yet :)

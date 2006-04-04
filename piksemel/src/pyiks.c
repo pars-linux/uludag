@@ -257,6 +257,8 @@ new_node(Document *doc, iks *xml)
 	Node *node;
 	int ref = 1;
 
+	if (!xml) return PyErr_NoMemory();
+
 	if (!doc) {
 		doc = PyObject_New(Document, &Document_type);
 		doc->document = xml;
@@ -723,7 +725,6 @@ Node_appendSiblingData(Node *self, PyObject *args)
 	node = iks_append_cdata(self->node, value, strlen(value));
 
 	return new_node(self->doc, node);
-
 }
 
 static PyObject *
@@ -741,16 +742,15 @@ Node_insertNode(Node *self, PyObject *args)
 		return NULL;
 
 	child = iks_copy_within(node->node, iks_stack(self->node));
-	iks_insert_node(self->node, node->node);
+	iks_insert_node(self->node, child);
 
-	Py_INCREF(Py_None);
-	return Py_None;
+	return new_node(self->doc, child);
 }
 
 static PyObject *
 Node_hide(Node *self, PyObject *args)
 {
-    iks_hide(self->node);
+	iks_hide(self->node);
 
 	Py_INCREF(Py_None);
 	return Py_None;

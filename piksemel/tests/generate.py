@@ -29,3 +29,46 @@ doc.insertData("\n    ")
 a = doc.insertTag("a")
 doc.insertData("\n")
 assert(doc.toString() == doc_xml)
+
+# append test
+
+doc = iks.newDocument("lala")
+a = doc.insertTag("nanik")
+b = a.appendData("lala")
+a = b.appendTag("lolo")
+a = a.appendTag("iki")
+b.appendData("hede")
+doc.firstChild().appendData("fii")
+assert(doc.toString() == "<lala><nanik/>fiilalahede<lolo/><iki/></lala>")
+
+# insert node test
+
+doc = iks.newDocument("a")
+b = iks.newDocument("b")
+b.setAttribute("lal", "foo")
+b = doc.insertNode(b)
+b.setAttribute("lal", "foofff")
+assert(doc.toString() == '<a><b lal="foofff"/></a>')
+
+# now with append
+
+doc = iks.newDocument("test")
+
+a = iks.newDocument("a")
+a.insertTag("b").insertTag("c")
+
+item = iks.newDocument("item")
+node = item.insertData("\n        ")
+node.appendTag("tuktuk").insertData("blah & bleh")
+node = item.insertData("\n        ")
+node.appendTag("nanuk").appendData("\n    ")
+
+doc.insertData("\n    ")
+doc.insertNode(a).appendData("\n    ")
+del a
+node = doc.insertNode(item)
+node.setAttribute("foo", "lala")
+del item
+node = doc.insertData("\n    ")
+node.appendTag("a").appendData("\n")
+assert(doc.toString() == doc_xml)
