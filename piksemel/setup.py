@@ -13,6 +13,7 @@ import sys
 import os
 import glob
 import shutil
+import subprocess
 from distutils.core import setup, Extension
 from distutils.command.install import install
 
@@ -46,6 +47,17 @@ if 'dist' in sys.argv:
     shutil.rmtree(distdir)
     sys.exit(0)
 
+elif 'test' in sys.argv:
+    fail = 0
+    for test in os.listdir("tests"):
+        if test.endswith(".py"):
+            if 0 != subprocess.call(["tests/" + test]):
+                fail += 1
+                print test, "failed!"
+    if not fail:
+        print "all tests passed :)"
+        sys.exit(0)
+    sys.exit(1)
 
 class Install(install):
     def finalize_options(self):
