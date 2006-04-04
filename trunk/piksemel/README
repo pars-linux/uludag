@@ -165,10 +165,8 @@ Returns the newly created tag node object.
 Appends given character data as the next sibling. Returns the newly
 created data node object.
 
-* appendNode(node)
 * prependTag(tagname)
 * prependData(data)
-* prependNode(node)
 
 Not implemented yet :)
 
