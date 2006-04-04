@@ -1205,6 +1205,34 @@ iks_insert_cdata (iks *x, const char *data, size_t len)
 }
 
 iks *
+iks_prepend_cdata(iks *x, const char *data, size_t len)
+{
+	iks *y;
+
+	if (!x || !data) return NULL;
+	if (len == 0) len = strlen (data);
+
+	y = iks_new_within(NULL, x->s);
+	if (!y) return NULL;
+	y->type = IKS_CDATA;
+	IKS_CDATA_CDATA(y) = iks_stack_strdup(x->s, data, len);
+	if (!IKS_CDATA_CDATA (y)) return NULL;
+	IKS_CDATA_LEN (y) = len;
+
+	if (x->prev) {
+		x->prev->next = y;
+	} else {
+		IKS_TAG_CHILDREN(x->parent) = y;
+	}
+	y->prev = x->prev;
+	x->prev = y;
+	y->parent = x->parent;
+	y->next = x;
+
+	return y;
+}
+
+iks *
 iks_append_cdata(iks *x, const char *data, size_t len)
 {
 	iks *y;

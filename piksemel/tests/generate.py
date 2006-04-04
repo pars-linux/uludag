@@ -47,8 +47,9 @@ doc = iks.newDocument("lala")
 a = doc.insertTag("foo")
 a = a.prependTag("a")
 a = a.prependTag("b")
+a.prependData("hihi").prependData("oh").appendData("i")
 a.appendTag("c")
-assert(doc.toString() == "<lala><b/><c/><a/><foo/></lala>")
+assert(doc.toString() == "<lala>ohihihi<b/><c/><a/><foo/></lala>")
 
 # insertNode test
 
@@ -72,8 +73,8 @@ node.appendTag("tuktuk").insertData("blah & bleh")
 node = item.insertData("\n        ")
 node.appendTag("nanuk").appendData("\n    ")
 
-doc.insertData("\n    ")
 doc.insertNode(a).appendData("\n    ")
+doc.getTag("a").prependData("\n    ")
 del a
 node = doc.insertNode(item)
 node.setAttribute("foo", "lala")
