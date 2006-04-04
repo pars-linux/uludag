@@ -1,10 +1,77 @@
 Buraya 1.1 sürüm notlarında belirtmek istediğimiz önemli maddeler gelecek.
 
 1. Pardus'a hoşgeldiniz
+
+Pardus'a hoşgeldiniz! Pardus işletim sistemi; kurulum ve kullanım kolaylığı 
+ile, KDE masaüstü ortamında sağladığı kullanışlı, uyumlu ve güvenli birçok 
+geliştirme ile işte karşınızda. Pardus ile internete 
+bağlanabilir, e-postalarınızı okuyabilir, dostlarınızla güvenli bir şekilde 
+iletişim kurabilir, müzik dinlerken ya da film izlerken bilgisayarınızın 
+çokluortam yeteneklerini sonuna kadar kullanabilirsiniz. Pardus'un sizin
+için yapabileceklerini keşfetmeniz için <a href="http://www.pardus.org.tr/">
+http://www.pardus.org.tr</a> adresini ziyaret etmenizden onur duyacağız.
+
    - Neden Pardus?
-   - Pardus'un özellikleri
+
+Özgürdür: Lisansı sizi kısıtlamaz, üreticiyi sizden korumak için değil sizin haklarınızı
+korumak için tasarlanmıştır.
+
+Türkçe sever: Çekinmeden Türk alfabesinin tüm harflerini kullanabilirsiniz. Yazım ve sözlük
+denetimi yapar, sizi güzel bir Türkçe kullanmaya teşvik eder.
+
+Virüslere geçit vermez: İnternet'ten gelen her dosyayı kontrolden geçirmekle, ya da virüs bulaşmış
+bilgisayarınızı temizlemekle zaman kaybetmezsiniz.
+
+Hızlı kurulur: 30 dakikada yüklenir. Tek kurulum işlemiyle bilgisayarınıza ofis yazılımı,
+İnternet gezgini, sohbet programı gibi gerekli bütün programlar da yüklenir.
+
+Kolay kullanılır: Grafik arayüzleri, menüleri, ikonları ile aklınıza ve güdülerinize hitap eder.
+Kullanmak için bilgisayar öğrenmek, ikinci bir dil bilmek ya da uzun eğitimlerden geçmek gerekmez.
+
+Her şey dahildir: Bir masaüstü kullanıcısının gereksinim duyacağı her türlü yazılım Kurulum
+CD'si içinde mevcuttur. İnternet araçları, ofis paketi, her türlü resim,
+müzik, film için oynatıcı ve düzenleyiciler, oyunlar, aklınıza ne gelirse...
+
+Özelleştirilebilir: Sistemi, kendi beğeninize göre özgürce değiştirebilirsiniz. Hem görünüş, hem
+de davranış açısından. Tek sınır, hayal gücünüzdür.
+
+Şeffaftır: Kaynak kodlarını kendi ihtiyaçlarınıza göre değiştirebilir, kendi dağıtımınızı
+üretebilirsiniz. Ne yaptığını ve ne yapmadığını kaynak koduna bakarak
+bilirsiniz.
+
+Çok dil bilir: Ayrı ayrı CD'ler ile tekrar yükleme yapmadan, iki dokunuşla Türkçe'den
+İngilizce'ye dönüşür. Herhangi başka bir dilin desteğini eklemek de son derece
+kolaydır.
+
+Eğlencelidir: Kaptan Masaüstü, PiSi ve ÇOMAR ile bilgisayar kullanmanın keyfini, tam Türkçe
+desteği ile bilgisayarınızı kendi dilinizde kullanmanın kolaylığını
+yaşarsınız. 
+
    - Siz de katılın
+
+Eğer sürekli kendinize "ben de yardım etmek istiyorum" diyorsanız bununla beraber nereden
+başlayacağınızı bilmiyorsanız Pardus size fırsat tanıyor. İşinin bir kısmı da yeni gelenleri projeye
+ilgi alanlarına ve becerilerine göre adapte etmek olan imece takımı size yardım edecektir.
+İmece projesinde, yerelleştirme çalışmaları, belgeleme çalışmaları, uygulama ve sürüm testleri,
+raporlama, kullanıcı grafik arayüzlerinin test edilmesi ve değerlendirilmesi, yazılım geliştirme,
+web sayfalarının ve belgelerin uluslararasılaştırılması, projenin doğru şekilde
+tanıtılması ve yeni insanlara ulaşmak gibi proje ihtiyaçlarına cevap vermek üzere çalışan
+insanları bulunduran bir takımdır.
+
+Bu takımın işi değerli katkınızı ihtiyaç duyulan noktalara kanalize ederek
+projeye gelen katkı kalitesini arttırmak ve belirli bir seviyenin altına inmemesini sağlamaya
+çalışmaktır. Daha fazla bilgi için <a
+href=http://imece.pardus.org.tr>imece</a> web sayfasını ziyaret edebilirsiniz.
+
    - Geribildirimde bulunmak
+
+Pardus'la ilgili hata önerilerinizi iletmek için <a
+href=http://bugs.pardus.org.t>Pardus hata bildirim sistemi'ni</a>
+kullanabilirsiniz. Bir sorunu raporlamak, yeni bir paket önerisi yapmak, 
+yeni sürümde bir özelliği talep etmek gibi konularda vereceğiniz desteğe
+şimdiden teşekkür ederiz.
+
+
 2. Temel özellikler
    - Kolay kullanımlı masaüstü 
    - Windows ile iletişim ve uyum
