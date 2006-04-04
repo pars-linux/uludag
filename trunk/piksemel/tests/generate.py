@@ -41,7 +41,16 @@ b.appendData("hede")
 doc.firstChild().appendData("fii")
 assert(doc.toString() == "<lala><nanik/>fiilalahede<lolo/><iki/></lala>")
 
-# insert node test
+# prepend test
+
+doc = iks.newDocument("lala")
+a = doc.insertTag("foo")
+a = a.prependTag("a")
+a = a.prependTag("b")
+a.appendTag("c")
+assert(doc.toString() == "<lala><b/><c/><a/><foo/></lala>")
+
+# insertNode test
 
 doc = iks.newDocument("a")
 b = iks.newDocument("b")
@@ -50,7 +59,7 @@ b = doc.insertNode(b)
 b.setAttribute("lal", "foofff")
 assert(doc.toString() == '<a><b lal="foofff"/></a>')
 
-# now with append
+# now with append, prepend and insertNode
 
 doc = iks.newDocument("test")
 

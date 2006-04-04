@@ -1160,6 +1160,28 @@ iks_insert_sibling (iks *x, const char *name)
 }
 
 iks *
+iks_prepend(iks *x, const char *name)
+{
+	iks *y;
+
+	if (!x) return NULL;
+	y = iks_new_within(name, x->s);
+	if (!y) return NULL;
+
+	if (x->prev) {
+		x->prev->next = y;
+	} else {
+		IKS_TAG_CHILDREN(x->parent) = y;
+	}
+	y->prev = x->prev;
+	x->prev = y;
+	y->parent = x->parent;
+	y->next = x;
+
+	return y;
+}
+
+iks *
 iks_insert_cdata (iks *x, const char *data, size_t len)
 {
 	iks *y;
