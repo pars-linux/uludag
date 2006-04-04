@@ -1145,16 +1145,18 @@ iks_insert_sibling (iks *x, const char *name)
     if (!x) return NULL;
     y = iks_new_within(name, x->s);
     if (!y) return NULL;
-    
-    if (x->next) x->next->prev = y;
-    y->next = x->next;
-    x->next = y;
-    y->parent = x->parent;
-    y->prev = x;
-    if (IKS_TAG_LAST_CHILD(x->parent) == x)
-        IKS_TAG_LAST_CHILD(x->parent) = y;
 
-    return y;
+	if (x->next) {
+		x->next->prev = y;
+	} else {
+		IKS_TAG_LAST_CHILD(x->parent) = y;
+	}
+	y->next = x->next;
+	x->next = y;
+	y->parent = x->parent;
+	y->prev = x;
+
+	return y;
 }
 
 iks *
@@ -1195,13 +1197,15 @@ iks_append_cdata(iks *x, const char *data, size_t len)
 	if (!IKS_CDATA_CDATA (y)) return NULL;
 	IKS_CDATA_LEN (y) = len;
 
-	if (x->next) x->next->prev = y;
+	if (x->next) {
+		x->next->prev = y;
+	} else {
+		IKS_TAG_LAST_CHILD(x->parent) = y;
+	}
 	y->next = x->next;
 	x->next = y;
 	y->parent = x->parent;
 	y->prev = x;
-	if (IKS_TAG_LAST_CHILD(x->parent) == x)
-		IKS_TAG_LAST_CHILD(x->parent) = y;
 
 	return y;
 }
