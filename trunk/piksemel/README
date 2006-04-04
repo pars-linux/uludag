@@ -120,7 +120,9 @@ Returns the next node. If this is the last sibling, returns None.
 
 * nextTag(tagname=None)
 
-Returns the next tag node.
+Returns the next tag node. If optional tagname is given, returns the
+next sibling tag node with the given name. Returns None if this is
+the last such sibling.
 
 * previous()
 
@@ -128,8 +130,9 @@ Returns the previous node. If this is the first sibling, returns None.
 
 * previousTag(tagname=None)
 
-
-
+Returns the previous tag node. If optional tagname is given, returns
+the previous sibling tag node with the given name. Returns None if
+this is the first such sibling.
 
 * insertTag(tagname)                   !!!!!!!!!!!!!!1
 * insertData(data)
