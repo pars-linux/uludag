@@ -1,0 +1,29 @@
+
+1. Welcome to Pardus
+   - Why Pardus?
+   - Features 
+   - Supporting Pardus
+   - We need your feedback
+2. Basic Features
+   - Easy to use desktop
+   - Integration with Windows environment
+   - Java support
+   - Games and entertainment
+   - Network services
+3. Installation requirements
+   - Hard disk
+   - CPU 
+   - Hardware
+   - Memory
+3. What's new in Pardus 1.1?
+   - Pardus firewall
+   - Advanced package management system 
+   - New package installer
+   - Advances in YALI
+   - Improved hardware detection
+   - More than 1500 bugs spotted 
+   - New 2.6.16 kernel
+   - New icon sets
+   - New tools (xorgconf, ..)
+   - Other package updates (xorg, gcc, ..)
+
