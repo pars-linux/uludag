@@ -92,6 +92,7 @@ class CustomEventListener(DOM.EventListener):
 			self.parent.domNodesToProcess.append(name)
 		else:
 		    self.parent.domNodesToProcess.remove(name)
+                self.parent.updateButtons()
             elif target == "A":
                 link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
                 KRun.runURL(KURL(link),"text/html",False,False);
@@ -101,7 +102,8 @@ class CustomEventListener(DOM.EventListener):
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent, "PiSiX")
-
+        self.parent = parent
+        
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
         self.command.initDatabase()
@@ -258,6 +260,7 @@ class MainApplicationWidget(QWidget):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateCheckboxes(self):
+        self.htmlPart.view().setUpdatesEnabled(False)
 	if len(self.domNodesToProcess):
 	    document = self.htmlPart.document()
 	    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
@@ -265,10 +268,18 @@ class MainApplicationWidget(QWidget):
 		element = DOM.HTMLInputElement(nodeList.item(i))
 		if element.name().string() in self.domNodesToProcess:
 		    element.click()
+        self.htmlPart.view().setUpdatesEnabled(True)
 		    		    
     def updateView(self,item):
         self.createHTML(self.componentDict[item])
 
+    def updateButtons(self):
+        if len(self.domNodesToProcess):
+            self.parent.operateAction.setEnabled(True)
+        else:
+            self.parent.operateAction.setEnabled(False)
+            
+            
     def check(self):
         appsToProcess = []
         document = self.htmlPart.document()
