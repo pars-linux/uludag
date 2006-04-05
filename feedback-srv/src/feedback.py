@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2005, Bahadır Kandemir
+# Copyright (C) 2005, 2006 TÜBİTAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -15,7 +15,7 @@ from mysql import mysql
 
 import time
 
-def index(req, exp='0', purpose='0', use_where='0', \
+def index(req, exp='0', purpose='0', usage='0', \
           question='0', opinion='', email='', email_announce='F'):
     # DB connection
     sql = mysql(site_config['db_host'], \
@@ -28,7 +28,7 @@ def index(req, exp='0', purpose='0', use_where='0', \
             'submitdate': time.strftime('%Y-%m-%d %H:%M'),
             'exp': exp,
             'purpose': purpose,
-            'use_where': use_where,
+            'use_where': usage,
             'question': question,
             'opinion': opinion,
             'email': email,
