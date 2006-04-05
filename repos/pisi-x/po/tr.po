@@ -81,7 +81,7 @@ msgstr ""
 
 #: src/pisix.py:249
 msgid "N\\A"
-msgstr ""
+msgstr "N\\A"
 
 #: src/pisix.py:324
 msgid ""
@@ -164,7 +164,7 @@ msgstr "çıkartılan"
 
 #: src/ProgressDialog.py:59
 msgid "Progress"
-msgstr ""
+msgstr "İşlem"
 
 #: src/ProgressDialog.py:61
 msgid "<b>Downloaded/Total:</b> Unknown"
@@ -229,17 +229,16 @@ msgid "PiSi X Help"
 msgstr "PiSi X Yardım"
 
 #: src/BalloonMessage.py:36
-#, fuzzy
 msgid "Show Updates"
-msgstr "Güncellemeleri göster"
+msgstr "Güncellemeleri Göster"
 
 #: src/BalloonMessage.py:37
 msgid "Ignore"
-msgstr ""
+msgstr "Yoksay"
 
 #: src/BalloonMessage.py:142
 msgid "There are new updates available!"
-msgstr ""
+msgstr "Yeni güncellemeler var!"
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:160
 msgid "Repository Name"
@@ -308,8 +307,7 @@ msgstr "Tüm Depoları &Güncelle"
 
 #: src/PreferencesDialog.py:174
 msgid "Click here to update all repositories so that you can use  "
-msgstr ""
-"Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
+msgstr "Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
 
 #: src/PreferencesDialog.py:175
 msgid "&Repositories"
@@ -332,6 +330,7 @@ msgid ""
 "If checked, then updates for Pardus will be automatically checked and you "
 "will be notified"
 msgstr ""
+"Eğer tıklanmış ise, gerekli güncellemeler otomatik olarak kontrol edilecek ve bilgisi aktarılacak"
 
 #: src/PreferencesDialog.py:180
 msgid "&General Settings"
@@ -373,218 +372,8 @@ msgstr "2000"
 
 #: src/PreferencesDialog.py:190
 msgid "&Use hard disk cache for downloaded software"
-msgstr ""
+msgstr "İ&ndirilen yazılımlar için sabit disk önbelleğini kullan"
 
 #: src/PreferencesDialog.py:192
 msgid "C&ache"
 msgstr "&Önbellek"
-
-#~ msgid "Configure..."
-#~ msgstr "Yapılandır..."
-
-#~ msgid "Show installed packages"
-#~ msgstr "Yüklü paketleri göster"
-
-#~ msgid "Show new packages"
-#~ msgstr "Yeni paketleri göster"
-
-#~ msgid "Install Package(s)"
-#~ msgstr "Paket(ler)i Yükle"
-
-#~ msgid "Upgrade Package(s)"
-#~ msgstr "Paket(ler)i Güncelle"
-
-#~ msgid "Author of PyKDEeXtensions"
-#~ msgstr "PyKDEeXtensions'ın yazarı"
-
-#~ msgid "Program Version :"
-#~ msgstr "Programın Sürümü: "
-
-#~ msgid "Program Size :"
-#~ msgstr "Programın Büyüklüğü: "
-
-#~ msgid "Less than one kilobyte"
-#~ msgstr "Bir kilobayttan az"
-
-#~ msgid "Selected %1 packages, total size %2"
-#~ msgstr "%1 paket seçili, toplam boyut %2"
-
-#~ msgid "No package selected"
-#~ msgstr "Hiçbir paket seçili değil"
-
-#~ msgid "Install package(s)"
-#~ msgstr "Paket(ler)i yükle"
-
-#~ msgid "Add or Remove Programs"
-#~ msgstr "Program Ekle ve Kaldır"
-
-#~ msgid "Fast Updates (only security)"
-#~ msgstr "Hızlı Güncelleme (sadece güvenlik güncellemeleri)"
-
-#~ msgid "Custom Updates"
-#~ msgstr "Özel güncelleme"
-
-#~ msgid "Total size: %s"
-#~ msgstr "Toplam boyut: %s"
-
-#~ msgid "Package"
-#~ msgstr "Paket"
-
-#~ msgid "Version"
-#~ msgstr "Sürüm"
-
-#~ msgid "PiSi Graphical User Interface"
-#~ msgstr "PiSi Grafiksel Kullanıcı Arayüzü"
-
-#~ msgid "search package"
-#~ msgstr "paket ara"
-
-#~ msgid "&Search"
-#~ msgstr "&Ara"
-
-#~ msgid "search button"
-#~ msgstr "arama tuşu"
-
-#~ msgid "&Clear"
-#~ msgstr "&Temizle"
-
-#~ msgid "Clear search results"
-#~ msgstr "Arama sonuçlarını temizle"
-
-#~ msgid "operation mode"
-#~ msgstr "İşlem biçimi"
-
-#~ msgid "Operation mode selector"
-#~ msgstr "İşlem biçimini seçer"
-
-#~ msgid "Show &not-Installed packages"
-#~ msgstr "Yüklü &olmayan paketleri göster"
-
-#~ msgid "Only show packages which are going to be installed"
-#~ msgstr "Sadece yüklenecek paketleri göster"
-
-#~ msgid "Show available &updates"
-#~ msgstr "Hazır &güncellemeleri göster"
-
-#~ msgid "Only show packages that can be updated"
-#~ msgstr "Sadece güncellenebilecek paketleri göster"
-
-#~ msgid "Only show installed packages in your compter"
-#~ msgstr "Sadece &yüklü paketleri göster"
-
-#~ msgid "Icon"
-#~ msgstr "Simge"
-
-#~ msgid "<p align=\"left\">Program Name</p>"
-#~ msgstr "<p align=\"left\">Program İsmi</p>"
-
-#~ msgid ""
-#~ "Program Name: Foo\n"
-#~ "Program Version: Bar"
-#~ msgstr ""
-#~ "Program Adı: Foo\n"
-#~ "Program Sürümü: Bar"
-
-#~ msgid ""
-#~ "<center>\n"
-#~ "<h3>PiSi KGA 1.0.1</h3>\n"
-#~ "<br><br>\n"
-#~ "<h3>Pardus Linux v1.0</h3>\n"
-#~ "</center>"
-#~ msgstr ""
-#~ "<center>\n"
-#~ "<h3>PiSi KGA 1.0.1</h3>\n"
-#~ "<br><br>\n"
-#~ "<h3>Pardus Linux v1.0</h3>\n"
-#~ "</center>"
-
-#~ msgid "&Update System"
-#~ msgstr "Sistemi &Güncelle"
-
-#~ msgid "Click on this button if you want to update your system"
-#~ msgstr "Sisteminizi güncellemek istiyorsanız bu düğmeye tıklayın"
-
-#~ msgid "Settings..."
-#~ msgstr "Ayarlar..."
-
-#~ msgid ""
-#~ "Click here to add, modify or delete a repository, <br>i.e the server "
-#~ "locations where new software can be fetched."
-#~ msgstr ""
-#~ "Buraya tıklayarak halihazırdaki depoları değiştirebilir ya da yeni depo "
-#~ "ekleyebilirsiniz"
-
-#~ msgid "Show more information >>"
-#~ msgstr "Daha fazla bilgi göster >>"
-
-#~ msgid "Show less information <<"
-#~ msgstr "Daha az bilgi göster <<"
-
-#~ msgid "PiSi KGA"
-#~ msgstr "Program Ekle Kaldır"
-
-#~ msgid "Info Button"
-#~ msgstr "Bilgi Düğmesi"
-
-#~ msgid "All packages are successfully installed!"
-#~ msgstr "Tüm paketler başarıyla yüklendi!"
-
-#~ msgid "Show &More Information >>"
-#~ msgstr "&Daha fazla bilgi göster >>"
-
-#~ msgid "Welcome to PISI update wizard"
-#~ msgstr "PiSi güncelleme sihirbazına hoşgeldiniz"
-
-#~ msgid ""
-#~ "We suggest you to keep your system updated to increase your privacy. "
-#~ "Please\n"
-#~ "choose your update methodology below."
-#~ msgstr ""
-#~ "Sisteminizi sürekli olarak güncel tutmanızı öneririz. Lütfen aşağıdan\n"
-#~ "bir güncelleme yöntemi seçin."
-
-#~ msgid "Fast update (only security updates)"
-#~ msgstr "Hızlı güncelle (sadece güvenlik güncellemeleri)"
-
-#~ msgid ""
-#~ "With fast update, only very essential and critial updates are \n"
-#~ "downloaded and installed to your computer. Choose this method \n"
-#~ "if you don't have much time, but want to keep the system secure."
-#~ msgstr ""
-#~ "Hızlı güncelleme ile sadece en önemli ve gerekli \n"
-#~ "güncellemeler yapılır ve indirilen paketler sisteme\n"
-#~ "kurulur. Eğer az zamanınız ve yavaş internetiniz\n"
-#~ "varsa ve bu aynı zamanda sistemi güncel tutmak istiyorsanız\n"
-#~ "bu seçeneği tıklayın."
-
-#~ msgid ""
-#~ "In this method, you can select which packages to update, \n"
-#~ "including packages with security updates. Click on \n"
-#~ "\"Custom Update\" button if you want to make a fine selection."
-#~ msgstr ""
-#~ "Bu yöntemde, güvenlik yamaları da dahil olacak \n"
-#~ "şekilde hangi paketlerin güncelleneceğini \n"
-#~ "belirtebilirsiniz. Seçim yapmak için lütfen \n"
-#~ "\"Özel Güncelleme\" düğmesine tıklayın."
-
-#~ msgid "PiSi Update Wizard"
-#~ msgstr "PiSi Güncelleme Sihirbazı"
-
-#~ msgid "Package name"
-#~ msgstr "Paket adı"
-
-#~ msgid "New Version"
-#~ msgstr "Yeni Sürüm"
-
-#~ msgid "Old version"
-#~ msgstr "Eski sürüm"
-
-#~ msgid "Total install size:"
-#~ msgstr "Toplam kurulum boyu:"
-
-#~ msgid ""
-#~ "Please choose the packages to be updated and click on \"Next\" button. \n"
-#~ "We strongly recommend you to update all the packages shown below."
-#~ msgstr ""
-#~ "Lütfen güncellenecek paketleri seçin ve \"İleri\" düğmesine tıklayın. \n"
-#~ "Aşağıda isimleri yazılı olan tüm paketleri güncellemenizi öneririz."
