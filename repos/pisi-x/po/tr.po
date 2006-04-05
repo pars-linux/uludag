@@ -50,41 +50,36 @@ msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
 #: src/pisix.py:123
-#, fuzzy
 msgid "Configure..."
-msgstr "ayarlanan"
+msgstr "Yapılandır..."
 
 #: src/pisix.py:124 src/pisix.py:172
-#, fuzzy
 msgid "Remove Package(s)"
-msgstr "Paket(ler)i kaldır"
+msgstr "Paket(ler)i Kaldır"
 
 #: src/pisix.py:136
-#, fuzzy
 msgid "Show installed packages"
-msgstr "&Yüklü paketleri göster"
+msgstr "Yüklü paketleri göster"
 
 #: src/pisix.py:137
-#, fuzzy
 msgid "Show new packages"
-msgstr "&Yüklü paketleri göster"
+msgstr "Yeni paketleri göster"
 
 #: src/pisix.py:138
 msgid "Show upgrades"
-msgstr ""
+msgstr "Güncellemeleri göster"
 
 #: src/pisix.py:140
 msgid "Components"
-msgstr ""
+msgstr "Bileşenler"
 
 #: src/pisix.py:175
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Yükle"
 
 #: src/pisix.py:178
-#, fuzzy
 msgid "Upgrade Package(s)"
-msgstr "Paket(ler)i güncelle"
+msgstr "Paket(ler)i Güncelle"
 
 #: src/pisix.py:190
 msgid ""
@@ -137,14 +132,12 @@ msgid "<b>Preparing PiSi...</b>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
 #: src/pisix.py:401
-#, fuzzy
 msgid "<b>Speed:</b> N/A"
-msgstr "<b>Hız:</b> %1 %2"
+msgstr "<b>Hız:</b> ..."
 
 #: src/pisix.py:402
-#, fuzzy
 msgid "<b>Downloaded/Total:</b> N/A"
-msgstr "<b>İndirilen/Toplam:</b> %1/%2"
+msgstr "<b>İndirilen/Toplam:</b> ..."
 
 #: src/pisix.py:406
 msgid "<b>Speed:</b> %1 %2"
@@ -155,9 +148,8 @@ msgid "<b>Downloaded/Total:</b> %1/%2"
 msgstr "<b>İndirilen/Toplam:</b> %1/%2"
 
 #: src/pisix.py:417
-#, fuzzy
 msgid "updating repository"
-msgstr "Depoyu Değiştir"
+msgstr "depo güncelleniyor"
 
 #: src/pisix.py:419
 msgid "Now %1 <b>%2</b> (%3 of %4)"
@@ -168,9 +160,8 @@ msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
 #: src/pisix.py:512
-#, fuzzy
 msgid "Pisi X is already running!"
-msgstr "PiSi KGA başka bir yerde çalışıyor."
+msgstr "PiSi başka bir yerde çalışıyor."
 
 #: src/PisiUi.py:79
 msgid "downloading"
@@ -247,9 +238,8 @@ msgid "Pisi Question"
 msgstr "PiSi Sorusu"
 
 #: src/HelpDialog.py:23
-#, fuzzy
 msgid "PiSi X Help"
-msgstr "PiSi KGA Yardım"
+msgstr "PiSi X Yardım"
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:160
 msgid "Repository Name"
