@@ -15,16 +15,28 @@ function tV(el, src) {
     src.innerHTML = v ? str.replace(/up/, "down") : str.replace(/down/, "up");
 }
 
+timer = 0;
+
 function init () {
     $('p_vendor').onkeyup = function () {
         get_vendorlist();
     }
+
     $('p_vendor').onblur = function () {
-     var dropmenu = new Element.ClassNames('dropmen');
-     dropmenu.set("dropmenu");
+    timer = setTimeout('bilmemne()', 1000);
+    }
+    $('p_vendor').onmouseover = function () {
+     timer = clearTimeout(timer);
+    }
+    $('dropmen').onmouseout = function () {
+     timer = setTimeout('bilmemne()', 1000);
     }
 }
 
+function bilmemne() {
+    var dropmenu = new Element.ClassNames('dropmen');
+    dropmenu.set('dropmenu');
+}
 function get_vendorlist() {
     var linke='vendorpref='+$('p_vendor').value;
     var url ='check.php';
