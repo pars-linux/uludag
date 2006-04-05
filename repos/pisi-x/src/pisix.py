@@ -119,14 +119,10 @@ class MainApplicationWidget(QWidget):
         self.possibleError = False
 	
         self.layout = QGridLayout(self)
-        self.buttonLayout = QHBox(self)
         self.leftLayout = QVBox(self)
         self.htmlPart = KHTMLPart(self)
-        self.comboBox = QComboBox(self.leftLayout)
         self.listView = KListView(self.leftLayout)
-        self.configButton = KPushButton(i18n("Configure..."),self.buttonLayout)
-        self.installRemoveButton = KPushButton(i18n("Remove Package(s)"),self.buttonLayout)
-        
+                
        # Read javascript
         js = file(str(locate("data","pisix/animation.js"))).read()
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
@@ -137,28 +133,18 @@ class MainApplicationWidget(QWidget):
         cssFile = file(str(locate("data","pisix/layout.css"))).read()
         self.css = cssFile
                 
-        self.comboBox.insertItem(i18n("Show installed packages"))
-        self.comboBox.insertItem(i18n("Show new packages"))
-        self.comboBox.insertItem(i18n("Show upgrades"))
-
         self.listView.addColumn(i18n("Components"))
         
         self.leftLayout.setMargin(2)
-        self.buttonLayout.setMargin(2)
         self.leftLayout.setSpacing(5)
-        self.buttonLayout.setSpacing(5)
-        
+                
         self.layout.addWidget(self.leftLayout,1,1)
         self.layout.addWidget(self.htmlPart.view(),1,2)
-        self.layout.addWidget(self.buttonLayout,2,2)
         self.layout.setColStretch(1,2)
         self.layout.setColStretch(2,6)
         self.resize(700,500)
 
-        self.connect(self.configButton,SIGNAL("clicked()"),self.showPreferences)
-        self.connect(self.installRemoveButton,SIGNAL("clicked()"),self.check)
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
-        self.connect(self.comboBox,SIGNAL("activated(int)"),self.updateListing)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
 	self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         
@@ -184,18 +170,14 @@ class MainApplicationWidget(QWidget):
 		KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
     def updateListing(self):
+        pass
 	self.domNodesToProcess = []
         index = self.comboBox.currentItem()
         if index == 0:
-            self.installRemoveButton.setText(i18n("Remove Package(s)"))
             self.createComponentList(self.command.listPackages())
         elif index == 1:
-            self.installRemoveButton.setText(i18n("Install Package(s)"))
             self.createComponentList(self.command.listNewPackages())
-        else:
-            self.installRemoveButton.setText(i18n("Upgrade Package(s)"))
-            self.createComponentList(self.command.listUpgradable())
-
+        
         self.listView.setSelected(self.listView.firstChild(),True)
                 		        
     def createHTML(self,packages):
@@ -286,9 +268,10 @@ class MainApplicationWidget(QWidget):
 		    element.click()
 		    		    
     def updateView(self,item):
-	self.createHTML(self.componentDict[item])
+        self.createHTML(self.componentDict[item])
 
     def check(self):
+        pass
         appsToProcess = []
         document = self.htmlPart.document()
         nodeList = document.getElementsByTagName(DOM.DOMString("input"))
@@ -308,7 +291,7 @@ class MainApplicationWidget(QWidget):
             self.command.install(appsToProcess)
         else:
             self.command.upgrade(appsToProcess)
-        
+
     def createComponentList(self,packages):
          # Components
          self.listView.clear()
@@ -316,15 +299,18 @@ class MainApplicationWidget(QWidget):
          componentNames.sort()
          components = [pisi.context.componentdb.get_component(x) for x in componentNames]
          self.componentDict = {}
-         
+
          for component in components:
              componentPacks = []
-             for package in packages:
-                 if package in component.packages:
-                     componentPacks.append(package)
-                     packages.remove(package)
-             
-             if len(componentPacks):
+             if component.name.startswith("applications"):
+                 componentPacks = component.packages
+             elif component.name.find('.') == -1:
+                 # Find child components and append their packages
+                 for iterator in componentNames:
+                     if iterator.startswith(component.name):
+                         componentPacks += pisi.context.componentdb.get_component(iterator).packages
+
+             if len(componentPacks) and component.localName:
                  item = KListViewItem(self.listView)
                  if component.localName:
                      item.setText(0,u"%s" % component.localName)
@@ -332,7 +318,7 @@ class MainApplicationWidget(QWidget):
                      item.setText(0,u"%s" % component.name)
                  item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
                  self.componentDict[item] = componentPacks
-                 
+                     
         
     def customEvent(self, event):
         eventType = event.type()
@@ -458,52 +444,44 @@ class MainApplicationWidget(QWidget):
         self.config.setGroup("General")
         return self.config.readBoolEntry("HideLibraries")                                    
 
-class MainApplication(QDialog):
+class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
-	global mainwidget
-
-	QDialog.__init__(self,parent,name)
+        KMainWindow.__init__(self,parent,name)
 	self.setCaption("PiSi X")
 	self.aboutus = KAboutApplication(self)
         self.helpWidget = None
+        self.mainwidget = MainApplicationWidget(self)
+        self.setCentralWidget(self.mainwidget)
 
-        mainwidget = MainApplicationWidget(self)
-        toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
-        toplayout.addWidget(mainwidget)
+        self.setupMenu()
+        self.setupToolbars()
+        self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
+
+
+    def setupMenu(self):
+        fileMenu = QPopupMenu(self)
+        settingsMenu = QPopupMenu(self)
+        
+        self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
+        self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
+        
+        self.quitAction.plug(fileMenu)
+        self.settingsAction.plug(settingsMenu)
+        
+        self.menuBar().insertItem(i18n ("&File"), fileMenu,0,0)
+        self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
+
+    def setupToolbars(self):
+        self.settingsAction.plug(self.toolBar())
+        self.quitAction.plug(self.toolBar())
         
     def showHelp(self):
-        global mainwidget
         if not self.helpWidget:
-            self.helpWidget = HelpDialog.HelpDialog(mainwidget)
+            self.helpWidget = HelpDialog.HelpDialog(self)
             # FIXME make non modal
             self.helpWidget.setModal(True)
         self.helpWidget.show()
 
-    def exec_loop(self):
-	# Load configuration here
-        self.__loadOptions()
-        QDialog.exec_loop(self)
-        
-        # Save configuration here
-        self.__saveOptions()
-
-    def __loadOptions(self):
-        global kapp
-        config = kapp.config()
-        config.setGroup("General")
-        size = config.readSizeEntry("Geometry")
-        if size.isEmpty():
-            self.resize(700,600)
-        else:
-            self.resize(size)
-
-    def __saveOptions(self):
-        global kapp
-        config = kapp.config()
-        config.setGroup("General")
-        config.writeEntry("Geometry", self.size())
-        config.sync()
-        
     def aboutData(self):
         # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
@@ -531,9 +509,10 @@ def main():
         packageToInstall = None
 
     myapp = MainApplication()
+    myapp.show()
     kapp.setMainWidget(myapp)
         
-    sys.exit(myapp.exec_loop())
+    sys.exit(kapp.exec_loop())
     
 if __name__ == "__main__":
     main()
