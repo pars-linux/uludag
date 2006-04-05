@@ -9,6 +9,6 @@ CREATE TABLE `feedback` (
   `opinion` text,
   `email` varchar(60) default '',
   `email_announce` char(1) default 'F',
-  `hardware` text
+  `hardware` text,
   PRIMARY KEY  (`no`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) TYPE=MyISAM AUTO_INCREMENT=1;
