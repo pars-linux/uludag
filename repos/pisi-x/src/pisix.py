@@ -142,7 +142,6 @@ class MainApplicationWidget(QWidget):
         self.layout.addWidget(self.htmlPart.view(),1,2)
         self.layout.setColStretch(1,2)
         self.layout.setColStretch(2,6)
-        self.resize(700,500)
 
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)

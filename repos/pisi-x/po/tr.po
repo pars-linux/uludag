@@ -34,9 +34,8 @@ msgid "GUI Design & Usability"
 msgstr "Arayüz Tasarımı ve Kullanılabilirlik"
 
 #: src/pisix.py:64
-#, fuzzy
 msgid "Component/Category"
-msgstr "Ara, Bileşen/Sınıf"
+msgstr "Bileşen/Sınıf"
 
 #: src/pisix.py:65
 msgid "Python coding help"
@@ -47,9 +46,8 @@ msgid "Helping with PiSi API"
 msgstr "PiSi konusunda yardım"
 
 #: src/pisix.py:67
-#, fuzzy
 msgid "PiSi Authors"
-msgstr "Yazar"
+msgstr "PiSi Yazarları"
 
 #: src/pisix.py:67
 msgid "Authors of PiSi API"
@@ -138,9 +136,8 @@ msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
 #: src/pisix.py:462
-#, fuzzy
 msgid "Check for updates"
-msgstr "Özel güncelle"
+msgstr "Güncellemeleri kontrol et"
 
 #: src/pisix.py:493
 msgid "Package to install"
