@@ -10,17 +10,24 @@ def run(*cmd):
     else:
         return subprocess.call(cmd)
 
-def addRule(chain, protocol='', src='', dst='', sport='', dport=''):
+
+def addRule(id, chain='INPUT', protocol='', src='', dst='', sport='', dport='', jump='ACCEPT'):
     args = []
     if chain: args.append('-A %s' % chain)
     if protocol: args.append('-p %s' % protocol)
     if src: args.append('--source %s' % src)
     if dst: args.append('--destination %s' % dst)
-    if sport: args.append('--sport %s' % sport)
-    if dport: args.append('--dport %s' % dport)
+    if sport: args.append('--source-port %s' % sport)
+    if dport: args.append('--destination-port %s' % dport)
     
-    run('/sbin/iptables %s -j LOG --log-tcp-options --log-level 3' % ' '.join(args))
-    run('/sbin/iptables %s -j REJECT --reject-with tcp-reset' % ' '.join(args))
+    if jump in ['DROP', 'REJECT']:
+        run('/sbin/iptables %s -j LOG --log-tcp-options --log-level 3' % ' '.join(args))
+
+    if jump in ['ACCEPT', 'DROP']:
+        run('/sbin/iptables %s -j %s' % (' '.join(args), dump))
+    elif jump == 'REJECT':
+        run('/sbin/iptables %s -j REJECT --reject-with tcp-reset' % ' '.join(args))
+
 
 def cleanRules():
     run('/sbin/iptables -F')

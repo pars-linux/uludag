@@ -21,7 +21,7 @@ import kdedesigner
 # UI
 import firewall
 
-# IPTables
+# COMAR
 import comar
 
 def I18N_NOOP(str):
@@ -89,8 +89,15 @@ class MainApplication(programbase):
         self.num = 1
         self.comar = comar.Link()
         
-    def addRule(self, port, type='OUTPUT'):
-        self.comar.call_package('Net.Firewall.addRule', 'iptables', ['id', self.num, 'chain', type, 'protocol', 'tcp', 'dport', port])
+    def addRule(self, chain='OUTPUT', protocol='tcp', src='', dst='', sport='', dport='', jump='ACCEPT'):
+        self.comar.call_package('Net.Firewall.addRule', 'iptables', ['id', self.num,
+                                                                     'chain', chain,
+                                                                     'protocol', protocol,
+                                                                     'src', src,
+                                                                     'dst', dst,
+                                                                     'sport', sport,
+                                                                     'dport', dport,
+                                                                     'jump', jump])
         self.comar.read_cmd()
         self.num += 1
 
@@ -100,29 +107,32 @@ class MainApplication(programbase):
 
         # Outgoing
         if mainwidget.checkWFS.isChecked():
-            self.addRule(139)
+            self.addRule(dport=139, chain='OUTPUT', jump='REJECT')
             
         if mainwidget.checkMail.isChecked():
-            self.addRule(110)
-            self.addRule(25)
+            self.addRule(dport=110, chain='OUTPUT', jump='REJECT')
+            self.addRule(dport=25, chain='OUTPUT', jump='REJECT')
         
         if mainwidget.checkFTP.isChecked():
-            self.addRule(21)
+            self.addRule(dport=21, chain='OUTPUT', jump='REJECT')
             
         if mainwidget.checkRemote.isChecked():
-            self.addRule(22)
+            self.addRule(dport=22, chain='OUTPUT', jump='REJECT')
             
         if mainwidget.checkFS.isChecked():
-            self.addRule(10101)
+            self.addRule(dport=10101, chain='OUTPUT', jump='REJECT')
 
         # Incoming
         if mainwidget.listPorts.childCount() > 0:
             item = mainwidget.listPorts.firstChild()
             while item:
-                self.addRule(item.text(0), 'INPUT')
+                print 'a'
+                self.addRule(dport=item.text(0), chain='INPUT', jump='ACCEPT')
                 item = item.nextSibling()
+
+            # Except...
+            self.addRule(chain='INPUT', jump='REJECT')
                 
-            # TODO: Reject else...
 
     def __del__(self):
         pass
