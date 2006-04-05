@@ -17,7 +17,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="pisix",
-    version="1.1.0",
+    version="1.1.0_b1",
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
     url="http://www.uludag.org.tr/projeler/pisi/index.html",
