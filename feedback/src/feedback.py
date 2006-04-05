@@ -38,7 +38,7 @@ from goodbyedlg import GoodbyeDlg
 
 def AboutData():
     description = "Pardus Feedback Tool"
-    version = "1.0.1"
+    version = "1.0.2"
 
     about_data = KAboutData("feedback", "Pardus Feedback Tool", version, \
                             description, KAboutData.License_GPL,
@@ -56,8 +56,8 @@ def loadIconSet(name, group=KIcon.Desktop):
         return KGlobal.iconLoader().loadIconSet(name, group)
 
 class Form(KWizard):
-    def __init__(self, parent = None, name = None, modal = 0, fl = 0):
-        KWizard.__init__(self, parent, name, modal, fl)
+    def __init__(self, parent = None, name = None, modal = 0):
+        KWizard.__init__(self, parent, name, modal)
 
         self.resize(QSize(600,373).expandedTo(self.minimumSizeHint()))
         self.setCaption(i18n("Feedback Wizard"))
@@ -228,7 +228,7 @@ class thread_upload(QThread):
             params = urllib.urlencode(upload)
             f = urllib.urlopen(url_upload, params)
             s = f.read()
-            if s != '1\n':
+            if s != '1':
                 raise IOError, "ConnectionError"
         except:
             text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
@@ -251,7 +251,7 @@ def main():
         conf.read("/etc/feedback.conf")
         url_upload = conf.get("general", "url")
     except:
-        url_upload = "http://www.pardus.org.tr/feedback.py"
+        url_upload = "http://www.pardus.org.tr/feedback/feedback.py"
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)

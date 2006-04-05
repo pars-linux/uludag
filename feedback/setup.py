@@ -10,16 +10,14 @@
 #
 # Please read the COPYING file.
 #
-#
-# Authors:  Bahadır Kandemir <bahadir@pardus.org.tr>
 
 import kdedistutils
 
 kdedistutils.setup(
     name="feedback",
-    version="1.0.1",
+    version="1.0.2",
     author="Bahadır Kandemir",
-    author_email="bahadir@haftalik.net",
+    author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",

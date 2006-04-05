@@ -7,4 +7,4 @@ Comment[tr]=Pardus Geribildirim Aracı
 Icon=pardus.png
 Type=Application
 Exec=feedback
-Categories=QT;KDE
+Categories=QT;Network;KDE

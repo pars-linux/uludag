@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'hardwareinfodlg.ui'
 #
-# Created: Sal Oca 24 19:45:13 2006
-#      by: The PyQt User Interface Compiler (pyuic) snapshot-20051013
+# Created: Pzt Nis 3 10:21:35 2006
+#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060116
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -237,7 +237,7 @@ class HardwareInfoDlg(QWidget):
     def languageChange(self):
         self.setCaption(i18n("Feedback Wizard"))
         self.hardwareInfoBox.setText(i18n("&Do not send my computer's hardware information"))
-        self.hardwareInfoBox.setAccel(i18n("Alt+D"))
+        self.hardwareInfoBox.setAccel(QKeySequence(i18n("Alt+D")))
         self.stepLabel.setText(i18n("<b>Step 7 of 7</b>"))
         self.hardwareInfoLabel.setText(i18n("<h2>Computer information</h2>\n"
 "<p>\n"
