@@ -100,7 +100,7 @@
         $maWeFCK->Height = '500px';
         $maWeFCK->Width  = '100%';
         $maWeFCK->ToolbarCanCollapse = true;
-        
+
         if ($Value<>"") 
             $maWeFCK->Value = $Value;
         
@@ -163,6 +163,14 @@
         @session_register($key);
         return true;
     }
+
+    function maWeGet($Table, $Field="", $Value="") {
+        global $db;
+        $Field <> "" ? $Add = "WHERE $Field = '$Value'": $Add = "";
+        $sql = "SELECT * FROM {$db['DbPrefix']}$Table ".$Add;
+        return perform_sql($sql);
+    }
+
     /** Misc Functions END **/
 
 ?>

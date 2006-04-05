@@ -17,6 +17,7 @@ legend {
     padding-left: .5em;
     padding-right: .5em;
     border: 1px solid #d3d7cf;
+    margin-bottom:8px;
 }
 
 label {
@@ -29,7 +30,7 @@ input,button {
 }
 
 #loginbox {
-    margin-top:30px;
+    margin-top:5px;
 }
 
 .label {
@@ -42,4 +43,30 @@ input,button {
 
 .bebox {
     margin:10px;
+}
+
+.menu {
+    width:740px;
+    border: 1px solid #d3d7cf;
+    text-align:left;
+}
+
+a {
+    text-decoration:none;
+}
+
+a:visited {
+    color: blue;
+}
+
+.help {
+    font-family: Tahoma, Arial, Sans Serif;
+    font-size: 10px;
+    font-style: italic;
+    color: gray;
+}
+
+img {
+    border:0px;
+    vertical-align:middle;
 }

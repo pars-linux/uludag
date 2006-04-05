@@ -38,7 +38,14 @@
     * Check and start or die.
     */
     if ($Control){
-        maWeSetSmartyVar("FCK",maWeShowFCK());
+        $Pages = maWeGet('Pages');
+        
+        maWeSetSmartyVar("PageList", maWeGet('Pages'));
+        
+        if (is_numeric($G['edit'])) $Value = maWeGet('Pages','ID',$G['edit']);
+        maWeSetSmartyVar("PageTitle",$Value[0]['PageTitle']);
+        maWeSetSmartyVar("FCK",maWeShowFCK($Value[0]['PageBody']));
+        
         maWeShowSmarty('admin.mt');
     }
     else

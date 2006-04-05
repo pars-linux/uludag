@@ -1,4 +1,5 @@
 {include file="head.mt"}
+<div id="loginbox">
     {if $error}{assign var="errorstyle" value="style='border: 1px solid #FF0000';"}{/if}
     <form action="login.php" method="post">
     <fieldset id="loginFieldSet" style="width: 300px;">
