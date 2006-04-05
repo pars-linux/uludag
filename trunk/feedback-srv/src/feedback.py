@@ -13,33 +13,27 @@
 from config import site_config
 from mysql import mysql
 
-import cgi
 import time
-import os
 
-# DB connection
-sql = mysql(site_config['db_host'], \
-            site_config['db_name'], \
-            site_config['db_user'], \
-            site_config['db_pass'])
+def index(req, exp='0', purpose='0', use_where='0', \
+          question='0', opinion='', email='', email_announce='F'):
+    # DB connection
+    sql = mysql(site_config['db_host'], \
+                site_config['db_name'], \
+                site_config['db_user'], \
+                site_config['db_pass'])
 
-# 
+    data = {
+            'ip':  req.get_remote_host(),
+            'submitdate': time.strftime('%Y-%m-%d %H:%M'),
+            'exp': exp,
+            'purpose': purpose,
+            'use_where': use_where,
+            'question': question,
+            'opinion': opinion,
+            'email': email,
+            'email_announce': email_announce
+            }
+    sql.insert('feedback', data)
 
-form = cgi.FieldStorage()
-
-data = {
-        'ip':  os.environ['REMOTE_ADDR'],
-        'submitdate': time.strftime('%Y-%m-%d %H:%M'),
-        'exp': form.getvalue('exp', '0'),
-        'purpose': form.getvalue('purpose', '0'),
-        'use_where': form.getvalue('usage', '0'),
-        'question': form.getvalue('question', '0'),
-        'opinion': form.getvalue('opinion', ''),
-        'email': form.getvalue('email', ''),
-        'email_announce': form.getvalue('email_announce', 'F')
-        }
-sql.insert('feedback', data)
-
-print "Content-type: text/html"
-print
-print "1"
+    return "1"
