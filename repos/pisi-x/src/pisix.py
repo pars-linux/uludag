@@ -271,7 +271,6 @@ class MainApplicationWidget(QWidget):
         self.createHTML(self.componentDict[item])
 
     def check(self):
-        pass
         appsToProcess = []
         document = self.htmlPart.document()
         nodeList = document.getElementsByTagName(DOM.DOMString("input"))
@@ -284,14 +283,11 @@ class MainApplicationWidget(QWidget):
                 appsToProcess.append(str(element.getAttribute(DOM.DOMString("name")).string()))
         
         self.progressDialog.show()
-        index = self.comboBox.currentItem()
-        if index == 0:
+        if self.operation == "remove":
             self.command.remove(appsToProcess)
-        elif index == 1:
-            self.command.install(appsToProcess)
         else:
-            self.command.upgrade(appsToProcess)
-
+            self.command.install(appsToProcess)
+        
     def createComponentList(self,packages):
          # Components
          self.listView.clear()
@@ -454,7 +450,6 @@ class MainApplication(KMainWindow):
         self.setCentralWidget(self.mainwidget)
 
         self.setupMenu()
-        self.setupToolbars()
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
 
 
@@ -464,17 +459,17 @@ class MainApplication(KMainWindow):
         
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
-        
+        self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"remove_packages")
+        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.test,self.actionCollection(),"upgrade_packages")
+        self.operateAction.setEnabled(False)
+
+        self.operateAction.plug(fileMenu)
         self.quitAction.plug(fileMenu)
         self.settingsAction.plug(settingsMenu)
         
         self.menuBar().insertItem(i18n ("&File"), fileMenu,0,0)
         self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
 
-    def setupToolbars(self):
-        self.settingsAction.plug(self.toolBar())
-        self.quitAction.plug(self.toolBar())
-        
     def showHelp(self):
         if not self.helpWidget:
             self.helpWidget = HelpDialog.HelpDialog(self)
@@ -482,6 +477,9 @@ class MainApplication(KMainWindow):
             self.helpWidget.setModal(True)
         self.helpWidget.show()
 
+    def test(self):
+        print 'LALA'
+        
     def aboutData(self):
         # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
