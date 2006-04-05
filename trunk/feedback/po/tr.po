@@ -87,7 +87,7 @@ msgstr "Güle güle!"
 
 #: src/feedback.py:151
 msgid "Collecting hardware information..."
-msgstr "Donanım bilgiis toplanıyor..."
+msgstr "Donanım bilgisi toplanıyor..."
 
 #: src/feedback.py:155 src/feedback.py:221
 msgid "<font color=\"#ff0000\">Failed</font><br>\n"
