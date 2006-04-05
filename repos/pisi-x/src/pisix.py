@@ -55,16 +55,16 @@ version = "1.1.0"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("pisix", "PiSi X", version, description, KAboutData.License_GPL,
+    about_data = KAboutData("pisix", "PiSiX", version, description, KAboutData.License_GPL,
                             "(C) 2005,2006 UEKAE/TÜBİTAK", None, None, "ismail@pardus.org.tr")
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@pardus.org.tr")
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("Author"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
-    about_data.addAuthor("Eray Özkural", I18N_NOOP("Search, Component/Category"), "eray@pardus.org.tr")
+    about_data.addCredit("Eray Özkural", I18N_NOOP("Component/Category"), "eray@pardus.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
     about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi API"), None)
-    about_data.addCredit("PiSi Authors", I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
+    about_data.addCredit(I18N_NOOP("PiSi Authors"), I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
     return about_data
 
 def loadIcon(name, group=KIcon.Desktop):
@@ -100,7 +100,7 @@ class CustomEventListener(DOM.EventListener):
                     
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
-        QWidget.__init__(self, parent, "PiSi X")
+        QWidget.__init__(self, parent, "PiSiX")
 
         # Create a ThreadRunner and init the database
         self.command = ThreadRunner.PisiThread(self)
@@ -443,7 +443,7 @@ class MainApplicationWidget(QWidget):
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
         KMainWindow.__init__(self,parent,name)
-	self.setCaption("PiSi X")
+	self.setCaption("PiSiX")
 	self.aboutus = KAboutApplication(self)
         self.helpWidget = None
         self.mainwidget = MainApplicationWidget(self)
@@ -451,8 +451,7 @@ class MainApplication(KMainWindow):
 
         self.setupMenu()
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
-
-
+        
     def setupMenu(self):
         fileMenu = QPopupMenu(self)
         settingsMenu = QPopupMenu(self)
