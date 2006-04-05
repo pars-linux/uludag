@@ -18,9 +18,8 @@ img {
 }
 
 body,div, span, table, td, th, input,select,option {
-    font-size: 9pt;
-    font-family: "Trebuchet MS", Sans-Serif;
-    letter-spacing: .5px;
+    font-family: "Lucida Grande", Myriad, "Andale Sans", "Luxi Sans", "Bitstream Vera Sans", Tahoma, "Toga Sans", Helvetica, Arial, sans-serif;
+    font-size: 1em;
 }
 
 a {
@@ -221,6 +220,7 @@ input.search {
 .dropmenu {
     display: none;
 }
+
 .droppedmenu {
     display: block; 
     position: absolute;
