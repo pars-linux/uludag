@@ -98,7 +98,32 @@ class CustomEventListener(DOM.EventListener):
                 KRun.runURL(KURL(link),"text/html",False,False);
         except Exception, e:
             print e
-                    
+
+class MyLineEdit(KLineEdit):
+    def __init__(self,parent):
+        KLineEdit.__init__(self,parent)
+        self.clearFocus()
+        
+    def mousePressEvent(self,event):
+        if event.button() == Qt.LeftButton:
+            self.clear()
+        KLineEdit.mousePressEvent(self,event)
+
+    def drawContents(self,painter):
+        KLineEdit.drawContents(self,painter)
+        
+        if not self.hasFocus():
+            tmp = painter.pen()
+            painter.setPen(self.palette().color(QPalette.Disabled, QColorGroup.Text))
+            cr = self.contentsRect()
+            #cr.rLeft() += 3
+            painter.drawText(cr,Qt.AlignAuto|Qt.AlignVCenter,i18n("   Enter some text to search"))
+            painter.setPen(tmp)
+
+    def setText(self,text):
+        self.repaint()
+        KLineEdit.setText(self,text)
+        
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent, "PiSiX")
@@ -122,7 +147,17 @@ class MainApplicationWidget(QWidget):
 	
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
-        self.htmlPart = KHTMLPart(self)
+        self.rightLayout = QVBox(self)
+        self.topRightLayout = QHBox(self.rightLayout)
+
+        self.rightLayout.setSpacing(3)
+        self.topRightLayout.setMargin(3)
+        self.topRightLayout.setSpacing(3)
+
+        self.searchLine = MyLineEdit(self.topRightLayout)
+        self.searchButton = KPushButton(i18n("&Search"),self.topRightLayout)
+        
+        self.htmlPart = KHTMLPart(self.rightLayout)
         self.listView = KListView(self.leftLayout)
                 
        # Read javascript
@@ -141,7 +176,7 @@ class MainApplicationWidget(QWidget):
         self.leftLayout.setSpacing(5)
                 
         self.layout.addWidget(self.leftLayout,1,1)
-        self.layout.addWidget(self.htmlPart.view(),1,2)
+        self.layout.addWidget(self.rightLayout,1,2)
         self.layout.setColStretch(1,2)
         self.layout.setColStretch(2,6)
 
