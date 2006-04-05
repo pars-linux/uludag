@@ -218,7 +218,6 @@ class MainApplicationWidget(QWidget):
         <div>
         <div class="checkboks" style="%s"><input type="checkbox" onclick="gorkem_fonksiyonu(this)" name="%s"></div>
         <div class="package_title" style="%s">
-        <span class="installed_button"> yüklü </span>
         <img src="%s" style="float:left;" width="48px" height="48px">
         <b>%s</b><br>%s<br>
         </div>
