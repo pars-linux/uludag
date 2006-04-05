@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-24 22:23+0200\n"
+"POT-Creation-Date: 2006-04-05 13:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "GUI Design & Usability"
 msgstr ""
 
 #: src/pisix.py:64
-msgid "Search, Component/Category"
+msgid "Component/Category"
 msgstr ""
 
 #: src/pisix.py:65
@@ -41,115 +41,99 @@ msgid "Helping with PiSi API"
 msgstr ""
 
 #: src/pisix.py:67
+msgid "PiSi Authors"
+msgstr ""
+
+#: src/pisix.py:67
 msgid "Authors of PiSi API"
 msgstr ""
 
-#: src/pisix.py:123
-msgid "Configure..."
-msgstr ""
-
-#: src/pisix.py:124 src/pisix.py:172
-msgid "Remove Package(s)"
-msgstr ""
-
 #: src/pisix.py:136
-msgid "Show installed packages"
-msgstr ""
-
-#: src/pisix.py:137
-msgid "Show new packages"
-msgstr ""
-
-#: src/pisix.py:138
-msgid "Show upgrades"
-msgstr ""
-
-#: src/pisix.py:140
 msgid "Components"
 msgstr ""
 
-#: src/pisix.py:175
-msgid "Install Package(s)"
-msgstr ""
-
-#: src/pisix.py:178
-msgid "Upgrade Package(s)"
-msgstr ""
-
-#: src/pisix.py:190
+#: src/pisix.py:165
 msgid ""
 "Looks like PiSi repository database is empty\n"
 "Do you want to update repository now?"
 msgstr ""
 
-#: src/pisix.py:190 src/pisix.py:375
+#: src/pisix.py:165 src/pisix.py:366
 msgid "PiSi Question"
 msgstr ""
 
-#: src/pisix.py:195
+#: src/pisix.py:170
 msgid ""
 "You will not be able to install new programs or update old ones until you "
 "update repository."
 msgstr ""
 
-#: src/pisix.py:277
+#: src/pisix.py:249
 msgid "N\\A"
 msgstr ""
 
-#: src/pisix.py:333
+#: src/pisix.py:324
 msgid ""
 "Pisi could not be started! Please make sure no other pisi process is running."
 msgstr ""
 
-#: src/pisix.py:333 src/Preferences.py:122 src/Preferences.py:139
+#: src/pisix.py:324 src/Preferences.py:122 src/Preferences.py:139
 msgid "Pisi Error"
 msgstr ""
 
-#: src/pisix.py:355 src/PisiUi.py:87
+#: src/pisix.py:346 src/PisiUi.py:87
 msgid "removing"
 msgstr ""
 
-#: src/pisix.py:358 src/PisiUi.py:81
+#: src/pisix.py:349 src/PisiUi.py:81
 msgid "installing"
 msgstr ""
 
-#: src/pisix.py:385
+#: src/pisix.py:376
 msgid "PiSi Error"
 msgstr ""
 
-#: src/pisix.py:400
+#: src/pisix.py:391
 msgid "<b>Preparing PiSi...</b>"
 msgstr ""
 
-#: src/pisix.py:401
+#: src/pisix.py:392
 msgid "<b>Speed:</b> N/A"
 msgstr ""
 
-#: src/pisix.py:402
+#: src/pisix.py:393
 msgid "<b>Downloaded/Total:</b> N/A"
 msgstr ""
 
-#: src/pisix.py:406
+#: src/pisix.py:397
 msgid "<b>Speed:</b> %1 %2"
 msgstr ""
 
-#: src/pisix.py:411
+#: src/pisix.py:402
 msgid "<b>Downloaded/Total:</b> %1/%2"
 msgstr ""
 
-#: src/pisix.py:417
+#: src/pisix.py:408
 msgid "updating repository"
 msgstr ""
 
-#: src/pisix.py:419
+#: src/pisix.py:410
 msgid "Now %1 <b>%2</b> (%3 of %4)"
 msgstr ""
 
-#: src/pisix.py:509
+#: src/pisix.py:461
+msgid "Remove Package(s)"
+msgstr ""
+
+#: src/pisix.py:462
+msgid "Check for updates"
+msgstr ""
+
+#: src/pisix.py:493
 msgid "Package to install"
 msgstr ""
 
-#: src/pisix.py:512
+#: src/pisix.py:496
 msgid "Pisi X is already running!"
 msgstr ""
 
@@ -228,6 +212,18 @@ msgstr ""
 
 #: src/HelpDialog.py:23
 msgid "PiSi X Help"
+msgstr ""
+
+#: src/BalloonMessage.py:36
+msgid "Show Updates"
+msgstr ""
+
+#: src/BalloonMessage.py:37
+msgid "Ignore"
+msgstr ""
+
+#: src/BalloonMessage.py:142
+msgid "There are new updates available!"
 msgstr ""
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:160
