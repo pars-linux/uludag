@@ -15,8 +15,8 @@ from mysql import mysql
 
 import time
 
-def index(req, exp='0', purpose='0', usage='0', \
-          question='0', opinion='', email='', email_announce='F'):
+def index(req, exp='0', purpose='0', usage='0', question='0', \
+          opinion='', email='', email_announce='F', hardware=''):
     # DB connection
     sql = mysql(site_config['db_host'], \
                 site_config['db_name'], \
@@ -31,6 +31,7 @@ def index(req, exp='0', purpose='0', usage='0', \
             'use_where': usage,
             'question': question,
             'opinion': opinion,
+            'hardware': hardware,
             'email': email,
             'email_announce': email_announce
             }
