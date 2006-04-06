@@ -51,7 +51,7 @@
         replytext += "> " + text[i] + "\n"; 
     }
 
-    replytext = "(In reply to comment #" + id + ")\n" + replytext + "\n";
+    replytext = "(Yanıtlanan yorum #" + id + ")\n" + replytext + "\n";
 
     [% IF Param("insidergroup") && UserInGroup(Param("insidergroup")) %]
       if (document.getElementById('isprivate-'+id).checked) {
