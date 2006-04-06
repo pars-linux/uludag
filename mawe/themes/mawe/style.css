@@ -70,3 +70,15 @@ img {
     border:0px;
     vertical-align:middle;
 }
+
+.dropmenu {
+    display: none;
+}
+
+.droppedmenu {
+    display: block; 
+    background-color: #FBFBF9;
+    border: 1px solid #ccc;
+    padding: 1px;
+    width: 700px;
+}

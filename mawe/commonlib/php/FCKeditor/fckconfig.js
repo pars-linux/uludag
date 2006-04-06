@@ -62,12 +62,12 @@ FCKConfig.FormatIndentator	= '    ' ;
 
 FCKConfig.ForceStrongEm = true ;
 FCKConfig.GeckoUseSPAN	= true ;
-FCKConfig.StartupFocus	= false ;
+FCKConfig.StartupFocus	= true ;
 FCKConfig.ForcePasteAsPlainText	= false ;
 FCKConfig.AutoDetectPasteFromWord = true ;	// IE only.
 FCKConfig.ForceSimpleAmpersand	= false ;
 FCKConfig.TabSpaces		= 0 ;
-FCKConfig.ShowBorders	= true ;
+FCKConfig.ShowBorders	= false ;
 FCKConfig.UseBROnCarriageReturn	= false ;	// IE only.
 FCKConfig.ToolbarStartExpanded	= true ;
 FCKConfig.ToolbarCanCollapse	= true ;
@@ -100,7 +100,7 @@ FCKConfig.FontColors = '000000,993300,333300,003300,003366,000080,333399,333333,
 
 FCKConfig.FontNames		= 'Arial;Comic Sans MS;Courier New;Tahoma;Times New Roman;Verdana' ;
 FCKConfig.FontSizes		= '1/xx-small;2/x-small;3/small;4/medium;5/large;6/x-large;7/xx-large' ;
-FCKConfig.FontFormats	= 'p;div;pre;address;h1;h2;h3;h4;h5;h6' ;
+FCKConfig.FontFormats	        = 'p;div;pre;address;h1;h2;h3;h4;h5;h6' ;
 
 FCKConfig.StylesXmlPath		= FCKConfig.EditorPath + 'fckstyles.xml' ;
 FCKConfig.TemplatesXmlPath	= FCKConfig.EditorPath + 'fcktemplates.xml' ;

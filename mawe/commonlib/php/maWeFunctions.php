@@ -67,11 +67,11 @@
         $maWeSmarty->assign($varname,$var);
     }
 
-	function maWeShowSmarty($page){
-		global $maWeSmarty;
-		$maWeSmarty->display($page);
-	}
-	
+    function maWeShowSmarty($page){
+        global $maWeSmarty;
+        $maWeSmarty->display($page);
+    }
+
     function maWeSetSmarty($sm){
         global $maWeSmarty;
         $maWeSmarty = new Smarty;
@@ -82,7 +82,7 @@
         $maWeSmarty->compile_dir     = $cc['Path'].'temp';
         $maWeSmarty->force_compile   = $sm['Force'];
         $maWeSmarty->clear_all_cache();
-       
+
     }
     /** SMARTY Functions END **/
 
@@ -101,12 +101,11 @@
         $maWeFCK->Width  = '100%';
         $maWeFCK->ToolbarCanCollapse = true;
 
-        if ($Value<>"") 
+        if ($Value<>"")
             $maWeFCK->Value = $Value;
-        
         return $maWeFCK->CreateHtml();
     }
-    
+
     /** FCK Functions END **/
 
     /** Misc Functions BEGIN **/
@@ -146,7 +145,7 @@
         maWeShowSmarty('login.mt'); 
         die(); 
 	}
-	
+
     /**
     - maWeCheckUser($User,$Pass)
     * Checks user info from Users table
@@ -171,6 +170,15 @@
         return perform_sql($sql);
     }
 
+    function maWeAddPage($ID, $Title, $Body) {
+        global $db;
+        $sql = "UPDATE {$db['DbPrefix']}Pages SET PageTitle='{$Title}',PageBody='{$Body}' WHERE ID='$ID'";
+        return @mysql_query($sql);
+    }
+
+    function unicode_decode($txt) {
+     return ereg_replace('%u([[:alnum:]]{4})', '&#x\1;',$txt);
+    }
     /** Misc Functions END **/
 
 ?>
