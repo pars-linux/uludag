@@ -38,13 +38,8 @@
     * Check and start or die.
     */
     if ($Control){
-        $Pages = maWeGet('Pages');
-        maWeSetSmartyVar("PageList", maWeGet('Pages'));
-        if (is_numeric($G['edit'])) $Value = maWeGet('Pages','ID',$G['edit']);
-        maWeSetSmartyVar("PageTitle",$Value[0]['PageTitle']);
-        maWeSetSmartyVar("PageID",$Value[0]['ID']);
-        maWeSetSmartyVar("FCK",maWeShowFCK($Value[0]['PageBody']));
-        maWeShowSmarty('admin.mt');
+        $body = unicode_decode($P['body']);
+        if (maWeAddPage($P['id'],$P['title'],$body)) echo "<div style='padding:10px'><img src='".$smG['Path']."images/info.png' style='padding-right:5px' />Update success !</div>"; else echo "An error occured !";
     }
     else
         die();
