@@ -438,10 +438,11 @@ class MainApplicationWidget(QWidget):
         self.updateProgressText()
         self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
-        downloadedText = "%.f" % pisi.util.human_readable_size(downloaded_size)[0]
+        tpl = pisi.util.human_readable_size(downloaded_size)
+        downloadedText,type1 = "%.0f %s" % (tpl[0], tpl[1])
         type1 = pisi.util.human_readable_size(downloaded_size)[1]
-        totalText = "%.f" % pisi.util.human_readable_size(downloaded_size)[0]
-        type2 = pisi.util.human_readable_size(downloaded_size)[1]
+        tpl = pisi.util.human_readable_size(total_size)
+        totalText,type2 = "%.0f %s" % (tpl[0], tpl[1])
 
         self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 %2/%3 %4').arg(downloadedText).arg(type1).arg(totalText).arg(type2))
         self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
