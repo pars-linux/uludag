@@ -57,10 +57,10 @@ def AboutData():
     global version,description
     
     about_data = KAboutData("pisix", "PiSiX", version, description, KAboutData.License_GPL,
-                            "(C) 2005,2006 UEKAE/TÜBİTAK", None, None, "ismail@pardus.org.tr")
+                            "(C) 2005, 2006 UEKAE/TÜBİTAK", None, None)
     
-    about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Author"), "ismail@pardus.org.tr")
-    about_data.addAuthor("Gökmen Göksel",I18N_NOOP("Author"), "gokmen@pardus.org.tr")
+    about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Main Coder"), "ismail@pardus.org.tr")
+    about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
     about_data.addCredit("Eray Özkural", I18N_NOOP("Component/Category"), "eray@pardus.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
