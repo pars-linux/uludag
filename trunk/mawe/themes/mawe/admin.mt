@@ -7,9 +7,9 @@
     <script>
 
     function ShowPageList() {
-        win = new Window('dialog', {className: "dialog", right:30, width:160, height:130, zIndex: 100, resizable: false, title: "Page List", hideEffect: Effect.SwitchOff})
+        win = new Window('dialog', {className: "dialog", right:30, width:160, height:180, zIndex: 100, resizable: true, title: "the Menu", hideEffect: Effect.SwitchOff})
         win.getContent().innerHTML=
-        "{/literal}<div style='padding:8px;'><b>Pages</b><br><li>{section name=node loop=$PageList}<a href=?edit={$PageList[node].ID}>{$PageList[node].PageTitle}</a><br>{/section}<a href='?new'>Add New Page</a></div>{literal}"
+        "{/literal}<div style='padding:8px;'><a href='?new'><img src='{$maWe.Path}images/add.png' />Add New Page</a><br /><br /><b>Pages</b><br /><br /><div>{section name=node loop=$PageList}<span style='float:left;clear:left;'><img src='{$maWe.Path}images/page.png' /><a href=?edit={$PageList[node].ID}>{$PageList[node].PageTitle}</a></span><span style='float:right;'><img src='{$maWe.Path}images/delete.png' /></span><br>{/section}</div></div>{literal}"
         win.show();
     }
 
@@ -23,10 +23,6 @@
         info = new Window('info', {className: "dialog", width:200, height:10, zIndex: 100, resizable: false, title: "Info", hideEffect: Effect.SwitchOff})
         info.getContent().innerHTML= {/literal}{$OK}{literal}
         info.showCenter();
-    }
-
-    function openDialog() {
-        Dialog.confirm("<h3>Are you sure to remove ?",{windowParameters: {width:400, height:100}, okLabel: "Yes", cancelLabel: "No",ok:function(win) { /*FIXME*/ } });
     }
 
     window.onload = ShowPageList;
@@ -51,7 +47,7 @@
                 <a href="javascript:ShowHelp();"><img src="{$maWe.Path}images/help.png" /></a>
             </span>
             <span style="float: right;margin-right:1px;">
-                <input type="submit" name="maWeDoDoc" id="maWeDoDoc" value="Update" />
+                <input type="submit" name="maWeDoDoc" id="maWeDoDoc" value="{if $PageID==''}Add{else}Update{/if}" />
             </span>
          {$FCK}
         </form>

@@ -172,8 +172,13 @@
 
     function maWeAddPage($ID, $Title, $Body) {
         global $db;
-        $sql = "UPDATE {$db['DbPrefix']}Pages SET PageTitle='{$Title}',PageBody='{$Body}' WHERE ID='$ID'";
-        return @mysql_query($sql);
+        $ID == "" ? $sql = "INSERT INTO {$db['DbPrefix']}Pages VALUES ('','{$Title}','{$Body}','','','')" : $sql = "UPDATE {$db['DbPrefix']}Pages SET PageTitle='{$Title}',PageBody='{$Body}' WHERE ID='$ID'";
+        if (@mysql_query($sql)) {
+
+            if ($ID == "") return mysql_insert_id();
+            else return $ID;
+        }
+        else return false;
     }
 
     /** Misc Functions END **/

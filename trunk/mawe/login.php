@@ -43,7 +43,7 @@
         maWeSetSmartyVar("PageList", maWeGet('Pages'));
 
         isset($G['ok']) ? maWeSetSmartyVar("OK",UPDATE_OK) : maWeSetSmartyVar("OK","");
-        is_numeric($G['edit']) ? $Value = maWeGet('Pages','ID',$G['edit']) : $Value = "";
+        is_numeric($G['edit']) ? $Value = maWeGet('Pages','ID',$G['edit']) : $Value;
 
             maWeSetSmartyVar("PageTitle",$Value[0]['PageTitle']);
             maWeSetSmartyVar("PageID",$Value[0]['ID']);
