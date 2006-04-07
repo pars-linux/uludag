@@ -10,6 +10,7 @@
     * Important Headers
     */
     require_once 'config/maWeSysCfg.php';
+    require_once 'config/maWeLang.php';
     require_once 'commonlib/php/maWeFunctions.php';
 
     /**
@@ -40,10 +41,14 @@
     if ($Control){
         $Pages = maWeGet('Pages');
         maWeSetSmartyVar("PageList", maWeGet('Pages'));
-        if (is_numeric($G['edit'])) $Value = maWeGet('Pages','ID',$G['edit']);
-        maWeSetSmartyVar("PageTitle",$Value[0]['PageTitle']);
-        maWeSetSmartyVar("PageID",$Value[0]['ID']);
-        maWeSetSmartyVar("FCK",maWeShowFCK($Value[0]['PageBody']));
+
+        isset($G['ok']) ? maWeSetSmartyVar("OK",UPDATE_OK) : maWeSetSmartyVar("OK","");
+        is_numeric($G['edit']) ? $Value = maWeGet('Pages','ID',$G['edit']) : $Value = "";
+
+            maWeSetSmartyVar("PageTitle",$Value[0]['PageTitle']);
+            maWeSetSmartyVar("PageID",$Value[0]['ID']);
+            maWeSetSmartyVar("FCK",maWeShowFCK($Value[0]['PageBody']));
+
         maWeShowSmarty('admin.mt');
     }
     else

@@ -176,9 +176,6 @@
         return @mysql_query($sql);
     }
 
-    function unicode_decode($txt) {
-     return ereg_replace('%u([[:alnum:]]{4})', '&#x\1;',$txt);
-    }
     /** Misc Functions END **/
 
 ?>
