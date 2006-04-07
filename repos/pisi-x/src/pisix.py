@@ -195,10 +195,14 @@ class MainApplicationWidget(QWidget):
             self.createComponentList(self.command.listNewPackages())
             self.parent.showAction.setText(i18n("Show Installed Packages"))
             self.parent.showAction.setIconSet(loadIconSet("package"))
+            self.parent.operateAction.setText(i18n("Install Package(s)"))
+            self.parent.operateAction.setIconSet(loadIconSet("ok"))
         elif currentOperation == i18n("Show Installed Packages"):
             self.createComponentList(self.command.listPackages())
             self.parent.showAction.setText(i18n("Show New Packages"))
             self.parent.showAction.setIconSet(loadIconSet("edit_add"))
+            self.parent.operateAction.setText(i18n("Remove Package(s)"))
+            self.parent.operateAction.setIconSet(loadIconSet("no"))
                     
         self.listView.setSelected(self.listView.firstChild(),True)
                 		        
@@ -310,7 +314,7 @@ class MainApplicationWidget(QWidget):
                 appsToProcess.append(str(element.getAttribute(DOM.DOMString("name")).string()))
         
         self.progressDialog.show()
-        if self.operation == "remove":
+        if self.parent.showAction.text() == i18n("Show New Packages"):
             self.command.remove(appsToProcess)
         else:
             self.command.install(appsToProcess)
@@ -426,10 +430,12 @@ class MainApplicationWidget(QWidget):
         self.updateProgressText()
         self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
         
-        downloadedText = FormatNumber(downloaded_size)
-        totalText = FormatNumber(total_size)
+        downloadedText = "%.f" % pisi.util.human_readable_size(downloaded_size)[0]
+        type1 = pisi.util.human_readable_size(downloaded_size)[1]
+        totalText = "%.f" % pisi.util.human_readable_size(downloaded_size)[0]
+        type2 = pisi.util.human_readable_size(downloaded_size)[1]
 
-        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1/%2').arg(downloadedText).arg(totalText))
+        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 %2/%3 %4').arg(downloadedText).arg(type1).arg(totalText).arg(type2))
         self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
     def updateProgressText(self):
@@ -491,8 +497,9 @@ class MainApplication(KMainWindow):
         self.showAction = KAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.updateListing,self.actionCollection(),"show_action")
         self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
         self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.test,self.actionCollection(),"upgrade_packages")
-        self.operateAction.setEnabled(False)
 
+        self.operateAction.setEnabled(False)
+        
         self.showAction.plug(fileMenu)
         self.operateAction.plug(fileMenu)
         self.quitAction.plug(fileMenu)
