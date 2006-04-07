@@ -135,8 +135,7 @@ class MainApplicationWidget(QWidget):
         self.topRightLayout.setSpacing(3)
 
         self.searchLine = KLineEdit(self.topRightLayout)
-        self.searchButton = KPushButton(i18n("&Search"),self.topRightLayout)
-        
+                
         self.htmlPart = KHTMLPart(self.rightLayout)
         self.listView = KListView(self.leftLayout)
                 
@@ -163,9 +162,8 @@ class MainApplicationWidget(QWidget):
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
 	self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
-        self.connect(self.searchLine,SIGNAL("returnPressed()"),self.searchPackage)
-        self.connect(self.searchButton,SIGNAL("clicked()"),self.searchPackage)
-        
+        self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
+                
         self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
 
