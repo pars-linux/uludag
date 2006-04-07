@@ -134,7 +134,7 @@ class MainApplicationWidget(QWidget):
         self.topRightLayout.setMargin(3)
         self.topRightLayout.setSpacing(3)
 
-        self.searchLine = ClickLineEdit(self.topRightLayout)
+        self.searchLine = KLineEdit(self.topRightLayout)
         self.searchButton = KPushButton(i18n("&Search"),self.topRightLayout)
         
         self.htmlPart = KHTMLPart(self.rightLayout)
@@ -163,9 +163,13 @@ class MainApplicationWidget(QWidget):
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
 	self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
+        self.connect(self.searchLine,SIGNAL("returnPressed()"),self.searchPackage)
+        self.connect(self.searchButton,SIGNAL("clicked()"),self.searchPackage)
         
         self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
+
+        self.htmlPart.view().setFocus()
         self.show()
         
         # Check for empty repo.
@@ -187,22 +191,31 @@ class MainApplicationWidget(QWidget):
 
     def test(self):
         pass
-    
-    def updateListing(self):
+
+    def switchListing(self):
+        self.updateListing(True)
+        
+    def updateListing(self,switch=False):
         self.domNodesToProcess = []
         currentOperation = self.parent.showAction.text()
         if currentOperation == i18n("Show New Packages"):
-            self.createComponentList(self.command.listNewPackages())
-            self.parent.showAction.setText(i18n("Show Installed Packages"))
-            self.parent.showAction.setIconSet(loadIconSet("package"))
-            self.parent.operateAction.setText(i18n("Install Package(s)"))
-            self.parent.operateAction.setIconSet(loadIconSet("ok"))
+            if switch:
+                self.createComponentList(self.command.listNewPackages())
+                self.parent.showAction.setText(i18n("Show Installed Packages"))
+                self.parent.showAction.setIconSet(loadIconSet("package"))
+                self.parent.operateAction.setText(i18n("Install Package(s)"))
+                self.parent.operateAction.setIconSet(loadIconSet("ok"))
+            else:
+                self.createComponentList(self.command.listPackages())
         elif currentOperation == i18n("Show Installed Packages"):
-            self.createComponentList(self.command.listPackages())
-            self.parent.showAction.setText(i18n("Show New Packages"))
-            self.parent.showAction.setIconSet(loadIconSet("edit_add"))
-            self.parent.operateAction.setText(i18n("Remove Package(s)"))
-            self.parent.operateAction.setIconSet(loadIconSet("no"))
+            if switch:
+                self.createComponentList(self.command.listPackages())
+                self.parent.showAction.setText(i18n("Show New Packages"))
+                self.parent.showAction.setIconSet(loadIconSet("edit_add"))
+                self.parent.operateAction.setText(i18n("Remove Package(s)"))
+                self.parent.operateAction.setIconSet(loadIconSet("no"))
+            else:
+                self.createComponentList(self.command.listNewPackages())
                     
         self.listView.setSelected(self.listView.firstChild(),True)
                 		        
@@ -319,7 +332,7 @@ class MainApplicationWidget(QWidget):
         else:
             self.command.install(appsToProcess)
         
-    def createComponentList(self,packages):
+    def createComponentList(self, packages):
          # Components
          self.listView.clear()
          packageSet = set(packages)
@@ -349,6 +362,15 @@ class MainApplicationWidget(QWidget):
                  item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
                  self.componentDict[item] = componentPacks
                      
+    def createSearchResults(self, packages):
+        self.listView.clear()
+        self.componentDict.clear()
+        
+        item = KListViewItem(self.listView)
+        item.setText(0,i18n("Search Results"))
+        item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
+        self.componentDict[item] = list(packages)
+        self.listView.setSelected(self.listView.firstChild(),True)
         
     def customEvent(self, event):
         eventType = event.type()
@@ -452,12 +474,13 @@ class MainApplicationWidget(QWidget):
         self.command.install(app)
         
     def searchPackage(self):
-        # TODO
-        pass
-
-    def clearSearch(self):
-        # TODO
-        pass
+        query = self.searchLine.text()
+        if not query.isEmpty():
+            result = self.command.searchPackage(query)
+            result = result.union(self.command.searchPackage(query,"en"))
+            self.createSearchResults(result)
+        else:
+            self.updateListing()
 
     def showPreferences(self):
         self.pref = Preferences.Preferences(self)
@@ -494,7 +517,7 @@ class MainApplication(KMainWindow):
         
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
-        self.showAction = KAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.updateListing,self.actionCollection(),"show_action")
+        self.showAction = KAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
         self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
         self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.test,self.actionCollection(),"upgrade_packages")
 
