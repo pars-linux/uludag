@@ -38,7 +38,7 @@
     * Check and start or die.
     */
     if ($Control){
-        if (maWeAddPage($P['maWePageID'],$P['maWePageTitle'],$P['maWeFCKeditor'])) header ("location: login.php?edit=".$P['maWePageID']."&ok"); else echo "An error occured !";
+        if ($id = maWeAddPage($P['maWePageID'],$P['maWePageTitle'],$P['maWeFCKeditor'])) header ("location: login.php?edit=".$id."&ok"); else echo "An error occured !";
     }
     else
         die();

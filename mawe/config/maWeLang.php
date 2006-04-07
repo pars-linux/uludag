@@ -38,7 +38,7 @@
         define ("USER_EXIST",           "Seçtiğiniz Kullanıcı Adı ile kayıtlı bir kullanıcı mevcut");
         define ("REGISTER_OK",          "Kaydınız alındı, kayıt sırasında verdiğiniz e-posta adresine gerekli bilgiler gönderilmiştir. Kaydınızı tamamlamak için e-postanızı kontrol ediniz. ");
         define ("ADDED",                "İçerik başarı ile eklendi.");
-        define ("UPDATE_OK",            "<div style='padding:10px'><img src='".$smG['Path']."images/info.png' style='padding-right:5px' />Update success !</div>");
+        define ("UPDATE_OK",            "<div style='padding:10px'><img src='".$smG['Path']."images/ok.png' style='padding-right:5px' /> Success !</div>");
         define ("MISSING_FIELDS",       "Bilgiler eksik!");
         define ("RESCTRICTED_AREA",     "Yasak Bölge!!");
         define ("ACTIVATE_USER_OK",     "Kullanıcı hesabınız başarıyla etkinleştirildi. Şu andan itibaren kullanabilirsiniz.");
