@@ -327,18 +327,18 @@ class MainApplicationWidget(QWidget):
          components = [pisi.context.componentdb.get_component(x) for x in componentNames]
          self.componentDict.clear()
 
+         topLevelCategories = ["desktop.kde","desktop.gnome","desktop.freedesktop","kernel.drivers","applications.network","applications.multimedia",
+                               "applications.games","applications.hardware","system.base","system.devel"]
          for component in components:
              componentPacks = []
-             if component.name.startswith("applications"):
-                 componentSet = set(pisi.context.componentdb.get_component(component.name).packages)
-                 componentPacks = list(packageSet.intersection(componentSet))
-             elif component.name.find('.') == -1:
-                 # Find child components and append their packages
+             if component.name.find('.') == -1 or component.name in topLevelCategories:
                  for iterator in componentNames:
                      if iterator.startswith(component.name):
                          componentSet = set(pisi.context.componentdb.get_component(iterator).packages)
                          componentPacks += list(packageSet.intersection(componentSet))
-
+             else:
+                 pass
+                 
              if len(componentPacks) and component.localName:
                  item = KListViewItem(self.listView)
                  if component.localName:
