@@ -71,6 +71,9 @@ def AboutData():
 def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
+def loadIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+
 def getIconPath(name, group=KIcon.Desktop):
     if not name:
 	name = "package"
@@ -113,6 +116,7 @@ class MainApplicationWidget(QWidget):
         self.packagesOrder = []
         self.selectedItems = []
 	self.domNodesToProcess = []
+        self.componentDict = {}
         self.currentOperation = None
         self.currentFile = None
         self.currentRepo = None
@@ -181,15 +185,21 @@ class MainApplicationWidget(QWidget):
 	    else:
 		KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
 
-    def updateListing(self):
+    def test(self):
         pass
-	self.domNodesToProcess = []
-        index = self.comboBox.currentItem()
-        if index == 0:
-            self.createComponentList(self.command.listPackages())
-        elif index == 1:
+    
+    def updateListing(self):
+        self.domNodesToProcess = []
+        currentOperation = self.parent.showAction.text()
+        if currentOperation == i18n("Show New Packages"):
             self.createComponentList(self.command.listNewPackages())
-        
+            self.parent.showAction.setText(i18n("Show Installed Packages"))
+            self.parent.showAction.setIconSet(loadIconSet("package"))
+        elif currentOperation == i18n("Show Installed Packages"):
+            self.createComponentList(self.command.listPackages())
+            self.parent.showAction.setText(i18n("Show New Packages"))
+            self.parent.showAction.setIconSet(loadIconSet("edit_add"))
+                    
         self.listView.setSelected(self.listView.firstChild(),True)
                 		        
     def createHTML(self,packages):
@@ -242,11 +252,8 @@ class MainApplicationWidget(QWidget):
                 style = "background-color:%s" % KGlobalSettings.alternateBackgroundColor().name()
             else:
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
-            installed = pisi.packagedb.pkgdb.has_package(app)
-            if installed:
-                package = pisi.packagedb.pkgdb.get_package(app)
-            else:
-                package = pisi.packagedb.get_package(app)
+
+            package = pisi.packagedb.ctx.packagedb.get_package(app)    
 	    desc = package.description
             summary = package.summary
             version = package.version
@@ -311,20 +318,23 @@ class MainApplicationWidget(QWidget):
     def createComponentList(self,packages):
          # Components
          self.listView.clear()
+         packageSet = set(packages)
          componentNames = pisi.context.componentdb.list_components()
          componentNames.sort()
          components = [pisi.context.componentdb.get_component(x) for x in componentNames]
-         self.componentDict = {}
+         self.componentDict.clear()
 
          for component in components:
              componentPacks = []
              if component.name.startswith("applications"):
-                 componentPacks = component.packages
+                 componentSet = set(pisi.context.componentdb.get_component(component.name).packages)
+                 componentPacks = list(packageSet.intersection(componentSet))
              elif component.name.find('.') == -1:
                  # Find child components and append their packages
                  for iterator in componentNames:
                      if iterator.startswith(component.name):
-                         componentPacks += pisi.context.componentdb.get_component(iterator).packages
+                         componentSet = set(pisi.context.componentdb.get_component(iterator).packages)
+                         componentPacks += list(packageSet.intersection(componentSet))
 
              if len(componentPacks) and component.localName:
                  item = KListViewItem(self.listView)
@@ -478,10 +488,12 @@ class MainApplication(KMainWindow):
         
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
-        self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"remove_packages")
-        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.test,self.actionCollection(),"upgrade_packages")
+        self.showAction = KAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.updateListing,self.actionCollection(),"show_action")
+        self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
+        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.test,self.actionCollection(),"upgrade_packages")
         self.operateAction.setEnabled(False)
 
+        self.showAction.plug(fileMenu)
         self.operateAction.plug(fileMenu)
         self.quitAction.plug(fileMenu)
         self.settingsAction.plug(settingsMenu)
@@ -496,9 +508,6 @@ class MainApplication(KMainWindow):
             self.helpWidget.setModal(True)
         self.helpWidget.show()
 
-    def test(self):
-        print 'LALA'
-        
     def aboutData(self):
         # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
