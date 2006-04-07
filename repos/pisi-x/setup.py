@@ -27,7 +27,7 @@ kdedistutils.setup(
     application_data = ['src/pisix.py', 'src/ThreadRunner.py','src/Progress.py','src/ProgressDialog.ui',
                         'src/PisiUi.py','src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
                         'src/RepoDialog.ui','src/HelpDialog.py','src/Enums.py','src/ClickLineEdit.py',
-                        'help','src/animation.js','src/layout.css','pisixui.rc',
+                        'help','src/animation.js','src/layout.css','src/pisixui.rc',
                         ("/usr/kde/3.5/share/applications/kde/",["src/pisix.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/pisix-helper.desktop"]),
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/pisix.png"]),

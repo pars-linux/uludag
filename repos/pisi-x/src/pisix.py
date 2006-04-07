@@ -139,7 +139,7 @@ class MainApplicationWidget(QWidget):
         self.htmlPart = KHTMLPart(self.rightLayout)
         self.listView = KListView(self.leftLayout)
                 
-       # Read javascript
+        # Read javascript
         js = file(str(locate("data","pisix/animation.js"))).read()
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
         js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
@@ -174,20 +174,7 @@ class MainApplicationWidget(QWidget):
         self.initialCheck()
 
     def initialCheck(self):
-        if not nonPrivMode:
-            try:
-                repo = pisi.context.repodb.list()[0]
-                pkg_db = pisi.packagedb.get_db(repo)
-                self.packageList = pkg_db.list_packages()
-	    except:
-                confirm = KMessageBox.questionYesNo(self,i18n("Looks like PiSi repository database is empty\nDo you want to update repository now?"),i18n("PiSi Question"))
-	    if confirm == KMessageBox.Yes:
-		self.command.addRepo('pardus', 'http://paketler.pardus.org.tr/pardus-1.0/pisi-index.xml')
-		self.command.updateRepo('pardus')
-	    else:
-		KMessageBox.information(self,i18n("You will not be able to install new programs or update old ones until you update repository."))
-
-    def test(self):
+        # This needs to check if a repo exists and its not empty
         pass
 
     def switchListing(self):
@@ -248,9 +235,9 @@ class MainApplicationWidget(QWidget):
         </div>
         <div class="package_info" style="%s">
         <div style="margin-left:25px;">
-        <p><b>Özet :</b>
+        <p><b>%s</b>
         %s<br>
-        <b>Sürüm :</b> %s <br> <b>Paket Boyutu :</b> %s <br><b>Homepage :</b> %s 
+        <b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b> %s 
         </p>
         </div>
         </div>
@@ -280,7 +267,8 @@ class MainApplicationWidget(QWidget):
                 size = "%.0f %s" % (tpl[0], tpl[1])
             else:
                 size = i18n("N\A")
-            result += template % (style,app,style,iconPath,app,summary,style,desc,version,size,
+            result += template % (style,app,style,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
+                                  version,i18n("Package Size: "),size,i18n("Homepage: "),
                                   "<a href=\"http://www.pardus.org.tr\">http://www.pardus.org.tr</a>")
             index += 1
 
@@ -517,7 +505,7 @@ class MainApplication(KMainWindow):
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
         self.showAction = KAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
         self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
-        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.test,self.actionCollection(),"upgrade_packages")
+        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.check ,self.actionCollection(),"upgrade_packages")
 
         self.operateAction.setEnabled(False)
         
