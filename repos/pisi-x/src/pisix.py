@@ -128,13 +128,9 @@ class MainApplicationWidget(QWidget):
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
         self.rightLayout = QVBox(self)
-        self.topRightLayout = QHBox(self.rightLayout)
-
         self.rightLayout.setSpacing(3)
-        self.topRightLayout.setMargin(3)
-        self.topRightLayout.setSpacing(3)
 
-        self.searchLine = KLineEdit(self.topRightLayout)
+        self.searchLine = KLineEdit(self.rightLayout)
                 
         self.htmlPart = KHTMLPart(self.rightLayout)
         self.listView = KListView(self.leftLayout)
