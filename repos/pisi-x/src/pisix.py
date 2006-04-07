@@ -128,12 +128,16 @@ class MainApplicationWidget(QWidget):
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
         self.rightLayout = QVBox(self)
+
+        self.leftLayout.setSpacing(3) 
         self.rightLayout.setSpacing(3)
 
         self.searchLine = KLineEdit(self.rightLayout)
                 
         self.htmlPart = KHTMLPart(self.rightLayout)
+
         self.listView = KListView(self.leftLayout)
+        self.listView.setFullWidth(True)
                 
         # Read javascript
         js = file(str(locate("data","pisix/animation.js"))).read()
