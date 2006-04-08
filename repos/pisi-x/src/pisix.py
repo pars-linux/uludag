@@ -331,9 +331,9 @@ class MainApplicationWidget(QWidget):
                                "applications.games","applications.hardware","system.base","system.devel"]
          for component in components:
              componentPacks = []
-             if component.name.find('.') == -1 or component.name in topLevelCategories:
+             if not component.name.count('.') or component.name in topLevelCategories:
                  for iterator in componentNames:
-                     if iterator.startswith(component.name):
+                     if iterator.startswith(component.name) and iterator.count(".") < 2 :
                          componentSet = set(pisi.context.componentdb.get_component(iterator).packages)
                          componentPacks += list(packageSet.intersection(componentSet))
              else:
