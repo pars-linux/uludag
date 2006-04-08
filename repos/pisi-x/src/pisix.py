@@ -76,26 +76,26 @@ def loadIconSet(name, group=KIcon.Toolbar):
 
 def getIconPath(name, group=KIcon.Desktop):
     if not name:
-	name = "package"
+        name = "package"
     return KGlobal.iconLoader().iconPath(name,group)
 
 class CustomEventListener(DOM.EventListener):
     def __init__(self,parent):
-	DOM.EventListener.__init__(self)
-	self.parent = parent
+        DOM.EventListener.__init__(self)
+        self.parent = parent
 
     def handleEvent(self,event):
         target = event.target().nodeName().string()
-	try:
+        try:
             if target == "INPUT":
-		inputElement = DOM.HTMLInputElement(event.target())
-		name = inputElement.name().string()
-		checked = inputElement.checked()
-		if checked: 
-		    if name not in  self.parent.domNodesToProcess:
-			self.parent.domNodesToProcess.append(name)
-		else:
-		    self.parent.domNodesToProcess.remove(name)
+                inputElement = DOM.HTMLInputElement(event.target())
+                name = inputElement.name().string()
+                checked = inputElement.checked()
+                if checked: 
+                    if name not in  self.parent.domNodesToProcess:
+                        self.parent.domNodesToProcess.append(name)
+                else:
+                    self.parent.domNodesToProcess.remove(name)
                 self.parent.updateButtons()
             elif target == "A":
                 link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
@@ -131,14 +131,20 @@ class MainApplicationWidget(QWidget):
 
         self.leftLayout.setSpacing(3) 
         self.rightLayout.setSpacing(3)
-
-        self.searchLine = KLineEdit(self.rightLayout)
+      
+        # KListViewSearchLineWidget can't be used here, so time to implement ours :P
+        self.rightTopLayout = QHBox(self.rightLayout)
+        self.rightTopLayout.setSpacing(3)
+        self.toolButton = QToolButton(self.rightTopLayout)
+        self.toolButton.setIconSet(QIconSet(KGlobal.iconLoader().loadIcon("locationbar_erase",KIcon.Desktop,KIcon.SizeSmall)))
+        self.searchLabel = QLabel(i18n("Search"), self.rightTopLayout)
+        self.searchLine = KLineEdit(self.rightTopLayout)
                 
         self.htmlPart = KHTMLPart(self.rightLayout)
 
         self.listView = KListView(self.leftLayout)
         self.listView.setFullWidth(True)
-                
+
         # Read javascript
         js = file(str(locate("data","pisix/animation.js"))).read()
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
@@ -163,6 +169,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
+        self.connect(self.toolButton,SIGNAL("clicked()"),self.clearSearchLine)
                 
         self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
@@ -245,7 +252,7 @@ class MainApplicationWidget(QWidget):
         <!-- package end -->
         '''
         
-	index = 0
+        index = 0
         style = ''
         packages.sort()
 	
@@ -256,11 +263,11 @@ class MainApplicationWidget(QWidget):
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
 
             package = pisi.packagedb.ctx.packagedb.get_package(app)    
-	    desc = package.description
+            desc = package.description
             summary = package.summary
             version = package.version
             size = package.packageSize
-	    iconPath = getIconPath(package.icon)
+            iconPath = getIconPath(package.icon)
 	    
             if size:
                 tpl = pisi.util.human_readable_size(size)
@@ -281,13 +288,13 @@ class MainApplicationWidget(QWidget):
 
     def updateCheckboxes(self):
         self.htmlPart.view().setUpdatesEnabled(False)
-	if len(self.domNodesToProcess):
-	    document = self.htmlPart.document()
-	    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
-	    for i in range(0,nodeList.length()):
-		element = DOM.HTMLInputElement(nodeList.item(i))
-		if element.name().string() in self.domNodesToProcess:
-		    element.click()
+        if len(self.domNodesToProcess):
+            document = self.htmlPart.document()
+            nodeList = document.getElementsByTagName(DOM.DOMString("input"))
+            for i in range(0,nodeList.length()):
+                element = DOM.HTMLInputElement(nodeList.item(i))
+                if element.name().string() in self.domNodesToProcess:
+                    element.click()
         self.htmlPart.view().setUpdatesEnabled(True)
 		    		    
     def updateView(self,item):
@@ -468,6 +475,9 @@ class MainApplicationWidget(QWidget):
             self.createSearchResults(result)
         else:
             self.updateListing()
+
+    def clearSearchLine(self):
+        self.searchLine.clear()
 
     def showPreferences(self):
         self.pref = Preferences.Preferences(self)
