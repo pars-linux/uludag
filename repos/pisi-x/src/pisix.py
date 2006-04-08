@@ -115,7 +115,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog = Progress.Progress(self)
         self.packagesOrder = []
         self.selectedItems = []
-	self.domNodesToProcess = []
+        self.domNodesToProcess = []
         self.componentDict = {}
         self.currentOperation = None
         self.currentFile = None
@@ -161,7 +161,7 @@ class MainApplicationWidget(QWidget):
 
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
-	self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
+        self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
                 
         self.createComponentList(self.command.listPackages())
@@ -489,8 +489,8 @@ class MainApplicationWidget(QWidget):
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
         KMainWindow.__init__(self,parent,name)
-	self.setCaption("PiSiX")
-	self.aboutus = KAboutApplication(self)
+        self.setCaption("PiSiX")
+        self.aboutus = KAboutApplication(self)
         self.helpWidget = None
         self.mainwidget = MainApplicationWidget(self)
         self.toolBar().setIconText(KToolBar.IconTextRight)
