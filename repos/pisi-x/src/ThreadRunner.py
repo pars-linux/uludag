@@ -103,7 +103,7 @@ class PisiThread(QThread):
         if not len(self.newPackages) or self.databaseDirty:
             self.newPackages = list(pisi.api.list_available()-set(self.listPackages()))
 
-	self.databaseDirty = False
+        self.databaseDirty = False
         return self.newPackages
 
     def searchPackage(self,query,language='tr'):
