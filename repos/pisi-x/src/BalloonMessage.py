@@ -57,16 +57,16 @@ class KopeteBalloon(QWidget):
     def updateMask(self):
         mask = QRegion(10, 10, self.width() - 20, self.height() - 20)
 
-	corners = [
-		QPoint(self.width() - 50, 10),
-		QPoint(10, 10),
-		QPoint(10, self.height() - 50),
-		QPoint(self.width() - 50, self.height() - 50),
-		QPoint(self.width() - 10, 10),
-		QPoint(10, 10),
-		QPoint(10, self.height() - 10),
-		QPoint(self.width() - 10, self.height() - 10)
-                ]
+        corners = [
+            QPoint(self.width() - 50, 10),
+            QPoint(10, 10),
+            QPoint(10, self.height() - 50),
+            QPoint(self.width() - 50, self.height() - 50),
+            QPoint(self.width() - 10, 10),
+            QPoint(10, 10),
+            QPoint(10, self.height() - 10),
+            QPoint(self.width() - 10, self.height() - 10)
+            ]
 
         for i in range (0,4):
             corner = QPointArray()
@@ -75,14 +75,14 @@ class KopeteBalloon(QWidget):
             corner.setPoint(corner.size() - 1, corners[i + 4])
             mask -= QRegion(corner)
             
-	# get screen-geometry for screen our anchor is on
-	# (geometry can differ from screen to screen!
+        # get screen-geometry for screen our anchor is on
+        # (geometry can differ from screen to screen!
         deskRect = QRect(KGlobalSettings.desktopGeometry(self.mAnchor))
 
-	bottom = (self.mAnchor.y() + self.height()) > ((deskRect.y() + deskRect.height()-48));
-	right = (self.mAnchor.x() + self.width()) > ((deskRect.x() + deskRect.width()-48));
+        bottom = (self.mAnchor.y() + self.height()) > ((deskRect.y() + deskRect.height()-48));
+        right = (self.mAnchor.x() + self.width()) > ((deskRect.x() + deskRect.width()-48));
 
-	arrow = QPointArray(4)
+        arrow = QPointArray(4)
         if right:
             if bottom:
                 arrow.setPoint(0, QPoint(self.width(), self.height()))
@@ -104,8 +104,8 @@ class KopeteBalloon(QWidget):
 
         point = QPoint(arrow.point(0)[0],arrow.point(0)[1])
         arrow.setPoint(3, point)
-	mask += QRegion(arrow)
-	self.setMask(mask);
+        mask += QRegion(arrow)
+        self.setMask(mask);
 
         if right:
             if bottom:
