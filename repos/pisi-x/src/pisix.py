@@ -160,6 +160,7 @@ class MainApplicationWidget(QWidget):
         self.leftLayout.setMargin(2)
         self.rightLayout.setMargin(2)
         self.leftLayout.setSpacing(5)
+        self.rightLayout.setSpacing(5)
                 
         self.layout.addWidget(self.leftLayout,1,1)
         self.layout.addWidget(self.rightLayout,1,2)
