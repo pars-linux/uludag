@@ -158,6 +158,7 @@ class MainApplicationWidget(QWidget):
         self.listView.addColumn(i18n("Components"))
         
         self.leftLayout.setMargin(2)
+        self.rightLayout.setMargin(2)
         self.leftLayout.setSpacing(5)
                 
         self.layout.addWidget(self.leftLayout,1,1)
