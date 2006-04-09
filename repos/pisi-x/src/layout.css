@@ -23,17 +23,17 @@ body{
 }
 
 .package_title img {
-        border: 0px;
-	vertical-align: top;
-        float:left;
+    border: 0px;
+    vertical-align: top;
+    float:left;
 }
 
 .version_info {
-        float:right;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        margin-right: 3px;
-        vertical-align:top;
+    float:right;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 3px;
+    vertical-align:top;
 }
 
 .checkboks {
