@@ -32,17 +32,17 @@
         <td colspan="12"><img name="slicer1_c3" src="{$maWe.Path}images/slicer1_c3.png" width="489" height="18" border="0" id="slicer1_c3" alt="" /></td>
         </tr>
         <tr>
-        <td><a href="javascript:;" onmouseout="sIR();" onmouseover="sI('slicer2_c3','','{$maWe.Path}images/slicer2_c3_f2.png',1);"><img name="slicer2_c3" src="{$maWe.Path}images/slicer2_c3.png" width="68" height="18" border="0" id="slicer2_c3" alt="" /></a></td>
+        <td><a href="?page=AnaSayfa" onmouseout="sIR();" onmouseover="sI('slicer2_c3','','{$maWe.Path}images/slicer2_c3_f2.png',1);"><img name="slicer2_c3" src="{$maWe.Path}images/slicer2_c3.png" width="68" height="18" border="0" id="slicer2_c3" alt="" /></a></td>
         <td><img name="slicer2_c4" src="{$maWe.Path}images/slicer2_c4.png" width="2" height="18" border="0" id="slicer2_c4" alt="" /></td>
         <td><a href="javascript:;" onmouseout="sIR();" onmouseover="sI('slicer2_c5','','{$maWe.Path}images/slicer2_c5_f2.png',1);"><img name="slicer2_c5" src="{$maWe.Path}images/slicer2_c5.png" width="98" height="18" border="0" id="slicer2_c5" alt="" /></a></td>
         <td><img name="slicer2_c6" src="{$maWe.Path}images/slicer2_c6.png" width="3" height="18" border="0" id="slicer2_c6" alt="" /></td>
         <td><a href="javascript:;" onmouseout="sIR();" onmouseover="sI('slicer2_c7','','{$maWe.Path}images/slicer2_c7_f2.png',1);"><img name="slicer2_c7" src="{$maWe.Path}images/slicer2_c7.png" width="68" height="18" border="0" id="slicer2_c7" alt="" /></a></td>
         <td><img name="slicer2_c8" src="{$maWe.Path}images/slicer2_c8.png" width="2" height="18" border="0" id="slicer2_c8" alt="" /></td>
-        <td><a href="javascript:;" onmouseout="sIR();" onmouseover="sI('slicer2_c9','','{$maWe.Path}images/slicer2_c9_f2.png',1);"><img name="slicer2_c9" src="{$maWe.Path}images/slicer2_c9.png" width="68" height="18" border="0" id="slicer2_c9" alt="" /></a></td>
+        <td><a href="?page=Belgeler" onmouseout="sIR();" onmouseover="sI('slicer2_c9','','{$maWe.Path}images/slicer2_c9_f2.png',1);"><img name="slicer2_c9" src="{$maWe.Path}images/slicer2_c9.png" width="68" height="18" border="0" id="slicer2_c9" alt="" /></a></td>
         <td><img name="slicer2_c10" src="{$maWe.Path}images/slicer2_c10.png" width="2" height="18" border="0" id="slicer2_c10" alt="" /></td>
         <td><a href="javascript:;" onmouseout="sIR();" onmouseover="sI('slicer2_c11','','{$maWe.Path}images/slicer2_c11_f2.png',1);"><img name="slicer2_c11" src="{$maWe.Path}images/slicer2_c11.png" width="52" height="18" border="0" id="slicer2_c11" alt="" /></a></td>
         <td><img name="slicer2_c12" src="{$maWe.Path}images/slicer2_c12.png" width="3" height="18" border="0" id="slicer2_c12" alt="" /></td>
-        <td><a href="javascript:;" onmouseout="sIR();" onmouseover="sI('slicer2_c13','','{$maWe.Path}images/slicer2_c13_f2.png',1);"><img name="slicer2_c13" src="{$maWe.Path}images/slicer2_c13.png" width="60" height="18" border="0" id="slicer2_c13" alt="" /></a></td>
+        <td><a href="?page=Iletisim" onmouseout="sIR();" onmouseover="sI('slicer2_c13','','{$maWe.Path}images/slicer2_c13_f2.png',1);"><img name="slicer2_c13" src="{$maWe.Path}images/slicer2_c13.png" width="60" height="18" border="0" id="slicer2_c13" alt="" /></a></td>
         <td rowspan="2"><img name="slicer2_c14" src="{$maWe.Path}images/slicer2_c14.png" width="63" height="39" border="0" id="slicer2_c14" alt="" /></td>
         </tr>
         <tr>
