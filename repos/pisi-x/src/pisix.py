@@ -191,6 +191,7 @@ class MainApplicationWidget(QWidget):
         
     def updateListing(self,switch=False):
         self.domNodesToProcess = []
+        self.parent.operateAction.setEnabled(False)
         currentOperation = self.parent.showAction.text()
         if currentOperation == i18n("Show New Packages"):
             if switch:
