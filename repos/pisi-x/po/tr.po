@@ -27,11 +27,11 @@ msgstr "PiSi paket yöneticisi için arayüz"
 
 #: src/pisix.py:62
 msgid "Main Coder"
-msgstr ""
+msgstr "Ana Geliştirici"
 
 #: src/pisix.py:63
 msgid "CSS/JS Meister"
-msgstr ""
+msgstr "CSS/JS Ordinaryüsü"
 
 #: src/pisix.py:64
 msgid "GUI Design & Usability"
@@ -59,25 +59,23 @@ msgstr "PiSi API Yazarları"
 
 #: src/pisix.py:140
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #: src/pisix.py:158
 msgid "Components"
 msgstr "Bileşenler"
 
 #: src/pisix.py:196 src/pisix.py:208 src/pisix.py:326 src/pisix.py:521
-#, fuzzy
 msgid "Show New Packages"
-msgstr "Paket(ler)i Kaldır"
+msgstr "Yeni Paketleri Göster"
 
 #: src/pisix.py:199 src/pisix.py:205
 msgid "Show Installed Packages"
-msgstr ""
+msgstr "Kurulu Paketleri Göster"
 
 #: src/pisix.py:201
-#, fuzzy
 msgid "Install Package(s)"
-msgstr "Paket(ler)i Kaldır"
+msgstr "Paket(ler)i Kur"
 
 #: src/pisix.py:210 src/pisix.py:522
 msgid "Remove Package(s)"
@@ -89,23 +87,23 @@ msgstr "N\\A"
 
 #: src/pisix.py:280
 msgid "Description: "
-msgstr ""
+msgstr "Açıklama: "
 
 #: src/pisix.py:280
 msgid "Version: "
-msgstr ""
+msgstr "Sürüm: "
 
 #: src/pisix.py:281
 msgid "Package Size: "
-msgstr ""
+msgstr "Paket Boyu: "
 
 #: src/pisix.py:281
 msgid "Homepage: "
-msgstr ""
+msgstr "Web sayfası: "
 
 #: src/pisix.py:366
 msgid "Search Results"
-msgstr ""
+msgstr "Arama Sonuçları"
 
 #: src/pisix.py:376
 msgid ""
@@ -150,9 +148,8 @@ msgid "<b>Speed:</b> %1 %2"
 msgstr "<b>Hız:</b> %1 %2"
 
 #: src/pisix.py:457
-#, fuzzy
 msgid "<b>Downloaded/Total:</b> %1 %2/%3 %4"
-msgstr "<b>İndirilen/Toplam:</b> %1/%2"
+msgstr "<b>İndirilen/Toplam:</b> %1 %2/%3 %4"
 
 #: src/pisix.py:463
 msgid "updating repository"
