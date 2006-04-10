@@ -95,7 +95,7 @@ msgstr "Sürüm: "
 
 #: src/pisix.py:281
 msgid "Package Size: "
-msgstr "Paket Boyu: "
+msgstr "Paket Boyutu: "
 
 #: src/pisix.py:281
 msgid "Homepage: "
@@ -405,19 +405,3 @@ msgstr "&Önbellek"
 msgid "Enter some text to search"
 msgstr ""
 
-#~ msgid "Author"
-#~ msgstr "Yazar"
-
-#~ msgid ""
-#~ "Looks like PiSi repository database is empty\n"
-#~ "Do you want to update repository now?"
-#~ msgstr ""
-#~ "Görünüşe göre PiSi depo veritabanı boş\n"
-#~ "Depo veritabanını şimdi güncellemek ister misiniz?"
-
-#~ msgid ""
-#~ "You will not be able to install new programs or update old ones until you "
-#~ "update repository."
-#~ msgstr ""
-#~ "Depo veritabanını güncelleyene kadar yeni programlar kuramayacak, eski "
-#~ "programları güncelleyemeyeceksiniz."
