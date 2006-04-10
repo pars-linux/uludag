@@ -81,11 +81,14 @@ class MainApplication(programbase):
 
         self.aboutus = KAboutApplication(self)
 
+        self.link = comar.Link()
         self.getList()
+        self.link.ask_notify('System.Service.changed')
+        self.notifier = QSocketNotifier(self.link.sock.fileno(), QSocketNotifier.Read)
+        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
 
     def getList(self):
-        link = comar.Link()
-        link.call('System.Service.info')
+        self.link.call('System.Service.info')
 
         def collect(c):
             reply = c.read_cmd()
@@ -100,7 +103,7 @@ class MainApplication(programbase):
                 return [reply]
 
         self.mainwidget.listServices.clear()
-        for service in collect(link):
+        for service in collect(self.link):
             info = service[2].split('\n')
 
             item = QListViewItem(self.mainwidget.listServices, None)
@@ -109,6 +112,18 @@ class MainApplication(programbase):
             item.setText(2, i18n(info[0].title()))
             item.setText(3, i18n(info[1].title()))
             item.setText(4, info[2])
+
+    def slotComar(self, sock):
+        info = self.link.read_cmd()[2].split('\n')
+        item = self.mainwidget.listServices.firstChild()
+        while item:
+            if item.text(1) == info[1]:
+                if info[2] == 'started':
+                    item.setPixmap(0, loadIcon('ledgreen'))
+                elif info[2] == 'stopped':
+                    item.setPixmap(0, loadIcon('ledred'))
+                return
+            item = item.nextSibling()
 
     def __del__(self):
         pass
