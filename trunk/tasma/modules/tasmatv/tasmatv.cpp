@@ -40,7 +40,7 @@ TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
 				     KAboutData::License_GPL,
 				     I18N_NOOP("(c) 2005-2006, TUBITAK - UEKAE" ) );
 
-    TasmaTvAbout->addAuthor( "Faik Uygur",  I18N_NOOP( "Current Maintainer" ),  "faikuygur@kuheylan.org" );
+    TasmaTvAbout->addAuthor( "Faik Uygur",  I18N_NOOP( "Current Maintainer" ),  "faik@pardus.org.tr" );
 
     connect(mainWidget->tvModel, SIGNAL(selectionChanged()), SLOT(configChanged()));
     connect(mainWidget->tvVendor, SIGNAL(selectionChanged()), SLOT(tvVendorChanged()));
