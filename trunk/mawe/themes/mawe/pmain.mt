@@ -1,6 +1,10 @@
 {include file="phead.mt"}
 {$PAGE[0].PageBody}
-</div>
-</center>
-</body>
+    </td>
+        </tr>
+        <tr>
+            <td height="110">&nbsp;</td>
+        </tr>
+        </table>
+    </body>
 </html>
