@@ -1,0 +1,88 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>serviceWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>serviceForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>600</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Service KGA</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QListView" row="0" column="0">
+            <column>
+                <property name="text">
+                    <string>S</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Service</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Type</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Auto Start</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Description</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>listServices</cstring>
+            </property>
+            <property name="allColumnsShowFocus">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
