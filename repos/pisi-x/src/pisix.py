@@ -137,7 +137,7 @@ class MainApplicationWidget(QWidget):
         self.rightTopLayout.setSpacing(3)
         self.toolButton = QToolButton(self.rightTopLayout)
         self.toolButton.setIconSet(QIconSet(KGlobal.iconLoader().loadIcon("locationbar_erase",KIcon.Desktop,KIcon.SizeSmall)))
-        self.searchLabel = QLabel(i18n("Search"), self.rightTopLayout)
+        self.searchLabel = QLabel(i18n("Search: "), self.rightTopLayout)
         self.searchLine = KLineEdit(self.rightTopLayout)
                 
         self.htmlPart = KHTMLPart(self.rightLayout)
