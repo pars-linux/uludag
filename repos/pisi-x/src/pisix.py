@@ -172,8 +172,9 @@ class MainApplicationWidget(QWidget):
         self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
-                
-        self.createComponentList(self.command.listPackages())
+
+        self.currentAppList = self.command.listPackages()
+        self.createComponentList(self.currentAppList)
         self.listView.setSelected(self.listView.firstChild(),True)
 
         self.htmlPart.view().setFocus()
@@ -195,22 +196,26 @@ class MainApplicationWidget(QWidget):
         currentOperation = self.parent.showAction.text()
         if currentOperation == i18n("Show New Packages"):
             if switch:
-                self.createComponentList(self.command.listNewPackages())
+                self.currentAppList = self.command.listNewPackages()
+                self.createComponentList(self.currentAppList)
                 self.parent.showAction.setText(i18n("Show Installed Packages"))
                 self.parent.showAction.setIconSet(loadIconSet("package"))
                 self.parent.operateAction.setText(i18n("Install Package(s)"))
                 self.parent.operateAction.setIconSet(loadIconSet("ok"))
             else:
-                self.createComponentList(self.command.listPackages())
+                
+                self.createComponentList(self.currentAppList)
         elif currentOperation == i18n("Show Installed Packages"):
             if switch:
-                self.createComponentList(self.command.listPackages())
+                self.currentAppList = self.command.listPackages() 
+                self.createComponentList(self.currentAppList)
                 self.parent.showAction.setText(i18n("Show New Packages"))
                 self.parent.showAction.setIconSet(loadIconSet("edit_add"))
                 self.parent.operateAction.setText(i18n("Remove Package(s)"))
                 self.parent.operateAction.setIconSet(loadIconSet("no"))
             else:
-                self.createComponentList(self.command.listNewPackages())
+                self.currentAppList = self.command.listNewPackages()
+                self.createComponentList(self.currentAppList)
                     
         self.listView.setSelected(self.listView.firstChild(),True)
                 		        
@@ -475,10 +480,19 @@ class MainApplicationWidget(QWidget):
         if not query.isEmpty():
             result = self.command.searchPackage(query)
             result = result.union(self.command.searchPackage(query,"en"))
+            result = result.intersection(self.currentAppList)
+            result = result.union(self.searchInPackageNames(query))
             self.createSearchResults(result)
         else:
             self.updateListing()
 
+    def searchInPackageNames(self,query):
+        result = []
+        for app in self.currentAppList:
+            if app.startswith(query):
+                result.append(app)
+        return result
+    
     def clearSearchLine(self):
         self.searchLine.clear()
 
