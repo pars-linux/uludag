@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-10 21:17+0300\n"
+"POT-Creation-Date: 2006-04-12 09:09+0300\n"
 "PO-Revision-Date: 2006-03-02 13:31+0200\n"
 "Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -58,7 +58,8 @@ msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
 #: src/pisix.py:140
-msgid "Search"
+#, fuzzy
+msgid "Search: "
 msgstr "Ara"
 
 #: src/pisix.py:158
@@ -404,4 +405,3 @@ msgstr "&Önbellek"
 #: src/ClickLineEdit.py:17
 msgid "Enter some text to search"
 msgstr ""
-

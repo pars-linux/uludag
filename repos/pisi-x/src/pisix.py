@@ -135,8 +135,8 @@ class MainApplicationWidget(QWidget):
         # KListViewSearchLineWidget can't be used here, so time to implement ours :P
         self.rightTopLayout = QHBox(self.rightLayout)
         self.rightTopLayout.setSpacing(3)
-        self.toolButton = QToolButton(self.rightTopLayout)
-        self.toolButton.setIconSet(QIconSet(KGlobal.iconLoader().loadIcon("locationbar_erase",KIcon.Desktop,KIcon.SizeSmall)))
+        self.clearButton = KPushButton(self.rightTopLayout)
+        self.clearButton.setIconSet(loadIconSet("locationbar_erase"))
         self.searchLabel = QLabel(i18n("Search: "), self.rightTopLayout)
         self.searchLine = KLineEdit(self.rightTopLayout)
                 
@@ -171,7 +171,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
-        self.connect(self.toolButton,SIGNAL("clicked()"),self.clearSearchLine)
+        self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
                 
         self.createComponentList(self.command.listPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
