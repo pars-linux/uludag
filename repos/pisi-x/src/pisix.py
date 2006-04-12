@@ -224,7 +224,8 @@ class MainApplicationWidget(QWidget):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
         <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'''
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        '''
 
         if not part:
             part = self.htmlPart
@@ -240,7 +241,7 @@ class MainApplicationWidget(QWidget):
         initShowHideDivs();
         </script></body></html>
         ''')
-        self.htmlPart.end()
+        part.end()
 
     def createHTMLForPackages(self,packages):
         result = ''
@@ -516,7 +517,7 @@ class MainApplicationWidget(QWidget):
         pushButton = QPushButton(i18n("Upgrade selected packages"),layout3)
         layout1.addWidget(layout2,1,1)
         layout1.addWidget(layout3,2,1)
-        dialog.resize(self.width()-20,self.height()-20)
+        dialog.resize(self.width()-50,self.height()-50)
         self.createHTML(appList,htmlPart)
         dialog.exec_loop()
         
