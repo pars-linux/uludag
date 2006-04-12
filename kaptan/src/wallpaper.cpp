@@ -37,6 +37,13 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
     selectedPaper = "";
     
     QStringList lst = KGlobal::dirs()->findAllResources( "wallpaper",  "*.desktop",  false /* no recursion */,  true /* unique files */ );
+    QString line,lname,lang,langCode;
+
+    lang = QString(getenv("LC_ALL"));
+    if (lang == "tr_TR.UTF-8")
+      langCode="Name[tr]";
+    else
+      langCode="Name";
 
     for(QStringList::Iterator it = lst.begin(); it != lst.end(); ++it)
       {
@@ -49,11 +56,18 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 	    QFile desktopFile(*it);
 	    QTextStream stream(&desktopFile);
 	    desktopFile.open(IO_ReadOnly);
+
+            bool foundName = false;
+            while(!foundName && (line = stream.readLine()))
+              {
+                if (line.startsWith(langCode))
+                  {
+                    lname = line.section("=",1,1);
+                    foundName=true;
+                  }
+              }
 	    
-	    for(int i=0; i < 3; ++i)
-	      stream.readLine();
-	    
-	    papers.insert(stream.readLine().remove("Name="), (*it).remove(".desktop"));
+	    papers.insert(lname, (*it).remove(".desktop"));
 	    desktopFile.close();
 	  }
       }
