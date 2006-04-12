@@ -338,35 +338,35 @@ class MainApplicationWidget(QWidget):
             self.command.install(appsToProcess)
         
     def createComponentList(self, packages):
-         # Components
-         self.listView.clear()
-         packageSet = set(packages)
-         componentNames = pisi.context.componentdb.list_components()
-         componentNames.sort()
-         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
-         self.componentDict.clear()
+        # Components
+        self.listView.clear()
+        packageSet = set(packages)
+        componentNames = pisi.context.componentdb.list_components()
+        componentNames.sort()
+        components = [pisi.context.componentdb.get_component(x) for x in componentNames]
+        self.componentDict.clear()
 
-         topLevelCategories = ["desktop.kde","desktop.gnome","desktop.freedesktop","kernel.drivers","applications.network","applications.multimedia",
+        topLevelCategories = ["desktop.kde","desktop.gnome","desktop.freedesktop","kernel.drivers","applications.network","applications.multimedia",
                                "applications.games","applications.hardware","system.base","system.devel"]
-         for component in components:
-             componentPacks = []
-             if not component.name.count('.') or component.name in topLevelCategories:
-                 for iterator in componentNames:
-                     if iterator.startswith(component.name) and iterator.count(".") < 2 :
-                         componentSet = set(pisi.context.componentdb.get_component(iterator).packages)
-                         componentPacks += list(packageSet.intersection(componentSet))
-             else:
-                 pass
-                 
-             if len(componentPacks) and component.localName:
-                 item = KListViewItem(self.listView)
-                 if component.localName:
-                     item.setText(0,u"%s" % component.localName)
-                 else:
-                     item.setText(0,u"%s" % component.name)
-                 item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-                 self.componentDict[item] = componentPacks
-                     
+        for component in components:
+            componentPacks = []
+            if not component.name.count('.') or component.name in topLevelCategories:
+                for iterator in componentNames:
+                    if iterator.startswith(component.name) and iterator.count(".") < 2 :
+                        componentSet = set(pisi.context.componentdb.get_component(iterator).packages)
+                        componentPacks += list(packageSet.intersection(componentSet))
+            else:
+                pass
+                
+            if len(componentPacks) and component.localName:
+                item = KListViewItem(self.listView)
+                if component.localName:
+                    item.setText(0,u"%s" % component.localName)
+                else:
+                    item.setText(0,u"%s" % component.name)
+                item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
+                self.componentDict[item] = componentPacks
+                                     
     def createSearchResults(self, packages):
         self.listView.clear()
         self.componentDict.clear()
