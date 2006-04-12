@@ -220,19 +220,22 @@ class MainApplicationWidget(QWidget):
                     
         self.listView.setSelected(self.listView.firstChild(),True)
                 		        
-    def createHTML(self,packages):
+    def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'''
-        
-        self.htmlPart.begin()
-        self.htmlPart.write(head)
-        self.htmlPart.write("<style type=\"text/css\">%s</style>" % self.css)
-        self.htmlPart.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
-        self.htmlPart.write("</head><body>")
-        self.htmlPart.write(self.createHTMLForPackages(packages))
-        self.htmlPart.write('''
+
+        if not part:
+            part = self.htmlPart
+            
+        part.begin()
+        part.write(head)
+        part.write("<style type=\"text/css\">%s</style>" % self.css)
+        part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
+        part.write("</head><body>")
+        part.write(self.createHTMLForPackages(packages))
+        part.write('''
         <script type="text/javascript">
         initShowHideDivs();
         </script></body></html>
@@ -501,13 +504,29 @@ class MainApplicationWidget(QWidget):
         self.pref = Preferences.Preferences(self)
         self.pref.show()
 
+    def showUpdateDialog(self):
+        self.command.updateAllRepos()
+        appList = pisi.api.list_upgradable()
+        dialog = QDialog(self)
+        dialog.setCaption(i18n("Currently Available Updates"))
+        layout1 = QGridLayout(dialog,2,1)
+        layout2 = QHBox(dialog)
+        layout3 = QVBox(dialog)
+        htmlPart = KHTMLPart(layout2)
+        pushButton = QPushButton(i18n("Upgrade selected packages"),layout3)
+        layout1.addWidget(layout2,1,1)
+        layout1.addWidget(layout3,2,1)
+        dialog.resize(self.width()-20,self.height()-20)
+        self.createHTML(appList,htmlPart)
+        dialog.exec_loop()
+        
     def setShowOnlyPrograms(self,hideLibraries=False):
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")
         self.config.writeEntry("HideLibraries",hideLibraries)
         self.config.sync()
-
+        
     def getShowOnlyPrograms(self):
         global kapp
         self.config = kapp.config()
@@ -535,7 +554,7 @@ class MainApplication(KMainWindow):
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
         self.showAction = KAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
         self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
-        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.check ,self.actionCollection(),"upgrade_packages")
+        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.showUpdateDialog ,self.actionCollection(),"upgrade_packages")
 
         self.operateAction.setEnabled(False)
         
