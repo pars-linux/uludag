@@ -16,6 +16,7 @@
 
 # System
 import sys
+import string
 import math
 import posix
 import re
@@ -262,7 +263,7 @@ class MainApplicationWidget(QWidget):
         
         index = 0
         style = ''
-        packages.sort()
+        packages.sort(key=string.lower)
 	
         for app in packages:
             if index % 2 == 0:
