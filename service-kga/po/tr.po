@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: service_kga 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-10 15:37+0300\n"
+"POT-Creation-Date: 2006-04-13 10:15+0300\n"
 "PO-Revision-Date: 2006-04-10 12:02+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -19,30 +19,38 @@ msgstr ""
 msgid "Service Manager"
 msgstr "Servis Yöneticisi"
 
-#: src/service_kga.py:143
+#: src/service_kga.py:169
 msgid "Service KGA is already running!"
 msgstr "Servis KGA zaten çalışıyor!"
 
-#: src/serviceWidget.py:28 src/serviceWidget.py:45
+#: src/serviceWidget.py:28 src/serviceWidget.py:60
 msgid "S"
 msgstr "D"
 
-#: src/serviceWidget.py:29 src/serviceWidget.py:46
+#: src/serviceWidget.py:29 src/serviceWidget.py:61
 msgid "Service"
 msgstr "Servis"
 
-#: src/serviceWidget.py:30 src/serviceWidget.py:47
+#: src/serviceWidget.py:30 src/serviceWidget.py:62
 msgid "Type"
 msgstr "Tip"
 
-#: src/serviceWidget.py:31 src/serviceWidget.py:48
+#: src/serviceWidget.py:31 src/serviceWidget.py:63
 msgid "Auto Start"
 msgstr "Oto. Başlat"
 
-#: src/serviceWidget.py:32 src/serviceWidget.py:49
+#: src/serviceWidget.py:32 src/serviceWidget.py:64
 msgid "Description"
 msgstr "Açıklama"
 
-#: src/serviceWidget.py:44
+#: src/serviceWidget.py:59
 msgid "Service KGA"
 msgstr "Servis KGA"
+
+#: src/serviceWidget.py:65
+msgid "Start"
+msgstr "Başlat"
+
+#: src/serviceWidget.py:66
+msgid "Stop"
+msgstr "Durdur"
