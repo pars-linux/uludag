@@ -16,14 +16,15 @@
 import kdedistutils
 
 kdedistutils.setup(
-    name="fw-kwa",
+    name="fw_kga",
     version="0.1",
     author="Bahadır Kandemir",
-    author_email="bahadir@haftalik.net",
+    author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['firewall.ui', 'fw.py'],
-    executable_links = [('fw-kga','fw-kga.py')],
-    i18n = ('po',['src'])
+    application_data = ['src/firewall.ui', 'src/fw_kga.py'],
+    executable_links = [('fw-kga','fw_kga.py')],
+    i18n = ('po',['src']),
+    kcontrol_modules = [ ('src/fw_kga.desktop','src/fw_kga.py')]
     )
