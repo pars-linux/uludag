@@ -74,21 +74,28 @@ class MainApplication(programbase):
         # load our icons and images.
         KGlobal.iconLoader().addAppDir("service_kga")
         
+        # Initialize main widget
         self.mainwidget = serviceWidget.serviceWidget(self)
-
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
         toplayout.addWidget(self.mainwidget)
 
-        self.aboutus = KAboutApplication(self)
+        # Initialize Comar
+        self.comar = comar.Link()
 
-        self.link = comar.Link()
-        self.getList()
-        self.link.ask_notify('System.Service.changed')
-        self.notifier = QSocketNotifier(self.link.sock.fileno(), QSocketNotifier.Read)
+        # Populate list
+        self.populateList()
+       
+        # Notify lists
+        self.comar.ask_notify('System.Service.changed')
+        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
+        
+        # Connections
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        self.connect(self.mainwidget.pushStart, SIGNAL("clicked()"), self.slotStart)
+        self.connect(self.mainwidget.pushStop, SIGNAL("clicked()"), self.slotStop)
 
-    def getList(self):
-        self.link.call('System.Service.info')
+    def populateList(self):
+        self.comar.call('System.Service.info')
 
         def collect(c):
             reply = c.read_cmd()
@@ -103,10 +110,10 @@ class MainApplication(programbase):
                 return [reply]
 
         self.mainwidget.listServices.clear()
-        for service in collect(self.link):
+        for service in collect(self.comar):
             info = service[2].split('\n')
 
-            item = QListViewItem(self.mainwidget.listServices, None)
+            item = KListViewItem(self.mainwidget.listServices, None)
             item.setPixmap(0, loadIcon('ledred'))
             item.setText(1, service[3])
             item.setText(2, i18n(info[0].title()))
@@ -114,7 +121,7 @@ class MainApplication(programbase):
             item.setText(4, info[2])
 
     def slotComar(self, sock):
-        info = self.link.read_cmd()[2].split('\n')
+        info = self.comar.read_cmd()[2].split('\n')
         item = self.mainwidget.listServices.firstChild()
         while item:
             if item.text(1) == info[1]:
@@ -124,6 +131,12 @@ class MainApplication(programbase):
                     item.setPixmap(0, loadIcon('ledred'))
                 return
             item = item.nextSibling()
+
+    def slotStart(self):
+        pass
+
+    def slotStop(self):
+        pass
 
     def __del__(self):
         pass
@@ -150,26 +163,22 @@ class MainApplication(programbase):
 
 def main():
     global kapp
-    
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv, about_data)
-    
     if not KUniqueApplication.start():
         print i18n("Service KGA is already running!")
         return
-    
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
     kapp.setMainWidget(myapp)
     sys.exit(myapp.exec_loop())
-    
+
+
 # Factory function for KControl
-def create_net_kga(parent, name):
-    global kapp
-    
+def create_service_kga(parent, name):
+    global kapp    
     kapp = KApplication.kApplication()
     return MainApplication(parent, name)
-
 
 if standalone:
     main()

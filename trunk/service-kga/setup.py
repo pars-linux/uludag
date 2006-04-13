@@ -22,5 +22,6 @@ kdedistutils.setup(
     license = "GPL",
     application_data = ['src/serviceWidget.ui', 'src/service_kga.py'],
     executable_links = [('service-kga','service_kga.py')],
-    i18n = ('po',['src'])
+    i18n = ('po',['src']),
+    kcontrol_modules = [ ('src/service_kga.desktop','src/service_kga.py')],
     )
