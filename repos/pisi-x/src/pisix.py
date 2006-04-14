@@ -174,7 +174,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
 
-        self.currentAppList = self.command.listPackages()
+        self.currentAppList = self.command.listNewPackages()
         self.createComponentList(self.currentAppList)
         self.listView.setSelected(self.listView.firstChild(),True)
 
@@ -494,7 +494,7 @@ class MainApplicationWidget(QWidget):
     def searchInPackageNames(self,query):
         result = []
         for app in self.currentAppList:
-            if app.startswith(query):
+            if app.find(query) != -1:
                 result.append(app)
         return result
     
@@ -553,8 +553,8 @@ class MainApplication(KMainWindow):
         
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
-        self.showAction = KAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
-        self.operateAction = KAction(i18n("Remove Package(s)"),"no",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
+        self.showAction = KAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
+        self.operateAction = KAction(i18n("Install Package(s)"),"ok",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
         self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.showUpdateDialog ,self.actionCollection(),"upgrade_packages")
 
         self.operateAction.setEnabled(False)
