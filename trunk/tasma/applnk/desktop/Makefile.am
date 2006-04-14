@@ -15,8 +15,10 @@ tasmakcmaccess.desktop \
 tasmakcmnotify.desktop \
 tasmakcmtaskbar.desktop \
 tasmakcm_useraccount.desktop \
+tasmakdm.desktop \
 tasmakeyboard_layout.desktop \
 tasmakeys.desktop \
+tasmakhotkeys.desktop \
 tasmaksplashthememgr.desktop \
 tasmakwindecoration.desktop \
 tasmakwinoptions.desktop \
@@ -24,13 +26,12 @@ tasmalanbrowser.desktop \
 tasmalanguage.desktop \
 tasmalaptop.desktop \
 tasmamouse.desktop \
+tasmanetkga.desktop \
 tasmapanel.desktop \
+tasmapisi.desktop \
 tasmaprinters.desktop \
 tasmaprivacy.desktop \
 tasmaproxy.desktop \
 tasmascreensaver.desktop \
 tasmastyle.desktop \
-tasmapisi.desktop \
-tasmanetkga.desktop \
-tasmakhotkeys.desktop \
 tasmauserkga.desktop
