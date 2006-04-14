@@ -88,11 +88,6 @@ class serviceItem(KListViewItem):
         else:
             self.stop()
 
-        if state in ['on', 'stopped']:
-            self.setText(3, i18n('Yes'))
-        else:
-            self.setText(3, i18n('No'))
-
 
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
@@ -127,8 +122,9 @@ class MainApplication(programbase):
         self.populateList()
        
         # Notify lists
-        self.comar.ask_notify('System.Service.changed')
-        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
+        self.comarN = comar.Link()
+        self.comarN.ask_notify('System.Service.changed')
+        self.notifier = QSocketNotifier(self.comarN.sock.fileno(), QSocketNotifier.Read)
 
         # Disable switch button
         self.mainwidget.pushSwitch.setEnabled(0)
@@ -160,11 +156,9 @@ class MainApplication(programbase):
             serviceItem(self.mainwidget.listServices, service[3], info[0], info[1], info[2])
 
     def slotComar(self, sock):
-        service = self.comar.read_cmd()[3]
+        info = self.comarN.read_cmd()[2].split('\n')
+        service, state = info[1], info[2]
         item = self.mainwidget.listServices.firstChild()
-        time.sleep(1)
-        self.comar.call_package('System.Service.info', service)
-        state = self.comar.read_cmd()[2].split('\n')[1]
 
         while item:
             if item.name == service:
@@ -188,6 +182,7 @@ class MainApplication(programbase):
             self.comar.call_package('System.Service.start', list.selectedItem().name)
         else:
             self.comar.call_package('System.Service.stop', list.selectedItem().name)
+        self.comar.read_cmd()
 
     def __del__(self):
         pass
