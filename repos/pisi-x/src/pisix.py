@@ -91,11 +91,11 @@ class CustomEventListener(DOM.EventListener):
                 inputElement = DOM.HTMLInputElement(event.target())
                 name = inputElement.name().string()
                 checked = inputElement.checked()
-                if checked: 
-                    if name not in  self.parent.domNodesToProcess:
-                        self.parent.domNodesToProcess.append(name)
+                if checked:
+                    if name not in  self.parent.appsToProcess:
+                        self.parent.appsToProcess.append(name)
                 else:
-                    self.parent.domNodesToProcess.remove(name)
+                    self.parent.appsToProcess.remove(name)
                 self.parent.updateButtons()
             elif target == "A":
                 link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
@@ -115,7 +115,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog = Progress.Progress(self)
         self.packagesOrder = []
         self.selectedItems = []
-        self.domNodesToProcess = []
+        self.appsToProcess = []
         self.componentDict = {}
         self.currentOperation = None
         self.currentFile = None
@@ -191,8 +191,12 @@ class MainApplicationWidget(QWidget):
         self.updateListing(True)
         
     def updateListing(self,switch=False):
-        self.domNodesToProcess = []
-        self.parent.operateAction.setEnabled(False)
+
+        if switch:
+            self.appsToProcess = []
+            self.parent.operateAction.setEnabled(False)
+            self.clearSearchLine()
+            
         currentOperation = self.parent.showAction.text()
         if currentOperation == i18n("Show New Packages"):
             if switch:
@@ -203,7 +207,7 @@ class MainApplicationWidget(QWidget):
                 self.parent.operateAction.setText(i18n("Install Package(s)"))
                 self.parent.operateAction.setIconSet(loadIconSet("ok"))
             else:
-                
+                self.currentAppList = self.command.listPackages() 
                 self.createComponentList(self.currentAppList)
         elif currentOperation == i18n("Show Installed Packages"):
             if switch:
@@ -300,12 +304,12 @@ class MainApplicationWidget(QWidget):
 
     def updateCheckboxes(self):
         self.htmlPart.view().setUpdatesEnabled(False)
-        if len(self.domNodesToProcess):
+        if len(self.appsToProcess):
             document = self.htmlPart.document()
             nodeList = document.getElementsByTagName(DOM.DOMString("input"))
             for i in range(0,nodeList.length()):
                 element = DOM.HTMLInputElement(nodeList.item(i))
-                if element.name().string() in self.domNodesToProcess:
+                if element.name().string() in self.appsToProcess:
                     element.click()
         self.htmlPart.view().setUpdatesEnabled(True)
 		    		    
@@ -313,7 +317,7 @@ class MainApplicationWidget(QWidget):
         self.createHTML(self.componentDict[item])
 
     def updateButtons(self):
-        if len(self.domNodesToProcess):
+        if len(self.appsToProcess):
             self.parent.operateAction.setEnabled(True)
         else:
             self.parent.operateAction.setEnabled(False)
@@ -501,7 +505,8 @@ class MainApplicationWidget(QWidget):
         self.searchLine.clear()
 
     def showPreferences(self):
-        self.pref = Preferences.Preferences(self)
+        if not self.pref:
+            self.pref = Preferences.Preferences(self)
         self.pref.show()
 
     def showUpdateDialog(self):
