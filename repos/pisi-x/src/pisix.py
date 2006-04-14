@@ -32,7 +32,6 @@ import kdedesigner
 # Local imports
 from Enums import *
 from ClickLineEdit import *
-import HelpDialog
 import Progress
 import Preferences
 import ThreadRunner
