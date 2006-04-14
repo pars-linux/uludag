@@ -58,9 +58,8 @@ msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
 #: src/pisix.py:140
-#, fuzzy
 msgid "Search: "
-msgstr "Ara"
+msgstr "Ara: "
 
 #: src/pisix.py:158
 msgid "Components"
