@@ -49,27 +49,31 @@ yaşarsınız.
 
 1.2 Siz de katılın
 
-Eğer kendinize "ben de yardım etmek istiyorum" diyorsanız bununla beraber nereden
-başlayacağınızı bilmiyorsanız Pardus size fırsat tanıyor. İşinin bir kısmı da yeni gelenleri projeye
-ilgi alanlarına ve becerilerine göre adapte etmek olan imece takımı size yardım edecektir.
-İmece projesinde, yerelleştirme çalışmaları, belgeleme çalışmaları, uygulama ve sürüm testleri,
-raporlama, kullanıcı grafik arayüzlerinin test edilmesi ve değerlendirilmesi, yazılım geliştirme,
-web sayfalarının ve belgelerin uluslararasılaştırılması, projenin doğru şekilde
-tanıtılması ve yeni insanlara ulaşmak gibi proje ihtiyaçlarına cevap vermek üzere çalışan
-insanları bulunduran bir takımdır.
+Eğer kendinize "ben de yardım etmek istiyorum" diyorsanız bununla
+beraber nereden başlayacağınızı bilmiyorsanız Pardus size
+fırsat tanıyor. İşinin bir kısmı da yeni gelenleri projeye
+ilgi alanlarına ve becerilerine göre adapte etmek olan imece
+takımı size yardım edecektir.  İmece projesinde, yerelleştirme
+çalışmaları, belgeleme çalışmaları, uygulama ve sürüm
+testleri, raporlama, kullanıcı grafik arayüzlerinin test edilmesi
+ve değerlendirilmesi, yazılım geliştirme, web sayfalarının ve
+belgelerin uluslararasılaştırılması, projenin doğru şekilde
+tanıtılması ve yeni insanlara ulaşmak gibi proje ihtiyaçlarına
+cevap vermek üzere çalışan insanları bulunduran bir takımdır.
 
-Bu takımın işi değerli katkınızı ihtiyaç duyulan noktalara kanalize ederek
-projeye gelen katkı kalitesini arttırmak ve belirli bir seviyenin altına inmemesini sağlamaya
-çalışmaktır. Daha fazla bilgi için <a href=http://imece.pardus.org.tr>imece</a> web sayfasını ziyaret edebilirsiniz.
+Bu takımın işi değerli katkınızı ihtiyaç duyulan noktalara
+kanalize ederek projeye gelen katkı kalitesini arttırmak ve belirli
+bir seviyenin altına inmemesini sağlamaya çalışmaktır. Daha fazla
+bilgi için <a href=http://imece.pardus.org.tr>imece</a> web sayfasını
+ziyaret edebilirsiniz.
 
 1.3 Geribildirimde bulunmak
 
 Pardus'la ilgili hata önerilerinizi iletmek için <a
 href=http://bugs.pardus.org.t>Pardus hata bildirim sistemi'ni</a>
-kullanabilirsiniz. Bir sorunu raporlamak, yeni bir paket önerisi yapmak, 
-yeni sürümde bir özelliği talep etmek gibi konularda vereceğiniz desteğe
-şimdiden teşekkür ederiz.
-
+kullanabilirsiniz. Bir sorunu raporlamak, yeni bir paket önerisi yapmak,
+yeni sürümde bir özelliği talep etmek gibi konularda vereceğiniz
+desteğe şimdiden teşekkür ederiz.
 
 2. Temel özellikler
    - Kolay kullanımlı masaüstü 
@@ -78,44 +82,76 @@ yeni sürümde bir özelliği talep etmek gibi konularda vereceğiniz desteğe
    - Oyunlar ve eğlence
    - Ağ servisleri
 3. Kurulum gereksinimleri 
-   - Sabit disk 
-   - İşlemci 
-   - Donanım
-   - Bellek
+
+   Pardus'u ortalama bir donanım ile çalıştırabilirsiniz. İyi bir
+   verim almak için en az 512 MB RAM (bellek) ve 1200 Mhz işlemci
+   öneririz. Aşağıda saydığımız temel iki donanım, Pardus'u
+   çalıştırmanızı sağlayacaktır:
+
+   256 MB RAM (512 MB önerilir)
+   800 Mhz Intel veya AMD işlemci (en az 1200 MHz önerilir)
+   En az 4 Gb boş sabit disk alanı 
+
 4. Bu sürümdeki yenilikler 
+
+   Pardus 1.1, 6 aylık bir geliştirme sonucunda ortaya
+   çıktı. Aşağıdaki liste, bu sürüm için son kullanıcılardan
+   gelen önerilerin de yardımıyla hazırlanmış olan yenilikleri
+   içermektedir.
+
    4.1 Pardus güvenlik duvarı
+
+   Pardus güvenlik duvarı, dışarıdan gelebilecek saldırıları
+   karşılamak üzere tasarlanmış, kolay kullanımlı bir
+   yazılımdır. Güvenlik duvarı sistemde sürekli olarak çalışarak
+   bilgisayarınızı koruyacaktır. Pardus güvenlik duvarı sayesinde
+   belirli bir portu, makineyi erişime kapatabilir ya da mevcut
+   erişimleri izleyebilirsiniz. 
+
    4.2 Daha çok gelişmiş paket yönetim sistemi
    4.3 Yeni program yönetim arayüzü
    4.4 Kurulum sistemi YALI'da gelişmeler
    4.5 Daha çok donanım tanıma olanağı
 
-   Pardus'a özgü yeni donanım tanıma sistemi, Pardus'un piyasada bulunan hemen
-   hemen tüm donanımlarla uyumlu çalışmasına olanak verirken, son kullanıcının
-   elle donanım tanıtma gerekliliğini en aza indirmekte ve çoğu zaman
-   sürücü kurmayı gereksiz kılmaktadır. Pardus, açılışta sistemdeki
-   donanımları tanıyabilirken bunların ayarlarını da otomatik olarak
-   yapabilmektedir.
+   Pardus'a özgü yeni donanım tanıma sistemi, Pardus'un piyasada
+   bulunan hemen hemen tüm donanımlarla uyumlu çalışmasına
+   olanak verirken, son kullanıcının elle donanım tanıtma
+   gerekliliğini en aza indirmekte ve çoğu zaman sürücü
+   kurmayı gereksiz kılmaktadır. Pardus, açılışta sistemdeki
+   donanımları tanıyabilirken bunların ayarlarını da otomatik
+   olarak yapabilmektedir.
 
    4.6 Düzeltilen 1500'den fazla hata
 
-   Pardus'un hata izleme sistemi <a
-   href=http://bugs.pardus.org.tr>Uluzilla'ya</a> gönderilen hata bildirimleri
-   geliştiriciler tarafından titizlikle incelenerek 1.0'dan sonra 1500'den
-   fazla hata giderilmiş, böylece Pardus 1.1'in daha kararlı, sağlam ve son
-   kullanıcıya yönelik olması sağlanmıştır. 
+   Pardus'un hata izleme sistemi [2] Uluzilla'ya gönderilen hata
+   bildirimleri geliştiriciler tarafından titizlikle incelenerek
+   1.0'dan sonra 1500'den fazla hata giderilmiş, böylece Pardus
+   1.1'in daha kararlı, sağlam ve son kullanıcıya yönelik olması
+   sağlanmıştır.
 
    4.7 Yeni 2.6.16 çekirdek
+
+   Pardus ile birlikte gelen 2.6.16 sürüm çekirdek, ........ 
+   .............................................................
+   ............................................................
+   .............................................................
+   ............................................................
+
    4.8 Yeni simge setleri
 
-   Pardus 1.0'ın en çok beğenilen özelliklerinden birisi de Pardus'a özgü "Tulliana"
-   simge setleri idi. Pardus 1.1'de bu simge setleri daha da geliştirildi ve
-   ek simgeler eklendi. Tulliana 1.1 adı verilen bu simge seti [1], Pardus
-   masaüstü ve diğer uygulamalarla daha çok renk uyumu içeriyor ve masaüstünde
-   keyifli zaman geçirmenizi sağlıyor. 
+   Pardus 1.0'ın en çok beğenilen özelliklerinden birisi de Pardus'a
+   özgü "Tulliana" simge setleri idi. Pardus 1.1'de bu simge setleri
+   daha da geliştirildi ve ek simgeler eklendi. Tulliana 1.1 adı verilen
+   bu simge seti [1], Pardus masaüstü ve diğer uygulamalarla daha
+   çok renk uyumu içeriyor ve masaüstünde keyifli zaman geçirmenizi
+   sağlıyor.
 
    4.9 Yeni araçlar (xorgconf, mudurconf, ...)
    4.10 Diğer paket güncellemeleri (xorg, gcc, ..)
+   4.11 Yeni derleme çiftliği
 
 
  [1] Kde-apps'ın linki
- [2] 
+ [2] bugs.pardus.org.tr
+
+
