@@ -105,18 +105,10 @@
                 </property>
                 <widget class="KPushButton">
                     <property name="name">
-                        <cstring>pushStart</cstring>
+                        <cstring>pushSwitch</cstring>
                     </property>
                     <property name="text">
                         <string>Start</string>
-                    </property>
-                </widget>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>pushStop</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Stop</string>
                     </property>
                 </widget>
                 <spacer>
@@ -140,10 +132,11 @@
         </widget>
     </grid>
 </widget>
+<customwidgets>
+</customwidgets>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
-    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
 </includehints>
 </UI>

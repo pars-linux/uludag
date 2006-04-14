@@ -53,30 +53,70 @@ else:
     programbase = KCModule
 
 
+class serviceItem(KListViewItem):
+    def __init__(self, parent=None, name=None, type='server', state='off', description=''):
+        KListViewItem.__init__(self, parent)
+        self.name = name
+
+        if state in ['on', 'started']:
+            self.start()
+        else:
+            self.stop()
+            
+        self.setText(1, name)
+        self.setText(2, i18n(type.title()))
+        
+        if state in ['on', 'stopped']:
+            self.setText(3, i18n('Yes'))
+        else:
+            self.setText(3, i18n('No'))
+
+        self.setText(4, description)
+
+    def start(self):
+        self.status = 'started'
+        self.setPixmap(0, loadIcon('ledgreen'))
+        
+    def stop(self):
+        self.status = 'stopped'
+        self.setPixmap(0, loadIcon('ledred'))
+
+    def newState(self, state='off'):
+        if state in ['on', 'started']:
+            self.start()
+        else:
+            self.stop()
+
+        if state in ['on', 'stopped']:
+            self.setText(3, i18n('Yes'))
+        else:
+            self.setText(3, i18n('No'))
+
+
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
         global standalone
 
         if standalone:
             QDialog.__init__(self, parent, name)
-            self.setCaption(i18n("Service Manager"))
+            self.setCaption(i18n('Service Manager'))
             self.setMinimumSize(520, 420)
             self.resize(520, 420)
         else:
             KCModule.__init__(self, parent, name)
-            KGlobal.locale().insertCatalogue("service_kga")
+            KGlobal.locale().insertCatalogue('service_kga')
             # Create a configuration object.
-            self.config = KConfig("service_kga")
+            self.config = KConfig('service_kga')
             self.setButtons(0)
             self.aboutdata = AboutData()
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        KGlobal.iconLoader().addAppDir("service_kga")
+        KGlobal.iconLoader().addAppDir('service_kga')
         
         # Initialize main widget
         self.mainwidget = serviceWidget.serviceWidget(self)
-        toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
+        toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
         toplayout.addWidget(self.mainwidget)
 
         # Initialize Comar
@@ -88,11 +128,14 @@ class MainApplication(programbase):
         # Notify lists
         self.comar.ask_notify('System.Service.changed')
         self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
-        
+
+        # Disable switch button
+        self.mainwidget.pushSwitch.setEnabled(0)
+
         # Connections
-        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
-        self.connect(self.mainwidget.pushStart, SIGNAL("clicked()"), self.slotStart)
-        self.connect(self.mainwidget.pushStop, SIGNAL("clicked()"), self.slotStop)
+        self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
+        self.connect(self.mainwidget.listServices, SIGNAL('selectionChanged(QListViewItem*)'), self.slotItemClicked)
+        self.connect(self.mainwidget.pushSwitch, SIGNAL('clicked()'), self.slotSwitch)
 
     def populateList(self):
         self.comar.call('System.Service.info')
@@ -109,43 +152,36 @@ class MainApplication(programbase):
             else:
                 return [reply]
 
-        self.mainwidget.listServices.clear()
+        #self.mainwidget.listServices.clear()
         for service in collect(self.comar):
             info = service[2].split('\n')
-
-            item = KListViewItem(self.mainwidget.listServices, None)
-            
-            if info[1] in ['on', 'started']:
-                item.setPixmap(0, loadIcon('ledgreen'))
-            elif info[1] in ['off', 'stopped']:
-                item.setPixmap(0, loadIcon('ledred'))
-                
-            item.setText(1, service[3])
-            item.setText(2, i18n(info[0].title()))
-            if info[1] in ['on', 'stopped']:
-                item.setText(3, i18n('Yes'))
-            else:
-                item.setText(3, i18n('No'))
-            item.setText(4, info[2])
-            
+            serviceItem(self.mainwidget.listServices, service[3], info[0], info[1], info[2])
 
     def slotComar(self, sock):
+        return
+        '''
         info = self.comar.read_cmd()[2].split('\n')
         item = self.mainwidget.listServices.firstChild()
         while item:
-            if item.text(1) == info[1]:
-                if info[2] == 'started':
-                    item.setPixmap(0, loadIcon('ledgreen'))
-                elif info[2] == 'stopped':
-                    item.setPixmap(0, loadIcon('ledred'))
+            if item.name == info[1]:
+                item.setState(info[2])
                 return
             item = item.nextSibling()
+        '''
 
-    def slotStart(self):
-        pass
+    def slotItemClicked(self, item):
+        self.mainwidget.pushSwitch.setEnabled(1)
+        if item.status == 'stopped':
+            self.mainwidget.pushSwitch.setText(i18n('Start'))
+        else:
+            self.mainwidget.pushSwitch.setText(i18n('Stop'))
 
-    def slotStop(self):
-        pass
+    def slotSwitch(self):
+        list = self.mainwidget.listServices
+        if list.selectedItem().status == 'stopped':
+            self.comar.call_package('System.Service.start', list.selectedItem().name)
+        else:
+            self.comar.call_package('System.Service.stop', list.selectedItem().name)
 
     def __del__(self):
         pass
