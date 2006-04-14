@@ -114,11 +114,20 @@ class MainApplication(programbase):
             info = service[2].split('\n')
 
             item = KListViewItem(self.mainwidget.listServices, None)
-            item.setPixmap(0, loadIcon('ledred'))
+            
+            if info[1] in ['on', 'started']:
+                item.setPixmap(0, loadIcon('ledgreen'))
+            elif info[1] in ['off', 'stopped']:
+                item.setPixmap(0, loadIcon('ledred'))
+                
             item.setText(1, service[3])
             item.setText(2, i18n(info[0].title()))
-            item.setText(3, i18n(info[1].title()))
+            if info[1] in ['on', 'stopped']:
+                item.setText(3, i18n('Yes'))
+            else:
+                item.setText(3, i18n('No'))
             item.setText(4, info[2])
+            
 
     def slotComar(self, sock):
         info = self.comar.read_cmd()[2].split('\n')
