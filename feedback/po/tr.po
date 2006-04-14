@@ -188,7 +188,7 @@ msgid ""
 "announces."
 msgstr ""
 "<h2>Kişisel bilgileriniz (zorunlu değil)</h2>\n"
-"E-posta adresinizi belirterek, düşük trafikli duyurularımızı alabilirsiniz."
+"E-posta adresinizi belirterek, düşük yoğunluklu duyurularımızı alabilirsiniz."
 
 #: src/personalinfodlg.py:261
 msgid "E-mail:"
@@ -220,7 +220,7 @@ msgstr "Bu benim hobim"
 
 #: src/purposedlg.py:88
 msgid "For internet access"
-msgstr "Internet erişimi için"
+msgstr "İnternet erişimi için"
 
 #: src/purposedlg.py:89
 msgid "For business"
@@ -280,11 +280,11 @@ msgstr "Evde"
 
 #: src/usagedlg.py:72
 msgid "At work"
-msgstr "İşte"
+msgstr "İş ortamında"
 
 #: src/usagedlg.py:73
 msgid "At school"
-msgstr "Okulda"
+msgstr "Okulda ya da eğitimde"
 
 #: src/usagedlg.py:75
 msgid "<b>Step 3 of 7</b>"
@@ -306,7 +306,7 @@ msgid ""
 "Please click on \"Forward\" button for the next step.\n"
 "<p>"
 msgstr ""
-"<h2>Pardus'a Hogeldiniz</h2>\n"
+"<h2>Pardus'a Hoşgeldiniz</h2>\n"
 "\n"
 "Bu ufak sihirbaz ile, Pardus geliştiricilerine mesaj gönderebilir \n"
 "ve Pardus'un dünyadaki en iyi Linux olmasına yardımda bulunabilirsiniz.\n"
