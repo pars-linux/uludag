@@ -13,15 +13,15 @@
 import kdedistutils
 
 kdedistutils.setup(
-    name="service_kga",
+    name="servis_kga",
     version="0.1",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/serviceWidget.ui', 'src/service_kga.py'],
-    executable_links = [('service-kga','service_kga.py')],
+    application_data = ['src/serviceWidget.ui', 'src/servis_kga.py'],
+    executable_links = [('servis-kga','servis_kga.py')],
     i18n = ('po',['src']),
-    kcontrol_modules = [ ('src/service_kga.desktop','src/service_kga.py')],
+    kcontrol_modules = [ ('src/servis_kga.desktop','src/servis_kga.py')],
     )
