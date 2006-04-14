@@ -505,7 +505,9 @@ class MainApplicationWidget(QWidget):
         self.searchLine.clear()
 
     def showPreferences(self):
-        if not self.pref:
+        try:
+            self.pref
+        except AttributeError:
             self.pref = Preferences.Preferences(self)
         self.pref.show()
 
