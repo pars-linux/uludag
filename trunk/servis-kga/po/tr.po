@@ -25,7 +25,7 @@ msgstr "Servis"
 
 #: src/serviceWidget.py:30 src/serviceWidget.py:59
 msgid "Type"
-msgstr "Tip"
+msgstr "Tür"
 
 #: src/serviceWidget.py:31 src/serviceWidget.py:60
 msgid "Auto Start"
