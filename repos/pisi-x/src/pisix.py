@@ -565,14 +565,7 @@ class MainApplication(KMainWindow):
         
         self.menuBar().insertItem(i18n ("&File"), fileMenu,0,0)
         self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
-
-    def showHelp(self):
-        if not self.helpWidget:
-            self.helpWidget = HelpDialog.HelpDialog(self)
-            # FIXME make non modal
-            self.helpWidget.setModal(True)
-        self.helpWidget.show()
-
+    
     def aboutData(self):
         # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
