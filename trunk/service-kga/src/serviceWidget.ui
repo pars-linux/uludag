@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Service KGA</string>
+        <string>Service GUI</string>
     </property>
     <grid>
         <property name="name">

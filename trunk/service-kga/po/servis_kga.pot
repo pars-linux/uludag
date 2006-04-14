@@ -1,55 +1,53 @@
-# Service Manager Interfaca
-# Copyright (C) 2006, UEKAE/TÜBİTAK
-# This file is distributed under the same license as the Service-KGA package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: servis_kga 0.1\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-14 17:17+0300\n"
-"PO-Revision-Date: 2006-04-10 12:02+0200\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Turkish\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/serviceWidget.py:28 src/serviceWidget.py:57
 msgid "S"
-msgstr "D"
+msgstr ""
 
 #: src/serviceWidget.py:29 src/serviceWidget.py:58
 msgid "Service"
-msgstr "Servis"
+msgstr ""
 
 #: src/serviceWidget.py:30 src/serviceWidget.py:59
 msgid "Type"
-msgstr "Tip"
+msgstr ""
 
 #: src/serviceWidget.py:31 src/serviceWidget.py:60
 msgid "Auto Start"
-msgstr "Oto. Başlat"
+msgstr ""
 
 #: src/serviceWidget.py:32 src/serviceWidget.py:61
 msgid "Description"
-msgstr "Açıklama"
+msgstr ""
 
 #: src/serviceWidget.py:56
 msgid "Service GUI"
-msgstr "Servis KGA"
+msgstr ""
 
 #: src/serviceWidget.py:62 src/servis_kga.py:175
 msgid "Start"
-msgstr "Başlat"
+msgstr ""
 
 #: src/servis_kga.py:102
 msgid "Service Manager"
-msgstr "Servis Yöneticisi"
+msgstr ""
 
 #: src/servis_kga.py:214
 msgid "Service GUI is already running!"
-msgstr "Servis KGA zaten çalışıyor!"
-
-msgid "Stop"
-msgstr "Durdur"
+msgstr ""

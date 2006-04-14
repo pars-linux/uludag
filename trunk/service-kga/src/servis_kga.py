@@ -25,7 +25,7 @@ import comar
 
 
 def AboutData():
-    about_data = KAboutData('service_kga',
+    about_data = KAboutData('servis_kga',
                             'Service Manager',
                             '0.1',
                             'Service Manager Interface',
@@ -104,15 +104,15 @@ class MainApplication(programbase):
             self.resize(520, 420)
         else:
             KCModule.__init__(self, parent, name)
-            KGlobal.locale().insertCatalogue('service_kga')
+            KGlobal.locale().insertCatalogue('servis_kga')
             # Create a configuration object.
-            self.config = KConfig('service_kga')
+            self.config = KConfig('servis_kga')
             self.setButtons(0)
             self.aboutdata = AboutData()
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        KGlobal.iconLoader().addAppDir('service_kga')
+        KGlobal.iconLoader().addAppDir('servis_kga')
         
         # Initialize main widget
         self.mainwidget = serviceWidget.serviceWidget(self)
@@ -211,7 +211,7 @@ def main():
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv, about_data)
     if not KUniqueApplication.start():
-        print i18n("Service KGA is already running!")
+        print i18n("Service GUI is already running!")
         return
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
@@ -220,7 +220,7 @@ def main():
 
 
 # Factory function for KControl
-def create_service_kga(parent, name):
+def create_servis_kga(parent, name):
     global kapp    
     kapp = KApplication.kApplication()
     return MainApplication(parent, name)
