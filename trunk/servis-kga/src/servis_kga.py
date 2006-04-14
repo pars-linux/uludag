@@ -10,6 +10,7 @@
 
 # Python Modules
 import sys
+import time
 
 # KDE/QT Modules
 from qt import *
@@ -81,7 +82,7 @@ class serviceItem(KListViewItem):
         self.status = 'stopped'
         self.setPixmap(0, loadIcon('ledred'))
 
-    def newState(self, state='off'):
+    def setState(self, state='off'):
         if state in ['on', 'started']:
             self.start()
         else:
@@ -159,16 +160,19 @@ class MainApplication(programbase):
             serviceItem(self.mainwidget.listServices, service[3], info[0], info[1], info[2])
 
     def slotComar(self, sock):
-        return
-        '''
-        info = self.comar.read_cmd()[2].split('\n')
+        service = self.comar.read_cmd()[3]
         item = self.mainwidget.listServices.firstChild()
+        time.sleep(1)
+        self.comar.call_package('System.Service.info', service)
+        state = self.comar.read_cmd()[2].split('\n')[1]
+
         while item:
-            if item.name == info[1]:
-                item.setState(info[2])
-                return
+            if item.name == service:
+                item.setState(state)
+                self.slotItemClicked(item)
+                break
             item = item.nextSibling()
-        '''
+        self.mainwidget.pushSwitch.setEnabled(1)
 
     def slotItemClicked(self, item):
         self.mainwidget.pushSwitch.setEnabled(1)
@@ -178,6 +182,7 @@ class MainApplication(programbase):
             self.mainwidget.pushSwitch.setText(i18n('Stop'))
 
     def slotSwitch(self):
+        self.mainwidget.pushSwitch.setEnabled(0)
         list = self.mainwidget.listServices
         if list.selectedItem().status == 'stopped':
             self.comar.call_package('System.Service.start', list.selectedItem().name)
