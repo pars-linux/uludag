@@ -149,9 +149,23 @@ desteğe şimdiden teşekkür ederiz.
    4.9 Yeni araçlar (xorgconf, mudurconf, ...)
    4.10 Diğer paket güncellemeleri (xorg, gcc, ..)
    4.11 Yeni derleme çiftliği
-
+   4.12 Daha fazla Türkçe dil desteği 
+   
+   Pardus 1.1 ile birlikte gelen Zemberek [3], özellikle teknik terimler
+   başta olmak üzere çok daha fazla kelime tanıyabiliyor. Bunun
+   yanında OpenOffice.org ve diğer uygulamalarda (Kmail, kopete vb)
+   yanlış yazılan kelimelere sunduğu öneriler daha doğru bir
+   sırada veriliyor.
+   
+   Bunun yanında, KDE 3.5.2 ile birlikte gelen Türkçe desteği daha
+   da geliştirildi. Bu sayede  ...................................
+   ..............................................................
+   ..............................................................
+   ..............................................................
+   ..............................................................
 
  [1] Kde-apps'ın linki
  [2] bugs.pardus.org.tr
+ [3]  https://zemberek.dev.java.net/changelog.html
 
 
