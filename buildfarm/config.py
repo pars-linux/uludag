@@ -20,8 +20,8 @@ class CfgError(Exception):
 #Some configuration info for other modules..
 
 workDir          = "/var/tmp/pisi/"
-newBinaryPPath   = join_path(workDir, "/newBinaries/")
-oldBinaryPPath   = join_path(workDir, "/oldBinaries/")
+newBinaryPPath   = "/var/cache/pisi/packages/newBinaries/")
+oldBinaryPPath   = "/var/cache/pisi/packages/oldBinaries/")
 localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")
 logFile          = join_path(workDir, "buildfarm.log")
 smtpUserInfo     = './smtpUserInfo'
