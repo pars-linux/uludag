@@ -4,9 +4,9 @@ obj=env.kobject("shlib")
 obj.target='kwin3_tulliana'
 
 obj.source="""
-tulliana.cpp
-tullianabutton.cpp
-tullianaclient.cpp
+    tulliana.cpp
+    tullianabutton.cpp
+    tullianaclient.cpp
 """ 
 
 obj.libs="kdecore"
