@@ -57,7 +57,7 @@ else:
 class serviceItem(KListViewItem):
     def __init__(self, parent=None, name=None, type='server', state='off', package=''):
         KListViewItem.__init__(self, parent)
-        self.name = name
+        self.service = package
 
         if state in ['on', 'started']:
             self.start()
@@ -165,7 +165,7 @@ class MainApplication(programbase):
         item = self.mainwidget.listServices.firstChild()
 
         while item:
-            if item.name == service:
+            if item.service == service:
                 item.setState(state)
                 self.slotItemClicked(item)
                 break
@@ -183,9 +183,9 @@ class MainApplication(programbase):
         self.mainwidget.pushSwitch.setEnabled(0)
         list = self.mainwidget.listServices
         if list.selectedItem().status == 'stopped':
-            self.comar.call_package('System.Service.start', list.selectedItem().name)
+            self.comar.call_package('System.Service.start', list.selectedItem().service)
         else:
-            self.comar.call_package('System.Service.stop', list.selectedItem().name)
+            self.comar.call_package('System.Service.stop', list.selectedItem().service)
         self.comar.read_cmd()
 
     def __del__(self):
