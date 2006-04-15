@@ -23,7 +23,6 @@ workDir          = "/var/tmp/pisi/"
 newBinaryPPath   = join_path(workDir, "/newBinaries/")
 oldBinaryPPath   = join_path(workDir, "/oldBinaries/")
 localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")
-localBinaryRepo  = "/var/cache/pisi/packages/"
 logFile          = join_path(workDir, "buildfarm.log")
 smtpUserInfo     = './smtpUserInfo'
 
@@ -36,7 +35,7 @@ try:
 except:
     smtpUser, smtpPassword = '', ''    
 
-for dir in workDir, newBinaryPPath, oldBinaryPPath, localBinaryRepo, localPspecRepo:
+for dir in workDir, newBinaryPPath, oldBinaryPPath, localPspecRepo:
     if dir and not os.path.isdir(dir):
         try:
             os.makedirs(dir)
