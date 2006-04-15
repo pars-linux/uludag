@@ -111,6 +111,40 @@ desteğe şimdiden teşekkür ederiz.
    4.2 Daha çok gelişmiş paket yönetim sistemi
    4.3 Yeni program yönetim arayüzü
    4.4 Kurulum sistemi YALI'da gelişmeler
+
+   4.5 Yeni ve gelişmiş Pardus açılış sistemi
+
+   İşletim sistemi çekirdeği çalışmaya başladığı andan,
+   kullanıcının karşısına giriş ekranı çıkana kadar yapılan,
+   dosya sistemlerini bağlamak, donanımları tanıyıp sürücüleri
+   yükletmek, temel ağ ayarlarını yapmak, sistem servislerini
+   başlatmak gibi işler, ve bilgisayar kapatılırken servislerin
+   durdurulması, dosya sistemlerinin güvenlice kapatılması, açılış
+   sistemi tarafından yapılmaktadır.
+
+   Pardus 1.0'daki açılış sisteminin çok yavaş kalması ve
+   donanım tanıma konusundaki yetersizlikleri nedeniyle, 1.1 sürümüne
+   doğru yol alırken, açılış sistemi Pardus için baştan yazıldı.
+
+   Yeni sistem "müdür" adını verdiğimiz ve Python ile yazılmış
+   bir temel açılış betiği, "muavin" adını verdiğimiz ve
+   donanımlar için gereken modülleri bulup yükleten bir yardımcı
+   Python betiğinden oluşmakta. Sistem servislerinin betikleri ise
+   Çomar tarafından yönetilmekte ve böylece paralel çalışma ve
+   kolay kullanım gibi avantajlar sağlamakta. Bu çalışmayla birlikte,
+
+   * Açılış süresi büyük miktarda kısaldı. Eski sistemde 1:33
+   dakikada açılan bir makine artık 0:17 saniyede açılıyor.
+   Bu süre içinde Java ile çalışan zemberek dahil tüm sistem
+   servislerinin açıldığı göz önüne alınırsa Pardus, diğer
+   Linux dağıtımları arasında rekor açılış süresine sahiptir.
+
+   * Python'un sadeliği ve gücü sayesinde, Pardus 1.0 çok daha
+   esnek ve bakımı kolay bir dağıtım haline geldi. 
+
+   * Servisler hem komut satırından, hem de Tasma içinde
+   yönetilebilmektedir.
+
    4.5 Daha çok donanım tanıma olanağı
 
    Pardus'a özgü yeni donanım tanıma sistemi, Pardus'un piyasada
@@ -119,7 +153,12 @@ desteğe şimdiden teşekkür ederiz.
    gerekliliğini en aza indirmekte ve çoğu zaman sürücü
    kurmayı gereksiz kılmaktadır. Pardus, açılışta sistemdeki
    donanımları tanıyabilirken bunların ayarlarını da otomatik
-   olarak yapabilmektedir.
+   olarak yapabilmektedir. 
+  
+   Muavin adı verilen donanım tanıma sistemi, gereksiz modül 
+   yüklenmesinin önüne geçmekte ve bellekten önemli bir 
+   tasarruf sağlamaktadır. Bunun yanında eski bir teknoloji 
+   olan hotplug yerine, daha yeni ve esnek olan udev kullanılmaktadır.
 
    4.6 Düzeltilen 1500'den fazla hata
 
