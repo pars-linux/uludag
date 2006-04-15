@@ -55,7 +55,7 @@ else:
 
 
 class serviceItem(KListViewItem):
-    def __init__(self, parent=None, name=None, type='server', state='off', description=''):
+    def __init__(self, parent=None, name=None, type='server', state='off', package=''):
         KListViewItem.__init__(self, parent)
         self.name = name
 
@@ -72,7 +72,7 @@ class serviceItem(KListViewItem):
         else:
             self.setText(3, i18n('No'))
 
-        self.setText(4, description)
+        self.setText(4, package)
 
     def start(self):
         self.status = 'started'
@@ -129,6 +129,10 @@ class MainApplication(programbase):
         # Disable switch button
         self.mainwidget.pushSwitch.setEnabled(0)
 
+        # ListView Properties
+        self.mainwidget.listServices.setColumnAlignment(2, Qt.AlignHCenter)
+        self.mainwidget.listServices.setColumnAlignment(3, Qt.AlignHCenter)
+
         # Connections
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
         self.connect(self.mainwidget.listServices, SIGNAL('selectionChanged(QListViewItem*)'), self.slotItemClicked)
@@ -153,7 +157,7 @@ class MainApplication(programbase):
         #self.mainwidget.listServices.clear()
         for service in collect(self.comar):
             info = service[2].split('\n')
-            serviceItem(self.mainwidget.listServices, service[3], info[0], info[1], info[2])
+            serviceItem(self.mainwidget.listServices, info[2], info[0], info[1], service[3])
 
     def slotComar(self, sock):
         info = self.comarN.read_cmd()[2].split('\n')
