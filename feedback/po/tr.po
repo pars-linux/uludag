@@ -260,7 +260,7 @@ msgstr "İhtiyaçlarımı karşılamıyor"
 
 #: src/questiondlg.py:258
 msgid "<h2>How does Pardus fit your needs?</h2>"
-msgstr "<h2>Pardus ihtiyaçlarınızı nasıl kaşılıyor?</h2>"
+msgstr "<h2>Pardus ihtiyaçlarınızı nasıl karşılıyor?</h2>"
 
 #: src/questiondlg.py:259
 msgid "<b>Step 4 of 7</b>"
