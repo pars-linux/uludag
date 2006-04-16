@@ -61,9 +61,11 @@ class Form(KWizard):
 
         self.resize(QSize(600,373).expandedTo(self.minimumSizeHint()))
         self.setCaption(i18n("Feedback Wizard"))
+
+        self.setIcon(loadIcon("feedback"))
           
         # Images
-        self.image_feedback = QPixmap(locate("data", "feedback/feedback.png"))
+        self.image_feedback = QPixmap(locate("data", "feedback/feedback_right.png"))
 
         self.pageWelcomeDlg = WelcomeDlg()
         self.addPage(self.pageWelcomeDlg, i18n("Welcome"))
