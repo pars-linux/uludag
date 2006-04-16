@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Service Manager
+Name[en]=Service Manager
+Name[tr]=Servis Yöneticisi
+Comment=Service Management Interface
+Comment[tr]=Servis Yönetim Arabirimi
+Icon=servis_kga
+Type=Application
+Exec=servis-kga
+Categories=QT;System;KDE
