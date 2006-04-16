@@ -28,7 +28,7 @@ import comar
 def AboutData():
     about_data = KAboutData('servis_kga',
                             'Service Manager',
-                            '1.0',
+                            '1.0.1',
                             'Service Manager Interface',
                             KAboutData.License_GPL,
                             '(C) 2006 UEKAE/TÜBİTAK',
@@ -105,6 +105,8 @@ class MainApplication(programbase):
             self.config = KConfig('servis_kga')
             self.setButtons(0)
             self.aboutdata = AboutData()
+
+        self.setIcon(loadIcon('servis_kga', size=128))
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
