@@ -36,6 +36,7 @@ class PisiApi:
             self.options = pisi.config.Options()
             self.options.yes_all = True
             self.options.create_static = True
+            self.options.create_debug = True
             self.options.output_dir = config.workDir
         else:
             self.options = options
