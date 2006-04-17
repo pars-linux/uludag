@@ -36,7 +36,7 @@ Content-Type: text/plain;
 %(message)s
 --------------------------------------------------------------------------
 
- Olaydan önce tutlan kayıtların son 20 satırı ise şöyle idi:
+ Olaydan önce tutulan kayıtların son 20 satırı ise şöyle idi:
 
 --------------------------------------------------------------------------
 %(log)s
@@ -72,7 +72,7 @@ Content-Type: text/html;
 </div>
 
 
-<p> Olaydan önce tutlan kayıtların son 20 satırı ise şöyle idi:
+<p> Olaydan önce tutulan kayıtların son 20 satırı ise şöyle idi:
 
 <p><div align=center>
     <table bgcolor=black width=100%% cellpadding=10 border=0>
