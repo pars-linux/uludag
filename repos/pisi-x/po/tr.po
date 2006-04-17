@@ -157,7 +157,7 @@ msgstr "depo güncelleniyor"
 
 #: src/pisix.py:465
 msgid "Now %1 <b>%2</b> (%3 of %4)"
-msgstr "Şu anda %1 <b>%2</b> (%3/%4)"
+msgstr "Şu anda %1 : <b>%2</b> (%3/%4)"
 
 #: src/pisix.py:523
 msgid "Check for updates"
@@ -372,6 +372,9 @@ msgid ""
 "Cleaning up the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
+"Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan \n"
+"tüm paketler silinecektir. Bu işlem sistemde kurulu olan paketleri \n"
+"silmez ve bilgisayarınızın çalışmasını etkilemez."
 
 #: src/PreferencesDialog.py:185
 msgid "Cache usage"
@@ -403,4 +406,4 @@ msgstr "&Önbellek"
 
 #: src/ClickLineEdit.py:17
 msgid "Enter some text to search"
-msgstr ""
+msgstr "Aranacak kelimeyi girin"
