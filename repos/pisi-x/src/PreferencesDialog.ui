@@ -319,22 +319,6 @@
                         <property name="title">
                             <string>Cache cleaning</string>
                         </property>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pushButton4</cstring>
-                            </property>
-                            <property name="geometry">
-                                <rect>
-                                    <x>19</x>
-                                    <y>67</y>
-                                    <width>140</width>
-                                    <height>23</height>
-                                </rect>
-                            </property>
-                            <property name="text">
-                                <string>C&amp;lean disk cache now</string>
-                            </property>
-                        </widget>
                         <widget class="QLabel">
                             <property name="name">
                                 <cstring>textLabel3</cstring>
@@ -352,6 +336,25 @@
 This will not delete installed software or affect your system stability.</string>
                             </property>
                         </widget>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>pushButton4</cstring>
+                            </property>
+                            <property name="geometry">
+                                <rect>
+                                    <x>19</x>
+                                    <y>67</y>
+                                    <width>200</width>
+                                    <height>23</height>
+                                </rect>
+                            </property>
+                            <property name="text">
+                                <string>C&amp;lean disk cache now</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+L</string>
+                            </property>
+                        </widget>
                     </widget>
                     <widget class="QGroupBox" row="0" column="0">
                         <property name="name">
@@ -360,6 +363,34 @@ This will not delete installed software or affect your system stability.</string
                         <property name="title">
                             <string>Cache usage</string>
                         </property>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>checkBox2_2</cstring>
+                            </property>
+                            <property name="geometry">
+                                <rect>
+                                    <x>13</x>
+                                    <y>26</y>
+                                    <width>380</width>
+                                    <height>19</height>
+                                </rect>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Use hard disk cache for downloaded software</string>
+                            </property>
+                            <property name="accel">
+                                <string>Alt+U</string>
+                            </property>
+                            <property name="checked">
+                                <bool>false</bool>
+                            </property>
+                            <property name="tristate">
+                                <bool>false</bool>
+                            </property>
+                            <property name="toolTip" stdset="0">
+                                <string>If checked, then updates for Pardus will be automatically checked and you will be notified</string>
+                            </property>
+                        </widget>
                         <widget class="QLabel">
                             <property name="name">
                                 <cstring>textLabel1_2</cstring>
@@ -369,52 +400,14 @@ This will not delete installed software or affect your system stability.</string
                             </property>
                             <property name="geometry">
                                 <rect>
-                                    <x>42</x>
-                                    <y>51</y>
-                                    <width>123</width>
+                                    <x>40</x>
+                                    <y>50</y>
+                                    <width>140</width>
                                     <height>21</height>
                                 </rect>
                             </property>
                             <property name="text">
                                 <string>Maximum cache size:</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>textLabel2</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="geometry">
-                                <rect>
-                                    <x>320</x>
-                                    <y>50</y>
-                                    <width>110</width>
-                                    <height>20</height>
-                                </rect>
-                            </property>
-                            <property name="text">
-                                <string>&lt;i&gt;(Use 0 for no limit)&lt;/i&gt;</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>textLabel1</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="geometry">
-                                <rect>
-                                    <x>283</x>
-                                    <y>51</y>
-                                    <width>18</width>
-                                    <height>21</height>
-                                </rect>
-                            </property>
-                            <property name="text">
-                                <string>Mb</string>
                             </property>
                         </widget>
                         <widget class="QLineEdit">
@@ -426,8 +419,8 @@ This will not delete installed software or affect your system stability.</string
                             </property>
                             <property name="geometry">
                                 <rect>
-                                    <x>171</x>
-                                    <y>51</y>
+                                    <x>190</x>
+                                    <y>50</y>
                                     <width>106</width>
                                     <height>21</height>
                                 </rect>
@@ -442,29 +435,23 @@ This will not delete installed software or affect your system stability.</string
                                 <bool>true</bool>
                             </property>
                         </widget>
-                        <widget class="QCheckBox">
+                        <widget class="QLabel">
                             <property name="name">
-                                <cstring>checkBox2_2</cstring>
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
                             </property>
                             <property name="geometry">
                                 <rect>
-                                    <x>13</x>
-                                    <y>26</y>
-                                    <width>310</width>
-                                    <height>19</height>
+                                    <x>310</x>
+                                    <y>50</y>
+                                    <width>210</width>
+                                    <height>21</height>
                                 </rect>
                             </property>
                             <property name="text">
-                                <string>&amp;Use hard disk cache for downloaded software</string>
-                            </property>
-                            <property name="checked">
-                                <bool>false</bool>
-                            </property>
-                            <property name="tristate">
-                                <bool>false</bool>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>If checked, then updates for Pardus will be automatically checked and you will be notified</string>
+                                <string>Mb &lt;i&gt;(use 0 for no limit)&lt;/i&gt;</string>
                             </property>
                         </widget>
                     </widget>
