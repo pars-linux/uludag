@@ -1,0 +1,135 @@
+td img {display: block;}body,td,th {
+	font-family: Tahoma, Arial, Verdana, Lucida Sans Unicode, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+body {
+	margin-top: 0px;
+}
+a {
+	color: #4F97A9;
+	font-weight: bold;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #4F97A9;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+	color: #284D55;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 24px;
+	color: #4B95A5;
+}
+
+h3, .isimler, .job {
+	background:url(images/mavibullet.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	padding-left:14px;
+	font-weight:bold;
+}
+
+img {
+vertical-align:middle;
+}
+.minilinkbar {
+	font-family: Tahoma, Arial, Verdana, "Lucida Sans Unicode", sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFCC00;
+	background-image: url(images/index_r2_c1.png);
+	background-repeat: no-repeat;
+	text-align: left;
+	padding-left: 30px;
+	height: 15px;
+	vertical-align: middle;
+}
+.icerik {
+	background-image: url(images/index_r3_c1.png);
+	background-repeat: no-repeat;
+	text-align: left;
+	vertical-align: text-top;
+	height: 150px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.foot {
+	background-image: url(images/index_r6_c1.png);
+	background-repeat: no-repeat;
+	height: 64px;
+}
+.solpan {
+	font-family: Tahoma, Arial, Verdana, "Lucida Sans Unicode", sans-serif;
+	font-size: 10px;
+	color: #333333;
+	text-align: left;
+	vertical-align: top;
+	width: 50%;
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+.tableheader {
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #333333;
+	height: 12px;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	width: 50%;
+}
+.tablesag {
+	background-color: #D8E3E6;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	height: 125px;
+}
+
+
+.footust {
+	background-image: url(images/index_r5_c1.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-right: 25px;
+	padding-bottom: 15px;
+	padding-left: 25px;
+	font-family: Tahoma, Arial, Verdana, "Lucida Sans Unicode", sans-serif;
+	font-size: 10px;
+	padding-top: 5px;
+	height:100px;
+}
+.sagpan {
+	padding: 10px;
+	font-family: Tahoma, Arial, Verdana, "Lucida Sans Unicode", sans-serif;
+	font-size: 11px;
+	color: #333333;
+	text-align: left;
+	vertical-align: top;
+	width: 50%;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #CCCCCC;
+}
+
+.listeimg	{ float:left; margin-right:10px;}
+.listeimg2 	{ float:left; margin-right:10px; margin-top:8px;}
+.listehead	{ float:left; clear:left; margin-bottom:2px; width:100%; /*Just for fuckin IE */}
+.minfo 		{ border: 1px solid #4B95A5; background:#D8E3E6; padding:5px; height:100%; padding-top:0;}
+.job		{ font-weight:normal; border-bottom:1px solid #4B95A5; clear:left;}
