@@ -38,7 +38,7 @@ from goodbyedlg import GoodbyeDlg
 
 def AboutData():
     description = "Pardus Feedback Tool"
-    version = "1.0.2"
+    version = "1.0.3"
 
     about_data = KAboutData("feedback", "Pardus Feedback Tool", version, \
                             description, KAboutData.License_GPL,
