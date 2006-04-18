@@ -44,21 +44,21 @@ FCKConfig.ProtectedSource.Add( /<script[\s\S]*?\/script>/gi ) ;	// <SCRIPT> tags
 // FCKConfig.ProtectedSource.Add( /(<asp:[^\>]+>[\s|\S]*?<\/asp:[^\>]+>)|(<asp:[^\>]+\/>)/gi ) ;	// ASP.Net style tags <asp:control>
 
 FCKConfig.AutoDetectLanguage	= false ;
-FCKConfig.DefaultLanguage	= 'en' ;
+FCKConfig.DefaultLanguage	= 'tr' ;
 FCKConfig.ContentLangDirection	= 'ltr' ;
 
 FCKConfig.EnableXHTML		= true ;	// Unsupported: Do not change.
 FCKConfig.EnableSourceXHTML	= true ;	// Unsupported: Do not change.
 
-FCKConfig.ProcessHTMLEntities	= true ;
-FCKConfig.IncludeLatinEntities	= true ;
-FCKConfig.IncludeGreekEntities	= true ;
+FCKConfig.ProcessHTMLEntities	= false ;
+FCKConfig.IncludeLatinEntities	= false ;
+FCKConfig.IncludeGreekEntities	= false ;
 
-FCKConfig.FillEmptyBlocks	= true ;
+FCKConfig.FillEmptyBlocks	= false ;
 
-FCKConfig.FormatSource		= true ;
-FCKConfig.FormatOutput		= true ;
-FCKConfig.FormatIndentator	= '    ' ;
+FCKConfig.FormatSource		= false ;
+FCKConfig.FormatOutput		= false ;
+FCKConfig.FormatIndentator	= '' ;
 
 FCKConfig.ForceStrongEm = true ;
 FCKConfig.GeckoUseSPAN	= true ;
@@ -66,7 +66,7 @@ FCKConfig.StartupFocus	= true ;
 FCKConfig.ForcePasteAsPlainText	= false ;
 FCKConfig.AutoDetectPasteFromWord = true ;	// IE only.
 FCKConfig.ForceSimpleAmpersand	= false ;
-FCKConfig.TabSpaces		= 0 ;
+FCKConfig.TabSpaces		= 8 ;
 FCKConfig.ShowBorders	= false ;
 FCKConfig.UseBROnCarriageReturn	= false ;	// IE only.
 FCKConfig.ToolbarStartExpanded	= true ;
