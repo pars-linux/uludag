@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+    <!--
+    *    TUBITAK UEKAE 2005-2006
+    *    marser - version 0.1
+    -->
+
+    <head>
+        <title>marser - test</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <script src="../js/prototype.js"></script>
+
+        <script>
+
+        function showCoded() {
+            var linke='text='+$('textinput').value;
+            var url ='marser.php';
+            var myAjax = new Ajax.Request(url,{method:'post', parameters: linke, onComplete: showit});
+        }
+
+        function showit(originalRequest){
+            var newData = originalRequest.responseText;
+            $('codedpage').innerHTML = newData;
+            $('codedpage_source').innerHTML = $('codedpage').src;
+        }
+
+        </script>
+    </head>
+
+<body>
+
+    <h2> Marser Test ..</h2>
+
+    <div id="textform" style="width:80%;">
+        <textarea style="width:80%;" rows=11 id="textinput" onKeyUp="showCoded();"></textarea>
+    </div>
+
+    <div>
+        sdfs
+    </div>
+
+    <br /> <br />
+    <div id="codedpage" style="border:1px solid #DDD;"></div>
+    <div id="codedpage_source" style="border:1px solid #330033;"></div>
+
+</body>
+</html>
