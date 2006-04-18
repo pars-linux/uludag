@@ -9,6 +9,7 @@
 # option) any later version. Please read the COPYING file.
 
 # Python Modules
+import os
 import sys
 import time
 
@@ -16,6 +17,7 @@ import time
 from qt import *
 from kdecore import *
 from kdeui import *
+from khtml import *
 import kdedesigner
 
 # Widget
@@ -52,6 +54,21 @@ if standalone:
     programbase = QDialog
 else:
     programbase = KCModule
+
+
+class HelpDialog(QDialog):
+    def __init__(self, parent=None):
+        QDialog.__init__(self, parent)
+        self.setCaption(i18n('Service Manager'))
+        self.layout = QGridLayout(self)
+        self.htmlPart = KHTMLPart(self)
+        self.resize(500, 300)
+        self.layout.addWidget(self.htmlPart.view(), 1, 1)
+
+        if os.environ['LANG'].startswith('tr_TR'):
+            self.htmlPart.openURL(KURL(locate('data', 'servis_kga/help/tr/main_help.html')))
+        else:
+            self.htmlPart.openURL(KURL(locate('data', 'servis_kga/help/en/main_help.html')))
 
 
 class serviceItem(KListViewItem):
@@ -139,6 +156,7 @@ class MainApplication(programbase):
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
         self.connect(self.mainwidget.listServices, SIGNAL('selectionChanged(QListViewItem*)'), self.slotItemClicked)
         self.connect(self.mainwidget.pushSwitch, SIGNAL('clicked()'), self.slotSwitch)
+        self.connect(self.mainwidget.pushHelp, SIGNAL('clicked()'), self.slotHelp)
 
     def populateList(self):
         self.comar.call('System.Service.info')
@@ -189,6 +207,10 @@ class MainApplication(programbase):
         else:
             self.comar.call_package('System.Service.stop', list.selectedItem().service)
         self.comar.read_cmd()
+
+    def slotHelp(self):
+        self.helpwin = HelpDialog(self)
+        self.helpwin.show()
 
     def __del__(self):
         pass
