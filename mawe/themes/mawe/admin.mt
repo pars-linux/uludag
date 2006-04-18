@@ -7,7 +7,7 @@
     <script>
 
     function ShowPageList() {
-        win = new Window('dialog', {className: "dialog", right:30, width:160, height:180, zIndex: 100, resizable: true, title: "the Menu", hideEffect: Effect.SwitchOff})
+        win = new Window('dialog', {className: "dialog", right:30, width:160, height:400 , zIndex: 100, resizable: true, title: "the Menu", hideEffect: Effect.SwitchOff})
         win.getContent().innerHTML=
         "{/literal}<div style='padding:8px;'><a href='?new'><img src='{$maWe.Path}images/add.png' />Add New Page</a><br /><br /><b>Pages</b><br /><br /><div>{section name=node loop=$PageList}<span style='float:left;clear:left;'><img src='{$maWe.Path}images/page.png' /><a href=?edit={$PageList[node].ID}>{$PageList[node].PageTitle}</a></span><span style='float:right;'><img src='{$maWe.Path}images/delete.png' /></span><br>{/section}</div></div>{literal}"
         win.show();
