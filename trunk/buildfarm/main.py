@@ -40,6 +40,9 @@ def main():
     logger.raw()
     
     for pspec in queue: 
+        print "Compiling (%d of %d)" % (int(queue.index(pspec) + 1), len(queue))
+        logger.info("Compiling (%d of %d)" % (int(queue.index(pspec) + 1), len(queue)))
+        logger.raw()
         try:
             pisi = pisiinterface.PisiApi()
             pisi.init()
