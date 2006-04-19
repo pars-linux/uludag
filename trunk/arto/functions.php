@@ -381,7 +381,6 @@
         }
         else{$message["message"] = ACTIVATE_USER_ERROR;}
         $sql_query = mysql_query($sql_word);
-
         return $message;
     }
 
