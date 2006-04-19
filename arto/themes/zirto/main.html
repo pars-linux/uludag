@@ -60,7 +60,7 @@
 		<tr>
 			<td style="width: 120px;">
                         {if $nodes2[post].filetype=="image"}
-                            <a href="{$url}3rdparty/php_thumb/phpThumb.php?src={$url}files/{$nodes2[post].path}&w=800" rel="lightbox" title="{$nodes[post].description}"><img style="float:left" src="{$url}files/thumbs/{$nodes2[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}3rdparty/php_thumb/phpThumb.php?src={$url}files/{$nodes2[post].path}&w=800" rel="lightbox" title="{$nodes2[post].description}"><img style="float:left" src="{$url}files/thumbs/{$nodes2[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
                             <a href="{$url}{if $nodes2[post].lsubtype}nodes/{$nodes2[post].type}/{$nodes2[post].sub_type}/{else}node/{/if}{$nodes2[post].id}"><img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes2[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {/if}
