@@ -41,8 +41,12 @@ def findCaller():
         return ':'.join([os.path.basename(filename), str(f.f_lineno)])
 
 
-__raw = lambda msg: open(logFile, 'a').write('\n\n%s\n\n' %(msg))
-__log = lambda level, caller, msg: open(logFile, 'a').write('%s | %-6.6s | %-16.16s :: %s\n' %(time.asctime(), level, caller, msg))
+def __raw(msg):
+    open(logFile, 'a').write('\n\n%s\n\n' %(msg))
+
+def __log(level, caller, msg):
+    print msg
+    open(logFile, 'a').write('%s | %-6.6s | %-16.16s :: %s\n' %(time.asctime(), level, caller, msg))
 
 
 def debug(msg): __log('DEBUG', findCaller(), msg)
