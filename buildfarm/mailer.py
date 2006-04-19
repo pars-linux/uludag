@@ -58,6 +58,8 @@ def send(message, pspec = '', type = ''):
         msg = s
         del s
 
+    packagename=os.path.basename(os.path.dirname(pspec))
+
     msg = templates.get(type) % {'log'          : ''.join(open(config.logFile).readlines()[-20:]),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
@@ -66,7 +68,8 @@ def send(message, pspec = '', type = ''):
                                  'subject'      : pspec or type,
                                  'message'      : message,
                                  'pspec'        : pspec,
-                                 'type'         : type}
+                                 'type'         : type,
+                                 'packagename'  : packagename}
 
     try:
         session = smtplib.SMTP(config.smtpServer)
