@@ -34,7 +34,7 @@ Toplam İçerik : <span style="color: #990000">{$nodes|@count}</span>
 		<tr>
 			<td style="width: 120px;">
 			{if $nodes[post].filetype=="image"}
-                            <a href="{$url}{if $nodes[post].lsubtype}nodes/{$nodes[post].type}/{$nodes[post].sub_type}/{else}node/{/if}{$nodes[post].id}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
+                            <a href="{$url}3rdparty/php_thumb/phpThumb.php?src={$url}files/{$nodes[post].path}&w=800" rel="lightbox" title="{$nodes[post].description}"><img style="float:left" src="{$url}files/thumbs/{$nodes[post].path}" alt="Thumbnail" class="thumbnail" width="100px"></a>
                         {else}
                             <img style="float:left" src="{$url}themes/zirto/images/categories/{$nodes[post].type}-k.png" alt="Thumbnail" class="thumbnail" width="100px">
                         {/if}
