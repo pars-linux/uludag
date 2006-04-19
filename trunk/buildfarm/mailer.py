@@ -46,6 +46,18 @@ def send(message, pspec = '', type = ''):
     templates = {'error': tmpl.error_message,
                  'info' : tmpl.info_message}
 
+    # truncate lines longer than 72 chars
+    start = 72
+    s = ""
+    while len(msg) - start > 0:
+        i = msg.find(" ", start)
+        s += msg[start-72:i] + "\n<br>"
+        start += 72
+    else:
+        s += msg[start:]
+        msg = s
+        del s
+
     msg = templates.get(type) % {'log'          : ''.join(open(config.logFile).readlines()[-20:]),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
