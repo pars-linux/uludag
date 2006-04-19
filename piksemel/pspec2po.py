@@ -195,6 +195,22 @@ pspec_header = """<?xml version="1.0" ?>
 """
 
 def update_pspecs(path, language, po):
+    
+    class Hede:
+        def try_desc(self, m):
+            tmp = m.group(1)
+            tag = tmp[:tmp.find(">")]
+            text = tmp[tmp.find(">") + 1:]
+            lang = tag[tag.find("xml:lang=")+10:]
+            if lang.startswith(self.lang):
+                print "meech"
+                self.done = 1
+                if text != self.msgstr:
+                    tmp = tmp[:tmp.find(">") + 1] + self.msgstr
+                    return m.string[m.start():m.start(1)] + tmp + m.string[m.end(1):m.end()]
+            return m.group()
+    
+    
     for msg in po.messages:
         if not msg.msgstr:
             continue
@@ -203,31 +219,24 @@ def update_pspecs(path, language, po):
         name, tag = msg.reference.split(':')
         name = os.path.join(path, name, "pspec.xml")
         tag = tag.title()
-        doc = iks.parse(name)
-        source = doc.getTag("Source")
-        data = None
-        for item in source.tags(tag):
-            lang = item.getAttribute("xml:lang")
-            if lang == language:
-                item.firstChild().hide()
-                item.insertData(msg.msgstr)
-                data = doc.toString()
-        if not data:
-            if tag == "Description":
-                item = source.getTag("Archive").previousTag()
-            else:
-                item = source.getTag("Description").previousTag()
-            item = item.appendData("\n        ")
-            new = item.appendTag(tag)
-            new.setAttribute("xml:lang", language)
-            new.insertData(msg.msgstr)
-            data = doc.toString()
-        if data:
-            f = file(name, "w")
-            f.write(pspec_header)
-            f.write(data)
-            f.write("\n")
-            f.close()
+        
+        data = file(name).read()
+        hede = Hede()
+        hede.lang = language
+        hede.msgstr = msg.msgstr
+        hede.done = 0
+        if tag == "Description":
+            data = re.sub("<Description(.*)</Description>", hede.try_desc, data)
+        elif tag == "Summary":
+            data = re.sub("<Summary(.*)</Summary>", hede.try_desc, data)
+        
+        #if hede.done == 0:
+        #    pos = data.find("<Archive")
+        #    data = data[:pos] + '<%s xml:lang="%s">%s</%s>\n        ' % (tag, language, msg.msgstr, tag) + data[pos:]
+        
+        f = file(name, "w")
+        f.write(data)
+        f.close()
 
 
 def extract(path, language, pofile):
