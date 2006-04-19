@@ -47,7 +47,7 @@ def main():
         packagename=os.path.basename(os.path.dirname(pspec))
         try:
             pisi = pisiinterface.PisiApi()
-            build_output=open(os.path.join(config.workDir, packagename+".output"), "w")
+            build_output=open(os.path.join(config.outputDir, packagename+".log"), "w")
             pisi.init(stdout=build_output, stderr=build_output)
             (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
         except Exception, e:
@@ -127,7 +127,7 @@ def removeBinaryPackageFromWorkDir(package):
 
 
 def create_directories():
-    for dir in config.workDir, config.newBinaryPPath, config.oldBinaryPPath, config.localPspecRepo:
+    for dir in config.workDir, config.newBinaryPPath, config.oldBinaryPPath, config.localPspecRepo, config.outputDir:
         if dir and not os.path.isdir(dir):
             try:
                 os.makedirs(dir)

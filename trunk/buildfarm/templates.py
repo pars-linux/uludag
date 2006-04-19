@@ -42,6 +42,8 @@ Content-Type: text/plain;
 %(log)s
 --------------------------------------------------------------------------
 
+ Derleme için çıktı dosyası: http://paketler.pardus.org.tr/logs/%(packagename).log
+
  Kolay gelsin.
  (Vallahi ben bir şey yapmadım..)
 
