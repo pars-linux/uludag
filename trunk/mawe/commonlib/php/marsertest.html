@@ -14,7 +14,7 @@
         <script src="../js/prototype.js"></script>
 
         <script>
-
+        timer = 0;
         var myGlobalHandlers = {
 		onCreate: function(){
 			Element.show('working');
@@ -29,7 +29,12 @@
 
 	Ajax.Responders.register(myGlobalHandlers);
 
-        function showCoded() {
+        function showCoded(){
+            timer = clearTimeout(timer);
+            timer = setTimeout('finishCoded()', 1000);
+        }
+
+        function finishCoded() {
             var linke='text='+$('textinput').value;
             var url ='marser.php';
             var myAjax = new Ajax.Request(url,
@@ -51,7 +56,7 @@
         </script>
     </head>
 
-<body onload="showCoded();">
+<body onload="finishCoded();">
 
     <h2> Marser Test ..</h2>
 
