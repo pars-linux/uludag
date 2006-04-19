@@ -7,6 +7,7 @@
     {
         $rules = Array();
 
+        // Standart Rules
         $rules[0]["replace"] = "#\[b\](.+?)\[/b\]#is";
         $rules[0]["to"]      = "<b>\\1</b>";
 
@@ -33,6 +34,12 @@
 
         $rules[8]["replace"] = "#\[img-(.+?)\](.+?)\[/img\]#is";
         $rules[8]["to"]      = "<img src=\"\\2\" alt=\"[image]\" style=\"float: \\1; margin: 0px 5px 5px 0px\" />";
+
+        $rules[9]["replace"] = "#\[style=(.+?)\]#is";
+        $rules[9]["to"]      = "style=\"\\1\"";
+
+        // Pardus Rules
+        
 
         foreach($rules as $node) {
             $string = preg_replace($node["replace"],$node["to"],$string);

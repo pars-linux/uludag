@@ -50,7 +50,35 @@
             var newData = originalRequest.responseText;
             Element.hide('working');
             $('codedpage').innerHTML = newData;
-            $('codedpage_source').value = $('codedpage').innerHTML;
+            $('codedpage_source').value = newData;
+        }
+
+        function addcode(v){
+            if (document.selection) // IE içün
+            {
+                var str = document.selection.createRange().text;
+                document.getElementById('textinput').focus();
+                var sel = document.selection.createRange();
+                sel.text = "[" + v + "]" + str + "[/" + v + "]";
+                finishCoded();
+            }
+            else if ((typeof document.getElementById('textinput').selectionStart) != 'undefined') // Hola Firefox
+            {
+                var txtarea = document.getElementById('textinput');
+                var selLength = txtarea.textLength;
+                var selStart = txtarea.selectionStart;
+                var selEnd = txtarea.selectionEnd;
+                var oldScrollTop = txtarea.scrollTop;
+                var s1 = (txtarea.value).substring(0,selStart);
+                var s2 = (txtarea.value).substring(selStart, selEnd)
+                var s3 = (txtarea.value).substring(selEnd, selLength);
+                txtarea.value = s1 + '[' + v + ']' + s2 + '[/' + v + ']' + s3;
+                txtarea.selectionStart = s1.length;
+                txtarea.selectionEnd = s1.length + 5 + s2.length + v.length * 2;
+                txtarea.scrollTop = oldScrollTop;
+                finishCoded();
+            }
+            else input('[' + v + '][/' + v + '] ');
         }
 
         </script>
@@ -61,14 +89,15 @@
     <h2> Marser Test ..</h2>
 
     <div>
+        <div><input type="submit" onclick="addcode('b')" value="B"></div>
         <div id="textform" style="float:left;width:50%;">
             <h4>bbcode</h4>
-            <textarea style="width:100%;border:1px solid #555;" rows=11 id="textinput" onKeyUp="showCoded();"></textarea>
+            <textarea style="width:100%;border:1px solid #555;" rows=15 id="textinput" onKeyUp="showCoded();"></textarea>
         </div>
 
         <div id="textform" style="float:left;width:48%;padding-left:3px;">
             <h4>htmlsource</h4>
-            <textarea DISABLED style="width:100%;border:1px solid #555;background:#FFF;color:#000;" rows=11 id="codedpage_source"></textarea>
+            <textarea DISABLED style="width:100%;border:1px solid #555;background:#FFF;color:#000;" rows=15 id="codedpage_source"></textarea>
         </div>
     </div>
     
