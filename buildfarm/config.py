@@ -35,10 +35,3 @@ try:
 except:
     smtpUser, smtpPassword = '', ''    
 
-for dir in workDir, newBinaryPPath, oldBinaryPPath, localPspecRepo:
-    if dir and not os.path.isdir(dir):
-        try:
-            os.makedirs(dir)
-        except OSError:
-            raise CfgError("'%s' dizini yaratılamadı, izin sorunu olabilir" % (dir))
-

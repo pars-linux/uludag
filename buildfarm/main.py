@@ -16,6 +16,9 @@ import os
 import copy
 import sys
 import shutil
+import traceback
+import exceptions
+import cStringIO
 
 sys.path.append(".")
 sys.path.append("..")
@@ -34,30 +37,29 @@ def main():
    
     queue = copy.copy(qmgr.workQueue)
     
-    print "WorkQueue: %s" % qmgr.workQueue
     logger.raw("QUEUE")
     logger.info("Work Queue: %s" % (qmgr.workQueue))
     logger.raw()
     
     for pspec in queue: 
-        print "Compiling (%d of %d)" % (int(queue.index(pspec) + 1), len(queue))
         logger.info("Compiling (%d of %d)" % (int(queue.index(pspec) + 1), len(queue)))
         logger.raw()
+        packagename=os.path.basename(os.path.dirname(pspec))
         try:
             pisi = pisiinterface.PisiApi()
-            pisi.init()
+            build_output=open(os.path.join(config.workDir, packagename+".output"), "w")
+            pisi.init(stdout=build_output, stderr=build_output)
             (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
         except Exception, e:
             qmgr.transferToWaitQueue(pspec)
             errmsg = "'%s' için BUILD işlemi sırasında hata: %s" % (pspec, e)
-            print errmsg
             logger.error(errmsg)
             mailer.error(errmsg, pspec)
             pisi.finalize()
         else:
             for p in newBinaryPackages:
-                print os.path.join(config.workDir, p)
                 try:
+                    logger.info("Installing: %s" % os.path.join(config.workDir, p))
                     pisi.install(os.path.join(config.workDir, p))
                 except Exception, e:
                     print "HATA: %s" % e
@@ -70,7 +72,6 @@ def main():
             pisi.finalize()
             movePackages(newBinaryPackages, oldBinaryPackages)
     
-    print "WaitQueue: %s" % qmgr.waitQueue
     logger.raw("QUEUE")
     logger.info("Wait Queue: %s" % (qmgr.waitQueue))
     logger.raw()
@@ -124,6 +125,27 @@ def removeBinaryPackageFromWorkDir(package):
     remove(join(config.workDir, package))
     
 
+
+def create_directories():
+    for dir in config.workDir, config.newBinaryPPath, config.oldBinaryPPath, config.localPspecRepo:
+        if dir and not os.path.isdir(dir):
+            try:
+                os.makedirs(dir)
+            except OSError:
+                raise config.CfgError("'%s' dizini yaratılamadı, izin sorunu olabilir" % (dir))
+
+
+
+def handle_exception(exception, value, tb):
+    print exception, value
+    traceback.print_tb(tb)
+    
+
+
 if __name__ == "__main__":
+    sys.excepthook = handle_exception
+    
+    create_directories()
+
     main()
 

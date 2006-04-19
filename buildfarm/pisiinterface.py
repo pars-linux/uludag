@@ -45,9 +45,10 @@ class PisiApi:
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
         
-    def init(self):
+    def init(self, stdout, stderr):
         logger.info("PiSi API init ediliyor")
-        self.api.init(options = self.options)
+        self.api.init(options = self.options,
+                      stdout=stdout, stderr=stderr)
         
     def finalize(self):
         logger.info("PiSi API finalize ediliyor")
