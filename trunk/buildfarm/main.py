@@ -137,10 +137,14 @@ def create_directories():
 
 
 def handle_exception(exception, value, tb):
-    print exception, value
-    traceback.print_tb(tb)
-    
+    s = cStringIO.StringIO()
+    traceback.print_tb(tb, file=s)
+    s.seek(0)
 
+    logger.error(str(exception))
+    logger.error(str(value))
+    logger.error(s.read())
+    
 
 if __name__ == "__main__":
     sys.excepthook = handle_exception
