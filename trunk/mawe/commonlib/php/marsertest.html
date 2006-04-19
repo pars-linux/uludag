@@ -15,36 +15,63 @@
 
         <script>
 
+        var myGlobalHandlers = {
+		onCreate: function(){
+			Element.show('working');
+		},
+
+		onComplete: function() {
+			if(Ajax.activeRequestCount == 0){
+				Element.hide('working');
+			}
+		}
+	};
+
+	Ajax.Responders.register(myGlobalHandlers);
+
         function showCoded() {
             var linke='text='+$('textinput').value;
             var url ='marser.php';
-            var myAjax = new Ajax.Request(url,{method:'post', parameters: linke, onComplete: showit});
+            var myAjax = new Ajax.Request(url,
+                                              {
+                                               method:'post',
+                                               parameters: linke,
+                                               onComplete: showit,
+                                              }
+                                         );
         }
 
         function showit(originalRequest){
             var newData = originalRequest.responseText;
+            Element.hide('working');
             $('codedpage').innerHTML = newData;
-            //$('codedpage_source').innerHTML = $('codedpage').innerHTML;
+            $('codedpage_source').value = $('codedpage').innerHTML;
         }
 
         </script>
     </head>
 
-<body>
+<body onload="showCoded();">
 
     <h2> Marser Test ..</h2>
 
-    <div id="textform" style="width:80%;">
-        <textarea style="width:80%;" rows=11 id="textinput" onKeyUp="showCoded();"></textarea>
-    </div>
-
     <div>
-        sdfs
-    </div>
+        <div id="textform" style="float:left;width:50%;">
+            <h4>bbcode</h4>
+            <textarea style="width:100%;border:1px solid #555;" rows=11 id="textinput" onKeyUp="showCoded();"></textarea>
+        </div>
 
-    <br /> <br />
-    <div id="codedpage" style="border:1px solid #DDD;"></div>
-    <div id="codedpage_source" style="border:1px solid #330033;"></div>
+        <div id="textform" style="float:left;width:48%;padding-left:3px;">
+            <h4>htmlsource</h4>
+            <textarea DISABLED style="width:100%;border:1px solid #555;background:#FFF;color:#000;" rows=11 id="codedpage_source"></textarea>
+        </div>
+    </div>
+    
+    <div>
+        <h4>Preview</h4>
+        <div id='working' style="position:absolute; left:45%; right:45%;"><img src="indic.gif" /></div>
+        <div id="codedpage" style="border:1px solid #EEF;clear:left;"></div>
+    </div>
 
 </body>
 </html>
