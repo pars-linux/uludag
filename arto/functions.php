@@ -290,7 +290,7 @@
         global $config;
         $uname = $passo;
         $pass = md5($passo);
-        if ($state<>'N') $attach_sql =" AND UserState = '{$state}'";
+        if ($state) $attach_sql =" AND UserState != '{$state}'";
         if ($user<>"") $attach_sql .=" AND ID = '{$user}'";
         if (!$state) $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$user' AND UserPass = '$pass' AND UserState != 'N'";
         else $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$uname'".$attach_sql;
@@ -380,14 +380,14 @@
     function activate_user($username,$code,$action){
         global $config;
         if(!$action){$action = "activate";}
-        $dana = get_user_details("",$username,3);
+        $dana = get_user_details("",$username,'N');
         if(md5($dana[0]["id"].$config["core"]["secretkey"]) == $code){
             if($action == "activate"){
                 $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$dana[0]["ID"]}' LIMIT 1";
                 $message["message"] = ACTIVATE_USER_OK;
             }
             elseif($action == "delete"){
-                $sql_word = "DELETE FROM {$config['db']['users_table']} WHERE ID='{$dana[0]["id"]}' LIMIT 1";
+                $sql_word = "DELETE FROM {$config['db']['users_table']} WHERE ID='{$dana[0]["ID"]}' LIMIT 1";
                 $message["message"] = ACTIVATE_USER_DELETED;
             }
             else{$message["message"] = ACTIVATE_USER_ERROR;}
