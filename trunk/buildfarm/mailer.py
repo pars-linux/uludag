@@ -49,18 +49,18 @@ def send(message, pspec = '', type = ''):
     # truncate lines longer than 72 chars
     start = 72
     s = ""
-    while len(msg) - start > 0:
-        i = msg.find(" ", start)
-        s += msg[start-72:i] + "\n<br>"
+    while len(message) - start > 0:
+        i = message.find(" ", start)
+        s += message[start-72:i] + "\n<br>"
         start += 72
     else:
-        s += msg[start:]
-        msg = s
+        s += message[start:]
+        message = s
         del s
 
     packagename=os.path.basename(os.path.dirname(pspec))
 
-    msg = templates.get(type) % {'log'          : ''.join(open(config.logFile).readlines()[-20:]),
+    message = templates.get(type) % {'log'          : ''.join(open(config.logFile).readlines()[-20:]),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
                                  'ccList'       : ', '.join(config.ccList),
@@ -84,7 +84,7 @@ def send(message, pspec = '', type = ''):
             logger.error("E-posta gönderimi gerçekleştirilemedi: Kimlik doğrulama başarısız.")
             return
 
-    smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, msg)
+    smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, message)
 
 def error(message, pspec):
     send(message, pspec, type = 'error')
