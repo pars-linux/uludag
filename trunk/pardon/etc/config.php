@@ -21,6 +21,7 @@
     $config['db']['port']               = "3306";
     $config['db']['user']               = "pardul";
     $config['db']['pass']               = "pardul";
+    $config['db']['users_table']	= "UniqUsers";
     $config['db']['dbname']             = "pardul";
     $config['db']['tableprefix']        = "pardul";
     $config['db']['ctype']              = "persistent";
