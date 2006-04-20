@@ -377,14 +377,12 @@
         return perform_sql($sql_word);
     }
 
-    /**Sen de gell */
     function get_user($field,$value){
         global $config;
         $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE $field = '$value'";
         return perform_sql($sql_word);
     }
 
-    /**Sen Gell*/
     function activate_user($username,$code,$action="activate"){
         global $config;
         $node = get_user("UserName",$username);
@@ -400,31 +398,9 @@
             }
         }
         else $message["message"] = ACTIVATED_USER;
-        return $message["message"];
-    }
-
-    /** Sen Gitt
-    function activate_user($username,$code,$action){
-        global $config;
-        if(!$action){$action = "activate";}
-        $dana = get_user_details("",$username,'N');
-        if(md5($dana[0]["id"].$config["core"]["secretkey"]) == $code){
-            if($action == "activate"){
-                $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$dana[0]["ID"]}' LIMIT 1";
-                $message["message"] = ACTIVATE_USER_OK;
-            }
-            elseif($action == "delete"){
-                $sql_word = "DELETE FROM {$config['db']['users_table']} WHERE ID='{$dana[0]["ID"]}' LIMIT 1";
-                $message["message"] = ACTIVATE_USER_DELETED;
-            }
-            else{$message["message"] = ACTIVATE_USER_ERROR;}
-        }
-        else{$message["message"] = ACTIVATE_USER_ERROR;}
-        $sql_query = mysql_query($sql_word);
         return $message;
     }
-    */
-    
+
     function get_news($act=0) {
         global $config;
         if ($act) $attach_sql=" LIMIT 1";
