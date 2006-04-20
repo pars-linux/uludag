@@ -84,8 +84,8 @@
         $password       = md5(rtag($passwordc));
         if ($uname<>"") if (user_exist($uname)) return 0;
         if ($passwordc<>"") $attach_sql=", UserPass='{$password}'";
-        if ($uid == "x") $sql_word = "INSERT INTO {$config['db']['tableprefix']}Users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'N')";
-        else $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserRealName='{$realname}', UserWeb='{$web}',UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
+        if ($uid == "x") $sql_word = "INSERT INTO {$config['db']['users_table']} VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'N')";
+        else $sql_word = "UPDATE {$config['db']['users_table']} SET UserRealName='{$realname}', UserWeb='{$web}',UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
         return @mysql_query($sql_word);
     }
 
@@ -138,7 +138,8 @@
     */
     function get_($id="x",$table){
         global $config;
-        if ($id == "x") $sql_word = "SELECT * FROM {$config['db']['tableprefix']}{$table}"; else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}{$table} WHERE ID='{$id}'";
+        if ($table=="UniqUsers") $table_real = $config['db']['users_table']; else $table_real=$config['db']['tableprefix'].$table;
+        if ($id == "x") $sql_word = "SELECT * FROM {$table_real}"; else $sql_word = "SELECT * FROM {$table_real} WHERE ID='{$id}'";
         return perform_sql($sql_word);
     }
 
@@ -155,7 +156,7 @@
 
     function set_($id,$value){
         global $config;
-        $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='$value' WHERE ID='$id'";
+        $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='$value' WHERE ID='$id'";
         return @mysql_query($sql_word);
     }
 
@@ -175,7 +176,7 @@
     */
     function user_exist($uname){
         global $config;
-        $sql_word = "SELECT ID FROM {$config['db']['tableprefix']}Users WHERE UserName='$uname'";
+        $sql_word = "SELECT ID FROM {$config['db']['users_table']} WHERE UserName='$uname'";
         return perform_sql($sql_word);
     }
 
@@ -186,7 +187,7 @@
     */
     function mail_exist($email){
         global $config;
-        $sql_word = "SELECT ID FROM {$config['db']['tableprefix']}Users WHERE UserEmail='$email'";
+        $sql_word = "SELECT ID FROM {$config['db']['users_table']} WHERE UserEmail='$email'";
         return perform_sql($sql_word);
     }
 
@@ -194,7 +195,7 @@
         global $config;
         $passx  = md5($pass);
         $state = "x" ? $attach_sql =" AND UserState != 'N'" : $attach_sql =" AND UserState = '{$state}'";
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE UserName = '$user' AND UserPass = '$passx'".$attach_sql;
+        $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$user' AND UserPass = '$passx'".$attach_sql;
         return perform_sql($sql_word);
     }
 
@@ -234,7 +235,7 @@
         if ($single) {
             foreach ($single as $key => $node) {
                 $value = $node["UserID"];
-                $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE ID = '$value'";
+                $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE ID = '$value'";
                 $tmp = mysql_fetch_row(mysql_query($sql_word));
                 $single[$key]["UserName"] = $tmp[3];
                 $single[$key]["UserEmail"] = $tmp[4];
@@ -248,7 +249,7 @@
 
     function get_user($field,$value){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE $field = '$value'";
+        $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE $field = '$value'";
         return perform_sql($sql_word);
     }
 
@@ -265,7 +266,7 @@
         if ($single) {
             foreach ($single as $key => $node) {
                 $value = $node["UID"];
-                $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Users WHERE ID = '$value'";
+                $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE ID = '$value'";
                 $tmp = mysql_fetch_row(mysql_query($sql_word));
                 $single[$key]["UserName"] = $tmp[3];
                 $single[$key]["StyledDate"] = conv_time("db2post",$single[$key]["AddDate"]);
@@ -296,7 +297,7 @@
         if ($node[0]["UserState"] == "N") {
             if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
                 if($action == "activate"){
-                    $sql_word = "UPDATE {$config['db']['tableprefix']}Users SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
+                    $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
                     if (mysql_query($sql_word)) $message = ACTIVATE_USER_OK; else $message = ACTIVATE_USER_ERROR;
                 }
             }

@@ -158,7 +158,7 @@
                 case "users":
                     if (isset($_GET["del"])) del_($_GET["users"],"Users");
                     if (isset($_GET["set"])) set_($_GET["users"],$_GET["set"]);
-                    ssv("sr",get_("x","Users"));
+                    ssv("sr",get_("x","UniqUsers"));
                     $smarty->display("userlist.html");
                     die();
                     break;
