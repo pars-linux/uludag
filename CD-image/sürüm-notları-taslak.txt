@@ -43,7 +43,7 @@ bilirsiniz.
 İngilizce'ye dönüşür. Herhangi başka bir dilin desteğini eklemek de son derece
 kolaydır.
 
-Eğlencelidir: Kaptan Masaüstü, PiSi ve ÇOMAR ile bilgisayar kullanmanın keyfini, tam Türkçe
+Eğlencelidir: Kaptan Masaüstü, PİSİ ve ÇOMAR ile bilgisayar kullanmanın keyfini, tam Türkçe
 desteği ile bilgisayarınızı kendi dilinizde kullanmanın kolaylığını
 yaşarsınız. 
 
@@ -81,6 +81,7 @@ desteğe şimdiden teşekkür ederiz.
    - Java desteği
    - Oyunlar ve eğlence
    - Ağ servisleri
+
 3. Kurulum gereksinimleri 
 
    Pardus'u ortalama bir donanım ile çalıştırabilirsiniz. İyi bir
@@ -160,7 +161,14 @@ desteğe şimdiden teşekkür ederiz.
    tasarruf sağlamaktadır. Bunun yanında eski bir teknoloji 
    olan hotplug yerine, daha yeni ve esnek olan udev kullanılmaktadır.
 
-   4.7 Düzeltilen 1500'den fazla hata
+   4.7 PİSİ'deki yenilikler
+
+   PİSİ paketlerinde kullanılacak olan LZMA sıkıştırma algoritması 
+   ile ortalama %30'a varan bir yer kazancı oldu. Bu sayede
+   PİSİ paketleri daha da küçüldü ve son kullanıcının indireceği
+   yazılımların boyutu azaldı.
+
+   4.8 Düzeltilen 1500'den fazla hata
 
    Pardus'un hata izleme sistemi [2] Uluzilla'ya gönderilen hata
    bildirimleri geliştiriciler tarafından titizlikle incelenerek
@@ -168,7 +176,7 @@ desteğe şimdiden teşekkür ederiz.
    1.1'in daha kararlı, sağlam ve son kullanıcıya yönelik olması
    sağlanmıştır.
 
-   4.8 Yeni 2.6.16 çekirdek
+   4.9 Yeni 2.6.16 çekirdek
 
    Pardus ile birlikte gelen 2.6.16 sürüm çekirdek, ........ 
    .............................................................
@@ -176,7 +184,7 @@ desteğe şimdiden teşekkür ederiz.
    .............................................................
    ............................................................
 
-   4.9 Yeni simge setleri
+   4.10 Yeni simge setleri
 
    Pardus 1.0'ın en çok beğenilen özelliklerinden birisi de Pardus'a
    özgü "Tulliana" simge setleri idi. Pardus 1.1'de bu simge setleri
@@ -185,10 +193,10 @@ desteğe şimdiden teşekkür ederiz.
    çok renk uyumu içeriyor ve masaüstünde keyifli zaman geçirmenizi
    sağlıyor.
 
-   4.10 Yeni araçlar (xorgconf, mudurconf, ...)
-   4.11 Diğer paket güncellemeleri (xorg, gcc, ..)
-   4.12 Yeni derleme çiftliği
-   4.13 Daha fazla Türkçe dil desteği 
+   4.11 Yeni araçlar (xorgconf, mudurconf, ...)
+   4.12 Diğer paket güncellemeleri (xorg, gcc, ..)
+   4.13 Yeni derleme çiftliği
+   4.14 Daha fazla Türkçe dil desteği 
    
    Pardus 1.1 ile birlikte gelen Zemberek [3], özellikle teknik terimler
    başta olmak üzere çok daha fazla kelime tanıyabiliyor. Bunun
