@@ -383,7 +383,7 @@
         $dana = get_user_details("",$username,3);
         if(md5($dana[0]["id"].$config["core"]["secretkey"]) == $code){
             if($action == "activate"){
-                $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$dana[0]["id"]}' LIMIT 1";
+                $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$dana[0]["ID"]}' LIMIT 1";
                 $message["message"] = ACTIVATE_USER_OK;
             }
             elseif($action == "delete"){
