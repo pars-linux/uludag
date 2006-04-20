@@ -48,7 +48,7 @@ include_once("globals.php");
 		            set_smarty_vars("up_email",$_POST["email"]);
 		            set_smarty_vars("up_pass",$_POST["password"]);
                 }
-                elseif (update_user("",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],1,$_POST["username"])){
+                elseif (update_user("x",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],$_POST["username"])){
                             $temporary = get_user_id($_POST["username"]);
                             $activationcode = md5($temporary[0]['id'].$config["core"]["secretkey"]);
                             $mail_message = "Merhaba\n\n    Siz ya da bir başkası bu e-posta adresini kullanarak {$config['core']['title']} ({$config['core']['url']}) sitesine kayıt yaptırdı.\n    Eğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın: {$config['core']['url']}?activateuser&username={$_POST["username"]}&code={$activationcode}\n İptal etmek için tıklayın: {$config['core']['url']}?activateuser&action=delete&username={$_POST["username"]}&code={$activationcode}\n\n İlginiz için teşekkürler.\n Uludağ Projesi";

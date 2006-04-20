@@ -189,7 +189,7 @@
     }
 
     /** Gir SEN **/
-    function update_user($uid="x",$realname,$web,$email,$passwordc,$add=0,$uname=""){
+    function update_user($uid="x",$realname,$web,$email,$passwordc,$uname=""){
         global $config;
         $realname       = rtag ($realname);
         $email          = rtag ($email);
