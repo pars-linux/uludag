@@ -31,8 +31,6 @@ import buildfarm.qmanager as qmanager
 import buildfarm.pisiinterface as pisiinterface
 
 def main():
-    logger.info("Depo guncelleniyor (%s)." % config.localPspecRepo)
-    
     qmgr = qmanager.QueueManager()
    
     queue = copy.copy(qmgr.workQueue)
