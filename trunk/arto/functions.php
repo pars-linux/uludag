@@ -90,7 +90,7 @@
         elseif ($thing=="search") $query="name LIKE '%".$id."%' OR description LIKE '%".$id."%' AND ";
 
         if ($limit<>"") $limitt=" LIMIT ".$limit;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE $query state='1' ORDER by $order DESC".$limitt;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Files WHERE $query state='1' ORDER by $order DESC".$limitt;
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
@@ -121,7 +121,7 @@
     */
     function get_comment_number($id){
         global $config;
-        $sql_word = "SELECT id FROM {$config['db']['tableprefix']}comments WHERE fid='{$id}'";
+        $sql_word = "SELECT id FROM {$config['db']['tableprefix']}Comments WHERE fid='{$id}'";
         $sql_query = @mysql_query($sql_word);
         $return_string = @mysql_num_rows($sql_query);
         return $return_string;
@@ -135,7 +135,7 @@
     function get_licenses($id=0){
         global $config;
         if ($id<>0) $query=" WHERE id = '{$id}'";
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}license".$query;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}License".$query;
         return perform_sql($sql_word);
     }
 
@@ -145,7 +145,7 @@
     */
     function get_comments($id){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}comments WHERE fid='{$id}' ORDER by date";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Comments WHERE fid='{$id}' ORDER by date";
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
@@ -164,7 +164,7 @@
     */
     function get_types($parent=0){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}types WHERE parent_id='{$parent}'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Types WHERE parent_id='{$parent}'";
         $sql_query = @mysql_query($sql_word);
         for($i = 0; $i < @mysql_num_rows($sql_query); $i++){
             $assoc_arr = mysql_fetch_assoc($sql_query);
@@ -184,7 +184,7 @@
 
     function get_type($type_id){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}types WHERE id='{$type_id}'";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Types WHERE id='{$type_id}'";
         return perform_sql($sql_word);
     }
 
@@ -239,8 +239,8 @@
         $type_details = get_type($type);
         $subtype = $type;
         if ($type_details[0]["parent_id"]==0) $subtype=0; else $type=$type_details[0]["parent_id"];
-        if ($activate) $sql_word = "UPDATE {$config['db']['tableprefix']}files SET name='{$name}', type='{$type}', sub_type='{$subtype}', path='{$path}', path2='{$path2}', license='{$license}', description='{$description}', supervisor='{$ad_id}', release='{$date}', state='1' WHERE id='$id'";
-        else $sql_word = "INSERT INTO {$config['db']['tableprefix']}files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$path2}','{$description}', '{$note}', '0', '0', '0', '{$date}','0')";
+        if ($activate) $sql_word = "UPDATE {$config['db']['tableprefix']}Files SET name='{$name}', type='{$type}', sub_type='{$subtype}', path='{$path}', path2='{$path2}', license='{$license}', description='{$description}', supervisor='{$ad_id}', release='{$date}', state='1' WHERE id='$id'";
+        else $sql_word = "INSERT INTO {$config['db']['tableprefix']}Files VALUES ('', '{$type}', '{$subtype}','{$name}', '{$license}', '{$id}', '', '{$path}', '{$path2}','{$description}', '{$note}', '0', '0', '0', '{$date}','0')";
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
     }
@@ -307,7 +307,7 @@
     function add_comment($file_id,$user_id,$date,$comment){
         global $config;
         $comment=rtag($comment);
-        $sql_word = "INSERT INTO {$config['db']['tableprefix']}comments VALUES ('', '{$file_id}', '{$user_id}','{$date}', '{$comment}')";
+        $sql_word = "INSERT INTO {$config['db']['tableprefix']}Comments VALUES ('', '{$file_id}', '{$user_id}','{$date}', '{$comment}')";
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
     }
@@ -318,14 +318,14 @@
 
     function get_user_files($id){
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE user='{$id}' ORDER by release DESC";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Files WHERE user='{$id}' ORDER by release DESC";
         return perform_sql($sql_word);
     }
 
     function get_missions($id,$rid=""){
         global $config;
-        if ($rid<>"") $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE state='0' AND id='$rid'";
-        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}files WHERE state='0' ORDER by release DESC";
+        if ($rid<>"") $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Files WHERE state='0' AND id='$rid'";
+        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Files WHERE state='0' ORDER by release DESC";
         return perform_sql($sql_word);
     }
 
@@ -400,32 +400,32 @@
     function get_news($act=0) {
         global $config;
         if ($act) $attach_sql=" LIMIT 1";
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}news ".$attach_sql;
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}News ".$attach_sql;
         return perform_sql($sql_word);
     }
 
     function get_file_something($file,$thing) {
         global $config;
-        $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}files WHERE path = '$file' OR path2 = '$file'";
+        $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}Files WHERE path = '$file' OR path2 = '$file'";
         return perform_sql($sql_word);
     }
 
     function count_download($file) {
         global $config;
         $file_info= get_file_something($file,"id");
-        $sql_word = "UPDATE {$config['db']['tableprefix']}files SET counter=counter+1 WHERE id='{$file_info[0]["id"]}' LIMIT 1";
+        $sql_word = "UPDATE {$config['db']['tableprefix']}Files SET counter=counter+1 WHERE id='{$file_info[0]["id"]}' LIMIT 1";
         return $sql_query = mysql_query($sql_word);
     }
 
     function get_filepaths($id){
         global $config;
-        $sql_word = "SELECT path, path2 FROM {$config['db']['tableprefix']}files WHERE id = '$id'";
+        $sql_word = "SELECT path, path2 FROM {$config['db']['tableprefix']}Files WHERE id = '$id'";
         return perform_sql($sql_word);
     }
 
     function del_theme($id){
         global $config;
-        $sql_word = "DELETE FROM {$config['db']['tableprefix']}files WHERE id='{$id}' LIMIT 1";
+        $sql_word = "DELETE FROM {$config['db']['tableprefix']}Files WHERE id='{$id}' LIMIT 1";
         return $sql_query = mysql_query($sql_word);
     }
 
@@ -437,7 +437,7 @@
 
     function get_file_author($fileid) {
         global $config;
-        $sql_word = "SELECT user FROM {$config['db']['tableprefix']}files WHERE id='{$fileid}'";
+        $sql_word = "SELECT user FROM {$config['db']['tableprefix']}Files WHERE id='{$fileid}'";
         $temp_sql= perform_sql($sql_word);
         $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE ID = '{$temp_sql[0]["user"]}'";
         return perform_sql($sql_word);
