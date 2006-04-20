@@ -51,12 +51,13 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.1.0_b1"
+version = "1.1.0_b2"
+base_packages = ["qt","kdelibs","kdebase","sip","PyQt","PyKDE"]
 
 def AboutData():
     global version,description
     
-    about_data = KAboutData("pisix", "PiSiX", version, description, KAboutData.License_GPL,
+    about_data = KAboutData("pisix", "PiSi-X", version, description, KAboutData.License_GPL,
                             "(C) 2005, 2006 UEKAE/TÜBİTAK", None, None)
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Main Coder"), "ismail@pardus.org.tr")
@@ -105,7 +106,7 @@ class CustomEventListener(DOM.EventListener):
 
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
-        QWidget.__init__(self, parent, "PiSiX")
+        QWidget.__init__(self, parent, "PiSi-X")
         self.parent = parent
         
         # Create a ThreadRunner and init the database
@@ -420,7 +421,11 @@ class MainApplicationWidget(QWidget):
                 self.currentAppIndex += 1
             elif isinstance(eventData,list):
                 self.packagesOrder = eventData
-                self.totalApps = len(self.packagesOrder)
+                if len(set(base_packages).union(self.packagesOrder)) > 0:
+                    self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
+                    self.finished()
+                else:
+                    self.totalApps = len(self.packagesOrder)
         elif eventType == CustomEvent.RepositoryUpdate:
             self.currentRepo = eventData
             self.progressDialog.show()
@@ -543,7 +548,7 @@ class MainApplicationWidget(QWidget):
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
         KMainWindow.__init__(self,parent,name)
-        self.setCaption("PiSiX")
+        self.setCaption("PiSi-X")
         self.aboutus = KAboutApplication(self)
         self.helpWidget = None
         self.mainwidget = MainApplicationWidget(self)
@@ -587,7 +592,7 @@ def main():
     KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
 
     if not KUniqueApplication.start():
-        print i18n("Pisi X is already running!")
+        print i18n("Pisi-X is already running!")
         return
 
     nonPrivMode = posix.getuid()
