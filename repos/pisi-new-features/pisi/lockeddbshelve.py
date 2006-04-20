@@ -9,7 +9,7 @@
 #
 # Please read the COPYING file.
 #
-# Authors:  Eray Ozkural <eray@uludag.org.tr>
+# Authors:  Eray Ozkural <eray@pardus.org.tr>
 
 import os
 import fcntl
@@ -67,6 +67,13 @@ def check_dbversion(versionfile, ver, write=False, update=False):
     else:
         raise Error(_('Database version %s not present.') % versionfile)
 
+def lock_dbenv():
+    ctx.dbenv_lock = file(join_path(pisi.context.config.db_dir(), 'dbenv.lock'), 'w')
+    try:
+        fcntl.flock(ctx.dbenv_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except IOError:
+        raise Error(_("Another instance of PISI is running. Only one instance is allowed to modify the PISI database at a time."))
+
 # write: write access to database environment
 # writeversion: would you like to be able 
 def init_dbenv(write=False, writeversion=False):
@@ -76,7 +83,8 @@ def init_dbenv(write=False, writeversion=False):
         check_dbversion('filesdbversion', pisi.__filesdbversion__, write=write, update=writeversion)
     else:
         raise Error(_('Cannot attain read access to database environment'))
-    if os.access(pisi.context.config.db_dir(), os.W_OK):
+    if write and os.access(pisi.context.config.db_dir(), os.W_OK):
+        lock_dbenv()
         ctx.dbenv = dbobj.DBEnv()
         flags =  (db.DB_INIT_MPOOL |      # cache
                   db.DB_INIT_TXN |        # transaction subsystem
@@ -87,7 +95,9 @@ def init_dbenv(write=False, writeversion=False):
         ctx.dbenv.open(pisi.context.config.db_dir(), flags)
         ctx.dbenv.set_flags(db.DB_LOG_AUTOREMOVE, 1) # clear inactive logs automatically
     else:
-        ctx.ui.warning(_("Opening PISI database in read-only mode. Operations that require write access will fail."))
+        # Warn if not on purpose
+        if write:
+            ctx.ui.warning(_("Opening PISI database in read-only mode. Operations that require write access will fail."))
         ctx.dbenv = None
 
 #def open(filename, flags='r', mode = 0644, filetype = db.DB_BTREE):
@@ -113,10 +123,8 @@ class LockedDBShelf(shelve.DBShelf):
             dbenv = ctx.dbenv
         shelve.DBShelf.__init__(self, dbenv)
         filename = join_path(pisi.context.config.db_dir(), dbname + '.bdb')
-        if os.access(os.path.dirname(filename), os.W_OK):
+        if dbenv and os.access(os.path.dirname(filename), os.W_OK):
             flags = 'w'
-            if not self.dbenv:
-                raise Error(_('Database writes not allowed without transactions'))
         elif os.access(filename, os.R_OK):
             flags = 'r'
         else:

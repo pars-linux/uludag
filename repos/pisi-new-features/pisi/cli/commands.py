@@ -137,12 +137,12 @@ class Command(object):
         else:
             self.authInfo = None
 
-    def init(self, database = True):
+    def init(self, database = True, write = True):
         """initialize PiSi components"""
         
         # NB: command imports here or in the command class run fxns
         import pisi.api
-        pisi.api.init(database = database, options = self.options,
+        pisi.api.init(database = database, write = write, options = self.options,
                       comar = self.comar)
 
     def finalize(self):
@@ -361,7 +361,9 @@ unpack, setup, build, install, package
         self.parser.add_option("-B", "--ignore-comar", action="store_true",
                                default=False, help=_("bypass comar configuration agent"))
         self.parser.add_option("-S", "--create-static", action="store_true",
-                               default=False, help=_("automatically create a *-static package with ar files"))
+                               default=True, help=_("automatically create a static package with ar files"))
+        self.parser.add_option("-g", "--create-debug", action="store_true",
+                               default=True, help=_("automatically create a debug package with debug files"))
 
 
     def run(self):
@@ -374,7 +376,7 @@ unpack, setup, build, install, package
             if ctx.get_option('until') in Build.steps:
                 raise Error(_('Step must be one of %s ') % pisi.util.strlist(Build.steps))
 
-        self.init(database = True) 
+        self.init()
         if ctx.get_option('output_dir'):
             ctx.ui.info(_('Output directory: %s') % ctx.config.options.output_dir)
         else:
@@ -402,6 +404,7 @@ downloaded from a repository containing sources.
 
     def __init__(self):
         super(Emerge, self).__init__()
+        self.comar = True
 
     name = ("emerge", "em")
 
@@ -612,7 +615,7 @@ Usage: info <package1> <package2> ... <packagen>
 
     def run(self):
 
-        self.init(True)
+        self.init(database = True, write = False)
         
         if len(self.args) == 0:
             self.help()
@@ -641,7 +644,8 @@ Usage: info <package1> <package2> ... <packagen>
                 else:
                     ctx.ui.info(_('Installed package:'))
                 self.print_pkginfo(metadata, files)
-            elif ctx.packagedb.has_package(arg):
+                
+            if ctx.packagedb.has_package(arg):
                 metadata, files = pisi.api.info_name(arg, False)
                 if ctx.get_option('short'):
                     ctx.ui.info(_('[repo] '), noln=True)
@@ -690,7 +694,7 @@ Usage: check <package1> <package2> ... <packagen>
             self.help()
             return
 
-        self.init(True)
+        self.init(database = True, write = False)
         for pkg in self.args:
             if ctx.installdb.is_installed(pkg):
                 pisi.api.check(pkg)
@@ -726,16 +730,28 @@ source and binary packages.
         self.parser.add_option("-S", "--skip-sources", action="store_true",
                                default=False,
                                help=_("do not index pisi spec files."))
+        self.parser.add_option("-G", "--skip-signing", action="store_true",
+                               default=False,
+                               help=_("do not sign index."))
+        self.parser.add_option("-R", "--non-recursive", action="store_true",
+                               default=False,
+                               help=_("do not recurse into directories."))
 
     def run(self):
         
-        self.init()
+        self.init(database = True, write = False)
         from pisi.api import index
         if len(self.args)>0:
-            index(self.args, ctx.get_option('output'), skip_sources = ctx.get_option('skip_sources'))
+            index(self.args, ctx.get_option('output'),
+                  skip_sources = ctx.get_option('skip_sources'),
+                  skip_signing = ctx.get_option('skip_signing'),
+                  non_recursive = ctx.get_option('non_recursive'))
         elif len(self.args)==0:
             ctx.ui.info(_('Indexing current directory.'))
-            index(['.'], ctx.get_option('output'), skip_sources = ctx.get_option('skip_sources'))
+            index(['.'], ctx.get_option('output'),
+                  skip_sources = ctx.get_option('skip_sources'),
+                  skip_signing = ctx.get_option('skip_signing'),
+                  non_recursive = ctx.get_option('non_recursive'))
         self.finalize()
 
 
@@ -760,7 +776,7 @@ Usage: list-installed
                                default=False, help=_("show detailed install info"))
 
     def run(self):
-        self.init(True)
+        self.init(database = True, write = False)
         list = ctx.installdb.list_installed()
         list.sort()
         if self.options.install_info:
@@ -875,7 +891,7 @@ NB: We support only local files (e.g., /a/b/c) and http:// URIs at the moment
                 indexuri = self.args[1]
             else:
                 name = 'pardus-1-test'
-                indexuri = 'http://paketler.uludag.org.tr/pardus-1-test/pisi-index.xmi'
+                indexuri = 'http://paketler.pardus.org.tr/pardus-1-test/pisi-index.xml.bz2'
             pisi.api.add_repo(name, indexuri)
             if ctx.ui.confirm(_('Update PISI database for repository %s?') % name):
                 pisi.api.update_repo(name)
@@ -929,7 +945,7 @@ Lists currently tracked repositories.
 
     def run(self):
 
-        self.init()
+        self.init(database = True, write = False)
         for repo in ctx.repodb.list():
             ctx.ui.info(repo)
             print '  ', ctx.repodb.get_repo(repo).indexuri.get_uri()
@@ -958,7 +974,7 @@ Gives a brief list of PiSi packages published in the repository.
 
     def run(self):
 
-        self.init(True)
+        self.init(database = True, write = False)
 
         if self.args:
             for arg in self.args:
@@ -986,7 +1002,7 @@ Gives a brief list of PiSi packages published in the repository.
                 if p in installed_list:
                     if ctx.config.get_option('uninstalled'):
                         continue
-                    p = colorize(p, 'cyan')
+                    p = colorize(p, 'green')
                 p = p + ' ' * max(0, 15 - lenp)
                 ctx.ui.info('%s - %s ' % (p, unicode(package.summary)))
 
@@ -1010,7 +1026,7 @@ Gives a brief list of PiSi components published in the repositories.
 
     def run(self):
 
-        self.init(True)
+        self.init(database = True, write = False)
 
         list = ctx.componentdb.list_components()
         list.sort()
@@ -1047,7 +1063,7 @@ Gives a brief list of sources published in the repositories.
 
     def run(self):
 
-        self.init(True)
+        self.init(database = True, write = False)
 
         list = ctx.sourcedb.list()
         list.sort()
@@ -1085,7 +1101,7 @@ Usage: list-upgrades [ <repo1> <repo2> ... repon ]
         buildno_opts(self)
                                
     def run(self):
-        self.init(True)
+        self.init(database = True, write = False)
         list = pisi.api.list_upgradable()
         if not list:
             ctx.ui.info(_('No packages to upgrade.')) 
@@ -1117,7 +1133,7 @@ class ListPending(Command):
     name = ("list-pending", "lp")
 
     def run(self):
-        self.init(True)
+        self.init(database = True, write = False)
 
         list = ctx.installdb.list_pending()
         for p in list.keys():
@@ -1154,7 +1170,7 @@ Finds a package in repository containing specified search terms
 
     def run(self):
 
-        self.init(True)
+        self.init(database = True, write = False)
 
         if not self.args:
             self.help()
@@ -1212,7 +1228,7 @@ Finds the installed package which contains the specified file.
 
     def run(self):
 
-        self.init(True)
+        self.init(database = True, write = False)
 
         if not self.args:
             self.help()

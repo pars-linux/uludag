@@ -12,10 +12,10 @@
 
 # misc. utility functions, including process and file utils
 
-# Authors:  Eray Ozkural <eray@uludag.org.tr>
-#           Baris Metin <baris@uludag.org.tr>
-#           S. Caglar Onur <caglar@uludag.org.tr>
-#           A. Murat Eren <meren@uludag.org.tr>
+# Authors:  Eray Ozkural <eray@pardus.org.tr>
+#           Baris Metin <baris@pardus.org.tr>
+#           S. Caglar Onur <caglar@pardus.org.tr>
+#           A. Murat Eren <meren@pardus.org.tr>
 
 # standard python modules
 import os
@@ -26,6 +26,7 @@ import shutil
 import string
 import statvfs
 import operator
+import subprocess
 
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -141,22 +142,33 @@ def human_readable_rate(size = 0):
 def run_batch(cmd, realtime = False):
     """run command non-interactively/realtime and report return value and output"""
     ctx.ui.info(_('Running ') + cmd, verbose=True)
-    p = os.popen(cmd)
-    if realtime:
-        while 1:
-            line = p.readline()
-            if not line:
-                break
-            ctx.ui.debug(line[:-1])
-        return p.close()
+
+    if ctx.stdout:
+        stdout = ctx.stdout
     else:
-        lines = p.readlines()
-    ret = p.close()
-    ctx.ui.debug(_('return value %s') % ret)
-    successful = ret == None
-    if not successful:
-        ctx.ui.error(_('Failed command: %s') % cmd + strlist(lines))
-    return (successful,lines)
+        stdout = subprocess.PIPE
+
+    if ctx.stderr:
+        stderr = ctx.stderr
+    else:
+        stderr = subprocess.PIPE
+
+    out = err = ""
+    p = subprocess.Popen(cmd, shell=True, stdout=stdout, stderr=stderr)
+    if realtime and not ctx.stdout:
+        while p.poll() == None:
+            line = p.stdout.readline()
+            if line:
+                ctx.ui.debug(line[:-1])
+    else:
+        out, err = p.communicate()
+
+    ctx.ui.debug(_('return value %s') % p.returncode)
+    if p.returncode:
+        # Non-zero means failed.
+        ctx.ui.error(_('Failed command: %s') % cmd + strlist(out))
+
+    return (p.returncode, out)
 
 ######################
 # Terminal functions #
@@ -475,16 +487,16 @@ def do_patch(sourceDir, patchFile, level = 0, target = ''):
         target = ''
 
     check_file(patchFile)
-    (successful, lines) = run_batch("patch -p%d %s< %s" % 
+    (ret, out) = run_batch("patch -p%d %s< %s" % 
                                     (level, target, patchFile))
-    if not successful:
+    if ret:
         raise Error(_("ERROR: patch (%s) failed: %s") % (patchFile,
-                                                         strlist (lines)))
+                                                         strlist (out)))
 
     os.chdir(cwd)
 
 
-def strip_directory(top, package_name, excludelist=[]):
+def strip_directory(top, excludelist=[]):
     for root, dirs, files in os.walk(top):
         for fn in files:
             frpath = join_path(root, fn)
@@ -508,11 +520,11 @@ def strip_directory(top, package_name, excludelist=[]):
                     ctx.ui.debug("%s [%s]" %(p, "NoStrip"))
 
             if strip:
-                if strip_file(frpath, package_name):
+                if strip_file(frpath):
                     ctx.ui.debug("%s [%s]" %(p, "stripped"))
                 
 
-def strip_file(filepath, package_name):
+def strip_file(filepath):
     """strip a file"""
     p = os.popen("file \"%s\"" % filepath)
     o = p.read()
@@ -523,19 +535,15 @@ def strip_file(filepath, package_name):
         if ret:
             ctx.ui.warning(_("strip command failed for file '%s'!") % f)
 
-    def save_elf_debug(f, package_name):
-        """copy debug info into /debug/PACKAGE_NAME/file.debug file"""
-        try:
-            os.makedirs("/debug/%s" % package_name)
-        except OSError:
-            pass
-        p = os.popen("objcopy --only-keep-debug %s /debug/%s/%s.debug" % (f, package_name, os.path.basename(f)))
+    def save_elf_debug(f):
+        """copy debug info into file.debug file"""
+        p = os.popen("objcopy --only-keep-debug %s %s%s" % (f, f, ctx.const.debug_file_suffix))
         ret = p.close()
         if ret:
             ctx.ui.warning(_("objcopy (keep-debug) command failed for file '%s'!") % f)
         
-        """mark binary/shared objects to use /debug/PACKAGE_NAME/file.debug"""
-        p = os.popen("objcopy --add-gnu-debuglink=/debug/%s/%s.debug %s" % (package_name, os.path.basename(f), f))
+        """mark binary/shared objects to use file.debug"""
+        p = os.popen("objcopy --add-gnu-debuglink=%s%s %s" % (f, ctx.const.debug_file_suffix, f))
         ret = p.close()
         if ret:
             ctx.ui.warning(_("objcopy (add-debuglink) command failed for file '%s'!") % f)
@@ -545,14 +553,14 @@ def strip_file(filepath, package_name):
         return True
 
     elif "SB executable" in o:
-        if ctx.config.values.build.debug == "True":
-            save_elf_debug(filepath, package_name)
+        if ctx.get_option('create_debug'):
+            save_elf_debug(filepath)
         run_strip(filepath)
         return True
 
     elif "SB shared object" in o:
-        if ctx.config.values.build.debug == "True":
-            save_elf_debug(filepath, package_name)
+        if ctx.get_option('create_debug'):
+            save_elf_debug(filepath)
         run_strip(filepath, "--strip-unneeded")
         # FIXME: warn for TEXTREL
         return True

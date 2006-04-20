@@ -12,8 +12,8 @@
 
 # Context module.
 
-# Authors: Baris Metin <baris@uludag.org.tr
-#          Eray Ozkural <eray@uludag.org.tr>
+# Authors: Baris Metin <baris@pardus.org.tr
+#          Eray Ozkural <eray@pardus.org.tr>
 
 # global variables here
 
@@ -30,6 +30,10 @@ def get_option(opt):
 
 # default UI is CLI
 ui = None # not now
+
+# stdout, stderr for PiSi API
+stdout = None
+stderr = None
 
 dbenv = None
 installdb = None

@@ -40,6 +40,8 @@ from pisi.metadata import MetaData
 from pisi.package import Package
 import pisi.component as component
 
+import pisi.actionsapi.variables
+
 
 class Error(pisi.Error):
     pass
@@ -75,8 +77,9 @@ def check_path_collision(package, pkgList):
                 # collide. Exp:
                 # pinfo.path: /usr/share
                 # path.path: /usr/share/doc
-                if path.path.endswith(ctx.const.ar_file_suffix) and ctx.get_option('create_static'):
-                    # don't throw collision error for ar files. 
+                if (path.path.endswith(ctx.const.ar_file_suffix) and ctx.get_option('create_static')) or \
+                   (path.path.endswith(ctx.const.debug_file_suffix) and ctx.get_option('create_debug')):
+                    # don't throw collision error for these files. 
                     # we'll handle this in gen_files_xml..
                     continue
                 if util.subpath(pinfo.path, path.path):
@@ -201,6 +204,11 @@ class Builder:
 
     def set_environment_vars(self):
         """Sets the environment variables for actions API to use"""
+
+        # Each time a builder is created we must reset
+        # environment. See bug #2575
+        pisi.actionsapi.variables.initVariables()
+
         env = {
             "PKG_DIR": self.pkg_dir(),
             "WORK_DIR": self.pkg_work_dir(),
@@ -484,7 +492,37 @@ class Builder:
         static_package_obj.partOf = 'library:static'
         for f in ar_files:
             static_package_obj.files.append(pisi.specfile.Path(path = f[len(self.pkg_install_dir()):], fileType = "library"))
-        static_package_obj.packageDependencies.append(pisi.dependency.Dependency(package = self.spec.source.name))
+
+        # append all generated packages to dependencies
+        for p in self.spec.packages:
+            static_package_obj.packageDependencies.append(
+                pisi.dependency.Dependency(package = p.name))
+
+        return static_package_obj
+
+    def generate_debug_package_object(self):
+        debug_files = []
+        for root, dirs, files in os.walk(self.pkg_install_dir()):
+            for f in files:
+                if f.endswith(ctx.const.debug_file_suffix):
+                    debug_files.append(util.join_path(root, f))
+
+        if not len(debug_files):
+            return None
+
+        static_package_obj = pisi.specfile.Package()
+        static_package_obj.name = self.spec.source.name + ctx.const.debug_name_suffix
+        # FIXME: find a better way to deal with the summary and description constants.
+        static_package_obj.summary['en'] = u'Debug files for %s' % (self.spec.source.name)
+        static_package_obj.description['en'] = u'Debug files for %s' % (self.spec.source.name)
+        static_package_obj.partOf = 'library:debug'
+        for f in debug_files:
+            static_package_obj.files.append(pisi.specfile.Path(path = f[len(self.pkg_install_dir()):], fileType = "debug"))
+
+        # append all generated packages to dependencies
+        for p in self.spec.packages:
+            static_package_obj.packageDependencies.append(
+                pisi.dependency.Dependency(package = p.name))
 
         return static_package_obj
 
@@ -492,12 +530,11 @@ class Builder:
         """strip install directory"""
         ctx.ui.action(_("Stripping files.."))
         install_dir = self.pkg_install_dir()
-        pkg_name = self.spec.source.name + '-' + self.spec.source.version + '-' + self.spec.source.release
         try:
             nostrip = self.actionGlobals['NoStrip']
-            util.strip_directory(install_dir, pkg_name, nostrip)
+            util.strip_directory(install_dir, nostrip)
         except KeyError:
-            util.strip_directory(install_dir, pkg_name)
+            util.strip_directory(install_dir)
 
     def gen_metadata_xml(self, package):
         """Generate the metadata.xml file for build source.
@@ -556,11 +593,17 @@ class Builder:
         def add_path(path):
             # add the files under material path 
             for fpath, fhash in util.get_file_hashes(path, collisions, install_dir):
-                if  ctx.get_option('create_static') \
+                if ctx.get_option('create_static') \
                     and fpath.endswith(ctx.const.ar_file_suffix) \
                     and not package.name.endswith(ctx.const.static_name_suffix) \
                     and util.is_ar_file(fpath):
-                    # if this is an ar file, and this package is not a -static package,
+                    # if this is an ar file, and this package is not a static package,
+                    # don't include this file into the package.
+                    continue
+                if ctx.get_option('create_debug') \
+                    and fpath.endswith(ctx.const.debug_file_suffix) \
+                    and not package.name.endswith(ctx.const.debug_name_suffix):
+                    # if this is a debug file, and this package is not a debug package,
                     # don't include this file into the package.
                     continue
                 frpath = util.removepathprefix(install_dir, fpath) # relative path
@@ -584,14 +627,10 @@ class Builder:
     def calc_build_no(self, package_name):
         """Calculate build number"""
 
-        # find previous build in output dir and packages dir
+        # find previous build in packages dir
         found = []        
         def locate_package_names(files):
             for fn in files:
-                try:
-                    fn = fn.decode('utf-8') # FIXME: why is this necessary?
-                except: # fix 1088
-                    continue
                 if util.is_package_name(fn, package_name):
                     old_package_fn = util.join_path(root, fn)
                     try:
@@ -608,11 +647,6 @@ class Builder:
                         ctx.ui.warning('Package file %s may be corrupt. Skipping.' % old_package_fn)
                         continue
 
-        outdir = ctx.config.options.output_dir or '.'
-
-        for root, dirs, files in os.walk(outdir):
-            dirs = [] # don't recurse
-            locate_package_names(files)
         for root, dirs, files in os.walk(ctx.config.packages_dir()):
             locate_package_names(files)
 
@@ -679,6 +713,11 @@ class Builder:
 
         if ctx.get_option('create_static'):
             obj = self.generate_static_package_object()
+            if obj:
+                self.spec.packages.append(obj)
+
+        if ctx.get_option('create_debug'):
+            obj = self.generate_debug_package_object()
             if obj:
                 self.spec.packages.append(obj)
 

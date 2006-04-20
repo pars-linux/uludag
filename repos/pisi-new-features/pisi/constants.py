@@ -14,7 +14,7 @@
 If you have a "magic" constant value this is where it should be
 defined."""
 
-# Author: Baris Metin <baris@uludag.org.tr
+# Author: Baris Metin <baris@pardus.org.tr
 
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -49,9 +49,13 @@ class Constants:
         self.__c.package_suffix = ".pisi"
         self.__c.xdelta_suffix = ".xdelta"
 
+        # suffix for auto generated debug packages
+        self.__c.debug_name_suffix = "-debug"
+        self.__c.debug_file_suffix = ".debug"
+
         # suffix for auto generated ar packages
         self.__c.static_name_suffix = "-static"  # an admissible use of constant
-        self.__c.ar_file_suffix = ".a" 
+        self.__c.ar_file_suffix = ".a"
 
         # directory suffixes for build
         self.__c.work_dir_suffix = "/work"       # these, too, because we might wanna change 'em

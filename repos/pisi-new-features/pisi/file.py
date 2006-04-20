@@ -9,7 +9,7 @@
 #
 # Please read the COPYING file.
 #
-# Author:  Eray Ozkural <eray@uludag.org.tr>
+# Author:  Eray Ozkural <eray@pardus.org.tr>
 
 """
 generic file abstraction that allows us to use URIs for everything
@@ -18,8 +18,9 @@ we are just encapsulating a common pattern in our program, nothing big.
 like all pisi classes, it has been programmed in a non-restricting way
 """
 
-import os, os.path
+import os
 import types
+import bz2
 
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -53,7 +54,7 @@ class InvalidSignature(pisi.Error):
 class File:
 
     (read, write) = range(2) # modes
-    (xmill, sevenzip) = range(2) # compress enums
+    (bz2, lzma) = range(2) # compress enums
 
     (detached, whatelse) = range(2)
 
@@ -62,26 +63,29 @@ class File:
         "handle URI arg"
         if type(uri) == types.StringType or type(uri) == types.UnicodeType:
             uri = URI(uri)
-        elif type(uri) != URI:
+        elif not isinstance(uri, URI):
             raise Error(_("uri must have type either URI or string"))
         return uri
 
     @staticmethod
     def decompress(localfile, compress):
-        if compress == File.xmill:
-            pisi.util.run_batch('xdemill -f ' + localfile)
-            if not localfile.endswith('.xmi'):
-                raise Error(_("xmill compressed filename must end with '.xmi'"))
-            localfile = localfile[:-4] + '.xml'
-        elif compress == File.sevenzip:
-            raise Error(_("sevenzip compression not supported yet"))
+        if compress == File.bz2:
+            if not localfile.endswith(".bz2"):
+                raise Error(_("bz2 compressed filename must end with '.bz2'"))
+            
+            open(localfile[:-4], "w").write(bz2.BZ2File(localfile).read())
+            localfile = localfile[:-4]
+
+        elif compress == File.lzma:
+            raise Error(_("lzma compression not supported yet"))
+
         return localfile
 
     @staticmethod
     def download(uri, transfer_dir = "/tmp", 
                  sha1sum = False, compress = None, sign = None):
 
-        assert type(uri == URI)
+        assert isinstance(uri, URI)
 
         if sha1sum:
             sha1filename = File.download(URI(uri.get_uri() + '.sha1sum'), transfer_dir)
@@ -105,6 +109,8 @@ class File:
             fetch_url(uri, transfer_dir)
         else:
             localfile = uri.get_uri() #TODO: use a special function here?
+            if not os.path.exists(localfile):
+                raise IOError(_("File '\%s'\ not found.") % localfile)
 
         if sha1sum:        
         
@@ -156,19 +162,30 @@ class File:
         "this method must be called at the end of operation"
         self.__file__.close()
         if self.mode == File.write:
-            if self.compress == File.xmill:
-                pisi.util.run_batch('xcmill -9 -f ' + self.localfile)
-                self.localfile = self.localfile[:-4] + '.xmi'
-            elif self.compress == File.sevenzip:
-                raise Error(_("sevenzip compression not supported yet"))
+            compressed_file = None
+            if self.compress == File.bz2:
+                compressed_file = self.localfile + ".bz2"
+                bz2.BZ2File(compressed_file, "w").write(open(self.localfile, "r").read())
+
+            elif self.compress == File.lzma:
+                raise Error(_("lzma compression not supported yet"))
+
             if self.sha1sum:
                 sha1 = pisi.util.sha1_file(self.localfile)
                 cs = file(self.localfile + '.sha1sum', 'w')
                 cs.write(sha1)
                 cs.close()
+                if compressed_file:
+                    sha1 = pisi.util.sha1_file(compressed_file)
+                    cs = file(compressed_file + '.sha1sum', 'w')
+                    cs.write(sha1)
+                    cs.close()
+
             if self.sign==File.detached:
                 pisi.util.run_batch('gpg --detach-sig ' + self.localfile)
-                
+                if compressed_file:
+                    pisi.util.run_batch('gpg --detach-sig ' + compressed_file)
+
     @staticmethod
     def check_signature(uri, transfer_dir, sign=detached):
         if sign==File.detached:

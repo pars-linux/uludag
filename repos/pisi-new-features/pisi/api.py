@@ -9,8 +9,8 @@
 #
 # Please read the COPYING file.
 #
-# Authors:  Eray Ozkural <eray@uludag.org.tr>
-#           Baris Metin <baris@uludag.org.tr>
+# Authors:  Eray Ozkural <eray@pardus.org.tr>
+#           Baris Metin <baris@pardus.org.tr>
 
 """Top level PISI interfaces. a facade to the entire PISI system"""
 
@@ -49,7 +49,9 @@ import pisi.lockeddbshelve as shelve
 class Error(pisi.Error):
     pass
 
-def init(database = True, write = True, options = None, ui = None, comar = True):
+def init(database = True, write = True,
+         options = None, ui = None, comar = True,
+         stdout = None, stderr = None):
     """Initialize PiSi subsystem"""
 
     # UI comes first
@@ -62,6 +64,15 @@ def init(database = True, write = True, options = None, ui = None, comar = True)
             ctx.ui = CLI()
     else:
         ctx.ui = ui
+
+
+    # If given define stdout and stderr. Needed by buildfarm currently
+    # but others can benefit from this too.
+    if stdout:
+        ctx.stdout = stdout
+    if stderr:
+        ctx.stderr = stderr
+
 
     import pisi.config
     ctx.config = pisi.config.Config(options)
@@ -109,6 +120,8 @@ def finalize():
         pisi.search.finalize()
         if ctx.dbenv:
             ctx.dbenv.close()
+            ctx.dbenv_lock.close()
+
         ctx.ui.debug('PISI API finalized')
         ctx.ui.close()
         ctx.initialized = False
@@ -295,7 +308,8 @@ def check(package):
                 ctx.ui.info("OK", False)
     return corrupt
 
-def index(dirs=None, output = 'pisi-index.xml', skip_sources=False):
+def index(dirs=None, output='pisi-index.xml', skip_sources=False, skip_signing=False, 
+          non_recursive=False):
     """accumulate PISI XML files in a directory"""
     index = Index()
     if not dirs:
@@ -303,8 +317,12 @@ def index(dirs=None, output = 'pisi-index.xml', skip_sources=False):
     for repo_dir in dirs:
         repo_dir = str(repo_dir)
         ctx.ui.info(_('* Building index of PISI files under %s') % repo_dir)
-        index.index(repo_dir, skip_sources)
-    index.write(output, sha1sum=True, compress=File.xmill, sign=File.detached)
+        index.index(repo_dir, skip_sources, non_recursive)
+
+    if skip_signing:
+        index.write(output, sha1sum=True, compress=File.bz2, sign=None)
+    else:
+        index.write(output, sha1sum=True, compress=File.bz2, sign=File.detached)
     ctx.ui.info(_('* Index file written'))
 
 def add_repo(name, indexuri):
@@ -347,6 +365,29 @@ def update_repo(repo, force=False):
     else:
         raise Error(_('No repository named %s found.') % repo)
 
+def rebuild_repo(repo):
+    ctx.ui.info(_('* Rebuilding \'%s\' named repo... ') % repo, noln=True)
+    
+    index = Index()
+    if ctx.repodb.has_repo(repo):
+        repouri = ctx.repodb.get_repo(repo).indexuri.get_uri()
+        indexname = os.path.basename(repouri)
+        indexpath = pisi.util.join_path(ctx.config.lib_dir(), 'index', repo, indexname)
+
+        if os.path.exists(indexpath):
+            repouri = indexpath
+
+        try:
+            index.read_uri(repouri, repo, force = True)
+        except IOError:
+            ctx.ui.warning(_("Repo index file \'%s\' not found.") % repouri)
+            return
+    else:
+        raise Error(_('No repository named %s found.') % repo)
+
+    ctx.txn_proc(lambda txn : index.update_db(repo, txn=txn))
+    ctx.ui.info(_('OK.'))
+    
 def delete_cache():
     util.clean_dir(ctx.config.packages_dir())
     util.clean_dir(ctx.config.archives_dir())
@@ -375,12 +416,21 @@ def rebuild_db(files=False):
                     #os.unlink(fn)
         ctx.dbenv.close()
 
-    def reload(files, txn):
+    def reload_packages(files, txn):
         for package_fn in os.listdir( pisi.util.join_path( ctx.config.lib_dir(),
                                                            'package' ) ):
             if not package_fn == "scripts":
                 ctx.ui.debug('Resurrecting %s' % package_fn)
                 pisi.api.resurrect_package(package_fn, files, txn)
+
+    def reload_indexes(txn):
+        index_dir = ctx.config.index_dir()
+        if os.path.exists(index_dir):  # it may have been erased, or we may be upgrading from a previous version -- exa
+            for repo in os.listdir(index_dir):
+                indexuri = pisi.util.join_path(ctx.config.lib_dir(), 'index', repo, 'uri')
+                indexuri = open(indexuri, 'r').readline()
+                pisi.api.add_repo(repo, indexuri)
+                pisi.api.rebuild_repo(repo)
 
     # check db schema versions
     try:
@@ -399,4 +449,5 @@ def rebuild_db(files=False):
     # construct new database version
     init(database=True, options=options, ui=ui, comar=comar)
     #ctx.txn_proc(reload)
-    reload(files, None)
+    reload_packages(files, None)
+    reload_indexes(None)
