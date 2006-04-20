@@ -42,7 +42,7 @@ Content-Type: text/plain;
 %(log)s
 --------------------------------------------------------------------------
 
- Derleme için çıktı dosyası: http://paketler.pardus.org.tr/logs/%(packagename).log
+ Kayıt dosyası: http://paketler.pardus.org.tr/logs/%(packagename)s.log
 
  Kolay gelsin.
  (Vallahi ben bir şey yapmadım..)
@@ -90,6 +90,9 @@ Content-Type: text/html;
         </tr>
     </table>
 </div>
+
+<p> Kayıt dosyası: <a
+href="http://paketler.pardus.org.tr/logs/%(packagename)s.log">http://paketler.pardus.org.tr/logs/%(packagename)s.log</a>.
 
 <p> Kolay gelsin.<br> (Vallahi ben bir şey yapmadım..)
 

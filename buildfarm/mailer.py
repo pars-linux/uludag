@@ -60,7 +60,7 @@ def send(message, pspec = '', type = ''):
 
     packagename=os.path.basename(os.path.dirname(pspec))
 
-    message = templates.get(type) % {'log'          : ''.join(open(config.logFile).readlines()[-20:]),
+    message = templates.get(type) % {'log'      : ''.join(open(config.logFile).readlines()[-20:]),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
                                  'ccList'       : ', '.join(config.ccList),
