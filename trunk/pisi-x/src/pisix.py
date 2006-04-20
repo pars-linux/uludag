@@ -11,7 +11,7 @@
 # Please read the COPYING file.
 #
 #
-# Authors:  İsmail Dönmez <ismail@pardus.org.tr>
+# Authors: İsmail Dönmez <ismail@pardus.org.tr>
 # Resistence is futile, turn on god damn Unicode!
 
 # System
@@ -63,7 +63,7 @@ def AboutData():
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Main Coder"), "ismail@pardus.org.tr")
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
-    about_data.addCredit("Eray Özkural", I18N_NOOP("Component/Category"), "eray@pardus.org.tr")
+    about_data.addCredit("Eray Özkural", I18N_NOOP("Misc. Fixes"), "eray@pardus.org.tr")
     about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
     about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi API"), None)
     about_data.addCredit(I18N_NOOP("PiSi Authors"), I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
@@ -125,6 +125,7 @@ class MainApplicationWidget(QWidget):
         self.currentAppIndex = 1
         self.totalSelectedSize = 0
         self.possibleError = False
+        self.infoMessage = None
 	
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
@@ -393,6 +394,8 @@ class MainApplicationWidget(QWidget):
             self.finished()
         elif eventType == CustomEvent.PisiWarning:
             pass
+        elif eventType == CustomEvent.PisiInfo:
+            self.infoMessage = eventData
         elif eventType == CustomEvent.PisiError:
             self.showErrorMessage(eventData)
         elif eventType == CustomEvent.AskConfirmation:
@@ -433,7 +436,8 @@ class MainApplicationWidget(QWidget):
             print 'Unhandled event:',eventType,'with data',eventData
     
     def showConfirmationMessage(self, question):
-        answer = KMessageBox.questionYesNo(self,question,i18n("PiSi Question"))
+        answer = KMessageBox.questionYesNo(self,self.infoMessage+question,i18n("PiSi Question"))
+        self.infoMessage=None
         event = QCustomEvent(CustomEvent.UserConfirmed)
         if answer == KMessageBox.Yes:
             event.setData(True)
