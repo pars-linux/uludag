@@ -34,6 +34,18 @@ RecInfo = lambda x, y: [i.firstChild.wholeText for i in \
              Get(Get(Get(y, "Source")[0], "Packager")[0], x)]
 
 def send(message, pspec = '', type = ''):
+
+    def truncate(message, start=60):
+        while len(message) - start > 0:
+            i = message.find(" ", start)
+            if i > 0:
+                message = message[:i] + "\n<br>" + message[i:]
+                start += i
+            else:
+                break
+        return message
+
+
     if not config.smtpUser or not config.smtpPassword:
         logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
         return
@@ -46,21 +58,12 @@ def send(message, pspec = '', type = ''):
     templates = {'error': tmpl.error_message,
                  'info' : tmpl.info_message}
 
-    # truncate lines longer than 72 chars
-    start = 72
-    s = ""
-    while len(message) - start > 0:
-        i = message.find(" ", start)
-        s += message[start-72:i] + "\n<br>"
-        start += 72
-    else:
-        s += message[start:]
-        message = s
-        del s
 
     packagename=os.path.basename(os.path.dirname(pspec))
-
-    message = templates.get(type) % {'log'      : ''.join(open(config.logFile).readlines()[-20:]),
+    last_log = ''.join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
+    message = truncate(message)
+    last_log = truncate(last_log)
+    message = templates.get(type) % {'log'      : last_log,
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
                                  'ccList'       : ', '.join(config.ccList),
