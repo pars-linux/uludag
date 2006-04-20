@@ -34,10 +34,8 @@ class PisiApi:
         if not options:
             import pisi.config
             self.options = pisi.config.Options()
-            self.options.yes_all = True
-            self.options.create_static = True
-            self.options.create_debug = True
             self.options.output_dir = config.workDir
+            self.options.yes_all = True
         else:
             self.options = options
 
