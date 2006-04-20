@@ -193,7 +193,7 @@ class MainApplicationWidget(QWidget):
         
     def updateListing(self,switch=False):
 
-        if switch:
+        if switch or self.possibleError:
             self.appsToProcess = []
             self.parent.operateAction.setEnabled(False)
             self.clearSearchLine()
@@ -451,8 +451,8 @@ class MainApplicationWidget(QWidget):
         # Here we don't use updateListing() if there is no error, because we already updated the view
         # in check() using DOM which is fast, so unless an error occurred there is no need for a refresh
         if self.possibleError:
-            self.possibleError = False
             self.updateListing()
+            self.possibleError = False
         self.progressDialog.closeForced()
         self.resetProgressBar()
         
