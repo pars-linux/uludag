@@ -262,7 +262,7 @@ class MainApplicationWidget(QWidget):
         <div style="margin-left:25px;">
         <p><b>%s</b>
         %s<br>
-        <b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b> %s 
+        <b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b><a href=\"%s\">%s</a>
         </p>
         </div>
         </div>
@@ -286,6 +286,11 @@ class MainApplicationWidget(QWidget):
             version = package.version
             size = package.packageSize
             iconPath = getIconPath(package.icon)
+
+            if package.source:
+                homepage = package.source.homepage
+            else:
+                homepage = 'http://paketler.pardus.org.tr'
 	    
             if size:
                 tpl = pisi.util.human_readable_size(size)
@@ -293,8 +298,7 @@ class MainApplicationWidget(QWidget):
             else:
                 size = i18n("N\A")
             result += template % (style,app,style,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
-                                  version,i18n("Package Size: "),size,i18n("Homepage: "),
-                                  "<a href=\"http://www.pardus.org.tr\">http://www.pardus.org.tr</a>")
+                                  version,i18n("Package Size: "),size,i18n("Homepage: "),homepage,homepage)
             index += 1
 
         return result
