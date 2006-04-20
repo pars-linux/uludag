@@ -12,7 +12,7 @@ include_once("globals.php");
 	set_smarty_vars("login_error",$login_error);
 	set_smarty_vars("categories",get_types());
 	set_smarty_vars("sub_type",$child_type[0]["type"]);
-        set_smarty_vars("sub_type_id",$_GET["sid"]);
+    set_smarty_vars("sub_type_id",$_GET["sid"]);
 	set_smarty_vars("parent_type",$parent_type[0]["type"]);
         set_smarty_vars("parent_type_id",$_GET["cid"]);
         set_smarty_vars("licenses",get_licenses());
@@ -42,7 +42,7 @@ include_once("globals.php");
 	elseif (isset($_GET["register"])) {
             if (isset($_POST["username"])){
                 if (user_exist($_POST["username"])) {
-                            set_smarty_vars("error",USER_EXIST);
+                    set_smarty_vars("error",USER_EXIST);
 		            set_smarty_vars("up_name",$_POST["realname"]);
 		            set_smarty_vars("up_web",$_POST["web"]);
 		            set_smarty_vars("up_email",$_POST["email"]);
@@ -85,7 +85,7 @@ include_once("globals.php");
 
 	elseif (isset($_GET["activateuser"])) {
 		$message = activate_user($_GET['username'],$_GET['code'],$_GET['action']);
-                $message["title"] = ACTIVATE_USER_TITLE;
+        $message["title"] = ACTIVATE_USER_TITLE;
 		set_smarty_vars("message",$message);
 		$smarty->display("message.html");
 		die();
