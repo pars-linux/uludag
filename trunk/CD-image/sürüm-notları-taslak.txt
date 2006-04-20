@@ -168,13 +168,15 @@ desteğe şimdiden teşekkür ederiz.
    PİSİ paketleri daha da küçüldü ve son kullanıcının indireceği
    yazılımların boyutu azaldı.
 
-   4.8 Düzeltilen 1500'den fazla hata
+   4.8 Düzeltilen XXXXXXXX'den fazla hata
 
    Pardus'un hata izleme sistemi [2] Uluzilla'ya gönderilen hata
    bildirimleri geliştiriciler tarafından titizlikle incelenerek
-   1.0'dan sonra 1500'den fazla hata giderilmiş, böylece Pardus
+   1.0'dan sonra XXXXX'den fazla hata giderilmiş, böylece Pardus
    1.1'in daha kararlı, sağlam ve son kullanıcıya yönelik olması
    sağlanmıştır.
+
+   http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&long_desc_type=substring&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=allwords&keywords=&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=2005-12-27&chfieldto=Now&chfield=%5BBug%20creation%5D&chfieldvalue=&field0-0-0=noop&type0-0-0=noop&value0-0-0=&order=bugs.bug_id&query_based_on=
 
    4.9 Yeni 2.6.16 çekirdek
 
