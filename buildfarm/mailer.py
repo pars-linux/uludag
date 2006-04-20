@@ -35,20 +35,18 @@ RecInfo = lambda x, y: [i.firstChild.wholeText for i in \
 
 def send(message, pspec = '', type = ''):
 
-    def truncate(message, start=60):
-        while len(message) - start > 0:
-            i = message.find(" ", start)
-            if i > 0:
-                message = message[:i] + "\n<br>" + message[i:]
-                start += i
-            else:
-                break
-        return message
+    def wrap(message, length=72):
+        return reduce(lambda line, word: '%s%s%s' %
+                      (line,
+                       [' ','<br>\n'][(len(line)-line.rfind('\n')-1 + len(word.split('\n',1)[0]) >= length)],
+                       word),
+                      message.split(' '))
 
 
     if not config.smtpUser or not config.smtpPassword:
         logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
         return
+
     recipientsName, recipientsEmail = [], []
     if pspec:
         dom = mdom.parse(os.path.join(config.localPspecRepo, pspec))
@@ -58,18 +56,15 @@ def send(message, pspec = '', type = ''):
     templates = {'error': tmpl.error_message,
                  'info' : tmpl.info_message}
 
-
     packagename=os.path.basename(os.path.dirname(pspec))
     last_log = ''.join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
-    message = truncate(message)
-    last_log = truncate(last_log)
-    message = templates.get(type) % {'log'      : last_log,
+    message = templates.get(type) % {'log'      : wrap(last_log),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
                                  'ccList'       : ', '.join(config.ccList),
                                  'mailFrom'     : config.mailFrom,
                                  'subject'      : pspec or type,
-                                 'message'      : message,
+                                 'message'      : wrap(message),
                                  'pspec'        : pspec,
                                  'type'         : type,
                                  'packagename'  : packagename}
