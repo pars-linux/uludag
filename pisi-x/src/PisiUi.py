@@ -39,7 +39,12 @@ class PisiUi(pisi.ui.UI,QObject):
         cEvent = QCustomEvent(CustomEvent.PisiWarning)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
-        
+
+    def info(self, msg):
+        cEvent = QCustomEvent(CustomEvent.PisiInfo)
+        cEvent.setData(msg)
+        QThread.postEvent(self.receiver,cEvent)
+
     def error(self, msg):
         cEvent = QCustomEvent(CustomEvent.PisiError)
         cEvent.setData(msg)
@@ -51,7 +56,6 @@ class PisiUi(pisi.ui.UI,QObject):
         QThread.postEvent(self.receiver,cEvent)
 
     def confirm(self, msg):
-        print 'Got message',msg
         cEvent = QCustomEvent(CustomEvent.AskConfirmation)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)        
