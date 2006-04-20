@@ -47,10 +47,10 @@ if (array_key_exists ('login', $_GET)){
 	if ($ird=get_user_details($username,$password)){
 		session_unregister("arto");
 		@session_register("arto");
-		$_SESSION["uid"]=$ird[0]['id'];
-		$_SESSION["uname"]=$ird[0]['name'];
+		$_SESSION["uid"]=$ird[0]['ID'];
+		$_SESSION["uname"]=$ird[0]['UserName'];
 		$_SESSION["user"]=$username;
-		$_SESSION["state"]=$ird[0]['state'];
+		$_SESSION["state"]=$ird[0]['UserState'];
 		header ("location: ".$_SELF);
 	}
 	else $login_error=USER_OR_PASS_WRONG;

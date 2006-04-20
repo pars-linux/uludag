@@ -2,18 +2,14 @@
 
     function db_connection($action, $dbhost = "", $dbuser = "", $dbpass = "", $dbname = "", $dbconntype = ""){
         global $db_connection;
-
         if($action == "connect"){
             if($dbconntype == "persistent"){$db_connection = @mysql_pconnect($dbhost, $dbuser, $dbpass);}
             elseif($dbconntype == "nonpersistent"){$db_connection = @mysql_connect($dbhost, $dbuser, $dbpass);}
             else{$db_connection = @mysql_connect($dbhost, $dbuser, $dbpass);}
-
             if(!$db_connection){ show_mysql_errors(); exit();}
             $db_select = @mysql_select_db($dbname);
-
             if(!$db_select){ show_mysql_errors(); exit();}
         }
-
         elseif($action == "disconnect"){mysql_close($db_connection);}
     }
 
@@ -30,6 +26,7 @@
 
     function perform_sql($sql_word){
             $sql_query = mysql_query($sql_word);
+//             show_mysql_errors();
             for($i = 0; $i < mysql_num_rows($sql_query); $i++){
                     $assoc_arr = mysql_fetch_assoc($sql_query);
                     $return[$i] = $assoc_arr;
@@ -102,8 +99,8 @@
             $return_array[$i]['description'] = nl2br($assoc_arr['description']);
             $return_array[$i]['comments'] = get_comment_number($assoc_arr['id']);
             $return_array[$i]['release'] = conv_time($conv_time, $assoc_arr['release']);
-            $tmp = get_user_something($return_array[$i]['user'], "uname");
-            $return_array[$i]['author'] = $tmp[0]['uname'];
+            $tmp = get_user_something($return_array[$i]['user'], "UserName");
+            $return_array[$i]['author'] = $tmp[0]['UserName'];
             $return_array[$i]['llink'] = $license[0]['link'];
             $return_array[$i]['lname'] = $license[0]['name'];
             $return_array[$i]['ldesc'] = $license[0]['description'];
@@ -155,8 +152,8 @@
             $return_array[$i] = $assoc_arr;
             $return_array[$i]['comment'] = nl2br($assoc_arr['comment']);
             $return_array[$i]['date'] = conv_time("db2post", $assoc_arr['date']);
-            $temporary = get_user_something($assoc_arr['uid'],"name");
-            $return_array[$i]['author'] = $temporary[0]['name'];
+            $temporary = get_user_something($assoc_arr['uid'],"UserRealName");
+            $return_array[$i]['author'] = $temporary[0]['UserRealName'];
         }
         return $return_array;
     }
@@ -191,7 +188,22 @@
         return perform_sql($sql_word);
     }
 
-   function update_user($uid="",$realname,$web,$email,$passwordc,$add=0,$uname=""){
+    /** Gir SEN **/
+    function update_user($uid="x",$realname,$web,$email,$passwordc,$add=0,$uname=""){
+        global $config;
+        $realname       = rtag ($realname);
+        $email          = rtag ($email);
+        $web            = rtag ($web);
+        $password       = md5(rtag($passwordc));
+        if ($uname<>"") if (user_exist($uname)) return 0;
+        if ($passwordc<>"") $attach_sql=", UserPass='{$password}'";
+        if ($uid == "x") $sql_word = "INSERT INTO {$config['db']['users_table']} VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', 'N')";
+        else $sql_word = "UPDATE {$config['db']['users_table']} SET UserRealName='{$realname}', UserWeb='{$web}',UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
+        return @mysql_query($sql_word);
+    }
+
+    /** Çık SEN
+    function update_user($uid="",$realname,$web,$email,$passwordc,$add=0,$uname=""){
         global $config;
         $realname = rtag ($realname);
         $email = rtag ($email);
@@ -199,18 +211,19 @@
         $password = md5(rtag($passwordc));
         if ($passwordc<>"") $attach_sql=", password='{$password}'";
         if ($add) {
-            $sql_word = "INSERT INTO {$config['db']['tableprefix']}users VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
+            $sql_word = "INSERT INTO {$config['db']['users_table']} VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
         }
         else {
-            $sql_word = "UPDATE {$config['db']['tableprefix']}users SET name='{$realname}', web='{$web}', email='{$email}'".$attach_sql." WHERE id='$uid'";
+            $sql_word = "UPDATE {$config['db']['users_table']} SET name='{$realname}', web='{$web}', email='{$email}'".$attach_sql." WHERE id='$uid'";
         }
         $sql_query = @mysql_query($sql_word);
         return $sql_query;
     }
+    */
 
     function user_exist($uname){
         global $config;
-        $sql_word = "SELECT id FROM {$config['db']['tableprefix']}users WHERE uname='$uname'";
+        $sql_word = "SELECT ID FROM {$config['db']['users_table']} WHERE UserName='$uname'";
         return perform_sql($sql_word);
     }
 
@@ -277,17 +290,17 @@
         global $config;
         $uname = $passo;
         $pass = md5($passo);
-        if ($state<>4) $attach_sql =" AND state = '{$state}'";
-        if ($user<>"") $attach_sql .=" AND id = '{$user}'";
-        if (!$state) $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$user' AND password = '$pass' AND state != '3'";
-        else $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE uname = '$uname'".$attach_sql;
+        if ($state<>'N') $attach_sql =" AND UserState = '{$state}'";
+        if ($user<>"") $attach_sql .=" AND ID = '{$user}'";
+        if (!$state) $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$user' AND UserPass = '$pass' AND UserState != 'N'";
+        else $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$uname'".$attach_sql;
         return perform_sql($sql_word);
     }
 
     function get_user_something($id,$thing,$opt="") {
         global $config;
-        if ($opt=="uname") $attach_sql = " uname = '$id'"; else $attach_sql = " id = '$id'";
-        $sql_word = "SELECT $thing FROM {$config['db']['tableprefix']}users WHERE".$attach_sql;
+        if ($opt=="UserName") $attach_sql = " UserName = '$id'"; else $attach_sql = " ID = '$id'";
+        $sql_word = "SELECT $thing FROM {$config['db']['users_table']} WHERE".$attach_sql;
         return perform_sql($sql_word);
     }
 
@@ -360,7 +373,7 @@
 
     function get_user_id($username){
         global $config;
-        $sql_word = "SELECT id FROM {$config['db']['tableprefix']}users WHERE uname='{$username}'";
+        $sql_word = "SELECT ID FROM {$config['db']['users_table']} WHERE UserName='{$username}'";
         return perform_sql($sql_word);
     }
 
@@ -370,11 +383,11 @@
         $dana = get_user_details("",$username,3);
         if(md5($dana[0]["id"].$config["core"]["secretkey"]) == $code){
             if($action == "activate"){
-                $sql_word = "UPDATE {$config['db']['tableprefix']}users SET state='2' WHERE id='{$dana[0]["id"]}' LIMIT 1";
+                $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$dana[0]["id"]}' LIMIT 1";
                 $message["message"] = ACTIVATE_USER_OK;
             }
             elseif($action == "delete"){
-                $sql_word = "DELETE FROM {$config['db']['tableprefix']}users WHERE id='{$dana[0]["id"]}' LIMIT 1";
+                $sql_word = "DELETE FROM {$config['db']['users_table']} WHERE ID='{$dana[0]["id"]}' LIMIT 1";
                 $message["message"] = ACTIVATE_USER_DELETED;
             }
             else{$message["message"] = ACTIVATE_USER_ERROR;}
@@ -418,7 +431,7 @@
 
     function get_user_list() {
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE state != '3' ORDER BY name";
+        $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserState != 'N' ORDER BY UserName";
         return perform_sql($sql_word);
     }
 
@@ -426,7 +439,7 @@
         global $config;
         $sql_word = "SELECT user FROM {$config['db']['tableprefix']}files WHERE id='{$fileid}'";
         $temp_sql= perform_sql($sql_word);
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}users WHERE id = '{$temp_sql[0]["user"]}'";
+        $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE ID = '{$temp_sql[0]["user"]}'";
         return perform_sql($sql_word);
     }
 

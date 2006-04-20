@@ -24,8 +24,8 @@ include_once("globals.php");
 		$nodes = get_something("single",$_GET["id"]);
 		$temp = get_user_something($nodes[0]['user'],"*");
 		set_smarty_vars("nodes",$nodes);
-                set_smarty_vars("author",$temp[0]['name']);
-                set_smarty_vars("uname",$temp[0]['uname']);
+                set_smarty_vars("author",$temp[0]['UserRealName']);
+                set_smarty_vars("uname",$temp[0]['UserName']);
 		set_smarty_vars("comments",get_comments($_GET["id"]));
 		$smarty->display("post.html");
 		die();
@@ -34,7 +34,7 @@ include_once("globals.php");
 	elseif (isset($_GET["cid"])) {
 		if (isset($_GET["sid"])) set_smarty_vars("nodes",get_something("cat",$_GET["cid"],$_GET["sid"]));
 		else set_smarty_vars("nodes",get_something("cat",$_GET["cid"]));
-		set_smarty_vars("comments",get_comments($_GET["id"]));
+		set_smarty_vars("comments",($_GET["id"]));
 		$smarty->display("posts.html");
 		die();
 	}
@@ -70,12 +70,12 @@ include_once("globals.php");
 
 	elseif (isset($_GET["userdetails"])) {
 		if (session_is_registered("arto")) {
-		$details=get_user_details($_SESSION["uid"],$_SESSION["user"],4);
-		set_smarty_vars("name",$details[0]["name"]);
-		set_smarty_vars("up_user",$details[0]["uname"]);
-		set_smarty_vars("up_name",$details[0]["name"]);
-		set_smarty_vars("up_web",$details[0]["web"]);
-		set_smarty_vars("up_email",$details[0]["email"]);
+		$details=get_user_details($_SESSION["uid"],$_SESSION["user"],'N');
+		set_smarty_vars("name",$details[0]["UserRealName"]);
+		set_smarty_vars("up_user",$details[0]["UserName"]);
+		set_smarty_vars("up_name",$details[0]["UserRealName"]);
+		set_smarty_vars("up_web",$details[0]["UserWeb"]);
+		set_smarty_vars("up_email",$details[0]["UserEmail"]);
 		set_smarty_vars("userdetails",TRUE);
                 if (isset($_GET["success"])) set_smarty_vars("success",UPDATE_OK);
 		}
@@ -106,7 +106,7 @@ include_once("globals.php");
 	}
 
         elseif (isset($_GET["missions"])) {
-		if (session_is_registered("arto") AND $_SESSION["state"]<=1) {
+		if (session_is_registered("arto") AND $_SESSION["state"]=='A') {
                     set_smarty_vars("info",OK);
                     set_smarty_vars("auth",TRUE);
                     if (isset($_GET["tid"])) {
@@ -122,7 +122,7 @@ include_once("globals.php");
                                 set_smarty_vars("status",THEME_DELETED);
 
                                 $nodes = get_something("single",$_POST['theme_id']);
-                                $temp = get_user_something($nodes[0]['user'],"*");
+                                $temp = get_user_something($nodes[0]['user'],"UserName");
 
                                 $mail_message = "Merhaba {$temp[0]['name']} ({$temp[0]['uname']})\n\n    {$config['core']['title']} ({$config['core']['url']}) sitesine eklediğiniz \"{$nodes[0]['name']}\" isimli içerik \"{$_POST['reason']}\" nedeni ile sistemden kaldırılmıştır.\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
 
@@ -138,7 +138,7 @@ include_once("globals.php");
                                     set_smarty_vars("status",THEME_ADDED);
 
                                 $nodes = get_something("single",$_POST['theme_id']);
-                                $temp = get_user_something($nodes[0]['user'],"*");
+                                $temp = get_user_something($nodes[0]['user'],"UserName");
 
                                 $mail_message = "Merhaba {$temp[0]['name']} ({$temp[0]['uname']})\n\n    {$config['core']['title']} ({$config['core']['url']}) sitesine eklediğiniz \"{$nodes[0]['name']}\" isimli içerik sorumlular tarafından uygun görülüp sisteme eklenmiştir. Şu andan itibaren içeriği, bulunduğu yerden silmenizde herhangi bir sakınca yoktur.\n\n İçeriğinize {$config['core']['url']}node/{$nodes[0]['id']} adresinden ulaşabilirsiniz.\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
 
@@ -154,10 +154,10 @@ include_once("globals.php");
                         for($i = 0; $i < count($files); $i++){
 			     $files[$i]["types"] = set_types($files[$i]["type"],$files[$i]["sub_type"]);
 			     $files[$i]["release"] = conv_time("db2post",$files[$i]["release"]);
-                             $temp=get_user_something($files[$i]["user"],"name");
-                             $files[$i]["author"] = $temp[0]["name"];
-                             $temp=get_user_something($files[$i]["user"],"email");
-                             $files[$i]["email"] = $temp[0]["email"];
+                             $temp=get_user_something($files[$i]["user"],"UserRealName");
+                             $files[$i]["author"] = $temp[0]["UserRealName"];
+                             $temp=get_user_something($files[$i]["user"],"UserEmail");
+                             $files[$i]["email"] = $temp[0]["UserEmail"];
 		        }
 		     set_smarty_vars("uf",$files);
                     }
@@ -170,10 +170,10 @@ include_once("globals.php");
         }
 
         elseif (isset($_GET["showuserpage"])) {
-            $temp = get_user_something($_GET["uname"],"*","uname");
+            $temp = get_user_something($_GET["uname"],"*","UserName");
             set_smarty_vars("nameofuser", $_GET["uname"]);
-            set_smarty_vars("realnameofuser",$temp[0]["name"]);
-            set_smarty_vars("webofuser",$temp[0]["web"]);
+            set_smarty_vars("realnameofuser",$temp[0]["UserRealName"]);
+            set_smarty_vars("webofuser",$temp[0]["UserWeb"]);
             set_smarty_vars("nodes",get_something("user",$temp[0]["id"],"","release",""));
             $smarty->display("posts.html");
             die();

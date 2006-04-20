@@ -16,8 +16,9 @@ $config['db']['hostname']		= "localhost";
 $config['db']['port']			= "3306";
 $config['db']['username']		= "arto";
 $config['db']['password']		= "arto";
-$config['db']['databasename']		= "arto";
+$config['db']['databasename']		= "interaktif";
 $config['db']['tableprefix']		= "arto_";
+$config['db']['users_table']		= "UniqUsers";
 $config['db']['connectiontype']		= "persistent";
 
 // Smarty Config
