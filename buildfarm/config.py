@@ -23,8 +23,7 @@ workDir          = "/var/tmp/pisi/"
 outputDir        = "/var/tmp/pisi/buildlogs"
 newBinaryPPath   = "/var/cache/pisi/packages/newBinaries/"
 oldBinaryPPath   = "/var/cache/pisi/packages/oldBinaries/"
-#localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")
-localPspecRepo = "/home/baris/svn/pardus/devel"
+localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")
 logFile          = join_path(workDir, "buildfarm.log")
 smtpUserInfo     = './smtpUserInfo'
 
