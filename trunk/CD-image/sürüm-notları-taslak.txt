@@ -110,6 +110,12 @@ desteğe şimdiden teşekkür ederiz.
    erişimleri izleyebilirsiniz. 
 
    4.2 Daha çok gelişmiş paket yönetim sistemi
+
+   PİSİ paketlerinde kullanılacak olan LZMA sıkıştırma algoritması
+   ile ortalama %30'a varan bir yer kazancı oldu. Bu sayede
+   PİSİ paketleri daha da küçüldü ve son kullanıcının indireceği
+   yazılımların boyutu azaldı.
+
    4.3 Yeni program yönetim arayüzü
    4.4 Kurulum sistemi YALI'da gelişmeler
 
@@ -161,14 +167,7 @@ desteğe şimdiden teşekkür ederiz.
    tasarruf sağlamaktadır. Bunun yanında eski bir teknoloji 
    olan hotplug yerine, daha yeni ve esnek olan udev kullanılmaktadır.
 
-   4.7 PİSİ'deki yenilikler
-
-   PİSİ paketlerinde kullanılacak olan LZMA sıkıştırma algoritması 
-   ile ortalama %30'a varan bir yer kazancı oldu. Bu sayede
-   PİSİ paketleri daha da küçüldü ve son kullanıcının indireceği
-   yazılımların boyutu azaldı.
-
-   4.8 Düzeltilen XXXXXXXX'den fazla hata
+   4.7 Düzeltilen XXXXXXXX'den fazla hata
 
    Pardus'un hata izleme sistemi [2] Uluzilla'ya gönderilen hata
    bildirimleri geliştiriciler tarafından titizlikle incelenerek
@@ -178,7 +177,10 @@ desteğe şimdiden teşekkür ederiz.
 
    http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&long_desc_type=substring&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=allwords&keywords=&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=2005-12-27&chfieldto=Now&chfield=%5BBug%20creation%5D&chfieldvalue=&field0-0-0=noop&type0-0-0=noop&value0-0-0=&order=bugs.bug_id&query_based_on=
 
-   4.9 Yeni 2.6.16 çekirdek
+   **** Yukarıdaki aramayı, "12.27.2005"ten sonra FIXED ile kapatılmış hatalar
+   olarak düzeltmemiz gerekiyor. Raporlama işlemi daha önce yapılmış olabilir. 
+
+   4.8 Yeni 2.6.16 çekirdek
 
    Pardus ile birlikte gelen 2.6.16 sürüm çekirdek, ........ 
    .............................................................
@@ -186,7 +188,7 @@ desteğe şimdiden teşekkür ederiz.
    .............................................................
    ............................................................
 
-   4.10 Yeni simge setleri
+   4.9 Yeni simge setleri
 
    Pardus 1.0'ın en çok beğenilen özelliklerinden birisi de Pardus'a
    özgü "Tulliana" simge setleri idi. Pardus 1.1'de bu simge setleri
@@ -195,10 +197,10 @@ desteğe şimdiden teşekkür ederiz.
    çok renk uyumu içeriyor ve masaüstünde keyifli zaman geçirmenizi
    sağlıyor.
 
-   4.11 Yeni araçlar (xorgconf, mudurconf, ...)
-   4.12 Diğer paket güncellemeleri (xorg, gcc, ..)
-   4.13 Yeni derleme çiftliği
-   4.14 Daha fazla Türkçe dil desteği 
+   4.10 Yeni araçlar (xorgconf, mudurconf, ...)
+   4.11 Diğer paket güncellemeleri (xorg, gcc, ..)
+   4.12 Yeni derleme çiftliği
+   4.13 Daha fazla Türkçe dil desteği 
    
    Pardus 1.1 ile birlikte gelen Zemberek [3], özellikle teknik terimler
    başta olmak üzere çok daha fazla kelime tanıyabiliyor. Bunun
