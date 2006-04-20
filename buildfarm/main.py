@@ -30,9 +30,9 @@ import buildfarm.mailer as mailer
 import buildfarm.qmanager as qmanager
 import buildfarm.pisiinterface as pisiinterface
 
+
 def main():
     qmgr = qmanager.QueueManager()
-   
     queue = copy.copy(qmgr.workQueue)
     
     logger.raw("QUEUE")
@@ -40,13 +40,16 @@ def main():
     logger.raw()
     
     for pspec in queue: 
-        logger.info("Compiling (%d of %d)" % (int(queue.index(pspec) + 1), len(queue)))
-        logger.raw()
         packagename=os.path.basename(os.path.dirname(pspec))
+        build_output=open(os.path.join(config.outputDir,packagename+".log"), "w")
+        logger.info("Compiling source %s (%d of %d)" % (packagename,
+                                                        int(queue.index(pspec) + 1),
+                                                        len(queue)))
+        logger.raw()
+
+        pisi = pisiinterface.PisiApi()
+        pisi.init(stdout=build_output, stderr=build_output)
         try:
-            pisi = pisiinterface.PisiApi()
-            build_output=open(os.path.join(config.outputDir, packagename+".log"), "w")
-            pisi.init(stdout=build_output, stderr=build_output)
             (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
         except Exception, e:
             qmgr.transferToWaitQueue(pspec)
@@ -56,11 +59,10 @@ def main():
             pisi.finalize()
         else:
             for p in newBinaryPackages:
+                logger.info("Installing: %s" % os.path.join(config.workDir, p))
                 try:
-                    logger.info("Installing: %s" % os.path.join(config.workDir, p))
                     pisi.install(os.path.join(config.workDir, p))
                 except Exception, e:
-                    print "HATA: %s" % e
                     logger.error("'%s' için INSTALL işlemi sırasında hata: %s" % (os.path.join(config.workDir, p), e))
                     qmgr.transferToWaitQueue(pspec)
                     newBinaryPackages.remove(p)
@@ -110,28 +112,31 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
             
             
     if set(newBinaryPackages) == set(oldBinaryPackages):
-        map(moveUnchangedPackage, [package for package in newBinaryPackages])
+        map(moveUnchangedPackage,
+            [package for package in newBinaryPackages])
     else:
-        map(moveNewPackage, [package for package in set(newBinaryPackages) - set(oldBinaryPackages)])
-        map(moveOldPackage, [package for package in set(oldBinaryPackages) - (set(newBinaryPackages) - set(oldBinaryPackages)) if package])
+        map(moveNewPackage,
+            [package for package in set(newBinaryPackages) - set(oldBinaryPackages)])
+        map(moveOldPackage,
+            [package for package in set(oldBinaryPackages) - (set(newBinaryPackages) - set(oldBinaryPackages)) if package])
 
 
 def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join
     remove = os.remove
-
     remove(join(config.workDir, package))
     
 
-
 def create_directories():
-    for dir in config.workDir, config.newBinaryPPath, config.oldBinaryPPath, config.localPspecRepo, config.outputDir:
+    directories = [config.workDir, config.newBinaryPPath,
+                   config.oldBinaryPPath, config.localPspecRepo,
+                   config.outputDir]
+    for dir in directories:
         if dir and not os.path.isdir(dir):
             try:
                 os.makedirs(dir)
             except OSError:
                 raise config.CfgError("'%s' dizini yaratılamadı, izin sorunu olabilir" % (dir))
-
 
 
 def handle_exception(exception, value, tb):
@@ -146,8 +151,6 @@ def handle_exception(exception, value, tb):
 
 if __name__ == "__main__":
     sys.excepthook = handle_exception
-    
     create_directories()
-
     main()
 
