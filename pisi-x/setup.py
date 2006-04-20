@@ -11,7 +11,7 @@
 # Please read the COPYING file.
 #
 #
-# Authors:  İsmail Dönmez <ismail@uludag.org.tr>
+# Authors:  İsmail Dönmez <ismail@pardus.org.tr>
 
 import kdedistutils
 
@@ -21,7 +21,7 @@ kdedistutils.setup(
     author="İsmail Dönmez",
     author_email="ismail@uludag.org.tr",
     url="http://www.uludag.org.tr/projeler/pisi/index.html",
-    min_kde_version = "3.5.0",
+    min_kde_version = "3.5.2",
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/pisix.py', 'src/ThreadRunner.py','src/Progress.py','src/ProgressDialog.ui',
