@@ -110,10 +110,10 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
             
             
     if set(newBinaryPackages) == set(oldBinaryPackages):
-        map(lambda package: moveUnchangedPackage(package), [package for package in newBinaryPackages])
+        map(moveUnchangedPackage, [package for package in newBinaryPackages])
     else:
-        map(lambda package: moveNewPackage(package), [package for package in set(newBinaryPackages) - set(oldBinaryPackages)])
-        map(lambda package: moveOldPackage(package), [package for package in set(oldBinaryPackages) - (set(newBinaryPackages) - set(oldBinaryPackages)) if package])
+        map(moveNewPackage, [package for package in set(newBinaryPackages) - set(oldBinaryPackages)])
+        map(moveOldPackage, [package for package in set(oldBinaryPackages) - (set(newBinaryPackages) - set(oldBinaryPackages)) if package])
 
 
 def removeBinaryPackageFromWorkDir(package):
