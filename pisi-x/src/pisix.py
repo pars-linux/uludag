@@ -436,7 +436,7 @@ class MainApplicationWidget(QWidget):
             print 'Unhandled event:',eventType,'with data',eventData
     
     def showConfirmationMessage(self, question):
-        answer = KMessageBox.questionYesNo(self,self.infoMessage+question,i18n("PiSi Question"))
+        answer = KMessageBox.questionYesNo(self,self.infoMessage+"\n"+question,i18n("PiSi Question"))
         self.infoMessage=None
         event = QCustomEvent(CustomEvent.UserConfirmed)
         if answer == KMessageBox.Yes:
