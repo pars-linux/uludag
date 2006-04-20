@@ -290,7 +290,7 @@
         global $config;
         $uname = $passo;
         $pass = md5($passo);
-        if ($state) $attach_sql =" AND UserState != '{$state}'";
+        $attach_sql =" AND UserState != '{$state}'";
         if ($user<>"") $attach_sql .=" AND ID = '{$user}'";
         if (!$state) $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$user' AND UserPass = '$pass' AND UserState != 'N'";
         else $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$uname'".$attach_sql;
@@ -377,6 +377,33 @@
         return perform_sql($sql_word);
     }
 
+    /**Sen de gell */
+    function get_user($field,$value){
+        global $config;
+        $sql_word = "SELECT * FROM {$config['db']['users_table']} WHERE $field = '$value'";
+        return perform_sql($sql_word);
+    }
+
+    /**Sen Gell*/
+    function activate_user($username,$code,$action="activate"){
+        global $config;
+        $node = get_user("UserName",$username);
+        if ($node[0]["UserState"] == "N") {
+            if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
+                if($action == "activate"){
+                    $sql_word = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
+                    if (mysql_query($sql_word)) $message["message"] = ACTIVATE_USER_OK; else $message["message"] = ACTIVATE_USER_ERROR;
+                }
+            }
+            else {
+                $message["message"]= ACTIVATE_USER_ERROR;
+            }
+        }
+        else $message["message"] = ACTIVATED_USER;
+        return $message["message"];
+    }
+
+    /** Sen Gitt
     function activate_user($username,$code,$action){
         global $config;
         if(!$action){$action = "activate";}
@@ -396,7 +423,8 @@
         $sql_query = mysql_query($sql_word);
         return $message;
     }
-
+    */
+    
     function get_news($act=0) {
         global $config;
         if ($act) $attach_sql=" LIMIT 1";
