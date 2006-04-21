@@ -191,7 +191,7 @@ msgstr "Makina adı:"
 
 #: stack.py:40
 msgid "Name servers"
-msgstr "İsim sunucular"
+msgstr "İsim sunucuları"
 
 #: stack.py:84
 msgid "Add Name Server"
