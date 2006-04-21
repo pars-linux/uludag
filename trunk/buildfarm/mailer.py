@@ -38,7 +38,7 @@ def send(message, pspec = '', type = ''):
     def wrap(message, length=72):
         return reduce(lambda line, word: '%s%s%s' %
                       (line,
-                       [' ','<br>\n'][(len(line)-line.rfind('\n')-1 + len(word.split('\n',1)[0]) >= length)],
+                       [' ','<br>'][(len(line)-line.rfind('\n')-1 + len(word.split('\n',1)[0]) >= length)],
                        word),
                       message.split(' '))
 
