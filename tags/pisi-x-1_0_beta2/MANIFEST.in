@@ -1,0 +1,6 @@
+recursive-include doc *.docbook *.png
+recursive-include po *.po *.pot
+include AUTHORS ChangeLog COPYING INSTALL MANIFEST.in NEWS README TODO
+global-include *.desktop *.py *.ui *.png *.lsm
+global-exclude *~ .svn
+global-exclude *~ .cvs
