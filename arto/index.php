@@ -84,7 +84,7 @@ include_once("globals.php");
 	}
 
 	elseif (isset($_GET["activateuser"])) {
-		$message = activate_user($_GET['username'],$_GET['code'],$_GET['action']);
+		$message = activate_user($_GET['username'],$_GET['code']);
         $message["title"] = ACTIVATE_USER_TITLE;
 		set_smarty_vars("message",$message);
 		$smarty->display("message.html");
