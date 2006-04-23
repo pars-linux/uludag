@@ -26,7 +26,6 @@
 
     function perform_sql($sql_word){
             $sql_query = mysql_query($sql_word);
-            //show_mysql_errors();
             for($i = 0; $i < mysql_num_rows($sql_query); $i++){
                     $assoc_arr = mysql_fetch_assoc($sql_query);
                     $return[$i] = $assoc_arr;
