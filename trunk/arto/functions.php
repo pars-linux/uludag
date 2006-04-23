@@ -24,6 +24,13 @@
             echo ERRORNUM."<b>".mysql_errno()."</b><br>";
     }
 
+    /**
+     * perform_sql 
+     * 
+     * @param mixed $sql_word 
+     * @access public
+     * @return void
+     */
     function perform_sql($sql_word){
             $sql_query = mysql_query($sql_word);
             for($i = 0; $i < mysql_num_rows($sql_query); $i++){
