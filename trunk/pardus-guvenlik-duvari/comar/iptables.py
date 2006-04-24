@@ -1,7 +1,7 @@
 import subprocess
 
 def run(*cmd):
-    '''Run a command without running a shell'''
+    """Run a command without running a shell"""
     if len(cmd) == 1:
         if isinstance(cmd[0], basestring):
             return subprocess.call(cmd[0].split())
@@ -11,27 +11,47 @@ def run(*cmd):
         return subprocess.call(cmd)
 
 
-def addTCPFilter(id, chain='INPUT', src='', dst='', sport='', dport='', jump='ACCEPT', log=1):
+def buildRule(action, rules):
     args = []
-    if chain:
-        args.append('-A %s' % chain)
-    if src:
-        args.append('--source %s' % src)
-    if dst:
-        args.append('--destination %s' % dst)
-    if sport:
-        args.append('--source-port %s' % sport)
-    if dport:
-        args.append('--destination-port %s' % dport)
-    
-    if log:
-        run('/sbin/iptables -t filter -p tcp %s -j LOG --log-tcp-options --log-level 3' % ' '.join(args))
 
-    if jump == 'REJECT':
-        run('/sbin/iptables -t filter -p tcp %s -j REJECT --reject-with tcp-reset' % ' '.join(args))
+    if action == "A":
+        args.append("-A %s" % rules.get("chain", "INPUT"))
     else:
-        run('/sbin/iptables -t filter -p tcp %s -j %s' % (' '.join(args), jump))
+        args.append("-D %s" % rules.get("chain", "INPUT"))
+        
+    args.append("--protocol %s" % rules.get("protocol", "tcp"))
+
+    if "src" in rules:
+        args.append("--source %s" % rules["src"])
+        
+    if "dst" in rules:
+        args.append("--destination %s" % rules["dst"])
+
+    # FIXME: not all protocols allow these parameters
+    if "sport" in rules:
+        args.append("--source-port %s" % rules["sport"])
+
+    if "dport" in rules:
+        args.append("--destination-port %s" % rules["dport"])
+
+    cmds = []
+    cmds.append('/sbin/iptables -t filter %s -j LOG --log-tcp-options --log-level 3' % ' '.join(args))
+
+    if rules.get("jump", "REJECT") == 'REJECT':
+        cmds.append('/sbin/iptables -t filter %s -j REJECT --reject-with tcp-reset' % ' '.join(args))
+    else:
+        cmds.append('/sbin/iptables -t filter tcp %s -j %s' % (' '.join(args), rules.get("jump", "REJECT")))
+
+    return cmds
 
 
-def cleanTCPFilters():
-    run('/sbin/iptables -t filter -F')
+def setRule(**rules):
+    for cmd in buildRule('A', rules):
+        ret = run(cmd)
+
+
+def unsetRule(no):
+    d = get_instance("no", no)
+    
+    for cmd in buildRule('D', d):
+        run(cmd)
