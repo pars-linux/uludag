@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<comarModel>
+    <group name="Net">
+        <class name="Filter">
+            <method name="setRule" profile="package" profileOp="startup">
+                <instance>no</instance>
+                <argument>chain</argument>
+                <argument>protocol</argument>
+                <argument>src</argument>
+                <argument>dst</argument>
+                <argument>sport</argument>
+                <argument>dport</argument>
+                <argument>jump</argument>
+            </method>
+            <method name="unsetRule" profile="package" profileOp="delete">
+                <instance>no</instance>
+            </method>
+        </class>
+    </group>
+</comarModel>
