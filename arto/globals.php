@@ -26,7 +26,7 @@ $smarty->assign("themepath", $config['smarty']['tpldir']."/".$config['core']['th
 $smarty->assign("arto_signature","<a href=\"http://arto.fasafiso.org/\" title=\"Arto v{$config['arto']['version']} ({$config['arto']['builddate']})\">Arto  v{$config['arto']['version']}</a>");
 
 // including arto functions
-include_once("functions.php");
+include_once("functions-ng.php");
 setlocale(LC_TIME,"tr_TR.UTF8");
 
 //starting session
