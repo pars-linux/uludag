@@ -47,7 +47,7 @@ def AboutData():
     return about_data
 
 # Are we running as a separate standalone application or in KControl?
-standalone = __name__=='__main__'
+standalone = __name__=="__main__"
 
 if standalone:
     programbase = QDialog
@@ -86,39 +86,37 @@ class MainApplication(programbase):
         self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.saveAll)
         #self.connect(mainwidget.pushHelp,SIGNAL("clicked()"),self.showHelp)
 
-        self.num = 1
+        # COMAR
         self.comar = comar.Link()
         
-    def addRule(self, chain='OUTPUT', protocol='tcp', src='', dst='', sport='', dport='', jump='ACCEPT'):
-        self.comar.call_package('Net.Firewall.addRule', 'iptables', ['id', self.num,
-                                                                     'chain', chain,
-                                                                     'protocol', protocol,
-                                                                     'src', src,
-                                                                     'dst', dst,
-                                                                     'sport', sport,
-                                                                     'dport', dport,
-                                                                     'jump', jump])
+    def addRule(self, **rule):
+        self.comar.call("Net.Filter.listRules")
+        nums = eval(self.comar.read_cmd()[2])
+
+        if len(nums):
+            rule["no"] = max(map(int, nums)) + 1
+        else:
+            rule["no"] = 1
+
+        self.comar.call('Net.Filter.setRule', rule)
         self.comar.read_cmd()
-        self.num += 1
 
     def saveAll(self):
-        self.comar.call_package('Net.Firewall.cleanRules', 'iptables')
-        self.comar.read_cmd()
-
         # Outgoing
         if mainwidget.checkWFS.isChecked():
-            self.addRule(dport=139, chain='OUTPUT', jump='REJECT')
-            
+            self.addRule(dport=139, chain="OUTPUT", jump="REJECT")
+
         if mainwidget.checkMail.isChecked():
             self.addRule(dport=110, chain='OUTPUT', jump='REJECT')
             self.addRule(dport=25, chain='OUTPUT', jump='REJECT')
-        
+
         if mainwidget.checkFTP.isChecked():
             self.addRule(dport=21, chain='OUTPUT', jump='REJECT')
-            
+
         if mainwidget.checkRemote.isChecked():
             self.addRule(dport=22, chain='OUTPUT', jump='REJECT')
-            
+
+        # FIXME: p2p ports here
         if mainwidget.checkFS.isChecked():
             self.addRule(dport=10101, chain='OUTPUT', jump='REJECT')
 
@@ -126,13 +124,11 @@ class MainApplication(programbase):
         if mainwidget.listPorts.childCount() > 0:
             item = mainwidget.listPorts.firstChild()
             while item:
-                print 'a'
-                self.addRule(dport=item.text(0), chain='INPUT', jump='ACCEPT')
+                self.addRule(dport=int(item.text(0)), chain='INPUT', jump='ACCEPT', log=0)
                 item = item.nextSibling()
 
             # Except...
             self.addRule(chain='INPUT', jump='REJECT')
-                
 
     def __del__(self):
         pass
