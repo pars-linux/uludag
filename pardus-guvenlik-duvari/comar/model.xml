@@ -15,6 +15,7 @@
             <method name="unsetRule" profile="package" profileOp="delete">
                 <instance>no</instance>
             </method>
+            <method name="getRules"/>
         </class>
     </group>
 </comarModel>
