@@ -58,3 +58,6 @@ def unsetRule(no):
     
     for cmd in buildRule('D', d):
         run(cmd)
+
+def getRules():
+    return instances("no")
