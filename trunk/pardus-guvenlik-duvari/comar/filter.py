@@ -59,5 +59,10 @@ def unsetRule(no):
     for cmd in buildRule('D', d):
         run(cmd)
 
-def getRules():
+def getRule(no):
+    """Get details of given rule number"""
+    return get_instance("no", no)
+
+def listRules():
+    """List rule numbers"""
     return instances("no")
