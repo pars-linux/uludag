@@ -96,7 +96,7 @@ href="http://paketler.pardus.org.tr/logs/%(packagename)s.log">http://paketler.pa
 
 <p> Kolay gelsin.<br> (Vallahi ben bir şey yapmadım..)
 
---boundary42
+--boundary42--
 """
 
 info_message = """\
