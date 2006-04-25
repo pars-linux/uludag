@@ -110,7 +110,7 @@ class File:
         else:
             localfile = uri.get_uri() #TODO: use a special function here?
             if not os.path.exists(localfile):
-                raise IOError(_("File '\%s'\ not found.") % localfile)
+                raise IOError(_("File \'%s\' not found.") % localfile)
 
         if sha1sum:        
         
@@ -182,9 +182,11 @@ class File:
                     cs.close()
 
             if self.sign==File.detached:
-                pisi.util.run_batch('gpg --detach-sig ' + self.localfile)
+                if pisi.util.run_batch('gpg --detach-sig ' + self.localfile)[0]:
+                    raise Error(_("ERROR: gpg --detach-sig %s failed") % self.localfile)
                 if compressed_file:
-                    pisi.util.run_batch('gpg --detach-sig ' + compressed_file)
+                    if pisi.util.run_batch('gpg --detach-sig ' + compressed_file)[0]:
+                        raise Error(_("ERROR: gpg --detach-sig %s failed") % compressed_file)
 
     @staticmethod
     def check_signature(uri, transfer_dir, sign=detached):

@@ -249,7 +249,6 @@ class Install(AtomicOperation):
         "unzip package in place"
 
         ctx.ui.notify(pisi.ui.extracting, package = self.pkginfo, files = self.files)
-        self.package.extract_dir_flat('install', ctx.config.dest_dir())
 
         if self.reinstall:
             # remove left over files
@@ -259,8 +258,11 @@ class Install(AtomicOperation):
             old_fileinfo = {}
             for fileinfo in self.old_files.list:
                 old_fileinfo[str(fileinfo.path)] = fileinfo
-            for path in leftover:
-                Remove.remove_file( old_fileinfo[path] )
+            for path in old:
+                if path in leftover or old_fileinfo[path].type == ctx.const.conf:
+                    Remove.remove_file( old_fileinfo[path] )
+
+        self.package.extract_dir_flat('install', ctx.config.dest_dir())
 
     def store_pisi_files(self):
         """put files.xml, metadata.xml, actions.py and COMAR scripts
@@ -352,7 +354,7 @@ class Remove(AtomicOperation):
     def __init__(self, package_name, ignore_dep = None):
         super(Remove, self).__init__(ignore_dep)
         self.package_name = package_name
-        self.package = ctx.packagedb.get_package(self.package_name)
+        self.package = ctx.packagedb.get_package(self.package_name, pisi.itembyrepodb.installed)
         try:
             self.files = ctx.installdb.files(self.package_name)
         except pisi.Error, e:
@@ -435,7 +437,7 @@ class Remove(AtomicOperation):
 
     def remove_pisi_files(self):
         util.clean_dir(self.package.pkg_dir())
-    
+
     def remove_db(self, txn):
         ctx.installdb.remove(self.package_name, txn)
         ctx.filesdb.remove_files(self.files, txn)
