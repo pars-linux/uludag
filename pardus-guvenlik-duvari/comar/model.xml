@@ -11,6 +11,7 @@
                 <argument>sport</argument>
                 <argument>dport</argument>
                 <argument>jump</argument>
+                <argument>log</argument>
             </method>
             <method name="unsetRule" profile="package" profileOp="delete">
                 <instance>no</instance>

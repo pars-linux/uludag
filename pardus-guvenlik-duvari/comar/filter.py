@@ -57,11 +57,13 @@ def buildRule(action='A', rules={}):
             fail("Invalid destination port")
 
     jump = rules.get("jump", "REJECT")
-    if jump not in ["REJECT", "ALLOW", "DROP"]:
+    if jump not in ["REJECT", "ACCEPT", "DROP"]:
         fail("Invalid action")
 
     cmds = []
-    cmds.append('/sbin/iptables -t filter %s -j LOG --log-tcp-options --log-level 3' % ' '.join(args))
+
+    if rules.get("log", 1) == 1:
+        cmds.append('/sbin/iptables -t filter %s -j LOG --log-tcp-options --log-level 3' % ' '.join(args))
 
     if jump == 'REJECT':
         cmds.append('/sbin/iptables -t filter %s -j REJECT --reject-with tcp-reset' % ' '.join(args))
@@ -74,17 +76,19 @@ def buildRule(action='A', rules={}):
 def setRule(**rule):
     """Append new firewall rule"""
     cmds = buildRule('A', rule)
-    ret_log, ret_jmp = map(run, cmds)
-    if ret_log != 0 or ret_jmp != 0:
-        fail("Invalid command")
+    for c in cmds:
+        ret = run(c)
+        if ret != 0:
+            fail("Invalid command")
 
 def unsetRule(no):
     """Remove given firewall rule"""
     rule = get_instance("no", no)
     cmds = buildRule('D', rule)
-    ret_log, ret_jmp = map(run, cmds)
-    if ret_log != 0 or ret_jmp != 0:
-        fail("Invalid command")
+    for c in cmds:
+        ret = run(c)
+        if ret != 0:
+            fail("Invalid command")
 
 def getRule(no):
     """Get details of given rule number"""
