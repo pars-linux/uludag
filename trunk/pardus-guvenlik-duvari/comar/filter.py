@@ -11,7 +11,8 @@ def run(*cmd):
         return subprocess.call(cmd)
 
 
-def buildRule(action, rules):
+def buildRule(action='A', rules={}):
+    """Generate IPTables command from given rule"""
     args = []
 
     if action == "A":
@@ -46,11 +47,13 @@ def buildRule(action, rules):
 
 
 def setRule(**rules):
+    """Append new firewall rule"""
     for cmd in buildRule('A', rules):
         ret = run(cmd)
 
 
 def unsetRule(no):
+    """Remove given firewall rule"""
     d = get_instance("no", no)
     
     for cmd in buildRule('D', d):
