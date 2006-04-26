@@ -20,6 +20,9 @@
                 <instance>no</instance>
             </method>
             <method name="listRules"/>
+            <method name="setState" profile="package">
+                <argument>state</argument>
+            </method>
         </class>
     </group>
 </comarModel>
