@@ -13,6 +13,7 @@
                 <argument>jump</argument>
                 <argument>log</argument>
                 <argument>description</argument>
+                <argument>extra</argument>
             </method>
             <method name="unsetRule" profile="package" profileOp="delete">
                 <instance>no</instance>

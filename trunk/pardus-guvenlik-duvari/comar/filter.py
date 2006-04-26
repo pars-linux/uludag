@@ -27,7 +27,7 @@ def atoi(s):
 
 
 def buildRule(action='A', rules={}):
-    """Generate IPTables command from given rule"""
+    """Generate IPTables command from given rule description"""
     args = []
 
     if action == "A":
@@ -47,16 +47,12 @@ def buildRule(action='A', rules={}):
     if "sport" in rules or "dport" in rules:
         args.append("--match multiport")
     if "sport" in rules:
-        if 1 < atoi(rules["sport"]) < 65535:
-            args.append("--source-ports %s" % rules["sport"])
-        else:
-            fail("Invalid source port")
-
+        args.append("--source-ports %s" % rules["sport"])
     if "dport" in rules:
-        if 1 < atoi(rules["dport"]) < 65535:
-            args.append("--destination-ports %s" % rules["dport"])
-        else:
-            fail("Invalid destination port")
+        args.append("--destination-ports %s" % rules["dport"])
+
+    if "extra" in rules:
+        args.append(rules["extra"])
 
     jump = rules.get("jump", "REJECT")
     if jump not in ["REJECT", "ACCEPT", "DROP"]:
@@ -75,18 +71,23 @@ def buildRule(action='A', rules={}):
     return cmds
 
 def getState():
+    """Get FW state"""
     if "filter" in instances("name"):
         return get_instance("name", "filter")["state"]
     else:
-        return "on"
+        return "off"
 
 def setState(name, state):
+    """Set FW state"""
     if state not in ["on", "off"] or name != "filter":
         fail("Invalid state")
-    if get_instance("name", "filter").get("state", "on") == state:
+    if get_instance("name", "filter").get("state", "off") == state:
         return
     action = ["D", "A"][state == "on"]
-    for no in instances("no"):
+    inst = map(atoi, instances("no"))
+    inst.sort()
+    inst = map(str, inst)
+    for no in inst:
         rule = get_instance("no", no)
         cmds = buildRule(action, rule)
         for c in cmds:
@@ -94,15 +95,18 @@ def setState(name, state):
 
 def setRule(**rule):
     """Append new firewall rule"""
-    if rule.get("state", "on") == "on":
-        cmds = buildRule('A', rule)
-        for c in cmds:
-            ret = run(c)
-            if ret != 0:
-                fail("Invalid command")
+    if getState() == "off":
+        return
+    cmds = buildRule('A', rule)
+    for c in cmds:
+        ret = run(c)
+        if ret != 0:
+            fail("Invalid command")
 
 def unsetRule(no):
     """Remove given firewall rule"""
+    if getState() == "off":
+        return
     rule = get_instance("no", no)
     cmds = buildRule('D', rule)
     for c in cmds:

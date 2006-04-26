@@ -90,6 +90,8 @@ class MainApplication(programbase):
         self.connect(mainwidget.pushAdd, SIGNAL("clicked()"), self.slotAdd)
         self.connect(mainwidget.pushDelete, SIGNAL("clicked()"), self.slotDelete)
 
+        self.connect(mainwidget.checkICMP, SIGNAL("clicked()"), self.slotICMP)
+
         # COMAR
         self.comar = comar.Link()
 
@@ -135,6 +137,10 @@ class MainApplication(programbase):
                 item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[10:])
                 mainwidget.listPorts.insertItem(item)
                 self.rules["in"][rule["dport"]] = no
+            # ICMP
+            elif chk("description") == "fw_kga:icmp":
+                mainwidget.checkICMP.setChecked(1)
+                self.rules["icmp"] = no
 
 
     def addRule(self, **rule):
@@ -201,6 +207,18 @@ class MainApplication(programbase):
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
         self.comar.read_cmd()
 
+    def slotICMP(self):
+        if mainwidget.checkICMP.isChecked():
+            no = self.addRule(protocol="icmp",
+                              extra="--icmp-type 8",
+                              description="fw_kga:icmp",
+                              chain='INPUT',
+                              jump='DROP',
+                              log=0)
+            self.rules["icmp"] = no
+        else:
+            self.removeRule(self.rules["icmp"])
+            del self.rules["icmp"]
 
     def __del__(self):
         pass
