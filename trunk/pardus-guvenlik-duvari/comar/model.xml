@@ -12,6 +12,7 @@
                 <argument>dport</argument>
                 <argument>jump</argument>
                 <argument>log</argument>
+                <argument>description</argument>
             </method>
             <method name="unsetRule" profile="package" profileOp="delete">
                 <instance>no</instance>
@@ -21,8 +22,10 @@
             </method>
             <method name="listRules"/>
             <method name="setState" profile="package">
+                <instance>name</instance>
                 <argument>state</argument>
             </method>
+            <method name="getState"/>
         </class>
     </group>
 </comarModel>
