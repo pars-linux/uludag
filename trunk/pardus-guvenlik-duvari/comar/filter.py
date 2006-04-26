@@ -44,15 +44,17 @@ def buildRule(action='A', rules={}):
         args.append("--destination %s" % rules["dst"])
 
     # FIXME: not all protocols allow these parameters
+    if "sport" in rules or "dport" in rules:
+        args.append("--match multiport")
     if "sport" in rules:
         if 1 < atoi(rules["sport"]) < 65535:
-            args.append("--source-port %s" % rules["sport"])
+            args.append("--source-ports %s" % rules["sport"])
         else:
             fail("Invalid source port")
 
     if "dport" in rules:
         if 1 < atoi(rules["dport"]) < 65535:
-            args.append("--destination-port %s" % rules["dport"])
+            args.append("--destination-ports %s" % rules["dport"])
         else:
             fail("Invalid destination port")
 
