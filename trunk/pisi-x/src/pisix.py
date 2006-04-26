@@ -45,6 +45,7 @@ import pisi.packagedb
 import pisi.installdb
 import pisi.repodb
 import pisi.context
+import pisi.itembyrepodb
 
 # Workaround the fact that PyKDE provides no I18N_NOOP as KDE
 def I18N_NOOP(str):
@@ -280,7 +281,11 @@ class MainApplicationWidget(QWidget):
             else:
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
 
-            package = pisi.packagedb.ctx.packagedb.get_package(app)    
+            if not pisi.packagedb.ctx.installdb.is_installed(app):
+                package = pisi.context.packagedb.get_package(app)
+            else:
+                package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
+                
             desc = package.description
             summary = package.summary
             version = package.version
