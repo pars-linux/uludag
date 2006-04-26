@@ -74,17 +74,23 @@ def buildRule(action='A', rules={}):
 
     return cmds
 
-def setState(state):
+def getState():
+    if "filter" in instances("name"):
+        return get_instance("name", "filter")["state"]
+    else:
+        return "on"
+
+def setState(name, state):
+    if state not in ["on", "off"] or name != "filter":
+        fail("Invalid state")
+    if get_instance("name", "filter").get("state", "on") == state:
+        return
+    action = ["D", "A"][state == "on"]
     for no in instances("no"):
         rule = get_instance("no", no)
-        if state == "on":
-            cmds = buildRule('A', rule)
-            for c in cmds:
-                ret = run(c)
-        else:
-            cmds = buildRule('D', rule)
-            for c in cmds:
-                run(c)
+        cmds = buildRule(action, rule)
+        for c in cmds:
+            ret = run(c)
 
 def setRule(**rule):
     """Append new firewall rule"""
