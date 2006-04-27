@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: fw_kga\n"
+"Project-Id-Version: guvenlik_kga\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-27 13:18+0300\n"
+"POT-Creation-Date: 2006-04-27 22:02+0300\n"
 "PO-Revision-Date: 2006-04-27 13:04+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,123 +15,97 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/fw_kga.py:30
-msgid "Pardus Firewall Graphical User Interface"
-msgstr "Pardus Güvenlik Duvarı Kullanıcı Grafik Arabirimi"
-
-#: src/fw_kga.py:64
-msgid "Firewall Interface"
-msgstr "Güvenlik Duvarı Arabirimi"
-
-#: src/fw_kga.py:105 src/fw_kga.py:214
-msgid "&Stop Firewall"
-msgstr "Güvenlik &Duvarını Durdur"
-
-#: src/fw_kga.py:106 src/fw_kga.py:215 src/firewall.py:1212
-msgid "<b><font size=\"+1\">Firewall is running</font></b>"
-msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışıyor</font></b>"
-
-#: src/fw_kga.py:108 src/fw_kga.py:217 src/firewall.py:1211
-msgid "Click here to stop the firewall and allow all incoming connections"
-msgstr "Güvenlik duvarını durdurmak ve gelen bağlantılara izin vermek için buraya tıklayın"
-
-#: src/fw_kga.py:110 src/fw_kga.py:208
-msgid "&Start Firewall"
-msgstr "Güvenlik &Duvarını Başlat"
-
-#: src/fw_kga.py:111 src/fw_kga.py:209
-msgid "<b><font size=\"+1\">Firewall is not running</font></b>"
-msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışmıyor</font></b>"
-
-#: src/fw_kga.py:113 src/fw_kga.py:211
-msgid "Click here to start the firewall"
-msgstr "Güvenlik duvarını başlatmak için buraya tıklayınn"
-
-#: src/fw_kga.py:267
-msgid "Pardus Firewall Interface is already running!"
-msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor!"
-
-#: src/firewall.py:1124 src/firewall.py:1220
+#: src/firewall.py:151 src/firewall.py:247
 msgid "Port"
 msgstr "Port"
 
-#: src/firewall.py:1125 src/firewall.py:1221
+#: src/firewall.py:152 src/firewall.py:248
 msgid "Description"
 msgstr "Açıklama"
 
-#: src/firewall.py:1197
+#: src/firewall.py:224
 msgid "Firewall GUI"
 msgstr "Güvenlik Duvarı Arabirimi"
 
-#: src/firewall.py:1199 src/firewall.py:1234
+#: src/firewall.py:226 src/firewall.py:261
 msgid "Alt+H"
 msgstr "Alt+K"
 
-#: src/firewall.py:1200
+#: src/firewall.py:227
 msgid "&Ok"
 msgstr "&Tamam"
 
-#: src/firewall.py:1201
+#: src/firewall.py:228
 msgid "Alt+O"
 msgstr "Alt+T"
 
-#: src/firewall.py:1203
+#: src/firewall.py:230
 msgid "Alt+C"
 msgstr "Alt+İ"
 
-#: src/firewall.py:1205
+#: src/firewall.py:232
 msgid "Windows file sharing (port 139)"
 msgstr "Windows dosya paylaşımı (port 139)"
 
-#: src/firewall.py:1206
+#: src/firewall.py:233
 msgid "FTP transfer (ports 20 and 21)"
 msgstr "FTP transferi (20 ve 21. portlar)"
 
-#: src/firewall.py:1207
+#: src/firewall.py:234
 msgid "E-mail service"
 msgstr "E-posta servisleri (25 ve 110. portlar)"
 
-#: src/firewall.py:1208
+#: src/firewall.py:235
 msgid "Remote login (port 22)"
 msgstr "Uzaktan erişim (port 22)"
 
-#: src/firewall.py:1209
+#: src/firewall.py:236
 msgid "File sharing (p2p)"
 msgstr "Dosya paylaşımı (p2p)"
 
-#: src/firewall.py:1210
+#: src/firewall.py:237
 msgid "Allow outgoing network for the following services:"
 msgstr "Aşağıdaki servislere erişime izin ver:"
 
-#: src/firewall.py:1213
+#: src/firewall.py:238 src/guvenlik_kga.py:119 src/guvenlik_kga.py:226
+msgid "Click here to stop the firewall and allow all incoming connections"
+msgstr ""
+"Güvenlik duvarını durdurmak ve gelen bağlantılara izin vermek için buraya "
+"tıklayın"
+
+#: src/firewall.py:239 src/guvenlik_kga.py:117 src/guvenlik_kga.py:224
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışıyor</font></b>"
+
+#: src/firewall.py:240
 msgid "&Stop firewall"
 msgstr "Güvenlik &Duvarını Durdur"
 
-#: src/firewall.py:1214
+#: src/firewall.py:241
 msgid "Alt+S"
 msgstr "Alt+D"
 
-#: src/firewall.py:1215
+#: src/firewall.py:242
 msgid "Firewall Status"
 msgstr "Güvenlik Duvarı"
 
-#: src/firewall.py:1216
+#: src/firewall.py:243
 msgid "Description:"
 msgstr "Açıklama:"
 
-#: src/firewall.py:1217
+#: src/firewall.py:244
 msgid "Port number:"
 msgstr "Port numarası:"
 
-#: src/firewall.py:1218
+#: src/firewall.py:245
 msgid "&Add"
 msgstr "&Ekle"
 
-#: src/firewall.py:1219
+#: src/firewall.py:246
 msgid "Alt+A"
 msgstr "Alt+E"
 
-#: src/firewall.py:1222
+#: src/firewall.py:249
 msgid ""
 "<b>Additionally, you can specify a port you want \n"
 "to receive incoming network traffic. Both tcp and\n"
@@ -141,27 +115,27 @@ msgstr ""
 "etmesine izin verebilirsiniz. Hem TCP hem de UDP \n"
 "bağlantılarına otomatik olarak izin verilecektir.</b>"
 
-#: src/firewall.py:1226
+#: src/firewall.py:253
 msgid "Alt+D"
 msgstr ""
 
-#: src/firewall.py:1227
+#: src/firewall.py:254
 msgid "Incoming Connections"
 msgstr "Gelen Bağlantılar"
 
-#: src/firewall.py:1228
+#: src/firewall.py:255
 msgid "<b>Other firewall specific features</b>"
 msgstr "<b>Diğer güvenlik duvarı özellikleri</b>"
 
-#: src/firewall.py:1229
+#: src/firewall.py:256
 msgid "&Block incoming ICMP (ping) requests"
 msgstr "Gelen ICMP (ping) taleplerini &blokla"
 
-#: src/firewall.py:1230
+#: src/firewall.py:257
 msgid "Alt+B"
 msgstr "Alt+B"
 
-#: src/firewall.py:1231
+#: src/firewall.py:258
 msgid ""
 "<b>Firewall logs offer a visual way of understanding\n"
 "what happens.</b>"
@@ -169,10 +143,38 @@ msgstr ""
 "<b>Güvenlik duvarı kayıtları, ne olduğunu anlamanızı\n"
 "sağlayan görsel bir kaynaktır.</b>"
 
-#: src/firewall.py:1233
+#: src/firewall.py:260
 msgid "Click &here to see the firewall logs"
 msgstr "Güvenlik duvarı &kayıtlarını görmek için tıklayın"
 
-#: src/firewall.py:1235
+#: src/firewall.py:262
 msgid "Other Features"
 msgstr "Diğer Özellikler"
+
+#: src/guvenlik_kga.py:30
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Pardus Güvenlik Duvarı Kullanıcı Grafik Arabirimi"
+
+#: src/guvenlik_kga.py:67
+msgid "Firewall Interface"
+msgstr "Güvenlik Duvarı Arabirimi"
+
+#: src/guvenlik_kga.py:116 src/guvenlik_kga.py:223
+msgid "&Stop Firewall"
+msgstr "Güvenlik &Duvarını Durdur"
+
+#: src/guvenlik_kga.py:121 src/guvenlik_kga.py:217
+msgid "&Start Firewall"
+msgstr "Güvenlik &Duvarını Başlat"
+
+#: src/guvenlik_kga.py:122 src/guvenlik_kga.py:218
+msgid "<b><font size=\"+1\">Firewall is not running</font></b>"
+msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışmıyor</font></b>"
+
+#: src/guvenlik_kga.py:124 src/guvenlik_kga.py:220
+msgid "Click here to start the firewall"
+msgstr "Güvenlik duvarını başlatmak için buraya tıklayınn"
+
+#: src/guvenlik_kga.py:276
+msgid "Pardus Firewall Interface is already running!"
+msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor!"
