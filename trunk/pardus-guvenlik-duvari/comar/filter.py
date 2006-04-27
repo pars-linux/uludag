@@ -81,7 +81,8 @@ def setState(name, state):
     """Set FW state"""
     if state not in ["on", "off"] or name != "filter":
         fail("Invalid state")
-    if get_instance("name", "filter").get("state", "off") == state:
+    filter = get_instance("name", "filter");
+    if filter and filter.get("state", "off") == state:
         return
     action = ["D", "A"][state == "on"]
     inst = map(atoi, instances("no"))
