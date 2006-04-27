@@ -26,7 +26,7 @@ def atoi(s):
     return ret
 
 
-def buildRule(action='A', rules={}):
+def buildRule(action="A", rules={}, bin="/sbin/iptables"):
     """Generate IPTables command from given rule description"""
     args = []
 
@@ -61,64 +61,67 @@ def buildRule(action='A', rules={}):
     cmds = []
 
     if rules.get("log", 1) == 1:
-        cmds.append('/sbin/iptables -t filter %s -j LOG --log-tcp-options --log-level 3' % ' '.join(args))
+        cmds.append("%s -t filter %s -j LOG --log-tcp-options --log-level 3" % (bin, " ".join(args)))
 
-    if jump == 'REJECT':
-        cmds.append('/sbin/iptables -t filter %s -j REJECT --reject-with tcp-reset' % ' '.join(args))
+    if jump == "REJECT":
+        cmds.append("%s -t filter %s -j REJECT --reject-with tcp-reset" % (bin, " ".join(args)))
     else:
-        cmds.append('/sbin/iptables -t filter %s -j %s' % (' '.join(args), jump))
+        cmds.append("%s -t filter %s -j %s" % (bin, " ".join(args), jump))
 
     return cmds
 
-def getState():
-    """Get FW state"""
-    if "filter" in instances("name"):
-        return get_instance("name", "filter")["state"]
-    else:
-        return "off"
-
-def setState(name, state):
-    """Set FW state"""
-    if state not in ["on", "off"] or name != "filter":
-        fail("Invalid state")
-    filter = get_instance("name", "filter");
-    if filter and filter.get("state", "off") == state:
-        return
-    action = ["D", "A"][state == "on"]
-    inst = map(atoi, instances("no"))
-    inst.sort()
-    inst = map(str, inst)
-    for no in inst:
-        rule = get_instance("no", no)
-        cmds = buildRule(action, rule)
-        for c in cmds:
-            ret = run(c)
 
 def setRule(**rule):
     """Append new firewall rule"""
     if getState() == "off":
         return
-    cmds = buildRule('A', rule)
+    cmds = buildRule("A", rule)
     for c in cmds:
         ret = run(c)
         if ret != 0:
             fail("Invalid command")
+
 
 def unsetRule(no):
     """Remove given firewall rule"""
     if getState() == "off":
         return
     rule = get_instance("no", no)
-    cmds = buildRule('D', rule)
+    cmds = buildRule("D", rule)
     for c in cmds:
         ret = run(c)
         if ret != 0:
             fail("Invalid command")
 
-def getRule(no):
-    """Get details of given rule number"""
-    return get_instance("no", no)
 
-def listRules():
-    """List rule numbers"""
-    return instances("no")
+def getRules():
+    """Get all rules"""
+    inst = instances("no")
+    inst.sort(key=atoi)
+    rules = []
+    for i in inst:
+        rules.append(get_instance("no", i))
+    return rules
+
+
+def getState():
+    """Get FW state"""
+    state = get_profile("Net.Filter.setState")
+    if state:
+        return state["state"]
+    return "off"
+
+
+def setState(state):
+    """Set FW state"""
+    if state not in ["on", "off"]:
+        fail("Invalid state")
+    if getState() == state:
+        return
+    
+    # What to do
+    action = ["D", "A"][state == "on"]
+    for rule in getRules():
+        cmds = buildRule(action, rule)
+        for c in cmds:
+            ret = run(c)
