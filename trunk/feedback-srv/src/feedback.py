@@ -9,6 +9,8 @@
 # any later version.
 #
 # Please read the COPYING file.
+#
+# Authors:  Bahadır Kandemir <bahadir@pardus.org.tr>
 
 from config import site_config
 from mysql import mysql
@@ -17,6 +19,10 @@ import time
 
 def index(req, exp='0', purpose='0', usage='0', question='0', \
           opinion='', email='', email_announce='F', hardware=''):
+
+    if exp == '0' or question == '0':
+        return "0"
+    
     # DB connection
     sql = mysql(site_config['db_host'], \
                 site_config['db_name'], \
