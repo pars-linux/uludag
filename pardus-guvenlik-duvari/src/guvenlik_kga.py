@@ -33,7 +33,7 @@ version = "0.1"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("fw_kga",
+    about_data = KAboutData("guvenlik_kga",
                             "Firewal Interface",
                             version,
                             description,
@@ -69,15 +69,15 @@ class MainApplication(programbase):
             self.resize(520, 420)
         else:
             KCModule.__init__(self,parent,name)
-            KGlobal.locale().insertCatalogue("fw_kga")
+            KGlobal.locale().insertCatalogue("guvenlik_kga")
             # Create a configuration object.
-            self.config = KConfig("fw_kga")
+            self.config = KConfig("guvenlik_kga")
             self.setButtons(0)
             self.aboutdata = AboutData()
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        KGlobal.iconLoader().addAppDir("fw_kga")
+        KGlobal.iconLoader().addAppDir("guvenlik_kga")
         
         mainwidget = firewall.MainWindow(self)
         toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
@@ -86,9 +86,9 @@ class MainApplication(programbase):
         self.aboutus = KAboutApplication(self)
 
         # Icons
-        mainwidget.pixmapFW.setPixmap(loadIcon("fw_kga", size=48))
+        mainwidget.pixmapFW.setPixmap(loadIcon("guvenlik_kga", size=48))
 
-        icon = lambda x: QPixmap(locate("data", "fw_kga/%s" % x))
+        icon = lambda x: QPixmap(locate("data", "guvenlik_kga/%s" % x))
         mainwidget.pixmapIncoming.setPixmap(icon("incoming.png"))
         mainwidget.pixmapICMP.setPixmap(icon("icmp.png"))
         mainwidget.pixmapLogs.setPixmap(icon("logs.png"))
@@ -131,30 +131,30 @@ class MainApplication(programbase):
             no = rule["no"]
             chk = lambda x: rule.get(x, "")
             # Outgoing connections
-            if chk("description") == "fw_kga:WFS":
+            if chk("description") == "guvenlik_kga:WFS":
                 mainwidget.checkWFS.setChecked(1)
                 self.rules["out"]["WFS"] = no
-            elif chk("description") == "fw_kga:Mail":
+            elif chk("description") == "guvenlik_kga:Mail":
                 mainwidget.checkMail.setChecked(1)
                 self.rules["out"]["Mail"] = no
-            elif chk("description") == "fw_kga:FTP":
+            elif chk("description") == "guvenlik_kga:FTP":
                 mainwidget.checkFTP.setChecked(1)
                 self.rules["out"]["FTP"] = no
-            elif chk("description") == "fw_kga:Remote":
+            elif chk("description") == "guvenlik_kga:Remote":
                 mainwidget.checkRemote.setChecked(1)
                 self.rules["out"]["Remote"] = no
-            elif chk("description") == "fw_kga:FS":
+            elif chk("description") == "guvenlik_kga:FS":
                 mainwidget.checkFS.setChecked(1)
                 self.rules["out"]["FS"] = no
             # Incoming connections
-            elif chk("description") == "fw_kga:RejectElse":
+            elif chk("description") == "guvenlik_kga:RejectElse":
                 self.rules["in"]["R"] = no
-            elif chk("description").startswith("fw_kga:in:"):
+            elif chk("description").startswith("guvenlik_kga:in:"):
                 item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[10:])
                 mainwidget.listPorts.insertItem(item)
                 self.rules["in"][rule["dport"]] = no
             # ICMP/8 (ping)
-            elif chk("description") == "fw_kga:icmp":
+            elif chk("description") == "guvenlik_kga:icmp":
                 mainwidget.checkICMP.setChecked(1)
                 self.rules["icmp"] = no
 
@@ -181,7 +181,7 @@ class MainApplication(programbase):
         if not mainwidget.linePort.text() or not mainwidget.lineDescription.text():
             return
         no = self.addRule(dport=mainwidget.linePort.text(),
-                          description="fw_kga:in:%s" % mainwidget.lineDescription.text(),
+                          description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
                           chain="INPUT",
                           jump="ACCEPT",
                           log=0)
@@ -195,7 +195,7 @@ class MainApplication(programbase):
             # Re-Insert "Reject Else" rule
             if "R" in self.rules["in"]:
                 self.removeRule(self.rules["in"]["R"])
-            no = self.addRule(description="fw_kga:RejectElse",
+            no = self.addRule(description="guvenlik_kga:RejectElse",
                               chain="INPUT",
                               jump="REJECT")
             self.rules["in"]["R"] = no
@@ -213,13 +213,13 @@ class MainApplication(programbase):
     def slotStatus(self):
         self.comar.call("Net.Filter.getState")
         if self.comar.read_cmd()[2] == "on":
-            self.comar.call("Net.Filter.setState", {"name": "filter", "state": "off"})
+            self.comar.call("Net.Filter.setState", {"state": "off"})
             mainwidget.pushStatus.setText(i18n("&Start Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is not running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
             mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
         else:
-            self.comar.call("Net.Filter.setState", {"name": "filter", "state": "on"})
+            self.comar.call("Net.Filter.setState", {"state": "on"})
             mainwidget.pushStatus.setText(i18n("&Stop Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
@@ -230,7 +230,7 @@ class MainApplication(programbase):
         if mainwidget.checkICMP.isChecked():
             no = self.addRule(protocol="icmp",
                               extra="--icmp-type 8",
-                              description="fw_kga:icmp",
+                              description="guvenlik_kga:icmp",
                               chain="INPUT",
                               jump="DROP",
                               log=0)
@@ -283,7 +283,7 @@ def main():
     sys.exit(myapp.exec_loop())
     
 # Factory function for KControl
-def create_fw_kga(parent,name):
+def create_guvenlik_kga(parent,name):
     global kapp
     
     kapp = KApplication.kApplication()
