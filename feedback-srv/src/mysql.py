@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2005, Bahadır Kandemir
+# Copyright (C) 2005, 2006 TÜBİTAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -8,6 +8,8 @@
 # any later version.
 #
 # Please read the COPYING file.
+#
+# Authors:  Bahadır Kandemir <bahadir@pardus.org.tr>
 
 import MySQLdb
 
@@ -21,13 +23,11 @@ class mysql:
                                 db=db_name
                                 )
 
-  # Sorgula...
   def query(self, str, par=()):
     c = self.conn.cursor()
     c.execute(str, par)
     return c.fetchall()
    
-  # Satır/hücre sayısı bilinmiyorsa kullanılması önerilen fonksiyon...
   def scalar_query(self, str, par=()):
     c = self.conn.cursor()
     c.execute(str, par)
@@ -36,7 +36,6 @@ class mysql:
     except:
       return
     
-  # Sorgu sonunda tek satır veri dönecekse, kullanılması önerilen fonksiyon...
   def row_query(self, str, par=()):
     c = self.conn.cursor()
     c.execute(str, par)
@@ -45,17 +44,13 @@ class mysql:
     except:
       return
     
-  # Sorgudan yanıt dönmeyecekse kullanılması önerilen fonksiyon...
   def query_com(self, str, par=()):
     c = self.conn.cursor()
     c.execute(str, par)
 
-  # SQL komutuna fesat karıştırılmasını önleyen fonksiyon
   def escape(self, s):
     return MySQLdb.escape_string(s)
   
-  # Dict. tipindeki veriyi INSERT komutuna dönüştüren fonksiyon
-  # Sorguyu biz oluşturduğumuz için, % operatörü ile sokuşturma yapıyoruz.
   def insert(self, table, data):
     columns = []
     values = []
