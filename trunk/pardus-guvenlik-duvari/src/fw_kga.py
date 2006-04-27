@@ -46,6 +46,9 @@ def AboutData():
     
     return about_data
 
+def loadIcon(name, group=KIcon.Desktop, size=16):
+    return KGlobal.iconLoader().loadIcon(name, group, size)
+
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=="__main__"
 
@@ -81,6 +84,14 @@ class MainApplication(programbase):
         toplayout.addWidget(mainwidget)
 
         self.aboutus = KAboutApplication(self)
+
+        # Icons
+        mainwidget.pixmapFW.setPixmap(loadIcon("fw_kga", size=48))
+
+        icon = lambda x: QPixmap(locate("data", "fw_kga/%s" % x))
+        mainwidget.pixmapIncoming.setPixmap(icon("incoming.png"))
+        mainwidget.pixmapICMP.setPixmap(icon("icmp.png"))
+        mainwidget.pixmapLogs.setPixmap(icon("logs.png"))
 
         #self.connect(mainwidget.pushCancel, SIGNAL("clicked()"), self, SLOT("close()"))
         #self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.saveAll)
