@@ -124,12 +124,11 @@ class MainApplication(programbase):
             mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
 
         # Load FW rules
-        self.comar.call("Net.Filter.listRules")
-        nums = eval(self.comar.read_cmd()[2])
         self.rules = {"in": {}, "out": {}}
-        for no in nums: 
-            self.comar.call("Net.Filter.getRule", {"no": no})
-            rule = eval(self.comar.read_cmd()[2])
+        self.comar.call("Net.Filter.getRules")
+        rules = eval(self.comar.read_cmd()[2])
+        for rule in rules: 
+            no = rule["no"]
             chk = lambda x: rule.get(x, "")
             # Outgoing connections
             if chk("description") == "fw_kga:WFS":
@@ -159,11 +158,10 @@ class MainApplication(programbase):
                 mainwidget.checkICMP.setChecked(1)
                 self.rules["icmp"] = no
 
-
     def addRule(self, **rule):
         """A"""
-        self.comar.call("Net.Filter.listRules")
-        nums = eval(self.comar.read_cmd()[2])
+        self.comar.call("Net.Filter.getRules")
+        nums = [i["no"] for i in eval(self.comar.read_cmd()[2])]
 
         if len(nums):
             rule["no"] = max(map(int, nums)) + 1

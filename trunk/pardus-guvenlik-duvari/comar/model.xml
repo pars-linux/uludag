@@ -4,6 +4,7 @@
         <class name="Filter">
             <method name="setRule" profile="package">
                 <instance>no</instance>
+                <argument>description</argument>
                 <argument>chain</argument>
                 <argument>protocol</argument>
                 <argument>src</argument>
@@ -12,18 +13,13 @@
                 <argument>dport</argument>
                 <argument>jump</argument>
                 <argument>log</argument>
-                <argument>description</argument>
                 <argument>extra</argument>
             </method>
             <method name="unsetRule" profile="package" profileOp="delete">
                 <instance>no</instance>
             </method>
-            <method name="getRule">
-                <instance>no</instance>
-            </method>
-            <method name="listRules"/>
+            <method name="getRules"/>
             <method name="setState" profile="package">
-                <instance>name</instance>
                 <argument>state</argument>
             </method>
             <method name="getState"/>
