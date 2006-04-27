@@ -2,7 +2,7 @@
 <comarModel>
     <group name="Net">
         <class name="Filter">
-            <method name="setRule" profile="package" profileOp="startup">
+            <method name="setRule" profile="package">
                 <instance>no</instance>
                 <argument>chain</argument>
                 <argument>protocol</argument>
