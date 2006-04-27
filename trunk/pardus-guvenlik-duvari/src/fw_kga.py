@@ -27,14 +27,14 @@ import comar
 def I18N_NOOP(str):
     return str
 
-description = I18N_NOOP("Pardus Firewall Interface")
+description = I18N_NOOP("Pardus Firewall Graphical User Interface")
 version = "0.1"
 
 def AboutData():
     global version,description
     
     about_data = KAboutData("fw_kga",
-                            "Pardus Firewal Interface",
+                            "Firewal Interface",
                             version,
                             description,
                             KAboutData.License_GPL,
@@ -61,7 +61,7 @@ class MainApplication(programbase):
 
         if standalone:
             QDialog.__init__(self,parent,name)
-            self.setCaption(i18n("Pardus Firewall Interface"))
+            self.setCaption(i18n("Firewall Interface"))
             self.setMinimumSize(520, 420)
             self.resize(520, 420)
         else:
@@ -86,27 +86,33 @@ class MainApplication(programbase):
         #self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.saveAll)
         #self.connect(mainwidget.pushHelp,SIGNAL("clicked()"),self.showHelp)
 
+        # Signals - Firewall Status
         self.connect(mainwidget.pushStatus, SIGNAL("clicked()"), self.slotStatus)
+
+        # Signals - Incoming connections
         self.connect(mainwidget.pushAdd, SIGNAL("clicked()"), self.slotAdd)
         self.connect(mainwidget.pushDelete, SIGNAL("clicked()"), self.slotDelete)
 
+        # Signals - Other Features
         self.connect(mainwidget.checkICMP, SIGNAL("clicked()"), self.slotICMP)
 
         # COMAR
         self.comar = comar.Link()
 
-        # Get State
+        # Get FW state
         self.comar.call("Net.Filter.getState")
         if self.comar.read_cmd()[2] == "on":
             mainwidget.pushStatus.setText(i18n("&Stop Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
+            mainwidget.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming connections"))
         else:
             mainwidget.pushStatus.setText(i18n("&Start Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is not running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
+            mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
 
-        # Load rules
+        # Load FW rules
         self.comar.call("Net.Filter.listRules")
         nums = eval(self.comar.read_cmd()[2])
         self.rules = {"in": {}, "out": {}}
@@ -114,7 +120,7 @@ class MainApplication(programbase):
             self.comar.call("Net.Filter.getRule", {"no": no})
             rule = eval(self.comar.read_cmd()[2])
             chk = lambda x: rule.get(x, "")
-            # Outgoing
+            # Outgoing connections
             if chk("description") == "fw_kga:WFS":
                 mainwidget.checkWFS.setChecked(1)
                 self.rules["out"]["WFS"] = no
@@ -130,20 +136,21 @@ class MainApplication(programbase):
             elif chk("description") == "fw_kga:FS":
                 mainwidget.checkFS.setChecked(1)
                 self.rules["out"]["FS"] = no
-            # Incoming
+            # Incoming connections
             elif chk("description") == "fw_kga:RejectElse":
                 self.rules["in"]["R"] = no
             elif chk("description").startswith("fw_kga:in:"):
                 item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[10:])
                 mainwidget.listPorts.insertItem(item)
                 self.rules["in"][rule["dport"]] = no
-            # ICMP
+            # ICMP/8 (ping)
             elif chk("description") == "fw_kga:icmp":
                 mainwidget.checkICMP.setChecked(1)
                 self.rules["icmp"] = no
 
 
     def addRule(self, **rule):
+        """A"""
         self.comar.call("Net.Filter.listRules")
         nums = eval(self.comar.read_cmd()[2])
 
@@ -152,10 +159,10 @@ class MainApplication(programbase):
         else:
             rule["no"] = 1
 
-        self.comar.call('Net.Filter.setRule', rule)
-        self.comar.read_cmd()
-
-        return rule["no"]
+        self.comar.call("Net.Filter.setRule", rule)
+        if self.comar.read_cmd()[0] == self.comar.RESULT:
+            return rule["no"]
+        return -1
         
     def removeRule(self, no):
         self.comar.call("Net.Filter.unsetRule", {"no": no})
@@ -166,22 +173,23 @@ class MainApplication(programbase):
             return
         no = self.addRule(dport=mainwidget.linePort.text(),
                           description="fw_kga:in:%s" % mainwidget.lineDescription.text(),
-                          chain='INPUT',
-                          jump='ACCEPT',
+                          chain="INPUT",
+                          jump="ACCEPT",
                           log=0)
-        item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
-        mainwidget.listPorts.insertItem(item)
-        self.rules["in"][str(mainwidget.linePort.text())] = no
-        mainwidget.linePort.setText("")
-        mainwidget.lineDescription.setText("")
+        if no > -1:
+            item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
+            mainwidget.listPorts.insertItem(item)
+            self.rules["in"][str(mainwidget.linePort.text())] = no
+            mainwidget.linePort.setText("")
+            mainwidget.lineDescription.setText("")
 
-        # Re-Insert "Reject Else" rule
-        if "R" in self.rules["in"]:
-            self.removeRule(self.rules["in"]["R"])
-        no = self.addRule(description="fw_kga:RejectElse",
-                          chain='INPUT',
-                          jump='REJECT')
-        self.rules["in"]["R"] = no
+            # Re-Insert "Reject Else" rule
+            if "R" in self.rules["in"]:
+                self.removeRule(self.rules["in"]["R"])
+            no = self.addRule(description="fw_kga:RejectElse",
+                              chain="INPUT",
+                              jump="REJECT")
+            self.rules["in"]["R"] = no
 
     def slotDelete(self):
         item = mainwidget.listPorts.selectedItem()
@@ -200,11 +208,13 @@ class MainApplication(programbase):
             mainwidget.pushStatus.setText(i18n("&Start Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is not running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
+            mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
         else:
             self.comar.call("Net.Filter.setState", {"name": "filter", "state": "on"})
             mainwidget.pushStatus.setText(i18n("&Stop Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
+            mainwidget.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming connections"))
         self.comar.read_cmd()
 
     def slotICMP(self):
@@ -212,8 +222,8 @@ class MainApplication(programbase):
             no = self.addRule(protocol="icmp",
                               extra="--icmp-type 8",
                               description="fw_kga:icmp",
-                              chain='INPUT',
-                              jump='DROP',
+                              chain="INPUT",
+                              jump="DROP",
                               log=0)
             self.rules["icmp"] = no
         else:

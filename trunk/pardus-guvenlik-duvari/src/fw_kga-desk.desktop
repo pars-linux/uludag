@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Firewall
+Name[en]=Firewall
+Name[tr]=Güvenlik Duvarı
+Comment=Firewall User Interface
+Comment[tr]=Güvenlik Duvarı Arabirimi
+Icon=fw_kga
+Type=Application
+Exec=fw-kga
+Categories=QT;Network;KDE
