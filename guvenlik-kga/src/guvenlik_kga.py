@@ -150,7 +150,7 @@ class MainApplication(programbase):
             elif chk("description") == "guvenlik_kga:RejectElse":
                 self.rules["in"]["R"] = no
             elif chk("description").startswith("guvenlik_kga:in:"):
-                item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[10:])
+                item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[16:])
                 mainwidget.listPorts.insertItem(item)
                 self.rules["in"][rule["dport"]] = no
             # ICMP/8 (ping)
@@ -196,6 +196,7 @@ class MainApplication(programbase):
             if "R" in self.rules["in"]:
                 self.removeRule(self.rules["in"]["R"])
             no = self.addRule(description="guvenlik_kga:RejectElse",
+                              extra="--syn",
                               chain="INPUT",
                               jump="REJECT")
             self.rules["in"]["R"] = no

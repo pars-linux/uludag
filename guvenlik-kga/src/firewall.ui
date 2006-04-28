@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>654</width>
+            <width>617</width>
             <height>511</height>
         </rect>
     </property>
@@ -398,33 +398,6 @@
                             <string>Alt+A</string>
                         </property>
                     </widget>
-                    <widget class="QListView" row="3" column="0" rowspan="2" colspan="3">
-                        <column>
-                            <property name="text">
-                                <string>Port</string>
-                            </property>
-                            <property name="clickable">
-                                <bool>true</bool>
-                            </property>
-                            <property name="resizable">
-                                <bool>true</bool>
-                            </property>
-                        </column>
-                        <column>
-                            <property name="text">
-                                <string>Description</string>
-                            </property>
-                            <property name="clickable">
-                                <bool>true</bool>
-                            </property>
-                            <property name="resizable">
-                                <bool>true</bool>
-                            </property>
-                        </column>
-                        <property name="name">
-                            <cstring>listPorts</cstring>
-                        </property>
-                    </widget>
                     <widget class="QLabel" row="0" column="0">
                         <property name="name">
                             <cstring>pixmapIncoming</cstring>
@@ -477,6 +450,48 @@ udp connections will be automatically allowed.&lt;/b&gt;</string>
                             </size>
                         </property>
                     </spacer>
+                    <widget class="QListView" row="3" column="0" rowspan="2" colspan="3">
+                        <column>
+                            <property name="text">
+                                <string>Port</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Description</string>
+                            </property>
+                            <property name="clickable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="resizable">
+                                <bool>true</bool>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>listPorts</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="5" column="0" rowspan="1" colspan="3">
+                        <property name="name">
+                            <cstring>textWarning</cstring>
+                        </property>
+                        <property name="paletteForegroundColor">
+                            <color>
+                                <red>255</red>
+                                <green>0</green>
+                                <blue>0</blue>
+                            </color>
+                        </property>
+                        <property name="text">
+                            <string>Note that all other incoming connections will be blocked.</string>
+                        </property>
+                    </widget>
                 </grid>
             </widget>
             <widget class="QWidget">
