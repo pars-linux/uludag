@@ -624,4 +624,10 @@ def main():
     sys.exit(kapp.exec_loop())
     
 if __name__ == "__main__":
+    try:
+        import psyco
+        psyco.full()
+    except ImportError:
+        pass
     main()
+
