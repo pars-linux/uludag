@@ -649,7 +649,7 @@ static PyObject *
 Node_toPrettyString(Node *self, PyObject *args)
 {
 	PyObject *ret;
-	iks *tree;
+	iks *tree, *a;
 	char *str;
 
 	if (iks_type(self->node) != IKS_TAG) {
@@ -658,6 +658,9 @@ Node_toPrettyString(Node *self, PyObject *args)
 	}
 
 	tree = iks_new(iks_name(self->node));
+	for (a = iks_attrib(self->node); a; a = iks_next(a)) {
+		iks_insert_attrib(tree, iks_name(a), iks_cdata(a));
+	}
 	prettify(tree, self->node);
 	str = iks_string(NULL, tree);
 	ret = Py_BuildValue("s", str);
