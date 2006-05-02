@@ -117,9 +117,6 @@
                     <property name="text">
                         <string>&amp;Cancel</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+C</string>
-                    </property>
                 </widget>
             </hbox>
         </widget>
