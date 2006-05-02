@@ -11,8 +11,8 @@
 
 import os
 import sys
-import zipfile
 import piksemel as iks
+from pisi import zipfileext
 
 files = {}
 
@@ -26,7 +26,7 @@ def pisi_paks(path):
 
 def parse_paks():
     for pisi in pisi_paks(sys.argv[1]):
-        zip = zipfile.ZipFile(pisi, "r")
+        zip = zipfileext.ZipFileExt(pisi, "r")
         data = zip.read("metadata.xml")
         doc = iks.parseString(data)
         name = doc.getTag("Package").getTagData("Name")
