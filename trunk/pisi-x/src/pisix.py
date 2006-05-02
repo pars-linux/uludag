@@ -53,7 +53,7 @@ def I18N_NOOP(str):
 
 description = I18N_NOOP("GUI for PiSi package manager")
 version = "1.1.0_b2"
-base_packages = ["qt","kdelibs","kdebase","sip","PyQt","PyKDE"]
+base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
 
 def AboutData():
     global version,description
@@ -175,6 +175,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
+        self.connect(self.progressDialog.cancelButton,SIGNAL("clicked()"),self.cancelThread)
 
         self.currentAppList = self.command.listNewPackages()
         self.createComponentList(self.currentAppList)
@@ -186,6 +187,17 @@ class MainApplicationWidget(QWidget):
         # Check for empty repo.
         self.initialCheck()
 
+    def cancelThread(self):
+        # Reset progressbar
+        self.progressDialog.setLabelText(i18n("<b>Cancelling operation...</b>"))
+        self.progressDialog.speedLabel.hide()
+        self.progressDialog.sizeLabel.hide()
+        
+        self.command.terminate()
+        self.command.wait()
+        self.possibleError = True
+        self.finished()
+        
     def initialCheck(self):
         # This needs to check if a repo exists and its not empty
         pass
@@ -433,7 +445,7 @@ class MainApplicationWidget(QWidget):
                 self.currentAppIndex += 1
             elif isinstance(eventData,list):
                 self.packagesOrder = eventData
-                if len(set(base_packages).union(self.packagesOrder)) > 0:
+                if len(base_packages.intersection(self.packagesOrder)) > 0:
                     self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
                     self.finished()
                 else:
