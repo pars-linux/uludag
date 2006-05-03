@@ -10,69 +10,33 @@ kullanabilirsiniz. Pardus'un sizin için yapabileceklerini keşfetmeniz
 için <a href="http://www.pardus.org.tr/"> http://www.pardus.org.tr</a>
 adresini ziyaret etmenizden onur duyacağız.
 
-1.1. Neden Pardus?
+1.1 Siz de katılın
 
-Özgürdür: Lisansı sizi kısıtlamaz, üreticiyi sizden korumak için değil sizin haklarınızı
-korumak için tasarlanmıştır.
+   Eğer kendinize "ben de yardım etmek istiyorum" diyorsanız bununla
+   beraber nereden başlayacağınızı bilmiyorsanız Pardus size
+   fırsat tanıyor. İşinin bir kısmı da yeni gelenleri projeye
+   ilgi alanlarına ve becerilerine göre adapte etmek olan imece
+   takımı size yardım edecektir.  İmece projesinde, yerelleştirme
+   çalışmaları, belgeleme çalışmaları, uygulama ve sürüm
+   testleri, raporlama, kullanıcı grafik arayüzlerinin test edilmesi
+   ve değerlendirilmesi, yazılım geliştirme, web sayfalarının ve
+   belgelerin uluslararasılaştırılması, projenin doğru şekilde
+   tanıtılması ve yeni insanlara ulaşmak gibi proje ihtiyaçlarına
+   cevap vermek üzere çalışan insanları bulunduran bir takımdır.
 
-Türkçe sever: Çekinmeden Türk alfabesinin tüm harflerini kullanabilirsiniz. Yazım ve sözlük
-denetimi yapar, sizi güzel bir Türkçe kullanmaya teşvik eder.
+   Bu takımın işi değerli katkınızı ihtiyaç duyulan noktalara
+   kanalize ederek projeye gelen katkı kalitesini arttırmak ve belirli
+   bir seviyenin altına inmemesini sağlamaya çalışmaktır. Daha
+   fazla bilgi için <a href=http://imece.pardus.org.tr>imece</a> web
+   sayfasını ziyaret edebilirsiniz.
 
-Virüslere geçit vermez: İnternet'ten gelen her dosyayı kontrolden geçirmekle, ya da virüs bulaşmış
-bilgisayarınızı temizlemekle zaman kaybetmezsiniz.
+1.2 Geribildirimde bulunmak
 
-Hızlı kurulur: 30 dakikada yüklenir. Tek kurulum işlemiyle bilgisayarınıza ofis yazılımı,
-İnternet gezgini, sohbet programı gibi gerekli bütün programlar da yüklenir.
-
-Kolay kullanılır: Grafik arayüzleri, menüleri, ikonları ile aklınıza ve güdülerinize hitap eder.
-Kullanmak için bilgisayar öğrenmek, ikinci bir dil bilmek ya da uzun eğitimlerden geçmek gerekmez.
-
-Her şey dahildir: Bir masaüstü kullanıcısının gereksinim duyacağı her türlü yazılım Kurulum
-CD'si içinde mevcuttur. İnternet araçları, ofis paketi, her türlü resim,
-müzik, film için oynatıcı ve düzenleyiciler, oyunlar, aklınıza ne gelirse...
-
-Özelleştirilebilir: Sistemi, kendi beğeninize göre özgürce değiştirebilirsiniz. Hem görünüş, hem
-de davranış açısından. Tek sınır, hayal gücünüzdür.
-
-Şeffaftır: Kaynak kodlarını kendi ihtiyaçlarınıza göre değiştirebilir, kendi dağıtımınızı
-üretebilirsiniz. Ne yaptığını ve ne yapmadığını kaynak koduna bakarak
-bilirsiniz.
-
-Çok dil bilir: Ayrı ayrı CD'ler ile tekrar yükleme yapmadan, iki dokunuşla Türkçe'den
-İngilizce'ye dönüşür. Herhangi başka bir dilin desteğini eklemek de son derece
-kolaydır.
-
-Eğlencelidir: Kaptan Masaüstü, PİSİ ve ÇOMAR ile bilgisayar kullanmanın keyfini, tam Türkçe
-desteği ile bilgisayarınızı kendi dilinizde kullanmanın kolaylığını
-yaşarsınız. 
-
-1.2 Siz de katılın
-
-Eğer kendinize "ben de yardım etmek istiyorum" diyorsanız bununla
-beraber nereden başlayacağınızı bilmiyorsanız Pardus size
-fırsat tanıyor. İşinin bir kısmı da yeni gelenleri projeye
-ilgi alanlarına ve becerilerine göre adapte etmek olan imece
-takımı size yardım edecektir.  İmece projesinde, yerelleştirme
-çalışmaları, belgeleme çalışmaları, uygulama ve sürüm
-testleri, raporlama, kullanıcı grafik arayüzlerinin test edilmesi
-ve değerlendirilmesi, yazılım geliştirme, web sayfalarının ve
-belgelerin uluslararasılaştırılması, projenin doğru şekilde
-tanıtılması ve yeni insanlara ulaşmak gibi proje ihtiyaçlarına
-cevap vermek üzere çalışan insanları bulunduran bir takımdır.
-
-Bu takımın işi değerli katkınızı ihtiyaç duyulan noktalara
-kanalize ederek projeye gelen katkı kalitesini arttırmak ve belirli
-bir seviyenin altına inmemesini sağlamaya çalışmaktır. Daha fazla
-bilgi için <a href=http://imece.pardus.org.tr>imece</a> web sayfasını
-ziyaret edebilirsiniz.
-
-1.3 Geribildirimde bulunmak
-
-Pardus'la ilgili hata önerilerinizi iletmek için <a
-href=http://bugs.pardus.org.t>Pardus hata bildirim sistemi'ni</a>
-kullanabilirsiniz. Bir sorunu raporlamak, yeni bir paket önerisi yapmak,
-yeni sürümde bir özelliği talep etmek gibi konularda vereceğiniz
-desteğe şimdiden teşekkür ederiz.
+   Pardus'la ilgili hata önerilerinizi iletmek için <a
+   href=http://bugs.pardus.org.t>Pardus hata bildirim sistemi'ni</a>
+   kullanabilirsiniz. Bir sorunu raporlamak, yeni bir paket önerisi
+   yapmak, yeni sürümde bir özelliği talep etmek gibi konularda
+   vereceğiniz desteğe şimdiden teşekkür ederiz.
 
 2. Temel özellikler
    - Kolay kullanımlı masaüstü 
@@ -120,7 +84,17 @@ desteğe şimdiden teşekkür ederiz.
    yazılımların boyutu azaldı.
 
    4.3 Yeni program yönetim arayüzü
+
+   Pardus 1.0'la birlikte gelen PİSİ paket yönetim arayüzü, yerini
+   kolay kullanımlı halefine bıraktı. Yeni yazılım, programları
+   basit ve etkin bir şekilde kurmaya, kaldırmaya ya da 
+   güncellemeye olanak sağlıyor.
+
    4.4 Kurulum sistemi YALI'da gelişmeler
+
+   YALI, Pardus 1.1'de yeni ÇOMAR ve PİSİ altyapısıyla çalışmak 
+   için ayarlandı ve bazı hataları giderildi.
+
    4.5 Yeni ve gelişmiş Pardus açılış sistemi
 
    İşletim sistemi çekirdeği çalışmaya başladığı andan,
@@ -251,6 +225,12 @@ desteğe şimdiden teşekkür ederiz.
 
    4.14 Yeni derleme çiftliği
 
+   Pardus 1.1 ile birlikte, hazırlanan tüm PİSİ paketleri bir derleme
+   çiftliğinde (build farm) tamamlanacak ve böylece kısa zamanda 
+   indirmeye hazır olacak. Derleme çiftliği, iki adet çift işlemcili
+   makineden oluşuyor ve tüm geliştiricilerin kullanımına açık 
+   bir şekilde işlemci gücü sağlıyor.
+
    4.15 İletişim 
 
    Daha fazla bilgi almak için Pardus web sayfasını ziyaret edebilirsiniz:
@@ -260,6 +240,6 @@ desteğe şimdiden teşekkür ederiz.
    Pardus e-posta listeleri, son kullanıcıların 
 
  [2] bugs.pardus.org.tr
- [3]  https://zemberek.dev.java.net/changelog.html
+ [3] https://zemberek.dev.java.net/changelog.html
 
 
