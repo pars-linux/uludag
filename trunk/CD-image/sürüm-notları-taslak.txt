@@ -227,7 +227,7 @@ adresini ziyaret etmenizden onur duyacağız.
 
    Pardus 1.1 ile birlikte, hazırlanan tüm PİSİ paketleri bir derleme
    çiftliğinde (build farm) tamamlanacak ve böylece kısa zamanda 
-   indirmeye hazır olacak. Derleme çiftliği, iki adet çift işlemcili
+   indirmeye hazır olacak. Derleme çiftliği, iki adet 
    makineden oluşuyor ve tüm geliştiricilerin kullanımına açık 
    bir şekilde işlemci gücü sağlıyor.
 
