@@ -1,8 +1,0 @@
-#!/bin/bash
-# 
-# A workaround for livecd consoles to autologin users
-
-cat /etc/motd 2>/dev/null
-export HOME=/root
-cd /root
-exec -l /bin/bash
