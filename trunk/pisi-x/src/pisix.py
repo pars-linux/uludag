@@ -195,6 +195,7 @@ class MainApplicationWidget(QWidget):
         
         self.command.terminate()
         self.command.wait()
+        self.command.cleanup()
         self.possibleError = True
         self.finished()
         

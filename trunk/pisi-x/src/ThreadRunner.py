@@ -117,6 +117,10 @@ class PisiThread(QThread):
     
     def getRepoUri(self,repoName):
         return pisi.api.ctx.repodb.get_repo(repoName).indexuri.get_uri()
+    
+    def cleanup(self):
+        pisi.api.finalize()
+        self.initDatabase()
         
     def run(self):
         try:
@@ -148,8 +152,7 @@ class PisiThread(QThread):
                 self.updatingAllRepos = False
 
         except pisi.Error,e:
-            pisi.api.finalize()
-            self.initDatabase()
+            self.cleanup()
             event = QCustomEvent(CustomEvent.PisiError)
             event.setData(unicode(e))
             self.postEvent(self.parent,event)
