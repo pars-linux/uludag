@@ -34,8 +34,7 @@ class PisiApi:
         if not options:
             import pisi.config
             self.options = pisi.config.Options()
-            self.options.create_debug = True
-            self.options.create_static = True
+            self.options.compression_method = "lzma"
             self.options.output_dir = config.workDir
             self.options.yes_all = True
         else:
