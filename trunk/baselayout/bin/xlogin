@@ -1,9 +1,0 @@
-#!/bin/bash
-#
-# A workaround for livecd consoles to autologin X
-
-source /etc/profile
-export HOME=/root
-cd /root
-/usr/bin/xinit -- vt7 -nolisten tcp -br
-
