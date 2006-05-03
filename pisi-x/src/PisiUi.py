@@ -40,7 +40,7 @@ class PisiUi(pisi.ui.UI,QObject):
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
 
-    def info(self, msg, verbose, noln):
+    def info(self, msg, verbose=False, noln=False):
         cEvent = QCustomEvent(CustomEvent.PisiInfo)
         cEvent.setData(msg)
         QThread.postEvent(self.receiver,cEvent)
