@@ -14,7 +14,7 @@ var radios = new Array();
 var checkboxes = new Array();
 var hovers = new Array();
 var buttons = new Array();
-var selectText = "please select";
+var selectText = "seçiniz...";
 
 //this function runs when the page is loaded so put all your other onload stuff in here too.
 function init() {
