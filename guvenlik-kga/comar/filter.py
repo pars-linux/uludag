@@ -63,7 +63,7 @@ def buildRule(action="A", rules={}, bin="/sbin/iptables"):
     if rules.get("log", 1) == 1:
         cmds.append("%s -t filter %s -j LOG --log-tcp-options --log-level 3" % (bin, " ".join(args)))
 
-    if jump == "REJECT":
+    if jump == "REJECT" and rules.get("protocol", "tcp") == "tcp":
         cmds.append("%s -t filter %s -j REJECT --reject-with tcp-reset" % (bin, " ".join(args)))
     else:
         cmds.append("%s -t filter %s -j %s" % (bin, " ".join(args), jump))
