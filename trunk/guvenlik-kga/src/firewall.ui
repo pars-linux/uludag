@@ -481,6 +481,9 @@ udp connections will be automatically allowed.&lt;/b&gt;</string>
                         <property name="name">
                             <cstring>textWarning</cstring>
                         </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
                         <property name="paletteForegroundColor">
                             <color>
                                 <red>255</red>

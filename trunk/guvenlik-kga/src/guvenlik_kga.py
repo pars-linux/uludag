@@ -133,26 +133,29 @@ class MainApplication(programbase):
             # Outgoing connections
             if chk("description") == "guvenlik_kga:WFS":
                 mainwidget.checkWFS.setChecked(1)
-                self.rules["out"]["WFS"] = no
+                self.rules["out"]["WFS"] = self.rules["out"].get("WFS", []) + [no]
             elif chk("description") == "guvenlik_kga:Mail":
                 mainwidget.checkMail.setChecked(1)
-                self.rules["out"]["Mail"] = no
+                self.rules["out"]["Mail"] = self.rules["out"].get("Mail", []) + [no]
             elif chk("description") == "guvenlik_kga:FTP":
                 mainwidget.checkFTP.setChecked(1)
-                self.rules["out"]["FTP"] = no
+                self.rules["out"]["FTP"] = self.rules["out"].get("FTP", []) + [no]
             elif chk("description") == "guvenlik_kga:Remote":
                 mainwidget.checkRemote.setChecked(1)
-                self.rules["out"]["Remote"] = no
+                self.rules["out"]["Remove"] = self.rules["out"].get("Remote", []) + [no]
             elif chk("description") == "guvenlik_kga:FS":
                 mainwidget.checkFS.setChecked(1)
-                self.rules["out"]["FS"] = no
+                self.rules["out"]["FS"] = self.rules["out"].get("FS", []) + [no]
             # Incoming connections
             elif chk("description") == "guvenlik_kga:RejectElse":
-                self.rules["in"]["R"] = no
+                self.rules["in"]["R"] = self.rules["in"].get("R", []) + [no]
             elif chk("description").startswith("guvenlik_kga:in:"):
-                item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[16:])
-                mainwidget.listPorts.insertItem(item)
-                self.rules["in"][rule["dport"]] = no
+                self.rules["in"][rule["dport"]] = self.rules["in"].get(rule["dport"], []) + [no]
+                if len(self.rules["in"][rule["dport"]]) == 1:
+                    item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[16:])
+                    mainwidget.listPorts.insertItem(item)
+                    # Show warning message
+                    mainwidget.textWarning.setEnabled(1)
             # ICMP/8 (ping)
             elif chk("description") == "guvenlik_kga:icmp":
                 mainwidget.checkICMP.setChecked(1)
@@ -180,36 +183,63 @@ class MainApplication(programbase):
     def slotAdd(self):
         if not mainwidget.linePort.text() or not mainwidget.lineDescription.text():
             return
-        no = self.addRule(dport=mainwidget.linePort.text(),
-                          description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
-                          chain="INPUT",
-                          jump="ACCEPT",
-                          log=0)
-        if no > -1:
+        no1 = self.addRule(dport=mainwidget.linePort.text(),
+                           description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
+                           protocol="tcp",
+                           chain="INPUT",
+                           jump="ACCEPT",
+                           log=0)
+                          
+        no2 = self.addRule(dport=mainwidget.linePort.text(),
+                           description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
+                           protocol="udp",
+                           chain="INPUT",
+                           jump="ACCEPT",
+                           log=0)
+        if no1 >  -1 and no2 > -1:
+            self.rules["in"][str(mainwidget.linePort.text())] = [no1, no2]
+
             item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
             mainwidget.listPorts.insertItem(item)
-            self.rules["in"][str(mainwidget.linePort.text())] = no
             mainwidget.linePort.setText("")
             mainwidget.lineDescription.setText("")
 
-            # Re-Insert "Reject Else" rule
+            # Re-Insert "Reject Else" rules
             if "R" in self.rules["in"]:
-                self.removeRule(self.rules["in"]["R"])
+                for i in self.rules["in"]["R"]:
+                    self.removeRule(i)
+            self.rules["in"]["R"] = []
+            # TCP
             no = self.addRule(description="guvenlik_kga:RejectElse",
+                              protocol="tcp",
                               extra="--syn",
                               chain="INPUT",
                               jump="REJECT")
-            self.rules["in"]["R"] = no
+            self.rules["in"]["R"] += [no]
+            # UDP
+            no = self.addRule(description="guvenlik_kga:RejectElse",
+                              protocol="udp",
+                              chain="INPUT",
+                              jump="DROP")
+            self.rules["in"]["R"] += [no]
+
+            # Show warning message
+            mainwidget.textWarning.setEnabled(1)
 
     def slotDelete(self):
         item = mainwidget.listPorts.selectedItem()
         if item:
-            self.removeRule(self.rules["in"][str(item.text(0))])
+            for i in self.rules["in"][str(item.text(0))]:
+                self.removeRule(i)
             del self.rules["in"][str(item.text(0))]
             mainwidget.listPorts.takeItem(item)
             if len(self.rules["in"]) == 1:
-                self.removeRule(self.rules["in"]["R"])
-                del self.rules["in"]["R"]
+                for i, j in enumerate(self.rules["in"]["R"]):
+                    self.removeRule(j)
+                self.rules["in"]["R"] = []
+
+                # Hide warning message
+                mainwidget.textWarning.setEnabled(0)
 
     def slotStatus(self):
         self.comar.call("Net.Filter.getState")

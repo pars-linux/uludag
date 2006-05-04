@@ -47,7 +47,7 @@ msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışmıyor</font></b>"
 
 #: src/guvenlik_kga.py:124 src/guvenlik_kga.py:221
 msgid "Click here to start the firewall"
-msgstr "Güvenlik duvarını başlatmak için buraya tıklayınn"
+msgstr "Güvenlik duvarını başlatmak için buraya tıklayın"
 
 #: src/guvenlik_kga.py:277
 msgid "Pardus Firewall Interface is already running!"
