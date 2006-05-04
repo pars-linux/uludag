@@ -26,6 +26,21 @@ def atoi(s):
     return ret
 
 
+def portsOk(p):
+    """Check multiport format"""
+    if p.count(",") + p.count(":") > 15:
+        return 0
+    l = p.split(",")
+    for i in l:
+        k = i.split(":")
+        if len(k) > 2:
+            return 0
+        for j in k:
+            if 0 > atoi(j) < 65535:
+                return 0
+    return 1
+
+
 def buildRule(action="A", rules={}, bin="/sbin/iptables"):
     """Generate IPTables command from given rule description"""
     args = []
@@ -47,8 +62,12 @@ def buildRule(action="A", rules={}, bin="/sbin/iptables"):
     if "sport" in rules or "dport" in rules:
         args.append("--match multiport")
     if "sport" in rules:
+        if not portsOk(rules["sport"]):
+            fail("Invalid port")
         args.append("--source-ports %s" % rules["sport"])
     if "dport" in rules:
+        if not portsOk(rules["dport"]):
+            fail("Invalid port")
         args.append("--destination-ports %s" % rules["dport"])
 
     if "extra" in rules:
@@ -75,11 +94,14 @@ def setRule(**rule):
     """Append new firewall rule"""
     if getState() == "off":
         return
+    if "no" not in rule or rule["no"] in instances("no"):
+        fail("Invalid rule no")
     cmds = buildRule("A", rule)
     for c in cmds:
         ret = run(c)
         if ret != 0:
             fail("Invalid command")
+    return rule["no"]
 
 
 def unsetRule(no):
