@@ -174,9 +174,11 @@ class MainApplication(programbase):
         
     def removeRule(self, no):
         self.comar.call("Net.Filter.unsetRule", {"no": no})
-        self.comar.read_cmd()
+        self.comarError(self.comar.read_cmd())
 
     def comarError(self, res):
+        if res[0] == self.comar.RESULT:
+            return
         if res[0] == self.comar.DENIED:
             KMessageBox.error(mainwidget, i18n("You are not allowed to do this operation."), i18n("Access Denied"))
         elif res[0] == self.comar.FAIL:
