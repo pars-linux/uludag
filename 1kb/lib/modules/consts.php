@@ -6,7 +6,7 @@
     */
 
     require_once '../../etc/config.php';
-    
+
     $cf['tb']['Data']               = $cf['db']['tableprefix']."Data";
     $cf['tb']['Comments']           = $cf['db']['tableprefix']."Comments";
 

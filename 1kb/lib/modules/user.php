@@ -1,10 +1,10 @@
 <?php
-   
+
      /*
          TUBITAK UEKAE 2005-2006
          Gökmen GÖKSEL gokmen_at_pardus.org.tr
      */
-   
+
      /**
       * get_user_details 
       * 
@@ -16,13 +16,13 @@
       */
      function get_user_details($user,$pass,$state="x")
      {
-        global $config;
+        global $cf;
         $passx  = md5($pass);
         $state = "x" ? $attach_sql ="AND UserState != 'N'" : $attach_sql ="AND UserState = '{$state}'";
-        $sql = "SELECT * FROM {$config['db']['users_table']} WHERE UserName = '$user' AND UserPass = '$passx' ".$attach_sql;
+        $sql = "SELECT * FROM {$cf['db']['users_table']} WHERE UserName = '$user' AND UserPass = '$passx' ".$attach_sql;
         return perform_sql($sql);
      }
-    
+
     /**
      * get_user 
      * 
@@ -33,8 +33,8 @@
      */
     function get_user($field,$value)
     {
-        global $config;
-        $sql = "SELECT * FROM {$config['db']['users_table']} WHERE $field = '$value'";
+        global $cf;
+        $sql = "SELECT * FROM {$cf['db']['users_table']} WHERE $field = '$value'";
         return perform_sql($sql);
     }
 
@@ -72,12 +72,12 @@
      */
     function activate_user($username,$code,$action="activate")
     {
-        global $config;
+        global $cf;
         $node = get_user("UserName",$username);
         if ($node[0]["UserState"] == "N") {
-            if(md5($node[0]["ID"].$config["core"]["secretkey"]) == $code){
+            if(md5($node[0]["ID"].$cf["core"]["secretkey"]) == $code){
                 if($action == "activate"){
-                    $sql = "UPDATE {$config['db']['users_table']} SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
+                    $sql = "UPDATE {$cf['db']['users_table']} SET UserState='SA' WHERE ID='{$node[0]["ID"]}' LIMIT 1";
                     if (@mysql_query($sql)) 
                         return ACTIVATE_USER_OK; 
                     else 
@@ -96,7 +96,7 @@
 
     /**
      * send_activation_mail 
-     * 
+     *
      * @param mixed $id 
      * @param mixed $username 
      * @access public
@@ -104,10 +104,10 @@
      */
     function send_activation_mail($id,$username)
     {
-        global $config;
-        $activationcode = md5($id.$config["core"]["secretkey"]);
-        $mail_message   = ACTIVATION_MAIL_HEADER."\n {$config['core']['url']}?activate&username={$username}&code={$activationcode}\n".ACTIVATION_MAIL_FOOTER;
-        if (sendmail($config['core']['email'],$_POST["email"],ACTIVATION_MAIL_TITLE,$mail_message,"3"))
+        global $cf;
+        $activationcode = md5($id.$cf["core"]["secretkey"]);
+        $mail_message   = ACTIVATION_MAIL_HEADER."\n {$cf['core']['url']}?activate&username={$username}&code={$activationcode}\n".ACTIVATION_MAIL_FOOTER;
+        if (sendmail($cf['core']['email'],$_POST["email"],ACTIVATION_MAIL_TITLE,$mail_message,"3"))
             return MAIL_SEND_OK;
         else
             return MAIL_SEND_FAILED;

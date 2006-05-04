@@ -1,0 +1,27 @@
+            <div id="minibox">
+                <form action="?" method="post">
+                <label for="search">
+                    <img src="template/images/bilgiara.png" />
+                </label>
+                <br />
+                <input type="text" id="search" name="search_query" class="searchbar" />
+                <div id="actions">
+                    <span class="solpane">
+                        <a href="#" onclick="tv(document.getElementById('search_details'), this); return false"><img src="template/images/arama1.png" /></a>
+                        <div id="search_details" style="display:block">
+                            Arama bu sürümler ile sınırlandırılsın :
+                            <select size="1" id="mySelect2" name="mySelect2">
+                                <option selected="selected" value="Test area no.2">Test area no.2</option>
+                                <option value="Another test">Another test</option>
+                                <option value="And another one">And another one</option>
+                                <option value="And yet another one">And yet another one</option>
+                                <option value="One last option for me">One last option for me</option>
+                            </select>
+                        </div>
+                    </span>
+                    <span class="sagpane">
+                        <input type="submit" value="ara" class="buttonSubmit" />
+                    </span>
+                </div>
+                </form>
+            </div>

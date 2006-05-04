@@ -27,6 +27,9 @@ function init() {
 	}
 	hoverEffects();
 	buttonHovers();
+        // just for fun ..
+        var searchDetails = document.getElementById('search_details');
+        searchDetails.style.display = "none";
 }
 
 function replaceRadios() {
@@ -126,7 +129,7 @@ function replaceSelects() {
 		selectArea.appendChild(center);
 		
 		//hide the select field
-        selects[i].style.display='none'; 
+                selects[i].style.display='none'; 
 		
 		//insert select div
 		selects[i].parentNode.insertBefore(selectArea, selects[i]);
@@ -136,8 +139,8 @@ function replaceSelects() {
 		optionsDiv.className = "optionsDivInvisible";
 		optionsDiv.id = "optionsDiv"+i;
 		optionsDiv.style.left = findPosX(selectArea) + 'px';
-		optionsDiv.style.top = findPosY(selectArea) + 19 + 'px';
-		
+		optionsDiv.style.top  = findPosY(selectArea) + 19 + 'px';
+
 		//get select's options and add to options div
 		for(var j=0; j < selects[i].options.length; j++) {
 			var optionHolder = document.createElement('p');
