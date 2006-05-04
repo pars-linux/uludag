@@ -625,22 +625,45 @@ Node_toString(Node *self, PyObject *args)
 	return ret;
 }
 
+struct makeup_ctx {
+	unsigned int level;
+	int can_indent;
+};
+
 static void
-prettify(iks *parent, iks *node)
+prettify(struct makeup_ctx *ctx, iks *parent, iks *node)
 {
 	iks *x, *y, *a;
+	int i;
 
 	for (x = iks_child(node); x; x = iks_next(x)) {
 		if (iks_type(x) == IKS_TAG) {
-			iks_insert_cdata(parent, "\n", 1);
+			if (ctx->can_indent) {
+				iks_insert_cdata(parent, "\n", 1);
+				for (i = 0; i < ctx->level; ++i) {
+					iks_insert_cdata(parent, "    ", 4);
+				}
+			}
 			y = iks_insert(parent, iks_name(x));
 			for (a = iks_attrib(x); a; a = iks_next(a)) {
 				iks_insert_attrib(y, iks_name(a), iks_cdata(a));
 			}
-			prettify(y, x);
-			iks_insert_cdata(parent, "\n", 1);
+			if (iks_child(x)) {
+				ctx->can_indent = 1;
+				++ctx->level;
+				prettify(ctx, y, x);
+				--ctx->level;
+				if (!iks_next(x)) {
+					iks_insert_cdata(parent, "\n", 1);
+					for (i = 0; i < ctx->level - 1; ++i) {
+						iks_insert_cdata(parent, "    ", 4);
+					}
+				}
+			}
+			ctx->can_indent = 1;
 		} else {
 			iks_insert_cdata(parent, iks_cdata(x), iks_cdata_size(x));
+			ctx->can_indent = 0;
 		}
 	}
 }
@@ -648,6 +671,7 @@ prettify(iks *parent, iks *node)
 static PyObject *
 Node_toPrettyString(Node *self, PyObject *args)
 {
+	struct makeup_ctx ctx;
 	PyObject *ret;
 	iks *tree, *a;
 	char *str;
@@ -657,11 +681,15 @@ Node_toPrettyString(Node *self, PyObject *args)
 		return NULL;
 	}
 
+	ctx.level = 1;
+	ctx.can_indent = 1;
+
 	tree = iks_new(iks_name(self->node));
 	for (a = iks_attrib(self->node); a; a = iks_next(a)) {
 		iks_insert_attrib(tree, iks_name(a), iks_cdata(a));
 	}
-	prettify(tree, self->node);
+	prettify(&ctx, tree, self->node);
+
 	str = iks_string(NULL, tree);
 	ret = Py_BuildValue("s", str);
 	iks_free(str);
