@@ -134,28 +134,16 @@ class MainApplication(programbase):
         self.rules = {"in": {}, "out": {}}
         self.comar.call("Net.Filter.getRules")
         rules = eval(self.comar.read_cmd()[2])
+
         for rule in rules: 
             no = rule["no"]
             chk = lambda x: rule.get(x, "")
             # Outgoing connections
-            if chk("description") == "guvenlik_kga:WFS":
-                mainwidget.checkWFS.setChecked(1)
-                self.rules["out"]["WFS"] = self.rules["out"].get("WFS", []) + [no]
-            elif chk("description") == "guvenlik_kga:Mail":
-                mainwidget.checkMail.setChecked(1)
-                self.rules["out"]["Mail"] = self.rules["out"].get("Mail", []) + [no]
-            elif chk("description") == "guvenlik_kga:FTP":
-                mainwidget.checkFTP.setChecked(1)
-                self.rules["out"]["FTP"] = self.rules["out"].get("FTP", []) + [no]
-            elif chk("description") == "guvenlik_kga:Remote":
-                mainwidget.checkRemote.setChecked(1)
-                self.rules["out"]["Remote"] = self.rules["out"].get("Remote", []) + [no]
-            elif chk("description") == "guvenlik_kga:FS":
-                mainwidget.checkFS.setChecked(1)
-                self.rules["out"]["FS"] = self.rules["out"].get("FS", []) + [no]
-            # Incoming connections
-            elif chk("description") == "guvenlik_kga:RejectElse":
-                self.rules["in"]["R"] = self.rules["in"].get("R", []) + [no]
+            name = chk("description").split(":")[1]
+            if name in ["WFS", "Mail", "FTP", "Remote", "FS"]:
+                eval("mainwidget.check%s" % name).setChecked(1)
+                self.rules["out"][name] = self.rules["out"].get(name, []) + [no]
+            # Incoming connections - Allowed ports
             elif chk("description").startswith("guvenlik_kga:in:"):
                 self.rules["in"][rule["dport"]] = self.rules["in"].get(rule["dport"], []) + [no]
                 if len(self.rules["in"][rule["dport"]]) == 1:
@@ -163,6 +151,9 @@ class MainApplication(programbase):
                     mainwidget.listPorts.insertItem(item)
                     # Show warning message
                     mainwidget.textWarning.setEnabled(1)
+            # Incoming connections - Magic Reject-Else Rule
+            elif chk("description") == "guvenlik_kga:RejectElse":
+                self.rules["in"]["R"] = self.rules["in"].get("R", []) + [no]
             # ICMP/8 (ping)
             elif chk("description") == "guvenlik_kga:icmp":
                 mainwidget.checkICMP.setChecked(1)
@@ -185,34 +176,45 @@ class MainApplication(programbase):
         self.comar.call("Net.Filter.unsetRule", {"no": no})
         self.comar.read_cmd()
 
+    def comarError(self, res):
+        if res[0] == self.comar.DENIED:
+            KMessageBox.error(mainwidget, i18n("You are not allowed to do this operation."), i18n("Access Denied"))
+        elif res[0] == self.comar.FAIL:
+            if res[2] == "Invalid port":
+                KMessageBox.error(mainwidget, i18n("Port number is in invalid format."), i18n("Failed"))
+            else:
+                KMessageBox.error(mainwidget, i18n("Unable to complete operation."), i18n("Failed"))
+        else:
+            KMessageBox.error(mainwidget, i18n("Unable to execute method."), i18n("Script Error"))
+
     def slotAdd(self):
         if not mainwidget.linePort.text() or not mainwidget.lineDescription.text():
+            KMessageBox.error(mainwidget, i18n("Both port number and description required."), i18n("Error"))
             return
+        if str(mainwidget.linePort.text()) in self.rules["in"]:
+            KMessageBox.error(mainwidget, i18n("Port number is already in list."), i18n("Error"))
+            return
+            
         res = self.addRule(dport=mainwidget.linePort.text(),
                            description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
                            protocol="tcp",
                            chain="INPUT",
                            jump="ACCEPT",
                            log=0)
+
         if res[0] == self.comar.RESULT:
             self.rules["in"][str(mainwidget.linePort.text())] = [res[2]]
         else:
-            # TODO: Message Box
+            self.comarError(res)
             return
-                          
+
         res = self.addRule(dport=mainwidget.linePort.text(),
                            description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
                            protocol="udp",
                            chain="INPUT",
                            jump="ACCEPT",
                            log=0)
-        if res[0] == self.comar.RESULT:
-            self.rules["in"][str(mainwidget.linePort.text())] += [res[2]]
-        else:
-            if len(self.rules["in"][str(mainwidget.linePort.text())]) > 0:
-                self.removeRule(self.rules["in"][str(mainwidget.linePort.text())][0])
-            # TODO: Message Box
-            return
+        self.rules["in"][str(mainwidget.linePort.text())] = [res[2]]
         
         # Add to list
         item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
