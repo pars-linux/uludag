@@ -101,6 +101,12 @@ class MainApplication(programbase):
         # Signals - Firewall Status
         self.connect(mainwidget.pushStatus, SIGNAL("clicked()"), self.slotStatus)
 
+        self.connect(mainwidget.checkWFS, SIGNAL("clicked()"), self.slotWFS)
+        self.connect(mainwidget.checkMail, SIGNAL("clicked()"), self.slotMail)
+        self.connect(mainwidget.checkFTP, SIGNAL("clicked()"), self.slotFTP)
+        self.connect(mainwidget.checkRemote, SIGNAL("clicked()"), self.slotRemote)
+        self.connect(mainwidget.checkFS, SIGNAL("clicked()"), self.slotFS)
+        
         # Signals - Incoming connections
         self.connect(mainwidget.pushAdd, SIGNAL("clicked()"), self.slotAdd)
         self.connect(mainwidget.pushDelete, SIGNAL("clicked()"), self.slotDelete)
@@ -143,7 +149,7 @@ class MainApplication(programbase):
                 self.rules["out"]["FTP"] = self.rules["out"].get("FTP", []) + [no]
             elif chk("description") == "guvenlik_kga:Remote":
                 mainwidget.checkRemote.setChecked(1)
-                self.rules["out"]["Remove"] = self.rules["out"].get("Remote", []) + [no]
+                self.rules["out"]["Remote"] = self.rules["out"].get("Remote", []) + [no]
             elif chk("description") == "guvenlik_kga:FS":
                 mainwidget.checkFS.setChecked(1)
                 self.rules["out"]["FS"] = self.rules["out"].get("FS", []) + [no]
@@ -173,9 +179,7 @@ class MainApplication(programbase):
             rule["no"] = 1
 
         self.comar.call("Net.Filter.setRule", rule)
-        if self.comar.read_cmd()[0] == self.comar.RESULT:
-            return rule["no"]
-        return -1
+        return self.comar.read_cmd()
         
     def removeRule(self, no):
         self.comar.call("Net.Filter.unsetRule", {"no": no})
@@ -184,48 +188,59 @@ class MainApplication(programbase):
     def slotAdd(self):
         if not mainwidget.linePort.text() or not mainwidget.lineDescription.text():
             return
-        no1 = self.addRule(dport=mainwidget.linePort.text(),
+        res = self.addRule(dport=mainwidget.linePort.text(),
                            description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
                            protocol="tcp",
                            chain="INPUT",
                            jump="ACCEPT",
                            log=0)
+        if res[0] == self.comar.RESULT:
+            self.rules["in"][str(mainwidget.linePort.text())] = [res[2]]
+        else:
+            # TODO: Message Box
+            return
                           
-        no2 = self.addRule(dport=mainwidget.linePort.text(),
+        res = self.addRule(dport=mainwidget.linePort.text(),
                            description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
                            protocol="udp",
                            chain="INPUT",
                            jump="ACCEPT",
                            log=0)
-        if no1 >  -1 and no2 > -1:
-            self.rules["in"][str(mainwidget.linePort.text())] = [no1, no2]
+        if res[0] == self.comar.RESULT:
+            self.rules["in"][str(mainwidget.linePort.text())] += [res[2]]
+        else:
+            if len(self.rules["in"][str(mainwidget.linePort.text())]) > 0:
+                self.removeRule(self.rules["in"][str(mainwidget.linePort.text())][0])
+            # TODO: Message Box
+            return
+        
+        # Add to list
+        item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
+        mainwidget.listPorts.insertItem(item)
+        mainwidget.linePort.setText("")
+        mainwidget.lineDescription.setText("")
 
-            item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
-            mainwidget.listPorts.insertItem(item)
-            mainwidget.linePort.setText("")
-            mainwidget.lineDescription.setText("")
+        # Re-Insert "Reject Else" rules
+        if "R" in self.rules["in"]:
+            for i in self.rules["in"]["R"]:
+                self.removeRule(i)
+        self.rules["in"]["R"] = []
+        # TCP
+        res = self.addRule(description="guvenlik_kga:RejectElse",
+                           protocol="tcp",
+                           extra="--syn",
+                           chain="INPUT",
+                           jump="REJECT")
+        self.rules["in"]["R"] += [res[2]]
+        # UDP
+        #res = self.addRule(description="guvenlik_kga:RejectElse",
+        #                   protocol="udp",
+        #                   chain="INPUT",
+        #                   jump="DROP")
+        #self.rules["in"]["R"] += [res[2]]
 
-            # Re-Insert "Reject Else" rules
-            if "R" in self.rules["in"]:
-                for i in self.rules["in"]["R"]:
-                    self.removeRule(i)
-            self.rules["in"]["R"] = []
-            # TCP
-            no = self.addRule(description="guvenlik_kga:RejectElse",
-                              protocol="tcp",
-                              extra="--syn",
-                              chain="INPUT",
-                              jump="REJECT")
-            self.rules["in"]["R"] += [no]
-            # UDP
-            #no = self.addRule(description="guvenlik_kga:RejectElse",
-            #                  protocol="udp",
-            #                  chain="INPUT",
-            #                  jump="DROP")
-            #self.rules["in"]["R"] += [no]
-
-            # Show warning message
-            mainwidget.textWarning.setEnabled(1)
+        # Show warning message
+        mainwidget.textWarning.setEnabled(1)
 
     def slotDelete(self):
         item = mainwidget.listPorts.selectedItem()
@@ -258,15 +273,53 @@ class MainApplication(programbase):
             mainwidget.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming connections"))
         self.comar.read_cmd()
 
+    def slotOut(self, chk, name, port):
+        if chk.isChecked():
+            self.rules["out"][name] = []
+            res = self.addRule(protocol="tcp",
+                               dport=port,
+                               description="guvenlik_kga:%s" % name,
+                               chain="OUTPUT",
+                               jump="DROP",
+                               log=1)
+            self.rules["out"][name] += [res[2]]
+            res = self.addRule(protocol="udp",
+                               dport=port,
+                               description="guvenlik_kga:%s" % name,
+                               chain="OUTPUT",
+                               jump="DROP",
+                               log=1)
+            self.rules["out"][name] += [res[2]]
+        else:
+            for i, j in enumerate(self.rules["out"][name]):
+                self.removeRule(j)
+            self.rules["out"][name] = []
+            
+    def slotWFS(self):
+        self.slotOut(mainwidget.checkWFS, "WFS", "139")
+        
+    def slotMail(self):
+        self.slotOut(mainwidget.checkMail, "Mail", "25,110")
+
+    def slotFTP(self):
+        self.slotOut(mainwidget.checkFTP, "FTP", "21")
+
+    def slotRemote(self):
+        self.slotOut(mainwidget.checkRemote, "Remote", "22")
+
+    def slotFS(self):
+        # FIXME: p2p ports required
+        self.slotOut(mainwidget.checkFS, "FS", "30000:40000")
+
     def slotICMP(self):
         if mainwidget.checkICMP.isChecked():
-            no = self.addRule(protocol="icmp",
-                              extra="--icmp-type 8",
-                              description="guvenlik_kga:icmp",
-                              chain="INPUT",
-                              jump="DROP",
-                              log=0)
-            self.rules["icmp"] = no
+            res = self.addRule(protocol="icmp",
+                               extra="--icmp-type 8",
+                               description="guvenlik_kga:icmp",
+                               chain="INPUT",
+                               jump="DROP",
+                               log=1)
+            self.rules["icmp"] = res[2]
         else:
             self.removeRule(self.rules["icmp"])
             del self.rules["icmp"]
