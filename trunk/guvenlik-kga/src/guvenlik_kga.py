@@ -11,7 +11,6 @@
 
 # Python Modules
 import sys
-import time
 
 # QT & KDE Modules
 from qt import *
@@ -160,7 +159,7 @@ class MainApplication(programbase):
                 self.rules["icmp"] = no
 
     def addRule(self, **rule):
-        """A"""
+        """Add rule"""
         self.comar.call("Net.Filter.getRules")
         nums = [i["no"] for i in eval(self.comar.read_cmd()[2])]
 
