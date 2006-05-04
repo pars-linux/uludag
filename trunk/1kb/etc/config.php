@@ -23,4 +23,11 @@
     $cf['db']['tableprefix']        = "1kb";
     $cf['db']['ctype']              = "persistent";
 
+    $cf['smarty']['libdir']         = "lib/smarty";
+    $cf['smarty']['tpldir']         = "template";
+    $cf['smarty']['compiledir']     = "tmp";
+    $cf['smarty']['cachedir']       = "tmp";
+    $cf['smarty']['plugindir']      = "plugins";
+    $cf['smarty']['caching']        = "false";
+    $cf['smarty']['forcecompile']   = "1";
 ?>

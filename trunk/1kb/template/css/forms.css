@@ -1,8 +1,4 @@
 
-* {
-    margin:0;
-    padding:0;
-}
 
 /*Forms defaults*/
 input, textarea {
@@ -74,7 +70,7 @@ label.chosen {
 	height:15px;
 	background:url(../images/sinput.gif) no-repeat left top;
 	border:none;
-	padding:4px 8px;
+	padding:4px 6px;
 }
 .textinputHovered {
 	background-position:left bottom;
@@ -85,7 +81,7 @@ label.chosen {
 	height:15px;
 	background:url("../images/input.gif") no-repeat left top;
 	border:none;
-	padding:4px 8px;
+	padding:4px 7px;
         margin-left:10px;
 }
 .searchbarHovered {
@@ -147,6 +143,7 @@ label.chosen {
 	padding:2px;
 	font-size:11px;
 	z-index:20;
+        height:auto;
 }
 .optionsDivInvisible {
 	display:none;

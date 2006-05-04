@@ -39,7 +39,7 @@
             $sql = "DELETE FROM {$cf['tb']['Data']} WHERE ID={$ID}";
         else
             $sql = "UPDATE {$cf['tb']['Data']} SET UID='{$UID}', Tags='{$Tags}', Question='{$Question}', RelatedQuestion='{$RelatedQuestion}',Answer='{$Answer}',RelatedAnswer='{$RelatedAnswer}',Date='{$Date}',State='{$State}' WHERE ID='$ID'";
-        
+
         if (@mysql_query($sql))
         {
             if ($ID == "x") 
@@ -51,7 +51,7 @@
             show_mysql_errors();
         return FALSE;
     }
-    
+
     /**
      * do_comment 
      * 
@@ -80,7 +80,7 @@
             $sql = "DELETE FROM {$cf['tb']['Comments']} WHERE ID={$ID}";
         else
             $sql = "UPDATE {$cf['tb']['Data']} SET UID='{$UID}', DataID='{$DataID}', Comment='{$Comment}',Date='{$Date}',State='{$State}' WHERE ID='$ID'";
-        
+
         if (@mysql_query($sql))
         {
             if ($ID == "x") 
@@ -103,19 +103,18 @@
      */
     function get_($ID="x",$table){
         global $cf;
-        
+
         if ($table=="UniqUsers")
             $table_real = $cf['db']['users_table']; 
         else 
             $table_real=$cf['db']['tableprefix'].$table;
-            
+
         if ($ID == "x") 
             $sql = "SELECT * FROM {$table_real}"; 
         else 
             $sql = "SELECT * FROM {$table_real} WHERE ID='{$ID}'";
-            
+
         return perform_sql($sql);
     }
 
-    
 ?>
