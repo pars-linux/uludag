@@ -1,0 +1,5 @@
+[if-any view_tag]
+  <p style="margin:0;">Current tag: [view_tag]</p>
+[end]
+
+
