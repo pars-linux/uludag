@@ -11,6 +11,7 @@
 
 # Python Modules
 import sys
+import time
 
 # QT & KDE Modules
 from qt import *
@@ -217,11 +218,11 @@ class MainApplication(programbase):
                               jump="REJECT")
             self.rules["in"]["R"] += [no]
             # UDP
-            no = self.addRule(description="guvenlik_kga:RejectElse",
-                              protocol="udp",
-                              chain="INPUT",
-                              jump="DROP")
-            self.rules["in"]["R"] += [no]
+            #no = self.addRule(description="guvenlik_kga:RejectElse",
+            #                  protocol="udp",
+            #                  chain="INPUT",
+            #                  jump="DROP")
+            #self.rules["in"]["R"] += [no]
 
             # Show warning message
             mainwidget.textWarning.setEnabled(1)
