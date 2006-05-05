@@ -5,6 +5,7 @@ Author: Lucian Slatineanu
 URL: http://www.badboy.ro/
 
 Feel free to use and modify but please provide credits.
+Modified by Gökmen GÖKSEL, gokmen_at_pardus.org.tr
 #############################################################*/
 
 //global variables that can be used by all the functions on this page.
@@ -119,6 +120,7 @@ function replaceSelects() {
 		center.id = "mySelectText"+i;
 		button.href="javascript:showOptions("+i+")";
 		selectArea.className = "selectArea";
+                selectArea.id="SelectArea"+i;
 		left.className = "left";
 		right.className = "right";
 		center.className = "center";
@@ -138,8 +140,10 @@ function replaceSelects() {
 		var optionsDiv = document.createElement('div');
 		optionsDiv.className = "optionsDivInvisible";
 		optionsDiv.id = "optionsDiv"+i;
-		optionsDiv.style.left = findPosX(selectArea) + 'px';
-		optionsDiv.style.top  = findPosY(selectArea) + 19 + 'px';
+
+//              F.ck the static variables...
+// 		optionsDiv.style.left = findPosX(selectArea) + 'px';
+// 		optionsDiv.style.top  = findPosY(selectArea) + 19 + 'px';
 
 		//get select's options and add to options div
 		for(var j=0; j < selects[i].options.length; j++) {
@@ -153,7 +157,7 @@ function replaceSelects() {
 		}
 		
 		//insert options div
-		document.getElementsByTagName("body")[0].appendChild(optionsDiv);
+		document.getElementById("SelectArea"+i).appendChild(optionsDiv);
 	}
 }
 
