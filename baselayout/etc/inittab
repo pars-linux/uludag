@@ -23,7 +23,7 @@ l6:6:wait:/sbin/mudur.py reboot
 #z6:6:respawn:/sbin/sulogin
 
 c1:12345:respawn:/sbin/mingetty --noclear tty1
-c2:12345:respawn:/sbin/mingetty tty2
+c2:12345:respawn:/sbin/mingetty --noclear tty2
 c3:12345:respawn:/sbin/mingetty tty3
 c4:12345:respawn:/sbin/mingetty tty4
 c5:12345:respawn:/sbin/mingetty tty5
