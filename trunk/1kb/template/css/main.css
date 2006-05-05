@@ -62,7 +62,7 @@ img {
 
 #search_details {
     width:400px;
-    height:100px;
+    height:auto;
     border: 1px solid #7CC4F5;
     margin-bottom:10px;
     padding:8px;

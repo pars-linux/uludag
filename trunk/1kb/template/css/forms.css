@@ -135,14 +135,14 @@ label.chosen {
 
 /*Selects drop-down*/
 .optionsDivInvisible, .optionsDivVisible {
-	position:absolute;
+        position:absolute;
 	margin-top:-1px;
 	margin-left:3px;
 	width:172px;
 	background:#6f7074;
 	padding:2px;
 	font-size:11px;
-	z-index:20;
+	z-index:99;
         height:auto;
 }
 .optionsDivInvisible {
