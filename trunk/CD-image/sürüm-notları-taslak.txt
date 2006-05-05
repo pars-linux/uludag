@@ -175,21 +175,17 @@ adresini ziyaret etmenizden onur duyacağız.
 
    Pardus 1.0'ın en çok beğenilen özelliklerinden birisi de Pardus'a
    özgü "Tulliana" simge setleri idi. Pardus 1.1'de bu simge setleri
-   daha da geliştirildi ve ek simgeler eklendi. Tulliana 1.1 adı verilen
+   daha da geliştirildi ve ek simgeler eklendi. Tulliana 2.0 adı verilen
    bu simge seti Pardus masaüstü ve diğer uygulamalarla daha
    çok renk uyumu içeriyor ve masaüstünde keyifli zaman geçirmenizi
    sağlıyor.
 
-   Tulliana 1.1'den bazı örnek simgeler: 
-
-   .......
-
-   Tulliana 1.1'i kde-look.org adresinden görmek için aşağıdaki 
+   Tulliana 2.0'ı kde-look.org adresinden görmek için aşağıdaki 
    sayfayı kullanabilirsiniz: 
 
-   http://www.kde-look.org/........
+   http://www.kde-look.org/content/show.php?content=38757
 
-   4.10 Yeni araçlar (xorgconf, mudurconf, ...)
+   4.10 Yeni araçlar (xorgconf, servis-kga, ...)
    4.11 Diğer paket güncellemeleri (xorg, gcc, ..)
 
    Xorg paketindeki pek çok hata giderildi ve ekran kartları için
