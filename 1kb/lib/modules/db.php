@@ -4,7 +4,7 @@
         TUBITAK UEKAE 2005-2006
         Gökmen GÖKSEL gokmen_at_pardus.org.tr
     */
-
+    
     /**
      * do_data 
      * 
@@ -105,7 +105,9 @@
         global $cf;
 
         if ($table=="UniqUsers")
-            $table_real = $cf['db']['users_table']; 
+            $table_real = $cf['db']['users_table'];
+        elseif ($table=="pardulDistribution")
+            $table_real = $table;
         else 
             $table_real=$cf['db']['tableprefix'].$table;
 

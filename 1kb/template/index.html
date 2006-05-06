@@ -10,6 +10,12 @@
 </head>
 
 <body>
+<div id="over" style="display:none">
+    <a href="#" onclick="tv(document.getElementById('over'), this); return false">buradan</a>
+    <div id="registerBox">
+        hede
+    </div>
+</div>
 <div id="head">
     <div id="box">
         <div id="text">
@@ -38,7 +44,7 @@
                 <form action="?" method="post">
                 <div id="login">
                     soru sorabilmek için sisteme giriş yapmış olmanız gerekiyor.<br />
-                    henüz üye değilseniz <a href="?make_account">buradan</a> üyelik kaydınızı yapabilirsiniz.<br /><br />
+                    henüz üye değilseniz <a href="#" onclick="tv(document.getElementById('over'), this); return false">buradan</a> üyelik kaydınızı yapabilirsiniz.<br /><br />
                     <label for="username">
                         <img src="images/kullanici.png" />
                     </label>
@@ -56,5 +62,6 @@
     </div>
 </div>
 <div id="stylesheetTest"></div>
+
 </body>
 </html>

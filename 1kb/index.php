@@ -5,9 +5,10 @@
         Gökmen GÖKSEL gokmen_at_pardus.org.tr
     */
 
-    require ('etc/config.php');
     require ('lib/modules/tools.php');
-
-    build_smarty($cf);
+    
+    build_defaults();
+    build_smarty();
+    ssv('DistList',get_('x','pardulDistribution')); 
     $smarty->display("homepage.html");
 ?>

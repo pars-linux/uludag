@@ -145,7 +145,7 @@ function replaceSelects() {
 // 		optionsDiv.style.left = findPosX(selectArea) + 'px';
 // 		optionsDiv.style.top  = findPosY(selectArea) + 19 + 'px';
 
-		//get select's options and add to options div
+		//get selects options and add to options div
 		for(var j=0; j < selects[i].options.length; j++) {
 			var optionHolder = document.createElement('p');
 			var optionLink = document.createElement('a');
@@ -180,7 +180,7 @@ function selectMe(selectFieldId,linkNo,selectNo) {
 	}
 	//show selected option
 	textVar = document.getElementById("mySelectText"+selectNo);
-	var newText = document.createTextNode(selectField.options[linkNo].value);
+	var newText = document.createTextNode(selectField.options[linkNo].text);
 	textVar.replaceChild(newText, textVar.childNodes[0]);
 }
 
