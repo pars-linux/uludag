@@ -11,6 +11,7 @@
 
 # Python Modules
 import sys
+import time
 
 # QT & KDE Modules
 from qt import *
@@ -160,13 +161,8 @@ class MainApplication(programbase):
 
     def addRule(self, **rule):
         """Add rule"""
-        self.comar.call("Net.Filter.getRules")
-        nums = [i["no"] for i in eval(self.comar.read_cmd()[2])]
-
-        if len(nums):
-            rule["no"] = max(map(int, nums)) + 1
-        else:
-            rule["no"] = 1
+        self.comar.call("Net.Filter.getID")
+        rule["no"] = self.comar.read_cmd()[2]
 
         self.comar.call("Net.Filter.setRule", rule)
         return self.comar.read_cmd()
@@ -199,8 +195,8 @@ class MainApplication(programbase):
         res = self.addRule(dport=mainwidget.linePort.text(),
                            description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
                            protocol="tcp",
-                           chain="INPUT",
-                           jump="ACCEPT",
+                           direction="in",
+                           action="Accept",
                            log=0)
 
         if res[0] == self.comar.RESULT:
@@ -212,10 +208,11 @@ class MainApplication(programbase):
         res = self.addRule(dport=mainwidget.linePort.text(),
                            description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
                            protocol="udp",
-                           chain="INPUT",
-                           jump="ACCEPT",
+                           direction="in",
+                           action="Accept",
                            log=0)
-        self.rules["in"][str(mainwidget.linePort.text())] = [res[2]]
+
+        self.rules["in"][str(mainwidget.linePort.text())] += [res[2]]
         
         # Add to list
         item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
@@ -231,15 +228,15 @@ class MainApplication(programbase):
         # TCP
         res = self.addRule(description="guvenlik_kga:RejectElse",
                            protocol="tcp",
-                           extra="--syn",
-                           chain="INPUT",
-                           jump="REJECT")
+                           type="connections",
+                           direction="in",
+                           action="Reject")
         self.rules["in"]["R"] += [res[2]]
         # UDP
         #res = self.addRule(description="guvenlik_kga:RejectElse",
         #                   protocol="udp",
-        #                   chain="INPUT",
-        #                   jump="DROP")
+        #                   direction="Iin",
+        #                   action="Reject")
         #self.rules["in"]["R"] += [res[2]]
 
         # Show warning message
@@ -282,15 +279,15 @@ class MainApplication(programbase):
             res = self.addRule(protocol="tcp",
                                dport=port,
                                description="guvenlik_kga:%s" % name,
-                               chain="OUTPUT",
-                               jump="DROP",
+                               direction="out",
+                               action="Reject",
                                log=1)
             self.rules["out"][name] += [res[2]]
             res = self.addRule(protocol="udp",
                                dport=port,
                                description="guvenlik_kga:%s" % name,
-                               chain="OUTPUT",
-                               jump="DROP",
+                               direction="out",
+                               action="DROP",
                                log=1)
             self.rules["out"][name] += [res[2]]
         else:
@@ -317,10 +314,10 @@ class MainApplication(programbase):
     def slotICMP(self):
         if mainwidget.checkICMP.isChecked():
             res = self.addRule(protocol="icmp",
-                               extra="--icmp-type 8",
+                               type="8",
                                description="guvenlik_kga:icmp",
-                               chain="INPUT",
-                               jump="DROP",
+                               direction="in",
+                               action="Reject",
                                log=1)
             self.rules["icmp"] = res[2]
         else:

@@ -41,16 +41,18 @@ def portsOk(p):
     return 1
 
 
-def buildRule(action="A", rules={}, bin="/sbin/iptables"):
+def buildRule(op="A", rules={}):
     """Generate IPTables command from given rule description"""
     args = []
 
-    if action == "A":
-        args.append("-A %s" % rules.get("chain", "INPUT"))
+    protocol = rules.get("protocol", "tcp")
+    
+    if rules.get("direction", "in"):
+        args.append("-%s INPUT" % op)
     else:
-        args.append("-D %s" % rules.get("chain", "INPUT"))
+        args.append("-%s OUTPUT" % op)
 
-    args.append("--protocol %s" % rules.get("protocol", "tcp"))
+    args.append("--protocol %s" % protocol)
 
     if "src" in rules:
         args.append("--source %s" % rules["src"])
@@ -58,34 +60,45 @@ def buildRule(action="A", rules={}, bin="/sbin/iptables"):
     if "dst" in rules:
         args.append("--destination %s" % rules["dst"])
 
-    # FIXME: not all protocols allow these parameters
-    if "sport" in rules or "dport" in rules:
-        args.append("--match multiport")
-    if "sport" in rules:
-        if not portsOk(rules["sport"]):
-            fail("Invalid port")
-        args.append("--source-ports %s" % rules["sport"])
-    if "dport" in rules:
-        if not portsOk(rules["dport"]):
-            fail("Invalid port")
-        args.append("--destination-ports %s" % rules["dport"])
 
-    if "extra" in rules:
-        args.append(rules["extra"])
+    if protocol in ["tcp", "udp"]:
+        if "sport" in rules or "dport" in rules:
+            args.append("--match multiport")
+        if "sport" in rules:
+            if not portsOk(rules["sport"]):
+                fail("Invalid port")
+            args.append("--source-ports %s" % rules["sport"])
+        if "dport" in rules:
+            if not portsOk(rules["dport"]):
+                fail("Invalid port")
+            args.append("--destination-ports %s" % rules["dport"])
 
-    jump = rules.get("jump", "REJECT")
-    if jump not in ["REJECT", "ACCEPT", "DROP"]:
+    if "type" in rules:
+        if protocol == "tcp":
+            if rules["type"] == "connections":
+                args.append("--syn")
+        elif protocol == "icmp":
+            args.append("--icmp-type %s" % rules["type"])
+
+    action = rules.get("action", "Reject")
+    if action not in ["Reject", "Accept"]:
         fail("Invalid action")
 
     cmds = []
 
     if rules.get("log", 1) == 1:
-        cmds.append("%s -t filter %s -j LOG --log-tcp-options --log-level 3" % (bin, " ".join(args)))
+        if protocol == "tcp":
+            cmds.append("/sbin/iptables -t filter %s -j LOG --log-tcp-options --log-level 3" % " ".join(args))
+        else:
+            cmds.append("/sbin/iptables -t filter %s -j LOG --log-level 3" % " ".join(args))
 
-    if jump == "REJECT" and rules.get("protocol", "tcp") == "tcp":
-        cmds.append("%s -t filter %s -j REJECT --reject-with tcp-reset" % (bin, " ".join(args)))
+    if action == "Reject":
+        if protocol == "tcp":
+            cmds.append("/sbin/iptables -t filter %s -j REJECT --reject-with tcp-reset" % " ".join(args))
+        else:
+            cmds.append("/sbin/iptables -t filter %s -j DROP" % " ".join(args))
     else:
-        cmds.append("%s -t filter %s -j %s" % (bin, " ".join(args), jump))
+        cmds.append("/sbin/iptables -t filter %s -j %s" % (" ".join(args), action.upper()))
 
     return cmds
 
@@ -98,11 +111,8 @@ def setRule(**rule):
         fail("Invalid rule no")
     cmds = buildRule("A", rule)
     for c in cmds:
-        ret = run(c)
-        if ret != 0:
-            fail("Invalid command")
+        run(c)
     return rule["no"]
-
 
 def unsetRule(no):
     """Remove given firewall rule"""
@@ -111,9 +121,7 @@ def unsetRule(no):
     rule = get_instance("no", no)
     cmds = buildRule("D", rule)
     for c in cmds:
-        ret = run(c)
-        if ret != 0:
-            fail("Invalid command")
+        run(c)
 
 
 def getRules():
@@ -146,4 +154,12 @@ def setState(state):
     for rule in getRules():
         cmds = buildRule(action, rule)
         for c in cmds:
-            ret = run(c)
+            run(c)
+
+
+def getID():
+    inst = instances("no")
+    if inst:
+        inst.sort(key=int, reverse=True)
+        return int(inst[0]) + 1
+    return 1
