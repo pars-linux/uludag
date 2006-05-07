@@ -14,8 +14,7 @@
 import pisi.context
 
 try:
-    horagata # comment out to disable piks
-    #from xmlfilepiks import *
+    from xmlfilepiks import *
 except:
     try:
         #if pisi.context.use_mdom:

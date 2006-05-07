@@ -12,9 +12,10 @@
 # Authors:  Eray Ozkural <eray@pardus.org.tr>
 
 try:
-    zimbabwe # comment out to disable piks
     from xmlextpiks import *
 except:
+    # to be sure piksemel is used
+    raise
     try:
         #if pisi.context.use_mdom:
         #    gibidi
@@ -26,6 +27,6 @@ except:
         print 'xmlext: cDomlette/piksemel implementation cannot be loaded, falling back to minidom'
         from xmlextmdom import *
 
-from xml.dom import XHTML_NAMESPACE, XML_NAMESPACE
-XHTML_NS = unicode(XHTML_NAMESPACE)
-XML_NS = unicode(XML_NAMESPACE)
+#from xml.dom import XHTML_NAMESPACE, XML_NAMESPACE
+#XHTML_NS = unicode(XHTML_NAMESPACE)
+#XML_NS = unicode(XML_NAMESPACE)
