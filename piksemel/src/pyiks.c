@@ -10,6 +10,9 @@
 #include <Python.h>
 #include "iksemel.h"
 
+PyObject *piksemel_module;
+
+
 /*** Exceptions ***/
 
 static PyObject *ParseError;
@@ -129,6 +132,7 @@ static PyTypeObject Iter_type = {
 static void Node_dealloc(Node *self);
 static PyObject *Node_iter(Node *self);
 static PyObject *Node_type_func(Node *self);
+static PyObject *Node_reduce(Node *self, PyObject *args);
 static PyObject *Node_data(Node *self);
 static PyObject *Node_name(Node *self);
 static PyObject *Node_getAttribute(Node *self, PyObject *args);
@@ -157,6 +161,8 @@ static PyObject *Node_hide(Node *self, PyObject *args);
 static PyMethodDef Node_methods[] = {
 	{ "type", (PyCFunction)Node_type_func, METH_NOARGS,
 	  "Return the type of node." },
+	{ "__reduce__", (PyCFunction)Node_reduce, METH_NOARGS,
+	  "used by pickle" },
 	{ "name", (PyCFunction)Node_name, METH_NOARGS,
 	  "Return tag name." },
 	{ "data", (PyCFunction)Node_data, METH_NOARGS,
@@ -341,6 +347,31 @@ Node_type_func(Node *self)
 	PyObject *ret;
 
 	ret = Py_BuildValue("i", iks_type(self->node));
+	return ret;
+}
+
+static PyObject *
+Node_reduce(Node *self, PyObject *args)
+{
+	PyObject *ret;
+	PyObject *dict;
+	PyObject *tuple;
+	PyObject *func;
+	PyObject *state;
+
+	state = Node_toString(self, args);
+	if (!state) return NULL;
+
+	dict = PyModule_GetDict(piksemel_module);
+	if (!dict) return NULL;
+	func = PyDict_GetItemString(dict, "parseString");
+	if (!func) return NULL;
+
+	tuple = PyTuple_Pack(1, state);
+	if (!tuple) return NULL;
+
+	ret = PyTuple_Pack(2, func, tuple);
+
 	return ret;
 }
 
@@ -930,4 +961,6 @@ initpiksemel(void)
 		return;
 	Py_INCREF(&Node_type);
 	PyModule_AddObject(m, "Node", (PyObject *)&Node_type);
+
+	piksemel_module = m;
 }
