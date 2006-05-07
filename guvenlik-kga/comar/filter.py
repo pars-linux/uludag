@@ -105,10 +105,10 @@ def buildRule(op="A", rules={}):
 
 def setRule(**rule):
     """Append new firewall rule"""
-    if getState() == "off":
-        return
     if "no" not in rule or rule["no"] in instances("no"):
         fail("Invalid rule no")
+    if getState() == "off":
+        return rule["no"]
     cmds = buildRule("A", rule)
     for c in cmds:
         run(c)
@@ -116,6 +116,8 @@ def setRule(**rule):
 
 def unsetRule(no):
     """Remove given firewall rule"""
+    if no not in instances("no"):
+        fail("Invalid rule no")
     if getState() == "off":
         return
     rule = get_instance("no", no)
@@ -161,5 +163,5 @@ def getID():
     inst = instances("no")
     if inst:
         inst.sort(key=int, reverse=True)
-        return int(inst[0]) + 1
-    return 1
+        return str(int(inst[0]) + 1)
+    return "1"
