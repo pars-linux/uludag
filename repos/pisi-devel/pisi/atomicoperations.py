@@ -33,6 +33,7 @@ from pisi.metadata import MetaData
 from pisi.files import Files
 from pisi.uri import URI
 import pisi.ui
+from pisi.version import Version
 #import conflicts
 
 class Error(pisi.Error):
@@ -181,7 +182,7 @@ class Install(AtomicOperation):
             ignore_build = ctx.config.options and ctx.config.options.ignore_build_no
             if repomismatch or (not ibuild) or (not pkg.build) or ignore_build:
                 # we don't look at builds to compare two package versions
-                if pkg.release == irelease:
+                if Version(pkg.release) == Version(irelease):
                     self.same_ver = True
             else:
                 if pkg.build == ibuild:
@@ -195,10 +196,10 @@ class Install(AtomicOperation):
                 upgrade = False
                 # is this an upgrade?
                 # determine and report the kind of upgrade: version, release, build
-                if pkg.version > iversion:
+                if Version(pkg.version) > Version(iversion):
                     ctx.ui.info(_('Upgrading to new upstream version'))
                     upgrade = True
-                elif pkg.release > irelease:
+                elif Version(pkg.release) > Version(irelease):
                     ctx.ui.info(_('Upgrading to new distribution release'))
                     upgrade = True
                 elif ((not ignore_build) and ibuild and pkg.build
@@ -209,9 +210,9 @@ class Install(AtomicOperation):
 
                 # is this a downgrade? confirm this action.
                 if self.ask_reinstall and (not upgrade):
-                    if pkg.version < iversion:
+                    if Version(pkg.version) < Version(iversion):
                         x = _('Downgrade to old upstream version?')
-                    elif pkg.release < irelease:
+                    elif Version(pkg.release) < Version(irelease):
                         x = _('Downgrade to old distribution release?')
                     else:
                         x = _('Downgrade to old distribution build?')

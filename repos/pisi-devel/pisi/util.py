@@ -151,7 +151,7 @@ def run_batch(cmd, realtime = False):
     if ctx.stderr:
         stderr = ctx.stderr
     else:
-        stderr = subprocess.PIPE
+        stderr = subprocess.STDOUT
 
     out = err = ""
     p = subprocess.Popen(cmd, shell=True, stdout=stdout, stderr=stderr)
@@ -161,10 +161,9 @@ def run_batch(cmd, realtime = False):
             if line:
                 ctx.ui.debug(line[:-1])
     else:
-        # If the stdout/stderr argument is PIPE, this returns a file object that provides output from the child process. Otherwise, it is None. 
         out, err = p.communicate()
     
-    ctx.ui.debug(_('return value %s') % p.returncode)
+    ctx.ui.debug(_('return value for "%s" is %s') % (cmd, p.returncode))
 
     return (p.returncode, out, err)
 
@@ -501,6 +500,9 @@ def strip_directory(top, excludelist=[]):
     for root, dirs, files in os.walk(top):
         for fn in files:
             frpath = join_path(root, fn)
+            drpath = join_path(os.path.dirname(top), 
+                               ctx.const.debug_dir_suffix, 
+                               remove_prefix(top, frpath))
             
             # Some upstream sources have buggy libtool and ltmain.sh with them, 
             # which causes wrong path entries in *.la files. And these wrong path
@@ -521,11 +523,11 @@ def strip_directory(top, excludelist=[]):
                     ctx.ui.debug("%s [%s]" %(p, "NoStrip"))
 
             if strip:
-                if strip_file(frpath):
+                if strip_file(frpath, drpath):
                     ctx.ui.debug("%s [%s]" %(p, "stripped"))
                 
 
-def strip_file(filepath):
+def strip_file(filepath, outpath):
     """strip a file"""
     p = os.popen("file \"%s\"" % filepath)
     o = p.read()
@@ -536,15 +538,15 @@ def strip_file(filepath):
         if ret:
             ctx.ui.warning(_("strip command failed for file '%s'!") % f)
 
-    def save_elf_debug(f):
+    def save_elf_debug(f, o):
         """copy debug info into file.debug file"""
-        p = os.popen("objcopy --only-keep-debug %s %s%s" % (f, f, ctx.const.debug_file_suffix))
+        p = os.popen("objcopy --only-keep-debug %s %s%s" % (f, o, ctx.const.debug_file_suffix))
         ret = p.close()
         if ret:
             ctx.ui.warning(_("objcopy (keep-debug) command failed for file '%s'!") % f)
         
         """mark binary/shared objects to use file.debug"""
-        p = os.popen("objcopy --add-gnu-debuglink=%s%s %s" % (f, ctx.const.debug_file_suffix, f))
+        p = os.popen("objcopy --add-gnu-debuglink=%s%s %s" % (o, ctx.const.debug_file_suffix, f))
         ret = p.close()
         if ret:
             ctx.ui.warning(_("objcopy (add-debuglink) command failed for file '%s'!") % f)
@@ -554,14 +556,16 @@ def strip_file(filepath):
         return True
 
     elif "SB executable" in o:
-        if ctx.get_option('create_debug'):
-            save_elf_debug(filepath)
+        if not ctx.get_option('no_debug'):
+            check_dir(os.path.dirname(outpath))
+            save_elf_debug(filepath, outpath)
         run_strip(filepath)
         return True
 
     elif "SB shared object" in o:
-        if ctx.get_option('create_debug'):
-            save_elf_debug(filepath)
+        if not ctx.get_option('no_debug'):
+            check_dir(os.path.dirname(outpath))
+            save_elf_debug(filepath, outpath)
         run_strip(filepath, "--strip-unneeded")
         # FIXME: warn for TEXTREL
         return True
@@ -610,54 +614,15 @@ def is_package_name(fn, package_name = None):
     return False
 
 def env_update():
-
+    import pisi.environment
     ctx.ui.info(_('Updating environment...'))
-    env_dir = join_path(ctx.config.dest_dir(), "/etc/env.d")
-    profile_file = join_path(ctx.config.dest_dir(), "/etc/profile.env")
-    ldconf_file = join_path(ctx.config.dest_dir(), "/etc/ld.so.conf")
 
+    env_dir = join_path(ctx.config.dest_dir(), "/etc/env.d")
     if not os.path.exists(env_dir):
         os.makedirs(env_dir, 0755)
 
-    list = []
-    for file in os.listdir(env_dir):
-        if not os.path.isdir(join_path(env_dir, file)):
-            list.append(file)
+    pisi.environment.update_environment(ctx.config.dest_dir())
 
-    list.sort()
-
-    keys = {}
-    for file in list:
-        f = open(join_path(env_dir, file), "r")
-        for line in f:
-            if not re.search("^#", line.strip()):
-                currentLine = line.strip().split("=")
-
-                try:
-                    if keys.has_key(currentLine[0]):
-                        keys[currentLine[0]] += ":" + currentLine[1].replace("\"", "")
-                    else:
-                        keys[currentLine[0]] = currentLine[1].replace("\"", "")
-                except IndexError:
-                    pass
-
-    # generate profile.env
-    f = open(profile_file, "w")
-    for key in keys:
-        f.write("export %s=\"%s\"\n" % (key, keys[key]))
-    f.close()
-
-    # generate ld.so.conf
-    f = open(ldconf_file, "w")
-    if keys.has_key("LDPATH"):
-        for path in keys["LDPATH"].split(":"):
-            f.write("%s\n" % path)
-    f.close()
-
-    # run ldconfig
-    if run_batch("/sbin/ldconfig -X -r %s" % ctx.config.dest_dir())[0]:
-        raise Error(_("ERROR: /sbin/ldconfig -X -r %s failed") % ctx.config.dest_dir())
-   
 def pure_package_name(package_name):
     "return pure package name from given string"
     "ex: package_name=tasma-1.0.3-5-2.pisi, returns tasma"

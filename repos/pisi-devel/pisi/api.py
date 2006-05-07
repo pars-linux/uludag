@@ -9,13 +9,15 @@
 #
 # Please read the COPYING file.
 #
-# Authors:  Eray Ozkural <eray@pardus.org.tr>
-#           Baris Metin <baris@pardus.org.tr>
+# Authors:  Eray Ozkural <eray at pardus.org.tr>
+#           Baris Metin <baris at pardus.org.tr>
 
 """Top level PISI interfaces. a facade to the entire PISI system"""
 
 import os
 import sys
+import logging
+import logging.handlers
 from os.path import exists
 import bsddb3.db as db
 
@@ -45,6 +47,7 @@ from pisi.files import Files
 from pisi.file import File
 import pisi.search
 import pisi.lockeddbshelve as shelve
+from pisi.version import Version
 
 class Error(pisi.Error):
     pass
@@ -65,6 +68,17 @@ def init(database = True, write = True,
     else:
         ctx.ui = ui
 
+    if os.access('/var/log', os.W_OK):
+        handler = logging.handlers.RotatingFileHandler('/var/log/pisi.log')
+        #handler.setLevel(logging.DEBUG)
+        formatter = logging.Formatter('%(asctime)-12s: %(levelname)-8s %(message)s')
+        handler.setFormatter(formatter)
+        ctx.log = logging.getLogger('pisi')
+        ctx.log.addHandler(handler)
+        ctx.loghandler = handler
+        ctx.log.setLevel(logging.DEBUG)
+    else:
+        ctx.log = None
 
     # If given define stdout and stderr. Needed by buildfarm currently
     # but others can benefit from this too.
@@ -72,7 +86,6 @@ def init(database = True, write = True,
         ctx.stdout = stdout
     if stderr:
         ctx.stderr = stderr
-
 
     import pisi.config
     ctx.config = pisi.config.Config(options)
@@ -103,6 +116,11 @@ def init(database = True, write = True,
 
 def finalize():
     if ctx.initialized:
+    
+        if ctx.log:
+            ctx.loghandler.flush()
+            ctx.log.removeHandler(ctx.loghandler)
+
         pisi.repodb.finalize()
         pisi.installdb.finalize()
         if ctx.filesdb != None:
@@ -126,33 +144,28 @@ def finalize():
         ctx.ui.close()
         ctx.initialized = False
 
-def list_available():
+def list_available(repo = None):
     '''returns a set of available package names'''
-
-    available = set()
-    for repo in pisi.context.repodb.list():
-        available.update(ctx.packagedb.list_packages())
-    return available
+    return set(ctx.packagedb.list_packages(repo = repo))
 
 def list_upgradable():
     ignore_build = ctx.get_option('ignore_build_no')
 
     A = ctx.installdb.list_installed()
+
     # filter packages that are not upgradable
     Ap = []
     for x in A:
         (version, release, build) = ctx.installdb.get_version(x)
         pkg = ctx.packagedb.get_package(x)
-        if ignore_build or (not build):
-            if release < pkg.release:
+        if ignore_build or (not build) or (not pkg.build):
+            if Version(release) < Version(pkg.release):
                 Ap.append(x)
         elif build < pkg.build:
-                Ap.append(x)
+            Ap.append(x)
         else:
             pass
-            #ctx.ui.info('Package %s cannot be upgraded. ' % x)
     return Ap
-
 
 def package_graph(A, ignore_installed = False):
     """Construct a package relations graph, containing
@@ -278,20 +291,33 @@ def info_name(package_name, installed=False):
     else:
         raise Error(_('Package %s not found') % package_name)
 
-def search_package_terms(terms, lang = None):
+def search_package_names(query):
+    r = set()
+    packages = ctx.packagedb.list_packages()
+    for pkgname in packages:
+        if query in pkgname:
+            r.add(pkgname)
+    return r
+
+def search_package_terms(terms, lang = None, search_names = True):
     if not lang:
         lang = pisi.pxml.autoxml.LocalText.get_lang()
     r1 = pisi.search.query_terms('summary', lang, terms)
     r2 = pisi.search.query_terms('description', lang, terms)
     r = r1.union(r2)
+    if search_names:
+        for term in terms:
+            r |= search_package_names(term)
     return r
 
-def search_package(query, lang = None):
+def search_package(query, lang = None, search_names = True):
     if not lang:
         lang = pisi.pxml.autoxml.LocalText.get_lang()
     r1 = pisi.search.query('summary', lang, query)
     r2 = pisi.search.query('description', lang, query)
     r = r1.union(r2)
+    if search_names:
+        r |= search_package_names(query)
     return r
 
 def check(package):

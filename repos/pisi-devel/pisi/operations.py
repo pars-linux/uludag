@@ -36,6 +36,7 @@ from pisi.index import Index
 import pisi.cli
 import pisi.atomicoperations as atomicoperations
 import pisi.ui as ui
+from pisi.version import Version
 
 class Error(pisi.Error):
     pass
@@ -203,7 +204,7 @@ def check_conflicts(order, packagedb):
     if pkg_conflicts:
         conflicts = ""
         for pkg in pkg_conflicts.keys():
-            conflicts += "[%s conflicts with: %s]" % (pkg, util.strlist(pkg_conflicts[pkg]))
+            conflicts += _("[%s conflicts with: %s]") % (pkg, util.strlist(pkg_conflicts[pkg]))
 
         ctx.ui.info(_("The following packages have conflicts: %s") %
                     conflicts)
@@ -223,15 +224,48 @@ def expand_components(A):
             Ap.add(x)
     return Ap
 
-def install_pkg_names(A, reinstall = False):
+def is_upgradable(name, ignore_build = False):
+    if not ctx.installdb.is_installed(name):
+        return False
+    (version, release, build) = ctx.installdb.get_version(name)
+    pkg = ctx.packagedb.get_package(name)
+    if ignore_build or (not build) or (not pkg.build):
+        return Version(release) < Version(pkg.release)
+    else:
+        return build < pkg.build
+
+def upgrade_base(A = set()):
+    ignore_build = ctx.get_option('ignore_build_no')
+    if not ctx.get_option('bypass_safety'):
+        if ctx.componentdb.has_component('system.base'):
+            extra_packages = set(ctx.componentdb.get_component('system.base').packages) - A
+            extra_installs = filter(lambda x: not ctx.installdb.is_installed(x), extra_packages)
+            if extra_installs:
+                ctx.ui.warning(_('Safety switch: Following packages in system.base will be installed: ') +
+                               util.strlist(extra_installs))
+                install_pkg_names(extra_installs, bypass_safety=True)
+                #A |= extra_installs
+            extra_upgrades = filter(lambda x: is_upgradable(x, ignore_build), extra_packages)
+            if extra_upgrades:
+                ctx.ui.warning(_('Safety switch: Following packages in system.base will be upgraded: ') +
+                               util.strlist(extra_upgrades))
+                upgrade_pkg_names(extra_upgrades, bypass_safety=True)
+        else:
+            ctx.ui.warning(_('Safety switch: the component system.base cannot be found'))
+
+def install_pkg_names(A, reinstall = False, bypass_safety = False):
     """This is the real thing. It installs packages from
     the repository, trying to perform a minimum number of
     installs"""
 
+    A = [str(x) for x in A] #FIXME: why do we still get unicode input here? :/ -- exa
     # A was a list, remove duplicates and expand components
     A_0 = A = expand_components(set(A))
     ctx.ui.debug('A = %s' % str(A))
 
+    if not bypass_safety:
+        upgrade_base(A)
+    
     # filter packages that are already installed
     if not reinstall:
         Ap = set(filter(lambda x: not ctx.installdb.is_installed(x), A))
@@ -244,7 +278,7 @@ def install_pkg_names(A, reinstall = False):
     if len(A)==0:
         ctx.ui.info(_('No packages to install.'))
         return
-        
+
     if not ctx.config.get_option('ignore_dependency'):
         G_f, order = plan_install_pkg_names(A)
     else:
@@ -263,7 +297,7 @@ in the respective order to satisfy dependencies:
 
     if total_size:
         total_size, symbol = util.human_readable_size(total_size)
-        ctx.ui.warning(_('Total size of packages: %.2f %s') % (total_size, symbol))
+        ctx.ui.info(_('Total size of packages: %.2f %s') % (total_size, symbol))
 
     if ctx.get_option('dry_run'):
         return
@@ -311,9 +345,9 @@ def plan_install_pkg_names(A):
 def upgrade(A):
     upgrade_pkg_names(A)
 
-def upgrade_pkg_names(A = []):
+def upgrade_pkg_names(A = [], bypass_safety = False):
     """Re-installs packages from the repository, trying to perform
-    a maximum number of upgrades."""
+    a minimum or maximum number of upgrades according to options."""
     
     ignore_build = ctx.get_option('ignore_build_no')
 
@@ -323,6 +357,10 @@ def upgrade_pkg_names(A = []):
 
     # filter packages that are not upgradable
     A_0 = A = expand_components(set(A))
+
+    if not bypass_safety:
+        upgrade_base(A)
+
     Ap = []
     for x in A:
         if x.endswith(ctx.const.package_suffix):
@@ -334,7 +372,7 @@ def upgrade_pkg_names(A = []):
         pkg = ctx.packagedb.get_package(x)
 
         if ignore_build or (not build) or (not pkg.build):
-            if release < pkg.release:
+            if Version(release) < Version(pkg.release):
                 Ap.append(x)
             else:
                 ctx.ui.info(_('Package %s is already at the latest release %s.')
@@ -346,7 +384,7 @@ def upgrade_pkg_names(A = []):
                 ctx.ui.info(_('Package %s is already at the latest build %s.')
                             % (pkg.name, pkg.build), True)
     A = set(Ap)
-
+    
     if len(A)==0:
         ctx.ui.info(_('No packages to upgrade.'))
         return True
@@ -354,12 +392,12 @@ def upgrade_pkg_names(A = []):
     ctx.ui.debug('A = %s' % str(A))
     
     if not ctx.config.get_option('ignore_dependency'):
-        G_f, order = plan_upgrade(A)
+        G_f, order = plan_upgrade(A, ignore_build)
     else:
         G_f = None
         order = A
 
-    ctx.ui.info(_("""The following packages will be upgraded:\n""") +
+    ctx.ui.info(_('The following packages will be upgraded: ') +
                 util.strlist(order))
 
     if ctx.get_option('dry_run'):
@@ -376,7 +414,7 @@ def upgrade_pkg_names(A = []):
     for install in install_ops:
         install.install(True)
 
-def plan_upgrade(A):
+def plan_upgrade(A, ignore_build = False):
     # try to construct a pisi graph of packages to
     # install / reinstall
 
@@ -390,20 +428,6 @@ def plan_upgrade(A):
         G_f.add_package(x)
     B = A
     
-    def upgradable(dep):
-        #pre dep.package is installed
-        (v,r,b) = ctx.installdb.get_version(dep.package)
-        rep_pkg = packagedb.get_package(dep.package)
-        (vp,rp,bp) = (rep_pkg.version, rep_pkg.release, 
-                      rep_pkg.build)
-        if ignore_build or (not b) or (not bp):
-            # if we can't look at build
-            if r >= rp:     # installed already new
-                return False
-        elif b and bp and b >= bp:
-            return False
-        return True
-
     # TODO: conflicts
 
     while len(B) > 0:
@@ -413,19 +437,18 @@ def plan_upgrade(A):
             for dep in pkg.runtimeDependencies():
                 # add packages that can be upgraded
                 if dependency.repo_satisfies_dep(dep):
-                    #TODO: distinguish must upgrade and upgradable
                     if ctx.installdb.is_installed(dep.package):
-                        if not ctx.get_option('eager'):
-                            if dependency.installed_satisfies_dep(dep):
+                        if ctx.get_option('eager'):
+                            if not is_upgradable(dep.package):
                                 continue
                         else:
-                            if not upgradable(dep):
+                            if dependency.installed_satisfies_dep(dep):
                                 continue
                     if not dep.package in G_f.vertices():
                         Bp.add(str(dep.package))
                     G_f.add_dep(x, dep)
                 else:
-                    raise Error(_("Reverse dependency %s cannot be satisfied") % rev_dep)
+                    raise Error(_('Dependency %s cannot be satisfied') % rev_dep)
         B = Bp
     # now, search reverse dependencies to see if anything
     # should be upgraded
@@ -436,19 +459,21 @@ def plan_upgrade(A):
             pkg = packagedb.get_package(x)
             rev_deps = packagedb.get_rev_deps(x)
             for (rev_dep, depinfo) in rev_deps:
-                if not ctx.get_option('eager'):
-                    # add unsatisfied reverse dependencies
-                    if packagedb.has_package(rev_dep) and \
-                       (not dependency.installed_satisfies_dep(depinfo)):
-                        if not dependency.repo_satisfies_dep(depinfo):
-                            raise Error(_("Reverse dependency %s cannot be satisfied") % rev_dep)
+                if ctx.get_option('eager'):
+                    # add all upgradable reverse deps
+                    if is_upgradable(rev_dep): 
                         if not rev_dep in G_f.vertices():
                             Bp.add(rev_dep)
                             G_f.add_plain_dep(rev_dep, x)
                 else:
-                    if not rev_dep in G_f.vertices():
-                        Bp.add(rev_dep)
-                        G_f.add_plain_dep(rev_dep, x)
+                    # add only installed but unsatisfied reverse dependencies
+                    if ctx.installdb.is_installed(rev_dep) and \
+                       (not dependency.installed_satisfies_dep(depinfo)):
+                        if not dependency.repo_satisfies_dep(depinfo):
+                            raise Error(_('Reverse dependency %s cannot be satisfied') % rev_dep)
+                        if not rev_dep in G_f.vertices():
+                            Bp.add(rev_dep)
+                            G_f.add_plain_dep(rev_dep, x)
         B = Bp
 
     if ctx.config.get_option('debug'):
@@ -484,7 +509,7 @@ def remove(A):
 
     if len(A)==0:
         ctx.ui.info(_('No packages to remove.'))
-        return
+        return False
 
     if not ctx.config.get_option('ignore_dependency'):
         G_f, order = plan_remove(A)

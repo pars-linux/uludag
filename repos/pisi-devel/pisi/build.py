@@ -77,8 +77,8 @@ def check_path_collision(package, pkgList):
                 # collide. Exp:
                 # pinfo.path: /usr/share
                 # path.path: /usr/share/doc
-                if (path.path.endswith(ctx.const.ar_file_suffix) and ctx.get_option('create_static')) or \
-                   (path.path.endswith(ctx.const.debug_file_suffix) and ctx.get_option('create_debug')):
+                if (path.path.endswith(ctx.const.ar_file_suffix) and not ctx.get_option('no_static')) or \
+                   (path.path.endswith(ctx.const.debug_file_suffix) and not ctx.get_option('no_debug')):
                     # don't throw collision error for these files. 
                     # we'll handle this in gen_files_xml..
                     continue
@@ -163,6 +163,9 @@ class Builder:
    
     def pkg_work_dir(self):
         return self.pkg_dir() + ctx.const.work_dir_suffix
+
+    def pkg_debug_dir(self):
+        return self.pkg_dir() + ctx.const.debug_dir_suffix
 
     def pkg_install_dir(self):
         return self.pkg_dir() + ctx.const.install_dir_suffix
@@ -407,7 +410,7 @@ class Builder:
         os.chdir(curDir)
 
     def check_build_dependencies(self):
-        """fail if dependencies not satisfied"""
+        """check and try to install build dependencies, otherwise fail."""
 
         build_deps = self.spec.source.buildDependencies
 
@@ -436,7 +439,13 @@ class Builder:
         if dep_unsatis:
             ctx.ui.info(_("Unsatisfied Build Dependencies:") + ' '
                         + util.strlist([str(x) for x in dep_unsatis]) )
+
+            def fail():
+                raise Error(_('Cannot build package due to unsatisfied build dependencies'))
                 
+            if ctx.config.get_option('no_install'):
+                fail()
+
             if not ctx.config.get_option('ignore_dependency'):
                 for dep in dep_unsatis:
                     if not dependency.repo_satisfies_dep(dep):
@@ -446,7 +455,7 @@ class Builder:
                     ctx.ui.info(_('Installing build dependencies.'))
                     operations.install([dep.package for dep in dep_unsatis])
                 else:
-                    raise Error(_('Cannot build package due to unsatisfied build dependencies'))
+                    fail()
             else:
                 ctx.ui.warning(_('Ignoring build dependencies.'))
 
@@ -502,7 +511,7 @@ class Builder:
 
     def generate_debug_package_object(self):
         debug_files = []
-        for root, dirs, files in os.walk(self.pkg_install_dir()):
+        for root, dirs, files in os.walk(self.pkg_debug_dir()):
             for f in files:
                 if f.endswith(ctx.const.debug_file_suffix):
                     debug_files.append(util.join_path(root, f))
@@ -511,13 +520,14 @@ class Builder:
             return None
 
         static_package_obj = pisi.specfile.Package()
+        static_package_obj.debug_package = True
         static_package_obj.name = self.spec.source.name + ctx.const.debug_name_suffix
         # FIXME: find a better way to deal with the summary and description constants.
         static_package_obj.summary['en'] = u'Debug files for %s' % (self.spec.source.name)
         static_package_obj.description['en'] = u'Debug files for %s' % (self.spec.source.name)
         static_package_obj.partOf = 'library:debug'
         for f in debug_files:
-            static_package_obj.files.append(pisi.specfile.Path(path = f[len(self.pkg_install_dir()):], fileType = "debug"))
+            static_package_obj.files.append(pisi.specfile.Path(path = f[len(self.pkg_debug_dir()):], fileType = "debug"))
 
         # append all generated packages to dependencies
         for p in self.spec.packages:
@@ -548,7 +558,11 @@ class Builder:
         metadata.package.distributionRelease = ctx.config.values.general.distribution_release
         metadata.package.architecture = "Any"
         
-        size, d = 0, self.pkg_install_dir()
+        size = 0
+        if package.debug_package:
+            d = self.pkg_debug_dir()
+        else:
+            d = self.pkg_install_dir()
 
         for path in package.files:
             for p in glob.glob(util.join_path(d, path.path)):
@@ -560,7 +574,7 @@ class Builder:
 
         # build no
         if ctx.config.options.ignore_build_no:
-            metadata.package.build = None  # means, build no information n/a
+            metadata.package.build = None
             ctx.ui.warning(_('Build number is not available due to --ignore-build'))
         elif (not ctx.config.values.build.buildno):
             metadata.package.build = None
@@ -577,34 +591,31 @@ class Builder:
         """Generates files.xml using the path definitions in specfile and
         the files produced by the build system."""
         files = Files()
-        install_dir = self.pkg_install_dir()
+
+        if package.debug_package:
+            install_dir = self.pkg_debug_dir()
+        else:
+            install_dir = self.pkg_install_dir()
 
         # FIXME: We need to expand globs before trying to calculate hashes
         # Not on the fly like now.
 
         # we'll exclude collisions in get_file_hashes. Having a
         # collisions list is not wrong, we must just handle it :).
-        # sure -- exa
         collisions = check_path_collision(package, self.spec.packages)
-        # FIXME: material collisions after expanding globs must be
-        # reported as errors, and an exception must be raised
+        # FIXME: material collisions after expanding globs could be
+        # reported as errors
 
         d = {}
         def add_path(path):
             # add the files under material path 
             for fpath, fhash in util.get_file_hashes(path, collisions, install_dir):
-                if ctx.get_option('create_static') \
+                if not ctx.get_option('no_static') \
                     and fpath.endswith(ctx.const.ar_file_suffix) \
                     and not package.name.endswith(ctx.const.static_name_suffix) \
                     and util.is_ar_file(fpath):
                     # if this is an ar file, and this package is not a static package,
-                    # don't include this file into the package.
-                    continue
-                if ctx.get_option('create_debug') \
-                    and fpath.endswith(ctx.const.debug_file_suffix) \
-                    and not package.name.endswith(ctx.const.debug_name_suffix):
-                    # if this is a debug file, and this package is not a debug package,
-                    # don't include this file into the package.
+                    # don't include this file into the package.
                     continue
                 frpath = util.removepathprefix(install_dir, fpath) # relative path
                 ftype, permanent = get_file_type(frpath, package.files, install_dir)
@@ -626,29 +637,33 @@ class Builder:
 
     def calc_build_no(self, package_name):
         """Calculate build number"""
-
         # find previous build in packages dir
         found = []        
-        def locate_package_names(files):
-            for fn in files:
-                if util.is_package_name(fn, package_name):
-                    old_package_fn = util.join_path(root, fn)
-                    try:
-                        old_pkg = Package(old_package_fn, 'r')
-                        old_pkg.read(util.join_path(ctx.config.tmp_dir(), 'oldpkg'))
-                        ctx.ui.info(_('(found old version %s)') % old_package_fn)
-                        if str(old_pkg.metadata.package.name) != package_name:
-                            ctx.ui.warning(_('Skipping %s with wrong pkg name ') %
-                                           old_package_fn)
-                            continue
-                        old_build = old_pkg.metadata.package.build
-                        found.append( (old_package_fn, old_build) )
-                    except:
-                        ctx.ui.warning('Package file %s may be corrupt. Skipping.' % old_package_fn)
-                        continue
+        def locate_old_package(old_package_fn):
+            if util.is_package_name(os.path.basename(old_package_fn), package_name):
+                try:
+                    old_pkg = Package(old_package_fn, 'r')
+                    old_pkg.read(util.join_path(ctx.config.tmp_dir(), 'oldpkg'))
+                    ctx.ui.info(_('(found old version %s)') % old_package_fn)
+                    if str(old_pkg.metadata.package.name) != package_name:
+                        ctx.ui.warning(_('Skipping %s with wrong pkg name ') %
+                                                old_package_fn)
+                        return
+                    old_build = old_pkg.metadata.package.build
+                    found.append( (old_package_fn, old_build) )
+                except:
+                    ctx.ui.warning('Package file %s may be corrupt. Skipping.' % old_package_fn)
 
         for root, dirs, files in os.walk(ctx.config.packages_dir()):
-            locate_package_names(files)
+            for file in files:
+                locate_old_package(join(root,file))
+
+        outdir=ctx.get_option('output_dir')
+        if not outdir:
+            outdir = '.'
+        for file in [join(outdir,entry) for entry in os.listdir(outdir)]:
+            if os.path.isfile(file):
+                locate_old_package(file)
 
         if not found:
             return (1, None)
@@ -711,12 +726,12 @@ class Builder:
         # Strip install directory before building .pisi packages.
         self.strip_install_dir()
 
-        if ctx.get_option('create_static'):
+        if not ctx.get_option('no_static'):
             obj = self.generate_static_package_object()
             if obj:
                 self.spec.packages.append(obj)
 
-        if ctx.get_option('create_debug'):
+        if not ctx.get_option('no_debug'):
             obj = self.generate_debug_package_object()
             if obj:
                 self.spec.packages.append(obj)
@@ -787,7 +802,10 @@ class Builder:
             files = Files()
             files.read(ctx.const.files_xml)
             for finfo in files.list:
-                pkg.add_to_package(join("install", finfo.path))
+                orgname = arcname = join("install", finfo.path)
+                if package.debug_package:
+                    orgname = join("debug", finfo.path)
+                pkg.add_to_package(orgname, arcname)
 
             pkg.close()
             os.chdir(c)
@@ -860,8 +878,12 @@ def __buildState_buildpackages(pb, last):
         __buildState_installaction(pb, last)
     pb.build_packages()
 
-def build_until(pspecfile, state, authinfo=None):
-    pb = pisi.build.Builder(pspecfile, authinfo)
+def build_until(pspec, state, authinfo=None):
+    if pspec.endswith('.xml'):
+        pb = Builder(pspec, authinfo)
+    else:
+        pb = Builder.from_name(pspec, authinfo)
+
     pb.compile_action_script()
     
     last = pb.get_state()

@@ -23,6 +23,8 @@ const = pisi.constants.Constants()
 
 config = None
 
+log = None
+
 use_mdom = False
 
 def get_option(opt):
@@ -51,6 +53,8 @@ initialized = False
 
 import bsddb3.db as db
 
+# copy of DBShelve.txn_proc, the only difference is it doesn't need a shelf object
+#FIXME: remove this redundancy, and move all this stuff to database.py
 def txn_proc(proc, txn = None):
     # can be used to txn protect a method automatically
     if not txn:
@@ -59,6 +63,9 @@ def txn_proc(proc, txn = None):
             try:
                 retval = proc(autotxn)
             except db.DBError, e:
+                autotxn.abort()
+                raise e
+            except Exception, e:
                 autotxn.abort()
                 raise e
             autotxn.commit()

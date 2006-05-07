@@ -344,6 +344,8 @@ unpack, setup, build, install, package
     name = ("build", "bi")
 
     steps = ('unpack', 'setup', 'build', 'install', 'package')
+
+    compression_methods = ('deflated', 'lzma')
     
     def options(self):
         buildno_opts(self)
@@ -355,15 +357,19 @@ unpack, setup, build, install, package
         #                       help=_("perform only specified step"))
         self.parser.add_option("-U", "--until", action="store", default=None,
                                help=_("perform until and including specified step"))
+        self.parser.add_option("-C", "--compression-method", action="store", default='lzma',
+                               help=_("package compression method"))
         self.parser.add_option("-A", "--ignore-action-errors",
                                action="store_true", default=False,
                                help=_("bypass errors from ActionsAPI"))
         self.parser.add_option("-B", "--ignore-comar", action="store_true",
                                default=False, help=_("bypass comar configuration agent"))
-        self.parser.add_option("-S", "--create-static", action="store_true",
-                               default=True, help=_("automatically create a static package with ar files"))
-        self.parser.add_option("-g", "--create-debug", action="store_true",
-                               default=True, help=_("automatically create a debug package with debug files"))
+        self.parser.add_option("", "--no-static", action="store_true",
+                               default=False, help=_("don't create a static package with ar files"))
+        self.parser.add_option("", "--no-debug", action="store_true",
+                               default=False, help=_("don't create a debug package with debug files"))
+        self.parser.add_option("", "--no-install", action="store_true",
+                               default=False, help=_("don't install build dependencies, fail if a build dependency is present"))
 
 
     def run(self):
@@ -371,12 +377,20 @@ unpack, setup, build, install, package
             self.help()
             return
 
-            
-        if ctx.get_option('until'):
-            if ctx.get_option('until') in Build.steps:
+        # We cant use ctx.get_option as we didn't init PiSi
+        # currently...
+        if self.options.until:
+            if not self.options.until in Build.steps:
                 raise Error(_('Step must be one of %s ') % pisi.util.strlist(Build.steps))
 
-        self.init()
+        if self.options.no_install:
+            self.init(database=True, write=False)
+        else:
+            self.init()
+
+        if ctx.get_option('compression_method') not in Build.compression_methods:
+                raise Error(_('compression_method must be one of %s ') % pisi.util.strlist(Build.compression_methods))
+
         if ctx.get_option('output_dir'):
             ctx.ui.info(_('Output directory: %s') % ctx.config.options.output_dir)
         else:
@@ -623,7 +637,7 @@ Usage: info <package1> <package2> ... <packagen>
         
         for arg in self.args:
             if ctx.componentdb.has_component(arg):
-                component = ctx.componentdb.get_component(arg)
+                component = ctx.componentdb.get_union_comp(arg)
                 #if self.options.long:
                 ctx.ui.info(unicode(component))
             else: # then assume it was a package                
