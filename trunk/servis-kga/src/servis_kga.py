@@ -140,10 +140,9 @@ class MainApplication(programbase):
         # Populate list
         self.populateList()
        
-        # Notify lists
-        self.comarN = comar.Link()
-        self.comarN.ask_notify('System.Service.changed')
-        self.notifier = QSocketNotifier(self.comarN.sock.fileno(), QSocketNotifier.Read)
+        # Notify list
+        self.comar.ask_notify('System.Service.changed', id=1)
+        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
 
         # Disable switch button
         self.mainwidget.pushSwitch.setEnabled(0)
@@ -158,39 +157,33 @@ class MainApplication(programbase):
         self.connect(self.mainwidget.pushSwitch, SIGNAL('clicked()'), self.slotSwitch)
         self.connect(self.mainwidget.pushHelp, SIGNAL('clicked()'), self.slotHelp)
 
+    def handleComar(self, reply):
+        if reply[0] == self.comar.RESULT_START:
+            self.handleComar(self.comar.read_cmd())
+        elif reply[0] == self.comar.NOTIFY:
+            item = self.mainwidget.listServices.firstChild()
+            info = reply[2].split('\n')
+
+            while item:
+                if item.service == info[1]:
+                    item.setState(info[2])
+                    break
+                item = item.nextSibling()
+
+            list = self.mainwidget.listServices
+            if list.selectedItem():
+                self.slotItemClicked(list.selectedItem())
+        elif reply[0] == self.comar.RESULT:
+            if reply[1] == 2:
+                info = reply[2].split('\n')
+                serviceItem(self.mainwidget.listServices, info[2], info[0], info[1], reply[3])
+
     def populateList(self):
-        self.comar.call('System.Service.info')
-
-        def collect(c):
-            reply = c.read_cmd()
-            if reply[0] == c.RESULT_START:
-                replies = []
-                while True:
-                    reply = c.read_cmd()
-                    if reply[0] == c.RESULT_END:
-                        return replies
-                    if reply[0] == c.RESULT:
-                        replies.append(reply)
-            else:
-                return [reply]
-
-        #self.mainwidget.listServices.clear()
-        for service in collect(self.comar):
-            info = service[2].split('\n')
-            serviceItem(self.mainwidget.listServices, info[2], info[0], info[1], service[3])
+        self.comar.call('System.Service.info', id=2)
+        self.handleComar(self.comar.read_cmd())
 
     def slotComar(self, sock):
-        info = self.comarN.read_cmd()[2].split('\n')
-        service, state = info[1], info[2]
-        item = self.mainwidget.listServices.firstChild()
-
-        while item:
-            if item.service == service:
-                item.setState(state)
-                self.slotItemClicked(item)
-                break
-            item = item.nextSibling()
-        self.mainwidget.pushSwitch.setEnabled(1)
+        self.handleComar(self.comar.read_cmd())
 
     def slotItemClicked(self, item):
         self.mainwidget.pushSwitch.setEnabled(1)
@@ -206,7 +199,6 @@ class MainApplication(programbase):
             self.comar.call_package('System.Service.start', list.selectedItem().service)
         else:
             self.comar.call_package('System.Service.stop', list.selectedItem().service)
-        self.comar.read_cmd()
 
     def slotHelp(self):
         self.helpwin = HelpDialog(self)
