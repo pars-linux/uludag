@@ -13,6 +13,7 @@
     $cf['core']['temp']             = "tmp";
     $cf['core']['lang']             = "tr";
     $cf['core']['secretkey']        = "secret_key";
+    $cf['core']['session_key']      = "onekb";
 
     $cf['db']['host']               = "localhost";
     $cf['db']['port']               = "3306";
