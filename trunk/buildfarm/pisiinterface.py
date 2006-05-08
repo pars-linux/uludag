@@ -30,15 +30,11 @@ class PisiError(Exception):
 
 class PisiApi:
 
-    def __init__(self, options = ''):    
-        if not options:
-            import pisi.config
-            self.options = pisi.config.Options()
-            self.options.compression_method = "lzma"
-            self.options.output_dir = config.workDir
-            self.options.yes_all = True
-        else:
-            self.options = options
+    def __init__(self, outputDir = config.workDir):    
+        import pisi.config
+        self.options = pisi.config.Options()
+        self.options.output_dir = outputDir
+        self.options.yes_all = True
 
         self.api = pisi.api
         self.__newBinaryPackages = []
@@ -46,8 +42,7 @@ class PisiApi:
         
     def init(self, stdout, stderr):
         logger.info("PiSi API init ediliyor")
-        self.api.init(options = self.options,
-                      stdout=stdout, stderr=stderr)
+        self.api.init(options = self.options, stdout = stdout, stderr = stderr)
         
     def finalize(self):
         logger.info("PiSi API finalize ediliyor")
@@ -59,9 +54,6 @@ class PisiApi:
             logger.error("'%s' pspec dosyası bulunamadı!" % (pspec))
             raise PisiError("Pspec dosyası bulunamadı (%s)" % (pspec))
         
-        oldwd = os.getcwd()
-        os.chdir(config.workDir)
-
         logger.info("%s için PiSi Build çağırılıyor" % (pspec)) 
 
         __newBinaryPackages, __oldBinaryPackages = self.api.build(pspec)
@@ -69,9 +61,20 @@ class PisiApi:
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
             
-        os.chdir(oldwd)         
         return (self.__newBinaryPackages, self.__oldBinaryPackages)
-        
+
+    def regenerate(self, pspec):
+        pspec = os.path.join(config.localPspecRepo, pspec)
+        if not os.path.exists(pspec):
+            logger.error("'%s' pspec dosyası bulunamadı!" % (pspec))
+            raise PisiError("Pspec dosyası bulunamadı (%s)" % (pspec))
+
+        logger.info("%s için PiSi build --until install çağırılıyor" % (pspec)) 
+        self.api.build_until(pspec, "install",)
+
+        logger.info("%s için PiSi build --until package çağırılıyor" % (pspec)) 
+        self.api.build_until(pspec, "package",)
+            
     def install(self, p):
         a = []
         a.append(p)

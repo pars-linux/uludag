@@ -30,8 +30,7 @@ import buildfarm.mailer as mailer
 import buildfarm.qmanager as qmanager
 import buildfarm.pisiinterface as pisiinterface
 
-
-def main():
+def buildPackages():
     qmgr = qmanager.QueueManager()
     queue = copy.copy(qmgr.workQueue)
     
@@ -47,8 +46,8 @@ def main():
                                                         len(queue)))
         logger.raw()
 
-        pisi = pisiinterface.PisiApi()
-        pisi.init(stdout=build_output, stderr=build_output)
+        pisi = pisiinterface.PisiApi(config.workDir)
+        pisi.init(stdout = build_output, stderr = build_output)
         try:
             (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
         except Exception, e:
@@ -76,7 +75,40 @@ def main():
     logger.info("Wait Queue: %s" % (qmgr.waitQueue))
     logger.raw()
     
+def regeneratePackages():
+    qmgr = qmanager.QueueManager()
+    queue = copy.copy(qmgr.workQueue)
     
+    logger.raw("QUEUE")
+    logger.info("Work Queue: %s" % (qmgr.workQueue))
+    logger.raw()
+    
+    for pspec in queue: 
+        packagename=os.path.basename(os.path.dirname(pspec))
+        build_output=open(os.path.join(config.outputDir,packagename + ".log"), "w")
+        logger.info("Regenerating source %s (%d of %d)" % (packagename,
+                                                        int(queue.index(pspec) + 1),
+                                                        len(queue)))
+        logger.raw()
+
+        pisi = pisiinterface.PisiApi(config.packageDir)
+        pisi.init(stdout=build_output, stderr=build_output)
+        try:
+            pisi.regenerate(pspec)
+        except Exception, e:
+            qmgr.transferToWaitQueue(pspec)
+            errmsg = "'%s' için Regenerate işlemi sırasında hata: %s" % (pspec, e)
+            logger.error(errmsg)
+            mailer.error(errmsg, pspec)
+        else:
+            qmgr.removeFromWorkQueue(pspec)
+        pisi.finalize()
+
+    logger.raw("QUEUE")
+    logger.info("Wait Queue: %s" % (qmgr.waitQueue))
+    logger.raw()
+ 
+
 def movePackages(newBinaryPackages, oldBinaryPackages):
     logger.info("*** Yeni ikili paket(ler): %s" % newBinaryPackages)
     logger.info("*** Eski ikili paket(ler): %s" % oldBinaryPackages)
@@ -128,9 +160,13 @@ def removeBinaryPackageFromWorkDir(package):
     
 
 def create_directories():
-    directories = [config.workDir, config.newBinaryPPath,
-                   config.oldBinaryPPath, config.localPspecRepo,
+    directories = [config.workDir, 
+                   config.packageDir,
+                   config.newBinaryPPath,
+                   config.oldBinaryPPath, 
+                   config.localPspecRepo,
                    config.outputDir]
+
     for dir in directories:
         if dir and not os.path.isdir(dir):
             try:
@@ -141,7 +177,7 @@ def create_directories():
 
 def handle_exception(exception, value, tb):
     s = cStringIO.StringIO()
-    traceback.print_tb(tb, file=s)
+    traceback.print_tb(tb, file = s)
     s.seek(0)
 
     logger.error(str(exception))
@@ -152,5 +188,9 @@ def handle_exception(exception, value, tb):
 if __name__ == "__main__":
     sys.excepthook = handle_exception
     create_directories()
-    main()
-
+    
+    try:
+        if sys.argv[1] == "regenerate":
+            regeneratePackages()
+    except IndexError:
+        buildPackages()
