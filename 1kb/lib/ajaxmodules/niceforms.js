@@ -19,7 +19,7 @@ var selectText = "seçiniz...";
 
 //this function runs when the page is loaded so put all your other onload stuff in here too.
 function init() {
-	
+
 	//check if styles are enabled and only then start replacing elements
 	if(findPosX(document.getElementById('stylesheetTest')) == -999) {
 		replaceSelects();
@@ -30,7 +30,9 @@ function init() {
 	buttonHovers();
         // just for fun ..
         var searchDetails = document.getElementById('search_details');
+        var askDetails    = document.getElementById('ask_details');
         searchDetails.style.display = "none";
+        askDetails.style.display = "none";
 }
 
 function replaceRadios() {
@@ -43,17 +45,17 @@ function replaceRadios() {
 			++j;
 		}
 	}
-	
+
 	//cycle through the radio inputs
 	for(var i=0; i <radios.length; i++) {
-		
+
 		//make them transparent
 		radios[i].className = "transparent";
-		
+
 		//get their position
 		var x = findPosX(radios[i]);
 		var y = findPosY(radios[i]);
-		
+
 		//build new div
 		var radioArea = document.createElement('div');
 		if(radios[i].checked) {radios[i].nextSibling.className = "chosen"; radioArea.className = "radioAreaChecked";}
@@ -62,7 +64,7 @@ function replaceRadios() {
 		radioArea.style.top = y + 'px';
 		radioArea.id = 'myRadio'+i;
 		radios[i].onclick = new Function('checkRadio('+i+')');
-		
+
 		//insert div
 		document.getElementsByTagName("body")[0].appendChild(radioArea);
 	}
@@ -106,10 +108,10 @@ function replaceCheckboxes() {
 function replaceSelects() {
 	//get all the select fields on the page
     selects = document.getElementsByTagName('select');
-	
+
 	//cycle trough the select fields
     for(var i=0; i < selects.length; i++) {
-		
+
 		//create and build div structure
 		var selectArea = document.createElement('div');
 		var left = document.createElement('div');
@@ -129,13 +131,13 @@ function replaceSelects() {
 		selectArea.appendChild(left);
 		selectArea.appendChild(right);
 		selectArea.appendChild(center);
-		
+
 		//hide the select field
-                selects[i].style.display='none'; 
-		
+                selects[i].style.display='none';
+
 		//insert select div
 		selects[i].parentNode.insertBefore(selectArea, selects[i]);
-		
+
 		//build & place options div
 		var optionsDiv = document.createElement('div');
 		optionsDiv.className = "optionsDivInvisible";
@@ -155,7 +157,7 @@ function replaceSelects() {
 			optionHolder.appendChild(optionLink);
 			optionsDiv.appendChild(optionHolder);
 		}
-		
+
 		//insert options div
 		document.getElementById("SelectArea"+i).appendChild(optionsDiv);
 	}
@@ -248,7 +250,7 @@ function hoverEffects() {
 		hovers[j] = elements[i4];
 		++j;
 	}
-	
+
 	//add focus effects
 	for (var i4 = 0; i4 < hovers.length; i4++) {
 		hovers[i4].onfocus = function() {this.className += "Hovered";}
@@ -266,7 +268,7 @@ function buttonHovers() {
 			++j;
 		}
 	}
-	
+
 	//add hover effects
 	for (var i5 = 0; i5 < buttons.length; i5++) {
 		buttons[i5].onmouseover = function() {this.className += "Hovered";}
