@@ -34,4 +34,6 @@ tasmaprivacy.desktop \
 tasmaproxy.desktop \
 tasmascreensaver.desktop \
 tasmastyle.desktop \
-tasmauserkga.desktop
+tasmauserkga.desktop \
+tasmaserviskga.desktop \
+tasmaguvenlikkga.desktop
