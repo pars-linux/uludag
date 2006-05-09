@@ -83,9 +83,18 @@ void TIconView::setCategory( const QString& path )
 
 void TIconView::slotItemSelected( QIconViewItem* item )
 {
+  // kdWarning() << "LU LU LU I got some apple" << endl;
     TIconViewItem *_item = static_cast<TIconViewItem*>( item );
   
     if(_oldModuleInfo) KCModuleLoader::unloadModule(*_oldModuleInfo);
+
+#warning Hack for alpha, fix for BETA!
+    if(_item->moduleinfo()->fileName().endsWith("tasmapisi.desktop"))
+      {
+        system("kdesu pisix");
+        return;
+      }
+
     _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
     _oldModuleInfo = _item->moduleinfo();
 
