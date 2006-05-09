@@ -31,11 +31,11 @@ def AboutData():
                             version,
                             description,
                             KAboutData.License_GPL,
-                            "(C) 2005 UEKAE/TÜBİTAK",
+                            "(C) 2005-2006 UEKAE/TÜBİTAK",
                             None, None,
-                            "gurer@uludag.org.tr")
+                            "gurer@pardus.org.tr")
     
-    about_data.addAuthor("Gürer Özen", None, "gurer@uludag.org.tr")
+    about_data.addAuthor("Gürer Özen", None, "gurer@pardus.org.tr")
     
     return about_data
 
