@@ -586,11 +586,11 @@ class MainApplication(KMainWindow):
         self.aboutus = KAboutApplication(self)
         self.helpWidget = None
         self.mainwidget = MainApplicationWidget(self)
-        self.toolBar().setIconText(KToolBar.IconTextRight)
         self.setCentralWidget(self.mainwidget)
 
         self.setupMenu()
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
+        self.toolBar().setIconText(KToolBar.IconTextRight)
         
     def setupMenu(self):
         fileMenu = QPopupMenu(self)
