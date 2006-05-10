@@ -475,11 +475,16 @@ class MainApplicationWidget(QWidget):
     def finished(self):
         self.selectedItems = []
         self.currentAppIndex = 1
+
         # Here we don't use updateListing() if there is no error, because we already updated the view
         # in check() using DOM which is fast, so unless an error occurred there is no need for a refresh
         if self.possibleError:
             self.updateListing()
             self.possibleError = False
+        else:
+            self.appsToProcess = []
+            self.parent.operateAction.setEnabled(False)
+            
         self.progressDialog.closeForced()
         self.resetProgressBar()
         
