@@ -13,6 +13,7 @@ import os
 import sys
 import zipfile
 import piksemel as iks
+from pisi import zipfileext
 
 from qt import *
 
@@ -159,7 +160,7 @@ class MainWindow(QMainWindow):
         self.update_label()
     
     def parse_pisi(self, path):
-        zip = zipfile.ZipFile(path, 'r')
+        zip = zipfileext.ZipFileExt(path, 'r')
         for info in zip.infolist():
             if info.filename == "metadata.xml":
                 data = zip.read(info.filename)
