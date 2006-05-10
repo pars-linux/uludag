@@ -357,7 +357,9 @@ class MainApplicationWidget(QWidget):
                 divNode = element.parentNode().parentNode()
                 parentNode = divNode.parentNode()
                 parentNode.removeChild(divNode)
-                appsToProcess.append(str(element.getAttribute(DOM.DOMString("name")).string()))
+                packageName = str(element.getAttribute(DOM.DOMString("name")).string())
+                appsToProcess.append(packageName)
+                self.componentDict[self.listView.currentItem()].remove(packageName)
         
         self.progressDialog.show()
         if self.parent.showAction.text() == i18n("Show New Packages"):
