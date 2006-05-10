@@ -446,6 +446,7 @@ class MainApplicationWidget(QWidget):
                 self.currentAppIndex += 1
             elif isinstance(eventData,list):
                 self.packagesOrder = eventData
+                self.totalAppCount = len(self.packagesOrder)
                 if len(base_packages.intersection(self.packagesOrder)) > 0:
                     self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
                     self.finished()
