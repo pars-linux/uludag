@@ -22,7 +22,6 @@ tasmakhotkeys.desktop \
 tasmaksplashthememgr.desktop \
 tasmakwindecoration.desktop \
 tasmakwinoptions.desktop \
-tasmalanbrowser.desktop \
 tasmalanguage.desktop \
 tasmalaptop.desktop \
 tasmamouse.desktop \
