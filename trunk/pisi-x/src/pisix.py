@@ -211,6 +211,7 @@ class MainApplicationWidget(QWidget):
         if switch or self.possibleError:
             self.appsToProcess = []
             self.parent.operateAction.setEnabled(False)
+            self.parent.basketAction.setEnabled(False)
             self.clearSearchLine()
             
         currentOperation = self.parent.showAction.text()
@@ -343,10 +344,15 @@ class MainApplicationWidget(QWidget):
     def updateButtons(self):
         if len(self.appsToProcess):
             self.parent.operateAction.setEnabled(True)
+            self.parent.basketAction.setEnabled(True)
         else:
             self.parent.operateAction.setEnabled(False)
-            
-            
+            self.parent.basketAction.setEnabled(False)
+
+    def showBasket(self):
+        print "Show me the basket"
+        pass
+    
     def check(self):
         appsToProcess = []
         document = self.htmlPart.document()
@@ -486,6 +492,7 @@ class MainApplicationWidget(QWidget):
         else:
             self.appsToProcess = []
             self.parent.operateAction.setEnabled(False)
+            self.parent.basketAction.setEnabled(False)
             
         self.progressDialog.closeForced()
         self.resetProgressBar()
@@ -601,8 +608,10 @@ class MainApplication(KMainWindow):
         self.showAction = KAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
         self.operateAction = KAction(i18n("Install Package(s)"),"ok",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
         self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.showUpdateDialog ,self.actionCollection(),"upgrade_packages")
+        self.basketAction = KAction(i18n("Show basket"),"basket",KShortcut.null(),self.mainwidget.showBasket ,self.actionCollection(),"show_basket")
 
         self.operateAction.setEnabled(False)
+        self.basketAction.setEnabled(False)
         
         self.showAction.plug(fileMenu)
         self.operateAction.plug(fileMenu)
@@ -611,11 +620,7 @@ class MainApplication(KMainWindow):
         
         self.menuBar().insertItem(i18n ("&File"), fileMenu,0,0)
         self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
-    
-    def aboutData(self):
-        # Return the KAboutData object which we created during initialisation.
-        return self.aboutdata
-    
+        
 def main():
     global kapp
     global nonPrivMode
