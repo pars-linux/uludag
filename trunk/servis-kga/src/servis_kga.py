@@ -18,7 +18,6 @@ from qt import *
 from kdecore import *
 from kdeui import *
 from khtml import *
-import kdedesigner
 
 # Widget
 import serviceWidget
@@ -75,35 +74,27 @@ class serviceItem(KListViewItem):
     def __init__(self, parent=None, name=None, type='server', state='off', package=''):
         KListViewItem.__init__(self, parent)
         self.service = package
+        self.type = type
 
-        if state in ['on', 'started']:
-            self.start()
-        else:
-            self.stop()
-            
+        self.setState(state)
+
         self.setText(1, name)
         self.setText(2, i18n(type.title()))
-        
-        if state in ['on', 'stopped']:
-            self.setText(3, i18n('Yes'))
-        else:
-            self.setText(3, i18n('No'))
-
         self.setText(4, package)
 
-    def start(self):
-        self.status = 'started'
-        self.setPixmap(0, loadIcon('ledgreen'))
-        
-    def stop(self):
-        self.status = 'stopped'
-        self.setPixmap(0, loadIcon('ledred'))
+        if self.type != "server":
+            self.setEnabled(0)
 
     def setState(self, state='off'):
+        self.status = state
         if state in ['on', 'started']:
-            self.start()
+            self.setPixmap(0, loadIcon('ledgreen'))
+            if state == "on":
+                self.setPixmap(3, loadIcon('button_ok', size=16))
         else:
-            self.stop()
+            self.setPixmap(0, loadIcon('ledred'))
+            if state == "off":
+                self.setPixmap(3, loadIcon('button_cancel', size=16))
 
 
 class MainApplication(programbase):
@@ -144,18 +135,12 @@ class MainApplication(programbase):
         self.comar.ask_notify('System.Service.changed', id=1)
         self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
 
-        # Disable switch button
-        self.mainwidget.pushSwitch.setEnabled(0)
-
-        # ListView Properties
-        self.mainwidget.listServices.setColumnAlignment(2, Qt.AlignHCenter)
-        self.mainwidget.listServices.setColumnAlignment(3, Qt.AlignHCenter)
-
         # Connections
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
         self.connect(self.mainwidget.listServices, SIGNAL('selectionChanged(QListViewItem*)'), self.slotItemClicked)
         self.connect(self.mainwidget.pushSwitch, SIGNAL('clicked()'), self.slotSwitch)
         self.connect(self.mainwidget.pushHelp, SIGNAL('clicked()'), self.slotHelp)
+        self.connect(self.mainwidget.listServices, SIGNAL('doubleClicked(QListViewItem*, const QPoint&, int)'), self.slotItemDBClicked)
 
     def handleComar(self, reply):
         if reply[0] == self.comar.RESULT_START:
@@ -184,6 +169,14 @@ class MainApplication(programbase):
 
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
+
+    def slotItemDBClicked(self, item, pos, col):
+        if col == 3 and item and item.type == "server":
+            if item.status in ['on', 'stopped']:
+                self.comar.call_package('System.Service.setState', item.service, {"state": "off"})
+            else:
+                self.comar.call_package('System.Service.setState', item.service, {"state": "on"})
+            self.handleComar(self.comar.read_cmd())
 
     def slotItemClicked(self, item):
         self.mainwidget.pushSwitch.setEnabled(1)
