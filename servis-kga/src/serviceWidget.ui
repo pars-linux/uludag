@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="1" column="0">
+        <widget class="QLayoutWidget" row="2" column="0">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -62,10 +62,10 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="KListView" row="0" column="0">
+        <widget class="KListView" row="1" column="0">
             <column>
                 <property name="text">
-                    <string>S</string>
+                    <string></string>
                 </property>
                 <property name="clickable">
                     <bool>true</bool>
@@ -138,6 +138,11 @@
                 </color>
             </property>
         </widget>
+        <widget class="KListViewSearchLineWidget" row="0" column="0">
+            <property name="name">
+                <cstring>lineSearch</cstring>
+            </property>
+        </widget>
     </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
@@ -145,5 +150,7 @@
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
+    <includehint>klistviewsearchline.h</includehint>
+    <includehint>klistviewsearchline.h</includehint>
 </includehints>
 </UI>

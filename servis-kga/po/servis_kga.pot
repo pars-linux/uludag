@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-15 11:40+0300\n"
+"POT-Creation-Date: 2006-05-16 09:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,38 +16,34 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/servis_kga.py:98
+#: src/servis_kga.py:61 src/servis_kga.py:114
 msgid "Service Manager"
 msgstr ""
 
-#: src/servis_kga.py:178 src/serviceWidget.py:62
+#: src/servis_kga.py:190 src/serviceWidget.py:21
 msgid "Start"
 msgstr ""
 
-#: src/servis_kga.py:219
+#: src/servis_kga.py:234
 msgid "Service GUI is already running!"
 msgstr ""
 
-#: src/serviceWidget.py:28 src/serviceWidget.py:57
-msgid "S"
+#: src/serviceWidget.py:14
+msgid "Service GUI"
 msgstr ""
 
-#: src/serviceWidget.py:29 src/serviceWidget.py:58
+#: src/serviceWidget.py:34
 msgid "Service"
 msgstr ""
 
-#: src/serviceWidget.py:30 src/serviceWidget.py:59
+#: src/serviceWidget.py:35
 msgid "Type"
 msgstr ""
 
-#: src/serviceWidget.py:31 src/serviceWidget.py:60
+#: src/serviceWidget.py:36
 msgid "Auto Start"
 msgstr ""
 
-#: src/serviceWidget.py:32 src/serviceWidget.py:61
+#: src/serviceWidget.py:37
 msgid "Package"
-msgstr ""
-
-#: src/serviceWidget.py:56
-msgid "Service GUI"
 msgstr ""
