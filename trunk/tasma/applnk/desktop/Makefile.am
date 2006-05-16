@@ -10,7 +10,9 @@ tasmadesktop.desktop \
 tasmadisplay.desktop \
 tasmafiletypes.desktop \
 tasmafonts.desktop \
+tasmafontinstaller.desktop \
 tasmaicons.desktop \
+tasmakamera.desktop \
 tasmakcmaccess.desktop \
 tasmakcmnotify.desktop \
 tasmakcmtaskbar.desktop \
@@ -31,6 +33,7 @@ tasmapisi.desktop \
 tasmaprinters.desktop \
 tasmaprivacy.desktop \
 tasmaproxy.desktop \
+tasmasamba.desktop \
 tasmascreensaver.desktop \
 tasmastyle.desktop \
 tasmauserkga.desktop \
