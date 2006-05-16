@@ -1,239 +1,253 @@
-1. Pardus 1.1'e hoşgeldiniz
 
-Pardus'a hoşgeldiniz! Pardus işletim sistemi; kurulum ve kullanım
-kolaylığı ile, KDE masaüstü ortamında sağladığı kullanışlı,
-uyumlu ve güvenli birçok geliştirme ile işte karşınızda. Pardus ile
-internete bağlanabilir, e-postalarınızı okuyabilir, dostlarınızla
+<h1>Pardus 1.1 sürüm notları</h1>
+
+<h2>1. Pardus 1.1'e hoşgeldiniz</h2>
+
+Pardus işletim sistemi; kurulum ve kullanım kolaylığı ile,
+KDE masaüstü ortamında sağladığı kullanışlı, uyumlu ve
+güvenli birçok geliştirme ile karşınızda. Pardus ile internete
+bağlanabilir, e-postalarınızı okuyabilir, dostlarınızla
 güvenli bir şekilde iletişim kurabilir, müzik dinlerken ya da film
 izlerken bilgisayarınızın çokluortam yeteneklerini sonuna kadar
 kullanabilirsiniz. Pardus'un sizin için yapabileceklerini keşfetmeniz
-için <a href="http://www.pardus.org.tr/"> http://www.pardus.org.tr</a>
+için <a href="http://www.pardus.org.tr/">http://www.pardus.org.tr</a>
 adresini ziyaret etmenizden onur duyacağız.
 
-1.1 Siz de katılın
+<p>
 
-   Eğer kendinize "ben de yardım etmek istiyorum" diyorsanız bununla
-   beraber nereden başlayacağınızı bilmiyorsanız Pardus size
-   fırsat tanıyor. İşinin bir kısmı da yeni gelenleri projeye
-   ilgi alanlarına ve becerilerine göre adapte etmek olan imece
-   takımı size yardım edecektir.  İmece projesinde, yerelleştirme
-   çalışmaları, belgeleme çalışmaları, uygulama ve sürüm
-   testleri, raporlama, kullanıcı grafik arayüzlerinin test edilmesi
-   ve değerlendirilmesi, yazılım geliştirme, web sayfalarının ve
-   belgelerin uluslararasılaştırılması, projenin doğru şekilde
-   tanıtılması ve yeni insanlara ulaşmak gibi proje ihtiyaçlarına
-   cevap vermek üzere çalışan insanları bulunduran bir takımdır.
+<h3>1.1 Siz de katılın</h3>
 
-   Bu takımın işi değerli katkınızı ihtiyaç duyulan noktalara
-   kanalize ederek projeye gelen katkı kalitesini arttırmak ve belirli
-   bir seviyenin altına inmemesini sağlamaya çalışmaktır. Daha
-   fazla bilgi için <a href=http://imece.pardus.org.tr>imece</a> web
-   sayfasını ziyaret edebilirsiniz.
+Eğer kendinize "ben de yardım etmek istiyorum" diyorsanız bununla
+beraber nereden başlayacağınızı bilmiyorsanız Pardus size
+fırsat tanıyor. İşinin bir kısmı da yeni gelenleri projeye
+ilgi alanlarına ve becerilerine göre adapte etmek olan imece
+takımı size yardım edecektir.  İmece projesinde, yerelleştirme
+çalışmaları, belgeleme çalışmaları, uygulama ve sürüm
+testleri, raporlama, kullanıcı grafik arayüzlerinin test edilmesi
+ve değerlendirilmesi, yazılım geliştirme, web sayfalarının ve
+belgelerin uluslararasılaştırılması, projenin doğru şekilde
+tanıtılması ve yeni insanlara ulaşmak gibi proje ihtiyaçlarına
+cevap vermek üzere çalışan insanları bulunduran bir takımdır.
 
-1.2 Geribildirimde bulunmak
+<p>
 
-   Pardus'la ilgili hata önerilerinizi iletmek için <a
-   href=http://bugs.pardus.org.t>Pardus hata bildirim sistemi'ni</a>
-   kullanabilirsiniz. Bir sorunu raporlamak, yeni bir paket önerisi
-   yapmak, yeni sürümde bir özelliği talep etmek gibi konularda
-   vereceğiniz desteğe şimdiden teşekkür ederiz.
+Bu takımın işi değerli katkınızı ihtiyaç duyulan noktalara
+kanalize ederek projeye gelen katkı kalitesini arttırmak ve belirli
+bir seviyenin altına inmemesini sağlamaya çalışmaktır. Daha
+fazla bilgi için <a href=http://imece.pardus.org.tr>imece</a> web
+sayfasını ziyaret edebilirsiniz.
 
-2. Temel özellikler
-   - Kolay kullanımlı masaüstü 
-   - Windows ile iletişim ve uyum
-   - Java desteği
-   - Oyunlar ve eğlence
-   - Ağ servisleri
+
+<p>
+
+<h3>1.2 Geribildirimde bulunmak</h3>
+
+Pardus'la ilgili hata önerilerinizi iletmek için <a
+href=http://bugs.pardus.org.t>Pardus hata bildirim sistemi'ni</a>
+kullanabilirsiniz. Bir sorunu raporlamak, yeni bir paket önerisi
+yapmak, yeni sürümde bir özelliği talep etmek gibi konularda
+vereceğiniz desteğe şimdiden teşekkür ederiz.
+
+<h2>2. Temel özellikler</h2>
+
+2.1 Kolay kullanımlı masaüstü 
+
+Pardus, son kullanıcıya yönelik olarak tasarlanmıştır. 
+
+2.2 Windows ile iletişim ve uyum
+2.3 Java desteği
+2.4 Oyunlar ve eğlence
+2.5 Ağ servisleri
 
 3. Kurulum gereksinimleri 
 
-   Pardus'u ortalama bir donanım ile çalıştırabilirsiniz. İyi bir
-   verim almak için en az 512 MB RAM (bellek) ve 1200 Mhz işlemci
-   öneririz. Aşağıda saydığımız temel iki donanım, Pardus'u
-   çalıştırmanızı sağlayacaktır:
+Pardus'u ortalama bir donanım ile çalıştırabilirsiniz. İyi bir
+verim almak için en az 512 MB RAM (bellek) ve 1200 Mhz işlemci
+öneririz. Aşağıda saydığımız temel iki donanım, Pardus'u
+çalıştırmanızı sağlayacaktır:
 
-   256 MB RAM (512 MB önerilir)
-   800 Mhz Intel veya AMD işlemci (en az 1200 MHz önerilir)
-   En az 4 Gb boş sabit disk alanı 
+256 MB RAM (512 MB önerilir)
+800 Mhz Intel veya AMD işlemci (en az 1200 MHz önerilir)
+En az 4 Gb boş sabit disk alanı 
 
 4. Bu sürümdeki yenilikler 
 
-   Pardus 1.1, 6 aylık bir geliştirme sonucunda ortaya
-   çıktı. Aşağıdaki liste, bu sürüm için son kullanıcılardan
-   gelen önerilerin de yardımıyla hazırlanmış olan yenilikleri
-   içermektedir.
+Pardus 1.1, 6 aylık bir geliştirme sonucunda ortaya
+çıktı. Aşağıdaki liste, bu sürüm için son kullanıcılardan
+gelen önerilerin de yardımıyla hazırlanmış olan yenilikleri
+içermektedir.
 
-   4.1 Pardus güvenlik duvarı
+4.1 Pardus güvenlik duvarı
 
-   Pardus güvenlik duvarı, dışarıdan gelebilecek saldırıları
-   karşılamak üzere tasarlanmış, kolay kullanımlı bir
-   yazılımdır. Güvenlik duvarı sistemde sürekli olarak çalışarak
-   bilgisayarınızı koruyacaktır. Pardus güvenlik duvarı sayesinde
-   belirli bir portu, makineyi erişime kapatabilir ya da mevcut
-   erişimleri izleyebilirsiniz. 
+Pardus güvenlik duvarı, dışarıdan gelebilecek saldırıları
+karşılamak üzere tasarlanmış, kolay kullanımlı bir
+yazılımdır. Güvenlik duvarı sistemde sürekli olarak çalışarak
+bilgisayarınızı koruyacaktır. Pardus güvenlik duvarı sayesinde
+belirli bir portu, makineyi erişime kapatabilir ya da mevcut
+erişimleri izleyebilirsiniz. 
 
-   Aşağıda Pardus güvenlik duvarı ekran görüntüsü bulunmaktadır.
+Aşağıda Pardus güvenlik duvarı ekran görüntüsü bulunmaktadır.
 
-   .... 
+.... 
 
-   4.2 Daha çok gelişmiş paket yönetim sistemi
+4.2 Daha çok gelişmiş paket yönetim sistemi
 
-   PİSİ paketlerinde kullanılacak olan LZMA sıkıştırma algoritması
-   ile ortalama %30'a varan bir yer kazancı oldu. Bu sayede
-   PİSİ paketleri daha da küçüldü ve son kullanıcının indireceği
-   yazılımların boyutu azaldı.
+PİSİ paketlerinde kullanılacak olan LZMA sıkıştırma algoritması
+ile ortalama %30'a varan bir yer kazancı oldu. Bu sayede
+PİSİ paketleri daha da küçüldü ve son kullanıcının indireceği
+yazılımların boyutu azaldı.
 
-   4.3 Yeni program yönetim arayüzü
+4.3 Yeni program yönetim arayüzü
 
-   Pardus 1.0'la birlikte gelen PİSİ paket yönetim arayüzü, yerini
-   kolay kullanımlı halefine bıraktı. Yeni yazılım, programları
-   basit ve etkin bir şekilde kurmaya, kaldırmaya ya da 
-   güncellemeye olanak sağlıyor.
+Pardus 1.0'la birlikte gelen PİSİ paket yönetim arayüzü, yerini
+kolay kullanımlı halefine bıraktı. Yeni yazılım, programları
+basit ve etkin bir şekilde kurmaya, kaldırmaya ya da 
+güncellemeye olanak sağlıyor.
 
-   4.4 Kurulum sistemi YALI'da gelişmeler
+4.4 Kurulum sistemi YALI'da gelişmeler
 
-   YALI, Pardus 1.1'de yeni ÇOMAR ve PİSİ altyapısıyla çalışmak 
-   için ayarlandı ve bazı hataları giderildi.
+YALI, Pardus 1.1'de yeni ÇOMAR ve PİSİ altyapısıyla çalışmak 
+için ayarlandı ve bazı hataları giderildi.
 
-   4.5 Yeni ve gelişmiş Pardus açılış sistemi
+4.5 Yeni ve gelişmiş Pardus açılış sistemi
 
-   İşletim sistemi çekirdeği çalışmaya başladığı andan,
-   kullanıcının karşısına giriş ekranı çıkana kadar yapılan,
-   dosya sistemlerini bağlamak, donanımları tanıyıp sürücüleri
-   yükletmek, temel ağ ayarlarını yapmak, sistem servislerini
-   başlatmak gibi işler, ve bilgisayar kapatılırken servislerin
-   durdurulması, dosya sistemlerinin güvenlice kapatılması, açılış
-   sistemi tarafından yapılmaktadır.
+İşletim sistemi çekirdeği çalışmaya başladığı andan,
+kullanıcının karşısına giriş ekranı çıkana kadar yapılan,
+dosya sistemlerini bağlamak, donanımları tanıyıp sürücüleri
+yükletmek, temel ağ ayarlarını yapmak, sistem servislerini
+başlatmak gibi işler, ve bilgisayar kapatılırken servislerin
+durdurulması, dosya sistemlerinin güvenlice kapatılması, açılış
+sistemi tarafından yapılmaktadır.
 
-   Pardus 1.0'daki açılış sisteminin çok yavaş kalması ve
-   donanım tanıma konusundaki yetersizlikleri nedeniyle, 1.1 sürümüne
-   doğru yol alırken, açılış sistemi Pardus için baştan yazıldı.
+Pardus 1.0'daki açılış sisteminin çok yavaş kalması ve
+donanım tanıma konusundaki yetersizlikleri nedeniyle, 1.1 sürümüne
+doğru yol alırken, açılış sistemi Pardus için baştan yazıldı.
 
-   Yeni sistem "müdür" adını verdiğimiz ve Python ile yazılmış
-   bir temel açılış betiği, "muavin" adını verdiğimiz ve
-   donanımlar için gereken modülleri bulup yükleten bir yardımcı
-   Python betiğinden oluşmakta. Sistem servislerinin betikleri ise
-   Çomar tarafından yönetilmekte ve böylece paralel çalışma ve
-   kolay kullanım gibi avantajlar sağlamakta. Bu çalışmayla birlikte,
+Yeni sistem "müdür" adını verdiğimiz ve Python ile yazılmış
+bir temel açılış betiği, "muavin" adını verdiğimiz ve
+donanımlar için gereken modülleri bulup yükleten bir yardımcı
+Python betiğinden oluşmakta. Sistem servislerinin betikleri ise
+Çomar tarafından yönetilmekte ve böylece paralel çalışma ve
+kolay kullanım gibi avantajlar sağlamakta. Bu çalışmayla birlikte,
 
-   * Açılış süresi büyük miktarda kısaldı. Eski sistemde 1:33
-   dakikada açılan bir makine artık 0:17 saniyede açılıyor.
-   Bu süre içinde Java ile çalışan zemberek dahil tüm sistem
-   servislerinin açıldığı göz önüne alınırsa Pardus, diğer
-   Linux dağıtımları arasında rekor açılış süresine sahiptir.
+* Açılış süresi büyük miktarda kısaldı. Eski sistemde 1:33
+dakikada açılan bir makine artık 0:17 saniyede açılıyor.
+Bu süre içinde Java ile çalışan zemberek dahil tüm sistem
+servislerinin açıldığı göz önüne alınırsa Pardus, diğer
+Linux dağıtımları arasında rekor açılış süresine sahiptir.
 
-   * Python'un sadeliği ve gücü sayesinde, Pardus 1.0 çok daha
-   esnek ve bakımı kolay bir dağıtım haline geldi. 
+* Python'un sadeliği ve gücü sayesinde, Pardus 1.0 çok daha
+esnek ve bakımı kolay bir dağıtım haline geldi. 
 
-   * Servisler hem komut satırından, hem de Tasma içinde
-   yönetilebilmektedir.
+* Servisler hem komut satırından, hem de Tasma içinde
+yönetilebilmektedir.
 
-   4.6 Daha çok donanım tanıma olanağı
+4.6 Daha çok donanım tanıma olanağı
 
-   Pardus'a özgü yeni donanım tanıma sistemi, Pardus'un piyasada
-   bulunan hemen hemen tüm donanımlarla uyumlu çalışmasına
-   olanak verirken, son kullanıcının elle donanım tanıtma
-   gerekliliğini en aza indirmekte ve çoğu zaman sürücü
-   kurmayı gereksiz kılmaktadır. Pardus, açılışta sistemdeki
-   donanımları tanıyabilirken bunların ayarlarını da otomatik
-   olarak yapabilmektedir. 
+Pardus'a özgü yeni donanım tanıma sistemi, Pardus'un piyasada
+bulunan hemen hemen tüm donanımlarla uyumlu çalışmasına
+olanak verirken, son kullanıcının elle donanım tanıtma
+gerekliliğini en aza indirmekte ve çoğu zaman sürücü
+kurmayı gereksiz kılmaktadır. Pardus, açılışta sistemdeki
+donanımları tanıyabilirken bunların ayarlarını da otomatik
+olarak yapabilmektedir. 
   
-   Muavin adı verilen donanım tanıma sistemi, gereksiz modül 
-   yüklenmesinin önüne geçmekte ve bellekten önemli bir 
-   tasarruf sağlamaktadır. Bunun yanında eski bir teknoloji 
-   olan hotplug yerine, daha yeni ve esnek olan udev kullanılmaktadır.
+Muavin adı verilen donanım tanıma sistemi, gereksiz modül 
+yüklenmesinin önüne geçmekte ve bellekten önemli bir 
+tasarruf sağlamaktadır. Bunun yanında eski bir teknoloji 
+olan hotplug yerine, daha yeni ve esnek olan udev kullanılmaktadır.
 
-   4.7 Düzeltilen 300'den fazla hata
+4.7 Düzeltilen 300'den fazla hata
 
-   Pardus'un hata izleme sistemi [2] Uluzilla'ya gönderilen hata
-   bildirimleri geliştiriciler tarafından titizlikle incelenerek
-   1.0'dan sonra XXXXX'den fazla hata giderilmiş, böylece Pardus
-   1.1'in daha kararlı, sağlam ve son kullanıcıya yönelik olması
-   sağlanmıştır.
+Pardus'un hata izleme sistemi [2] Uluzilla'ya gönderilen hata
+bildirimleri geliştiriciler tarafından titizlikle incelenerek
+1.0'dan sonra XXXXX'den fazla hata giderilmiş, böylece Pardus
+1.1'in daha kararlı, sağlam ve son kullanıcıya yönelik olması
+sağlanmıştır.
 
-   http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&long_desc_type=substring&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=allwords&keywords=&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=2005-12-27&chfieldto=Now&chfield=%5BBug%20creation%5D&chfieldvalue=&field0-0-0=noop&type0-0-0=noop&value0-0-0=&order=bugs.bug_id&query_based_on=
+http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&long_desc_type=substring&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=allwords&keywords=&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=2005-12-27&chfieldto=Now&chfield=%5BBug%20creation%5D&chfieldvalue=&field0-0-0=noop&type0-0-0=noop&value0-0-0=&order=bugs.bug_id&query_based_on=
 
-   **** Yukarıdaki aramayı, "12.27.2005"ten sonra FIXED ile kapatılmış hatalar
-   olarak düzeltmemiz gerekiyor. Raporlama işlemi daha önce yapılmış olabilir. 
+**** Yukarıdaki aramayı, "12.27.2005"ten sonra FIXED ile kapatılmış hatalar
+olarak düzeltmemiz gerekiyor. Raporlama işlemi daha önce yapılmış olabilir. 
 
-   4.8 Yeni 2.6.16 çekirdek
+4.8 Yeni 2.6.16 çekirdek
 
-   Pardus ile birlikte gelen son sürüm (2.6.16) çekirdek sayesinde pek çok
-   donanım sorunları çözüldü. Bu çekirdekle birlikte USB ADSL modem desteği
-   geliyor ve eski makinelerde APIC/ACPI nedeniyle açılamama sorunları da
-   giderilmiş durumda. IDE sabit disklerin tanınma süresini çok kısaltan bir
-   yama sayesinde Linux çekirdeğinin açılış süresi 3 saniye kadar kısaldı. 
+Pardus ile birlikte gelen son sürüm (2.6.16) çekirdek sayesinde pek çok
+donanım sorunları çözüldü. Bu çekirdekle birlikte USB ADSL modem desteği
+geliyor ve eski makinelerde APIC/ACPI nedeniyle açılamama sorunları da
+giderilmiş durumda. IDE sabit disklerin tanınma süresini çok kısaltan bir
+yama sayesinde Linux çekirdeğinin açılış süresi 3 saniye kadar kısaldı. 
 
-   Desteklenen bazı yeni donanımlar:
+Desteklenen bazı yeni donanımlar:
 
-   - Yeni SATA aygıtları
-   - USB ADSL modem desteği
-   - Gelişmiş kablosuz ağ aygıtları desteği
-   - Daha fazla kamera, tarayıcı ve yazıcı için destek
+- Yeni SATA aygıtları
+- USB ADSL modem desteği
+- Gelişmiş kablosuz ağ aygıtları desteği
+- Daha fazla kamera, tarayıcı ve yazıcı için destek
 
-   4.9 Yeni simge setleri
+4.9 Yeni simge setleri
 
-   Pardus 1.0'ın en çok beğenilen özelliklerinden birisi de Pardus'a
-   özgü "Tulliana" simge setleri idi. Pardus 1.1'de bu simge setleri
-   daha da geliştirildi ve ek simgeler eklendi. Tulliana 2.0 adı verilen
-   bu simge seti Pardus masaüstü ve diğer uygulamalarla daha
-   çok renk uyumu içeriyor ve masaüstünde keyifli zaman geçirmenizi
-   sağlıyor.
+Pardus 1.0'ın en çok beğenilen özelliklerinden birisi de Pardus'a
+özgü "Tulliana" simge setleri idi. Pardus 1.1'de bu simge setleri
+daha da geliştirildi ve ek simgeler eklendi. Tulliana 2.0 adı verilen
+bu simge seti Pardus masaüstü ve diğer uygulamalarla daha
+çok renk uyumu içeriyor ve masaüstünde keyifli zaman geçirmenizi
+sağlıyor.
 
-   Tulliana 2.0'ı kde-look.org adresinden görmek için aşağıdaki 
-   sayfayı kullanabilirsiniz: 
+Tulliana 2.0'ı kde-look.org adresinden görmek için aşağıdaki 
+sayfayı kullanabilirsiniz: 
 
-   http://www.kde-look.org/content/show.php?content=38757
+http://www.kde-look.org/content/show.php?content=38757
 
-   4.10 Yeni araçlar (xorgconf, servis-kga, ...)
-   4.11 Diğer paket güncellemeleri (xorg, gcc, ..)
+4.10 Yeni araçlar (xorgconf, servis-kga, ...)
+4.11 Diğer paket güncellemeleri (xorg, gcc, ..)
 
-   Xorg paketindeki pek çok hata giderildi ve ekran kartları için
-   önemli güncellemeler getirildi. Pardus 1.1'de GNU C Derleyicisinin 
-   (gcc) 3.4 serisinin son kararlı sürümüne geçildi. Bu sürüm C++
-   programcıları için oldukça güzel özellikler içeriyor. Glibc ve binutils
-   paketleri yeni yamalarla (-Bdirect, -hashvals, -dynsort) derleniyor, bu
-   nedenle programların ilk açılış zamanlarında performans artışı bekleniyor. 
+Xorg paketindeki pek çok hata giderildi ve ekran kartları için
+önemli güncellemeler getirildi. Pardus 1.1'de GNU C Derleyicisinin 
+(gcc) 3.4 serisinin son kararlı sürümüne geçildi. Bu sürüm C++
+programcıları için oldukça güzel özellikler içeriyor. Glibc ve binutils
+paketleri yeni yamalarla (-Bdirect, -hashvals, -dynsort) derleniyor, bu
+nedenle programların ilk açılış zamanlarında performans artışı bekleniyor. 
 
-   4.12 Skype, Kopete ve diğer iletişim araçlarındaki yenilikler
+4.12 Skype, Kopete ve diğer iletişim araçlarındaki yenilikler
 
-   Skype, H.323 protokolü kullanan tam kapsamlı bir IP telefon 
-   çözümüdür. Pardus ile birlikte kullanabileceğiniz Skype ile 
-   İnternet üzerinden telefon konuşmaları yapabilirsiniz. 
-   Bunun yanında, donanımı desteklenen bir kamerayı Pardus'a 
-   takabilir ve Kopete üzerinden diğer kullanıcılarla kameralı
-   görüşmede bulunabilirsiniz.
+Skype, H.323 protokolü kullanan tam kapsamlı bir IP telefon 
+çözümüdür. Pardus ile birlikte kullanabileceğiniz Skype ile 
+İnternet üzerinden telefon konuşmaları yapabilirsiniz. 
+Bunun yanında, donanımı desteklenen bir kamerayı Pardus'a 
+takabilir ve Kopete üzerinden diğer kullanıcılarla kameralı
+görüşmede bulunabilirsiniz.
 
-   4.13 Daha fazla Türkçe dil desteği 
-   
-   Pardus 1.1 ile birlikte gelen Zemberek [3], özellikle teknik terimler
-   başta olmak üzere çok daha fazla kelime tanıyabiliyor. Bunun
-   yanında OpenOffice.org ve diğer uygulamalarda (Kmail, kopete vb)
-   yanlış yazılan kelimelere sunduğu öneriler daha doğru bir
-   sırada veriliyor.
-   
-   Bunun yanında, OpenOffice.org, Firefox, Thunderbird, GNOME ve
-   KDE uygulamalarındaki Türkçe desteği daha da artırıldı. Bu
-   Bu sayede masaüstündeki tüm uygulamalar Türkçe kullanılabiliyor. 
-   Yaptıkları çalışmalar için KDE Türkiye, OpenOffice.org Türkiye,
-   GNOME Türkiye ve Mozilla Türkiye çalışma gruplarına teşekkür 
-   ederiz.
+4.13 Daha fazla Türkçe dil desteği 
 
-   4.14 Yeni derleme çiftliği
+Pardus 1.1 ile birlikte gelen Zemberek [3], özellikle teknik terimler
+başta olmak üzere çok daha fazla kelime tanıyabiliyor. Bunun
+yanında OpenOffice.org ve diğer uygulamalarda (Kmail, kopete vb)
+yanlış yazılan kelimelere sunduğu öneriler daha doğru bir
+sırada veriliyor.
 
-   Pardus 1.1 ile birlikte, hazırlanan tüm PİSİ paketleri bir derleme
-   çiftliğinde (build farm) tamamlanacak ve böylece kısa zamanda 
-   indirmeye hazır olacak. Derleme çiftliği, iki adet 
-   makineden oluşuyor ve tüm geliştiricilerin kullanımına açık 
-   bir şekilde işlemci gücü sağlıyor.
+Bunun yanında, OpenOffice.org, Firefox, Thunderbird, GNOME ve
+KDE uygulamalarındaki Türkçe desteği daha da artırıldı. Bu
+Bu sayede masaüstündeki tüm uygulamalar Türkçe kullanılabiliyor. 
+Yaptıkları çalışmalar için KDE Türkiye, OpenOffice.org Türkiye,
+GNOME Türkiye ve Mozilla Türkiye çalışma gruplarına teşekkür 
+ederiz.
 
-   4.15 İletişim 
+4.14 Yeni derleme çiftliği
 
-   Daha fazla bilgi almak için Pardus web sayfasını ziyaret edebilirsiniz:
+Pardus 1.1 ile birlikte, hazırlanan tüm PİSİ paketleri bir derleme
+çiftliğinde (build farm) tamamlanacak ve böylece kısa zamanda 
+indirmeye hazır olacak. Derleme çiftliği, iki adet 
+makineden oluşuyor ve tüm geliştiricilerin kullanımına açık 
+bir şekilde işlemci gücü sağlıyor.
 
-   http://www.pardus.org.tr
+4.15 İletişim 
 
-   Pardus e-posta listeleri, son kullanıcıların 
+Daha fazla bilgi almak için Pardus web sayfasını ziyaret edebilirsiniz:
+
+http://www.pardus.org.tr
+
+Pardus e-posta listeleri, son kullanıcıların 
 
  [2] bugs.pardus.org.tr
  [3] https://zemberek.dev.java.net/changelog.html
