@@ -1,0 +1,396 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\language turkish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Section
+
+Our Approach
+\layout Subsection
+
+Real problems need real languages
+\layout Standard
+
+Our main concern was not only the speed of initialization process, but maintaina
+bility of the code base.
+ Our previous experience with Gentoo init system while adding internationalizati
+on support showed that shell scripts are a maintainability nightmare.
+\layout Standard
+
+Why shell scripts, traditional batch processing tool of Unix, are not suitable
+ for this job? Answer lies in the commands used by this scripts.
+ Since shell scripting language doesn't have flexible and easy to use flow
+ control and data structures, most of these operations are offloaded to
+ other specialized tools like sed, awk, and in some cases perl.
+ One particular case of Gentoo was the env-update.sh script.
+ Its job was as simple as joining the values in /etc/env.d files and generating
+ a /etc/profile.env file.
+ Script was using another awk script, which in turn uses a special awk plugin
+ module written in C.
+\layout Standard
+
+All those special tools with their inefficiencies and their size turns the
+ system into a strange Rube Goldberg contraption.
+\layout Standard
+
+We decided to choose a single language, and use it everywhere in the initializat
+ion subsystem.
+ Low level languages like C or C++ are fast but also suffers from maintainabilit
+y problems.
+ Source codes become even bigger than shell scripts, and development time
+ significantly increases.
+\layout Standard
+
+In the case of Pardus, Python seemed the best choice, since we already use
+ it in many places like package build scripts, package manager, control
+ panel modules, installer program, and many other tools.
+\layout Standard
+
+It is a high level language with small and very clean source codes.
+ Standart library is full of useful modules.
+ Learning curve is easy, most of the developers in our team picked up the
+ language in a few days without prior experience.
+\layout Standard
+
+A simple boot test with init=/usr/bin/python showed that loading of Python
+ core and built-in modules takes 1.5-2 seconds
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+burda c library falan da yükleniyor
+\end_inset 
+
+.
+ From then on, only a few system tools (mount, udev, fsck, modprobe, etc),
+ and actual services (kdm, ssh, apache, etc) are loaded.
+ This is quite acceptable if you consider total time and disc IO saved.
+ Having Python cached in the memory also helps speeding up our other programs.
+\layout Standard
+
+Current code size is around 1500 lines.
+ Our previous Gentoo based system was more than 10000 lines
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+detaylý sayý ver
+\end_inset 
+
+.
+\layout Subsection
+
+If It's Not Broken, Don't Fix It
+\layout Standard
+
+Almost all boot time speeding up projects are obsessed with the idea of
+ replacing the 
+\begin_inset Quotes eld
+\end_inset 
+
+init
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ This is the parent of all processes.
+ Its primary role is to start other processes like console terminals and
+ actual initialization scripts as written in the file /etc/inittab.
+\layout Standard
+
+Since this is a very system level program, writing a replacement is tricky
+ and time consuming.
+ We couldn't think a real benefit.
+ Running services in paralel can be done from a script, directly managing
+ service processes is also much easier with a little smarter /var/run/*.pid
+ management.
+\layout Standard
+
+We just set our Python script in /etc/inittab and work on the real problem.
+\layout Subsection
+
+Service Scripts
+\layout Standard
+
+Basic jobs of initialization, i.e.
+ loading modules, starting udev device manager, mounting filesystems, updating
+ system clock are handled by a single Python script
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+http://svn.pardus.org.tr/uludag/trunk/comar/mudur/bin/mudur.py
+\end_inset 
+
+.
+ This saves loading time and makes it simple.
+\layout Standard
+
+Other service scripts should come with their packages.
+ Handling and paralel running of those scripts are handled by another Pardus
+ project called Çomar.
+\layout Standard
+
+Çomar (COnfiguration MAnageR)
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+http://svn.pardus.org.tr/uludag/trunk/comar/comar
+\end_inset 
+
+ is a system daemon.
+ It has a system model with classes and methods.
+ Installed software packages register their Çomar scripts (also written
+ in Python) to the classes on the model.
+\layout Standard
+
+In case of initialization system, every package with provides a service,
+ registers a script to the System.Service class.
+ This class has methods like start, stop, reload, info, etc.
+ Configuration tools can query this objects and control them with given
+ methods.
+ An access control system makes it possible to give control of services
+ to specific users or groups and prevent others from accessing them.
+\layout Standard
+
+Main startup script runs Çomar daemon, and when called with 
+\begin_inset Quotes eld
+\end_inset 
+
+default
+\begin_inset Quotes erd
+\end_inset 
+
+ runlevel by init, calls System.Service.ready method on Çomar, thus starting
+ all services in parallel.
+ Service scripts can call other scripts start methods for implementing dependenc
+ies, and wait for Çomar notification for handling restarts.
+\layout Standard
+
+Çomar keeps the state of services, so only services previously turned on
+ are started automatically.
+\layout Standard
+
+Çomar has many other features and classes used in Pardus system for network
+ management, user management, automatic configuration of graphic subsystem,
+ and remote management.
+ These are out of scope of this document.
+\layout Subsection
+
+Limiting Resource Is IO, Not CPU
+\layout Standard
+
+Harddisks are not necessarily slow, they can transfer data at the rates
+ of 20-30Mb/s, but their seek times are awful.
+ If you read data in a random manner, you can get quite a bad disk performance.
+\layout Standard
+
+It is possible to deal with this problem at the filesystem level [dipnot:
+ osx þeysi], but a huge work.
+ We can get away with simpler methods.
+\layout Standard
+
+First thing to consider is never leaving disc IO empty.
+ Parallellism helps greatly here.
+ Some operations like setting system clock from hardware clock, pauses the
+ system for a few seconds.
+ You can utilize those seconds by loading something else in the background.
+\layout Standard
+
+We also take a great care of not generating extra IO due to internal machinery
+ of startup scripts.
+ Shell based initialization systems generally use a lot of temporary files,
+ and generate lots of small IO operations themselves.
+\layout Standard
+
+Slowness of interpreted nature of Python is really insignificant here.
+ After the initial loading of Python interpreter, scripts run instantly.
+ Blocking happens only at calling external programs like modprobe and fsck.
+\layout Subsection
+
+Sleep Considered Harmful
+\layout Standard
+
+We have seen sleep commands in initialization systems and in many of service
+ scripts.
+ This is probably due to lacking shell primitives for properly checking
+ the service status.
+\layout Standard
+
+After starting a service, there is a short time which start function returns
+ but service itself is not really setup its communications ports (sockets,
+ files, etc).
+ Sleep statements are used to prevent such race conditions.
+ But this isn't a good thing to do.
+ Setup might take a bit longer than given time value, and if you give that
+ value higher, then you unnecessarily wait.
+\layout Standard
+
+Instead of using this unreliable method, we just wait for actual resource
+ (socket, file, etc), so never waste any extra time.
+\layout Standard
+
+This optimization alone saved almost 5-6 seconds on our initialization.
+\layout Section
+
+Components
+\layout Standard
+
+Pardus initialization system is composed of following programs:
+\layout Subsection
+
+/sbin/mudur.py
+\layout Standard
+
+Main startup script, called by init.
+ Handles basic initialization and shutdown.
+\layout Subsection
+
+/sbin/muavin.py
+\layout Standard
+
+Hotplug agent, called by udev.
+ Finds and loads the kernel driver for plugged hardware.
+ Also called by mudur.py for scanning available hardware and loading their
+ drivers (coldplug).
+\layout Subsection
+
+Çomar
+\layout Standard
+
+Configuration manager.
+ Pardus packages register their service scripts to Çomar.
+ Called by mudur.py for starting and stopping services.
+ User interfaces also use Çomar for managing services.
+\layout Subsection
+
+/bin/service
+\layout Standard
+
+Command line tool for managing services.
+\layout Subsection
+
+service-kga
+\layout Standard
+
+KDE control center panel for managing services.
+\layout Subsection
+
+Service Scripts
+\layout Standard
+
+Scripts themselves come with the Pardus packages and managed by Çomar.
+ Here is a sample script for kdm:
+\layout LyX-Code
+
+from comar.service import * import os
+\layout LyX-Code
+
+ 
+\layout LyX-Code
+
+serviceType = "local"
+\layout LyX-Code
+
+serviceDesc = "KDE Desktop Environment"
+\layout LyX-Code
+
+serviceDefault = "on"
+\layout LyX-Code
+
+ 
+\layout LyX-Code
+
+def configure():
+\layout LyX-Code
+
+    if not os.path.exists("/etc/X11/xorg.conf"):
+\layout LyX-Code
+
+        run("/sbin/xorg.py")
+\layout LyX-Code
+
+ 
+\layout LyX-Code
+
+def status():
+\layout LyX-Code
+
+    return checkDaemon("/var/run/kdm.pid")
+\layout LyX-Code
+
+ 
+\layout LyX-Code
+
+def start():
+\layout LyX-Code
+
+    call("System.Service.start", "acpid")
+\layout LyX-Code
+
+    call("System.Service.start", "dbus")
+\layout LyX-Code
+
+    configure()
+\layout LyX-Code
+
+    loadEnvironment()
+\layout LyX-Code
+
+    os.environ["XAUTHLOCALHOSTNAME"]=os.uname()[1]
+\layout LyX-Code
+
+    ret = run("/sbin/start-stop-daemon", "--start", "--quiet",
+\layout LyX-Code
+
+                     "--exe", "/usr/kde/3.5/bin/kdm")
+\layout LyX-Code
+
+    if ret == 0: 
+\layout LyX-Code
+
+        notify("System.Service.changed", "started")
+\layout LyX-Code
+
+ 
+\layout LyX-Code
+
+def stop():
+\layout LyX-Code
+
+    ret = run("/sbin/start-stop-daemon --stop --quiet --exe
+\layout LyX-Code
+
+                    /usr/kde/3.5/bin/kdm")
+\layout LyX-Code
+
+    if ret == 0:
+\layout LyX-Code
+
+        notify("System.Service.changed", "stopped")
+\the_end
