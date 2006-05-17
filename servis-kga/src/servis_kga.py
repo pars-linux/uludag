@@ -166,10 +166,6 @@ class MainApplication(programbase):
         self.handleComar(self.comar.read_cmd())
 
     def slotItemClicked(self, item):
-        if  item.type != "server":
-            self.mainwidget.pushSwitch.setEnabled(0)
-            self.mainwidget.pushSwitch2.setEnabled(0)
-            return
         self.mainwidget.pushSwitch.setEnabled(1)
         self.mainwidget.pushSwitch2.setEnabled(1)
         if item.status in ["off", "stopped"]:
