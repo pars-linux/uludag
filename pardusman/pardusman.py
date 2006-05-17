@@ -155,6 +155,15 @@ class MainWindow(QMainWindow):
         vb.setSpacing(3)
         self.setCentralWidget(vb)
         
+        hb = QHBox(vb)
+        hb.setSpacing(3)
+        hb.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
+        QLabel(_("Binary package folder:"), hb)
+        self.package_path = QLineEdit(hb)
+        self.package_path.setReadOnly(True)
+        
+        QPushButton(_("Browse..."), hb)
+        
         split = QSplitter(vb)
         
         self.comps = QListView(split)
@@ -197,6 +206,7 @@ class MainWindow(QMainWindow):
         f.close()
     
     def use_path(self, path):
+        self.package_path.setText(path)
         for pak in pisi_paks(path):
             self.parse_pisi(pak)
     
