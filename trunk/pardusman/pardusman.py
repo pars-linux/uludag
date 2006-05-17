@@ -21,8 +21,9 @@ def _(x):
 
 from qt import *
 
-packages = {}
-components = {}
+#
+# Utilities
+#
 
 def pisi_paks(path):
     paks = []
@@ -31,6 +32,24 @@ def pisi_paks(path):
             if fn.endswith(".pisi"):
                 paks.append(os.path.join(root, fn))
     return paks
+
+def size_fmt(size):
+    parts = []
+    if size == 0:
+        return "0"
+    while size > 0:
+        parts.append("%03d" % (size % 1000))
+        size /= 1000
+    parts.reverse()
+    tmp = ".".join(parts)
+    return tmp.lstrip("0")
+
+#
+# UI Classes
+#
+
+packages = {}
+components = {}
 
 
 class Component(QCheckListItem):
@@ -73,7 +92,7 @@ class Package(QCheckListItem):
                 self.deps.append(tag.firstChild().data())
     
     def text(self, column):
-        return (self.name, str(self.size), str(self.inst_size))[column]
+        return (self.name, size_fmt(self.size), size_fmt(self.inst_size))[column]
     
     def paintCell(self, painter, cg, column, width, align):
         c = cg.text()
@@ -187,8 +206,8 @@ class MainWindow(QMainWindow):
             self.label.setText(_("No packages selected."))
         else:
             self.label.setText(
-                _("%d package(s), %d byte archive, %d byte installed size.") %
-                (self.nr_paks, self.total, self.total_zip))
+                _("%d packages selected, %s bytes archive size, %s bytes installed size.") %
+                (self.nr_paks, size_fmt(self.total), size_fmt(self.total_zip)))
     
     def add_pak(self, pak):
         self.total += pak.size
@@ -210,6 +229,10 @@ class MainWindow(QMainWindow):
                 doc = iks.parseString(data)
                 Package(self, self.list, path, doc)
 
+
+#
+# Main program
+#
 
 def main():
     app = QApplication([])
