@@ -11,8 +11,7 @@
 
 import os
 import sys
-import zipfile
-import piksemel as iks
+import piksemel
 from pisi import zipfileext
 
 # no i18n yet
@@ -226,7 +225,7 @@ class MainWindow(QMainWindow):
         for info in zip.infolist():
             if info.filename == "metadata.xml":
                 data = zip.read(info.filename)
-                doc = iks.parseString(data)
+                doc = piksemel.parseString(data)
                 Package(self, self.list, path, doc)
 
 
