@@ -40,14 +40,9 @@ class Component(QCheckListItem):
         QCheckListItem.__init__(self, parent, self.name, QCheckListItem.CheckBox)
     
     def stateChange(self, bool):
-        if bool:
-            for pak in components[self.name]:
-                if packages.has_key(pak):
-                    packages[pak].stateChange(True)
-        else:
-            for pak in components[self.name]:
-                if packages.has_key(pak):
-                    packages[pak].stateChange(False)
+        for pak in components[self.name]:
+            if packages.has_key(pak):
+                packages[pak].stateChange(bool)
         
         self.main.list.triggerUpdate()
 
