@@ -65,7 +65,7 @@
         <widget class="KListView" row="1" column="0">
             <column>
                 <property name="text">
-                    <string></string>
+                    <string>1</string>
                 </property>
                 <property name="clickable">
                     <bool>true</bool>
@@ -77,17 +77,6 @@
             <column>
                 <property name="text">
                     <string>Service</string>
-                </property>
-                <property name="clickable">
-                    <bool>true</bool>
-                </property>
-                <property name="resizable">
-                    <bool>true</bool>
-                </property>
-            </column>
-            <column>
-                <property name="text">
-                    <string>Type</string>
                 </property>
                 <property name="clickable">
                     <bool>true</bool>
@@ -145,6 +134,8 @@
         </widget>
     </grid>
 </widget>
+<customwidgets>
+</customwidgets>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kpushbutton.h</includehint>

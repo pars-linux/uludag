@@ -75,26 +75,21 @@ class serviceItem(KListViewItem):
         KListViewItem.__init__(self, parent)
         self.service = package
         self.type = type
+        
+        self.setText(1, name)
 
         self.setState(state)
-
-        self.setText(1, name)
-        self.setText(2, i18n(type.title()))
-        self.setText(4, package)
-
-        if self.type != "server":
-            self.setEnabled(0)
 
     def setState(self, state='off'):
         self.status = state
         if state in ['on', 'started']:
             self.setPixmap(0, loadIcon('ledgreen'))
-            if state == "on":
-                self.setPixmap(3, loadIcon('button_ok', size=16))
         else:
             self.setPixmap(0, loadIcon('ledred'))
-            if state == "off":
-                self.setPixmap(3, loadIcon('button_cancel', size=16))
+        if state in ["on", "stopped"]:
+            self.setText(2, i18n("Yes"))
+        else:
+            self.setText(2, i18n("No"))
 
 
 class MainApplication(programbase):
@@ -139,8 +134,8 @@ class MainApplication(programbase):
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
         self.connect(self.mainwidget.listServices, SIGNAL('selectionChanged(QListViewItem*)'), self.slotItemClicked)
         self.connect(self.mainwidget.pushSwitch, SIGNAL('clicked()'), self.slotSwitch)
+        self.connect(self.mainwidget.pushSwitch2, SIGNAL('clicked()'), self.slotSwitch2)
         self.connect(self.mainwidget.pushHelp, SIGNAL('clicked()'), self.slotHelp)
-        self.connect(self.mainwidget.listServices, SIGNAL('doubleClicked(QListViewItem*, const QPoint&, int)'), self.slotItemDBClicked)
 
     def handleComar(self, reply):
         if reply[0] == self.comar.RESULT_START:
@@ -170,20 +165,21 @@ class MainApplication(programbase):
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
 
-    def slotItemDBClicked(self, item, pos, col):
-        if col == 3 and item and item.type == "server":
-            if item.status in ['on', 'stopped']:
-                self.comar.call_package('System.Service.setState', item.service, {"state": "off"})
-            else:
-                self.comar.call_package('System.Service.setState', item.service, {"state": "on"})
-            self.handleComar(self.comar.read_cmd())
-
     def slotItemClicked(self, item):
+        if  item.type != "server":
+            self.mainwidget.pushSwitch.setEnabled(0)
+            self.mainwidget.pushSwitch2.setEnabled(0)
+            return
         self.mainwidget.pushSwitch.setEnabled(1)
-        if item.status == 'stopped':
+        self.mainwidget.pushSwitch2.setEnabled(1)
+        if item.status in ["off", "stopped"]:
             self.mainwidget.pushSwitch.setText(i18n('Start'))
         else:
             self.mainwidget.pushSwitch.setText(i18n('Stop'))
+        if item.status in ["off", "started"]:
+            self.mainwidget.pushSwitch2.setText(i18n('Auto Start'))
+        else:
+            self.mainwidget.pushSwitch2.setText(i18n('Don\'t Auto Start'))
 
     def slotSwitch(self):
         self.mainwidget.pushSwitch.setEnabled(0)
@@ -192,6 +188,15 @@ class MainApplication(programbase):
             self.comar.call_package('System.Service.start', list.selectedItem().service)
         else:
             self.comar.call_package('System.Service.stop', list.selectedItem().service)
+
+    def slotSwitch2(self):
+        self.mainwidget.pushSwitch2.setEnabled(0)
+        list = self.mainwidget.listServices
+        item = list.selectedItem()
+        if item.status in ['on', 'stopped']:
+            self.comar.call_package('System.Service.setState', item.service, {"state": "off"})
+        else:
+            self.comar.call_package('System.Service.setState', item.service, {"state": "on"})
 
     def slotHelp(self):
         self.helpwin = HelpDialog(self)
