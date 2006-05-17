@@ -22,6 +22,13 @@ class serviceWidget(QWidget):
         self.pushSwitch.setEnabled(0)
 
         layout2.addWidget(self.pushSwitch)
+        
+        self.pushSwitch2 = KPushButton(self, "pushSwitch2")
+        self.pushSwitch2.setText(i18n("Auto Start"))
+        self.pushSwitch2.setEnabled(0)
+
+        layout2.addWidget(self.pushSwitch2)
+
         spacer1 = QSpacerItem(355, 16, QSizePolicy.Expanding, QSizePolicy.Minimum)
         layout2.addItem(spacer1)
 
@@ -35,15 +42,11 @@ class serviceWidget(QWidget):
         self.listServices = KListView(self, "listServices")
         self.listServices.addColumn("")
         self.listServices.addColumn(i18n("Service"))
-        self.listServices.addColumn(i18n("Type"))
         self.listServices.addColumn(i18n("Auto Start"))
-        self.listServices.addColumn(i18n("Package"))
         self.listServices.setAllColumnsShowFocus(1)
         self.listServices.setFullWidth(1)
         self.listServices.setItemsMovable(0)
         self.listServices.setAlternateBackground(QColor(238, 246, 255))
-        self.listServices.setColumnAlignment(2, Qt.AlignHCenter)
-        self.listServices.setColumnAlignment(3, Qt.AlignHCenter)
 
         serviceFormLayout.addWidget(self.listServices, 1, 0)
 

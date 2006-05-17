@@ -20,7 +20,7 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/serviceWidget.ui', 'src/serviceWidget.py', 'src/servis_kga.py',
+    application_data = ['src/serviceWidget.py', 'src/servis_kga.py',
                         ('/usr/kde/3.5/share/applications/kde/', ['src/servis_kga-desk.desktop']),
                         ('/usr/kde/3.5/share/icons/default.kde/128x128/apps', ['src/servis_kga.png']),
                         'help'],
