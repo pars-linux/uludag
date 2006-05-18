@@ -91,6 +91,18 @@ class serviceItem(KListViewItem):
         else:
             self.setText(2, i18n("No"))
 
+    def compare(self, other, col, asc):
+        s1 = self.status in ["on", "started"]
+        s2 = other.status in ["on", "started"]
+        if col == 0:
+            if s1 == s2:
+                return 0
+            elif s1 > s2:
+                return 1
+            else:
+                return -1
+        else:
+            return QListViewItem.compare(self, other, col, asc)
 
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
