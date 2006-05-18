@@ -12,7 +12,8 @@
 import os
 import sys
 import piksemel
-from pisi import zipfileext
+
+import browser
 
 # no i18n yet
 def _(x):
@@ -21,120 +22,8 @@ def _(x):
 from qt import *
 
 #
-# Utilities
-#
-
-def pisi_paks(path):
-    paks = []
-    for root, dirs, files in os.walk(path):
-        for fn in files:
-            if fn.endswith(".pisi"):
-                paks.append(os.path.join(root, fn))
-    return paks
-
-def size_fmt(size):
-    parts = []
-    if size == 0:
-        return "0"
-    while size > 0:
-        parts.append("%03d" % (size % 1000))
-        size /= 1000
-    parts.reverse()
-    tmp = ".".join(parts)
-    return tmp.lstrip("0")
-
-#
 # UI Classes
 #
-
-packages = {}
-components = {}
-
-
-class Component(QCheckListItem):
-    def __init__(self, main, parent, name):
-        self.main = main
-        self.name = name
-        QCheckListItem.__init__(self, parent, self.name, QCheckListItem.CheckBox)
-    
-    def stateChange(self, bool):
-        for pak in components[self.name]:
-            if packages.has_key(pak):
-                packages[pak].stateChange(bool)
-        
-        self.main.list.triggerUpdate()
-
-
-class Package(QCheckListItem):
-    def __init__(self, main, parent, filename, metaxml):
-        self.main = main
-        self.filename = filename
-        pak = metaxml.getTag("Package")
-        self.name = pak.getTagData("Name")
-        QCheckListItem.__init__(self, parent, self.name, QCheckListItem.CheckBox)
-        if not packages.has_key(self.name):
-            packages[self.name] = self
-        self.size = os.stat(filename).st_size
-        self.partof = pak.getTagData("PartOf")
-        if components.has_key(self.partof):
-            components[self.partof].append(self.name)
-        else:
-            components[self.partof] = [ self.name ]
-            Component(self.main, self.main.comps, self.partof)
-        self.inst_size = int(pak.getTagData("InstalledSize"))
-        self.summary = pak.getTagData("Summary")
-        self.mark = 0
-        self.deps = []
-        deps = pak.getTag("RuntimeDependencies")
-        if deps:
-            for tag in deps.tags():
-                self.deps.append(tag.firstChild().data())
-    
-    def text(self, column):
-        return (self.name, size_fmt(self.size), size_fmt(self.inst_size))[column]
-    
-    def paintCell(self, painter, cg, column, width, align):
-        c = cg.text()
-        if self.mark:
-            cg.setColor(QColorGroup.Text, Qt.red)
-        QCheckListItem.paintCell(self, painter, cg, column, width, align)
-        cg.setColor(QColorGroup.Text, c)
-    
-    def stateChange(self, bool):
-        if bool:
-            if self.mark == 0:
-                self.main.add_pak(self)
-            self.mark += 1
-            for pak in self.deps:
-                if packages.has_key(pak):
-                    packages[pak].stateChange(True)
-        else:
-            if self.mark == 1:
-                self.main.rem_pak(self)
-            self.mark -= 1
-            for pak in self.deps:
-                if packages.has_key(pak):
-                    packages[pak].stateChange(False)
-        
-        self.main.list.triggerUpdate()
-    
-    def compare(self, other, col, ascend):
-        if col == 0:
-            return QListViewItem.compare(self, other, col, ascend)
-        elif col == 1:
-            if self.size < other.size:
-                return -1
-            elif self.size == other.size:
-                return 0
-            else:
-                return 1
-        elif col == 2:
-            if self.inst_size < other.inst_size:
-                return -1
-            elif self.inst_size == other.inst_size:
-                return 0
-            else:
-                return 1
 
 
 class MainWindow(QMainWindow):
@@ -150,47 +39,9 @@ class MainWindow(QMainWindow):
         file_.insertSeparator()
         file_.insertItem("Quit", self.quit, self.CTRL + self.Key_Q)
         
-        vb = QVBox(self)
-        vb.setMargin(6)
-        vb.setSpacing(3)
-        self.setCentralWidget(vb)
-        
-        hb = QHBox(vb)
-        hb.setSpacing(3)
-        hb.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
-        QLabel(_("Binary package folder:"), hb)
-        self.package_path = QLineEdit(hb)
-        self.package_path.setReadOnly(True)
-        
-        QPushButton(_("Browse..."), hb)
-        
-        split = QSplitter(vb)
-        
-        self.comps = QListView(split)
-        self.comps.addColumn(_("Component"))
-        self.comps.setResizeMode(QListView.AllColumns)
-        self.comps.setColumnWidthMode(0, QListView.Maximum)
-        self.comps.setSorting(0)
-        split.setResizeMode(self.comps, QSplitter.FollowSizeHint)
-        
-        self.list = QListView(split)
-        self.list.addColumn(_("Package"))
-        self.list.addColumn(_("Archive Size"))
-        self.list.addColumn(_("Installed Size"))
-        self.list.setResizeMode(QListView.AllColumns)
-        self.list.setColumnAlignment(1, Qt.AlignRight)
-        self.list.setColumnAlignment(2, Qt.AlignRight)
-        self.list.setColumnWidthMode(0, QListView.Maximum)
-        self.list.setColumnWidthMode(1, QListView.Maximum)
-        self.list.setColumnWidthMode(2, QListView.Maximum)
-        split.setResizeMode(self.list, QSplitter.Stretch)
-        
-        self.label = QLabel(vb)
-        self.label.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
-        self.total = 0
-        self.total_zip = 0
-        self.nr_paks = 0
-        self.update_label()
+        self.psel = browser.PackageSelector(self)
+        self.psel.setMargin(6)
+        self.setCentralWidget(self.psel)
     
     def quit(self):
         sys.exit(0)
@@ -206,37 +57,10 @@ class MainWindow(QMainWindow):
         f.close()
     
     def use_path(self, path):
-        self.package_path.setText(path)
+        self.psel.browse_packages(path)
+        return
         for pak in pisi_paks(path):
             self.parse_pisi(pak)
-    
-    def update_label(self):
-        if self.nr_paks == 0:
-            self.label.setText(_("No packages selected."))
-        else:
-            self.label.setText(
-                _("%d packages selected, %s bytes archive size, %s bytes installed size.") %
-                (self.nr_paks, size_fmt(self.total), size_fmt(self.total_zip)))
-    
-    def add_pak(self, pak):
-        self.total += pak.size
-        self.total_zip += pak.inst_size
-        self.nr_paks += 1
-        self.update_label()
-    
-    def rem_pak(self, pak):
-        self.total -= pak.size
-        self.total_zip -= pak.inst_size
-        self.nr_paks -= 1
-        self.update_label()
-    
-    def parse_pisi(self, path):
-        zip = zipfileext.ZipFileExt(path, 'r')
-        for info in zip.infolist():
-            if info.filename == "metadata.xml":
-                data = zip.read(info.filename)
-                doc = piksemel.parseString(data)
-                Package(self, self.list, path, doc)
 
 
 #
