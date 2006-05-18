@@ -23,7 +23,6 @@
                 <argument>state</argument>
             </method>
             <method name="getState"/>
-            <method name="getID"/>
         </class>
     </group>
 </comarModel>
