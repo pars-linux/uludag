@@ -115,7 +115,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.parent.command.swapRepos(str(self.repoList.index(item.text(0))),str(self.repoList.index(sibling.text(0))))
         
     def processNewRepo(self):
-        repoName = str(self.repo.repoName.text())
+        repoName = unicode(self.repo.repoName.text())
         repoAddress = str(self.repo.repoAddress.text())
 
         if not repoAddress.endswith("xml"):
