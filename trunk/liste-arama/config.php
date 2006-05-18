@@ -7,7 +7,7 @@ $config['core']['email']		= "admins@pardus.org.tr";
 $config['core']['resultperpage']	= "10";
 $config['core']['theme']		= "fasafiso";
 $config['core']['temp']			= "tmp";
-$config['core']['licensekey']		= "7vyRoFxQFHIrPAqPJPKEndE9wRJuhjY+";
+$config['core']['licensekey']		= "visit http://www.google.com/apis/";
 
 // Smarty Config
 $config['smarty']['libdir']		= "3rdparty/smarty";
