@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.psel)
     
     def quit(self):
-        sys.exit(0)
+        qApp.quit()
     
     def save_list(self):
         s = QFileDialog.getSaveFileName("package.list")
@@ -58,9 +58,6 @@ class MainWindow(QMainWindow):
     
     def use_path(self, path):
         self.psel.browse_packages(path)
-        return
-        for pak in pisi_paks(path):
-            self.parse_pisi(pak)
 
 
 #
