@@ -89,240 +89,143 @@ class MainApplication(programbase):
         # Icons
         mainwidget.pixmapFW.setPixmap(loadIcon("guvenlik_kga", size=48))
 
-        icon = lambda x: QPixmap(locate("data", "guvenlik_kga/%s" % x))
-        mainwidget.pixmapIncoming.setPixmap(icon("incoming.png"))
-        mainwidget.pixmapICMP.setPixmap(icon("icmp.png"))
-        mainwidget.pixmapLogs.setPixmap(icon("logs.png"))
-
-        #self.connect(mainwidget.pushCancel, SIGNAL("clicked()"), self, SLOT("close()"))
-        #self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.saveAll)
-        #self.connect(mainwidget.pushHelp,SIGNAL("clicked()"),self.showHelp)
-
         # Signals - Firewall Status
         self.connect(mainwidget.pushStatus, SIGNAL("clicked()"), self.slotStatus)
-
-        self.connect(mainwidget.checkWFS, SIGNAL("clicked()"), self.slotWFS)
-        self.connect(mainwidget.checkMail, SIGNAL("clicked()"), self.slotMail)
-        self.connect(mainwidget.checkFTP, SIGNAL("clicked()"), self.slotFTP)
-        self.connect(mainwidget.checkRemote, SIGNAL("clicked()"), self.slotRemote)
-        self.connect(mainwidget.checkFS, SIGNAL("clicked()"), self.slotFS)
-        
-        # Signals - Incoming connections
-        self.connect(mainwidget.pushAdd, SIGNAL("clicked()"), self.slotAdd)
-        self.connect(mainwidget.pushDelete, SIGNAL("clicked()"), self.slotDelete)
-
-        # Signals - Other Features
-        self.connect(mainwidget.checkICMP, SIGNAL("clicked()"), self.slotICMP)
 
         # COMAR
         self.comar = comar.Link()
 
-        # Get FW state
-        self.comar.call("Net.Filter.getState")
-        if self.comar.read_cmd()[2] == "on":
-            mainwidget.pushStatus.setText(i18n("&Stop Firewall"))
-            mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is running</font></b>"))
-            mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
-            mainwidget.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming connections"))
-        else:
-            mainwidget.pushStatus.setText(i18n("&Start Firewall"))
-            mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is not running</font></b>"))
-            mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
-            mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
+        # COMAR - Notify List
+        self.comar.ask_notify('Net.Filter.changed', id=1)
+        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
+
+        # Signals
+        self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
+        self.connect(mainwidget.pushCancel, SIGNAL("clicked()"), self, SLOT("close()"))
+        self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.slotOk)
+        self.connect(mainwidget.pushApply,SIGNAL("clicked()"),self.slotApply)
 
         # Load FW rules
-        self.rules = {"in": {}, "out": {}}
-        self.comar.call("Net.Filter.getRules")
-        rules = eval(self.comar.read_cmd()[2])
-
-        for rule in rules: 
-            no = rule["no"]
-            chk = lambda x: rule.get(x, "")
-            # Outgoing connections
-            name = chk("description").split(":")[1]
-            if name in ["WFS", "Mail", "FTP", "Remote", "FS"]:
-                eval("mainwidget.check%s" % name).setChecked(1)
-                self.rules["out"][name] = self.rules["out"].get(name, []) + [no]
-            # Incoming connections - Allowed ports
-            elif chk("description").startswith("guvenlik_kga:in:"):
-                self.rules["in"][rule["dport"]] = self.rules["in"].get(rule["dport"], []) + [no]
-                if len(self.rules["in"][rule["dport"]]) == 1:
-                    item = QListViewItem(mainwidget.listPorts, rule["dport"], chk("description")[16:])
-                    mainwidget.listPorts.insertItem(item)
-                    # Show warning message
-                    mainwidget.textWarning.setEnabled(1)
-            # Incoming connections - Magic Reject-Else Rule
-            elif chk("description") == "guvenlik_kga:RejectElse":
-                self.rules["in"]["R"] = self.rules["in"].get("R", []) + [no]
-            # ICMP/8 (ping)
-            elif chk("description") == "guvenlik_kga:icmp":
-                mainwidget.checkICMP.setChecked(1)
-                self.rules["icmp"] = no
-
-    def addRule(self, **rule):
-        """Add rule"""
-        self.comar.call("Net.Filter.getID")
-        rule["no"] = self.comar.read_cmd()[2]
-
-        self.comar.call("Net.Filter.setRule", rule)
-        return self.comar.read_cmd()
+        self.rules = {"in": {}, "out": {}, "other": {}}
+        self.comar.call("Net.Filter.getRules", id=2)
+        self.handleComar(self.comar.read_cmd())
+        self.no = 0
         
-    def removeRule(self, no):
-        self.comar.call("Net.Filter.unsetRule", {"no": no})
-        self.comarError(self.comar.read_cmd())
+        # Get FW state
+        self.comar.call("Net.Filter.getState", id=3)
+        self.handleComar(self.comar.read_cmd())
+        self.state = 1
 
-    def comarError(self, res):
-        if res[0] == self.comar.RESULT:
-            return
-        if res[0] == self.comar.DENIED:
-            KMessageBox.error(mainwidget, i18n("You are not allowed to do this operation."), i18n("Access Denied"))
-        elif res[0] == self.comar.FAIL:
-            if res[2] == "Invalid port":
-                KMessageBox.error(mainwidget, i18n("Port number is in invalid format."), i18n("Failed"))
-            else:
-                KMessageBox.error(mainwidget, i18n("Unable to complete operation."), i18n("Failed"))
-        else:
-            KMessageBox.error(mainwidget, i18n("Unable to execute method."), i18n("Script Error"))
+    def slotComar(self, sock):
+        self.handleComar(self.comar.read_cmd())
 
-    def slotAdd(self):
-        if not mainwidget.linePort.text() or not mainwidget.lineDescription.text():
-            KMessageBox.error(mainwidget, i18n("Both port number and description required."), i18n("Error"))
-            return
-        if str(mainwidget.linePort.text()) in self.rules["in"]:
-            KMessageBox.error(mainwidget, i18n("Port number is already in list."), i18n("Error"))
-            return
-            
-        res = self.addRule(dport=mainwidget.linePort.text(),
-                           description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
-                           protocol="tcp",
-                           direction="in",
-                           action="Accept",
-                           log=0)
-
-        if res[0] == self.comar.RESULT:
-            self.rules["in"][str(mainwidget.linePort.text())] = [res[2]]
-        else:
-            self.comarError(res)
-            return
-
-        res = self.addRule(dport=mainwidget.linePort.text(),
-                           description="guvenlik_kga:in:%s" % mainwidget.lineDescription.text(),
-                           protocol="udp",
-                           direction="in",
-                           action="Accept",
-                           log=0)
-
-        self.rules["in"][str(mainwidget.linePort.text())] += [res[2]]
-        
-        # Add to list
-        item = QListViewItem(mainwidget.listPorts, mainwidget.linePort.text(), mainwidget.lineDescription.text())
-        mainwidget.listPorts.insertItem(item)
-        mainwidget.linePort.setText("")
-        mainwidget.lineDescription.setText("")
-
-        # Re-Insert "Reject Else" rules
-        if "R" in self.rules["in"]:
-            for i in self.rules["in"]["R"]:
-                self.removeRule(i)
-        self.rules["in"]["R"] = []
-        # TCP
-        res = self.addRule(description="guvenlik_kga:RejectElse",
-                           protocol="tcp",
-                           type="connections",
-                           direction="in",
-                           action="Reject")
-        self.rules["in"]["R"] += [res[2]]
-        # UDP
-        #res = self.addRule(description="guvenlik_kga:RejectElse",
-        #                   protocol="udp",
-        #                   direction="Iin",
-        #                   action="Reject")
-        #self.rules["in"]["R"] += [res[2]]
-
-        # Show warning message
-        mainwidget.textWarning.setEnabled(1)
-
-    def slotDelete(self):
-        item = mainwidget.listPorts.selectedItem()
-        if item:
-            for i in self.rules["in"][str(item.text(0))]:
-                self.removeRule(i)
-            del self.rules["in"][str(item.text(0))]
-            mainwidget.listPorts.takeItem(item)
-            if len(self.rules["in"]) == 1:
-                for i, j in enumerate(self.rules["in"]["R"]):
-                    self.removeRule(j)
-                self.rules["in"]["R"] = []
-
-                # Hide warning message
-                mainwidget.textWarning.setEnabled(0)
-
-    def slotStatus(self):
-        self.comar.call("Net.Filter.getState")
-        if self.comar.read_cmd()[2] == "on":
-            self.comar.call("Net.Filter.setState", {"state": "off"})
-            mainwidget.pushStatus.setText(i18n("&Start Firewall"))
-            mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is not running</font></b>"))
-            mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
-            mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
-        else:
-            self.comar.call("Net.Filter.setState", {"state": "on"})
+    def setStatus(self, status):
+        if status == "on":
             mainwidget.pushStatus.setText(i18n("&Stop Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
             mainwidget.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming connections"))
-        self.comar.read_cmd()
-
-    def slotOut(self, chk, name, port):
-        if chk.isChecked():
-            self.rules["out"][name] = []
-            res = self.addRule(protocol="tcp",
-                               dport=port,
-                               description="guvenlik_kga:%s" % name,
-                               direction="out",
-                               action="Reject",
-                               log=1)
-            self.rules["out"][name] += [res[2]]
-            res = self.addRule(protocol="udp",
-                               dport=port,
-                               description="guvenlik_kga:%s" % name,
-                               direction="out",
-                               action="DROP",
-                               log=1)
-            self.rules["out"][name] += [res[2]]
         else:
-            for i, j in enumerate(self.rules["out"][name]):
-                self.removeRule(j)
-            self.rules["out"][name] = []
-            
-    def slotWFS(self):
-        self.slotOut(mainwidget.checkWFS, "WFS", "139")
-        
-    def slotMail(self):
-        self.slotOut(mainwidget.checkMail, "Mail", "25,110")
+            mainwidget.pushStatus.setText(i18n("&Start Firewall"))
+            mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is not running</font></b>"))
+            mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
+            mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
 
-    def slotFTP(self):
-        self.slotOut(mainwidget.checkFTP, "FTP", "21")
+    def handleComar(self, reply):
+        if reply[0] == self.comar.NOTIFY:
+            # State changed
+            info = reply[2].split("\n")
+            if info[2] == "state":
+                self.state = info[3]
+                self.setStatus(info[3])
+        elif reply[0] == self.comar.RESULT:
+            if reply[1] == 2:
+                # Get Rules
+                rules = eval(reply[2])
+                for rule in rules: 
+                    no = rule["no"]
+                    desc = rule.get("description", "")
+                    if not desc.startswith("filter:"):
+                        continue
+                    filter, dir, name = desc.split(":")
+                    if dir in ["in", "out"]:
+                        if name in ["DNS", "Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
+                            eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
+                            self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
+                        elif name == "reject":
+                            self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
+                    elif dir == "other" and name == "ICMP":
+                        eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
+                        self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
+                
+                if "reject" not in self.rules["in"]:
+                    pass
+                    #self.addRule()
+                if "reject" not in self.rules["out"]:
+                    pass
+                    #self.addRule()
+            elif reply[1] == 3:
+                # Get State
+                self.setStatus(reply[2])
 
-    def slotRemote(self):
-        self.slotOut(mainwidget.checkRemote, "Remote", "22")
-
-    def slotFS(self):
-        # FIXME: p2p ports required
-        self.slotOut(mainwidget.checkFS, "FS", "30000:40000")
-
-    def slotICMP(self):
-        if mainwidget.checkICMP.isChecked():
-            res = self.addRule(protocol="icmp",
-                               type="8",
-                               description="guvenlik_kga:icmp",
-                               direction="in",
-                               action="Reject",
-                               log=1)
-            self.rules["icmp"] = res[2]
+    
+    def slotStatus(self):
+        if self.state == "on":
+            self.comar.call("Net.Filter.setState", {"state": "off"})
         else:
-            self.removeRule(self.rules["icmp"])
-            del self.rules["icmp"]
+            self.comar.call("Net.Filter.setState", {"state": "on"})
+
+    def slotOk(self):
+        self.saveAll()
+        self.close()
+
+    def slotApply(self):
+        self.saveAll()
+
+    def saveAll(self):
+        for dir in ["in", "out", "other"]:
+            s1 = set(self.rules[dir].keys())
+            s2 = []
+
+            if dir in ["in", "out"]:
+                for name in ["DNS", "Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
+                    if eval("mainwidget.check%s%s" % (dir, name)).isChecked():
+                        s2.append(name)
+            elif dir == "other":
+                name = "ICMP"
+                if eval("mainwidget.check%s%s" % (dir, name)).isChecked():
+                    s2.append(name)
+            s2 = set(s2)
+
+            for name in s1 - s2:
+                for no in self.rules[dir][name]:
+                    self.removeRule(no)
+                del self.rules[dir][name]
+                print "del", dir, name, no
+            for name in s2 - s1:
+                no = self.addRule(dir, name)
+                self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
+                print "add", dir, name, no
+
+    def addRule(self, dir, name):
+        pad = lambda x: str(x).rjust(5).replace(" ", "0")
+        no = "filter:%s" % pad(self.no)
+        self.no += 1
+        return no
+
+    """
+    def setRule(self, **rule):
+        pad = lambda x: str(x).rjust(5).replace(" ", "0")
+        rule["no"] = "filter:%s" % pad(self.no)
+        self.no += 1
+        self.comar.call("Net.Filter.setRule", rule)
+        self.handleComar(self.comar.read_cmd())
+        return rule["no"]
+    """
+
+    def removeRule(self, no):
+        self.comar.call("Net.Filter.unsetRule", {"no": no})
+        self.handleComar(self.comar.read_cmd())
 
     def __del__(self):
         pass

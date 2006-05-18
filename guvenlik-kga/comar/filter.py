@@ -128,10 +128,8 @@ def unsetRule(no):
 
 def getRules():
     """Get all rules"""
-    inst = instances("no")
-    inst.sort(key=atoi)
     rules = []
-    for i in inst:
+    for i in instances("no"):
         rules.append(get_instance("no", i))
     return rules
 
@@ -151,17 +149,10 @@ def setState(state):
     if getState() == state:
         return
     
-    # What to do
     action = ["D", "A"][state == "on"]
     for rule in getRules():
         cmds = buildRule(action, rule)
         for c in cmds:
             run(c)
 
-
-def getID():
-    inst = instances("no")
-    if inst:
-        inst.sort(key=int, reverse=True)
-        return str(int(inst[0]) + 1)
-    return "1"
+    notify("Net.Filter.changed", "state\n%s" % state)
