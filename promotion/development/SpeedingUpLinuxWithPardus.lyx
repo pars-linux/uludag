@@ -3,10 +3,11 @@
 \textclass article
 \language turkish
 \inputencoding auto
-\fontscheme default
+\fontscheme pslatex
 \graphics default
 \paperfontsize default
-\papersize Default
+\spacing single 
+\papersize a4paper
 \paperpackage a4
 \use_geometry 0
 \use_amsmath 0
@@ -15,7 +16,7 @@
 \paperorientation portrait
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation indent
+\paragraph_separation skip
 \defskip medskip
 \quotes_language english
 \quotes_times 2
@@ -23,9 +24,88 @@
 \papersides 1
 \paperpagestyle default
 
+\layout Title
+
+Speeding Up Linux One Step Further With Pardus
+\layout Author
+
+Gürer Özen, Görkem Çetin
 \layout Section
 
-Our Approach
+Problem
+\layout Standard
+
+Distrowatch.com lists more than 400 distributions, most of which are used
+ for everyday lives at home.
+ Similarly, most, if not all, of the distros listed have been derived from
+ other major distributions such as Slackware, Fedora, OpenSUSE and such.
+ This gives developers a high degree of freedom and re-use of existing component
+s, i.e a stable base system, package repositories, a great multitude of patches
+ and security fixes.
+ A recent study [1] has enabled for Linux newcomers to have an idea about
+ the roots of distributions.
+\layout Standard
+
+While there's always a hot, ongoing debate about which package manager to
+ use, Pardus developers have chosen not to rely on any package managers
+ and decided to roll a brand new one.
+ This may seem like a re-invention of the wheel, however one of the core
+ developers, Çaðlar Onur, claims that a new approach to build packages with
+ PiSi gives extreme flexibility for packagers.
+ The new package manager, PiSi (packages installed successfully as intended)
+ is completely written in Python.
+ While PiSi deserves a full article of its own, we'll be focusing on a new
+ approach Pardus presents, i.e a new init framework called Mudur which primarily
+ focuses on notoriously slow and complex initialization system of Linux.
+\layout Standard
+
+Before starting to dig into Mudur, let's investigate how other technologies
+ lead to a better init system.
+ IBM has initially worked on a parallelization model which shows how to
+ improve the boot speed of a Linux system without compromising usability.
+ The technique merely involves parallelization of services during boot time
+ and reduce startup time of the whole system.
+ Probably all readers interested in init systems have an in-depth knowledge
+ about Initng, which dramatically decreases the boot up duration and already
+ used by some distributions.
+ Initng is a full replacement of the old and in many ways deprecated sysvinit
+ tool.
+ It is designed to significantly increase the speed of booting a unix-compatible
+ system by starting processes asynchronously.
+ Last but not least, another alternative depinit has been driving attention
+ for quite some time, with the ability to handle parallel execution, dependencie
+s, true roll-back, pipelines, improved signaling and unmounting filesystems
+ on shutdown.
+ According to the developers, it's somehow experimental and requires some
+ time to incorporate an existing system.
+\layout Standard
+
+While Linux is blamed to boot slower for some time, the work ongoing listed
+ above will lead to faster boot times in conjuction with steady and consistent
+ advances in CPU speeds, cache improvements and dropping of hard disk seek
+ times.
+ Believe it or not, this has been a serious issue in other operating systems
+ like MacOS X or MS Windows.
+ For example, in Mac OS X v10.4 Tiger, Apple introduced a new system startup
+ program called launchd.
+ The launchd daemon takes over many tasks from cron, xinetd, mach_init,
+ and init, which are UNIX programs that traditionally have handled system
+ initialization, called systems scripts, run startup items, and generally
+ prepared the system for the user [6].
+ Likewise, Windows uses BootCache, Hot File Clustering and similar techniques
+ to boost performance.
+\layout Section
+
+What Mudur brings
+\layout Standard
+
+Mudur has been developed for Pardus, so it's probably not available for
+ other distributions immediately.
+ Since Mudur uses completely rewritten service scripts, it needs a genuine
+ modification of the files read after init is executed.
+ In this manner, Mudur resembles that of initng and depinit.
+ Developers need to work hard in order to see Mudur, but it's worth the
+ effort and time spent.
 \layout Subsection
 
 Real problems need real languages
@@ -393,4 +473,7 @@ def stop():
 \layout LyX-Code
 
         notify("System.Service.changed", "stopped")
+\layout Section
+
+Benchmarks
 \the_end
