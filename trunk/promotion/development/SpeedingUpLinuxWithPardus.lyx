@@ -123,7 +123,8 @@ Mudur has been developed for Pardus, so it's probably not available for
  modification of the files read after init is executed.
  In this manner, Mudur resembles that of initng and depinit.
  In this chapter, we are going to summarize our approach, and explain why
- this is a better solution for our problems.
+ this is a better solution for init based speed, configurability and maintainabi
+lity problems.
 \layout Subsection
 
 Real problems need real languages
@@ -159,11 +160,21 @@ Low level languages like C or C++ are fast but also suffers from maintainability
  significantly increases.
 \layout Standard
 
-Among the high level languages, Python seemed the best choice, since we
- already use it in many places like package build scripts, package manager,
- control panel modules, and installer program.
- It has small and very clean source codes.
- Standart library is full of useful modules.
+Among the high level languages, Python seemed to be the best choice, since
+ we already use it in many places like package build scripts, package manager,
+ control panel modules, and installer program YALI
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+YALI is the installer of Pardus Linux.
+ More information on http://www.pardus.org.tr/eng/projeler/yali
+\end_inset 
+
+.
+ ÇOMAR is small and has clean source code.
+ Standard library is full of useful modules.
  Learning curve is easy, most of the developers in our team picked up the
  language in a few days without prior experience.
 \layout Standard
@@ -187,7 +198,7 @@ This time also includes basic system libraries (glibc, pthread, etc) used
 \layout Standard
 
 Current code size is around 1500 lines.
- Our previous Gentoo based system was more than 10000 lines
+ Our previous (Pardus 1.0) Gentoo based system was more than 10000 lines
 \begin_inset Foot
 collapsed true
 
@@ -290,8 +301,8 @@ Harddisks are not necessarily slow, they can transfer data at the rates
 \layout Standard
 
 It is possible to deal with this problem at the filesystem level [dipnot:
- osx þeysi], but a huge work.
- We can get away with simpler methods.
+ osx þeysi], but deserves quite a huge work.
+ Luckily, we can benefit from simpler methods.
 \layout Standard
 
 First thing to consider is never leaving disc IO empty.
@@ -322,7 +333,7 @@ We have seen sleep commands in initialization systems and in many of service
 \layout Standard
 
 After starting a service, there is a short time which start function returns
- but service itself is not really setup its communications ports (sockets,
+ but service itself does not really sets its communications ports (sockets,
  files, etc).
  Sleep statements are used to prevent such race conditions.
  But this isn't a good thing to do.
@@ -496,7 +507,8 @@ You can't improve what you can't measure.
  which generates detailed graphics.
  Resource utilization and process information are collected during the boot
  process and are later rendered in a chart.
- A typical Pardus boot on a P4 2.8GHz, 1GB RAM, ??? IDE is shown below:
+ A typical Pardus boot sequence on a P4 2.8GHz, 1GB RAM, ??? IDE is shown
+ below:
 \layout Standard
 
 ***buraya iþ yerinde bootchart datasýný eps render edip koy, png den daha
