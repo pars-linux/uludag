@@ -1,3 +1,3 @@
 #!/bin/sh
 
-make -f ../tasma/admin/Makefile.common
+make -f admin/Makefile.common
