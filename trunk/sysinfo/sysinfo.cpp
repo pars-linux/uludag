@@ -148,7 +148,8 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     // common folders
     sysInfo += "<h2 id=\"dirs\">" + i18n( "Common Folders" ) + "</h2>";
     sysInfo += "<ul>";
-    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( KGlobalSettings::documentPath() ) + i18n( "My Documents" ) + "</a></li>";
+    // We don't have a separate Documents directory in Pardus
+    //    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( KGlobalSettings::documentPath() ) + i18n( "My Documents" ) + "</a></li>";
     sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( QDir::homeDirPath() ) + i18n( "My Home Folder" ) + "</a></li>";
     sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( QDir::rootDirPath() ) + i18n( "Root Folder" ) + "</a></li>";
     sysInfo += "<li><a href=\"remote:/\">" + i18n( "Network Folders" ) + "</a></li>";
