@@ -33,7 +33,7 @@ static int checkAndPrint( ZSConn& zemberek, const string str, int offset )
         cout << "*" << endl;
         break;
     case Z_FALSE:
-        cout << "# " << zstr.str() << " 0" << endl;
+        cout << "# " << zstr.str() << " " << zstr.offset() << endl;
         break;
     case Z_SUGGESTION:
         cout << "& " <<
