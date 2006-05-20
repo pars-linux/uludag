@@ -173,7 +173,7 @@ YALI is the installer of Pardus Linux.
 \end_inset 
 
 .
- ÇOMAR is small and has clean source code.
+ Python has small and has clean source codes.
  Standard library is full of useful modules.
  Learning curve is easy, most of the developers in our team picked up the
  language in a few days without prior experience.
@@ -513,6 +513,16 @@ You can't improve what you can't measure.
 
 ***buraya iþ yerinde bootchart datasýný eps render edip koy, png den daha
  güzel oluyor***
+\layout Standard
+
+*** burayada görkem'in daðýtýmlarýn boot süresi karþýlaþtýrma tablosunu
+ koy ***
+\layout Section
+
+Conclusions
+\layout Standard
+
+ee ne oldi
 \layout Bibliography
 \bibitem {key-2}
 
