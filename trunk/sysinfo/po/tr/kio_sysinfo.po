@@ -1,18 +1,19 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of tr.po to
 # This file is put in the public domain.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Görkem Çetin <gorkem@uludag.org.tr>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-05-20 16:42+0300\n"
-"PO-Revision-Date: 2006-05-20 16:42+0300\n"
-"Last-Translator: Barış Metin <baris@pardus.org.tr>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2006-05-21 04:55+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
 
 #: ksysinfopart.cpp:72
 msgid "KSysinfo"
@@ -36,15 +37,17 @@ msgstr "Bilgisayarım"
 
 #: sysinfo.cpp:112
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Dizinler, Diskler, Sistem Bilgisi ve daha fazlası..."
+msgstr ""
+"Dizinler, Sabit Diskler, Ayrılabilir Aygıtlar, Sistem Bilgisi ve daha "
+"fazlası..."
 
 #: sysinfo.cpp:118
 msgid "Looking for disk information..."
-msgstr "Disk bilgilerine bakılıyor..."
+msgstr "Disk bilgisine bakılıyor..."
 
 #: sysinfo.cpp:119
 msgid "Disk Information"
-msgstr "Disk Bilgileri"
+msgstr "Disk Bilgisi"
 
 #: sysinfo.cpp:123
 msgid "OS Information"
@@ -52,11 +55,11 @@ msgstr "İşletim Sistemi Bilgisi"
 
 #: sysinfo.cpp:125
 msgid "OS:"
-msgstr "İşletim Sistemi:"
+msgstr "OS:"
 
 #: sysinfo.cpp:126
 msgid "Current user:"
-msgstr "Şimdiki Kullanıcı:"
+msgstr "Geçerli kullanıcı:"
 
 #: sysinfo.cpp:127
 msgid "System:"
@@ -68,7 +71,7 @@ msgstr "KDE:"
 
 #: sysinfo.cpp:134
 msgid "Display Info"
-msgstr "Görüntü Bilgisi"
+msgstr "Ekran Bilgisi:"
 
 #: sysinfo.cpp:136
 msgid "Vendor:"
@@ -84,11 +87,11 @@ msgstr "Sürücü:"
 
 #: sysinfo.cpp:146
 msgid "Getting OS information...."
-msgstr "İşletim Sistemi bilgisi alınıyor..."
+msgstr "İşletim sistemi bilgisi alınıyor..."
 
 #: sysinfo.cpp:149
 msgid "Common Folders"
-msgstr "Genel Dizinler"
+msgstr "Ortak Dizinler"
 
 #: sysinfo.cpp:153
 msgid "My Home Folder"
@@ -96,7 +99,7 @@ msgstr "Ev Dizinim"
 
 #: sysinfo.cpp:154
 msgid "Root Folder"
-msgstr "Sistem Kök Dizini"
+msgstr "Kök Dizini"
 
 #: sysinfo.cpp:155
 msgid "Network Folders"
@@ -120,7 +123,7 @@ msgstr "İşlemci Bilgisi"
 
 #: sysinfo.cpp:175
 msgid "Processor (CPU):"
-msgstr "İşlemci (MİB):"
+msgstr "İşlemci (CPU):"
 
 #: sysinfo.cpp:176
 msgid "Speed:"
@@ -132,7 +135,7 @@ msgstr "%1 MHz"
 
 #: sysinfo.cpp:182
 msgid "Looking for memory information..."
-msgstr "Bellek bilgisine bakılıyor..."
+msgstr "Bellek bilgisi alınıyor..."
 
 #: sysinfo.cpp:184
 msgid "Memory Information"
@@ -140,11 +143,11 @@ msgstr "Bellek Bilgisi"
 
 #: sysinfo.cpp:186
 msgid "Total memory (RAM):"
-msgstr "Toplam Bellek (RAM):"
+msgstr "Toplam bellek (RAM):"
 
 #: sysinfo.cpp:187
 msgid "Free memory:"
-msgstr "Boş Bellek:"
+msgstr "Boş bellek:"
 
 #: sysinfo.cpp:188
 msgid "Used Memory"
@@ -152,15 +155,15 @@ msgstr "Kullanılan Bellek"
 
 #: sysinfo.cpp:189
 msgid "Total swap:"
-msgstr "Toplam Swap"
+msgstr "Toplam takas:"
 
 #: sysinfo.cpp:190
 msgid "Free swap:"
-msgstr "Boş Swap:"
+msgstr "Boş takas:"
 
 #: sysinfo.cpp:254
 msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %s Önbelleklenmiş)"
+msgstr "%1 (+ %2 Önbellek)"
 
 #: sysinfo.cpp:286
 msgid "Device"
@@ -168,35 +171,35 @@ msgstr "Aygıt"
 
 #: sysinfo.cpp:286
 msgid "Filesystem"
-msgstr "Dosya Sistemi"
+msgstr "Dosya sistemi"
 
 #: sysinfo.cpp:287
 msgid "Total space"
-msgstr "Toplam alan"
+msgstr "Toplam boş alan"
 
 #: sysinfo.cpp:287
 msgid "Available space"
-msgstr "Boş alan"
+msgstr "Kullanılabilir boş alan"
 
 #: sysinfo.cpp:293
 msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Disk işlemlerine ulaşmak için farenin sağ tuşuna basın"
+msgstr "Bağlama ya da ayırma gibi seçenekler için farenin sağ tuşuna tıklayın"
 
 #: sysinfo.cpp:519
 msgid "%1 (3D Support)"
-msgstr "%1 (3D Desteği)"
+msgstr "%1 (3B desteği var)"
 
 #: sysinfo.cpp:521
 msgid "%1 (No 3D Support)"
-msgstr "%1 (3D Desteği Yok)"
+msgstr "%1 (3B desteği yok)"
 
 #: sysinfo.cpp:532
 msgid "Network is <strong>unreachable</strong>"
-msgstr "Ağ <strong>ulaşılabilir değil</strong>"
+msgstr "Ağa erişim <strong>yapılamıyor</strong>"
 
 #: sysinfo.cpp:534
 msgid "You are <strong>offline</strong>"
-msgstr "<strong>Bağlı değilsiniz</strong>"
+msgstr "Şu anda <strong>bağlı değilsiniz</strong>"
 
 #: sysinfo.cpp:536
 msgid "Network is <strong>shutting down</strong>"
@@ -204,12 +207,15 @@ msgstr "Ağ bağlantısı <strong>kapatılıyor</strong>"
 
 #: sysinfo.cpp:538
 msgid "<strong>Establishing</strong> connection to the network"
-msgstr "Ağ bağlantısı <strong>etkinleştiriliyor</strong>"
+msgstr "Ağa bağlantı <strong>sağlanıyor</strong>"
 
 #: sysinfo.cpp:540
 msgid "You are <strong>online</strong>"
-msgstr "<strong>Bağlısınız</strong>"
+msgstr "Şu anda <strong>bağlısınız</strong>"
 
 #: sysinfo.cpp:542
 msgid "Unknown network status"
-msgstr "Ağ bağlantısının durumu bilinmiyor"
+msgstr "Bilinmeyen ağ durumu"
+
+#~ msgid "My Documents"
+#~ msgstr "Belgelerim"
