@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-04 14:03+0300\n"
+"POT-Creation-Date: 2006-05-18 22:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,191 +24,134 @@ msgstr ""
 msgid "Firewall Interface"
 msgstr ""
 
-#: src/guvenlik_kga.py:123 src/guvenlik_kga.py:272
+#: src/guvenlik_kga.py:124
 msgid "&Stop Firewall"
 msgstr ""
 
-#: src/guvenlik_kga.py:124 src/guvenlik_kga.py:273 src/firewall.py:245
+#: src/guvenlik_kga.py:125 src/firewall.py:290
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr ""
 
-#: src/guvenlik_kga.py:126 src/guvenlik_kga.py:275 src/firewall.py:244
-msgid "Click here to stop the firewall and allow all incoming connections"
+#: src/guvenlik_kga.py:127
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
 msgstr ""
 
-#: src/guvenlik_kga.py:128 src/guvenlik_kga.py:266
+#: src/guvenlik_kga.py:129
 msgid "&Start Firewall"
 msgstr ""
 
-#: src/guvenlik_kga.py:129 src/guvenlik_kga.py:267
+#: src/guvenlik_kga.py:130
 msgid "<b><font size=\"+1\">Firewall is not running</font></b>"
 msgstr ""
 
-#: src/guvenlik_kga.py:131 src/guvenlik_kga.py:269
-msgid "Click here to start the firewall"
+#: src/guvenlik_kga.py:132
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
 msgstr ""
 
-#: src/guvenlik_kga.py:181
-msgid "You are not allowed to do this operation."
-msgstr ""
-
-#: src/guvenlik_kga.py:181
-msgid "Access Denied"
-msgstr ""
-
-#: src/guvenlik_kga.py:184
-msgid "Port number is in invalid format."
-msgstr ""
-
-#: src/guvenlik_kga.py:184 src/guvenlik_kga.py:186
-msgid "Failed"
-msgstr ""
-
-#: src/guvenlik_kga.py:186
-msgid "Unable to complete operation."
-msgstr ""
-
-#: src/guvenlik_kga.py:188
-msgid "Unable to execute method."
-msgstr ""
-
-#: src/guvenlik_kga.py:188
-msgid "Script Error"
-msgstr ""
-
-#: src/guvenlik_kga.py:192
-msgid "Both port number and description required."
-msgstr ""
-
-#: src/guvenlik_kga.py:195
-msgid "Port number is already in list."
-msgstr ""
-
-#: src/guvenlik_kga.py:363
+#: src/guvenlik_kga.py:265
 msgid "Pardus Firewall Interface is already running!"
 msgstr ""
 
-#: src/firewall.py:167 src/firewall.py:258
-msgid "Port"
-msgstr ""
-
-#: src/firewall.py:168 src/firewall.py:259
-msgid "Description"
-msgstr ""
-
-#: src/firewall.py:230
+#: src/firewall.py:250
 msgid "Firewall GUI"
 msgstr ""
 
-#: src/firewall.py:232 src/firewall.py:268
-msgid "Alt+H"
+#: src/firewall.py:252 src/firewall.py:264
+msgid "E-mail Services"
 msgstr ""
 
-#: src/firewall.py:233
-msgid "&Ok"
+#: src/firewall.py:253 src/firewall.py:265
+msgid "Domain Name Services"
 msgstr ""
 
-#: src/firewall.py:234
-msgid "Alt+O"
+#: src/firewall.py:254 src/firewall.py:266
+msgid "Web Services"
 msgstr ""
 
-#: src/firewall.py:236
-msgid "Alt+C"
+#: src/firewall.py:255 src/firewall.py:267
+msgid "Remote Login Services"
 msgstr ""
 
-#: src/firewall.py:238
-msgid "Windows file sharing (port 139)"
+#: src/firewall.py:256 src/firewall.py:268
+msgid "Windows File Sharing Services"
 msgstr ""
 
-#: src/firewall.py:239
-msgid "FTP transfer (ports 20 and 21)"
+#: src/firewall.py:257 src/firewall.py:269
+msgid "Internet Relay Chat Services"
 msgstr ""
 
-#: src/firewall.py:240
-msgid "E-mail service"
+#: src/firewall.py:258 src/firewall.py:270
+msgid "Instant Messaging Services"
 msgstr ""
 
-#: src/firewall.py:241
-msgid "Remote login (port 22)"
+#: src/firewall.py:259 src/firewall.py:271
+msgid "File Sharing (p2p) Services"
 msgstr ""
 
-#: src/firewall.py:242
-msgid "File sharing (p2p)"
-msgstr ""
-
-#: src/firewall.py:243
-msgid "Allow outgoing network for the following services:"
-msgstr ""
-
-#: src/firewall.py:246
-msgid "&Stop firewall"
-msgstr ""
-
-#: src/firewall.py:247
-msgid "Alt+S"
-msgstr ""
-
-#: src/firewall.py:248
-msgid "Firewall Status"
-msgstr ""
-
-#: src/firewall.py:249
-msgid "Description:"
-msgstr ""
-
-#: src/firewall.py:250
-msgid "Port number:"
-msgstr ""
-
-#: src/firewall.py:251
-msgid "&Add"
-msgstr ""
-
-#: src/firewall.py:252
-msgid "Alt+A"
-msgstr ""
-
-#: src/firewall.py:253
-msgid ""
-"<b>Additionally, you can specify a port you want \n"
-"to receive incoming network traffic. Both tcp and\n"
-"udp connections will be automatically allowed.</b>"
-msgstr ""
-
-#: src/firewall.py:257
-msgid "Alt+D"
-msgstr ""
-
-#: src/firewall.py:260
-msgid "Note that all other incoming connections will be blocked."
+#: src/firewall.py:260 src/firewall.py:272
+msgid "File Transfer Services"
 msgstr ""
 
 #: src/firewall.py:261
-msgid "Incoming Connections"
+msgid "Allow this computer to access following services:"
 msgstr ""
 
 #: src/firewall.py:262
-msgid "<b>Other firewall specific features</b>"
+msgid "Outgoing Connections"
 msgstr ""
 
-#: src/firewall.py:263
-msgid "&Block incoming ICMP (ping) requests"
+#: src/firewall.py:273
+msgid "Allow other computer to access following services on this computer:"
 msgstr ""
 
-#: src/firewall.py:264
-msgid "Alt+B"
+#: src/firewall.py:274
+msgid "Incoming Connections"
 msgstr ""
 
-#: src/firewall.py:265
-msgid ""
-"<b>Firewall logs offer a visual way of understanding\n"
-"what happens.</b>"
+#: src/firewall.py:275
+msgid "ICMP"
 msgstr ""
 
-#: src/firewall.py:267
-msgid "Click &here to see the firewall logs"
+#: src/firewall.py:276
+msgid "Block incoming PING (ICMP/8) requests."
 msgstr ""
 
-#: src/firewall.py:269
+#: src/firewall.py:277
 msgid "Other Features"
+msgstr ""
+
+#: src/firewall.py:279
+msgid "Alt+H"
+msgstr ""
+
+#: src/firewall.py:281
+msgid "Alt+A"
+msgstr ""
+
+#: src/firewall.py:282
+msgid "&Ok"
+msgstr ""
+
+#: src/firewall.py:283
+msgid "Alt+O"
+msgstr ""
+
+#: src/firewall.py:285
+msgid "Alt+C"
+msgstr ""
+
+#: src/firewall.py:287
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr ""
+
+#: src/firewall.py:288
+msgid "&Stop"
+msgstr ""
+
+#: src/firewall.py:289
+msgid "Alt+S"
 msgstr ""

@@ -28,6 +28,8 @@ def atoi(s):
 
 def portsOk(p):
     """Check multiport format"""
+    if p.startswith("! "):
+        p = p[2:]
     if p.count(",") + p.count(":") > 15:
         return 0
     l = p.split(",")
@@ -46,8 +48,8 @@ def buildRule(op="A", rules={}):
     args = []
 
     protocol = rules.get("protocol", "tcp")
-    
-    if rules.get("direction", "in"):
+
+    if rules.get("direction", "in") == "in":
         args.append("-%s INPUT" % op)
     else:
         args.append("-%s OUTPUT" % op)
@@ -86,7 +88,7 @@ def buildRule(op="A", rules={}):
 
     cmds = []
 
-    if rules.get("log", 1) == 1:
+    if rules.get("log", "0") == "1":
         if protocol == "tcp":
             cmds.append("/sbin/iptables -t filter %s -j LOG --log-tcp-options --log-level 3" % " ".join(args))
         else:

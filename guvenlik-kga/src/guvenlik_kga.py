@@ -107,14 +107,14 @@ class MainApplication(programbase):
 
         # Load FW rules
         self.rules = {"in": {}, "out": {}, "other": {}}
-        self.comar.call("Net.Filter.getRules", id=2)
+        self.comar.call_package("Net.Filter.getRules", "iptables", id=2)
         self.handleComar(self.comar.read_cmd())
         self.no = 0
         
         # Get FW state
-        self.comar.call("Net.Filter.getState", id=3)
+        self.state = "off"
+        self.comar.call_package("Net.Filter.getState", "iptables", id=3)
         self.handleComar(self.comar.read_cmd())
-        self.state = 1
 
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
@@ -124,12 +124,12 @@ class MainApplication(programbase):
             mainwidget.pushStatus.setText(i18n("&Stop Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
-            mainwidget.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming connections"))
+            mainwidget.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming and outgoing connections."))
         else:
             mainwidget.pushStatus.setText(i18n("&Start Firewall"))
             mainwidget.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is not running</font></b>"))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
-            mainwidget.textStatus2.setText(i18n("Click here to start the firewall"))
+            mainwidget.textStatus2.setText(i18n("Click here to start the firewall and allow connections only to specified services."))
 
     def handleComar(self, reply):
         if reply[0] == self.comar.NOTIFY:
@@ -166,14 +166,15 @@ class MainApplication(programbase):
                     #self.addRule()
             elif reply[1] == 3:
                 # Get State
+                self.state = reply[2]
                 self.setStatus(reply[2])
 
     
     def slotStatus(self):
         if self.state == "on":
-            self.comar.call("Net.Filter.setState", {"state": "off"})
+            self.comar.call_package("Net.Filter.setState", "iptables", {"state": "off"})
         else:
-            self.comar.call("Net.Filter.setState", {"state": "on"})
+            self.comar.call_package("Net.Filter.setState", "iptables", {"state": "on"})
 
     def slotOk(self):
         self.saveAll()
@@ -218,13 +219,13 @@ class MainApplication(programbase):
         pad = lambda x: str(x).rjust(5).replace(" ", "0")
         rule["no"] = "filter:%s" % pad(self.no)
         self.no += 1
-        self.comar.call("Net.Filter.setRule", rule)
+        self.comar.call_package("Net.Filter.setRule", "iptables", rule)
         self.handleComar(self.comar.read_cmd())
         return rule["no"]
     """
 
     def removeRule(self, no):
-        self.comar.call("Net.Filter.unsetRule", {"no": no})
+        self.comar.call_package("Net.Filter.unsetRule", "iptables", {"no": no})
         self.handleComar(self.comar.read_cmd())
 
     def __del__(self):
