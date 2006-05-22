@@ -35,6 +35,24 @@ class HLine(QHBox):
         self.setStretchFactor(line, 8)
 
 
+class PathEntry(QHBox):
+    def __init__(self, title, parent):
+        QHBox.__init__(self, parent)
+        self.title = title
+        self.setSpacing(3)
+        QLabel(title, self)
+        self.path = QLineEdit(self)
+        but = QPushButton("...", self)
+        self.connect(but, SIGNAL("clicked()"), self.browse)
+    
+    def browse(self):
+        s = QFileDialog.getExistingDirectory(self.path.text(), self, "lala", self.title, False)
+        self.path.setText(s)
+    
+    def text(self):
+        return str(self.path.text())
+
+
 class Project(QMainWindow):
     def __init__(self, parent):
         QMainWindow.__init__(self, parent)
@@ -46,10 +64,7 @@ class Project(QMainWindow):
         
         HLine(_("CD Contents:"), vb)
         
-        hb = QHBox(vb)
-        hb.setSpacing(3)
-        QLabel(_("Release files:"), hb)
-        self.contentdir = QLineEdit(hb)
+        self.contentdir = PathEntry(_("Release files:"), vb)
         
         hb = QHBox(vb)
         hb.setSpacing(3)
@@ -58,13 +73,11 @@ class Project(QMainWindow):
         
         HLine(_("Package selection:"), vb)
         
-        hb = QHBox(vb)
-        hb.setSpacing(3)
-        QLabel(_("Binary package folder:"), hb)
-        self.packagedir = QLineEdit(hb)
-        but = QPushButton(_("Select"), hb)
+        self.packagedir = PathEntry(_("Binary package folder:"), vb)
+        
+        but = QPushButton(_("Select"), vb)
         self.connect(but, SIGNAL("clicked()"), self.selectPackages)
         self.show()
     
     def selectPackages(self):
-        browser.PackageSelector(self, str(self.packagedir.text()))
+        browser.PackageSelector(self, self.packagedir.text())
