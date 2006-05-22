@@ -179,8 +179,15 @@ class MainApplicationWidget(QWidget):
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
         self.connect(self.progressDialog.cancelButton,SIGNAL("clicked()"),self.cancelThread)
 
-        self.currentAppList = self.command.listNewPackages()
-        self.createComponentList(self.currentAppList)
+        self.currentAppList = []
+
+        self.delayTimer = QTimer(self)
+        self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadComponentList)
+        self.delayTimer.start(500, True)
+
+        # inform user for the delay...
+        item = KListViewItem(self.listView)
+        item.setText(0,i18n("Loading Package List..."))
         self.listView.setSelected(self.listView.firstChild(),True)
 
         self.htmlPart.view().setFocus()
@@ -188,6 +195,12 @@ class MainApplicationWidget(QWidget):
         
         # Check for empty repo.
         self.initialCheck()
+
+    def lazyLoadComponentList(self):
+        self.currentAppList = self.command.listNewPackages()
+
+        self.createComponentList(self.currentAppList)
+        self.listView.setSelected(self.listView.firstChild(),True)
 
     def cancelThread(self):
         # Reset progressbar
@@ -207,6 +220,7 @@ class MainApplicationWidget(QWidget):
 
     def switchListing(self):
         self.updateListing(True)
+        print "switchListing called..."
         
     def updateListing(self,switch=False):
 
