@@ -157,8 +157,6 @@ class PackageSelectorWidget(QVBox):
         self.package_path = QLineEdit(hb)
         self.package_path.setReadOnly(True)
         
-        QPushButton(_("Browse..."), hb)
-        
         split = QSplitter(self)
         
         self.comps = QListView(split)
@@ -201,7 +199,7 @@ class PackageSelectorWidget(QVBox):
         item = self.list.firstChild()
         while item:
             if item.mark > 0:
-                paks.append(item.filename)
+                paks.append(item.path)
             item = item.nextSibling()
         return paks
     
@@ -211,7 +209,7 @@ class PackageSelectorWidget(QVBox):
         else:
             self.label.setText(
                 _("%d packages selected, %s bytes archive size, %s bytes installed size.") %
-                (self.nr_paks, size_fmt(self.total), size_fmt(self.total_zip)))
+                (self.nr_paks, size_fmt(self.total_zip), size_fmt(self.total)))
     
     def _select_pak(self, pak):
         self.total += pak.size
@@ -230,10 +228,13 @@ class PackageSelector(QDialog):
     def __init__(self, parent, path, callback):
         QDialog.__init__(self, parent)
         self.callback = callback
-        vb = QHBoxLayout(self, 6)
+        vb = QVBoxLayout(self, 6)
         self.selector = PackageSelectorWidget(self)
-        vb.addWidget(self.selector)
         self.selector.setMinimumSize(620, 420)
+        vb.addWidget(self.selector)
+        but = QPushButton(_("Use selected packages"), self)
+        self.connect(but, SIGNAL("clicked()"), self.accept)
+        vb.addWidget(but, 0, Qt.AlignRight)
         self.selector.browse_packages(path)
         self.show()
     
