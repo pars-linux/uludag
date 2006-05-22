@@ -557,6 +557,7 @@ class MainApplicationWidget(QWidget):
     def clearSearchLine(self):
         self.searchLine.clear()
         self.timer.stop()
+        self.updateListing()
 
     def showPreferences(self):
         try:
