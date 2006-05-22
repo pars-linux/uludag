@@ -36,47 +36,86 @@ class HLine(QHBox):
 
 
 class PathEntry(QHBox):
-    def __init__(self, title, parent):
+    def __init__(self, question, parent, is_dir=True):
         QHBox.__init__(self, parent)
-        self.title = title
+        self.is_dir = is_dir
+        self.question = question
         self.setSpacing(3)
-        QLabel(title, self)
         self.path = QLineEdit(self)
+        self.path.setMinimumWidth(120)
         but = QPushButton("...", self)
         self.connect(but, SIGNAL("clicked()"), self.browse)
     
     def browse(self):
-        s = QFileDialog.getExistingDirectory(self.path.text(), self, "lala", self.title, False)
+        if self.is_dir:
+            s = QFileDialog.getExistingDirectory(self.path.text(), self, "lala", self.question, False)
+        else:
+            s = QFileDialog.getOpenFileName(self.path.text(), "All (*.*)", self, "lala", self.question)
         self.path.setText(s)
     
     def text(self):
         return str(self.path.text())
 
 
+def makePathEntry(label, question, grid, row, parent, is_dir=True):
+    lab = QLabel(label, parent)
+    grid.addWidget(lab, row, 0, Qt.AlignRight)
+    edit = PathEntry(question, parent, is_dir)
+    grid.addWidget(edit, row, 1)
+    return edit
+
+
 class Project(QMainWindow):
     def __init__(self, parent):
         QMainWindow.__init__(self, parent)
         
-        vb = QVBox(self)
-        vb.setMargin(6)
-        vb.setSpacing(3)
-        self.setCentralWidget(vb)
+        w = QWidget(self)
+        self.setCentralWidget(w)
         
-        HLine(_("CD Contents:"), vb)
+        grid = QGridLayout(w, 9, 2, 12, 6)
         
-        self.contentdir = PathEntry(_("Release files:"), vb)
+        lab = QLabel(_("Project name:"), w)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
+        self.name = QLineEdit(w)
+        grid.addWidget(self.name, 0, 1)
         
-        hb = QHBox(vb)
-        hb.setSpacing(3)
-        QLabel(_("Boot image:"), hb)
-        self.cdroot = QLineEdit(hb)
+        line = HLine(_("CD Contents:"), w)
+        grid.addMultiCellWidget(line, 1, 1, 0, 1)
+        self.contentdir = makePathEntry(
+            _("Release files:"),
+            _("Select release files..."),
+            grid, 2, w
+        )
+        self.cdroot = makePathEntry(
+            _("Boot image:"),
+            _("Select boot image..."),
+            grid, 3, w, is_dir=False
+        )
         
-        HLine(_("Package selection:"), vb)
+        line = HLine(_("Package selection:"), w)
+        grid.addMultiCellWidget(line, 4, 4, 0, 1)
+        self.packagedir = makePathEntry(
+            _("Binary packages:"),
+            _("Select binary package folder..."),
+            grid, 5, w
+        )
         
-        self.packagedir = PathEntry(_("Binary package folder:"), vb)
-        
-        but = QPushButton(_("Select"), vb)
+        but = QPushButton(_("Select packages"), w)
         self.connect(but, SIGNAL("clicked()"), self.selectPackages)
+        grid.addMultiCellWidget(but, 6, 6, 0, 1)
+        
+        line = QFrame(w)
+        line.setFrameStyle(line.HLine | line.Sunken)
+        grid.addMultiCellWidget(line, 7, 7, 0, 1, Qt.AlignBottom)
+        
+        hb = QHBox(w)
+        hb.setSpacing(12)
+        grid.addMultiCellWidget(hb, 8, 8, 0, 1, Qt.AlignBottom)
+        
+        QPushButton(_("Save"), hb)
+        QPushButton(_("Save as..."), hb)
+        QPushButton(_("Make ISO"), hb)
+        
         self.show()
     
     def selectPackages(self):
