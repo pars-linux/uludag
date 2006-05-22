@@ -82,8 +82,8 @@ def buildRule(op="A", rules={}):
         elif protocol == "icmp":
             args.append("--icmp-type %s" % rules["type"])
 
-    action = rules.get("action", "Reject")
-    if action not in ["Reject", "Accept"]:
+    action = rules.get("action", "REJECT")
+    if action.upper() not in ["REJECT", "ACCEPT"]:
         fail("Invalid action")
 
     cmds = []
@@ -94,7 +94,7 @@ def buildRule(op="A", rules={}):
         else:
             cmds.append("/sbin/iptables -t filter %s -j LOG --log-level 3" % " ".join(args))
 
-    if action == "Reject":
+    if action.upper() == "REJECT":
         if protocol == "tcp":
             cmds.append("/sbin/iptables -t filter %s -j REJECT --reject-with tcp-reset" % " ".join(args))
         else:
@@ -109,6 +109,7 @@ def setRule(**rule):
     """Append new firewall rule"""
     if "no" not in rule or rule["no"] in instances("no"):
         fail("Invalid rule no")
+
     if getState() == "off":
         return rule["no"]
     cmds = buildRule("A", rule)
@@ -120,6 +121,7 @@ def unsetRule(no):
     """Remove given firewall rule"""
     if no not in instances("no"):
         fail("Invalid rule no")
+    
     if getState() == "off":
         return
     rule = get_instance("no", no)
@@ -130,8 +132,10 @@ def unsetRule(no):
 
 def getRules():
     """Get all rules"""
+    inst = instances("no")
+    inst.sort(key=atoi)
     rules = []
-    for i in instances("no"):
+    for i in inst:
         rules.append(get_instance("no", i))
     return rules
 

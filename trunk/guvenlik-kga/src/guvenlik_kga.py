@@ -50,6 +50,20 @@ def AboutData():
 def loadIcon(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIcon(name, group, size)
 
+def atoi(s):
+    """String to integer"""
+    t = ""
+    for c in s.lstrip():
+        if c in "0123456789":
+            t += c
+        else:
+            break
+    try:
+        ret = int(t)
+    except:
+        ret = 0
+    return ret
+
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=="__main__"
 
@@ -106,10 +120,10 @@ class MainApplication(programbase):
         self.connect(mainwidget.pushApply,SIGNAL("clicked()"),self.slotApply)
 
         # Load FW rules
+        self.no = 0
         self.rules = {"in": {}, "out": {}, "other": {}}
         self.comar.call_package("Net.Filter.getRules", "iptables", id=2)
         self.handleComar(self.comar.read_cmd())
-        self.no = 0
         
         # Get FW state
         self.state = "off"
@@ -144,6 +158,7 @@ class MainApplication(programbase):
                 rules = eval(reply[2])
                 for rule in rules: 
                     no = rule["no"]
+                    self.no = atoi(no)
                     desc = rule.get("description", "")
                     if not desc.startswith("filter:"):
                         continue
@@ -159,11 +174,9 @@ class MainApplication(programbase):
                         self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
                 
                 if "reject" not in self.rules["in"]:
-                    pass
-                    #self.addRule()
+                    self.addRule("in", "reject")
                 if "reject" not in self.rules["out"]:
-                    pass
-                    #self.addRule()
+                    self.addRule("out", "reject")
             elif reply[1] == 3:
                 # Get State
                 self.state = reply[2]
@@ -185,7 +198,7 @@ class MainApplication(programbase):
 
     def saveAll(self):
         for dir in ["in", "out", "other"]:
-            s1 = set(self.rules[dir].keys())
+            s1 = set(self.rules[dir].keys()) - set(["reject"])
             s2 = []
 
             if dir in ["in", "out"]:
@@ -202,27 +215,138 @@ class MainApplication(programbase):
                 for no in self.rules[dir][name]:
                     self.removeRule(no)
                 del self.rules[dir][name]
-                print "del", dir, name, no
             for name in s2 - s1:
                 no = self.addRule(dir, name)
                 self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
-                print "add", dir, name, no
 
     def addRule(self, dir, name):
-        pad = lambda x: str(x).rjust(5).replace(" ", "0")
-        no = "filter:%s" % pad(self.no)
-        self.no += 1
-        return no
+        def append(no):
+            self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
 
-    """
+        desc = "filter:%s:%s" % (dir, name)
+        if dir == "out":
+            if name == "reject":
+                # TCP
+                no = self.setRule(protocol="tcp", direction="out", type="connections", action="reject", log=1, description=desc)
+                append(no)
+                # UDP
+                no = self.setRule(protocol="udp", direction="out", action="reject", log=1, description=desc)
+                append(no)
+            elif name == "DNS":
+                # TCP
+                no = self.setRule(protocol="tcp", direction="out", dport="53", action="accept", description=desc)
+                append(no)
+                # UDP - In
+                no = self.setRule(protocol="udp", direction="in", sport="53", action="accept", description=desc)
+                append(no)
+                # UDP - Out
+                no = self.setRule(protocol="udp", direction="out", dport="53", action="accept", description=desc)
+                append(no)
+            elif name == "Web":
+                no = self.setRule(protocol="tcp", direction="out", dport="80,443", action="accept", description=desc)
+                append(no)
+            elif name == "WFS":
+                no = self.setRule(protocol="tcp", direction="out", dport="139", action="accept", description=desc)
+                append(no)
+            elif name == "Mail":
+                no = self.setRule(protocol="tcp", direction="out", dport="25,110", action="accept", description=desc)
+                append(no)
+            elif name == "FTP":
+                no = self.setRule(protocol="tcp", direction="out", dport="21", action="accept", description=desc)
+                append(no)
+            elif name == "Remote":
+                no = self.setRule(protocol="tcp", direction="out", dport="22", action="accept", description=desc)
+                append(no)
+            elif name == "FS":
+                # FIXME: p2p ports
+                no = self.setRule(protocol="tcp", direction="out", dport="5000-5500", action="accept", description=desc)
+                append(no)
+            elif name == "IRC":
+                no = self.setRule(protocol="tcp", direction="out", dport="6665-6669,7000", action="accept", description=desc)
+                append(no)
+            elif name == "IM":
+                # Jabber - TCP
+                no = self.setRule(protocol="tcp", direction="out", dport="5222,5269", action="accept", description=desc)
+                append(no)
+                # Jabber - UDP
+                no = self.setRule(protocol="tcp", direction="out", dport="5222,5269", action="accept", description=desc)
+                append(no)
+                # MSN - TCP
+                no = self.setRule(protocol="tcp", direction="out", dport="6891-6901", action="accept", description=desc)
+                append(no)
+                # MSN - UDP
+                no = self.setRule(protocol="udp", direction="out", dport="2001-2120,6801,6901", action="accept", description=desc)
+                append(no)
+        elif dir == "in":
+            if name == "reject":
+                no = self.setRule(protocol="tcp", direction="in", type="connections", action="reject", log=1, description=desc)
+                append(no)
+                no = self.setRule(protocol="udp", direction="in", action="reject", log=1, description=desc)
+                append(no)
+            elif name == "DNS":
+                # TCP
+                no = self.setRule(protocol="tcp", direction="in", dport="53", action="accept", description=desc)
+                append(no)
+                # UDP - In
+                no = self.setRule(protocol="udp", direction="in", dport="53", action="accept", description=desc)
+                append(no)
+                # UDP - Out
+                no = self.setRule(protocol="udp", direction="out", sport="53", action="accept", description=desc)
+                append(no)
+            elif name == "Web":
+                no = self.setRule(protocol="tcp", direction="in", dport="80,443", action="accept", description=desc)
+                append(no)
+            elif name == "WFS":
+                no = self.setRule(protocol="tcp", direction="in", dport="139", action="accept", description=desc)
+                append(no)
+            elif name == "Mail":
+                no = self.setRule(protocol="tcp", direction="in", dport="25,110", action="accept", description=desc)
+                append(no)
+            elif name == "FTP":
+                no = self.setRule(protocol="tcp", direction="in", dport="21", action="accept", description=desc)
+                append(no)
+            elif name == "Remote":
+                no = self.setRule(protocol="tcp", direction="in", dport="22", action="accept", description=desc)
+                append(no)
+            elif name == "FS":
+                # FIXME: p2p ports
+                no = self.setRule(protocol="tcp", direction="in", dport="5000-5500", action="accept", description=desc)
+                append(no)
+            elif name == "IRC":
+                no = self.setRule(protocol="tcp", direction="in", dport="6665-6669,7000", action="accept", description=desc)
+                append(no)
+            elif name == "IM":
+                # Jabber - TCP
+                no = self.setRule(protocol="tcp", direction="in", dport="5222,5269", action="accept", description=desc)
+                append(no)
+                # Jabber - UDP
+                no = self.setRule(protocol="tcp", direction="in", dport="5222,5269", action="accept", description=desc)
+                append(no)
+
+        # Reorder "REJECT" rules
+        if name != "reject":
+            if dir == "out" and name == "DNS":
+                # Remove old
+                for no in self.rules["in"]["reject"]:
+                    self.removeRule(no)
+                for no in self.rules["out"]["reject"]:
+                    self.removeRule(no)
+                # Add new
+                self.addRule("in", "reject")
+                self.addRule("out", "reject")
+            else:
+                # Remove old
+                for no in self.rules[dir]["reject"]:
+                    self.removeRule(no)
+                # Add new
+                self.addRule(dir, "reject")
+
     def setRule(self, **rule):
-        pad = lambda x: str(x).rjust(5).replace(" ", "0")
-        rule["no"] = "filter:%s" % pad(self.no)
         self.no += 1
-        self.comar.call_package("Net.Filter.setRule", "iptables", rule)
+        rule["no"] = self.no
+        self.comar.call_package("Net.Filter.setRule", "iptables", rule, id=10)
         self.handleComar(self.comar.read_cmd())
         return rule["no"]
-    """
 
     def removeRule(self, no):
         self.comar.call_package("Net.Filter.unsetRule", "iptables", {"no": no})
