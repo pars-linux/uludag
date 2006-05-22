@@ -196,6 +196,15 @@ class PackageSelectorWidget(QVBox):
         for pak in pisi_paks(path):
             Package(self, pak)
     
+    def get_packages(self):
+        paks = []
+        item = self.list.firstChild()
+        while item:
+            if item.mark > 0:
+                paks.append(item.filename)
+            item = item.nextSibling()
+        return paks
+    
     def _update_label(self):
         if self.nr_paks == 0:
             self.label.setText(_("No packages selected."))
@@ -218,11 +227,21 @@ class PackageSelectorWidget(QVBox):
 
 
 class PackageSelector(QDialog):
-    def __init__(self, parent, path):
+    def __init__(self, parent, path, callback):
         QDialog.__init__(self, parent)
+        self.callback = callback
         vb = QHBoxLayout(self, 6)
         self.selector = PackageSelectorWidget(self)
         vb.addWidget(self.selector)
         self.selector.setMinimumSize(620, 420)
         self.selector.browse_packages(path)
         self.show()
+    
+    def accept(self):
+        sel = self.selector
+        self.callback(sel.get_packages(), sel.total_zip, sel.total)
+        QDialog.accept(self)
+    
+    def reject(self):
+        self.callback(None, 0, 0)
+        QDialog.reject(self)

@@ -37,9 +37,9 @@ class MainWindow(QMainWindow):
         
         vb = QVBox(hb)
         vb.setSpacing(12)
-        but = QPushButton(_("Prepare Pardus CD"), vb)
-        self.connect(but, SIGNAL("clicked()"), self.newCD)
-        but = QPushButton(_("Prepare Pardus Live CD"), vb)
+        but = QPushButton(_("Prepare Pardus Media"), vb)
+        self.connect(but, SIGNAL("clicked()"), self.newMedia)
+        but = QPushButton(_("Prepare Pardus Live Media"), vb)
         but.setEnabled(False)
         but = QPushButton(_("Load a project"), vb)
         but.setEnabled(False)
@@ -54,7 +54,7 @@ class MainWindow(QMainWindow):
     def quit(self):
         qApp.quit()
     
-    def newCD(self):
+    def newMedia(self):
         project.Project(self)
 
 
