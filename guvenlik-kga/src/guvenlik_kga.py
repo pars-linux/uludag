@@ -322,9 +322,13 @@ class MainApplication(programbase):
                 # Jabber - UDP
                 no = self.setRule(protocol="tcp", direction="in", dport="5222,5269", action="accept", description=desc)
                 append(no)
+        elif dir == "other":
+            if name == "ICMP":
+                no = self.setRule(protocol="icmp", direction="in", type="8", action="reject", description=desc)
+                append(no)
 
         # Reorder "REJECT" rules
-        if name != "reject":
+        if dir in ["in", "out"] and name != "reject":
             if dir == "out" and name == "DNS":
                 # Remove old
                 for no in self.rules["in"]["reject"]:
