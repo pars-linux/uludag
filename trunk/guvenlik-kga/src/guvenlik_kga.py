@@ -29,7 +29,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("Pardus Firewall Graphical User Interface")
-version = "0.1"
+version = "1.2"
 
 def AboutData():
     global version,description
