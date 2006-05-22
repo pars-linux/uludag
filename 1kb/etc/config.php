@@ -25,7 +25,7 @@
     $cf['db']['ctype']              = "persistent";
 
     $cf['smarty']['libdir']         = "lib/smarty";
-    $cf['smarty']['tpldir']         = "template";
+    $cf['smarty']['tpldir']         = "template/pardus";
     $cf['smarty']['compiledir']     = "tmp";
     $cf['smarty']['cachedir']       = "tmp";
     $cf['smarty']['plugindir']      = "plugins";
