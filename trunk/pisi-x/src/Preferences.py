@@ -118,8 +118,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         repoName = unicode(self.repo.repoName.text())
         repoAddress = str(self.repo.repoAddress.text())
 
-        if not repoAddress.endswith("xml"):
-            KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
+        if not (repoAddress.endswith("xml") or repoAddress.endswith("xml.bz2")):
+            KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
         else:
             self.parent.command.addRepo(repoName,repoAddress)
