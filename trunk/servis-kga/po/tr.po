@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: servis_kga 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-17 19:11+0300\n"
+"POT-Creation-Date: 2006-05-22 16:58+0300\n"
 "PO-Revision-Date: 2006-04-10 12:02+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,23 +15,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/servis_kga.py:61 src/servis_kga.py:101
+#: src/servis_kga.py:61 src/servis_kga.py:113
 msgid "Service Manager"
 msgstr "Servis Yöneticisi"
 
-#: src/servis_kga.py:176 src/serviceWidget.py:21
+#: src/servis_kga.py:170
+msgid "You are not allowed to do this operation."
+msgstr "Bu işlemi yapmaya yetkiniz yok."
+
+#: src/servis_kga.py:170
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+#: src/servis_kga.py:172
+msgid "COMAR script execution failed."
+msgstr "COMAR betiği çalıştırılamadı."
+
+#: src/servis_kga.py:172
+msgid "Script Error"
+msgstr "Betik Hatası"
+
+#: src/servis_kga.py:174
+msgid "Unable to complete operation."
+msgstr "İşlem tamamlanamıyor."
+
+#: src/servis_kga.py:174
+msgid "Failed"
+msgstr "Başarısız"
+
+#: src/servis_kga.py:192 src/serviceWidget.py:21
 msgid "Start"
 msgstr "Başlat"
 
-#: src/servis_kga.py:180 src/serviceWidget.py:27 src/serviceWidget.py:45
+#: src/servis_kga.py:196 src/serviceWidget.py:27 src/serviceWidget.py:45
 msgid "Auto Start"
 msgstr "Oto. Başlat"
 
-#: src/servis_kga.py:182
+#: src/servis_kga.py:198
 msgid "Don't Auto Start"
 msgstr "Oto. Başlatma"
 
-#: src/servis_kga.py:233
+#: src/servis_kga.py:249
 msgid "Service GUI is already running!"
 msgstr "Servis KGA zaten çalışıyor!"
 
