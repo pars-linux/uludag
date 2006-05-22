@@ -217,12 +217,12 @@ class PackageSelectorWidget(QVBox):
         self._update_label()
 
 
-class PackageSelector(QMainWindow):
+class PackageSelector(QDialog):
     def __init__(self, parent, path):
-        QMainWindow.__init__(self, parent)
-        self.setMinimumSize(620, 420)
+        QDialog.__init__(self, parent)
+        vb = QHBoxLayout(self, 6)
         self.selector = PackageSelectorWidget(self)
-        self.setCentralWidget(self.selector)
-        self.selector.setMargin(3)
+        vb.addWidget(self.selector)
+        self.selector.setMinimumSize(620, 420)
         self.selector.browse_packages(path)
         self.show()

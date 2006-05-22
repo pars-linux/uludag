@@ -80,4 +80,4 @@ class Project(QMainWindow):
         self.show()
     
     def selectPackages(self):
-        browser.PackageSelector(self, self.packagedir.text())
+        browser.PackageSelector(self, self.packagedir.text()).exec_loop()
