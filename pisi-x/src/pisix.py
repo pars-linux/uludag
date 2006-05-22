@@ -142,6 +142,7 @@ class MainApplicationWidget(QWidget):
         self.clearButton.setIconSet(loadIconSet("locationbar_erase"))
         self.searchLabel = QLabel(i18n("Search: "), self.rightTopLayout)
         self.searchLine = KLineEdit(self.rightTopLayout)
+        self.timer = QTimer(self)
                 
         self.htmlPart = KHTMLPart(self.rightLayout)
 
@@ -173,7 +174,8 @@ class MainApplicationWidget(QWidget):
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
-        self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchPackage)
+        self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
+        self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
         self.connect(self.progressDialog.cancelButton,SIGNAL("clicked()"),self.cancelThread)
 
@@ -529,6 +531,11 @@ class MainApplicationWidget(QWidget):
         app.append(str(self.listView.currentItem().text(0)))
         self.command.install(app)
         
+    def searchStringChanged(self):
+        if (self.timer.isActive()):
+            self.timer.stop()
+        self.timer.start(200, True)
+
     def searchPackage(self):
         query = self.searchLine.text()
         if not query.isEmpty():
@@ -549,6 +556,7 @@ class MainApplicationWidget(QWidget):
     
     def clearSearchLine(self):
         self.searchLine.clear()
+        self.timer.stop()
 
     def showPreferences(self):
         try:
