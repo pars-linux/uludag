@@ -69,17 +69,21 @@ class Project(QMainWindow):
     def __init__(self, parent):
         QMainWindow.__init__(self, parent)
         
+        self.pak_list = []
+        self.pak_size = 0
+        self.pak_inst_size = 0
+        
         w = QWidget(self)
         self.setCentralWidget(w)
         
-        grid = QGridLayout(w, 9, 2, 12, 6)
+        grid = QGridLayout(w, 10, 2, 12, 6)
         
         lab = QLabel(_("Project name:"), w)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
         self.name = QLineEdit(w)
         grid.addWidget(self.name, 0, 1)
         
-        line = HLine(_("CD Contents:"), w)
+        line = HLine(_("Media Content:"), w)
         grid.addMultiCellWidget(line, 1, 1, 0, 1)
         self.contentdir = makePathEntry(
             _("Release files:"),
@@ -104,19 +108,31 @@ class Project(QMainWindow):
         self.connect(but, SIGNAL("clicked()"), self.selectPackages)
         grid.addMultiCellWidget(but, 6, 6, 0, 1)
         
+        self.paklabel= QLabel(w)
+        grid.addMultiCellWidget(self.paklabel, 7, 7, 0, 1)
+        
         line = QFrame(w)
         line.setFrameStyle(line.HLine | line.Sunken)
-        grid.addMultiCellWidget(line, 7, 7, 0, 1, Qt.AlignBottom)
+        grid.addMultiCellWidget(line, 8, 8, 0, 1, Qt.AlignBottom)
         
         hb = QHBox(w)
         hb.setSpacing(12)
-        grid.addMultiCellWidget(hb, 8, 8, 0, 1, Qt.AlignBottom)
+        grid.addMultiCellWidget(hb, 9, 9, 0, 1, Qt.AlignBottom)
         
         QPushButton(_("Save"), hb)
         QPushButton(_("Save as..."), hb)
         QPushButton(_("Make ISO"), hb)
         
+        self.updatePaks()
+        
         self.show()
     
+    def updatePaks(self):
+        if len(self.pak_list) == 0:
+            self.paklabel.setText(_("(no packages selected yet)"))
+        else:
+            self.paklabel.setText(_("(%d packages, %d size, %d installed)") % 
+                (len(self.pak_list), self.pak_size, self.pak_inst_size))
+    
     def selectPackages(self):
-        browser.PackageSelector(self, self.packagedir.text()).exec_loop()
+        browser.PackageSelector(self, self.packagedir.text())
