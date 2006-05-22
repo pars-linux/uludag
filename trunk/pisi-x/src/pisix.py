@@ -110,9 +110,8 @@ class MainApplicationWidget(QWidget):
         QWidget.__init__(self, parent, "PiSi-X")
         self.parent = parent
         
-        # Create a ThreadRunner and init the database
+        # Create a ThreadRunner
         self.command = ThreadRunner.PisiThread(self)
-        self.command.initDatabase()
                         
         self.progressDialog = Progress.Progress(self)
         self.packagesOrder = []
@@ -197,6 +196,9 @@ class MainApplicationWidget(QWidget):
         self.initialCheck()
 
     def lazyLoadComponentList(self):
+        # init pisi database...
+        self.command.initDatabase()
+
         self.currentAppList = self.command.listNewPackages()
 
         self.createComponentList(self.currentAppList)
