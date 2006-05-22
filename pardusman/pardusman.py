@@ -11,9 +11,8 @@
 
 import os
 import sys
-import piksemel
 
-import browser
+import project
 
 # no i18n yet
 def _(x):
@@ -30,34 +29,33 @@ class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.setCaption("Pardusman")
-        self.setMinimumSize(620, 420)
         
-        bar = self.menuBar()
-        file_ = QPopupMenu(self)
-        bar.insertItem("&Project", file_)
-        file_.insertItem("Save...", self.save_list, self.CTRL + self.Key_S)
-        file_.insertSeparator()
-        file_.insertItem("Quit", self.quit, self.CTRL + self.Key_Q)
+        hb = QHBox(self)
+        hb.setSpacing(6)
         
-        self.psel = browser.PackageSelector(self)
-        self.psel.setMargin(6)
-        self.setCentralWidget(self.psel)
+        QLabel(hb).setPixmap(QPixmap("logo.png"))
+        
+        vb = QVBox(hb)
+        vb.setSpacing(12)
+        but = QPushButton(_("Prepare Pardus CD"), vb)
+        self.connect(but, SIGNAL("clicked()"), self.newCD)
+        but = QPushButton(_("Prepare Pardus Live CD"), vb)
+        but.setEnabled(False)
+        but = QPushButton(_("Load a project"), vb)
+        but.setEnabled(False)
+        QLabel(_("Recent projects:"), vb)
+        QListBox(vb)
+        but = QPushButton(_("Enough work today, Quit"), vb)
+        self.connect(but, SIGNAL("clicked()"), self.quit)
+        
+        hb.setMargin(12)
+        self.setCentralWidget(hb)
     
     def quit(self):
         qApp.quit()
     
-    def save_list(self):
-        s = QFileDialog.getSaveFileName("package.list")
-        f = file(str(s), "w")
-        item = self.list.firstChild()
-        while item:
-            if item.mark > 0:
-                f.write("%s\n" % item.filename)
-            item = item.nextSibling()
-        f.close()
-    
-    def use_path(self, path):
-        self.psel.browse_packages(path)
+    def newCD(self):
+        project.Project(self)
 
 
 #
@@ -69,7 +67,6 @@ def main():
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     w = MainWindow()
     w.show()
-    w.use_path(sys.argv[1])
     app.exec_loop()
 
 if __name__ == "__main__":

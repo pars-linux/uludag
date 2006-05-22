@@ -145,7 +145,7 @@ class Package(QCheckListItem):
                 return 1
 
 
-class PackageSelector(QVBox):
+class PackageSelectorWidget(QVBox):
     def __init__(self, parent):
         QVBox.__init__(self, parent)
         self.setSpacing(3)
@@ -215,3 +215,14 @@ class PackageSelector(QVBox):
         self.total_zip -= pak.inst_size
         self.nr_paks -= 1
         self._update_label()
+
+
+class PackageSelector(QMainWindow):
+    def __init__(self, parent, path):
+        QMainWindow.__init__(self, parent)
+        self.setMinimumSize(620, 420)
+        self.selector = PackageSelectorWidget(self)
+        self.setCentralWidget(self.selector)
+        self.selector.setMargin(3)
+        self.selector.browse_packages(path)
+        self.show()
