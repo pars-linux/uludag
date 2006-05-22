@@ -105,6 +105,7 @@ class Project(QMainWindow):
         )
         
         but = QPushButton(_("Select packages"), w)
+        self.packagebut = but
         self.connect(but, SIGNAL("clicked()"), self.selectPackages)
         grid.addMultiCellWidget(but, 6, 6, 0, 1)
         
@@ -135,4 +136,15 @@ class Project(QMainWindow):
                 (len(self.pak_list), self.pak_size, self.pak_inst_size))
     
     def selectPackages(self):
-        browser.PackageSelector(self, self.packagedir.text())
+        self.packagebut.setEnabled(False)
+        self.packagedir.setEnabled(False)
+        w = browser.PackageSelector(self, self.packagedir.text(), self.selectResult)
+    
+    def selectResult(self, paklist, size, instsize):
+        self.packagebut.setEnabled(True)
+        self.packagedir.setEnabled(True)
+        if paklist:
+            self.pak_list = paklist
+            self.pak_size = size
+            self.pak_inst_size = instsize
+            self.updatePaks()
