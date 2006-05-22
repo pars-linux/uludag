@@ -17,14 +17,13 @@ import kdedistutils
 
 kdedistutils.setup(
     name="guvenlik_kga",
-    version="1.1",
+    version="1.2",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ["src/firewall.ui", "src/guvenlik_kga.py", "src/incoming.png",
-                        "src/icmp.png", "src/logs.png",
+    application_data = ["src/firewall.ui", "src/guvenlik_kga.py",
                         ("/usr/kde/3.5/share/applications/kde/", ["src/guvenlik_kga-desk.desktop"]),
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps", ["src/guvenlik_kga.png"])],
     executable_links = [("guvenlik-kga", "guvenlik_kga.py")],
