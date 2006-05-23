@@ -71,7 +71,7 @@ class PisiThread(QThread):
     def updateAllRepos(self):
         self.databaseDirty = True
         self.updatingAllRepos = True
-        self.repoList = pisi.context.repodb.list()
+        self.repoList = pisi.api.list_repos()
         self.start()
 
     def addRepo(self,repoName,repoAddress):
