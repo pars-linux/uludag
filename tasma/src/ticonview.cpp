@@ -24,6 +24,7 @@
 #include <kcmoduleinfo.h>
 #include <kcmoduleloader.h>
 #include <krun.h>
+#include <ksimpleconfig.h>
 #include <kdebug.h>
 
 #include "ticonview.h"
