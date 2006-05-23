@@ -10,19 +10,32 @@ from kdecore import *
 import pisi.api
 from BalloonMessage import *
 
+
 class PiSiXTrayApp(KSystemTray):
     def __init__(self,parent=None):
         KSystemTray.__init__(self,parent)
 
-        self.setPixmap(KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
+        icon = KGlobal.iconLoader().loadIcon("pisix",KIcon.Small)
+        self.setPixmap(icon)
+
+        self.menu = self.contextMenu()
+        self.menu.insertItem(QIconSet(icon), "Run PiSi-X")
+        self.connect(menu, SIGNAL("activated(int)"), self.menuActivated)
+
 
         self.timer = QTimer(self)
         self.connect(self.timer, SIGNAL("timeout()"), self.initPiSi)
         self.timer.start(1000, True)
 
+
     def initPiSi(self):
         pisi.api.init(database=True, write=False, options=None, comar=False)
         print pisi.api.list_upgradable()
+
+
+    def menuActivated(self):
+        pass
+
 
     def mousePressEvent(self,event):
         if event.button() == Qt.LeftButton:
