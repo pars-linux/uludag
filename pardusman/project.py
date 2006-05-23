@@ -16,6 +16,7 @@ from qt import *
 
 import browser
 import utility
+import operations
 
 # no i18n yet
 def _(x):
@@ -53,7 +54,7 @@ class PathEntry(QHBox):
         if self.is_dir:
             s = QFileDialog.getExistingDirectory(self.path.text(), self, "lala", self.question, False)
         else:
-            s = QFileDialog.getOpenFileName(self.path.text(), "All (*.*)", self, "lala", self.question)
+            s = QFileDialog.getOpenFileName(self.path.text(), "All (*)", self, "lala", self.question)
         self.path.setText(s)
     
     def text(self):
@@ -165,7 +166,11 @@ class Project(QMainWindow):
     
     def prepareMedia(self):
         self.tab.setCurrentPage(1)
-        self.console.run("cat lala")
+        op = operations.ISO(self.console, "tmp")
+        op.setup_contents(self.contentdir.text())
+        op.setup_cdroot(self.cdroot.text())
+        op.setup_packages(self.pak_selection[2])
+        op.make(self.name.text())
     
     def updatePaks(self):
         if self.pak_selection:
