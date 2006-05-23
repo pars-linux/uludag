@@ -18,6 +18,7 @@
 #define T_ICON_VIEW_H
 
 #include <kiconview.h>
+#include <ksimpleconfig.h>
 
 class KCModule;
 class KCModuleInfo;
