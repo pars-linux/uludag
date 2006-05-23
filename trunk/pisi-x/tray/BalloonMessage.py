@@ -1,13 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
-
-import pisi.api
-
 from qt import *
 from kdeui import *
 from kdecore import *
+
 
 class KopeteBalloon(QWidget):
     def __init__(self,text,pix):
@@ -135,44 +132,3 @@ class KopeteBalloon(QWidget):
                     else:
                         self.move(self.mAnchor.x(),self.mAnchor.y())
                                	
-
-class PiSiXTrayApp(KSystemTray):
-    def __init__(self,parent=None):
-        KSystemTray.__init__(self,parent)
-
-        self.setPixmap(KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
-
-        self.timer = QTimer(self)
-        self.connect(self.timer, SIGNAL("timeout()"), self.initPiSi)
-        self.timer.start(1000, True)
-
-    def initPiSi(self):
-        pisi.api.init(database=True, write=False, options=None, comar=False)
-        print pisi.api.list_upgradable()
-
-    def mousePressEvent(self,event):
-        if event.button() == Qt.LeftButton:
-            self.popup = KopeteBalloon(i18n("There are new updates available!"),
-                                       KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
-            pos = self.mapToGlobal(self.pos())
-            self.popup.setAnchor(pos)
-            self.popup.show()
-        else:   
-            KSystemTray.mousePressEvent(self,event)
-            
-if __name__ == "__main__":
-
-    name = "pisix-tray"
-    desc = "pisix tray application"
-    aboutData = KAboutData(name, name, "0.0.1", desc, KAboutData.License_GPL,
-                            "(C) 2006 UEKAE/TÜBİTAK", None, None, "bilgi@pardus.org.tr")
-    aboutData.addAuthor('İsmail Dönmez', 'Maintainer', 'ismail@pardus.org.tr')
-
-    KCmdLineArgs.init(sys.argv,aboutData)
-    kapp = KApplication()
-    
-    tray = PiSiXTrayApp()
-    tray.show()
-    
-    kapp.setMainWidget(tray)
-    kapp.exec_loop()
