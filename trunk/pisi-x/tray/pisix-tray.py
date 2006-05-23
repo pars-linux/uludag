@@ -18,34 +18,49 @@ class PiSiXTrayApp(KSystemTray):
         icon = KGlobal.iconLoader().loadIcon("pisix",KIcon.Small)
         self.setPixmap(icon)
 
+        self.config = KSimpleConfig("pisix-tray")
+
         self.menu = self.contextMenu()
         self.menu.insertItem(QIconSet(icon), "Run PiSi-X")
-        self.connect(menu, SIGNAL("activated(int)"), self.menuActivated)
+        self.connect(self.menu, SIGNAL("activated(int)"), self.menuActivated)
 
 
         self.timer = QTimer(self)
         self.connect(self.timer, SIGNAL("timeout()"), self.initPiSi)
         self.timer.start(1000, True)
 
+        self.interval = None
+
 
     def initPiSi(self):
         pisi.api.init(database=True, write=False, options=None, comar=False)
-        print pisi.api.list_upgradable()
+
+        # check for upgrades for the first time
+        self.checkUpgradable()
+
+        self.config.setGroup("General")
+        # check interval, default is 60 min
+        self.interval = self.config.readNumEntry("Interval", 60) * (60 * 1000)
+
+        self.disconnect(self.timer, SIGNAL("timeout()"), self.initPiSi)
+        self.connect(self.timer, SIGNAL("timeout()"), self.checkUpgradable)
+        self.timer.start(self.interval, False)
 
 
-    def menuActivated(self):
-        pass
+    def checkUpgradable(self):
+        upgradeList = pisi.api.list_upgradable()
 
-
-    def mousePressEvent(self,event):
-        if event.button() == Qt.LeftButton:
+        if upgradeList:
             self.popup = KopeteBalloon(i18n("There are new updates available!"),
                                        KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
             pos = self.mapToGlobal(self.pos())
             self.popup.setAnchor(pos)
             self.popup.show()
-        else:   
-            KSystemTray.mousePressEvent(self,event)
+
+    def menuActivated(self):
+        pass
+
+
             
 if __name__ == "__main__":
 
