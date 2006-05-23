@@ -3,6 +3,8 @@
 
 import sys
 
+import pisi.api
+
 from qt import *
 from kdeui import *
 from kdecore import *
@@ -133,13 +135,25 @@ class KopeteBalloon(QWidget):
                     else:
                         self.move(self.mAnchor.x(),self.mAnchor.y())
                                	
-class MyTray(KSystemTray):
+
+class PiSiXTrayApp(KSystemTray):
     def __init__(self,parent=None):
         KSystemTray.__init__(self,parent)
 
+        self.setPixmap(KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
+
+        self.timer = QTimer(self)
+        self.connect(self.timer, SIGNAL("timeout()"), self.initPiSi)
+        self.timer.start(1000, True)
+
+    def initPiSi(self):
+        pisi.api.init(database=True, write=False, options=None, comar=False)
+        print pisi.api.list_upgradable()
+
     def mousePressEvent(self,event):
         if event.button() == Qt.LeftButton:
-            self.popup = KopeteBalloon(i18n("There are new updates available!"),KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
+            self.popup = KopeteBalloon(i18n("There are new updates available!"),
+                                       KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
             pos = self.mapToGlobal(self.pos())
             self.popup.setAnchor(pos)
             self.popup.show()
@@ -148,14 +162,16 @@ class MyTray(KSystemTray):
             
 if __name__ == "__main__":
 
-    about_data = KAboutData("pisix", "Hödük", "0.0.1", "Hödük", KAboutData.License_GPL,
-                            "(C) 2006 UEKAE/TÜBİTAK", None, None, "ismail@pardus.org.tr")
+    name = "pisix-tray"
+    desc = "pisix tray application"
+    aboutData = KAboutData(name, name, "0.0.1", desc, KAboutData.License_GPL,
+                            "(C) 2006 UEKAE/TÜBİTAK", None, None, "bilgi@pardus.org.tr")
+    aboutData.addAuthor('İsmail Dönmez', 'Maintainer', 'ismail@pardus.org.tr')
 
-    KCmdLineArgs.init(sys.argv,about_data)
+    KCmdLineArgs.init(sys.argv,aboutData)
     kapp = KApplication()
     
-    tray = MyTray()
-    tray.setPixmap(KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
+    tray = PiSiXTrayApp()
     tray.show()
     
     kapp.setMainWidget(tray)
