@@ -12,16 +12,13 @@
 #
 # Authors: İsmail Dönmez <ismail@pardus.org.tr>
 
-from qt import *
-
 import pisi
 import pisi.api
 
 import ComarIface
 
-class Commander(QObject):
-    def __init__(self, parent):
-        QObject.__init__(self)
+class Commander():
+    def __init__(self):
         self.comar = ComarIface.ComarIface()
 
         # Caching mechanism
