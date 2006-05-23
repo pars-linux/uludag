@@ -1,0 +1,434 @@
+# translation of tr.po to
+# Turkish translations for PiSi KGA package
+# PiSi KGA paketi için Türkçe çeviriler.
+# Copyright (C) 2005 TÜBİTAK/UEKAE
+# This file is distributed under the same license as the PiSi KGA package.
+#
+# İsmail Dönmez <ismail@uludag.org.tr>, 2005.
+# Eray Ozkural <eray@uludag.org.tr>, 2005.
+# Görkem Çetin <gorkem@uludag.org.tr>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-05-14 14:52+0300\n"
+"PO-Revision-Date: 2006-03-02 13:31+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
+"Language-Team:  <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11\n"
+
+#: src/BalloonMessage.py:36
+msgid "Show Updates"
+msgstr "Güncellemeleri Göster"
+
+#: src/BalloonMessage.py:37
+msgid "Ignore"
+msgstr "Yoksay"
+
+#: src/BalloonMessage.py:142
+msgid "There are new updates available!"
+msgstr "Yeni güncellemeler var!"
+
+#: src/pisix.py:54
+msgid "GUI for PiSi package manager"
+msgstr "PiSi paket yöneticisi için arayüz"
+
+#: src/pisix.py:64
+msgid "Main Coder"
+msgstr "Ana Geliştirici"
+
+#: src/pisix.py:65
+msgid "CSS/JS Meister"
+msgstr "CSS/JS Ordinaryüsü"
+
+#: src/pisix.py:66
+msgid "GUI Design & Usability"
+msgstr "Arayüz Tasarımı ve Kullanılabilirlik"
+
+#: src/pisix.py:67
+msgid "Misc. Fixes"
+msgstr ""
+
+#: src/pisix.py:68
+msgid "Python coding help"
+msgstr "Python kodlama yardımı"
+
+#: src/pisix.py:69
+msgid "Helping with PiSi API"
+msgstr "PiSi konusunda yardım"
+
+#: src/pisix.py:70
+msgid "PiSi Authors"
+msgstr "PiSi Yazarları"
+
+#: src/pisix.py:70
+msgid "Authors of PiSi API"
+msgstr "PiSi API Yazarları"
+
+#: src/pisix.py:143
+msgid "Search: "
+msgstr "Ara: "
+
+#: src/pisix.py:161
+msgid "Components"
+msgstr "Bileşenler"
+
+#: src/pisix.py:192
+msgid "<b>Cancelling operation...</b>"
+msgstr ""
+
+#: src/pisix.py:218 src/pisix.py:233 src/pisix.py:371
+msgid "Show New Packages"
+msgstr "Yeni Paketleri Göster"
+
+#: src/pisix.py:222 src/pisix.py:229 src/pisix.py:608
+msgid "Show Installed Packages"
+msgstr "Kurulu Paketleri Göster"
+
+#: src/pisix.py:224 src/pisix.py:609
+msgid "Install Package(s)"
+msgstr "Paket(ler)i Kur"
+
+#: src/pisix.py:235
+msgid "Remove Package(s)"
+msgstr "Paket(ler)i Kaldır"
+
+#: src/pisix.py:318
+msgid "N\\A"
+msgstr "N\\A"
+
+#: src/pisix.py:319
+msgid "Description: "
+msgstr "Açıklama: "
+
+#: src/pisix.py:319
+msgid "Version: "
+msgstr "Sürüm: "
+
+#: src/pisix.py:320
+msgid "Package Size: "
+msgstr "Paket Boyutu: "
+
+#: src/pisix.py:320
+msgid "Homepage: "
+msgstr "Web sayfası: "
+
+#: src/pisix.py:411
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+#: src/pisix.py:421
+msgid ""
+"Pisi could not be started! Please make sure no other pisi process is running."
+msgstr ""
+"Pisi başlatılamadı! Lütfen Pisi'nin başka biryerde çalışmadığına emin olun."
+
+#: src/pisix.py:421 src/Preferences.py:122 src/Preferences.py:139
+msgid "Pisi Error"
+msgstr "PiSi Hatası"
+
+#: src/pisix.py:445 src/PisiUi.py:89
+msgid "removing"
+msgstr "kaldırılan"
+
+#: src/pisix.py:448 src/PisiUi.py:83
+msgid "installing"
+msgstr "yüklenilen"
+
+#: src/pisix.py:459
+msgid "Removing these packages may break system safety. Aborting."
+msgstr ""
+
+#: src/pisix.py:470
+msgid "PiSi Question"
+msgstr "PiSi Soru"
+
+#: src/pisix.py:481
+msgid "PiSi Error"
+msgstr "PiSi Hatası"
+
+#: src/pisix.py:502
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<h3>PiSi hazırlanıyor...</h3>"
+
+#: src/pisix.py:503
+msgid "<b>Speed:</b> N/A"
+msgstr "<b>Hız:</b> ..."
+
+#: src/pisix.py:504
+msgid "<b>Downloaded/Total:</b> N/A"
+msgstr "<b>İndirilen/Toplam:</b> ..."
+
+#: src/pisix.py:508
+msgid "<b>Speed:</b> %1 %2"
+msgstr "<b>Hız:</b> %1 %2"
+
+#: src/pisix.py:516
+msgid "<b>Downloaded/Total:</b> %1 %2/%3 %4"
+msgstr "<b>İndirilen/Toplam:</b> %1 %2/%3 %4"
+
+#: src/pisix.py:522
+msgid "updating repository"
+msgstr "depo güncelleniyor"
+
+#: src/pisix.py:524
+msgid "Now %1 <b>%2</b> (%3 of %4)"
+msgstr "Şu anda %1 : <b>%2</b> (%3/%4)"
+
+#: src/pisix.py:564
+msgid "Currently Available Updates"
+msgstr ""
+
+#: src/pisix.py:569
+msgid "Upgrade selected packages"
+msgstr ""
+
+#: src/pisix.py:610
+msgid "Check for updates"
+msgstr "Güncellemeleri kontrol et"
+
+#: src/pisix.py:611
+#, fuzzy
+msgid "Show basket"
+msgstr "Güncellemeleri Göster"
+
+#: src/pisix.py:631
+msgid "Package to install"
+msgstr "Yüklenecek paket ismi"
+
+#: src/pisix.py:634
+#, fuzzy
+msgid "Pisi-X is already running!"
+msgstr "PiSi başka bir yerde çalışıyor."
+
+#: src/Preferences.py:70
+msgid "Add New Repository"
+msgstr "Yeni Depo Ekle"
+
+#: src/Preferences.py:77
+msgid "Edit Repository"
+msgstr "Depoyu Değiştir"
+
+#: src/Preferences.py:122 src/Preferences.py:139
+msgid ""
+"<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
+msgstr ""
+"<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
+
+#: src/Preferences.py:129
+msgid "<qt>Do you want to update repository <b>%1</b></qt>"
+msgstr "<qt><b>%1</b> deposunu güncellemek istiyor musunuz?</b></qt>"
+
+#: src/Preferences.py:129
+msgid "Pisi Question"
+msgstr "PiSi Sorusu"
+
+#: src/PisiUi.py:81
+msgid "downloading"
+msgstr "indirilen"
+
+#: src/PisiUi.py:85
+msgid "configuring"
+msgstr "ayarlanan"
+
+#: src/PisiUi.py:87
+msgid "extracting"
+msgstr "çıkartılan"
+
+#: src/ClickLineEdit.py:17
+msgid "Enter some text to search"
+msgstr "Aranacak kelimeyi girin"
+
+#: src/HelpDialog.py:23
+msgid "PiSi X Help"
+msgstr "PiSi X Yardım"
+
+#: src/ProgressDialog.py:68
+msgid "Progress"
+msgstr "İşlem"
+
+#: src/ProgressDialog.py:70
+msgid "<b>Downloaded/Total:</b> Unknown"
+msgstr "<b>İndirilen/Toplam:</b> Bilinmiyor"
+
+#: src/ProgressDialog.py:71
+msgid "<b>Speed:</b> Unknown"
+msgstr "<b>Hız:</b> Bilinmiyor"
+
+#: src/ProgressDialog.py:72
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>PiSi hazırlanıyor...</h3>"
+
+#: src/PreferencesDialog.py:53 src/PreferencesDialog.py:175
+msgid "Repository Name"
+msgstr "Depo Adı"
+
+#: src/PreferencesDialog.py:54 src/PreferencesDialog.py:176
+msgid "Address"
+msgstr "Adres"
+
+#: src/PreferencesDialog.py:168
+msgid "PiSi Settings"
+msgstr "PiSi Ayarları"
+
+#: src/PreferencesDialog.py:170
+msgid "F1"
+msgstr "F1"
+
+#: src/PreferencesDialog.py:177
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
+
+#: src/PreferencesDialog.py:178
+msgid "&Add New Repository"
+msgstr "Yeni Depo &Ekle"
+
+#: src/PreferencesDialog.py:179
+msgid "Click here to add a new software repository"
+msgstr "Yeni bir depo eklemek için burayı tıklayın"
+
+#: src/PreferencesDialog.py:180
+msgid "&Edit Repository"
+msgstr "&Depoyu Değiştir"
+
+#: src/PreferencesDialog.py:181
+msgid "Click here to modify the name or address of a repository"
+msgstr "Bir deponun adını ya da adresini değiştirmek için burayı tıklayın"
+
+#: src/PreferencesDialog.py:182
+msgid "&Remove Repository"
+msgstr "Depoyu &Kaldır"
+
+#: src/PreferencesDialog.py:183
+msgid "Click here to delete a repository from the list"
+msgstr "Listeden bir depo silmek için burayı tıklayın"
+
+#: src/PreferencesDialog.py:184
+msgid "Move &Up"
+msgstr "&Yukarı Taşı"
+
+#: src/PreferencesDialog.py:185
+msgid "Click here to move the repository one level up"
+msgstr "Depoyu bir satır yukarı kaydırmak için tıklayın"
+
+#: src/PreferencesDialog.py:186
+msgid "Move &Down"
+msgstr "&Aşağı Taşı"
+
+#: src/PreferencesDialog.py:187
+msgid "Click here to move the repository one level down"
+msgstr "Depoyu bir satır aşağı kaydırmak için tıklayın"
+
+#: src/PreferencesDialog.py:188
+msgid "&Update All Repositories"
+msgstr "Tüm Depoları &Güncelle"
+
+#: src/PreferencesDialog.py:189
+msgid "Click here to update all repositories so that you can use  "
+msgstr ""
+"Depolardaki yazılımları kullanabilmek için buraya tıklayarak güncelleyin"
+
+#: src/PreferencesDialog.py:190
+msgid "&Repositories"
+msgstr "&Depolar"
+
+#: src/PreferencesDialog.py:191
+msgid "&Show only desktop applications"
+msgstr "&Sadece masaüstü uygulamalarını göster"
+
+#: src/PreferencesDialog.py:192
+msgid "If checked, then pisi will only show desktop applications"
+msgstr "Eğer seçili ise, pisi sadece masaüstü uygulamalarını gösterecektir"
+
+#: src/PreferencesDialog.py:193
+msgid "&Automatically check for updates when started"
+msgstr "&Her açılışta yazılım güncellemelerini kontrol et"
+
+#: src/PreferencesDialog.py:194 src/PreferencesDialog.py:204
+msgid ""
+"If checked, then updates for Pardus will be automatically checked and you "
+"will be notified"
+msgstr ""
+"Eğer tıklanmış ise, gerekli güncellemeler otomatik olarak kontrol edilecek "
+"ve bilgisi aktarılacak"
+
+#: src/PreferencesDialog.py:195
+msgid "&General Settings"
+msgstr "&Genel Ayarlar"
+
+#: src/PreferencesDialog.py:196
+msgid "Cache cleaning"
+msgstr "Önbellek temizleme"
+
+#: src/PreferencesDialog.py:197
+msgid "C&lean disk cache now"
+msgstr "Ö&nbelleği şimdi temizle"
+
+#: src/PreferencesDialog.py:198
+msgid ""
+"Cleaning up the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+"Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan \n"
+"tüm paketler silinecektir. Bu işlem sistemde kurulu olan paketleri \n"
+"silmez ve bilgisayarınızın çalışmasını etkilemez."
+
+#: src/PreferencesDialog.py:200
+msgid "Cache usage"
+msgstr "Önbellek kullanımı"
+
+#: src/PreferencesDialog.py:201
+msgid "Maximum cache size:"
+msgstr "Azami önbellek boyutu:"
+
+#: src/PreferencesDialog.py:202
+msgid "2000"
+msgstr "2000"
+
+#: src/PreferencesDialog.py:203
+msgid "&Use hard disk cache for downloaded software"
+msgstr "İ&ndirilen yazılımlar için sabit disk önbelleğini kullan"
+
+#: src/PreferencesDialog.py:205
+#, fuzzy
+msgid "Mb <i>(use 0 for no limit)</i>"
+msgstr "<i>(Sınır koymamak için 0 kullanın)</i>"
+
+#: src/PreferencesDialog.py:206
+msgid "C&ache"
+msgstr "&Önbellek"
+
+#: src/RepoDialog.py:69
+msgid "Repository Dialog"
+msgstr "Depo Penceresi"
+
+#: src/RepoDialog.py:70
+msgid "Repository &Name"
+msgstr "&Depo Adı"
+
+#: src/RepoDialog.py:71
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
+
+#: src/RepoDialog.py:72
+msgid "Repository &Address"
+msgstr "D&epo Adresi"
+
+#: src/RepoDialog.py:73
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:74
+msgid "&Ok"
+msgstr "&Tamam"
+
+#~ msgid "Component/Category"
+#~ msgstr "Bileşen/Sınıf"
+
+#~ msgid "Mb"
+#~ msgstr "Mb"

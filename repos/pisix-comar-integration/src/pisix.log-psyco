@@ -1,0 +1,11 @@
+13:27:04.66  Logging started, 04/28/06                  %%%%%%%%%%%%%%%%%%%%
+13:27:04.66  ActivePassiveProfiler: starting                           %%%%%
+13:27:25.08   ______
+        #1   |77.2 %|  active_start              ...psyco/profiler.py:281
+        #2   |10.3 %|  _reconstructor            ...on2.4/copy_reg.py:46
+        #3   | 3.4 %|  decode                    .../pisi/dbshelve.py:91
+        #4   | 1.9 %|  items                     .../pisi/dbshelve.py:153
+        #5   | 0.8 %|  list_if                   ...i/itembyrepodb.py:79
+        #6   | 0.7 %|  not_just_tracking         ...i/itembyrepodb.py:63
+13:27:25.08  memory usage: 0+ kb                                           %
+13:27:25.08  program exit, 28-04-2006                   %%%%%%%%%%%%%%%%%%%%
