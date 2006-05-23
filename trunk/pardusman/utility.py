@@ -1,0 +1,21 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2006, TUBITAK/UEKAE
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version. Please read the COPYING file.
+#
+
+def size_fmt(size):
+    parts = []
+    if size == 0:
+        return "0"
+    while size > 0:
+        parts.append("%03d" % (size % 1000))
+        size /= 1000
+    parts.reverse()
+    tmp = ".".join(parts)
+    return tmp.lstrip("0")

@@ -11,6 +11,7 @@
 
 import os
 import piksemel
+from utility import size_fmt
 from pisi import zipfileext
 from qt import *
 
@@ -29,17 +30,6 @@ def pisi_paks(path):
             if fn.endswith(".pisi"):
                 paks.append(os.path.join(root, fn))
     return paks
-
-def size_fmt(size):
-    parts = []
-    if size == 0:
-        return "0"
-    while size > 0:
-        parts.append("%03d" % (size % 1000))
-        size /= 1000
-    parts.reverse()
-    tmp = ".".join(parts)
-    return tmp.lstrip("0")
 
 
 class Component(QCheckListItem):
@@ -194,14 +184,40 @@ class PackageSelectorWidget(QVBox):
         for pak in pisi_paks(path):
             Package(self, pak)
     
-    def get_packages(self):
-        paks = []
+    def get_selection(self):
+        comps = []
+        item = self.comps.firstChild()
+        while item:
+            if item.isOn():
+                comps.append(item.name)
+            item = item.nextSibling()
+        
+        selpaks = []
+        allpaks = []
         item = self.list.firstChild()
         while item:
             if item.mark > 0:
-                paks.append(item.path)
+                if item.isOn():
+                    selpaks.append(item.path)
+                allpaks.append(item.path)
             item = item.nextSibling()
-        return paks
+        
+        return (comps, selpaks, allpaks)
+    
+    def set_selection(self, selection):
+        for name in selection[0]:
+            item = self.comps.firstChild()
+            while item:
+                if item.name == name:
+                    item.setState(QCheckListItem.On)
+                item = item.nextSibling()
+        
+        for path in selection[1]:
+            item = self.list.firstChild()
+            while item:
+                if item.path == path:
+                    item.setState(QCheckListItem.On)
+                item = item.nextSibling()
     
     def _update_label(self):
         if self.nr_paks == 0:
@@ -212,20 +228,20 @@ class PackageSelectorWidget(QVBox):
                 (self.nr_paks, size_fmt(self.total_zip), size_fmt(self.total)))
     
     def _select_pak(self, pak):
-        self.total += pak.size
-        self.total_zip += pak.inst_size
+        self.total_zip += pak.size
+        self.total += pak.inst_size
         self.nr_paks += 1
         self._update_label()
     
     def _unselect_pak(self, pak):
-        self.total -= pak.size
-        self.total_zip -= pak.inst_size
+        self.total_zip -= pak.size
+        self.total -= pak.inst_size
         self.nr_paks -= 1
         self._update_label()
 
 
 class PackageSelector(QDialog):
-    def __init__(self, parent, path, callback):
+    def __init__(self, parent, path, callback, selection):
         QDialog.__init__(self, parent)
         self.callback = callback
         vb = QVBoxLayout(self, 6)
@@ -236,11 +252,13 @@ class PackageSelector(QDialog):
         self.connect(but, SIGNAL("clicked()"), self.accept)
         vb.addWidget(but, 0, Qt.AlignRight)
         self.selector.browse_packages(path)
+        if selection:
+            self.selector.set_selection(selection)
         self.show()
     
     def accept(self):
         sel = self.selector
-        self.callback(sel.get_packages(), sel.total_zip, sel.total)
+        self.callback(sel.get_selection(), sel.total_zip, sel.total)
         QDialog.accept(self)
     
     def reject(self):
