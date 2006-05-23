@@ -14,7 +14,8 @@ import shutil
 
 
 class ISO:
-    def __init__(self, tmpdir):
+    def __init__(self, console, tmpdir):
+        self.run = console.run
         self.tmpdir = tmpdir
         self.workdir = os.path.join(tmpdir, "pardusman_cd_work_dir")
         if os.path.exists(self.workdir):
@@ -40,5 +41,5 @@ class ISO:
         pass
     
     def make(self, name):
-        os.system('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table %s' %
+        self.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table %s' %
             (name, os.path.join(self.tmpdir, "%s.iso" % name), self.workdir))
