@@ -88,10 +88,11 @@ void TIconView::slotItemSelected( QIconViewItem* item )
   
     if(_oldModuleInfo) KCModuleLoader::unloadModule(*_oldModuleInfo);
 
-#warning Hack for alpha, fix for BETA!
-    if(_item->moduleinfo()->fileName().endsWith("tasmapisi.desktop"))
+    KSimpleConfig cfg(_item->moduleinfo()->fileName(),true);
+
+    if(cfg.readEntry("X-Tasma-Fork"))
       {
-        system("kdesu pisix");
+        system(cfg.readEntry("Exec"));
         return;
       }
 
