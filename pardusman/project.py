@@ -13,6 +13,7 @@ import os
 from qt import *
 
 import browser
+import utility
 
 # no i18n yet
 def _(x):
@@ -69,7 +70,7 @@ class Project(QMainWindow):
     def __init__(self, parent):
         QMainWindow.__init__(self, parent)
         
-        self.pak_list = []
+        self.pak_selection = None
         self.pak_size = 0
         self.pak_inst_size = 0
         
@@ -129,22 +130,22 @@ class Project(QMainWindow):
         self.show()
     
     def updatePaks(self):
-        if len(self.pak_list) == 0:
-            self.paklabel.setText(_("(no packages selected yet)"))
+        if self.pak_selection:
+            self.paklabel.setText(_("(%d packages, %s size, %s installed)") % 
+                (len(self.pak_selection[2]), utility.size_fmt(self.pak_size), utility.size_fmt(self.pak_inst_size)))
         else:
-            self.paklabel.setText(_("(%d packages, %d size, %d installed)") % 
-                (len(self.pak_list), self.pak_size, self.pak_inst_size))
+            self.paklabel.setText(_("(no packages selected yet)"))
     
     def selectPackages(self):
         self.packagebut.setEnabled(False)
         self.packagedir.setEnabled(False)
-        w = browser.PackageSelector(self, self.packagedir.text(), self.selectResult)
+        w = browser.PackageSelector(self, self.packagedir.text(), self.selectResult, self.pak_selection)
     
-    def selectResult(self, paklist, size, instsize):
+    def selectResult(self, selection, size, instsize):
         self.packagebut.setEnabled(True)
         self.packagedir.setEnabled(True)
-        if paklist:
-            self.pak_list = paklist
+        if selection:
+            self.pak_selection = selection
             self.pak_size = size
             self.pak_inst_size = instsize
             self.updatePaks()
