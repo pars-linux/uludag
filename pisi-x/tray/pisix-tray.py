@@ -22,6 +22,9 @@ class PiSiXTrayApp(KSystemTray):
 
         self.menu = self.contextMenu()
         self.menu.insertItem(QIconSet(icon), "Run PiSi-X")
+        # FIXME: use proper icons
+        self.menu.insertItem(QIconSet(icon), "Check upgrades now!")
+        self.menu.insertItem(QIconSet(icon), "Configure")
         self.connect(self.menu, SIGNAL("activated(int)"), self.menuActivated)
 
 
@@ -48,6 +51,9 @@ class PiSiXTrayApp(KSystemTray):
 
 
     def checkUpgradable(self):
+
+        # FIXME: shoud update repos now
+                             
         upgradeList = pisi.api.list_upgradable()
 
         if upgradeList:
