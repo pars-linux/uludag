@@ -10,6 +10,8 @@
 #
 
 import os
+import subprocess
+import select
 from qt import *
 
 import browser
@@ -43,7 +45,7 @@ class PathEntry(QHBox):
         self.question = question
         self.setSpacing(3)
         self.path = QLineEdit(self)
-        self.path.setMinimumWidth(120)
+        self.path.setMinimumWidth(160)
         but = QPushButton("...", self)
         self.connect(but, SIGNAL("clicked()"), self.browse)
     
@@ -66,18 +68,51 @@ def makePathEntry(label, question, grid, row, parent, is_dir=True):
     return edit
 
 
+class Console(QTextEdit):
+    def __init__(self, parent):
+        QTextEdit.__init__(self, parent)
+    
+    def _echo(self, sock):
+        while len(select.select([sock.fileno()], [], [], 0)[0]) > 0:
+            data = os.read(sock.fileno(), 1024)
+            if data:
+                self.setText(unicode(self.text()) + unicode(data))
+            else:
+                return
+    
+    def run(self, command):
+        pop = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        while True:
+            self._echo(pop.stdout)
+            self._echo(pop.stderr)
+            qApp.processEvents()
+            ret = pop.poll()
+            if ret != None:
+                return ret
+ 
+
 class Project(QMainWindow):
     def __init__(self, parent):
         QMainWindow.__init__(self, parent)
+        self.setMinimumSize(520, 360)
         
         self.pak_selection = None
         self.pak_size = 0
         self.pak_inst_size = 0
         
-        w = QWidget(self)
-        self.setCentralWidget(w)
+        vb = QVBox(self)
+        vb.setSpacing(6)
+        vb.setMargin(6)
+        self.setCentralWidget(vb)
         
-        grid = QGridLayout(w, 10, 2, 12, 6)
+        tab = QTabWidget(vb)
+        self.tab = tab
+        tab.setMargin(6)
+        
+        w = QWidget(tab)
+        tab.addTab(w, _("Details"))
+        
+        grid = QGridLayout(w, 8, 2, 6, 6)
         
         lab = QLabel(_("Project name:"), w)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
@@ -113,21 +148,24 @@ class Project(QMainWindow):
         self.paklabel= QLabel(w)
         grid.addMultiCellWidget(self.paklabel, 7, 7, 0, 1)
         
-        line = QFrame(w)
-        line.setFrameStyle(line.HLine | line.Sunken)
-        grid.addMultiCellWidget(line, 8, 8, 0, 1, Qt.AlignBottom)
+        self.console = Console(self)
+        tab.addTab(self.console, _("Log"))
         
-        hb = QHBox(w)
+        hb = QHBox(vb)
         hb.setSpacing(12)
-        grid.addMultiCellWidget(hb, 9, 9, 0, 1, Qt.AlignBottom)
         
         QPushButton(_("Save"), hb)
         QPushButton(_("Save as..."), hb)
-        QPushButton(_("Make ISO"), hb)
-        
+        but = QPushButton(_("Prepare Media"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.prepareMedia)
+    
         self.updatePaks()
         
         self.show()
+    
+    def prepareMedia(self):
+        self.tab.setCurrentPage(1)
+        self.console.run("cat lala")
     
     def updatePaks(self):
         if self.pak_selection:
