@@ -15,11 +15,13 @@
 import pisi
 import pisi.api
 
+from qt import QObject
 import ComarIface
 
-class Commander():
-    def __init__(self):
-        self.comar = ComarIface.ComarIface()
+class Commander(QObject):
+    def __init__(self, parent):
+        QObject.__init__(self)
+        self.comar = ComarIface.ComarIface(self)
 
         # Caching mechanism
         self.databaseDirty = False
@@ -30,6 +32,13 @@ class Commander():
         # Init the database
         pisi.api.init(database=True, write=False)
 
+    def slotComar(self, reply):
+        reply = self.comar.com.read_cmd()
+        if reply[0] == self.comar.com.NOTIFY:
+            print 'Got notify',reply[2]
+        elif reply[0] == self.comar.com.RESULT:
+            print 'Got result',reply[2]
+        
     def install(self,apps):
         self.databaseDirty = True
         self.comar.installPackage(apps)

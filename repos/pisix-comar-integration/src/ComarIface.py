@@ -1,11 +1,19 @@
 # -*- coding: utf-8 -*-
 # Comar Interface
 
+from qt import QSocketNotifier, SIGNAL
 import comar
 
 class ComarIface:
-    def __init__(self):
+    def __init__(self,parent):
+        self.parent = parent
         self.com = comar.Link()
+
+        # Notification
+        self.com.ask_notify("System.Manager.progress")
+        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
+        
+        self.parent.connect(self.notifier, SIGNAL("activated(int)"), self.parent.slotComar)
 
     def installPackage(self, package):
         self.com.call("System.Manager.installPackage", ["package",package])
