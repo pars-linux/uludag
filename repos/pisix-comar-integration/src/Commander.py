@@ -32,27 +32,22 @@ class Commander():
 
     def install(self,apps):
         self.databaseDirty = True
-        self.installing = True
         self.comar.installPackage(apps)
         
     def upgrade(self,apps):
         self.databaseDirty = True
-        self.upgrading = True
         self.comar.upgradePackage(apps)
             
     def remove(self,apps):
         self.databaseDirty = True
-        self.removing = True
         self.comar.removePackage(apps)
         
     def updateRepo(self, repo):
         self.databaseDirty = True
-        self.updatingRepo = True
         self.comar.updateRepo(repo)
             
     def updateAllRepos(self):
         self.databaseDirty = True
-        self.updatingAllRepos = True
         self.comar.updateAllRepos()
         
     def addRepo(self,repoName,repoAddress):
@@ -98,7 +93,3 @@ class Commander():
     
     def getRepoUri(self,repoName):
         return pisi.api.ctx.repodb.get_repo(repoName).indexuri.get_uri()
-    
-    def cleanup(self):
-        pisi.api.finalize()
-        self.initDatabase()
