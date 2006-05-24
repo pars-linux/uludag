@@ -60,6 +60,9 @@ class PathEntry(QHBox):
     
     def text(self):
         return str(self.path.text())
+    
+    def setText(self, text):
+        self.path.setText(text)
 
 
 def makePathEntry(label, question, grid, row, parent, is_dir=True):
@@ -201,15 +204,18 @@ class Project(QMainWindow):
         f.write(data)
         f.close()
     
-    def load_project(self, filename):
-        doc = piksemel.parse(filename)
-        #FIXME
+    def from_xml(self, doc):
+        self.name.setText(doc.getTagData("name"))
+        self.contentdir.setText(doc.getTagData("release_files"))
+        self.cdroot.setText(doc.getTagData("boot_image"))
+        paks = doc.getTag("packages")
+        self.packagedir.setText(paks.getAttribute("path"))
     
     def save(self):
-        self.save_project("lala")
+        self.save_project("lala.xml")
     
     def save_as(self):
-        self.save_project("lala")
+        self.save_project("lala.xml")
     
     def updatePaks(self):
         if self.pak_selection:

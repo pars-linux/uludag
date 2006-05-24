@@ -11,6 +11,7 @@
 
 import os
 import sys
+import piksemel
 
 import project
 
@@ -19,10 +20,6 @@ def _(x):
     return x
 
 from qt import *
-
-#
-# UI Classes
-#
 
 
 class MainWindow(QMainWindow):
@@ -42,7 +39,7 @@ class MainWindow(QMainWindow):
         but = QPushButton(_("Prepare Pardus Live Media"), vb)
         but.setEnabled(False)
         but = QPushButton(_("Load a project"), vb)
-        but.setEnabled(False)
+        self.connect(but, SIGNAL("clicked()"), self.loadProject)
         QLabel(_("Recent projects:"), vb)
         QListBox(vb)
         but = QPushButton(_("Enough work today, Quit"), vb)
@@ -56,6 +53,15 @@ class MainWindow(QMainWindow):
     
     def newMedia(self):
         project.Project(self)
+    
+    def loadProject(self):
+        name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
+        doc = piksemel.parse(unicode(name))
+        if doc.name() != "pardusman-project":
+            return
+        if doc.getAttribute("type") == "media":
+            prj = project.Project(self)
+            prj.from_xml(doc)
 
 
 #
