@@ -304,6 +304,8 @@ class MainApplicationWidget(QWidget):
         index = 0
         style = ''
         packages.sort(key=string.lower)
+
+        self.parent.statusBar().message(i18n("Has %s packages") % packages.__len__())
 	
         for app in packages:
             if index % 2 == 0:
