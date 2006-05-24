@@ -76,28 +76,34 @@ def makePathEntry(label, question, grid, row, parent, is_dir=True):
 class Console(QTextEdit):
     def __init__(self, parent):
         QTextEdit.__init__(self, parent)
-        self.setReadOnly(True)
+        self.setTextFormat(self.LogText)
     
     def _echo(self, sock, error=False):
         while len(select.select([sock.fileno()], [], [], 0)[0]) > 0:
             data = os.read(sock.fileno(), 1024)
             if data:
                 if error:
-                    self.setText(unicode(self.text()) + "<font color=red>%s</font>" % unicode(data))
+                    self.error(data)
                 else:
-                    self.setText(unicode(self.text()) + unicode(data))
+                    self.info(data)
             else:
                 return
+    
+    def info(self, msg):
+        self.append(unicode(msg))
     
     def state(self, msg):
         self.append("<font color=blue>%s</font>" % unicode(msg))
     
+    def error(self, msg):
+        self.append("<font color=red>%s</font>" % unicode(msg))
+    
     def run(self, command):
         pop = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         while True:
+            qApp.processEvents()
             self._echo(pop.stdout)
             self._echo(pop.stderr, True)
-            qApp.processEvents()
             ret = pop.poll()
             if ret != None:
                 return ret
@@ -186,7 +192,10 @@ class Project(QMainWindow):
         op.setup_contents(self.contentdir.text())
         op.setup_cdroot(self.cdroot.text())
         op.setup_packages(self.pak_selection[2])
-        op.make(self.name.text())
+        if 0 == op.make(self.name.text()):
+            con.state("--- media prepared succesfully ---\n\n")
+        else:
+            con.state("--- operation failed ---")
     
     def save_project(self, filename):
         doc = piksemel.newDocument("pardusman-project")
