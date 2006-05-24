@@ -200,7 +200,11 @@ class Project(QMainWindow):
             for item in self.pak_selection[0]:
                 paks.insertTag("component").insertData(unicode(item))
             for item in self.pak_selection[1]:
+                paks.insertTag("selected-package").insertData(unicode(item))
+            for item in self.pak_selection[2]:
                 paks.insertTag("package").insertData(unicode(item))
+            paks.insertTag("zip-size").insertData(str(self.pak_size))
+            paks.insertTag("installed-size").insertData(str(self.pak_inst_size))
         data = doc.toPrettyString()
         f = file(filename, "w")
         f.write(data)
@@ -213,6 +217,16 @@ class Project(QMainWindow):
         self.cdroot.setText(doc.getTagData("boot_image"))
         paks = doc.getTag("packages")
         self.packagedir.setText(paks.getAttribute("path"))
+        self.pak_selection = ([], [], [])
+        L = self.pak_selection[0]
+        for item in paks.tags("component"):
+            L.append(item.firstChild().data())
+        L = self.pak_selection[1]
+        for item in paks.tags("selected-package"):
+            L.append(item.firstChild().data())
+        L = self.pak_selection[2]
+        for item in paks.tags("package"):
+            L.append(item.firstChild().data())
         self.updateStatus()
     
     def save(self):
@@ -228,7 +242,7 @@ class Project(QMainWindow):
         self.updateStatus()
     
     def updateStatus(self):
-        if self.pak_selection:
+        if self.pak_selection and len(self.pak_selection[2]) > 0:
             self.paklabel.setText(_("(%d packages, %s size, %s installed)") % 
                 (len(self.pak_selection[2]), utility.size_fmt(self.pak_size), utility.size_fmt(self.pak_inst_size)))
         else:
