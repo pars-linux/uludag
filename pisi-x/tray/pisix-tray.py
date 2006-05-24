@@ -8,7 +8,17 @@ from kdeui import *
 from kdecore import *
 
 import pisi.api
+import comar
 from BalloonMessage import *
+
+
+class ComarIface:
+    def __init__(self):
+        self.com = comar.Link()
+
+    def updateAllRepos(self):
+        self.com.call("System.Manager.updateAllRepositories")
+
 
 
 class PiSiXTrayApp(KSystemTray):
@@ -52,7 +62,8 @@ class PiSiXTrayApp(KSystemTray):
 
     def checkUpgradable(self):
 
-        # FIXME: shoud update repos now
+        # FIXME: No notification... etc...
+        ComarIface().updateAllRepos()
                              
         upgradeList = pisi.api.list_upgradable()
 
