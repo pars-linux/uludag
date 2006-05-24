@@ -28,7 +28,7 @@ class Commander():
         self.upgrades = []
 
         # Init the database
-        pisi.api.init()
+        pisi.api.init(database=True, write=False)
 
     def install(self,apps):
         self.databaseDirty = True
