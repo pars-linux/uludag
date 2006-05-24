@@ -46,5 +46,6 @@ class ISO:
     
     def make(self, name):
         self.state("Making the ISO...")
-        self.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table %s' %
+        ret = self.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' %
             (name, os.path.join(self.tmpdir, "%s.iso" % name), self.workdir))
+        return ret
