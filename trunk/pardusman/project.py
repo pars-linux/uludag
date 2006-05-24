@@ -111,6 +111,7 @@ class Project(QMainWindow):
         self.pak_selection = None
         self.pak_size = 0
         self.pak_inst_size = 0
+        self.project_name = None
         
         vb = QVBox(self)
         vb.setSpacing(6)
@@ -172,8 +173,8 @@ class Project(QMainWindow):
         self.connect(but, SIGNAL("clicked()"), self.save_as)
         but = QPushButton(_("Prepare Media"), hb)
         self.connect(but, SIGNAL("clicked()"), self.prepareMedia)
-    
-        self.updatePaks()
+        
+        self.updateStatus()
         
         self.show()
     
@@ -195,34 +196,48 @@ class Project(QMainWindow):
         doc.insertTag("boot_image").insertData(unicode(self.cdroot.text()))
         paks = doc.insertTag("packages")
         paks.setAttribute("path", unicode(self.packagedir.text()))
-        for item in self.pak_selection[0]:
-            paks.insertTag("component").insertData(unicode(item))
-        for item in self.pak_selection[1]:
-            paks.insertTag("package").insertData(unicode(item))
+        if self.pak_selection:
+            for item in self.pak_selection[0]:
+                paks.insertTag("component").insertData(unicode(item))
+            for item in self.pak_selection[1]:
+                paks.insertTag("package").insertData(unicode(item))
         data = doc.toPrettyString()
         f = file(filename, "w")
         f.write(data)
         f.close()
     
-    def from_xml(self, doc):
+    def load_project(self, filename, doc):
+        self.project_name = filename
         self.name.setText(doc.getTagData("name"))
         self.contentdir.setText(doc.getTagData("release_files"))
         self.cdroot.setText(doc.getTagData("boot_image"))
         paks = doc.getTag("packages")
         self.packagedir.setText(paks.getAttribute("path"))
+        self.updateStatus()
     
     def save(self):
-        self.save_project("lala.xml")
+        if self.project_name:
+            self.save_project(self.project_name)
+        else:
+            self.save_as()
     
     def save_as(self):
-        self.save_project("lala.xml")
+        filename = QFileDialog.getSaveFileName(".", "All (*)", self, "lala", _("Save project as..."))
+        self.project_name = unicode(filename)
+        self.save_project(self.project_name)
+        self.updateStatus()
     
-    def updatePaks(self):
+    def updateStatus(self):
         if self.pak_selection:
             self.paklabel.setText(_("(%d packages, %s size, %s installed)") % 
                 (len(self.pak_selection[2]), utility.size_fmt(self.pak_size), utility.size_fmt(self.pak_inst_size)))
         else:
             self.paklabel.setText(_("(no packages selected yet)"))
+        
+        if self.project_name:
+            self.setCaption(_("%s - Pardusman") % self.project_name)
+        else:
+            self.setCaption(_("New project - Pardusman"))
     
     def selectPackages(self):
         self.packagebut.setEnabled(False)
@@ -236,7 +251,7 @@ class Project(QMainWindow):
             self.pak_selection = selection
             self.pak_size = size
             self.pak_inst_size = instsize
-            self.updatePaks()
+            self.updateStatus()
 
 
 class LiveProject(QMainWindow):

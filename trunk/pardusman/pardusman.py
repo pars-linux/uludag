@@ -61,7 +61,7 @@ class MainWindow(QMainWindow):
             return
         if doc.getAttribute("type") == "media":
             prj = project.Project(self)
-            prj.from_xml(doc)
+            prj.load_project(unicode(name), doc)
 
 
 #
