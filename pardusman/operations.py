@@ -16,6 +16,7 @@ import shutil
 class ISO:
     def __init__(self, console, tmpdir):
         self.run = console.run
+        self.state = console.state
         self.tmpdir = tmpdir
         self.workdir = os.path.join(tmpdir, "pardusman_cd_work_dir")
         if os.path.exists(self.workdir):
@@ -26,12 +27,15 @@ class ISO:
             pass
     
     def setup_contents(self, contentdir):
+        self.state("Copying media content...")
         shutil.copytree(contentdir, self.workdir)
     
     def setup_cdroot(self, cdroot):
+        self.state("Copying boot image...")
         os.link(cdroot, os.path.join(self.workdir, "pardus"))
     
     def setup_packages(self, packagelist):
+        self.state("Copying packages...")
         repodir = os.path.join(self.workdir, "repo") 
         os.mkdir(repodir)
         for path in packagelist:
@@ -41,5 +45,6 @@ class ISO:
         pass
     
     def make(self, name):
+        self.state("Making the ISO...")
         self.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table %s' %
             (name, os.path.join(self.tmpdir, "%s.iso" % name), self.workdir))

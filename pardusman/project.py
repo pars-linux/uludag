@@ -12,6 +12,7 @@
 import os
 import subprocess
 import select
+import piksemel
 from qt import *
 
 import browser
@@ -72,20 +73,27 @@ def makePathEntry(label, question, grid, row, parent, is_dir=True):
 class Console(QTextEdit):
     def __init__(self, parent):
         QTextEdit.__init__(self, parent)
+        self.setReadOnly(True)
     
-    def _echo(self, sock):
+    def _echo(self, sock, error=False):
         while len(select.select([sock.fileno()], [], [], 0)[0]) > 0:
             data = os.read(sock.fileno(), 1024)
             if data:
-                self.setText(unicode(self.text()) + unicode(data))
+                if error:
+                    self.setText(unicode(self.text()) + "<font color=red>%s</font>" % unicode(data))
+                else:
+                    self.setText(unicode(self.text()) + unicode(data))
             else:
                 return
+    
+    def state(self, msg):
+        self.append("<font color=blue>%s</font>" % unicode(msg))
     
     def run(self, command):
         pop = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         while True:
             self._echo(pop.stdout)
-            self._echo(pop.stderr)
+            self._echo(pop.stderr, True)
             qApp.processEvents()
             ret = pop.poll()
             if ret != None:
@@ -155,8 +163,10 @@ class Project(QMainWindow):
         hb = QHBox(vb)
         hb.setSpacing(12)
         
-        QPushButton(_("Save"), hb)
-        QPushButton(_("Save as..."), hb)
+        but = QPushButton(_("Save"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.save)
+        but = QPushButton(_("Save as..."), hb)
+        self.connect(but, SIGNAL("clicked()"), self.save_as)
         but = QPushButton(_("Prepare Media"), hb)
         self.connect(but, SIGNAL("clicked()"), self.prepareMedia)
     
@@ -165,12 +175,41 @@ class Project(QMainWindow):
         self.show()
     
     def prepareMedia(self):
+        con = self.console
         self.tab.setCurrentPage(1)
-        op = operations.ISO(self.console, "tmp")
+        con.state("\n==> Preparing media for '%s'\n" % self.name.text())
+        op = operations.ISO(con, "tmp")
         op.setup_contents(self.contentdir.text())
         op.setup_cdroot(self.cdroot.text())
         op.setup_packages(self.pak_selection[2])
         op.make(self.name.text())
+    
+    def save_project(self, filename):
+        doc = piksemel.newDocument("pardusman-project")
+        doc.setAttribute("type", "media")
+        doc.insertTag("name").insertData(unicode(self.name.text()))
+        doc.insertTag("release_files").insertData(unicode(self.contentdir.text()))
+        doc.insertTag("boot_image").insertData(unicode(self.cdroot.text()))
+        paks = doc.insertTag("packages")
+        paks.setAttribute("path", unicode(self.packagedir.text()))
+        for item in self.pak_selection[0]:
+            paks.insertTag("component").insertData(unicode(item))
+        for item in self.pak_selection[1]:
+            paks.insertTag("package").insertData(unicode(item))
+        data = doc.toPrettyString()
+        f = file(filename, "w")
+        f.write(data)
+        f.close()
+    
+    def load_project(self, filename):
+        doc = piksemel.parse(filename)
+        #FIXME
+    
+    def save(self):
+        self.save_project("lala")
+    
+    def save_as(self):
+        self.save_project("lala")
     
     def updatePaks(self):
         if self.pak_selection:
@@ -192,3 +231,7 @@ class Project(QMainWindow):
             self.pak_size = size
             self.pak_inst_size = instsize
             self.updatePaks()
+
+
+class LiveProject(QMainWindow):
+    pass
