@@ -44,7 +44,7 @@ int main(int argc, char **argv)
           QString original = QString("/tmp/%1").arg(target.fileName());
           QString destination = original;
      
-          int i=1;      
+          unsigned int i=1;
           while(QFileInfo(destination).isSymLink()) // Protect against symlink attacks
             { 
               
