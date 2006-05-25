@@ -33,6 +33,12 @@ class ISO:
     def setup_cdroot(self, cdroot):
         self.state("Copying boot image...")
         os.link(cdroot, os.path.join(self.workdir, "pardus"))
+        self.state("Extracting boot/...")
+        imgdir = os.path.join(self.tmpdir, "image_mount")
+        os.mkdir(imgdir)
+        ret = self.run("sudo mount -o loop %s %s" % (cdroot, imgdir))
+        shutil.copytree(os.path.join(imgdir, "boot"), os.path.join(self.workdir, "boot"), True)
+        self.run("sudo umount %s" % imgdir)
     
     def setup_packages(self, packagelist):
         self.state("Copying packages...")
