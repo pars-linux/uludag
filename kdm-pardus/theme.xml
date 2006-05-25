@@ -8,11 +8,21 @@
 	<pos x="0" y="0" width="100%" height="100%"/>
 </item>
 
-<!-- saat -->
-<item type="label" id="clock">
-	<normal color="#444444" font="Sans Bold 10"/>
-	<pos anchor="n" x="%50" y="%5"/>
-	<text>%c</text>
+<item type="rect">
+    <pos anchor="n" x="%50" y="%5" width="box" height="box"/>
+    <box orientation="vertical" spacing="2">
+        <!-- makine adı -->
+        <item type="label">
+            <pos anchor="n" x="%50"/>
+            <normal color="#444444" font="Sans Bold 10"/>
+            <text>%h</text>
+        </item>
+        <!-- saat -->
+        <item type="label" id="clock">
+	        <normal color="#444444" font="Sans Bold 10"/>
+	        <text>%c</text>
+        </item>
+    </box>
 </item>
 
 <!-- kullanıcı ve parola alanları -->
