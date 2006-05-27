@@ -135,6 +135,7 @@ static PyObject *Node_type_func(Node *self);
 static PyObject *Node_reduce(Node *self, PyObject *args);
 static PyObject *Node_data(Node *self);
 static PyObject *Node_name(Node *self);
+static PyObject *Node_attributes(Node *self, PyObject *args);
 static PyObject *Node_getAttribute(Node *self, PyObject *args);
 static PyObject *Node_setAttribute(Node *self, PyObject *args);
 static PyObject *Node_getTag(Node *self, PyObject *args);
@@ -167,6 +168,8 @@ static PyMethodDef Node_methods[] = {
 	  "Return tag name." },
 	{ "data", (PyCFunction)Node_data, METH_NOARGS,
 	  "Return node's character data." },
+	{ "attributes", (PyCFunction)Node_attributes, METH_NOARGS,
+	  "Return node's attribute names." },
 	{ "getAttribute", (PyCFunction)Node_getAttribute, METH_VARARGS,
 	  "Return value of a tag attribute." },
 	{ "setAttribute", (PyCFunction)Node_setAttribute, METH_VARARGS,
@@ -398,6 +401,28 @@ Node_name(Node *self)
 	}
 
 	return Py_BuildValue("s", iks_name(self->node));
+}
+
+static PyObject *
+Node_attributes(Node *self, PyObject *args)
+{
+	PyObject *ret, *p;
+	iks *attr;
+
+	if (iks_type(self->node) != IKS_TAG) {
+		PyErr_SetNone(NotTag);
+		return NULL;
+	}
+
+	ret = PyList_New(0);
+	if (!ret) return NULL;
+
+	for (attr = iks_attrib(self->node); attr; attr = iks_next(attr)) {
+		p = PyString_FromString(iks_name(attr));
+		if (p) PyList_Append(ret, p);
+	}
+
+	return ret;
 }
 
 static PyObject *

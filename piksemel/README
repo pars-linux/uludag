@@ -83,6 +83,11 @@ Returns character data for data nodes.
 
 Returns the name of the tag for tag nodes.
 
+* attributes()
+
+Returns a list of node's attribute names. Returns an empty list
+if there aren't any.
+
 * getAttribute(attributename)
 
 Returns the value of the given attribute for tag nodes. If such
