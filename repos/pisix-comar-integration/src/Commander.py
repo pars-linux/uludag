@@ -44,10 +44,12 @@ class Commander(QObject):
                 self.parent.showInfoMessage(data)
             elif notification == "System.Manager.error":
                 self.parent.showErrorMessage(data)
-            elif notification == "System.Manager.progress":
-                pass
             elif notification == "System.Manager.notify":
                 pass
+            elif notification == "System.Manager.progress":
+                data = data.split(",")
+                rate = round(int(data[2]),1)
+                self.parent.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         else:
