@@ -37,8 +37,16 @@ class Commander(QObject):
         reply = self.comar.com.read_cmd()
         if reply[0] == self.comar.com.NOTIFY:
             notification, script, data = reply[2].split("\n", 2)
-            if notification == "System.Manager.warning":
-                self.parent.showInfoMessage(unicode(data))
+            data = unicode(data)
+
+            if notification in ("System.Manager.warning","System.Manager.info"):
+                self.parent.showInfoMessage(data)
+            elif notification == "System.Manager.error":
+                self.parent.showErrorMessage(data)
+            elif notification == "System.Manager.progress":
+                pass
+            elif notification == "System.Manager.notify":
+                pass
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         else:
