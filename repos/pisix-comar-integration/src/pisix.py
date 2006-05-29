@@ -428,11 +428,11 @@ class MainApplicationWidget(QWidget):
         self.listView.setSelected(self.listView.firstChild(),True)
         
     def showInfoMessage(self, message):
-        KMessageBox.information(self,message,i18n("PiSi Info"))
+        KMessageBox.information(self,message,i18n("Information"))
         
     def showErrorMessage(self, message):
         self.possibleError = True
-        KMessageBox.error(self,message,i18n("PiSi Error"))
+        KMessageBox.error(self,message,i18n("Error"))
                     
     def finished(self):
         self.selectedItems = []

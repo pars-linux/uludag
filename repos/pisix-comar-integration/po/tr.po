@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-14 14:52+0300\n"
+"POT-Creation-Date: 2006-05-29 10:29+0300\n"
 "PO-Revision-Date: 2006-03-02 13:31+0200\n"
 "Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -69,138 +69,112 @@ msgstr "PiSi Yazarları"
 msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
-#: src/pisix.py:143
+#: src/pisix.py:139
 msgid "Search: "
 msgstr "Ara: "
 
-#: src/pisix.py:161
+#: src/pisix.py:158
 msgid "Components"
 msgstr "Bileşenler"
 
-#: src/pisix.py:192
+#: src/pisix.py:186
+msgid "Loading Package List..."
+msgstr ""
+
+#: src/pisix.py:205
 msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
-#: src/pisix.py:218 src/pisix.py:233 src/pisix.py:371
+#: src/pisix.py:232 src/pisix.py:247 src/pisix.py:385
 msgid "Show New Packages"
 msgstr "Yeni Paketleri Göster"
 
-#: src/pisix.py:222 src/pisix.py:229 src/pisix.py:608
+#: src/pisix.py:236 src/pisix.py:243 src/pisix.py:569
 msgid "Show Installed Packages"
 msgstr "Kurulu Paketleri Göster"
 
-#: src/pisix.py:224 src/pisix.py:609
+#: src/pisix.py:238 src/pisix.py:570
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
-#: src/pisix.py:235
+#: src/pisix.py:249
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
-#: src/pisix.py:318
+#: src/pisix.py:332
 msgid "N\\A"
 msgstr "N\\A"
 
-#: src/pisix.py:319
+#: src/pisix.py:333
 msgid "Description: "
 msgstr "Açıklama: "
 
-#: src/pisix.py:319
+#: src/pisix.py:333
 msgid "Version: "
 msgstr "Sürüm: "
 
-#: src/pisix.py:320
+#: src/pisix.py:334
 msgid "Package Size: "
 msgstr "Paket Boyutu: "
 
-#: src/pisix.py:320
+#: src/pisix.py:334
 msgid "Homepage: "
 msgstr "Web sayfası: "
 
-#: src/pisix.py:411
+#: src/pisix.py:425
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
-#: src/pisix.py:421
-msgid ""
-"Pisi could not be started! Please make sure no other pisi process is running."
-msgstr ""
-"Pisi başlatılamadı! Lütfen Pisi'nin başka biryerde çalışmadığına emin olun."
-
-#: src/pisix.py:421 src/Preferences.py:122 src/Preferences.py:139
-msgid "Pisi Error"
-msgstr "PiSi Hatası"
-
-#: src/pisix.py:445 src/PisiUi.py:89
-msgid "removing"
-msgstr "kaldırılan"
-
-#: src/pisix.py:448 src/PisiUi.py:83
-msgid "installing"
-msgstr "yüklenilen"
-
-#: src/pisix.py:459
-msgid "Removing these packages may break system safety. Aborting."
-msgstr ""
-
-#: src/pisix.py:470
-msgid "PiSi Question"
-msgstr "PiSi Soru"
-
-#: src/pisix.py:481
-msgid "PiSi Error"
-msgstr "PiSi Hatası"
-
-#: src/pisix.py:502
+#: src/pisix.py:456
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/pisix.py:503
+#: src/pisix.py:457
 msgid "<b>Speed:</b> N/A"
 msgstr "<b>Hız:</b> ..."
 
-#: src/pisix.py:504
+#: src/pisix.py:458
 msgid "<b>Downloaded/Total:</b> N/A"
 msgstr "<b>İndirilen/Toplam:</b> ..."
 
-#: src/pisix.py:508
+#: src/pisix.py:462
 msgid "<b>Speed:</b> %1 %2"
 msgstr "<b>Hız:</b> %1 %2"
 
-#: src/pisix.py:516
+#: src/pisix.py:470
 msgid "<b>Downloaded/Total:</b> %1 %2/%3 %4"
 msgstr "<b>İndirilen/Toplam:</b> %1 %2/%3 %4"
 
-#: src/pisix.py:522
+#: src/pisix.py:476
 msgid "updating repository"
 msgstr "depo güncelleniyor"
 
-#: src/pisix.py:524
+#: src/pisix.py:478
 msgid "Now %1 <b>%2</b> (%3 of %4)"
 msgstr "Şu anda %1 : <b>%2</b> (%3/%4)"
 
-#: src/pisix.py:564
+#: src/pisix.py:525
 msgid "Currently Available Updates"
 msgstr ""
 
-#: src/pisix.py:569
+#: src/pisix.py:530
 msgid "Upgrade selected packages"
 msgstr ""
 
-#: src/pisix.py:610
+#: src/pisix.py:571
 msgid "Check for updates"
 msgstr "Güncellemeleri kontrol et"
 
-#: src/pisix.py:611
+#: src/pisix.py:572
 #, fuzzy
 msgid "Show basket"
 msgstr "Güncellemeleri Göster"
 
-#: src/pisix.py:631
+#: src/pisix.py:592
 msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
-#: src/pisix.py:634
+#: src/pisix.py:595
 #, fuzzy
 msgid "Pisi-X is already running!"
 msgstr "PiSi başka bir yerde çalışıyor."
@@ -213,11 +187,17 @@ msgstr "Yeni Depo Ekle"
 msgid "Edit Repository"
 msgstr "Depoyu Değiştir"
 
-#: src/Preferences.py:122 src/Preferences.py:139
+#: src/Preferences.py:122
+#, fuzzy
 msgid ""
-"<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
 msgstr ""
 "<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
+
+#: src/Preferences.py:122 src/Preferences.py:139
+msgid "Pisi Error"
+msgstr "PiSi Hatası"
 
 #: src/Preferences.py:129
 msgid "<qt>Do you want to update repository <b>%1</b></qt>"
@@ -227,17 +207,11 @@ msgstr "<qt><b>%1</b> deposunu güncellemek istiyor musunuz?</b></qt>"
 msgid "Pisi Question"
 msgstr "PiSi Sorusu"
 
-#: src/PisiUi.py:81
-msgid "downloading"
-msgstr "indirilen"
-
-#: src/PisiUi.py:85
-msgid "configuring"
-msgstr "ayarlanan"
-
-#: src/PisiUi.py:87
-msgid "extracting"
-msgstr "çıkartılan"
+#: src/Preferences.py:139
+msgid ""
+"<qt>Repository address should end with xml suffix.<p>Please try again.</qt>"
+msgstr ""
+"<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
 
 #: src/ClickLineEdit.py:17
 msgid "Enter some text to search"
@@ -426,6 +400,34 @@ msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
 #: src/RepoDialog.py:74
 msgid "&Ok"
 msgstr "&Tamam"
+
+#~ msgid ""
+#~ "Pisi could not be started! Please make sure no other pisi process is "
+#~ "running."
+#~ msgstr ""
+#~ "Pisi başlatılamadı! Lütfen Pisi'nin başka biryerde çalışmadığına emin "
+#~ "olun."
+
+#~ msgid "removing"
+#~ msgstr "kaldırılan"
+
+#~ msgid "installing"
+#~ msgstr "yüklenilen"
+
+#~ msgid "PiSi Question"
+#~ msgstr "PiSi Soru"
+
+#~ msgid "PiSi Error"
+#~ msgstr "PiSi Hatası"
+
+#~ msgid "downloading"
+#~ msgstr "indirilen"
+
+#~ msgid "configuring"
+#~ msgstr "ayarlanan"
+
+#~ msgid "extracting"
+#~ msgstr "çıkartılan"
 
 #~ msgid "Component/Category"
 #~ msgstr "Bileşen/Sınıf"
