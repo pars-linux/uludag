@@ -40,7 +40,7 @@ class Commander(QObject):
             notification, script, data = reply[2].split("\n", 2)
             data = unicode(data)
 
-            if notification in ("System.Manager.warning","System.Manager.info"):
+            if notification in ("System.Manager.warning"):
                 self.parent.showInfoMessage(data)
             elif notification == "System.Manager.error":
                 self.parent.showErrorMessage(data)
