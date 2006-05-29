@@ -1,5 +1,7 @@
-#LyX 1.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 221
+#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
 \textclass article
 \begin_preamble
 \tolerance 10000
@@ -10,83 +12,105 @@
 \fontscheme pslatex
 \graphics default
 \paperfontsize default
-\spacing single 
-\papersize Default
-\paperpackage a4
-\use_geometry 0
-\use_amsmath 0
-\use_natbib 0
-\use_numerical_citations 0
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\cite_engine basic
+\use_bibtopic false
 \paperorientation portrait
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
 \defskip medskip
 \quotes_language english
-\quotes_times 2
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tracking_changes false
+\output_changes true
+\end_header
 
-\layout Title
+\begin_body
 
+\begin_layout Title
 Yeni Geliþtirici Kýlavuzu
-\layout Author
+\end_layout
 
+\begin_layout Author
 Barýþ Metin <baris@uludag.org.tr>, A.
  Murat Eren <meren@uludag.org.tr>
-\layout Abstract
+\end_layout
 
+\begin_layout Abstract
 Bu belge yeni bir geliþtiricinin Uludað projesi geliþtirme sürecine dahil
  olmak için bilmesi ve yapmasý gerekenleri tarif etmektedir.
-\layout Abstract
-\pagebreak_top \pagebreak_bottom 
+\end_layout
 
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Abstract
 \begin_inset LatexCommand \tableofcontents{}
 
-\end_inset 
+\end_inset
 
 
-\layout Section
+\end_layout
 
+\begin_layout Standard
+
+\newpage
+
+\end_layout
+
+\begin_layout Section
 Giriþ
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Bu belgede Ulusal Daðýtým projesi bünyesinde geliþtirilen Pardus Ýþletim
  Sistemi'ne katkýcýlarýn nasýl destek verebileceðini ve bir Pardus geliþtiricisi
  olmak için gerekenleri anlatmaya çalýþacaðýz.
- Özelde Uludað geliþtirme modelini anlatýyor olsak da, sanýrýz belgede anlatýlan
+ Özelde Pardus geliþtirme modelini anlatýyor olsak da, sanýrýz belgede anlatýlan
 lar hemen hemen tüm daðýtým projelerini tarif edebilir.
  
-\layout Standard
+\end_layout
 
-Bu belgenin konusu dýþýnda kalan tüm bilgiye Ulusal Daðýtým web sayfalarýndan
- ulaþabilirsiniz.
+\begin_layout Standard
+Bu belgenin konusu dýþýnda kalan tüm bilgiye Pardus web sayfalarýndan ulaþabilir
+siniz.
  Web sayfalarýndan belgeler, kullanýlan araçlar ve servisler ile ilgili
  gerekli bilgiyi alabilirsiniz.
- Ulusal Daðýtým web sayfalarý 
-\begin_inset LatexCommand \url{http://www.uludag.org.tr}
+ Pardus web sayfalarý 
+\begin_inset LatexCommand \url{http://www.pardus.org.tr}
 
-\end_inset 
+\end_inset
 
  adresindedir.
-\layout Section
+\end_layout
 
+\begin_layout Section
 Geliþtirici kimdir?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Kaba hatlarý ile projenin iki tür görevi yerine getirmesi gerektiðini söylemek
  yanlýþ olmayacaktýr.
  Her daðýtýmýn yaptýðý gibi yazýlýmlarý bir araya getirmek ve bunun için
  gerekli alt yapýyý hazýrlama ve ayakta tutma iþlerinin yaný sýra daðýtýmýn
  ruhunu oluþturacak yeni araçlar ve teknolojiler geliþtirmek yapmamýz gerekenler
  arasýndadýr.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 
-\emph on 
+\emph on
 Geliþtirici
-\emph default 
+\emph default
  ile yalnýzca program yazan kiþileri deðil, bir yazýlým projesini baþarýlý
  kýlmak için yapýlmasý gereken herhangi bir iþi yerine getiren kiþileri
  tarif ediyoruz.
@@ -94,19 +118,22 @@ Geliþtirici
  hata kontrolleri, görsel materyaller, çeviri çalýþmalarý, vb.
  pek çok alanda çalýþma yapýlmasýnýn gerektiðinin farkýndayýz.
  Pardus içerisinde de tüm bu çalýþmalara ihtiyacýmýz var.
-\layout Subsection*
+\end_layout
 
+\begin_layout Subsection*
 Nasýl baþlayacaðým?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Öncelikle gidiþata ayak uydurmaya çalýþmak gerekiyor.
  Bunun için bir süre izlemek ve iþlerin nasýl yürüdüðünü gözlemlemek genellikle
  iþleyen bir yöntemdir.
  Uludað web sayfalarýndan ulaþýlabilen e-posta listelerine üye olarak tartýþmala
 rý ve yapýlanlarý izlemek, yayýnlanan dökümanlarý incelemek, yapýlan hata
  raporlarýný ve hatalara getirilen çözümleri gözlemlemek faydalý olacaktýr.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Daha sonra tanýmlý yöntemlere göre geliþtirmeye yardýmcý olabilirsiniz.
  Yazýlýmlarý test ederek hata raporlarýna yorumlarýnýzý ve çözüm önerilerinizi
  ekleyebilir, bulduðunuz yeni hatalarý bildirebilirsiniz.
@@ -118,14 +145,17 @@ Daha sonra tanýmlý yöntemlere göre geliþtirmeye yardýmcý olabilirsiniz.
  olmalýsýnýz.
  Birden fazla kiþinin çalýþtýðý her iþte olduðu gibi burada da birbirimizden
  haberdar olmamýz gerekiyor.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Ýhtiyaçlarýmýz aþaðýdaki maddeler ile özetlenebilir.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Yazýlým geliþtirme, hata ayýklama
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yazýlým geliþtirme konusundaki bilginizi ve emeðinizi bu alanda çalýþan
  kaynak temizleme ve yenilikçi teknolojiler ekiplerine yardýmcý olarak aktarabil
 irsiniz.
@@ -133,46 +163,53 @@ irsiniz.
  
 \begin_inset LatexCommand \url{http://liste.uludag.org.tr/mailman/listinfo}
 
-\end_inset 
+\end_inset
 
- adresi yardýmý ile üye olabileceðiniz Uludað e-posta listeleri size bu
- konuda yardýmcý olacaktýr.
-\layout Standard
+ adresi yardýmý ile üye olabileceðiniz e-posta listeleri size bu konuda
+ yardýmcý olacaktýr.
+\end_layout
 
-Web sayfalarýndan ulaþýlabilecek Uludað hata takip sistemini kullanarak
- raporlanmýþ hatalarý inceleyebilir ve çözüm getirebilirsiniz.
-\layout Subsection
+\begin_layout Standard
+Web sayfalarýndan ulaþýlabilecek hata takip sistemini kullanarak raporlanmýþ
+ hatalarý inceleyebilir ve çözüm getirebilirsiniz.
+\end_layout
 
+\begin_layout Subsection
 Çeviri
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Özgür yazýlýmlarýn yerelleþtirilmesi, doðru ve eksiksiz bir Türkçe ile kullanýla
 bilmeleri bir diðer ihtiyacýmýz.
  Bunun için hemen her büyük özgür yazýlým projesi için oluþturulmuþ olan
  yerelleþtirme ekipleri ile birlikte çalýþabilirsiniz.
- Öncelikli olarak Uludað için seçtiðimiz yazýlýmlarýn yerelleþtirme çalýþmalarýn
+ Öncelikli olarak Pardus için seçtiðimiz yazýlýmlarýn yerelleþtirme çalýþmalarýn
 a destek olmanýz bize doðrudan fayda saðlayacaktýr.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Kýsaca yerelleþtirme çalýþmalarýna destek olun; ham çevirinin ötesinde çeviriler
 in kalitelerini de arttýrmaya çalýþýn.
- Çeviri çalýþmalarýna destek olmakla sadece Ulusal Daðýtým'a deðil, mevcut
- tüm Linux daðýtýmlarýna da sorunsuz Türkçe'ye sahip paketler kazandýrarak
- önemli bir misyonun parçasý olabilirsiniz.
-\layout Standard
+ Çeviri çalýþmalarýna destek olmakla sadece Pardus'a deðil, mevcut tüm Linux
+ daðýtýmlarýna da sorunsuz Türkçe'ye sahip paketler kazandýrarak önemli
+ bir misyonun parçasý olabilirsiniz.
+\end_layout
 
+\begin_layout Standard
 Belli baþlý çeviri gruplarýna yardým etmek için 
-\begin_inset LatexCommand \url{http://cekirdek.uludag.org.tr/~baris/tmp/ceviri-calismalari.html}
+\begin_inset LatexCommand \url{http://www.pardus.org.tr/projeler/turkce/y10me/}
 
-\end_inset 
+\end_inset
 
  adresindeki yerelleþtirme çalýþmalarý listesinden ilgi duyduðunuz yerelleþtirme
  çalýþmalarýna ulaþabilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Test ve hata bildirimleri
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Seçtiðimiz yazýlýmlarý test ederek hata bildiriminde bulunabilirsiniz.
  Hatalarý diðer daðýtýmlarda kontrol ederek durumu raporlayabilirsiniz.
  Diðer daðýtýmlarda da bu sorunun olduðunu bilmek doðru bir çözüm üretmek
@@ -181,60 +218,69 @@ Seçtiðimiz yazýlýmlarý test ederek hata bildiriminde bulunabilirsiniz.
  ulaþmamýz o daðýtýmýn yazýlýmla ilgili yaptýðý çalýþmalarý inceleyerek
  daha hýzlý olacaktýr.
  Hata takip sistemimize 
-\begin_inset LatexCommand \url{http://bugs.uludag.org.tr/}
+\begin_inset LatexCommand \url{http://bugs.pardus.org.tr/}
 
-\end_inset 
+\end_inset
 
  adresinden eriþebilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Grafik Tasarým, Çoklu ortam
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Eðer bu konuda yeteneðiniz varsa daðýtým içerisinde kullanýlacak ikon setleri,
  yazý tipleri, renk temalarý gibi grafik bilgisi gerektiren konularda yardýmcý
  olabilirsiniz.
  Çalýþmalarýnýzda ihtiyaç duyabileceðiniz görsel materyal konusunda e-posta
  listelerimiz yoluyla bizden yardým isteyebilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Belgeleme
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yürütülmekte olan projelerin belgelemesine destek olabilirsiniz.
  Kullanýcý belgelerinin yaný sýra projeye yeni katýlacak geliþtiriciler
  için 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 Nasýl yapýlýr
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  belgeleri hazýrlayabilirsiniz.
  Web sayfalarýmýzýn güncellenmesinde bize yardýmcý olabilirsiniz ya da sayfalarý
 mýzýn Ýngilizce, Almanca, Ýspanyolca gidi yabancý dillerdeki çevirilerinin
  güncel olmasýný saðlayabilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Tanýtým
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Projenin tanýtýmýna destek olarak daha çok insanýn haberdar olmasýný saðlayabili
 rsiniz.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Muhtemelen yardým edebileceðiniz konularýn listesi yukarýdakiler ile sýnýrlý
  deðildir.
  E-posta listelerindeki proje ile ilgili tartýþma konularýnda fikirlerinizi
  belirterek, önerilerinizi sunarak ve yapýcý eleþtiriler getirerek, daðýtýmý
  ilgilendiren geliþmelerden haber ederek yardýmcý olabileceðiniz yeni alanlar
  bulabilirsiniz.
-\layout Section
+\end_layout
 
+\begin_layout Section
 Geliþtiricinin sorumluluðu nedir?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Aslýnda bu sorunun cevabý üzerinde çalýþmaya baþladýðýnýz konuya göre oldukça
  deðiþken olabilir.
  Fakat genel olarak tüm geliþtiricilerin temel sorumluluklarýndan bahsedebiliriz.
@@ -243,11 +289,13 @@ Aslýnda bu sorunun cevabý üzerinde çalýþmaya baþladýðýnýz konuya göre oldukça
  Bu yüzden aþaðýdaki maddeler genel geçer olarak kabul edilebilse de, çalýþma
  ortamýnýza ve arkadaþlarýnýza alýþtýkça birlikte çalýþmak için bir yöntem
  bulabilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Süreklilik
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Bir geliþtiricinin üzerinde çalýþtýðý projelerde sürekli olarak çalýþabilmeyi
  göze almasý gerekiyor.
  Burada süreklilik ile ifade edilen 7/24 bir çalýþma deðil, fakat üzerinde
@@ -255,11 +303,13 @@ Bir geliþtiricinin üzerinde çalýþtýðý projelerde sürekli olarak çalýþabilmeyi
  Bir iþletim sistemi projesinde parçalar birbirleri ile sýký bir þekilde
  baðlý olduðu için geliþtiricilerin de birbirlerinin hýzlarýna ayak uydurabilmel
 eri gerekiyor.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Doðruluk
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Proje içerisinde birden fazla geliþtirici ile ayný konu üzerinde çalýþýyor
  olabilirsiniz.
  Bunun yanýnda sizin çalýþmalarýnýzdan etkilenen baþka geliþtiriciler de
@@ -271,35 +321,40 @@ Proje içerisinde birden fazla geliþtirici ile ayný konu üzerinde çalýþýyor
  diðer geliþtiricileri de göz önüne almalýsýnýz.
  Yaptýðýnýz bir deðiþikliðin, az da olsa, diðer geliþtiricilerin iþlerini
  yapmasýna engel olmamasýný saðlamalýsýnýz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Kararlýlýk
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Üzerinde çalýþtýðýnýz konuda eðer karar verme yetkisi sizde ise kararlarýnýzý
  çok sýk bir þekilde deðiþtirmeniz diðer geliþtiricilerin geliþimi takip
  etmesini, fakat daha önemlisi size baðýmlý olan geliþtiricilerin çalýþmalarýný
  güçleþtirecektir.
  Bu yüzden kararlarýnýzý iyi düþünerek ve diðer geliþtiricilerin de fikirlerini
  alarak vermeniz faydalý olacaktýr.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yine de bir noktada kararýnýzý deðiþtirmeniz gerektiðini hissederseniz,
  bunu diðer geliþtiricilere de haber vererek ve eski çalýþmalarýnýz eðer
  kullanýlýyorsa onlara zarar vermeyerek, ayrý bir 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 deneysel
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  alanda gerçekleþtirebilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Ýletiþim
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Aldýðýnýz kararlardan, attýðýnýz adýmlardan küçük de olsa yaptýðýnýz deðiþiklikl
 erden diðer geliþtiricileri haberdar etmek faydalý olacaktýr.
  Böylelikle üzerinde çalýþtýðýnýz konuya (her zaman ihtiyaç duyulan) yeni
@@ -311,11 +366,13 @@ r ile daha uyumlu ve hýzlý çalýþabilirsiniz.
  Ýletiþim için e-posta listelerini, hazýrlayacaðýnýz belgeleri veya yaptýðýnýz
  deðiþikliklere ekleyeceðiniz açýklama bilgilerini (subversion gönderim
  mesajlarý gibi) kullanabilirsiniz.
-\layout Section
+\end_layout
 
+\begin_layout Section
 Yeni geliþtirici baþvurusu
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yeni bir geliþtiriciye her zaman yer vardýr.
  Siz de bir Pardus geliþtiricisi olmak için baþvurabilir ve resmi bir geliþtiric
 i olabilirsiniz.
@@ -324,16 +381,18 @@ i olabilirsiniz.
  Fakat sorumluluk daðýtmak ve yeni geliþtiricileri kabul etmek konusunda
  hevesli olduðumuzu açýkça belirtebiliriz.
  Detaylar için okumaya devam edin...
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Kim baþvurabilir?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Pardus için çalýþmakta olan ve bu belgede tarif edilen geliþtirici sorumluluklar
 ýný kabul eden herkes 
-\emph on 
+\emph on
 yeni geliþtirici baþvurusu
-\emph default 
+\emph default
  yapabilir.
  Genellikle iletiþim e-posta listeleri üzerinden yazýlý olarak gerçekleþtiriliyo
 r; geliþtiricinin baþvurusunun kabul edilebilmesi için kararlýlýðýnýn ve
@@ -342,132 +401,163 @@ r; geliþtiricinin baþvurusunun kabul edilebilmesi için kararlýlýðýnýn ve
  baþlayabilirsiniz.
  Çalýþmalarýnýzý diðer geliþtiriciler ile paylaþarak yaptýklarýnýzýn incelenmesi
 ni saðlamanýz diðer geliþtiricilerin sizi tanýmalarýný saðlayacaktýr.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Örneðin, þu anki paketler deposundaki yazýlýmlar üzerinde çalýþmak, yama
  ve çözüm önerileri getirmek, diðer çözüm önerilerini inceleyerek test etmek
  ve bir rapor halinde sunmak iyi bir baþlangýç noktasý olabilir.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Bunun yanýnda, projeye destek vermek isteyenlerin kendilerini tanýtýp özellikler
 ine uygun bir iþ seçmek için kullanabilecekleri kalite e-posta listesi
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 Kalite e-posta listesine http://liste.uludag.org.tr/mailman/listinfo/kalite
  adresinden ulaþýlabilir.
-\end_inset 
+\end_layout
+
+\end_inset
 
  bulunmaktadýr.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Baþvuru nasýl yapýlýr?
-\layout Standard
+\end_layout
 
-Baþvuruyu basvuru@uludag.org.tr adresine bir e-posta ile yapabilirsiniz.
-\layout Standard
+\begin_layout Standard
+Baþvuruyu basvuru@pardus.org.tr adresine bir e-posta ile yapabilirsiniz.
+\end_layout
 
+\begin_layout Standard
 Baþvuru e-postanýzda;
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 Pardus üzerinde çalýþmakta olduðunuz geliþtirme konularýný
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 çalýþmak istediðiniz diðer konularý
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 hata kontrol siteminde kullandýðýnýz e-posta adresini/kullanýcý adýný
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 uzmanlýk alanlarýnýzý
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 sizin çalýþmalarýnýzdan haberdar olan ve size referans olabilecek bir Pardus
  geliþtiricisini
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 bildirmeniz gerekiyor.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Baþvuru e-postasýna hesabýnýz için kullanacaðýnýz kullanýcý adý ve parolanýzýn
  þifrelenmiþ bir halini (htpasswd ile oluþturulmuþ) eklemelisiniz.
  Bu sayede düz metin halini sadece sizin bildiðiniz parolanýzýn þifrelenmiþ
  halini bize göndermiþ olursunuz ve kimlik denetimi gerektiren yerlere kullanýcý
  adýnýzý ve þifrenizi ekleyebiliriz.
-\layout Subsubsection
+\end_layout
 
+\begin_layout Subsubsection
 htpasswd ile parola oluþturma
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Parola ve kullanýcý adýnýzý htpasswd programýný kullanarak oluþturabilir
  ve çýktý dosyasýný e-postanýza ekleyebilirsiniz.
  Bunun için aþaðýdaki komut kullanýlabilir.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ htpasswd -c parola_dosyasi kullanici_adi
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 New password:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Re-type new password:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Adding password for user kullanici_adi
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Sonuç olarak oluþturulacak çýktý dosyasýný (parola_dosyasi) e-postanýza
  ekleyebilirsiniz.
-\layout Subsubsection
+\end_layout
 
+\begin_layout Subsubsection
 perl ile parola oluþturmak
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Bunun için aþaðýdaki komutu kullanabilirsiniz.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 perl -e "print crypt('parolanýz','xy'),
-\backslash 
+\backslash
 "
-\backslash 
+\backslash
 n
-\backslash 
+\backslash
 ";"
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 'xy' crypt() fonksiyonuna, gölgelemede kullanýlmak üzere parametre olarak
  verilecek olan rastgele iki karakterdir.
-\end_inset 
+\end_layout
+
+\end_inset
 
 
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Komut yalnýzca parolanýzý oluþturacaktýr.
  E-postanýzda kullanmak istediðiniz kullanýcý adýný da belirtmeniz gerekir.
-\layout Subsubsection
+\end_layout
 
+\begin_layout Subsubsection
 python ile parola oluþturmak
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Ayný iþlemi python ile aþaðýdaki komut ile yapabilirsiniz.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 python -c "import crypt; print crypt.crypt('parola', 'xy')"
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yine çýktý olarak yalnýzca parolanýzýn gölgelenmiþ hali verilecektir.
  E-postanýzda kullanmak istediðiniz kullanýcý adýný belirtmeniz gerekir.
-\layout Section
+\end_layout
 
+\begin_layout Section
 Subversion depolarý
-\layout Standard
+\end_layout
 
-Uludað kapsamýndaki geliþtirme süreci Subversion sürüm kontrol sistemi üzerinden
+\begin_layout Standard
+Pardus kapsamýndaki geliþtirme süreci Subversion sürüm kontrol sistemi üzerinden
  gerçekleþtirilmektedir.
  Subversion açýk kaynak kodlu bir sürüm takip sistemidir.
  Bir yazýlým projesi üzerinde birden fazla uygulama geliþtiricisinin birbirlerin
@@ -476,670 +566,794 @@ in yaptýklarý deðiþiklikleri bozma kaygýsý olmadan bir arada çalýþabilmelerini
  Bu sayede herhangi bir yazýlýmýn geliþim süreci geriye dönük takip edilebilmekt
 e, zaman içerisinde yapýlan deðiþiklikler gözlenebilmekte, herhangi bir
  zamanki versiyona kolayca dönülebilmektedir.
-\layout Standard
+\end_layout
 
-Uludað bünyesinde þu anda kullandýðýmýz iki adet subversion deposu bulunuyor.
-\layout Subsection
+\begin_layout Standard
+Pardus bünyesinde þu anda kullandýðýmýz iki adet subversion deposu bulunuyor.
+\end_layout
 
+\begin_layout Subsection
 Uludað Deposu
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Uludað deposu, proje içerisinde geliþtirilmekte olan ürünlerin tutulduðu
  depodur.
  Pardus için geliþtirilen tüm yazýlýmlar Uludað deposu içerisinde tutulur.
  
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Pardus Deposu
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Pardus deposu https://svn.uludag.org.tr/pardus adresinde hizmet verir.
  Pardus deposu yazýlýmlarýn PiSi paketlerinin bulunduðu kaynak paket depolarýný
  tutar.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Pardus deposu hakkýnda daha fazla bilgi Pardus Depo Politikasý belgesinden
  alýnabilir.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Depo dizin sýra düzenleri
-\layout Standard
+\end_layout
 
-Her bir Uludað subversion deposu aþaðýdaki dizin sýra düzenine (hiyerarþi)
- sahiptir.
-\layout Standard
+\begin_layout Standard
+Her bir subversion deposu aþaðýdaki dizin sýra düzenine (hiyerarþi) sahiptir.
+\end_layout
 
+\begin_layout Standard
 Depo içerisinde üç ana dizin bulunur; trunk, tags ve repos.
-\layout Subsubsection
+\end_layout
 
+\begin_layout Subsubsection
 trunk/
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Trunk dizini sürekli çalýþmanýn yapýldýðý dizindir.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Her proje modülü (belge, web sayfalarý, yazýlým projeleri, vb.) trunk/ altýnda
  kendi dizinine sahiptir.
-\layout Subsubsection
+\end_layout
 
+\begin_layout Subsubsection
 tags/
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Tags dizini, her hangi bir modül için, trunk altýnda yapýlan iþlerin etiketlener
 ek (taglanarak) kopayalandýklarý yerdir.
  Bu dizin de kendi içinde 3 dizin barýndýrýr.
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 tags/RELEASE/
-\series default 
+\series default
 : Yazýlýmlarýn (veya modüllerin) kendi sürüm numaralarýný etiketlemek içiin
  kullandýklarý dizindir.
  Örneðin, tasma'nýn 0.2 sürümü, tags/RELEASE/tasma-0.2 dizininde etiketlenir.
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 tags/BLACKHOLE
-\series default 
+\series default
 /: Geliþtirilmesi durdurulmuþ (üzerinde çalýþacak bir geliþtirici olmadýðý
  için veya artýk o projeye ihtiyaç duyulmadýðý için) projelerin 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 atýldýðý
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  bir kara deliktir.
  Buradaki projeler tekrar kullanýlmak istendiðinde trunk/ altýna kopyalanarak
  üzerinde çalýþýlýr.
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 tags/RESTRUCTURED/
-\series default 
+\series default
 : Yazýlým (veya modül) tümü ile yeniden yapýlanmaya girmiþ ve eski dosyalar
  artýk kullanýlmayacaksa modülün atýlacaðý dizindir.
  Örneðin, yazýlýmýna 28 Mayýs 2005'de yeniden baþlanmýþ 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 abc
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  projesi tags/RESTRUCTURED/abc-2005-05-28/ altýna taþýnýr.
-\layout Subsubsection
+\end_layout
 
+\begin_layout Subsubsection
 repos/
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Repos dizini geliþtiricilerin trunk/ altýnda yapýlan çalýþmadan farklý,
  deneysel çalýþmalarýný, ayný modül üzerinde çalýþan diðer geliþtiricileri
  rahatsýz etmeden yürütebilecekleri dizindir.
  Geliþtirici repos/ altýna kendi dizinini oluþturarak bu dizin içerisinde
  deneysel çalýþmalarýný yürütebilir.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 (Yalnýzca paketler deposu için geçerli olan bir kural olarak, repos/doc/
  dizini altýnda bu proje ile ilgili belgeler bulunur.)
-\layout Section
+\end_layout
 
+\begin_layout Section
 Subversion kullanýmý
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Subversion'ýn çok ayrýntýlý bir kullaným kitabý
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
-
+\begin_layout Standard
 \begin_inset LatexCommand \url{http://svnbook.red-bean.com/}
 
-\end_inset 
+\end_inset
 
 
-\end_inset 
+\end_layout
+
+\end_inset
 
  mevcuttur, ayrýca subversion projesinin kendi sitesindeki
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
-
+\begin_layout Standard
 \begin_inset LatexCommand \url{http://subversion.tigris.org/}
 
-\end_inset 
+\end_inset
 
 
-\end_inset 
+\end_layout
+
+\end_inset
 
  sýkça sorulan sorular sayfasýndan
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
-
+\begin_layout Standard
 \begin_inset LatexCommand \url{http://subversion.tigris.org/project_faq.html}
 
-\end_inset 
+\end_inset
 
 
-\end_inset 
+\end_layout
+
+\end_inset
 
  da proje hakkýnda bilgi alýnabilir.
  Bu kýsýmda pratik kullanýma iliþkin sýk ihtiyaç duyulan komutlar örneklerle
  anlatýlmaya çalýþýlacaktýr.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Sistemimde subversion olup olmadýðýný nasýl anlayabilirim?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Sisteminizde subversion olup olmadýðýný en hýzlý þekilde 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn --version
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutunun çýktýsýna bakarak öðrenebilirsiniz.
  Þuna benzer bir þeyler görmeniz iyiye iþarettir:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 evreniz@jaco:~$ svn --version
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 svn, version 1.0.3 (r9775)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   compiled May 19 2004, 21:28:49
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Copyright (C) 2000-2004 CollabNet.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Subversion is open source software, see http://subversion.tigris.org/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 This product includes software developed by CollabNet (http://www.Collab.Net/).
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 The following repository access (RA) modules are available:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 * ra_dav : Module for accessing a repository via WebDAV (DeltaV) protocol.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   - handles 'http' schema
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   - handles 'https' schema
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 * ra_local : Module for accessing a repository on local disk.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   - handles 'file' schema
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 * ra_svn : Module for accessing a repository using the svn network protocol.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   - handles 'svn' schema
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 evreniz@jaco:~$ 
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Eðer yoksa, 
 \begin_inset LatexCommand \url{http://subversion.tigris.org/project_packages.html}
 
-\end_inset 
+\end_inset
 
  adresinden daðýtýmýnýz ya da iþletim sisteminiz için hazýrlanmýþ olan paketi
  alarak sisteminize kurabilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Depo nedir?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Depo (repository), herkesin üzerinde çalýþtýðý yazýlým(lar)ýn son sürümünün,
  son sürümden önceki tüm sürümlerinin ve sürümler arasý deðiþikliklerin
  kullanýcý, tarih ve sebep bilgileri ile beraber saklandýðý ve çeþitli yöntemler
 le eriþilebilen bir disk alanýdýr.
  
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Depoda hangi dizinlerin olduðunu nasýl görebilirim?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Sizin de belirttiðiniz gibi, bir depo, içerisinde birden fazla dizin içerebilir.
  Deponun hiyerarþisi, diskimiz üzerindeki bir dizinin içi gibidir.
  Böylece deponun tamamýný diskinize almadan gezip, sadece üzerinde çalýþmak
  ya da göz atmak istediðiniz kýsmýn kopyasýný diskinize alabilirsiniz.
  Depo içerisindeki dizinler ve dosyalarýn listesini 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn ls depo_adresi
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  formatý ile görüntülüyoruz:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ svn ls http://svn.uludag.org.tr/uludag
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 repos/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 tags/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 trunk/
-\newline 
+\newline
 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ svn ls http://svn.uludag.org.tr/uludag/trunk
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 COMAR/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 comar_prototip_old/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 web/
-\newline 
+\newline
 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ svn ls http://svn.uludag.org.tr/uludag/trunk/COMAR
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 COMAR-1.sxw
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 COMARd/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 CSL/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 OM/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 SlicerAPI/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 confparser/
-\newline 
+\newline
 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ svn ls http://svn.uludag.org.tr/uludag/trunk/COMAR/confparser
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 GenericParser.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 README
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 branchedParser.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 comar_configparser.png
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 config_files/
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 confparser.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 flatParser.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 sectionedParser.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ 
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Depodaki bir dizinin kopyasýný nasýl alabilirim?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Deponun bir kopyasýnýn oluþturulmasý esnasýnda 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn co
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutu kullanýlýr.
  Kopya oluþtuktan sonra bir daha bu komut kopya üzerinde iþlem yapýlmaz.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ svn co http://svn.uludag.org.tr/uludag
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A uludag/trunk
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ...
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ...
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Depoya bir URI olarak davranabilirsiniz.
  Bu þekilde depo içerisindeki herhangi bir alt dizini de alabilirsiniz.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ svn co http://svn.uludag.org.tr/uludag/trunk/COMAR
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A COMAR/COMAR-1.sxw
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A COMAR/CSL
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ...
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ...
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Bendeki kopyanýn güncel olup olmadýðýný nasýl anlayabilirim?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Son deðiþikliklerden haberdar olmak ve son sürümü takip etmek için düzenli
  olarak deponun sizdeki kopyasýný 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn update
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutu yardýmý ile güncellemeniz gerekir.
  Komutu tek baþýna çaðýrdýðýnýz taktirde bulunduðunuz dizinin içindeki dosyalar
  ve dizinlerin tamamý güncellenir.
  Ayrýcý komutun sonuna güncellenmesini istediðiniz dizinin ya da tek dosyanýn
  adresini ekleyebilirsiniz.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/uludag/[...]/uludag/trunk $ svn update
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 U tasma/modules/tasmanet/device.cpp 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 U tasma/modules/tasmanet/devicesettings.cpp 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 U tasma/modules/tasmanet/device.h 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 U tasma/modules/tasmanet/devicesettings.h 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Updated to revision 158.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/uludag/[...]/uludag/trunk $
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Dosyalarýn yanlarýndaki iþaretler ne anlama geliyor?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 SVN ile çalýþýrken, güncelleme, sorgulama gibi iþlemler esnasýnda dosyalarýn
  yanýnda bir önceki örnekte de olduðu gibi kendinden sonraki dosya ile ilgili
  ne gibi bir deðiþiklik olduðunu size haber vermek içindirler.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Dosyalarýn yanýnda 
-\series bold 
+\series bold
 U
-\series default 
+\series default
 , 
-\series bold 
+\series bold
 D
-\series default 
+\series default
 , 
-\series bold 
+\series bold
 A
-\series default 
+\series default
 , 
-\series bold 
+\series bold
 C
-\series default 
+\series default
  ya da 
-\series bold 
+\series bold
 G
-\series default 
+\series default
  harflerinden birisini görebilirsiniz: 
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 A
-\series default 
+\series default
  Eklenmiþ.
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 D
-\series default 
+\series default
  Silinmiþ
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 U
-\series default 
+\series default
  Güncellenmiþ
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 G
-\series default 
+\series default
  Birleþmiþ (depodan aldýðýnýz son güncelleme sizin yerel deðiþiklik yaptýðýnýz
  bir dosya ile birleþtirilmiþ)
-\layout Itemize
+\end_layout
 
+\begin_layout Itemize
 
-\series bold 
+\series bold
 C
-\series default 
+\series default
  Çakýþmýþ (depodan aldýðýnýz son güncelleme sizin yerel yaptýðýnýz deðiþiklikler
  ile çakýþmýþ)
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Bir takým dosyayý deðiþtirdim, þimdi ne yapacaðým?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Kendi kopyanýzda ne gibi deðiþiklikler yaptýðýnýzý görmek istediðinizde
  
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn status
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutunu kullanabilirsiniz.
  Diðer tüm komutlar gibi bu da sonuna ekleyeceðiniz bir URI ile çalýþabilir.
  Aþaðýda deponun son güncel kopyasýna bir dosya eklendiði, bir dosya silindiði,
  iki dosyanýn da deðiþtirilmiþ olduðu görünüyor:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn status
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A COMARd/csl/degisiklik
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 D COMARd/csl/loader.py 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 M COMARd/COMARValue.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 M comar-call/rpc.c
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn status COMARd/csl/COMARValue.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 M COMARd/COMARValue.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Ayrýca deðiþtirdiðiniz dosyalarda neyi deðiþtirdiðinizi de 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn diff
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutu ile öðrenebilirsiniz:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn diff comar-call/rpc.c
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Index: comar-call/rpc.c
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ===================================================================
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 --- comar-call/rpc.c (revision 158) 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 +++ comar-call/rpc.c (working copy) 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 @@ -146,6 +146,7 @@ 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   if (len == 0) break; 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   if (len == -1) { 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
           puts("baglanti erken kesildi"); 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 +         //bambaska bir degisiklik 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
           break; 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   } 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
   printf("RECV[%s]
-\backslash 
+\backslash
 n
-\backslash 
+\backslash
 n", buf); 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ 
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Yeni bir dosya ekledim fakat yanýnda 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 ?
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  var...
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Deponun kopyasý üzerinde çalýþýrken yeni bir dosya yaratmak istediðinizde,
  
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn add
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  yardýmý ile (bunun 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn copy
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
 , 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn del
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  gibi kardeþleri de vardýr) lokal kopyanýzý bu dosyanýn depoya eklenmesini
  istediðinize dair haberdar etmeniz gerekir.
@@ -1153,151 +1367,183 @@ i uygulamayý derleyip denemek istiyorsunuz, bu durumda çalýþma kopyanýzda,
  depoya gitmeyeceðini bilirsiniz.
  
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 svn add
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutu ile 
-\emph on 
+\emph on
 eklenmesini istediðiniz
-\emph default 
+\emph default
  dosyalarý depoya eklersiniz.
  
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn del
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  ayrýca açýklanmayacaktýr.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ svn status
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ touch yenibetik.csl
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ svn status
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ? yenibetik.csl
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ svn add yenibetik.csl
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A yenibetik.csl
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ svn status 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A yenibetik.csl
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ 
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Deðiþtirdiðim dosyalar eski hallerine dönsünler istiyorum.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yaptýðýnýz deðiþiklikleri istediðiniz an 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn revert
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutu yardýmý ile son kopyadaki orjinaline döndürebilirsiniz:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn status
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A COMARd/csl/degisiklik
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 D COMARd/csl/loader.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 M COMARd/COMARValue.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 M comar-call/rpc.c 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn revert comar-call/rpc.c
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Reverted 'comar-call/rpc.c'
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn status
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 A COMARd/csl/degisiklik
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 D COMARd/csl/loader.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 M COMARd/COMARValue.py
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Ayrýca dosyalarýn tümünü özyinelemeli þekilde eski hallerine döndürmek de
  mümkündür...
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn revert .
  -R 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Reverted 'COMARd/csl/degisiklik'
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Reverted 'COMARd/csl/loader.py' 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Reverted 'COMARd/COMARValue.py'
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $ svn status
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/trunk/COMAR/comar $
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Deðiþtirdiðim dosyalarý göndermek istiyorum?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Deðiþtirdiðiniz dosyalarýn son hallerinden eminseniz, depoya deðiþikliklerinizin
  yansýmasý için 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn commit
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  komutunu kullanabilirsiniz.
  Bu komut ile, -diðer tüm komutlarda olduðu gibi- bir tek dosyayý, bir tek
@@ -1309,387 +1555,481 @@ iniz.
  metin editörünüzde açar.
  Favori metin editörü olarak açtýðý metin editörünü deðiþtirmek için svn'in
  kullandýðý SVN_EDITOR isimli ortam deðiþkeninden faydalanabilirsiniz:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ SVN_EDITOR="vi" svn commit 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ SVN_EDITOR="mcedit" svn commit
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 ~/work/[...]/COMARd/csl/sample $ SVN_EDITOR="kwrite" svn commit
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 .
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 .
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Metin editörüne deðiþiklikleri yazýp, yazdýklarýnýzý kaydedip editörü kapattýðýn
 ýz anda svn yerel kopyanýzdaki deðiþiklikleri depoya göndermeye baþlar.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Baþka hangi komutlar var?
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Subversion'ý subversion komutlarýný öðrenmek için de çalýþtýrabilirsiniz.
  
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn help
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  size kullanabileceðiniz komutlarýn bir listesini verirken, 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 
-\series bold 
+\series bold
 svn help komut_adi
-\series default 
+\series default
 
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  size 
-\emph on 
+\emph on
 komut_adi
-\emph default 
+\emph default
  ile ilgili ayrýntýlý bilgi döndürür.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 $ svn help
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 usage: svn <subcommand> [options] [args]
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Type "svn help <subcommand>" for help on a specific subcommand.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Most subcommands take file and/or directory arguments, recursing
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 on the directories.
  If no arguments are supplied to such a
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 command, it will recurse on the current directory (inclusive) by
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 default.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 Available subcommands:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 add
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 blame (praise, annotate, ann)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 cat
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 checkout (co)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 cleanup
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 commit (ci)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 copy (cp)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 delete (del, remove, rm)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 diff (di)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 export
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 help (?, h)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 import
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 info
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 list (ls)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 log
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 merge
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 mkdir
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 move (mv, rename, ren)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 propdel (pdel, pd)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 propedit (pedit, pe)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 propget (pget, pg)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 proplist (plist, pl)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 propset (pset, ps)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 resolved
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 revert
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 status (stat, st)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 switch (sw)
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 update (up)
-\layout LyX-Code
+\end_layout
 
-\layout LyX-Code
+\begin_layout LyX-Code
 
+\end_layout
+
+\begin_layout LyX-Code
 Subversion is a tool for version control.
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 For additional information, see http://subversion.tigris.org/
-\layout LyX-Code
+\end_layout
 
-\layout Standard
+\begin_layout LyX-Code
 
+\end_layout
+
+\begin_layout Standard
 Bir Subversion komutu ile ilgili ayrýntýlý bilgi almak için;
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 
-\series bold 
+\series bold
 $ svn help add 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 add: Put files and directories under version control, scheduling them for
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 addition to repository.
   They will be added in next commit.
  usage: add PATH...
-\layout LyX-Code
+\end_layout
 
-\layout LyX-Code
+\begin_layout LyX-Code
 
+\end_layout
+
+\begin_layout LyX-Code
 Valid options:  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 --targets arg            : pass contents of file ARG as additional args
   
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 -N [--non-recursive]     : operate on single directory only  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 -q [--quiet]             : print as little as possible  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 --config-dir arg         : read user configuration files from directory
  ARG  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 --force                  : force operation to run  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 --auto-props             : enable automatic properties  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 --no-auto-props          : disable automatic properties
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 komutlarý kullanýlabilir veya 
 \begin_inset LatexCommand \url{http://subversion.tigris.org/project_faq.html}
 
-\end_inset 
+\end_inset
 
  adresinden Sýklýkla Sorulan Sorularý yada 
 \begin_inset LatexCommand \url{http://svnbook.red-bean.com}
 
-\end_inset 
+\end_inset
 
  adresinden Subversion kitabý okunabilir.
-\layout Section
+\end_layout
 
+\begin_layout Section
 Subversion kullaným kurallarý
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Subversion deposu tüm geliþticilerin ortak olarak kullandýklarý bir alandýr.
  Bir arada çalýþabilmek için geliþtiricilerin depoyu etkin, doðru ve bir
  düzen içerisinde kullanabiliyor olmalarý gerekir.
-\layout Standard
+\end_layout
 
-Subversion kullaným kurallarý, Uludað depolarýna yazma hakký olan geliþtiriciler
+\begin_layout Standard
+Subversion kullaným kurallarý, Pardus depolarýna yazma hakký olan geliþtiriciler
 in uymalarý gereken kurallardýr.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Her zaman güncel bir depo ile çalýþýn
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Geliþtirici sayýsý arttýkça subversion deposu üzerindeki güncellemeler de
  sýklaþacaktýr.
  Diðer geliþmelerden haberdar olmak ve yaptýklarýnýzýn diðer yapýlanlar
  ile çakýþmasýný önlemek için çalýþmaya baþlamadan önce mutlaka 
-\emph on 
+\emph on
 svn update
-\emph default 
+\emph default
  komutu ile deponuzu güncelleyin.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Göndermeden önce düþünün
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yaptýðýnýz deðiþiklikleri Subversion deposuna göndermeden
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 gönderim = commit.
  svn commit komutu ile gerçekleþtirilen eylem.
-\end_inset 
+\end_layout
+
+\end_inset
 
  önce iki defa düþünün.
  Depoya gönderdiðiniz veriler tüm geliþtiricilere ulaþacak ve onlarýn çalýþmalar
 ýný etkileyecektir.
  Bu yüzden aþaðýdaki maddelere uyulmasý büyük önem taþýr.
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 Çalýþmayan bir kodu subversion deposuna göndermeyin.
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 Göndermeden önce mutlaka son deðiþiklikleri almak için 
-\emph on 
+\emph on
 svn update
-\emph default 
+\emph default
  ile deponuzu güncelleyin.
  Yaptýðýnýz deðiþikliklerin diðerleri ile çakýþmadýðýna emin olun.
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 Ne gönderdiðinize dikkat edin.
  Bunun için gönderimden önce mutlaka 
-\emph on 
+\emph on
 svn diff
-\emph default 
+\emph default
  komutu ile gönderdiðiniz deðiþiklikleri kontrol edin.
-\layout Enumerate
+\end_layout
 
+\begin_layout Enumerate
 Yaptýðýnýz deðiþiklikleri mutlaka test edin.
  Hatta iki defa test edin.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Gönderimlerinize açýklayýcý mesajlar ekleyin
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Gönderimlerde kullanýlan açýklama mesajlarý yapýlan deðiþikliðe odaklanmalý
  ve mümkün olduðunca açýklayýcý olmalýdýr.
  Mümkün olduðunca yalnýzca üzerinde deðiþiklik yaptýðýnýz dosyalar ile ilgili
  açýklama mesajlarý eklemeye çalýþýn.
  Bununla birlikte, konu dahilinde, svn diff komutunun çýktýsýndan elde edilemeye
 cek tüm bilgiyi açýklama mesajýnýzda anlatabilirsiniz.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Doðru bir açýklama mesajý eklememek yapýlan deðiþikliðin anlaþýlmasýný güçleþtir
 ecektir.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Çalýþma planlarýna uyun
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Eðer daðýtým genelinde veya üzerinde çalýþtýðýnýz bileþenin ana geliþtiricisi
  bir çalýþma/zaman planý ortaya koymuþsa gönderimlerinizde bu plana uyun.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Örneðin bir uygulama geliþtiricisi belirli bir zamanda uygulamaya yeni özellik
  eklemeyi durdurup yalnýzca bilinen hatalarýn giderilmesi üzerinde çalýþmak
  isteyebilir.
  Yaptýðýnýz deðiþikliðin bu kurala uymasý beklenir.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Eðer yaptýðýnýz deðiþikliðin plana uyup uymadýðýný kestiremiyorsanýz mutlaka
  ilgili e-posta listesine veya ana geliþtiriciye baþvurun.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Birden fazla bileþeni etkileyen bir deðiþiklik yaptýysanýz tüm geliþticileri
  bu deðiþiklikten haberdar edin.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Tüm geliþtiricilerin yaptýðýnýz 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 büyük
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  güncellemeden haberdar olmalarý için konu ile ilgili e-posta listesine
  mutlaka bir duyuru iletisi gönderin.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Yaptýðýnýz deðiþikliðin sorumluluðunu alýn
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Eðer yaptýðýnýz güncelleme herhangi bir sorun çýkartýyorsa bunun sorumluluðunu
  alýn ve çözülmesini kendiniz veya yardým alarak saðlayýn.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Genel kabullere saygý duyun
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Geliþtirici tartýþmalarýnda kabul edilen genel kurallara uyun ve yaptýðýnýz
  deðiþikliðin bu kurallarý bozmadýðýna emin olun.
  Emin olmadýðýnýz durumlarda her zaman 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 iletiþim
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  yolunu seçebilirsiniz.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Hata kontrol sistemindeki bir hatayý çözerken hata numarasýný girin.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Eðer yaptýðýnýz güncelleme raporlanmýþ bir hatayý çözüyorsa, hata kontrol
  sistemini depodaki güncellemeler ile senkron tutabilmek için hangi hatayý
  çözdüðünüzü bildirin ve daha sonra hata kontrol sistemindeki hatayý kapatýn.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Kendi sorumluluðunuzda olan dosyalarý güncelleyin
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Yalnýzca kendi sorumluluðunuzda olan dosyalarý güncelleyin.
  Eðer bir baþka geliþtiricinin sorumluluðunda olan dosyalarda bir hata bulduysan
 ýz, göndermeden önce sorumlu geliþtiriciye doðrudan ulaþarak veya e-posta
@@ -1697,66 +2037,87 @@ Yalnýzca kendi sorumluluðunuzda olan dosyalarý güncelleyin.
  yoluna gidin.
  Eðer sorumlu geliþtirici yaptýðýnýz deðiþiklikleri kabul etmez ise saygý
  gösterin.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Otomatik oluþturulan dosyalarý depoya eklemeyin
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Derleme araçlarýnýn sonradan oluþturduðu Makefile, Makefile.in, configure
  betikleri, vb.
  dosyalarý depoya eklemeyin.
  Bu dosyalar her geliþtiricinin makinasýnda farklý þekillerde yeniden oluþturula
 cak ve diðer geliþtiriciler tarafýndan bir güncelleme olarak algýlanacaktýr.
  Bu dosyalarýn depoya eklenmesi genellikle hata olarak algýlanýr.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Güncellemeleri atomik yapýn
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Bir iyileþtirme/güncelleme ile ilgili tüm deðiþiklikleri bir anda gönderin,
  subversion birden fazla dosyayý ayný anda göndermenize izin verecektir.
  Gönderimleri ayrý ayrý yapmak diðer geliþtiricilerin kafalarýný karýþtýrabilir
  ve yaptýðýnýz iyileþtirmeleri kaçýrmalarýna neden olabilir.
-\layout Bibliography
-\bibitem {key-3}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-3}
 Metin, Barýþ & Onur, Çaðlar (Kasým 2004).
  Ulusal Daðýtýma Nasýl Yardým Ederim? http://www.uludag.org.tr
-\layout Bibliography
-\bibitem {key-6}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-6}
 Metin, Barýþ (Kasým 2004).
  Paketler Deposu Yeni Geliþtirici Baþvurusu.
  http://www.uludag.org.tr
-\layout Bibliography
-\bibitem {key-5}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-5}
 Eren, A.
  Murat (Kasým 2004).
  Subversion Deposu Kullanma Kýlavuzu.
  http://www.uludag.org.tr
-\layout Bibliography
-\bibitem {key-7}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-7}
 Barth, Andreas (2005).
  Debian Developer's Reference.
  http://www.debian.org/doc/manuals/developers-reference/
-\layout Bibliography
-\bibitem {key-8}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-8}
 Fox, Tammy & Pennington, Havoc (2003).
  Fedora Project Developer's Guide.
  http://fedora.redhat.com/participate/developers-guide/
-\layout Bibliography
-\bibitem {key-9}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-9}
 KDE (2004).
  Applying For a KDE CVS Account.
  http://developer.kde.org/documentation/misc/applycvsaccount.php
-\layout Bibliography
-\bibitem {key-10}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-10}
 KDE (2004).
  KDE CVS Commit Policy.
  http://developer.kde.org/policies/commitpolicy.html
-\the_end
+\end_layout
+
+\end_body
+\end_document
