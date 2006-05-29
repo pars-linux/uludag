@@ -5,8 +5,8 @@
 \tolerance 10000
 \usepackage{hyperref}
 \end_preamble
-\language turkish
-\inputencoding auto
+\language english
+\inputencoding latin5
 \fontscheme pslatex
 \graphics default
 \paperfontsize default
@@ -37,7 +37,9 @@ Barýþ Metin <baris@pardus.org.tr>, A.
  Murat Eren <meren@pardus.org.tr>
 \layout Standard
 \align center 
-Translation: K.
+Translation: 
+\lang turkish
+K.
  Deniz Öðüt
 \layout Standard
 \align center 
@@ -178,7 +180,7 @@ To say in short, support localization efforts.
 
 To support notable translation groups, you can reach the localization works
  you feel interest in via 
-\begin_inset LatexCommand \url{http://cekirdek.pardus.org.tr/~baris/tmp/ceviri-calismalari.html}
+\begin_inset LatexCommand \url{http://www.pardus.org.tr/projeler/turkce/y10me/}
 
 \end_inset 
 
@@ -388,7 +390,7 @@ Quality e-mail list can be reached from http://liste.pardus.org.tr/mailman/listi
 How to submit?
 \layout Standard
 
-To submit the application you can e-mail to basvuru@pardus.org.tr
+To submit the application you can e-mail to admins@pardus.org.tr
 \layout Standard
 
 In your application e-mail;
