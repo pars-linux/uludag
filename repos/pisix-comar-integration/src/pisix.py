@@ -30,7 +30,6 @@ from khtml import *
 import kdedesigner
 
 # Local imports
-from ClickLineEdit import *
 import Progress
 import Preferences
 import Commander
