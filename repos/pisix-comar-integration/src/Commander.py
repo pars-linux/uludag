@@ -32,12 +32,13 @@ class Commander(QObject):
         # Init the database
         pisi.api.init(database=True, write=False)
 
-    def slotComar(self, reply):
+    def slotComar(self, sock):
         reply = self.comar.com.read_cmd()
         if reply[0] == self.comar.com.NOTIFY:
-            print 'Got notify',reply[2]
-        elif reply[0] == self.comar.com.RESULT:
-            print 'Got result',reply[2]
+            notification, script, data = reply[2].split("\n", 2)
+            print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
+        else:
+            print 'Unhandled: ',reply[2]
         
     def install(self,apps):
         self.databaseDirty = True
