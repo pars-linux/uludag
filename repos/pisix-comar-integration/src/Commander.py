@@ -25,7 +25,7 @@ class Commander(QObject):
         self.parent = parent
 
         # Caching mechanism
-        self.databaseDirty = False
+        self.databaseDirty = True
         self.allPackages = []
         self.newPackages = []
         self.upgrades = []
@@ -39,10 +39,7 @@ class Commander(QObject):
             notification, script, data = reply[2].split("\n", 2)
             data = unicode(data)
 
-            if notification in ("System.Manager.warning"):
-                # self.parent.showInfoMessage(data)
-                pass
-            elif notification == "System.Manager.error":
+            if notification == "System.Manager.error":
                 self.parent.showErrorMessage(data)
             elif notification == "System.Manager.notify":
                 pass
@@ -53,7 +50,7 @@ class Commander(QObject):
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         else:
-            print 'Unhandled: ',reply[2]
+            print 'Unhandled: ',reply
         
     def install(self,apps):
         self.databaseDirty = True
@@ -90,24 +87,24 @@ class Commander(QObject):
         self.comar.swapRepos(repo1, repo2)
     
     def listUpgradable(self):
-        if not len(self.upgrades) or self.databaseDirty:
+        if self.databaseDirty:
             self.upgrades = pisi.api.list_upgradable()
-
-        self.databaseDirty = False
+            self.databaseDirty = False
+            
         return self.upgrades
         
     def listPackages(self):
-        if not len(self.allPackages) or self.databaseDirty:
+        if self.databaseDirty:
             self.allPackages = pisi.context.installdb.list_installed()
-
-        self.databaseDirty = False
+            self.databaseDirty = False
+            
         return self.allPackages
 
     def listNewPackages(self):
-        if not len(self.newPackages) or self.databaseDirty:
+        if self.databaseDirty:
             self.newPackages = list(pisi.api.list_available()-set(self.listPackages()))
-
-        self.databaseDirty = False
+            self.databaseDirty = False
+        
         return self.newPackages
 
     def searchPackage(self,query,language='tr'):

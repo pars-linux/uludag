@@ -18,7 +18,6 @@ from kdeui import *
 from qt import *
 
 # Local imports
-from Enums import *
 import PreferencesDialog
 import RepoDialog
 

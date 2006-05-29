@@ -1,4 +1,4 @@
-var pisi_Speed = 20;	// yukselt hızlansın ..
+var pisi_Speed = 5;	// yukselt hızlansın ..
 var pisi_timer = 5;	// düşür hızlansın ..
 
 var objectIdToSlideDown = false;

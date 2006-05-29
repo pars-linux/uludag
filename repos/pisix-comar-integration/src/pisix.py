@@ -30,12 +30,10 @@ from khtml import *
 import kdedesigner
 
 # Local imports
-from Enums import *
 from ClickLineEdit import *
 import Progress
 import Preferences
 import Commander
-import PisiUi
 
 # Pisi Imports
 import pisi.ui
@@ -52,7 +50,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.1.0_b2"
+version = "1.1.0_b3"
 base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
 
 def AboutData():
@@ -65,8 +63,8 @@ def AboutData():
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
     about_data.addCredit("Eray Özkural", I18N_NOOP("Misc. Fixes"), "eray@pardus.org.tr")
-    about_data.addCredit("Gürer Özen", I18N_NOOP("Python coding help"), None)
-    about_data.addCredit("Barış Metin",  I18N_NOOP("Helping with PiSi API"), None)
+    about_data.addCredit("Gürer Özen", I18N_NOOP("Comar/Python Help"), None)
+    about_data.addCredit("Barış Metin",  I18N_NOOP("Speedup fixes"), None)
     about_data.addCredit(I18N_NOOP("PiSi Authors"), I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
     return about_data
 
@@ -207,8 +205,6 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.sizeLabel.hide()
         
         self.command.terminate()
-        self.command.wait()
-        self.command.cleanup()
         self.possibleError = True
         self.finished()
         
@@ -218,8 +214,7 @@ class MainApplicationWidget(QWidget):
 
     def switchListing(self):
         self.updateListing(True)
-        print "switchListing called..."
-        
+               
     def updateListing(self,switch=False):
 
         if switch or self.possibleError:
@@ -227,7 +222,8 @@ class MainApplicationWidget(QWidget):
             self.parent.operateAction.setEnabled(False)
             self.parent.basketAction.setEnabled(False)
             self.clearSearchLine()
-            
+
+        # TODO this part should be done cleaner - cartman
         currentOperation = self.parent.showAction.text()
         if currentOperation == i18n("Show New Packages"):
             if switch:
@@ -427,9 +423,6 @@ class MainApplicationWidget(QWidget):
         self.componentDict[item] = list(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
         
-    def showInfoMessage(self, message):
-        KMessageBox.information(self,message,i18n("Information"))
-        
     def showErrorMessage(self, message):
         self.possibleError = True
         KMessageBox.error(self,message,i18n("Error"))
@@ -445,9 +438,9 @@ class MainApplicationWidget(QWidget):
             self.possibleError = False
         else:
             self.appsToProcess = []
-            self.parent.operateAction.setEnabled(False)
-            self.parent.basketAction.setEnabled(False)
-            
+
+        self.parent.operateAction.setEnabled(False)
+        self.parent.basketAction.setEnabled(False)
         self.progressDialog.closeForced()
         self.resetProgressBar()
         
@@ -493,19 +486,10 @@ class MainApplicationWidget(QWidget):
         if not query.isEmpty():
             result = self.command.searchPackage(query)
             result = result.union(self.command.searchPackage(query,"en"))
-            result = result.intersection(self.currentAppList)
-            result = result.union(self.searchInPackageNames(query))
             self.createSearchResults(result)
         else:
             self.updateListing()
 
-    def searchInPackageNames(self,query):
-        result = []
-        for app in self.currentAppList:
-            if app.find(query) != -1:
-                result.append(app)
-        return result
-    
     def clearSearchLine(self):
         self.searchLine.clear()
         self.timer.stop()
@@ -519,6 +503,7 @@ class MainApplicationWidget(QWidget):
         self.pref.show()
 
     def showUpdateDialog(self):
+        # TODO Heh this is borked -- cartman
         self.command.updateAllRepos()
         appList = pisi.api.list_upgradable()
         dialog = QDialog(self)
@@ -535,6 +520,7 @@ class MainApplicationWidget(QWidget):
         dialog.exec_loop()
         
     def setShowOnlyPrograms(self,hideLibraries=False):
+        # TODO this is not taken into account
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")
@@ -617,4 +603,3 @@ if __name__ == "__main__":
     except ImportError:
         pass
     main()
-
