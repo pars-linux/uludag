@@ -427,69 +427,9 @@ class MainApplicationWidget(QWidget):
         self.componentDict[item] = list(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
         
-    def customEvent(self, event):
-        eventType = event.type()
-        eventData = event.data()
-
-        if eventType == CustomEvent.InitError:
-            KMessageBox.information(self,i18n("Pisi could not be started! Please make sure no other pisi process is running."),i18n("Pisi Error"))
-            sys.exit(1)
-        elif eventType == CustomEvent.Finished:
-            self.finished()
-        elif eventType == CustomEvent.PisiWarning:
-            pass
-        elif eventType == CustomEvent.PisiInfo:
-            self.infoMessage = eventData
-        elif eventType == CustomEvent.PisiError:
-            self.showErrorMessage(eventData)
-        elif eventType == CustomEvent.AskConfirmation:
-            self.showConfirmationMessage(eventData)
-        elif eventType == CustomEvent.UpdateProgress:
-            self.currentFile = eventData["filename"]
-            percent = eventData["percent"]
-            rate = round(eventData["rate"],1)
-            symbol = eventData["symbol"]
-            downloaded = eventData["downloaded_size"]
-            totalsize = eventData["total_size"]
-            self.updateProgressBar(self.currentFile, percent, rate, symbol, downloaded, totalsize)
-        elif eventType == CustomEvent.UpdateListing:
-            self.updateListing()
-        elif eventType == CustomEvent.PisiNotify:
-            if isinstance(eventData,QString):
-                if eventData == i18n("removing"):
-                    self.currentFile = self.packagesOrder[self.currentAppIndex-1]
-                    self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalApps))*100)
-                elif eventData == i18n("installing"):
-                    if not self.progressDialog.progressBar.progress():
-                        self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalApps))*100)
-                self.currentOperation = eventData
-                self.updateProgressText()
-            elif eventData in ["installed","removed","upgraded"]:
-                self.currentAppIndex += 1
-            elif isinstance(eventData,list):
-                self.packagesOrder = eventData
-                self.totalAppCount = len(self.packagesOrder)
-                if len(base_packages.intersection(self.packagesOrder)) > 0:
-                    self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
-                    self.finished()
-                else:
-                    self.totalApps = len(self.packagesOrder)
-        elif eventType == CustomEvent.RepositoryUpdate:
-            self.currentRepo = eventData
-            self.progressDialog.show()
-        else:
-            print 'Unhandled event:',eventType,'with data',eventData
-    
-    def showConfirmationMessage(self, question):
-        answer = KMessageBox.questionYesNo(self,self.infoMessage+"\n"+question,i18n("PiSi Question"))
-        self.infoMessage=None
-        event = QCustomEvent(CustomEvent.UserConfirmed)
-        if answer == KMessageBox.Yes:
-            event.setData(True)
-        else:
-            event.setData(False)
-        QThread.postEvent(self.command.ui,event)
-
+    def showInfoMessage(self, message):
+        KMessageBox.information(self,message,i18n("PiSi Info"))
+        
     def showErrorMessage(self, message):
         self.possibleError = True
         KMessageBox.error(self,message,i18n("PiSi Error"))

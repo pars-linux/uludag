@@ -22,6 +22,7 @@ class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
         self.comar = ComarIface.ComarIface(self)
+        self.parent = parent
 
         # Caching mechanism
         self.databaseDirty = False
@@ -36,7 +37,10 @@ class Commander(QObject):
         reply = self.comar.com.read_cmd()
         if reply[0] == self.comar.com.NOTIFY:
             notification, script, data = reply[2].split("\n", 2)
-            print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
+            if notification == "System.Manager.warning":
+                self.parent.showInfoMessage(unicode(data))
+            else:
+                print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         else:
             print 'Unhandled: ',reply[2]
         
