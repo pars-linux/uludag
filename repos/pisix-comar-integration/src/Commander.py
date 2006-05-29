@@ -41,7 +41,8 @@ class Commander(QObject):
             data = unicode(data)
 
             if notification in ("System.Manager.warning"):
-                self.parent.showInfoMessage(data)
+                # self.parent.showInfoMessage(data)
+                pass
             elif notification == "System.Manager.error":
                 self.parent.showErrorMessage(data)
             elif notification == "System.Manager.notify":
