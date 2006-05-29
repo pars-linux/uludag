@@ -11,6 +11,11 @@ class ComarIface:
 
         # Notification
         self.com.ask_notify("System.Manager.progress")
+        self.com.ask_notify("System.Manager.error")
+        self.com.ask_notify("System.Manager.warning")
+        self.com.ask_notify("System.Manager.info")
+        self.com.ask_notify("System.Manager.notify")
+        
         self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
         
         self.parent.connect(self.notifier, SIGNAL("activated(int)"), self.parent.slotComar)
