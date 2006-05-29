@@ -12,6 +12,7 @@
 #
 # Authors: İsmail Dönmez <ismail@pardus.org.tr>
 
+import string
 import pisi
 import pisi.api
 
@@ -54,20 +55,23 @@ class Commander(QObject):
         
     def install(self,apps):
         self.databaseDirty = True
+        apps = string.join(apps,",")
         self.comar.installPackage(apps)
         
     def upgrade(self,apps):
         self.databaseDirty = True
+        apps = string.join(apps,",")
         self.comar.upgradePackage(apps)
             
     def remove(self,apps):
         self.databaseDirty = True
+        apps = string.join(apps,",")
         self.comar.removePackage(apps)
         
     def updateRepo(self, repo):
         self.databaseDirty = True
         self.comar.updateRepo(repo)
-            
+
     def updateAllRepos(self):
         self.databaseDirty = True
         self.comar.updateAllRepos()
