@@ -71,7 +71,42 @@ if standalone:
     programbase = QDialog
 else:
     programbase = KCModule
-    
+
+
+class portlistItem(KListViewItem):
+    def __init__(self, parent=None, rule={}):
+        KListViewItem.__init__(self, parent)
+
+        d = {"in": i18n("In"), "out": i18n("Out")}
+        self.setText(0, d[rule["direction"]])
+
+        if "src" in rule and "sport" in rule:
+            src = "%s:%s" % (rule["src"], rule["sport"])
+        elif "src" in rule and "sport" not in rule:
+            src = "%s:*" % rule["src"]
+        elif "src" not in rule and "sport" in rule:
+            src = "*:%s" % rule["sport"]
+        else:
+            src = "*"
+        self.setText(1, src)
+
+        if "dst" in rule and "dport" in rule:
+            dst = "%s:%s" % (rule["dst"], rule["dport"])
+        elif "dst" in rule and "dport" not in rule:
+            dst = "%s:*" % rule["dst"]
+        elif "dst" not in rule and "dport" in rule:
+            dst = "*:%s" % rule["dport"]
+        else:
+            dst = "*"
+        self.setText(2, dst)
+
+        d = {"REJECT": i18n("Reject"), "ACCEPT": i18n("Accept")}
+        self.setText(3, d[rule["action"].upper()])
+
+        self.ruleno = rule["no"]
+        self.rule = rule.copy()
+        del self.rule["no"]
+
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
         global standalone
@@ -80,8 +115,8 @@ class MainApplication(programbase):
         if standalone:
             QDialog.__init__(self,parent,name)
             self.setCaption(i18n("Firewall Interface"))
-            self.setMinimumSize(520, 420)
-            self.resize(520, 420)
+            self.setMinimumSize(566, 544)
+            self.resize(566, 544)
         else:
             KCModule.__init__(self,parent,name)
             KGlobal.locale().insertCatalogue("guvenlik_kga")
@@ -117,11 +152,14 @@ class MainApplication(programbase):
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
         self.connect(mainwidget.pushCancel, SIGNAL("clicked()"), self, SLOT("close()"))
         self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.slotOk)
-        self.connect(mainwidget.pushApply,SIGNAL("clicked()"),self.slotApply)
+        self.connect(mainwidget.pushApply, SIGNAL("clicked()"),self.slotApply)
+        self.connect(mainwidget.pushAdd, SIGNAL("clicked()"),self.slotAdd)
+        self.connect(mainwidget.pushRemove, SIGNAL("clicked()"),self.slotRemove)
 
         # Load FW rules
         self.no = 0
         self.rules = {"in": {}, "out": {}, "other": {}}
+        self.removed = []
         self.comar.call_package("Net.Filter.getRules", "iptables", id=2)
         self.handleComar(self.comar.read_cmd())
         
@@ -172,7 +210,9 @@ class MainApplication(programbase):
                     elif dir == "other" and name == "ICMP":
                         eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
                         self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
-                
+                    elif dir == "adv":
+                        item = portlistItem(mainwidget.listAdvanced, rule)
+
                 if "reject" not in self.rules["in"]:
                     self.addRule("in", "reject")
                 if "reject" not in self.rules["out"]:
@@ -196,6 +236,37 @@ class MainApplication(programbase):
     def slotApply(self):
         self.saveAll()
 
+    def slotAdd(self):
+        rule = {"no": -1, "description": "filter:adv:0", "protocol": "tcp"}
+
+        if mainwidget.lineFromIP.text():
+            rule["src"] = str(mainwidget.lineFromIP.text())
+        if mainwidget.lineFromPort.text():
+            rule["sport"] = str(mainwidget.lineFromPort.text())
+        if mainwidget.lineToIP.text():
+            rule["dst"] = str(mainwidget.lineToIP.text())
+        if mainwidget.lineToPort.text():
+            rule["dport"] = str(mainwidget.lineToPort.text())
+       
+        if mainwidget.comboDirection.currentItem():
+            rule["direction"] = "out"
+        else:
+            rule["direction"] = "in"
+
+        if mainwidget.comboAction.currentItem():
+            rule["action"] = "reject"
+        else:
+            rule["action"] = "accept"
+
+        item = portlistItem(mainwidget.listAdvanced, rule)
+
+    def slotRemove(self):
+        item = mainwidget.listAdvanced.selectedItem()
+        if item:
+            if item.ruleno > -1:
+                self.removed.append(item.ruleno)
+            mainwidget.listAdvanced.takeItem(item)
+
     def saveAll(self):
         for dir in ["in", "out", "other"]:
             s1 = set(self.rules[dir].keys()) - set(["reject"])
@@ -215,9 +286,22 @@ class MainApplication(programbase):
                 for no in self.rules[dir][name]:
                     self.removeRule(no)
                 del self.rules[dir][name]
+
             for name in s2 - s1:
                 no = self.addRule(dir, name)
                 self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
+
+        # Adv
+        item = mainwidget.listAdvanced.firstChild()
+        while item:
+            if item.ruleno == -1:
+                no = self.setRule(**item.rule)
+                item.ruleno = no
+            item = item.nextSibling()
+
+        for i in self.removed:
+            self.removeRule(i)
+        self.removed = []
 
     def addRule(self, dir, name):
         def append(no):

@@ -17,7 +17,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="guvenlik_kga",
-    version="1.2",
+    version="1.3",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
