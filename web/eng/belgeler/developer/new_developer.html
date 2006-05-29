@@ -1,0 +1,1113 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+
+
+<H1 ALIGN=center>New Developer's Guide</H1>
+
+<H3 ALIGN=center>Barış Metin &lt;baris@pardus.org.tr&gt;, A. Murat
+Eren &lt;meren@pardus.org.tr&gt;</H3>
+<DIV ALIGN=center>Translation: K. Deniz Öğüt</DIV><BR>
+<DIV ALIGN=center>Proofreading: Shane Shields, Görkem Çetin</DIV>
+<BLOCKQUOTE><B>Özet: </B>
+This document describes what a new developer should know and do to
+join the development process of Pardus project.<BR>
+<BR>
+<!--TOC section İçindekiler-->
+
+<H2>İçindekiler</H2><!--SEC END -->
+
+<UL><LI>
+<A HREF="#htoc1">1&nbsp;&nbsp;Introduction</A>
+<LI><A HREF="#htoc2">2&nbsp;&nbsp;What is a developer?</A>
+<UL><LI>
+<A HREF="#htoc3">2.1&nbsp;&nbsp;Developing software and debugging</A>
+<LI><A HREF="#htoc4">2.2&nbsp;&nbsp;Translation</A>
+<LI><A HREF="#htoc5">2.3&nbsp;&nbsp;Tests and bug reports</A>
+<LI><A HREF="#htoc6">2.4&nbsp;&nbsp;Graphical Design, Multimediea</A>
+<LI><A HREF="#htoc7">2.5&nbsp;&nbsp;Documentation</A>
+<LI><A HREF="#htoc8">2.6&nbsp;&nbsp;Publicity</A>
+</UL>
+<LI><A HREF="#htoc9">3&nbsp;&nbsp;What is the responsibility of the developer?</A>
+<UL><LI>
+<A HREF="#htoc10">3.1&nbsp;&nbsp;Continuity</A>
+<LI><A HREF="#htoc11">3.2&nbsp;&nbsp;Accuracy</A>
+<LI><A HREF="#htoc12">3.3&nbsp;&nbsp;Determination</A>
+<LI><A HREF="#htoc13">3.4&nbsp;&nbsp;Communication</A>
+</UL>
+<LI><A HREF="#htoc14">4&nbsp;&nbsp;New developer application</A>
+<UL><LI>
+<A HREF="#htoc15">4.1&nbsp;&nbsp;Who may submit?</A>
+<LI><A HREF="#htoc16">4.2&nbsp;&nbsp;How to submit?</A>
+<UL><LI>
+<A HREF="#htoc17">4.2.1&nbsp;&nbsp;to create a password with htpasswd</A>
+<LI><A HREF="#htoc18">4.2.2&nbsp;&nbsp;to create a password with perl</A>
+<LI><A HREF="#htoc19">4.2.3&nbsp;&nbsp;to create a password with python</A>
+</UL>
+</UL>
+<LI><A HREF="#htoc20">5&nbsp;&nbsp;Subversion repositories</A>
+<UL><LI>
+<A HREF="#htoc21">5.1&nbsp;&nbsp;Pardus Repository</A>
+<LI><A HREF="#htoc22">5.2&nbsp;&nbsp;Hierarchy of repository directories</A>
+<UL><LI>
+<A HREF="#htoc23">5.2.1&nbsp;&nbsp;trunk/</A>
+<LI><A HREF="#htoc24">5.2.2&nbsp;&nbsp;tags/</A>
+<LI><A HREF="#htoc25">5.2.3&nbsp;&nbsp;repos/</A>
+</UL>
+</UL>
+<LI><A HREF="#htoc26">6&nbsp;&nbsp;Using Subversion</A>
+<UL><LI>
+<A HREF="#htoc27">6.1&nbsp;&nbsp;How do I know if I have Subversion in my system or not?</A>
+<LI><A HREF="#htoc28">6.2&nbsp;&nbsp;What is a repository?</A>
+<LI><A HREF="#htoc29">6.3&nbsp;&nbsp;How can I see what directories exist in a repository?</A>
+<LI><A HREF="#htoc30">6.4&nbsp;&nbsp;How do I get a copy of a directory in the repository?</A>
+<LI><A HREF="#htoc31">6.5&nbsp;&nbsp;How do I know if my copy is up-to-date or not?</A>
+<LI><A HREF="#htoc32">6.6&nbsp;&nbsp;What do the signs by the files mean?</A>
+<LI><A HREF="#htoc33">6.7&nbsp;&nbsp;I changed some files; what shall I do now?</A>
+<LI><A HREF="#htoc34">6.8&nbsp;&nbsp;I added a new file but there is a ``?'' by it...</A>
+<LI><A HREF="#htoc35">6.9&nbsp;&nbsp;I want to revert the files I changed to their original states.</A>
+<LI><A HREF="#htoc36">6.10&nbsp;&nbsp;I want to send the files I changed; what to do?</A>
+<LI><A HREF="#htoc37">6.11&nbsp;&nbsp;How about the other commands?</A>
+</UL>
+<LI><A HREF="#htoc38">7&nbsp;&nbsp;Rules for using Subversion</A>
+<UL><LI>
+<A HREF="#htoc39">7.1&nbsp;&nbsp;Always work with an updated repository</A>
+<LI><A HREF="#htoc40">7.2&nbsp;&nbsp;Think before you commit</A>
+<LI><A HREF="#htoc41">7.3&nbsp;&nbsp;Add descriptive messages to your commitments</A>
+<LI><A HREF="#htoc42">7.4&nbsp;&nbsp;Abide by the work plans</A>
+<LI><A HREF="#htoc43">7.5&nbsp;&nbsp;If you made a change affecting more than one component, inform all
+developers about the change.</A>
+<LI><A HREF="#htoc44">7.6&nbsp;&nbsp;Take the responsibility of the change you made</A>
+<LI><A HREF="#htoc45">7.7&nbsp;&nbsp;Respect the generally accepted principles</A>
+<LI><A HREF="#htoc46">7.8&nbsp;&nbsp;Enter the bug number when solving a bug in the bug tracking system.</A>
+<LI><A HREF="#htoc47">7.9&nbsp;&nbsp;Update the files which you are responsible</A>
+<LI><A HREF="#htoc48">7.10&nbsp;&nbsp;Do not add the automatically created files to the repository</A>
+<LI><A HREF="#htoc49">7.11&nbsp;&nbsp;Perform atomic updates</A>
+</UL>
+</UL>
+</BLOCKQUOTE>
+<!--TOC section Introduction-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Introduction</H2><!--SEC END -->
+
+In this document we'll try to explain how contributers can support
+the Pardus Liux, which is developed under the structure of Pardus
+Project, and the requirements to be a Pardus developer. Although we
+are talking about the Pardus development model in particular, we believe
+that the requirements explained in the document apply to almost all
+distribution projects.<BR>
+<BR>
+Please feel free to browse the web pages of Pardus for other information
+not contained in this document. From those pages you may find the
+information needed on other documents, tools used and services. Pardus
+pages can be reached from <A HREF="http://www.pardus.org.tr"><TT>http://www.pardus.org.tr</TT></A><BR>
+<BR>
+<!--TOC section What is a developer?-->
+
+<H2><A NAME="htoc2">2</A>&nbsp;&nbsp;What is a developer?</H2><!--SEC END -->
+
+To put it roughly, it is not wrong to say that the project should
+fulfill two types of mission. As it is the case for any distribution,
+gathering the software and preparing the infrastructure to enable
+this task and sustaining it, as well as developing new tools and technologies
+to form the soul of the distribution are among the required tasks.<BR>
+<BR>
+When referring to <EM>developer</EM> we describe not only those who
+write programs but also those who fulfill any single task. We
+are aware that work has to be done in many areas such as documentation,
+bug controls, visual materials, translations etc. besides programming
+to implement a software project. We need all of them for Pardus as
+well.<BR>
+<BR>
+<!--TOC subsection How will I start?-->
+
+<H3>How will I start?</H3><!--SEC END -->
+
+First of all its a good idea to keep up with current events. To do
+this its mostly effective to observe for a while and watch how work
+proceeds. It might be useful to join the e-mail lists which can be
+accessed from the Pardus web pages and follow the discussions, ongoing
+events, investigate bug reports, the solutions proposed regarding
+the bugs and examine the documents published.<BR>
+<BR>
+By considering the outlined methods you may continue to help development.
+You can add your comments and proposals for solutions to the bug reports
+by testing the sofware or you can report the new bugs you found. You
+can contribute to develop innovative technologies and add new features
+or you can support a step of the process which you think is not working
+(maybe working too slow) and speed it up. By doing so, you should
+always be in communication with other developers and contributers.
+As its true for all tasks performed by more than one person, we need
+to have knowledge of each other. <BR>
+<BR>
+Our needs can be summarized as the articles below:<BR>
+<BR>
+<!--TOC subsection Developing software and debugging-->
+
+<H3><A NAME="htoc3">2.1</A>&nbsp;&nbsp;Developing software and debugging</H3><!--SEC END -->
+
+You can contribute your knowledge and labour on developing software
+by assisting with cleaning up the source and helping innovative technology
+teams working in this field. They can provide the best information
+on how you can help them. The Pardus e-mail lists which you can join
+via <A HREF="http://liste.pardus.org.tr/mailman/listinfo"><TT>http://liste.pardus.org.tr/mailman/listinfo</TT></A> will be helpful.<BR>
+<BR>
+You may examine the reported bugs, and find solutions for them, using
+Pardus bug tracking system which can be accessed via the web pages.<BR>
+<BR>
+<!--TOC subsection Translation-->
+
+<H3><A NAME="htoc4">2.2</A>&nbsp;&nbsp;Translation</H3><!--SEC END -->
+
+Localization of free software, to enable them to be used with correct
+and perfect Turkish is another requirement for us. In this context,
+you may work with localization teams organized for almost all major
+free software project. We'll draw direct benefit from your support
+for localization projects if you give priority to the software selected
+by Pardus project. <BR>
+<BR>
+To say in short, support localization efforts. Beyond rough translations
+try to improve the quality of translations. While supporting translation
+works, by providing not only Ulusal Dağıtım but also all existing
+Linux distributions with packages in problem-free Turkish, you will
+be part of an important mission.<BR>
+<BR>
+To support notable translation groups, you can reach the localization
+works you feel interest in via <A HREF="http://cekirdek.pardus.org.tr/~baris/tmp/ceviri-calismalari.html"><TT>http://cekirdek.pardus.org.tr/~baris/tmp/ceviri-calismalari.html</TT></A>
+(in Turkish)<BR>
+<BR>
+<!--TOC subsection Tests and bug reports-->
+
+<H3><A NAME="htoc5">2.3</A>&nbsp;&nbsp;Tests and bug reports</H3><!--SEC END -->
+
+You can report bugs by testing the software we choose. You can controle
+the bugs in other distributions and report the situation. To know
+that the very same bug exists in other distributions might help us
+to produce a proper solution. If that problem is solved -or never
+existed- in a particular distribution, reaching a solution will be
+faster by examining the work that particular distribution did for
+that software. You can reach our bug tracking system via <A HREF="http://bugs.pardus.org.tr/"><TT>http://bugs.pardus.org.tr/</TT></A><BR>
+<BR>
+<!--TOC subsection Graphical Design, Multimediea-->
+
+<H3><A NAME="htoc6">2.4</A>&nbsp;&nbsp;Graphical Design, Multimediea</H3><!--SEC END -->
+
+If you are talented in this domain, you can help with the topics which
+require graphics knowledge, such as the icon sets, font types and
+colour themes. Feel free to ask for help from us via e-mail lists
+when you need visual materials to use in your work.<BR>
+<BR>
+<!--TOC subsection Documentation-->
+
+<H3><A NAME="htoc7">2.5</A>&nbsp;&nbsp;Documentation</H3><!--SEC END -->
+
+You can support the documentation of the ongoing projects. Along with
+the user's documents you can prepare ``How To'' documents for
+the developers that have newly joined the project. You can assist
+us to update our Web pages or you can help us to keep foreign language
+-such as English, German, Spanish- translations of our pages up-to-date.<BR>
+<BR>
+<!--TOC subsection Publicity-->
+
+<H3><A NAME="htoc8">2.6</A>&nbsp;&nbsp;Publicity</H3><!--SEC END -->
+
+You can support the publicity of the project and encourage more people
+to learn about it.<BR>
+<BR>
+Probably the list of the topics you can help is not limited with those
+above. By rendering your opinions on the discussion points within
+e-mail lists, advancing proposals, providing the lists with constructive
+criticism and developments related with the distribution, you can
+find new topics to help.<BR>
+<BR>
+<!--TOC section What is the responsibility of the developer?-->
+
+<H2><A NAME="htoc9">3</A>&nbsp;&nbsp;What is the responsibility of the developer?</H2><!--SEC END -->
+
+Indeed, the answer of this question might vary considerably depending
+on the subject you begin to work on, but we can mention the basic
+responsibilities of all developers in general. In fact, the responsibilities
+described here are basic points for many developer to work together
+in harmony. In this sense, although what is mentioned below is true
+in general, you can find your own way to cooperate as you become familiar
+with your working environment and friends.<BR>
+<BR>
+<!--TOC subsection Continuity-->
+
+<H3><A NAME="htoc10">3.1</A>&nbsp;&nbsp;Continuity</H3><!--SEC END -->
+
+A developer should be prepared to work on the projects s/he is dealing
+with continiously. Here ``continuity'' doesn't stand for a 7/24
+work but it stresses the continuity of the subject to be dealt. For
+different areas are clannish in an operation system, developers should
+keep up with each others speed. <BR>
+<BR>
+<!--TOC subsection Accuracy-->
+
+<H3><A NAME="htoc11">3.2</A>&nbsp;&nbsp;Accuracy</H3><!--SEC END -->
+
+In the project you might be working on the same subject with more
+than one developer. What's more, there might be other developers affected
+by your work. For this reason not only the continuity of your work
+but also the accuracy are of great importance in proportion with the
+extend they affect other developers. If you are performing your work
+on one of the main development repositories, you should take into
+account the other developers working with you that are affected by
+your work, in all stages. You should make sure that any change you
+make does not -even slightly- prevent other developers from doing
+their job.<BR>
+<BR>
+<!--TOC subsection Determination-->
+
+<H3><A NAME="htoc12">3.3</A>&nbsp;&nbsp;Determination</H3><!--SEC END -->
+
+If you have the power of decision for a subject you are working on,
+changing your decisions too often makes it difficult for the other
+developers to follow and what's more important it makes the developers
+who are dependent on you to have difficulties while working. Hence
+it will be useful to take well-thought decisions and to ask for the
+opinions of the other developers before making a decision.<BR>
+<BR>
+At a particular point if you feel that you should change your decision
+anyway, you can do this by letting the other developers know about
+it and -if your previous works are already being used- by working
+in an ``experimental'' area harmless to them.<BR>
+<BR>
+<!--TOC subsection Communication-->
+
+<H3><A NAME="htoc13">3.4</A>&nbsp;&nbsp;Communication</H3><!--SEC END -->
+
+It'll be useful to let other developers know about the decisions you
+make, the steps you take and the changes -even the minor ones- you
+make. In this way, you can adapt new developers -who are always needed-
+to the subject you are dealing with easier, you can cooperate with
+the developers you work with more consistently and faster. When you'll
+be in need for help in the future, with the help of this attitude,
+you can be sure that a solution will be produced faster because another
+develepor already knows what you want to do. For communication you
+can use e-mail lists, the documents you'll prepare or explanatory
+information (such as subversion messages) you'll add to the changes
+you make.<BR>
+<BR>
+<!--TOC section New developer application-->
+
+<H2><A NAME="htoc14">4</A>&nbsp;&nbsp;New developer application</H2><!--SEC END -->
+
+There's always room for a new developer. You too can apply to be a
+Pardus developer and become an official developer as well. Although
+it's a prerequisite to accept the responsibility of being a new developer,
+it's not enough for all cases. On the other hand, we can put it openly
+that we are enthusiastic for delegation of responsibility and accepting
+new developers. For details please keep on reading...<BR>
+<BR>
+<!--TOC subsection Who may submit?-->
+
+<H3><A NAME="htoc15">4.1</A>&nbsp;&nbsp;Who may submit?</H3><!--SEC END -->
+
+Everyone who is working for Pardus and who accepts the developer responsibilities
+described in this document may submit a <EM>new developer application</EM>.
+The main channel of communication is the e-mail lists. In order to
+accept an application, applicant's determination and style of working
+should be obverved. In this sense, you can select a task suitable
+for you and begin working on it before you submit. By sharing your
+work with the other developers you enable them to examine your work
+and so other developers will have the chance to become acquainted
+with you. <BR>
+<BR>
+For example, it may be a good starting point to work on the software
+which is already in the package repositories, propose new patches
+and solutions, examine and test other solution proposals and report
+what you get.<BR>
+<BR>
+Besides, there's a quality e-mail list <SUP><A NAME="text1" HREF="#note1">1</A></SUP> in which those who would like to support the project can introduce
+themselves and pick a task suitable for them.<BR>
+<BR>
+<!--TOC subsection How to submit?-->
+
+<H3><A NAME="htoc16">4.2</A>&nbsp;&nbsp;How to submit?</H3><!--SEC END -->
+
+To submit the application you can e-mail to basvuru@pardus.org.tr<BR>
+<BR>
+In your application e-mail;
+<OL type=1><LI>
+the development subjects you are working on related with Pardus,
+<LI>other subjects you want to work on,
+<LI>the e-mail address/username which you use for the bug tracking system,
+<LI>your areas of specialization,
+<LI>a Pardus developer who knows about your work and might be a reference
+for you
+</OL>
+should be included.<BR>
+<BR>
+You should include the username and ciphertext (created by htpasswd)
+of your password in your application e-mail. By doing so, you provide
+us with the ciphertext of your password where you are the only one
+who knows the plaintext. We can then add your username and password
+wherever an identitiy check is required. <BR>
+<BR>
+<!--TOC subsubsection to create a password with htpasswd-->
+
+<H4><A NAME="htoc17">4.2.1</A>&nbsp;&nbsp;to create a password with htpasswd</H4><!--SEC END -->
+
+You can create your password and username by using htpasswd program
+and you can attach the output file to your e-mail. To do this, you
+can use the command below:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+$&nbsp;htpasswd&nbsp;-c&nbsp;password_file&nbsp;user_name<BR>
+<BR>
+New&nbsp;password:<BR>
+<BR>
+Re-type&nbsp;new&nbsp;password:<BR>
+<BR>
+Adding&nbsp;password&nbsp;for&nbsp;user&nbsp;user_name
+</TT></DL></DIV>
+As a result an output file (password_file) will be created and you
+can attach it to your e-mail.<BR>
+<BR>
+<!--TOC subsubsection to create a password with perl-->
+
+<H4><A NAME="htoc18">4.2.2</A>&nbsp;&nbsp;to create a password with perl</H4><!--SEC END -->
+
+To do this the, you can use the command below:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+perl&nbsp;-e&nbsp;"print&nbsp;crypt('yourpassword','xy'),&#92;"&#92;n&#92;";"</TT><SUP><A NAME="text2" HREF="#note2"><TT>2</TT></A></SUP><TT>
+</TT></DL></DIV>
+This command will create just your password. In your e-mail you should
+mention the username you want to use.<BR>
+<BR>
+<!--TOC subsubsection to create a password with python-->
+
+<H4><A NAME="htoc19">4.2.3</A>&nbsp;&nbsp;to create a password with python</H4><!--SEC END -->
+
+You can do the same with python by using the command below:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+python&nbsp;-c&nbsp;"import&nbsp;crypt;&nbsp;print&nbsp;crypt.crypt('password',&nbsp;'xy')"
+</TT></DL></DIV>
+In this case as well, just the shadowed form of your password will
+be given as output. In your e-mail you should mention the username
+you want to use.<BR>
+<BR>
+<!--TOC section Subversion repositories-->
+
+<H2><A NAME="htoc20">5</A>&nbsp;&nbsp;Subversion repositories</H2><!--SEC END -->
+
+The development process in Pardus is maintained via a Subversion version
+control system. Subversion is an open source version tracking system.
+Its a development infrastructure which makes it possible for more
+than one application developer to work together unconcerned about
+demolishing each others' changes. Thanks to this, any single software's
+development process can be tracked backwards, the changes made gradually
+can be watched and can be easily returned to any version of a particular
+time.<BR>
+<BR>
+At the moment there are two subversion repositories we use in Pardus
+structure .<BR>
+<BR>
+<!--TOC subsection Pardus Repository-->
+
+<H3><A NAME="htoc21">5.1</A>&nbsp;&nbsp;Pardus Repository</H3><!--SEC END -->
+
+Pardus repository is the one in which the products being developed
+within the project are kept. All the software developed for Pardus
+is kept in Pardus repository. The repository is at the address https://svn.pardus.org.tr/pardus.
+It keeps the source package repositories where the software's PiSi
+packages are found.<BR>
+<BR>
+More information on the Pardus repository can be found in the document
+Pardus Depo Politikası (Pardus Repository Policy).<BR>
+<BR>
+<!--TOC subsection Hierarchy of repository directories-->
+
+<H3><A NAME="htoc22">5.2</A>&nbsp;&nbsp;Hierarchy of repository directories</H3><!--SEC END -->
+
+Each Pardus subversion repository has the hierarchy of directories
+detailed below.<BR>
+<BR>
+There are three main directories in a repository: trunk, tags and
+repos.<BR>
+<BR>
+<!--TOC subsubsection trunk/-->
+
+<H4><A NAME="htoc23">5.2.1</A>&nbsp;&nbsp;trunk/</H4><!--SEC END -->
+
+Trunk is the directory in which continuous work is performed.<BR>
+<BR>
+Each project module (document, Web pages, software projects, etc.)
+has its own directory under trunk/.<BR>
+<BR>
+<!--TOC subsubsection tags/-->
+
+<H4><A NAME="htoc24">5.2.2</A>&nbsp;&nbsp;tags/</H4><!--SEC END -->
+
+Tags directory is the place where, for any module, the work done under
+trunk is tagged and copied to. Within this directory, there exist
+3 directories.
+<UL><LI>
+<B>tags/RELEASE/</B>: This is the directory which software (or modules)
+use to tag their own version numbers. For example, version 0.2 of
+tasma is tagged in tags/RELEASE/tasma-0.2 directory.
+<LI><B>tags/BLACKHOLE</B>/: Its a blackhole the projects for which the
+development is stopped (because of the lack of a developer to deal
+with it or no more need for that project) are ``thrown'' into.
+When the projects in it are desired to be used again, they are copied
+under trunk/ and worked on.
+<LI><B>tags/RESTRUCTURED/</B>: Its the directory in which the module
+is put if the software (or module) undergoes a total restructuring
+and if the old files will not be used anymore. For example, ``abc''
+project which was restarted to be written on 28th May 2005 is moved
+under tags/RESTRUCTURED/abc-2005-05-28/.
+</UL>
+<!--TOC subsubsection repos/-->
+
+<H4><A NAME="htoc25">5.2.3</A>&nbsp;&nbsp;repos/</H4><!--SEC END -->
+
+Repos is a directory in which developers can advance their work in
+an experimental nature without disturbing the other developers working
+on the same module under trunk. The developer can proceed her/his
+experimental work by creating her/his own directory under repos/.<BR>
+<BR>
+(As a rule which is valid only for packeges repository, the documents
+related with this project are found under repos/doc directory.)<BR>
+<BR>
+<!--TOC section Using Subversion-->
+
+<H2><A NAME="htoc26">6</A>&nbsp;&nbsp;Using Subversion</H2><!--SEC END -->
+
+A very detailed user's manual<SUP><A NAME="text3" HREF="#note3">3</A></SUP> is available. Besides that book, information about the project can
+be reached from the frequently asked questions page<SUP><A NAME="text4" HREF="#note4">4</A></SUP> on the own Web site<SUP><A NAME="text5" HREF="#note5">5</A></SUP> of Subversion project. In this section frequently needed commands
+for practical usage are tried to be told by examples.<BR>
+<BR>
+<!--TOC subsection How do I know if I have Subversion in my system or not?-->
+
+<H3><A NAME="htoc27">6.1</A>&nbsp;&nbsp;How do I know if I have Subversion in my system or not?</H3><!--SEC END -->
+
+As the quickest way to see if you have Subversion in your system or
+not, you can refere to the output of ``svn --version'' command.
+It's a good sign if you see something like this:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+evreniz@jaco:&#126;$&nbsp;svn&nbsp;--version<BR>
+<BR>
+svn,&nbsp;version&nbsp;1.0.3&nbsp;(r9775)<BR>
+<BR>
+&nbsp;&nbsp;compiled&nbsp;May&nbsp;19&nbsp;2004,&nbsp;21:28:49<BR>
+<BR>
+Copyright&nbsp;(C)&nbsp;2000-2004&nbsp;CollabNet.<BR>
+<BR>
+Subversion&nbsp;is&nbsp;open&nbsp;source&nbsp;software,&nbsp;see&nbsp;http://subversion.tigris.org/<BR>
+<BR>
+This&nbsp;product&nbsp;includes&nbsp;software&nbsp;developed&nbsp;by&nbsp;CollabNet&nbsp;(http://www.Collab.Net/).<BR>
+<BR>
+The&nbsp;following&nbsp;repository&nbsp;access&nbsp;(RA)&nbsp;modules&nbsp;are&nbsp;available:<BR>
+<BR>
+*&nbsp;ra_dav&nbsp;:&nbsp;Module&nbsp;for&nbsp;accessing&nbsp;a&nbsp;repository&nbsp;via&nbsp;WebDAV&nbsp;(DeltaV)&nbsp;protocol.<BR>
+<BR>
+&nbsp;&nbsp;-&nbsp;handles&nbsp;'http'&nbsp;schema<BR>
+<BR>
+&nbsp;&nbsp;-&nbsp;handles&nbsp;'https'&nbsp;schema<BR>
+<BR>
+*&nbsp;ra_local&nbsp;:&nbsp;Module&nbsp;for&nbsp;accessing&nbsp;a&nbsp;repository&nbsp;on&nbsp;local&nbsp;disk.<BR>
+<BR>
+&nbsp;&nbsp;-&nbsp;handles&nbsp;'file'&nbsp;schema<BR>
+<BR>
+*&nbsp;ra_svn&nbsp;:&nbsp;Module&nbsp;for&nbsp;accessing&nbsp;a&nbsp;repository&nbsp;using&nbsp;the&nbsp;svn&nbsp;network&nbsp;protocol.<BR>
+<BR>
+&nbsp;&nbsp;-&nbsp;handles&nbsp;'svn'&nbsp;schema<BR>
+<BR>
+evreniz@jaco:&#126;$&nbsp;
+</TT></DL></DIV>
+If it doesn't exist, from <A HREF="http://subversion.tigris.org/project_packages.html"><TT>http://subversion.tigris.org/project_packages.html</TT></A>
+you can have the package prepared for your distribution or operating
+system and install it. To our knowledge, all of the general Linux
+distributions, including Pardus, has subversion (svn) packages prepackaged.<BR>
+<BR>
+<!--TOC subsection What is a repository?-->
+
+<H3><A NAME="htoc28">6.2</A>&nbsp;&nbsp;What is a repository?</H3><!--SEC END -->
+
+A repository is a disk area on which the last version, all the versions
+prior to the last version and the changes between versions of the
+software package(s) every developer works on, information including
+their user, date and cause are stored which can be reached by several
+methods. <BR>
+<BR>
+<!--TOC subsection How can I see what directories exist in a repository?-->
+
+<H3><A NAME="htoc29">6.3</A>&nbsp;&nbsp;How can I see what directories exist in a repository?</H3><!--SEC END -->
+
+A single repository may contain more than one directory in it. The
+hierarchy of a repository is just like the inside of a directory on
+a disk. So, you can browse without having to copy all the repository
+to your disk and just get a view of the part you want to work on or
+have a look at. The list of directories and files in a repository
+is displayed using ``svn ls repository_address'' format:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+$&nbsp;svn&nbsp;ls&nbsp;http://svn.pardus.org.tr/uludag<BR>
+<BR>
+repos/<BR>
+<BR>
+tags/<BR>
+<BR>
+trunk/&nbsp;<BR>
+$&nbsp;svn&nbsp;ls&nbsp;http://svn.pardus.org.tr/uludag/trunk<BR>
+<BR>
+COMAR/<BR>
+<BR>
+comar_prototip_old/<BR>
+<BR>
+web/&nbsp;<BR>
+$&nbsp;svn&nbsp;ls&nbsp;http://svn.pardus.org.tr/uludag/trunk/COMAR<BR>
+<BR>
+COMAR-1.sxw<BR>
+<BR>
+COMARd/<BR>
+<BR>
+CSL/<BR>
+<BR>
+OM/<BR>
+<BR>
+SlicerAPI/<BR>
+<BR>
+confparser/&nbsp;<BR>
+$&nbsp;svn&nbsp;ls&nbsp;http://svn.uludag.org.tr/uludag/trunk/COMAR/confparser<BR>
+<BR>
+GenericParser.py<BR>
+<BR>
+README<BR>
+<BR>
+branchedParser.py<BR>
+<BR>
+comar_configparser.png<BR>
+<BR>
+config_files/<BR>
+<BR>
+confparser.py<BR>
+<BR>
+flatParser.py<BR>
+<BR>
+sectionedParser.py<BR>
+<BR>
+$&nbsp;
+</TT></DL></DIV>
+<!--TOC subsection How do I get a copy of a directory in the repository?-->
+
+<H3><A NAME="htoc30">6.4</A>&nbsp;&nbsp;How do I get a copy of a directory in the repository?</H3><!--SEC END -->
+
+In order to create a copy of the repository ``svn co'' command
+is used. Once the copy is created, no more processing is performed
+on this command copy.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+$&nbsp;svn&nbsp;co&nbsp;http://svn.pardus.org.tr/uludag<BR>
+<BR>
+A&nbsp;uludag/trunk<BR>
+<BR>
+...<BR>
+<BR>
+...
+</TT></DL></DIV>
+You can treat the repository as if its an URI. By doing so, you can
+get any subdirectory in the repository.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+$&nbsp;svn&nbsp;co&nbsp;http://svn.pardus.org.tr/uludag/trunk/COMAR<BR>
+<BR>
+A&nbsp;COMAR/COMAR-1.sxw<BR>
+<BR>
+A&nbsp;COMAR/CSL<BR>
+<BR>
+...<BR>
+<BR>
+...
+</TT></DL></DIV>
+<!--TOC subsection How do I know if my copy is up-to-date or not?-->
+
+<H3><A NAME="htoc31">6.5</A>&nbsp;&nbsp;How do I know if my copy is up-to-date or not?</H3><!--SEC END -->
+
+You have to update the copy of the repository you have periodically
+with ``svn update'' command in order to know about the last changes
+and to track the last version. If you call the command alone the files
+in the directory you are on and the entire directory will be updated.
+Besides, you can add the address of the directory or the single file
+you want to update to the end of the command.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;/work/uludag/[...]/uludag/trunk&nbsp;$&nbsp;svn&nbsp;update<BR>
+<BR>
+U&nbsp;tasma/modules/tasmanet/device.cpp&nbsp;<BR>
+<BR>
+U&nbsp;tasma/modules/tasmanet/devicesettings.cpp&nbsp;<BR>
+<BR>
+U&nbsp;tasma/modules/tasmanet/device.h&nbsp;<BR>
+<BR>
+U&nbsp;tasma/modules/tasmanet/devicesettings.h&nbsp;<BR>
+<BR>
+Updated&nbsp;to&nbsp;revision&nbsp;158.<BR>
+<BR>
+&#126;/work/uludag/[...]/uludag/trunk&nbsp;$
+</TT></DL></DIV>
+<!--TOC subsection What do the signs by the files mean?-->
+
+<H3><A NAME="htoc32">6.6</A>&nbsp;&nbsp;What do the signs by the files mean?</H3><!--SEC END -->
+
+While you are working with SVN and during processes such as updating
+and searching, as in the previous example, the signs by the files
+are to inform you about what kind of a change related with the next
+file is performed.<BR>
+<BR>
+One of the letters U, D, A, C or G may be found by files: 
+<UL><LI>
+<B>A</B> Added
+<LI><B>D</B> Deleted
+<LI><B>U</B> Updated
+<LI><B>G</B> Merged (the last update you got from the repository is
+merged with the file you are performing local changes)
+<LI><B>C</B> Conflicted (the last update you got from the repository
+is conflicted with the changes you performed localy)
+</UL>
+<!--TOC subsection I changed some files; what shall I do now?-->
+
+<H3><A NAME="htoc33">6.7</A>&nbsp;&nbsp;I changed some files; what shall I do now?</H3><!--SEC END -->
+
+You can use ``svn status'' command whenever you want to see what
+changes you made in your copy. This command can run with an URI you
+add to the end of it as all the other commands. Below its seen that
+a file is added to, a file is deleted from and two files are changed
+regarding the last updated copy of the repository:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
+<BR>
+A&nbsp;COMARd/csl/degisiklik<BR>
+<BR>
+D&nbsp;COMARd/csl/loader.py&nbsp;<BR>
+<BR>
+M&nbsp;COMARd/COMARValue.py<BR>
+<BR>
+M&nbsp;comar-call/rpc.c<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status&nbsp;COMARd/csl/COMARValue.py<BR>
+<BR>
+M&nbsp;COMARd/COMARValue.py<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$
+</TT></DL></DIV>
+Also, you can learn what you particularly changed in changed files
+with ``svn diff'' command:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;diff&nbsp;comar-call/rpc.c<BR>
+<BR>
+Index:&nbsp;comar-call/rpc.c<BR>
+<BR>
+===================================================================<BR>
+<BR>
+---&nbsp;comar-call/rpc.c&nbsp;(revision&nbsp;158)&nbsp;<BR>
+<BR>
++++&nbsp;comar-call/rpc.c&nbsp;(working&nbsp;copy)&nbsp;<BR>
+<BR>
+@@&nbsp;-146,6&nbsp;+146,7&nbsp;@@&nbsp;<BR>
+<BR>
+&nbsp;&nbsp;if&nbsp;(len&nbsp;==&nbsp;0)&nbsp;break;&nbsp;<BR>
+<BR>
+&nbsp;&nbsp;if&nbsp;(len&nbsp;==&nbsp;-1)&nbsp;{&nbsp;<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;puts("connection&nbsp;broken&nbsp;too&nbsp;soon");&nbsp;<BR>
+<BR>
++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//totally&nbsp;different&nbsp;change&nbsp;<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;&nbsp;<BR>
+<BR>
+&nbsp;&nbsp;}&nbsp;<BR>
+<BR>
+&nbsp;&nbsp;printf("RECV[%s]&#92;n&#92;n",&nbsp;buf);&nbsp;<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;
+</TT></DL></DIV>
+<!--TOC subsection I added a new file but there is a ``?'' by it...-->
+
+<H3><A NAME="htoc34">6.8</A>&nbsp;&nbsp;I added a new file but there is a ``?'' by it...</H3><!--SEC END -->
+
+While you are working on the copy of the repository when you would
+like to create a new file, you should inform your local copy about
+your intention to add that file to the repository with the help of
+``svn add'' (it has sister commands such as ``svn copy'',
+``svn del'' as well). Let's explain why there's such a need as
+follows: Let's assume that you would like to compile and test an application
+which is in your local copy. In this case, some files that you don't
+prefer to send to the main repository will be created in your work
+copy such as Makefiles and *.m4 files which only you have any need
+for. In such cases, it will be very advantageous and convenient if
+the files added locally are not added to the repository as well, because
+when you change the source code of the software, recompile it and
+decide to send it to the repository at a proper time, you know that
+the other files are not going to the repository. With ``svn add'',
+you add to the repository <EM>the files you want to add</EM>. ``svn
+del'' will not mentioned again.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;status<BR>
+<BR>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;touch&nbsp;newscript.csl<BR>
+<BR>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;status<BR>
+<BR>
+?&nbsp;newscript.csl<BR>
+<BR>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;add&nbsp;newscript.csl<BR>
+<BR>
+A&nbsp;newscript.csl<BR>
+<BR>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;svn&nbsp;status&nbsp;<BR>
+<BR>
+A&nbsp;newscript.csl<BR>
+<BR>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;
+</TT></DL></DIV>
+<!--TOC subsection I want to revert the files I changed to their original states.-->
+
+<H3><A NAME="htoc35">6.9</A>&nbsp;&nbsp;I want to revert the files I changed to their original states.</H3><!--SEC END -->
+
+You can revert the changes you made to their original state as in
+the last copy using ``svn revert'' command anytime you like:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
+<BR>
+A&nbsp;COMARd/csl/thechange<BR>
+<BR>
+D&nbsp;COMARd/csl/loader.py<BR>
+<BR>
+M&nbsp;COMARd/COMARValue.py<BR>
+<BR>
+M&nbsp;comar-call/rpc.c&nbsp;<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;revert&nbsp;comar-call/rpc.c<BR>
+<BR>
+Reverted&nbsp;'comar-call/rpc.c'<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
+<BR>
+A&nbsp;COMARd/csl/thechange<BR>
+<BR>
+D&nbsp;COMARd/csl/loader.py<BR>
+<BR>
+M&nbsp;COMARd/COMARValue.py<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$
+</TT></DL></DIV>
+Its also possible to revert all of the files to their originals recursively...
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;revert&nbsp;.&nbsp;-R&nbsp;<BR>
+<BR>
+Reverted&nbsp;'COMARd/csl/thechange'<BR>
+<BR>
+Reverted&nbsp;'COMARd/csl/loader.py'&nbsp;<BR>
+<BR>
+Reverted&nbsp;'COMARd/COMARValue.py'<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$&nbsp;svn&nbsp;status<BR>
+<BR>
+&#126;/work/[...]/trunk/COMAR/comar&nbsp;$
+</TT></DL></DIV>
+<!--TOC subsection I want to send the files I changed; what to do?-->
+
+<H3><A NAME="htoc36">6.10</A>&nbsp;&nbsp;I want to send the files I changed; what to do?</H3><!--SEC END -->
+
+If you are sure of the last condition of the files you changed, you
+can use ``svn commit'' command in order to transmit your changes
+to the repository. By using this command -as its true for all the
+rest- you can send to the repository a single file, a single directory
+and what is under it or all the changes you made. When you run ``svn
+commit'', svn -using your preferred text editor- opens a file for
+you with the changes you made listed in it in order to make sure others
+see what you changed and to enable your changes to be logged for backward
+tracking in the repository. To alter the text editor opened as the
+preferred one you can make use of the environment variable that svn
+uses named SVN_EDITOR:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;SVN_EDITOR="vi"&nbsp;svn&nbsp;commit&nbsp;<BR>
+<BR>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;SVN_EDITOR="mcedit"&nbsp;svn&nbsp;commit<BR>
+<BR>
+&#126;/work/[...]/COMARd/csl/sample&nbsp;$&nbsp;SVN_EDITOR="kwrite"&nbsp;svn&nbsp;commit<BR>
+<BR>
+.<BR>
+<BR>
+.
+</TT></DL></DIV>
+As soon as you write the changes to the text editor, save what you
+wrote and close the editor, svn will begin to send the changes in
+your local copy to the repository.<BR>
+<BR>
+<!--TOC subsection How about the other commands?-->
+
+<H3><A NAME="htoc37">6.11</A>&nbsp;&nbsp;How about the other commands?</H3><!--SEC END -->
+
+You can run Subversion to learn Subversion commands as well. ``svn
+help command_name'' feeds you back with detailed information about
+<EM>command_name</EM> while ``svn help'' serves you with a list
+of commands you can use.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+$&nbsp;svn&nbsp;help<BR>
+<BR>
+usage:&nbsp;svn&nbsp;&lt;subcommand&gt;&nbsp;[options]&nbsp;[args]<BR>
+<BR>
+Type&nbsp;"svn&nbsp;help&nbsp;&lt;subcommand&gt;"&nbsp;for&nbsp;help&nbsp;on&nbsp;a&nbsp;specific&nbsp;subcommand.<BR>
+<BR>
+Most&nbsp;subcommands&nbsp;take&nbsp;file&nbsp;and/or&nbsp;directory&nbsp;arguments,&nbsp;recursing<BR>
+<BR>
+on&nbsp;the&nbsp;directories.&nbsp;If&nbsp;no&nbsp;arguments&nbsp;are&nbsp;supplied&nbsp;to&nbsp;such&nbsp;a<BR>
+<BR>
+command,&nbsp;it&nbsp;will&nbsp;recurse&nbsp;on&nbsp;the&nbsp;current&nbsp;directory&nbsp;(inclusive)&nbsp;by<BR>
+<BR>
+default.<BR>
+<BR>
+Available&nbsp;subcommands:<BR>
+<BR>
+add<BR>
+<BR>
+blame&nbsp;(praise,&nbsp;annotate,&nbsp;ann)<BR>
+<BR>
+cat<BR>
+<BR>
+checkout&nbsp;(co)<BR>
+<BR>
+cleanup<BR>
+<BR>
+commit&nbsp;(ci)<BR>
+<BR>
+copy&nbsp;(cp)<BR>
+<BR>
+delete&nbsp;(del,&nbsp;remove,&nbsp;rm)<BR>
+<BR>
+diff&nbsp;(di)<BR>
+<BR>
+export<BR>
+<BR>
+help&nbsp;(?,&nbsp;h)<BR>
+<BR>
+import<BR>
+<BR>
+info<BR>
+<BR>
+list&nbsp;(ls)<BR>
+<BR>
+log<BR>
+<BR>
+merge<BR>
+<BR>
+mkdir<BR>
+<BR>
+move&nbsp;(mv,&nbsp;rename,&nbsp;ren)<BR>
+<BR>
+propdel&nbsp;(pdel,&nbsp;pd)<BR>
+<BR>
+propedit&nbsp;(pedit,&nbsp;pe)<BR>
+<BR>
+propget&nbsp;(pget,&nbsp;pg)<BR>
+<BR>
+proplist&nbsp;(plist,&nbsp;pl)<BR>
+<BR>
+propset&nbsp;(pset,&nbsp;ps)<BR>
+<BR>
+resolved<BR>
+<BR>
+revert<BR>
+<BR>
+status&nbsp;(stat,&nbsp;st)<BR>
+<BR>
+switch&nbsp;(sw)<BR>
+<BR>
+update&nbsp;(up)<BR>
+<BR>
+Subversion&nbsp;is&nbsp;a&nbsp;tool&nbsp;for&nbsp;version&nbsp;control.<BR>
+<BR>
+For&nbsp;additional&nbsp;information,&nbsp;see&nbsp;http://subversion.tigris.org/</TT></DL></DIV>
+
+In order to have detailed information about a Subversion command;
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<B>$&nbsp;svn&nbsp;help&nbsp;add&nbsp;</B><BR>
+<BR>
+add:&nbsp;Put&nbsp;files&nbsp;and&nbsp;directories&nbsp;under&nbsp;version&nbsp;control,&nbsp;scheduling&nbsp;them&nbsp;for<BR>
+<BR>
+addition&nbsp;to&nbsp;repository.&nbsp;&nbsp;They&nbsp;will&nbsp;be&nbsp;added&nbsp;in&nbsp;next&nbsp;commit.&nbsp;usage:&nbsp;add&nbsp;PATH...<BR>
+<BR>
+Valid&nbsp;options:&nbsp;&nbsp;<BR>
+<BR>
+--targets&nbsp;arg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;pass&nbsp;contents&nbsp;of&nbsp;file&nbsp;ARG&nbsp;as&nbsp;additional&nbsp;args&nbsp;&nbsp;<BR>
+<BR>
+-N&nbsp;[--non-recursive]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;operate&nbsp;on&nbsp;single&nbsp;directory&nbsp;only&nbsp;&nbsp;<BR>
+<BR>
+-q&nbsp;[--quiet]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;print&nbsp;as&nbsp;little&nbsp;as&nbsp;possible&nbsp;&nbsp;<BR>
+<BR>
+--config-dir&nbsp;arg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;read&nbsp;user&nbsp;configuration&nbsp;files&nbsp;from&nbsp;directory&nbsp;ARG&nbsp;&nbsp;<BR>
+<BR>
+--force&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;force&nbsp;operation&nbsp;to&nbsp;run&nbsp;&nbsp;<BR>
+<BR>
+--auto-props&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;enable&nbsp;automatic&nbsp;properties&nbsp;&nbsp;<BR>
+<BR>
+--no-auto-props&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;disable&nbsp;automatic&nbsp;properties
+</TT></DL></DIV>
+commands can be used or Frequently Asked Questions can be browsed
+from <A HREF="http://subversion.tigris.org/project_faq.html"><TT>http://subversion.tigris.org/project_faq.html</TT></A> or Subversion
+book can be read from <A HREF="http://svnbook.red-bean.com"><TT>http://svnbook.red-bean.com</TT></A><BR>
+<BR>
+<!--TOC section Rules for using Subversion-->
+
+<H2><A NAME="htoc38">7</A>&nbsp;&nbsp;Rules for using Subversion</H2><!--SEC END -->
+
+Subversion repository is a common place shared by all developers.
+In order to work together developers should be using the repository
+efficiently, properly and in an organized way.<BR>
+<BR>
+Rules for using Subversion are the rules to be respected by the developers
+having the privilege to write to Pardus repositories.<BR>
+<BR>
+<!--TOC subsection Always work with an updated repository-->
+
+<H3><A NAME="htoc39">7.1</A>&nbsp;&nbsp;Always work with an updated repository</H3><!--SEC END -->
+
+The updates on the Subversion repository will be more frequent as
+the quantity of the developers increase. In order to know about the
+rest of the process and to avoid a conflict between what you do and
+the rest to be done, before you begin to work, always update your
+repository by means of <EM>svn update</EM> command.<BR>
+<BR>
+<!--TOC subsection Think before you commit-->
+
+<H3><A NAME="htoc40">7.2</A>&nbsp;&nbsp;Think before you commit</H3><!--SEC END -->
+
+Think twice before you commit<SUP><A NAME="text6" HREF="#note6">6</A></SUP> the changes you made to the Subversion repository. The data you commit
+to the repository will reach to all developers and affect their work.
+In this sense, its of great importance to follow the articles below.
+<OL type=1><LI>
+Do not commit a non-running code to the Subversion repository.
+<LI>Always update your repository before you commit by means of <EM>svn
+update</EM> in order to get the last changes. Be sure that the changes
+you made do not conflict with the others.
+<LI>Pay attention to what you commit. To make sure of this, always control
+the changes you are about to commit by means of <EM>svn diff</EM> command
+before commitment.
+<LI>Always test the changes you made. Even better, test them twice.
+</OL>
+<!--TOC subsection Add descriptive messages to your commitments-->
+
+<H3><A NAME="htoc41">7.3</A>&nbsp;&nbsp;Add descriptive messages to your commitments</H3><!--SEC END -->
+
+Explanation messages used in the commitments should focus on the change
+that is made and they should be as descriptive as possible. As much
+as you can, try to add explanation messages related with only the
+files you made changes on. However, in the limits of the context,
+you can include all the information which can not be derived from
+the output of a svn diff command in your explanation message.<BR>
+<BR>
+Refraining from adding a proper explanation message will make it difficult
+to understand the changes you made.<BR>
+<BR>
+<!--TOC subsection Abide by the work plans-->
+
+<H3><A NAME="htoc42">7.4</A>&nbsp;&nbsp;Abide by the work plans</H3><!--SEC END -->
+
+If a work/time plan exists for the distribution in general or if the
+main developer of the component you are working on sets such a plan,
+abide by this plan regarding your commitments.<BR>
+<BR>
+For example, an application developer might want to stop adding new
+features to the application at a particular time and might want to
+work on fixing the known issues. Its expected that the change you
+make is coherent with this rule.<BR>
+<BR>
+If you are not sure of the coherency of the change you made with the
+plan, you have to refer the related e-mail lists or the main developer.<BR>
+<BR>
+<!--TOC subsection If you made a change affecting more than one component, inform all
+developers about the change.-->
+
+<H3><A NAME="htoc43">7.5</A>&nbsp;&nbsp;If you made a change affecting more than one component, inform all
+developers about the change.</H3><!--SEC END -->
+
+In order to ensure all developers know about the ``major'' update
+you made, always send an informative message to the related e-mail
+list.<BR>
+<BR>
+<!--TOC subsection Take the responsibility of the change you made-->
+
+<H3><A NAME="htoc44">7.6</A>&nbsp;&nbsp;Take the responsibility of the change you made</H3><!--SEC END -->
+
+If the update you made is creating a problem, take the responsibility
+of it and make sure to solve it yourself or by getting help.<BR>
+<BR>
+<!--TOC subsection Respect the generally accepted principles-->
+
+<H3><A NAME="htoc45">7.7</A>&nbsp;&nbsp;Respect the generally accepted principles</H3><!--SEC END -->
+
+Obey the general rules accepted during developers' discussions and
+be sure that your changes are not violating those rules. In any case
+you are unsure you can always choose the ``communication'' path.<BR>
+<BR>
+<!--TOC subsection Enter the bug number when solving a bug in the bug tracking system.-->
+
+<H3><A NAME="htoc46">7.8</A>&nbsp;&nbsp;Enter the bug number when solving a bug in the bug tracking system.</H3><!--SEC END -->
+
+If the update you make is solving a reported bug, in order to synchronize
+the bug tracking system with the updates in the repository, notify
+the bug you solved and close the bug in the bug tracking system afterwards.<BR>
+<BR>
+<!--TOC subsection Update the files which you are responsible-->
+
+<H3><A NAME="htoc47">7.9</A>&nbsp;&nbsp;Update the files which you are responsible</H3><!--SEC END -->
+
+Update only the files which are in your responsibility. If you find
+a bug in files which is in another developer's responsibility, first,
+discuss the situation either by directly contacting the responsible
+developer or by asking the other developers in e-mail lists and only
+after doing so make an attemp to update the repository. If the responsible
+developer does not accept the changes you made, behave respectfully.<BR>
+<BR>
+<!--TOC subsection Do not add the automatically created files to the repository-->
+
+<H3><A NAME="htoc48">7.10</A>&nbsp;&nbsp;Do not add the automatically created files to the repository</H3><!--SEC END -->
+
+Do not add the files such as Makefile, Makefile.in, configure scripts,
+etc. which are created afterwards by compilation tools. These files
+will be recreated in different forms in all developers' machines and
+will be perceived as an update by the other develepors. In general,
+adding these files to the repository is perceived as a bug.<BR>
+<BR>
+<!--TOC subsection Perform atomic updates-->
+
+<H3><A NAME="htoc49">7.11</A>&nbsp;&nbsp;Perform atomic updates</H3><!--SEC END -->
+
+Commit all the changes related with a particular improvement/update
+at once. Subversion lets you commit more than one file at once. Other
+developers might be confused because of seperate commits and they
+can miss the improvements you made.<BR>
+<BR>
+<!--TOC section References-->
+
+<H2>References</H2><!--SEC END -->
+<DL COMPACT=compact><DT>
+<A NAME="key-3"><FONT COLOR=purple>[1]</FONT></A><DD>Metin, Barış &amp; Onur, Çağlar (November 2004). Ulusal Dağıtıma Nasıl
+Yardım Ederim? http://www.pardus.org.tr
+<DT><A NAME="key-6"><FONT COLOR=purple>[2]</FONT></A><DD>Metin, Barış (November 2004). Paketler Deposu Yeni Geliştirici Başvurusu.
+http://www.pardus.org.tr
+<DT><A NAME="key-5"><FONT COLOR=purple>[3]</FONT></A><DD>Eren, A. Murat (November 2004). Subversion Deposu Kullanma Kılavuzu.
+http://www.pardus.org.tr
+<DT><A NAME="key-7"><FONT COLOR=purple>[4]</FONT></A><DD>Barth, Andreas (2005). Debian Developer's Reference. http://www.debian.org/doc/manuals/developers-reference/
+<DT><A NAME="key-8"><FONT COLOR=purple>[5]</FONT></A><DD>Fox, Tammy &amp; Pennington, Havoc (2003). Fedora Project Developer's
+Guide. http://fedora.redhat.com/participate/developers-guide/
+<DT><A NAME="key-9"><FONT COLOR=purple>[6]</FONT></A><DD>KDE (2004). Applying For a KDE CVS Account. http://developer.kde.org/documentation/misc/applycvsaccount.php
+<DT><A NAME="key-10"><FONT COLOR=purple>[7]</FONT></A><DD>KDE (2004). KDE CVS Commit Policy. http://developer.kde.org/policies/commitpolicy.html
+</DL>
+<!--BEGIN NOTES document-->
+<HR WIDTH="50%" SIZE=1><DL><DT><A NAME="note1" HREF="#text1"><FONT SIZE=5>1</FONT></A><DD>Quality e-mail list can be reached from http://liste.pardus.org.tr/mailman/listinfo/kalite
+<DT><A NAME="note2" HREF="#text2"><FONT SIZE=5>2</FONT></A><DD>'xy' are two random characters given to crypt() function as a parameter
+to be used in shadowing.
+<DT><A NAME="note3" HREF="#text3"><FONT SIZE=5>3</FONT></A><DD><A HREF="http://svnbook.red-bean.com/"><TT>http://svnbook.red-bean.com/</TT></A>
+<DT><A NAME="note4" HREF="#text4"><FONT SIZE=5>4</FONT></A><DD><A HREF="http://subversion.tigris.org/project_faq.html"><TT>http://subversion.tigris.org/project_faq.html</TT></A>
+<DT><A NAME="note5" HREF="#text5"><FONT SIZE=5>5</FONT></A><DD><A HREF="http://subversion.tigris.org/"><TT>http://subversion.tigris.org/</TT></A>
+<DT><A NAME="note6" HREF="#text6"><FONT SIZE=5>6</FONT></A><DD>commit= the action performed by means of svn commit command
+</DL>
+<!--END NOTES-->
+
+</div>
+<!-- SAYFA İÇERİK SONU -->
+</body>
+</html>
