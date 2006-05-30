@@ -42,7 +42,7 @@ def index(req, data=""):
                     site_config['db_user'], \
                     site_config['db_pass'])
     except:
-        return _DATABASE
+        return _DATABASE, sys.exc_info()[0]
 
     # Check required fields
     s1 = set(["experience", "question"])
