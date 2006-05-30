@@ -44,8 +44,7 @@ def index(req, data=""):
                     site_config['db_user'], \
                     site_config['db_pass'])
     except MySQLdb.OperationalError, message: 
-        errorMessage = "Error %d:\n%s" % (message[ 0 ], message[ 1 ] ) 
-        return erroMessage
+        return "Error %d:\n%s" % (message[ 0 ], message[ 1 ] ) 
     except:
         return _DATABASE
 
