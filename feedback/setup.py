@@ -15,7 +15,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="feedback",
-    version="1.0.3",
+    version="1.0.4",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
@@ -27,6 +27,7 @@ kdedistutils.setup(
                         'src/usagedlg.ui', 'src/purposedlg.ui', 'src/hardwareinfodlg.ui', 'src/experiencedlg.ui',
                         'src/questiondlg.ui', 'src/goodbyedlg.ui', 'src/opiniondlg.ui', 'src/welcomedlg.ui',
                         'src/personalinfodlg.ui', 'src/upload.ui', 'src/feedback_right.png', 'src/feedback.png',
+                        'simplejson',
                         ("/usr/kde/3.5/share/applications/kde/",["src/feedback.desktop"]),
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/feedback.png"]),
                         ("/etc/", ["src/feedback.conf"])],
