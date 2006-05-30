@@ -15,6 +15,7 @@ from mysql import mysql
 
 from simplejson import loads as json_decode
 
+import sys
 import time
 
 def index(req, data=""):
