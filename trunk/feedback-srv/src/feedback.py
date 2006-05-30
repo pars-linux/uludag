@@ -13,8 +13,6 @@
 from config import site_config
 from mysql import mysql
 
-import MySQLdb
-
 from simplejson import loads as json_decode
 
 import time
@@ -43,8 +41,6 @@ def index(req, data=""):
                     site_config['db_name'], \
                     site_config['db_user'], \
                     site_config['db_pass'])
-    except MySQLdb.OperationalError, message: 
-        return "Error %d:\n%s" % (message[ 0 ], message[ 1 ] ) 
     except:
         return _DATABASE
 
