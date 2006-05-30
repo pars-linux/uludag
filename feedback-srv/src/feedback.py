@@ -17,7 +17,7 @@ from simplejson import loads as json_decode
 
 import time
 
-def index(req, data):
+def index(req, data=""):
 
     _SUCCESS = 0
     _DATAFORMAT = 1
