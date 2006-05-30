@@ -10,6 +10,7 @@
 #
 
 # Python Modules
+import os
 import sys
 import time
 
@@ -44,6 +45,8 @@ def AboutData():
                             "bahadir@pardus.org.tr")
     
     about_data.addAuthor("Bahadır Kandemir", None, "bahadir@pardus.org.tr")
+    about_data.addCredit("Görkem Çetin", I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
+    about_data.addCredit("İsmail Dönmez", I18N_NOOP("Help with IPTables"), "ismail@pardus.org.tr")
     
     return about_data
 
@@ -107,6 +110,37 @@ class portlistItem(KListViewItem):
         self.rule = rule.copy()
         del self.rule["no"]
 
+
+class LogDialog(QDialog):
+    def __init__(self, parent=None):
+        QDialog.__init__(self, parent)
+        self.setCaption(i18n('Firewall Logs'))
+        self.layout = QGridLayout(self)
+
+        self.log = KTextEdit(self)
+        self.log.setTextFormat(Qt.LogText)
+
+        self.resize(500, 300)
+        self.layout.addWidget(self.log, 1, 1)
+
+        self.lt = logThread()
+
+
+class logThread(QThread):
+    def run(self):
+        log = "/var/log/netfilter.log"
+
+        if not os.access(log, os.F_OK):
+            return
+
+        f = open(log)
+        while 1:
+            s = f.read()
+            if s:
+                logwin.log.append(s[:-1])
+            time.sleep(1)
+
+
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
         global standalone
@@ -150,11 +184,15 @@ class MainApplication(programbase):
 
         # Signals
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
+
         self.connect(mainwidget.pushCancel, SIGNAL("clicked()"), self, SLOT("close()"))
         self.connect(mainwidget.pushOk, SIGNAL("clicked()"), self.slotOk)
         self.connect(mainwidget.pushApply, SIGNAL("clicked()"),self.slotApply)
+
         self.connect(mainwidget.pushAdd, SIGNAL("clicked()"),self.slotAdd)
         self.connect(mainwidget.pushRemove, SIGNAL("clicked()"),self.slotRemove)
+
+        self.connect(mainwidget.pushLog, SIGNAL("clicked()"),self.slotLog)
 
         # Load FW rules
         self.no = 0
@@ -266,6 +304,12 @@ class MainApplication(programbase):
             if item.ruleno > -1:
                 self.removed.append(item.ruleno)
             mainwidget.listAdvanced.takeItem(item)
+
+    def slotLog(self):
+        global logwin
+        logwin = LogDialog(self)
+        logwin.show()
+        logwin.lt.start()
 
     def saveAll(self):
         for dir in ["in", "out", "other"]:
