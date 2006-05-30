@@ -13,9 +13,10 @@
 from config import site_config
 from mysql import mysql
 
+import MySQLdb
+
 from simplejson import loads as json_decode
 
-import sys
 import time
 
 def index(req, data=""):
@@ -42,8 +43,11 @@ def index(req, data=""):
                     site_config['db_name'], \
                     site_config['db_user'], \
                     site_config['db_pass'])
+    except MySQLdb.OperationalError, message: 
+        errorMessage = "Error %d:\n%s" % (message[ 0 ], message[ 1 ] ) 
+        return erroMessage
     except:
-        return _DATABASE, sys.exc_info()[0]
+        return _DATABASE
 
     # Check required fields
     s1 = set(["experience", "question"])
