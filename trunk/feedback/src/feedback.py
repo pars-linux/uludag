@@ -36,9 +36,15 @@ from hardwareinfodlg import HardwareInfoDlg
 from upload import UploadDlg
 from goodbyedlg import GoodbyeDlg
 
+# JSON
+from simplejson import dumps as json_encode
+
+# Version
+version = "1.0.4"
+
 def AboutData():
+    global version
     description = "Pardus Feedback Tool"
-    version = "1.0.3"
 
     about_data = KAboutData("feedback", "Pardus Feedback Tool", version, \
                             description, KAboutData.License_GPL,
@@ -56,8 +62,8 @@ def loadIconSet(name, group=KIcon.Desktop):
         return KGlobal.iconLoader().loadIconSet(name, group)
 
 class Form(KWizard):
-    def __init__(self, parent = None, name = None, modal = 0):
-        KWizard.__init__(self, parent, name, modal)
+    def __init__(self, parent = None, name = None):
+        KWizard.__init__(self, parent, name)
 
         self.resize(QSize(600,373).expandedTo(self.minimumSizeHint()))
         self.setCaption(i18n("Feedback Wizard"))
@@ -158,37 +164,45 @@ class Form(KWizard):
 
 class thread_upload(QThread):
     def run(self):
-        upload = {}
+        upload = {"version": version}
         text = ""
+
         # Collect hardware information
-        upload['hardware'] = ""
         if not w.pageHardwareInfoDlg.hardwareInfoBox.isChecked():
+
+            def readProcFile(file, label):
+                for i in open(file).readlines():
+                    if i.startswith(label):
+                        return i.split(":")[1].strip()
+
             text += i18n("Collecting hardware information...")
             w.pageUploadDlg.labelStatus.setText(text)
-            stdin, stdout, stderr = os.popen3("uhinv -f text")
-            if "".join(stderr):
-                text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
-                text += i18n("<font color=\"#ff0000\">Be sure that Feedback is fully installed.</font><br>\n")
-                w.pageUploadDlg.labelStatus.setText(text)
-                w.pageUploadDlg.buttonRetry.show()
-                return
-            else:
-                text += i18n("<font color=\"#008800\">Done</font><br>\n")
-                upload['hardware'] = "".join(stdout)
-                w.pageUploadDlg.labelStatus.setText(text)
+
+            upload["hw"] = {}
+            upload["hw"]["memtotal"] = readProcFile("/proc/meminfo", "MemTotal").split()[0]
+            upload["hw"]["swaptotal"] = readProcFile("/proc/meminfo", "SwapTotal").split()[0]
+            upload["hw"]["cpu_model"] = readProcFile("/proc/cpuinfo", "model name")
+            upload["hw"]["cpu_speed"] = readProcFile("/proc/cpuinfo", "cpu MHz")
+            upload["hw"]["kernel"] = open("/proc/version").read().split()[2]
+
+            text += i18n("<font color=\"#008800\">Done</font><br>\n")
+            w.pageUploadDlg.labelStatus.setText(text)
+
         # Upload data to dev. center
         text += i18n("Uploading data...")
         w.pageUploadDlg.labelStatus.setText(text)
+
         # Experience
-        upload['exp'] = 0
+        upload['experience'] = 0
         if w.pageExperienceDlg.questionOne.isChecked():
-            upload['exp'] = 1
+            upload['experience'] = 1
         elif w.pageExperienceDlg.questionTwo.isChecked():
-            upload['exp'] = 2
+            upload['experience'] = 2
         elif w.pageExperienceDlg.questionThree.isChecked():
-            upload['exp'] = 3
+            upload['experience'] = 3
         elif w.pageExperienceDlg.questionFour.isChecked():
-            upload['exp'] = 4
+            upload['experience'] = 4
+
         # Purpose
         upload['purpose'] = 0
         if w.pagePurposeDlg.checkBoxDaily.isChecked():
@@ -203,14 +217,16 @@ class thread_upload(QThread):
             upload['purpose'] += 16
         if w.pagePurposeDlg.checkBoxEdu.isChecked():
             upload['purpose'] += 32
+
         # Usage
-        upload['usage'] = 0
+        upload['use_where'] = 0
         if w.pageUsageDlg.usagecheckBoxOne.isChecked():
-            upload['usage'] += 1
+            upload['use_where'] += 1
         if w.pageUsageDlg.usagecheckBoxTwo.isChecked():
-            upload['usage'] += 2
+            upload['use_where'] += 2
         if w.pageUsageDlg.usagecheckBoxThree.isChecked():
-            upload['usage'] += 4
+            upload['use_where'] += 4
+
         # Question
         upload['question'] = 0
         if w.pageQuestionDlg.questionOne.isChecked():
@@ -219,31 +235,46 @@ class thread_upload(QThread):
             upload['question'] = 2
         elif w.pageQuestionDlg.questionThree.isChecked():
             upload['question'] = 3
+
         # Opinion
         upload['opinion'] = str(w.pageOpinionDlg.opinionEdit.text())
+
         # Personal
         upload['email'] = str(w.pagePersonalInfoDlg.lineEmail.text())
         upload['email_announce'] = w.pagePersonalInfoDlg.CheckBoxAnnounce.isChecked()
 
+        # Encode dictionary
+        upload = json_encode(upload)
+
         # Upload!
         try:
-            params = urllib.urlencode(upload)
+            params = urllib.urlencode({"data": upload})
             f = urllib.urlopen(url_upload, params)
             s = f.read()
-            if s != '1':
-                raise IOError, "ConnectionError"
         except:
             text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
-            text += i18n("<font color=\"#ff0000\">Be sure that you're connected to the Internet.</font><br>\n")
+            text += i18n("<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n")
             w.pageUploadDlg.labelStatus.setText(text)
             w.pageUploadDlg.buttonRetry.show()
             return
-        else:
+
+        if s == "0":
             text += i18n("<font color=\"#008800\">Done</font><br>\n")
             w.pageUploadDlg.labelStatus.setText(text)
+            w.setNextEnabled(w.pageUploadDlg, 1)
+        else:
+            text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
+            w.pageUploadDlg.labelStatus.setText(text)
+            w.pageUploadDlg.buttonRetry.show()
 
-        #
-        w.setNextEnabled(w.pageUploadDlg, 1)
+            if s == "1":
+                text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</font><br>\n")
+            elif s == "2":
+                text += i18n("<font color=\"#ff0000\">Server does not support this version. Please update feedback tool.</font><br>\n")
+            elif s == "3":
+                text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</font><br>\n")
+            elif s == "4":
+                text += i18n("<font color=\"#ff0000\">Feeback database is offline.</font><br>\n")
 
 def main():
     global w, url_upload

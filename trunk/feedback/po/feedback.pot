@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-24 20:51+0200\n"
+"POT-Creation-Date: 2006-05-30 15:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,115 +16,55 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/experiencedlg.py:142 src/goodbyedlg.py:232 src/hardwareinfodlg.py:238
-#: src/opiniondlg.py:58 src/personalinfodlg.py:257 src/questiondlg.py:253
-#: src/upload.py:245 src/usagedlg.py:69 src/welcomedlg.py:230
+#: src/questiondlg.py:253 src/usagedlg.py:69 src/hardwareinfodlg.py:238
+#: src/opiniondlg.py:58 src/experiencedlg.py:142 src/goodbyedlg.py:232
+#: src/welcomedlg.py:230 src/feedback.py:69 src/upload.py:245
+#: src/personalinfodlg.py:244
 msgid "Feedback Wizard"
 msgstr ""
 
-#: src/experiencedlg.py:144
-msgid "Experienced system administrator"
+#: src/questiondlg.py:255
+msgid "Very satisfying. Pardus fulfils my requirements"
 msgstr ""
 
-#: src/experiencedlg.py:145
-msgid "New user"
+#: src/questiondlg.py:256
+msgid "Good, however it lacks some capabilities"
 msgstr ""
 
-#: src/experiencedlg.py:146
-msgid "Home/office productivity user"
+#: src/questiondlg.py:257
+msgid "It does not meet my requirements"
 msgstr ""
 
-#: src/experiencedlg.py:147
-msgid "Experienced user"
+#: src/questiondlg.py:258
+msgid "<h2>How does Pardus fit your needs?</h2>"
 msgstr ""
 
-#: src/experiencedlg.py:148
-msgid "<h2>What is your experience level?</h2>"
+#: src/questiondlg.py:259
+msgid "<b>Step 4 of 7</b>"
 msgstr ""
 
-#: src/experiencedlg.py:149
-msgid "<b>Step 1 of 7</b>"
+#: src/usagedlg.py:71
+msgid "At home"
 msgstr ""
 
-#: src/feedback.py:56
-msgid "Welcome"
+#: src/usagedlg.py:72
+msgid "At work"
 msgstr ""
 
-#: src/feedback.py:59
-msgid "Experience"
+#: src/usagedlg.py:73
+msgid "At school"
 msgstr ""
 
-#: src/feedback.py:62
-msgid "Purpose"
+#: src/usagedlg.py:74 src/purposedlg.py:92
+msgid "<p align=\"right\">(You can click on multiple items)</p>"
 msgstr ""
 
-#: src/feedback.py:65
-msgid "Usage"
+#: src/usagedlg.py:75
+msgid "<b>Step 3 of 7</b>"
 msgstr ""
 
-#: src/feedback.py:68
-msgid "Questions"
-msgstr ""
-
-#: src/feedback.py:71
-msgid "Opinions"
-msgstr ""
-
-#: src/feedback.py:74
-msgid "Personal Info"
-msgstr ""
-
-#: src/feedback.py:77
-msgid "Hardware Info"
-msgstr ""
-
-#: src/feedback.py:80
-msgid "Uploading"
-msgstr ""
-
-#: src/feedback.py:83
-msgid "Goodbye!"
-msgstr ""
-
-#: src/feedback.py:151
-msgid "Collecting hardware information..."
-msgstr ""
-
-#: src/feedback.py:155 src/feedback.py:221
-msgid "<font color=\"#ff0000\">Failed</font><br>\n"
-msgstr ""
-
-#: src/feedback.py:156
-msgid ""
-"<font color=\"#ff0000\">Be sure that Feedback is fully installed.</"
-"font><br>\n"
-msgstr ""
-
-#: src/feedback.py:161 src/feedback.py:227
-msgid "<font color=\"#008800\">Done</font><br>\n"
-msgstr ""
-
-#: src/feedback.py:165
-msgid "Uploading data..."
-msgstr ""
-
-#: src/feedback.py:222
-msgid ""
-"<font color=\"#ff0000\">Be sure that you're connected to the Internet.</"
-"font><br>\n"
-msgstr ""
-
-#: src/feedback.py:247
-msgid "Feedback tool is already running!"
-msgstr ""
-
-#: src/goodbyedlg.py:233
-msgid ""
-"<h2>Thank you</h2>\n"
-"We have collected all necessary information in order to send \n"
-"to Pardus developers.\n"
-"<p>\n"
-"Thank you for your support to Pardus operating system."
+#: src/usagedlg.py:76
+msgid "<h2>Where do you use Pardus?</h2>"
 msgstr ""
 
 #: src/hardwareinfodlg.py:239
@@ -166,27 +106,50 @@ msgstr ""
 msgid "<b>Step 5 of 7</b>"
 msgstr ""
 
-#: src/personalinfodlg.py:258
+#: src/experiencedlg.py:144
+msgid "Experienced system administrator"
+msgstr ""
+
+#: src/experiencedlg.py:145
+msgid "New user"
+msgstr ""
+
+#: src/experiencedlg.py:146
+msgid "Home/office productivity user"
+msgstr ""
+
+#: src/experiencedlg.py:147
+msgid "Experienced user"
+msgstr ""
+
+#: src/experiencedlg.py:148
+msgid "<h2>What is your experience level?</h2>"
+msgstr ""
+
+#: src/experiencedlg.py:149
+msgid "<b>Step 1 of 7</b>"
+msgstr ""
+
+#: src/goodbyedlg.py:233
 msgid ""
-"<h2>Your personal information (optional)</h2>\n"
-"You can submit your e-mail address for inclusion in our low traffic\n"
-"announces."
+"<h2>Thank you</h2>\n"
+"We have collected all necessary information in order to send \n"
+"to Pardus developers.\n"
+"<p>\n"
+"Thank you for your support to Pardus operating system."
 msgstr ""
 
-#: src/personalinfodlg.py:261
-msgid "E-mail:"
-msgstr ""
-
-#: src/personalinfodlg.py:262
-msgid "Add me to your Pardus announce list"
-msgstr ""
-
-#: src/personalinfodlg.py:264
-msgid "Send me security related e-mails"
-msgstr ""
-
-#: src/personalinfodlg.py:266
-msgid "<b>Step 6 of 7</b>"
+#: src/welcomedlg.py:231
+msgid ""
+"<h2>Welcome to Pardus</h2>\n"
+"\n"
+"With this small wizard, you can send your messages to Pardus \n"
+"developers and help Pardus be the best Linux in the world.\n"
+"\n"
+"<p>\n"
+"The information you will give here will accelerate Pardus development. \n"
+"Please click on \"Forward\" button for the next step.\n"
+"<p>"
 msgstr ""
 
 #: src/purposedlg.py:84
@@ -217,10 +180,6 @@ msgstr ""
 msgid "Educational purposes"
 msgstr ""
 
-#: src/purposedlg.py:92 src/usagedlg.py:74
-msgid "<p align=\"right\">(You can click on multiple items)</p>"
-msgstr ""
-
 #: src/purposedlg.py:93
 msgid "<h2>Why do you use Pardus?</h2>"
 msgstr ""
@@ -229,24 +188,95 @@ msgstr ""
 msgid "<b>Step 2 of 7</b>"
 msgstr ""
 
-#: src/questiondlg.py:255
-msgid "Very satisfying. Pardus fulfils my requirements"
+#: src/feedback.py:77
+msgid "Welcome"
 msgstr ""
 
-#: src/questiondlg.py:256
-msgid "Good, however it lacks some capabilities"
+#: src/feedback.py:80
+msgid "Experience"
 msgstr ""
 
-#: src/questiondlg.py:257
-msgid "It does not meet my requirements"
+#: src/feedback.py:83
+msgid "Purpose"
 msgstr ""
 
-#: src/questiondlg.py:258
-msgid "<h2>How does Pardus fit your needs?</h2>"
+#: src/feedback.py:86
+msgid "Usage"
 msgstr ""
 
-#: src/questiondlg.py:259
-msgid "<b>Step 4 of 7</b>"
+#: src/feedback.py:89
+msgid "Questions"
+msgstr ""
+
+#: src/feedback.py:92
+msgid "Opinions"
+msgstr ""
+
+#: src/feedback.py:95
+msgid "Personal Info"
+msgstr ""
+
+#: src/feedback.py:98
+msgid "Hardware Info"
+msgstr ""
+
+#: src/feedback.py:101
+msgid "Uploading"
+msgstr ""
+
+#: src/feedback.py:104
+msgid "Goodbye!"
+msgstr ""
+
+#: src/feedback.py:147
+msgid "Feedback"
+msgstr ""
+
+#: src/feedback.py:178
+msgid "Collecting hardware information..."
+msgstr ""
+
+#: src/feedback.py:188 src/feedback.py:262
+msgid "<font color=\"#008800\">Done</font><br>\n"
+msgstr ""
+
+#: src/feedback.py:192
+msgid "Uploading data..."
+msgstr ""
+
+#: src/feedback.py:255 src/feedback.py:266
+msgid "<font color=\"#ff0000\">Failed</font><br>\n"
+msgstr ""
+
+#: src/feedback.py:256
+msgid ""
+"<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
+msgstr ""
+
+#: src/feedback.py:271
+msgid ""
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</"
+"font><br>\n"
+msgstr ""
+
+#: src/feedback.py:273
+msgid ""
+"<font color=\"#ff0000\">Server does not support this version. Please update "
+"feedback tool.</font><br>\n"
+msgstr ""
+
+#: src/feedback.py:275
+msgid ""
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</"
+"font><br>\n"
+msgstr ""
+
+#: src/feedback.py:277
+msgid "<font color=\"#ff0000\">Feeback database is offline.</font><br>\n"
+msgstr ""
+
+#: src/feedback.py:293
+msgid "Feedback tool is already running!"
 msgstr ""
 
 #: src/upload.py:246
@@ -257,35 +287,21 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: src/usagedlg.py:71
-msgid "At home"
-msgstr ""
-
-#: src/usagedlg.py:72
-msgid "At work"
-msgstr ""
-
-#: src/usagedlg.py:73
-msgid "At school"
-msgstr ""
-
-#: src/usagedlg.py:75
-msgid "<b>Step 3 of 7</b>"
-msgstr ""
-
-#: src/usagedlg.py:76
-msgid "<h2>Where do you use Pardus?</h2>"
-msgstr ""
-
-#: src/welcomedlg.py:231
+#: src/personalinfodlg.py:245
 msgid ""
-"<h2>Welcome to Pardus</h2>\n"
-"\n"
-"With this small wizard, you can send your messages to Pardus \n"
-"developers and help Pardus be the best Linux in the world.\n"
-"\n"
-"<p>\n"
-"The information you will give here will accelerate Pardus development. \n"
-"Please click on \"Forward\" button for the next step.\n"
-"<p>"
+"<h2>Your personal information (optional)</h2>\n"
+"You can submit your e-mail address for inclusion in our low traffic\n"
+"announces."
+msgstr ""
+
+#: src/personalinfodlg.py:248
+msgid "E-mail:"
+msgstr ""
+
+#: src/personalinfodlg.py:249
+msgid "Add me to your Pardus announce list"
+msgstr ""
+
+#: src/personalinfodlg.py:251
+msgid "<b>Step 6 of 7</b>"
 msgstr ""
