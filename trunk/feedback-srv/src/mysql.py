@@ -8,8 +8,6 @@
 # any later version.
 #
 # Please read the COPYING file.
-#
-# Authors:  Bahadır Kandemir <bahadir@pardus.org.tr>
 
 import MySQLdb
 

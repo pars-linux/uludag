@@ -9,38 +9,77 @@
 # any later version.
 #
 # Please read the COPYING file.
-#
-# Authors:  Bahadır Kandemir <bahadir@pardus.org.tr>
 
 from config import site_config
 from mysql import mysql
 
+from simplejson import loads as json_decode
+
 import time
 
-def index(req, exp='0', purpose='0', usage='0', question='0', \
-          opinion='', email='', email_announce='F', hardware=''):
+def index(req, data):
 
-    if exp == '0' or question == '0':
-        return "0"
+    _SUCCESS = 0
+    _DATAFORMAT = 1
+    _VERSION = 2
+    _MISSING = 3
+    _DATABASE = 4
+
+    # Decode submitted data
+    try:
+        data = json_decode(data)
+    except:
+        return _DATAFORMAT
     
+    # Check feedback version
+    if "version" not in data:
+        return _VERSION
+
     # DB connection
-    sql = mysql(site_config['db_host'], \
-                site_config['db_name'], \
-                site_config['db_user'], \
-                site_config['db_pass'])
+    try:
+        sql = mysql(site_config['db_host'], \
+                    site_config['db_name'], \
+                    site_config['db_user'], \
+                    site_config['db_pass'])
+    except:
+        return _DATABASE
 
-    data = {
-            'ip':  req.get_remote_host(),
-            'submitdate': time.strftime('%Y-%m-%d %H:%M'),
-            'exp': exp,
-            'purpose': purpose,
-            'use_where': usage,
-            'question': question,
-            'opinion': opinion,
-            'hardware': hardware,
-            'email': email,
-            'email_announce': email_announce
-            }
-    sql.insert('feedback', data)
+    # Check required fields
+    s1 = set(["experience", "question"])
+    s2 = set(data.keys())
 
-    return "1"
+    if len(s1 - s2) != 0:
+        return _MISSING
+
+    if "hw" in data:
+        s1 = set(["memtotal", "swaptotal", "cpu_model", "cpu_speed", "kernel"])
+        s2 = set(data["hw"].keys())
+
+        if len(s1 - s2) != 0:
+            return _MISSING
+
+    values = {
+              "ip":  req.get_remote_host(),
+              "submitdate": time.strftime('%Y-%m-%d %H:%M'),
+              "experience": data.get("experience", "0"),
+              "purpose": data.get("purpose", "0"),
+              "use_where": data.get("usage", "0"),
+              "question": data.get("question", ""),
+              "opinion": data.get("opinion", ""),
+              "email": data.get("email", ""),
+              "email_announce": data.get("email_announce", "F")
+              }
+    fb = sql.insert("feedback", values)
+
+    if "hw" in data:
+        values = {
+                  "feedback": fb,
+                  "memtotal": data["hw"]["memtotal"],
+                  "swaptotal": data["hw"]["swaptotal"],
+                  "cpu_model": data["hw"]["cpu_model"],
+                  "cpu_speed": data["hw"]["cpu_speed"],
+                  "kernel": data["hw"]["kernel"]
+                  }
+        hw = sql.insert("hardware", values)
+
+    return _SUCCESS
