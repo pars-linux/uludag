@@ -42,7 +42,7 @@ class Commander(QObject):
             if notification == "System.Manager.error":
                 self.parent.showErrorMessage(data)
             elif notification == "System.Manager.notify":
-                pass
+                self.parent.pisiNotify(data)
             elif notification == "System.Manager.progress":
                 data = data.split(",")
                 rate = round(int(data[2]),1)

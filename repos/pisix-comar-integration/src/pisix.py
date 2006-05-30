@@ -421,7 +421,25 @@ class MainApplicationWidget(QWidget):
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
         self.componentDict[item] = list(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
-        
+
+    def pisiNotify(self,data):
+        if data == "removing":
+            self.currentFile = self.packagesOrder[self.currentAppIndex-1]
+            self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
+        elif data == "installing":
+            if not self.progressDialog.progressBar.progress():
+                self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
+                self.currentOperation = data
+                self.updateProgressText()
+        elif data in ["installed","removed","upgraded"]:
+            self.currentAppIndex += 1
+        else:
+            self.packagesOrder = data.split(",")
+            self.totalAppCount = len(self.packagesOrder)
+            if len(base_packages.intersection(self.packagesOrder)) > 0:
+                self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
+                self.finished()
+
     def showErrorMessage(self, message):
         self.possibleError = True
         KMessageBox.error(self,message,i18n("Error"))
