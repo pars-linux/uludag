@@ -69,7 +69,7 @@ class Form(KWizard):
         self.setCaption(i18n("Feedback Wizard"))
 
         self.setIcon(loadIcon("feedback"))
-          
+
         # Images
         self.image_feedback = QPixmap(locate("data", "feedback/feedback_right.png"))
 
