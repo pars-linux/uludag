@@ -264,8 +264,6 @@ class thread_upload(QThread):
             w.setNextEnabled(w.pageUploadDlg, 1)
         else:
             text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
-            w.pageUploadDlg.labelStatus.setText(text)
-            w.pageUploadDlg.buttonRetry.show()
 
             if s == "1":
                 text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</font><br>\n")
@@ -275,6 +273,9 @@ class thread_upload(QThread):
                 text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</font><br>\n")
             elif s == "4":
                 text += i18n("<font color=\"#ff0000\">Feeback database is offline.</font><br>\n")
+
+            w.pageUploadDlg.labelStatus.setText(text)
+            w.pageUploadDlg.buttonRetry.show()
 
 def main():
     global w, url_upload
