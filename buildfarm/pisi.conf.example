@@ -2,11 +2,11 @@
 
 [build]
 buildno = True
-
-CFLAGS= -mtune=i686 -O2 -pipe -fomit-frame-pointer -g3 -ggdb
-CXXFLAGS= -mtune=i686 -O2 -pipe -fomit-frame-pointer -g3 -ggdb
-#LDFLAGS = -Wl,-Bdirect -Wl,-hashvals -Wl,-zdynsort -Wl,--enable-new-dtags -Wl,--as-needed
-
-[general]
 buildhelper = ccache
+compressionlevel = 9
+
+host = i686-pc-linux-gnu
+CFLAGS = -mtune=i686 -O2 -pipe -fomit-frame-pointer -g3 -ggdb
+CXXFLAGS = -mtune=i686 -O2 -pipe -fomit-frame-pointer -g3 -ggdb
+LDFLAGS = -Wl,-Bdirect -Wl,-hashvals -Wl,-zdynsort
 
