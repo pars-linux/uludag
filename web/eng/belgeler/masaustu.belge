@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 depo = "https://svn.uludag.org.tr/uludag/trunk/doc/eng/"
-belge = "TMI.lyx"
-isim = "Temel Masaüstü İhtiyaçları"
-dizin = "masaustu"
+belge = "basic_desktop_needs.lyx"
+isim = "Basic desktop needs"
+dizin = "desktop"
