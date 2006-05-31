@@ -10,9 +10,10 @@
 #
 
 import os
+import zipfile
+
 import piksemel
 from utility import size_fmt
-from pisi import zipfileext
 from qt import *
 
 # no i18n yet
@@ -57,7 +58,7 @@ class Component(QCheckListItem):
 class Package(QCheckListItem):
     def __init__(self, browser, path):
         # Open package file
-        zip = zipfileext.ZipFileExt(path, 'r')
+        zip = zipfile.ZipFile(path, 'r')
         doc = None
         for info in zip.infolist():
             if info.filename == "metadata.xml":
