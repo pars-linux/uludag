@@ -119,8 +119,11 @@ bilmelidir.
 
 
 \series medium 
-Bu tanýmlar eþliðinde temel masaüstü sisteminin aþaðýdaki özellikleri saðlýyor
- olmasý gerekmektedir.
+Bu tanýmlar eþliðinde temel masaüstü sisteminin aþaðýdaki özellikleri 
+\series default 
+ve ölçütleri 
+\series medium 
+saðlýyor olmasý gerekmektedir.
 \layout Section
 
 Biliþim okur-yazarý bir kullanýcýnýn temel masaüstü ihtiyaçlarý
@@ -213,14 +216,14 @@ Her tür çevirmeli að
 \series bold 
 modem
 \series default 
-i
+i (ADSL modemler dahil)
 \layout Itemize
 
 
 \series bold 
 Að kartý
 \series default 
- (PCI ve usb að kartlarý)
+ (ethernet, PCI ve usb að kartlarý)
 \layout Itemize
 
 Her tür 
@@ -230,7 +233,7 @@ TV kartý
 
 
 \series bold 
-Kýzýl ötesi
+Kýzýlötesi
 \series default 
  ve 
 \series bold 
@@ -243,14 +246,14 @@ olabilir.
 \end_deeper 
 \layout Standard
 
-Bilgisayarda takýlan ya da aðda bulunan donanýmlarýn otomatik olarak tanýnmýþ
+Bilgisayarda takýlý ya da aðda bulunan donanýmlarýn otomatik olarak tanýnmýþ
  ve yapýlandýrýlmýþ olmasý tercih edilir.
 \layout Section
 
 Masaüstü ortamýnda çalýþma
 \layout Enumerate
 
-Ýstediði uygulamaya menüler aracýlýðý ile ulaþabilme
+Ýstenen uygulamaya menüler aracýlýðý ile ulaþabilme
 \layout Enumerate
 
 Özelleþtirilebilir bir arayüz
@@ -418,7 +421,7 @@ Yapýlandýrma araçlarý
 \layout Enumerate
 
 Donaným yapýlandýrmasý (klavye, fare, ekran boyutu/çözünürlüðü, yazýcý,
- tarayýcý, modem, tv kartý, cd yazýcý
+ tarayýcý, modem, tv kartý, cd yazýcý)
 \layout Enumerate
 
 Yazýlýmlarýn yapýlandýrýlmasý
