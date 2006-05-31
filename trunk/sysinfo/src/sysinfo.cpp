@@ -706,11 +706,11 @@ bool kio_sysinfoProtocol::fillMediaDevices()
 
         // calc the free/total space
         struct statfs sfs;
-        if ( statfs( QFile::encodeName( di.mountPoint ), &sfs ) == 0 )
+        if ( di.mounted && statfs( QFile::encodeName( di.mountPoint ), &sfs ) == 0 )
         {
             di.total = ( unsigned long long )sfs.f_blocks * sfs.f_bsize;
             di.avail = ( unsigned long long )( getuid() ? sfs.f_bavail : sfs.f_bfree ) * sfs.f_bsize;
-        } else if (m_halContext)
+        } else if (m_halContext && di.id.startsWith("/org/freedesktop/Hal/" ) )
 	{
 	  dbus_error_init(&error);
 	  di.total = libhal_device_get_property_uint64(m_halContext, di.id.latin1(), "volume.size", &error);
