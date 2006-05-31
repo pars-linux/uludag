@@ -9,11 +9,14 @@
             <x>0</x>
             <y>0</y>
             <width>566</width>
-            <height>544</height>
+            <height>622</height>
         </rect>
     </property>
     <property name="caption">
         <string>Firewall GUI</string>
+    </property>
+    <property name="whatsThis" stdset="0">
+        <string>Enter the IP address of the </string>
     </property>
     <grid>
         <property name="name">
@@ -436,10 +439,10 @@
                             </size>
                         </property>
                         <property name="text">
-                            <string>Allow this computer to access following services:</string>
+                            <string>Allow this computer to access following services. The default outgoing ports are on by default. Consult your administrator or help before making any changes here.</string>
                         </property>
                         <property name="alignment">
-                            <set>AlignVCenter</set>
+                            <set>WordBreak|AlignVCenter</set>
                         </property>
                     </widget>
                 </grid>
@@ -580,7 +583,7 @@
                             </size>
                         </property>
                         <property name="text">
-                            <string>Allow other computer to access following services on this computer:</string>
+                            <string>Allow other computers to access following services on this computer:</string>
                         </property>
                         <property name="alignment">
                             <set>AlignVCenter</set>
@@ -683,6 +686,9 @@
                                         <height>32767</height>
                                     </size>
                                 </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Accept: The packet is allowed. Reject: The packet is filtered out (i.e deleted)</string>
+                                </property>
                             </widget>
                             <widget class="QLineEdit" row="1" column="4" rowspan="1" colspan="2">
                                 <property name="name">
@@ -699,6 +705,9 @@
                                         <width>150</width>
                                         <height>32767</height>
                                     </size>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Enter the port number here</string>
                                 </property>
                             </widget>
                             <widget class="QLabel" row="0" column="3">
@@ -757,6 +766,9 @@
                                         <height>32767</height>
                                     </size>
                                 </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Enter the port number here</string>
+                                </property>
                             </widget>
                             <widget class="QLineEdit" row="0" column="1" rowspan="1" colspan="2">
                                 <property name="name">
@@ -768,6 +780,12 @@
                                         <height>0</height>
                                     </size>
                                 </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Enter the IP address of the host which the IP comes from</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string></string>
+                                </property>
                             </widget>
                             <widget class="QLineEdit" row="1" column="1" rowspan="1" colspan="2">
                                 <property name="name">
@@ -778,6 +796,9 @@
                                         <width>250</width>
                                         <height>0</height>
                                     </size>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>Enter the IP address of the machine the packet heads to</string>
                                 </property>
                             </widget>
                             <spacer row="3" column="2" rowspan="1" colspan="3">
@@ -979,7 +1000,7 @@
                                     <cstring>textLabel1</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Firewall logs offer a visual way of understanding what happens. Click here to see firewall logs.</string>
+                                    <string>Firewall logs offer a visual way of understanding what happens. Click the button below to see firewall logs.</string>
                                 </property>
                                 <property name="alignment">
                                     <set>WordBreak|AlignVCenter</set>
