@@ -28,6 +28,16 @@
 
 Basic Desktop Needs
 \layout Standard
+\align center 
+Barýþ Metin <baris@pardus.org.tr>, Çaðlar Onur <caglar@pardus.org.tr>
+\layout Standard
+\align center 
+Translation: K.
+ Deniz Öðüt
+\layout Standard
+\align center 
+Proofreading: Shane Shields, Görkem Çetin
+\layout Standard
 \pagebreak_bottom 
 
 \begin_inset LatexCommand \tableofcontents{}
@@ -37,7 +47,7 @@ Basic Desktop Needs
 
 \layout Section
 
-Definations
+Definitions
 \layout Standard
 
 From our point of view, an operating system that meets the basic desktop
@@ -69,12 +79,12 @@ Another necessity is to meet the basic desktop needs with graphical interfaces.
  for any of their needs.
 \layout Standard
 
-In addition to those mentioned above, all the applications in Ulusal Daðýtým
- (National Distribution) should be using Turkish and UTF-8 as a default
- language.
+In addition to those mentioned above, all the applications in Pardus should
+ be using Turkish and UTF-8 as a default language, provided that Pardus
+ is installed Turkish.
 \layout Standard
 
-As being a GNU/Linux distribution, the software on Uludað should meet any
+As being a GNU/Linux distribution, the software on Pardus should meet any
  Linux user's needs.
  For this reason, base system (Unix) tools should appear on the software
  list, as well.
@@ -122,17 +132,17 @@ any kind which can be used with Linux
 
 
 \series bold 
-Any kind of Monitor
+Any kind of monitor
 \layout Itemize
 
 
 \series bold 
-Any kind of Keyboard
+Any kind of keyboard
 \layout Itemize
 
 
 \series bold 
-Any kind of Mouse
+Any kind of mouse
 \layout Itemize
 
 Storage devices: 
@@ -240,7 +250,7 @@ A desktop suitable for Turkish and Turkey
 \layout Standard
 
 Regarding all the interfaces interacting with the user, Turkish support
- is a must for Ulusal Daðýtým.
+ is a must for Pardus.
  Those interfaces can be classified below.
 \layout Itemize
 
