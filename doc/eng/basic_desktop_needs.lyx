@@ -46,32 +46,32 @@ From our point of view, an operating system that meets the basic desktop
  
 \layout Standard
 
-Desktop environment is a graphical user interface in which there is a data
+Desktop environment is a graphical user interface in which there is data
  flow and communication between similar interfaces and processes and which
  can perform drag-and-drop, copy-and-paste features between applications.
- Desktop environment consists of the menu, the panel and the desktop itself
- -the place where exist the icons and shortcuts for files, directories,
- application launchers and environmental devices.
+ The desktop environment consists of the menu, the panel and the desktop
+ itself -the place where the icons and shortcuts for files, directories,
+ application launchers and environmental devices exist.
 \layout Standard
 
 While meeting the basic desktop needs, its desirable for the user not to
- be in need of the rights of the root user who is the most authorized user
- in the system.
+ need the rights of the root user who is the most authorized user in the
+ system.
 \layout Standard
 
-Another necessity is to meet the basic desktop needs with graphical interfaces
- and/or automatically.
+Another necessity is to meet the basic desktop needs with graphical interfaces.
  The hardware should be configured automatically; in the cases where user
  should intervene, the work should be performed with graphical interfaces
  alone.
  In a similar sense, the actions to install/remove/update the software should
  be done via graphical interfaces.
  The user shouldn't be forced to work with the console (command line) screen
- for her/his any need.
+ for any of their needs.
 \layout Standard
 
 In addition to those mentioned above, all the applications in Ulusal Daðýtým
- (National Distribution) should be using Turkish and UTF-8 as default.
+ (National Distribution) should be using Turkish and UTF-8 as a default
+ language.
 \layout Standard
 
 As being a GNU/Linux distribution, the software on Uludað should meet any
@@ -80,8 +80,8 @@ As being a GNU/Linux distribution, the software on Uludað should meet any
  list, as well.
 \layout Standard
 
-Along with these definitions, basic desktop system should be meeting the
- conditions and supporting the items below.
+Along with these definitions, the basic desktop system should be meeting
+ the conditions and supporting the items below.
 \layout Section
 
 Basic desktop needs of a computer literate user
@@ -110,7 +110,7 @@ any kind
 \begin_inset Quotes eld
 \end_inset 
 
-any kind which can be used withLinux
+any kind which can be used with Linux
 \begin_inset Quotes erd
 \end_inset 
 
@@ -181,8 +181,8 @@ Infrared and Bluetooth supports
 \end_deeper 
 \layout Standard
 
-Its preferred that the hardware which is mounted on the PC or which is on
- the network is detected and configured automatically.
+Its preferred that the hardware which is mounted on the PC or on the network
+ is detected and configured automatically.
 \layout Section
 
 Working with the desktop environment
@@ -241,7 +241,7 @@ A desktop suitable for Turkish and Turkey
 
 Regarding all the interfaces interacting with the user, Turkish support
  is a must for Ulusal Daðýtým.
- Those interfaces can be classified as below.
+ Those interfaces can be classified below.
 \layout Itemize
 
 Application interfaces
@@ -256,20 +256,20 @@ Help files
 System and application messages
 \layout Standard
 
-All the same, font types which are suitable for a Turkish interface should
- exist in the system and they should be used as default.
+Besides, font types which are suitable for a Turkish interface should exist
+ in the system and they should be used as default.
 \layout Standard
 
-For the distribution software, its demanded that the choises which are suitable
- for Turkey are made and the data such as calendar information are added.
+For the distribution software, its imperative that the choises which are
+ suitable for Turkey are made and data such as calendar information is added.
 \layout Section
 
 Information messages
 \layout Standard
 
-Messages to inform the user should be freed from technical details.
- Ideally, instead of pointing the problems using a technical language, messages
- should contribute to solve the problem by means of assistant programs.
+Messages to inform the user should be free of technical details.
+ Ideally, instead of pointing out the problems in a technical manner, messages
+ should contribute to the solution by means of assistant programs.
 \layout Section
 
 Applications
@@ -417,7 +417,6 @@ Working with storage devices (floopy disk, CD/DVD, usb disk, CD/DVD writer)
 
 A trash can which is easily accessed from the desktop, storing the items
  deleted by the file manager and can undo the delete action anytime desired
- so
 \end_deeper 
 \end_deeper 
 \layout Enumerate
