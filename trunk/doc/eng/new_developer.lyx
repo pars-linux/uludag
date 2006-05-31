@@ -33,7 +33,11 @@
 New Developer's Guide
 \layout Author
 
-Barýþ Metin <baris@pardus.org.tr>, A.
+
+\lang turkish
+Barýþ
+\lang english
+ Metin <baris@pardus.org.tr>, A.
  Murat Eren <meren@pardus.org.tr>
 \layout Standard
 \align center 
@@ -371,19 +375,6 @@ new developer application
 For example, it may be a good starting point to work on the software which
  is already in the package repositories, propose new patches and solutions,
  examine and test other solution proposals and report what you get.
-\layout Standard
-
-Besides, there's a quality e-mail list 
-\begin_inset Foot
-collapsed false
-
-\layout Standard
-
-Quality e-mail list can be reached from http://liste.uludag.org.tr/mailman/listinfo/kalite
-\end_inset 
-
- in which those who would like to support the project can introduce themselves
- and pick a task suitable for them.
 \layout Subsection
 
 How to submit?
