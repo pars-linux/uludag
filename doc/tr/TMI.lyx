@@ -42,14 +42,23 @@ Tanýmlar
 
 
 \series medium 
-Bizim anlayýþýmýz ile, temel masaüstü ihtiyaçlarýný karþýlayan iþletim sistemi
- kullanýcýnýn karþýsýna kolay kullanýmlý, yapýlandýrýlabilir ve özelleþtirilebil
-ir bir masaüstü sunabilir
+Bizim anlayýþýmý
+\series default 
+za göre
+\series medium 
+, temel masaüstü ihtiyaçlarýný karþýlayan iþletim sistemi kullanýcý
+\series default 
+ya
+\series medium 
+ kolay kullanýmlý, yapýlandýrýlabilir ve özelleþtirilebilir bir masaüstü
+ sun
+\series default 
+malýdýr.
 \layout Standard
 
 
 \series medium 
-Masaütü ortamý, benzer arayüzler ile iþlemler arasýnda bilgi akýþý ve iletiþimin
+Masaütü, benzer arayüzler ile iþlemler arasýnda bilgi akýþý ve iletiþimin
  olduðu, uygulamalar arasýnda sürükle-býrak, kes-yapýþtýr özellikleri kullanýlab
 ilen grafiksel bir kullanýcý arayüzüdür.
  Masaüstü ortamý menü, panel ve masaüstünün kendisinden (dosya, dizin, uygulama
@@ -66,8 +75,12 @@ Temel masaüstü ihtiyaçlarýný karþýlarken kullanýcýnýn sistemdeki en yetkili
 
 
 \series medium 
-Temel masasütü ihtiyaçlarýnýn grafik arayüzler ile ve/veya otomatik olarak
- saðlanmasý bir diðer gerektir.
+Temel masasü
+\series default 
+s
+\series medium 
+tü ihtiyaçlarýnýn grafik arayüzler ile ve/veya otomatik olarak saðlanmasý
+ bir diðer gerektir.
  Kullanýlan donanýmlar otomatik olarak yapýlandýrýlmalý, kullanýcý müdahalesi
  gereken yerlerde yalnýzca grafik arayüzler ile çalýþýlmalýdýr.
  Yazýlým kurma/kaldýrma/güncelleme ve yapýlandýrma iþleri de benzer bir
@@ -78,16 +91,30 @@ Temel masasütü ihtiyaçlarýnýn grafik arayüzler ile ve/veya otomatik olarak
 
 
 \series medium 
-Yukarýdakilere ek olarak Ulusal Daðýtým'da tüm uygulamalarýn varsayýlan
+Yukarýdakilere ek olarak 
+\series default 
+Pardus projesindeki 
+\series medium 
+tüm uygulamalarýn 
+\series default 
+öntanýmlý olarak
+\series medium 
  Türkçe ve UTF-8 kullanýyor olmalarý gerekmektedir.
 \layout Standard
 
 
 \series medium 
-Bir GNU/Linux daðýtýmý olan Uludað üzerindeki yazýlýmlar, herhangi Linux
- kullanýcýsýnýn ihtiyaçlarýný da karþýlayabilmelidir.
- Bu yüzden temel sistem(Unix) araçlarýnýn da yazýlým listesinde bulunmasý
- gerekir.
+Bir GNU/Linux daðýtýmý olan 
+\series default 
+Pardus
+\series medium 
+ üzerindeki yazýlýmlar, herhangi Linux kullanýcýsýnýn ihtiyaçlarýný da karþýlaya
+bilmelidir.
+ Bu yüzden temel sistem
+\series default 
+ 
+\series medium 
+(Unix) araçlarýnýn da yazýlým listesinde bulunmasý gerekir.
 \layout Standard
 
 
@@ -198,7 +225,7 @@ Að kartý
 
 Her tür 
 \series bold 
-Tv kartý
+TV kartý
 \layout Itemize
 
 
@@ -239,7 +266,7 @@ Duvar kaðýdý
 Ekran koruyucu
 \layout Itemize
 
-Fontlar
+Yazýtipleri
 \layout Itemize
 
 Dosya tipleri için öntanýmlý uygulama seçimi
@@ -274,8 +301,8 @@ Tarih ve saat ayarlarýnýn yapýlabilmesi
 Türkçe ve Türkiye'ye uygun bir masaüstü
 \layout Standard
 
-Ulusal Daðýtým için kullanýcý ile etkileþen tüm arayüzlerde Türkçe desteði
- bir zorunluluktur.
+Pardus için kullanýcý ile etkileþen tüm arayüzlerde Türkçe desteði bir zorunlulu
+ktur.
  Bu arayüzler aþaðýdaki gibi sýnýflandýrýlabilir.
 \layout Itemize
 
