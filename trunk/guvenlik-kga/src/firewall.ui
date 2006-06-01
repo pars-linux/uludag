@@ -346,7 +346,7 @@
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QCheckBox" row="2" column="0">
+                            <widget class="QCheckBox" row="1" column="0">
                                 <property name="name">
                                     <cstring>checkoutMail</cstring>
                                 </property>
@@ -354,7 +354,7 @@
                                     <string>E-mail Services</string>
                                 </property>
                             </widget>
-                            <widget class="QCheckBox" row="1" column="0">
+                            <widget class="QCheckBox" row="0" column="0">
                                 <property name="name">
                                     <cstring>checkoutWeb</cstring>
                                 </property>
@@ -362,7 +362,7 @@
                                     <string>Web Services</string>
                                 </property>
                             </widget>
-                            <widget class="QCheckBox" row="3" column="0">
+                            <widget class="QCheckBox" row="2" column="0">
                                 <property name="name">
                                     <cstring>checkoutRemote</cstring>
                                 </property>
@@ -370,7 +370,7 @@
                                     <string>Remote Login Services</string>
                                 </property>
                             </widget>
-                            <widget class="QCheckBox" row="4" column="0">
+                            <widget class="QCheckBox" row="3" column="0">
                                 <property name="name">
                                     <cstring>checkoutWFS</cstring>
                                 </property>
@@ -378,7 +378,7 @@
                                     <string>Windows File Sharing Services</string>
                                 </property>
                             </widget>
-                            <widget class="QCheckBox" row="5" column="0">
+                            <widget class="QCheckBox" row="4" column="0">
                                 <property name="name">
                                     <cstring>checkoutIRC</cstring>
                                 </property>
@@ -386,7 +386,7 @@
                                     <string>Internet Relay Chat Services</string>
                                 </property>
                             </widget>
-                            <widget class="QCheckBox" row="6" column="0">
+                            <widget class="QCheckBox" row="5" column="0">
                                 <property name="name">
                                     <cstring>checkoutIM</cstring>
                                 </property>
@@ -394,7 +394,7 @@
                                     <string>Instant Messaging Services</string>
                                 </property>
                             </widget>
-                            <widget class="QCheckBox" row="7" column="0">
+                            <widget class="QCheckBox" row="6" column="0">
                                 <property name="name">
                                     <cstring>checkoutFS</cstring>
                                 </property>
@@ -402,7 +402,7 @@
                                     <string>File Sharing (p2p) Services</string>
                                 </property>
                             </widget>
-                            <widget class="QCheckBox" row="8" column="0">
+                            <widget class="QCheckBox" row="7" column="0">
                                 <property name="name">
                                     <cstring>checkoutFTP</cstring>
                                 </property>
@@ -431,7 +431,7 @@
                             </size>
                         </property>
                         <property name="text">
-                            <string>Allow this computer to access following services:</string>
+                            <string>Do not allow this computer to access following services:</string>
                         </property>
                         <property name="alignment">
                             <set>AlignVCenter</set>

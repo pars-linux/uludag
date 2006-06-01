@@ -262,8 +262,6 @@ class MainApplication(programbase):
                 # Reject-Else
                 if "reject" not in self.rules["in"]:
                     self.addRule("in", "reject")
-                if "reject" not in self.rules["out"]:
-                    self.addRule("out", "reject")
 
             elif reply[1] == 3:
                 # Get State
@@ -365,7 +363,6 @@ class MainApplication(programbase):
 
         # Re-order Reject-Else rules
         self.reorder("in")
-        self.reorder("out")
 
     def addRule(self, dir, name):
         def append(no):
@@ -373,57 +370,44 @@ class MainApplication(programbase):
 
         desc = "filter:%s:%s" % (dir, name)
         if dir == "out":
-            if name == "reject":
-                # TCP
-                no = self.setRule(protocol="tcp", direction="out", type="connections", action="reject", log=1, description=desc)
-                append(no)
-                # UDP
-                no = self.setRule(protocol="udp", direction="out", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "DNS":
-                # TCP
-                no = self.setRule(protocol="tcp", direction="out", dport="53", action="accept", description=desc)
-                append(no)
+            if name == "DNS":
                 # UDP - In
                 no = self.setRule(protocol="udp", direction="in", sport="53", action="accept", description=desc)
                 append(no)
-                # UDP - Out
-                no = self.setRule(protocol="udp", direction="out", dport="53", action="accept", description=desc)
-                append(no)
             elif name == "Web":
-                no = self.setRule(protocol="tcp", direction="out", dport="80,443", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="80,443", action="reject", log=1, description=desc)
                 append(no)
             elif name == "WFS":
-                no = self.setRule(protocol="tcp", direction="out", dport="139", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="139", action="reject", log=1, description=desc)
                 append(no)
             elif name == "Mail":
-                no = self.setRule(protocol="tcp", direction="out", dport="25,110", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="25,110", action="reject", log=1, description=desc)
                 append(no)
             elif name == "FTP":
-                no = self.setRule(protocol="tcp", direction="out", dport="21", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="21", action="reject", log=1, description=desc)
                 append(no)
             elif name == "Remote":
-                no = self.setRule(protocol="tcp", direction="out", dport="22", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="22", action="reject", log=1, description=desc)
                 append(no)
             elif name == "FS":
                 # FIXME: p2p ports
-                no = self.setRule(protocol="tcp", direction="out", dport="5000-5500", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="5000-5500", action="reject", log=1, description=desc)
                 append(no)
             elif name == "IRC":
-                no = self.setRule(protocol="tcp", direction="out", dport="6665-6669,7000", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="6665-6669,7000", action="reject", log=1, description=desc)
                 append(no)
             elif name == "IM":
                 # Jabber - TCP
-                no = self.setRule(protocol="tcp", direction="out", dport="5222,5269", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="5222,5269", action="reject", log=1, description=desc)
                 append(no)
                 # Jabber - UDP
-                no = self.setRule(protocol="tcp", direction="out", dport="5222,5269", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="5222,5269", action="reject", log=1, description=desc)
                 append(no)
                 # MSN - TCP
-                no = self.setRule(protocol="tcp", direction="out", dport="6891-6901", action="accept", description=desc)
+                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="6891-6901", action="reject", log=1, description=desc)
                 append(no)
                 # MSN - UDP
-                no = self.setRule(protocol="udp", direction="out", dport="2001-2120,6801,6901", action="accept", description=desc)
+                no = self.setRule(protocol="udp", direction="out", type="connections", dport="2001-2120,6801,6901", action="reject", log=1, description=desc)
                 append(no)
         elif dir == "in":
             if name == "reject":
