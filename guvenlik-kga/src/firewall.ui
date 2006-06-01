@@ -867,7 +867,7 @@
                                     </size>
                                 </property>
                                 <property name="toolTip" stdset="0">
-                                    <string>Enter the IP address of the host which the IP comes from</string>
+                                    <string>Enter the IP address of the host which the packet comes from</string>
                                 </property>
                                 <property name="whatsThis" stdset="0">
                                     <string></string>
