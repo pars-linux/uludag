@@ -1,14 +1,14 @@
-Net-kga, the network configurator for Pardus 
---------------------------------------------
+Network Manager
+---------------
 
-Net-kga is a handy tool to manage all ethernet, wireless and modem
+Network Manager is a handy tool to manage all ethernet, wireless and modem
 settings. It's designed to be useful in mind, easily connecting to a
-desired network point in a matter of seconds. Net-kga is written using
+desired network point in a matter of seconds. The application is written using
 Python and Qt libraries.
 
-Net-kga is tightly connected with COMAR, the configuration manager of
-Pardus. If you want to test or use net-kga, you need to follow these
-steps to run net-kga.
+Network Manager is tightly connected with COMAR, the configuration manager of
+Pardus. If you want to test or use Network Manager, you need to follow these
+steps to run.
 
 1. Checkout COMAR.
 
@@ -26,11 +26,11 @@ steps to run net-kga.
   
   cd ../api && python setup.py install
 
-5. Checkout Net-KGA and install. Note that PyQT/PyKDE and PyKDE extensions
-are needed for net-kga
+5. Checkout network-configurator and install. Note that PyQT/PyKDE and PyKDE extensions
+are needed.
 
-  svn co http://svn.pardus.org.tr/uludag/trunk/net-kga/ 
-  cd net-kga 
+  svn co http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager
+  cd network-manager
   python setup.py install
  
 6. Run COMAR Daemon 
@@ -47,6 +47,6 @@ For ethernet communication, run
   wget http://svn.pardus.org.tr/pardus/devel/system/base/net-tools/comar/link.py
   hav register System.Package `pwd/link.py`
 
-Now you can use net-kga hopefully without a problem, if any further help
-needed please contact the author.
+Now you can use Network Manager hopefully without a problem. Should you need any
+help, please contact the author.
 
