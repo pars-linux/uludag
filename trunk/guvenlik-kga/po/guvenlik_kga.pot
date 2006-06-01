@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-30 13:15+0300\n"
+"POT-Creation-Date: 2006-06-01 13:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,197 +16,223 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/firewall.py:309 src/firewall.py:429
+#: src/firewall.py:333 src/firewall.py:461
 msgid "Direction"
 msgstr ""
 
-#: src/firewall.py:310 src/firewall.py:430
+#: src/firewall.py:334 src/firewall.py:462
 msgid "From"
 msgstr ""
 
-#: src/firewall.py:311 src/firewall.py:431
+#: src/firewall.py:335 src/firewall.py:463
 msgid "To"
 msgstr ""
 
-#: src/firewall.py:312 src/firewall.py:432
+#: src/firewall.py:336 src/firewall.py:464
 msgid "Action"
 msgstr ""
 
-#: src/firewall.py:375
+#: src/firewall.py:399
 msgid "Firewall GUI"
 msgstr ""
 
-#: src/firewall.py:377
+#: src/firewall.py:400
+msgid "Enter the IP address of the "
+msgstr ""
+
+#: src/firewall.py:402
 msgid "Alt+H"
 msgstr ""
 
-#: src/firewall.py:379 src/firewall.py:427
+#: src/firewall.py:404 src/firewall.py:459
 msgid "Alt+A"
 msgstr ""
 
-#: src/firewall.py:380
+#: src/firewall.py:405
 msgid "&Ok"
 msgstr ""
 
-#: src/firewall.py:381
+#: src/firewall.py:406
 msgid "Alt+O"
 msgstr ""
 
-#: src/firewall.py:383
+#: src/firewall.py:408
 msgid "Alt+C"
 msgstr ""
 
-#: src/firewall.py:385
+#: src/firewall.py:410
 msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr ""
 
-#: src/firewall.py:386
+#: src/firewall.py:411
 msgid "&Stop"
 msgstr ""
 
-#: src/firewall.py:387
+#: src/firewall.py:412
 msgid "Alt+S"
 msgstr ""
 
-#: src/firewall.py:388 src/guvenlik_kga.py:216
+#: src/firewall.py:413 src/guvenlik_kga.py:217
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr ""
 
-#: src/firewall.py:390 src/firewall.py:402
+#: src/firewall.py:415 src/firewall.py:427
 msgid "E-mail Services"
 msgstr ""
 
-#: src/firewall.py:391 src/firewall.py:403
-msgid "Domain Name Services"
-msgstr ""
-
-#: src/firewall.py:392 src/firewall.py:404
+#: src/firewall.py:416 src/firewall.py:429
 msgid "Web Services"
 msgstr ""
 
-#: src/firewall.py:393 src/firewall.py:405
+#: src/firewall.py:417 src/firewall.py:430
 msgid "Remote Login Services"
 msgstr ""
 
-#: src/firewall.py:394 src/firewall.py:406
+#: src/firewall.py:418 src/firewall.py:431
 msgid "Windows File Sharing Services"
 msgstr ""
 
-#: src/firewall.py:395 src/firewall.py:407
+#: src/firewall.py:419 src/firewall.py:432
 msgid "Internet Relay Chat Services"
 msgstr ""
 
-#: src/firewall.py:396 src/firewall.py:408
+#: src/firewall.py:420 src/firewall.py:433
 msgid "Instant Messaging Services"
 msgstr ""
 
-#: src/firewall.py:397 src/firewall.py:409
+#: src/firewall.py:421 src/firewall.py:434
 msgid "File Sharing (p2p) Services"
 msgstr ""
 
-#: src/firewall.py:398 src/firewall.py:410
+#: src/firewall.py:422 src/firewall.py:435
 msgid "File Transfer Services"
 msgstr ""
 
-#: src/firewall.py:399
-msgid "Allow this computer to access following services:"
+#: src/firewall.py:423
+msgid "Do not allow this computer to access following services:"
 msgstr ""
 
-#: src/firewall.py:400
+#: src/firewall.py:424 src/firewall.py:436
+msgid "..."
+msgstr ""
+
+#: src/firewall.py:425
 msgid "Outgoing Connections"
 msgstr ""
 
-#: src/firewall.py:411
-msgid "Allow other computer to access following services on this computer:"
-msgstr ""
-
-#: src/firewall.py:412
-msgid "Incoming Connections"
-msgstr ""
-
-#: src/firewall.py:413
-msgid "New Rule"
-msgstr ""
-
-#: src/firewall.py:414
-msgid "From:"
-msgstr ""
-
-#: src/firewall.py:415
-msgid "To:"
-msgstr ""
-
-#: src/firewall.py:416
-msgid "Direction:"
-msgstr ""
-
-#: src/firewall.py:418 src/guvenlik_kga.py:83
-msgid "In"
-msgstr ""
-
-#: src/firewall.py:419 src/guvenlik_kga.py:83
-msgid "Out"
-msgstr ""
-
-#: src/firewall.py:420
-msgid "Action:"
-msgstr ""
-
-#: src/firewall.py:422 src/guvenlik_kga.py:106
-msgid "Accept"
-msgstr ""
-
-#: src/firewall.py:423 src/guvenlik_kga.py:106
-msgid "Reject"
-msgstr ""
-
-#: src/firewall.py:424 src/firewall.py:425
-msgid ":"
-msgstr ""
-
-#: src/firewall.py:426
-msgid "&Add"
-msgstr ""
-
 #: src/firewall.py:428
-msgid "Rules"
-msgstr ""
-
-#: src/firewall.py:434
-msgid "Alt+R"
-msgstr ""
-
-#: src/firewall.py:435
-msgid "Advanced"
-msgstr ""
-
-#: src/firewall.py:436
-msgid "ICMP"
+msgid "Domain Name Services"
 msgstr ""
 
 #: src/firewall.py:437
-msgid "Block incoming PING (ICMP/8) requests."
+msgid "Allow other computers to access following services on this computer:"
 msgstr ""
 
-#: src/firewall.py:438 src/guvenlik_kga.py:117
-msgid "Firewall Logs"
+#: src/firewall.py:438
+msgid "Incoming Connections"
 msgstr ""
 
 #: src/firewall.py:439
-msgid ""
-"Firewall logs offer a visual way of understanding what happens. Click here "
-"to see firewall logs."
+msgid "New Rule"
 msgstr ""
 
 #: src/firewall.py:440
-msgid "&View Logs"
+msgid "From:"
 msgstr ""
 
 #: src/firewall.py:441
-msgid "Alt+V"
+msgid "To:"
 msgstr ""
 
 #: src/firewall.py:442
+msgid "Direction:"
+msgstr ""
+
+#: src/firewall.py:444 src/guvenlik_kga.py:83
+msgid "In"
+msgstr ""
+
+#: src/firewall.py:445 src/guvenlik_kga.py:83
+msgid "Out"
+msgstr ""
+
+#: src/firewall.py:446
+msgid "Action:"
+msgstr ""
+
+#: src/firewall.py:448 src/guvenlik_kga.py:106
+msgid "Accept"
+msgstr ""
+
+#: src/firewall.py:449 src/guvenlik_kga.py:106
+msgid "Reject"
+msgstr ""
+
+#: src/firewall.py:450
+msgid ""
+"Accept: The packet is allowed. Reject: The packet is filtered out (i.e "
+"deleted)"
+msgstr ""
+
+#: src/firewall.py:451 src/firewall.py:454
+msgid "Enter the port number here"
+msgstr ""
+
+#: src/firewall.py:452 src/firewall.py:453
+msgid ":"
+msgstr ""
+
+#: src/firewall.py:455
+msgid "Enter the IP address of the host which the packet comes from"
+msgstr ""
+
+#: src/firewall.py:457
+msgid "Enter the IP address of the machine the packet heads to"
+msgstr ""
+
+#: src/firewall.py:458
+msgid "&Add"
+msgstr ""
+
+#: src/firewall.py:460
+msgid "Rules"
+msgstr ""
+
+#: src/firewall.py:466
+msgid "Alt+R"
+msgstr ""
+
+#: src/firewall.py:467
+msgid "Advanced"
+msgstr ""
+
+#: src/firewall.py:468
+msgid "ICMP"
+msgstr ""
+
+#: src/firewall.py:469
+msgid "Block incoming PING (ICMP/8) requests."
+msgstr ""
+
+#: src/firewall.py:470 src/guvenlik_kga.py:117
+msgid "Firewall Logs"
+msgstr ""
+
+#: src/firewall.py:471
+msgid ""
+"Firewall logs offer a visual way of understanding what happens. Click the "
+"button below to see firewall logs."
+msgstr ""
+
+#: src/firewall.py:472
+msgid "&View Logs"
+msgstr ""
+
+#: src/firewall.py:473
+msgid "Alt+V"
+msgstr ""
+
+#: src/firewall.py:474
 msgid "Other Features"
 msgstr ""
 
@@ -222,34 +248,34 @@ msgstr ""
 msgid "Help with IPTables"
 msgstr ""
 
-#: src/guvenlik_kga.py:152
+#: src/guvenlik_kga.py:151
 msgid "Firewall Interface"
 msgstr ""
 
-#: src/guvenlik_kga.py:215
+#: src/guvenlik_kga.py:216
 msgid "&Stop Firewall"
 msgstr ""
 
-#: src/guvenlik_kga.py:218
+#: src/guvenlik_kga.py:219
 msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
 msgstr ""
 
-#: src/guvenlik_kga.py:220
+#: src/guvenlik_kga.py:221
 msgid "&Start Firewall"
 msgstr ""
 
-#: src/guvenlik_kga.py:221
+#: src/guvenlik_kga.py:222
 msgid "<b><font size=\"+1\">Firewall is not running</font></b>"
 msgstr ""
 
-#: src/guvenlik_kga.py:223
+#: src/guvenlik_kga.py:224
 msgid ""
 "Click here to start the firewall and allow connections only to specified "
 "services."
 msgstr ""
 
-#: src/guvenlik_kga.py:522
+#: src/guvenlik_kga.py:514
 msgid "Pardus Firewall Interface is already running!"
 msgstr ""
