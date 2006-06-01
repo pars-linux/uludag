@@ -171,6 +171,8 @@ class MainApplication(programbase):
 
         # Icons
         mainwidget.pixmapFW.setPixmap(loadIcon("guvenlik_kga", size=48))
+        mainwidget.pixmapIncoming.setPixmap(loadIcon("krfb.png", size=48))
+        mainwidget.pixmapOutgoing.setPixmap(loadIcon("krfb.png", size=48))
 
         # Signals - Firewall Status
         self.connect(mainwidget.pushStatus, SIGNAL("clicked()"), self.slotStatus)
@@ -239,22 +241,30 @@ class MainApplication(programbase):
                     if not desc.startswith("filter:"):
                         continue
                     filter, dir, name = desc.split(":")
-                    if dir in ["in", "out"]:
+                    if dir == "in":
                         if name in ["DNS", "Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
                             eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
-                            self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
-                        elif name == "reject":
-                            self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
+                        self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
+                    elif dir == "out":
+                        if name in ["Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
+                            eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
+                        self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
                     elif dir == "other" and name == "ICMP":
                         eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
                         self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
                     elif dir == "adv":
                         item = portlistItem(mainwidget.listAdvanced, rule)
 
+                # Insert missing base rules
+                # DNS Service
+                if "DNS" not in self.rules["out"]:
+                    self.addRule("out", "DNS")
+                # Reject-Else
                 if "reject" not in self.rules["in"]:
                     self.addRule("in", "reject")
                 if "reject" not in self.rules["out"]:
                     self.addRule("out", "reject")
+
             elif reply[1] == 3:
                 # Get State
                 self.state = reply[2]
@@ -316,7 +326,13 @@ class MainApplication(programbase):
             s1 = set(self.rules[dir].keys()) - set(["reject"])
             s2 = []
 
-            if dir in ["in", "out"]:
+            if dir == "out":
+                # Add default DNS service
+                s2.append("DNS")
+                for name in ["Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
+                    if eval("mainwidget.check%s%s" % (dir, name)).isChecked():
+                        s2.append(name)
+            elif dir == "in":
                 for name in ["DNS", "Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
                     if eval("mainwidget.check%s%s" % (dir, name)).isChecked():
                         s2.append(name)
@@ -346,6 +362,10 @@ class MainApplication(programbase):
         for i in self.removed:
             self.removeRule(i)
         self.removed = []
+
+        # Re-order Reject-Else rules
+        self.reorder("in")
+        self.reorder("out")
 
     def addRule(self, dir, name):
         def append(no):
@@ -455,23 +475,12 @@ class MainApplication(programbase):
                 no = self.setRule(protocol="icmp", direction="in", type="8", action="reject", description=desc)
                 append(no)
 
-        # Reorder "REJECT" rules
-        if dir in ["in", "out"] and name != "reject":
-            if dir == "out" and name == "DNS":
-                # Remove old
-                for no in self.rules["in"]["reject"]:
-                    self.removeRule(no)
-                for no in self.rules["out"]["reject"]:
-                    self.removeRule(no)
-                # Add new
-                self.addRule("in", "reject")
-                self.addRule("out", "reject")
-            else:
-                # Remove old
-                for no in self.rules[dir]["reject"]:
-                    self.removeRule(no)
-                # Add new
-                self.addRule(dir, "reject")
+    def reorder(self, dir):
+        # Remove old
+        for no in self.rules[dir]["reject"]:
+            self.removeRule(no)
+        # Add new
+        self.addRule(dir, "reject")
 
     def setRule(self, **rule):
         self.no += 1

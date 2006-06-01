@@ -314,7 +314,7 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QButtonGroup" row="1" column="0">
+                    <widget class="QButtonGroup" row="2" column="0" rowspan="1" colspan="2">
                         <property name="name">
                             <cstring>buttonGroup3</cstring>
                         </property>
@@ -352,14 +352,6 @@
                                 </property>
                                 <property name="text">
                                     <string>E-mail Services</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="0" column="0">
-                                <property name="name">
-                                    <cstring>checkoutDNS</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Domain Name Services</string>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="1" column="0">
@@ -420,7 +412,7 @@
                             </widget>
                         </grid>
                     </widget>
-                    <widget class="QLabel" row="0" column="0">
+                    <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
                         <property name="name">
                             <cstring>textLabel3</cstring>
                         </property>
@@ -439,10 +431,57 @@
                             </size>
                         </property>
                         <property name="text">
-                            <string>Allow this computer to access following services. The default outgoing ports are on by default. Consult your administrator or help before making any changes here.</string>
+                            <string>Allow this computer to access following services:</string>
                         </property>
                         <property name="alignment">
-                            <set>WordBreak|AlignVCenter</set>
+                            <set>AlignVCenter</set>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="1">
+                        <property name="name">
+                            <cstring>textLabel3_2_2_2</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                        <property name="alignment">
+                            <set>AlignVCenter</set>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>pixmapOutgoing</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>0</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>48</width>
+                                <height>48</height>
+                            </size>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>true</bool>
                         </property>
                     </widget>
                 </grid>
@@ -458,7 +497,29 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QButtonGroup" row="1" column="0">
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>pixmapIncoming</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>0</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>48</width>
+                                <height>48</height>
+                            </size>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QButtonGroup" row="2" column="0" rowspan="1" colspan="2">
                         <property name="name">
                             <cstring>buttonGroup3_2</cstring>
                         </property>
@@ -564,7 +625,32 @@
                             </widget>
                         </grid>
                     </widget>
-                    <widget class="QLabel" row="0" column="0">
+                    <widget class="QLabel" row="0" column="1">
+                        <property name="name">
+                            <cstring>textLabel3_2_2</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>...</string>
+                        </property>
+                        <property name="alignment">
+                            <set>AlignVCenter</set>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
                         <property name="name">
                             <cstring>textLabel3_2</cstring>
                         </property>
