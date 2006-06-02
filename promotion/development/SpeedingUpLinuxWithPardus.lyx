@@ -30,6 +30,15 @@ Speeding Up Linux One Step Further With Pardus
 \layout Author
 
 Gürer Özen, Görkem Çetin
+\layout Abstract
+
+For a long time, Linux has been blamed to boot slow, compared to other modern
+ operating systems.
+ In this article, we are going to focus on a new init system, mudur, together
+ with other initiatives that are worth mentioning.
+ Mudur itself is written from scratch with Python with modularity, simplicity
+ and speed and documentation in mind.
+ Authors look forward future extensions for Mudur for further speed improvements.
 \layout Section
 
 Problem
@@ -38,7 +47,7 @@ Problem
 Distrowatch.com lists more than 400 distributions, most of which are used
  for everyday lives at home.
  Similarly, most, if not all, of the distros listed have been derived from
- other major distributions such as Slackware, Fedora, OpenSUSE and such.
+ other major distributions such as Slackware, Fedora, OpenSUSE, etc.
  This gives developers a high degree of freedom and re-use of existing component
 s, i.e a stable base system, package repositories, a great multitude of patches
  and security fixes.
