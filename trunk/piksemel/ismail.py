@@ -300,18 +300,18 @@ class SourceRepo:
                 spec.validate(pspec_path)
                 if len(spec.errors) > 0:
                     nr_errors += 1
-                    print "----- %s -----" % pspec_path
+                    sys.stderr.write("----- %s -----" % pspec_path)
                     for err in spec.errors:
-                        print "  %s" % err
+                        sys.stderr.write("  %s" % err)
                 else:
                     nr += 1
             # dont walk into the versioned stuff
             if ".svn" in dirs:
                 dirs.remove(".svn")
         if nr_errors:
-            print "-----"
-            print "%d packages failed to validate" % nr_errors
-        print "%d source packages validated" % nr
+            sys.stderr.write("-----")
+            sys.stderr.write("%d packages failed to validate" % nr_errors)
+        sys.stdout.write("%d source packages validated" % nr)
 
 
 #
