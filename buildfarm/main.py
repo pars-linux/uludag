@@ -143,6 +143,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
         remove(join(config.workDir, package))
        
     def moveUnchangedPackage(package):
+        logger.info("*** Değişmemiş paket '%s' işleniyor" % (package))
         if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
 
