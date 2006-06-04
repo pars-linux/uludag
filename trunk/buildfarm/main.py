@@ -33,7 +33,10 @@ import buildfarm.pisiinterface as pisiinterface
 def buildPackages():
     qmgr = qmanager.QueueManager()
     queue = copy.copy(qmgr.workQueue)
-    
+
+    f = open("/var/run/buildfarm", 'w')
+    f.close()
+
     logger.raw("QUEUE")
     logger.info("Work Queue: %s" % (qmgr.workQueue))
     logger.raw()
@@ -74,6 +77,8 @@ def buildPackages():
     logger.raw("QUEUE")
     logger.info("Wait Queue: %s" % (qmgr.waitQueue))
     logger.raw()
+
+    os.unlink("/var/run/buildfarm")
     
 def regeneratePackages():
     qmgr = qmanager.QueueManager()
