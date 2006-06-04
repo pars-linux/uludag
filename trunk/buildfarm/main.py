@@ -42,8 +42,8 @@ def buildPackages():
     logger.raw()
     
     for pspec in queue: 
-        packagename=os.path.basename(os.path.dirname(pspec))
-        build_output=open(os.path.join(config.outputDir,packagename+".log"), "w")
+        packagename = os.path.basename(os.path.dirname(pspec))
+        build_output = open(os.path.join(config.outputDir,packagename+".log"), "w")
         logger.info("Compiling source %s (%d of %d)" % (packagename,
                                                         int(queue.index(pspec) + 1),
                                                         len(queue)))
@@ -89,8 +89,8 @@ def regeneratePackages():
     logger.raw()
     
     for pspec in queue: 
-        packagename=os.path.basename(os.path.dirname(pspec))
-        build_output=open(os.path.join(config.outputDir,packagename + ".log"), "w")
+        packagename = os.path.basename(os.path.dirname(pspec))
+        build_output = open(os.path.join(config.outputDir,packagename + ".log"), "w")
         logger.info("Regenerating source %s (%d of %d)" % (packagename,
                                                         int(queue.index(pspec) + 1),
                                                         len(queue)))
@@ -115,8 +115,14 @@ def regeneratePackages():
  
 
 def movePackages(newBinaryPackages, oldBinaryPackages):
-    logger.info("*** Yeni ikili paket(ler): %s" % newBinaryPackages)
-    logger.info("*** Eski ikili paket(ler): %s" % oldBinaryPackages)
+
+    unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
+    newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
+    oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
+
+    logger.info("*** Yeni ikili paket(ler): %s" % newPackages)
+    logger.info("*** Eski ikili paket(ler): %s" % oldPackages)
+    logger.info("*** Değişmemiş ikili paket(ler): %s" % unchangedPackages)
 
     exists = os.path.exists
     join   = os.path.join
@@ -125,39 +131,33 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
 
     def moveOldPackage(package):
         logger.info("*** Eski paket '%s' işleniyor" % (package))
-        if exists(join(config.oldBinaryPPath, package)):
-            remove(join(config.oldBinaryPPath, package))
-        if  exists(join(config.newBinaryPPath, package)):
-            remove(join(config.newBinaryPPath, package))
+        if exists(join(config.newBinaryPath, package)):
+            remove(join(config.newBinaryPath, package))
+
         if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
 
     def moveNewPackage(package):
         logger.info("*** Yeni paket '%s' işleniyor" % (package))
-        copy(join(config.workDir, package), config.newBinaryPPath)
+        copy(join(config.workDir, package), config.newBinaryPath)
         remove(join(config.workDir, package))
        
     def moveUnchangedPackage(package):
-        logger.info("*** Değişmemiş paket '%s' işleniyor" % (package))
-        if exists(join(config.newBinaryPPath, package)):
-            remove(join(config.newBinaryPPath, package))
-        if exists(join(config.oldBinaryPPath, package)):
+        if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
-        else:
-            copy(join(config.workDir, package), config.oldBinaryPPath)
-            remove(join(config.workDir, package))
-            
-            
-    if set(newBinaryPackages) == set(oldBinaryPackages):
-        map(moveUnchangedPackage,
-            [package for package in newBinaryPackages])
-    else:
-        map(moveNewPackage,
-            [package for package in set(newBinaryPackages) - set(oldBinaryPackages)])
-        map(moveOldPackage,
-            [package for package in set(oldBinaryPackages) - (set(newBinaryPackages) - set(oldBinaryPackages)) if package])
 
+    for package in newPackages:
+        if package:
+            moveNewPackage(package)
 
+    for package in oldPackages:
+        if package:
+            moveOldPackage(package)
+ 
+    for package in unchangedPackages:
+        if package:
+            moveUnchangedPackage(package)
+            
 def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join
     remove = os.remove
@@ -167,8 +167,7 @@ def removeBinaryPackageFromWorkDir(package):
 def create_directories():
     directories = [config.workDir, 
                    config.packageDir,
-                   config.newBinaryPPath,
-                   config.oldBinaryPPath, 
+                   config.newBinaryPath,
                    config.localPspecRepo,
                    config.outputDir]
 

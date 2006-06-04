@@ -22,8 +22,7 @@ class CfgError(Exception):
 workDir          = "/var/tmp/pisi/"
 packageDir       = join_path(os.getcwd(), "/regeneratedPackages")
 outputDir        = "/var/tmp/pisi/buildlogs"
-newBinaryPPath   = "/var/cache/pisi/packages/newBinaries/"
-oldBinaryPPath   = "/var/cache/pisi/packages/oldBinaries/"
+newBinaryPath   = "/var/cache/pisi/packages/newBinaries/"
 localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")
 logFile          = join_path(workDir, "buildfarm.log")
 smtpUserInfo     = './smtpUserInfo'
