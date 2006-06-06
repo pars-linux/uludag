@@ -423,14 +423,14 @@ class MainApplicationWidget(QWidget):
         self.listView.setSelected(self.listView.firstChild(),True)
 
     def pisiNotify(self,data):
-        if data == "removing":
+        self.currentOperation = i18n(str(data))
+        
+        if data in ("removing","installing"):
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
             self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
-        elif data == "installing":
-            if not self.progressDialog.progressBar.progress():
-                self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
-                self.currentOperation = data
-                self.updateProgressText()
+            self.updateProgressText()
+        elif data == "extracting":
+            self.updateProgressText()
         elif data in ["installed","removed","upgraded"]:
             self.currentAppIndex += 1
         else:
