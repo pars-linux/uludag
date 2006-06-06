@@ -46,6 +46,14 @@ class ISO:
         os.mkdir(repodir)
         for path in packagelist:
             os.link(path, os.path.join(repodir, os.path.basename(path)))
+
+    def setup_pisi_index(self, sourcedir):
+        self.state("Creating pisi index...")
+        repodir = os.path.join(self.workdir, "repo")
+        self.run("sudo pisi index -o %s --skip-sources --skip-signing %s %s" %  (
+                os.path.join(repodir, "pisi-index.xml"),
+                repodir,
+                sourcedir))
     
     def setup_boot(self, ):
         pass
