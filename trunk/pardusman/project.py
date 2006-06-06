@@ -153,19 +153,24 @@ class Project(QMainWindow):
         
         line = HLine(_("Package selection:"), w)
         grid.addMultiCellWidget(line, 4, 4, 0, 1)
+        self.sourcedir = makePathEntry(
+            _("SVN checkout (source packages):"),
+            _("Select SVN checkout folder..."),
+            grid, 5, w
+        )
         self.packagedir = makePathEntry(
             _("Binary packages:"),
             _("Select binary package folder..."),
-            grid, 5, w
+            grid, 6, w
         )
         
         but = QPushButton(_("Select packages"), w)
         self.packagebut = but
         self.connect(but, SIGNAL("clicked()"), self.selectPackages)
-        grid.addMultiCellWidget(but, 6, 6, 0, 1)
+        grid.addMultiCellWidget(but, 7, 7, 0, 1)
         
         self.paklabel= QLabel(w)
-        grid.addMultiCellWidget(self.paklabel, 7, 7, 0, 1)
+        grid.addMultiCellWidget(self.paklabel, 8, 8, 0, 1)
         
         self.console = Console(self)
         tab.addTab(self.console, _("Log"))
@@ -192,6 +197,7 @@ class Project(QMainWindow):
         op.setup_contents(self.contentdir.text())
         op.setup_cdroot(self.cdroot.text())
         op.setup_packages(self.pak_selection[2])
+        op.setup_pisi_index(self.sourcedir.text())
         if 0 == op.make(self.name.text()):
             con.state("--- media prepared succesfully ---\n\n")
         else:
@@ -205,6 +211,7 @@ class Project(QMainWindow):
         doc.insertTag("boot_image").insertData(unicode(self.cdroot.text()))
         paks = doc.insertTag("packages")
         paks.setAttribute("path", unicode(self.packagedir.text()))
+        paks.setAttribute("source", unicode(self.sourcedir.text()))
         if self.pak_selection:
             for item in self.pak_selection[0]:
                 paks.insertTag("component").insertData(unicode(item))
@@ -226,6 +233,7 @@ class Project(QMainWindow):
         self.cdroot.setText(doc.getTagData("boot_image"))
         paks = doc.getTag("packages")
         self.packagedir.setText(paks.getAttribute("path"))
+        self.sourcedir.setText(paks.getAttribute("source"))
         self.pak_selection = ([], [], [])
         L = self.pak_selection[0]
         for item in paks.tags("component"):
