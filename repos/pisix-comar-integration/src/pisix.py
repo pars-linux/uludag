@@ -403,7 +403,7 @@ class MainApplicationWidget(QWidget):
             else:
                 pass
                 
-            if len(componentPacks) and component.localName:
+            if len(componentPacks):
                 item = KListViewItem(self.listView)
                 if component.localName:
                     item.setText(0,u"%s" % component.localName)
