@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE knewstuffproviders SYSTEM "knewstuffproviders.dtd">
 <knewstuffproviders>
-    <provider downloadurl="http://sanat.uludag.org.tr/kde/amarokthemes/amarokthemes.xml" downloadurl-score="http://sanat.uludag.org.tr/kde/amarokthemes/amarokthemes-score.xml" downloadurl-downloads="http://sanat.uludag.org.tr/kde/amarokthemes/amarokthemes-downloads.xml" nouploadurl="http://sanat.uludag.org.tr/" webaccess="http://sanat.uludag.org.tr/" icon="amarok">
+    <provider downloadurl="http://sanat.pardus.org.tr/kde/amarokthemes/amarokthemes.xml" downloadurl-score="http://sanat.pardus.org.tr/kde/amarokthemes/amarokthemes-score.xml" downloadurl-downloads="http://sanat.pardus.org.tr/kde/amarokthemes/amarokthemes-downloads.xml" nouploadurl="http://sanat.pardus.org.tr/" webaccess="http://sanat.pardus.org.tr/" icon="amarok">
         <title>Sanat.Pardus</title>
     </provider>
     <provider downloadurl="http://download.kde.org/khotnewstuff/amarokthemes/amarokthemes.xml" downloadurl-score="http://download.kde.org/khotnewstuff/amarokthemes/amarokthemes-score.xml" downloadurl-downloads="http://download.kde.org/khotnewstuff/amarokthemes/amarokthemes-downloads.xml" nouploadurl="http://www.kde-look.org/" webaccess="http://www.kde-look.org/">
