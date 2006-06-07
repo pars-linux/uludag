@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Firewall GUI</string>
+        <string>Firewall Configuration</string>
     </property>
     <property name="whatsThis" stdset="0">
         <string>Enter the IP address of the </string>

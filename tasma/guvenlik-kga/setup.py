@@ -16,17 +16,17 @@
 import kdedistutils
 
 kdedistutils.setup(
-    name="guvenlik_kga",
-    version="1.3",
+    name="firewall-config",
+    version="1.4",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ["src/firewall.ui", "src/guvenlik_kga.py",
-                        ("/usr/kde/3.5/share/applications/kde/", ["src/guvenlik_kga-desk.desktop"]),
-                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps", ["src/guvenlik_kga.png"])],
-    executable_links = [("guvenlik-kga", "guvenlik_kga.py")],
+    application_data = ["src/firewall.ui", "src/firewall_config.py",
+                        ("/usr/kde/3.5/share/applications/kde/", ["src/firewall_config-desk.desktop"]),
+                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps", ["src/firewall_config.png"])],
+    executable_links = [("firewall-config", "firewall_config.py")],
     i18n = ("po", ["src"]),
-    kcontrol_modules = [("src/guvenlik_kga-kcm.desktop", "src/guvenlik_kga.py")]
+    kcontrol_modules = [("src/firewall_config-kcm.desktop", "src/firewall_config.py")]
     )
