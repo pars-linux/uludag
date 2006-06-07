@@ -12,7 +12,10 @@
 import os
 import sys
 import piksemel as iks
-from pisi import zipfileext
+import zipfile
+
+BAD = '\x1b[31;01m'
+NORMAL = '\x1b[0m'
 
 files = {}
 
@@ -26,7 +29,7 @@ def pisi_paks(path):
 
 def parse_paks():
     for pisi in pisi_paks(sys.argv[1]):
-        zip = zipfileext.ZipFileExt(pisi, "r")
+        zip = zipfile.ZipFile(pisi, "r")
         data = zip.read("metadata.xml")
         doc = iks.parseString(data)
         name = doc.getTag("Package").getTagData("Name")
@@ -34,10 +37,17 @@ def parse_paks():
         doc = iks.parseString(data)
         for fi in doc.tags("File"):
             path = fi.getTagData("Path")
-            if files.has_key(path):
-                print "Package '%s' and '%s' has same file\n  %s\n" % (files[path], name, path)
-            else:
-                files[path] = name
+            if fi.getTag("Hash"):
+                if files.has_key(path):
+                    files[path].append(name)
+                else:
+                    files[path] = [ name ]
+
+    for path in files:
+        if len(files[path]) > 1:
+            print BAD, "File '%s' is duplicated in:" % path, NORMAL
+            print "  %s" % "\n  ".join(files[path])
+            print
 
 parse_paks()
 
