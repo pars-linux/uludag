@@ -37,8 +37,8 @@ version = "1.2"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("guvenlik_kga",
-                            "Firewal Interface",
+    about_data = KAboutData("firewall_config",
+                            "Firewal Configuration",
                             version,
                             description,
                             KAboutData.License_GPL,
@@ -178,20 +178,20 @@ class MainApplication(programbase):
 
         if standalone:
             QDialog.__init__(self,parent,name)
-            self.setCaption(i18n("Firewall Interface"))
+            self.setCaption(i18n("Firewall Configuration"))
             self.setMinimumSize(566, 544)
             self.resize(566, 544)
         else:
             KCModule.__init__(self,parent,name)
-            KGlobal.locale().insertCatalogue("guvenlik_kga")
+            KGlobal.locale().insertCatalogue("firewall_config")
             # Create a configuration object.
-            self.config = KConfig("guvenlik_kga")
+            self.config = KConfig("firewall_config")
             self.setButtons(0)
             self.aboutdata = AboutData()
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        KGlobal.iconLoader().addAppDir("guvenlik_kga")
+        KGlobal.iconLoader().addAppDir("firewall_config")
         
         mainwidget = firewall.MainWindow(self)
         toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
@@ -200,7 +200,7 @@ class MainApplication(programbase):
         self.aboutus = KAboutApplication(self)
 
         # Icons
-        mainwidget.pixmapFW.setPixmap(loadIcon("guvenlik_kga", size=48))
+        mainwidget.pixmapFW.setPixmap(loadIcon("firewall_config", size=48))
         mainwidget.pixmapIncoming.setPixmap(loadIcon("krfb.png", size=48))
 
         # Signals - Firewall Status
@@ -229,12 +229,12 @@ class MainApplication(programbase):
         self.no = 0
         self.rules = {"in": {}, "out": {}, "other": {}}
         self.removed = []
-        self.comar.call_package("Net.Filter.getRules", "iptables", id=2)
+        self.comar.call("Net.Filter.getRules", id=2)
         self.handleComar(self.comar.read_cmd())
         
         # Get FW state
         self.state = "off"
-        self.comar.call_package("Net.Filter.getState", "iptables", id=3)
+        self.comar.call("Net.Filter.getState", id=3)
         self.handleComar(self.comar.read_cmd())
 
 
@@ -299,9 +299,9 @@ class MainApplication(programbase):
     
     def slotStatus(self):
         if self.state == "on":
-            self.comar.call_package("Net.Filter.setState", "iptables", {"state": "off"})
+            self.comar.call("Net.Filter.setState", {"state": "off"})
         else:
-            self.comar.call_package("Net.Filter.setState", "iptables", {"state": "on"})
+            self.comar.call("Net.Filter.setState", {"state": "on"})
 
     def slotOk(self):
         self.saveAll()
@@ -459,12 +459,12 @@ class MainApplication(programbase):
     def setRule(self, **rule):
         self.no += 1
         rule["no"] = self.no
-        self.comar.call_package("Net.Filter.setRule", "iptables", rule, id=10)
+        self.comar.call("Net.Filter.setRule", rule, id=10)
         self.handleComar(self.comar.read_cmd())
         return rule["no"]
 
     def removeRule(self, no):
-        self.comar.call_package("Net.Filter.unsetRule", "iptables", {"no": no})
+        self.comar.call("Net.Filter.unsetRule", {"no": no})
         self.handleComar(self.comar.read_cmd())
 
     def __del__(self):
@@ -511,7 +511,7 @@ def main():
     sys.exit(myapp.exec_loop())
     
 # Factory function for KControl
-def create_guvenlik_kga(parent,name):
+def create_firewall_config(parent,name):
     global kapp
     
     kapp = KApplication.kApplication()

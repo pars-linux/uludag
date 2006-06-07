@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Firewall Configuration
+Name[en]=Firewall Configuration
+Name[tr]=Güvenlik Duvarı Ayarları
+Comment=Firewall Configuration Interface
+Comment[tr]=Güvenlik Duvarı Ayarları
+Icon=firewall_config
+Type=Application
+Exec=firewall_config
+Categories=QT;Network;KDE
