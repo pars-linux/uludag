@@ -11,6 +11,7 @@
 
 # Python Modules
 import os
+import re
 import sys
 import time
 
@@ -18,6 +19,7 @@ import time
 from qt import *
 from kdecore import *
 from kdeui import *
+from khtml import *
 import kdedesigner
 
 # UI
@@ -52,6 +54,11 @@ def AboutData():
 
 def loadIcon(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIcon(name, group, size)
+
+def getIconPath(name, group=KIcon.Desktop):
+    if not name:
+        name = "package"
+    return KGlobal.iconLoader().iconPath(name, group)
 
 def atoi(s):
     """String to integer"""
@@ -140,6 +147,29 @@ class logThread(QThread):
                 logwin.log.append(s[:-1])
             time.sleep(1)
 
+class CustomEventListener(DOM.EventListener):
+    def __init__(self, parent):
+        DOM.EventListener.__init__(self)
+        self.parent = parent
+
+    def handleEvent(self, event):
+        target = event.target().nodeName().string()
+        try:
+            if target == "INPUT":
+                inputElement = DOM.HTMLInputElement(event.target())
+                name = inputElement.name().string()
+                checked = inputElement.checked()
+                if checked:
+                    if name not in  self.parent.portsToAdd:
+                        self.parent.portsToAdd.append(name)
+                else:
+                    self.parent.portsToAdd.remove(name)
+            elif target == "A":
+                link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
+                KRun.runURL(KURL(link),"text/html",False,False);
+        except Exception, e:
+            print e
+
 
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
@@ -164,7 +194,7 @@ class MainApplication(programbase):
         KGlobal.iconLoader().addAppDir("guvenlik_kga")
         
         mainwidget = firewall.MainWindow(self)
-        toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
+        toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
         toplayout.addWidget(mainwidget)
 
         self.aboutus = KAboutApplication(self)
@@ -172,7 +202,6 @@ class MainApplication(programbase):
         # Icons
         mainwidget.pixmapFW.setPixmap(loadIcon("guvenlik_kga", size=48))
         mainwidget.pixmapIncoming.setPixmap(loadIcon("krfb.png", size=48))
-        mainwidget.pixmapOutgoing.setPixmap(loadIcon("krfb.png", size=48))
 
         # Signals - Firewall Status
         self.connect(mainwidget.pushStatus, SIGNAL("clicked()"), self.slotStatus)
@@ -207,6 +236,7 @@ class MainApplication(programbase):
         self.state = "off"
         self.comar.call_package("Net.Filter.getState", "iptables", id=3)
         self.handleComar(self.comar.read_cmd())
+
 
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
@@ -246,8 +276,6 @@ class MainApplication(programbase):
                             eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
                         self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
                     elif dir == "out":
-                        if name in ["Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
-                            eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
                         self.rules[dir][name] = self.rules[dir].get(name, []) + [no]
                     elif dir == "other" and name == "ICMP":
                         eval("mainwidget.check%s%s" % (dir, name)).setChecked(1)
@@ -327,9 +355,6 @@ class MainApplication(programbase):
             if dir == "out":
                 # Add default DNS service
                 s2.append("DNS")
-                for name in ["Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
-                    if eval("mainwidget.check%s%s" % (dir, name)).isChecked():
-                        s2.append(name)
             elif dir == "in":
                 for name in ["DNS", "Web", "WFS", "Mail", "FTP", "Remote", "FS", "IRC", "IM"]:
                     if eval("mainwidget.check%s%s" % (dir, name)).isChecked():
@@ -371,43 +396,8 @@ class MainApplication(programbase):
         desc = "filter:%s:%s" % (dir, name)
         if dir == "out":
             if name == "DNS":
-                # UDP - In
+                # UDP
                 no = self.setRule(protocol="udp", direction="in", sport="53", action="accept", description=desc)
-                append(no)
-            elif name == "Web":
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="80,443", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "WFS":
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="139", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "Mail":
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="25,110", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "FTP":
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="21", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "Remote":
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="22", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "FS":
-                # FIXME: p2p ports
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="5000-5500", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "IRC":
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="6665-6669,7000", action="reject", log=1, description=desc)
-                append(no)
-            elif name == "IM":
-                # Jabber - TCP
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="5222,5269", action="reject", log=1, description=desc)
-                append(no)
-                # Jabber - UDP
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="5222,5269", action="reject", log=1, description=desc)
-                append(no)
-                # MSN - TCP
-                no = self.setRule(protocol="tcp", direction="out", type="connections", dport="6891-6901", action="reject", log=1, description=desc)
-                append(no)
-                # MSN - UDP
-                no = self.setRule(protocol="udp", direction="out", type="connections", dport="2001-2120,6801,6901", action="reject", log=1, description=desc)
                 append(no)
         elif dir == "in":
             if name == "reject":
