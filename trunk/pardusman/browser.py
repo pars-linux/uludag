@@ -16,6 +16,8 @@ import piksemel
 from utility import size_fmt
 from qt import *
 
+from pisi.util import parse_package_name
+
 # no i18n yet
 def _(x):
     return x
@@ -214,10 +216,13 @@ class PackageSelectorWidget(QVBox):
                     item.setState(QCheckListItem.On)
                 item = item.nextSibling()
         
+        def conv(path):
+            return parse_package_name(os.path.basename(path))[0]
+        
         for path in selection[1]:
             item = self.list.firstChild()
             while item:
-                if item.path == path:
+                if conv(item.path) == conv(path):
                     item.setState(QCheckListItem.On)
                 item = item.nextSibling()
     
