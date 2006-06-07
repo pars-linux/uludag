@@ -50,7 +50,7 @@ class Component(QCheckListItem):
         packages = self.browser.packages
         for pak in self.browser.components[self.name]:
             # ignore -debug suffix as a workaround...
-            if packages.has_key(pak) and not packages[name].endswith("-debug"):
+            if packages.has_key(pak) and not packages[pak].name.endswith("-debug"):
                 packages[pak].stateChange(bool)
         
         self.browser.list.triggerUpdate()
