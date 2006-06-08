@@ -29,7 +29,7 @@
                 <Release>1&lt;7</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en"></Description>
+        <Description xml:lang="en">The processing of the COM_TABLE_DUMP command by a MySQL server fails to properly validate packets that arrive from the client via a network socket.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-1516</Name>
