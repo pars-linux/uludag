@@ -9,7 +9,7 @@ import sys
 # PISI Modules
 import pisi
 import pisi.context as ctx
-from pisi.fetcher import fetch_url
+from pisi.fetcher import fetch_url, FetchError
 from pisi.uri import URI
 from pisi.file import File
 
@@ -33,7 +33,7 @@ def colorize(msg, color):
         return "".join((colors[color], msg, colors["default"]))
     return msg
 
-def printPLSA(id, title, summary, up=[], fix=[], no_fix=[]):
+def printPLSA(repo, id, title, summary, up=[], fix=[], no_fix=[]):
     """Prints PLSA details"""
     flag = ""
     if len(no_fix):
@@ -81,6 +81,8 @@ def get_localtext(node, lang="en"):
         return text["en"]
 
 def main():
+    global options
+
     # Parse options
     parser = OptionParser(usage="%prog [options]", version="%prog 1.0")
 
@@ -109,83 +111,103 @@ def main():
     if options.long:
         options.packages = True
 
+    # Create work directory
+    if not os.access("/tmp/plsa", os.F_OK):
+        os.mkdir("/tmp/plsa")
+
     # Init PISI API
     pisi.api.init(database=True, comar=False, write=False)
-
-    if options.fetch:
-        # Fetch PLSA database
-        print _("Downloading PLSA database...")
-        fetch_url("http://cekirdek.pardus.org.tr/~bahadir/files/plsa-index.xml.bz2", "/tmp", progress=ctx.ui.Progress)
-
-        print _("Unpacking PLSA database...")
-        File.decompress("/tmp/plsa-index.xml.bz2", File.bz2)
-
-    print _("Scanning advisories...")
-    print
 
     # Get installed packages
     installed_packages = {}
     for package in ctx.installdb.list_installed():
-        # Release comarison seems enough
+        # Release comparison seems enough
         installed_packages[package] = int(ctx.installdb.get_version(package)[1])
 
     # Get list of reporsitories
-    local_repos = {}
+    repos = {}
     for r in ctx.repodb.list():
         uri = ctx.repodb.get_repo(r).indexuri.get_uri()
         # Remove filename
-        local_repos[r] = uri[0:uri.rfind("/")]
+        repos[r] = uri[0:uri.rfind("/")]
+
+    # Get PLSA databases
+    plsas = {}
+    for repo, uri in repos.iteritems():
+        plsafile = "%s/plsa-index.xml.bz2" % uri
+        tmpfile = "/tmp/plsa/%s.xml" % repo
+
+        if options.fetch:
+            print _("Downloading PLSA database of %s") % repo
+            try:
+                fetch_url(plsafile, "/tmp/plsa", progress=ctx.ui.Progress)
+            except FetchError:
+                print _("Unable to download %s") % plsafile
+                continue
+
+            print _("Unpacking PLSA database of %s") % repo
+            try:
+                File.decompress("/tmp/plsa/plsa-index.xml.bz2", File.bz2)
+            except:
+                print _("Unable to decompress %s") % plsafile
+                continue
+            
+            os.rename("/tmp/plsa/plsa-index.xml", tmpfile)
+            os.unlink("/tmp/plsa/plsa-index.xml.bz2")
+            plsas[repo] = tmpfile
+
+        elif os.access(tmpfile, os.F_OK):
+            print _("Found PLSA database of %s in cache") % repo
+            plsas[repo] = tmpfile
+
+    # Pass if no PLSA available
+    if not len(plsas):
+        print _("No PLSA databases available")
+        return
+
+    print _("Scanning advisories...")
+    print
 
     # Update list for summary
     updates = {}
 
-    # Parse PLSA XML
-    p = piksemel.parse("/tmp/plsa-index.xml")
+    # Parse PLSA databases
+    for repo, plsafile in plsas.iteritems():
+        p = piksemel.parse(plsafile)
 
-    adv = p.getTag("Advisory")
-    while adv:
-        id = adv.getAttribute("Id")
-        title = get_localtext(adv.getTag("Title"), lang)
-        summary = get_localtext(adv.getTag("Summary"), lang)
+        adv = p.getTag("Advisory")
+        while adv:
+            id = adv.getAttribute("Id")
+            title = get_localtext(adv.getTag("Title"), lang)
+            summary = get_localtext(adv.getTag("Summary"), lang)
 
-        up, fix, no_fix = [], [], []
+            up, fix, no_fix = [], [], []
 
-        pack = adv.getTag("Packages").getTag("Package")
-        while pack:
-            package = pack.getTagData("Name")
-            release = pack.getTagData("Release")
-            repo = pack.getTagData("Reporsitory")
+            pack = adv.getTag("Packages").getTag("Package")
+            while pack:
+                package = pack.getTagData("Name")
+                release = pack.getTagData("Release")
 
-            # Pass if package is not installed
-            if package not in installed_packages:
-                pack = pack.nextTag()
-                continue
+                # Pass if package is not installed
+                if package not in installed_packages:
+                    pack = pack.nextTag()
+                    continue
 
-            # Pass if package is not in the database
-            if not ctx.packagedb.has_package(package):
-                pack = pack.nextTag()
-                continue
-                
-            # Pass if package repo is different
-            repo_installed_package = ctx.packagedb.get_package_repo(package)[1]
-            if local_repos[repo_installed_package] != repo:
-                pack = pack.nextTag()
-                continue
-
-            if release[-1] != "<":
-                if int(release.split("<")[-1]) > installed_packages[package]:
-                    fix.append(package)
+                # Check if package is affected
+                if release[-1] != "<":
+                    if int(release.split("<")[-1]) > installed_packages[package]:
+                        fix.append(package)
+                    else:
+                        up.append(package)
                 else:
-                    up.append(package)
-            else:
-                no_fix.append(package)
-            pack = pack.nextTag()
+                    no_fix.append(package)
+                pack = pack.nextTag()
 
-        # Print PLSA
-        if len(up + fix + no_fix):
-            printPLSA(id, title, summary, up, fix, no_fix)
+            # Print PLSA
+            if len(up + fix + no_fix):
+                printPLSA(repo, id, title, summary, up, fix, no_fix)
 
-        adv = adv.nextTag()
+            adv = adv.nextTag()
 
     print
 

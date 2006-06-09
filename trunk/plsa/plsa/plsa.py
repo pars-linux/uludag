@@ -5,7 +5,6 @@ __metaclass__ = autoxml.autoxml
 
 class Package:
     t_Name = [autoxml.String, autoxml.mandatory]
-    t_Reporsitory = [autoxml.String, autoxml.mandatory]
     t_Release = [autoxml.String, autoxml.mandatory]
 
 class Reference:
@@ -25,4 +24,5 @@ class PLSAFile(XmlFile):
 
     tag = "PLS"
 
-    t_Advisories = [[Advisory], autoxml.optional, "Advisory"]
+    t_Title = [autoxml.LocalText, autoxml.mandatory]
+    t_Advisories = [[Advisory], autoxml.mandatory, "Advisory"]
