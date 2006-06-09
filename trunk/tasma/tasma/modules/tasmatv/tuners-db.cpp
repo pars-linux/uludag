@@ -20,13 +20,11 @@ extern "C" {
 
 #include "tuners-db.h"
 
-#define NOF_TUNERS 67
-
 static struct TUNER {
   unsigned int vendor_id;
   unsigned int tuner_id;
   const char *tuner_name;
-} card_tuners[NOF_TUNERS] = {
+} card_tuners[] = {
   {0x1114, 0, "Temic PAL (4002 FH5)" },
   {0x1131, 1, "Philips PAL_I (FI1246 and compatibles)" },
   {0x1131, 2, "Philips NTSC (FI1236,FM1236 and compatibles)" },
@@ -93,7 +91,8 @@ static struct TUNER {
   {0x1131, 63, "Philips FMD1216ME MK3 Hybrid Tuner" },
   {0x1854, 64, "LG TDVS-H062F/TUA6034" },
   {0xffff, 65, "Ymec TVF66T5-B/DFF" },
-  {0x1854, 66, "LG NTSC (TALN mini series)" }
+  {0x1854, 66, "LG NTSC (TALN mini series)" },
+  {0, 0, NULL }
 };
 
 TunersDB::TunersDB()
@@ -129,7 +128,7 @@ void TunersDB::getVendors(QStringList *vendors)
 
 int TunersDB::getTuner(QString tuner_name)
 {
-    for (unsigned int i = 0; i < sizeof(card_tuners); i++) {
+    for (unsigned int i = 0; card_tuners[i].tuner_name != NULL; i++) {
 	if (tuner_name == card_tuners[i].tuner_name)
 	    return card_tuners[i].tuner_id;
     }
@@ -164,7 +163,7 @@ void TunersDB::initVendors()
 
     pacc = pci_alloc();
 
-    for (int i = 0; i < NOF_TUNERS; i++) {
+    for (int i = 0; card_tuners[i].tuner_name != NULL; i++) {
 
 	QString vendor = (card_tuners[i].vendor_id == 0xffff ? i18n("Other") : 
 			  pci_lookup_name(pacc, devbuf, sizeof(devbuf), PCI_LOOKUP_VENDOR, card_tuners[i].vendor_id, 0));
