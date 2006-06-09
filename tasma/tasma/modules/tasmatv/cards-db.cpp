@@ -20,14 +20,12 @@ extern "C" {
 
 #include "cards-db.h"
 
-#define NOF_CARDS 137
-
 /* bt8x8 chipset cards */
 static struct BTTV_CARD {
   unsigned int vendor_id;
   unsigned int card_id;
   const char *card_name;
-} bttv_cards[NOF_CARDS] = {
+} bttv_cards[] = {
   { 0xffff, 0, "Otomatik" },
   { 0x11bd, 1, "MIRO PCTV" },
   { 0x0070, 2, "Hauppauge (bt848)" },
@@ -164,7 +162,8 @@ static struct BTTV_CARD {
   { 0xffff, 133, "Kodicom 4400R (slave)"},
   { 0xffff, 134, "Adlink RTV24"},
   { 0xffff, 135, "DViCO FusionHDTV 5 Lite"},
-  { 0xffff, 136, "Acorp Y878F"}
+  { 0xffff, 136, "Acorp Y878F"},
+  { 0, 0, NULL}
 };
 
 CardsDB::CardsDB()
@@ -200,7 +199,7 @@ void CardsDB::getVendors(QStringList *vendors)
 
 int CardsDB::getCard(QString card_name)
 {
-    for (unsigned int i = 0; i < sizeof(bttv_cards); i++) {
+    for (unsigned int i = 0; bttv_cards[i].card_name != NULL; i++) {
 	if (card_name == bttv_cards[i].card_name)
 	    return bttv_cards[i].card_id;
     }
@@ -235,7 +234,7 @@ void CardsDB::initVendors()
 
     pacc = pci_alloc();
 
-    for (int i = 0; i < NOF_CARDS; i++) {
+    for (int i = 0; bttv_cards[i].card_name != NULL; i++) {
 
 	QString vendor = (bttv_cards[i].vendor_id == 0xffff ? i18n("Other") : 
 			  pci_lookup_name(pacc, devbuf, sizeof(devbuf), PCI_LOOKUP_VENDOR, bttv_cards[i].vendor_id, 0));
