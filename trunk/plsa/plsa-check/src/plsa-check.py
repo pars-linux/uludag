@@ -3,6 +3,7 @@
 # Standard Python Modules
 import gettext
 from optparse import OptionParser
+import os
 import sys
 
 # PISI Modules
@@ -63,7 +64,47 @@ def printPLSA(id, title, summary, up=[], fix=[], no_fix=[]):
         if len(no_fix):
             print colorize("    x: %s" % ", ".join(no_fix), color_list["X"])
 
+def get_localtext(node, lang="en"):
+    """Returns tag data with selected xml:lang attribute"""
+    name = node.name()
+    text = {}
+    while node.name() == name:
+        lng = node.getAttribute("xml:lang")
+        if node.firstChild():
+            text[lng] = node.firstChild().data()
+        else:
+            text[lng] = ""
+        node = node.nextTag()
+    if lang in text:
+        return text[lang]
+    else:
+        return text["en"]
+
 def main():
+    # Parse options
+    parser = OptionParser(usage="%prog [options]", version="%prog 1.0")
+
+    parser.add_option("-N", "--no-color",
+                      action="store_false", dest="color", default=True,
+                      help=_("don't use colors"))
+    parser.add_option("-p", "--packages",
+                      action="store_true", dest="packages", default=False,
+                      help=_("show package names"))
+    parser.add_option("-l", "--long",
+                      action="store_true", dest="long", default=False,
+                      help=_("show details of announcement"))
+    parser.add_option("-a", "--all",
+                      action="store_false", dest="affected", default=True,
+                      help=_("show all announcements"))
+    parser.add_option("-F", "--no-fetch",
+                      action="store_false", dest="fetch", default=True,
+                      help=_("don't download PLSA index"))
+
+    (options, args) = parser.parse_args()
+    
+    # Get locale
+    lang = os.environ["LC_ALL"].split("_")[0]
+
     # Show package details in --long
     if options.long:
         options.packages = True
@@ -104,8 +145,8 @@ def main():
     adv = p.getTag("Advisory")
     while adv:
         id = adv.getAttribute("Id")
-        title = adv.getTagData("Title")
-        summary = adv.getTagData("Summary")
+        title = get_localtext(adv.getTag("Title"), lang)
+        summary = get_localtext(adv.getTag("Summary"), lang)
 
         up, fix, no_fix = [], [], []
 
@@ -120,6 +161,11 @@ def main():
                 pack = pack.nextTag()
                 continue
 
+            # Pass if package is not in the database
+            if not ctx.packagedb.has_package(package):
+                pack = pack.nextTag()
+                continue
+                
             # Pass if package repo is different
             repo_installed_package = ctx.packagedb.get_package_repo(package)[1]
             if local_repos[repo_installed_package] != repo:
@@ -127,7 +173,7 @@ def main():
                 continue
 
             if release[-1] != "<":
-                if int(release.split("<")[-1]) > my_packages[package]:
+                if int(release.split("<")[-1]) > installed_packages[package]:
                     fix.append(package)
                 else:
                     up.append(package)
@@ -159,24 +205,4 @@ def main():
     pisi.api.finalize()
 
 if __name__ == "__main__":
-    parser = OptionParser(usage="%prog [options]", version="%prog 1.0")
-
-    parser.add_option("-N", "--no-color",
-                      action="store_false", dest="color", default=True,
-                      help=_("don't use colors"))
-    parser.add_option("-p", "--packages",
-                      action="store_true", dest="packages", default=False,
-                      help=_("show package names"))
-    parser.add_option("-l", "--long",
-                      action="store_true", dest="long", default=False,
-                      help=_("show details of announcement"))
-    parser.add_option("-a", "--all",
-                      action="store_false", dest="affected", default=True,
-                      help=_("show all announcements"))
-    parser.add_option("-F", "--no-fetch",
-                      action="store_false", dest="fetch", default=True,
-                      help=_("don't download PLSA index"))
-
-    (options, args) = parser.parse_args()
-
     sys.exit(main())
