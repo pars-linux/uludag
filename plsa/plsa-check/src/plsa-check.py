@@ -94,10 +94,10 @@ def main():
                       help=_("show package names"))
     parser.add_option("-l", "--long",
                       action="store_true", dest="long", default=False,
-                      help=_("show details of announcement"))
+                      help=_("show details of advisories"))
     parser.add_option("-a", "--all",
                       action="store_false", dest="affected", default=True,
-                      help=_("show all announcements"))
+                      help=_("show all advisories"))
     parser.add_option("-F", "--no-fetch",
                       action="store_false", dest="fetch", default=True,
                       help=_("don't download PLSA index"))
@@ -125,24 +125,18 @@ def main():
         installed_packages[package] = int(ctx.installdb.get_version(package)[1])
 
     # Get list of reporsitories
-    repos = {}
-    for r in ctx.repodb.list():
-        uri = ctx.repodb.get_repo(r).indexuri.get_uri()
-        # Remove filename
-        repos[r] = uri[0:uri.rfind("/")]
-
-    # Get PLSA databases
     plsas = {}
-    for repo, uri in repos.iteritems():
-        plsafile = "%s/plsa-index.xml.bz2" % uri
+    for repo in ctx.repodb.list():
+        uri = ctx.repodb.get_repo(repo).indexuri.get_uri()
+        plsafile = "%s/plsa-index.xml.bz2" % uri[0:uri.rfind("/")]
         tmpfile = "/tmp/plsa/%s.xml" % repo
 
         if options.fetch:
             print _("Downloading PLSA database of %s") % repo
             try:
                 fetch_url(plsafile, "/tmp/plsa", progress=ctx.ui.Progress)
-            except FetchError:
-                print _("Unable to download %s") % plsafile
+            except FetchError, e:
+                print _("Unable to download %s: %s") % (plsafile, e)
                 continue
 
             print _("Unpacking PLSA database of %s") % repo
@@ -160,9 +154,12 @@ def main():
             print _("Found PLSA database of %s in cache") % repo
             plsas[repo] = tmpfile
 
+    # Finalize PISI API - We don't need it anymore
+    pisi.api.finalize()
+
     # Pass if no PLSA available
     if not len(plsas):
-        print _("No PLSA databases available")
+        print _("No PLSA database available")
         return
 
     print _("Scanning advisories...")
@@ -213,18 +210,15 @@ def main():
 
     # Show tips
     if not options.affected:
-        print "%s means that system is not affected." % colorize("[A]", color_list["A"])
-    print "%s means that you need an update." % colorize("[U]", color_list["U"])
-    print "%s means that there's no fix available for that package." % colorize("[X]", color_list["X"])
-    print "%s means that some packages are affected." % colorize("[P]", color_list["P"])
+        print _("%s means that system is not affected.") % colorize("[A]", color_list["A"])
+    print _("%s means that you need an update.") % colorize("[U]", color_list["U"])
+    print _("%s means that there's no fix available for that package.") % colorize("[X]", color_list["X"])
+    print _("%s means that some packages are affected.") % colorize("[P]", color_list["P"])
 
     # Show footnote for package details
     if not options.packages:
         print
         print _("Note: You can use --package option to see affected packages.")
-
-    # Finalize PISI API
-    pisi.api.finalize()
 
 if __name__ == "__main__":
     sys.exit(main())
