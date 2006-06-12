@@ -16,23 +16,22 @@ from kdecore import *
 from kdeui import *
 
 import mainview
+from utility import *
 
-
-def I18N_NOOP(str):
-    return str
-
-description = I18N_NOOP("User Management")
 version = "0.1"
 
 def AboutData():
-    global version,description
-    
-    about_data = KAboutData("user-manager", "User Manager", version, \
-                            description, KAboutData.License_GPL,
-                            "(C) 2005-2006 UEKAE/TÜBİTAK", None, None, "gurer@pardus.org.tr")
-    
-    about_data.addAuthor("Gürer Özen", None, "gurer@pardus.org.tr")
-    return about_data
+    return KAboutData(
+        "user-manager",
+        "User Manager",
+        version,
+        I18N_NOOP("User Management"),
+        KAboutData.License_GPL,
+        "(C) 2005-2006 UEKAE/TÜBİTAK",
+        None,
+        None,
+        "bugs@pardus.org.tr"
+    )
 
 
 # Are we running as a separate standalone application or in KControl?
@@ -42,11 +41,11 @@ if standalone:
     programbase = QDialog
 else:
     programbase = KCModule
-    
+
+
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
         global standalone
-        global mainwidget
 
         if standalone:
             QDialog.__init__(self, parent, name)
@@ -54,11 +53,11 @@ class MainApplication(programbase):
             self.setMinimumSize(620, 380)
             self.resize(520, 420)
         else:
-            KCModule.__init__(self,parent,name)
+            KCModule.__init__(self, parent, name)
             KGlobal.locale().insertCatalogue("user-manager")
             # Create a configuration object.
             self.config = KConfig("user-manager")
-#            self.setButtons(0)
+            self.setButtons(self.Help)
             self.aboutdata = AboutData()
 
         # The appdir needs to be explicitly otherwise we won't be able to
@@ -75,11 +74,6 @@ class MainApplication(programbase):
 
     def __del__(self):
         pass
-
-    def exec_loop(self):
-        global programbase
-        
-        programbase.exec_loop(self)
 
     # KControl virtual void methods
     def load(self):
@@ -98,6 +92,7 @@ class MainApplication(programbase):
     def buttons(self):
         # Only supply a Help button. Other choices are Default and Apply.
         return KCModule.Help
+
 
 # This is the entry point used when running this module outside of kcontrol.
 def main():
