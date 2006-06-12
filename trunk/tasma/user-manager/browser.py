@@ -69,8 +69,7 @@ class BrowseStack(QVBox):
         self.setMargin(6)
         self.setSpacing(6)
         
-        self.hack = QMainWindow()
-        bar = QToolBar("lala", self.hack, self)
+        bar = QToolBar("lala", None, self)
         but = QToolButton(getIconSet("add.png"), "Add", "lala", parent.slotAdd, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
