@@ -10,9 +10,9 @@
 #
 
 from qt import *
+from kdecore import *
 
-def getIconSet(name):
-    return QIconSet(QPixmap("/usr/share/icons/Tulliana-2.0/" + name))
+from utility import getIconSet
 
 
 class PathEntry(QHBox):
@@ -152,9 +152,9 @@ class UserStack(QVBox):
         hb = QHBox(self)
         hb.setSpacing(12)
         QLabel(" ", hb)
-        but = QPushButton(getIconSet("16x16/actions/add.png"), "Add", hb)
+        but = QPushButton(getIconSet("add.png", KIcon.Small), "Add", hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        but = QPushButton(getIconSet("16x16/actions/cancel.png"), "Cancel", hb)
+        but = QPushButton(getIconSet("cancel.png", KIcon.Small), "Cancel", hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
     
     def slotSelect(self):

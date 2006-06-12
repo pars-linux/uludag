@@ -52,7 +52,7 @@ class MainApplication(programbase):
             QDialog.__init__(self, parent, name)
             self.setCaption(i18n("User Management"))
             self.setMinimumSize(620, 380)
-            #self.resize(520, 420)
+            self.resize(520, 420)
         else:
             KCModule.__init__(self,parent,name)
             KGlobal.locale().insertCatalogue("user-manager")
