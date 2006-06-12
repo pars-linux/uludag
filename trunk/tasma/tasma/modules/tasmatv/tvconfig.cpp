@@ -80,7 +80,7 @@ void TvConfig::setCard(int card_id)
     QString vendor_name, card_name;
     QListBoxItem *item;
 
-    cardsDB.getCard(card_id, vendor_name, card_name);
+    cardsDB.getCard(card_id, BTTV, vendor_name, card_name);
 
     item = tvVendor->findItem(vendor_name);
     if (item) {
