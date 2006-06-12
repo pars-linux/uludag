@@ -95,7 +95,7 @@ def main():
     sys.exit(myapp.exec_loop())
 
 # Factory function for KControl
-def create_user_manager(parent,name):
+def create_user_manager(parent, name):
     global kapp
     
     kapp = KApplication.kApplication()

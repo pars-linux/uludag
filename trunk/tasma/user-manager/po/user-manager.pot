@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-06-12 23:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: user-manager.py:28
+msgid "User Management"
+msgstr ""
+
+#: user-manager.py:75
+msgid "User Manager"
+msgstr ""
+
+#: user-manager.py:89
+msgid "User manager module is already started!"
+msgstr ""
+
+#: browser.py:90
+msgid "Show system user and groups"
+msgstr ""
+
+#: browser.py:99 browser.py:109
+msgid "ID"
+msgstr ""
+
+#: browser.py:101
+msgid "User name"
+msgstr ""
+
+#: browser.py:103
+msgid "Real name"
+msgstr ""
+
+#: browser.py:111
+msgid "Name"
+msgstr ""
+
+#: browser.py:112
+msgid "Description"
+msgstr ""
+
+#: browser.py:117
+msgid "Users"
+msgstr ""
+
+#: browser.py:118
+msgid "Groups"
+msgstr ""

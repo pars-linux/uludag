@@ -70,16 +70,16 @@ class BrowseStack(QVBox):
         self.setSpacing(6)
         
         bar = QToolBar("lala", None, self)
-        but = QToolButton(getIconSet("add.png"), "Add", "lala", parent.slotAdd, bar)
+        but = QToolButton(getIconSet("add.png"), i18n("Add"), "lala", parent.slotAdd, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         bar.addSeparator()
-        but = QToolButton(getIconSet("configure.png"), "Edit", "lala", parent.slotEdit, bar)
+        but = QToolButton(getIconSet("configure.png"), i18n("Edit"), "lala", parent.slotEdit, bar)
         self.edit_but = but
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         bar.addSeparator()
-        but = QToolButton(getIconSet("remove.png"), "Delete", "lala", self.slotDelete, bar)
+        but = QToolButton(getIconSet("remove.png"), i18n("Delete"), "lala", self.slotDelete, bar)
         self.delete_but = but
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
@@ -87,7 +87,7 @@ class BrowseStack(QVBox):
         lab = QLabel("", bar)
         bar.setStretchableWidget(lab)
         
-        toggle = QRadioButton("Show system user and groups", bar)
+        toggle = QRadioButton(i18n("Show system user and groups"), bar)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.slotToggle)
         
         tab = QTabWidget(self)
@@ -96,26 +96,26 @@ class BrowseStack(QVBox):
         tab.setMargin(6)
         
         self.users = QListView(tab)
-        self.users.addColumn("ID")
+        self.users.addColumn(i18n("ID"))
         self.users.setColumnAlignment(0, Qt.AlignRight)
-        self.users.addColumn("User name")
+        self.users.addColumn(i18n("User name"))
         self.users.setColumnAlignment(1, Qt.AlignHCenter)
-        self.users.addColumn("Real name")
+        self.users.addColumn(i18n("Real name"))
         self.users.setResizeMode(QListView.LastColumn)
         self.users.setAllColumnsShowFocus(True)
         self.connect(self.users, SIGNAL("selectionChanged()"), self.slotSelect)
         
         self.groups = QListView(tab)
-        self.groups.addColumn("ID")
+        self.groups.addColumn(i18n("ID"))
         self.groups.setColumnAlignment(0, Qt.AlignRight)
-        self.groups.addColumn("Name")
-        self.groups.addColumn("Description")
+        self.groups.addColumn(i18n("Name"))
+        self.groups.addColumn(i18n("Description"))
         self.groups.setResizeMode(QListView.LastColumn)
         self.groups.setAllColumnsShowFocus(True)
         self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
         
-        tab.addTab(self.users, getIconSet("personal.png", KIcon.Small), "Users")
-        tab.addTab(self.groups, getIconSet("kuser.png", KIcon.Small), "Groups")
+        tab.addTab(self.users, getIconSet("personal.png", KIcon.Small), i18n("Users"))
+        tab.addTab(self.groups, getIconSet("kuser.png", KIcon.Small), i18n("Groups"))
         
         self.link = link
         link.call("User.Manager.userList", id=1)
