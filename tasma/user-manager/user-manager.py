@@ -42,9 +42,10 @@ class Module(KCModule):
         self.setButtons(self.Help)
         self.aboutdata = AboutData()
         KGlobal.iconLoader().addAppDir("user-manager")
-        self.mainwidget = mainview.UserManager(self, self)
+        self.mainwidget = mainview.UserManager(self)
         toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
         toplayout.addWidget(self.mainwidget)
+        self.aboutus = KAboutApplication(self)
     
     def load(self):
         pass
@@ -72,11 +73,10 @@ class App(QDialog):
         self.setMinimumSize(620, 380)
         self.resize(520, 420)
         KGlobal.iconLoader().addAppDir("user-manager")
-        self.mainwidget = mainview.UserManager(self, self)
+        self.mainwidget = mainview.UserManager(self)
         toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
         toplayout.addWidget(self.mainwidget)
-
-#        self.aboutus = KAboutApplication(self)
+        self.aboutus = KAboutApplication(self)
 
 
 # This is the entry point used when running this module outside of kcontrol.

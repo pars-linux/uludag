@@ -64,7 +64,7 @@ class GroupItem(QListViewItem):
 
 
 class BrowseStack(QVBox):
-    def __init__(self, window, parent, link):
+    def __init__(self, parent, link):
         QWidget.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)
