@@ -33,6 +33,13 @@ def AboutData():
         "bugs@pardus.org.tr"
     )
 
+def setupWidget(self):
+    KGlobal.iconLoader().addAppDir("user-manager")
+    self.mainwidget = mainview.UserManager(self)
+    toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
+    toplayout.addWidget(self.mainwidget)
+    self.aboutus = KAboutApplication(self)
+
 
 class Module(KCModule):
     def __init__(self, parent, name):
@@ -41,11 +48,7 @@ class Module(KCModule):
         self.config = KConfig("user-manager")
         self.setButtons(self.Help)
         self.aboutdata = AboutData()
-        KGlobal.iconLoader().addAppDir("user-manager")
-        self.mainwidget = mainview.UserManager(self)
-        toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
-        toplayout.addWidget(self.mainwidget)
-        self.aboutus = KAboutApplication(self)
+        setupWidget(self)
     
     def load(self):
         pass
@@ -72,11 +75,7 @@ class App(QDialog):
         self.setCaption(i18n("User Manager"))
         self.setMinimumSize(620, 380)
         self.resize(520, 420)
-        KGlobal.iconLoader().addAppDir("user-manager")
-        self.mainwidget = mainview.UserManager(self)
-        toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
-        toplayout.addWidget(self.mainwidget)
-        self.aboutus = KAboutApplication(self)
+        setupWidget(self)
 
 
 # This is the entry point used when running this module outside of kcontrol.
