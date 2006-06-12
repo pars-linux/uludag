@@ -10,9 +10,9 @@
 #
 
 from qt import *
+from kdecore import *
 
-def getIconSet(name):
-    return QIconSet(QPixmap("/usr/share/icons/Tulliana-2.0/" + name))
+from utility import getIconSet
 
 
 class UserItem(QListViewItem):
@@ -71,19 +71,16 @@ class BrowseStack(QVBox):
         
         self.hack = QMainWindow()
         bar = QToolBar("lala", self.hack, self)
-        but = QToolButton(getIconSet("32x32/actions/add.png"),
-            "Add", "lala", parent.slotAdd, bar)
+        but = QToolButton(getIconSet("add.png"), "Add", "lala", parent.slotAdd, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         bar.addSeparator()
-        but = QToolButton(getIconSet("32x32/actions/configure.png"),
-            "Edit", "lala", parent.slotEdit, bar)
+        but = QToolButton(getIconSet("configure.png"), "Edit", "lala", parent.slotEdit, bar)
         self.edit_but = but
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         bar.addSeparator()
-        but = QToolButton(getIconSet("32x32/actions/remove.png"),
-            "Delete", "lala", self.slotDelete, bar)
+        but = QToolButton(getIconSet("remove.png"), "Delete", "lala", self.slotDelete, bar)
         self.delete_but = but
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
@@ -118,8 +115,8 @@ class BrowseStack(QVBox):
         self.groups.setAllColumnsShowFocus(True)
         self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
         
-        tab.addTab(self.users, getIconSet("16x16/apps/personal.png"), "Users")
-        tab.addTab(self.groups, getIconSet("16x16/apps/kuser.png"), "Groups")
+        tab.addTab(self.users, getIconSet("personal.png", KIcon.Small), "Users")
+        tab.addTab(self.groups, getIconSet("kuser.png", KIcon.Small), "Groups")
         
         self.link = link
         link.call("User.Manager.userList", id=1)
