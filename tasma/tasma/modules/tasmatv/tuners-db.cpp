@@ -128,9 +128,14 @@ void TunersDB::getVendors(QStringList *vendors)
 
 int TunersDB::getTuner(QString tuner_name)
 {
-    for (unsigned int i = 0; card_tuners[i].tuner_name != NULL; i++) {
-	if (tuner_name == card_tuners[i].tuner_name)
-	    return card_tuners[i].tuner_id;
+    TunerVendors::ConstIterator v_it;
+    Tuners::ConstIterator t_it;
+
+    for (v_it = m_vendors.begin(); v_it != m_vendors.end(); ++v_it) {
+	for (t_it = v_it.data()->begin(); t_it != v_it.data()->end(); ++t_it) {
+	    if (tuner_name.compare(t_it->tuner_name) == 0)
+		return t_it->tuner_id;
+	}
     }
 
     return -1;
