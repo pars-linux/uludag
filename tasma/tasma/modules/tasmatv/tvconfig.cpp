@@ -57,6 +57,7 @@ void TvConfig::tvVendorChanged()
     cardsDB.getCards(vendor, &models);
     tvModel->clear();
     tvModel->insertStringList(models);
+    tvModel->sort();
 }
 
 void TvConfig::selectCard(int card_id)
