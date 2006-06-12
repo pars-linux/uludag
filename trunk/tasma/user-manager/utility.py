@@ -11,6 +11,8 @@
 
 from kdecore import *
 
+def I18N_NOOP(str):
+    return str
 
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
