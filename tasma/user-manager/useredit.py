@@ -60,7 +60,7 @@ class UserGroup(QCheckListItem):
 
 
 class UserStack(QVBox):
-    def __init__(self, window, parent, link):
+    def __init__(self, parent, link):
         QVBox.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)

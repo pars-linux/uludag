@@ -17,15 +17,15 @@ import useredit
 
 
 class UserManager(QWidgetStack):
-    def __init__(self, window, parent):
+    def __init__(self, parent):
         link = comar.Link()
         self.link = link
         self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
         
         QWidgetStack.__init__(self, parent)
-        self.browse = browser.BrowseStack(window, self, link)
-        self.user = useredit.UserStack(window, self, link)
+        self.browse = browser.BrowseStack(self, link)
+        self.user = useredit.UserStack(self, link)
     
     def slotComar(self, sock):
         reply = self.link.read_cmd()
