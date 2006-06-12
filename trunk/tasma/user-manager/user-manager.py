@@ -68,7 +68,7 @@ class MainApplication(programbase):
         
         self.mainwidget = mainview.UserManager(self, self)
 
-        toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
+        toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
         toplayout.addWidget(self.mainwidget)
 
         self.aboutus = KAboutApplication(self)
@@ -102,9 +102,9 @@ class MainApplication(programbase):
 # This is the entry point used when running this module outside of kcontrol.
 def main():
     global kapp
-    
+
     about_data = AboutData()
-    KCmdLineArgs.init(sys.argv,about_data)
+    KCmdLineArgs.init(sys.argv, about_data)
 
     if not KUniqueApplication.start():
         print i18n("User manager module is already started!")
@@ -116,7 +116,7 @@ def main():
     sys.exit(myapp.exec_loop())
     
 # Factory function for KControl
-def create_users_kga(parent,name):
+def create_user_manager(parent,name):
     global kapp
     
     kapp = KApplication.kApplication()

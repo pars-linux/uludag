@@ -12,10 +12,11 @@
 import kdedistutils
 
 app_data = [
+    'user-manager.py',
     'mainview.py',
     'browser.py',
     'useredit.py',
-    'users-manager.desktop',
+    'user-manager.desktop',
 ]
 
 kdedistutils.setup(
@@ -27,7 +28,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.0",
     license = "GPL",
     application_data = app_data,
-    executable_links = [('users-manager','user-manager.py')],
+    executable_links = [('user-manager','user-manager.py')],
     i18n = ('po', ['.']),
     kcontrol_modules = [ ('user-manager.desktop','user-manager.py')],
 )
