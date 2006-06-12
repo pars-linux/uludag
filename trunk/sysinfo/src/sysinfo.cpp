@@ -21,16 +21,6 @@
 
 #include <config.h>
 
-#ifdef HAVE_LONG_LONG
-/* better to use long-long, because some 32bit-machines have more total
-   memory (with swap) than just the 4GB which fits into a 32bit-long */
-typedef unsigned long long t_memsize;
-#else
-typedef unsigned long t_memsize;
-#endif
-
-//#include <hd.h>
-
 #include <qfile.h>
 #include <qdir.h>
 #include <qregexp.h>
@@ -70,7 +60,7 @@ typedef unsigned long t_memsize;
 using namespace KIO;
 #define BR "<br>"
 
-static QString formattedUnit( t_memsize value )
+static QString formattedUnit( unsigned long long value )
 {
     if (value > (1024 * 1024))
         if (value > (1024 * 1024 * 1024))
@@ -708,7 +698,7 @@ bool kio_sysinfoProtocol::fillMediaDevices()
         struct statfs sfs;
         if ( di.mounted && statfs( QFile::encodeName( di.mountPoint ), &sfs ) == 0 )
         {
-            di.total = ( unsigned long long )sfs.f_blocks * sfs.f_bsize;
+            di.total = ( unsigned long long ) sfs.f_blocks * sfs.f_bsize;
             di.avail = ( unsigned long long )( getuid() ? sfs.f_bavail : sfs.f_bfree ) * sfs.f_bsize;
         } else if (m_halContext && di.id.startsWith("/org/freedesktop/Hal/" ) )
 	{

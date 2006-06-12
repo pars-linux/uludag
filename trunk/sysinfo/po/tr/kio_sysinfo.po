@@ -175,7 +175,7 @@ msgstr "Dosya sistemi"
 
 #: sysinfo.cpp:287
 msgid "Total space"
-msgstr "Toplam boş alan"
+msgstr "Toplam disk alanı"
 
 #: sysinfo.cpp:287
 msgid "Available space"
