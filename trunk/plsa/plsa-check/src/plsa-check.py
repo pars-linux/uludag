@@ -12,6 +12,7 @@ import pisi.context as ctx
 from pisi.fetcher import fetch_url, FetchError
 from pisi.uri import URI
 from pisi.file import File
+from pisi.util import sha1_file
 
 # Piksemel Module
 import piksemel
@@ -139,6 +140,18 @@ def main():
                 print _("Unable to download %s: %s") % (plsafile, e)
                 continue
 
+            print _("Checking PLSA database of %s") % repo
+            try:
+                fetch_url("%s.sha1sum" % plsafile, "/tmp/plsa")
+            except FetchError, e:
+                print _("Unable to download cheksum of %s") % repo
+                continue
+
+            orig_sha1sum = file("%s.sha1sum" % plsafile).readlines()[0].split()[0]
+            if sha1_file(plsafile) != orig_sha1sum:
+                print _("File integrity of %s compromised.") % plsafile
+                continue
+
             print _("Unpacking PLSA database of %s") % repo
             try:
                 File.decompress("/tmp/plsa/plsa-index.xml.bz2", File.bz2)
@@ -156,6 +169,8 @@ def main():
 
     # Finalize PISI API - We don't need it anymore
     pisi.api.finalize()
+
+    print
 
     # Pass if no PLSA available
     if not len(plsas):
