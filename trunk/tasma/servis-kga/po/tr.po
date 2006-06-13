@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: servis_kga 0.1\n"
+"Project-Id-Version: service-manager 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-22 16:58+0300\n"
+"POT-Creation-Date: 2006-06-13 14:42+0300\n"
 "PO-Revision-Date: 2006-04-10 12:02+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,57 +15,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/servis_kga.py:61 src/servis_kga.py:113
+#: src/serviceWidget.py:14 src/service_manager.py:61
+#: src/service_manager.py:113
 msgid "Service Manager"
 msgstr "Servis Yöneticisi"
 
-#: src/servis_kga.py:170
-msgid "You are not allowed to do this operation."
-msgstr "Bu işlemi yapmaya yetkiniz yok."
-
-#: src/servis_kga.py:170
-msgid "Access Denied"
-msgstr "Erişim Engellendi"
-
-#: src/servis_kga.py:172
-msgid "COMAR script execution failed."
-msgstr "COMAR betiği çalıştırılamadı."
-
-#: src/servis_kga.py:172
-msgid "Script Error"
-msgstr "Betik Hatası"
-
-#: src/servis_kga.py:174
-msgid "Unable to complete operation."
-msgstr "İşlem tamamlanamıyor."
-
-#: src/servis_kga.py:174
-msgid "Failed"
-msgstr "Başarısız"
-
-#: src/servis_kga.py:192 src/serviceWidget.py:21
+#: src/serviceWidget.py:21 src/service_manager.py:192
 msgid "Start"
 msgstr "Başlat"
 
-#: src/servis_kga.py:196 src/serviceWidget.py:27 src/serviceWidget.py:45
+#: src/serviceWidget.py:27 src/serviceWidget.py:45 src/service_manager.py:196
 msgid "Auto Start"
 msgstr "Oto. Başlat"
-
-#: src/servis_kga.py:198
-msgid "Don't Auto Start"
-msgstr "Oto. Başlatma"
-
-#: src/servis_kga.py:249
-msgid "Service GUI is already running!"
-msgstr "Servis KGA zaten çalışıyor!"
-
-#: src/serviceWidget.py:14
-msgid "Service GUI"
-msgstr "Servis KGA"
 
 #: src/serviceWidget.py:44
 msgid "Service"
 msgstr "Servis"
 
-msgid "Stop"
-msgstr "Durdur"
+#: src/service_manager.py:170
+msgid "You are not allowed to do this operation."
+msgstr "Bu işlemi yapmaya yetkiniz yok."
+
+#: src/service_manager.py:170
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+#: src/service_manager.py:172
+msgid "COMAR script execution failed."
+msgstr "COMAR betiği çalıştırılamadı."
+
+#: src/service_manager.py:172
+msgid "Script Error"
+msgstr "Betik Hatası"
+
+#: src/service_manager.py:174
+msgid "Unable to complete operation."
+msgstr "İşlem tamamlanamıyor."
+
+#: src/service_manager.py:174
+msgid "Failed"
+msgstr "Başarısız"
+
+#: src/service_manager.py:198
+msgid "Don't Auto Start"
+msgstr "Oto. Başlatma"
+
+#: src/service_manager.py:249
+msgid "Service Manager is already running!"
+msgstr "Servis Yöneticisi zaten çalışıyor!"
+
+#~ msgid "Service GUI"
+#~ msgstr "Servis KGA"
+
+#~ msgid "Stop"
+#~ msgstr "Durdur"
