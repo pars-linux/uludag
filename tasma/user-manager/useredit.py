@@ -15,31 +15,6 @@ from kdecore import *
 from utility import getIconSet
 
 
-class PathEntry(QHBox):
-    def __init__(self, parent, question, is_dir=True):
-        QHBox.__init__(self, parent)
-        self.is_dir = is_dir
-        self.question = question
-        self.setSpacing(3)
-        self.path = QLineEdit(self)
-        self.path.setMinimumWidth(160)
-        but = QPushButton("...", self)
-        self.connect(but, SIGNAL("clicked()"), self.browse)
-
-    def browse(self):
-        if self.is_dir:
-            s = QFileDialog.getExistingDirectory(self.path.text(), self, "lala", self.question, False)
-        else:
-            s = QFileDialog.getOpenFileName(self.path.text(), "All (*)", self, "lala", self.question)
-        self.path.setText(s)
-
-    def text(self):
-        return str(self.path.text())
-
-    def setText(self, text):
-        self.path.setText(text)
-
-
 class UID:
     def __init__(self, w, grid):
         lab = QLabel(i18n("ID:"), w)
@@ -50,7 +25,7 @@ class UID:
         self.uid.setEnabled(False)
         self.uid_auto = QCheckBox(i18n("Select manually"), hb)
         w.connect(self.uid_auto, SIGNAL("toggled(bool)"), self.slotToggle)
-        row = grid.numRows() - 1
+        row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
     
@@ -62,6 +37,33 @@ class UID:
             return int(self.uid.text())
         else:
             return "auto"
+
+
+class Homedir:
+    def __init__(self, w, grid):
+        self.w = w
+        lab = QLabel(i18n("Home:"), w)
+        hb = QHBox(w)
+        hb.setSpacing(3)
+        self.home = QLineEdit(hb)
+        but = QPushButton("...", hb)
+        w.connect(but, SIGNAL("clicked()"), self.browse)
+        self.home_create = QCheckBox("Create directory", w)
+        
+        row = grid.numRows()
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addWidget(hb, row, 1)
+        grid.addWidget(self.home_create, row + 1, 1)
+    
+    def browse(self):
+        s = QFileDialog.getExistingDirectory(
+            self.home.text(),
+            self.w,
+            "lala",
+            i18n("Select user's home directory"),
+            False
+        )
+        self.home.setText(s)
 
 
 class UserGroup(QCheckListItem):
@@ -101,10 +103,10 @@ class UserStack(QVBox):
         hb.setSpacing(12)
         
         w = QWidget(hb)
-        grid = QGridLayout(w)
+        grid = QGridLayout(w, 0, 0)
         grid.setSpacing(6)
         
-        self.w_uid = UID(w, grid)
+        self.u_id = UID(w, grid)
         
         lab = QLabel("Name:", w)
         self.w_nick = QLineEdit(w)
@@ -121,13 +123,7 @@ class UserStack(QVBox):
         self.w_main_group = QComboBox(False, w)
         grid.addWidget(self.w_main_group, 3, 1)
         
-        lab = QLabel("Home:", w)
-        self.w_home = PathEntry(w, "Select home directory for user")
-        grid.addWidget(lab, 4, 0, Qt.AlignRight)
-        grid.addWidget(self.w_home, 4, 1)
-        
-        self.w_home_create = QRadioButton("Create directory", w)
-        grid.addWidget(self.w_home_create, 5, 1)
+        self.u_home = Homedir(w, grid)
         
         lab = QLabel("Shell:", w)
         self.w_shell = QComboBox(True, w)
