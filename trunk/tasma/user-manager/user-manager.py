@@ -18,13 +18,15 @@ from kdeui import *
 import mainview
 from utility import *
 
-version = "0.5"
+mod_version = "0.5"
+mod_app = "user-manager"
+
 
 def AboutData():
     return KAboutData(
-        "user-manager",
+        mod_app,
         "User Manager",
-        version,
+        mod_version,
         I18N_NOOP("User Management"),
         KAboutData.License_GPL,
         "(C) 2005-2006 UEKAE/TÜBİTAK",
@@ -33,8 +35,8 @@ def AboutData():
         "bugs@pardus.org.tr"
     )
 
-def setupWidget(self):
-    KGlobal.iconLoader().addAppDir("user-manager")
+def attachMainWidget(self):
+    KGlobal.iconLoader().addAppDir(mod_app)
     self.mainwidget = mainview.UserManager(self)
     toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
     toplayout.addWidget(self.mainwidget)
@@ -44,62 +46,44 @@ def setupWidget(self):
 class Module(KCModule):
     def __init__(self, parent, name):
         KCModule.__init__(self, parent, name)
-        KGlobal.locale().insertCatalogue("user-manager")
-        self.config = KConfig("user-manager")
+        KGlobal.locale().insertCatalogue(mod_app)
+        self.config = KConfig(mod_app)
         self.setButtons(self.Help)
         self.aboutdata = AboutData()
-        setupWidget(self)
-    
-    def load(self):
-        pass
-    
-    def save(self):
-        self.mainwidget.execute()
-    
-    def defaults(self):
-        pass        
-    
-    def sysdefaults(self):
-        pass
+        attachMainWidget(self)
     
     def aboutData(self):
         return self.aboutdata
+
+
+# KCModule factory
+def create_user_manager(parent, name):
+    global kapp
     
-    def buttons(self):
-        return KCModule.Help
+    kapp = KApplication.kApplication()
+    return Module(parent, name)
 
 
-class App(QDialog):
-    def __init__(self):
-        QDialog.__init__(self)
-        self.setCaption(i18n("User Manager"))
-        self.setMinimumSize(620, 380)
-        self.resize(520, 420)
-        setupWidget(self)
-
-
-# This is the entry point used when running this module outside of kcontrol.
+# Standalone
 def main():
     global kapp
     
-    about_data = AboutData()
-    KCmdLineArgs.init(sys.argv, about_data)
+    about = AboutData()
+    KCmdLineArgs.init(sys.argv, about)
+    KUniqueApplication.addCmdLineOptions()
     
     if not KUniqueApplication.start():
         print i18n("User manager module is already started!")
         return
     
     kapp = KUniqueApplication(True, True, True)
-    myapp = App()
-    kapp.setMainWidget(myapp)
-    sys.exit(myapp.exec_loop())
-
-# Factory function for KControl
-def create_user_manager(parent, name):
-    global kapp
-    
-    kapp = KApplication.kApplication()
-    return Module(parent, name)
+    win = QDialog()
+    win.setCaption(i18n("User Manager"))
+    win.setMinimumSize(620, 380)
+    win.resize(620, 380)
+    attachMainWidget(win)
+    kapp.setMainWidget(win)
+    sys.exit(win.exec_loop())
 
 
 if __name__ == "__main__":
