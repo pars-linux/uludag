@@ -14,6 +14,7 @@ from qt import *
 
 import browser
 import useredit
+import groupedit
 
 
 class UserManager(QWidgetStack):
@@ -26,6 +27,7 @@ class UserManager(QWidgetStack):
         QWidgetStack.__init__(self, parent)
         self.browse = browser.BrowseStack(self, link)
         self.user = useredit.UserStack(self, link)
+        self.group = groupedit.GroupStack(self, link)
     
     def slotComar(self, sock):
         reply = self.link.read_cmd()
@@ -41,6 +43,8 @@ class UserManager(QWidgetStack):
         if self.browse.tab.currentPageIndex() == 0:
             self.raiseWidget(self.user)
             self.user.startAdd(self.browse.groups)
+        else:
+            self.raiseWidget(self.group)
     
     def slotEdit(self):
         pass
