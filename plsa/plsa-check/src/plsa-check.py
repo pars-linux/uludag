@@ -140,11 +140,11 @@ def main():
                 print _("Unable to download %s: %s") % (plsafile, e)
                 continue
 
-            print _("Checking PLSA database of %s") % repo
+            print _("Checking file integrity of %s") % repo
             try:
                 fetch_url("%s.sha1sum" % plsafile, "/tmp/plsa")
             except FetchError, e:
-                print _("Unable to download cheksum of %s") % repo
+                print _("Unable to download checksum of %s") % repo
                 continue
 
             orig_sha1sum = file("%s.sha1sum" % plsafile).readlines()[0].split()[0]
