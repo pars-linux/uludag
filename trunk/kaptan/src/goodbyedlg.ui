@@ -60,7 +60,7 @@
             <property name="text">
                 <string>&lt;center&gt;
 You have finished!  Now you can start using Pardus Linux&lt;br&gt;
-&lt;a href="#tasma"&gt;If you want to change more settings click here to start &lt;b&gt;Tasma&lt;/b&gt;&lt;/a&gt;
+&lt;a href="#tasma"&gt;If you want to change more settings click here to start &lt;b&gt;Pardus Configuration Center&lt;/b&gt;&lt;/a&gt;
 &lt;/center&gt;</string>
             </property>
         </widget>
