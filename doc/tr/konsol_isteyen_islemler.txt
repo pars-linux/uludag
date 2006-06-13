@@ -20,7 +20,23 @@ Ekran kartları
 
 - NVIDIA ve ATI ayarlarını elle yapmak gerekiyor
 
+Locate 
 
+- Dosyaların locate ile aranması ancak konsoldan olabiliyor
 
+Samba
+
+- Detaylı Samba işlemleri elle yapılmak zorunda
+
+Yazıcı paylaşımı
+
+- Yazıcıyı diğer makinelere paylaştırmak için konsol erişimi gerekiyor
+
+Sunucular 
+
+- Postfix ayarları için konsol erişimi gerekiyor
+- Apache ayarları için konsol erişimi gerekiyor
+- OpenLDAP ayarları için konsol erişimi gerekiyor
+- VSFTP sunucu ayarları için konsol erişimi gerekiyor
 
 
