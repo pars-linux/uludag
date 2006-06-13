@@ -68,11 +68,11 @@ class Homedir:
 
 class Password:
     def __init__(self, w, grid):
-        lab = QLabel("Password:", w)
+        lab = QLabel(i18n("Password:"), w)
         self.password = QLineEdit(w)
         self.password.setEchoMode(QLineEdit.Password)
         
-        lab2 = QLabel("Confirm password:", w)
+        lab2 = QLabel(i18n("Confirm password:"), w)
         self.password2 = QLineEdit(w)
         self.password2.setEchoMode(QLineEdit.Password)
         
@@ -109,7 +109,7 @@ class UserStack(QVBox):
         
         w = QWidget(self)
         hb = QHBoxLayout(w)
-        lab = QLabel("<b>Add a New User</b>", w)
+        lab = QLabel("<b>%s</b>" % i18n("Add a New User"), w)
         hb.addWidget(lab)
         toggle = QCheckBox("Show all groups", w)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.slotToggle)
@@ -150,8 +150,8 @@ class UserStack(QVBox):
         
         self.u_password = Password(w, grid)
         
-        lab = QLabel(" ", w)
-        grid.addWidget(lab, 9, 1)
+        self.info = QLabel(" ", w)
+        grid.addWidget(self.info, 9, 1)
         
         w = QWidget(hb)
         vb = QVBoxLayout(w)
@@ -172,9 +172,9 @@ class UserStack(QVBox):
         hb = QHBox(self)
         hb.setSpacing(12)
         QLabel(" ", hb)
-        but = QPushButton(getIconSet("add.png", KIcon.Small), "Add", hb)
+        but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        but = QPushButton(getIconSet("cancel.png", KIcon.Small), "Cancel", hb)
+        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
     
     def slotSelect(self):
