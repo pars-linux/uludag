@@ -11,7 +11,7 @@ class serviceWidget(QWidget):
         if not name:
             self.setName("serviceForm")
 
-        self.setCaption(i18n("Service GUI"))
+        self.setCaption(i18n("Service Manager"))
 
         serviceFormLayout = QGridLayout(self, 1, 1, 11, 6, "serviceFormLayout")
 

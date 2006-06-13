@@ -27,7 +27,7 @@ import comar
 
 
 def AboutData():
-    about_data = KAboutData('servis_kga',
+    about_data = KAboutData('service_manager',
                             'Service Manager',
                             '1.0.3',
                             'Service Manager Interface',
@@ -65,9 +65,9 @@ class HelpDialog(QDialog):
         self.layout.addWidget(self.htmlPart.view(), 1, 1)
 
         if os.environ['LANG'].startswith('tr_TR'):
-            self.htmlPart.openURL(KURL(locate('data', 'servis_kga/help/tr/main_help.html')))
+            self.htmlPart.openURL(KURL(locate('data', 'service-manager/help/tr/main_help.html')))
         else:
-            self.htmlPart.openURL(KURL(locate('data', 'servis_kga/help/en/main_help.html')))
+            self.htmlPart.openURL(KURL(locate('data', 'service-manager/help/en/main_help.html')))
 
 
 class serviceItem(KListViewItem):
@@ -115,17 +115,17 @@ class MainApplication(programbase):
             self.resize(520, 420)
         else:
             KCModule.__init__(self, parent, name)
-            KGlobal.locale().insertCatalogue('servis_kga')
+            KGlobal.locale().insertCatalogue('service-manager')
             # Create a configuration object.
-            self.config = KConfig('servis_kga')
+            self.config = KConfig('service-manager')
             self.setButtons(0)
             self.aboutdata = AboutData()
 
-        self.setIcon(loadIcon('servis_kga', size=128))
+        self.setIcon(loadIcon('service_manager', size=128))
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        KGlobal.iconLoader().addAppDir('servis_kga')
+        KGlobal.iconLoader().addAppDir('service-manager')
         
         # Initialize main widget
         self.mainwidget = serviceWidget.serviceWidget(self)
@@ -246,7 +246,7 @@ def main():
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv, about_data)
     if not KUniqueApplication.start():
-        print i18n("Service GUI is already running!")
+        print i18n("Service Manager is already running!")
         return
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
@@ -255,7 +255,7 @@ def main():
 
 
 # Factory function for KControl
-def create_servis_kga(parent, name):
+def create_service_manager(parent, name):
     global kapp    
     kapp = KApplication.kApplication()
     return MainApplication(parent, name)
