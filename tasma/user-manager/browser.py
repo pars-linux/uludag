@@ -99,7 +99,6 @@ class BrowseStack(QVBox):
         self.users.addColumn(i18n("ID"))
         self.users.setColumnAlignment(0, Qt.AlignRight)
         self.users.addColumn(i18n("User name"))
-        self.users.setColumnAlignment(1, Qt.AlignHCenter)
         self.users.addColumn(i18n("Real name"))
         self.users.setResizeMode(QListView.LastColumn)
         self.users.setAllColumnsShowFocus(True)
@@ -146,10 +145,11 @@ class BrowseStack(QVBox):
         if self.tab.currentPageIndex() == 0:
             if self.users.selectedItem():
                 bool = True
+            self.edit_but.setEnabled(bool)
         else:
             if self.groups.selectedItem():
                 bool = True
-        self.edit_but.setEnabled(bool)
+            self.edit_but.setEnabled(False)
         self.delete_but.setEnabled(bool)
     
     def slotTabChanged(self, w):
