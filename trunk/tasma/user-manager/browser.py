@@ -87,7 +87,7 @@ class BrowseStack(QVBox):
         lab = QLabel("", bar)
         bar.setStretchableWidget(lab)
         
-        toggle = QRadioButton(i18n("Show system user and groups"), bar)
+        toggle = QCheckBox(i18n("Show system user and groups"), bar)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.slotToggle)
         
         tab = QTabWidget(self)
