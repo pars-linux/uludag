@@ -40,6 +40,30 @@ class PathEntry(QHBox):
         self.path.setText(text)
 
 
+class UID:
+    def __init__(self, w, grid):
+        lab = QLabel(i18n("ID:"), w)
+        hb = QHBox(w)
+        hb.setSpacing(6)
+        self.uid = QLineEdit(hb)
+        self.uid.setValidator(QIntValidator(0, 65535, self.uid))
+        self.uid.setEnabled(False)
+        self.uid_auto = QCheckBox(i18n("Select manually"), hb)
+        w.connect(self.uid_auto, SIGNAL("toggled(bool)"), self.slotToggle)
+        row = grid.numRows() - 1
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addWidget(hb, row, 1)
+    
+    def slotToggle(self, bool):
+        self.uid.setEnabled(bool)
+    
+    def text(self):
+        if self.uid_auto.isChecked():
+            return int(self.uid.text())
+        else:
+            return "auto"
+
+
 class UserGroup(QCheckListItem):
     def __init__(self, parent, group):
         QCheckListItem.__init__(self, parent, group.name, self.CheckBox)
@@ -80,13 +104,7 @@ class UserStack(QVBox):
         grid = QGridLayout(w)
         grid.setSpacing(6)
         
-        lab = QLabel("ID:", w)
-        hb2 = QHBox(w)
-        hb2.setSpacing(6)
-        self.w_id = QLineEdit(hb2)
-        self.w_id_auto = QRadioButton("Automatic", hb2)
-        grid.addWidget(lab, 0, 0, Qt.AlignRight)
-        grid.addWidget(hb2, 0, 1)
+        self.w_uid = UID(w, grid)
         
         lab = QLabel("Name:", w)
         self.w_nick = QLineEdit(w)
