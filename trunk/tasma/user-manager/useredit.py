@@ -12,7 +12,7 @@
 from qt import *
 from kdecore import *
 
-from utility import getIconSet
+from utility import *
 
 
 class UID:
@@ -64,6 +64,22 @@ class Homedir:
             False
         )
         self.home.setText(s)
+
+
+class Password:
+    def __init__(self, w, grid):
+        lab = QLabel("Password:", w)
+        self.password = QLineEdit(w)
+        self.password.setEchoMode(QLineEdit.Password)
+        
+        lab2 = QLabel("Confirm password:", w)
+        self.password2 = QLineEdit(w)
+        self.password2.setEchoMode(QLineEdit.Password)
+        
+        grid.addWidget(lab, 7, 0, Qt.AlignRight)
+        grid.addWidget(self.password, 7, 1)
+        grid.addWidget(lab2, 8, 0, Qt.AlignRight)
+        grid.addWidget(self.password2, 8, 1)
 
 
 class UserGroup(QCheckListItem):
@@ -132,17 +148,7 @@ class UserStack(QVBox):
         grid.addWidget(lab, 6, 0, Qt.AlignRight)
         grid.addWidget(self.w_shell, 6, 1)
         
-        lab = QLabel("Password:", w)
-        self.w_pass = QLineEdit(w)
-        self.w_pass.setEchoMode(self.w_pass.Password)
-        grid.addWidget(lab, 7, 0, Qt.AlignRight)
-        grid.addWidget(self.w_pass, 7, 1)
-        
-        lab = QLabel("Confirm password:", w)
-        self.w_pass2 = QLineEdit(w)
-        self.w_pass2.setEchoMode(self.w_pass2.Password)
-        grid.addWidget(lab, 8, 0, Qt.AlignRight)
-        grid.addWidget(self.w_pass2, 8, 1)
+        self.u_password = Password(w, grid)
         
         lab = QLabel(" ", w)
         grid.addWidget(lab, 9, 1)
