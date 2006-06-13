@@ -69,7 +69,7 @@ class UserStack(QVBox):
         hb = QHBoxLayout(w)
         lab = QLabel("<b>Add a New User</b>", w)
         hb.addWidget(lab)
-        toggle = QRadioButton("Show all groups", w)
+        toggle = QCheckBox("Show all groups", w)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.slotToggle)
         hb.addWidget(toggle, 0, Qt.AlignRight)
         
