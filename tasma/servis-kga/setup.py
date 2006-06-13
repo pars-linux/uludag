@@ -13,18 +13,18 @@
 import kdedistutils
 
 kdedistutils.setup(
-    name="servis_kga",
+    name="service-manager",
     version="1.0.3",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/serviceWidget.py', 'src/servis_kga.py',
-                        ('/usr/kde/3.5/share/applications/kde/', ['src/servis_kga-desk.desktop']),
-                        ('/usr/kde/3.5/share/icons/default.kde/128x128/apps', ['src/servis_kga.png']),
+    application_data = ['src/serviceWidget.py', 'src/service_manager.py',
+                        ('/usr/kde/3.5/share/applications/kde/', ['src/service_manager-desk.desktop']),
+                        ('/usr/kde/3.5/share/icons/default.kde/128x128/apps', ['src/service_manager.png']),
                         'help'],
-    executable_links = [('servis-kga','servis_kga.py')],
+    executable_links = [('service-manager','service_manager.py')],
     i18n = ('po',['src']),
-    kcontrol_modules = [ ('src/servis_kga-kcm.desktop','src/servis_kga.py')],
+    kcontrol_modules = [ ('src/service_manager-kcm.desktop','src/service_manager.py')],
     )
