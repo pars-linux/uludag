@@ -35,6 +35,7 @@ class PisiApi:
         self.options = pisi.config.Options()
         self.options.output_dir = outputDir
         self.options.yes_all = True
+        self.options.ignore_file_conflicts = True
 
         self.api = pisi.api
         self.__newBinaryPackages = []
