@@ -48,14 +48,24 @@ class DependencyResolver:
         return self.pspeclist
 
     def __getBuildDependencies(self, pspec):
-        dom = mdom.parse(pspec)
+        try:
+            dom = mdom.parse(pspec)
+        except:
+            logger.error("%s'de sorun var :(" %s pspec))
+            sys.exit(-1)
+
         try:
             return [bdep.firstChild.wholeText for bdep in Get(Get(Get(dom.documentElement, "Source")[0], "BuildDependencies")[0], 'Dependency')]
         except:
             return ['']
 
     def __getRuntimeDependencies(self, pspec):
-        dom = mdom.parse(pspec)
+        try:
+            dom = mdom.parse(pspec)
+        except:
+            logger.error("%s'de sorun var :(" %s pspec))
+            sys.exit(-1)
+
         rdeps = []
         try:
             for p in Get(dom.documentElement, "Package"):
@@ -72,8 +82,13 @@ class DependencyResolver:
 
     def __getPackageNames(self, pspec):
         packages = []
-        dom = mdom.parse(pspec)
-        pspecdata = dom.documentElement
+        try:
+            dom = mdom.parse(pspec)
+            pspecdata = dom.documentElement
+        except:
+            logger.error("%s'de sorun var :(" %s pspec))
+            sys.exit(-1)
+
         for p in Get(pspecdata, "Package"):
             packages.append(Get(p, "Name")[0].firstChild.wholeText)
         return packages
