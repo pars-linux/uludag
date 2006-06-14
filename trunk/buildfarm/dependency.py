@@ -51,7 +51,7 @@ class DependencyResolver:
         try:
             dom = mdom.parse(pspec)
         except:
-            logger.error("%s'de sorun var :(" %s pspec))
+            logger.error("%s'de sorun var :(" % pspec))
             sys.exit(-1)
 
         try:
@@ -63,7 +63,7 @@ class DependencyResolver:
         try:
             dom = mdom.parse(pspec)
         except:
-            logger.error("%s'de sorun var :(" %s pspec))
+            logger.error("%s'de sorun var :(" % pspec))
             sys.exit(-1)
 
         rdeps = []
@@ -86,7 +86,7 @@ class DependencyResolver:
             dom = mdom.parse(pspec)
             pspecdata = dom.documentElement
         except:
-            logger.error("%s'de sorun var :(" %s pspec))
+            logger.error("%s'de sorun var :(" % pspec))
             sys.exit(-1)
 
         for p in Get(pspecdata, "Package"):
