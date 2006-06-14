@@ -116,8 +116,10 @@ def regeneratePackages():
 
 def movePackages(newBinaryPackages, oldBinaryPackages):
     # sanitaze input
-    newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
-    oldBinaryPackages = set(map(lambda x: os.path.basename(x), oldBinaryPackages))
+    if newBinaryPackages:
+        newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
+    if oldBinaryPackages:
+        oldBinaryPackages = set(map(lambda x: os.path.basename(x), oldBinaryPackages))
 
     unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
     newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
