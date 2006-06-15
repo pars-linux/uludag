@@ -150,7 +150,7 @@ class BrowseStack(QVBox):
                 bool = True
                 bool2 = True
                 # You shouldn't delete your user while logged in :)
-                if item.uid == os.getuid():
+                if item.uid == 0 or item.uid == os.getuid():
                     bool2 = False
         else:
             if self.groups.selectedItem():
