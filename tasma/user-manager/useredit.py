@@ -85,7 +85,8 @@ class Password:
 
 
 class UserGroup(QCheckListItem):
-    def __init__(self, parent, group):
+    def __init__(self, stack, parent, group):
+        self.stack = stack
         QCheckListItem.__init__(self, parent, group.name, self.CheckBox)
         self.name = group.name
         self.comment = group.comment
@@ -101,6 +102,9 @@ class UserGroup(QCheckListItem):
             return 1
         
         return QCheckListItem.compare(self, item, 0, 0)
+    
+    def stateChange(self, bool):
+        self.stack.slotGroup()
 
 
 class UserStack(QVBox):
@@ -165,6 +169,7 @@ class UserStack(QVBox):
         hb = QHBox(w)
         lab = QLabel("Main group:", hb)
         self.w_main_group = QComboBox(False, hb)
+        self.w_main_group.setEnabled(False)
         vb.addWidget(hb)
         
         self.desc = QTextEdit(w)
@@ -186,6 +191,21 @@ class UserStack(QVBox):
         else:
             self.desc.setText("")
     
+    def slotGroup(self):
+        groups = []
+        item = self.groups.firstChild()
+        while item:
+            if item.state() == item.On:
+                groups.append(item.name)
+            item = item.nextSibling()
+        if groups == []:
+            self.w_main_group.setEnabled(False)
+        else:
+            self.w_main_group.setEnabled(True)
+            self.w_main_group.clear()
+            for item in groups:
+                self.w_main_group.insertItem(item)
+    
     def slotToggle(self, bool):
         group = self.groups.firstChild()
         while group:
@@ -201,7 +221,7 @@ class UserStack(QVBox):
         group = groups.firstChild()
         self.groups.clear()
         while group:
-            g = UserGroup(self.groups, group)
+            g = UserGroup(self, self.groups, group)
             if not g.comment:
                 g.setVisible(False)
             self.w_main_group.insertItem(g.name)
