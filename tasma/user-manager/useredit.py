@@ -63,6 +63,19 @@ class Name:
         return None
 
 
+class RealName:
+    def __init__(self, w, grid):
+        lab = QLabel(i18n("Real name:"), w)
+        self.name = QLineEdit(w)
+        self.name.setValidator(QRegExpValidator(QRegExp("[^\n:]*"), self.name))
+        row = grid.numRows()
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addWidget(self.name, row, 1)
+    
+    def text(self):
+        return str(self.name.text())
+
+
 class Homedir:
     def __init__(self, w, grid):
         self.w = w
@@ -141,7 +154,7 @@ class UserStack(QVBox):
         hb = QHBoxLayout(w)
         lab = QLabel(u"<b>%s</b>" % i18n("Add a New User"), w)
         hb.addWidget(lab)
-        toggle = QCheckBox("Show all groups", w)
+        toggle = QCheckBox(i18n("Show all groups"), w)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.slotToggle)
         hb.addWidget(toggle, 0, Qt.AlignRight)
         
@@ -156,14 +169,11 @@ class UserStack(QVBox):
         
         self.u_name = Name(w, grid)
         
-        lab = QLabel("Real name:", w)
-        self.w_name = QLineEdit(w)
-        grid.addWidget(lab, 2, 0, Qt.AlignRight)
-        grid.addWidget(self.w_name, 2, 1)
+        self.u_realname = RealName(w, grid)
         
         self.u_home = Homedir(w, grid)
         
-        lab = QLabel("Shell:", w)
+        lab = QLabel(i18n("Shell:"), w)
         self.w_shell = QComboBox(True, w)
         self.w_shell.insertItem("/bin/bash", 0)
         self.w_shell.insertItem("/bin/false", 1)
@@ -181,14 +191,14 @@ class UserStack(QVBox):
         
         self.groups = QListView(w)
         self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
-        self.groups.addColumn("Group")
-        self.groups.addColumn("Permission")
+        self.groups.addColumn(i18n("Group"))
+        self.groups.addColumn(i18n("Permission"))
         self.groups.setResizeMode(QListView.LastColumn)
         self.groups.setAllColumnsShowFocus(True)
         vb.addWidget(self.groups, 2)
         
         hb = QHBox(w)
-        lab = QLabel("Main group:", hb)
+        lab = QLabel(i18n("Main group:"), hb)
         self.w_main_group = QComboBox(False, hb)
         self.w_main_group.setEnabled(False)
         vb.addWidget(hb)
