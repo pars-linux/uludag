@@ -76,10 +76,12 @@ class Password:
         self.password2 = QLineEdit(w)
         self.password2.setEchoMode(QLineEdit.Password)
         
-        grid.addWidget(lab, 7, 0, Qt.AlignRight)
-        grid.addWidget(self.password, 7, 1)
-        grid.addWidget(lab2, 8, 0, Qt.AlignRight)
-        grid.addWidget(self.password2, 8, 1)
+        row = grid.numRows()
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addWidget(self.password, row, 1)
+        row += 1
+        grid.addWidget(lab2, row, 0, Qt.AlignRight)
+        grid.addWidget(self.password2, row, 1)
 
 
 class UserGroup(QCheckListItem):
@@ -116,7 +118,7 @@ class UserStack(QVBox):
         hb.addWidget(toggle, 0, Qt.AlignRight)
         
         hb = QHBox(self)
-        hb.setSpacing(12)
+        hb.setSpacing(18)
         
         w = QWidget(hb)
         grid = QGridLayout(w, 0, 0)
@@ -134,24 +136,19 @@ class UserStack(QVBox):
         grid.addWidget(lab, 2, 0, Qt.AlignRight)
         grid.addWidget(self.w_name, 2, 1)
         
-        lab = QLabel("Main group:", w)
-        grid.addWidget(lab, 3, 0, Qt.AlignRight)
-        self.w_main_group = QComboBox(False, w)
-        grid.addWidget(self.w_main_group, 3, 1)
-        
         self.u_home = Homedir(w, grid)
         
         lab = QLabel("Shell:", w)
         self.w_shell = QComboBox(True, w)
         self.w_shell.insertItem("/bin/bash", 0)
         self.w_shell.insertItem("/bin/false", 1)
-        grid.addWidget(lab, 6, 0, Qt.AlignRight)
-        grid.addWidget(self.w_shell, 6, 1)
+        grid.addWidget(lab, 5, 0, Qt.AlignRight)
+        grid.addWidget(self.w_shell, 5, 1)
         
         self.u_password = Password(w, grid)
         
         self.info = QLabel(" ", w)
-        grid.addWidget(self.info, 9, 1)
+        grid.addWidget(self.info, 8, 1)
         
         w = QWidget(hb)
         vb = QVBoxLayout(w)
@@ -163,11 +160,16 @@ class UserStack(QVBox):
         self.groups.addColumn("Permission")
         self.groups.setResizeMode(QListView.LastColumn)
         self.groups.setAllColumnsShowFocus(True)
-        vb.addWidget(self.groups)
+        vb.addWidget(self.groups, 2)
+        
+        hb = QHBox(w)
+        lab = QLabel("Main group:", hb)
+        self.w_main_group = QComboBox(False, hb)
+        vb.addWidget(hb)
         
         self.desc = QTextEdit(w)
         self.desc.setReadOnly(True)
-        vb.addWidget(self.desc)
+        vb.addWidget(self.desc, 1)
         
         hb = QHBox(self)
         hb.setSpacing(12)
