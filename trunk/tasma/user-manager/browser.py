@@ -9,6 +9,7 @@
 # any later version.
 #
 
+import os
 from qt import *
 from kdecore import *
 
@@ -142,15 +143,20 @@ class BrowseStack(QVBox):
     
     def slotSelect(self):
         bool = False
+        bool2 = False
         if self.tab.currentPageIndex() == 0:
-            if self.users.selectedItem():
+            item = self.users.selectedItem()
+            if item:
                 bool = True
-            self.edit_but.setEnabled(bool)
+                bool2 = True
+                # You shouldn't delete your user while logged in :)
+                if item.uid == os.getuid():
+                    bool2 = False
         else:
             if self.groups.selectedItem():
-                bool = True
-            self.edit_but.setEnabled(False)
-        self.delete_but.setEnabled(bool)
+                bool2 = True
+        self.edit_but.setEnabled(bool)
+        self.delete_but.setEnabled(bool2)
     
     def slotTabChanged(self, w):
         self.slotSelect()
