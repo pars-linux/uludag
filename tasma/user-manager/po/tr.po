@@ -6,47 +6,47 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: user-manager 0.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-06-15 11:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Gürer Özen <EMAIL@ADDRESS>\n"
+"Language-Team: turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: browser.py:91
 msgid "Show system user and groups"
-msgstr ""
+msgstr "Sistem kullanıcı ve gruplarını göster"
 
 #: browser.py:100 browser.py:109
 msgid "ID"
-msgstr ""
+msgstr "No"
 
 #: browser.py:102
 msgid "User name"
-msgstr ""
+msgstr "Kullanıcı"
 
 #: browser.py:103
 msgid "Real name"
-msgstr ""
+msgstr "Gerçek İsim"
 
 #: browser.py:111
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: browser.py:112
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #: browser.py:117
 msgid "Users"
-msgstr ""
+msgstr "Kullanıcılar"
 
 #: browser.py:118
 msgid "Groups"
-msgstr ""
+msgstr "Gruplar"
 
 #: user-manager.py:30
 msgid "User Management"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: user-manager.py:76
 msgid "User manager module is already started!"
-msgstr ""
+msgstr "Kullanıcı yönetim modülü zaten çalışıyor!"
 
 #: user-manager.py:81
 msgid "User Manager"
@@ -62,32 +62,32 @@ msgstr ""
 
 #: useredit.py:20 groupedit.py:20
 msgid "ID:"
-msgstr ""
+msgstr "No:"
 
 #: useredit.py:26 groupedit.py:26
 msgid "Select manually"
-msgstr ""
+msgstr "Elle seç"
 
 #: useredit.py:45
 msgid "Home:"
-msgstr ""
+msgstr "Ev:"
 
 #: useredit.py:63
 msgid "Select user's home directory"
-msgstr ""
+msgstr "Kullanıcının ev dizinini seçin"
 
 #: useredit.py:71
 msgid "Password:"
-msgstr ""
+msgstr "Parola:"
 
 #: useredit.py:75
 msgid "Confirm password:"
-msgstr ""
+msgstr "Parola onay:"
 
 #: useredit.py:112
 msgid "Add a New User"
-msgstr ""
+msgstr "Yeni Bir Kullanıcı Ekle"
 
 #: groupedit.py:48
 msgid "Add a New Group"
-msgstr ""
+msgstr "Yeni Bir Grup Ekle"
