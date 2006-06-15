@@ -34,9 +34,33 @@ class UID:
     
     def text(self):
         if self.uid_auto.isChecked():
-            return int(self.uid.text())
+            return self.uid.text()
         else:
             return "auto"
+    
+    def check(self):
+        t = self.text()
+        if t == "":
+            return i18n("Enter a user ID or use auto selection")
+        return None
+
+
+class Name:
+    def __init__(self, w, grid):
+        lab = QLabel(i18n("Name:"), w)
+        self.name = QLineEdit(w)
+        self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]*"), self.name))
+        row = grid.numRows()
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addWidget(self.name, row, 1)
+    
+    def text(self):
+        return str(self.name.text())
+    
+    def check(self):
+        if self.text() == "":
+            return i18n("Enter a user name")
+        return None
 
 
 class Homedir:
@@ -130,10 +154,7 @@ class UserStack(QVBox):
         
         self.u_id = UID(w, grid)
         
-        lab = QLabel("Name:", w)
-        self.w_nick = QLineEdit(w)
-        grid.addWidget(lab, 1, 0, Qt.AlignRight)
-        grid.addWidget(self.w_nick, 1, 1)
+        self.u_name = Name(w, grid)
         
         lab = QLabel("Real name:", w)
         self.w_name = QLineEdit(w)
@@ -152,7 +173,7 @@ class UserStack(QVBox):
         self.u_password = Password(w, grid)
         
         self.info = QLabel(" ", w)
-        grid.addWidget(self.info, 8, 1)
+        grid.addMultiCellWidget(self.info, 8, 8, 0, 1)
         
         w = QWidget(hb)
         vb = QVBoxLayout(w)
@@ -180,9 +201,23 @@ class UserStack(QVBox):
         hb.setSpacing(12)
         QLabel(" ", hb)
         but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
+        self.add_but = but
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
+        
+        self.checkAdd()
+    
+    def checkAdd(self):
+        err = self.u_id.check()
+        if not err:
+            err = self.u_name.check()
+        
+        if err:
+            self.info.setText(u"<font color=red>%s</font>" % err)
+            self.add_but.setEnabled(False)
+        else:
+            self.add_but.setEnabled(True)
     
     def slotSelect(self):
         item = self.groups.selectedItem()
