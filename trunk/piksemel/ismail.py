@@ -311,6 +311,7 @@ class SourceRepo:
         if nr_errors:
             print "-----"
             print "%d packages failed to validate" % nr_errors
+            sys.exit(1)
         print "%d source packages validated" % nr
 
 
@@ -319,8 +320,16 @@ class SourceRepo:
 #
 
 def main(args):
-    repo = SourceRepo()
-    repo.validate(args[0])
+    if os.path.isdir(args[0]):
+        repo = SourceRepo()
+        repo.validate(args[0])
+    else:
+        spec = Pspec()
+        spec.validate(args[0])
+        if len(spec.errors) > 0:
+            for err in spec.errors:
+                print err
+            sys.exit(1)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
