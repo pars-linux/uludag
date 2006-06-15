@@ -1,20 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of tr.po to Türkçe
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Mert Uzbaşlı <mert@bunalmis.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: user-manager 0.5\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-06-15 15:17+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Gürer Özen <EMAIL@ADDRESS>\n"
-"Language-Team: turkish <tr@li.org>\n"
+"PO-Revision-Date: 2006-06-15 15:23+0300\n"
+"Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
+"Language-Team: Türkçe <->\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
 
 #: browser.py:91
 msgid "Show system user and groups"
@@ -50,7 +50,7 @@ msgstr "Gruplar"
 
 #: user-manager.py:30
 msgid "User Management"
-msgstr ""
+msgstr "Kullanıcı Yönetimi"
 
 #: user-manager.py:76
 msgid "User manager module is already started!"
@@ -58,7 +58,7 @@ msgstr "Kullanıcı yönetim modülü zaten çalışıyor!"
 
 #: user-manager.py:81
 msgid "User Manager"
-msgstr ""
+msgstr "Kullanıcı Yöneticisi"
 
 #: useredit.py:20 groupedit.py:20
 msgid "ID:"
@@ -70,22 +70,19 @@ msgstr "Elle seç"
 
 #: useredit.py:44
 msgid "Enter a user ID or use auto selection"
-msgstr ""
+msgstr "Otomatik seçimi kullanın yada kullanıcı No'sunu girin"
 
 #: useredit.py:50
-#, fuzzy
 msgid "Name:"
-msgstr "İsim"
+msgstr "İsim:"
 
 #: useredit.py:62
-#, fuzzy
 msgid "Enter a user name"
-msgstr "Kullanıcı"
+msgstr "Bir kullanıcı adı girin"
 
 #: useredit.py:68
-#, fuzzy
 msgid "Real name:"
-msgstr "Gerçek İsim"
+msgstr "Gerçek İsim:"
 
 #: useredit.py:82
 msgid "Home:"
@@ -108,27 +105,26 @@ msgid "Add a New User"
 msgstr "Yeni Bir Kullanıcı Ekle"
 
 #: useredit.py:157
-#, fuzzy
 msgid "Show all groups"
-msgstr "Sistem kullanıcı ve gruplarını göster"
+msgstr "Bütün grupları göster"
 
 #: useredit.py:176
 msgid "Shell:"
-msgstr ""
+msgstr "Kabuk:"
 
 #: useredit.py:194
-#, fuzzy
 msgid "Group"
-msgstr "Gruplar"
+msgstr "Grup"
 
 #: useredit.py:195
 msgid "Permission"
-msgstr ""
+msgstr "İzin"
 
 #: useredit.py:201
 msgid "Main group:"
-msgstr ""
+msgstr "Ana grup:"
 
 #: groupedit.py:48
 msgid "Add a New Group"
 msgstr "Yeni Bir Grup Ekle"
+
