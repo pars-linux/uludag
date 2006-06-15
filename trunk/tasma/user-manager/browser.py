@@ -130,7 +130,7 @@ class BrowseStack(QVBox):
                     item.name, item.uid, item.nick
                 )
                 if QMessageBox.Yes == QMessageBox.question(self, "Delete User?", msg, QMessageBox.Yes, QMessageBox.No):
-                    pass
+                    self.link.call("User.Manager.deleteUser", [ "uid", str(item.uid) ])
         else:
             item = self.groups.selectedItem()
             if item:
@@ -138,7 +138,7 @@ class BrowseStack(QVBox):
                     item.name, item.gid
                 )
                 if QMessageBox.Yes == QMessageBox.question(self, "Delete Group?", msg, QMessageBox.Yes, QMessageBox.No):
-                    pass
+                    self.link.call("User.Manager.deleteGroup", [ "gid", str(item.gid) ])
     
     def slotSelect(self):
         bool = False
