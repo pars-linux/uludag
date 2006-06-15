@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-manager 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-15 11:10+0300\n"
+"POT-Creation-Date: 2006-06-15 15:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Gürer Özen <EMAIL@ADDRESS>\n"
 "Language-Team: turkish <tr@li.org>\n"
@@ -68,25 +68,66 @@ msgstr "No:"
 msgid "Select manually"
 msgstr "Elle seç"
 
-#: useredit.py:45
+#: useredit.py:44
+msgid "Enter a user ID or use auto selection"
+msgstr ""
+
+#: useredit.py:50
+#, fuzzy
+msgid "Name:"
+msgstr "İsim"
+
+#: useredit.py:62
+#, fuzzy
+msgid "Enter a user name"
+msgstr "Kullanıcı"
+
+#: useredit.py:68
+#, fuzzy
+msgid "Real name:"
+msgstr "Gerçek İsim"
+
+#: useredit.py:82
 msgid "Home:"
 msgstr "Ev:"
 
-#: useredit.py:63
+#: useredit.py:100
 msgid "Select user's home directory"
 msgstr "Kullanıcının ev dizinini seçin"
 
-#: useredit.py:71
+#: useredit.py:108
 msgid "Password:"
 msgstr "Parola:"
 
-#: useredit.py:75
+#: useredit.py:112
 msgid "Confirm password:"
 msgstr "Parola onay:"
 
-#: useredit.py:112
+#: useredit.py:155
 msgid "Add a New User"
 msgstr "Yeni Bir Kullanıcı Ekle"
+
+#: useredit.py:157
+#, fuzzy
+msgid "Show all groups"
+msgstr "Sistem kullanıcı ve gruplarını göster"
+
+#: useredit.py:176
+msgid "Shell:"
+msgstr ""
+
+#: useredit.py:194
+#, fuzzy
+msgid "Group"
+msgstr "Gruplar"
+
+#: useredit.py:195
+msgid "Permission"
+msgstr ""
+
+#: useredit.py:201
+msgid "Main group:"
+msgstr ""
 
 #: groupedit.py:48
 msgid "Add a New Group"

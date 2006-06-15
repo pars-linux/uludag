@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-15 11:10+0300\n"
+"POT-Creation-Date: 2006-06-15 15:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,24 +68,60 @@ msgstr ""
 msgid "Select manually"
 msgstr ""
 
-#: useredit.py:45
+#: useredit.py:44
+msgid "Enter a user ID or use auto selection"
+msgstr ""
+
+#: useredit.py:50
+msgid "Name:"
+msgstr ""
+
+#: useredit.py:62
+msgid "Enter a user name"
+msgstr ""
+
+#: useredit.py:68
+msgid "Real name:"
+msgstr ""
+
+#: useredit.py:82
 msgid "Home:"
 msgstr ""
 
-#: useredit.py:63
+#: useredit.py:100
 msgid "Select user's home directory"
 msgstr ""
 
-#: useredit.py:71
+#: useredit.py:108
 msgid "Password:"
 msgstr ""
 
-#: useredit.py:75
+#: useredit.py:112
 msgid "Confirm password:"
 msgstr ""
 
-#: useredit.py:112
+#: useredit.py:155
 msgid "Add a New User"
+msgstr ""
+
+#: useredit.py:157
+msgid "Show all groups"
+msgstr ""
+
+#: useredit.py:176
+msgid "Shell:"
+msgstr ""
+
+#: useredit.py:194
+msgid "Group"
+msgstr ""
+
+#: useredit.py:195
+msgid "Permission"
+msgstr ""
+
+#: useredit.py:201
+msgid "Main group:"
 msgstr ""
 
 #: groupedit.py:48
