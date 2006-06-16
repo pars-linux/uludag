@@ -170,7 +170,7 @@ def main():
             print _("Found PLSA database of %s in cache") % repo
             plsas[repo] = tmpfile
 
-    print
+        print
 
     # Pass if no PLSA available
     if not len(plsas):
