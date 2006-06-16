@@ -155,6 +155,7 @@ class UserGroup(QCheckListItem):
 class UserGroupList(QWidget):
     def __init__(self, stack, parent):
         QWidget.__init__(self, parent)
+        self.stack = stack
         vb = QVBoxLayout(self)
         vb.setSpacing(3)
         
@@ -168,8 +169,8 @@ class UserGroupList(QWidget):
         
         hb = QHBox(self)
         lab = QLabel(i18n("Main group:"), hb)
-        self.w_main_group = QComboBox(False, hb)
-        self.w_main_group.setEnabled(False)
+        self.main_group = QComboBox(False, hb)
+        self.main_group.setEnabled(False)
         vb.addWidget(hb)
         
         self.desc = QTextEdit(self)
@@ -183,7 +184,6 @@ class UserGroupList(QWidget):
             g = UserGroup(self, self.groups, group)
             if not g.comment:
                 g.setVisible(False)
-            self.w_main_group.insertItem(g.name)
             group = group.nextSibling()
     
     def slotGroup(self):
@@ -193,13 +193,14 @@ class UserGroupList(QWidget):
             if item.state() == item.On:
                 groups.append(item.name)
             item = item.nextSibling()
+        self.main_group.clear()
         if groups == []:
-            self.w_main_group.setEnabled(False)
+            self.main_group.setEnabled(False)
         else:
-            self.w_main_group.setEnabled(True)
-            self.w_main_group.clear()
+            self.main_group.setEnabled(True)
             for item in groups:
-                self.w_main_group.insertItem(item)
+                self.main_group.insertItem(item)
+        self.stack.checkAdd()
     
     def slotSelect(self):
         item = self.groups.selectedItem()
@@ -214,6 +215,12 @@ class UserGroupList(QWidget):
             if not group.comment:
                 group.setVisible(bool)
             group = group.nextSibling()
+    
+    def check(self):
+        print self.main_group.count()
+        if self.main_group.count() == 0:
+            return i18n("You should select at least one group this user belongs to")
+        return None
 
 
 class UserStack(QVBox):
@@ -274,6 +281,8 @@ class UserStack(QVBox):
         err = self.u_id.check()
         if not err:
             err = self.u_name.check()
+        if not err:
+            err = self.u_groups.check()
         
         if err:
             self.info.setText(u"<font color=red>%s</font>" % err)
