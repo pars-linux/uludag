@@ -74,6 +74,22 @@ def atoi(s):
         ret = 0
     return ret
 
+def portsOk(p):
+    """Check multiport format"""
+    if p.startswith("! "):
+        p = p[2:]
+    if p.count(",") + p.count(":") > 15:
+        return 0
+    l = p.split(",")
+    for i in l:
+        k = i.split(":")
+        if len(k) > 2:
+            return 0
+        for j in k:
+            if 0 >= atoi(j) <= 65535:
+                return 0
+    return 1
+
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__=="__main__"
 
@@ -146,29 +162,6 @@ class logThread(QThread):
             if s:
                 logwin.log.append(s[:-1])
             time.sleep(1)
-
-class CustomEventListener(DOM.EventListener):
-    def __init__(self, parent):
-        DOM.EventListener.__init__(self)
-        self.parent = parent
-
-    def handleEvent(self, event):
-        target = event.target().nodeName().string()
-        try:
-            if target == "INPUT":
-                inputElement = DOM.HTMLInputElement(event.target())
-                name = inputElement.name().string()
-                checked = inputElement.checked()
-                if checked:
-                    if name not in  self.parent.portsToAdd:
-                        self.parent.portsToAdd.append(name)
-                else:
-                    self.parent.portsToAdd.remove(name)
-            elif target == "A":
-                link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
-                KRun.runURL(KURL(link),"text/html",False,False);
-        except Exception, e:
-            print e
 
 
 class MainApplication(programbase):
@@ -317,9 +310,15 @@ class MainApplication(programbase):
             rule["src"] = str(mainwidget.lineFromIP.text())
         if mainwidget.lineFromPort.text():
             rule["sport"] = str(mainwidget.lineFromPort.text())
+            if not portsOk(rule["sport"]):
+                KMessageBox.error(mainwidget, i18n("Ports be in valid format.\n\nE.g.: 1000-1500,2000,3000"), i18n("Error"))
+                return
         if mainwidget.lineToIP.text():
             rule["dst"] = str(mainwidget.lineToIP.text())
         if mainwidget.lineToPort.text():
+            if not portsOk(rule["dport"]):
+                KMessageBox.error(mainwidget, i18n("Ports be in valid format.\n\nE.g.: 1000-1500,2000,3000"), i18n("Error"))
+                return
             rule["dport"] = str(mainwidget.lineToPort.text())
        
         if mainwidget.comboDirection.currentItem():
