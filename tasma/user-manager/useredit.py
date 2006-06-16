@@ -152,6 +152,70 @@ class UserGroup(QCheckListItem):
         self.stack.slotGroup()
 
 
+class UserGroupList(QWidget):
+    def __init__(self, stack, parent):
+        QWidget.__init__(self, parent)
+        vb = QVBoxLayout(self)
+        vb.setSpacing(3)
+        
+        self.groups = QListView(self)
+        self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
+        self.groups.addColumn(i18n("Group"))
+        self.groups.addColumn(i18n("Permission"))
+        self.groups.setResizeMode(QListView.LastColumn)
+        self.groups.setAllColumnsShowFocus(True)
+        vb.addWidget(self.groups, 2)
+        
+        hb = QHBox(self)
+        lab = QLabel(i18n("Main group:"), hb)
+        self.w_main_group = QComboBox(False, hb)
+        self.w_main_group.setEnabled(False)
+        vb.addWidget(hb)
+        
+        self.desc = QTextEdit(self)
+        self.desc.setReadOnly(True)
+        vb.addWidget(self.desc, 1)
+    
+    def populate(self, groups):
+        group = groups.firstChild()
+        self.groups.clear()
+        while group:
+            g = UserGroup(self, self.groups, group)
+            if not g.comment:
+                g.setVisible(False)
+            self.w_main_group.insertItem(g.name)
+            group = group.nextSibling()
+    
+    def slotGroup(self):
+        groups = []
+        item = self.groups.firstChild()
+        while item:
+            if item.state() == item.On:
+                groups.append(item.name)
+            item = item.nextSibling()
+        if groups == []:
+            self.w_main_group.setEnabled(False)
+        else:
+            self.w_main_group.setEnabled(True)
+            self.w_main_group.clear()
+            for item in groups:
+                self.w_main_group.insertItem(item)
+    
+    def slotSelect(self):
+        item = self.groups.selectedItem()
+        if item:
+            self.desc.setText("<b>%s</b><br>%s" % (item.name, item.desc))
+        else:
+            self.desc.setText("")
+    
+    def slotToggle(self, bool):
+        group = self.groups.firstChild()
+        while group:
+            if not group.comment:
+                group.setVisible(bool)
+            group = group.nextSibling()
+
+
 class UserStack(QVBox):
     def __init__(self, parent, link):
         QVBox.__init__(self, parent)
@@ -163,7 +227,6 @@ class UserStack(QVBox):
         lab = QLabel(u"<b>%s</b>" % i18n("Add a New User"), w)
         hb.addWidget(lab)
         toggle = QCheckBox(i18n("Show all groups"), w)
-        self.connect(toggle, SIGNAL("toggled(bool)"), self.slotToggle)
         hb.addWidget(toggle, 0, Qt.AlignRight)
         
         hb = QHBox(self)
@@ -193,27 +256,8 @@ class UserStack(QVBox):
         self.info = KActiveLabel(" ", w)
         grid.addMultiCellWidget(self.info, 8, 8, 0, 1)
         
-        w = QWidget(hb)
-        vb = QVBoxLayout(w)
-        vb.setSpacing(3)
-        
-        self.groups = QListView(w)
-        self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
-        self.groups.addColumn(i18n("Group"))
-        self.groups.addColumn(i18n("Permission"))
-        self.groups.setResizeMode(QListView.LastColumn)
-        self.groups.setAllColumnsShowFocus(True)
-        vb.addWidget(self.groups, 2)
-        
-        hb = QHBox(w)
-        lab = QLabel(i18n("Main group:"), hb)
-        self.w_main_group = QComboBox(False, hb)
-        self.w_main_group.setEnabled(False)
-        vb.addWidget(hb)
-        
-        self.desc = QTextEdit(w)
-        self.desc.setReadOnly(True)
-        vb.addWidget(self.desc, 1)
+        self.u_groups = UserGroupList(self, hb)
+        self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
         
         hb = QHBox(self)
         hb.setSpacing(12)
@@ -238,45 +282,9 @@ class UserStack(QVBox):
             self.info.setText("")
             self.add_but.setEnabled(True)
     
-    def slotSelect(self):
-        item = self.groups.selectedItem()
-        if item:
-            self.desc.setText("<b>%s</b><br>%s" % (item.name, item.desc))
-        else:
-            self.desc.setText("")
-    
-    def slotGroup(self):
-        groups = []
-        item = self.groups.firstChild()
-        while item:
-            if item.state() == item.On:
-                groups.append(item.name)
-            item = item.nextSibling()
-        if groups == []:
-            self.w_main_group.setEnabled(False)
-        else:
-            self.w_main_group.setEnabled(True)
-            self.w_main_group.clear()
-            for item in groups:
-                self.w_main_group.insertItem(item)
-    
-    def slotToggle(self, bool):
-        group = self.groups.firstChild()
-        while group:
-            if not group.comment:
-                group.setVisible(bool)
-            group = group.nextSibling()
-    
     def slotAdd(self):
         #FIXME: check and add
         self.parent().slotCancel()
     
     def startAdd(self, groups):
-        group = groups.firstChild()
-        self.groups.clear()
-        while group:
-            g = UserGroup(self, self.groups, group)
-            if not g.comment:
-                g.setVisible(False)
-            self.w_main_group.insertItem(g.name)
-            group = group.nextSibling()
+        self.u_groups.populate(groups)
