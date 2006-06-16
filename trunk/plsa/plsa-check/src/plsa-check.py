@@ -125,6 +125,9 @@ def main():
         # Release comparison seems enough
         installed_packages[package] = int(ctx.installdb.get_version(package)[1])
 
+    # List of orphaned packages
+    orphaned = []
+
     # Get list of reporsitories
     plsas = {}
     for repo in ctx.repodb.list():
@@ -167,15 +170,12 @@ def main():
             print _("Found PLSA database of %s in cache") % repo
             plsas[repo] = tmpfile
 
-    # Finalize PISI API - We don't need it anymore
-    pisi.api.finalize()
-
     print
 
     # Pass if no PLSA available
     if not len(plsas):
         print _("No PLSA database available")
-        return
+        finalize()
 
     print _("Scanning advisories...")
     print
@@ -200,8 +200,19 @@ def main():
                 package = pack.getTagData("Name")
                 release = pack.getTagData("Release")
 
-                # Pass if package is not installed
-                if package not in installed_packages:
+                # Pass if package repo is missing
+                try:
+                    pack_repo = ctx.packagedb.which_repo(package)
+                except:
+                    if package not in orphaned:
+                        orphaned.append(package)
+                    pack = pack.nextTag()
+                    continue
+
+                # Pass if package does not come from current repo or
+                # package is not installed
+                if  pack_repo != repo or \
+                    package not in installed_packages:
                     pack = pack.nextTag()
                     continue
 
@@ -220,7 +231,7 @@ def main():
                 printPLSA(repo, id, title, summary, up, fix, no_fix)
 
             adv = adv.nextTag()
-
+            
     print
 
     # Show tips
@@ -235,5 +246,11 @@ def main():
         print
         print _("Note: You can use --package option to see affected packages.")
 
+    finalize()
+
+def finalize(r=0):
+    pisi.api.finalize()
+    sys.exit(r)
+
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
