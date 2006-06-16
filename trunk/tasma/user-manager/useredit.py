@@ -112,13 +112,16 @@ class Homedir:
 
 
 class Password:
-    def __init__(self, w, grid):
+    def __init__(self, stack, w, grid):
+        self.stack = stack
         lab = QLabel(i18n("Password:"), w)
         self.password = QLineEdit(w)
+        self.password.connect(self.password, SIGNAL("textChanged(const QString &)"), self.slotChange)
         self.password.setEchoMode(QLineEdit.Password)
         
         lab2 = QLabel(i18n("Confirm password:"), w)
         self.password2 = QLineEdit(w)
+        self.password2.connect(self.password2, SIGNAL("textChanged(const QString &)"), self.slotChange)
         self.password2.setEchoMode(QLineEdit.Password)
         
         row = grid.numRows()
@@ -127,6 +130,16 @@ class Password:
         row += 1
         grid.addWidget(lab2, row, 0, Qt.AlignRight)
         grid.addWidget(self.password2, row, 1)
+    
+    def slotChange(self, text):
+        self.stack.checkAdd()
+    
+    def check(self):
+        if self.password.text() == "":
+            return i18n("You should enter a password for this user")
+        if self.password.text() != self.password2.text():
+            return i18n("Passwords don't match")
+        return None
 
 
 class UserGroup(QCheckListItem):
@@ -217,7 +230,6 @@ class UserGroupList(QWidget):
             group = group.nextSibling()
     
     def check(self):
-        print self.main_group.count()
         if self.main_group.count() == 0:
             return i18n("You should select at least one group this user belongs to")
         return None
@@ -258,7 +270,7 @@ class UserStack(QVBox):
         grid.addWidget(lab, 5, 0, Qt.AlignRight)
         grid.addWidget(self.w_shell, 5, 1)
         
-        self.u_password = Password(w, grid)
+        self.u_password = Password(self, w, grid)
         
         self.info = KActiveLabel(" ", w)
         grid.addMultiCellWidget(self.info, 8, 8, 0, 1)
@@ -281,6 +293,8 @@ class UserStack(QVBox):
         err = self.u_id.check()
         if not err:
             err = self.u_name.check()
+        if not err:
+            err = self.u_password.check()
         if not err:
             err = self.u_groups.check()
         
