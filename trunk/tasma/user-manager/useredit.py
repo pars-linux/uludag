@@ -11,12 +11,14 @@
 
 from qt import *
 from kdecore import *
+from kdeui import *
 
 from utility import *
 
 
 class UID:
-    def __init__(self, w, grid):
+    def __init__(self, stack, w, grid):
+        self.stack = stack
         lab = QLabel(i18n("ID:"), w)
         hb = QHBox(w)
         hb.setSpacing(6)
@@ -31,6 +33,7 @@ class UID:
     
     def slotToggle(self, bool):
         self.uid.setEnabled(bool)
+        self.stack.checkAdd()
     
     def text(self):
         if self.uid_auto.isChecked():
@@ -46,13 +49,18 @@ class UID:
 
 
 class Name:
-    def __init__(self, w, grid):
+    def __init__(self, stack, w, grid):
+        self.stack = stack
         lab = QLabel(i18n("Name:"), w)
         self.name = QLineEdit(w)
         self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]*"), self.name))
+        self.name.connect(self.name, SIGNAL("textChanged(const QString &)"), self.slotChange)
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.name, row, 1)
+    
+    def slotChange(self, text):
+        self.stack.checkAdd()
     
     def text(self):
         return str(self.name.text())
@@ -165,9 +173,9 @@ class UserStack(QVBox):
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(6)
         
-        self.u_id = UID(w, grid)
+        self.u_id = UID(self, w, grid)
         
-        self.u_name = Name(w, grid)
+        self.u_name = Name(self, w, grid)
         
         self.u_realname = RealName(w, grid)
         
@@ -182,7 +190,7 @@ class UserStack(QVBox):
         
         self.u_password = Password(w, grid)
         
-        self.info = QLabel(" ", w)
+        self.info = KActiveLabel(" ", w)
         grid.addMultiCellWidget(self.info, 8, 8, 0, 1)
         
         w = QWidget(hb)
@@ -227,6 +235,7 @@ class UserStack(QVBox):
             self.info.setText(u"<font color=red>%s</font>" % err)
             self.add_but.setEnabled(False)
         else:
+            self.info.setText("")
             self.add_but.setEnabled(True)
     
     def slotSelect(self):
