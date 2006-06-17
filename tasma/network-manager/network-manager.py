@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005-2006, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -26,7 +26,7 @@ version = "1.1"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("net_kga",
+    about_data = KAboutData("network-manager",
                             "Network Connections",
                             version,
                             description,
@@ -60,15 +60,15 @@ class MainApplication(programbase):
             self.resize(520, 420)
         else:
             KCModule.__init__(self,parent,name)
-            KGlobal.locale().insertCatalogue("net_kga")
+            KGlobal.locale().insertCatalogue("network-manager")
             # Create a configuration object.
-            self.config = KConfig("net_kga")
+            self.config = KConfig("network-manager")
             self.setButtons(0)
             self.aboutdata = AboutData()
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        KGlobal.iconLoader().addAppDir("net_kga")
+        KGlobal.iconLoader().addAppDir("network-manager")
         
         try:
             mainwidget = mainwin.Widget(self)
@@ -127,7 +127,7 @@ def main():
     sys.exit(myapp.exec_loop())
     
 # Factory function for KControl
-def create_net_kga(parent,name):
+def create_network_manager(parent,name):
     global kapp
     
     kapp = KApplication.kApplication()
