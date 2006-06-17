@@ -14,7 +14,7 @@
 import kdedistutils
 
 app_data = [
-    'net_kga.py',
+    'network-manager.py',
     'mainwin.py',
     'connection.py',
     'widgets.py',
@@ -34,15 +34,15 @@ app_data = [
 ]
 
 kdedistutils.setup(
-    name="net_kga",
+    name="network-manager",
     version="1.1",
     author="Gürer Özen",
-    author_email="gurer@uludag.org.tr",
-    url="http://www.uludag.org.tr/projects/comar",
+    author_email="gurer@pardus.org.tr",
+    url="http://www.pardus.org.tr/projects/comar",
     min_qt_version = "3.3.0",
     license = "GPL",
     application_data = app_data,
-    executable_links = [('net-kga','net_kga.py')],
+    executable_links = [('network-manager','network-manager.py')],
     i18n = ('po', ['.']),
-    kcontrol_modules = [ ('net_kga.desktop','net_kga.py')],
+    kcontrol_modules = [ ('network-manager.desktop','network-manager.py')],
     )
