@@ -10,129 +10,86 @@
 #
 
 import sys
+
 from qt import *
 from kdecore import *
 from kdeui import *
+
 import mainwin
 from icons import icons
 import comar
 
-def I18N_NOOP(str):
-    return str
+def I18N_NOOP(x):
+    return x
 
-description = I18N_NOOP("Network connections")
-version = "1.1"
+mod_version = "1.1"
+mod_app = "network-manager"
+
 
 def AboutData():
-    global version,description
-    
-    about_data = KAboutData("network-manager",
-                            "Network Connections",
-                            version,
-                            description,
-                            KAboutData.License_GPL,
-                            "(C) 2005-2006 UEKAE/TÜBİTAK",
-                            None, None,
-                            "gurer@pardus.org.tr")
-    
-    about_data.addAuthor("Gürer Özen", None, "gurer@pardus.org.tr")
-    
-    return about_data
+    return KAboutData(
+        mod_app,
+        "Network Manager",
+        mod_version,
+        I18N_NOOP("Network Manager"),
+        KAboutData.License_GPL,
+        "(C) 2005-2006 UEKAE/TÜBİTAK",
+        None,
+        None,
+        "bugs@pardus.org.tr"
+    )
+
+def attachMainWidget(self):
+    KGlobal.iconLoader().addAppDir(mod_app)
+    icons.load_icons()
+    self.mainwidget = mainwin.Widget(self)
+    toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
+    toplayout.addWidget(self.mainwidget)
+    self.aboutus = KAboutApplication(self)
 
 
-# Are we running as a separate standalone application or in KControl?
-standalone = __name__=='__main__'
-
-if standalone:
-    programbase = QDialog
-else:
-    programbase = KCModule
-    
-class MainApplication(programbase):
-    def __init__(self, parent=None, name=None):
-        global standalone
-        global mainwidget
-
-        if standalone:
-            QDialog.__init__(self,parent,name)
-            self.setCaption(i18n("Network Connections"))
-            self.setMinimumSize(520, 420)
-            self.resize(520, 420)
-        else:
-            KCModule.__init__(self,parent,name)
-            KGlobal.locale().insertCatalogue("network-manager")
-            # Create a configuration object.
-            self.config = KConfig("network-manager")
-            self.setButtons(0)
-            self.aboutdata = AboutData()
-
-        # The appdir needs to be explicitly otherwise we won't be able to
-        # load our icons and images.
-        KGlobal.iconLoader().addAppDir("network-manager")
-        
-        try:
-            mainwidget = mainwin.Widget(self)
-        except comar.Error:
-            QMessageBox.warning(self, "Cannot connect to COMAR!",
-                "Please restart COMAR daemon and try again.",
-                QMessageBox.Ok, QMessageBox.NoButton)
-            raise Exception
-
-        toplayout = QVBoxLayout( self, 0, KDialog.spacingHint() )
-        toplayout.addWidget(mainwidget)
-
-        self.aboutus = KAboutApplication(self)
-
-    def __del__(self):
-        pass
-
-    def exec_loop(self):
-        global programbase
-        
-        programbase.exec_loop(self)
-
-    # KControl virtual void methods
-    def load(self):
-        pass
-    def save(self):
-        pass
-    def defaults(self):
-        pass        
-    def sysdefaults(self):
-        pass
+class Module(KCModule):
+    def __init__(self, parent, name):
+        KCModule.__init__(self, parent, name)
+        KGlobal.locale().insertCatalogue(mod_app)
+        self.config = KConfig(mod_app)
+        self.setButtons(self.Help)
+        self.aboutdata = AboutData()
+        attachMainWidget(self)
     
     def aboutData(self):
-        # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
-    
-    def buttons(self):
-        # Only supply a Help button. Other choices are Default and Apply.
-        return KCModule.Help
 
-# This is the entry point used when running this module outside of kcontrol.
-def main():
-    global kapp
-    
-    about_data = AboutData()
-    KCmdLineArgs.init(sys.argv, about_data)
-    
-    if not KUniqueApplication.start():
-        print i18n("Network KGA is already running!")
-        return
-    
-    kapp = KUniqueApplication(True, True, True)
-    myapp = MainApplication()
-    kapp.setMainWidget(myapp)
-    icons.load_icons()
-    sys.exit(myapp.exec_loop())
-    
-# Factory function for KControl
-def create_network_manager(parent,name):
+
+# KCModule factory
+def create_network_manager(parent, name):
     global kapp
     
     kapp = KApplication.kApplication()
-    icons.load_icons()
-    return MainApplication(parent, name)
+    return Module(parent, name)
 
-if standalone:
+
+# Standalone
+def main():
+    global kapp
+    
+    about = AboutData()
+    KCmdLineArgs.init(sys.argv, about)
+    KUniqueApplication.addCmdLineOptions()
+    
+    if not KUniqueApplication.start():
+        print i18n("Network manager module is already started!")
+        return
+    
+    kapp = KUniqueApplication(True, True, True)
+    win = QDialog()
+    win.setCaption(i18n("Network Manager"))
+    win.setMinimumSize(520, 440)
+    win.resize(520, 440)
+    attachMainWidget(win)
+    kapp.setMainWidget(win)
+    sys.exit(win.exec_loop())
+
+
+if __name__ == "__main__":
     main()
