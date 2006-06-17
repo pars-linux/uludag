@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-15 15:17+0300\n"
+"POT-Creation-Date: 2006-06-17 14:37+0300\n"
 "PO-Revision-Date: 2006-06-15 15:23+0300\n"
 "Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
 "Language-Team: Türkçe <->\n"
@@ -15,6 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11\n"
+
+#: user-manager.py:30
+msgid "User Management"
+msgstr "Kullanıcı Yönetimi"
+
+#: user-manager.py:76
+msgid "User manager module is already started!"
+msgstr "Kullanıcı yönetim modülü zaten çalışıyor!"
+
+#: user-manager.py:81
+msgid "User Manager"
+msgstr "Kullanıcı Yöneticisi"
 
 #: browser.py:91
 msgid "Show system user and groups"
@@ -48,83 +60,82 @@ msgstr "Kullanıcılar"
 msgid "Groups"
 msgstr "Gruplar"
 
-#: user-manager.py:30
-msgid "User Management"
-msgstr "Kullanıcı Yönetimi"
-
-#: user-manager.py:76
-msgid "User manager module is already started!"
-msgstr "Kullanıcı yönetim modülü zaten çalışıyor!"
-
-#: user-manager.py:81
-msgid "User Manager"
-msgstr "Kullanıcı Yöneticisi"
-
-#: useredit.py:20 groupedit.py:20
+#: useredit.py:22 groupedit.py:21
 msgid "ID:"
 msgstr "No:"
 
-#: useredit.py:26 groupedit.py:26
+#: useredit.py:28 groupedit.py:27
 msgid "Select manually"
 msgstr "Elle seç"
 
-#: useredit.py:44
+#: useredit.py:47
 msgid "Enter a user ID or use auto selection"
 msgstr "Otomatik seçimi kullanın yada kullanıcı No'sunu girin"
 
-#: useredit.py:50
+#: useredit.py:54
 msgid "Name:"
 msgstr "İsim:"
 
-#: useredit.py:62
+#: useredit.py:70
 msgid "Enter a user name"
 msgstr "Bir kullanıcı adı girin"
 
-#: useredit.py:68
+#: useredit.py:76
 msgid "Real name:"
 msgstr "Gerçek İsim:"
 
-#: useredit.py:82
+#: useredit.py:90
 msgid "Home:"
 msgstr "Ev:"
 
-#: useredit.py:100
+#: useredit.py:108
 msgid "Select user's home directory"
 msgstr "Kullanıcının ev dizinini seçin"
 
-#: useredit.py:108
+#: useredit.py:117
 msgid "Password:"
 msgstr "Parola:"
 
-#: useredit.py:112
+#: useredit.py:122
 msgid "Confirm password:"
 msgstr "Parola onay:"
 
-#: useredit.py:155
-msgid "Add a New User"
-msgstr "Yeni Bir Kullanıcı Ekle"
+#: useredit.py:139
+msgid "You should enter a password for this user"
+msgstr "Bu kullanıcı için bir parola girmelisiniz"
 
-#: useredit.py:157
-msgid "Show all groups"
-msgstr "Bütün grupları göster"
+#: useredit.py:141
+msgid "Passwords don't match"
+msgstr "Parolalar uyuşmuyor"
 
-#: useredit.py:176
-msgid "Shell:"
-msgstr "Kabuk:"
-
-#: useredit.py:194
+#: useredit.py:177
 msgid "Group"
 msgstr "Grup"
 
-#: useredit.py:195
+#: useredit.py:178
 msgid "Permission"
 msgstr "İzin"
 
-#: useredit.py:201
+#: useredit.py:184
 msgid "Main group:"
 msgstr "Ana grup:"
 
-#: groupedit.py:48
+#: useredit.py:234
+msgid "You should select at least one group this user belongs to"
+msgstr "Bu kullanıcının üyesi olacağı en az bir grup seçmelisiniz"
+
+#: useredit.py:246
+msgid "Add a New User"
+msgstr "Yeni Bir Kullanıcı Ekle"
+
+#: useredit.py:248
+msgid "Show all groups"
+msgstr "Bütün grupları göster"
+
+#: useredit.py:268
+msgid "Shell:"
+msgstr "Kabuk:"
+
+#: groupedit.py:49
 msgid "Add a New Group"
 msgstr "Yeni Bir Grup Ekle"
-

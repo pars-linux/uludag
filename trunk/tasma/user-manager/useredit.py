@@ -259,6 +259,8 @@ class UserStack(QVBox):
         
         self.u_name = Name(self, w, grid)
         
+        self.u_password = Password(self, w, grid)
+        
         self.u_realname = RealName(w, grid)
         
         self.u_home = Homedir(w, grid)
@@ -267,10 +269,8 @@ class UserStack(QVBox):
         self.w_shell = QComboBox(True, w)
         self.w_shell.insertItem("/bin/bash", 0)
         self.w_shell.insertItem("/bin/false", 1)
-        grid.addWidget(lab, 5, 0, Qt.AlignRight)
-        grid.addWidget(self.w_shell, 5, 1)
-        
-        self.u_password = Password(self, w, grid)
+        grid.addWidget(lab, 7, 0, Qt.AlignRight)
+        grid.addWidget(self.w_shell, 7, 1)
         
         self.info = KActiveLabel(" ", w)
         grid.addMultiCellWidget(self.info, 8, 8, 0, 1)

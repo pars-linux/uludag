@@ -11,6 +11,7 @@
 
 from qt import *
 from kdecore import *
+from kdeui import *
 
 from utility import *
 
@@ -43,13 +44,13 @@ class GroupStack(QVBox):
     def __init__(self, parent, link):
         QVBox.__init__(self, parent)
         self.setMargin(6)
-        self.setSpacing(6)
+        self.setSpacing(24)
         
         lab = QLabel("<b>%s</b>" % i18n("Add a New Group"), self)
         
         w = QWidget(self)
         grid = QGridLayout(w, 0, 0)
-        grid.setSpacing(6)
+        grid.setSpacing(24)
         
         self.g_id = GID(w, grid)
         
@@ -57,6 +58,9 @@ class GroupStack(QVBox):
         self.g_name = QLineEdit(w)
         grid.addWidget(lab, 1, 0, Qt.AlignRight)
         grid.addWidget(self.g_name, 1, 1)
+        
+        self.info = KActiveLabel(w)
+        grid.addMultiCellWidget(self.info, 2, 2, 0, 1)
         
         hb = QHBox(self)
         hb.setSpacing(12)
