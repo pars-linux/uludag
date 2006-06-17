@@ -93,12 +93,10 @@ class Homedir:
         self.home = QLineEdit(hb)
         but = QPushButton("...", hb)
         w.connect(but, SIGNAL("clicked()"), self.browse)
-        self.home_create = QCheckBox("Create directory", w)
         
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
-        grid.addWidget(self.home_create, row + 1, 1)
     
     def browse(self):
         s = QFileDialog.getExistingDirectory(
@@ -253,7 +251,7 @@ class UserStack(QVBox):
         
         w = QWidget(hb)
         grid = QGridLayout(w, 0, 0)
-        grid.setSpacing(6)
+        grid.setSpacing(9)
         
         self.u_id = UID(self, w, grid)
         
@@ -262,6 +260,11 @@ class UserStack(QVBox):
         self.u_password = Password(self, w, grid)
         
         self.u_realname = RealName(w, grid)
+        
+        line = QFrame(w)
+        line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
+        row = grid.numRows()
+        grid.addMultiCellWidget(line, row, row, 0, 1)
         
         self.u_home = Homedir(w, grid)
         
@@ -272,8 +275,21 @@ class UserStack(QVBox):
         grid.addWidget(lab, 7, 0, Qt.AlignRight)
         grid.addWidget(self.w_shell, 7, 1)
         
-        self.info = KActiveLabel(" ", w)
-        grid.addMultiCellWidget(self.info, 8, 8, 0, 1)
+        line = QFrame(w)
+        line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
+        row = grid.numRows()
+        grid.addMultiCellWidget(line, row, row, 0, 1)
+        
+        w2 = QWidget(w)
+        hb2 = QHBoxLayout(w2)
+        hb2.setMargin(6)
+        hb2.setSpacing(6)
+        lab = QLabel(w2)
+        lab.setPixmap(getIconSet("help.png", KIcon.Panel).pixmap(QIconSet.Automatic, QIconSet.Normal))
+        hb2.addWidget(lab, 0, hb2.AlignTop)
+        self.info = KActiveLabel(" ", w2)
+        hb2.addWidget(self.info)
+        grid.addMultiCellWidget(w2, 9, 9, 0, 1)
         
         self.u_groups = UserGroupList(self, hb)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
