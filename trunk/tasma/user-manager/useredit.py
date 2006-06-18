@@ -19,17 +19,22 @@ from utility import *
 
 
 class UID:
-    def __init__(self, stack, w, grid):
+    def __init__(self, stack, w, grid, edit=False):
+        self.edit = edit
         self.stack = stack
         lab = QLabel(i18n("ID:"), w)
-        hb = QHBox(w)
-        hb.setSpacing(6)
-        self.uid = QLineEdit(hb)
-        lab.setBuddy(self.uid)
-        self.uid.setValidator(QIntValidator(0, 65535, self.uid))
-        self.uid.setEnabled(False)
-        self.uid_auto = QCheckBox(i18n("Select manually"), hb)
-        w.connect(self.uid_auto, SIGNAL("toggled(bool)"), self.slotToggle)
+        if edit:
+            self.uid = QLabel(w)
+            hb = self.uid
+        else:
+            hb = QHBox(w)
+            hb.setSpacing(6)
+            self.uid = QLineEdit(hb)
+            lab.setBuddy(self.uid)
+            self.uid.setValidator(QIntValidator(0, 65535, self.uid))
+            self.uid.setEnabled(False)
+            self.uid_auto = QCheckBox(i18n("Select manually"), hb)
+            w.connect(self.uid_auto, SIGNAL("toggled(bool)"), self.slotToggle)
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
@@ -39,7 +44,7 @@ class UID:
         self.stack.checkAdd()
     
     def text(self):
-        if self.uid_auto.isChecked():
+        if self.edit or self.uid_auto.isChecked():
             return str(self.uid.text())
         else:
             return "auto"
@@ -52,13 +57,16 @@ class UID:
 
 
 class Name:
-    def __init__(self, stack, w, grid):
+    def __init__(self, stack, w, grid, edit=False):
         self.stack = stack
         lab = QLabel(i18n("Name:"), w)
-        self.name = QLineEdit(w)
-        lab.setBuddy(self.name)
-        self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]*"), self.name))
-        self.name.connect(self.name, SIGNAL("textChanged(const QString &)"), self.slotChange)
+        if edit:
+            self.name = QLabel(w)
+        else:
+            self.name = QLineEdit(w)
+            lab.setBuddy(self.name)
+            self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]*"), self.name))
+            self.name.connect(self.name, SIGNAL("textChanged(const QString &)"), self.slotChange)
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.name, row, 1)
@@ -295,14 +303,17 @@ class UserGroupList(QWidget):
 
 
 class UserStack(QVBox):
-    def __init__(self, parent, link):
+    def __init__(self, parent, link, edit=False):
         QVBox.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)
         
         w = QWidget(self)
         hb = QHBoxLayout(w)
-        lab = QLabel(u"<b>%s</b>" % i18n("Add a New User"), w)
+        if edit:
+            lab = QLabel(u"<b>%s</b>" % i18n("Edit User"), w)
+        else:
+            lab = QLabel(u"<b>%s</b>" % i18n("Add a New User"), w)
         hb.addWidget(lab)
         toggle = QCheckBox(i18n("Show all groups"), w)
         hb.addWidget(toggle, 0, Qt.AlignRight)
@@ -314,9 +325,9 @@ class UserStack(QVBox):
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(9)
         
-        self.u_id = UID(self, w, grid)
+        self.u_id = UID(self, w, grid, edit)
         
-        self.u_name = Name(self, w, grid)
+        self.u_name = Name(self, w, grid, edit)
         
         self.u_password = Password(self, w, grid)
         
@@ -353,9 +364,13 @@ class UserStack(QVBox):
         hb = QHBox(self)
         hb.setSpacing(12)
         QLabel(" ", hb)
-        but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
+        if edit:
+            but = QPushButton(getIconSet("remove.png", KIcon.Small), i18n("Delete"), hb)
+            but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
+        else:
+            but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
+            self.connect(but, SIGNAL("clicked()"), self.slotAdd)
         self.add_but = but
-        self.connect(but, SIGNAL("clicked()"), self.slotAdd)
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
         
