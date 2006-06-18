@@ -65,6 +65,7 @@ class Name:
     
     def slotChange(self, text):
         self.stack.checkAdd()
+        self.stack.u_home.guess(text)
     
     def text(self):
         return str(self.name.text())
@@ -103,6 +104,11 @@ class Homedir:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
+    
+    def guess(self, name):
+        cur = unicode(self.home.text())
+        if cur == "" or cur.startswith("/home/"):
+            self.home.setText("/home/" + name)
     
     def browse(self):
         s = QFileDialog.getExistingDirectory(
