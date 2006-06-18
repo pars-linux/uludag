@@ -27,6 +27,7 @@ class UserManager(QWidgetStack):
         QWidgetStack.__init__(self, parent)
         self.browse = browser.BrowseStack(self, link)
         self.user = useredit.UserStack(self, link)
+        self.useredit = useredit.UserStack(self, link, edit=True)
         self.group = groupedit.GroupStack(self, link)
     
     def slotComar(self, sock):
@@ -47,4 +48,4 @@ class UserManager(QWidgetStack):
             self.raiseWidget(self.group)
     
     def slotEdit(self):
-        pass
+        self.raiseWidget(self.useredit)
