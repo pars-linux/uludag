@@ -9,6 +9,8 @@
 # any later version.
 #
 
+import os
+
 from qt import *
 from kdecore import *
 from kdeui import *
@@ -146,6 +148,31 @@ class Password:
         return None
 
 
+class Shell:
+    def __init__(self, stack, w, grid):
+        self.stack = stack
+        lab = QLabel(i18n("Shell:"), w)
+        self.shell = QComboBox(True, w)
+        lab.setBuddy(self.shell)
+        self.shell.insertItem("/bin/bash", 0)
+        self.shell.insertItem("/bin/false", 1)
+        self.shell.connect(self.shell, SIGNAL("textChanged(const QString &)"), self.slotChange)
+        row = grid.numRows()
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addWidget(self.shell, row, 1)
+    
+    def slotChange(self, text):
+        self.stack.checkAdd()
+    
+    def check(self):
+        path = unicode(self.shell.currentText())
+        if not os.path.isfile(path):
+            return i18n("Please specify an existing shell command")
+        if not os.access(path, os.X_OK):
+            return i18n("Specified shell command is not executable")
+        return None
+
+
 class UserGroup(QCheckListItem):
     def __init__(self, stack, parent, group):
         self.stack = stack
@@ -278,13 +305,7 @@ class UserStack(QVBox):
         
         self.u_home = Homedir(w, grid)
         
-        lab = QLabel(i18n("Shell:"), w)
-        self.w_shell = QComboBox(True, w)
-        lab.setBuddy(self.w_shell)
-        self.w_shell.insertItem("/bin/bash", 0)
-        self.w_shell.insertItem("/bin/false", 1)
-        grid.addWidget(lab, 7, 0, Qt.AlignRight)
-        grid.addWidget(self.w_shell, 7, 1)
+        self.u_shell = Shell(self, w, grid)
         
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
@@ -324,6 +345,8 @@ class UserStack(QVBox):
             err = self.u_password.check()
         if not err:
             err = self.u_groups.check()
+        if not err:
+            err = self.u_shell.check()
         
         if err:
             self.info.setText(u"<font color=red>%s</font>" % err)
