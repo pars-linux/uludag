@@ -40,7 +40,7 @@ class UID:
     
     def text(self):
         if self.uid_auto.isChecked():
-            return self.uid.text()
+            return str(self.uid.text())
         else:
             return "auto"
     
@@ -393,7 +393,7 @@ class UserStack(QVBox):
         dict["homedir"] = self.u_home.text()
         dict["groups"] = self.u_groups.text()
         
-        print dict
+        self.link.call("User.Manager.addUser", dict, 3)
         
         self.parent().slotCancel()
     
