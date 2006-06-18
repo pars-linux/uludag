@@ -23,6 +23,7 @@ class UID:
         hb = QHBox(w)
         hb.setSpacing(6)
         self.uid = QLineEdit(hb)
+        lab.setBuddy(self.uid)
         self.uid.setValidator(QIntValidator(0, 65535, self.uid))
         self.uid.setEnabled(False)
         self.uid_auto = QCheckBox(i18n("Select manually"), hb)
@@ -53,6 +54,7 @@ class Name:
         self.stack = stack
         lab = QLabel(i18n("Name:"), w)
         self.name = QLineEdit(w)
+        lab.setBuddy(self.name)
         self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]*"), self.name))
         self.name.connect(self.name, SIGNAL("textChanged(const QString &)"), self.slotChange)
         row = grid.numRows()
@@ -75,6 +77,7 @@ class RealName:
     def __init__(self, w, grid):
         lab = QLabel(i18n("Real name:"), w)
         self.name = QLineEdit(w)
+        lab.setBuddy(self.name)
         self.name.setValidator(QRegExpValidator(QRegExp("[^\n:]*"), self.name))
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
@@ -91,6 +94,7 @@ class Homedir:
         hb = QHBox(w)
         hb.setSpacing(3)
         self.home = QLineEdit(hb)
+        lab.setBuddy(self.home)
         but = QPushButton("...", hb)
         w.connect(but, SIGNAL("clicked()"), self.browse)
         
@@ -114,11 +118,13 @@ class Password:
         self.stack = stack
         lab = QLabel(i18n("Password:"), w)
         self.password = QLineEdit(w)
+        lab.setBuddy(self.password)
         self.password.connect(self.password, SIGNAL("textChanged(const QString &)"), self.slotChange)
         self.password.setEchoMode(QLineEdit.Password)
         
         lab2 = QLabel(i18n("Confirm password:"), w)
         self.password2 = QLineEdit(w)
+        lab2.setBuddy(self.password2)
         self.password2.connect(self.password2, SIGNAL("textChanged(const QString &)"), self.slotChange)
         self.password2.setEchoMode(QLineEdit.Password)
         
@@ -178,11 +184,15 @@ class UserGroupList(QWidget):
         self.groups.setAllColumnsShowFocus(True)
         vb.addWidget(self.groups, 2)
         
-        hb = QHBox(self)
-        lab = QLabel(i18n("Main group:"), hb)
-        self.main_group = QComboBox(False, hb)
+        w = QWidget(self)
+        hb = QHBoxLayout(w)
+        lab = QLabel(i18n("Main group:"), w)
+        hb.addWidget(lab, 0, Qt.AlignRight)
+        self.main_group = QComboBox(False, w)
         self.main_group.setEnabled(False)
-        vb.addWidget(hb)
+        lab.setBuddy(self.main_group)
+        hb.addWidget(self.main_group)
+        vb.addWidget(w)
         
         self.desc = QTextEdit(self)
         self.desc.setReadOnly(True)
@@ -270,6 +280,7 @@ class UserStack(QVBox):
         
         lab = QLabel(i18n("Shell:"), w)
         self.w_shell = QComboBox(True, w)
+        lab.setBuddy(self.w_shell)
         self.w_shell.insertItem("/bin/bash", 0)
         self.w_shell.insertItem("/bin/false", 1)
         grid.addWidget(lab, 7, 0, Qt.AlignRight)
