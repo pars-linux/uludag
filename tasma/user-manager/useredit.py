@@ -110,6 +110,9 @@ class Homedir:
         if cur == "" or cur.startswith("/home/"):
             self.home.setText("/home/" + name)
     
+    def text(self):
+        return unicode(self.home.text())
+    
     def browse(self):
         s = QFileDialog.getExistingDirectory(
             self.home.text(),
@@ -146,6 +149,9 @@ class Password:
     def slotChange(self, text):
         self.stack.checkAdd()
     
+    def text(self):
+        return unicode(self.password.text())
+    
     def check(self):
         if self.password.text() == "":
             return i18n("You should enter a password for this user")
@@ -169,6 +175,9 @@ class Shell:
     
     def slotChange(self, text):
         self.stack.checkAdd()
+    
+    def text(self):
+        return unicode(self.shell.currentText())
     
     def check(self):
         path = unicode(self.shell.currentText())
@@ -270,6 +279,15 @@ class UserGroupList(QWidget):
                 group.setVisible(bool)
             group = group.nextSibling()
     
+    def text(self):
+        groups = []
+        group = self.groups.firstChild()
+        while group:
+            if group.state() == group.On:
+                groups.append(group.name)
+            group = group.nextSibling()
+        return ",".join(groups)
+    
     def check(self):
         if self.main_group.count() == 0:
             return i18n("You should select at least one group this user belongs to")
@@ -360,9 +378,23 @@ class UserStack(QVBox):
         else:
             self.info.setText("")
             self.add_but.setEnabled(True)
+        
+        return err
     
     def slotAdd(self):
-        #FIXME: check and add
+        if self.checkAdd():
+            return
+        
+        dict = {}
+        dict["uid"] = self.u_id.text()
+        dict["name"] = self.u_name.text()
+        dict["realname"] = self.u_realname.text()
+        dict["password"] = self.u_password.text()
+        dict["homedir"] = self.u_home.text()
+        dict["groups"] = self.u_groups.text()
+        
+        print dict
+        
         self.parent().slotCancel()
     
     def startAdd(self, groups):
