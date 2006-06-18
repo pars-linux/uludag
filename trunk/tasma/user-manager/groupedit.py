@@ -38,7 +38,7 @@ class GID:
     
     def text(self):
         if self.gid_auto.isChecked():
-            return self.gid.text()
+            return str(self.gid.text())
         else:
             return "auto"
     
@@ -120,7 +120,16 @@ class GroupStack(QVBox):
         self.checkAdd()
     
     def slotAdd(self):
-        pass
+        if self.checkAdd():
+            return
+        
+        dict = {}
+        dict["gid"] = self.g_id.text()
+        dict["name"] = self.g_name.text()
+        
+        self.link.call("User.Manager.addGroup", dict, 4)
+        
+        self.parent().slotCancel()
     
     def checkAdd(self):
         err = self.g_id.check()
