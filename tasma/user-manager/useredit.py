@@ -374,6 +374,8 @@ class UserStack(QVBox):
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
         
+        self.link = link
+        
         self.checkAdd()
     
     def checkAdd(self):
