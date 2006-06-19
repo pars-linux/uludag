@@ -352,18 +352,18 @@ class UserStack(QVBox):
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(9)
         
-        self.u_id = UID(self, w, grid, edit)
-        
-        self.u_name = Name(self, w, grid, edit)
+        self.u_realname = RealName(w, grid)
         
         self.u_password = Password(self, w, grid)
-        
-        self.u_realname = RealName(w, grid)
         
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
         row = grid.numRows()
         grid.addMultiCellWidget(line, row, row, 0, 1)
+        
+        self.u_id = UID(self, w, grid, edit)
+        
+        self.u_name = Name(self, w, grid, edit)
         
         self.u_home = Homedir(w, grid)
         
