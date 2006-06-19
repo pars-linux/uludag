@@ -43,6 +43,9 @@ class UID:
         self.uid.setEnabled(bool)
         self.stack.checkAdd()
     
+    def setText(self, text):
+        self.uid.setText(text)
+    
     def text(self):
         if self.edit or self.uid_auto.isChecked():
             return str(self.uid.text())
@@ -78,6 +81,9 @@ class Name:
     def text(self):
         return str(self.name.text())
     
+    def setText(self, text):
+        self.name.setText(text)
+    
     def check(self):
         if self.text() == "":
             return i18n("Enter a user name")
@@ -93,6 +99,9 @@ class RealName:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.name, row, 1)
+    
+    def setText(self, text):
+        self.name.setText(text)
     
     def text(self):
         return str(self.name.text())
@@ -121,15 +130,18 @@ class Homedir:
     def text(self):
         return unicode(self.home.text())
     
+    def setText(self, text):
+        self.home.setText(text)
+    
     def browse(self):
         s = QFileDialog.getExistingDirectory(
-            self.home.text(),
+            self.text(),
             self.w,
             "lala",
             i18n("Select user's home directory"),
             False
         )
-        self.home.setText(s)
+        self.setText(s)
 
 
 class Password:
@@ -160,6 +172,10 @@ class Password:
     def text(self):
         return unicode(self.password.text())
     
+    def setText(self, text):
+        self.password.setText(text)
+        self.password.setText(text)
+    
     def check(self):
         if self.password.text() == "":
             return i18n("You should enter a password for this user")
@@ -183,6 +199,9 @@ class Shell:
     
     def slotChange(self, text):
         self.stack.checkAdd()
+    
+    def setText(self, text):
+        self.shell.setCurrentText(text)
     
     def text(self):
         return unicode(self.shell.currentText())
@@ -296,6 +315,14 @@ class UserGroupList(QWidget):
             group = group.nextSibling()
         return ",".join(groups)
     
+    def setText(self, groups):
+        groups = groups.split(",")
+        item = self.groups.firstChild()
+        while item:
+            if item.name in groups:
+                item.setState(item.On)
+            item = item.nextSibling()
+    
     def check(self):
         if self.main_group.count() == 0:
             return i18n("You should select at least one group this user belongs to")
@@ -375,8 +402,6 @@ class UserStack(QVBox):
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
         
         self.link = link
-        
-        self.checkAdd()
     
     def checkAdd(self):
         err = self.u_id.check()
@@ -414,5 +439,36 @@ class UserStack(QVBox):
         
         self.parent().slotCancel()
     
+    def reset(self):
+        self.u_id.setText("")
+        self.u_name.setText("")
+        self.u_realname.setText("")
+        self.u_password.setText("")
+        self.u_home.setText("")
+        self.u_groups.setText("")
+        self.checkAdd()
+    
     def startAdd(self, groups):
         self.u_groups.populate(groups)
+        self.reset()
+    
+    def startEdit(self, groups, uid):
+        self.u_groups.populate(groups)
+        self.reset()
+        self.link.call("User.Manager.userInfo", [ "uid", uid ], 5)
+    
+    def slotInfo(self, reply):
+        for line in unicode(reply[2]).split("\n"):
+            key, value = line.split(" ", 1)
+            if key == "uid":
+                self.u_id.setText(value)
+            elif key == "name":
+                self.u_name.setText(value)
+            elif key == "realname":
+                self.u_realname.setText(value)
+            elif key == "homedir":
+                self.u_home.setText(value)
+            elif key == "shell":
+                self.u_shell.setText(value)
+            elif key == "groups":
+                self.u_groups.setText(value)
