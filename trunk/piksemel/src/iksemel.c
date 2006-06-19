@@ -641,7 +641,11 @@ sax_core (iksparser *prs, char *buf, int len)
 				}
 				if ((c & mask) == 0) return IKS_BADXML;
 				prs->uni_len = 1;
-				if (stack_old == -1) stack_old = pos;
+				if (stack_old == -1
+					&& (prs->context == C_TAG
+						|| prs->context == C_ATTRIBUTE_1
+						|| prs->context == C_VALUE_APOS
+						|| prs->context == C_VALUE_QUOT)) stack_old = pos;
 				goto cont;
 			}
 		}
@@ -714,6 +718,7 @@ sax_core (iksparser *prs, char *buf, int len)
 					stack_old = -1;
 					STACK_PUSH_END;
 					re = 1;
+					break;
 				}
 				if (stack_old == -1) stack_old = pos;
 				break;
@@ -1829,6 +1834,8 @@ tagHook (struct dom_data *data, char *name, char **atts, int type)
 	}
 	if (IKS_CLOSE == type || IKS_SINGLE == type) {
 		x = iks_parent (data->current);
+		if (iks_strcmp(IKS_TAG_NAME(data->current), name) != 0)
+			return IKS_BADXML;
 		if (x)
 			data->current = x;
 		else {
