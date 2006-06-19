@@ -104,6 +104,7 @@ class BrowseStack(QVBox):
         self.users.setResizeMode(QListView.LastColumn)
         self.users.setAllColumnsShowFocus(True)
         self.connect(self.users, SIGNAL("selectionChanged()"), self.slotSelect)
+        self.connect(self.users, SIGNAL("doubleClicked(QListViewItem *, const QPoint &, int)"), self.slotDouble)
         
         self.groups = QListView(tab)
         self.groups.addColumn(i18n("ID"))
@@ -157,6 +158,9 @@ class BrowseStack(QVBox):
                 bool2 = True
         self.edit_but.setEnabled(bool)
         self.delete_but.setEnabled(bool2)
+    
+    def slotDouble(self, item, point, col):
+        self.parent().slotEdit()
     
     def slotTabChanged(self, w):
         self.slotSelect()
