@@ -15,11 +15,13 @@ from qt import *
 import browser
 import useredit
 import groupedit
+from utility import *
 
 
 class UserManager(QWidgetStack):
     def __init__(self, parent):
         link = comar.Link()
+        link.localize(languageCode())
         self.link = link
         self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
