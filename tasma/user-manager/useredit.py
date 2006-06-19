@@ -10,6 +10,7 @@
 #
 
 import os
+import string
 
 from qt import *
 from kdecore import *
@@ -78,6 +79,28 @@ class Name:
         self.stack.checkAdd()
         self.stack.u_home.guess(text)
     
+    def guess(self, text):
+        # FIXME: guess better and check for dups
+        text = unicode(text).lower()
+        text2 = ""
+        for c in text:
+            if c in string.ascii_letters:
+                text2 += c
+            elif c == " ":
+                break
+            else:
+                # i know this is ugly, just for prototype
+                c2 = None
+                if c == "ğ": c2 = "g"
+                if c == "ü": c2 = "u"
+                if c == "ş": c2 = "s"
+                if c == "ı": c2 = "i"
+                if c == "ö": c2 = "o"
+                if c == "ç": c2 = "c"
+                if c2:
+                    text2 += c2
+        self.setText(text2)
+    
     def text(self):
         return str(self.name.text())
     
@@ -91,14 +114,19 @@ class Name:
 
 
 class RealName:
-    def __init__(self, w, grid):
+    def __init__(self, stack, w, grid):
+        self.stack = stack
         lab = QLabel(i18n("Real name:"), w)
         self.name = QLineEdit(w)
         lab.setBuddy(self.name)
         self.name.setValidator(QRegExpValidator(QRegExp("[^\n:]*"), self.name))
+        self.name.connect(self.name, SIGNAL("textChanged(const QString &)"), self.slotChange)
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.name, row, 1)
+    
+    def slotChange(self, text):
+        self.stack.u_name.guess(text)
     
     def setText(self, text):
         self.name.setText(text)
@@ -352,7 +380,7 @@ class UserStack(QVBox):
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(9)
         
-        self.u_realname = RealName(w, grid)
+        self.u_realname = RealName(self, w, grid)
         
         self.u_password = Password(self, w, grid)
         
