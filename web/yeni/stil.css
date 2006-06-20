@@ -1,0 +1,149 @@
+
+/* yeniler */
+
+* {
+    font-size: 11px;
+    font-family: Tahoma, Sans-Serif;    
+}
+body {
+    margin-left:0;
+    margin-top:0;
+    margin-right:0;
+   background-image:url('images/HeadTile.png');
+    background-repeat:repeat-x;
+}
+
+#header {
+    margin: 0px 0px;
+    height:119px;
+}
+
+#menu {
+    position:absolute;
+    vertical-align:bottom;
+    padding-top:100px;
+    padding-left:10px;
+}
+
+li {
+    list-style-image: url('images/BulletCyan.png');
+}
+
+#menu li {
+    border:0;
+    padding-left:5px;
+    margin-left:4px;
+    float:left;
+}
+
+#pardus-11 {
+    float:left;
+    font-size: 16px;
+    color: #297190;
+    padding-left:30px;
+    padding-top:130px;
+    background-image:url('images/p11.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    width: 460px;
+    height: 100px;
+}
+
+#pardus-nedir {
+    color: #333;
+    padding:20px;
+    padding-top:45px;
+    background-image:url('images/p12.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    width:300px;
+    vertical-align:top;
+}
+
+#solpane {
+    width:300px;
+    vertical-align:top;
+}
+
+#haberler {
+    color: #333;
+    padding:20px;
+    padding-top:45px;
+    background-image:url('images/p14.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    width:300px;
+    vertical-align:top;
+}
+
+#sag-sutun {
+    padding-left:25px;
+    padding-top:0px;
+    background-image:url('images/sag.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    width:30px;
+    height:400px;
+    margin-top:-5px;
+    position:absolute;
+}
+
+#boxdetay1 {
+    width:210px;
+}
+
+#boxdetay2 {
+    width:270px;
+}
+
+#box2 {
+    margin-left:3px;
+    float:left;
+}
+
+#box3 {
+    width:330px;
+    border:1px solid #888;
+    padding:5px;
+    background-color:#EEAA00;
+    margin-bottom:3px;
+}
+
+#box4 {
+    width:200px;
+    border:1px solid #888;
+    padding:5px;
+    height:100px;
+    background-color:#DDD;
+    margin-bottom:3px;
+}
+
+#news {
+    margin-left:3px;
+    width:200px;
+    float:left;
+    border:1px solid #DDD;
+    padding:5px;
+    height:500px;
+    background-color:#BBB;
+}
+
+.title {
+    background-color: #FFEE00;
+    border-bottom: 1px solid #FFAA00;
+}
+
+/* eskiler feedback */
+
+
+a {
+	color: #333;
+	text-decoration: none;
+	/*font-weight: bold;*/
+}
+
+a:hover {
+	color: #000000;
+	/* text-decoration: underline; */
+    background-color:#FFCC00;
+}
