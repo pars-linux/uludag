@@ -52,12 +52,6 @@ class UID:
             return str(self.uid.text())
         else:
             return "auto"
-    
-    def check(self):
-        t = self.text()
-        if t == "":
-            return i18n("Enter a user ID or use auto selection")
-        return None
 
 
 class Name:
@@ -106,11 +100,6 @@ class Name:
     
     def setText(self, text):
         self.name.setText(text)
-    
-    def check(self):
-        if self.text() == "":
-            return i18n("Enter a user name")
-        return None
 
 
 class RealName:
@@ -198,18 +187,13 @@ class Password:
         self.stack.checkAdd()
     
     def text(self):
+        if self.password.text() != self.password2.text():
+            return None
         return unicode(self.password.text())
     
     def setText(self, text):
         self.password.setText(text)
         self.password.setText(text)
-    
-    def check(self):
-        if self.password.text() == "":
-            return i18n("You should enter a password for this user")
-        if self.password.text() != self.password2.text():
-            return i18n("Passwords don't match")
-        return None
 
 
 class Shell:
@@ -350,14 +334,9 @@ class UserGroupList(QWidget):
             if item.name in groups:
                 item.setState(item.On)
             item = item.nextSibling()
-    
-    def check(self):
-        if self.main_group.count() == 0:
-            return i18n("You should select at least one group this user belongs to")
-        return None
 
 
-class Help(QWidget):
+class Guide(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
         hb = QHBoxLayout(self)
@@ -369,8 +348,34 @@ class Help(QWidget):
         self.info = KActiveLabel(" ", self)
         hb.addWidget(self.info)
     
-    def setText(self, text):
-        self.info.setText(text)
+    def update(self):
+        err = None
+        p = self.parent()
+        
+        if p.u_realname.text() == "" and p.u_name.text() == "":
+            err = i18n("Start with typing this user's full name.")
+        
+        if not err and p.u_password.text() == "":
+            err = i18n("You should enter a password for this user.")
+        
+        if not err and p.u_password.text() == None:
+            err = i18n("Passwords don't match.")
+        
+        if not err and p.u_id.text() == "":
+            err = i18n("You must enter a user ID or use the auto selection.")
+        
+        if not err and p.u_groups.text() == "":
+            err = i18n("You should select at least one group this user belongs to.")
+        
+        if not err and p.u_name.text() == "":
+            err = i18n("You must enter a user name.")
+        
+        if err:
+            self.info.setText(u"<font color=red>%s</font>" % err)
+            self.add_but.setEnabled(False)
+        else:
+            self.info.setText("")
+            self.add_but.setEnabled(True)
 
 
 class UserStack(QVBox):
@@ -427,8 +432,8 @@ class UserStack(QVBox):
         self.u_groups = UserGroupList(self, hb)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
         
-        self.help = Help(self)
-        self.setStretchFactor(self.help, 1)
+        self.guide = Guide(self)
+        self.setStretchFactor(self.guide, 1)
         
         hb = QHBox(self)
         hb.setSpacing(12)
@@ -439,31 +444,14 @@ class UserStack(QVBox):
         else:
             but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
             self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        self.add_but = but
+        self.guide.add_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
         
         self.link = link
     
     def checkAdd(self):
-        err = self.u_id.check()
-        if not err:
-            err = self.u_name.check()
-        if not err:
-            err = self.u_password.check()
-        if not err:
-            err = self.u_groups.check()
-        if not err:
-            err = self.u_shell.check()
-        
-        if err:
-            self.help.setText(u"<font color=red>%s</font>" % err)
-            self.add_but.setEnabled(False)
-        else:
-            self.help.setText("")
-            self.add_but.setEnabled(True)
-        
-        return err
+       return  self.guide.update()
     
     def slotAdd(self):
         if self.checkAdd():
@@ -493,6 +481,7 @@ class UserStack(QVBox):
     def startAdd(self, groups):
         self.u_groups.populate(groups)
         self.reset()
+        self.u_realname.name.setFocus()
     
     def startEdit(self, groups, uid):
         self.u_groups.populate(groups)
