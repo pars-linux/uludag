@@ -3,3 +3,6 @@
 keycode 176 = XF86AudioRaiseVolume
 keycode 174 = XF86AudioLowerVolume
 keycode 160 = XF86AudioMute
+
+!m$ key for kwin menu
+keycode 115 = F13
