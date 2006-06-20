@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-20 14:05+0300\n"
+"POT-Creation-Date: 2006-06-20 15:59+0300\n"
 "PO-Revision-Date: 2006-06-15 15:23+0300\n"
 "Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
 "Language-Team: Türkçe <->\n"
@@ -68,83 +68,87 @@ msgstr "No:"
 msgid "Select manually"
 msgstr "Elle seç"
 
-#: useredit.py:59
-msgid "Enter a user ID or use auto selection"
-msgstr "Otomatik seçimi kullanın yada kullanıcı No'sunu girin"
-
-#: useredit.py:66
+#: useredit.py:60
 msgid "User name:"
 msgstr "Kullanıcı adı:"
 
-#: useredit.py:112
-msgid "Enter a user name"
-msgstr "Bir kullanıcı adı girin"
-
-#: useredit.py:119
+#: useredit.py:108
 msgid "Full name:"
 msgstr "Ad soyad:"
 
-#: useredit.py:141
+#: useredit.py:130
 msgid "Home:"
 msgstr "Ev:"
 
-#: useredit.py:169
+#: useredit.py:158
 msgid "Select user's home directory"
 msgstr "Kullanıcının ev dizinini seçin"
 
-#: useredit.py:178
+#: useredit.py:167
 msgid "Password:"
 msgstr "Parola:"
 
-#: useredit.py:184
+#: useredit.py:173
 msgid "Confirm password:"
 msgstr "Parola onay:"
 
-#: useredit.py:209
-msgid "You should enter a password for this user"
-msgstr "Bu kullanıcı için bir parola girmelisiniz"
-
-#: useredit.py:211
-msgid "Passwords don't match"
-msgstr "Parolalar uyuşmuyor"
-
-#: useredit.py:218
+#: useredit.py:202
 msgid "Shell:"
 msgstr "Kabuk:"
 
-#: useredit.py:240
+#: useredit.py:224
 msgid "Please specify an existing shell command"
 msgstr "Varolan bir kabuk komutu seçin"
 
-#: useredit.py:242
+#: useredit.py:226
 msgid "Specified shell command is not executable"
 msgstr "Seçili kabuk komutu çalıştırılabilir değil"
 
-#: useredit.py:278
+#: useredit.py:262
 msgid "Group"
 msgstr "Grup"
 
-#: useredit.py:279
+#: useredit.py:263
 msgid "Permission"
 msgstr "İzin"
 
-#: useredit.py:286
+#: useredit.py:270
 msgid "Main group:"
 msgstr "Ana grup:"
 
 #: useredit.py:356
-msgid "You should select at least one group this user belongs to"
-msgstr "Bu kullanıcının üyesi olacağı en az bir grup seçmelisiniz"
+msgid "Start with typing this user's full name."
+msgstr "Kullanıcının ad soyadını girerek başlayın."
 
-#: useredit.py:370
+#: useredit.py:359
+msgid "You should enter a password for this user."
+msgstr "Bu kullanıcı için bir parola girmelisiniz."
+
+#: useredit.py:362
+msgid "Passwords don't match."
+msgstr "Parolalar uyuşmuyor."
+
+#: useredit.py:365
+msgid "You must enter a user ID or use the auto selection."
+msgstr "Otomatik seçimi kullanın yada kullanıcı no'sunu girin."
+
+#: useredit.py:368
+msgid "You should select at least one group this user belongs to."
+msgstr "Bu kullanıcının üyesi olacağı en az bir grup seçmelisiniz."
+
+#: useredit.py:371
+msgid "You must enter a user name."
+msgstr "Bir kullanıcı adı girin."
+
+#: useredit.py:391
 msgid "Edit User's Information"
 msgstr "Kullanıcı Bilgisini Düzenleyin"
 
-#: useredit.py:372
+#: useredit.py:393
 msgid "Enter Information For New User"
 msgstr "Yeni Kullanıcının Bilgilerini Girin"
 
-#: useredit.py:374
+#: useredit.py:395
 msgid "Show all groups"
 msgstr "Bütün grupları göster"
 
@@ -163,4 +167,3 @@ msgstr "Bir grup adı girin"
 #: groupedit.py:82
 msgid "Add a New Group"
 msgstr "Yeni Bir Grup Ekle"
-
