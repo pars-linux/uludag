@@ -274,7 +274,7 @@ class UserGroupList(QWidget):
         vb.setSpacing(3)
         
         self.groups = QListView(self)
-        self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
+        #self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
         self.groups.addColumn(i18n("Group"))
         self.groups.addColumn(i18n("Permission"))
         self.groups.setResizeMode(QListView.LastColumn)
@@ -291,9 +291,9 @@ class UserGroupList(QWidget):
         hb.addWidget(self.main_group)
         vb.addWidget(w)
         
-        self.desc = QTextEdit(self)
-        self.desc.setReadOnly(True)
-        vb.addWidget(self.desc, 1)
+        #self.desc = QTextEdit(self)
+        #self.desc.setReadOnly(True)
+        #vb.addWidget(self.desc, 1)
     
     def populate(self, groups):
         group = groups.firstChild()
@@ -357,6 +357,22 @@ class UserGroupList(QWidget):
         return None
 
 
+class Help(QWidget):
+    def __init__(self, parent):
+        QWidget.__init__(self, parent)
+        hb = QHBoxLayout(self)
+        hb.setMargin(6)
+        hb.setSpacing(6)
+        lab = QLabel(self)
+        lab.setPixmap(getIconSet("help.png", KIcon.Panel).pixmap(QIconSet.Automatic, QIconSet.Normal))
+        hb.addWidget(lab, 0, hb.AlignTop)
+        self.info = KActiveLabel(" ", self)
+        hb.addWidget(self.info)
+    
+    def setText(self, text):
+        self.info.setText(text)
+
+
 class UserStack(QVBox):
     def __init__(self, parent, link, edit=False):
         QVBox.__init__(self, parent)
@@ -375,6 +391,7 @@ class UserStack(QVBox):
         hb.addWidget(toggle, 0, Qt.AlignRight)
         
         hb = QHBox(self)
+        self.setStretchFactor(hb, 4)
         hb.setSpacing(18)
         
         w = QWidget(hb)
@@ -403,19 +420,15 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(line, row, row, 0, 1)
         
-        w2 = QWidget(w)
-        hb2 = QHBoxLayout(w2)
-        hb2.setMargin(6)
-        hb2.setSpacing(6)
-        lab = QLabel(w2)
-        lab.setPixmap(getIconSet("help.png", KIcon.Panel).pixmap(QIconSet.Automatic, QIconSet.Normal))
-        hb2.addWidget(lab, 0, hb2.AlignTop)
-        self.info = KActiveLabel(" ", w2)
-        hb2.addWidget(self.info)
-        grid.addMultiCellWidget(w2, 9, 9, 0, 1)
+        lab = KActiveLabel(w)
+        row = grid.numRows()
+        grid.addMultiCellWidget(lab, row, row, 0, 1)
         
         self.u_groups = UserGroupList(self, hb)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
+        
+        self.help = Help(self)
+        self.setStretchFactor(self.help, 1)
         
         hb = QHBox(self)
         hb.setSpacing(12)
@@ -444,10 +457,10 @@ class UserStack(QVBox):
             err = self.u_shell.check()
         
         if err:
-            self.info.setText(u"<font color=red>%s</font>" % err)
+            self.help.setText(u"<font color=red>%s</font>" % err)
             self.add_but.setEnabled(False)
         else:
-            self.info.setText("")
+            self.help.setText("")
             self.add_but.setEnabled(True)
         
         return err
