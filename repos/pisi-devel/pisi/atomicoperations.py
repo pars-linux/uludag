@@ -294,15 +294,13 @@ class Install(AtomicOperation):
                 if newf.type == 'config' and oldf.type == 'config': # config upgrade
                     fpath = pisi.util.join_path(ctx.config.dest_dir(), oldf.path)
                     try:
-                        if pisi.util.sha1_file(fpath) == fileinfo.hash:
+                        if pisi.util.sha1_file(fpath) != oldf.hash:
                             # old config file changed, don't overwrite                        
                             config_changed.append(fpath)
                             if os.path.exists(fpath + '.old'):
                                 os.unlink(fpath + '.old')
                             os.rename(fpath, fpath + '.old')
-                        else:
-                            # old config file not changed, overwrite
-                            pass
+                        # otherwise, old config file not changed, overwrite
                     except pisi.util.FileError, e:
                         pass
         else:
@@ -310,10 +308,14 @@ class Install(AtomicOperation):
                 if file.type == 'config':
                     fpath = pisi.util.join_path(ctx.config.dest_dir(), file.path)
                     if os.path.exists(fpath): # there is an old config file lying around
-                        config_changed.append(fpath)
-                        if os.path.exists(fpath + '.old'):
-                            os.unlink(fpath + '.old')
-                        os.rename(fpath, fpath + '.old')
+                        try:
+                            if pisi.util.sha1_file(fpath) != file.hash:
+                                config_changed.append(fpath)
+                                if os.path.exists(fpath + '.old'):
+                                    os.unlink(fpath + '.old')
+                                os.rename(fpath, fpath + '.old')
+                        except pisi.util.FileError, e:
+                            pass
 
         self.package.extract_install(ctx.config.dest_dir())
         
