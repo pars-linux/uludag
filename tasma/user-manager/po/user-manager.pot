@@ -8,13 +8,45 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-17 14:37+0300\n"
+"POT-Creation-Date: 2006-06-20 14:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: browser.py:91
+msgid "Show system user and groups"
+msgstr ""
+
+#: browser.py:100 browser.py:110
+msgid "ID"
+msgstr ""
+
+#: browser.py:102
+msgid "User name"
+msgstr ""
+
+#: browser.py:103
+msgid "Full name"
+msgstr ""
+
+#: browser.py:112
+msgid "Group name"
+msgstr ""
+
+#: browser.py:113
+msgid "Description"
+msgstr ""
+
+#: browser.py:118
+msgid "Users"
+msgstr ""
+
+#: browser.py:119
+msgid "Groups"
+msgstr ""
 
 #: user-manager.py:30
 msgid "User Management"
@@ -28,114 +60,106 @@ msgstr ""
 msgid "User Manager"
 msgstr ""
 
-#: browser.py:91
-msgid "Show system user and groups"
-msgstr ""
-
-#: browser.py:100 browser.py:109
-msgid "ID"
-msgstr ""
-
-#: browser.py:102
-msgid "User name"
-msgstr ""
-
-#: browser.py:103
-msgid "Real name"
-msgstr ""
-
-#: browser.py:111
-msgid "Name"
-msgstr ""
-
-#: browser.py:112
-msgid "Description"
-msgstr ""
-
-#: browser.py:117
-msgid "Users"
-msgstr ""
-
-#: browser.py:118
-msgid "Groups"
-msgstr ""
-
-#: useredit.py:22 groupedit.py:21
+#: useredit.py:26 groupedit.py:22
 msgid "ID:"
 msgstr ""
 
-#: useredit.py:28 groupedit.py:27
+#: useredit.py:37 groupedit.py:29
 msgid "Select manually"
 msgstr ""
 
-#: useredit.py:47
+#: useredit.py:59
 msgid "Enter a user ID or use auto selection"
 msgstr ""
 
-#: useredit.py:54
-msgid "Name:"
+#: useredit.py:66
+msgid "User name:"
 msgstr ""
 
-#: useredit.py:70
+#: useredit.py:112
 msgid "Enter a user name"
 msgstr ""
 
-#: useredit.py:76
-msgid "Real name:"
-msgstr ""
-
-#: useredit.py:90
-msgid "Home:"
-msgstr ""
-
-#: useredit.py:108
-msgid "Select user's home directory"
-msgstr ""
-
-#: useredit.py:117
-msgid "Password:"
-msgstr ""
-
-#: useredit.py:122
-msgid "Confirm password:"
-msgstr ""
-
-#: useredit.py:139
-msgid "You should enter a password for this user"
+#: useredit.py:119
+msgid "Full name:"
 msgstr ""
 
 #: useredit.py:141
-msgid "Passwords don't match"
+msgid "Home:"
 msgstr ""
 
-#: useredit.py:177
-msgid "Group"
+#: useredit.py:169
+msgid "Select user's home directory"
 msgstr ""
 
 #: useredit.py:178
-msgid "Permission"
+msgid "Password:"
 msgstr ""
 
 #: useredit.py:184
-msgid "Main group:"
+msgid "Confirm password:"
 msgstr ""
 
-#: useredit.py:234
-msgid "You should select at least one group this user belongs to"
+#: useredit.py:209
+msgid "You should enter a password for this user"
 msgstr ""
 
-#: useredit.py:246
-msgid "Add a New User"
+#: useredit.py:211
+msgid "Passwords don't match"
 msgstr ""
 
-#: useredit.py:248
-msgid "Show all groups"
-msgstr ""
-
-#: useredit.py:268
+#: useredit.py:218
 msgid "Shell:"
 msgstr ""
 
-#: groupedit.py:49
+#: useredit.py:240
+msgid "Please specify an existing shell command"
+msgstr ""
+
+#: useredit.py:242
+msgid "Specified shell command is not executable"
+msgstr ""
+
+#: useredit.py:278
+msgid "Group"
+msgstr ""
+
+#: useredit.py:279
+msgid "Permission"
+msgstr ""
+
+#: useredit.py:286
+msgid "Main group:"
+msgstr ""
+
+#: useredit.py:356
+msgid "You should select at least one group this user belongs to"
+msgstr ""
+
+#: useredit.py:370
+msgid "Edit User's Information"
+msgstr ""
+
+#: useredit.py:372
+msgid "Enter Information For New User"
+msgstr ""
+
+#: useredit.py:374
+msgid "Show all groups"
+msgstr ""
+
+#: groupedit.py:48
+msgid "Enter a group ID or use auto selection"
+msgstr ""
+
+#: groupedit.py:55
+msgid "Name:"
+msgstr ""
+
+#: groupedit.py:72
+msgid "Enter a group name"
+msgstr ""
+
+#: groupedit.py:82
 msgid "Add a New Group"
 msgstr ""
