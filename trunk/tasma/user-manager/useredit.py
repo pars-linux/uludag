@@ -63,7 +63,7 @@ class UID:
 class Name:
     def __init__(self, stack, w, grid, edit=False):
         self.stack = stack
-        lab = QLabel(i18n("Name:"), w)
+        lab = QLabel(i18n("User name:"), w)
         if edit:
             self.name = QLabel(w)
         else:
@@ -116,7 +116,7 @@ class Name:
 class RealName:
     def __init__(self, stack, w, grid):
         self.stack = stack
-        lab = QLabel(i18n("Real name:"), w)
+        lab = QLabel(i18n("Full name:"), w)
         self.name = QLineEdit(w)
         lab.setBuddy(self.name)
         self.name.setValidator(QRegExpValidator(QRegExp("[^\n:]*"), self.name))
@@ -365,10 +365,11 @@ class UserStack(QVBox):
         
         w = QWidget(self)
         hb = QHBoxLayout(w)
+        hb.setMargin(6)
         if edit:
-            lab = QLabel(u"<b>%s</b>" % i18n("Edit User"), w)
+            lab = QLabel(u"<b><big>%s</big></b>" % i18n("Edit User's Information"), w)
         else:
-            lab = QLabel(u"<b>%s</b>" % i18n("Add a New User"), w)
+            lab = QLabel(u"<b><big>%s</big></b>" % i18n("Enter Information For New User"), w)
         hb.addWidget(lab)
         toggle = QCheckBox(i18n("Show all groups"), w)
         hb.addWidget(toggle, 0, Qt.AlignRight)
