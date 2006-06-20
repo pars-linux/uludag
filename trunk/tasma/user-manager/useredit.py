@@ -250,6 +250,13 @@ class UserGroup(QCheckListItem):
         self.stack.slotGroup()
 
 
+class Tipper(QToolTip):
+    def maybeTip(self, point):
+        item = self.list.itemAt(point)
+        if item:
+            self.tip(self.list.itemRect(item), "<b>%s</b><br>%s" % (item.name, item.desc))
+
+
 class UserGroupList(QWidget):
     def __init__(self, stack, parent):
         QWidget.__init__(self, parent)
@@ -258,12 +265,14 @@ class UserGroupList(QWidget):
         vb.setSpacing(3)
         
         self.groups = QListView(self)
-        #self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
         self.groups.addColumn(i18n("Group"))
         self.groups.addColumn(i18n("Permission"))
         self.groups.setResizeMode(QListView.LastColumn)
         self.groups.setAllColumnsShowFocus(True)
         vb.addWidget(self.groups, 2)
+        
+        self.tipper = Tipper(self.groups.viewport())
+        self.tipper.list = self.groups
         
         w = QWidget(self)
         hb = QHBoxLayout(w)
@@ -274,10 +283,6 @@ class UserGroupList(QWidget):
         lab.setBuddy(self.main_group)
         hb.addWidget(self.main_group)
         vb.addWidget(w)
-        
-        #self.desc = QTextEdit(self)
-        #self.desc.setReadOnly(True)
-        #vb.addWidget(self.desc, 1)
     
     def populate(self, groups):
         group = groups.firstChild()
@@ -303,13 +308,6 @@ class UserGroupList(QWidget):
             for item in groups:
                 self.main_group.insertItem(item)
         self.stack.checkAdd()
-    
-    def slotSelect(self):
-        item = self.groups.selectedItem()
-        if item:
-            self.desc.setText("<b>%s</b><br>%s" % (item.name, item.desc))
-        else:
-            self.desc.setText("")
     
     def slotToggle(self, bool):
         group = self.groups.firstChild()
