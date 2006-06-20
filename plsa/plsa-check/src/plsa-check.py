@@ -54,8 +54,8 @@ def printPLSA(repo, id, title, summary, up=[], fix=[], no_fix=[]):
 
     print colorize("[%s] %s - %s" % (flag, id, title), color_list[flag])
 
-    #if options.long:
-    #    print colorize("    %s" % summary, "brightblack")
+    if options.long:
+        print "    %s" % colorize(_("Summary: %s") % summary, color_list[flag])
 
     if options.packages:
         if len(up) and not options.affected:
