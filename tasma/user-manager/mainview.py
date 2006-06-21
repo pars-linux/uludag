@@ -50,8 +50,13 @@ class UserManager(QWidgetStack):
     
     def slotAdd(self):
         if self.browse.tab.currentPageIndex() == 0:
+            names = []
+            item = self.browse.users.firstChild()
+            while item:
+                names.append(item.nick)
+                item = item.nextSibling()
             self.raiseWidget(self.user)
-            self.user.startAdd(self.browse.groups)
+            self.user.startAdd(self.browse.groups, names)
         else:
             self.raiseWidget(self.group)
     

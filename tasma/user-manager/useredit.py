@@ -57,6 +57,8 @@ class UID:
 class Name:
     def __init__(self, stack, w, grid, edit=False):
         self.stack = stack
+        self.edit = edit
+        self.usednames = []
         lab = QLabel(i18n("User name:"), w)
         if edit:
             self.name = QLabel(w)
@@ -363,11 +365,14 @@ class Guide(QWidget):
         if not err and p.u_id.text() == "":
             err = i18n("You must enter a user ID or use the auto selection.")
         
-        if not err and p.u_groups.text() == "":
-            err = i18n("You should select at least one group this user belongs to.")
-        
         if not err and p.u_name.text() == "":
             err = i18n("You must enter a user name.")
+        
+        if not err and p.u_name.text() in p.u_name.usednames:
+            err = i18n("This user name is used by another user")
+        
+        if not err and p.u_groups.text() == "":
+            err = i18n("You should select at least one group this user belongs to.")
         
         if err:
             self.info.setText(u"<font color=red>%s</font>" % err)
@@ -508,9 +513,10 @@ class UserStack(QVBox):
         self.u_groups.setText("")
         self.checkAdd()
     
-    def startAdd(self, groups):
+    def startAdd(self, groups, names):
         self.u_groups.populate(groups)
         self.reset()
+        self.u_name.usednames = names
         self.u_realname.name.setFocus()
     
     def startEdit(self, groups, uid):
