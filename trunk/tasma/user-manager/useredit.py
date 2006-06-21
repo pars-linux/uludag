@@ -488,9 +488,10 @@ class UserStack(QVBox):
     def slotAddReply(self, reply):
         if reply[0] == self.link.RESULT:
             self.parent().slotCancel()
+            return
         
         if reply[0] == self.link.FAIL:
-            msg = unicode(i18n("Operation failed, reason:\n%s")) % reply[2]
+            msg = unicode(i18n("Operation failed, reason:<br>%s")) % reply[2]
         elif reply[0] == self.link.DENIED:
             msg = i18n("You are not allowed to do that")
         else:
@@ -510,7 +511,7 @@ class UserStack(QVBox):
     def startAdd(self, groups, names):
         self.u_groups.populate(groups)
         self.reset()
-        #self.u_name.usednames = names
+        self.u_name.usednames = names
         self.u_realname.name.setFocus()
     
     def startEdit(self, groups, uid):
