@@ -40,7 +40,7 @@ class UserManager(QWidgetStack):
         elif id == 2:
             self.browse.comarGroups(reply)
         elif id == 3:
-            self.useredit.slotAddReply(reply)
+            self.user.slotAddReply(reply)
         # 4 group add reply
         elif id == 5:
             self.useredit.slotInfo(reply)
