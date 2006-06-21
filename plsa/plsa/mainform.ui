@@ -101,6 +101,9 @@
         <separator/>
         <action name="fileExitAction"/>
     </item>
+    <item text="&amp;Tools" name="Tools">
+        <action name="toolsUploadAction"/>
+    </item>
     <item text="&amp;Help" name="Help">
         <action name="helpAboutAction"/>
     </item>
@@ -192,6 +195,20 @@
         </property>
         <property name="menuText">
             <string>&amp;About</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>toolsUploadAction</cstring>
+        </property>
+        <property name="text">
+            <string>&amp;Pack &amp; Upload</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Pack &amp;&amp; Upload</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+P</string>
         </property>
     </action>
 </actions>

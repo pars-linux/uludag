@@ -128,6 +128,9 @@ class plsaindex(mainform):
 
         # PLSA
         self.plsa = None
+        self.xml = ""
+        self.fileSaveAction.setEnabled(0)
+        self.fileSAction.setEnabled(0)
 
         # Multilang titles
         self.groupTitles.setMinimumSize(QSize(250, 50))
@@ -147,6 +150,7 @@ class plsaindex(mainform):
         # Signals
         QObject.connect(self.fileNewAction, SIGNAL("activated()"), self.slotNew)
         QObject.connect(self.fileOpenAction, SIGNAL("activated()"), self.slotOpenXMLDialog)
+        QObject.connect(self.fileSaveAction, SIGNAL("activated()"), self.slotSaveXML)
         QObject.connect(self.fileExitAction, SIGNAL("activated()"), self.slotExit)
 
         QObject.connect(self.dialog, SIGNAL("fileSelected(const QString &)"), self.slotOpenXML)
@@ -154,7 +158,11 @@ class plsaindex(mainform):
     def clear(self):
         self.titles.clear()
         self.listAdvisories.clear()
+
         self.plsa = None
+        self.xml = ""
+        self.fileSaveAction.setEnabled(0)
+        self.fileSAction.setEnabled(0)
 
     def slotNew(self):
         self.clear()
@@ -172,7 +180,9 @@ class plsaindex(mainform):
         if file:
             self.clear()
 
-            self.plsa = PLSAFile(str(file))
+            self.xml = str(file)
+
+            self.plsa = PLSAFile(self.xml)
 
             for lang in self.plsa.title:
                 x = self.titles.addLang(lang)
@@ -183,6 +193,15 @@ class plsaindex(mainform):
                 item.setText(0, adv.id)
                 item.setText(1, adv.title["en"])
                 item.node = adv
+
+            self.fileSaveAction.setEnabled(1)
+            self.fileSAction.setEnabled(1)
+
+    def slotSaveXML(self):
+        titles = self.titles.getLanguages()
+        for lang in titles:
+            self.plsa.title[lang] = str(titles[lang])
+        self.plsa.write(self.xml)
 
 def main():
     app = QApplication(sys.argv)
