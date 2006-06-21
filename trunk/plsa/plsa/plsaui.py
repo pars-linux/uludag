@@ -126,6 +126,9 @@ class plsaindex(mainform):
     def __init__(self,parent = None,name = None):
         mainform.__init__(self, parent, name)
 
+        # PLSA
+        self.plsa = None
+
         # Multilang titles
         self.groupTitles.setMinimumSize(QSize(250, 50))
         self.groupTitles.setColumnLayout(0, Qt.Vertical)
@@ -142,12 +145,25 @@ class plsaindex(mainform):
         self.dialog.addFilter("PLSA Index (*.xml)");
 
         # Signals
+        QObject.connect(self.fileNewAction, SIGNAL("activated()"), self.slotNew)
         QObject.connect(self.fileOpenAction, SIGNAL("activated()"), self.slotOpenXMLDialog)
+        QObject.connect(self.fileExitAction, SIGNAL("activated()"), self.slotExit)
+
         QObject.connect(self.dialog, SIGNAL("fileSelected(const QString &)"), self.slotOpenXML)
 
     def clear(self):
         self.titles.clear()
         self.listAdvisories.clear()
+        self.plsa = None
+
+    def slotNew(self):
+        self.clear()
+
+        x = self.titles.addLang()
+        x.setLang("en")
+
+    def slotExit(self):
+        self.close()
 
     def slotOpenXMLDialog(self):
         self.dialog.show()
@@ -162,10 +178,11 @@ class plsaindex(mainform):
                 x = self.titles.addLang(lang)
                 x.setText(unicode(self.plsa.title[lang]))
 
-            for a in self.plsa.advisories:
+            for adv in self.plsa.advisories:
                 item = QListViewItem(self.listAdvisories, None)
-                item.setText(0, a.id)
-                item.setText(1, a.title["en"])
+                item.setText(0, adv.id)
+                item.setText(1, adv.title["en"])
+                item.node = adv
 
 def main():
     app = QApplication(sys.argv)
