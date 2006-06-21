@@ -22,7 +22,7 @@ class Advisory:
 class PLSAFile(XmlFile):
     __metaclass__ = autoxml.autoxml
 
-    tag = "PLS"
+    tag = "PLSA"
 
     t_Title = [autoxml.LocalText, autoxml.mandatory]
     t_Advisories = [[Advisory], autoxml.mandatory, "Advisory"]

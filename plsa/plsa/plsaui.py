@@ -8,6 +8,9 @@ import sys
 from qt import *
 import kdedesigner
 
+# PLSA Modules
+from plsa import *
+
 # Forms
 from mainform import mainform
 
@@ -37,6 +40,7 @@ class multilang_text(QWidget):
         QObject.connect(self.pushAddRemove, SIGNAL("clicked()"), self.slotAddRemove)
 
         self.clearWState(Qt.WState_Polished)
+        self.show()
 
     def setMode(self, mode):
         self.mode = mode
@@ -71,13 +75,14 @@ class multilang(QVBox):
         self.layout().setSpacing(6)
 
         self.languages = []
+        self.clear()
 
-        x = self.addLang()
-        x.setLang("en")
-
-    def addLang(self):
+    def addLang(self, lng=""):
         ord = len(self.languages)
         lang = multilang_text(self, str(ord))
+
+        if lng:
+            lang.setLang(lng)
 
         if len(self.languages):
             last = self.languages[-1]
@@ -93,6 +98,11 @@ class multilang(QVBox):
         last = self.languages[-1]
         last.setMode("new")
 
+    def clear(self):
+        for i in self.languages:
+            self.removeChild(i)
+        self.languages = []
+
     def getLanguages(self):
         langs = {}
         for item in self.languages:
@@ -104,7 +114,6 @@ class multilang(QVBox):
     def slotAddRemove(self, item):
         if item.getMode() == "new":
             x = self.addLang()
-            x.show()
         else:
             self.removeLang(item)
 
@@ -123,8 +132,40 @@ class plsaindex(mainform):
         groupTitlesLayout = QGridLayout(self.groupTitles.layout())
         groupTitlesLayout.setAlignment(Qt.AlignTop)
 
-        self.title = multilang(self.groupTitles, "multilang")
-        groupTitlesLayout.addWidget(self.title, 0, 0)
+        self.titles = multilang(self.groupTitles, "titles")
+        groupTitlesLayout.addWidget(self.titles, 0, 0)
+        x = self.titles.addLang()
+        x.setLang("en")
+
+        # Dialog
+        self.dialog = QFileDialog(self)
+        self.dialog.addFilter("PLSA Index (*.xml)");
+
+        # Signals
+        QObject.connect(self.fileOpenAction, SIGNAL("activated()"), self.slotOpenXMLDialog)
+        QObject.connect(self.dialog, SIGNAL("fileSelected(const QString &)"), self.slotOpenXML)
+
+    def clear(self):
+        self.titles.clear()
+        self.listAdvisories.clear()
+
+    def slotOpenXMLDialog(self):
+        self.dialog.show()
+
+    def slotOpenXML(self, file):
+        if file:
+            self.clear()
+
+            self.plsa = PLSAFile(str(file))
+
+            for lang in self.plsa.title:
+                x = self.titles.addLang(lang)
+                x.setText(unicode(self.plsa.title[lang]))
+
+            for a in self.plsa.advisories:
+                item = QListViewItem(self.listAdvisories, None)
+                item.setText(0, a.id)
+                item.setText(1, a.title["en"])
 
 def main():
     app = QApplication(sys.argv)
