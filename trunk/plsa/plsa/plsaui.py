@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 # Standard Python Modules
@@ -5,6 +6,10 @@ import sys
 
 # QT Modules
 from qt import *
+import kdedesigner
+
+# Forms
+from mainform import mainform
 
 class multilang_text(QWidget):
     def __init__(self, parent = None, name = None):
@@ -59,23 +64,20 @@ class multilang_text(QWidget):
         if self.parent().slotAddRemove:
             self.parent().slotAddRemove(self)
 
-class multilang_group(QGroupBox):
+class multilang(QVBox):
     def __init__(self, parent = None, name = None):
-        QGroupBox.__init__(self, parent, name)
+        QVBox.__init__(self, parent, name)
 
-        self.multilang_groupLayout = QBoxLayout(self, QBoxLayout.TopToBottom, 5, 5, "multilang_groupLayout")
-        self.multilang_groupLayout.setAlignment(Qt.AlignTop)
+        self.layout().setSpacing(6)
 
         self.languages = []
 
         x = self.addLang()
-        x = self.addLang()
-        self.removeLang(x)
+        x.setLang("en")
 
     def addLang(self):
         ord = len(self.languages)
         lang = multilang_text(self, str(ord))
-        self.multilang_groupLayout.addWidget(lang)
 
         if len(self.languages):
             last = self.languages[-1]
@@ -86,8 +88,7 @@ class multilang_group(QGroupBox):
 
     def removeLang(self, item):
         self.languages.remove(item)
-        self.multilang_groupLayout.remove(item)
-        item.hide()
+        self.removeChild(item)
 
         last = self.languages[-1]
         last.setMode("new")
@@ -95,7 +96,8 @@ class multilang_group(QGroupBox):
     def getLanguages(self):
         langs = {}
         for item in self.languages:
-            langs[item.getLang()] = item.getText()
+            if item.getLang():
+                langs[item.getLang()] = item.getText()
 
         return langs
 
@@ -106,34 +108,27 @@ class multilang_group(QGroupBox):
         else:
             self.removeLang(item)
 
-class mainform(QMainWindow):
-    def __init__(self,parent = None,name = None,fl = 0):
-        QMainWindow.__init__(self,parent,name,fl)
+    def resizeEvent(self, qr):
+        parent = self.parent()
+        height = parent.insideSpacing() + parent.insideMargin() * 2 + self.height()
+        parent.setMinimumSize(QSize(250, height))
 
-        if not name:
-            self.setName("mainform")
+class plsaindex(mainform):
+    def __init__(self,parent = None,name = None):
+        mainform.__init__(self, parent, name)
 
-        self.setCentralWidget(QWidget(self, "qt_central_widget"))
-        Form1Layout = QGridLayout(self.centralWidget(), 2, 1, 11, 6, "Form1Layout")
+        # Multilang titles
+        self.groupTitles.setMinimumSize(QSize(250, 50))
+        self.groupTitles.setColumnLayout(0, Qt.Vertical)
+        groupTitlesLayout = QGridLayout(self.groupTitles.layout())
+        groupTitlesLayout.setAlignment(Qt.AlignTop)
 
-        self.g = multilang_group(self.centralWidget(), "g")
-        self.g.setGeometry(QRect(10, 10, 164, 305))
-        self.g.setMinimumSize(QSize(400, 0))
-        Form1Layout.addWidget(self.g, 0, 0)
-
-        self.p = QPushButton(self.centralWidget(), "p")
-        self.p.setText("print")
-        Form1Layout.addWidget(self.p, 1, 0)
-
-        QObject.connect(self.p, SIGNAL("clicked()"), self.slotPush)
-
-    def slotPush(self):
-        print self.g.getLanguages()
-
+        self.title = multilang(self.groupTitles, "multilang")
+        groupTitlesLayout.addWidget(self.title, 0, 0)
 
 def main():
     app = QApplication(sys.argv)
-    w = mainform()
+    w = plsaindex()
     app.setMainWidget(w)
     w.show()
     app.exec_loop()
