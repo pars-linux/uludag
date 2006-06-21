@@ -195,7 +195,7 @@ class Password:
     
     def setText(self, text):
         self.password.setText(text)
-        self.password.setText(text)
+        self.password2.setText(text)
 
 
 class Shell:
@@ -381,16 +381,14 @@ class Guide(QWidget):
             self.info.setText("")
             self.ok_but.setEnabled(True)
     
-    def opwait(self):
+    def op_start(self, msg):
         self.buttons.setEnabled(False)
-        if self.edit:
-            self.info.setText(i18n("Editing user..."))
-        else:
-            self.info.setText(i18n("Adding user..."))
+        self.info.setText(msg)
     
-    def operror(self, msg):
+    def op_end(self, msg=None):
         self.buttons.setEnabled(True)
-        self.info.setText(u"<big><font color=red>%s</font></big>" % msg)
+        if msg:
+            self.info.setText(u"<big><font color=red>%s</font></big>" % msg)
 
 
 class UserStack(QVBox):
@@ -483,7 +481,7 @@ class UserStack(QVBox):
         
         self.link.call("User.Manager.addUser", dict, 3)
         
-        self.guide.opwait()
+        self.guide.op_start(i18n("Adding user..."))
     
     def slotAddReply(self, reply):
         if reply[0] == self.link.RESULT:
@@ -497,7 +495,7 @@ class UserStack(QVBox):
         else:
             msg = i18n("Çomar script error :(")
         
-        self.guide.operror(msg)
+        self.guide.op_end(msg)
     
     def reset(self):
         self.u_id.setText("")
@@ -512,14 +510,17 @@ class UserStack(QVBox):
         self.u_groups.populate(groups)
         self.reset()
         self.u_name.usednames = names
+        self.guide.op_end()
         self.u_realname.name.setFocus()
     
     def startEdit(self, groups, uid):
         self.u_groups.populate(groups)
         self.reset()
+        self.guide.op_start(i18n("Getting user information..."))
         self.link.call("User.Manager.userInfo", [ "uid", uid ], 5)
     
     def slotInfo(self, reply):
+        self.guide.op_end()
         for line in unicode(reply[2]).split("\n"):
             key, value = line.split(" ", 1)
             if key == "uid":
