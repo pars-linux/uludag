@@ -335,8 +335,9 @@ class UserGroupList(QWidget):
 
 
 class Guide(QWidget):
-    def __init__(self, parent):
+    def __init__(self, parent, edit):
         QWidget.__init__(self, parent)
+        self.edit = edit
         hb = QHBoxLayout(self)
         hb.setMargin(6)
         hb.setSpacing(6)
@@ -346,14 +347,14 @@ class Guide(QWidget):
         self.info = KActiveLabel(" ", self)
         hb.addWidget(self.info)
     
-    def update(self):
+    def check(self):
         err = None
         p = self.parent()
         
         if p.u_realname.text() == "" and p.u_name.text() == "":
             err = i18n("Start with typing this user's full name.")
         
-        if not err and p.u_password.text() == "":
+        if not err and not self.edit and p.u_password.text() == "":
             err = i18n("You should enter a password for this user.")
         
         if not err and p.u_password.text() == None:
@@ -370,10 +371,26 @@ class Guide(QWidget):
         
         if err:
             self.info.setText(u"<font color=red>%s</font>" % err)
-            self.add_but.setEnabled(False)
+            self.ok_but.setEnabled(False)
         else:
             self.info.setText("")
-            self.add_but.setEnabled(True)
+            self.ok_but.setEnabled(True)
+    
+    def opwait(self):
+        self.ok_but.setEnabled(False)
+        self.cancel_but.setEnabled(False)
+        if self.edit:
+            self.delete_but.setEnabled(False)
+            self.info.setText(i18n("Editing user..."))
+        else:
+            self.info.setText(i18n("Adding user..."))
+    
+    def operror(self, msg):
+        self.ok_but.setEnabled(True)
+        self.cancel_but.setEnabled(True)
+        if self.edit:
+            self.delete_but.setEnabled(True)
+        self.info.setText(u"<big><font color=red>%s</font></big>" % msg)
 
 
 class UserStack(QVBox):
@@ -430,7 +447,7 @@ class UserStack(QVBox):
         self.u_groups = UserGroupList(self, hb)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
         
-        self.guide = Guide(self)
+        self.guide = Guide(self, edit)
         self.setStretchFactor(self.guide, 1)
         
         hb = QHBox(self)
@@ -438,18 +455,20 @@ class UserStack(QVBox):
         QLabel(" ", hb)
         if edit:
             but = QPushButton(getIconSet("remove.png", KIcon.Small), i18n("Delete"), hb)
+            self.guide.delete_but = but
             but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
         else:
             but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
             self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        self.guide.add_but = but
+        self.guide.ok_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
+        self.guide.cancel_but = but
         
         self.link = link
     
     def checkAdd(self):
-       return  self.guide.update()
+       return self.guide.check()
     
     def slotAdd(self):
         if self.checkAdd():
@@ -465,7 +484,20 @@ class UserStack(QVBox):
         
         self.link.call("User.Manager.addUser", dict, 3)
         
-        self.parent().slotCancel()
+        self.guide.opwait()
+    
+    def slotAddReply(self, reply):
+        if reply[0] == self.link.RESULT:
+            self.parent().slotCancel()
+        
+        if reply[0] == self.link.FAIL:
+            msg = unicode(i18n("Operation failed, reason:\n%s")) % reply[2]
+        elif reply[0] == self.link.DENIED:
+            msg = i18n("You are not allowed to do that")
+        else:
+            msg = i18n("Çomar script error :(")
+        
+        self.guide.operror(msg)
     
     def reset(self):
         self.u_id.setText("")

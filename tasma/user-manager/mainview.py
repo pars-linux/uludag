@@ -34,13 +34,15 @@ class UserManager(QWidgetStack):
     
     def slotComar(self, sock):
         reply = self.link.read_cmd()
-        if reply[1] == 1:
+        id = reply[1]
+        if id == 1:
             self.browse.comarUsers(reply)
-        elif reply[1] == 2:
+        elif id == 2:
             self.browse.comarGroups(reply)
-        # 3 user add reply
+        elif id == 3:
+            self.useredit.slotAddReply(reply)
         # 4 group add reply
-        elif reply[1] == 5:
+        elif id == 5:
             self.useredit.slotInfo(reply)
     
     def slotCancel(self):
