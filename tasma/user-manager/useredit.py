@@ -382,19 +382,14 @@ class Guide(QWidget):
             self.ok_but.setEnabled(True)
     
     def opwait(self):
-        self.ok_but.setEnabled(False)
-        self.cancel_but.setEnabled(False)
+        self.buttons.setEnabled(False)
         if self.edit:
-            self.delete_but.setEnabled(False)
             self.info.setText(i18n("Editing user..."))
         else:
             self.info.setText(i18n("Adding user..."))
     
     def operror(self, msg):
-        self.ok_but.setEnabled(True)
-        self.cancel_but.setEnabled(True)
-        if self.edit:
-            self.delete_but.setEnabled(True)
+        self.buttons.setEnabled(True)
         self.info.setText(u"<big><font color=red>%s</font></big>" % msg)
 
 
@@ -456,11 +451,11 @@ class UserStack(QVBox):
         self.setStretchFactor(self.guide, 1)
         
         hb = QHBox(self)
+        self.guide.buttons = hb
         hb.setSpacing(12)
         QLabel(" ", hb)
         if edit:
             but = QPushButton(getIconSet("remove.png", KIcon.Small), i18n("Delete"), hb)
-            self.guide.delete_but = but
             but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
         else:
             but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
@@ -468,7 +463,6 @@ class UserStack(QVBox):
         self.guide.ok_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
-        self.guide.cancel_but = but
         
         self.link = link
     
@@ -516,7 +510,7 @@ class UserStack(QVBox):
     def startAdd(self, groups, names):
         self.u_groups.populate(groups)
         self.reset()
-        self.u_name.usednames = names
+        #self.u_name.usednames = names
         self.u_realname.name.setFocus()
     
     def startEdit(self, groups, uid):
