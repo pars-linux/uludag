@@ -3,26 +3,29 @@
 
 * {
     font-size: 11px;
-    font-family: Tahoma, Sans-Serif;    
+    font-family: Tahoma, Sans-Serif;
 }
+
 body {
     margin-left:0;
     margin-top:0;
     margin-right:0;
-   background-image:url('images/HeadTile.png');
+    background-image:url('images/HeadTile.png');
     background-repeat:repeat-x;
 }
 
 #header {
-    margin: 0px 0px;
+    background-image:url('images/HeadLogo.png');
+    background-repeat:no-repeat;
+    background-position: 0px -2px;
     height:119px;
 }
 
 #menu {
-    position:absolute;
-    vertical-align:bottom;
-    padding-top:100px;
-    padding-left:10px;
+    font-weight:bold;
+    font-size:10px;
+    padding-top:93px;
+    padding-left:200px;
 }
 
 li {
@@ -42,22 +45,34 @@ li {
     color: #297190;
     padding-left:30px;
     padding-top:130px;
-    background-image:url('images/p11.png');
+    background-image:url('images/newdesign/p11.jpg');
     background-repeat:no-repeat;
     background-position: 0px 0px;
-    width: 460px;
+    width: 450px;
     height: 100px;
 }
 
+#kutular {
+    width:290px;
+    vertical-align:top;
+}
+
 #pardus-nedir {
-    color: #333;
-    padding:20px;
-    padding-top:45px;
-    background-image:url('images/p12.png');
+    background-image:url('images/newdesign/header-pardus-nedir.png');
     background-repeat:no-repeat;
     background-position: 0px 0px;
-    width:300px;
-    vertical-align:top;
+    padding:5px;
+    padding-top:26px;
+    background-color:#EBEFE3;
+    height:auto;
+    margin-bottom:5px;
+}
+
+#pardus-indir {
+    background-image:url('images/newdesign/dock-hizli-indir.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height:124px;
 }
 
 #solpane {
@@ -66,26 +81,44 @@ li {
 }
 
 #haberler {
-    color: #333;
-    padding:20px;
-    padding-top:45px;
-    background-image:url('images/p14.png');
+    background-image:url('images/newdesign/header-haberler.png');
     background-repeat:no-repeat;
     background-position: 0px 0px;
-    width:300px;
-    vertical-align:top;
+    padding:5px;
+    padding-top:26px;
+    background-color:#E8F2F4;
+    height:auto;
 }
 
-#sag-sutun {
-    padding-left:25px;
-    padding-top:0px;
-    background-image:url('images/sag.png');
+#ayrintilar {
+    background-image:url('images/newdesign/header-ayrintilar.png');
     background-repeat:no-repeat;
     background-position: 0px 0px;
-    width:30px;
-    height:400px;
-    margin-top:-5px;
-    position:absolute;
+    padding:5px;
+    padding-top:26px;
+    color: #297190;
+    height:auto;
+}
+
+
+#footer {
+    background-image:url('images/newdesign/footer-standart.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    margin-top:20px;
+    padding:5px;
+    padding-top:36px;
+    color: #000;
+    height:55px;
+}
+
+#icerik #navi {
+    vertical-align:top;
+    height: 100px;
+}
+
+#ana-butonlar img {
+    margin-left:1.5px;
 }
 
 #boxdetay1 {
@@ -137,13 +170,14 @@ li {
 
 
 a {
-	color: #333;
+	color: #F55400;
 	text-decoration: none;
 	/*font-weight: bold;*/
 }
 
 a:hover {
-	color: #000000;
-	/* text-decoration: underline; */
-    background-color:#FFCC00;
+	color: #000;
+    padding:1.5px;
+	text-decoration: underline;
+    background-color:#8AC86C;
 }
