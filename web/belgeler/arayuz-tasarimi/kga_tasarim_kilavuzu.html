@@ -1,0 +1,132 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+
+
+<H1 ALIGN=center>Uludağ Yapılandırma Araçları<BR>
+Kullanıcı Arayüzleri Tasarım Kılavuzu</H1>
+
+<H3 ALIGN=center>Barış Metin</H3>
+
+<!--TOC section Giriş-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Giriş</H2><!--SEC END -->
+
+Bu döküman Ulusal Dağıtım yapılandırma arayüzlerinin görünümleri ve
+(kullanıcı gözü ile) işleyişlerini tarif eder. Döküman, arayüz geliştiricilerinin
+başvurarak tutarlı bir yapılandırma araçları bütünü oluşturmalarını
+amaçlar.<BR>
+<BR>
+Tasarım Kılavuzu'nun tarif ettikleri, uyulması gereken kurallardır.
+Fakat bu kurallar tavsiyelerden ibarettir. Kullanışlı ve tutarlı bir
+arayüz oluşturmak arayüz geliştiricisinin işidir.<BR>
+<BR>
+Bu kılavuz, yalnızca Ulusal Dağıtım içerisinde bulunan kullanıcı arayüzleri
+için hazırlanmıştır. Her ne kadar yapılandırma arayüzleri, uygulama
+programları ile bütünlük sağlamak zorunda olsalar da; yapılandırma
+arayüzleri için tanımlanan kurallar uygulama yazılımlarına uymayabilir.<BR>
+<BR>
+<!--TOC section Arayüz Tasarımı Temelleri-->
+
+<H2><A NAME="htoc2">2</A>&nbsp;&nbsp;Arayüz Tasarımı Temelleri</H2><!--SEC END -->
+
+Bir kullanıcı arayüzünün <EM>kullanıcı-dostu</EM> olarak adlandırılabilmesi
+için bazı temel kuralları yerine getirmesi gerekir. Buna göre arayüzün
+aşağıdaki temel özellikleri sağlıyor olması gerekir.
+<UL><LI>
+<B>Göreve-yönelik çalışma</B>: Çok fazla işlevi bir arada sunmak
+kullanıcının istediği işlevi bulabilmesini güçleştirecektir. Arayüz
+uygun işlevi mümkün olduğu kadar sade bir şekilde sunabilmelidir.
+<LI><B>Anlaşılabilirlik</B>: Kullanıcı arayüz ile ilk defa çalışmaya
+başladığında rahatlıkla arayüzün hangi amaç için tasarlandığını anlayabilmelidir.
+<LI><B>Arayüzde gezinebilme</B>: Arayüz çalışma esnasında hangi bölümde/nerede
+olunduğu bilgisini sunmalıdır. Bölümler/adımlar arası gezinebilme
+yeteneği kısıtlanmamalıdır.
+<LI><B>Hataları karşılayabilme yeteneği</B>: Yapılan bir değişikliğin
+geri alınabilir olması önemlidir. Kullanıcı arayüzü (uygulama altyapısı)
+yapılan düzenlemelerin geri alınabilmesini sağlayabilmelidir. Kullanıcı
+yaptığı herhangi bir değişikliği beğenmez ve/veya yanlış olduğunu
+düşündüğünde, hatasını telafi edebilmelidir.
+<LI><B>Süreçlerden haberdar etme</B>: Uygulama gerçekleştirilen işlemlerden
+kullanıcıyı haberdar etmelidir. O sırada hangi işlemlerin yapıldığı
+bilgisini kullanıcı arayüze bakarak gözlemleyebilmelidir (örn: ``xyz
+paketi kuruluyor...'')
+<LI><B>Beklentilere uyum</B>: Arayüz ve uygulama kullanıcı tarafından
+bir bütün olarak algılanmalıdır. Arayüzün bileşenleri kendileri içerisinde
+tutarlı bir bütünü oluşturmalıdır. Kullanıcı arayüz bileşenleri arasında
+dolanırken beklenmedik olaylar ve seçenekler ile karşılaşmamalıdır.
+</UL>
+<!--TOC section Yapılandırma Araçları İçin Kurallar-->
+
+<H2><A NAME="htoc3">3</A>&nbsp;&nbsp;Yapılandırma Araçları İçin Kurallar</H2><!--SEC END -->
+
+Aşağıdaki kurallar Ulusal Dağıtım içerisinde bulunan yapılandırma
+araçlarına özel arayüz tasarım kurallarını içermektedir.
+<UL><LI>
+Tüm yapılandırma bileşenleri ortak bir arayüzden erişilebilir olmalıdır.
+<LI>Eğer sistemde yapılandırılacak bir bileşen ve/veya bir özellik yoksa
+yapılandırma seçeneği ya arayüz içerisinde gösterilmemeli; ya da ``erişilemez''
+olarak gösterilmelidir.<BR>
+<BR>
+Örn:
+<OL type=1><LI>
+Sistemde yapılandırılacak bir web sunucu yoksa yapılandırma araçları
+arasında ``web sunucu yapılandırması'' bileşeni gösterilmemelidir.
+<LI>Eğer sistemin ekran kartı ``3 boyut hızlandırma''yı desteklemiyorsa
+ekran kartı için yapılandırma arayüzünde ``3 boyut hızlandırma''
+seçeneği erişilemez olarak gösterilmelidir.
+</OL>
+<LI>Eğer bir yapılandırma seçeneği sistemde mevcut, fakat değiştirilemiyor
+ise; yapılandırma seçeneğini gösteren arayüz seçeneği ``değiştirilemez''
+olarak göstermelidir.
+</UL>
+<!--TOC section Seçenekler İçin Kurallar-->
+
+<H2><A NAME="htoc4">4</A>&nbsp;&nbsp;Seçenekler İçin Kurallar</H2><!--SEC END -->
+
+Bir grafik arayüzünün yapılandırma kısmını oluşturan ve kullanıcının
+karşısına çıkan seçeneklerden oluşan bölümün, <EM>kullanıcı-dostu</EM>
+olması için aşağıdaki kurallara uymalıdır;
+<UL><LI>
+Gerçekte kullanıcı yazılımı kullanmak değil işini bir an önce bitirmek
+ister. Bu yüzden önüne çıkacak yapılandırma soruları görevini yerine
+getirdiği gibi, olabildiğince sade görünümlü, kolay kullanılabilir
+ve az sayıda basamak içermelidir.
+<LI>Kullanıcıdan ayarlaması/girmesi istenen seçenek (ler), kendini kullanıcıya
+yeterince açık tarif edecek ve kafa karıştırmayacak açıklamalara sahip
+olmalıdır.
+<LI>Sade görünüm aynı zamanda işlevselleği de sağlamalıdır. Bu işlevsellik
+bir uygulama içinde bölümden bölüme farklılık gösterebilir. Örneğin
+Kopete uygulaması için ICQ hesabı yaratılırken, kullanıcının karşısına
+bağlanılacak ICQ sunucusunun isminin çıkartılması gereksiz ve kafa
+karıştırıcıdır, oysa Jabber hesabı yaratılırken bu bilgi daha sık
+gerekli olmaktadır.
+<LI>Kullanıcının her zaman değiştirmeyeceği/görmeyeceği ama bazı durumlarda
+değiştirmek/görmek isteyebileceği yada değiştirmesine olanak verilebilecek
+seçenekler <B><EM>``Gelişmiş Seçenekler''</EM></B> veya benzeri
+bir isimle gruplanmalı ve kullanıcı özellikle o seçenekleri görmek
+istemedikçe karşısına çıkartılmamalıdır.
+<LI><B><EM>``Gelişmiş Seçenekler''</EM></B> grubundaki seçenekler
+kendini kullanıcıya yeterince açık tarif edecek ve kafa karıştırmayacak
+açıklamalara sahip olmalıdır.
+<LI>Sık kullanılabilecek veya kritik önem taşıyan seçenekler <B><EM>``Gelişmiş
+Seçenekler''</EM></B> grubu içine sokulmamalıdır.
+<LI>Girilen bir veya birkaç değerden hesaplanabilecek/anlaşılabilecek
+değerler, hiç bir ekranda kullanıcının karşısına çıkartılmamalıdır/bunlar
+için hiçbir yapılandırma seçeneği bulunmamalıdır.
+<LI>Seçenekler içinde, birbirini tekrarlayan ya da başka bir seçenek ile
+çakışan hiçbir yapılandırma seçeneği olmamalıdır.
+<LI>Hata oluşması durumunda, eğer gerekli ise, kullanıcıya kısa ve öz
+olarak nelerin yanlış gittiğini ve sorunun ne olduğunu anlatan hata
+mesajları, tüm hata çıktısını gösteren veya sadece ``Yazılım Çöktü''
+gibi kullanıcıya anlam ifade etmeyen mesajlara tercih edilmelidir.
+</UL>
+
+</div>
+<!-- SAYFA İÇERİK SONU -->
+</body>
+</html>
