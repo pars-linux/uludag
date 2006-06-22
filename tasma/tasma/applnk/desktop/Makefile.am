@@ -27,7 +27,7 @@ tasmakwinoptions.desktop \
 tasmalanguage.desktop \
 tasmalaptop.desktop \
 tasmamouse.desktop \
-tasmanetkga.desktop \
+tasmanetwork-manager.desktop \
 tasmapanel.desktop \
 tasmapisi.desktop \
 tasmaprinters.desktop \
@@ -36,6 +36,6 @@ tasmaproxy.desktop \
 tasmasamba.desktop \
 tasmascreensaver.desktop \
 tasmastyle.desktop \
-tasmauserkga.desktop \
-tasmaserviskga.desktop \
-tasmaguvenlikkga.desktop
+tasmauser-manager.desktop \
+tasmaservice-manager.desktop \
+tasmafirewall-config.desktop
