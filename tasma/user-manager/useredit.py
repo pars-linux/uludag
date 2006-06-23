@@ -476,7 +476,7 @@ class UserStack(QVBox):
         elif reply[0] == self.link.DENIED:
             msg = i18n("You are not allowed to do that")
         else:
-            msg = i18n("Çomar script error :(")
+            msg = i18n("Comar script error :(")
         
         self.guide.op_end(msg)
     
