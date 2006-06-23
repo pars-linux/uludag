@@ -10,7 +10,6 @@
 #
 
 import os
-import string
 
 from qt import *
 from kdecore import *
@@ -76,26 +75,7 @@ class Name:
         self.stack.u_home.guess(text)
     
     def guess(self, text):
-        # FIXME: guess better and check for dups
-        text = unicode(text).lower()
-        text2 = ""
-        for c in text:
-            if c in string.ascii_letters:
-                text2 += c
-            elif c == " ":
-                break
-            else:
-                # i know this is ugly, just for prototype
-                c2 = None
-                if c == "ğ": c2 = "g"
-                if c == "ü": c2 = "u"
-                if c == "ş": c2 = "s"
-                if c == "ı": c2 = "i"
-                if c == "ö": c2 = "o"
-                if c == "ç": c2 = "c"
-                if c2:
-                    text2 += c2
-        self.setText(text2)
+        self.setText(nickGuess(text, self.usednames))
     
     def text(self):
         return str(self.name.text())
