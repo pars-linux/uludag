@@ -1,34 +1,37 @@
 <html>
 <head>
-
+<?php require_once('utils.php'); ?>
 <title>PardusOrgTr</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="stil.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<!-- Header -->
 <center>
 
 <!-- Content -->
 
+    <?php
+        $Pardus = new Pardus;
+    ?>
+
 <table>
     <tr>
         <td id="header">
-            <div id="menu"> Hello World ! </div>
+            <div id="menu">  </div>
         </td>
     </tr>
     <tr>
             <td id="pardus-11">
                 <div id="boxdetay1">
-                Bu gereksinimlerden hareketle Linux temelli bir ulusal işletim sistemi dağıtımı oluşturma işine girilmesine karar verilmiştir.
+                Pardus 1.1 Muhteşem :)
                 </div>
             </td>
             <td id="kutular">
                     <div id="pardus-nedir">
-                    Pardus, Tübitak UEKAE tarafından yürütülen, kodları ve geliştirme süreçleri açık, herkesin katılabileceği, özgür yazılım modeliyle geliştirilen bir işletim sistemidir. Kolay kullanılır ve bir bilişim okuryazarının tüm ihtiyaçlarını doğrudan karşılar.
+                    Pardus, TUBITAK UEKAE tarafından yürütülen, kodları ve geliştirme süreçleri açık, herkesin katılabileceği, özgür yazılım modeliyle geliştirilen bir işletim sistemidir. Kolay kullanılır ve bir bilişim okuryazarının tüm ihtiyaçlarını doğrudan karşılar.
                     <br>
-                    Pardus ile ilgili ayrıntılı bilgi için <a href="?p=PardusTanitim">tıklayınız</a>.
+                    Pardus ile ilgili ayrıntılı bilgi için <a href="/Bireysel/PardusTanitim">tıklayınız</a>.
                     </div>
                     <div id="pardus-indir"></div>
             </td>
@@ -37,9 +40,9 @@
     <tr>
             <td id="navi" colspan=2>
             <div id="ana-butonlar">
-                <img src="images/newdesign/button-bireysel-kullanici.png" border="0" alt="" />
-                <img src="images/newdesign/button-kurumsal-kullanici.png" border="0" alt="" />
-                <img src="images/newdesign/button-gelistirici.png" border="0" alt="" />
+                <a href="/Bireysel"><img src="images/newdesign/button-bireysel-kullanici.png" border="0" alt="" /></a>
+                <a href="/Kurumsal"><img src="images/newdesign/button-kurumsal-kullanici.png" border="0" alt="" /></a>
+                <a href="/Gelistirici"><img src="images/newdesign/button-gelistirici.png" border="0" alt="" /></a>
             </div>
             </td>
     </tr>
@@ -47,12 +50,16 @@
     <tr>
             <td id="icerik">
             <div id="ayrintilar">
-                something wrong in here...
+            <?php
+                    $Pardus->GetNews();
+            ?>
             </div>
             </td>
             <td id="kutular">
             <div id="haberler">
-                bu haber şu haber sonra da o haber...
+                <?php
+                    $Pardus->GetNewsList();
+                ?>
             </div>
             </td>
     </tr>
