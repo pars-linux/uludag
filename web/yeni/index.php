@@ -1,9 +1,23 @@
 <html>
 <head>
 <?php require_once('utils.php'); ?>
-<title>PardusOrgTr</title>
+    <title>PardusOrgTr</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="stil.css" rel="stylesheet" type="text/css">
+    <script src="scripts/prototype.js"></script>
+    <script>
+        function get_news(nid) {
+            var url ='utils.php';
+            var linke = 'NewsID='+nid;
+            var AjaxPointer = new Ajax.Request(url,{method:'get', parameters: linke, onComplete: showit});
+        }
+
+        function showit(originalRequest){
+            var newData = originalRequest.responseText;
+            $('ayrintilar').innerHTML = "";
+            $('ayrintilar').innerHTML = newData;
+        }
+    </script>
 </head>
 
 <body>
