@@ -43,10 +43,10 @@
         }
 
         function GetNewsList(){
-            $query = "SELECT Title,Date FROM News ORDER BY DATE DESC LIMIT 5";
+            $query = "SELECT ID,Title,Date FROM News ORDER BY DATE DESC LIMIT 5";
             $result= mysql_query($query,$this->Connection);
             while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-                printf("%s - %s <br>", $row["Date"], $row["Title"]);
+                printf("<a href='#' onClick='get_news(%s);'> %s - %s </a><br>", $row["ID"],$row["Date"], $row["Title"]);
             }
             mysql_free_result($result);
         }
@@ -65,5 +65,9 @@
 
     }
 
+    if ($_GET["NewsID"]<>""){
+        $Pardus = new Pardus;
+        $Pardus->GetNews($_GET["NewsID"]);
+    }
     
 ?>
