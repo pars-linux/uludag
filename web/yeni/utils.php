@@ -24,18 +24,16 @@
     }
 
     */
+        
+    include_once 'config.php';
 
     class Pardus {
-
-        var $DbHost = "127.0.0.1";
-        var $DbUser = "root";
-        var $DbPass = "gooksel";
-        var $DbData = "Pardus";
+        
         var $Connection; 
    
-        function Pardus(){
-            if ($this->Connection=mysql_connect($this->DbHost,$this->DbUser, $this->DbPass))
-                mysql_select_db($this->DbData,$this->Connection);
+        function Pardus($DbHost,$DbUser,$DbPass,$DbData){
+            if ($this->Connection=mysql_connect($DbHost,$DbUser, $DbPass))
+                mysql_select_db($DbData,$this->Connection);
             else {
                 echo("MySQL Connection Error, Check your settings. Error : ".mysql_error());
                 return 0;
@@ -66,7 +64,7 @@
     }
 
     if ($_GET["NewsID"]<>""){
-        $Pardus = new Pardus;
+        $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
         $Pardus->GetNews($_GET["NewsID"]);
     }
     

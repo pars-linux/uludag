@@ -178,9 +178,8 @@ li {
 
 #kutular a:hover {
 	color: #000;
-    padding:1.5px;
-	text-decoration: underline;
-    background-color:#8AC86C;
+    padding:1px;
+    background-color:#8FCA6F;
 }
 
 #ana-butonlar a:hover {
