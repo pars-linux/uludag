@@ -464,41 +464,10 @@ bildirmeniz gerekiyor.
 
 \begin_layout Standard
 Baþvuru e-postasýna hesabýnýz için kullanacaðýnýz kullanýcý adý ve parolanýzýn
- þifrelenmiþ bir halini (htpasswd ile oluþturulmuþ) eklemelisiniz.
+ þifrelenmiþ bir halini eklemelisiniz.
  Bu sayede düz metin halini sadece sizin bildiðiniz parolanýzýn þifrelenmiþ
  halini bize göndermiþ olursunuz ve kimlik denetimi gerektiren yerlere kullanýcý
  adýnýzý ve þifrenizi ekleyebiliriz.
-\end_layout
-
-\begin_layout Subsubsection
-htpasswd ile parola oluþturma
-\end_layout
-
-\begin_layout Standard
-Parola ve kullanýcý adýnýzý htpasswd programýný kullanarak oluþturabilir
- ve çýktý dosyasýný e-postanýza ekleyebilirsiniz.
- Bunun için aþaðýdaki komut kullanýlabilir.
-\end_layout
-
-\begin_layout LyX-Code
-$ htpasswd -c parola_dosyasi kullanici_adi
-\end_layout
-
-\begin_layout LyX-Code
-New password:
-\end_layout
-
-\begin_layout LyX-Code
-Re-type new password:
-\end_layout
-
-\begin_layout LyX-Code
-Adding password for user kullanici_adi
-\end_layout
-
-\begin_layout Standard
-Sonuç olarak oluþturulacak çýktý dosyasýný (parola_dosyasi) e-postanýza
- ekleyebilirsiniz.
 \end_layout
 
 \begin_layout Subsubsection
