@@ -15,8 +15,9 @@ class Advisory:
     a_Id = [autoxml.String, autoxml.mandatory]
     t_Title = [autoxml.LocalText, autoxml.mandatory]
     t_ReleaseDate = [autoxml.String, autoxml.mandatory]
-    t_Description = [autoxml.LocalText, autoxml.mandatory]
+    t_Summary = [autoxml.LocalText, autoxml.mandatory]
     t_Packages = [[Package], autoxml.mandatory]
+    t_Description = [autoxml.LocalText, autoxml.mandatory]
     t_References = [[Reference], autoxml.optional]
 
 class PLSAFile(XmlFile):
