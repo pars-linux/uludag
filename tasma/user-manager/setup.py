@@ -9,6 +9,7 @@
 # any later version.
 #
 
+from distutils.core import Extension
 import kdedistutils
 
 app_data = [
@@ -21,6 +22,10 @@ app_data = [
     'user-manager.desktop',
 ]
 
+capslockedmodule = Extension('capslocked',
+                        sources = ['capslocked.c'],
+                        extra_compile_args = ['-Wall -lX11'])
+
 kdedistutils.setup(
     name="user-manager",
     version="0.5",
@@ -32,5 +37,6 @@ kdedistutils.setup(
     application_data = app_data,
     executable_links = [('user-manager','user-manager.py')],
     i18n = ('po', ['.']),
+    ext_modules = [capslockedmodule],
     kcontrol_modules = [ ('user-manager.desktop','user-manager.py')],
 )
