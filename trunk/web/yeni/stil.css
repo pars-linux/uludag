@@ -98,6 +98,7 @@ li {
     padding-top:26px;
     color: #297190;
     height:auto;
+    width:470px;
 }
 
 
@@ -169,15 +170,20 @@ li {
 /* eskiler feedback */
 
 
-a {
+#kutular a {
 	color: #F55400;
 	text-decoration: none;
 	/*font-weight: bold;*/
 }
 
-a:hover {
+#kutular a:hover {
 	color: #000;
     padding:1.5px;
 	text-decoration: underline;
     background-color:#8AC86C;
 }
+
+#ana-butonlar a:hover {
+    border-bottom:1px solid #8AC86C;
+}
+
