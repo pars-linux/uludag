@@ -405,7 +405,7 @@ a Pardus developer who knows about your work and might be a reference for
 should be included.
 \layout Standard
 
-You should include the username and ciphertext (created by htpasswd) of
+You should include the username and ciphertext of
  your password in your application e-mail.
  By doing so, you provide us with the ciphertext of your password where
  you are the only one who knows the plaintext.
