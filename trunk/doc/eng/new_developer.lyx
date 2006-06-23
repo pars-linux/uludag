@@ -414,30 +414,6 @@ You should include the username and ciphertext (created by htpasswd) of
  
 \layout Subsubsection
 
-to create a password with htpasswd
-\layout Standard
-
-You can create your password and username by using htpasswd program and
- you can attach the output file to your e-mail.
- To do this, you can use the command below:
-\layout LyX-Code
-
-$ htpasswd -c password_file user_name
-\layout LyX-Code
-
-New password:
-\layout LyX-Code
-
-Re-type new password:
-\layout LyX-Code
-
-Adding password for user user_name
-\layout Standard
-
-As a result an output file (password_file) will be created and you can attach
- it to your e-mail.
-\layout Subsubsection
-
 to create a password with perl
 \layout Standard
 
