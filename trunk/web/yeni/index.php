@@ -26,7 +26,7 @@
 <!-- Content -->
 
     <?php
-        $Pardus = new Pardus;
+        $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
     ?>
 
 <table>
