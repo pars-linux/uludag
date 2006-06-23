@@ -3,6 +3,7 @@
 
 # Standard Python Modules
 import sys
+import time
 
 # QT Modules
 from qt import *
@@ -37,6 +38,7 @@ class multilang_text(QWidget):
 
         self.setMode("new")
 
+        # Signals
         QObject.connect(self.pushAddRemove, SIGNAL("clicked()"), self.slotAddRemove)
 
         self.clearWState(Qt.WState_Polished)
@@ -122,6 +124,31 @@ class multilang(QVBox):
         height = parent.insideSpacing() + parent.insideMargin() * 2 + self.height()
         parent.setMinimumSize(QSize(250, height))
 
+class loadxml_thread(QThread):
+    def run(self):
+        w.progress.show()
+        w.progress.setProgress(0)
+
+        w.plsa = PLSAFile(w.xml)
+
+        for lang in w.plsa.title:
+            x = w.titles.addLang(lang)
+            x.setText(unicode(w.plsa.title[lang]))
+
+        inc = 1
+        total = len(w.plsa.advisories)
+        for adv in w.plsa.advisories:
+            item = QListViewItem(w.listAdvisories, None)
+            item.setText(0, adv.id)
+            item.setText(1, adv.title["en"])
+            item.node = adv
+            w.progress.setProgress(inc * 100 / total)
+            inc += 1
+
+        time.sleep(3)
+        w.progress.setProgress(0)
+        w.progress.hide()
+
 class plsaindex(mainform):
     def __init__(self,parent = None,name = None):
         mainform.__init__(self, parent, name)
@@ -143,6 +170,38 @@ class plsaindex(mainform):
         x = self.titles.addLang()
         x.setLang("en")
 
+        # Advisory Title
+        self.groupAdvTitle.setMinimumSize(QSize(250, 50))
+        self.groupAdvTitle.setColumnLayout(0, Qt.Vertical)
+        groupAdvTitleLayout = QGridLayout(self.groupAdvTitle.layout())
+        groupAdvTitleLayout.setAlignment(Qt.AlignTop)
+
+        self.advtitle = multilang(self.groupAdvTitle, "advtitle")
+        groupAdvTitleLayout.addWidget(self.advtitle, 0, 0)
+
+        # Advisory Summary
+        self.groupAdvSummary.setMinimumSize(QSize(250, 50))
+        self.groupAdvSummary.setColumnLayout(0, Qt.Vertical)
+        groupAdvSummaryLayout = QGridLayout(self.groupAdvSummary.layout())
+        groupAdvSummaryLayout.setAlignment(Qt.AlignTop)
+
+        self.advsummary = multilang(self.groupAdvSummary, "advsummary")
+        groupAdvSummaryLayout.addWidget(self.advsummary, 0, 0)
+
+        # Advisory Description
+        self.groupAdvDescription.setMinimumSize(QSize(250, 50))
+        self.groupAdvDescription.setColumnLayout(0, Qt.Vertical)
+        groupAdvDescriptionLayout = QGridLayout(self.groupAdvDescription.layout())
+        groupAdvDescriptionLayout.setAlignment(Qt.AlignTop)
+
+        self.advdescription = multilang(self.groupAdvDescription, "advdescription")
+        groupAdvDescriptionLayout.addWidget(self.advdescription, 0, 0)
+
+        # Progress bar
+        self.progress = QProgressBar(self.statusBar(), "progress")
+        self.progress.setGeometry(QRect(5, 0, 200, 15))
+        self.progress.hide()
+
         # Dialog
         self.dialog = QFileDialog(self)
         self.dialog.addFilter("PLSA Index (*.xml)");
@@ -152,12 +211,16 @@ class plsaindex(mainform):
         QObject.connect(self.fileOpenAction, SIGNAL("activated()"), self.slotOpenXMLDialog)
         QObject.connect(self.fileSaveAction, SIGNAL("activated()"), self.slotSaveXML)
         QObject.connect(self.fileExitAction, SIGNAL("activated()"), self.slotExit)
-
         QObject.connect(self.dialog, SIGNAL("fileSelected(const QString &)"), self.slotOpenXML)
+        QObject.connect(self.listAdvisories, SIGNAL("clicked(QListViewItem *)"), self.slotAdvSelected)
+
+        # Threads
+        self.thread_xml = loadxml_thread()
 
     def clear(self):
         self.titles.clear()
         self.listAdvisories.clear()
+        self.frameAdvisory.setEnabled(0)
 
         self.plsa = None
         self.xml = ""
@@ -179,31 +242,41 @@ class plsaindex(mainform):
     def slotOpenXML(self, file):
         if file:
             self.clear()
-
             self.xml = str(file)
 
-            self.plsa = PLSAFile(self.xml)
-
-            for lang in self.plsa.title:
-                x = self.titles.addLang(lang)
-                x.setText(unicode(self.plsa.title[lang]))
-
-            for adv in self.plsa.advisories:
-                item = QListViewItem(self.listAdvisories, None)
-                item.setText(0, adv.id)
-                item.setText(1, adv.title["en"])
-                item.node = adv
+            self.thread_xml.start()
 
             self.fileSaveAction.setEnabled(1)
             self.fileSAction.setEnabled(1)
 
     def slotSaveXML(self):
-        titles = self.titles.getLanguages()
-        for lang in titles:
-            self.plsa.title[lang] = str(titles[lang])
         self.plsa.write(self.xml)
 
+    def slotAdvSelected(self, item):
+        self.frameAdvisory.setEnabled(1)
+
+        for obj in [self.advtitle, self.advsummary, self.advdescription]:
+            obj.clear()
+
+        self.lineID.setText(item.node.id)
+
+        titles = item.node.title
+        for lang in titles:
+            x = self.advtitle.addLang(lang)
+            x.setText(titles[lang])
+
+        summaries = item.node.summary
+        for lang in summaries:
+            x = self.advsummary.addLang(lang)
+            x.setText(summaries[lang])
+
+        descriptions = item.node.description
+        for lang in descriptions:
+            x = self.advdescription.addLang(lang)
+            x.setText(descriptions[lang])
+
 def main():
+    global w
     app = QApplication(sys.argv)
     w = plsaindex()
     app.setMainWidget(w)

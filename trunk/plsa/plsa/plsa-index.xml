@@ -4,14 +4,14 @@
     <Advisory Id="plsa-1">
         <Title xml:lang="en">shadow: Privilege escalation</Title>
         <ReleaseDate>20060607</ReleaseDate>
-        <Summary xml:lang="en">A security issue in shadow allows a local user to perform certain actions with escalated privileges.</Summary>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">When the mailbox is created in useradd, the &quot;open()&quot; function does not receive the three arguments it expects while O_CREAT is present, which leads to random permissions on the created file, before fchmod() is executed.</Description>
         <Packages>
             <Package>
                 <Name>shadow</Name>
                 <Release>1&lt;3</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en">When the mailbox is created in useradd, the "open()" function does not receive the three arguments it expects while O_CREAT is present, which leads to random permissions on the created file, before fchmod() is executed.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-1174</Name>
@@ -22,14 +22,14 @@
     <Advisory Id="plsa-2">
         <Title xml:lang="en">MySQL: Information leakage</Title>
         <ReleaseDate>20060605</ReleaseDate>
-        <Summary xml:lang="en">A MySQL server may leak information to unauthorized users.</Summary>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">The processing of the COM_TABLE_DUMP command by a MySQL server fails to properly validate packets that arrive from the client via a network socket.</Description>
         <Packages>
             <Package>
                 <Name>mysql-server</Name>
                 <Release>1&lt;7</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en">The processing of the COM_TABLE_DUMP command by a MySQL server fails to properly validate packets that arrive from the client via a network socket.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-1516</Name>
@@ -44,14 +44,14 @@
     <Advisory Id="plsa-3">
         <Title xml:lang="en">Ruby: Denial of Service</Title>
         <ReleaseDate>20060605</ReleaseDate>
-        <Summary xml:lang="en">Ruby WEBrick and XMLRPC servers are vulnerable to Denial of Service.</Summary>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">Ruby is an interpreted scripting language for quick and easy object-oriented programming. It comes bundled with HTTP (&quot;WEBrick&quot;) and XMLRPC server objects.</Description>
         <Packages>
             <Package>
                 <Name>ruby</Name>
                 <Release>1&lt;2</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en">Ruby is an interpreted scripting language for quick and easy object-oriented programming. It comes bundled with HTTP ("WEBrick") and XMLRPC server objects.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-1931</Name>
@@ -62,7 +62,8 @@
     <Advisory Id="plsa-4">
         <Title xml:lang="en">PHP: Multiple vulnerabilities</Title>
         <ReleaseDate>20060508</ReleaseDate>
-        <Summary xml:lang="en">PHP is affected by multiple issues, including a buffer overflow in wordwrap() which may lead to execution of arbitrary code.</Summary>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">Several vulnerabilities were discovered on PHP4 and PHP5 by Infigo, Tonu Samuel and Maksymilian Arciemowicz. These included a buffer overflow in the wordwrap() function, restriction bypasses in the copy() and tempname() functions, a cross-site scripting issue in the phpinfo() function, a potential crash in the substr_compare() function and a memory leak in the non-binary-safe html_entity_decode() function.</Description>
         <Packages>
             <Package>
                 <Name>php</Name>
@@ -73,7 +74,6 @@
                 <Release>1&lt;7</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en">Several vulnerabilities were discovered on PHP4 and PHP5 by Infigo, Tonu Samuel and Maksymilian Arciemowicz. These included a buffer overflow in the wordwrap() function, restriction bypasses in the copy() and tempname() functions, a cross-site scripting issue in the phpinfo() function, a potential crash in the substr_compare() function and a memory leak in the non-binary-safe html_entity_decode() function.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-0996</Name>
@@ -96,14 +96,14 @@
     <Advisory Id="plsa-5">
         <Title xml:lang="en">rsync: Potential integer overflow</Title>
         <ReleaseDate>20060506</ReleaseDate>
-        <Summary xml:lang="en">An attacker having write access to an rsync module might be able to execute arbitrary code on an rsync server.</Summary>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">An integer overflow was found in the receive_xattr function from the extended attributes patch (xattr.c) for rsync. The vulnerable function is only present when the &quot;acl&quot; USE flag is set.</Description>
         <Packages>
             <Package>
                 <Name>rsync</Name>
                 <Release>1&lt;6</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en">An integer overflow was found in the receive_xattr function from the extended attributes patch (xattr.c) for rsync. The vulnerable function is only present when the "acl" USE flag is set.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-2083</Name>
@@ -114,14 +114,14 @@
     <Advisory Id="plsa-6">
         <Title xml:lang="en">X.Org: Buffer overflow in XRender extension</Title>
         <ReleaseDate>20060502</ReleaseDate>
-        <Summary xml:lang="en">A buffer overflow in the XRender extension potentially allows any X.Org user to execute arbitrary code with elevated privileges.</Summary>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">X.Org miscalculates the size of a buffer in the XRender extension.</Description>
         <Packages>
             <Package>
                 <Name>xorg</Name>
                 <Release>1&lt;3</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en">X.Org miscalculates the size of a buffer in the XRender extension.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-1526</Name>
@@ -132,19 +132,55 @@
     <Advisory Id="plsa-7">
         <Title xml:lang="en">Mozilla Firefox: Potential remote code execution</Title>
         <ReleaseDate>20060506</ReleaseDate>
-        <Summary xml:lang="en"></Summary>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">Martijn Wargers and Nick Mott discovered a vulnerability when rendering malformed JavaScript content. The Mozilla Firefox 1.0 line is not affected.</Description>
         <Packages>
             <Package>
                 <Name>firefox</Name>
                 <Release>1&lt;</Release>
             </Package>
         </Packages>
-        <Description xml:lang="en">Martijn Wargers and Nick Mott discovered a vulnerability when rendering malformed JavaScript content. The Mozilla Firefox 1.0 line is not affected.</Description>
         <References>
             <Reference>
                 <Name>CVE-2006-1993</Name>
                 <Link>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1993</Link>
             </Reference>
-       </References>
+        </References>
+    </Advisory>
+    <Advisory Id="plsa-8">
+        <Title xml:lang="en">GnuPG: Denial of Service</Title>
+        <ReleaseDate>20060619</ReleaseDate>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">parse-packet.c in GnuPG (gpg) 1.4.3 and 1.9.20 allows remote attackers to cause a denial of service (gpg crash) and possibly overwrite memory via a message packet with a large length, which could lead to an integer overflow, as demonstrated using the --no-armor option.</Description>
+        <Packages>
+            <Package>
+                <Name>gnupg</Name>
+                <Release>5&lt;6</Release>
+            </Package>
+        </Packages>
+        <References>
+            <Reference>
+                <Name>CVE-2006-3082</Name>
+                <Link>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3082</Link>
+            </Reference>
+        </References>
+    </Advisory>
+    <Advisory Id="plsa-9">
+        <Title xml:lang="en">MySQL: Denial of Service</Title>
+        <ReleaseDate>20060619</ReleaseDate>
+        <Summary xml:lang="en">...</Summary>
+        <Description xml:lang="en">mysqld in MySQL allows remote authorized users to cause a denial of service (crash) via a NULL second argument to the str_to_date function.</Description>
+        <Packages>
+            <Package>
+                <Name>mysql-server</Name>
+                <Release>1&lt;7</Release>
+            </Package>
+        </Packages>
+        <References>
+            <Reference>
+                <Name>CVE-2006-3081</Name>
+                <Link>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3081</Link>
+            </Reference>
+        </References>
     </Advisory>
 </PLSA>
