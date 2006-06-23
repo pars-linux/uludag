@@ -12,6 +12,7 @@
 import os
 from qt import *
 from kdecore import *
+from kdeui import *
 
 from utility import getIconSet
 
@@ -128,18 +129,29 @@ class BrowseStack(QVBox):
         if self.tab.currentPageIndex() == 0:
             item = self.users.selectedItem()
             if item:
-                msg = "Should I delete the user\n%s (%d - %s)?" % (
-                    item.name, item.uid, item.nick
+                msg = "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %s<br>ID: %d" % (
+                    item.name, item.nick, item.uid
                 )
-                if QMessageBox.Yes == QMessageBox.question(self, "Delete User?", msg, QMessageBox.Yes, QMessageBox.No):
+                if KMessageBox.Yes == KMessageBox.warningYesNoCancel(
+                    self,
+                    msg,
+                    i18n("Delete User"),
+                    KGuiItem(i18n("Delete user and files")),
+                    KGuiItem(i18n("Delete user")),
+                ):
                     self.link.call("User.Manager.deleteUser", [ "uid", str(item.uid) ])
         else:
             item = self.groups.selectedItem()
             if item:
-                msg = "Should I delete the group\n%s (%d)?" % (
+                msg = "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d" % (
                     item.name, item.gid
                 )
-                if QMessageBox.Yes == QMessageBox.question(self, "Delete Group?", msg, QMessageBox.Yes, QMessageBox.No):
+                if KMessageBox.Yes == KMessageBox.warningYesNo(
+                    self,
+                    msg,
+                    i18n("Delete Group"),
+                    KGuiItem(i18n("Delete Group"))
+                ):
                     self.link.call("User.Manager.deleteGroup", [ "gid", str(item.gid) ])
     
     def slotSelect(self):

@@ -52,7 +52,7 @@ def nickGuess(name, nicklist):
         return ""
     
     text = unicode(name).lower().split()
-    print text
+    
     # First guess: name
     ret = convert(text[0])
     if not ret in nicklist:
