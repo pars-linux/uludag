@@ -72,7 +72,8 @@ class Name:
     
     def slotChange(self, text):
         self.stack.checkAdd()
-        self.stack.u_home.guess(text)
+        if not self.edit:
+            self.stack.u_home.guess(text)
     
     def guess(self, text):
         self.setText(nickGuess(text, self.usednames))
@@ -85,8 +86,9 @@ class Name:
 
 
 class RealName:
-    def __init__(self, stack, w, grid):
+    def __init__(self, stack, w, grid, edit=False):
         self.stack = stack
+        self.edit = edit
         lab = QLabel(i18n("Full name:"), w)
         self.name = QLineEdit(w)
         lab.setBuddy(self.name)
@@ -97,7 +99,8 @@ class RealName:
         grid.addWidget(self.name, row, 1)
     
     def slotChange(self, text):
-        self.stack.u_name.guess(text)
+        if not self.edit:
+            self.stack.u_name.guess(text)
     
     def setText(self, text):
         self.name.setText(text)
@@ -396,7 +399,7 @@ class UserStack(QVBox):
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(9)
         
-        self.u_realname = RealName(self, w, grid)
+        self.u_realname = RealName(self, w, grid, edit)
         
         self.u_password = Password(self, w, grid)
         

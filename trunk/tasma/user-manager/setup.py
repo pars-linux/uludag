@@ -24,7 +24,7 @@ app_data = [
 
 capslockedmodule = Extension('capslocked',
                         sources = ['capslocked.c'],
-                        extra_compile_args = ['-Wall -lX11'])
+                        libraries = ['X11'])
 
 kdedistutils.setup(
     name="user-manager",
