@@ -29,6 +29,8 @@ locked(void)
 		 &dummy1, &dummy2, &dummy3, &dummy4, &dummy5, &dummy6,
 		 &lmask );
 
+  XCloseDisplay(disp);
+
   if (lmask & LockMask) {
     return Py_True;
   }
