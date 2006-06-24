@@ -51,7 +51,7 @@ class GroupItem(QListViewItem):
             self.desc = args[3]
     
     def text(self, col):
-        return (str(self.gid), self.name, self.comment)[col]
+        return (str(self.gid), self.name)[col]
     
     def compare(self, item, col, ascend):
         if col == 0:
@@ -111,7 +111,6 @@ class BrowseStack(QVBox):
         self.groups.addColumn(i18n("ID"))
         self.groups.setColumnAlignment(0, Qt.AlignRight)
         self.groups.addColumn(i18n("Group name"))
-        self.groups.addColumn(i18n("Description"))
         self.groups.setResizeMode(QListView.LastColumn)
         self.groups.setAllColumnsShowFocus(True)
         self.connect(self.groups, SIGNAL("selectionChanged()"), self.slotSelect)
@@ -187,6 +186,11 @@ class BrowseStack(QVBox):
             if item.uid < 1000 or item.uid > 65000:
                 item.setVisible(on)
             item = item.nextSibling()
+        item = self.groups.firstChild()
+        while item:
+            if item.gid < 1000 or item.gid > 65000:
+                item.setVisible(on)
+            item = item.nextSibling()
         self.slotSelect()
     
     def comarUsers(self, reply):
@@ -202,3 +206,5 @@ class BrowseStack(QVBox):
             return
         for group in unicode(reply[2]).split("\n"):
             item = GroupItem(self.groups, group)
+            if item.gid < 1000 or item.gid > 65000:
+                item.setVisible(False)
