@@ -132,13 +132,16 @@ class BrowseStack(QVBox):
                 msg = unicode(i18n("<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %s<br>ID: %d")) % (
                     item.name, item.nick, item.uid
                 )
-                if KMessageBox.Yes == KMessageBox.warningYesNoCancel(
+                ret = KMessageBox.warningYesNoCancel(
                     self,
                     msg,
                     i18n("Delete User"),
                     KGuiItem(i18n("Delete user and files"), "trashcan_empty"),
                     KGuiItem(i18n("Delete user"), "remove"),
-                ):
+                )
+                if ret == KMessageBox.Yes:
+                    self.link.call("User.Manager.deleteUser", [ "uid", str(item.uid), "deletefiles", "true" ])
+                if ret == KMessageBox.No:
                     self.link.call("User.Manager.deleteUser", [ "uid", str(item.uid) ])
         else:
             item = self.groups.selectedItem()
