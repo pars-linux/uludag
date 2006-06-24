@@ -34,7 +34,7 @@ class GID:
     
     def slotToggle(self, bool):
         self.gid.setEnabled(bool)
-        self.stack.checkAdd()
+        self.stack.guide.check()
     
     def text(self):
         if self.gid_auto.isChecked():
@@ -42,17 +42,19 @@ class GID:
         else:
             return "auto"
     
-    def check(self):
-        t = self.text()
-        if t == "":
-            return i18n("Enter a group ID or use auto selection")
-        return None
+    def setText(self, text):
+        if text == "auto":
+            self.gid_auto.setChecked(False)
+            self.gid.setText("")
+        else:
+            self.gid_auto.setChecked(True)
+            self.gid.setText(text)
 
 
 class Name:
     def __init__(self, stack, w, grid):
         self.stack = stack
-        lab = QLabel(i18n("Name:"), w)
+        lab = QLabel(i18n("Group name:"), w)
         self.name = QLineEdit(w)
         lab.setBuddy(self.name)
         self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]*"), self.name))
@@ -62,65 +64,101 @@ class Name:
         grid.addWidget(self.name, row, 1)
     
     def slotChange(self, text):
-        self.stack.checkAdd()
+        self.stack.guide.check()
     
     def text(self):
         return str(self.name.text())
     
+    def setText(self, text):
+        self.name.setText(text)
+
+
+class Guide(QWidget):
+    def __init__(self, parent):
+        QWidget.__init__(self, parent)
+        hb = QHBoxLayout(self)
+        hb.setMargin(6)
+        hb.setSpacing(6)
+        lab = QLabel(self)
+        lab.setPixmap(getIconSet("help.png", KIcon.Panel).pixmap(QIconSet.Automatic, QIconSet.Normal))
+        hb.addWidget(lab, 0, hb.AlignTop)
+        self.info = KActiveLabel(" ", self)
+        hb.addWidget(self.info)
+    
     def check(self):
-        if self.text() == "":
-            return i18n("Enter a group name")
-        return None
+        err = None
+        p = self.parent()
+        
+        if p.g_id.text() == "":
+            err = i18n("Enter a group ID or use auto selection")
+        
+        if not err and p.g_name.text() == "":
+            err = i18n("Enter a group name")
+        
+        if err:
+            self.info.setText(u"<font color=red>%s</font>" % err)
+            self.ok_but.setEnabled(False)
+        else:
+            self.info.setText("")
+            self.ok_but.setEnabled(True)
+        
+        return err
+    
+    def op_start(self, msg):
+        self.buttons.setEnabled(False)
+        self.info.setText(msg)
+    
+    def op_end(self, msg=None):
+        self.buttons.setEnabled(True)
+        if msg:
+            self.info.setText(u"<big><font color=red>%s</font></big>" % msg)
 
 
 class GroupStack(QVBox):
     def __init__(self, parent, link):
         QVBox.__init__(self, parent)
         self.setMargin(6)
-        self.setSpacing(24)
+        self.setSpacing(6)
         
-        lab = QLabel("<b>%s</b>" % i18n("Add a New Group"), self)
+        lab = QLabel(u"<big><b>%s</b></big>" % i18n("Enter Information For New Group"), self)
         
         hb = QHBox(self)
         
         w = QWidget(hb)
         hb.setStretchFactor(w, 2)
         grid = QGridLayout(w, 0, 0)
-        grid.setSpacing(32)
+        grid.setSpacing(6)
+        
+        grid.addWidget(QLabel(" ", w), grid.numRows(), 0)
         
         self.g_id = GID(self, w, grid)
         
+        grid.addWidget(QLabel(" ", w), grid.numRows(), 0)
+        
         self.g_name = Name(self, w, grid)
         
-        w2 = QWidget(w)
-        hb2 = QHBoxLayout(w2)
-        hb2.setMargin(6)
-        hb2.setSpacing(6)
-        lab = QLabel(w2)
-        lab.setPixmap(getIconSet("help.png", KIcon.Panel).pixmap(QIconSet.Automatic, QIconSet.Normal))
-        hb2.addWidget(lab, 0, hb2.AlignTop)
-        self.info = KActiveLabel(" ", w2)
-        hb2.addWidget(self.info)
-        grid.addMultiCellWidget(w2, 2, 2, 0, 1)
+        grid.addWidget(QLabel(" ", w), grid.numRows(), 0)
         
         lab = QLabel(" ", hb)
         hb.setStretchFactor(lab, 1)
+        
+        self.guide = Guide(self)
         
         hb = QHBox(self)
         hb.setSpacing(12)
         QLabel(" ", hb)
         but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
-        self.add_but = but
+        self.guide.ok_but = but
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
         
-        self.link = link
+        self.guide.buttons = hb
         
-        self.checkAdd()
+        self.link = link
     
     def slotAdd(self):
-        if self.checkAdd():
+        if self.guide.check():
             return
         
         dict = {}
@@ -129,18 +167,24 @@ class GroupStack(QVBox):
         
         self.link.call("User.Manager.addGroup", dict, 4)
         
-        self.parent().slotCancel()
+        self.guide.op_start(i18n("Adding group..."))
     
-    def checkAdd(self):
-        err = self.g_id.check()
-        if not err:
-            err = self.g_name.check()
+    def slotAddReply(self, reply):
+        if reply[0] == self.link.RESULT:
+            self.parent().slotCancel()
+            return
         
-        if err:
-            self.info.setText(u"<font color=red>%s</font>" % err)
-            self.add_but.setEnabled(False)
+        if reply[0] == self.link.FAIL:
+            msg = unicode(i18n("Operation failed, reason:<br>%s")) % reply[2]
+        elif reply[0] == self.link.DENIED:
+            msg = i18n("You are not allowed to do that")
         else:
-            self.info.setText("")
-            self.add_but.setEnabled(True)
+            msg = i18n("Comar script error :(")
         
-        return err
+        self.guide.op_end(msg)
+    
+    def startAdd(self):
+        self.g_id.setText("auto")
+        self.g_name.setText("")
+        self.guide.check()
+        self.g_name.name.setFocus()

@@ -8,13 +8,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-23 16:20+0300\n"
+"POT-Creation-Date: 2006-06-24 12:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: user-manager.py:30
+msgid "User Management"
+msgstr ""
+
+#: user-manager.py:76
+msgid "User manager module is already started!"
+msgstr ""
+
+#: user-manager.py:81
+msgid "User Manager"
+msgstr ""
 
 #: browser.py:92
 msgid "Show system user and groups"
@@ -85,139 +97,131 @@ msgstr ""
 msgid "Select manually"
 msgstr ""
 
-#: useredit.py:61
+#: useredit.py:68
 msgid "User name:"
 msgstr ""
 
-#: useredit.py:92
+#: useredit.py:99
 msgid "Full name:"
 msgstr ""
 
-#: useredit.py:115
+#: useredit.py:122
 msgid "Home:"
 msgstr ""
 
-#: useredit.py:143
+#: useredit.py:150
 msgid "Select user's home directory"
 msgstr ""
 
-#: useredit.py:152
+#: useredit.py:159
 msgid "Password:"
 msgstr ""
 
-#: useredit.py:158
+#: useredit.py:165
 msgid "Confirm password:"
 msgstr ""
 
-#: useredit.py:187
+#: useredit.py:194
 msgid "Shell:"
 msgstr ""
 
-#: useredit.py:209
+#: useredit.py:216
 msgid "Please specify an existing shell command"
 msgstr ""
 
-#: useredit.py:211
+#: useredit.py:218
 msgid "Specified shell command is not executable"
 msgstr ""
 
-#: useredit.py:253
+#: useredit.py:260
 msgid "Group"
 msgstr ""
 
-#: useredit.py:254
+#: useredit.py:261
 msgid "Permission"
 msgstr ""
 
-#: useredit.py:264
+#: useredit.py:271
 msgid "Main group:"
 msgstr ""
 
-#: useredit.py:340
+#: useredit.py:347
 msgid "Start with typing this user's full name."
 msgstr ""
 
-#: useredit.py:343
+#: useredit.py:350
 msgid "You should enter a password for this user."
 msgstr ""
 
-#: useredit.py:346
+#: useredit.py:353
 msgid "Passwords don't match."
 msgstr ""
 
-#: useredit.py:349
+#: useredit.py:356
 msgid "You must enter a user ID or use the auto selection."
 msgstr ""
 
-#: useredit.py:352
+#: useredit.py:359
 msgid "You must enter a user name."
 msgstr ""
 
-#: useredit.py:355
+#: useredit.py:362
 msgid "This user name is used by another user"
 msgstr ""
 
-#: useredit.py:358
+#: useredit.py:365
 msgid "You should select at least one group this user belongs to."
 msgstr ""
 
-#: useredit.py:387
+#: useredit.py:396
 msgid "Edit User's Information"
 msgstr ""
 
-#: useredit.py:389
+#: useredit.py:398
 msgid "Enter Information For New User"
 msgstr ""
 
-#: useredit.py:391
+#: useredit.py:400
 msgid "Show all groups"
 msgstr ""
 
-#: useredit.py:467
+#: useredit.py:476
 msgid "Adding user..."
 msgstr ""
 
-#: useredit.py:475
+#: useredit.py:484 groupedit.py:178
 #, python-format
 msgid "Operation failed, reason:<br>%s"
 msgstr ""
 
-#: useredit.py:477
+#: useredit.py:486 groupedit.py:180
 msgid "You are not allowed to do that"
 msgstr ""
 
-#: useredit.py:479
+#: useredit.py:488 groupedit.py:182
 msgid "Comar script error :("
 msgstr ""
 
-#: useredit.py:502
+#: useredit.py:511
 msgid "Getting user information..."
 msgstr ""
 
-#: user-manager.py:30
-msgid "User Management"
+#: groupedit.py:57
+msgid "Group name:"
 msgstr ""
 
-#: user-manager.py:76
-msgid "User manager module is already started!"
-msgstr ""
-
-#: user-manager.py:81
-msgid "User Manager"
-msgstr ""
-
-#: groupedit.py:48
+#: groupedit.py:93
 msgid "Enter a group ID or use auto selection"
 msgstr ""
 
-#: groupedit.py:55
-msgid "Name:"
-msgstr ""
-
-#: groupedit.py:72
+#: groupedit.py:96
 msgid "Enter a group name"
 msgstr ""
 
-#: groupedit.py:82
-msgid "Add a New Group"
+#: groupedit.py:123
+msgid "Enter Information For New Group"
+msgstr ""
+
+#: groupedit.py:170
+msgid "Adding group..."
 msgstr ""
