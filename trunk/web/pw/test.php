@@ -8,8 +8,11 @@
     $Values= Array ('Baslik','Icerik','D');
     $PP = new Pardus();
     $PP->DbLogDetail = 3;
-    $PP->DbConnect('Host','User','Pass','DB');
-    $PP->UpdateField('Pages','Title','Pardus 1.1');
-    echo $PP->InsertRecord('Pages',$Pages,$Values);
-    
+    $PP->DbConnect('','','','');
+    //$PP->UpdateField('Pages','Title','Pardus 1.5',3);
+    //$PP->InsertRecord('Pages',$Pages,$Values);
+    //$Records = $PP->GetRecord('Pages','Content',3);
+    //$Records = $PP->FindRecord('Pages','Title','1.1','Title');
+    //print_r($Records);
+
 ?>
