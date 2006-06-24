@@ -41,7 +41,8 @@ class UserManager(QWidgetStack):
             self.browse.comarGroups(reply)
         elif id == 3:
             self.user.slotAddReply(reply)
-        # 4 group add reply
+        elif id == 4:
+            self.group.slotAddReply(reply)
         elif id == 5:
             self.useredit.slotInfo(reply)
     
@@ -59,6 +60,7 @@ class UserManager(QWidgetStack):
             self.user.startAdd(self.browse.groups, names)
         else:
             self.raiseWidget(self.group)
+            self.group.startAdd()
     
     def slotEdit(self):
         self.raiseWidget(self.useredit)

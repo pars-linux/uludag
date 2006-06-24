@@ -44,7 +44,14 @@ class UID:
         self.stack.checkAdd()
     
     def setText(self, text):
-        self.uid.setText(text)
+        if text == "auto":
+            if not self.edit:
+                self.uid_auto.setChecked(False)
+            self.uid.setText("")
+        else:
+            if not self.edit:
+                self.uid_auto.setChecked(True)
+            self.uid.setText(text)
     
     def text(self):
         if self.edit or self.uid_auto.isChecked():
@@ -363,6 +370,8 @@ class Guide(QWidget):
         else:
             self.info.setText("")
             self.ok_but.setEnabled(True)
+        
+        return err
     
     def op_start(self, msg):
         self.buttons.setEnabled(False)
@@ -481,7 +490,7 @@ class UserStack(QVBox):
         self.guide.op_end(msg)
     
     def reset(self):
-        self.u_id.setText("")
+        self.u_id.setText("auto")
         self.u_name.setText("")
         self.u_realname.setText("")
         self.u_password.setText("")
