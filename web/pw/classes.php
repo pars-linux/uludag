@@ -1,5 +1,8 @@
 <?php
 
+    // Gökmen GÖKSEL gokmen<at>pardus.org.tr
+    // TUBITAK/UEKAE :: Pardus W Classes
+
         class Pardus {
            
             private $Connection;
@@ -20,17 +23,17 @@
 
                 catch (Exception $Ex) {
                     $this->ShowError($Ex);
-                    return 0;
+                    return false;
                 } 
             }
 
             function ShowError($Ex,$Note='') { 
                 if ($this->DbLogDetail>1) {
                     echo '<pre><b>';
-                    echo 'Exception '.$Ex->getCode().' : '.$Ex->getMessage()."<br>";
-                    echo 'File        : '.$Ex->getFile().' : '.$Ex->getLine()."<br>";
-                    if ($Note<>"") echo 'Note        : '.$Note.'<br>';
-                    echo 'Exiting...';
+                    echo 'DEBUG: Exception '.$Ex->getCode().' : '.$Ex->getMessage()."<br>";
+                    echo 'DEBUG: File        : '.$Ex->getFile().' : '.$Ex->getLine()."<br>";
+                    if ($Note<>"") echo 'DEBUG: Note        : '.$Note.'<br>';
+                    echo 'DEBUG: Exiting...';
                     echo '</b></pre>';
                 }
                 else $this->ParseError("An error occured. Exiting..");
@@ -58,22 +61,49 @@
                 return mysql_insert_id();
             }
 
-            private function ExecuteQuery($Sql) {
+            protected function ExecuteQuery($Sql) {
                 try {
                     $Result = mysql_query($Sql,$this->Connection);
                     if (!$Result)
                         throw new Exception('Query Execution Error',3);
                     elseif ($this->DbLogDetail>2)
                         $this->ParseError("Query Executed Sucessfully : ".$Sql);
+                    return $Result;
                 }
                 catch (Exception $Ex) {
                     $this->ShowError($Ex,$Sql);
-                    return 0;
+                    return false;
                 }
             }
 
             function ParseError($Message) {
-                echo "<pre><b>".$Message."</b></pre>";
+                echo "<pre><b>DEBUG : ".$Message."</b></pre>";
+            }
+
+            function GetRecord($Table,$Field='*',$ID='') {
+                $ID == "" ? $AddSql = "" : $AddSql = "WHERE ID=$ID";
+                $Sql = "SELECT $Field FROM $Table ".$AddSql;
+                $Result = $this->ExecuteQuery($Sql);
+                return $this->MakeArray($Result);
+            }
+
+            function FindRecord($Table,$Field,$Value,$ReturnValue='ID') {
+                $Sql = "SELECT $ReturnValue FROM $Table WHERE $Field LIKE '%$Value%'";
+                $Result = $this->ExecuteQuery($Sql);
+                return $this->MakeArray($Result);
+            }
+
+            function MakeArray($Raw) {
+                $i=0;
+                while ($Row = mysql_fetch_array($Raw, MYSQL_ASSOC)) {
+                    foreach ($Row as $RKey => $RValue)
+                        $ReturnValue[$i][$RKey] = $RValue;
+                    $i++;
+                }
+                if ($i==0)
+                    $ReturnValue = 0;
+                mysql_free_result($Raw);
+                return $ReturnValue;
             }
         }
 
