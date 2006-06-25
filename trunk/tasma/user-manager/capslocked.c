@@ -14,41 +14,42 @@
 static PyObject*
 locked(void)
 {
-  unsigned int lmask;
-  Window dummy1, dummy2;
-  int dummy3, dummy4, dummy5, dummy6;
-  Display *disp = 0;
+    unsigned int lmask;
+    Window dummy1, dummy2;
+    int dummy3, dummy4, dummy5, dummy6;
+    Display *disp = 0;
 
-  // ops... we need our own display ;).
-  disp = XOpenDisplay(NULL);
-  if (!disp){
-    return Py_False;
-  }
+    // ops... we need our own display ;).
+    disp = XOpenDisplay(NULL);
+    if (!disp){
+        return Py_False;
+    }
 
-  XQueryPointer( disp, DefaultRootWindow( disp ),
-		 &dummy1, &dummy2, &dummy3, &dummy4, &dummy5, &dummy6,
-		 &lmask );
+    XQueryPointer( disp, DefaultRootWindow( disp ),
+	    &dummy1, &dummy2, &dummy3, &dummy4, &dummy5, &dummy6,
+        &lmask );
 
-  XCloseDisplay(disp);
+    XFlush(disp);
+    XCloseDisplay(disp);
 
-  if (lmask & LockMask) {
-    return Py_True;
-  }
+    if (lmask & LockMask) {
+        return Py_True;
+    }
  
-  return Py_False;
+    return Py_False;
 }
 
 
 static PyMethodDef capslocked_methods[] = {
-  {"locked", locked, METH_NOARGS, NULL},
-  {NULL}
+    {"locked", locked, METH_NOARGS, NULL},
+    {NULL}
 };
 
 
 PyMODINIT_FUNC
 initcapslocked(void) 
 {
-  PyObject* m;
+    PyObject* m;
 
-  m = Py_InitModule("capslocked", capslocked_methods);
+    m = Py_InitModule("capslocked", capslocked_methods);
 }
