@@ -504,6 +504,7 @@ class UserStack(QVBox):
         dict["password"] = self.u_password.text()
         dict["homedir"] = self.u_home.text()
         dict["groups"] = self.u_groups.text()
+        self.adddict = dict
         
         self.link.call("User.Manager.addUser", dict, 3)
         
@@ -511,6 +512,8 @@ class UserStack(QVBox):
     
     def slotAddReply(self, reply):
         if reply[0] == self.link.RESULT:
+            dict = self.adddict
+            self.parent().browse.userModified(int(reply[2]), dict["name"], dict["realname"])
             self.parent().slotCancel()
             return
         
