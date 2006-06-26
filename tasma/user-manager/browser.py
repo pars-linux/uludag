@@ -140,8 +140,10 @@ class BrowseStack(QVBox):
                 )
                 if ret == KMessageBox.Yes:
                     self.link.call("User.Manager.deleteUser", [ "uid", str(item.uid), "deletefiles", "true" ])
+                    self.userModified(item.uid)
                 if ret == KMessageBox.No:
                     self.link.call("User.Manager.deleteUser", [ "uid", str(item.uid) ])
+                    self.userModified(item.uid)
         else:
             item = self.groups.selectedItem()
             if item:
@@ -156,6 +158,7 @@ class BrowseStack(QVBox):
                     KStdGuiItem.cancel()
                 ):
                     self.link.call("User.Manager.deleteGroup", [ "gid", str(item.gid) ])
+                    self.groupModified(item.gid)
     
     def slotSelect(self):
         bool = False
@@ -208,3 +211,25 @@ class BrowseStack(QVBox):
             item = GroupItem(self.groups, group)
             if item.gid < 1000 or item.gid > 65000:
                 item.setVisible(False)
+    
+    def userModified(self, uid, name=None, realname=None):
+        if name:
+            UserItem(self.users, "%d\t%s\t%s" % (uid, name, realname))
+        else:
+            item = self.users.firstChild()
+            while item:
+                if item.uid == uid:
+                    self.users.takeItem(item)
+                    return
+                item = item.nextSibling()
+    
+    def groupModified(self, gid, name=None):
+        if name:
+            GroupItem(self.groups, "%d\t%s" % (gid, name))
+        else:
+            item = self.groups.firstChild()
+            while item:
+                if item.gid == gid:
+                    self.groups.takeItem(item)
+                    return
+                item = item.nextSibling()

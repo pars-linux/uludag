@@ -168,6 +168,7 @@ class GroupStack(QVBox):
         dict = {}
         dict["gid"] = self.g_id.text()
         dict["name"] = self.g_name.text()
+        self.adddict = dict
         
         self.link.call("User.Manager.addGroup", dict, 4)
         
@@ -175,6 +176,8 @@ class GroupStack(QVBox):
     
     def slotAddReply(self, reply):
         if reply[0] == self.link.RESULT:
+            dict = self.adddict
+            self.parent().browse.groupModified(int(reply[2]), dict["name"])
             self.parent().slotCancel()
             return
         
