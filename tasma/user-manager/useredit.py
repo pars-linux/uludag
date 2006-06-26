@@ -337,6 +337,8 @@ class UserGroupList(QWidget):
     
     def setText(self, groups):
         self.main_sel = None
+        if groups == "":
+            return
         groups = groups.split(",")
         if len(groups) > 0:
             item = self.groups.firstChild()
