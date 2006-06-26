@@ -315,15 +315,21 @@ class UserGroupList(QWidget):
             if group.state() == group.On:
                 groups.append(group.name)
             group = group.nextSibling()
+        main = unicode(self.main_group.currentText())
+        if main in groups:
+            groups.remove(main)
+            groups.insert(0, main)
         return ",".join(groups)
     
     def setText(self, groups):
         groups = groups.split(",")
-        item = self.groups.firstChild()
-        while item:
-            if item.name in groups:
-                item.setState(item.On)
-            item = item.nextSibling()
+        if len(groups) > 0:
+            item = self.groups.firstChild()
+            while item:
+                if item.name in groups:
+                    item.setState(item.On)
+                item = item.nextSibling()
+            self.main_group.setCurrentText(groups[0])
 
 
 class Guide(QWidget):
