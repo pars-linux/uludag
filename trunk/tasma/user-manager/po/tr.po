@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-24 12:23+0300\n"
+"POT-Creation-Date: 2006-06-26 13:32+0300\n"
 "PO-Revision-Date: 2006-06-15 15:23+0300\n"
 "Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
 "Language-Team: Türkçe <->\n"
@@ -48,19 +48,15 @@ msgstr "Ad soyad"
 msgid "Group name"
 msgstr "Grup adı"
 
-#: browser.py:114
-msgid "Description"
-msgstr "Açıklama"
-
-#: browser.py:119
+#: browser.py:118
 msgid "Users"
 msgstr "Kullanıcılar"
 
-#: browser.py:120
+#: browser.py:119
 msgid "Groups"
 msgstr "Gruplar"
 
-#: browser.py:132
+#: browser.py:131
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
@@ -69,25 +65,25 @@ msgstr ""
 "<big><b>Bu kullanıcıyı sileyim mi?</b></big><br><br>Adı soyadı: %"
 "s<br>Kullanıcı adı: %s<br>No: %d"
 
-#: browser.py:138
+#: browser.py:137
 msgid "Delete User"
 msgstr "Kullanıcı Sil"
 
-#: browser.py:139
+#: browser.py:138
 msgid "Delete user and files"
 msgstr "Kullanıcıyı ve dosyalarını sil"
 
-#: browser.py:140
+#: browser.py:139
 msgid "Delete user"
 msgstr "Kullanıcıyı sil"
 
-#: browser.py:146
+#: browser.py:148
 #, python-format
 msgid ""
 "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr "<big><b>Bu grubu sileyim mi?</b></big><br><br>Grup adı: %s<br>No: %d"
 
-#: browser.py:152 browser.py:153
+#: browser.py:154 browser.py:155
 msgid "Delete Group"
 msgstr "Grup Sil"
 
@@ -147,64 +143,72 @@ msgstr "İzin"
 msgid "Main group:"
 msgstr "Ana grup:"
 
-#: useredit.py:347
+#: useredit.py:365
 msgid "Start with typing this user's full name."
 msgstr "Kullanıcının ad soyadını girerek başlayın."
 
-#: useredit.py:350
+#: useredit.py:368
 msgid "You should enter a password for this user."
 msgstr "Bu kullanıcı için bir parola girmelisiniz."
 
-#: useredit.py:353
+#: useredit.py:373
+msgid "Password must be longer"
+msgstr "Parolanız daha uzun olmalı"
+
+#: useredit.py:377
+msgid "Dont use your full name or user name as a password"
+msgstr "Ad soyadınızı yada kullanıcı adınızı parola olarak kullanmayın"
+
+#: useredit.py:380
 msgid "Passwords don't match."
 msgstr "Parolalar uyuşmuyor."
 
-#: useredit.py:356
+#: useredit.py:383
 msgid "You must enter a user ID or use the auto selection."
 msgstr "Otomatik seçimi kullanın yada kullanıcı no'sunu girin."
 
-#: useredit.py:359
+#: useredit.py:386
 msgid "You must enter a user name."
 msgstr "Bir kullanıcı adı girin."
 
-#: useredit.py:362
+#: useredit.py:389
 msgid "This user name is used by another user"
 msgstr "Bu kullanıcı adı bir başka kullanıcı tarafından kullanılıyor"
 
-#: useredit.py:365
+#: useredit.py:392
 msgid "You should select at least one group this user belongs to."
 msgstr "Bu kullanıcının üyesi olacağı en az bir grup seçmelisiniz."
 
-#: useredit.py:396
+#: useredit.py:423
 msgid "Edit User's Information"
 msgstr "Kullanıcı Bilgisini Düzenleyin"
 
-#: useredit.py:398
+#: useredit.py:425
 msgid "Enter Information For New User"
 msgstr "Yeni Kullanıcının Bilgilerini Girin"
 
-#: useredit.py:400
+#: useredit.py:427
 msgid "Show all groups"
 msgstr "Bütün grupları göster"
 
-#: useredit.py:476
+#: useredit.py:504
 msgid "Adding user..."
 msgstr "Kullanıcı ekleniyor..."
 
-#: useredit.py:484 groupedit.py:178
+#: useredit.py:512 groupedit.py:178
 #, python-format
 msgid "Operation failed, reason:<br>%s"
 msgstr "İşlem başarısız oldu, neden:<br>%s"
 
-#: useredit.py:486 groupedit.py:180
+#: useredit.py:514 groupedit.py:180
 msgid "You are not allowed to do that"
 msgstr "Bunu yapmaya yetkiniz yok"
 
-#: useredit.py:488 groupedit.py:182
+#: useredit.py:516 groupedit.py:182
 msgid "Comar script error :("
 msgstr "Comar betik hatası :("
 
-#: useredit.py:511
+#: useredit.py:539
 msgid "Getting user information..."
 msgstr "Kullanıcı bilgisi alınıyor..."
 
@@ -227,3 +231,4 @@ msgstr "Yeni Grubun Bilgilerini Girin"
 #: groupedit.py:170
 msgid "Adding group..."
 msgstr "Grup ekleniyor..."
+

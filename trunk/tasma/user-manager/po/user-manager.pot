@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-24 12:23+0300\n"
+"POT-Creation-Date: 2006-06-26 13:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,44 +48,40 @@ msgstr ""
 msgid "Group name"
 msgstr ""
 
-#: browser.py:114
-msgid "Description"
-msgstr ""
-
-#: browser.py:119
+#: browser.py:118
 msgid "Users"
 msgstr ""
 
-#: browser.py:120
+#: browser.py:119
 msgid "Groups"
 msgstr ""
 
-#: browser.py:132
+#: browser.py:131
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
 
-#: browser.py:138
+#: browser.py:137
 msgid "Delete User"
 msgstr ""
 
-#: browser.py:139
+#: browser.py:138
 msgid "Delete user and files"
 msgstr ""
 
-#: browser.py:140
+#: browser.py:139
 msgid "Delete user"
 msgstr ""
 
-#: browser.py:146
+#: browser.py:148
 #, python-format
 msgid ""
 "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
 
-#: browser.py:152 browser.py:153
+#: browser.py:154 browser.py:155
 msgid "Delete Group"
 msgstr ""
 
@@ -145,64 +141,72 @@ msgstr ""
 msgid "Main group:"
 msgstr ""
 
-#: useredit.py:347
+#: useredit.py:365
 msgid "Start with typing this user's full name."
 msgstr ""
 
-#: useredit.py:350
+#: useredit.py:368
 msgid "You should enter a password for this user."
 msgstr ""
 
-#: useredit.py:353
+#: useredit.py:373
+msgid "Password must be longer"
+msgstr ""
+
+#: useredit.py:377
+msgid "Dont use your full name or user name as a password"
+msgstr ""
+
+#: useredit.py:380
 msgid "Passwords don't match."
 msgstr ""
 
-#: useredit.py:356
+#: useredit.py:383
 msgid "You must enter a user ID or use the auto selection."
 msgstr ""
 
-#: useredit.py:359
+#: useredit.py:386
 msgid "You must enter a user name."
 msgstr ""
 
-#: useredit.py:362
+#: useredit.py:389
 msgid "This user name is used by another user"
 msgstr ""
 
-#: useredit.py:365
+#: useredit.py:392
 msgid "You should select at least one group this user belongs to."
 msgstr ""
 
-#: useredit.py:396
+#: useredit.py:423
 msgid "Edit User's Information"
 msgstr ""
 
-#: useredit.py:398
+#: useredit.py:425
 msgid "Enter Information For New User"
 msgstr ""
 
-#: useredit.py:400
+#: useredit.py:427
 msgid "Show all groups"
 msgstr ""
 
-#: useredit.py:476
+#: useredit.py:504
 msgid "Adding user..."
 msgstr ""
 
-#: useredit.py:484 groupedit.py:178
+#: useredit.py:512 groupedit.py:178
 #, python-format
 msgid "Operation failed, reason:<br>%s"
 msgstr ""
 
-#: useredit.py:486 groupedit.py:180
+#: useredit.py:514 groupedit.py:180
 msgid "You are not allowed to do that"
 msgstr ""
 
-#: useredit.py:488 groupedit.py:182
+#: useredit.py:516 groupedit.py:182
 msgid "Comar script error :("
 msgstr ""
 
-#: useredit.py:511
+#: useredit.py:539
 msgid "Getting user information..."
 msgstr ""
 

@@ -271,12 +271,15 @@ class UserGroupList(QWidget):
         lab = QLabel(i18n("Main group:"), w)
         hb.addWidget(lab, 0, Qt.AlignRight)
         self.main_group = QComboBox(False, w)
+        self.connect(self.main_group, SIGNAL("activated(const QString &)"), self.slotMain)
         self.main_group.setEnabled(False)
         lab.setBuddy(self.main_group)
         hb.addWidget(self.main_group)
         vb.addWidget(w)
     
     def populate(self, groups):
+        self.main_sel = None
+        self.toggle.setChecked(False)
         group = groups.firstChild()
         self.groups.clear()
         while group:
@@ -299,7 +302,14 @@ class UserGroupList(QWidget):
             self.main_group.setEnabled(True)
             for item in groups:
                 self.main_group.insertItem(item)
+            if self.main_sel and self.main_sel in groups:
+                self.main_group.setCurrentText(self.main_sel)
+            else:
+                self.main_sel = groups[0]
         self.stack.checkAdd()
+    
+    def slotMain(self, text):
+        self.main_sel = unicode(text)
     
     def slotToggle(self, bool):
         group = self.groups.firstChild()
@@ -322,6 +332,7 @@ class UserGroupList(QWidget):
         return ",".join(groups)
     
     def setText(self, groups):
+        self.main_sel = None
         groups = groups.split(",")
         if len(groups) > 0:
             item = self.groups.firstChild()
@@ -329,6 +340,7 @@ class UserGroupList(QWidget):
                 if item.name in groups:
                     item.setState(item.On)
                 item = item.nextSibling()
+            self.main_sel = groups[0]
             self.main_group.setCurrentText(groups[0])
 
 
@@ -354,6 +366,15 @@ class Guide(QWidget):
         
         if not err and not self.edit and p.u_password.text() == "":
             err = i18n("You should enter a password for this user.")
+        
+        if not err:
+            pw = unicode(p.u_password.password.text())
+            if pw != "" and len(pw) < 4:
+                err = i18n("Password must be longer")
+            
+            if not err:
+                if pw == p.u_realname.text() or pw == p.u_name.text():
+                    err = i18n("Dont use your full name or user name as a password")
         
         if not err and p.u_password.text() == None:
             err = i18n("Passwords don't match.")
@@ -441,6 +462,7 @@ class UserStack(QVBox):
         grid.addMultiCellWidget(lab, row, row, 0, 1)
         
         self.u_groups = UserGroupList(self, hb)
+        self.u_groups.toggle = toggle
         self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
         
         self.guide = Guide(self, edit)
