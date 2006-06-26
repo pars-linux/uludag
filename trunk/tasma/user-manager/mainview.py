@@ -45,6 +45,8 @@ class UserManager(QWidgetStack):
             self.group.slotAddReply(reply)
         elif id == 5:
             self.useredit.slotInfo(reply)
+        elif id == 6:
+            self.useredit.slotEditReply(reply)
     
     def slotCancel(self):
         self.raiseWidget(self.browse)
