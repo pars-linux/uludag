@@ -219,7 +219,11 @@ class BrowseStack(QVBox):
             item = self.users.firstChild()
             while item:
                 if item.uid == uid:
-                    self.users.takeItem(item)
+                    if realname:
+                        item.name = realname
+                        item.repaint()
+                    else:
+                        self.users.takeItem(item)
                     return
                 item = item.nextSibling()
     

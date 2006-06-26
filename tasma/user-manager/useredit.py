@@ -117,19 +117,23 @@ class RealName:
         self.name.setText(text)
     
     def text(self):
-        return str(self.name.text())
+        return unicode(self.name.text())
 
 
 class Homedir:
-    def __init__(self, w, grid):
+    def __init__(self, w, grid, edit):
         self.w = w
         lab = QLabel(i18n("Home:"), w)
-        hb = QHBox(w)
-        hb.setSpacing(3)
-        self.home = QLineEdit(hb)
-        lab.setBuddy(self.home)
-        but = QPushButton("...", hb)
-        w.connect(but, SIGNAL("clicked()"), self.browse)
+        if edit:
+            self.home = QLabel(w)
+            hb = self.home
+        else:
+            hb = QHBox(w)
+            hb.setSpacing(3)
+            self.home = QLineEdit(hb)
+            lab.setBuddy(self.home)
+            but = QPushButton("...", hb)
+            w.connect(but, SIGNAL("clicked()"), self.browse)
         
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
@@ -454,7 +458,7 @@ class UserStack(QVBox):
         
         self.u_name = Name(self, w, grid, edit)
         
-        self.u_home = Homedir(w, grid)
+        self.u_home = Homedir(w, grid, edit)
         
         self.u_shell = Shell(self, w, grid)
         
@@ -479,8 +483,8 @@ class UserStack(QVBox):
         hb.setSpacing(12)
         QLabel(" ", hb)
         if edit:
-            but = QPushButton(getIconSet("remove.png", KIcon.Small), i18n("Delete"), hb)
             but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
+            self.connect(but, SIGNAL("clicked()"), self.slotEdit)
         else:
             but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
             self.connect(but, SIGNAL("clicked()"), self.slotAdd)
@@ -492,6 +496,54 @@ class UserStack(QVBox):
     
     def checkAdd(self):
        return self.guide.check()
+    
+    def slotEdit(self):
+        if self.checkAdd():
+            return
+        
+        dict = self.editdict
+        tmp = self.u_realname.text()
+        if tmp == dict["realname"]:
+            del dict["realname"]
+        else:
+            dict["realname"] = tmp
+        tmp = self.u_password.text()
+        if tmp:
+            dict["password"] = tmp
+        tmp = self.u_shell.text()
+        if tmp == dict["shell"]:
+            del dict["shell"]
+        else:
+            dict["shell"] = tmp
+        tmp = self.u_groups.text()
+        tmpA = set(tmp.split(","))
+        tmpB = set(dict["groups"].split(","))
+        if tmpA == tmpB:
+            del dict["groups"]
+        else:
+            dict["groups"] = tmp
+        
+        if len(dict) > 1:
+            self.guide.op_start(i18n("Changing user information..."))
+            self.link.call("User.Manager.setUser", dict, 6)
+    
+    def slotEditReply(self, reply):
+        if reply[0] == self.link.RESULT:
+            dict = self.editdict
+            tmp = dict.get("realname", None)
+            if tmp:
+                self.parent().browse.userModified(int(dict["uid"]), realname=tmp)
+            self.parent().slotCancel()
+            return
+        
+        if reply[0] == self.link.FAIL:
+            msg = unicode(i18n("Operation failed, reason:<br>%s")) % reply[2]
+        elif reply[0] == self.link.DENIED:
+            msg = i18n("You are not allowed to do that")
+        else:
+            msg = i18n("Comar script error :(")
+        
+        self.guide.op_end(msg)
     
     def slotAdd(self):
         if self.checkAdd():
@@ -506,9 +558,8 @@ class UserStack(QVBox):
         dict["groups"] = self.u_groups.text()
         self.adddict = dict
         
-        self.link.call("User.Manager.addUser", dict, 3)
-        
         self.guide.op_start(i18n("Adding user..."))
+        self.link.call("User.Manager.addUser", dict, 3)
     
     def slotAddReply(self, reply):
         if reply[0] == self.link.RESULT:
@@ -545,22 +596,29 @@ class UserStack(QVBox):
     def startEdit(self, groups, uid):
         self.u_groups.populate(groups)
         self.reset()
+        self.editdict = None
         self.guide.op_start(i18n("Getting user information..."))
         self.link.call("User.Manager.userInfo", [ "uid", uid ], 5)
     
     def slotInfo(self, reply):
         self.guide.op_end()
+        dict = {}
         for line in unicode(reply[2]).split("\n"):
             key, value = line.split(" ", 1)
             if key == "uid":
                 self.u_id.setText(value)
+                dict["uid"] = value
             elif key == "name":
                 self.u_name.setText(value)
             elif key == "realname":
                 self.u_realname.setText(value)
+                dict["realname"] = value
             elif key == "homedir":
                 self.u_home.setText(value)
             elif key == "shell":
                 self.u_shell.setText(value)
+                dict["shell"] = value
             elif key == "groups":
                 self.u_groups.setText(value)
+                dict["groups"] = value
+        self.editdict = dict
