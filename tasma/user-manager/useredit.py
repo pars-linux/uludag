@@ -30,6 +30,7 @@ class UID:
             hb = QHBox(w)
             hb.setSpacing(6)
             self.uid = QLineEdit(hb)
+            self.uid.connect(self.uid, SIGNAL("textChanged(const QString &)"), self.slotChange)
             lab.setBuddy(self.uid)
             self.uid.setValidator(QIntValidator(0, 65535, self.uid))
             self.uid.setEnabled(False)
@@ -38,6 +39,9 @@ class UID:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
+    
+    def slotChange(self, text):
+        self.stack.checkAdd()
     
     def slotToggle(self, bool):
         self.uid.setEnabled(bool)

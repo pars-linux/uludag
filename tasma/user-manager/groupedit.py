@@ -23,6 +23,7 @@ class GID:
         hb = QHBox(w)
         hb.setSpacing(6)
         self.gid = QLineEdit(hb)
+        self.gid.connect(self.gid, SIGNAL("textChanged(const QString &)"), self.slotChange)
         self.gid.setValidator(QIntValidator(0, 65535, self.gid))
         self.gid.setEnabled(False)
         lab.setBuddy(self.gid)
@@ -31,6 +32,9 @@ class GID:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
+    
+    def slotChange(self, text):
+        self.stack.guide.check()
     
     def slotToggle(self, bool):
         self.gid.setEnabled(bool)
