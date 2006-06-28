@@ -67,10 +67,11 @@ include_once("globals.php");
                 $smarty->display("reminder.html");
                 die();
             }
-            else
+            else{
                 set_smarty_vars("info","Hatalı Kullanıcı Adı veya Parola !!");
                 $smarty->display("reminder.html");
-                die();
+            }
+            die();
         }
         else
             $smarty->display("reminder.html");

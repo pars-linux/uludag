@@ -355,6 +355,7 @@
            $mob->Body($message, "utf-8");
            $mob->Priority($priority);
            $mob->Send();
+           return true;
     }
 
     function get_user_id($username){
