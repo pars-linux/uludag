@@ -25,9 +25,9 @@
     }
 
     /**
-     * perform_sql 
-     * 
-     * @param mixed $sql_word 
+     * perform_sql
+     *
+     * @param mixed $sql_word
      * @access public
      * @return void
      */
@@ -88,7 +88,7 @@
     function get_something($thing="main", $id="", $subid="",$order="release",$limit="",$conv_time="db2post"){
         global $config;
         if ($thing=="single") $query="id=".$id." AND ";
-        elseif ($thing=="cat") { 
+        elseif ($thing=="cat") {
             $query="type=".$id." AND ";
             if ($subid<>"") $query.=" sub_type=".$subid." AND ";
         }
@@ -194,7 +194,6 @@
         return perform_sql($sql_word);
     }
 
-    /** Gir SEN **/
     function update_user($uid="x",$realname,$web,$email,$passwordc,$uname=""){
         global $config;
         $realname       = rtag ($realname);
@@ -207,25 +206,6 @@
         else $sql_word = "UPDATE {$config['db']['users_table']} SET UserRealName='{$realname}', UserWeb='{$web}',UserEmail='{$email}'".$attach_sql." WHERE ID='$uid'";
         return @mysql_query($sql_word);
     }
-
-    /** Çık SEN
-    function update_user($uid="",$realname,$web,$email,$passwordc,$add=0,$uname=""){
-        global $config;
-        $realname = rtag ($realname);
-        $email = rtag ($email);
-        $web = rtag ($web);
-        $password = md5(rtag($passwordc));
-        if ($passwordc<>"") $attach_sql=", password='{$password}'";
-        if ($add) {
-            $sql_word = "INSERT INTO {$config['db']['users_table']} VALUES ('', '{$uname}', '{$password}','{$realname}', '{$email}', '{$web}', '3', '')";
-        }
-        else {
-            $sql_word = "UPDATE {$config['db']['users_table']} SET name='{$realname}', web='{$web}', email='{$email}'".$attach_sql." WHERE id='$uid'";
-        }
-        $sql_query = @mysql_query($sql_word);
-        return $sql_query;
-    }
-    */
 
     function user_exist($uname){
         global $config;
@@ -453,4 +433,30 @@
         return perform_sql($sql_word);
     }
 
+    function pass_gen($len) {
+        $pass = "" ;
+        srand((float) microtime() * 10000000);
+        for($i=0;$i<$len;$i++) {
+            $pass.=chr(rand(33,126));
+        }
+        return $pass;
+    }
+
+    function SendReminderEmail($email,$uname) {
+        global $config;
+        $Temp = get_user_something($uname,"*","UserName");
+        if ($Temp[0]["UserEmail"]==$email) {
+            $uid = $Temp[0]["ID"];
+            $cleanPass = pass_gen(8);
+            $newPass = md5($cleanPass);
+            $sql_word = "UPDATE {$config['db']['users_table']} SET UserPass='{$newPass}' WHERE ID='$uid'";
+            if (@mysql_query($sql_word)) {
+                $mail_message = "Siz ya da bir başkası sanat.pardus üzerinden Parola yenileme işlemi gerçekleştirdi.\n
+                                 Yeni Parolanız : $cleanPass \n
+                                http://sanat.pardus.org.tr adresinden giriş yapabilirsiniz.";
+                if (sendmail($config['core']['email'],$email,"Parola Hatırlatma : Arto",$mail_message,"3")) return true;
+            }
+        }
+        return 0;
+    }
 ?>
