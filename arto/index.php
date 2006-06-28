@@ -30,7 +30,7 @@ include_once("globals.php");
 		$smarty->display("post.html");
 		die();
 	}
-	
+
 	elseif (isset($_GET["cid"])) {
 		if (isset($_GET["sid"])) set_smarty_vars("nodes",get_something("cat",$_GET["cid"],$_GET["sid"]));
 		else set_smarty_vars("nodes",get_something("cat",$_GET["cid"]));
@@ -59,6 +59,23 @@ include_once("globals.php");
 		$smarty->display("register.html");
 		die();
 	}
+
+    elseif (isset($_GET["reminder"])) {
+        if (isset($_POST["email"])&&isset($_POST["uname"])){
+            if (SendReminderEmail($_POST["email"],$_POST["uname"])) {
+                set_smarty_vars("info","Parolanız sıfırlandı, E-Mail gönderildi.");
+                $smarty->display("reminder.html");
+                die();
+            }
+            else
+                set_smarty_vars("info","Hatalı Kullanıcı Adı veya Parola !!");
+                $smarty->display("reminder.html");
+                die();
+        }
+        else
+            $smarty->display("reminder.html");
+        die();
+    }
 
 	elseif (isset($_GET["newtheme"])) {
 		if (session_is_registered("arto")) {
