@@ -40,6 +40,8 @@ class multilang_text(QWidget):
 
         # Signals
         QObject.connect(self.pushAddRemove, SIGNAL("clicked()"), self.slotAddRemove)
+        QObject.connect(self.lineLang, SIGNAL("lostFocus()"), self.slotSave)
+        QObject.connect(self.lineText, SIGNAL("lostFocus()"), self.slotSave)
 
         self.clearWState(Qt.WState_Polished)
         self.show()
@@ -69,6 +71,32 @@ class multilang_text(QWidget):
     def slotAddRemove(self):
         if self.parent().slotAddRemove:
             self.parent().slotAddRemove(self)
+
+    def slotSave(self):
+        if not self.getLang():
+            return
+
+        parent = self.parent()
+
+        if parent.name().startswith("adv"):
+            # If member of advisory details box
+            item = w.listAdvisories.selectedItem()
+            save_list = {"advtitle": item.node.title,
+                         "advsummary": item.node.summary,
+                         "advdescription": item.node.description}
+
+            if parent.name() in save_list:
+                node = save_list[parent.name()]
+                if self.getText():
+                    node[self.getLang()] = self.getText()
+                elif self.getLang() in node:
+                    del node[self.getLang()]
+        else:
+            # Else (if it's advisory title)
+            if self.getText():
+                w.plsa.title[self.getLang()] = self.getText()
+            elif self.getLang() in w.plsa.title:
+                del w.plsa.title[self.getLang()]
 
 class multilang(QVBox):
     def __init__(self, parent = None, name = None):
