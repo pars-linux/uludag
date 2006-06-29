@@ -186,3 +186,34 @@ li {
     border-bottom:1px solid #8AC86C;
 }
 
+#gelistirici {
+    font-size: 16px;
+    background-color: #FFEED6;
+    background-image:url('images/newdesign/header-gelistiriciler.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height: 79px;
+}
+
+#mainBody {
+    width: 570px;
+    background-color:#EEE;
+    height: 100%;
+}
+
+
+#gelistiriciContent {
+    font-weight:bold;
+    font-size:10px;
+    padding-left:20px;
+}
+
+#kucular {
+    width:200px;
+    vertical-align:top;
+    background-color:#DDD;
+}
+
+#hede {
+    padding:3px;
+}
