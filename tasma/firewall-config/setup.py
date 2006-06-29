@@ -23,7 +23,7 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ["src/firewall.ui", "src/firewall-config.py",
+    application_data = ["src/firewall.py", "src/firewall-config.py",
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps", ["src/firewall_config.png"])],
     executable_links = [("firewall-config", "firewall-config.py")],
     i18n = ("po", ["src"]),
