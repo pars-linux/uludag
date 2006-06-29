@@ -170,16 +170,15 @@ li {
 /* eskiler feedback */
 
 
-#kutular a {
+a {
 	color: #F55400;
 	text-decoration: none;
 	/*font-weight: bold;*/
 }
 
-#kutular a:hover {
+a:hover {
 	color: #000;
-    padding:1px;
-    background-color:#8FCA6F;
+    background-color:#D9FFC0;
 }
 
 #ana-butonlar a:hover {
@@ -197,7 +196,7 @@ li {
 
 #mainBody {
     width: 570px;
-    background-color:#EEE;
+    background-color:#FFF;
     height: 100%;
 }
 
@@ -211,9 +210,57 @@ li {
 #kucular {
     width:200px;
     vertical-align:top;
-    background-color:#DDD;
+    background-color:#FFF;
 }
 
 #hede {
     padding:3px;
+}
+
+#hede h2 {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #D9FFC0;
+    padding-left:3px;
+}
+
+#hede h4 {
+    font-weight:normal;
+    font-size: 10px;
+    margin-top:-8px;
+    font-style:italic;
+    padding-right:3px;
+    text-align:right;
+}
+
+#hede input {
+   border: 1px solid #999;
+}
+#hodo {
+    border-left:1px solid #EEE;
+    height: 100%;
+}
+
+.svnlink {
+    background-image:url('images/newdesign/svnlink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.maillink {
+    background-image:url('images/newdesign/maillink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.pdflink {
+    background-image:url('images/newdesign/pdf.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
 }
