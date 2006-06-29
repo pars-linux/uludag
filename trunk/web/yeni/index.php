@@ -1,8 +1,8 @@
 <html>
 <head>
-<?php 
+<?php
 
-        @require_once('utils.php'); 
+        @require_once('utils.php');
         if (!($Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData)))
             die();
 
@@ -11,6 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="stil.css" rel="stylesheet" type="text/css">
     <script src="scripts/prototype.js"></script>
+    <script src="scripts/scriptaculous.js"></script>
+    <script src="scripts/effects.js"></script>
     <script>
         function get_news(nid) {
             var url ='utils.php';
@@ -20,8 +22,9 @@
 
         function showit(originalRequest){
             var newData = originalRequest.responseText;
-            $('ayrintilar').innerHTML = "";
-            $('ayrintilar').innerHTML = newData;
+            $('haber').innerHTML = "";
+            $('haber').innerHTML = newData;
+            new Effect.Highlight('haber',{startcolor:'#297190', endcolor:'#FFFFFF'});
         }
     </script>
 </head>
@@ -69,9 +72,11 @@
     <tr>
             <td id="icerik">
             <div id="ayrintilar">
+            <div id="haber">
             <?php
                     $Pardus->GetNews();
             ?>
+            </div>
             </div>
             </td>
             <td id="kutular">
