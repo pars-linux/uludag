@@ -12,6 +12,7 @@ body {
     margin-right:0;
     background-image:url('images/HeadTile.png');
     background-repeat:repeat-x;
+    background-color: #FFF;
 }
 
 #header {
