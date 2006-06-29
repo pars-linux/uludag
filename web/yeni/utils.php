@@ -1,36 +1,11 @@
 <?php
-    
-    // Utils.php, tools for pardus.org.tr
-    
-    /* Forget it , use MySQL
-    class NewsReader {
-        
-        // Gets the file name for News in XML Format.
-        var $NewsFile;
-        var $FilePointer;
-        var $Content;
 
-        function NewsReader($NewsFilePath){
-            $this->NewsFile = $NewsFilePath;
-            
-            if ($this->FilePointer = fopen($this->NewsFile,"r"))
-                $this->Content = fread($this->FilePointer,filesize($this->NewsFile));
-            else {
-                echo "<b>File Not Found !... </b>";
-                $this->FilePointer = fopen($this->NewsFile,"w");
-                echo "<b> Created at $NewsFilePath </b> Note: Refresh ;) ";
-            }
-        }
-    }
-
-    */
-        
-    include_once 'xconfig.php';
+    include_once 'config.php';
 
     class Pardus {
-        
-        var $Connection; 
-   
+
+        var $Connection;
+
         function Pardus($DbHost,$DbUser,$DbPass,$DbData){
             if ($this->Connection=mysql_connect($DbHost,$DbUser, $DbPass))
                 mysql_select_db($DbData,$this->Connection);
@@ -48,7 +23,7 @@
             }
             mysql_free_result($result);
         }
-        
+
         function GetNews($ID=""){
             if ($ID<>"")
                 $query = "SELECT * FROM News WHERE ID=$ID";
@@ -61,11 +36,33 @@
             mysql_free_result($result);
         }
 
+        function GetPage($NiceTitle="Main",$Parent){
+            $query = "SELECT * FROM Pages WHERE NiceTitle='$NiceTitle' AND Parent='$Parent'";
+            $result = mysql_query($query,$this->Connection);
+            return (mysql_fetch_array($result, MYSQL_ASSOC));
+        }
+
+        function GetNiceTitles() {
+            $query = "SELECT NiceTitle FROM Pages";
+            return $this->MakeArray(mysql_query($query,$this->Connection),'NiceTitle');
+        }
+
+        function MakeArray($Raw,$Field="") {
+            $i=0;
+            while ($Row = mysql_fetch_array($Raw)) {
+                $Field == "" ? $ReturnValue[$i] = $Row : $ReturnValue[$i] = $Row[$Field];
+                $i++;
+            }
+            if ($i==0)
+                $ReturnValue = 0;
+            mysql_free_result($Raw);
+            return $ReturnValue;
+        }
     }
 
     if ($_GET["NewsID"]<>""){
         $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
         $Pardus->GetNews($_GET["NewsID"]);
     }
-    
+
 ?>
