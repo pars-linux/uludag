@@ -5,17 +5,32 @@
     require_once('../utils.php');
     $Page = "Main";
     $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
+   
+    /* I Know it sucks */ 
     $known_pages = $Pardus->GetNiceTitles();
     foreach (array_keys($_GET) as $Parameters) {
         foreach ($known_pages as $Pvalues) {
-            if ($Pvalues===$Parameters){
-                $Page=$Parameters;
-                break;
+            $Exploded = explode("/",$Parameters);
+            if ($Pvalues===$Exploded[0]){
+                if (count($Exploded)==2) {
+                    foreach($known_pages as $SValues) {
+                        if ($SValues===$Exploded[1]){
+                            $Page = $Exploded[1];
+                            $Parent = $Exploded[0];
+                        }
+                    }
+                }
+                else { 
+                    $Page=$Exploded[0];
+                    break;
+                }
             }
         }
     }
+    
+    $PageContent = $Pardus->GetPage($Page,"G");
+    if ($Parent) $ParentContent = $Pardus->GetPage($Parent,"G");
 
-    $PageContent = $Pardus->GetPage($Page,"G",False);
 ?>
     <title>PardusOrgTr</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -50,10 +65,11 @@
         {
             $('hede').innerHTML = req.responseText;
         }
+    
     </script>
 </head>
 
-<body onload="ShowPageList();">
+<body>
 <center>
 
 <!-- Content -->
@@ -64,8 +80,10 @@
             <?php
                 if($Page<>"Main"){
                     echo "<a href='?'>Geliştiriciler</a> » ";
-                    echo $PageContent["Title"];
-                }
+                    if ($Parent)
+                        echo "<a href='?".$ParentContent["NiceTitle"]."'>".$ParentContent["Title"]."</a> » ";
+                     echo $PageContent["Title"];
+               }
                 else
                     echo "Geliştiriciler";
             ?>
@@ -74,19 +92,18 @@
     </tr>
     <tr>
             <td id="gelistirici" colspan=2>
-            <div id="gelistiriciContent"></div>
             </td>
     </tr>
     <tr>
             <td id="mainBody" <?php if ($PageContent["PType"]==="D") { ?> style="width:770px" <?php } ?> >
                 <div id="hede">
-<!--                 <iframe frameborder="0" height="384px" width="100%" id="main" name="main" src="http://paketler.pardus.org.tr"></iframe> -->
                 <?=$PageContent["Content"]?>
                 </div>
             </td>
             <?php if ($PageContent["PType"]<>"D") { ?>
             <td id="kucular">
                 <div id="hodo">
+                <img src="../images/newdesign/pgelis.png">
                 </div>
             </td>
             <?php } ?>
