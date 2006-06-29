@@ -25,6 +25,7 @@
             $('haber').innerHTML = "";
             $('haber').innerHTML = newData;
             new Effect.Highlight('haber',{startcolor:'#297190', endcolor:'#FFFFFF'});
+            $('haber').style.background = "#FFF";
         }
     </script>
 </head>
