@@ -1,6 +1,12 @@
 <html>
 <head>
-<?php require_once('utils.php'); ?>
+<?php 
+
+        @require_once('utils.php'); 
+        if (!($Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData)))
+            die();
+
+?>
     <title>PardusOrgTr</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="stil.css" rel="stylesheet" type="text/css">
@@ -26,7 +32,6 @@
 <!-- Content -->
 
     <?php
-        $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
     ?>
 
 <table>
