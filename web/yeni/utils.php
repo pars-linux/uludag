@@ -11,6 +11,7 @@
                 mysql_select_db($DbData,$this->Connection);
             else {
                 echo("MySQL Connection Error, Check your settings. Error : ".mysql_error());
+                die();
                 return 0;
             }
         }
