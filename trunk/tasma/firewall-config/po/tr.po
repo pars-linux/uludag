@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: firewall-config\n"
+"Project-Id-Version: firewall_config\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-06-07 13:20+0300\n"
 "PO-Revision-Date: 2006-04-27 13:04+0300\n"
