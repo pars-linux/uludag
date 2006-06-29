@@ -10,4 +10,4 @@ X-KDE-FactoryName=user_manager
 Type=Application
 Icon=kuser
 Exec=kcmshell user-manager
-Categories=QT;KDE;X-KDE-settings-system;
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
