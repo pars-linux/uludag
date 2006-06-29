@@ -25,7 +25,7 @@
 
     */
         
-    include_once 'config.php';
+    include_once 'xconfig.php';
 
     class Pardus {
         

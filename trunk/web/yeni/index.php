@@ -54,9 +54,9 @@
     <tr>
             <td id="navi" colspan=2>
             <div id="ana-butonlar">
-                <a href="/Bireysel"><img src="images/newdesign/button-bireysel-kullanici.png" border="0" alt="" /></a>
-                <a href="/Kurumsal"><img src="images/newdesign/button-kurumsal-kullanici.png" border="0" alt="" /></a>
-                <a href="/Gelistirici"><img src="images/newdesign/button-gelistirici.png" border="0" alt="" /></a>
+                <a href="Bireysel"><img src="images/newdesign/button-bireysel-kullanici.png" border="0" alt="" /></a>
+                <a href="Kurumsal"><img src="images/newdesign/button-kurumsal-kullanici.png" border="0" alt="" /></a>
+                <a href="Gelistirici"><img src="images/newdesign/button-gelistirici.png" border="0" alt="" /></a>
             </div>
             </td>
     </tr>
