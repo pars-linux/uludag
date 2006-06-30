@@ -11,7 +11,48 @@
 # Please read the COPYING file.
 #
 
+import os
+import sys
+import glob
+import shutil
 import kdedistutils
+
+version = "1.1"
+
+distfiles = """
+    README
+    *.py
+    *.desktop
+    images/*.png
+    help/*.css
+    help/en/*.html
+    help/tr/*.html
+    po/*.po
+    po/*.pot
+"""
+
+def make_dist():
+    distdir = "network-manager-%s" % version
+    list = []
+    for t in distfiles.split():
+        list.extend(glob.glob(t))
+    if os.path.exists(distdir):
+        shutil.rmtree(distdir)
+    os.mkdir(distdir)
+    for file_ in list:
+        cum = distdir[:]
+        for d in os.path.dirname(file_).split('/'):
+            dn = os.path.join(cum, d)
+            cum = dn[:]
+            if not os.path.exists(dn):
+                os.mkdir(dn)
+        shutil.copy(file_, os.path.join(distdir, file_))
+    os.popen("tar -czf %s %s" % ("network-manager-" + version + ".tar.gz", distdir))
+    shutil.rmtree(distdir)
+
+if "dist" in sys.argv:
+    make_dist()
+    sys.exit(0)
 
 app_data = [
     'network-manager.py',
@@ -35,7 +76,7 @@ app_data = [
 
 kdedistutils.setup(
     name="network-manager",
-    version="1.1",
+    version=version,
     author="Gürer Özen",
     author_email="gurer@pardus.org.tr",
     url="http://www.pardus.org.tr/projects/comar",
