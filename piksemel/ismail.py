@@ -272,7 +272,12 @@ class Pspec:
             self.error(node, "bad release numbers")
     
     def validate(self, path):
-        doc = piksemel.parse(path)
+        try:
+            doc = piksemel.parse(path)
+        except piksemel.ParseError:
+            self.errors.append("Invalid XML")
+            return
+        
         if doc.name() != "PISI":
             self.error(node, "wrong top level tag")
         
