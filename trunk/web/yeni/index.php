@@ -24,7 +24,7 @@
             var newData = originalRequest.responseText;
             $('haber').innerHTML = "";
             $('haber').innerHTML = newData;
-            new Effect.Highlight('haber',{startcolor:'#297190', endcolor:'#FFFFFF'});
+            new Effect.Highlight('haber',{startcolor:'#CCE0E6', endcolor:'#FFFFFF'});
             $('haber').style.background = "#FFF";
         }
     </script>

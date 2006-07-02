@@ -2,7 +2,7 @@
 <head>
 <?php
 
-    $ActivePage = "G";
+    $ActivePage = "K";
 
     require_once('../Modules/Main.php');
     require_once('../Modules/RSS.php');
@@ -58,18 +58,18 @@
             <div id="menu"><b><a href="../">Ana Sayfa</a> »
             <?php
                 if($Page<>"Main"){
-                    echo "<a href='?'>Geliştiriciler</a> » ";
+                    echo "<a href='?'>Kurumsal Kullanıcılar</a> » ";
                     if ($Parent)
                         echo "<a href='?".$ParentContent["NiceTitle"]."'>".$ParentContent["Title"]."</a> » ";
                      echo $PageContent["Title"];
                }
                 else
-                    echo "Geliştiriciler";
+                    echo "Kurumsal Kullanıcılar";
             ?>
             </b></div>
         </td>
         <td>
-            <img src="../images/newdesign/head-gelistirici.png" style="float:right;padding-right:5px;" />
+            <img src="../images/newdesign/head-kurumsal.png" style="float:right;padding-right:5px;" />
         </td>
     </tr>
     <tr>
