@@ -25,7 +25,7 @@ class Icons:
         self.dial_off = None
     
     def _pix(self, name):
-        img = QImage(locate("data", "net_kga/" + name))
+        img = QImage(locate("data", "network-manager/" + name))
         img = img.smoothScale(48, 48)
         return QPixmap(img)
     
