@@ -28,7 +28,6 @@ tasmalanguage.desktop \
 tasmalaptop.desktop \
 tasmamouse.desktop \
 tasmapanel.desktop \
-tasmapisi.desktop \
 tasmaprinters.desktop \
 tasmaprivacy.desktop \
 tasmaproxy.desktop \
