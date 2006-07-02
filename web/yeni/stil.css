@@ -178,8 +178,8 @@ a {
 }
 
 a:hover {
-	color: #000;
-    background-color:#D9FFC0;
+	color: #444;
+    background-color:#EEE;
 }
 
 #ana-butonlar a:hover {
@@ -199,6 +199,7 @@ a:hover {
     width: 570px;
     background-color:#FFF;
     height: 100%;
+    vertical-align:top;
 }
 
 #kucular {
@@ -215,7 +216,7 @@ a:hover {
 #hede h2 {
     font-size: 14px;
     font-weight: bold;
-    background-color: #D9FFC0;
+    background-color: #DDD;
     padding-left:3px;
 }
 
@@ -260,4 +261,14 @@ a:hover {
     background-position: 0px 0px;
     padding-left:20px;
     padding-right:1em;
+}
+
+#RssList {
+    text-align:left;
+    padding:2px;
+    padding-left:7px;
+}
+
+#RssList a {
+
 }

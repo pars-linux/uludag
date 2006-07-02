@@ -43,8 +43,9 @@
             return (mysql_fetch_array($result, MYSQL_ASSOC));
         }
 
-        function GetNiceTitles() {
-            $query = "SELECT NiceTitle FROM Pages";
+        function GetNiceTitles($ActivePage="") {
+            $ActivePage =="" ? $Add ="" : $Add = " WHERE Parent='$ActivePage'";
+            $query = "SELECT NiceTitle FROM Pages".$Add;
             return $this->MakeArray(mysql_query($query,$this->Connection),'NiceTitle');
         }
 
