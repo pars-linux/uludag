@@ -14,7 +14,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="service-manager",
-    version="1.0.3",
+    version="1.0.4",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",

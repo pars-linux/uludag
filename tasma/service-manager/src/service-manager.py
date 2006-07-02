@@ -29,7 +29,7 @@ import comar
 def AboutData():
     about_data = KAboutData('service_manager',
                             'Service Manager',
-                            '1.0.3',
+                            '1.0.4',
                             'Service Manager Interface',
                             KAboutData.License_GPL,
                             '(C) 2006 UEKAE/TÜBİTAK',
