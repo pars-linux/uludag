@@ -217,7 +217,9 @@ a:hover {
     font-size: 14px;
     font-weight: bold;
     background-color: #DDD;
-    padding-left:3px;
+    padding-left:0.5em;
+    padding-top:2px;
+    padding-bottom:2px;
 }
 
 #hede h4 {
@@ -229,6 +231,9 @@ a:hover {
     text-align:right;
 }
 
+#hede p {
+    padding-left: 2px;
+}
 #hede input {
    border: 1px solid #999;
 }
