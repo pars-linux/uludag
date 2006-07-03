@@ -285,12 +285,23 @@ a:hover {
     padding-right:1em;
 }
 
-#RssList {
-    text-align:left;
-    padding:2px;
-    padding-left:7px;
+:link {
+	color: #F55400;
+	text-decoration: none;
 }
 
-#RssList a {
+:visited {
+	color: #F55400;
+    text-decoration: none;
+}
 
+:link:hover, :visited:hover {
+	color: #444;
+    background-color:#EEE;
+    text-decoration: none;
+}
+
+:link:active, :link:active {
+    color: #636;
+    text-decoration: none;
 }
