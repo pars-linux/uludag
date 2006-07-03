@@ -2,15 +2,14 @@
 
 # Form implementation generated from reading ui file 'firewall.ui'
 #
-# Created: Cum Haz 30 11:18:44 2006
+# Created: Pzt Tem 3 09:27:29 2006
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
 #
 # WARNING! All changes made in this file will be lost!
 
 
-import sys
 from qt import *
-from kdecore import KCmdLineArgs, KApplication
+from kdecore import *
 from kdeui import *
 
 
@@ -157,21 +156,14 @@ class MainWindow(QWidget):
 
         buttonGroup3_2Layout.addWidget(self.checkinFTP,8,0)
 
-        tabConnectionsLayout.addMultiCellWidget(self.buttonGroup3_2,2,2,0,1)
-
-        self.textLabel3_2_2 = QLabel(self.tabConnections,"textLabel3_2_2")
-        self.textLabel3_2_2.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Fixed,0,0,self.textLabel3_2_2.sizePolicy().hasHeightForWidth()))
-        self.textLabel3_2_2.setMinimumSize(QSize(0,0))
-        self.textLabel3_2_2.setAlignment(QLabel.AlignVCenter)
-
-        tabConnectionsLayout.addWidget(self.textLabel3_2_2,0,1)
+        tabConnectionsLayout.addMultiCellWidget(self.buttonGroup3_2,1,1,0,1)
 
         self.textLabel3_2 = QLabel(self.tabConnections,"textLabel3_2")
         self.textLabel3_2.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Fixed,0,0,self.textLabel3_2.sizePolicy().hasHeightForWidth()))
         self.textLabel3_2.setMinimumSize(QSize(0,0))
         self.textLabel3_2.setAlignment(QLabel.AlignVCenter)
 
-        tabConnectionsLayout.addMultiCellWidget(self.textLabel3_2,1,1,0,1)
+        tabConnectionsLayout.addWidget(self.textLabel3_2,0,1)
         self.tabWidget.insertTab(self.tabConnections,QString.fromLatin1(""))
 
         self.TabPage = QWidget(self.tabWidget,"TabPage")
@@ -261,10 +253,10 @@ class MainWindow(QWidget):
         groupBox4Layout.setAlignment(Qt.AlignTop)
 
         self.listAdvanced = QListView(self.groupBox4,"listAdvanced")
-        self.listAdvanced.addColumn(self.__tr("Direction"))
-        self.listAdvanced.addColumn(self.__tr("From"))
-        self.listAdvanced.addColumn(self.__tr("To"))
-        self.listAdvanced.addColumn(self.__tr("Action"))
+        self.listAdvanced.addColumn(i18n("Direction"))
+        self.listAdvanced.addColumn(i18n("From"))
+        self.listAdvanced.addColumn(i18n("To"))
+        self.listAdvanced.addColumn(i18n("Action"))
 
         groupBox4Layout.addMultiCellWidget(self.listAdvanced,0,1,0,0)
 
@@ -327,85 +319,67 @@ class MainWindow(QWidget):
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Firewall Configuration"))
-        QWhatsThis.add(self,self.__tr("Enter the IP address of the "))
-        self.pushHelp.setText(self.__tr("&Help"))
-        self.pushHelp.setAccel(QKeySequence(self.__tr("Alt+H")))
-        self.pushApply.setText(self.__tr("&Apply"))
-        self.pushApply.setAccel(QKeySequence(self.__tr("Alt+A")))
-        self.pushOk.setText(self.__tr("&Ok"))
-        self.pushOk.setAccel(QKeySequence(self.__tr("Alt+O")))
-        self.pushCancel.setText(self.__tr("&Cancel"))
-        self.pushCancel.setAccel(QKeySequence(self.__tr("Alt+C")))
+        self.setCaption(i18n("Firewall Configuration"))
+        QWhatsThis.add(self,i18n("Enter the IP address of the "))
+        self.pushHelp.setText(i18n("&Help"))
+        self.pushHelp.setAccel(QKeySequence(i18n("Alt+H")))
+        self.pushApply.setText(i18n("&Apply"))
+        self.pushApply.setAccel(QKeySequence(i18n("Alt+A")))
+        self.pushOk.setText(i18n("&Ok"))
+        self.pushOk.setAccel(QKeySequence(i18n("Alt+O")))
+        self.pushCancel.setText(i18n("&Cancel"))
+        self.pushCancel.setAccel(QKeySequence(i18n("Alt+C")))
         self.buttonGroup3_3.setTitle(QString.null)
-        self.textStatus2.setText(self.__tr("Click here to stop the firewall and allow all incoming connections."))
-        self.pushStatus.setText(self.__tr("&Stop"))
-        self.pushStatus.setAccel(QKeySequence(self.__tr("Alt+S")))
-        self.textStatus.setText(self.__tr("<b><font size=\"+1\">Firewall is running</font></b>"))
+        self.textStatus2.setText(i18n("Click here to stop the firewall and allow all incoming connections."))
+        self.pushStatus.setText(i18n("&Stop"))
+        self.pushStatus.setAccel(QKeySequence(i18n("Alt+S")))
+        self.textStatus.setText(i18n("<b><font size=\"+1\">Firewall is running</font></b>"))
         self.buttonGroup3_2.setTitle(QString.null)
-        self.checkinMail.setText(self.__tr("E-mail Services"))
-        self.checkinDNS.setText(self.__tr("Domain Name Service (DNS)"))
-        self.checkinWeb.setText(self.__tr("Web Services"))
-        self.checkinRemote.setText(self.__tr("Remote Login Services"))
-        self.checkinWFS.setText(self.__tr("Windows File Sharing Services"))
-        self.checkinIRC.setText(self.__tr("Internet Relay Chat Services"))
-        self.checkinIM.setText(self.__tr("Instant Messaging Services"))
-        self.checkinFS.setText(self.__tr("File Sharing (p2p) Services"))
-        self.checkinFTP.setText(self.__tr("File Transfer Services"))
-        self.textLabel3_2_2.setText(self.__tr("..."))
-        self.textLabel3_2.setText(self.__tr("Allow other computers to access following services on this computer:"))
-        self.tabWidget.changeTab(self.tabConnections,self.__tr("Incoming Connections"))
-        self.groupBox1_3.setTitle(self.__tr("New Rule"))
-        self.textLabel1_3.setText(self.__tr("From:"))
-        self.textLabel1_3_2.setText(self.__tr("To:"))
-        self.textLabel1_3_3.setText(self.__tr("Direction:"))
+        self.checkinMail.setText(i18n("E-mail Services"))
+        self.checkinDNS.setText(i18n("Domain Name Service (DNS)"))
+        self.checkinWeb.setText(i18n("Web Services"))
+        self.checkinRemote.setText(i18n("Remote Login Services"))
+        self.checkinWFS.setText(i18n("Windows File Sharing Services"))
+        self.checkinIRC.setText(i18n("Internet Relay Chat Services"))
+        self.checkinIM.setText(i18n("Instant Messaging Services"))
+        self.checkinFS.setText(i18n("File Sharing (p2p) Services"))
+        self.checkinFTP.setText(i18n("File Transfer Services"))
+        self.textLabel3_2.setText(i18n("Allow other computers to access following services on this computer:"))
+        self.tabWidget.changeTab(self.tabConnections,i18n("Incoming Connections"))
+        self.groupBox1_3.setTitle(i18n("New Rule"))
+        self.textLabel1_3.setText(i18n("From:"))
+        self.textLabel1_3_2.setText(i18n("To:"))
+        self.textLabel1_3_3.setText(i18n("Direction:"))
         self.comboDirection.clear()
-        self.comboDirection.insertItem(self.__tr("In"))
-        self.comboDirection.insertItem(self.__tr("Out"))
-        self.textLabel1_3_3_2.setText(self.__tr("Action:"))
+        self.comboDirection.insertItem(i18n("In"))
+        self.comboDirection.insertItem(i18n("Out"))
+        self.textLabel1_3_3_2.setText(i18n("Action:"))
         self.comboAction.clear()
-        self.comboAction.insertItem(self.__tr("Accept"))
-        self.comboAction.insertItem(self.__tr("Reject"))
-        QToolTip.add(self.comboAction,self.__tr("Accept: The packet is allowed. Reject: The packet is filtered out (i.e deleted)"))
-        QToolTip.add(self.lineToPort,self.__tr("Enter the port number here"))
-        self.textLabel2.setText(self.__tr(":"))
-        self.textLabel2_3.setText(self.__tr(":"))
-        QToolTip.add(self.lineFromPort,self.__tr("Enter the port number here"))
-        QToolTip.add(self.lineFromIP,self.__tr("Enter the IP address of the host which the packet comes from"))
+        self.comboAction.insertItem(i18n("Accept"))
+        self.comboAction.insertItem(i18n("Reject"))
+        QToolTip.add(self.comboAction,i18n("Accept: The packet is allowed. Reject: The packet is filtered out (i.e deleted)"))
+        QToolTip.add(self.lineToPort,i18n("Enter the port number here. Leave blank to include all ports."))
+        self.textLabel2.setText(i18n(":"))
+        self.textLabel2_3.setText(i18n(":"))
+        QToolTip.add(self.lineFromPort,i18n("Enter the port number here. Leave blank to include all ports."))
+        QToolTip.add(self.lineFromIP,i18n("Enter the IP address of the host which the packet comes from. Leave blank to include all addresses."))
         QWhatsThis.add(self.lineFromIP,QString.null)
-        QToolTip.add(self.lineToIP,self.__tr("Enter the IP address of the machine the packet heads to"))
-        self.pushAdd.setText(self.__tr("&Add"))
-        self.pushAdd.setAccel(QKeySequence(self.__tr("Alt+A")))
-        self.groupBox4.setTitle(self.__tr("Rules"))
-        self.listAdvanced.header().setLabel(0,self.__tr("Direction"))
-        self.listAdvanced.header().setLabel(1,self.__tr("From"))
-        self.listAdvanced.header().setLabel(2,self.__tr("To"))
-        self.listAdvanced.header().setLabel(3,self.__tr("Action"))
-        self.pushRemove.setText(self.__tr("&Remove"))
-        self.pushRemove.setAccel(QKeySequence(self.__tr("Alt+R")))
-        self.tabWidget.changeTab(self.TabPage,self.__tr("Advanced"))
-        self.groupBox1.setTitle(self.__tr("ICMP"))
-        self.checkotherICMP.setText(self.__tr("Block incoming PING (ICMP/8) requests."))
-        self.groupBox1_2.setTitle(self.__tr("Firewall Logs"))
-        self.textLabel1.setText(self.__tr("Firewall logs offer a visual way of understanding what happens. Click the button below to see firewall logs."))
-        self.pushLog.setText(self.__tr("&View Logs"))
-        self.pushLog.setAccel(QKeySequence(self.__tr("Alt+V")))
-        self.tabWidget.changeTab(self.tabFeatures,self.__tr("Other Features"))
+        QToolTip.add(self.lineToIP,i18n("Enter the IP address of the machine the packet heads to. Leave blank to include all addresses."))
+        self.pushAdd.setText(i18n("&Add"))
+        self.pushAdd.setAccel(QKeySequence(i18n("Alt+A")))
+        self.groupBox4.setTitle(i18n("Rules"))
+        self.listAdvanced.header().setLabel(0,i18n("Direction"))
+        self.listAdvanced.header().setLabel(1,i18n("From"))
+        self.listAdvanced.header().setLabel(2,i18n("To"))
+        self.listAdvanced.header().setLabel(3,i18n("Action"))
+        self.pushRemove.setText(i18n("&Remove"))
+        self.pushRemove.setAccel(QKeySequence(i18n("Alt+R")))
+        self.tabWidget.changeTab(self.TabPage,i18n("Advanced"))
+        self.groupBox1.setTitle(i18n("ICMP"))
+        self.checkotherICMP.setText(i18n("Block incoming PING (ICMP/8) requests."))
+        self.groupBox1_2.setTitle(i18n("Firewall Logs"))
+        self.textLabel1.setText(i18n("Firewall logs offer a visual way of understanding what happens. Click the button below to see firewall logs."))
+        self.pushLog.setText(i18n("&View Logs"))
+        self.pushLog.setAccel(QKeySequence(i18n("Alt+V")))
+        self.tabWidget.changeTab(self.tabFeatures,i18n("Other Features"))
 
-
-    def __tr(self,s,c = None):
-        return qApp.translate("MainWindow",s,c)
-
-if __name__ == "__main__":
-    appname     = ""
-    description = ""
-    version     = ""
-
-    KCmdLineArgs.init (sys.argv, appname, description, version)
-    a = KApplication ()
-
-    QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
-    w = MainWindow()
-    a.setMainWidget(w)
-    w.show()
-    a.exec_loop()

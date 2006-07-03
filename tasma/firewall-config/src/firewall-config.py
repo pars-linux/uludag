@@ -311,13 +311,13 @@ class MainApplication(programbase):
         if mainwidget.lineFromPort.text():
             rule["sport"] = str(mainwidget.lineFromPort.text())
             if not portsOk(rule["sport"]):
-                KMessageBox.error(mainwidget, i18n("Ports be in valid format.\n\nE.g.: 1000-1500,2000,3000"), i18n("Error"))
+                KMessageBox.error(mainwidget, i18n("Ports must be in valid format.\n\nE.g.: 1000-1500,2000,3000"), i18n("Error"))
                 return
         if mainwidget.lineToIP.text():
             rule["dst"] = str(mainwidget.lineToIP.text())
         if mainwidget.lineToPort.text():
             if not portsOk(rule["dport"]):
-                KMessageBox.error(mainwidget, i18n("Ports be in valid format.\n\nE.g.: 1000-1500,2000,3000"), i18n("Error"))
+                KMessageBox.error(mainwidget, i18n("Ports must be in valid format.\n\nE.g.: 1000-1500,2000,3000"), i18n("Error"))
                 return
             rule["dport"] = str(mainwidget.lineToPort.text())
        
