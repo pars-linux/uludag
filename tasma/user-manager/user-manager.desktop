@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Add and Remove User
 Name[tr]=Kullanıcı Ekle ve Çıkart
-Comment=Kullanıcı Yönetimi Arayüzü
+Comment=User Management Interface
 Comment[tr]=Kullanıcı Yönetimi Arayüzü
 Icon=user.png
 X-KDE-ModuleType=Library
