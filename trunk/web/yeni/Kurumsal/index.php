@@ -95,7 +95,7 @@
             <?php } ?>
     </tr>
     <tr>
-        <td colspan=2 id="footer">
+        <td colspan=2 id="footer-forpw">
             Pardus TUBITAK/UEKAE 'nin Tescilli Markasıdır.
         </td>
     </tr>
