@@ -1,0 +1,317 @@
+
+/* yeniler */
+
+* {
+    font-size: 11px;
+    font-family: Tahoma, Sans-Serif;
+}
+
+body {
+    margin-left:0;
+    margin-top:0;
+    margin-right:0;
+    background-image:url('images/HeadTile.png');
+    background-repeat:repeat-x;
+    background-color: #FFF;
+}
+
+#header {
+    background-image:url('images/HeadLogo.png');
+    background-repeat:no-repeat;
+    background-position: 0px -2px;
+    height:119px;
+}
+#oplanet {
+	margin-right:200px;
+	padding:10px;
+}
+#header-bugzilla {
+    background-image:url('images/HeadLogo.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height:119px;
+    padding-bottom:5px;
+}
+
+#menu {
+    font-weight:bold;
+    font-size:10px;
+    padding-top:93px;
+    padding-left:200px;
+}
+
+li {
+    list-style-image: url('images/BulletCyan.png');
+}
+
+#searchbar {
+    float:right;
+    padding-right:3px;
+    }
+
+#searchbar input {
+    border:1px solid #999;
+    height:17px;
+}
+#menu li {
+    border:0;
+    padding-left:5px;
+    margin-left:4px;
+    float:left;
+}
+
+#kutular {
+    width:290px;
+    vertical-align:top;
+}
+
+
+#footer-forpw {
+    background-image:url('images/newdesign/footer-standart.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    margin-top:20px;
+    padding:5px;
+    padding-top:36px;
+    color: #000;
+    height:55px;
+}
+#news {
+    margin-left:3px;
+    width:200px;
+    float:left;
+    border:1px solid #DDD;
+    padding:5px;
+    height:500px;
+    background-color:#BBB;
+}
+
+.title {
+    background-color: #FFEE00;
+    border-bottom: 1px solid #FFAA00;
+}
+
+/* eskiler feedback */
+
+
+a {
+	color: #F55400;
+	text-decoration: none;
+	/*font-weight: bold;*/
+}
+
+a:hover {
+	color: #444;
+    background-color:#EEE;
+}
+
+#ana-butonlar a:hover {
+    border-bottom:1px solid #8AC86C;
+}
+
+#gelistirici {
+    font-size: 16px;
+    background-color: #FFEED6;
+    background-image:url('images/newdesign/minigelheader.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height: 30px;
+}
+
+#mainBody {
+    width: 570px;
+    background-color:#FFF;
+    height: 100%;
+    vertical-align:top;
+}
+
+#kucular {
+    width:200px;
+    vertical-align:top;
+    background-color:#FFF;
+}
+
+#hede {
+    padding:3px;
+    padding-top:0px;
+}
+
+#hede h2 {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #DDD;
+    padding-left:0.5em;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+#hede h4 {
+    font-weight:normal;
+    font-size: 10px;
+    margin-top:-8px;
+    font-style:italic;
+    padding-right:3px;
+    text-align:right;
+}
+
+#hede p {
+    padding-left: 2px;
+}
+#hede input {
+   border: 1px solid #999;
+}
+#hodo {
+    border-left:1px solid #EEE;
+    height: 100%;
+    text-align:center;
+    padding-top:10px;
+}
+
+.svnlink {
+    background-image:url('images/newdesign/svnlink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.maillink {
+    background-image:url('images/newdesign/maillink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.pdflink {
+    background-image:url('images/newdesign/pdf.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+#RssList {
+    text-align:left;
+    padding:2px;
+    padding-left:7px;
+}
+
+#RssList a {
+
+}
+
+
+h1 {
+	margin: 0px;
+        margin-left: -10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+
+	font-family: "Bitstream Vera Sans", sans-serif;
+	font-weight: bold;
+	letter-spacing: -2px;
+	background: #e0970b;
+        color: white;
+}
+
+h2 {
+        margin-top: 10px;
+        margin-left: -5px;
+        padding: 5px;
+	font-family: "Bitstream Vera Sans", sans-serif;
+	font-weight: bold;
+        font-size: 10px;
+        background: #999;
+	border: 1px solid #aaa;
+	color: white;
+}
+
+h3 {
+	font-family: "Bitstream Vera Sans", sans-serif;
+	font-weight: normal;
+
+	background-color: #eee;
+	border: 1px solid #999;
+
+	padding-left: 4px;
+}
+
+h3 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h4 {
+	font-family: "Bitstream Vera Sans", sans-serif;
+	font-weight: bold;
+}
+
+h4 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img.face {
+	float: right;
+	margin-top: -3em;
+}
+
+.entry {
+	margin-bottom: 2em;
+}
+
+.entry .date {
+	font-family: "Bitstream Vera Sans", sans-serif;
+	color: #EEE;
+}
+
+.entry .date a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.sidebar {
+	position: absolute;
+	top: 119px;
+	right: 0px;
+	width: 190px;
+
+        margin-top: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-right: 0px;
+
+	padding-left: 0px;
+
+	font-family: "Bitstream Vera Sans", sans-serif;
+	font-size: 85%;
+	background-color:#FFF;
+}
+
+.sidebar h2 {
+	font-size: 110%;
+	font-weight: bold;
+	color: white;
+        background: #5c597e;
+
+	padding: 2px;
+	margin: 0px;
+}
+
+.sidebar ul {
+	padding-left: 2em;
+	margin-left: 0px;
+
+	list-style-type: square;
+}
+
+.sidebar ul li:hover {
+	color: grey;
+}
+
+.sidebar p {
+}
+
+
