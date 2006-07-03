@@ -11,7 +11,9 @@
 
 import comar
 from qt import *
+from kdecore import *
 
+import monitors
 from utility import *
 
 
@@ -24,7 +26,7 @@ class DisplayConfig(QWidgetStack):
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
         
         QWidgetStack.__init__(self, parent)
-        #self.browse = browser.BrowseStack(self, link)
+        self.monedit = monitors.Monitors(self)
     
     def slotComar(self, sock):
         reply = self.link.read_cmd()
