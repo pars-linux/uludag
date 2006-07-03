@@ -17,7 +17,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="firewall-config",
-    version="1.5",
+    version="1.5.1",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",

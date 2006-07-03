@@ -32,7 +32,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("Pardus Firewall Graphical User Interface")
-version = "1.5"
+version = "1.5.1"
 
 def AboutData():
     global version,description
@@ -49,7 +49,8 @@ def AboutData():
     about_data.addAuthor("Bahadır Kandemir", None, "bahadir@pardus.org.tr")
     about_data.addCredit("Görkem Çetin", I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
     about_data.addCredit("İsmail Dönmez", I18N_NOOP("Help with IPTables"), "ismail@pardus.org.tr")
-    
+    about_data.addCredit("Gürer Özen", I18N_NOOP("Help with KDE stuff"), "gurer@pardus.org.tr")
+
     return about_data
 
 def loadIcon(name, group=KIcon.Desktop, size=16):
