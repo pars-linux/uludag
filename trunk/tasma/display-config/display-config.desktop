@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Configure Display
+Name[tr]=Görüntüyü Yapılandır
+Comment=Display Configuration Interface
+Comment[tr]=Görüntü Ayarları Arayüzü
+Icon=display
+X-KDE-ModuleType=Library
+X-KDE-Library=display-config
+X-KDE-FactoryName=display_config
+Type=Application
+Exec=kcmshell display-config
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-looknfeel
