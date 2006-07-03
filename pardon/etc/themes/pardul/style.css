@@ -4,12 +4,25 @@
         Gökmen GÖKSEL gokmen_at_pardus.org.tr
     */
 
+* {
+    font-size: 11px;
+    font-family: Tahoma, Sans-Serif;
+}
+
 body {
-    background-image: url(./images/back.jpg);
-    background-repeat: repeat-x;
-    background-color: #FFFFFF;
-    margin: 0;
-    text-align:center;
+    margin-left:0;
+    margin-top:0;
+    margin-right:0;
+    background-image:url('images/HeadTile.png');
+    background-repeat:repeat-x;
+    background-color: #FFF;
+}
+
+#header {
+    background-image:url('images/HeadLogo.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height:119px;
 }
 
 img {
@@ -17,19 +30,15 @@ img {
     vertical-align:middle;
 }
 
-body,div, span, table, td, th, input,select,option {
-    font-family: "Lucida Grande", Myriad, "Andale Sans", "Luxi Sans", "Bitstream Vera Sans", Tahoma, "Toga Sans", Helvetica, Arial, sans-serif;
-    font-size: 1em;
-}
-
 a {
-    color: #990000;
-    text-decoration: none;
+	color: #F55400;
+	text-decoration: none;
+	/*font-weight: bold;*/
 }
 
 a:hover {
-    color: #FFFF00;
-    text-decoration: underline;
+	color: #444;
+    background-color:#EEE;
 }
 
 div#head {
@@ -39,13 +48,6 @@ div#head {
     border-bottom:1px solid #BBB;
     padding:1px;
     margin-bottom:3px;
-}
-
-.pancar {
-    padding-left:1px;
-    background: url(./images/arka.jpg) no-repeat center top;
-    width:1024px;
-    height:500px;
 }
 
 div#warn {
@@ -59,6 +61,10 @@ div#warn {
     -moz-border-radius : 5px;
 }
 
+li {
+    list-style-image: url('images/BulletCyan.png');
+}
+
 div#box {
     text-align: left;
     vertical-align: middle;	
@@ -66,10 +72,16 @@ div#box {
     width: 760px;
     background-color: #ffffff;
 }
+div#box2 {
+    text-align: left;
+    vertical-align: middle;	
+    margin: 0px auto;
+    width: 760px;
+}
 
 div#leftbox {
     margin: 5px 5px 0px auto;
-    background-color:#FF8000;
+    background-color:#EEE;
     color: #000;
     width:170px;
     float:left;
