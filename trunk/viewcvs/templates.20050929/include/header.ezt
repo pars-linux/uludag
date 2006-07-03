@@ -6,9 +6,11 @@
 <head>
   <title>[if-any rootname][[][rootname]][else]ViewCVS[end] [page_title]</title>
   <meta name="generator" content="ViewCVS [vsn]" />
-  <link rel="stylesheet" href="[docroot]/styles.css" type="text/css" />
+  <link rel="stylesheet" href="http://www.pardus.org.tr/styles/stil.css" type="text/css" />
 </head>
 <body>
+<div id="header-bugzilla"></div>
+<div id="packets">
 <div class="vc_navheader">
 [if-any roots]
   <form method="get" action="[change_root_action]">
