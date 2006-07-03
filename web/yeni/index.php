@@ -35,13 +35,10 @@
 
 <!-- Content -->
 
-    <?php
-    ?>
-
 <table>
     <tr>
-        <td id="header">
-            <div id="menu">  </div>
+        <td id="header" colspan=2>
+            <div id="menu"><span id="searchbar"><input type="text" value="ara"></span> </div>
         </td>
     </tr>
     <tr>
@@ -90,7 +87,7 @@
     </tr>
     <tr>
         <td colspan=2>
-            <div id="footer">Pardus TUBITAK/UEKAE 'nin Tescilli Markasıdır.</div>
+            <div id="footer-forpw">Pardus TUBITAK/UEKAE 'nin Tescilli Markasıdır.</div>
         </td>
     </tr>
  </table>
