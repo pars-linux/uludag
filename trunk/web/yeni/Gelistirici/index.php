@@ -81,6 +81,15 @@
             <?php if ($PageContent["PType"]<>"D") { ?>
             <td id="kucular">
                 <div id="hodo">
+                <div id="RssList">
+                <b>Nasıl Katkıda Bulunabilirim?</b>
+                <p>
+                <li>Wiki'de deneyimlerinizi paylaşabileceğiniz belgelerle yeni kullanıcılara yardım edebilir;
+                <li>Yaşadığınız sorunları ya da önerilerinizi Hata Takip Sistemine girerek daha iyi bir sistem yaratmamıza yardımcı olabilir;
+                <li>İmece çalışmalarına katılarak, katkılarınızı doğrudan Pardus'a ekleyebilir;
+                <li>Bunlar dışında fikirleriniz varsa Pardus Gönüllülerine başvurabilirsiniz...
+                </p>
+                </div>
                 <img src="../images/newdesign/head-svn-degisiklik.png">
                 <img src="../images/newdesign/head-bugzilla-degisiklik.png">
                 <img src="../images/newdesign/head-gelistirici-gunlukler.png">
