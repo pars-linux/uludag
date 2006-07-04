@@ -81,14 +81,9 @@
             <?php if ($PageContent["PType"]<>"D") { ?>
             <td id="kucular">
                 <div id="hodo">
-                <img src="../images/newdesign/head-svn-degisiklik.png">
-                <img src="../images/newdesign/head-bugzilla-degisiklik.png">
-                <img src="../images/newdesign/head-gelistirici-gunlukler.png">
-                    <div id="RssList">
-                    <?php
-                        $Blogs->ShowList(4,30);
-                    ?>
-                    </div>
+                <img src="../images/newdesign/head-hizli-baslangic.png">
+                <img src="../images/newdesign/head-donanim-uyumlulugu.png">
+                <img src="../images/newdesign/head-pardus-ekran-goruntuleri.png">
                 <img src="../images/newdesign/dock-gelistirici.png">
                 </div>
             </td>
