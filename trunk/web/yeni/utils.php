@@ -28,7 +28,6 @@
         function GetNews($ID=""){
             if ($ID<>"")
                 $query = "SELECT * FROM News WHERE ID=$ID";
-            lse
                 $query = "SELECT * FROM News ORDER BY DATE DESC LIMIT 1";
             $result= mysql_query($query,$this->Connection);
             while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
