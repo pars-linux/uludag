@@ -294,3 +294,35 @@ a:hover {
 #RssList a {
 
 }
+
+.working {
+    background-image:url('images/newdesign/work.gif');
+    background-repeat:no-repeat;
+    background-position:85px 8px;
+    margin: auto auto;
+    height: 30px;    
+}
+
+.ready {
+    background-color:#FFF;
+    height:auto;
+    text-align:left;
+    padding-left:8px;
+    margin-bottom:3px;
+}
+
+#selectRepo {
+   padding-left:8px;
+   border-bottom: 1px dotted #DDD;
+   height:25px;
+   margin-right:12px;
+}
+#selectRepo b {
+    padding:4px;
+    float:left;
+}
+#selectRepo select {
+    margin-top:2px;
+    border: 1px solid #777;
+    float:right;
+}

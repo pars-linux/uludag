@@ -15,6 +15,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="../stil.css" rel="stylesheet" type="text/css">
     <script src="../scripts/prototype.js"></script>
+    <script src="../Modules/SVN.js"></script>
     <script>
 
         function get_news(nid) {
@@ -29,26 +30,10 @@
             $('ayrintilar').innerHTML = newData;
         }
 
-        function ShowPageList(){
-            var ajax = new Ajax.Updater(
-                'hede',
-                'http://www.pardus.org.tr',
-                {
-                    method:'get',
-                    onComplete: showPlain
-                }
-            );
-        }
-
-        function showPlain(req)
-        {
-            $('hede').innerHTML = req.responseText;
-        }
-
     </script>
 </head>
 
-<body>
+<body onload="GetLogs('pardus','SVNLogs');">
 <center>
 
 <!-- Content -->
@@ -91,6 +76,14 @@
                 </p>
                 </div>
                 <img src="../images/newdesign/head-svn-degisiklik.png">
+                    <div id="selectRepo">
+                        <b> Depo : </b>
+                        <select onChange="GetLogs(this.value,'SVNLogs');"> 
+                            <option value='pardus'>Pardus</option>
+                            <option value='uludag'>Uludağ</option>
+                        </select>
+                    </div>
+                    <div id="SVNLogs"></div>
                 <img src="../images/newdesign/head-bugzilla-degisiklik.png">
                 <img src="../images/newdesign/head-gelistirici-gunlukler.png">
                     <div id="RssList">
