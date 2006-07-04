@@ -15,6 +15,7 @@ class ComarIface:
         self.com.ask_notify("System.Manager.warning")
         self.com.ask_notify("System.Manager.info")
         self.com.ask_notify("System.Manager.notify")
+        self.com.ask_notify("System.Manager.finished")
         
         self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
         
