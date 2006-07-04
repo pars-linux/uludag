@@ -18,7 +18,7 @@
                         for (i=0;i<=limit;i++) {
                             rev = root.getElementsByTagName('logentry').item(i).getAttribute("revision");
                             nood =  root.getElementsByTagName('logentry').item(i);
-                            hede = '<li><a href="'+BaseLink+rev+'">r'+rev+' : '+nood.getElementsByTagName('msg').item(0).firstChild.nodeValue+"..</a><br>";
+                            hede = '<li><a href="'+BaseLink+rev+'">r'+rev+' : '+nood.getElementsByTagName('msg').item(0).firstChild.nodeValue.substr(0,16)+"..</a><br>";
                             $(Obj).innerHTML += hede;
                         }
                     }
