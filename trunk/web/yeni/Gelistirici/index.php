@@ -59,7 +59,7 @@
         </td>
     </tr>
     <tr>
-            <td id="mainBody" <?php if ($PageContent["PType"]==="D") { ?> style="width:770px" colspan=2 <?php } ?> >
+            <td <?php if ($PageContent["PType"]==="D") { ?> id="docTable" colspan=2 <?php } else { ?> id="mainBody" <? } ?> >
                 <div id="hede">
                 <?=$PageContent["Content"]?>
                 </div>

@@ -326,3 +326,10 @@ a:hover {
     border: 1px solid #777;
     float:right;
 }
+
+#docTable {
+    width:773px;
+    border-left:1px solid #EEE;
+    border-right:1px solid #EEE; 
+}
+
