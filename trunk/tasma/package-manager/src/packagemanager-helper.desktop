@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Package Manager
+Icon=packagemanager
+Type=Application
+MimeType=application/x-pisi;
+Exec="package-manager --install %u"
