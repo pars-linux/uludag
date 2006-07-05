@@ -48,7 +48,6 @@ class Commander(QObject):
                 rate = round(int(data[2]),1)
                 self.parent.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
             elif notification == "System.Manager.finished":
-                print 'Got finished event!'
                 self.parent.finished()
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
