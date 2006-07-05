@@ -25,6 +25,11 @@
             mysql_free_result($result);
         }
 
+        function Search($Que) {
+            $query = "SELECT * FROM Pages WHERE (Title LIKE '%{$Que}%') OR (Content LIKE '%{$Que}%')";
+            return $this->MakeArray(mysql_query($query,$this->Connection));
+        }
+
         function GetNews($ID=""){
             if ($ID<>"")
                 $query = "SELECT * FROM News WHERE ID=$ID";
