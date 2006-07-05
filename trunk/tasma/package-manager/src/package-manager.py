@@ -55,7 +55,7 @@ base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
 def AboutData():
     global version,description
     
-    about_data = KAboutData("pisix", "PiSi-X", version, description, KAboutData.License_GPL,
+    about_data = KAboutData("package-manager", "Package Manager", version, description, KAboutData.License_GPL,
                             "(C) 2005, 2006 UEKAE/TÜBİTAK", None, None)
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Main Coder"), "ismail@pardus.org.tr")
@@ -104,7 +104,7 @@ class CustomEventListener(DOM.EventListener):
 
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
-        QWidget.__init__(self, parent, "PiSi-X")
+        QWidget.__init__(self, parent, "Package Manager")
         self.parent = parent
         
         self.progressDialog = Progress.Progress(self)
@@ -553,7 +553,7 @@ class MainApplicationWidget(QWidget):
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
         KMainWindow.__init__(self,parent,name)
-        self.setCaption("PiSi-X")
+        self.setCaption("Package Manager")
         self.aboutus = KAboutApplication(self)
         self.helpWidget = None
         self.mainwidget = MainApplicationWidget(self)
@@ -595,7 +595,7 @@ def main():
     KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
 
     if not KUniqueApplication.start():
-        print i18n("Pisi-X is already running!")
+        print i18n("Package Manager is already running!")
         return
 
     nonPrivMode = posix.getuid()

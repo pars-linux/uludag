@@ -118,14 +118,14 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         repoAddress = str(self.repo.repoAddress.text())
 
         if not (repoAddress.endswith("xml") or repoAddress.endswith("xml.bz2")):
-            KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
+            KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Package Manager Error"))
             return
         else:
             self.parent.command.addRepo(repoName,repoAddress)
                     
         self.repo.close()
 
-        confirm = KMessageBox.questionYesNo(self,i18n('<qt>Do you want to update repository <b>%1</b></qt>').arg(repoName),i18n("Pisi Question"))
+        confirm = KMessageBox.questionYesNo(self,i18n('<qt>Do you want to update repository <b>%1</b></qt>').arg(repoName),i18n("Package Manager Question"))
         if confirm == KMessageBox.Yes:
             self.parent.command.updateRepo(repoName)
 
@@ -135,7 +135,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         newRepoAddress = str(self.repo.repoAddress.text())
 
         if not newRepoAddress.endswith("xml"):
-            KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
+            KMessageBox.error(self,i18n('<qt>Repository address should end with xml suffix.<p>Please try again.</qt>'), i18n("Package Manager Error"))
             return
         else:
             self.parent.command.removeRepo(self.oldRepoName)
