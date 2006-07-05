@@ -4,6 +4,7 @@
     $SvnServer = 'http://svn.pardus.org.tr/';
     $Limit = 5;
     function getLogs($Repo) {
+#        Svn kendi çalıştırıyor komutu (hook)
 #        global $SvnServer,$Limit;
 #        exec ('svn log '.$SvnServer.$Repo.' --xml --limit '.$Limit.' > /tmp/svnlog-'.$Repo);
         $logFile = '/tmp/svnlog-'.$Repo;
