@@ -43,13 +43,13 @@
             <div id="menu"><b><a href="../">Ana Sayfa</a> »
             <?php
                 if($Page<>"Main"){
-                    echo "<a href='?'>Geliştiriciler</a> » ";
+                    echo "<a href='?'>Geliştirici</a> » ";
                     if ($Parent)
                         echo "<a href='?".$ParentContent["NiceTitle"]."'>".$ParentContent["Title"]."</a> » ";
                      echo $PageContent["Title"];
                }
                 else
-                    echo "Geliştiriciler";
+                    echo "Geliştirici";
             ?>
             </b></div>
         </td>

@@ -58,13 +58,13 @@
             <div id="menu"><b><a href="../">Ana Sayfa</a> »
             <?php
                 if($Page<>"Main"){
-                    echo "<a href='?'>Kurumsal Kullanıcılar</a> » ";
+                    echo "<a href='?'>Kurumsal</a> » ";
                     if ($Parent)
                         echo "<a href='?".$ParentContent["NiceTitle"]."'>".$ParentContent["Title"]."</a> » ";
                      echo $PageContent["Title"];
                }
                 else
-                    echo "Kurumsal Kullanıcılar";
+                    echo "Kurumsal";
             ?>
             </b></div>
         </td>
