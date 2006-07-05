@@ -55,7 +55,7 @@
         </td>
         <td id="kutular">
             <div id="pardus-nedir">
-                Pardus, TUBITAK UEKAE tarafından yürütülen, kodları ve geliştirme süreçleri açık, herkesin katılabileceği, özgür yazılım modeliyle geliştirilen bir işletim sistemidir. Kolay kullanılır ve bir bilişim okuryazarının tüm ihtiyaçlarını doğrudan karşılar.<br>Pardus ile ilgili ayrıntılı bilgi için <a href="?Bireysel/PardusTanitim">tıklayınız</a>.
+                Pardus, TUBITAK UEKAE tarafından yürütülen, kodları ve geliştirme süreçleri açık, herkesin katılabileceği, özgür yazılım modeliyle geliştirilen bir işletim sistemidir. Kolay kullanılır ve bir bilişim okuryazarının tüm ihtiyaçlarını doğrudan karşılar.<br>Pardus ile ilgili ayrıntılı bilgi için <a href="?PardusTanitim">tıklayınız</a>.
             </div>
             <div id="pardus-indir"></div>
         </td>
