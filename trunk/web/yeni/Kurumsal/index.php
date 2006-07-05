@@ -11,7 +11,7 @@
 
 ?>
 
-    <title>PardusOrgTr</title>
+    <title><?=$PageTitle?> » Kurumsal</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="../stil.css" rel="stylesheet" type="text/css">
     <script src="../scripts/prototype.js"></script>

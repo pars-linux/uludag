@@ -2,7 +2,7 @@
 <head>
 <?php
 
-    $ActivePage = "G";
+    $ActivePage = "R";
 
     require_once('../Modules/Main.php');
     require_once('../Modules/RSS.php');
@@ -11,7 +11,7 @@
 
 ?>
 
-    <title><?=$PageTitle?> » Geliştirici</title>
+    <title><?=$PageTitle?> » Pardus </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="../stil.css" rel="stylesheet" type="text/css">
     <script src="../scripts/prototype.js"></script>
@@ -43,18 +43,18 @@
             <div id="menu"><b><a href="../">Ana Sayfa</a> »
             <?php
                 if($Page<>"Main"){
-                    echo "<a href='?'>Geliştirici</a> » ";
+                    echo "<a href='?'>Pardus</a> » ";
                     if ($Parent)
                         echo "<a href='?".$ParentContent["NiceTitle"]."'>".$ParentContent["Title"]."</a> » ";
                      echo $PageContent["Title"];
                }
                 else
-                    echo "Geliştirici";
+                    echo "Pardus";
             ?>
             </b></div>
         </td>
         <td>
-            <img src="../images/newdesign/head-gelistirici.png" style="float:right;padding-right:5px;" />
+            <!-- <img src="../images/newdesign/head-pardus.png" style="float:right;padding-right:5px;" /> -->
         </td>
     </tr>
     <tr>
