@@ -74,21 +74,22 @@
         </td>
     </tr>
     <tr>
-            <td id="mainBody" <?php if ($PageContent["PType"]==="D") { ?> style="width:770px" colspan=2 <?php } ?> >
-                <div id="hede">
+        <td id="mainBody" 
+        <?php if ($PageContent["PType"]==="D") { ?> style="width:770px" colspan=2 <?php } ?> >
+            <div id="hede">
                 <?=$PageContent["Content"]?>
-                </div>
-            </td>
-            <?php if ($PageContent["PType"]<>"D") { ?>
-            <td id="kucular">
-                <div id="hodo">
+            </div>
+        </td>
+        <?php if ($PageContent["PType"]<>"D") { ?>
+        <td id="kucular">
+            <div id="hodo">
                 <img src="../images/newdesign/head-hizli-baslangic.png">
                 <img src="../images/newdesign/head-donanim-uyumlulugu.png">
                 <img src="../images/newdesign/head-pardus-ekran-goruntuleri.png">
                 <img src="../images/newdesign/dock-gelistirici.png">
-                </div>
-            </td>
-            <?php } ?>
+            </div>
+        </td>
+        <?php } ?>
     </tr>
     <tr>
         <td colspan=2 id="footer-forpw">
