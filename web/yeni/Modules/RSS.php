@@ -15,11 +15,17 @@
             $this->RssContent=simplexml_load_string($xml_content);
         }
 
+        function utf8_substr($str,$from,$len){
+        return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'.
+                       '((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s',
+                       '$1',$str);
+        }
+
         function ShowList($Count,$CharLen){
             if ($this->RssContent) {
                 $i=0;
                 foreach($this->RssContent->channel->item as $blog) {
-                    echo "<li><a href='".$blog->link."'>".substr($blog->title,0,$CharLen)."..</a><br>";
+                    echo "<li><a href='".$blog->link."'>".$this->utf8_substr($blog->title,0,$CharLen)."..</a><br>";
                     if ($i>=$Count) break; else $i++;
                 }
             }
