@@ -55,7 +55,6 @@
             </b></div>
         </td>
         <td>
-            <img src="../images/newdesign/head-gelistirici.png" style="float:right;padding-right:5px;" />
         </td>
     </tr>
     <tr>
