@@ -1,7 +1,5 @@
 <?php
 
-    require_once('../utils.php');
-
     $Page = "Main";
 
     $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);

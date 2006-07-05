@@ -4,6 +4,7 @@
 
     $ActivePage = "B";
 
+    require_once('../utils.php');
     require_once('../Modules/Main.php');
     require_once('../Modules/RSS.php');
 
