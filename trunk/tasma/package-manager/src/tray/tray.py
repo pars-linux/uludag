@@ -59,7 +59,7 @@ class TrayApp(KSystemTray):
         upgradeList = pisi.api.list_upgradable()
 
         if upgradeList:
-            self.popup = KopeteBalloon(i18n("There are %1 updates available!").arg(len(upgradeList)),
+            self.popup = KopeteBalloon(self,i18n("There are %1 updates available!").arg(len(upgradeList)),
                                        KGlobal.iconLoader().loadIcon("packagemanager",KIcon.Small))
             pos = self.mapToGlobal(self.pos())
             self.popup.setAnchor(pos)

@@ -7,8 +7,9 @@ from kdecore import *
 
 
 class KopeteBalloon(QWidget):
-    def __init__(self,text,pix):
+    def __init__(self,parent,text,pix):
         QWidget.__init__(self,None,"KopeteBalloon", Qt.WStyle_StaysOnTop | Qt.WStyle_Customize | Qt.WStyle_NoBorder | Qt.WStyle_Tool | Qt.WX11BypassWM)
+        self.parent = parent
 
         self.setCaption("")
         self.mAnchor = QPoint()
@@ -34,6 +35,8 @@ class KopeteBalloon(QWidget):
         Layout2 = QHBoxLayout(BalloonLayout, KDialog.spacingHint(), "Layout2")
         self.mViewButton = QPushButton(i18n("Show Updates"), self, "mViewButton")
         self.mIgnoreButton = QPushButton(i18n("Ignore"), self, "mIgnoreButton")
+
+        self.connect(self.mIgnoreButton,SIGNAL("clicked()"),self.parent.hide)
 
         Layout2.addStretch()
         Layout2.addWidget(self.mViewButton)
