@@ -50,7 +50,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.1.0_b3"
+version = "1.1.0_rc1"
 base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
 
 def AboutData():
