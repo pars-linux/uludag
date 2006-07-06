@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Package Manager
+Name[tr]=Paket Yöneticisi
 Icon=packagemanager
 Type=Application
 MimeType=application/x-pisi;
