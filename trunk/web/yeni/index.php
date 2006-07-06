@@ -1,8 +1,5 @@
-<html>
-<head>
-
 <?php
-    
+
     $ActivePage = "M";
     require_once('utils.php');
     require_once('Modules/Main.php');
@@ -12,6 +9,8 @@
 
 ?>
 
+<html>
+<head>
     <title><?=$PageTitle?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="stil.css" rel="stylesheet" type="text/css">
@@ -40,13 +39,13 @@
 <center>
 <table>
 
-<?php 
-    if($Page==="Main") 
+<?php
+    if($Page==="Main")
         include ('index-data.php');
-    else 
+    else
         include ('child-data.php');
 ?>
-    
+
     <tr>
         <td colspan=2>
             <div id="footer-forpw">Pardus TUBITAK/UEKAE 'nin Tescilli Markasıdır.</div>
