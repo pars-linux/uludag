@@ -68,6 +68,7 @@ class TrayApp(KSystemTray):
             QTimer.singleShot(1000,self.showPopup)
 
     def showPopup(self):
+        self.show()
         self.popup = KopeteBalloon(self,i18n("There are %1 updates available!").arg(len(self.upgradeList)),
                                    KGlobal.iconLoader().loadIcon("packagemanager",KIcon.Small))
         pos = self.mapToGlobal(self.pos())
@@ -83,10 +84,10 @@ if __name__ == "__main__":
     aboutData.addAuthor('İsmail Dönmez', 'Maintainer', 'ismail@pardus.org.tr')
 
     KCmdLineArgs.init(sys.argv,aboutData)
-    kapp = KApplication()
+    KUniqueApplication.start()
+    kapp = KUniqueApplication(True,True,True)
 
     tray = TrayApp()
-    tray.show()
     
     kapp.setMainWidget(tray)
     kapp.exec_loop()
