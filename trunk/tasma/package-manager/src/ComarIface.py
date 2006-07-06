@@ -43,5 +43,5 @@ class ComarIface:
     def removeRepo(self, repo):
         self.com.call("System.Manager.removeRepo", ["repository",repo])
 
-    def swapRepos(self, repo1, repo2):
-        self.com.call("System.Manager.swapRepositories", ["repository1",repo1, "repository2",repo2])
+    def setRepositories(self, repos):
+        self.com.call("System.Manager.setRepositories", ["repos",repos])
