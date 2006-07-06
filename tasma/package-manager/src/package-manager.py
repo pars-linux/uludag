@@ -637,6 +637,8 @@ def main():
 
     if args.isSet("showupdates"):
         showUpdates = True
+    else:
+        showUpdates = None
 
     myapp = MainApplication()
     myapp.show()
