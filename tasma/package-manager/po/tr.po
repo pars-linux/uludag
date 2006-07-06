@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-06 15:14+0300\n"
+"POT-Creation-Date: 2006-07-06 16:11+0300\n"
 "PO-Revision-Date: 2006-03-02 13:31+0200\n"
 "Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -286,109 +286,109 @@ msgstr "PiSi Yazarları"
 msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
-#: src/package-manager.py:143
+#: src/package-manager.py:142
 msgid "Search: "
 msgstr "Ara: "
 
-#: src/package-manager.py:162
+#: src/package-manager.py:161
 msgid "Components"
 msgstr "Bileşenler"
 
-#: src/package-manager.py:190
+#: src/package-manager.py:189
 msgid "Loading Package List..."
 msgstr "Paket listesi yükleniyor"
 
-#: src/package-manager.py:209
+#: src/package-manager.py:208
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>İşlem iptal ediliyor...</b>"
 
-#: src/package-manager.py:234 src/package-manager.py:249
-#: src/package-manager.py:392
+#: src/package-manager.py:233 src/package-manager.py:248
+#: src/package-manager.py:391
 msgid "Show New Packages"
 msgstr "Yeni Paketleri Göster"
 
-#: src/package-manager.py:238 src/package-manager.py:245
-#: src/package-manager.py:583
+#: src/package-manager.py:237 src/package-manager.py:244
+#: src/package-manager.py:594
 msgid "Show Installed Packages"
 msgstr "Kurulu Paketleri Göster"
 
-#: src/package-manager.py:240 src/package-manager.py:584
+#: src/package-manager.py:239 src/package-manager.py:595
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
-#: src/package-manager.py:251
+#: src/package-manager.py:250
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
-#: src/package-manager.py:334
+#: src/package-manager.py:333
 msgid "N\\A"
 msgstr "Bilinmiyor"
 
-#: src/package-manager.py:335
+#: src/package-manager.py:334
 msgid "Description: "
 msgstr "Açıklama: "
 
-#: src/package-manager.py:335
+#: src/package-manager.py:334
 msgid "Version: "
 msgstr "Sürüm: "
 
-#: src/package-manager.py:336
+#: src/package-manager.py:335
 msgid "Package Size: "
 msgstr "Paket Boyutu: "
 
-#: src/package-manager.py:336
+#: src/package-manager.py:335
 msgid "Homepage: "
 msgstr "Web sayfası: "
 
-#: src/package-manager.py:432
+#: src/package-manager.py:431
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
-#: src/package-manager.py:452
+#: src/package-manager.py:451
 msgid "Removing these packages may break system safety. Aborting."
 msgstr ""
 "Bu paketleri kaldırmak sistemi tehlikeye sokabilir. İşlem iptal ediliyor."
 
-#: src/package-manager.py:478
+#: src/package-manager.py:479
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/package-manager.py:479
+#: src/package-manager.py:480
 msgid "<b>Speed:</b> N/A"
 msgstr "<b>Hız:</b> ..."
 
-#: src/package-manager.py:480
+#: src/package-manager.py:481
 msgid "<b>Downloaded/Total:</b> N/A"
 msgstr "<b>İndirilen/Toplam:</b> ..."
 
-#: src/package-manager.py:484
+#: src/package-manager.py:485
 msgid "<b>Speed:</b> %1 %2"
 msgstr "<b>Hız:</b> %1 %2"
 
-#: src/package-manager.py:492
+#: src/package-manager.py:493
 msgid "<b>Downloaded/Total:</b> %1 %2/%3 %4"
 msgstr "<b>İndirilen/Toplam:</b> %1 %2/%3 %4"
 
 #: src/package-manager.py:498
-msgid "updating repository"
-msgstr "depo güncelleniyor"
-
-#: src/package-manager.py:500
 msgid "Now %1 <b>%2</b> (%3 of %4)"
 msgstr "Şu anda %1 : <b>%2</b> (%3/%4)"
 
-#: src/package-manager.py:585
+#: src/package-manager.py:540
+msgid "There are no updates available at this time"
+msgstr ""
+
+#: src/package-manager.py:596
 msgid "Check for updates"
 msgstr "Güncellemeleri kontrol et"
 
-#: src/package-manager.py:586
+#: src/package-manager.py:597
 msgid "Show basket"
 msgstr "Sepeti göster"
 
-#: src/package-manager.py:606
+#: src/package-manager.py:617
 msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
-#: src/package-manager.py:609
+#: src/package-manager.py:620
 msgid "Package Manager is already running!"
 msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
