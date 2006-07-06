@@ -15,6 +15,7 @@ import string
 import pisi
 import pisi.api
 
+from kdecore import i18n
 from qt import QObject
 import ComarIface
 
@@ -23,6 +24,7 @@ class Commander(QObject):
         QObject.__init__(self)
         self.comar = ComarIface.ComarIface(self)
         self.parent = parent
+        self.updateInProgress = False
 
         # Caching mechanism
         self.databaseDirty = True
@@ -33,8 +35,31 @@ class Commander(QObject):
         # Init the database
         pisi.api.init(database=True, write=False)
 
+    def wait_comar(self):
+        import socket, time
+        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        timeout = 5
+        while timeout > 0:
+            try:
+                if ctx.comar_sockname:
+                    sock.connect(ctx.comar_sockname)
+                else:
+                    sock.connect("/var/run/comar.socket")
+                    return True
+            except:
+                timeout -= 0.2
+            time.sleep(0.2)
+        return False
+    
     def slotComar(self, sock):
-        reply = self.comar.com.read_cmd()
+        try:
+            reply = self.comar.com.read_cmd()
+        except:
+            if not self.wait_comar():
+                self.parent.showErrorMessage(i18n("Can't connect to Comar daemon"))
+            else:
+                self.comar = ComarIface.ComarIface(self)
+            
         if reply[0] == self.comar.com.NOTIFY:
             notification, script, data = reply[2].split("\n", 2)
             data = unicode(data)
@@ -48,11 +73,20 @@ class Commander(QObject):
                 rate = round(int(data[2]),1)
                 self.parent.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
             elif notification == "System.Manager.finished":
-                self.parent.finished()
+                if self.updateInProgress:
+                    print 'Update in progress!'
+                    self.updateInProgress = False
+                    self.parent.showUpdateDialog()
+                else:
+                    self.parent.finished()
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         else:
             print 'Unhandled: ',reply
+
+    def startUpdate(self):
+        self.updateInProgress = True
+        self.updateAllRepos()
         
     def install(self,apps):
         self.databaseDirty = True
