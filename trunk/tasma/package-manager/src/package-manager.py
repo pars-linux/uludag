@@ -149,13 +149,13 @@ class MainApplicationWidget(QWidget):
         self.listView.setFullWidth(True)
 
         # Read javascript
-        js = file(str(locate("data","pisix/animation.js"))).read()
+        js = file(str(locate("data","package-manager/animation.js"))).read()
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
         js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
         self.javascript = re.sub("#533359",KGlobalSettings.highlightColor().name(), js)
         
         # Read Css
-        cssFile = file(str(locate("data","pisix/layout.css"))).read()
+        cssFile = file(str(locate("data","package-manager/layout.css"))).read()
         self.css = cssFile
                 
         self.listView.addColumn(i18n("Components"))
