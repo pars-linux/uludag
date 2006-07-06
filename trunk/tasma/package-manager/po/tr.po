@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-06 14:14+0300\n"
+"POT-Creation-Date: 2006-07-06 15:14+0300\n"
 "PO-Revision-Date: 2006-03-02 13:31+0200\n"
 "Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -60,9 +60,8 @@ msgstr ""
 "<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
 
 #: src/HelpDialog.py:23
-#, fuzzy
 msgid "Package Manager Help"
-msgstr "Paket Yöneticisi Hatası"
+msgstr "Paket Yöneticisi Yardım"
 
 #: src/ProgressDialog.py:68
 msgid "Progress"
@@ -212,9 +211,8 @@ msgid "&Use hard disk cache for downloaded software"
 msgstr "İ&ndirilen yazılımlar için sabit disk önbelleğini kullan"
 
 #: src/PreferencesDialog.py:205
-#, fuzzy
 msgid "Mb <i>(use 0 for no limit)</i>"
-msgstr "<i>(Sınır koymamak için 0 kullanın)</i>"
+msgstr "Mb <i>(Sınır koymamak için 0 kullanın)</i>"
 
 #: src/PreferencesDialog.py:206
 msgid "C&ache"
@@ -246,11 +244,11 @@ msgstr "&Tamam"
 
 #: src/UpdateDialog.py:8
 msgid "Currently Available Updates"
-msgstr ""
+msgstr "Mevcut güncellemeler"
 
 #: src/UpdateDialog.py:15
 msgid "Upgrade selected packages"
-msgstr ""
+msgstr "Seçilen paketleri güncelle"
 
 #: src/package-manager.py:52
 msgid "GUI for PiSi package manager"
@@ -270,15 +268,15 @@ msgstr "Arayüz Tasarımı ve Kullanılabilirlik"
 
 #: src/package-manager.py:65
 msgid "Misc. Fixes"
-msgstr ""
+msgstr "Diğer düzeltmeler"
 
 #: src/package-manager.py:66
 msgid "Comar/Python Help"
-msgstr ""
+msgstr "Comar/Python yardımı"
 
 #: src/package-manager.py:67
 msgid "Speedup fixes"
-msgstr ""
+msgstr "Hızlandırma yamaları"
 
 #: src/package-manager.py:68
 msgid "PiSi Authors"
@@ -298,11 +296,11 @@ msgstr "Bileşenler"
 
 #: src/package-manager.py:190
 msgid "Loading Package List..."
-msgstr ""
+msgstr "Paket listesi yükleniyor"
 
 #: src/package-manager.py:209
 msgid "<b>Cancelling operation...</b>"
-msgstr ""
+msgstr "<b>İşlem iptal ediliyor...</b>"
 
 #: src/package-manager.py:234 src/package-manager.py:249
 #: src/package-manager.py:392
@@ -310,11 +308,11 @@ msgid "Show New Packages"
 msgstr "Yeni Paketleri Göster"
 
 #: src/package-manager.py:238 src/package-manager.py:245
-#: src/package-manager.py:582
+#: src/package-manager.py:583
 msgid "Show Installed Packages"
 msgstr "Kurulu Paketleri Göster"
 
-#: src/package-manager.py:240 src/package-manager.py:583
+#: src/package-manager.py:240 src/package-manager.py:584
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
@@ -324,7 +322,7 @@ msgstr "Paket(ler)i Kaldır"
 
 #: src/package-manager.py:334
 msgid "N\\A"
-msgstr "N\\A"
+msgstr "Bilinmiyor"
 
 #: src/package-manager.py:335
 msgid "Description: "
@@ -349,6 +347,7 @@ msgstr "Arama Sonuçları"
 #: src/package-manager.py:452
 msgid "Removing these packages may break system safety. Aborting."
 msgstr ""
+"Bu paketleri kaldırmak sistemi tehlikeye sokabilir. İşlem iptal ediliyor."
 
 #: src/package-manager.py:478
 msgid "<b>Preparing PiSi...</b>"
@@ -378,23 +377,18 @@ msgstr "depo güncelleniyor"
 msgid "Now %1 <b>%2</b> (%3 of %4)"
 msgstr "Şu anda %1 : <b>%2</b> (%3/%4)"
 
-#: src/package-manager.py:584
+#: src/package-manager.py:585
 msgid "Check for updates"
 msgstr "Güncellemeleri kontrol et"
 
-#: src/package-manager.py:585
-#, fuzzy
+#: src/package-manager.py:586
 msgid "Show basket"
-msgstr "Güncellemeleri Göster"
+msgstr "Sepeti göster"
 
-#: src/package-manager.py:605
+#: src/package-manager.py:606
 msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
-#: src/package-manager.py:608
-#, fuzzy
+#: src/package-manager.py:609
 msgid "Package Manager is already running!"
-msgstr "PiSi başka bir yerde çalışıyor."
-
-#~ msgid "PiSi X Help"
-#~ msgstr "PiSi X Yardım"
+msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
