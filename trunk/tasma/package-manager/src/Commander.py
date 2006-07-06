@@ -93,10 +93,10 @@ class Commander(QObject):
         apps = string.join(apps,",")
         self.comar.installPackage(apps)
         
-    def upgrade(self,apps):
+    def updatePackage(self,apps):
         self.databaseDirty = True
         apps = string.join(apps,",")
-        self.comar.upgradePackage(apps)
+        self.comar.updatePackage(apps)
             
     def remove(self,apps):
         self.databaseDirty = True

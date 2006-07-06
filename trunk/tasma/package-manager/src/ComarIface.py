@@ -27,8 +27,8 @@ class ComarIface:
     def removePackage(self, package):
         self.com.call("System.Manager.removePackage", ["package",package])
 
-    def upgradePackage(self, package):
-        self.com.call("System.Manager.upgradePackage", ["package",package])
+    def updatePackage(self, package):
+        self.com.call("System.Manager.updatePackage", ["package",package])
 
     def updateRepo(self, repo):
         self.com.call("System.Manager.upgradeRepository", ["repository",repo])
