@@ -19,24 +19,13 @@ class ComarIface:
     def updateAllRepos(self):
         self.com.call("System.Manager.updateAllRepositories")
 
-
-
-class PiSiXTrayApp(KSystemTray):
+class TrayApp(KSystemTray):
     def __init__(self,parent=None):
         KSystemTray.__init__(self,parent)
+        self.hide()
 
-        icon = KGlobal.iconLoader().loadIcon("pisix",KIcon.Small)
+        icon = KGlobal.iconLoader().loadIcon("packagemanager",KIcon.Small)
         self.setPixmap(icon)
-
-        self.config = KSimpleConfig("pisix-tray")
-
-        self.menu = self.contextMenu()
-        self.menu.insertItem(QIconSet(icon), "Run PiSi-X")
-        # FIXME: use proper icons
-        self.menu.insertItem(QIconSet(icon), "Check upgrades now!")
-        self.menu.insertItem(QIconSet(icon), "Configure")
-        self.connect(self.menu, SIGNAL("activated(int)"), self.menuActivated)
-
 
         self.timer = QTimer(self)
         self.connect(self.timer, SIGNAL("timeout()"), self.initPiSi)
@@ -51,7 +40,9 @@ class PiSiXTrayApp(KSystemTray):
         # check for upgrades for the first time
         self.checkUpgradable()
 
+        self.config = KSimpleConfig("packagemanager_trayrc")
         self.config.setGroup("General")
+        
         # check interval, default is 60 min
         self.interval = self.config.readNumEntry("Interval", 60) * (60 * 1000)
 
@@ -68,29 +59,25 @@ class PiSiXTrayApp(KSystemTray):
         upgradeList = pisi.api.list_upgradable()
 
         if upgradeList:
-            self.popup = KopeteBalloon(i18n("There are new updates available!"),
-                                       KGlobal.iconLoader().loadIcon("pisix",KIcon.Small))
+            self.popup = KopeteBalloon(i18n("There are %1 updates available!").arg(len(upgradeList)),
+                                       KGlobal.iconLoader().loadIcon("packagemanager",KIcon.Small))
             pos = self.mapToGlobal(self.pos())
             self.popup.setAnchor(pos)
+            self.show()
             self.popup.show()
-
-    def menuActivated(self):
-        pass
-
-
             
 if __name__ == "__main__":
 
-    name = "pisix-tray"
-    desc = "pisix tray application"
-    aboutData = KAboutData(name, name, "0.0.1", desc, KAboutData.License_GPL,
+    name = "Package Manager Tray"
+    desc = "Update Manager"
+    aboutData = KAboutData(name, name, "0.1", desc, KAboutData.License_GPL,
                             "(C) 2006 UEKAE/TÜBİTAK", None, None, "bilgi@pardus.org.tr")
     aboutData.addAuthor('İsmail Dönmez', 'Maintainer', 'ismail@pardus.org.tr')
 
     KCmdLineArgs.init(sys.argv,aboutData)
     kapp = KApplication()
-    
-    tray = PiSiXTrayApp()
+
+    tray = TrayApp()
     tray.show()
     
     kapp.setMainWidget(tray)
