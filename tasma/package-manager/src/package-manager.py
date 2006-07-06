@@ -436,7 +436,7 @@ class MainApplicationWidget(QWidget):
     def pisiNotify(self,data):
         self.currentOperation = i18n(str(data))
         
-        if data in ["downloading","removing","updatingrepo"]:
+        if data in ["downloading","removing"]:
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
             self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
             self.updateProgressText()
@@ -545,7 +545,7 @@ class MainApplicationWidget(QWidget):
         self.createHTML(appList, self.updateDialog.htmlPart)
         self.connect(self.updateDialog.htmlPart,SIGNAL("completed()"),self.registerEventListenerForUpdate)
         self.connect(self.updateDialog.updateButton,SIGNAL("clicked()"),self.updatePackages)
-        self.updateDialog.exec_loop()
+        self.updateDialog.show()
 
     def refreshUpdateDialog(self):
         appList = pisi.api.list_upgradable()
