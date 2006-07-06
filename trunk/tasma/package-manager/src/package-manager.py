@@ -121,7 +121,6 @@ class MainApplicationWidget(QWidget):
         self.componentDict = {}
         self.currentOperation = None
         self.currentFile = None
-        self.currentRepo = None
         self.totalAppCount = 1
         self.currentAppIndex = 1
         self.totalSelectedSize = 0
@@ -437,7 +436,7 @@ class MainApplicationWidget(QWidget):
     def pisiNotify(self,data):
         self.currentOperation = i18n(str(data))
         
-        if data in ["downloading","removing"]:
+        if data in ["downloading","removing","updatingrepo"]:
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
             self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
             self.updateProgressText()
@@ -472,6 +471,8 @@ class MainApplicationWidget(QWidget):
         self.parent.basketAction.setEnabled(False)
         self.progressDialog.closeForced()
         self.resetProgressBar()
+
+        self.refreshUpdateDialog()
         
     def resetProgressBar(self):
         self.progressDialog.progressBar.setProgress(0)
@@ -494,9 +495,6 @@ class MainApplicationWidget(QWidget):
 
     def updateProgressText(self):
         if self.currentFile:
-            if self.currentFile.endswith(".xml") or self.currentFile.endswith(".xml.bz2"):
-                self.currentOperation = i18n("updating repository")
-                self.currentFile = self.currentRepo
             self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
                                              .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
         
@@ -532,10 +530,16 @@ class MainApplicationWidget(QWidget):
         self.pref.show()
 
     def update(self):
+        self.progressDialog.show()
         self.command.startUpdate()
 
     def showUpdateDialog(self):
         appList = pisi.api.list_upgradable()
+
+        if not len(appList):
+            KMessageBox.info(self,i18n("There are no updates available at this time"))
+            return
+        
         self.updatesToProcess = []
         
         self.createHTML(appList, self.updateDialog.htmlPart)
@@ -543,6 +547,13 @@ class MainApplicationWidget(QWidget):
         self.connect(self.updateDialog.updateButton,SIGNAL("clicked()"),self.updatePackages)
         self.updateDialog.exec_loop()
 
+    def refreshUpdateDialog(self):
+        appList = pisi.api.list_upgradable()
+        if not len(appList):
+            self.updateDialog.close()
+        else:
+            self.createHTML(appList, self.updateDialog.htmlPart)
+        
     def updatePackages(self):
         self.progressDialog.show()
         self.command.updatePackage(self.updatesToProcess)
