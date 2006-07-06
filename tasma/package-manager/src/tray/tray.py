@@ -22,7 +22,6 @@ class ComarIface:
 class TrayApp(KSystemTray):
     def __init__(self,parent=None):
         KSystemTray.__init__(self,parent)
-        self.hide()
 
         icon = KGlobal.iconLoader().loadIcon("packagemanager",KIcon.Small)
         self.setPixmap(icon)
@@ -52,6 +51,12 @@ class TrayApp(KSystemTray):
 
 
     def checkUpgradable(self):
+
+        try:
+            if self.popup.isShown():
+                return
+        except:
+            pass
 
         # FIXME: No notification... etc...
         ComarIface().updateAllRepos()
