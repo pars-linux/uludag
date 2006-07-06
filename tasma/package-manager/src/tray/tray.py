@@ -61,18 +61,21 @@ class TrayApp(KSystemTray):
         # FIXME: No notification... etc...
         ComarIface().updateAllRepos()
                              
-        upgradeList = pisi.api.list_upgradable()
+        self.upgradeList = pisi.api.list_upgradable()
 
-        if upgradeList:
-            self.popup = KopeteBalloon(self,i18n("There are %1 updates available!").arg(len(upgradeList)),
-                                       KGlobal.iconLoader().loadIcon("packagemanager",KIcon.Small))
-            pos = self.mapToGlobal(self.pos())
-            self.popup.setAnchor(pos)
+        if len(self.upgradeList):
             self.show()
-            self.popup.show()
+            QTimer.singleShot(1000,self.showPopup)
+
+    def showPopup(self):
+        self.popup = KopeteBalloon(self,i18n("There are %1 updates available!").arg(len(self.upgradeList)),
+                                   KGlobal.iconLoader().loadIcon("packagemanager",KIcon.Small))
+        pos = self.mapToGlobal(self.pos())
+
+        self.popup.setAnchor(pos)
+        self.popup.show()
             
 if __name__ == "__main__":
-
     name = "Package Manager Tray"
     desc = "Update Manager"
     aboutData = KAboutData(name, name, "0.1", desc, KAboutData.License_GPL,
