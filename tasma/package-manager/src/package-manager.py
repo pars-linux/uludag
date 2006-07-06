@@ -203,6 +203,12 @@ class MainApplicationWidget(QWidget):
         self.createComponentList(self.currentAppList)
         self.listView.setSelected(self.listView.firstChild(),True)
 
+        # Show updates dialog if requested
+        global showUpdates
+        
+        if showUpdates:
+            self.update()
+
     def cancelThread(self):
         # Reset progressbar
         self.progressDialog.setLabelText(i18n("<b>Cancelling operation...</b>"))
@@ -611,11 +617,12 @@ def main():
     global kapp
     global nonPrivMode
     global packageToInstall
+    global showUpdates
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
-    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
-
+    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),("showupdates", I18N_NOOP("Show available updates"))])
+    
     if not KUniqueApplication.start():
         print i18n("Package Manager is already running!")
         return
@@ -628,6 +635,9 @@ def main():
         packageToInstall = str(KIO.NetAccess.mostLocalURL(KURL(args.getOption("install")), None).path())
     else:
         packageToInstall = None
+
+    if args.isSet("showupdates"):
+        showUpdates = True
 
     myapp = MainApplication()
     myapp.show()
