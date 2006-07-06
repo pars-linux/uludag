@@ -75,8 +75,8 @@ class TrayApp(KSystemTray):
 
         self.popup.setAnchor(pos)
         self.popup.show()
-            
-if __name__ == "__main__":
+
+def main():
     name = "Package Manager Tray"
     desc = "Update Manager"
     aboutData = KAboutData(name, name, "0.1", desc, KAboutData.License_GPL,
@@ -84,10 +84,16 @@ if __name__ == "__main__":
     aboutData.addAuthor('İsmail Dönmez', 'Maintainer', 'ismail@pardus.org.tr')
 
     KCmdLineArgs.init(sys.argv,aboutData)
-    KUniqueApplication.start()
+    
+    if not KUniqueApplication.start():
+        return
+    
     kapp = KUniqueApplication(True,True,True)
 
     tray = TrayApp()
     
     kapp.setMainWidget(tray)
     kapp.exec_loop()
+
+if __name__ == "__main__":
+    main()
