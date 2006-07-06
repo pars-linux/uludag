@@ -76,11 +76,9 @@ class Commander(QObject):
                 if self.updateInProgress:
                     self.updateInProgress = False
                     self.parent.showUpdateDialog()
-                else:
-                    self.parent.finished()
+                self.parent.finished()
             elif notification == "System.Manager.updatingRepo":
                 self.parent.packagesOrder.append(data)
-                self.parent.pisiNotify("updatingrepo")
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         else:
