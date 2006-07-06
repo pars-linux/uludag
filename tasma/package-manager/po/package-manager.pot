@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-06 14:14+0300\n"
+"POT-Creation-Date: 2006-07-06 15:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -294,11 +294,11 @@ msgid "Show New Packages"
 msgstr ""
 
 #: src/package-manager.py:238 src/package-manager.py:245
-#: src/package-manager.py:582
+#: src/package-manager.py:583
 msgid "Show Installed Packages"
 msgstr ""
 
-#: src/package-manager.py:240 src/package-manager.py:583
+#: src/package-manager.py:240 src/package-manager.py:584
 msgid "Install Package(s)"
 msgstr ""
 
@@ -362,18 +362,18 @@ msgstr ""
 msgid "Now %1 <b>%2</b> (%3 of %4)"
 msgstr ""
 
-#: src/package-manager.py:584
+#: src/package-manager.py:585
 msgid "Check for updates"
 msgstr ""
 
-#: src/package-manager.py:585
+#: src/package-manager.py:586
 msgid "Show basket"
 msgstr ""
 
-#: src/package-manager.py:605
+#: src/package-manager.py:606
 msgid "Package to install"
 msgstr ""
 
-#: src/package-manager.py:608
+#: src/package-manager.py:609
 msgid "Package Manager is already running!"
 msgstr ""
