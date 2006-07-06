@@ -27,7 +27,7 @@ kdedistutils.setup(
     application_data = ['src/package-manager.py', 'src/Commander.py','src/Progress.py','src/ProgressDialog.ui',
                         'src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif',
                         'src/RepoDialog.ui','src/HelpDialog.py','src/ComarIface.py','src/UpdateDialog.py','help',
-                        'src/animation.js','src/layout.css','src/package-managerui.rc',
+                        'src/animation.js','src/layout.css','src/package-managerui.rc','src/tray/tray.py','src/tray/BalloonMessage.py',
                         ("/usr/kde/3.5/share/applications/kde/",["src/packagemanager.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/packagemanager-helper.desktop"]),
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/packagemanager.png"]),
