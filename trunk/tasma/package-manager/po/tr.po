@@ -375,7 +375,7 @@ msgstr "Şu anda %1 : <b>%2</b> (%3/%4)"
 
 #: src/package-manager.py:540
 msgid "There are no updates available at this time"
-msgstr ""
+msgstr "Şu anda mevcut bir güncelleme yok"
 
 #: src/package-manager.py:596
 msgid "Check for updates"
