@@ -543,7 +543,7 @@ class MainApplicationWidget(QWidget):
         appList = pisi.api.list_upgradable()
 
         if not len(appList):
-            KMessageBox.info(self,i18n("There are no updates available at this time"))
+            KMessageBox.information(self,i18n("There are no updates available at this time"))
             return
         
         self.updatesToProcess = []
