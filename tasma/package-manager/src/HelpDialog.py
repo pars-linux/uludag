@@ -27,6 +27,6 @@ class HelpDialog(QDialog):
         self.layout.addWidget(self.htmlPart.view(),1,1)
         
         if os.environ['LANG'].startswith('tr_TR'):
-            self.htmlPart.openURL(KURL(locate("data","pisix/help/tr/main_help.html")))
+            self.htmlPart.openURL(KURL(locate("data","package-manager/help/tr/main_help.html")))
         else:
-            self.htmlPart.openURL(KURL(locate("data","pisix/help/en/main_help.html")))
+            self.htmlPart.openURL(KURL(locate("data","package-manager/help/en/main_help.html")))
