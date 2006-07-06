@@ -500,9 +500,8 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
 
     def updateProgressText(self):
-        if self.currentFile:
-            self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
-                                             .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
+        self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
+                                         .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
         
     def installSingle(self):
         app = []
