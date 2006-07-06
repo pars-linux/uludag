@@ -5,6 +5,7 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
+from subprocess import *
 
 class KopeteBalloon(QWidget):
     def __init__(self,parent,text,pix):
@@ -37,6 +38,7 @@ class KopeteBalloon(QWidget):
         self.mIgnoreButton = QPushButton(i18n("Ignore"), self, "mIgnoreButton")
 
         self.connect(self.mIgnoreButton,SIGNAL("clicked()"),self.parent.hide)
+        self.connect(self.mViewButton,SIGNAL("clicked()"),self.startPackageManager)
 
         Layout2.addStretch()
         Layout2.addWidget(self.mViewButton)
@@ -135,3 +137,6 @@ class KopeteBalloon(QWidget):
                     else:
                         self.move(self.mAnchor.x(),self.mAnchor.y())
                                	
+    def startPackageManager(self):
+        Popen(["package-manager","--showupdates"])
+        self.parent.hide()
