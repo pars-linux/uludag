@@ -519,9 +519,10 @@ class MainApplicationWidget(QWidget):
             self.pref = Preferences.Preferences(self)
         self.pref.show()
 
+    def update(self):
+        self.command.startUpdate()
+
     def showUpdateDialog(self):
-        # TODO Heh this is borked -- cartman
-        self.command.updateAllRepos()
         appList = pisi.api.list_upgradable()
         dialog = QDialog(self)
         dialog.setCaption(i18n("Currently Available Updates"))
@@ -571,7 +572,7 @@ class MainApplication(KMainWindow):
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
         self.showAction = KAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
         self.operateAction = KAction(i18n("Install Package(s)"),"ok",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
-        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.showUpdateDialog ,self.actionCollection(),"upgrade_packages")
+        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.update ,self.actionCollection(),"upgrade_packages")
         self.basketAction = KAction(i18n("Show basket"),"basket",KShortcut.null(),self.mainwidget.showBasket ,self.actionCollection(),"show_basket")
 
         self.operateAction.setEnabled(False)
