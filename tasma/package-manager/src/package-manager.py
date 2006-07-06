@@ -437,11 +437,11 @@ class MainApplicationWidget(QWidget):
     def pisiNotify(self,data):
         self.currentOperation = i18n(str(data))
         
-        if data in ("removing","installing"):
+        if data in ["downloading","removing"]:
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
             self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
             self.updateProgressText()
-        elif data == "extracting":
+        elif data in ["extracting","configuring","installing"]:
             self.updateProgressText()
         elif data in ["installed","removed","upgraded"]:
             self.currentAppIndex += 1
@@ -494,7 +494,7 @@ class MainApplicationWidget(QWidget):
 
     def updateProgressText(self):
         if self.currentFile:
-            if self.currentFile.endswith(".xml"):
+            if self.currentFile.endswith(".xml") or self.currentFile.endswith(".xml.bz2"):
                 self.currentOperation = i18n("updating repository")
                 self.currentFile = self.currentRepo
             self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
@@ -544,6 +544,7 @@ class MainApplicationWidget(QWidget):
         self.updateDialog.exec_loop()
 
     def updatePackages(self):
+        self.progressDialog.show()
         self.command.updatePackage(self.updatesToProcess)
         
     def setShowOnlyPrograms(self,hideLibraries=False):
