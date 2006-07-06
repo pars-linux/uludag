@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-06 14:11+0300\n"
+"POT-Creation-Date: 2006-07-06 14:14+0300\n"
 "PO-Revision-Date: 2006-03-02 13:31+0200\n"
 "Last-Translator: Görkem Çetin <gorkem@uludag.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -38,7 +38,8 @@ msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
-"<qt>Depo adresleri xml veya xml.bz2 soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
+"<qt>Depo adresleri xml veya xml.bz2 soneki ile bitmelidir. <p>Lütfen yeniden "
+"deneyin.</qt>"
 
 #: src/Preferences.py:121 src/Preferences.py:138
 msgid "Package Manager Error"
@@ -59,8 +60,9 @@ msgstr ""
 "<qt>Depo adresleri xml soneki ile bitmelidir. <p>Lütfen yeniden deneyin.</qt>"
 
 #: src/HelpDialog.py:23
-msgid "PiSi X Help"
-msgstr "PiSi X Yardım"
+#, fuzzy
+msgid "Package Manager Help"
+msgstr "Paket Yöneticisi Hatası"
 
 #: src/ProgressDialog.py:68
 msgid "Progress"
@@ -393,3 +395,6 @@ msgstr "Yüklenecek paket ismi"
 #, fuzzy
 msgid "Package Manager is already running!"
 msgstr "PiSi başka bir yerde çalışıyor."
+
+#~ msgid "PiSi X Help"
+#~ msgstr "PiSi X Yardım"
