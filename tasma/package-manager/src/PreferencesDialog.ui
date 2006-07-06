@@ -217,17 +217,6 @@
                                     <string>Click here to move the repository one level down</string>
                                 </property>
                             </widget>
-                            <widget class="KPushButton">
-                                <property name="name">
-                                    <cstring>updateRepoButton</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>&amp;Update All Repositories</string>
-                                </property>
-                                <property name="toolTip" stdset="0">
-                                    <string>Click here to update all repositories so that you can use  </string>
-                                </property>
-                            </widget>
                             <spacer>
                                 <property name="name">
                                     <cstring>spacer1</cstring>
@@ -453,7 +442,6 @@ This will not delete installed software or affect your system stability.</string
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
-    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>

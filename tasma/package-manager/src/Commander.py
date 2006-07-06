@@ -119,8 +119,8 @@ class Commander(QObject):
         self.databaseDirty = True
         self.comar.removeRepo(repoName)
        
-    def swapRepos(self, repo1, repo2):
-        self.comar.swapRepos(repo1, repo2)
+    def setRepositories(self, list):
+        self.comar.setRepositories(",".join(list))
     
     def listUpgradable(self):
         if self.databaseDirty:
