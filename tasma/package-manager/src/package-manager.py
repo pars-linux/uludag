@@ -102,7 +102,13 @@ class CustomEventListener(DOM.EventListener):
                     
             elif target == "A":
                 link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
-                KRun.runURL(KURL(link),"text/html",False,False);
+                if link == "#selectall":
+                    document = self.parent.htmlPart.document()
+                    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
+                    for i in range(0,nodeList.length()):
+                        DOM.HTMLInputElement(nodeList.item(i)).click()
+                else:
+                    KRun.runURL(KURL(link),"text/html",False,False);
         except Exception, e:
             print e
 
@@ -276,6 +282,7 @@ class MainApplicationWidget(QWidget):
         part.write("<style type=\"text/css\">%s</style>" % self.css)
         part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
         part.write("</head><body>")
+        part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
         part.write(self.createHTMLForPackages(packages))
         part.write('''
         <script type="text/javascript">
