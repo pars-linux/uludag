@@ -31,7 +31,8 @@ kdedistutils.setup(
                         ("/usr/kde/3.5/share/applications/kde/",["src/packagemanager.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/packagemanager-helper.desktop"]),
                         ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/packagemanager.png"]),
-                        ("/usr/kde/3.5/share/mimelnk/application/",["src/x-pisi.desktop"])],
+                        ("/usr/kde/3.5/share/mimelnk/application/",["src/x-pisi.desktop"]),
+                        ("/usr/kde/3.5/share/applications/kde/",["src/tasmamanager.desktop"])],
     executable_links = [('package-manager','package-manager.py')],
     i18n = ('po',['src']),
     )
