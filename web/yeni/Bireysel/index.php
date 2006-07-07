@@ -83,7 +83,13 @@
         <td id="kucular">
             <div id="hodo">
                 <img src="../images/newdesign/head-hizli-baslangic.png">
+		<div id="RssList">
+			Masaüstü ihtiyaçlarınız için tam bir çözüm öneren Pardus ile hangi işlemi nasıl yapabileceğinize dair pratik bilgiler
+		</div>
                 <img src="../images/newdesign/head-donanim-uyumlulugu.png">
+		<div id="RssList">
+			"Benim bilgisayarımda çalışır mı?", "Fotoğraf makinamı görür mü?" gibi sorularınız için Donanım Uyumluluğu sistemimizi kullanabilirsiniz.
+		</div>
                 <img src="../images/newdesign/head-pardus-ekran-goruntuleri.png">
                 <img src="../images/newdesign/dock-gelistirici.png">
             </div>
