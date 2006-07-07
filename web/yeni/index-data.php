@@ -1,6 +1,12 @@
     <tr>
         <td id="header" colspan=2>
-            <div id="menu"><span id="searchbar"><input type="text" value="ara"></span> </div>
+            <div id="menu">
+            <span id="searchbar">
+                <form action="search.php" method="get">
+                    <input name="q" type="text" value="ara" onClick="if(this.value=='ara')this.value='';" onBlur="if (this.value=='') this.value='ara'" >
+                </form>
+            </span>
+            </div>
         </td>
     </tr>
     <tr>

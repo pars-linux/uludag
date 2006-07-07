@@ -44,11 +44,16 @@ li {
 #searchbar {
     float:right;
     padding-right:3px;
-    }
+    padding-top:4px;
+}
 
 #searchbar input {
-    border:1px solid #999;
+    background-color:#FFF;
+    border: none;
+    border-bottom:1px solid #999;
     height:17px;
+    padding:1px;
+    padding-left:2px;
 }
 #menu li {
     border:0;

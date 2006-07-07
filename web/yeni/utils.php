@@ -67,26 +67,31 @@
         }
     }
 
+    # Search Functions..
+    # Begin
+
     function GiveScore($Data,$Word,$Size=30,$Color="yellow") {
 
-        $Data       = strip_tags($Data);
+        global $Str;
+
+        $Data       = turnToEn(strip_tags($Data));
 
         $Len        = strlen($Word);
         $LenData    = strlen($Data);
 
-        $Word       = mb_strtolower($Word);
+        $Word       = tolower($Word);
 
         if ($Size*2 >= $LenData) $Size = round($LenData/2);
 
-        for ($i=0;$i<$LenData;$i++) {
+        for ($i=0;$i<$LenData;$i+=2) {
 
-            $Piece = mb_substr($Data,$i,$Len);
+            $Piece = substr($Data,$i,$Len);
 
-            if($Word===mb_strtolower($Piece)) {
+            if($Word===tolower($Piece)) {
 
                 if ($i>$Size) {
-                    $TempData = "...".mb_substr($Data,$i-$Size,$Size).
-                    "<span style='background-color:$Color'>".$Piece."</span>".mb_substr($Data,$i+$Len,$Size)."...";
+                    $TempData = "...".substr($Data,$i-$Size,$Size).
+                    "<span style='background-color:$Color'>".$Piece."</span>".substr($Data,$i+$Len,$Size)."...";
                 }
 
                 $j++;
@@ -102,6 +107,24 @@
 
     }
 
+    function turnToEn( $Data){
+        $TrChars = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
+        $EnChars = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
+        foreach($TrChars as $Key=>$Value) {
+            $Data = preg_replace("#".$Value."#is",$EnChars[$Key],$Data);
+        }
+        return $Data;
+    }
+
+    function tolower($Data) {
+        $UpperChars = Array ('İ','Ş','Ğ','Ö','Ü','Ç');
+        $LowerChars = Array ('i','ş','ğ','ö','ü','ç');
+        foreach($UpperChars as $Key=>$Value) {
+            $Data = preg_replace("#".$Value."#is",$LowerChars[$Key],$Data);
+        }
+        return strtolower($Data);
+    }
+
     function array_sort($array, $key, $reverse="") {
         for ($i = 0; $i < sizeof($array); $i++) {
             $sort_values[$i] = $array[$i][$key];
@@ -113,6 +136,9 @@
         }
         if ($reverse<>"") return array_reverse($sorted_arr);else return $sorted_arr;
     }
+
+    # Search Functions
+    # End
 
     if ($_GET["NewsID"]<>""){
         $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
