@@ -16,7 +16,7 @@ import pisi
 import pisi.api
 
 from kdecore import i18n
-from qt import QObject
+from qt import QObject, QTimer
 import ComarIface
 
 class Commander(QObject):
