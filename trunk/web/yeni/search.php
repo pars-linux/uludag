@@ -38,20 +38,7 @@
                     $i=0;
                     if ($Results) {
                         foreach ($Results as $Values) {
-                            $Temp=GiveScore($Values['Content'],$_GET["q"],300);
-                            if ($Temp['Score']>0) {
-                                $Temp['Title']=$Values['Title'];
-                                $Temp['Parent']=$Values['Parent'];
-                                $Sow[$i]=$Temp;
-                                $i++;
-                            }
-                        }
-                        if ($i>0) {
-                            $ReturnValue = array_sort( $Sow,'Score','reverse');
-                            foreach ($ReturnValue as $Result) {
-                                $k++;
-                                echo "<h2>$k - ".$Result['Title']."</h2><h4>Yakınlık : ".$Result['Score']."</h4>".$Result['MData']."<br />";
-                            }
+                            echo "<h2>".$Values['Title']."</h2>".Highlight($Values['Content'],$_GET['q'],$Values['Score'],40)."...";
                         }
                     }
                 }
