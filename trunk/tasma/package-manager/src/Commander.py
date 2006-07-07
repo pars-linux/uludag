@@ -44,7 +44,7 @@ class Commander(QObject):
                 if ctx.comar_sockname:
                     sock.connect(ctx.comar_sockname)
                 else:
-                    sock.connect("/var/run/comar.socket")
+                    sock.connect("/var/run/comar.socket")          
                     return True
             except:
                 timeout -= 0.2
@@ -59,6 +59,7 @@ class Commander(QObject):
                 self.parent.showErrorMessage(i18n("Can't connect to Comar daemon"))
             else:
                 self.comar = ComarIface.ComarIface(self)
+            return
             
         if reply[0] == self.comar.com.NOTIFY:
             notification, script, data = reply[2].split("\n", 2)
@@ -75,7 +76,7 @@ class Commander(QObject):
             elif notification == "System.Manager.finished":
                 if self.updateInProgress:
                     self.updateInProgress = False
-                    self.parent.showUpdateDialog()
+                    QTimer.singleShot(3*1000,self.parent.showUpdateDialog)
                 self.parent.finished()
             elif notification == "System.Manager.updatingRepo":
                 self.parent.packagesOrder.append(data)
