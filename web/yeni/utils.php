@@ -26,7 +26,8 @@
         }
 
         function Search($Que) {
-            $query = "SELECT * FROM Pages WHERE (Title LIKE '%{$Que}%') OR (Content LIKE '%{$Que}%')";
+            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score 
+                      FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score";
             return $this->MakeArray(mysql_query($query,$this->Connection));
         }
 
@@ -67,78 +68,13 @@
         }
     }
 
-    # Search Functions..
-    # Begin
-
-    function GiveScore($Data,$Word,$Size=30,$Color="yellow") {
-
-        global $Str;
-
-        $Data       = turnToEn(strip_tags($Data));
-
-        $Len        = strlen($Word);
-        $LenData    = strlen($Data);
-
-        $Word       = tolower($Word);
-
-        if ($Size*2 >= $LenData) $Size = round($LenData/2);
-
-        for ($i=0;$i<$LenData;$i+=2) {
-
-            $Piece = substr($Data,$i,$Len);
-
-            if($Word===tolower($Piece)) {
-
-                if ($i>$Size) {
-                    $TempData = "...".substr($Data,$i-$Size,$Size).
-                    "<span style='background-color:$Color'>".$Piece."</span>".substr($Data,$i+$Len,$Size)."...";
-                }
-
-                $j++;
-
-            }
-
-        }
-
-        $ReturnArray['Score'] = $j;
-        $ReturnArray['MData'] = $TempData;
-
-        return $ReturnArray;
-
+    function Highlight($Data,$Word,$Score,$Size=100,$Color="#EDFF88") {
+        $Data       = strip_tags($Data);
+        $Pos        = mb_strpos($Data,$Word,$Size,'UTF-8'); 
+        $Piece      = mb_substr($Data,$Pos-mb_strlen($Word),$Size*3,'UTF-8');
+        $Piece      = mb_ereg_replace($Word,"<span style='background-color:$Color'>".$Word."</span>",$Piece);
+        return mb_ereg_replace(mb_strtolower($Word,'UTF-8'),"<span style='background-color:$Color'>".$Word."</span>",mb_strtolower($Piece,'UTF-8'));
     }
-
-    function turnToEn( $Data){
-        $TrChars = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
-        $EnChars = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
-        foreach($TrChars as $Key=>$Value) {
-            $Data = preg_replace("#".$Value."#is",$EnChars[$Key],$Data);
-        }
-        return $Data;
-    }
-
-    function tolower($Data) {
-        $UpperChars = Array ('İ','Ş','Ğ','Ö','Ü','Ç');
-        $LowerChars = Array ('i','ş','ğ','ö','ü','ç');
-        foreach($UpperChars as $Key=>$Value) {
-            $Data = preg_replace("#".$Value."#is",$LowerChars[$Key],$Data);
-        }
-        return strtolower($Data);
-    }
-
-    function array_sort($array, $key, $reverse="") {
-        for ($i = 0; $i < sizeof($array); $i++) {
-            $sort_values[$i] = $array[$i][$key];
-        }
-        asort ($sort_values);
-        reset ($sort_values);
-        while (list ($arr_key, $arr_val) = each ($sort_values)) {
-            $sorted_arr[] = $array[$arr_key];
-        }
-        if ($reverse<>"") return array_reverse($sorted_arr);else return $sorted_arr;
-    }
-
-    # Search Functions
-    # End
 
     if ($_GET["NewsID"]<>""){
         $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
