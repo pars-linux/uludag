@@ -33,9 +33,11 @@ body {
 #menu {
     font-weight:bold;
     font-size:10px;
-    padding-top:93px;
+    padding-top:39px;
     padding-left:200px;
+    position:absolute;
 }
+
 
 li {
     list-style-image: url('images/BulletCyan.png');
