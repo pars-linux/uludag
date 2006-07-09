@@ -33,7 +33,7 @@ msgstr "%1 KB"
 
 #: sysinfo.cpp:107 sysinfo.cpp:111
 msgid "My Computer"
-msgstr "Bilgisayarım"
+msgstr "Sistem"
 
 #: sysinfo.cpp:112
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
