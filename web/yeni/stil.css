@@ -349,3 +349,7 @@ a:hover {
     border-right:1px solid #EEE; 
 }
 
+.bz_buglist td {
+   border-bottom: 1px solid #EEE;
+}
+
