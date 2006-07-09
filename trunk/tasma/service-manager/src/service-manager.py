@@ -200,7 +200,7 @@ class MainApplication(programbase):
     def slotSwitch(self):
         self.mainwidget.pushSwitch.setEnabled(0)
         list = self.mainwidget.listServices
-        if list.selectedItem().status == 'stopped':
+        if list.selectedItem().status in ["stopped", "off"]:
             self.comar.call_package('System.Service.start', list.selectedItem().service)
         else:
             self.comar.call_package('System.Service.stop', list.selectedItem().service)
