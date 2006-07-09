@@ -10,13 +10,14 @@ body>h1 {
 	letter-spacing: .1em;
 	color: #fff;
 	opacity: .9;
-	margin-left: 110px;
+	margin-left: 160px;
+    margin-top:20px;
 }
 
 body>h3 {
 	color: #ffffff;
 	opacity: 0.4;
-	padding: 0px 0px 5px 110px;
+	padding: 0px 0px 5px 160px;
 	font-size: 8pt;
 	font-weight: normal;
 	letter-spacing: .2em;
