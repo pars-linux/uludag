@@ -119,12 +119,6 @@ class Form(KWizard):
         # Buttons
         n = self.nextButton()
         QObject.connect(n, SIGNAL("clicked()"), self.next_clicked)
-        #
-        b = self.backButton()
-        QObject.connect(b, SIGNAL("clicked()"), self.back_clicked)
-        #
-        f = self.finishButton()
-        QObject.connect(f, SIGNAL("clicked()"), self.finish_clicked)
 
         # Common elements & options
         for i in range(self.pageCount()):
@@ -149,12 +143,6 @@ class Form(KWizard):
     def next_clicked(self):
         if self.currentPage() == self.pageUploadDlg:
             self.thread_1.start()
-        
-    def back_clicked(self):
-        pass
-
-    def finish_clicked(self):
-        pass
 
     def button_retry_clicked(self):
         self.pageUploadDlg.buttonRetry.hide()
