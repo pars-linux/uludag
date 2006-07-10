@@ -119,7 +119,8 @@ class MainApplicationWidget(QWidget):
         
         self.progressDialog = Progress.Progress(self)
         self.updateDialog = UpdateDialog.UpdateDialog(self)        
-                
+
+        self.initialRepoCheck = None
         self.packagesOrder = []
         self.selectedItems = []
         self.appsToProcess = []
@@ -197,9 +198,6 @@ class MainApplicationWidget(QWidget):
 
         self.htmlPart.view().setFocus()
         self.show()
-        
-        # Check for empty repo.
-        self.initialCheck()
 
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
@@ -214,6 +212,9 @@ class MainApplicationWidget(QWidget):
         
         if showUpdates:
             self.update()
+        else:
+            # Empty repo check
+            self.initialCheck()
 
     def cancelThread(self):
         # Reset progressbar
@@ -226,8 +227,21 @@ class MainApplicationWidget(QWidget):
         self.finished()
         
     def initialCheck(self):
-        # This needs to check if a repo exists and its not empty
-        pass
+        self.initialRepoCheck = True
+        
+        if not pisi.api.list_repos(): # No repository
+            self.command.addRepo("Pardus 1.1","http://paketler.pardus.org.tr/pardus-1/pisi-index.xml.bz2")
+            self.command.updateAllRepos()
+        elif not pisi.context.componentdb.list_components(): # Repo metadata empty
+            self.command.updateAllRepos()
+
+    def repoMetadataCheck(self):
+        global kapp
+        
+        # At this point if componentList is empty we should quit as there is no way to work reliably
+        if not pisi.context.componentdb.list_components():
+            KMessageBox.error(self,i18n("Package repository still does not have category information.\nExiting..."),i18n("Error"))
+            kapp.quit()
 
     def switchListing(self):
         self.updateListing(True)
@@ -255,7 +269,7 @@ class MainApplicationWidget(QWidget):
                 self.createComponentList(self.currentAppList)
         elif currentOperation == i18n("Show Installed Packages"):
             if switch:
-                self.currentAppList = self.command.listPackages() 
+                self.currentAppList = self.command.listPackages()
                 self.createComponentList(self.currentAppList)
                 self.parent.showAction.setText(i18n("Show New Packages"))
                 self.parent.showAction.setIconSet(loadIconSet("edit_add"))
