@@ -145,6 +145,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             item = item.nextSibling()
         self.parent.command.setRepositories(repoList)
 
+        self.parent.setShowOnlyPrograms(self.onlyShowPrograms.isChecked())
+
     def updateListView(self):
         self.repoList = self.parent.command.getRepoList()
         self.repoListView.clear()

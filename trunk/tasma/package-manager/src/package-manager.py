@@ -241,7 +241,7 @@ class MainApplicationWidget(QWidget):
         # At this point if componentList is empty we should quit as there is no way to work reliably
         if not pisi.context.componentdb.list_components():
             KMessageBox.error(self,i18n("Package repository still does not have category information.\nExiting..."),i18n("Error"))
-            kapp.quit()
+            #kapp.quit()
 
     def switchListing(self):
         self.updateListing(True)
@@ -341,7 +341,14 @@ class MainApplicationWidget(QWidget):
                 package = pisi.context.packagedb.get_package(app)
             else:
                 package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
-                
+
+            self.config = kapp.config()
+            self.config.setGroup("General")
+            hideLibraries = self.config.readEntry("HideLibraries",True)
+
+            if hideLibraries and package.isA not in ["app:gui"]:
+                return
+                            
             desc = package.description
             summary = package.summary
             version = package.version
@@ -588,7 +595,6 @@ class MainApplicationWidget(QWidget):
         self.command.updatePackage(self.updatesToProcess)
         
     def setShowOnlyPrograms(self,hideLibraries=False):
-        # TODO this is not taken into account
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")
@@ -599,7 +605,7 @@ class MainApplicationWidget(QWidget):
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")
-        return self.config.readBoolEntry("HideLibraries")                                    
+        return self.config.readBoolEntry("HideLibraries",True)  
 
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
