@@ -35,6 +35,7 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 
+alias svn="colorsvn"
 
 # Change the window title of X terminals 
 case $TERM in
