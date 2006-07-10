@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-30 15:27+0300\n"
+"POT-Creation-Date: 2006-07-10 22:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -253,29 +253,33 @@ msgid ""
 "<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
 msgstr ""
 
-#: src/feedback.py:271
+#: src/feedback.py:269
 msgid ""
 "<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</"
 "font><br>\n"
 msgstr ""
 
-#: src/feedback.py:273
+#: src/feedback.py:271
 msgid ""
 "<font color=\"#ff0000\">Server does not support this version. Please update "
 "feedback tool.</font><br>\n"
 msgstr ""
 
-#: src/feedback.py:275
+#: src/feedback.py:273
 msgid ""
 "<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</"
 "font><br>\n"
 msgstr ""
 
-#: src/feedback.py:277
+#: src/feedback.py:275
 msgid "<font color=\"#ff0000\">Feeback database is offline.</font><br>\n"
 msgstr ""
 
-#: src/feedback.py:293
+#: src/feedback.py:277
+msgid "<font color=\"#ff0000\">Feeback database has errors.</font><br>\n"
+msgstr ""
+
+#: src/feedback.py:296
 msgid "Feedback tool is already running!"
 msgstr ""
 
