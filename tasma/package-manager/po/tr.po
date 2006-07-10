@@ -311,7 +311,7 @@ msgstr "Paket(ler)i Kaldır"
 
 #: src/package-manager.py:299
 msgid "Select all packages in this category"
-msgstr ""
+msgstr "Bu kategorideki tüm paketleri seç"
 
 #: src/package-manager.py:360
 msgid "N\\A"
