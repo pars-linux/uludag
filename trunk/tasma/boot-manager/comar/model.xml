@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<comarModel>
+
+<group name="System">
+
+<class name="Boot">
+    <method name="getEntries"\>
+</class>
+
+</group>
+
+</comarModel>
