@@ -241,7 +241,7 @@ class MainApplicationWidget(QWidget):
         # At this point if componentList is empty we should quit as there is no way to work reliably
         if not pisi.context.componentdb.list_components():
             KMessageBox.error(self,i18n("Package repository still does not have category information.\nExiting..."),i18n("Error"))
-            #kapp.quit()
+            kapp.quit()
 
     def switchListing(self):
         self.updateListing(True)
