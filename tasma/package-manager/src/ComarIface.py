@@ -17,9 +17,9 @@ class ComarIface:
         self.com.ask_notify("System.Manager.notify")
         self.com.ask_notify("System.Manager.finished")
         self.com.ask_notify("System.Manager.updatingRepo")
-        
+
         self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
-        
+
         self.parent.connect(self.notifier, SIGNAL("activated(int)"), self.parent.slotComar)
 
     def installPackage(self, package):

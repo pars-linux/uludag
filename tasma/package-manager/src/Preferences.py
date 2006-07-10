@@ -32,34 +32,34 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.moveUpButton, SIGNAL("clicked()"), self.moveUp)
         self.connect(self.moveDownButton, SIGNAL("clicked()"), self.moveDown)
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
-     
+
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
-        
+
         self.repoListView.setSorting(-1)
         self.updateListView()
         self.updateButtons()
 
         self.onlyShowPrograms.setChecked(self.parent.getShowOnlyPrograms())
-        
+
     def updateButtons(self):
         if self.repoListView.childCount() > 1:
             moreThanOne = True
         else:
             moreThanOne = False
-        
+
         if self.repoListView.currentItem().isSelected():
             self.editButton.setEnabled(True)
             self.removeButton.setEnabled(moreThanOne)
             self.moveUpButton.setEnabled(moreThanOne)
             self.moveDownButton.setEnabled(moreThanOne)
-            
+
         else:
             self.editButton.setEnabled(False)
             self.removeButton.setEnabled(False)
             self.moveUpButton.setEnabled(False)
             self.moveDownButton.setEnabled(False)
-            
+
     def updateAllRepos(self):
         self.parent.command.updateAllRepos()
 
@@ -80,18 +80,18 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repo.setModal(True)
         self.connect(self.repo.okButton, SIGNAL("clicked()"), self.updateRepoSettings)
         self.repo.show()
-                        
+
     def removeRepo(self):
         repoItem = self.repoListView.currentItem()
         self.repoListView.takeItem(repoItem)
-            
+
     def moveUp(self):
         item = self.repoListView.currentItem()
         parent = item.itemAbove()
-        
+
         if not parent:
             return
-        
+
         if parent.itemAbove():
             item.moveItem(parent.itemAbove())
         else:
@@ -102,12 +102,12 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def moveDown(self):
         item = self.repoListView.currentItem()
         sibling = item.itemBelow()
-        
+
         if not sibling:
             return
-        
+
         item.moveItem(sibling)
-                
+
     def processNewRepo(self):
         repoName = unicode(self.repo.repoName.text())
         repoAddress = str(self.repo.repoAddress.text())
@@ -120,7 +120,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         item.setText(0, repoName)
         item.setText(1, repoAddress)
         self.repoListView.insertItem(item)
-        
+
         self.repo.close()
 
     def updateRepoSettings(self):
@@ -133,7 +133,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         self.repoListView.currentItem().setText(0,newRepoName)
         self.repoListView.currentItem().setText(1,newRepoAddress)
-        
+
         self.repo.close()
 
     def saveSettings(self):
@@ -150,7 +150,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def updateListView(self):
         self.repoList = self.parent.command.getRepoList()
         self.repoListView.clear()
-        
+
         index = len(self.repoList)-1
         while index >= 0:
             repoName = self.repoList[index]

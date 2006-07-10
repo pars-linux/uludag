@@ -16,13 +16,13 @@ class Progress(ProgressDialog):
     def closeForced(self):
         self.forcedClose = True
         self.close()
-        
+
     def close(self, alsoDelete=False):
         if self.forcedClose:
             ProgressDialog.close(self,alsoDelete)
             self.forcedClose = False
             return True
-        
+
         self.forcedClose = False
         return False
 

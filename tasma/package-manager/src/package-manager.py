@@ -55,10 +55,10 @@ base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
 
 def AboutData():
     global version,description
-    
+
     about_data = KAboutData("package-manager", I18N_NOOP("Package Manager"), version, description, KAboutData.License_GPL,
                             "(C) 2005, 2006 UEKAE/TÜBİTAK", None, None)
-    
+
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Main Coder"), "ismail@pardus.org.tr")
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
@@ -99,7 +99,7 @@ class CustomEventListener(DOM.EventListener):
                     self.packageList.remove(name)
 
                 self.parent.updateButtons()
-                    
+
             elif target == "A":
                 link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
                 if link == "#selectall":
@@ -116,9 +116,9 @@ class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
         self.parent = parent
-        
+
         self.progressDialog = Progress.Progress(self)
-        self.updateDialog = UpdateDialog.UpdateDialog(self)        
+        self.updateDialog = UpdateDialog.UpdateDialog(self)
 
         self.initialRepoCheck = None
         self.packagesOrder = []
@@ -133,14 +133,14 @@ class MainApplicationWidget(QWidget):
         self.totalSelectedSize = 0
         self.possibleError = False
         self.infoMessage = None
-	
+
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
         self.rightLayout = QVBox(self)
 
-        self.leftLayout.setSpacing(3) 
+        self.leftLayout.setSpacing(3)
         self.rightLayout.setSpacing(3)
-      
+
         # KListViewSearchLineWidget can't be used here, so time to implement ours :P
         self.rightTopLayout = QHBox(self.rightLayout)
         self.rightTopLayout.setSpacing(3)
@@ -149,7 +149,7 @@ class MainApplicationWidget(QWidget):
         self.searchLabel = QLabel(i18n("Search: "), self.rightTopLayout)
         self.searchLine = KLineEdit(self.rightTopLayout)
         self.timer = QTimer(self)
-                
+
         self.htmlPart = KHTMLPart(self.rightLayout)
 
         self.listView = KListView(self.leftLayout)
@@ -160,18 +160,18 @@ class MainApplicationWidget(QWidget):
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
         js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
         self.javascript = re.sub("#533359",KGlobalSettings.highlightColor().name(), js)
-        
+
         # Read Css
         cssFile = file(str(locate("data","package-manager/layout.css"))).read()
         self.css = cssFile
-                
+
         self.listView.addColumn(i18n("Components"))
-        
+
         self.leftLayout.setMargin(2)
         self.rightLayout.setMargin(2)
         self.leftLayout.setSpacing(5)
         self.rightLayout.setSpacing(5)
-                
+
         self.layout.addWidget(self.leftLayout,1,1)
         self.layout.addWidget(self.rightLayout,1,2)
         self.layout.setColStretch(1,2)
@@ -201,7 +201,7 @@ class MainApplicationWidget(QWidget):
 
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
-        
+
         self.currentAppList = self.command.listNewPackages()
 
         self.createComponentList(self.currentAppList)
@@ -209,7 +209,7 @@ class MainApplicationWidget(QWidget):
 
         # Show updates dialog if requested
         global showUpdates
-        
+
         if showUpdates:
             self.update()
         else:
@@ -219,20 +219,20 @@ class MainApplicationWidget(QWidget):
     def processEvents(self):
         global kapp
         kapp.processEvents(QEventLoop.ExcludeUserInput)
-        
+
     def cancelThread(self):
         # Reset progressbar
         self.progressDialog.setLabelText(i18n("<b>Cancelling operation...</b>"))
         self.progressDialog.speedLabel.hide()
         self.progressDialog.sizeLabel.hide()
-        
+
         self.command.terminate()
         self.possibleError = True
         self.finished()
-        
+
     def initialCheck(self):
         self.initialRepoCheck = True
-        
+
         if not pisi.api.list_repos(): # No repository
             self.command.addRepo("Pardus 1.1","http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2")
             self.command.updateAllRepos()
@@ -241,7 +241,7 @@ class MainApplicationWidget(QWidget):
 
     def repoMetadataCheck(self):
         global kapp
-        
+
         # At this point if componentList is empty we should quit as there is no way to work reliably
         if not pisi.context.componentdb.list_components():
             KMessageBox.error(self,i18n("Package repository still does not have category information.\nExiting..."),i18n("Error"))
@@ -249,7 +249,7 @@ class MainApplicationWidget(QWidget):
 
     def switchListing(self):
         self.updateListing(True)
-               
+
     def updateListing(self,switch=False):
 
         if switch or self.possibleError:
@@ -269,7 +269,7 @@ class MainApplicationWidget(QWidget):
                 self.parent.operateAction.setText(i18n("Install Package(s)"))
                 self.parent.operateAction.setIconSet(loadIconSet("ok"))
             else:
-                self.currentAppList = self.command.listPackages() 
+                self.currentAppList = self.command.listPackages()
                 self.createComponentList(self.currentAppList)
         elif currentOperation == i18n("Show Installed Packages"):
             if switch:
@@ -282,9 +282,9 @@ class MainApplicationWidget(QWidget):
             else:
                 self.currentAppList = self.command.listNewPackages()
                 self.createComponentList(self.currentAppList)
-                    
+
         self.listView.setSelected(self.listView.firstChild(),True)
-                		        
+
     def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
@@ -294,7 +294,7 @@ class MainApplicationWidget(QWidget):
 
         if not part:
             part = self.htmlPart
-            
+
         part.begin()
         part.write(head)
         part.write("<style type=\"text/css\">%s</style>" % self.css)
@@ -330,11 +330,11 @@ class MainApplicationWidget(QWidget):
         </div>
         <!-- package end -->
         '''
-        
+
         index = 0
         style = ''
         packages.sort(key=string.lower)
-	
+
         for app in packages:
             if index % 2 == 0:
                 style = "background-color:%s" % KGlobalSettings.alternateBackgroundColor().name()
@@ -356,7 +356,7 @@ class MainApplicationWidget(QWidget):
                 homepage = package.source.homepage
             else:
                 homepage = 'http://paketler.pardus.org.tr'
-	    
+
             if size:
                 tpl = pisi.util.human_readable_size(size)
                 size = "%.0f %s" % (tpl[0], tpl[1])
@@ -367,7 +367,7 @@ class MainApplicationWidget(QWidget):
             index += 1
 
         return result
-        
+
     def registerEventListener(self):
         self.eventListener = CustomEventListener(self, self.appsToProcess)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
@@ -377,7 +377,7 @@ class MainApplicationWidget(QWidget):
         self.updateEventListener = CustomEventListener(self.updateDialog,self.updatesToProcess)
         node = self.updateDialog.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.updateEventListener,True)
-        
+
     def updateCheckboxes(self):
         self.htmlPart.view().setUpdatesEnabled(False)
         if len(self.appsToProcess):
@@ -388,7 +388,7 @@ class MainApplicationWidget(QWidget):
                 if element.name().string() in self.appsToProcess:
                     element.click()
         self.htmlPart.view().setUpdatesEnabled(True)
-		    		    
+
     def updateView(self,item):
         try:
             self.createHTML(self.componentDict[item])
@@ -406,7 +406,7 @@ class MainApplicationWidget(QWidget):
     def showBasket(self):
         print "Show me the basket"
         pass
-    
+
     def check(self):
         appsToProcess = []
         document = self.htmlPart.document()
@@ -420,13 +420,13 @@ class MainApplicationWidget(QWidget):
                 packageName = str(element.getAttribute(DOM.DOMString("name")).string())
                 appsToProcess.append(packageName)
                 self.componentDict[self.listView.currentItem()].remove(packageName)
-        
+
         self.progressDialog.show()
         if self.parent.showAction.text() == i18n("Show New Packages"):
             self.command.remove(appsToProcess)
         else:
             self.command.install(appsToProcess)
-        
+
     def createComponentList(self, packages):
         # Components
         self.listView.clear()
@@ -453,16 +453,16 @@ class MainApplicationWidget(QWidget):
                                     package = pisi.context.packagedb.get_package(app)
                                 else:
                                     package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
-                                    
+
                                 if self.getShowOnlyPrograms() and "app:gui" in package.isA:
                                     removeList.append(app)
 
                             for app in removeList:
-                                componentPacks.remove(app)                                  
-                                
+                                componentPacks.remove(app)
+
             else:
                 pass
-                
+
             if len(componentPacks):
                 item = KListViewItem(self.listView)
                 if component.localName:
@@ -471,11 +471,11 @@ class MainApplicationWidget(QWidget):
                     item.setText(0,u"%s" % component.name)
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
                 self.componentDict[item] = componentPacks
-                                     
+
     def createSearchResults(self, packages):
         self.listView.clear()
         self.componentDict.clear()
-        
+
         item = KListViewItem(self.listView)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
@@ -484,11 +484,11 @@ class MainApplicationWidget(QWidget):
 
     def pisiNotify(self,data):
         self.currentOperation = i18n(str(data))
-        
+
         if data in ["downloading","removing"]:
             if len(self.updatesToProcess):
                 self.currentAppIndex += 1
-                
+
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
         elif data in ["extracting","configuring","installing"]:
             self.updateProgressText()
@@ -497,7 +497,7 @@ class MainApplicationWidget(QWidget):
         else:
             self.packagesOrder = data.split(",")
             self.totalAppCount = len(self.packagesOrder)
-            
+
             if self.parent.showAction.text() == i18n("Show New Packages"):
                 if len(base_packages.intersection(self.packagesOrder)) > 0:
                     self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
@@ -506,7 +506,7 @@ class MainApplicationWidget(QWidget):
     def showErrorMessage(self, message):
         self.possibleError = True
         KMessageBox.error(self,message,i18n("Error"))
-                    
+
     def finished(self):
         self.selectedItems = []
         self.currentAppIndex = 1
@@ -525,7 +525,7 @@ class MainApplicationWidget(QWidget):
         self.resetProgressBar()
 
         self.refreshUpdateDialog()
-        
+
     def resetProgressBar(self):
         self.progressDialog.progressBar.setProgress(0)
         self.progressDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
@@ -535,7 +535,7 @@ class MainApplicationWidget(QWidget):
     def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
         self.updateProgressText()
         self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
-        
+
         tpl = pisi.util.human_readable_size(downloaded_size)
         downloadedText,type1 = (int(tpl[0]), tpl[1])
         type1 = pisi.util.human_readable_size(downloaded_size)[1]
@@ -548,12 +548,12 @@ class MainApplicationWidget(QWidget):
     def updateProgressText(self):
         self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
                                          .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
-        
+
     def installSingle(self):
         app = []
         app.append(str(self.listView.currentItem().text(0)))
         self.command.install(app)
-        
+
     def searchStringChanged(self):
         if (self.timer.isActive()):
             self.timer.stop()
@@ -590,9 +590,9 @@ class MainApplicationWidget(QWidget):
         if not len(appList):
             KMessageBox.information(self,i18n("There are no updates available at this time"))
             return
-        
+
         self.updatesToProcess = []
-        
+
         self.createHTML(appList, self.updateDialog.htmlPart)
         self.connect(self.updateDialog.htmlPart,SIGNAL("completed()"),self.registerEventListenerForUpdate)
         self.connect(self.updateDialog.updateButton,SIGNAL("clicked()"),self.updatePackages)
@@ -604,19 +604,19 @@ class MainApplicationWidget(QWidget):
             self.updateDialog.close()
         else:
             self.createHTML(appList, self.updateDialog.htmlPart)
-        
+
     def updatePackages(self):
         self.currentAppIndex = 0
         self.progressDialog.show()
         self.command.updatePackage(self.updatesToProcess)
-        
+
     def setShowOnlyPrograms(self,hideLibraries=False):
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")
         self.config.writeEntry("HideLibraries",hideLibraries)
         self.config.sync()
-        
+
     def getShowOnlyPrograms(self):
         global kapp
         self.config = kapp.config()
@@ -635,11 +635,11 @@ class MainApplication(KMainWindow):
         self.setupMenu()
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
         self.toolBar().setIconText(KToolBar.IconTextRight)
-        
+
     def setupMenu(self):
         fileMenu = QPopupMenu(self)
         settingsMenu = QPopupMenu(self)
-        
+
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
         self.showAction = KAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
@@ -649,15 +649,15 @@ class MainApplication(KMainWindow):
 
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
-        
+
         self.showAction.plug(fileMenu)
         self.operateAction.plug(fileMenu)
         self.quitAction.plug(fileMenu)
         self.settingsAction.plug(settingsMenu)
-        
+
         self.menuBar().insertItem(i18n ("&File"), fileMenu,0,0)
         self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
-        
+
 def main():
     global kapp
     global nonPrivMode
@@ -667,7 +667,7 @@ def main():
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
     KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),("showupdates", I18N_NOOP("Show available updates"))])
-    
+
     if not KUniqueApplication.start():
         print i18n("Package Manager is already running!")
         return
@@ -689,8 +689,9 @@ def main():
     myapp = MainApplication()
     myapp.show()
     kapp.setMainWidget(myapp)
-        
+
     sys.exit(kapp.exec_loop())
-    
+
 if __name__ == "__main__":
     main()
+
