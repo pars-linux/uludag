@@ -35,15 +35,8 @@ import Preferences
 import Commander
 import UpdateDialog
 
-# Pisi Imports
-import pisi.ui
-import pisi.util
-import pisi.config
-import pisi.packagedb
-import pisi.installdb
-import pisi.repodb
-import pisi.context
-import pisi.itembyrepodb
+# Pisi
+import pisi
 
 # Workaround the fact that PyKDE provides no I18N_NOOP as KDE
 def I18N_NOOP(str):
