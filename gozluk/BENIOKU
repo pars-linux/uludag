@@ -2,8 +2,8 @@ GÖZLÜK / Ulubot için XML Sözlük dosyası düzenleyici
 Copyright (c) 2004 TUBITAK/UEKAE
 
 [ Yazarlar ]
-Barış Metin <baris@uludag.org.tr>
-Kaya Oğuz <kaya@kuzeykutbu.org>
+Barış Metin <baris [at] pardus.org.tr>
+Kaya Oğuz <kaya [at] kuzeykutbu.org>
 
 [ Kullanım için gerekli adımlar ]
 $ qmake -project
@@ -17,11 +17,11 @@ Gözlük için sözlük.xml dosyasını uludağ svn deposundan [1] indirebilirsi
 İlk çalıştırdığınızda Dosya/Yapılandır seçeneği ile sözlük dosyasının
 yerini belirtebilirsiniz.
 
-[1] http://svn.uludag.org.tr/uludag/trunk/ulubot/sozluk/sözlük.xml
+[1] http://svn.pardus.org.tr/uludag/trunk/ulubot/sozluk/sözlük.xml
 
 [ İletişim  ]
-Lütfen yorum, öneri vb. fikirlerinizi kaya@kuzeykutbu.org adresine gönderin ;)
+Lütfen yorum, öneri vb. fikirlerinizi kaya [at] kuzeykutbu.org adresine gönderin ;)
 Hata bildirimlerini Uluzilla'ya [2] girebilirsiniz.
 İlginiz için şimdiden teşekkürler.
 
-[2] http://bugs.uludag.org.tr/enter_bug.cgi?product=gözlük
+[2] http://bugs.pardus.org.tr/enter_bug.cgi?product=gözlük
