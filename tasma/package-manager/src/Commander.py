@@ -82,10 +82,8 @@ class Commander(QObject):
                 rate = round(int(data[2]),1)
                 self.parent.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
             elif notification == "System.Manager.finished":
-                if self.parent.initialRepoCheck:
-                    self.parent.initialRepoCheck = False
-                    self.parent.repoMetadataCheck()
-                elif self.updateInProgress:
+                if self.updateInProgress:
+                    print 'There was an update in progress!'
                     self.updateInProgress = False
                     self.parent.showUpdateDialog()
                 self.parent.finished()
