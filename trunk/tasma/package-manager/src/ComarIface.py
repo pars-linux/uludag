@@ -37,8 +37,8 @@ class ComarIface:
     def updateAllRepos(self):
         self.com.call("System.Manager.updateAllRepositories")
 
-    def addRepo(self, repo):
-        self.com.call("System.Manager.addRepository", ["repository",repo])
+    def addRepo(self, name, uri):
+        self.com.call("System.Manager.addRepository", ["name",name,"uri",uri])
 
     def removeRepo(self, repo):
         self.com.call("System.Manager.removeRepo", ["repository",repo])

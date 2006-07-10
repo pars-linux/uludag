@@ -74,14 +74,24 @@ class Commander(QObject):
                 rate = round(int(data[2]),1)
                 self.parent.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
             elif notification == "System.Manager.finished":
-                if self.updateInProgress:
+                if self.parent.initialRepoCheck:
+                    self.parent.initialRepoCheck = False
+                    self.parent.repoMetadataCheck()
+                elif self.updateInProgress:
                     self.updateInProgress = False
-                    QTimer.singleShot(3*1000,self.parent.showUpdateDialog)
+                    self.parent.showUpdateDialog()
                 self.parent.finished()
             elif notification == "System.Manager.updatingRepo":
                 self.parent.packagesOrder.append(data)
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
+        elif reply[0] == self.comar.com.FAIL:
+            self.parent.finished()
+            self.parent.showErrorMessage(unicode(reply[2]))
+            
+            if self.parent.initialRepoCheck:
+                self.parent.initialRepoCheck = False
+                self.parent.repoMetadataCheck()
         else:
             print 'Unhandled: ',reply
 
