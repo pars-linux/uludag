@@ -83,7 +83,6 @@ class Commander(QObject):
                 self.parent.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
             elif notification == "System.Manager.finished":
                 if self.updateInProgress:
-                    print 'There was an update in progress!'
                     self.updateInProgress = False
                     self.parent.showUpdateDialog()
                 self.parent.finished()
