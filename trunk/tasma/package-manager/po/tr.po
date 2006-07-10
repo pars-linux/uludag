@@ -288,6 +288,8 @@ msgid ""
 "Package repository still does not have category information.\n"
 "Exiting..."
 msgstr ""
+"Paket deposunda hala kategori bilgisi yok.\n"
+"Çıkılıyor"
 
 #: src/package-manager.py:259 src/package-manager.py:274
 #: src/package-manager.py:421
