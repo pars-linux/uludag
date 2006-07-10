@@ -260,17 +260,6 @@
                             <string>If checked, then pisi will only show desktop applications</string>
                         </property>
                     </widget>
-                    <widget class="QCheckBox" row="1" column="0">
-                        <property name="name">
-                            <cstring>checkBox2</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Automatically check for updates when started</string>
-                        </property>
-                        <property name="toolTip" stdset="0">
-                            <string>If checked, then updates for Pardus will be automatically checked and you will be notified</string>
-                        </property>
-                    </widget>
                     <spacer row="2" column="0">
                         <property name="name">
                             <cstring>spacer4</cstring>
