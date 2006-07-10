@@ -342,9 +342,6 @@ class MainApplicationWidget(QWidget):
             else:
                 package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
 
-            if self.getShowOnlyPrograms() and "app:gui" in package.isA:
-                break
-                        
             desc = package.description
             summary = package.summary
             version = package.version
@@ -444,6 +441,21 @@ class MainApplicationWidget(QWidget):
                     if iterator.startswith(component.name) and iterator.count(".") < 2 :
                         componentSet = set(pisi.context.componentdb.get_component(iterator).packages)
                         componentPacks += list(packageSet.intersection(componentSet))
+
+                        if self.getShowOnlyPrograms():
+                            removeList = []
+                            for app in componentPacks:
+                                if not pisi.packagedb.ctx.installdb.is_installed(app):
+                                    package = pisi.context.packagedb.get_package(app)
+                                else:
+                                    package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
+                                    
+                                if self.getShowOnlyPrograms() and "app:gui" in package.isA:
+                                    removeList.append(app)
+
+                            for app in removeList:
+                                componentPacks.remove(app)                                  
+                                
             else:
                 pass
                 
