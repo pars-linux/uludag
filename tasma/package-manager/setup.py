@@ -17,10 +17,10 @@ import kdedistutils
 
 kdedistutils.setup(
     name="package-manager",
-    version="1.1.0_b3",
+    version="1.1.0_b4",
     author="İsmail Dönmez",
     author_email="ismail@pardus.org.tr",
-    url="http://www.uludag.org.tr/projeler/pisi/index.html",
+    url="http://www.pardus.org.tr/projeler/pisi/index.html",
     min_kde_version = "3.5.2",
     min_qt_version = "3.3.5",
     license = "GPL",
