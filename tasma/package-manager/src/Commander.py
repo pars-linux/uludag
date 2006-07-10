@@ -22,7 +22,12 @@ import ComarIface
 class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
-        self.comar = ComarIface.ComarIface(self)
+
+        try:
+            self.comar = ComarIface.ComarIface(self)
+        except:
+            parent.showErrorMessage("Cannot connect to Comar daemon")
+            
         self.parent = parent
         self.updateInProgress = False
 
