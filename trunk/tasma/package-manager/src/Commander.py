@@ -98,7 +98,8 @@ class Commander(QObject):
                 self.parent.initialRepoCheck = False
                 self.parent.repoMetadataCheck()
         else:
-            print 'Unhandled: ',reply
+            pass
+            #print 'Unhandled: ',reply
 
     def startUpdate(self):
         self.updateInProgress = True
