@@ -230,7 +230,7 @@ class MainApplicationWidget(QWidget):
         self.initialRepoCheck = True
         
         if not pisi.api.list_repos(): # No repository
-            self.command.addRepo("Pardus 1.1","http://paketler.pardus.org.tr/pardus-1/pisi-index.xml.bz2")
+            self.command.addRepo("Pardus 1.1","http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2")
             self.command.updateAllRepos()
         elif not pisi.context.componentdb.list_components(): # Repo metadata empty
             self.command.updateAllRepos()
@@ -342,13 +342,9 @@ class MainApplicationWidget(QWidget):
             else:
                 package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
 
-            self.config = kapp.config()
-            self.config.setGroup("General")
-            hideLibraries = self.config.readEntry("HideLibraries",True)
-
-            if hideLibraries and package.isA not in ["app:gui"]:
-                return
-                            
+            if self.getShowOnlyPrograms() and "app:gui" in package.isA:
+                break
+                        
             desc = package.description
             summary = package.summary
             version = package.version
@@ -605,7 +601,7 @@ class MainApplicationWidget(QWidget):
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")
-        return self.config.readBoolEntry("HideLibraries",True)  
+        return self.config.readBoolEntry("HideLibraries",True)
 
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
