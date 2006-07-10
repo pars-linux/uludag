@@ -27,26 +27,16 @@ def parseGrubConfig(filename):
             label = i[0:i.find(" ")].rstrip(" =")
             data = i[i.find(" ") + 1:].lstrip(" =")
 
-        if label in ["default", "fallback", "hiddenmenu", "timeout",
-                     "bootp", "color", "dhcp", "ifconfig", "pager", "passwd",
-                     "rarp", "terminal", "terminfo", "tftpserver", "hide",
-                     "partnew", "parttype", "serial", "setkey", "unhide"]:
-            options[label] = options.get(label, []) + [data]
-        elif label == "title":
+        if label == "title":
             if entry:
                 entries.append(entry)
                 entry = {}
             entry["title"] = data
-        # FIXME: Remove shell commands
-        elif label in ["blocklist", "boot", "cat", "chainloader", "cmp",
-                       "configfile", "debug", "displayapm", "displaymem",
-                       "embed", "find", "fstest", "geometry", "halt",
-                       "help", "impsprobe", "initrd", "install", "ioprobe",
-                       "kernel", "lock", "makeactive", "map", "md5crypt",
-                       "module", "modulenounzip", "pause", "quit", "reboot",
-                       "read", "root", "rootnoverify", "savedefault", "setup",
-                       "testload", "testvbe", "uppermem", "vbeprobe"]:
+        elif not entry:
+            options[label] = options.get(label, []) + [data]
+        elif entry:
             entry[label] = entry.get(label, []) + [data]
+
     entries.append(entry)
 
     return options, entries
