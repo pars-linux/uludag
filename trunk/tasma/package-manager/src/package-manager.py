@@ -50,13 +50,13 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.1.0_rc1"
+version = "1.1_b4"
 base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
 
 def AboutData():
     global version,description
     
-    about_data = KAboutData("package-manager", "Package Manager", version, description, KAboutData.License_GPL,
+    about_data = KAboutData("package-manager", I18N_NOOP("Package Manager"), version, description, KAboutData.License_GPL,
                             "(C) 2005, 2006 UEKAE/TÜBİTAK", None, None)
     
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Main Coder"), "ismail@pardus.org.tr")
@@ -114,7 +114,7 @@ class CustomEventListener(DOM.EventListener):
 
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
-        QWidget.__init__(self, parent, "Package Manager")
+        QWidget.__init__(self, parent)
         self.parent = parent
         
         self.progressDialog = Progress.Progress(self)
@@ -386,7 +386,10 @@ class MainApplicationWidget(QWidget):
         self.htmlPart.view().setUpdatesEnabled(True)
 		    		    
     def updateView(self,item):
-        self.createHTML(self.componentDict[item])
+        try:
+            self.createHTML(self.componentDict[item])
+        except:
+            pass
 
     def updateButtons(self):
         if len(self.appsToProcess):
@@ -601,7 +604,7 @@ class MainApplicationWidget(QWidget):
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
         KMainWindow.__init__(self,parent,name)
-        self.setCaption("Package Manager")
+        self.setCaption(i18n("Package Manager"))
         self.aboutus = KAboutApplication(self)
         self.helpWidget = None
         self.mainwidget = MainApplicationWidget(self)
