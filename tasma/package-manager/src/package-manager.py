@@ -111,7 +111,6 @@ class MainApplicationWidget(QWidget):
         self.parent = parent
 
         self.progressDialog = Progress.Progress(self)
-        self.updateDialog = UpdateDialog.UpdateDialog(self)
 
         self.initialRepoCheck = None
         self.packagesOrder = []
@@ -578,6 +577,8 @@ class MainApplicationWidget(QWidget):
         self.command.startUpdate()
 
     def showUpdateDialog(self):
+        self.updateDialog = UpdateDialog.UpdateDialog(self)
+
         appList = pisi.api.list_upgradable()
 
         if not len(appList):
