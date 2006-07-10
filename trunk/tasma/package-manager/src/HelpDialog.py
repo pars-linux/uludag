@@ -25,7 +25,7 @@ class HelpDialog(QDialog):
         self.htmlPart = KHTMLPart(self)
         self.resize(500,600)
         self.layout.addWidget(self.htmlPart.view(),1,1)
-        
+
         if os.environ['LANG'].startswith('tr_TR'):
             self.htmlPart.openURL(KURL(locate("data","package-manager/help/tr/main_help.html")))
         else:

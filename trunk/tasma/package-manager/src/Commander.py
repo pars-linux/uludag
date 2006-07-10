@@ -27,7 +27,7 @@ class Commander(QObject):
             self.comar = ComarIface.ComarIface(self)
         except:
             parent.showErrorMessage("Cannot connect to Comar daemon")
-            
+
         self.parent = parent
         self.updateInProgress = False
 
@@ -58,7 +58,7 @@ class Commander(QObject):
                 timeout -= 0.2
             time.sleep(0.2)
         return False
-    
+
     def slotComar(self, sock):
         try:
             reply = self.comar.com.read_cmd()
@@ -68,7 +68,7 @@ class Commander(QObject):
             else:
                 self.comar = ComarIface.ComarIface(self)
             return
-            
+
         if reply[0] == self.comar.com.NOTIFY:
             notification, script, data = reply[2].split("\n", 2)
             data = unicode(data)
@@ -93,32 +93,32 @@ class Commander(QObject):
         elif reply[0] == self.comar.com.FAIL:
             self.parent.finished()
             self.parent.showErrorMessage(unicode(reply[2]))
-            
+
             if self.parent.initialRepoCheck:
                 self.parent.initialRepoCheck = False
                 self.parent.repoMetadataCheck()
         else:
             print 'Unhandled: ',reply
-        
+
     def startUpdate(self):
         self.updateInProgress = True
         self.updateAllRepos()
-        
+
     def install(self,apps):
         self.databaseDirty = True
         apps = string.join(apps,",")
         self.comar.installPackage(apps)
-        
+
     def updatePackage(self,apps):
         self.databaseDirty = True
         apps = string.join(apps,",")
         self.comar.updatePackage(apps)
-            
+
     def remove(self,apps):
         self.databaseDirty = True
         apps = string.join(apps,",")
         self.comar.removePackage(apps)
-        
+
     def updateRepo(self, repo):
         self.databaseDirty = True
         self.comar.updateRepo(repo)
@@ -126,37 +126,37 @@ class Commander(QObject):
     def updateAllRepos(self):
         self.databaseDirty = True
         self.comar.updateAllRepos()
-        
+
     def addRepo(self,repoName,repoAddress):
         self.databaseDirty = True
         self.comar.addRepo(repoName,repoAddress)
-        
+
     def removeRepo(self, repoName):
         self.databaseDirty = True
         self.comar.removeRepo(repoName)
-       
+
     def setRepositories(self, list):
         self.comar.setRepositories(",".join(list))
-    
+
     def listUpgradable(self):
         if self.databaseDirty:
             self.upgrades = pisi.api.list_upgradable()
             self.databaseDirty = False
-            
+
         return self.upgrades
-        
+
     def listPackages(self):
         if self.databaseDirty:
             self.allPackages = pisi.context.installdb.list_installed()
             self.databaseDirty = False
-            
+
         return self.allPackages
 
     def listNewPackages(self):
         if self.databaseDirty:
             self.newPackages = list(pisi.api.list_available()-set(self.listPackages()))
             self.databaseDirty = False
-        
+
         return self.newPackages
 
     def searchPackage(self,query,language='tr'):
@@ -167,6 +167,6 @@ class Commander(QObject):
 
     def getRepoList(self):
         return pisi.context.repodb.list()
-    
+
     def getRepoUri(self,repoName):
         return pisi.api.ctx.repodb.get_repo(repoName).indexuri.get_uri()

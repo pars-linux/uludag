@@ -7,14 +7,14 @@ class UpdateDialog(QDialog):
         QDialog.__init__(self,parent)
         self.setCaption(i18n("Currently Available Updates"))
         self.parent = parent
-        
+
         layout1 = QGridLayout(self,2,1)
         layout2 = QHBox(self)
         layout3 = QVBox(self)
 
         self.updateButton = QPushButton(i18n("Upgrade selected packages"),layout3)
         self.updateButton.setEnabled(False)
-        
+
         layout1.addWidget(layout2,1,1)
         layout1.addWidget(layout3,2,1)
 

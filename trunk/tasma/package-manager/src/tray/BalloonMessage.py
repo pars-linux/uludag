@@ -27,7 +27,7 @@ class KopeteBalloon(QWidget):
             mImage.setScaledContents(False);
             mImage.setPixmap(pix)
             Layout1.addWidget(mImage)
-            
+
         Layout1.addWidget(self.mCaption)
         # END Layout1
 
@@ -57,7 +57,7 @@ class KopeteBalloon(QWidget):
     def setAnchor(self,anchor):
         self.mAnchor = anchor
         self.updateMask()
-        
+
     def updateMask(self):
         mask = QRegion(10, 10, self.width() - 20, self.height() - 20)
 
@@ -78,7 +78,7 @@ class KopeteBalloon(QWidget):
             corner.resize(corner.size() + 1)
             corner.setPoint(corner.size() - 1, corners[i + 4])
             mask -= QRegion(corner)
-            
+
         # get screen-geometry for screen our anchor is on
         # (geometry can differ from screen to screen!
         deskRect = QRect(KGlobalSettings.desktopGeometry(self.mAnchor))
@@ -136,7 +136,7 @@ class KopeteBalloon(QWidget):
                         self.move(self.mAnchor.x(),0)
                     else:
                         self.move(self.mAnchor.x(),self.mAnchor.y())
-                               	
+
     def startPackageManager(self):
         Popen(["package-manager","--showupdates"])
         self.parent.hide()

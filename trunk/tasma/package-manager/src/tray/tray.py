@@ -41,7 +41,7 @@ class TrayApp(KSystemTray):
 
         self.config = KSimpleConfig("packagemanager_trayrc")
         self.config.setGroup("General")
-        
+
         # check interval, default is 60 min
         self.interval = self.config.readNumEntry("Interval", 60) * (60 * 1000)
 
@@ -60,7 +60,7 @@ class TrayApp(KSystemTray):
 
         # FIXME: No notification... etc...
         ComarIface().updateAllRepos()
-                             
+
         self.upgradeList = pisi.api.list_upgradable()
 
         if len(self.upgradeList):
@@ -84,14 +84,14 @@ def main():
     aboutData.addAuthor('İsmail Dönmez', 'Maintainer', 'ismail@pardus.org.tr')
 
     KCmdLineArgs.init(sys.argv,aboutData)
-    
+
     if not KUniqueApplication.start():
         return
-    
+
     kapp = KUniqueApplication(True,True,True)
 
     tray = TrayApp()
-    
+
     kapp.setMainWidget(tray)
     kapp.exec_loop()
 
