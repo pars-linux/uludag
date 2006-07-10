@@ -486,6 +486,9 @@ class MainApplicationWidget(QWidget):
         self.currentOperation = i18n(str(data))
         
         if data in ["downloading","removing"]:
+            if len(self.updatesToProcess):
+                self.currentAppIndex += 1
+                
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
         elif data in ["extracting","configuring","installing"]:
             self.updateProgressText()
@@ -494,9 +497,11 @@ class MainApplicationWidget(QWidget):
         else:
             self.packagesOrder = data.split(",")
             self.totalAppCount = len(self.packagesOrder)
-            if len(base_packages.intersection(self.packagesOrder)) > 0:
-                self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
-                self.finished()
+            
+            if self.parent.showAction.text() == i18n("Show New Packages"):
+                if len(base_packages.intersection(self.packagesOrder)) > 0:
+                    self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
+                    self.finished()
 
     def showErrorMessage(self, message):
         self.possibleError = True
@@ -601,6 +606,7 @@ class MainApplicationWidget(QWidget):
             self.createHTML(appList, self.updateDialog.htmlPart)
         
     def updatePackages(self):
+        self.currentAppIndex = 0
         self.progressDialog.show()
         self.command.updatePackage(self.updatesToProcess)
         
