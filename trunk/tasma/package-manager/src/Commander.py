@@ -36,15 +36,18 @@ class Commander(QObject):
         pisi.api.init(database=True, write=False)
 
     def wait_comar(self):
+        self.comar.notifier.setEnabled(False)
         import socket, time
         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         timeout = 5
         while timeout > 0:
+            self.parent.processEvents()
             try:
                 if ctx.comar_sockname:
                     sock.connect(ctx.comar_sockname)
                 else:
-                    sock.connect("/var/run/comar.socket")          
+                    self.comar.notifier.setEnabled(True)
+                    sock.connect("/var/run/comar.socket")
                     return True
             except:
                 timeout -= 0.2
@@ -94,7 +97,7 @@ class Commander(QObject):
                 self.parent.repoMetadataCheck()
         else:
             print 'Unhandled: ',reply
-
+        
     def startUpdate(self):
         self.updateInProgress = True
         self.updateAllRepos()

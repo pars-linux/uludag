@@ -216,6 +216,10 @@ class MainApplicationWidget(QWidget):
             # Empty repo check
             self.initialCheck()
 
+    def processEvents(self):
+        global kapp
+        kapp.processEvents(QEventLoop.ExcludeUserInput)
+        
     def cancelThread(self):
         # Reset progressbar
         self.progressDialog.setLabelText(i18n("<b>Cancelling operation...</b>"))
