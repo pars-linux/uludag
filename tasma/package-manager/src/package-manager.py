@@ -487,8 +487,6 @@ class MainApplicationWidget(QWidget):
         
         if data in ["downloading","removing"]:
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
-            self.progressDialog.progressBar.setProgress((float(self.currentAppIndex)/float(self.totalAppCount))*100)
-            self.updateProgressText()
         elif data in ["extracting","configuring","installing"]:
             self.updateProgressText()
         elif data in ["installed","removed","upgraded"]:
@@ -689,9 +687,4 @@ def main():
     sys.exit(kapp.exec_loop())
     
 if __name__ == "__main__":
-    try:
-        import psyco
-        psyco.full()
-    except ImportError:
-        pass
     main()
