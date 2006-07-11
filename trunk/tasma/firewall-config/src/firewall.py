@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'firewall.ui'
 #
-# Created: Pzt Tem 3 09:27:29 2006
+# Created: Paz Tem 9 09:10:59 2006
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
 #
 # WARNING! All changes made in this file will be lost!
