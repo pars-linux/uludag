@@ -173,6 +173,7 @@ class MainApplication(programbase):
                 while item:
                     if item.service == reply[3]:
                         item.setState(info[1])
+                        self.slotItemClicked(item)
                         break
                     item = item.nextSibling()
         elif reply[0] == self.comar.DENIED:
