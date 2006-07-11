@@ -26,8 +26,8 @@
         }
 
         function Search($Que) {
-            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que' IN BOOLEAN MODE) AS Score FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que' IN BOOLEAN MODE)";
-            echo $query;
+            $Que = mysql_escape_string($Que);
+            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score DESC";
             return $this->MakeArray(mysql_query($query,$this->Connection));
         }
 
@@ -68,44 +68,57 @@
         }
     }
 
-    function turnTo( $Data,$Lang,$DLang){
+    function turnToEn($Data,$Reverse){
+        mb_regex_encoding('utf-8');
         $TR = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
         $EN = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
-        
-        foreach($$Lang as $Key=>$Value) {
-            $Data = mb_ereg_replace($Value,$$DLang[$Key],$Data,'UTF-8');
+        for ($i=0; $i<sizeof($TR); $i++) {
+            if ($Reverse)
+                $Data = mb_ereg_replace($EN[$i],$TR[$i],$Data);
+            else
+                $Data = mb_ereg_replace($TR[$i],$EN[$i],$Data);
         }
         return $Data;
     }
- 
+
     function GetPos($Data,$Word) {
         return mb_strpos(mb_strtolower($Data,'UTF-8'),mb_strtolower($Word,'UTF-8'),0,'UTF-8'); 
     }
 
     function GetHighlighted($Word,$Data,$Color) {
-        return mb_ereg_replace($Word,"<span style='background-color:$Color'>".$Word."</span>",$Data);
+        $Return = mb_ereg_replace($Word,"<b>".$Word."</b>",$Data);
+        $Return = mb_ereg_replace(turnToEn($Word,0),"<b>".turnToEn($Word,0)."</b>",$Return);
+        return $Return;
     }
 
-    function Highlight($Data,$Word,$Score,$Size=260,$Color="#EDFF88") {
+    function Highlight($Data,$Word,$Score,$Size=260,$Color="yellow") {
         $Data       = strip_tags($Data);
-        $Pos        = GetPos($Data,$Word); 
+        $TempData   = mb_strtolower($Data,'UTF-8');
 
-        if ($Pos==0){ 
-            $EnWord = turnTo($Word,'TR','EN');
-            $Pos = GetPos($Data,$EnWord);
+        $RawWord    = split(" ",$Word);
+        $Size       = round ($Size/sizeof($RawWord));
+        foreach($RawWord as $Word) {
+            $Word       = strip_tags($Word);
+            $TempWord   = mb_strtolower($Word,'UTF-8');
+            # I know it sucks.
+            $Pos        = GetPos($TempData,$TempWord);
             if ($Pos==0){
-                $TrWord = turnTo($Word,'EN','TR');
-                $Pos = GetPos($Data,$TrWord);
+                $Pos    = GetPos($TempData,turnToEn($TempWord,0));
+                $EnWord = turnToEn($TempWord,0);
             }
+            if ($Pos==0){
+                $Pos    = GetPos($TempData,turnToEn($TempWord,1));
+                $TrWord = turnToEn($TempWord,1);
+            }
+            $Piece     .= "....".mb_substr($Data,$Pos,$Size,'UTF-8');
         }
 
-        $Piece      = mb_substr($Data,$Pos,$Size*2,'UTF-8');
-        $Piece      = GetHighlighted($Word,$Piece,$Color);
-
-        if ($EnWord OR $TrWord) 
-            $Piece = GetHighlighted($TrWord,GetHighlighted($EnWord,$Piece,$Color),$Color);         
-        #return mb_ereg_replace(mb_strtolower($Word,'UTF-8'),"<span style='background-color:$Color'>".$Word."</span>",mb_strtolower($Piece,'UTF-8'));
-        return $Piece;
+        $IData      = mb_strtolower($Piece,'UTF-8');
+        foreach ($RawWord as $Word) {
+            $IWord      = mb_strtolower($Word,'UTF-8');
+            $IData      = GetHighlighted($IWord,$IData,$Color);
+        }
+        return $IData;
     }
 
     if ($_GET["NewsID"]<>""){

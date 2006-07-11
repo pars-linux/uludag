@@ -87,7 +87,7 @@
                 <img src="../images/newdesign/head-gelistirici-gunlukler.png">
                     <div id="RssList">
                     <?php
-                        $Blogs->ShowList(4,30);
+                        $Blogs->ShowList(4,20);
                     ?>
                     </div>
                 <img src="../images/newdesign/dock-gelistirici.png">
