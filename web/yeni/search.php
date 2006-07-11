@@ -21,7 +21,7 @@
         <td id="header">
             <div id="menu">
                 <b>
-                <a href="?">Ana Sayfa</a> » <?php echo "'".htmlspecialchars($_GET["q"])."'";?> için arama sonuçları
+                <a href="index.php">Ana Sayfa</a> » <?php echo "'".htmlspecialchars($_GET["q"])."'";?> için arama sonuçları
                 </b>
             </div>
         </td>

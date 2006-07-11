@@ -33,11 +33,10 @@ body {
 #menu {
     font-weight:bold;
     font-size:10px;
-    padding-top:39px;
+    padding-top:93px;
     padding-left:200px;
-    position:absolute;
+    width:100%;
 }
-
 
 li {
     list-style-image: url('images/BulletCyan.png');
@@ -46,7 +45,8 @@ li {
 #searchbar {
     float:right;
     padding-right:3px;
-    padding-top:4px;
+    padding-top:97px;
+    
 }
 
 #searchbar input {
