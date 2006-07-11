@@ -158,14 +158,23 @@ class MainApplication(programbase):
 
             while item:
                 if item.service == info[1]:
-                    item.setState(info[2])
+                    self.comar.call_package("System.Service.info", item.service, id=3)
+                    self.handleComar(self.comar.read_cmd())
                     break
                 item = item.nextSibling()
-
         elif reply[0] == self.comar.RESULT:
             if reply[1] == 2:
                 info = reply[2].split('\n')
                 serviceItem(self.mainwidget.listServices, info[2], info[0], info[1], reply[3])
+            elif reply[1] == 3:
+                item = self.mainwidget.listServices.firstChild()
+                info = reply[2].split('\n')
+
+                while item:
+                    if item.service == reply[3]:
+                        item.setState(info[1])
+                        break
+                    item = item.nextSibling()
         elif reply[0] == self.comar.DENIED:
             KMessageBox.error(self.mainwidget, i18n("You are not allowed to do this operation."), i18n("Access Denied"))
         elif reply[0] == self.comar.ERROR:
@@ -173,10 +182,9 @@ class MainApplication(programbase):
         elif reply[0] == self.comar.FAIL:
             KMessageBox.error(self.mainwidget, i18n("Unable to complete operation."), i18n("Failed"))
 
-        if reply[0] in [self.comar.NOTIFY, self.comar.DENIED, self.comar.FAIL, self.comar.ERROR]:
-            list = self.mainwidget.listServices
-            if list.selectedItem():
-                self.slotItemClicked(list.selectedItem())
+        list = self.mainwidget.listServices
+        if list.selectedItem():
+            self.slotItemClicked(list.selectedItem())
 
     def populateList(self):
         self.comar.call('System.Service.info', id=2)
