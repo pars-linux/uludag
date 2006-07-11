@@ -222,6 +222,9 @@ class MainApplication(programbase):
             self.comar.call_package('System.Service.setState', item.service, {"state": "off"})
         else:
             self.comar.call_package('System.Service.setState', item.service, {"state": "on"})
+        time.sleep(0.5)
+        self.comar.call_package("System.Service.info", item.service, id=3)
+        self.handleComar(self.comar.read_cmd())
 
     def slotHelp(self):
         self.helpwin = HelpDialog(self)
