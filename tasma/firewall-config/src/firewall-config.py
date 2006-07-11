@@ -169,6 +169,7 @@ class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
         global standalone
         global mainwidget
+        global logwin
 
         if standalone:
             QDialog.__init__(self,parent,name)
@@ -192,6 +193,8 @@ class MainApplication(programbase):
         toplayout.addWidget(mainwidget)
 
         self.aboutus = KAboutApplication(self)
+
+        logwin = LogDialog(self)
 
         # Icons
         mainwidget.pixmapFW.setPixmap(loadIcon("firewall_config", size=48))
@@ -231,6 +234,10 @@ class MainApplication(programbase):
         self.comar.call("Net.Filter.getState", id=3)
         self.handleComar(self.comar.read_cmd())
 
+    def closeEvent(self, e):
+        logwin.lt.terminate()
+        logwin.close()
+        e.accept()
 
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
@@ -342,8 +349,6 @@ class MainApplication(programbase):
             mainwidget.listAdvanced.takeItem(item)
 
     def slotLog(self):
-        global logwin
-        logwin = LogDialog(self)
         logwin.show()
         logwin.lt.start()
 
