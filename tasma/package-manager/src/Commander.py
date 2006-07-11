@@ -84,6 +84,9 @@ class Commander(QObject):
             elif notification == "System.Manager.finished":
                 if self.updateInProgress:
                     self.updateInProgress = False
+                    print 'show update dialog'
+                    pisi.api.finalize()
+                    pisi.api.init(write=False)
                     self.parent.showUpdateDialog()
                 self.parent.finished()
             elif notification == "System.Manager.updatingRepo":

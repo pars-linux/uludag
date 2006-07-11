@@ -194,11 +194,6 @@ class MainApplicationWidget(QWidget):
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
 
-        self.currentAppList = self.command.listNewPackages()
-
-        self.createComponentList(self.currentAppList)
-        self.listView.setSelected(self.listView.firstChild(),True)
-
         # Show updates dialog if requested
         global showUpdates
 
@@ -207,6 +202,11 @@ class MainApplicationWidget(QWidget):
         else:
             # Empty repo check
             self.initialCheck()
+
+        self.currentAppList = self.command.listNewPackages()
+
+        self.createComponentList(self.currentAppList)
+        self.listView.setSelected(self.listView.firstChild(),True)
 
     def processEvents(self):
         global kapp
@@ -225,10 +225,8 @@ class MainApplicationWidget(QWidget):
     def initialCheck(self):
         self.initialRepoCheck = True
 
-        if not pisi.api.list_repos(): # No repository
-            self.command.addRepo("Pardus 1.1","http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2")
-            self.command.updateAllRepos()
-        elif not pisi.context.componentdb.list_components(): # Repo metadata empty
+        if not pisi.context.componentdb.list_components(): # Repo metadata empty
+            self.progressDialog.show()
             self.command.updateAllRepos()
 
     def repoMetadataCheck(self):
@@ -437,21 +435,6 @@ class MainApplicationWidget(QWidget):
                     if iterator.startswith(component.name) and iterator.count(".") < 2 :
                         componentSet = set(pisi.context.componentdb.get_component(iterator).packages)
                         componentPacks += list(packageSet.intersection(componentSet))
-
-                        if self.getShowOnlyPrograms():
-                            removeList = []
-                            for app in componentPacks:
-                                if not pisi.packagedb.ctx.installdb.is_installed(app):
-                                    package = pisi.context.packagedb.get_package(app)
-                                else:
-                                    package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
-
-                                if self.getShowOnlyPrograms() and "app:gui" in package.isA:
-                                    removeList.append(app)
-
-                            for app in removeList:
-                                componentPacks.remove(app)
-
             else:
                 pass
 
@@ -597,7 +580,10 @@ class MainApplicationWidget(QWidget):
         if not len(appList):
             self.updateDialog.close()
         else:
-            self.createHTML(appList, self.updateDialog.htmlPart)
+            try:
+                self.createHTML(appList, self.updateDialog.htmlPart)
+            except:
+                pass
 
     def updatePackages(self):
         self.currentAppIndex = 0
