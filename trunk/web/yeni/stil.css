@@ -49,6 +49,16 @@ li {
     
 }
 
+.searchresults {
+    background-color:#EEE;
+    margin-top:0px;
+    color:#999;
+    border-top:1px solid #DDD;
+}
+
+.searchresults b {
+    color:#666;
+}
 #searchbar input {
     background-color:#FFF;
     border: none;

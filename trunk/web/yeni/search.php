@@ -38,7 +38,7 @@
                     $i=0;
                     if ($Results) {
                         foreach ($Results as $Values) {
-                            echo "<h2>".$Values['Title']."</h2>".Highlight($Values['Content'],$_GET['q'],$Values['Score'])."...";
+                            echo "<b><a href='?".$Values['NiceTitle']."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$_GET['q'],$Values['Score'])."...</p>";
                         }
                     }
                 }
