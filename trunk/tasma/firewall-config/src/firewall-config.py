@@ -139,6 +139,7 @@ class LogDialog(QDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
         self.setCaption(i18n('Firewall Logs'))
+        self.setModal(1)
         self.layout = QGridLayout(self)
 
         self.log = KTextEdit(self)
@@ -147,23 +148,19 @@ class LogDialog(QDialog):
         self.resize(500, 300)
         self.layout.addWidget(self.log, 1, 1)
 
-        self.lt = logThread()
+    def showLog(self):
+        self.log.setText("")
 
-
-class logThread(QThread):
-    def run(self):
         log = "/var/log/netfilter.log"
 
         if not os.access(log, os.F_OK):
             return
 
         f = open(log)
-        while 1:
-            s = f.read()
-            if s:
-                logwin.log.append(s[:-1])
-            time.sleep(1)
-
+        s = f.read()
+        if s:
+            self.log.append(s[:-1])
+        f.close()
 
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
@@ -233,11 +230,6 @@ class MainApplication(programbase):
         self.state = "off"
         self.comar.call("Net.Filter.getState", id=3)
         self.handleComar(self.comar.read_cmd())
-
-    def closeEvent(self, e):
-        logwin.lt.terminate()
-        logwin.close()
-        e.accept()
 
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
@@ -350,7 +342,7 @@ class MainApplication(programbase):
 
     def slotLog(self):
         logwin.show()
-        logwin.lt.start()
+        logwin.showLog()
 
     def saveAll(self):
         for dir in ["in", "out", "other"]:
