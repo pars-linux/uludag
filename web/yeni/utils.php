@@ -26,8 +26,8 @@
         }
 
         function Search($Que) {
-            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score 
-                      FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score";
+            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que' IN BOOLEAN MODE) AS Score FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que' IN BOOLEAN MODE)";
+            echo $query;
             return $this->MakeArray(mysql_query($query,$this->Connection));
         }
 
@@ -68,16 +68,50 @@
         }
     }
 
-    function Highlight($Data,$Word,$Score,$Size=100,$Color="#EDFF88") {
+    function turnTo( $Data,$Lang,$DLang){
+        $TR = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
+        $EN = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
+        
+        foreach($$Lang as $Key=>$Value) {
+            $Data = mb_ereg_replace($Value,$$DLang[$Key],$Data,'UTF-8');
+        }
+        return $Data;
+    }
+ 
+    function GetPos($Data,$Word) {
+        return mb_strpos(mb_strtolower($Data,'UTF-8'),mb_strtolower($Word,'UTF-8'),0,'UTF-8'); 
+    }
+
+    function GetHighlighted($Word,$Data,$Color) {
+        return mb_ereg_replace($Word,"<span style='background-color:$Color'>".$Word."</span>",$Data);
+    }
+
+    function Highlight($Data,$Word,$Score,$Size=260,$Color="#EDFF88") {
         $Data       = strip_tags($Data);
-        $Pos        = mb_strpos($Data,$Word,$Size,'UTF-8'); 
-        $Piece      = mb_substr($Data,$Pos-mb_strlen($Word),$Size*3,'UTF-8');
-        $Piece      = mb_ereg_replace($Word,"<span style='background-color:$Color'>".$Word."</span>",$Piece);
-        return mb_ereg_replace(mb_strtolower($Word,'UTF-8'),"<span style='background-color:$Color'>".$Word."</span>",mb_strtolower($Piece,'UTF-8'));
+        $Pos        = GetPos($Data,$Word); 
+
+        if ($Pos==0){ 
+            $EnWord = turnTo($Word,'TR','EN');
+            $Pos = GetPos($Data,$EnWord);
+            if ($Pos==0){
+                $TrWord = turnTo($Word,'EN','TR');
+                $Pos = GetPos($Data,$TrWord);
+            }
+        }
+
+        $Piece      = mb_substr($Data,$Pos,$Size*2,'UTF-8');
+        $Piece      = GetHighlighted($Word,$Piece,$Color);
+
+        if ($EnWord OR $TrWord) 
+            $Piece = GetHighlighted($TrWord,GetHighlighted($EnWord,$Piece,$Color),$Color);         
+        #return mb_ereg_replace(mb_strtolower($Word,'UTF-8'),"<span style='background-color:$Color'>".$Word."</span>",mb_strtolower($Piece,'UTF-8'));
+        return $Piece;
     }
 
     if ($_GET["NewsID"]<>""){
         $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
         $Pardus->GetNews($_GET["NewsID"]);
     }
+
+    
 ?>
