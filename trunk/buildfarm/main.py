@@ -109,20 +109,21 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
 
     def moveOldPackage(package):
         logger.info("*** Eski paket '%s' işleniyor" % (package))
-        if exists(join(config.newBinaryPath, package)):
-            remove(join(config.newBinaryPath, package))
+        if exists(join(config.binaryPath, package)):
+            remove(join(config.binaryPath, package))
 
         if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
 
     def moveNewPackage(package):
         logger.info("*** Yeni paket '%s' işleniyor" % (package))
-        copy(join(config.workDir, package), config.newBinaryPath)
+        copy(join(config.workDir, package), config.binaryPath)
         remove(join(config.workDir, package))
        
     def moveUnchangedPackage(package):
         logger.info("*** Değişmemiş paket '%s' işleniyor" % (package))
         if exists(join(config.workDir, package)):
+            copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
     for package in newPackages:
@@ -145,7 +146,7 @@ def removeBinaryPackageFromWorkDir(package):
 
 def create_directories():
     directories = [config.workDir, 
-                   config.newBinaryPath,
+                   config.binaryPath,
                    config.localPspecRepo,
                    config.outputDir]
 
