@@ -117,8 +117,9 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
 
     def moveNewPackage(package):
         logger.info("*** Yeni paket '%s' işleniyor" % (package))
-        copy(join(config.workDir, package), config.binaryPath)
-        remove(join(config.workDir, package))
+        if exists(join(config.workDir, package)):
+            copy(join(config.workDir, package), config.binaryPath)
+            remove(join(config.workDir, package))
        
     def moveUnchangedPackage(package):
         logger.info("*** Değişmemiş paket '%s' işleniyor" % (package))
