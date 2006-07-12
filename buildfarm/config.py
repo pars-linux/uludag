@@ -20,7 +20,6 @@ class CfgError(Exception):
 #Some configuration info for other modules..
 
 workDir          = "/var/tmp/pisi/"
-packageDir       = join_path(os.getcwd(), "/regeneratedPackages")
 outputDir        = "/var/tmp/pisi/buildlogs"
 newBinaryPath   = "/var/cache/pisi/packages/newBinaries/"
 localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")

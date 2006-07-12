@@ -82,40 +82,6 @@ def buildPackages():
 
     os.unlink("/var/run/buildfarm")
     
-def regeneratePackages():
-    qmgr = qmanager.QueueManager()
-    queue = copy.copy(qmgr.workQueue)
-    
-    logger.raw("QUEUE")
-    logger.info("Work Queue: %s" % (qmgr.workQueue))
-    logger.raw()
-    
-    for pspec in queue: 
-        packagename = os.path.basename(os.path.dirname(pspec))
-        build_output = open(os.path.join(config.outputDir,packagename + ".log"), "w")
-        logger.info("Regenerating source %s (%d of %d)" % (packagename,
-                                                        int(queue.index(pspec) + 1),
-                                                        len(queue)))
-        logger.raw()
-
-        pisi = pisiinterface.PisiApi(config.packageDir)
-        pisi.init(stdout=build_output, stderr=build_output)
-        try:
-            pisi.regenerate(pspec)
-        except Exception, e:
-            qmgr.transferToWaitQueue(pspec)
-            errmsg = "'%s' için Regenerate işlemi sırasında hata: %s" % (pspec, e)
-            logger.error(errmsg)
-            mailer.error(errmsg, pspec)
-        else:
-            qmgr.removeFromWorkQueue(pspec)
-        pisi.finalize()
-
-    logger.raw("QUEUE")
-    logger.info("Wait Queue: %s" % (qmgr.waitQueue))
-    logger.raw()
- 
-
 def movePackages(newBinaryPackages, oldBinaryPackages):
     # sanitaze input
     try:
@@ -179,7 +145,6 @@ def removeBinaryPackageFromWorkDir(package):
 
 def create_directories():
     directories = [config.workDir, 
-                   config.packageDir,
                    config.newBinaryPath,
                    config.localPspecRepo,
                    config.outputDir]
@@ -206,8 +171,4 @@ if __name__ == "__main__":
     sys.excepthook = handle_exception
     create_directories()
     
-    try:
-        if sys.argv[1] == "regenerate":
-            regeneratePackages()
-    except IndexError:
-        buildPackages()
+    buildPackages()
