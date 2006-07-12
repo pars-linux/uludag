@@ -39,6 +39,7 @@ def buildPackages():
 
     logger.raw("QUEUE")
     logger.info("Work Queue: %s" % (qmgr.workQueue))
+    mailer.info("Heyoo sırası ile %s paketlerini derlemeye başlıyorum..." % qmgr.workQueue)
     logger.raw()
     
     for pspec in queue: 
@@ -76,6 +77,7 @@ def buildPackages():
     
     logger.raw("QUEUE")
     logger.info("Wait Queue: %s" % (qmgr.waitQueue))
+    mailer.info("İşim bitti, derleyemediğim paket listesi şöyle: %s" % qmgr.waitQueue)
     logger.raw()
 
     os.unlink("/var/run/buildfarm")
