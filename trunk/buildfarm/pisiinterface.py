@@ -64,18 +64,6 @@ class PisiApi:
             
         return (self.__newBinaryPackages, self.__oldBinaryPackages)
 
-    def regenerate(self, pspec):
-        pspec = os.path.join(config.localPspecRepo, pspec)
-        if not os.path.exists(pspec):
-            logger.error("'%s' pspec dosyası bulunamadı!" % (pspec))
-            raise PisiError("Pspec dosyası bulunamadı (%s)" % (pspec))
-
-        logger.info("%s için PiSi build --until install çağırılıyor" % (pspec)) 
-        self.api.build_until(pspec, "install",)
-
-        logger.info("%s için PiSi build --until package çağırılıyor" % (pspec)) 
-        self.api.build_until(pspec, "package",)
-            
     def install(self, p):
         a = []
         a.append(p)
