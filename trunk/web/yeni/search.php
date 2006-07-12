@@ -30,17 +30,29 @@
     <tr>
         <td id="mainBody" style="width:770px" colspan=2>
             <div id="hede">
+                <center>
+                    <br />
+                    <form action="?">
+                        <input type="text" name="q" size=55>&nbsp;<input type="submit" value="yeniden ara">
+                    </form>
+                </center>
                 <?php
 
                 if (isset($_GET["q"])) {
-                    $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
-                    $Results = $Pardus->Search($_GET["q"]);
-                    $i=0;
-                    if ($Results) {
-                        foreach ($Results as $Values) {
-                            echo "<b><a href='?".$Values['NiceTitle']."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$_GET['q'],$Values['Score'])."...</p>";
+                    $SearchWord = htmlspecialchars(strip_tags($_GET["q"]));
+                    if (strlen($SearchWord)>3) {
+                        $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
+                        $Results = $Pardus->Search($_GET["q"]);
+                        if ($Results[0]['NiceTitle']<>"") echo "Toplam ".sizeof($Results)." kayıt bulundu.Ayrıca <a href='http://www.google.com.tr/search?q=$SearchWord' target='_blank'>Google sonuçları</a>na da göz atabilirsiniz.<br>";
+                        else echo "Hiçbir kayıda rastlanmadı, daha fazla kelime ile aramayı ya da <a href='http://www.google.com.tr/search?q=$SearchWord' target='_blank'>Google sonuçları</a>na göz atmayı deneyebilirsiniz.";
+                        echo "<hr>";
+                        if ($Results) {
+                            foreach ($Results as $Values)
+                                echo "<b><a href='?".$Values['NiceTitle']."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$_GET['q'],$Values['Score'])."...</p>";
                         }
                     }
+                    else
+                        echo "Arama kelimesi en az 4 (dört) karakter olmalıdır.";
                 }
 
                 ?>
