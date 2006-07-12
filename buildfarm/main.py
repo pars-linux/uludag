@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2006, TUBITAK/UEKAE
-# 
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -41,8 +41,8 @@ def buildPackages():
     logger.info("Work Queue: %s" % (qmgr.workQueue))
     mailer.info("Heyoo sırası ile %s paketlerini derlemeye başlıyorum..." % qmgr.workQueue)
     logger.raw()
-    
-    for pspec in queue: 
+
+    for pspec in queue:
         packagename = os.path.basename(os.path.dirname(pspec))
         build_output = open(os.path.join(config.outputDir,packagename+".log"), "w")
         logger.info("Compiling source %s (%d of %d)" % (packagename,
@@ -74,14 +74,17 @@ def buildPackages():
                     qmgr.removeFromWorkQueue(pspec)
             pisi.finalize()
             movePackages(newBinaryPackages, oldBinaryPackages)
-    
+
     logger.raw("QUEUE")
     logger.info("Wait Queue: %s" % (qmgr.waitQueue))
-    mailer.info("İşim bitti, derleyemediğim paket listesi şöyle: %s" % qmgr.waitQueue)
+    if qmgr.waitQueue:
+        mailer.info("İşim bitti, derleyemediğim paket listesi şöyle: %s" % qmgr.waitQueue)
+    else:
+        mailer.info("Herşeyi derledim, megabaytlarım sağolsun.")
     logger.raw()
 
     os.unlink("/var/run/buildfarm")
-    
+
 def movePackages(newBinaryPackages, oldBinaryPackages):
     # sanitaze input
     try:
@@ -120,7 +123,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
         if exists(join(config.workDir, package)):
             copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
-       
+
     def moveUnchangedPackage(package):
         logger.info("*** Değişmemiş paket '%s' işleniyor" % (package))
         if exists(join(config.workDir, package)):
@@ -134,19 +137,19 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     for package in oldPackages:
         if package:
             moveOldPackage(package)
- 
+
     for package in unchangedPackages:
         if package:
             moveUnchangedPackage(package)
-            
+
 def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join
     remove = os.remove
     remove(join(config.workDir, package))
-    
+
 
 def create_directories():
-    directories = [config.workDir, 
+    directories = [config.workDir,
                    config.binaryPath,
                    config.localPspecRepo,
                    config.outputDir]
@@ -167,10 +170,10 @@ def handle_exception(exception, value, tb):
     logger.error(str(exception))
     logger.error(str(value))
     logger.error(s.read())
-    
+
 
 if __name__ == "__main__":
     sys.excepthook = handle_exception
     create_directories()
-    
+
     buildPackages()
