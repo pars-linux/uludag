@@ -27,7 +27,9 @@
 
         function Search($Que) {
             $Que = mysql_escape_string($Que);
-            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score DESC";
+            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que' IN BOOLEAN MODE) ORDER BY Score DESC";
+            #echo $query;
+
             return $this->MakeArray(mysql_query($query,$this->Connection));
         }
 
