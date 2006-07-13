@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
+
+  <!-- List all the skins being supplied by this theme -->
+  <RDF:Seq about="urn:mozilla:skin:root">
+    <RDF:li resource="urn:mozilla:skin:Tullifox"/>
+  </RDF:Seq>
+  
+  <RDF:Description about="urn:mozilla:skin:Tullifox" 
+        chrome:displayName="Tullifox"
+        chrome:accessKey="N"
+        chrome:author="Arda Çetin"
+        chrome:authorURL="http://arda.pardusman.org/blog/"
+        chrome:description="Tullifox theme based is Tulliana 2.0 icon set"
+        chrome:name="Tullifox"
+        chrome:image="preview.png" >
+   <chrome:packages>
+      	<RDF:Seq about="urn:mozilla:skin:Tullifox:packages">
+        <RDF:li resource="urn:mozilla:skin:Tullifox:browser"/>
+        <RDF:li resource="urn:mozilla:skin:Tullifox:communicator"/>
+        <RDF:li resource="urn:mozilla:skin:Tullifox:global"/>
+        <RDF:li resource="urn:mozilla:skin:Tullifox:mozapps"/>
+        <RDF:li resource="urn:mozilla:skin:Tulifox:help"/>
+      </RDF:Seq>
+    </chrome:packages>
+  </RDF:Description>
+
+  <!-- Version Information.  State that we work only with major version 1 of this package. -->
+  <RDF:Description chrome:skinVersion="1.5" about="urn:mozilla:skin:Tullifox:browser"/>
+  <RDF:Description chrome:skinVersion="1.5" about="urn:mozilla:skin:Tullifox:communicator"/>
+  <RDF:Description chrome:skinVersion="1.5" about="urn:mozilla:skin:Tullifox:global"/>
+  <RDF:Description chrome:skinVersion="1.5" about="urn:mozilla:skin:Tullifox:mozapps"/>
+  <RDF:Description chrome:skinVersion="1.5" about="urn:mozilla:skin:Tullifox:help"/>
+</RDF:RDF>
+
