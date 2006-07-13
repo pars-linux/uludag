@@ -43,8 +43,8 @@
                     if (strlen($SearchWord)>3) {
                         $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
                         $Results = $Pardus->Search($_GET["q"]);
-                        if ($Results[0]['NiceTitle']<>"") echo "Toplam ".sizeof($Results)." kayıt bulundu.Ayrıca <a href='http://www.google.com.tr/search?q=$SearchWord' target='_blank'>Google sonuçları</a>na da göz atabilirsiniz.<br>";
-                        else echo "Hiçbir kayıda rastlanmadı, daha fazla kelime ile aramayı ya da <a href='http://www.google.com.tr/search?q=$SearchWord' target='_blank'>Google sonuçları</a>na göz atmayı deneyebilirsiniz.";
+                        if ($Results[0]['NiceTitle']<>"") echo "Toplam ".sizeof($Results)." kayıt bulundu.Ayrıca <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na da göz atabilirsiniz.<br>";
+                        else echo "Hiçbir kayıda rastlanmadı, daha fazla kelime ile aramayı ya da <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na göz atmayı deneyebilirsiniz.";
                         echo "<hr>";
                         if ($Results) {
                             foreach ($Results as $Values)
