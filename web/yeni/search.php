@@ -21,7 +21,8 @@
         <td id="header">
             <div id="menu">
                 <b>
-                <a href="index.php">Ana Sayfa</a> » <?php echo "'".htmlspecialchars($_GET["q"])."'";?> için arama sonuçları
+ 		<?php $SearchWord = htmlspecialchars(strip_tags(trim($_GET["q"]))); ?>
+                <a href="index.php">Ana Sayfa</a> » <?="'".$SearchWord."'"?> için arama sonuçları
                 </b>
             </div>
         </td>
@@ -33,22 +34,21 @@
                 <center>
                     <br />
                     <form action="?">
-                        <input type="text" name="q" size=55>&nbsp;<input type="submit" value="yeniden ara">
+                        <input type="text" name="q" size=55 value="<?=$SearchWord?>">&nbsp;<input type="submit" value="yeniden ara">
                     </form>
                 </center>
                 <?php
 
                 if (isset($_GET["q"])) {
-                    $SearchWord = htmlspecialchars(strip_tags($_GET["q"]));
-                    if (strlen($SearchWord)>3) {
+                     if (strlen($SearchWord)>3) {
                         $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
-                        $Results = $Pardus->Search($_GET["q"]);
+                        $Results = $Pardus->Search($SearchWord);
                         if ($Results[0]['NiceTitle']<>"") echo "Toplam ".sizeof($Results)." kayıt bulundu.Ayrıca <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na da göz atabilirsiniz.<br>";
                         else echo "Hiçbir kayıda rastlanmadı, daha fazla kelime ile aramayı ya da <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na göz atmayı deneyebilirsiniz.";
                         echo "<hr>";
                         if ($Results) {
                             foreach ($Results as $Values)
-                                echo "<b><a href='?".$Values['NiceTitle']."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$_GET['q'],$Values['Score'])."...</p>";
+                                echo "<b><a href='?".$Values['NiceTitle']."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$SearchWord,$Values['Score'])."...</p>";
                         }
                     }
                     else
