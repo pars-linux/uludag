@@ -26,7 +26,7 @@
         }
 
         function Search($Que) {
-            $Que = mysql_escape_string($Que);
+            $Que = mysql_escape_string(trim($Que));
             $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score DESC";
             $EscapQuery = "SELECT * FROM Pages WHERE (Content LIKE '%$Que%') OR (Title LIKE '%$Que%')";
             $QResult = mysql_query($query,$this->Connection);
