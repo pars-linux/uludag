@@ -25,7 +25,6 @@ tasmaksplashthememgr.desktop \
 tasmakwindecoration.desktop \
 tasmakwinoptions.desktop \
 tasmalanguage.desktop \
-tasmalaptop.desktop \
 tasmamouse.desktop \
 tasmapanel.desktop \
 tasmaprinters.desktop \
