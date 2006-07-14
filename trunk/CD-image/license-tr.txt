@@ -6,8 +6,10 @@ GNU Genel Kamu Lisansı (GPL)
 
 Sürüm 2, Haziran 1991
 
-Telif Hakkı (C) 1989, 1991 Free Software Foundation, Inc.
-59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+Telif Hakkı (C) 1989, 1991 
+Free Software Foundation, Inc.
+59 Temple Place - Suite 330, 
+Boston, MA 02111-1307, USA
 
 Bu lisans dökümanının birebir kopyalarını yapma ve dağıtma izni herkese verilmiştir, fakat metinde  değişiklik yapma izni yoktur.
 
