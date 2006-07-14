@@ -82,7 +82,20 @@ def buildPackages():
     else:
         mailer.info("Herşeyi derledim, megabaytlarım sağolsun.")
     logger.raw()
+  
 
+    logger.raw()
+    logger.info("Index oluşturuluyor...")
+
+    current = os.getcwd()
+    os.chdir(config.binaryPath)
+    os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
+    logger.info("Index oluşturuldu...")
+
+    #FIXME: will be enableb after some internal tests
+    #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
+
+    os.chdir(current)
     os.unlink("/var/run/buildfarm")
 
 def movePackages(newBinaryPackages, oldBinaryPackages):
