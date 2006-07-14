@@ -53,7 +53,7 @@ def index(req, data=""):
         return _MISSING
 
     # An IP may submit only one feedback in 24h
-    submissions = sql.scalar_query("SELECT Count(*) FROM feedback WHERE ip=%s AND now()-submitdate < 86400", req.get_remote_host())
+    submissions = sql.scalar_query("SELECT Count(*) FROM feedback WHERE ip=%s AND now()-submitdate < 600", req.get_remote_host())
     if submissions > 0:
         return _FLOOD
 
