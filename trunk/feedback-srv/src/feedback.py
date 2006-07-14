@@ -24,6 +24,7 @@ def index(req, data=""):
     _VERSION = 2
     _MISSING = 3
     _DATABASE = 4
+    _FLOOD = 5
 
     # Decode submitted data
     try:
@@ -51,6 +52,11 @@ def index(req, data=""):
     if len(s1 - s2) != 0:
         return _MISSING
 
+    # An IP may submit only one feedback in 24h
+    submissions = sql.scalar_query("SELECT Count(*) FROM feedback WHERE ip=%s AND now()-submitdate < 86400", req.get_remote_host())
+    if submissions > 0:
+        return _FLOOD
+
     if "hw" in data:
         s1 = set(["memtotal", "swaptotal", "cpu_model", "cpu_speed", "kernel"])
         s2 = set(data["hw"].keys())
@@ -59,7 +65,7 @@ def index(req, data=""):
             return _MISSING
 
     values = {
-              "ip":  req.get_remote_host(),
+              "ip": req.get_remote_host(),
               "submitdate": time.strftime('%Y-%m-%d %H:%M'),
               "experience": data.get("experience", "0"),
               "purpose": data.get("purpose", "0"),
