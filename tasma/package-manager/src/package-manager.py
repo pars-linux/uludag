@@ -577,7 +577,7 @@ class MainApplicationWidget(QWidget):
 
     def refreshUpdateDialog(self):
         appList = pisi.api.list_upgradable()
-        if not len(appList):
+        if not len(appList) == 0:
             self.updateDialog.close()
         else:
             try:
