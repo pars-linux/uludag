@@ -30,7 +30,7 @@
 #include "ticonview.h"
 
 TIconView::TIconView( QWidget *parent, const char* name )
-  : KIconView( parent, name ), _module(0L), _oldModuleInfo(0L)
+  : KIconView( parent, name ), _module(0L)
 {
     setResizeMode( Adjust );
     setItemsMovable( false );
@@ -86,9 +86,6 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 {
   // kdWarning() << "LU LU LU I got some apple" << endl;
     TIconViewItem *_item = static_cast<TIconViewItem*>( item );
-  
-    if(_oldModuleInfo) KCModuleLoader::unloadModule(*_oldModuleInfo);
-
     KSimpleConfig cfg(_item->moduleinfo()->fileName(),true);
 
     if(cfg.readEntry("X-Tasma-Fork"))
@@ -98,7 +95,6 @@ void TIconView::slotItemSelected( QIconViewItem* item )
       }
 
     _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
-    _oldModuleInfo = _item->moduleinfo();
 
     if ( _module ) {
         emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text(),
@@ -109,8 +105,7 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 void TIconView::contentsMouseDoubleClickEvent (QMouseEvent *event)
 {
   _module = 0L;
-  _oldModuleInfo = 0L;
-  
+
   KIconView::contentsMouseDoubleClickEvent(event);
 }
 
@@ -148,7 +143,7 @@ void TIconView::startDrag()
 }
 
 TIconView::~TIconView()
-{   
+{
 }
 
 void TIconView::keyPressEvent(QKeyEvent* event)
@@ -158,7 +153,7 @@ void TIconView::keyPressEvent(QKeyEvent* event)
 
     QIconView::keyPressEvent(event);
 }
-    
+
 TIconViewItem::TIconViewItem( TIconView *parent, const QString& text,
                               const QPixmap& icon, KCModuleInfo* moduleinfo)
     : KIconViewItem( parent, text, icon )
