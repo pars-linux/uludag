@@ -27,7 +27,7 @@ import comar
 
 
 def AboutData():
-    about_data = KAboutData('service_manager',
+    about_data = KAboutData('service-manager',
                             'Service Manager',
                             '1.0.6',
                             'Service Manager Interface',
