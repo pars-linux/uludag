@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-03 09:31+0300\n"
+"POT-Creation-Date: 2006-07-23 19:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,27 +28,31 @@ msgstr ""
 msgid "Help with IPTables"
 msgstr ""
 
-#: src/firewall-config.py:106 src/firewall.py:354
+#: src/firewall-config.py:52
+msgid "Help with KDE stuff"
+msgstr ""
+
+#: src/firewall-config.py:107 src/firewall.py:354
 msgid "In"
 msgstr ""
 
-#: src/firewall-config.py:106 src/firewall.py:355
+#: src/firewall-config.py:107 src/firewall.py:355
 msgid "Out"
 msgstr ""
 
-#: src/firewall-config.py:129 src/firewall.py:359
+#: src/firewall-config.py:130 src/firewall.py:359
 msgid "Reject"
 msgstr ""
 
-#: src/firewall-config.py:129 src/firewall.py:358
+#: src/firewall-config.py:130 src/firewall.py:358
 msgid "Accept"
 msgstr ""
 
-#: src/firewall-config.py:140 src/firewall.py:380
+#: src/firewall-config.py:141 src/firewall.py:380
 msgid "Firewall Logs"
 msgstr ""
 
-#: src/firewall-config.py:174 src/firewall.py:322
+#: src/firewall-config.py:173 src/firewall.py:322
 msgid "Firewall Configuration"
 msgstr ""
 
@@ -87,7 +91,7 @@ msgid ""
 "E.g.: 1000-1500,2000,3000"
 msgstr ""
 
-#: src/firewall-config.py:503
+#: src/firewall-config.py:501
 msgid "Pardus Firewall Interface is already running!"
 msgstr ""
 

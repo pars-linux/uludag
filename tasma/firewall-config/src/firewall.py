@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'firewall.ui'
+# Form implementation generated from reading ui file 'src/firewall.ui'
 #
-# Created: Paz Tem 9 09:10:59 2006
+# Created: Paz Tem 23 19:10:55 2006
 #      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
 #
 # WARNING! All changes made in this file will be lost!

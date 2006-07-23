@@ -38,7 +38,7 @@ def AboutData():
     global version,description
     
     about_data = KAboutData("firewall-config",
-                            "Firewal Configuration",
+                            "Firewall Configuration",
                             version,
                             description,
                             KAboutData.License_GPL,
