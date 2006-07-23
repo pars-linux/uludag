@@ -37,7 +37,7 @@ version = "1.5.1"
 def AboutData():
     global version,description
     
-    about_data = KAboutData("firewall_config",
+    about_data = KAboutData("firewall-config",
                             "Firewal Configuration",
                             version,
                             description,
