@@ -48,5 +48,6 @@ scanner:x:440:
 messagebus:x:441:
 haldaemon:x:442:haldaemon
 plugdev:x:443:
+firebird:x:450:firebird
 nogroup::65533:
 nobody::65534:
