@@ -65,9 +65,9 @@
 		<a href="./sss.html#ziyaret">Where is Pardus developed? What should I do if I want to meet you?</a><br><br>
 		
 		<span class="baslik"><img src="./images/bullet-krm.png"> Using Pardus</span><br><br>
-		<a href="./sss.html#calisan_cd">What is Pardus Live Cd?</a><br>
-		<a href="./sss.html#md5sum">Some files on your web page have .md5sum extension. What is it?</a><br>
 		<a href="./sss.html#indir">How can I download Pardus?</a><br>
+		<a href="./sss.html#md5sum">Some files on your web page have .md5sum extension. What is it?</a><br>
+		<a href="./sss.html#calisan_cd">What is Pardus Live Cd?</a><br>
 		<a href="./sss.html#cd_yazimi">What should I attend to while writing Pardus to a CD?</a><br>
 		<a href="./sss.html#kurumsal">I want to use Pardus in my corporation. Do you give corporate support?</a><br>
 		<a href="./sss.html#macinthos">Can I use Pardus on my Macintosh?</a><br><br>
@@ -183,7 +183,16 @@ UEKAE is in TÜBİTAK Gebze Campus, Kocaeli, Turkey where Pardus Project team al
 		<!-- Kullanma ve Çalıştırma -->
 
 		<span class="baslik"><img src="./images/bullet-krm.png"> Using Pardus</span><br><br>
-		<a name="calisan_cd" href="./sss.html#top"><i>What is Pardus Live CD?</i></a><br><br>
+	
+		<a name="indir" href="./sss.html#top"><i>How can I download Pardus?</i></a><br><br>
+
+Use the following link to download Pardus: <a href="ftp://ftp.pardus.org.tr/pub/pardus/kurulan">ftp://ftp.pardus.org.tr/pub/pardus/kurulan</a>
+<br><br>
+After downloading the file, please check md5sum as told <a name="md5sum" href="./sss.html#md5sum">here</a> to be sure that you downloaded a non-corrupt file.
+<br>
+Alternatively, you can try Pardus Live CD without installing it to your hard disk. Pardus Live CD can be obtained from <a href=ftp://ftp.pardus.org.tr/pub/pardus/calisan>here</a>.
+<br><br>
+			<a name="calisan_cd" href="./sss.html#top"><i>What is Pardus Live CD?</i></a><br><br>
 
 Pardus Live CD is a product of Pardus Project that contains Linux kernel, software that most of them are free and developed by Pardus team. It fully works on CD and doesn't need to be installed to hard drive. Pardus Live CD has been developed to test Pardus Linux without installing to hard drive. You can use Pardus without damaging the other operating systems installed to your hard drive. You should only set BIOS to boot from CD.
 <br><br>
@@ -193,15 +202,6 @@ For more information about Pardus Live Cd and usage, visit <a href="urunler/inde
 		<a name="md5sum" href="./sss.html#top"><i>Some files on your web page have .md5sum extension. What is it?</i></a><br><br>
 
 MD5SUM files are used to control whether if the downloaded ISO files are damaged while downloading. When you open MD5SUM files with an editor, you will see a string and a file name. You can check the MD5SUM of ISO file with <a href="ftp://ftp.pardus.org.tr/pub/md5summer.exe">md5summer.exe</a> application. If the result of MD5SUM of ISO file and the string in the MD5SUM file aren't the same, it means ISO file was damaged while downloading. In that you have to download the ISO file again. Linux users can do this with "md5sum" application. In console, use "md5sum -c file_name.md5sum" command to check if the ISO file was damaged or not.
-<br><br>
-		
-		<a name="indir" href="./sss.html#top"><i>How can I download Pardus?</i></a><br><br>
-
-Use the following link to download Pardus: <a href="ftp://ftp.pardus.org.tr/pub/pardus/kurulan">ftp://ftp.pardus.org.tr/pub/pardus/kurulan</a>
-<br><br>
-After downloading the file, please check md5sum as told <a name="md5sum" href="./sss.html#md5sum">here</a> to be sure that you downloaded a non-corrupt file.
-<br>
-Alternatively, you can try Pardus Live CD without installing it to your hard disk. Pardus Live CD can be obtained from <a href=ftp://ftp.pardus.org.tr/pub/pardus/calisan>here</a>.
 <br><br>
 		
 		<a name="cd_yazimi" href="./sss.html#top"><i>What should I attend to while writing Pardus to CD?</i></a><br><br>
@@ -311,7 +311,7 @@ Pardus contains OpenOffice package for office applications. You can use your doc
 		
 		<a name="internet" href="./sss.html#top"><i>Can I read my e-mails, surf on Internet?</i></a><br><br>
 
-	Pardus contains applications for users described as <a href="http://pardus.org.tr/bilisim_okur-yazari/bilisim_okur-yazari.html">user who have informatics literacy</a> to answer expectations for Internet. You can surf on internet(Firefox, Konqueror), read e-mails(Kmail, Thunderbird), follow RSS feedbacks(Akregator), connect to ftp servers(Konqueror), connect to ICQ, Jabber, MSN, AIM, Gadu-Gadu, YahooIM, IRC (Kopete, Konversation) in Pardus by using various applications so you can use all basic Internet services. 
+	Pardus contains applications for users described as <a href="http://pardus.org.tr/bilisim_okur-yazari/bilisim_okur-yazari.html">user who have informatics literacy</a> to answer expectations for Internet. You can surf on internet (Firefox, Konqueror), read e-mails (Kmail, Thunderbird), follow RSS feedbacks (Akregator), connect to ftp servers (Konqueror), connect to ICQ, Jabber, MSN, AIM, Gadu-Gadu, YahooIM, IRC (Kopete, Konversation) in Pardus by using various applications so you can use all basic Internet services. 
 		<br>
 		<br>
 		
@@ -322,7 +322,8 @@ Lots of software comes with distribution like Kaffeine, MPlayer, Juk, XMMS, Noat
 		
 		<a name="kurulum" href="./sss.html#top"><i>Can I install Pardus Live CD to my computer?</i></a><br><br>
 
-While Live Cd was developed, its system files and settings were set to detect hardware automatically and use low memory. An expert user can create an installed system by copying the system files to hard drive and changing the settings but it is not recommended. When the installation cd of Pardus will be prepared, we will have a more easy to install and set so  system so we suggest users to wait for installation cd.
+Download and install Pardus 1.0 after trying Pardus Live CD, since the Live CD is intended to see and experiment Pardus and it's not for daily use.
+
 		<br><br>
 		
 		<a name="dosyalarim" href="./sss.html#top"><i>Does Pardus damage files in my computer?</i></a><br><br>
