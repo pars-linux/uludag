@@ -1,0 +1,296 @@
+# Firewall Graphical User Interface
+# Copyright (C) 2006, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the FW_KGA package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: firewall-config\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-07-23 19:10+0300\n"
+"PO-Revision-Date: 2006-04-27 13:04+0300\n"
+"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/firewall-config.py:34
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Pardus Güvenlik Duvarı Kullanıcı Grafik Arabirimi"
+
+#: src/firewall-config.py:50
+msgid "GUI Design & Usability"
+msgstr "KGA Tasarımı & Kullanılabilirlik"
+
+#: src/firewall-config.py:51
+msgid "Help with IPTables"
+msgstr "IPTables Yardımı"
+
+#: src/firewall-config.py:52
+msgid "Help with KDE stuff"
+msgstr ""
+
+#: src/firewall-config.py:107 src/firewall.py:354
+msgid "In"
+msgstr "İçeri"
+
+#: src/firewall-config.py:107 src/firewall.py:355
+msgid "Out"
+msgstr "Dışarı"
+
+#: src/firewall-config.py:130 src/firewall.py:359
+msgid "Reject"
+msgstr "Reddet"
+
+#: src/firewall-config.py:130 src/firewall.py:358
+msgid "Accept"
+msgstr "Kabul Et"
+
+#: src/firewall-config.py:141 src/firewall.py:380
+msgid "Firewall Logs"
+msgstr "Güvenlik Duvarı Kayıtları"
+
+#: src/firewall-config.py:173 src/firewall.py:322
+msgid "Firewall Configuration"
+msgstr "Güvenlik Duvarı Ayarları"
+
+#: src/firewall-config.py:239
+msgid "&Stop Firewall"
+msgstr "Güvenlik &Duvarını Durdur"
+
+#: src/firewall-config.py:240 src/firewall.py:336
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışıyor</font></b>"
+
+#: src/firewall-config.py:242
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+"Güvenlik duvarını durdurmak ve gelen/giden tüm bağlantılara izin vermek için "
+"tıklayın."
+
+#: src/firewall-config.py:244
+msgid "&Start Firewall"
+msgstr "Güvenlik &Duvarını Başlat"
+
+#: src/firewall-config.py:245
+msgid "<b><font size=\"+1\">Firewall is not running</font></b>"
+msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışmıyor</font></b>"
+
+#: src/firewall-config.py:247
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+"Güvenlik duvarını başlatmak ve belirlenen servislere erişime izin vermek "
+"için tıklayın."
+
+#: src/firewall-config.py:314 src/firewall-config.py:320
+msgid ""
+"Ports must be in valid format.\n"
+"\n"
+"E.g.: 1000-1500,2000,3000"
+msgstr ""
+"Portlar geçerl fotmatta olmalı.\n"
+"\n"
+"Örnek: 1000-1500,2000,3000"
+
+#: src/firewall-config.py:501
+msgid "Pardus Firewall Interface is already running!"
+msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor!"
+
+#: src/firewall.py:256 src/firewall.py:371
+msgid "Direction"
+msgstr "Yön"
+
+#: src/firewall.py:257 src/firewall.py:372
+msgid "From"
+msgstr "Kaynak"
+
+#: src/firewall.py:258 src/firewall.py:373
+msgid "To"
+msgstr "Hedef"
+
+#: src/firewall.py:259 src/firewall.py:374
+msgid "Action"
+msgstr "Eylem"
+
+#: src/firewall.py:323
+msgid "Enter the IP address of the "
+msgstr ""
+
+#: src/firewall.py:325
+msgid "Alt+H"
+msgstr "Alt+K"
+
+#: src/firewall.py:327 src/firewall.py:369
+msgid "Alt+A"
+msgstr "Alt+E"
+
+#: src/firewall.py:328
+msgid "&Ok"
+msgstr "&Tamam"
+
+#: src/firewall.py:329
+msgid "Alt+O"
+msgstr "Alt+T"
+
+#: src/firewall.py:331
+msgid "Alt+C"
+msgstr "Alt+İ"
+
+#: src/firewall.py:333
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr ""
+"Güvenlik duvarını durdurmak ve gelen bağlantılara izin vermek için buraya "
+"tıklayın"
+
+#: src/firewall.py:334
+msgid "&Stop"
+msgstr "&Durdur"
+
+#: src/firewall.py:335
+msgid "Alt+S"
+msgstr "Alt+D"
+
+#: src/firewall.py:338
+msgid "E-mail Services"
+msgstr "E-posta Servisleri"
+
+#: src/firewall.py:339
+msgid "Domain Name Service (DNS)"
+msgstr "Alan Adı Çözümleme (DNS)"
+
+#: src/firewall.py:340
+msgid "Web Services"
+msgstr "Web Servisleri"
+
+#: src/firewall.py:341
+msgid "Remote Login Services"
+msgstr "Uzaktan Erişim Servisleri"
+
+#: src/firewall.py:342
+msgid "Windows File Sharing Services"
+msgstr "Windows Dosya Paylaşımı Servisleri"
+
+#: src/firewall.py:343
+msgid "Internet Relay Chat Services"
+msgstr "Sohbet Servisleri (IRC)"
+
+#: src/firewall.py:344
+msgid "Instant Messaging Services"
+msgstr "Anında Mesajlaşma Servisleri"
+
+#: src/firewall.py:345
+msgid "File Sharing (p2p) Services"
+msgstr "Dosya paylaşımı (p2p) Servisleri"
+
+#: src/firewall.py:346
+msgid "File Transfer Services"
+msgstr "Dosya Transferi Servisleri"
+
+#: src/firewall.py:347
+msgid "Allow other computers to access following services on this computer:"
+msgstr ""
+"Diğer bilgisayarların, bu bilgisayardaki aşağıdaki servislere erişmesine "
+"izin ver:"
+
+#: src/firewall.py:348
+msgid "Incoming Connections"
+msgstr "Gelen Bağlantılar"
+
+#: src/firewall.py:349
+msgid "New Rule"
+msgstr "Yeni Kural"
+
+#: src/firewall.py:350
+msgid "From:"
+msgstr "Kaynak:"
+
+#: src/firewall.py:351
+msgid "To:"
+msgstr "Hedef:"
+
+#: src/firewall.py:352
+msgid "Direction:"
+msgstr "Yön:"
+
+#: src/firewall.py:356
+msgid "Action:"
+msgstr "Eylem:"
+
+#: src/firewall.py:360
+msgid ""
+"Accept: The packet is allowed. Reject: The packet is filtered out (i.e "
+"deleted)"
+msgstr "Kabul Et: Paket kabul edilir. Reddet: Paket filtrelenir (silinir)"
+
+#: src/firewall.py:361 src/firewall.py:364
+msgid "Enter the port number here. Leave blank to include all ports."
+msgstr "Port numarası girin. Tüm portlar için alanı boş bırakın."
+
+#: src/firewall.py:362 src/firewall.py:363
+msgid ":"
+msgstr ":"
+
+#: src/firewall.py:365
+msgid ""
+"Enter the IP address of the host which the packet comes from. Leave blank to "
+"include all addresses."
+msgstr ""
+"Paketin geldiği bilgisayarın IP adresini yazın. Tüm adresler için alanı boş "
+"bırakın."
+
+#: src/firewall.py:367
+msgid ""
+"Enter the IP address of the machine the packet heads to. Leave blank to "
+"include all addresses."
+msgstr ""
+"Paketin gittiği bilgisayarın IP adresini yazın. Tüm adresler için alanı boş "
+"bırakın."
+
+#: src/firewall.py:368
+msgid "&Add"
+msgstr "&Ekle"
+
+#: src/firewall.py:370
+msgid "Rules"
+msgstr "Kurallar"
+
+#: src/firewall.py:376
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#: src/firewall.py:377
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: src/firewall.py:378
+msgid "ICMP"
+msgstr "ICMP"
+
+#: src/firewall.py:379
+msgid "Block incoming PING (ICMP/8) requests."
+msgstr "Gelen PING (ICMP/8) taleplerini &blokla."
+
+#: src/firewall.py:381
+msgid ""
+"Firewall logs offer a visual way of understanding what happens. Click the "
+"button below to see firewall logs."
+msgstr ""
+"Güvenlik duvarı kayıtları, sistemde neler olduğunu görme imkanı verir. "
+"Güvenlik duvarı kayıtlarını görmek için aşağıdaki düğmeye tıklayın."
+
+#: src/firewall.py:382
+msgid "&View Logs"
+msgstr "Kayıtları &Göster"
+
+#: src/firewall.py:383
+msgid "Alt+V"
+msgstr "Alt+G"
+
+#: src/firewall.py:384
+msgid "Other Features"
+msgstr "Diğer Özellikler"
