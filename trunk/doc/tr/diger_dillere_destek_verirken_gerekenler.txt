@@ -1,0 +1,31 @@
+
+These are the items you should consider before giving your language support to Pardus. Most of the user interface and help files are in po format, so an editor which can read and write po files (i.e Kbabel or Poedit) will be sufficient. 
+
+After installing Pardus, downloading kdesdk package will install Kbabel and place an entry in Pardus menu. 
+
+First priority 
+---------------
+
+- i18n of YALI
+- Localization of help and UI files of the following software:
+  - Network manager
+  - Package manager 
+  - Feedback
+  - Firewall configurator
+  - Tasma
+  - Service manager
+  - User manger
+- Localization of service scripts
+- Localization of Mudur
+- Localization of ÇOMAR
+- Localization of sysinfo
+- Localization of Kaptan
+- Giving initial language support to YALI, i.e adding German KDE files when German language support is chosen.
+
+Second priority
+-------------------------
+- Documents on web page
+- Release notes
+
+
+
