@@ -6,7 +6,7 @@ After installing Pardus, downloading kdesdk package will install Kbabel and plac
 First priority 
 ---------------
 
-- i18n of YALI
+- Localization of YALI
 - Localization of help and UI files of the following software:
   - Network manager
   - Package manager 
@@ -21,11 +21,13 @@ First priority
 - Localization of sysinfo
 - Localization of Kaptan
 - Giving initial language support to YALI, i.e adding German KDE files when German language support is chosen.
+- Giving l10n support to Thunderbird, Firefox and OpenOffice.org
+- Adding language files for other non-KDE/GNOME applications like scribus,
+  inkscape, etc.
 
 Second priority
 -------------------------
 - Documents on web page
 - Release notes
-
 
 
