@@ -13,6 +13,7 @@ import sys
 import os
 import parser
 import piksemel
+import pisi.version
 
 
 #
@@ -255,6 +256,12 @@ class Pspec:
         
         prev = None
         for tag in node.tags("Update"):
+            ver = tag.getTagData("Version")
+            if ver:
+                try:
+                    pisi.version.Version(ver)
+                except Exception, e:
+                    self.error(node, "invalid version '%s': %s" % (ver, e))
             rel = tag.getAttribute("release")
             if rel:
                 try:
