@@ -782,6 +782,11 @@ Node_appendSibling(Node *self, PyObject *args)
 	if (!PyArg_ParseTuple(args, "s", &name))
 		return NULL;
 
+	if (iks_parent(self->node) == NULL) {
+		PyErr_SetString(NotTag, "Cannot append to the top level tag, use insert");
+		return NULL;
+	}
+
 	node = iks_insert_sibling(self->node, name);
 
 	return new_node(self->doc, node);
@@ -795,6 +800,11 @@ Node_prependTag(Node *self, PyObject *args)
 
 	if (!PyArg_ParseTuple(args, "s", &name))
 		return NULL;
+
+	if (iks_parent(self->node) == NULL) {
+		PyErr_SetString(NotTag, "Cannot prepend to the top level tag, use insert");
+		return NULL;
+	}
 
 	node = iks_prepend(self->node, name);
 
@@ -829,6 +839,11 @@ Node_appendSiblingData(Node *self, PyObject *args)
 	if (!PyArg_ParseTuple(args, "s", &value))
 		return NULL;
 
+	if (iks_parent(self->node) == NULL) {
+		PyErr_SetString(NotTag, "Cannot append to the top level tag, use insert");
+		return NULL;
+	}
+
 	node = iks_append_cdata(self->node, value, strlen(value));
 
 	return new_node(self->doc, node);
@@ -842,6 +857,11 @@ Node_prependData(Node *self, PyObject *args)
 
 	if (!PyArg_ParseTuple(args, "s", &value))
 		return NULL;
+
+	if (iks_parent(self->node) == NULL) {
+		PyErr_SetString(NotTag, "Cannot prepend to the top level tag, use insert");
+		return NULL;
+	}
 
 	node = iks_prepend_cdata(self->node, value, strlen(value));
 
