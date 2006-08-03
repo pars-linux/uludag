@@ -1,0 +1,100 @@
+/* ::::: DOM Inspector support :::::*/
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: from InspectorWindow.css ::::: */
+
+#imgURLBarIcon {
+  list-style-image: url("chrome://browser/skin/icons/page.png") !important;
+  margin: 2px !important;
+  margin-right: 0px !important;
+}
+
+#btnSelecting {
+  list-style-image: url("chrome://browser/skin/inspector/select.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+#btnSelecting:hover {
+  -moz-image-region: rect(16px 16px 32px 0px) !important;
+}
+#btnSelecting[disabled="true"] {
+  -moz-image-region: rect(32px 16px 48px 0px) !important;
+}
+#btnSelecting[checked="true"],
+#btnSelecting[checked="true"]:hover {
+  list-style-image: url("chrome://browser/skin/inspector/select-checked.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+
+#btnFind {
+  list-style-image: url("chrome://browser/skin/icons/search-bar.png") !important;
+}
+#btnFind:hover {
+  list-style-image: url("chrome://browser/skin/inspector/find-hov.png") !important;
+}
+#btnFind[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/inspector/find-dis.png") !important;
+}
+
+/* ::::: from panelset.css ::::: */
+
+.viewer-list {
+  list-style-image: url("chrome://browser/skin/inspector/dominspector.png") !important;
+}
+.viewer-list:hover {
+  list-style-image: url("chrome://browser/skin/inspector/dominspector-hov.png") !important;
+}
+.viewer-list[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/inspector/dominspector-dis.png") !important;
+}
+
+#bxPanelSet .toolbarbutton-menu-dropmarker {
+  margin-left: -4px !important;
+}
+
+.viewer-menu > .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/icons/dropmarker-menu.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+.viewer-menu:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(16px 16px 32px 0px) !important;
+}
+.viewer-menu[disabled="true"] > .toolbarbutton-icon {
+  -moz-image-region: rect(32px 16px 48px 0px) !important;
+}
+
+/* kill the duplicate dropmarker on right side of panel */
+.viewer-menu > .toolbarbutton-menu-dropmarker {
+  display: none !important;
+}
+
+/* ::::: from titledSplitter.css ::::: */
+
+.titledsplitter-text {
+  color: #212731 !important;
+}
+
+.titledsplitter-closebutton {
+  -moz-appearance: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-style: none !important;
+  margin: 0px !important;
+}
+
+.titledsplitter-closeimage {
+  list-style-image: url("chrome://browser/skin/icons/close-button.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.titledsplitter-closebutton:hover,
+.titledsplitter-closebutton:hover:active {
+  border: none !important;
+  border-style: none !important;
+}
+
+.titledsplitter-closeimage:hover {
+  -moz-image-region: rect(16px 16px 32px 0px) !important;
+}
