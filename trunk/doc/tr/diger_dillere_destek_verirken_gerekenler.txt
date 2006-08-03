@@ -29,5 +29,5 @@ Second priority
 -------------------------
 - Documents on web page
 - Release notes
-
+- Summary/description localization of pspec.xml files (around 800 files)
 
