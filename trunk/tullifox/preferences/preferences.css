@@ -1,0 +1,214 @@
+/*
+# -*- Mode: Java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
+# Version: MPL 1.1/GPL 2.0/LGPL 2.1
+# 
+# The contents of this file are subject to the Mozilla Public License Version
+# 1.1 (the "License"); you may not use this file except in compliance with
+# the License. You may obtain a copy of the License at
+# http://www.mozilla.org/MPL/
+# 
+# Software distributed under the License is distributed on an "AS IS" basis,
+# WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+# for the specific language governing rights and limitations under the
+# License.
+# 
+# The Original Code is the Firefox Preferences System.
+# 
+# The Initial Developer of the Original Code is Ben Goodger.
+# Portions created by the Initial Developer are Copyright (C) 2005
+# the Initial Developer. All Rights Reserved.
+# 
+# Contributor(s):
+#   Ben Goodger <ben@mozilla.org>
+# 
+# Alternatively, the contents of this file may be used under the terms of
+# either the GNU General Public License Version 2 or later (the "GPL"), or
+# the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+# in which case the provisions of the GPL or the LGPL are applicable instead
+# of those above. If you wish to allow use of your version of this file only
+# under the terms of either the GPL or the LGPL, and not to allow others to
+# use your version of this file under the terms of the MPL, indicate your
+# decision by deleting the provisions above and replace them with the notice
+# and other provisions required by the GPL or the LGPL. If you do not delete
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+# 
+# ***** END LICENSE BLOCK *****
+*/
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Global Styles */
+
+#BrowserPreferences radio[pane=paneGeneral] {
+  list-style-image: url("chrome://browser/skin/preferences/general.png");
+}
+
+#BrowserPreferences radio[pane=panePrivacy] {
+  list-style-image: url("chrome://browser/skin/preferences/privacy.png");
+}
+
+#BrowserPreferences radio[pane=paneContent] {
+  list-style-image: url("chrome://browser/skin/preferences/content.png");
+}
+
+#BrowserPreferences radio[pane=paneDownloads] {
+ list-style-image: url("chrome://browser/skin/icons/downloads.png");
+  -moz-image-region: rect(0px 32px 32px 0px);
+}
+
+#BrowserPreferences radio[pane=paneTabs] {
+  list-style-image: url("chrome://browser/skin/icons/newtab.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+
+#BrowserPreferences radio[pane=paneAdvanced] {
+  list-style-image: url("chrome://browser/skin/preferences/advanced.png");
+}
+
+/* General Pane */
+#browserStartupHomepage {
+  padding: 2px 2px 3px 4px;
+  background-color: -moz-Dialog;
+}
+
+/* File Field Widget */
+filefield {
+  margin: 2px 4px 2px 4px;
+  -moz-appearance: textfield;
+}
+
+.fileFieldContentBox {
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
+  margin: 1px;
+}
+
+filefield[disabled="true"] .fileFieldContentBox {
+  opacity: 0.5;
+}
+
+filefield[disabled="true"] .fileFieldIcon {
+  opacity: 0.2;
+}
+
+.fileFieldIcon {
+  width: 16px;
+  height: 16px;
+  margin: 2px 4px 2px 2px;
+}
+
+.fileFieldLabel {
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 1px 0px 0px 0px;
+  margin: 0px;
+}
+
+/* Modeless Window Dialogs */
+.windowDialog,
+.windowDialog prefpane {
+  padding: 0px;
+}
+
+.contentPane {
+  margin: 9px 8px 5px 8px;
+}
+
+.actionButtons {
+  margin: 0px 3px 6px 3px !important;
+}
+
+/* Cookies Manager */
+#cookiesChildren::-moz-tree-image(domainCol) {
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+  list-style-image: url("chrome://browser/skin/icons/page.png") !important;
+}
+
+#cookiesChildren::-moz-tree-image(domainCol, container) {
+  list-style-image: url("chrome://browser/skin/icons/folder.png") !important;
+}
+
+#cookiesChildren::-moz-tree-image(domainCol, container, open) {
+  list-style-image: url("chrome://browser/skin/icons/folder-open.png") !important;
+}
+
+#cookieInfoBox {
+  border: 1px solid ThreeDShadow;
+  -moz-border-radius: 0px;
+  margin: 4px;
+  padding: 0px;
+}
+
+#cookieInfoBox textbox {
+  background-color: transparent;
+}
+
+#backgroundBox {
+  background-color: #FFFFFF; 
+  opacity: 0.5;
+}
+
+/* Download Actions Manager */
+#fileExtension {
+  width: 5em; 
+}
+
+#extensionChildren::-moz-tree-image(fileExtension) {
+  margin: 0px 5px 0px 0px;
+}
+
+#typeField {
+  font-weight: bold; 
+}
+
+/* Change Action Dialog */
+#typeIcon {
+  width: 32px;
+  height: 32px;
+  margin-right: 3px;
+}
+
+#typeField {
+  background-color: transparent;
+  margin: 1px 5px 2px 6px !important;
+}
+
+#extensionField {
+  color: GrayText;
+  font-weight: bold;
+}
+
+#ChangeActionDialog {
+  padding: 0px;
+}
+
+#ChangeActionDialog .dialog-button-box {
+  padding: 8px 10px 10px 8px;
+}
+
+#changeActionHeader {
+  border-bottom: 2px groove ThreeDFace;
+  margin: 0px;
+  padding: 10px;
+  background-color: -moz-Field;
+  color: -moz-FieldText;  
+}
+
+#changeActionContent {
+  padding: 8px 10px 10px 9px;
+}
+
+#defaultAppIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+}
+
+#defaultAppName {
+  margin-left: 6px !important; 
+  font-weight: bold;
+}
