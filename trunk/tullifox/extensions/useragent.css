@@ -1,0 +1,44 @@
+/* ::::: User Agent Switcher extension ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#useragentswitcher-toolbar-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/useragent-default.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#useragentswitcher-toolbar-button:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #useragentswitcher-toolbar-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/useragent-default-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #useragentswitcher-toolbar-button:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+#useragentswitcher-toolbar-button[default="false"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/useragent.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#useragentswitcher-toolbar-button[default="false"]:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #useragentswitcher-toolbar-button[default="false"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/useragent-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #useragentswitcher-toolbar-button[default="false"]:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+toolbar[mode="icons"] #useragentswitcher-toolbar-button > .toolbarbutton-menu-dropmarker {
+  margin-left: -2px !important;
+}
+
+toolbar[mode="text"] #useragentswitcher-toolbar-button .toolbarbutton-text {
+  padding-top: -1px !important;  /* correct alignment  */
+  padding-bottom: +1px !important;
+}

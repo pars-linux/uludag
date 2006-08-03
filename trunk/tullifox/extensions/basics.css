@@ -1,0 +1,14 @@
+/* ::::: support added for Basics extension ::::: */
+/* ::::: Developer:  Aaron Spuler ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.tabs-newbutton {
+  margin: 1px 2px !important;
+  padding: 3px 2px 3px 4px !important;
+  list-style-image: url("chrome://browser/skin/icons/newtab16.png") !important;
+}
+.tabs-newbutton:hover,
+.tabs-newbutton:hover:active {
+  list-style-image: url("chrome://browser/skin/icons/newtab16-hov.png") !important;
+}

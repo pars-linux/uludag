@@ -1,0 +1,50 @@
+/* ::::: sidebar support for Sage extension ::::: */
+/* ::::: (toolbar support is in browser/browser.css) ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#checkFeeds {
+  list-style-image: url("chrome://global/skin/subskin/icons/reload.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+#checkFeeds:hover,
+#checkFeeds[buttondown="true"] {
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+  opacity: 1.0 !important;
+}
+#checkFeeds[disabled="true"] {
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+  opacity: 0.4 !important;
+}
+  
+#discoverFeeds {
+  list-style-image: url("chrome://browser/skin/icons/search-bar.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+#discoverFeeds:hover,
+#discoverFeeds[buttondown="true"] {
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+  opacity: 1.0 !important;
+}
+#discoverFeeds[disabled="true"] {
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+  opacity: 0.4 !important;
+}
+
+#rssStatusImage[loading="true"] {
+  list-style-image: url("chrome://global/skin/throbber/throbber-circular.gif") !important;
+}
+#rssStatusImage[loading="error"] {
+  list-style-image: url("chrome://browser/skin/Info.png") !important;
+}
+
+window > hbox > vbox[sidebarcommand="viewSageSidebar"] > sidebarheader > image {
+  list-style-image: url("chrome://browser/skin/icons/livemark-item.png") !important;
+  padding: 1px !important;
+  padding-right: 4px !important;
+}
+
+/* adjust the "Options" text */
+#toolsMenuButton {
+  margin-top: -1px !important;
+}

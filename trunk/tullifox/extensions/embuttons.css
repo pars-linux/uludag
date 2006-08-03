@@ -1,0 +1,44 @@
+/* ::::: support for EMbuttons extension ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#embuttonExtensions {
+   list-style-image: url("chrome://browser/skin/extensions/icons/em-extensions.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#embuttonExtensions:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #embuttonExtensions {
+   list-style-image: url("chrome://browser/skin/extensions/icons/em-extensions-sm.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #embuttonExtensions:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+#embuttonThemes {
+   list-style-image: url("chrome://browser/skin/extensions/icons/em-themes.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#embuttonThemes:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #embuttonThemes {
+   list-style-image: url("chrome://browser/skin/extensions/icons/em-themes-sm.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #embuttonThemes:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+/* does not override the extension - image is defined in the extension's embuttons.js file */
+tab[extensions="true"] .tab-icon {
+  list-style-image: url("chrome://global/skin/subskin/icons/extensions.png") !important;
+}
+
+tab[themes="true"] .tab-icon {
+  list-style-image: url("chrome://global/skin/subskin/icons/themes.png") !important;
+}

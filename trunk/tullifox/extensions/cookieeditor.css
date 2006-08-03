@@ -1,0 +1,26 @@
+/* ::::: Add & Edit Cookies - Cookies Editor extension ::::: */
+/* ::::: http://addneditcookies.mozdev.org/ ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#anec-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/cookieedit.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#anec-button:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #anec-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/cookieedit-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #anec-button:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+/* adjust the "Close" button so the userChrome buttons.css background fills the vertical area */
+window[id="WindowedCookieEditor"] button[oncommand="window.close()"] {
+  margin-top: 28px !important;
+  padding-bottom: 12px !important;
+}

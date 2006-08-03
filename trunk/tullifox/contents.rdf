@@ -11,7 +11,7 @@
   <RDF:Description about="urn:mozilla:skin:Tullifox" 
         chrome:displayName="Tullifox"
         chrome:accessKey="N"
-        chrome:author="Arda Çetin"
+        chrome:author="Arda Cetin"
         chrome:authorURL="http://arda.pardusman.org/blog/"
         chrome:description="Tullifox theme based is Tulliana 2.0 icon set"
         chrome:name="Tullifox"

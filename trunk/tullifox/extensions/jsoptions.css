@@ -1,0 +1,29 @@
+/* ::::: JavaScript Options extension ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+prefwindow[id="JavascriptOptions"] {
+  height: 26em !important;
+  min-height: 26em !important;
+}
+
+#JavascriptOptions .paneButtonIcon {
+  width: 22px !important;
+  height: 22px !important;
+  margin-right: -1px !important;
+}
+
+#JavascriptOptions radio[pane=paneFeatures] {
+  list-style-image: url("chrome://global/skin/console/javascript.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+
+#JavascriptOptions radio[pane=paneWindows] {
+ list-style-image: url("chrome://browser/skin/icons/newwindow-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+
+#JavascriptOptions radio[pane=panePopups] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/popup-stop.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}

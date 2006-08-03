@@ -1,0 +1,22 @@
+/* ::::: Scrollable Tabs extension  ::::: */
+/* ::::: Developer:  Stephen Clavering  ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* use the images from the Link Toolbar extension */
+
+.tabs-scroll-left-button {
+ list-style-image: url("chrome://browser/skin/extensions/icons/linktoolbar.png") !important;  /* use the image for "prev" */
+  -moz-image-region: rect(0px 64px 16px 48px) !important;
+}
+.tabs-scroll-left-button[disabled="true"] {
+  -moz-image-region: rect(32px 64px 48px 48px) !important;
+}
+
+.tabs-scroll-right-button {
+ list-style-image: url("chrome://browser/skin/extensions/icons/linktoolbar.png") !important;  /* use the image for "next" */
+ -moz-image-region: rect(0px 80px 16px 64px) !important;
+}
+.tabs-scroll-right-button[disabled="true"] {
+  -moz-image-region: rect(32px 80px 48px 64px) !important;
+}

@@ -1,0 +1,142 @@
+/* ::::: Toolbar Enhancements extension ::::: */
+/* ::::: Developer:  Stephen Clavering ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.tbx-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/tbx-large.png") !important;
+/*  margin: 0px 1px 0px 1px !important; */
+}
+
+toolbar[iconsize="small"] .tbx-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/tbx-small.png") !important;
+/*  margin: 0px 2px 0px 2px !important; */
+}
+
+toolbar[iconsize="small"] .tbx-button:active {
+/*  margin: 1px 1px -1px 3px !important; */     /* show some movement when active */
+}
+
+.tbx-button:hover,
+toolbar[iconsize="small"] .tbx-button:hover {
+  opacity: 1.0 !important;
+}
+
+/* ::::: begin individual button images ::::: */
+
+#tbx-options-button {
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+toolbar[iconsize="small"] #tbx-options-button {
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+
+#tbx-addbookmark-button {
+  -moz-image-region: rect(0px 64px 32px 32px) !important;
+}
+toolbar[iconsize="small"] #tbx-addbookmark-button {
+  -moz-image-region: rect(0px 44px 22px 22px) !important;
+}
+
+#tbx-managebookmarks-button {
+  -moz-image-region: rect(0px 96px 32px 64px) !important;
+}
+toolbar[iconsize="small"] #tbx-managebookmarks-button {
+  -moz-image-region: rect(0px 66px 22px 44px) !important;
+}
+
+#tbx-save-button {
+  -moz-image-region: rect(0px 128px 32px 96px) !important;
+}
+toolbar[iconsize="small"] #tbx-save-button {
+  -moz-image-region: rect(0px 88px 22px 66px) !important;}
+
+#tbx-viewsource-button {
+  -moz-image-region: rect(0px 160px 32px 128px) !important;
+}
+toolbar[iconsize="small"] #tbx-viewsource-button {
+  -moz-image-region: rect(0px 110px 22px 88px) !important; }
+
+#tbx-jsconsole-button {
+  -moz-image-region: rect(0px 192px 32px 160px) !important;
+}
+toolbar[iconsize="small"] #tbx-jsconsole-button {
+  -moz-image-region: rect(0px 132px 22px 110px) !important;
+}
+
+#tbx-fullscreen-button {
+  -moz-image-region: rect(0px 224px 32px 192px) !important;
+}
+toolbar[iconsize="small"] #tbx-fullscreen-button {
+  -moz-image-region: rect(0px 154px 22px 132px) !important;
+}
+
+#tbx-clearcache-button {
+  -moz-image-region: rect(0px 256px 32px 224px) !important;
+}
+toolbar[iconsize="small"] #tbx-clearcache-button {
+  -moz-image-region: rect(0px 176px 22px 154px) !important;
+}
+
+#tbx-pageinfo-button {
+  -moz-image-region: rect(0px 288px 32px 256px) !important;
+}
+toolbar[iconsize="small"] #tbx-pageinfo-button {
+  -moz-image-region: rect(0px 198px 22px 176px) !important;
+}
+
+#tbx-javascript-tabpref[ischecked=true] {
+  -moz-image-region: rect(0px 320px 32px 288px) !important;
+}
+toolbar[iconsize="small"] #tbx-javascript-tabpref[ischecked=true] {
+  -moz-image-region: rect(0px 220px 22px 198px) !important;
+}
+
+#tbx-javascript-tabpref {
+  -moz-image-region: rect(0px 352px 32px 320px) !important;
+}
+toolbar[iconsize="small"] #tbx-javascript-tabpref {
+  -moz-image-region: rect(0px 242px 22px 220px) !important;
+}
+
+#tbx-images-tabpref[ischecked=true] {
+ -moz-image-region: rect(0px 384px 32px 352px) !important;
+}
+toolbar[iconsize="small"] #tbx-images-tabpref[ischecked=true] {
+  -moz-image-region: rect(0px 264px 22px 242px) !important;
+}
+
+#tbx-images-tabpref {
+  -moz-image-region: rect(0px 416px 32px 384px) !important;
+}
+toolbar[iconsize="small"] #tbx-images-tabpref {
+  -moz-image-region: rect(0px 286px 22px 264px) !important;
+}
+
+#tbx-metaredirects-tabpref[ischecked=true] {
+  -moz-image-region: rect(0px 448px 32px 416px) !important;
+}
+toolbar[iconsize="small"] #tbx-metaredirects-tabpref[ischecked=true] {
+  -moz-image-region: rect(0px 308px 22px 286px) !important;
+}
+
+#tbx-metaredirects-tabpref {
+  -moz-image-region: rect(0px 480px 32px 448px) !important;
+}
+toolbar[iconsize="small"] #tbx-metaredirects-tabpref {
+  -moz-image-region: rect(0px 330px 22px 308px) !important;
+}
+
+#tbx-plugins-tabpref[ischecked=true] {
+  -moz-image-region: rect(0px 512px 32px 480px) !important;
+}
+toolbar[iconsize="small"] #tbx-plugins-tabpref[ischecked=true] {
+  -moz-image-region: rect(0px 352px 22px 330px) !important;
+}
+
+#tbx-plugins-tabpref {
+  -moz-image-region: rect(0px 544px 32px 512px) !important;
+}
+toolbar[iconsize="small"] #tbx-plugins-tabpref {
+  -moz-image-region: rect(0px 374px 22px 352px) !important;
+}
