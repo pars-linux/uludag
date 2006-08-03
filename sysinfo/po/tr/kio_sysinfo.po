@@ -55,11 +55,11 @@ msgstr "İşletim Sistemi Bilgisi"
 
 #: sysinfo.cpp:125
 msgid "OS:"
-msgstr "OS:"
+msgstr "İşletim sistemi:"
 
 #: sysinfo.cpp:126
 msgid "Current user:"
-msgstr "Geçerli kullanıcı:"
+msgstr "Kullanıcı:"
 
 #: sysinfo.cpp:127
 msgid "System:"
@@ -216,6 +216,3 @@ msgstr "Şu anda <strong>bağlısınız</strong>"
 #: sysinfo.cpp:542
 msgid "Unknown network status"
 msgstr "Bilinmeyen ağ durumu"
-
-#~ msgid "My Documents"
-#~ msgstr "Belgelerim"
