@@ -324,7 +324,7 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 /* for dynamically resizing the Home Button on the Bookmarks or Personal Toolbar */
-/* the toolbar must actually contain bookmarks or the button will appear "normal". */
+
 
 #BookmarksToolbar[currentset*="personal-bookmarks"] #home-button,
 #PersonalToolbar[currentset*="personal-bookmarks"] #home-button {
@@ -391,7 +391,6 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 /* for dynamically resizing the New Window Button on the Bookmarks or Personal Toolbar */
-/* the toolbar must actually contain bookmarks or the button will appear "normal". */
 
 #BookmarksToolbar[currentset*="personal-bookmarks"] #new-window-button,
 #PersonalToolbar[currentset*="personal-bookmarks"] #new-window-button {
