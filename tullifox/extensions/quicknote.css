@@ -1,0 +1,48 @@
+/* ::::: QuickNote extension ::::: */
+/* ::::: Developer:  Jed Brown ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#qnoptions {
+ list-style-image: url("chrome://browser/skin/extensions/icons/qntoolbar-16.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+}
+
+#quicknote-button {
+ list-style-image: url("chrome://browser/skin/extensions/icons/qntoolbar.png") !important;
+ -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+
+#quicknote-button:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #quicknote-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/qntoolbar-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+
+toolbar[iconsize="small"] #quicknote-button:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+/* this won't work - the tab-view icon is not defined in the extension's stylesheet
+tab[quicknote-fbtab3="true"] > .tab-icon {
+  list-style-image: url("chrome://browser/skin/extensions/icons/qntoolbar-16.png") !important;
+} */
+
+#quicknote-fopenfloat,
+#quicknote-fopensidebar,
+#quicknote-fopentab,
+#quicknote-mopenfloat,
+#quicknote-mopensidebar,
+#quicknote-mopentab,
+#quicknote-moztab,
+#quicknote-tbtab,
+#quicknote-mail-context,
+#viewQuickNoteSidebar,
+#quicknote-mail-linkcontext,
+#quicknote-contexttablink,
+#quicknote-contexttab {
+  list-style-image: url("chrome://browser/skin/extensions/icons/qntoolbar-16.png") !important;
+}

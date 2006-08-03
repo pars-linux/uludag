@@ -1,0 +1,45 @@
+/* ::::: x (paranoia) and xKiosk extensions ::::: */
+/* ::::: Developers:  Chris Neale and Stephen Clavering ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#x-button,
+#xkiosk-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/x.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+  padding: 0px !important;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+  -moz-box-orient: vertical !important;
+
+}
+#x-button:hover,
+#x-button[checked="true"],
+#xkiosk-button:hover,
+#xkiosk-button[checked="true"] {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+#x-button:hover:active,
+#x-button[checked="true"],
+#xkiosk-button:hover:active,
+#xkiosk-button[checked="true"] {
+  margin-top: 4px !important;
+  margin-bottom: 2px !important;
+  margin-left: 3px !important;
+  margin-right: 1px !important;
+}
+
+toolbar[iconsize="small"] #x-button,
+toolbar[iconsize="small"] #xkiosk-button {
+  list-style-image: url("chrome://browser/skin/extensions/icons/xs.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #x-button:hover,
+toolbar[iconsize="small"] #x-button[checked="true"],
+toolbar[iconsize="small"] #xkiosk-button:hover,
+toolbar[iconsize="small"] #xkiosk-button[checked="true"] {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}

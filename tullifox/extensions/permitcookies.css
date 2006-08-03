@@ -1,0 +1,76 @@
+/* ::::: Permit Cookies extension ::::: */
+/* ::::: http://mfe.gorgias.de/ ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* large toolbar */
+
+#pcookie-button[status="notset"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-notset.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#pcookie-button:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+#pcookie-button[status="allowed"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-allowed.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#pcookie-button[status="allowed"]:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+#pcookie-button[status="blocked"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-blocked.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#pcookie-button[status="blocked"]:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+#pcookie-button[status="session"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-session.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+  opacity: 1.0 !important;
+}
+#pcookie-button[status="session"]:hover {
+ -moz-image-region: rect(32px 32px 64px 0px) !important;
+  opacity: 1.0 !important;
+}
+
+/* small toolbar */
+
+toolbar[iconsize="small"] #pcookie-button[status="notset"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-notset-sm.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #pcookie-button[status="notset"]:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+toolbar[iconsize="small"] #pcookie-button[status="allowed"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-allowed-sm.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #pcookie-button[status="allowed"]:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+toolbar[iconsize="small"] #pcookie-button[status="blocked"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-blocked-sm.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #pcookie-button[status="blocked"]:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+
+toolbar[iconsize="small"] #pcookie-button[status="session"] {
+  list-style-image: url("chrome://browser/skin/extensions/icons/pc-session-sm.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+  opacity: 1.0 !important;
+}
+toolbar[iconsize="small"] #pcookie-button[status="session"]:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+  opacity: 1.0 !important;
+}

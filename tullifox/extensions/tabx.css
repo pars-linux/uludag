@@ -1,0 +1,15 @@
+/* ::::: Tab X extension ::::: */
+/* ::::: Developer:  Stephen Clavering ::::: */
+/* As of version 0.9.2 the image displayed uses the "tabs-closebutton" class.
+/* As a result, so these images are ignored. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.tabx-tab-close-button {
+  list-style-image: url("chrome://global/skin/icons/close.png") !important;
+  -moz-image-region: rect(0px 12px 12px 0px) !important;
+  margin: 0px 1px !important;
+}
+.tabx-tab-close-button:hover {
+  -moz-image-region: rect(12px 12px 24px 0px) !important;
+}

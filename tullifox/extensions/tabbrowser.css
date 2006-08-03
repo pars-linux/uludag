@@ -1,0 +1,55 @@
+/* ::::: Tabbrowser Extensions extension ::::: */
+/* ::::: Developer:  Shimoda "Piro" Hiroshi - http://white.sakura.ne.jp/~piro/xul/_rewindforward.html.en ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); 
+	
+/* toolbar buttons */ 
+	
+#tabextensions-tabslist-button { 
+  list-style-image: url("chrome://browser/skin/extensions/icons/tablist.png") !important;
+ -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#tabextensions-tabslist-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #tabextensions-tabslist-button {
+	list-style-image: url("chrome://browser/skin/extensions/icons/tablist-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #tabextensions-tabslist-button:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+ 
+#tabextensions-loadTabSession-button { 
+	list-style-image: url("chrome://browser/skin/extensions/icons/tabsave.png") !important;
+ -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#tabextensions-loadTabSession-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #tabextensions-loadTabSession-button {
+	list-style-image: url("chrome://browser/skin/extensions/icons/tabsave-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #tabextensions-loadTabSession-button:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+ 
+#tabextensions-closedTabsHistory-button { 
+	list-style-image: url("chrome://browser/skin/extensions/icons/tabclosed.png") !important;
+ -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#tabextensions-closedTabsHistory-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+toolbar[iconsize="small"] #tabextensions-closedTabsHistory-button {
+	list-style-image: url("chrome://browser/skin/extensions/icons/tabclosed-small.png") !important;
+  -moz-image-region: rect(0px 22px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #tabextensions-closedTabsHistory-button:hover {
+  -moz-image-region: rect(22px 22px 44px 0px) !important;
+}
+ 

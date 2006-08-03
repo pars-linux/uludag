@@ -1,0 +1,20 @@
+/* ::::: support added for Tabbrowser Preferences extension ::::: */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Tabbed Browsing button in the Options panel. */
+#catTabbedButton {
+  list-style-image: url("chrome://browser/skin/icons/newtab.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+
+/* New Tab button on the tab bar. */
+.tabs-newbutton {
+  list-style-image: url("chrome://browser/skin/icons/newtab16.png") !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.tabs-newbutton:hover {
+  list-style-image: url("chrome://browser/skin/icons/newtab16-hov.png") !important;
+}
