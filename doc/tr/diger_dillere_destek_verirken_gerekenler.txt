@@ -1,33 +1,52 @@
+<h1>Adding your language to Pardus</h1>
 
 These are the items you should consider before giving your language support to Pardus. Most of the user interface and help files are in po format, so an editor which can read and write po files (i.e Kbabel or Poedit) will be sufficient. 
-
+<p>
 After installing Pardus, downloading kdesdk package will install Kbabel and place an entry in Pardus menu. 
+<p>
 
-First priority 
----------------
+<h2>First priority </h2>
 
-- Localization of YALI
-- Localization of help and UI files of the following software:
-  - Network manager
-  - Package manager 
-  - Feedback
-  - Firewall configurator
-  - Tasma
-  - Service manager
-  - User manger
-- Localization of service scripts
-- Localization of Mudur
-- Localization of ÇOMAR
-- Localization of sysinfo
-- Localization of Kaptan
-- Giving initial language support to YALI, i.e adding German KDE files when German language support is chosen.
-- Giving l10n support to Thunderbird, Firefox and OpenOffice.org
-- Adding language files for other non-KDE/GNOME applications like scribus,
+<ul>
+<li>Localization of YALI (<a href=http://svn.pardus.org.tr/uludag/trunk/yali/po>language file</a> 
+
+<li>Localization of help and UI files of the following software:
+<ul>
+  <li> Network manager
+  <li> Package manager 
+  <li> Feedback
+  <li> Firewall configurator
+  <Li> Tasma
+  <li> Service manager
+  <li> User manger
+</ul>
+<li> Localization of service scripts
+<li> Localization of Mudur (<a
+href=http://svn.pardus.org.tr/uludag/trunk/comar/mudur></a>)
+<li> Localization of ÇOMAR (<a href=http://svn.pardus.org.tr/uludag/trunk/comar/>language file</a> 
+<li> Localization of sysinfo (<a
+href=http://svn.pardus.org.tr/uludag/trunk/sysinfo/po>language file</a> 
+<li> Localization of Kaptan (<a
+href=http://svn.pardus.org.tr/uludag/trunk/kaptan/po>language file</a> 
+<li> Giving initial language support to YALI, i.e adding German KDE files when German language support is chosen.
+<li> Giving l10n support to Thunderbird, Firefox and OpenOffice.org
+<li> Adding language files for other non-KDE/GNOME applications like scribus,
   inkscape, etc.
 
-Second priority
--------------------------
+<h2>Second priority</h2>
+
 - Documents on web page
 - Release notes
 - Summary/description localization of pspec.xml files (around 800 files)
+
+<h2>Current supported languages for Pardus 1.1</h2>
+
+<ul>
+<li>English 
+<li>Turkish
+</ul>
+
+
+
+
 
