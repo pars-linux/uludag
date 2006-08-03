@@ -23,14 +23,14 @@
   <!-- My_Theme -->
   <em:name>Tullifox 0.2</em:name>
   <em:description>Tullifox is Firefox theme for Pardus Linux</em:description>
-  <em:creator>Arda Çetin</em:creator>
+  <em:creator>Arda Ã‡etin</em:creator>
   <em:contributor>Hakan Uygun</em:contributor>
-  <em:contributor>Ali Erdinç Köro¿lu</em:contributor>
+  <em:contributor>Ali ErdinÃ§ KÃ¶roÄŸlu</em:contributor>
   <em:contributor>Umut Pulat</em:contributor>
-  <em:contributor>Umran Kamar</em:contributor>
-  <em:homepageURL>http://arda.pardusman.org/tullifox/</em:homepageURL>
-  <em:updateURL>http://arda.pardusman.org/tullifox/tulifox0.2.jar</em:updateURL>
-  <em:aboutURL>http://arda.pardusman.org/tullifox/</em:aboutURL>
+  <em:contributor>Ãœmran Kamar</em:contributor>
+  <em:homepageURL>http://tullifox.pardusman.org</em:homepageURL>
+  <em:updateURL>http://tullifox.pardusman.org/tulifox0.2.jar</em:updateURL>
+  <em:aboutURL>http://tullifox.pardusman.org</em:aboutURL>
   
   <!-- Front End Integration Hooks (used by Theme Manager)-->
     <em:internalName>Tullifox 0.2</em:internalName>
