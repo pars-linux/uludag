@@ -16,6 +16,10 @@
             }
         }
 
+        function Disconnect(){
+            return mysql_close($this->Connection);
+        }
+
         function GetNewsList(){
             $query = "SELECT ID,Title,Date FROM News ORDER BY DATE DESC LIMIT 5";
             $result= mysql_query($query,$this->Connection);
@@ -48,8 +52,9 @@
             mysql_free_result($result);
         }
 
-        function GetPage($NiceTitle="Main",$Parent){
-            $query = "SELECT * FROM Pages WHERE NiceTitle='$NiceTitle' AND Parent='$Parent'";
+        function GetPage($NiceTitle="Main",$Parent="*"){
+            $Parent<>"*"?$Add="AND Parent='$Parent'":$Add="";
+            $query = "SELECT * FROM Pages WHERE NiceTitle='$NiceTitle'".$Add." LIMIT 1";
             $result = mysql_query($query,$this->Connection);
             return (mysql_fetch_array($result, MYSQL_ASSOC));
         }
@@ -73,15 +78,12 @@
         }
     }
 
-    function turnToEn($Data,$Reverse){
+    function turnToEn($Data){
         mb_regex_encoding('utf-8');
         $TR = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
         $EN = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
         for ($i=0; $i<sizeof($TR); $i++) {
-            if ($Reverse)
-                $Data = mb_ereg_replace($EN[$i],$TR[$i],$Data);
-            else
-                $Data = mb_ereg_replace($TR[$i],$EN[$i],$Data);
+            $Data = mb_ereg_replace($TR[$i],$EN[$i],$Data);
         }
         return $Data;
     }
@@ -91,12 +93,12 @@
     }
 
     function GetHighlighted($Word,$Data,$Color) {
-        $Return = mb_ereg_replace($Word,"<b>".$Word."</b>",$Data);
-        $Return = mb_ereg_replace(turnToEn($Word,0),"<b>".turnToEn($Word,0)."</b>",$Return);
+        $Return = @mb_ereg_replace($Word,"<span style='background-color:$Color;color:#444'>".$Word."</span>",$Data);
+        $Return = @mb_ereg_replace(turnToEn($Word),"<span style='background-color:$Color;color:#444'>".turnToEn($Word)."</span>",$Return);
         return $Return;
     }
 
-    function Highlight($Data,$Word,$Score,$Size=260,$Color="yellow") {
+    function Highlight($Data,$Word,$Size=260,$Color="#F5FF9A") {
         $Data       = strip_tags($Data);
         $TempData   = mb_strtolower($Data,'UTF-8');
 
@@ -108,12 +110,8 @@
             # I know it sucks.
             $Pos        = GetPos($TempData,$TempWord);
             if ($Pos==0){
-                $Pos    = GetPos($TempData,turnToEn($TempWord,0));
-                $EnWord = turnToEn($TempWord,0);
-            }
-            if ($Pos==0){
-                $Pos    = GetPos($TempData,turnToEn($TempWord,1));
-                $TrWord = turnToEn($TempWord,1);
+                $Pos    = GetPos($TempData,turnToEn($TempWord));
+                $EnWord = turnToEn($TempWord);
             }
             $Piece     .= "....".mb_substr($Data,$Pos,$Size,'UTF-8');
         }

@@ -21,8 +21,19 @@
         <td id="header">
             <div id="menu">
                 <b>
- 		<?php $SearchWord = htmlspecialchars(strip_tags(trim($_GET["q"]))); ?>
-                <a href="index.php">Ana Sayfa</a> » <?="'".$SearchWord."'"?> için arama sonuçları
+        <?php
+            if (isset($_GET["r"])) {
+                        $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
+                        $Res = $Pardus->GetPage(htmlspecialchars($_GET["r"]));
+            }
+            $SearchWord = htmlspecialchars(strip_tags(trim($_GET["q"]))); 
+        ?>
+                <a href="index.php">Ana Sayfa</a> » 
+                    <?if($Res<>""){?>
+                        <a href="?q=<?=$SearchWord?>"><?="'".$SearchWord."'"?> için arama sonuçları</a> » <?=$Res["Title"]?>
+                    <?} else {?>
+                        <?="'".$SearchWord."'"?> için arama sonuçları
+                    <? } ?>
                 </b>
             </div>
         </td>
@@ -31,6 +42,14 @@
     <tr>
         <td id="mainBody" style="width:770px" colspan=2>
             <div id="hede">
+                <?php
+                    if (isset($_GET["r"])) {
+                        $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
+                        $Res = $Pardus->GetPage(htmlspecialchars($_GET["r"]));
+                        echo GetHighlighted($SearchWord,$Res["Content"],"#F5FF9A");
+                    }
+                    else {
+                ?>
                 <center>
                     <br />
                     <form action="?">
@@ -39,22 +58,23 @@
                 </center>
                 <?php
 
-                if (isset($_GET["q"])) {
-                     if (strlen($SearchWord)>3) {
-                        $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
-                        $Results = $Pardus->Search($SearchWord);
-                        if ($Results[0]['NiceTitle']<>"") echo "Toplam ".sizeof($Results)." kayıt bulundu.Ayrıca <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na da göz atabilirsiniz.<br>";
-                        else echo "Hiçbir kayıda rastlanmadı, daha fazla kelime ile aramayı ya da <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na göz atmayı deneyebilirsiniz.";
-                        echo "<hr>";
-                        if ($Results) {
-                            foreach ($Results as $Values)
-                                echo "<b><a href='?".$Values['NiceTitle']."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$SearchWord,$Values['Score'])."...</p>";
+                    if (isset($_GET["q"])) {
+                        if (strlen($SearchWord)>3) {
+                            $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
+                            $Results = $Pardus->Search($SearchWord);
+                            if ($Results[0]['NiceTitle']<>"") echo "Toplam ".sizeof($Results)." kayıt bulundu.Ayrıca <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na da göz atabilirsiniz.<br>";
+                            else echo "Hiçbir kayıda rastlanmadı, daha fazla kelime ile aramayı ya da <a href='http://www.google.com.tr/search?ie=UTF-8&q=$SearchWord' target='_blank'>Google sonuçları</a>na göz atmayı deneyebilirsiniz.";
+                            echo "<hr>";
+                            if ($Results) {
+                                foreach ($Results as $Values)
+                                echo "<b><a href='?r=".$Values['NiceTitle']."&q=".$SearchWord."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$SearchWord)."...</p>";
+                            }
                         }
+                        else
+                            echo "Arama kelimesi en az 4 (dört) karakter olmalıdır.";
                     }
-                    else
-                        echo "Arama kelimesi en az 4 (dört) karakter olmalıdır.";
                 }
-
+                $Pardus->Disconnect();
                 ?>
             </div>
         </td>
