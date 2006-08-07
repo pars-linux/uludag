@@ -19,7 +19,7 @@ import time
 
 def index(req, data=""):
 
-    _SUCCESS = 0
+    _SUCCESS = "0"
     _DATAFORMAT = 1
     _VERSION = 2
     _MISSING = 3
@@ -52,7 +52,7 @@ def index(req, data=""):
     if len(s1 - s2) != 0:
         return _MISSING
 
-    # An IP may submit only one feedback in 24h
+    # An IP may submit only one feedback in 10 minutes.
     submissions = sql.scalar_query("SELECT Count(*) FROM feedback WHERE ip=%s AND now()-submitdate < 600", req.get_remote_host())
     if submissions > 0:
         return _FLOOD
