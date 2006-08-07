@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Feedback 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 22:37+0300\n"
+"POT-Creation-Date: 2006-08-07 15:30+0300\n"
 "PO-Revision-Date: 2005-12-24 13:17+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.net>\n"
 "Language-Team: Turkish <bahadir@haftalik.net>\n"
@@ -249,34 +249,34 @@ msgstr "Gönderiliyor"
 msgid "Goodbye!"
 msgstr "Güle güle!"
 
-#: src/feedback.py:147
+#: src/feedback.py:141
 msgid "Feedback"
 msgstr "Geribildirim"
 
-#: src/feedback.py:178
+#: src/feedback.py:166
 msgid "Collecting hardware information..."
 msgstr "Donanım bilgisi toplanıyor..."
 
-#: src/feedback.py:188 src/feedback.py:262
+#: src/feedback.py:176 src/feedback.py:250
 msgid "<font color=\"#008800\">Done</font><br>\n"
 msgstr "<font color=\"#008800\">Tamam</font><br>\n"
 
-#: src/feedback.py:192
+#: src/feedback.py:180
 msgid "Uploading data..."
 msgstr "Veri gönderiliyor..."
 
-#: src/feedback.py:255 src/feedback.py:266
+#: src/feedback.py:243 src/feedback.py:254
 msgid "<font color=\"#ff0000\">Failed</font><br>\n"
 msgstr "<font color=\"#ff0000\">Başarısız</font><br>\n"
 
-#: src/feedback.py:256
+#: src/feedback.py:244
 msgid ""
 "<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
 msgstr ""
 "<font color=\"#ff0000\">Geribildirim veritabanına bağlanılamıyor.</"
 "font><br>\n"
 
-#: src/feedback.py:269
+#: src/feedback.py:257
 msgid ""
 "<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</"
 "font><br>\n"
@@ -284,7 +284,7 @@ msgstr ""
 "<font color=\"#ff0000\">Geribildirim aracı bozulmuş. Toplanan veri hatalı.</"
 "font><br>\n"
 
-#: src/feedback.py:271
+#: src/feedback.py:259
 msgid ""
 "<font color=\"#ff0000\">Server does not support this version. Please update "
 "feedback tool.</font><br>\n"
@@ -292,7 +292,7 @@ msgstr ""
 "<font color=\"#ff0000\">Geribildirim sunucusu bu sürümü desteklemiyor. "
 "Lütfen geribildirim aracını güncelleyin</font><br>\n"
 
-#: src/feedback.py:273
+#: src/feedback.py:261
 msgid ""
 "<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</"
 "font><br>\n"
@@ -300,15 +300,20 @@ msgstr ""
 "<font color=\"#ff0000\">Geribildirim aracı bozulmuş. Toplanan veri eksik.</"
 "font><br>\n"
 
-#: src/feedback.py:275
+#: src/feedback.py:263
 msgid "<font color=\"#ff0000\">Feeback database is offline.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Geribildirim veritabanı kapalı.</font><br>\n"
 
-#: src/feedback.py:277
+#: src/feedback.py:265
+msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Daha önce geribildirimde bulundunuz.</font><br>\n"
+
+#: src/feedback.py:267
 msgid "<font color=\"#ff0000\">Feeback database has errors.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Geribildirim veritabanında hata.</font><br>\n"
 
-#: src/feedback.py:296
+#: src/feedback.py:286
 msgid "Feedback tool is already running!"
 msgstr "Geribildirim aracı zaten çalışıyor!"
 
