@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'hardwareinfodlg.ui'
 #
-# Created: Pzt Nis 3 10:21:35 2006
-#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060116
+# Created: Paz Tem 9 09:41:15 2006
+#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
 #
 # WARNING! All changes made in this file will be lost!
 

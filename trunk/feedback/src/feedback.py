@@ -40,7 +40,7 @@ from goodbyedlg import GoodbyeDlg
 from simplejson import dumps as json_encode
 
 # Version
-version = "1.0.4"
+version = "1.0.5"
 
 def AboutData():
     global version
@@ -261,6 +261,8 @@ class thread_upload(QThread):
                 text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</font><br>\n")
             elif s == "4":
                 text += i18n("<font color=\"#ff0000\">Feeback database is offline.</font><br>\n")
+            elif s == "5":
+                text += i18n("<font color=\"#ff0000\">You've already sent feedback.</font><br>\n")
             else:
                 text += i18n("<font color=\"#ff0000\">Feeback database has errors.</font><br>\n")
 
