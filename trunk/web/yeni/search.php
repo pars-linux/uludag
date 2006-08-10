@@ -69,12 +69,12 @@
                                 foreach ($Results as $Values)
                                 echo "<b><a href='?r=".$Values['NiceTitle']."&q=".$SearchWord."'>".$Values['Title']."</a></b><p class='searchresults'>".Highlight($Values['Content'],$SearchWord)."...</p>";
                             }
+                            $Pardus->Disconnect();
                         }
                         else
                             echo "Arama kelimesi en az 4 (dört) karakter olmalıdır.";
                     }
                 }
-                $Pardus->Disconnect();
                 ?>
             </div>
         </td>

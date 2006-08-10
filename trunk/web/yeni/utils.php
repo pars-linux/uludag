@@ -78,12 +78,15 @@
         }
     }
 
-    function turnToEn($Data){
+    function turnToEn($Data,$Reverse){
         mb_regex_encoding('utf-8');
         $TR = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
         $EN = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
         for ($i=0; $i<sizeof($TR); $i++) {
-            $Data = mb_ereg_replace($TR[$i],$EN[$i],$Data);
+            if ($Reverse)
+                $Data = mb_ereg_replace($EN[$i],$TR[$i],$Data);
+            else
+                $Data = mb_ereg_replace($TR[$i],$EN[$i],$Data);
         }
         return $Data;
     }
@@ -104,14 +107,15 @@
 
         $RawWord    = split(" ",$Word);
         $Size       = round ($Size/sizeof($RawWord));
+        
         foreach($RawWord as $Word) {
             $Word       = strip_tags($Word);
             $TempWord   = mb_strtolower($Word,'UTF-8');
             # I know it sucks.
             $Pos        = GetPos($TempData,$TempWord);
-            if ($Pos==0){
-                $Pos    = GetPos($TempData,turnToEn($TempWord));
-                $EnWord = turnToEn($TempWord);
+            if (!$Pos){
+                $Pos    = GetPos($TempData,turnToEn($TempWord,1));
+                $EnWord = turnToEn($TempWord,1);
             }
             $Piece     .= "....".mb_substr($Data,$Pos,$Size,'UTF-8');
         }
