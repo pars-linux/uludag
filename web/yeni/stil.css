@@ -234,7 +234,7 @@ a:hover {
 }
 
 #mainBody {
-    width: 572px;
+    width: 730px;
     background-color:#FFF;
     height: 100%;
     vertical-align:top;
@@ -256,6 +256,8 @@ a:hover {
     font-weight: bold;
     background-color: #DDD;
     padding-left:0.5em;
+    margin-left:-0.2em;
+    margin-right:-1em;
     padding-top:2px;
     padding-bottom:2px;
 }
