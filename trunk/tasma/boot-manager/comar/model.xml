@@ -4,9 +4,39 @@
 
 <group name="System">
 
-<class name="Boot">
-    <method name="getEntries"\>
-</class>
+    <class name="Boot">
+        <method name="listOptions"/>
+        <method name="getOption">
+            <argument>key</argument>
+        </method>
+        <method name="setOption">
+            <argument>key</argument>
+            <argument>value</argument>
+        </method>
+
+        <method name="listEntries"/>
+        <method name="getEntry">
+            <argument>index</argument>
+        </method>
+
+        <method name="addKernel">
+            <argument>release</argument>
+        </method>
+        <method name="addEntry">
+            <argument>title</argument>
+            <argument>parameters</argument>
+        </method>
+        <method name="updateEntry">
+            <argument>index</argument>
+            <argument>title</argument>
+            <argument>parameters</argument>
+        </method>
+
+        <method name="removeEntry">
+            <argument>index</argument>
+        </method>
+
+    </class>
 
 </group>
 
