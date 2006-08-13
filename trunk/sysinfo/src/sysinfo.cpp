@@ -115,7 +115,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     sysInfo += "<tr><td>" + i18n( "OS:" ) + "</td><td>" + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] + "</td></tr>";
     sysInfo += "<tr><td>" + i18n( "Current user:" ) + "</td><td>" + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] + "</td></tr>";
     sysInfo += "<tr><td>" + i18n( "System:" ) +  "</td><td>" + m_info[OS_SYSTEM] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "KDE:" ) + "</td><td>" + KDE_VERSION_STRING + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "KDE:" ) + "</td><td>" + KDE::versionString() + "</td></tr>";
     sysInfo += "</table>";
 
     // OpenGL info
