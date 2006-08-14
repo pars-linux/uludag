@@ -52,7 +52,10 @@ def parseGrubConfig(filename):
         elif not entry:
             options[label] = data
         elif entry:
-            entry.append("%s %s" % (label, data))
+            if data:
+                entry.append("%s %s" % (label, data))
+            else:
+                entry.append("%s" % label)
 
     if entry:
         entries.append(entry)
@@ -64,7 +67,10 @@ def saveGrubConfig(filename, opts={}, entries=[]):
     s = ""
 
     for label, data in opts.iteritems():
-        s += "%s %s\n" % (label, data)
+        if data:
+            s += "%s %s\n" % (label, data)
+        else:
+            s += "%s\n" % label
 
     s += "\n"
 
@@ -87,18 +93,23 @@ def getOption(key):
     """Returns value of an option."""
     options, entries = parseGrubConfig(grubconf)
     if key in options:
-        return options[key]
+        return "%s\n%s" % (key, options[key])
 
 def setOption(key, value=None):
     """Sets or unsets an option."""
     options, entries = parseGrubConfig(grubconf)
 
     if value:
-        options[key] = [value]
+        options[key] = value
     else:
         del options[key]
 
     saveGrubConfig(grubconf, options, entries)
+
+    if value:
+        notify("System.Boot.changed", "option_changed %s" % key)
+    else:
+        notify("System.Boot.changed", "option_removed %s" % key)
 
 def listEntries():
     """Returns list of entries."""
@@ -112,17 +123,18 @@ def getEntry(index):
     options, entries = parseGrubConfig(grubconf)
 
     if index < len(entries):
+        entries[index].insert(0, str(index))
         return "\n".join(entries[index])
     else:
         fail("No such entry")
 
-def addEntry(title, parameters, index=-1):
+def addEntry(title, commands, index=-1):
     """Adds new entry"""
     index = int(index)
     options, entries = parseGrubConfig(grubconf)
 
     entry = ["title %s" % title]
-    entry += parameters.split("\n")
+    entry += commands.split("\n")
 
     if entry in entries:
         fail("Duplicate entry.")
@@ -130,24 +142,35 @@ def addEntry(title, parameters, index=-1):
 
     if index == -1:
         entries.append(entry)
+        index = len(entries) - 1
     else:
         entries.insert(index, entry)
 
     saveGrubConfig(grubconf, options, entries)
-    return entries.index(entry)
 
-def updateEntry(index, title, parameters):
+    notify("System.Boot.changed", "entry_added %s" % index)
+    return index
+
+def updateEntry(index, title="", commands=""):
     """Adds new entry"""
     index = int(index)
     options, entries = parseGrubConfig(grubconf)
 
     if index < len(entries):
-        entry = ["title %s" % title]
-        entry += parameters.split("\n")
+        if title:
+            entry = ["title %s" % title]
+        else:
+            entry = [entries[index][0]]
+
+        if commands:
+            entry += commands.split("\n")
+        else:
+            entry += entries[index][1:]
 
         entries[index] = entry
-
         saveGrubConfig(grubconf, options, entries)
+
+        notify("System.Boot.changed", "entry_changed %s" % index)
     else:
         fail("No such entry.")
 
@@ -158,15 +181,22 @@ def addKernel(release):
     root = rootDevice()
     root_g = toGrubDevice(root)
 
-    pardus_release = open("/etc/pardus-release", "r").read().strip()
+    try:
+        name = open("/etc/pardus-release", "r").read().strip()
+    except:
+        name = "Linux"
 
-    entry = ["title %s (kernel-%s)" % (pardus_release, release),
+    title = "%s (kernel-%s)" % (name, release)
+
+    entry = ["title %s " % title,
              "kernel %s/boot/kernel-%s %s" % (root_g, release, bootParams()),
              "root %s" % root_g,
              "initrd /boot/initramfs-%s" % release]
     entries.append(entry)
+    index = len(entries) - 1
 
     saveGrubConfig(grubconf, options, entries)
+    notify("System.Boot.changed", "entry_added %s" % index)
     return entries.index(entry)
 
 def removeEntry(index):
@@ -177,5 +207,6 @@ def removeEntry(index):
     if index < len(entries):
         del entries[index]
         saveGrubConfig(grubconf, options, entries)
+        notify("System.Boot.changed", "entry_removed %s" % index)
     else:
         fail("No such entry")
