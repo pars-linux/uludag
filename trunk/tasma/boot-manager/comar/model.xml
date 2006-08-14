@@ -23,19 +23,21 @@
             <argument>release</argument>
         </method>
         <method name="addEntry">
+            <argument>index</argument>
             <argument>title</argument>
-            <argument>parameters</argument>
+            <argument>commands</argument>
         </method>
         <method name="updateEntry">
             <argument>index</argument>
             <argument>title</argument>
-            <argument>parameters</argument>
+            <argument>commands</argument>
         </method>
 
         <method name="removeEntry">
             <argument>index</argument>
         </method>
 
+        <notify name="changed"/>
     </class>
 
 </group>
