@@ -39,7 +39,7 @@ def buildPackages():
 
     logger.raw("QUEUE")
     logger.info("Work Queue: %s" % (qmgr.workQueue))
-    mailer.info("Heyoo sırası ile %s paketlerini derlemeye başlıyorum..." % qmgr.workQueue)
+    mailer.info("Heyoo sırası ile\n%s\npaketlerini derlemeye başlıyorum..." % "\n".join(qmgr.workQueue))
     logger.raw()
 
     for pspec in queue:
@@ -78,7 +78,7 @@ def buildPackages():
     logger.raw("QUEUE")
     logger.info("Wait Queue: %s" % (qmgr.waitQueue))
     if qmgr.waitQueue:
-        mailer.info("İşim bitti, derleyemediğim paket listesi şöyle: %s" % qmgr.waitQueue)
+        mailer.info("İşim bitti, derleyemediğim paket listesi şöyle:\n%s\n" % "\n".join(qmgr.waitQueue))
     else:
         mailer.info("Herşeyi derledim, megabaytlarım sağolsun.")
     logger.raw()
