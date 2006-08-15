@@ -532,7 +532,7 @@ class MainApplicationWidget(QWidget):
     def searchStringChanged(self):
         if (self.timer.isActive()):
             self.timer.stop()
-        self.timer.start(200, True)
+        self.timer.start(500, True)
 
     def searchPackage(self):
         query = self.searchLine.text()
