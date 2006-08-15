@@ -25,7 +25,7 @@
 #include "tasmatv.moc"
 
 typedef KGenericFactory<TasmaTv, QWidget > TasmaTvFactory;
-K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("kcmtasmatv"))
+K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
 
 TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
 : KCModule(TasmaTvFactory::instance(), parent, name)
@@ -35,7 +35,7 @@ TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
     QVBoxLayout *v = new QVBoxLayout(this, 0, KDialog::spacingHint());
     v->addWidget(mainWidget);
 
-    TasmaTvAbout = new KAboutData (  I18N_NOOP("tasmatv"),  I18N_NOOP(  "TASMA Tv Card Configuration Module" ),  "0.1",
+    TasmaTvAbout = new KAboutData (  "tasmatv",  I18N_NOOP(  "TASMA Tv Card Configuration Module" ),  "0.1",
 				     I18N_NOOP("TASMA Tv Card Configuration Module" ),  
 				     KAboutData::License_GPL,
 				     I18N_NOOP("(c) 2005-2006, TUBITAK - UEKAE" ) );

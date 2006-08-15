@@ -28,7 +28,7 @@
                     <cstring>tab</cstring>
                 </property>
                 <attribute name="title">
-                    <string>Tv kartı</string>
+                    <string>Tv Card</string>
                 </attribute>
                 <grid>
                     <property name="name">
@@ -47,7 +47,7 @@
                             <cstring>tvVendorLabel</cstring>
                         </property>
                         <property name="text">
-                            <string>Marka</string>
+                            <string>Manufacturer</string>
                         </property>
                     </widget>
                     <widget class="QListBox" row="1" column="1">
@@ -124,7 +124,7 @@
                             <cstring>tunderVendorLabel</cstring>
                         </property>
                         <property name="text">
-                            <string>Marka</string>
+                            <string>Manufacturer</string>
                         </property>
                     </widget>
                     <widget class="QLabel" row="0" column="1">
@@ -166,7 +166,7 @@
                     <cstring>TabPage</cstring>
                 </property>
                 <attribute name="title">
-                    <string>Seçenekler</string>
+                    <string>Options</string>
                 </attribute>
                 <grid>
                     <property name="name">
@@ -185,7 +185,7 @@
                             </sizepolicy>
                         </property>
                         <property name="title">
-                            <string>Eklentiler</string>
+                            <string>Addons</string>
                         </property>
                         <widget class="QCheckBox">
                             <property name="name">
@@ -200,7 +200,7 @@
                                 </rect>
                             </property>
                             <property name="text">
-                                <string>Radyo kartı</string>
+                                <string>Radio Card</string>
                             </property>
                         </widget>
                     </widget>
@@ -217,7 +217,7 @@
                             </sizepolicy>
                         </property>
                         <property name="title">
-                            <string>Faz Kilitlemeli Döngü (PLL)</string>
+                            <string>Phase Locked Loop (PLL)</string>
                         </property>
                         <widget class="QRadioButton">
                             <property name="name">
@@ -232,7 +232,7 @@
                                 </rect>
                             </property>
                             <property name="text">
-                                <string>PLL Kullanma</string>
+                                <string>Do not use PLL</string>
                             </property>
                         </widget>
                         <widget class="QRadioButton">
@@ -248,7 +248,7 @@
                                 </rect>
                             </property>
                             <property name="text">
-                                <string>28 Mhz Kristal</string>
+                                <string>28 Mhz Crystal</string>
                             </property>
                             <property name="checked">
                                 <bool>true</bool>
@@ -267,7 +267,7 @@
                                 </rect>
                             </property>
                             <property name="text">
-                                <string>35 Mhz Kristal</string>
+                                <string>35 Mhz Crystal</string>
                             </property>
                             <property name="checked">
                                 <bool>false</bool>

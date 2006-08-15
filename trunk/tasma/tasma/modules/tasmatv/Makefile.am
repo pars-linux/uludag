@@ -1,3 +1,5 @@
+SUBDIRS=po
+
 kde_module_LTLIBRARIES = kcm_tasmatv.la
 
 kcm_tasmatv_la_SOURCES = tasmatv.cpp tvconfigui.ui tvconfig.cpp cards-db.cpp tuners-db.cpp
