@@ -9,16 +9,17 @@
   Please read the COPYING file.
 */
 
+#include <config.h>
 
 #include <kaboutdata.h>
 #include <kdialog.h>
 #include <kgenericfactory.h>
+#include <ksimpleconfig.h>
 #include <qlistbox.h>
 #include <qradiobutton.h>
 #include <qbuttongroup.h>
 #include <qcheckbox.h>
 #include <qfile.h>
-#include <qregexp.h>
 #include <qlayout.h>
 
 #include "tasmatv.h"
@@ -53,31 +54,13 @@ TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
 
 void TasmaTv::load()
 {
-    int card, pll, radio, tuner = 0;
-
-    QFile bttv("/etc/modules.d/bttv");
-    QRegExp re(".*card=([0-9]+)( tuner=([0-9]+))?( pll=([0-9]))?( radio=([0-9]))?");
-
-    if (bttv.open(IO_ReadOnly)) {
-
-	QByteArray ba = bttv.readAll();
-	QCString str(ba.data(), ba.size() + 1);
-
-	if (re.search(str) != -1) {
-	    card  = re.cap(1).toInt();
-	    if (!re.cap(3).isEmpty())
-		tuner = re.cap(3).toInt();
-	    pll   = re.cap(5).toInt();
-	    radio = re.cap(7).toInt();
-
-	    mainWidget->selectCard(card);
-	    mainWidget->selectTuner(tuner);
-	    mainWidget->pllGroup->setButton(pll);
-	    mainWidget->radioCard->setChecked(radio);
-	}
-	
-	bttv.close();
-    }
+    KSimpleConfig *config = new KSimpleConfig(QString::fromLatin1(KDE_CONFDIR "/kcmtasmatvrc"), true);
+    config->setGroup("System");
+    mainWidget->selectCard(config->readNumEntry("Card"));
+    mainWidget->selectTuner(config->readNumEntry("Tuner"));
+    mainWidget->pllGroup->setButton(config->readNumEntry("Pll"));
+    mainWidget->radioCard->setChecked(config->readBoolEntry("Radio"));
+    delete config;
 }
 
 void TasmaTv::save()
