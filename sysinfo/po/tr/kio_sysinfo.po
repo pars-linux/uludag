@@ -95,7 +95,7 @@ msgstr "Ortak Dizinler"
 
 #: sysinfo.cpp:153
 msgid "My Home Folder"
-msgstr "Ev Dizinim"
+msgstr "Ev Dizini"
 
 #: sysinfo.cpp:154
 msgid "Root Folder"
