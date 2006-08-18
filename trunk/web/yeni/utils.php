@@ -31,13 +31,14 @@
 
         function Search($Que) {
             $Que = mysql_escape_string($Que);
-            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score FROM Pages WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score DESC";
-            $EscapQuery = "SELECT * FROM Pages WHERE (Content LIKE '%$Que%') OR (Title LIKE '%$Que%')";
+            $query = "SELECT Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') FROM Pages";
+            #$EscapQuery = "SELECT * FROM Pages WHERE (Content LIKE '%$Que%') OR (Title LIKE '%$Que%')";
             $QResult = mysql_query($query,$this->Connection);
-            if (mysql_num_rows($QResult)>0)
+            echo $query;
+            #if (mysql_num_rows($QResult)>0)
                 return $this->MakeArray($QResult);
-            else
-                return $this->MakeArray(mysql_query($EscapQuery,$this->Connection));
+            #else
+            #    return $this->MakeArray(mysql_query($EscapQuery,$this->Connection));
         }
 
         function GetNews($ID=""){
