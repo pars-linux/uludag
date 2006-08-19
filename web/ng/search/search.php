@@ -8,6 +8,7 @@
     class Sud {
         public $Encoding = "UTF-8";
         public $ReSize = 460;
+        public $bgcolors = Array ('#FFFF00','#E6A6FA','#ADD8E6','#FFA07A','#9ACD32','#FFDAB9','#98FB98','#D8BFD8');
 
         function Sud ($_RawData,$_SearchWords) {
             $this->RawData = $_RawData;
@@ -30,7 +31,8 @@
         }
 
         function GetHighlighted($Word,$Data,$Color) {
-            $Prefix = "<span style='background-color:$Color;color:#444'>";
+            $ID     = array_search($Color,$this->bgcolors);
+            $Prefix = "<span class='r_$ID' style='background-color:$Color;color:#000'>";
             $Postfix= "</span>";
             $Return = mb_ereg_replace($Word,$Prefix.$Word.$Postfix,$Data);
             $Return = mb_ereg_replace($this->turnToEn($Word),$Prefix.$this->turnToEn($Word).$Postfix,$Return);
@@ -60,19 +62,11 @@
         }
 
         function GetWordColor($Word) {
-            #FIX PreDefined Color Values.
-            $bgcolors[0]='#FFFF00';
-            $bgcolors[1]='#E6E6FA';
-            $bgcolors[2]='#ADD8E6';
-            $bgcolors[3]='#FFA07A';
-            $bgcolors[4]='#9ACD32';
-            $bgcolors[5]='#FFDAB9';
-            $bgcolors[6]='#98FB98';
-            $bgcolors[7]='#D8BFD8';
-            return $bgcolors[array_search($Word,$this->SearchWordsLower)];
+            return $this->bgcolors[array_search($Word,$this->SearchWordsLower)];
         }
 
         function Mod1(){
+            echo "<br />";
             foreach ($this->RawData as $Values){
                 echo "<b><a href='?r=".$Values['NiceTitle']."&q=".$this->SearchWord."'>".$Values['Title']."</a></b><p class='searchresults'>".$this->Highlight($Values['Content'])."...</p>";
             }

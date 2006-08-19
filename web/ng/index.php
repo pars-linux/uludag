@@ -28,7 +28,10 @@
         <table>
             <tr>
                 <td id="header" colspan=2>
-                    <span id="searchbar">
+                    <div id="menu">
+                        Ana Sayfa » Çakkıdı Çakkıdı » Çokkudu Çokkudu » Hoppidi hoppidi
+                    </div>
+                    <div id="searchbar">
                         <form action="search/" method="get">
                             <input name="q" type="text" value="<?=SEARCH?>"
                             onClick="
@@ -38,7 +41,7 @@
                                 if (this.value=='') 
                                     this.value='<?=SEARCH?>';">
                         </form>
-                    </span>
+                    </div>
                 </td>
             </tr>
 

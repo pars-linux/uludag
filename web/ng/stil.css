@@ -33,9 +33,9 @@ body {
 #menu {
     font-weight:bold;
     font-size:10px;
-    padding-top:93px;
+    padding-top:97px;
     padding-left:200px;
-    width:100%;
+    float:left;
 }
 
 li {
