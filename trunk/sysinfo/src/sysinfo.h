@@ -86,12 +86,17 @@ public:
         OS_VERSION,
         OS_MACHINE,
         OS_USER,                // username
-        OS_SYSTEM,              // SUSE version
+        OS_SYSTEM,              // Pardus version
         OS_HOSTNAME,
         GFX_VENDOR,              // Display stuff
         GFX_MODEL,
         GFX_DRIVER,
-        SYSINFO_LAST
+        SYSINFO_LAST,
+        PRODUCT,
+        MANUFACTURER,
+        TYPE,
+        BIOSVENDOR,
+        BIOSVERSION
     };
 
 private:

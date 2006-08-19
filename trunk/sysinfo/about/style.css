@@ -133,6 +133,12 @@ h2#display+table {
 	background-repeat: no-repeat;
 }
 
+h2#hwinfo+table {
+    margin-left: 4px;
+    padding-left: 50px;
+    background-image: url('images/laptop.png');
+    background-repeat: no-repeat;
+}
 
 h2#sysinfo+table {
 	margin-left: 4px;
@@ -148,12 +154,11 @@ h2#launch+ul {
 	background-repeat: no-repeat;
 }
 
-h2#hdds+table tr td:first-child {
-	padding-left: 20px;
-	background-image: url("images/hdd.png");
+h2#hdds+table {
+	margin-left: 4px;
+	padding-left: 50px;
+	background-image: url("images/hdds.png");
 	background-repeat: no-repeat;
-	color: #729fcf;
-	font-weight: bold;
 }
 
 table td:first-child {
