@@ -1,0 +1,371 @@
+
+/* yeniler */
+
+* {
+    font-size: 11px;
+    font-family: Tahoma, Sans-Serif;
+}
+
+body {
+    margin-left:0;
+    margin-top:0;
+    margin-right:0;
+    background-image:url('images/HeadTile.png');
+    background-repeat:repeat-x;
+    background-color: #FFF;
+}
+
+#header {
+    background-image:url('images/HeadLogo.png');
+    background-repeat:no-repeat;
+    background-position: 0px -2px;
+    height:119px;
+}
+
+#header-bugzilla {
+    background-image:url('images/HeadLogo.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height:119px;
+    padding-bottom:5px;
+}
+
+#menu {
+    font-weight:bold;
+    font-size:10px;
+    padding-top:93px;
+    padding-left:200px;
+    width:100%;
+}
+
+li {
+    list-style-image: url('images/BulletCyan.png');
+}
+
+hr {
+    border: 1px solid #EEE;
+}
+
+#searchbar {
+    float:right;
+    padding-right:3px;
+    padding-top:97px;
+    
+}
+
+.searchresults {
+    background-color:#EEE;
+    margin-top:0px;
+    color:#999;
+    border-top:1px solid #DDD;
+}
+
+.searchresults b {
+    color:#666;
+}
+#searchbar input {
+    background-color:#FFF;
+    border: none;
+    border-bottom:1px solid #999;
+    height:17px;
+    padding:1px;
+    padding-left:2px;
+}
+#menu li {
+    border:0;
+    padding-left:5px;
+    margin-left:4px;
+    float:left;
+}
+
+#pardus-11 {
+    float:left;
+    font-size: 16px;
+    color: #297190;
+    padding-left:30px;
+    padding-top:130px;
+    background-image:url('images/newdesign/p10.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    width: 450px;
+    height: 100px;
+}
+
+#kutular {
+    width:290px;
+    vertical-align:top;
+}
+
+#pardus-nedir {
+    background-image:url('images/newdesign/header-pardus-nedir.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding:5px;
+    padding-top:26px;
+    background-color:#EBEFE3;
+    height:auto;
+    margin-bottom:5px;
+}
+
+#pardus-indir {
+    background-image:url('images/newdesign/dock-hizli-indir-10.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height:124px;
+}
+
+#solpane {
+    width:300px;
+    vertical-align:top;
+}
+
+#haberler {
+    background-image:url('images/newdesign/header-haberler.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding:5px;
+    padding-top:26px;
+    background-color:#E8F2F4;
+    height:auto;
+}
+
+#ayrintilar {
+    background-image:url('images/newdesign/header-ayrintilar.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding:5px;
+    padding-top:26px;
+    color: #297190;
+    height:auto;
+    width:470px;
+}
+
+
+#footer-forpw {
+    background-image:url('images/newdesign/footer-standart.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    margin-top:20px;
+    padding:5px;
+    padding-top:36px;
+    color: #000;
+    height:55px;
+}
+
+#icerik #navi {
+    vertical-align:top;
+    height: 100px;
+}
+
+#ana-butonlar img {
+    margin-left:1.5px;
+}
+
+#boxdetay1 {
+    width:210px;
+}
+
+#boxdetay2 {
+    width:270px;
+}
+
+#box2 {
+    margin-left:3px;
+    float:left;
+}
+
+#box3 {
+    width:330px;
+    border:1px solid #888;
+    padding:5px;
+    background-color:#EEAA00;
+    margin-bottom:3px;
+}
+
+#box4 {
+    width:200px;
+    border:1px solid #888;
+    padding:5px;
+    height:100px;
+    background-color:#DDD;
+    margin-bottom:3px;
+}
+
+#news {
+    margin-left:3px;
+    width:200px;
+    float:left;
+    border:1px solid #DDD;
+    padding:5px;
+    height:500px;
+    background-color:#BBB;
+}
+
+.title {
+    background-color: #FFEE00;
+    border-bottom: 1px solid #FFAA00;
+}
+
+/* eskiler feedback */
+
+
+a {
+	color: #F55400;
+	text-decoration: none;
+	/*font-weight: bold;*/
+}
+
+a:hover {
+	color: #444;
+    background-color:#EEE;
+}
+
+#ana-butonlar a:hover {
+    border-bottom:1px solid #8AC86C;
+}
+
+#gelistirici {
+    font-size: 16px;
+    background-color: #FFEED6;
+    background-image:url('images/newdesign/minigelheader.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    height: 30px;
+}
+
+#mainBody {
+    width: 730px;
+    background-color:#FFF;
+    height: 100%;
+    vertical-align:top;
+}
+
+#kucular {
+    width:200px;
+    vertical-align:top;
+    background-color:#FFF;
+}
+
+#hede {
+    padding:3px;
+    padding-top:0px;
+}
+
+#hede h2 {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #DDD;
+    padding-left:0.5em;
+    margin-left:-0.2em;
+    margin-right:-1em;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+#hede h1 {
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom:1px solid #EEE;
+    padding-left:2px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+#hede h4 {
+    font-weight:normal;
+    font-size: 10px;
+    margin-top:-8px;
+    font-style:italic;
+    padding-right:3px;
+    text-align:right;
+}
+
+#hede p {
+    padding-left: 2px;
+}
+#hede input {
+   border: 1px solid #999;
+}
+#hodo {
+    border-left:1px solid #EEE;
+    height: 100%;
+    text-align:center;
+    padding-top:10px;
+}
+
+.svnlink {
+    background-image:url('images/newdesign/svnlink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.maillink {
+    background-image:url('images/newdesign/maillink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.pdflink {
+    background-image:url('images/newdesign/pdf.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+#RssList {
+    text-align:left;
+    padding:2px;
+    padding-left:7px;
+}
+
+#RssList a {
+
+}
+
+.working {
+    background-image:url('images/newdesign/work.gif');
+    background-repeat:no-repeat;
+    background-position:85px 8px;
+    margin: auto auto;
+    height: 30px;    
+}
+
+.ready {
+    background-color:#FFF;
+    height:auto;
+    text-align:left;
+    padding-left:8px;
+    margin-bottom:3px;
+}
+
+#selectRepo {
+   padding-left:8px;
+   border-bottom: 1px dotted #DDD;
+   height:25px;
+   margin-right:12px;
+}
+#selectRepo b {
+    padding:4px;
+    float:left;
+}
+#selectRepo select {
+    margin-top:2px;
+    border: 1px solid #777;
+    float:right;
+}
+
+#docTable {
+    width:773px;
+    border-left:1px solid #EEE;
+    border-right:1px solid #EEE; 
+}
+
+.bz_buglist td {
+   border-bottom: 1px solid #EEE;
+}
+
