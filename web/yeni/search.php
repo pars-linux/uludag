@@ -46,7 +46,7 @@
                     if (isset($_GET["r"])) {
                         $Pardus = new Pardus($DbHost,$DbUser,$DbPass,$DbData);
                         $Res = $Pardus->GetPage(htmlspecialchars($_GET["r"]));
-                        echo GetHighlighted($SearchWord,$Res["Content"],"#F5FF9A");
+                        echo $Res["Content"];
                     }
                     else {
                 ?>
