@@ -180,6 +180,16 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     dummy = "<tr><td>" + i18n( "Free swap:" ) + "</td><td>" + m_info[MEM_FREESWAP] + "</td></tr>";
     sysInfo += "</table>";
 
+    // hw info
+    sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
+    sysInfo += "<table>";
+    sysInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
+    sysInfo += "</table>";
+
     sysInfo += "</div>";
 
     // Send the data
@@ -285,61 +295,18 @@ QString kio_sysinfoProtocol::diskInfo()
             DiskInfo di = ( *it );
             if ( di.mounted )
             {
-                result += QString( "<tr><td>%1 <a href=\"media:/%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr>" ).
+                result += QString( "<tr><td>%1 <a href=\"media:/%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr><tr><td>( %8 )</td></tr>" ).
                           arg( icon( di.iconName ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
-                          arg( formattedUnit( di.total ) ).arg( formattedUnit( di.avail ) ).arg( tooltip );
+                          arg( formattedUnit( di.total ) ).arg( formattedUnit( di.avail ) ).arg( tooltip ).arg( di.model );
             }
             else
             {
-                result += QString( "<tr><td>%1 <a href=\"media:/%2\" title=\"%6\">%3</a></td><td>%4</td><td>%5</td><td></td></tr>" ).
+                result += QString( "<tr><td>%1 <a href=\"media:/%2\" title=\"%6\">%3</a></td><td>%4</td><td>%5</td><td></td></tr><tr><td>( %7 )</td></tr>" ).
                           arg( icon( di.iconName ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
-                          arg( di.total ? formattedUnit( di.total) : QString::null).arg( tooltip );
+                          arg( di.total ? formattedUnit( di.total) : QString::null).arg( tooltip ).arg( di.model );
             }
         }
-
-
     }
-    else // fall back to fstab parsing
-    {
-        FILE * fp;
-        if ( !( fp = setmntent( "/etc/fstab", "r" ) ) )
-        {
-            kdDebug() << k_funcinfo << "Failed to open /etc/fstab" << endl;
-            return QString::null;
-        }
-
-#define FS_NAME        mnt_ent->mnt_fsname     // device-name
-#define FS_FILE        mnt_ent->mnt_dir        // mount-point
-#define FS_TYPE        mnt_ent->mnt_type       // fs-type
-
-        struct statfs sfs;
-        struct mntent *mnt_ent;
-        unsigned long long total, avail;
-
-        while ( ( mnt_ent = getmntent( fp ) ) != NULL )
-        {
-            total = avail = 0;
-            if ( statfs( FS_FILE, &sfs ) == 0 )
-            {
-                total = ( unsigned long long )sfs.f_blocks * sfs.f_bsize;
-                if ( total > 0 && strcmp( FS_TYPE, "subdomainfs" ) != 0 ) // discard empty or otherwise strange devices
-                {
-                    avail = ( unsigned long long )( getuid() ? sfs.f_bavail : sfs.f_bfree ) * sfs.f_bsize;
-                    int lastSlash = QString( FS_NAME ).findRev( '/' );
-                    QString deviceName = lastSlash != -1 ? QString( FS_NAME ).mid( lastSlash + 1 ) : QString( FS_NAME );
-                    //kdDebug() << k_funcinfo << "Device name: " << deviceName << endl;
-                    QString model = deviceName.left( deviceName.length() - 1 );
-                    model = readFromFile( "/proc/ide/" + model + "/model" );
-                    QString devIcon = icon( iconForDevice( deviceName ), KIcon::SizeSmall );
-                    result += QString( "<tr><td>%1 <a href=\"file:%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr>" )
-                              .arg( devIcon ).arg( FS_FILE ).arg( FS_FILE ).arg( FS_TYPE ).arg( formattedUnit( total ) )
-                              .arg( formattedUnit( avail ) ).arg( model );
-                }
-            }
-        }
-        endmntent( fp );
-    }
-
     result += "</table>";
     return result;
 }
@@ -701,22 +668,26 @@ bool kio_sysinfoProtocol::fillMediaDevices()
             di.total = ( unsigned long long ) sfs.f_blocks * sfs.f_bsize;
             di.avail = ( unsigned long long )( getuid() ? sfs.f_bavail : sfs.f_bfree ) * sfs.f_bsize;
         } else if (m_halContext && di.id.startsWith("/org/freedesktop/Hal/" ) )
-	{
-	  dbus_error_init(&error);
-	  di.total = libhal_device_get_property_uint64(m_halContext, di.id.latin1(), "volume.size", &error);
-	  if (dbus_error_is_set(&error))
-	    di.total = 0;
-	}
+        {
+            dbus_error_init(&error);
+            di.total = libhal_device_get_property_uint64(m_halContext, di.id.latin1(), "volume.size", &error);
+            if (dbus_error_is_set(&error))
+                di.total = 0;
+            }
 
-        // guess the model
-        QString ideName = di.name;
-        ideName.truncate( 3 );
-        di.model = readFromFile( "/proc/ide/" + ideName + "/model" );
+            di.model = libhal_device_get_property_string(  m_halContext, di.id.latin1(  ), "block.storage_device", &error );
+            di.model = libhal_device_get_property_string( m_halContext, di.model.latin1( ), "storage.model", &error );
 
-        ++it; // skip separator
+            ++it; // skip separator
 
-        m_devices.append( di );
+            m_devices.append( di );
     }
+
+    m_info[PRODUCT ] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.system.product", &error );
+    m_info[MANUFACTURER ] = libhal_device_get_property_string(  m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.system.manufacturer", &error );
+    m_info[TYPE] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.chassis.type", &error );
+    m_info[BIOSVENDOR] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.bios.vendor", &error );
+    m_info[BIOSVERSION] = libhal_device_get_property_string( m_halContext, "/org/freedesktop/Hal/devices/computer", "smbios.bios.version", &error );
 
     libhal_ctx_free(m_halContext);
 
