@@ -7,6 +7,7 @@
     include_once '../config.php';
     include_once '../vezir.php';
     include_once 'search.php';
+    include_once "../langs/tr.php";
 
     if (isset($_GET["q"]) or isset($_GET["r"])) {
 
@@ -127,9 +128,8 @@
                         <?php
                                 if (isset($Search)) {
                                     if ($Results[0]['NiceTitle']<>"") {
-                                        echo "<a href=# onClick='ToggleHighlights(this);return false'>".HIDEHIGHLIGHT."</a>";
-
                                         echo TOTAL.sizeof($Results).RECORD_FOUND_ALSO_YOU_CAN_LOOK_AT_GOOGLE_RESULTS;
+                                        echo "<a href=# onClick='ToggleHighlights(this);return false'>".HIDEHIGHLIGHT."</a> <br/>";
                                     }
                                     else 
                                         echo NO_RECORD_FOUND_BUT_YOU_CAN_LOOK_AT_GOOGLE_RESULTS;
