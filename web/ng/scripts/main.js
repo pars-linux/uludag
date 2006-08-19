@@ -1,5 +1,5 @@
         function get_news(nid) {
-            var url ='utils.php';
+            var url ='news.php';
             var linke = 'NewsID='+nid;
             var AjaxPointer = new Ajax.Request(url,{method:'get', parameters: linke, onComplete: showit});
         }

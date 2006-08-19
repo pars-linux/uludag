@@ -1,21 +1,20 @@
 <?php
 
+    // TUBITAK/UEAKE - 2006-07 - Pardus
+    // Gökmen GÖKSEL <gokmen@pardus.org.tr>
+    // Pardus Web..
+
     require_once('config.php');
     require_once('vezir.php');
-    require_once('Modules/pardus.php');
-    #require_once('utils.php');
-    #require_once('Modules/Main.php');
-    require_once('Modules/RSS.php');
 
-    $Blogs = new RssRead($BlogRssLink);
-    $Vezir = new Vezir($CF);
+    $Vezir  = new Vezir($CF);
     $Pardus = new Pardus($Vezir);
 
 ?>
 
 <html>
 <head>
-    <title><?=$PageTitle?></title>
+    <title><?=PAGE_TITLE?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="stil.css" rel="stylesheet" type="text/css" />
     <script src="scripts/prototype.js"></script>
@@ -30,15 +29,21 @@
             <tr>
                 <td id="header" colspan=2>
                     <span id="searchbar">
-                        <form action="search.php" method="get">
-                            <input name="q" type="text" value="ara" onClick="if(this.value=='ara')this.value='';" onBlur="if (this.value=='') this.value='ara'" >
+                        <form action="search/" method="get">
+                            <input name="q" type="text" value="<?=SEARCH?>"
+                            onClick="
+                                if (this.value=='<?=SEARCH?>')
+                                    this.value='';" 
+                            onBlur="
+                                if (this.value=='') 
+                                    this.value='<?=SEARCH?>';">
                         </form>
                     </span>
                 </td>
             </tr>
 
             <?php
-                if(isset ($_GET["page"]))
+                if(isset($_GET["page"]))
                     echo "page will come...";
                 else
                     include ('index-data.php');
