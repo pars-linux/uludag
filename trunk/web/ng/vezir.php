@@ -13,6 +13,9 @@
             // 3 - to show all actions.
             public $DbLogDetail;
 
+            // Set the Log Limit for huge SQL Queries.
+            public $LimitedLog=true;
+
             // Table Prefix
             public $Prefix = "Vezir_";
             public $UsePrefix = True;
@@ -112,7 +115,8 @@
                     if (!$Result)
                         throw new Exception('Query Execution Error',3);
                     elseif ($this->DbLogDetail>2){
-                        if (strlen($Sql)>100) $Sql = substr($Sql, 0, 90)."...";
+                        if ($this->LimitedLog==true)
+                            if (strlen($Sql)>100) $Sql = substr($Sql, 0, 90)."...";
                         $this->ParseError("Query Executed Sucessfully : ".$Sql);
                     }
                     return $Result;
@@ -206,7 +210,7 @@
 
         function Search($Que) {
             $Que = mysql_escape_string($Que);
-            $Results = $this->DBC->GetRecord("Pages","Title,NiceTitle,Content","","WHERE MATCH(Title, Content) AGAINST ('$Que')");
+            $Results = $this->DBC->GetRecord("Pages","Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score","","WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score DESC");
             if (sizeof($Results)>1)
                 return $Results;
             else

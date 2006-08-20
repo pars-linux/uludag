@@ -12,6 +12,7 @@
     if (isset($_GET["q"]) or isset($_GET["r"])) {
 
         $Vezir  = new Vezir($CF);
+        #$Vezir->LimitedLog=false;
         $Pardus = new Pardus($Vezir);
         $SearchWord = strip_tags($_GET["q"]);
 
@@ -115,6 +116,7 @@
                             if (isset($Page))
                                 echo $Page["Content"];
                             else {
+                                $Vezir->ShowLogs();
                         ?>
 
                         <!--
