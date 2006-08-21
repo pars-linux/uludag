@@ -195,44 +195,63 @@ pspec_header = """<?xml version="1.0" ?>
 """
 
 def update_pspecs(path, language, po):
-    
-    class Hede:
-        def try_desc(self, m):
-            tmp = m.group(1)
-            tag = tmp[:tmp.find(">")]
-            text = tmp[tmp.find(">") + 1:]
-            lang = tag[tag.find("xml:lang=")+10:]
-            if lang.startswith(self.lang):
-                print "meech"
-                self.done = 1
-                if text != self.msgstr:
-                    tmp = tmp[:tmp.find(">") + 1] + self.msgstr
-                    return m.string[m.start():m.start(1)] + tmp + m.string[m.end(1):m.end()]
-            return m.group()
-    
-    
     for msg in po.messages:
         if not msg.msgstr:
             continue
         if "fuzzy" in msg.flags:
             continue
+        
+        done = 0
+        
         name, tag = msg.reference.split(':')
         name = os.path.join(path, name, "pspec.xml")
         tag = tag.title()
+        tag_start = "<%s" % tag
+        tag_end = "</%s>" % tag
         
         data = file(name).read()
-        hede = Hede()
-        hede.lang = language
-        hede.msgstr = msg.msgstr
-        hede.done = 0
-        if tag == "Description":
-            data = re.sub("<Description(.*)</Description>", hede.try_desc, data)
-        elif tag == "Summary":
-            data = re.sub("<Summary(.*)</Summary>", hede.try_desc, data)
+        data2 = []
+        inseek = 0
+        for line in data.split('\n'):
+            useline = 1
+            if inseek == 0:
+                i = line.find(tag_start)
+                if i != -1:
+                    j = line.find("xml:lang=", i + len(tag_start))
+                    if j != -1:
+                        lang = line[j + 10:]
+                        if lang.startswith(language):
+                            k = line.find(">", j + 10)
+                            m = line.find(tag_end, k + 1)
+                            useline = 0
+                            done = 1
+                            if m != -1:
+                                data2.append(line[:k+1] + msg.msgstr + line[m:])
+                            else:
+                                inseek = 1
+                                data2.append(line[:k+1] + msg.msgstr)
+            else:
+                useline = 0
+                i = line.find(tag_end)
+                if i != -1:
+                    inseek = 0
+                    if data2[-1].endswith("\n"):
+                        data2[-1] = data2[-1][:-1]
+                    data2[-1] += line[i:]
+            if useline == 1:
+                data2.append(line[:])
         
-        #if hede.done == 0:
-        #    pos = data.find("<Archive")
-        #    data = data[:pos] + '<%s xml:lang="%s">%s</%s>\n        ' % (tag, language, msg.msgstr, tag) + data[pos:]
+        data2 = "\n".join(data2)
+        if data != data2:
+            done = 1
+            data = data2
+        
+        if done == 0:
+            pos = data.find("<Archive")
+            if not pos:
+                print "Problem in", name
+            else:
+                data = data[:pos] + '<%s xml:lang="%s">%s</%s>\n        ' % (tag, language, msg.msgstr, tag) + data[pos:]
         
         f = file(name, "w")
         f.write(data)
