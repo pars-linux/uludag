@@ -5,6 +5,11 @@
 
 source /etc/profile
 
+# Get DBUS Session's properties
+if [[ -f ~/.dbus-session ]]; then
+    source ~/.dbus-session
+fi
+
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
