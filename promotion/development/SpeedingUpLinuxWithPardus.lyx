@@ -1,37 +1,43 @@
-#LyX 1.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 221
+#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
 \textclass article
 \language turkish
 \inputencoding auto
 \fontscheme pslatex
 \graphics default
 \paperfontsize default
-\spacing single 
+\spacing single
 \papersize a4paper
-\paperpackage a4
-\use_geometry 0
-\use_amsmath 0
-\use_natbib 0
-\use_numerical_citations 0
+\use_geometry false
+\use_amsmath 1
+\cite_engine basic
+\use_bibtopic false
 \paperorientation portrait
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
 \defskip medskip
 \quotes_language english
-\quotes_times 2
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tracking_changes false
+\output_changes true
+\end_header
 
-\layout Title
+\begin_body
 
+\begin_layout Title
 Speeding Up Linux: One Step Further With Pardus
-\layout Author
+\end_layout
 
+\begin_layout Author
 Gürer Özen, Görkem Çetin
-\layout Abstract
+\end_layout
 
+\begin_layout Abstract
 For a long time, Linux has been blamed to boot slow, compared to other modern
  operating systems.
  In this article, we are going to focus on a new init system, mudur, together
@@ -39,11 +45,13 @@ For a long time, Linux has been blamed to boot slow, compared to other modern
  Mudur itself is written from scratch with Python with modularity, simplicity
  and speed and documentation in mind.
  Authors look forward future extensions for Mudur for further speed improvements.
-\layout Section
+\end_layout
 
+\begin_layout Section
 Problem
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Distrowatch.com lists more than 400 distributions, most of which are used
  for everyday lives at home.
  Similarly, most, if not all, of the distros listed have been derived from
@@ -53,8 +61,9 @@ s, i.e a stable base system, package repositories, a great multitude of patches
  and security fixes.
  A recent study [1] has enabled for Linux newcomers to have an idea about
  the roots of distributions.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 While there's always a hot, ongoing debate about which package manager to
  use, Pardus developers have chosen not to rely on any package managers
  and decided to roll a brand new one.
@@ -66,14 +75,15 @@ While there's always a hot, ongoing debate about which package manager to
  While PiSi deserves a full article of its own, we'll be focusing on a new
  approach Pardus presents, i.e a new init framework called Mudur which primarily
  focuses on notoriously slow and complex initialization system of Linux.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Before starting to dig into Mudur, let's investigate how other technologies
  lead to a better init system.
  IBM has initially worked on a parallelization model
 \begin_inset LatexCommand \cite{key-2}
 
-\end_inset 
+\end_inset
 
  which shows how to improve the boot speed of a Linux system without compromisin
 g usability.
@@ -83,7 +93,7 @@ g usability.
  about Initng
 \begin_inset LatexCommand \cite{key-5}
 
-\end_inset 
+\end_inset
 
 , which dramatically decreases the boot up duration and already used by
  some distributions.
@@ -93,15 +103,16 @@ g usability.
  Last but not least, another alternative depinit
 \begin_inset LatexCommand \cite{key-8}
 
-\end_inset 
+\end_inset
 
  has been driving attention for quite some time, with the ability to handle
  parallel execution, dependencies, true roll-back, pipelines, improved signaling
  and unmounting filesystems on shutdown.
  According to the developers, it's somehow experimental and requires some
  time to incorporate an existing system.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 While Linux is blamed to boot slower for some time, the work ongoing listed
  above will lead to faster boot times in conjuction with steady and consistent
  advances in CPU speeds, cache improvements and dropping of hard disk seek
@@ -116,16 +127,18 @@ While Linux is blamed to boot slower for some time, the work ongoing listed
  prepared the system for the user
 \begin_inset LatexCommand \cite{key-10}
 
-\end_inset 
+\end_inset
 
 .
  Likewise, Windows uses BootCache, Hot File Clustering and similar techniques
  to boost performance.
-\layout Section
+\end_layout
 
+\begin_layout Section
 What Mudur brings
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Mudur has been developed for Pardus, so it's probably not available for
  other distributions immediately.
  Since Mudur uses completely rewritten service scripts, it needs a genuine
@@ -134,17 +147,20 @@ Mudur has been developed for Pardus, so it's probably not available for
  In this chapter, we are going to summarize our approach, and explain why
  this is a better solution for init based speed, configurability and maintainabi
 lity problems.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Real problems need real languages
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Our main concern was not only the speed of initialization process, but maintaina
 bility of the code base.
  Our previous experience with Gentoo init system while adding internationalizati
 on support showed that shell scripts are a maintainability nightmare.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Why shell scripts, traditional batch processing tool of Unix, are not suitable
  for this job? Answer lies in the commands used by this scripts.
  Since shell scripting language doesn't have flexible and easy to use flow
@@ -155,119 +171,136 @@ Why shell scripts, traditional batch processing tool of Unix, are not suitable
  a /etc/profile.env file.
  Script was using another awk script, which in turn uses a special awk plugin
  module written in C.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 All those special tools with their inefficiencies and their size turns the
  system into a strange Rube Goldberg contraption.
  So, we decided to choose a single language, and use it everywhere in the
  initialization subsystem.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Low level languages like C or C++ are fast but also suffers from maintainability
  problems.
  Source codes become even bigger than shell scripts, and development time
  significantly increases.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Among the high level languages, Python seemed to be the best choice, since
  we already use it in many places like package build scripts, package manager,
  control panel modules, and installer program YALI
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 YALI is the installer of Pardus Linux.
  More information on http://www.pardus.org.tr/eng/projeler/yali
-\end_inset 
+\end_layout
+
+\end_inset
 
 .
  Python has small and has clean source codes.
  Standard library is full of useful modules.
  Learning curve is easy, most of the developers in our team picked up the
  language in a few days without prior experience.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 A simple boot test with init=/usr/bin/python showed that loading of Python
  core and built-in modules takes 1.5-2 seconds
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 This time also includes basic system libraries (glibc, pthread, etc) used
  by Python components.
-\end_inset 
+\end_layout
+
+\end_inset
 
 .
  From then on, only a few system tools (mount, udev, fsck, modprobe, etc),
  and actual services (kdm, ssh, apache, etc) are loaded.
  This is quite acceptable if you consider total time and disc IO saved.
  Having Python cached in the memory also helps speeding up our other programs.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Current code size is around 1500 lines.
  Our previous (Pardus 1.0) Gentoo based system was more than 10000 lines
 \begin_inset Foot
-collapsed true
+status collapsed
 
-\layout Standard
-
+\begin_layout Standard
 detaylý sayý ver
-\end_inset 
+\end_layout
+
+\end_inset
 
 .
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 If It's Not Broken, Don't Fix It
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Almost all boot time speeding up projects are obsessed with the idea of
  replacing the 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 init
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
 .
  This is the parent of all processes.
  Its primary role is to start other processes like console terminals and
  actual initialization scripts as written in the file /etc/inittab.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Since this is a very system level program, writing a replacement is tricky
  and time consuming.
  We couldn't think a real benefit.
  Running services in paralel can be done from a script, directly managing
  service processes is also much easier with a little smarter /var/run/*.pid
  management.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 We just set our Python script in /etc/inittab and work on the real problem.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Service Scripts
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Basic jobs of initialization, i.e.
  loading modules, starting udev device manager, mounting filesystems, updating
  system clock are handled by a single Python script.
  This saves loading time and makes it simple.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Other service scripts should come with their packages.
  Handling and paralel running of those scripts are handled by another Pardus
  project called Çomar.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Çomar (COnfiguration MAnageR) is a system daemon.
  It has a system model with classes and methods.
  Installed software packages register their Çomar scripts (also written
  in Python) to the classes on the model.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 In case of initialization system, every package with provides a service,
  registers a script to the System.Service class.
  This class has methods like start, stop, reload, info, etc.
@@ -275,72 +308,84 @@ In case of initialization system, every package with provides a service,
  methods.
  An access control system makes it possible to give control of services
  to specific users or groups and prevent others from accessing them.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Main startup script runs Çomar daemon, and when called with 
 \begin_inset Quotes eld
-\end_inset 
+\end_inset
 
 default
 \begin_inset Quotes erd
-\end_inset 
+\end_inset
 
  runlevel by init, calls System.Service.ready method on Çomar, thus starting
  all services in parallel.
  Service scripts can call other scripts start methods for implementing dependenc
 ies, and wait for Çomar notification for handling restarts.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Çomar keeps the state of services, so only services previously turned on
  are started automatically.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Çomar has many other features and classes used in Pardus system for network
  management, user management, automatic configuration of graphic subsystem,
  and remote management.
  These are out of scope of this document.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Limiting Resource Is IO, Not CPU
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Harddisks are not necessarily slow, they can transfer data at the rates
  of 20-30Mb/s, but their seek times are awful.
  If you read data in a random manner, you can get quite a bad disk performance.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 It is possible to deal with this problem at the filesystem level [dipnot:
  osx þeysi], but deserves quite a huge work.
  Luckily, we can benefit from simpler methods.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 First thing to consider is never leaving disc IO empty.
  Parallellism helps greatly here.
  Some operations like setting system clock from hardware clock, pauses the
  system for a few seconds.
  You can utilize those seconds by loading something else in the background.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 We also take a great care of not generating extra IO due to internal machinery
  of startup scripts.
  Shell based initialization systems generally use a lot of temporary files,
  and generate lots of small IO operations themselves.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Slowness of interpreted nature of Python is really insignificant here.
  After the initial loading of Python interpreter, scripts run instantly.
  Blocking happens only at calling external programs like modprobe and fsck.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Sleep Considered Harmful
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 We have seen sleep commands in initialization systems and in many of service
  scripts.
  This is probably due to lacking shell primitives for properly checking
  the service status.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 After starting a service, there is a short time which start function returns
  but service itself does not really sets its communications ports (sockets,
  files, etc).
@@ -348,192 +393,236 @@ After starting a service, there is a short time which start function returns
  But this isn't a good thing to do.
  Setup might take a bit longer than given time value, and if you give that
  value higher, then you unnecessarily wait.
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Instead of using this unreliable method, we just wait for actual resource
  (socket, file, etc), so never waste any extra time.
  This optimization alone saved almost 5-6 seconds on our initialization.
-\layout Section
+\end_layout
 
+\begin_layout Section
 Components
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Pardus initialization system is composed of following programs:
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 /sbin/mudur.py
 \begin_inset LatexCommand \cite{key-12}
 
-\end_inset 
+\end_inset
 
 
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Main startup script, called by init.
  Handles basic initialization and shutdown.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 /sbin/muavin.py
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Hotplug agent, called by udev.
  Finds and loads the kernel driver for plugged hardware.
  Also called by mudur.py for scanning available hardware and loading their
  drivers (coldplug).
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 Çomar
 \begin_inset LatexCommand \cite{key-13}
 
-\end_inset 
+\end_inset
 
 
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Configuration manager.
- Pardus packages register their service scripts to Çomar.
- Called by mudur.py for starting and stopping services.
+ Pardus packages register their service scripts to Çomar, which in turn
+ is called by mudur.py for starting and stopping services.
  User interfaces also use Çomar for managing services.
-\layout Subsection
+\end_layout
 
+\begin_layout Subsection
 /bin/service
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Command line tool for managing services.
-\layout Subsection
+\end_layout
 
-service-kga
-\layout Standard
+\begin_layout Subsection
+Service Manager
+\end_layout
 
-KDE control center panel for managing services.
-\layout Subsection
+\begin_layout Standard
+Service Manager is a KDE control center module for managing services.
+\end_layout
 
+\begin_layout Subsection
 Service Scripts
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 Scripts themselves come with the Pardus packages and managed by Çomar.
  Here is a sample script for kdm:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 from comar.service import * import os
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 serviceType = "local"
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 serviceDesc = "KDE Desktop Environment"
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 serviceDefault = "on"
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 def configure():
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     if not os.path.exists("/etc/X11/xorg.conf"):
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
         run("/sbin/xorg.py")
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 def status():
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     return checkDaemon("/var/run/kdm.pid")
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 def start():
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     call("System.Service.start", "acpid")
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     call("System.Service.start", "dbus")
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     configure()
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     loadEnvironment()
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     os.environ["XAUTHLOCALHOSTNAME"]=os.uname()[1]
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     ret = run("/sbin/start-stop-daemon", "--start", "--quiet",
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
                      "--exe", "/usr/kde/3.5/bin/kdm")
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     if ret == 0: 
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
         notify("System.Service.changed", "started")
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
  
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
 def stop():
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     ret = run("/sbin/start-stop-daemon --stop --quiet --exe
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
                     /usr/kde/3.5/bin/kdm")
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
     if ret == 0:
-\layout LyX-Code
+\end_layout
 
+\begin_layout LyX-Code
         notify("System.Service.changed", "stopped")
-\layout Section
+\end_layout
 
+\begin_layout Section
 Benchmarks
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 You can't improve what you can't measure.
  Hopefully there is a well known tool called bootchart
 \begin_inset LatexCommand \cite{key-4}
 
-\end_inset 
+\end_inset
 
  which generates detailed graphics.
  Resource utilization and process information are collected during the boot
  process and are later rendered in a chart.
  A typical Pardus boot sequence on a P4 2.8GHz, 1GB RAM, ??? IDE is shown
  below:
-\layout Standard
+\end_layout
 
+\begin_layout Standard
 ***buraya iþ yerinde bootchart datasýný eps render edip koy, png den daha
  güzel oluyor***
-\layout Standard
+\end_layout
 
-*** burayada görkem'in daðýtýmlarýn boot süresi karþýlaþtýrma tablosunu
- koy ***
-\layout Section
+\begin_layout Standard
+Below, a table showing the current advantages and disadvantages of the new
+ Mudur init system is given.
+ Note that re-writing of init scripts for many services has been already
+ implemented.
+\end_layout
 
-Conclusions
-\layout Standard
-
-ee ne oldi
-\layout Standard
-
-
-\begin_inset  Tabular
+\begin_layout Standard
+\begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="2">
 <features>
 <column alignment="left" valignment="top" leftline="true" width="0">
@@ -542,155 +631,203 @@ ee ne oldi
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
+\begin_layout Standard
 
-
-\series bold 
+\series bold
 Advantages of using Mudur
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
+\begin_layout Standard
 
-
-\series bold 
+\series bold
 Disadvantages of using Mudur
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
-
+\begin_layout Standard
 Speed: Mudur lowers overall boot process time significantly.
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
-
+\begin_layout Standard
 Non-conformity to current standards
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
-
+\begin_layout Standard
 Modularity: 
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
-
+\begin_layout Standard
 No wide implementation
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 </row>
 <row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
-
+\begin_layout Standard
 Documentation: 
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
+\begin_layout Standard
+Needs re-writing of init scripts
+\end_layout
 
-Needs re-writing init scripts
-\end_inset 
+\end_inset
 </cell>
 </row>
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
-
+\begin_layout Standard
 Simplicity: Mudur consists of 1500 lines of code
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\layout Standard
+\begin_layout Standard
 
-\end_inset 
+\end_layout
+
+\end_inset
 </cell>
 </row>
 </lyxtabular>
 
-\end_inset 
+\end_inset
 
 
-\layout Standard
+\end_layout
 
-Tablonun duruþunu sevmedim, yanyana gelince sanki ayný satýrlar karþýlaþtýrýlmýþ
- gibi duruyor.
- Evde tekrar bakarým...
-\layout Bibliography
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+The re-written init daemon is currently in a working state starting from
+ Pardus 1.1 alpha1.
+ Interested and experienced developers are more than welcome to build new
+ enhancements on top of this model.
+ We are also looking for real life implementations in other Linux distributions.
+ 
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-2}
-
 http://www-128.ibm.com/developerworks/linux/library/l-boot.html
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-3}
-
 http://tree.celinuxforum.org/pubwiki/moin.cgi/BootupTimeReductionHowto
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-4}
-
 http://www.bootchart.org/
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-5}
-
 http://www.initng.org/
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-6}
-
 http://www.fastboot.org/
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-8}
-
 http://www.nezumi.plus.com/depinit/
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-7}
-
 http://www.atnf.csiro.au/people/rgooch/linux/boot-scripts/
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-9}
-
 http://www.kernelthread.com/mac/apme/optimizations/
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-10}
-
 http://developer.apple.com/macosx/launchd.html
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-11}
-
 http://kerneltrap.org/node/2157
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-14}
-
 http://comments.gmane.org/gmane.linux.kernel/406364
-\layout Bibliography
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-12}
-
 http://svn.pardus.org.tr/uludag/trunk/comar/mudur/bin/mudur.py
-\layout Bibliography
-\bibitem {key-13}
+\end_layout
 
+\begin_layout Bibliography
+
+\bibitem {key-13}
 http://svn.pardus.org.tr/uludag/trunk/comar/comar
-\the_end
+\end_layout
+
+\end_body
+\end_document
