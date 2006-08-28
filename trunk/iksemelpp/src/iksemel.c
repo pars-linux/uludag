@@ -25,6 +25,8 @@
 /* file is read by blocks with this size */
 #define FILE_IO_BUF_SIZE 4096
 
+/* network receive buffer */
+#define NET_IO_BUF_SIZE 4096
 /* iksemel (XML parser for Jabber)
 ** Copyright (C) 2000-2003 Gurer Ozen <madcat@e-kolay.net>
 ** This code is free software; you can redistribute it and/or
@@ -558,7 +560,7 @@ stack_expand (iksparser *prs, int len)
 	if (need < prs->stack_max) {
 		need = prs->stack_max * 2;
 	} else {
-		need = prs->stack_max + (need * 1.2);
+          need = prs->stack_max + (/*need * 1.2 [NO FP ON ARM]*/ (need * 6) / 5);
 	}
 	tmp = iks_malloc (need);
 	if (!tmp) return 0;
@@ -1834,8 +1836,9 @@ iks_load (const char *fname, iks **xptr)
 				if (len < FILE_IO_BUF_SIZE) {
 					if (0 == feof (f)) {
 						ret = IKS_FILE_RWERR;
-						len = 0;
+						break;
 					}
+                    if (0 == len) ret = IKS_OK;
 					done = 1;
 				}
 				if (len > 0) {
