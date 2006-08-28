@@ -38,13 +38,18 @@ Gürer Özen, Görkem Çetin
 \end_layout
 
 \begin_layout Abstract
-For a long time, Linux has been blamed to boot slow, compared to other modern
- operating systems.
- In this article, we are going to focus on a new init system, mudur, together
- with other initiatives that are worth mentioning.
- Mudur itself is written from scratch with Python with modularity, simplicity
- and speed and documentation in mind.
- Authors look forward future extensions for Mudur for further speed improvements.
+For a long time, Linux has been blamed to boot slowly, compared to other
+ modern operating systems.
+ In this article, we are going to focus on a new init system we developed
+ for our Pardus Linux distribution, Mudur, together with other initiatives
+ that are worth mentioning.
+ Mudur is written from scratch in Python with simplicity, speed and maintainabil
+ity in mind.
+ It isn't a replacement for the /sbin/init command like some other alternatives,
+ nor just a parallel script executor.
+ Mudur greatly simplified our boot process, making it faster and more flexible.
+ Authors look forward for future boot process research for further improvement
+ and optimizations.
 \end_layout
 
 \begin_layout Section
@@ -72,9 +77,10 @@ While there's always a hot, ongoing debate about which package manager to
  PiSi gives extreme flexibility for packagers.
  The new package manager, PiSi (packages installed successfully as intended)
  is completely written in Python.
- While PiSi deserves a full article of its own, we'll be focusing on a new
- approach Pardus presents, i.e a new init framework called Mudur which primarily
- focuses on notoriously slow and complex initialization system of Linux.
+ While PiSi deserves a full article of its own, we'll be focusing on another
+ new approach Pardus presents, i.e a new init framework called Mudur which
+ primarily focuses on notoriously slow and complex initialization system
+ of Linux.
 \end_layout
 
 \begin_layout Standard
@@ -135,22 +141,27 @@ While Linux is blamed to boot slower for some time, the work ongoing listed
 \end_layout
 
 \begin_layout Section
-What Mudur brings
+What Mudur Brings
 \end_layout
 
 \begin_layout Standard
-Mudur has been developed for Pardus, so it's probably not available for
- other distributions immediately.
+Mudur has been developed for Pardus, so it's probably not readily usable
+ for other distributions immediately.
  Since Mudur uses completely rewritten service scripts, it needs a genuine
  modification of the files read after init is executed.
  In this manner, Mudur resembles that of initng and depinit.
  In this chapter, we are going to summarize our approach, and explain why
- this is a better solution for init based speed, configurability and maintainabi
-lity problems.
+ this is a better solution for startup related speed, configurability and
+ maintainability problems.
 \end_layout
 
-\begin_layout Subsection
-Real problems need real languages
+\begin_layout Subsection*
+High Thoughs Must Have High Language
+\end_layout
+
+\begin_layout Standard
+As said by Aristophanes, 405 B.C., this great wisdom is still not yet understood
+ by many free software developers.
 \end_layout
 
 \begin_layout Standard
@@ -230,20 +241,10 @@ This time also includes basic system libraries (glibc, pthread, etc) used
 
 \begin_layout Standard
 Current code size is around 1500 lines.
- Our previous (Pardus 1.0) Gentoo based system was more than 10000 lines
-\begin_inset Foot
-status collapsed
-
-\begin_layout Standard
-detaylý sayý ver
+ Our previous (Pardus 1.0) Gentoo based system was more than 10000 lines.
 \end_layout
 
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Subsection*
 If It's Not Broken, Don't Fix It
 \end_layout
 
@@ -273,10 +274,11 @@ Since this is a very system level program, writing a replacement is tricky
 \end_layout
 
 \begin_layout Standard
-We just set our Python script in /etc/inittab and work on the real problem.
+We just set our Python script to run in /etc/inittab and work on the real
+ problem.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Service Scripts
 \end_layout
 
@@ -285,23 +287,21 @@ Basic jobs of initialization, i.e.
  loading modules, starting udev device manager, mounting filesystems, updating
  system clock are handled by a single Python script.
  This saves loading time and makes it simple.
+ These early startup jobs should run sequentally anyway.
 \end_layout
 
 \begin_layout Standard
 Other service scripts should come with their packages.
  Handling and paralel running of those scripts are handled by another Pardus
  project called Çomar.
-\end_layout
-
-\begin_layout Standard
-Çomar (COnfiguration MAnageR) is a system daemon.
+ Çomar (COnfiguration MAnageR) is a system daemon.
  It has a system model with classes and methods.
  Installed software packages register their Çomar scripts (also written
  in Python) to the classes on the model.
 \end_layout
 
 \begin_layout Standard
-In case of initialization system, every package with provides a service,
+In case of initialization system, every package which provides a service,
  registers a script to the System.Service class.
  This class has methods like start, stop, reload, info, etc.
  Configuration tools can query this objects and control them with given
@@ -334,10 +334,11 @@ ies, and wait for Çomar notification for handling restarts.
 Çomar has many other features and classes used in Pardus system for network
  management, user management, automatic configuration of graphic subsystem,
  and remote management.
- These are out of scope of this document.
+ It also has access control, profile, remote management facilities.
+ Those are out of scope of this document.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Limiting Resource Is IO, Not CPU
 \end_layout
 
@@ -348,8 +349,12 @@ Harddisks are not necessarily slow, they can transfer data at the rates
 \end_layout
 
 \begin_layout Standard
-It is possible to deal with this problem at the filesystem level [dipnot:
- osx þeysi], but deserves quite a huge work.
+It is possible to deal with this problem at the filesystem level
+\begin_inset LatexCommand \cite{key-15}
+
+\end_inset
+
+, but deserves quite a work.
  Luckily, we can benefit from simpler methods.
 \end_layout
 
@@ -374,7 +379,7 @@ Slowness of interpreted nature of Python is really insignificant here.
  Blocking happens only at calling external programs like modprobe and fsck.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Sleep Considered Harmful
 \end_layout
 
@@ -409,32 +414,32 @@ Components
 Pardus initialization system is composed of following programs:
 \end_layout
 
-\begin_layout Subsection
-/sbin/mudur.py
+\begin_layout Subsection*
+Mudur
+\end_layout
+
+\begin_layout Standard
+This
 \begin_inset LatexCommand \cite{key-12}
 
 \end_inset
 
+ is the main package of the initialization system.
+ Basic script is /sbin/mudur.py which is called by /sbin/init during the
+ system runlevel changes, and handles basic initialization and shutdown
+ jobs.
+ Another script is /sbin/muavin.py which is called by mudur.py during the
+ startup, and scans available hardware and loads necessary kernel modules
+ (coldplug).
+ Muavin is also called by udev on hotplug events, and handles module and
+ firmware loading operations.
+\end_layout
 
+\begin_layout Subsection*
+Çomar
 \end_layout
 
 \begin_layout Standard
-Main startup script, called by init.
- Handles basic initialization and shutdown.
-\end_layout
-
-\begin_layout Subsection
-/sbin/muavin.py
-\end_layout
-
-\begin_layout Standard
-Hotplug agent, called by udev.
- Finds and loads the kernel driver for plugged hardware.
- Also called by mudur.py for scanning available hardware and loading their
- drivers (coldplug).
-\end_layout
-
-\begin_layout Subsection
 Çomar
 \begin_inset LatexCommand \cite{key-13}
 
@@ -450,7 +455,11 @@ Configuration manager.
  User interfaces also use Çomar for managing services.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
+User Interfaces
+\end_layout
+
+\begin_layout Standard
 /bin/service
 \end_layout
 
@@ -458,7 +467,7 @@ Configuration manager.
 Command line tool for managing services.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
 Service Manager
 \end_layout
 
@@ -466,7 +475,7 @@ Service Manager
 Service Manager is a KDE control center module for managing services.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Service Scripts
 \end_layout
 
@@ -827,6 +836,12 @@ http://svn.pardus.org.tr/uludag/trunk/comar/mudur/bin/mudur.py
 
 \bibitem {key-13}
 http://svn.pardus.org.tr/uludag/trunk/comar/comar
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-15}
+jens axbe
 \end_layout
 
 \end_body
