@@ -66,8 +66,13 @@ Distrowatch.com lists more than 400 distributions, most of which are used
  This gives developers a high degree of freedom and re-use of existing component
 s, i.e a stable base system, package repositories, a great multitude of patches
  and security fixes.
- A recent study [1] has enabled for Linux newcomers to have an idea about
- the roots of distributions.
+ A recent study
+\begin_inset LatexCommand \cite{key-16}
+
+\end_inset
+
+ has enabled for Linux newcomers to have an idea about the roots of distribution
+s.
 \end_layout
 
 \begin_layout Standard
@@ -622,33 +627,35 @@ Conclusions
 
 \begin_layout Standard
 The re-written init daemon is currently in a working state starting from
- Pardus 1.1 alpha1.
+ Pardus 1.1 alpha2.
  Interested and experienced developers are more than welcome to build new
  enhancements on top of this model.
- We are also looking for real life implementations in other Linux distributions.
-\end_layout
-
-\begin_layout Standard
-Below, a table showing the current advantages and disadvantages of the new
- Mudur init system is given.
- Note that re-writing of init scripts for many services has been already
- implemented.
+ Below, a table showing the current advantages and disadvantages of the
+ new Mudur init system is given.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
+<lyxtabular version="3" rows="4" columns="3">
 <features>
-<column alignment="left" valignment="top" leftline="true" width="0">
-<column alignment="left" valignment="top" leftline="true" rightline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="left" valignment="top" leftline="true" width="5cm">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="5cm">
 <row topline="true" bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
+Criteria
+\end_layout
 
-\series bold
-Advantages of using Mudur
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Advantage
 \end_layout
 
 \end_inset
@@ -657,9 +664,7 @@ Advantages of using Mudur
 \begin_inset Text
 
 \begin_layout Standard
-
-\series bold
-Disadvantages of using Mudur
+Disadvantage
 \end_layout
 
 \end_inset
@@ -670,27 +675,16 @@ Disadvantages of using Mudur
 \begin_inset Text
 
 \begin_layout Standard
-Speed: Mudur lowers overall boot process time significantly.
+Speed
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Non-conformity to current standards
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row topline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Standard
-Modularity: 
+Very fast without comprimising maintainability.
 \end_layout
 
 \end_inset
@@ -699,27 +693,7 @@ Modularity:
 \begin_inset Text
 
 \begin_layout Standard
-No wide implementation
-\end_layout
 
-\end_inset
-</cell>
-</row>
-<row topline="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Documentation: 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Standard
-Needs re-writing of init scripts
 \end_layout
 
 \end_inset
@@ -730,7 +704,17 @@ Needs re-writing of init scripts
 \begin_inset Text
 
 \begin_layout Standard
-Simplicity: Mudur consists of 1500 lines of code
+Maintenance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Understanding the code, debugging, adding new functionality are all very
+ easy.
 \end_layout
 
 \end_inset
@@ -740,6 +724,39 @@ Simplicity: Mudur consists of 1500 lines of code
 
 \begin_layout Standard
 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Work
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Service scripts need to be rewritten in Python.
+ This isn't a big problem for us though, Pisi packagers already use Python
+ for other facilities, and there aren't many service scripts to replace
+ with.
+ All scripts in the Pardus 1.1 alpha2 release are already converted.
 \end_layout
 
 \end_inset
@@ -754,86 +771,92 @@ Simplicity: Mudur consists of 1500 lines of code
 
 \begin_layout Bibliography
 
+\bibitem {key-16}
+Linux Distributions Bird's Eye View, http://linuxhelp.blogspot.com/2006/04/linux-d
+istributions-birds-eye-view.html
+\end_layout
+
+\begin_layout Bibliography
+
 \bibitem {key-2}
-http://www-128.ibm.com/developerworks/linux/library/l-boot.html
+Service startup parallelization paper of James Hunt, IBM, http://www-128.ibm.com/d
+eveloperworks/linux/library/l-boot.html
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-3}
-http://tree.celinuxforum.org/pubwiki/moin.cgi/BootupTimeReductionHowto
+Boot time reduction techniques for embedded systems, http://tree.celinuxforum.org/
+pubwiki/moin.cgi/BootupTimeReductionHowto
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-4}
-http://www.bootchart.org/
+Startup process benchmark program, http://www.bootchart.org/
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-5}
-http://www.initng.org/
+Init replacement project, http://www.initng.org/
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-6}
-http://www.fastboot.org/
+Another replacement, http://www.fastboot.org/
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-8}
-http://www.nezumi.plus.com/depinit/
+Even another replacement, http://www.nezumi.plus.com/depinit/
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-7}
-http://www.atnf.csiro.au/people/rgooch/linux/boot-scripts/
+Yet another try, http://www.atnf.csiro.au/people/rgooch/linux/boot-scripts/
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-9}
-http://www.kernelthread.com/mac/apme/optimizations/
+Startup related filesystem optimizations in Mac OS X, http://www.kernelthread.com/
+mac/apme/optimizations/
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-10}
-http://developer.apple.com/macosx/launchd.html
+Mac OS X, new system startup program, http://developer.apple.com/macosx/launchd.htm
+l
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-11}
-http://kerneltrap.org/node/2157
+Discussion of preload techniques, http://kerneltrap.org/node/2157
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-14}
-http://comments.gmane.org/gmane.linux.kernel/406364
+Jens Axboe's ext2 filesystem cache, http://comments.gmane.org/gmane.linux.kernel/406
+364
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-12}
-http://svn.pardus.org.tr/uludag/trunk/comar/mudur/bin/mudur.py
+Mudur source code, http://svn.pardus.org.tr/uludag/trunk/comar/mudur/bin/mudur.py
 \end_layout
 
 \begin_layout Bibliography
 
 \bibitem {key-13}
-http://svn.pardus.org.tr/uludag/trunk/comar/comar
-\end_layout
-
-\begin_layout Bibliography
-
-\bibitem {key-15}
-jens axbe
+Çomar source code, http://svn.pardus.org.tr/uludag/trunk/comar/comar
 \end_layout
 
 \end_body
