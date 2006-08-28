@@ -1,5 +1,0 @@
-[if-any view_tag]
-  Seçili etiket: [view_tag] <br>
-[end]
-
-
