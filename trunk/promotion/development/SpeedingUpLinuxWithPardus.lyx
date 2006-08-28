@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \textclass article
-\language turkish
+\language english
 \inputencoding auto
 \fontscheme pslatex
 \graphics default
@@ -34,6 +34,8 @@ Speeding Up Linux: One Step Further With Pardus
 \end_layout
 
 \begin_layout Author
+
+\lang turkish
 Gürer Özen, Görkem Çetin
 \end_layout
 
@@ -73,7 +75,7 @@ While there's always a hot, ongoing debate about which package manager to
  use, Pardus developers have chosen not to rely on any package managers
  and decided to roll a brand new one.
  This may seem like a re-invention of the wheel, however one of the core
- developers, Çaðlar Onur, claims that a new approach to build packages with
+ developers, Çaglar Onur, claims that a new approach to build packages with
  PiSi gives extreme flexibility for packagers.
  The new package manager, PiSi (packages installed successfully as intended)
  is completely written in Python.
@@ -414,6 +416,10 @@ Components
 Pardus initialization system is composed of following programs:
 \end_layout
 
+\begin_layout Standard
+*** buraya sema girecek ***
+\end_layout
+
 \begin_layout Subsection*
 Mudur
 \end_layout
@@ -607,8 +613,7 @@ You can't improve what you can't measure.
 \end_layout
 
 \begin_layout Standard
-***buraya iþ yerinde bootchart datasýný eps render edip koy, png den daha
- güzel oluyor***
+***buraya bootchart girecek **
 \end_layout
 
 \begin_layout Section
