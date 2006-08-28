@@ -433,6 +433,9 @@ This
  (coldplug).
  Muavin is also called by udev on hotplug events, and handles module and
  firmware loading operations.
+ There are also a set of commands like update-modules, update-environment,
+ etc used by package install script, or system admins.
+ Those are written in Python too.
 \end_layout
 
 \begin_layout Subsection*
@@ -440,19 +443,17 @@ This
 \end_layout
 
 \begin_layout Standard
-Çomar
+Configuration manager
 \begin_inset LatexCommand \cite{key-13}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Configuration manager.
- Pardus packages register their service scripts to Çomar, which in turn
- is called by mudur.py for starting and stopping services.
+ is a very small system daemon written in C.
+ Pardus packages register their service scripts to Çomar, which is called
+ by mudur.py for starting and stopping services.
  User interfaces also use Çomar for managing services.
+ Handles parallel execution, access control, profile management and remote
+ management.
 \end_layout
 
 \begin_layout Subsection*
@@ -460,19 +461,10 @@ User Interfaces
 \end_layout
 
 \begin_layout Standard
-/bin/service
-\end_layout
-
-\begin_layout Standard
-Command line tool for managing services.
-\end_layout
-
-\begin_layout Standard
-Service Manager
-\end_layout
-
-\begin_layout Standard
-Service Manager is a KDE control center module for managing services.
+There is a service command which can query the status of services, and can
+ start/stop/restart them.
+ There is also a KDE KControl Service Manager module with same capabilities.
+ Since they use Çomar for actual operation, they are just very simple wrappers.
 \end_layout
 
 \begin_layout Subsection*
@@ -485,7 +477,11 @@ Scripts themselves come with the Pardus packages and managed by Çomar.
 \end_layout
 
 \begin_layout LyX-Code
-from comar.service import * import os
+from comar.service import *
+\end_layout
+
+\begin_layout LyX-Code
+import os
 \end_layout
 
 \begin_layout LyX-Code
@@ -561,15 +557,11 @@ def start():
 \end_layout
 
 \begin_layout LyX-Code
-    ret = run("/sbin/start-stop-daemon", "--start", "--quiet",
+    if run("/sbin/start-stop-daemon", "--start", "--quiet",
 \end_layout
 
 \begin_layout LyX-Code
-                     "--exe", "/usr/kde/3.5/bin/kdm")
-\end_layout
-
-\begin_layout LyX-Code
-    if ret == 0: 
+                     "--exe", "/usr/kde/3.5/bin/kdm"):
 \end_layout
 
 \begin_layout LyX-Code
@@ -585,15 +577,11 @@ def stop():
 \end_layout
 
 \begin_layout LyX-Code
-    ret = run("/sbin/start-stop-daemon --stop --quiet --exe
+    if run("/sbin/start-stop-daemon --stop --quiet --exe
 \end_layout
 
 \begin_layout LyX-Code
-                    /usr/kde/3.5/bin/kdm")
-\end_layout
-
-\begin_layout LyX-Code
-    if ret == 0:
+                    /usr/kde/3.5/bin/kdm"):
 \end_layout
 
 \begin_layout LyX-Code
@@ -614,13 +602,25 @@ You can't improve what you can't measure.
  which generates detailed graphics.
  Resource utilization and process information are collected during the boot
  process and are later rendered in a chart.
- A typical Pardus boot sequence on a P4 2.8GHz, 1GB RAM, ??? IDE is shown
- below:
+ A typical Pardus boot sequence on a P4 2.8GHz, 1GB RAM, 80GB IDE disk is
+ shown below:
 \end_layout
 
 \begin_layout Standard
 ***buraya iþ yerinde bootchart datasýný eps render edip koy, png den daha
  güzel oluyor***
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+The re-written init daemon is currently in a working state starting from
+ Pardus 1.1 alpha1.
+ Interested and experienced developers are more than welcome to build new
+ enhancements on top of this model.
+ We are also looking for real life implementations in other Linux distributions.
 \end_layout
 
 \begin_layout Standard
@@ -745,19 +745,6 @@ Simplicity: Mudur consists of 1500 lines of code
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Conclusions
-\end_layout
-
-\begin_layout Standard
-The re-written init daemon is currently in a working state starting from
- Pardus 1.1 alpha1.
- Interested and experienced developers are more than welcome to build new
- enhancements on top of this model.
- We are also looking for real life implementations in other Linux distributions.
- 
 \end_layout
 
 \begin_layout Bibliography
