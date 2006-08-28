@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+ "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+  <title>ViewCVS Yardım: Veritabanı Sorgulama</title>
+</head>
+
+<body background="images/chalk.jpg">
+<table width="100%" border=0 cellspacing=5 cellpadding=0>
+  <tr>
+    <td width="1%"><a href=".."><img border=0
+        src="images/logo.png"></a>
+    </td>
+    <td><h1>ViewCVS Yardım: Veritabanı Sorgulama</h1></td>
+  </tr>
+  <tr><td width="1%" valign="top" bgcolor="#ffffff">
+       <h3>Yardım</h3>
+       <a href="help_rootview.html">Genel</a><br>
+       <a href="help_dirview.html">Dizin&nbsp;Gösterimi</a><br>
+       <a href="help_log.html">Klasik&nbsp;Kayıt&nbsp;Gösterimi</a><br>
+       <a href="help_logtable.html">Alternatif&nbsp;Kayıt&nbsp;Gösterimi</a><br>
+       <b>Veritabanı&nbsp;Sorgulama</b>
+
+       <h3>İnternet</h3>
+       <a href="http://viewcvs.sf.net/index.html">Anasayfa</a><br>
+       <a href="http://viewcvs.sf.net/upgrading.html">Güncelleme</a><br>
+       <a href="http://viewcvs.sf.net/contributing.html">Geliştirme</a><br>
+       <a href="http://viewcvs.sf.net/license-1.html">Lisans</a><br>
+  </td><td colspan=2>
+
+  <p> 
+    Gönderim veritabanını sorgulamak için parametreleri belirleyin. Metin 
+    alanlarına virgülle ayrılmış değerler girerek çoklu eşleşen arayabilirsiniz. 
+    Düzenli ifadeler ve joker karakteri desteklenmektedir. Boş metin alanları joker 
+    karakter olarak algılanacaktır.
+  </p>
+  <p>
+    Tüm metin alanlarında virgülle ayrılmış değerler kullanabilirsiniz. Örneğin; 
+    <i>ahmet</i> ve <i>mehmet</i> tarafından yapılan gönderimleri aramak için, 
+    <i>Değişikliği yapan</i> alanına <b>ahmet,mehmet</b> yazmak yeterlidir. 
+    Eğer boşluk ve/veya tırnak işareti içeren bir öğe arıyorsanız isteğinizi tırnak işareti 
+    içine almalısınız. Örneğin; tırnak işaretleriyle beraber yukarıdaki sorgunun aynısı 
+    <b>"ahmet", "mehmet"</b> şeklinde olacaktır.
+  </p>
+  <p>                           
+    Joker ve düzenli ifade aramaları tırnak işaretli değerlerde benzer yazılırlar.
+    Tüm joker ve düzenli ifade değerlerini ve komut karakterlerini  tırnak işareti 
+    içinde yazmalısınız.  Joker aramalar için komut karakteri <b>l</b> ve joker 
+    karakteri ise yüzde (<b>%</b>) işaretidir. 
+    Düzenli ifadeler için komut karakteri <b>r</b>'dir ve doğrudan MySQL'e işletilir, 
+    yani kullanımı için MySQL el kitabına bakmanız gerekebilir. Perl'e çok benzer bir yapısı vardır. 
+    <i>.py</i> uzantılı tüm dosyalar için sorgu şu şekildedir: <b>l"%.py"</b> (<i>Dosya</i> 
+    metin alanına yazılacak). Aynı sorgunun düzenli ifadelerle oluşturulmuşu ise şöyle: <b>r".*\.py"</b>.
+  </p>
+  <p>                  
+    Virgüllerle ayırmak şartıyla tüm arama şekillerini karıştırarak kullanabilirsiniz.
+  </p>                                                    
+  </td></tr></table>
+  <hr>
+  <address><a href="mailto:viewcvs-dev@lyra.org">ViewCVS Grubu</a></address>
+<!-- Created: Thu Oct 25 22:16:29 CEST 2001 -->
+<!-- hhmts start -->
+Son düzenleme: Tue Nov 13 20:41:02 CEST 2001
+<!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<p>[if-any branch]Öntanımlı bölüm: [branch][else]Öntanımlı bölüm yok[end]<br>
+Dosyanın her zaman en güncel hali için bağlantılar:
+(<a href="[view_href]">göster</a>)
+[if-any download_href](<a href="[download_href]">indir</a>)[end]
+[if-any download_text_href](<a href="[download_text_href]">metin olarak indir</a>)[end]
+</p>
+
+

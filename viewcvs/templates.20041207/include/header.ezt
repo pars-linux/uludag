@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+ "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- ViewCVS       - http://viewcvs.sourceforge.net/
+     by Greg Stein - mailto:gstein@lyra.org  -->
+
+<html>
+<head>
+  <title>[page_title]</title>
+  <meta name="generator" content="ViewCVS [vsn]">
+  <link rel="stylesheet" href="[docroot]/styles.css" type="text/css">
+</head>
+
+<body>
+
+<div class="vc_navheader">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td align="left"><b>[nav_path]</b></td>
+  <td align="right">
+  [if-any roots]
+    <form method=get action="[change_root_action]">
+      [change_root_hidden_values]
+      <b>Depo:</b>
+      <select name="root" onchange="submit()">
+        [define cvs_root_options][end]
+        [define svn_root_options][end]
+        [for roots]
+          [define root_option][end]
+          [is roots.name rootname]
+            [define root_option]<option selected>[roots.name]</option>[end]
+          [else]
+            [define root_option]<option>[roots.name]</option>[end]
+          [end]
+          [is roots.type "cvs"]
+            [define cvs_root_options][cvs_root_options][root_option][end]
+          [else]
+            [is roots.type "svn"]
+              [define svn_root_options][svn_root_options][root_option][end]
+            [end]
+          [end]
+        [end]
+        [is cvs_root_options ""][else]
+          <optgroup label="CVS Repositories">[cvs_root_options]</optgroup>
+        [end]
+        [is svn_root_options ""][else]
+          <optgroup label="Subversion Repositories">[svn_root_options]</optgroup>
+        [end]
+      </select>
+      <input type=submit value="Göster">
+    </form>
+  [else]
+    &nbsp;
+  [end]
+  </td>
+</tr>
+</table>
+</div>
+
+<h1>[location]</h1>
+
+

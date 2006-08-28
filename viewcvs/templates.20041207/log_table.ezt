@@ -1,0 +1,177 @@
+[# setup page definitions]
+  [define location][rootname][if-any where]: [where][end][end]
+  [define page_title][cfg.general.main_title] - dosya geçmişi - [location][end]
+  [define help_href][docroot]/help_logtable.html[end]
+[# end]
+
+[include "include/header.ezt" "logtable"]
+
+<hr noshade>
+
+[include "include/branch.ezt"]
+[include "include/view_tag.ezt"]
+[include "include/paging.ezt"]
+
+<hr noshade>
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+<thead>
+<tr>
+  <th align="left" class="vc_header[is logsort "rev"]_sort[end]">Sürüm</th>
+  [is pathtype "file"]
+  <th align="left" class="vc_header">Görevler</th>
+  <th align="left" class="vc_header">Farklılıklar</th>
+  [end]
+  [is roottype "cvs"]
+  <th align="left" class="vc_header">Bölümler/<br>Etiketler</th>
+  [end]
+  <th align="left" class="vc_header[is logsort "date"]_sort[end]">Son değişiklik</th>
+  <th align="left" class="vc_header">Değişikliği yapan</th>
+</tr>
+</thead>
+[for entries]
+  <tbody>
+  <tr valign="top" class="vc_row_[if-index entries even]even[else]odd[end]">
+
+    [# Revision column]
+    <td rowspan="2">
+      [is roottype "svn"]<a href="[entries.revision_href]"><b>[entries.rev]</b></a>[else]<b>[entries.rev]</b>[end]
+      <a name="rev[entries.rev]"></a>
+    </td>
+
+    [is pathtype "file"]
+      <td>
+      [# Tasks column]
+        <a href="[entries.view_href]"><b>göster</b></a><br>
+        <a href="[entries.download_href]"><b>indir</b></a><br>
+        [if-any entries.download_text_href]<a href="[entries.download_text_href]"><b>metin olarak indir</b></a><br>[end]
+
+        [# if you don't want to allow annotation, then remove this line]
+        [is roottype "svn"][else]<a href="[entries.annotate_href]"><b>ek açıklama</b></a><br>[end]
+      </td>
+      <td>
+      [is entries.state "dead"]
+        <b><i>DOSYA SİLİNMİŞTİR</i></b>
+      [else]
+      [# if you don't want to allow select for diffs then remove this section]
+      [is entries.rev rev_selected]
+        <b>[[]seçildi]</b><br>
+      [else]
+      <a href="[entries.sel_for_diff_href]"><b>[[]farklar için seç]</b></a><br>
+      [end]
+        [if-any entries.diff_to_sel_href]
+          <a href="[entries.diff_to_sel_href]"><b>Seçili&nbsp;[rev_selected]&nbsp;sürümüyle&nbsp;farklılıkları&nbsp;göster</b></a>
+          [if-any human_readable]
+          [else]
+            (<a href="[entries.diff_to_sel_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
+          [end]<br />
+        [end]
+        [if-any entries.prev]
+          <a href="[entries.diff_to_prev_href]"><b>Önceki&nbsp;[entries.prev]&nbsp;sürümüyle&nbsp;farklılıkları&nbsp;göster</b></a>
+          [if-any human_readable]
+          [else]
+            (<a href="[entries.diff_to_prev_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
+          [end]<br />
+        [end]
+      [end]  
+      </td>
+    [end]
+    [is roottype "cvs"]
+    <td>
+      [# Branches column]
+      [if-any entries.vendor_branch]
+        <i>vendor bölümü</i><br>
+      [end]
+      [if-any entries.branches]
+        [for entries.branches]
+          <a href="[entries.branches.href]"><b>[entries.branches.name]</b></a><br>
+        [end]
+      [end]
+      [if-any entries.branch_points]
+        Bölüm:
+        [for entries.branch_points]
+          <a href="[entries.branch_points.href]"><b>[entries.branch_points.name]</b></a><br>
+        [end]
+      [end]
+      [if-any entries.next_main]
+        <a href="[entries.diff_to_main_href]"><b>Sonraki&nbsp;MAIN&nbsp;[entries.next_main]&nbsp;ile&nbsp;farklılıkları&nbsp;göster</b></a>
+        [if-any human_readable]
+        [else]
+          (<a href="[entries.diff_to_main_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
+        [end]<br />
+      [end]
+      [if-any entries.branch_point]
+        <a href="[entries.diff_to_branch_href]"><b>Bölüm&nbsp;[entries.branch_point]&nbsp;ile&nbsp;farklılıkları&nbsp;göster</b></a>
+        [if-any human_readable]
+        [else]
+          (<a href="[entries.diff_to_branch_href]&amp;diff_format=h"><b>renklendirilmiş</b></a>)
+        [end]<br />
+      [end]
+
+      [# Tags ]
+      [if-any entries.tags]
+        <form method=get action="[branch_select_action]" >
+          [branch_select_hidden_values]
+          <select name="only_with_tag" onChange="submit()">
+          <option value="" [is view_tag ""]selected[end]>Tüm etiketleri göster</option>
+          [for entries.tags]
+            <option [is view_tag entries.tags.name]selected[end]>[entries.tags.name]</option>
+          [end]
+          </select>
+        </form>
+      [else]&nbsp;
+      [end]
+    </td>
+    [end]
+
+    [# Time column]
+    <td>
+      [is roottype "svn"]
+        [if-index entries last]eklendi[else]düzenlendi[end]
+      [end]
+      [entries.ago] önce<br><i>[entries.date_str]</i>
+      [is roottype "cvs"]
+        [if-any entries.prev]
+          [if-any entries.changed]
+            <br><b>[entries.prev]'den bu yana değişiklik: [entries.changed] satır</b>
+          [end]
+        [end]
+      [end]
+    </td>
+
+    [# Author column]
+    <td>
+      [entries.author]
+    </td>
+
+  </tr>
+  <tr class="vc_row_[if-index entries even]even[else]odd[end]">
+    <td colspan=5>
+      [is roottype "svn"]
+        [is entries.filename where][else]<b>Dosya adı: </b>[entries.filename]<br>[end]
+        [if-any entries.size]
+          <b>Dosya uzunluğu: [entries.size] bayt<br>
+        [end]
+
+        [if-any entries.copy_path]
+           [entries.copy_rev] sürümüne ait <a href="[entries.copy_href]">[entries.copy_path]</a> dosyasından kopyalandı<br>
+        [end]
+      [end]
+
+      <b>Log: </b><pre class="vc_log">[entries.html_log]</pre>
+    </td>
+  </tr>
+  </tbody>
+[end]
+</table>
+
+[include "include/paging.ezt"]
+
+[is pathtype "file"]
+  [include "include/diff_form.ezt"]
+[end]
+
+[include "include/branch_form.ezt"]
+
+[include "include/sort.ezt"]
+
+[include "include/footer.ezt"]

@@ -1,0 +1,52 @@
+[# setup page definitions]
+  [define location][rootname][if-any where]: [where][end][end]
+  [define page_title][cfg.general.main_title] - göster - [location][end]
+  [define help_href][docroot]/help_rootview.html[end]
+[# end]
+
+[include "include/header.ezt" "markup"]
+
+<div class="vc_summary">
+Dosya: [nav_file]
+
+(<a href="[download_href]"><b>indir</b></a>)
+[if-any download_text_href](<a href="[download_text_href]"><b>metin olarak indir</b></a>)[end]
+
+<br>
+
+[if-any log]
+  Sürüm: <b>[rev]</b>[if-any vendor_branch] <i>(vendor bölümü)</i>[end], <i>[author]</i> tarafından 
+  <i>[date_str]</i> tarihinde ([ago] önce)
+  
+  [if-any branches]
+    <br>Bölüm: <b>[branches]</b>
+  [end]
+  [if-any tags]
+    <br>Etiketler: <b>[tags]</b>
+  [end]
+  [if-any branch_points]
+    <br>Branch point for: <b>[branch_points]</b>
+  [end]
+  [is roottype "cvs"]
+    [if-any changed]
+      <br><b>[prev]'den beri değişiklik: [changed] satır</b>
+    [end]
+  [end]
+  [is roottype "svn"]
+    <br>Dosya boyutu: [size] bayt
+  [end]
+  [is state "dead"]
+    <br><b><i>DOSYA SİLİNMİŞTİR</i></b>
+  [end]
+  <pre class="vc_log">[log]</pre>
+[else]
+  Sürüm: <b>[rev]</b><br>
+  [if-any tag]
+    Etiket: <b>[tag]</b><br>
+  [end]
+[end]
+</div>
+
+[markup]
+
+[include "include/footer.ezt"]

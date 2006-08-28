@@ -1,0 +1,238 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN"
+ "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- ViewCVS       -- http://viewcvs.sourceforge.net/
+     by Greg Stein -- mailto:gstein@lyra.org  -->
+
+<html>
+<head>
+  <title>[cfg.general.main_title] - sorgu</title>
+  <link rel="stylesheet" href="[docroot]/styles.css" type="text/css">
+</head>
+
+<body>
+
+[# setup page definitions]
+  [define help_href][docroot]/help_query.html[end]
+[# end]
+
+  <p> 
+    Gönderim veritabanını sorgulamak için parametreleri belirleyin. Metin 
+    alanlarına virgülle ayrılmış değerler girerek çoklu eşleşen arayabilirsiniz. 
+    Düzenli ifadeler ve joker karakteri desteklenmektedir. Boş metin alanları joker 
+    karakter olarak algılanacaktır.
+  </p>
+  <p>
+    Tüm metin alanlarında virgülle ayrılmış değerler kullanabilirsiniz. Örneğin; 
+    <i>ahmet</i> ve <i>mehmet</i> tarafından yapılan gönderimleri aramak için, 
+    <i>Değişikliği yapan</i> alanına <b>ahmet,mehmet</b> yazmak yeterlidir. 
+    Eğer boşluk ve/veya tırnak işareti içeren bir öğe arıyorsanız isteğinizi tırnak işareti 
+    içine almalısınız. Örneğin; tırnak işaretleriyle beraber yukarıdaki sorgunun aynısı 
+    <b>"ahmet", "mehmet"</b> şeklinde olacaktır.
+  </p>
+  <p>                           
+    Joker ve düzenli ifade aramaları tırnak işaretli değerlerde benzer yazılırlar.
+    Tüm joker ve düzenli ifade değerlerini ve komut karakterlerini  tırnak işareti 
+    içinde yazmalısınız.  Joker aramalar için komut karakteri <b>l</b> ve joker 
+    karakteri ise yüzde (<b>%</b>) işaretidir. 
+    Düzenli ifadeler için komut karakteri <b>r</b>'dir ve doğrudan MySQL'e işletilir, 
+    yani kullanımı için MySQL el kitabına bakmanız gerekebilir. Perl'e çok benzer bir yapısı vardır. 
+    <i>.py</i> uzantılı tüm dosyalar için sorgu şu şekildedir: <b>l"%.py"</b> (<i>Dosya</i> 
+    metin alanına yazılacak). Aynı sorgunun düzenli ifadelerle oluşturulmuşu ise şöyle: <b>r".*\.py"</b>.
+  </p>
+  <p>                  
+    Virgüllerle ayırmak şartıyla tüm arama şekillerini karıştırarak kullanabilirsiniz.
+  </p>                                                    
+
+<form method=get>
+
+<div class="vc_query_form">
+<table border=0 cellspacing=0 cellpadding=2 width=100%>
+ <tr>
+  <td>
+   <table>
+    <tr>
+     <td valign=top>
+
+      <table>
+       <tr>
+        <td align=right>CVS Deposu:</td>
+        <td>
+         <input type=text name=repository size=40 value="[repository]">
+        </td>
+       </tr>
+       <tr>
+        <td align=right>CVS Bölümü:</td>
+        <td>
+         <input type=text name=branch size=40 value="[branch]">
+        </td>
+       </tr>
+       <tr>
+        <td align=right>Dizin:</td>
+        <td>
+         <input type=text name=directory size=40 value="[directory]">
+        </td>
+       </tr>
+       <tr>
+        <td align=right>Dosya:</td>
+        <td>
+         <input type=text name=file size=40 value="[file]">
+        </td>
+       </tr>
+       <tr>
+        <td align=right>Değişikliği yapan:</td>
+        <td>
+         <input type=text name=who size=40 value="[who]">
+        </td>
+       </tr>
+      </table>
+
+     </td>
+     <td valign=top>
+
+      <table>
+       <tr>
+        <td align=left>Sırala:</td>
+        <td>
+         <select name=sortby>
+          <option value=date [is sortby "date"]selected[end]>Tarihe göre</option>
+          <option value=author [is sortby "author"]selected[end]>Değişikliği yapana göre</option>
+          <option value=file [is sortby "file"]selected[end]>Dosyaya göre</option>
+         </select>
+        </td>
+       </tr>
+       <tr>
+        <td colspan=2>
+         <table border=0 cellspacing=0 cellpadding=0>
+          <tr>
+           <td>Tarih:</td>
+          </tr>
+          <tr>
+           <td><input type=radio name=date value=hours
+		  [is date "hours"]checked[end]></td>
+           <td>Son
+             <input type=text name=hours value=[hours] size=4> saat içinde
+           </td>
+          </tr>
+          <tr>
+           <td><input type=radio name=date value=day
+		  [is date "day"]checked[end]></td>
+           <td>Son 24 saat içinde</td>
+          </tr>
+          <tr>
+           <td><input type=radio name=date value=week
+		  [is date "week"]checked[end]></td>
+           <td>Son bir hafta içinde</td>
+          </tr>
+          <tr>
+           <td><input type=radio name=date value=month
+		  [is date "month"]checked[end]></td>
+           <td>Son bir ay içinde</td>
+          </tr>
+          <tr>
+           <td><input type=radio name=date value=all
+		  [is date "all"]checked[end]></td>
+           <td>Başlangıçtan bu yana</td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+
+     </td>
+    </tr>
+   </table>
+  </td>
+  <td>
+   <input type=submit value="Ara">
+  </td>
+ </tr>
+</table>
+</div>
+
+</form>
+
+[is query "skipped"]
+[else]
+<p><b>[num_commits]</b> eşleşen kayıt bulundu.</p>
+
+[if-any commits]
+<table width="100%" border=0 cellspacing=0 cellpadding=2>
+ <thead>
+ <tr class="vc_header">
+  <th align=left valign=top>Sürüm</th>
+  <th align=left valign=top>Dosya</th>
+  <th align=left valign=top>Bölüm</th>
+  <th align=left valign=top>+/-</th>
+  <th align=left valign=top>Tarih</th>
+  <th align=left valign=top>Değişikliği yapan</th>
+[# uncommment, if you want a separate Description column: (also see below)
+<th align=left valign=top>Açıklama</th>
+]
+ </tr>
+ </thead>
+[for commits]
+ <tbody>
+  [for commits.files]
+    <tr class="vc_row_[if-index commits even]even[else]odd[end]">
+      <td align=left valign=top>
+	[if-any commits.files.rev][commits.files.rev][else]&nbsp;[end]
+      </td>
+      <td align=left valign=top>[commits.files.link]</td>
+      <td align=left valign=top>
+	[if-any commits.files.branch][commits.files.branch][else]&nbsp;[end]
+      </td>
+      <td align=left valign=top>
+        [is commits.files.type "Add"]<ins>[end]
+        [is commits.files.type "Change"]<a href="[commits.files.difflink]">[end]
+        [is commits.files.type "Remove"]<del>[end]
+          [commits.files.plus]/[commits.files.minus]
+        [is commits.files.type "Add"]</ins>[end]
+        [is commits.files.type "Change"]</a>[end]
+        [is commits.files.type "Remove"]</del>[end]
+      </td>
+      <td align=left valign=top>
+	[if-any commits.files.date][commits.files.date][else]&nbsp;[end]
+      </td>
+      <td align=left valign=top>
+	[if-any commits.files.author][commits.files.author][else]&nbsp;[end]
+      </td>
+
+[# uncommment, if you want a separate Description column:
+      {if-index commits.files first{
+        <td align=left valign=top rowspan={commits.num_files}>
+          {commits.desc}
+        </td>
+      {end}
+
+   (substitute brackets for the braces)
+]
+    </tr>
+[# and also take the following out in the "Description column"-case:]
+      [if-index commits.files last]
+	<tr class="vc_row_[if-index commits even]even[else]odd[end]">
+	  <td>&nbsp;</td>
+	  <td colspan=5><b>Kayıt:</b><br>
+	    <pre class="vc_log">[commits.desc]</pre></td>
+	</tr>
+      [end]
+[# ---]
+  [end]
+ </tbody>
+[end]
+
+ <tr class="vc_header">
+  <th align=left valign=top>&nbsp;</th>
+  <th align=left valign=top>&nbsp;</th>
+  <th align=left valign=top>&nbsp;</th>
+  <th align=left valign=top>&nbsp;</th>
+  <th align=left valign=top>&nbsp;</th>
+  <th align=left valign=top>&nbsp;</th>
+[# uncommment, if you want a separate Description column:
+  <th align=left valign=top>&nbsp;</th>
+]
+ </tr>
+</table>
+[end]
+[end]
+
+[include "include/footer.ezt"]

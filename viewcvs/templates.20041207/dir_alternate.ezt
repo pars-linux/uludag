@@ -1,0 +1,95 @@
+[include "include/dir_header.ezt"]
+
+<table width="100%" border=0 cellspacing=1 cellpadding=2>
+<thead>
+<tr>
+  <th class="vc_header[is sortby "rev"]_sort[end]">
+    <a href="[sortby_rev_href]#dirlist">Sürüm
+    [is sortby "rev"]
+      <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
+        width="13" height="13" border="0"
+        src="[docroot]/images/[is sortdir "up"]up[else]down[end].png" />
+    [end]
+    </a>
+  </th>
+  <th class="vc_header[is sortby "file"]_sort[end]" colspan=2>
+    <a href="[sortby_file_href]#dirlist">Dosya/Dizin
+    [is sortby "file"]
+      <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
+        width="13" height="13" border="0"
+        src="[docroot]/images/[is sortdir "up"]up[else]down[end].png" />
+    [end]
+    </a>
+  </th>
+  <th class="vc_header[is sortby "date"]_sort[end]">
+    <a href="[sortby_date_href]#dirlist">Son değişiklik
+    [is sortby "date"]
+      <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
+        width="13" height="13" border="0"
+        src="[docroot]/images/[is sortdir "up"]up[else]down[end].png" />
+    [end]
+    </a>
+  </th>
+  <th class="vc_header[is sortby "author"]_sort[end]">
+    <a href="[sortby_author_href]#dirlist">Değişikliği yapan
+    [is sortby "author"]
+      <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
+        width="13" height="13" border="0"
+        src="[docroot]/images/[is sortdir "up"]up[else]down[end].png" />
+    [end]
+    </a>
+  </th>
+[is cfg.options.show_logs "1"]
+  <th class="vc_header[is sortby "log"]_sort[end]">
+    <a href="[sortby_log_href]#dirlist">Son değişikliğin açıklaması
+    [is sortby "log"]
+      <img class="vc_sortarrow" alt="[is sortdir "down"](rev)[end]"
+        width="13" height="13" border="0"
+        src="[docroot]/images/[is sortdir "up"]up[else]down[end].png" />
+    [end]
+    </a>
+  </th>
+[end]
+</tr>
+</thead>
+
+<tbody>
+[for rows]
+  <tr class="vc_row_[if-index rows even]even[else]odd[end]">
+    <td>&nbsp;[if-any rows.rev]<a href="[is rows.type "dir"][rows.rev_href][else][rows.href][end]"><b>[rows.rev]</b></a>[end]</td>
+    <td[if-any rows.graph_href][else] colspan=2[end]>
+      <a name="[rows.anchor]" href="[is rows.type "dir"][rows.href][else][rows.rev_href][end]">
+      <img src="[docroot]/images/[is rows.type "dir"]dir[else][is rows.state "dead"]broken[else]text[end][end].png" alt="" border=0 width=16 height=16>
+      [rows.name][is rows.type "dir"]/[end]</a>
+      [is rows.state "dead"](ölü)[end]
+      [end]
+    </td>
+    [if-any rows.graph_href]
+      <td width="1%"><a href="[rows.graph_href]"><img
+      src="[docroot]/images/cvsgraph_16x16.png"
+      alt="(graph)" width=16 height=16 border=0>
+      </a></td>
+    [end]
+    [if-any rows.errors]
+      <td colspan=[is cfg.options.show_logs "1"]3[else]2[end]>
+        [for rows.errors]<p><i>[rows.errors]</i></p>[end]
+      </td>
+    [else]
+      <td>&nbsp;[rows.time]</td>
+      <td>&nbsp;[rows.author]</td>
+      [is cfg.options.show_logs "1"]
+        [if-any rows.show_log]
+          <td>&nbsp;[rows.log][is rows.type "dir"][is roottype "cvs"]
+            <i>(from [rows.log_file]/[rows.log_rev])</i>[end][end]</td>
+        [else]
+          <td>&nbsp;</td>
+        [end]
+      [end]
+    [end]
+  </tr>
+[end]
+</tbody>
+
+</table>
+
+[include "include/dir_footer.ezt"]

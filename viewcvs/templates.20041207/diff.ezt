@@ -1,0 +1,165 @@
+[# setup page definitions]
+  [define location][rootname][if-any where]: [where][end][end]
+  [define page_title][cfg.general.main_title] - farklar - [location][end]
+  [define help_href][docroot]/help_rootview.html[end]
+[# end]
+
+[include "include/header.ezt" "diff"]
+
+<h3 align=center>/[where] için [rev1] ve [rev2] sürümleri arası farklar</h3>
+
+[if-any raw_diff]
+  <pre class="vc_raw_diff">[raw_diff]</pre>
+[else]
+<table border=0 cellspacing=0 cellpadding=0 width="100%">
+  <tr class="vc_diff_header">
+    <th width="50%" valign=top>
+      sürüm [rev1], [date1]
+      [if-any tag1]<br>Etiket: [tag1][end]
+    </th>
+    <th width="50%" valign=top>
+      sürüm [rev2], [date2]
+      [if-any tag2]<br>Etiket: [tag2][end]
+    </th>
+  </tr>
+
+  [for changes]
+    [is changes.type "header"]
+      <tr class="vc_diff_chunk_header">
+        <td width="50%">
+          <table width="100%" border=1 cellpadding=5>
+            <tr>
+              <td> <b>Satır [changes.line1]</b>&nbsp;
+              <span class="vc_diff_chunk_extra">[changes.extra]</span></td>
+            </tr>
+          </table>
+        </td>
+       <td width="50%">
+          <table width="100%" border=1 cellpadding=5>
+            <tr>
+              <td> <b>Satır [changes.line2]</b>&nbsp;
+              <span class="vc_diff_chunk_extra">[changes.extra]</span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    [else]
+      [is changes.type "add"]
+        <tr>
+          <td class="vc_diff_empty">&nbsp;</td>
+          <td class="vc_diff_add">&nbsp;[changes.right]</td>
+        </tr>
+      [else]
+        [is changes.type "remove"]
+          <tr>
+            <td class="vc_diff_remove">&nbsp;[changes.left]</td>
+            <td class="vc_diff_empty">&nbsp;</td>
+          </tr>
+        [else]
+          [is changes.type "change"]
+            <tr>
+              [if-any changes.have_left]
+                <td class="vc_diff_change">&nbsp;[changes.left]</td>
+              [else]
+                <td class="vc_diff_change_empty">&nbsp;</td>
+              [end]
+              [if-any changes.have_right]
+                <td class="vc_diff_change">&nbsp;[changes.right]</td>
+              [else]
+                <td class="vc_diff_change_empty">&nbsp;</td>
+              [end]
+            </tr>
+          [else]
+            [is changes.type "no-changes"]
+              <tr>
+                <td colspan=2>&nbsp;</td>
+              </tr>
+              <tr class="vc_diff_empty">
+                <td colspan=2 align=center><br>
+                <b>- Fark yok -</b><br>&nbsp; </td>
+              </tr>
+            [else]
+              [is changes.type "binary-diff"]
+                <tr>
+                  <td colspan=2>&nbsp;</td>
+                </tr>
+                <tr class="vc_diff_empty">
+                  <td colspan=2 align=center><br>
+                  <b>- İkili dosya sürümleri farklı -</b><br>&nbsp; </td>
+                </tr>
+              [else]
+                [is changes.type "error"]
+                  <tr>
+                    <td colspan=2>&nbsp;</td>
+                  </tr>
+                  <tr class="vc_diff_empty">
+                    <td colspan=2 align=center> <br>
+                    <b>- ViewCVS'nin bu sayfayı gösterebilmesi için rcsdiff ve GNU diff sistemde kurulu olmalı. 
+                     ViewCVS GNU diff'in yerini bulamıyor. GNU diff sistemde yüklüyse rcsdiff yazılımı ayarlanmalı 
+                    ve GNU diff'in yeri gösterilerek derlenmelidir.
+                    -</b> <br>&nbsp; </td>
+                  </tr>
+                [else]
+                  <tr>
+                    <td class="vc_diff_nochange">&nbsp;[changes.left]</td>
+                    <td class="vc_diff_nochange">&nbsp;[changes.right]</td>
+                  </tr>
+                [end]
+              [end]
+            [end]
+          [end]
+        [end]
+      [end]
+    [end]
+  [end]
+</table>
+[end]
+
+<br><hr noshade width="100%">
+
+<table border=0 cellpadding=10>
+  <tr>
+    <td>
+      <form method=get action="[diff_format_action]">
+        [diff_format_hidden_values]
+        <input type=checkbox name="makepatch" value="1"> 
+        Patch yazılımıyla kullanıma uygun çıktı oluştur<br>
+        <select name="diff_format" onchange="submit()">
+          <option value="h" [is diff_format "h"]selected[end]>Değişiklikler Renklendirilmiş</option>
+          <option value="l" [is diff_format "l"]selected[end]>Tüm sayfa renklendirilmiş</option>
+          <option value="u" [is diff_format "u"]selected[end]>Unidiff</option>
+          <option value="c" [is diff_format "c"]selected[end]>Düzyazı</option>
+          <option value="s" [is diff_format "s"]selected[end]>Taraf tarafa</option>
+        </select>
+        <input type=submit value="Farklılıkları Göster">
+      </form>
+    </td>
+    <td>
+[if-any raw_diff]
+      &nbsp;
+[else]
+      <table border=1>
+        <tr>
+          <td>Renkler:<br>
+            <table border=0 cellspacing=0 cellpadding=1>
+              <tr>
+                <td align=center class="vc_diff_remove">[rev1]. sürüme göre silinen satırlar</td>
+                <td class="vc_diff_empty">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align=center colspan=2 class="vc_diff_change">değişen satırlar</td>
+              </tr>
+              <tr>
+                <td class="vc_diff_empty">&nbsp;</td>
+                <td align=center class="vc_diff_add">[rev2]. sürümde eklenen satırlar</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+[end]
+    </td>
+  </tr>
+</table>
+
+[include "include/footer.ezt"]

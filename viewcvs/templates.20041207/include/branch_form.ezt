@@ -1,0 +1,16 @@
+[if-any branch_names]
+  <hr noshade>
+  <a name=branch></a>
+  <form method=GET action="[branch_select_action]">
+    [branch_select_hidden_values]
+    Görüntülenecek bölüm:
+    <select name="only_with_tag" onchange="submit()">
+      <option value="" [is view_tag ""]selected[end]>Tüm bölümleri göster</option>
+      [for branch_names]
+        <option value="[branch_names]" [is branch_names view_tag]selected[end]>[branch_names]</option>
+      [end]
+    </select>
+    <input type=submit value="  Bölüm Göster  ">
+  </form>
+[end]
+

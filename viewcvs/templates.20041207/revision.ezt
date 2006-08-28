@@ -1,0 +1,90 @@
+[# setup page definitions]
+  [define location][rootname][if-any where]: [where][end][end]
+  [define page_title][cfg.general.main_title] - sürüm - [location][end]
+  [define help_href][docroot]/help_rootview.html[end]
+[# end]
+
+[include "include/header.ezt" "revision"]
+
+<hr noshade>
+
+<table border="0" cellspacing="1" cellpadding="2">
+  <tr align=left>
+    <th>Sürümü göster:</th>
+    <td>
+      <form method=get action="[jump_rev_action]">
+      [jump_rev_hidden_values]
+      <input type="text" name="rev" value="[jump_rev]">
+      <input type=submit value="Göster">
+      [if-any prev_href]
+        <a href="[prev_href]"><img src="[docroot]/images/back.png" border="0" alt="Önceki"></a>[end]
+      [if-any next_href] <a href="[next_href]"><img src="[docroot]/images/forward.png" border="0" alt="Sonraki"></a>[end]
+      </form>
+    </td>
+  </tr>
+  <tr align=left>
+    <th>Değişikliği yapan:</th>
+    <td>[author]</td>
+  </tr>
+  <tr align=left>
+    <th>Tarih:</th>
+    <td>[date_str] <i>([ago] önce)</i></td>
+  </tr>
+</table>
+
+<p><b>Değişiklik açıklaması:</b></p>
+   <pre class="vc_log">[log]</pre>
+
+<hr noshade>
+
+<p><b>Değişen dosyalar/dizinler:</b></p>
+<table border="0" cellspacing="1" cellpadding="2">
+  <thead>
+  <tr align=left>
+    <th class="vc_header_sort">Adres</th>
+    <th class="vc_header">Hareket</th>
+    <th class="vc_header">Metin Değişiklikler</th>
+    <th class="vc_header">Prop Değişiklikler</th>
+    <th class="vc_header">Önceki sürümle farklar</th>
+  </tr>
+  </thead>
+  <tbody>
+  [if-any changes]
+    [for changes]
+      <tr class="vc_row_[if-index changes even]even[else]odd[end]">
+      <td>
+        [is changes.pathtype "dir"]
+          <img src="[docroot]/images/dir.png" alt="">
+        [else]
+          <img src="[docroot]/images/text.png" alt="">
+        [end]
+        [is changes.action "deleted"]
+          [changes.filename]
+        [else]
+          <a href="[changes.view_href]">[changes.filename]</a>
+        [end]
+      </td>
+      <td align=center>[changes.action]</td>
+      [is changes.action "deleted"]
+        <td align=center>&nbsp;</td>
+        <td align=center>&nbsp;</td>
+      [else]
+        <td align=center>[is changes.text_mods "1"]X[else]&nbsp;[end]</td>
+        <td align=center>[is changes.prop_mods "1"]X[else]&nbsp;[end]</td>
+      [end]
+        [if-any changes.diff_href]
+          <td align=center><a href="[changes.diff_href]&amp;r1=[rev]&amp;r2=[changes.prev_rev]&amp;p1=[changes.filename]&amp;p2=[changes.prev_path]">(önceki sürümle farklar)</a></td>
+        [else]
+          <td align=center>&nbsp;</td>
+        [end]
+      </tr>
+    [end]
+  [else]
+    <tr>
+    <td colspan="5">Değişiklik yok.</td>
+    </tr>
+  [end]
+  </tbody>
+</table>
+
+[include "include/footer.ezt"]

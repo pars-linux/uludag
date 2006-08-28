@@ -1,0 +1,18 @@
+[# setup page definitions]
+  [define location][rootname][if-any where]: [where][end][end]
+  [define page_title][cfg.general.main_title] - grafik - [location][end]
+  [define help_href][docroot]/help_rootview.html[end]
+[# end]
+
+[include "include/header.ezt" "graph"]
+
+<center>
+<h1>[path] dosyasına ait sürüm grafiği</h1>
+
+[imagemap]
+<img border="0" usemap="#MyMapName"
+  src="[imagesrc]" 
+  alt="[path] sürümleri">
+</center>
+
+[include "include/footer.ezt"]
