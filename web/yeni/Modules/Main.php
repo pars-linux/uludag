@@ -26,10 +26,13 @@
 
     $PageContent = $Pardus->GetPage($Page,$ActivePage);
     $TempTitle = explode(" ",$PageContent["Title"]);
-    if (count($TempTitle)>4)
+    if (count($TempTitle)>4) {
+    	$PageContent["Title"]="";
         foreach ($TempTitle as $TempTitleValues)
             if ($i++>=4) break;
-            else $PageContent["Title"].=$TempTitleValues;
+            else $PageContent["Title"].=$TempTitleValues." ";
+	$PageContent["Title"].="...";
+    }	
 
     if ($Parent) $ParentContent = $Pardus->GetPage($Parent,$ActivePage);
 
