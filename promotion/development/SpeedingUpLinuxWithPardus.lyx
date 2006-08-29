@@ -636,7 +636,7 @@ The re-written init daemon is currently in a working state starting from
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
+<lyxtabular version="3" rows="5" columns="3">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="left" valignment="top" leftline="true" width="5cm">
@@ -670,7 +670,7 @@ Disadvantage
 \end_inset
 </cell>
 </row>
-<row topline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -699,7 +699,7 @@ Very fast without comprimising maintainability.
 \end_inset
 </cell>
 </row>
-<row topline="true" bottomline="true">
+<row bottomline="true">
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -724,6 +724,37 @@ Understanding the code, debugging, adding new functionality are all very
 
 \begin_layout Standard
 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Dependencies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+All Perl, sed, awk, grep, cut, find, and advanced shell dependencies are
+ removed from base system.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Base system now depends on Python runtime and a few of its modules (around
+ 1.5 MB).
 \end_layout
 
 \end_inset
