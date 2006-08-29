@@ -15,5 +15,5 @@
     define ("RECORD_FOUND_ALSO_YOU_CAN_LOOK_AT_GOOGLE_RESULTS"," kayıt bulundu.");
     define ("NO_RECORD_FOUND_BUT_YOU_CAN_LOOK_AT_GOOGLE_RESULTS","Hiç kayıt bulunamadı.");
     define ("PARDUS_REGISTER","Pardus TUBITAK/UEKAE 'nin tescilli markasıdır.");
-
+    define ("SEARCH","ara");
 ?>

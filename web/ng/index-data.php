@@ -32,7 +32,6 @@
                 </div>
             </div>
         </td>
-        
         <td id="kutular">
             <div id="haberler">
                 <?php

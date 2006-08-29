@@ -6,9 +6,8 @@
 
     require_once('config.php');
     require_once('vezir.php');
-
-    $Vezir  = new Vezir($CF);
-    $Pardus = new Pardus($Vezir);
+    require_once('langs/tr.php');
+    require_once('Modules/Main.php');
 
 ?>
 
@@ -28,29 +27,24 @@
         <table>
             <tr>
                 <td id="header" colspan=2>
-                    <div id="menu">
-                        Ana Sayfa » Çakkıdı Çakkıdı » Çokkudu Çokkudu » Hoppidi hoppidi
-                    </div>
+                    <div id="menu"><?=$Navi?></div>
                     <div id="searchbar">
                         <form action="search/" method="get">
-                            <input name="q" type="text" value="<?=SEARCH?>"
-                            onClick="
-                                if (this.value=='<?=SEARCH?>')
-                                    this.value='';" 
-                            onBlur="
-                                if (this.value=='') 
-                                    this.value='<?=SEARCH?>';">
+                        <input name="q" type="text" value="<?=SEARCH?>"
+                               onClick="if (this.value=='<?=SEARCH?>') this.value='';" 
+                               onBlur="if (this.value=='') this.value='<?=SEARCH?>';">
                         </form>
                     </div>
                 </td>
             </tr>
 
             <?php
-                if(isset($_GET["page"]))
-                    echo "page will come...";
+                if(isset($Page))
+                    echo "<tr><td>".$Page[0]["Content"]."</td></tr>";
                 else
                     include ('index-data.php');
             ?>
+
             <tr>
                 <td colspan=2>
                     <div id="footer-forpw">

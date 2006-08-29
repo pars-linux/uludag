@@ -131,28 +131,30 @@
                 $this->MessageQueue.= "<pre><b>DEBUG : ".$Message."</b></pre>";
             }
 
-            function GetRecord($Table,$Field='*',$ID='',$Ext='') {
+            function GetRecord($Table,$Field='*',$ID='',$Ext='',$Type="Array") {
                 $Table=$this->Pref_($Table);
                 $ID == "" ? $AddSql = "" : $AddSql = "WHERE ID=$ID";
                 $Ext == "" ? $AddSql = $AddSql: $AddSql = $AddSql." ".$Ext;
                 $Sql = "SELECT $Field FROM $Table ".$AddSql;
                 $Result = $this->ExecuteQuery($Sql);
-                return $this->MakeArray($Result);
+                return $this->MakeArray($Result,$Type);
             }
 
-            function FindRecord($Table,$Field,$Value,$ReturnValue='ID',$Ext='') {
+            function FindRecord($Table,$Field,$Value,$ReturnValue='ID',$Ext='',$Like=true) {
                 $Table=$this->Pref_($Table);
                 $Ext == "" ? $AddSql = "": $AddSql = $Ext;
-                $Sql = "SELECT $ReturnValue FROM $Table WHERE $Field LIKE '%$Value%' ".$AddSql;
+                $Like== true ? $SQ = " LIKE '%$Value%' " : $SQ = " = '$Value' ";
+                $Sql = "SELECT $ReturnValue FROM $Table WHERE $Field".$SQ.$AddSql;
                 $Result = $this->ExecuteQuery($Sql);
                 return $this->MakeArray($Result);
             }
 
-            function MakeArray($Raw) {
+            function MakeArray($Raw,$Type="Array") {
                 $i=0;
                 while ($Row = mysql_fetch_array($Raw, MYSQL_ASSOC)) {
                     foreach ($Row as $RKey => $RValue)
-                        $ReturnValue[$i][$RKey] = $RValue;
+                        if ($Type=="Array") $ReturnValue[$i][$RKey] = $RValue;
+                        else $ReturnValue[$i] = $RValue;
                     $i++;
                 }
                 if ($i==0)
@@ -201,11 +203,11 @@
         }
 
         function GetPage($NiceTitle){
-            return $this->DBC->FindRecord("Pages","NiceTitle",$NiceTitle,"*","LIMIT 1");
+            return $this->DBC->FindRecord("Pages","NiceTitle",$NiceTitle,"*","LIMIT 1",false);
         }
 
         function GetNiceTitles() {
-            return $this->DBC->GetRecord("Pages","NiceTitle");
+            return $this->DBC->GetRecord("Pages","NiceTitle","","","List");
         }
 
         function Search($Que) {
@@ -218,4 +220,7 @@
         }
     }
 
+    function __($V){
+        return htmlspecialchars(strip_tags($V));
+    }
 ?>
