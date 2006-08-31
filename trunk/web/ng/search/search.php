@@ -68,7 +68,7 @@
         function Mod1(){
             echo "<br />";
             foreach ($this->RawData as $Values){
-                echo "<b><a href='?r=".$Values['NiceTitle']."&q=".$this->SearchWord."'>".$Values['Title']."</a></b><p class='searchresults'>".$this->Highlight($Values['Content'])."...</p>";
+                echo "<b><a href='?page=".$Values['NiceTitle']."&q=".$this->SearchWord."'>".$Values['Title']."</a></b><p class='searchresults'>".$this->Highlight($Values['Content'])."...</p>";
             }
         }
     }

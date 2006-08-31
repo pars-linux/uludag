@@ -14,10 +14,10 @@
         $Vezir  = new Vezir($CF);
         #$Vezir->LimitedLog=false;
         $Pardus = new Pardus($Vezir);
-        $SearchWord = strip_tags($_GET["q"]);
+        $SearchWord = __($_GET["q"]);
 
-        if (isset($_GET["r"]))
-            $Page = $Pardus->GetPage($_GET["r"]);
+        if (isset($_GET["page"]))
+            $Page = $Pardus->GetPage(__($_GET["page"]));
         else {
             if (strlen($SearchWord)>3) {
                 $Results = $Pardus->Search($SearchWord);
@@ -98,7 +98,7 @@
                             if (isset($Search)) 
                                 echo " » '".$SearchWord."' ".SEARCHED;
                             elseif (isset($Page))
-                                echo " » <a href='$PHP_SELF?q=$SearchWord'> '".$SearchWord."' ".RESULTS."</a> » ".$Page["Title"];
+                                echo " » <a href='$PHP_SELF?q=$SearchWord'> '".$SearchWord."' ".RESULTS."</a> » ".$Page[0]["Title"];
                         ?>
                     </div>
                     <div id="searchbar">
@@ -114,7 +114,7 @@
 
                         <?php
                             if (isset($Page))
-                                echo $Page["Content"];
+                                echo $Page[0]["Content"];
                             else {
                                 $Vezir->ShowLogs();
                         ?>
