@@ -1,0 +1,863 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>:: Pardus :: tübitak-uekae ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../stil.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
+</head>
+
+<body class="arka">
+<table class="arkayan" width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="878" align="center" valign="top">
+<table class="arkadalga" width="700" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="800" valign="top">
+
+<!-- logo -->
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="620" height="60">
+<img src="../../images/header3.png" alt="Pardus" width="700" height="60">
+</td>
+</tr>
+
+<!-- menüler -->
+<tr>
+<td width="680" height="19" valign="top" bgcolor="#B9D0B3">
+<p class="menubar">
+<a href="../../index.html">Ana Sayfa</a>
+| <a href="../../hakkimizda.html">Hakkımızda</a>
+| <a href="../../projeler/index.html">Projeler</a>
+| <a href="../../belgeler/index.html">Belgeler</a>
+| <a href="../../urunler/index.html">Ürünler</a>
+| <a href="../../iletisim.html">İletişim</a>
+| <a href="../../basin/index.html">Basında Pardus</a>
+| <a href="../../eng/index.html">English</a>
+</p>
+</tr>
+</table>
+
+<br>
+
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+
+
+<H1 ALIGN=center>Pardus Açılış Sistemi</H1>
+
+<!--TOC section İçindekiler-->
+
+<H2>İçindekiler</H2><!--SEC END -->
+
+<UL><LI>
+<A HREF="#htoc1">1&nbsp;&nbsp;Giriş</A>
+<LI><A HREF="#htoc2">2&nbsp;&nbsp;Açılış Süreci</A>
+<LI><A HREF="#htoc3">3&nbsp;&nbsp;Temel Kullanım</A>
+<LI><A HREF="#htoc4">4&nbsp;&nbsp;Ayarlar</A>
+<LI><A HREF="#htoc5">5&nbsp;&nbsp;Paketleme Bilgileri</A>
+<LI><A HREF="#htoc6">6&nbsp;&nbsp;Servis Betikleri</A>
+<LI><A HREF="#htoc7">7&nbsp;&nbsp;Teknik Yapı</A>
+<LI><A HREF="#htoc8">8&nbsp;&nbsp;Belge Geçmişi</A>
+</UL>
+
+<!--TOC section Giriş-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Giriş</H2><!--SEC END -->
+
+İşletim sistemi çekirdeğinin çalışmaya başladığı andan, kullanıcının
+giriş yapabileceği ana kadar yapılan işlemler, açılış (init) sürecidir.
+Dosya sistemlerinin bağlanması, donanım sürücülerinin yüklenmesi,
+sistem servislerinin başlatılması ve grafik arabiriminin çalıştırılıp,
+giriş ekranının gösterilmesi bu sürecin kapsamındadır.<BR>
+<BR>
+Bilgisayar kapatılacağı zaman, servislerin durdurulması, bağlanmış
+dosya sistemlerinin ayrılması da aynı sistem tarafından yürütülür.<BR>
+<BR>
+Pardus 1.1 sürümü ile birlikte kabuk tabanlı klasik açılış sistemini
+terkedip, Müdür adıyla geliştirdiğimiz yeni bir sisteme geçtik. Bu
+belge, daha hızlı açılış sağlayan, Python diliyle yazıldığı için geliştirmesi
+ve bakımı daha kolay olan bu yeni sistemin kullanımını anlatmaktadır.<BR>
+<BR>
+Açılış süreci, temel kullanım ve ayarlar bölümleri kullanıcılara yönelik
+olup, temel kavramları ve özel durumlarda gerekebilecek bilgileri
+anlatmaktadır.<BR>
+<BR>
+Paketleme bilgileri ve servis betikleri bölümleri, sistem yöneticilerine
+ve entegratörlere yönelik olup, pisi paketi yaparken, yada üçüncü
+parti bir programa pardus desteği verirken gerekli olan bilgileri
+vermektedir.<BR>
+<BR>
+Teknik yapı bölümü, programcılara yönelik olup, incelemek ve geliştirmek
+isteyenlere müdürün bileşenlerini ve teknik ayrıntılarını anlatmaktadır.<BR>
+<BR>
+<!--TOC section Açılış Süreci-->
+
+<H2><A NAME="htoc2">2</A>&nbsp;&nbsp;Açılış Süreci</H2><!--SEC END -->
+
+Bilgisayar açılınca, anakart üzerindeki BIOS (Basic Input/Output System,
+Temel Giriş/Çıkış Sistemi) adı verilen yazılım çalışmaya başlar. Kendi
+iç denetleme ve donanım hazırlama sürecini tamamladıktan sonra, öntanımlı
+açılış aygıtından (bu bağlı bir harddisk, CD okuyucu, ya da USB disk
+olabilir), MBR (Master Boot Record, Ana Önyükleme Kaydı) adı verilen
+ve söz konusu kayıt ortamının en başında bulunan ufak önyükleyici
+yazılımı yükler ve çalıştırır.<BR>
+<BR>
+<!--TOC subsection Önyükleyici-->
+
+<H3>Önyükleyici</H3><!--SEC END -->
+
+Pardusun kurulumu sırasında, öntanımlı önyükleyici yazılımı Grub,
+kurulum yaptığınız diskin başına yerleştirilecek, ve diskte başka
+işletim sistemleri varsa, bunlar da Grub ayar dosyasına yazılacaktır.
+Böylece bilgisayarı açınca karşısınıza çıkacak Grub menüsünden hangi
+işletim sistemini açmak istediğinizi seçebilirsiniz.<BR>
+<BR>
+Önyükleyici, BIOS yordamlarını kullanarak seçtiğiniz işletim sistemi
+çekirdeğini belleğe yükletir ve çalışmayı çekirdeğe devreder.<BR>
+<BR>
+Linux çekirdeği, içereceği donanım sürücüleri seçilerek özelleştirilmiş
+biçimlerde derlenebilmektedir. Bu sürücüler çekirdeğin içine dahil
+edilebildiği gibi, gerektiği anda yüklenecek modüller olarak da sistemde
+bulunabilirler. Kullanılmayan sürücüler çekirdeğin boyutunu ve bellek
+kullanımını arttırdıkları için, Pardusta donanım sürücülerini olabildiğince
+ayrı modüller halinde dağıtıyoruz. Bu şekilde, çalışan bir sistemde
+bir modülü çıkartıp, yeni sürümünü yükleyerek kolayca güncellemek
+de mümkün olmaktadır.<BR>
+<BR>
+Önyükleyiciden çekirdeğe geçiş sırasında, depolama aygıtının sürücüsünü
+içermeyen bir çekirdek, önyükleyici, aygıtı BIOS aracılığıyla kullandığı
+için kolayca yüklenebilir, ama yönetimi BIOS'tan alınca bu aygıta
+erişemeyeceği için açılış sürecine devam edemez. Çok sayıda depolama
+aygıtının sürücülerini çekirdek içine koymak pratik olmadığı için,
+bu soruna çare olarak initrd (init ram disk, açılış bellek diski)
+denilen ikinci bir dosya, önyükleyici tarafından çekirdekle birlikte
+belleğe yüklenir. Bu dosya içinde, ufak bir dosya sistemi şeklinde,
+daha az yaygın olan depolama aygıtı sürücüleri bulunmaktadır. Çekirdek
+buradan gerekli sürücü varsa yükledikten sonra, bu dosyayı bellekten
+atar.<BR>
+<BR>
+<!--TOC subsection Çekirdek-->
+
+<H3>Çekirdek</H3><!--SEC END -->
+
+Çekirdek donanım yönetimini ele alıp, hazırlıklarını tamamladıktan
+sonra, kök (root) dizin olarak belirtilen yerdeki dosya sistemini
+açarak, burada /sbin/init programını çalıştırır. Bu program temel
+süreç olarak, diğer süreçleri yönetir. Belli olaylar (açılış, kapatma
+komutu, güç yönetimi, vs) olduğunda ayar dosyasında belirtilen komutları
+çalıştırır.<BR>
+<BR>
+<!--TOC subsection Müdür-->
+
+<H3>Müdür</H3><!--SEC END -->
+
+Müdürün ana kısmı olan /sbin/mudur.py komutu, açılış sırasında init
+tarafından çağrıldığında, aygıt yönetimi ve otomatik donanım tanıma
+(hotplug) için kullanılan udev servisini başlatır. Bu servis bilgisayara
+USB disk yada CD gibi bir şey taktığınızda, bu olayla ilgilenen programların
+otomatik çalıştırılması, takılan aygıta erişim için gereken /dev dizini
+altındaki dosyaların oluşturulması gibi işleri yapar. Müdür daha sonra
+depolama aygıtlarındaki dosya sistemlerini kontrol eder ve bağlar.
+Müdürün diğer bir parçası olan /sbin/muavin.py aracılığıyla, bilgisayarda
+hazır bulunan (coldplug) ve sürücüsü initrd içinde olmayan donanımların
+sürücülerini yükletir. Muavin yeni bir donanım takıldığında da udev
+tarafından çağrılmakta ve sürücü yükleme işini yapmaktadır. Müdür,
+sistem saatini donanım saatiyle senkronize ettikten ve temel ağ ayarlarını
+da yaptıktan sonra, Pardus'un sistem yapılandırma aracı olan Çomar'ı
+başlatır. En son olarak Çomar'a servisleri çalıştırması komutunu verir.<BR>
+<BR>
+Kapanış sırasında çağrıldığında ise, önce Çomar'a servisleri durdurması
+komutunu verir. Sonra sistem saatini tekrar donanım saati ile senkronize
+eder. En son olarak bağlı dosya sistemlerini düzgün bir şekilde ayırarak,
+veri kaybı olmadan kapanmalarını sağlar. Müdür işini bitirdikten sonra
+init komutu bilgisayarı kapatması yada yeniden başlatması için gerekli
+komutu çekirdeğe verir.<BR>
+<BR>
+<!--TOC subsection Servisler-->
+
+<H3>Servisler</H3><!--SEC END -->
+
+Arkaplanda çalışarak kullanıcıya yada diğer programlara bir takım
+hizmetler sunan yazılımlardır. Örneğin zemberek uygulamalara Türkçe
+yazım denetimi desteği sağlarken, DBus masaüstü uygulamalarının iletişimini,
+cups ise yazıcı desteğini sağlar. Uzaktan erişim sağlayan SSH gibi
+sunucu yazılımları da birer servis olarak çalışmakta ve yönetilebilmektedir.<BR>
+<BR>
+Servisler başlatıldığında, KDM (KDE Desktop Manager, KDE Masaüstü
+Yöneticisi) servisi, görüntüye kullanıcı giriş ekranını getirir. Buradan
+kullanıcı ve parolası ile giriş yapıldığında da o kullanıcının masaüstü
+yüklenir ve çalışmaya başlar.<BR>
+<BR>
+<!--TOC section Temel Kullanım-->
+
+<H2><A NAME="htoc3">3</A>&nbsp;&nbsp;Temel Kullanım</H2><!--SEC END -->
+
+Açılış ve donanım tanıma sistemi büyük ölçüde otomatik çalışmaktadır.<BR>
+<BR>
+Bilgisayarınızda hangi servislerin kurulu olduğunu görmek, bunların
+açılışta başlayıp başlamayacağını ayarlamak, servislerin çalışma durumunu
+denetlemek, gerektiğinde yeniden başlatmak gibi işler için, Pardus
+Yapılandırma Merkezi içinde Sistem Seçeneklerinde bulunan Servis Yöneticisi
+yazılımını kullanabilirsiniz.<BR>
+<BR>
+Komut satırından ve betiklerden servisleri yönetebilmek için /bin/service
+komutu da bulunmaktadır.<BR>
+<BR>
+Kurulu servisleri ve durumlarını görmek için:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+service
+</TT></DL></DIV>
+komutunu parametresiz olarak veya list parametresi ile verebilirsiniz.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+service&nbsp;openssh&nbsp;start<BR>
+<BR>
+service&nbsp;openssh&nbsp;stop<BR>
+<BR>
+service&nbsp;openssh&nbsp;restart
+</TT></DL></DIV>
+komutları ilk parametre olarak verilen servisi başlatacak, durduracak,
+ve durdurup tekrar başlatacaktır.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+service&nbsp;openssh&nbsp;reload
+</TT></DL></DIV>
+komutu bazı servislerde, sunucunun durdurulmadan, ayar dosyalarını
+yükleyip kendisine çeki düzen vermesini sağlar. Her servis için geçerli
+değildir.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+service&nbsp;openssh&nbsp;on<BR>
+<BR>
+service&nbsp;openssh&nbsp;off
+</TT></DL></DIV>
+komutları ile aynı şekilde servisleri açıp kapayabilirsiniz. Bu şekilde
+açıp kapattığınız servisler start ve stop'tan farklı olarak, bir dahaki
+açılışta aynı durumda başlayacaklardır.<BR>
+<BR>
+<!--TOC subsection Çalışma Seviyeleri-->
+
+<H3>Çalışma Seviyeleri</H3><!--SEC END -->
+
+Temel süreç görevini yürüten init komutu bir çalışma seviyesi (runlevel)
+kavramına sahiptir. Tarihsel olarak 0 ile 6 arasındaki bu çalışma
+seviyesi sistemi çeşitli durumlara getirmek için kullanılır. Bu seviyeler,
+<DL COMPACT=compact><DT>
+<B>0</B><DD> Sistemi kapat
+<DT><B>1</B><DD> Sistemi tek kullanıcılı moda geçir
+<DT><B>2-5</B><DD> Kullanıcı tanımlı
+<DT><B>6</B><DD> Sistemi yeniden başlat
+</DL>
+Çalışma seviyesini değiştirmek için /sbin/telinit komutu kullanılabilir.
+Hangi seviyede ne yapılacağı /etc/inittab dosyasında belirlenir. Pardus'ta
+bu seviyeler kendilerine karşılık gelen parametre ile müdürü çağırmakta
+ve kullanıcı tanımlı seviyelerden yalnız bir tanesi normal çalışma
+seviyesi olarak kullanılmaktadır. Bu müdür parametreleri,
+<DL COMPACT=compact><DT>
+<B>sysinit</B><DD> Temel açılış işlemlerini yap
+<DT><B>boot</B><DD> Geri kalan açılış işlemlerini yap
+<DT><B>shutdown</B><DD> Kapanış işlemlerini yap (seviye 0)
+<DT><B>single</B><DD> Tek kullanıcılı moda geç (seviye 1)
+<DT><B>default</B><DD> Servisleri çalıştır (seviye 3)
+<DT><B>reboot</B><DD> Kapanış işlemlerini yap (seviye 6)
+</DL>
+Burada ihtiyaç duyabileceğiniz bir seviye, telinit S yada telinit
+1 komutuyla geçebileceğiniz tek kullanıcılı seviyedir. Bu seviyede
+müdür servisleri kapatır, ve yetkili (root) kullanıcı olarak giriş
+yaparak sistemi onarma gibi işleri yapabilirsiniz. Normal çalışmaya
+dönmek için telinit 3 komutunu verebilirsiniz.<BR>
+<BR>
+Kapanış için basitçe reboot veya halt komutlarını kullanabilirsiniz,
+daha esnek kapanış işlemleri için shutdown komutuna bakın.<BR>
+<BR>
+<!--TOC subsection Kayıtlar-->
+
+<H3>Kayıtlar</H3><!--SEC END -->
+
+Sistem dili, klavye haritası ve yereli müdürde öntanımlı değerlere
+sahiptir, /etc/conf.d/mudur dosyasından ayarlanabilmektedir, ve mudur
+çekirdek parametresi ile de değiştirilebilmektedir. Müdür bu değerleri
+belirledikten sonra, kdm gibi programların aynı yerleri dolaşmadan
+kolayca alabilmesi için, /etc/mudur/ dizini içindeki keymap, language
+ve locale adlı dosyalara yazar.<BR>
+<BR>
+Müdür, /var/log/mudur.log dosyasına karşılaştığı olayları kaydetmektedir.
+Örnek bir dosyadan bir kesit:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+Aug&nbsp;26&nbsp;13:55:08&nbsp;(up&nbsp;7.65)&nbsp;/sbin/mudur.py&nbsp;sysinit<BR>
+<BR>
+Aug&nbsp;26&nbsp;10:55:15&nbsp;(up&nbsp;14.44)&nbsp;/sbin/mudur.py&nbsp;boot<BR>
+<BR>
+Aug&nbsp;26&nbsp;10:55:16&nbsp;(up&nbsp;15.84)&nbsp;/sbin/mudur.py&nbsp;default<BR>
+<BR>
+Aug&nbsp;26&nbsp;15:58:42&nbsp;(up&nbsp;18221.40)&nbsp;/sbin/mudur.py&nbsp;shutdown
+</TT></DL></DIV>
+Satırlar, tarih (çalışma süresi) bilgi biçimindedir. Çalışma süresi
+çekirdek çalışmaya başladığı andan itibaren geçen saniye olarak hesaplanmaktadır.
+Açılış sırasında sistem saati donanım saati ile senkronize edilirken
+tarih kısmında saatte bir düzeltme olduğu için olayın zamanını daha
+doğru göstermek için konmuştur.<BR>
+<BR>
+Örnekte, sekizinci saniyeye doğru müdür, temel açılış işlemleri için
+init tarafından çağrılmakta, onbeşinci saniyeye doğru geri kalan açılış
+işlemleri için çağrılmakta, ve onaltıncı saniyeye doğru ise servisleri
+çalıştırması için çağrılmaktadır. Yaklaşık beş saatlik bir çalışmanın
+sonunda ise kapanış işlemleri için devreye girmiştir.<BR>
+<BR>
+Normal çalışmada yalnızca uyarı ve hata mesajları ile çağrılma durumları
+bu dosyaya yazılmaktadır. Eğer müdürün tüm çıktısının kaydedilmesini
+isterseniz, /etc/conf.d/mudur içinde bir debug=1 satırıyla, ya da
+önyükleyiciden vereceğiniz bir mudur=debug çekirdek parametresiyle
+bunu açabilirsiniz.<BR>
+<BR>
+<!--TOC subsection Diğer Komutlar-->
+
+<H3>Diğer Komutlar</H3><!--SEC END -->
+
+<!--TOC subsubsection /sbin/muavin.py-->
+
+<H4>/sbin/muavin.py</H4><!--SEC END -->
+
+Aygıt sürücülerini yükleyen muavin, --debug parametresiyle çağrıldığında
+bulduğu aygıtlar için hangi sürücüleri yükleyeceğini listeler. Donanım
+tanıma ile ilgili bir aksilik olduğunda, bilgi verici olabilir. Bu
+sürücüleri yüklemesini istiyorsanız ise --coldplug parametresini kullanabilirsiniz.<BR>
+<BR>
+<!--TOC subsubsection /sbin/update-environment-->
+
+<H4>/sbin/update-environment</H4><!--SEC END -->
+
+Normal bir çalışmada ihtiyacınız olmayacak bu komutu, eğer elle bir
+program derlemişseniz kullanmanız gerekebilir.<BR>
+<BR>
+Bazı programlar, sistemde ve kullanıcı oturumlarında ayarlanması gereken
+çevre değişkenlerine ihtiyaç duyarlar. Örneğin Java, JAVA_HOME adlı
+bir değişkende sistemdeki Java işleticisinin bulunduğu dizinin adının
+bulunmasını ister. QT gibi, kitaplıklarını /usr/lib gibi standart
+konumların dışında /usr/qt/3/lib gibi dizinlere koyan uygulamalar
+ise, yüklenecek kitaplıkların bulunabileceği yerleri gösteren LDPATH
+gibi çevre değişkenlerine kendi dizinlerini eklemek isterler.<BR>
+<BR>
+Program paketlerinin kolayca bu değişkenlere değer atayabilmesi için,
+/etc/env.d dizini kullanılmaktadır. Bir pisi paketi buraya bir dosya
+koyduğunda, Çomar aracılığıyla çalıştırılan update-environment komutu,
+bu dosyaları okuyup sistem kabuğu için bir profil dosyası oluşturmakta,
+eğer kitaplık yolları değişmişse, /etc/ld.so.conf dosyasını yeni yolları
+içerecek şekilde değiştirmekte, ve /sbin/ldconfig komutunu çağırarak
+bu yeni dizinlerdeki kitaplıkların taranarak dinamik kitaplık yükleyicinin
+/etc/ld.so.cache dosyasında indekslenmesini sağlamaktadır.<BR>
+<BR>
+<!--TOC subsubsection /sbin/update-modules-->
+
+<H4>/sbin/update-modules</H4><!--SEC END -->
+
+Normal bir çalışmada ihtiyacınız olmayacak bu komutu, eğer elle bir
+çekirdek modülü derlemişseniz kullanmanız gerekebilir.<BR>
+<BR>
+Çekirdek modülleri içeren pisi paketleri kurulduktan sonra, Çomar
+aracılığıyla çağrılan bu komut, /sbin/depmod komutunu çalıştırarak,
+çalışmakta olan çekirdek için, bu modüllerin hangi aygıtları desteklediklerini
+ve birbirlerine olan bağımlılıklarını gösteren modules.*map, modules.dep,
+modules.alias dosyalarını oluşturmaktadır. Her bir çekirdek için /lib/modules/2.6.16.24-49/
+gibi dizinlerde bulunan bu dosyalar, muavin ve modprobe komutu tarafından
+kullanılmaktadır.<BR>
+<BR>
+Ayrıca eğer paket /etc/modules.d/ dizini altına bir dosya yerleştirmişse,
+bu dosyalar taranarak, modüller için yükleme şekil ve parametrelerini
+gösteren /etc/modprobe.conf dosyası güncellenmektedir.<BR>
+<BR>
+<!--TOC section Ayarlar-->
+
+<H2><A NAME="htoc4">4</A>&nbsp;&nbsp;Ayarlar</H2><!--SEC END -->
+
+<!--TOC subsection Önyükleyici Ayarları-->
+
+<H3>Önyükleyici Ayarları</H3><!--SEC END -->
+
+Önyükleyicinin menüsündeki işletim sistemleri, ve çekirdeğin hangi
+seçeneklerle çalıştırılacağı, /boot/grub/grub.conf dosyasından ayarlanmaktadır.
+Grub programının belgelerinde bu ayarlarla ilgili detaylı bilgi alabilirsiniz.
+Bilgisayar açılırken, Grub menüsü çıktığında, açacağınız sistemin
+üzerindeyken e tuşuna basarak da, bu ayarları o açılışa mahsus olarak
+değiştirebilirsiniz.<BR>
+<BR>
+İşletim sistemi girdilerindeki kernel satırları, yüklenecek Linux
+çekirdeğini ve parametrelerini belirtmektedir. Söz dizimi
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+kernel&nbsp;(aygıt)/dosya&nbsp;prm1=değer&nbsp;prm2=değer1,değer2&nbsp;prm3&nbsp;...
+</TT></DL></DIV>
+biçimindedir. İlk bilgi yüklenecek çekirdeğin bulunduğu depolama aygıtı
+ve çekirdeğin dosya adıdır. Daha sonra bu çekirdeğe verilen parametreler
+gelmektedir. Parametreler tek başına, bir değere sahip, yada birden
+fazla değerli olabilir.<BR>
+<BR>
+Gerekebilecek bazı çekirdek parametreleri:
+<DL COMPACT=compact><DT>
+<B>quiet</B><DD> Öntanımlı gelen bu seçenek çekirdeğin donanımları tararken
+bulduğu teknik bilgileri ekrana basmasını önler, müdür çalışmadan
+önce oluşan bir donanım sorunu varsa, bu seçeneği kaldırarak daha
+fazla bilgi alabilirsiniz.
+<DT><B>splash</B><DD> Açılışta grafik logo gösterilmesini sağlar, metin ekranda
+açılış için, bu seçeneği ve console seçeceğini kaldırın.
+<DT><B>noacpi</B><DD> Standartlara uygun olmayan bazı BIOS'larda bu seçenekle
+çekirdeği çalıştırmak mümkün olmaktadır.
+<DT><B>mudur</B><DD> Bu seçenekle müdürün bazı ayarlarını değiştirebilirsiniz.
+Müdür ayarları bölümünde daha ayrıntılı anlatılmıştır.
+</DL>
+Tüm çekirdek parametrelerini ve açıklamalarını, kernel-source paketini
+kurduktan sonra /usr/src/linux/Documentation/kernel-parameters.txt
+dosyası içinde bulabilirsiniz.<BR>
+<BR>
+<!--TOC subsection Müdür Ayarları-->
+
+<H3>Müdür Ayarları</H3><!--SEC END -->
+
+Müdür init tarafından çalıştırılmaktadır, genellikle değiştirmenize
+gerek olmayan init ayarları /etc/inittab dosyasında bulunmaktadır.<BR>
+<BR>
+Müdürün kendi ayarları ise /etc/conf.d/mudur dosyasından ve önyükleyiciyle
+çekirdeğe verilen mudur parametresinden yapılabilmektedir. Çekirdekten
+verilen ayarlar dosyada yazanların yerine kullanılır.
+<DL COMPACT=compact><DT>
+<B>safe</B><DD> Bu seçenek verilirse, sorun yaratabilecek bazı donanım işlemleri
+yapılmayacak, servislerden ise yalnızca giriş ekranını çıkartan kdm
+ve bağlı olduğu servisler çalıştırılacaktır.
+<DT><B>language</B><DD> Açılışta ve giriş ekranında kullanılacak olan sistem
+dilini belirler. Öntanımlı değeri Türkçe'dir. Kurulum başka bir dilde
+yapılmışsa, ayar dosyasında bu dil seçilidir.
+<DT><B>keymap</B><DD> Eğer sistem dilinin öntanımlı klavye haritasını kullanmak
+istemiyorsanız, bu seçenekle başka bir harita belirleyebilirsiniz.
+<DT><B>clock</B><DD> Donanım saatiniz Greenwich Merkezi Zamanına (GMT) göre
+ayarlıysa bu değeri UTC yapın, eğer donanım saatiniz yerel zamana
+göre ayarlıysa da local yapın. Öntanımlı değeri yerele ayarlı saattir.
+Bu seçeneği yalnızca ayar dosyasından verebilirsiniz.
+<DT><B>tty_number</B><DD> Kullanmak istediğiniz metin ekran konsol sayısı öntanımlı
+altı değerinden farklıysa bu seçenekten belirtebilirsiniz. Bu seçeneği
+yalnızca ayar dosyasından verebilirsiniz.
+<DT><B>debug</B><DD> Bu seçenek verilirse müdür tüm çıktılarını /var/log/mudur.log
+dosyasına yazacak, hata düzeltme bilgileri sağlayacaktır.
+</DL>
+Bazı örnekler:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+mudur=safe,debug<BR>
+<BR>
+mudur=language:tr,keymap:trf
+</TT></DL></DIV>
+<!--TOC subsection Donanım Ayarları-->
+
+<H3>Donanım Ayarları</H3><!--SEC END -->
+
+Açılışta otomatik olarak yüklenemeyen, ya da ne olursa olsun yüklenmesini
+istediğiniz çekirdek modüllerini /etc/modules.autoload.d dizini içindeki
+kernel-x.y.z biçimindeki dosyalara her satıra bir modül ismi biçiminde
+yazabilirsiniz. Bu dosyalara bakılırken, mesela 2.6.16.24 çekirdeği
+çalışıyorsa sırasıyla varsa kernel-2.6.16 ve kernel-2.6 dosyalarına
+bakılacaktır.<BR>
+<BR>
+Aynı şekilde, eğer otomatik yüklenmesi sorunlara yol açan modüller
+varsa, /etc/hotplug/blacklist dosyasına, ya da /etc/hotplug/blacklist.d/
+dizini içindeki herhangi bir dosyaya, gene bir satıra bir modül ismi
+gelecek şekilde yazabilirsiniz.<BR>
+<BR>
+Modüllere özel parametreler vermek için /etc/modules.d içinde bir
+dosya oluşturup, modprobe.conf belgesinde anlatılan söz dizimi ile
+alias, install, options gibi komutları verebilirsiniz. Müdürün bir
+parçası olan update-modules komutu bu dosyaları dolaşıp bir /etc/modprobe.conf
+dosyası oluşturmaktadır. Komutlarınızı bu dosyaya direk yazmayın,
+yeni bir modül paketi yada çekirdek kurulduğunda otomatik olarak üstüne
+yazılacaktır.<BR>
+<BR>
+Bir donanım takıldığında, bununla ilgili bir ayar yapmak, isim vermek,
+özel bir program çalıştırmak gibi şeyler yapmak için, /etc/udev/rules.d/
+dizinine bir kural dosyası koymanız yeterlidir. Buraya ismi .rules
+sonekiyle biten yeni bir dosya konduğunda otomatik olarak devreye
+girmektedir. Kural dosyasının söz dizimi için udev belgelerine bakın.<BR>
+<BR>
+Müdür açılış sırasında bazı harddisk parametrelerini ayarlayabilmektedir.
+Bu tür bir ihtiyacınız varsa /etc/conf.d/hdparm dosyasında istediğiniz
+disklere istediğiniz parametreleri verebilirsiniz. Parametrelerin
+neler olduğunu öğrenmek için hdparm komutunun belgesine bakın. Bazı
+parametreler sorunlara yol açabileceğinden dikkatli olmanız tavsiye
+edilir. Dosyanın söz dizimi, aygıt adı = ``parametreler'' biçiminde
+satırlardan oluşmaktadır. Aygıt adı /dev/ dizini altındaki herhangi
+bir harddisk aygıtı yada bağlı bulunan tüm diskler için all olabilir.<BR>
+<BR>
+<!--TOC subsection Diğer Ayarlar-->
+
+<H3>Diğer Ayarlar</H3><!--SEC END -->
+
+Çekirdeğin kapatılınca kaybolan ve /proc/sys dosya sistemi aracılığıyla
+yapılan ayarları için, /etc/sysctl.conf dosyasını kullanabilirsiniz.
+Örneğin ağ ayarlarından tüm makinelere gönderilen pinglere cevap vermeyi
+kapatmak için:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+net.ipv4.icmp_echo_ignore_broadcasts&nbsp;=&nbsp;1
+</TT></DL></DIV>
+gibi bir satır ekleyebilirsiniz. Açılışta bu dosya okunurken, /proc/sys/net/ipv4/
+dizinindeki icmp_echo_ignore_broadcasts dosyasına 1 değeri yazılarak
+çekirdeğin bu özelliği çalıştırılacaktır. Daha fazla bilgi için sysctl
+komutuna ve çekirdek belgelerine bakabilirsiniz.<BR>
+<BR>
+Servislerin ayar dosyaları da genellikle /etc/conf.d/ dizini içinde
+durmaktadır.<BR>
+<BR>
+Bunlardan önemli bir tanesi local.start ve local.stop dosyalarıdır.
+İlki açılışta, ikincisi ise kapanışta çalıştırılan birer kabuk betiğidir.
+Pardus tarafından kullanılmayan ve tamamen kullanıcılara ait olan
+bu dosyaların içine, İhtiyaç halinde kendi özel komutlarınızı koyabilirsiniz.<BR>
+<BR>
+<!--TOC section Paketleme Bilgileri-->
+
+<H2><A NAME="htoc5">5</A>&nbsp;&nbsp;Paketleme Bilgileri</H2><!--SEC END -->
+
+Pisi paketi yaparken, paketlediğiniz programı açılış sistemine entegre
+etmenizi gerektiren çeşitli durumlarla karşılaşabilirsiniz.<BR>
+<BR>
+<!--TOC subsection Çekirdek Modülü Paketleri-->
+
+<H3>Çekirdek Modülü Paketleri</H3><!--SEC END -->
+
+Çekirdek modülleri içeren bir paket yaparken, paketinize /lib/modules/2.6.xx.xx/
+dizininin hemen altındaki modules.* dosyalarını almamalısınız. Aksi
+takdirde dosya çakışmaları ortaya çıkabilir. Modül paketleri kurulurken
+bu dosyalar sistemdeki modüller taranarak update-modules komutu tarafından
+düzgün bir şekilde oluşturulacaktır.<BR>
+<BR>
+Eğer modülün inşası sırasında bu dosyalar paket kurulum dizinde oluşuyorsa,
+actions.py içinde basitçe
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+pisitools.remove("/lib/modules/*/modules.*")
+</TT></DL></DIV>
+ile silebilirsiniz.<BR>
+<BR>
+Eğer bir modülün her açılışta mutlaka yüklenmesini istiyorsanız, Çomar
+System.Package betiğinizde, ihtiyacınıza göre /etc/modules.autoload.d/
+dizini içinde kernel-2.x yada kernel-2.x.y dosyasının sonuna bir satır
+olarak ekletebilirsiniz. Dosyada daha önce zaten böyle bir satır olup
+olmadığını da kontrol edin!<BR>
+<BR>
+Bir modülün donanım varsa bile otomatik yüklenmesinin önüne geçmek
+gerekiyorsa ise, /etc/hotplug/blacklist.d/ dizini içine kendi paket
+adınızda bir dosyaya modül adlarını satır satır yazıp koymalısınız.<BR>
+<BR>
+Modüllerinizin parametreleri, gene paket adınızı taşıyan bir dosyada,
+/etc/modules.d/ dizinine koymalısınız. Kurulumda update-modules, gene
+otomatik olarak /etc/modprobe.conf dosyasını güncelleyecektir.<BR>
+<BR>
+<!--TOC subsection Donanımla İlgili Paketler-->
+
+<H3>Donanımla İlgili Paketler</H3><!--SEC END -->
+
+Donanım takılma olaylarını yakalamak ve bunun üzerine bir şeyler yapmak
+için udev sistemini kullanın. Hazırlayacağınız kural dosyasını /etc/udev/rules.d/
+dizinine koymanız yeterli olacaktır.<BR>
+<BR>
+<!--TOC subsection Servis Paketleri-->
+
+<H3>Servis Paketleri</H3><!--SEC END -->
+
+Eğer arkaplanda çalışıp hizmet verecek bir program paketliyorsanız,
+ya da açılış sırasında çalıştırmanız gereken komutlar varsa, bir Çomar
+System.Service betiği yazıp paketinize eklemeniz gerekmektedir. Bu
+betikle ilgili bilgiler bir sonraki bölümde anlatılmıştır.<BR>
+<BR>
+<!--TOC subsection Çevre Değişkenleri-->
+
+<H3>Çevre Değişkenleri</H3><!--SEC END -->
+
+Çevre değişkenlerinizi kabuğa vermek ve kitaplık, komut gibi yollara
+eklemeler yapmak istiyorsanız, /etc/env.d/ dizinine,
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+LALA=''deneme''<BR>
+<BR>
+LDPATH=''/usr/lala/lib''
+</TT></DL></DIV>
+biçiminde satırlardan oluşan bir dosya koymanız yeterlidir. Değişkenlerinizin
+önceliğini belirlemek için dosya adını XX, 00 ile 99 arasında bir
+sayı olacak şekilde XXpaketadı biçiminde verin. Bu dosyalar işlenirken
+küçük sayıdan büyüğe gidilmekte, ve sonra gelen değer öncekinin üstüne
+yazılmaktadır. Fakat yol belirten PATH, LDPATH, MANPATH, vb değişkenlerde
+farklı bir mantık izlenmekte, bu değişkenler birbirlerine : işareti
+ile eklenmektedir.<BR>
+<BR>
+<!--TOC section Servis Betikleri-->
+
+<H2><A NAME="htoc6">6</A>&nbsp;&nbsp;Servis Betikleri</H2><!--SEC END -->
+
+<!--TOC subsection Çomar System.Service Sınıfı-->
+
+<H3>Çomar System.Service Sınıfı</H3><!--SEC END -->
+
+Müdür için yazılmış servis betikleri Çomar'da bu sınıfa kayıt olurlar
+ve aşağıdaki metotları sağlarlar:<BR>
+<BR>
+<!--TOC subsubsection System.Service.info-->
+
+<H4>System.Service.info</H4><!--SEC END -->
+
+Servis hakkında bilgi döndürür. İlk satır servisin tipi, ikinci satır
+durumu, son satır da yerelleştirilmiş olarak servisin adını verir.<BR>
+<BR>
+Üç tip servis vardır:
+<DL COMPACT=compact><DT>
+<B>server</B><DD> Apache, OpenSSH, Postfix gibi dış bilgisayarlara hizmet
+veren web, kabuk, eposta sunucu gibi servislerin başlatma betikleri.
+<DT><B>local</B><DD> Pardus masaüstünün çalışabilmesi için yerel programlara
+hizmet veren DBus, HAL, Zemberek gibi servislerin başlatma betikleri.
+<DT><B>script</B><DD> Bir servis başlatmayan, yalnızca açılışta belli işlemleri
+yerine getiren betikler.
+</DL>
+Bir servis dört durumda olabilir:
+<DL COMPACT=compact><DT>
+<B>on</B><DD> Servis sürekli olarak açıktır ve şu anda çalışmaktadır.
+<DT><B>started</B><DD> Servis kapalıdır ama kullanıcı tarafından çalıştırılmıştır.
+<DT><B>stopped</B><DD> Servis açıktır ama bir sebepten dolayı durdurulmuş yada
+çalışamamıştır.
+<DT><B>off</B><DD> Servis kapalıdır.
+</DL>
+Servis tipi ve adı, kullanıcı arayüzlerinde göstermek için tasarlanmıştır.<BR>
+<BR>
+<!--TOC subsubsection System.Service.start-->
+
+<H4>System.Service.start</H4><!--SEC END -->
+
+Servisi başlatır.<BR>
+<BR>
+<!--TOC subsubsection System.Service.stop-->
+
+<H4>System.Service.stop</H4><!--SEC END -->
+
+Servisi durdurur.<BR>
+<BR>
+<!--TOC subsubsection System.Service.reload-->
+
+<H4>System.Service.reload</H4><!--SEC END -->
+
+Eğer servis destekliyorsa durdurmadan ayarlarını tekrar yükleyip güncellemesini
+sağlar.<BR>
+<BR>
+<!--TOC subsubsection System.Service.setState (state)-->
+
+<H4>System.Service.setState (state)</H4><!--SEC END -->
+
+Servisin durumunu değiştirir. Eğer state parametresi "on"
+verilirse, servis çalıştırılır ve sürekli olarak açık konuma getirilir.
+Böylece bilgisayarı yeniden başlattığınızda servis otomatik olarak
+açılacaktır. State "off" verilerek servis kapatılıp
+çalışmayacak şekilde ayarlanır.<BR>
+<BR>
+<!--TOC subsubsection System.Service.ready-->
+
+<H4>System.Service.ready</H4><!--SEC END -->
+
+Servis eğer "on" olarak ayarlanmışsa, start metodunu
+çağırarak başlatır. Müdür açılış sırasında tüm servislere bu çağrıyı
+yaparak servisleri başlatmaktadır.<BR>
+<BR>
+<!--TOC subsubsection System.Service.changed-->
+
+<H4>System.Service.changed</H4><!--SEC END -->
+
+Bu uyarı bir servisin durumu değiştiğinde gönderilir. Parametre olarak
+"started" ve "stopped" değerlerini
+verir.<BR>
+<BR>
+<!--TOC subsection Çomar comar.service Modülü-->
+
+<H3>Çomar comar.service Modülü</H3><!--SEC END -->
+
+Servis betiklerinde sık kullanılan fonksiyonlar comar-api paketi ile
+gelen bu Python modülünde sağlanmıştır.<BR>
+<BR>
+Betiklerde:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+from&nbsp;comar.service&nbsp;import&nbsp;*
+</TT></DL></DIV>
+şeklinde kullandığınızda info, setState, ready metotları sizin için
+tanımlanmış olacaktır. Böylece yalnızca start ve stop metotları ile
+bir servis betiği yazabilirsiniz. Bu hazır fonksiyonlar, betik tipi
+ve adı bilgisini betiğinizin içinde tanımlayacağınız serviceType ve
+serviceDesc değişkenlerinden alacaktır.<BR>
+<BR>
+Eğer servisinizin çalışıp çalışmadığına göre True/False döndüren bir
+status fonksiyonu yazarsanız, bu da servisinizin durumunu info çağrısında
+raporlarken kullanılacaktır.<BR>
+<BR>
+Bu modülü import ettiğiniz halde, bu fonksiyonları kendiniz de tanımlayabilirsiniz,
+bu durumda betiğiniz içindekiler çalışacaktır.<BR>
+<BR>
+Modülde ayrıca şu yardımcı fonksiyonlar bulunmaktadır:<BR>
+<BR>
+<!--TOC subsubsection run()-->
+
+<H4>run()</H4><!--SEC END -->
+
+Parametre olarak verilen komutu yeni bir kabuk açmadan çalıştırır.
+Komutun dönüş değerini döndürür.<BR>
+<BR>
+Örnek:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+run("/sbin/start-stop-daemon&nbsp;--start&nbsp;--quiet&nbsp;--exec&nbsp;/usr/sbin/cpufreqd")
+</TT></DL></DIV>
+<!--TOC subsubsection checkDaemon()-->
+
+<H4>checkDaemon()</H4><!--SEC END -->
+
+Verilen pid dosyasının gösterdiği servisin çalışıp çalışmadığına bakar.<BR>
+<BR>
+Örnek:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+def&nbsp;status():<BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;checkDaemon("/var/run/kdm.pid")
+</TT></DL></DIV>
+<!--TOC subsubsection waitBus()-->
+
+<H4>waitBus()</H4><!--SEC END -->
+
+Dosya adı verilen unix sokete bağlanılabiliyorsa True aksi halde False
+değerini döndürür. Bir servisin başlatılması ile istemcileri dinlemeye
+başlaması arasında bir süre geçiyorsa bu komutla bekleyebilirsiniz.<BR>
+<BR>
+Opsiyonel timeout parametresi ile maksimum bekleme süresini (öntanımlı
+5 saniye), yine opsiyonel wait parametresi ile de deneme aralıklarını
+(öntanımlı 0.1 saniye) ayarlayabilirsiniz. Eğer stream değil de datagram
+tipinde bir sokete bağlanmanız gerekiyorsa False değerli bir stream
+parametresi vermelisiniz.<BR>
+<BR>
+Örnek (kütük servisi hazır mı?):
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+waitBus("/dev/log",&nbsp;stream=False)
+</TT></DL></DIV>
+Örnek (dbus servisi hazır mı?):
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+waitBus("/var/lib/dbus/system_bus_socket")
+</TT></DL></DIV>
+<!--TOC subsubsection loadEnvironment()-->
+
+<H4>loadEnvironment()</H4><!--SEC END -->
+
+Çevre değişkenlerini /etc/profile.env dosyasından okuyup çalışan süreç
+için geçerli kılar. Böylece buradaki değişkenleri kullanan servisleri,
+ayrı bir kabuk başlatmadan çalıştırabilirsiniz.<BR>
+<BR>
+<!--TOC subsubsection config-->
+
+<H4>config</H4><!--SEC END -->
+
+Bu bir Python sözlük değişkeni olup, /etc/conf.d/betikpaketadı dosyasındaki
+isim=değer biçimindeki ayarları içerir. Eğer kullandığınız ayar dosyası
+adı betiğinizin paket adından farklıysa serviceConf değişkenine dosya
+adını verebilirsiniz (gene /etc/conf.d/ içinde bir dosya olmak üzere).<BR>
+<BR>
+<!--TOC section Teknik Yapı-->
+
+<H2><A NAME="htoc7">7</A>&nbsp;&nbsp;Teknik Yapı</H2><!--SEC END -->
+
+Pardus açılış sisteminde, olabildiğince modern bir yapı kullanıyoruz.
+Aygıt dosyası oluşturma, donanım tanıma programlarını tetikleme işleri
+tamamen udev tarafından yapılmakta, çekirdek ile udev arasında eski
+hotplug sistemi yerine netlink soket bağlantısı kullanılmakta, donanıma
+ait modülün bulunması sysfs dosya sisteminden gelen üretici/ürün gibi
+bilgilerle, kurulu olan modüllerin desteklediklerinin listesi karşılaştırılarak
+dinamik olarak yapılmakta, açılış sistemi ve servis betikleri yüksek
+seviyeli Python diliyle yazılmakta.<BR>
+<BR>
+<!--TOC subsection Temel yaklaşımımız-->
+
+<H3>Temel yaklaşımımız</H3><!--SEC END -->
+
+<UL><LI>
+Donanım tanıma dinamik olmalı, kurulu sistem donanımda değişiklikler
+olduğunda, yeniden elle ayar istemeden, çalışmaya devam edebilmelidir,
+<LI>Programların sistemle entegrasyonu kolay ve problemsiz olmalıdır,
+<LI>Açılıştaki erken bir sorun sistemi kurtarmayı çok zorlaştırmakta olduğu
+için, temel işlemler çok sağlam olmalı, bir hata çıktığında bunu düzeltmek
+için çaba göstermeli, daha güvenli açılış seçenekleri sağlamalıdır,
+<LI>Sistem esnek olmakla birlikte, yeterli performansı da sağlamalıdır.
+</UL>
+<!--TOC subsection Tasarım Kararları-->
+
+<H3>Tasarım Kararları</H3><!--SEC END -->
+
+<DL COMPACT=compact><DT>
+<B>Python</B><DD> Nedeni çok açık. Kabuk, awk, perl, sed betiklerinden oluşan
+çorba yerine, bakımı ve okuması kolay, ihtiyacımız olan karakter dizisi
+(string) ve liste, sözlük gibi veritiplerini çok güçlü bir şekilde
+destekleyen, fonksiyonel ve nesne tabanlı, hızlı ve temiz program
+geliştirilebilen bir dil seçtik. Kod büyüklüğü büyük ölçüde kısalırken,
+özelliklerimiz ve hızımız arttı.
+<DT><B>Disk&nbsp;hızı</B><DD> Harddisklerin oldukça yüksek olan okuma hızı, harddiskin
+okuyucu kafasının gereksiz dolaşımıyla büyük ölçüde düşüyor. Bu aşırı
+dolaşımın sebepleri arasında dosya sisteminin fragmentasyonu, çok
+sayıda dosyaya erişim, okuma/yazma işlemlerinin farklı dosyalar üzerinde
+içiçe yapılmaları, okuma işleminin tek seferde değil, ara ara parçalar
+halinde yapılması var. Bunu önlemek için, müdürün ana kısmını tek
+bir dosya (mudur.py) olarak tuttuk, dışardan çağırdığımız programları
+tam yolları ile (/sbin/mount şeklinde) çağırdık, Python yorumlayıcısının
+bir defada yüklenince birçok modülü (os, sys, string, time, glob,
+vb) sağlıyor olmasının avantajını kullandık, kabuğun zayıflığı nedeniyle
+çok kullanılmak zorunda kalınmış geçici dosyalardan kaçındık.
+<DT><B>Çomar</B><DD> Klasik /etc/init.d/ altındaki kabuk betikleri yerine Python
+ile yazılmış Çomar betikleri kullanmayı seçtik. Dezavantajı servis
+betiklerinin yeniden yazılmasının gerekmesi. Dağıtımda servis betiği
+gerektiren uygulama sayısının %5 altında olması ve bu betikleri yazmanın,
+Python gibi kolay bir dille birer start ve stop metodu yazmaktan ibaret
+olması, ve Pisi paketçilerinin zaten Python ile çalışıyor olması,
+bu dezavantajı önemsiz kılıyor. Hazır Çomar yapısını kullanmak, servisleri
+yöneten araçlar yapmayı, ve servis yönetimi yetkilerini kullanıcılara
+dağıtabilmeyi çok kolaylaştırmakta.
+<DT><B>init</B><DD> Başka açılış sistemi denemelerinin (initng, depinit, vs)
+tersine, temel süreci değiştirmekten kaçındık. Bu süreç kendi işini
+çok iyi yapıyor ve yılların sağlamlığına sahip. Paralelliği temel
+açılış bitmeden zaten başlatamıyoruz, şu anda Çomar ile servisleri
+paralel çalıştırıyoruz, müdür de init tarafından çalıştırılıyor.
+<DT><B>sleep</B><DD> En çok kaçındığımız komut. Kafadan bir süre uyuyup, beklediğimiz
+olayın tamamlandığını varsaymak yerine, o olayın gerçekten olup olmadığını
+kontrol ediyoruz. Mesela syslogd başlattıktan sonra, işlemlere devam
+etmeden bir saniye beklemek yerine, /dev/log soketinin açılmasını
+bekliyoruz, böylece süreçlerimiz hem daha sağlam, hem de daha hızlı
+oluyor.
+<DT><B>udev</B><DD> Hemen hemen tüm dağıtımlar tarafından kullanılıyor. Klasik
+diskte tutulan sabit /dev dizinine ve bir süre çekirdeğe dahil olup
+sonra atılan devfs sistemine göre, çok temiz ve esnek.
+<DT><B>muavin</B><DD> Donanım tanıma sırasında udev ile modprobe arasında bizim
+muavin programımız bulunuyor. Çekirdekten gelen MODALIAS değerini
+direk modprobe etmemekteki amacımız, araya daha esnek bir kontrol
+sokabilmek. MODALIAS, özellikle ISAPNP gibi veri yollarında henüz
+başarılı değil. Muavin ayrıca, CPU frekans modülleri gibi, daha sezgisel
+metotlarla bulunan modüllerle de ilgileniyor.
+</DL>
+<!--TOC section Belge Geçmişi-->
+
+<H2><A NAME="htoc8">8</A>&nbsp;&nbsp;Belge Geçmişi</H2><!--SEC END -->
+
+<UL><LI>
+İlk sürüm (2006-08-25), Gürer Özen
+</UL>
+
+</div>
+<!-- SAYFA İÇERİK SONU -->
+
+<!-- yayın hakkı -->
+<br>
+<br>
+<p class="not">
+Pardus sayfalarında bulunan bilgi ve belgelerin,
+kaynak gösterilmek koşulu ile kullanılması serbesttir.
+<em><br>
+<strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
+Bilgi ve önerileriniz için
+<a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+</p>
+<br>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
