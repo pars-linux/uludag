@@ -1296,6 +1296,10 @@
 <t>Bağlam duyarsız</t><t>Bağlam bağımsız</t>
 </term>
 <term>
+<s>Ripping</s>
+<t>Aktarma</t>
+</term>
+<term>
 <s>Argument</s>
 <t>Bağımsız değişken</t><t>Argüman</t>
 </term>
@@ -6514,7 +6518,7 @@
 </term>
 <term>
 <s>multiple</s>
-<t>çoklu</t>
+<t>çoğul</t>
 </term>
 <term>
 <s>multiple inheritance</s>
@@ -6546,19 +6550,19 @@
 </term>
 <term>
 <s>multiprocessing</s>
-<t>çoklu işlem</t>
+<t>çoğul işleme</t>
 </term>
 <term>
 <s>multiprogramming</s>
-<t>çoklu programlama</t>
+<t>multi programlama</t>
 </term>
 <term>
 <s>multitasking</s>
-<t>çoklu görev</t><t>çokgörevli</t>
+<t>çok görevlilik</t>
 </term>
 <term>
 <s>multithreading</s>
-<t>çoklu kullanımlı</t>
+<t>çok kullanımlı</t>
 </term>
 <term>
 <s>multiuser</s>
