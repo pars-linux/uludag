@@ -5,7 +5,6 @@ sys::3:root,bin,adm
 adm::4:root,adm,daemon
 tty::5:
 disk::6:root,adm
-lp::7:lp
 mem::8:
 kmem::9:
 wheel::10:root
@@ -17,7 +16,6 @@ man::15:man
 cron::16:cron
 console::17:
 audio::18:
-cdrom::19:
 dialout::20:root
 ftp::21:
 sshd::22:
