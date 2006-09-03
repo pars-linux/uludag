@@ -85,9 +85,27 @@ While there's always a hot, ongoing debate about which package manager to
  The new package manager, PiSi (packages installed successfully as intended)
  is completely written in Python.
  While PiSi deserves a full article of its own, we'll be focusing on another
- new approach Pardus presents, i.e a new init framework called Mudur which
- primarily focuses on notoriously slow and complex initialization system
- of Linux.
+ new approach, also written in Python, Pardus presents, a new init framework
+ called Mudur
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Mudur means 
+\begin_inset Quotes eld
+\end_inset
+
+director
+\begin_inset Quotes erd
+\end_inset
+
+ in Turkish.
+\end_layout
+
+\end_inset
+
+ which primarily focuses on notoriously slow and complex initialization
+ system of Linux.
 \end_layout
 
 \begin_layout Standard
@@ -442,8 +460,19 @@ This
  Another script is /sbin/muavin.py which is called by mudur.py during the
  startup, and scans available hardware and loads necessary kernel modules
  (coldplug).
- Muavin is also called by udev on hotplug events, and handles module and
- firmware loading operations.
+ Muavin
+\begin_inset Foot
+status collapsed
+
+\begin_layout Standard
+Muavin means assistant (used here for its specific meaning, the guy who
+ assists for loading/unloading passenger cargo on an intercity bus) in Turkish.
+\end_layout
+
+\end_inset
+
+ is also called by udev on hotplug events, and handles module and firmware
+ loading operations.
  There are also a set of commands like update-modules, update-environment,
  etc used by package install script, or system admins.
  Those are written in Python too.
@@ -613,8 +642,8 @@ You can't improve what you can't measure.
  which generates detailed graphics.
  Resource utilization and process information are collected during the boot
  process and are later rendered in a chart.
- A typical Pardus boot sequence on a P4 2.8GHz, 1GB RAM, 80GB IDE disk is
- shown below:
+ A typical Pardus boot sequence on a P4 2.8GHz, 1GB RAM, 80GB 5400 rpm IDE
+ disk is shown below:
 \end_layout
 
 \begin_layout Standard
@@ -626,8 +655,7 @@ Conclusions
 \end_layout
 
 \begin_layout Standard
-The re-written init daemon is currently in a working state starting from
- Pardus 1.1 alpha2.
+Mudur is currently in a working state starting from Pardus 1.1 alpha.
  Interested and experienced developers are more than welcome to build new
  enhancements on top of this model.
  Below, a table showing the current advantages and disadvantages of the
@@ -636,7 +664,7 @@ The re-written init daemon is currently in a working state starting from
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="6" columns="3">
 <features>
 <column alignment="center" valignment="top" leftline="true" width="0">
 <column alignment="left" valignment="top" leftline="true" width="5cm">
@@ -754,7 +782,37 @@ All Perl, sed, awk, grep, cut, find, and advanced shell dependencies are
 
 \begin_layout Standard
 Base system now depends on Python runtime and a few of its modules (around
- 1.5 MB).
+ 1 MB).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Features
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+Some advanced script dependency constructs of Gentoo like virtual script
+ dependencies are not supported.
 \end_layout
 
 \end_inset
@@ -798,6 +856,24 @@ Service scripts need to be rewritten in Python.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+We are getting very good results with file cache kernel patch
+\begin_inset LatexCommand \cite{key-14}
+
+\end_inset
+
+ of Jens Axboe.
+ Boot time is shortened only a bit, but since it can cache not only boot
+ process but user session as well, typical launch time of an application
+ like OpenOffice.org from cold start of the computer is significantly improved
+ without even using preloading.
+\end_layout
+
+\begin_layout Standard
+We are looking ways to integrate fcache into our boot system, and automatically
+ handle re-priming when cache becomes out of date with software updates.
 \end_layout
 
 \begin_layout Bibliography
