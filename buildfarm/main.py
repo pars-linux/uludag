@@ -34,6 +34,9 @@ def buildPackages():
     qmgr = qmanager.QueueManager()
     queue = copy.copy(qmgr.workQueue)
 
+    if len(queue) == 0:
+        sys.exit(1)
+
     f = open("/var/run/buildfarm", 'w')
     f.close()
 
