@@ -99,8 +99,8 @@ def buildPackages():
     #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
 
     # Check packages containing binaries and libraries broken by any package update
-    os.system("/usr/bin/revdep-rebuild")
-    # if any mail /root/.revdep-rebuild.3_rebuild
+    # os.system("/usr/bin/revdep-rebuild")
+    # if any mail /root/.revdep-rebuild.4_names
 
     os.chdir(current)
     os.unlink("/var/run/buildfarm")
