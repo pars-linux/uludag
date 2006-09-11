@@ -431,6 +431,24 @@ Instead of using this unreliable method, we just wait for actual resource
  This optimization alone saved almost 5-6 seconds on our initialization.
 \end_layout
 
+\begin_layout Standard
+Another variant of this problem happens with udev.
+ Device nodes under the /dev folder are created in a random order.
+ Ubuntu recently started on a replacement init system
+\begin_inset LatexCommand \cite{key-9}
+
+\end_inset
+
+ to address this problem.
+ They claim that due to this issues and hotplugging, it's no longer possible
+ to guarantee that particular devices are available at a particular point
+ in the boot process.
+ Their new system is designed to be event based, running scripts on certain
+ events.
+ We think hotplug devices are handled and mounted much better by udev rules
+ instead of fstab, and that makes their rationale pretty pointless.
+\end_layout
+
 \begin_layout Section
 Components
 \end_layout
@@ -925,6 +943,13 @@ Even another replacement, http://www.nezumi.plus.com/depinit/
 
 \bibitem {key-7}
 Yet another try, http://www.atnf.csiro.au/people/rgooch/linux/boot-scripts/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-17}
+Recently, Ubuntu started on their own replacement, https://wiki.ubuntu.com/Replace
+mentInit
 \end_layout
 
 \begin_layout Bibliography
