@@ -14,7 +14,6 @@
             </div>
         </td>
     </tr>
-    
     <tr>
         <td id="mainBody" <?php if ($PageContent["PType"]==="D") { ?> style="width:770px" colspan=2 <?php } ?> >
             <div id="hede">

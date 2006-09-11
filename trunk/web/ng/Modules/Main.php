@@ -17,6 +17,13 @@
                 $Page = $Pardus->GetPage($CR);
                 $Navi = $Page[0]["Title"];
             }
+
+            # Predefined SideBar Modules, lets start
+            if ($Page[0]["Modules"]<>"") {
+                include_once("MODS.php");
+                $Modules = MakeModules($Page[0]["Modules"]);
+            }
         }
     }
+
 ?>

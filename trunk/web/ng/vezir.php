@@ -223,4 +223,5 @@
     function __($V){
         return htmlspecialchars(strip_tags($V));
     }
+
 ?>

@@ -3,6 +3,9 @@
     /* RSS Module For PW */
     /* Gökmen GÖKSEL <gokmen at pardus.org.tr> */
 
+
+    # Module RSS Class
+
     class RssRead {
 
     public $RssContent;
@@ -25,10 +28,11 @@
             if ($this->RssContent) {
                 $i=0;
                 foreach($this->RssContent->channel->item as $blog) {
-                    echo "<li><a target='_blank' href='".$blog->link."'>".$this->utf8_substr($blog->title,0,$CharLen)."..</a><br>";
+                    $Return.= "<li><a target='_blank' href='".$blog->link."'>".$this->utf8_substr($blog->title,0,$CharLen)."..</a><br>";
                     if ($i>=$Count) break; else $i++;
                 }
             }
+            return $Return;
         }
     }
 
