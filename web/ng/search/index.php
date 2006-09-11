@@ -89,7 +89,7 @@
 
 <body onload="init();">
     <center>
-        <table>
+        <table id="como">
             <tr>
                 <td id="header" colspan=2>
                     <div id="menu">
@@ -109,37 +109,31 @@
                 </td>
             </tr>
             <tr>
-                <td id="mainBody" style="width:970px">
+                <td id="mainBody">
                     <div id="hede">
 
                         <?php
                             if (isset($Page))
                                 echo $Page[0]["Content"];
                             else {
-                                $Vezir->ShowLogs();
+                                #$Vezir->ShowLogs();
                         ?>
-
-                        <!--
-                        <center> <br />
-                            <form action="<?=$PHP_SELF?>">
-                                <input type="text" name="q" size=55 value="<?=$SearchWord?>">&nbsp;<input type="submit" value="<?=SEARCH_AGAIN?>">
-                            </form>
-                        </center>
-                        -->
 
                         <?php
                                 if (isset($Search)) {
+                                    echo "<div class='info'>";
                                     if ($Results[0]['NiceTitle']<>"") {
                                         echo TOTAL.sizeof($Results).RECORD_FOUND_ALSO_YOU_CAN_LOOK_AT_GOOGLE_RESULTS;
                                         echo "<a href=# onClick='ToggleHighlights(this);return false'>".HIDEHIGHLIGHT."</a> <br/>";
                                     }
                                     else 
                                         echo NO_RECORD_FOUND_BUT_YOU_CAN_LOOK_AT_GOOGLE_RESULTS;
+                                    echo "</div>";
                                     if ($Results)
                                         $Search->Mod1();
                                 }
                                 elseif (isset($Message))
-                                    echo $Message;
+                                    echo "<div class='info'>".$Message."</div>";
                             }
                         ?>
                     </div>

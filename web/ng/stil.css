@@ -92,7 +92,7 @@ hr {
 }
 
 #kutular {
-    width:290px;
+    width:315px;
     vertical-align:top;
 }
 
@@ -157,12 +157,20 @@ hr {
     height: 100px;
 }
 
+#navi {
+    text-align:justify;
+}
 #ana-butonlar img {
     margin-left:1.5px;
+    border:0;
 }
 
 #boxdetay1 {
     width:210px;
+}
+
+#middleeast {
+    width:140px;
 }
 
 #boxdetay2 {
@@ -234,10 +242,13 @@ a:hover {
 }
 
 #mainBody {
-    width: 730px;
-    background-color:#FFF;
+        background-color:#FFF;
     height: 100%;
     vertical-align:top;
+}
+
+#como {
+    width: 934px;
 }
 
 #kucular {
@@ -251,7 +262,12 @@ a:hover {
     padding-top:0px;
 }
 
-#hede h2 {
+.info {
+    background-color:#EEE;
+    border: 1px solid #DDD;
+    padding:3px;
+}
+h2 {
     font-size: 14px;
     font-weight: bold;
     background-color: #DDD;
@@ -262,7 +278,7 @@ a:hover {
     padding-bottom:2px;
 }
 
-#hede h1 {
+h1 {
     font-size: 17px;
     font-weight: bold;
     border-bottom:1px solid #EEE;
@@ -271,7 +287,7 @@ a:hover {
     padding-bottom:2px;
 }
 
-#hede h4 {
+h4 {
     font-weight:normal;
     font-size: 10px;
     margin-top:-8px;
@@ -280,17 +296,16 @@ a:hover {
     text-align:right;
 }
 
-#hede p {
+p {
     padding-left: 2px;
 }
-#hede input {
+input {
    border: 1px solid #999;
 }
-#hodo {
+#right_pane {
     border-left:1px solid #EEE;
     height: 100%;
     text-align:center;
-    padding-top:10px;
 }
 
 .svnlink {

@@ -20,13 +20,13 @@
     <script src="scripts/scriptaculous.js"></script>
     <script src="scripts/effects.js"></script>
     <script src="scripts/main.js"></script>
+    <?=$Modules['Head']?>
 </head>
-
-<body>
+<body onLoad='<?=$Modules['Onload']?>' >
     <center>
-        <table>
+        <table id="como">
             <tr>
-                <td id="header" colspan=2>
+                <td id="header" colspan=3>
                     <div id="menu"><?=$Navi?></div>
                     <div id="searchbar">
                         <form action="search/" method="get">
@@ -39,14 +39,19 @@
             </tr>
 
             <?php
-                if(isset($Page))
-                    echo "<tr><td>".$Page[0]["Content"]."</td></tr>";
+                if(isset($Page)){
+                    echo "<tr>";
+                    echo "<td id='mainBody'>".$Page[0]["Content"]."</td>";
+                    if ($Modules<>"")
+                        echo "\n<td id='kucular'><div id='right_pane'>".$Modules['Body']."</div></td>";
+                    echo "</tr>";
+                }
                 else
                     include ('index-data.php');
             ?>
 
             <tr>
-                <td colspan=2>
+                <td colspan=3>
                     <div id="footer-forpw">
                     <?php $Vezir->ShowLogs(); ?>
                     <?=PARDUS_REGISTER?></div>

@@ -11,3 +11,7 @@
             new Effect.Highlight('haber',{startcolor:'#CCE0E6', endcolor:'#FFFFFF'});
             $('haber').style.background = "#FFF";
         }
+
+        function get_url(linker,diver) {
+            var AjaxP = new Ajax.Request(linker,{method:'get', parameters:'', onComplete: function(response,diver){$(diver).innerHTML = response.responseText;}});
+        }
