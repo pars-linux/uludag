@@ -7,9 +7,7 @@
 }
 
 body {
-    margin-left:0;
-    margin-top:0;
-    margin-right:0;
+    margin:0;
     background-image:url('images/HeadTile.png');
     background-repeat:repeat-x;
     background-color: #FFF;
@@ -19,6 +17,7 @@ body {
     background-image:url('images/HeadLogo.png');
     background-repeat:no-repeat;
     background-position: 0px -2px;
+
 }
 
 #header-bugzilla {
@@ -46,9 +45,9 @@ hr {
 }
 
 #searchbar {
-    float:right;
+    text-align:right;
     padding-right:3px;
-    padding-top:97px;
+    padding-top:96px;
 }
 
 .searchresults {
@@ -61,15 +60,16 @@ hr {
 .searchresults b {
     color:#666;
 }
+
 #searchbar input {
-    background-color:#FFF;
-    border: none;
+    background-color:#EEE;
+    border:0px;
     border-bottom:1px solid #999;
-    height:17px;
+    height:15px;
     width:140px;
-    padding:1px;
     padding-left:2px;
 }
+
 #menu li {
     border:0;
     padding-left:5px;
@@ -78,10 +78,7 @@ hr {
 }
 
 #pardus-11 {
-    font-size: 16px;
     color: #297190;
-    padding-left:30px;
-    padding-top:130px;
     background-image:url('images/newdesign/splash-11.png');
     background-repeat:no-repeat;
     background-position: 0px 0px;
@@ -256,6 +253,8 @@ a:hover {
     width:200px;
     vertical-align:top;
     background-color:#FFF;
+    border-left:1px solid #EEE;
+    padding-left:5px;
 }
 
 #hede {
@@ -306,7 +305,8 @@ input {
 #right_pane {
     border-left:1px solid #EEE;
     height: 100%;
-    text-align:center;
+    !text-align:center;
+    !padding-left:20px;
 }
 
 .svnlink {
@@ -334,13 +334,8 @@ input {
 }
 
 #RssList {
-    text-align:left;
     padding:2px;
     padding-left:7px;
-}
-
-#RssList a {
-
 }
 
 .working {
@@ -348,15 +343,16 @@ input {
     background-repeat:no-repeat;
     background-position:85px 8px;
     margin: auto auto;
-    height: 30px;    
+    height: 30px;
 }
 
 .ready {
     background-color:#FFF;
     height:auto;
-    text-align:left;
-    padding-left:8px;
+    !text-align:left;
+    !padding-left:8px;
     margin-bottom:3px;
+   margin-right:12px;
 }
 
 #selectRepo {

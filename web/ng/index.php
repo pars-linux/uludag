@@ -10,12 +10,13 @@
     require_once('Modules/Main.php');
 
 ?>
-<?='<?xml version="1.0" encoding="utf-8"?>'?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//TR"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="en">
 <head>
     <title><?=PAGE_TITLE?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="stil.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="stil.css" rel="stylesheet" type="text/css" />
     <script src="scripts/prototype.js" type="text/javascript"></script>
     <script src="scripts/scriptaculous.js" type="text/javascript"></script>
     <script src="scripts/main.js" type="text/javascript"></script>
@@ -28,9 +29,7 @@
                     <div id="menu"><?=$Navi?></div>
                     <div id="searchbar">
                         <form action="search/" method="get">
-                        <input name="q" type="text" value="<?=SEARCH?>"
-                            onclick="if (this.value=='<?=SEARCH?>') this.value=''"
-                            onblur="if (this.value=='') this.value='<?=SEARCH?>'" />
+                        <input name="q" type="text" value="<?=SEARCH?>" onclick="javascript:if (this.value=='<?=SEARCH?>') this.value=''" onblur="javascript:if (this.value=='') this.value='<?=SEARCH?>'" />
                         </form>
                     </div>
                 </td>
@@ -41,7 +40,7 @@
                     echo "<tr>";
                     echo "<td id='mainBody'>".$Page[0]["Content"]."</td>";
                     if ($Modules<>"")
-                        echo "\n<td id='kucular'><div id='right_pane'>".$Modules['Body']."</div></td>";
+                        echo "\n<td id='kucular'>".$Modules['Body']."</td>";
                     echo "</tr>";
                 }
                 else
