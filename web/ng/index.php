@@ -10,20 +10,18 @@
     require_once('Modules/Main.php');
 
 ?>
-
-<html>
+<?='<?xml version="1.0" encoding="utf-8"?>'?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
     <title><?=PAGE_TITLE?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="stil.css" rel="stylesheet" type="text/css" />
-    <script src="scripts/prototype.js"></script>
-    <script src="scripts/scriptaculous.js"></script>
-    <script src="scripts/effects.js"></script>
-    <script src="scripts/main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="stil.css" rel="stylesheet" type="text/css">
+    <script src="scripts/prototype.js" type="text/javascript"></script>
+    <script src="scripts/scriptaculous.js" type="text/javascript"></script>
+    <script src="scripts/main.js" type="text/javascript"></script>
     <?=$Modules['Head']?>
 </head>
 <body onLoad='<?=$Modules['Onload']?>' >
-    <center>
         <table id="como">
             <tr>
                 <td id="header" colspan=3>
@@ -31,8 +29,8 @@
                     <div id="searchbar">
                         <form action="search/" method="get">
                         <input name="q" type="text" value="<?=SEARCH?>"
-                               onClick="if (this.value=='<?=SEARCH?>') this.value='';" 
-                               onBlur="if (this.value=='') this.value='<?=SEARCH?>';">
+                            onclick="if (this.value=='<?=SEARCH?>') this.value=''"
+                            onblur="if (this.value=='') this.value='<?=SEARCH?>'" />
                         </form>
                     </div>
                 </td>
@@ -58,6 +56,5 @@
                 </td>
             </tr>
         </table>
-    </center>
 </body>
 </html>

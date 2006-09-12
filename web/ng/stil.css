@@ -49,7 +49,6 @@ hr {
     float:right;
     padding-right:3px;
     padding-top:97px;
-    margin-bottom:-10px;
 }
 
 .searchresults {
@@ -67,6 +66,7 @@ hr {
     border: none;
     border-bottom:1px solid #999;
     height:17px;
+    width:140px;
     padding:1px;
     padding-left:2px;
 }
@@ -78,7 +78,6 @@ hr {
 }
 
 #pardus-11 {
-    !float:left;
     font-size: 16px;
     color: #297190;
     padding-left:30px;
@@ -90,11 +89,13 @@ hr {
     height: 230px;
 }
 
-#kutular {
+.kutular {
     width:310px;
     vertical-align:top;
 }
-
+#main-buttons td img{
+    border:0px;
+}
 #pardus-nedir {
     background-image:url('images/newdesign/header-pardus-nedir.png');
     background-repeat:no-repeat;
@@ -133,8 +134,6 @@ hr {
     background-repeat:no-repeat;
     background-position: 0 0;
     background-color:#E8F2F4;
-    !padding:5px;
-    !padding-left:5px;
     padding-top:26px;
     color: #297190;
     height:auto;
@@ -165,14 +164,9 @@ hr {
     text-align:center;
 }
 #ana-butonlar img {
-    !margin-left:1.5px;
     margin:0;
     padding:0;
     border:0;
-}
-
-#boxdetay1 {
-    !width:210px;
 }
 
 #middleeast {
@@ -255,6 +249,7 @@ a:hover {
 
 #como {
     width: 934px;
+    margin:0 auto;
 }
 
 #kucular {
