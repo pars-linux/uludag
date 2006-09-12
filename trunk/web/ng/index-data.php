@@ -1,11 +1,9 @@
     <tr>
-        <td id="pardus-11">
-            <div id="boxdetay1">
+        <td id="pardus-11" colspan="2">
+           <!-- <div id="boxdetay1">
                 Pardus 1.1 Muhteşem :)
             </div>
-        </td>
-        <td id="middleeast">
-            <img src="images/newdesign/pgon.png" alt="">  <img src="images/newdesign/basin-odasi.png" alt="">
+            -->
         </td>
         <td id="kutular">
             <div id="pardus-nedir">
@@ -16,17 +14,13 @@
     </tr>
 
     <tr>
-        <td id="navi" colspan=3>
-            <div id="ana-butonlar">
-                <a href="?page=Bireysel"><img src="images/newdesign/button-bireysel-kullanici.png" border="0" alt="" /></a>
-                <a href="?page=Kurumsal"><img src="images/newdesign/button-kurumsal-kullanici.png" border="0" alt="" /></a>
-                <a href="?page=Gelistirici"><img src="images/newdesign/button-gelistirici.png" border="0" alt="" /></a>
-            </div>
-        </td>
+        <td><a href="?page=Bireysel"><img src="images/newdesign/button-bireysel-kullanici.png" border="0" alt="" /></a></td>
+        <td><a href="?page=Kurumsal"><img src="images/newdesign/button-kurumsal-kullanici.png" border="0" alt="" /></a></td>
+        <td><a href="?page=Gelistirici"><img src="images/newdesign/button-gelistirici.png" border="0" alt="" /></a></td>
     </tr>
 
     <tr>
-        <td id="icerik" colspan=2>
+        <td id="icerik" colSpan="2">
             <div id="ayrintilar">
                 <div id="haber">
                 <?php
