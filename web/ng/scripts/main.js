@@ -8,8 +8,8 @@
             var newData = originalRequest.responseText;
             $('haber').innerHTML = "";
             $('haber').innerHTML = newData;
-            new Effect.Highlight('haber',{startcolor:'#CCE0E6', endcolor:'#FFFFFF'});
-            $('haber').style.background = "#FFF";
+            new Effect.Highlight('haber',{startcolor:'#3991C0', endcolor:'#E8F2F4'});
+            $('haber').style.background = "#E8F2F4";
         }
 
         function get_url(linker,diver) {
