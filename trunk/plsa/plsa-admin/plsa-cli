@@ -2,19 +2,24 @@
 # -*- coding: utf-8 -*-
 
 # Standard Python Library
+from getpass import getpass
 from optparse import OptionParser
 import os
 import os.path
 import sys
 
-# Utils
-from utility import *
-
-# XML Validator
-from validator import validate_plsa
+# PLSA Library
+from plsa.utility import *
+from plsa.validator import validate_plsa
+from plsa.gpg import GPG
 
 # piksemel
 import piksemel
+
+# i18n
+import gettext
+__trans = gettext.translation("plsa", fallback=True)
+_ = __trans.ugettext
 
 SUCCESS = 0
 FAIL_USAGE = 1
@@ -23,21 +28,23 @@ FAIL_WRITE = 3
 FAIL_XML = 4
 FAIL_KEY = 5
 FAIL_PP = 6
+FAIL_LANG = 7
 
 def main():
-    lang = os.environ["LANG"][:2]
+    language = os.environ["LANG"][:2]
+
     version = "1.0"
     usage = "%prog <options> advisory.xml"
 
     parser = OptionParser(usage=usage,  version="%prog " + version)
     parser.add_option("-s", "--sign", dest="sign",
-                      help="sign advisory with KEY", metavar="KEY")
+                      help=_("sign advisory with KEY"), metavar=_("KEY"))
     parser.add_option("-p", "--pass", dest="passphrase",
-                      help="use PASS as passphrase", metavar="PASS")
+                      help=_("use PASS as passphrase"), metavar=_("PASS"))
     parser.add_option("-l", "--language", dest="language",
-                      help="set advisory language (default: %s)" % lang, metavar="LANG")
+                      help=_("generate advisory for locale LANG (default: %s)") % language, metavar=_("LANG"))
     parser.add_option("-o", "--output", dest="output",
-                      help="save advisory text to FILE", metavar="FILE")
+                      help=_("save advisory text to FILE"), metavar=_("FILE"))
     options, args = parser.parse_args()
 
     if len(args) == 0:
@@ -45,17 +52,25 @@ def main():
         return FAIL_USAGE
 
     if not os.path.isfile(args[0]) or not os.access(args[0], os.R_OK):
-        print "Unable to read %s" % args[0]
+        print _("Unable to read %s") % args[0]
         return FAIL_READ
 
     if not options.language:
-        options.language = lang
+        options.language = language
+
+    try:
+        __trans_advisory = gettext.translation("plsa", languages=[options.language], fallback=options.language=="en")
+        _a = __trans_advisory.ugettext
+        # Texts in advisory should use '_a' instead of '_' function
+    except:
+        print _("PLSA doesn't have required translation file.")
+        return FAIL_LANG
 
     # Validate advisory xml
     xml_val = validate_plsa()
     xml_val.validate(args[0])
     if len(xml_val.errors):
-        print "XML file has errors:"
+        print _("XML file has errors:")
         for i in xml_val.errors:
             print "  " + i
         return FAIL_XML
@@ -67,8 +82,8 @@ def main():
     nodes = [x.name() for x in adv.tags() if "xml:lang" in x.attributes() and x.getAttribute("xml:lang") == options.language and x.firstChild()]
     missing = set(["Title", "Summary", "Description"]) - set(nodes)
     if missing:
-        print "XML has missing tags for locale '%s': %s" % (options.language, ", ".join(missing))
-        return FAIL_XML
+        print _("XML has missing tags for locale '%s': %s") % (options.language, ", ".join(missing))
+        return FAIL_LANG
 
     # TODO: need cleanup here
     tags = {"id": adv.getAttribute("id"),
@@ -101,29 +116,68 @@ def main():
                 tags["packages_rm"].append(node.getTagData("Name"))
             node = node.nextTag()
 
-    headers = [("ID", tags["id"]),
-               ("Title", tags["title"]),
-               ("Severity", tags["severity"])]
+    headers = [(_a("ID"), tags["id"]),
+               (_a("Title"), tags["title"]),
+               (_a("Severity"), tags["severity"])]
 
-    text = gen_advisory(headers, tags)
+    title = _a("Pardus Linux Security Advisory")
+
+    tpl = []
+    tpl.append("-" * 72)
+    tpl.append(justify("%s  %s" % (title, tags["date"]), "  ", 72))
+    tpl.append("-" * 72)
+    tpl.extend(calign(headers))
+    tpl.append("-" * 72)
+    tpl.append("")
+
+    tpl.append(_a("Summary"))
+    tpl.append("=" * len(_a("Summary")))
+    tpl.append(wwrap(tags["summary"]))
+    tpl.append("")
+
+    tpl.append(_a("Description"))
+    tpl.append("=" * len(_a("Description")))
+    tpl.append(wwrap(tags["description"]))
+    tpl.append("")
+
+    if len(tags.get("packages_up", [])):
+        tpl.append(_a("These packages should be upgraded to specified releases:"))
+        for p, r in tags["packages_up"]:
+          tpl.append("  * %s-%s" % (p, r))
+        tpl.append("")
+
+    if len(tags.get("packages_rm", [])):
+        tpl.append(_a("These packages should be removed from system:"))
+        for p in tags["packages_rm"]:
+          tpl.append("  * %s" % p)
+        tpl.append("")
+
+    if len(tags.get("references", [])):
+        tpl.append(_a("References"))
+        tpl.append("=" * len(_a("References")))
+        for ref, link in tags["references"]:
+          tpl.append("  * " + wwrap("%s <%s>" % (ref, link), lpad=4, just=0).strip())
+        tpl.append("")
+
+    tpl.append("-" * 72)
+
+    text = "\n".join(tpl)
 
     # Sign advisory
     if options.sign:
-        from getpass import getpass
-        from gpg import GPG
         gnupg = GPG()
         if options.sign not in [x["keyid"][-8:] for x in gnupg.list_keys(secret=True)]:
-            print "Key not found in GnuPG database."
-            print "Available keys are:"
+            print _("Key not found in GnuPG database.")
+            print _("Available keys are:")
             for i in gnupg.list_keys(secret=1):
                 print "  %s - %s" % (i["keyid"][-8:], i["uids"][1])
             return FAIL_KEY
         else:
             if not options.passphrase:
-                options.passphrase = getpass("Passphrase: ")
+                options.passphrase = getpass(_("Passphrase: "))
             text_signed = gnupg.sign(text, options.sign, options.passphrase)
             if not str(text_signed):
-                print "Invalid passphrase."
+                print _("Invalid passphrase.")
                 return FAIL_PP
             else:
                 text = text_signed
@@ -132,7 +186,7 @@ def main():
         try:
             open(options.output, "w").write(text)
         except IOError:
-            print "Unable to write advisory text to %s" % options.output
+            print _("Unable to write advisory text to %s") % options.output
             return FAIL_WRITE
     else:
         print text

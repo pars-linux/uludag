@@ -1,0 +1,124 @@
+# PLSA Publisher.
+# Copyright (C) 2006 TÜBİTAK/UEKAE
+# This file is distributed under the same license as the PLSA package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PLSA 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-13 17:00+0300\n"
+"PO-Revision-Date: 2006-09-13 12:06+0300\n"
+"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plsa-cli:41
+msgid "sign advisory with KEY"
+msgstr "bildiriyi ANAHTAR ile imzala"
+
+#: plsa-cli:41
+msgid "KEY"
+msgstr "ANAHTAR"
+
+#: plsa-cli:43
+msgid "use PASS as passphrase"
+msgstr "parola olarak PAR kullan"
+
+#: plsa-cli:43
+msgid "PASS"
+msgstr "PAR"
+
+#: plsa-cli:45
+#, python-format
+msgid "generate advisory for locale LANG (default: %s)"
+msgstr "bildiriyi DIL dilinde oluştur (varsayılan: %s)"
+
+#: plsa-cli:45
+msgid "LANG"
+msgstr "DIL"
+
+#: plsa-cli:47
+msgid "save advisory text to FILE"
+msgstr "bildiri metnini DOSYA içine yaz"
+
+#: plsa-cli:47
+msgid "FILE"
+msgstr "DOSYA"
+
+#: plsa-cli:55
+#, python-format
+msgid "Unable to read %s"
+msgstr "%s dosyası okunamadı"
+
+#: plsa-cli:66
+msgid "PLSA doesn't have required translation file."
+msgstr "PLSA gerekli çeviri dosyasına sahip değil."
+
+#: plsa-cli:73
+msgid "XML file has errors:"
+msgstr "XML dosyası hatalı:"
+
+#: plsa-cli:85
+#, python-format
+msgid "XML has missing tags for locale '%s': %s"
+msgstr "XML'de '%s' dili etiketleri eksik: %s"
+
+#: plsa-cli:119
+msgid "ID"
+msgstr "No"
+
+#: plsa-cli:120
+msgid "Title"
+msgstr "Başlık"
+
+#: plsa-cli:121
+msgid "Severity"
+msgstr "Önem"
+
+#: plsa-cli:123
+msgid "Pardus Linux Security Advisory"
+msgstr "Pardus Linux Güvenlik Bildirisi"
+
+#: plsa-cli:133 plsa-cli:134
+msgid "Summary"
+msgstr "Özet"
+
+#: plsa-cli:138 plsa-cli:139
+msgid "Description"
+msgstr "Açıklama"
+
+#: plsa-cli:144
+msgid "These packages should be upgraded to specified releases:"
+msgstr "Aşağıdaki paketler belirtilen sürümlere yükseltilmelidir:"
+
+#: plsa-cli:150
+msgid "These packages should be removed from system:"
+msgstr "Aşağıdaki paketler sistemden kaldırılmalıdır:"
+
+#: plsa-cli:156 plsa-cli:157
+msgid "References"
+msgstr "Referenslar"
+
+#: plsa-cli:170
+msgid "Key not found in GnuPG database."
+msgstr "Anahtar GnuPG veritabanında bulunamadı."
+
+#: plsa-cli:171
+msgid "Available keys are:"
+msgstr "Mevcut anahtarlar:"
+
+#: plsa-cli:177
+msgid "Passphrase: "
+msgstr "Parola: "
+
+#: plsa-cli:180
+msgid "Invalid passphrase."
+msgstr "Geçersiz parola."
+
+#: plsa-cli:189
+#, python-format
+msgid "Unable to write advisory text to %s"
+msgstr "Bildiri metni %s dosyasına yazılamadı"
