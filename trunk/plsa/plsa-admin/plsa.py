@@ -50,7 +50,6 @@ def main():
 
     if not options.language:
         options.language = lang
-        # TODO: check if XML has that local text
 
     # Validate advisory xml
     xml_val = validate_plsa()
@@ -64,6 +63,12 @@ def main():
     # Generate advisory text
     xml_doc = piksemel.parse(args[0])
     adv = xml_doc.getTag("Advisory")
+
+    nodes = [x.name() for x in adv.tags() if "xml:lang" in x.attributes() and x.getAttribute("xml:lang") == options.language and x.firstChild()]
+    missing = set(["Title", "Summary", "Description"]) - set(nodes)
+    if missing:
+        print "XML has missing tags for locale '%s': %s" % (options.language, ", ".join(missing))
+        return FAIL_XML
 
     # TODO: need cleanup here
     tags = {"id": adv.getAttribute("id"),
