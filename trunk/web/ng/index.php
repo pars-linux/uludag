@@ -10,9 +10,9 @@
     require_once('Modules/Main.php');
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//TR"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
     <title><?=PAGE_TITLE?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,14 +22,14 @@
     <script src="scripts/main.js" type="text/javascript"></script>
     <?=$Modules['Head']?>
 </head>
-<body onLoad='<?=$Modules['Onload']?>' >
+<body onload='<?=$Modules['Onload']?>' >
         <table id="como">
             <tr>
-                <td id="header" colspan=3>
+                <td id="header" colspan="3">
                     <div id="menu"><?=$Navi?></div>
                     <div id="searchbar">
                         <form action="search/" method="get">
-                        <input name="q" type="text" value="<?=SEARCH?>" onclick="javascript:if (this.value=='<?=SEARCH?>') this.value=''" onblur="javascript:if (this.value=='') this.value='<?=SEARCH?>'" />
+                        <div><input name="q" type="text" value="<?=SEARCH?>" onclick="Javascript:if (this.value=='<?=SEARCH?>') this.value='';" onblur="Javascript:if (this.value=='') this.value='<?=SEARCH?>';" /> </div>
                         </form>
                     </div>
                 </td>
@@ -48,7 +48,7 @@
             ?>
 
             <tr>
-                <td colspan=3>
+                <td colspan="3">
                     <div id="footer-forpw">
                     <?php $Vezir->ShowLogs(); ?>
                     <?=PARDUS_REGISTER?></div>
