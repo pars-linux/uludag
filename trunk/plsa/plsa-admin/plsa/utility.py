@@ -1,10 +1,11 @@
 def localized_node(parent, name, lang="en"):
     """Returns tag data with selected xml:lang attribute"""
-    node = [x for x in parent.tags() if x.name() == name and "xml:lang" in x.attributes() and x.getAttribute("xml:lang") == lang][0]
-    if node.firstChild():
-        return unicode(node.firstChild().data())
-    else:
-        return ""
+    for x in parent.tags():
+        if x.name() == name and "xml:lang" in x.attributes() and x.getAttribute("xml:lang") == lang:
+            if x.firstChild() and x.firstChild().type() == 3:
+                return unicode(x.firstChild().data())
+            else:
+                return ""
 
 def justify(text, delim=" ", width=72):
     words = text.split(delim)
