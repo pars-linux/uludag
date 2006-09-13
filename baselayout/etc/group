@@ -8,6 +8,7 @@ disk::6:root,adm
 mem::8:
 kmem::9:
 wheel::10:root
+floppy:x:11:root
 mail::12:mail
 news::13:news
 uucp::14:uucp
