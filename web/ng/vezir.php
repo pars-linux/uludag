@@ -193,13 +193,13 @@
         function GetNewsList(){
             $raw =$this->DBC->GetRecord("News","*","","ORDER BY ID LIMIT 5");
             foreach ($raw as $row)
-                printf("<a href='#' onClick='get_news(%s);'> %s - %s </a><br>",$row["ID"],$row["Date"],$row["Title"]);
+                printf("<a href='#' onclick='Javascript:get_news(%s);'> %s - %s </a><br />",$row["ID"],$row["Date"],$row["Title"]);
         }
 
         function GetNews($ID=""){
             $raw =$this->DBC->GetRecord("News","*",$ID,"ORDER BY ID DESC LIMIT 1");
             foreach ($raw as $row)
-                printf("<b>%s - %s</b><br> %s",$row["Date"],$row["Title"],$row["Content"]);
+                printf("<b>%s - %s</b><br /> %s",$row["Date"],$row["Title"],$row["Content"]);
         }
 
         function GetPage($NiceTitle){
