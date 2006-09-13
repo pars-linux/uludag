@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-13 17:00+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plsa-cli:41
+msgid "sign advisory with KEY"
+msgstr ""
+
+#: plsa-cli:41
+msgid "KEY"
+msgstr ""
+
+#: plsa-cli:43
+msgid "use PASS as passphrase"
+msgstr ""
+
+#: plsa-cli:43
+msgid "PASS"
+msgstr ""
+
+#: plsa-cli:45
+#, python-format
+msgid "generate advisory for locale LANG (default: %s)"
+msgstr ""
+
+#: plsa-cli:45
+msgid "LANG"
+msgstr ""
+
+#: plsa-cli:47
+msgid "save advisory text to FILE"
+msgstr ""
+
+#: plsa-cli:47
+msgid "FILE"
+msgstr ""
+
+#: plsa-cli:55
+#, python-format
+msgid "Unable to read %s"
+msgstr ""
+
+#: plsa-cli:66
+msgid "PLSA doesn't have required translation file."
+msgstr ""
+
+#: plsa-cli:73
+msgid "XML file has errors:"
+msgstr ""
+
+#: plsa-cli:85
+#, python-format
+msgid "XML has missing tags for locale '%s': %s"
+msgstr ""
+
+#: plsa-cli:119
+msgid "ID"
+msgstr ""
+
+#: plsa-cli:120
+msgid "Title"
+msgstr ""
+
+#: plsa-cli:121
+msgid "Severity"
+msgstr ""
+
+#: plsa-cli:123
+msgid "Pardus Linux Security Advisory"
+msgstr ""
+
+#: plsa-cli:133 plsa-cli:134
+msgid "Summary"
+msgstr ""
+
+#: plsa-cli:138 plsa-cli:139
+msgid "Description"
+msgstr ""
+
+#: plsa-cli:144
+msgid "These packages should be upgraded to specified releases:"
+msgstr ""
+
+#: plsa-cli:150
+msgid "These packages should be removed from system:"
+msgstr ""
+
+#: plsa-cli:156 plsa-cli:157
+msgid "References"
+msgstr ""
+
+#: plsa-cli:170
+msgid "Key not found in GnuPG database."
+msgstr ""
+
+#: plsa-cli:171
+msgid "Available keys are:"
+msgstr ""
+
+#: plsa-cli:177
+msgid "Passphrase: "
+msgstr ""
+
+#: plsa-cli:180
+msgid "Invalid passphrase."
+msgstr ""
+
+#: plsa-cli:189
+#, python-format
+msgid "Unable to write advisory text to %s"
+msgstr ""
