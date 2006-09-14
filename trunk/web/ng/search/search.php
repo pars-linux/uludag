@@ -14,7 +14,7 @@
             $this->RawData = $_RawData;
             $this->SearchWord  = $_SearchWords;
             $this->SearchWords = split(" ",$_SearchWords);
-            $this->SearchWordsLower = split(" ",mb_strtolower(strip_tags($_SearchWords),$this->Encoding));
+            $this->SearchWordsLower = split(" ",mb_strtolower(strip_tags(quotemeta($_SearchWords)),$this->Encoding));
         }
 
         function turnToEn($Data){
@@ -22,7 +22,7 @@
             $TR = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
             $EN = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
             for ($i=0; $i<sizeof($TR); $i++)
-                $Data = mb_ereg_replace($TR[$i],$EN[$i],$Data);
+                $Data = mb_eregi_replace($TR[$i],$EN[$i],$Data);
             return $Data;
         }
 
@@ -34,8 +34,8 @@
             $ID     = array_search($Color,$this->bgcolors);
             $Prefix = "<span class='r_$ID' style='background-color:$Color;color:#000'>";
             $Postfix= "</span>";
-            $Return = mb_ereg_replace($Word,$Prefix.$Word.$Postfix,$Data);
-            $Return = mb_ereg_replace($this->turnToEn($Word),$Prefix.$this->turnToEn($Word).$Postfix,$Return);
+            $Return = mb_eregi_replace($Word,$Prefix.$Word.$Postfix,$Data);
+            $Return = mb_eregi_replace($this->turnToEn($Word),$Prefix.$this->turnToEn($Word).$Postfix,$Return);
             return $Return;
         }
 
