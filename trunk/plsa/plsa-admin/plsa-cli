@@ -9,7 +9,7 @@ import os.path
 import sys
 
 # PLSA Library
-from plsa.utility import *
+from plsa.utility import build_advisory, get_localized_node
 from plsa.validator import validate_plsa
 from plsa.gpg import GPG
 
@@ -21,14 +21,9 @@ import gettext
 __trans = gettext.translation("plsa", fallback=True)
 _ = __trans.ugettext
 
-SUCCESS = 0
-FAIL_USAGE = 1
-FAIL_READ = 2
-FAIL_WRITE = 3
-FAIL_XML = 4
-FAIL_KEY = 5
-FAIL_PP = 6
-FAIL_LANG = 7
+# Error codes
+SUCCESS, FAIL_USAGE, FAIL_READ, FAIL_WRITE, \
+FAIL_XML, FAIL_KEY, FAIL_PP, FAIL_LANG = xrange(8)
 
 def main():
     language = os.environ["LANG"][:2]
@@ -51,10 +46,6 @@ def main():
         parser.print_help()
         return FAIL_USAGE
 
-    if not os.path.isfile(args[0]) or not os.access(args[0], os.R_OK):
-        print _("Unable to read %s") % args[0]
-        return FAIL_READ
-
     if not options.language:
         options.language = language
 
@@ -66,102 +57,70 @@ def main():
         print _("PLSA doesn't have required translation file.")
         return FAIL_LANG
 
+    # Read advisory xml
+    if not os.path.isfile(args[0]) or not os.access(args[0], os.R_OK):
+        print _("Unable to read %s.") % args[0]
+        return FAIL_READ
+    try:
+        xml_doc = piksemel.parse(args[0])
+    except:
+        print _("XML file is not valid.")
+        return FAIL_XML
+
     # Validate advisory xml
     xml_val = validate_plsa()
-    xml_val.validate(args[0])
+    xml_val.validate(xml_doc)
     if len(xml_val.errors):
         print _("XML file has errors:")
         for i in xml_val.errors:
             print "  " + i
         return FAIL_XML
 
-    # Generate advisory text
-    xml_doc = piksemel.parse(args[0])
-    adv = xml_doc.getTag("Advisory")
+    node_adv = xml_doc.getTag("Advisory")
 
-    nodes = [x.name() for x in adv.tags() if "xml:lang" in x.attributes() and x.getAttribute("xml:lang") == options.language and x.firstChild()]
-    missing = set(["Title", "Summary", "Description"]) - set(nodes)
+    # Check for missing tags
+    required = ["Title", "Summary", "Description"]
+    nodes = [x.name() for x in node_adv.tags() if "xml:lang" in x.attributes() and x.getAttribute("xml:lang") == options.language and x.firstChild()]
+    missing = set(required) - set(nodes)
     if missing:
         print _("XML has missing tags for locale '%s': %s") % (options.language, ", ".join(missing))
         return FAIL_LANG
 
-    # TODO: need cleanup here
-    tags = {"id": adv.getAttribute("id"),
-            "date": adv.getTagData("ReleaseDate"),
-            "severity": adv.getTagData("Severity"),
-            "title": localized_node(adv, "Title", options.language),
-            "summary": localized_node(adv, "Summary", options.language),
-            "description": localized_node(adv, "Description", options.language),
-            "references": [],
-            "packages_up": [],
-            "packages_rm": []
-            }
+    # Collect data required to build advisory text
+    adv_data = {}
+    adv_data["id"] = node_adv.getAttribute("id")
+    adv_data["date"] = node_adv.getTagData("ReleaseDate")
+    adv_data["severity"] = node_adv.getTagData("Severity")
+    adv_data["title"] = get_localized_node(node_adv, "Title", options.language)
+    adv_data["summary"] = get_localized_node(node_adv, "Summary", options.language)
+    adv_data["description"] = get_localized_node(node_adv, "Description", options.language)
+    adv_data["references"] = []
+    adv_data["packages_up"] = []
+    adv_data["packages_rm"] = []
 
-    ref = adv.getTag("References")
-    if ref:
-        node = ref.getTag("Reference")
+    # Get references
+    node_ref = node_adv.getTag("References")
+    if node_ref:
+        node = node_ref.getTag("Reference")
         while node:
-            tags["references"].append([node.getTagData("Name"), \
-                                      node.getTagData("Link")])
+            adv_data["references"].append([node.getTagData("Name"),
+                                           node.getTagData("Link")])
             node = node.nextTag()
 
-    pck = adv.getTag("Packages")
-    if pck:
-        node = pck.getTag("Package")
+    # Get list of affected packages
+    node_pck = node_adv.getTag("Packages")
+    if node_pck:
+        node = node_pck.getTag("Package")
         while node:
             if "Release" in [i.name() for i in node.tags()]:
-                tags["packages_up"].append([node.getTagData("Name"), \
-                                            node.getTagData("Release")])
+                adv_data["packages_up"].append([node.getTagData("Name"),
+                                                node.getTagData("Release")])
             else:
-                tags["packages_rm"].append(node.getTagData("Name"))
+                adv_data["packages_rm"].append(node.getTagData("Name"))
             node = node.nextTag()
 
-    headers = [(_a("ID"), tags["id"]),
-               (_a("Title"), tags["title"]),
-               (_a("Severity"), tags["severity"])]
-
-    title = _a("Pardus Linux Security Advisory")
-
-    tpl = []
-    tpl.append("-" * 72)
-    tpl.append(justify("%s  %s" % (title, tags["date"]), "  ", 72))
-    tpl.append("-" * 72)
-    tpl.extend(calign(headers))
-    tpl.append("-" * 72)
-    tpl.append("")
-
-    tpl.append(_a("Summary"))
-    tpl.append("=" * len(_a("Summary")))
-    tpl.append(wwrap(tags["summary"]))
-    tpl.append("")
-
-    tpl.append(_a("Description"))
-    tpl.append("=" * len(_a("Description")))
-    tpl.append(wwrap(tags["description"]))
-    tpl.append("")
-
-    if len(tags.get("packages_up", [])):
-        tpl.append(_a("These packages should be upgraded to specified releases:"))
-        for p, r in tags["packages_up"]:
-          tpl.append("  * %s-%s" % (p, r))
-        tpl.append("")
-
-    if len(tags.get("packages_rm", [])):
-        tpl.append(_a("These packages should be removed from system:"))
-        for p in tags["packages_rm"]:
-          tpl.append("  * %s" % p)
-        tpl.append("")
-
-    if len(tags.get("references", [])):
-        tpl.append(_a("References"))
-        tpl.append("=" * len(_a("References")))
-        for ref, link in tags["references"]:
-          tpl.append("  * " + wwrap("%s <%s>" % (ref, link), lpad=4, just=0).strip())
-        tpl.append("")
-
-    tpl.append("-" * 72)
-
-    text = "\n".join(tpl)
+    # Build advisory text
+    text = build_advisory(adv_data, _a)
 
     # Sign advisory
     if options.sign:

@@ -9,6 +9,7 @@ import shutil
 
 i18n_domain = "plsa"
 source_list = ["plsa/*.py", "plsa-cli"]
+keywords = ["__tr"]
 
 class Install(install):
     def run(self):
@@ -33,7 +34,7 @@ class Install(install):
 class UpdateMessages(Command):
     user_options = []
     def run(self):
-        os.system("xgettext -L Python --keyword='_a' -o po/plsa.pot %s" % " ".join(source_list))
+        os.system("xgettext -L Python --keyword='%s' -o po/plsa.pot %s" % (" ".join(keywords), " ".join(source_list)))
         for item in os.listdir("po"):
             if item.endswith(".po"):
                 os.system("msgmerge -q -o temp.po po/%s po/plsa.pot" % item)

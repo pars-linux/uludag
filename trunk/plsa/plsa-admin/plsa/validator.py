@@ -73,13 +73,7 @@ class validate_plsa:
             if val and vals and not val in vals:
                 self.error(node, "keyword '%s' is not accepted for attribute '%s'" % (val, attr))
 
-    def validate(self, xmlfile):
-        try:
-            doc = piksemel.parse(xmlfile)
-        except piksemel.ParseError:
-            self.errors.append("Invalid XML")
-            return
-
+    def validate(self, doc):
         if doc.name() != "PLSA":
             self.error(node, "wrong top level tag")
 
