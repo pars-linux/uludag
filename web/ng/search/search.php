@@ -13,6 +13,7 @@
         function Sud ($_RawData,$_SearchWords) {
             $this->RawData = $_RawData;
             $this->SearchWord  = $_SearchWords;
+	    $_SearchWords = trim($_SearchWords);
             $this->SearchWords = split(" ",$_SearchWords);
             $this->SearchWordsLower = split(" ",mb_strtolower(strip_tags(quotemeta($_SearchWords)),$this->Encoding));
         }
