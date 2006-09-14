@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-13 17:00+0300\n"
+"POT-Creation-Date: 2006-09-14 14:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,110 +16,126 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plsa-cli:41
+#: plsa/utility.py:41
+msgid "Pardus Linux Security Advisory"
+msgstr ""
+
+#: plsa/utility.py:42
+msgid "security@pardus.org.tr"
+msgstr ""
+
+#: plsa/utility.py:43
+msgid "http://security.pardus.org.tr"
+msgstr ""
+
+#: plsa/utility.py:45
+msgid "ID"
+msgstr ""
+
+#: plsa/utility.py:46
+msgid "Date"
+msgstr ""
+
+#: plsa/utility.py:47
+msgid "Title"
+msgstr ""
+
+#: plsa/utility.py:48
+msgid "Severity"
+msgstr ""
+
+#: plsa/utility.py:58 plsa/utility.py:59
+msgid "Summary"
+msgstr ""
+
+#: plsa/utility.py:63 plsa/utility.py:64
+msgid "Description"
+msgstr ""
+
+#: plsa/utility.py:69
+msgid "These packages should be upgraded to specified releases:"
+msgstr ""
+
+#: plsa/utility.py:75
+msgid "These packages should be removed from system:"
+msgstr ""
+
+#: plsa/utility.py:81 plsa/utility.py:82
+msgid "References"
+msgstr ""
+
+#: plsa-cli:36
 msgid "sign advisory with KEY"
 msgstr ""
 
-#: plsa-cli:41
+#: plsa-cli:36
 msgid "KEY"
 msgstr ""
 
-#: plsa-cli:43
+#: plsa-cli:38
 msgid "use PASS as passphrase"
 msgstr ""
 
-#: plsa-cli:43
+#: plsa-cli:38
 msgid "PASS"
 msgstr ""
 
-#: plsa-cli:45
+#: plsa-cli:40
 #, python-format
 msgid "generate advisory for locale LANG (default: %s)"
 msgstr ""
 
-#: plsa-cli:45
+#: plsa-cli:40
 msgid "LANG"
 msgstr ""
 
-#: plsa-cli:47
+#: plsa-cli:42
 msgid "save advisory text to FILE"
 msgstr ""
 
-#: plsa-cli:47
+#: plsa-cli:42
 msgid "FILE"
 msgstr ""
 
-#: plsa-cli:55
-#, python-format
-msgid "Unable to read %s"
-msgstr ""
-
-#: plsa-cli:66
+#: plsa-cli:57
 msgid "PLSA doesn't have required translation file."
 msgstr ""
 
-#: plsa-cli:73
+#: plsa-cli:62
+#, python-format
+msgid "Unable to read %s."
+msgstr ""
+
+#: plsa-cli:67
+msgid "XML file is not valid."
+msgstr ""
+
+#: plsa-cli:74
 msgid "XML file has errors:"
 msgstr ""
 
-#: plsa-cli:85
+#: plsa-cli:86
 #, python-format
 msgid "XML has missing tags for locale '%s': %s"
 msgstr ""
 
-#: plsa-cli:119
-msgid "ID"
-msgstr ""
-
-#: plsa-cli:120
-msgid "Title"
-msgstr ""
-
-#: plsa-cli:121
-msgid "Severity"
-msgstr ""
-
-#: plsa-cli:123
-msgid "Pardus Linux Security Advisory"
-msgstr ""
-
-#: plsa-cli:133 plsa-cli:134
-msgid "Summary"
-msgstr ""
-
-#: plsa-cli:138 plsa-cli:139
-msgid "Description"
-msgstr ""
-
-#: plsa-cli:144
-msgid "These packages should be upgraded to specified releases:"
-msgstr ""
-
-#: plsa-cli:150
-msgid "These packages should be removed from system:"
-msgstr ""
-
-#: plsa-cli:156 plsa-cli:157
-msgid "References"
-msgstr ""
-
-#: plsa-cli:170
+#: plsa-cli:129
 msgid "Key not found in GnuPG database."
 msgstr ""
 
-#: plsa-cli:171
+#: plsa-cli:130
 msgid "Available keys are:"
 msgstr ""
 
-#: plsa-cli:177
+#: plsa-cli:136
 msgid "Passphrase: "
 msgstr ""
 
-#: plsa-cli:180
+#: plsa-cli:139
 msgid "Invalid passphrase."
 msgstr ""
 
-#: plsa-cli:189
+#: plsa-cli:148
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr ""
