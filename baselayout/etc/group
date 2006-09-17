@@ -11,7 +11,6 @@ wheel::10:root
 floppy:x:11:root
 mail::12:mail
 news::13:news
-uucp::14:uucp
 man::15:man
 cron::16:cron
 console::17:
