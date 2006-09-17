@@ -440,8 +440,8 @@ Another variant of this problem happens with udev.
 \end_inset
 
  to address this problem.
- They claim that due to this issues and hotplugging, it's no longer possible
- to guarantee that particular devices are available at a particular point
+ They claim that due to these issues and hotplugging, it's no longer possible
+ to guarantee the availability of particular devices at a particular point
  in the boot process.
  Their new system is designed to be event based, running scripts on certain
  events.
@@ -739,7 +739,7 @@ Very fast without comprimising maintainability.
 \begin_inset Text
 
 \begin_layout Standard
-
+None observed
 \end_layout
 
 \end_inset
@@ -769,7 +769,7 @@ Understanding the code, debugging, adding new functionality are all very
 \begin_inset Text
 
 \begin_layout Standard
-
+None observed
 \end_layout
 
 \end_inset
