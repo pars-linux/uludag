@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-14 14:56+0300\n"
+"POT-Creation-Date: 2006-09-18 11:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,52 +16,40 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plsa/utility.py:41
+#: plsa/__init__.py:97
 msgid "Pardus Linux Security Advisory"
 msgstr ""
 
-#: plsa/utility.py:42
+#: plsa/__init__.py:98
 msgid "security@pardus.org.tr"
 msgstr ""
 
-#: plsa/utility.py:43
+#: plsa/__init__.py:99
 msgid "http://security.pardus.org.tr"
 msgstr ""
 
-#: plsa/utility.py:45
+#: plsa/__init__.py:101
 msgid "ID"
 msgstr ""
 
-#: plsa/utility.py:46
+#: plsa/__init__.py:102
 msgid "Date"
 msgstr ""
 
-#: plsa/utility.py:47
-msgid "Title"
+#: plsa/__init__.py:103
+msgid "Revision"
 msgstr ""
 
-#: plsa/utility.py:48
+#: plsa/__init__.py:104
 msgid "Severity"
 msgstr ""
 
-#: plsa/utility.py:58 plsa/utility.py:59
+#: plsa/__init__.py:115 plsa/__init__.py:116
 msgid "Summary"
 msgstr ""
 
-#: plsa/utility.py:63 plsa/utility.py:64
+#: plsa/__init__.py:122 plsa/__init__.py:123
 msgid "Description"
-msgstr ""
-
-#: plsa/utility.py:69
-msgid "These packages should be upgraded to specified releases:"
-msgstr ""
-
-#: plsa/utility.py:75
-msgid "These packages should be removed from system:"
-msgstr ""
-
-#: plsa/utility.py:81 plsa/utility.py:82
-msgid "References"
 msgstr ""
 
 #: plsa-cli:36
@@ -97,45 +85,37 @@ msgstr ""
 msgid "FILE"
 msgstr ""
 
-#: plsa-cli:57
-msgid "PLSA doesn't have required translation file."
+#: plsa-cli:53
+#, python-format
+msgid "'%s' locale is not supported."
 msgstr ""
 
-#: plsa-cli:62
+#: plsa-cli:58
 #, python-format
 msgid "Unable to read %s."
 msgstr ""
 
-#: plsa-cli:67
-msgid "XML file is not valid."
-msgstr ""
-
-#: plsa-cli:74
+#: plsa-cli:66
 msgid "XML file has errors:"
 msgstr ""
 
-#: plsa-cli:86
-#, python-format
-msgid "XML has missing tags for locale '%s': %s"
-msgstr ""
-
-#: plsa-cli:129
+#: plsa-cli:78
 msgid "Key not found in GnuPG database."
 msgstr ""
 
-#: plsa-cli:130
+#: plsa-cli:79
 msgid "Available keys are:"
 msgstr ""
 
-#: plsa-cli:136
+#: plsa-cli:85
 msgid "Passphrase: "
 msgstr ""
 
-#: plsa-cli:139
+#: plsa-cli:88
 msgid "Invalid passphrase."
 msgstr ""
 
-#: plsa-cli:148
+#: plsa-cli:97
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr ""
