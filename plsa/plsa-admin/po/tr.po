@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PLSA 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-14 14:56+0300\n"
+"POT-Creation-Date: 2006-09-18 11:35+0300\n"
 "PO-Revision-Date: 2006-09-13 12:06+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,53 +15,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plsa/utility.py:41
+#: plsa/__init__.py:97
 msgid "Pardus Linux Security Advisory"
 msgstr "Pardus Linux Güvenlik Bildirisi"
 
-#: plsa/utility.py:42
+#: plsa/__init__.py:98
 msgid "security@pardus.org.tr"
 msgstr "guvenlik@pardus.org.tr"
 
-#: plsa/utility.py:43
+#: plsa/__init__.py:99
 msgid "http://security.pardus.org.tr"
 msgstr "http://guvenlik.pardus.org.tr"
 
-#: plsa/utility.py:45
+#: plsa/__init__.py:101
 msgid "ID"
 msgstr "No"
 
-#: plsa/utility.py:46
+#: plsa/__init__.py:102
 msgid "Date"
 msgstr "Tarih"
 
-#: plsa/utility.py:47
-msgid "Title"
-msgstr "Başlık"
+#: plsa/__init__.py:103
+msgid "Revision"
+msgstr "Sürüm"
 
-#: plsa/utility.py:48
+#: plsa/__init__.py:104
 msgid "Severity"
 msgstr "Önem"
 
-#: plsa/utility.py:58 plsa/utility.py:59
+#: plsa/__init__.py:115 plsa/__init__.py:116
 msgid "Summary"
 msgstr "Özet"
 
-#: plsa/utility.py:63 plsa/utility.py:64
+#: plsa/__init__.py:122 plsa/__init__.py:123
 msgid "Description"
 msgstr "Açıklama"
-
-#: plsa/utility.py:69
-msgid "These packages should be upgraded to specified releases:"
-msgstr "Aşağıdaki paketler belirtilen sürümlere yükseltilmelidir:"
-
-#: plsa/utility.py:75
-msgid "These packages should be removed from system:"
-msgstr "Aşağıdaki paketler sistemden kaldırılmalıdır:"
-
-#: plsa/utility.py:81 plsa/utility.py:82
-msgid "References"
-msgstr "Referenslar"
 
 #: plsa-cli:36
 msgid "sign advisory with KEY"
@@ -96,45 +84,55 @@ msgstr "bildiri metnini DOSYA içine yaz"
 msgid "FILE"
 msgstr "DOSYA"
 
-#: plsa-cli:57
-msgid "PLSA doesn't have required translation file."
-msgstr "PLSA gerekli çeviri dosyasına sahip değil."
+#: plsa-cli:53
+#, python-format
+msgid "'%s' locale is not supported."
+msgstr "'%s' yereli desteklenmemektedir."
 
-#: plsa-cli:62
+#: plsa-cli:58
 #, python-format
 msgid "Unable to read %s."
 msgstr "%s dosyası okunamadı."
 
-#: plsa-cli:67
-msgid "XML file is not valid."
-msgstr ""
-
-#: plsa-cli:74
+#: plsa-cli:66
 msgid "XML file has errors:"
 msgstr "XML dosyası hatalı:"
 
-#: plsa-cli:86
-#, python-format
-msgid "XML has missing tags for locale '%s': %s"
-msgstr "XML'de '%s' dili etiketleri eksik: %s"
-
-#: plsa-cli:129
+#: plsa-cli:78
 msgid "Key not found in GnuPG database."
 msgstr "Anahtar GnuPG veritabanında bulunamadı."
 
-#: plsa-cli:130
+#: plsa-cli:79
 msgid "Available keys are:"
 msgstr "Mevcut anahtarlar:"
 
-#: plsa-cli:136
+#: plsa-cli:85
 msgid "Passphrase: "
 msgstr "Parola: "
 
-#: plsa-cli:139
+#: plsa-cli:88
 msgid "Invalid passphrase."
 msgstr "Geçersiz parola."
 
-#: plsa-cli:148
+#: plsa-cli:97
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr "Bildiri metni %s dosyasına yazılamadı"
+
+#~ msgid "Title"
+#~ msgstr "Başlık"
+
+#~ msgid "These packages should be upgraded to specified releases:"
+#~ msgstr "Aşağıdaki paketler belirtilen sürümlere yükseltilmelidir:"
+
+#~ msgid "These packages should be removed from system:"
+#~ msgstr "Aşağıdaki paketler sistemden kaldırılmalıdır:"
+
+#~ msgid "References"
+#~ msgstr "Referenslar"
+
+#~ msgid "PLSA doesn't have required translation file."
+#~ msgstr "PLSA gerekli çeviri dosyasına sahip değil."
+
+#~ msgid "XML has missing tags for locale '%s': %s"
+#~ msgstr "XML'de '%s' dili etiketleri eksik: %s"

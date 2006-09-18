@@ -9,8 +9,8 @@ import os.path
 import sys
 
 # PLSA Library
-from plsa.utility import build_advisory, get_localized_node
-from plsa.validator import validate_plsa
+import plsa
+import plsa.utility
 from plsa.gpg import GPG
 
 # piksemel
@@ -49,78 +49,27 @@ def main():
     if not options.language:
         options.language = language
 
-    try:
-        __trans_advisory = gettext.translation("plsa", languages=[options.language], fallback=options.language=="en")
-        _a = __trans_advisory.ugettext
-        # Texts in advisory should use '_a' instead of '_' function
-    except:
-        print _("PLSA doesn't have required translation file.")
+    if options.language not in plsa.utility.list_translations("plsa"):
+        print _("'%s' locale is not supported.")
         return FAIL_LANG
 
     # Read advisory xml
     if not os.path.isfile(args[0]) or not os.access(args[0], os.R_OK):
         print _("Unable to read %s.") % args[0]
         return FAIL_READ
-    try:
-        xml_doc = piksemel.parse(args[0])
-    except:
-        print _("XML file is not valid.")
-        return FAIL_XML
 
-    # Validate advisory xml
-    xml_val = validate_plsa()
-    xml_val.validate(xml_doc)
-    if len(xml_val.errors):
+    adv = plsa.advisory(options.language)
+
+    try:
+        adv.import_xml(args[0])
+    except:
         print _("XML file has errors:")
-        for i in xml_val.errors:
+        for i in adv.errors:
             print "  " + i
         return FAIL_XML
 
-    node_adv = xml_doc.getTag("Advisory")
-
-    # Check for missing tags
-    required = ["Title", "Summary", "Description"]
-    nodes = [x.name() for x in node_adv.tags() if "xml:lang" in x.attributes() and x.getAttribute("xml:lang") == options.language and x.firstChild()]
-    missing = set(required) - set(nodes)
-    if missing:
-        print _("XML has missing tags for locale '%s': %s") % (options.language, ", ".join(missing))
-        return FAIL_LANG
-
-    # Collect data required to build advisory text
-    adv_data = {}
-    adv_data["id"] = node_adv.getAttribute("id")
-    adv_data["date"] = node_adv.getTagData("ReleaseDate")
-    adv_data["severity"] = node_adv.getTagData("Severity")
-    adv_data["title"] = get_localized_node(node_adv, "Title", options.language)
-    adv_data["summary"] = get_localized_node(node_adv, "Summary", options.language)
-    adv_data["description"] = get_localized_node(node_adv, "Description", options.language)
-    adv_data["references"] = []
-    adv_data["packages_up"] = []
-    adv_data["packages_rm"] = []
-
-    # Get references
-    node_ref = node_adv.getTag("References")
-    if node_ref:
-        node = node_ref.getTag("Reference")
-        while node:
-            adv_data["references"].append([node.getTagData("Name"),
-                                           node.getTagData("Link")])
-            node = node.nextTag()
-
-    # Get list of affected packages
-    node_pck = node_adv.getTag("Packages")
-    if node_pck:
-        node = node_pck.getTag("Package")
-        while node:
-            if "Release" in [i.name() for i in node.tags()]:
-                adv_data["packages_up"].append([node.getTagData("Name"),
-                                                node.getTagData("Release")])
-            else:
-                adv_data["packages_rm"].append(node.getTagData("Name"))
-            node = node.nextTag()
-
     # Build advisory text
-    text = build_advisory(adv_data, _a)
+    text = adv.build_text()
 
     # Sign advisory
     if options.sign:
