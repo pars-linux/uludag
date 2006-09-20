@@ -1,4 +1,3 @@
 * refactor a bit
-* Add XML/RPC support for client access
-* A GUI?
+* A Django Web GUI which supports XML/RPC for client access
 * Montly Report tool?
