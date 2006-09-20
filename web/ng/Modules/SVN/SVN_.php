@@ -10,7 +10,7 @@
                             </select>
                     </div>
                     <div id='SVNLogs'></div>";
-    $SVN["Head"]  ='<script src="Modules/SVN/SVN.js"></script>';
+    $SVN["Head"]  ='<script src="Modules/SVN/SVN.js" type="text/javascript"></script>';
     $SVN["Onload"]='GetLogs("pardus","SVNLogs");';
     #SVN Module _END_
 
