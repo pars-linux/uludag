@@ -126,8 +126,12 @@ class BrowserWidget(QVBox):
         split.setResizeMode(self.comps, QSplitter.FollowSizeHint)
         
         vb = QVBox(split)
+        vb.setSpacing(3)
         split.setResizeMode(vb, QSplitter.Stretch)
-        self.search = KListViewSearchLine(vb)
+        hb2 = QHBox(vb)
+        hb2.setSpacing(3)
+        QLabel(_("Search:"), hb2)
+        self.search = KListViewSearchLine(hb2)
         
         self.list = KListView(vb)
         self.list.addColumn(_("Package"))
