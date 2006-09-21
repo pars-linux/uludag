@@ -103,7 +103,7 @@ class Project(QMainWindow):
         self.setCentralWidget(vb)
     
     def quit(self):
-        kApp.quit()
+        qApp.closeAllWindows()
     
     def browse(self):
         import packages
