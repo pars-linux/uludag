@@ -9,6 +9,18 @@
 # option) any later version. Please read the COPYING file.
 #
 
+from kdecore import *
+from qt import *
+
+def I18N_NOOP(x):
+    return x
+
+def getIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+
+def getIconPixmap(name):
+    return getIconSet(name).pixmap(QIconSet.Large, QIconSet.Normal)
+
 def size_fmt(size):
     parts = []
     if size == 0:

@@ -10,9 +10,9 @@
 #
 
 import os
-
 from utility import size_fmt
 from qt import *
+from kdeui import *
 
 # no i18n yet
 def _(x):
@@ -125,7 +125,11 @@ class BrowserWidget(QVBox):
         self.comps.setSorting(0)
         split.setResizeMode(self.comps, QSplitter.FollowSizeHint)
         
-        self.list = QListView(split)
+        vb = QVBox(split)
+        split.setResizeMode(vb, QSplitter.Stretch)
+        self.search = KListViewSearchLine(vb)
+        
+        self.list = KListView(vb)
         self.list.addColumn(_("Package"))
         self.list.addColumn(_("Archive Size"))
         self.list.addColumn(_("Installed Size"))
@@ -135,9 +139,9 @@ class BrowserWidget(QVBox):
         self.list.setColumnWidthMode(0, QListView.Maximum)
         self.list.setColumnWidthMode(1, QListView.Maximum)
         self.list.setColumnWidthMode(2, QListView.Maximum)
-        split.setResizeMode(self.list, QSplitter.Stretch)
         self.package_tipper = PackageTipper(self.list.viewport())
         self.package_tipper.list = self.list
+        self.search.setListView(self.list)
         
         self.label = QLabel(self)
         self.label.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
@@ -233,19 +237,3 @@ class Browser(QDialog):
     def reject(self):
         self.callback(None, None, None)
         QDialog.reject(self)
-
-
-# test code
-def lala(comps, sel, all):
-    print comps
-    print sel
-    print all
-
-import packages
-a = packages.Repository('http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml', 'test')
-a.parse_index()
-app = QApplication([])
-app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
-w = Browser(None, a, lala)
-w.show()
-app.exec_loop()
