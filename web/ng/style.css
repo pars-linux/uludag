@@ -66,12 +66,13 @@ u { accelerator: true }
     padding:10px;
 }
 
-#login_box #buttons a {
+a {
     text-decoration:none;
     font-weight:bold;
-    color: #D83D68;
 }
-
+.blue a {
+    color: #1D98E3;
+}
 #menu {
     margin-top:32px;
 }
