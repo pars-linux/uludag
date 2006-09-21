@@ -10,13 +10,9 @@
 #
 
 import os
-import zipfile
 
-import piksemel
 from utility import size_fmt
 from qt import *
-
-from pisi.util import parse_package_name
 
 # no i18n yet
 def _(x):
@@ -26,75 +22,28 @@ def _(x):
 # Utilities
 #
 
-def pisi_paks(path):
-    paks = []
-    for root, dirs, files in os.walk(path):
-        for fn in files:
-            if fn.endswith(".pisi"):
-                paks.append(os.path.join(root, fn))
-    return paks
-
-
 class Component(QCheckListItem):
-    def __init__(self, browser, name, pakname):
-        # Component exists
-        if browser.components.has_key(name):
-            browser.components[name].append(pakname)
-            return
-        
-        # New component
+    def __init__(self, browser, comp):
         self.browser = browser
-        self.name = name
-        QCheckListItem.__init__(self, browser.comps, name, QCheckListItem.CheckBox)
-        browser.components[name] = [ pakname ]
+        self.comp = comp
+        QCheckListItem.__init__(self, browser.comps, comp.name, QCheckListItem.CheckBox)
     
     def stateChange(self, bool):
         packages = self.browser.packages
-        for pak in self.browser.components[self.name]:
-            # ignore -debug suffix as a workaround...
-            if packages.has_key(pak) and not packages[pak].name.endswith("-debug"):
-                packages[pak].stateChange(bool)
+        for name in self.comp.packages:
+            packages[name].stateChange(bool)
         
         self.browser.list.triggerUpdate()
 
 
 class Package(QCheckListItem):
-    def __init__(self, browser, path):
-        # Open package file
-        zip = zipfile.ZipFile(path, 'r')
-        doc = None
-        for info in zip.infolist():
-            if info.filename == "metadata.xml":
-                doc = piksemel.parseString(zip.read(info.filename))
-        if not doc:
-            return
-        
-        # Collect data
-        self.path = path
-        pak = doc.getTag("Package")
-        self.name = pak.getTagData("Name")
-        self.size = os.stat(path).st_size
-        self.inst_size = int(pak.getTagData("InstalledSize"))
-        self.summary = pak.getTagData("Summary")
-        self.deps = []
-        deps = pak.getTag("RuntimeDependencies")
-        if deps:
-            for tag in deps.tags():
-                self.deps.append(tag.firstChild().data())
-        self.mark = 0
-        
-        # Handle component
-        self.partof = pak.getTagData("PartOf")
-        Component(browser, self.partof, self.name)
-        
-        # Add to the list
+    def __init__(self, browser, pak):
         self.browser = browser
-        QCheckListItem.__init__(self, browser.list, self.name, QCheckListItem.CheckBox)
-        if not browser.packages.has_key(self.name):
-            browser.packages[self.name] = self
-    
-    def text(self, column):
-        return (self.name, size_fmt(self.size), size_fmt(self.inst_size))[column]
+        self.pak = pak
+        self.mark = 0
+        QCheckListItem.__init__(self, browser.list, self.pak.name, QCheckListItem.CheckBox)
+        self.setText(1, size_fmt(pak.size))
+        self.setText(2, size_fmt(pak.inst_size))
     
     def paintCell(self, painter, cg, column, width, align):
         c = cg.text()
@@ -104,52 +53,68 @@ class Package(QCheckListItem):
         cg.setColor(QColorGroup.Text, c)
     
     def stateChange(self, bool):
-        packages = self.browser.packages
+        browser = self.browser
         if bool:
             if self.mark == 0:
-                self.browser._select_pak(self)
+                browser._select_pak(self)
             self.mark += 1
         else:
             if self.mark == 1:
-                self.browser._unselect_pak(self)
+                browser._unselect_pak(self)
             self.mark -= 1
         
-        for pak in self.deps:
-            if packages.has_key(pak):
-                packages[pak].stateChange(bool)
+        for pak in self.pak.depends:
+            if browser.packages.has_key(pak):
+                browser.packages[pak].stateChange(bool)
         
-        self.browser.list.triggerUpdate()
+        browser.list.triggerUpdate()
     
     def compare(self, other, col, ascend):
         if col == 0:
             return QListViewItem.compare(self, other, col, ascend)
         elif col == 1:
-            if self.size < other.size:
+            if self.pak.size < other.pak.size:
                 return -1
-            elif self.size == other.size:
+            elif self.pak.size == other.pak.size:
                 return 0
             else:
                 return 1
         elif col == 2:
-            if self.inst_size < other.inst_size:
+            if self.pak.inst_size < other.pak.inst_size:
                 return -1
-            elif self.inst_size == other.inst_size:
+            elif self.pak.inst_size == other.pak.inst_size:
                 return 0
             else:
                 return 1
 
 
-class PackageSelectorWidget(QVBox):
-    def __init__(self, parent):
+class PackageTipper(QToolTip):
+    def maybeTip(self, point):
+        item = self.list.itemAt(point)
+        if item:
+            self.tip(self.list.itemRect(item), "<b>%s</b><br>%s" % (item.pak.name, item.pak.summary))
+
+
+class BrowserWidget(QVBox):
+    def __init__(self, parent, repo):
         QVBox.__init__(self, parent)
         self.setSpacing(3)
         
         hb = QHBox(self)
         hb.setSpacing(3)
         hb.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
-        QLabel(_("Binary package folder:"), hb)
-        self.package_path = QLineEdit(hb)
-        self.package_path.setReadOnly(True)
+        QLabel(_("Repository:"), hb)
+        uri = QLineEdit(hb)
+        uri.setReadOnly(True)
+        uri.setText(repo.base_uri)
+        
+        info = QLineEdit(self)
+        info.setReadOnly(True)
+        info.setText(_("Total of %d packages, %s bytes compressed, %s bytes installed.") % (
+            len(repo.packages),
+            size_fmt(repo.size),
+            size_fmt(repo.inst_size))
+        )
         
         split = QSplitter(self)
         
@@ -171,29 +136,30 @@ class PackageSelectorWidget(QVBox):
         self.list.setColumnWidthMode(1, QListView.Maximum)
         self.list.setColumnWidthMode(2, QListView.Maximum)
         split.setResizeMode(self.list, QSplitter.Stretch)
+        self.package_tipper = PackageTipper(self.list.viewport())
+        self.package_tipper.list = self.list
         
         self.label = QLabel(self)
         self.label.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
+        
+        self.repo = repo
+        self.packages = {}
+        for name in repo.packages:
+            self.packages[name] = Package(self, repo.packages[name])
+        self.components = {}
+        for name in repo.components:
+            self.components[name] = Component(self, repo.components[name])
+        self.nr_paks = 0
         self.total = 0
         self.total_zip = 0
-        self.nr_paks = 0
         self._update_label()
-    
-    def browse_packages(self, path):
-        self.package_path.setText(path)
-        self.packages = {}
-        self.components = {}
-        self.comps.clear()
-        self.list.clear()
-        for pak in pisi_paks(path):
-            Package(self, pak)
     
     def get_selection(self):
         comps = []
         item = self.comps.firstChild()
         while item:
             if item.isOn():
-                comps.append(item.name)
+                comps.append(item.comp.name)
             item = item.nextSibling()
         
         selpaks = []
@@ -202,28 +168,27 @@ class PackageSelectorWidget(QVBox):
         while item:
             if item.mark > 0:
                 if item.isOn():
-                    selpaks.append(item.path)
-                allpaks.append(item.path)
+                    selpaks.append(item.pak.name)
+                allpaks.append(item.pak.name)
             item = item.nextSibling()
         
         return (comps, selpaks, allpaks)
     
-    def set_selection(self, selection):
-        for name in selection[0]:
+    def set_selection(self, components, packages):
+        for name in components:
             item = self.comps.firstChild()
             while item:
                 if item.name == name:
                     item.setState(QCheckListItem.On)
+                    break
                 item = item.nextSibling()
         
-        def conv(path):
-            return parse_package_name(os.path.basename(path))[0]
-        
-        for path in selection[1]:
+        for name in packages:
             item = self.list.firstChild()
             while item:
-                if conv(item.path) == conv(path):
+                if item.name == name:
                     item.setState(QCheckListItem.On)
+                    break
                 item = item.nextSibling()
     
     def _update_label(self):
@@ -235,39 +200,52 @@ class PackageSelectorWidget(QVBox):
                 (self.nr_paks, size_fmt(self.total_zip), size_fmt(self.total)))
     
     def _select_pak(self, pak):
-        self.total_zip += pak.size
-        self.total += pak.inst_size
+        self.total_zip += pak.pak.size
+        self.total += pak.pak.inst_size
         self.nr_paks += 1
         self._update_label()
     
     def _unselect_pak(self, pak):
-        self.total_zip -= pak.size
-        self.total -= pak.inst_size
+        self.total_zip -= pak.pak.size
+        self.total -= pak.pak.inst_size
         self.nr_paks -= 1
         self._update_label()
 
 
-class PackageSelector(QDialog):
-    def __init__(self, parent, path, callback, selection):
+class Browser(QDialog):
+    def __init__(self, parent, repo, callback):
         QDialog.__init__(self, parent)
         self.callback = callback
         vb = QVBoxLayout(self, 6)
-        self.selector = PackageSelectorWidget(self)
-        self.selector.setMinimumSize(620, 420)
-        vb.addWidget(self.selector)
+        self.browser = BrowserWidget(self, repo)
+        self.browser.setMinimumSize(620, 420)
+        vb.addWidget(self.browser)
         but = QPushButton(_("Use selected packages"), self)
         self.connect(but, SIGNAL("clicked()"), self.accept)
         vb.addWidget(but, 0, Qt.AlignRight)
-        self.selector.browse_packages(path)
-        if selection:
-            self.selector.set_selection(selection)
         self.show()
     
     def accept(self):
-        sel = self.selector
-        self.callback(sel.get_selection(), sel.total_zip, sel.total)
+        comps, sel, all = self.browser.get_selection()
+        self.callback(comps, sel, all)
         QDialog.accept(self)
     
     def reject(self):
-        self.callback(None, 0, 0)
+        self.callback(None, None, None)
         QDialog.reject(self)
+
+
+# test code
+def lala(comps, sel, all):
+    print comps
+    print sel
+    print all
+
+import packages
+a = packages.Repository('http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml', 'test')
+a.parse_index()
+app = QApplication([])
+app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
+w = Browser(None, a, lala)
+w.show()
+app.exec_loop()
