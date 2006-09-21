@@ -16,44 +16,37 @@
 <head>
     <title><?=PAGE_TITLE?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="stil.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="scripts/prototype.js" type="text/javascript"></script>
     <script src="scripts/scriptaculous.js" type="text/javascript"></script>
     <script src="scripts/main.js" type="text/javascript"></script>
     <?=$Modules['Head']?>
 </head>
 <body onload='<?=$Modules['Onload']?>' >
-        <table id="como">
-            <tr>
-                <td id="header" colspan="3">
-                    <div id="menu"><?=$Navi?></div>
-                    <div id="searchbar">
-                        <form action="search/" method="get">
-                        <div><input name="q" type="text" value="<?=SEARCH?>" onclick="Javascript:if (this.value=='<?=SEARCH?>') this.value='';" onblur="Javascript:if (this.value=='') this.value='<?=SEARCH?>';" /> </div>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-
+    <div id="container">
+    <div id="head_grey">
+        <div id="blue"></div>
+        <div id="quick_download">
+            <img src="images/box-hizli-indir.png" alt="Pardus 1.1Beta"/>
+            <form action="search/">
+                <input type="text" name="q" id="search" value="<?=SEARCH?>" onclick="Javascript:if (this.value=='<?=SEARCH?>') this.value='';" onblur="Javascript:if (this.value=='') this.value='<?=SEARCH?>';"/>
+            </form>
+            <div id="menu"><img src="images/menu-blue.png" /></div>
+        </div>
+    </div>
             <?php
                 if(isset($Page)){
-                    echo "<tr>";
-                    echo "<td id='mainBody'>".$Page[0]["Content"]."</td>";
-                    if ($Modules<>"")
-                        echo "\n<td id='kucular'>".$Modules['Body']."</td>";
-                    echo "</tr>";
+                    echo "<div>";
+                    echo "<p>".$Page[0]["Content"]."</p>";
+                    #if ($Modules<>"")
+                    #    echo "\n<td id='kucular'>".$Modules['Body']."</td>";
+                    echo "</div>";
                 }
                 else
-                    include ('index-data.php');
+                    include ('index_.php');
             ?>
 
-            <tr>
-                <td colspan="3">
-                    <div id="footer-forpw">
-                    <?php $Vezir->ShowLogs(); ?>
-                    <?=PARDUS_REGISTER?></div>
-                </td>
-            </tr>
-        </table>
+    <div id="footnote"><p><?=PARDUS_REGISTER?></p></div>
+</div>
 </body>
 </html>
