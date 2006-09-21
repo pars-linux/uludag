@@ -13,9 +13,10 @@ body {
 }
 
 #head_grey {
-    width:100%;
-    height:100px;
-    background-color:#DBDBDB;
+    width: 100%;
+    height: 100px;
+    background-image:url(images/back-top.png);
+    background-repeat:repeat-x;
 }
 
 #pink,#blue,#green {
