@@ -31,7 +31,7 @@
             <form action="search/">
                 <input type="text" name="q" id="search" value="<?=SEARCH?>" onclick="Javascript:if (this.value=='<?=SEARCH?>') this.value='';" onblur="Javascript:if (this.value=='') this.value='<?=SEARCH?>';"/>
             </form>
-            <div id="menu"><img src="images/menu-blue.png" /></div>
+            <div id="menu"><img src="images/menu-blue.png" alt="" /></div>
         </div>
     </div>
             <?php

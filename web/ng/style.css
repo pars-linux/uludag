@@ -100,7 +100,7 @@ a {
     padding-left:30px;
 }
 
-.blue p {
+.blue p,#modules ul {
     border-top:2px solid #156FA5;
     margin-top:4px;
     padding-top:4px;
@@ -113,7 +113,6 @@ a {
 }
 
 #modules ul {
-    margin-top:-10px;
     padding-left:0;
 }
 #modules {
