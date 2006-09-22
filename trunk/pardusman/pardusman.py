@@ -63,7 +63,7 @@ class Console(KTextEdit):
                 return ret
 
 
-class Project(KMainWindow):
+class ProjectWindow(KMainWindow):
     def __init__(self):
         KMainWindow.__init__(self)
         self.setMinimumSize(560, 440)
@@ -193,7 +193,7 @@ class Project(KMainWindow):
 #
 
 def main(args):
-    description = I18N_NOOP("Pardus release media maker")
+    description = I18N_NOOP("Pardus distribution media maker")
     version = "0.1"
     about = KAboutData(
         "pardusman",
@@ -205,7 +205,7 @@ def main(args):
     KCmdLineArgs.init(args, about)
     app = KApplication()
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
-    w = Project()
+    w = ProjectWindow()
     w.show()
     app.exec_loop()
 
