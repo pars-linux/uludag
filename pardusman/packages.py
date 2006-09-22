@@ -38,6 +38,7 @@ def fetch_uri(base_uri, cache_dir, filename, console):
 class Package:
     def __init__(self, node):
         self.name = node.getTagData('Name')
+        self.homepage = node.getTag('Source').getTagData('Homepage')
         self.version = node.getTag('History').getTag('Update').getTagData('Version')
         self.release = node.getTag('History').getTag('Update').getAttribute('release')
         self.build = node.getTagData('Build')
@@ -52,7 +53,7 @@ class Package:
         else:
             self.depends = []
         self.revdeps = []
-        # Keep more info: desc, licenses, packager name, homepage
+        # Keep more info: desc, licenses, packager name
     
     def __str__(self):
         return """Package: %s (%s)

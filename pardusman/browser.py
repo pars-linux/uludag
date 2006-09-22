@@ -18,9 +18,56 @@ from kdeui import *
 def _(x):
     return x
 
-#
-# Utilities
-#
+
+class DetailWindow(QDialog):
+    def __init__(self, parent, package):
+        QDialog.__init__(self, parent)
+        self.setMinimumSize(380, 540)
+        vb = QVBoxLayout(self, 6)
+        
+        w = QWidget(self)
+        vb.addWidget(w)
+        
+        grid = QGridLayout(w, 4, 2, 3, 3)
+        
+        lab = QLabel(_("Package name:"), w)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
+        lab = QLabel(package.name, w)
+        grid.addWidget(lab, 0, 1)
+        
+        lab = QLabel(_("Version:"), w)
+        grid.addWidget(lab, 1, 0, Qt.AlignRight)
+        lab = QLabel(_("%s, release %s, build %s") % (package.version, package.release, package.build), w)
+        grid.addWidget(lab, 1, 1)
+        
+        lab = QLabel(_("Homepage:"), w)
+        grid.addWidget(lab, 2, 0, Qt.AlignRight)
+        lab = KURLLabel(w)
+        lab.setURL(package.homepage)
+        lab.setText(package.homepage)
+        grid.addWidget(lab, 2, 1)
+        
+        lab = QLabel(_("Summary:"), w)
+        grid.addWidget(lab, 3, 0, Qt.AlignRight)
+        text = QTextEdit(w)
+        text.setReadOnly(True)
+        text.setText(package.summary)
+        grid.addWidget(text, 3, 1)
+        
+        hb = QHBox(self)
+        hb.setSpacing(6)
+        vb.addWidget(hb)
+        
+        list1 = QListView(hb)
+        list1.addColumn(_("Depends on:"))
+        for item in package.depends:
+            QListViewItem(list1, item)
+        
+        list2 = QListView(hb)
+        list2.addColumn(_("Depended by:"))
+        for item in package.revdeps:
+            QListViewItem(list2, item)
+
 
 class Component(QCheckListItem):
     def __init__(self, browser, comp):
@@ -143,6 +190,7 @@ class BrowserWidget(QVBox):
         self.list.setColumnWidthMode(0, QListView.Maximum)
         self.list.setColumnWidthMode(1, QListView.Maximum)
         self.list.setColumnWidthMode(2, QListView.Maximum)
+        self.connect(self.list, SIGNAL("doubleClicked(QListViewItem *)"), self._bring_detail)
         self.package_tipper = PackageTipper(self.list.viewport())
         self.package_tipper.list = self.list
         self.search.setListView(self.list)
@@ -161,6 +209,10 @@ class BrowserWidget(QVBox):
         self.total = 0
         self.total_zip = 0
         self._update_label()
+    
+    def _bring_detail(self, item):
+        w = DetailWindow(self, item.pak)
+        w.show()
     
     def get_selection(self):
         comps = []
