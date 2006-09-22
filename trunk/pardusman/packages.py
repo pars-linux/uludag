@@ -11,7 +11,7 @@
 
 import os
 import sys
-import urllib
+import urllib2
 import piksemel
 
 def fetch_uri(base_uri, cache_dir, filename):
@@ -19,7 +19,7 @@ def fetch_uri(base_uri, cache_dir, filename):
     # Check that local file isnt older or has missing parts
     path = os.path.join(cache_dir, filename)
     if not os.path.exists(path):
-        conn = urllib.urlopen(os.path.join(base_uri, filename))
+        conn = urllib2.urlopen(os.path.join(base_uri, filename))
         output = file(path, "w")
         total_size = int(conn.info()['Content-Length'])
         size = 0
@@ -90,7 +90,13 @@ class Repository:
     
     def parse_index(self):
         path = fetch_uri(self.base_uri, self.cache_dir, self.index_name)
-        doc = piksemel.parse(path)
+        if path.endswith(".bz2"):
+            import bz2
+            data = file(path).read()
+            data = bz2.decompress(data)
+            doc = piksemel.parseString(data)
+        else:
+            doc = piksemel.parse(path)
         for tag in doc.tags('Package'):
             p = Package(tag)
             self.packages[p.name] = p
