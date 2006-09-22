@@ -283,7 +283,3 @@ class Project(QMainWindow):
             self.pak_size = size
             self.pak_inst_size = instsize
             self.updateStatus()
-
-
-class LiveProject(QMainWindow):
-    pass
