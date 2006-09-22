@@ -72,9 +72,9 @@ class ProjectWindow(KMainWindow):
         mb = self.menuBar()
         file_ = QPopupMenu(self)
         mb.insertItem("&File", file_)
-        file_.insertItem("&Open", self.quit, self.CTRL + self.Key_O)
-        file_.insertItem("&Save", self.quit, self.CTRL + self.Key_S)
-        file_.insertItem("Save &as...", self.quit, self.CTRL + self.SHIFT + self.Key_S)
+        file_.insertItem("&Open", self.openProject, self.CTRL + self.Key_O)
+        file_.insertItem("&Save", self.saveProject, self.CTRL + self.Key_S)
+        file_.insertItem("Save &as...", self.saveAsProject, self.CTRL + self.SHIFT + self.Key_S)
         file_.insertSeparator()
         file_.insertItem("&Quit", self.quit, self.CTRL + self.Key_Q)
         vb = QVBox(self)
@@ -143,6 +143,9 @@ class ProjectWindow(KMainWindow):
         self.console = Console(vb)
         
         self.setCentralWidget(vb)
+        
+        self.project_file = None
+        self.project = project.Project()
     
     def selectFiles(self):
         path = QFileDialog.getExistingDirectory(
@@ -178,14 +181,30 @@ class ProjectWindow(KMainWindow):
     def make(self):
         self.console.run("ls -l")
     
-    def loadProject(self):
+    def openProject(self):
         name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
-        doc = piksemel.parse(unicode(name))
-        if doc.name() != "pardusman-project":
+        name = unicode(name)
+        if name == "":
             return
-        if doc.getAttribute("type") == "media":
-            prj = project.Project(self)
-            prj.load_project(unicode(name), doc)
+        err = self.project.open(name)
+        if err:
+            self.console.error("%s\n" % err)
+            return
+        self.project_file = name
+    
+    def saveProject(self):
+        if self.project_file:
+            self.project.save(self.project_file)
+        else:
+            self.saveAsProject()
+    
+    def saveAsProject(self):
+        name = QFileDialog.getSaveFileName(".", "All (*)", self, "lala", _("Save project as..."))
+        name = unicode(name)
+        if name == "":
+            return
+        self.project.save(name)
+        self.project_file = name
 
 
 #

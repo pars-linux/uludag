@@ -52,6 +52,8 @@ class Project:
             self.selected_packages.append(tag.firstChild().data())
         for tag in paksel.tags("Package"):
             self.all_packages.append(tag.firstChild().data())
+        
+        return None
     
     def save(self, filename):
         doc = piksemel.newDocument("PardusmanProject")
@@ -94,18 +96,6 @@ class Project:
             con.state("--- media prepared succesfully ---\n\n")
         else:
             con.state("--- operation failed ---")
-    
-    def save(self):
-        if self.project_name:
-            self.save_project(self.project_name)
-        else:
-            self.save_as()
-    
-    def save_as(self):
-        filename = QFileDialog.getSaveFileName(".", "All (*)", self, "lala", _("Save project as..."))
-        self.project_name = unicode(filename)
-        self.save_project(self.project_name)
-        self.updateStatus()
     
     def updateStatus(self):
         if self.pak_selection and len(self.pak_selection[2]) > 0:
