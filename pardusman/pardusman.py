@@ -175,13 +175,22 @@ class ProjectWindow(KMainWindow):
     
     def browseResult(self, comps, paks, allpaks):
         self.toolbar.setEnabled(True)
-        # FIXME: set paks
+        if comps != None:
+            self.project.selected_components = comps
+            self.project.selected_packages = paks
+            self.project.all_packages = allpaks
     
     def browse(self):
         self.ui2project()
         repo = self.project.get_repo()
         self.toolbar.setEnabled(False)
-        w = browser.Browser(self, repo, self.browseResult)
+        w = browser.Browser(
+            self,
+            repo,
+            self.browseResult,
+            self.project.selected_components,
+            self.project.selected_packages
+        )
         w.show()
     
     def make(self):
