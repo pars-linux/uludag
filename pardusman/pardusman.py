@@ -11,6 +11,8 @@
 
 import os
 import sys
+import select
+import subprocess
 import piksemel
 from qt import *
 from kdecore import *
@@ -25,10 +27,40 @@ def _(x):
     return x
 
 
-class Console(QTextEdit):
+class Console(KTextEdit):
     def __init__(self, parent):
-        QTextEdit.__init__(self, parent)
+        KTextEdit.__init__(self, parent)
         self.setTextFormat(self.LogText)
+    
+    def _echo(self, sock, error=False):
+        while len(select.select([sock.fileno()], [], [], 0)[0]) > 0:
+            data = os.read(sock.fileno(), 1024)
+            if data:
+                if error:
+                    self.error(data)
+                else:
+                    self.info(data)
+            else:
+                return
+    
+    def info(self, msg):
+        self.append(unicode(msg))
+    
+    def state(self, msg):
+        self.append("<font color=blue>%s</font>" % unicode(msg))
+    
+    def error(self, msg):
+        self.append("<font color=red>%s</font>" % unicode(msg))
+    
+    def run(self, command):
+        pop = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        while True:
+            KApplication.kApplication().processEvents()
+            self._echo(pop.stdout)
+            self._echo(pop.stderr, True)
+            ret = pop.poll()
+            if ret != None:
+                return ret
 
 
 class Project(KMainWindow):
@@ -70,7 +102,8 @@ class Project(KMainWindow):
         hb2 = QHBox(box)
         hb2.setSpacing(3)
         self.release_files = QLineEdit(hb2)
-        QPushButton("...", hb2)
+        but = QPushButton("...", hb2)
+        self.connect(but, SIGNAL("clicked()"), self.selectFiles)
         grid.addWidget(hb2, 1, 1)
         
         lab = QLabel(_("Work folder:"), box)
@@ -78,7 +111,8 @@ class Project(KMainWindow):
         hb2 = QHBox(box)
         hb2.setSpacing(3)
         self.work_dir = QLineEdit(hb2)
-        QPushButton("...", hb2)
+        but = QPushButton("...", hb2)
+        self.connect(but, SIGNAL("clicked()"), self.selectWorkdir)
         grid.addWidget(hb2, 2, 1)
         
         lab = QLabel(_("Media type:"), box)
@@ -110,6 +144,26 @@ class Project(KMainWindow):
         
         self.setCentralWidget(vb)
     
+    def selectFiles(self):
+        path = QFileDialog.getExistingDirectory(
+            self.release_files.text(),
+            self,
+            "lala",
+            _("Select release files folder"),
+            False
+        )
+        self.release_files.setText(path)
+    
+    def selectWorkdir(self):
+        path = QFileDialog.getExistingDirectory(
+            self.work_dir.text(),
+            self,
+            "lala",
+            _("Select folder for temporary files and cache"),
+            False
+        )
+        self.work_dir.setText(path)
+    
     def quit(self):
         qApp.closeAllWindows()
     
@@ -122,7 +176,7 @@ class Project(KMainWindow):
         w.show()
     
     def make(self):
-        pass
+        self.console.run("ls -l")
     
     def loadProject(self):
         name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
