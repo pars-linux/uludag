@@ -32,6 +32,7 @@ class Console(KTextEdit):
     def __init__(self, parent):
         KTextEdit.__init__(self, parent)
         self.setTextFormat(self.LogText)
+        self.progress_win = None
     
     def _echo(self, sock, error=False):
         while len(select.select([sock.fileno()], [], [], 0)[0]) > 0:
@@ -62,6 +63,27 @@ class Console(KTextEdit):
             ret = pop.poll()
             if ret != None:
                 return ret
+    
+    def progress(self, msg=None, percent=-1):
+        if percent == -1:
+            if msg:
+                self.progress_win = KProgressDialog(
+                    self.parent().parent(),
+                    "lala",
+                    msg,
+                    "",
+                    False
+                )
+                self.progress_win.showCancelButton(False)
+                self.progress_win.show()
+                KApplication.kApplication().processEvents()
+            else:
+                self.progress_win.done(0)
+                self.progress_win = None
+        else:
+            self.progress_win.setLabel(msg)
+            self.progress_win.progressBar().setProgress(percent)
+            KApplication.kApplication().processEvents(500)
 
 
 class ProjectWindow(KMainWindow):
@@ -78,6 +100,7 @@ class ProjectWindow(KMainWindow):
         file_.insertItem("Save &as...", self.saveAsProject, self.CTRL + self.SHIFT + self.Key_S)
         file_.insertSeparator()
         file_.insertItem("&Quit", self.quit, self.CTRL + self.Key_Q)
+        
         vb = QVBox(self)
         vb.setSpacing(6)
         vb.setMargin(6)
@@ -182,7 +205,7 @@ class ProjectWindow(KMainWindow):
     
     def browse(self):
         self.ui2project()
-        repo = self.project.get_repo()
+        repo = self.project.get_repo(self.console)
         self.toolbar.setEnabled(False)
         w = browser.Browser(
             self,
