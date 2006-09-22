@@ -186,7 +186,7 @@ class BrowserWidget(QVBox):
         for name in components:
             item = self.comps.firstChild()
             while item:
-                if item.name == name:
+                if item.comp.name == name:
                     item.setState(QCheckListItem.On)
                     break
                 item = item.nextSibling()
@@ -194,7 +194,7 @@ class BrowserWidget(QVBox):
         for name in packages:
             item = self.list.firstChild()
             while item:
-                if item.name == name:
+                if item.pak.name == name:
                     item.setState(QCheckListItem.On)
                     break
                 item = item.nextSibling()
@@ -221,7 +221,7 @@ class BrowserWidget(QVBox):
 
 
 class Browser(QDialog):
-    def __init__(self, parent, repo, callback):
+    def __init__(self, parent, repo, callback, components, packages):
         QDialog.__init__(self, parent)
         self.callback = callback
         vb = QVBoxLayout(self, 6)
@@ -231,7 +231,7 @@ class Browser(QDialog):
         but = QPushButton(_("Use selected packages"), self)
         self.connect(but, SIGNAL("clicked()"), self.accept)
         vb.addWidget(but, 0, Qt.AlignRight)
-        self.show()
+        self.browser.set_selection(components, packages)
     
     def accept(self):
         comps, sel, all = self.browser.get_selection()
