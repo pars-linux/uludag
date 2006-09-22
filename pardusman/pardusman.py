@@ -21,6 +21,7 @@ from kdeui import *
 from utility import *
 
 import project
+import browser
 
 # no i18n yet
 def _(x):
@@ -132,6 +133,7 @@ class ProjectWindow(KMainWindow):
         grid.addWidget(self.media_size, 4, 1)
         
         bar = QToolBar("lala", None, vb2)
+        self.toolbar = bar
         QLabel(" ", bar)
         but = QToolButton(getIconSet("package"), _("Select packages"), "lala", self.browse, bar)
         but.setUsesTextLabel(True)
@@ -172,15 +174,14 @@ class ProjectWindow(KMainWindow):
         KApplication.kApplication().closeAllWindows()
     
     def browseResult(self, comps, paks, allpaks):
-        pass
+        self.toolbar.setEnabled(True)
+        # FIXME: set paks
     
     def browse(self):
         self.ui2project()
-        import packages
-        import browser
-        a = packages.Repository('http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml', 'test')
-        a.parse_index()
-        w = browser.Browser(self, a, self.browseResult)
+        repo = self.project.get_repo()
+        self.toolbar.setEnabled(False)
+        w = browser.Browser(self, repo, self.browseResult)
         w.show()
     
     def make(self):

@@ -9,7 +9,10 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import os
 import piksemel
+
+import packages
 
 # no i18n yet
 def _(x):
@@ -79,6 +82,12 @@ class Project:
         f.write(data)
         f.close()
     
+    def get_repo(self):
+        cache_dir = os.path.join(self.work_dir, "repo_cache")
+        repo = packages.Repository(self.repo_uri, cache_dir)
+        repo.parse_index()
+        return repo
+    
     def make(self, console):
         pass
 
@@ -110,18 +119,4 @@ class Project:
             self.setCaption(_("%s - Pardusman") % self.project_name)
         else:
             self.setCaption(_("New project - Pardusman"))
-    
-    def selectPackages(self):
-        self.packagebut.setEnabled(False)
-        self.packagedir.setEnabled(False)
-        w = browser.PackageSelector(self, self.packagedir.text(), self.selectResult, self.pak_selection)
-    
-    def selectResult(self, selection, size, instsize):
-        self.packagebut.setEnabled(True)
-        self.packagedir.setEnabled(True)
-        if selection:
-            self.pak_selection = selection
-            self.pak_size = size
-            self.pak_inst_size = instsize
-            self.updateStatus()
 """

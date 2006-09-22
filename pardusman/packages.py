@@ -51,9 +51,6 @@ class Package:
         self.revdeps = []
         # Keep more info: desc, licenses, packager name, homepage
     
-    def fetch(self):
-        pass
-    
     def __str__(self):
         return """Package: %s (%s)
 Version %s, release %s, build %s
