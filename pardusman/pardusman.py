@@ -230,11 +230,12 @@ class ProjectWindow(KMainWindow):
         else:
             self.media_type.setButton(1)
     
-    def openProject(self):
-        name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
-        name = unicode(name)
-        if name == "":
-            return
+    def openProject(self, name=None):
+        if not name:
+            name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
+            name = unicode(name)
+            if name == "":
+                return
         err = self.project.open(name)
         if err:
             self.console.error("%s\n" % err)
@@ -263,7 +264,7 @@ class ProjectWindow(KMainWindow):
 # Main program
 #
 
-def main(args):
+def gui_main(args, project_file):
     description = I18N_NOOP("Pardus distribution media maker")
     version = "0.1"
     about = KAboutData(
@@ -277,8 +278,18 @@ def main(args):
     app = KApplication()
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     w = ProjectWindow()
+    if project_file:
+        w.openProject(project_file)
     w.show()
     app.exec_loop()
+
+def main(args):
+    prj = None
+    for item in args[1:]:
+        if not item.startswith("-"):
+            prj = item
+            args.remove(item)
+    gui_main(args, prj)
 
 if __name__ == "__main__":
     main(sys.argv)
