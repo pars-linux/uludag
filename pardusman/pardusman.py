@@ -146,6 +146,7 @@ class ProjectWindow(KMainWindow):
         
         self.project_file = None
         self.project = project.Project()
+        self.project2ui()
     
     def selectFiles(self):
         path = QFileDialog.getExistingDirectory(
@@ -187,10 +188,37 @@ class ProjectWindow(KMainWindow):
         # FIXME: self.project.make()
     
     def ui2project(self):
-        pass
+        tmp = unicode(self.release_files.text())
+        if tmp:
+            self.project.release_files = tmp
+        tmp = unicode(self.work_dir.text())
+        if tmp:
+            self.project.work_dir = tmp
+        tmp = unicode(self.repo_uri.text())
+        if tmp:
+            self.project.repo_uri = tmp
+        if self.media_type.selectedId() == 0:
+            self.project.media_type = "install"
+        else:
+            self.project.media_type = "live"
     
     def project2ui(self):
-        pass
+        tmp = self.project.release_files
+        if not tmp:
+            tmp = ""
+        self.release_files.setText(tmp)
+        tmp = self.project.work_dir
+        if not tmp:
+            tmp = ""
+        self.work_dir.setText(tmp)
+        tmp = self.project.repo_uri
+        if not tmp:
+            tmp = ""
+        self.repo_uri.setText(tmp)
+        if self.project.media_type == "install":
+            self.media_type.setButton(0)
+        else:
+            self.media_type.setButton(1)
     
     def openProject(self):
         name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))

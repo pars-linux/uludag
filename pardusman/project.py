@@ -46,12 +46,14 @@ class Project:
         self.release_files = doc.getTagData("ReleaseFiles")
         
         paksel = doc.getTag("PackageSelection")
-        for tag in paksel.tags("SelectedComponent"):
-            self.selected_components.append(tag.firstChild().data())
-        for tag in paksel.tags("SelectedPackage"):
-            self.selected_packages.append(tag.firstChild().data())
-        for tag in paksel.tags("Package"):
-            self.all_packages.append(tag.firstChild().data())
+        if paksel:
+            self.repo_uri = paksel.getAttribute("repo_uri")
+            for tag in paksel.tags("SelectedComponent"):
+                self.selected_components.append(tag.firstChild().data())
+            for tag in paksel.tags("SelectedPackage"):
+                self.selected_packages.append(tag.firstChild().data())
+            for tag in paksel.tags("Package"):
+                self.all_packages.append(tag.firstChild().data())
         
         return None
     
