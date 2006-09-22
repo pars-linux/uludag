@@ -9,106 +9,39 @@
 # option) any later version. Please read the COPYING file.
 #
 
-import os
-import subprocess
-import select
 import piksemel
-from qt import *
-
-import browser
-import utility
-import operations
 
 # no i18n yet
 def _(x):
     return x
 
-
-class HLine(QHBox):
-    def __init__(self, title, parent):
-        QHBox.__init__(self, parent)
-        self.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
-        
-        line = QFrame(self)
-        line.setFrameStyle(line.HLine | line.Sunken)
-        self.setStretchFactor(line, 1)
-        
-        text = QLabel(" %s " % unicode(title), self)
-        
-        line = QFrame(self)
-        line.setFrameStyle(line.HLine | line.Sunken)
-        self.setStretchFactor(line, 8)
+INSTALL, LIVE = range(2)
 
 
-class PathEntry(QHBox):
-    def __init__(self, question, parent, is_dir=True):
-        QHBox.__init__(self, parent)
-        self.is_dir = is_dir
-        self.question = question
-        self.setSpacing(3)
-        self.path = QLineEdit(self)
-        self.path.setMinimumWidth(160)
-        but = QPushButton("...", self)
-        self.connect(but, SIGNAL("clicked()"), self.browse)
+class Project:
+    def __init__(self):
+        self.filename = None
+        self.work_dir = None
+        self.release_files = None
+        self.repo_uri = None
+        self.media_type = INSTALL
+        self.media_size = 700 * 1024 * 1024
+        self.selected_components = []
+        self.selected_packages = []
+        self.all_packages = []
     
-    def browse(self):
-        if self.is_dir:
-            s = QFileDialog.getExistingDirectory(self.path.text(), self, "lala", self.question, False)
-        else:
-            s = QFileDialog.getOpenFileName(self.path.text(), "All (*)", self, "lala", self.question)
-        self.path.setText(s)
+    def open(self, name):
+        pass
     
-    def text(self):
-        return str(self.path.text())
+    def save(self, name=None):
+        pass
     
-    def setText(self, text):
-        self.path.setText(text)
+    def make(self, console):
+        pass
 
 
-def makePathEntry(label, question, grid, row, parent, is_dir=True):
-    lab = QLabel(label, parent)
-    grid.addWidget(lab, row, 0, Qt.AlignRight)
-    edit = PathEntry(question, parent, is_dir)
-    grid.addWidget(edit, row, 1)
-    return edit
 
-
-class Console(QTextEdit):
-    def __init__(self, parent):
-        QTextEdit.__init__(self, parent)
-        self.setTextFormat(self.LogText)
-    
-    def _echo(self, sock, error=False):
-        while len(select.select([sock.fileno()], [], [], 0)[0]) > 0:
-            data = os.read(sock.fileno(), 1024)
-            if data:
-                if error:
-                    self.error(data)
-                else:
-                    self.info(data)
-            else:
-                return
-    
-    def info(self, msg):
-        self.append(unicode(msg))
-    
-    def state(self, msg):
-        self.append("<font color=blue>%s</font>" % unicode(msg))
-    
-    def error(self, msg):
-        self.append("<font color=red>%s</font>" % unicode(msg))
-    
-    def run(self, command):
-        pop = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        while True:
-            qApp.processEvents()
-            self._echo(pop.stdout)
-            self._echo(pop.stderr, True)
-            ret = pop.poll()
-            if ret != None:
-                return ret
- 
-
+"""
 class Project(QMainWindow):
     def __init__(self, parent):
         QMainWindow.__init__(self, parent)
@@ -283,3 +216,4 @@ class Project(QMainWindow):
             self.pak_size = size
             self.pak_inst_size = instsize
             self.updateStatus()
+"""
