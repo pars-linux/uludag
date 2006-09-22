@@ -168,18 +168,29 @@ class ProjectWindow(KMainWindow):
         self.work_dir.setText(path)
     
     def quit(self):
-        qApp.closeAllWindows()
+        KApplication.kApplication().closeAllWindows()
+    
+    def browseResult(self, comps, paks, allpaks):
+        pass
     
     def browse(self):
+        self.ui2project()
         import packages
         import browser
         a = packages.Repository('http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml', 'test')
         a.parse_index()
-        w = browser.Browser(self, a, None)
+        w = browser.Browser(self, a, self.browseResult)
         w.show()
     
     def make(self):
-        self.console.run("ls -l")
+        self.ui2project()
+        # FIXME: self.project.make()
+    
+    def ui2project(self):
+        pass
+    
+    def project2ui(self):
+        pass
     
     def openProject(self):
         name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
@@ -191,9 +202,11 @@ class ProjectWindow(KMainWindow):
             self.console.error("%s\n" % err)
             return
         self.project_file = name
+        self.project2ui()
     
     def saveProject(self):
         if self.project_file:
+            self.ui2project()
             self.project.save(self.project_file)
         else:
             self.saveAsProject()
@@ -203,6 +216,7 @@ class ProjectWindow(KMainWindow):
         name = unicode(name)
         if name == "":
             return
+        self.ui2project()
         self.project.save(name)
         self.project_file = name
 
