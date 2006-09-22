@@ -31,9 +31,9 @@ class Console(QTextEdit):
         self.setTextFormat(self.LogText)
 
 
-class Project(QMainWindow):
+class Project(KMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        KMainWindow.__init__(self)
         self.setMinimumSize(560, 440)
         self.setCaption("Pardusman")
         
@@ -47,15 +47,18 @@ class Project(QMainWindow):
         file_.insertItem("&Quit", self.quit, self.CTRL + self.Key_Q)
         vb = QVBox(self)
         vb.setSpacing(6)
-        vb.setMargin(12)
+        vb.setMargin(6)
         
         hb = QHBox(vb)
         hb.setSpacing(6)
         
         QLabel(hb).setPixmap(QPixmap("logo.png"))
         
-        box = QWidget(hb)
-        grid = QGridLayout(box, 8, 2, 6, 6)
+        vb2 = QVBox(hb)
+        vb2.setSpacing(3)
+        
+        box = QWidget(vb2)
+        grid = QGridLayout(box, 5, 2, 6, 6)
         
         lab = QLabel(_("Repository:"), box)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
@@ -94,9 +97,14 @@ class Project(QMainWindow):
         self.media_size.insertItem(getIconPixmap("hdd_unmount"), _("Custom size"), 3)
         grid.addWidget(self.media_size, 4, 1)
         
-        but = QPushButton(_("Select packages"), box)
-        self.connect(but, SIGNAL("clicked()"), self.browse)
-        grid.addWidget(but, 5, 1, Qt.AlignRight)
+        bar = QToolBar("lala", None, vb2)
+        QLabel(" ", bar)
+        but = QToolButton(getIconSet("package"), _("Select packages"), "lala", self.browse, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+        but = QToolButton(getIconSet("gear"), _("Make ISO"), "lala", self.make, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
         
         self.console = Console(vb)
         
@@ -112,6 +120,9 @@ class Project(QMainWindow):
         a.parse_index()
         w = browser.Browser(self, a, None)
         w.show()
+    
+    def make(self):
+        pass
     
     def loadProject(self):
         name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
