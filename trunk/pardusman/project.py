@@ -82,10 +82,10 @@ class Project:
         f.write(data)
         f.close()
     
-    def get_repo(self):
+    def get_repo(self, console):
         cache_dir = os.path.join(self.work_dir, "repo_cache")
         repo = packages.Repository(self.repo_uri, cache_dir)
-        repo.parse_index()
+        repo.parse_index(console)
         return repo
     
     def make(self, console):
