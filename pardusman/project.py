@@ -82,24 +82,44 @@ class Project:
         f.write(data)
         f.close()
     
+    def _get_dir(self, name):
+        dirname = os.path.join(self.work_dir, name)
+        if not os.path.exists(dirname):
+            os.makedirs(dirname)
+    
     def get_repo(self, console):
-        cache_dir = os.path.join(self.work_dir, "repo_cache")
-        if not os.path.exists(cache_dir):
-            os.makedirs(cache_dir)
+        cache_dir = self._get_dir("repo_cache")
         repo = packages.Repository(self.repo_uri, cache_dir)
         repo.parse_index(console)
         return repo
     
     def make(self, console):
-        pass
+        return # not ready yet
+        console.state("\n==> Preparing distribution media\n")
+        image_dir = self._get_dir("image_dir")
+        console.state("Installing boot image packages...")
+        if self.media_type == "install":
+            paks = "yali"
+        else:
+            paks = " ".join(self.all_packages)
+        console.run("pisi -D%s install %s" % (image_dir, paks))
+        console.state("Configuring boot image packages...")
+        #FIXME: chroot comar, and do the config
+        console.state("Squashing boot image...")
+        #FIXME: call mksquashfs
+        console.state("Preparing cd contents...")
+        #FIXME: copy release files, boot image, kernel
+        if self.media_type == "install":
+            console.state("Preparing installation packages...")
+            #FIXME: copy packages into repo/ and generate index
+        console.state("Making ISO image...")
+        #FIXME: mkisofs, grub
+        console.state("Finished succesfully!")
 
 
 
 """
     def prepareMedia(self):
-        con = self.console
-        self.tab.setCurrentPage(1)
-        con.state("\n==> Preparing media for '%s'\n" % self.name.text())
         op = operations.ISO(con, "tmp")
         op.setup_contents(self.contentdir.text())
         op.setup_cdroot(self.cdroot.text())

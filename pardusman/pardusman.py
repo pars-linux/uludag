@@ -218,7 +218,7 @@ class ProjectWindow(KMainWindow):
     
     def make(self):
         self.ui2project()
-        # FIXME: self.project.make()
+        self.project.make(self.console)
     
     def ui2project(self):
         tmp = unicode(self.release_files.text())
