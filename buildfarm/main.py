@@ -69,16 +69,14 @@ def buildPackages():
                 try:
                     pisi.install(os.path.join(config.workDir, p))
                 except Exception, e:
-                    errmsg = "'%s' için INSTALL işlemi sırasında hata: %s" % (os.path.join(config.workDir, p), e)
-                    logger.error(errmsg)
-                    mailer.error(errmsg, pspec)
+                    logger.error("'%s' için INSTALL işlemi sırasında hata: %s" % (os.path.join(config.workDir, p), e))
                     qmgr.transferToWaitQueue(pspec)
                     newBinaryPackages.remove(p)
                     removeBinaryPackageFromWorkDir(p)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
-                    movePackages(newBinaryPackages, oldBinaryPackages)
-        pisi.finalize()
+            pisi.finalize()
+            movePackages(newBinaryPackages, oldBinaryPackages)
 
     logger.raw("QUEUE")
     logger.info("Wait Queue: %s" % (qmgr.waitQueue))
