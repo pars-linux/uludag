@@ -84,6 +84,8 @@ class Project:
     
     def get_repo(self, console):
         cache_dir = os.path.join(self.work_dir, "repo_cache")
+        if not os.path.exists(cache_dir):
+            os.makedirs(cache_dir)
         repo = packages.Repository(self.repo_uri, cache_dir)
         repo.parse_index(console)
         return repo
