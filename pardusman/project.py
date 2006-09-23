@@ -94,8 +94,8 @@ class Project:
         return repo
     
     def make(self, console):
-        return # not ready yet
         console.state("\n==> Preparing distribution media\n")
+        return # not ready yet
         image_dir = self._get_dir("image_dir")
         console.state("Installing boot image packages...")
         if self.media_type == "install":
@@ -135,10 +135,5 @@ class Project:
             self.paklabel.setText(_("(%d packages, %s size, %s installed)") % 
                 (len(self.pak_selection[2]), utility.size_fmt(self.pak_size), utility.size_fmt(self.pak_inst_size)))
         else:
-            self.paklabel.setText(_("(no packages selected yet)"))
-        
-        if self.project_name:
-            self.setCaption(_("%s - Pardusman") % self.project_name)
-        else:
-            self.setCaption(_("New project - Pardusman"))
+            self.paklabel.setText(_("(no packages selected yet)"))        
 """
