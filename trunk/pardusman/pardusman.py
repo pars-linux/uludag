@@ -109,7 +109,12 @@ class ProjectWindow(KMainWindow):
         hb = QHBox(vb)
         hb.setSpacing(6)
         
-        QLabel(hb).setPixmap(QPixmap("logo.png"))
+        lab = QLabel(hb)
+        lab.setPixmap(QPixmap("logo.png"))
+        QToolTip.add(
+            lab,
+            _("Pardusman says:\n\n  Teh winnars dont use teh drugs!  \n ")
+        )
         
         vb2 = QVBox(hb)
         vb2.setSpacing(3)
@@ -120,6 +125,10 @@ class ProjectWindow(KMainWindow):
         lab = QLabel(_("Repository:"), box)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
         self.repo_uri = QLineEdit(box)
+        QToolTip.add(
+            self.repo_uri,
+            _("PiSi package repository of the distribution.\nMust be a URL pointing to the repository index\nfile (i.e. pisi-index.xml.bz2).")
+        )
         grid.addWidget(self.repo_uri, 0, 1)
         
         lab = QLabel(_("Release files:"), box)
@@ -127,6 +136,10 @@ class ProjectWindow(KMainWindow):
         hb2 = QHBox(box)
         hb2.setSpacing(3)
         self.release_files = QLineEdit(hb2)
+        QToolTip.add(
+            self.release_files,
+            _("Content of this folder is copied\nonto the root folder of CD.")
+        )
         but = QPushButton("...", hb2)
         self.connect(but, SIGNAL("clicked()"), self.selectFiles)
         grid.addWidget(hb2, 1, 1)
@@ -136,6 +149,10 @@ class ProjectWindow(KMainWindow):
         hb2 = QHBox(box)
         hb2.setSpacing(3)
         self.work_dir = QLineEdit(hb2)
+        QToolTip.add(
+            self.work_dir,
+            _("This folder holds local repository cache\nand temporary files generated during the\nISO making process.")
+        )
         but = QPushButton("...", hb2)
         self.connect(but, SIGNAL("clicked()"), self.selectWorkdir)
         grid.addWidget(hb2, 2, 1)
@@ -181,7 +198,8 @@ class ProjectWindow(KMainWindow):
             _("Select release files folder"),
             False
         )
-        self.release_files.setText(path)
+        if not path.isNull():
+            self.release_files.setText(path)
     
     def selectWorkdir(self):
         path = QFileDialog.getExistingDirectory(
@@ -191,7 +209,8 @@ class ProjectWindow(KMainWindow):
             _("Select folder for temporary files and cache"),
             False
         )
-        self.work_dir.setText(path)
+        if not path.isNull():
+            self.work_dir.setText(path)
     
     def quit(self):
         KApplication.kApplication().closeAllWindows()
