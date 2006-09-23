@@ -86,6 +86,7 @@ class Project:
         dirname = os.path.join(self.work_dir, name)
         if not os.path.exists(dirname):
             os.makedirs(dirname)
+        return dirname
     
     def get_repo(self, console):
         cache_dir = self._get_dir("repo_cache")
