@@ -193,6 +193,7 @@ class BrowserWidget(QVBox):
         self.package_tipper = PackageTipper(self.list.viewport())
         self.package_tipper.list = self.list
         self.search.setListView(self.list)
+        self.search.setSearchColumns([0])
         
         self.label = KActiveLabel(self)
         self.label.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
