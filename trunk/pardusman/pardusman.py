@@ -90,7 +90,8 @@ class ProjectWindow(KMainWindow):
     def __init__(self):
         KMainWindow.__init__(self)
         self.setMinimumSize(560, 440)
-        self.setCaption("Pardusman")
+        self.project_file = None
+        self.updateCaption()
         
         mb = self.menuBar()
         file_ = QPopupMenu(self)
@@ -169,7 +170,6 @@ class ProjectWindow(KMainWindow):
         
         self.setCentralWidget(vb)
         
-        self.project_file = None
         self.project = project.Project()
         self.project2ui()
     
@@ -253,6 +253,12 @@ class ProjectWindow(KMainWindow):
         else:
             self.media_type.setButton(1)
     
+    def updateCaption(self):
+        if self.project_file:
+            self.setCaption(_("%s - Pardusman") % self.project_file)
+        else:
+            self.setCaption(_("New project - Pardusman"))
+    
     def openProject(self, name=None):
         if not name:
             name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
@@ -265,11 +271,14 @@ class ProjectWindow(KMainWindow):
             return
         self.project_file = name
         self.project2ui()
+        self.updateCaption()
+        self.console.state("Project '%s' opened." % name)
     
     def saveProject(self):
         if self.project_file:
             self.ui2project()
             self.project.save(self.project_file)
+            self.console.state("Saved.")
         else:
             self.saveAsProject()
     
@@ -281,6 +290,8 @@ class ProjectWindow(KMainWindow):
         self.ui2project()
         self.project.save(name)
         self.project_file = name
+        self.updateCaption()
+        self.console.state("Project saved as '%s'." % name)
 
 
 #
