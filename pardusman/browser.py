@@ -28,7 +28,7 @@ class DetailWindow(QDialog):
         w = QWidget(self)
         vb.addWidget(w)
         
-        grid = QGridLayout(w, 4, 2, 3, 3)
+        grid = QGridLayout(w, 5, 2, 3, 3)
         
         lab = QLabel(_("Package name:"), w)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
@@ -40,19 +40,24 @@ class DetailWindow(QDialog):
         lab = QLabel(_("%s, release %s, build %s") % (package.version, package.release, package.build), w)
         grid.addWidget(lab, 1, 1)
         
-        lab = QLabel(_("Homepage:"), w)
+        lab = QLabel(_("Component:"), w)
         grid.addWidget(lab, 2, 0, Qt.AlignRight)
+        lab = QLabel(package.component, w)
+        grid.addWidget(lab, 2, 1)
+        
+        lab = QLabel(_("Homepage:"), w)
+        grid.addWidget(lab, 3, 0, Qt.AlignRight)
         lab = KURLLabel(w)
         lab.setURL(package.homepage)
         lab.setText(package.homepage)
-        grid.addWidget(lab, 2, 1)
+        grid.addWidget(lab, 3, 1)
         
         lab = QLabel(_("Summary:"), w)
-        grid.addWidget(lab, 3, 0, Qt.AlignRight)
+        grid.addWidget(lab, 4, 0, Qt.AlignRight)
         text = QTextEdit(w)
         text.setReadOnly(True)
         text.setText(package.summary)
-        grid.addWidget(text, 3, 1)
+        grid.addWidget(text, 4, 1)
         
         hb = QHBox(self)
         hb.setSpacing(6)
@@ -139,7 +144,9 @@ class PackageTipper(QToolTip):
     def maybeTip(self, point):
         item = self.list.itemAt(point)
         if item:
-            self.tip(self.list.itemRect(item), "<b>%s</b><br>%s" % (item.pak.name, item.pak.summary))
+            self.tip(self.list.itemRect(item), "<b>%s</b><br>%s<br><i>(%s)</i>" % (
+                item.pak.name, item.pak.summary, item.pak.component)
+            )
 
 
 class BrowserWidget(QVBox):
@@ -147,16 +154,8 @@ class BrowserWidget(QVBox):
         QVBox.__init__(self, parent)
         self.setSpacing(3)
         
-        hb = QHBox(self)
-        hb.setSpacing(3)
-        hb.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
-        QLabel(_("Repository:"), hb)
-        uri = QLineEdit(hb)
-        uri.setReadOnly(True)
-        uri.setText(repo.base_uri)
-        
-        info = QLineEdit(self)
-        info.setReadOnly(True)
+        info = KActiveLabel(self)
+        info.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
         info.setText(_("Total of %d packages, %s bytes compressed, %s bytes installed.") % (
             len(repo.packages),
             size_fmt(repo.size),
@@ -195,7 +194,7 @@ class BrowserWidget(QVBox):
         self.package_tipper.list = self.list
         self.search.setListView(self.list)
         
-        self.label = QLabel(self)
+        self.label = KActiveLabel(self)
         self.label.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
         
         self.repo = repo
@@ -275,6 +274,7 @@ class BrowserWidget(QVBox):
 class Browser(QDialog):
     def __init__(self, parent, repo, callback, components, packages):
         QDialog.__init__(self, parent)
+        self.setCaption(repo.base_uri)
         self.callback = callback
         vb = QVBoxLayout(self, 6)
         self.browser = BrowserWidget(self, repo)
