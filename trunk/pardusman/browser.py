@@ -149,6 +149,39 @@ class PackageTipper(QToolTip):
             )
 
 
+class SizeLabel(QLabel):
+    def __init__(self, parent):
+        QLabel.__init__(self, parent)
+        self.setFrameShape(QFrame.Box)
+        self.setFrameShadow(QFrame.Sunken)
+        self.setMargin(2)
+        self.percent = 0
+    
+    def drawFrame(self, painter):
+        QLabel.drawFrame(self, painter)
+        rect = self.frameRect()
+        x = rect.x()
+        dx = rect.width()
+        y = rect.y()
+        dy = rect.height()
+        for cx in range(x, x + dx, dx / 10):
+            painter.drawLine(cx, y, cx, y + 3)
+            painter.drawLine(cx, y + dy - 5, cx, y + dy - 2)
+    
+    def drawContents(self, painter):
+        rect = self.contentsRect()
+        dx = rect.width()
+        
+        rect.setWidth(dx * self.percent / 100)
+        if self.percent < 99:
+            painter.fillRect(rect, QBrush(Qt.green))
+        else:
+            painter.fillRect(rect, QBrush(Qt.red))
+        rect.setWidth(dx)
+        
+        QLabel.drawContents(self, painter)
+
+
 class BrowserWidget(QVBox):
     def __init__(self, parent, repo):
         QVBox.__init__(self, parent)
@@ -195,7 +228,7 @@ class BrowserWidget(QVBox):
         self.search.setListView(self.list)
         self.search.setSearchColumns([0])
         
-        self.label = KActiveLabel(self)
+        self.label = SizeLabel(self)
         self.label.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
         
         self.repo = repo
@@ -255,6 +288,7 @@ class BrowserWidget(QVBox):
         if self.nr_paks == 0:
             self.label.setText(_("No packages selected."))
         else:
+            self.label.percent = min(100 * self.total_zip / (700 * 1024 * 1024), 100)
             self.label.setText(
                 _("%d packages selected, %s bytes archive size, %s bytes installed size.") %
                 (self.nr_paks, size_fmt(self.total_zip), size_fmt(self.total)))
@@ -285,6 +319,7 @@ class Browser(QDialog):
         self.connect(but, SIGNAL("clicked()"), self.accept)
         vb.addWidget(but, 0, Qt.AlignRight)
         self.browser.set_selection(components, packages)
+        self.browser.list.setFocus()
     
     def accept(self):
         comps, sel, all = self.browser.get_selection()
