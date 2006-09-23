@@ -118,6 +118,19 @@ class Project:
         console.state("Finished succesfully!")
 
 
+"""
+        repodir = os.path.join(self.workdir, "repo") 
+        os.mkdir(repodir)
+        for path in packagelist:
+            os.link(path, os.path.join(repodir, os.path.basename(path)))
+
+        shutil.copytree(os.path.join(imgdir, "boot"), os.path.join(self.workdir, "boot"), True)
+
+        ret = self.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' %
+            (name, os.path.join(self.tmpdir, "%s.iso" % name), self.workdir))
+
+"""
+
 
 """
     def prepareMedia(self):
