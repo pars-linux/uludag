@@ -92,6 +92,8 @@ class ProjectWindow(KMainWindow):
         self.setMinimumSize(560, 440)
         self.project_file = None
         self.updateCaption()
+        pman = QPixmap("logo.png")
+        self.setIcon(pman)
         
         mb = self.menuBar()
         file_ = QPopupMenu(self)
@@ -110,7 +112,7 @@ class ProjectWindow(KMainWindow):
         hb.setSpacing(6)
         
         lab = QLabel(hb)
-        lab.setPixmap(QPixmap("logo.png"))
+        lab.setPixmap(pman)
         QToolTip.add(
             lab,
             _("Pardusman says:\n\n  Teh winnars dont use teh drugs!  \n ")

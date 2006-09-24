@@ -10,7 +10,7 @@
 #
 
 import os
-from utility import size_fmt
+from utility import *
 from qt import *
 from kdeui import *
 
@@ -24,6 +24,7 @@ class DetailWindow(QDialog):
         QDialog.__init__(self, parent)
         self.setMinimumSize(380, 540)
         self.setCaption(package.name)
+        self.setIcon(getIconPixmap(package.icon))
         vb = QVBoxLayout(self, 6)
         
         w = QWidget(self)
@@ -94,11 +95,12 @@ class Package(QCheckListItem):
         self.setText(2, size_fmt(pak.inst_size))
     
     def paintCell(self, painter, cg, column, width, align):
-        c = cg.text()
         if self.mark:
+            c = cg.text()
             cg.setColor(QColorGroup.Text, Qt.red)
         QCheckListItem.paintCell(self, painter, cg, column, width, align)
-        cg.setColor(QColorGroup.Text, c)
+        if self.mark:
+            cg.setColor(QColorGroup.Text, c)
     
     def stateChange(self, bool):
         browser = self.browser
@@ -306,6 +308,7 @@ class Browser(QDialog):
     def __init__(self, parent, repo, callback, components, packages):
         QDialog.__init__(self, parent)
         self.setCaption(repo.base_uri)
+        self.setIcon(getIconPixmap("package"))
         self.callback = callback
         vb = QVBoxLayout(self, 6)
         self.browser = BrowserWidget(self, repo)
