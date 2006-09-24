@@ -23,41 +23,37 @@ class DetailWindow(QDialog):
     def __init__(self, parent, package):
         QDialog.__init__(self, parent)
         self.setMinimumSize(380, 540)
+        self.setCaption(package.name)
         vb = QVBoxLayout(self, 6)
         
         w = QWidget(self)
         vb.addWidget(w)
         
-        grid = QGridLayout(w, 5, 2, 3, 3)
-        
-        lab = QLabel(_("Package name:"), w)
-        grid.addWidget(lab, 0, 0, Qt.AlignRight)
-        lab = QLabel(package.name, w)
-        grid.addWidget(lab, 0, 1)
+        grid = QGridLayout(w, 4, 2, 3, 3)
         
         lab = QLabel(_("Version:"), w)
-        grid.addWidget(lab, 1, 0, Qt.AlignRight)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
         lab = QLabel(_("%s, release %s, build %s") % (package.version, package.release, package.build), w)
-        grid.addWidget(lab, 1, 1)
+        grid.addWidget(lab, 0, 1)
         
         lab = QLabel(_("Component:"), w)
-        grid.addWidget(lab, 2, 0, Qt.AlignRight)
+        grid.addWidget(lab, 1, 0, Qt.AlignRight)
         lab = QLabel(package.component, w)
-        grid.addWidget(lab, 2, 1)
+        grid.addWidget(lab, 1, 1)
         
         lab = QLabel(_("Homepage:"), w)
-        grid.addWidget(lab, 3, 0, Qt.AlignRight)
+        grid.addWidget(lab, 2, 0, Qt.AlignRight)
         lab = KURLLabel(w)
         lab.setURL(package.homepage)
         lab.setText(package.homepage)
-        grid.addWidget(lab, 3, 1)
+        grid.addWidget(lab, 2, 1)
         
         lab = QLabel(_("Summary:"), w)
-        grid.addWidget(lab, 4, 0, Qt.AlignRight)
+        grid.addWidget(lab, 3, 0, Qt.AlignRight)
         text = QTextEdit(w)
         text.setReadOnly(True)
         text.setText(package.summary)
-        grid.addWidget(text, 4, 1)
+        grid.addWidget(text, 3, 1)
         
         hb = QHBox(self)
         hb.setSpacing(6)
