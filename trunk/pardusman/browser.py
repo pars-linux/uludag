@@ -96,11 +96,9 @@ class Package(QCheckListItem):
     
     def paintCell(self, painter, cg, column, width, align):
         if self.mark:
-            c = cg.text()
+            cg = QColorGroup(cg)
             cg.setColor(QColorGroup.Text, Qt.red)
         QCheckListItem.paintCell(self, painter, cg, column, width, align)
-        if self.mark:
-            cg.setColor(QColorGroup.Text, c)
     
     def stateChange(self, bool):
         browser = self.browser
