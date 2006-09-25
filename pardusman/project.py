@@ -129,21 +129,6 @@ class Project:
         ret = self.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' %
             (name, os.path.join(self.tmpdir, "%s.iso" % name), self.workdir))
 
-"""
-
-
-"""
-    def prepareMedia(self):
-        op = operations.ISO(con, "tmp")
-        op.setup_contents(self.contentdir.text())
-        op.setup_cdroot(self.cdroot.text())
-        op.setup_packages(self.pak_selection[2])
-        op.setup_pisi_index(self.sourcedir.text())
-        if 0 == op.make(self.name.text()):
-            con.state("--- media prepared succesfully ---\n\n")
-        else:
-            con.state("--- operation failed ---")
-    
     def updateStatus(self):
         if self.pak_selection and len(self.pak_selection[2]) > 0:
             self.paklabel.setText(_("(%d packages, %s size, %s installed)") % 
