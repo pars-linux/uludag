@@ -37,6 +37,7 @@ def fetch_uri(base_uri, cache_dir, filename, console):
 
 class Package:
     def __init__(self, node):
+        self.node = node
         self.name = node.getTagData('Name')
         self.icon = node.getTagData('Icon')
         if not self.icon:
@@ -50,6 +51,7 @@ class Package:
         self.uri = node.getTagData('PackageURI')
         self.component = node.getTagData('PartOf')
         self.summary = node.getTagData('Summary')
+        self.description = node.getTagData('Description')
         deps = node.getTag('RuntimeDependencies')
         if deps:
             self.depends = map(lambda x: x.firstChild().data(), deps.tags('Dependency'))
@@ -78,6 +80,7 @@ Summary: %s""" % (
 
 class Component:
     def __init__(self, node):
+        self.node = node
         self.name = node.getTagData('Name')
         self.packages = []
     
@@ -94,6 +97,7 @@ class Repository:
         self.inst_size = 0
         self.packages = {}
         self.components = {}
+        self.distribution = None
     
     def parse_index(self, console):
         path = fetch_uri(self.base_uri, self.cache_dir, self.index_name, console)
@@ -104,6 +108,7 @@ class Repository:
             doc = piksemel.parseString(data)
         else:
             doc = piksemel.parse(path)
+        self.distribution = doc.getTag('Distribution')
         for tag in doc.tags('Package'):
             p = Package(tag)
             self.packages[p.name] = p
@@ -118,6 +123,15 @@ class Repository:
                 self.packages[name].revdeps.append(p.name)
             if self.components.has_key(p.component):
                 self.components[p.component].packages.append(p.name)
+    
+    def make_index(self, package_list):
+        doc = piksemel.newDocument("PISI")
+        doc.insertNode(self.distribution)
+        for name in package_list:
+            doc.insertNode(self.packages[name].node)
+        for name in self.components:
+            doc.insertNode(self.components[name].node)
+        return doc.toPrettyString()
     
     def __str__(self):
         return """Repository: %s

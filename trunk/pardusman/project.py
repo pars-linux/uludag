@@ -96,25 +96,35 @@ class Project:
     
     def make(self, console):
         console.state("\n==> Preparing distribution media\n")
-        return # not ready yet
         image_dir = self._get_dir("image_dir")
+        
+        repo = self.get_repo(console)
+        print repo.make_index(["comar"])
+        return
+        
         console.state("Installing boot image packages...")
         if self.media_type == "install":
             paks = "yali"
         else:
             paks = " ".join(self.all_packages)
         console.run("pisi -D%s install %s" % (image_dir, paks))
+        
         console.state("Configuring boot image packages...")
         #FIXME: chroot comar, and do the config
+        
         console.state("Squashing boot image...")
         #FIXME: call mksquashfs
+        
         console.state("Preparing cd contents...")
         #FIXME: copy release files, boot image, kernel
+        
         if self.media_type == "install":
             console.state("Preparing installation packages...")
             #FIXME: copy packages into repo/ and generate index
+        
         console.state("Making ISO image...")
         #FIXME: mkisofs, grub
+        
         console.state("Finished succesfully!")
 
 
