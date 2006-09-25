@@ -22,7 +22,7 @@ def _(x):
 class DetailWindow(QDialog):
     def __init__(self, parent, package):
         QDialog.__init__(self, parent)
-        self.setMinimumSize(380, 540)
+        #self.setMinimumSize(480, 540)
         self.setCaption(package.name)
         self.setIcon(getIconPixmap(package.icon))
         vb = QVBoxLayout(self, 6)
@@ -30,7 +30,7 @@ class DetailWindow(QDialog):
         w = QWidget(self)
         vb.addWidget(w)
         
-        grid = QGridLayout(w, 4, 2, 3, 3)
+        grid = QGridLayout(w, 5, 2, 3, 3)
         
         lab = QLabel(_("Version:"), w)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
@@ -55,6 +55,13 @@ class DetailWindow(QDialog):
         text.setReadOnly(True)
         text.setText(package.summary)
         grid.addWidget(text, 3, 1)
+        
+        lab = QLabel(_("Description:"), w)
+        grid.addWidget(lab, 4, 0, Qt.AlignRight)
+        text = QTextEdit(w)
+        text.setReadOnly(True)
+        text.setText(package.description)
+        grid.addWidget(text, 4, 1)
         
         hb = QHBox(self)
         hb.setSpacing(6)
