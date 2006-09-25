@@ -133,6 +133,17 @@ class Repository:
             doc.insertNode(self.components[name].node)
         return doc.toPrettyString()
     
+    def make_local_repo(self, path, package_list, console):
+        for name in package_list:
+            p = self.packages[name]
+            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, console)
+            os.link(cached, os.path.join(path, os.path.basename(cached)))
+        index = self.make_index(package_list)
+        import bz2
+        f = file(os.path.join(path, "pisi-index.xml.bz2"), "w")
+        f.write(bz2.compress(index))
+        f.close()
+    
     def __str__(self):
         return """Repository: %s
 Number of packages: %d

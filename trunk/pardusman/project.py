@@ -86,9 +86,13 @@ class Project:
         f.write(data)
         f.close()
     
-    def _get_dir(self, name):
+    def _get_dir(self, name, clean=False):
         dirname = os.path.join(self.work_dir, name)
-        if not os.path.exists(dirname):
+        if os.path.exists(dirname):
+            if clean:
+                os.system('rm -rf "%s"' % dirname)
+                os.makedirs(dirname)
+        else:
             os.makedirs(dirname)
         return dirname
     
@@ -103,7 +107,7 @@ class Project:
         image_dir = self._get_dir("image_dir")
         
         repo = self.get_repo(console)
-        print repo.make_index(["comar"])
+        repo.make_local_repo(self._get_dir("image_dir/repo", clean=True), self.all_packages, console)
         return
         
         console.state("Installing boot image packages...")
