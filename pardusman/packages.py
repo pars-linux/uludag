@@ -58,7 +58,7 @@ class Package:
         else:
             self.depends = []
         self.revdeps = []
-        # Keep more info: desc, licenses, packager name
+        # Keep more info: licenses, packager name
     
     def __str__(self):
         return """Package: %s (%s)
