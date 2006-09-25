@@ -79,7 +79,6 @@ class DetailWindow(QDialog):
             QListViewItem(list2, item)
     
     def urlClicked(self, url):
-        print "lala", url
         os.system("kfmclient exec '%s'" % url)
 
 
