@@ -36,6 +36,10 @@ class Project:
     def open(self, filename):
         try:
             doc = piksemel.parse(filename)
+        except OSError, e:
+            if e.errno == 2:
+                return _("Project file '%s' does not exists!" % filename)
+            raise
         except piksemel.ParseError:
             return _("Not a Pardusman project file, invalid xml!")
         if doc.name() != "PardusmanProject":

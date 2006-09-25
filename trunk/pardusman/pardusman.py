@@ -283,12 +283,12 @@ class ProjectWindow(KMainWindow):
         else:
             self.setCaption(_("New project - Pardusman"))
     
-    def openProject(self, name=None):
+    def openProject(self, tmp=0, name=None):
         if not name:
             name = QFileDialog.getOpenFileName(".", "All (*)", self, "lala", _("Select a project..."))
-            name = unicode(name)
-            if name == "":
+            if name.isNull():
                 return
+            name = unicode(name)
         err = self.project.open(name)
         if err:
             self.console.error("%s\n" % err)
@@ -337,7 +337,7 @@ def gui_main(args, project_file):
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     w = ProjectWindow()
     if project_file:
-        w.openProject(project_file)
+        w.openProject(name=project_file)
     w.show()
     app.exec_loop()
 
