@@ -45,6 +45,7 @@ class DetailWindow(QDialog):
         lab = QLabel(_("Homepage:"), w)
         grid.addWidget(lab, 2, 0, Qt.AlignRight)
         lab = KURLLabel(w)
+        self.connect(lab, SIGNAL("leftClickedURL(const QString&)"), self.urlClicked)
         lab.setURL(package.homepage)
         lab.setText(package.homepage)
         grid.addWidget(lab, 2, 1)
@@ -53,14 +54,14 @@ class DetailWindow(QDialog):
         grid.addWidget(lab, 3, 0, Qt.AlignRight)
         text = QTextEdit(w)
         text.setReadOnly(True)
-        text.setText(package.summary)
+        text.setText(unicode(package.summary))
         grid.addWidget(text, 3, 1)
         
         lab = QLabel(_("Description:"), w)
         grid.addWidget(lab, 4, 0, Qt.AlignRight)
         text = QTextEdit(w)
         text.setReadOnly(True)
-        text.setText(package.description)
+        text.setText(unicode(package.description))
         grid.addWidget(text, 4, 1)
         
         hb = QHBox(self)
@@ -76,6 +77,10 @@ class DetailWindow(QDialog):
         list2.addColumn(_("Depended by:"))
         for item in package.revdeps:
             QListViewItem(list2, item)
+    
+    def urlClicked(self, url):
+        print "lala", url
+        os.system("kfmclient exec '%s'" % url)
 
 
 class Component(QCheckListItem):
