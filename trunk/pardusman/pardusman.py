@@ -257,16 +257,19 @@ class ProjectWindow(KMainWindow):
             self.project.media_type = "live"
     
     def project2ui(self):
-        tmp = unicode(self.project.release_files)
-        if not tmp:
+        if self.project.release_files:
+            tmp = unicode(self.project.release_files)
+        else:
             tmp = ""
         self.release_files.setText(tmp)
-        tmp = unicode(self.project.work_dir)
-        if not tmp:
+        if self.project.work_dir:
+            tmp = unicode(self.project.work_dir)
+        else:
             tmp = ""
         self.work_dir.setText(tmp)
-        tmp = unicode(self.project.repo_uri)
-        if not tmp:
+        if self.project.repo_uri:
+            tmp = unicode(self.project.repo_uri)
+        else:
             tmp = ""
         self.repo_uri.setText(tmp)
         if self.project.media_type == "install":
