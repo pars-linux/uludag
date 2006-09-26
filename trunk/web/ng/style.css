@@ -142,9 +142,11 @@ li {
     vertical-align:top;
     padding-left:20px;
     list-style:none;
-    border-bottom:1px solid #98C2DC;
 }
 
+.search li {
+    border-bottom:1px solid #98C2DC;
+}
 
 .blue #modules li {
     border-bottom:1px solid #98C2DC;
