@@ -91,7 +91,6 @@
 
 <body onload="init();">
  <div id="container">
-
     <div id="head_grey">
         <div id="blue2"></div>
         <div id="quick_download">
@@ -127,8 +126,11 @@
                 else 
                     echo NO_RECORD_FOUND_BUT_YOU_CAN_LOOK_AT_GOOGLE_RESULTS;
                 echo "</div>";
-                if ($Results)
-                    $Search->Mod1();
+                    if ($Results) {
+                        echo "<div class='search'>";
+                        $Search->Mod1();
+                        echo "</div>";
+                    }
                 }
                 elseif (isset($Message))
                     echo "<div class='info'>".$Message."</div>";

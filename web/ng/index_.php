@@ -1,3 +1,14 @@
+    <div id="head_grey">
+        <div id="blue"></div>
+        <div id="quick_download">
+            <img src="images/box-hizli-indir.png" alt="Pardus 1.1Beta"/>
+            <form action="search/">
+                <input type="text" name="q" id="search" value="<?=SEARCH?>" onclick="Javascript:if (this.value=='<?=SEARCH?>') this.value='';" onblur="Javascript:if (this.value=='') this.value='<?=SEARCH?>';"/>
+            </form>
+            <div id="menu"><img src="images/menu-blue.png" alt="" /></div>
+        </div>
+    </div>
+
     <div id="page" class="blue">
         <div id="content">
             <img src="images/h1-pardus-nedir-blue.png" alt="" />
