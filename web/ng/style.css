@@ -14,30 +14,50 @@ body {
 
 #head_grey {
     width: 100%;
-    height: 100px;
+    height: 90px;
     background-image:url(images/back-top.png);
     background-repeat:repeat-x;
 }
 
-#pink,#blue,#green {
-    height:235px;
+#pink,#blue,#green,#pink2,#blue2,#green2 {
     background-repeat:no-repeat;
     background-position: 12px 12px;
     width:650px;
     float:left;
 }
 
+#pink,#blue,#green {
+    height:235px;
+}
+
+#pink2,#blue2,#green2 {
+    height:100px;
+}
+
 #pink {
-    background-image: url(images/head-pink.png);
+    background-image: url('images/head-pink.png');
+}
+
+#pink2 {
+    background-image: url('images/head-pink2.png');
 }
 
 #blue {
-    background-image: url(images/head-blue.png);
+    background-image: url('images/head-blue.png');
+}
+
+#blue2 {
+    background-image: url('images/head-blue2.png');
 }
 
 #green {
-    background-image: url(images/head-green.png);
+    background-image: url('images/head-green.png');
 }
+
+#green2 {
+    background-image: url('images/head-green2.png');
+}
+
 
 #quick_download {
     float:right;
@@ -94,10 +114,18 @@ a {
     padding-top:4px;
 }
 
-#content {
+#content,#fullpage {
     float:left;
-    width:580px;
+    width:95%;
+    padding:5px;
     padding-left:30px;
+}
+
+#fullpage {
+}
+
+#content {
+    width:580px;
 }
 
 .blue p,#modules ul {
@@ -105,6 +133,18 @@ a {
     margin-top:4px;
     padding-top:4px;
 }
+
+li {
+    /* list-style-image:url('images/bullet-blue.png');*/
+    background-image:url('images/bullet-blue.png');
+    background-repeat:no-repeat;
+    background-position:0px 2px;
+    vertical-align:top;
+    padding-left:20px;
+    list-style:none;
+    border-bottom:1px solid #98C2DC;
+}
+
 
 .blue #modules li {
     border-bottom:1px solid #98C2DC;
@@ -121,4 +161,23 @@ a {
     padding-right:20px;
 }
 
+#navi {
+    clear:both;
+    padding:4px;
+    padding-left:30px;
+    background-color:#DDD;
+    border-bottom:1px solid #CCC;
+}
 
+.info {
+    background-color:#DDD;
+    padding:2px;
+    padding-left:4px;
+    margin-left:-4px;
+    border:1px solid #CCC;
+    border-top:none;
+    margin-top:-7px;
+    text-align:right;
+    float:right;
+    width:40%;
+}
