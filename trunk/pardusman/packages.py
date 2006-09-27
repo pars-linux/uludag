@@ -140,12 +140,20 @@ class Repository:
             os.link(cached, os.path.join(path, os.path.basename(cached)))
         index = self.make_index(package_list)
         import bz2
+        data = bz2.compress(index)
+        import sha
         f = file(os.path.join(path, "pisi-index.xml.bz2"), "w")
-        f.write(bz2.compress(index))
+        f.write(data)
+        f.close()
+        f = file(os.path.join(path, "pisi-index.xml.bz2.sha1sum"), "w")
+        s = sha.new()
+        s.update(data)
+        f.write(s.hexdigest())
         f.close()
     
     def full_deps(self, package_name):
         deps = set()
+        deps.add(package_name)
         def collect(name):
             p = self.packages[name]
             for item in p.depends:
