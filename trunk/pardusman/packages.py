@@ -144,6 +144,20 @@ class Repository:
         f.write(bz2.compress(index))
         f.close()
     
+    def full_deps(self, package_name):
+        deps = set()
+        def collect(name):
+            p = self.packages[name]
+            for item in p.depends:
+                deps.add(item)
+                collect(item)
+        collect(package_name)
+        if self.components.has_key("system.base"):
+            for item in self.components["system.base"].packages:
+                deps.add(item)
+                collect(item)
+        return deps
+    
     def __str__(self):
         return """Repository: %s
 Number of packages: %d

@@ -105,14 +105,20 @@ class Project:
     def make(self, console):
         console.state("\n==> Preparing distribution media\n")
         image_dir = self._get_dir("image_dir")
-        
         repo = self.get_repo(console)
-        repo.make_local_repo(self._get_dir("image_dir/repo", clean=True), self.all_packages, console)
-        return
         
+        print repo.full_deps("yali")
+        return
+        if self.media_type == "install":
+            os.state("Preparing install image packages...")
+            repo_dir = self._get_dir("image_repo")
+            repo.make_local_repo(repo_dir, None, console)
+        
+        return
         console.state("Installing boot image packages...")
         if self.media_type == "install":
             paks = "yali"
+            console.run("pisi -D%s ar pardus-install %s")
         else:
             paks = " ".join(self.all_packages)
         console.run("pisi -D%s install %s" % (image_dir, paks))
