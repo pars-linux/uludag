@@ -104,24 +104,21 @@ class Project:
     
     def make(self, console):
         console.state("\n==> Preparing distribution media\n")
-        image_dir = self._get_dir("image_dir")
+        image_dir = self._get_dir("image_dir", clean=True)
         repo = self.get_repo(console)
         
-        print repo.full_deps("yali")
-        return
+        console.state("Preparing boot image packages...")
         if self.media_type == "install":
-            os.state("Preparing install image packages...")
-            repo_dir = self._get_dir("image_repo")
-            repo.make_local_repo(repo_dir, None, console)
-        
-        return
-        console.state("Installing boot image packages...")
-        if self.media_type == "install":
-            paks = "yali"
-            console.run("pisi -D%s ar pardus-install %s")
+            repo_dir = self._get_dir("cdroot_temp_repo", clean=True)
+            cdroot_dir = self._get_dir("cdroot_temp", clean=True)
+            yalideps = repo.full_deps("yali")
+            repo.make_local_repo(repo_dir, yalideps, console)
+            console.state("Installing install image...")
+            console.run("pisi --yes-all -D%s ar pardus-install %s" % (cdroot_dir, repo_dir + "/pisi-index.xml.bz2"))
+            console.run("pisi --yes-all --ignore-comar -D%s it yali" % cdroot_dir)
         else:
-            paks = " ".join(self.all_packages)
-        console.run("pisi -D%s install %s" % (image_dir, paks))
+            #FIXME: install all packages to cdroot_dir
+            pass
         
         console.state("Configuring boot image packages...")
         #FIXME: chroot comar, and do the config
@@ -134,7 +131,8 @@ class Project:
         
         if self.media_type == "install":
             console.state("Preparing installation packages...")
-            #FIXME: copy packages into repo/ and generate index
+            repo_dir = self._get_dir("image_dir/repo", clean=True)
+            repo.make_local_repo(repo_dir, self.all_packages, console)
         
         console.state("Making ISO image...")
         #FIXME: mkisofs, grub
