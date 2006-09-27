@@ -123,11 +123,14 @@ class Project:
         console.state("Configuring boot image packages...")
         #FIXME: chroot comar, and do the config
         
+        console.state("Cleaning up boot image...")
+        #FIXME: remove unnecessary files
+        
         console.state("Squashing boot image...")
         #FIXME: call mksquashfs
         
         console.state("Preparing cd contents...")
-        #FIXME: copy release files, boot image, kernel
+        #console.run('cp "%s" "%s"' % (os.path.join(self.release_files, "*"), image_dir))
         
         if self.media_type == "install":
             console.state("Preparing installation packages...")
@@ -135,22 +138,15 @@ class Project:
             repo.make_local_repo(repo_dir, self.all_packages, console)
         
         console.state("Making ISO image...")
-        #FIXME: mkisofs, grub
-        
+        console.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
+            "Pardus",
+            os.path.join(self.work_dir, "Pardus.iso"),
+            image_dir
+        ))
         console.state("Finished succesfully!")
 
 
 """
-        repodir = os.path.join(self.workdir, "repo") 
-        os.mkdir(repodir)
-        for path in packagelist:
-            os.link(path, os.path.join(repodir, os.path.basename(path)))
-
-        shutil.copytree(os.path.join(imgdir, "boot"), os.path.join(self.workdir, "boot"), True)
-
-        ret = self.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' %
-            (name, os.path.join(self.tmpdir, "%s.iso" % name), self.workdir))
-
     def updateStatus(self):
         if self.pak_selection and len(self.pak_selection[2]) > 0:
             self.paklabel.setText(_("(%d packages, %s size, %s installed)") % 
