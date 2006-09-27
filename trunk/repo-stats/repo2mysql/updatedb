@@ -98,7 +98,7 @@ def insert_source_deps(db, source, dep):
 
 
 def insert_license(db, name):
-    id = db.scalar_query("SELECT id FROM licenses WHERE name='%s'" % name)
+    id = db.scalar_query("SELECT id FROM tmp_licenses WHERE name='%s'" % name)
     if id:
         return id
     else:
