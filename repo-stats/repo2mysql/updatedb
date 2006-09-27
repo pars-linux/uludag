@@ -1,0 +1,295 @@
+#!/usr/bin/python
+
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+import piksemel
+import mysql
+
+from config import *
+
+def getData(node, name, default=""):
+    data = node.getTagData(name)
+    if data:
+        return data
+    return default
+
+
+def getAttr(node, name, default=""):
+    data = node.getAttribute(name)
+    if data:
+        return data
+    return default
+
+
+def clean_tables(db):
+    for i in tables:
+        db.query_com("TRUNCATE TABLE tmp_%s" % i)
+
+
+def move_tables(db):
+    for i in tables:
+        db.query_com("RENAME TABLE %s TO t_%s" % (i, i))
+        db.query_com("RENAME TABLE tmp_%s TO %s" % (i, i))
+        db.query_com("RENAME TABLE t_%s TO tmp_%s" % (i, i))
+        db.query_com("TRUNCATE TABLE tmp_%s" % i)
+
+
+def insert_packager(db, node):
+    name = node.getTagData("Name")
+    email = node.getTagData("Email")
+
+    id = db.scalar_query("SELECT id FROM tmp_packagers WHERE name='%s'" % name)
+    if id:
+        return id
+    else:
+        data = {"name": name,
+                "email": email}
+        return db.insert("tmp_packagers", data)
+
+
+def insert_type(db, name):
+    id = db.scalar_query("SELECT id FROM tmp_types WHERE name='%s'" % name)
+    if id:
+        return id
+    else:
+        data = {"name": name}
+        return db.insert("tmp_types", data)
+
+
+def insert_patch(db, file):
+    data = {"file": file}
+    return db.insert("tmp_patches", data)
+
+
+def insert_summary(db, source, node):
+    lang = getAttr(node, "xml:lang", "en")
+    summary = node.firstChild().data()
+
+    data = {"lang": lang,
+            "summary": summary,
+            "source": source}
+    return db.insert("tmp_sources_summaries", data)
+
+
+def insert_description(db, source, node):
+    lang = getAttr(node, "xml:lang", "en")
+    desc = node.firstChild().data()
+
+    data = {"lang": lang,
+            "description": desc,
+            "source": source}
+    return db.insert("tmp_sources_descriptions", data)
+
+
+def insert_source_patches(db, source, file):
+    p_id = insert_patch(db, file)
+
+    data = {"source": source,
+            "patch": p_id}
+    return db.insert("tmp_sources_patches", data)
+
+
+def insert_source_deps(db, source, dep):
+    data = {"source": source,
+            "dep": dep}
+    return db.insert("tmp_sources_deps", data)
+
+
+def insert_license(db, name):
+    id = db.scalar_query("SELECT id FROM licenses WHERE name='%s'" % name)
+    if id:
+        return id
+    else:
+        data = {"name": name}
+        return db.insert("tmp_licenses", data)
+
+
+def insert_source_license(db, source, license):
+    l_id = insert_license(db, license)
+
+    data = {"source": source,
+            "license": l_id}
+    return db.insert("tmp_sources_licenses", data)
+
+
+def insert_source(db, node):
+    packager = insert_packager(db, node.getTag("Packager"))
+
+    data = {"name": node.getTagData("Name"),
+            "homepage": getData(node, "Homepage").replace("%", "%%"),
+            "packager": packager,
+            "is_a": insert_type(db, node.getTagData("IsA")),
+            "icon": getData(node, "Icon"),
+            "archive_sum": node.getTag("Archive").getAttribute("sha1sum"),
+            "archive_url": node.getTagData("Archive").replace("%", "%%")}
+    id = db.insert("tmp_sources", data)
+
+    for n in node.tags():
+        if n.name() == "Summary":
+            insert_summary(db, id, n)
+        elif n.name() == "Description":
+            insert_description(db, id, n)
+        elif n.name() == "License":
+            insert_source_license(db, id, n.firstChild().data())
+        elif n.name() == "Patches":
+            for n2 in n.tags():
+                insert_source_patches(db, id, n2.firstChild().data())
+        elif n.name() == "BuildDependencies":
+            for n2 in n.tags():
+                insert_source_deps(db, id, n2.firstChild().data())
+
+    return id
+
+
+def insert_component(db, node):
+    id = db.scalar_query("SELECT id FROM tmp_components WHERE name='%s'" % node.getTagData("Name"))
+    if id:
+        return id
+
+    packager = 0
+    if node.getTag("Packager"):
+        packager = insert_packager(db, node.getTag("Packager"))
+
+    data = {"name": node.getTagData("Name"),
+            "packager": packager}
+    id = db.insert("tmp_components", data)
+
+    for n in node.tags():
+        if n.name() == "LocalName":
+            insert_component_localname(db, id, n)
+        elif n.name() == "Summary":
+            insert_component_summary(db, id, n)
+        elif n.name() == "Description":
+            insert_component_description(db, id, n)
+
+    return id
+
+
+def insert_component_localname(db, comp, node):
+    lang = getAttr(node, "xml:lang", "en")
+    localname = node.firstChild().data()
+
+    data = {"lang": lang,
+            "localname": localname,
+            "component": comp}
+    return db.insert("tmp_components_localnames", data)
+
+
+def insert_component_summary(db, comp, node):
+    lang = getAttr(node, "xml:lang", "en")
+    summary = node.firstChild().data()
+
+    data = {"lang": lang,
+            "summary": summary,
+            "component": comp}
+    return db.insert("tmp_components_summaries", data)
+
+
+def insert_component_description(db, comp, node):
+    lang = getAttr(node, "xml:lang", "en")
+    desc = node.firstChild().data()
+
+    data = {"lang": lang,
+            "description": desc,
+            "component": comp}
+    return db.insert("tmp_components_descriptions", data)
+
+
+def insert_source_component(db, source, component):
+    data = {"source": source,
+            "component": component}
+    return db.insert("tmp_sources_components", data)
+
+
+def insert_package_deps(db, package, dep):
+    data = {"package": package,
+            "dep": dep}
+    return db.insert("tmp_packages_deps", data)
+
+
+def insert_package(db, source, node):
+    name = node.getTagData("Name")
+
+    data = {"source": source,
+            "name": name}
+    id = db.insert("tmp_packages", data)
+
+    for n in node.tags():
+        if n.name() == "RuntimeDependencies":
+            for n2 in n.tags():
+                insert_package_deps(db, id, n2.firstChild().data())
+
+    return id
+
+
+def insert_history(db, source, node):
+    first = 1
+    for n in node.tags():
+        if n.name() == "Update":
+            release = n.getAttribute("release")
+            version = n.getTagData("Version")
+            data = {"source": source,
+                    "release": release,
+                    "version": version,
+                    "modifydate": n.getTagData("Date"),
+                    "packager": insert_packager(db, n),
+                    "comment": n.getTagData("Comment").replace("%", "%%")}
+            id = db.insert("tmp_history", data)
+
+            if first:
+                db.query_com("UPDATE tmp_sources SET `release`=%s, `version`=%s WHERE id=%s", (release, version, source))
+                first = 0
+
+
+def main():
+    try:
+        repo_path = sys.argv[1]
+    except:
+        print "Usage: %s repo-path" % sys.argv[0]
+        return 1
+
+    try:
+        db = mysql.mysql(db_host, db_name, db_user, db_pass)
+    except:
+        print "Unable to connect database."
+        return 2
+
+    packages = []
+    for root, dirs, files in os.walk(repo_path):
+        if "pspec.xml" in files:
+            packages.append(root)
+        if ".svn" in dirs:
+            dirs.remove(".svn")
+
+    if not packages:
+        print "No packages or components in %s." % sys.argv[1]
+        return 3
+
+    clean_tables(db)
+
+    for path in packages:
+        doc = piksemel.parse(path + "/pspec.xml")
+
+        id = 0
+        for node in doc.tags():
+            if node.name() == "Source":
+                id = insert_source(db, node)
+            elif node.name() == "Package":
+                insert_package(db, id, node)
+            elif node.name() == "History":
+                insert_history(db, id, node)
+
+        if os.access(path + "/../component.xml", os.F_OK):
+            doc = piksemel.parse(path + "/../component.xml")
+            c_id = insert_component(db, doc)
+            insert_source_component(db, id, c_id)
+
+    move_tables(db)
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
