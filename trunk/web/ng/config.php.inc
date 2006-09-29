@@ -12,7 +12,13 @@
     $CF["DbLogLevel"] = 4;
     $CF["UsePrefix"] =  false;
 
-    $BlogRssLink = "http://*";
+    $CF["Modules"]["BLOGS"]["BlogUrl"] = "http://**/**.xml";
+    $CF["Modules"]["BLOGS"]["Count"]   = 4;
+    $CF["Modules"]["BLOGS"]["CharLen"] = 30;
+
+    $CF["Tools"]["Pic"]["Enable"] = true;
+    $CF["Tools"]["Pic"]["Dir"]="../images/texts/";
+
     $PageTitle = "Pardus";
 
 ?>

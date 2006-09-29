@@ -10,12 +10,14 @@
         public $ReSize = 460;
         public $bgcolors = Array ('#FFFF00','#E6A6FA','#ADD8E6','#FFA07A','#9ACD32','#FFDAB9','#98FB98','#D8BFD8');
 
-        function Sud ($_RawData,$_SearchWords) {
-            $this->RawData = $_RawData;
-            $this->SearchWord  = $_SearchWords;
-            $_SearchWords = trim($_SearchWords);
-            $this->SearchWords = split(" ",$_SearchWords);
-            $this->SearchWordsLower = split(" ",mb_strtolower(strip_tags(quotemeta($_SearchWords)),$this->Encoding));
+        function Sud ($_RawData=null,$_SearchWords=null) {
+            if (!is_null($_RawData) AND !is_null($_SearchWords)) {
+                $this->RawData = $_RawData;
+                $this->SearchWord  = $_SearchWords;
+                $_SearchWords = trim($_SearchWords);
+                $this->SearchWords = split(" ",$_SearchWords);
+                $this->SearchWordsLower = split(" ",mb_strtolower(strip_tags(quotemeta($_SearchWords)),$this->Encoding));
+            }
         }
 
         function turnToEn($Data){
@@ -23,7 +25,7 @@
             $TR = Array ('İ','Ş','Ğ','Ö','Ü','Ç','ı','ş','ğ','ö','ü','ç');
             $EN = Array ('I','S','G','O','U','C','i','s','g','o','u','c');
             for ($i=0; $i<sizeof($TR); $i++)
-                $Data = mb_eregi_replace($TR[$i],$EN[$i],$Data);
+                $Data = eregi_replace($TR[$i],$EN[$i],$Data);
             return $Data;
         }
 
@@ -64,6 +66,10 @@
 
         function GetWordColor($Word) {
             return $this->bgcolors[array_search($Word,$this->SearchWordsLower)];
+        }
+
+        function GetLower ($Word) {
+            return mb_strtolower($Word,$this->Encoding);
         }
 
         function Mod1(){
