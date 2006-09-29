@@ -67,6 +67,10 @@ class Console(KTextEdit):
     def progress(self, msg=None, percent=-1):
         if percent == -1:
             if msg:
+                if self.progress_win:
+                    self.progress_win.setCaption(msg)
+                    KApplication.kApplication().processEvents()
+                    return
                 self.progress_win = KProgressDialog(
                     self.parent().parent(),
                     "lala",
@@ -78,11 +82,14 @@ class Console(KTextEdit):
                 self.progress_win.show()
                 KApplication.kApplication().processEvents()
             else:
-                self.progress_win.done(0)
+                if self.progress_win:
+                    self.progress_win.done(0)
                 self.progress_win = None
         else:
             self.progress_win.setLabel(msg)
-            self.progress_win.progressBar().setProgress(percent)
+            # otherwise KProgressDialog automatically closes itself, sigh
+            if percent < 100:
+                self.progress_win.progressBar().setProgress(percent)
             KApplication.kApplication().processEvents(500)
 
 

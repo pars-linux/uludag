@@ -14,12 +14,12 @@ import sys
 import urllib2
 import piksemel
 
-def fetch_uri(base_uri, cache_dir, filename, console):
+def fetch_uri(base_uri, cache_dir, filename, console, multiple=False):
     # Dont cache for local repos
     # Check that local file isnt older or has missing parts
     path = os.path.join(cache_dir, filename)
     if not os.path.exists(path):
-        console.progress("Fetching repository index...")
+        console.progress("Fetching '%s'..." % filename)
         conn = urllib2.urlopen(os.path.join(base_uri, filename))
         output = file(path, "w")
         total_size = int(conn.info()['Content-Length'])
@@ -29,7 +29,8 @@ def fetch_uri(base_uri, cache_dir, filename, console):
             output.write(data)
             size += len(data)
             console.progress("Downloaded %d of %d bytes" % (size, total_size), 100 * size / total_size)
-        console.progress()
+        if not multiple:
+            console.progress()
         output.close()
         conn.close()
     return path
@@ -136,8 +137,9 @@ class Repository:
     def make_local_repo(self, path, package_list, console):
         for name in package_list:
             p = self.packages[name]
-            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, console)
+            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, console, True)
             os.link(cached, os.path.join(path, os.path.basename(cached)))
+        console.progress()
         index = self.make_index(package_list)
         import bz2
         data = bz2.compress(index)
