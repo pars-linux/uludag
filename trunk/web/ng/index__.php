@@ -13,4 +13,3 @@
         <?=$Navi?>
     </div>
     <div id="page">
-

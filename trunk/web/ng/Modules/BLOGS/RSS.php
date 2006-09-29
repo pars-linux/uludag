@@ -28,7 +28,7 @@
             if ($this->RssContent) {
                 $i=0;
                 foreach($this->RssContent->channel->item as $blog) {
-                    $Return.= "<li><a target='_blank' href='".$blog->link."'>".$this->utf8_substr($blog->title,0,$CharLen)."..</a><br>";
+                    $Return.= "<li><a target='_blank' href='".$blog->link."'>".$this->utf8_substr($blog->title,0,$CharLen)."..</a></li>";
                     if ($i>=$Count) break; else $i++;
                 }
             }

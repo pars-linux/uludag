@@ -28,7 +28,7 @@
         $Mods = explode (",",trim($Mod,","));
         foreach ($Mods as $MD){
                 $TP=$$MD;
-                $ReturnValue["Body"].=$TP["Body"];
+                $ReturnValue["Body"].=$TP["Body"]."<br />";
                 $ReturnValue["Head"].=$TP["Head"];
                 $ReturnValue["Onload"].=$TP["Onload"];
             }

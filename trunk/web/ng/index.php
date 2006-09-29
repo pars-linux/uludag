@@ -29,12 +29,13 @@
     <?php
         if(isset($Page)){
             include_once('index__.php');
-            echo "<div id='content'>".$Page[0]["Content"]."</div>";
+            if ($Modules<>"") echo "<div id='content'>"; else echo "<div id='fullpage'>";
+            echo $Page[0]["Content"]."</div>";
             if ($Modules<>"")
                 echo "\n<div id='modules'>".$Modules['Body']."</div>";
             echo "</div>";
         }
-        else 
+        else
             include ('index_.php');
     ?>
 

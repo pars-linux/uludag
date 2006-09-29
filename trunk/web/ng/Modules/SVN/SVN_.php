@@ -1,7 +1,7 @@
 <?php
 
     #SVN Module _BEGIN_
-    $SVN["Body"]="<img src='images/newdesign/head-svn-degisiklik.png'>
+    $SVN["Body"]="<div class='img_header'><img src='images/texts/son_svn_degisiklikleri.gif'></div>
                     <div id='selectRepo'> 
                         <b> Depo : </b>
                             <select onChange='GetLogs(this.value,\"SVNLogs\");'> 
