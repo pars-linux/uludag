@@ -9,16 +9,13 @@
 
             $CR = __($_GET["page"]);
             if ($CR[strlen($CR)-1]=="/") $CR=rtrim($CR,"/");
-
             $ER = explode("/",$CR);
-            if (!array_search($CR,$KnownPages))
-                $Navi = WRONG_LINK." : ".$CR;
-            else {
+            if (false!== array_search($CR,$KnownPages)) {
                 $Page = $Pardus->GetPage($CR);
                 $Navi = $Pardus->BuildNavi($ER,$Page[0]["Title"]);
                 #$Navi = $Page[0]["Title"];
-            }
-
+            } else 
+                $Navi = WRONG_LINK." : ".$CR;
             # Predefined SideBar Modules, lets start
             if ($Page[0]["Modules"]<>"") {
                 include_once("MODS.php");
