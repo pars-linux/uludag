@@ -115,18 +115,19 @@ a {
 #page {
     clear:both;
     padding-top:4px;
+    position:relative;
 }
 
 #content,#fullpage {
     float:left;
-    width:95%;
+    width:94%;
     padding:5px;
     padding-top:0px;
     padding-left:30px;
 }
 
 #fullpage {
-    width:95%;
+    position:relative;
 }
 
 #content {
@@ -212,7 +213,11 @@ li {
     float:right;
 }
 
-.molist {
-    margin-bottom:4px;
-    border-bottom:1px dotted #EEE;
+.moduleser {
+    float:right;
+    width:230px;
+    position:realtive;
+    background-color:#FFF;
+    padding-left:10px;
+    border-left:1px solid #EEE;
 }
