@@ -140,13 +140,13 @@
                 return $this->MakeArray($Result,$Type);
             }
 
-            function FindRecord($Table,$Field,$Value,$ReturnValue='ID',$Ext='',$Like=true) {
+            function FindRecord($Table,$Field,$Value,$ReturnValue='ID',$Ext='',$Like=true,$Type="Array") {
                 $Table=$this->Pref_($Table);
                 $Ext == "" ? $AddSql = "": $AddSql = $Ext;
                 $Like== true ? $SQ = " LIKE '%$Value%' " : $SQ = " = '$Value' ";
                 $Sql = "SELECT $ReturnValue FROM $Table WHERE $Field".$SQ.$AddSql;
                 $Result = $this->ExecuteQuery($Sql);
-                return $this->MakeArray($Result);
+                return $this->MakeArray($Result,$Type);
             }
 
             function MakeArray($Raw,$Type="Array") {
@@ -217,6 +217,15 @@
                 return $Results;
             else
                 return $this->DBC->GetRecord("Pages","Title,NiceTitle,Content","","WHERE (Content LIKE '%$Que%') OR (Title LIKE '%$Que%')");
+        }
+
+        function BuildNavi($ExNice,$LastTitle) {
+            foreach ($ExNice as $NiceTitle){
+                $Act.="/".$NiceTitle;$Act=ltrim($Act,"/");
+                $tmp = $this->DBC->FindRecord("Pages","NiceTitle",$Act,"Title,NiceTitle","",false);
+                $Navi.="<a href='?page=".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a> » ";
+            }
+            return rtrim($Navi," » ");
         }
     }
 

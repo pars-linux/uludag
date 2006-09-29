@@ -29,9 +29,9 @@
     <?php
         if(isset($Page)){
             include_once('index__.php');
-            echo $Page[0]["Content"];
-            #if ($Modules<>"")
-            #    echo "\n<td id='kucular'>".$Modules['Body']."</td>";
+            echo "<div id='content'>".$Page[0]["Content"]."</div>";
+            if ($Modules<>"")
+                echo "\n<div id='modules'>".$Modules['Body']."</div>";
             echo "</div>";
         }
         else 
@@ -40,5 +40,6 @@
 
     <div id="footnote"><p><?=PARDUS_REGISTER?></p></div>
 </div>
+<?php $Vezir->ShowLogs();?>
 </body>
 </html>
