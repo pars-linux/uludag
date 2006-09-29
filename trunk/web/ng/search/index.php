@@ -36,10 +36,9 @@
 <head>
     <title><?=PAGE_TITLE?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="../style.css" rel="stylesheet" type="text/css">
-
-    <script>
-
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" >
+    <!--
         allPageTags = new Array();
         colorValues = new Array();
         contact     = 1;
@@ -85,8 +84,8 @@
                 contact=1;
             }
         }
+    -->
     </script>
-
 </head>
 
 <body onload="init();">

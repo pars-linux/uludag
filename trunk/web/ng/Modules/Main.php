@@ -15,7 +15,8 @@
                 $Navi = WRONG_LINK." : ".$CR;
             else {
                 $Page = $Pardus->GetPage($CR);
-                $Navi = $Page[0]["Title"];
+                $Navi = $Pardus->BuildNavi($ER,$Page[0]["Title"]);
+                #$Navi = $Page[0]["Title"];
             }
 
             # Predefined SideBar Modules, lets start

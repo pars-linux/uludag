@@ -12,5 +12,5 @@
         <a href="?"><?=MAIN_PAGE?></a> » 
         <?=$Navi?>
     </div>
-    <div id="fullpage">
+    <div id="page">
 
