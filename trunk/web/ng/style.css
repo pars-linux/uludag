@@ -140,8 +140,14 @@ a {
     padding-top:4px;
 }
 
+/*IE*/
 li {
-    /* list-style-image:url('images/bullet-blue.png');*/
+     list-style-image:url('images/bullet-blue.png');
+     margin-right:5px;
+}
+
+/*Others*/
+html>body li {
     background-image:url('images/bullet-blue.png');
     background-repeat:no-repeat;
     background-position:0px 2px;
@@ -150,6 +156,7 @@ li {
     list-style:none;
 }
 
+
 .search li {
     border-bottom:1px solid #98C2DC;
 }
@@ -157,12 +164,12 @@ li {
 .blue #modules li {
     border-bottom:1px solid #98C2DC;
     margin-top:4px;
-    list-style:none;
 }
 
 #modules ul {
-    padding-left:0;
+    padding-left:0px;
 }
+
 #modules {
     float:right;
     width:260px;
@@ -218,6 +225,10 @@ li {
     width:230px;
     position:realtive;
     background-color:#FFF;
-    padding-left:10px;
     border-left:1px solid #EEE;
+    padding-left:10px;
+}
+
+.moduleser ul {
+    padding-left:0;
 }
