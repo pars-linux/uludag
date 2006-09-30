@@ -232,3 +232,28 @@ html>body li {
 .moduleser ul {
     padding-left:0;
 }
+
+.svnlink {
+    background-image:url('images/newdesign/svnlink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.maillink {
+    background-image:url('images/newdesign/maillink.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
+.pdflink {
+    background-image:url('images/newdesign/pdf.png');
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    padding-left:20px;
+    padding-right:1em;
+}
+
