@@ -9,6 +9,7 @@
                                 <option value='uludag'>Uludağ</option>
                             </select>
                     </div>
+                    <br />
                     <div id='SVNLogs'></div>";
     $SVN["Head"]  ='<script src="Modules/SVN/SVN.js" type="text/javascript"></script>';
     $SVN["Onload"]='GetLogs("pardus","SVNLogs");';

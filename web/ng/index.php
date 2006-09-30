@@ -35,7 +35,7 @@
             }
             echo $Page[0]["Content"];
             echo "</div>";
-                        echo "</div>";
+            echo "</div>";
         }
         else
             include ('index_.php');
