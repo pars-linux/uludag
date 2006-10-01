@@ -1,4 +1,5 @@
+Options +Indexes
 RewriteEngine On
+RewriteBase /
 RewriteRule ^Node/(.*) /index.php?page=$1
 RewriteRule ^/ /index.php
-
