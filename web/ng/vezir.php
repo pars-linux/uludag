@@ -225,7 +225,7 @@
                 $Act.="/".$NiceTitle;$Act=ltrim($Act,"/");
                 $tmp = $this->DBC->FindRecord("Pages","NiceTitle",$Act,"Title,NiceTitle","",false);
                 $Navi.="<li><a href='/Node/".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a>";
-                if ($tmp=$this->DBC->FindRecord("Pages","NiceTitle",$Act."/","Title,NiceTitle")) {
+                if ($tmp=$this->DBC->GetRecord("Pages","Title,NiceTitle","","WHERE NiceTitle NOT RLIKE '^".$Act."/(.*)/' AND NiceTitle RLIKE '^".$Act."/(.*)'")) {
                     $Navi.="<ul>";
                     foreach ($tmp as $submenu)
                         $Navi.="<li><a href='/Node/".$submenu["NiceTitle"]."'>".$submenu["Title"]."</a></li>";
