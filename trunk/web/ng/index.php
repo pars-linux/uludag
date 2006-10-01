@@ -17,10 +17,10 @@
 <head>
     <title><?=PAGE_TITLE?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="scripts/prototype.js" type="text/javascript"></script>
-    <script src="scripts/scriptaculous.js" type="text/javascript"></script>
-    <script src="scripts/main.js" type="text/javascript"></script>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <script src="/scripts/prototype.js" type="text/javascript"></script>
+    <script src="/scripts/scriptaculous.js" type="text/javascript"></script>
+    <script src="/scripts/main.js" type="text/javascript"></script>
     <?=$Modules['Head']?>
 </head>
 <body onload='<?=$Modules['Onload']?>' >
