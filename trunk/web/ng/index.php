@@ -25,7 +25,6 @@
 </head>
 <body onload='<?=$Modules['Onload']?>' >
     <div id="container">
-
     <?php
         if(isset($Page)){
             include_once('index__.php');

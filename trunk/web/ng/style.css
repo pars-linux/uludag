@@ -178,7 +178,6 @@ html>body li {
 
 #navi {
     clear:both;
-    padding:4px;
     padding-left:30px;
     background-color:#DDD;
     border-bottom:1px solid #CCC;
@@ -255,5 +254,105 @@ html>body li {
     background-position: 0px 0px;
     padding-left:20px;
     padding-right:1em;
+}
+
+/*Menu*/
+ul.nav, .nav ul{
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    list-style-type: none;
+    display: inline;
+}
+
+ul.nav{
+    display: table;
+}
+
+ul.nav>span {
+    padding-right:7px;
+    padding-left:5px;
+    text-weight:bold;
+}
+.nav li {
+    list-style:none;
+    background-image:none;
+}
+
+ul.block{
+    width: 100%;
+    table-layout: fixed;
+}
+
+ul.nav>li{
+    display: table-cell;
+    position: relative;
+    padding-right:2px;
+    padding-left:2px;
+}
+
+/*
+ul.nav>li:after {
+content:"»";
+}
+*/
+
+/*
+ul.nav>li:hover{
+padding-right: 1px;
+}*/
+
+ul.nav li>ul, ul.nav li>ul>li>ul {
+    display: none;
+    position: absolute;
+    max-width: 40ex;
+    margin-left: -6px;
+    margin-top: 0x;
+}
+
+ul.nav li>ul>li>ul {
+    margin-left:40px;
+    margin-top:-10px;
+}
+
+ul.nav li:hover>ul{
+    display : block;
+    padding-top:3px;
+    background-color:#DDD;
+    /* alpha(opacity=90);-moz-opacity:.90;opacity:.90; */
+    z-index:99;
+    border: 1px solid #CCC;
+    border-top:1px solid #DDD;
+}
+
+ul.nav li:hover>ul>li{
+    padding-left:5px;
+    margin-right:0px;
+    padding-right:5px;
+}
+
+.nav ul li a{
+    display: block;
+    padding: 2px 2px;
+}
+
+/*Menu styles*/
+
+ul.nav, .nav ul, .nav ul li a{
+    color:#156FA5;
+}
+
+ul.nav li:hover, .nav ul li a:hover{
+    background-color: #369;
+    color: #fff;
+}
+
+ul.nav li:active, .nav ul li a:active{
+    background-color: #036;
+    color: #fff;
+}
+
+.nav a{
+    text-decoration: none;
 }
 

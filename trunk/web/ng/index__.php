@@ -9,7 +9,6 @@
     </div>
 
     <div id="navi">
-        <a href="/"><?=MAIN_PAGE?></a> » 
-        <?=$Navi?>
+       <?=$Navi?>
     </div>
     <div id="page">

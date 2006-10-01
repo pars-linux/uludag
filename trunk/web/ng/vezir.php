@@ -220,12 +220,20 @@
         }
 
         function BuildNavi($ExNice,$LastTitle) {
+            $Navi.="<ul class='nav'><li><a href='/'>".MAIN_PAGE."</a></li><span>»</span>";
             foreach ($ExNice as $NiceTitle){
                 $Act.="/".$NiceTitle;$Act=ltrim($Act,"/");
                 $tmp = $this->DBC->FindRecord("Pages","NiceTitle",$Act,"Title,NiceTitle","",false);
-                $Navi.="<a href='/Node/".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a> » ";
+                $Navi.="<li><a href='/Node/".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a>";
+                if ($tmp=$this->DBC->FindRecord("Pages","NiceTitle",$Act."/","Title,NiceTitle")) {
+                    $Navi.="<ul>";
+                    foreach ($tmp as $submenu)
+                        $Navi.="<li><a href='/Node/".$submenu["NiceTitle"]."'>".$submenu["Title"]."</a></li>";
+                    $Navi.="</ul>";
+                }
+                $Navi.="</li><span>»</span>";
             }
-            return rtrim($Navi," » ");
+            return rtrim($Navi,"<span>»</span>")."</ul>";
         }
     }
 
