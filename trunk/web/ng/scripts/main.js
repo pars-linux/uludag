@@ -15,3 +15,20 @@
         function get_url(linker,diver) {
             var AjaxP = new Ajax.Request(linker,{method:'get', parameters:'', onComplete: function(response,diver){$(diver).innerHTML = response.responseText;}});
         }
+
+        function startList() {
+        //code only for IE
+            //if(!document.body.currentStyle) return;
+            var subs = document.getElementsByName('pi');
+            for(var i=0; i<subs.length; i++) {
+                var li = subs[i].parentNode;
+                if(li && li.lastChild.style) {
+                    li.onmouseover = function() {
+                        this.lastChild.style.visibility = 'visible';
+                    }
+                    li.onmouseout = function() {
+                        this.lastChild.style.visibility = 'hidden';
+                    }
+                }
+            }
+        }

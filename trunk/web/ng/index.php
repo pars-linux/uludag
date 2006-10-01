@@ -23,7 +23,7 @@
     <script src="/scripts/main.js" type="text/javascript"></script>
     <?=$Modules['Head']?>
 </head>
-<body onload='<?=$Modules['Onload']?>' >
+<body onload='startList();<?=$Modules['Onload']?>' >
     <div id="container">
     <?php
         if(isset($Page)){
@@ -32,9 +32,7 @@
             if ($Modules<>""){
                 echo "\n<div class='moduleser'>".$Modules['Body']."</div>";
             }
-            echo $Page[0]["Content"];
-            echo "</div>";
-            echo "</div>";
+            echo $Page[0]["Content"]."</div></div>";
         }
         else
             include ('index_.php');
