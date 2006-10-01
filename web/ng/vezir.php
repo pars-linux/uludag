@@ -223,7 +223,7 @@
             foreach ($ExNice as $NiceTitle){
                 $Act.="/".$NiceTitle;$Act=ltrim($Act,"/");
                 $tmp = $this->DBC->FindRecord("Pages","NiceTitle",$Act,"Title,NiceTitle","",false);
-                $Navi.="<a href='?page=".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a> » ";
+                $Navi.="<a href='/Node/".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a> » ";
             }
             return rtrim($Navi," » ");
         }

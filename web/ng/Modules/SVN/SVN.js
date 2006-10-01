@@ -3,7 +3,7 @@
             $(Obj).className='working';
             $(Obj).innerHTML="";
             var BaseLink= "http://svn.pardus.org.tr/viewcvs?view=rev&root=%22"+Repo+"%22&revision=";
-            var url = 'Modules/SVN/SVN.php?Repo='+Repo;
+            var url = '/Modules/SVN/SVN.php?Repo='+Repo;
             var ajax = new Ajax.Updater(
                 '',
                 url,
