@@ -15,6 +15,7 @@
 import os
 import sys
 import smtplib
+import socket
 import xml.dom.minidom as mdom
 
 sys.path.append(".")
@@ -68,6 +69,9 @@ def send(message, pspec = '', type = ''):
                                  'pspec'        : pspec,
                                  'type'         : type,
                                  'packagename'  : packagename}
+
+    # timeout value in seconds
+    socket.setdefaulttimeout(10)
 
     try:
         session = smtplib.SMTP(config.smtpServer)
