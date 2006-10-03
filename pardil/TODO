@@ -1,0 +1,59 @@
+Final
+=====
+
++ Üyelik sistemi
+  + Kayıt sayfası
+  + Kullanıcı girişi
+  + E-posta ile aktivasyon
+  + Unutulan şifreyi değiştirme
+  - Şifre değiştirme
+  - Üyelik bilgilerini değiştirme
+
+/ Öneri sistemi
+  + Öneri ekleme
+  + Öneri düzenleme
+  + Katı öneri formatı kuralları
+  + Öneriye yorum ekleme
+  / Arşiv ve arama sayfası
+  - Önerilere resim/yama iliştirme
+  ? Bekleyen öneriler
+    - Bekleyen önerileri izleyebilme
+    - Önerileri oylama
+    - Öneriyi gönderen kişinin, öneri içeriğini değiştirebilmesine imkan verme
+  ? Öneri takibi
+  + Öneri ekleme sayfasına önizleme desteği
+  / Daha fazla markup! 
+    + Başlıklar (1 Seviye)
+    + Paragraflar
+    + Alıntılar (Blockquote)
+    + Kod bloğu
+    + Listeler (Sıralı, sırasız)
+    + Referanslar
+    - Paragraf içi formatlama
+    - Resim
+    ? Tablolar
+
++ Yönetim Arabirimi
+  - Kullanıcı yönetimi
+    - Hesap kapama
+  + Grup yönetimi
+  + Erişim kodu yönetimi
+  + Erişim hakları yönetimi
+  + Kullanıcı - Grup yönetimi
+  ? Öneri yönetimi
+  + Yorum yönetimi
+  + Öneri bakıcısı yönetimi
+  + Haber yönetimi
+
+/ Arayüz
+  / CSS değişiklikleri
+  / Hata mesajları
+  - "Yukarıdaki resimde ne yazdığını söyle de robot olmadığını anlayayım" özelliği
+
+
+------------------------------------------------
++ = Özellik eklendi.
+/ = Çalışma sürüyor.
+? = Özelliğin eklenip eklenmeyeceği belli değil.
+- = Henüz bir çalışma yok.
+------------------------------------------------

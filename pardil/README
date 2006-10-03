@@ -1,0 +1,20 @@
+Pardus İyileştirme Listesi
+==========================
+
+Pardil, Ulusal Dağıtım projesi ile ilgili önerileri bir arada tutmak, 
+geliştirici ve kullanıcıların değerli fikirlerinin e-posta listelerinde 
+kaybolmasını engellemek ve fikirleri hayata geçirmek isteyen 
+geliştiriciler için bir ortam hazırlamak amacıyla hazırlanan bir web
+uygulamasıdır.
+
+
+Gerekli Yazılımlar
+------------------
+
+ * mysql-4.1+
+
+Gerekli Python Modülleri
+------------------------
+
+ * mysql-python-1.2.0
+ * cheetah-0.9.17

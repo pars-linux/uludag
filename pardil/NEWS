@@ -1,0 +1,16 @@
+2005-07-30
+==========
+
+Yapılacak işler listesinin yarıya inmesiyle, haftanın bir gününü Pardil'e ayırmaya karar verdim.
+
+"Psmillah" - Anonim
+
+2005-08-09
+==========
+Mod_Python'un saçmalamaya devam etmesi, CGI'ya geçmemizi sağladı.
+
+
+2005-08-26
+==========
+Sayfalarda kullanılan/kullanılabilecek ortak kodlar PYONWEB modülü altında toplandı.
+Artık, yeni uygulama eklemek eskisinden daha az zahmetli olacak.

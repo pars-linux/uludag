@@ -1,0 +1,169 @@
+body {
+  margin: 0em;
+  padding: 0em;
+  font-size: 11px;
+}
+
+* {
+    font-family: Bitstream Vera Sans, Verdana, Tahoma, Sans;
+}
+
+#container {
+  padding: 0em;
+  margin: 0em;
+}
+
+#header {
+  padding: 1em;
+  background-color: #b22400;
+  color: #fff;
+  margin-bottom: 2em;
+}
+
+#menu {
+  float: left;
+  width: 17em;
+  padding: 1em;
+}
+
+#content {
+  padding-left: 19em;
+}
+
+#footer {
+  clear: left;
+  margin-top: 2em;
+  background-color: #b22400;
+  padding: 5px;
+  color: #fff;
+}
+
+/* #header */
+#header h1 {
+  margin: 0em;
+  height: 33px;
+  padding-left: 130px;
+  background: url(images/uludag.png) no-repeat 0% 0%;
+  text-align: right;
+  color: #fff;
+}
+
+/* menu */
+#menu h2 {
+  font-size: 1.1em;
+}
+#menu ul {
+  padding-left: 2em;
+}
+#menu a {
+  color: #b22400;
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+}
+#menu a:hover {
+  border-bottom: 1px solid #b22400;
+}
+
+/* content */
+#content a {
+  color: #b22400;
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+}
+#content a:hover {
+  border-bottom: 1px solid #b22400;
+}
+
+/* footer */
+#footer a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dotted #aaa;
+}
+#footer a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+/* news */
+.news {
+  min-height: 100px;
+}
+.news .logo {
+  float: left;
+}
+.news .content {
+  padding-left: 80px;
+}
+
+/* table */
+
+table th {
+  text-align: left;
+}
+tr>th {
+  background-color: #ddd;
+}
+tr.odd {
+}
+tr.even {
+  background-color: #eee;
+}
+
+/* form */
+form>fieldset {
+  margin: 0em;
+  padding: 1em 0em;
+  border: 0px;
+  border-top: 1px solid #aaa;
+}
+form>fieldset>legend {
+  margin: 0em;
+  padding: 0em;
+  font-weight: bold;
+}
+form>fieldset>div>label, form>fieldset>div>input,
+form>fieldset>div>div, form>fieldset>div>select,
+form>fieldset>div>textarea {
+  float: left;
+}
+form>fieldset>div>label {
+  width: 12em;
+  line-height: 1.7em;
+  clear: left;
+}
+form>fieldset>div>input {
+  margin-bottom: 0.5em;
+}
+input, select, textarea, select {
+  border: 1px solid #aaa;
+  font-family: courier new, monospace;
+}
+.error {
+  border: 1px solid #f00;
+}
+
+.seperator {
+  height: 1em;
+  border-top: 1px solid #ddd;
+  margin-top: 2em;
+}
+
+
+pre.code {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    font-family: courier new, monospace;
+    margin-right: 1em;
+    padding: 1em;
+}
+pre code, pre {
+    font-family: courier new, monospace;
+}
+
+.r2 {
+    min-height: 2em;
+}
+
+.widetext {
+    width: 80%;
+}
