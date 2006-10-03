@@ -670,7 +670,12 @@ You can't improve what you can't measure.
 \end_layout
 
 \begin_layout Standard
-***buraya bootchart girecek **
+\begin_inset Graphics
+	filename bootchart.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
