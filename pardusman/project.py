@@ -96,7 +96,7 @@ class Project:
             os.makedirs(dirname)
         return dirname
     
-    def get_repo(self, console):
+    def get_repo(self, console=None):
         cache_dir = self._get_dir("repo_cache")
         repo = packages.Repository(self.repo_uri, cache_dir)
         repo.parse_index(console)
