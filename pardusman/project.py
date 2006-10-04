@@ -102,48 +102,17 @@ class Project:
         repo.parse_index(console)
         return repo
     
-    def make(self, console):
-        console.state("\n==> Preparing distribution media\n")
-        image_dir = self._get_dir("image_dir", clean=True)
-        repo = self.get_repo(console)
-        
-        console.state("Preparing boot image packages...")
-        if self.media_type == "install":
-            repo_dir = self._get_dir("cdroot_temp_repo", clean=True)
-            cdroot_dir = self._get_dir("cdroot_temp", clean=True)
-            yalideps = repo.full_deps("yali")
-            repo.make_local_repo(repo_dir, yalideps, console)
-            console.state("Installing install image...")
-            console.run("pisi --yes-all -D%s ar pardus-install %s" % (cdroot_dir, repo_dir + "/pisi-index.xml.bz2"))
-            console.run("pisi --yes-all --ignore-comar -D%s it yali" % cdroot_dir)
-        else:
-            #FIXME: install all packages to cdroot_dir
-            pass
-        
-        console.state("Configuring boot image packages...")
-        #FIXME: chroot comar, and do the config
-        
-        console.state("Cleaning up boot image...")
-        #FIXME: remove unnecessary files
-        
-        console.state("Squashing boot image...")
-        #FIXME: call mksquashfs
-        
-        console.state("Preparing cd contents...")
-        #console.run('cp "%s" "%s"' % (os.path.join(self.release_files, "*"), image_dir))
-        
-        if self.media_type == "install":
-            console.state("Preparing installation packages...")
-            repo_dir = self._get_dir("image_dir/repo", clean=True)
-            repo.make_local_repo(repo_dir, self.all_packages, console)
-        
-        console.state("Making ISO image...")
-        console.run('mkisofs -J -joliet-long -R -l -V "%s" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
-            "Pardus",
-            os.path.join(self.work_dir, "Pardus.iso"),
-            image_dir
-        ))
-        console.state("Finished succesfully!")
+    def image_repo_dir(self):
+        pass
+    
+    def image_dir(self):
+        pass
+    
+    def install_repo_dir(self):
+        pass
+    
+    def iso_dir(self):
+        pass
 
 
 """

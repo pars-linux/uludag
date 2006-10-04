@@ -125,36 +125,11 @@ class ProjectWindow(KMainWindow):
             _("Pardusman says:\n\n  Teh winnars dont use teh drugs!  \n ")
         )
         
-        vb2 = QVBox(hb)
-        vb2.setSpacing(3)
-        
-        box = QWidget(vb2)
+        box = QWidget(hb)
         grid = QGridLayout(box, 5, 2, 6, 6)
         
-        lab = QLabel(_("Repository:"), box)
-        grid.addWidget(lab, 0, 0, Qt.AlignRight)
-        self.repo_uri = QLineEdit(box)
-        QToolTip.add(
-            self.repo_uri,
-            _("PiSi package repository of the distribution.\nMust be a URL pointing to the repository index\nfile (i.e. pisi-index.xml.bz2).")
-        )
-        grid.addWidget(self.repo_uri, 0, 1)
-        
-        lab = QLabel(_("Release files:"), box)
-        grid.addWidget(lab, 1, 0, Qt.AlignRight)
-        hb2 = QHBox(box)
-        hb2.setSpacing(3)
-        self.release_files = QLineEdit(hb2)
-        QToolTip.add(
-            self.release_files,
-            _("Content of this folder is copied\nonto the root folder of CD.")
-        )
-        but = QPushButton("...", hb2)
-        self.connect(but, SIGNAL("clicked()"), self.selectFiles)
-        grid.addWidget(hb2, 1, 1)
-        
         lab = QLabel(_("Work folder:"), box)
-        grid.addWidget(lab, 2, 0, Qt.AlignRight)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
         hb2 = QHBox(box)
         hb2.setSpacing(3)
         self.work_dir = QLineEdit(hb2)
@@ -164,6 +139,28 @@ class ProjectWindow(KMainWindow):
         )
         but = QPushButton("...", hb2)
         self.connect(but, SIGNAL("clicked()"), self.selectWorkdir)
+        grid.addWidget(hb2, 0, 1)
+        
+        lab = QLabel(_("Repository:"), box)
+        grid.addWidget(lab, 1, 0, Qt.AlignRight)
+        self.repo_uri = QLineEdit(box)
+        QToolTip.add(
+            self.repo_uri,
+            _("PiSi package repository of the distribution.\nMust be a URL pointing to the repository index\nfile (i.e. pisi-index.xml.bz2).")
+        )
+        grid.addWidget(self.repo_uri, 1, 1)
+        
+        lab = QLabel(_("Release files:"), box)
+        grid.addWidget(lab, 2, 0, Qt.AlignRight)
+        hb2 = QHBox(box)
+        hb2.setSpacing(3)
+        self.release_files = QLineEdit(hb2)
+        QToolTip.add(
+            self.release_files,
+            _("Content of this folder is copied\nonto the root folder of CD.")
+        )
+        but = QPushButton("...", hb2)
+        self.connect(but, SIGNAL("clicked()"), self.selectFiles)
         grid.addWidget(hb2, 2, 1)
         
         lab = QLabel(_("Media type:"), box)
@@ -182,7 +179,7 @@ class ProjectWindow(KMainWindow):
         self.media_size.insertItem(getIconPixmap("hdd_unmount"), _("Custom size"), 3)
         grid.addWidget(self.media_size, 4, 1)
         
-        bar = QToolBar("lala", None, vb2)
+        bar = QToolBar("lala", None, vb)
         self.toolbar = bar
         QLabel(" ", bar)
         but = QToolButton(getIconSet("package"), _("Select packages"), "lala", self.browse, bar)
