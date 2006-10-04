@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PLSA 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-18 11:35+0300\n"
+"POT-Creation-Date: 2006-10-04 15:35+0300\n"
 "PO-Revision-Date: 2006-09-13 12:06+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -51,88 +51,114 @@ msgstr "Özet"
 msgid "Description"
 msgstr "Açıklama"
 
-#: plsa-cli:36
+#: plsa-cli:41
 msgid "sign advisory with KEY"
 msgstr "bildiriyi ANAHTAR ile imzala"
 
-#: plsa-cli:36
+#: plsa-cli:41
 msgid "KEY"
 msgstr "ANAHTAR"
 
-#: plsa-cli:38
+#: plsa-cli:43
 msgid "use PASS as passphrase"
-msgstr "parola olarak PAR kullan"
+msgstr "parola olarak PAROLA kullan"
 
-#: plsa-cli:38
+#: plsa-cli:43 plsa-cli:50
 msgid "PASS"
-msgstr "PAR"
+msgstr "PAROLA"
 
-#: plsa-cli:40
+#: plsa-cli:46
+msgid "send advisory to MAIL1,MAIL2,..."
+msgstr "bildiriyi ADRES1,ADRES2 adreslerine gönderir"
+
+#: plsa-cli:46
+msgid "MAIL1,MAIL2"
+msgstr "ADRES1,ADRES2"
+
+#: plsa-cli:48
+msgid "send mail using account MAIL"
+msgstr "bildirileri POSTA hesabını kullanarak gönderir"
+
+#: plsa-cli:48
+msgid "MAIL"
+msgstr "POSTA"
+
+#: plsa-cli:50
+msgid "use PASS to connect smtp server"
+msgstr "e-posta suncusuna bağlanırken PAROLA kullanılır"
+
+#: plsa-cli:53
 #, python-format
 msgid "generate advisory for locale LANG (default: %s)"
 msgstr "bildiriyi DIL dilinde oluştur (varsayılan: %s)"
 
-#: plsa-cli:40
+#: plsa-cli:53
 msgid "LANG"
 msgstr "DIL"
 
-#: plsa-cli:42
+#: plsa-cli:56
 msgid "save advisory text to FILE"
 msgstr "bildiri metnini DOSYA içine yaz"
 
-#: plsa-cli:42
+#: plsa-cli:56
 msgid "FILE"
 msgstr "DOSYA"
 
-#: plsa-cli:53
+#: plsa-cli:67
 #, python-format
 msgid "'%s' locale is not supported."
 msgstr "'%s' yereli desteklenmemektedir."
 
-#: plsa-cli:58
+#: plsa-cli:72
 #, python-format
 msgid "Unable to read %s."
 msgstr "%s dosyası okunamadı."
 
-#: plsa-cli:66
+#: plsa-cli:80
 msgid "XML file has errors:"
 msgstr "XML dosyası hatalı:"
 
-#: plsa-cli:78
+#: plsa-cli:92
 msgid "Key not found in GnuPG database."
 msgstr "Anahtar GnuPG veritabanında bulunamadı."
 
-#: plsa-cli:79
+#: plsa-cli:93
 msgid "Available keys are:"
 msgstr "Mevcut anahtarlar:"
 
-#: plsa-cli:85
-msgid "Passphrase: "
-msgstr "Parola: "
+#: plsa-cli:99
+#, python-format
+msgid "Passphrase for key %s: "
+msgstr "%s anahtarı için parola: "
 
-#: plsa-cli:88
+#: plsa-cli:102
 msgid "Invalid passphrase."
 msgstr "Geçersiz parola."
 
-#: plsa-cli:97
+#: plsa-cli:107
+msgid "Source mail address required."
+msgstr "Kaynak e-posta adresi gerekli."
+
+#: plsa-cli:113
+msgid "Are you sure you want to send this advisory? (yes/no)"
+msgstr ""
+"Bildiriyi bu haliyle göndermek istediğinizden emin misiniz? (evet/hayır)"
+
+#: plsa-cli:119
+#, python-format
+msgid "Password for %s: "
+msgstr "%s için parola: "
+
+#: plsa-cli:134
+msgid "Unable to send mail:"
+msgstr "E-posta gönderilemedi:"
+
+#: plsa-cli:136
+#, python-format
+msgid "Mailed advisory to: %s"
+msgstr "Bildiri metni %s adreslerine gönderildi."
+
+#: plsa-cli:143
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr "Bildiri metni %s dosyasına yazılamadı"
-
-#~ msgid "Title"
-#~ msgstr "Başlık"
-
-#~ msgid "These packages should be upgraded to specified releases:"
-#~ msgstr "Aşağıdaki paketler belirtilen sürümlere yükseltilmelidir:"
-
-#~ msgid "These packages should be removed from system:"
-#~ msgstr "Aşağıdaki paketler sistemden kaldırılmalıdır:"
-
-#~ msgid "References"
-#~ msgstr "Referenslar"
-
-#~ msgid "PLSA doesn't have required translation file."
-#~ msgstr "PLSA gerekli çeviri dosyasına sahip değil."
-
-#~ msgid "XML has missing tags for locale '%s': %s"
-#~ msgstr "XML'de '%s' dili etiketleri eksik: %s"
