@@ -13,7 +13,6 @@ import os
 import sys
 import select
 import subprocess
-import piksemel
 from qt import *
 from kdecore import *
 from kdeui import *
