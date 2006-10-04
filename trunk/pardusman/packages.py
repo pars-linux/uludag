@@ -14,12 +14,13 @@ import sys
 import urllib2
 import piksemel
 
-def fetch_uri(base_uri, cache_dir, filename, console, multiple=False):
+def fetch_uri(base_uri, cache_dir, filename, console=None):
     # Dont cache for local repos
     # Check that local file isnt older or has missing parts
     path = os.path.join(cache_dir, filename)
     if not os.path.exists(path):
-        console.progress("Fetching '%s'..." % filename)
+        if console:
+            console.started("Fetching '%s'..." % filename)
         conn = urllib2.urlopen(os.path.join(base_uri, filename))
         output = file(path, "w")
         total_size = int(conn.info()['Content-Length'])
@@ -28,11 +29,12 @@ def fetch_uri(base_uri, cache_dir, filename, console, multiple=False):
             data = conn.read(4096)
             output.write(data)
             size += len(data)
-            console.progress("Downloaded %d of %d bytes" % (size, total_size), 100 * size / total_size)
-        if not multiple:
-            console.progress()
+            if console:
+                console.progress("Downloaded %d of %d bytes" % (size, total_size), 100 * size / total_size)
         output.close()
         conn.close()
+        if console:
+            console.finished()
     return path
 
 
@@ -100,7 +102,7 @@ class Repository:
         self.components = {}
         self.distribution = None
     
-    def parse_index(self, console):
+    def parse_index(self, console=None):
         path = fetch_uri(self.base_uri, self.cache_dir, self.index_name, console)
         if path.endswith(".bz2"):
             import bz2
@@ -134,12 +136,11 @@ class Repository:
             doc.insertNode(self.components[name].node)
         return doc.toPrettyString()
     
-    def make_local_repo(self, path, package_list, console):
+    def make_local_repo(self, path, package_list):
         for name in package_list:
             p = self.packages[name]
-            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, console, True)
+            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri)
             os.link(cached, os.path.join(path, os.path.basename(cached)))
-        console.progress()
         index = self.make_index(package_list)
         import bz2
         data = bz2.compress(index)

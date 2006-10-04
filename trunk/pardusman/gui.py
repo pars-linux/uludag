@@ -11,8 +11,6 @@
 
 import os
 import sys
-import select
-import subprocess
 from qt import *
 from kdecore import *
 from kdeui import *
@@ -21,7 +19,6 @@ from utility import *
 
 import project
 import browser
-import maker
 
 # no i18n yet
 def _(x):
@@ -32,18 +29,6 @@ class Console(KTextEdit):
     def __init__(self, parent):
         KTextEdit.__init__(self, parent)
         self.setTextFormat(self.LogText)
-        self.progress_win = None
-    
-    def _echo(self, sock, error=False):
-        while len(select.select([sock.fileno()], [], [], 0)[0]) > 0:
-            data = os.read(sock.fileno(), 1024)
-            if data:
-                if error:
-                    self.error(data)
-                else:
-                    self.info(data)
-            else:
-                return
     
     def info(self, msg):
         self.append(unicode(msg))
@@ -53,44 +38,30 @@ class Console(KTextEdit):
     
     def error(self, msg):
         self.append("<font color=red>%s</font>" % unicode(msg))
+
+
+class Progress:
+    def __init__(self, win):
+        self.win = win
+        self.dialog = None
     
-    def run(self, command):
-        pop = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        while True:
-            KApplication.kApplication().processEvents()
-            self._echo(pop.stdout)
-            self._echo(pop.stderr, True)
-            ret = pop.poll()
-            if ret != None:
-                return ret
+    def started(self, title):
+        self.dialog = KProgressDialog(self.win, "lala", title, "", False)
+        self.dialog.showCancelButton(False)
+        self.dialog.show()
+        KApplication.kApplication().processEvents()
     
-    def progress(self, msg=None, percent=-1):
-        if percent == -1:
-            if msg:
-                if self.progress_win:
-                    self.progress_win.setCaption(msg)
-                    KApplication.kApplication().processEvents()
-                    return
-                self.progress_win = KProgressDialog(
-                    self.parent().parent(),
-                    "lala",
-                    msg,
-                    "",
-                    False
-                )
-                self.progress_win.showCancelButton(False)
-                self.progress_win.show()
-                KApplication.kApplication().processEvents()
-            else:
-                if self.progress_win:
-                    self.progress_win.done(0)
-                self.progress_win = None
-        else:
-            self.progress_win.setLabel(msg)
-            # otherwise KProgressDialog automatically closes itself, sigh
-            if percent < 100:
-                self.progress_win.progressBar().setProgress(percent)
-            KApplication.kApplication().processEvents(500)
+    def progress(self, msg, percent):
+        self.dialog.setLabel(msg)
+        # otherwise KProgressDialog automatically closes itself, sigh
+        if percent < 100:
+            self.dialog.progressBar().setProgress(percent)
+        KApplication.kApplication().processEvents(500)
+    
+    def finished(self):
+        if self.dialog:
+            self.dialog.done(0)
+        self.dialog = None
 
 
 class ProjectWindow(KMainWindow):
@@ -195,6 +166,8 @@ class ProjectWindow(KMainWindow):
         
         self.project = project.Project()
         self.project2ui()
+        
+        self.progress = Progress(self)
     
     def selectFiles(self):
         path = QFileDialog.getExistingDirectory(
@@ -230,7 +203,7 @@ class ProjectWindow(KMainWindow):
     
     def browse(self):
         self.ui2project()
-        repo = self.project.get_repo(self.console)
+        repo = self.project.get_repo(self.progress)
         self.toolbar.setEnabled(False)
         w = browser.Browser(
             self,
@@ -244,7 +217,7 @@ class ProjectWindow(KMainWindow):
     def make(self):
         self.ui2project()
         # FIXME: launch with kdesu on a konsole
-        maker.make_all(self.project)
+        #maker.make_all(self.project)
     
     def ui2project(self):
         tmp = unicode(self.release_files.text())
