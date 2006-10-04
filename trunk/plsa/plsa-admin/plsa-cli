@@ -76,7 +76,8 @@ def main():
 
     try:
         adv.import_xml(args[0])
-    except:
+    except Exception, e:
+        #print e
         print _("XML file has errors:")
         for i in adv.errors:
             print "  " + i

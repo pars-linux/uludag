@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PLSA 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-04 15:35+0300\n"
+"POT-Creation-Date: 2006-10-04 16:10+0300\n"
 "PO-Revision-Date: 2006-09-13 12:06+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,41 +15,80 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plsa/__init__.py:97
+#: plsa/__init__.py:104
 msgid "Pardus Linux Security Advisory"
 msgstr "Pardus Linux Güvenlik Bildirisi"
 
-#: plsa/__init__.py:98
+#: plsa/__init__.py:105
 msgid "security@pardus.org.tr"
 msgstr "guvenlik@pardus.org.tr"
 
-#: plsa/__init__.py:99
+#: plsa/__init__.py:106
 msgid "http://security.pardus.org.tr"
 msgstr "http://guvenlik.pardus.org.tr"
 
-#: plsa/__init__.py:101
+#: plsa/__init__.py:108
 msgid "ID"
 msgstr "No"
 
-#: plsa/__init__.py:102
+#: plsa/__init__.py:109
 msgid "Date"
 msgstr "Tarih"
 
-#: plsa/__init__.py:103
+#: plsa/__init__.py:110
 msgid "Revision"
 msgstr "Sürüm"
 
-#: plsa/__init__.py:104
+#: plsa/__init__.py:111
 msgid "Severity"
 msgstr "Önem"
 
-#: plsa/__init__.py:115 plsa/__init__.py:116
+#: plsa/__init__.py:122 plsa/__init__.py:123
 msgid "Summary"
 msgstr "Özet"
 
-#: plsa/__init__.py:122 plsa/__init__.py:123
+#: plsa/__init__.py:129 plsa/__init__.py:130
 msgid "Description"
 msgstr "Açıklama"
+
+#: plsa/__init__.py:136
+msgid "Affected packages:"
+msgstr "Etkilenen paketler:"
+
+#: plsa/__init__.py:139
+msgid "all versions"
+msgstr "tüm sürümler"
+
+#: plsa/__init__.py:141
+#, python-format
+msgid "all before %s"
+msgstr "%s öncesi tüm sürümler"
+
+#: plsa/__init__.py:154 plsa/__init__.py:155
+msgid "Resolution"
+msgstr "Çözüm"
+
+#: plsa/__init__.py:158
+#, python-format
+msgid ""
+"There are update(s) for %s. You can update them via Package Manager or with "
+"a single command from console:"
+msgstr ""
+"%s için güncelleme mevcut. Paket Yöneticisi'ni kullanarak ya da komut "
+"satırında tek komut ile güncelleme yapabilirsiniz:"
+
+#: plsa/__init__.py:163
+#, python-format
+msgid ""
+"Unfortunately, there are update(s) for %s. You can remove them via Package "
+"Manager or with a single command from console:"
+msgstr ""
+"Ne yazık ki %s için güncelleme yok. Paket Yöneticisi'ni kullanarak ya da komut "
+"satırında tek komut ile sistemden kaldırabilirsiniz:"
+
+#: plsa/__init__.py:170 plsa/__init__.py:171
+msgid "References"
+msgstr "Referenslar"
 
 #: plsa-cli:41
 msgid "sign advisory with KEY"
@@ -114,51 +153,51 @@ msgstr "'%s' yereli desteklenmemektedir."
 msgid "Unable to read %s."
 msgstr "%s dosyası okunamadı."
 
-#: plsa-cli:80
+#: plsa-cli:81
 msgid "XML file has errors:"
 msgstr "XML dosyası hatalı:"
 
-#: plsa-cli:92
+#: plsa-cli:93
 msgid "Key not found in GnuPG database."
 msgstr "Anahtar GnuPG veritabanında bulunamadı."
 
-#: plsa-cli:93
+#: plsa-cli:94
 msgid "Available keys are:"
 msgstr "Mevcut anahtarlar:"
 
-#: plsa-cli:99
+#: plsa-cli:100
 #, python-format
 msgid "Passphrase for key %s: "
 msgstr "%s anahtarı için parola: "
 
-#: plsa-cli:102
+#: plsa-cli:103
 msgid "Invalid passphrase."
 msgstr "Geçersiz parola."
 
-#: plsa-cli:107
+#: plsa-cli:108
 msgid "Source mail address required."
 msgstr "Kaynak e-posta adresi gerekli."
 
-#: plsa-cli:113
+#: plsa-cli:114
 msgid "Are you sure you want to send this advisory? (yes/no)"
 msgstr ""
 "Bildiriyi bu haliyle göndermek istediğinizden emin misiniz? (evet/hayır)"
 
-#: plsa-cli:119
+#: plsa-cli:120
 #, python-format
 msgid "Password for %s: "
 msgstr "%s için parola: "
 
-#: plsa-cli:134
+#: plsa-cli:135
 msgid "Unable to send mail:"
 msgstr "E-posta gönderilemedi:"
 
-#: plsa-cli:136
+#: plsa-cli:137
 #, python-format
 msgid "Mailed advisory to: %s"
 msgstr "Bildiri metni %s adreslerine gönderildi."
 
-#: plsa-cli:143
+#: plsa-cli:144
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr "Bildiri metni %s dosyasına yazılamadı"
