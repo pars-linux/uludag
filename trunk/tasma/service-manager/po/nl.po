@@ -53,7 +53,7 @@ msgstr "Scriptfout"
 
 #: src/service_manager.py:174
 msgid "Unable to complete operation."
-msgstr "De operatie kon niet worden voltooid.
+msgstr "De operatie kon niet worden voltooid."
 
 #: src/service_manager.py:174
 msgid "Failed"
