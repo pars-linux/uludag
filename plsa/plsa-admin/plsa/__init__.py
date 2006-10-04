@@ -85,10 +85,17 @@ class advisory:
                 self.data["description"].append(node.firstChild().data().strip())
             else:
                 self.data["description"].append("")
-        """
-                     "packages": [],
-                     "references": []}
-        """
+
+        self.data["packages"] = []
+        for node in node_adv.getTag("Packages").tags():
+            package = [node.firstChild().data(), ""]
+            if "fixedAt" in node.attributes():
+                package[1] = node.getAttribute("fixedAt")
+            self.data["packages"].append(package)
+
+        self.data["references"] = []
+        for node in node_adv.getTag("References").tags():
+            self.data["references"].append(node.firstChild().data())
 
     def build_text(self):
         _ = self.tr
@@ -125,29 +132,46 @@ class advisory:
         for i in self.data["description"]:
             tpl.append(wwrap(i, just=len(i) > 72))
             tpl.append("")
+
+        tpl.append(_("Affected packages:"))
+        tpl.append("")
+        for package, version in self.data["packages"]:
+            msg = _("all versions")
+            if version:
+                msg = _("all before %s") % version
+            tpl.append("    %s, %s" % (package, msg))
+        tpl.append("")
         tpl.append("")
 
-        # TODO: Complete "Affected Packages" and Resolution headings
-        """
-        if tags["packages_up"]:
-            tpl.append(__tr("These packages should be upgraded to specified releases:"))
-            for p, r in tags["packages_up"]:
-              tpl.append("  * %s-%s" % (p, r))
-            tpl.append("")
+        up = []
+        remove = []
+        for package, version in self.data["packages"]:
+            if version:
+                up.append(package)
+            else:
+                remove.append(package)
 
-        if tags["packages_rm"]:
-            tpl.append(__tr("These packages should be removed from system:"))
-            for p in tags["packages_rm"]:
-              tpl.append("  * %s" % p)
+        tpl.append(_("Resolution"))
+        tpl.append("=" * len(_("Resolution")))
+        tpl.append("")
+        if up:
+            tpl.append(wwrap(_("There are update(s) for %s. You can update them via Package Manager or with a single command from console:") % ", ".join(up)))
             tpl.append("")
+            tpl.append("    pisi up %s" % " ".join(up))
+            tpl.append("")
+        if remove:
+            tpl.append(wwrap(_("Unfortunately, there are update(s) for %s. You can remove them via Package Manager or with a single command from console:") % ", ".join(remove)))
+            tpl.append("")
+            tpl.append("    pisi remove %s" % " ".join(remove))
+            tpl.append("")
+        tpl.append("")
 
-        if tags["references"]:
-            tpl.append(__tr("References"))
-            tpl.append("=" * len(__tr("References")))
-            for ref, link in tags["references"]:
-              tpl.append("  * " + wwrap("%s <%s>" % (ref, link), lpad=4, just=0).strip())
+        if self.data["references"]:
+            tpl.append(_("References"))
+            tpl.append("=" * len(_("References")))
+            for ref in self.data["references"]:
+              tpl.append("  * %s" % ref)
             tpl.append("")
-        """
 
         tpl.append("-" * 72)
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-04 15:35+0300\n"
+"POT-Creation-Date: 2006-10-04 16:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,40 +16,75 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plsa/__init__.py:97
+#: plsa/__init__.py:104
 msgid "Pardus Linux Security Advisory"
 msgstr ""
 
-#: plsa/__init__.py:98
+#: plsa/__init__.py:105
 msgid "security@pardus.org.tr"
 msgstr ""
 
-#: plsa/__init__.py:99
+#: plsa/__init__.py:106
 msgid "http://security.pardus.org.tr"
 msgstr ""
 
-#: plsa/__init__.py:101
+#: plsa/__init__.py:108
 msgid "ID"
 msgstr ""
 
-#: plsa/__init__.py:102
+#: plsa/__init__.py:109
 msgid "Date"
 msgstr ""
 
-#: plsa/__init__.py:103
+#: plsa/__init__.py:110
 msgid "Revision"
 msgstr ""
 
-#: plsa/__init__.py:104
+#: plsa/__init__.py:111
 msgid "Severity"
 msgstr ""
 
-#: plsa/__init__.py:115 plsa/__init__.py:116
+#: plsa/__init__.py:122 plsa/__init__.py:123
 msgid "Summary"
 msgstr ""
 
-#: plsa/__init__.py:122 plsa/__init__.py:123
+#: plsa/__init__.py:129 plsa/__init__.py:130
 msgid "Description"
+msgstr ""
+
+#: plsa/__init__.py:136
+msgid "Affected packages:"
+msgstr ""
+
+#: plsa/__init__.py:139
+msgid "all versions"
+msgstr ""
+
+#: plsa/__init__.py:141
+#, python-format
+msgid "all before %s"
+msgstr ""
+
+#: plsa/__init__.py:154 plsa/__init__.py:155
+msgid "Resolution"
+msgstr ""
+
+#: plsa/__init__.py:158
+#, python-format
+msgid ""
+"There are update(s) for %s. You can update them via Package Manager or with "
+"a single command from console:"
+msgstr ""
+
+#: plsa/__init__.py:163
+#, python-format
+msgid ""
+"Unfortunately, there are update(s) for %s. You can remove them via Package "
+"Manager or with a single command from console:"
+msgstr ""
+
+#: plsa/__init__.py:170 plsa/__init__.py:171
+msgid "References"
 msgstr ""
 
 #: plsa-cli:41
@@ -115,50 +150,50 @@ msgstr ""
 msgid "Unable to read %s."
 msgstr ""
 
-#: plsa-cli:80
+#: plsa-cli:81
 msgid "XML file has errors:"
 msgstr ""
 
-#: plsa-cli:92
+#: plsa-cli:93
 msgid "Key not found in GnuPG database."
 msgstr ""
 
-#: plsa-cli:93
+#: plsa-cli:94
 msgid "Available keys are:"
 msgstr ""
 
-#: plsa-cli:99
+#: plsa-cli:100
 #, python-format
 msgid "Passphrase for key %s: "
 msgstr ""
 
-#: plsa-cli:102
+#: plsa-cli:103
 msgid "Invalid passphrase."
 msgstr ""
 
-#: plsa-cli:107
+#: plsa-cli:108
 msgid "Source mail address required."
 msgstr ""
 
-#: plsa-cli:113
+#: plsa-cli:114
 msgid "Are you sure you want to send this advisory? (yes/no)"
 msgstr ""
 
-#: plsa-cli:119
+#: plsa-cli:120
 #, python-format
 msgid "Password for %s: "
 msgstr ""
 
-#: plsa-cli:134
+#: plsa-cli:135
 msgid "Unable to send mail:"
 msgstr ""
 
-#: plsa-cli:136
+#: plsa-cli:137
 #, python-format
 msgid "Mailed advisory to: %s"
 msgstr ""
 
-#: plsa-cli:143
+#: plsa-cli:144
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr ""
