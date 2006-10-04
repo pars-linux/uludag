@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-18 11:35+0300\n"
+"POT-Creation-Date: 2006-10-04 15:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,70 +52,113 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: plsa-cli:36
+#: plsa-cli:41
 msgid "sign advisory with KEY"
 msgstr ""
 
-#: plsa-cli:36
+#: plsa-cli:41
 msgid "KEY"
 msgstr ""
 
-#: plsa-cli:38
+#: plsa-cli:43
 msgid "use PASS as passphrase"
 msgstr ""
 
-#: plsa-cli:38
+#: plsa-cli:43 plsa-cli:50
 msgid "PASS"
 msgstr ""
 
-#: plsa-cli:40
-#, python-format
-msgid "generate advisory for locale LANG (default: %s)"
+#: plsa-cli:46
+msgid "send advisory to MAIL1,MAIL2,..."
 msgstr ""
 
-#: plsa-cli:40
-msgid "LANG"
+#: plsa-cli:46
+msgid "MAIL1,MAIL2"
 msgstr ""
 
-#: plsa-cli:42
-msgid "save advisory text to FILE"
+#: plsa-cli:48
+msgid "send mail using account MAIL"
 msgstr ""
 
-#: plsa-cli:42
-msgid "FILE"
+#: plsa-cli:48
+msgid "MAIL"
+msgstr ""
+
+#: plsa-cli:50
+msgid "use PASS to connect smtp server"
 msgstr ""
 
 #: plsa-cli:53
 #, python-format
+msgid "generate advisory for locale LANG (default: %s)"
+msgstr ""
+
+#: plsa-cli:53
+msgid "LANG"
+msgstr ""
+
+#: plsa-cli:56
+msgid "save advisory text to FILE"
+msgstr ""
+
+#: plsa-cli:56
+msgid "FILE"
+msgstr ""
+
+#: plsa-cli:67
+#, python-format
 msgid "'%s' locale is not supported."
 msgstr ""
 
-#: plsa-cli:58
+#: plsa-cli:72
 #, python-format
 msgid "Unable to read %s."
 msgstr ""
 
-#: plsa-cli:66
+#: plsa-cli:80
 msgid "XML file has errors:"
 msgstr ""
 
-#: plsa-cli:78
+#: plsa-cli:92
 msgid "Key not found in GnuPG database."
 msgstr ""
 
-#: plsa-cli:79
+#: plsa-cli:93
 msgid "Available keys are:"
 msgstr ""
 
-#: plsa-cli:85
-msgid "Passphrase: "
+#: plsa-cli:99
+#, python-format
+msgid "Passphrase for key %s: "
 msgstr ""
 
-#: plsa-cli:88
+#: plsa-cli:102
 msgid "Invalid passphrase."
 msgstr ""
 
-#: plsa-cli:97
+#: plsa-cli:107
+msgid "Source mail address required."
+msgstr ""
+
+#: plsa-cli:113
+msgid "Are you sure you want to send this advisory? (yes/no)"
+msgstr ""
+
+#: plsa-cli:119
+#, python-format
+msgid "Password for %s: "
+msgstr ""
+
+#: plsa-cli:134
+msgid "Unable to send mail:"
+msgstr ""
+
+#: plsa-cli:136
+#, python-format
+msgid "Mailed advisory to: %s"
+msgstr ""
+
+#: plsa-cli:143
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr ""
