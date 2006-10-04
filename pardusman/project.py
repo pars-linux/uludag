@@ -103,16 +103,16 @@ class Project:
         return repo
     
     def image_repo_dir(self):
-        pass
+        return self._get_dir("image_repo")
     
     def image_dir(self):
-        pass
+        return self._get_dir("image")
     
     def install_repo_dir(self):
-        pass
+        return self._get_dir("install_repo")
     
     def iso_dir(self):
-        pass
+        return self._get_dir("iso")
 
 
 """
