@@ -9,16 +9,7 @@
 # option) any later version. Please read the COPYING file.
 #
 
-import os
 import sys
-
-# no i18n yet
-def _(x):
-    return x
-
-#
-# Main program
-#
 
 def main(args):
     prj = None
