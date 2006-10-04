@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-04 16:10+0300\n"
+"POT-Creation-Date: 2006-10-04 18:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,6 +85,39 @@ msgstr ""
 
 #: plsa/__init__.py:170 plsa/__init__.py:171
 msgid "References"
+msgstr ""
+
+#: plsa/mail.py:16
+msgid "Unable to send mail: Server didn't reply"
+msgstr ""
+
+#: plsa/mail.py:19
+msgid "Unable to send mail: Server didn't accept username/password"
+msgstr ""
+
+#: plsa/mail.py:22
+msgid "Unable to send mail: No suitable authentication method was found"
+msgstr ""
+
+#: plsa/mail.py:25
+#, python-format
+msgid "Unable to send mail: %s"
+msgstr ""
+
+#: plsa/mail.py:28
+msgid "Unable to send mail: Can't connect mail server"
+msgstr ""
+
+#: plsa/mail.py:31
+msgid "Unable to send mail: SMTP error"
+msgstr ""
+
+#: plsa/mail.py:44
+msgid "Unable to send mail: Server didn't accept sender"
+msgstr ""
+
+#: plsa/mail.py:47
+msgid "Unable to send mail: Server didn't accept recipients"
 msgstr ""
 
 #: plsa-cli:41
@@ -175,25 +208,31 @@ msgstr ""
 msgid "Source mail address required."
 msgstr ""
 
-#: plsa-cli:114
+#: plsa-cli:113
+#, python-format
+msgid "Source mail address is invalid: %s"
+msgstr ""
+
+#: plsa-cli:118
+#, python-format
+msgid "Reciepent mail address is invalid: %s"
+msgstr ""
+
+#: plsa-cli:124
 msgid "Are you sure you want to send this advisory? (yes/no)"
 msgstr ""
 
-#: plsa-cli:120
+#: plsa-cli:130
 #, python-format
 msgid "Password for %s: "
 msgstr ""
 
-#: plsa-cli:135
-msgid "Unable to send mail:"
-msgstr ""
-
-#: plsa-cli:137
+#: plsa-cli:144
 #, python-format
 msgid "Mailed advisory to: %s"
 msgstr ""
 
-#: plsa-cli:144
+#: plsa-cli:151
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr ""
