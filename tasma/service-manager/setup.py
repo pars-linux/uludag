@@ -21,7 +21,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/serviceWidget.py', 'src/service-manager.py',
-                        ('/usr/kde/3.5/share/icons/default.kde/128x128/apps', ['src/service_manager.png']),
+                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/service_manager.png']),
                         'help'],
     executable_links = [('service-manager','service-manager.py')],
     i18n = ('po',['src']),
