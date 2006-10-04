@@ -9,6 +9,11 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import os
+
+def run(cmd):
+    print cmd
+    os.system(cmd)
 
 def make_live_image(project):
     pass
@@ -46,7 +51,7 @@ def make_iso(project):
     # FIXME: copy kernel, boot image, release files and co into iso_dir
     run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "Pardus.iso" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % iso_dir)
 
-def make_all(project):
+def make(project):
     if project.type == "install":
         make_install_image(project)
         make_install_repo(project)

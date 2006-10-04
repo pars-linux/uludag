@@ -11,6 +11,8 @@
 
 import os
 import sys
+import tempfile
+import subprocess
 from qt import *
 from kdecore import *
 from kdeui import *
@@ -216,8 +218,11 @@ class ProjectWindow(KMainWindow):
     
     def make(self):
         self.ui2project()
-        # FIXME: launch with kdesu on a konsole
-        #maker.make_all(self.project)
+        f = tempfile.NamedTemporaryFile(mode='rb')
+        self.project.save(f.name)
+        # FIXME: this shouldn't be hardcoded
+        cmd = 'konsole --notabbar --noclose -e /home/gurer/pardus/uludag/trunk/pardusman/pardusman.py make %s' % f.name
+        subprocess.Popen(["kdesu", "-d", "-u", "root", "-c", cmd])
     
     def ui2project(self):
         tmp = unicode(self.release_files.text())
