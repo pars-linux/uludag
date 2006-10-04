@@ -13,7 +13,7 @@ import sys
 # PLSA Library
 import plsa
 import plsa.utility
-from plsa.mail import send_mail
+from plsa.mail import send_mail, valid_address
 from plsa.gpg import GPG
 
 # piksemel
@@ -103,10 +103,22 @@ def main():
                 print _("Invalid passphrase.")
                 return FAIL_PP
 
+    if options.mail_to and not options.mail_from:
+        print _("Source mail address required.")
+        return FAIL_USAGE
+    if options.mail_from and not options.mail_to:
+        print _("Recipient mail address required.")
+        return FAIL_USAGE
+
     if options.mail_to:
-        if not options.mail_from:
-            print _("Source mail address required.")
+        if not valid_address(options.mail_from):
+            print _("Source mail address is invalid: %s") % options.mail_from
             return FAIL_USAGE
+
+        for email in options.mail_to.split(","):
+            if not valid_address(email):
+                print _("Reciepent mail address is invalid: %s") % email
+                return FAIL_USAGE
 
         print text
         print
@@ -122,17 +134,14 @@ def main():
         if options.key:
             text = text_signed
 
-        try:
-            send_mail("[Pardus Linux] %s" % adv.data["title"],
-                      text,
-                      options.mail_from,
-                      options.mail_to.split(","),
-                      options.mail_host,
-                      options.mail_from,
-                      options.mail_password,
-                      False)
-        except Exception, e:
-            print _("Unable to send mail:") % e
+        sent = send_mail("[Pardus Linux] %s" % adv.data["title"],
+                         text,
+                         options.mail_from,
+                         options.mail_to.split(","),
+                         "mail.%s" % options.mail_from.split("@")[1],
+                         options.mail_from,
+                         options.mail_password)
+        if not sent:
             return FAIL_MAIL
         print _("Mailed advisory to: %s") % options.mail_to
     elif options.output:

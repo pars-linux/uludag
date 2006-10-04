@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PLSA 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-04 16:10+0300\n"
+"POT-Creation-Date: 2006-10-04 18:22+0300\n"
 "PO-Revision-Date: 2006-09-13 12:06+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -83,12 +83,45 @@ msgid ""
 "Unfortunately, there are update(s) for %s. You can remove them via Package "
 "Manager or with a single command from console:"
 msgstr ""
-"Ne yazık ki %s için güncelleme yok. Paket Yöneticisi'ni kullanarak ya da komut "
-"satırında tek komut ile sistemden kaldırabilirsiniz:"
+"Ne yazık ki %s için güncelleme yok. Paket Yöneticisi'ni kullanarak ya da "
+"komut satırında tek komut ile sistemden kaldırabilirsiniz:"
 
 #: plsa/__init__.py:170 plsa/__init__.py:171
 msgid "References"
 msgstr "Referenslar"
+
+#: plsa/mail.py:16
+msgid "Unable to send mail: Server didn't reply"
+msgstr "E-posta gönderilemedi: Sunucu yanıt vermedi"
+
+#: plsa/mail.py:19
+msgid "Unable to send mail: Server didn't accept username/password"
+msgstr "E-posta gönderilemedi: Sunucu kullanıcı ya da parolayı kabul etmedi"
+
+#: plsa/mail.py:22
+msgid "Unable to send mail: No suitable authentication method was found"
+msgstr "E-posta gönderilemedi: Uygun bir kimlik doğrulama metodu bulunamadı"
+
+#: plsa/mail.py:25
+#, python-format
+msgid "Unable to send mail: %s"
+msgstr "E-posta gönderilemedi: %s"
+
+#: plsa/mail.py:28
+msgid "Unable to send mail: Can't connect mail server"
+msgstr "E-posta gönderilemedi: Sunucuya bağlanılamadı"
+
+#: plsa/mail.py:31
+msgid "Unable to send mail: SMTP error"
+msgstr "E-posta gönderilemedi: SMTP hatası"
+
+#: plsa/mail.py:44
+msgid "Unable to send mail: Server didn't accept sender"
+msgstr "E-posta gönderilemedi: Sunucu gönderen adresini kabul etmedi"
+
+#: plsa/mail.py:47
+msgid "Unable to send mail: Server didn't accept recipients"
+msgstr "E-posta gönderilemedi: Sunucu alıcıları kabul etmedi"
 
 #: plsa-cli:41
 msgid "sign advisory with KEY"
@@ -178,26 +211,32 @@ msgstr "Geçersiz parola."
 msgid "Source mail address required."
 msgstr "Kaynak e-posta adresi gerekli."
 
-#: plsa-cli:114
+#: plsa-cli:113
+#, python-format
+msgid "Source mail address is invalid: %s"
+msgstr "Kaynak e-posta adresi geçersiz: %s"
+
+#: plsa-cli:118
+#, python-format
+msgid "Reciepent mail address is invalid: %s"
+msgstr "Alıcı e-posta adresi geçersiz: %s"
+
+#: plsa-cli:124
 msgid "Are you sure you want to send this advisory? (yes/no)"
 msgstr ""
 "Bildiriyi bu haliyle göndermek istediğinizden emin misiniz? (evet/hayır)"
 
-#: plsa-cli:120
+#: plsa-cli:130
 #, python-format
 msgid "Password for %s: "
 msgstr "%s için parola: "
 
-#: plsa-cli:135
-msgid "Unable to send mail:"
-msgstr "E-posta gönderilemedi:"
-
-#: plsa-cli:137
+#: plsa-cli:144
 #, python-format
 msgid "Mailed advisory to: %s"
 msgstr "Bildiri metni %s adreslerine gönderildi."
 
-#: plsa-cli:144
+#: plsa-cli:151
 #, python-format
 msgid "Unable to write advisory text to %s"
 msgstr "Bildiri metni %s dosyasına yazılamadı"
