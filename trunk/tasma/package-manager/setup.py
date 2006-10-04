@@ -30,7 +30,7 @@ kdedistutils.setup(
                         'src/animation.js','src/layout.css','src/package-managerui.rc','src/tray/tray.py','src/tray/BalloonMessage.py',
                         ("/usr/kde/3.5/share/applications/kde/",["src/packagemanager.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/packagemanager-helper.desktop"]),
-                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps",["src/packagemanager.png"]),
+                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps",["src/packagemanager.png"]),
                         ("/usr/kde/3.5/share/mimelnk/application/",["src/x-pisi.desktop"]),
                         ("/usr/kde/3.5/share/applications/kde/",["src/tasmamanager.desktop"])],
     executable_links = [('package-manager','package-manager.py')],
