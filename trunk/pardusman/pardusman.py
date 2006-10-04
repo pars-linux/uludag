@@ -12,6 +12,14 @@
 import sys
 
 def main(args):
+    if len(args) == 3:
+        if args[1] == "make":
+            import project
+            import maker
+            prj = project.Project()
+            prj.open(args[2])
+            maker.make(prj)
+            sys.exit(0)
     prj = None
     for item in args[1:]:
         if not item.startswith("-"):
