@@ -23,7 +23,12 @@ def make_install_image(project):
     
     repo = project.get_repo()
     repo_dir = project.image_repo_dir(clean=True)
+    
+    image_dir = project.image_dir()
+    run('umount %s/proc' % image_dir)
+    run('umount %s/sys' % image_dir)
     image_dir = project.image_dir(clean=True)
+    
     yalideps = repo.full_deps("yali")
     repo.make_local_repo(repo_dir, yalideps)
     
@@ -32,6 +37,9 @@ def make_install_image(project):
     
     def chrun(cmd):
         run('chroot "%s" %s' % (image_dir, cmd))
+    
+    os.mknod("/dev/null", 0666 | stat.S_IFCHR, os.makedev(1, 3))
+    os.mknod("/dev/console", 0666 | stat.S_IFCHR, os.makedev(5, 1))
     
     run('/usr/bin/cp "%s/usr/share/baselayout/*" "%s/etc/"' % (image_dir, image_dir))
     run('/bin/mount --bind /proc %s/proc' % image_dir)
@@ -42,6 +50,8 @@ def make_install_image(project):
     chrun("/usr/bin/pisi configure-pending")
     
     # FIXME: make squashfs
+    run('umount %s/proc' % image_dir)
+    run('umount %s/sys' % image_dir)
 
 def make_install_repo(project):
     print "Preparing installation repository..."
