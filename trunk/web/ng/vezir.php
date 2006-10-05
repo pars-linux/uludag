@@ -136,9 +136,10 @@
 
             function GetRecord($Table,$Field='*',$ID='',$Ext='',$Type="Array") {
                 $Table=$this->Pref_($Table);
-                $ID == "" ? $AddSql = "" : $AddSql = "WHERE ID=$ID";
+                $ID == "" ? $AddSql = "" : $AddSql = "ID=$ID";
                 $Ext == "" ? $AddSql = $AddSql: $AddSql = $AddSql." ".$Ext;
-                $Sql = "SELECT $Field FROM $Table ".$AddSql." AND Lang='".$this->Lang."'";
+                $AddSql.=" AND ";
+                $Sql = "SELECT $Field FROM $Table WHERE ".$AddSql." Lang='".$this->Lang."'";
                 $Result = $this->ExecuteQuery($Sql);
                 return $this->MakeArray($Result,$Type);
             }
