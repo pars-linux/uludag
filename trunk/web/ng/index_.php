@@ -7,9 +7,12 @@
             </form>
             <div id="menu"><img src="/images/menu-blue.png" alt="" /></div>
         </div>
+        <div id="navi">
+            <?=$MainNavi?>
+        </div>
     </div>
 
-    <div id="page" class="blue">
+    <div id="mpage" class="blue">
         <div id="content">
             <img src="/images/h1-pardus-nedir-blue.png" alt="" />
             <p>

@@ -22,6 +22,7 @@
                 $Modules = MakeModules($Page[0]["Modules"]);
             }
         }
+        $MainNavi=$Pardus->GetMainPages();
     }
 
 ?>
