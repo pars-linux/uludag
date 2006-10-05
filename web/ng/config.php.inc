@@ -10,7 +10,8 @@
     $CF["DbPass"]  = 'password';
     $CF["DbData"]  = 'dbname';
     $CF["DbLogLevel"] = 4;
-    $CF["UsePrefix"] =  false;
+    $CF["UsePrefix"] = false;
+    $CF["LimitedLog"]= true;
 
     $CF["Modules"]["BLOGS"]["BlogUrl"] = "http://**/**.xml";
     $CF["Modules"]["BLOGS"]["Count"]   = 4;

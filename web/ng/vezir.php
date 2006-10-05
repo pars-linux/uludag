@@ -31,7 +31,8 @@
                     $this->Prefix=$Conf["Prefix"];
                 if (array_key_exists("UsePrefix",$Conf))
                     $this->UsePrefix=$Conf["UsePrefix"];
-
+		
+		$this->LimitedLog = $Conf["LimitedLog"];
                 // Make Connection
                 $this->DbConnect($Conf["DbHost"],$Conf["DbUser"],$Conf["DbPass"],$Conf["DbData"]);
             }

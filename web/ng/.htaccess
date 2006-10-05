@@ -2,6 +2,6 @@ Options +Indexes
 RewriteEngine On
 RewriteBase /
 RewriteRule ^Node/(.*) /index.php?page=$1
-RewriteRule ^En/Node/(.*) /index.php?page=$1&lang=en
-RewriteRule ^En /index.php?lang=en
+RewriteRule ^en/Node/(.*) /index.php?page=$1&lang=en
+RewriteRule ^en /index.php?lang=en
 RewriteRule ^/ /index.php

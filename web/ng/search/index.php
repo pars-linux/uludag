@@ -5,7 +5,7 @@
     // Search in Pardus DataBase
 
     include_once '../config.php';
-    include_once "../setlangs.php";
+    include_once "../setlang.php";
     include_once "../langs/".$AL.".php";
     include_once '../vezir.php';
     include_once 'search.php';
@@ -140,5 +140,6 @@
     </div>
     <div id="footnote"><p><?=PARDUS_REGISTER?></p></div>
  </div>
+ <?=$Vezir->ShowLogs();?>
 </body>
 </html>
