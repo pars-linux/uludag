@@ -33,9 +33,9 @@ def make_install_image(project):
     def chrun(cmd):
         run('chroot "%s" %s' % (image_dir, cmd))
     
-    run('cp "%s/usr/share/baselayout/*" "%s/etc/"' % (image_dir, image_dir))
-    run('/sbin/mount --bind /proc %s/proc' % image_dir)
-    run('/sbin/mount --bind /sys %s/sys' % image_dir)
+    run('/usr/bin/cp "%s/usr/share/baselayout/*" "%s/etc/"' % (image_dir, image_dir))
+    run('/bin/mount --bind /proc %s/proc' % image_dir)
+    run('/bin/mount --bind /sys %s/sys' % image_dir)
     
     chrun("/sbin/ldconfig")
     chrun("/usr/bin/comar")
