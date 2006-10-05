@@ -191,6 +191,7 @@
 
         function Pardus($_DBC) {
             $this->DBC = $_DBC;
+            $this->DBC->Lang!=="tr"? $this->lang=$this->DBC->Lang."/" : $this->lang="";
         }
 
         function GetNewsList(){
@@ -227,11 +228,11 @@
             foreach ($ExNice as $NiceTitle){
                 $Act.="/".$NiceTitle;$Act=ltrim($Act,"/");
                 $tmp = $this->DBC->FindRecord("Pages","NiceTitle",$Act,"Title,NiceTitle","",false);
-                $Navi.="<li><a href='/Node/".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a>";
+                $Navi.="<li><a href='/{$this->lang}Node/".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a>";
                 if ($tmp=$this->DBC->GetRecord("Pages","Title,NiceTitle","","NiceTitle NOT RLIKE '^".$Act."/(.*)/' AND NiceTitle RLIKE '^".$Act."/(.*)'")) {
                     $Navi.="<ul>";
                     foreach ($tmp as $submenu)
-                        $Navi.="<li><a href='/Node/".$submenu["NiceTitle"]."'>".$submenu["Title"]."</a></li>";
+                        $Navi.="<li><a href='/{$this->lang}Node/".$submenu["NiceTitle"]."'>".$submenu["Title"]."</a></li>";
                     $Navi.="</ul>";
                 }
                 $Navi.="</li><span>»</span>";
@@ -240,10 +241,10 @@
         }
 
         function GetMainPages(){
-            $Return.="<ul class='nav'><li><a href='/'>".MAIN_PAGE."</a><ul>";
+            $Return.="<ul class='nav'><li><a href='/{$this->lang}'>".MAIN_PAGE."</a><ul>";
             $tmp = $this->DBC->GetRecord("Pages","Title,NiceTitle","","NiceTitle NOT RLIKE '^(.*)/' AND NiceTitle RLIKE '^(.*)'");
             foreach ($tmp as $MainPages)
-                $Return.="<li><a href='/Node/".$MainPages["NiceTitle"]."'>".$MainPages["Title"]."</a></li>";
+                $Return.="<li><a href='/{$this->lang}Node/".$MainPages["NiceTitle"]."'>".$MainPages["Title"]."</a></li>";
             return $Return."</ul></li>";
         }
     }
