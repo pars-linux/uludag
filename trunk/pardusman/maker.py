@@ -31,9 +31,9 @@ def make_install_image(project):
     run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
     
     # FIXME: create ld.so.conf, passwd, etc
-    run('chroot "%d" ldconfig' % image_dir)
-    run('chroot "%d" comar' % image_dir)
-    run('chroot "%d" pisi configure-pending' % image_dir)
+    run('chroot "%s" ldconfig' % image_dir)
+    run('chroot "%s" comar' % image_dir)
+    run('chroot "%s" pisi configure-pending' % image_dir)
     
     # FIXME: make squashfs
 
