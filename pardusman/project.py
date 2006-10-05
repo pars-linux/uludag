@@ -105,11 +105,11 @@ class Project:
     def image_repo_dir(self, clean=False):
         return self._get_dir("image_repo", clean)
     
-    def image_dir(self):
-        return self._get_dir("image")
+    def image_dir(self, clean=False):
+        return self._get_dir("image", clean)
     
-    def install_repo_dir(self):
-        return self._get_dir("install_repo")
+    def install_repo_dir(self, clean=False):
+        return self._get_dir("install_repo", False)
     
     def iso_dir(self):
         return self._get_dir("iso")
