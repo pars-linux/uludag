@@ -5,13 +5,15 @@
     // Search in Pardus DataBase
 
     include_once '../config.php';
+    include_once "../setlangs.php";
+    include_once "../langs/".$AL.".php";
     include_once '../vezir.php';
     include_once 'search.php';
-    include_once "../langs/tr.php";
 
     if (isset($_GET["q"]) or isset($_GET["r"])) {
 
         $Vezir  = new Vezir($CF);
+        $Vezir->Lang = $AL;
         #$Vezir->LimitedLog=false;
         $Pardus = new Pardus($Vezir);
         $SearchWord = __($_GET["q"]);
