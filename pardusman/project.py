@@ -102,8 +102,8 @@ class Project:
         repo.parse_index(console)
         return repo
     
-    def image_repo_dir(self):
-        return self._get_dir("image_repo")
+    def image_repo_dir(self, clean=False):
+        return self._get_dir("image_repo", clean)
     
     def image_dir(self):
         return self._get_dir("image")

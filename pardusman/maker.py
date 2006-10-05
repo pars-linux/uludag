@@ -22,7 +22,7 @@ def make_install_image(project):
     print "Preparing install image..."
     
     repo = project.get_repo()
-    repo_dir = project.image_repo_dir()
+    repo_dir = project.image_repo_dir(clean=True)
     image_dir = project.image_dir()
     yalideps = repo.full_deps("yali")
     repo.make_local_repo(repo_dir, yalideps)
@@ -52,7 +52,7 @@ def make_iso(project):
     run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "Pardus.iso" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % iso_dir)
 
 def make(project):
-    if project.type == "install":
+    if project.media_type == "install":
         make_install_image(project)
         make_install_repo(project)
     else:

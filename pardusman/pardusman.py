@@ -17,7 +17,8 @@ def main(args):
             import project
             import maker
             prj = project.Project()
-            prj.open(args[2])
+            if prj.open(args[2]):
+                raise RuntimeError("Where is project file '%s'?" % args[2])
             maker.make(prj)
             sys.exit(0)
     prj = None
