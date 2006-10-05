@@ -14,7 +14,7 @@
     define ("TOTAL","Total ");
     define ("RECORD_FOUND_ALSO_YOU_CAN_LOOK_AT_GOOGLE_RESULTS"," record found.");
     define ("NO_RECORD_FOUND_BUT_YOU_CAN_LOOK_AT_GOOGLE_RESULTS","No record found.");
-    define ("PARDUS_REGISTER","Pardus is registered trademark of TUBITAK/UEKAE ");
+    define ("PARDUS_REGISTER","Pardus is a registered trademark of TUBITAK/UEKAE ");
     define ("SEARCH","search");
     define ("WRONG_LINK","Broken Link");
 ?>
