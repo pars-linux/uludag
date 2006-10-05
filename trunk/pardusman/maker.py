@@ -23,7 +23,7 @@ def make_install_image(project):
     
     repo = project.get_repo()
     repo_dir = project.image_repo_dir(clean=True)
-    image_dir = project.image_dir()
+    image_dir = project.image_dir(clean=True)
     yalideps = repo.full_deps("yali")
     repo.make_local_repo(repo_dir, yalideps)
     
@@ -41,7 +41,7 @@ def make_install_repo(project):
     print "Preparing installation repository..."
     
     repo = project.get_repo()
-    repo_dir = project.install_repo_dir()
+    repo_dir = project.install_repo_dir(clean=True)
     repo.make_local_repo(repo_dir, project.all_packages)
 
 def make_iso(project):
