@@ -1,5 +1,6 @@
 body {
-    background-color:#EFEFEF;
+    background-image:url(images/body_back.gif);
+    background-repeat:repeat-x;
     margin-top:20px;
     font-size:12px;
     font-family: Tahoma, Sans-Serif;
@@ -16,15 +17,14 @@ body {
 
 #head_grey {
     height: 90px;
-    background-image:url(images/back-top.png);
-    background-repeat:repeat-x;
     right:4px;
 }
 
 html>body #head_grey {
     height: 90px;
-    background-image:none;
-    background-color:#DDD;
+    /*background-image:url(images/body_back.gif);
+    background-repeat:repeat-x;*/
+    background-color:#CCC;
     border:1px solid #FFF;
     -moz-border-radius-topleft:12px;
     -moz-border-radius-topright:12px;
@@ -124,13 +124,12 @@ a {
     padding-top:45px;
 }
 
-#page {
+#page, #mpage{
     clear:both;
-    padding-top:4px;
     position:relative;
 }
 
-#content,#fullpage {
+#content,#fullpage{
     float:left;
     width:94%;
     padding:5px;
@@ -146,6 +145,9 @@ a {
     width:580px;
 }
 
+#mpage{
+    padding-top:25px;
+}
 .blue p,#modules ul {
     border-top:2px solid #156FA5;
     margin-top:4px;
@@ -193,6 +195,15 @@ html>body li {
     padding-left:30px;
     background-color:#DDD;
     border-bottom:1px solid #CCC;
+    z-index:100;
+    position:relative;
+
+}
+
+#main_navi {
+    clear:both;
+    padding-left:30px;
+    padding-top:3px;
 }
 
 .info {
@@ -377,4 +388,5 @@ ul.nav li:active, .nav ul li a:active{
 .nav a{
     text-decoration: none;
 }
+
 

@@ -220,7 +220,7 @@
         }
 
         function BuildNavi($ExNice,$LastTitle) {
-            $Navi.="<ul class='nav'><li><a href='/'>".MAIN_PAGE."</a></li><span>»</span>";
+            $Navi.=$this->GetMainPages()."<span>»</span>";
             foreach ($ExNice as $NiceTitle){
                 $Act.="/".$NiceTitle;$Act=ltrim($Act,"/");
                 $tmp = $this->DBC->FindRecord("Pages","NiceTitle",$Act,"Title,NiceTitle","",false);
@@ -234,6 +234,14 @@
                 $Navi.="</li><span>»</span>";
             }
             return rtrim($Navi,"<span>»</span>")."</ul>";
+        }
+
+        function GetMainPages(){
+            $Return.="<ul class='nav'><li><a href='/'>".MAIN_PAGE."</a><ul>";
+            $tmp = $this->DBC->GetRecord("Pages","Title,NiceTitle","","WHERE NiceTitle NOT RLIKE '^(.*)/' AND NiceTitle RLIKE '^(.*)'");
+            foreach ($tmp as $MainPages)
+                $Return.="<li><a href='/Node/".$MainPages["NiceTitle"]."'>".$MainPages["Title"]."</a></li>";
+            return $Return."</ul></li>";
         }
     }
 
