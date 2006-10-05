@@ -246,7 +246,7 @@ class MainApplicationWidget(QWidget):
             self.appsToProcess = []
             self.parent.operateAction.setEnabled(False)
             self.parent.basketAction.setEnabled(False)
-            self.clearSearchLine()
+            self.clearSearchLine(False)
 
         # TODO this part should be done cleaner - cartman
         currentOperation = self.parent.showAction.text()
@@ -543,10 +543,11 @@ class MainApplicationWidget(QWidget):
         else:
             self.updateListing()
 
-    def clearSearchLine(self):
+    def clearSearchLine(self, updateListing=True):
         self.searchLine.clear()
         self.timer.stop()
-        self.updateListing()
+        if updateListing:
+            self.updateListing()
 
     def showPreferences(self):
         try:
