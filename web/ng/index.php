@@ -5,8 +5,15 @@
     // Pardus Web..
 
     require_once('config.php');
+
+    #define Lang
+    if (isset($_GET["lang"]) AND false!==array_search($_GET["lang"],$KnownLangs))
+        $AL=$_GET["lang"];
+    else
+        $AL="tr";
+
     require_once('vezir.php');
-    require_once('langs/tr.php');
+    require_once('langs/'.$AL.'.php');
     require_once('Modules/Main.php');
 
 ?>
@@ -35,7 +42,7 @@
             echo $Page[0]["Content"]."</div></div>";
         }
         else
-            include ('index_.php');
+            include ('index_'.$AL.'.php');
     ?>
 
     <div id="footnote"><p><?=PARDUS_REGISTER?></p></div>

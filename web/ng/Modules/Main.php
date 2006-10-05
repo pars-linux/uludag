@@ -1,6 +1,7 @@
 <?php
 
     if ($Vezir=@new Vezir($CF)){
+        $Vezir->Lang = $AL;
         $Pardus=new Pardus($Vezir);
         if (isset($_GET["page"])) {
 
