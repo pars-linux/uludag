@@ -19,6 +19,6 @@
     $CF["Tools"]["Pic"]["Enable"] = true;
     $CF["Tools"]["Pic"]["Dir"]="../images/texts/";
 
-    $PageTitle = "Pardus";
+    $KnownLangs = Array ("tr","en");
 
 ?>

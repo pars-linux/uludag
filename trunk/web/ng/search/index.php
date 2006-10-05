@@ -101,12 +101,12 @@
     </div>
 
     <div id="navi">
-        <a href="../"><?=MAIN_PAGE?></a> 
         <?php
+            echo $Pardus->GetMainPages();
             if (isset($Search)) 
-                echo " » '".$SearchWord."' ".SEARCHED;
+                echo "<span>»</span>'".$SearchWord."' ".SEARCHED;
             elseif (isset($Page))
-                echo " » <a href='$PHP_SELF?q=$SearchWord'> '".$SearchWord."' ".RESULTS."</a> » ".$Page[0]["Title"];
+                echo "<span>»</span><a href='$PHP_SELF?q=$SearchWord'> '".$SearchWord."' ".RESULTS."</a> » ".$Page[0]["Title"];
         ?>
     </div>
 
