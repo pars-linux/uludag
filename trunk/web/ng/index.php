@@ -5,7 +5,7 @@
     // Pardus Web..
 
     require_once('config.php');
-    require_once('setlangs.php');
+    require_once('setlang.php');
     require_once('vezir.php');
     require_once('langs/'.$AL.'.php');
     require_once('Modules/Main.php');
