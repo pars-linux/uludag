@@ -30,10 +30,16 @@ def make_install_image(project):
     run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
     run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
     
-    # FIXME: create ld.so.conf, passwd, etc
-    run('chroot "%s" ldconfig' % image_dir)
-    run('chroot "%s" comar' % image_dir)
-    run('chroot "%s" pisi configure-pending' % image_dir)
+    def chrun(cmd):
+        run('chroot "%s" %s' % (image_dir, cmd))
+    
+    run('cp "%s/usr/share/baselayout/*" "%s/etc/"' % (image_dir, image_dir))
+    run('/sbin/mount --bind /proc %s/proc' % image_dir)
+    run('/sbin/mount --bind /sys %s/proc' % image_dir)
+    
+    chrun("/sbin/ldconfig")
+    chrun("/usr/bin/comar")
+    chrun("/usr/bin/pisi configure-pending")
     
     # FIXME: make squashfs
 
