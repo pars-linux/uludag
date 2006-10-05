@@ -4,11 +4,11 @@
     // Gökmen GÖKSEL <gokmen@pardus.org.tr>
     // Search in Pardus DataBase
 
-    include_once '../config.php';
-    include_once "../setlang.php";
-    include_once "../langs/".$AL.".php";
-    include_once '../vezir.php';
-    include_once 'search.php';
+    include_once 'config.php';
+    include_once "setlang.php";
+    include_once "langs/".$AL.".php";
+    include_once 'vezir.php';
+    include_once 'Modules/search.php';
 
     if (isset($_GET["q"]) or isset($_GET["r"])) {
 
@@ -38,7 +38,7 @@
 <head>
     <title><?=PAGE_TITLE?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" >
     <!--
         allPageTags = new Array();
@@ -95,7 +95,7 @@
     <div id="head_grey">
         <div id="blue2"></div>
         <div id="quick_download">
-            <img src="../images/box-hizli-indir.png" alt="Pardus 1.1Beta"/>
+            <img src="images/box-hizli-indir.png" alt="Pardus 1.1Beta"/>
             <form action="">
                 <input type="text" name="q" id="search" value="<?=SEARCH?>" onclick="Javascript:if (this.value=='<?=SEARCH?>') this.value='';" onblur="Javascript:if (this.value=='') this.value='<?=SEARCH?>';"/>
             </form>
