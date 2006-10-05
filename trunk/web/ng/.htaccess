@@ -4,4 +4,8 @@ RewriteBase /
 RewriteRule ^Node/(.*) /index.php?page=$1
 RewriteRule ^en/Node/(.*) /index.php?page=$1&lang=en
 RewriteRule ^en /index.php?lang=en
+RewriteRule ^ara /q.php
+RewriteRule ^ara/(.*) /q.php?q=$1
+RewriteRule ^search /q.php?lang=en
+RewriteRule ^search/(.*) /q.php?q=$1&lang=en
 RewriteRule ^/ /index.php
