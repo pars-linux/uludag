@@ -10,6 +10,9 @@
 #
 
 import os
+import subprocess
+import shutil
+import stat
 
 def run(cmd):
     print cmd
@@ -38,10 +41,13 @@ def make_install_image(project):
     def chrun(cmd):
         run('chroot "%s" %s' % (image_dir, cmd))
     
-    os.mknod("/dev/null", 0666 | stat.S_IFCHR, os.makedev(1, 3))
-    os.mknod("/dev/console", 0666 | stat.S_IFCHR, os.makedev(5, 1))
+    os.mknod("%s/dev/null" % image_dir, 0666 | stat.S_IFCHR, os.makedev(1, 3))
+    os.mknod("%s/dev/console" % image_dir, 0666 | stat.S_IFCHR, os.makedev(5, 1))
     
-    run('/usr/bin/cp "%s/usr/share/baselayout/*" "%s/etc/"' % (image_dir, image_dir))
+    path = "%s/usr/share/baselayout/" % image_dir
+    path2 = "%s/etc" % image_dir
+    for name in os.listdir(path):
+        os.copyfile(os.path.join(path, name), os.path.join(path2, name))
     run('/bin/mount --bind /proc %s/proc' % image_dir)
     run('/bin/mount --bind /sys %s/sys' % image_dir)
     
