@@ -35,7 +35,7 @@ def make_install_image(project):
     
     run('cp "%s/usr/share/baselayout/*" "%s/etc/"' % (image_dir, image_dir))
     run('/sbin/mount --bind /proc %s/proc' % image_dir)
-    run('/sbin/mount --bind /sys %s/proc' % image_dir)
+    run('/sbin/mount --bind /sys %s/sys' % image_dir)
     
     chrun("/sbin/ldconfig")
     chrun("/usr/bin/comar")
