@@ -137,9 +137,8 @@
             function GetRecord($Table,$Field='*',$ID='',$Ext='',$Type="Array") {
                 $Table=$this->Pref_($Table);
                 $ID == "" ? $AddSql = "" : $AddSql = "ID=$ID";
-                $Ext == "" ? $AddSql = $AddSql: $AddSql = $AddSql." ".$Ext;
-                $AddSql.=" AND ";
-                $Sql = "SELECT $Field FROM $Table WHERE ".$AddSql." Lang='".$this->Lang."'";
+                $Ext == "" ? $AddSql = $AddSql: $AddSql = " AND ".$AddSql." ".$Ext;
+                $Sql = "SELECT $Field FROM $Table WHERE Lang='".$this->Lang."' ".$AddSql;
                 $Result = $this->ExecuteQuery($Sql);
                 return $this->MakeArray($Result,$Type);
             }
@@ -148,7 +147,7 @@
                 $Table=$this->Pref_($Table);
                 $Ext == "" ? $AddSql = "": $AddSql = $Ext;
                 $Like== true ? $SQ = " LIKE '%$Value%' " : $SQ = " = '$Value' ";
-                $Sql = "SELECT $ReturnValue FROM $Table WHERE $Field".$SQ.$AddSql." AND Lang='".$this->Lang."'";
+                $Sql = "SELECT $ReturnValue FROM $Table WHERE Lang='".$this->Lang."' AND ".$Field.$SQ.$AddSql;
                 $Result = $this->ExecuteQuery($Sql);
                 return $this->MakeArray($Result,$Type);
             }
@@ -216,11 +215,11 @@
 
         function Search($Que) {
             $Que = mysql_escape_string($Que);
-            $Results = $this->DBC->GetRecord("Pages","Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score","","WHERE MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score DESC");
+            $Results = $this->DBC->GetRecord("Pages","Title,NiceTitle,Content,MATCH(Title, Content) AGAINST ('$Que') AS Score","","MATCH(Title, Content) AGAINST ('$Que') ORDER BY Score DESC");
             if (sizeof($Results)>1)
                 return $Results;
             else
-                return $this->DBC->GetRecord("Pages","Title,NiceTitle,Content","","WHERE (Content LIKE '%$Que%') OR (Title LIKE '%$Que%')");
+                return $this->DBC->GetRecord("Pages","Title,NiceTitle,Content","","(Content LIKE '%$Que%') OR (Title LIKE '%$Que%')");
         }
 
         function BuildNavi($ExNice,$LastTitle) {
@@ -229,7 +228,7 @@
                 $Act.="/".$NiceTitle;$Act=ltrim($Act,"/");
                 $tmp = $this->DBC->FindRecord("Pages","NiceTitle",$Act,"Title,NiceTitle","",false);
                 $Navi.="<li><a href='/Node/".$tmp[0]["NiceTitle"]."'>".$tmp[0]["Title"]."</a>";
-                if ($tmp=$this->DBC->GetRecord("Pages","Title,NiceTitle","","WHERE NiceTitle NOT RLIKE '^".$Act."/(.*)/' AND NiceTitle RLIKE '^".$Act."/(.*)'")) {
+                if ($tmp=$this->DBC->GetRecord("Pages","Title,NiceTitle","","NiceTitle NOT RLIKE '^".$Act."/(.*)/' AND NiceTitle RLIKE '^".$Act."/(.*)'")) {
                     $Navi.="<ul>";
                     foreach ($tmp as $submenu)
                         $Navi.="<li><a href='/Node/".$submenu["NiceTitle"]."'>".$submenu["Title"]."</a></li>";
@@ -242,7 +241,7 @@
 
         function GetMainPages(){
             $Return.="<ul class='nav'><li><a href='/'>".MAIN_PAGE."</a><ul>";
-            $tmp = $this->DBC->GetRecord("Pages","Title,NiceTitle","","WHERE NiceTitle NOT RLIKE '^(.*)/' AND NiceTitle RLIKE '^(.*)'");
+            $tmp = $this->DBC->GetRecord("Pages","Title,NiceTitle","","NiceTitle NOT RLIKE '^(.*)/' AND NiceTitle RLIKE '^(.*)'");
             foreach ($tmp as $MainPages)
                 $Return.="<li><a href='/Node/".$MainPages["NiceTitle"]."'>".$MainPages["Title"]."</a></li>";
             return $Return."</ul></li>";
