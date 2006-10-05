@@ -218,11 +218,11 @@ class ProjectWindow(KMainWindow):
     
     def make(self):
         self.ui2project()
-        f = tempfile.NamedTemporaryFile(mode='rb')
+        f = tempfile.NamedTemporaryFile()
         self.project.save(f.name)
-        # FIXME: this shouldn't be hardcoded
-        cmd = 'konsole --notabbar --noclose -e /home/gurer/pardus/uludag/trunk/pardusman/pardusman.py make %s' % f.name
+        cmd = 'konsole --notabbar --nomenubar --noclose --noframe --workdir %s -e /home/gurer/uludag/trunk/pardusman/pardusman.py make %s' % (os.getcwd(), f.name)
         subprocess.Popen(["kdesu", "-d", "-u", "root", "-c", cmd])
+        self.f = f
     
     def ui2project(self):
         tmp = unicode(self.release_files.text())
