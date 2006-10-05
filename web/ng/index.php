@@ -5,13 +5,7 @@
     // Pardus Web..
 
     require_once('config.php');
-
-    #define Lang
-    if (isset($_GET["lang"]) AND false!==array_search($_GET["lang"],$KnownLangs))
-        $AL=$_GET["lang"];
-    else
-        $AL="tr";
-
+    require_once('setlangs.php');
     require_once('vezir.php');
     require_once('langs/'.$AL.'.php');
     require_once('Modules/Main.php');

@@ -1,0 +1,6 @@
+Options +Indexes
+RewriteEngine On
+RewriteBase /
+RewriteRule ^/(.*) /search/index.php?q=$1
+RewriteRule ^en/(.*) /search/index.php?q=$1&lang=en
+RewriteRule ^en /search/index.php?lang=en
