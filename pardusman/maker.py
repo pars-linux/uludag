@@ -47,7 +47,7 @@ def make_install_image(project):
     path = "%s/usr/share/baselayout/" % image_dir
     path2 = "%s/etc" % image_dir
     for name in os.listdir(path):
-        os.copyfile(os.path.join(path, name), os.path.join(path2, name))
+        shutil.copyfile(os.path.join(path, name), os.path.join(path2, name))
     run('/bin/mount --bind /proc %s/proc' % image_dir)
     run('/bin/mount --bind /sys %s/sys' % image_dir)
     
