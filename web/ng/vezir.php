@@ -20,6 +20,9 @@
             public $Prefix = "Vezir_";
             public $UsePrefix = True;
 
+            // Active Lang
+            public $Lang = "tr";
+
             function Vezir($Conf){
                 // Set the variables
                 $this->DbLogDetail=$Conf["DbLogLevel"];
@@ -135,7 +138,7 @@
                 $Table=$this->Pref_($Table);
                 $ID == "" ? $AddSql = "" : $AddSql = "WHERE ID=$ID";
                 $Ext == "" ? $AddSql = $AddSql: $AddSql = $AddSql." ".$Ext;
-                $Sql = "SELECT $Field FROM $Table ".$AddSql;
+                $Sql = "SELECT $Field FROM $Table ".$AddSql." AND Lang='".$this->Lang."'";
                 $Result = $this->ExecuteQuery($Sql);
                 return $this->MakeArray($Result,$Type);
             }
@@ -144,7 +147,7 @@
                 $Table=$this->Pref_($Table);
                 $Ext == "" ? $AddSql = "": $AddSql = $Ext;
                 $Like== true ? $SQ = " LIKE '%$Value%' " : $SQ = " = '$Value' ";
-                $Sql = "SELECT $ReturnValue FROM $Table WHERE $Field".$SQ.$AddSql;
+                $Sql = "SELECT $ReturnValue FROM $Table WHERE $Field".$SQ.$AddSql." AND Lang='".$this->Lang."'";
                 $Result = $this->ExecuteQuery($Sql);
                 return $this->MakeArray($Result,$Type);
             }
