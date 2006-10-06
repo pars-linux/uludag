@@ -424,7 +424,6 @@ class MainApplicationWidget(QWidget):
 
         componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network","applications.multimedia",
                           "applications.games","applications.hardware","system.base","system.devel", "system.kernel.drivers","system.kernel.firmware"]
-        componentNames.sort()
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
         componentPackages = []
 
