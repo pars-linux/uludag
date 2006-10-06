@@ -137,11 +137,14 @@ class Project:
     def install_repo_dir(self, clean=False):
         return self._get_dir("install_repo", clean)
     
-    def iso_dir(self):
-        return self._get_dir("iso")
+    def iso_dir(self, clean=False):
+        return self._get_dir("iso", clean)
     
-    def iso_file(self):
-        return os.path.join(self.work_dir, "pardus.iso")
+    def iso_file(self, clean=True):
+        path = os.path.join(self.work_dir, "pardus.iso")
+        if clean and os.path.exists(path):
+            os.unlink(path)
+        return path
 
 
 """

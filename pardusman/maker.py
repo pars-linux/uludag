@@ -99,28 +99,40 @@ def make_install_repo(project):
 def make_iso(project):
     print "Preparing ISO..."
     
-    iso_dir = project.iso_dir()
+    iso_dir = project.iso_dir(clean=True)
+    iso_file = project.iso_file(clean=True)
     image_dir = project.image_dir()
     image_file = project.image_file()
+    
+    os.link(image_file, os.path.join(iso_dir, "pardus.img"))
     
     def copy(src, dest):
         run('cp "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
     
-    copy(image_file, "pardus.img")
     path = project.release_files
     for name in os.listdir(path):
-        copy(os.path.join(path, name), name)
+        if name != ".svn":
+            copy(os.path.join(path, name), name)
+    
+    path = os.path.join(iso_dir, "boot")
+    if not os.path.exists(path):
+        os.makedirs(path)
+    path = os.path.join(iso_dir, "boot/grub")
+    if not os.path.exists(path):
+        os.makedirs(path)
+    
     path = os.path.join(image_dir, "boot")
     for name in os.listdir(path):
         if name.startswith("kernel") or name.startswith("initramfs"):
             copy(os.path.join(path, name), "boot/" + name)
     path = os.path.join(image_dir, "boot/grub")
     for name in os.listdir(path):
-        copy(os.path.join(path, name), "boot/grub" + name)
+        copy(os.path.join(path, name), "boot/grub/" + name)
     
-    #FIXME: grub.conf
+    #FIXME: grub.conf, link install repo
     
-    run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "Pardus.iso" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
+    run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
+        iso_file,
         iso_dir,
     ))
 
