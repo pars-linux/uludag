@@ -11,6 +11,7 @@
 
 import os
 import subprocess
+import tempfile
 import stat
 import sys
 
@@ -23,6 +24,9 @@ def chroot_comar(image_dir):
         os.chroot(image_dir)
         subprocess.call(["/usr/bin/comar"])
         sys.exit(0)
+    #FIXME: lame, properly wait comar socket (inside chroot) here
+    import time
+    time.sleep(2)
 
 def make_live_image(project):
     pass
@@ -60,6 +64,7 @@ def make_install_image(project):
     chrun("/sbin/ldconfig")
     chrun("/sbin/update-environment")
     chroot_comar(image_dir)
+    chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
     chrun("/usr/bin/pisi configure-pending")
     
     run('umount %s/proc' % image_dir)
@@ -67,7 +72,11 @@ def make_install_image(project):
     
     if not image_dir.endswith("/"):
         image_dir += "/"
-    run('mksquashfs -noappend "%s" pardus.img' % image_dir)
+    temp = tempfile.NamedTemporaryFile()
+    f = file(temp.name, "w")
+    f.write("\n".join(project.exclude_list))
+    f.close()
+    run('mksquashfs "%s" pardus.img -noappend -ef "%s"' % (image_dir, temp.name))
 
 def make_install_repo(project):
     print "Preparing installation repository..."

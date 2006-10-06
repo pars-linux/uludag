@@ -18,6 +18,28 @@ import packages
 def _(x):
     return x
 
+default_exclude_list = """
+usr/include/
+usr/lib/cups/
+usr/lib/python2.4/email/
+usr/lib/python2.4/lib-tk/
+usr/lib/python2.4/test/
+usr/qt/3/include/
+usr/share/cups/
+usr/share/doc/
+usr/share/info/
+usr/share/man/
+var/db/pisi/
+var/lib/pisi/
+var/cache/pisi/packages/
+var/cache/pisi/archives/
+var/tmp/pisi/
+tmp/pisi-root/
+var/log/comar.log
+var/log/pisi.log
+root/.bash_history
+"""
+
 
 class Project:
     def __init__(self):
@@ -32,6 +54,7 @@ class Project:
         self.selected_components = []
         self.selected_packages = []
         self.all_packages = []
+        self.exclude_list = default_exclude_list.split()
     
     def open(self, filename):
         try:
