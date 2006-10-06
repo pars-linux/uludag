@@ -45,6 +45,7 @@ def make_install_image(project):
     
     repo = project.get_repo()
     repo_dir = project.image_repo_dir(clean=True)
+    image_file = project.image_file()
     
     image_dir = project.image_dir()
     run('umount %s/proc' % image_dir)
@@ -86,7 +87,7 @@ def make_install_image(project):
     f = file(temp.name, "w")
     f.write("\n".join(get_exclude_list(project)))
     f.close()
-    run('mksquashfs "%s" pardus.img -noappend -ef "%s"' % (image_dir, temp.name))
+    run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
 
 def make_install_repo(project):
     print "Preparing installation repository..."
@@ -99,8 +100,29 @@ def make_iso(project):
     print "Preparing ISO..."
     
     iso_dir = project.iso_dir()
-    # FIXME: copy kernel, boot image, release files and co into iso_dir
-    run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "Pardus.iso" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % iso_dir)
+    image_dir = project.image_dir()
+    image_file = project.image_file()
+    
+    def copy(src, dest):
+        run('cp "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
+    
+    copy(image_file, "pardus.img")
+    path = project.release_files
+    for name in os.listdir(path):
+        copy(os.path.join(path, name), name)
+    path = os.path.join(image_dir, "boot")
+    for name in os.listdir(path):
+        if name.startswith("kernel") or name.startswith("initramfs"):
+            copy(os.path.join(path, name), "boot/" + name)
+    path = os.path.join(image_dir, "boot/grub")
+    for name in os.listdir(path):
+        copy(os.path.join(path, name), "boot/grub" + name)
+    
+    #FIXME: grub.conf
+    
+    run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "Pardus.iso" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
+        iso_dir,
+    ))
 
 def make(project):
     if project.media_type == "install":
