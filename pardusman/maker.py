@@ -12,10 +12,17 @@
 import os
 import subprocess
 import stat
+import sys
 
 def run(cmd):
     print cmd
     os.system(cmd)
+
+def chroot_comar(image_dir):
+    if os.fork() == 0:
+        os.chroot(image_dir)
+        subprocess.call(["/usr/bin/comar"])
+        sys.exit(0)
 
 def make_live_image(project):
     pass
@@ -46,17 +53,19 @@ def make_install_image(project):
     path = "%s/usr/share/baselayout/" % image_dir
     path2 = "%s/etc" % image_dir
     for name in os.listdir(path):
-        run('cp -p "%s" "%s"' % (os.path.join(path, name), os.path.join(path2, name))
+        run('cp -p "%s" "%s"' % (os.path.join(path, name), os.path.join(path2, name)))
     run('/bin/mount --bind /proc %s/proc' % image_dir)
     run('/bin/mount --bind /sys %s/sys' % image_dir)
     
     chrun("/sbin/ldconfig")
-    chrun("/usr/bin/comar")
+    chrun("/sbin/update-environment")
+    chroot_comar(image_dir)
     chrun("/usr/bin/pisi configure-pending")
     
-    # FIXME: make squashfs
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
+    
+    run('mksquashfs "%s"' % image_dir)
 
 def make_install_repo(project):
     print "Preparing installation repository..."
