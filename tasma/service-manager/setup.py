@@ -14,13 +14,13 @@ import kdedistutils
 
 kdedistutils.setup(
     name="service-manager",
-    version="1.0.6",
+    version="1.1",
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/serviceWidget.py', 'src/service-manager.py',
+    application_data = ['src/mainform.ui', 'src/service-manager.py',
                         ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/service_manager.png']),
                         'help'],
     executable_links = [('service-manager','service-manager.py')],
