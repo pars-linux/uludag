@@ -131,11 +131,17 @@ class Project:
     def image_dir(self, clean=False):
         return self._get_dir("image", clean)
     
+    def image_file(self):
+        return os.path.join(self.work_dir, "pardus.img")
+    
     def install_repo_dir(self, clean=False):
         return self._get_dir("install_repo", clean)
     
     def iso_dir(self):
         return self._get_dir("iso")
+    
+    def iso_file(self):
+        return os.path.join(self.work_dir, "pardus.iso")
 
 
 """
