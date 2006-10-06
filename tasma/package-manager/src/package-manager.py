@@ -125,6 +125,7 @@ class MainApplicationWidget(QWidget):
         self.totalSelectedSize = 0
         self.possibleError = False
         self.infoMessage = None
+        self.state = 0
 
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
@@ -238,6 +239,7 @@ class MainApplicationWidget(QWidget):
             kapp.quit()
 
     def switchListing(self):
+        self.state = int(not self.state)
         self.updateListing(True)
 
     def updateListing(self,switch=False):
@@ -248,9 +250,7 @@ class MainApplicationWidget(QWidget):
             self.parent.basketAction.setEnabled(False)
             self.clearSearchLine(False)
 
-        # TODO this part should be done cleaner - cartman
-        currentOperation = self.parent.showAction.text()
-        if currentOperation == i18n("Show New Packages"):
+        if not self.state: # Show new packages
             if switch:
                 self.currentAppList = self.command.listNewPackages()
                 self.createComponentList(self.currentAppList)
@@ -261,7 +261,7 @@ class MainApplicationWidget(QWidget):
             else:
                 self.currentAppList = self.command.listPackages()
                 self.createComponentList(self.currentAppList)
-        elif currentOperation == i18n("Show Installed Packages"):
+        elif self.state: # Show installed packages
             if switch:
                 self.currentAppList = self.command.listPackages()
                 self.createComponentList(self.currentAppList)
@@ -674,4 +674,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
