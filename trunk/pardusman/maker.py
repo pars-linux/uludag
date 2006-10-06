@@ -28,6 +28,15 @@ def chroot_comar(image_dir):
     import time
     time.sleep(2)
 
+def get_exclude_list(project):
+    exc = project.exclude_list[:]
+    image_dir = project.image_dir()
+    path = image_dir + "/boot"
+    for name in os.listdir(path):
+        if name.startswith("kernel") or name.startswith("initramfs"):
+            exc.append("boot/" + name)
+    return exc
+
 def make_live_image(project):
     pass
 
@@ -66,6 +75,7 @@ def make_install_image(project):
     chroot_comar(image_dir)
     chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
     chrun("/usr/bin/pisi configure-pending")
+    chrun("/usr/bin/comar --stop")
     
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
@@ -74,7 +84,7 @@ def make_install_image(project):
         image_dir += "/"
     temp = tempfile.NamedTemporaryFile()
     f = file(temp.name, "w")
-    f.write("\n".join(project.exclude_list))
+    f.write("\n".join(get_exclude_list(project)))
     f.close()
     run('mksquashfs "%s" pardus.img -noappend -ef "%s"' % (image_dir, temp.name))
 

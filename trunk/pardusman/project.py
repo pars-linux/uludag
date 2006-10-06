@@ -132,7 +132,7 @@ class Project:
         return self._get_dir("image", clean)
     
     def install_repo_dir(self, clean=False):
-        return self._get_dir("install_repo", False)
+        return self._get_dir("install_repo", clean)
     
     def iso_dir(self):
         return self._get_dir("iso")
