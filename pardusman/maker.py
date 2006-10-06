@@ -65,7 +65,9 @@ def make_install_image(project):
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
     
-    run('mksquashfs "%s" image.iso' % image_dir)
+    if not image_dir.endswith("/"):
+        image_dir += "/"
+    run('mksquashfs -noappend "%s" pardus.img' % image_dir)
 
 def make_install_repo(project):
     print "Preparing installation repository..."
