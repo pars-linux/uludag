@@ -53,7 +53,7 @@ msgstr "Voortgang"
 
 #: src/ProgressDialog.py:70
 msgid "<b>Downloaded/Total:</b> Unknown"
-msgstr <b>Gedownload/totaal:</b> onbekend"
+msgstr "<b>Gedownload/totaal:</b> onbekend"
 
 #: src/ProgressDialog.py:71
 msgid "<b>Speed:</b> Unknown"
@@ -93,7 +93,7 @@ msgstr "Klik hier om een nieuwe softwarerepository toe te voegen"
 
 #: src/PreferencesDialog.py:173
 msgid "&Edit Repository"
-msgstr Repository &bewerken"
+msgstr "Repository &bewerken"
 
 #: src/PreferencesDialog.py:174
 msgid "Click here to modify the name or address of a repository"
@@ -274,11 +274,11 @@ msgstr "Componenten"
 
 #: src/package-manager.py:196
 msgid "Loading Package List..."
-msgstr "Pakketlijst wordt geladen...
+msgstr "Pakketlijst wordt geladen..."
 
 #: src/package-manager.py:221
 msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Handeling wordt geannuleerd...b>"
+msgstr "<b>Handeling wordt geannuleerd...</b>"
 
 #: src/package-manager.py:243
 msgid ""
@@ -296,7 +296,7 @@ msgstr "Nieuwe pakketten tonen"
 #: src/package-manager.py:263 src/package-manager.py:270
 #: src/package-manager.py:629
 msgid "Show Installed Packages"
-msgstr "Geinstalleerde pakketten tonen
+msgstr "Geinstalleerde pakketten tonen"
 
 #: src/package-manager.py:265 src/package-manager.py:630
 msgid "Install Package(s)"
@@ -304,7 +304,7 @@ msgstr "Pakket(ten) installeren"
 
 #: src/package-manager.py:276
 msgid "Remove Package(s)"
-msgstr "Pakket(ten) verwijderen
+msgstr "Pakket(ten) verwijderen"
 
 #: src/package-manager.py:299
 msgid "Select all packages in this category"
@@ -336,7 +336,7 @@ msgstr "Zoekresultaten"
 
 #: src/package-manager.py:488
 msgid "Removing these packages may break system safety. Aborting."
-msgstr "Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar brengen. Gestopt.
+msgstr "Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar brengen. Gestopt."
 
 #: src/package-manager.py:516
 msgid "<b>Preparing PiSi...</b>"
@@ -344,7 +344,7 @@ msgstr "<b>PiSi wordt voorbereid...b>"
 
 #: src/package-manager.py:517
 msgid "<b>Speed:</b> N/A"
-msgstr "<b>Snelheid:</b> N/B
+msgstr "<b>Snelheid:</b> N/B"
 
 #: src/package-manager.py:518
 msgid "<b>Downloaded/Total:</b> N/A"
