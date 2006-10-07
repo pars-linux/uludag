@@ -32,7 +32,6 @@ class Commander(QObject):
         self.updateInProgress = False
 
         # Caching mechanism
-        self.databaseDirty = True
         self.allPackages = []
         self.newPackages = []
         self.upgrades = []
@@ -109,58 +108,42 @@ class Commander(QObject):
         self.updateAllRepos()
 
     def install(self,apps):
-        self.databaseDirty = True
         apps = string.join(apps,",")
         self.comar.installPackage(apps)
 
     def updatePackage(self,apps):
-        self.databaseDirty = True
         apps = string.join(apps,",")
         self.comar.updatePackage(apps)
 
     def remove(self,apps):
-        self.databaseDirty = True
         apps = string.join(apps,",")
         self.comar.removePackage(apps)
 
     def updateRepo(self, repo):
-        self.databaseDirty = True
         self.comar.updateRepo(repo)
 
     def updateAllRepos(self):
-        self.databaseDirty = True
         self.comar.updateAllRepos()
 
     def addRepo(self,repoName,repoAddress):
-        self.databaseDirty = True
         self.comar.addRepo(repoName,repoAddress)
 
     def removeRepo(self, repoName):
-        self.databaseDirty = True
         self.comar.removeRepo(repoName)
 
     def setRepositories(self, list):
         self.comar.setRepositories(",".join(list))
 
     def listUpgradable(self):
-        if self.databaseDirty:
-            self.upgrades = pisi.api.list_upgradable()
-            self.databaseDirty = False
-
+        self.upgrades = pisi.api.list_upgradable()
         return self.upgrades
 
     def listPackages(self):
-        if self.databaseDirty:
-            self.allPackages = pisi.api.list_installed()
-            self.databaseDirty = False
-
-        return list(self.allPackages)
+        self.allPackages = list(pisi.api.list_installed())
+        return self.allPackages
 
     def listNewPackages(self):
-        if self.databaseDirty:
-            self.newPackages = list(pisi.api.list_available() - pisi.api.list_installed())
-            self.databaseDirty = False
-
+        self.newPackages = list(pisi.api.list_available() - pisi.api.list_installed())
         return self.newPackages
 
     def searchPackage(self,query,language='tr'):
