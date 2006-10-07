@@ -158,7 +158,7 @@ class Commander(QObject):
 
     def listNewPackages(self):
         if self.databaseDirty:
-            self.newPackages = list(pisi.api.list_available() - self.api.list_installed())
+            self.newPackages = list(pisi.api.list_available() - pisi.api.list_installed())
             self.databaseDirty = False
 
         return self.newPackages
