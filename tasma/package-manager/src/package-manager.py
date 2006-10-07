@@ -458,20 +458,27 @@ class MainApplicationWidget(QWidget):
         self.componentDict[item] = list(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
 
+#   @data: [operation, <arg1>, <arg2>, <arg3> ...]
+#           "downloading": <name>
     def pisiNotify(self,data):
-        self.currentOperation = i18n(str(data))
+        data = data.split(",")
+        operation = data[0]
 
-        if data in ["downloading","removing"]:
+        self.currentOperation = i18n(str(operation))
+        if operation == "removing":
             if len(self.updatesToProcess):
                 self.currentAppIndex += 1
 
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
-        elif data in ["extracting","configuring","installing"]:
+        elif operation == "downloading":
+            self.currentFile = data[1]
             self.updateProgressText()
-        elif data in ["installed","removed","upgraded"]:
+        elif operation in ["installing","extracting","configuring"]:
+            self.updateProgressText()
+        elif operation in ["installed","removed","upgraded"]:
             self.currentAppIndex += 1
         else:
-            self.packagesOrder = data.split(",")
+            self.packagesOrder = data
             self.totalAppCount = len(self.packagesOrder)
 
             if self.parent.showAction.text() == i18n("Show New Packages"):
