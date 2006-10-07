@@ -45,6 +45,7 @@ def I18N_NOOP(str):
 description = I18N_NOOP("GUI for PiSi package manager")
 version = "1.1.0_b4"
 base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
+(install_state, remove_state) = range(2)
 
 def AboutData():
     global version,description
@@ -125,7 +126,7 @@ class MainApplicationWidget(QWidget):
         self.totalSelectedSize = 0
         self.possibleError = False
         self.infoMessage = None
-        self.state = 0
+        self.state = install_state
 
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
@@ -239,7 +240,6 @@ class MainApplicationWidget(QWidget):
             kapp.quit()
 
     def switchListing(self):
-        self.state = int(not self.state)
         self.updateListing(True)
 
     def updateListing(self,switch=False):
@@ -250,7 +250,7 @@ class MainApplicationWidget(QWidget):
             self.parent.basketAction.setEnabled(False)
             self.clearSearchLine(False)
 
-        if not self.state: # Show new packages
+        if self.state == remove_state:
             if switch:
                 self.currentAppList = self.command.listNewPackages()
                 self.createComponentList(self.currentAppList)
@@ -258,10 +258,11 @@ class MainApplicationWidget(QWidget):
                 self.parent.showAction.setIconSet(loadIconSet("package"))
                 self.parent.operateAction.setText(i18n("Install Package(s)"))
                 self.parent.operateAction.setIconSet(loadIconSet("ok"))
+                self.state = install_state
             else:
                 self.currentAppList = self.command.listPackages()
                 self.createComponentList(self.currentAppList)
-        elif self.state: # Show installed packages
+        elif self.state == install_state:
             if switch:
                 self.currentAppList = self.command.listPackages()
                 self.createComponentList(self.currentAppList)
@@ -269,6 +270,7 @@ class MainApplicationWidget(QWidget):
                 self.parent.showAction.setIconSet(loadIconSet("edit_add"))
                 self.parent.operateAction.setText(i18n("Remove Package(s)"))
                 self.parent.operateAction.setIconSet(loadIconSet("no"))
+                self.state = remove_state
             else:
                 self.currentAppList = self.command.listNewPackages()
                 self.createComponentList(self.currentAppList)
