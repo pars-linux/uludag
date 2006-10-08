@@ -73,7 +73,7 @@ class Commander(QObject):
             elif notification == "System.Manager.progress":
                 data = data.split(",")
                 rate = round(int(data[2]),1)
-                self.parent.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
+                self.parent.progressDialog.updateProgressBar(data[0], int(data[1]), rate, data[3], int(data[4]), int(data[5]))
             elif notification == "System.Manager.finished":
                 self.parent.finished(data)
             elif notification == "System.Manager.updatingRepo":
