@@ -417,7 +417,7 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.updateProgressText()
         elif operation in ["installed","removed","upgraded"]:
             self.progressDialog.currentAppIndex += 1
-        else:
+        elif operation in ["removing"]:
             self.packagesOrder = data
             self.progressDialog.totalAppCount = len(self.packagesOrder)
 
