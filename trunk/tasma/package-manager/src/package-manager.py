@@ -81,13 +81,7 @@ class MainApplicationWidget(QWidget):
         self.initialRepoCheck = None
         self.packagesOrder = []
         self.componentDict = {}
-        self.currentOperation = None
-        self.currentFile = None
-        self.totalAppCount = 1
-        self.currentAppIndex = 1
-        self.totalSelectedSize = 0
         self.possibleError = False
-        self.infoMessage = None
         self.state = install_state
 
         self.layout = QGridLayout(self)
@@ -139,7 +133,6 @@ class MainApplicationWidget(QWidget):
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
-        self.connect(self.progressDialog.cancelButton,SIGNAL("clicked()"),self.cancelThread)
 
         self.currentAppList = []
 
@@ -174,16 +167,6 @@ class MainApplicationWidget(QWidget):
     def processEvents(self):
         global kapp
         kapp.processEvents(QEventLoop.ExcludeUserInput)
-
-    def cancelThread(self):
-        # Reset progressbar
-        self.progressDialog.setLabelText(i18n("<b>Cancelling operation...</b>"))
-        self.progressDialog.speedLabel.hide()
-        self.progressDialog.sizeLabel.hide()
-
-        self.command.terminate()
-        self.possibleError = True
-        self.finished()
 
     def initialCheck(self):
         self.initialRepoCheck = True
@@ -421,22 +404,22 @@ class MainApplicationWidget(QWidget):
         data = data.split(",")
         operation = data[0]
 
-        self.currentOperation = i18n(str(operation))
+        self.progressDialog.currentOperation = i18n(str(operation))
         if operation == "removing":
 #             if len(self.updatesToProcess):
-#                 self.currentAppIndex += 1
+#                 self.progressDialog.currentAppIndex += 1
 
-            self.currentFile = self.packagesOrder[self.currentAppIndex-1]
+            self.progressDialog.currentFile = self.packagesOrder[self.progressDialog.currentAppIndex-1]
         elif operation in ["downloading", "installing"]:
-            self.currentFile = data[1]
-            self.updateProgressText()
+            self.progressDialog.currentFile = data[1]
+            self.progressDialog.updateProgressText()
         elif operation in ["extracting","configuring"]:
-            self.updateProgressText()
+            self.progressDialog.updateProgressText()
         elif operation in ["installed","removed","upgraded"]:
-            self.currentAppIndex += 1
+            self.progressDialog.currentAppIndex += 1
         else:
             self.packagesOrder = data
-            self.totalAppCount = len(self.packagesOrder)
+            self.progressDialog.totalAppCount = len(self.packagesOrder)
 
             if self.state == remove_state:
                 if len(base_packages.intersection(self.packagesOrder)) > 0:
@@ -457,7 +440,7 @@ class MainApplicationWidget(QWidget):
         elif command == "System.Manager.updatePackage":
             self.updateDialog.refreshDialog()
 
-        self.currentAppIndex = 1
+        self.progressDialog.currentAppIndex = 1
 
         # Here we don't use updateListing() if there is no error, because we already updated the view
         # in check() using DOM which is fast, so unless an error occurred there is no need for a refresh
@@ -470,30 +453,7 @@ class MainApplicationWidget(QWidget):
         self.parent.operateAction.setEnabled(False)
         self.parent.basketAction.setEnabled(False)
         self.progressDialog.closeForced()
-        self.resetProgressBar()
-
-    def resetProgressBar(self):
-        self.progressDialog.progressBar.setProgress(0)
-        self.progressDialog.setLabelText(i18n("<b>Preparing PiSi...</b>"))
-        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> N/A'))
-        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> N/A'))
-
-    def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
-        self.updateProgressText()
-        self.progressDialog.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
-
-        tpl = pisi.util.human_readable_size(downloaded_size)
-        downloadedText,type1 = (int(tpl[0]), tpl[1])
-        type1 = pisi.util.human_readable_size(downloaded_size)[1]
-        tpl = pisi.util.human_readable_size(total_size)
-        totalText,type2 = (int(tpl[0]), tpl[1])
-
-        self.progressDialog.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 %2/%3 %4').arg(downloadedText).arg(type1).arg(totalText).arg(type2))
-        self.progressDialog.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
-
-    def updateProgressText(self):
-        self.progressDialog.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
-                                         .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
+        self.progressDialog.reset()
 
     def installSingle(self):
         app = []
@@ -542,7 +502,7 @@ class MainApplicationWidget(QWidget):
 
 # TODO: move this to updatedialog
     def updatePackages(self):
-        self.currentAppIndex = 0
+        self.progressDialog.currentAppIndex = 0
         self.progressDialog.show()
         self.command.updatePackage(self.updateDialog.eventListener.packageList)
 
