@@ -338,24 +338,16 @@ class MainApplicationWidget(QWidget):
         pass
 
     def takeAction(self):
-        # install or remove button action taker
-        document = self.htmlPart.document()
-        nodeList = document.getElementsByTagName(DOM.DOMString("input"))
-        for i in range(0,nodeList.length()):
-            element = DOM.HTMLInputElement(nodeList.item(i))
-            if element.checked():
-                divNode = element.parentNode().parentNode()
-                parentNode = divNode.parentNode()
-                parentNode.removeChild(divNode)
-                packageName = str(element.getAttribute(DOM.DOMString("name")).string())
-                self.componentDict[self.listView.currentItem()].remove(packageName)
-
         self.progressDialog.show()
 
         if self.state == remove_state:
             self.command.remove(self.eventListener.packageList)
         else:
             self.command.install(self.eventListener.packageList)
+
+        component = self.listView.currentItem()
+        for package in self.eventListener.packageList:
+            self.componentDict[component].remove(package)
 
     def createComponentList(self, packages):
         # Components
@@ -428,6 +420,12 @@ class MainApplicationWidget(QWidget):
 
         elif command == "System.Manager.updatePackage":
             self.updateDialog.refreshDialog()
+
+        elif command == "System.Manager.installPackage":
+            self.updateView(self.listView.currentItem())
+
+        elif command == "System.Manager.removePackage":
+            self.updateView(self.listView.currentItem())
 
         self.progressDialog.currentAppIndex = 1
 
