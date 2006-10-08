@@ -31,11 +31,6 @@ class Commander(QObject):
         self.parent = parent
         self.updateInProgress = False
 
-        # Caching mechanism
-        self.allPackages = []
-        self.newPackages = []
-        self.upgrades = []
-
         # Init the database
         pisi.api.init(database=True, write=False)
 
@@ -135,16 +130,13 @@ class Commander(QObject):
         self.comar.setRepositories(",".join(list))
 
     def listUpgradable(self):
-        self.upgrades = pisi.api.list_upgradable()
-        return self.upgrades
+        return pisi.api.list_upgradable()
 
     def listPackages(self):
-        self.allPackages = list(pisi.api.list_installed())
-        return self.allPackages
+        return list(pisi.api.list_installed())
 
     def listNewPackages(self):
-        self.newPackages = list(pisi.api.list_available() - pisi.api.list_installed())
-        return self.newPackages
+        return list(pisi.api.list_available() - pisi.api.list_installed())
 
     def searchPackage(self,query,language='tr'):
         return pisi.api.search_package(query,language)

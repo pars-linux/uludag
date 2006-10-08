@@ -17,8 +17,6 @@
 # System
 import sys
 import string
-import math
-import posix
 import re
 
 # PyQt/PyKDE
@@ -27,7 +25,6 @@ from kdecore import *
 from kdeui import *
 from kio import *
 from khtml import *
-import kdedesigner
 
 # Local imports
 import Progress
@@ -171,7 +168,6 @@ class MainApplicationWidget(QWidget):
             self.initialCheck()
 
         self.currentAppList = self.command.listNewPackages()
-
         self.createComponentList(self.currentAppList)
         self.listView.setSelected(self.listView.firstChild(),True)
 
