@@ -593,7 +593,6 @@ class MainApplication(KMainWindow):
 
 def main():
     global kapp
-    global nonPrivMode
     global packageToInstall
     global showUpdates
 
@@ -605,7 +604,6 @@ def main():
         print i18n("Package Manager is already running!")
         return
 
-    nonPrivMode = posix.getuid()
     kapp = KUniqueApplication(True, True, True)
 
     args = KCmdLineArgs.parsedArgs()
