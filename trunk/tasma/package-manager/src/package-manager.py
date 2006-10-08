@@ -449,12 +449,12 @@ class MainApplicationWidget(QWidget):
 
     def finished(self, command=None):
 
-        if command == Commander.updaterepo:
+        if command == "System.Manager.updateAllRepositories":
             pisi.api.finalize()
             pisi.api.init(write=False)
             self.showUpdateDialog()
 
-        elif command == Commander.upgrade:
+        elif command == "System.Manager.updatePackage":
             self.updateDialog.refreshDialog()
 
         self.currentAppIndex = 1
