@@ -447,7 +447,16 @@ class MainApplicationWidget(QWidget):
         self.possibleError = True
         KMessageBox.error(self,message,i18n("Error"))
 
-    def finished(self):
+    def finished(self, command=None):
+
+        if command == Commander.updaterepo:
+            pisi.api.finalize()
+            pisi.api.init(write=False)
+            self.showUpdateDialog()
+
+        elif command == Commander.upgrade:
+            self.updateDialog.refreshDialog()
+
         self.currentAppIndex = 1
 
         # Here we don't use updateListing() if there is no error, because we already updated the view
@@ -462,8 +471,6 @@ class MainApplicationWidget(QWidget):
         self.parent.basketAction.setEnabled(False)
         self.progressDialog.closeForced()
         self.resetProgressBar()
-
-        self.updateDialog.refreshDialog()
 
     def resetProgressBar(self):
         self.progressDialog.progressBar.setProgress(0)
