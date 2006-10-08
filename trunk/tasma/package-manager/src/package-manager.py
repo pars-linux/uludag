@@ -79,7 +79,6 @@ class MainApplicationWidget(QWidget):
         self.progressDialog = Progress.Progress(self)
 
         self.initialRepoCheck = None
-        self.packagesOrder = []
         self.componentDict = {}
         self.possibleError = False
         self.state = install_state
@@ -340,7 +339,6 @@ class MainApplicationWidget(QWidget):
 
     def takeAction(self):
         # install or remove button action taker
-        appsToProcess = []
         document = self.htmlPart.document()
         nodeList = document.getElementsByTagName(DOM.DOMString("input"))
         for i in range(0,nodeList.length()):
@@ -350,14 +348,14 @@ class MainApplicationWidget(QWidget):
                 parentNode = divNode.parentNode()
                 parentNode.removeChild(divNode)
                 packageName = str(element.getAttribute(DOM.DOMString("name")).string())
-                appsToProcess.append(packageName)
                 self.componentDict[self.listView.currentItem()].remove(packageName)
 
         self.progressDialog.show()
+
         if self.state == remove_state:
-            self.command.remove(appsToProcess)
+            self.command.remove(self.eventListener.packageList)
         else:
-            self.command.install(appsToProcess)
+            self.command.install(self.eventListener.packageList)
 
     def createComponentList(self, packages):
         # Components
@@ -398,19 +396,12 @@ class MainApplicationWidget(QWidget):
         self.componentDict[item] = list(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
 
-#   @data: [operation, <arg1>, <arg2>, <arg3> ...]
-#           "downloading": <name>
     def pisiNotify(self,data):
         data = data.split(",")
         operation = data[0]
 
         self.progressDialog.currentOperation = i18n(str(operation))
-        if operation == "removing":
-#             if len(self.updatesToProcess):
-#                 self.progressDialog.currentAppIndex += 1
-
-            self.progressDialog.currentFile = self.packagesOrder[self.progressDialog.currentAppIndex-1]
-        elif operation in ["downloading", "installing"]:
+        if operation in ["removing", "downloading", "installing"]:
             self.progressDialog.currentFile = data[1]
             self.progressDialog.updateProgressText()
         elif operation in ["extracting","configuring"]:
@@ -418,11 +409,9 @@ class MainApplicationWidget(QWidget):
         elif operation in ["installed","removed","upgraded"]:
             self.progressDialog.currentAppIndex += 1
         else: # pisi.ui.packagetogo
-            self.packagesOrder = data
-            self.progressDialog.totalAppCount = len(self.packagesOrder)
-
+            self.progressDialog.totalAppCount = len(data)
             if self.state == remove_state:
-                if len(base_packages.intersection(self.packagesOrder)) > 0:
+                if len(base_packages.intersection(data)) > 0:
                     self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
                     self.finished()
 
