@@ -2,6 +2,8 @@ from qt import *
 from kdecore import *
 from ProgressDialog import *
 
+import pisi
+
 class Progress(ProgressDialog):
     def __init__(self, parent=None):
         ProgressDialog.__init__(self)
