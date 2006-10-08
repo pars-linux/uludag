@@ -34,6 +34,7 @@ import Progress
 import Preferences
 import Commander
 import UpdateDialog
+import CustomEventListener
 
 # Pisi
 import pisi
@@ -72,39 +73,6 @@ def getIconPath(name, group=KIcon.Desktop):
     if not name:
         name = "package"
     return KGlobal.iconLoader().iconPath(name,group)
-
-class CustomEventListener(DOM.EventListener):
-    def __init__(self,parent, packageList):
-        DOM.EventListener.__init__(self)
-        self.parent = parent
-        self.packageList = packageList
-
-    def handleEvent(self,event):
-        target = event.target().nodeName().string()
-        try:
-            if target == "INPUT":
-                inputElement = DOM.HTMLInputElement(event.target())
-                name = inputElement.name().string()
-                checked = inputElement.checked()
-                if checked:
-                    if name not in self.packageList:
-                        self.packageList.append(name)
-                else:
-                    self.packageList.remove(name)
-
-                self.parent.updateButtons()
-
-            elif target == "A":
-                link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
-                if link == "#selectall":
-                    document = self.parent.htmlPart.document()
-                    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
-                    for i in range(0,nodeList.length()):
-                        DOM.HTMLInputElement(nodeList.item(i)).click()
-                else:
-                    KRun.runURL(KURL(link),"text/html",False,False);
-        except Exception, e:
-            print e
 
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
@@ -360,14 +328,9 @@ class MainApplicationWidget(QWidget):
         return result
 
     def registerEventListener(self):
-        self.eventListener = CustomEventListener(self, self.appsToProcess)
+        self.eventListener = CustomEventListener.CustomEventListener(self, self.appsToProcess)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
-
-    def registerEventListenerForUpdate(self):
-        self.updateEventListener = CustomEventListener(self.updateDialog,self.updateDialog.updatesToProcess)
-        node = self.updateDialog.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
-        node.addEventListener(DOM.DOMString("click"),self.updateEventListener,True)
 
     def updateCheckboxes(self):
         self.htmlPart.view().setUpdatesEnabled(False)
@@ -569,17 +532,12 @@ class MainApplicationWidget(QWidget):
         self.command.startUpdate()
 
     def showUpdateDialog(self):
-        self.updateDialog = UpdateDialog.UpdateDialog(self)
-
-        appList = pisi.api.list_upgradable()
-
-        if not len(appList):
+        upgradables = pisi.api.list_upgradable()
+        if not upgradables:
             KMessageBox.information(self,i18n("There are no updates available at this time"))
             return
 
-        self.createHTML(appList, self.updateDialog.htmlPart)
-        self.connect(self.updateDialog.htmlPart,SIGNAL("completed()"),self.registerEventListenerForUpdate)
-        self.connect(self.updateDialog.updateButton,SIGNAL("clicked()"),self.updatePackages)
+        self.updateDialog = UpdateDialog.UpdateDialog(self, upgradables)
         self.updateDialog.show()
 
     def updatePackages(self):
