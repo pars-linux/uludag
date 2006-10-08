@@ -117,7 +117,6 @@ class MainApplicationWidget(QWidget):
         self.packagesOrder = []
         self.selectedItems = []
         self.appsToProcess = []
-        self.updatesToProcess = []
         self.componentDict = {}
         self.currentOperation = None
         self.currentFile = None
@@ -366,7 +365,7 @@ class MainApplicationWidget(QWidget):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def registerEventListenerForUpdate(self):
-        self.updateEventListener = CustomEventListener(self.updateDialog,self.updatesToProcess)
+        self.updateEventListener = CustomEventListener(self.updateDialog,self.updateDialog.updatesToProcess)
         node = self.updateDialog.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.updateEventListener,True)
 
@@ -399,7 +398,8 @@ class MainApplicationWidget(QWidget):
         print "Show me the basket"
         pass
 
-    def check(self):
+    def takeAction(self):
+        # install or remove button action taker
         appsToProcess = []
         document = self.htmlPart.document()
         nodeList = document.getElementsByTagName(DOM.DOMString("input"))
@@ -507,7 +507,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.closeForced()
         self.resetProgressBar()
 
-        self.refreshUpdateDialog()
+        self.updateDialog.refreshDialog()
 
     def resetProgressBar(self):
         self.progressDialog.progressBar.setProgress(0)
@@ -577,27 +577,15 @@ class MainApplicationWidget(QWidget):
             KMessageBox.information(self,i18n("There are no updates available at this time"))
             return
 
-        self.updatesToProcess = []
-
         self.createHTML(appList, self.updateDialog.htmlPart)
         self.connect(self.updateDialog.htmlPart,SIGNAL("completed()"),self.registerEventListenerForUpdate)
         self.connect(self.updateDialog.updateButton,SIGNAL("clicked()"),self.updatePackages)
         self.updateDialog.show()
 
-    def refreshUpdateDialog(self):
-        appList = pisi.api.list_upgradable()
-        if not appList:
-            self.updatesToProcess = []
-        try:
-            self.createHTML(appList, self.updateDialog.htmlPart)
-            self.updateDialog.updateButtons()
-        except:
-            pass
-
     def updatePackages(self):
         self.currentAppIndex = 0
         self.progressDialog.show()
-        self.command.updatePackage(self.updatesToProcess)
+        self.command.updatePackage(self.updateDialog.updatesToProcess)
 
     def setShowOnlyPrograms(self,hideLibraries=False):
         global kapp
@@ -632,7 +620,7 @@ class MainApplication(KMainWindow):
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
         self.showAction = KAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
-        self.operateAction = KAction(i18n("Install Package(s)"),"ok",KShortcut.null(),self.mainwidget.check,self.actionCollection(),"operate_action")
+        self.operateAction = KAction(i18n("Install Package(s)"),"ok",KShortcut.null(),self.mainwidget.takeAction,self.actionCollection(),"operate_action")
         self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.update ,self.actionCollection(),"upgrade_packages")
         self.basketAction = KAction(i18n("Show basket"),"basket",KShortcut.null(),self.mainwidget.showBasket ,self.actionCollection(),"show_basket")
 
