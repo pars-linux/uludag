@@ -83,7 +83,6 @@ class MainApplicationWidget(QWidget):
 
         self.initialRepoCheck = None
         self.packagesOrder = []
-        self.appsToProcess = []
         self.componentDict = {}
         self.currentOperation = None
         self.currentFile = None
@@ -211,7 +210,7 @@ class MainApplicationWidget(QWidget):
     def updateListing(self,switch=False):
 
         if switch or self.possibleError:
-            self.appsToProcess = []
+            self.eventListener.packageList = []
             self.parent.operateAction.setEnabled(False)
             self.parent.basketAction.setEnabled(False)
             self.clearSearchLine(False)
@@ -327,18 +326,18 @@ class MainApplicationWidget(QWidget):
         return result
 
     def registerEventListener(self):
-        self.eventListener = CustomEventListener.CustomEventListener(self, self.appsToProcess)
+        self.eventListener = CustomEventListener.CustomEventListener(self)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateCheckboxes(self):
         self.htmlPart.view().setUpdatesEnabled(False)
-        if len(self.appsToProcess):
+        if self.eventListener.packageList:
             document = self.htmlPart.document()
             nodeList = document.getElementsByTagName(DOM.DOMString("input"))
             for i in range(0,nodeList.length()):
                 element = DOM.HTMLInputElement(nodeList.item(i))
-                if element.name().string() in self.appsToProcess:
+                if element.name().string() in self.eventListener.packageList:
                     element.click()
         self.htmlPart.view().setUpdatesEnabled(True)
 
@@ -349,7 +348,7 @@ class MainApplicationWidget(QWidget):
             pass
 
     def updateButtons(self):
-        if len(self.appsToProcess):
+        if self.eventListener.packageList:
             self.parent.operateAction.setEnabled(True)
             self.parent.basketAction.setEnabled(True)
         else:
@@ -428,8 +427,8 @@ class MainApplicationWidget(QWidget):
 
         self.currentOperation = i18n(str(operation))
         if operation == "removing":
-            if len(self.updatesToProcess):
-                self.currentAppIndex += 1
+#             if len(self.updatesToProcess):
+#                 self.currentAppIndex += 1
 
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
         elif operation in ["downloading", "installing"]:
@@ -461,7 +460,7 @@ class MainApplicationWidget(QWidget):
             self.updateListing()
             self.possibleError = False
         else:
-            self.appsToProcess = []
+            self.eventListener.packageList = []
 
         self.parent.operateAction.setEnabled(False)
         self.parent.basketAction.setEnabled(False)
@@ -538,10 +537,11 @@ class MainApplicationWidget(QWidget):
         self.updateDialog = UpdateDialog.UpdateDialog(self, upgradables)
         self.updateDialog.show()
 
+# TODO: move this to updatedialog
     def updatePackages(self):
         self.currentAppIndex = 0
         self.progressDialog.show()
-        self.command.updatePackage(self.updateDialog.updatesToProcess)
+        self.command.updatePackage(self.updateDialog.eventListener.packageList)
 
     def setShowOnlyPrograms(self,hideLibraries=False):
         global kapp
