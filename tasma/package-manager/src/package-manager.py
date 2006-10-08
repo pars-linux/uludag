@@ -375,7 +375,7 @@ class MainApplicationWidget(QWidget):
                 self.componentDict[self.listView.currentItem()].remove(packageName)
 
         self.progressDialog.show()
-        if self.parent.showAction.text() == i18n("Show New Packages"):
+        if self.state == remove_state:
             self.command.remove(appsToProcess)
         else:
             self.command.install(appsToProcess)
@@ -442,7 +442,7 @@ class MainApplicationWidget(QWidget):
             self.packagesOrder = data
             self.totalAppCount = len(self.packagesOrder)
 
-            if self.parent.showAction.text() == i18n("Show New Packages"):
+            if self.state == remove_state:
                 if len(base_packages.intersection(self.packagesOrder)) > 0:
                     self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
                     self.finished()
