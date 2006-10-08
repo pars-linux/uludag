@@ -470,10 +470,10 @@ class MainApplicationWidget(QWidget):
                 self.currentAppIndex += 1
 
             self.currentFile = self.packagesOrder[self.currentAppIndex-1]
-        elif operation == "downloading":
+        elif operation in ["downloading", "installing"]:
             self.currentFile = data[1]
             self.updateProgressText()
-        elif operation in ["installing","extracting","configuring"]:
+        elif operation in ["extracting","configuring"]:
             self.updateProgressText()
         elif operation in ["installed","removed","upgraded"]:
             self.currentAppIndex += 1
