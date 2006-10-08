@@ -12,10 +12,10 @@
 from khtml import DOM
 
 class CustomEventListener(DOM.EventListener):
-    def __init__(self,parent, packageList):
+    def __init__(self, parent):
         DOM.EventListener.__init__(self)
         self.parent = parent
-        self.packageList = packageList
+        self.packageList = []
 
     def handleEvent(self,event):
         target = event.target().nodeName().string()

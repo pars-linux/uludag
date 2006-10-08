@@ -9,7 +9,6 @@ class UpdateDialog(QDialog):
         QDialog.__init__(self,parent)
         self.setCaption(i18n("Currently Available Updates"))
         self.parent = parent
-        self.updatesToProcess = []
 
         layout1 = QGridLayout(self,2,1)
         layout2 = QHBox(self)
@@ -30,12 +29,12 @@ class UpdateDialog(QDialog):
         self.resize(self.width()-50,self.height()-50)
 
     def registerEventListener(self):
-        self.eventListener = CustomEventListener.CustomEventListener(self, self.updatesToProcess)
+        self.eventListener = CustomEventListener.CustomEventListener(self)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateButtons(self):
-        if self.updatesToProcess:
+        if self.eventListener.packageList:
             self.updateButton.setEnabled(True)
         else:
             self.updateButton.setEnabled(False)
@@ -43,7 +42,7 @@ class UpdateDialog(QDialog):
     def refreshDialog(self):
         upgradables = pisi.api.list_upgradable()
         if not upgradables:
-            self.updatesToProcess = []
+            self.eventListener.packageList = []
         
         try:
             self.parent.createHTML(upgradables, self.htmlPart)
