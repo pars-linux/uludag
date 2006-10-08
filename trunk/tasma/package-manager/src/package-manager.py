@@ -83,7 +83,6 @@ class MainApplicationWidget(QWidget):
 
         self.initialRepoCheck = None
         self.packagesOrder = []
-        self.selectedItems = []
         self.appsToProcess = []
         self.componentDict = {}
         self.currentOperation = None
@@ -454,7 +453,6 @@ class MainApplicationWidget(QWidget):
         KMessageBox.error(self,message,i18n("Error"))
 
     def finished(self):
-        self.selectedItems = []
         self.currentAppIndex = 1
 
         # Here we don't use updateListing() if there is no error, because we already updated the view
