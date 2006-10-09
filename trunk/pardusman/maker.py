@@ -14,6 +14,28 @@ import subprocess
 import tempfile
 import stat
 import sys
+import time
+
+grub_template = """default 0
+timeout 10
+splashimage (cd)/boot/grub/splash.xpm.gz
+
+title=%(title)s
+root (cd)
+kernel (cd)/boot/%(kernel)s root=/dev/ram0 video=vesafb:nomtrr,pmipal,ywrap,1024x768-32@60 splash=silent,theme:pardus console=tty2 mudur=livecd,language:tr quiet
+initrd (cd)/boot/%(initramfs)s
+
+title=%(title-standart)s
+root (cd)
+kernel (cd)/boot/%(kernel)s root=/dev/ram0 video=vesafb:off mudur=livecd,language:tr quiet
+initrd (cd)/boot/%(initramfs)s
+
+title=%(title-safe)s
+root (cd)
+kernel (cd)/boot/%(kernel)s root=/dev/ram0 video=vesafb:off acpi=off apm=off nolapic noapic mudur=livecd,language:tr
+initrd (cd)/boot/%(initramfs)s
+
+"""
 
 def run(cmd):
     print cmd
@@ -25,7 +47,6 @@ def chroot_comar(image_dir):
         subprocess.call(["/usr/bin/comar"])
         sys.exit(0)
     #FIXME: lame, properly wait comar socket (inside chroot) here
-    import time
     time.sleep(2)
 
 def get_exclude_list(project):
@@ -36,6 +57,42 @@ def get_exclude_list(project):
         if name.startswith("kernel") or name.startswith("initramfs"):
             exc.append("boot/" + name)
     return exc
+
+def generate_grub_conf(project, kernel, initramfs):
+    print "Generating grub.conf files..."
+    iso_dir = project.iso_dir()
+    # FIXME: take name from /etc/pardus-release
+    tr = {
+        "suffix": "",
+        "language": "Turkish",
+        "title": "Pardus 1.1 Alfa N",
+        "title-standart": "Pardus 1.1 Alfa 3 (Standard Ekran Modu)",
+        "title-safe": "Pardus 1.1 Alfa 3 (Minimum Ayarlar)",
+    }
+    en = {
+        "suffix": "-en",
+        "language": "English",
+        "title": "Pardus 1.1 Alfa N",
+        "title-standart": "Pardus 1.1 Alfa 3 (Standard Graphics Mode)",
+        "title-safe": "Pardus 1.1 Alfa 3 (Minimum Options)",
+    }
+    nl = {
+        "suffix": "-nl",
+        "language": "Nederlands",
+        "title": "Pardus 1.1 Alfa N",
+        "title-standart": "Pardus 1.1 Alfa 3 (Standaard Grafische Modus)",
+        "title-safe": "Pardus 1.1 Alfa 3 (Minimale Opties)",
+    }
+    for lang in (tr, en, nl):
+        lang["kernel"] = kernel
+        lang["initramfs"] = initramfs
+        path = os.path.join(iso_dir, "boot/grub", "menu" + lang["suffix"] + ".lst")
+        f = file(path, "w")
+        f.write(grub_template % lang)
+        for lang2 in (tr, en, nl):
+            if lang2["suffix"] != lang["suffix"]:
+                f.write("title=%(language)s\nconfigfile (cd)/boot/grub/menu%(suffix)s.lst\n\n" % lang2)
+        f.close()
 
 def make_live_image(project):
     pass
@@ -122,14 +179,22 @@ def make_iso(project):
         os.makedirs(path)
     
     path = os.path.join(image_dir, "boot")
+    kernel = ""
+    initramfs = ""
     for name in os.listdir(path):
         if name.startswith("kernel") or name.startswith("initramfs"):
+            if name.startswith("kernel"):
+                kernel = name
+            else:
+                initramfs = name
             copy(os.path.join(path, name), "boot/" + name)
     path = os.path.join(image_dir, "boot/grub")
     for name in os.listdir(path):
         copy(os.path.join(path, name), "boot/grub/" + name)
     
-    #FIXME: grub.conf, link install repo
+    generate_grub_conf(project, kernel, initramfs)
+    
+    #FIXME: link install repo
     
     run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
         iso_file,
@@ -137,9 +202,13 @@ def make_iso(project):
     ))
 
 def make(project):
+    start = time.time()
     if project.media_type == "install":
         make_install_image(project)
         make_install_repo(project)
     else:
         make_live_image(project)
     make_iso(project)
+    end = time.time()
+    print "ISO is ready!"
+    print "Total time is", end - start, "seconds."
