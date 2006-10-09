@@ -194,9 +194,9 @@ def make_iso(project):
     
     generate_grub_conf(project, kernel, initramfs)
     
-    #FIXME: link install repo
+    run('ln -s "%s" "%s"' % (project.install_repo_dir(), os.path.join(iso_dir, "repo")))
     
-    run('mkisofs -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
+    run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
         iso_file,
         iso_dir,
     ))
