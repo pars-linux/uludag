@@ -94,10 +94,7 @@ def generate_grub_conf(project, kernel, initramfs):
                 f.write("title=%(language)s\nconfigfile (cd)/boot/grub/menu%(suffix)s.lst\n\n" % lang2)
         f.close()
 
-def make_live_image(project):
-    pass
-
-def make_install_image(project):
+def make_image(project):
     print "Preparing install image..."
     
     repo = project.get_repo()
@@ -109,11 +106,18 @@ def make_install_image(project):
     run('umount %s/sys' % image_dir)
     image_dir = project.image_dir(clean=True)
     
-    yalideps = repo.full_deps("yali")
+    if project.media_type == "install":
+        yalideps = repo.full_deps("yali")
+    else:
+        yalideps = project.all_packages
     repo.make_local_repo(repo_dir, yalideps)
     
     run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
-    run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
+    if project.media_type == "install":
+        run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
+    else:
+        for name in project.all_packages:
+            run('pisi --yes-all --ignore-comar -D"%s" it %s' % (image_dir, name))
     
     def chrun(cmd):
         run('chroot "%s" %s' % (image_dir, cmd))
@@ -203,11 +207,9 @@ def make_iso(project):
 
 def make(project):
     start = time.time()
+    make_image(project)
     if project.media_type == "install":
-        make_install_image(project)
         make_install_repo(project)
-    else:
-        make_live_image(project)
     make_iso(project)
     end = time.time()
     print "ISO is ready!"
