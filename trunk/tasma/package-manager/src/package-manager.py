@@ -276,15 +276,17 @@ class MainApplicationWidget(QWidget):
             else:
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
 
+            size = 0L
             if not pisi.packagedb.ctx.installdb.is_installed(app):
                 package = pisi.context.packagedb.get_package(app)
+                size = package.packageSize
             else:
                 package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
+                size = package.installedSize
 
             desc = package.description
             summary = package.summary
             version = package.version
-            size = package.packageSize
             iconPath = getIconPath(package.icon)
 
             if package.source:
