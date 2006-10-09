@@ -77,7 +77,7 @@ class Commander(QObject):
             elif notification == "System.Manager.finished":
                 self.parent.finished(data)
             elif notification == "System.Manager.updatingRepo":
-                self.parent.packagesOrder.append(data)
+                pass
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         elif reply[0] == self.comar.com.FAIL:
