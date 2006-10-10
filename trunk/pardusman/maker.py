@@ -137,6 +137,9 @@ def make_image(project):
     chroot_comar(image_dir)
     chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
     chrun("/usr/bin/pisi configure-pending")
+    chrun("hav call User.Manager.setUser uid 0 password pardus")
+    if project.media_type != "install":
+        chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,video password pardus")
     chrun("/usr/bin/comar --stop")
     
     run('umount %s/proc' % image_dir)
