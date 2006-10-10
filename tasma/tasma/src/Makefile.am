@@ -7,7 +7,7 @@
 #
 # Please read the COPYING file.
 
-SUBDIRS = pics
+SUBDIRS = pics kfile-plugins
 bin_PROGRAMS = tasma
 
 tasma_SOURCES = main.cpp \
