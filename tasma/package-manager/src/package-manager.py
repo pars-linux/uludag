@@ -413,7 +413,7 @@ class MainApplicationWidget(QWidget):
 
         elif operation in ["extracting", "configuring"]:
             self.progressDialog.hideStatus()
-            self.progressDialog.updateOperationDescription(operation)
+            self.progressDialog.updateOperationDescription(operation, package=data[1])
 
         elif operation in ["installed","removed","upgraded"]:
             self.progressDialog.packageNo += 1
