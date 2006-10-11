@@ -25,6 +25,7 @@ from kdecore import *
 from kdeui import *
 from kio import *
 from khtml import *
+import kdedesigner
 
 # Local imports
 import Progress
@@ -390,20 +391,46 @@ class MainApplicationWidget(QWidget):
         self.componentDict[item] = list(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
 
+    def pisiFileProgress(self, data):
+        data = data.split(",")
+        if "pisi-index.xml" in data[0]:
+            self.progressDialog.updateUpgradingInfo(percent=data[1], rate=data[2], symbol=data[3])
+        else:
+            self.progressDialog.updateDownloadingInfo("installing", file=data[0], percent=data[1], rate=data[2], symbol=data[3])
+            self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+
     def pisiNotify(self,data):
         data = data.split(",")
         operation = data[0]
 
-        self.progressDialog.currentOperation = i18n(str(operation))
-        if operation in ["removing", "downloading", "installing"]:
-            self.progressDialog.currentFile = data[1]
-            self.progressDialog.updateProgressText()
-        elif operation in ["extracting","configuring"]:
-            self.progressDialog.updateProgressText()
+        if operation in ["removing"]:
+            self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
+            self.progressDialog.updateOperationDescription(operation, package=data[1])
+                
+        elif operation in ["installing"]:
+            self.progressDialog.updateOperationDescription(operation, package=data[1])
+            self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+
+        elif operation in ["extracting", "configuring"]:
+            self.progressDialog.hideStatus()
+            self.progressDialog.updateOperationDescription(operation)
+
         elif operation in ["installed","removed","upgraded"]:
-            self.progressDialog.currentAppIndex += 1
+            self.progressDialog.packageNo += 1
+
+        elif operation in ["updatingrepo"]:
+            self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
+            self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
+
+        elif operation in ["progressed"]:
+            if self.currentOperation == "updatingrepo":
+                self.progressDialog.setOperationDescription(data[1])
+                self.progressDialog.hideStatus()
+            percent = data[2]
+            self.progressDialog.updateProgressBar(percent)
+
         else: # pisi.ui.packagetogo
-            self.progressDialog.totalAppCount = len(data)
+            self.progressDialog.totalPackages = len(data)
             if self.state == remove_state:
                 if len(base_packages.intersection(data)) > 0:
                     self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
@@ -428,8 +455,6 @@ class MainApplicationWidget(QWidget):
 
         elif command == "System.Manager.removePackage":
             self.updateView(self.listView.currentItem())
-
-        self.progressDialog.currentAppIndex = 1
 
         # Here we don't use updateListing() if there is no error, because we already updated the view
         # in check() using DOM which is fast, so unless an error occurred there is no need for a refresh
@@ -491,7 +516,6 @@ class MainApplicationWidget(QWidget):
 
 # TODO: move this to updatedialog
     def updatePackages(self):
-        self.progressDialog.currentAppIndex = 0
         self.progressDialog.show()
         self.command.updatePackage(self.updateDialog.eventListener.packageList)
 

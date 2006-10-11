@@ -10,43 +10,48 @@ class Progress(ProgressDialog):
         animatedPisi = QMovie(locate("data","package-manager/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
-
-        self.currentOperation = None
-        self.currentFile = None
-        self.totalAppCount = 1
-        self.currentAppIndex = 1
-
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelThread)
+        self.hideStatus()
+        self.hideOperationDescription()
+        
+        self.packageNo = 1
+        self.totalPackages = 1
+        self.packageName = ""
 
-    def setLabelText(self,text):
-        text = KStringHandler.rPixelSqueeze(text, self.fontMetrics(), self.currentOperationLabel.width()-10)
+    def setCurrentOperation(self, text):
         self.currentOperationLabel.setText(text)
 
-    def updateProgressText(self):
-        self.setLabelText(i18n('Now %1 <b>%2</b> (%3 of %4)')
-                          .arg(self.currentOperation).arg(self.currentFile).arg(self.currentAppIndex).arg(self.totalAppCount))
+    def setOperationDescription(self, text):
+        self.operationDescription.setText(text)
 
-    def updateProgressBar(self, filename, length, rate, symbol,downloaded_size,total_size):
-        self.updateProgressText()
-        self.speedLabel.setText(i18n('<b>Speed:</b> %1 %2').arg(rate).arg(symbol))
+    def setStatus(self, text):
+        self.statusInfo.setText(text)
 
-        tpl = pisi.util.human_readable_size(downloaded_size)
-        downloadedText,type1 = (int(tpl[0]), tpl[1])
-        type1 = pisi.util.human_readable_size(downloaded_size)[1]
-        tpl = pisi.util.human_readable_size(total_size)
-        totalText,type2 = (int(tpl[0]), tpl[1])
+    def showStatus(self):
+        self.statusInfo.show()
 
-        self.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> %1 %2/%3 %4').arg(downloadedText).arg(type1).arg(totalText).arg(type2))
-        self.progressBar.setProgress((float(downloaded_size)/float(total_size))*100)
+    def showOperationDescription(self):
+        self.operationDescription.show()
+
+    def hideStatus(self):
+        self.setStatus("")
+
+    def hideOperationDescription(self):
+        self.setOperationDescription("")
+
+    def updateProgressBar(self, progress):
+        self.progressBar.setProgress(float(progress))
+    
+    def reset(self):
+        self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
+        self.hideStatus()
+        self.hideOperationDescription()
+        self.packageNo = 1
+        self.totalPackages = 1
+        self.progressBar.setProgress(0)
 
     def cancelThread(self):
-        # Reset progressbar
-        self.setLabelText(i18n("<b>Cancelling operation...</b>"))
-        self.speedLabel.hide()
-        self.sizeLabel.hide()
-
-#       self.command.terminate()
-        self.parent.possibleError = True
+        self.setCurrentOperation(i18n("<b>Cancelling operation...</b>"))
         self.parent.finished()
 
     def closeForced(self):
@@ -62,14 +67,33 @@ class Progress(ProgressDialog):
         self.forcedClose = False
         return False
 
-    def reset(self):
-        self.progressBar.setProgress(0)
-        self.setLabelText(i18n("<b>Preparing PiSi...</b>"))
-        self.speedLabel.setText(i18n('<b>Speed:</b> N/A'))
-        self.sizeLabel.setText(i18n('<b>Downloaded/Total:</b> N/A'))
-
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
             return
         else:
             ProgressDialog.keyPressEvent(self,event)
+
+    def updateOperationDescription(self, operation, package=None):
+        if not package:
+            package = self.packageName
+        self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(package))
+
+    def updateDownloadingInfo(self, operation, file, percent, rate, symbol):
+        self.packageName = pisi.util.parse_package_name(file)[0]
+        self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(self.packageName))
+        self.updateProgressBar(percent)
+        self.setStatus(i18n('Fetching package %1 of %2 at %3 %4')
+                       .arg(self.packageNo)
+                       .arg(self.totalPackages)
+                       .arg(round(int(rate), 1))
+                       .arg(symbol))
+        self.showStatus()
+        self.showOperationDescription()
+
+    def updateUpgradingInfo(self, percent, rate, symbol):
+        self.updateProgressBar(percent)
+        self.setStatus(i18n('Fetching package list at %3 %4')
+                       .arg(round(int(rate), 1))
+                       .arg(symbol))
+        self.showStatus()
+        self.showOperationDescription()

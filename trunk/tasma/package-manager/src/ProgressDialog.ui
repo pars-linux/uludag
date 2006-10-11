@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>497</width>
-            <height>229</height>
+            <height>234</height>
         </rect>
     </property>
     <property name="caption">
@@ -22,12 +22,10 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QProgressBar" row="4" column="1">
-            <property name="name">
-                <cstring>progressBar</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="5" colspan="1">
+        <property name="resizeMode">
+            <enum>Fixed</enum>
+        </property>
+        <widget class="QLabel" row="0" column="0" rowspan="6" colspan="1">
             <property name="name">
                 <cstring>animeLabel</cstring>
             </property>
@@ -44,56 +42,47 @@
                 <bool>true</bool>
             </property>
         </widget>
+        <widget class="QLabel" row="5" column="1">
+            <property name="name">
+                <cstring>statusInfo</cstring>
+            </property>
+            <property name="text">
+                <string>Fetching package 27 of 345 at 16.2k/s</string>
+            </property>
+        </widget>
         <widget class="QLabel" row="3" column="1">
             <property name="name">
-                <cstring>sizeLabel</cstring>
+                <cstring>operationDescription</cstring>
             </property>
             <property name="text">
-                <string>&lt;b&gt;Downloaded/Total:&lt;/b&gt; Unknown</string>
+                <string>Now installing &lt;b&gt;amsn&lt;/b&gt; package</string>
             </property>
         </widget>
-        <widget class="QLabel" row="2" column="1">
+        <widget class="QProgressBar" row="4" column="1">
             <property name="name">
-                <cstring>speedLabel</cstring>
-            </property>
-            <property name="text">
-                <string>&lt;b&gt;Speed:&lt;/b&gt; Unknown</string>
+                <cstring>progressBar</cstring>
             </property>
         </widget>
-        <widget class="QLabel" row="1" column="1">
+        <widget class="QLayoutWidget" row="6" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>currentOperationLabel</cstring>
+                <cstring>layout3</cstring>
             </property>
-            <property name="text">
-                <string>&lt;h3&gt;Preparing PiSi...&lt;/h3&gt;</string>
-            </property>
-        </widget>
-        <spacer row="0" column="1">
-            <property name="name">
-                <cstring>spacer1</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>41</height>
-                </size>
-            </property>
-        </spacer>
-        <widget class="QLayoutWidget" row="5" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>layout1</cstring>
-            </property>
-            <hbox>
+            <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <spacer>
+                <widget class="KPushButton" row="0" column="1">
+                    <property name="name">
+                        <cstring>cancelButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                </widget>
+                <spacer row="0" column="0">
                     <property name="name">
                         <cstring>spacer2</cstring>
                     </property>
@@ -110,16 +99,50 @@
                         </size>
                     </property>
                 </spacer>
-                <widget class="KPushButton">
-                    <property name="name">
-                        <cstring>cancelButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Cancel</string>
-                    </property>
-                </widget>
-            </hbox>
+            </grid>
         </widget>
+        <spacer row="2" column="1">
+            <property name="name">
+                <cstring>spacer4</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>30</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="1" column="1">
+            <property name="name">
+                <cstring>currentOperationLabel</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;h3&gt;Preparing PiSi...&lt;/h3&gt;</string>
+            </property>
+        </widget>
+        <spacer row="0" column="1">
+            <property name="name">
+                <cstring>spacer5</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>21</height>
+                </size>
+            </property>
+        </spacer>
     </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
