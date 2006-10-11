@@ -423,10 +423,10 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
 
         elif operation in ["progressed"]:
-            if self.currentOperation == "updatingrepo":
-                self.progressDialog.setOperationDescription(data[1])
+            if data[1] == "updatingrepo":
+                self.progressDialog.setOperationDescription(data[2])
                 self.progressDialog.hideStatus()
-            percent = data[2]
+            percent = data[3]
             self.progressDialog.updateProgressBar(percent)
 
         else: # pisi.ui.packagetogo
