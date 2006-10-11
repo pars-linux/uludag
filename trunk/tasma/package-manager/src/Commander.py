@@ -127,9 +127,6 @@ class Commander(QObject):
     def listNewPackages(self):
         return list(pisi.api.list_available() - pisi.api.list_installed())
 
-    def searchPackage(self,query,language='tr'):
-        return pisi.api.search_package(query,language)
-
     def packageGraph(self,list,ignoreInstalled=True):
         return pisi.api.package_graph(list, ignoreInstalled)
 

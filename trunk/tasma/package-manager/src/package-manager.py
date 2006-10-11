@@ -477,16 +477,24 @@ class MainApplicationWidget(QWidget):
     def searchStringChanged(self):
         if (self.timer.isActive()):
             self.timer.stop()
-        self.timer.start(500, True)
+        self.timer.start(300, True)
 
     def searchPackage(self):
         query = self.searchLine.text()
         if not query.isEmpty():
-            result = self.command.searchPackage(query)
-            result = result.union(self.command.searchPackage(query,"en"))
+            result = self.searchPackages(query)
             self.createSearchResults(result)
         else:
             self.updateListing()
+
+    def searchPackages(self, query):
+        packages = []
+        for key in self.componentDict.keys():
+            for value in self.componentDict[key]:
+                if query in value:
+                    packages.append(value)
+
+        return set(packages)
 
     def clearSearchLine(self, updateListing=True):
         self.searchLine.clear()
