@@ -137,10 +137,23 @@ def make_image(project):
     chroot_comar(image_dir)
     chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
     chrun("/usr/bin/pisi configure-pending")
+    
     chrun("hav call User.Manager.setUser uid 0 password pardus")
     if project.media_type != "install":
         chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,video password pardus")
     chrun("/usr/bin/comar --stop")
+    
+    if project.media_type != "install":
+        path = os.path.join(image_dir, "usr/kde/3.5/share/config/kdm/kdmrc")
+        lines = []
+        for line in file(path):
+            if line.startswith("#AutoLoginEnable"):
+                lines.append("AutoLoginEnable=true")
+            elif line.startswith("#AutoLoginUser"):
+                lines.append("AutoLoginUser=pars")
+            else:
+                lines.append(line)
+        file(path, "w").write("\n".join(lines))
     
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
