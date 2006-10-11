@@ -482,12 +482,12 @@ class MainApplicationWidget(QWidget):
     def searchPackage(self):
         query = self.searchLine.text()
         if not query.isEmpty():
-            result = self.searchPackages(query)
+            result = self.searchPackageName(query)
             self.createSearchResults(result)
         else:
             self.updateListing()
 
-    def searchPackages(self, query):
+    def searchPackageName(self, query):
         packages = []
         for key in self.componentDict.keys():
             for value in self.componentDict[key]:
