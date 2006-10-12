@@ -73,12 +73,28 @@ def getIconPath(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().iconPath(name,group)
 
 class Component:
-    def __init__(self, name, packages):
+    def __init__(self, name, packages, summary):
         self.name = name
         self.packages = packages
+        self.summary = summary
 
     def remove(self, package):
         self.packages.remove(package)
+
+class ComponentTipper(QToolTip):
+    def __init__(self, parent):
+        super(ComponentTipper, self).__init__(parent.listView.viewport())
+        self.components = parent.componentDict
+        self.list = parent.listView
+        self.setWakeUpDelay(500)
+        
+    def maybeTip(self, point):
+        item = self.list.itemAt(point)
+        if item:
+            component = self.components[item]
+            self.tip(self.list.itemRect(item), 
+                     u"<b>%s</b> - %s" %
+                     (component.name, component.summary))
 
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
@@ -152,6 +168,8 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.listView)
         item.setText(0,i18n("Loading Package List..."))
         self.listView.setSelected(self.listView.firstChild(),True)
+
+        self.tipper = ComponentTipper(self)
 
         self.htmlPart.view().setFocus()
         self.show()
@@ -360,6 +378,15 @@ class MainApplicationWidget(QWidget):
         for package in self.eventListener.packageList:
             self.componentDict[item].remove(package)
 
+    def updateComponentList(self):
+        item = self.listView.currentItem()
+        component = self.componentDict[item]
+        if component.packages:
+            item.setText(0,u"%s (%s)" % (component.name, len(component.packages)))
+        else:
+            self.listView.takeItem(item)
+            self.listView.setSelected(self.listView.firstChild(),True)
+
     def createComponentList(self, packages):
         # Components
         self.listView.clear()
@@ -383,7 +410,7 @@ class MainApplicationWidget(QWidget):
 
                 item.setText(0,u"%s (%s)" % (name, len(component_packages)))
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-                self.componentDict[item] = Component(name, component_packages)
+                self.componentDict[item] = Component(name, component_packages, component.summary)
 
         # Rest of the packages
         rest_packages = list(set(packages) - set(componentPackages))
@@ -391,7 +418,7 @@ class MainApplicationWidget(QWidget):
         name = i18n("Others")
         item.setText(0, u"%s (%s)" % (name, len(rest_packages)))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-        self.componentDict[item] = Component(name, rest_packages)
+        self.componentDict[item] = Component(name, rest_packages, name)
 
     def createSearchResults(self, packages):
         self.listView.clear()
@@ -464,9 +491,11 @@ class MainApplicationWidget(QWidget):
 
         elif command == "System.Manager.installPackage":
             self.updateView(self.listView.currentItem())
+            self.updateComponentList()
 
         elif command == "System.Manager.removePackage":
             self.updateView(self.listView.currentItem())
+            self.updateComponentList()
 
         # Here we don't use updateListing() if there is no error, because we already updated the view
         # in check() using DOM which is fast, so unless an error occurred there is no need for a refresh
