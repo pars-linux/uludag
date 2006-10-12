@@ -374,12 +374,11 @@ class MainApplicationWidget(QWidget):
                 self.componentDict[item] = [x for x in component.packages if x in packages]
 
         # Rest of the packages
-        packages = list(set(self.command.listPackages()) - set(componentPackages))
-
+        rest_packages = list(set(packages) - set(componentPackages))
         item = KListViewItem(self.listView)
         item.setText(0,i18n("Others"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-        self.componentDict[item] = packages
+        self.componentDict[item] = rest_packages
 
     def createSearchResults(self, packages):
         self.listView.clear()
