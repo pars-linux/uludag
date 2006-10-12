@@ -72,6 +72,14 @@ def getIconPath(name, group=KIcon.Desktop):
         name = "package"
     return KGlobal.iconLoader().iconPath(name,group)
 
+class Component:
+    def __init__(self, name, packages):
+        self.name = name
+        self.packages = packages
+
+    def remove(self, package):
+        self.packages.remove(package)
+
 class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
@@ -324,7 +332,7 @@ class MainApplicationWidget(QWidget):
 
     def updateView(self,item):
         try:
-            self.createHTML(self.componentDict[item])
+            self.createHTML(self.componentDict[item].packages)
         except:
             pass
 
@@ -348,9 +356,9 @@ class MainApplicationWidget(QWidget):
         else:
             self.command.install(self.eventListener.packageList)
 
-        component = self.listView.currentItem()
+        item = self.listView.currentItem()
         for package in self.eventListener.packageList:
-            self.componentDict[component].remove(package)
+            self.componentDict[item].remove(package)
 
     def createComponentList(self, packages):
         # Components
@@ -358,7 +366,8 @@ class MainApplicationWidget(QWidget):
         self.componentDict.clear()
 
         componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network","applications.multimedia",
-                          "applications.games","applications.hardware","system.base","system.devel", "system.kernel.drivers","system.kernel.firmware"]
+                          "applications.games","applications.hardware","system.base","system.devel", "system.kernel.drivers", 
+                          "system.kernel.firmware"]
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
         componentPackages = []
 
@@ -368,18 +377,21 @@ class MainApplicationWidget(QWidget):
                 componentPackages += component.packages
                 item = KListViewItem(self.listView)
                 if component.localName:
-                    item.setText(0,u"%s (%s)" % (component.localName, len(component_packages)))
+                    name = component.localName
                 else:
-                    item.setText(0,u"%s (%s)" % (component.name, len(component_packages)))
+                    name = component.name
+
+                item.setText(0,u"%s (%s)" % (name, len(component_packages)))
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-                self.componentDict[item] = component_packages
+                self.componentDict[item] = Component(name, component_packages)
 
         # Rest of the packages
         rest_packages = list(set(packages) - set(componentPackages))
         item = KListViewItem(self.listView)
-        item.setText(0,i18n("Others (%1)").arg(len(rest_packages)))
+        name = i18n("Others")
+        item.setText(0, u"%s (%s)" % (name, len(rest_packages)))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-        self.componentDict[item] = rest_packages
+        self.componentDict[item] = Component(name, rest_packages)
 
     def createSearchResults(self, packages):
         self.listView.clear()
@@ -490,9 +502,9 @@ class MainApplicationWidget(QWidget):
     def searchPackageName(self, query):
         packages = []
         for key in self.componentDict.keys():
-            for value in self.componentDict[key]:
-                if query in value:
-                    packages.append(value)
+            for package in self.componentDict[key].packages:
+                if query in package:
+                    packages.append(package)
 
         return packages
 
