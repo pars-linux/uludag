@@ -11,7 +11,7 @@
 
     if ($CF["Tools"]["Pic"]["Enable"]) {
         $image_path = $CF["Tools"]["Pic"]["Dir"];
-        include_once ("../search/search.php");
+        include_once ("../Modules/search.php");
         $real_word = $_GET["q"];
         $tools = new Sud();
         $file_name = $tools->turnToEn($tools->GetLower($real_word)).".gif";

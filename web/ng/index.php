@@ -9,6 +9,7 @@
     require_once('vezir.php');
     require_once('langs/'.$AL.'.php');
     require_once('Modules/Main.php');
+    require_once('Modules/functions_encode.php');
 
 ?>
 <!DOCTYPE html
@@ -33,7 +34,7 @@
             if ($Modules<>""){
                 echo "\n<div class='moduleser'>".$Modules['Body']."</div>";
             }
-            echo $Page[0]["Content"]."</div></div>";
+            echo Encode($Page[0]["Content"])."</div></div>";
         }
         else
             include ('index_'.$AL.'.php');
