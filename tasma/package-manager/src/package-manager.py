@@ -383,12 +383,10 @@ class MainApplicationWidget(QWidget):
 
     def createSearchResults(self, packages):
         self.listView.clear()
-        self.componentDict.clear()
-
         item = KListViewItem(self.listView)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        self.componentDict[item] = list(packages)
+        self.createHTML(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
 
     def pisiFileProgress(self, data):
@@ -494,7 +492,7 @@ class MainApplicationWidget(QWidget):
                 if query in value:
                     packages.append(value)
 
-        return set(packages)
+        return packages
 
     def clearSearchLine(self, updateListing=True):
         self.searchLine.clear()
