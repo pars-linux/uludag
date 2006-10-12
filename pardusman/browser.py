@@ -122,9 +122,10 @@ class Package(QCheckListItem):
                 browser._unselect_pak(self)
             self.mark -= 1
         
-        for pak in self.pak.depends:
-            if browser.packages.has_key(pak):
-                browser.packages[pak].stateChange(bool)
+        if self.mark < 2:
+            for pak in self.pak.depends:
+                if browser.packages.has_key(pak):
+                    browser.packages[pak].stateChange(bool)
         
         browser.list.triggerUpdate()
     
