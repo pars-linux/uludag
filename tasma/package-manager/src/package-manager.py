@@ -440,9 +440,11 @@ class MainApplicationWidget(QWidget):
 
     def finished(self, command=None):
 
+        # this is pisi's lack of db locking mechanism usage fault.
+        pisi.api.finalize()
+        pisi.api.init(write=False)
+
         if command == "System.Manager.updateAllRepositories":
-            pisi.api.finalize()
-            pisi.api.init(write=False)
             self.showUpdateDialog()
 
         elif command == "System.Manager.updatePackage":
