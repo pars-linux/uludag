@@ -65,23 +65,23 @@ def generate_grub_conf(project, kernel, initramfs):
     tr = {
         "suffix": "",
         "language": "Turkish",
-        "title": "Pardus 1.1 Alfa N",
-        "title-standart": "Pardus 1.1 Alfa 3 (Standard Ekran Modu)",
-        "title-safe": "Pardus 1.1 Alfa 3 (Minimum Ayarlar)",
+        "title": "Pardus 12-10-2006",
+        "title-standart": "Pardus 12-10-2006 (Standard Ekran Modu)",
+        "title-safe": "Pardus 12-10-2006 (Minimum Ayarlar)",
     }
     en = {
         "suffix": "-en",
         "language": "English",
-        "title": "Pardus 1.1 Alfa N",
-        "title-standart": "Pardus 1.1 Alfa 3 (Standard Graphics Mode)",
-        "title-safe": "Pardus 1.1 Alfa 3 (Minimum Options)",
+        "title": "Pardus 12-10-2006",
+        "title-standart": "Pardus 12-10-2006 (Standard Graphics Mode)",
+        "title-safe": "Pardus 12-10-2006 (Minimum Options)",
     }
     nl = {
         "suffix": "-nl",
         "language": "Nederlands",
-        "title": "Pardus 1.1 Alfa N",
-        "title-standart": "Pardus 1.1 Alfa 3 (Standaard Grafische Modus)",
-        "title-safe": "Pardus 1.1 Alfa 3 (Minimale Opties)",
+        "title": "Pardus 12-10-2006",
+        "title-standart": "Pardus 12-10-2006 (Standaard Grafische Modus)",
+        "title-safe": "Pardus 12-10-2006 (Minimale Opties)",
     }
     for lang in (tr, en, nl):
         lang["kernel"] = kernel
@@ -117,7 +117,7 @@ def make_image(project):
         run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
     else:
         for name in project.all_packages:
-            run('pisi --yes-all --ignore-comar -D"%s" it %s' % (image_dir, name))
+            run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s' % (image_dir, name))
     
     def chrun(cmd):
         run('chroot "%s" %s' % (image_dir, cmd))
