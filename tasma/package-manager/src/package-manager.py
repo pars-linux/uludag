@@ -363,7 +363,8 @@ class MainApplicationWidget(QWidget):
         componentPackages = []
 
         for component in components:
-            if len(component.packages):
+            component_packages = list(set(packages).intersection(component.packages))
+            if len(component_packages):
                 componentPackages += component.packages
                 item = KListViewItem(self.listView)
                 if component.localName:
@@ -371,7 +372,7 @@ class MainApplicationWidget(QWidget):
                 else:
                     item.setText(0,u"%s" % component.name)
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-                self.componentDict[item] = [x for x in component.packages if x in packages]
+                self.componentDict[item] = component_packages
 
         # Rest of the packages
         rest_packages = list(set(packages) - set(componentPackages))
