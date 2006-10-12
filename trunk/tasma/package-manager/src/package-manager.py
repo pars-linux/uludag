@@ -368,16 +368,16 @@ class MainApplicationWidget(QWidget):
                 componentPackages += component.packages
                 item = KListViewItem(self.listView)
                 if component.localName:
-                    item.setText(0,u"%s" % component.localName)
+                    item.setText(0,u"%s (%s)" % (component.localName, len(component_packages)))
                 else:
-                    item.setText(0,u"%s" % component.name)
+                    item.setText(0,u"%s (%s)" % (component.name, len(component_packages)))
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
                 self.componentDict[item] = component_packages
 
         # Rest of the packages
         rest_packages = list(set(packages) - set(componentPackages))
         item = KListViewItem(self.listView)
-        item.setText(0,i18n("Others"))
+        item.setText(0,i18n("Others (%1)").arg(len(rest_packages)))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
         self.componentDict[item] = rest_packages
 
