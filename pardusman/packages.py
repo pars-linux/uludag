@@ -122,10 +122,18 @@ class Repository:
             self.components[c.name] = c
         for name in self.packages:
             p = self.packages[name]
-            for name in p.depends:
-                self.packages[name].revdeps.append(p.name)
+            for name2 in p.depends:
+                if self.packages.has_key(name2):
+                    self.packages[name2].revdeps.append(p.name)
+                else:
+                    print "Error: package %s depends on non existing package %s" % (p.name, name2)
             if self.components.has_key(p.component):
                 self.components[p.component].packages.append(p.name)
+        for name in self.packages:
+            p = self.packages[name]
+            for dep in p.depends:
+                if dep in p.revdeps:
+                    print "Error: cyclic dependency between %s and %s" % (name, dep)
     
     def make_index(self, package_list):
         doc = piksemel.newDocument("PISI")
