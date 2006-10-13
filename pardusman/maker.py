@@ -188,12 +188,12 @@ def make_image(project):
         lines = []
         for line in file(path):
             if line.startswith("#AutoLoginEnable"):
-                lines.append("AutoLoginEnable=true")
+                lines.append("AutoLoginEnable=true\n")
             elif line.startswith("#AutoLoginUser"):
-                lines.append("AutoLoginUser=pars")
+                lines.append("AutoLoginUser=pars\n")
             else:
                 lines.append(line)
-        file(path, "w").write("\n".join(lines))
+        file(path, "w").write("".join(lines))
     
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
