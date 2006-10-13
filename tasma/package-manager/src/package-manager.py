@@ -31,7 +31,6 @@ import kdedesigner
 import Progress
 import Preferences
 import Commander
-import UpdateDialog
 import CustomEventListener
 
 # Pisi
@@ -44,7 +43,7 @@ def I18N_NOOP(str):
 description = I18N_NOOP("GUI for PiSi package manager")
 version = "1.1.0_b4"
 base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
-(install_state, remove_state) = range(2)
+(install_state, remove_state, upgrade_state) = range(3)
 
 def AboutData():
     global version,description
@@ -122,6 +121,17 @@ class MainApplicationWidget(QWidget):
         self.clearButton.setIconSet(loadIconSet("locationbar_erase"))
         self.searchLabel = QLabel(i18n("Search: "), self.rightTopLayout)
         self.searchLine = KLineEdit(self.rightTopLayout)
+
+        self.basketAction = KPushButton(self.rightTopLayout)
+        self.basketAction.setText(i18n("Show basket"))
+        self.basketAction.setIconSet(loadIconSet("package"))
+        self.basketAction.setEnabled(False)
+
+        self.operateAction = KPushButton(self.rightTopLayout)
+        self.operateAction.setText(i18n("Install Package(s)"))
+        self.operateAction.setIconSet(loadIconSet("ok"))
+        self.operateAction.setEnabled(False)
+
         self.timer = QTimer(self)
 
         self.htmlPart = KHTMLPart(self.rightLayout)
@@ -157,8 +167,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
-
-        self.currentAppList = []
+        self.connect(self.operateAction,SIGNAL("clicked()"),self.takeAction)
 
         self.delayTimer = QTimer(self)
         self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadComponentList)
@@ -176,18 +185,8 @@ class MainApplicationWidget(QWidget):
 
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
-
-        # Show updates dialog if requested
-        global showUpdates
-
-        if showUpdates:
-            self.update()
-        else:
-            # Empty repo check
-            self.initialCheck()
-
-        self.currentAppList = self.command.listNewPackages()
-        self.createComponentList(self.currentAppList)
+        self.initialCheck()
+        self.createComponentList(self.command.listNewPackages())
         self.listView.setSelected(self.listView.firstChild(),True)
 
     def processEvents(self):
@@ -209,42 +208,47 @@ class MainApplicationWidget(QWidget):
             KMessageBox.error(self,i18n("Package repository still does not have category information.\nExiting..."),i18n("Error"))
             kapp.quit()
 
-    def switchListing(self):
-        self.updateListing(True)
+    def resetState(self):
+        self.eventListener.packageList = []
+        self.operateAction.setEnabled(False)
+        self.clearSearchLine(False)
+        self.parent.showNewAction.setChecked(False)
+        self.parent.showInstalledAction.setChecked(False)
+        self.parent.showUpgradeAction.setChecked(False)
 
-    def updateListing(self,switch=False):
+    def installState(self):
+        self.resetState()
+        self.parent.showNewAction.setChecked(True)
+        packages = self.command.listNewPackages()
+        self.createComponentList(packages)
+        self.operateAction.setText(i18n("Install Package(s)"))
+        self.operateAction.setIconSet(loadIconSet("ok"))
+        self.state = install_state
+        self.listView.setSelected(self.listView.firstChild(),True)
 
-        if switch or self.possibleError:
-            self.eventListener.packageList = []
-            self.parent.operateAction.setEnabled(False)
-            self.parent.basketAction.setEnabled(False)
-            self.clearSearchLine(False)
+    def removeState(self):
+        self.resetState()
+        self.parent.showInstalledAction.setChecked(True)
+        packages = self.command.listPackages()
+        self.createComponentList(packages)
+        self.operateAction.setText(i18n("Remove Package(s)"))
+        self.operateAction.setIconSet(loadIconSet("no"))
+        self.state = remove_state
+        self.listView.setSelected(self.listView.firstChild(),True)
 
-        if self.state == remove_state:
-            if switch:
-                self.currentAppList = self.command.listNewPackages()
-                self.createComponentList(self.currentAppList)
-                self.parent.showAction.setText(i18n("Show Installed Packages"))
-                self.parent.showAction.setIconSet(loadIconSet("package"))
-                self.parent.operateAction.setText(i18n("Install Package(s)"))
-                self.parent.operateAction.setIconSet(loadIconSet("ok"))
-                self.state = install_state
-            else:
-                self.currentAppList = self.command.listPackages()
-                self.createComponentList(self.currentAppList)
-        elif self.state == install_state:
-            if switch:
-                self.currentAppList = self.command.listPackages()
-                self.createComponentList(self.currentAppList)
-                self.parent.showAction.setText(i18n("Show New Packages"))
-                self.parent.showAction.setIconSet(loadIconSet("edit_add"))
-                self.parent.operateAction.setText(i18n("Remove Package(s)"))
-                self.parent.operateAction.setIconSet(loadIconSet("no"))
-                self.state = remove_state
-            else:
-                self.currentAppList = self.command.listNewPackages()
-                self.createComponentList(self.currentAppList)
+    def upgradeState(self):
 
+        upgradables = pisi.api.list_upgradable()
+        if not upgradables:
+            KMessageBox.information(self,i18n("There are no updates available at this time"))
+            return
+
+        self.resetState()
+        self.parent.showUpgradeAction.setChecked(True)
+        self.createComponentList(upgradables)
+        self.operateAction.setText(i18n("Upgrade Package(s)"))
+        self.operateAction.setIconSet(loadIconSet("reload"))
+        self.state = upgrade_state
         self.listView.setSelected(self.listView.firstChild(),True)
 
     def createHTML(self,packages,part=None):
@@ -356,11 +360,11 @@ class MainApplicationWidget(QWidget):
 
     def updateButtons(self):
         if self.eventListener.packageList:
-            self.parent.operateAction.setEnabled(True)
-            self.parent.basketAction.setEnabled(True)
+            self.operateAction.setEnabled(True)
+            self.basketAction.setEnabled(True)
         else:
-            self.parent.operateAction.setEnabled(False)
-            self.parent.basketAction.setEnabled(False)
+            self.operateAction.setEnabled(False)
+            self.basketAction.setEnabled(False)
 
     def showBasket(self):
         print "Show me the basket"
@@ -371,8 +375,10 @@ class MainApplicationWidget(QWidget):
 
         if self.state == remove_state:
             self.command.remove(self.eventListener.packageList)
-        else:
+        elif self.state == install_state:
             self.command.install(self.eventListener.packageList)
+        elif self.state == upgrade_state:
+            self.command.updatePackage(self.eventListener.packageList)
 
         item = self.listView.currentItem()
         for package in self.eventListener.packageList:
@@ -420,6 +426,13 @@ class MainApplicationWidget(QWidget):
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
         self.componentDict[item] = Component(name, rest_packages, name)
 
+        # All
+        item = KListViewItem(self.listView)
+        name = i18n("All")
+        item.setText(0, u"%s (%s)" % (name, len(packages)))
+        item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
+        self.componentDict[item] = Component(name, packages, name)
+
     def createSearchResults(self, packages):
         self.listView.clear()
         item = KListViewItem(self.listView)
@@ -433,26 +446,38 @@ class MainApplicationWidget(QWidget):
         if "pisi-index.xml" in data[0]:
             self.progressDialog.updateUpgradingInfo(percent=data[1], rate=data[2], symbol=data[3])
         else:
-            self.progressDialog.updateDownloadingInfo("installing", file=data[0], percent=data[1], rate=data[2], symbol=data[3])
-            self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+            self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[0], percent=data[1], rate=data[2], symbol=data[3])
+            if self.state == install_state:
+                self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+            elif self.state == upgrade_state:
+                self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
 
     def pisiNotify(self,data):
         data = data.split(",")
         operation = data[0]
 
         if operation in ["removing"]:
-            self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
-            self.progressDialog.updateOperationDescription(operation, package=data[1])
+            if self.state == remove_state:
+                self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
+            elif self.state == upgrade_state:
+                self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
+                
+            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
                 
         elif operation in ["installing"]:
-            self.progressDialog.updateOperationDescription(operation, package=data[1])
-            self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+            if self.state == install_state:
+                self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+            elif self.state == upgrade_state:
+                self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
+            
+            self.progressDialog.packageNo += 1
+            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
         elif operation in ["extracting", "configuring"]:
             self.progressDialog.hideStatus()
-            self.progressDialog.updateOperationDescription(operation, package=data[1])
+            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
-        elif operation in ["installed","removed","upgraded"]:
+        elif operation in ["removed"]:
             self.progressDialog.packageNo += 1
 
         elif operation in ["updatingrepo"]:
@@ -467,7 +492,10 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.updateProgressBar(percent)
 
         else: # pisi.ui.packagetogo
-            self.progressDialog.totalPackages = len(data)
+            # pisi sends unnecessary remove order notify in the middle of install, upgrade, remove
+            if self.progressDialog.totalPackages == 1 and len(data) > 1:
+                self.progressDialog.totalPackages = len(data)
+
             if self.state == remove_state:
                 if len(base_packages.intersection(data)) > 0:
                     self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
@@ -484,16 +512,12 @@ class MainApplicationWidget(QWidget):
         pisi.api.init(write=False)
 
         if command == "System.Manager.updateAllRepositories":
-            self.showUpdateDialog()
+            self.upgradeState()
 
-        elif command == "System.Manager.updatePackage":
-            self.updateDialog.refreshDialog()
-
-        elif command == "System.Manager.installPackage":
-            self.updateView(self.listView.currentItem())
-            self.updateComponentList()
-
-        elif command == "System.Manager.removePackage":
+        elif command in ["System.Manager.updateAllRepositories",
+                       "System.Manager.updatePackage",
+                       "System.Manager.installPackage",
+                       "System.Manager.removePackage"]:
             self.updateView(self.listView.currentItem())
             self.updateComponentList()
 
@@ -505,8 +529,8 @@ class MainApplicationWidget(QWidget):
         else:
             self.eventListener.packageList = []
 
-        self.parent.operateAction.setEnabled(False)
-        self.parent.basketAction.setEnabled(False)
+        self.operateAction.setEnabled(False)
+        self.basketAction.setEnabled(False)
         self.progressDialog.closeForced()
         self.progressDialog.reset()
 
@@ -550,23 +574,9 @@ class MainApplicationWidget(QWidget):
             self.pref = Preferences.Preferences(self)
         self.pref.show()
 
-    def update(self):
+    def updateCheck(self):
         self.progressDialog.show()
         self.command.startUpdate()
-
-    def showUpdateDialog(self):
-        upgradables = pisi.api.list_upgradable()
-        if not upgradables:
-            KMessageBox.information(self,i18n("There are no updates available at this time"))
-            return
-
-        self.updateDialog = UpdateDialog.UpdateDialog(self, upgradables)
-        self.updateDialog.show()
-
-# TODO: move this to updatedialog
-    def updatePackages(self):
-        self.progressDialog.show()
-        self.command.updatePackage(self.updateDialog.eventListener.packageList)
 
     def setShowOnlyPrograms(self,hideLibraries=False):
         global kapp
@@ -600,16 +610,14 @@ class MainApplication(KMainWindow):
 
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
-        self.showAction = KAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.switchListing,self.actionCollection(),"show_action")
-        self.operateAction = KAction(i18n("Install Package(s)"),"ok",KShortcut.null(),self.mainwidget.takeAction,self.actionCollection(),"operate_action")
-        self.upgradeAction = KAction(i18n("Check for updates"),"reload",KShortcut.null(),self.mainwidget.update ,self.actionCollection(),"upgrade_packages")
-        self.basketAction = KAction(i18n("Show basket"),"basket",KShortcut.null(),self.mainwidget.showBasket ,self.actionCollection(),"show_basket")
+        self.showInstalledAction = KToggleAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.removeState,self.actionCollection(),"show_installed_action")
+        self.showNewAction = KToggleAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.installState,self.actionCollection(),"show_new_action")
+        self.showUpgradeAction = KToggleAction(i18n("Show Upgradable Packages"),"reload",KShortcut.null(),self.mainwidget.updateCheck ,self.actionCollection(),"show_upgradable_action")
 
-        self.operateAction.setEnabled(False)
-        self.basketAction.setEnabled(False)
-
-        self.showAction.plug(fileMenu)
-        self.operateAction.plug(fileMenu)
+        self.showNewAction.plug(fileMenu)
+        self.showNewAction.setChecked(True)
+        self.showInstalledAction.plug(fileMenu)
+        self.showUpgradeAction.plug(fileMenu)
         self.quitAction.plug(fileMenu)
         self.settingsAction.plug(settingsMenu)
 

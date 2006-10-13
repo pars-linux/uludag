@@ -76,13 +76,14 @@ class Progress(ProgressDialog):
     def updateOperationDescription(self, operation, package=None):
         if not package:
             package = self.packageName
+        
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(package))
 
     def updateDownloadingInfo(self, operation, file, percent, rate, symbol):
         self.packageName = pisi.util.parse_package_name(file)[0]
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(self.packageName))
         self.updateProgressBar(percent)
-        self.setStatus(i18n('Fetching package %1 of %2 at %3 %4')
+        self.setStatus(i18n('Fetching package (%1/%2) at %3 %4')
                        .arg(self.packageNo)
                        .arg(self.totalPackages)
                        .arg(round(int(rate), 1))
