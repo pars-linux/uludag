@@ -16,6 +16,44 @@ import stat
 import sys
 import time
 
+inittab_livecd = """# /etc/inittab:
+#
+# This file describes how the INIT process should set up
+# the system in a certain run-level.
+
+# Default runlevel.
+id:3:initdefault:
+
+# System initialization, mount local filesystems, etc.
+si::sysinit:/sbin/mudur.py sysinit
+
+# Further system initialization, brings up the boot runlevel.
+rc::bootwait:/sbin/mudur.py boot
+
+l0:0:wait:/sbin/mudur.py shutdown 
+l1:S1:wait:/sbin/mudur.py single
+l2:2:wait:/sbin/mudur.py nonetwork
+l3:3:wait:/sbin/mudur.py default
+l4:4:wait:/sbin/mudur.py default
+l5:5:wait:/sbin/mudur.py default
+l6:6:wait:/sbin/mudur.py reboot
+#z6:6:respawn:/sbin/sulogin
+
+c1:12345:respawn:/sbin/mingetty --noclear --autologin root tty1
+c2:12345:respawn:/sbin/mingetty --noclear --autologin root tty2
+c3:12345:respawn:/sbin/mingetty --noclear --autologin root tty3
+c4:12345:respawn:/sbin/mingetty --noclear --autologin root tty4
+c5:12345:respawn:/sbin/mingetty --noclear --autologin root tty5
+c6:12345:respawn:/sbin/mingetty --noclear --autologin root tty6
+
+# SERIAL CONSOLES
+#s0:12345:respawn:/sbin/agetty 9600 ttyS0 vt100
+#s1:12345:respawn:/sbin/agetty 9600 ttyS1 vt100
+
+# What to do at the "Three Finger Salute".
+ca:12345:ctrlaltdel:/sbin/shutdown -r now
+"""
+
 grub_template = """default 0
 timeout 10
 splashimage (cd)/boot/grub/splash.xpm.gz
@@ -65,23 +103,23 @@ def generate_grub_conf(project, kernel, initramfs):
     tr = {
         "suffix": "",
         "language": "Turkish",
-        "title": "Pardus 12-10-2006",
-        "title-standart": "Pardus 12-10-2006 (Standard Ekran Modu)",
-        "title-safe": "Pardus 12-10-2006 (Minimum Ayarlar)",
+        "title": "Pardus 13-10-2006",
+        "title-standart": "Pardus 13-10-2006 (Standard Ekran Modu)",
+        "title-safe": "Pardus 13-10-2006 (Minimum Ayarlar)",
     }
     en = {
         "suffix": "-en",
         "language": "English",
-        "title": "Pardus 12-10-2006",
-        "title-standart": "Pardus 12-10-2006 (Standard Graphics Mode)",
-        "title-safe": "Pardus 12-10-2006 (Minimum Options)",
+        "title": "Pardus 13-10-2006",
+        "title-standart": "Pardus 13-10-2006 (Standard Graphics Mode)",
+        "title-safe": "Pardus 13-10-2006 (Minimum Options)",
     }
     nl = {
         "suffix": "-nl",
         "language": "Nederlands",
-        "title": "Pardus 12-10-2006",
-        "title-standart": "Pardus 12-10-2006 (Standaard Grafische Modus)",
-        "title-safe": "Pardus 12-10-2006 (Minimale Opties)",
+        "title": "Pardus 13-10-2006",
+        "title-standart": "Pardus 13-10-2006 (Standaard Grafische Modus)",
+        "title-safe": "Pardus 13-10-2006 (Minimale Opties)",
     }
     for lang in (tr, en, nl):
         lang["kernel"] = kernel
@@ -140,10 +178,12 @@ def make_image(project):
     
     chrun("hav call User.Manager.setUser uid 0 password pardus")
     if project.media_type != "install":
-        chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,video password pardus")
+        chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,video,audio password pardus")
     chrun("/usr/bin/comar --stop")
     
     if project.media_type != "install":
+        path = os.path.join(image_dir, "etc/inittab")
+        file(path, "w").write(inittab_livecd)
         path = os.path.join(image_dir, "usr/kde/3.5/share/config/kdm/kdmrc")
         lines = []
         for line in file(path):

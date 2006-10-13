@@ -103,12 +103,10 @@
         <SelectedPackage>nvidia-kernel</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openvpn</SelectedPackage>
-        <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
-        <SelectedPackage>qalculate</SelectedPackage>
         <SelectedPackage>rar</SelectedPackage>
         <SelectedPackage>rpcalc</SelectedPackage>
         <SelectedPackage>rt2400</SelectedPackage>
@@ -176,6 +174,7 @@
         <Package>aspell</Package>
         <Package>atk</Package>
         <Package>attr</Package>
+        <Package>audiofile</Package>
         <Package>axel</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
@@ -195,7 +194,6 @@
         <Package>cdrtools</Package>
         <Package>chmlib</Package>
         <Package>clearlooks</Package>
-        <Package>cln</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
         <Package>coolplug</Package>
@@ -273,7 +271,6 @@
         <Package>gmp</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnupg</Package>
-        <Package>gnuplot</Package>
         <Package>gnutls</Package>
         <Package>gocr</Package>
         <Package>gpac</Package>
@@ -394,6 +391,7 @@
         <Package>libmad</Package>
         <Package>libmal</Package>
         <Package>libmatroska</Package>
+        <Package>libmikmod</Package>
         <Package>libmng</Package>
         <Package>libmovtar</Package>
         <Package>libmpcdec</Package>
@@ -409,7 +407,6 @@
         <Package>libpcre</Package>
         <Package>libperl</Package>
         <Package>libpng</Package>
-        <Package>libqalculate</Package>
         <Package>libquicktime</Package>
         <Package>libraw1394</Package>
         <Package>librsvg</Package>
@@ -563,7 +560,6 @@
         <Package>python</Package>
         <Package>python-bsddb3</Package>
         <Package>python-fchksum</Package>
-        <Package>qalculate</Package>
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
@@ -625,11 +621,11 @@
         <Package>tcpdump</Package>
         <Package>tcp-wrappers</Package>
         <Package>telnet-bsd</Package>
-        <Package>tetex</Package>
-        <Package>tetex-texmf</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>tightvnc</Package>
+        <Package>timidity</Package>
+        <Package>timidity-shompatches</Package>
         <Package>tn5250</Package>
         <Package>traceroute</Package>
         <Package>transcode</Package>
@@ -664,6 +660,7 @@
         <Package>wireless-tools</Package>
         <Package>wpa_supplicant</Package>
         <Package>x264</Package>
+        <Package>Xaw3d</Package>
         <Package>xbitmaps</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
