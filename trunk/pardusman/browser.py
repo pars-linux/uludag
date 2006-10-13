@@ -113,16 +113,19 @@ class Package(QCheckListItem):
     
     def stateChange(self, bool):
         browser = self.browser
+        recurse = False
         if bool:
             if self.mark == 0:
                 browser._select_pak(self)
+                recurse = True
             self.mark += 1
         else:
             if self.mark == 1:
                 browser._unselect_pak(self)
+                recurse = True
             self.mark -= 1
         
-        if self.mark < 2:
+        if recurse:
             for pak in self.pak.depends:
                 if browser.packages.has_key(pak):
                     browser.packages[pak].stateChange(bool)
