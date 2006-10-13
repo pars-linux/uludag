@@ -11,14 +11,14 @@ function showHideContent(){
 	if(!answerDiv.style.display || answerDiv.style.display=='none'){
 		if(pisi_activeId &&  pisi_activeId!=numericId){
 			objectIdToSlideDown = numericId;
-			slideContent(pisi_activeId,(pisi_Speed*-1));
+			slideContent(pisi_activeId,(pisi_Speed*-10));
 		}else{
 			answerDiv.style.display='block';
 			answerDiv.style.visibility = 'visible';
 			slideContent(numericId,pisi_Speed);
 		}
 	}else{
-		slideContent(numericId,(pisi_Speed*-1));
+		slideContent(numericId,(pisi_Speed*-10));
 		pisi_activeId = false;
 	}
 }
