@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-14 00:19+0300\n"
+"POT-Creation-Date: 2006-10-14 15:45+0300\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:449
+#: src/CommonText.py:3 src/package-manager.py:448
 msgid "downloading"
 msgstr "downloaden"
 
@@ -34,6 +34,10 @@ msgstr "instellen"
 #: src/CommonText.py:3
 msgid "removing"
 msgstr "verwijderen"
+
+#: src/CommonText.py:3
+msgid "installing"
+msgstr ""
 
 #: src/Preferences.py:68
 msgid "Add New Repository"
@@ -59,7 +63,7 @@ msgstr "Pisi-fout"
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi-pakketbeheer"
 
-#: src/package-manager.py:51 src/package-manager.py:597
+#: src/package-manager.py:51 src/package-manager.py:588
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -95,28 +99,28 @@ msgstr "PiSi-auteurs"
 msgid "Authors of PiSi API"
 msgstr "Auteurs van PiSi-API"
 
-#: src/package-manager.py:122
+#: src/package-manager.py:121
 msgid "Search: "
 msgstr "Zoeken:"
 
 # mand tonen
-#: src/package-manager.py:126
+#: src/package-manager.py:125
 msgid "Show basket"
 msgstr "Mand tonen"
 
-#: src/package-manager.py:131 src/package-manager.py:224
+#: src/package-manager.py:130 src/package-manager.py:223
 msgid "Install Package(s)"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:152
+#: src/package-manager.py:151
 msgid "Components"
 msgstr "Componenten"
 
-#: src/package-manager.py:178
+#: src/package-manager.py:177
 msgid "Loading Package List..."
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:208
+#: src/package-manager.py:207
 msgid ""
 "Package repository still does not have category information.\n"
 "Exiting..."
@@ -124,108 +128,108 @@ msgstr ""
 "Pakketrepository heeft nog steeds geen categorie-informatie. \n"
 "Gestopt..."
 
-#: src/package-manager.py:234
+#: src/package-manager.py:233
 msgid "Remove Package(s)"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:243
+#: src/package-manager.py:242
 msgid "There are no updates available at this time"
 msgstr "Er zijn momenteel geen updates beschikbaar"
 
-#: src/package-manager.py:249
+#: src/package-manager.py:248
 #, fuzzy
 msgid "Upgrade Package(s)"
 msgstr "Geselecteerde pakketten opwaarderen"
 
-#: src/package-manager.py:269
+#: src/package-manager.py:268
 msgid "Select all packages in this category"
 msgstr "Alle pakketten in deze categorie selecteren"
 
-#: src/package-manager.py:332
+#: src/package-manager.py:331
 msgid "N\\A"
 msgstr "N\\B"
 
-#: src/package-manager.py:333
+#: src/package-manager.py:332
 msgid "Description: "
 msgstr "Beschrijving: "
 
-#: src/package-manager.py:333
+#: src/package-manager.py:332
 msgid "Version: "
 msgstr "Versie: "
 
-#: src/package-manager.py:334
+#: src/package-manager.py:333
 msgid "Package Size: "
 msgstr "Pakketgrootte: "
 
-#: src/package-manager.py:334
+#: src/package-manager.py:333
 msgid "Homepage: "
 msgstr "Homepage: "
 
-#: src/package-manager.py:424
+#: src/package-manager.py:423
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:431
+#: src/package-manager.py:430
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:439
+#: src/package-manager.py:438
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
-#: src/package-manager.py:451 src/package-manager.py:469
+#: src/package-manager.py:450 src/package-manager.py:468
 #, fuzzy
 msgid "<b>Installing Package(s)</b>"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:453 src/package-manager.py:463
-#: src/package-manager.py:471
+#: src/package-manager.py:452 src/package-manager.py:462
+#: src/package-manager.py:470
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:461
+#: src/package-manager.py:460
 #, fuzzy
 msgid "<b>Removing Package(s)</b>"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:484
+#: src/package-manager.py:483
 #, fuzzy
 msgid "<b>Updating Repository</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:485
+#: src/package-manager.py:484
 #, fuzzy
 msgid "Downloading package list of %1"
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:501
+#: src/package-manager.py:500
 msgid "Removing these packages may break system safety. Aborting."
 msgstr ""
 "Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar "
 "brengen. Gestopt."
 
-#: src/package-manager.py:613
+#: src/package-manager.py:604
 msgid "Show Installed Packages"
 msgstr "Geinstalleerde pakketten tonen"
 
-#: src/package-manager.py:614
+#: src/package-manager.py:605
 msgid "Show New Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:615
+#: src/package-manager.py:606
 #, fuzzy
 msgid "Show Upgradable Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:634
+#: src/package-manager.py:625
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:634
+#: src/package-manager.py:625
 msgid "Show available updates"
 msgstr "Beschikbare updates tonen"
 
-#: src/package-manager.py:637
+#: src/package-manager.py:628
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is reeds opgestart!"
 

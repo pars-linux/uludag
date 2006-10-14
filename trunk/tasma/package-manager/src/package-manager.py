@@ -104,7 +104,6 @@ class MainApplicationWidget(QWidget):
 
         self.initialRepoCheck = None
         self.componentDict = {}
-        self.possibleError = False
         self.state = install_state
 
         self.layout = QGridLayout(self)
@@ -486,7 +485,7 @@ class MainApplicationWidget(QWidget):
 
         elif operation in ["progressed"]:
             if data[1] == "updatingrepo":
-                self.progressDialog.setOperationDescription(data[2])
+                self.progressDialog.setOperationDescription(i18n(str(data[2])))
                 self.progressDialog.hideStatus()
             percent = data[3]
             self.progressDialog.updateProgressBar(percent)
@@ -502,7 +501,6 @@ class MainApplicationWidget(QWidget):
                     self.finished()
 
     def showErrorMessage(self, message):
-        self.possibleError = True
         KMessageBox.error(self,message,i18n("Error"))
 
     def finished(self, command=None):
@@ -521,14 +519,7 @@ class MainApplicationWidget(QWidget):
             self.updateView(self.listView.currentItem())
             self.updateComponentList()
 
-        # Here we don't use updateListing() if there is no error, because we already updated the view
-        # in check() using DOM which is fast, so unless an error occurred there is no need for a refresh
-        if self.possibleError:
-            self.updateListing()
-            self.possibleError = False
-        else:
-            self.eventListener.packageList = []
-
+        self.eventListener.packageList = []
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
         self.progressDialog.closeForced()
