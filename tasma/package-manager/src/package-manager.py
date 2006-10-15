@@ -223,6 +223,7 @@ class MainApplicationWidget(QWidget):
 
     def resetState(self):
         self.basket.empty()
+        self.basketAction.setEnabled(False)
         self.operateAction.setEnabled(False)
         self.clearSearchLine(False)
         self.parent.showNewAction.setChecked(False)
