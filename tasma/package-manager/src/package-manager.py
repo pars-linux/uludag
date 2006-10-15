@@ -385,6 +385,14 @@ class MainApplicationWidget(QWidget):
         for package in self.eventListener.packageList:
             self.componentDict[item].remove(package)
 
+    def updateListing(self):
+        if self.state == install_state:
+            self.installState()
+        elif self.state == remove_state:
+            self.removeState()
+        elif self.state == upgrade_state:
+            self.upgradeState()
+
     def updateComponentList(self):
         item = self.listView.currentItem()
         component = self.componentDict[item]
@@ -550,6 +558,8 @@ class MainApplicationWidget(QWidget):
     def searchPackageName(self, query):
         packages = []
         for key in self.componentDict.keys():
+            if self.componentDict[key].name == i18n("All"):
+                continue
             for package in self.componentDict[key].packages:
                 if query in package:
                     packages.append(package)
