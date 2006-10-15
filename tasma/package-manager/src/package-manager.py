@@ -71,6 +71,19 @@ def getIconPath(name, group=KIcon.Desktop):
         name = "package"
     return KGlobal.iconLoader().iconPath(name,group)
 
+class Basket:
+    def __init__(self):
+        self.packages = []
+
+    def add(self, package):
+        self.packages.append(package)
+
+    def remove(self, package):
+        self.packages.remove(package)
+
+    def empty(self):
+        self.packages = []
+
 class Component:
     def __init__(self, name, packages, summary):
         self.name = name
@@ -99,13 +112,12 @@ class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
         self.parent = parent
-
         self.progressDialog = Progress.Progress(self)
-        self.eventListener = None
 
         self.initialRepoCheck = None
         self.componentDict = {}
         self.state = install_state
+        self.basket = Basket()
 
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
@@ -167,6 +179,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
+        self.connect(self.basketAction,SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction,SIGNAL("clicked()"),self.takeAction)
 
         self.delayTimer = QTimer(self)
@@ -209,8 +222,7 @@ class MainApplicationWidget(QWidget):
             kapp.quit()
 
     def resetState(self):
-        if self.eventListener:
-            self.eventListener.packageList = []
+        self.basket.empty()
         self.operateAction.setEnabled(False)
         self.clearSearchLine(False)
         self.parent.showNewAction.setChecked(False)
@@ -344,12 +356,12 @@ class MainApplicationWidget(QWidget):
 
     def updateCheckboxes(self):
         self.htmlPart.view().setUpdatesEnabled(False)
-        if self.eventListener.packageList:
+        if self.basket.packages:
             document = self.htmlPart.document()
             nodeList = document.getElementsByTagName(DOM.DOMString("input"))
             for i in range(0,nodeList.length()):
                 element = DOM.HTMLInputElement(nodeList.item(i))
-                if element.name().string() in self.eventListener.packageList:
+                if element.name().string() in self.basket.packages:
                     element.click()
         self.htmlPart.view().setUpdatesEnabled(True)
 
@@ -360,7 +372,7 @@ class MainApplicationWidget(QWidget):
             pass
 
     def updateButtons(self):
-        if self.eventListener.packageList:
+        if self.basket.packages:
             self.operateAction.setEnabled(True)
             self.basketAction.setEnabled(True)
         else:
@@ -369,21 +381,16 @@ class MainApplicationWidget(QWidget):
 
     def showBasket(self):
         print "Show me the basket"
-        pass
 
     def takeAction(self):
         self.progressDialog.show()
 
         if self.state == remove_state:
-            self.command.remove(self.eventListener.packageList)
+            self.command.remove(self.basket.packages)
         elif self.state == install_state:
-            self.command.install(self.eventListener.packageList)
+            self.command.install(self.basket.packages)
         elif self.state == upgrade_state:
-            self.command.updatePackage(self.eventListener.packageList)
-
-        item = self.listView.currentItem()
-        for package in self.eventListener.packageList:
-            self.componentDict[item].remove(package)
+            self.command.updatePackage(self.basket.packages)
 
     def updateListing(self):
         if self.state == install_state:
@@ -528,10 +535,9 @@ class MainApplicationWidget(QWidget):
                        "System.Manager.updatePackage",
                        "System.Manager.installPackage",
                        "System.Manager.removePackage"]:
-            self.updateView(self.listView.currentItem())
-            self.updateComponentList()
+            self.updateListing()
 
-        self.eventListener.packageList = []
+        self.basket.empty()
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
         self.progressDialog.closeForced()

@@ -15,7 +15,6 @@ class CustomEventListener(DOM.EventListener):
     def __init__(self, parent):
         DOM.EventListener.__init__(self)
         self.parent = parent
-        self.packageList = []
 
     def handleEvent(self,event):
         target = event.target().nodeName().string()
@@ -25,10 +24,10 @@ class CustomEventListener(DOM.EventListener):
                 name = inputElement.name().string()
                 checked = inputElement.checked()
                 if checked:
-                    if name not in self.packageList:
-                        self.packageList.append(name)
+                    if name not in self.parent.basket.packages:
+                        self.parent.basket.add(name)
                 else:
-                    self.packageList.remove(name)
+                    self.parent.basket.remove(name)
 
                 self.parent.updateButtons()
 
