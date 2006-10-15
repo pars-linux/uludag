@@ -101,6 +101,7 @@ class MainApplicationWidget(QWidget):
         self.parent = parent
 
         self.progressDialog = Progress.Progress(self)
+        self.eventListener = None
 
         self.initialRepoCheck = None
         self.componentDict = {}
@@ -208,7 +209,8 @@ class MainApplicationWidget(QWidget):
             kapp.quit()
 
     def resetState(self):
-        self.eventListener.packageList = []
+        if self.eventListener:
+            self.eventListener.packageList = []
         self.operateAction.setEnabled(False)
         self.clearSearchLine(False)
         self.parent.showNewAction.setChecked(False)
@@ -244,7 +246,7 @@ class MainApplicationWidget(QWidget):
 
         self.resetState()
         self.parent.showUpgradeAction.setChecked(True)
-        self.createComponentList(upgradables)
+        self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
         self.state = upgrade_state
@@ -392,7 +394,7 @@ class MainApplicationWidget(QWidget):
             self.listView.takeItem(item)
             self.listView.setSelected(self.listView.firstChild(),True)
 
-    def createComponentList(self, packages):
+    def createComponentList(self, packages, allComponent=False):
         # Components
         self.listView.clear()
         self.componentDict.clear()
@@ -426,12 +428,13 @@ class MainApplicationWidget(QWidget):
             item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
             self.componentDict[item] = Component(name, rest_packages, name)
 
-        # All
-        item = KListViewItem(self.listView)
-        name = i18n("All")
-        item.setText(0, u"%s (%s)" % (name, len(packages)))
-        item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
-        self.componentDict[item] = Component(name, packages, name)
+        # All of the component's packages
+        if allComponent:
+            item = KListViewItem(self.listView)
+            name = i18n("All")
+            item.setText(0, u"%s (%s)" % (name, len(packages)))
+            item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
+            self.componentDict[item] = Component(name, packages, name)
 
     def createSearchResults(self, packages):
         self.listView.clear()
