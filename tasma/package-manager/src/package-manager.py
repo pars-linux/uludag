@@ -76,10 +76,10 @@ class Basket:
         self.packages = []
 
     def add(self, package):
-        self.packages.append(package)
+        self.packages.append(str(package))
 
     def remove(self, package):
-        self.packages.remove(package)
+        self.packages.remove(str(package))
 
     def empty(self):
         self.packages = []
@@ -233,6 +233,7 @@ class MainApplicationWidget(QWidget):
     def installState(self):
         self.resetState()
         self.parent.showNewAction.setChecked(True)
+        self.processEvents()
         packages = self.command.listNewPackages()
         self.createComponentList(packages)
         self.operateAction.setText(i18n("Install Package(s)"))
@@ -243,6 +244,7 @@ class MainApplicationWidget(QWidget):
     def removeState(self):
         self.resetState()
         self.parent.showInstalledAction.setChecked(True)
+        self.processEvents()
         packages = self.command.listPackages()
         self.createComponentList(packages)
         self.operateAction.setText(i18n("Remove Package(s)"))
@@ -251,19 +253,16 @@ class MainApplicationWidget(QWidget):
         self.listView.setSelected(self.listView.firstChild(),True)
 
     def upgradeState(self):
-
         upgradables = pisi.api.list_upgradable()
-        if not upgradables:
-            KMessageBox.information(self,i18n("There are no updates available at this time"))
-            return
-
-        self.resetState()
-        self.parent.showUpgradeAction.setChecked(True)
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
-        self.state = upgrade_state
         self.listView.setSelected(self.listView.firstChild(),True)
+
+        if not upgradables and self.state != upgrade_state:
+            KMessageBox.information(self,i18n("There are no updates available at this time"))
+
+        self.state = upgrade_state
 
     def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -529,6 +528,12 @@ class MainApplicationWidget(QWidget):
         pisi.api.finalize()
         pisi.api.init(write=False)
 
+        self.basket.empty()
+        self.operateAction.setEnabled(False)
+        self.basketAction.setEnabled(False)
+        self.progressDialog.closeForced()
+        self.progressDialog.reset()
+
         if command == "System.Manager.updateAllRepositories":
             self.upgradeState()
 
@@ -537,12 +542,6 @@ class MainApplicationWidget(QWidget):
                        "System.Manager.installPackage",
                        "System.Manager.removePackage"]:
             self.updateListing()
-
-        self.basket.empty()
-        self.operateAction.setEnabled(False)
-        self.basketAction.setEnabled(False)
-        self.progressDialog.closeForced()
-        self.progressDialog.reset()
 
     def installSingle(self):
         app = []
@@ -587,6 +586,9 @@ class MainApplicationWidget(QWidget):
         self.pref.show()
 
     def updateCheck(self):
+        self.resetState()
+        self.parent.showUpgradeAction.setChecked(True)
+        self.processEvents()
         self.progressDialog.show()
         self.command.startUpdate()
 
