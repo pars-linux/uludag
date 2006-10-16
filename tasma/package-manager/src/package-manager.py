@@ -28,6 +28,7 @@ import Progress
 import Preferences
 import Commander
 import CustomEventListener
+import BasketDialog
 
 # Pisi
 import pisi
@@ -362,8 +363,10 @@ class MainApplicationWidget(QWidget):
                     element.click()
         self.htmlPart.view().setUpdatesEnabled(True)
 
-    def updateView(self,item):
+    def updateView(self,item=None):
         try:
+            if not item:
+                item = self.listView.currentItem()
             self.createHTML(self.componentDict[item].packages)
         except:
             pass
@@ -377,7 +380,9 @@ class MainApplicationWidget(QWidget):
             self.basketAction.setEnabled(False)
 
     def showBasket(self):
-        print "Show me the basket"
+        basketDialog = BasketDialog.BasketDialog(self, self.basket.packages, self.state)
+        self.connect(basketDialog, SIGNAL("destroyed()"), self.updateView)
+        basketDialog.show()
 
     def takeAction(self):
         self.progressDialog.show()
