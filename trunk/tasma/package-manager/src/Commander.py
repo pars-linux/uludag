@@ -8,8 +8,6 @@
 # any later version.
 #
 # Please read the COPYING file.
-#
-# Authors: İsmail Dönmez <ismail@pardus.org.tr>
 
 import string
 import pisi
