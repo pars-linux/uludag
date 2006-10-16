@@ -151,6 +151,18 @@ def setup_live_kdm(project):
             lines.append(line)
     file(path, "w").write("".join(lines))
 
+def install_packages(project):
+    image_dir = project.image_dir()
+    path = os.path.join(image_dir, "var/lib/pisi/package")
+    for name in project.all_packages:
+        flag = True
+        if os.path.exists(path):
+            for avail in os.listdir(path):
+                if avail.startswith(name) and avail[len(name)] == "-":
+                    flag = False
+        if flag:
+            run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s' % (image_dir, name))
+
 #
 # Operations
 #
@@ -177,8 +189,7 @@ def make_image(project):
     if project.media_type == "install":
         run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
     else:
-        for name in project.all_packages:
-            run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s' % (image_dir, name))
+        install_packages(project)
     
     def chrun(cmd):
         run('chroot "%s" %s' % (image_dir, cmd))
