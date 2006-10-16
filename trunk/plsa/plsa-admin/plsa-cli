@@ -3,7 +3,6 @@
 
 # Standard Python Library
 from getpass import getpass
-import locale
 from optparse import OptionParser
 import os
 import os.path
@@ -13,8 +12,7 @@ import sys
 # PLSA Library
 import plsa
 import plsa.utility
-from plsa.mail import send_mail, valid_address
-from plsa.gpg import GPG
+from plsa.mail import openComposer
 
 # piksemel
 import piksemel
@@ -24,9 +22,12 @@ import gettext
 __trans = gettext.translation("plsa", fallback=True)
 _ = __trans.ugettext
 
+# l10n
+import locale
+locale.setlocale(locale.LC_ALL, '')
+
 # Error codes
-SUCCESS, FAIL_USAGE, FAIL_READ, FAIL_WRITE, \
-FAIL_XML, FAIL_KEY, FAIL_PP, FAIL_LANG, FAIL_MAIL = xrange(9)
+SUCCESS, FAIL_USAGE, FAIL_READ, FAIL_XML, FAIL_LANG, FAIL_MAIL = xrange(6)
 
 def main():
     language = os.environ["LANG"][:2]
@@ -35,25 +36,10 @@ def main():
     usage = "%prog <options> advisory.xml"
 
     parser = OptionParser(usage=usage,  version="%prog " + version)
-    parser.formatter.max_help_position = 30
-
-    parser.add_option("-k", "--key", dest="key",
-                      help=_("sign advisory with KEY"), metavar=_("KEY"))
-    parser.add_option("-p", "--key-pass", dest="passphrase",
-                      help=_("use PASS as passphrase"), metavar=_("PASS"))
-
-    parser.add_option("", "--mail-to", dest="mail_to",
-                      help=_("send advisory to MAIL1,MAIL2,..."), metavar=_("MAIL1,MAIL2"))
-    parser.add_option("", "--mail-from", dest="mail_from",
-                      help=_("send mail using account MAIL"), metavar=_("MAIL"))
-    parser.add_option("", "--mail-pass", dest="mail_password",
-                      help=_("use PASS to connect smtp server"), metavar=_("PASS"))
 
     parser.add_option("-l", "--language", dest="language",
                       help=_("generate advisory for locale LANG (default: %s)") % language, metavar=_("LANG"))
 
-    parser.add_option("-o", "--output", dest="output",
-                      help=_("save advisory text to FILE"), metavar=_("FILE"))
     options, args = parser.parse_args()
 
     if len(args) == 0:
@@ -64,7 +50,7 @@ def main():
         options.language = language
 
     if options.language not in plsa.utility.list_translations("plsa"):
-        print _("'%s' locale is not supported.")
+        print _("'%s' locale is not supported.") % options.language
         return FAIL_LANG
 
     # Read advisory xml
@@ -76,8 +62,7 @@ def main():
 
     try:
         adv.import_xml(args[0])
-    except Exception, e:
-        #print e
+    except plsa.Error, e:
         print _("XML file has errors:")
         for i in adv.errors:
             print "  " + i
@@ -85,77 +70,10 @@ def main():
 
     # Build advisory text
     text = adv.build_text()
+    title = "[Pardus Linux] %s" % adv.data["title"]
 
-    # Sign advisory
-    if options.key:
-        gnupg = GPG()
-        if options.key not in [x["keyid"][-8:] for x in gnupg.list_keys(secret=True)]:
-            print _("Key not found in GnuPG database.")
-            print _("Available keys are:")
-            for i in gnupg.list_keys(secret=1):
-                print "  %s - %s" % (i["keyid"][-8:], i["uids"][1])
-            return FAIL_KEY
-        else:
-            if not options.passphrase:
-                options.passphrase = getpass(_("Passphrase for key %s: ") % options.key)
-            text_signed = str(gnupg.sign(text, options.key, options.passphrase))
-            if not text_signed:
-                print _("Invalid passphrase.")
-                return FAIL_PP
-
-    if options.mail_to and not options.mail_from:
-        print _("Source mail address required.")
-        return FAIL_USAGE
-    if options.mail_from and not options.mail_to:
-        print _("Recipient mail address required.")
-        return FAIL_USAGE
-
-    if options.mail_to:
-        if not valid_address(options.mail_from):
-            print _("Source mail address is invalid: %s") % options.mail_from
-            return FAIL_USAGE
-
-        for email in options.mail_to.split(","):
-            if not valid_address(email):
-                print _("Reciepent mail address is invalid: %s") % email
-                return FAIL_USAGE
-
-        print text
-        print
-
-        sure = raw_input(_("Are you sure you want to send this advisory? (yes/no)"))
-        if not re.search(locale.nl_langinfo(locale.YESEXPR), sure):
-            print "Cancelled"
-            return 0
-
-        if not options.mail_password:
-            options.mail_password = getpass(_("Password for %s: ") % options.mail_from)
-
-        if options.key:
-            text = text_signed
-
-        sent = send_mail("[Pardus Linux] %s" % adv.data["title"],
-                         text,
-                         options.mail_from,
-                         options.mail_to.split(","),
-                         "mail.%s" % options.mail_from.split("@")[1],
-                         options.mail_from,
-                         options.mail_password)
-        if not sent:
-            return FAIL_MAIL
-        print _("Mailed advisory to: %s") % options.mail_to
-    elif options.output:
-        if options.key:
-            text = text_signed
-        try:
-            open(options.output, "w").write(text)
-        except IOError:
-            print _("Unable to write advisory text to %s") % options.output
-            return FAIL_WRITE
-    else:
-        if options.key:
-            text = text_signed
-        print text
+    if not openComposer('', '', '', title, text):
+        return FAIL_MAIL
 
     return SUCCESS
 
