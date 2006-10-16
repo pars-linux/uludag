@@ -54,27 +54,6 @@ c6:12345:respawn:/sbin/mingetty --noclear --autologin root tty6
 ca:12345:ctrlaltdel:/sbin/shutdown -r now
 """
 
-grub_template = """default 0
-timeout 10
-splashimage (cd)/boot/grub/splash.xpm.gz
-
-title=%(title)s
-root (cd)
-kernel (cd)/boot/%(kernel)s root=/dev/ram0 video=vesafb:nomtrr,pmipal,ywrap,1024x768-32@60 splash=silent,theme:pardus console=tty2 mudur=livecd,language:tr quiet
-initrd (cd)/boot/%(initramfs)s
-
-title=%(title-standart)s
-root (cd)
-kernel (cd)/boot/%(kernel)s root=/dev/ram0 video=vesafb:off mudur=livecd,language:tr quiet
-initrd (cd)/boot/%(initramfs)s
-
-title=%(title-safe)s
-root (cd)
-kernel (cd)/boot/%(kernel)s root=/dev/ram0 video=vesafb:off acpi=off apm=off nolapic noapic mudur=livecd,language:tr
-initrd (cd)/boot/%(initramfs)s
-
-"""
-
 def run(cmd):
     print cmd
     os.system(cmd)
@@ -98,39 +77,22 @@ def get_exclude_list(project):
 
 def generate_grub_conf(project, kernel, initramfs):
     print "Generating grub.conf files..."
+    image_dir = project.image_dir()
     iso_dir = project.iso_dir()
-    # FIXME: take name from /etc/pardus-release
-    tr = {
-        "suffix": "",
-        "language": "Turkish",
-        "title": "Pardus 13-10-2006",
-        "title-standart": "Pardus 13-10-2006 (Standard Ekran Modu)",
-        "title-safe": "Pardus 13-10-2006 (Minimum Ayarlar)",
-    }
-    en = {
-        "suffix": "-en",
-        "language": "English",
-        "title": "Pardus 13-10-2006",
-        "title-standart": "Pardus 13-10-2006 (Standard Graphics Mode)",
-        "title-safe": "Pardus 13-10-2006 (Minimum Options)",
-    }
-    nl = {
-        "suffix": "-nl",
-        "language": "Nederlands",
-        "title": "Pardus 13-10-2006",
-        "title-standart": "Pardus 13-10-2006 (Standaard Grafische Modus)",
-        "title-safe": "Pardus 13-10-2006 (Minimale Opties)",
-    }
-    for lang in (tr, en, nl):
-        lang["kernel"] = kernel
-        lang["initramfs"] = initramfs
-        path = os.path.join(iso_dir, "boot/grub", "menu" + lang["suffix"] + ".lst")
-        f = file(path, "w")
-        f.write(grub_template % lang)
-        for lang2 in (tr, en, nl):
-            if lang2["suffix"] != lang["suffix"]:
-                f.write("title=%(language)s\nconfigfile (cd)/boot/grub/menu%(suffix)s.lst\n\n" % lang2)
-        f.close()
+    
+    dict = {}
+    dict["kernel"] = kernel
+    dict["initramfs"] = initramfs
+    dict["title"] = "Pardus 16-10-2006"
+    
+    path = os.path.join(image_dir, "usr/share/grub/templates")
+    dest = os.path.join(iso_dir, "boot/grub")
+    for name in os.listdir(path):
+        if name.startswith("menu"):
+            data = file(os.path.join(path, name)).read()
+            f = file(os.path.join(dest, name), "w")
+            f.write(data % dict)
+            f.close()
 
 def make_image(project):
     print "Preparing install image..."

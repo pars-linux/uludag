@@ -99,8 +99,6 @@
         <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
-        <SelectedPackage>nvidia-glx</SelectedPackage>
-        <SelectedPackage>nvidia-kernel</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
@@ -481,6 +479,7 @@
         <Package>man-pages</Package>
         <Package>mc</Package>
         <Package>mDNSResponder</Package>
+        <Package>memtest86</Package>
         <Package>microcode-ctl</Package>
         <Package>mingetty</Package>
         <Package>minicom</Package>
@@ -516,8 +515,6 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
-        <Package>nvidia-glx</Package>
-        <Package>nvidia-kernel</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
