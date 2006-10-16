@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-14 15:45+0300\n"
+"POT-Creation-Date: 2006-10-16 19:20+0300\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,9 +19,188 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:448
+#: src/package-manager.py:39
+msgid "GUI for PiSi package manager"
+msgstr "GUI voor PiSi-pakketbeheer"
+
+#: src/package-manager.py:47 src/package-manager.py:608
+msgid "Package Manager"
+msgstr "Pakketbeheer"
+
+#: src/package-manager.py:50
+msgid "Developer and Current Maintainer"
+msgstr ""
+
+#: src/package-manager.py:51
+#, fuzzy
+msgid "Original Author"
+msgstr "PiSi-auteurs"
+
+#: src/package-manager.py:52
+msgid "CSS/JS Meister"
+msgstr "CSS/JS Meister"
+
+#: src/package-manager.py:53
+msgid "GUI Design & Usability"
+msgstr "GUI-ontwerp en usability"
+
+#: src/package-manager.py:54
+msgid "Misc. Fixes"
+msgstr "Diverse reparaties"
+
+#: src/package-manager.py:55
+msgid "Comar/Python Help"
+msgstr "Comar/Python hulp"
+
+#: src/package-manager.py:56
+msgid "Speedup fixes"
+msgstr "Versnel optimalisaties"
+
+#: src/package-manager.py:57
+msgid "PiSi Authors"
+msgstr "PiSi-auteurs"
+
+#: src/package-manager.py:57
+msgid "Authors of PiSi API"
+msgstr "Auteurs van PiSi-API"
+
+#: src/package-manager.py:131
+msgid "Search: "
+msgstr "Zoeken:"
+
+# mand tonen
+#: src/package-manager.py:135
+msgid "Show basket"
+msgstr "Mand tonen"
+
+#: src/package-manager.py:140 src/package-manager.py:236
+msgid "Install Package(s)"
+msgstr "Pakket(ten) installeren"
+
+#: src/package-manager.py:161
+msgid "Components"
+msgstr "Componenten"
+
+#: src/package-manager.py:188
+msgid "Loading Package List..."
+msgstr "Pakketlijst wordt geladen..."
+
+#: src/package-manager.py:218
+msgid ""
+"Package repository still does not have category information.\n"
+"Exiting..."
+msgstr ""
+"Pakketrepository heeft nog steeds geen categorie-informatie. \n"
+"Gestopt..."
+
+#: src/package-manager.py:247
+msgid "Remove Package(s)"
+msgstr "Pakket(ten) verwijderen"
+
+#: src/package-manager.py:255
+#, fuzzy
+msgid "Upgrade Package(s)"
+msgstr "Geselecteerde pakketten opwaarderen"
+
+#: src/package-manager.py:260
+msgid "There are no updates available at this time"
+msgstr "Er zijn momenteel geen updates beschikbaar"
+
+#: src/package-manager.py:279
+msgid "Select all packages in this category"
+msgstr "Alle pakketten in deze categorie selecteren"
+
+#: src/package-manager.py:342
+msgid "N\\A"
+msgstr "N\\B"
+
+#: src/package-manager.py:343
+msgid "Description: "
+msgstr "Beschrijving: "
+
+#: src/package-manager.py:343
+msgid "Version: "
+msgstr "Versie: "
+
+#: src/package-manager.py:344
+msgid "Package Size: "
+msgstr "Pakketgrootte: "
+
+#: src/package-manager.py:344
+msgid "Homepage: "
+msgstr "Homepage: "
+
+#: src/package-manager.py:438
+msgid "Others"
+msgstr ""
+
+#: src/package-manager.py:446 src/package-manager.py:564
+msgid "All"
+msgstr ""
+
+#: src/package-manager.py:454
+msgid "Search Results"
+msgstr "Zoekresultaten"
+
+#: src/package-manager.py:464 src/CommonText.py:3
 msgid "downloading"
 msgstr "downloaden"
+
+#: src/package-manager.py:466 src/package-manager.py:484
+#, fuzzy
+msgid "<b>Installing Package(s)</b>"
+msgstr "Pakket(ten) installeren"
+
+#: src/package-manager.py:468 src/package-manager.py:478
+#: src/package-manager.py:486
+msgid "<b>Upgrading Package(s)</b>"
+msgstr ""
+
+#: src/package-manager.py:476
+#, fuzzy
+msgid "<b>Removing Package(s)</b>"
+msgstr "Pakket(ten) verwijderen"
+
+#: src/package-manager.py:499
+#, fuzzy
+msgid "<b>Updating Repository</b>"
+msgstr "Repository bewerken"
+
+#: src/package-manager.py:500
+#, fuzzy
+msgid "Downloading package list of %1"
+msgstr "Pakketlijst wordt geladen..."
+
+#: src/package-manager.py:516
+msgid "Removing these packages may break system safety. Aborting."
+msgstr ""
+"Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar "
+"brengen. Gestopt."
+
+#: src/package-manager.py:624
+msgid "Show Installed Packages"
+msgstr "Geinstalleerde pakketten tonen"
+
+#: src/package-manager.py:625
+msgid "Show New Packages"
+msgstr "Nieuwe pakketten tonen"
+
+#: src/package-manager.py:626
+#, fuzzy
+msgid "Show Upgradable Packages"
+msgstr "Nieuwe pakketten tonen"
+
+#: src/package-manager.py:645
+msgid "Package to install"
+msgstr "Te installeren pakket"
+
+#: src/package-manager.py:645
+msgid "Show available updates"
+msgstr "Beschikbare updates tonen"
+
+#: src/package-manager.py:648
+msgid "Package Manager is already running!"
+msgstr "Pakketbeheer is reeds opgestart!"
 
 #: src/CommonText.py:3
 msgid "extracting"
@@ -39,15 +218,15 @@ msgstr "verwijderen"
 msgid "installing"
 msgstr ""
 
-#: src/Preferences.py:68
+#: src/Preferences.py:65
 msgid "Add New Repository"
 msgstr "Nieuwe repository toevoegen"
 
-#: src/Preferences.py:75
+#: src/Preferences.py:72
 msgid "Edit Repository"
 msgstr "Repository bewerken"
 
-#: src/Preferences.py:116 src/Preferences.py:131
+#: src/Preferences.py:113 src/Preferences.py:128
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
@@ -55,183 +234,13 @@ msgstr ""
 "<qt>Repository-adres hoort te eindigen op xml of xml.bz2. <p>Probeer het "
 "opnieuw.</qt>"
 
-#: src/Preferences.py:116 src/Preferences.py:131
+#: src/Preferences.py:113 src/Preferences.py:128
 msgid "Pisi Error"
 msgstr "Pisi-fout"
 
-#: src/package-manager.py:43
-msgid "GUI for PiSi package manager"
-msgstr "GUI voor PiSi-pakketbeheer"
-
-#: src/package-manager.py:51 src/package-manager.py:588
-msgid "Package Manager"
-msgstr "Pakketbeheer"
-
-#: src/package-manager.py:54
-msgid "Main Coder"
-msgstr "Hoofdprogrammeur"
-
-#: src/package-manager.py:55
-msgid "CSS/JS Meister"
-msgstr "CSS/JS Meister"
-
-#: src/package-manager.py:56
-msgid "GUI Design & Usability"
-msgstr "GUI-ontwerp en usability"
-
-#: src/package-manager.py:57
-msgid "Misc. Fixes"
-msgstr "Diverse reparaties"
-
-#: src/package-manager.py:58
-msgid "Comar/Python Help"
-msgstr "Comar/Python hulp"
-
-#: src/package-manager.py:59
-msgid "Speedup fixes"
-msgstr "Versnel optimalisaties"
-
-#: src/package-manager.py:60
-msgid "PiSi Authors"
-msgstr "PiSi-auteurs"
-
-#: src/package-manager.py:60
-msgid "Authors of PiSi API"
-msgstr "Auteurs van PiSi-API"
-
-#: src/package-manager.py:121
-msgid "Search: "
-msgstr "Zoeken:"
-
-# mand tonen
-#: src/package-manager.py:125
-msgid "Show basket"
-msgstr "Mand tonen"
-
-#: src/package-manager.py:130 src/package-manager.py:223
-msgid "Install Package(s)"
-msgstr "Pakket(ten) installeren"
-
-#: src/package-manager.py:151
-msgid "Components"
-msgstr "Componenten"
-
-#: src/package-manager.py:177
-msgid "Loading Package List..."
-msgstr "Pakketlijst wordt geladen..."
-
-#: src/package-manager.py:207
-msgid ""
-"Package repository still does not have category information.\n"
-"Exiting..."
-msgstr ""
-"Pakketrepository heeft nog steeds geen categorie-informatie. \n"
-"Gestopt..."
-
-#: src/package-manager.py:233
-msgid "Remove Package(s)"
-msgstr "Pakket(ten) verwijderen"
-
-#: src/package-manager.py:242
-msgid "There are no updates available at this time"
-msgstr "Er zijn momenteel geen updates beschikbaar"
-
-#: src/package-manager.py:248
-#, fuzzy
-msgid "Upgrade Package(s)"
-msgstr "Geselecteerde pakketten opwaarderen"
-
-#: src/package-manager.py:268
-msgid "Select all packages in this category"
-msgstr "Alle pakketten in deze categorie selecteren"
-
-#: src/package-manager.py:331
-msgid "N\\A"
-msgstr "N\\B"
-
-#: src/package-manager.py:332
-msgid "Description: "
-msgstr "Beschrijving: "
-
-#: src/package-manager.py:332
-msgid "Version: "
-msgstr "Versie: "
-
-#: src/package-manager.py:333
-msgid "Package Size: "
-msgstr "Pakketgrootte: "
-
-#: src/package-manager.py:333
-msgid "Homepage: "
-msgstr "Homepage: "
-
-#: src/package-manager.py:423
-msgid "Others"
-msgstr ""
-
-#: src/package-manager.py:430
-msgid "All"
-msgstr ""
-
-#: src/package-manager.py:438
-msgid "Search Results"
-msgstr "Zoekresultaten"
-
-#: src/package-manager.py:450 src/package-manager.py:468
-#, fuzzy
-msgid "<b>Installing Package(s)</b>"
-msgstr "Pakket(ten) installeren"
-
-#: src/package-manager.py:452 src/package-manager.py:462
-#: src/package-manager.py:470
-msgid "<b>Upgrading Package(s)</b>"
-msgstr ""
-
-#: src/package-manager.py:460
-#, fuzzy
-msgid "<b>Removing Package(s)</b>"
-msgstr "Pakket(ten) verwijderen"
-
-#: src/package-manager.py:483
-#, fuzzy
-msgid "<b>Updating Repository</b>"
-msgstr "Repository bewerken"
-
-#: src/package-manager.py:484
-#, fuzzy
-msgid "Downloading package list of %1"
-msgstr "Pakketlijst wordt geladen..."
-
-#: src/package-manager.py:500
-msgid "Removing these packages may break system safety. Aborting."
-msgstr ""
-"Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar "
-"brengen. Gestopt."
-
-#: src/package-manager.py:604
-msgid "Show Installed Packages"
-msgstr "Geinstalleerde pakketten tonen"
-
-#: src/package-manager.py:605
-msgid "Show New Packages"
-msgstr "Nieuwe pakketten tonen"
-
-#: src/package-manager.py:606
-#, fuzzy
-msgid "Show Upgradable Packages"
-msgstr "Nieuwe pakketten tonen"
-
-#: src/package-manager.py:625
-msgid "Package to install"
-msgstr "Te installeren pakket"
-
-#: src/package-manager.py:625
-msgid "Show available updates"
-msgstr "Beschikbare updates tonen"
-
-#: src/package-manager.py:628
-msgid "Package Manager is already running!"
-msgstr "Pakketbeheer is reeds opgestart!"
+#: src/HelpDialog.py:20
+msgid "Package Manager Help"
+msgstr "Pakketbeheer-help"
 
 #: src/Progress.py:46
 msgid "<b>Preparing PiSi...</b>"
@@ -254,13 +263,9 @@ msgstr ""
 msgid "Fetching package list at %3 %4"
 msgstr ""
 
-#: src/Commander.py:60
+#: src/Commander.py:58
 msgid "Can't connect to Comar daemon"
 msgstr "Kan geen verbinding maken met de Comar-dienst"
-
-#: src/HelpDialog.py:23
-msgid "Package Manager Help"
-msgstr "Pakketbeheer-help"
 
 #: src/ProgressDialog.py:72
 msgid "Progress"
@@ -433,6 +438,9 @@ msgstr ""
 #: src/RepoDialog.py:74
 msgid "&Ok"
 msgstr "&Ok"
+
+#~ msgid "Main Coder"
+#~ msgstr "Hoofdprogrammeur"
 
 #~ msgid "<b>Downloaded/Total:</b> Unknown"
 #~ msgstr "<b>Gedownload/totaal:</b> onbekend"
