@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PLSA 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-04 18:22+0300\n"
+"POT-Creation-Date: 2006-10-17 02:05+0300\n"
 "PO-Revision-Date: 2006-09-13 12:06+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -90,153 +90,25 @@ msgstr ""
 msgid "References"
 msgstr "Referenslar"
 
-#: plsa/mail.py:16
-msgid "Unable to send mail: Server didn't reply"
-msgstr "E-posta gönderilemedi: Sunucu yanıt vermedi"
-
-#: plsa/mail.py:19
-msgid "Unable to send mail: Server didn't accept username/password"
-msgstr "E-posta gönderilemedi: Sunucu kullanıcı ya da parolayı kabul etmedi"
-
-#: plsa/mail.py:22
-msgid "Unable to send mail: No suitable authentication method was found"
-msgstr "E-posta gönderilemedi: Uygun bir kimlik doğrulama metodu bulunamadı"
-
-#: plsa/mail.py:25
-#, python-format
-msgid "Unable to send mail: %s"
-msgstr "E-posta gönderilemedi: %s"
-
-#: plsa/mail.py:28
-msgid "Unable to send mail: Can't connect mail server"
-msgstr "E-posta gönderilemedi: Sunucuya bağlanılamadı"
-
-#: plsa/mail.py:31
-msgid "Unable to send mail: SMTP error"
-msgstr "E-posta gönderilemedi: SMTP hatası"
-
-#: plsa/mail.py:44
-msgid "Unable to send mail: Server didn't accept sender"
-msgstr "E-posta gönderilemedi: Sunucu gönderen adresini kabul etmedi"
-
-#: plsa/mail.py:47
-msgid "Unable to send mail: Server didn't accept recipients"
-msgstr "E-posta gönderilemedi: Sunucu alıcıları kabul etmedi"
-
-#: plsa-cli:41
-msgid "sign advisory with KEY"
-msgstr "bildiriyi ANAHTAR ile imzala"
-
-#: plsa-cli:41
-msgid "KEY"
-msgstr "ANAHTAR"
-
-#: plsa-cli:43
-msgid "use PASS as passphrase"
-msgstr "parola olarak PAROLA kullan"
-
-#: plsa-cli:43 plsa-cli:50
-msgid "PASS"
-msgstr "PAROLA"
-
-#: plsa-cli:46
-msgid "send advisory to MAIL1,MAIL2,..."
-msgstr "bildiriyi ADRES1,ADRES2 adreslerine gönderir"
-
-#: plsa-cli:46
-msgid "MAIL1,MAIL2"
-msgstr "ADRES1,ADRES2"
-
-#: plsa-cli:48
-msgid "send mail using account MAIL"
-msgstr "bildirileri POSTA hesabını kullanarak gönderir"
-
-#: plsa-cli:48
-msgid "MAIL"
-msgstr "POSTA"
-
-#: plsa-cli:50
-msgid "use PASS to connect smtp server"
-msgstr "e-posta suncusuna bağlanırken PAROLA kullanılır"
-
-#: plsa-cli:53
+#: plsa-cli:42
 #, python-format
 msgid "generate advisory for locale LANG (default: %s)"
 msgstr "bildiriyi DIL dilinde oluştur (varsayılan: %s)"
 
-#: plsa-cli:53
+#: plsa-cli:42
 msgid "LANG"
 msgstr "DIL"
 
-#: plsa-cli:56
-msgid "save advisory text to FILE"
-msgstr "bildiri metnini DOSYA içine yaz"
-
-#: plsa-cli:56
-msgid "FILE"
-msgstr "DOSYA"
-
-#: plsa-cli:67
+#: plsa-cli:54
 #, python-format
 msgid "'%s' locale is not supported."
 msgstr "'%s' yereli desteklenmemektedir."
 
-#: plsa-cli:72
+#: plsa-cli:59
 #, python-format
 msgid "Unable to read %s."
 msgstr "%s dosyası okunamadı."
 
-#: plsa-cli:81
+#: plsa-cli:67
 msgid "XML file has errors:"
 msgstr "XML dosyası hatalı:"
-
-#: plsa-cli:93
-msgid "Key not found in GnuPG database."
-msgstr "Anahtar GnuPG veritabanında bulunamadı."
-
-#: plsa-cli:94
-msgid "Available keys are:"
-msgstr "Mevcut anahtarlar:"
-
-#: plsa-cli:100
-#, python-format
-msgid "Passphrase for key %s: "
-msgstr "%s anahtarı için parola: "
-
-#: plsa-cli:103
-msgid "Invalid passphrase."
-msgstr "Geçersiz parola."
-
-#: plsa-cli:108
-msgid "Source mail address required."
-msgstr "Kaynak e-posta adresi gerekli."
-
-#: plsa-cli:113
-#, python-format
-msgid "Source mail address is invalid: %s"
-msgstr "Kaynak e-posta adresi geçersiz: %s"
-
-#: plsa-cli:118
-#, python-format
-msgid "Reciepent mail address is invalid: %s"
-msgstr "Alıcı e-posta adresi geçersiz: %s"
-
-#: plsa-cli:124
-msgid "Are you sure you want to send this advisory? (yes/no)"
-msgstr ""
-"Bildiriyi bu haliyle göndermek istediğinizden emin misiniz? (evet/hayır)"
-
-#: plsa-cli:130
-#, python-format
-msgid "Password for %s: "
-msgstr "%s için parola: "
-
-#: plsa-cli:144
-#, python-format
-msgid "Mailed advisory to: %s"
-msgstr "Bildiri metni %s adreslerine gönderildi."
-
-#: plsa-cli:151
-#, python-format
-msgid "Unable to write advisory text to %s"
-msgstr "Bildiri metni %s dosyasına yazılamadı"

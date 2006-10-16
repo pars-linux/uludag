@@ -9,7 +9,6 @@ import os.path
 
 import piksemel
 
-import plsa.gpg
 import plsa.validator
 from plsa.utility import *
 from plsa.xml import *
