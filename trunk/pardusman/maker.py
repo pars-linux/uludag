@@ -54,6 +54,10 @@ c6:12345:respawn:/sbin/mingetty --noclear --autologin root tty6
 ca:12345:ctrlaltdel:/sbin/shutdown -r now
 """
 
+#
+# Utilities
+#
+
 def run(cmd):
     print cmd
     os.system(cmd)
@@ -75,6 +79,10 @@ def get_exclude_list(project):
             exc.append("boot/" + name)
     return exc
 
+#
+# Grub related stuff
+#
+
 def generate_grub_conf(project, kernel, initramfs):
     print "Generating grub.conf files..."
     image_dir = project.image_dir()
@@ -93,6 +101,59 @@ def generate_grub_conf(project, kernel, initramfs):
             f = file(os.path.join(dest, name), "w")
             f.write(data % dict)
             f.close()
+
+def setup_grub(project):
+    image_dir = project.image_dir()
+    iso_dir = project.iso_dir()
+    kernel = ""
+    initramfs = ""
+    
+    # Setup dir
+    path = os.path.join(iso_dir, "boot/grub")
+    if not os.path.exists(path):
+        os.makedirs(path)
+    
+    def copy(src, dest):
+        run('cp "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
+    
+    # Copy the kernel and initramfs
+    path = os.path.join(image_dir, "boot")
+    for name in os.listdir(path):
+        if name.startswith("kernel") or name.startswith("initramfs"):
+            if name.startswith("kernel"):
+                kernel = name
+            else:
+                initramfs = name
+            copy(os.path.join(path, name), "boot/" + name)
+    
+    # and the other files
+    path = os.path.join(image_dir, "boot/grub")
+    for name in os.listdir(path):
+        copy(os.path.join(path, name), "boot/grub/" + name)
+    
+    # Generate the config file
+    generate_grub_conf(project, kernel, initramfs)
+
+#
+# Image related stuff
+#
+
+def setup_live_kdm(project):
+    image_dir = project.image_dir()
+    path = os.path.join(image_dir, "usr/kde/3.5/share/config/kdm/kdmrc")
+    lines = []
+    for line in file(path):
+        if line.startswith("#AutoLoginEnable"):
+            lines.append("AutoLoginEnable=true\n")
+        elif line.startswith("#AutoLoginUser"):
+            lines.append("AutoLoginUser=pars\n")
+        else:
+            lines.append(line)
+    file(path, "w").write("".join(lines))
+
+#
+# Operations
+#
 
 def make_image(project):
     print "Preparing install image..."
@@ -146,16 +207,7 @@ def make_image(project):
     if project.media_type != "install":
         path = os.path.join(image_dir, "etc/inittab")
         file(path, "w").write(inittab_livecd)
-        path = os.path.join(image_dir, "usr/kde/3.5/share/config/kdm/kdmrc")
-        lines = []
-        for line in file(path):
-            if line.startswith("#AutoLoginEnable"):
-                lines.append("AutoLoginEnable=true\n")
-            elif line.startswith("#AutoLoginUser"):
-                lines.append("AutoLoginUser=pars\n")
-            else:
-                lines.append(line)
-        file(path, "w").write("".join(lines))
+        setup_live_kdm(project)
     
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
@@ -193,28 +245,7 @@ def make_iso(project):
         if name != ".svn":
             copy(os.path.join(path, name), name)
     
-    path = os.path.join(iso_dir, "boot")
-    if not os.path.exists(path):
-        os.makedirs(path)
-    path = os.path.join(iso_dir, "boot/grub")
-    if not os.path.exists(path):
-        os.makedirs(path)
-    
-    path = os.path.join(image_dir, "boot")
-    kernel = ""
-    initramfs = ""
-    for name in os.listdir(path):
-        if name.startswith("kernel") or name.startswith("initramfs"):
-            if name.startswith("kernel"):
-                kernel = name
-            else:
-                initramfs = name
-            copy(os.path.join(path, name), "boot/" + name)
-    path = os.path.join(image_dir, "boot/grub")
-    for name in os.listdir(path):
-        copy(os.path.join(path, name), "boot/grub/" + name)
-    
-    generate_grub_conf(project, kernel, initramfs)
+    setup_grub(project)
     
     if project.media_type == "install":
         run('ln -s "%s" "%s"' % (project.install_repo_dir(), os.path.join(iso_dir, "repo")))

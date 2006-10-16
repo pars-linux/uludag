@@ -243,6 +243,7 @@
         <Package>firefox</Package>
         <Package>firewall-config</Package>
         <Package>flac</Package>
+        <Package>flex</Package>
         <Package>fnfx</Package>
         <Package>fontconfig</Package>
         <Package>font-util</Package>
