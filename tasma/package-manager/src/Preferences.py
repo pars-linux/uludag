@@ -8,9 +8,6 @@
 # any later version.
 #
 # Please read the COPYING file.
-#
-#
-# Authors: İsmail Dönmez <ismail@pardus.org.tr>
 
 # KDE/Qt imports
 from kdecore import i18n

@@ -9,10 +9,6 @@
 # any later version.
 #
 # Please read the COPYING file.
-#
-#
-# Authors: İsmail Dönmez <ismail@pardus.org.tr>
-# Resistence is futile, turn on god damn Unicode!
 
 # System
 import sys

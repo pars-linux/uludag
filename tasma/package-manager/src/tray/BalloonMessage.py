@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#
+# Original code belongs to Kopete licensed under GPL v2
 
 from qt import *
 from kdeui import *
