@@ -51,7 +51,8 @@ def AboutData():
     about_data = KAboutData("package-manager", I18N_NOOP("Package Manager"), version, description, KAboutData.License_GPL,
                             "(C) 2005, 2006 UEKAE/TÜBİTAK", None, None)
 
-    about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Main Coder"), "ismail@pardus.org.tr")
+    about_data.addAuthor("Faik Uygur", I18N_NOOP("Developer and Current Maintainer"), "faik@pardus.org.tr")
+    about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Original Author"), "ismail@pardus.org.tr")
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
     about_data.addCredit("Eray Özkural", I18N_NOOP("Misc. Fixes"), "eray@pardus.org.tr")
@@ -99,12 +100,12 @@ class ComponentTipper(QToolTip):
         self.components = parent.componentDict
         self.list = parent.listView
         self.setWakeUpDelay(500)
-        
+
     def maybeTip(self, point):
         item = self.list.itemAt(point)
         if item:
             component = self.components[item]
-            self.tip(self.list.itemRect(item), 
+            self.tip(self.list.itemRect(item),
                      u"<b>%s</b> - %s" %
                      (component.name, component.summary))
 
@@ -415,7 +416,7 @@ class MainApplicationWidget(QWidget):
         self.componentDict.clear()
 
         componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network","applications.multimedia",
-                          "applications.games","applications.hardware","system.base","system.devel", "system.kernel.drivers", 
+                          "applications.games","applications.hardware","system.base","system.devel", "system.kernel.drivers",
                           "system.kernel.firmware"]
         components = [pisi.context.componentdb.get_component(x) for x in componentNames]
         componentPackages = []
@@ -479,15 +480,15 @@ class MainApplicationWidget(QWidget):
                 self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
             elif self.state == upgrade_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
-                
+
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
-                
+
         elif operation in ["installing"]:
             if self.state == install_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             elif self.state == upgrade_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
-            
+
             self.progressDialog.packageNo += 1
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
