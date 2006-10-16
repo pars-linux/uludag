@@ -15,6 +15,9 @@ def getIconPath(name, group=KIcon.Desktop):
         name = "package"
     return KGlobal.iconLoader().iconPath(name,group)
 
+def loadIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+
 from khtml import DOM
 
 class SelectEventListener(DOM.EventListener):
@@ -69,16 +72,18 @@ class BasketDialog(QDialog):
         spacer = QSpacerItem(121, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         layout.addItem(spacer, 5, 0)
 
+        self.updateBasketButton = QPushButton(self)
+        self.updateBasketButton.setText(i18n("Update Basket"))
+        self.updateBasketButton.setIconSet(loadIconSet("package"))
+        layout.addWidget(self.updateBasketButton, 5, 1)
+
         self.applyButton = QPushButton(self)
-        self.applyButton.setText(i18n("Apply"))
-        layout.addWidget(self.applyButton, 5, 1)
+        self.applyButton.setText(parent.operateAction.text())
+        self.applyButton.setIconSet(parent.operateAction.iconSet())
+        layout.addWidget(self.applyButton, 5, 2)
 
-        self.cancelButton = QPushButton(self)
-        self.cancelButton.setText(i18n("Close"))
-        layout.addWidget(self.cancelButton, 5, 2)
-
-        self.connect(self.applyButton, SIGNAL('clicked()'), self, SLOT('accept()'))
-        self.connect(self.cancelButton, SIGNAL('clicked()'), self, SLOT('reject()'))
+        self.connect(self.updateBasketButton, SIGNAL('clicked()'), self.updateBasket)
+        self.connect(self.applyButton, SIGNAL('clicked()'), self.apply)
 
         self.resize(QSize(574,503).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
@@ -95,7 +100,12 @@ class BasketDialog(QDialog):
 
         self.connect(self.pkgHtmlPart,SIGNAL("completed()"), self.registerEventListener)
 
-    def accept(self):
+    def updateBasket(self):
+        print "update basket"
+        QDialog.close(self, True)
+
+    def apply(self):
+        print "apply"
         QDialog.close(self, True)
 
     def registerEventListener(self):
