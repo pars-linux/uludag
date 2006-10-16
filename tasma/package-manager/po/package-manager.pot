@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-16 19:20+0300\n"
+"POT-Creation-Date: 2006-10-17 01:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,175 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/package-manager.py:39
-msgid "GUI for PiSi package manager"
-msgstr ""
-
-#: src/package-manager.py:47 src/package-manager.py:608
-msgid "Package Manager"
-msgstr ""
-
-#: src/package-manager.py:50
-msgid "Developer and Current Maintainer"
-msgstr ""
-
-#: src/package-manager.py:51
-msgid "Original Author"
-msgstr ""
-
-#: src/package-manager.py:52
-msgid "CSS/JS Meister"
-msgstr ""
-
-#: src/package-manager.py:53
-msgid "GUI Design & Usability"
-msgstr ""
-
-#: src/package-manager.py:54
-msgid "Misc. Fixes"
-msgstr ""
-
-#: src/package-manager.py:55
-msgid "Comar/Python Help"
-msgstr ""
-
-#: src/package-manager.py:56
-msgid "Speedup fixes"
-msgstr ""
-
-#: src/package-manager.py:57
-msgid "PiSi Authors"
-msgstr ""
-
-#: src/package-manager.py:57
-msgid "Authors of PiSi API"
-msgstr ""
-
-#: src/package-manager.py:131
-msgid "Search: "
-msgstr ""
-
-#: src/package-manager.py:135
-msgid "Show basket"
-msgstr ""
-
-#: src/package-manager.py:140 src/package-manager.py:236
-msgid "Install Package(s)"
-msgstr ""
-
-#: src/package-manager.py:161
-msgid "Components"
-msgstr ""
-
-#: src/package-manager.py:188
-msgid "Loading Package List..."
-msgstr ""
-
-#: src/package-manager.py:218
-msgid ""
-"Package repository still does not have category information.\n"
-"Exiting..."
-msgstr ""
-
-#: src/package-manager.py:247
-msgid "Remove Package(s)"
-msgstr ""
-
-#: src/package-manager.py:255
-msgid "Upgrade Package(s)"
-msgstr ""
-
-#: src/package-manager.py:260
-msgid "There are no updates available at this time"
-msgstr ""
-
-#: src/package-manager.py:279
-msgid "Select all packages in this category"
-msgstr ""
-
-#: src/package-manager.py:342
-msgid "N\\A"
-msgstr ""
-
-#: src/package-manager.py:343
-msgid "Description: "
-msgstr ""
-
-#: src/package-manager.py:343
-msgid "Version: "
-msgstr ""
-
-#: src/package-manager.py:344
-msgid "Package Size: "
-msgstr ""
-
-#: src/package-manager.py:344
-msgid "Homepage: "
-msgstr ""
-
-#: src/package-manager.py:438
-msgid "Others"
-msgstr ""
-
-#: src/package-manager.py:446 src/package-manager.py:564
-msgid "All"
-msgstr ""
-
-#: src/package-manager.py:454
-msgid "Search Results"
-msgstr ""
-
-#: src/package-manager.py:464 src/CommonText.py:3
+#: src/CommonText.py:3 src/package-manager.py:469
 msgid "downloading"
-msgstr ""
-
-#: src/package-manager.py:466 src/package-manager.py:484
-msgid "<b>Installing Package(s)</b>"
-msgstr ""
-
-#: src/package-manager.py:468 src/package-manager.py:478
-#: src/package-manager.py:486
-msgid "<b>Upgrading Package(s)</b>"
-msgstr ""
-
-#: src/package-manager.py:476
-msgid "<b>Removing Package(s)</b>"
-msgstr ""
-
-#: src/package-manager.py:499
-msgid "<b>Updating Repository</b>"
-msgstr ""
-
-#: src/package-manager.py:500
-msgid "Downloading package list of %1"
-msgstr ""
-
-#: src/package-manager.py:516
-msgid "Removing these packages may break system safety. Aborting."
-msgstr ""
-
-#: src/package-manager.py:624
-msgid "Show Installed Packages"
-msgstr ""
-
-#: src/package-manager.py:625
-msgid "Show New Packages"
-msgstr ""
-
-#: src/package-manager.py:626
-msgid "Show Upgradable Packages"
-msgstr ""
-
-#: src/package-manager.py:645
-msgid "Package to install"
-msgstr ""
-
-#: src/package-manager.py:645
-msgid "Show available updates"
-msgstr ""
-
-#: src/package-manager.py:648
-msgid "Package Manager is already running!"
 msgstr ""
 
 #: src/CommonText.py:3
@@ -221,8 +54,171 @@ msgstr ""
 msgid "Pisi Error"
 msgstr ""
 
-#: src/HelpDialog.py:20
-msgid "Package Manager Help"
+#: src/package-manager.py:40
+msgid "GUI for PiSi package manager"
+msgstr ""
+
+#: src/package-manager.py:48 src/package-manager.py:613
+msgid "Package Manager"
+msgstr ""
+
+#: src/package-manager.py:51
+msgid "Developer and Current Maintainer"
+msgstr ""
+
+#: src/package-manager.py:52
+msgid "Original Author"
+msgstr ""
+
+#: src/package-manager.py:53
+msgid "CSS/JS Meister"
+msgstr ""
+
+#: src/package-manager.py:54
+msgid "GUI Design & Usability"
+msgstr ""
+
+#: src/package-manager.py:55
+msgid "Misc. Fixes"
+msgstr ""
+
+#: src/package-manager.py:56
+msgid "Comar/Python Help"
+msgstr ""
+
+#: src/package-manager.py:57
+msgid "Speedup fixes"
+msgstr ""
+
+#: src/package-manager.py:58
+msgid "PiSi Authors"
+msgstr ""
+
+#: src/package-manager.py:58
+msgid "Authors of PiSi API"
+msgstr ""
+
+#: src/package-manager.py:132
+msgid "Search: "
+msgstr ""
+
+#: src/package-manager.py:136
+msgid "Show basket"
+msgstr ""
+
+#: src/package-manager.py:141 src/package-manager.py:237
+msgid "Install Package(s)"
+msgstr ""
+
+#: src/package-manager.py:162
+msgid "Components"
+msgstr ""
+
+#: src/package-manager.py:189
+msgid "Loading Package List..."
+msgstr ""
+
+#: src/package-manager.py:219
+msgid ""
+"Package repository still does not have category information.\n"
+"Exiting..."
+msgstr ""
+
+#: src/package-manager.py:248
+msgid "Remove Package(s)"
+msgstr ""
+
+#: src/package-manager.py:256
+msgid "Upgrade Package(s)"
+msgstr ""
+
+#: src/package-manager.py:261
+msgid "There are no updates available at this time"
+msgstr ""
+
+#: src/package-manager.py:280
+msgid "Select all packages in this category"
+msgstr ""
+
+#: src/package-manager.py:343
+msgid "N\\A"
+msgstr ""
+
+#: src/package-manager.py:344
+msgid "Description: "
+msgstr ""
+
+#: src/package-manager.py:344
+msgid "Version: "
+msgstr ""
+
+#: src/package-manager.py:345
+msgid "Package Size: "
+msgstr ""
+
+#: src/package-manager.py:345
+msgid "Homepage: "
+msgstr ""
+
+#: src/package-manager.py:443
+msgid "Others"
+msgstr ""
+
+#: src/package-manager.py:451 src/package-manager.py:569
+msgid "All"
+msgstr ""
+
+#: src/package-manager.py:459
+msgid "Search Results"
+msgstr ""
+
+#: src/package-manager.py:471 src/package-manager.py:489
+msgid "<b>Installing Package(s)</b>"
+msgstr ""
+
+#: src/package-manager.py:473 src/package-manager.py:483
+#: src/package-manager.py:491
+msgid "<b>Upgrading Package(s)</b>"
+msgstr ""
+
+#: src/package-manager.py:481
+msgid "<b>Removing Package(s)</b>"
+msgstr ""
+
+#: src/package-manager.py:504
+msgid "<b>Updating Repository</b>"
+msgstr ""
+
+#: src/package-manager.py:505
+msgid "Downloading package list of %1"
+msgstr ""
+
+#: src/package-manager.py:521
+msgid "Removing these packages may break system safety. Aborting."
+msgstr ""
+
+#: src/package-manager.py:629
+msgid "Show Installed Packages"
+msgstr ""
+
+#: src/package-manager.py:630
+msgid "Show New Packages"
+msgstr ""
+
+#: src/package-manager.py:631
+msgid "Show Upgradable Packages"
+msgstr ""
+
+#: src/package-manager.py:650
+msgid "Package to install"
+msgstr ""
+
+#: src/package-manager.py:650
+msgid "Show available updates"
+msgstr ""
+
+#: src/package-manager.py:653
+msgid "Package Manager is already running!"
 msgstr ""
 
 #: src/Progress.py:46
@@ -247,6 +243,10 @@ msgstr ""
 
 #: src/Commander.py:58
 msgid "Can't connect to Comar daemon"
+msgstr ""
+
+#: src/HelpDialog.py:20
+msgid "Package Manager Help"
 msgstr ""
 
 #: src/ProgressDialog.py:72
@@ -412,4 +412,32 @@ msgstr ""
 
 #: src/RepoDialog.py:74
 msgid "&Ok"
+msgstr ""
+
+#: src/BasketDialog.py:47 src/BasketDialog.py:53
+msgid "Basket"
+msgstr ""
+
+#: src/BasketDialog.py:57
+msgid "Selected packages:"
+msgstr ""
+
+#: src/BasketDialog.py:63
+msgid "Extra Dependencies:"
+msgstr ""
+
+#: src/BasketDialog.py:69
+msgid "Total Size:"
+msgstr ""
+
+#: src/BasketDialog.py:76
+msgid "Update Basket"
+msgstr ""
+
+#: src/BasketDialog.py:148
+msgid "Total Size: %1"
+msgstr ""
+
+#: src/BasketDialog.py:196 src/BasketDialog.py:198
+msgid "Size: "
 msgstr ""
