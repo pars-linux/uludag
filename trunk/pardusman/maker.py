@@ -140,7 +140,7 @@ def setup_grub(project):
 
 def setup_live_kdm(project):
     image_dir = project.image_dir()
-    path = os.path.join(image_dir, "usr/kde/3.5/share/config/kdm/kdmrc")
+    path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
     lines = []
     for line in file(path):
         if line.startswith("#AutoLoginEnable"):
