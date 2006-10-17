@@ -13,8 +13,8 @@
 {section name=uf loop=$users}
 		<tr align="center">
 			<td width="5%" style="text-align:center">{$smarty.section.uf.index_next}</td>
-			<td width="35%"><a href="{$url}user/{$users[uf].uname}">{$users[uf].name}</a></td>
-			<td width="30%">&nbsp;<a href="{$users[uf].web}">{$users[uf].web}</a></td>
+			<td width="35%"><a href="{$url}user/{$users[uf].UserName}">{$users[uf].UserName}</a></td>
+			<td width="30%">&nbsp;<a href="{$users[uf].UserWeb}">{$users[uf].UserWeb}</a></td>
 		</tr>
 {/section}
 	</tbody>

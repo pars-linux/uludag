@@ -192,7 +192,7 @@ include_once("globals.php");
             set_smarty_vars("nameofuser", $_GET["uname"]);
             set_smarty_vars("realnameofuser",$temp[0]["UserRealName"]);
             set_smarty_vars("webofuser",$temp[0]["UserWeb"]);
-            set_smarty_vars("nodes",get_something("user",$temp[0]["id"],"","release",""));
+            set_smarty_vars("nodes",get_something("user",$temp[0]["ID"],"","release",""));
             $smarty->display("posts.html");
             die();
         }
