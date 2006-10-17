@@ -163,6 +163,18 @@ def install_packages(project):
         if flag:
             run('pisi --yes-all --ignore-comar --ignore-file-conflicts -D"%s" it %s' % (image_dir, name))
 
+def squash_image(project):
+    image_dir = project.image_dir()
+    image_file = project.image_file()
+    
+    if not image_dir.endswith("/"):
+        image_dir += "/"
+    temp = tempfile.NamedTemporaryFile()
+    f = file(temp.name, "w")
+    f.write("\n".join(get_exclude_list(project)))
+    f.close()
+    run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
+
 #
 # Operations
 #
@@ -223,13 +235,7 @@ def make_image(project):
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
     
-    if not image_dir.endswith("/"):
-        image_dir += "/"
-    temp = tempfile.NamedTemporaryFile()
-    f = file(temp.name, "w")
-    f.write("\n".join(get_exclude_list(project)))
-    f.close()
-    run('mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name))
+    squash_image(project)
 
 def make_install_repo(project):
     print "Preparing installation repository..."

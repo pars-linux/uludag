@@ -22,6 +22,12 @@ def do_operation(project_file, op):
     
     if op == "make":
         maker.make(prj)
+    # make-repo
+    # make-image
+    # install-image
+    # configure-image
+    elif op == "squash-image":
+        maker.squash_image(prj)
     elif op == "make-iso":
         maker.make_iso(prj)
     else:
