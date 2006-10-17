@@ -14,24 +14,30 @@ import sys
 def do_operation(project_file, op):
     import project
     import maker
+    import time
     
     prj = project.Project()
     err = prj.open(project_file)
     if err:
         raise RuntimeError("%s" % err)
     
+    start = time.time()
+    
     if op == "make":
         maker.make(prj)
     # make-repo
-    # make-image
-    # install-image
-    # configure-image
-    elif op == "squash-image":
+    # make-live
+    # install-live
+    # configure-live
+    elif op == "pack-live":
         maker.squash_image(prj)
     elif op == "make-iso":
         maker.make_iso(prj)
     else:
         raise RuntimeError("Unknown operation '%s'" % op)
+    
+    end = time.time()
+    print "Total time is", end - start, "seconds."
 
 def main(args):
     if len(args) == 3:

@@ -273,11 +273,8 @@ def make_iso(project):
     ))
 
 def make(project):
-    start = time.time()
     make_image(project)
     if project.media_type == "install":
         make_install_repo(project)
     make_iso(project)
-    end = time.time()
     print "ISO is ready!"
-    print "Total time is", end - start, "seconds."
