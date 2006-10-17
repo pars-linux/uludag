@@ -11,16 +11,26 @@
 
 import sys
 
+def do_operation(project_file, op):
+    import project
+    import maker
+    
+    prj = project.Project()
+    err = prj.open(project_file)
+    if err:
+        raise RuntimeError("%s" % err)
+    
+    if op == "make":
+        maker.make(prj)
+    elif op == "make-iso":
+        maker.make_iso(prj)
+    else:
+        raise RuntimeError("Unknown operation '%s'" % op)
+
 def main(args):
     if len(args) == 3:
-        if args[1] == "make":
-            import project
-            import maker
-            prj = project.Project()
-            if prj.open(args[2]):
-                raise RuntimeError("Where is project file '%s'?" % args[2])
-            maker.make(prj)
-            sys.exit(0)
+        do_operation(args[2], args[1])
+        return
     prj = None
     for item in args[1:]:
         if not item.startswith("-"):
