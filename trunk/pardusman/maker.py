@@ -119,10 +119,10 @@ def setup_grub(project):
     # Copy the kernel and initramfs
     path = os.path.join(image_dir, "boot")
     for name in os.listdir(path):
-        if name.startswith("kernel") or name.startswith("initramfs"):
+        if name.startswith("kernel") or name.startswith("initramfs") or name.endswith(".bin"):
             if name.startswith("kernel"):
                 kernel = name
-            else:
+            elif name.startswith("initramfs"):
                 initramfs = name
             copy(os.path.join(path, name), "boot/" + name)
     
