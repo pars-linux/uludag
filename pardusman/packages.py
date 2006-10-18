@@ -14,6 +14,18 @@ import sys
 import urllib2
 import piksemel
 
+class Console:
+    def started(self, title):
+        print title
+    
+    def progress(self, msg, percent):
+        sys.stdout.write("\r%-70.70s" % msg)
+        sys.stdout.flush()
+    
+    def finished(self):
+        sys.stdout.write("\n")
+
+
 def fetch_uri(base_uri, cache_dir, filename, console=None):
     # Dont cache for local repos
     # Check that local file isnt older or has missing parts
@@ -147,7 +159,8 @@ class Repository:
     def make_local_repo(self, path, package_list):
         for name in package_list:
             p = self.packages[name]
-            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri)
+            con = Console()
+            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, con)
             os.link(cached, os.path.join(path, os.path.basename(cached)))
         index = self.make_index(package_list)
         import bz2
