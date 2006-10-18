@@ -92,6 +92,8 @@ class BasketDialog(QDialog):
         cssFile = file(str(locate("data","package-manager/layout.css"))).read()
         self.css = cssFile
 
+        self.javascript = file(str(locate("data","package-manager/animation.js"))).read()
+
         self.pkgHtmlPart = KHTMLPart(self.pkgHBox)
         self.depHtmlPart = KHTMLPart(self.depHBox)
 
@@ -160,6 +162,7 @@ class BasketDialog(QDialog):
         part.begin()
         part.write(head)
         part.write("<style type=\"text/css\">%s</style>" % self.css)
+        part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
         part.write("</head><body>")
         part.write(self.createHTMLForPackages(packages, checkBox))
         part.write('''<body></html>''')
@@ -169,17 +172,16 @@ class BasketDialog(QDialog):
         result = ''
         template ='''
         <!-- package start -->
-        <div>
+        <div class="disabled">
         '''
         if checkBox:
             template += '''<div class="checkboks" style="%s"><input type="checkbox" checked name="%s"></div>'''
 
         template += '''
-        <div class="package_title" style="%s">
+        <div class="package_title_disabled" style="%s">
         <img src="%s" style="float:left;" width="48px" height="48px">
         <b>%s</b><br>%s%s<br>%s<br>
-        </div>
-        </div>
+        </div></div>
         <!-- package end -->
         '''
 
