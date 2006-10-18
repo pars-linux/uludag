@@ -38,7 +38,12 @@
                         </tr>
                         <tr>
                             <td><span style="color: green">[*]</span> VeriYolu Tipi </td>
-                            <td><input id="p_bus_type" name="p_bus_type" value="{$p_bus_type}"></td>
+                            <td>
+                                <select id="p_bus_type" name="p_bus_type">
+                                {section name=node loop=$p_bustypes}
+                                    <option value="{$p_bustypes[node].Type}">{$p_bustypes[node].Type}</option>
+                                {/section}
+                                </select>
                         </tr>
                         <tr>
                             <td style="vertical-align:top;padding-top:3px;"><span style="color: red">[*]</span> Test Sonuçları </td>
