@@ -16,44 +16,6 @@ import stat
 import sys
 import time
 
-inittab_livecd = """# /etc/inittab:
-#
-# This file describes how the INIT process should set up
-# the system in a certain run-level.
-
-# Default runlevel.
-id:3:initdefault:
-
-# System initialization, mount local filesystems, etc.
-si::sysinit:/sbin/mudur.py sysinit
-
-# Further system initialization, brings up the boot runlevel.
-rc::bootwait:/sbin/mudur.py boot
-
-l0:0:wait:/sbin/mudur.py shutdown 
-l1:S1:wait:/sbin/mudur.py single
-l2:2:wait:/sbin/mudur.py nonetwork
-l3:3:wait:/sbin/mudur.py default
-l4:4:wait:/sbin/mudur.py default
-l5:5:wait:/sbin/mudur.py default
-l6:6:wait:/sbin/mudur.py reboot
-#z6:6:respawn:/sbin/sulogin
-
-c1:12345:respawn:/sbin/mingetty --noclear --autologin root tty1
-c2:12345:respawn:/sbin/mingetty --noclear --autologin root tty2
-c3:12345:respawn:/sbin/mingetty --noclear --autologin root tty3
-c4:12345:respawn:/sbin/mingetty --noclear --autologin root tty4
-c5:12345:respawn:/sbin/mingetty --noclear --autologin root tty5
-c6:12345:respawn:/sbin/mingetty --noclear --autologin root tty6
-
-# SERIAL CONSOLES
-#s0:12345:respawn:/sbin/agetty 9600 ttyS0 vt100
-#s1:12345:respawn:/sbin/agetty 9600 ttyS1 vt100
-
-# What to do at the "Three Finger Salute".
-ca:12345:ctrlaltdel:/sbin/shutdown -r now
-"""
-
 #
 # Utilities
 #
@@ -228,8 +190,10 @@ def make_image(project):
     chrun("/usr/bin/comar --stop")
     
     if project.media_type != "install":
-        path = os.path.join(image_dir, "etc/inittab")
-        file(path, "w").write(inittab_livecd)
+        path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
+        path2 = os.path.join(image_dir, "etc/inittab")
+        os.unlink(path2)
+        run('cp "%s" "%s"' % (path1, path2))
         setup_live_kdm(project)
     
     run('umount %s/proc' % image_dir)
