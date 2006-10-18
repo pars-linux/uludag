@@ -7,22 +7,22 @@
 
     $config['core']['title']            = "Pardul - Pardus Donanım Uyumluluk Listesi";
     $config['core']['desc']             = "Pardus ile kullanılabilecek donanımların listesi..";
-    $config['core']['path']             = "/home/rat/public_html/pardon/";
-    $config['core']['url']              = "http://localhost/~rat/pardon/";
+    $config['core']['path']             = "/home/pardul/public_html/";
+    $config['core']['url']              = "http://localhost/~pardul/";
     $config['core']['email']            = "pardul@uludag.org.tr";
     $config['core']['postperpage']      = "5";
     $config['core']['postsinfeed']      = "10";
     $config['core']['theme']            = "pardul";
     $config['core']['temp']             = "tmp";
     $config['core']['lang']             = "tr";
-    $config['core']['secretkey']        = "secret_keysd";
+    $config['core']['secretkey']        = "secret_key";
 
     $config['db']['host']               = "localhost";
     $config['db']['port']               = "3306";
-    $config['db']['user']               = "root";
-    $config['db']['pass']               = "goksel";
-    $config['db']['users_table']        = "UniqUsers";
-    $config['db']['dbname']             = "pardus";
+    $config['db']['user']               = "pardul";
+    $config['db']['pass']               = "pardul";
+    $config['db']['users_table']	= "UniqUsers";
+    $config['db']['dbname']             = "pardul";
     $config['db']['tableprefix']        = "pardul";
     $config['db']['ctype']              = "persistent";
 
