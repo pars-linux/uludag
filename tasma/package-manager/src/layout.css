@@ -11,7 +11,7 @@ body{
 }
 
 /* Package Title Style .. */
-.package_title {
+.package_title, .package_title_disabled {
 	font-size:12px;
 	margin-top:2px;
 	padding-left:2px;
@@ -20,10 +20,13 @@ body{
 	height:50px;
 	overflow:hidden;
 	cursor:pointer;
-        
 }
 
-.package_title img {
+.package_title_disabled, .disabled{
+    cursor:default;
+}
+
+.package_title img , .package_title_disabled img {
     border: 0px;
     vertical-align: top;
     float:left;
