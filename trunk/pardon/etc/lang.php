@@ -7,7 +7,7 @@
 
     $known_languages = Array ("tr","en");
 
-    if (false!==array_search($_GET["pattern"],$known_languages) AND isset($_SESSION["AL"]))
+    if (false!==array_search($_SESSION["AL"],$known_languages) AND isset($_SESSION["AL"]))
         require_once("etc/".$_SESSION["AL"].".php");
     else
         require_once("etc/tr.php");
