@@ -109,3 +109,16 @@ function gorkem_fonksiyonu(hede){
         }
     }
 }
+
+function noselect(e){
+    return false
+}
+
+function benable(){
+    return true
+}
+
+if (window.sidebar){
+    document.onmousedown=noselect
+    document.onclick=benable
+}
