@@ -42,7 +42,9 @@ def buildPackages():
 
     logger.raw("QUEUE")
     logger.info("Work Queue: %s" % (qmgr.workQueue))
-    mailer.info("Heyoo sırası ile\n%s\npaketlerini derlemeye başlıyorum..." % "\n".join(qmgr.workQueue))
+    sortedQueue = qmgr.workQueue[:]
+    sortedQueue.sort()
+    mailer.info("Heyoo sırası ile\n%s\npaketlerini derlemeye başlıyorum..." % "\n".join(sortedQueue))
     logger.raw()
 
     for pspec in queue:
