@@ -25,6 +25,12 @@
 //  For All Users (Guest)
     foreach ($_GET as $key => $value){
         switch ($key){
+            case "setlang":
+                if (false!==array_search($_GET["pattern"],$known_languages))
+                    $_SESSION["AL"]=$_GET["pattern"];
+                else
+                    $_SESSION["AL"]="tr";
+            break;
             case "activateuser":
                 if ($_GET['username'] AND $_GET['code']){
                     $msj = activate_user($_GET['username'],$_GET['code']);
