@@ -7,9 +7,9 @@
 
     $known_languages = Array ("tr","en");
 
-    if (false!==array_search($_SESSION["AL"],$known_languages) AND isset($_SESSION["AL"]))
-        require_once("etc/".$_SESSION["AL"].".php");
-    else
-        require_once("etc/tr.php");
+    if ($_SESSION["AL"]=="") $_SESSION["AL"]=$config['core']['lang'];
+    if (isset($_GET["setlang"]))
+        if (false!==array_search($_GET["setlang"],$known_languages))
+            $_SESSION["AL"]=$_GET["setlang"];
 
 ?>

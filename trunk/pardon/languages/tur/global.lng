@@ -1,0 +1,49 @@
+//
+// TUBITAK UEKAE 2005-2006 
+// Gökmen GÖKSEL gokmen_at_pardus.org.tr
+//
+
+WARN_WRONG_PASS=Kullanıcı Adı ya da Parola Hatalı !!
+CONNECTION_ERROR=Bağlantı Hatası : 
+DBCONERROR=Veritabanı sunucusuna bağlanamadım.
+ERRORMESSAGE=Hata Mesajı : 
+ERRORNUM= Hata No : 
+ERROR=HATA
+CONFLICT_ERROR=Çakışma hatası !!
+SENDMAIL_ERROR=Mail gönderme sırasında Hata!!
+WRONG_ENTRY=Bu girdi size ait değil ya da sistemden kaldırılmış !!
+FILE_NOT_FOUND=Ulaşmak istediğiniz dosya bulunamadı= böyle bir dosya sistemde yok ya da kaldırılmış. Linkin doğru olduğuna eminseniz yönetim ile irtibata geçiniz.
+DISK_ERROR=Belirtilen içerik sisteme eklenemedi. Disk hatası meydana geldi. Verilen konum hatalı ya da disk dolmuş olabilir.
+DB_ERROR= Belirtilen içerik sisteme eklenemedi. Veritabanı ile ilgili bir hata meydana geldi.
+NOT_FOUND=Kriterlerinize uygun kayıt bulunamadı= bu kriterlere uyan kayıt bulunmaması bu donanımın Pardus ürünleri üzerinde çalışmayacağını göstermez.
+MAINLINK=« Ana Sayfa
+LOGIC_ERROR=Mantıksal Hata !!
+WELCOME=Hoşgeldiniz
+DOYOUAGREE=Onaylıyor musunuz ?
+NO_RECORD=Kayıt yok
+NO_QUEUE= Onay bekleyen kayıt yok!!
+ADMIN=Yetkili
+GROUPS=Gruplar
+CHOICE=Seçim
+OK= Tamam
+ADD=Ekle
+CLEAN=Temizle
+DELETE=Sil
+EDIT=Düzenle
+USERNAME=Kullanıcı Adı : 
+PASSWORD=Parola : 
+LOGIN=Giriş
+USER_EXIST=Seçtiğiniz Kullanıcı Adı ile kayıtlı bir kullanıcı mevcut
+REGISTER_OK=Kaydınız alındı= kayıt sırasında verdiğiniz e-posta adresine gerekli bilgiler gönderilmiştir. Kaydınızı tamamlamak için e-postanızı kontrol ediniz. 
+ADDED=İçerik başarı ile eklendi.
+UPDATE_OK=Bilgiler güncellendi.
+MISSING_FIELDS= Bilgiler eksik!
+RESCTRICTED_AREA=Yasak Bölge!!
+ACTIVATE_USER_OK=Kullanıcı hesabınız başarıyla etkinleştirildi. Şu andan itibaren kullanabilirsiniz.
+ACTIVATE_USER_DELETED=Kullanıcı veritabanından <strong>tamamen</strong> kaldırıldı. Bu kullanıcı artık işlem yapamaz.
+ACTIVATE_USER_ERROR=Etkinleştirme işlemi sırasında hata oluştu. Lütfen= daha sonra tekrar deneyin. Hatanın tekrar etmesi durumunda yönetim ile irtibata geçerseniz seviniriz.
+ACTIVATE_USER_TITLE=Kullanıcı Etkinleştirme
+ACTIVATED_USER=Etkinleştirilmiş Hesap !!
+ACTIVATION_MAIL_HEADER=Merhaba\n\nSiz ya da bir başkası bu e-posta adresini kullanarak Donanim.Pardus (http://www.pardus.org.tr) sitesine kayıt yaptırdı.\nEğer kaydı siz yaptırdıysanız onaylamak için aşağıdaki bağlantıyı tıklayın.\n\n Onaylamak için tıklayın:
+ACTIVATION_MAIL_FOOTER=\nİlginiz için teşekkürler.\n Pardus Projesi
+ACTIVATION_MAIL_TITLE=Donanım.Pardus - Aktivasyon
