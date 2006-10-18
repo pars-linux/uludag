@@ -39,7 +39,9 @@
 
     if (isset($_GET['quit'])) {
         session_unregister("pardon");
-        $_SESSION=Array();
+        $temp = $_SESSION["AL"];
+        $_SESSION = Array();
+        $_SESSION["AL"] = $temp;
         header ("location: ".$_SELF);
     }
 
