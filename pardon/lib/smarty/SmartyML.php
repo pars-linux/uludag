@@ -66,12 +66,12 @@
    {
             if (!$this->caching)
                      return false;
-   
+
             if (!isset($compile_id)) {
                      $compile_id = $this->language->getCurrentLanguage().'-'.$this->compile_id;
                      $cache_id = $compile_id;
             }
-   
+
             return parent::is_cached($tpl_file, $cache_id, $compile_id);
    }
 
@@ -110,7 +110,7 @@
       foreach ($this->_languageTable as $lang)
         $this->_translationTable[$lang] = Array();
 
-      $this->_defaultLocale = 'en';
+      $this->_defaultLocale = 'tr';
       if (empty($locale))
         $locale = $this->getHTTPAcceptLanguage();
       $this->setCurrentLocale($locale);
