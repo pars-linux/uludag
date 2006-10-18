@@ -5,6 +5,8 @@
         Gökmen GÖKSEL gokmen_at_pardus.org.tr
     */
 
+    session_start();
+
     require_once ("etc/config.php");
     require_once ("etc/lang.php");
     require_once ("lib/libmail.php");
@@ -13,11 +15,11 @@
 
     $config["core"]["secretkey"] = "deneme";
 
-    require_once($config['core']['path'].$config['smarty']['libdir']."/Smarty.class.php");
+    require_once($config['core']['path'].$config['smarty']['libdir']."/SmartyML.php");
 
     setlocale(LC_TIME,"tr_TR.UTF8");
 
-    $smarty = new Smarty;
+    $smarty = new smartyML($_SESSION["AL"]);
 
     $smarty->template_dir = $config['core']['path'].$config['smarty']['tpldir']."/".$config['core']['theme'];
     $smarty->plugins_dir = array($config['core']['path'].$config['smarty']['libdir']."/plugins");
@@ -35,11 +37,9 @@
 
     db_connection('connect', $config['db']['host'].':'.$config['db']['port'], $config['db']['user'], $config['db']['pass'], $config['db']['dbname'], $config['db']['ctype']);
 
-    session_start();
-
     if (isset($_GET['quit'])) {
         session_unregister("pardon");
-        $_SESSION["state"]="";
+        $_SESSION=Array();
         header ("location: ".$_SELF);
     }
 
