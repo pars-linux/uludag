@@ -461,16 +461,25 @@ class MainApplicationWidget(QWidget):
         self.createHTML(packages)
         self.listView.setSelected(self.listView.firstChild(),True)
 
-    def pisiFileProgress(self, data):
+    def displayProgress(self, data):
         data = data.split(",")
-        if "pisi-index.xml" in data[0]:
-            self.progressDialog.updateUpgradingInfo(percent=data[1], rate=data[2], symbol=data[3])
-        else:
-            self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[0], percent=data[1], rate=data[2], symbol=data[3])
-            if self.state == install_state:
-                self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
-            elif self.state == upgrade_state:
-                self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
+        operation = data[0]
+
+        if operation == "updatingrepo":
+            self.progressDialog.setOperationDescription(i18n(str(data[2])))
+            self.progressDialog.hideStatus()
+            percent = data[1]
+            self.progressDialog.updateProgressBar(percent)
+
+        elif operation == "fetching":
+            if "pisi-index.xml" in data[1]:
+                self.progressDialog.updateUpgradingInfo(percent=data[2], rate=data[3], symbol=data[4])
+            else:
+                self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[1], percent=data[2], rate=data[3], symbol=data[4])
+                if self.state == install_state:
+                    self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+                elif self.state == upgrade_state:
+                    self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
 
     def pisiNotify(self,data):
         data = data.split(",")
@@ -503,13 +512,6 @@ class MainApplicationWidget(QWidget):
         elif operation in ["updatingrepo"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
             self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
-
-        elif operation in ["progressed"]:
-            if data[1] == "updatingrepo":
-                self.progressDialog.setOperationDescription(i18n(str(data[2])))
-                self.progressDialog.hideStatus()
-            percent = data[3]
-            self.progressDialog.updateProgressBar(percent)
 
         else: # pisi.ui.packagetogo
             # pisi sends unnecessary remove order notify in the middle of install, upgrade, remove

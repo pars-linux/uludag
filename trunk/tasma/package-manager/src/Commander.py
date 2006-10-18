@@ -68,7 +68,7 @@ class Commander(QObject):
             elif notification == "System.Manager.notify":
                 self.parent.pisiNotify(data)
             elif notification == "System.Manager.progress":
-                self.parent.pisiFileProgress(data)
+                self.parent.displayProgress(data)
             elif notification == "System.Manager.finished":
                 self.parent.finished(data)
             elif notification == "System.Manager.updatingRepo":
