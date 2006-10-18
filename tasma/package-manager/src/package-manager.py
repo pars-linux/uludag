@@ -364,6 +364,11 @@ class MainApplicationWidget(QWidget):
         self.htmlPart.view().setUpdatesEnabled(True)
 
     def updateView(self,item=None):
+        # basket may have been emptied from basket dialog
+        if not self.basket.packages:
+            self.basketAction.setEnabled(False)
+            self.operateAction.setEnabled(False)
+
         try:
             if not item:
                 item = self.listView.currentItem()
