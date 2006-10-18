@@ -19,6 +19,7 @@
     ssv("p_vendor",get_("x","Vendors"));
     ssv("p_distro",get_("x","Distribution"));
     ssv("p_scat",get_("x","Categories"));
+    ssv("p_bustypes",get_("x","BusTypes"));
     ssv("p_category",get_categories());
 
 //  For All Users (Guest)

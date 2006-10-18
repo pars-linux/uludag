@@ -97,7 +97,7 @@ div#leftpane {
 }
 
 div#leftpane input{
-    background-color: #FFF;
+    background-color: #EEE;
     border: 1px solid #CCC;
     -moz-border-radius : 5px;
     width:100%;
@@ -105,7 +105,7 @@ div#leftpane input{
 }
 
 div#leftpane input:focus{
-    background-color: #EEE;
+    background-color: #FFF;
     border: 1px solid #888;
 }
 
