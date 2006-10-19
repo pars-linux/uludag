@@ -78,6 +78,7 @@ class BasketDialog(QDialog):
         self.applyButton.setText(parent.operateAction.text())
         self.applyButton.setIconSet(parent.operateAction.iconSet())
         layout.addWidget(self.applyButton, 5, 2)
+        self.applyButton.setEnabled(False)
 
         self.connect(self.updateBasketButton, SIGNAL('clicked()'), self.updateBasket)
         self.connect(self.applyButton, SIGNAL('clicked()'), self.applyOperation)
