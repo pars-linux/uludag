@@ -5,7 +5,6 @@ from qt import *
 from kdecore import *
 from khtml import *
 
-
 import pisi
 
 (install_state, remove_state, upgrade_state) = range(3)
@@ -17,8 +16,6 @@ def getIconPath(name, group=KIcon.Desktop):
 
 def loadIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
-
-from khtml import DOM
 
 class SelectEventListener(DOM.EventListener):
     def __init__(self, parent):
@@ -83,7 +80,7 @@ class BasketDialog(QDialog):
         layout.addWidget(self.applyButton, 5, 2)
 
         self.connect(self.updateBasketButton, SIGNAL('clicked()'), self.updateBasket)
-        self.connect(self.applyButton, SIGNAL('clicked()'), self.apply)
+        self.connect(self.applyButton, SIGNAL('clicked()'), self.applyOperation)
 
         self.resize(QSize(574,503).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
@@ -106,7 +103,7 @@ class BasketDialog(QDialog):
         print "update basket"
         QDialog.close(self, True)
 
-    def apply(self):
+    def applyOperation(self):
         print "apply"
         QDialog.close(self, True)
 
