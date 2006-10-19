@@ -53,7 +53,7 @@ def generate_grub_conf(project, kernel, initramfs):
     dict = {}
     dict["kernel"] = kernel
     dict["initramfs"] = initramfs
-    dict["title"] = "Pardus 16-10-2006"
+    dict["title"] = project.title
     
     path = os.path.join(image_dir, "usr/share/grub/templates")
     dest = os.path.join(iso_dir, "boot/grub")
@@ -195,6 +195,7 @@ def make_image(project):
         os.unlink(path2)
         run('cp "%s" "%s"' % (path1, path2))
         setup_live_kdm(project)
+        file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
     
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
