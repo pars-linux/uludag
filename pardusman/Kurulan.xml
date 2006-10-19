@@ -22,7 +22,10 @@
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
         <SelectedPackage>clearlooks</SelectedPackage>
+        <SelectedPackage>crack-attack</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
+        <SelectedPackage>digikam</SelectedPackage>
+        <SelectedPackage>digikamimageplugins</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
         <SelectedPackage>dosbox</SelectedPackage>
         <SelectedPackage>dosfstools</SelectedPackage>
@@ -71,6 +74,7 @@
         <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
+        <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmplayer</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
@@ -84,6 +88,7 @@
         <SelectedPackage>lsof</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
+        <SelectedPackage>ltrace</SelectedPackage>
         <SelectedPackage>macromedia-flash</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
@@ -107,7 +112,9 @@
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
+        <SelectedPackage>qalculate</SelectedPackage>
         <SelectedPackage>rar</SelectedPackage>
+        <SelectedPackage>reiserfsprogs</SelectedPackage>
         <SelectedPackage>rpcalc</SelectedPackage>
         <SelectedPackage>rt2400</SelectedPackage>
         <SelectedPackage>rt2500</SelectedPackage>
@@ -119,6 +126,7 @@
         <SelectedPackage>skype</SelectedPackage>
         <SelectedPackage>skype-avatars</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
+        <SelectedPackage>smartdimmer</SelectedPackage>
         <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>spca5xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
@@ -209,6 +217,7 @@
         <Package>cdrtools</Package>
         <Package>chmlib</Package>
         <Package>clearlooks</Package>
+        <Package>cln</Package>
         <Package>cmake</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
@@ -216,6 +225,9 @@
         <Package>coreutils</Package>
         <Package>cpio</Package>
         <Package>cpufrequtils</Package>
+        <Package>crack-attack</Package>
+        <Package>crack-attack-music</Package>
+        <Package>crack-attack-sounds</Package>
         <Package>cracklib</Package>
         <Package>ctags</Package>
         <Package>cups</Package>
@@ -232,6 +244,8 @@
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>diffutils</Package>
+        <Package>digikam</Package>
+        <Package>digikamimageplugins</Package>
         <Package>DirectFB</Package>
         <Package>disktype</Package>
         <Package>dmidecode</Package>
@@ -245,9 +259,11 @@
         <Package>eciadsl</Package>
         <Package>ed</Package>
         <Package>eject</Package>
+        <Package>elfutils</Package>
         <Package>esound</Package>
         <Package>essential</Package>
         <Package>ethtool</Package>
+        <Package>exiv2</Package>
         <Package>expat</Package>
         <Package>faac</Package>
         <Package>faad2</Package>
@@ -290,6 +306,7 @@
         <Package>gnuconfig</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnupg</Package>
+        <Package>gnuplot</Package>
         <Package>gnutls</Package>
         <Package>gocr</Package>
         <Package>gpac</Package>
@@ -360,6 +377,7 @@
         <Package>kernel</Package>
         <Package>kftpgrabber</Package>
         <Package>kio-to-local</Package>
+        <Package>kipi-plugins</Package>
         <Package>klibc</Package>
         <Package>kmplayer</Package>
         <Package>knazar</Package>
@@ -407,6 +425,7 @@
         <Package>libidn</Package>
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
+        <Package>libkexif</Package>
         <Package>libkipi</Package>
         <Package>liblbxutil</Package>
         <Package>libmad</Package>
@@ -428,6 +447,7 @@
         <Package>libpcre</Package>
         <Package>libperl</Package>
         <Package>libpng</Package>
+        <Package>libqalculate</Package>
         <Package>libquicktime</Package>
         <Package>libraw1394</Package>
         <Package>librsvg</Package>
@@ -493,6 +513,7 @@
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
+        <Package>ltrace</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>m4</Package>
@@ -586,6 +607,7 @@
         <Package>python</Package>
         <Package>python-bsddb3</Package>
         <Package>python-fchksum</Package>
+        <Package>qalculate</Package>
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
@@ -593,6 +615,7 @@
         <Package>rcs</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
+        <Package>reiserfsprogs</Package>
         <Package>rpcalc</Package>
         <Package>rp-pppoe</Package>
         <Package>rsync</Package>
@@ -619,6 +642,7 @@
         <Package>skype-avatars</Package>
         <Package>slang</Package>
         <Package>slmodem</Package>
+        <Package>smartdimmer</Package>
         <Package>smb4k</Package>
         <Package>sox</Package>
         <Package>spca5xx</Package>
@@ -627,6 +651,7 @@
         <Package>splash-theme</Package>
         <Package>splashutils</Package>
         <Package>splashutils-misc</Package>
+        <Package>sqlite</Package>
         <Package>sqlite2</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
