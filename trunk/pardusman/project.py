@@ -46,6 +46,7 @@ class Project:
         self.reset()
     
     def reset(self):
+        self.title = None
         self.work_dir = None
         self.release_files = None
         self.repo_uri = None
@@ -70,6 +71,7 @@ class Project:
         
         self.reset()
         
+        self.title = doc.getTagData("Title")
         self.media_type = doc.getAttribute("type")
         self.media_size = doc.getAttribute("size")
         self.work_dir = doc.getTagData("WorkDir")
@@ -91,6 +93,8 @@ class Project:
         doc = piksemel.newDocument("PardusmanProject")
         doc.setAttribute("type", self.media_type)
         doc.setAttribute("size", str(self.media_size))
+        if self.title:
+            doc.insertTag("Title").insertData(self.title)
         if self.work_dir:
             doc.insertTag("WorkDir").insertData(self.work_dir)
         if self.release_files:
