@@ -1,4 +1,5 @@
 <PardusmanProject type="install" size="734003200">
+    <Title>Pardus 1.1 Kur 2006-10-19</Title>
     <WorkDir>/home/gurer/uludag/trunk/pardusman/test/</WorkDir>
     <ReleaseFiles>/home/gurer/uludag/trunk/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
