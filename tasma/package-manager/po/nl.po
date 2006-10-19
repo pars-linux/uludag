@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-17 01:07+0300\n"
+"POT-Creation-Date: 2006-10-19 13:14+0300\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:469
+#: src/CommonText.py:3 src/package-manager.py:483
 msgid "downloading"
 msgstr "downloaden"
 
@@ -63,7 +63,7 @@ msgstr "Pisi-fout"
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi-pakketbeheer"
 
-#: src/package-manager.py:48 src/package-manager.py:613
+#: src/package-manager.py:48 src/package-manager.py:620
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -170,92 +170,92 @@ msgstr "Pakketgrootte: "
 msgid "Homepage: "
 msgstr "Homepage: "
 
-#: src/package-manager.py:443
+#: src/package-manager.py:448
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:451 src/package-manager.py:569
+#: src/package-manager.py:456 src/package-manager.py:576
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:459
+#: src/package-manager.py:464
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
-#: src/package-manager.py:471 src/package-manager.py:489
+#: src/package-manager.py:485 src/package-manager.py:503
 #, fuzzy
 msgid "<b>Installing Package(s)</b>"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:473 src/package-manager.py:483
-#: src/package-manager.py:491
+#: src/package-manager.py:487 src/package-manager.py:497
+#: src/package-manager.py:505
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:481
+#: src/package-manager.py:495
 #, fuzzy
 msgid "<b>Removing Package(s)</b>"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:504
+#: src/package-manager.py:518
 #, fuzzy
 msgid "<b>Updating Repository</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:505
+#: src/package-manager.py:519
 #, fuzzy
 msgid "Downloading package list of %1"
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:521
+#: src/package-manager.py:528
 msgid "Removing these packages may break system safety. Aborting."
 msgstr ""
 "Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar "
 "brengen. Gestopt."
 
-#: src/package-manager.py:629
+#: src/package-manager.py:636
 msgid "Show Installed Packages"
 msgstr "Geinstalleerde pakketten tonen"
 
-#: src/package-manager.py:630
+#: src/package-manager.py:637
 msgid "Show New Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:631
+#: src/package-manager.py:638
 #, fuzzy
 msgid "Show Upgradable Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:650
+#: src/package-manager.py:657
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:650
+#: src/package-manager.py:657
 msgid "Show available updates"
 msgstr "Beschikbare updates tonen"
 
-#: src/package-manager.py:653
+#: src/package-manager.py:660
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is reeds opgestart!"
 
-#: src/Progress.py:46
+#: src/Progress.py:47
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<b>PiSi wordt voorbereid...b>"
 
-#: src/Progress.py:54
+#: src/Progress.py:55
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Handeling wordt geannuleerd...</b>"
 
-#: src/Progress.py:80 src/Progress.py:84
+#: src/Progress.py:81 src/Progress.py:85
 #, fuzzy
 msgid "Now %1 <b>%2</b> package"
 msgstr "Nu %1<b>%2</b> (%3 van %4)"
 
-#: src/Progress.py:86
+#: src/Progress.py:87
 msgid "Fetching package (%1/%2) at %3 %4"
 msgstr ""
 
-#: src/Progress.py:96
+#: src/Progress.py:97
 msgid "Fetching package list at %3 %4"
 msgstr ""
 
@@ -439,23 +439,23 @@ msgstr ""
 msgid "&Ok"
 msgstr "&Ok"
 
-#: src/BasketDialog.py:47 src/BasketDialog.py:53
+#: src/BasketDialog.py:44 src/BasketDialog.py:50
 msgid "Basket"
 msgstr ""
 
-#: src/BasketDialog.py:57
+#: src/BasketDialog.py:54
 msgid "Selected packages:"
 msgstr ""
 
-#: src/BasketDialog.py:63
+#: src/BasketDialog.py:60
 msgid "Extra Dependencies:"
 msgstr ""
 
-#: src/BasketDialog.py:69
+#: src/BasketDialog.py:66
 msgid "Total Size:"
 msgstr ""
 
-#: src/BasketDialog.py:76
+#: src/BasketDialog.py:73
 msgid "Update Basket"
 msgstr ""
 
