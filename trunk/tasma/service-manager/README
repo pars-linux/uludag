@@ -5,9 +5,3 @@ Service Manager is an application which can
 start or stop services (i.e daemons or 
 servers) in a Pardus system. It can also be
 used to start/stop a service instantly.
-
-Known Problems
---------------
-
-- If a service with no status() function is paused, SM won't update
-  the status of the service.

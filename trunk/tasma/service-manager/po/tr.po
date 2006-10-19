@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: service-manager 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-06 15:24+0300\n"
+"POT-Creation-Date: 2006-10-19 13:59+0300\n"
 "PO-Revision-Date: 2006-04-10 12:02+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,40 +15,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/service-manager.py:54 src/service-manager.py:289 src/mainform.py:76
+#: src/service-manager.py:55 src/service-manager.py:321 src/mainform.py:76
 msgid "Service Manager"
 msgstr "Servis Yöneticisi"
 
-#: src/service-manager.py:161
+#: src/service-manager.py:169
 msgid "You are not allowed to do this operation."
 msgstr "Bu işlemi yapmaya yetkiniz yok."
 
-#: src/service-manager.py:161
+#: src/service-manager.py:169
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
 
-#: src/service-manager.py:163
+#: src/service-manager.py:171
 msgid "COMAR script execution failed."
 msgstr "COMAR betiği çalıştırılamadı."
 
-#: src/service-manager.py:163
+#: src/service-manager.py:171
 msgid "Script Error"
 msgstr "Betik Hatası"
 
-#: src/service-manager.py:166
+#: src/service-manager.py:174
 msgid "Unable to start service."
 msgstr "Servis başlatılamıyor."
 
-#: src/service-manager.py:166 src/service-manager.py:168
-#: src/service-manager.py:170
+#: src/service-manager.py:174 src/service-manager.py:176
+#: src/service-manager.py:178
 msgid "Failed"
 msgstr "Başarısız"
 
-#: src/service-manager.py:168
+#: src/service-manager.py:176
 msgid "Unable to stop service."
 msgstr "Servis sonlandırılamıyor."
 
-#: src/service-manager.py:170
+#: src/service-manager.py:178
 #, python-format
 msgid ""
 "Unable to complete operation:\n"
@@ -57,36 +57,62 @@ msgstr ""
 "İşlem tamamlanamıyor:\n"
 "%s"
 
-#: src/service-manager.py:210
+#: src/service-manager.py:216 src/mainform.py:81
+msgid "Start"
+msgstr "Başlat"
+
+#: src/service-manager.py:218 src/mainform.py:85
+msgid "Pause"
+msgstr "Beklet"
+
+#: src/service-manager.py:223
 #, python-format
 msgid "%s is running."
 msgstr "%s çalışıyor."
 
-#: src/service-manager.py:212
+#: src/service-manager.py:227
 #, python-format
 msgid "%s is paused."
 msgstr "%s askıya alındı."
 
-#: src/service-manager.py:214
+#: src/service-manager.py:230
 #, python-format
 msgid "%s is stopped."
 msgstr "%s durduruldu."
 
-#: src/service-manager.py:284
+#: src/service-manager.py:232
+msgid "Run on startup"
+msgstr "Sistem açılınca çalıştır"
+
+#: src/service-manager.py:233
+msgid "Don't run on startup"
+msgstr "Sistem açılınca çalıştırma"
+
+#: src/service-manager.py:237
+#, python-format
+msgid "%s runs on startup"
+msgstr "%s sistem açılışınca çalıştırılıyor."
+
+#: src/service-manager.py:239
+#, python-format
+msgid "%s does not run on startup"
+msgstr "%s sistem açılışında çalıştırılmıyor."
+
+#: src/service-manager.py:275
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"Bu servisi kapatırsanız, problem yaşayabilirsiniz.\n"
+"Servisi kapatmak istediğinizden emin misiniz?"
+
+#: src/service-manager.py:316
 msgid "Service Manager is already running!"
 msgstr "Servis Yöneticisi zaten çalışıyor!"
 
 #: src/mainform.py:29 src/mainform.py:78
 msgid "Service"
 msgstr "Servis"
-
-#: src/mainform.py:81
-msgid "Start"
-msgstr "Başlat"
-
-#: src/mainform.py:85
-msgid "Pause"
-msgstr "Beklet"
 
 #: src/mainform.py:86
 msgid "&List servers only."
@@ -95,9 +121,3 @@ msgstr "&Sadece sunucuları listele"
 #: src/mainform.py:87
 msgid "Alt+L"
 msgstr "Alt+L"
-
-#~ msgid "Auto Start"
-#~ msgstr "Oto. Başlat"
-
-#~ msgid "Don't Auto Start"
-#~ msgstr "Oto. Başlatma"
