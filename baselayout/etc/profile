@@ -57,7 +57,7 @@ else
 fi
 
 
-for sh in /etc/profile.d/*.sh ; do
+for sh in /etc/profile.d/* ; do
        if [ -r "$sh" ] ; then
                . "$sh"
        fi
