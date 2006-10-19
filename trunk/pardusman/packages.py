@@ -188,7 +188,6 @@ class Repository:
             for item in self.components["system.base"].packages:
                 deps.add(item)
                 collect(item)
-        deps.add("zorg")
         return deps
     
     def __str__(self):
