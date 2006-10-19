@@ -101,8 +101,17 @@ class ProjectWindow(KMainWindow):
         box = QWidget(hb)
         grid = QGridLayout(box, 5, 2, 6, 6)
         
-        lab = QLabel(_("Work folder:"), box)
+        lab = QLabel(_("Title:"), box)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
+        self.title = QLineEdit(box)
+        QToolTip.add(
+            self.title,
+            _("Title of distribution media, used in grub menu.")
+        )
+        grid.addWidget(self.title, 0, 1)
+        
+        lab = QLabel(_("Work folder:"), box)
+        grid.addWidget(lab, 1, 0, Qt.AlignRight)
         hb2 = QHBox(box)
         hb2.setSpacing(3)
         self.work_dir = QLineEdit(hb2)
@@ -112,19 +121,19 @@ class ProjectWindow(KMainWindow):
         )
         but = QPushButton("...", hb2)
         self.connect(but, SIGNAL("clicked()"), self.selectWorkdir)
-        grid.addWidget(hb2, 0, 1)
+        grid.addWidget(hb2, 1, 1)
         
         lab = QLabel(_("Repository:"), box)
-        grid.addWidget(lab, 1, 0, Qt.AlignRight)
+        grid.addWidget(lab, 2, 0, Qt.AlignRight)
         self.repo_uri = QLineEdit(box)
         QToolTip.add(
             self.repo_uri,
             _("PiSi package repository of the distribution.\nMust be a URL pointing to the repository index\nfile (i.e. pisi-index.xml.bz2).")
         )
-        grid.addWidget(self.repo_uri, 1, 1)
+        grid.addWidget(self.repo_uri, 2, 1)
         
         lab = QLabel(_("Release files:"), box)
-        grid.addWidget(lab, 2, 0, Qt.AlignRight)
+        grid.addWidget(lab, 3, 0, Qt.AlignRight)
         hb2 = QHBox(box)
         hb2.setSpacing(3)
         self.release_files = QLineEdit(hb2)
@@ -134,23 +143,23 @@ class ProjectWindow(KMainWindow):
         )
         but = QPushButton("...", hb2)
         self.connect(but, SIGNAL("clicked()"), self.selectFiles)
-        grid.addWidget(hb2, 2, 1)
+        grid.addWidget(hb2, 3, 1)
         
         lab = QLabel(_("Media type:"), box)
-        grid.addWidget(lab, 3, 0, Qt.AlignRight)
+        grid.addWidget(lab, 4, 0, Qt.AlignRight)
         self.media_type = QHButtonGroup(box)
         QRadioButton(_("Installation"), self.media_type)
         QRadioButton(_("Live system"), self.media_type)
-        grid.addWidget(self.media_type, 3, 1)
+        grid.addWidget(self.media_type, 4, 1)
         
         lab = QLabel(_("Media size:"), box)
-        grid.addWidget(lab, 4, 0, Qt.AlignRight)
+        grid.addWidget(lab, 5, 0, Qt.AlignRight)
         self.media_size = QComboBox(False, box)
         self.media_size.insertItem(getIconPixmap("cdrom_unmount"), _("CD (700 MB)"), 0)
         self.media_size.insertItem(getIconPixmap("dvd_unmount"), _("DVD (4.2 GB)"), 1)
         self.media_size.insertItem(getIconPixmap("usbpendrive_unmount"), _("FlashDisk (1 GB)"), 2)
         self.media_size.insertItem(getIconPixmap("hdd_unmount"), _("Custom size"), 3)
-        grid.addWidget(self.media_size, 4, 1)
+        grid.addWidget(self.media_size, 5, 1)
         
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
@@ -225,6 +234,9 @@ class ProjectWindow(KMainWindow):
         self.f = f
     
     def ui2project(self):
+        tmp = unicode(self.title.text())
+        if tmp:
+            self.project.title = tmp
         tmp = unicode(self.release_files.text())
         if tmp:
             self.project.release_files = tmp
@@ -240,6 +252,11 @@ class ProjectWindow(KMainWindow):
             self.project.media_type = "live"
     
     def project2ui(self):
+        if self.project.title:
+            tmp = unicode(self.project.title)
+        else:
+            tmp = ""
+        self.title.setText(tmp)
         if self.project.release_files:
             tmp = unicode(self.project.release_files)
         else:
