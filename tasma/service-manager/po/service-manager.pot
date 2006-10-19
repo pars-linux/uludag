@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-06 15:24+0300\n"
+"POT-Creation-Date: 2006-10-19 13:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,75 +16,99 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/service-manager.py:54 src/service-manager.py:289 src/mainform.py:76
+#: src/service-manager.py:55 src/service-manager.py:321 src/mainform.py:76
 msgid "Service Manager"
 msgstr ""
 
-#: src/service-manager.py:161
+#: src/service-manager.py:169
 msgid "You are not allowed to do this operation."
 msgstr ""
 
-#: src/service-manager.py:161
+#: src/service-manager.py:169
 msgid "Access Denied"
 msgstr ""
 
-#: src/service-manager.py:163
+#: src/service-manager.py:171
 msgid "COMAR script execution failed."
 msgstr ""
 
-#: src/service-manager.py:163
+#: src/service-manager.py:171
 msgid "Script Error"
 msgstr ""
 
-#: src/service-manager.py:166
+#: src/service-manager.py:174
 msgid "Unable to start service."
 msgstr ""
 
-#: src/service-manager.py:166 src/service-manager.py:168
-#: src/service-manager.py:170
+#: src/service-manager.py:174 src/service-manager.py:176
+#: src/service-manager.py:178
 msgid "Failed"
 msgstr ""
 
-#: src/service-manager.py:168
+#: src/service-manager.py:176
 msgid "Unable to stop service."
 msgstr ""
 
-#: src/service-manager.py:170
+#: src/service-manager.py:178
 #, python-format
 msgid ""
 "Unable to complete operation:\n"
 "%s"
 msgstr ""
 
-#: src/service-manager.py:210
+#: src/service-manager.py:216 src/mainform.py:81
+msgid "Start"
+msgstr ""
+
+#: src/service-manager.py:218 src/mainform.py:85
+msgid "Pause"
+msgstr ""
+
+#: src/service-manager.py:223
 #, python-format
 msgid "%s is running."
 msgstr ""
 
-#: src/service-manager.py:212
+#: src/service-manager.py:227
 #, python-format
 msgid "%s is paused."
 msgstr ""
 
-#: src/service-manager.py:214
+#: src/service-manager.py:230
 #, python-format
 msgid "%s is stopped."
 msgstr ""
 
-#: src/service-manager.py:284
+#: src/service-manager.py:232
+msgid "Run on startup"
+msgstr ""
+
+#: src/service-manager.py:233
+msgid "Don't run on startup"
+msgstr ""
+
+#: src/service-manager.py:237
+#, python-format
+msgid "%s runs on startup"
+msgstr ""
+
+#: src/service-manager.py:239
+#, python-format
+msgid "%s does not run on startup"
+msgstr ""
+
+#: src/service-manager.py:275
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+
+#: src/service-manager.py:316
 msgid "Service Manager is already running!"
 msgstr ""
 
 #: src/mainform.py:29 src/mainform.py:78
 msgid "Service"
-msgstr ""
-
-#: src/mainform.py:81
-msgid "Start"
-msgstr ""
-
-#: src/mainform.py:85
-msgid "Pause"
 msgstr ""
 
 #: src/mainform.py:86
