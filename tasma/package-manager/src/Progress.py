@@ -11,6 +11,7 @@ class Progress(ProgressDialog):
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelThread)
+        self.cancelButton.setEnabled(False)
         self.hideStatus()
         self.hideOperationDescription()
         
