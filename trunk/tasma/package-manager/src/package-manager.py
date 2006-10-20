@@ -38,7 +38,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.1.0_b4"
+version = "1.1_beta6"
 unremovable_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE','pisi'])
 (install_state, remove_state, upgrade_state) = range(3)
 
