@@ -37,7 +37,9 @@ class CustomEventListener(DOM.EventListener):
                     document = self.parent.htmlPart.document()
                     nodeList = document.getElementsByTagName(DOM.DOMString("input"))
                     for i in range(0,nodeList.length()):
-                        DOM.HTMLInputElement(nodeList.item(i)).click()
+                        element = DOM.HTMLInputElement(nodeList.item(i))
+                        if not element.checked():
+                            element.click()
                 else:
                     KRun.runURL(KURL(link),"text/html",False,False);
         except Exception, e:
