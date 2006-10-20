@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-19 13:14+0300\n"
+"POT-Creation-Date: 2006-10-20 22:42+0300\n"
 "PO-Revision-Date: 2006-10-14 00:20+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/CommonText.py:3 src/package-manager.py:483
+#: src/CommonText.py:3 src/package-manager.py:482
 msgid "downloading"
 msgstr "indiriliyor"
 
@@ -67,7 +67,7 @@ msgstr "Pisi Hatası"
 msgid "GUI for PiSi package manager"
 msgstr "PiSi paket yöneticisi için arayüz"
 
-#: src/package-manager.py:48 src/package-manager.py:620
+#: src/package-manager.py:48 src/package-manager.py:619
 msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 
@@ -107,27 +107,27 @@ msgstr "PiSi Yazarları"
 msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
-#: src/package-manager.py:132
+#: src/package-manager.py:131
 msgid "Search: "
 msgstr "Ara: "
 
-#: src/package-manager.py:136
+#: src/package-manager.py:135
 msgid "Show basket"
 msgstr "Sepeti göster"
 
-#: src/package-manager.py:141 src/package-manager.py:237
+#: src/package-manager.py:140 src/package-manager.py:236
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
-#: src/package-manager.py:162
+#: src/package-manager.py:161
 msgid "Components"
 msgstr "Bileşenler"
 
-#: src/package-manager.py:189
+#: src/package-manager.py:188
 msgid "Loading Package List..."
 msgstr "Paket listesi yükleniyor"
 
-#: src/package-manager.py:219
+#: src/package-manager.py:217
 msgid ""
 "Package repository still does not have category information.\n"
 "Exiting..."
@@ -135,101 +135,101 @@ msgstr ""
 "Paket deposunda hala kategori bilgisi yok.\n"
 "Çıkılıyor"
 
-#: src/package-manager.py:248
+#: src/package-manager.py:247
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
-#: src/package-manager.py:256
+#: src/package-manager.py:255
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: src/package-manager.py:261
+#: src/package-manager.py:260
 msgid "There are no updates available at this time"
 msgstr "Şu anda mevcut bir güncelleme yok"
 
-#: src/package-manager.py:280
+#: src/package-manager.py:279
 msgid "Select all packages in this category"
 msgstr "Bu kategorideki tüm paketleri seç"
 
-#: src/package-manager.py:343
+#: src/package-manager.py:342
 msgid "N\\A"
 msgstr "Bilinmiyor"
 
-#: src/package-manager.py:344
+#: src/package-manager.py:343
 msgid "Description: "
 msgstr "Açıklama: "
 
-#: src/package-manager.py:344
+#: src/package-manager.py:343
 msgid "Version: "
 msgstr "Sürüm: "
 
-#: src/package-manager.py:345
+#: src/package-manager.py:344
 msgid "Package Size: "
 msgstr "Paket Boyutu: "
 
-#: src/package-manager.py:345
+#: src/package-manager.py:344
 msgid "Homepage: "
 msgstr "Web sayfası: "
 
-#: src/package-manager.py:448
+#: src/package-manager.py:447
 msgid "Others"
 msgstr "Diğerleri"
 
-#: src/package-manager.py:456 src/package-manager.py:576
+#: src/package-manager.py:455 src/package-manager.py:575
 msgid "All"
 msgstr "Tümü"
 
-#: src/package-manager.py:464
+#: src/package-manager.py:463
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
-#: src/package-manager.py:485 src/package-manager.py:503
+#: src/package-manager.py:484 src/package-manager.py:502
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Paket(ler) Kuruluyor</b>"
 
-#: src/package-manager.py:487 src/package-manager.py:497
-#: src/package-manager.py:505
+#: src/package-manager.py:486 src/package-manager.py:496
+#: src/package-manager.py:504
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Paket(ler) Güncelleniyor</b>"
 
-#: src/package-manager.py:495
+#: src/package-manager.py:494
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Paket(ler) Kaldırılıyor</b>"
 
-#: src/package-manager.py:518
+#: src/package-manager.py:517
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Depo Güncelleniyor</b>"
 
-#: src/package-manager.py:519
+#: src/package-manager.py:518
 msgid "Downloading package list of %1"
 msgstr "%1 paket listesi indiriliyor"
 
-#: src/package-manager.py:528
+#: src/package-manager.py:527
 msgid "Removing these packages may break system safety. Aborting."
 msgstr ""
 "Bu paketleri kaldırmak sistemi tehlikeye sokabilir. İşlem iptal ediliyor."
 
-#: src/package-manager.py:636
+#: src/package-manager.py:635
 msgid "Show Installed Packages"
 msgstr "Kurulu Paketleri Göster"
 
-#: src/package-manager.py:637
+#: src/package-manager.py:636
 msgid "Show New Packages"
 msgstr "Yeni Paketleri Göster"
 
-#: src/package-manager.py:638
+#: src/package-manager.py:637
 msgid "Show Upgradable Packages"
 msgstr "Güncellemeleri Göster"
 
-#: src/package-manager.py:657
+#: src/package-manager.py:656
 msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
-#: src/package-manager.py:657
+#: src/package-manager.py:656
 msgid "Show available updates"
 msgstr "Mevcut güncellemeleri göster"
 
-#: src/package-manager.py:660
+#: src/package-manager.py:659
 msgid "Package Manager is already running!"
 msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
 
@@ -440,8 +440,8 @@ msgid "Selected packages:"
 msgstr "Seçili paketler:"
 
 #: src/BasketDialog.py:60
-msgid "Extra Dependencies:"
-msgstr "Ekstra Bağımlılıklar:"
+msgid "Extra dependencies and mandatory base system upgrades:"
+msgstr "Ekstra bağımlılıklar ve zorunlu taban sistem güncellemeleri"
 
 #: src/BasketDialog.py:66
 msgid "Total Size:"
@@ -451,13 +451,16 @@ msgstr "Toplam Boyut:"
 msgid "Update Basket"
 msgstr "Sepeti Güncelle"
 
-#: src/BasketDialog.py:148
+#: src/BasketDialog.py:149
 msgid "Total Size: %1"
 msgstr "Toplam Boyut: %1"
 
-#: src/BasketDialog.py:196 src/BasketDialog.py:198
+#: src/BasketDialog.py:210 src/BasketDialog.py:212
 msgid "Size: "
 msgstr "Boyut: "
+
+#~ msgid "Extra Dependencies:"
+#~ msgstr "Ekstra Bağımlılıklar:"
 
 #~ msgid "Main Coder"
 #~ msgstr "Ana Geliştirici"
