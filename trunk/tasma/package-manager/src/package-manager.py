@@ -39,7 +39,7 @@ def I18N_NOOP(str):
 
 description = I18N_NOOP("GUI for PiSi package manager")
 version = "1.1.0_b4"
-base_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE'])
+unremovable_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE','pisi'])
 (install_state, remove_state, upgrade_state) = range(3)
 
 def AboutData():
@@ -290,7 +290,7 @@ class MainApplicationWidget(QWidget):
         template ='''
         <!-- package start -->
         <div>
-        <div class="checkboks" style="%s"><input type="checkbox" onclick="gorkem_fonksiyonu(this)" name="%s"></div>
+        <!-- checkbox --> %s <!-- checkbox -->
         <div class="package_title" style="%s">
         <img src="%s" style="float:left;" width="48px" height="48px">
         <b>%s</b><br>%s<br>
@@ -340,7 +340,15 @@ class MainApplicationWidget(QWidget):
                 size = "%.0f %s" % (tpl[0], tpl[1])
             else:
                 size = i18n("N\A")
-            result += template % (style,app,style,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
+
+            if self.state == remove_state and app in unremovable_packages:
+                checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
+                           disabled name="%s"></div>""" % (style,app)
+            else:
+                checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
+                           onclick="gorkem_fonksiyonu(this)" name="%s"></div>""" % (style,app)
+
+            result += template % (checkbox, style,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
                                   version,i18n("Package Size: "),size,i18n("Homepage: "),homepage,homepage)
             index += 1
 
@@ -521,11 +529,6 @@ class MainApplicationWidget(QWidget):
             # pisi sends unnecessary remove order notify in the middle of install, upgrade, remove
             if self.progressDialog.totalPackages == 1 and len(data) > 1:
                 self.progressDialog.totalPackages = len(data)
-
-            if self.state == remove_state:
-                if len(base_packages.intersection(data)) > 0:
-                    self.showErrorMessage(i18n("Removing these packages may break system safety. Aborting."))
-                    self.finished()
 
     def showErrorMessage(self, message):
         KMessageBox.error(self,message,i18n("Error"))
