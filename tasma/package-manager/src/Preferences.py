@@ -107,7 +107,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
     def processNewRepo(self):
         repoName = unicode(self.repo.repoName.text())
-        repoAddress = str(self.repo.repoAddress.text())
+        repoAddress = str(self.repo.repoAddress.currentText())
 
         if not repoAddress.endswith("xml") and not repoAddress.endswith("xml.bz2"):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
