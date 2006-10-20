@@ -57,7 +57,7 @@ class BasketDialog(QDialog):
         self.pkgHBox = QHBox(self)
         layout.addMultiCellWidget(self.pkgHBox, 1, 1, 0, 2)
 
-        self.extraLabel = QLabel(i18n("Extra Dependencies:"), self)
+        self.extraLabel = QLabel(i18n("Extra dependencies and mandatory base system upgrades:"), self)
         layout.addWidget(self.extraLabel, 2, 0)
 
         self.depHBox = QHBox(self)
@@ -123,11 +123,13 @@ class BasketDialog(QDialog):
         self.totalSize = 0
         pkgs = self.packages
         if self.state == install_state:
-            allPackages = pisi.api.generate_install_order(pkgs)
+            base = pisi.api.generate_base_upgrade(pkgs)
+            allPackages = pisi.api.generate_install_order(base+pkgs)
         elif self.state == remove_state:
             allPackages = pisi.api.generate_remove_order(pkgs)
         elif self.state == upgrade_state:
-            allPackages = pisi.api.generate_upgrade_order(pkgs)
+            base = pisi.api.generate_base_upgrade(pkgs)
+            allPackages = pisi.api.generate_upgrade_order(base+pkgs)
 
         extraPackages = list(set(allPackages) - set(pkgs))
         
