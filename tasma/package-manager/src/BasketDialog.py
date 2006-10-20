@@ -140,12 +140,23 @@ class BasketDialog(QDialog):
             self.depHBox.hide()
 
         for package in allPackages:
-             pkg = pisi.context.packagedb.get_package(package)
-             self.totalSize += pkg.packageSize
+             self.totalSize += self.getPackageSize(self.getPackage(package))
 
         tpl = pisi.util.human_readable_size(self.totalSize)
         size = "%.0f %s" % (tpl[0], tpl[1])
         self.totalSizeLabel.setText(i18n("Total Size: %1").arg(size))
+
+    def getPackageSize(self, package):
+        if self.state == remove_state:
+            return package.installedSize
+        else:
+            return package.packageSize
+
+    def getPackage(self, package):
+        if self.state == remove_state:
+            return pisi.context.packagedb.get_package(package, pisi.itembyrepodb.installed)
+        else:
+            return pisi.context.packagedb.get_package(package)
 
     def createHTML(self, packages, part=None, checkBox=False):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -187,8 +198,9 @@ class BasketDialog(QDialog):
         packages.sort(key=string.lower)
 
         for app in packages:
-            package = pisi.context.packagedb.get_package(app)
-            tpl = pisi.util.human_readable_size(package.packageSize)
+            package = self.getPackage(app)
+            size = self.getPackageSize(package)
+            tpl = pisi.util.human_readable_size(size)
             size = "%.0f %s" % (tpl[0], tpl[1])
             iconPath = getIconPath(package.icon)
             summary = package.summary
