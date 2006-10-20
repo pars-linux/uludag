@@ -79,9 +79,9 @@ class Commander(QObject):
             self.parent.finished()
             self.parent.showErrorMessage(unicode(reply[2]))
 
-            if self.parent.initialRepoCheck:
-                self.parent.initialRepoCheck = False
-                self.parent.repoMetadataCheck()
+            # if an error occured communicating with comar and components are not ready we quit
+            if not pisi.context.componentdb.list_components():
+                self.parent.repoNotReady()
         else:
             pass
             #print 'Unhandled: ',reply

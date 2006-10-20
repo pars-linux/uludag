@@ -112,7 +112,6 @@ class MainApplicationWidget(QWidget):
         self.parent = parent
         self.progressDialog = Progress.Progress(self)
 
-        self.initialRepoCheck = None
         self.componentDict = {}
         self.state = install_state
         self.basket = Basket()
@@ -196,28 +195,28 @@ class MainApplicationWidget(QWidget):
 
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
-        self.initialCheck()
-        self.createComponentList(self.command.listNewPackages())
-        self.listView.setSelected(self.listView.firstChild(),True)
+
+        if self.componentsReady():
+            self.installState()
+        else:
+            self.updateCheck()
 
     def processEvents(self):
         global kapp
         kapp.processEvents(QEventLoop.ExcludeUserInput)
 
-    def initialCheck(self):
-        self.initialRepoCheck = True
-
+    def componentsReady(self):
         if not pisi.context.componentdb.list_components(): # Repo metadata empty
-            self.progressDialog.show()
-            self.command.updateAllRepos()
+            return False
 
-    def repoMetadataCheck(self):
+        return True
+
+    def repoNotReady(self):
         global kapp
 
-        # At this point if componentList is empty we should quit as there is no way to work reliably
-        if not pisi.context.componentdb.list_components():
-            KMessageBox.error(self,i18n("Package repository still does not have category information.\nExiting..."),i18n("Error"))
-            kapp.quit()
+        KMessageBox.error(self, i18n("Package repository still does not have category information.\nExiting..."),
+                          i18n("Error"))
+        kapp.quit()
 
     def resetState(self):
         self.basket.empty()
