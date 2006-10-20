@@ -319,12 +319,12 @@ class MainApplicationWidget(QWidget):
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
 
             size = 0L
-            if not pisi.packagedb.ctx.installdb.is_installed(app):
-                package = pisi.context.packagedb.get_package(app)
-                size = package.packageSize
-            else:
+            if self.state == remove_state:
                 package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
                 size = package.installedSize
+            else:
+                package = pisi.context.packagedb.get_package(app)
+                size = package.packageSize
 
             desc = package.description
             summary = package.summary
