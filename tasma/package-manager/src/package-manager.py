@@ -175,7 +175,7 @@ class MainApplicationWidget(QWidget):
         self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
-        self.connect(self.clearButton,SIGNAL("clicked()"),self.clearSearchLine)
+        self.connect(self.clearButton,SIGNAL("clicked()"),self.searchLine, SLOT("clear()"))
         self.connect(self.basketAction,SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction,SIGNAL("clicked()"),self.takeAction)
 
@@ -222,7 +222,7 @@ class MainApplicationWidget(QWidget):
         self.basket.empty()
         self.basketAction.setEnabled(False)
         self.operateAction.setEnabled(False)
-        self.clearSearchLine()
+        self.searchLine.clear()
         self.parent.showNewAction.setChecked(False)
         self.parent.showInstalledAction.setChecked(False)
         self.parent.showUpgradeAction.setChecked(False)
@@ -583,9 +583,6 @@ class MainApplicationWidget(QWidget):
                     packages.append(package)
 
         return packages
-
-    def clearSearchLine(self):
-        self.searchLine.clear()
 
     def showPreferences(self):
         try:
