@@ -9,12 +9,12 @@ dnl This ksh/zsh feature conflicts with `cd blah ; pwd`
 unset CDPATH
 
 dnl Checking host/target/build systems, for make, install etc.
-AC_CANONICAL_SYSTEM 
+AC_CANONICAL_SYSTEM
 dnl Perform program name transformation
 AC_ARG_PROGRAM
 
 dnl Automake doc recommends to do this only here. (Janos)
-AM_INIT_AUTOMAKE(kaptan, 0.1) dnl searches for some needed programs
+AM_INIT_AUTOMAKE(kaptan, 1.1) dnl searches for some needed programs
 
 KDE_SET_PREFIX
 
