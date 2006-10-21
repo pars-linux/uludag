@@ -139,3 +139,5 @@ bool Wallpaper::changeWallpaper()
     else
         return false;
 }
+
+#include "wallpaper.moc"

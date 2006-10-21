@@ -105,3 +105,5 @@ void MouseSetup::save()
 
     config->sync();
 }
+
+#include "mouse.moc"
