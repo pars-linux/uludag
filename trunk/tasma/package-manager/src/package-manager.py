@@ -222,7 +222,7 @@ class MainApplicationWidget(QWidget):
         self.basket.empty()
         self.basketAction.setEnabled(False)
         self.operateAction.setEnabled(False)
-        self.clearSearchLine(False)
+        self.clearSearchLine()
         self.parent.showNewAction.setChecked(False)
         self.parent.showInstalledAction.setChecked(False)
         self.parent.showUpgradeAction.setChecked(False)
@@ -570,6 +570,7 @@ class MainApplicationWidget(QWidget):
             result = self.searchPackageName(query)
             self.createSearchResults(result)
         else:
+            self.timer.stop()
             self.updateListing()
 
     def searchPackageName(self, query):
@@ -583,11 +584,8 @@ class MainApplicationWidget(QWidget):
 
         return packages
 
-    def clearSearchLine(self, updateListing=True):
+    def clearSearchLine(self):
         self.searchLine.clear()
-        self.timer.stop()
-        if updateListing:
-            self.updateListing()
 
     def showPreferences(self):
         try:
