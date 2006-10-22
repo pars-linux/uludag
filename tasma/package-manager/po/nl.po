@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-20 22:42+0300\n"
+"POT-Creation-Date: 2006-10-22 16:40+0300\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:482
+#: src/CommonText.py:3 src/package-manager.py:497
 msgid "downloading"
 msgstr "downloaden"
 
@@ -63,7 +63,7 @@ msgstr "Pisi-fout"
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi-pakketbeheer"
 
-#: src/package-manager.py:48 src/package-manager.py:619
+#: src/package-manager.py:48 src/package-manager.py:624
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -113,7 +113,7 @@ msgstr "Zoeken:"
 msgid "Show basket"
 msgstr "Mand tonen"
 
-#: src/package-manager.py:140 src/package-manager.py:236
+#: src/package-manager.py:140 src/package-manager.py:237
 msgid "Install Package(s)"
 msgstr "Pakket(ten) installeren"
 
@@ -133,108 +133,107 @@ msgstr ""
 "Pakketrepository heeft nog steeds geen categorie-informatie. \n"
 "Gestopt..."
 
-#: src/package-manager.py:247
+#: src/package-manager.py:249
 msgid "Remove Package(s)"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:255
+#: src/package-manager.py:257
 #, fuzzy
 msgid "Upgrade Package(s)"
 msgstr "Geselecteerde pakketten opwaarderen"
 
-#: src/package-manager.py:260
+#: src/package-manager.py:262
 msgid "There are no updates available at this time"
 msgstr "Er zijn momenteel geen updates beschikbaar"
 
-#: src/package-manager.py:279
+#: src/package-manager.py:283 src/CustomEventListener.py:43
+#: src/CustomEventListener.py:47
 msgid "Select all packages in this category"
 msgstr "Alle pakketten in deze categorie selecteren"
 
-#: src/package-manager.py:342
+#: src/package-manager.py:285 src/CustomEventListener.py:44
+msgid "Reverse package selections"
+msgstr ""
+
+#: src/package-manager.py:349
 msgid "N\\A"
 msgstr "N\\B"
 
-#: src/package-manager.py:343
+#: src/package-manager.py:358
 msgid "Description: "
 msgstr "Beschrijving: "
 
-#: src/package-manager.py:343
+#: src/package-manager.py:358
 msgid "Version: "
 msgstr "Versie: "
 
-#: src/package-manager.py:344
+#: src/package-manager.py:359
 msgid "Package Size: "
 msgstr "Pakketgrootte: "
 
-#: src/package-manager.py:344
+#: src/package-manager.py:359
 msgid "Homepage: "
 msgstr "Homepage: "
 
-#: src/package-manager.py:447
+#: src/package-manager.py:462
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:455 src/package-manager.py:575
+#: src/package-manager.py:470 src/package-manager.py:586
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:463
+#: src/package-manager.py:478
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
-#: src/package-manager.py:484 src/package-manager.py:502
+#: src/package-manager.py:499 src/package-manager.py:517
 #, fuzzy
 msgid "<b>Installing Package(s)</b>"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:486 src/package-manager.py:496
-#: src/package-manager.py:504
+#: src/package-manager.py:501 src/package-manager.py:511
+#: src/package-manager.py:519
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:494
+#: src/package-manager.py:509
 #, fuzzy
 msgid "<b>Removing Package(s)</b>"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:517
+#: src/package-manager.py:532
 #, fuzzy
 msgid "<b>Updating Repository</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:518
+#: src/package-manager.py:533
 #, fuzzy
 msgid "Downloading package list of %1"
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:527
-msgid "Removing these packages may break system safety. Aborting."
-msgstr ""
-"Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar "
-"brengen. Gestopt."
-
-#: src/package-manager.py:635
+#: src/package-manager.py:640
 msgid "Show Installed Packages"
 msgstr "Geinstalleerde pakketten tonen"
 
-#: src/package-manager.py:636
+#: src/package-manager.py:641
 msgid "Show New Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:637
+#: src/package-manager.py:642
 #, fuzzy
 msgid "Show Upgradable Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:656
+#: src/package-manager.py:661
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:656
+#: src/package-manager.py:661
 msgid "Show available updates"
 msgstr "Beschikbare updates tonen"
 
-#: src/package-manager.py:659
+#: src/package-manager.py:664
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is reeds opgestart!"
 
@@ -414,30 +413,34 @@ msgstr "Mb <i>(gebruik 0 voor geen limiet)</i>"
 msgid "C&ache"
 msgstr "C&ache"
 
-#: src/RepoDialog.py:69
+#: src/RepoDialog.py:72
 msgid "Repository Dialog"
 msgstr "Repositorydialoog"
 
-#: src/RepoDialog.py:70
-msgid "Repository &Name"
-msgstr "Repository&naam"
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr "&Ok"
 
-#: src/RepoDialog.py:71
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
-
-#: src/RepoDialog.py:72
+#: src/RepoDialog.py:75
 msgid "Repository &Address"
 msgstr "Repository-&adres"
 
-#: src/RepoDialog.py:73
+#: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr ""
 "Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
 
-#: src/RepoDialog.py:74
-msgid "&Ok"
-msgstr "&Ok"
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
+msgstr ""
+
+#: src/RepoDialog.py:80
+msgid "Repository &Name"
+msgstr "Repository&naam"
+
+#: src/RepoDialog.py:81
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
 
 #: src/BasketDialog.py:44 src/BasketDialog.py:50
 msgid "Basket"
@@ -467,6 +470,11 @@ msgstr ""
 #, fuzzy
 msgid "Size: "
 msgstr "Pakketgrootte: "
+
+#~ msgid "Removing these packages may break system safety. Aborting."
+#~ msgstr ""
+#~ "Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar "
+#~ "brengen. Gestopt."
 
 #~ msgid "Main Coder"
 #~ msgstr "Hoofdprogrammeur"

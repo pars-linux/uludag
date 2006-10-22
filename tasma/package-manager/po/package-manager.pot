@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-20 22:42+0300\n"
+"POT-Creation-Date: 2006-10-22 16:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/CommonText.py:3 src/package-manager.py:482
+#: src/CommonText.py:3 src/package-manager.py:497
 msgid "downloading"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/package-manager.py:48 src/package-manager.py:619
+#: src/package-manager.py:48 src/package-manager.py:624
 msgid "Package Manager"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Show basket"
 msgstr ""
 
-#: src/package-manager.py:140 src/package-manager.py:236
+#: src/package-manager.py:140 src/package-manager.py:237
 msgid "Install Package(s)"
 msgstr ""
 
@@ -124,100 +124,101 @@ msgid ""
 "Exiting..."
 msgstr ""
 
-#: src/package-manager.py:247
+#: src/package-manager.py:249
 msgid "Remove Package(s)"
 msgstr ""
 
-#: src/package-manager.py:255
+#: src/package-manager.py:257
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: src/package-manager.py:260
+#: src/package-manager.py:262
 msgid "There are no updates available at this time"
 msgstr ""
 
-#: src/package-manager.py:279
+#: src/package-manager.py:283 src/CustomEventListener.py:43
+#: src/CustomEventListener.py:47
 msgid "Select all packages in this category"
 msgstr ""
 
-#: src/package-manager.py:342
+#: src/package-manager.py:285 src/CustomEventListener.py:44
+msgid "Reverse package selections"
+msgstr ""
+
+#: src/package-manager.py:349
 msgid "N\\A"
 msgstr ""
 
-#: src/package-manager.py:343
+#: src/package-manager.py:358
 msgid "Description: "
 msgstr ""
 
-#: src/package-manager.py:343
+#: src/package-manager.py:358
 msgid "Version: "
 msgstr ""
 
-#: src/package-manager.py:344
+#: src/package-manager.py:359
 msgid "Package Size: "
 msgstr ""
 
-#: src/package-manager.py:344
+#: src/package-manager.py:359
 msgid "Homepage: "
 msgstr ""
 
-#: src/package-manager.py:447
+#: src/package-manager.py:462
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:455 src/package-manager.py:575
+#: src/package-manager.py:470 src/package-manager.py:586
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:463
+#: src/package-manager.py:478
 msgid "Search Results"
 msgstr ""
 
-#: src/package-manager.py:484 src/package-manager.py:502
+#: src/package-manager.py:499 src/package-manager.py:517
 msgid "<b>Installing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:486 src/package-manager.py:496
-#: src/package-manager.py:504
+#: src/package-manager.py:501 src/package-manager.py:511
+#: src/package-manager.py:519
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:494
+#: src/package-manager.py:509
 msgid "<b>Removing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:517
+#: src/package-manager.py:532
 msgid "<b>Updating Repository</b>"
 msgstr ""
 
-#: src/package-manager.py:518
+#: src/package-manager.py:533
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: src/package-manager.py:527
-msgid "Removing these packages may break system safety. Aborting."
-msgstr ""
-
-#: src/package-manager.py:635
+#: src/package-manager.py:640
 msgid "Show Installed Packages"
 msgstr ""
 
-#: src/package-manager.py:636
+#: src/package-manager.py:641
 msgid "Show New Packages"
 msgstr ""
 
-#: src/package-manager.py:637
+#: src/package-manager.py:642
 msgid "Show Upgradable Packages"
 msgstr ""
 
-#: src/package-manager.py:656
+#: src/package-manager.py:661
 msgid "Package to install"
 msgstr ""
 
-#: src/package-manager.py:656
+#: src/package-manager.py:661
 msgid "Show available updates"
 msgstr ""
 
-#: src/package-manager.py:659
+#: src/package-manager.py:664
 msgid "Package Manager is already running!"
 msgstr ""
 
@@ -390,28 +391,32 @@ msgstr ""
 msgid "C&ache"
 msgstr ""
 
-#: src/RepoDialog.py:69
+#: src/RepoDialog.py:72
 msgid "Repository Dialog"
 msgstr ""
 
-#: src/RepoDialog.py:70
-msgid "Repository &Name"
+#: src/RepoDialog.py:73
+msgid "&Ok"
 msgstr ""
 
-#: src/RepoDialog.py:71
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr ""
-
-#: src/RepoDialog.py:72
+#: src/RepoDialog.py:75
 msgid "Repository &Address"
 msgstr ""
 
-#: src/RepoDialog.py:73
+#: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr ""
 
-#: src/RepoDialog.py:74
-msgid "&Ok"
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
+msgstr ""
+
+#: src/RepoDialog.py:80
+msgid "Repository &Name"
+msgstr ""
+
+#: src/RepoDialog.py:81
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr ""
 
 #: src/BasketDialog.py:44 src/BasketDialog.py:50

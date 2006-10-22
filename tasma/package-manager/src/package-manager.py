@@ -278,7 +278,12 @@ class MainApplicationWidget(QWidget):
         part.write("<style type=\"text/css\">%s</style>" % self.css)
         part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
         part.write("</head><body>")
-        part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
+
+        if set(packages) - set(self.basket.packages):
+            part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
+        else:
+            part.write('''<font size="-2"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></font>''')
+
         part.write(self.createHTMLForPackages(packages))
         part.write('''
         <script type="text/javascript">

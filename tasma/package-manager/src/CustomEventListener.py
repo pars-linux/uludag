@@ -10,6 +10,7 @@
 # Please read the COPYING file.
 
 from khtml import DOM
+from kdecore import i18n
 
 class CustomEventListener(DOM.EventListener):
     def __init__(self, parent):
@@ -36,9 +37,18 @@ class CustomEventListener(DOM.EventListener):
                 if link == "#selectall":
                     document = self.parent.htmlPart.document()
                     nodeList = document.getElementsByTagName(DOM.DOMString("input"))
+
+                    state = event.target().firstChild().nodeValue().string()
+                    reverseSelection = False
+                    if state == i18n("Select all packages in this category"):
+                        event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Reverse package selections")))
+                    else:
+                        reverseSelection = True
+                        event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Select all packages in this category")))
+
                     for i in range(0,nodeList.length()):
                         element = DOM.HTMLInputElement(nodeList.item(i))
-                        if not element.checked():
+                        if reverseSelection or not element.checked():
                             element.click()
                 else:
                     KRun.runURL(KURL(link),"text/html",False,False);
