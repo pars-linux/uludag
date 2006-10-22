@@ -314,6 +314,7 @@ class MainApplicationWidget(QWidget):
         '''
 
         index = 0
+        titleStyle = ''
         style = ''
         packages.sort(key=string.lower)
 
@@ -322,6 +323,7 @@ class MainApplicationWidget(QWidget):
                 style = "background-color:%s" % KGlobalSettings.alternateBackgroundColor().name()
             else:
                 style = "background-color:%s" % KGlobalSettings.baseColor().name()
+            titleStyle = style
 
             size = 0L
             if self.state == remove_state:
@@ -346,21 +348,22 @@ class MainApplicationWidget(QWidget):
                 size = "%.0f %s" % (tpl[0], tpl[1])
             else:
                 size = i18n("N\A")
-                
+
+
             if app in self.basket.packages:
-                style = "background-color:#678DB2"
+                titleStyle = "background-color:#678DB2"
                 checkState = "checked"
             else:
                 checkState = ""
 
             if self.state == remove_state and app in unremovable_packages:
                 checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
-                           disabled %s name="%s"></div>""" % (style,checkState,app)
+                           disabled %s name="%s"></div>""" % (titleStyle,checkState,app)
             else:
                 checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
-                           %s onclick="gorkem_fonksiyonu(this)" name="%s"></div>""" % (style,checkState,app)
+                           %s onclick="gorkem_fonksiyonu(this)" name="%s"></div>""" % (titleStyle,checkState,app)
 
-            result += template % (checkbox, style,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
+            result += template % (checkbox, titleStyle,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
                                   version,i18n("Package Size: "),size,i18n("Homepage: "),homepage,homepage)
             index += 1
 
