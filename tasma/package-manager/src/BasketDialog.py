@@ -124,12 +124,12 @@ class BasketDialog(QDialog):
         pkgs = self.packages
         if self.state == install_state:
             base = pisi.api.generate_base_upgrade(pkgs)
-            allPackages = pisi.api.generate_install_order(base+pkgs)
+            allPackages = pisi.api.generate_install_order(set(base+pkgs))
         elif self.state == remove_state:
             allPackages = pisi.api.generate_remove_order(pkgs)
         elif self.state == upgrade_state:
             base = pisi.api.generate_base_upgrade(pkgs)
-            allPackages = pisi.api.generate_upgrade_order(base+pkgs)
+            allPackages = pisi.api.generate_upgrade_order(set(base+pkgs))
 
         extraPackages = list(set(allPackages) - set(pkgs))
         
