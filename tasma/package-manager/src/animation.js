@@ -90,11 +90,11 @@ function initShowHideDivs(){
 	}
 }
 
-function gorkem_fonksiyonu(hede){
-    var numericId = hede.id.replace(/[^0-9]/g,'');
+function changeBackgroundColor(item){
+    var numericId = item.id.replace(/[^0-9]/g,'');
     var divtitle = document.getElementById('package_t'+numericId);
     var divcheckbox = document.getElementById('checkboks_t'+numericId);
-    if (hede.checked) {
+    if (item.checked) {
         divtitle.style.background='#533359';
         divcheckbox.style.background = '#533359';
     }

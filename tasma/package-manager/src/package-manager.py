@@ -361,7 +361,7 @@ class MainApplicationWidget(QWidget):
                            disabled %s name="%s"></div>""" % (titleStyle,checkState,app)
             else:
                 checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
-                           %s onclick="gorkem_fonksiyonu(this)" name="%s"></div>""" % (titleStyle,checkState,app)
+                           %s onclick="changeBackgroundColor(this)" name="%s"></div>""" % (titleStyle,checkState,app)
 
             result += template % (checkbox, titleStyle,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
                                   version,i18n("Package Size: "),size,i18n("Homepage: "),homepage,homepage)
