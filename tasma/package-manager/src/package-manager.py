@@ -172,7 +172,6 @@ class MainApplicationWidget(QWidget):
 
         self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
-        self.connect(self.htmlPart,SIGNAL("completed()"),self.updateCheckboxes)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
         self.connect(self.clearButton,SIGNAL("clicked()"),self.searchLine, SLOT("clear()"))
@@ -347,13 +346,19 @@ class MainApplicationWidget(QWidget):
                 size = "%.0f %s" % (tpl[0], tpl[1])
             else:
                 size = i18n("N\A")
+                
+            if app in self.basket.packages:
+                style = "background-color:#678DB2"
+                checkState = "checked"
+            else:
+                checkState = ""
 
             if self.state == remove_state and app in unremovable_packages:
                 checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
-                           disabled name="%s"></div>""" % (style,app)
+                           disabled %s name="%s"></div>""" % (style,checkState,app)
             else:
                 checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
-                           onclick="gorkem_fonksiyonu(this)" name="%s"></div>""" % (style,app)
+                           %s onclick="gorkem_fonksiyonu(this)" name="%s"></div>""" % (style,checkState,app)
 
             result += template % (checkbox, style,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
                                   version,i18n("Package Size: "),size,i18n("Homepage: "),homepage,homepage)
@@ -365,17 +370,6 @@ class MainApplicationWidget(QWidget):
         self.eventListener = CustomEventListener.CustomEventListener(self)
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
-
-    def updateCheckboxes(self):
-        self.htmlPart.view().setUpdatesEnabled(False)
-        if self.basket.packages:
-            document = self.htmlPart.document()
-            nodeList = document.getElementsByTagName(DOM.DOMString("input"))
-            for i in range(0,nodeList.length()):
-                element = DOM.HTMLInputElement(nodeList.item(i))
-                if element.name().string() in self.basket.packages:
-                    element.click()
-        self.htmlPart.view().setUpdatesEnabled(True)
 
     def updateView(self,item=None):
         # basket may have been emptied from basket dialog
