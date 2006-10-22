@@ -227,8 +227,9 @@ class MainApplicationWidget(QWidget):
         self.parent.showInstalledAction.setChecked(False)
         self.parent.showUpgradeAction.setChecked(False)
 
-    def installState(self):
-        self.resetState()
+    def installState(self, reset=True):
+        if reset:
+            self.resetState()
         self.parent.showNewAction.setChecked(True)
         self.processEvents()
         packages = self.command.listNewPackages()
@@ -238,8 +239,9 @@ class MainApplicationWidget(QWidget):
         self.state = install_state
         self.listView.setSelected(self.listView.firstChild(),True)
 
-    def removeState(self):
-        self.resetState()
+    def removeState(self, reset=True):
+        if reset:
+            self.resetState()
         self.parent.showInstalledAction.setChecked(True)
         self.processEvents()
         packages = self.command.listPackages()
@@ -406,11 +408,11 @@ class MainApplicationWidget(QWidget):
         elif self.state == upgrade_state:
             self.command.updatePackage(self.basket.packages)
 
-    def updateListing(self):
+    def updateListing(self, reset=True):
         if self.state == install_state:
-            self.installState()
+            self.installState(reset)
         elif self.state == remove_state:
-            self.removeState()
+            self.removeState(reset)
         elif self.state == upgrade_state:
             self.upgradeState()
 
@@ -571,7 +573,7 @@ class MainApplicationWidget(QWidget):
             self.createSearchResults(result)
         else:
             self.timer.stop()
-            self.updateListing()
+            self.updateListing(reset=False)
 
     def searchPackageName(self, query):
         packages = []
