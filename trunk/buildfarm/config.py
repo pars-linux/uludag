@@ -21,6 +21,6 @@ logFile          = "%s/buildfarm.log" % workDir
 #information for mailer module.
 mailFrom         = "buildfarm@pardus.org.tr"
 ccList           = []
-smtpServer       = "mail.uludag.org.tr"
+smtpServer       = "mail.pardus.org.tr"
 smtpUser         = ""
 smtpPassword     = ""
