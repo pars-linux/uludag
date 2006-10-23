@@ -18,11 +18,7 @@ import time
 import string
 
 """ BuildFarm Modules """
-import buildfarm.config as config
-
-
-logFile = config.logFile
-
+from buildfarm.config import logFile as logFile
 
 def findCaller():
     if string.lower(__file__[-4:]) in ['.pyc', '.pyo']:

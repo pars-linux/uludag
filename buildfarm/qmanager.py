@@ -25,29 +25,29 @@ class QueueManager:
     def __init__(self):
         self.workQueue = []
         self.waitQueue = []
-        
+
         self.__deserialize(self.workQueue, "workQueue")
         self.__deserialize(self.waitQueue, "waitQueue")
-        
+
         if len(self.waitQueue):
             self.workQueue += self.waitQueue
             self.waitQueue = []
-        else:          
+        else:
             self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDeps()
-            
+
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDeps()
-        
-    def __del__(self):       
+
+    def __del__(self):
         self.__serialize(self.waitQueue, "waitQueue")
         self.__serialize(self.workQueue, "workQueue")
-        
+
     def __serialize(self, queueName, fileName):
         try:
             queue = open(os.path.join(config.workDir, fileName), "w")
         except IOError:
             return
-        
-        for pspec in queueName:            
+
+        for pspec in queueName:
             queue.write("%s\n" % pspec)
         queue.close()
 
@@ -56,8 +56,8 @@ class QueueManager:
             queue = open(os.path.join(config.workDir, fileName), "r")
         except IOError:
             return
-        
-        for line in queue.readlines():            
+
+        for line in queue.readlines():
             if not line.startswith("#"):
                 queueName.append(line.strip("\n"))
         queue.close()
@@ -65,11 +65,11 @@ class QueueManager:
     def removeFromWaitQueue(self):
         if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
-        
+
     def removeFromWorkQueue(self, pspec):
         if self.workQueue.__contains__(pspec):
             self.workQueue.remove(pspec)
-        
+
     def appendToWorkQueue(self, pspec):
          if not self.workQueue.__contains__(pspec):
             self.workQueue.append(pspec)
@@ -83,8 +83,7 @@ class QueueManager:
     def transferToWorkQueue(self, pspec):
         self.appendToWorkQueue(pspec)
         self.removeFromWaitQueue(pspec)
-        
+
     def transferToWaitQueue(self, pspec):
         self.appendToWaitQueue(pspec)
         self.removeFromWorkQueue(pspec)
-        

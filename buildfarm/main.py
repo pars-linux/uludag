@@ -87,7 +87,6 @@ def buildPackages():
     else:
         mailer.info("Herşeyi derledim, megabaytlarım sağolsun.")
     logger.raw()
-  
 
     logger.raw()
     logger.info("Index oluşturuluyor...")
