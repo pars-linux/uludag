@@ -97,7 +97,7 @@ def buildPackages():
     if qmgr.waitQueue:
         mailer.info(_("Queue finished with some problems, following packages couldn't compiled:\n%s\n") % "\n".join(qmgr.waitQueue))
     else:
-        mailer.info(_("Queue finished without any problem!..."))
+        mailer.info(_("Queue finished without a problem!..."))
     logger.raw()
 
     logger.raw()
