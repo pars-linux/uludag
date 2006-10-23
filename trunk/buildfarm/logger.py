@@ -18,7 +18,7 @@ import time
 import string
 
 """ BuildFarm Modules """
-from config import logFile as logFile
+from config import logFile
 
 def findCaller():
     if string.lower(__file__[-4:]) in [".pyc", ".pyo"]:
