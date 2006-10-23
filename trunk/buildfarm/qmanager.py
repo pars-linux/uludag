@@ -15,8 +15,8 @@
 import os
 
 """ BuildFarm Modules """
-import buildfarm.config as config
-import buildfarm.dependency as dependency
+import config
+import dependency
 
 class QError(Exception):
     pass

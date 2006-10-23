@@ -18,8 +18,8 @@ import pisi.api
 import pisi.fetcher
 
 """ BuildFarm Modules """
-import buildfarm.config as config
-import buildfarm.logger as logger
+import config
+import logger
 
 class PisiError(Exception):
     pass

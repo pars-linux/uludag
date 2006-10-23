@@ -9,26 +9,27 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
-#
 
 """ Standart Python Modules """
-import os
 import copy
-import sys
-import shutil
-import traceback
-import exceptions
 import cStringIO
-
-sys.path.append(".")
-sys.path.append("..")
+import exceptions
+import os
+import shutil
+import sys
+import traceback
 
 """ BuildFarm Modules """
-import buildfarm.config as config
-import buildfarm.logger as logger
-import buildfarm.mailer as mailer
-import buildfarm.qmanager as qmanager
-import buildfarm.pisiinterface as pisiinterface
+import config
+import logger
+import mailer
+import qmanager
+import pisiinterface
+
+''' Gettext Support '''
+import gettext
+__trans = gettext.translation("buildfarm", fallback=True)
+_  =  __trans.ugettext
 
 def buildPackages():
     qmgr = qmanager.QueueManager()
@@ -37,20 +38,21 @@ def buildPackages():
     if len(queue) == 0:
         sys.exit(1)
 
+    # FIXME: Use fcntl.flock
     f = open("/var/run/buildfarm", 'w')
     f.close()
 
-    logger.raw("QUEUE")
-    logger.info("Work Queue: %s" % (qmgr.workQueue))
+    logger.raw(_("QUEUE"))
+    logger.info(_("Work Queue: %s") % (qmgr.workQueue))
     sortedQueue = qmgr.workQueue[:]
     sortedQueue.sort()
-    mailer.info("Heyoo sırası ile\n%s\npaketlerini derlemeye başlıyorum..." % "\n".join(sortedQueue))
+    mailer.info(_("Heyoo sırası ile\n%s\npaketlerini derlemeye başlıyorum...") % "\n".join(sortedQueue))
     logger.raw()
 
     for pspec in queue:
         packagename = os.path.basename(os.path.dirname(pspec))
         build_output = open(os.path.join(config.outputDir,packagename+".log"), "w")
-        logger.info("Compiling source %s (%d of %d)" % (packagename,
+        logger.info(_("Compiling source %s (%d of %d)") % (packagename,
                                                         int(queue.index(pspec) + 1),
                                                         len(queue)))
         logger.raw()
@@ -61,7 +63,7 @@ def buildPackages():
             (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
         except Exception, e:
             qmgr.transferToWaitQueue(pspec)
-            errmsg = "'%s' için BUILD işlemi sırasında hata: %s" % (pspec, e)
+            errmsg = _("'%s' için BUILD işlemi sırasında hata: %s") % (pspec, e)
             logger.error(errmsg)
             mailer.error(errmsg, pspec)
             pisi.finalize()
@@ -71,7 +73,7 @@ def buildPackages():
                 try:
                     pisi.install(os.path.join(config.workDir, p))
                 except Exception, e:
-                    logger.error("'%s' için INSTALL işlemi sırasında hata: %s" % (os.path.join(config.workDir, p), e))
+                    logger.error(_("'%s' için INSTALL işlemi sırasında hata: %s") % (os.path.join(config.workDir, p), e))
                     qmgr.transferToWaitQueue(pspec)
                     newBinaryPackages.remove(p)
                     removeBinaryPackageFromWorkDir(p)
@@ -80,21 +82,21 @@ def buildPackages():
             pisi.finalize()
             movePackages(newBinaryPackages, oldBinaryPackages)
 
-    logger.raw("QUEUE")
-    logger.info("Wait Queue: %s" % (qmgr.waitQueue))
+    logger.raw(_("QUEUE"))
+    logger.info(_("Wait Queue: %s") % (qmgr.waitQueue))
     if qmgr.waitQueue:
-        mailer.info("İşim bitti, derleyemediğim paket listesi şöyle:\n%s\n" % "\n".join(qmgr.waitQueue))
+        mailer.info(_("İşim bitti, derleyemediğim paket listesi şöyle:\n%s\n") % "\n".join(qmgr.waitQueue))
     else:
-        mailer.info("Herşeyi derledim, megabaytlarım sağolsun.")
+        mailer.info(_("Herşeyi derledim, megabaytlarım sağolsun."))
     logger.raw()
 
     logger.raw()
-    logger.info("Index oluşturuluyor...")
+    logger.info(_("Index oluşturuluyor..."))
 
     current = os.getcwd()
     os.chdir(config.binaryPath)
     os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
-    logger.info("Index oluşturuldu...")
+    logger.info(_("Index oluşturuldu..."))
 
     #FIXME: will be enableb after some internal tests
     #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
@@ -104,6 +106,8 @@ def buildPackages():
     # if any mail /root/.revdep-rebuild.4_names
 
     os.chdir(current)
+
+    # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
 def movePackages(newBinaryPackages, oldBinaryPackages):
@@ -122,9 +126,9 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
     oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
 
-    logger.info("*** Yeni ikili paket(ler): %s" % newPackages)
-    logger.info("*** Eski ikili paket(ler): %s" % oldPackages)
-    logger.info("*** Değişmemiş ikili paket(ler): %s" % unchangedPackages)
+    logger.info(_("*** Yeni ikili paket(ler): %s") % newPackages)
+    logger.info(_("*** Eski ikili paket(ler): %s") % oldPackages)
+    logger.info(_("*** Değişmemiş ikili paket(ler): %s") % unchangedPackages)
 
     exists = os.path.exists
     join   = os.path.join
@@ -132,7 +136,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     copy   = shutil.copy
 
     def moveOldPackage(package):
-        logger.info("*** Eski paket '%s' işleniyor" % (package))
+        logger.info(_("*** Eski paket '%s' işleniyor") % (package))
         if exists(join(config.binaryPath, package)):
             remove(join(config.binaryPath, package))
 
@@ -140,13 +144,13 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
             remove(join(config.workDir, package))
 
     def moveNewPackage(package):
-        logger.info("*** Yeni paket '%s' işleniyor" % (package))
+        logger.info(_("*** Yeni paket '%s' işleniyor") % (package))
         if exists(join(config.workDir, package)):
             copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
     def moveUnchangedPackage(package):
-        logger.info("*** Değişmemiş paket '%s' işleniyor" % (package))
+        logger.info(_("*** Değişmemiş paket '%s' işleniyor") % (package))
         if exists(join(config.workDir, package)):
             copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
@@ -168,7 +172,6 @@ def removeBinaryPackageFromWorkDir(package):
     remove = os.remove
     remove(join(config.workDir, package))
 
-
 def create_directories():
     directories = [config.workDir,
                    config.binaryPath,
@@ -180,7 +183,7 @@ def create_directories():
             try:
                 os.makedirs(dir)
             except OSError:
-                raise config.CfgError("'%s' dizini yaratılamadı, izin sorunu olabilir" % (dir))
+                raise config.CfgError(_("'%s' dizini yaratılamadı, izin sorunu olabilir") % (dir))
 
 
 def handle_exception(exception, value, tb):
