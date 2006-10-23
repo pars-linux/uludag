@@ -18,8 +18,8 @@ import sys
 import pisi.specfile
 
 """ BuildFarm Modules """
-import buildfarm.config as config
-import buildfarm.logger as logger
+import config
+import logger
 
 class DependencyError(Exception):
     pass

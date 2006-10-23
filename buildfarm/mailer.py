@@ -22,9 +22,9 @@ sys.path.append(".")
 sys.path.append("..")
 
 """ BuildFarm Modules """
-import buildfarm.config as config
-import buildfarm.logger as logger
-import buildfarm.templates as tmpl
+import config
+import logger
+import templates as tmpl
 
 class MailerError(Exception):
     pass

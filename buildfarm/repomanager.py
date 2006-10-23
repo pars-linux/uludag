@@ -20,9 +20,9 @@ sys.path.append(".")
 sys.path.append("..")
 
 """ BuildFarm Modules """
-import buildfarm.config as config
-import buildfarm.logger as logger
-import buildfarm.qmanager as qmanager
+import config
+import logger
+import qmanager
 
 Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
 
