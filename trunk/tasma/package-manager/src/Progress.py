@@ -7,6 +7,7 @@ import pisi
 class Progress(ProgressDialog):
     def __init__(self, parent=None):
         ProgressDialog.__init__(self)
+        self.parent = parent
         animatedPisi = QMovie(locate("data","package-manager/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
@@ -20,6 +21,12 @@ class Progress(ProgressDialog):
         self.packageName = ""
 
     def setCurrentOperation(self, text):
+        # it is not safe to press cancel until the ComarJob starts. this is 
+        # an innocent hack for package-manager to know that the ComarJob has 
+        # just started and notified the package-manager.
+        if not self.cancelButton.isEnabled():
+            self.cancelButton.setEnabled(True)
+
         self.currentOperationLabel.setText(text)
 
     def setOperationDescription(self, text):
@@ -50,10 +57,11 @@ class Progress(ProgressDialog):
         self.packageNo = 1
         self.totalPackages = 1
         self.progressBar.setProgress(0)
+        self.cancelButton.setEnabled(False)
 
     def cancelThread(self):
         self.setCurrentOperation(i18n("<b>Cancelling operation...</b>"))
-        self.parent.finished()
+        self.parent.command.cancel()
 
     def closeForced(self):
         self.forcedClose = True

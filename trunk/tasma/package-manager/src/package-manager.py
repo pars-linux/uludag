@@ -546,8 +546,6 @@ class MainApplicationWidget(QWidget):
         self.basket.empty()
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
-        self.progressDialog.closeForced()
-        self.progressDialog.reset()
 
         if command == "System.Manager.updateAllRepositories":
             self.upgradeState()
@@ -555,8 +553,12 @@ class MainApplicationWidget(QWidget):
         elif command in ["System.Manager.updateAllRepositories",
                        "System.Manager.updatePackage",
                        "System.Manager.installPackage",
-                       "System.Manager.removePackage"]:
+                       "System.Manager.removePackage",
+                       "Cancelled"]:
             self.updateListing()
+
+        self.progressDialog.closeForced()
+        self.progressDialog.reset()
 
     def installSingle(self):
         app = []

@@ -45,3 +45,6 @@ class ComarIface:
 
     def setRepositories(self, repos):
         self.com.call("System.Manager.setRepositories", ["repos",repos])
+
+    def cancel(self):
+        self.com.cancel()
