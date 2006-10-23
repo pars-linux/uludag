@@ -17,6 +17,9 @@ from kdecore import i18n
 from qt import QObject, QTimer
 import ComarIface
 
+# command canceled by comar at package-manager's request
+CANCELED = 100
+
 class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
@@ -76,6 +79,10 @@ class Commander(QObject):
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         elif reply[0] == self.comar.com.FAIL:
+            if reply[2] == str(CANCELED):
+                self.parent.finished("Cancelled")
+                return
+            
             self.parent.finished()
             self.parent.showErrorMessage(unicode(reply[2]))
 
@@ -133,3 +140,6 @@ class Commander(QObject):
 
     def getRepoUri(self,repoName):
         return pisi.api.ctx.repodb.get_repo(repoName).indexuri.get_uri()
+
+    def cancel(self):
+        self.comar.cancel()
