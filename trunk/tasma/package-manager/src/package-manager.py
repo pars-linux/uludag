@@ -554,7 +554,7 @@ class MainApplicationWidget(QWidget):
                        "System.Manager.updatePackage",
                        "System.Manager.installPackage",
                        "System.Manager.removePackage",
-                       "Cancelled"]:
+                       "System.Manager.cancelled"]:
             self.updateListing()
 
         self.progressDialog.closeForced()
