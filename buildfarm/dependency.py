@@ -21,10 +21,6 @@ import pisi.specfile
 import config
 import logger
 
-class DependencyError(Exception):
-    pass
-
-
 class DependencyResolver:
     def __init__(self, pspeclist):
         self.oldwd = os.getcwd()

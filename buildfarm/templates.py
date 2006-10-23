@@ -8,8 +8,6 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
-#
-
 
 #e-mail message templates for mailer module..
 

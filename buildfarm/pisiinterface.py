@@ -21,10 +21,6 @@ import pisi.fetcher
 import config
 import logger
 
-class PisiError(Exception):
-    pass
-
-
 class PisiApi:
 
     def __init__(self, outputDir = config.workDir):    
@@ -50,7 +46,7 @@ class PisiApi:
         pspec = os.path.join(config.localPspecRepo, pspec)
         if not os.path.exists(pspec):
             logger.error("'%s' pspec dosyası bulunamadı!" % (pspec))
-            raise PisiError("Pspec dosyası bulunamadı (%s)" % (pspec))
+            raise "Pspec dosyası bulunamadı (%s)" % pspec
 
         logger.info("%s için PiSi Build çağırılıyor" % (pspec)) 
 
