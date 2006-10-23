@@ -70,7 +70,7 @@ class RepositoryManager:
         for i in range(0, len(o)):
             if o[i] == "revision":
                 return int(o[i+1].strip("."))
- 
+
     def MODIFIED(self):
         data=[]
         for d in self.output:
@@ -88,13 +88,13 @@ class RepositoryManager:
         for d in self.output:
             if d[0] == "D": data.append(d[1])
         return data
-        
+
     def ALL(self, filter='', exclude=[]):
         return self.MODIFIED() + self.REMOVED() + self.ADDED()
 
-if __name__ == "__main__":    
+if __name__ == "__main__":
     r = RepositoryManager()
-   
+
     updatedpspecfiles = r.getChanges(type = "U", filter="pspec.xml")
     newpspecfiles     = r.getChanges(type = "A", filter="pspec.xml")
 
@@ -102,4 +102,4 @@ if __name__ == "__main__":
         queue = open(os.path.join(config.workDir, "workQueue"), "a")
         for pspec in updatedpspecfiles + newpspecfiles:
             queue.write("%s\n" % pspec)
-        queue.close()  
+        queue.close()

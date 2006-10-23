@@ -13,7 +13,6 @@
 
 """ Standart Python Modules """
 import os
-import xml.dom.minidom as mdom
 
 import pisi.api
 import pisi.fetcher
@@ -38,11 +37,11 @@ class PisiApi:
         self.api = pisi.api
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
-        
+
     def init(self, stdout, stderr):
         logger.info("PiSi API init ediliyor")
         self.api.init(options = self.options, stdout = stdout, stderr = stderr)
-        
+
     def finalize(self):
         logger.info("PiSi API finalize ediliyor")
         self.api.finalize()
@@ -52,14 +51,14 @@ class PisiApi:
         if not os.path.exists(pspec):
             logger.error("'%s' pspec dosyası bulunamadı!" % (pspec))
             raise PisiError("Pspec dosyası bulunamadı (%s)" % (pspec))
-        
+
         logger.info("%s için PiSi Build çağırılıyor" % (pspec)) 
 
         __newBinaryPackages, __oldBinaryPackages = self.api.build(pspec)
         logger.info("Oluşan paket(ler): %s" % (__newBinaryPackages)) 
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
-            
+
         return (self.__newBinaryPackages, self.__oldBinaryPackages)
 
     def install(self, p):
