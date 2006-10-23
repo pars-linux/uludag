@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005, 2006 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -8,14 +8,10 @@
 # any later version.
 #
 # Please read the COPYING file.
-#
-
 
 # Buildfarm version
-__version__ = '0.1'
+__version__ = "0.2"
 
-__all__ = ['config', 'dependency', 'main', 'qmanager', 'repomanager']
-
+__all__ = ["config", "dependency", "main", "qmanager", "repomanager"]
 
 Get = lambda j, w: [x for x in j.childNodes if x.nodeType == x.ELEMENT_NODE if x.tagName == w]
-

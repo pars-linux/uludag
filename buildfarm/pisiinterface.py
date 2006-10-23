@@ -21,8 +21,6 @@ import pisi.fetcher
 """ BuildFarm Modules """
 import buildfarm.config as config
 import buildfarm.logger as logger
-from buildfarm import Get
-
 
 class PisiError(Exception):
     pass
