@@ -11,13 +11,13 @@
 # Please read the COPYING file.
 
 """ Standart Python Modules """
+import os
+import sys
 import copy
+import shutil
+import traceback
 import cStringIO
 import exceptions
-import os
-import shutil
-import sys
-import traceback
 
 """ BuildFarm Modules """
 import config
@@ -26,9 +26,9 @@ import mailer
 import qmanager
 import pisiinterface
 
-''' Gettext Support '''
+""" Gettext Support """
 import gettext
-__trans = gettext.translation("buildfarm", fallback=True)
+__trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
 def buildPackages():
@@ -36,6 +36,7 @@ def buildPackages():
     queue = copy.copy(qmgr.workQueue)
 
     if len(queue) == 0:
+        logger.info(_("Work Queue is empty..."))
         sys.exit(1)
 
     # FIXME: Use fcntl.flock
@@ -46,57 +47,66 @@ def buildPackages():
     logger.info(_("Work Queue: %s") % (qmgr.workQueue))
     sortedQueue = qmgr.workQueue[:]
     sortedQueue.sort()
-    mailer.info(_("Heyoo sırası ile\n%s\npaketlerini derlemeye başlıyorum...") % "\n".join(sortedQueue))
+    mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
     logger.raw()
 
     for pspec in queue:
         packagename = os.path.basename(os.path.dirname(pspec))
-        build_output = open(os.path.join(config.outputDir,packagename+".log"), "w")
-        logger.info(_("Compiling source %s (%d of %d)") % (packagename,
-                                                        int(queue.index(pspec) + 1),
-                                                        len(queue)))
+        build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
+        logger.info(
+            _("Compiling source %s (%d of %d)") % 
+                (
+                    packagename,
+                    int(queue.index(pspec) + 1),
+                    len(queue)
+                )
+            )
         logger.raw()
 
         pisi = pisiinterface.PisiApi(config.workDir)
         pisi.init(stdout = build_output, stderr = build_output)
         try:
-            (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
-        except Exception, e:
-            qmgr.transferToWaitQueue(pspec)
-            errmsg = _("'%s' için BUILD işlemi sırasında hata: %s") % (pspec, e)
-            logger.error(errmsg)
-            mailer.error(errmsg, pspec)
-            pisi.finalize()
-        else:
-            for p in newBinaryPackages:
-                logger.info("Installing: %s" % os.path.join(config.workDir, p))
+            try:
+                (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
+            except Exception, e:
+                qmgr.transferToWaitQueue(pspec)
+                errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
+                logger.error(errmsg)
+                mailer.error(errmsg, pspec)
+            else:
                 try:
-                    pisi.install(os.path.join(config.workDir, p))
+                    for p in newBinaryPackages:
+                        logger.info("Installing: %s" % os.path.join(config.workDir, p))
+                        pisi.install(os.path.join(config.workDir, p))
                 except Exception, e:
-                    logger.error(_("'%s' için INSTALL işlemi sırasında hata: %s") % (os.path.join(config.workDir, p), e))
                     qmgr.transferToWaitQueue(pspec)
+                    errmsg = _("Error occured for '%s' in INSTALL process: %s") % (os.path.join(config.workDir, p), e)
+                    logger.error(errmsg)
+                    mailer.error(errmsg, pspec)
+
                     newBinaryPackages.remove(p)
                     removeBinaryPackageFromWorkDir(p)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
+                    movePackages(newBinaryPackages, oldBinaryPackages)
+        finally:
             pisi.finalize()
-            movePackages(newBinaryPackages, oldBinaryPackages)
 
     logger.raw(_("QUEUE"))
     logger.info(_("Wait Queue: %s") % (qmgr.waitQueue))
     if qmgr.waitQueue:
-        mailer.info(_("İşim bitti, derleyemediğim paket listesi şöyle:\n%s\n") % "\n".join(qmgr.waitQueue))
+        mailer.info(_("Queue finished with some problems, following packages couldn't compiled:\n%s\n") % "\n".join(qmgr.waitQueue))
     else:
-        mailer.info(_("Herşeyi derledim, megabaytlarım sağolsun."))
+        mailer.info(_("Queue finished without any problem!..."))
     logger.raw()
 
     logger.raw()
-    logger.info(_("Index oluşturuluyor..."))
+    logger.info(_("Generating PiSi Index..."))
 
     current = os.getcwd()
     os.chdir(config.binaryPath)
     os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
-    logger.info(_("Index oluşturuldu..."))
+    logger.info(_("PiSi Index generated..."))
 
     #FIXME: will be enableb after some internal tests
     #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
@@ -126,9 +136,9 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
     oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
 
-    logger.info(_("*** Yeni ikili paket(ler): %s") % newPackages)
-    logger.info(_("*** Eski ikili paket(ler): %s") % oldPackages)
-    logger.info(_("*** Değişmemiş ikili paket(ler): %s") % unchangedPackages)
+    logger.info(_("*** New binary package(s): %s") % newPackages)
+    logger.info(_("*** Old binary package(s): %s") % oldPackages)
+    logger.info(_("*** Unchanged binary package(s): %s") % unchangedPackages)
 
     exists = os.path.exists
     join   = os.path.join
@@ -136,7 +146,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     copy   = shutil.copy
 
     def moveOldPackage(package):
-        logger.info(_("*** Eski paket '%s' işleniyor") % (package))
+        logger.info(_("*** Old package '%s' is processing") % (package))
         if exists(join(config.binaryPath, package)):
             remove(join(config.binaryPath, package))
 
@@ -144,13 +154,13 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
             remove(join(config.workDir, package))
 
     def moveNewPackage(package):
-        logger.info(_("*** Yeni paket '%s' işleniyor") % (package))
+        logger.info(_("*** New package '%s' is processing") % (package))
         if exists(join(config.workDir, package)):
             copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
     def moveUnchangedPackage(package):
-        logger.info(_("*** Değişmemiş paket '%s' işleniyor") % (package))
+        logger.info(_("*** Unchanged package '%s' is processing") % (package))
         if exists(join(config.workDir, package)):
             copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
@@ -183,7 +193,7 @@ def create_directories():
             try:
                 os.makedirs(dir)
             except OSError:
-                raise config.CfgError(_("'%s' dizini yaratılamadı, izin sorunu olabilir") % (dir))
+                raise _("'%s' dizini yaratılamadı, izin sorunu olabilir") % dir
 
 
 def handle_exception(exception, value, tb):

@@ -21,9 +21,14 @@ import pisi.fetcher
 import config
 import logger
 
+""" Gettext Support """
+import gettext
+__trans = gettext.translation("buildfarm", fallback = True)
+_  =  __trans.ugettext
+
 class PisiApi:
 
-    def __init__(self, outputDir = config.workDir):    
+    def __init__(self, outputDir = config.workDir):
         import pisi.config
         self.options = pisi.config.Options()
         self.options.output_dir = outputDir
@@ -35,23 +40,23 @@ class PisiApi:
         self.__oldBinaryPackages = []
 
     def init(self, stdout, stderr):
-        logger.info("PiSi API init ediliyor")
+        logger.info(_("Initilasing PiSi API..."))
         self.api.init(options = self.options, stdout = stdout, stderr = stderr)
 
     def finalize(self):
-        logger.info("PiSi API finalize ediliyor")
+        logger.info(_("Finalising PiSi API"))
         self.api.finalize()
 
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
         if not os.path.exists(pspec):
-            logger.error("'%s' pspec dosyası bulunamadı!" % (pspec))
-            raise "Pspec dosyası bulunamadı (%s)" % pspec
+            logger.error(_("'%s' is not exists!") % (pspec))
+            raise _("'%s' is not exists!") % pspec
 
-        logger.info("%s için PiSi Build çağırılıyor" % (pspec)) 
+        logger.info(_("BUILD called for %s") % (pspec)) 
 
         __newBinaryPackages, __oldBinaryPackages = self.api.build(pspec)
-        logger.info("Oluşan paket(ler): %s" % (__newBinaryPackages)) 
+        logger.info(_("Created package(s): %s") % (__newBinaryPackages)) 
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
 
