@@ -17,9 +17,6 @@ from kdecore import i18n
 from qt import QObject, QTimer
 import ComarIface
 
-# command canceled by comar at package-manager's request
-CANCELED = 100
-
 class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
@@ -79,8 +76,8 @@ class Commander(QObject):
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         elif reply[0] == self.comar.com.FAIL:
-            if reply[2] == str(CANCELED):
-                self.parent.finished("Cancelled")
+            if reply[2] == "System.Manager.cancelled":
+                self.parent.finished(reply[2])
                 return
             
             self.parent.finished()
