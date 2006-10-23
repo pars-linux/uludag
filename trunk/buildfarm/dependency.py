@@ -9,18 +9,17 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
-#
 
 """ Standart Python Modules """
 import os
 import sys
-import xml.dom.minidom as mdom
+
+""" PiSi Modules """
+import pisi.specfile
 
 """ BuildFarm Modules """
 import buildfarm.config as config
 import buildfarm.logger as logger
-from buildfarm import Get
-
 
 class DependencyError(Exception):
     pass
@@ -30,11 +29,11 @@ class DependencyResolver:
     def __init__(self, pspeclist):
         self.oldwd = os.getcwd()
         os.chdir(config.localPspecRepo)
-        
-        #work queue and wait queue may contain same pspecs.
-        #be sure that every pspec is unique in the pspeclist.
+
+        # work queue and wait queue may contain same pspecs. 
+        # be sure that every pspec is unique in the pspeclist.
         self.pspeclist = [pspec for pspec in set(pspeclist)]
-        
+
         self.bdepmap, self.rdepmap, self.namemap, self.pspeccount = {}, {}, {}, len(self.pspeclist)
 
         for pspec in self.pspeclist: self.bdepmap[pspec] = self.__getBuildDependencies(pspec)
@@ -48,50 +47,43 @@ class DependencyResolver:
         return self.pspeclist
 
     def __getBuildDependencies(self, pspec):
+        specFile = pisi.specfile.SpecFile()
         try:
-            dom = mdom.parse(pspec)
+            specFile.read(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
             sys.exit(-1)
 
         try:
-            return [bdep.firstChild.wholeText for bdep in Get(Get(Get(dom.documentElement, "Source")[0], "BuildDependencies")[0], 'Dependency')]
+            return [package.package for package in specFile.source.buildDependencies]
         except:
-            return ['']
+            return [""]
 
     def __getRuntimeDependencies(self, pspec):
+        specFile = pisi.specfile.SpecFile()
         try:
-            dom = mdom.parse(pspec)
+            specFile.read(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
             sys.exit(-1)
 
-        rdeps = []
         try:
-            for p in Get(dom.documentElement, "Package"):
-                rdeps += [bdep.firstChild.wholeText for bdep in Get(Get(p, "RuntimeDependencies")[0], 'Dependency')]
+            return [package.package for package in specFile.packages.runtimeDependencies]
         except:
-            pass
-
-        #remove duplicated entries..
-        for d in rdeps:
-            for i in range(0, rdeps.count(d)-1):
-                rdeps.remove(d)
-
-        return rdeps
+            return [""]
 
     def __getPackageNames(self, pspec):
-        packages = []
+        specFile = pisi.specfile.SpecFile()
         try:
-            dom = mdom.parse(pspec)
-            pspecdata = dom.documentElement
+            specFile.read(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
             sys.exit(-1)
 
-        for p in Get(pspecdata, "Package"):
-            packages.append(Get(p, "Name")[0].firstChild.wholeText)
-        return packages
+        try:
+            return [package.name for package in specFile.packages]
+        except:
+            return [""]
 
     def runtimeDepResolver(self):
         """arranges the order of the pspec's in the pspeclist to satisfy runtime deps"""

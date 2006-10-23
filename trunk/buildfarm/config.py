@@ -9,29 +9,22 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
-#
 
 import os
-from pisi.util import join_path
 
 class CfgError(Exception):
     pass
 
 #Some configuration info for other modules..
-
 workDir          = "/var/tmp/pisi/"
 outputDir        = "/var/tmp/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
-localPspecRepo   = join_path(os.getcwd(), "/exampleRepo")
-logFile          = join_path(workDir, "buildfarm.log")
-smtpUserInfo     = './smtpUserInfo'
+localPspecRepo   = "%s/exampleRepo" % os.getcwd()
+logFile          = "%s/buildfarm.log" % workDir
 
 #information for mailer module.
-mailFrom        = "buildfarm@pardus.org.tr"
-ccList          = []
-smtpServer      = 'mail.uludag.org.tr'
-try:
-    smtpUser, smtpPassword = open(smtpUserInfo).readline().strip().split(':')
-except:
-    smtpUser, smtpPassword = '', ''    
-
+mailFrom         = "buildfarm@pardus.org.tr"
+ccList           = []
+smtpServer       = "mail.uludag.org.tr"
+smtpUser         = ""
+smtpPassword     = ""
