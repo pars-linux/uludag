@@ -16,8 +16,8 @@ import os
 import sys
 import smtplib
 import socket
-import xml.dom.minidom as mdom
 
+import pisi.specfile
 sys.path.append(".")
 sys.path.append("..")
 
@@ -25,7 +25,6 @@ sys.path.append("..")
 import buildfarm.config as config
 import buildfarm.logger as logger
 import buildfarm.templates as tmpl
-from buildfarm import Get
 
 class MailerError(Exception):
     pass
@@ -50,9 +49,10 @@ def send(message, pspec = '', type = ''):
 
     recipientsName, recipientsEmail = [], []
     if pspec:
-        dom = mdom.parse(os.path.join(config.localPspecRepo, pspec))
-        recipientsName = RecInfo('Name', dom.documentElement)
-        recipientsEmail = RecInfo('Email', dom.documentElement)
+        specFile = pisi.specfile.SpecFile()
+        specFile.read(os.path.join(config.localPspecRepo, pspec))
+        recipientsName = specFile.source.packager.name
+        recipientsEmail = specFile.source.packager.email
 
     templates = {'error': tmpl.error_message,
                  'info' : tmpl.info_message}

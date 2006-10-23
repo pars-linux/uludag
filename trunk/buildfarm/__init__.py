@@ -13,5 +13,3 @@
 __version__ = "0.2"
 
 __all__ = ["config", "dependency", "main", "qmanager", "repomanager"]
-
-Get = lambda j, w: [x for x in j.childNodes if x.nodeType == x.ELEMENT_NODE if x.tagName == w]
