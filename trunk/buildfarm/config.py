@@ -9,11 +9,7 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
-
 import os
-
-class CfgError(Exception):
-    pass
 
 #Some configuration info for other modules..
 workDir          = "/var/tmp/pisi/"

@@ -16,9 +16,6 @@ import os
 import sys
 from string import find
 
-sys.path.append(".")
-sys.path.append("..")
-
 """ BuildFarm Modules """
 import config
 import logger

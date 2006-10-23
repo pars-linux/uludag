@@ -9,17 +9,14 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
-#
 
 """ Standart Python Modules """
 import os
 import sys
-import smtplib
 import socket
+import smtplib
 
 import pisi.specfile
-sys.path.append(".")
-sys.path.append("..")
 
 """ BuildFarm Modules """
 import config
@@ -30,17 +27,14 @@ class MailerError(Exception):
     pass
 
 
-RecInfo = lambda x, y: [i.firstChild.wholeText for i in \
-             Get(Get(Get(y, "Source")[0], "Packager")[0], x)]
-
-def send(message, pspec = '', type = ''):
+def send(message, pspec = "", type = ""):
 
     def wrap(message, length=72):
-        return reduce(lambda line, word: '%s%s%s' %
+        return reduce(lambda line, word: "%s%s%s" %
                       (line,
-                       [' ','\n'][(len(line)-line.rfind('\n')-1 + len(word.split('\n',1)[0]) >= length)],
+                       [" ", "\n"][(len(line)-line.rfind("\n")-1 + len(word.split("\n",1)[0]) >= length)],
                        word),
-                      message.split(' '))
+                      message.split(" "))
 
 
     if not config.smtpUser or not config.smtpPassword:
@@ -54,11 +48,11 @@ def send(message, pspec = '', type = ''):
         recipientsName = specFile.source.packager.name
         recipientsEmail = specFile.source.packager.email
 
-    templates = {'error': tmpl.error_message,
-                 'info' : tmpl.info_message}
+    templates = {"error": tmpl.error_message,
+                 "info" : tmpl.info_message}
 
     packagename=os.path.basename(os.path.dirname(pspec))
-    last_log = ''.join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
+    last_log = "".join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
     message = templates.get(type) % {'log'      : wrap(last_log),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
@@ -89,7 +83,7 @@ def send(message, pspec = '', type = ''):
     smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, message)
 
 def error(message, pspec):
-    send(message, pspec, type = 'error')
+    send(message, pspec, type = "error")
 
 def info(message):
-    send(message, type = 'info')
+    send(message, type = "info")
