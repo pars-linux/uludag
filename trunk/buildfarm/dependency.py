@@ -57,9 +57,8 @@ class DependencyResolver:
         return deps
 
     def __getRuntimeDependencies(self, pspec):
-        specFile = pisi.specfile.SpecFile()
         try:
-            specFile.read(pspec)
+            specFile = pisi.specfile.SpecFile(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
             sys.exit(-1)
@@ -72,9 +71,8 @@ class DependencyResolver:
         return deps
 
     def __getPackageNames(self, pspec):
-        specFile = pisi.specfile.SpecFile()
         try:
-            specFile.read(pspec)
+            specFile = pisi.specfile.SpecFile(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
             sys.exit(-1)
