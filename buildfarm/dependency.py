@@ -50,10 +50,11 @@ class DependencyResolver:
             logger.error("%s'de sorun var :(" % pspec)
             sys.exit(-1)
 
-        try:
-            return [package.package for package in specFile.source.buildDependencies]
-        except:
-            return [""]
+        deps = []
+        for package in specFile.source.buildDependencies:
+            deps += [package.package]
+
+        return deps
 
     def __getRuntimeDependencies(self, pspec):
         specFile = pisi.specfile.SpecFile()
@@ -63,10 +64,12 @@ class DependencyResolver:
             logger.error("%s'de sorun var :(" % pspec)
             sys.exit(-1)
 
-        try:
-            return [package.package for package in specFile.packages.runtimeDependencies]
-        except:
-            return [""]
+        deps = []
+        for package in specFile.packages:
+            for dep in package.runtimeDependencies():
+                deps += [dep.package]
+
+        return deps
 
     def __getPackageNames(self, pspec):
         specFile = pisi.specfile.SpecFile()
