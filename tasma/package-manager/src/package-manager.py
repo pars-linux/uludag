@@ -585,7 +585,7 @@ class MainApplicationWidget(QWidget):
             if self.componentDict[key].name == i18n("All"):
                 continue
             for package in self.componentDict[key].packages:
-                if query in package:
+                if unicode(query) in package:
                     packages.append(package)
 
         return packages
