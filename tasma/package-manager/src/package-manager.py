@@ -150,9 +150,9 @@ class MainApplicationWidget(QWidget):
 
         # Read javascript
         js = file(str(locate("data","package-manager/animation.js"))).read()
-        js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
-        js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
-        self.javascript = re.sub("#533359",KGlobalSettings.highlightColor().name(), js)
+        js = re.sub("#3cBB39", unicode(KGlobalSettings.alternateBackgroundColor().name()), js)
+        js = re.sub("#3c8839", unicode(KGlobalSettings.baseColor().name()), js)
+        self.javascript = re.sub("#533359", unicode(KGlobalSettings.highlightColor().name()), js)
 
         # Read Css
         cssFile = file(str(locate("data","package-manager/layout.css"))).read()
