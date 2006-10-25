@@ -12,7 +12,6 @@ class Progress(ProgressDialog):
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelThread)
-        self.cancelButton.setEnabled(False)
         self.hideStatus()
         self.hideOperationDescription()
         
@@ -21,12 +20,6 @@ class Progress(ProgressDialog):
         self.packageName = ""
 
     def setCurrentOperation(self, text):
-        # it is not safe to press cancel until the ComarJob starts. this is 
-        # an innocent hack for package-manager to know that the ComarJob has 
-        # just started and notified the package-manager.
-        if not self.cancelButton.isEnabled():
-            self.cancelButton.setEnabled(True)
-
         self.currentOperationLabel.setText(text)
 
     def setOperationDescription(self, text):
@@ -57,10 +50,11 @@ class Progress(ProgressDialog):
         self.packageNo = 1
         self.totalPackages = 1
         self.progressBar.setProgress(0)
-        self.cancelButton.setEnabled(False)
+        self.cancelButton.setEnabled(True)
 
     def cancelThread(self):
         self.setCurrentOperation(i18n("<b>Cancelling operation...</b>"))
+        self.cancelButton.setEnabled(False)
         self.parent.command.cancel()
 
     def closeForced(self):

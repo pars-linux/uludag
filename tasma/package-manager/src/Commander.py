@@ -75,6 +75,10 @@ class Commander(QObject):
                 pass
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
+        # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
+        # some misbehaviour is seen, comar.log is always there to look.
+        elif reply[0] == self.comar.com.ERROR:
+            self.parent.finished("System.Manager.cancelled")
         elif reply[0] == self.comar.com.FAIL:
             if reply[2] == "System.Manager.cancelled":
                 self.parent.finished(reply[2])
