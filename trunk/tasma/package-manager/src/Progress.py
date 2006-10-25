@@ -12,12 +12,16 @@ class Progress(ProgressDialog):
         self.animeLabel.setMovie(animatedPisi)
         self.forcedClose = False
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelThread)
+        self.cancelButton.setEnabled(False)
         self.hideStatus()
         self.hideOperationDescription()
         
         self.packageNo = 1
         self.totalPackages = 1
         self.packageName = ""
+
+    def enableCancel(self):
+        self.cancelButton.setEnabled(True)
 
     def setCurrentOperation(self, text):
         self.currentOperationLabel.setText(text)
@@ -50,7 +54,7 @@ class Progress(ProgressDialog):
         self.packageNo = 1
         self.totalPackages = 1
         self.progressBar.setProgress(0)
-        self.cancelButton.setEnabled(True)
+        self.cancelButton.setEnabled(False)
 
     def cancelThread(self):
         self.setCurrentOperation(i18n("<b>Cancelling operation...</b>"))

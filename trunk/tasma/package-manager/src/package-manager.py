@@ -501,6 +501,10 @@ class MainApplicationWidget(QWidget):
         data = data.split(",")
         operation = data[0]
 
+        # operation is now cancellable
+        if operation in ["started"]:
+            self.progressDialog.enableCancel()
+
         if operation in ["removing"]:
             if self.state == remove_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
