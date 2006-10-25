@@ -45,8 +45,8 @@ def send(message, pspec = "", type = ""):
     if pspec:
         specFile = pisi.specfile.SpecFile()
         specFile.read(os.path.join(config.localPspecRepo, pspec))
-        recipientsName = specFile.source.packager.name
-        recipientsEmail = specFile.source.packager.email
+        recipientsName.append(specFile.source.packager.name)
+        recipientsEmail.append(specFile.source.packager.email)
 
     templates = {"error": tmpl.error_message,
                  "info" : tmpl.info_message}
