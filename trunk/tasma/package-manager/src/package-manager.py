@@ -386,11 +386,6 @@ class MainApplicationWidget(QWidget):
                 return "0 B"
             return "%.1f %s" % (tpl[0], tpl[1])
 
-        self.packagesSize = 0
-        self.extraPackagesSize = 0
-        self.packages = []
-        self.extraPackages = []
-
         if self.state == install_state or self.state == upgrade_state:
             text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size with <b>%3</b> extra dependencies of total <b>%4</b> of size in your basket.").arg(len(self.basket.packages)).arg(humanReadableSize(self.basket.packagesSize)).arg(len(self.basket.extraPackages)).arg(humanReadableSize(self.basket.extraPackagesSize))
 
