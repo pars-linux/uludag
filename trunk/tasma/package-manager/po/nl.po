@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 17:04+0300\n"
+"POT-Creation-Date: 2006-10-26 23:31+0300\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:491
+#: src/CommonText.py:3 src/package-manager.py:510
 msgid "downloading"
 msgstr "downloaden"
 
@@ -63,7 +63,7 @@ msgstr "Pisi-fout"
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi-pakketbeheer"
 
-#: src/package-manager.py:49 src/package-manager.py:624
+#: src/package-manager.py:49 src/package-manager.py:646
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -146,12 +146,12 @@ msgstr "Geselecteerde pakketten opwaarderen"
 msgid "There are no updates available at this time"
 msgstr "Er zijn momenteel geen updates beschikbaar"
 
-#: src/package-manager.py:270 src/CustomEventListener.py:46
-#: src/CustomEventListener.py:50
+#: src/package-manager.py:270 src/CustomEventListener.py:48
+#: src/CustomEventListener.py:52
 msgid "Select all packages in this category"
 msgstr "Alle pakketten in deze categorie selecteren"
 
-#: src/package-manager.py:272 src/CustomEventListener.py:47
+#: src/package-manager.py:272 src/CustomEventListener.py:49
 msgid "Reverse package selections"
 msgstr ""
 
@@ -175,65 +175,78 @@ msgstr "Pakketgrootte: "
 msgid "Homepage: "
 msgstr "Homepage: "
 
-#: src/package-manager.py:456
+#: src/package-manager.py:392
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+"with <b>%3</b> extra dependencies of total <b>%4</b> of size in your basket."
+msgstr ""
+
+#: src/package-manager.py:395
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+"with <b>%3</b> reverse dependencies of total <b>%4</b> of size in your "
+"basket."
+msgstr ""
+
+#: src/package-manager.py:475
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:464 src/package-manager.py:586
+#: src/package-manager.py:483 src/package-manager.py:605
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:472
+#: src/package-manager.py:491
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
-#: src/package-manager.py:493 src/package-manager.py:515
+#: src/package-manager.py:512 src/package-manager.py:534
 #, fuzzy
 msgid "<b>Installing Package(s)</b>"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:495 src/package-manager.py:509
-#: src/package-manager.py:517
+#: src/package-manager.py:514 src/package-manager.py:528
+#: src/package-manager.py:536
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:507
+#: src/package-manager.py:526
 #, fuzzy
 msgid "<b>Removing Package(s)</b>"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:530
+#: src/package-manager.py:549
 #, fuzzy
 msgid "<b>Updating Repository</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:531
+#: src/package-manager.py:550
 #, fuzzy
 msgid "Downloading package list of %1"
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:640
+#: src/package-manager.py:666
 msgid "Show Installed Packages"
 msgstr "Geinstalleerde pakketten tonen"
 
-#: src/package-manager.py:641
+#: src/package-manager.py:667
 msgid "Show New Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:642
+#: src/package-manager.py:668
 #, fuzzy
 msgid "Show Upgradable Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:661
+#: src/package-manager.py:687
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:661
+#: src/package-manager.py:687
 msgid "Show available updates"
 msgstr "Beschikbare updates tonen"
 
-#: src/package-manager.py:664
+#: src/package-manager.py:690
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is reeds opgestart!"
 

@@ -225,6 +225,7 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setIconSet(loadIconSet("ok"))
         self.state = install_state
         self.listView.setSelected(self.listView.firstChild(),True)
+        self.updateStatusBar()
 
     def removeState(self, reset=True):
         if reset:
@@ -364,6 +365,7 @@ class MainApplicationWidget(QWidget):
 
     def updateView(self,item=None):
         self.basket.setState(self.state)
+        self.updateStatusBar()
 
         # basket may have been emptied from basket dialog
         if not self.basket.packages:
@@ -376,6 +378,26 @@ class MainApplicationWidget(QWidget):
             self.createHTML(self.componentDict[item].packages)
         except:
             pass
+
+    def updateStatusBar(self):
+        def humanReadableSize(size):
+            tpl = pisi.util.human_readable_size(size)
+            if tpl[0] == 0:
+                return "0 B"
+            return "%.1f %s" % (tpl[0], tpl[1])
+
+        self.packagesSize = 0
+        self.extraPackagesSize = 0
+        self.packages = []
+        self.extraPackages = []
+
+        if self.state == install_state or self.state == upgrade_state:
+            text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size with <b>%3</b> extra dependencies of total <b>%4</b> of size in your basket.").arg(len(self.basket.packages)).arg(humanReadableSize(self.basket.packagesSize)).arg(len(self.basket.extraPackages)).arg(humanReadableSize(self.basket.extraPackagesSize))
+
+        elif self.state == remove_state:
+            text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size with <b>%3</b> reverse dependencies of total <b>%4</b> of size in your basket.").arg(len(self.basket.packages)).arg(humanReadableSize(self.basket.packagesSize)).arg(len(self.basket.extraPackages)).arg(humanReadableSize(self.basket.extraPackagesSize))
+
+        self.parent.updateStatusBarText(text)
 
     def updateButtons(self):
         if self.basket.packages:
@@ -621,6 +643,9 @@ class MainApplicationWidget(QWidget):
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):
         KMainWindow.__init__(self,parent,name)
+        self.statusLabel = QLabel("", self.statusBar())
+        self.statusBar().addWidget(self.statusLabel)
+        self.statusBar().setSizeGripEnabled(True)
         self.setCaption(i18n("Package Manager"))
         self.aboutus = KAboutApplication(self)
         self.helpWidget = None
@@ -630,6 +655,10 @@ class MainApplication(KMainWindow):
         self.setupMenu()
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
         self.toolBar().setIconText(KToolBar.IconTextRight)
+
+    def updateStatusBarText(self, text):
+        self.statusLabel.setText(text)
+        self.statusLabel.setAlignment(Qt.AlignHCenter)
 
     def setupMenu(self):
         fileMenu = QPopupMenu(self)
