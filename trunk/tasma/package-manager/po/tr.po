@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-22 16:40+0300\n"
+"POT-Creation-Date: 2006-10-26 17:04+0300\n"
 "PO-Revision-Date: 2006-10-14 00:20+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/CommonText.py:3 src/package-manager.py:497
+#: src/CommonText.py:3 src/package-manager.py:491
 msgid "downloading"
 msgstr "indiriliyor"
 
@@ -63,71 +63,71 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
 
-#: src/package-manager.py:40
+#: src/package-manager.py:41
 msgid "GUI for PiSi package manager"
 msgstr "PiSi paket yöneticisi için arayüz"
 
-#: src/package-manager.py:48 src/package-manager.py:624
+#: src/package-manager.py:49 src/package-manager.py:624
 msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 
-#: src/package-manager.py:51
+#: src/package-manager.py:52
 msgid "Developer and Current Maintainer"
 msgstr "Geliştirici ve Şu anki Bakıcı"
 
-#: src/package-manager.py:52
+#: src/package-manager.py:53
 msgid "Original Author"
 msgstr "Orjinal Yazar"
 
-#: src/package-manager.py:53
+#: src/package-manager.py:54
 msgid "CSS/JS Meister"
 msgstr "CSS/JS Ordinaryüsü"
 
-#: src/package-manager.py:54
+#: src/package-manager.py:55
 msgid "GUI Design & Usability"
 msgstr "Arayüz Tasarımı ve Kullanılabilirlik"
 
-#: src/package-manager.py:55
+#: src/package-manager.py:56
 msgid "Misc. Fixes"
 msgstr "Diğer düzeltmeler"
 
-#: src/package-manager.py:56
+#: src/package-manager.py:57
 msgid "Comar/Python Help"
 msgstr "Comar/Python yardımı"
 
-#: src/package-manager.py:57
+#: src/package-manager.py:58
 msgid "Speedup fixes"
 msgstr "Hızlandırma yamaları"
 
-#: src/package-manager.py:58
+#: src/package-manager.py:59
 msgid "PiSi Authors"
 msgstr "PiSi Yazarları"
 
-#: src/package-manager.py:58
+#: src/package-manager.py:59
 msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
-#: src/package-manager.py:131
+#: src/package-manager.py:119
 msgid "Search: "
 msgstr "Ara: "
 
-#: src/package-manager.py:135
+#: src/package-manager.py:123
 msgid "Show basket"
 msgstr "Sepeti göster"
 
-#: src/package-manager.py:140 src/package-manager.py:237
+#: src/package-manager.py:128 src/package-manager.py:224
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
-#: src/package-manager.py:161
+#: src/package-manager.py:149
 msgid "Components"
 msgstr "Bileşenler"
 
-#: src/package-manager.py:188
+#: src/package-manager.py:175
 msgid "Loading Package List..."
 msgstr "Paket listesi yükleniyor"
 
-#: src/package-manager.py:217
+#: src/package-manager.py:204
 msgid ""
 "Package repository still does not have category information.\n"
 "Exiting..."
@@ -135,77 +135,77 @@ msgstr ""
 "Paket deposunda hala kategori bilgisi yok.\n"
 "Çıkılıyor"
 
-#: src/package-manager.py:249
+#: src/package-manager.py:236
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
-#: src/package-manager.py:257
+#: src/package-manager.py:244
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: src/package-manager.py:262
+#: src/package-manager.py:249
 msgid "There are no updates available at this time"
 msgstr "Şu anda mevcut bir güncelleme yok"
 
-#: src/package-manager.py:283 src/CustomEventListener.py:43
-#: src/CustomEventListener.py:47
+#: src/package-manager.py:270 src/CustomEventListener.py:46
+#: src/CustomEventListener.py:50
 msgid "Select all packages in this category"
 msgstr "Bu kategorideki tüm paketleri seç"
 
-#: src/package-manager.py:285 src/CustomEventListener.py:44
+#: src/package-manager.py:272 src/CustomEventListener.py:47
 msgid "Reverse package selections"
 msgstr "Paket seçimlerini ters çevir"
 
-#: src/package-manager.py:349
+#: src/package-manager.py:338
 msgid "N\\A"
 msgstr "Bilinmiyor"
 
-#: src/package-manager.py:358
+#: src/package-manager.py:354
 msgid "Description: "
 msgstr "Açıklama: "
 
-#: src/package-manager.py:358
+#: src/package-manager.py:354
 msgid "Version: "
 msgstr "Sürüm: "
 
-#: src/package-manager.py:359
+#: src/package-manager.py:355
 msgid "Package Size: "
 msgstr "Paket Boyutu: "
 
-#: src/package-manager.py:359
+#: src/package-manager.py:355
 msgid "Homepage: "
 msgstr "Web sayfası: "
 
-#: src/package-manager.py:462
+#: src/package-manager.py:456
 msgid "Others"
 msgstr "Diğerleri"
 
-#: src/package-manager.py:470 src/package-manager.py:586
+#: src/package-manager.py:464 src/package-manager.py:586
 msgid "All"
 msgstr "Tümü"
 
-#: src/package-manager.py:478
+#: src/package-manager.py:472
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
-#: src/package-manager.py:499 src/package-manager.py:517
+#: src/package-manager.py:493 src/package-manager.py:515
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Paket(ler) Kuruluyor</b>"
 
-#: src/package-manager.py:501 src/package-manager.py:511
-#: src/package-manager.py:519
+#: src/package-manager.py:495 src/package-manager.py:509
+#: src/package-manager.py:517
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Paket(ler) Güncelleniyor</b>"
 
-#: src/package-manager.py:509
+#: src/package-manager.py:507
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Paket(ler) Kaldırılıyor</b>"
 
-#: src/package-manager.py:532
+#: src/package-manager.py:530
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Depo Güncelleniyor</b>"
 
-#: src/package-manager.py:533
+#: src/package-manager.py:531
 msgid "Downloading package list of %1"
 msgstr "%1 paket listesi indiriliyor"
 
@@ -233,23 +233,23 @@ msgstr "Mevcut güncellemeleri göster"
 msgid "Package Manager is already running!"
 msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
 
-#: src/Progress.py:47
+#: src/Progress.py:51
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/Progress.py:55
+#: src/Progress.py:60
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>İşlem iptal ediliyor...</b>"
 
-#: src/Progress.py:81 src/Progress.py:85
+#: src/Progress.py:87 src/Progress.py:91
 msgid "Now %1 <b>%2</b> package"
 msgstr "Şu anda <b>%2</b> paketi %1"
 
-#: src/Progress.py:87
+#: src/Progress.py:93
 msgid "Fetching package (%1/%2) at %3 %4"
 msgstr "(%1/%2) %3 %4 ile indiriliyor"
 
-#: src/Progress.py:97
+#: src/Progress.py:103
 msgid "Fetching package list at %3 %4"
 msgstr "Paket listesi %3 %4 ile indiriliyor"
 
@@ -435,31 +435,31 @@ msgstr "&Depo Adı"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
 
-#: src/BasketDialog.py:44 src/BasketDialog.py:50
+#: src/BasketDialog.py:44 src/BasketDialog.py:49
 msgid "Basket"
 msgstr "Sepet"
 
-#: src/BasketDialog.py:54
+#: src/BasketDialog.py:53
 msgid "Selected packages:"
 msgstr "Seçili paketler:"
 
-#: src/BasketDialog.py:60
+#: src/BasketDialog.py:59
 msgid "Extra dependencies and mandatory base system upgrades:"
 msgstr "Ekstra bağımlılıklar ve zorunlu taban sistem güncellemeleri"
 
-#: src/BasketDialog.py:66
+#: src/BasketDialog.py:65
 msgid "Total Size:"
 msgstr "Toplam Boyut:"
 
-#: src/BasketDialog.py:73
+#: src/BasketDialog.py:72
 msgid "Update Basket"
 msgstr "Sepeti Güncelle"
 
-#: src/BasketDialog.py:149
+#: src/BasketDialog.py:134
 msgid "Total Size: %1"
 msgstr "Toplam Boyut: %1"
 
-#: src/BasketDialog.py:210 src/BasketDialog.py:212
+#: src/BasketDialog.py:183 src/BasketDialog.py:185
 msgid "Size: "
 msgstr "Boyut: "
 

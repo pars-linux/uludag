@@ -16,6 +16,7 @@ class CustomEventListener(DOM.EventListener):
     def __init__(self, parent):
         DOM.EventListener.__init__(self)
         self.parent = parent
+        self.selectingAll = False
 
     def handleEvent(self,event):
         target = event.target().nodeName().string()
@@ -31,6 +32,8 @@ class CustomEventListener(DOM.EventListener):
                     self.parent.basket.remove(name)
 
                 self.parent.updateButtons()
+                if not self.selectingAll:
+                    self.parent.basket.update()
 
             elif target == "A":
                 link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
@@ -46,10 +49,13 @@ class CustomEventListener(DOM.EventListener):
                         reverseSelection = True
                         event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Select all packages in this category")))
 
+                    self.selectingAll = True
                     for i in range(0,nodeList.length()):
                         element = DOM.HTMLInputElement(nodeList.item(i))
                         if reverseSelection or not element.checked():
                             element.click()
+                    self.selectingAll = False
+                    self.parent.basket.update()
                 else:
                     KRun.runURL(KURL(link),"text/html",False,False);
         except Exception, e:

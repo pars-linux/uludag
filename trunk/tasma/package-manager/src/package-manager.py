@@ -28,6 +28,7 @@ import Progress
 import Preferences
 import Commander
 import CustomEventListener
+import Basket
 import BasketDialog
 
 # Pisi
@@ -69,19 +70,6 @@ def getIconPath(name, group=KIcon.Desktop):
         name = "package"
     return KGlobal.iconLoader().iconPath(name,group)
 
-class Basket:
-    def __init__(self):
-        self.packages = []
-
-    def add(self, package):
-        self.packages.append(str(package))
-
-    def remove(self, package):
-        self.packages.remove(str(package))
-
-    def empty(self):
-        self.packages = []
-
 class Component:
     def __init__(self, name, packages, summary):
         self.name = name
@@ -114,7 +102,7 @@ class MainApplicationWidget(QWidget):
 
         self.componentDict = {}
         self.state = install_state
-        self.basket = Basket()
+        self.basket = Basket.Basket()
 
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
@@ -375,6 +363,8 @@ class MainApplicationWidget(QWidget):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateView(self,item=None):
+        self.basket.setState(self.state)
+
         # basket may have been emptied from basket dialog
         if not self.basket.packages:
             self.basketAction.setEnabled(False)
@@ -396,7 +386,7 @@ class MainApplicationWidget(QWidget):
             self.basketAction.setEnabled(False)
 
     def showBasket(self):
-        basketDialog = BasketDialog.BasketDialog(self, self.basket.packages, self.state)
+        basketDialog = BasketDialog.BasketDialog(self, self.basket)
         action = basketDialog.exec_loop()
         self.updateView()
 

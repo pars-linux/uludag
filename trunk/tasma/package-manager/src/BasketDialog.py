@@ -7,7 +7,6 @@ from khtml import *
 
 import pisi
 
-(install_state, remove_state, upgrade_state) = range(3)
 (UPDATE_BASKET, APPLY_OPERATION) = (100,101)
 
 def getIconPath(name, group=KIcon.Desktop):
@@ -31,21 +30,20 @@ class SelectEventListener(DOM.EventListener):
                 name = inputElement.name().string()
                 checked = inputElement.checked()
                 if checked:
-                    if name not in self.parent.packages:
-                        self.parent.packages.append(str(name))
+                    if name not in self.parent.basket.packages:
+                        self.parent.basket.packages.append(str(name))
                 else:
-                    self.parent.packages.remove(str(name))
+                    self.parent.basket.packages.remove(str(name))
 
                 self.parent.updateTotals()
         except Exception, e:
             print e
 
 class BasketDialog(QDialog):
-    def __init__(self, parent, packages, state):
+    def __init__(self, parent, basket):
         QDialog.__init__(self,parent,str(i18n("Basket")),True)
 
-        self.packages = packages
-        self.state = state
+        self.basket = basket
         self.totalSize = 0
 
         self.setCaption(i18n("Basket"))
@@ -119,48 +117,21 @@ class BasketDialog(QDialog):
         self.createExtraPackagesList()
 
     def createSelectedPackagesList(self):
-        self.createHTML(self.packages, self.pkgHtmlPart, True)
+        self.createHTML(self.basket.packages, self.pkgHtmlPart, True)
 
     def createExtraPackagesList(self):
-        self.totalSize = 0
-        pkgs = self.packages
-        if self.state == install_state:
-            base = pisi.api.generate_base_upgrade(pkgs)
-            allPackages = pisi.api.generate_install_order(set(base+pkgs))
-        elif self.state == remove_state:
-            allPackages = pisi.api.generate_remove_order(pkgs)
-        elif self.state == upgrade_state:
-            base = pisi.api.generate_base_upgrade(pkgs)
-            allPackages = pisi.api.generate_upgrade_order(set(base+pkgs))
-
-        extraPackages = list(set(allPackages) - set(pkgs))
-        
-        if extraPackages:
+        self.basket.update()
+        if self.basket.extraPackages:
             self.extraLabel.show()
             self.depHBox.show()
-            self.createHTML(extraPackages, self.depHtmlPart, False)
+            self.createHTML(self.basket.extraPackages, self.depHtmlPart, False)
         else:
             self.extraLabel.hide()
             self.depHBox.hide()
 
-        for package in allPackages:
-             self.totalSize += self.getPackageSize(self.getPackage(package))
-
-        tpl = pisi.util.human_readable_size(self.totalSize)
+        tpl = pisi.util.human_readable_size(self.basket.getBasketSize())
         size = "%.0f %s" % (tpl[0], tpl[1])
         self.totalSizeLabel.setText(i18n("Total Size: %1").arg(size))
-
-    def getPackageSize(self, package):
-        if self.state == remove_state:
-            return package.installedSize
-        else:
-            return package.packageSize
-
-    def getPackage(self, package):
-        if self.state == remove_state:
-            return pisi.context.packagedb.get_package(package, pisi.itembyrepodb.installed)
-        else:
-            return pisi.context.packagedb.get_package(package)
 
     def createHTML(self, packages, part=None, checkBox=False):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -202,8 +173,8 @@ class BasketDialog(QDialog):
         packages.sort(key=string.lower)
 
         for app in packages:
-            package = self.getPackage(app)
-            size = self.getPackageSize(package)
+            package = self.basket.getPackage(app)
+            size = self.basket.getPackageSize(package)
             tpl = pisi.util.human_readable_size(size)
             size = "%.0f %s" % (tpl[0], tpl[1])
             iconPath = getIconPath(package.icon)
