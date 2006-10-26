@@ -121,6 +121,12 @@ class BasketDialog(QDialog):
 
     def createExtraPackagesList(self):
         self.basket.update()
+
+        if self.basket.packages:
+            self.applyButton.setEnabled(True)
+        else:
+            self.applyButton.setEnabled(False)
+
         if self.basket.extraPackages:
             self.extraLabel.show()
             self.depHBox.show()
