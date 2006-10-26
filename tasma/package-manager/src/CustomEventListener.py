@@ -10,7 +10,8 @@
 # Please read the COPYING file.
 
 from khtml import DOM
-from kdecore import i18n
+from kdecore import i18n, KURL
+from kio import KRun
 
 class CustomEventListener(DOM.EventListener):
     def __init__(self, parent):
