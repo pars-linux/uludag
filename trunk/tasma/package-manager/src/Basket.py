@@ -43,6 +43,9 @@ class Basket:
         self.extraPackagesSize = 0
 
         pkgs = self.packages
+        if not pkgs:
+            self.extraPackages = []
+            return
 
         if self.state == install_state:
             base = pisi.api.generate_base_upgrade(pkgs)
