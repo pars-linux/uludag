@@ -8,6 +8,7 @@ from khtml import *
 import pisi
 
 (install_state, remove_state, upgrade_state) = range(3)
+(UPDATE_BASKET, APPLY_OPERATION) = (100,101)
 
 def getIconPath(name, group=KIcon.Desktop):
     if not name:
@@ -78,7 +79,6 @@ class BasketDialog(QDialog):
         self.applyButton.setText(parent.operateAction.text())
         self.applyButton.setIconSet(parent.operateAction.iconSet())
         layout.addWidget(self.applyButton, 5, 2)
-        self.applyButton.setEnabled(False)
 
         self.connect(self.updateBasketButton, SIGNAL('clicked()'), self.updateBasket)
         self.connect(self.applyButton, SIGNAL('clicked()'), self.applyOperation)
@@ -101,12 +101,14 @@ class BasketDialog(QDialog):
         self.connect(self.pkgHtmlPart,SIGNAL("completed()"), self.registerEventListener)
 
     def updateBasket(self):
-        print "update basket"
-        QDialog.close(self, True)
+        self.pkgHtmlPart = None
+        self.depHtmlPart = None
+        self.done(UPDATE_BASKET)
 
     def applyOperation(self):
-        print "apply"
-        QDialog.close(self, True)
+        self.pkgHtmlPart = None
+        self.depHtmlPart = None
+        self.done(APPLY_OPERATION)
 
     def registerEventListener(self):
         self.eventListener = SelectEventListener(self)

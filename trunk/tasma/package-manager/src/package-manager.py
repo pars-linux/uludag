@@ -397,8 +397,15 @@ class MainApplicationWidget(QWidget):
 
     def showBasket(self):
         basketDialog = BasketDialog.BasketDialog(self, self.basket.packages, self.state)
-        self.connect(basketDialog, SIGNAL("destroyed()"), self.updateView)
-        basketDialog.show()
+        action = basketDialog.exec_loop()
+        self.updateView()
+
+        if action == BasketDialog.UPDATE_BASKET:
+            pass
+        elif action == BasketDialog.APPLY_OPERATION:
+            self.takeAction()
+
+        basketDialog.deleteLater()
 
     def takeAction(self):
         self.progressDialog.show()
