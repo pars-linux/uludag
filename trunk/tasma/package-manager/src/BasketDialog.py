@@ -130,8 +130,8 @@ class BasketDialog(QDialog):
             self.depHBox.hide()
 
         tpl = pisi.util.human_readable_size(self.basket.getBasketSize())
-        size = "%.0f %s" % (tpl[0], tpl[1])
-        self.totalSizeLabel.setText(i18n("Total Size: %1").arg(size))
+        size = "%.1f %s" % (tpl[0], tpl[1])
+        self.totalSizeLabel.setText(i18n("Total Size: <b>%1</b>").arg(size))
 
     def createHTML(self, packages, part=None, checkBox=False):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
