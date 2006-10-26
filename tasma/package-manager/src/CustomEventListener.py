@@ -35,6 +35,7 @@ class CustomEventListener(DOM.EventListener):
                 self.parent.updateButtons()
                 if not self.selectingAll:
                     self.parent.basket.update()
+                    self.parent.updateStatusBar()
 
             elif target == "A":
                 link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
@@ -57,6 +58,7 @@ class CustomEventListener(DOM.EventListener):
                             element.click()
                     self.selectingAll = False
                     self.parent.basket.update()
+                    self.parent.updateStatusBar()
                 else:
                     KRun.runURL(KURL(link),"text/html",False,False);
         except Exception, e:

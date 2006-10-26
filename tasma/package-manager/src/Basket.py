@@ -32,6 +32,8 @@ class Basket:
     def empty(self):
         self.packages = []
         self.extraPackages = []
+        self.packagesSize = 0
+        self.extraPackagesSize = 0
 
     def setState(self, state):
         self.state = state
