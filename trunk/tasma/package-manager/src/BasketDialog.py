@@ -122,7 +122,9 @@ class BasketDialog(QDialog):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateTotals(self):
+        self.setCursor(Qt.waitCursor)
         self.createExtraPackagesList()
+        self.setCursor(Qt.arrowCursor)
 
     def createSelectedPackagesList(self):
         self.createHTML(self.basket.packages, self.pkgHtmlPart, True)
