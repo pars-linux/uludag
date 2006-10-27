@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 23:46+0300\n"
+"POT-Creation-Date: 2006-10-27 09:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/CommonText.py:3 src/package-manager.py:508
+#: src/CommonText.py:3 src/package-manager.py:521
 msgid "downloading"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/package-manager.py:49 src/package-manager.py:644
+#: src/package-manager.py:49 src/package-manager.py:657
 msgid "Package Manager"
 msgstr ""
 
@@ -166,72 +166,80 @@ msgid "Homepage: "
 msgstr ""
 
 #: src/package-manager.py:390
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-"with <b>%3</b> extra dependencies of total <b>%4</b> of size in your basket."
+msgid "Currently your basket is empty."
 msgstr ""
 
-#: src/package-manager.py:393
+#: src/package-manager.py:393 src/package-manager.py:401
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-"with <b>%3</b> reverse dependencies of total <b>%4</b> of size in your "
-"basket."
 msgstr ""
 
-#: src/package-manager.py:473
+#: src/package-manager.py:396
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr ""
+
+#: src/package-manager.py:398 src/package-manager.py:406
+msgid "in your basket."
+msgstr ""
+
+#: src/package-manager.py:404
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr ""
+
+#: src/package-manager.py:486
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:481 src/package-manager.py:603
+#: src/package-manager.py:494 src/package-manager.py:616
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:489
+#: src/package-manager.py:502
 msgid "Search Results"
 msgstr ""
 
-#: src/package-manager.py:510 src/package-manager.py:532
+#: src/package-manager.py:523 src/package-manager.py:545
 msgid "<b>Installing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:512 src/package-manager.py:526
-#: src/package-manager.py:534
+#: src/package-manager.py:525 src/package-manager.py:539
+#: src/package-manager.py:547
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:524
+#: src/package-manager.py:537
 msgid "<b>Removing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:547
+#: src/package-manager.py:560
 msgid "<b>Updating Repository</b>"
 msgstr ""
 
-#: src/package-manager.py:548
+#: src/package-manager.py:561
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: src/package-manager.py:664
+#: src/package-manager.py:677
 msgid "Show Installed Packages"
 msgstr ""
 
-#: src/package-manager.py:665
+#: src/package-manager.py:678
 msgid "Show New Packages"
 msgstr ""
 
-#: src/package-manager.py:666
+#: src/package-manager.py:679
 msgid "Show Upgradable Packages"
 msgstr ""
 
-#: src/package-manager.py:685
+#: src/package-manager.py:698
 msgid "Package to install"
 msgstr ""
 
-#: src/package-manager.py:685
+#: src/package-manager.py:698
 msgid "Show available updates"
 msgstr ""
 
-#: src/package-manager.py:688
+#: src/package-manager.py:701
 msgid "Package Manager is already running!"
 msgstr ""
 
@@ -452,10 +460,10 @@ msgstr ""
 msgid "Update Basket"
 msgstr ""
 
-#: src/BasketDialog.py:134
+#: src/BasketDialog.py:140
 msgid "Total Size: <b>%1</b>"
 msgstr ""
 
-#: src/BasketDialog.py:183 src/BasketDialog.py:185
+#: src/BasketDialog.py:189 src/BasketDialog.py:191
 msgid "Size: "
 msgstr ""

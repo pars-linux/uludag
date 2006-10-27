@@ -386,11 +386,24 @@ class MainApplicationWidget(QWidget):
                 return "0 B"
             return "%.1f %s" % (tpl[0], tpl[1])
 
-        if self.state == install_state or self.state == upgrade_state:
-            text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size with <b>%3</b> extra dependencies of total <b>%4</b> of size in your basket.").arg(len(self.basket.packages)).arg(humanReadableSize(self.basket.packagesSize)).arg(len(self.basket.extraPackages)).arg(humanReadableSize(self.basket.extraPackagesSize))
+        if not self.basket.packages:
+            text = i18n("Currently your basket is empty.")
+
+        elif self.state == install_state or self.state == upgrade_state:
+            text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size ").arg(len(self.basket.packages)).arg(humanReadableSize(self.basket.packagesSize))
+
+            if self.basket.extraPackages:
+                text += i18n("with <b>%3</b> extra dependencies of total <b>%4</b> of size ").arg(len(self.basket.extraPackages)).arg(humanReadableSize(self.basket.extraPackagesSize))
+
+            text += i18n("in your basket.")
 
         elif self.state == remove_state:
-            text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size with <b>%3</b> reverse dependencies of total <b>%4</b> of size in your basket.").arg(len(self.basket.packages)).arg(humanReadableSize(self.basket.packagesSize)).arg(len(self.basket.extraPackages)).arg(humanReadableSize(self.basket.extraPackagesSize))
+            text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size ").arg(len(self.basket.packages)).arg(humanReadableSize(self.basket.packagesSize))
+
+            if self.basket.extraPackages:
+                text += i18n("with <b>%3</b> reverse dependencies of total <b>%4</b> of size ").arg(len(self.basket.extraPackages)).arg(humanReadableSize(self.basket.extraPackagesSize))
+
+            text += i18n("in your basket.")
 
         self.parent.updateStatusBarText(text)
 

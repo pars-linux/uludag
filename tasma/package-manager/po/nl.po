@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-26 23:46+0300\n"
+"POT-Creation-Date: 2006-10-27 09:01+0300\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:508
+#: src/CommonText.py:3 src/package-manager.py:521
 msgid "downloading"
 msgstr "downloaden"
 
@@ -63,7 +63,7 @@ msgstr "Pisi-fout"
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi-pakketbeheer"
 
-#: src/package-manager.py:49 src/package-manager.py:644
+#: src/package-manager.py:49 src/package-manager.py:657
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -175,78 +175,90 @@ msgstr "Pakketgrootte: "
 msgid "Homepage: "
 msgstr "Homepage: "
 
+# mand tonen
 #: src/package-manager.py:390
+#, fuzzy
+msgid "Currently your basket is empty."
+msgstr "Mand tonen"
+
+#: src/package-manager.py:393 src/package-manager.py:401
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-"with <b>%3</b> extra dependencies of total <b>%4</b> of size in your basket."
 msgstr ""
 
-#: src/package-manager.py:393
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-"with <b>%3</b> reverse dependencies of total <b>%4</b> of size in your "
-"basket."
+#: src/package-manager.py:396
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr ""
 
-#: src/package-manager.py:473
+# mand tonen
+#: src/package-manager.py:398 src/package-manager.py:406
+#, fuzzy
+msgid "in your basket."
+msgstr "Mand tonen"
+
+#: src/package-manager.py:404
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr ""
+
+#: src/package-manager.py:486
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:481 src/package-manager.py:603
+#: src/package-manager.py:494 src/package-manager.py:616
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:489
+#: src/package-manager.py:502
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
-#: src/package-manager.py:510 src/package-manager.py:532
+#: src/package-manager.py:523 src/package-manager.py:545
 #, fuzzy
 msgid "<b>Installing Package(s)</b>"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:512 src/package-manager.py:526
-#: src/package-manager.py:534
+#: src/package-manager.py:525 src/package-manager.py:539
+#: src/package-manager.py:547
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:524
+#: src/package-manager.py:537
 #, fuzzy
 msgid "<b>Removing Package(s)</b>"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:547
+#: src/package-manager.py:560
 #, fuzzy
 msgid "<b>Updating Repository</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:548
+#: src/package-manager.py:561
 #, fuzzy
 msgid "Downloading package list of %1"
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:664
+#: src/package-manager.py:677
 msgid "Show Installed Packages"
 msgstr "Geinstalleerde pakketten tonen"
 
-#: src/package-manager.py:665
+#: src/package-manager.py:678
 msgid "Show New Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:666
+#: src/package-manager.py:679
 #, fuzzy
 msgid "Show Upgradable Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:685
+#: src/package-manager.py:698
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:685
+#: src/package-manager.py:698
 msgid "Show available updates"
 msgstr "Beschikbare updates tonen"
 
-#: src/package-manager.py:688
+#: src/package-manager.py:701
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is reeds opgestart!"
 
@@ -475,11 +487,11 @@ msgstr ""
 msgid "Update Basket"
 msgstr ""
 
-#: src/BasketDialog.py:134
+#: src/BasketDialog.py:140
 msgid "Total Size: <b>%1</b>"
 msgstr ""
 
-#: src/BasketDialog.py:183 src/BasketDialog.py:185
+#: src/BasketDialog.py:189 src/BasketDialog.py:191
 #, fuzzy
 msgid "Size: "
 msgstr "Pakketgrootte: "
