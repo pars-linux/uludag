@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-27 09:01+0300\n"
+"POT-Creation-Date: 2006-10-27 09:24+0300\n"
 "PO-Revision-Date: 2006-10-14 00:20+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -457,31 +457,53 @@ msgstr "&Depo Adı"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
 
-#: src/BasketDialog.py:44 src/BasketDialog.py:49
+#: src/BasketDialog.py:45 src/BasketDialog.py:50
 msgid "Basket"
 msgstr "Sepet"
 
-#: src/BasketDialog.py:53
-msgid "Selected packages:"
-msgstr "Seçili paketler:"
+#: src/BasketDialog.py:58
+msgid "Selected package(s) for removal:"
+msgstr "Kaldırılmak üzere seçilmiş paket(ler):"
 
 #: src/BasketDialog.py:59
-msgid "Extra dependencies and mandatory base system upgrades:"
-msgstr "Ekstra bağımlılıklar ve zorunlu taban sistem güncellemeleri"
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
+
+#: src/BasketDialog.py:61
+msgid "Selected package(s) for install:"
+msgstr "Kurulmak üzere seçilmiş paket(ler):"
+
+#: src/BasketDialog.py:62
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Seçili paketlerin ayrıca kurulacak olan ekstra bağımlılıkları:"
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for upgrade:"
+msgstr "Güncellenmek üzere seçilmiş paket(ler):"
 
 #: src/BasketDialog.py:65
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Seçili paketlerin ayrıca güncellenecek olan ekstra bağımlılıkları:"
+
+#: src/BasketDialog.py:73
 msgid "Total Size:"
 msgstr "Toplam Boyut:"
 
-#: src/BasketDialog.py:72
+#: src/BasketDialog.py:80
 msgid "Update Basket"
 msgstr "Sepeti Güncelle"
 
-#: src/BasketDialog.py:140
+#: src/BasketDialog.py:148
 msgid "Total Size: <b>%1</b>"
 msgstr "Toplam Boyut: <b>%1</b>"
 
-#: src/BasketDialog.py:189 src/BasketDialog.py:191
+#: src/BasketDialog.py:197 src/BasketDialog.py:199
 msgid "Size: "
 msgstr "Boyut: "
 
