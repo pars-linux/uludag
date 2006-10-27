@@ -264,6 +264,7 @@ class MainApplicationWidget(QWidget):
         if not part:
             part = self.htmlPart
 
+        self.setCursor(Qt.waitCursor)
         part.begin()
         part.write(head)
         part.write("<style type=\"text/css\">%s</style>" % self.css)
@@ -282,6 +283,7 @@ class MainApplicationWidget(QWidget):
         </script></body></html>
         ''')
         part.end()
+        self.setCursor(Qt.arrowCursor)
 
     def createHTMLForPackages(self,packages):
         result = ''
@@ -387,6 +389,10 @@ class MainApplicationWidget(QWidget):
             if tpl[0] == 0:
                 return "0 B"
             return "%.1f %s" % (tpl[0], tpl[1])
+
+        self.setCursor(Qt.waitCursor)
+        self.basket.update()
+        self.setCursor(Qt.arrowCursor)
 
         if not self.basket.packages:
             text = i18n("Currently your basket is empty.")

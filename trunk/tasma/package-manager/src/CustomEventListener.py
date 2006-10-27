@@ -34,7 +34,6 @@ class CustomEventListener(DOM.EventListener):
 
                 self.parent.updateButtons()
                 if not self.selectingAll:
-                    self.parent.basket.update()
                     self.parent.updateStatusBar()
 
             elif target == "A":
@@ -57,7 +56,6 @@ class CustomEventListener(DOM.EventListener):
                         if reverseSelection or not element.checked():
                             element.click()
                     self.selectingAll = False
-                    self.parent.basket.update()
                     self.parent.updateStatusBar()
                 else:
                     KRun.runURL(KURL(link),"text/html",False,False);
