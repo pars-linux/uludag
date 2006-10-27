@@ -6,6 +6,7 @@ from kdecore import *
 from khtml import *
 
 import pisi
+import Basket
 
 (UPDATE_BASKET, APPLY_OPERATION) = (100,101)
 
@@ -50,13 +51,20 @@ class BasketDialog(QDialog):
 
         layout = QGridLayout(self, 1, 1, 11, 6)
 
-        self.pkgLabel = QLabel(i18n("Selected packages:"), self)
-        layout.addWidget(self.pkgLabel, 0, 0)
-
         self.pkgHBox = QHBox(self)
         layout.addMultiCellWidget(self.pkgHBox, 1, 1, 0, 2)
 
-        self.extraLabel = QLabel(i18n("Extra dependencies and mandatory base system upgrades:"), self)
+        if self.basket.state == Basket.remove_state:
+            self.pkgLabel = QLabel(i18n("Selected package(s) for removal:"), self)
+            self.extraLabel = QLabel(i18n("Reverse dependencies of the selected package(s) that are also going to be removed:"), self)
+        elif self.basket.state == Basket.install_state:
+            self.pkgLabel = QLabel(i18n("Selected package(s) for install:"), self)
+            self.extraLabel = QLabel(i18n("Extra dependencies of the selected package(s) that are also going to be installed:"), self)
+        elif self.basket.state == Basket.upgrade_state:
+            self.pkgLabel = QLabel(i18n("Selected package(s) for upgrade:"), self)
+            self.extraLabel = QLabel(i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:"), self)
+
+        layout.addWidget(self.pkgLabel, 0, 0)
         layout.addWidget(self.extraLabel, 2, 0)
 
         self.depHBox = QHBox(self)

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-27 09:01+0300\n"
+"POT-Creation-Date: 2006-10-27 09:24+0300\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -467,31 +467,56 @@ msgstr "Repository&naam"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
 
-#: src/BasketDialog.py:44 src/BasketDialog.py:49
+#: src/BasketDialog.py:45 src/BasketDialog.py:50
 msgid "Basket"
 msgstr ""
 
-#: src/BasketDialog.py:53
-msgid "Selected packages:"
-msgstr ""
+#: src/BasketDialog.py:58
+#, fuzzy
+msgid "Selected package(s) for removal:"
+msgstr "Te installeren pakket"
 
 #: src/BasketDialog.py:59
-msgid "Extra dependencies and mandatory base system upgrades:"
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
 msgstr ""
 
+#: src/BasketDialog.py:61
+#, fuzzy
+msgid "Selected package(s) for install:"
+msgstr "Te installeren pakket"
+
+#: src/BasketDialog.py:62
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+
+#: src/BasketDialog.py:64
+#, fuzzy
+msgid "Selected package(s) for upgrade:"
+msgstr "Te installeren pakket"
+
 #: src/BasketDialog.py:65
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+
+#: src/BasketDialog.py:73
 msgid "Total Size:"
 msgstr ""
 
-#: src/BasketDialog.py:72
+#: src/BasketDialog.py:80
 msgid "Update Basket"
 msgstr ""
 
-#: src/BasketDialog.py:140
+#: src/BasketDialog.py:148
 msgid "Total Size: <b>%1</b>"
 msgstr ""
 
-#: src/BasketDialog.py:189 src/BasketDialog.py:191
+#: src/BasketDialog.py:197 src/BasketDialog.py:199
 #, fuzzy
 msgid "Size: "
 msgstr "Pakketgrootte: "
