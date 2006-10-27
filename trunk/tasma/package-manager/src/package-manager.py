@@ -343,7 +343,6 @@ class MainApplicationWidget(QWidget):
             else:
                 size = i18n("N\A")
 
-
             if app in self.basket.packages:
                 titleStyle = "background-color:#678DB2"
                 checkState = "checked"
