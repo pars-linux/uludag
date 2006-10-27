@@ -224,6 +224,7 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setText(i18n("Install Package(s)"))
         self.operateAction.setIconSet(loadIconSet("ok"))
         self.state = install_state
+        self.basket.setState(self.state)
         self.listView.setSelected(self.listView.firstChild(),True)
         self.updateStatusBar()
 
@@ -237,6 +238,7 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setText(i18n("Remove Package(s)"))
         self.operateAction.setIconSet(loadIconSet("no"))
         self.state = remove_state
+        self.basket.setState(self.state)
         self.listView.setSelected(self.listView.firstChild(),True)
 
     def upgradeState(self):
@@ -250,6 +252,7 @@ class MainApplicationWidget(QWidget):
             KMessageBox.information(self,i18n("There are no updates available at this time"))
 
         self.state = upgrade_state
+        self.basket.setState(self.state)
 
     def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -364,7 +367,6 @@ class MainApplicationWidget(QWidget):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateView(self,item=None):
-        self.basket.setState(self.state)
         self.updateStatusBar()
 
         # basket may have been emptied from basket dialog
