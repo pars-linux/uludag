@@ -65,37 +65,36 @@ class HelpDialog(QDialog):
 
 
 class serviceItem(KListViewItem):
-    def __init__(self, parent=None, name=None, type='server', state='off', package='', description=''):
+    def __init__(self, parent=None, package='', type='server', state=False, autostart=False, description=''):
         KListViewItem.__init__(self, parent)
 
+        self.package = package
         self.type = type
-        self.status = ''
-        self.service = package
+        self.state = state
+        self.autostart = autostart
         self.description = unicode(description)
 
         self.setText(1, self.description)
         self.setVisible(False)
-        self.setState(state)
 
-    def setState(self, state='off'):
-        self.status = state
-        if self.type == 'server':
-            if state in ['on', 'started']:
-                self.setPixmap(0, loadIcon('gear'))
-            elif state == 'stopped':
-                self.setPixmap(0, loadIcon('player_pause'))
-            else:
-                self.setPixmap(0, loadIcon('no'))
+        self.setState(state)
+        self.setAutoStart(autostart)
+
+    def setState(self, state):
+        self.state = state
+
+        if state:
+            self.setPixmap(0, loadIcon('player_play'))
         else:
-            if state in ['on', 'started']:
-                self.setPixmap(0, loadIcon('gear'))
-            else:
-                self.setPixmap(0, loadIcon('no'))
+            self.setPixmap(0, loadIcon('player_stop'))
+
+    def setAutoStart(self, autostart):
+        self.autostart = autostart
 
     def compare(self, other, col, asc):
-        s1 = self.status in ['on', 'started']
-        s2 = other.status in ['on', 'started']
         if col == 0:
+            s1 = self.state
+            s2 = other.state
             if s1 == s2:
                 return 0
             elif s1 > s2:
@@ -113,9 +112,11 @@ class servicesForm(mainForm):
         self.listServices.setSorting(1)
         self.listServices.setColumnText(0, '')
 
-        self.buttonStart.setIconSet(loadIconSet('gear', size=32))
-        self.buttonPause.setIconSet(loadIconSet('player_pause', size=32))
-        self.buttonStop.setIconSet(loadIconSet('no', size=32))
+        self.buttonStart.setIconSet(loadIconSet('player_play', size=32))
+        self.buttonStop.setIconSet(loadIconSet('player_stop', size=32))
+
+        self.buttonStart.setEnabled(False)
+        self.buttonStop.setEnabled(False)
 
         # Initialize Comar
         self.comar = comar.Link()
@@ -133,7 +134,6 @@ class servicesForm(mainForm):
         self.connect(self.checkServersOnly, SIGNAL('clicked()'), self.slotListServers)
         self.connect(self.listServices, SIGNAL('selectionChanged()'), self.slotSelectionChanged)
         self.connect(self.buttonStart, SIGNAL('clicked()'), self.slotStart)
-        self.connect(self.buttonPause, SIGNAL('clicked()'), self.slotPause)
         self.connect(self.buttonStop, SIGNAL('clicked()'), self.slotStop)
 
     def handleComar(self, reply):
@@ -141,44 +141,54 @@ class servicesForm(mainForm):
             # ask for more
             self.handleComar(self.comar.read_cmd())
         elif reply[0] == self.comar.NOTIFY:
-            # get more information with System.Service.info
+            # get info
             info = reply[2].split('\n')
-            self.getServiceStatus(info[1])
-        elif reply[0] == self.comar.RESULT:
-            info = reply[2].split('\n')
-            if reply[1] == 2:
-                # add to list
-                self.addServiceItem(reply)
-            elif reply[1] == 3:
-                item = self.listServices.firstChild()
-                while item:
-                    if item.service == reply[3]:
-                        # update item
-                        item.setState(info[1])
+            state = info[2] in ['started', 'on']
+            autostart = info[2] in ['stopped', 'on']
+            # locate item and update if neccessary
+            item = self.listServices.firstChild()
+            while item:
+                if item.package == info[1]:
+                    if item.state != state or item.autostart != autostart:
+                        item.setState(state)
+                        item.setAutoStart(autostart)
                         if item == self.listServices.selectedItem():
                             self.updateItemStatus(item)
+                    break
+                item = item.nextSibling()
+            # item is new, add to list
+            if not item:
+                self.comar.call_package('System.Service.info', info[1], id=2)
+                self.handleComar(self.comar.read_cmd())
+        elif reply[0] == self.comar.RESULT:
+            info = reply[2].split('\n')
+            if reply[1] == 2: # System.Service.info
+                self.addServiceItem(reply)
+            elif reply[1] in [3, 4]: # System.Service.{start,stop}
+                state = reply[1] == 3
+                # locate item and update if neccessary
+                item = self.listServices.firstChild()
+                while item:
+                    if item.package == reply[3]:
+                        if item.state != state:
+                            item.setState(state)
+                            if item == self.listServices.selectedItem():
+                                self.updateItemStatus(item)
                         break
                     item = item.nextSibling()
-                if not item:
-                    # new service, add to list
-                    self.addServiceItem(reply)
-            #elif reply[1] == 4:
-            #    # get more information with System.Service.info
-            #    self.getServiceStatus(reply[3])
         elif reply[0] == self.comar.DENIED:
             KMessageBox.error(self, i18n('You are not allowed to do this operation.'), i18n('Access Denied'))
         elif reply[0] == self.comar.ERROR:
             KMessageBox.error(self, i18n('COMAR script execution failed.'), i18n('Script Error'))
         elif reply[0] == self.comar.FAIL:
-            if reply[2] == 'Unable to start service':
-                KMessageBox.error(self, i18n('Unable to start service.'), i18n('Failed'))
-            elif reply[2] == 'Unable to stop service':
-                KMessageBox.error(self, i18n('Unable to stop service.'), i18n('Failed'))
-            else:
-                KMessageBox.error(self, i18n('Unable to complete operation:\n%s') % reply[2], i18n('Failed'))
-            item = self.listServices.selectedItem()
-            if item:
-                self.updateItemStatus(item)
+            if reply[1] in [3, 4]: # System.Service.{start,stop}
+                state = reply[1] == 3
+                if state:
+                    KMessageBox.error(self, i18n('Unable to start service.'), i18n('Failed'))
+                    self.buttonStart.setEnabled(1)
+                else:
+                    KMessageBox.error(self, i18n('Unable to stop service.'), i18n('Failed'))
+                    self.buttonStop.setEnabled(1)
 
     def populateList(self):
         self.comar.call('System.Service.info', id=2)
@@ -186,25 +196,17 @@ class servicesForm(mainForm):
 
     def addServiceItem(self, reply):
         info = reply[2].split('\n')
-        si = serviceItem(self.listServices, reply[3], info[0], info[1], reply[3], info[2])
+
+        state = info[1] in ['started', 'on']
+        autostart = info[1] in ['stopped', 'on']
+
+        si = serviceItem(self.listServices, reply[3], info[0], state, autostart, info[2])
+
         if not self.checkServersOnly.isChecked() or info[0] == 'server':
             si.setVisible(True)
 
-    def getServiceStatus(self, service):
-        item = self.listServices.firstChild()
-        while item:
-            if item.service == service:
-                # Give comar time to update service status.
-                # I'll get rid of this workaround soon
-                time.sleep(3)
-                self.comar.call_package('System.Service.info', item.service, id=3)
-                self.handleComar(self.comar.read_cmd())
-                break
-            item = item.nextSibling()
-
     def updateItemStatus(self, item):
         self.buttonStart.setEnabled(False)
-        self.buttonPause.setEnabled(False)
         self.buttonStop.setEnabled(False)
         self.textInformation.setText('')
 
@@ -213,32 +215,22 @@ class servicesForm(mainForm):
         if not item:
             return
 
-        if item.type == 'server':
+        if item.type in ['server', 'local']:
             QToolTip.add(self.buttonStart,i18n('Start'))
             QToolTip.add(self.buttonStop,i18n('Stop'))
-            QToolTip.add(self.buttonPause,i18n('Pause'))
 
-            if item.status in ['on', 'started']:
-                self.buttonPause.setEnabled(1)
-                self.buttonStop.setEnabled(1)
+            if item.state:
+                self.buttonStop.setEnabled(True)
                 info.append(i18n('%s is running.').replace('%s', item.description))
-            elif item.status == 'stopped':
-                self.buttonStart.setEnabled(1)
-                self.buttonStop.setEnabled(1)
-                info.append(i18n('%s is paused.').replace('%s', item.description))
             else:
-                self.buttonStart.setEnabled(1)
-                info.append(i18n('%s is stopped.').replace('%s', item.description))
+                self.buttonStart.setEnabled(True)
+                info.append(i18n('%s is not running.').replace('%s', item.description))
         else:
-            QToolTip.add(self.buttonStart, i18n('Run on startup'))
-            QToolTip.add(self.buttonStop, i18n('Don\'t run on startup'))
+            QToolTip.add(self.buttonStart, i18n('Execute startup script'))
+            QToolTip.add(self.buttonStop, i18n('Execuete shutdown script'))
 
-            if item.status in ['on', 'started']:
-                self.buttonStop.setEnabled(1)
-                info.append(i18n('%s runs on startup').replace('%s', item.description))
-            else:
-                info.append(i18n('%s does not run on startup').replace('%s', item.description))
-                self.buttonStart.setEnabled(1)
+            self.buttonStop.setEnabled(True)
+            self.buttonStart.setEnabled(True)
 
         info.append('')
 
@@ -263,21 +255,13 @@ class servicesForm(mainForm):
 
     def slotStart(self):
         item = self.listServices.selectedItem()
-        self.buttonStart.setEnabled(0)
-        self.comar.call_package('System.Service.setState', item.service, {'state': 'on'}, id=4)
-
-    def slotPause(self):
-        item = self.listServices.selectedItem()
-        self.buttonPause.setEnabled(0)
-        self.comar.call_package('System.Service.stop', item.service, id=4)
+        self.buttonStart.setEnabled(False)
+        self.comar.call_package('System.Service.start', item.package, id=3)
 
     def slotStop(self):
         item = self.listServices.selectedItem()
-        msg = i18n('If you stop this service, you may have problems.\nAre you sure you want to stop this service?')
-        if item.type != 'server' and KMessageBox.warningYesNo(self, msg, i18n('Warning')) == 4:
-            return
-        self.buttonStop.setEnabled(0)
-        self.comar.call_package('System.Service.setState', item.service, {'state': 'off'}, id=4)
+        self.buttonStop.setEnabled(False)
+        self.comar.call_package('System.Service.stop', item.package, id=4)
 
     """
     def slotHelp(self):
