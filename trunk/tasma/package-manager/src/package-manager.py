@@ -240,6 +240,7 @@ class MainApplicationWidget(QWidget):
         self.state = remove_state
         self.basket.setState(self.state)
         self.listView.setSelected(self.listView.firstChild(),True)
+        self.updateStatusBar()
 
     def upgradeState(self):
         upgradables = pisi.api.list_upgradable()
@@ -253,6 +254,7 @@ class MainApplicationWidget(QWidget):
 
         self.state = upgrade_state
         self.basket.setState(self.state)
+        self.updateStatusBar()
 
     def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -368,8 +370,6 @@ class MainApplicationWidget(QWidget):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateView(self,item=None):
-        self.updateStatusBar()
-
         # basket may have been emptied from basket dialog
         if not self.basket.packages:
             self.basketAction.setEnabled(False)
