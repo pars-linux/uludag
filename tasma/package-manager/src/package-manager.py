@@ -428,7 +428,7 @@ class MainApplicationWidget(QWidget):
         self.updateView()
 
         if action == BasketDialog.UPDATE_BASKET:
-            pass
+            self.updateStatusBar()
         elif action == BasketDialog.APPLY_OPERATION:
             self.takeAction()
 
