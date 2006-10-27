@@ -43,7 +43,7 @@ class SelectEventListener(DOM.EventListener):
 class BasketDialog(QDialog):
     def __init__(self, parent, basket):
         QDialog.__init__(self,parent,str(i18n("Basket")),True)
-
+        self.parent = parent
         self.basket = basket
         self.totalSize = 0
 
