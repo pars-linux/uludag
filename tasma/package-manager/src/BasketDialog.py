@@ -128,7 +128,7 @@ class BasketDialog(QDialog):
         self.createHTML(self.basket.packages, self.pkgHtmlPart, True)
 
     def createExtraPackagesList(self):
-        self.parent.updateStatusBar()
+        self.parent.basket.update()
 
         if self.basket.packages:
             self.applyButton.setEnabled(True)
