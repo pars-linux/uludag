@@ -75,6 +75,7 @@ class serviceItem(KListViewItem):
         self.description = unicode(description)
 
         self.setText(1, self.description)
+
         self.setVisible(False)
 
         self.setState(state)
@@ -90,6 +91,10 @@ class serviceItem(KListViewItem):
 
     def setAutoStart(self, autostart):
         self.autostart = autostart
+        if self.autostart:
+            self.setText(2, i18n('Yes'))
+        else:
+            self.setText(2, i18n('No'))
 
     def compare(self, other, col, asc):
         if col == 0:
@@ -115,6 +120,8 @@ class servicesForm(mainForm):
         self.buttonStart.setIconSet(loadIconSet('player_play', size=32))
         self.buttonStop.setIconSet(loadIconSet('player_stop', size=32))
 
+        self.radioAutoRun.setEnabled(False)
+        self.radioNoAutoRun.setEnabled(False)
         self.buttonStart.setEnabled(False)
         self.buttonStop.setEnabled(False)
 
@@ -135,6 +142,8 @@ class servicesForm(mainForm):
         self.connect(self.listServices, SIGNAL('selectionChanged()'), self.slotSelectionChanged)
         self.connect(self.buttonStart, SIGNAL('clicked()'), self.slotStart)
         self.connect(self.buttonStop, SIGNAL('clicked()'), self.slotStop)
+        self.connect(self.radioAutoRun, SIGNAL('clicked()'), self.slotOn)
+        self.connect(self.radioNoAutoRun, SIGNAL('clicked()'), self.slotOff)
 
     def handleComar(self, reply):
         if reply[0] == self.comar.RESULT_START:
@@ -208,7 +217,7 @@ class servicesForm(mainForm):
     def updateItemStatus(self, item):
         self.buttonStart.setEnabled(False)
         self.buttonStop.setEnabled(False)
-        self.textInformation.setText('')
+        self.textInformation.setText(i18n('Select a service from list.'))
 
         info = []
 
@@ -216,8 +225,8 @@ class servicesForm(mainForm):
             return
 
         if item.type in ['server', 'local']:
-            QToolTip.add(self.buttonStart,i18n('Start'))
-            QToolTip.add(self.buttonStop,i18n('Stop'))
+            QToolTip.add(self.buttonStart, i18n('Start'))
+            QToolTip.add(self.buttonStop, i18n('Stop'))
 
             if item.state:
                 self.buttonStop.setEnabled(True)
@@ -229,8 +238,19 @@ class servicesForm(mainForm):
             QToolTip.add(self.buttonStart, i18n('Execute startup script'))
             QToolTip.add(self.buttonStop, i18n('Execuete shutdown script'))
 
+            info.append(item.description)
+
             self.buttonStop.setEnabled(True)
             self.buttonStart.setEnabled(True)
+
+        self.radioAutoRun.setEnabled(True)
+        self.radioAutoRun.setChecked(False)
+        self.radioNoAutoRun.setEnabled(True)
+        self.radioNoAutoRun.setChecked(False)
+        if item.autostart:
+            self.radioAutoRun.setChecked(True)
+        else:
+            self.radioNoAutoRun.setChecked(True)
 
         info.append('')
 
@@ -260,8 +280,28 @@ class servicesForm(mainForm):
 
     def slotStop(self):
         item = self.listServices.selectedItem()
+        if item.type != 'server' and not self.confirmStop():
+            return
         self.buttonStop.setEnabled(False)
         self.comar.call_package('System.Service.stop', item.package, id=4)
+
+    def slotOn(self):
+        item = self.listServices.selectedItem()
+        self.buttonStop.setEnabled(False)
+        self.comar.call_package('System.Service.setState', item.package, {'state': 'on'}, id=5)
+
+    def slotOff(self):
+        item = self.listServices.selectedItem()
+        if item.type != 'server' and not self.confirmStop():
+            self.radioAutoRun.setChecked(True)
+            self.radioNoAutoRun.setChecked(False)
+            return
+        self.buttonStop.setEnabled(False)
+        self.comar.call_package('System.Service.setState', item.package, {'state': 'off'}, id=5)
+
+    def confirmStop(self):
+        msg = i18n('If you stop this service, you may have problems.\nAre you sure you want to stop this service?')
+        return KMessageBox.warningYesNo(self, msg, i18n('Warning')) != 4
 
     """
     def slotHelp(self):
