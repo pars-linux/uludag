@@ -79,6 +79,7 @@ class Commander(QObject):
         # some misbehaviour is seen, comar.log is always there to look.
         elif reply[0] == self.comar.com.ERROR:
             self.parent.finished("System.Manager.cancelled")
+            return
         elif reply[0] == self.comar.com.FAIL:
             if reply[2] == "System.Manager.cancelled":
                 self.parent.finished(reply[2])
@@ -144,3 +145,6 @@ class Commander(QObject):
 
     def cancel(self):
         self.comar.cancel()
+
+    def checkConflicts(self, packages):
+        return pisi.api.generate_conflicts(packages)

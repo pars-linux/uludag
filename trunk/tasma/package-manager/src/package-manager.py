@@ -434,15 +434,40 @@ class MainApplicationWidget(QWidget):
 
         basketDialog.deleteLater()
 
-    def takeAction(self):
-        self.progressDialog.show()
+    def conflictCheckPass(self):
+        (C, D, pkg_conflicts) = self.command.checkConflicts(self.basket.packages)
 
+        conflicts_within = list(D)
+        if conflicts_within:
+            msg = i18n("Selected packages [%1] are in conflict with each other. These packages can not be installed together.").arg(", ".join(conflicts_within))
+            self.showErrorMessage(msg, i18n("Conflict Error"))
+            return False
+
+        if pkg_conflicts:
+            msg = i18n("The following packages conflicts:\n")
+            for pkg in pkg_conflicts.keys():
+                msg += i18n("%1 conflicts with: [%2]\n").arg(pkg).arg(", ".join(pkg_conflicts[pkg]))
+            msg += i18n("\nRemove the following conflicting packages?")
+            if self.showConfirmMessage(msg, i18n("Conflict Error")) == KMessageBox.No:
+                return False
+
+        return True
+
+    def takeAction(self):
         if self.state == remove_state:
             self.command.remove(self.basket.packages)
         elif self.state == install_state:
+            if not self.conflictCheckPass():
+                self.finished("System.Manager.cancelled")
+                return
             self.command.install(self.basket.packages)
         elif self.state == upgrade_state:
+            if not self.conflictCheckPass():
+                self.finished("System.Manager.cancelled")
+                return
             self.command.updatePackage(self.basket.packages)
+
+        self.progressDialog.show()
 
     def updateListing(self, reset=True):
         if self.state == install_state:
@@ -572,8 +597,11 @@ class MainApplicationWidget(QWidget):
             if self.progressDialog.totalPackages == 1 and len(data) > 1:
                 self.progressDialog.totalPackages = len(data)
 
-    def showErrorMessage(self, message):
-        KMessageBox.error(self,message,i18n("Error"))
+    def showErrorMessage(self, message, error=i18n("Error")):
+        KMessageBox.error(self, message, error)
+
+    def showConfirmMessage(self, message, error=i18n("Error")):
+        return KMessageBox.questionYesNo(self, message, error)
 
     def finished(self, command=None):
 
