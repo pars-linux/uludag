@@ -150,24 +150,22 @@ class servicesForm(mainForm):
             # ask for more
             self.handleComar(self.comar.read_cmd())
         elif reply.command == 'notify':
-            # get info
-            info = reply.data.split('\n')
             # locate item
-            item = self.findItem(info[1])
+            item = self.findItem(reply.script)
             # update if neccessary
-            if info[2] in ['started', 'stopped']:
-                state = info[2] == 'started'
+            if reply.data in ['started', 'stopped']:
+                state = reply.data == 'started'
                 if item.state != state:
                     item.setState(state)
                     if item == self.listServices.selectedItem():
                         self.updateItemStatus(item)
-            elif info[2] in ['on', 'off']:
-                autostart = info[2] == 'on'
+            elif reply.data in ['on', 'off']:
+                autostart = reply.data == 'on'
                 if item.autostart != autostart:
                     item.setAutoStart(autostart)
             # item is new, add to list
             if not item:
-                self.comar.call_package('System.Service.info', info[1], id=2)
+                self.comar.call_package('System.Service.info', reply.script, id=2)
                 self.handleComar(self.comar.read_cmd())
         elif reply.command == 'result':
             info = reply.data.split('\n')
