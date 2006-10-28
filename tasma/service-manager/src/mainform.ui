@@ -125,23 +125,6 @@
                         <set>WordBreak|AlignTop|AlignLeft</set>
                     </property>
                 </widget>
-                <spacer row="3" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>spacer2</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>101</width>
-                            <height>220</height>
-                        </size>
-                    </property>
-                </spacer>
                 <widget class="QButtonGroup" row="2" column="0" rowspan="1" colspan="2">
                     <property name="name">
                         <cstring>buttonGroup2</cstring>
@@ -183,7 +166,24 @@
                         </widget>
                     </grid>
                 </widget>
-                <spacer row="1" column="0">
+                <spacer row="1" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>101</width>
+                            <height>150</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="3" column="0" rowspan="1" colspan="2">
                     <property name="name">
                         <cstring>spacer2_2</cstring>
                     </property>
@@ -195,8 +195,8 @@
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>20</width>
-                            <height>20</height>
+                            <width>41</width>
+                            <height>30</height>
                         </size>
                     </property>
                 </spacer>

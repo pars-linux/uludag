@@ -26,7 +26,7 @@ from mainform import mainForm
 # COMAR
 import comar
 
-version = '1.1'
+version = '1.1.1'
 
 def AboutData():
     about_data = KAboutData('service-manager',
@@ -146,52 +146,49 @@ class servicesForm(mainForm):
         self.connect(self.radioNoAutoRun, SIGNAL('clicked()'), self.slotOff)
 
     def handleComar(self, reply):
-        if reply[0] == self.comar.RESULT_START:
+        if reply.command == 'start':
             # ask for more
             self.handleComar(self.comar.read_cmd())
-        elif reply[0] == self.comar.NOTIFY:
+        elif reply.command == 'notify':
             # get info
-            info = reply[2].split('\n')
-            state = info[2] in ['started', 'on']
-            autostart = info[2] in ['stopped', 'on']
-            # locate item and update if neccessary
-            item = self.listServices.firstChild()
-            while item:
-                if item.package == info[1]:
-                    if item.state != state or item.autostart != autostart:
-                        item.setState(state)
-                        item.setAutoStart(autostart)
-                        if item == self.listServices.selectedItem():
-                            self.updateItemStatus(item)
-                    break
-                item = item.nextSibling()
+            info = reply.data.split('\n')
+            # locate item
+            item = self.findItem(info[1])
+            # update if neccessary
+            if info[2] in ['started', 'stopped']:
+                state = info[2] == 'started'
+                if item.state != state:
+                    item.setState(state)
+                    if item == self.listServices.selectedItem():
+                        self.updateItemStatus(item)
+            elif info[2] in ['on', 'off']:
+                autostart = info[2] == 'on'
+                if item.autostart != autostart:
+                    item.setAutoStart(autostart)
             # item is new, add to list
             if not item:
                 self.comar.call_package('System.Service.info', info[1], id=2)
                 self.handleComar(self.comar.read_cmd())
-        elif reply[0] == self.comar.RESULT:
-            info = reply[2].split('\n')
-            if reply[1] == 2: # System.Service.info
+        elif reply.command == 'result':
+            info = reply.data.split('\n')
+            if reply.id == 2: # System.Service.info
                 self.addServiceItem(reply)
-            elif reply[1] in [3, 4]: # System.Service.{start,stop}
-                state = reply[1] == 3
-                # locate item and update if neccessary
-                item = self.listServices.firstChild()
-                while item:
-                    if item.package == reply[3]:
-                        if item.state != state:
-                            item.setState(state)
-                            if item == self.listServices.selectedItem():
-                                self.updateItemStatus(item)
-                        break
-                    item = item.nextSibling()
-        elif reply[0] == self.comar.DENIED:
+            elif reply.id in [3, 4]: # System.Service.{start,stop}
+                state = reply.id == 3
+                # locate item
+                item = self.findItem(reply.script)
+                # update if neccessary
+                if item.state != state:
+                    item.setState(state)
+                    if item == self.listServices.selectedItem():
+                        self.updateItemStatus(item)
+        elif reply.command == 'denied':
             KMessageBox.error(self, i18n('You are not allowed to do this operation.'), i18n('Access Denied'))
-        elif reply[0] == self.comar.ERROR:
+        elif reply.command == 'error':
             KMessageBox.error(self, i18n('COMAR script execution failed.'), i18n('Script Error'))
-        elif reply[0] == self.comar.FAIL:
-            if reply[1] in [3, 4]: # System.Service.{start,stop}
-                state = reply[1] == 3
+        elif reply.command == 'fail':
+            if reply.id in [3, 4]: # System.Service.{start,stop}
+                state = reply.id == 3
                 if state:
                     KMessageBox.error(self, i18n('Unable to start service.'), i18n('Failed'))
                     self.buttonStart.setEnabled(1)
@@ -203,13 +200,21 @@ class servicesForm(mainForm):
         self.comar.call('System.Service.info', id=2)
         self.handleComar(self.comar.read_cmd())
 
+    def findItem(self, package):
+        item = self.listServices.firstChild()
+        while item:
+            if item.package == package:
+                return item
+            item = item.nextSibling()
+        return None
+
     def addServiceItem(self, reply):
-        info = reply[2].split('\n')
+        info = reply.data.split('\n')
 
         state = info[1] in ['started', 'on']
         autostart = info[1] in ['stopped', 'on']
 
-        si = serviceItem(self.listServices, reply[3], info[0], state, autostart, info[2])
+        si = serviceItem(self.listServices, reply.script, info[0], state, autostart, info[2])
 
         if not self.checkServersOnly.isChecked() or info[0] == 'server':
             si.setVisible(True)
