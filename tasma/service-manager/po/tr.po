@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: service-manager 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-28 01:20+0300\n"
+"POT-Creation-Date: 2006-10-28 04:22+0300\n"
 "PO-Revision-Date: 2006-04-10 12:02+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,72 +15,100 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/service-manager.py:55 src/service-manager.py:306 src/mainform.py:71
+#: src/service-manager.py:55 src/service-manager.py:346 src/mainform.py:94
 msgid "Service Manager"
 msgstr "Servis Yöneticisi"
 
-#: src/service-manager.py:180
+#: src/service-manager.py:189
 msgid "You are not allowed to do this operation."
 msgstr "Bu işlemi yapmaya yetkiniz yok."
 
-#: src/service-manager.py:180
+#: src/service-manager.py:189
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
 
-#: src/service-manager.py:182
+#: src/service-manager.py:191
 msgid "COMAR script execution failed."
 msgstr "COMAR betiği çalıştırılamadı."
 
-#: src/service-manager.py:182
+#: src/service-manager.py:191
 msgid "Script Error"
 msgstr "Betik Hatası"
 
-#: src/service-manager.py:187
+#: src/service-manager.py:196
 msgid "Unable to start service."
 msgstr "Servis başlatılamıyor."
 
-#: src/service-manager.py:187 src/service-manager.py:190
+#: src/service-manager.py:196 src/service-manager.py:199
 msgid "Failed"
 msgstr "Başarısız"
 
-#: src/service-manager.py:190
+#: src/service-manager.py:199
 msgid "Unable to stop service."
 msgstr "Servis sonlandırılamıyor."
 
-#: src/service-manager.py:219 src/mainform.py:76
+#: src/service-manager.py:220 src/mainform.py:102
+msgid "Select a service from list."
+msgstr "Listeden bir servis seçin."
+
+#: src/service-manager.py:228 src/mainform.py:99
 msgid "Start"
 msgstr "Başlat"
 
-#: src/service-manager.py:224
+#: src/service-manager.py:233
 #, python-format
 msgid "%s is running."
 msgstr "%s çalışıyor."
 
-#: src/service-manager.py:227
+#: src/service-manager.py:236
 #, python-format
 msgid "%s is not running."
 msgstr "%s çalışmıyor."
 
-#: src/service-manager.py:229
+#: src/service-manager.py:238
 msgid "Execute startup script"
 msgstr "Başlangıç betiğini çalıştır"
 
-#: src/service-manager.py:230
+#: src/service-manager.py:239
 msgid "Execuete shutdown script"
 msgstr "Kapanış betiğini çalıştır"
 
-#: src/service-manager.py:301
+#: src/service-manager.py:303
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"Bu servisi durdurursanız, problem yaşayabilirsiniz.\n"
+"Servisi durdurmak istediğinizden emin misiniz?"
+
+#: src/service-manager.py:341
 msgid "Service Manager is already running!"
 msgstr "Servis Yöneticisi zaten çalışıyor!"
 
-#: src/mainform.py:29 src/mainform.py:73
+#: src/mainform.py:28 src/mainform.py:95
+msgid "1"
+msgstr ""
+
+#: src/mainform.py:29 src/mainform.py:96
 msgid "Service"
 msgstr "Servis"
 
-#: src/mainform.py:79
+#: src/mainform.py:30 src/mainform.py:97
+msgid "Run on Startup"
+msgstr "Açılışta Çalıştır"
+
+#: src/mainform.py:104
+msgid "Run on startup."
+msgstr "Açılışta çalıştır."
+
+#: src/mainform.py:105
+msgid "Don't run on startup."
+msgstr "Açılışta çalıştırma"
+
+#: src/mainform.py:106
 msgid "&List servers only."
 msgstr "&Sadece sunucuları listele"
 
-#: src/mainform.py:80
+#: src/mainform.py:107
 msgid "Alt+L"
 msgstr "Alt+L"

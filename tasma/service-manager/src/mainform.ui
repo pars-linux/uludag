@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>513</width>
+            <width>590</width>
             <height>431</height>
         </rect>
     </property>
@@ -22,7 +22,7 @@
         <widget class="KListView" row="0" column="0">
             <column>
                 <property name="text">
-                    <string></string>
+                    <string>1</string>
                 </property>
                 <property name="clickable">
                     <bool>true</bool>
@@ -42,6 +42,17 @@
                     <bool>true</bool>
                 </property>
             </column>
+            <column>
+                <property name="text">
+                    <string>Run on Startup</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
             <property name="name">
                 <cstring>listServices</cstring>
             </property>
@@ -52,6 +63,12 @@
         <widget class="QFrame" row="0" column="1">
             <property name="name">
                 <cstring>frame3</cstring>
+            </property>
+            <property name="minimumSize">
+                <size>
+                    <width>180</width>
+                    <height>0</height>
+                </size>
             </property>
             <property name="maximumSize">
                 <size>
@@ -69,18 +86,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>textInformation</cstring>
-                    </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                    <property name="alignment">
-                        <set>WordBreak|AlignTop|AlignLeft</set>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="2" column="0">
+                <widget class="QPushButton" row="4" column="0">
                     <property name="name">
                         <cstring>buttonStart</cstring>
                     </property>
@@ -94,7 +100,7 @@
                         <string>Start</string>
                     </property>
                 </widget>
-                <widget class="QPushButton" row="2" column="1">
+                <widget class="QPushButton" row="4" column="1">
                     <property name="name">
                         <cstring>buttonStop</cstring>
                     </property>
@@ -108,7 +114,18 @@
                         <string>Stop</string>
                     </property>
                 </widget>
-                <spacer row="1" column="0" rowspan="1" colspan="2">
+                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>textInformation</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Select a service from list.</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignTop|AlignLeft</set>
+                    </property>
+                </widget>
+                <spacer row="3" column="0" rowspan="1" colspan="2">
                     <property name="name">
                         <cstring>spacer2</cstring>
                     </property>
@@ -121,7 +138,65 @@
                     <property name="sizeHint">
                         <size>
                             <width>101</width>
-                            <height>100</height>
+                            <height>220</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QButtonGroup" row="2" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>buttonGroup2</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>NoFrame</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="title">
+                        <string></string>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
+                        </property>
+                        <widget class="QRadioButton" row="0" column="0">
+                            <property name="name">
+                                <cstring>radioAutoRun</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Run on startup.</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton" row="1" column="0">
+                            <property name="name">
+                                <cstring>radioNoAutoRun</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Don't run on startup.</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <spacer row="1" column="0">
+                    <property name="name">
+                        <cstring>spacer2_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
                         </size>
                     </property>
                 </spacer>
