@@ -12,7 +12,7 @@
 #e-mail message templates for mailer module..
 
 error_message = """\
-From: Derleme =?utf-8?q?=C3=87iftli=C4=9Fi?= <%(mailFrom)s>
+From: Pardus Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [buildfarm] %(type)s: %(subject)s
@@ -24,42 +24,40 @@ Content-Type: multipart/alternative; boundary="boundary42"
 Content-Type: text/plain;
             charset="utf-8"
 
- Merhaba,
+Dear developer
 
- Bu ileti derleme çiftliği tarafından otomatik olarak gönderilmektedir.
+This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
- Sorumlusu '%(recipientName)s' olan '%(pspec)s' dosyası işlenirken olmaması gereken bir şeyler oldu. Hata mesajı şöyle:
+An error occured while processing the file '%(pspec)s' (maintainer: %(recipientName)s). Error log is as follows:
 
 --------------------------------------------------------------------------
 %(message)s
 --------------------------------------------------------------------------
 
- Olaydan önce tutulan kayıtların son 20 satırı ise şöyle idi:
+The last 20 lines of the log before the error happens is as follows:
 
 --------------------------------------------------------------------------
 %(log)s
 --------------------------------------------------------------------------
 
- Kayıt dosyası: http://paketler.pardus.org.tr/logs/%(packagename)s.log
+Log file: http://paketler.pardus.org.tr/logs/%(packagename)s.log
 
- Kolay gelsin.
- (Vallahi ben bir şey yapmadım..)
-
+Happy hacking!
 
 --boundary42
 Content-Type: text/html;
             charset="utf-8"
 
-<p> Merhaba,
+<p>Dear developer
 
-<p> Bu ileti derleme çiftliği tarafından otomatik olarak gönderilmektedir.
+<p>This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-<p> Sorumlusu '<b>%(recipientName)s</b>' olan '<b>%(pspec)s</b>' dosyası işlenirken olmaması gereken bir şeyler oldu. Hata mesajı şöyle:
+<p>An error occured while processing the file '<b>%(pspec)s</b>' (maintainer: <b>%(recipientName)s</b>). Error log is as follows:
 
 <p><div align=center>
     <table bgcolor=black width=100%% cellpadding=10 border=0>
         <tr>
-            <td bgcolor=orangered><b>Hata Mesajı</b></td>
+            <td bgcolor=orangered><b>Error log</b></td>
         </tr>
         <tr>
             <td bgcolor=ivory>
@@ -72,12 +70,12 @@ Content-Type: text/html;
 </div>
 
 
-<p> Olaydan önce tutulan kayıtların son 20 satırı ise şöyle idi:
+<p>The last 20 lines of the log before the error happens is as follows:
 
 <p><div align=center>
     <table bgcolor=black width=100%% cellpadding=10 border=0>
         <tr>
-            <td bgcolor=orange>cat "<b>Kayıt dosyası</b>" | tail -n 20</td>
+            <td bgcolor=orange>cat "<b>Log file</b>" | tail -n 20</td>
         </tr>
         <tr>
             <td bgcolor=ivory>
@@ -89,28 +87,27 @@ Content-Type: text/html;
     </table>
 </div>
 
-<p> Kayıt dosyası: <a
+<p>Log file: <a
 href="http://paketler.pardus.org.tr/logs/%(packagename)s.log">http://paketler.pardus.org.tr/logs/%(packagename)s.log</a>.
 
-<p> Kolay gelsin.<br> (Vallahi ben bir şey yapmadım..)
+<p>Happy hacking!<br>
 
 --boundary42--
 """
 
 info_message = """\
-From: Derleme =?utf-8?q?=C3=87iftli=C4=9Fi?= <%(mailFrom)s>
+From: Pardus Buildfarm  <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [buildfarm] %(subject)s
 Content-Type: text/plain;
             charset="utf-8"
 
- Merhaba,
+Dear developer
 
- Bu ileti derleme çiftliği tarafından aşağıdaki mesajı size iletmek için otomatik olarak gönderildi:
+This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
- %(message)s
+%(message)s
 
-
- İyi çalışmalar.
+Happy hacking!
 """
