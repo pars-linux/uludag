@@ -28,7 +28,7 @@ Dear developer
 
 This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-An error occured while processing the file '%(pspec)s' (maintainer: %(recipientName)s). Error log is as follows:
+An error occured while processing the file '%(pspec)s' (maintainer: '%(recipientName)s'). Error log is as follows:
 
 --------------------------------------------------------------------------
 %(message)s
