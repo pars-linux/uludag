@@ -109,11 +109,13 @@ class BasketDialog(QDialog):
     def updateBasket(self):
         self.pkgHtmlPart = None
         self.depHtmlPart = None
+        self.hide()
         self.done(UPDATE_BASKET)
 
     def applyOperation(self):
         self.pkgHtmlPart = None
         self.depHtmlPart = None
+        self.hide()
         self.done(APPLY_OPERATION)
 
     def registerEventListener(self):

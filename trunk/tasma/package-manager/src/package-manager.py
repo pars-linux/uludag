@@ -101,6 +101,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog = Progress.Progress(self)
 
         self.componentDict = {}
+        self.lastSelectedComponent = None
         self.state = install_state
         self.basket = Basket.Basket()
 
@@ -215,6 +216,7 @@ class MainApplicationWidget(QWidget):
         self.parent.showUpgradeAction.setChecked(False)
 
     def installState(self, reset=True):
+        self.setCursor(Qt.waitCursor)
         if reset:
             self.resetState()
         self.parent.showNewAction.setChecked(True)
@@ -225,10 +227,12 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setIconSet(loadIconSet("ok"))
         self.state = install_state
         self.basket.setState(self.state)
-        self.listView.setSelected(self.listView.firstChild(),True)
+        self.setLastSelected()
         self.updateStatusBar()
+        self.setCursor(Qt.arrowCursor)
 
     def removeState(self, reset=True):
+        self.setCursor(Qt.waitCursor)
         if reset:
             self.resetState()
         self.parent.showInstalledAction.setChecked(True)
@@ -239,15 +243,17 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setIconSet(loadIconSet("no"))
         self.state = remove_state
         self.basket.setState(self.state)
-        self.listView.setSelected(self.listView.firstChild(),True)
+        self.setLastSelected()
         self.updateStatusBar()
+        self.setCursor(Qt.arrowCursor)
 
     def upgradeState(self):
+        self.setCursor(Qt.waitCursor)
         upgradables = pisi.api.list_upgradable()
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
-        self.listView.setSelected(self.listView.firstChild(),True)
+        self.setLastSelected()
 
         if not upgradables and self.state != upgrade_state:
             KMessageBox.information(self,i18n("There are no updates available at this time"))
@@ -255,6 +261,7 @@ class MainApplicationWidget(QWidget):
         self.state = upgrade_state
         self.basket.setState(self.state)
         self.updateStatusBar()
+        self.setCursor(Qt.arrowCursor)
 
     def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -369,9 +376,22 @@ class MainApplicationWidget(QWidget):
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
+    def setLastSelected(self):
+        item = self.listView.firstChild()
+        for i in self.componentDict.keys():
+            if self.componentDict[i].name == self.lastSelectedComponent:
+                item = i
+                break
+
+        self.listView.setSelected(item, True)
+        return item
+
     def refreshComponentList(self, item):
         try:
+            self.setCursor(Qt.waitCursor)
             self.createHTML(self.componentDict[item].packages)
+            self.lastSelectedComponent = self.componentDict[item].name
+            self.setCursor(Qt.arrowCursor)
         # initialization and search state listview items are not components
         except KeyError:
             pass
@@ -419,16 +439,13 @@ class MainApplicationWidget(QWidget):
     def showBasket(self):
         basketDialog = BasketDialog.BasketDialog(self, self.basket)
         action = basketDialog.exec_loop()
-        if not self.basket.packages:
-            self.basketAction.setEnabled(False)
-            self.operateAction.setEnabled(False)
-        self.listView.setSelected(self.listView.firstChild(),True)
-
+        self.processEvents()
         if action == BasketDialog.UPDATE_BASKET:
             self.updateStatusBar()
         elif action == BasketDialog.APPLY_OPERATION:
             self.takeAction()
 
+        self.refreshComponentList(self.setLastSelected())
         basketDialog.deleteLater()
 
     def conflictCheckPass(self):
