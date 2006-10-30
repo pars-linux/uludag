@@ -440,11 +440,13 @@ class MainApplicationWidget(QWidget):
         basketDialog = BasketDialog.BasketDialog(self, self.basket)
         action = basketDialog.exec_loop()
         self.processEvents()
+
         if action == BasketDialog.UPDATE_BASKET:
             self.updateStatusBar()
         elif action == BasketDialog.APPLY_OPERATION:
             self.takeAction()
 
+        self.updateButtons()
         self.refreshComponentList(self.setLastSelected())
         basketDialog.deleteLater()
 
