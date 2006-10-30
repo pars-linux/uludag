@@ -466,7 +466,7 @@ class MainApplicationWidget(QWidget):
 
         self.progressDialog.show()
 
-    def updateListing(self, reset=True):
+    def refreshState(self, reset=True):
         if self.state == install_state:
             self.installState(reset)
         elif self.state == remove_state:
@@ -618,7 +618,7 @@ class MainApplicationWidget(QWidget):
                        "System.Manager.installPackage",
                        "System.Manager.removePackage",
                        "System.Manager.cancelled"]:
-            self.updateListing()
+            self.refreshState()
 
         self.progressDialog.closeForced()
         self.progressDialog.reset()
@@ -640,7 +640,7 @@ class MainApplicationWidget(QWidget):
             self.createSearchResults(result)
         else:
             self.timer.stop()
-            self.updateListing(reset=False)
+            self.refreshState(reset=False)
 
     def searchPackageName(self, query):
         packages = []
