@@ -562,7 +562,7 @@ class UserStack(QVBox):
         self.link.call("User.Manager.addUser", dict, 3)
     
     def slotAddReply(self, reply):
-        if reply.command == "denied":
+        if reply.command == "result":
             dict = self.adddict
             self.parent().browse.userModified(int(reply.data), dict["name"], dict["realname"])
             self.parent().slotCancel()
