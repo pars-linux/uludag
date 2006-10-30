@@ -15,6 +15,7 @@ from kdecore import *
 from kdeui import *
 
 from utility import getIconSet
+from utility import HelpDialog
 
 
 class UserItem(QListViewItem):
@@ -85,6 +86,10 @@ class BrowseStack(QVBox):
         self.delete_but = but
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+        bar.addSeparator()
+        but = QToolButton(getIconSet("help.png"), i18n("Help"), "lala", self.slotHelp, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
         
         lab = QLabel("", bar)
         bar.setStretchableWidget(lab)
@@ -123,6 +128,10 @@ class BrowseStack(QVBox):
         link.call("User.Manager.groupList", id=2)
         
         self.slotSelect()
+    
+    def slotHelp(self):
+        help = HelpDialog("user-manager", i18n("User Manager Help"), self)
+        help.show()
     
     def slotDelete(self):
         if self.tab.currentPageIndex() == 0:
