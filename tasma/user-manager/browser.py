@@ -197,17 +197,17 @@ class BrowseStack(QVBox):
         self.slotSelect()
     
     def comarUsers(self, reply):
-        if reply[0] != self.link.RESULT:
+        if reply.command != "result":
             return
-        for user in unicode(reply[2]).split("\n"):
+        for user in unicode(reply.data).split("\n"):
             item = UserItem(self.users, user)
             if item.uid < 1000 or item.uid > 65000:
                 item.setVisible(False)
     
     def comarGroups(self, reply):
-        if reply[0] != self.link.RESULT:
+        if reply.command != "result":
             return
-        for group in unicode(reply[2]).split("\n"):
+        for group in unicode(reply.data).split("\n"):
             item = GroupItem(self.groups, group)
             if item.gid < 1000 or item.gid > 65000:
                 item.setVisible(False)

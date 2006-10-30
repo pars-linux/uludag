@@ -21,7 +21,7 @@ from utility import *
 class UserManager(QWidgetStack):
     def __init__(self, parent):
         link = comar.Link()
-        link.localize(languageCode())
+        link.localize()
         self.link = link
         self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
@@ -34,7 +34,7 @@ class UserManager(QWidgetStack):
     
     def slotComar(self, sock):
         reply = self.link.read_cmd()
-        id = reply[1]
+        id = reply.id
         if id == 1:
             self.browse.comarUsers(reply)
         elif id == 2:
