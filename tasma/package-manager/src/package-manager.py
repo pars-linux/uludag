@@ -158,7 +158,7 @@ class MainApplicationWidget(QWidget):
         self.layout.setColStretch(1,2)
         self.layout.setColStretch(2,6)
 
-        self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.updateView)
+        self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
@@ -369,17 +369,11 @@ class MainApplicationWidget(QWidget):
         node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
-    def updateView(self,item=None):
-        # basket may have been emptied from basket dialog
-        if not self.basket.packages:
-            self.basketAction.setEnabled(False)
-            self.operateAction.setEnabled(False)
-
+    def refreshComponentList(self, item):
         try:
-            if not item:
-                item = self.listView.currentItem()
             self.createHTML(self.componentDict[item].packages)
-        except:
+        # initialization and search state listview items are not components
+        except KeyError:
             pass
 
     def updateStatusBar(self):
@@ -425,7 +419,10 @@ class MainApplicationWidget(QWidget):
     def showBasket(self):
         basketDialog = BasketDialog.BasketDialog(self, self.basket)
         action = basketDialog.exec_loop()
-        self.updateView()
+        if not self.basket.packages:
+            self.basketAction.setEnabled(False)
+            self.operateAction.setEnabled(False)
+        self.listView.setSelected(self.listView.firstChild(),True)
 
         if action == BasketDialog.UPDATE_BASKET:
             self.updateStatusBar()
