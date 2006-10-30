@@ -58,6 +58,7 @@ app_data = [
     'groupedit.py',
     'utility.py',
     'user-manager.desktop',
+    'help'
 ]
 
 kdedistutils.setup(
