@@ -25,6 +25,9 @@ distfiles = """
     *.desktop
     po/*.po
     po/*.pot
+    help/*.css
+    help/tr/*.html
+    help/en/*.html
 """
 
 def make_dist():
