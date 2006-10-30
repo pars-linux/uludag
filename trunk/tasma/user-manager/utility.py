@@ -14,18 +14,11 @@ import string
 
 from kdecore import *
 
-
 def I18N_NOOP(str):
     return str
 
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
-
-def languageCode():
-    lang = locale.setlocale(locale.LC_MESSAGES)
-    if "_" in lang:
-        return lang.split("_")[0]
-    return "en"
 
 nickmap = {
     u"ğ": u"g",

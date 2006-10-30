@@ -528,7 +528,7 @@ class UserStack(QVBox):
             self.link.call("User.Manager.setUser", dict, 6)
     
     def slotEditReply(self, reply):
-        if reply[0] == self.link.RESULT:
+        if reply.command == "result":
             dict = self.editdict
             tmp = dict.get("realname", None)
             if tmp:
@@ -536,9 +536,9 @@ class UserStack(QVBox):
             self.parent().slotCancel()
             return
         
-        if reply[0] == self.link.FAIL:
-            msg = unicode(i18n("Operation failed, reason:<br>%s")) % reply[2]
-        elif reply[0] == self.link.DENIED:
+        if reply.command == "fail":
+            msg = unicode(i18n("Operation failed, reason:<br>%s")) % reply.data
+        elif reply.command == "denied":
             msg = i18n("You are not allowed to do that")
         else:
             msg = i18n("Comar script error :(")
@@ -562,15 +562,15 @@ class UserStack(QVBox):
         self.link.call("User.Manager.addUser", dict, 3)
     
     def slotAddReply(self, reply):
-        if reply[0] == self.link.RESULT:
+        if reply.command == "denied":
             dict = self.adddict
-            self.parent().browse.userModified(int(reply[2]), dict["name"], dict["realname"])
+            self.parent().browse.userModified(int(reply.data), dict["name"], dict["realname"])
             self.parent().slotCancel()
             return
         
-        if reply[0] == self.link.FAIL:
-            msg = unicode(i18n("Operation failed, reason:<br>%s")) % reply[2]
-        elif reply[0] == self.link.DENIED:
+        if reply.command == "fail":
+            msg = unicode(i18n("Operation failed, reason:<br>%s")) % reply.data
+        elif reply.command == "denied":
             msg = i18n("You are not allowed to do that")
         else:
             msg = i18n("Comar script error :(")
@@ -603,7 +603,7 @@ class UserStack(QVBox):
     def slotInfo(self, reply):
         self.guide.op_end()
         dict = {}
-        for line in unicode(reply[2]).split("\n"):
+        for line in unicode(reply.data).split("\n"):
             key, value = line.split(" ", 1)
             if key == "uid":
                 self.u_id.setText(value)
