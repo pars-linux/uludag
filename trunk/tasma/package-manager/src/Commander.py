@@ -60,8 +60,8 @@ class Commander(QObject):
                 self.comar = ComarIface.ComarIface(self)
             return
 
-        if reply[0] == self.comar.com.NOTIFY:
-            notification, script, data = reply[2].split("\n", 2)
+        if reply.command == "notify":
+            (notification, script, data) = (reply.notify, reply.script, reply.data)
             data = unicode(data)
             if notification == "System.Manager.error":
                 self.parent.showErrorMessage(data)
@@ -77,16 +77,16 @@ class Commander(QObject):
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
         # some misbehaviour is seen, comar.log is always there to look.
-        elif reply[0] == self.comar.com.ERROR:
+        elif reply.command == "error":
             self.parent.finished("System.Manager.cancelled")
             return
-        elif reply[0] == self.comar.com.FAIL:
-            if reply[2] == "System.Manager.cancelled":
-                self.parent.finished(reply[2])
+        elif reply.command == "fail":
+            if reply.data == "System.Manager.cancelled":
+                self.parent.finished(reply.data)
                 return
-            
+
             self.parent.finished()
-            self.parent.showErrorMessage(unicode(reply[2]))
+            self.parent.showErrorMessage(unicode(reply.data))
 
             # if an error occured communicating with comar and components are not ready we quit
             if not pisi.context.componentdb.list_components():
