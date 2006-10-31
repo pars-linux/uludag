@@ -1,17 +1,18 @@
-# translation of user-manager.po to Dutch
+# translation of nl.po to Nederlands
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Willem Gielen <w.gielen@gmail.com>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: user-manager\n"
+"Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-30 12:00+0200\n"
-"PO-Revision-Date: 2006-08-13 21:40+0200\n"
-"Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"PO-Revision-Date: 2006-10-30 22:39+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -100,9 +101,8 @@ msgid "Groups"
 msgstr "Groepen"
 
 #: browser.py:133
-#, fuzzy
 msgid "User Manager Help"
-msgstr "Gebruikersbeheer"
+msgstr "Gebruikersbeheer help"
 
 #: browser.py:140
 #, python-format
@@ -127,8 +127,7 @@ msgstr "Gebruiker verwijderen"
 
 #: browser.py:159
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
 "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
 "s<br>ID: %d"
@@ -234,14 +233,14 @@ msgid "Show all groups"
 msgstr "Alle groepen tonen"
 
 #: useredit.py:527
-#, fuzzy
 msgid "Changing user information..."
-msgstr "Gebruikersinformatie wordt opgehaald..."
+msgstr "Gebruikersinformatie wordt veranderd..."
 
 #: useredit.py:561
 msgid "Adding user..."
-msgstr "Gebruiker wordt aangemaakt..."
+msgstr "Gebruiker wordt toegevoegd..."
 
 #: useredit.py:600
 msgid "Getting user information..."
 msgstr "Gebruikersinformatie wordt opgehaald..."
+
