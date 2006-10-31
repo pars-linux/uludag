@@ -141,23 +141,34 @@ def squash_image(project):
 # Operations
 #
 
+def make_repos(project):
+    print "Preparing image repo..."
+    
+    repo = project.get_repo()
+    repo_dir = project.image_repo_dir(clean=True)
+    if project.media_type == "install":
+        imagedeps = repo.full_deps("yali")
+    else:
+        imagedeps = project.all_packages
+    repo.make_local_repo(repo_dir, imagedeps)
+    
+    if project.media_type == "install":
+        print "Preparing installation repository..."
+        
+        repo_dir = project.install_repo_dir(clean=True)
+        repo.make_local_repo(repo_dir, project.all_packages)
+
 def make_image(project):
     print "Preparing install image..."
     
     repo = project.get_repo()
-    repo_dir = project.image_repo_dir(clean=True)
+    repo_dir = project.image_repo_dir()
     image_file = project.image_file()
     
     image_dir = project.image_dir()
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
     image_dir = project.image_dir(clean=True)
-    
-    if project.media_type == "install":
-        yalideps = repo.full_deps("yali")
-    else:
-        yalideps = project.all_packages
-    repo.make_local_repo(repo_dir, yalideps)
     
     run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
     if project.media_type == "install":
@@ -201,13 +212,6 @@ def make_image(project):
     run('umount %s/sys' % image_dir)
     
     squash_image(project)
-
-def make_install_repo(project):
-    print "Preparing installation repository..."
-    
-    repo = project.get_repo()
-    repo_dir = project.install_repo_dir(clean=True)
-    repo.make_local_repo(repo_dir, project.all_packages)
 
 def make_iso(project):
     print "Preparing ISO..."

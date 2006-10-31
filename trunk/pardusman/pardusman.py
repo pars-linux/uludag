@@ -23,18 +23,16 @@ def do_operation(project_file, op):
     
     start = time.time()
     
-    if op == "make":
-        maker.make(prj)
-    # make-repo
-    # make-live
+    if op == "make" or op == "make-repo":
+        maker.make_repos(prj)
+    if op == "make" or op == "make-live":
+        maker.make_image(prj)
     # install-live
     # configure-live
-    elif op == "pack-live":
+    if op == "make" or op == "make-live" or op == "pack-live":
         maker.squash_image(prj)
-    elif op == "make-iso":
+    if op == "make" or op == "make-iso":
         maker.make_iso(prj)
-    else:
-        raise RuntimeError("Unknown operation '%s'" % op)
     
     end = time.time()
     print "Total time is", end - start, "seconds."
