@@ -158,6 +158,23 @@ def make_repos(project):
         repo_dir = project.install_repo_dir(clean=True)
         repo.make_local_repo(repo_dir, project.all_packages)
 
+def check_repo_files(project):
+    import sha
+    print "Checking image repo..."
+    repo = project.get_repo()
+    repo_dir = project.image_repo_dir()
+    if project.media_type == "install":
+        imagedeps = repo.full_deps("yali")
+    else:
+        imagedeps = project.all_packages
+    for name in imagedeps:
+        pak = repo.packages[name]
+        path = os.path.join(repo_dir, pak.uri)
+        data = file(path).read()
+        hash = sha.sha(data).hexdigest()
+        if hash != pak.sha1sum:
+            print "Wrong hash: %s" % path
+
 def make_image(project):
     print "Preparing install image..."
     

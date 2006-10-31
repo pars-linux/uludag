@@ -64,6 +64,7 @@ class Package:
         self.size = int(node.getTagData('PackageSize'))
         self.inst_size = int(node.getTagData('InstalledSize'))
         self.uri = node.getTagData('PackageURI')
+        self.sha1sum = node.getTagData('PackageHash')
         self.component = node.getTagData('PartOf')
         self.summary = node.getTagData('Summary')
         self.description = node.getTagData('Description')
