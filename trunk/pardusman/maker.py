@@ -11,6 +11,7 @@
 
 import os
 import subprocess
+import sha
 import tempfile
 import stat
 import sys
@@ -158,8 +159,17 @@ def make_repos(project):
         repo_dir = project.install_repo_dir(clean=True)
         repo.make_local_repo(repo_dir, project.all_packages)
 
+def check_file(repo_dir, name, hash):
+    path = os.path.join(repo_dir, name)
+    if not os.path.exists(path):
+        print "\nPackage missing: %s" % path
+        return
+    data = file(path).read()
+    cur_hash = sha.sha(data).hexdigest()
+    if cur_hash != hash:
+        print "\nWrong hash: %s" % path
+
 def check_repo_files(project):
-    import sha
     print "Checking image repo..."
     repo = project.get_repo()
     repo_dir = project.image_repo_dir()
@@ -167,13 +177,25 @@ def check_repo_files(project):
         imagedeps = repo.full_deps("yali")
     else:
         imagedeps = project.all_packages
+    i = 0
     for name in imagedeps:
+        i += 1
+        sys.stdout.write("\r%-70.70s" % "Checking %d of %s packages" % (i, len(imagedeps)))
+        sys.stdout.flush()
         pak = repo.packages[name]
-        path = os.path.join(repo_dir, pak.uri)
-        data = file(path).read()
-        hash = sha.sha(data).hexdigest()
-        if hash != pak.sha1sum:
-            print "Wrong hash: %s" % path
+        check_file(repo_dir, pak.uri, pak.sha1sum)
+    sys.stdout.write("\n")
+    
+    if project.media_type == "install":
+        repo_dir = project.install_repo_dir()
+        i = 0
+        for name in project.all_packages:
+            i += 1
+            sys.stdout.write("\r%-70.70s" % "Checking %d of %s packages" % (i, len(project.all_packages)))
+            sys.stdout.flush()
+            pak = repo.packages[name]
+            check_file(repo_dir, pak.uri, pak.sha1sum)
+    sys.stdout.write("\n")
 
 def make_image(project):
     print "Preparing install image..."
