@@ -510,9 +510,15 @@ class MainApplicationWidget(QWidget):
         componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network","applications.multimedia",
                           "applications.games","applications.hardware","system.base","system.devel", "system.kernel.drivers",
                           "system.kernel.firmware"]
-        components = [pisi.context.componentdb.get_union_comp(x) for x in componentNames]
-        componentPackages = []
 
+        components = []
+        for x in componentNames:
+            try:
+                components.append(pisi.context.componentdb.get_union_comp(x))
+            except pisi.component.Error:
+                pass
+
+        componentPackages = []
         for component in components:
             component_packages = list(set(packages).intersection(component.packages))
             if len(component_packages):
@@ -604,6 +610,9 @@ class MainApplicationWidget(QWidget):
         elif operation in ["removed"]:
             self.progressDialog.packageNo += 1
 
+        elif operation in ["savingrepos"]:
+            self.progressDialog.setCurrentOperation(i18n("<b>Applying Repository Changes</b>"))
+
         elif operation in ["updatingrepo"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
             self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
@@ -631,6 +640,10 @@ class MainApplicationWidget(QWidget):
 
         if command == "System.Manager.updateAllRepositories":
             self.upgradeState()
+
+        elif command == "System.Manager.setRepositories":
+            self.updateCheck()
+            return
 
         elif command in ["System.Manager.updateAllRepositories",
                        "System.Manager.updatePackage",
