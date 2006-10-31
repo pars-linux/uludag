@@ -201,10 +201,8 @@ class MainApplicationWidget(QWidget):
 
     def repoNotReady(self):
         global kapp
-
-        KMessageBox.error(self, i18n("Package repository still does not have category information.\nExiting..."),
+        KMessageBox.error(self, i18n("Package repository does not have component information. Please control repository addresses and update repotistory. You need a network connection to update."),
                           i18n("Error"))
-        kapp.quit()
 
     def resetState(self):
         self.basket.empty()
