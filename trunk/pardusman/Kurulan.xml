@@ -10,19 +10,25 @@
         <SelectedPackage>acx100</SelectedPackage>
         <SelectedPackage>alsa-driver</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
+        <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>alsa-oss</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>aspell-en</SelectedPackage>
+        <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>axel</SelectedPackage>
         <SelectedPackage>bcm43xx-firmware</SelectedPackage>
+        <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-libs</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
+        <SelectedPackage>bogofilter</SelectedPackage>
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
         <SelectedPackage>clearlooks</SelectedPackage>
         <SelectedPackage>crack-attack</SelectedPackage>
+        <SelectedPackage>crystal</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>digikam</SelectedPackage>
         <SelectedPackage>digikamimageplugins</SelectedPackage>
@@ -40,10 +46,14 @@
         <SelectedPackage>fnfx</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
+        <SelectedPackage>freealut</SelectedPackage>
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>git</SelectedPackage>
+        <SelectedPackage>gle</SelectedPackage>
+        <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
+        <SelectedPackage>grounation-xcursors</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>gwenview</SelectedPackage>
@@ -59,14 +69,20 @@
         <SelectedPackage>ipw3945-daemon</SelectedPackage>
         <SelectedPackage>ipw3945-firmware</SelectedPackage>
         <SelectedPackage>ipython</SelectedPackage>
+        <SelectedPackage>irda-utils</SelectedPackage>
         <SelectedPackage>irqbalance</SelectedPackage>
+        <SelectedPackage>jfsutils</SelectedPackage>
+        <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
+        <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
+        <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
         <SelectedPackage>kdebluetooth</SelectedPackage>
+        <SelectedPackage>kdegames</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
@@ -114,15 +130,21 @@
         <SelectedPackage>pwc</SelectedPackage>
         <SelectedPackage>qalculate</SelectedPackage>
         <SelectedPackage>rar</SelectedPackage>
+        <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
         <SelectedPackage>rpcalc</SelectedPackage>
+        <SelectedPackage>rsibreak</SelectedPackage>
         <SelectedPackage>rt2400</SelectedPackage>
         <SelectedPackage>rt2500</SelectedPackage>
         <SelectedPackage>rt2570</SelectedPackage>
         <SelectedPackage>rt61</SelectedPackage>
         <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>schedutils</SelectedPackage>
+        <SelectedPackage>screen</SelectedPackage>
+        <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
+        <SelectedPackage>sg3_utils</SelectedPackage>
+        <SelectedPackage>sharutils</SelectedPackage>
         <SelectedPackage>skype</SelectedPackage>
         <SelectedPackage>skype-avatars</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
@@ -130,6 +152,7 @@
         <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>spca5xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
+        <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>subversion</SelectedPackage>
@@ -156,6 +179,7 @@
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
+        <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
@@ -172,6 +196,7 @@
         <Package>akode</Package>
         <Package>alsa-driver</Package>
         <Package>alsa-firmware</Package>
+        <Package>alsa-headers</Package>
         <Package>alsa-lib</Package>
         <Package>alsa-oss</Package>
         <Package>alsa-utils</Package>
@@ -182,6 +207,8 @@
         <Package>apr-util1</Package>
         <Package>arts</Package>
         <Package>aspell</Package>
+        <Package>aspell-en</Package>
+        <Package>aspell-nl</Package>
         <Package>atk</Package>
         <Package>attr</Package>
         <Package>audiofile</Package>
@@ -200,17 +227,20 @@
         <Package>bash</Package>
         <Package>bc</Package>
         <Package>bcm43xx-firmware</Package>
+        <Package>bind-tools</Package>
         <Package>binutils</Package>
         <Package>bison</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
+        <Package>bogofilter</Package>
         <Package>boost</Package>
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
+        <Package>cairomm</Package>
         <Package>ccache</Package>
         <Package>cdparanoia</Package>
         <Package>cdrdao</Package>
@@ -229,6 +259,8 @@
         <Package>crack-attack-music</Package>
         <Package>crack-attack-sounds</Package>
         <Package>cracklib</Package>
+        <Package>cryptsetup-luks</Package>
+        <Package>crystal</Package>
         <Package>ctags</Package>
         <Package>cups</Package>
         <Package>curl</Package>
@@ -241,6 +273,7 @@
         <Package>ddcxinfos</Package>
         <Package>debianutils</Package>
         <Package>dejavu-fonts</Package>
+        <Package>device-mapper</Package>
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>diffutils</Package>
@@ -285,6 +318,7 @@
         <Package>foomatic-db-engine</Package>
         <Package>foomatic-db-hpijs</Package>
         <Package>foomatic-filters</Package>
+        <Package>freealut</Package>
         <Package>freetype</Package>
         <Package>ftp</Package>
         <Package>fuse</Package>
@@ -297,9 +331,10 @@
         <Package>giflib</Package>
         <Package>gimp</Package>
         <Package>git</Package>
-        <Package>glib1</Package>
+        <Package>gle</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-nl</Package>
         <Package>glibmm</Package>
         <Package>glut</Package>
         <Package>gmp</Package>
@@ -316,7 +351,9 @@
         <Package>graphviz</Package>
         <Package>grep</Package>
         <Package>groff</Package>
+        <Package>grounation-xcursors</Package>
         <Package>grub</Package>
+        <Package>gsl</Package>
         <Package>gst-plugins-base</Package>
         <Package>gst-plugins-good</Package>
         <Package>gst-plugins-ugly</Package>
@@ -326,6 +363,7 @@
         <Package>gtk-qt-engine</Package>
         <Package>gutenprint</Package>
         <Package>gwenview</Package>
+        <Package>gwenview-i18n</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hdparm</Package>
@@ -350,8 +388,11 @@
         <Package>ipw3945-daemon</Package>
         <Package>ipw3945-firmware</Package>
         <Package>ipython</Package>
+        <Package>irda-utils</Package>
         <Package>irqbalance</Package>
         <Package>jasper</Package>
+        <Package>jfsutils</Package>
+        <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
         <Package>jpeg-mmx</Package>
         <Package>k3b</Package>
@@ -362,8 +403,11 @@
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
         <Package>kdeaddons</Package>
+        <Package>kdeartwork-emoticons</Package>
+        <Package>kdeartwork-screensavers</Package>
         <Package>kdebase</Package>
         <Package>kdebluetooth</Package>
+        <Package>kdegames</Package>
         <Package>kdegraphics</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-tr</Package>
@@ -434,6 +478,7 @@
         <Package>libmikmod</Package>
         <Package>libmng</Package>
         <Package>libmovtar</Package>
+        <Package>libmp4v2</Package>
         <Package>libmpcdec</Package>
         <Package>libmpeg2</Package>
         <Package>libmpeg3</Package>
@@ -613,11 +658,13 @@
         <Package>qt</Package>
         <Package>rar</Package>
         <Package>rcs</Package>
+        <Package>rdate</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
         <Package>rpcalc</Package>
         <Package>rp-pppoe</Package>
+        <Package>rsibreak</Package>
         <Package>rsync</Package>
         <Package>rt2400</Package>
         <Package>rt2500</Package>
@@ -629,14 +676,18 @@
         <Package>schedtool</Package>
         <Package>schedutils</Package>
         <Package>scons</Package>
+        <Package>screen</Package>
         <Package>sdl-mixer</Package>
         <Package>sdl-net</Package>
         <Package>sdl-sound</Package>
+        <Package>sdparm</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
         <Package>setserial</Package>
+        <Package>sg3_utils</Package>
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
+        <Package>sharutils</Package>
         <Package>sip</Package>
         <Package>skype</Package>
         <Package>skype-avatars</Package>
@@ -648,11 +699,13 @@
         <Package>spca5xx</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
+        <Package>spidermonkey</Package>
         <Package>splash-theme</Package>
         <Package>splashutils</Package>
         <Package>splashutils-misc</Package>
         <Package>sqlite</Package>
         <Package>sqlite2</Package>
+        <Package>squashfs-tools</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
         <Package>strace</Package>
@@ -727,8 +780,10 @@
         <Package>xorg-server</Package>
         <Package>xorg-util</Package>
         <Package>xorg-video</Package>
+        <Package>xscreensaver</Package>
         <Package>xtrans</Package>
         <Package>xvid</Package>
+        <Package>xvidcap</Package>
         <Package>yacc</Package>
         <Package>yakuake</Package>
         <Package>zd1201-firmware</Package>
