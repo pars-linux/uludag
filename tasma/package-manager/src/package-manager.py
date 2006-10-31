@@ -301,7 +301,7 @@ class MainApplicationWidget(QWidget):
         <div>
         <!-- checkbox --> %s <!-- checkbox -->
         <div class="package_title" style="%s">
-        <img src="%s" style="float:left;" width="48px" height="48px">
+        <img src="%s" style="float:left;">
         <b>%s</b><br>%s<br>
         </div>
         <div class="package_info" style="%s">
