@@ -29,7 +29,7 @@ kdedistutils.setup(
                         "src/personalinfodlg.ui", "src/upload.ui", "src/feedback_right.png", "src/feedback.png",
                         ("/usr/kde/3.5/share/apps/feedback/simplejson", ["src/simplejson/"]),
                         ("/usr/kde/3.5/share/applications/kde/", ["src/feedback.desktop"]),
-                        ("/usr/kde/3.5/share/icons/default.kde/128x128/apps", ["src/feedback.png"]),
+                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["src/feedback.png"]),
                         ("/etc/", ["src/feedback.conf"])],
     executable_links = [("feedback","feedback.py")],
     i18n = ("po", ["src"])
