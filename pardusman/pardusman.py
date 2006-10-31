@@ -25,6 +25,8 @@ def do_operation(project_file, op):
     
     if op == "make" or op == "make-repo":
         maker.make_repos(prj)
+    if op == "check-repo":
+        maker.check_repo_files(prj)
     if op == "make" or op == "make-live":
         maker.make_image(prj)
     # install-live
