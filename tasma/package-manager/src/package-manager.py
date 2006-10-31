@@ -505,22 +505,24 @@ class MainApplicationWidget(QWidget):
         self.listView.clear()
         self.componentDict.clear()
 
-        componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network","applications.multimedia",
-                          "applications.games","applications.hardware","system.base","system.devel", "system.kernel.drivers",
-                          "system.kernel.firmware"]
-
-        components = []
-        for x in componentNames:
-            try:
-                components.append(pisi.context.componentdb.get_union_comp(x))
-            except pisi.component.Error:
-                pass
+        # Component packages will include the recursive component's packages also. So do NOT add sub components here!
+        componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network",
+                          "applications.multimedia", "applications.games","applications.hardware",
+                          "system.base","system.devel","system.kernel","applications.science",
+                          "programming", "system.locale", "server", "kde-i18n"]
 
         componentPackages = []
-        for component in components:
-            component_packages = list(set(packages).intersection(component.packages))
+        for componentName in componentNames:
+            try:
+                component = pisi.context.componentdb.get_union_comp(componentName)
+            except pisi.component.Error:
+                continue
+
+            compPkgs = pisi.context.componentdb.get_union_packages(componentName, walk=True)
+            component_packages = list(set(packages).intersection(compPkgs))
+
             if len(component_packages):
-                componentPackages += component.packages
+                componentPackages += component_packages
                 item = KListViewItem(self.listView)
                 if component.localName:
                     name = component.localName
