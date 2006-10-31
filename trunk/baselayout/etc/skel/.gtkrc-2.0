@@ -3,7 +3,7 @@
 
 include "/usr/share/themes/Qt/gtk-2.0/gtkrc"
 
-style "default"
+style "default" {}
 
 widget_class "*" style "default"
 
