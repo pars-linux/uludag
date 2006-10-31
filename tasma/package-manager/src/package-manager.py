@@ -201,7 +201,7 @@ class MainApplicationWidget(QWidget):
 
     def repoNotReady(self):
         global kapp
-        KMessageBox.error(self, i18n("Package repository does not have component information. Please control repository addresses and update repotistory. You need a network connection to update."),
+        KMessageBox.error(self, i18n("Package repository does not have component information. Please control repository addresses and update repository. You need a network connection to update."),
                           i18n("Error"))
 
     def resetState(self):
