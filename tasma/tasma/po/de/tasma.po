@@ -1,13 +1,11 @@
-# SOME DESCRIPTIVE TITLE.
 # This file is put in the public domain.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tasma\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-12-24 07:24+0200\n"
-"PO-Revision-Date: 2006-10-31 22:27+0100\n"
+"PO-Revision-Date: 2006-10-31 22:58+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: german <german@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,11 +24,9 @@ msgstr "Willkommen zo TASMA"
 msgid "TASMA is a configuration application for Pardus Operating System. You can tweak the systems default configuration settings and by using the modules presented in TASMA. "
 msgstr "TASMA ist ein Konfigurationsprogramm für das Pardus Betriebssystem. You can tweak the systems default configuration settings and by using the modules presented in TASMA. "
 
-# in oder durch?;
-# aus dem linken Bereich auswählen
 #: aboutview.cpp:99
 msgid "For a better understanding modules are grouped by categories. You can activate a category by selecting a category from the left. After activating a category its contents will be shown as icons in the right panel. You can start a configuration module by clicking (or double clicking) its icon."
-msgstr "Für ein besseres Verständnis, wurden die Module durch/in Katogerien gruppiert. Sie können eine Kategorie aktivieren, indem Sie eine Kategorie von links auswählen.Nachdem Sie eine Kategorie aktiviert haben, wird sein Inhalt als Ikonen in der rechten Verkleidung gezeigt.Nachdem eine Kategorie aktiviert wird, wird deren Inhalt als Icon in der rechten Leiste angezeigt; -> oder: ... wird deren Inhalt als Icon rechts in der Taskleiste angezeigt.Sie können eine/DIE(?) Konfigurationsmodule durch klicken( oder durch einem Doppelklick) des jeweiligen Icons starten."
+msgstr "Für eine bessere Verständigung, wurden die Module in Katogerien gruppiert. Sie können eine Kategorie aktivieren, indem Sie eine Kategorie aus dem linken Bereich auswählen. Nachdem Sie eine Kategorie aktiviert haben, wird dessen Inhalt als Icon in der rechten Leiste angezeigt. Sie können ein Konfigurationsmodule durch klicken (oder durch einem Doppelklick) des jeweiligen Icons starten."
 
 #: main.cpp:62
 msgid "TASMA - Pardus Configuration Center"
@@ -48,7 +44,6 @@ msgstr "(c) 2005, TUBITAK - UEKAE"
 msgid "Current Maintainer"
 msgstr "Aktueller Pfleger/Warter/Verwalter?"
 
-# nicht sicher
 #: main.cpp:66
 msgid "Old Maintainer & Original Author"
 msgstr "Vorheriger Verwalter & ursprünglicher Autor"
@@ -61,7 +56,6 @@ msgstr "KDE Entwickler"
 msgid "Module Developers"
 msgstr "Modulentwickler"
 
-# nachfragen
 #: tasmamainwin.cpp:80
 msgid "About Current Module"
 msgstr "Über das aktuelle Module"
@@ -74,7 +68,6 @@ msgstr "&Zurück"
 msgid "&Reset"
 msgstr "&Zurücksetzen"
 
-# nachfragen
 #: tmoduleview.cpp:81
 msgid "&Administrator Mode"
 msgstr "&Verwalter Modus"
