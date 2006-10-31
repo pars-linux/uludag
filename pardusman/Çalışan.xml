@@ -12,8 +12,11 @@
         <SelectedPackage>alsa-oss</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>aspell-en</SelectedPackage>
+        <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>axel</SelectedPackage>
         <SelectedPackage>bcm43xx-firmware</SelectedPackage>
+        <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-libs</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
@@ -39,6 +42,7 @@
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>git</SelectedPackage>
+        <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
@@ -55,14 +59,19 @@
         <SelectedPackage>ipw3945-daemon</SelectedPackage>
         <SelectedPackage>ipw3945-firmware</SelectedPackage>
         <SelectedPackage>ipython</SelectedPackage>
+        <SelectedPackage>irda-utils</SelectedPackage>
         <SelectedPackage>irqbalance</SelectedPackage>
+        <SelectedPackage>jfsutils</SelectedPackage>
+        <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
+        <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
         <SelectedPackage>kdebluetooth</SelectedPackage>
+        <SelectedPackage>kdegames</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
@@ -70,6 +79,7 @@
         <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
+        <SelectedPackage>klamav</SelectedPackage>
         <SelectedPackage>kmplayer</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
@@ -114,13 +124,17 @@
         <SelectedPackage>rt61</SelectedPackage>
         <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>schedutils</SelectedPackage>
+        <SelectedPackage>screen</SelectedPackage>
+        <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
+        <SelectedPackage>sg3_utils</SelectedPackage>
         <SelectedPackage>skype</SelectedPackage>
         <SelectedPackage>skype-avatars</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>spca5xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
+        <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>subversion</SelectedPackage>
@@ -147,6 +161,7 @@
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
+        <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
@@ -171,6 +186,8 @@
         <Package>apr-util</Package>
         <Package>arts</Package>
         <Package>aspell</Package>
+        <Package>aspell-en</Package>
+        <Package>aspell-nl</Package>
         <Package>atk</Package>
         <Package>attr</Package>
         <Package>audiofile</Package>
@@ -179,6 +196,7 @@
         <Package>bash</Package>
         <Package>bc</Package>
         <Package>bcm43xx-firmware</Package>
+        <Package>bind-tools</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
@@ -188,10 +206,12 @@
         <Package>bzip2</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
+        <Package>cairomm</Package>
         <Package>cdparanoia</Package>
         <Package>cdrdao</Package>
         <Package>cdrtools</Package>
         <Package>chmlib</Package>
+        <Package>clamav</Package>
         <Package>clearlooks</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
@@ -200,6 +220,7 @@
         <Package>cpio</Package>
         <Package>cpufrequtils</Package>
         <Package>cracklib</Package>
+        <Package>cryptsetup-luks</Package>
         <Package>ctags</Package>
         <Package>cups</Package>
         <Package>curl</Package>
@@ -212,6 +233,7 @@
         <Package>ddcxinfos</Package>
         <Package>debianutils</Package>
         <Package>dejavu-fonts</Package>
+        <Package>device-mapper</Package>
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>diffutils</Package>
@@ -263,9 +285,9 @@
         <Package>giflib</Package>
         <Package>gimp</Package>
         <Package>git</Package>
-        <Package>glib1</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-nl</Package>
         <Package>glibmm</Package>
         <Package>glut</Package>
         <Package>gmp</Package>
@@ -290,6 +312,7 @@
         <Package>gtk-qt-engine</Package>
         <Package>gutenprint</Package>
         <Package>gwenview</Package>
+        <Package>gwenview-i18n</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hdparm</Package>
@@ -312,8 +335,11 @@
         <Package>ipw3945-daemon</Package>
         <Package>ipw3945-firmware</Package>
         <Package>ipython</Package>
+        <Package>irda-utils</Package>
         <Package>irqbalance</Package>
         <Package>jasper</Package>
+        <Package>jfsutils</Package>
+        <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
         <Package>jpeg-mmx</Package>
         <Package>k3b</Package>
@@ -324,8 +350,10 @@
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
         <Package>kdeaddons</Package>
+        <Package>kdeartwork-emoticons</Package>
         <Package>kdebase</Package>
         <Package>kdebluetooth</Package>
+        <Package>kdegames</Package>
         <Package>kdegraphics</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-tr</Package>
@@ -339,6 +367,7 @@
         <Package>kernel</Package>
         <Package>kftpgrabber</Package>
         <Package>kio-to-local</Package>
+        <Package>klamav</Package>
         <Package>klibc</Package>
         <Package>kmplayer</Package>
         <Package>knazar</Package>
@@ -394,6 +423,7 @@
         <Package>libmikmod</Package>
         <Package>libmng</Package>
         <Package>libmovtar</Package>
+        <Package>libmp4v2</Package>
         <Package>libmpcdec</Package>
         <Package>libmpeg2</Package>
         <Package>libmpeg3</Package>
@@ -578,12 +608,15 @@
         <Package>sane-backends</Package>
         <Package>schedtool</Package>
         <Package>schedutils</Package>
+        <Package>screen</Package>
         <Package>sdl-mixer</Package>
         <Package>sdl-net</Package>
         <Package>sdl-sound</Package>
+        <Package>sdparm</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
         <Package>setserial</Package>
+        <Package>sg3_utils</Package>
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
         <Package>sip</Package>
@@ -596,9 +629,11 @@
         <Package>spca5xx</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
+        <Package>spidermonkey</Package>
         <Package>splash-theme</Package>
         <Package>splashutils</Package>
         <Package>splashutils-misc</Package>
+        <Package>squashfs-tools</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
         <Package>strace</Package>
@@ -675,6 +710,7 @@
         <Package>xorg-video</Package>
         <Package>xtrans</Package>
         <Package>xvid</Package>
+        <Package>xvidcap</Package>
         <Package>yakuake</Package>
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
