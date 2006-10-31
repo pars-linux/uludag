@@ -73,7 +73,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.oldRepoName = self.repoListView.currentItem().text(0)
         self.oldRepoAddress = self.repoListView.currentItem().text(1)
         self.repo.repoName.setText(self.oldRepoName)
-        self.repo.repoAddress.setText(self.oldRepoAddress)
+        self.repo.repoAddress.insertItem(self.oldRepoAddress, 0)
+        self.repo.repoAddress.setCurrentItem(0)
         self.repo.setModal(True)
         self.connect(self.repo.okButton, SIGNAL("clicked()"), self.updateRepoSettings)
         self.repo.show()
@@ -140,9 +141,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             repoList.append(unicode(item.text(0)))
             repoList.append(str(item.text(1)))
             item = item.nextSibling()
-        self.parent.command.setRepositories(repoList)
 
+        self.parent.command.setRepositories(repoList)
         self.parent.setShowOnlyPrograms(self.onlyShowPrograms.isChecked())
+        self.parent.progressDialog.show()
 
     def updateListView(self):
         self.repoList = self.parent.command.getRepoList()
