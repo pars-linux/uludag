@@ -385,14 +385,14 @@ class MainApplicationWidget(QWidget):
         return item
 
     def refreshComponentList(self, item):
+        self.setCursor(Qt.waitCursor)
         try:
-            self.setCursor(Qt.waitCursor)
             self.createHTML(self.componentDict[item].packages)
             self.lastSelectedComponent = self.componentDict[item].name
-            self.setCursor(Qt.arrowCursor)
         # initialization and search state listview items are not components
         except KeyError:
             pass
+        self.setCursor(Qt.arrowCursor)
 
     def updateStatusBar(self):
         def humanReadableSize(size):
