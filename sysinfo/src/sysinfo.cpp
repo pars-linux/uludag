@@ -182,7 +182,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     // hw info
     infoMessage(  i18n(  "Looking for hardware information..." ) );
-    memoryInfo();
     sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
     sysInfo += "<table>";
     sysInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
