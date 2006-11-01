@@ -20,6 +20,9 @@ class Progress(ProgressDialog):
         self.totalPackages = 1
         self.packageName = ""
 
+        self.totalDownloaded = 0
+        self.curPkgDownloaded = 0
+
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
 
@@ -53,6 +56,8 @@ class Progress(ProgressDialog):
         self.hideOperationDescription()
         self.packageNo = 1
         self.totalPackages = 1
+        self.totalDownloaded = 0
+        self.curPkgDownloaded = 0
         self.progressBar.setProgress(0)
         self.cancelButton.setEnabled(False)
 
@@ -89,7 +94,6 @@ class Progress(ProgressDialog):
     def updateDownloadingInfo(self, operation, file, percent, rate, symbol):
         self.packageName = pisi.util.parse_package_name(file)[0]
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(self.packageName))
-        self.updateProgressBar(percent)
         self.setStatus(i18n('Fetching package (%1/%2) at %3 %4')
                        .arg(self.packageNo)
                        .arg(self.totalPackages)
@@ -99,9 +103,23 @@ class Progress(ProgressDialog):
         self.showOperationDescription()
 
     def updateUpgradingInfo(self, percent, rate, symbol):
-        self.updateProgressBar(percent)
         self.setStatus(i18n('Fetching package list at %3 %4')
                        .arg(round(int(rate), 1))
                        .arg(symbol))
         self.showStatus()
         self.showOperationDescription()
+
+    # pisi does not provide total downloaded size, just package based.
+    def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize):
+        if pkgDownSize == pkgTotalSize:
+            self.totalDownloaded += int(pkgTotalSize)
+            self.curPkgDownloaded = 0
+        else:
+            self.curPkgDownloaded = int(pkgDownSize)
+
+    # pisi does not provide total operation percent, just package based.
+    def updateTotalOperationPercent(self):
+        totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
+        totalSize = self.parent.basket.getBasketSize()
+        percent = (totalDownloaded * 100) / totalSize
+        self.updateProgressBar(percent)
