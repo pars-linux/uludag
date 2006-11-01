@@ -581,8 +581,7 @@ class MainApplicationWidget(QWidget):
 
                 self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[1], percent=data[2], rate=data[3], symbol=data[4])
                 self.progressDialog.updateTotalDownloaded(pkgDownSize=data[5], pkgTotalSize=data[6])
-                self.progressDialog.updateProgressBar(progress=data[2])
-                #self.progressDialog.updateTotalOperationPercent()
+                self.progressDialog.updateTotalOperationPercent()
 
     def pisiNotify(self,data):
         data = data.split(",")
@@ -600,6 +599,10 @@ class MainApplicationWidget(QWidget):
 
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
+        elif operation in ["cached"]:
+            self.progressDialog.totalDownloaded += int(data[2])
+            self.progressDialog.updateTotalOperationPercent()
+            
         elif operation in ["installing"]:
             if self.state == install_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
