@@ -13,7 +13,6 @@ class Progress(ProgressDialog):
         self.forcedClose = False
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelThread)
         self.cancelButton.setEnabled(False)
-        self.hideStatus()
         self.hideOperationDescription()
         
         self.packageNo = 1
@@ -32,17 +31,31 @@ class Progress(ProgressDialog):
     def setOperationDescription(self, text):
         self.operationDescription.setText(text)
 
-    def setStatus(self, text):
-        self.statusInfo.setText(text)
+    def setStatus(self, rate=None, symbol=None):
+        if rate and symbol:
+            self.rateInfo.setText(i18n("Speed: %1 %2  ").arg(round(int(rate), 1)).arg(symbol))
+
+        completed, total = self.getCurrentDownloadedSize()
+        self.completedInfo.setText(completed)
+        self.totalInfo.setText(i18n("downloaded ( total: %1 )").arg(total))
+        self.updatePackageInfo()
 
     def showStatus(self):
-        self.statusInfo.show()
+        self.packageInfo.show()
+        self.rateInfo.show()
+        self.completedInfo.show()
+        self.totalInfo.show()
 
     def showOperationDescription(self):
         self.operationDescription.show()
 
-    def hideStatus(self):
-        self.setStatus("")
+    def hideStatus(self, hidepackage=False):
+        if hidepackage:
+            self.packageInfo.hide()
+
+        self.rateInfo.hide()
+        self.completedInfo.hide()
+        self.totalInfo.hide()
 
     def hideOperationDescription(self):
         self.setOperationDescription("")
@@ -52,8 +65,12 @@ class Progress(ProgressDialog):
     
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
-        self.hideStatus()
+        self.completedInfo.setText(i18n("--"))
+        self.totalInfo.setText(i18n("downloaded (total: -- )"))
+        self.packageInfo.setText(i18n("-- / --  package"))
+        self.rateInfo.setText(i18n("Speed: -- KB/s"))
         self.hideOperationDescription()
+        self.hideStatus()
         self.packageNo = 1
         self.totalPackages = 1
         self.totalDownloaded = 0
@@ -88,26 +105,21 @@ class Progress(ProgressDialog):
     def updateOperationDescription(self, operation, package=None):
         if not package:
             package = self.packageName
-        
+
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(package))
 
     def updateDownloadingInfo(self, operation, file, percent, rate, symbol):
         self.packageName = pisi.util.parse_package_name(file)[0]
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(self.packageName))
-        self.setStatus(i18n('Fetching package (%1/%2) at %3 %4')
-                       .arg(self.packageNo)
-                       .arg(self.totalPackages)
-                       .arg(round(int(rate), 1))
-                       .arg(symbol))
-        self.showStatus()
+        self.setStatus(rate, symbol)
         self.showOperationDescription()
 
     def updateUpgradingInfo(self, percent, rate, symbol):
-        self.setStatus(i18n('Fetching package list at %3 %4')
-                       .arg(round(int(rate), 1))
-                       .arg(symbol))
-        self.showStatus()
+        self.setStatus(rate, symbol)
         self.showOperationDescription()
+
+    def updatePackageInfo(self):
+        self.packageInfo.setText(i18n("%1 / %2 package").arg(self.packageNo).arg(self.totalPackages))
 
     # pisi does not provide total downloaded size, just package based.
     def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize):
@@ -123,3 +135,16 @@ class Progress(ProgressDialog):
         totalSize = self.parent.basket.getBasketSize()
         percent = (totalDownloaded * 100) / totalSize
         self.updateProgressBar(percent)
+
+    def getCurrentDownloadedSize(self):
+        totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
+
+        size = pisi.util.human_readable_size(totalDownloaded)
+        totaldownloaded = "%.1f %s" % (size[0], size[1])
+
+        size = pisi.util.human_readable_size(self.parent.basket.getBasketSize())
+        totalsize = "%.1f %s" % (size[0], size[1])
+
+        return (totaldownloaded, totalsize)
+
+
