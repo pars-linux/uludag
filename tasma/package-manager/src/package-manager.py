@@ -468,17 +468,25 @@ class MainApplicationWidget(QWidget):
         return True
 
     def takeAction(self):
+
         if self.state == remove_state:
             self.command.remove(self.basket.packages)
+            self.progressDialog.hideStatus()
+
         elif self.state == install_state:
             if not self.conflictCheckPass():
                 self.finished("System.Manager.cancelled")
                 return
+
+            self.progressDialog.showStatus()
             self.command.install(self.basket.packages)
+
         elif self.state == upgrade_state:
             if not self.conflictCheckPass():
                 self.finished("System.Manager.cancelled")
                 return
+
+            self.progressDialog.showStatus()
             self.command.updatePackage(self.basket.packages)
 
         self.progressDialog.show()
@@ -564,7 +572,6 @@ class MainApplicationWidget(QWidget):
 
         if operation == "updatingrepo":
             self.progressDialog.setOperationDescription(i18n(str(data[2])))
-            self.progressDialog.hideStatus()
             percent = data[1]
             self.progressDialog.updateProgressBar(percent)
 
@@ -598,10 +605,12 @@ class MainApplicationWidget(QWidget):
                 self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
 
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
+            self.progressDialog.updatePackageInfo()
 
         elif operation in ["cached"]:
             self.progressDialog.totalDownloaded += int(data[2])
             self.progressDialog.updateTotalOperationPercent()
+            self.progressDialog.setStatus()
             
         elif operation in ["installing"]:
             if self.state == install_state:
@@ -613,7 +622,6 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
         elif operation in ["extracting", "configuring"]:
-            self.progressDialog.hideStatus()
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
         elif operation in ["removed"]:
@@ -705,6 +713,7 @@ class MainApplicationWidget(QWidget):
         self.resetState()
         self.parent.showUpgradeAction.setChecked(True)
         self.processEvents()
+        self.progressDialog.hideStatus(True)
         self.progressDialog.show()
         self.command.startUpdate()
 
