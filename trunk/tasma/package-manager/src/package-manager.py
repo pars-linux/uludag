@@ -571,12 +571,18 @@ class MainApplicationWidget(QWidget):
         elif operation == "fetching":
             if "pisi-index.xml" in data[1]:
                 self.progressDialog.updateUpgradingInfo(percent=data[2], rate=data[3], symbol=data[4])
+                self.progressDialog.updateProgressBar(progress=data[2])
+
             else:
-                self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[1], percent=data[2], rate=data[3], symbol=data[4])
                 if self.state == install_state:
                     self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
                 elif self.state == upgrade_state:
                     self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
+
+                self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[1], percent=data[2], rate=data[3], symbol=data[4])
+                self.progressDialog.updateTotalDownloaded(pkgDownSize=data[5], pkgTotalSize=data[6])
+                self.progressDialog.updateProgressBar(progress=data[2])
+                #self.progressDialog.updateTotalOperationPercent()
 
     def pisiNotify(self,data):
         data = data.split(",")
