@@ -618,14 +618,13 @@ class MainApplicationWidget(QWidget):
             elif self.state == upgrade_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
 
-            self.progressDialog.packageNo += 1
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
         elif operation in ["extracting", "configuring"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
-        elif operation in ["removed"]:
-            self.progressDialog.packageNo += 1
+        elif operation in ["removed", "installed", "upgraded"]:
+                self.progressDialog.packageNo += 1
 
         elif operation in ["savingrepos"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Applying Repository Changes</b>"))
