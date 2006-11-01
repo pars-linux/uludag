@@ -142,7 +142,7 @@ class Widget(QVBox):
         return None
     
     def slotHelp(self):
-        self.helpwin = widgets.HelpDialog(self)
+        self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
         self.helpwin.show()
     
     def slotComar(self, sock):

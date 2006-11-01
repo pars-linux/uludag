@@ -10,6 +10,7 @@
 #
 
 import os
+import locale
 from qt import *
 from kdecore import *
 from khtml import *
@@ -45,15 +46,18 @@ class HLine(QHBox):
 
 
 class HelpDialog(QDialog):
-    def __init__(self, parent=None):
+    def __init__(self, name, title, parent=None):
         QDialog.__init__(self, parent)
-        self.setCaption(i18n("Network Connections Help"))
+        self.setCaption(title)
         self.layout = QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
         self.resize(500, 600)
         self.layout.addWidget(self.htmlPart.view(), 1, 1)
         
-        if os.environ['LANG'].startswith('tr_TR'):
-            self.htmlPart.openURL(KURL(locate("data","net_kga/help/tr/main_help.html")))
-        else:
-            self.htmlPart.openURL(KURL(locate("data","net_kga/help/en/main_help.html")))
+        lang = locale.setlocale(locale.LC_MESSAGES)
+        if "_" in lang:
+            lang = lang.split("_", 1)[0]
+        url = locate("data", "%s/help/%s/main_help.html" % (name, lang))
+        if not os.path.exists(url):
+            url = locate("data", "%s/help/en/main_help.html" % name)
+        self.htmlPart.openURL(KURL(url))
