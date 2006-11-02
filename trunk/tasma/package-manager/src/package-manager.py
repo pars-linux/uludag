@@ -539,8 +539,13 @@ class MainApplicationWidget(QWidget):
                 else:
                     name = component.name
 
+                if component.icon:
+                    icon = component.icon
+                else:
+                    icon = "package"
+
                 item.setText(0,u"%s (%s)" % (name, len(component_packages)))
-                item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
+                item.setPixmap(0, KGlobal.iconLoader().loadIcon(icon, KIcon.Desktop,KIcon.SizeMedium))
                 self.componentDict[item] = Component(name, component_packages, component.summary)
 
         # Rest of the packages
