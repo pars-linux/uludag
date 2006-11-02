@@ -182,10 +182,6 @@ msgstr "Bios Aanbieder:"
 msgid "Bios Version:"
 msgstr "Bios Versie:"
 
-#: sysinfo.cpp:256
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 Önbellek)"
-
 #: sysinfo.cpp:288
 msgid "Device"
 msgstr "Apparaat"
