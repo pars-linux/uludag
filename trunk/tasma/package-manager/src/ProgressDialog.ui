@@ -30,9 +30,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <property name="resizeMode">
-            <enum>Fixed</enum>
-        </property>
         <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout14</cstring>
