@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Firewall Configuration
+Name[en]=Firewall Configuration
+Name[tr]=Güvenlik Duvarı Ayarları
+Comment=Firewall Configuration Interface
+Comment[tr]=Güvenlik Duvarı Ayarları
+Icon=firewall_config
+X-KDE-ModuleType=Library
+X-KDE-Library=firewall-config
+X-KDE-FactoryName=firewall_config
+X-KDE-RootOnly=false
+Type=Application
+Exec=kcmshell firewall-config
+Categories=QT;KDE;X-KDE-settings-network;X-KDE-tasma-network
+
