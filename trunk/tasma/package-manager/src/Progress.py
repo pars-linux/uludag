@@ -2,6 +2,7 @@ from qt import *
 from kdecore import *
 from ProgressDialog import *
 
+import Basket
 import pisi
 
 class Progress(ProgressDialog):
@@ -15,10 +16,11 @@ class Progress(ProgressDialog):
         self.cancelButton.setEnabled(False)
         self.hideOperationDescription()
         
-        self.packageNo = 1
-        self.totalPackages = 1
+        self.packageNo = 0
+        self.totalPackages = 0
         self.packageName = ""
 
+        self.totalSize = 0
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
 
@@ -65,16 +67,24 @@ class Progress(ProgressDialog):
     
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
+
         self.completedInfo.setText(i18n("--"))
         self.totalInfo.setText(i18n("downloaded (total: -- )"))
         self.packageInfo.setText(i18n("-- / --  package"))
         self.rateInfo.setText(i18n("Speed: -- KB/s"))
+
         self.hideOperationDescription()
         self.hideStatus()
-        self.packageNo = 1
-        self.totalPackages = 1
+
+        # package statistics
+        self.packageNo = 0
+        self.totalPackages = 0
+
+        # size informations
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
+        self.totalSize = 0
+
         self.progressBar.setProgress(0)
         self.cancelButton.setEnabled(False)
 
@@ -119,7 +129,14 @@ class Progress(ProgressDialog):
         self.showOperationDescription()
 
     def updatePackageInfo(self):
-        self.packageInfo.setText(i18n("%1 / %2 package").arg(self.packageNo).arg(self.totalPackages))
+        if self.parent.state == Basket.install_state:
+            operation = i18n("installed")
+        elif self.parent.state == Basket.remove_state:
+            operation = i18n("removed")
+        elif self.parent.state == Basket.upgrade_state:
+            operation = i18n("upgraded")
+
+        self.packageInfo.setText(i18n("%1 / %2 package %3").arg(self.packageNo).arg(self.totalPackages).arg(operation))
 
     # pisi does not provide total downloaded size, just package based.
     def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize):
@@ -132,19 +149,27 @@ class Progress(ProgressDialog):
     # pisi does not provide total operation percent, just package based.
     def updateTotalOperationPercent(self):
         totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
-        totalSize = self.parent.basket.getBasketSize()
-        percent = (totalDownloaded * 100) / totalSize
+        try:
+            percent = (totalDownloaded * 100) / self.totalSize
+        except ZeroDivisionError:
+            percent = 100
+
         self.updateProgressBar(percent)
 
     def getCurrentDownloadedSize(self):
         totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
 
         size = pisi.util.human_readable_size(totalDownloaded)
-        totaldownloaded = "%.1f %s" % (size[0], size[1])
+        totaldownloaded = "%.2f %s" % (size[0], size[1])
 
-        size = pisi.util.human_readable_size(self.parent.basket.getBasketSize())
-        totalsize = "%.1f %s" % (size[0], size[1])
+        size = pisi.util.human_readable_size(self.totalSize)
+        totalsize = "%.2f %s" % (size[0], size[1])
 
         return (totaldownloaded, totalsize)
 
-
+    def updateRemoveProgress(self):
+        try:
+            percent = (self.packageNo * 100) / self.totalPackages
+        except ZeroDivisionError:
+            percent = 0
+        self.updateProgressBar(percent)

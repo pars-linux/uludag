@@ -468,11 +468,12 @@ class MainApplicationWidget(QWidget):
         return True
 
     def takeAction(self):
-
+        # remove action
         if self.state == remove_state:
             self.command.remove(self.basket.packages)
             self.progressDialog.hideStatus()
 
+        # install action
         elif self.state == install_state:
             if not self.conflictCheckPass():
                 self.finished("System.Manager.cancelled")
@@ -481,6 +482,7 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.showStatus()
             self.command.install(self.basket.packages)
 
+        # upgrade action
         elif self.state == upgrade_state:
             if not self.conflictCheckPass():
                 self.finished("System.Manager.cancelled")
@@ -596,35 +598,38 @@ class MainApplicationWidget(QWidget):
 
         # operation is now cancellable
         if operation in ["started"]:
-            self.progressDialog.enableCancel()
-
-        if operation in ["removing"]:
-            if self.state == remove_state:
+            if self.state == install_state:
+                self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
+            elif self.state == remove_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
             elif self.state == upgrade_state:
                 self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
 
+            self.progressDialog.enableCancel()
+
+        elif operation in ["removing"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
             self.progressDialog.updatePackageInfo()
 
         elif operation in ["cached"]:
-            self.progressDialog.totalDownloaded += int(data[2])
+            # totalSize is the to be downloaded size. And that is totalSize - cachedSize.
+            self.progressDialog.totalSize = int(data[1]) - int(data[2])
             self.progressDialog.updateTotalOperationPercent()
             self.progressDialog.setStatus()
             
         elif operation in ["installing"]:
-            if self.state == install_state:
-                self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
-            elif self.state == upgrade_state:
-                self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
-
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
+            self.progressDialog.updatePackageInfo()
 
         elif operation in ["extracting", "configuring"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
         elif operation in ["removed", "installed", "upgraded"]:
-                self.progressDialog.packageNo += 1
+            self.progressDialog.packageNo += 1
+            self.progressDialog.updatePackageInfo()
+
+            if operation == "removed":
+                self.progressDialog.updateRemoveProgress()
 
         elif operation in ["savingrepos"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Applying Repository Changes</b>"))
@@ -635,7 +640,7 @@ class MainApplicationWidget(QWidget):
 
         else: # pisi.ui.packagetogo
             # pisi sends unnecessary remove order notify in the middle of install, upgrade, remove
-            if self.progressDialog.totalPackages == 1 and len(data) > 1:
+            if self.progressDialog.totalPackages == 0:
                 self.progressDialog.totalPackages = len(data)
 
     def showErrorMessage(self, message, error=i18n("Error")):
