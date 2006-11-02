@@ -21,7 +21,9 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ["src/firewall.py", "src/firewall-config.py", "src/rules.py",
-                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["src/firewall_config.png"])],
+                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["src/firewall_config.png"]),
+                        ("/var/lib/iptables", ["profiles/pardus"]),
+                        ],
     executable_links = [("firewall-config", "firewall-config.py")],
     i18n = ("po", ["src"]),
     kcontrol_modules = [("src/firewall-config.desktop", "src/firewall-config.py")]
