@@ -646,6 +646,7 @@ class MainApplicationWidget(QWidget):
 
     def showErrorMessage(self, message, error=i18n("Error")):
         KMessageBox.error(self, message, error)
+        self.refreshState(reset=True)
 
     def showConfirmMessage(self, message, error=i18n("Error")):
         return KMessageBox.questionYesNo(self, message, error)
