@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-02 17:12+0200\n"
+"POT-Creation-Date: 2006-11-02 23:12+0200\n"
 "PO-Revision-Date: 2006-04-27 13:04+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -29,21 +29,21 @@ msgstr "IPTables Yardımı"
 
 #: src/firewall-config.py:54
 msgid "Help with KDE stuff"
-msgstr ""
+msgstr "KDE Yardımı"
 
-#: src/firewall-config.py:78 src/firewall.py:166
+#: src/firewall-config.py:78 src/firewall.py:137
 msgid "Firewall Configuration"
 msgstr "Güvenlik Duvarı Ayarları"
 
-#: src/firewall-config.py:137
+#: src/firewall-config.py:148
 msgid "&Stop Firewall"
 msgstr "Güvenlik &Duvarını Durdur"
 
-#: src/firewall-config.py:138
+#: src/firewall-config.py:149
 msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Güvenlik Duvarı Çalışıyor</font></b>"
 
-#: src/firewall-config.py:140
+#: src/firewall-config.py:151
 msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
@@ -51,15 +51,15 @@ msgstr ""
 "Güvenlik duvarını durdurmak ve gelen/giden tüm bağlantılara izin vermek için "
 "tıklayın."
 
-#: src/firewall-config.py:146
+#: src/firewall-config.py:157
 msgid "&Start Firewall"
 msgstr "Güvenlik &Duvarını Başlat"
 
-#: src/firewall-config.py:147
+#: src/firewall-config.py:158
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Güvenlik Duvarı Çalışmıyor</font></b>"
 
-#: src/firewall-config.py:149
+#: src/firewall-config.py:160
 msgid ""
 "Click here to start the firewall and allow connections only to specified "
 "services."
@@ -67,82 +67,78 @@ msgstr ""
 "Güvenlik duvarını başlatmak ve belirlenen servislere erişime izin vermek "
 "için tıklayın."
 
-#: src/firewall-config.py:276
+#: src/firewall-config.py:291
 msgid "Pardus Firewall Interface is already running!"
 msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor!"
 
-#: src/firewall.py:167
-msgid "Enter the IP address of the "
-msgstr ""
+#: src/rules.py:6
+msgid "Mail services"
+msgstr "E-posta servisleri"
 
-#: src/firewall.py:169
+#: src/rules.py:10
+msgid "Web services"
+msgstr "Web servisleri"
+
+#: src/rules.py:14
+msgid "Remote login service"
+msgstr "Uzaktan erişim servisi"
+
+#: src/rules.py:18
+msgid "Windows file sharin service"
+msgstr "Windows dosya paylaşım servisi"
+
+#: src/rules.py:22
+msgid "Internet relay chat service"
+msgstr "Sohbet servisi (IRC)"
+
+#: src/rules.py:26
+msgid "File transfer service"
+msgstr "Dosya transfer servisi"
+
+#: src/firewall.py:140
 msgid "Alt+H"
 msgstr "Alt+K"
 
-#: src/firewall.py:171
+#: src/firewall.py:142
 msgid "Alt+A"
 msgstr "Alt+E"
 
-#: src/firewall.py:172
+#: src/firewall.py:143
 msgid "&Ok"
 msgstr "&Tamam"
 
-#: src/firewall.py:173
+#: src/firewall.py:144
 msgid "Alt+O"
 msgstr "Alt+T"
 
-#: src/firewall.py:175
+#: src/firewall.py:146
 msgid "Alt+C"
 msgstr "Alt+İ"
 
-#: src/firewall.py:177
+#: src/firewall.py:148
 msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr ""
 "Güvenlik duvarını durdurmak ve gelen bağlantılara izin vermek için buraya "
 "tıklayın"
 
-#: src/firewall.py:178
+#: src/firewall.py:149
 msgid "&Stop"
 msgstr "&Durdur"
 
-#: src/firewall.py:179
+#: src/firewall.py:150
 msgid "Alt+S"
 msgstr "Alt+D"
 
-#: src/firewall.py:180
+#: src/firewall.py:151
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışıyor</font></b>"
 
-#: src/firewall.py:182
-msgid "E-mail Services"
-msgstr "E-posta Servisleri"
-
-#: src/firewall.py:183
-msgid "Web Services"
-msgstr "Web Servisleri"
-
-#: src/firewall.py:184
-msgid "Remote Login Services"
-msgstr "Uzaktan Erişim Servisleri"
-
-#: src/firewall.py:185
-msgid "Windows File Sharing Services"
-msgstr "Windows Dosya Paylaşımı Servisleri"
-
-#: src/firewall.py:186
-msgid "Internet Relay Chat Services"
-msgstr "Sohbet Servisleri (IRC)"
-
-#: src/firewall.py:187
-msgid "File Transfer Services"
-msgstr "Dosya Transferi Servisleri"
-
-#: src/firewall.py:188
+#: src/firewall.py:153
 msgid "Allow other computers to access following services on this computer:"
 msgstr ""
 "Diğer bilgisayarların, bu bilgisayardaki aşağıdaki servislere erişmesine "
 "izin ver:"
 
-#: src/firewall.py:189
+#: src/firewall.py:154
 msgid "Incoming Connections"
 msgstr "Gelen Bağlantılar"

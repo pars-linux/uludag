@@ -15,7 +15,7 @@ filter = {
     ),
     'inWFS': (
         '-A PARDUS-USER -p tcp -m multiport --dports 445 -j ACCEPT',
-        i18n('Windows file sharin service'),
+        i18n('Windows file sharing service'),
     ),
     'inIRC': (
         '-A PARDUS-USER -p tcp -m multiport --dports 6667-6669 -j ACCEPT',
