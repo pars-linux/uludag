@@ -23,7 +23,6 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
-        <SelectedPackage>clearlooks</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
         <SelectedPackage>dosbox</SelectedPackage>
@@ -212,7 +211,6 @@
         <Package>cdrtools</Package>
         <Package>chmlib</Package>
         <Package>clamav</Package>
-        <Package>clearlooks</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
         <Package>coolplug</Package>
@@ -416,6 +414,7 @@
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
         <Package>libkipi</Package>
+        <Package>liblazy</Package>
         <Package>liblbxutil</Package>
         <Package>libmad</Package>
         <Package>libmal</Package>
@@ -589,6 +588,7 @@
         <Package>python</Package>
         <Package>python-bsddb3</Package>
         <Package>python-fchksum</Package>
+        <Package>python-iptables</Package>
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
