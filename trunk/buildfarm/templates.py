@@ -24,7 +24,7 @@ Content-Type: multipart/alternative; boundary="boundary42"
 Content-Type: text/plain;
             charset="utf-8"
 
-Dear developer
+Hello,
 
 This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
@@ -48,7 +48,7 @@ Happy hacking!
 Content-Type: text/html;
             charset="utf-8"
 
-<p>Dear developer
+<p>Hello,
 
 <p>This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
@@ -103,7 +103,7 @@ Subject: [buildfarm] %(subject)s
 Content-Type: text/plain;
             charset="utf-8"
 
-Dear developer
+Hello,
 
 This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
