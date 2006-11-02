@@ -612,7 +612,8 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.updatePackageInfo()
 
         elif operation in ["cached"]:
-            # totalSize is the to be downloaded size. And that is totalSize - cachedSize.
+            # progressDialog.totalSize is the to be downloaded size by package-manager.
+            # And that is (totalDownloadSize - alreadyCachedSize) 
             self.progressDialog.totalSize = int(data[1]) - int(data[2])
             self.progressDialog.updateTotalOperationPercent()
             self.progressDialog.updateStatus()
