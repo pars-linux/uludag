@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>484</width>
-            <height>482</height>
+            <width>449</width>
+            <height>462</height>
         </rect>
     </property>
     <property name="caption">
@@ -338,7 +338,7 @@
                     </widget>
                     <widget class="QButtonGroup" row="1" column="0" rowspan="1" colspan="2">
                         <property name="name">
-                            <cstring>frameCheckBoxes</cstring>
+                            <cstring>frameServices</cstring>
                         </property>
                         <property name="sizePolicy">
                             <sizepolicy>
@@ -364,59 +364,6 @@
                         <property name="title">
                             <string></string>
                         </property>
-                        <grid>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QCheckBox" row="2" column="0">
-                                <property name="name">
-                                    <cstring>checkinMail</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>E-mail Services</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="1" column="0">
-                                <property name="name">
-                                    <cstring>checkinWeb</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Web Services</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="3" column="0">
-                                <property name="name">
-                                    <cstring>checkinRemote</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Remote Login Services</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="4" column="0">
-                                <property name="name">
-                                    <cstring>checkinWFS</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Windows File Sharing Services</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="5" column="0">
-                                <property name="name">
-                                    <cstring>checkinIRC</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Internet Relay Chat Services</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="8" column="0">
-                                <property name="name">
-                                    <cstring>checkinFTP</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>File Transfer Services</string>
-                                </property>
-                            </widget>
-                        </grid>
                     </widget>
                     <widget class="QLabel" row="0" column="1">
                         <property name="name">

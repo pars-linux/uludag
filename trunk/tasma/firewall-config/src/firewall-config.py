@@ -28,7 +28,7 @@ import firewall
 import comar
 
 # Rules
-from rules import named_rules
+import rules
 
 def I18N_NOOP(str):
     return str
@@ -96,7 +96,22 @@ class MainApplication(programbase):
 
         self.aboutus = KAboutApplication(self)
 
+        # Initial conditions
+        self.state = 'off'
+        self.profile = ''
+        self.emptyRules()
         mainwidget.pushStatus.setEnabled(False)
+
+        # First Tab - Incoming Connections
+        self.services = []
+        mainwidget.frameServices.setColumnLayout(0, Qt.Vertical)
+        frameServicesLayout = QVBoxLayout(mainwidget.frameServices.layout())
+        frameServicesLayout.setAlignment(Qt.AlignTop)
+        for key, (rule, name) in rules.filter.iteritems():
+            chk = QCheckBox(mainwidget.frameServices, key)
+            chk.setText(name)
+            frameServicesLayout.addWidget(chk)
+            self.services.append(chk)
 
         # Icons
         mainwidget.pixmapFW.setPixmap(loadIcon('firewall_config', size=48))
@@ -118,10 +133,6 @@ class MainApplication(programbase):
         self.connect(mainwidget.pushApply, SIGNAL('clicked()'),self.slotApply)
 
         # Get FW state
-        self.state = 'off'
-        self.profile = ''
-        self.rules = {}
-
         self.comar.call('Net.Filter.getProfile', id=4)
         self.handleComar(self.comar.read_cmd())
 
@@ -147,17 +158,27 @@ class MainApplication(programbase):
             mainwidget.textStatus.setText(i18n('<b><font size=\'+1\'>Firewall is not running</font></b>'))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
             mainwidget.textStatus2.setText(i18n('Click here to start the firewall and allow connections only to specified services.'))
-            mainwidget.frameCheckBoxes.setEnabled(False)
+            self.updateRules()
 
-    def updateCheckBoxes(self):
-        mainwidget.frameCheckBoxes.setEnabled(True)
-        inRule = '-A PARDUS-USER %s -j ACCEPT'
-        for named in named_rules:
-            checkbox = eval('mainwidget.check%s' % named)
-            if 'filter' in self.rules and inRule % named_rules[named] in self.rules['filter']:
-                checkbox.setChecked(True)
-            else:
-                checkbox.setChecked(False)
+    def updateRules(self):
+        if self.state == 'on':
+            # First Tab - Incoming Connections
+            for checkbox in self.services:
+                if rules.filter[checkbox.name()][0] in self.rules['filter']:
+                    checkbox.setChecked(True)
+                else:
+                    checkbox.setChecked(False)
+            mainwidget.frameServices.setEnabled(True)
+        else:
+            mainwidget.frameServices.setEnabled(False)
+
+    def emptyRules(self):
+        self.rules = {
+            'filter': [],
+            'mangle': [],
+            'nat': [],
+            'raw': []
+        }
 
     def handleComar(self, reply):
         if reply.command == 'notify':
@@ -171,15 +192,13 @@ class MainApplication(programbase):
         elif reply.command == 'result':
             if reply.id == 2:
                 # Get Rules
-                self.rules = {}
+                self.emptyRules()
                 for rule in reply.data.split('\n'):
                     if not rule:
                         continue
                     table, rule = rule.split(' ', 1)
-                    if table not in self.rules:
-                        self.rules[table] = []
                     self.rules[table].append(rule)
-                self.updateCheckBoxes()
+                self.updateRules()
             elif reply.id == 3:
                 # Get State
                 self.setState(reply.data)
@@ -210,34 +229,30 @@ class MainApplication(programbase):
     def slotApply(self):
         self.saveAll()
 
-
-    def saveAll(self):
-        if 'filter' not in self.rules:
-            self.rules['filter'] = []
-        s1 = self.rules['filter']
-        s2 = []
-
-        inRule = '-A PARDUS-USER %s -j ACCEPT'
-
-        for named in named_rules:
-            checkbox = eval('mainwidget.check%s' % named)
-            if checkbox.isChecked():
-                s2.append(inRule % named_rules[named])
-
-        s1 = set(s1)
-        s2 = set(s2)
-
-        for rule in s1 - s2:
-            self.setRule(rule.replace('-A PARDUS-USER', '-D PARDUS-USER'))
-            self.rules['filter'].remove(rule)
-
-        for rule in s2 - s1:
-            self.setRule(rule)
-            self.rules['filter'].append(rule)
-
-    def setRule(self, rule):
+    def setRule(self, table, rule):
+        rule = '-t %s %s' % (table, rule)
         self.comar.call('Net.Filter.setRule', {'rule': rule}, id=10)
         self.handleComar(self.comar.read_cmd())
+
+    def saveRules(self, table, now):
+        s1 = set(self.rules[table])
+        s2 = set(now)
+
+        for rule in s1 - s2:
+            self.setRule(table, rule.replace('-A', '-D', 1))
+            self.rules[table].remove(rule)
+
+        for rule in s2 - s1:
+            self.setRule(table, rule)
+            self.rules[table].append(rule)
+
+    def saveAll(self):
+        # First Tab - Incoming Connections
+        now = []
+        for checkbox in self.services:
+            if checkbox.isChecked():
+                now.append(rules.filter[checkbox.name()][0])
+        self.saveRules('filter', now)
 
     def __del__(self):
         pass
