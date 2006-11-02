@@ -87,7 +87,7 @@ class serviceItem(KListViewItem):
         if state:
             self.setPixmap(0, loadIcon('player_play'))
         else:
-            self.setPixmap(0, loadIcon('player_stop'))
+            self.setPixmap(0, QPixmap())
 
     def setAutoStart(self, autostart):
         self.autostart = autostart
