@@ -579,7 +579,7 @@ class MainApplicationWidget(QWidget):
 
         elif operation == "fetching":
             if "pisi-index.xml" in data[1]:
-                self.progressDialog.updateUpgradingInfo(percent=data[2], rate=data[3], symbol=data[4])
+                self.progressDialog.updateUpgradingInfo()
                 self.progressDialog.updateProgressBar(progress=data[2])
 
             else:
@@ -588,7 +588,7 @@ class MainApplicationWidget(QWidget):
                 elif self.state == upgrade_state:
                     self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
 
-                self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[1], percent=data[2], rate=data[3], symbol=data[4])
+                self.progressDialog.updateDownloadingInfo(i18n("downloading"), file=data[1])
                 self.progressDialog.updateTotalDownloaded(pkgDownSize=data[5], pkgTotalSize=data[6])
                 self.progressDialog.updateTotalOperationPercent()
 
@@ -615,7 +615,7 @@ class MainApplicationWidget(QWidget):
             # totalSize is the to be downloaded size. And that is totalSize - cachedSize.
             self.progressDialog.totalSize = int(data[1]) - int(data[2])
             self.progressDialog.updateTotalOperationPercent()
-            self.progressDialog.setStatus()
+            self.progressDialog.updateStatus()
             
         elif operation in ["installing"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])

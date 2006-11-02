@@ -33,10 +33,7 @@ class Progress(ProgressDialog):
     def setOperationDescription(self, text):
         self.operationDescription.setText(text)
 
-    def setStatus(self, rate=None, symbol=None):
-        if rate and symbol:
-            self.rateInfo.setText(i18n("Speed: %1 %2  ").arg(round(int(rate), 1)).arg(symbol))
-
+    def updateStatus(self):
         completed, total = self.getCurrentDownloadedSize()
         self.completedInfo.setText(completed)
         self.totalInfo.setText(i18n("downloaded ( total: %1 )").arg(total))
@@ -44,7 +41,6 @@ class Progress(ProgressDialog):
 
     def showStatus(self):
         self.packageInfo.show()
-        self.rateInfo.show()
         self.completedInfo.show()
         self.totalInfo.show()
 
@@ -55,7 +51,6 @@ class Progress(ProgressDialog):
         if hidepackage:
             self.packageInfo.hide()
 
-        self.rateInfo.hide()
         self.completedInfo.hide()
         self.totalInfo.hide()
 
@@ -71,7 +66,6 @@ class Progress(ProgressDialog):
         self.completedInfo.setText(i18n("--"))
         self.totalInfo.setText(i18n("downloaded (total: -- )"))
         self.packageInfo.setText(i18n("-- / --  package"))
-        self.rateInfo.setText(i18n("Speed: -- KB/s"))
 
         self.hideOperationDescription()
         self.hideStatus()
@@ -118,14 +112,14 @@ class Progress(ProgressDialog):
 
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(package))
 
-    def updateDownloadingInfo(self, operation, file, percent, rate, symbol):
+    def updateDownloadingInfo(self, operation, file):
         self.packageName = pisi.util.parse_package_name(file)[0]
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(self.packageName))
-        self.setStatus(rate, symbol)
+        self.updateStatus()
         self.showOperationDescription()
 
-    def updateUpgradingInfo(self, percent, rate, symbol):
-        self.setStatus(rate, symbol)
+    def updateUpgradingInfo(self):
+        self.updateStatus()
         self.showOperationDescription()
 
     def updatePackageInfo(self):
@@ -172,4 +166,5 @@ class Progress(ProgressDialog):
             percent = (self.packageNo * 100) / self.totalPackages
         except ZeroDivisionError:
             percent = 0
+
         self.updateProgressBar(percent)
