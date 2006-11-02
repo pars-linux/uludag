@@ -249,8 +249,6 @@ def make_image(project):
     
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
-    
-    squash_image(project)
 
 def make_iso(project):
     print "Preparing ISO..."
