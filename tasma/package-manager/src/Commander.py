@@ -12,6 +12,7 @@
 import string
 import pisi
 import pisi.api
+import pisi.context as ctx
 
 from kdecore import i18n
 from qt import QObject, QTimer
@@ -41,11 +42,12 @@ class Commander(QObject):
             try:
                 if ctx.comar_sockname:
                     sock.connect(ctx.comar_sockname)
+                    return True
                 else:
                     self.comar.notifier.setEnabled(True)
                     sock.connect("/var/run/comar.socket")
                     return True
-            except:
+            except socket.error:
                 timeout -= 0.2
             time.sleep(0.2)
         return False
