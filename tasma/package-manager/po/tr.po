@@ -329,7 +329,7 @@ msgstr "güncellendi"
 
 #: src/Progress.py:133
 msgid "%1 / %2 package %3"
-msgstr "Şu anda <b>%2</b> paketi %1"
+msgstr "%1 / %2 paket %3"
 
 #: src/Commander.py:58
 msgid "Can't connect to Comar daemon"
