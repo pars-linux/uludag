@@ -19,6 +19,9 @@ class ComarIface:
     def updateAllRepos(self):
         self.com.call("System.Manager.updateAllRepositories")
 
+def setconfig(config,key,value):
+    config.writeEntry(key,value)
+
 class TrayApp(KSystemTray):
     def __init__(self,parent=None):
         KSystemTray.__init__(self,parent)
@@ -34,7 +37,7 @@ class TrayApp(KSystemTray):
 
     def initPiSi(self):
         pisi.api.init(database=True, write=False, options=None, comar=False)
-
+        self.show()
         # check for upgrades for the first time
         self.checkUpgradable()
 
@@ -45,6 +48,7 @@ class TrayApp(KSystemTray):
         if self.config.readNumEntry("Timer"):
             self.interval = self.config.readNumEntry("Timer")*60000
         else:
+            setconfig(self.config,"Timer",10)
             self.interval = 10*60000
 
         self.disconnect(self.timer, SIGNAL("timeout()"), self.initPiSi)
@@ -65,7 +69,6 @@ class TrayApp(KSystemTray):
         self.upgradeList = pisi.api.list_upgradable()
 
         if len(self.upgradeList):
-            self.show()
             QTimer.singleShot(10,self.showPopup)
 
     def showPopup(self):
@@ -73,6 +76,7 @@ class TrayApp(KSystemTray):
         if self.config.readNumEntry("Timeout"):
             timeout=self.config.readNumEntry("Timeout")
         else:
+            setconfig(self.config,"Timeout",10)
             timeout=10
         self.popup = KopeteBalloon(self,i18n("There are <b>%1</b> updates available!").arg(len(self.upgradeList)),
                                    KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,KIcon.SizeMedium),timeout)
