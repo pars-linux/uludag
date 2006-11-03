@@ -102,10 +102,13 @@ class Project:
         if self.repo_uri:
             paks = doc.insertTag("PackageSelection")
             paks.setAttribute("repo_uri", self.repo_uri)
+            self.selected_components.sort()
             for item in self.selected_components:
                 paks.insertTag("SelectedComponent").insertData(item)
+            self.selected_packages.sort()
             for item in self.selected_packages:
                 paks.insertTag("SelectedPackage").insertData(item)
+            self.all_packages.sort()
             for item in self.all_packages:
                 paks.insertTag("Package").insertData(item)
         data = doc.toPrettyString()
