@@ -10,13 +10,18 @@ from kdecore import *
 from subprocess import *
 
 class KopeteBalloon(QWidget):
-    def __init__(self,parent,text,pix):
+    def __init__(self,parent,text,pix,timeout=3):
         QWidget.__init__(self,None,"KopeteBalloon", Qt.WStyle_StaysOnTop | Qt.WStyle_Customize | Qt.WStyle_NoBorder | Qt.WStyle_Tool | Qt.WX11BypassWM)
         self.parent = parent
 
         self.setCaption("")
         self.mAnchor = QPoint()
         BalloonLayout = QVBoxLayout(self, 22, KDialog.spacingHint(), "BalloonLayout")
+
+        #saniyeler sonra git bakayım
+        self.timer = QTimer()
+        self.timer.connect(self.timer, SIGNAL("timeout()"), self.hide)
+        self.timer.start(1000*timeout, True)
 
         # BEGIN Layout1
         Layout1 = QHBoxLayout(BalloonLayout, KDialog.spacingHint(), "Layout1")
@@ -39,7 +44,8 @@ class KopeteBalloon(QWidget):
         self.mViewButton = QPushButton(i18n("Show Updates"), self, "mViewButton")
         self.mIgnoreButton = QPushButton(i18n("Ignore"), self, "mIgnoreButton")
 
-        self.connect(self.mIgnoreButton,SIGNAL("clicked()"),self.parent.hide)
+        # parent hide olmamalı ya da ayarlanabilir olmalı.
+        self.connect(self.mIgnoreButton,SIGNAL("clicked()"),self.hide)
         self.connect(self.mViewButton,SIGNAL("clicked()"),self.startPackageManager)
 
         Layout2.addStretch()
