@@ -288,8 +288,8 @@ msgid "Package Manager is already running!"
 msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
 
 #: src/Progress.py:39
-msgid " downloaded ( total: %1 )"
-msgstr " indirildi ( toplam: %1 )"
+msgid "downloaded ( total: %1 )"
+msgstr "indirildi ( toplam: %1 )"
 
 #: src/Progress.py:64
 msgid "<b>Preparing PiSi...</b>"
