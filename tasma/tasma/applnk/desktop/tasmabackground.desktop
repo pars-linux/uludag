@@ -12,11 +12,14 @@ X-KDE-ParentApp=tasma
 
 Name=Background
 Name[tr]=Arkaplan
+Name[nl]=Achtergrond
 
 Comment=Change the background settings
 Comment[tr]=Arkaplan ayarlarını değiştirir
+Comment[nl]=Achtergrondinstellingen wijzigen
 
 Keywords=background,desktops,colors,colours,images,wallpapers,blending,balance,cache,multiple wallpapers,pixmap
 Keywords[tr]=artalan,masaüstü,renkler,renkler,resimler,duvar kağıtları,karıştırma,denge,ön bellek,çoklu duvar kağıtları,pixmap
+Keywords[nl]=achtergrond,desktops,bureaubladen,kleur,kleuren,afbeeldingen,behang,wallpapers,gradiënt,vermenging,balans,cache,meerdere afbeeldingen,pixmap,graphics
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

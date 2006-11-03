@@ -16,8 +16,10 @@ Name[tr]=Yazıcılar
 
 Comment=Printing system configuration (printers, jobs, classes, ...)
 Comment[tr]=Yazdırma sistemi kurulumu (yazıcılar, işler, sınıflar, ...)
+Comment[nl]=Configuratie van het afdruksysteem (printers, taken, klassen, ...)
 
 Keywords=print,printer,printing management
 Keywords[tr]=yazdır,yazıcı,yazıcı yönetimi
+Keywords[nl]=print,printer,printing management,afdrukbeheer,afdrukken
 
 Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals
