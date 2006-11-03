@@ -42,7 +42,7 @@ msgstr "Grup adı:"
 
 #: groupedit.py:97
 msgid "Enter a group ID or use auto selection"
-msgstr "Otomatik seçimi kullanın yada grup no'sunu girin"
+msgstr "Otomatik seçimi kullanın ya da grup numarasını girin"
 
 #: groupedit.py:100
 msgid "Enter a group name"
@@ -194,7 +194,7 @@ msgstr "Parolanız daha uzun olmalı"
 
 #: useredit.py:387
 msgid "Dont use your full name or user name as a password"
-msgstr "Ad soyadınızı yada kullanıcı adınızı parola olarak kullanmayın"
+msgstr "Ad soyadınızı ya da kullanıcı adınızı parola olarak kullanmayın"
 
 #: useredit.py:390
 msgid "Passwords don't match."
@@ -202,7 +202,7 @@ msgstr "Parolalar uyuşmuyor."
 
 #: useredit.py:393
 msgid "You must enter a user ID or use the auto selection."
-msgstr "Otomatik seçimi kullanın yada kullanıcı no'sunu girin."
+msgstr "Otomatik seçimi kullanın ya da kullanıcı numarasını girin."
 
 #: useredit.py:396
 msgid "You must enter a user name."
