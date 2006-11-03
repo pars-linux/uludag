@@ -36,7 +36,7 @@ class Progress(ProgressDialog):
     def updateStatus(self):
         completed, total = self.getCurrentDownloadedSize()
         self.completedInfo.setText(completed)
-        self.totalInfo.setText(i18n("downloaded ( total: %1 )").arg(total))
+        self.totalInfo.setText(i18n(" downloaded ( total: %1 )").arg(total))
         self.updatePackageInfo()
 
     def showStatus(self):
