@@ -36,7 +36,7 @@ class Progress(ProgressDialog):
     def updateStatus(self):
         completed, total = self.getCurrentDownloadedSize()
         self.completedInfo.setText(completed)
-        self.totalInfo.setText(i18n(" downloaded ( total: %1 )").arg(total))
+        self.totalInfo.setText(i18n("downloaded ( total: %1 )").arg(total))
         self.updatePackageInfo()
 
     def showStatus(self):
@@ -154,10 +154,10 @@ class Progress(ProgressDialog):
         totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
 
         size = pisi.util.human_readable_size(totalDownloaded)
-        totaldownloaded = "%.2f %s" % (size[0], size[1])
+        totaldownloaded = "%.2f %s " % (size[0], size[1])
 
         size = pisi.util.human_readable_size(self.totalSize)
-        totalsize = "%.2f %s" % (size[0], size[1])
+        totalsize = "%.2f %s " % (size[0], size[1])
 
         return (totaldownloaded, totalsize)
 

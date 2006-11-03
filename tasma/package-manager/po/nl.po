@@ -291,8 +291,8 @@ msgstr "Pakketbeheer is reeds opgestart!"
 
 #: src/Progress.py:39
 #, fuzzy
-msgid " downloaded ( total: %1 )"
-msgstr " <b>Gedownload/totaal:<b> %1 %2 %3 %4"
+msgid "downloaded ( total: %1 )"
+msgstr "<b>Gedownload/totaal:<b> %1 %2 %3 %4"
 
 #: src/Progress.py:64
 msgid "<b>Preparing PiSi...</b>"
