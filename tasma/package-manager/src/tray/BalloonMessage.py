@@ -21,7 +21,7 @@ class KopeteBalloon(QWidget):
         #saniyeler sonra git bakayım
         self.timer = QTimer()
         self.timer.connect(self.timer, SIGNAL("timeout()"), self.hide)
-        self.timer.start(1000*timeout, True)
+        self.timer.start(10000*timeout, True)
 
         # BEGIN Layout1
         Layout1 = QHBoxLayout(BalloonLayout, KDialog.spacingHint(), "Layout1")
