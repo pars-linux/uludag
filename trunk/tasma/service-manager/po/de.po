@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: service manager \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-06 15:24+0300\n"
+"POT-Creation-Date: 2006-11-02 23:15+0200\n"
 "PO-Revision-Date: 2006-10-31 22:24+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: German <german@li.org>\n"
@@ -15,88 +15,114 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/service-manager.py:54
-#: src/service-manager.py:289
-#: src/mainform.py:76
+#: src/service-manager.py:55 src/service-manager.py:349 src/mainform.py:99
 msgid "Service Manager"
 msgstr "Service Manager"
 
-#: src/service-manager.py:161
+#: src/service-manager.py:184
 msgid "You are not allowed to do this operation."
 msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
 
-#: src/service-manager.py:161
+#: src/service-manager.py:184
 msgid "Access Denied"
 msgstr "Zugang verweigert"
 
-#: src/service-manager.py:163
+#: src/service-manager.py:186
 msgid "COMAR script execution failed."
 msgstr "COMAR Skriptausführung ist fehlgeschlagen."
 
-#: src/service-manager.py:163
+#: src/service-manager.py:186
 msgid "Script Error"
 msgstr "Skript Fehler"
 
-#: src/service-manager.py:166
+#: src/service-manager.py:191
 msgid "Unable to start service."
 msgstr "Service kann nicht gestartet werden."
 
-#: src/service-manager.py:166
-#: src/service-manager.py:168
-#: src/service-manager.py:170
+#: src/service-manager.py:191 src/service-manager.py:194
 msgid "Failed"
 msgstr "Fehlgeschlagen"
 
-#: src/service-manager.py:168
+#: src/service-manager.py:194
 msgid "Unable to stop service."
 msgstr "Service kann nicht angehalten werden."
 
-#: src/service-manager.py:170
-#, python-format
-msgid ""
-"Unable to complete operation:\n"
-"%s"
+#: src/service-manager.py:223 src/mainform.py:108
+msgid "Select a service from list."
 msgstr ""
-"Der Vorgang kann nicht abgeschlossen werden:\n"
-"%s"
 
-#: src/service-manager.py:210
+#: src/service-manager.py:231 src/mainform.py:110
+msgid "Start"
+msgstr "Start"
+
+#: src/service-manager.py:236
 #, python-format
 msgid "%s is running."
 msgstr "%s wird ausgeführt."
 
-#: src/service-manager.py:212
-#, python-format
-msgid "%s is paused."
-msgstr "%s wurde angehalten."
+#: src/service-manager.py:239
+#, fuzzy, python-format
+msgid "%s is not running."
+msgstr "%s wird ausgeführt."
 
-#: src/service-manager.py:214
-#, python-format
-msgid "%s is stopped."
-msgstr "%s wurde gestoppt."
+#: src/service-manager.py:241
+msgid "Execute startup script"
+msgstr ""
 
-#: src/service-manager.py:284
+#: src/service-manager.py:242
+msgid "Execuete shutdown script"
+msgstr ""
+
+#: src/service-manager.py:306
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+
+#: src/service-manager.py:344
 msgid "Service Manager is already running!"
 msgstr "Service Manager wird bereits ausgeführt!"
 
-#: src/mainform.py:29
-#: src/mainform.py:78
+#: src/mainform.py:28 src/mainform.py:100
+msgid "1"
+msgstr ""
+
+#: src/mainform.py:29 src/mainform.py:101
 msgid "Service"
 msgstr "Service"
 
-#: src/mainform.py:81
-msgid "Start"
-msgstr "Start"
+#: src/mainform.py:30 src/mainform.py:102
+msgid "Run on Startup"
+msgstr ""
 
-#: src/mainform.py:85
-msgid "Pause"
-msgstr "Pause"
-
-#: src/mainform.py:86
+#: src/mainform.py:103
 msgid "&List servers only."
 msgstr "&Liste nur die Server auf."
 
-#: src/mainform.py:87
+#: src/mainform.py:104
 msgid "Alt+L"
 msgstr "Alt+L"
 
+#: src/mainform.py:106
+msgid "Run on startup."
+msgstr ""
+
+#: src/mainform.py:107
+msgid "Don't run on startup."
+msgstr ""
+
+#~ msgid ""
+#~ "Unable to complete operation:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Der Vorgang kann nicht abgeschlossen werden:\n"
+#~ "%s"
+
+#~ msgid "%s is paused."
+#~ msgstr "%s wurde angehalten."
+
+#~ msgid "%s is stopped."
+#~ msgstr "%s wurde gestoppt."
+
+#~ msgid "Pause"
+#~ msgstr "Pause"

@@ -1,17 +1,18 @@
-# translation of service-manager.po to Dutch
+# translation of nl.po to Nederlands
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: service-manager\n"
+"Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-28 04:22+0300\n"
-"PO-Revision-Date: 2006-08-08 23:56+0200\n"
-"Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"PO-Revision-Date: 2006-11-03 17:50+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: src/service-manager.py:55 src/service-manager.py:346 src/mainform.py:94
 msgid "Service Manager"
-msgstr "Service Manager"
+msgstr "Service manager"
 
 #: src/service-manager.py:189
 msgid "You are not allowed to do this operation."
-msgstr "U hebt niet de rechten om deze handeling te verrichten."
+msgstr "U hebt mag deze handeling niet verrichten."
 
 #: src/service-manager.py:189
 msgid "Access Denied"
@@ -39,22 +40,20 @@ msgid "Script Error"
 msgstr "Scriptfout"
 
 #: src/service-manager.py:196
-#, fuzzy
 msgid "Unable to start service."
-msgstr "De operatie kon niet worden voltooid."
+msgstr "De dienst kan niet gestart worden."
 
 #: src/service-manager.py:196 src/service-manager.py:199
 msgid "Failed"
 msgstr "Mislukt"
 
 #: src/service-manager.py:199
-#, fuzzy
 msgid "Unable to stop service."
-msgstr "De operatie kon niet worden voltooid."
+msgstr "De dienst kan niet gestopt worden."
 
 #: src/service-manager.py:220 src/mainform.py:102
 msgid "Select a service from list."
-msgstr ""
+msgstr "Kies een dienst van de lijst."
 
 #: src/service-manager.py:228 src/mainform.py:99
 msgid "Start"
@@ -63,67 +62,58 @@ msgstr "Start"
 #: src/service-manager.py:233
 #, python-format
 msgid "%s is running."
-msgstr ""
+msgstr "%s is actief."
 
 #: src/service-manager.py:236
 #, python-format
 msgid "%s is not running."
-msgstr ""
+msgstr "%s is niet actief."
 
 #: src/service-manager.py:238
 msgid "Execute startup script"
-msgstr ""
+msgstr "Voer een opstart script uit"
 
 #: src/service-manager.py:239
 msgid "Execuete shutdown script"
-msgstr ""
+msgstr "Voer een afsluit script uit"
 
 #: src/service-manager.py:303
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
 msgstr ""
+"Als u deze dienst stopt, kunt u in de problemen raken.\n"
+"Weet u zeker dat u deze dienst wilt stoppen?"
 
 #: src/service-manager.py:341
 msgid "Service Manager is already running!"
-msgstr "Service Manager is reeds gestart!"
+msgstr "Dienstmanager is reeds gestart!"
 
 #: src/mainform.py:28 src/mainform.py:95
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: src/mainform.py:29 src/mainform.py:96
 msgid "Service"
 msgstr "Dienst"
 
 #: src/mainform.py:30 src/mainform.py:97
-#, fuzzy
 msgid "Run on Startup"
-msgstr "Niet automatisch starten"
+msgstr "Bij opstarten uitvoeren"
 
 #: src/mainform.py:104
-#, fuzzy
 msgid "Run on startup."
-msgstr "Niet automatisch starten"
+msgstr "Bij opstarten uitvoeren"
 
 #: src/mainform.py:105
-#, fuzzy
 msgid "Don't run on startup."
-msgstr "Niet automatisch starten"
+msgstr "Niet uitvoeren bij opstarten."
 
 #: src/mainform.py:106
 msgid "&List servers only."
-msgstr ""
+msgstr "&Lijst van alleen servers."
 
 #: src/mainform.py:107
 msgid "Alt+L"
-msgstr ""
+msgstr "ALT+L"
 
-#, fuzzy
-#~ msgid ""
-#~ "Unable to complete operation:\n"
-#~ "%s"
-#~ msgstr "De operatie kon niet worden voltooid."
-
-#~ msgid "Auto Start"
-#~ msgstr "Autostart"
