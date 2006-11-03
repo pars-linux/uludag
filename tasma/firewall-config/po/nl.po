@@ -1,0 +1,140 @@
+# translation of tr.po to Nederlands
+# Firewall Graphical User Interface
+# Copyright (C) 2006, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the FW_KGA package.
+#
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-02 23:12+0200\n"
+"PO-Revision-Date: 2006-11-03 17:28+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/firewall-config.py:36
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Pardus firewall grafische gebruikersinterface"
+
+#: src/firewall-config.py:52
+msgid "GUI Design & Usability"
+msgstr "Gebruikersinterface Ontwerp en gebruikersgemak"
+
+#: src/firewall-config.py:53
+msgid "Help with IPTables"
+msgstr "Hulp met IP tabellen"
+
+#: src/firewall-config.py:54
+msgid "Help with KDE stuff"
+msgstr "Hulp met KDE spul"
+
+#: src/firewall-config.py:78 src/firewall.py:137
+msgid "Firewall Configuration"
+msgstr "Firewall configuratie"
+
+#: src/firewall-config.py:148
+msgid "&Stop Firewall"
+msgstr "&Stop firewall"
+
+#: src/firewall-config.py:149
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr "<b><font size='+1'>Firewall is aan</font></b>"
+
+#: src/firewall-config.py:151
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr "Klik hier om de firewall te stoppen en alle inkomende en uitgaande verbindingen toe te staan."
+
+#: src/firewall-config.py:157
+msgid "&Start Firewall"
+msgstr "&Start firewall"
+
+#: src/firewall-config.py:158
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr "<b><font size='+1'>Firewall is uit</font></b>"
+
+#: src/firewall-config.py:160
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr "Klik hier om de firewall te starten en slechte bepaalde inkomende en uitgaande verbindigen toe te staan."
+
+#: src/firewall-config.py:291
+msgid "Pardus Firewall Interface is already running!"
+msgstr "Pardus firewall interface is al opgestart!"
+
+#: src/rules.py:6
+msgid "Mail services"
+msgstr "Maildiensten"
+
+#: src/rules.py:10
+msgid "Web services"
+msgstr "Webdiensten"
+
+#: src/rules.py:14
+msgid "Remote login service"
+msgstr "Logindienst op afstand"
+
+#: src/rules.py:18
+msgid "Windows file sharin service"
+msgstr "Windows dienst voor gedeelde bestanden"
+
+#: src/rules.py:22
+msgid "Internet relay chat service"
+msgstr "Internet relay chat (IRC) dienst"
+
+#: src/rules.py:26
+msgid "File transfer service"
+msgstr "Bestandoverdrachtsdienst"
+
+#: src/firewall.py:140
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: src/firewall.py:142
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: src/firewall.py:143
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/firewall.py:144
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: src/firewall.py:146
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: src/firewall.py:148
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr "Klik hier  om de firewall te beëindigen en alle inkomende verbindingen toe te staan."
+
+#: src/firewall.py:149
+msgid "&Stop"
+msgstr "&Stop"
+
+#: src/firewall.py:150
+msgid "Alt+S"
+msgstr "Alt+S"
+
+#: src/firewall.py:151
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr "<b><font size=\"+1\">Firewall is aan</font></b>"
+
+#: src/firewall.py:153
+msgid "Allow other computers to access following services on this computer:"
+msgstr "Sta andere computers toe de toegang toe tot de volgende diensten op deze computer:"
+
+#: src/firewall.py:154
+msgid "Incoming Connections"
+msgstr "Binnenkomende verbindingen"
+
