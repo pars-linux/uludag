@@ -1,5 +1,5 @@
 <PardusmanProject type="install" size="734003200">
-    <Title>Pardus 1.1 Kur 2006-10-19</Title>
+    <Title>Pardus 2006-11-03</Title>
     <WorkDir>/home/gurer/uludag/trunk/pardusman/test/</WorkDir>
     <ReleaseFiles>/home/gurer/uludag/trunk/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
@@ -26,7 +26,6 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
-        <SelectedPackage>clearlooks</SelectedPackage>
         <SelectedPackage>crack-attack</SelectedPackage>
         <SelectedPackage>crystal</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
@@ -246,7 +245,6 @@
         <Package>cdrdao</Package>
         <Package>cdrtools</Package>
         <Package>chmlib</Package>
-        <Package>clearlooks</Package>
         <Package>cln</Package>
         <Package>cmake</Package>
         <Package>comar</Package>
@@ -471,6 +469,7 @@
         <Package>libieee1284</Package>
         <Package>libkexif</Package>
         <Package>libkipi</Package>
+        <Package>liblazy</Package>
         <Package>liblbxutil</Package>
         <Package>libmad</Package>
         <Package>libmal</Package>
@@ -652,6 +651,7 @@
         <Package>python</Package>
         <Package>python-bsddb3</Package>
         <Package>python-fchksum</Package>
+        <Package>python-iptables</Package>
         <Package>qalculate</Package>
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
