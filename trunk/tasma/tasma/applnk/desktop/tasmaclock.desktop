@@ -11,11 +11,14 @@ X-KDE-ParentApp=tasma
 
 Name=Date & Time
 Name[tr]=Tarih ve Saat
+Name[nl]=Datum en Tijd
 
 Comment=Date and time settings
 Comment[tr]=Tarih ve saat ayarları
+Comment[nl]=Instellen van datum en tijd
 
 Keywords=clock,date,time,time zone
 Keywords[tr]=tarih,saat,saat dilimi,zaman,zaman dilimi
+Keywords[nl]=datum,tijd,tijdszone,klok
 
 Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-localization
