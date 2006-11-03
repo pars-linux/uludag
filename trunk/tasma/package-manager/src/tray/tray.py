@@ -70,7 +70,10 @@ class TrayApp(KSystemTray):
 
     def showPopup(self):
         self.show()
-        timeout=self.config.readNumEntry("Timeout")
+        if self.config.readNumEntry("Timeout"):
+            timeout=self.config.readNumEntry("Timeout")
+        else:
+            timeout=10
         self.popup = KopeteBalloon(self,i18n("There are <b>%1</b> updates available!").arg(len(self.upgradeList)),
                                    KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,KIcon.SizeMedium),timeout)
         pos = self.mapToGlobal(self.pos())
