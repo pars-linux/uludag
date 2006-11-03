@@ -18,7 +18,7 @@ class KopeteBalloon(QWidget):
         self.mAnchor = QPoint()
         BalloonLayout = QVBoxLayout(self, 22, KDialog.spacingHint(), "BalloonLayout")
 
-        #saniyeler sonra git bakayım
+        # After seconds go away..
         self.timer = QTimer()
         self.timer.connect(self.timer, SIGNAL("timeout()"), self.hide)
         self.timer.start(10000*timeout, True)
@@ -44,7 +44,7 @@ class KopeteBalloon(QWidget):
         self.mViewButton = QPushButton(i18n("Show Updates"), self, "mViewButton")
         self.mIgnoreButton = QPushButton(i18n("Ignore"), self, "mIgnoreButton")
 
-        # parent hide olmamalı ya da ayarlanabilir olmalı.
+        # FIXME parent->hide/show can set
         self.connect(self.mIgnoreButton,SIGNAL("clicked()"),self.hide)
         self.connect(self.mViewButton,SIGNAL("clicked()"),self.startPackageManager)
 
