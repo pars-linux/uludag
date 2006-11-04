@@ -9,9 +9,7 @@ from kdecore import *
 
 import pisi.api
 import comar
-import fcntl
 from BalloonMessage import *
-from pisi.util import join_path
 
 class ComarIface:
     def __init__(self):
