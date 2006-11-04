@@ -45,8 +45,9 @@ class KopeteBalloon(QWidget):
         self.mIgnoreButton = QPushButton(i18n("Ignore"), self, "mIgnoreButton")
 
         # FIXME parent->hide/show can set
+        # self.parent.parent is package-manager main window
         self.connect(self.mIgnoreButton,SIGNAL("clicked()"),self.hide)
-        self.connect(self.mViewButton,SIGNAL("clicked()"),self.startPackageManager)
+        self.connect(self.mViewButton,SIGNAL("clicked()"),self.parent.parent.show)
 
         Layout2.addStretch()
         Layout2.addWidget(self.mViewButton)

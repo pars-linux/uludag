@@ -9,8 +9,9 @@ from kdecore import *
 
 import pisi.api
 import comar
+import fcntl
 from BalloonMessage import *
-
+from pisi.util import join_path
 
 class ComarIface:
     def __init__(self):
@@ -25,6 +26,7 @@ def setconfig(config,key,value):
 class TrayApp(KSystemTray):
     def __init__(self,parent=None):
         KSystemTray.__init__(self,parent)
+        self.parent= parent
 
         icon = KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,KIcon.SizeSmall)
         self.setPixmap(icon)
@@ -38,46 +40,37 @@ class TrayApp(KSystemTray):
     def initPiSi(self):
         pisi.api.init(database=True, write=False, options=None, comar=False)
         self.show()
+
         # check for upgrades for the first time
         self.checkUpgradable()
 
-        self.config = KSimpleConfig("package-manager-trayrc")
-        self.config.setGroup("General")
+        self.config = KSimpleConfig("package-managerrc")
+        self.config.setGroup("Tray")
 
         # get timer value or use default
-        if self.config.readNumEntry("Timer"):
-            self.interval = self.config.readNumEntry("Timer")*60000
-        else:
-            setconfig(self.config,"Timer",10)
-            self.interval = 10*60000
+        self.interval = self.config.readNumEntry("Timer",10)*60000
 
         self.disconnect(self.timer, SIGNAL("timeout()"), self.initPiSi)
         self.connect(self.timer, SIGNAL("timeout()"), self.checkUpgradable)
         self.timer.start(self.interval, False)
 
-
     def checkUpgradable(self):
-
         try:
             if self.popup.isShown():
                 return
         except:
             pass
 
-        # FIXME: No notification... etc...
-        ComarIface().updateAllRepos()
         self.upgradeList = pisi.api.list_upgradable()
 
         if len(self.upgradeList):
             QTimer.singleShot(10,self.showPopup)
+        else:
+            ComarIface().updateAllRepos()
 
     def showPopup(self):
         self.show()
-        if self.config.readNumEntry("Timeout"):
-            timeout=self.config.readNumEntry("Timeout")
-        else:
-            setconfig(self.config,"Timeout",10)
-            timeout=10
+        timeout=self.config.readNumEntry("Timeout",10)
         self.popup = KopeteBalloon(self,i18n("There are <b>%1</b> updates available!").arg(len(self.upgradeList)),
                                    KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,KIcon.SizeMedium),timeout)
         pos = self.mapToGlobal(self.pos())
@@ -85,24 +78,3 @@ class TrayApp(KSystemTray):
         self.popup.setAnchor(pos)
         self.popup.show()
 
-def main():
-    name = "Package Manager Tray"
-    desc = "Update Manager"
-    aboutData = KAboutData("package-manager-tray", name, "0.1", desc, KAboutData.License_GPL,
-                            "(C) 2006 UEKAE/TÜBİTAK", None, None, "bilgi@pardus.org.tr")
-    aboutData.addAuthor('İsmail Dönmez', 'Maintainer', 'ismail@pardus.org.tr')
-
-    KCmdLineArgs.init(sys.argv,aboutData)
-
-    if not KUniqueApplication.start():
-        return
-
-    kapp = KUniqueApplication(True,True,True)
-
-    tray = TrayApp()
-
-    kapp.setMainWidget(tray)
-    kapp.exec_loop()
-
-if __name__ == "__main__":
-    main()
