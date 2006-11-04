@@ -39,7 +39,7 @@
                     <cstring>unnamed</cstring>
                 </property>
                 <property name="spacing">
-                    <number>0</number>
+                    <number>2</number>
                 </property>
                 <spacer row="0" column="2">
                     <property name="name">

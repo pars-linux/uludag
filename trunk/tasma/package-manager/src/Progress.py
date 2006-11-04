@@ -154,10 +154,10 @@ class Progress(ProgressDialog):
         totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
 
         size = pisi.util.human_readable_size(totalDownloaded)
-        totaldownloaded = "%.2f %s " % (size[0], size[1])
+        totaldownloaded = "%.2f %s" % (size[0], size[1])
 
         size = pisi.util.human_readable_size(self.totalSize)
-        totalsize = "%.2f %s " % (size[0], size[1])
+        totalsize = "%.2f %s" % (size[0], size[1])
 
         return (totaldownloaded, totalsize)
 
