@@ -91,10 +91,8 @@ class BrowseStack(QVBox):
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         
-        lab = QLabel("", bar)
-        bar.setStretchableWidget(lab)
-        
         toggle = QCheckBox(i18n("Show system user and groups"), bar)
+        toggle.setAutoMask(True)
         self.connect(toggle, SIGNAL("toggled(bool)"), self.slotToggle)
         
         tab = QTabWidget(self)
