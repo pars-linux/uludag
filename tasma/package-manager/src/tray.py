@@ -26,7 +26,7 @@ class TrayApp(KSystemTray):
         KSystemTray.__init__(self,parent)
         self.parent= parent
 
-        icon = KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,KIcon.SizeSmall)
+        icon = KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,24)
         self.setPixmap(icon)
 
         self.timer = QTimer()
@@ -73,7 +73,7 @@ class TrayApp(KSystemTray):
         self.show()
         timeout=self.config.readNumEntry("Timeout",10)
         self.popup = KopeteBalloon(self,i18n("There are <b>%1</b> updates available!").arg(len(self.upgradeList)),
-                                   KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,KIcon.SizeMedium),timeout)
+                                   KGlobal.iconLoader().loadIcon("pisi-kga",KIcon.Desktop,48),timeout)
         pos = self.mapToGlobal(self.pos())
 
         self.popup.setAnchor(pos)
