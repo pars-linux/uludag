@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-30 12:00+0200\n"
-"PO-Revision-Date: 2006-10-30 22:39+0200\n"
+"PO-Revision-Date: 2006-11-04 17:41+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "Groepsnaam:"
 
 #: groupedit.py:97
 msgid "Enter a group ID or use auto selection"
-msgstr "Geef een groeps-id, of gebruik de autoselectie"
+msgstr "Geef een groeps-id, of gebruik autoselect"
 
 #: groupedit.py:100
 msgid "Enter a group name"
@@ -53,7 +53,7 @@ msgstr "Voer een groepsnaam in"
 
 #: groupedit.py:127
 msgid "Enter Information For New Group"
-msgstr "Voer informatie in voor nieuwe groep"
+msgstr "Voer informatie voor nieuwe groep in"
 
 #: groupedit.py:175
 msgid "Adding group..."
@@ -62,11 +62,11 @@ msgstr "Groep wordt toegevoegd..."
 #: groupedit.py:185 useredit.py:540 useredit.py:572
 #, python-format
 msgid "Operation failed, reason:<br>%s"
-msgstr "Operatie mislukt. Reden:<br>%s"
+msgstr "Handeling mislukt. Reden:<br>%s"
 
 #: groupedit.py:187 useredit.py:542 useredit.py:574
 msgid "You are not allowed to do that"
-msgstr "U bent hier niet toe bevoegd"
+msgstr "U bent hiertoe niet bevoegd"
 
 #: groupedit.py:189 useredit.py:544 useredit.py:576
 msgid "Comar script error :("
@@ -186,11 +186,11 @@ msgstr "Hoofdgroep:"
 
 #: useredit.py:375
 msgid "Start with typing this user's full name."
-msgstr "Begin met typen van de volledige naam van de gebruiker."
+msgstr "Begin met het typen van de volledige naam van de gebruiker."
 
 #: useredit.py:378
 msgid "You should enter a password for this user."
-msgstr "U zou een wachtwoord voor deze gebruiker aan moeten maken."
+msgstr "U zult een wachtwoord voor deze gebruiker moeten aanmaken."
 
 #: useredit.py:383
 msgid "Password must be longer"
@@ -198,15 +198,15 @@ msgstr "Wachtwoord dient langer te zijn"
 
 #: useredit.py:387
 msgid "Dont use your full name or user name as a password"
-msgstr "Gebruik niet uw eigen naam of gebruikernaam als wachtwoord"
+msgstr "Gebruik niet uw eigen naam of gebruikersnaam als wachtwoord"
 
 #: useredit.py:390
 msgid "Passwords don't match."
-msgstr "Wachtwoorden komt niet overeen."
+msgstr "Wachtwoorden komen niet overeen."
 
 #: useredit.py:393
 msgid "You must enter a user ID or use the auto selection."
-msgstr "Geef een gebruikers-id, of gebruik de autoselectie."
+msgstr "Geef een gebruikers-id, of gebruik autoselect."
 
 #: useredit.py:396
 msgid "You must enter a user name."
@@ -218,7 +218,7 @@ msgstr "Deze gebruikersnaam is al in gebruik"
 
 #: useredit.py:402
 msgid "You should select at least one group this user belongs to."
-msgstr "U dient minstens één groep kiezen waartoe de gebruiker behoort."
+msgstr "U dient minstens één groep kiezen waartoe deze gebruiker behoort."
 
 #: useredit.py:433
 msgid "Edit User's Information"
@@ -226,19 +226,19 @@ msgstr "Gebruikersinformatie bewerken"
 
 #: useredit.py:435
 msgid "Enter Information For New User"
-msgstr "Voer informatie in voor nieuwe gebruiker"
+msgstr "Voer informatie voor nieuwe gebruiker in"
 
 #: useredit.py:437
 msgid "Show all groups"
-msgstr "Alle groepen tonen"
+msgstr "Toon alle groepen"
 
 #: useredit.py:527
 msgid "Changing user information..."
-msgstr "Gebruikersinformatie wordt veranderd..."
+msgstr "Veranderen gebruikersinformatie..."
 
 #: useredit.py:561
 msgid "Adding user..."
-msgstr "Gebruiker wordt toegevoegd..."
+msgstr "Toevoegen gebruiker..."
 
 #: useredit.py:600
 msgid "Getting user information..."
