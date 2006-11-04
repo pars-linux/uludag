@@ -793,7 +793,7 @@ def main():
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
-    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),("showupdates", I18N_NOOP("Show available updates"))])
+    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),("showupdates", I18N_NOOP("Show available updates")),("dontshow",I18N_NOOP("Dont show main window when start")),("without-tray",I18N_NOOP("Start without tray support"))])
 
     if not KUniqueApplication.start():
         print i18n("Package Manager is already running!")
@@ -810,8 +810,16 @@ def main():
     showUpdates = None
 
     myapp = MainApplication()
-    tray = TrayApp(myapp)
-    myapp.show()
+
+    if not args.isSet("without-tray"):
+        tray = TrayApp(myapp)
+        if args.isSet("dontshow"):
+            tray.setInactive()
+        else:
+            myapp.show()
+    else:
+        myapp.show()
+
     kapp.setMainWidget(myapp)
 
     sys.exit(kapp.exec_loop())
