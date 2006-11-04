@@ -34,6 +34,9 @@ import BasketDialog
 # Pisi
 import pisi
 
+# Tray
+from tray import *
+
 # Workaround the fact that PyKDE provides no I18N_NOOP as KDE
 def I18N_NOOP(str):
     return str
@@ -802,12 +805,10 @@ def main():
     else:
         packageToInstall = None
 
-    if args.isSet("showupdates"):
-        showUpdates = True
-    else:
-        showUpdates = None
+    showUpdates = None
 
     myapp = MainApplication()
+    tray = TrayApp(myapp)
     myapp.show()
     kapp.setMainWidget(myapp)
 
