@@ -103,6 +103,9 @@ class MainApplicationWidget(QWidget):
         self.parent = parent
         self.progressDialog = Progress.Progress(self)
 
+        # lock var to check tray's comar process or not
+        self.lock = 0
+
         self.componentDict = {}
         self.lastSelectedComponent = None
         self.state = install_state
@@ -186,7 +189,6 @@ class MainApplicationWidget(QWidget):
 
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
-
         if self.componentsReady():
             self.installState()
         else:
@@ -199,7 +201,6 @@ class MainApplicationWidget(QWidget):
     def componentsReady(self):
         if not pisi.context.componentdb.list_components(): # Repo metadata empty
             return False
-
         return True
 
     def repoNotReady(self):
@@ -625,7 +626,7 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.totalSize = int(data[1]) - int(data[2])
             self.progressDialog.updateTotalOperationPercent()
             self.progressDialog.updateStatus()
-            
+
         elif operation in ["installing"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
             self.progressDialog.updatePackageInfo()
@@ -669,15 +670,14 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
 
-        if command == "System.Manager.updateAllRepositories":
+        if command == "System.Manager.updateAllRepositories" and self.lock==0:
             self.upgradeState()
 
         elif command == "System.Manager.setRepositories":
             self.updateCheck()
             return
 
-        elif command in ["System.Manager.updateAllRepositories",
-                       "System.Manager.updatePackage",
+        elif command in ["System.Manager.updatePackage",
                        "System.Manager.installPackage",
                        "System.Manager.removePackage",
                        "System.Manager.cancelled"]:
@@ -724,6 +724,8 @@ class MainApplicationWidget(QWidget):
         self.pref.show()
 
     def updateCheck(self):
+        # set lock to 0 and comar listener works for upgradeRepos
+        self.lock=0
         self.resetState()
         self.parent.showUpgradeAction.setChecked(True)
         self.processEvents()
