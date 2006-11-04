@@ -34,9 +34,6 @@ import BasketDialog
 # Pisi
 import pisi
 
-# Tray
-from tray import *
-
 # Workaround the fact that PyKDE provides no I18N_NOOP as KDE
 def I18N_NOOP(str):
     return str
@@ -102,9 +99,6 @@ class MainApplicationWidget(QWidget):
         QWidget.__init__(self, parent)
         self.parent = parent
         self.progressDialog = Progress.Progress(self)
-
-        # lock var to check tray's comar process or not
-        self.lock = 0
 
         self.componentDict = {}
         self.lastSelectedComponent = None
@@ -189,6 +183,7 @@ class MainApplicationWidget(QWidget):
 
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
+
         if self.componentsReady():
             self.installState()
         else:
@@ -201,6 +196,7 @@ class MainApplicationWidget(QWidget):
     def componentsReady(self):
         if not pisi.context.componentdb.list_components(): # Repo metadata empty
             return False
+
         return True
 
     def repoNotReady(self):
@@ -626,7 +622,7 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.totalSize = int(data[1]) - int(data[2])
             self.progressDialog.updateTotalOperationPercent()
             self.progressDialog.updateStatus()
-
+            
         elif operation in ["installing"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
             self.progressDialog.updatePackageInfo()
@@ -670,14 +666,15 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
 
-        if command == "System.Manager.updateAllRepositories" and self.lock==0:
+        if command == "System.Manager.updateAllRepositories":
             self.upgradeState()
 
         elif command == "System.Manager.setRepositories":
             self.updateCheck()
             return
 
-        elif command in ["System.Manager.updatePackage",
+        elif command in ["System.Manager.updateAllRepositories",
+                       "System.Manager.updatePackage",
                        "System.Manager.installPackage",
                        "System.Manager.removePackage",
                        "System.Manager.cancelled"]:
@@ -724,8 +721,6 @@ class MainApplicationWidget(QWidget):
         self.pref.show()
 
     def updateCheck(self):
-        # set lock to 0 and comar listener works for upgradeRepos
-        self.lock=0
         self.resetState()
         self.parent.showUpgradeAction.setChecked(True)
         self.processEvents()
@@ -793,7 +788,7 @@ def main():
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
-    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),("showupdates", I18N_NOOP("Show available updates")),("dontshow",I18N_NOOP("Dont show main window when start")),("without-tray",I18N_NOOP("Start without tray support"))])
+    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),("showupdates", I18N_NOOP("Show available updates"))])
 
     if not KUniqueApplication.start():
         print i18n("Package Manager is already running!")
@@ -807,19 +802,13 @@ def main():
     else:
         packageToInstall = None
 
-    showUpdates = None
+    if args.isSet("showupdates"):
+        showUpdates = True
+    else:
+        showUpdates = None
 
     myapp = MainApplication()
-
-    if not args.isSet("without-tray"):
-        tray = TrayApp(myapp)
-        if args.isSet("dontshow"):
-            tray.setInactive()
-        else:
-            myapp.show()
-    else:
-        myapp.show()
-
+    myapp.show()
     kapp.setMainWidget(myapp)
 
     sys.exit(kapp.exec_loop())
