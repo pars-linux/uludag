@@ -44,10 +44,9 @@ class KopeteBalloon(QWidget):
         self.mViewButton = QPushButton(i18n("Show Updates"), self, "mViewButton")
         self.mIgnoreButton = QPushButton(i18n("Ignore"), self, "mIgnoreButton")
 
-        # FIXME parent->hide/show can set
         # self.parent.parent is package-manager main window
         self.connect(self.mIgnoreButton,SIGNAL("clicked()"),self.hide)
-        self.connect(self.mViewButton,SIGNAL("clicked()"),self.parent.parent.show)
+        self.connect(self.mViewButton,SIGNAL("clicked()"),self.showUpdateWindow)
 
         Layout2.addStretch()
         Layout2.addWidget(self.mViewButton)
@@ -66,6 +65,10 @@ class KopeteBalloon(QWidget):
     def setAnchor(self,anchor):
         self.mAnchor = anchor
         self.updateMask()
+
+    def showUpdateWindow(self):
+        self.parent.parent.show()
+        self.parent.parent.mainwidget.updateCheck()
 
     def updateMask(self):
         mask = QRegion(10, 10, self.width() - 20, self.height() - 20)

@@ -65,6 +65,9 @@ class TrayApp(KSystemTray):
             QTimer.singleShot(10,self.showPopup)
         else:
             ComarIface().updateAllRepos()
+            # lock for package-manager comar listener
+            # FIXME, if package-manager window is running then dont do anything..
+            self.parent.mainwidget.lock=1
 
     def showPopup(self):
         self.show()
