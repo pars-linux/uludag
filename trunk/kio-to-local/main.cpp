@@ -45,7 +45,6 @@ int main(int argc, char **argv)
       case 1:
         KCmdLineArgs::usage(i18n("URL expected.\n"));
         break;
-
       case 2:
         {
           const QString program = args->arg(0);
