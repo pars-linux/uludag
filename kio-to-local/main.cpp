@@ -18,8 +18,8 @@ static const char version[] = "0.4.1";
 
 static KCmdLineOptions options[] =
 {
-    { "program <program>", I18N_NOOP( "Program to run" ), 0 },
-    { "url <url>", I18N_NOOP( "URL to process" ), 0 },
+    { "+program", I18N_NOOP( "Program to run" ), 0 },
+    { "+url", I18N_NOOP( "URL to process" ), 0 },
     KCmdLineLastOption
 };
 
@@ -40,48 +40,62 @@ int main(int argc, char **argv)
     KApplication app;
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    if( args->isSet("program") && args->isSet("url") )
-    {
-      const QString program = args->getOption("program");
-      const KURL target = args->getOption("url");
+    switch(args->count())
+      {
+      case 0:
+        KCmdLineArgs::usage(i18n("Command and URL expected.\n"));
+        break;
+      case 1:
+        KCmdLineArgs::usage(i18n("URL expected.\n"));
+        break;
 
-      if (target.url().find("//") == -1) // Just a local file
+      case 2:
         {
-          runProgramWithUrl(program, args->getOption("url"));
-        }
-      else if (target.isLocalFile()) // A local kioslave
-        {
-          const KURL url = KIO::NetAccess::mostLocalURL(target,0);
-          runProgramWithUrl(program, url.path().local8Bit());
-        }
-      else // A remote URL or kioslave
-        {
-          const QString original = QString("/tmp/%1").arg(target.fileName());
-          QString destination = original;
+          const QString program = args->arg(0);
+          const KURL target = args->url(1);
 
-          unsigned int i=1;
-          while(QFileInfo(destination).isSymLink()) // Protect against symlink attacks
+          if (target.url().find("//") == -1) // Just a local file
             {
-
-              destination = original.section(".",-2,0) + "_" + QString::number(i) + "." + original.section(".",-1);
-              ++i;
+              runProgramWithUrl(program, args->getOption("url"));
             }
-
-          if (KIO::NetAccess::download(target, destination, NULL))
+          else if (target.isLocalFile()) // A local kioslave
             {
-              runProgramWithUrl(program, destination.local8Bit());
+              const KURL url = KIO::NetAccess::mostLocalURL(target,0);
+              runProgramWithUrl(program, url.path().local8Bit());
             }
-          else
+          else // A remote URL or kioslave
             {
-              const QString error =  KIO::NetAccess::lastErrorString();
-              if (!error.isEmpty())
-                KMessageBox::error(NULL, error);
+              const QString original = QString("/tmp/%1").arg(target.fileName());
+              QString destination = original;
 
-              KIO::NetAccess::removeTempFile(destination);
-              return 1;
+              unsigned int i=1;
+              while(QFileInfo(destination).isSymLink()) // Protect against symlink attacks
+                {
+
+                  destination = original.section(".",-2,0) + "_" + QString::number(i) + "." + original.section(".",-1);
+                  ++i;
+                }
+
+              if (KIO::NetAccess::download(target, destination, NULL))
+                {
+                  runProgramWithUrl(program, destination.local8Bit());
+                }
+              else
+                {
+                  const QString error =  KIO::NetAccess::lastErrorString();
+                  if (!error.isEmpty())
+                    KMessageBox::error(NULL, error);
+
+                  KIO::NetAccess::removeTempFile(destination);
+                  return 1;
+                }
             }
+          break;
         }
-    }
+      default:
+        KCmdLineArgs::usage(i18n("Only _one_ command and _one_ URL expected.\n"));
+        break;
+      }
 
     return 0;
 }
