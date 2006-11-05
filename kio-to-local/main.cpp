@@ -20,7 +20,7 @@ static KCmdLineOptions options[] =
     KCmdLineLastOption
 };
 
-void runProgramWithUrl(const QString& program, const QString& url)
+void runProgramWithURL(const QString& program, const QString& url)
 {
   KProcess proc;
   proc << program;
@@ -52,12 +52,12 @@ int main(int argc, char **argv)
 
           if (target.url().find("//") == -1) // Just a local file
             {
-              runProgramWithUrl(program, args->getOption("url"));
+              runProgramWithURL(program, args->getOption("url"));
             }
           else if (target.isLocalFile()) // A local kioslave
             {
               const KURL url = KIO::NetAccess::mostLocalURL(target,0);
-              runProgramWithUrl(program, url.path().local8Bit());
+              runProgramWithURL(program, url.path().local8Bit());
             }
           else // A remote URL or kioslave
             {
@@ -74,11 +74,11 @@ int main(int argc, char **argv)
 
               if (KIO::NetAccess::download(target, destination, NULL))
                 {
-                  runProgramWithUrl(program, destination.local8Bit());
+                  runProgramWithURL(program, destination.local8Bit());
                 }
               else
                 {
-                  const QString error =  KIO::NetAccess::lastErrorString();
+                  const QString error = KIO::NetAccess::lastErrorString();
                   if (!error.isEmpty())
                     KMessageBox::error(NULL, error);
 
