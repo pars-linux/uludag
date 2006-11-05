@@ -47,12 +47,12 @@ int main(int argc, char **argv)
 
       if (target.isLocalFile())
         {
-          KURL url = KIO::NetAccess::mostLocalURL(target,0);
+          const KURL url = KIO::NetAccess::mostLocalURL(target,0);
           runProgramWithUrl(program, url.path().local8Bit());
         }
       else
         {
-          QString original = QString("/tmp/%1").arg(target.fileName());
+          const QString original = QString("/tmp/%1").arg(target.fileName());
           QString destination = original;
 
           unsigned int i=1;
@@ -69,7 +69,7 @@ int main(int argc, char **argv)
             }
           else
             {
-              QString error =  KIO::NetAccess::lastErrorString();
+              const QString error =  KIO::NetAccess::lastErrorString();
               if (!error.isEmpty())
                 KMessageBox::error(NULL, error);
 
