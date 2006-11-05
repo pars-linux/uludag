@@ -14,7 +14,7 @@ using namespace std;
 
 static const char description[] = I18N_NOOP("KIO URL to Local URL Converter");
 
-static const char version[] = "0.4";
+static const char version[] = "0.4.1";
 
 static KCmdLineOptions options[] =
 {
@@ -45,12 +45,16 @@ int main(int argc, char **argv)
       const QString program = args->getOption("program");
       const KURL target = args->getOption("url");
 
-      if (target.isLocalFile())
+      if (target.url().find("//") == -1) // Just a local file
+        {
+          runProgramWithUrl(program, args->getOption("url"));
+        }
+      else if (target.isLocalFile()) // A local kioslave
         {
           const KURL url = KIO::NetAccess::mostLocalURL(target,0);
           runProgramWithUrl(program, url.path().local8Bit());
         }
-      else
+      else // A remote URL or kioslave
         {
           const QString original = QString("/tmp/%1").arg(target.fileName());
           QString destination = original;
