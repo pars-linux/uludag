@@ -634,8 +634,8 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.packageNo += 1
             self.progressDialog.updatePackageInfo()
 
-            if operation == "removed":
-                self.progressDialog.updateRemoveProgress()
+            if operation != "installed":
+                self.progressDialog.updatePackageProgress()
 
         elif operation in ["savingrepos"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Applying Repository Changes</b>"))
