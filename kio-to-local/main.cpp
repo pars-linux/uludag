@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
     if( args->isSet("program") && args->isSet("url") )
     {
-      const QString& program = args->getOption("program");
+      const QString program = args->getOption("program");
       const KURL target = args->getOption("url");
 
       if (target.isLocalFile())
