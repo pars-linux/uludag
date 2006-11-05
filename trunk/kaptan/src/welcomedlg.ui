@@ -41,7 +41,7 @@
                         </size>
                     </property>
                     <property name="text">
-                        <string>pix_pardus</string>
+                        <string></string>
                     </property>
                 </widget>
                 <widget class="QLabel">
@@ -82,7 +82,7 @@
                         </size>
                     </property>
                     <property name="text">
-                        <string>pix_kaptan</string>
+                        <string></string>
                     </property>
                 </widget>
                 <widget class="QLabel">
