@@ -161,7 +161,7 @@ class Progress(ProgressDialog):
 
         return (totaldownloaded, totalsize)
 
-    def updateRemoveProgress(self):
+    def updatePackageProgress(self):
         try:
             percent = (self.packageNo * 100) / self.totalPackages
         except ZeroDivisionError:
