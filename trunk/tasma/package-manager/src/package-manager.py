@@ -577,7 +577,7 @@ class MainApplicationWidget(QWidget):
         data = data.split(",")
         operation = data[0]
 
-        if operation == "updatingrepo":
+        if operation in ["updatingrepo", "rebuilding-db"]:
             self.progressDialog.setOperationDescription(i18n(str(data[2])))
             percent = data[1]
             self.progressDialog.updateProgressBar(percent)
