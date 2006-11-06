@@ -9,7 +9,7 @@
 #include <kmessagebox.h>
 #include <kprocess.h>
 
-static const char description[] = I18N_NOOP("KIO URL to Local URL Converter");
+static const char description[] = I18N_NOOP("External KIO support for non-KDE programs");
 
 static const char version[] = "0.5";
 
