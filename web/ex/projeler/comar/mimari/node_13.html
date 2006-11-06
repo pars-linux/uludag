@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>:: Pardus :: tübitak-uekae ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../../style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+
+<body>
+    <div id="container">
+    <div id="head_grey">
+        <div id="blue2"></div>
+    </div>
+    <div id="navi">
+        <a href="../../../index.html">Ana Sayfa</a>
+      | <a href="../../../hakkimizda.html">Hakkımızda</a>
+      | <a href="../../../projeler/index.html">Projeler</a>
+      | <a href="../../../belgeler/index.html">Belgeler</a>
+      | <a href="../../../urunler/index.html">Ürünler</a>
+      | <a href="../../../iletisim.html">İletişim</a>
+      | <a href="../../../basin/index.html">Basında Pardus</a>
+      | <a href="../../../eng/index.html">English</a>
+    </div>
+    <div id="page">
+    <br />
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_12.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_14.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+
+
+<H1 ALIGN=center>ÇOMAR Mimari Belgesi</H1>
+
+<H3 ALIGN=center>Gürer Özen (gurer @ uludag.org.tr)</H3>
+
+<H3><A NAME="htoc13">4.3</A>&nbsp;&nbsp;Yapılandırma Yöneticisi</H3>
+ÇOMAR işletici uygulaması (comard), kullanıcı arayüzleri, ÇOMAR destekli
+uygulamalar ve çeşitli araçlardan gelen görev isteklerini sistem modeli
+üzerindeki uygulama nesnelerine yaptıran bir sistem servisidir.<BR>
+<BR>
+Bu istekleri almak, ve olup biten yapılandırma olaylarını bağlanan
+uygulamalara aktarabilmek için bir iletişim kanalı gereklidir. ÇOMAR'ın
+ön tanımlı iletişim kanalı sistemde sabit bir UNIX soket olmakla birlikte,
+yerel bağlantılar için DBus, uzak bağlantılar için HTTP, SSH gibi
+protokoller, hatta e-posta ya da SMS gibi iletişim kanalları modüler
+olarak kullanılabilir.<BR>
+<BR>
+Her bir iletişim modülü, ÇOMAR çağrılarını iletmek, ve gelen çağrıların
+hangi kullanıcıdan geldiği, iletişim hattının şifreli olup olmadığı,
+iletinin elektronik imzayla doğrulanıp doğrulanmadığı gibi bilgilere
+bakarak ÇOMAR'ın yetki denetim mekanizmasından geçirmekle sorumludur.
+İşletici elindeki nesnelerle sisteme kullanıcı eklemek, alt düzey
+ayarları değiştirmek gibi işler yapabilmekte, bunları yapabilmek için
+en yüksek yetki seviyesinde çalışmaktadır. Güvenlik açıklarına yol
+açmamak için, iletişim modüllerinden gelen isteklerin yetki denetiminden
+geçmeden işleticiye geçmesine izin verilmemelidir.<BR>
+<BR>
+Yetki denetimi çağrıyı yapanın kimlik bilgileri ile, model üzerindeki
+her noktada yapılır. Böylece bir kullanıcıya ayar değiştirme yetkisi
+vermeden bilgi sorma metotlarını çağırma yetkisi verilebilmesi ya
+da bütün bir grubun yönetiminin basitçe tek bir kullanıcıya verilmesi
+sağlanabilir.<BR>
+<BR>
+Görevleri sağlayan nesneler paralel olarak veya çağrı bir nesneye
+yönelikse tek olarak işletilir. Bir nesne içinden başka bir sınıfa
+yeni bir çağrı yapılabilir. Bir paket kurulduğunda uygulamanın nesnelerini
+model kaydettiren, kaldırıldığında çıkaran çağrılar da mevcuttur.<BR>
+<BR>
+Özellikle açılış esnasında bir sürü işlem yapılmaktadır, bu işlemler
+birbirlerinden bağımsız oldukları, aralarındaki bağımlılıklar çok
+az olduğu için paralel çalıştırılmaları büyük hız kazancı sağlayacaktır.
+İsteklerin paralel yürütülebilmesi, kullanıcının interaktif işlemlerine
+çabuk yanıt verebilmek için de önemlidir. Bu amaçla her bir nesne
+ayrı bir süreç olarak işletilecektir. Linux'ta yeni bir süreç yaratan
+fork çağrısı, bir performans kaybı yaratmayacak kadar hızlı çalışmakta
+ve süreçlerin bellek alanları copy-on-write metodu ile çoğaltıldığı
+için gereksiz kaynak israfına da yol açmamaktadır.<BR>
+<BR>
+Yapılandırma işlemleri sistemde sürekli ve sık biçimde yapılmamaktadır.
+Yapılacak işler azaldığında ya da iş olmadığında minimum kaynak kullanımına
+geçilebilmelidir. Nesnelerin ayrı süreçler olarak işletilmesi bunu
+da kolaylaştırmakta, işler hep ana süreç dışında yapıldığı için, bir
+iş olmadığında sadece temel takip işlemleri çalışır halde kalmaktadır.<BR>
+<BR>
+Nesneler belirli bir durumda (bir sistem olayı ya da peryodik zaman
+olayları) bir metotlarının çağrılmasını isteyebilirler. ÇOMAR işleticisi
+bu istekleri kaydeder ve ilgili olay meydana geldiğinde ilgilenen
+nesneleri çağırır.<BR>
+<BR>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_12.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_14.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+    </div>
+
+<!-- yayın hakkı -->
+
+    <div id="footnote">
+        <p>
+        Pardus sayfalarında bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir.
+        <em><br><strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
+        Bilgi ve önerileriniz için <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
