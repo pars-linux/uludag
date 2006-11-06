@@ -35,17 +35,16 @@ class PisiApi:
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
 
-        self.api = pisi.api
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
 
     def init(self, stdout, stderr):
         logger.info(_("Initilasing PiSi API..."))
-        self.api.init(options = self.options, stdout = stdout, stderr = stderr)
+        pisi.api.init(options = self.options, stdout = stdout, stderr = stderr)
 
     def finalize(self):
         logger.info(_("Finalising PiSi API"))
-        self.api.finalize()
+        pisi.api.finalize()
 
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
@@ -55,7 +54,7 @@ class PisiApi:
 
         logger.info(_("BUILD called for %s") % (pspec)) 
 
-        __newBinaryPackages, __oldBinaryPackages = self.api.build(pspec)
+        __newBinaryPackages, __oldBinaryPackages = pisi.api.build(pspec)
         logger.info(_("Created package(s): %s") % (__newBinaryPackages)) 
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
@@ -65,4 +64,4 @@ class PisiApi:
     def install(self, p):
         a = []
         a.append(p)
-        self.api.install(a)
+        pisi.api.install(a)
