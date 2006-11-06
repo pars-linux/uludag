@@ -20,63 +20,191 @@ import widgets
 from icons import icons
 
 
-class Connection(QListBoxItem):
-    def __init__(self, box, comar, name, link_name):
-        QListBoxItem.__init__(self, box)
-        self.comar = comar
-        self.name = name
-        self.online = "down"
-        self.state = "down"
-        self.link_name = link_name
-        self.device = ""
-        self.device_name = ""
-        self.address = ""
-        self.f1 = QFont()
-        self.f2 = QFont()
-        self.f1.setBold(True)
-        self.f1.setPointSize(self.f1.pointSize() + 4)
-        comar.call_package("Net.Link.connectionInfo", link_name, [ "name", name ], id=2)
-        comar.call_package("Net.Link.getAddress", link_name, [ "name", name ], id=3)
-        comar.call_package("Net.Link.getState", link_name, [ "name", name ], id=4)
+class MinButton(QPushButton):
+    def __init__(self, title, parent):
+        QPushButton.__init__(self, title, parent)
+        self.title = title
+        f = self.font()
+        f.setPointSize(f.pointSize() - 2)
+        self.setFont(f)
+        self.hide()
     
-    def paint(self, painter):
-        tc = self.listBox().colorGroup().text()
-        i = self.listBox().index(self)
-        if i / 2 * 2 != i and not self.isSelected():
-            bc = self.listBox().colorGroup().light()
-            bc2 = QColor(bc.red() - 15, bc.green() - 15, bc.blue())
-            painter.fillRect(painter.window(), QBrush(bc2))
+    def mySize(self):
+        fm = self.fontMetrics()
+        rect = fm.boundingRect(self.title)
+        return (rect.width(), rect.height())
+
+
+class Connection(QWidget):
+    def __init__(self, view, script, data):
+        name, devid, devname = unicode(data).split("\n")
+        dev = view.devices.get(devid, None)
+        if not dev:
+            dev = Device(view, devname, devid)
+            dev.show()
+        QWidget.__init__(self, dev)
         
-        if self.state == "up":
-            text = unicode(i18n("Active")) + ", "
-        else:
-            text = unicode(i18n("Inactive")) + ", "
-        fm = QFontMetrics(self.f1)
-        fm2 = QFontMetrics(self.f2)
-        painter.setPen(tc)
-        painter.setFont(self.f1)
-        painter.drawText(48 + 9, 3 + fm.ascent(), unicode(self.name))
-        painter.setFont(self.f2)
-        painter.drawText(48 + 9, 3 + fm.height() + 3 + fm2.ascent(),
-            "%s" % (self.device_name))
-        painter.drawText(48 + 9, 3 + fm.height() + 3 + fm2.height() + 3 + fm2.ascent()
-            , text + self.address)
-        painter.drawPixmap(3, 3, icons.get_state(links.get_info(self.link_name).type, self.online))
+        self.name = name
+        self.script = script
+        self.active = True
+        self.state = "down"
+        
+        fm = self.fontMetrics()
+        self.myBase = fm.ascent()
+        self.mypix = QImage("wireless.png")
+        self.mypix = self.mypix.scale(32, 32)
+        self.mypix = QPixmap(self.mypix)
+        self.check = QCheckBox(self)
+        self.check.setAutoMask(True)
+        self.edit_but = MinButton("Edit", self)
+        self.del_but = MinButton("Delete", self)
+        view.connections["%s %s" % (script, name)] = self
+        self.show()
+        
+        view.comlink.call_package("Net.Link.getAddress", script, [ "name", name ], id=3)
+        view.comlink.call_package("Net.Link.getState", script, [ "name", name ], id=4)
     
-    def height(self, box):
-        fm = QFontMetrics(self.f1)
-        fm2 = QFontMetrics(self.f2)
-        ts = 3 + fm.height() + 3 + fm2.height() + 3 + fm2.height() + 3
-        ps = 3 + 48 + 3
-        if ts < ps:
-            ts = ps
-        return ts
+    def slotComar(self, reply):
+        pass
     
-    def width(self, box):
-        return 100
+    def paintEvent(self, event):
+        paint = QPainter(self)
+        paint.fillRect(event.rect(), QBrush(QColor("white")))
+        paint.drawPixmap(16, 0, self.mypix)
+        paint.drawText(49, self.myBase + 1, self.name)
     
-    def text(self):
-        return self.name
+    def resizeEvent(self, event):
+        pix = event.size().width()
+        w1, h1 = self.edit_but.mySize()
+        w2, h2 = self.del_but.mySize()
+        self.edit_but.setGeometry(pix - w1 - w2 - 20, 0, w1 + 8, h1 + 8)
+        self.del_but.setGeometry(pix - w2 - 8, 0, w2 + 8, h2 + 8)
+        return QWidget.resizeEvent(self, event)
+    
+    def enterEvent(self, event):
+        self.edit_but.show()
+        self.del_but.show()
+        return QWidget.enterEvent(self, event)
+    
+    def leaveEvent(self, event):
+        self.edit_but.hide()
+        self.del_but.hide()
+        return QWidget.leaveEvent(self, event)
+    
+    def sizeHint(self):
+        fm = self.fontMetrics()
+        rect = fm.boundingRect(self.name)
+        w = rect.width() + 2 + 32 + 16
+        h = max(rect.height(), 32) + 2
+        return QSize(w, h)
+
+
+class Device(QWidget):
+    def __init__(self, parent, name, id):
+        QWidget.__init__(self, parent.viewport())
+        self.name = name
+        fm = self.fontMetrics()
+        self.myBase = fm.ascent()
+        self.mypix = QImage("ethernet.png")
+        self.mypix = self.mypix.scale(24, 24)
+        self.mypix = QPixmap(self.mypix)
+        self.connections = []
+        parent.devices[id] = self
+    
+    def paintEvent(self, event):
+        QWidget.paintEvent(self, event)
+        paint = QPainter(self)
+        paint.drawPixmap(0, 0, self.mypix)
+        paint.drawText(25, self.myBase + 1, self.name)
+    
+    def heightForWidth(self, width):
+        fm = self.fontMetrics()
+        rect = fm.boundingRect(self.name)
+        h = max(rect.height(), 24) + 2
+        
+        if not self.children():
+            return h
+        
+        maxw = 0
+        maxh = 0
+        for item in self.children():
+            hint = item.sizeHint()
+            w2 = hint.width()
+            h2 = hint.height()
+            if w2 > maxw:
+                maxw = w2
+            if h2 > maxh:
+                maxh = h2
+        c = width / maxw
+        if c < 1:
+            c = 1
+        if c > 3:
+            c = 3
+        L = len(self.children())
+        if L % c != 0:
+            L += c
+        h += (maxh + 2) * (L / c)
+        
+        return h
+    
+    def resizeEvent(self, event):
+        aw = event.size().width()
+        ah = event.size().height()
+        
+        maxw = 0
+        maxh = 0
+        childs = self.children()
+        if not childs or len(childs) == 0:
+            return QWidget.resizeEvent(self, event)
+        for item in childs:
+            hint = item.sizeHint()
+            w = hint.width()
+            h = hint.height()
+            if w > maxw:
+                maxw = w
+            if h > maxh:
+                maxh = h
+        
+        i = 0
+        j = 0
+        c = aw / maxw
+        if c < 1:
+            c = 1
+        if c > 3:
+            c = 3
+        maxw = aw / c
+        for item in childs:
+            item.setGeometry(i * maxw, 32 + j * maxh, maxw, maxh)
+            i += 1
+            if i >= c:
+                i = 0
+                j += 1
+        
+        return QWidget.resizeEvent(self, event)
+
+
+class ConnectionView(QScrollView):
+    def __init__(self, parent, comlink):
+        QScrollView.__init__(self, parent)
+        self.comlink = comlink
+        self.devices = {}
+        self.connections = {}
+    
+    def myResize(self, width):
+        th = 0
+        for name in self.devices:
+            item = self.devices[name]
+            h = item.heightForWidth(width)
+            item.setGeometry(0, th, width, h)
+            th += h
+    
+    def resizeEvent(self, event):
+        w = event.size().width()
+        self.myResize(w)
+        return QScrollView.resizeEvent(self, event)
+    
+    def find(self, script, name):
+        return self.connections.get("%s %s" % (script, name), None)
 
 
 class Widget(QVBox):
@@ -92,8 +220,10 @@ class Widget(QVBox):
         self.connect(but, SIGNAL("clicked()"), self.slotSettings)
         box.setStretchFactor(but, 1)
         
-        self.links = QListBox(self)
-        self.connect(self.links, SIGNAL("doubleClicked(QListBoxItem *)"), self.slotDouble)
+        self.comar = comar.Link()
+        
+        self.links = ConnectionView(self, self.comar)
+        #self.connect(self.links, SIGNAL("doubleClicked(QListBoxItem *)"), self.slotDouble)
         
         box = QHBox(self)
         box.setSpacing(12)
@@ -109,8 +239,6 @@ class Widget(QVBox):
         self.connect(but, SIGNAL("clicked()"), self.slotDisconnect)
         but = QPushButton(i18n("Help"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotHelp)
-        
-        self.comar = comar.Link()
         
         self.stack = stack.Window(self, self.comar)
         links.query(self.comar)
@@ -155,17 +283,11 @@ class Widget(QVBox):
                 if reply[2] == "":
                     self.comar.call_package("Net.Link.deviceList", reply[3], id=5)
                 else:
-                    for conn in reply[2].split("\n"):
-                        Connection(self.links, self.comar, conn, reply[3])
-                    self.links.sort(True)
+                    for name in reply[2].split("\n"):
+                        self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
             elif reply[1] == 2:
-                name, dev, devname = reply[2].split("\n")
-                conn = self.findConn(name)
-                if conn:
-                    conn.device = dev
-                    conn.device_name = devname
-                    self.links.updateItem(conn)
-                    return
+                conn = Connection(self.links, reply.script, reply.data)
+                self.links.myResize(self.links.width())
             elif reply[1] == 3:
                 name, mode, rest = reply[2].split("\n", 2)
                 if "\n" in rest:
