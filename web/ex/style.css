@@ -7,7 +7,7 @@ body {
 }
 
 #container {
-    width:760px;
+    width:762px;
     background-color:#FFF;
     margin:0 auto;
     padding:1px;
@@ -30,8 +30,8 @@ html>body #head_grey {
 
 #pink,#blue,#green,#pink2,#blue2,#green2 {
     background-repeat:no-repeat;
-    background-position: 12px 12px;
-    width:690px;
+    background-position: 0 0;
+    width:760px;
     float:left;
 }
 
@@ -40,7 +40,7 @@ html>body #head_grey {
 }
 
 #pink2,#blue2,#green2 {
-    height:100px;
+    height:103px;
 }
 
 #pink {
