@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-02 15:32+0200\n"
+"POT-Creation-Date: 2006-11-06 23:32+0200\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:591
+#: src/CommonText.py:3 src/package-manager.py:596
 msgid "downloading"
 msgstr "downloaden"
 
@@ -63,7 +63,7 @@ msgstr "Pisi-fout"
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi-pakketbeheer"
 
-#: src/package-manager.py:49 src/package-manager.py:744
+#: src/package-manager.py:49 src/package-manager.py:750
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -223,69 +223,69 @@ msgid ""
 "Remove the following conflicting packages?"
 msgstr ""
 
-#: src/package-manager.py:550
+#: src/package-manager.py:555
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:558 src/package-manager.py:702
+#: src/package-manager.py:563 src/package-manager.py:708
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:566
+#: src/package-manager.py:571
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
-#: src/package-manager.py:587 src/package-manager.py:602
+#: src/package-manager.py:592 src/package-manager.py:607
 #, fuzzy
 msgid "<b>Installing Package(s)</b>"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:589 src/package-manager.py:606
+#: src/package-manager.py:594 src/package-manager.py:611
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:604
+#: src/package-manager.py:609
 #, fuzzy
 msgid "<b>Removing Package(s)</b>"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:636
+#: src/package-manager.py:641
 #, fuzzy
 msgid "<b>Applying Repository Changes</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:639
+#: src/package-manager.py:644
 #, fuzzy
 msgid "<b>Updating Repository</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:640
+#: src/package-manager.py:645
 #, fuzzy
 msgid "Downloading package list of %1"
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:764
+#: src/package-manager.py:770
 msgid "Show Installed Packages"
 msgstr "Geinstalleerde pakketten tonen"
 
-#: src/package-manager.py:765
+#: src/package-manager.py:771
 msgid "Show New Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:766
+#: src/package-manager.py:772
 #, fuzzy
 msgid "Show Upgradable Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:785
+#: src/package-manager.py:791
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:785
+#: src/package-manager.py:791
 msgid "Show available updates"
 msgstr "Beschikbare updates tonen"
 
-#: src/package-manager.py:788
+#: src/package-manager.py:794
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is reeds opgestart!"
 
@@ -337,7 +337,7 @@ msgstr ""
 msgid "%1 / %2 package %3"
 msgstr "Nu %1<b>%2</b> (%3 van %4)"
 
-#: src/Commander.py:58
+#: src/Commander.py:60
 msgid "Can't connect to Comar daemon"
 msgstr "Kan geen verbinding maken met de Comar-dienst"
 
