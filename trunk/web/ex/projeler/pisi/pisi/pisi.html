@@ -1,0 +1,1185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>:: Pardus :: tübitak-uekae ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../../style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+
+<body>
+    <div id="container">
+    <div id="head_grey">
+        <div id="blue2"></div>
+    </div>
+    <div id="navi">
+        <a href="../../../index.html">Ana Sayfa</a>
+      | <a href="../../../hakkimizda.html">Hakkımızda</a>
+      | <a href="../../../projeler/index.html">Projeler</a>
+      | <a href="../../../belgeler/index.html">Belgeler</a>
+      | <a href="../../../urunler/index.html">Ürünler</a>
+      | <a href="../../../iletisim.html">İletişim</a>
+      | <a href="../../../basin/index.html">Basında Pardus</a>
+      | <a href="../../../eng/index.html">English</a>
+    </div>
+    <div id="page">
+    <br />
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+
+
+<H1 ALIGN=center>PISI<BR>
+(Packages Installed Successfully as Intended)</H1>
+
+<H3 ALIGN=center>Barış Metin</H3>
+
+<H3 ALIGN=center>(Alpha)</H3><!--TOC section İçindekiler-->
+
+<H2>İçindekiler</H2><!--SEC END -->
+
+<UL><LI>
+<A HREF="#htoc1">1&nbsp;&nbsp;Giriş</A>
+<LI><A HREF="#htoc2">2&nbsp;&nbsp;Paket Yöneticisi Gereksinimleri</A>
+<UL><LI>
+<A HREF="#htoc3">2.1&nbsp;&nbsp;Paket Yöneticisi</A>
+<LI><A HREF="#htoc4">2.2&nbsp;&nbsp;Kullanıcı Gereksinimleri</A>
+<LI><A HREF="#htoc5">2.3&nbsp;&nbsp;Paketleyici/Geliştirici Gereksinimleri</A>
+<LI><A HREF="#htoc6">2.4&nbsp;&nbsp;Paket Kaynağı Gereksinimleri</A>
+<LI><A HREF="#htoc7">2.5&nbsp;&nbsp;Güvenlik Gereksinimleri</A>
+<LI><A HREF="#htoc8">2.6&nbsp;&nbsp;Kurumsal Gereksinimler</A>
+</UL>
+<LI><A HREF="#htoc9">3&nbsp;&nbsp;Neden PİSİ?</A>
+<LI><A HREF="#htoc10">4&nbsp;&nbsp;PİSİ Tasarımı</A>
+<UL><LI>
+<A HREF="#htoc11">4.1&nbsp;&nbsp;PİSİ Sözlüğü</A>
+<LI><A HREF="#htoc12">4.2&nbsp;&nbsp;PİSİ Kaynak Paketi</A>
+<UL><LI>
+<A HREF="#htoc13">4.2.1&nbsp;&nbsp;PSPEC Dosyası</A>
+<LI><A HREF="#htoc14">4.2.2&nbsp;&nbsp;actions.py Dosyası</A>
+<LI><A HREF="#htoc15">4.2.3&nbsp;&nbsp;files Dizini</A>
+<LI><A HREF="#htoc16">4.2.4&nbsp;&nbsp;comar Dizini</A>
+</UL>
+<LI><A HREF="#htoc17">4.3&nbsp;&nbsp;İkili PİSİ Paketi</A>
+<UL><LI>
+<A HREF="#htoc18">4.3.1&nbsp;&nbsp;metadata.xml</A>
+<LI><A HREF="#htoc19">4.3.2&nbsp;&nbsp;files.xml</A>
+<LI><A HREF="#htoc20">4.3.3&nbsp;&nbsp;install Dizini</A>
+<LI><A HREF="#htoc21">4.3.4&nbsp;&nbsp;comar Dizini</A>
+</UL>
+<LI><A HREF="#htoc22">4.4&nbsp;&nbsp;Paket Depoları</A>
+<UL><LI>
+<A HREF="#htoc23">4.4.1&nbsp;&nbsp;Kaynak PİSİ Deposu</A>
+<LI><A HREF="#htoc24">4.4.2&nbsp;&nbsp;İkili PİSİ Deposu</A>
+</UL>
+<LI><A HREF="#htoc25">4.5&nbsp;&nbsp;Süreçlerin Tarifi</A>
+<UL><LI>
+<A HREF="#htoc26">4.5.1&nbsp;&nbsp;Paket Oluşturmak</A>
+<LI><A HREF="#htoc27">4.5.2&nbsp;&nbsp;Paket Kurmak </A>
+<LI><A HREF="#htoc28">4.5.3&nbsp;&nbsp;Paket Kaldırmak</A>
+<LI><A HREF="#htoc29">4.5.4&nbsp;&nbsp;Bağımlılık Çözmek</A>
+</UL>
+<LI><A HREF="#htoc30">4.6&nbsp;&nbsp;Veritabanları</A>
+</UL>
+<LI><A HREF="#htoc31">5&nbsp;&nbsp;Diğer Yazarlar</A>
+</UL>
+
+
+<!--TOC section Giriş-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Giriş</H2><!--SEC END -->
+
+Bu belge Ulusal Dağıtım projesi kapsamında geliştirilen PİSİ paket
+yönetim sistemin, hangi amaçlar ve gerekler ile geliştirildiğini,
+genel yapısını ve mimarisini anlatır.<BR>
+<BR>
+Belgenin hedef kitlesi PİSİ sistemini yakından tanımak isteyen kullanıcılar,
+sistem yöneticileri ve PİSİ üzerinde çalışmak isteyen geliştiricilerdir.
+Belge bir son kullanıcı belgesi değildir. Belge kapsamında ele alınan
+konuları kavrayabilmek için yer yer paket yönetim sistemleri konusunda
+genel bilgi ve diğer paket yönetim sistemleri üzerinde deneyim gerekmektedir.
+<BR>
+<BR>
+<!--TOC section Paket Yöneticisi Gereksinimleri-->
+
+<H2><A NAME="htoc2">2</A>&nbsp;&nbsp;Paket Yöneticisi Gereksinimleri</H2><!--SEC END -->
+
+Bu kısımda önceki bölümde tanımlanan paket yöneticisi kavramının,
+sunması beklenen gereksinimler listelenmiştir.<BR>
+<BR>
+Fakat önce paket ve paket yöneticisi kavramlarına kısa bir göz atalım.<BR>
+<BR>
+<!--TOC subsection Paket Yöneticisi-->
+
+<H3><A NAME="htoc3">2.1</A>&nbsp;&nbsp;Paket Yöneticisi</H3><!--SEC END -->
+
+Paket, bir uygulamayı ya da işletim sisteminin bir parçasını tüm bileşenleriyle
+toplu olarak ifade eden bir kavramdır. Uygulamaların bir yerden bir
+yere taşınması (örneğin bir CD yada ağ kaynağından gelip, sisteme
+kurulması) sırasında bazı bileşenlerin geride unutulmamasını sağlar.
+Bir sistemdeki onbinlerce dosyayı, görevleri ve ait oldukları uygulamalar
+bazında birkaç yüz pakete ayırarak yönetilebilir kılar. Kullanıcının
+büyük bir sistemde neler bulunduğuna hakim olabilmesini kolaylaştırır.<BR>
+<BR>
+Bu paketleri kurup kaldırmak, çeşitli kaynaklardan temin etmek, sorgulamak,
+sistemdeki değişiklikleri takip etmek için, paket yöneticisi adını
+verdiğimiz bir uygulamaya ihtiyaç vardır.<BR>
+<BR>
+<!--TOC subsection Kullanıcı Gereksinimleri-->
+
+<H3><A NAME="htoc4">2.2</A>&nbsp;&nbsp;Kullanıcı Gereksinimleri</H3><!--SEC END -->
+
+Kullanıcı gereksinimleri, bilişim okuryazarı olarak daha önce tanımladığımız<SUP><A NAME="text1" HREF="#note1">1</A></SUP> kullanıcı profiline bağlı kalınarak çıkarılmıştır.
+<UL><LI>
+Bilişim okuryazarının temel isteği, sisteme istediği uygulamaları
+kolayca kurabilmekten ibarettir.
+<UL><LI>
+Kur emri, komut satırından, grafik arayüzlerden, ya da sistemin otomatik
+olarak bir pakete ihtiyaç olduğunu saptamasıyla kolayca verilebilmeli,
+bu görev mümkün olduğunca soru sorulmadan ve kullanıcıyı rahatsız
+etmeden yerine getirilmelidir.
+<LI>Kullanıcı, paketin sistemde doğru şekilde çalışabilmesi için gerekli
+olan yapılandırma gereksinimlerinin karşılanmasından mümkün olduğunca
+yalıtılmalıdır. Yapılandırma ile ilgili görevler paket yöneticisi
+dışındaki bir araçla otomatik sağlanmalı, ya da kullanıcının verdiği
+emirlerle sonradan yapılabilmelidir. 
+<LI>Kurulum mümkün olduğunca hızlı olmalıdır.
+</UL>
+<LI>Kurulu programların yeni sürümleri çıktıkça, veya üzerinde düzeltmeler
+ve güvenlik onarımları yapılmış yeni paket sürümleri yayımlandıkça,
+kullanıcı elindeki uygulamaları güncellemek isteyecektir.
+<UL><LI>
+Kullanıcı vakti yada ağ bağlantı hızı yetersiz olduğunda acil önem
+taşıyan ve yapılması gerekli güncellemeleri, diğerlerinden kolayca
+ayırabilmelidir; bunun yapılabilmesi için paketin her sürümündeki
+güncellemelerin önem derecesi (yeni özellikler, hata düzeltmeleri,
+güvenlik açığı düzeltmesi) paketleme esnasında belirtilebilmelidir.
+<LI>Bir paketin eski veya deneysel sürümlerini kurmak bilişim okuryazarının
+bir ihtiyacı değildir. Dolayısıyla eski sürümler ve geliştirme sürümleri
+alternatifleri ile kullanıcının kafasının karıştırılmaması için; kullanıcı
+paketler deposunda her eriştiğinde en son düzeltmeleri içeren son
+ve tek bir sürüme ulaşabilmelidir. Bu hem basitlik sağlar, hem de
+kullanıcının istemeyerek yanlış bir paket kurmasının önüne geçer.
+<LI>Paket güncelleme ile ilgili paket bazında ayrı ayrı politikalar belirlenmesi
+yukarda bahsedilen kullanıcı profilinden bakıldığında gereksiz ve
+kafa karıştırıcıdır.
+</UL>
+<LI>Nerdeyse her uygulama kendi sürüm numarası verme politikasına sahip
+olduğundan, paketin asıl sürüm numarası yanında, düzenli olarak artacak
+bir numara daha vererek, kullanıcının kolayca hangi sürümlerin yeni
+olduğunu ayırt edebilmesi sağlanabilmelidir (aynı uygulama sürümünün
+çeşitli hata düzeltmeleri içeren farklı paket sürümleri olabileceği
+de düşünülürse bunun önemi daha net bir şekilde ortaya çıkmaktadır).
+<LI>Kullanıcı, artık ihtiyaç duymadığı bir uygulamayı, yer ve takip tasarrufu
+amacıyla kaldırmak isteyebilir. Kullanıcının bu seçimi kolayca yapabilmesi
+için, hiç bir paket tarafından ihtiyaç duyulmayan paketler, kurulu
+paketlerin kapladığı alan gibi bilgiler paket yöneticisinden kolayca
+alınabilmelidir.
+<LI>Kullanıcı sistemde nelerin kurulu olduğunu, hangi paketleri kurabileceğini,
+kurulu paketlere ait bilgileri, sistemdeki bir bileşen veya dosyanın
+hangi uygulamaya ait olduğunu ve benzeri paket yöneticisinden kolayca
+alabilmelidir.
+<LI>Paketler farklı hedeflere kurulabilecek biçimde ``<EM>relocatable</EM>''
+özellik taşımalıdır (bu, farklı hedeflere kurulum, ya da başkasına
+ait sistemde ev dizinine kurulum gibi yeteneklerin sağlanması için
+gereklidir).
+<LI>Paket bileşenlerinin değişip değişmediği kontrol toplamları, özet
+fonksiyonları yardımıyla tespit edilebilmelidir. Paket yöneticisinin
+böyle bir durumu kontrol edebilmesi, ve örneğin bir kullanıcı hatası
+sonucu silinen/değişen dosyaları tekrar temin edip düzeltebilmesi
+kullanıcıya kolaylık sağlar.
+<LI>Uygulamayı kod olarak çekip, sisteme özel değişik ayarlar ile derleyebilecek
+Gentoo benzeri bir özellik gereklerimiz arasında değildir. Bu tür
+bir özellik aynı kodun farklı makinalarda farklı ikili paketler oluşturmasına
+ve teknik destek sağlamanın zorlaşmasına yol açacaktır.
+</UL>
+<!--TOC subsection Paketleyici/Geliştirici Gereksinimleri-->
+
+<H3><A NAME="htoc5">2.3</A>&nbsp;&nbsp;Paketleyici/Geliştirici Gereksinimleri</H3><!--SEC END -->
+
+<UL><LI>
+Paket hazırlamak kolay olmalıdır. Paket hazırlanırken ve inşa edilirken
+gerekli dosyalar bir çok ayrı kaynaktan temin edilebilmelidir. 
+<LI>Pakete ait bilgiler iyi tanımlanmış bir formatta, kolayca erişilebilir
+olarak tutulmalıdır. Böylece paketleri işleyen araçlar yapmak kolaylaşacak,
+ilerde veri bağımlılığı sorunları olmayacaktır.
+<LI>Kolayca paket oluşturabilmek için, tercihen bir grafik arayüz ile
+paket hazırlanabilmelidir. Paket yöneticisi, üst geliştirici kodunu
+alıp, gerekli bilgileri hazırlatacak, gerekli işaretlemeleri kolayca
+yapabilecek bir araç sunmalıdır.
+<LI>Paket yöneticisinin geliştirme sistemi, paketleyici hatalarının gözden
+kaçmasını zorlaştıracak araçlar sunmalıdır.
+</UL>
+<!--TOC subsection Paket Kaynağı Gereksinimleri-->
+
+<H3><A NAME="htoc6">2.4</A>&nbsp;&nbsp;Paket Kaynağı Gereksinimleri</H3><!--SEC END -->
+
+<UL><LI>
+Paketler CD, Internet, uzak dosya sistemi gibi çeşitli kaynaklardan
+kurulabilmelidir. Temel olarak iki tip kaynak sözkonusudur.
+<LI>İlk tip, pakedi tek bir dosya olarak taşıyabilen ve programı depolama
+aygıtları, e-posta ve benzeri yollarla dağıtmaya uygun bir arşiv dosyasıdır.
+<UL><LI>
+Bu arşiv içinden, arşiv hakkında bilgi alınabilecek dosyalara, bütün
+arşivi açmadan erişilebilmelidir.
+<LI>Mümkünse arşivin yaygın olarak bilinen ve kullanılan araçlarla açılabilmesinde
+yarar vardır.
+</UL>
+<LI>İkinci tip kaynak ise Internet yada yerel ağ üzerinden bir paket grubunun
+indeks bilgilerini ve kendilerini sunabilecek bir ``depo'' sunucusudur.
+<UL><LI>
+Depodaki değişikliklerin listesi, yerel paket listesiyle mümkün olan
+en az veri iletimi ile senkron edilebilmelidir. Bu ağ kaynaklarının
+verimli kullanımı ve yeni sürümlerin hızlıca takip edilebilmesi için
+gereklidir.
+</UL>
+<LI>Paketler birden fazla kaynaktan temin edilebilmelidir.
+</UL>
+<!--TOC subsection Güvenlik Gereksinimleri-->
+
+<H3><A NAME="htoc7">2.5</A>&nbsp;&nbsp;Güvenlik Gereksinimleri</H3><!--SEC END -->
+
+<UL><LI>
+CD, Internet gibi değişik yollarla temin edilen paketlerin kim tarafından
+paketlendiği bilgisi ve içeriğinin yolda değişmediği garantisi için
+bir dijital imza sistemi desteklenmelidir.
+<LI>Gerektiğinde pakedi oluşturan kişinin imzası dışında, üçüncü parti
+kurum veya kişilerin de pakedi deneyip, güvendiğini belirtebilmesi
+için, birden fazla kişi tarafından pakedin imzalanabilmesi gereklidir.
+</UL>
+<!--TOC subsection Kurumsal Gereksinimler-->
+
+<H3><A NAME="htoc8">2.6</A>&nbsp;&nbsp;Kurumsal Gereksinimler</H3><!--SEC END -->
+
+<UL><LI>
+Paket yöneticisi birden fazla paket kaynağı ile aynı anda sorunsuz
+bir şekilde çalışabilmelidir.
+<LI>Kurumlar ya da bireyler tarafından <EM>ön tanımlı depoda da bulunan</EM>
+kimi paketlerin değiştirilmiş versiyonlarının bulunduğu depolar <EM>overlay</EM>
+olarak tanımlanabilmelidir.
+<LI>Ön tanımlı depoda <EM>bulunmayan</EM> çeşitli paketlerin bulunduğu depolar
+<EM>addon</EM> olarak tanımlanabilmelidir.
+</UL>
+<!--TOC section Neden PİSİ?-->
+
+<H2><A NAME="htoc9">3</A>&nbsp;&nbsp;Neden PİSİ?</H2><!--SEC END -->
+
+Hali hazırda varolan ve geniş bir kullanım oranına sahip paket yöneticileri
+(RPM, DPKG ve Portage) yukarda saydığımız gereksinimlerin kimilerini
+bizim olması gerektiğini düşündüğümüz basitlikte yerine getirememekte,
+kimilerini de hiç vaad etmemektedirler. Bu paket yöneticilerinin geliştirilmesi
+ve istenen noktaya getirilmeye çalışılması yeni ve ayakları yere daha
+sağlam basan bir paket yöneticisini yeniden yazmaktan daha kolay değildir.<BR>
+<BR>
+Daha önemlisi, varolan paket yöneticilerinin paket formatlarında <EM>görev</EM>leri
+ve <EM>bilgi</EM>leri birbirinden düzgün bir biçimde ayrılmadıkları
+görülmektedir. Bu araçlar basit olarak hazırlanmış ve zaman içinde
+ortaya çıkan ihtiyaçları karşılamak için sürekli yeni özellikler eklenerek
+bugünkü hallerine gelmişlerdir. Bunun getirdiği karmaşıklığı temizlemek
+için aşağıdaki iki ilkeyi temel alan yeni bir paket yöneticisinin
+yazılmasına karar verilmiştir:
+<UL><LI>
+<B>Kurulum ve yapılandırma birbirinden ayrı iki görevdir</B>. Kurulum,
+yalnızca programların kurulumu, güncellenmesi ve kaldırılması esnasında
+iş görürken, yapılandırma hem kurulumda hem de çalışan sistemde söz
+konusudur. Bu ayrı görevleri sorumluluk sınırları belirlenmiş ayrı
+araçların yerine getirmesi uygundur. Uludağ projesi için yapılandırma
+işlerini yürütecek araç <B>ÇOMAR</B>'dır. <B>PİSİ</B> bu görevleri
+<B>ÇOMAR</B>'a devredecektir.
+<LI><B>Paket meta bilgileri ile paketin derlenme ve kurulumunu yöneten
+betikler iç içe geçmemelidir</B>. Varolan paket yöneticilerinde paket
+tanımlama dosyaları kod ile bilginin birbirine karıştığı, araçlarla
+işlemesi, içinden bilgi çıkarılması zor, net ve kesin tanımlanmamış
+biçimlerdedir.
+</UL>
+<!--TOC section PİSİ Tasarımı-->
+
+<H2><A NAME="htoc10">4</A>&nbsp;&nbsp;PİSİ Tasarımı</H2><!--SEC END -->
+
+PİSİ paket sisteminin tasarımı gerekler bölümünde anlatılan kriterlere
+uygun bir şekilde yapılmıştır. Bu gerekler burada tekrar açıklanmayacak
+yalnızca PİSİ'nin temel parçaları anlatılacaktır.<BR>
+<BR>
+Paket sistemi doğrudan ikili (derlenmiş) paketler üzerinde çalışacak
+bir şekilde tasarlanmıştır. Bununla birlikte kaynak paketler üzerinden
+çalışmanın da mümkün olmasına dikkat edilmiştir. PİSİ ikili paketler
+üzerinden temel paket işlevlerini (paket kurma/kaldırma) yerine getirir.
+İkili paketler ise kaynak paketlerin PİSİ ile derlenmesi ile oluşturulur.<BR>
+<BR>
+Bu bağlamda, PİSİ kaynak ve ikili paketlere farklı davranmaktadır.
+Kaynak ve ikili paketlerin görünümü de farklılık sergiler. Bu bölüm
+içerisinde kaynak paketler ve ikili paketler ile ilgili detaylı bir
+anlatım yer alıyor. Fakat önce PİSİ'nin temelini oluşturan PİSİ çekirdeği/kütüphanesinin
+temel işlevlerinden bahsedeceğiz.<BR>
+<BR>
+Paket sisteminin ana işlevleri bir kütüphane (python package) tarafından
+sağlanmaktadır. Arayüzler ve yardımcı araçlar bu kütüphanenin sağladığı
+işlevleri kullanarak görevlerini yerine getirirler. Kütüphanenin temel
+görevleri aşağıdaki liste ile özetlenebilir.
+<UL><LI>
+Paket deposu işlevleri
+<UL><LI>
+depo ekleme
+<LI>depo silme
+<LI>aktif depoları listeleme
+<LI>depodan kuruluma hazır paketleri listeleme
+</UL>
+<LI>İkili paket işlevleri
+<UL><LI>
+Paket kurulumu
+<UL><LI>
+tek bir (bağımsız) paketi sisteme kurma
+<LI>depo üzerinden paket indirme ve kurma
+</UL>
+<LI>Paket kaldırma
+<UL><LI>
+kurulu bir paketi kaldırma
+</UL>
+<LI>İkili paket üzerinde yapılan diğer işlemler
+<UL><LI>
+paket hakkında bilgisi alma
+<LI>ikili paketin içeriğini açma
+<LI>ikili paket içerisinden yalnızca istenen dosya/dizini çıkarma
+</UL>
+</UL>
+<LI>Kaynak paket işlevleri
+<UL><LI>
+kaynak paket üzerinden, tanım dosyasını vererek, paket oluşturma
+<LI>paket tanım dosyalarını (PSPEC) okuma/işleme
+<LI>tanım dosyasında belirtilen uygulama kaynağını çekme
+<LI>farklı dosya tiplerini (zip, tar, tar.gz, tar.bz2) açma
+<LI>paket oluşturma betiklerini (actions.py) çalıştırma
+</UL>
+<LI>Diğer işlevler
+<UL><LI>
+Bağımlılık çözümleme
+<LI>Uzak bağlantılar ile çalışma (ftp, http, https, vb.): paket kurma,
+tanım dosyası üzerinden paket oluşturma, vb.
+<LI>Kurulu paketler veritabanını güncelleme (yeni girdi ekleme, girdi
+silme veya bir girdiyi güncelleme)
+<LI>Dosya sistemini paket işlemleri için sorgulama (bir paketin kurulumu
+için diskte yeteri kadar boş yer bulunuyor mu?)
+<LI>Dosya özetlerini (hash) oluşturma ve doğruluklarını kontrol etme.
+<LI>Paketi imzalama ve imzanın doğruluğunu kontrol etme.
+<LI><B>ÇOMAR</B> sistemi ile iletişim kurma (CSL betiklerinin <B>ÇOMAR</B>'a
+bildirilmesi, betiklerin <B>ÇOMAR</B>'dan kaldırılması)
+</UL>
+</UL>
+PİSİ işlevlerini kullanmak isteyen bir geliştirici basitçe PİSİ ile
+sağlanan pisi Python paketini kullanarak yukarıdaki işlevlere sahip
+olabilir.<BR>
+<BR>
+<!--TOC subsection PİSİ Sözlüğü-->
+
+<H3><A NAME="htoc11">4.1</A>&nbsp;&nbsp;PİSİ Sözlüğü</H3><!--SEC END -->
+
+Bu kısa bölüm belge içerisinde sıklıkla karşılaşacağınız bazı kavramlara
+açıklamalar getirecektir.
+<UL><LI>
+<B>PİSİ:</B> Paket yönetim sisteminin adıdır.
+<LI><B>PİSİ ikili paketi:</B> Sisteme kurulmak için hazırlanmış/derlenmiş
+olan ikili pakettir.
+<LI><B>PİSİ Kaynak Paketi:</B> İkili paketlerin oluşturulduğu derlenmek
+için hazırlanmış pisi paketidir. ``PİSİ kaynak dizini'' olarak
+da isimlendirilebilir.
+<LI><B>İkili PİSİ Deposu:</B> İkili paketlerin oluşturduğu depoya verilen
+isimdir.
+<LI><B>Kaynak PİSİ Deposu:</B> Kaynak paketlerin bulunduğu depoya verilen
+isimdir.
+</UL>
+<!--TOC subsection PİSİ Kaynak Paketi-->
+
+<H3><A NAME="htoc12">4.2</A>&nbsp;&nbsp;PİSİ Kaynak Paketi</H3><!--SEC END -->
+
+Bu kısımda bir PİSİ kaynak paketinin bileşenleri anlatılacaktır. PİSİ
+kaynak paketi temel olarak bir tanım dosyası (PSPEC dosyası) paketin
+oluşturulmasını sağlayan bir Python betiği (actions.py) ve ek dosyaların
+bulunduğu iki dizinden (comar/ ve files/ dizinleri) oluşur.<BR>
+<BR>
+Tüm bu dosyalar bir dizin içerisinde toplanır ve bu dizine <EM>PİSİ
+kaynak paketi</EM> (veya <EM>PİSİ kaynak dizini</EM>) adı verilir. Örneğin
+fontconfig kaynak dizini içerisinde aşağıdaki dosyalar bulunur:
+<UL><LI>
+pspec.xml
+<LI>actions.py
+<LI><B>files/</B>
+<UL><LI>
+fontconfig-2.1-slighthint.patch
+<LI>fontconfig-2.2-local_fontdir-r1.patch
+<LI>fontconfig-2.2-remove_subpixel_test.patch
+<LI>fontconfig-2.2-blacklist.patch
+</UL>
+<LI><B>comar/</B>
+<UL><LI>
+package.py
+</UL>
+</UL>
+Kaynak paket içerisinde bulunan dosyalar bundan sonraki alt bölümlerde
+detaylı olarak açıklanmaktadır.<BR>
+<BR>
+<!--TOC subsubsection PSPEC Dosyası-->
+
+<H4><A NAME="htoc13">4.2.1</A>&nbsp;&nbsp;PSPEC Dosyası</H4><!--SEC END -->
+
+<B>PSPEC (PİSİ SPECification)</B> dosyası paketin oluşturulması
+için gerekli olan temel bilgiyi tanımlar. Oluşturulacak paketin ne
+olduğu, kaynağı, kim tarafından paketlendiği, kaynağa uygulanan yamalar,
+hangi başka paketlere ne tür bağımlılıklar içerdiği gibi bilgileri
+içerir.<BR>
+<BR>
+Bir <B>PSPEC</B> dosyasından, dolayısı ile bir kaynaktan birden
+fazla paket oluşturulabilir. Örneğin kcontrol paketi kdebase-kaynaksürümü.paketsürümü.tar.gz
+kaynağından oluşturulabilecek yalnızca bir pakettir.<BR>
+<BR>
+Dosya biçimi XML'dir ve aşağıdaki etiketleri içerir. Her <B>PSPEC</B>
+dosyasında tüm etiketlerin bulunması zorunlu değildir. Bulunması zorunlu
+olan etiketler aşağıda (*) ile belirtilmiştir.<BR>
+<BR>
+<B>PSPEC</B> dosyaları <B>PSPEC</B> deposunda pakete ait dizinde
+<B>pspec.xml</B> adı ile tutulurlar.<BR>
+<BR>
+Her <B>PSPEC</B> dosyası <B>PİSİ</B> etiketi (tag) altında bir
+<EM>Source</EM> ve en az bir <EM>Package</EM> olmak üzere iki
+ana bölüm içermek zorundadırlar.<BR>
+<BR>
+<!--TOC subparagraph Source-->
+
+<H5>Source</H5><!--SEC END -->
+
+<UL><LI>
+<B>Name</B>: (*) Uygulamanın adı.
+<LI><B>Homepage:</B> Uygulamanın web sitesinin URL'sini belirtir.
+<LI><B>Summary:</B> (*) Tek satırlık açıklayıcı bilgi. Çoklu dil desteğine
+sahiptir.
+<LI><B>Description:</B> (*) Uygulama hakkında özet açıklama.
+Çoklu dil desteğine sahiptir.
+<LI><B>IsA:</B> Paketin bir kategori/sistem/kolleksiyon'a aitliğini
+belirtir. Bir uygulamanın yaptığı işi, ait olduğu kategoriyi belirtir
+yani uygulamaların sıfatlarıdır. Bu bilgi kullanılarak bir işi ya
+da işler grubunu yapan uygulamalar sorgulanabilir. Örneğin PDF Gösteren
+uygulamaları göster, Ogg çalan ve konsoldan çalışan uygulamalar hangileridir
+gibi.
+<LI><B>PartOf:</B> Paketin hangi bütünün/grubun parçası olduğunu belirtir.
+Aitlik özellikleri için Freshmeat'in Trove kategorileri örnek verilebilir.
+Bir paketler bütününden oluşan anlamlı ve kurulabilir birliği temsil
+eder. Yani uygulamaları kapsüller. Örneğin KDE Component'ı içinde
+kdebase, kdepim, kdemultimedia v.s gibi kaynakları bulundurur, kdebase
+ise kcontrol, konqueror v.s. gibi paketlerden oluşur. Bu bilgi kullanılarak
+örneğin KDE Component'ını sisteme kur, kaldır, güncelle gibi eylemler
+gerçekleştirilebilir. Örn: ``L-.1667em.25emY-.125emX and TeTex are parts of Tex:Distrubiton''<BR>
+<B>IsA</B> ve <B>ParfOf</B> bir <B>PİSİ</B> paketinin farklı
+türdeki aitliklerini ifade eder. <B>PartOf</B> ile belirtilen bir
+<B>Component</B>'in tümünü sisteme kurabilirsiniz. Fakat <B>IsA</B>
+ile belirtilen aitlikleri yanlızca sorgulayabilirsiniz.<BR>
+<EM>Source ve Package</EM> tagları içerisinde yalnızca birer tane <B>PartOf</B>
+tanımlanabiliyor olmasına karşın, birden fazla <B>IsA</B> tanımlanabilir.
+<LI><B>Packager:</B> (*) Paketi oluşturan kişilerin adı/soyadı
+ve e-posta adresi belirtir.
+<UL><LI>
+<B>Name:</B> (*) Paket oluşturan kişinin adı ve soyadı.
+<LI><B>Email:</B> (*) Paket oluşturan kişinin e-posta adresi.
+</UL>
+<LI><B>License</B>: (*) Uygulamanın lisansını belirtir (GPL, BSD,
+vb).
+<LI><B>Archive:</B> (*) Uygulamanın orjinal kaynak kodunun bulunduğu
+URL'yi belirtir. <B>archType</B> arşiv tipini (tar.gz, tar.bz2,
+zip, vb) belirtirken, <B>sha1sum</B>, sha1 ile alınmış özet değerini
+belirtir. Her iki attribute (archType ve sha1sum) zorunludur.
+<LI><B>Patches</B>: Orjinal koda uygulanacak yamaların <B>sıralı</B>
+bir listesini içerir. Yamalar bu bölümde tanımlanan sıra ile kaynak
+koda uygulanır.
+<UL><LI>
+<B>Patch</B>: Yamanın dosya adını içerir. <B>compressionType</B>
+ile varsa sıkıştırma biçimi (gz, bz2, vb) verilebilir. <B>level</B>
+ile yamanın patch komutuna seviye verilebilir, level verilmez ise
+seviye 0 olarak kabul edilir. Örnek:<BR>
+&lt;Patch compressionType="gz" level="1"&gt;popt-1.7-uclibc.patch.gz&lt;/Patch&gt;
+</UL>
+<LI><B>BuildDependencies</B>: Pakedi oluşturmak için gereken bağımlılıkları
+listeler.
+<UL><LI>
+<B>Dependency</B>: Bir bağımlılığı tanımlar. Burada bahsedilen bağımlılık
+paket bağımlılığı olabilir. <B>versionFrom</B> ve <B>versionTo</B>
+attribute bilgileri ile paketin hangi sürüm numarasına bağımlı olduğu
+ifade edilebilir. Örnek:<BR>
+&lt;Dependency versionFrom="1.8"&gt;automake&lt;/Dependency&gt;
+</UL>
+</UL>
+<!--TOC subparagraph Package: (*) Uygulamadan oluşturulacak bir pakedi
+tanımlar. Her PSPEC dosyası en az bir Package etiketi
+içermek zorundadır.-->
+
+<H5>Package: (*) Uygulamadan oluşturulacak bir pakedi
+tanımlar. Her PSPEC dosyası en az bir Package etiketi
+içermek zorundadır.</H5><!--SEC END -->
+
+<!--TOC subparagraph Package içerisindeki bazı taglar <EM>Source</EM>
+içerisindekileri tekrarlayabilir. Bu tekrarlamaların bazıları
+üzerine yazılırken (override) bazıları birleştirilecektir (merge).-->
+
+<H5>Package içerisindeki bazı taglar <EM>Source</EM>
+içerisindekileri tekrarlayabilir. Bu tekrarlamaların bazıları
+üzerine yazılırken (override) bazıları birleştirilecektir (merge).</H5><!--SEC END -->
+
+<UL><LI>
+<B>Name</B> (tanımlı ise <EM>Source</EM> bölümündekinin yerine kullanılır)
+<LI><B>Summary</B> (tanımlı ise <EM>Source</EM> bölümündekinin yerine
+kullanılır)
+<LI><B>Description</B> (tanımlı ise <EM>Source</EM> bölümündekinin yerine
+kullanılır)
+<LI><B>License</B> (tanımlı ise <EM>Source</EM> bölümündekinin yerine
+kullanılır)
+<LI><B>IsA</B> (tanımlı ise <EM>Source</EM> bölümündeki ile birleştirilir)
+<LI><B>PartOf</B> (tanımlı ise <EM>Source</EM> bölümündekinin yerine kullanılır)
+<LI><B>Conflicts:</B> Paketin çalışması/işlevini yerine getirmesi için,
+sistemde olmaması gereken paketleri belirtir, bu örneğin aynı dosyayı
+iki paketin de taşıması durumunda olabilir. 
+<UL><LI>
+<B>Package:</B> Olmaması gereken paket adını verir.
+</UL>
+<LI><B>Provides:</B> Paketin sağladığı bileşenleri listeler.
+<UL><LI>
+<B>COMAR:</B> COMAR OM bacağı ve bu bacağı doğrulayan betiği tarif
+eder.<BR>
+Örnek: &lt;COMAR script=''interface.py''&gt;Net.NIC&lt;/COMAR&gt;
+</UL>
+<LI><B>Requires:</B> Paketin çalışmak için gerek duyduğu bileşenleri
+listeler.
+<UL><LI>
+<B>COMAR:</B> COMAR OM bacağı bağımlılıkları.
+</UL>
+<LI><B>RuntimeDependencies</B>: Pakedin çalışabilmesi için gereken bağımlılıkların
+bir listesini verir. 
+<UL><LI>
+<B>Dependency</B>: Bir bağımlılık tanımlar. <B>BuildDependency</B>
+ile aynı yapıdadır
+</UL>
+<LI><B>Files</B>: (*) Pakedin kurulacak dosyalarının tiplerini belirlemek
+için kullanılır. Dosya tipleri ile ilgili bigi <A HREF="#FType">4.3.2</A> kısmında
+verilmiştir.
+<UL><LI>
+<B>Path</B> (*): Bir dosya/dizin yolunu tarif eder. Verilebilecek
+olan <B>fileType</B> attribute ise path'in tipini belirtir. Belge,
+paylaşımlı kütüphane, çalıştırılabilir, vb... Eğer fileType verilmezse
+path tipi ``other'' olarak tanımlanır. Örnek:<BR>
+&lt;Path fileType="sharedLib"&gt;/usr/lib&lt;/Path&gt;
+</UL>
+<LI><B>AdditionalFiles:</B> Kaynak ile gelmeyen ama paketin çalışması,
+ek özellik kazanması v.s. için gerekli dosyaları belirtir. ( <EM>örn</EM>;
+init betikleri )
+<UL><LI>
+<B>AdditionalFile:</B> Files dizini altından alınacak dosyayı belirtir.
+<B>target</B> attribute dosyanın nereye konulacağını belirtir, zorunludur.
+<B>permission</B> attribute varsa dosyanın hangi haklarla saklanacağını
+belirtir. Örnek:<BR>
+&lt;AdditionalFile target=''/etc/bash/''&gt;bashrc&lt;/AdditionalFile&gt;
+</UL>
+</UL>
+<!--TOC subparagraph History: (*) Pakete yapılan güncellemelerin bir listesini
+verir. History altındaki güncellemeleri belirten Update
+taglarının mutlaka tarihe göre sıralı olması gerekmektedir.
+En son güncelleme en üstte bulunmalıdır. Çünkü en son güncellemeden
+alınan Version ve Release bilgisi pakete uygulanacaktır.-->
+
+<H5>History: (*) Pakete yapılan güncellemelerin bir listesini
+verir. History altındaki güncellemeleri belirten Update
+taglarının mutlaka tarihe göre sıralı olması gerekmektedir.
+En son güncelleme en üstte bulunmalıdır. Çünkü en son güncellemeden
+alınan Version ve Release bilgisi pakete uygulanacaktır.</H5><!--SEC END -->
+
+<UL><LI>
+<B>Update</B>: (*) Bir güncellemeyi tarif eder. <B>release</B>
+(*) attribute paketin sürüm numarası. <B>type</B> attribute güncellemenin
+tipini belirtir (<B><EM>Security, Bug, Enhancement, Normal</EM></B>
+v.s). Eğer bu etiket tanımlı değilse tip <B><EM>Normal</EM></B> olarak
+kabul edilir.
+<UL><LI>
+<B>Date</B>: (*) Güncellemenin tarihi.
+<LI><B>Version:</B> (*) Uygulamanın sürüm numarası.
+<LI><B>Name:</B> (*) Güncellemeyi yapan kişinin adıdır.
+<LI><B>Email:</B> (*) Güncellemeyi yapan kişinin e-posta adresidir.
+</UL>
+</UL>
+<!--TOC paragraph Örnek bir PSPEC Dosyası-->
+
+<H5>Örnek bir PSPEC Dosyası</H5><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<FONT SIZE=2>&lt;?xml&nbsp;version="1.0"&nbsp;encoding="utf-8"&nbsp;standalone="no"?&gt;</FONT><BR>
+<BR>
+<FONT SIZE=2>&lt;!DOCTYPE&nbsp;PSPEC&nbsp;SYSTEM&nbsp;&nbsp;&nbsp;&nbsp;"http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd"&gt;</FONT><BR>
+<BR>
+<FONT SIZE=2>&lt;PISI&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;Source&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Name&gt;popt&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Homepage&gt;http://www.rpm.org/&lt;/Homepage&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Packager&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Pardus&nbsp;Man&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;bilgi@uludag.org.tr&lt;/Email&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Packager&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;License&gt;As-Is&lt;/License&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;IsA&gt;library:util:optparser&lt;/IsA&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;PartOf&gt;rpm:archive&lt;/PartOf&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Summary&nbsp;xml:lang=''en''&gt;Popt&nbsp;command&nbsp;line&nbsp;option&nbsp;parser&lt;/Summary&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Description&nbsp;xml:lang=''en''&gt;Command&nbsp;line&nbsp;option&nbsp;parsing&nbsp;library.</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While&nbsp;it&nbsp;is&nbsp;similiar&nbsp;to&nbsp;getopt(3),&nbsp;it&nbsp;contains&nbsp;a&nbsp;number&nbsp;of&nbsp;enhancements,&nbsp;including:</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1)&nbsp;popt&nbsp;is&nbsp;fully&nbsp;reentrant</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2)&nbsp;popt&nbsp;can&nbsp;parse&nbsp;arbitrary&nbsp;argv[]&nbsp;style&nbsp;arrays&nbsp;while&nbsp;getopt(2)&nbsp;makes&nbsp;this&nbsp;quite&nbsp;difficult</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3)&nbsp;popt&nbsp;allows&nbsp;users&nbsp;to&nbsp;alias&nbsp;command&nbsp;line&nbsp;arguments</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4)&nbsp;popt&nbsp;provides&nbsp;convience&nbsp;functions&nbsp;for&nbsp;parsing&nbsp;strings&nbsp;into&nbsp;argv[]&nbsp;style&nbsp;arrays</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Description&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Archive&nbsp;type="targz"&nbsp;sha1sum="66f3c77b87a160951b180447f4a6dce68ad2f71b"&gt;ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/popt-1.7.tar.gz&lt;/Archive&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;Patches&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Patch&nbsp;compressionType="gz"&nbsp;level="1"&gt;popt-1.7-uclibc.patch.gz&lt;/Patch&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/Patches&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;BuildDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&nbsp;versionFrom="1.8"&gt;automake&lt;/Dependency&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&lt;/BuildDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&lt;/Source&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;Package&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;popt&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;RuntimeDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&gt;gettext&lt;/Dependency&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/RuntimeDependencies&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Files&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="sharedLib"&gt;/usr/lib&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="doc"&gt;/usr/share/doc&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="doc"&gt;/usr/share/man&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="localedata"&gt;/usr/share/locale&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="header"&gt;/usr/include/popt.h&lt;/Path&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Files&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;/Package&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&lt;History&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&nbsp;release=''2''&nbsp;type=''Bug''&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;2005-07-01&lt;/Date&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Comment&gt;paths&nbsp;fixed.&lt;/Comment&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Barış&nbsp;Metin&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;baris@uludag.org.tr&lt;/Email&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&nbsp;release=''1''&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;2005-06-10&lt;/Date&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;1.7&lt;/Version&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Comment&gt;first&nbsp;release.&lt;/Comment&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Barış&nbsp;Metin&lt;/Name&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;baris@uludag.org.tr&lt;/Email&gt;</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;</FONT><BR>
+<BR>
+<FONT SIZE=2>&lt;/PISI&gt;</FONT><BR>
+<BR>
+
+</TT></DL></DIV>
+Yukarıdaki örnek dosyada <EM>Package</EM> içerisinde tanımlanmayan taglar
+<EM>Source</EM> içerisinden alınarak kullanılacaktır. Bir kaynak paketten
+birden fazla ikili (binary) paket oluşturmak için <EM>Package</EM> etiketleri
+farklı isimler (Name) verilerek arttırılabilir. <EM>Paketler</EM> <B>Files</B>
+içerisinde bulunan <B>Path</B> taglarına göre bölümlendirilecektir.<BR>
+<BR>
+<!--TOC subsubsection actions.py Dosyası-->
+
+<H4><A NAME="htoc14">4.2.2</A>&nbsp;&nbsp;actions.py Dosyası</H4><!--SEC END -->
+
+Bu dosya bir Python betiği olup, kaynağın kurulması, derlenmesi, test
+edilmesi, sisteme kurulması gibi işlevleri yerine getiren fonksiyonlardan
+oluşur. <BR>
+<BR>
+Paketin oluşturulması sırasında derleme sistemi <B>actions.py</B>
+içerisindeki 3 fonksiyon adını arar ve çalıştırır; <B>setup,
+build, install</B>. Bu fonksiyonlardan install'ın tanımlanması zorunlu
+olmakla birlikte setup ve build sadece tanımlanmışsa çalıştırılır. <BR>
+<BR>
+<B>actions.py</B>'ler tarafından kullanılmak üzere <B>PİSİ</B>
+tarafından hazır bir <B>API</B> ActionsAPI adında sunulacaktır.<BR>
+<BR>
+<!--TOC paragraph Örnek bir actions.py dosyası:-->
+
+<H5>Örnek bir actions.py dosyası:</H5><!--SEC END -->
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;gnuconfig</FONT><BR>
+<BR>
+<FONT SIZE=2>from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;setup():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;gnuconfig.gnuconfig_update()</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.configure(``--with-nls'')</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;build():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.make()</FONT><BR>
+<BR>
+<FONT SIZE=2>def&nbsp;install():</FONT><BR>
+<BR>
+&nbsp;<FONT SIZE=2>&nbsp;&nbsp;&nbsp;autotools.install()&nbsp;</FONT><BR>
+<BR>
+
+</TT></DL></DIV>
+<!--TOC subsubsection files Dizini-->
+
+<H4><A NAME="htoc15">4.2.3</A>&nbsp;&nbsp;files Dizini</H4><!--SEC END -->
+
+Kaynak paket içerisinde bulunan files dizini kaynak arşivine uygulanacak
+yamaları, kurulum sırasında sistemin belirli bir yerine kopyalanması
+gereken ve paketle birlikte gelen ek dosyaları barındırır. Burada
+bulunan tüm dosyalar PSPEC içerisindeki ilgili oldukları bölümlerde
+tanımlanmalıdır.<BR>
+<BR>
+<!--TOC subsubsection comar Dizini-->
+
+<H4><A NAME="htoc16">4.2.4</A>&nbsp;&nbsp;comar Dizini</H4><!--SEC END -->
+
+Kaynak paket içerisinde bulunan comar dizini adından da kolayca anlaşılabilecek
+basit bir amaç ile oluşturulmuştur. Dizin ÇOMAR'a kayıt edilecek olan
+betik dosyalarının bulunduğu dizindir. ÇOMAR betikleri PSPEC içerisinde
+tarif edilir.<BR>
+<BR>
+Bu dizin içerisindeki dosyalar ikili paketin sisteme kurulması ile
+kullanılabilir olacağı için, comar dizini içerisindeki ÇOMAR betikleri
+ikili pakete aynen kopyalanır.<BR>
+<BR>
+<!--TOC subsection İkili PİSİ Paketi-->
+
+<H3><A NAME="htoc17">4.3</A>&nbsp;&nbsp;İkili PİSİ Paketi</H3><!--SEC END -->
+
+<B>PİSİ</B> paketleri ikili bir biçimde sunulacaktır. Bu bölüm paketlerin
+biçemini (format) ve içerdiklerini tanımlamaktadır.<BR>
+<BR>
+<B>PİSİ</B> paketi, içerisinde aşağıdaki bölümler olan bir <EM>PK-ZIP</EM>
+paketidir. Bu sayede paketler standart araçlar ile açılabilir/erişilebilir
+olacaklardır.
+<UL><LI>
+<B>metadata.xml:</B> <B>PSPEC</B> dosyasından alınacak ve üzerine
+eklenecek bilgiler ile oluşturulacak Meta bilgisi
+<LI><B>files.xml:</B> Paket içerisinde bulunan dosyaların bir listesi
+<LI><B>comar/ dizini:</B> ÇOMAR betikleri
+<LI><B>install/ dizini:</B> Paketin kurulu biçimi. Paketin sisteme kurulumu
+bu dizinin belirtilen dizine açılır.
+</UL>
+Alt bölümler ikili PİSİ paketi içerisindeki bileşenleri detaylı olarak
+anlatmaktadır.<BR>
+<BR>
+<!--TOC subsubsection metadata.xml-->
+
+<H4><A NAME="htoc18">4.3.1</A>&nbsp;&nbsp;metadata.xml</H4><!--SEC END -->
+
+<B>Metadata</B> dosyası bir uygulamanın paket haline geldikten sonra
+yanında taşıyacağı ve paket ile ilgili bilgileri barındıran dosyadır. <BR>
+<BR>
+<B>Metadata</B> dosyası sadece oluşturulan paket ile ilgili bilgileri
+tutmaktan sorumludur. Paket hakkında temel bilgi bu dosyadan alınacaktır.<BR>
+<BR>
+Bu bilgilerin büyük kısmı <B>PSPEC</B> dosyasının işlenmesi sonucu
+ile <B>Metadata</B> dosyasına yazılmaktadır. <B>Metadata PSPEC</B>
+dosyasından alınan bilgilerin yanında kaynak derlendikten ve paket
+oluşturulduktan sonra alınabilecek diğer bilgileri de içerir (paketin
+kurulduktan sonra sistemde kaplayacağı alanın boyutu gibi).<BR>
+<BR>
+<B>Metadata</B> dosyasının içeriği şöyle tanımlanmıştır;<BR>
+<BR>
+<!--TOC subparagraph Source: Bu bölümdeki bilgiler PSPEC dosyasının
+<EM>Source</EM> bölümünden alınır.-->
+
+<H5>Source: Bu bölümdeki bilgiler PSPEC dosyasının
+<EM>Source</EM> bölümünden alınır.</H5><!--SEC END -->
+
+<UL><LI>
+<B>Name</B>
+<LI><B>Homepage</B>
+<LI><B>Summary</B>
+<LI><B>Description</B>
+<LI><B>Packager</B>
+<UL><LI>
+<B>Name</B>
+<LI><B>Email</B>
+</UL>
+</UL>
+<!--TOC subparagraph Package-->
+
+<H5>Package</H5><!--SEC END -->
+
+<UL><LI>
+<B>Name</B>
+<LI><B>Summary</B>
+<LI><B>Description</B>
+<LI><B>License</B>
+<LI><B>History</B>
+<UL><LI>
+<B>Update</B>
+<UL><LI>
+<B>Type</B>
+<LI><B>Date</B>
+<LI><B>Version</B>
+<LI><B>Release</B>
+</UL>
+</UL>
+<LI><B>Conflicts</B>
+<LI><B>Provides:</B> Paketin hangi OM bacaklarını sağladığını belirtir.
+<LI><B>RuntimeDependencies</B>
+<LI><B>Dependency</B>
+<LI><B>Files</B>
+<UL><LI>
+<B>Path</B>
+</UL>
+<LI><B>Build</B>: Paketin derleneme sayısını gösterir. Bu değer derleme
+sistemi tarafından otomatik olarak hesaplanır.
+<LI><B>Distribution:</B> Paketin ait olduğu dağıtımı belirtir (Pardus).
+<LI><B>DistributionRelease:</B> Paketin ait olduğu dağıtımın hangi sürümü
+için oluşturduğunu belirtir (1.0).
+<LI><B>Architecture:</B> Paketin hangi mimari için yapıldığını belirtir.
+<LI><B>InstallSize:</B> Paketin sisteme kurulduğunda kaplayacağı alanın
+tahmini boyutunu belirtir.
+</UL>
+Yukarıda tanımlanan <B>Metadata</B> dosyası, belirlenecek paket
+formatının içinde <B><EM>XML</EM></B> dosyası olarak tutulacaktır.
+<B>Metadata</B> XML dosyalarının yapısı <B>PSPEC</B> dosyası ile
+hemen hemen aynıdır. Yalnızca Metadata paket oluşumundan sonra elimizde
+olan bazı ek bilgileri de içerir. <BR>
+<BR>
+metadata.xml dosyaları otomatik olarak PİSİ derleme sistemi tarafından
+oluşturulur ve ikili paket içerisine dahil edilir. Bu dosyanın hiç
+bir koşulda el ile oluşturulması gerekmemektedir.<BR>
+<BR>
+<!--TOC subsubsection files.xml-->
+
+<H4><A NAME="htoc19">4.3.2</A>&nbsp;&nbsp;files.xml</H4><!--SEC END -->
+
+Kaynak derlendikten sonra oluşan dosyaların, oluşturulan pakete göre
+<B>(Package)</B> sınıflandırılması gerekmektedir. Tek bir kaynaktan
+birden fazla paket oluşturulması, kaynağın derlenmesinden sonra oluşan
+dosyaların sınıflandırılması ile olur.<BR>
+<BR>
+files.xml dosyası paket geliştirme aracı/araçları ile oluşturularak
+paket içerisine yerleştirilir.
+<UL><LI>
+<B>Files</B>
+<UL><LI>
+<B>Package:</B> Dosya serisinin hangi <B><EM>SubPackage</EM></B>'i
+oluşturduğunu belirtir. (örn. mysql-devel, mysql-client, mysql-server
+, mysql-doc)
+<LI><B>File:</B> Pakete dahil edilecek bir dosyayı tarif eder.
+<UL><LI>
+<B>Path:</B> Dosyanın, paket içerisindeki yerini belirtir. <B>PISI</B>
+gereklerinden biri paketin belirtilen konuma kurulabilmesi olduğu
+için konum bilgisi bağımlı (rölatif) olarak verilir.
+<LI><B>Type</B><A NAME="FType"></A><B>:</B> Dosyanın tipini belirtir. Paket sisteme
+kurulduğunda, veritabanına bu tip tanımı ile işaretlenerek yerleştirilecektir.
+Bu tip tanımları şunlardan birisi olabileceği gibi boş da bırakılabilir:
+<FONT COLOR=navy>executable, config, doc, man, info, library, data, localedata,
+header</FONT>.
+<LI><B>Size:</B> Dosyanın byte cinsinden boyutunu saklar.
+<LI><B>SHA1Sum: Path</B> ile belirtilen dosyanın SHA1 algoritması ile
+elde edilmiş <EM>cryptographic</EM> özet değerini saklar.
+</UL>
+</UL>
+</UL>
+files.xml dosyaları otomatik olarak PİSİ derleme sistemi tarafından
+oluşturulur ve ikili paket içerisine dahil edilir. Bu dosyanın hiç
+bir koşulda el ile oluşturulması gerekmemektedir.<BR>
+<BR>
+<!--TOC subsubsection install Dizini-->
+
+<H4><A NAME="htoc20">4.3.3</A>&nbsp;&nbsp;install Dizini</H4><!--SEC END -->
+
+İkili paketin sisteme kurulmak üzere hazırlanmış/derlenmiş bileşenleri
+install/ dizini içerisinde bulunur.<BR>
+<BR>
+<!--TOC subsubsection comar Dizini-->
+
+<H4><A NAME="htoc21">4.3.4</A>&nbsp;&nbsp;comar Dizini</H4><!--SEC END -->
+
+Kaynak paketten alınan ÇOMAR betikleri comar/ dizininde bulunur ve
+kurulum sırasında ÇOMAR'a kayıt edilir.<BR>
+<BR>
+<!--TOC subsection Paket Depoları-->
+
+<H3><A NAME="htoc22">4.4</A>&nbsp;&nbsp;Paket Depoları</H3><!--SEC END -->
+
+PİSİ için tanımlanmış iki farklı paket deposu bulunmaktadır:
+<UL><LI>
+Kaynak PİSİ Deposu (veya Kaynak Paket Deposu)
+<LI>İkili PİSİ Deposu (veya İkili Paket Deposu)
+</UL>
+Paket depoları ile ilgili kurallar için ``Pardus Depo Politikası''
+belgesini inceleyebilirsiniz.<BR>
+<BR>
+<!--TOC subsubsection Kaynak PİSİ Deposu-->
+
+<H4><A NAME="htoc23">4.4.1</A>&nbsp;&nbsp;Kaynak PİSİ Deposu</H4><!--SEC END -->
+
+Paketleri oluşturmak için gerekli PİSİ kaynak paketleri hiyerarşik
+bir yapıda bir <EM>subversion</EM> deposunda sunulmaktadır. Geliştirme
+işlemleri bu depo üzerinde yapılır. Kaynak PİSİ deposunda paketler
+bileşenler altına konumlandırılırlar. Her kaynak paket ait olduğu
+bileşenin altına yerleştirlir.<BR>
+<BR>
+<!--TOC subsubsection İkili PİSİ Deposu-->
+
+<H4><A NAME="htoc24">4.4.2</A>&nbsp;&nbsp;İkili PİSİ Deposu</H4><!--SEC END -->
+
+İkili PİSİ paketlerinin bulundurulduğu depodur. İkili PİSİ Deposu
+da ``Pardus Depo Politikası'' belgesinde anlatıldığı gibi Kaynak
+PİSİ Deposu ile özdeş bir görünüm sergiler. <BR>
+<BR>
+İkili PİSİ Deposu paketlerin istemciler tarafından ulaşılabilir olması
+için bir paket indeksi sağlar. Paketlerin içerisinde bulunan <EM>metadata.xml</EM>
+dosyaları depodaki paketlerden alınarak ve birleştirilerek <B>pisi-index.xml</B>
+isminde bir içerik (depo içeriği) dosyası düzenli aralıklar ile oluşturulacaktır.<BR>
+<BR>
+İçeriğinde mevcut sürümün bilgilerini içerecek bir dosya oluşturulacaktır.
+Bu dosya dağıtımın tüm paketleri için şu bilgileri içerecektir;
+<UL><LI>
+<B>Name</B>
+<LI><B>Summary</B> 
+<LI><B>Description</B>
+<LI><B>Version </B>
+<LI><B>Release </B>
+<LI><B>License</B>
+<LI><B>RuntimeDependencies</B>
+<LI><B>InstallDependencies</B>
+<LI><B>Provides </B>
+<LI><B>History</B>
+<LI><B>Conflicts</B>
+<LI><B>PackageSize </B>
+<LI><B>InstalledSize</B>
+</UL>
+<B>pisi-index.xml</B> dosyasının biçimi XML'dir. Dosyanın doğrulanması
+için kullanılabilecek bilgi <EM>pisi-index.dtd</EM> dosyasında tanımlanmıştır.<BR>
+<BR>
+İleriki sürümlerde; bu dosya değiştirilmeyecek ve sadece Dağıtım Sürüm
+değiştirdiği zaman yenisi oluşturulacaktır. Aktif sürüm sırasında
+tüm değişiklikler <B>ChangeSet</B> olarak sunulacaktır. İstemci
+bilgisayarlarca çekilecek ve bağımlılık çözme, paket veritabanını
+arama, paket kurma/kaldırma işlemleri bu dosyaların <B>pisi.index</B>
+ile birleştirilmesi yardımı ile yapılacaktır. <BR>
+<BR>
+<B>ChangeSet</B>'ler <B>pisi.index</B> dosyasına yama olarak sunulacaklardır.
+Kolay oluşturulan, az bant genişliği isteyen ve efektif olmaları açısından
+içeriklerini <B>pisi.index</B>'in bir önceki revizyonlarından olan
+farkları arttırımsal (incremental) olarak oluşturacaktır.<BR>
+<BR>
+Kullanıcı bilgisayarında oluşturulacak depo veritabanı <B>pisi.index</B>
+ve <B>Changeset</B>'ler yardımı ile yaratılacaktır. Kullanıcının
+depodaki paketlerin en güncel bilgilerini alabilmesi için depo veritabanını
+düzenli olarak güncellemesi gerekmektedir. Bu işlem bir arkaplan uygulaması
+ile otomatik olarak yaptırılabilir.<BR>
+<BR>
+Depoya eklenecek ikili paketler geliştiriciden alınmayacak, <B>PİSİ</B>
+derleme ortamı tarafından hazırlanıp uygun görülen depoya yerleştirilecektir.
+Böylece geliştiricinin sisteminden kaynaklanabilecek olası problemlerin
+(sürüm farklılıkları, sorunlu ya da güvensiz yazılımlar vs.) önüne
+geçilecektir.<BR>
+<BR>
+<B>PİSİ</B> istemcisi birden fazla depo ile çalışabilecektir. Birden
+fazla depo tanımlanması durumunda öncelikli depo her zaman <B>Pardus
+Resmi Deposu</B> olacaktır. Diğer depolar eşit önceliğe sahip olacaklardır
+ve kullanıcı elle belirtmediği sürece tüm depolarda bulunan paketler
+resmi depodan alınacaktır.<BR>
+<BR>
+<!--TOC subsection Süreçlerin Tarifi-->
+
+<H3><A NAME="htoc25">4.5</A>&nbsp;&nbsp;Süreçlerin Tarifi</H3><!--SEC END -->
+
+Süreç tarifi paket sisteminin en temel görevlerini, tasarımı özetlemek
+amacı ile anlatır.<BR>
+<BR>
+<!--TOC subsubsection Paket Oluşturmak-->
+
+<H4><A NAME="htoc26">4.5.1</A>&nbsp;&nbsp;Paket Oluşturmak</H4><!--SEC END -->
+
+<IMG SRC="./images/pisi-gelistirici-small.png"><BR>
+<BR>
+Bir geliştiricinin paket oluşturmak için izleyeceği adımlar şöyledir;
+<UL><LI>
+<B>Geliştirici Grafik Arayüzü</B> ya da konsol araçları yardımı
+ile <B>PSPEC</B> dosyası yukarıda anlatılan yapıya uygun olarak
+oluşturulur. Gerekli olacak yamalar ve dosyalar yukarıda tarif edildiği
+gibi files/ dizinine yerleştirilir. ÇOMAR betikleri comar/ dizini
+altına yerleştirilir.
+<LI>Oluşturulan <B>PSPEC</B> dosyası, hazırlanan paketin derlenebilmesi
+için <B>PİSİ</B> tarafından işlenir. Eğer gerekli paketler sistemde
+mevcut değil ise bu paketler <B>PİSİ</B> tarafından otomatik veya
+kullanıcıya sorularak sisteme kurularak, sistem derleme işlemine hazır
+hale getirilir. 
+<LI>Oluşturulan <B>PSPEC</B> dosyasının Source bölümündeki bilgiler
+işlenerek kaynak kod sisteme alınır ve doğruluğu kontrol edilir. Gerekli
+dosya ve yamalar yukarıda anlatılan biçime uygun bir şekilde <B>PİSİ</B>
+tarafından açılır ve gerekli yamalar koda uygulanır. 
+<LI><B>actions.py</B> betiği işletilerek kaynak koddan ikili veri oluşturulur.
+<LI>Geliştirici (tercihen grafik arayüz yardımı ile) derleme sonrası oluşturulan
+dosyaları, <B>PSPEC</B> dosyasında tanımlanan <B><EM>Package</EM></B>
+bölümlerine göre sınıflandırır. Oluşturulacak her paket için <B>files.xml</B>
+dosyası ve <B>metadata.xml</B> dosyası yaratılır.
+<LI><B>PİSİ</B> oluşturulan dosyaları da sisteme ekleyerek ikili paketi
+veya paketleri oluşturur.
+<LI>Geliştirici oluşturduğu paketleri sisteminde test eder.
+<LI>Oluşturulan paket oluşturma dosyaları (<B>PSPEC</B> dosyası, actions.py
+ve dizinler) <B>Merkezi Paket Derleme Çiftliği</B> tarafından derlenmek
+üzere <B>Kaynak PİSİ</B> <B>Deposu</B>'na iletilir.
+<LI>İletilen <B>PİSİ Kaynak Paketi</B> dosyası <B>Merkezi Paket
+Derleme Çiftliği</B> tarafından ikili paket veya paketler haline getirilir.
+<LI>Oluşturulan paket veya paketler <B>Paket Deposu</B>'na yerleştirilir.
+</UL>
+<!--TOC subsubsection Paket Kurmak -->
+
+<H4><A NAME="htoc27">4.5.2</A>&nbsp;&nbsp;Paket Kurmak </H4><!--SEC END -->
+
+<IMG SRC="./images/pisi-istemci-small.png"><BR>
+<BR>
+Bir istemcinin sisteme paket kurmak için izleyeceği yol şöyledir;
+<UL><LI>
+Sistemdeki ilgili uygulamalardan biri <B>PİSİ</B>'ye paket kurması
+için istekte bulunur.
+<LI><B>PİSİ</B>, paket deposundan, deponun durumu ile ilgili bilgileri
+(<B>ChangeSet</B>ler ve kullanıcı yeni bir depo kullanmaya başladıysa
+<B>pisi-index.xml</B>) alır.
+<LI>Gerekiyorsa <B>Depo</B>dan aldığı bilgileri <B>Depo Veritaban</B>ına
+yerleştirir.
+<LI><B>PİSİ</B> istenen paketin kurulması için gerekli olan bilgileri,
+ihtiyaç duyulan paketleri belirler. Gerekli olan paketleri <B>Paket
+Deposu</B>ndan çekerek sisteme kurar. Eğer çakışan paketler var ise bunları
+çözer.
+<LI><B>PİSİ</B> Kurulacak paketi <B>Paket Deposu</B>ndan çeker ve
+çektiği paketin doğruluğunu kontrol ederek sisteme kurar. Kurduğu
+paket ile ilgili bilgileri <B>Kurulu Paket Veritabanı</B>'na yerleştirir.
+<LI>Paketlerin yanında taşıdığı <B>CSL</B> betiklerini <B>ÇOMAR</B>'a
+verir. Kurulum için gerekli ``post install'' (kurulum sonrası)
+ÇOMAR betiklerinin çalıştırılması için ÇOMAR'a istekte bulunur.
+</UL>
+<!--TOC subsubsection Paket Kaldırmak-->
+
+<H4><A NAME="htoc28">4.5.3</A>&nbsp;&nbsp;Paket Kaldırmak</H4><!--SEC END -->
+
+Bir istemcinin, sistemdeki bir paketi kaldırmak için izleyeceği yol
+şöyledir;
+<UL><LI>
+Sistemdeki ilgili uygulamalardan biri <B>PİSİ</B>'ye paket kaldırmak
+için istekte bulunur.
+<LI><B>PİSİ</B>, kendi yapılandırma dosyasını işleyerek, <B>Kurulu
+Paket Veritabanı</B>ndan pakete başka bir paket tarafından gereksinim
+duyulup duyulmadığını kontrol eder.
+<LI><B>PİSİ</B> paketi kaldırır. 
+<LI><B>ÇOMAR</B>'a ``pre remove'' (kaldırma öncesi) betiklerinin
+çalıştırılması için istekte bulunur. Daha sonra ilgili <B>ÇOMAR</B>
+betiklerini kaldırması için silinen paket ile ilgili bilgi verir.
+</UL>
+<!--TOC subsubsection Bağımlılık Çözmek-->
+
+<H4><A NAME="htoc29">4.5.4</A>&nbsp;&nbsp;Bağımlılık Çözmek</H4><!--SEC END -->
+
+PİSİ içerisinde kulanılan bağımlılık çözme algoritması, kaynak içersindeki
+detaylı belge (doc/dependency.tex) ile anlatılmıştır.<BR>
+<BR>
+<B>PİSİ</B> içerisinde paket bağımlılığı, doğrudan paket isim ve
+sürüm numarasına bağımlılık olarak tanımlanmıştır. Bu yüzden paket
+bağımlılığının çözümü depo veritabanından bağımlılığı oluşturan paketleri
+iteratif olarak çıkarmak ile sınırlıdır.<BR>
+<BR>
+Paketler için tanımlanan bir diğer bağımlılık tipi ise <B>ÇOMAR
+OM</B> (Object Model) bacaklarına olan bağımlılıktır. Bu bağımlılığın
+çözümü için Kurulu Paketler ve Depo veritabanları sorgulanarak ilgili
+<B>OM</B> bacağını sağlayan bir paketin sistemde kurulu durumda
+olup olmadığı bilgisi çıkartılır. Eğer yoksa ilgili <B>OM</B> bacağını
+sağlayan paketlerin bir listesi sunulur.<BR>
+<BR>
+<!--TOC subsection Veritabanları-->
+
+<H3><A NAME="htoc30">4.6</A>&nbsp;&nbsp;Veritabanları</H3><!--SEC END -->
+
+İstemci makinadaki paket veritabanı aşağıdaki bölümlere sahip olacaktır.
+Veritabanları <B><EM>BerkeleyDB</EM></B> veritabanlarıdır. Veritabanları,
+/var/db/pisi/ altında bulunmaktadır.<BR>
+<BR>
+PİSİ temel işlevlerini yerine getirmek için birden fazla veri tabanı
+kullanır.<BR>
+<BR>
+TODO: Veritabanlarının açıklamaları gerekiyor.<BR>
+<BR>
+<!--TOC section Diğer Yazarlar-->
+
+<H2><A NAME="htoc31">5</A>&nbsp;&nbsp;Diğer Yazarlar</H2><!--SEC END -->
+
+İsim sırası ile;
+<UL><LI>
+S. Çağlar Onur
+<LI>Eray Özkural
+<LI>Gürer Özen
+<LI>A. Murat Eren
+<LI>Onur Küçük
+</UL>
+<!--BEGIN NOTES document-->
+<HR WIDTH="50%" SIZE=1><DL><DT><A NAME="note1" HREF="#text1"><FONT SIZE=5>1</FONT></A><DD><A HREF="http://www.uludag.org.tr/belgeler/okuryazar/okuryazar.html"><TT>http://www.uludag.org.tr/belgeler/okuryazar/okuryazar.html</TT></A>
+</DL>
+<!--END NOTES-->
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+    </div>
+
+<!-- yayın hakkı -->
+
+    <div id="footnote">
+        <p>
+        Pardus sayfalarında bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir.
+        <em><br><strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
+        Bilgi ve önerileriniz için <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

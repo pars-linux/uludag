@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>:: Pardus :: tübitak-uekae ::</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../../style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+
+<body>
+    <div id="container">
+    <div id="head_grey">
+        <div id="blue2"></div>
+    </div>
+    <div id="navi">
+        <a href="../../../index.html">Ana Sayfa</a>
+      | <a href="../../../hakkimizda.html">Hakkımızda</a>
+      | <a href="../../../projeler/index.html">Projeler</a>
+      | <a href="../../../belgeler/index.html">Belgeler</a>
+      | <a href="../../../urunler/index.html">Ürünler</a>
+      | <a href="../../../iletisim.html">İletişim</a>
+      | <a href="../../../basin/index.html">Basında Pardus</a>
+      | <a href="../../../eng/index.html">English</a>
+    </div>
+    <div id="page">
+    <br />
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+<table class='navbar'><tbody><tr><td class='navhide'><img src='../../../images/nav_back.png'> Önceki sayfa</td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_1.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+
+
+<H1 ALIGN=center>Actions API</H1>
+
+<H3 ALIGN=center>A. Murat Eren (meren@uludag.org.tr)<BR>
+<EM>(alpha)</EM></H3>
+<BLOCKQUOTE><B>Özet: </B>
+Bu belgede Actions API tanıtılmış ve içerisindeki fonksiyonların işlevleri
+açıklanmış ve örneklendirilmiştir. PİSİ mimarisi ya da PİSİ paketi
+hazırlama ile ilgili bilgilere yer verilmemiştir.<BR>
+<BR>
+
+<H2>İçindekiler</H2>
+<UL><LI>
+<A HREF="node_1.html#htoc1">1&nbsp;&nbsp;Actions</A>
+<LI><A HREF="node_2.html#htoc2">2&nbsp;&nbsp;Actions API</A>
+<LI><A HREF="node_3.html#htoc3">3&nbsp;&nbsp;Pisitools</A>
+<UL><LI>
+<A HREF="node_4.html#htoc4">3.1&nbsp;&nbsp;dobin</A>
+<LI><A HREF="node_5.html#htoc5">3.2&nbsp;&nbsp;dodir</A>
+<LI><A HREF="node_6.html#htoc6">3.3&nbsp;&nbsp;dodoc</A>
+<LI><A HREF="node_7.html#htoc7">3.4&nbsp;&nbsp;doexe</A>
+<LI><A HREF="node_8.html#htoc8">3.5&nbsp;&nbsp;dohard</A>
+<LI><A HREF="node_9.html#htoc9">3.6&nbsp;&nbsp;dohtml</A>
+<LI><A HREF="node_10.html#htoc10">3.7&nbsp;&nbsp;doinfo</A>
+<LI><A HREF="node_11.html#htoc11">3.8&nbsp;&nbsp;dolib</A>
+<LI><A HREF="node_12.html#htoc12">3.9&nbsp;&nbsp;dolib_a</A>
+<LI><A HREF="node_13.html#htoc13">3.10&nbsp;&nbsp;dolib_so</A>
+<LI><A HREF="node_14.html#htoc14">3.11&nbsp;&nbsp;doman</A>
+<LI><A HREF="node_15.html#htoc15">3.12&nbsp;&nbsp;domo</A>
+<LI><A HREF="node_16.html#htoc16">3.13&nbsp;&nbsp;domove</A>
+<LI><A HREF="node_17.html#htoc17">3.14&nbsp;&nbsp;dosed</A>
+<LI><A HREF="node_18.html#htoc18">3.15&nbsp;&nbsp;dosbin</A>
+<LI><A HREF="node_19.html#htoc19">3.16&nbsp;&nbsp;dosym</A>
+<LI><A HREF="node_20.html#htoc20">3.17&nbsp;&nbsp;insinto</A>
+<LI><A HREF="node_21.html#htoc21">3.18&nbsp;&nbsp;newdoc</A>
+<LI><A HREF="node_22.html#htoc22">3.19&nbsp;&nbsp;newman</A>
+<LI><A HREF="node_23.html#htoc23">3.20&nbsp;&nbsp;remove</A>
+<LI><A HREF="node_24.html#htoc24">3.21&nbsp;&nbsp;rename</A>
+<LI><A HREF="node_25.html#htoc25">3.22&nbsp;&nbsp;removeDir</A>
+</UL>
+<LI><A HREF="node_26.html#htoc26">4&nbsp;&nbsp;Autotools</A>
+<UL><LI>
+<A HREF="node_27.html#htoc27">4.1&nbsp;&nbsp;configure</A>
+<LI><A HREF="node_28.html#htoc28">4.2&nbsp;&nbsp;rawConfigure</A>
+<LI><A HREF="node_29.html#htoc29">4.3&nbsp;&nbsp;compile</A>
+<LI><A HREF="node_30.html#htoc30">4.4&nbsp;&nbsp;make</A>
+<LI><A HREF="node_31.html#htoc31">4.5&nbsp;&nbsp;install</A>
+<LI><A HREF="node_32.html#htoc32">4.6&nbsp;&nbsp;rawInstall</A>
+<LI><A HREF="node_33.html#htoc33">4.7&nbsp;&nbsp;aclocal</A>
+<LI><A HREF="node_34.html#htoc34">4.8&nbsp;&nbsp;autoconf</A>
+<LI><A HREF="node_35.html#htoc35">4.9&nbsp;&nbsp;automake</A>
+</UL>
+<LI><A HREF="node_36.html#htoc36">5&nbsp;&nbsp;Libtools</A>
+<UL><LI>
+<A HREF="node_36.html#htoc37">5.1&nbsp;&nbsp;preplib</A>
+<LI><A HREF="node_36.html#htoc38">5.2&nbsp;&nbsp;preplib_so</A>
+<LI><A HREF="node_36.html#htoc39">5.3&nbsp;&nbsp;gnuconfig_update</A>
+<LI><A HREF="node_36.html#htoc40">5.4&nbsp;&nbsp;libtoolize</A>
+<LI><A HREF="node_36.html#htoc41">5.5&nbsp;&nbsp;gen_usr_ldscript</A>
+</UL>
+<LI><A HREF="node_37.html#htoc42">6&nbsp;&nbsp;Shelltools</A>
+<UL><LI>
+<A HREF="node_38.html#htoc43">6.1&nbsp;&nbsp;can_access_file</A>
+<LI><A HREF="node_39.html#htoc44">6.2&nbsp;&nbsp;can_access_directory</A>
+<LI><A HREF="node_40.html#htoc45">6.3&nbsp;&nbsp;makedirs</A>
+<LI><A HREF="node_41.html#htoc46">6.4&nbsp;&nbsp;chmod</A>
+<LI><A HREF="node_42.html#htoc47">6.5&nbsp;&nbsp;unlink</A>
+<LI><A HREF="node_43.html#htoc48">6.6&nbsp;&nbsp;unlinkDir</A>
+<LI><A HREF="node_44.html#htoc49">6.7&nbsp;&nbsp;move</A>
+<LI><A HREF="node_45.html#htoc50">6.8&nbsp;&nbsp;copy</A>
+<LI><A HREF="node_46.html#htoc51">6.9&nbsp;&nbsp;copytree</A>
+<LI><A HREF="node_47.html#htoc52">6.10&nbsp;&nbsp;touch</A>
+<LI><A HREF="node_48.html#htoc53">6.11&nbsp;&nbsp;cd</A>
+<LI><A HREF="node_49.html#htoc54">6.12&nbsp;&nbsp;ls</A>
+<LI><A HREF="node_50.html#htoc55">6.13&nbsp;&nbsp;export</A>
+<LI><A HREF="node_51.html#htoc56">6.14&nbsp;&nbsp;system</A>
+<LI><A HREF="node_52.html#htoc57">6.15&nbsp;&nbsp;isLink</A>
+<LI><A HREF="node_53.html#htoc58">6.16&nbsp;&nbsp;realPath</A>
+<LI><A HREF="node_54.html#htoc59">6.17&nbsp;&nbsp;baseName</A>
+<LI><A HREF="node_55.html#htoc60">6.18&nbsp;&nbsp;dirName</A>
+<LI><A HREF="node_56.html#htoc61">6.19&nbsp;&nbsp;sym</A>
+</UL>
+<LI><A HREF="node_57.html#htoc62">7&nbsp;&nbsp;Get</A>
+<UL><LI>
+<A HREF="node_58.html#htoc63">7.1&nbsp;&nbsp;pkgDIR</A>
+<LI><A HREF="node_59.html#htoc64">7.2&nbsp;&nbsp;workDIR</A>
+<LI><A HREF="node_60.html#htoc65">7.3&nbsp;&nbsp;installDIR</A>
+<LI><A HREF="node_61.html#htoc66">7.4&nbsp;&nbsp;srcNAME</A>
+<LI><A HREF="node_62.html#htoc67">7.5&nbsp;&nbsp;srcVERSION</A>
+<LI><A HREF="node_63.html#htoc68">7.6&nbsp;&nbsp;srcRELEASE</A>
+<LI><A HREF="node_64.html#htoc69">7.7&nbsp;&nbsp;srcTAG</A>
+<LI><A HREF="node_65.html#htoc70">7.8&nbsp;&nbsp;srcDIR</A>
+<LI><A HREF="node_66.html#htoc71">7.9&nbsp;&nbsp;HOST</A>
+<LI><A HREF="node_67.html#htoc72">7.10&nbsp;&nbsp;CFLAGS</A>
+<LI><A HREF="node_68.html#htoc73">7.11&nbsp;&nbsp;CXXFLAGS</A>
+<LI><A HREF="node_69.html#htoc74">7.12&nbsp;&nbsp;LDFLAGS</A>
+<LI><A HREF="node_70.html#htoc75">7.13&nbsp;&nbsp;docDIR</A>
+<LI><A HREF="node_71.html#htoc76">7.14&nbsp;&nbsp;sbinDIR</A>
+<LI><A HREF="node_72.html#htoc77">7.15&nbsp;&nbsp;infoDIR</A>
+<LI><A HREF="node_73.html#htoc78">7.16&nbsp;&nbsp;manDIR</A>
+<LI><A HREF="node_74.html#htoc79">7.17&nbsp;&nbsp;dataDIR</A>
+<LI><A HREF="node_75.html#htoc80">7.18&nbsp;&nbsp;confDIR</A>
+<LI><A HREF="node_76.html#htoc81">7.19&nbsp;&nbsp;localstateDIR</A>
+<LI><A HREF="node_77.html#htoc82">7.20&nbsp;&nbsp;defaultprefixDIR</A>
+<LI><A HREF="node_78.html#htoc83">7.21&nbsp;&nbsp;kdeDIR</A>
+<LI><A HREF="node_79.html#htoc84">7.22&nbsp;&nbsp;qtDIR</A>
+<LI><A HREF="node_80.html#htoc85">7.23&nbsp;&nbsp;qtLIBDIR</A>
+<LI><A HREF="node_81.html#htoc86">7.24&nbsp;&nbsp;AR</A>
+<LI><A HREF="node_82.html#htoc87">7.25&nbsp;&nbsp;AS</A>
+<LI><A HREF="node_83.html#htoc88">7.26&nbsp;&nbsp;CC</A>
+<LI><A HREF="node_84.html#htoc89">7.27&nbsp;&nbsp;CXX</A>
+<LI><A HREF="node_85.html#htoc90">7.28&nbsp;&nbsp;LD</A>
+<LI><A HREF="node_86.html#htoc91">7.29&nbsp;&nbsp;NM</A>
+<LI><A HREF="node_87.html#htoc92">7.30&nbsp;&nbsp;RANLIB</A>
+<LI><A HREF="node_88.html#htoc93">7.31&nbsp;&nbsp;F77</A>
+<LI><A HREF="node_89.html#htoc94">7.32&nbsp;&nbsp;GCJ</A>
+</UL>
+<LI><A HREF="node_90.html#htoc95">8&nbsp;&nbsp;Kde</A>
+<UL><LI>
+<A HREF="node_90.html#htoc96">8.1&nbsp;&nbsp;configure</A>
+<LI><A HREF="node_90.html#htoc97">8.2&nbsp;&nbsp;make</A>
+<LI><A HREF="node_90.html#htoc98">8.3&nbsp;&nbsp;install</A>
+</UL>
+<LI><A HREF="node_91.html#htoc99">9&nbsp;&nbsp;Perlmodules</A>
+<UL><LI>
+<A HREF="node_91.html#htoc100">9.1&nbsp;&nbsp;configure</A>
+<LI><A HREF="node_91.html#htoc101">9.2&nbsp;&nbsp;make</A>
+<LI><A HREF="node_91.html#htoc102">9.3&nbsp;&nbsp;install</A>
+</UL>
+<LI><A HREF="node_92.html#htoc103">10&nbsp;&nbsp;Pythonmodules</A>
+<UL><LI>
+<A HREF="node_92.html#htoc104">10.1&nbsp;&nbsp;compile</A>
+<LI><A HREF="node_92.html#htoc105">10.2&nbsp;&nbsp;install</A>
+<LI><A HREF="node_92.html#htoc106">10.3&nbsp;&nbsp;run</A>
+</UL>
+<LI><A HREF="node_93.html#htoc107">11&nbsp;&nbsp;Scons</A>
+<UL><LI>
+<A HREF="node_93.html#htoc108">11.1&nbsp;&nbsp;make</A>
+<LI><A HREF="node_93.html#htoc109">11.2&nbsp;&nbsp;install</A>
+</UL>
+</UL>
+</BLOCKQUOTE>
+<table class='navbar'><tbody><tr><td class='navhide'><img src='../../../images/nav_back.png'> Önceki sayfa</td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_1.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+    </div>
+
+<!-- yayın hakkı -->
+
+    <div id="footnote">
+        <p>
+        Pardus sayfalarında bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir.
+        <em><br><strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
+        Bilgi ve önerileriniz için <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

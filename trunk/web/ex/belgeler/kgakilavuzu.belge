@@ -1,0 +1,5 @@
+# -*- coding: utf-8 -*-
+depo = "https://svn.uludag.org.tr/uludag/trunk/doc/tr/"
+belge = "kga_tasarım_kılavuzu.lyx"
+isim = "Kullanıcı Grafik Arayüzü Tasarım Kılavuzu"
+dizin = "arayuz-tasarimi"
