@@ -50,11 +50,7 @@ int main(int argc, char **argv)
           const QString program = args->arg(0);
           const KURL target = args->url(1);
 
-          if (target.url().find("//") == -1) // Just a local file
-            {
-              runProgramWithURL(program, args->getOption("url"));
-            }
-          else if (target.isLocalFile()) // A local kioslave
+          if (target.isLocalFile())
             {
               const KURL url = KIO::NetAccess::mostLocalURL(target,0);
               runProgramWithURL(program, url.path().local8Bit());
