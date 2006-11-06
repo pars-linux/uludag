@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-02 15:32+0200\n"
+"POT-Creation-Date: 2006-11-06 23:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/CommonText.py:3 src/package-manager.py:591
+#: src/CommonText.py:3 src/package-manager.py:596
 msgid "downloading"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/package-manager.py:49 src/package-manager.py:744
+#: src/package-manager.py:49 src/package-manager.py:750
 msgid "Package Manager"
 msgstr ""
 
@@ -211,63 +211,63 @@ msgid ""
 "Remove the following conflicting packages?"
 msgstr ""
 
-#: src/package-manager.py:550
+#: src/package-manager.py:555
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:558 src/package-manager.py:702
+#: src/package-manager.py:563 src/package-manager.py:708
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:566
+#: src/package-manager.py:571
 msgid "Search Results"
 msgstr ""
 
-#: src/package-manager.py:587 src/package-manager.py:602
+#: src/package-manager.py:592 src/package-manager.py:607
 msgid "<b>Installing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:589 src/package-manager.py:606
+#: src/package-manager.py:594 src/package-manager.py:611
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:604
+#: src/package-manager.py:609
 msgid "<b>Removing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:636
+#: src/package-manager.py:641
 msgid "<b>Applying Repository Changes</b>"
 msgstr ""
 
-#: src/package-manager.py:639
+#: src/package-manager.py:644
 msgid "<b>Updating Repository</b>"
 msgstr ""
 
-#: src/package-manager.py:640
+#: src/package-manager.py:645
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: src/package-manager.py:764
+#: src/package-manager.py:770
 msgid "Show Installed Packages"
 msgstr ""
 
-#: src/package-manager.py:765
+#: src/package-manager.py:771
 msgid "Show New Packages"
 msgstr ""
 
-#: src/package-manager.py:766
+#: src/package-manager.py:772
 msgid "Show Upgradable Packages"
 msgstr ""
 
-#: src/package-manager.py:785
+#: src/package-manager.py:791
 msgid "Package to install"
 msgstr ""
 
-#: src/package-manager.py:785
+#: src/package-manager.py:791
 msgid "Show available updates"
 msgstr ""
 
-#: src/package-manager.py:788
+#: src/package-manager.py:794
 msgid "Package Manager is already running!"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgstr ""
 msgid "%1 / %2 package %3"
 msgstr ""
 
-#: src/Commander.py:58
+#: src/Commander.py:60
 msgid "Can't connect to Comar daemon"
 msgstr ""
 
