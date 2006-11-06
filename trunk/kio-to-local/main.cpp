@@ -11,7 +11,7 @@
 
 static const char description[] = I18N_NOOP("KIO URL to Local URL Converter");
 
-static const char version[] = "0.4.1";
+static const char version[] = "0.5";
 
 static KCmdLineOptions options[] =
 {
