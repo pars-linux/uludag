@@ -1,0 +1,539 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-06 23:32+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/CommonText.py:3 src/package-manager.py:596
+msgid "downloading"
+msgstr ""
+
+#: src/CommonText.py:3
+msgid "extracting"
+msgstr ""
+
+#: src/CommonText.py:3
+msgid "configuring"
+msgstr ""
+
+#: src/CommonText.py:3
+msgid "removing"
+msgstr ""
+
+#: src/CommonText.py:3
+msgid "installing"
+msgstr ""
+
+#: src/Preferences.py:65
+msgid "Add New Repository"
+msgstr ""
+
+#: src/Preferences.py:72
+msgid "Edit Repository"
+msgstr ""
+
+#: src/Preferences.py:114 src/Preferences.py:129
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+
+#: src/Preferences.py:114 src/Preferences.py:129
+msgid "Pisi Error"
+msgstr ""
+
+#: src/package-manager.py:41
+msgid "GUI for PiSi package manager"
+msgstr ""
+
+#: src/package-manager.py:49 src/package-manager.py:750
+msgid "Package Manager"
+msgstr ""
+
+#: src/package-manager.py:52
+msgid "Developer and Current Maintainer"
+msgstr ""
+
+#: src/package-manager.py:53
+msgid "Original Author"
+msgstr ""
+
+#: src/package-manager.py:54
+msgid "CSS/JS Meister"
+msgstr ""
+
+#: src/package-manager.py:55
+msgid "GUI Design & Usability"
+msgstr ""
+
+#: src/package-manager.py:56
+msgid "Misc. Fixes"
+msgstr ""
+
+#: src/package-manager.py:57
+msgid "Comar/Python Help"
+msgstr ""
+
+#: src/package-manager.py:58
+msgid "Speedup fixes"
+msgstr ""
+
+#: src/package-manager.py:59
+msgid "PiSi Authors"
+msgstr ""
+
+#: src/package-manager.py:59
+msgid "Authors of PiSi API"
+msgstr ""
+
+#: src/package-manager.py:120
+msgid "Search: "
+msgstr ""
+
+#: src/package-manager.py:124
+msgid "Show basket"
+msgstr ""
+
+#: src/package-manager.py:129 src/package-manager.py:224
+msgid "Install Package(s)"
+msgstr ""
+
+#: src/package-manager.py:150
+msgid "Components"
+msgstr ""
+
+#: src/package-manager.py:176
+msgid "Loading Package List..."
+msgstr ""
+
+#: src/package-manager.py:204
+msgid ""
+"Package repository does not have component information. Please control "
+"repository addresses and update repository. You need a network connection to "
+"update."
+msgstr ""
+
+#: src/package-manager.py:240
+msgid "Remove Package(s)"
+msgstr ""
+
+#: src/package-manager.py:252
+msgid "Upgrade Package(s)"
+msgstr ""
+
+#: src/package-manager.py:257
+msgid "There are no updates available at this time"
+msgstr ""
+
+#: src/package-manager.py:282 src/CustomEventListener.py:47
+#: src/CustomEventListener.py:51
+msgid "Select all packages in this category"
+msgstr ""
+
+#: src/package-manager.py:284 src/CustomEventListener.py:48
+msgid "Reverse package selections"
+msgstr ""
+
+#: src/package-manager.py:351
+msgid "N\\A"
+msgstr ""
+
+#: src/package-manager.py:366
+msgid "Description: "
+msgstr ""
+
+#: src/package-manager.py:366
+msgid "Version: "
+msgstr ""
+
+#: src/package-manager.py:367
+msgid "Package Size: "
+msgstr ""
+
+#: src/package-manager.py:367
+msgid "Homepage: "
+msgstr ""
+
+#: src/package-manager.py:409
+msgid "Currently your basket is empty."
+msgstr ""
+
+#: src/package-manager.py:412 src/package-manager.py:420
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+
+#: src/package-manager.py:415
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr ""
+
+#: src/package-manager.py:417 src/package-manager.py:425
+msgid "in your basket."
+msgstr ""
+
+#: src/package-manager.py:423
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr ""
+
+#: src/package-manager.py:456
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+
+#: src/package-manager.py:457 src/package-manager.py:465
+msgid "Conflict Error"
+msgstr ""
+
+#: src/package-manager.py:461
+msgid "The following packages conflicts:\n"
+msgstr ""
+
+#: src/package-manager.py:463
+msgid "%1 conflicts with: [%2]\n"
+msgstr ""
+
+#: src/package-manager.py:464
+msgid ""
+"\n"
+"Remove the following conflicting packages?"
+msgstr ""
+
+#: src/package-manager.py:555
+msgid "Others"
+msgstr ""
+
+#: src/package-manager.py:563 src/package-manager.py:708
+msgid "All"
+msgstr ""
+
+#: src/package-manager.py:571
+msgid "Search Results"
+msgstr ""
+
+#: src/package-manager.py:592 src/package-manager.py:607
+msgid "<b>Installing Package(s)</b>"
+msgstr ""
+
+#: src/package-manager.py:594 src/package-manager.py:611
+msgid "<b>Upgrading Package(s)</b>"
+msgstr ""
+
+#: src/package-manager.py:609
+msgid "<b>Removing Package(s)</b>"
+msgstr ""
+
+#: src/package-manager.py:641
+msgid "<b>Applying Repository Changes</b>"
+msgstr ""
+
+#: src/package-manager.py:644
+msgid "<b>Updating Repository</b>"
+msgstr ""
+
+#: src/package-manager.py:645
+msgid "Downloading package list of %1"
+msgstr ""
+
+#: src/package-manager.py:770
+msgid "Show Installed Packages"
+msgstr ""
+
+#: src/package-manager.py:771
+msgid "Show New Packages"
+msgstr ""
+
+#: src/package-manager.py:772
+msgid "Show Upgradable Packages"
+msgstr ""
+
+#: src/package-manager.py:791
+msgid "Package to install"
+msgstr ""
+
+#: src/package-manager.py:791
+msgid "Show available updates"
+msgstr ""
+
+#: src/package-manager.py:794
+msgid "Package Manager is already running!"
+msgstr ""
+
+#: src/Progress.py:39
+msgid "downloaded ( total: %1 )"
+msgstr ""
+
+#: src/Progress.py:64
+msgid "<b>Preparing PiSi...</b>"
+msgstr ""
+
+#: src/Progress.py:66 src/ProgressDialog.py:94
+msgid "--"
+msgstr ""
+
+#: src/Progress.py:67 src/ProgressDialog.py:93
+msgid "downloaded (total: -- )"
+msgstr ""
+
+#: src/Progress.py:68 src/ProgressDialog.py:92
+msgid "-- / --  package"
+msgstr ""
+
+#: src/Progress.py:86
+msgid "<b>Cancelling operation...</b>"
+msgstr ""
+
+#: src/Progress.py:113 src/Progress.py:117
+msgid "Now %1 <b>%2</b> package"
+msgstr ""
+
+#: src/Progress.py:127
+msgid "installed"
+msgstr ""
+
+#: src/Progress.py:129
+msgid "removed"
+msgstr ""
+
+#: src/Progress.py:131
+msgid "upgraded"
+msgstr ""
+
+#: src/Progress.py:133
+msgid "%1 / %2 package %3"
+msgstr ""
+
+#: src/Commander.py:60
+msgid "Can't connect to Comar daemon"
+msgstr ""
+
+#: src/HelpDialog.py:20
+msgid "Package Manager Help"
+msgstr ""
+
+#: src/ProgressDialog.py:91
+msgid "Progress"
+msgstr ""
+
+#: src/ProgressDialog.py:96
+msgid "Alt+C"
+msgstr ""
+
+#: src/ProgressDialog.py:98
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr ""
+
+#: src/ProgressDialog.py:99
+msgid "Now installing <b>amsn</b> package"
+msgstr ""
+
+#: src/PreferencesDialog.py:53 src/PreferencesDialog.py:168
+msgid "Repository Name"
+msgstr ""
+
+#: src/PreferencesDialog.py:54 src/PreferencesDialog.py:169
+msgid "Address"
+msgstr ""
+
+#: src/PreferencesDialog.py:161
+msgid "PiSi Settings"
+msgstr ""
+
+#: src/PreferencesDialog.py:163
+msgid "F1"
+msgstr ""
+
+#: src/PreferencesDialog.py:170
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr ""
+
+#: src/PreferencesDialog.py:171
+msgid "&Add New Repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:172
+msgid "Click here to add a new software repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:173
+msgid "&Edit Repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:174
+msgid "Click here to modify the name or address of a repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:175
+msgid "&Remove Repository"
+msgstr ""
+
+#: src/PreferencesDialog.py:176
+msgid "Click here to delete a repository from the list"
+msgstr ""
+
+#: src/PreferencesDialog.py:177
+msgid "Move &Up"
+msgstr ""
+
+#: src/PreferencesDialog.py:178
+msgid "Click here to move the repository one level up"
+msgstr ""
+
+#: src/PreferencesDialog.py:179
+msgid "Move &Down"
+msgstr ""
+
+#: src/PreferencesDialog.py:180
+msgid "Click here to move the repository one level down"
+msgstr ""
+
+#: src/PreferencesDialog.py:181
+msgid "&Repositories"
+msgstr ""
+
+#: src/PreferencesDialog.py:182
+msgid "&Show only desktop applications"
+msgstr ""
+
+#: src/PreferencesDialog.py:183
+msgid "If checked, then pisi will only show desktop applications"
+msgstr ""
+
+#: src/PreferencesDialog.py:184
+msgid "&General Settings"
+msgstr ""
+
+#: src/PreferencesDialog.py:185
+msgid "Cache cleaning"
+msgstr ""
+
+#: src/PreferencesDialog.py:186
+msgid "C&lean disk cache now"
+msgstr ""
+
+#: src/PreferencesDialog.py:187
+msgid ""
+"Cleaning up the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+
+#: src/PreferencesDialog.py:189
+msgid "Cache usage"
+msgstr ""
+
+#: src/PreferencesDialog.py:190
+msgid "Maximum cache size:"
+msgstr ""
+
+#: src/PreferencesDialog.py:191
+msgid "2000"
+msgstr ""
+
+#: src/PreferencesDialog.py:192
+msgid "&Use hard disk cache for downloaded software"
+msgstr ""
+
+#: src/PreferencesDialog.py:193
+msgid ""
+"If checked, then updates for Pardus will be automatically checked and you "
+"will be notified"
+msgstr ""
+
+#: src/PreferencesDialog.py:194
+msgid "Mb <i>(use 0 for no limit)</i>"
+msgstr ""
+
+#: src/PreferencesDialog.py:195
+msgid "C&ache"
+msgstr ""
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr ""
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr ""
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr ""
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr ""
+
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
+msgstr ""
+
+#: src/RepoDialog.py:80
+msgid "Repository &Name"
+msgstr ""
+
+#: src/RepoDialog.py:81
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr ""
+
+#: src/BasketDialog.py:45 src/BasketDialog.py:50
+msgid "Basket"
+msgstr ""
+
+#: src/BasketDialog.py:58
+msgid "Selected package(s) for removal:"
+msgstr ""
+
+#: src/BasketDialog.py:59
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+
+#: src/BasketDialog.py:61
+msgid "Selected package(s) for install:"
+msgstr ""
+
+#: src/BasketDialog.py:62
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for upgrade:"
+msgstr ""
+
+#: src/BasketDialog.py:65
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+
+#: src/BasketDialog.py:73
+msgid "Total Size:"
+msgstr ""
+
+#: src/BasketDialog.py:80
+msgid "Update Basket"
+msgstr ""
+
+#: src/BasketDialog.py:152
+msgid "Total Size: <b>%1</b>"
+msgstr ""
+
+#: src/BasketDialog.py:201 src/BasketDialog.py:203
+msgid "Size: "
+msgstr ""
