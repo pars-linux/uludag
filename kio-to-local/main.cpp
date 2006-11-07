@@ -20,11 +20,11 @@ static KCmdLineOptions options[] =
     KCmdLineLastOption
 };
 
-void runProgramWithURL(const QString& program, const QCString& url)
+void runProgramWithURL(const QString& program, const QString& url)
 {
   KProcess proc;
   proc << program;
-  proc << url;
+  proc << url.local8Bit();
   proc.start(KProcess::Block);
 }
 
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
           if (target.isLocalFile())
             {
               const KURL url = KIO::NetAccess::mostLocalURL(target,0);
-              runProgramWithURL(program, url.path().local8Bit());
+              runProgramWithURL(program, url.path());
             }
           else // A remote URL or kioslave
             {
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 
               if (KIO::NetAccess::download(target, destination, NULL))
                 {
-                  runProgramWithURL(program, destination.local8Bit());
+                  runProgramWithURL(program, destination);
                 }
               else
                 {
