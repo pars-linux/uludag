@@ -300,7 +300,7 @@ class MainApplicationWidget(QWidget):
         <!-- checkbox --> %s <!-- checkbox -->
         <div class="package_title" style="%s">
         <img src="%s" style="float:left;">
-        <b>%s</b><br>%s<br>
+        <b>%s</b><br><span style="color:#303030">%s</span><br>
         </div>
         <div class="package_info" style="%s">
         <div style="margin-left:25px;">
@@ -562,7 +562,7 @@ class MainApplicationWidget(QWidget):
             item = KListViewItem(self.listView)
             name = i18n("All")
             item.setText(0, u"%s (%s)" % (name, len(packages)))
-            item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
+            item.setPixmap(0, KGlobal.iconLoader().loadIcon("browser",KIcon.Desktop,KIcon.SizeMedium))
             self.componentDict[item] = Component(name, packages, name)
 
     def createSearchResults(self, packages):

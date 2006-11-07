@@ -182,7 +182,7 @@ class BasketDialog(QDialog):
         template += '''
         <div class="package_title_disabled" style="%s">
         <img src="%s" style="float:left;">
-        <b>%s</b><br>%s%s<br>%s<br>
+        <b>%s</b><br><span style="color:#303030">%s%s<br>%s</span><br>
         </div></div>
         <!-- package end -->
         '''
