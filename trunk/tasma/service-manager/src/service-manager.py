@@ -75,6 +75,7 @@ class serviceItem(KListViewItem):
         self.description = unicode(description)
 
         self.setText(1, self.description)
+        self.setText(3, self.package)
 
         self.setVisible(False)
 
