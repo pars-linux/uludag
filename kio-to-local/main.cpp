@@ -20,7 +20,7 @@ static KCmdLineOptions options[] =
     KCmdLineLastOption
 };
 
-void runProgramWithURL(const QString& program, const QString& url)
+void runProgramWithURL(const QString& program, const QCString& url)
 {
   KProcess proc;
   proc << program;
