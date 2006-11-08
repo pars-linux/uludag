@@ -47,7 +47,7 @@ class Connection(QWidget):
         self.name = name
         self.script = script
         self.devid = devid
-        self.active = True
+        self.active = False
         self.state = "down"
         self.address = ""
         
@@ -58,6 +58,7 @@ class Connection(QWidget):
         self.mypix = self.mypix.scale(32, 32)
         self.mypix = QPixmap(self.mypix)
         self.check = QCheckBox(self)
+        self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
         self.edit_but = MinButton("Edit", self)
         self.del_but = MinButton("Delete", self)
@@ -71,6 +72,32 @@ class Connection(QWidget):
     
     def slotComar(self, reply):
         pass
+    
+    def slotToggle(self, on):
+        com = self.view.comlink
+        dev = self.parent()
+        if on:
+            count = 0
+            for conn in dev.children():
+                if conn.active:
+                    com.call_package("Net.Link.setState", conn.script, [ "name", conn.name, "state", "down" ], id=6)
+                    count += 1
+            if count:
+                replies = []
+                while 1:
+                    rep = com.read_cmd()
+                    if rep.id == 6:
+                        count -= 1
+                        if count == 0:
+                            break
+                    else:
+                        replies.append(rep)
+                if replies:
+                    for rep in replies:
+                        self.view.handleComar(rep)
+            com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "up" ])
+        else:
+            com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "down" ])
     
     def slotDelete(self):
         m = i18n("Should I delete the\n'%s'\nconnection?")
@@ -288,15 +315,6 @@ class Widget(QVBox):
                 return name
             id += 1
     
-    def findConn(self, name):
-        # lame iteration in absence of QListBox's own iterator
-        item = self.links.firstItem()
-        while item:
-            if item.name == name:
-                return item
-            item = item.next()
-        return None
-    
     def slotHelp(self):
         self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
         self.helpwin.show()
@@ -348,13 +366,16 @@ class Widget(QVBox):
         elif reply.command == "notify":
             noti, script, data = reply[2].split("\n", 2)
 
-            if noti == "Net.Link.stateChanged":
-                name, state = data.split("\n", 1)
-                conn = self.findConn(name)
+            if reply.notify == "Net.Link.stateChanged":
+                name, state = reply.data.split("\n", 1)
+                conn = self.view.find(reply.script, name)
                 if conn:
-                    conn.online = state
-                    self.links.updateItem(conn)
-                    return
+                    if state == "up":
+                        conn.active = True
+                    else:
+                        conn.active = False
+                    conn.state = state
+                    conn.update()
             
             elif reply.notify == "Net.Link.connectionChanged":
                 mode, name = reply.data.split(" ", 1)
@@ -404,35 +425,3 @@ class Widget(QVBox):
         conn = self.links.selectedItem()
         if conn:
             w = connection.Window(self, conn.name, conn.link_name)
-    
-    def slotConnect(self):
-        conn = self.links.selectedItem()
-        if conn:
-            # stop other connections on same device
-            item = self.links.firstItem()
-            count = 0
-            while item:
-                if item.online == "up" and item.link_name == conn.link_name and item.device == conn.device:
-                    self.comar.call_package("Net.Link.setState", item.link_name, [ "name", item.name, "state", "down" ], id=6)
-                    count += 1
-                item = item.next()
-            if count:
-                replies = []
-                while 1:
-                    rep = self.comar.read_cmd()
-                    if rep[1] == 6:
-                        count -= 1
-                        if count == 0:
-                            break
-                    else:
-                        replies.append(rep)
-                if replies:
-                    for rep in replies:
-                        self.handleComar(rep)
-            # up up up!
-            self.comar.call_package("Net.Link.setState", conn.link_name, [ "name", conn.name, "state", "up" ])
-    
-    def slotDisconnect(self):
-        conn = self.links.selectedItem()
-        if conn:
-            self.comar.call_package("Net.Link.setState", conn.link_name, [ "name", conn.name, "state", "down" ])
