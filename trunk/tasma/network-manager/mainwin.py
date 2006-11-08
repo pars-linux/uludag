@@ -43,6 +43,7 @@ class Connection(QWidget):
             dev = Device(view, devname, devid)
             dev.show()
         QWidget.__init__(self, dev)
+        dev.connections.append(self)
         
         self.name = name
         self.script = script
@@ -170,12 +171,12 @@ class Device(QWidget):
         rect = fm.boundingRect(self.name)
         h = max(rect.height(), 24) + 2
         
-        if not self.children():
+        if self.connections == []:
             return h
         
         maxw = 0
         maxh = 0
-        for item in self.children():
+        for item in self.connections:
             hint = item.sizeHint()
             w2 = hint.width()
             h2 = hint.height()
@@ -188,7 +189,7 @@ class Device(QWidget):
             c = 1
         if c > 3:
             c = 3
-        L = len(self.children())
+        L = len(self.connections)
         if L % c != 0:
             L += c
         h += (maxh + 2) * (L / c)
@@ -196,12 +197,16 @@ class Device(QWidget):
         return h
     
     def resizeEvent(self, event):
+        fm = self.fontMetrics()
+        rect = fm.boundingRect(self.name)
+        myh = max(rect.height(), 24) + 2
+        
         aw = event.size().width()
         ah = event.size().height()
         
         maxw = 0
         maxh = 0
-        childs = self.children()
+        childs = self.connections
         if not childs or len(childs) == 0:
             return QWidget.resizeEvent(self, event)
         for item in childs:
@@ -222,7 +227,7 @@ class Device(QWidget):
             c = 3
         maxw = aw / c
         for item in childs:
-            item.setGeometry(i * maxw, 32 + j * maxh, maxw, maxh)
+            item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
             i += 1
             if i >= c:
                 i = 0
@@ -294,9 +299,7 @@ class Widget(QVBox):
         
         self.comar = comar.Link()
         
-        self.links = ConnectionView(self, self.comar)
-        self.view = self.links
-        #self.connect(self.links, SIGNAL("doubleClicked(QListBoxItem *)"), self.slotDouble)
+        self.view = ConnectionView(self, self.comar)
         
         self.stack = stack.Window(self, self.comar)
         links.query(self.comar)
