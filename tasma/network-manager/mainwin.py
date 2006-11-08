@@ -46,6 +46,7 @@ class Connection(QWidget):
         
         self.name = name
         self.script = script
+        self.devid = devid
         self.active = True
         self.state = "down"
         self.address = ""
@@ -60,14 +61,21 @@ class Connection(QWidget):
         self.check.setAutoMask(True)
         self.edit_but = MinButton("Edit", self)
         self.del_but = MinButton("Delete", self)
+        self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         view.connections["%s %s" % (script, name)] = self
         self.show()
         
+        self.view = view
         view.comlink.call_package("Net.Link.getAddress", script, [ "name", name ], id=3)
         view.comlink.call_package("Net.Link.getState", script, [ "name", name ], id=4)
     
     def slotComar(self, reply):
         pass
+    
+    def slotDelete(self):
+        m = i18n("Should I delete the\n'%s'\nconnection?")
+        if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % self.name, i18n("Delete connection?")):
+            self.view.comlink.call_package("Net.Link.deleteConnection", self.script, [ "name", self.name ])
     
     def paintEvent(self, event):
         paint = QPainter(self)
@@ -210,8 +218,18 @@ class ConnectionView(QScrollView):
         Connection(self, script, data)
         self.myResize(self.width())
     
+    def remove(self, script, name):
+        conn = self.find(script, name)
+        if not conn:
+            return
+        dev = self.devices[conn.devid]
+        conn.hide()
+        dev.removeChild(conn)
+        del self.connections["%s %s" % (script, unicode(name))]
+        self.myResize(self.width())
+    
     def find(self, script, name):
-        return self.connections.get("%s %s" % (script, name), None)
+        return self.connections.get("%s %s" % (script, unicode(name)), None)
 
 
 class Widget(QVBox):
@@ -327,7 +345,7 @@ class Widget(QVBox):
             elif reply.id > 42:
                 self.stack.slotComar(reply)
         
-        elif reply[0] == self.comar.NOTIFY:
+        elif reply.command == "notify":
             noti, script, data = reply[2].split("\n", 2)
 
             if noti == "Net.Link.stateChanged":
@@ -338,16 +356,16 @@ class Widget(QVBox):
                     self.links.updateItem(conn)
                     return
             
-            elif noti == "Net.Link.connectionChanged":
-                mode, name = data.split(" ", 1)
+            elif reply.notify == "Net.Link.connectionChanged":
+                mode, name = reply.data.split(" ", 1)
                 if mode == "added":
-                    if not self.findConn(name):
-                        Connection(self.links, self.comar, name, script)
-                        self.links.sort(True)
-                elif mode == "deleted":
-                    conn = self.findConn(name)
+                    conn = self.view.find(reply.script, name)
                     if conn:
-                        self.links.removeItem(self.links.index(conn))
+                        pass
+                        #Connection(self.links, self.comar, name, script)
+                        #self.links.sort(True)
+                elif mode == "deleted":
+                    self.view.remove(reply.script, name)
                 elif mode == "gotaddress":
                     name, addr = name.split("\n", 1)
                     conn = self.findConn(name)
@@ -386,13 +404,6 @@ class Widget(QVBox):
         conn = self.links.selectedItem()
         if conn:
             w = connection.Window(self, conn.name, conn.link_name)
-    
-    def slotDelete(self):
-        m = i18n("Should I delete the\n'%s'\nconnection?")
-        conn = self.links.selectedItem()
-        if conn:
-            if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % conn.name, i18n("Delete connection?")):
-                self.comar.call_package("Net.Link.deleteConnection", conn.link_name, [ "name", conn.name ])
     
     def slotConnect(self):
         conn = self.links.selectedItem()
