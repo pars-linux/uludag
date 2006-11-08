@@ -94,7 +94,7 @@ class Connection(QWidget):
                         replies.append(rep)
                 if replies:
                     for rep in replies:
-                        self.view.handleComar(rep)
+                        self.view.parent().handleComar(rep)
             com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "up" ])
         else:
             com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "down" ])
@@ -292,8 +292,6 @@ class Widget(QVBox):
         box.setSpacing(12)
         but = QPushButton(i18n("Edit"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotEdit)
-        but = QPushButton(i18n("Delete"), box)
-        self.connect(but, SIGNAL("clicked()"), self.slotDelete)
         
         self.stack = stack.Window(self, self.comar)
         links.query(self.comar)
