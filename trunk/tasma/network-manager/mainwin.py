@@ -17,7 +17,7 @@ import connection
 from links import links
 import comar
 import widgets
-from icons import icons
+from icons import icons, getIconSet
 
 
 class MinButton(QPushButton):
@@ -48,9 +48,11 @@ class Connection(QWidget):
         self.script = script
         self.active = True
         self.state = "down"
+        self.address = ""
         
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
+        self.myHeight = fm.height()
         self.mypix = QImage("wireless.png")
         self.mypix = self.mypix.scale(32, 32)
         self.mypix = QPixmap(self.mypix)
@@ -72,6 +74,7 @@ class Connection(QWidget):
         paint.fillRect(event.rect(), QBrush(QColor("white")))
         paint.drawPixmap(16, 0, self.mypix)
         paint.drawText(49, self.myBase + 1, self.name)
+        paint.drawText(49, self.myHeight + self.myBase + 2, self.address)
     
     def resizeEvent(self, event):
         pix = event.size().width()
@@ -203,6 +206,10 @@ class ConnectionView(QScrollView):
         self.myResize(w)
         return QScrollView.resizeEvent(self, event)
     
+    def add(self, script, data):
+        Connection(self, script, data)
+        self.myResize(self.width())
+    
     def find(self, script, name):
         return self.connections.get("%s %s" % (script, name), None)
 
@@ -213,41 +220,44 @@ class Widget(QVBox):
         self.setMargin(6)
         self.setSpacing(6)
         
-        box = QHBox(self)
-        lab = QLabel(i18n("Network connections:"), box)
-        box.setStretchFactor(lab, 5)
-        but = QPushButton(i18n("Settings"), box)
-        self.connect(but, SIGNAL("clicked()"), self.slotSettings)
-        box.setStretchFactor(but, 1)
+        bar = QToolBar("lala", None, self)
+        
+        but = QToolButton(getIconSet("add.png"), i18n("New connection"), "lala", self.slotCreate, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+        bar.addSeparator()
+        
+        but = QToolButton(getIconSet("configure.png"), i18n("Name Service Settings"), "lala", self.slotSettings, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+        bar.addSeparator()
+        
+        but = QToolButton(getIconSet("help.png"), i18n("Help"), "lala", self.slotHelp, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+        bar.addSeparator()
         
         self.comar = comar.Link()
         
         self.links = ConnectionView(self, self.comar)
+        self.view = self.links
         #self.connect(self.links, SIGNAL("doubleClicked(QListBoxItem *)"), self.slotDouble)
         
         box = QHBox(self)
         box.setSpacing(12)
-        but = QPushButton(i18n("Create"), box)
-        self.connect(but, SIGNAL("clicked()"), self.slotCreate)
         but = QPushButton(i18n("Edit"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotEdit)
         but = QPushButton(i18n("Delete"), box)
         self.connect(but, SIGNAL("clicked()"), self.slotDelete)
-        but = QPushButton(i18n("Connect"), box)
-        self.connect(but, SIGNAL("clicked()"), self.slotConnect)
-        but = QPushButton(i18n("Disconnect"), box)
-        self.connect(but, SIGNAL("clicked()"), self.slotDisconnect)
-        but = QPushButton(i18n("Help"), box)
-        self.connect(but, SIGNAL("clicked()"), self.slotHelp)
         
         self.stack = stack.Window(self, self.comar)
         links.query(self.comar)
         
-        self.comar.call("Net.Link.connections", id=1)
-        
         self.comar.ask_notify("Net.Link.stateChanged")
         self.comar.ask_notify("Net.Link.connectionChanged")
         self.comar.ask_notify("Net.Link.deviceChanged")
+        
+        self.comar.call("Net.Link.connections", id=1)
         
         self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
@@ -278,37 +288,32 @@ class Widget(QVBox):
         self.handleComar(reply)
     
     def handleComar(self, reply):
-        if reply[0] == self.comar.RESULT:
-            if reply[1] == 1:
+        if reply.command == "result":
+            if reply.id == 1:
                 if reply[2] == "":
                     self.comar.call_package("Net.Link.deviceList", reply[3], id=5)
                 else:
                     for name in reply[2].split("\n"):
                         self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
-            elif reply[1] == 2:
-                conn = Connection(self.links, reply.script, reply.data)
-                self.links.myResize(self.links.width())
-            elif reply[1] == 3:
-                name, mode, rest = reply[2].split("\n", 2)
+            elif reply.id == 2:
+                self.view.add(reply.script, reply.data)
+            elif reply.id == 3:
+                name, mode, rest = reply.data.split("\n", 2)
                 if "\n" in rest:
                     addr, gate = rest.split("\n", 1)
                 else:
                     addr = rest
-                conn = self.findConn(name)
+                conn = self.view.find(reply.script, name)
                 if conn:
                     conn.address = addr
-                    self.links.updateItem(conn)
-                    return
-            elif reply[1] == 4:
-                name, state = reply[2].split("\n")
-                conn = self.findConn(name)
+                    conn.update()
+            elif reply.id == 4:
+                name, state = reply.data.split("\n")
+                conn = self.view.find(reply.script, name)
                 if conn:
                     conn.state = state
-                    if state == "up":
-                        conn.online = state
-                    self.links.updateItem(conn)
-                    return
-            elif reply[1] == 5:
+                    conn.update()
+            elif reply.id == 5:
                 if reply[2] == '' or reply[3] == "ppp":
                     return
                 devs = reply[2].split("\n")
@@ -317,9 +322,9 @@ class Widget(QVBox):
                     name = self.uniqueName()
                     self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
                     Connection(self.links, self.comar, name, reply[3])
-            elif reply[1] == 42:
+            elif reply.id == 42:
                 links.slotComar(reply)
-            elif reply[1] > 42:
+            elif reply.id > 42:
                 self.stack.slotComar(reply)
         
         elif reply[0] == self.comar.NOTIFY:

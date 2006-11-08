@@ -12,6 +12,10 @@
 from qt import *
 from kdecore import *
 
+def getIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+
+
 class Icons:
     def __init__(self):
         self.net_on = None
