@@ -251,6 +251,8 @@ class MainApplicationWidget(QWidget):
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
+        self.basket.dump(upgradables)
+        self.lastSelectedComponent = i18n("All")
         self.setLastSelected()
 
         if not upgradables and self.state != upgrade_state:
@@ -259,6 +261,7 @@ class MainApplicationWidget(QWidget):
         self.state = upgrade_state
         self.basket.setState(self.state)
         self.updateStatusBar()
+        self.updateButtons()
         self.setCursor(Qt.arrowCursor)
 
     def createHTML(self,packages,part=None):
