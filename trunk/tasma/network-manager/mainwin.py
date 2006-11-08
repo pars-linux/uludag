@@ -230,6 +230,7 @@ class Device(QWidget):
         if c > 3:
             c = 3
         maxw = aw / c
+        childs.sort(key=lambda x: x.name)
         for item in childs:
             item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
             i += 1
@@ -249,7 +250,9 @@ class ConnectionView(QScrollView):
     
     def myResize(self, width):
         th = 0
-        for name in self.devices:
+        names = self.devices.keys()
+        names.sort()
+        for name in names:
             item = self.devices[name]
             h = item.heightForWidth(width)
             item.setGeometry(0, th, width, h)
@@ -261,6 +264,8 @@ class ConnectionView(QScrollView):
         return QScrollView.resizeEvent(self, event)
     
     def add(self, script, data):
+        if self.find(script, data):
+            return
         Connection(self, script, data)
         self.myResize(self.width())
     
@@ -364,6 +369,8 @@ class Widget(QVBox):
                         conn.active = False
                     conn.update()
             elif reply.id == 5:
+                return
+                #FIXME
                 if reply[2] == '' or reply[3] == "ppp":
                     return
                 devs = reply[2].split("\n")
@@ -396,17 +403,15 @@ class Widget(QVBox):
                 if mode == "added":
                     conn = self.view.find(reply.script, name)
                     if conn:
-                        pass
-                        #Connection(self.links, self.comar, name, script)
-                        #self.links.sort(True)
+                        self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
                 elif mode == "deleted":
                     self.view.remove(reply.script, name)
                 elif mode == "gotaddress":
                     name, addr = name.split("\n", 1)
-                    conn = self.findConn(name)
+                    conn = self.view.find(reply.script, name)
                     if conn:
                         conn.address = addr
-                        self.links.updateItem(conn)
+                        conn.update()
                 elif mode == "configured":
                     type, name = name.split(" ", 1)
                     if type == "device":
