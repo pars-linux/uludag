@@ -29,6 +29,9 @@ class Basket:
     def remove(self, package):
         self.packages.remove(str(package))
 
+    def dump(self, packages):
+        self.packages.extend(map(lambda x:str(x), packages))
+
     def empty(self):
         self.packages = []
         self.extraPackages = []
