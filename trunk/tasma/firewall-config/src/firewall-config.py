@@ -76,8 +76,6 @@ class MainApplication(programbase):
         if standalone:
             QDialog.__init__(self,parent,name)
             self.setCaption(i18n('Firewall Configuration'))
-            self.setMinimumSize(566, 544)
-            self.resize(566, 544)
         else:
             KCModule.__init__(self,parent,name)
             KGlobal.locale().insertCatalogue('firewall_config')
@@ -98,24 +96,40 @@ class MainApplication(programbase):
 
         # Initial conditions
         self.state = 'off'
-        self.profile = ''
+        self.profile = {}
         self.emptyRules()
         mainwidget.pushStatus.setEnabled(False)
 
-        # First Tab - Incoming Connections
-        self.services = []
-        mainwidget.frameServices.setColumnLayout(0, Qt.Vertical)
-        frameServicesLayout = QVBoxLayout(mainwidget.frameServices.layout())
-        frameServicesLayout.setAlignment(Qt.AlignTop)
+        # Tab 1 - Incoming Connections
+        self.incoming = []
+        mainwidget.frameIncoming.setColumnLayout(0, Qt.Vertical)
+        frameIncomingLayout = QVBoxLayout(mainwidget.frameIncoming.layout())
+        frameIncomingLayout.setAlignment(Qt.AlignTop)
+
+        # Tab 2 - Ingoing Connections
+        self.outgoing = []
+        mainwidget.frameOutgoing.setColumnLayout(0, Qt.Vertical)
+        frameOutgoingLayout = QVBoxLayout(mainwidget.frameOutgoing.layout())
+        frameOutgoingLayout.setAlignment(Qt.AlignTop)
+
+        # Populate checkboxes
         for key, (rule, name) in rules.filter.iteritems():
-            chk = QCheckBox(mainwidget.frameServices, key)
-            chk.setText(name)
-            frameServicesLayout.addWidget(chk)
-            self.services.append(chk)
+            if key.startswith('in'):
+                chk = QCheckBox(mainwidget.frameIncoming, key)
+                chk.setText(name)
+                frameIncomingLayout.addWidget(chk)
+                self.incoming.append(chk)
+            elif key.startswith('out'):
+                chk = QCheckBox(mainwidget.frameOutgoing, key)
+                chk.setText(name)
+                frameOutgoingLayout.addWidget(chk)
+                self.outgoing.append(chk)
 
         # Icons
+        self.setIcon(loadIcon('firewall_config', size=48))
         mainwidget.pixmapFW.setPixmap(loadIcon('firewall_config', size=48))
-        mainwidget.pixmapIncoming.setPixmap(loadIcon('krfb.png', size=48))
+        mainwidget.pixmapIncoming.setPixmap(loadIcon('server.png', size=48))
+        mainwidget.pixmapOutgoing.setPixmap(loadIcon('socket.png', size=48))
 
         # COMAR
         self.comar = comar.Link()
@@ -144,7 +158,7 @@ class MainApplication(programbase):
 
     def setState(self, state):
         self.state = state
-        if self.state == 'on' and self.profile == 'pardus':
+        if self.state == 'on' and self.profile == rules.profile:
             mainwidget.pushStatus.setText(i18n('&Stop Firewall'))
             mainwidget.textStatus.setText(i18n('<b><font size=\'+1\'>Firewall is running</font></b>'))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
@@ -162,15 +176,23 @@ class MainApplication(programbase):
 
     def updateRules(self):
         if self.state == 'on':
-            # First Tab - Incoming Connections
-            for checkbox in self.services:
+            # Tab 1 - Incoming Connections
+            for checkbox in self.incoming:
                 if rules.filter[checkbox.name()][0] in self.rules['filter']:
                     checkbox.setChecked(True)
                 else:
                     checkbox.setChecked(False)
-            mainwidget.frameServices.setEnabled(True)
+            # Tab 2 - Incoming Connections
+            for checkbox in self.outgoing:
+                if rules.filter[checkbox.name()][0] in self.rules['filter']:
+                    checkbox.setChecked(True)
+                else:
+                    checkbox.setChecked(False)
+            mainwidget.frameIncoming.setEnabled(True)
+            mainwidget.frameOutgoing.setEnabled(True)
         else:
-            mainwidget.frameServices.setEnabled(False)
+            mainwidget.frameIncoming.setEnabled(False)
+            mainwidget.frameOutgoing.setEnabled(False)
 
     def emptyRules(self):
         self.rules = {
@@ -188,7 +210,13 @@ class MainApplication(programbase):
                 self.setState(info[1])
                 mainwidget.pushStatus.setEnabled(True)
             elif info[0] == 'profile':
-                self.profile = info[1]
+                self.profile = {
+                    'profile': info[1],
+                    'save_filter': info[2],
+                    'save_mangle': info[3],
+                    'save_nat': info[4],
+                    'save_raw': info[5],
+                }
         elif reply.command == 'result':
             if reply.id == 2:
                 # Get Rules
@@ -205,7 +233,14 @@ class MainApplication(programbase):
                 mainwidget.pushStatus.setEnabled(True)
             elif reply.id == 4:
                 # Get Profile
-                self.profile = reply.data.split('\n')[0]
+                info = reply.data.split('\n')
+                self.profile = {
+                    'profile': info[0],
+                    'save_filter': info[1],
+                    'save_mangle': info[2],
+                    'save_nat': info[3],
+                    'save_raw': info[4],
+                }
         elif reply.command == 'fail':
             if reply.id == 5:
                 mainwidget.pushStatus.setEnabled(True)
@@ -217,7 +252,7 @@ class MainApplication(programbase):
             self.comar.call('Net.Filter.setState', {'state': 'off'}, id=5)
             self.handleComar(self.comar.read_cmd())
         else:
-            self.comar.call('Net.Filter.setProfile', {'profile': 'pardus', 'save_filter': 'PARDUS-USER'}, id=6)
+            self.comar.call('Net.Filter.setProfile', rules.profile, id=6)
             self.handleComar(self.comar.read_cmd())
             self.comar.call('Net.Filter.setState', {'state': 'on'}, id=5)
             self.handleComar(self.comar.read_cmd())
@@ -247,19 +282,25 @@ class MainApplication(programbase):
             self.rules[table].append(rule)
 
     def saveAll(self):
-        # First Tab - Incoming Connections
-        now = []
-        for checkbox in self.services:
+        now_filter = []
+
+        # Tab 1 - Incoming Connections
+        for checkbox in self.incoming:
             if checkbox.isChecked():
-                now.append(rules.filter[checkbox.name()][0])
-        self.saveRules('filter', now)
+                now_filter.append(rules.filter[checkbox.name()][0])
+
+        # Tab 2 - Outgoing Connections
+        for checkbox in self.outgoing:
+            if checkbox.isChecked():
+                now_filter.append(rules.filter[checkbox.name()][0])
+
+        self.saveRules('filter', now_filter)
 
     def __del__(self):
         pass
 
     def exec_loop(self):
         global programbase
-        
         programbase.exec_loop(self)
 
     # KControl virtual void methods
@@ -268,14 +309,14 @@ class MainApplication(programbase):
     def save(self):
         pass
     def defaults(self):
-        pass        
+        pass
     def sysdefaults(self):
         pass
-    
+
     def aboutData(self):
         # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
-    
+
     def buttons(self):
         # Only supply a Help button. Other choices are Default and Apply.
         return KCModule.Help
@@ -283,26 +324,24 @@ class MainApplication(programbase):
 # This is the entry point used when running this module outside of kcontrol.
 def main():
     global kapp
-    
+
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv, about_data)
-    
+
     if not KUniqueApplication.start():
         print i18n('Pardus Firewall Interface is already running!')
         return
-    
+
     kapp = KUniqueApplication(True, True, True)
     myapp = MainApplication()
     kapp.setMainWidget(myapp)
-    #icons.load_icons()
     sys.exit(myapp.exec_loop())
-    
+
 # Factory function for KControl
 def create_firewall_config(parent,name):
     global kapp
-    
+
     kapp = KApplication.kApplication()
-    #icons.load_icons()
     return MainApplication(parent, name)
 
 if standalone:
