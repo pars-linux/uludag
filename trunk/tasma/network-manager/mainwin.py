@@ -62,6 +62,7 @@ class Connection(QWidget):
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
         self.edit_but = MinButton("Edit", self)
+        self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
         self.del_but = MinButton("Delete", self)
         self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         view.connections["%s %s" % (script, name)] = self
@@ -108,6 +109,9 @@ class Connection(QWidget):
         m = i18n("Should I delete the\n'%s'\nconnection?")
         if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % self.name, i18n("Delete connection?")):
             self.view.comlink.call_package("Net.Link.deleteConnection", self.script, [ "name", self.name ])
+    
+    def slotEdit(self):
+        w = connection.Window(self.view.parent(), self.name, self.script)
     
     def update(self):
         self.ignore_signal = True
@@ -430,8 +434,3 @@ class Widget(QVBox):
     
     def slotCreate(self):
         links.ask_for_create(self)
-    
-    def slotEdit(self):
-        conn = self.links.selectedItem()
-        if conn:
-            w = connection.Window(self, conn.name, conn.link_name)
