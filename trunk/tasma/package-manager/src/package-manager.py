@@ -272,6 +272,7 @@ class MainApplicationWidget(QWidget):
             part = self.htmlPart
 
         self.setCursor(Qt.waitCursor)
+        part.view().setContentsPos(0, 0)
         part.begin()
         part.write(head)
         part.write("<style type=\"text/css\">%s</style>" % self.css)
