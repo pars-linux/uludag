@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005-2006, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -69,11 +69,15 @@ class Connection(QWidget):
         self.view = view
         view.comlink.call_package("Net.Link.getAddress", script, [ "name", name ], id=3)
         view.comlink.call_package("Net.Link.getState", script, [ "name", name ], id=4)
+        
+        self.ignore_signal = False
     
     def slotComar(self, reply):
         pass
     
     def slotToggle(self, on):
+        if self.ignore_signal:
+            return
         com = self.view.comlink
         dev = self.parent()
         if on:
@@ -103,6 +107,12 @@ class Connection(QWidget):
         m = i18n("Should I delete the\n'%s'\nconnection?")
         if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % self.name, i18n("Delete connection?")):
             self.view.comlink.call_package("Net.Link.deleteConnection", self.script, [ "name", self.name ])
+    
+    def update(self):
+        self.ignore_signal = True
+        self.check.setChecked(self.active)
+        self.ignore_signal = False
+        QWidget.update(self)
     
     def paintEvent(self, event):
         paint = QPainter(self)
@@ -288,11 +298,6 @@ class Widget(QVBox):
         self.view = self.links
         #self.connect(self.links, SIGNAL("doubleClicked(QListBoxItem *)"), self.slotDouble)
         
-        box = QHBox(self)
-        box.setSpacing(12)
-        but = QPushButton(i18n("Edit"), box)
-        self.connect(but, SIGNAL("clicked()"), self.slotEdit)
-        
         self.stack = stack.Window(self, self.comar)
         links.query(self.comar)
         
@@ -346,6 +351,10 @@ class Widget(QVBox):
                 conn = self.view.find(reply.script, name)
                 if conn:
                     conn.state = state
+                    if state == "up":
+                        conn.active = True
+                    else:
+                        conn.active = False
                     conn.update()
             elif reply.id == 5:
                 if reply[2] == '' or reply[3] == "ppp":
