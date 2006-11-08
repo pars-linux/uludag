@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Service Manager
+Name[en]=Service Manager
+Name[tr]=Servis Yöneticisi
+Comment=Service Management Interface
+Comment[tr]=Servis Yönetim Arabirimi
+Icon=service_manager
+X-KDE-ModuleType=Library
+X-KDE-Library=service-manager
+X-KDE-FactoryName=service_manager
+X-KDE-RootOnly=false
+Type=Application
+Exec=kcmshell service-manager
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
