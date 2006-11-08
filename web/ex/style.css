@@ -7,78 +7,53 @@ body {
 }
 
 #container {
-    width:762px;
+    width:920px;
     background-color:#FFF;
     margin:0 auto;
     padding:1px;
-    border:2px solid #CCC;
-    -moz-border-radius:12px;
+    border:2px solid #DDD;
 }
 
 #head_grey {
-    height: 90px;
-    right:4px;
+    height: 200px;
+    right: 4px;
 }
 
 html>body #head_grey {
-    height: 90px;
+    height: 200px;
     background-color:#CCC;
     border:1px solid #FFF;
-    -moz-border-radius-topleft:12px;
-    -moz-border-radius-topright:12px;
 }
 
-#pink,#blue,#green,#pink2,#blue2,#green2 {
+#blue,#blue2 {
     background-repeat:no-repeat;
-    background-position: 0 0;
-    width:760px;
+    background-position: 12px 12px;
+    width:650px;
     float:left;
 }
 
-#pink,#blue,#green {
-    height:235px;
-}
-
-#pink2,#blue2,#green2 {
-    height:103px;
-}
-
-#pink {
-    background-image: url('images/head-pink.png');
-}
-
-#pink2 {
-    background-image: url('images/head-pink2.png');
-}
-
 #blue {
+    height:235px;
     background-image: url('images/head-blue.png');
 }
 
 #blue2 {
+    height:103px;
     background-image: url('images/head-blue2.png');
 }
-
-#green {
-    background-image: url('images/head-green.png');
-}
-
-#green2 {
-    background-image: url('images/head-green2.png');
-}
-
 
 #quick_download {
     float:right;
     margin-right:13px;
-    margin-top:13px;
+    margin-top: 0px;
     padding-right:4px;
 }
 
 h2,.baslik {
+    font-family: "Deja Vu Sans Condensed";
     font-size:18px;
     font-weight:bold;
-    border-bottom:1px solid #98C2DC;
+    border-bottom:2px solid #156FA5;
     color:#156FA5;
 }
 
@@ -109,15 +84,15 @@ a {
 }
 
 #menu {
-    margin-top:32px;
+    margin-top:12px;
 }
 
 #footnote {
-    clear:both;
-    width:100%;
-    background-image: url(images/tubitak-powered.png);
-    background-position:-160 0;
-    background-repeat: no-repeat;
+    float:left;
+    width:93%;
+    padding:5px;
+    padding-top:0px;
+    padding-left:30px;
 }
 
 #footnote p {
@@ -147,12 +122,12 @@ a {
 }
 
 #mpage{
-    padding-top:25px;
+    padding-top:0px;
 }
+
 .blue p,#modules ul {
-    border-top:2px solid #156FA5;
-    margin-top:4px;
-    padding-top:4px;
+    margin-top:2px;
+    padding-top:2px;
 }
 
 /*IE*/
@@ -172,13 +147,11 @@ html>body li {
 }
 
 
-.search li {
-    border-bottom:1px solid #98C2DC;
-}
-
 .blue #modules li {
     border-bottom:1px solid #98C2DC;
-    margin-top:4px;
+    padding-bottom:4px;
+    margin-top:6px;
+    font-size: 11px;
 }
 
 #modules ul {
@@ -188,17 +161,19 @@ html>body li {
 #modules {
     float:right;
     width:260px;
-    padding-right:20px;
+    padding-right:10px;
+    padding-left:10px;
+    background-color: #EEE
 }
 
 #navi {
     clear:both;
     padding-left:30px;
-    background-color:#DDD;
-    border-bottom:1px solid #CCC;
+    background-color:#CCC;
     z-index:100;
     position:relative;
-
+    padding-top:3px;
+    padding-bottom:3px;
 }
 
 #main_navi {
