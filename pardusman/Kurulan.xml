@@ -50,6 +50,7 @@
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>git</SelectedPackage>
         <SelectedPackage>gle</SelectedPackage>
+        <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>grounation-xcursors</SelectedPackage>
@@ -149,7 +150,6 @@
         <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>smartdimmer</SelectedPackage>
         <SelectedPackage>smb4k</SelectedPackage>
-        <SelectedPackage>spca5xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
@@ -341,6 +341,7 @@
         <Package>gle</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-de</Package>
         <Package>glibc-locales-nl</Package>
         <Package>glibmm</Package>
         <Package>glut</Package>
@@ -699,7 +700,6 @@
         <Package>smartdimmer</Package>
         <Package>smb4k</Package>
         <Package>sox</Package>
-        <Package>spca5xx</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
