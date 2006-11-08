@@ -55,9 +55,7 @@ class Connection(QWidget):
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
         self.myHeight = fm.height()
-        self.mypix = QImage("wireless.png")
-        self.mypix = self.mypix.scale(32, 32)
-        self.mypix = QPixmap(self.mypix)
+        self.mypix = icons.net_on
         self.check = QCheckBox(self)
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
@@ -120,8 +118,9 @@ class Connection(QWidget):
         QWidget.update(self)
     
     def paintEvent(self, event):
+        cg = self.colorGroup()
         paint = QPainter(self)
-        paint.fillRect(event.rect(), QBrush(QColor("white")))
+        paint.fillRect(event.rect(), QBrush(cg.midlight()))
         paint.drawPixmap(16, 0, self.mypix)
         paint.drawText(49, self.myBase + 1, self.name)
         paint.drawText(49, self.myHeight + self.myBase + 2, self.address)
@@ -164,16 +163,22 @@ class Device(QWidget):
         self.connections = []
         parent.devices[id] = self
     
+    def myHeight(self):
+        fm = self.fontMetrics()
+        rect = fm.boundingRect(self.name)
+        return max(rect.height(), 24) + 2
+    
     def paintEvent(self, event):
+        cg = self.colorGroup()
         QWidget.paintEvent(self, event)
         paint = QPainter(self)
+        paint.fillRect(QRect(0, 0, self.width(), self.myHeight()), QBrush(cg.mid(), Qt.Dense7Pattern))
+        paint.fillRect(QRect(0, self.myHeight(), self.width(), self.height() - self.myHeight()), QBrush(cg.midlight()))
         paint.drawPixmap(0, 0, self.mypix)
         paint.drawText(25, self.myBase + 1, self.name)
     
     def heightForWidth(self, width):
-        fm = self.fontMetrics()
-        rect = fm.boundingRect(self.name)
-        h = max(rect.height(), 24) + 2
+        h = self.myHeight()
         
         if self.connections == []:
             return h
@@ -201,9 +206,7 @@ class Device(QWidget):
         return h
     
     def resizeEvent(self, event):
-        fm = self.fontMetrics()
-        rect = fm.boundingRect(self.name)
-        myh = max(rect.height(), 24) + 2
+        myh = self.myHeight()
         
         aw = event.size().width()
         ah = event.size().height()
