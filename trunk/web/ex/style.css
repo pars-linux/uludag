@@ -21,7 +21,7 @@ body {
 
 html>body #head_grey {
     height: 200px;
-    background-color:#CCC;
+    background-color:#EEE;
     border:1px solid #FFF;
 }
 
@@ -45,12 +45,12 @@ html>body #head_grey {
 #quick_download {
     float:right;
     margin-right:13px;
-    margin-top: 0px;
+    margin-top: 12px;
     padding-right:4px;
 }
 
 h2,.baslik {
-    font-family: "Deja Vu Sans Condensed";
+    font-family: "DejaVu Sans Condensed", Arial, Sans, Helvetica;
     font-size:18px;
     font-weight:bold;
     border-bottom:2px solid #156FA5;
