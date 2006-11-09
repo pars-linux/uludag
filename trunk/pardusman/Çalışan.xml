@@ -42,6 +42,7 @@
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
+        <SelectedPackage>gspca</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>gwenview</SelectedPackage>
@@ -117,6 +118,7 @@
         <SelectedPackage>rt2500</SelectedPackage>
         <SelectedPackage>rt2570</SelectedPackage>
         <SelectedPackage>rt61</SelectedPackage>
+        <SelectedPackage>rt73</SelectedPackage>
         <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>schedutils</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
@@ -127,7 +129,6 @@
         <SelectedPackage>skype-avatars</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>smb4k</SelectedPackage>
-        <SelectedPackage>spca5xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
@@ -302,6 +303,7 @@
         <Package>grep</Package>
         <Package>groff</Package>
         <Package>grub</Package>
+        <Package>gspca</Package>
         <Package>gst-plugins-base</Package>
         <Package>gst-plugins-good</Package>
         <Package>gst-plugins-ugly</Package>
@@ -593,6 +595,7 @@
         <Package>rt2500</Package>
         <Package>rt2570</Package>
         <Package>rt61</Package>
+        <Package>rt73</Package>
         <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
@@ -616,7 +619,6 @@
         <Package>slmodem</Package>
         <Package>smb4k</Package>
         <Package>sox</Package>
-        <Package>spca5xx</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
