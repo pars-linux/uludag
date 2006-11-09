@@ -121,16 +121,16 @@ class Connection(QWidget):
         cg = self.colorGroup()
         paint = QPainter(self)
         paint.fillRect(event.rect(), QBrush(cg.midlight()))
-        paint.drawPixmap(16, 0, self.mypix)
-        paint.drawText(49, self.myBase + 1, self.name)
-        paint.drawText(49, self.myHeight + self.myBase + 2, self.address)
+        paint.drawPixmap(20, 3, self.mypix)
+        paint.drawText(53, self.myBase + 4, self.name)
+        paint.drawText(53, self.myHeight + self.myBase + 5, self.address)
     
     def resizeEvent(self, event):
         pix = event.size().width()
         w1, h1 = self.edit_but.mySize()
         w2, h2 = self.del_but.mySize()
-        self.edit_but.setGeometry(pix - w1 - w2 - 20, 0, w1 + 8, h1 + 8)
-        self.del_but.setGeometry(pix - w2 - 8, 0, w2 + 8, h2 + 8)
+        self.edit_but.setGeometry(pix - w1 - w2 - 20 - 4, 1, w1 + 8, h1 + 8)
+        self.del_but.setGeometry(pix - w2 - 8 - 4, 1, w2 + 8, h2 + 8)
         return QWidget.resizeEvent(self, event)
     
     def enterEvent(self, event):
@@ -146,8 +146,8 @@ class Connection(QWidget):
     def sizeHint(self):
         fm = self.fontMetrics()
         rect = fm.boundingRect(self.name)
-        w = rect.width() + 2 + 32 + 16
-        h = max(rect.height(), 32) + 2
+        w = rect.width() + 32 + 16 + 8
+        h = max(rect.height(), 32) + 6
         return QSize(w, h)
 
 
