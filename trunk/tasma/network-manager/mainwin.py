@@ -205,17 +205,14 @@ class Device(QWidget):
         
         return h
     
-    def resizeEvent(self, event):
+    def myResize(self, aw, ah):
         myh = self.myHeight()
-        
-        aw = event.size().width()
-        ah = event.size().height()
         
         maxw = 0
         maxh = 0
         childs = self.connections
         if not childs or len(childs) == 0:
-            return QWidget.resizeEvent(self, event)
+            return
         for item in childs:
             hint = item.sizeHint()
             w = hint.width()
@@ -240,7 +237,10 @@ class Device(QWidget):
             if i >= c:
                 i = 0
                 j += 1
-        
+    
+    def resizeEvent(self, event):
+        size = event.size()
+        self.myResize(size.width(), size.height())
         return QWidget.resizeEvent(self, event)
 
 
@@ -259,6 +259,7 @@ class ConnectionView(QScrollView):
             item = self.devices[name]
             h = item.heightForWidth(width)
             item.setGeometry(0, th, width, h)
+            item.myResize(width, h)
             th += h
     
     def resizeEvent(self, event):
@@ -307,7 +308,6 @@ class Widget(QVBox):
         but = QToolButton(getIconSet("help.png"), i18n("Help"), "lala", self.slotHelp, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        bar.addSeparator()
         
         self.comar = comar.Link()
         
