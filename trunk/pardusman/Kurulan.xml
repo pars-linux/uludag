@@ -138,6 +138,7 @@
         <SelectedPackage>rt2500</SelectedPackage>
         <SelectedPackage>rt2570</SelectedPackage>
         <SelectedPackage>rt61</SelectedPackage>
+        <SelectedPackage>rt73</SelectedPackage>
         <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>schedutils</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
@@ -674,6 +675,7 @@
         <Package>rt2500</Package>
         <Package>rt2570</Package>
         <Package>rt61</Package>
+        <Package>rt73</Package>
         <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
