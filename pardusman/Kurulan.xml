@@ -7,6 +7,7 @@
         <SelectedComponent>system.devel</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
+        <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>acx100</SelectedPackage>
         <SelectedPackage>alsa-driver</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
@@ -26,7 +27,7 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
-        <SelectedPackage>crack-attack</SelectedPackage>
+        <SelectedPackage>chromium</SelectedPackage>
         <SelectedPackage>crystal</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>digikam</SelectedPackage>
@@ -48,7 +49,6 @@
         <SelectedPackage>freealut</SelectedPackage>
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
-        <SelectedPackage>git</SelectedPackage>
         <SelectedPackage>gle</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
@@ -125,10 +125,11 @@
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
+        <SelectedPackage>ppracer</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
-        <SelectedPackage>qalculate</SelectedPackage>
+        <SelectedPackage>pygtk</SelectedPackage>
         <SelectedPackage>rar</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
@@ -142,6 +143,7 @@
         <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>schedutils</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
+        <SelectedPackage>sdljump</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>sg3_utils</SelectedPackage>
@@ -162,10 +164,10 @@
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
+        <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>tightvnc</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
-        <SelectedPackage>tvtime</SelectedPackage>
         <SelectedPackage>ufraw</SelectedPackage>
         <SelectedPackage>uhinv</SelectedPackage>
         <SelectedPackage>unace</SelectedPackage>
@@ -179,7 +181,7 @@
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
-        <SelectedPackage>xvidcap</SelectedPackage>
+        <SelectedPackage>xmoto</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
@@ -192,13 +194,13 @@
         <Package>PyKDE</Package>
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
-        <Package>String-ShellQuote</Package>
         <Package>XML-Parser</Package>
         <Package>Xaw3d</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>acerhk</Package>
         <Package>acl</Package>
+        <Package>acpi</Package>
         <Package>acpid</Package>
         <Package>acx100</Package>
         <Package>acx100-firmware</Package>
@@ -256,16 +258,14 @@
         <Package>cdrdao</Package>
         <Package>cdrtools</Package>
         <Package>chmlib</Package>
-        <Package>cln</Package>
+        <Package>chromium</Package>
+        <Package>chromium-data</Package>
         <Package>cmake</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
         <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
-        <Package>crack-attack</Package>
-        <Package>crack-attack-music</Package>
-        <Package>crack-attack-sounds</Package>
         <Package>cracklib</Package>
         <Package>cryptsetup-luks</Package>
         <Package>crystal</Package>
@@ -337,7 +337,6 @@
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
-        <Package>git</Package>
         <Package>gle</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
@@ -349,7 +348,6 @@
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnuconfig</Package>
         <Package>gnupg</Package>
-        <Package>gnuplot</Package>
         <Package>gnutls</Package>
         <Package>gocr</Package>
         <Package>gpac</Package>
@@ -503,6 +501,7 @@
         <Package>libfontenc</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
+        <Package>libglade2</Package>
         <Package>libgpg-error</Package>
         <Package>libgphoto2</Package>
         <Package>libgpod</Package>
@@ -534,7 +533,6 @@
         <Package>libpcre</Package>
         <Package>libperl</Package>
         <Package>libpng</Package>
-        <Package>libqalculate</Package>
         <Package>libquicktime</Package>
         <Package>libraw1394</Package>
         <Package>librsvg</Package>
@@ -543,6 +541,8 @@
         <Package>libsigc++</Package>
         <Package>libsndfile</Package>
         <Package>libstdc++</Package>
+        <Package>libsvg</Package>
+        <Package>libsvg-cairo</Package>
         <Package>libtheora</Package>
         <Package>libtool</Package>
         <Package>libungif</Package>
@@ -566,6 +566,7 @@
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
         <Package>ltrace</Package>
+        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>m4</Package>
@@ -614,6 +615,7 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
+        <Package>ode</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
@@ -641,6 +643,7 @@
         <Package>portmap</Package>
         <Package>poster</Package>
         <Package>ppp</Package>
+        <Package>ppracer</Package>
         <Package>pptpclient</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
@@ -648,18 +651,19 @@
         <Package>pth</Package>
         <Package>pwc</Package>
         <Package>pwdb</Package>
+        <Package>pycairo</Package>
+        <Package>pygobject</Package>
+        <Package>pygtk</Package>
         <Package>pyparted</Package>
         <Package>pyrex</Package>
         <Package>python</Package>
         <Package>python-bsddb3</Package>
         <Package>python-fchksum</Package>
         <Package>python-iptables</Package>
-        <Package>qalculate</Package>
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
         <Package>rar</Package>
-        <Package>rcs</Package>
         <Package>rdate</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
@@ -667,7 +671,6 @@
         <Package>rp-pppoe</Package>
         <Package>rpcalc</Package>
         <Package>rsibreak</Package>
-        <Package>rsync</Package>
         <Package>rt2400</Package>
         <Package>rt2500</Package>
         <Package>rt2570</Package>
@@ -680,9 +683,11 @@
         <Package>schedutils</Package>
         <Package>scons</Package>
         <Package>screen</Package>
+        <Package>sdl-image</Package>
         <Package>sdl-mixer</Package>
         <Package>sdl-net</Package>
         <Package>sdl-sound</Package>
+        <Package>sdljump</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
@@ -728,6 +733,7 @@
         <Package>tcp-wrappers</Package>
         <Package>tcpdump</Package>
         <Package>telnet-bsd</Package>
+        <Package>testdisk</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>tightvnc</Package>
@@ -738,7 +744,6 @@
         <Package>transcode</Package>
         <Package>tulliana2</Package>
         <Package>tunepimp</Package>
-        <Package>tvtime</Package>
         <Package>twolame</Package>
         <Package>udev</Package>
         <Package>ufraw</Package>
@@ -771,6 +776,7 @@
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
+        <Package>xmoto</Package>
         <Package>xorg-app</Package>
         <Package>xorg-data</Package>
         <Package>xorg-font</Package>
@@ -782,7 +788,6 @@
         <Package>xscreensaver</Package>
         <Package>xtrans</Package>
         <Package>xvid</Package>
-        <Package>xvidcap</Package>
         <Package>yacc</Package>
         <Package>yakuake</Package>
         <Package>zd1201-firmware</Package>
