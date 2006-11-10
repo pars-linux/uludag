@@ -153,7 +153,7 @@ class Connection(QWidget):
     def sizeHint(self):
         fm = self.fontMetrics()
         rect = fm.boundingRect(self.name)
-        w = rect.width() + 32 + 16 + 8
+        w = max(rect.width(), 120) + 32 + 16 + 8
         h = max(rect.height(), 32) + 6
         return QSize(w, h)
 
