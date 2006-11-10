@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 23:32+0200\n"
+"POT-Creation-Date: 2006-11-10 14:27+0200\n"
 "PO-Revision-Date: 2006-08-08 23:52+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,25 +19,129 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/CommonText.py:3 src/package-manager.py:596
-msgid "downloading"
-msgstr "downloaden"
+#: src/ProgressDialog.py:91
+msgid "Progress"
+msgstr "Voortgang"
 
-#: src/CommonText.py:3
-msgid "extracting"
-msgstr "uitpakken"
-
-#: src/CommonText.py:3
-msgid "configuring"
-msgstr "instellen"
-
-#: src/CommonText.py:3
-msgid "removing"
-msgstr "verwijderen"
-
-#: src/CommonText.py:3
-msgid "installing"
+#: src/ProgressDialog.py:92 src/Progress.py:68
+msgid "-- / --  package"
 msgstr ""
+
+#: src/ProgressDialog.py:93 src/Progress.py:67
+msgid "downloaded (total: -- )"
+msgstr ""
+
+#: src/ProgressDialog.py:94 src/Progress.py:66
+msgid "--"
+msgstr ""
+
+#: src/ProgressDialog.py:96
+msgid "Alt+C"
+msgstr ""
+
+#: src/ProgressDialog.py:98
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>PiSi wordt voorbereid...</h3>"
+
+#: src/ProgressDialog.py:99
+msgid "Now installing <b>amsn</b> package"
+msgstr ""
+
+#: src/CustomEventListener.py:47 src/CustomEventListener.py:51
+#: src/package-manager.py:283
+msgid "Select all packages in this category"
+msgstr "Alle pakketten in deze categorie selecteren"
+
+#: src/CustomEventListener.py:48 src/package-manager.py:285
+msgid "Reverse package selections"
+msgstr ""
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr "Repositorydialoog"
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr "Repository-&adres"
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr ""
+"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
+msgstr ""
+
+#: src/RepoDialog.py:80
+msgid "Repository &Name"
+msgstr "Repository&naam"
+
+#: src/RepoDialog.py:81
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
+
+#: src/BasketDialog.py:45 src/BasketDialog.py:50
+msgid "Basket"
+msgstr ""
+
+#: src/BasketDialog.py:58
+#, fuzzy
+msgid "Selected package(s) for removal:"
+msgstr "Te installeren pakket"
+
+#: src/BasketDialog.py:59
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+
+#: src/BasketDialog.py:61
+#, fuzzy
+msgid "Selected package(s) for install:"
+msgstr "Te installeren pakket"
+
+#: src/BasketDialog.py:62
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+
+#: src/BasketDialog.py:64
+#, fuzzy
+msgid "Selected package(s) for upgrade:"
+msgstr "Te installeren pakket"
+
+#: src/BasketDialog.py:65
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+
+#: src/BasketDialog.py:73
+msgid "Total Size:"
+msgstr ""
+
+#: src/BasketDialog.py:80
+msgid "Update Basket"
+msgstr ""
+
+#: src/BasketDialog.py:152
+msgid "Total Size: <b>%1</b>"
+msgstr ""
+
+#: src/BasketDialog.py:201 src/BasketDialog.py:203
+#, fuzzy
+msgid "Size: "
+msgstr "Pakketgrootte: "
+
+#: src/HelpDialog.py:20
+msgid "Package Manager Help"
+msgstr "Pakketbeheer-help"
 
 #: src/Preferences.py:65
 msgid "Add New Repository"
@@ -59,11 +163,51 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Pisi-fout"
 
+#: src/Progress.py:39
+#, fuzzy
+msgid "downloaded ( total: %1 )"
+msgstr "<b>Gedownload/totaal:<b> %1 %2 %3 %4"
+
+#: src/Progress.py:64
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>PiSi wordt voorbereid...b>"
+
+#: src/Progress.py:86
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Handeling wordt geannuleerd...</b>"
+
+#: src/Progress.py:113 src/Progress.py:117
+#, fuzzy
+msgid "Now %1 <b>%2</b> package"
+msgstr "Nu %1<b>%2</b> (%3 van %4)"
+
+#: src/Progress.py:127
+msgid "installed"
+msgstr ""
+
+#: src/Progress.py:129
+#, fuzzy
+msgid "removed"
+msgstr "verwijderen"
+
+#: src/Progress.py:131
+msgid "upgraded"
+msgstr ""
+
+#: src/Progress.py:133
+#, fuzzy
+msgid "%1 / %2 package %3"
+msgstr "Nu %1<b>%2</b> (%3 van %4)"
+
+#: src/Commander.py:60
+msgid "Can't connect to Comar daemon"
+msgstr "Kan geen verbinding maken met de Comar-dienst"
+
 #: src/package-manager.py:41
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi-pakketbeheer"
 
-#: src/package-manager.py:49 src/package-manager.py:750
+#: src/package-manager.py:49 src/package-manager.py:751
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -141,225 +285,149 @@ msgstr "Pakket(ten) verwijderen"
 msgid "Upgrade Package(s)"
 msgstr "Geselecteerde pakketten opwaarderen"
 
-#: src/package-manager.py:257
+#: src/package-manager.py:254 src/package-manager.py:564
+#: src/package-manager.py:708
+msgid "All"
+msgstr ""
+
+#: src/package-manager.py:258
 msgid "There are no updates available at this time"
 msgstr "Er zijn momenteel geen updates beschikbaar"
 
-#: src/package-manager.py:282 src/CustomEventListener.py:47
-#: src/CustomEventListener.py:51
-msgid "Select all packages in this category"
-msgstr "Alle pakketten in deze categorie selecteren"
-
-#: src/package-manager.py:284 src/CustomEventListener.py:48
-msgid "Reverse package selections"
-msgstr ""
-
-#: src/package-manager.py:351
+#: src/package-manager.py:352
 msgid "N\\A"
 msgstr "N\\B"
 
-#: src/package-manager.py:366
+#: src/package-manager.py:367
 msgid "Description: "
 msgstr "Beschrijving: "
 
-#: src/package-manager.py:366
+#: src/package-manager.py:367
 msgid "Version: "
 msgstr "Versie: "
 
-#: src/package-manager.py:367
+#: src/package-manager.py:368
 msgid "Package Size: "
 msgstr "Pakketgrootte: "
 
-#: src/package-manager.py:367
+#: src/package-manager.py:368
 msgid "Homepage: "
 msgstr "Homepage: "
 
 # mand tonen
-#: src/package-manager.py:409
+#: src/package-manager.py:410
 #, fuzzy
 msgid "Currently your basket is empty."
 msgstr "Mand tonen"
 
-#: src/package-manager.py:412 src/package-manager.py:420
+#: src/package-manager.py:413 src/package-manager.py:421
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/package-manager.py:415
+#: src/package-manager.py:416
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr ""
 
 # mand tonen
-#: src/package-manager.py:417 src/package-manager.py:425
+#: src/package-manager.py:418 src/package-manager.py:426
 #, fuzzy
 msgid "in your basket."
 msgstr "Mand tonen"
 
-#: src/package-manager.py:423
+#: src/package-manager.py:424
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr ""
 
-#: src/package-manager.py:456
+#: src/package-manager.py:457
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 
-#: src/package-manager.py:457 src/package-manager.py:465
+#: src/package-manager.py:458 src/package-manager.py:466
 msgid "Conflict Error"
 msgstr ""
 
-#: src/package-manager.py:461
+#: src/package-manager.py:462
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/package-manager.py:463
+#: src/package-manager.py:464
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/package-manager.py:464
+#: src/package-manager.py:465
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
 msgstr ""
 
-#: src/package-manager.py:555
+#: src/package-manager.py:556
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:563 src/package-manager.py:708
-msgid "All"
-msgstr ""
-
-#: src/package-manager.py:571
+#: src/package-manager.py:572
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
-#: src/package-manager.py:592 src/package-manager.py:607
+#: src/package-manager.py:593 src/package-manager.py:608
 #, fuzzy
 msgid "<b>Installing Package(s)</b>"
 msgstr "Pakket(ten) installeren"
 
-#: src/package-manager.py:594 src/package-manager.py:611
+#: src/package-manager.py:595 src/package-manager.py:612
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:609
+#: src/package-manager.py:597 src/CommonText.py:3
+msgid "downloading"
+msgstr "downloaden"
+
+#: src/package-manager.py:610
 #, fuzzy
 msgid "<b>Removing Package(s)</b>"
 msgstr "Pakket(ten) verwijderen"
 
-#: src/package-manager.py:641
+#: src/package-manager.py:642
 #, fuzzy
 msgid "<b>Applying Repository Changes</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:644
+#: src/package-manager.py:645
 #, fuzzy
 msgid "<b>Updating Repository</b>"
 msgstr "Repository bewerken"
 
-#: src/package-manager.py:645
+#: src/package-manager.py:646
 #, fuzzy
 msgid "Downloading package list of %1"
 msgstr "Pakketlijst wordt geladen..."
 
-#: src/package-manager.py:770
+#: src/package-manager.py:771
 msgid "Show Installed Packages"
 msgstr "Geinstalleerde pakketten tonen"
 
-#: src/package-manager.py:771
+#: src/package-manager.py:772
 msgid "Show New Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:772
+#: src/package-manager.py:773
 #, fuzzy
 msgid "Show Upgradable Packages"
 msgstr "Nieuwe pakketten tonen"
 
-#: src/package-manager.py:791
+#: src/package-manager.py:792
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:791
+#: src/package-manager.py:792
 msgid "Show available updates"
 msgstr "Beschikbare updates tonen"
 
-#: src/package-manager.py:794
+#: src/package-manager.py:795
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is reeds opgestart!"
-
-#: src/Progress.py:39
-#, fuzzy
-msgid "downloaded ( total: %1 )"
-msgstr "<b>Gedownload/totaal:<b> %1 %2 %3 %4"
-
-#: src/Progress.py:64
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>PiSi wordt voorbereid...b>"
-
-#: src/Progress.py:66 src/ProgressDialog.py:94
-msgid "--"
-msgstr ""
-
-#: src/Progress.py:67 src/ProgressDialog.py:93
-msgid "downloaded (total: -- )"
-msgstr ""
-
-#: src/Progress.py:68 src/ProgressDialog.py:92
-msgid "-- / --  package"
-msgstr ""
-
-#: src/Progress.py:86
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Handeling wordt geannuleerd...</b>"
-
-#: src/Progress.py:113 src/Progress.py:117
-#, fuzzy
-msgid "Now %1 <b>%2</b> package"
-msgstr "Nu %1<b>%2</b> (%3 van %4)"
-
-#: src/Progress.py:127
-msgid "installed"
-msgstr ""
-
-#: src/Progress.py:129
-#, fuzzy
-msgid "removed"
-msgstr "verwijderen"
-
-#: src/Progress.py:131
-msgid "upgraded"
-msgstr ""
-
-#: src/Progress.py:133
-#, fuzzy
-msgid "%1 / %2 package %3"
-msgstr "Nu %1<b>%2</b> (%3 van %4)"
-
-#: src/Commander.py:60
-msgid "Can't connect to Comar daemon"
-msgstr "Kan geen verbinding maken met de Comar-dienst"
-
-#: src/HelpDialog.py:20
-msgid "Package Manager Help"
-msgstr "Pakketbeheer-help"
-
-#: src/ProgressDialog.py:91
-msgid "Progress"
-msgstr "Voortgang"
-
-#: src/ProgressDialog.py:96
-msgid "Alt+C"
-msgstr ""
-
-#: src/ProgressDialog.py:98
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>PiSi wordt voorbereid...</h3>"
-
-#: src/ProgressDialog.py:99
-msgid "Now installing <b>amsn</b> package"
-msgstr ""
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:168
 msgid "Repository Name"
@@ -488,88 +556,21 @@ msgstr "Mb <i>(gebruik 0 voor geen limiet)</i>"
 msgid "C&ache"
 msgstr "C&ache"
 
-#: src/RepoDialog.py:72
-msgid "Repository Dialog"
-msgstr "Repositorydialoog"
+#: src/CommonText.py:3
+msgid "extracting"
+msgstr "uitpakken"
 
-#: src/RepoDialog.py:73
-msgid "&Ok"
-msgstr "&Ok"
+#: src/CommonText.py:3
+msgid "configuring"
+msgstr "instellen"
 
-#: src/RepoDialog.py:75
-msgid "Repository &Address"
-msgstr "Repository-&adres"
+#: src/CommonText.py:3
+msgid "removing"
+msgstr "verwijderen"
 
-#: src/RepoDialog.py:76
-msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+#: src/CommonText.py:3
+msgid "installing"
 msgstr ""
-"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
-
-#: src/RepoDialog.py:79
-msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
-msgstr ""
-
-#: src/RepoDialog.py:80
-msgid "Repository &Name"
-msgstr "Repository&naam"
-
-#: src/RepoDialog.py:81
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
-
-#: src/BasketDialog.py:45 src/BasketDialog.py:50
-msgid "Basket"
-msgstr ""
-
-#: src/BasketDialog.py:58
-#, fuzzy
-msgid "Selected package(s) for removal:"
-msgstr "Te installeren pakket"
-
-#: src/BasketDialog.py:59
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr ""
-
-#: src/BasketDialog.py:61
-#, fuzzy
-msgid "Selected package(s) for install:"
-msgstr "Te installeren pakket"
-
-#: src/BasketDialog.py:62
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-
-#: src/BasketDialog.py:64
-#, fuzzy
-msgid "Selected package(s) for upgrade:"
-msgstr "Te installeren pakket"
-
-#: src/BasketDialog.py:65
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr ""
-
-#: src/BasketDialog.py:73
-msgid "Total Size:"
-msgstr ""
-
-#: src/BasketDialog.py:80
-msgid "Update Basket"
-msgstr ""
-
-#: src/BasketDialog.py:152
-msgid "Total Size: <b>%1</b>"
-msgstr ""
-
-#: src/BasketDialog.py:201 src/BasketDialog.py:203
-#, fuzzy
-msgid "Size: "
-msgstr "Pakketgrootte: "
 
 #~ msgid ""
 #~ "Package repository still does not have category information.\n"
