@@ -68,7 +68,8 @@ void Kaptan::next()
     else if ( currentPage() == wallpaper ) {
         if ( wallpaper->changeWallpaper() )
             wallpaper->setWallpaper();
-            cancelButton()->hide();
+            // No Hiding for cancel button to protect the order
+            //cancelButton()->hide();
     }
 
     QWizard::next();
@@ -76,8 +77,9 @@ void Kaptan::next()
 
 void Kaptan::back()
 {
-  if ( currentPage() == goodbye )
-    cancelButton()->show();
+  // No Hiding so no need it.
+  //if ( currentPage() == goodbye )
+  //  cancelButton()->show();
 
   QWizard::back();
 }
