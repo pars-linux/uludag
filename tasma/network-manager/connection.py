@@ -269,8 +269,6 @@ class Window(QMainWindow):
         
         hb = QHBox(vb)
         hb.setSpacing(12)
-        but = QPushButton(i18n("Connect"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotConnect)
         but = QPushButton(i18n("Accept"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAccept)
         but = QPushButton(i18n("Cancel"), hb)
@@ -351,10 +349,6 @@ class Window(QMainWindow):
     def slotScan(self):
         if self.device:
             self.comar.call_package("Net.Link.scanRemote", self.link_name, [ "device", self.device ], id=6)
-    
-    def slotConnect(self):
-        self.setData(32)
-        self.hide()
     
     def slotAccept(self):
         self.setData()

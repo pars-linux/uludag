@@ -20,6 +20,10 @@ import widgets
 from icons import icons, getIconSet
 
 
+def connHash(script, name):
+    return unicode("%s %s" % (script, name))
+
+
 class MinButton(QPushButton):
     def __init__(self, title, parent):
         QPushButton.__init__(self, title, parent)
@@ -63,7 +67,7 @@ class Connection(QWidget):
         self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
         self.del_but = MinButton("Delete", self)
         self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
-        view.connections["%s %s" % (script, name)] = self
+        view.connections[connHash(script, name)] = self
         self.show()
         
         self.view = view
@@ -262,7 +266,8 @@ class ConnectionView(QScrollView):
         return QScrollView.resizeEvent(self, event)
     
     def add(self, script, data):
-        if self.find(script, data):
+        name = data.split("\n")[0]
+        if self.find(script, name) != None:
             return
         Connection(self, script, data)
         self.myResize(self.width())
@@ -274,11 +279,11 @@ class ConnectionView(QScrollView):
         dev = self.devices[conn.devid]
         conn.hide()
         dev.removeChild(conn)
-        del self.connections["%s %s" % (script, unicode(name))]
+        del self.connections[connHash(script, name)]
         self.myResize(self.width())
     
     def find(self, script, name):
-        return self.connections.get("%s %s" % (script, unicode(name)), None)
+        return self.connections.get(connHash(script, name), None)
 
 
 class Widget(QVBox):
@@ -377,8 +382,6 @@ class Widget(QVBox):
                 self.stack.slotComar(reply)
         
         elif reply.command == "notify":
-            noti, script, data = reply[2].split("\n", 2)
-
             if reply.notify == "Net.Link.stateChanged":
                 name, state = reply.data.split("\n", 1)
                 conn = self.view.find(reply.script, name)
@@ -402,13 +405,15 @@ class Widget(QVBox):
                 elif mode == "configured":
                     type, name = name.split(" ", 1)
                     if type == "device":
-                        self.comar.call_package("Net.Link.connectionInfo", script, [ "name", name ], id=2)
+                        self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
                     elif type == "address":
-                        self.comar.call_package("Net.Link.getAddress", script, [ "name", name ], id=3)
+                        self.comar.call_package("Net.Link.getAddress", reply.script, [ "name", name ], id=3)
                     elif type == "state":
-                        self.comar.call_package("Net.Link.getState", script, [ "name", name ], id=4)
+                        self.comar.call_package("Net.Link.getState", reply.script, [ "name", name ], id=4)
             
             elif noti == "Net.Link.deviceChanged":
+                # FIXME
+                return
                 type, rest = data.split(" ", 1)
                 if type != "new":
                     return
