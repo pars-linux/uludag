@@ -80,7 +80,6 @@
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
-        <SelectedPackage>ksynaptics</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>kvpnc</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
@@ -368,7 +367,6 @@
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
-        <Package>ksynaptics</Package>
         <Package>ktorrent</Package>
         <Package>kvpnc</Package>
         <Package>ladspa-sdk</Package>
@@ -475,7 +473,6 @@
         <Package>libsigc++</Package>
         <Package>libsndfile</Package>
         <Package>libstdc++</Package>
-        <Package>libsynaptics</Package>
         <Package>libtheora</Package>
         <Package>libtool</Package>
         <Package>libungif</Package>
