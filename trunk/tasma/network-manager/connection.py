@@ -14,7 +14,6 @@ from kdecore import i18n
 from links import links
 import widgets
 import comar
-import csapi
 
 
 class AuthTab(QWidget):
@@ -165,7 +164,10 @@ class Address(QVBox):
         addr = unicode(addr)
         mask = self.netmask.edit
         if "." in addr:
-            cl = csapi.atoi(addr.split(".", 1)[0])
+            try:
+                cl = int(addr.split(".", 1)[0])
+            except:
+                cl = 0
             m = unicode(mask.text())
             if not self.maskOK(m):
                 return
