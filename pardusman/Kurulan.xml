@@ -1,5 +1,5 @@
 <PardusmanProject type="install" size="734003200">
-    <Title>Pardus 2006-11-03</Title>
+    <Title>Pardus 2007 Beta</Title>
     <WorkDir>/home/gurer/uludag/trunk/pardusman/test/</WorkDir>
     <ReleaseFiles>/home/gurer/uludag/trunk/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
@@ -200,7 +200,6 @@
         <Package>aalib</Package>
         <Package>acerhk</Package>
         <Package>acl</Package>
-        <Package>acpid</Package>
         <Package>acx100</Package>
         <Package>acx100-firmware</Package>
         <Package>agg</Package>
@@ -264,7 +263,6 @@
         <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
-        <Package>cpufrequtils</Package>
         <Package>crack-attack</Package>
         <Package>crack-attack-music</Package>
         <Package>crack-attack-sounds</Package>
@@ -644,7 +642,6 @@
         <Package>portaudio</Package>
         <Package>portmap</Package>
         <Package>poster</Package>
-        <Package>powersave</Package>
         <Package>ppp</Package>
         <Package>pptpclient</Package>
         <Package>procps</Package>
