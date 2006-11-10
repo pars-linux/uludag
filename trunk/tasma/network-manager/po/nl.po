@@ -1,7 +1,7 @@
 # translation of nl.po to Dutch
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the net-kga package.
-#
+# 
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Willem Gielen <w.gielen@gmail.com>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-23 16:21+0200\n"
+"POT-Creation-Date: 2006-11-10 15:27+0200\n"
 "PO-Revision-Date: 2006-08-08 23:26+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -19,128 +19,12 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: connection.py:32
-msgid "No authentication"
-msgstr "Geen toegang"
-
-#: connection.py:37
-msgid "Passphrase:"
-msgstr "Wachtwoord:"
-
-#: connection.py:45
-msgid "Login"
-msgstr "Gebruikersnaam"
-
-#: connection.py:50 connection.py:237
-msgid "Name:"
-msgstr "Naam: "
-
-#: connection.py:60
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: connection.py:66
-msgid "Key"
-msgstr "Sleutel"
-
-#: connection.py:112
-msgid "Network:"
-msgstr "Netwerk:"
-
-#: connection.py:122
-msgid "Automatic query (DHCP)"
-msgstr "Automatisch aanvragen (DHCP)"
-
-#: connection.py:126
-msgid "Manual"
-msgstr "Handmatig"
-
-#: connection.py:130
-msgid "Address:"
-msgstr "Adres:"
-
-#: connection.py:136
-msgid "Net mask:"
-msgstr "Netmask:"
-
-#: connection.py:141
-msgid "Gateway:"
-msgstr "Poort:"
-
-#: connection.py:202 connection.py:209
-msgid "Device:"
-msgstr "Apparaat"
-
-#: connection.py:223
-msgid "Scan"
-msgstr "Scan"
-
-#: connection.py:254
-#, fuzzy
-# infinitief vertalen: netwerkverbinding configureren
-msgid "Configure network connection"
-msgstr "Configureer netwerkverbinding"
-
-#: connection.py:266
-msgid "Basic"
-msgstr "Basis"
-
-#: connection.py:270 mainwin.py:106
-msgid "Connect"
-msgstr "Verbinden"
-
-#: connection.py:272
-msgid "Accept"
-msgstr "Accepteren"
-
-#: connection.py:291
-msgid "Phone number"
-msgstr "Telefoonnummer"
-
-#: connection.py:300
-msgid "No device"
-msgstr "Geen apparaat"
-
-#: connection.py:402
-msgid "Authentication"
-msgstr "Authenticatie"
-
-#: mainwin.py:51
-msgid "Active"
-msgstr "Actief"
-
-#: mainwin.py:53
-msgid "Inactive"
-msgstr "Inactief"
-
-#: mainwin.py:89
-msgid "Network connections:"
-msgstr "Netwerkverbindingen:"
-
-#: mainwin.py:91
-msgid "Settings"
-msgstr "Instellingen"
-
-#: mainwin.py:100
-msgid "Create"
-msgstr "Aanmaken"
-
-#: mainwin.py:108
-msgid "Disconnect"
-msgstr "Verbinding verbreken"
-
-#: mainwin.py:128
-msgid "Unconfigured"
-msgstr "Niet geconfigureerd"
-
-#: mainwin.py:258
-#, python-format
-#, fuzzy
 #  string anders opmaken:
 #  Wilt u de verbinding\n
 # %s\n
 # verwijderen?
-
+#: mainwin.py:94
+#, fuzzy, python-format
 msgid ""
 "Should I delete the\n"
 "'%s'\n"
@@ -150,21 +34,32 @@ msgstr ""
 "'%s\n"
 "verbinding verwijderen?"
 
-#: mainwin.py:261
+#: mainwin.py:95
 msgid "Delete connection?"
 msgstr "Verbinding verwijderen?"
 
-#: net_kga.py:23
-msgid "Network connections"
-msgstr "Netwerkverbindingen"
+#: mainwin.py:130
+msgid "Automatic"
+msgstr ""
 
-#: net_kga.py:52
-msgid "Network Connections"
-msgstr "Netwerkverbindingen"
+#: mainwin.py:310
+#, fuzzy
+msgid "New connection"
+msgstr "nieuwe verbinding"
 
-#: net_kga.py:114
-msgid "Network KGA is already running!"
-msgstr "Netwerk KGA is al actief!"
+#: mainwin.py:315
+#, fuzzy
+msgid "Name Service Settings"
+msgstr "Netwerkinstellingen"
+
+#: mainwin.py:343
+msgid "Unconfigured"
+msgstr "Niet geconfigureerd"
+
+#: mainwin.py:349
+#, fuzzy
+msgid "Network Connections Help"
+msgstr "Netwerkverbindingen"
 
 #: links.py:63
 msgid "Connection types"
@@ -186,12 +81,104 @@ msgstr "nieuwe verbinding"
 msgid "Install network packages!"
 msgstr "Installeer netwerkpakketten!"
 
-#: links.py:111
-#, fuzzy
 # koppelteken vergeten:
 # Comar-netwerkscripts
+#: links.py:111
+#, fuzzy
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Er is nog geen pakket met de COMAR netwerkscripts geïnstalleerd."
+
+#: connection.py:31
+msgid "No authentication"
+msgstr "Geen toegang"
+
+#: connection.py:36
+msgid "Passphrase:"
+msgstr "Wachtwoord:"
+
+#: connection.py:44
+msgid "Login"
+msgstr "Gebruikersnaam"
+
+#: connection.py:49 connection.py:239
+msgid "Name:"
+msgstr "Naam: "
+
+#: connection.py:59
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: connection.py:65
+msgid "Key"
+msgstr "Sleutel"
+
+#: connection.py:111
+msgid "Network:"
+msgstr "Netwerk:"
+
+#: connection.py:121
+msgid "Automatic query (DHCP)"
+msgstr "Automatisch aanvragen (DHCP)"
+
+#: connection.py:125
+msgid "Manual"
+msgstr "Handmatig"
+
+#: connection.py:129
+msgid "Address:"
+msgstr "Adres:"
+
+#: connection.py:135
+msgid "Net mask:"
+msgstr "Netmask:"
+
+#: connection.py:140
+msgid "Gateway:"
+msgstr "Poort:"
+
+#: connection.py:204 connection.py:211
+msgid "Device:"
+msgstr "Apparaat"
+
+#: connection.py:225
+msgid "Scan"
+msgstr "Scan"
+
+# infinitief vertalen: netwerkverbinding configureren
+#: connection.py:256
+#, fuzzy
+msgid "Configure network connection"
+msgstr "Configureer netwerkverbinding"
+
+#: connection.py:268
+msgid "Basic"
+msgstr "Basis"
+
+#: connection.py:272
+msgid "Accept"
+msgstr "Accepteren"
+
+#: connection.py:291
+msgid "Phone number"
+msgstr "Telefoonnummer"
+
+#: connection.py:300
+msgid "No device"
+msgstr "Geen apparaat"
+
+#: connection.py:398
+msgid "Authentication"
+msgstr "Authenticatie"
+
+#: network-manager.py:34 network-manager.py:86
+#, fuzzy
+msgid "Network Manager"
+msgstr "Netwerkinstellingen"
+
+#: network-manager.py:81
+#, fuzzy
+msgid "Network manager module is already started!"
+msgstr "Netwerk KGA is al actief!"
 
 #: stack.py:25
 msgid "Network Settings"
@@ -205,16 +192,16 @@ msgstr "Computer"
 msgid "Host name:"
 msgstr "Hostnaam:"
 
+# naamservers
 #: stack.py:40
 #, fuzzy
-# naamservers
 msgid "Name servers"
 msgstr "Nameservers"
 
-#: stack.py:84
-#, fuzzy
 # infinitief vertalen:
 # Naamserver toevoegen
+#: stack.py:84
+#, fuzzy
 msgid "Add Name Server"
 msgstr "Voeg nameserver toe"
 
@@ -222,4 +209,26 @@ msgstr "Voeg nameserver toe"
 msgid "Name server:"
 msgstr "Naamserver:"
 
+#~ msgid "Connect"
+#~ msgstr "Verbinden"
 
+#~ msgid "Active"
+#~ msgstr "Actief"
+
+#~ msgid "Inactive"
+#~ msgstr "Inactief"
+
+#~ msgid "Network connections:"
+#~ msgstr "Netwerkverbindingen:"
+
+#~ msgid "Settings"
+#~ msgstr "Instellingen"
+
+#~ msgid "Create"
+#~ msgstr "Aanmaken"
+
+#~ msgid "Disconnect"
+#~ msgstr "Verbinding verbreken"
+
+#~ msgid "Network connections"
+#~ msgstr "Netwerkverbindingen"
