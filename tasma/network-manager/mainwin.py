@@ -167,9 +167,6 @@ class Device(QWidget):
         self.setFont(f)
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
-        self.mypix = QImage("ethernet.png")
-        self.mypix = self.mypix.scale(24, 24)
-        self.mypix = QPixmap(self.mypix)
         self.connections = []
         parent.devices[id] = self
     
@@ -184,7 +181,6 @@ class Device(QWidget):
         paint = QPainter(self)
         paint.fillRect(QRect(0, 0, self.width(), self.myHeight()), QBrush(cg.mid(), Qt.Dense7Pattern))
         paint.fillRect(QRect(0, self.myHeight(), self.width(), self.height() - self.myHeight()), QBrush(cg.midlight()))
-        paint.drawPixmap(0, 0, self.mypix)
         paint.drawText(25, self.myBase + 5, self.name)
     
     def heightForWidth(self, width):
