@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-06 23:32+0200\n"
+"POT-Creation-Date: 2006-11-10 14:27+0200\n"
 "PO-Revision-Date: 2006-10-14 00:20+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -23,25 +23,124 @@ msgstr ""
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/CommonText.py:3 src/package-manager.py:596
-msgid "downloading"
-msgstr "indiriliyor"
+#: src/ProgressDialog.py:91
+msgid "Progress"
+msgstr "İşlem"
 
-#: src/CommonText.py:3
-msgid "extracting"
-msgstr "açılıyor"
+#: src/ProgressDialog.py:92 src/Progress.py:68
+msgid "-- / --  package"
+msgstr "-- / -- paket"
 
-#: src/CommonText.py:3
-msgid "configuring"
-msgstr "ayarlanıyor"
+#: src/ProgressDialog.py:93 src/Progress.py:67
+msgid "downloaded (total: -- )"
+msgstr "indirildi (toplam: --)"
 
-#: src/CommonText.py:3
-msgid "removing"
-msgstr "kaldırılıyor"
+#: src/ProgressDialog.py:94 src/Progress.py:66
+msgid "--"
+msgstr "--"
 
-#: src/CommonText.py:3
-msgid "installing"
-msgstr "kuruluyor"
+#: src/ProgressDialog.py:96
+msgid "Alt+C"
+msgstr ""
+
+#: src/ProgressDialog.py:98
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>PiSi hazırlanıyor...</h3>"
+
+#: src/ProgressDialog.py:99
+msgid "Now installing <b>amsn</b> package"
+msgstr ""
+
+#: src/CustomEventListener.py:47 src/CustomEventListener.py:51
+#: src/package-manager.py:283
+msgid "Select all packages in this category"
+msgstr "Bu kategorideki tüm paketleri seç"
+
+#: src/CustomEventListener.py:48 src/package-manager.py:285
+msgid "Reverse package selections"
+msgstr "Paket seçimlerini ters çevir"
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr "Depo Penceresi"
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr "&Tamam"
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr "D&epo Adresi"
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
+msgstr ""
+
+#: src/RepoDialog.py:80
+msgid "Repository &Name"
+msgstr "&Depo Adı"
+
+#: src/RepoDialog.py:81
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
+
+#: src/BasketDialog.py:45 src/BasketDialog.py:50
+msgid "Basket"
+msgstr "Sepet"
+
+#: src/BasketDialog.py:58
+msgid "Selected package(s) for removal:"
+msgstr "Kaldırılmak üzere seçilmiş paket(ler):"
+
+#: src/BasketDialog.py:59
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
+
+#: src/BasketDialog.py:61
+msgid "Selected package(s) for install:"
+msgstr "Kurulmak üzere seçilmiş paket(ler):"
+
+#: src/BasketDialog.py:62
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Seçili paketlerin ayrıca kurulacak olan ekstra bağımlılıkları:"
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for upgrade:"
+msgstr "Güncellenmek üzere seçilmiş paket(ler):"
+
+#: src/BasketDialog.py:65
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Seçili paketlerin ayrıca güncellenecek olan ekstra bağımlılıkları:"
+
+#: src/BasketDialog.py:73
+msgid "Total Size:"
+msgstr "Toplam Boyut:"
+
+#: src/BasketDialog.py:80
+msgid "Update Basket"
+msgstr "Sepeti Güncelle"
+
+#: src/BasketDialog.py:152
+msgid "Total Size: <b>%1</b>"
+msgstr "Toplam Boyut: <b>%1</b>"
+
+#: src/BasketDialog.py:201 src/BasketDialog.py:203
+msgid "Size: "
+msgstr "Boyut: "
+
+#: src/HelpDialog.py:20
+msgid "Package Manager Help"
+msgstr "Paket Yöneticisi Yardım"
 
 #: src/Preferences.py:65
 msgid "Add New Repository"
@@ -63,11 +162,47 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
 
+#: src/Progress.py:39
+msgid "downloaded ( total: %1 )"
+msgstr "indirildi ( toplam: %1 )"
+
+#: src/Progress.py:64
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<h3>PiSi hazırlanıyor...</h3>"
+
+#: src/Progress.py:86
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>İşlem iptal ediliyor...</b>"
+
+#: src/Progress.py:113 src/Progress.py:117
+msgid "Now %1 <b>%2</b> package"
+msgstr "Şu anda <b>%2</b> paketi %1"
+
+#: src/Progress.py:127
+msgid "installed"
+msgstr "kuruldu"
+
+#: src/Progress.py:129
+msgid "removed"
+msgstr "kaldırıldı"
+
+#: src/Progress.py:131
+msgid "upgraded"
+msgstr "güncellendi"
+
+#: src/Progress.py:133
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paket %3"
+
+#: src/Commander.py:60
+msgid "Can't connect to Comar daemon"
+msgstr "Çomar sunucusuna bağlanılamadı"
+
 #: src/package-manager.py:41
 msgid "GUI for PiSi package manager"
 msgstr "PiSi paket yöneticisi için arayüz"
 
-#: src/package-manager.py:49 src/package-manager.py:750
+#: src/package-manager.py:49 src/package-manager.py:751
 msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 
@@ -145,81 +280,77 @@ msgstr "Paket(ler)i Kaldır"
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: src/package-manager.py:257
+#: src/package-manager.py:254 src/package-manager.py:564
+#: src/package-manager.py:708
+msgid "All"
+msgstr "Tümü"
+
+#: src/package-manager.py:258
 msgid "There are no updates available at this time"
 msgstr "Şu anda mevcut bir güncelleme yok"
 
-#: src/package-manager.py:282 src/CustomEventListener.py:47
-#: src/CustomEventListener.py:51
-msgid "Select all packages in this category"
-msgstr "Bu kategorideki tüm paketleri seç"
-
-#: src/package-manager.py:284 src/CustomEventListener.py:48
-msgid "Reverse package selections"
-msgstr "Paket seçimlerini ters çevir"
-
-#: src/package-manager.py:351
+#: src/package-manager.py:352
 msgid "N\\A"
 msgstr "Bilinmiyor"
 
-#: src/package-manager.py:366
+#: src/package-manager.py:367
 msgid "Description: "
 msgstr "Açıklama: "
 
-#: src/package-manager.py:366
+#: src/package-manager.py:367
 msgid "Version: "
 msgstr "Sürüm: "
 
-#: src/package-manager.py:367
+#: src/package-manager.py:368
 msgid "Package Size: "
 msgstr "Paket Boyutu: "
 
-#: src/package-manager.py:367
+#: src/package-manager.py:368
 msgid "Homepage: "
 msgstr "Web sayfası: "
 
-#: src/package-manager.py:409
+#: src/package-manager.py:410
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
-#: src/package-manager.py:412 src/package-manager.py:420
+#: src/package-manager.py:413 src/package-manager.py:421
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
-#: src/package-manager.py:415
+#: src/package-manager.py:416
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ekstra bağımlılık "
 
-#: src/package-manager.py:417 src/package-manager.py:425
+#: src/package-manager.py:418 src/package-manager.py:426
 msgid "in your basket."
 msgstr "bulunuyor."
 
-#: src/package-manager.py:423
+#: src/package-manager.py:424
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ters bağımlılık "
 
-#: src/package-manager.py:456
+#: src/package-manager.py:457
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
-#: src/package-manager.py:457 src/package-manager.py:465
+#: src/package-manager.py:458 src/package-manager.py:466
 msgid "Conflict Error"
 msgstr "Çakışma Hatası"
 
-#: src/package-manager.py:461
+#: src/package-manager.py:462
 msgid "The following packages conflicts:\n"
 msgstr "Aşağıdaki paketler çakışıyor:\n"
 
-#: src/package-manager.py:463
+#: src/package-manager.py:464
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1: [%2] ile çakışıyor\n"
 
-#: src/package-manager.py:464
+#: src/package-manager.py:465
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
@@ -227,133 +358,65 @@ msgstr ""
 "\n"
 "Çakışan paketler kaldırılsın mı?"
 
-#: src/package-manager.py:555
+#: src/package-manager.py:556
 msgid "Others"
 msgstr "Diğerleri"
 
-#: src/package-manager.py:563 src/package-manager.py:708
-msgid "All"
-msgstr "Tümü"
-
-#: src/package-manager.py:571
+#: src/package-manager.py:572
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
-#: src/package-manager.py:592 src/package-manager.py:607
+#: src/package-manager.py:593 src/package-manager.py:608
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Paket(ler) Kuruluyor</b>"
 
-#: src/package-manager.py:594 src/package-manager.py:611
+#: src/package-manager.py:595 src/package-manager.py:612
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Paket(ler) Güncelleniyor</b>"
 
-#: src/package-manager.py:609
+#: src/package-manager.py:597 src/CommonText.py:3
+msgid "downloading"
+msgstr "indiriliyor"
+
+#: src/package-manager.py:610
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Paket(ler) Kaldırılıyor</b>"
 
-#: src/package-manager.py:641
+#: src/package-manager.py:642
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Depo Değişiklikleri Uygulanıyor</b>"
 
-#: src/package-manager.py:644
+#: src/package-manager.py:645
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Depo Güncelleniyor</b>"
 
-#: src/package-manager.py:645
+#: src/package-manager.py:646
 msgid "Downloading package list of %1"
 msgstr "%1 paket listesi indiriliyor"
 
-#: src/package-manager.py:770
+#: src/package-manager.py:771
 msgid "Show Installed Packages"
 msgstr "Kurulu Paketleri Göster"
 
-#: src/package-manager.py:771
+#: src/package-manager.py:772
 msgid "Show New Packages"
 msgstr "Yeni Paketleri Göster"
 
-#: src/package-manager.py:772
+#: src/package-manager.py:773
 msgid "Show Upgradable Packages"
 msgstr "Güncellemeleri Göster"
 
-#: src/package-manager.py:791
+#: src/package-manager.py:792
 msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
-#: src/package-manager.py:791
+#: src/package-manager.py:792
 msgid "Show available updates"
 msgstr "Mevcut güncellemeleri göster"
 
-#: src/package-manager.py:794
+#: src/package-manager.py:795
 msgid "Package Manager is already running!"
 msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
-
-#: src/Progress.py:39
-msgid "downloaded ( total: %1 )"
-msgstr "indirildi ( toplam: %1 )"
-
-#: src/Progress.py:64
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<h3>PiSi hazırlanıyor...</h3>"
-
-#: src/Progress.py:66 src/ProgressDialog.py:94
-msgid "--"
-msgstr "--"
-
-#: src/Progress.py:67 src/ProgressDialog.py:93
-msgid "downloaded (total: -- )"
-msgstr "indirildi (toplam: --)"
-
-#: src/Progress.py:68 src/ProgressDialog.py:92
-msgid "-- / --  package"
-msgstr "-- / -- paket"
-
-#: src/Progress.py:86
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>İşlem iptal ediliyor...</b>"
-
-#: src/Progress.py:113 src/Progress.py:117
-msgid "Now %1 <b>%2</b> package"
-msgstr "Şu anda <b>%2</b> paketi %1"
-
-#: src/Progress.py:127
-msgid "installed"
-msgstr "kuruldu"
-
-#: src/Progress.py:129
-msgid "removed"
-msgstr "kaldırıldı"
-
-#: src/Progress.py:131
-msgid "upgraded"
-msgstr "güncellendi"
-
-#: src/Progress.py:133
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paket %3"
-
-#: src/Commander.py:60
-msgid "Can't connect to Comar daemon"
-msgstr "Çomar sunucusuna bağlanılamadı"
-
-#: src/HelpDialog.py:20
-msgid "Package Manager Help"
-msgstr "Paket Yöneticisi Yardım"
-
-#: src/ProgressDialog.py:91
-msgid "Progress"
-msgstr "İşlem"
-
-#: src/ProgressDialog.py:96
-msgid "Alt+C"
-msgstr ""
-
-#: src/ProgressDialog.py:98
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>PiSi hazırlanıyor...</h3>"
-
-#: src/ProgressDialog.py:99
-msgid "Now installing <b>amsn</b> package"
-msgstr ""
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:168
 msgid "Repository Name"
@@ -481,83 +544,21 @@ msgstr "Mb <i>(Sınır koymamak için 0 kullanın)</i>"
 msgid "C&ache"
 msgstr "&Önbellek"
 
-#: src/RepoDialog.py:72
-msgid "Repository Dialog"
-msgstr "Depo Penceresi"
+#: src/CommonText.py:3
+msgid "extracting"
+msgstr "açılıyor"
 
-#: src/RepoDialog.py:73
-msgid "&Ok"
-msgstr "&Tamam"
+#: src/CommonText.py:3
+msgid "configuring"
+msgstr "ayarlanıyor"
 
-#: src/RepoDialog.py:75
-msgid "Repository &Address"
-msgstr "D&epo Adresi"
+#: src/CommonText.py:3
+msgid "removing"
+msgstr "kaldırılıyor"
 
-#: src/RepoDialog.py:76
-msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr "Deponun adresi, örneğin <b>http://foo.bar.com/pisi-index.xml</b>"
-
-#: src/RepoDialog.py:79
-msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
-msgstr ""
-
-#: src/RepoDialog.py:80
-msgid "Repository &Name"
-msgstr "&Depo Adı"
-
-#: src/RepoDialog.py:81
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
-
-#: src/BasketDialog.py:45 src/BasketDialog.py:50
-msgid "Basket"
-msgstr "Sepet"
-
-#: src/BasketDialog.py:58
-msgid "Selected package(s) for removal:"
-msgstr "Kaldırılmak üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:59
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
-
-#: src/BasketDialog.py:61
-msgid "Selected package(s) for install:"
-msgstr "Kurulmak üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:62
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Seçili paketlerin ayrıca kurulacak olan ekstra bağımlılıkları:"
-
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for upgrade:"
-msgstr "Güncellenmek üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:65
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr "Seçili paketlerin ayrıca güncellenecek olan ekstra bağımlılıkları:"
-
-#: src/BasketDialog.py:73
-msgid "Total Size:"
-msgstr "Toplam Boyut:"
-
-#: src/BasketDialog.py:80
-msgid "Update Basket"
-msgstr "Sepeti Güncelle"
-
-#: src/BasketDialog.py:152
-msgid "Total Size: <b>%1</b>"
-msgstr "Toplam Boyut: <b>%1</b>"
-
-#: src/BasketDialog.py:201 src/BasketDialog.py:203
-msgid "Size: "
-msgstr "Boyut: "
+#: src/CommonText.py:3
+msgid "installing"
+msgstr "kuruluyor"
 
 #~ msgid "Fetching package (%1/%2) at %3 %4"
 #~ msgstr "(%1/%2) %3 %4 ile indiriliyor"
