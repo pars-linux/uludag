@@ -245,7 +245,7 @@ class MainApplicationWidget(QWidget):
         self.updateStatusBar()
         self.setCursor(Qt.arrowCursor)
 
-    def upgradeState(self):
+    def upgradeState(self, showInfoMsg=False):
         self.setCursor(Qt.waitCursor)
         upgradables = pisi.api.list_upgradable()
         self.createComponentList(upgradables, True)
@@ -254,10 +254,9 @@ class MainApplicationWidget(QWidget):
         self.lastSelectedComponent = i18n("All")
         self.setLastSelected()
 
-        if not upgradables and self.state != upgrade_state:
+        if not upgradables and showInfoMsg:
             KMessageBox.information(self,i18n("There are no updates available at this time"))
 
-        self.state = upgrade_state
         self.basket.setState(self.state)
         self.updateStatusBar()
         self.setCursor(Qt.arrowCursor)
@@ -668,12 +667,14 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
 
+        self.progressDialog.closeForced()
+        self.progressDialog.reset()
+
         if command == "System.Manager.updateAllRepositories":
-            self.upgradeState()
+            self.upgradeState(showInfoMsg=True)
 
         elif command == "System.Manager.setRepositories":
             self.updateCheck()
-            return
 
         elif command in ["System.Manager.updateAllRepositories",
                        "System.Manager.updatePackage",
@@ -681,9 +682,6 @@ class MainApplicationWidget(QWidget):
                        "System.Manager.removePackage",
                        "System.Manager.cancelled"]:
             self.refreshState()
-
-        self.progressDialog.closeForced()
-        self.progressDialog.reset()
 
     def installSingle(self):
         app = []
@@ -724,6 +722,7 @@ class MainApplicationWidget(QWidget):
 
     def updateCheck(self):
         self.resetState()
+        self.state = upgrade_state
         self.parent.showUpgradeAction.setChecked(True)
         self.processEvents()
         self.progressDialog.hideStatus(True)
