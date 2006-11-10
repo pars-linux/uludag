@@ -382,6 +382,10 @@ class Widget(QVBox):
                 name, state = reply.data.split("\n")
                 conn = self.view.find(reply.script, name)
                 if conn:
+                    if state == "up":
+                        conn.active = True
+                    else:
+                        conn.active = False
                     conn.updateState(state)
             elif reply.id == 5:
                 return
