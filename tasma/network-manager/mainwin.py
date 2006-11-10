@@ -279,6 +279,7 @@ class ConnectionView(QScrollView):
         dev = self.devices[conn.devid]
         conn.hide()
         dev.removeChild(conn)
+        dev.connections.remove(conn)
         del self.connections[connHash(script, name)]
         self.myResize(self.width())
     
@@ -391,9 +392,7 @@ class Widget(QVBox):
             elif reply.notify == "Net.Link.connectionChanged":
                 mode, name = reply.data.split(" ", 1)
                 if mode == "added":
-                    conn = self.view.find(reply.script, name)
-                    if conn:
-                        self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
+                    self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
                 elif mode == "deleted":
                     self.view.remove(reply.script, name)
                 elif mode == "gotaddress":
