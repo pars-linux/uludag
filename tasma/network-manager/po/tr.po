@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-23 16:21+0200\n"
+"POT-Creation-Date: 2006-11-10 15:27+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -15,119 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: connection.py:32
-msgid "No authentication"
-msgstr "Doğrulama yok"
-
-#: connection.py:37
-msgid "Passphrase:"
-msgstr "Parola cümlesi"
-
-#: connection.py:45
-msgid "Login"
-msgstr "Giriş"
-
-#: connection.py:50 connection.py:237
-msgid "Name:"
-msgstr "İsim:"
-
-#: connection.py:60
-msgid "Password:"
-msgstr "Parola:"
-
-#: connection.py:66
-msgid "Key"
-msgstr "Anahtar"
-
-#: connection.py:112
-msgid "Network:"
-msgstr "Ağ:"
-
-#: connection.py:122
-msgid "Automatic query (DHCP)"
-msgstr "Otomatik ayar (DHCP)"
-
-#: connection.py:126
-msgid "Manual"
-msgstr "Elle ayarla"
-
-#: connection.py:130
-msgid "Address:"
-msgstr "Adres:"
-
-#: connection.py:136
-msgid "Net mask:"
-msgstr "Ağ maskesi:"
-
-#: connection.py:141
-msgid "Gateway:"
-msgstr "Ağ geçidi:"
-
-#: connection.py:202 connection.py:209
-msgid "Device:"
-msgstr "Aygıt:"
-
-#: connection.py:223
-msgid "Scan"
-msgstr "Tara"
-
-#: connection.py:254
-msgid "Configure network connection"
-msgstr "Ağ bağlantısını ayarla"
-
-#: connection.py:266
-msgid "Basic"
-msgstr "Temel"
-
-#: connection.py:270 mainwin.py:106
-msgid "Connect"
-msgstr "Bağlan"
-
-#: connection.py:272
-msgid "Accept"
-msgstr "Kullan"
-
-#: connection.py:291
-msgid "Phone number"
-msgstr "Telefon"
-
-#: connection.py:300
-msgid "No device"
-msgstr "Aygıt yok"
-
-#: connection.py:402
-msgid "Authentication"
-msgstr "Kimlik doğrulama"
-
-#: mainwin.py:51
-msgid "Active"
-msgstr "Açık"
-
-#: mainwin.py:53
-msgid "Inactive"
-msgstr "Kapalı"
-
-#: mainwin.py:89
-msgid "Network connections:"
-msgstr "Ağ bağlantıları:"
-
-#: mainwin.py:91
-msgid "Settings"
-msgstr "Genel ayarlar"
-
-#: mainwin.py:100
-msgid "Create"
-msgstr "Oluştur"
-
-#: mainwin.py:108
-msgid "Disconnect"
-msgstr "Bağlantıyı kes"
-
-#: mainwin.py:128
-msgid "Unconfigured"
-msgstr "Ayarlanmamış"
-
-#: mainwin.py:258
+#: mainwin.py:94
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -137,21 +25,29 @@ msgstr ""
 "'%s'\n"
 "bağlantısını sileyim mi?"
 
-#: mainwin.py:261
+#: mainwin.py:95
 msgid "Delete connection?"
 msgstr "Bağlantıyı sil?"
 
-#: net_kga.py:23
-msgid "Network connections"
-msgstr "Ağ bağlantıları"
+#: mainwin.py:130
+msgid "Automatic"
+msgstr "Otomatik"
 
-#: net_kga.py:52
-msgid "Network Connections"
-msgstr "Ağ Bağlantılarım"
+#: mainwin.py:310
+msgid "New connection"
+msgstr "Yeni bağlantı"
 
-#: net_kga.py:114
-msgid "Network KGA is already running!"
-msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
+#: mainwin.py:315
+msgid "Name Service Settings"
+msgstr "İsim Servisi Ayarları"
+
+#: mainwin.py:343
+msgid "Unconfigured"
+msgstr "Ayarlanmamış"
+
+#: mainwin.py:349
+msgid "Network Connections Help"
+msgstr "Ağ Bağlantıları Yardımı"
 
 #: links.py:63
 msgid "Connection types"
@@ -177,6 +73,94 @@ msgstr "Ağ programlarını kurun!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
 
+#: connection.py:31
+msgid "No authentication"
+msgstr "Doğrulama yok"
+
+#: connection.py:36
+msgid "Passphrase:"
+msgstr "Parola cümlesi"
+
+#: connection.py:44
+msgid "Login"
+msgstr "Giriş"
+
+#: connection.py:49 connection.py:239
+msgid "Name:"
+msgstr "İsim:"
+
+#: connection.py:59
+msgid "Password:"
+msgstr "Parola:"
+
+#: connection.py:65
+msgid "Key"
+msgstr "Anahtar"
+
+#: connection.py:111
+msgid "Network:"
+msgstr "Ağ:"
+
+#: connection.py:121
+msgid "Automatic query (DHCP)"
+msgstr "Otomatik ayar (DHCP)"
+
+#: connection.py:125
+msgid "Manual"
+msgstr "Elle ayarla"
+
+#: connection.py:129
+msgid "Address:"
+msgstr "Adres:"
+
+#: connection.py:135
+msgid "Net mask:"
+msgstr "Ağ maskesi:"
+
+#: connection.py:140
+msgid "Gateway:"
+msgstr "Ağ geçidi:"
+
+#: connection.py:204 connection.py:211
+msgid "Device:"
+msgstr "Aygıt:"
+
+#: connection.py:225
+msgid "Scan"
+msgstr "Tara"
+
+#: connection.py:256
+msgid "Configure network connection"
+msgstr "Ağ bağlantısını ayarla"
+
+#: connection.py:268
+msgid "Basic"
+msgstr "Temel"
+
+#: connection.py:272
+msgid "Accept"
+msgstr "Kullan"
+
+#: connection.py:291
+msgid "Phone number"
+msgstr "Telefon"
+
+#: connection.py:300
+msgid "No device"
+msgstr "Aygıt yok"
+
+#: connection.py:398
+msgid "Authentication"
+msgstr "Kimlik doğrulama"
+
+#: network-manager.py:34 network-manager.py:86
+msgid "Network Manager"
+msgstr "Ağ Yöneticisi"
+
+#: network-manager.py:81
+msgid "Network manager module is already started!"
+msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
+
 #: stack.py:25
 msgid "Network Settings"
 msgstr "Ağ Ayarları"
@@ -200,3 +184,4 @@ msgstr "İsim Sunucusu Ekle"
 #: stack.py:84
 msgid "Name server:"
 msgstr "İsim sunucusu:"
+
