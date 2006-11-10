@@ -519,7 +519,7 @@ class MainApplicationWidget(QWidget):
         # Component packages will include the recursive component's packages also. So do NOT add sub components here!
         componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network",
                           "applications.multimedia", "applications.games","applications.hardware",
-                          "system.base","system.devel","system.kernel","applications.science",
+                          "system.base","system.devel","kernel","applications.science",
                           "programming", "system.locale", "server", "kde-i18n"]
 
         componentPackages = []
