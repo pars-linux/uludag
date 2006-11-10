@@ -32,7 +32,7 @@ Kaptan::Kaptan( QWidget *parent, const char *name )
     config->setGroup("General");
     config->writeEntry("RunOnStart", false);
     config->sync();
-    
+
     welcome = new Welcome( this );
     addPage( welcome, i18n( "Welcome" ) );
     setHelpEnabled( QWizard::page( 0 ), false );
@@ -68,20 +68,9 @@ void Kaptan::next()
     else if ( currentPage() == wallpaper ) {
         if ( wallpaper->changeWallpaper() )
             wallpaper->setWallpaper();
-            // No Hiding for cancel button to protect the order
-            //cancelButton()->hide();
     }
 
     QWizard::next();
-}
-
-void Kaptan::back()
-{
-  // No Hiding so no need it.
-  //if ( currentPage() == goodbye )
-  //  cancelButton()->show();
-
-  QWizard::back();
 }
 
 void Kaptan::accept()
