@@ -55,8 +55,8 @@ int main(int argc, char **argv)
             }
           else // A remote URL or kioslave
             {
-              const QString prefix = target.path().section('.',0,0).remove('/')+'-';
-              const QString extension = '.'+target.path().section('.',1,1);
+              const QString prefix = target.fileName().section('.',0,0)+'-';
+              const QString extension = '.'+target.fileName().section('.',1,1);
 
               KTempFile tempFile(prefix,extension);
               tempFile.setAutoDelete(true);
