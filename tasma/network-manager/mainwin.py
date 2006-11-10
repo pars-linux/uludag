@@ -115,7 +115,7 @@ class Connection(QWidget):
         self.ignore_signal = True
         self.check.setChecked(self.active)
         self.ignore_signal = False
-        self.mypix = icons.get_state("net", self.state)
+        self.mypix = icons.get_state(links.get_info(self.script).type, self.state)
         
         self.update()
     
