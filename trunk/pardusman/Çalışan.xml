@@ -24,6 +24,7 @@
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
+        <SelectedPackage>dhcp</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
         <SelectedPackage>dosbox</SelectedPackage>
         <SelectedPackage>dosfstools</SelectedPackage>
@@ -57,7 +58,6 @@
         <SelectedPackage>ipw3945</SelectedPackage>
         <SelectedPackage>ipw3945-daemon</SelectedPackage>
         <SelectedPackage>ipw3945-firmware</SelectedPackage>
-        <SelectedPackage>ipython</SelectedPackage>
         <SelectedPackage>irda-utils</SelectedPackage>
         <SelectedPackage>irqbalance</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
@@ -75,11 +75,13 @@
         <SelectedPackage>kdegames</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
+        <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
+        <SelectedPackage>kradio</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>kvpnc</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
@@ -132,17 +134,16 @@
         <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
-        <SelectedPackage>subversion</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
+        <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>tightvnc</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
-        <SelectedPackage>tvtime</SelectedPackage>
         <SelectedPackage>ufraw</SelectedPackage>
         <SelectedPackage>uhinv</SelectedPackage>
         <SelectedPackage>unace</SelectedPackage>
@@ -155,6 +156,7 @@
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
+        <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
         <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
@@ -175,6 +177,7 @@
         <Package>aalib</Package>
         <Package>acerhk</Package>
         <Package>acl</Package>
+        <Package>acpid</Package>
         <Package>acx100</Package>
         <Package>acx100-firmware</Package>
         <Package>agg</Package>
@@ -185,8 +188,6 @@
         <Package>alsa-oss</Package>
         <Package>alsa-utils</Package>
         <Package>amarok</Package>
-        <Package>apr</Package>
-        <Package>apr-util</Package>
         <Package>arts</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
@@ -234,6 +235,7 @@
         <Package>debianutils</Package>
         <Package>dejavu-fonts</Package>
         <Package>device-mapper</Package>
+        <Package>dhcp</Package>
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>disktype</Package>
@@ -331,7 +333,6 @@
         <Package>ipw3945</Package>
         <Package>ipw3945-daemon</Package>
         <Package>ipw3945-firmware</Package>
-        <Package>ipython</Package>
         <Package>irda-utils</Package>
         <Package>irqbalance</Package>
         <Package>jasper</Package>
@@ -358,6 +359,7 @@
         <Package>kdemultimedia</Package>
         <Package>kdenetwork</Package>
         <Package>kdepim</Package>
+        <Package>kdetv</Package>
         <Package>kdeutils</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
@@ -367,6 +369,7 @@
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
+        <Package>kradio</Package>
         <Package>ktorrent</Package>
         <Package>kvpnc</Package>
         <Package>ladspa-sdk</Package>
@@ -583,6 +586,7 @@
         <Package>rar</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
+        <Package>reiserfsprogs</Package>
         <Package>rp-pppoe</Package>
         <Package>rpcalc</Package>
         <Package>rt2400</Package>
@@ -623,7 +627,6 @@
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
         <Package>strace</Package>
-        <Package>subversion</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
         <Package>swig</Package>
@@ -640,6 +643,7 @@
         <Package>tcp-wrappers</Package>
         <Package>tcpdump</Package>
         <Package>telnet-bsd</Package>
+        <Package>testdisk</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>tightvnc</Package>
@@ -650,7 +654,6 @@
         <Package>transcode</Package>
         <Package>tulliana2</Package>
         <Package>tunepimp</Package>
-        <Package>tvtime</Package>
         <Package>twolame</Package>
         <Package>udev</Package>
         <Package>ufraw</Package>
@@ -679,6 +682,7 @@
         <Package>wireless-tools</Package>
         <Package>wpa_supplicant</Package>
         <Package>x264</Package>
+        <Package>x2x</Package>
         <Package>xbitmaps</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
@@ -702,5 +706,6 @@
         <Package>zlib</Package>
         <Package>zorg</Package>
         <Package>zpspell</Package>
+        <Package>zvbi</Package>
     </PackageSelection>
 </PardusmanProject>
