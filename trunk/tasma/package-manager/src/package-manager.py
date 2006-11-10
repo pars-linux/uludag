@@ -555,7 +555,7 @@ class MainApplicationWidget(QWidget):
             item = KListViewItem(self.listView)
             name = i18n("Others")
             item.setText(0, u"%s (%s)" % (name, len(rest_packages)))
-            item.setPixmap(0, KGlobal.iconLoader().loadIcon("package",KIcon.Desktop,KIcon.SizeMedium))
+            item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_applications",KIcon.Desktop,KIcon.SizeMedium))
             self.componentDict[item] = Component(name, rest_packages, name)
 
         # All of the component's packages
