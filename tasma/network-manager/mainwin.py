@@ -111,12 +111,23 @@ class Connection(QWidget):
     def slotEdit(self):
         w = connection.Window(self.view.parent(), self.name, self.script)
     
-    def update(self):
+    def updateState(self, state):
+        msg = ""
+        if "\n" in state:
+            state, msg = state.split("\n", 1)
+        if state == "on":
+            self.active = True
+        elif state == "off":
+            self.active = False
+        elif state in ("up", "connecting", "down"):
+            self.state = state
+        
         self.ignore_signal = True
         self.check.setChecked(self.active)
         self.ignore_signal = False
         self.mypix = icons.get_state("net", self.state)
-        QWidget.update(self)
+        
+        self.update()
     
     def paintEvent(self, event):
         cg = self.colorGroup()
@@ -366,12 +377,7 @@ class Widget(QVBox):
                 name, state = reply.data.split("\n")
                 conn = self.view.find(reply.script, name)
                 if conn:
-                    conn.state = state
-                    if state == "up":
-                        conn.active = True
-                    else:
-                        conn.active = False
-                    conn.update()
+                    conn.updateState(state)
             elif reply.id == 5:
                 return
                 #FIXME
@@ -393,18 +399,9 @@ class Widget(QVBox):
 
             if reply.notify == "Net.Link.stateChanged":
                 name, state = reply.data.split("\n", 1)
-                msg = None
-                if "\n" in state:
-                    state, msg = state.split("\n", 1)
                 conn = self.view.find(reply.script, name)
                 if conn:
-                    if state == "on":
-                        conn.active = True
-                    elif state == "off":
-                        conn.active = False
-                    elif state in ("up", "connecting", "down"):
-                        conn.state = state
-                    conn.update()
+                    conn.updateState(state)
             
             elif reply.notify == "Net.Link.connectionChanged":
                 mode, name = reply.data.split(" ", 1)
