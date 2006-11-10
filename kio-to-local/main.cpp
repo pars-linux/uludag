@@ -1,5 +1,3 @@
-#include <qfileinfo.h>
-
 #include <kapplication.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
@@ -7,6 +5,7 @@
 #include <kio/netaccess.h>
 #include <kmessagebox.h>
 #include <kprocess.h>
+#include <ktempfile.h>
 
 static const char description[] = "External KIO support for non-KDE programs";
 static const char version[] = "0.5";
@@ -56,20 +55,13 @@ int main(int argc, char **argv)
             }
           else // A remote URL or kioslave
             {
-              QString original, destination;
+              const QString prefix = target.path().section('.',0,0).remove('/')+'-';
+              const QString extension = '.'+target.path().section('.',1,1);
 
-              original = QString("/tmp/%1").arg(target.fileName());
-              destination = original;
+              KTempFile tempFile(prefix,extension);
+              tempFile.setAutoDelete(true);
 
-              unsigned int i = 1;
-              // Protect against symlink attacks
-              while(QFileInfo(destination).isSymLink())
-                {
-
-                  destination = original.section(".",-2,0) + "_"
-                    + QString::number(i) + "." + original.section(".",-1);
-                  ++i;
-                }
+              QString destination = tempFile.name();
 
               if (KIO::NetAccess::download(target, destination, NULL))
                 {
@@ -81,7 +73,6 @@ int main(int argc, char **argv)
                   if (!error.isEmpty())
                     KMessageBox::error(NULL, error);
 
-                  KIO::NetAccess::removeTempFile(destination);
                   return 1;
                 }
             }
