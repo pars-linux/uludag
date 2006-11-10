@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Package Manager
+Name[en]=Add or Remove Software
+Name[tr]=Yazılım ekle ve kaldır
+Comment=PiSi Package Manager Graphical User Interface
+Comment[en]=PiSi Package Manager Graphical User Interface
+Comment[tr]=PiSi Paket Yöneticisi Kullanıcı Grafik Arayüzü
+Icon=package-manager
+Type=Application
+Exec=package-manager
+Categories=Qt;KDE;System;
