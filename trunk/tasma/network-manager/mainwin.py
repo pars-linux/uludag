@@ -63,9 +63,9 @@ class Connection(QWidget):
         self.check = QCheckBox(self)
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
-        self.edit_but = MinButton("Edit", self)
+        self.edit_but = MinButton(i18n("Edit"), self)
         self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
-        self.del_but = MinButton("Delete", self)
+        self.del_but = MinButton(i18n("Delete"), self)
         self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         view.connections[connHash(script, name)] = self
         self.show()
