@@ -81,24 +81,6 @@ class Connection(QWidget):
         com = self.view.comlink
         dev = self.parent()
         if on:
-            count = 0
-            for conn in dev.children():
-                if conn.active:
-                    com.call_package("Net.Link.setState", conn.script, [ "name", conn.name, "state", "down" ], id=6)
-                    count += 1
-            if count:
-                replies = []
-                while 1:
-                    rep = com.read_cmd()
-                    if rep.id == 6:
-                        count -= 1
-                        if count == 0:
-                            break
-                    else:
-                        replies.append(rep)
-                if replies:
-                    for rep in replies:
-                        self.view.parent().handleComar(rep)
             com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "up" ])
         else:
             com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "down" ])
