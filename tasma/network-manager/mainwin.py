@@ -55,7 +55,7 @@ class Connection(QWidget):
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
         self.myHeight = fm.height()
-        self.mypix = icons.net_on
+        self.mypix = icons.get_state("net", self.state)
         self.check = QCheckBox(self)
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
@@ -115,6 +115,7 @@ class Connection(QWidget):
         self.ignore_signal = True
         self.check.setChecked(self.active)
         self.ignore_signal = False
+        self.mypix = icons.get_state("net", self.state)
         QWidget.update(self)
     
     def paintEvent(self, event):
@@ -392,13 +393,17 @@ class Widget(QVBox):
 
             if reply.notify == "Net.Link.stateChanged":
                 name, state = reply.data.split("\n", 1)
+                msg = None
+                if "\n" in state:
+                    state, msg = state.split("\n", 1)
                 conn = self.view.find(reply.script, name)
                 if conn:
-                    if state == "up":
+                    if state == "on":
                         conn.active = True
-                    else:
+                    elif state == "off":
                         conn.active = False
-                    conn.state = state
+                    elif state in ("up", "connecting", "down"):
+                        conn.state = state
                     conn.update()
             
             elif reply.notify == "Net.Link.connectionChanged":
