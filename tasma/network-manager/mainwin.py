@@ -55,6 +55,7 @@ class Connection(QWidget):
         self.active = False
         self.state = "down"
         self.address = ""
+        self.got_address = None
         
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
@@ -108,6 +109,9 @@ class Connection(QWidget):
         elif state in ("up", "connecting", "down"):
             self.state = state
         
+        if state == "down":
+            self.got_address = None
+        
         self.ignore_signal = True
         self.check.setChecked(self.active)
         self.ignore_signal = False
@@ -121,7 +125,12 @@ class Connection(QWidget):
         paint.fillRect(event.rect(), QBrush(cg.midlight()))
         paint.drawPixmap(20, 3, self.mypix)
         paint.drawText(53, self.myBase + 4, self.name)
-        paint.drawText(53, self.myHeight + self.myBase + 5, self.address)
+        addr = self.address
+        if not addr:
+            addr = i18n("Automatic")
+            if self.got_address:
+                addr += " (%s)" % self.got_address
+        paint.drawText(53, self.myHeight + self.myBase + 5, addr)
     
     def resizeEvent(self, event):
         pix = event.size().width()
@@ -153,20 +162,21 @@ class Device(QWidget):
     def __init__(self, parent, name, id):
         QWidget.__init__(self, parent.viewport())
         self.name = name
+        f = self.font()
+        f.setPointSize(f.pointSize() + 1)
+        self.setFont(f)
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
         self.mypix = QImage("ethernet.png")
         self.mypix = self.mypix.scale(24, 24)
         self.mypix = QPixmap(self.mypix)
-        self.address = ""
         self.connections = []
         parent.devices[id] = self
     
     def myHeight(self):
         fm = self.fontMetrics()
         rect = fm.boundingRect(self.name)
-        rect2 = fm.boundingRect(self.address)
-        return max(rect.height() + rect2.height() + 2, 24) + 4
+        return max(rect.height() + 6, 24) + 2
     
     def paintEvent(self, event):
         cg = self.colorGroup()
@@ -175,7 +185,7 @@ class Device(QWidget):
         paint.fillRect(QRect(0, 0, self.width(), self.myHeight()), QBrush(cg.mid(), Qt.Dense7Pattern))
         paint.fillRect(QRect(0, self.myHeight(), self.width(), self.height() - self.myHeight()), QBrush(cg.midlight()))
         paint.drawPixmap(0, 0, self.mypix)
-        paint.drawText(25, self.myBase + 2, self.name)
+        paint.drawText(25, self.myBase + 5, self.name)
     
     def heightForWidth(self, width):
         h = self.myHeight()
@@ -364,7 +374,9 @@ class Widget(QVBox):
                     if mode == "manual":
                         conn.address = addr
                     else:
-                        conn.address = i18n("Automatic")
+                        conn.address = None
+                        if addr != "":
+                            conn.got_address = addr
                     conn.update()
             elif reply.id == 4:
                 name, state = reply.data.split("\n")
@@ -404,7 +416,7 @@ class Widget(QVBox):
                     name, addr = name.split("\n", 1)
                     conn = self.view.find(reply.script, name)
                     if conn:
-                        conn.address = addr
+                        conn.got_address = addr
                         conn.update()
                 elif mode == "configured":
                     type, name = name.split(" ", 1)
