@@ -632,6 +632,10 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
 
         elif operation in ["removed", "installed", "upgraded"]:
+            # Bug 4030
+            if self.state != remove_state and operation == "removed":
+                return
+
             self.progressDialog.packageNo += 1
             self.progressDialog.updatePackageInfo()
 
