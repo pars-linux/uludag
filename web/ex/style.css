@@ -15,12 +15,12 @@ body {
 }
 
 #head_grey {
-    height: 200px;
+    height: 204px;
     right: 4px;
 }
 
 html>body #head_grey {
-    height: 200px;
+    height: 204px;
     background-color:#EEE;
     border:1px solid #FFF;
 }
@@ -45,7 +45,7 @@ html>body #head_grey {
 #quick_download {
     float:right;
     margin-right:13px;
-    margin-top: 12px;
+    margin-top: 8px;
     padding-right:4px;
 }
 
@@ -68,7 +68,7 @@ input {
 
 #search {
     margin-top:5px;
-    width:243px;
+    width:232px;
     height:15px;
 }
 
