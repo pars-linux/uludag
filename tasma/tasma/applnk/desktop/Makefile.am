@@ -16,6 +16,7 @@ tasmakamera.desktop \
 tasmakcmaccess.desktop \
 tasmakcmnotify.desktop \
 tasmakcmtaskbar.desktop \
+tasmakcm_useraccount.desktop \
 tasmakdm.desktop \
 tasmakeyboard_layout.desktop \
 tasmakeys.desktop \
