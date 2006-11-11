@@ -54,7 +54,7 @@
                                 <select name="p_state[{$p_distro[node].ID}]">
                                     <option value="F" {if $control=="F"}SELECTED{/if}>##COMPATIBLE##</option>
                                     <option value="S" {if $control=="S"}SELECTED{/if}>##NEEDS_MANUAL_CONFIGURATION##</option>
-                                    <option value="N" {if $control=="N"}SELECTED{/if}>##NOT_COMPATIBLE#</option>
+                                    <option value="N" {if $control=="N"}SELECTED{/if}>##NOT_COMPATIBLE##</option>
                                 </select>
                                 </div>
                                 {assign var="control" value=""}
