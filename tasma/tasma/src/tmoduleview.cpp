@@ -1,7 +1,7 @@
 /*
   Copyright (c) 2004,2005 TUBITAK/UEKAE
   Copyright (c) 1999 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
-    
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
@@ -39,7 +39,7 @@
 
 #include "tmoduleview.h"
 
-TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon_path, const QString& text, const QString& filename, 
+TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon_path, const QString& text, const QString& filename,
                           bool needsRootPrivileges )
   : QWidget( parent ), _proc(0L), _embedWidget(0L), _embedLayout(0L)
 {
@@ -47,7 +47,7 @@ TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon
 
     // Name of the desktop file
     _filename = filename.section('/',-1);
-    
+
     QVBoxLayout *vbox = new QVBoxLayout( this, 3 );
     QHBoxLayout *header = new QHBoxLayout( vbox, 5 );
 
@@ -86,7 +86,7 @@ TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon
 
     if( !needsRootPrivileges or getuid() == 0)
         _runAsRoot->hide();
-    
+
     QHBoxLayout *buttons = new QHBoxLayout( vbox, 5);
     buttons->addWidget( _back, 0, AlignLeft );
     buttons->addWidget( _default, 0, AlignLeft );
@@ -153,7 +153,7 @@ void TModuleView::runAsRoot()
 
   // run the process
   QString kdesu = KStandardDirs::findExe("kdesu");
-  
+
   _proc = new KProcess;
   *_proc << kdesu;
   *_proc << "--nonewdcop";
@@ -163,9 +163,9 @@ void TModuleView::runAsRoot()
   // We also don't have a way to close the module in that case.
   *_proc << "-n"; // Don't keep password.
   *_proc << QString("kcmshell %1 --embed %2 --lang %3").arg(_filename).arg(_embedWidget->winId()).arg(KGlobal::locale()->language());
- 
+
   connect(_proc, SIGNAL(processExited(KProcess*)), this, SLOT(killRootProcess()));
-  
+
   if ( !_proc->start(KProcess::NotifyOnExit) )
     {
       delete _proc;
@@ -186,7 +186,7 @@ void TModuleView::killRootProcess()
 
   delete _embedLayout;
   _embedLayout = 0;
-  
+
 }
 
 void TModuleView::resetClicked()
@@ -203,22 +203,28 @@ void TModuleView::defaultClicked()
 
 void TModuleView::contentChanged( bool state )
 {
-    _apply->setEnabled( state );
-    _reset->setEnabled( state );
+  if (_apply) _apply->setEnabled( state );
+  if (_reset) _reset->setEnabled( state );
 }
 
 TModuleView::~TModuleView()
 {
     killRootProcess();
-    
+
     delete _apply;
+    _apply = 0;
+
     delete _reset;
+    _reset = 0;
 
     delete _icon;
+    _icon = 0;
+
     delete _moduleName;
+    _moduleName = 0;
 
     delete contentView;
-    
+    contentView = 0;
 }
 
 TMContent::TMContent( QWidget *parent, KCModule *module )
