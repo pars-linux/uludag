@@ -18,6 +18,7 @@ tasmakcmnotify.desktop \
 tasmakcmtaskbar.desktop \
 tasmakcm_useraccount.desktop \
 tasmakdm.desktop \
+tasmakeyboard.desktop \
 tasmakeyboard_layout.desktop \
 tasmakeys.desktop \
 tasmakhotkeys.desktop \

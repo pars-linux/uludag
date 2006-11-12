@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Exec=kcmshell keyboard_layout
-Icon=keyboard
+Icon=kxkb
 Type=Application
 DocPath=kxkb/index.html
 
