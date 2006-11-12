@@ -5,7 +5,7 @@
         Gökmen GÖKSEL gokmen_at_pardus.org.tr
     */
 
-    session_start();
+    @session_start();
 
     require_once ("etc/config.php");
     require_once ("etc/lang.php");
