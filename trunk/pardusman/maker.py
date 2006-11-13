@@ -239,13 +239,15 @@ def make_image(project):
         chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,video,audio password pardus")
     chrun("/usr/bin/comar --stop")
     
+    path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
+    path2 = os.path.join(image_dir, "etc/inittab")
+    os.unlink(path2)
+    run('mv "%s" "%s"' % (path1, path2))
+    
+    file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
+    
     if project.media_type != "install":
-        path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
-        path2 = os.path.join(image_dir, "etc/inittab")
-        os.unlink(path2)
-        run('cp "%s" "%s"' % (path1, path2))
         setup_live_kdm(project)
-        file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
     
     run('umount %s/proc' % image_dir)
     run('umount %s/sys' % image_dir)
