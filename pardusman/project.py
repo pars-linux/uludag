@@ -19,15 +19,19 @@ def _(x):
     return x
 
 default_exclude_list = """
+lib/rcscripts/
 usr/include/
 usr/lib/cups/
 usr/lib/python2.4/email/
 usr/lib/python2.4/lib-tk/
 usr/lib/python2.4/test/
+usr/lib/klibc/include/
 usr/qt/3/include/
+usr/share/aclocal/
 usr/share/cups/
 usr/share/doc/
 usr/share/info/
+usr/share/sip/
 usr/share/man/
 var/db/pisi/
 var/lib/pisi/
