@@ -104,45 +104,95 @@ class AuthTab(QWidget):
         self.slotClicked(id)
 
 
-class Address(QVBox):
-    def __init__(self, parent):
-        QVBox.__init__(self, parent)
+class Settings(QWidget):
+    def __init__(self, parent, remote_name="lala", has_scan=True, auth_modes=None):
+        QWidget.__init__(self, parent)
         
-        widgets.HLine(i18n("Network:"), self)
+        grid = QGridLayout(self, 2, 2, 6)
+        row = 0
+        
+        # Identification
+        
+        lab = QLabel(i18n("Name:"), self)
+        grid.addWidget(lab, row, 0)
+        self.name = widgets.Edit(self)
+        grid.addWidget(self.name, row, 1)
+        row += 1
+        
+        # Connection
+        
+        lab = QLabel(i18n("Device:"), self)
+        grid.addWidget(lab, row, 0)
+        self.device = widgets.Edit(self)
+        grid.addWidget(self.device, row, 1)
+        row += 1
+        
+        if remote_name:
+            lab = QLabel(remote_name, self)
+            grid.addWidget(lab, row, 0)
+            self.remote = widgets.Edit(self)
+            grid.addWidget(self.remote, row, 1)
+            row += 1
+        
+        # Authentication
+        
+        if auth_modes:
+            lab = QLabel(i18n("Authentication:"), self)
+            grid.addWidget(lab, row, 0)
+            row += 1
+        
+        # Communication
+        
+        lab = QLabel(i18n("Network:"), self)
+        grid.addWidget(lab, row, 0)
+        
+        hb = QHBox(self)
+        self.group = QButtonGroup()
+        self.connect(self.group, SIGNAL("clicked(int)"), self.slotNetToggle)
+        self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), hb)
+        self.group.insert(self.r1, 0)
+        self.r2 = QRadioButton(i18n("Manual"), hb)
+        self.group.insert(self.r2, 1)
+        QLabel("", hb)
+        grid.addWidget(hb, row, 1)
+        row += 1
         
         box = QWidget(self)
-        g = QGridLayout(box, 4, 2, 6)
-        
-        group = QButtonGroup()
-        self.group = group
-        group.setExclusive(True)
-        self.connect(group, SIGNAL("clicked(int)"), self.slotClicked)
-        
-        self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), box)
-        g.addMultiCellWidget(self.r1, 0, 0, 0, 2)
-        group.insert(self.r1, 0)
-        
-        self.r2 = QRadioButton(i18n("Manual"), box)
-        g.addWidget(self.r2, 1, 0)
-        group.insert(self.r2, 1)
+        grid.addWidget(box, row, 1)
+        grid2 = QGridLayout(box, 2, 3, 6)
+        row += 1
         
         lab = QLabel(i18n("Address:"), box)
-        g.addWidget(lab, 1, 1, Qt.AlignRight)
-        self.address = widgets.Edit(box)
-        self.connect(self.address.edit, SIGNAL("textChanged(const QString &)"), self.slotMask)
-        g.addWidget(self.address, 1, 2)
+        grid2.addWidget(lab, 0, 0)
+        self.address = QLineEdit(box)
+        self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
+        grid2.addWidget(self.address, 0, 1)
+        self.auto_addr = QRadioButton(i18n("Manual"), box)
+        self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotAddrToggle)
+        grid2.addWidget(self.auto_addr, 0, 2)
         
         lab = QLabel(i18n("Net mask:"), box)
-        g.addWidget(lab, 2, 1, Qt.AlignRight)
-        self.netmask = widgets.Edit(box)
-        g.addWidget(self.netmask, 2, 2)
+        grid2.addWidget(lab, 1, 0)
+        self.netmask = QLineEdit(box)
+        grid2.addWidget(self.netmask, 1, 1)
         
         lab = QLabel(i18n("Gateway:"), box)
-        g.addWidget(lab, 3, 1, Qt.AlignRight)
-        self.gateway = widgets.Edit(box)
-        g.addWidget(self.gateway, 3, 2)
+        grid2.addWidget(lab, 2, 0)
+        self.gateway = QLineEdit(box)
+        grid2.addWidget(self.gateway, 2, 1)
         
-        self.slotSwitch("auto")
+        self.r1.setChecked(True)
+    
+    def slotNetToggle(self, id):
+        self.address.setEnabled(id)
+        self.netmask.setEnabled(id)
+        self.gateway.setEnabled(id)
+        self.auto_addr.setEnabled(not id)
+    
+    def slotAddrToggle(self):
+        bool = self.auto_addr.isChecked()
+        self.address.setEnabled(bool)
+        self.netmask.setEnabled(bool)
     
     def maskOK(self, mask):
         if mask == "":
@@ -160,9 +210,9 @@ class Address(QVBox):
             return False
         return True
     
-    def slotMask(self, addr):
+    def slotAddr(self, addr):
         addr = unicode(addr)
-        mask = self.netmask.edit
+        mask = self.netmask
         if "." in addr:
             try:
                 cl = int(addr.split(".", 1)[0])
@@ -178,17 +228,7 @@ class Address(QVBox):
             elif cl > 191 and cl < 224:
                 mask.setText("255.255.255.0")
     
-    def slotClicked(self, id):
-        if id == 0:
-            self.address.setEnabled(False)
-            self.gateway.setEnabled(False)
-            self.netmask.setEnabled(False)
-        elif id == 1:
-            self.address.setEnabled(True)
-            self.gateway.setEnabled(True)
-            self.netmask.setEnabled(True)
-    
-    def slotSwitch(self, mode):
+    def FIXMEslotSwitch(self, mode):
         if mode == "manual":
             self.r2.setChecked(True)
             self.slotClicked(1)
@@ -199,18 +239,6 @@ class Address(QVBox):
 
 class Device(QVBox):
     def __init__(self, parent):
-        QVBox.__init__(self, parent)
-        
-        widgets.HLine(i18n("Device:"), self)
-        
-        box = QWidget(self)
-        g = QGridLayout(box, 2, 2, 6)
-        g.setColStretch(0, 1)
-        g.setColStretch(1, 10)
-        
-        lab = QLabel(i18n("Device:"), box)
-        lab.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
-        g.addWidget(lab, 0, 0)
         self.device = QComboBox(False, box)
         self.device.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
         g.addWidget(self.device, 0, 1)
@@ -227,26 +255,6 @@ class Device(QVBox):
         g.addWidget(hb, 1, 1)
 
 
-class BasicTab(QVBox):
-    def __init__(self, parent):
-        QVBox.__init__(self, parent)
-        self.my_parent = parent
-        self.setMargin(6)
-        self.setSpacing(6)
-
-        hb = QHBox(self)
-        hb.setSpacing(6)
-        QLabel(i18n("Name:"), hb)
-        self.name = widgets.Edit(hb)
-        hb.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        
-        self.device = Device(self)
-        self.device.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        
-        self.address = Address(self)
-        self.address.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-
-
 class Window(QMainWindow):
     def __init__(self, parent, name, link_name, is_new=0):
         QMainWindow.__init__(self, parent)
@@ -254,12 +262,16 @@ class Window(QMainWindow):
         self.link_name = link_name
         
         self.setCaption(i18n("Configure network connection"))
-        self.setMinimumSize(580, 380)
+        #self.setMinimumSize(580, 380)
         
         vb = QVBox(self)
         vb.setMargin(6)
         vb.setSpacing(6)
         self.setCentralWidget(vb)
+        
+        blah = Settings(vb)
+        self.show()
+        return
         
         tab = QTabWidget(vb)
         self.tab = tab
