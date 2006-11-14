@@ -306,11 +306,11 @@ class Widget(QVBox):
         but = QToolButton(getIconSet("add.png"), i18n("New connection"), "lala", self.slotCreate, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        bar.addSeparator()
         
         but = QToolButton(getIconSet("configure.png"), i18n("Name Service Settings"), "lala", self.slotSettings, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+        
         bar.addSeparator()
         
         but = QToolButton(getIconSet("help.png"), i18n("Help"), "lala", self.slotHelp, bar)
