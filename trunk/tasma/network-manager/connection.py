@@ -114,7 +114,7 @@ class Settings(QWidget):
         # Identification
         
         lab = QLabel(i18n("Name:"), self)
-        grid.addWidget(lab, row, 0)
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
         self.name = widgets.Edit(self)
         grid.addWidget(self.name, row, 1)
         row += 1
@@ -122,7 +122,7 @@ class Settings(QWidget):
         # Connection
         
         lab = QLabel(i18n("Device:"), self)
-        grid.addWidget(lab, row, 0)
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
         self.device = widgets.Edit(self)
         grid.addWidget(self.device, row, 1)
         row += 1
@@ -138,61 +138,85 @@ class Settings(QWidget):
         
         if auth_modes:
             lab = QLabel(i18n("Authentication:"), self)
-            grid.addWidget(lab, row, 0)
+            grid.addWidget(lab, row, 0, Qt.AlignRight)
             row += 1
         
         # Communication
         
-        lab = QLabel(i18n("Network:"), self)
-        grid.addWidget(lab, row, 0)
+        line = widgets.HLine(i18n("Network"), self)
+        grid.addMultiCellWidget(line, row, row, 0, 1)
+        row += 1
         
-        hb = QHBox(self)
         self.group = QButtonGroup()
         self.connect(self.group, SIGNAL("clicked(int)"), self.slotNetToggle)
-        self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), hb)
+        self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), self)
         self.group.insert(self.r1, 0)
-        self.r2 = QRadioButton(i18n("Manual"), hb)
-        self.group.insert(self.r2, 1)
-        QLabel("", hb)
-        grid.addWidget(hb, row, 1)
+        grid.addMultiCellWidget(self.r1, row, row, 0, 1)
         row += 1
+        
+        self.r2 = QRadioButton(i18n("Manual"), self)
+        grid.addWidget(self.r2, row, 0, Qt.AlignTop)
+        self.group.insert(self.r2, 1)
         
         box = QWidget(self)
         grid.addWidget(box, row, 1)
-        grid2 = QGridLayout(box, 2, 3, 6)
+        grid2 = QGridLayout(box, 3, 3, 6)
         row += 1
         
         lab = QLabel(i18n("Address:"), box)
-        grid2.addWidget(lab, 0, 0)
+        grid2.addWidget(lab, 0, 0, Qt.AlignRight)
         self.address = QLineEdit(box)
         self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
         grid2.addWidget(self.address, 0, 1)
-        self.auto_addr = QRadioButton(i18n("Manual"), box)
+        self.auto_addr = QCheckBox(i18n("Custom"), box)
         self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotAddrToggle)
         grid2.addWidget(self.auto_addr, 0, 2)
         
         lab = QLabel(i18n("Net mask:"), box)
-        grid2.addWidget(lab, 1, 0)
+        grid2.addWidget(lab, 1, 0, Qt.AlignRight)
         self.netmask = QLineEdit(box)
         grid2.addWidget(self.netmask, 1, 1)
         
         lab = QLabel(i18n("Gateway:"), box)
-        grid2.addWidget(lab, 2, 0)
+        grid2.addWidget(lab, 2, 0, Qt.AlignRight)
         self.gateway = QLineEdit(box)
         grid2.addWidget(self.gateway, 2, 1)
+        self.auto_gate = QCheckBox(i18n("Custom"), box)
+        self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotGateToggle)
+        grid2.addWidget(self.auto_gate, 2, 2)
+        
+        self.dns_group = QButtonGroup()
+        self.dns1 = QRadioButton(i18n("Use default name servers"), self)
+        grid.addMultiCellWidget(self.dns1, row, row, 0, 1)
+        row += 1
+        self.dns_group.insert(self.dns1, 0)
+        self.dns2 = QRadioButton(i18n("Use name servers from automatic query"), self)
+        grid.addMultiCellWidget(self.dns2, row, row, 0, 1)
+        row += 1
+        self.dns_group.insert(self.dns2, 1)
+        self.dns3 = QRadioButton(i18n("Use this name server:"), self)
+        grid.addMultiCellWidget(self.dns3, row, row, 0, 1)
+        row += 1
+        self.dns_group.insert(self.dns3, 2)
         
         self.r1.setChecked(True)
+        self.dns1.setChecked(True)
     
     def slotNetToggle(self, id):
         self.address.setEnabled(id)
         self.netmask.setEnabled(id)
         self.gateway.setEnabled(id)
         self.auto_addr.setEnabled(not id)
+        self.auto_gate.setEnabled(not id)
     
     def slotAddrToggle(self):
         bool = self.auto_addr.isChecked()
         self.address.setEnabled(bool)
         self.netmask.setEnabled(bool)
+    
+    def slotGateToggle(self):
+        bool = self.auto_gate.isChecked()
+        self.gateway.setEnabled(bool)
     
     def maskOK(self, mask):
         if mask == "":
