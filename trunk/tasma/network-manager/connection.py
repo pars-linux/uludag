@@ -185,18 +185,17 @@ class Settings(QWidget):
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotGateToggle)
         grid2.addWidget(self.auto_gate, 2, 2)
         
+        hb = QHBox(self)
+        grid.addWidget(hb, row, 1)
+        lab = QLabel("Name servers", self)
+        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        row += 1
         self.dns_group = QButtonGroup()
-        self.dns1 = QRadioButton(i18n("Use default name servers"), self)
-        grid.addMultiCellWidget(self.dns1, row, row, 0, 1)
-        row += 1
+        self.dns1 = QRadioButton(i18n("Default"), hb)
         self.dns_group.insert(self.dns1, 0)
-        self.dns2 = QRadioButton(i18n("Use name servers from automatic query"), self)
-        grid.addMultiCellWidget(self.dns2, row, row, 0, 1)
-        row += 1
+        self.dns2 = QRadioButton(i18n("From query"), hb)
         self.dns_group.insert(self.dns2, 1)
-        self.dns3 = QRadioButton(i18n("Use this name server:"), self)
-        grid.addMultiCellWidget(self.dns3, row, row, 0, 1)
-        row += 1
+        self.dns3 = QRadioButton(i18n("Custom"), hb)
         self.dns_group.insert(self.dns3, 2)
         
         self.r1.setChecked(True)
