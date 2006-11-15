@@ -455,7 +455,7 @@ class MainApplicationWidget(QWidget):
         conflicts_within = list(D)
         if conflicts_within:
             msg = i18n("Selected packages [%1] are in conflict with each other. These packages can not be installed together.").arg(", ".join(conflicts_within))
-            self.showErrorMessage(msg, i18n("Conflict Error"))
+            self.showErrorMessage(msg, i18n("Conflict Error"), False)
             return False
 
         if pkg_conflicts:
@@ -463,7 +463,7 @@ class MainApplicationWidget(QWidget):
             for pkg in pkg_conflicts.keys():
                 msg += i18n("%1 conflicts with: [%2]\n").arg(pkg).arg(", ".join(pkg_conflicts[pkg]))
             msg += i18n("\nRemove the following conflicting packages?")
-            if self.showConfirmMessage(msg, i18n("Conflict Error")) == KMessageBox.No:
+            if self.showConfirmMessage(msg, i18n("Conflict Error"), False) == KMessageBox.No:
                 return False
 
         return True
@@ -477,7 +477,6 @@ class MainApplicationWidget(QWidget):
         # install action
         elif self.state == install_state:
             if not self.conflictCheckPass():
-                self.finished("System.Manager.cancelled")
                 return
 
             self.progressDialog.showStatus()
@@ -486,7 +485,6 @@ class MainApplicationWidget(QWidget):
         # upgrade action
         elif self.state == upgrade_state:
             if not self.conflictCheckPass():
-                self.finished("System.Manager.cancelled")
                 return
 
             self.progressDialog.showStatus()
@@ -654,9 +652,12 @@ class MainApplicationWidget(QWidget):
             if self.progressDialog.totalPackages == 0:
                 self.progressDialog.totalPackages = len(data)
 
-    def showErrorMessage(self, message, error=i18n("Error")):
+    def showErrorMessage(self, message, error=i18n("Error"), reset=True):
         KMessageBox.error(self, message, error)
-        self.refreshState(reset=True)
+        # with some error messages we do not call resetState and empty basket. But we have to clear
+        # the search line
+        self.searchLine.clear()
+        self.refreshState(reset)
 
     def showConfirmMessage(self, message, error=i18n("Error")):
         return KMessageBox.questionYesNo(self, message, error)
