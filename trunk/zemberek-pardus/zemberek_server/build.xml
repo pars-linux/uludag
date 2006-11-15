@@ -7,20 +7,16 @@
     <property name="src.java" location="src"/>
     <property name="src.test" location="test"/>
     <property name="src.config" location="config"/>
-    <property name="src.kaynaklar" location="kaynaklar"/>
-    <property name="src.kb" location="kaynaklar/kb"/>
 
     <!-- after compilation, where will we put the class files?. -->
     <property name="build.dir" location="build"/>
     <property name="build.java" location="build/java"/>
     <property name="build.test" location="build/test"/>
-    <property name="build.kaynaklar" location="build/kaynaklar"/>
     <property name="test.results" location="build/test-results"/>
     <!--distribution -->
     <property name="dist.dir" location="dist"/>
     <property name="lib.runtime" location="lib"/>
     <property name="licences.dir" location="lisanslar"/>
-
 
     <!--    show the library files for classpath information and a complete build(tests etc).-->
     <path id="classpath.build">
@@ -60,7 +56,7 @@
         </copy>
     </target>
 
-    <!--    copies the configuration files to the buid directory-->
+    <!--    copies the configuration files to the buid directory
     <target name="config" description="Generate and assemble configuration">
         <copy todir="${build.kaynaklar}/config">
             <fileset dir="${src.config}"/>
@@ -69,6 +65,7 @@
             <fileset dir="${src.kaynaklar}"/>
         </copy>
     </target>
+    -->
 
     <!--    Cleans the compiled files.-->
     <target name="clean" description="Clean up built files">
@@ -81,14 +78,9 @@
         description="Generates distribution files">
         <delete dir="${dist.dir}"/>
         <mkdir dir="${dist.dir}"/>
-        <mkdir dir="${dist.dir}/kaynaklar/kb"/>
         <mkdir dir="${dist.dir}/lib"/>
         <mkdir dir="${dist.dir}/config"/>
          
-        <copy todir="${dist.dir}/kaynaklar/kb">
-            <fileset dir="${src.kb}">
-            </fileset>
-        </copy>
         <copy todir="${dist.dir}/lib">
             <fileset dir="${lib.runtime}">
             </fileset>
@@ -103,6 +95,9 @@
             <fileset dir="${licences.dir}">
             </fileset>
         </copy>
+    	
+    	<copy file="run.sh" todir="${dist.dir}" />
+    	
         <tstamp>
             <format property="release" pattern="-dMMMyy" locale="tr"/>
         </tstamp>
@@ -114,7 +109,7 @@
                 <attribute name="Main-Class"
                     value="net.zemberek.server.Server"/>
                 <attribute name="Class-Path"
-                    value=". lib/netty2.jar lib/zemberek-0.6.4.jar"/>
+                    value=". lib/netty2.jar lib/zemberek-minimal-0.6.jar"/>
             </manifest>
         </jar>
 

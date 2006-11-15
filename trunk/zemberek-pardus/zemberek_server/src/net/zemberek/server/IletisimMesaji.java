@@ -9,20 +9,12 @@ import java.nio.ByteBuffer;
 
 import net.gleamynode.netty2.Message;
 import net.gleamynode.netty2.MessageParseException;
-import net.zemberek.server.util.HexConverter;
-
-//import org.apache.commons.logging.Log;
-//import org.apache.commons.logging.LogFactory;
 
 /**
  * @author MDA
  *
  */
 public class IletisimMesaji implements Message {
-    
-    //private static final Log log = LogFactory.getLog(IletisimMesaji.class);
-    private static final int MESAJ_BASLIK_BOYU = 4;
-    private static final int MAX_MESAJ_BOYU = 100000;
     
     protected int mesajBoy;
     private int index = 0;
