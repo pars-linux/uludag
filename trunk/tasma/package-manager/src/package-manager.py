@@ -30,6 +30,7 @@ import Commander
 import CustomEventListener
 import Basket
 import BasketDialog
+import Tray
 
 # Pisi
 import pisi
@@ -177,7 +178,6 @@ class MainApplicationWidget(QWidget):
         self.listView.setSelected(self.listView.firstChild(),True)
 
         self.tipper = ComponentTipper(self)
-
         self.htmlPart.view().setFocus()
         self.show()
 
@@ -734,6 +734,12 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.show()
         self.command.startUpdate()
 
+    def trayUpgradeSwitch(self):
+        self.resetState()
+        self.state = upgrade_state
+        self.parent.showUpgradeAction.setChecked(True)
+        self.upgradeState()
+
     def setShowOnlyPrograms(self,hideLibraries=False):
         global kapp
         self.config = kapp.config()
@@ -762,6 +768,8 @@ class MainApplication(KMainWindow):
         self.setupMenu()
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
         self.toolBar().setIconText(KToolBar.IconTextRight)
+        self.tray = Tray.Tray(self)
+        self.tray.show()
 
     def updateStatusBarText(self, text):
         self.statusLabel.setText(text)
@@ -773,9 +781,14 @@ class MainApplication(KMainWindow):
 
         self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
-        self.showInstalledAction = KToggleAction(i18n("Show Installed Packages"),"package",KShortcut.null(),self.mainwidget.removeState,self.actionCollection(),"show_installed_action")
-        self.showNewAction = KToggleAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),self.mainwidget.installState,self.actionCollection(),"show_new_action")
-        self.showUpgradeAction = KToggleAction(i18n("Show Upgradable Packages"),"reload",KShortcut.null(),self.mainwidget.updateCheck ,self.actionCollection(),"show_upgradable_action")
+
+        self.showInstalledAction = KToggleAction(i18n("Show Installed Packages"),"package",KShortcut.null(),
+                                                 self.mainwidget.removeState,self.actionCollection(),
+                                                 "show_installed_action")
+        self.showNewAction = KToggleAction(i18n("Show New Packages"),"edit_add",KShortcut.null(),
+                                           self.mainwidget.installState,self.actionCollection(),"show_new_action")
+        self.showUpgradeAction = KToggleAction(i18n("Show Upgradable Packages"),"reload",KShortcut.null(),
+                                               self.mainwidget.updateCheck ,self.actionCollection(),"show_upgradable_action")
 
         self.showNewAction.plug(fileMenu)
         self.showNewAction.setChecked(True)
