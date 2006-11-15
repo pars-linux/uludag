@@ -13,7 +13,7 @@ import net.gleamynode.netty2.OrderedEventDispatcher;
 import net.gleamynode.netty2.Session;
 import net.gleamynode.netty2.ThreadPooledEventDispatcher;
 import net.zemberek.server.Config;
-import net.zemberek.server.TestMesaji;
+import net.zemberek.server.StringMesaj;
 import net.zemberek.server.ZemberekMesaji;
 import net.zemberek.server.ZemberekMessageRecognizer;
 import net.zemberek.server.ZemberekSession;
@@ -97,17 +97,17 @@ public class TestClient extends Thread implements ZemberekSessionListener{
 
     public void zemberekSessionReady(ZemberekSession session) {
         System.out.println("Zemberek Session ready. sending request");
-        session.mesajYaz(new TestMesaji("* tes"));
-        session.mesajYaz(new TestMesaji("& tes"));
-        session.mesajYaz(new TestMesaji("& XXX"));
-        session.mesajYaz(new TestMesaji("* MERHABA"));
-        session.mesajYaz(new TestMesaji("* s\u00f6\u011f\u00fc\u015f"));
-        session.mesajYaz(new TestMesaji("* MRHABA"));
-        session.mesajYaz(new TestMesaji("& MRHABA"));
-        session.mesajYaz(new TestMesaji("& LMA"));
-        session.mesajYaz(new TestMesaji("23423423"));
-        session.mesajYaz(new TestMesaji("* merhaba elma yesene hedehodo zemberek"));
-        session.mesajYaz(new TestMesaji("23423423"));
+        session.mesajYaz(new StringMesaj("* tes"));
+        session.mesajYaz(new StringMesaj("& tes"));
+        session.mesajYaz(new StringMesaj("& XXX"));
+        session.mesajYaz(new StringMesaj("* MERHABA"));
+        session.mesajYaz(new StringMesaj("* s\u00f6\u011f\u00fc\u015f"));
+        session.mesajYaz(new StringMesaj("* MRHABA"));
+        session.mesajYaz(new StringMesaj("& MRHABA"));
+        session.mesajYaz(new StringMesaj("& LMA"));
+        session.mesajYaz(new StringMesaj("23423423"));
+        session.mesajYaz(new StringMesaj("* merhaba elma yesene hedehodo zemberek"));
+        session.mesajYaz(new StringMesaj("23423423"));
     }
 
     public void messageReceived(ZemberekSession session, ZemberekMesaji mesaj) {

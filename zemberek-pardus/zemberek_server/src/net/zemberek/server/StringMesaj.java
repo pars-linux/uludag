@@ -4,11 +4,11 @@
  */
 package net.zemberek.server;
 
-public class TestMesaji extends ZemberekMesaji {
+public class StringMesaj extends ZemberekMesaji {
 
     private String mesaj;
 
-    public TestMesaji(String mesaj) {
+    public StringMesaj(String mesaj) {
         super(1, mesaj);
     }
 

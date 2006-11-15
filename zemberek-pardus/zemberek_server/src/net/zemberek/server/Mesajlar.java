@@ -51,7 +51,7 @@ public class Mesajlar {
      * @throws MesajException
      */
     public static ZemberekMesaji mesajCoz(IletisimMesaji paket) throws MesajException {
-        return new TestMesaji(paket.getMesaj());
+        return new StringMesaj(paket.getMesaj());
    }
     
     public static void kaydet(ZemberekMesaji mesaj) {
