@@ -803,11 +803,10 @@ class MainApplication(KMainWindow):
 def main():
     global kapp
     global packageToInstall
-    global showUpdates
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
-    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),("showupdates", I18N_NOOP("Show available updates"))])
+    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
 
     if not KUniqueApplication.start():
         print i18n("Package Manager is already running!")
@@ -820,11 +819,6 @@ def main():
         packageToInstall = str(KIO.NetAccess.mostLocalURL(KURL(args.getOption("install")), None).path())
     else:
         packageToInstall = None
-
-    if args.isSet("showupdates"):
-        showUpdates = True
-    else:
-        showUpdates = None
 
     myapp = MainApplication()
     myapp.show()
