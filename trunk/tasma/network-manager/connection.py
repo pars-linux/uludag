@@ -150,13 +150,13 @@ class Settings(QWidget):
         self.group = QButtonGroup()
         self.connect(self.group, SIGNAL("clicked(int)"), self.slotNetToggle)
         self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), self)
-        self.group.insert(self.r1, 0)
+        self.group.insert(self.r1, 1)
         grid.addMultiCellWidget(self.r1, row, row, 0, 1)
         row += 1
         
         self.r2 = QRadioButton(i18n("Manual"), self)
         grid.addWidget(self.r2, row, 0, Qt.AlignTop)
-        self.group.insert(self.r2, 1)
+        self.group.insert(self.r2, 0)
         
         box = QWidget(self)
         grid.addWidget(box, row, 1)
@@ -200,22 +200,26 @@ class Settings(QWidget):
         
         self.r1.setChecked(True)
         self.dns1.setChecked(True)
+        self.slotFields()
+    
+    def slotFields(self):
+        auto = self.group.selectedId()
+        addr = self.auto_addr.isChecked()
+        gate = self.auto_gate.isChecked()
+        self.address.setEnabled(not auto or (auto and addr))
+        self.netmask.setEnabled(not auto or (auto and addr))
+        self.gateway.setEnabled(not auto or (auto and gate))
+        self.auto_addr.setEnabled(auto)
+        self.auto_gate.setEnabled(auto)
     
     def slotNetToggle(self, id):
-        self.address.setEnabled(id)
-        self.netmask.setEnabled(id)
-        self.gateway.setEnabled(id)
-        self.auto_addr.setEnabled(not id)
-        self.auto_gate.setEnabled(not id)
+        self.slotFields()
     
     def slotAddrToggle(self):
-        bool = self.auto_addr.isChecked()
-        self.address.setEnabled(bool)
-        self.netmask.setEnabled(bool)
+        self.slotFields()
     
     def slotGateToggle(self):
-        bool = self.auto_gate.isChecked()
-        self.gateway.setEnabled(bool)
+        self.slotFields()
     
     def maskOK(self, mask):
         if mask == "":
