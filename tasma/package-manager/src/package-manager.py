@@ -787,9 +787,6 @@ class MainApplication(KMainWindow):
         self.statusLabel.setText(text)
         self.statusLabel.setAlignment(Qt.AlignHCenter)
 
-    def closeEvent(self, closeEvent):
-        self.hide()
-    
     def setupMenu(self):
         fileMenu = QPopupMenu(self)
         settingsMenu = QPopupMenu(self)
