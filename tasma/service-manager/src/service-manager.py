@@ -291,7 +291,6 @@ class servicesForm(mainForm):
 
     def slotOn(self):
         item = self.listServices.selectedItem()
-        self.buttonStop.setEnabled(False)
         self.comar.call_package('System.Service.setState', item.package, {'state': 'on'}, id=5)
 
     def slotOff(self):
@@ -300,7 +299,6 @@ class servicesForm(mainForm):
             self.radioAutoRun.setChecked(True)
             self.radioNoAutoRun.setChecked(False)
             return
-        self.buttonStop.setEnabled(False)
         self.comar.call_package('System.Service.setState', item.package, {'state': 'off'}, id=5)
 
     def confirmStop(self):
