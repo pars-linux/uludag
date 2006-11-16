@@ -5,6 +5,7 @@
     <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>
+        <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
         <SelectedPackage>acx100</SelectedPackage>
         <SelectedPackage>alsa-driver</SelectedPackage>
@@ -14,6 +15,7 @@
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
+        <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>axel</SelectedPackage>
         <SelectedPackage>bcm43xx-firmware</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
@@ -175,6 +177,7 @@
         <Package>Xaw3d</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
+        <Package>accessrunner-firmware</Package>
         <Package>acerhk</Package>
         <Package>acl</Package>
         <Package>acpid</Package>
@@ -193,6 +196,7 @@
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
         <Package>atk</Package>
+        <Package>atmel-firmware</Package>
         <Package>attr</Package>
         <Package>audiofile</Package>
         <Package>axel</Package>
