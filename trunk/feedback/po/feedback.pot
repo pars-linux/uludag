@@ -255,7 +255,7 @@ msgstr ""
 
 #: src/feedback.py:257
 msgid ""
-"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</"
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</"
 "font><br>\n"
 msgstr ""
 
@@ -272,7 +272,7 @@ msgid ""
 msgstr ""
 
 #: src/feedback.py:263
-msgid "<font color=\"#ff0000\">Feeback database is offline.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
 msgstr ""
 
 #: src/feedback.py:265
@@ -280,7 +280,7 @@ msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
 msgstr ""
 
 #: src/feedback.py:267
-msgid "<font color=\"#ff0000\">Feeback database has errors.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
 msgstr ""
 
 #: src/feedback.py:286

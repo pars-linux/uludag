@@ -254,17 +254,17 @@ class thread_upload(QThread):
             text += i18n("<font color=\"#ff0000\">Failed</font><br>\n")
 
             if s == "1":
-                text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</font><br>\n")
+                text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</font><br>\n")
             elif s == "2":
                 text += i18n("<font color=\"#ff0000\">Server does not support this version. Please update feedback tool.</font><br>\n")
             elif s == "3":
                 text += i18n("<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</font><br>\n")
             elif s == "4":
-                text += i18n("<font color=\"#ff0000\">Feeback database is offline.</font><br>\n")
+                text += i18n("<font color=\"#ff0000\">Feedback database is offline.</font><br>\n")
             elif s == "5":
                 text += i18n("<font color=\"#ff0000\">You've already sent feedback.</font><br>\n")
             else:
-                text += i18n("<font color=\"#ff0000\">Feeback database has errors.</font><br>\n")
+                text += i18n("<font color=\"#ff0000\">Feedback database has errors.</font><br>\n")
 
             w.pageUploadDlg.labelStatus.setText(text)
             w.pageUploadDlg.buttonRetry.show()

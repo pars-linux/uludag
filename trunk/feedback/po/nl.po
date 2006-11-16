@@ -285,7 +285,7 @@ msgstr ""
 
 #: src/feedback.py:257
 msgid ""
-"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</"
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</"
 "font><br>\n"
 msgstr ""
 "<font color=\"#ff0000\">Er is een probleem met de feedback. De gegevens zijn corrupt geraakt.</"
@@ -306,16 +306,16 @@ msgstr ""
 "font><br>\n"
 
 #: src/feedback.py:263
-msgid "<font color=\"#ff0000\">Feeback database is offline.</font><br>\n"
-msgstr "<font color=\"#ff0000\">Feeback-database is offline.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Feedback-database is offline.</font><br>\n"
 
 #: src/feedback.py:265
 msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
 msgstr "<font color=\"#ff0000\">U heeft al feedback verstuurd.</font><br>\n"
 
 #: src/feedback.py:267
-msgid "<font color=\"#ff0000\">Feeback database has errors.</font><br>\n"
-msgstr "<font color=\"#ff0000\">Feeback-database bevat fouten</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Feedback-database bevat fouten</font><br>\n"
 
 #: src/feedback.py:286
 msgid "Feedback tool is already running!"

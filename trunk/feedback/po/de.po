@@ -287,7 +287,7 @@ msgid "<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n
 msgstr "<font color=\"#ff0000\">Keine Verbindung zur Feedbakc Datenbank.</font><br>\n"
 
 #: src/feedback.py:257
-msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Feedback konnte nicht übermittelt werden. Daten sind fehlerhaft.</font><br>\n"
 
 #: src/feedback.py:259
@@ -299,7 +299,7 @@ msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</fo
 msgstr "<font color=\"#ff0000\">Feedback konnte nicht übermittelt werden. Daten sind verloren gegangen.</font><br>\n"
 
 #: src/feedback.py:263
-msgid "<font color=\"#ff0000\">Feeback database is offline.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Die Feedback Datenbank ist offline.</font><br>\n"
 
 #: src/feedback.py:265
@@ -307,7 +307,7 @@ msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Sie haben bereits Ihr Feedback gesendet.</font><br>\n"
 
 #: src/feedback.py:267
-msgid "<font color=\"#ff0000\">Feeback database has errors.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Die Feedback Datenbank ist fehlerhaft.</font><br>\n"
 
 #: src/feedback.py:286
