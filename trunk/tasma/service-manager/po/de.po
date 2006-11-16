@@ -5,19 +5,21 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: service manager \n"
+"Project-Id-Version: service manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-07 21:36+0200\n"
-"PO-Revision-Date: 2006-10-31 22:24+0100\n"
+"PO-Revision-Date: 2006-11-15 20:06+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: German <german@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/service-manager.py:55 src/service-manager.py:350 src/mainform.py:97
+#: src/service-manager.py:55
+#: src/service-manager.py:350
+#: src/mainform.py:97
 msgid "Service Manager"
-msgstr "Service Manager"
+msgstr "Dienst Manager"
 
 #: src/service-manager.py:185
 msgid "You are not allowed to do this operation."
@@ -37,21 +39,24 @@ msgstr "Skript Fehler"
 
 #: src/service-manager.py:192
 msgid "Unable to start service."
-msgstr "Service kann nicht gestartet werden."
+msgstr "Dienst kann nicht gestartet werden."
 
-#: src/service-manager.py:192 src/service-manager.py:195
+#: src/service-manager.py:192
+#: src/service-manager.py:195
 msgid "Failed"
 msgstr "Fehlgeschlagen"
 
 #: src/service-manager.py:195
 msgid "Unable to stop service."
-msgstr "Service kann nicht angehalten werden."
+msgstr "Dienst kann nicht angehalten werden."
 
-#: src/service-manager.py:224 src/mainform.py:101
+#: src/service-manager.py:224
+#: src/mainform.py:101
 msgid "Select a service from list."
-msgstr ""
+msgstr "Wählen Sie ein Dienst aus der Liste aus."
 
-#: src/service-manager.py:232 src/mainform.py:103
+#: src/service-manager.py:232
+#: src/mainform.py:103
 msgid "Start"
 msgstr "Start"
 
@@ -61,51 +66,57 @@ msgid "%s is running."
 msgstr "%s wird ausgeführt."
 
 #: src/service-manager.py:240
-#, fuzzy, python-format
+#, python-format
 msgid "%s is not running."
-msgstr "%s wird ausgeführt."
+msgstr "%s wird nicht ausgeführt."
 
 #: src/service-manager.py:242
 msgid "Execute startup script"
-msgstr ""
+msgstr "Start-Skript ausführen"
 
 #: src/service-manager.py:243
 msgid "Execuete shutdown script"
-msgstr ""
+msgstr "Herunterfahr-Skript ausführen"
 
 #: src/service-manager.py:307
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
 msgstr ""
+"Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
+"Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
 
 #: src/service-manager.py:345
 msgid "Service Manager is already running!"
-msgstr "Service Manager wird bereits ausgeführt!"
+msgstr "Dienst Manager wird bereits ausgeführt!"
 
-#: src/mainform.py:82 src/mainform.py:108
+#: src/mainform.py:82
+#: src/mainform.py:108
 msgid "1"
-msgstr ""
+msgstr "1"
 
-#: src/mainform.py:83 src/mainform.py:109
+#: src/mainform.py:83
+#: src/mainform.py:109
 msgid "Service"
-msgstr "Service"
+msgstr "Dienst"
 
-#: src/mainform.py:84 src/mainform.py:110
+#: src/mainform.py:84
+#: src/mainform.py:110
 msgid "Run on Startup"
-msgstr ""
+msgstr "Automatisch starten"
 
-#: src/mainform.py:85 src/mainform.py:111
+#: src/mainform.py:85
+#: src/mainform.py:111
 msgid "Package"
-msgstr ""
+msgstr "Paket"
 
 #: src/mainform.py:99
 msgid "Run on startup."
-msgstr ""
+msgstr "Automatisch starten"
 
 #: src/mainform.py:100
 msgid "Don't run on startup."
-msgstr ""
+msgstr "Nicht automatisch starten."
 
 #: src/mainform.py:106
 msgid "&List servers only."
@@ -121,12 +132,10 @@ msgstr "Alt+L"
 #~ msgstr ""
 #~ "Der Vorgang kann nicht abgeschlossen werden:\n"
 #~ "%s"
-
 #~ msgid "%s is paused."
 #~ msgstr "%s wurde angehalten."
-
 #~ msgid "%s is stopped."
 #~ msgstr "%s wurde gestoppt."
-
 #~ msgid "Pause"
 #~ msgstr "Pause"
+
