@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
 	<classpathentry kind="lib" path="lib/netty2.jar"/>
-	<classpathentry kind="lib" path="lib/zemberek-minimal-0.6.jar"/>
+	<classpathentry kind="lib" path="lib/zemberek2-tr.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

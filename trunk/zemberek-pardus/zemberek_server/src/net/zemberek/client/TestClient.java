@@ -19,19 +19,14 @@ import net.zemberek.server.ZemberekMessageRecognizer;
 import net.zemberek.server.ZemberekSession;
 import net.zemberek.server.ZemberekSessionListener;
 
-//import org.apache.commons.logging.Log;
-//import org.apache.commons.logging.LogFactory;
-
-
 /**
- * @author MDA & ER
+ * @author MDA 
  *
  */
 public class TestClient extends Thread implements ZemberekSessionListener{
-    //private static final Log log = LogFactory.getLog(TestClient.class);
 
     private static final String HOSTNAME = "localhost";
-    private static final int CONNECT_TIMEOUT = 60; // seconds
+    private static final int CONNECT_TIMEOUT = 3; // seconds
 
     private static IoProcessor ioProcessor = new IoProcessor();
     private static ThreadPooledEventDispatcher eventDispatcher = new OrderedEventDispatcher();
@@ -96,18 +91,25 @@ public class TestClient extends Thread implements ZemberekSessionListener{
     }
 
     public void zemberekSessionReady(ZemberekSession session) {
-        System.out.println("Zemberek Session ready. sending request");
-        session.mesajYaz(new StringMesaj("* tes"));
-        session.mesajYaz(new StringMesaj("& tes"));
-        session.mesajYaz(new StringMesaj("& XXX"));
-        session.mesajYaz(new StringMesaj("* MERHABA"));
-        session.mesajYaz(new StringMesaj("* s\u00f6\u011f\u00fc\u015f"));
-        session.mesajYaz(new StringMesaj("* MRHABA"));
-        session.mesajYaz(new StringMesaj("& MRHABA"));
-        session.mesajYaz(new StringMesaj("& LMA"));
-        session.mesajYaz(new StringMesaj("23423423"));
-        session.mesajYaz(new StringMesaj("* merhaba elma yesene hedehodo zemberek"));
-        session.mesajYaz(new StringMesaj("23423423"));
+        System.out.println("Zemberek oturumu hazır. Test başladı.");
+        try{
+        	session.mesajYaz(new StringMesaj("* tes"));
+        	session.mesajYaz(new StringMesaj("& tes"));
+        	session.mesajYaz(new StringMesaj("& XXX"));
+        	session.mesajYaz(new StringMesaj("* MERHABA"));
+        	session.mesajYaz(new StringMesaj("* s\u00f6\u011f\u00fc\u015f"));
+        	session.mesajYaz(new StringMesaj("* MRHABA"));
+        	session.mesajYaz(new StringMesaj("& MRHABA"));
+        	session.mesajYaz(new StringMesaj("& LMA"));
+        	session.mesajYaz(new StringMesaj("23423423"));
+        	session.mesajYaz(new StringMesaj("* merhaba elma yesene hedehodo zemberek"));
+        	session.mesajYaz(new StringMesaj("23423423"));
+        }catch (Exception e){
+        	System.err.println("Test başarısız.");
+        	System.exit(0);
+        }
+        System.out.println("\nTest Başarılı. Zemberek Server çalışıyor.");
+        
     }
 
     public void messageReceived(ZemberekSession session, ZemberekMesaji mesaj) {

@@ -97,6 +97,7 @@
         </copy>
     	
     	<copy file="run.sh" todir="${dist.dir}" />
+    	<copy file="runtest.sh" todir="${dist.dir}" />    	
     	
         <tstamp>
             <format property="release" pattern="-dMMMyy" locale="tr"/>
@@ -109,7 +110,7 @@
                 <attribute name="Main-Class"
                     value="net.zemberek.server.Server"/>
                 <attribute name="Class-Path"
-                    value=". lib/netty2.jar lib/zemberek-minimal-0.6.jar"/>
+                    value=". lib/netty2.jar lib/zemberek2-tr.jar"/>
             </manifest>
         </jar>
 
@@ -119,6 +120,14 @@
             update="true"
             excludes="**/*.zip"
             />
+
+        <!-- create the tar.gz file with the same naming scheme -->
+        <tar destfile="${dist.dir}/${isim}-${surum}.tar.gz"
+            basedir="${dist.dir}"
+            excludes="**/*.zip"
+        	compression="gzip"
+            />
+    	
 
     </target>
 
