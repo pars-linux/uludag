@@ -24,7 +24,7 @@ msgstr "Geribildirim Sihirbazı"
 
 #: src/questiondlg.py:255
 msgid "Very satisfying. Pardus fulfils my requirements"
-msgstr "Tatmin edici, Pardus tüm ihtiyaçlarımı karşılıyor."
+msgstr "Tatmin edici, Pardus tüm ihtiyaçlarımı karşılıyor"
 
 #: src/questiondlg.py:256
 msgid "Good, however it lacks some capabilities"
@@ -278,7 +278,7 @@ msgstr ""
 
 #: src/feedback.py:257
 msgid ""
-"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupped.</"
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</"
 "font><br>\n"
 msgstr ""
 "<font color=\"#ff0000\">Geribildirim aracı bozulmuş. Toplanan veri hatalı.</"
@@ -301,7 +301,7 @@ msgstr ""
 "font><br>\n"
 
 #: src/feedback.py:263
-msgid "<font color=\"#ff0000\">Feeback database is offline.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Geribildirim veritabanı kapalı.</font><br>\n"
 
 #: src/feedback.py:265
@@ -310,7 +310,7 @@ msgstr ""
 "<font color=\"#ff0000\">Daha önce geribildirimde bulundunuz.</font><br>\n"
 
 #: src/feedback.py:267
-msgid "<font color=\"#ff0000\">Feeback database has errors.</font><br>\n"
+msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
 msgstr "<font color=\"#ff0000\">Geribildirim veritabanında hata.</font><br>\n"
 
 #: src/feedback.py:286
