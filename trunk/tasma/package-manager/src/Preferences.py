@@ -142,7 +142,6 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repo.close()
 
     def saveSettings(self):
-
         self.parent.setShowOnlyGuiApplications(self.onlyShowGuiApplications.isChecked())
 
         if self.reposChanged:
@@ -156,6 +155,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.reposChanged = False
             self.parent.command.setRepositories(repoList)
             self.parent.progressDialog.show()
+
+        self.parent.refreshState()
 
     def updateListView(self):
         self.repoList = self.parent.command.getRepoList()
