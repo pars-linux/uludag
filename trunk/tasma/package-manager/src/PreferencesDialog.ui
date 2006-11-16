@@ -256,6 +256,23 @@
                         <property name="text">
                             <string>&amp;Show only desktop applications</string>
                         </property>
+                        <property name="accel">
+                            <string>Alt+S</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>If checked, then pisi will only show desktop applications</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="1" column="0">
+                        <property name="name">
+                            <cstring>systemTray</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Enable system tray icon</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+E</string>
+                        </property>
                         <property name="toolTip" stdset="0">
                             <string>If checked, then pisi will only show desktop applications</string>
                         </property>
@@ -273,7 +290,7 @@
                         <property name="sizeHint">
                             <size>
                                 <width>31</width>
-                                <height>170</height>
+                                <height>160</height>
                             </size>
                         </property>
                     </spacer>

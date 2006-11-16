@@ -500,6 +500,12 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.show()
 
     def refreshState(self, reset=True):
+
+        if self.settings.getBoolValue(Settings.general, "SystemTray"):
+            self.parent.tray.show()
+        elif not self.settings.getBoolValue(Settings.general, "SystemTray"):
+            self.parent.tray.hide()
+
         if self.state == install_state:
             self.installState(reset)
         elif self.state == remove_state:
@@ -774,14 +780,18 @@ class MainApplication(KMainWindow):
         self.toolBar().setIconText(KToolBar.IconTextRight)
         self.tray = Tray.Tray(self)
         self.connect(self.tray, SIGNAL("quitSelected()"), self.slotQuit)
-        self.tray.show()
+        if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
+            self.tray.show()
 
     def updateStatusBarText(self, text):
         self.statusLabel.setText(text)
         self.statusLabel.setAlignment(Qt.AlignHCenter)
 
     def closeEvent(self, closeEvent):
-        self.hide()
+        if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
+            self.hide()
+        else:
+            self.slotQuit()
 
     def slotQuit(self):
         # Don't know why but without this, after exiting package-manager, crash occurs. This may be a workaround 

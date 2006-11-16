@@ -39,6 +39,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.updateButtons()
 
         self.onlyGuiApp.setChecked(self.parent.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp"))
+        self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
         self.reposChanged = False
 
     def updateButtons(self):
@@ -144,6 +145,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
     def saveSettings(self):
         self.parent.settings.setValue(Settings.general, "ShowOnlyGuiApp", self.onlyGuiApp.isChecked())
+        self.parent.settings.setValue(Settings.general, "SystemTray", self.systemTray.isChecked())
 
         if self.reposChanged:
             repoList = []
