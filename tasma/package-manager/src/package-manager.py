@@ -781,17 +781,27 @@ class MainApplication(KMainWindow):
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
         self.toolBar().setIconText(KToolBar.IconTextRight)
         self.tray = Tray.Tray(self)
+        self.connect(self.tray, SIGNAL("quitSelected()"), self.slotQuit)
         self.tray.show()
 
     def updateStatusBarText(self, text):
         self.statusLabel.setText(text)
         self.statusLabel.setAlignment(Qt.AlignHCenter)
 
+    def closeEvent(self, closeEvent):
+        self.hide()
+
+    def slotQuit(self):
+        # Don't know why but without this, after exiting package-manager, crash occurs. This may be a workaround 
+        # or a PyQt bug.
+        self.mainwidget.deleteLater()
+        kapp.quit()
+
     def setupMenu(self):
         fileMenu = QPopupMenu(self)
         settingsMenu = QPopupMenu(self)
 
-        self.quitAction = KStdAction.quit(kapp.quit, self.actionCollection())
+        self.quitAction = KStdAction.quit(self.slotQuit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
 
         self.showInstalledAction = KToggleAction(i18n("Show Installed Packages"),"package",KShortcut.null(),
