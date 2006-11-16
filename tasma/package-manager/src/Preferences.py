@@ -45,7 +45,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         else:
             moreThanOne = False
 
-        if self.repoListView.currentItem().isSelected():
+        if self.repoListView.currentItem() and self.repoListView.currentItem().isSelected():
             self.editButton.setEnabled(True)
             self.removeButton.setEnabled(moreThanOne)
             self.moveUpButton.setEnabled(moreThanOne)
