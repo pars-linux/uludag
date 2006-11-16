@@ -220,10 +220,10 @@ class MainApplicationWidget(QWidget):
         self.parent.showNewAction.setChecked(True)
         self.processEvents()
         packages = self.command.listNewPackages()
+        self.state = install_state
         self.createComponentList(packages)
         self.operateAction.setText(i18n("Install Package(s)"))
         self.operateAction.setIconSet(loadIconSet("ok"))
-        self.state = install_state
         self.basket.setState(self.state)
         self.setLastSelected()
         self.updateStatusBar()
@@ -236,10 +236,10 @@ class MainApplicationWidget(QWidget):
         self.parent.showInstalledAction.setChecked(True)
         self.processEvents()
         packages = self.command.listPackages()
+        self.state = remove_state
         self.createComponentList(packages)
         self.operateAction.setText(i18n("Remove Package(s)"))
         self.operateAction.setIconSet(loadIconSet("no"))
-        self.state = remove_state
         self.basket.setState(self.state)
         self.setLastSelected()
         self.updateStatusBar()
@@ -514,6 +514,13 @@ class MainApplicationWidget(QWidget):
             self.listView.setSelected(self.listView.firstChild(),True)
 
     def createComponentList(self, packages, allComponent=False):
+
+        def appGuiFilter(package):
+            if self.state == remove_state:
+                return "app:gui" in pisi.context.packagedb.get_package(package, pisi.itembyrepodb.installed).isA
+            elif self.state == install_state:
+                return "app:gui" in pisi.context.packagedb.get_package(package).isA
+
         # Components
         self.listView.clear()
         self.componentDict.clear()
@@ -533,9 +540,12 @@ class MainApplicationWidget(QWidget):
 
             compPkgs = pisi.context.componentdb.get_union_packages(componentName, walk=True)
             component_packages = list(set(packages).intersection(compPkgs))
+            componentPackages += component_packages
+
+            if self.state != upgrade_state and self.getShowOnlyGuiApplications():
+                    component_packages = filter(appGuiFilter, component_packages)
 
             if len(component_packages):
-                componentPackages += component_packages
                 item = KListViewItem(self.listView)
                 if component.localName:
                     name = component.localName
@@ -553,6 +563,8 @@ class MainApplicationWidget(QWidget):
 
         # Rest of the packages
         rest_packages = list(set(packages) - set(componentPackages))
+        if self.state != upgrade_state and self.getShowOnlyGuiApplications():
+            rest_packages = filter(appGuiFilter, rest_packages)
         if rest_packages:
             item = KListViewItem(self.listView)
             name = i18n("Others")
@@ -740,14 +752,14 @@ class MainApplicationWidget(QWidget):
         self.parent.showUpgradeAction.setChecked(True)
         self.upgradeState()
 
-    def setShowOnlyPrograms(self,hideLibraries=False):
+    def setShowOnlyGuiApplications(self,hideLibraries=False):
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")
         self.config.writeEntry("HideLibraries",hideLibraries)
         self.config.sync()
 
-    def getShowOnlyPrograms(self):
+    def getShowOnlyGuiApplications(self):
         global kapp
         self.config = kapp.config()
         self.config.setGroup("General")

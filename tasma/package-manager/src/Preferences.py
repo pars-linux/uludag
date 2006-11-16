@@ -37,7 +37,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.updateListView()
         self.updateButtons()
 
-        self.onlyShowPrograms.setChecked(self.parent.getShowOnlyPrograms())
+        self.onlyShowGuiApplications.setChecked(self.parent.getShowOnlyGuiApplications())
 
     def updateButtons(self):
         if self.repoListView.childCount() > 1:
@@ -143,7 +143,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             item = item.nextSibling()
 
         self.parent.command.setRepositories(repoList)
-        self.parent.setShowOnlyPrograms(self.onlyShowPrograms.isChecked())
+        self.parent.setShowOnlyGuiApplications(self.onlyShowGuiApplications.isChecked())
         self.parent.progressDialog.show()
 
     def updateListView(self):

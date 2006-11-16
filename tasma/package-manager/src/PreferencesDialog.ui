@@ -251,7 +251,7 @@
                     </property>
                     <widget class="QCheckBox" row="0" column="0">
                         <property name="name">
-                            <cstring>onlyShowPrograms</cstring>
+                            <cstring>onlyShowGuiApplications</cstring>
                         </property>
                         <property name="text">
                             <string>&amp;Show only desktop applications</string>
