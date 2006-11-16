@@ -38,6 +38,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.updateButtons()
 
         self.onlyShowGuiApplications.setChecked(self.parent.getShowOnlyGuiApplications())
+        self.reposChanged = False
 
     def updateButtons(self):
         if self.repoListView.childCount() > 1:
@@ -82,6 +83,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def removeRepo(self):
         repoItem = self.repoListView.currentItem()
         self.repoListView.takeItem(repoItem)
+        self.reposChanged = True
 
     def moveUp(self):
         item = self.repoListView.currentItem()
@@ -97,6 +99,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.repoListView.insertItem(item)
             self.repoListView.setSelected(item, True)
 
+        self.reposChanged = True
+
     def moveDown(self):
         item = self.repoListView.currentItem()
         sibling = item.itemBelow()
@@ -105,6 +109,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             return
 
         item.moveItem(sibling)
+        self.reposChanged = True
 
     def processNewRepo(self):
         repoName = unicode(self.repo.repoName.text())
@@ -119,6 +124,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         item.setText(1, repoAddress)
         self.repoListView.insertItem(item)
 
+        self.reposChanged = True
         self.repo.close()
 
     def updateRepoSettings(self):
@@ -132,19 +138,24 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repoListView.currentItem().setText(0,newRepoName)
         self.repoListView.currentItem().setText(1,newRepoAddress)
 
+        self.reposChanged = True
         self.repo.close()
 
     def saveSettings(self):
-        repoList = []
-        item = self.repoListView.firstChild()
-        while item:
-            repoList.append(unicode(item.text(0)))
-            repoList.append(str(item.text(1)))
-            item = item.nextSibling()
 
-        self.parent.command.setRepositories(repoList)
         self.parent.setShowOnlyGuiApplications(self.onlyShowGuiApplications.isChecked())
-        self.parent.progressDialog.show()
+
+        if self.reposChanged:
+            repoList = []
+            item = self.repoListView.firstChild()
+            while item:
+                repoList.append(unicode(item.text(0)))
+                repoList.append(str(item.text(1)))
+                item = item.nextSibling()
+
+            self.reposChanged = False
+            self.parent.command.setRepositories(repoList)
+            self.parent.progressDialog.show()
 
     def updateListView(self):
         self.repoList = self.parent.command.getRepoList()
