@@ -108,9 +108,6 @@
                     <property name="text">
                         <string>&amp;Cancel</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+C</string>
-                    </property>
                 </widget>
                 <spacer row="0" column="0">
                     <property name="name">
