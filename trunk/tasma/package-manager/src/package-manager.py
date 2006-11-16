@@ -31,6 +31,7 @@ import CustomEventListener
 import Basket
 import BasketDialog
 import Tray
+import Settings
 
 # Pisi
 import pisi
@@ -180,6 +181,8 @@ class MainApplicationWidget(QWidget):
         self.tipper = ComponentTipper(self)
         self.htmlPart.view().setFocus()
         self.show()
+
+        self.settings = Settings.Settings(kapp.config())
 
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
@@ -531,6 +534,8 @@ class MainApplicationWidget(QWidget):
                           "system.base","system.devel","kernel","applications.science",
                           "programming", "system.locale", "server", "kde-i18n"]
 
+        showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
+
         componentPackages = []
         for componentName in componentNames:
             try:
@@ -542,7 +547,7 @@ class MainApplicationWidget(QWidget):
             component_packages = list(set(packages).intersection(compPkgs))
             componentPackages += component_packages
 
-            if self.state != upgrade_state and self.getShowOnlyGuiApplications():
+            if self.state != upgrade_state and showOnlyGuiApp:
                     component_packages = filter(appGuiFilter, component_packages)
 
             if len(component_packages):
@@ -563,7 +568,7 @@ class MainApplicationWidget(QWidget):
 
         # Rest of the packages
         rest_packages = list(set(packages) - set(componentPackages))
-        if self.state != upgrade_state and self.getShowOnlyGuiApplications():
+        if self.state != upgrade_state and showOnlyGuiApp:
             rest_packages = filter(appGuiFilter, rest_packages)
         if rest_packages:
             item = KListViewItem(self.listView)
@@ -751,19 +756,6 @@ class MainApplicationWidget(QWidget):
         self.state = upgrade_state
         self.parent.showUpgradeAction.setChecked(True)
         self.upgradeState()
-
-    def setShowOnlyGuiApplications(self,hideLibraries=False):
-        global kapp
-        self.config = kapp.config()
-        self.config.setGroup("General")
-        self.config.writeEntry("HideLibraries",hideLibraries)
-        self.config.sync()
-
-    def getShowOnlyGuiApplications(self):
-        global kapp
-        self.config = kapp.config()
-        self.config.setGroup("General")
-        return self.config.readBoolEntry("HideLibraries",True)
 
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):

@@ -17,6 +17,7 @@ from qt import *
 # Local imports
 import PreferencesDialog
 import RepoDialog
+import Settings
 
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
@@ -37,7 +38,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.updateListView()
         self.updateButtons()
 
-        self.onlyShowGuiApplications.setChecked(self.parent.getShowOnlyGuiApplications())
+        self.onlyGuiApp.setChecked(self.parent.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp"))
         self.reposChanged = False
 
     def updateButtons(self):
@@ -142,7 +143,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repo.close()
 
     def saveSettings(self):
-        self.parent.setShowOnlyGuiApplications(self.onlyShowGuiApplications.isChecked())
+        self.parent.settings.setValue(Settings.general, "ShowOnlyGuiApp", self.onlyGuiApp.isChecked())
 
         if self.reposChanged:
             repoList = []
