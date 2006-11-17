@@ -24,20 +24,20 @@ class KServiceGroup;
 class TModuleGroup : public KListViewItem
 {
 
-public:
-    TModuleGroup( KListView *parent, const QString &text,
-				const QPixmap &pix, KServiceGroup *group );
+ public:
+  TModuleGroup( KListView *parent, const QString &text,
+                const QPixmap &pix, KServiceGroup *group );
 
-    ~TModuleGroup();
-    
-    QString path() const;
-    QString icon() const;
-    QString caption() const;
+  ~TModuleGroup();
 
-private:
-    QString _path;
-    QString _icon;
-    QString _caption;
+  QString path() const;
+  QString icon() const;
+  QString caption() const;
+
+ private:
+  QString _path;
+  QString _icon;
+  QString _caption;
 };
 
 #endif // T_MODULE_GROUP_H

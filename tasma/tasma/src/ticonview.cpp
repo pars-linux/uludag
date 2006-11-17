@@ -32,74 +32,74 @@
 TIconView::TIconView( QWidget *parent, const char* name )
   : KIconView( parent, name ), _module(0L)
 {
-    setResizeMode( Adjust );
-    setItemsMovable( false );
+  setResizeMode( Adjust );
+  setItemsMovable( false );
 
-    setItemTextPos( Right );
+  setItemTextPos( Right );
 
-    setGridX( 200 );
-    setGridY( 70 );
+  setGridX( 200 );
+  setGridY( 70 );
 
-    QFont f = font();
-    f.setWeight( QFont::Bold );
-    setFont( f );
+  QFont f = font();
+  f.setWeight( QFont::Bold );
+  setFont( f );
 
-    connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( slotItemSelected( QIconViewItem* ) ) );
+  connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( slotItemSelected( QIconViewItem* ) ) );
 
 }
 
 void TIconView::setCategory( const QString& path )
 {
-    clear();
+  clear();
 
-    QPixmap _icon = DesktopIcon( "go", KIcon::SizeMedium ); // defaultIcon
+  QPixmap _icon = DesktopIcon( "go", KIcon::SizeMedium ); // defaultIcon
 
-    KServiceGroup::Ptr category = KServiceGroup::group( path );
-    if ( !category || !category->isValid() )
-        return;
+  KServiceGroup::Ptr category = KServiceGroup::group( path );
+  if ( !category || !category->isValid() )
+    return;
 
-    TIconViewItem *_item;
-    KServiceGroup::List list = category->entries(  true,  true );
-    KServiceGroup::List::ConstIterator it = list.begin();
-    KServiceGroup::List::ConstIterator end = list.end();
-    for (  ; it != end; ++it )
+  TIconViewItem *_item;
+  KServiceGroup::List list = category->entries(  true,  true );
+  KServiceGroup::List::ConstIterator it = list.begin();
+  KServiceGroup::List::ConstIterator end = list.end();
+  for (  ; it != end; ++it )
     {
-        KSycocaEntry *p = (  *it );
-        if (  p->isType(  KST_KService ) )
+      KSycocaEntry *p = (  *it );
+      if (  p->isType(  KST_KService ) )
         {
-            // KCModuleInfo(KService*)
-            KCModuleInfo *minfo = new KCModuleInfo(
-                static_cast<KService*>(  p ) );
+          // KCModuleInfo(KService*)
+          KCModuleInfo *minfo = new KCModuleInfo(
+                                                 static_cast<KService*>(  p ) );
 
-            if (  minfo->icon() )
-                _icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
-            _item = new TIconViewItem( this,
-                                       minfo->moduleName(),
-                                       _icon, minfo );
+          if (  minfo->icon() )
+            _icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
+          _item = new TIconViewItem( this,
+                                     minfo->moduleName(),
+                                     _icon, minfo );
 
         } // ignore second level subGroups!
     }
-    list.clear();
+  list.clear();
 }
 
 void TIconView::slotItemSelected( QIconViewItem* item )
 {
   // kdWarning() << "LU LU LU I got some apple" << endl;
-    TIconViewItem *_item = static_cast<TIconViewItem*>( item );
-    KSimpleConfig cfg(_item->moduleinfo()->fileName(),true);
+  TIconViewItem *_item = static_cast<TIconViewItem*>( item );
+  KSimpleConfig cfg(_item->moduleinfo()->fileName(),true);
 
-    if(cfg.readEntry("X-Tasma-Fork"))
-      {
-        system(cfg.readEntry("Exec"));
-        return;
-      }
-
-    _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
-
-    if ( _module ) {
-        emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text(),
-                                 _item->moduleinfo()->fileName(), _item->moduleinfo()->needsRootPrivileges());
+  if(cfg.readEntry("X-Tasma-Fork"))
+    {
+      system(cfg.readEntry("Exec"));
+      return;
     }
+
+  _module = KCModuleLoader::loadModule( *( _item->moduleinfo() ), KCModuleLoader::Dialog );
+
+  if ( _module ) {
+    emit signalModuleSelected( _module, _item->moduleinfo()->icon(), _item->text(),
+                               _item->moduleinfo()->fileName(), _item->moduleinfo()->needsRootPrivileges());
+  }
 }
 
 void TIconView::contentsMouseDoubleClickEvent (QMouseEvent *event)
@@ -148,28 +148,28 @@ TIconView::~TIconView()
 
 void TIconView::keyPressEvent(QKeyEvent* event)
 {
-    if( event->key() & Qt::Key_Return || event->key() & Qt::Key_Enter )
-        slotItemSelected(currentItem());
+  if( event->key() & Qt::Key_Return || event->key() & Qt::Key_Enter )
+    slotItemSelected(currentItem());
 
-    QIconView::keyPressEvent(event);
+  QIconView::keyPressEvent(event);
 }
 
 TIconViewItem::TIconViewItem( TIconView *parent, const QString& text,
                               const QPixmap& icon, KCModuleInfo* moduleinfo)
-    : KIconViewItem( parent, text, icon )
+  : KIconViewItem( parent, text, icon )
 {
-    _moduleinfo = moduleinfo;
+  _moduleinfo = moduleinfo;
 }
 
 KCModuleInfo* TIconViewItem::moduleinfo() const
 {
-    assert(_moduleinfo != NULL);
-    return _moduleinfo;
+  assert(_moduleinfo != NULL);
+  return _moduleinfo;
 }
 
 TIconViewItem::~TIconViewItem()
 {
-    delete _moduleinfo;
+  delete _moduleinfo;
 }
 
 #include "ticonview.moc"

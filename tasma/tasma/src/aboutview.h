@@ -26,16 +26,16 @@ class QRect;
 class AboutView : public QWidget
 {
 
-public:
-    AboutView( QWidget *parent = 0, const char *name = 0 );
+ public:
+  AboutView( QWidget *parent = 0, const char *name = 0 );
 
-protected:
-    void paintEvent( QPaintEvent *e );
-    
-private:
-    void updateView( const QRect& rect );
-    QPixmap *_tasmaLogo;
-    KPixmap *_pardusLogo;
+ protected:
+  void paintEvent( QPaintEvent *e );
+
+ private:
+  void updateView( const QRect& rect );
+  QPixmap *_tasmaLogo;
+  KPixmap *_pardusLogo;
 };
 
 #endif //ABOUT_VIEW

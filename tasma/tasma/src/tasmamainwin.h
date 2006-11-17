@@ -11,7 +11,7 @@
 
 /*
   tasma - tasmamainwin.h
-  Main window. 
+  Main window.
   Uses a TModuleCategoryList to show configuration module categories,
   a TIconView to show the modules in a category and a TModuleView to
   show the module contents (KCModule).
@@ -35,35 +35,35 @@ class AboutView;
 
 class TasmaMainWin : public KMainWindow
 {
-    Q_OBJECT
+ Q_OBJECT
 
-public:
-    TasmaMainWin( const char* name = 0 );
-    ~TasmaMainWin();
+   public:
+  TasmaMainWin( const char* name = 0 );
+  ~TasmaMainWin();
 
-protected:
-    void setupActions(); // menubar and shortcut keys.
+ protected:
+  void setupActions(); // menubar and shortcut keys.
 
-protected slots:
-    void categorySelected( QListViewItem *category ); // group/category selected
-    void moduleSelected( KCModule *module,
-			 const QString& icon_path,
-			 const QString& text,
-             const QString& filename,
-             bool needsRootPrivileges); // Configuration module selected
-    void backToCategory(); // go back from moduleview to category view.
-    void aboutModule(); // about current active module.
+ protected slots:
+  void categorySelected( QListViewItem *category ); // group/category selected
+  void moduleSelected( KCModule *module,
+                       const QString& icon_path,
+                       const QString& text,
+                       const QString& filename,
+                       bool needsRootPrivileges); // Configuration module selected
+  void backToCategory(); // go back from moduleview to category view.
+  void aboutModule(); // about current active module.
 
-private:
-    QHBox *_hbox;
-    TModuleCategoryList *_index;
-    TModuleView *_moduleview;
-    QWidgetStack *_wstack;
-    TCategoryView *_categoryview;
-    AboutView *_about;
-    KAction *_about_module;
-    KCModule *_currentModule;
-    QListViewItem *_currentCategory;
+ private:
+  QHBox *_hbox;
+  TModuleCategoryList *_index;
+  TModuleView *_moduleview;
+  QWidgetStack *_wstack;
+  TCategoryView *_categoryview;
+  AboutView *_about;
+  KAction *_about_module;
+  KCModule *_currentModule;
+  QListViewItem *_currentCategory;
 
 };
 

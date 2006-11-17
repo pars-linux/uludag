@@ -26,49 +26,49 @@ class TIconView;
 class TIconViewItem : public KIconViewItem
 {
 
-public:
-    TIconViewItem( TIconView *parent, const QString& text,
-				  const QPixmap& icon, KCModuleInfo* moduleinfo);
+ public:
+  TIconViewItem( TIconView *parent, const QString& text,
+                 const QPixmap& icon, KCModuleInfo* moduleinfo);
 
-    ~TIconViewItem();
+  ~TIconViewItem();
 
-    KCModuleInfo* moduleinfo() const;
+  KCModuleInfo* moduleinfo() const;
 
-private:
-    KCModuleInfo* _moduleinfo;
+ private:
+  KCModuleInfo* _moduleinfo;
 
 };
 
 
 class TIconView : public KIconView
 {
-    Q_OBJECT
+ Q_OBJECT
 
-public:
-    TIconView( QWidget *parent, const char* name = 0 );
-    virtual ~TIconView();
+   public:
+  TIconView( QWidget *parent, const char* name = 0 );
+  virtual ~TIconView();
 
-    void setCategory( const QString& path );
+  void setCategory( const QString& path );
 
-signals:
-    void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
+ signals:
+  void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
 
-protected slots:
-    void slotItemSelected( QIconViewItem* item );
+ protected slots:
+  void slotItemSelected( QIconViewItem* item );
 
-protected:
-    virtual void keyPressEvent(QKeyEvent *event);
-    virtual void contentsMouseDoubleClickEvent (QMouseEvent *event);
-    virtual void contentsMousePressEvent(QMouseEvent* event);
-    virtual void contentsMouseMoveEvent(QMouseEvent* event);
+ protected:
+  virtual void keyPressEvent(QKeyEvent *event);
+  virtual void contentsMouseDoubleClickEvent (QMouseEvent *event);
+  virtual void contentsMousePressEvent(QMouseEvent* event);
+  virtual void contentsMouseMoveEvent(QMouseEvent* event);
 
-private:
-    KCModule* _module;
+ private:
+  KCModule* _module;
 
-    QPoint dragPos;
-    TIconViewItem* dragItem;
+  QPoint dragPos;
+  TIconViewItem* dragItem;
 
-    void startDrag();
+  void startDrag();
 
 };
 
