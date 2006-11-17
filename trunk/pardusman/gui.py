@@ -229,7 +229,11 @@ class ProjectWindow(KMainWindow):
         self.ui2project()
         f = tempfile.NamedTemporaryFile()
         self.project.save(f.name)
-        cmd = 'konsole --notabbar --nomenubar --noclose --noframe --workdir %s -e /home/gurer/pardus/uludag/trunk/pardusman/pardusman.py make %s' % (os.getcwd(), f.name)
+        print sys.argv
+        ppath = sys.argv[0]
+        if ppath[0] != '/':
+            ppath = os.path.join(os.getcwd(), ppath)
+        cmd = 'konsole --notabbar --nomenubar --noclose --noframe --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), ppath, f.name)
         subprocess.Popen(["kdesu", "-d", "-u", "root", "-c", cmd])
         self.f = f
     
