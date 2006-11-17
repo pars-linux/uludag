@@ -1,26 +1,48 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-07 15:30+0300\n"
+"POT-Creation-Date: 2006-11-17 10:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
-#: src/questiondlg.py:253 src/usagedlg.py:69 src/hardwareinfodlg.py:238
-#: src/opiniondlg.py:58 src/experiencedlg.py:142 src/goodbyedlg.py:232
-#: src/welcomedlg.py:230 src/feedback.py:69 src/upload.py:245
-#: src/personalinfodlg.py:244
+#: src/experiencedlg.py:142 src/feedback.py:69 src/goodbyedlg.py:232
+#: src/hardwareinfodlg.py:238 src/opiniondlg.py:58 src/personalinfodlg.py:244
+#: src/questiondlg.py:253 src/upload.py:245 src/usagedlg.py:69
+#: src/welcomedlg.py:230
 msgid "Feedback Wizard"
+msgstr ""
+
+#: src/usagedlg.py:71
+msgid "At home"
+msgstr ""
+
+#: src/usagedlg.py:72
+msgid "At work"
+msgstr ""
+
+#: src/usagedlg.py:73
+msgid "At school"
+msgstr ""
+
+#: src/purposedlg.py:92 src/usagedlg.py:74
+msgid "<p align=\"right\">(You can click on multiple items)</p>"
+msgstr ""
+
+#: src/usagedlg.py:75
+msgid "<b>Step 3 of 7</b>"
+msgstr ""
+
+#: src/usagedlg.py:76
+msgid "<h2>Where do you use Pardus?</h2>"
 msgstr ""
 
 #: src/questiondlg.py:255
@@ -43,43 +65,15 @@ msgstr ""
 msgid "<b>Step 4 of 7</b>"
 msgstr ""
 
-#: src/usagedlg.py:71
-msgid "At home"
-msgstr ""
-
-#: src/usagedlg.py:72
-msgid "At work"
-msgstr ""
-
-#: src/usagedlg.py:73
-msgid "At school"
-msgstr ""
-
-#: src/usagedlg.py:74 src/purposedlg.py:92
-msgid "<p align=\"right\">(You can click on multiple items)</p>"
-msgstr ""
-
-#: src/usagedlg.py:75
-msgid "<b>Step 3 of 7</b>"
-msgstr ""
-
-#: src/usagedlg.py:76
-msgid "<h2>Where do you use Pardus?</h2>"
-msgstr ""
-
 #: src/hardwareinfodlg.py:239
 msgid "&Do not send my computer's hardware information"
 msgstr ""
 
 #: src/hardwareinfodlg.py:240
-msgid "Alt+D"
-msgstr ""
-
-#: src/hardwareinfodlg.py:241
 msgid "<b>Step 7 of 7</b>"
 msgstr ""
 
-#: src/hardwareinfodlg.py:242
+#: src/hardwareinfodlg.py:241
 msgid ""
 "<h2>Computer information</h2>\n"
 "<p>\n"
@@ -228,10 +222,6 @@ msgstr ""
 msgid "Goodbye!"
 msgstr ""
 
-#: src/feedback.py:141
-msgid "Feedback"
-msgstr ""
-
 #: src/feedback.py:166
 msgid "Collecting hardware information..."
 msgstr ""
@@ -255,8 +245,8 @@ msgstr ""
 
 #: src/feedback.py:257
 msgid ""
-"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</"
-"font><br>\n"
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is "
+"corrupted.</font><br>\n"
 msgstr ""
 
 #: src/feedback.py:259
@@ -267,8 +257,8 @@ msgstr ""
 
 #: src/feedback.py:261
 msgid ""
-"<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</"
-"font><br>\n"
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is "
+"missing.</font><br>\n"
 msgstr ""
 
 #: src/feedback.py:263

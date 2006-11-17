@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Feedback Tool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-07 15:30+0300\n"
+"POT-Creation-Date: 2006-11-17 10:48+0200\n"
 "PO-Revision-Date: 2006-08-18 23:18+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -20,12 +20,36 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/questiondlg.py:253 src/usagedlg.py:69 src/hardwareinfodlg.py:238
-#: src/opiniondlg.py:58 src/experiencedlg.py:142 src/goodbyedlg.py:232
-#: src/welcomedlg.py:230 src/feedback.py:69 src/upload.py:245
-#: src/personalinfodlg.py:244
+#: src/experiencedlg.py:142 src/feedback.py:69 src/goodbyedlg.py:232
+#: src/hardwareinfodlg.py:238 src/opiniondlg.py:58 src/personalinfodlg.py:244
+#: src/questiondlg.py:253 src/upload.py:245 src/usagedlg.py:69
+#: src/welcomedlg.py:230
 msgid "Feedback Wizard"
 msgstr "Feedback-assistent"
+
+#: src/usagedlg.py:71
+msgid "At home"
+msgstr "Thuis"
+
+#: src/usagedlg.py:72
+msgid "At work"
+msgstr "Op het werk"
+
+#: src/usagedlg.py:73
+msgid "At school"
+msgstr "Op school"
+
+#: src/purposedlg.py:92 src/usagedlg.py:74
+msgid "<p align=\"right\">(You can click on multiple items)</p>"
+msgstr "<p align=\"right\">(Meerdere opties zijn mogelijk)</p>"
+
+#: src/usagedlg.py:75
+msgid "<b>Step 3 of 7</b>"
+msgstr "<b>Stap 3 van 7</b>"
+
+#: src/usagedlg.py:76
+msgid "<h2>Where do you use Pardus?</h2>"
+msgstr "<h2>Waar gebruikt u Pardus?</h2>"
 
 #: src/questiondlg.py:255
 msgid "Very satisfying. Pardus fulfils my requirements"
@@ -47,43 +71,15 @@ msgstr "<h2>Voldoet Pardus aan uw verwachtingen?</h2>"
 msgid "<b>Step 4 of 7</b>"
 msgstr "<b>Stap 4 van 7</b>"
 
-#: src/usagedlg.py:71
-msgid "At home"
-msgstr "Thuis"
-
-#: src/usagedlg.py:72
-msgid "At work"
-msgstr "Op het werk"
-
-#: src/usagedlg.py:73
-msgid "At school"
-msgstr "Op school"
-
-#: src/usagedlg.py:74 src/purposedlg.py:92
-msgid "<p align=\"right\">(You can click on multiple items)</p>"
-msgstr "<p align=\"right\">(Meerdere opties zijn mogelijk)</p>"
-
-#: src/usagedlg.py:75
-msgid "<b>Step 3 of 7</b>"
-msgstr "<b>Stap 3 van 7</b>"
-
-#: src/usagedlg.py:76
-msgid "<h2>Where do you use Pardus?</h2>"
-msgstr "<h2>Waar gebruikt u Pardus?</h2>"
-
 #: src/hardwareinfodlg.py:239
 msgid "&Do not send my computer's hardware information"
 msgstr "&Verstuur geen informatie over mijn hardware."
 
 #: src/hardwareinfodlg.py:240
-msgid "Alt+D"
-msgstr "Alt+D"
-
-#: src/hardwareinfodlg.py:241
 msgid "<b>Step 7 of 7</b>"
 msgstr "<b>Stap 7 van 7</b>"
 
-#: src/hardwareinfodlg.py:242
+#: src/hardwareinfodlg.py:241
 msgid ""
 "<h2>Computer information</h2>\n"
 "<p>\n"
@@ -100,7 +96,8 @@ msgstr ""
 "De assistent zal nu informatie verzamelen over\n"
 "uw hardware, inclusief CPU, geheugen en netwerkkaarten. Deze\n"
 "informatie zal naar het Pardus-ontwikkelingscentrum worden verstuurd \n"
-"om een nog veiliger en stabieler Pardus te kunnen maken. U heeft hier wel een \n"
+"om een nog veiliger en stabieler Pardus te kunnen maken. U heeft hier wel "
+"een \n"
 "internetverbinding voor nodig.\n"
 "\n"
 "<b>Er zullen geen persoonlijke gegevens worden verstuurd.</b>"
@@ -174,12 +171,13 @@ msgstr ""
 "<h2>Welkom bij Pardus</h2>\n"
 "\n"
 "Met deze kleine assistent kunt u berichten versturen naar de \n"
-"Pardus-ontwikkelaars en meehelpen om van Pardus de beste Linux in de wereld te maken.\n"
+"Pardus-ontwikkelaars en meehelpen om van Pardus de beste Linux in de wereld "
+"te maken.\n"
 "\n"
 "<p>\n"
-"De informatie die u verstrekt zal de ontwikkeling van Pardus doen versnellen. \n"
-"Klik op de knop \"Verder\" voor de volgende stap. "
-"<p>"
+"De informatie die u verstrekt zal de ontwikkeling van Pardus doen "
+"versnellen. \n"
+"Klik op de knop \"Verder\" voor de volgende stap. <p>"
 
 #: src/purposedlg.py:84
 msgid "Feedback wizard"
@@ -257,10 +255,6 @@ msgstr "Uploaden"
 msgid "Goodbye!"
 msgstr "Tot ziens!"
 
-#: src/feedback.py:141
-msgid "Feedback"
-msgstr "Feedback"
-
 #: src/feedback.py:166
 msgid "Collecting hardware information..."
 msgstr "Verzamelt hardware-informatie..."
@@ -278,32 +272,35 @@ msgid "<font color=\"#ff0000\">Failed</font><br>\n"
 msgstr "<font color=\"#ff0000\">Mislukt</font><br>\n"
 
 #: src/feedback.py:244
-msgid "<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
+msgid ""
+"<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
 msgstr ""
-"<font color=\"#ff0000\">Kan geen verbinding maken met de feedback-database..</"
-"font><br>\n"
+"<font color=\"#ff0000\">Kan geen verbinding maken met de feedback-database.."
+"</font><br>\n"
 
 #: src/feedback.py:257
 msgid ""
 "<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</"
 "font><br>\n"
 msgstr ""
-"<font color=\"#ff0000\">Er is een probleem met de feedback. De gegevens zijn corrupt geraakt.</"
-"font><br>\n"
+"<font color=\"#ff0000\">Er is een probleem met de feedback. De gegevens zijn "
+"corrupt geraakt.</font><br>\n"
 
 #: src/feedback.py:259
 msgid ""
 "<font color=\"#ff0000\">Server does not support this version. Please update "
 "feedback tool.</font><br>\n"
-msgstr "<font color=\"#ff0000\">De server ondersteunt deze versie niet. Update het Feedbackprogramma.</font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">De server ondersteunt deze versie niet. Update het "
+"Feedbackprogramma.</font><br>\n"
 
 #: src/feedback.py:261
 msgid ""
 "<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</"
 "font><br>\n"
 msgstr ""
-"<font color=\"#ff0000\">Er is een probleem met de feedback. De gegevens ontbreken.</"
-"font><br>\n"
+"<font color=\"#ff0000\">Er is een probleem met de feedback. De gegevens "
+"ontbreken.</font><br>\n"
 
 #: src/feedback.py:263
 msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
@@ -350,4 +347,8 @@ msgstr "Voeg me aan de Pardus-nieuwsbrief toe"
 msgid "<b>Step 6 of 7</b>"
 msgstr "<b>Stap 6 van 7</b>"
 
+#~ msgid "Alt+D"
+#~ msgstr "Alt+D"
 
+#~ msgid "Feedback"
+#~ msgstr "Feedback"
