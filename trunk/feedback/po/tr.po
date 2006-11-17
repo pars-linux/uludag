@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Feedback 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-07 15:30+0300\n"
+"POT-Creation-Date: 2006-11-17 10:48+0200\n"
 "PO-Revision-Date: 2005-12-24 13:17+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@haftalik.net>\n"
 "Language-Team: Turkish <bahadir@haftalik.net>\n"
@@ -15,12 +15,36 @@ msgstr ""
 "Content-Transfer-Encoding: UTF-8\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: src/questiondlg.py:253 src/usagedlg.py:69 src/hardwareinfodlg.py:238
-#: src/opiniondlg.py:58 src/experiencedlg.py:142 src/goodbyedlg.py:232
-#: src/welcomedlg.py:230 src/feedback.py:69 src/upload.py:245
-#: src/personalinfodlg.py:244
+#: src/experiencedlg.py:142 src/feedback.py:69 src/goodbyedlg.py:232
+#: src/hardwareinfodlg.py:238 src/opiniondlg.py:58 src/personalinfodlg.py:244
+#: src/questiondlg.py:253 src/upload.py:245 src/usagedlg.py:69
+#: src/welcomedlg.py:230
 msgid "Feedback Wizard"
 msgstr "Geribildirim Sihirbazı"
+
+#: src/usagedlg.py:71
+msgid "At home"
+msgstr "Evde"
+
+#: src/usagedlg.py:72
+msgid "At work"
+msgstr "İş ortamında"
+
+#: src/usagedlg.py:73
+msgid "At school"
+msgstr "Okulda ya da eğitimde"
+
+#: src/purposedlg.py:92 src/usagedlg.py:74
+msgid "<p align=\"right\">(You can click on multiple items)</p>"
+msgstr "<p align=\"right\">(Birden çok seçimde bulunabilirsiniz)</p>"
+
+#: src/usagedlg.py:75
+msgid "<b>Step 3 of 7</b>"
+msgstr "<b>Adım 3/7</b>"
+
+#: src/usagedlg.py:76
+msgid "<h2>Where do you use Pardus?</h2>"
+msgstr "<h2>Pardus'u nerede kullanıyorsunuz?</h2>"
 
 #: src/questiondlg.py:255
 msgid "Very satisfying. Pardus fulfils my requirements"
@@ -42,43 +66,15 @@ msgstr "<h2>Pardus ihtiyaçlarınızı nasıl karşılıyor?</h2>"
 msgid "<b>Step 4 of 7</b>"
 msgstr "<b>Adım 4/7</b>"
 
-#: src/usagedlg.py:71
-msgid "At home"
-msgstr "Evde"
-
-#: src/usagedlg.py:72
-msgid "At work"
-msgstr "İş ortamında"
-
-#: src/usagedlg.py:73
-msgid "At school"
-msgstr "Okulda ya da eğitimde"
-
-#: src/usagedlg.py:74 src/purposedlg.py:92
-msgid "<p align=\"right\">(You can click on multiple items)</p>"
-msgstr "<p align=\"right\">(Birden çok seçimde bulunabilirsiniz)</p>"
-
-#: src/usagedlg.py:75
-msgid "<b>Step 3 of 7</b>"
-msgstr "<b>Adım 3/7</b>"
-
-#: src/usagedlg.py:76
-msgid "<h2>Where do you use Pardus?</h2>"
-msgstr "<h2>Pardus'u nerede kullanıyorsunuz?</h2>"
-
 #: src/hardwareinfodlg.py:239
 msgid "&Do not send my computer's hardware information"
 msgstr "Bilgisayarıma ait &donanım bilgilerini gönderme."
 
 #: src/hardwareinfodlg.py:240
-msgid "Alt+D"
-msgstr "Alt+D"
-
-#: src/hardwareinfodlg.py:241
 msgid "<b>Step 7 of 7</b>"
 msgstr "<b>Adım 7/7</b>"
 
-#: src/hardwareinfodlg.py:242
+#: src/hardwareinfodlg.py:241
 msgid ""
 "<h2>Computer information</h2>\n"
 "<p>\n"
@@ -249,10 +245,6 @@ msgstr "Gönderiliyor"
 msgid "Goodbye!"
 msgstr "Güle güle!"
 
-#: src/feedback.py:141
-msgid "Feedback"
-msgstr "Geribildirim"
-
 #: src/feedback.py:166
 msgid "Collecting hardware information..."
 msgstr "Donanım bilgisi toplanıyor..."
@@ -345,3 +337,9 @@ msgstr "Beni Pardus duyuru listesine ekle."
 #: src/personalinfodlg.py:251
 msgid "<b>Step 6 of 7</b>"
 msgstr "<b>Adım 6/7</b>"
+
+#~ msgid "Alt+D"
+#~ msgstr "Alt+D"
+
+#~ msgid "Feedback"
+#~ msgstr "Geribildirim"
