@@ -43,88 +43,88 @@ TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon
                           bool needsRootPrivileges )
   : QWidget( parent ), _proc(0L), _embedWidget(0L), _embedLayout(0L)
 {
-    contentView = new TMContent( this, module );
+  contentView = new TMContent( this, module );
 
-    // Name of the desktop file
-    _filename = filename.section('/',-1);
+  // Name of the desktop file
+  _filename = filename.section('/',-1);
 
-    QVBoxLayout *vbox = new QVBoxLayout( this, 3 );
-    QHBoxLayout *header = new QHBoxLayout( vbox, 5 );
+  QVBoxLayout *vbox = new QVBoxLayout( this, 3 );
+  QHBoxLayout *header = new QHBoxLayout( vbox, 5 );
 
-    QPixmap pix = DesktopIcon( icon_path, KIcon::SizeSmallMedium );
-    _icon = new QLabel( this );
-    _icon->setPixmap( pix );
-    _icon->setFixedSize( _icon->minimumSizeHint() );
+  QPixmap pix = DesktopIcon( icon_path, KIcon::SizeSmallMedium );
+  _icon = new QLabel( this );
+  _icon->setPixmap( pix );
+  _icon->setFixedSize( _icon->minimumSizeHint() );
 
-    _moduleName = new QLabel( this );
-    QString name = QString( "<b>" ) + text + QString( "</b>" );
-    _moduleName->setText( name );
-    header->addWidget( _icon );
-    header->addWidget( _moduleName );
+  _moduleName = new QLabel( this );
+  QString name = QString( "<b>" ) + text + QString( "</b>" );
+  _moduleName->setText( name );
+  header->addWidget( _icon );
+  header->addWidget( _moduleName );
 
-    _sep = new KSeparator( KSeparator::HLine, this );
+  _sep = new KSeparator( KSeparator::HLine, this );
 
-    // main content
-    vbox->addWidget( contentView );
-    vbox->addWidget( _sep );
+  // main content
+  vbox->addWidget( contentView );
+  vbox->addWidget( _sep );
 
-    _back = new KPushButton( KGuiItem( i18n( "&Back" ), "back" ), this );
-    _back->setFixedSize( _back->sizeHint() );
-    _back->setDefault(true);
+  _back = new KPushButton( KGuiItem( i18n( "&Back" ), "back" ), this );
+  _back->setFixedSize( _back->sizeHint() );
+  _back->setDefault(true);
 
-    _default = new KPushButton( KStdGuiItem::defaults(), this );
-    _default->setFixedSize( _default->sizeHint() );
+  _default = new KPushButton( KStdGuiItem::defaults(), this );
+  _default->setFixedSize( _default->sizeHint() );
 
-    _apply = new KPushButton( KStdGuiItem::apply(), this );
-    _apply->setFixedSize( _apply->sizeHint() );
+  _apply = new KPushButton( KStdGuiItem::apply(), this );
+  _apply->setFixedSize( _apply->sizeHint() );
 
-    _reset = new KPushButton( KGuiItem( i18n( "&Reset" ), "undo" ), this );
-    _reset->setFixedSize( _reset->sizeHint() );
+  _reset = new KPushButton( KGuiItem( i18n( "&Reset" ), "undo" ), this );
+  _reset->setFixedSize( _reset->sizeHint() );
 
-    _runAsRoot = new KPushButton( KGuiItem( i18n( "&Administrator Mode" ), "" ), this );
-    _runAsRoot->setFixedSize( _runAsRoot->sizeHint() );
+  _runAsRoot = new KPushButton( KGuiItem( i18n( "&Administrator Mode" ), "" ), this );
+  _runAsRoot->setFixedSize( _runAsRoot->sizeHint() );
 
-    if( !needsRootPrivileges or getuid() == 0)
-        _runAsRoot->hide();
+  if( !needsRootPrivileges or getuid() == 0)
+    _runAsRoot->hide();
 
-    QHBoxLayout *buttons = new QHBoxLayout( vbox, 5);
-    buttons->addWidget( _back, 0, AlignLeft );
-    buttons->addWidget( _default, 0, AlignLeft );
-    buttons->addWidget( _runAsRoot, 0, AlignLeft );
+  QHBoxLayout *buttons = new QHBoxLayout( vbox, 5);
+  buttons->addWidget( _back, 0, AlignLeft );
+  buttons->addWidget( _default, 0, AlignLeft );
+  buttons->addWidget( _runAsRoot, 0, AlignLeft );
 
-    buttons->addStretch( 1 );
+  buttons->addStretch( 1 );
 
-    buttons->addWidget( _apply, 0, AlignRight );
-    buttons->addWidget( _reset, 0, AlignRight );
+  buttons->addWidget( _apply, 0, AlignRight );
+  buttons->addWidget( _reset, 0, AlignRight );
 
-    // set buttons visibility
-    #if 0
-    int b = contentView->module()->buttons();
-    if ( !( b & KCModule::Default ) ) _default->hide();
-    if ( !( b & KCModule::Apply ) ) {
-        _apply->hide();
-        _reset->hide();
-    }
-    #endif
+  // set buttons visibility
+#if 0
+  int b = contentView->module()->buttons();
+  if ( !( b & KCModule::Default ) ) _default->hide();
+  if ( !( b & KCModule::Apply ) ) {
+    _apply->hide();
+    _reset->hide();
+  }
+#endif
 
-    connect( _back, SIGNAL( clicked() ), parent, SLOT( backToCategory() ) );
+  connect( _back, SIGNAL( clicked() ), parent, SLOT( backToCategory() ) );
 
-    connect( _default, SIGNAL( clicked() ), SLOT( defaultClicked() ) );
-    connect( _apply, SIGNAL( clicked() ), SLOT( applyClicked() ) );
-    connect( _reset, SIGNAL( clicked() ), SLOT( resetClicked() ) );
-    connect( _runAsRoot, SIGNAL( clicked() ), SLOT( runAsRoot() ) );
+  connect( _default, SIGNAL( clicked() ), SLOT( defaultClicked() ) );
+  connect( _apply, SIGNAL( clicked() ), SLOT( applyClicked() ) );
+  connect( _reset, SIGNAL( clicked() ), SLOT( resetClicked() ) );
+  connect( _runAsRoot, SIGNAL( clicked() ), SLOT( runAsRoot() ) );
 
-    connect( contentView->module(), SIGNAL( changed( bool ) ),
-             SLOT( contentChanged( bool ) ) );
+  connect( contentView->module(), SIGNAL( changed( bool ) ),
+           SLOT( contentChanged( bool ) ) );
 
-    _apply->setEnabled( false );
-    _reset->setEnabled( false );
+  _apply->setEnabled( false );
+  _reset->setEnabled( false );
 }
 
 void TModuleView::applyClicked()
 {
-    contentView->module()->save();
-    contentChanged( false );
+  contentView->module()->save();
+  contentChanged( false );
 }
 
 void TModuleView::runAsRoot()
@@ -191,14 +191,14 @@ void TModuleView::killRootProcess()
 
 void TModuleView::resetClicked()
 {
-    contentView->module()->load();
-    contentChanged( false );
+  contentView->module()->load();
+  contentChanged( false );
 }
 
 void TModuleView::defaultClicked()
 {
-    contentView->module()->defaults();
-    contentChanged( true );
+  contentView->module()->defaults();
+  contentChanged( true );
 }
 
 void TModuleView::contentChanged( bool state )
@@ -209,43 +209,43 @@ void TModuleView::contentChanged( bool state )
 
 TModuleView::~TModuleView()
 {
-    killRootProcess();
+  killRootProcess();
 
-    delete _apply;
-    _apply = 0;
+  delete _apply;
+  _apply = 0;
 
-    delete _reset;
-    _reset = 0;
+  delete _reset;
+  _reset = 0;
 
-    delete _icon;
-    _icon = 0;
+  delete _icon;
+  _icon = 0;
 
-    delete _moduleName;
-    _moduleName = 0;
+  delete _moduleName;
+  _moduleName = 0;
 
-    delete contentView;
-    contentView = 0;
+  delete contentView;
+  contentView = 0;
 }
 
 TMContent::TMContent( QWidget *parent, KCModule *module )
-    : QScrollView( parent )
+  : QScrollView( parent )
 {
-    _module = module;
+  _module = module;
 
-    setFrameStyle( NoFrame );
-    setResizePolicy( AutoOneFit );
-    // hacky;
-    contentWidget = new ContentWidget( viewport() );
-    _module->reparent( contentWidget,
-                       0,
-                       QPoint( 0, 0)
-                       ,true);
+  setFrameStyle( NoFrame );
+  setResizePolicy( AutoOneFit );
+  // hacky;
+  contentWidget = new ContentWidget( viewport() );
+  _module->reparent( contentWidget,
+                     0,
+                     QPoint( 0, 0)
+                     ,true);
 
-    vbox = new QVBoxLayout( contentWidget );
-    vbox->addWidget( _module );
-    vbox->activate();
+  vbox = new QVBoxLayout( contentWidget );
+  vbox->addWidget( _module );
+  vbox->activate();
 
-    addChild( contentWidget );
+  addChild( contentWidget );
 }
 
 TMContent::~TMContent()
@@ -255,7 +255,7 @@ TMContent::~TMContent()
 
 KCModule* TMContent::module() const
 {
-    return _module;
+  return _module;
 }
 
 #include "tmoduleview.moc"

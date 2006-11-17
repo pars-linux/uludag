@@ -20,15 +20,15 @@
 
 TModuleGroup::TModuleGroup( KListView *parent, const QString &text,
                             const QPixmap &pix, KServiceGroup *group )
-    : KListViewItem( parent, text )
+  : KListViewItem( parent, text )
 {
-    if ( group->isValid() ) {
-        _path = group->relPath();
-        _icon = group->icon();
-        _caption = group->caption();
-    }
+  if ( group->isValid() ) {
+    _path = group->relPath();
+    _icon = group->icon();
+    _caption = group->caption();
+  }
 
-    setPixmap( 0, pix );
+  setPixmap( 0, pix );
 }
 
 TModuleGroup::~TModuleGroup()
@@ -38,16 +38,16 @@ TModuleGroup::~TModuleGroup()
 
 QString TModuleGroup::path() const
 {
-    return _path;
+  return _path;
 }
 
 QString TModuleGroup::icon() const
 {
-    return _icon;
+  return _icon;
 }
 
 QString TModuleGroup::caption() const
 {
-    return _caption;
+  return _caption;
 }
 

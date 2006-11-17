@@ -23,11 +23,11 @@ class KServiceGroup;
 
 class TModuleCategoryList : public KListView
 {
-    Q_OBJECT
+ Q_OBJECT
 
-public:
-    TModuleCategoryList( QWidget *parent = 0, const char *name = 0 );
-    ~TModuleCategoryList();
+   public:
+  TModuleCategoryList( QWidget *parent = 0, const char *name = 0 );
+  ~TModuleCategoryList();
 
 };
 

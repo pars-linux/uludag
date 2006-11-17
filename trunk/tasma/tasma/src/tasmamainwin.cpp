@@ -75,78 +75,78 @@ TasmaMainWin::~TasmaMainWin()
 
 void TasmaMainWin::setupActions()
 {
-    KStdAction::quit( this,  SLOT( close() ),  actionCollection() );
+  KStdAction::quit( this,  SLOT( close() ),  actionCollection() );
 
-    _about_module = new KAction( i18n( "About Current Module" ), 0,
-                                this, SLOT( aboutModule() ), actionCollection(),
-                                "help_about_module" );
+  _about_module = new KAction( i18n( "About Current Module" ), 0,
+                               this, SLOT( aboutModule() ), actionCollection(),
+                               "help_about_module" );
 
-    _about_module->setEnabled( false );
+  _about_module->setEnabled( false );
 
-    createGUI( "tasmaui.rc" );
+  createGUI( "tasmaui.rc" );
 }
 
 void TasmaMainWin::categorySelected( QListViewItem* category )
 {
-    if ( !category ) {
-        // clicked on an empty area in listview.
-        return;
-    }
+  if ( !category ) {
+    // clicked on an empty area in listview.
+    return;
+  }
 
-    if( _moduleview )
+  if( _moduleview )
     {
-        delete _moduleview;
-        _moduleview = 0;
+      delete _moduleview;
+      _moduleview = 0;
     }
 
-    TModuleGroup *_mg = static_cast<TModuleGroup*>( category );
+  TModuleGroup *_mg = static_cast<TModuleGroup*>( category );
 
-    // If visible widget is a moduleview (or aboutview), than we should remove it.
-    if ( _wstack->visibleWidget() != _categoryview ) {
-        QWidget *w = _wstack->visibleWidget();
-        _wstack->removeWidget( w );
-    }
+  // If visible widget is a moduleview (or aboutview), than we should remove it.
+  if ( _wstack->visibleWidget() != _categoryview ) {
+    QWidget *w = _wstack->visibleWidget();
+    _wstack->removeWidget( w );
+  }
 
-    _wstack->raiseWidget( _categoryview );
-    _categoryview->setCategory( _mg->path(), _mg->icon(), _mg->caption() );
+  _wstack->raiseWidget( _categoryview );
+  _categoryview->setCategory( _mg->path(), _mg->icon(), _mg->caption() );
 
-    // set the current category
-    _currentCategory = category;
+  // set the current category
+  _currentCategory = category;
 
-    // no module is selected
-    _about_module->setEnabled( false );
+  // no module is selected
+  _about_module->setEnabled( false );
 }
 
 void TasmaMainWin::moduleSelected( KCModule *module, const QString& icon_path, const QString& text, const QString& filename, bool needsRootPrivileges)
 {
-    if ( _moduleview ) {
-        delete _moduleview;
-        _moduleview = 0;
-    }
+  if ( _moduleview ) {
+    delete _moduleview;
+    _moduleview = 0;
+  }
 
-    _currentModule = module;
-    if ( _currentModule->aboutData() ) {
-        _about_module->setEnabled( true );
-    }
-    else {
-        _about_module->setEnabled( false );
-    }
+  _currentModule = module;
+  if ( _currentModule->aboutData() ) {
+    _about_module->setEnabled( true );
+  }
+  else {
+    _about_module->setEnabled( false );
+  }
 
-    _moduleview = new TModuleView( this, module, icon_path, text, filename, needsRootPrivileges);
-    _wstack->addWidget( _moduleview );
-    _wstack->raiseWidget( _moduleview );
+  _moduleview = new TModuleView( this, module, icon_path, text, filename, needsRootPrivileges);
+  _wstack->addWidget( _moduleview );
+  _wstack->raiseWidget( _moduleview );
 }
 
 void TasmaMainWin::backToCategory()
 {
-    /* to activate a category first unselect than select it again.
-       funny, but works :) */
-    _index->setSelected( _currentCategory, false );
-    _index->setSelected( _currentCategory, true );
+  /* to activate a category first unselect than select it again.
+     funny, but works :) */
+  _index->setSelected( _currentCategory, false );
+  _index->setSelected( _currentCategory, true );
 }
 
 void TasmaMainWin::aboutModule()
 {
-    KAboutApplication about( _currentModule->aboutData() );
-    about.exec();
+  KAboutApplication about( _currentModule->aboutData() );
+  about.exec();
 }

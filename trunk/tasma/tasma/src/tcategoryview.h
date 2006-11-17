@@ -20,32 +20,32 @@ class QLabel;
 
 class CategoryTitle : public QFrame
 {
-public:
-    CategoryTitle( TCategoryView *view );
-	
-    void setPixmap( const QPixmap& icon );
-    void setText( const QString& text );
+ public:
+  CategoryTitle( TCategoryView *view );
 
-private:
-    QLabel *_pix;
-    QLabel *_caption;
+  void setPixmap( const QPixmap& icon );
+  void setText( const QString& text );
+
+ private:
+  QLabel *_pix;
+  QLabel *_caption;
 };
 
 class TCategoryView : public QFrame
 {
-    Q_OBJECT
-public:
-    TCategoryView( QWidget *parent = 0, const char* name = 0 );
-    virtual ~TCategoryView();
+ Q_OBJECT
+   public:
+  TCategoryView( QWidget *parent = 0, const char* name = 0 );
+  virtual ~TCategoryView();
 
-    void setCategory( const QString& path, const QString& icon, const QString& caption );
+  void setCategory( const QString& path, const QString& icon, const QString& caption );
 
-signals:
-    void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
+ signals:
+  void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
 
-private:
-    CategoryTitle *_title;
-    TIconView *_iconview;
+ private:
+  CategoryTitle *_title;
+  TIconView *_iconview;
 };
 
 #endif // T_CATEGORY_VIEW_H

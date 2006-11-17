@@ -24,14 +24,14 @@ class TasmaMainWin;
 
 class TasmaApp : public KUniqueApplication
 {
-    Q_OBJECT
+ Q_OBJECT
 
-public:
-    TasmaApp();
-    virtual ~TasmaApp();
+   public:
+  TasmaApp();
+  virtual ~TasmaApp();
 
-private:
-    TasmaMainWin *tasmawin;
+ private:
+  TasmaMainWin *tasmawin;
 };
 
 #endif // MAIN_H
