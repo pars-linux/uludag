@@ -1,5 +1,5 @@
 <PardusmanProject type="install" size="734003200">
-    <Title>Pardus 2007 Beta</Title>
+    <Title>Pardus 2006-11-17</Title>
     <WorkDir>/home/gurer/uludag/trunk/pardusman/test/</WorkDir>
     <ReleaseFiles>/home/gurer/uludag/trunk/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
@@ -361,6 +361,7 @@
         <Package>graphviz</Package>
         <Package>grep</Package>
         <Package>groff</Package>
+        <Package>groff-utf8</Package>
         <Package>grounation-xcursors</Package>
         <Package>grub</Package>
         <Package>gsl</Package>
@@ -377,6 +378,7 @@
         <Package>gwenview-i18n</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
+        <Package>hal-info</Package>
         <Package>hdparm</Package>
         <Package>hplip</Package>
         <Package>icecream</Package>
