@@ -40,7 +40,7 @@ def usage():
     print >> sys.stderr, __doc__
     sys.exit(1)
 
-def processPOFile(filePath):
+def processPOFile(poPath, proName = 'Noname'):
     """Returns a dictionary filled up with some information about the po file"""
     ID = 1
     STR = 2
@@ -49,21 +49,21 @@ def processPOFile(filePath):
 
     headerFields = ["Project-Id-Version", "POT-Creation-Date", "PO-Revision-Date", "Last-Translator", "Language-Team"]
 
-    if urlparse(filePath)[0] == "http" or urlparse(filePath)[0] == "https":
+    if urlparse(poPath)[0] == "http" or urlparse(poPath)[0] == "https":
         from urllib2 import urlopen
         try:
-            fileObj = urlopen(filePath)
+            fileObj = urlopen(poPath)
         except:
-            print >> sys.stderr, "Unable to read file: '%s'" % filePath
+            print >> sys.stderr, "Unable to read file: '%s'" % poPath
             sys.exit(1)
-    elif urlparse(filePath)[0] == "":
+    elif urlparse(poPath)[0] == "":
         try:
-            fileObj = open(filePath)
+            fileObj = open(poPath)
         except IOError, msg:
-            print >> sys.stderr, "Unable to read file: '%s'" % filePath
+            print >> sys.stderr, "Unable to read file: '%s'" % poPath
             sys.exit(1)
     else:
-        print >> sys.stderr, "Unknown url: '%s'" % filePath
+        print >> sys.stderr, "Unknown url: '%s'" % poPath
 
     lines = fileObj.readlines()
 
@@ -83,8 +83,9 @@ def processPOFile(filePath):
         if (msgid and msgstr) and (not fuzzy):
             fileInfo['Translated'] += 1
 
-    fileInfo['File-Name'] = os.path.basename(filePath)
-    fileInfo['File-Path'] = filePath
+    fileInfo['File-Name'] = os.path.basename(poPath)
+    fileInfo['Project-Name'] = proName
+    fileInfo['File-Path'] = poPath
 
     for k in ['Untranslated', 'Translated', 'Fuzzy', 'Total']:
         fileInfo[k] = 0
@@ -147,11 +148,7 @@ def createHTML(files, po_lang, html_lang = 'en'):
     body = []
 
     for f in files:
-        try:
-            body.append((htmlBodyTemplate[html_lang] % processPOFile(f)))
-        except KeyError, e:
-            print "Header problematique in '%s'" % (f)
-            print "Missing header: ", e
+        body.append((htmlBodyTemplate[html_lang] % processPOFile(files[f], f)))
 
     try:
         of = open("stats-%s.html" % po_lang, "w")

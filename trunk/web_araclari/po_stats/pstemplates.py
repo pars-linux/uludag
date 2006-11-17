@@ -21,7 +21,7 @@ htmlHeaderTemplate["en"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
 htmlBodyTemplate["en"] = '''<table border="1" align="center" width="90%%" cellspacing="1" cellpadding="5">
                             <tr><td colspan="6">%(Language-Team)s (<b>%(Project-Id-Version)s</b>)</td></tr>
                             <tr><td>File</td><td>Total Messages</td><td>Translated</td><td>Fuzzy</td><td>Untranslated</td></tr>
-                            <tr><td>%(File-Name)s</td><td>%(Total)s</td><td>%(Translated)s</td><td>%(Fuzzy)s</td><td>%(Untranslated)s</td></tr>
+                            <tr><td>%(Project-Name)s, %(File-Name)s</td><td>%(Total)s</td><td>%(Translated)s</td><td>%(Fuzzy)s</td><td>%(Untranslated)s</td></tr>
                             </table>'''
 
 htmlFooterTemplate["en"] = '''</html></body>'''
@@ -99,7 +99,7 @@ htmlHeaderTemplate["en"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
 
 <br>
 
-<p><img src="../../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> Stats for -<b>%s</b>-</span>
+<p><img src="../../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> Po stats for -<b>%s</b>-</span>
 
 <p><center><table style="width: 90%%;">
 <tr>
@@ -113,7 +113,7 @@ htmlHeaderTemplate["en"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
 
 htmlBodyTemplate["en"] = '''
 <tr>
-    <td class="fitd"><a href="%(File-Path)s">%(Project-Id-Version)s</a></td>
+    <td class="fitd"><a href="%(File-Path)s">%(Project-Name)s</a></td>
     <td class="itd">%(Total)s</td>
     <td class="itd">%(Translated)s</td>
     <td class="itd">%(Fuzzy)s</td>
@@ -226,7 +226,7 @@ htmlHeaderTemplate["tr"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
 '''
 
 htmlBodyTemplate["tr"] = '''<tr>
-    <td class="fitd"><a href="%(File-Path)s">%(Project-Id-Version)s</a></td>
+    <td class="fitd"><a href="%(File-Path)s">%(Project-Name)s</a></td>
     <td class="itd">%(Total)s</td>
     <td class="itd">%(Translated)s</td>
     <td class="itd">%(Fuzzy)s</td>
