@@ -20,12 +20,14 @@
 #include <qtextstream.h>
 
 #include <dcopref.h>
+#include <dcopclient.h>
 #include <kcombobox.h>
 #include <kdebug.h>
 #include <kstandarddirs.h>
 #include <kglobal.h>
 #include <kstringhandler.h>
 #include <kconfig.h>
+#include <kapplication.h>
 
 
 #include "wallpaper.h"
@@ -35,7 +37,7 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 {
     changePaper = true;
     selectedPaper = "";
-    
+
     QStringList lst = KGlobal::dirs()->findAllResources( "wallpaper",  "*.desktop",  false /* no recursion */,  true /* unique files */ );
     QString line,lname,lang,langCode;
 
@@ -66,7 +68,7 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
                     foundName=true;
                   }
               }
-	    
+
 	    papers.insert(lname, (*it).remove(".desktop"));
 	    desktopFile.close();
 	  }
@@ -76,12 +78,21 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
     for(; it != papers.constEnd(); ++it)
       m_urlWallpaperBox->insertItem(it.key());
 
-    connect( testWallpaper, SIGNAL( clicked() ), this , SLOT( setWallpaper() ) );
+    connect( testWallpaperButton, SIGNAL( clicked() ), this , SLOT( testWallpaper() ) );
     connect( m_urlWallpaperBox, SIGNAL( activated( int ) ), this, SLOT( paperSelected( int ) ) );
     connect( checkChange, SIGNAL( toggled( bool ) ), this, SLOT( checkChanged( bool ) ) );
 
 
     emit paperSelected(0);
+    // Backup old walpaper name
+    DCOPClient *client = kapp->dcopClient();
+    QByteArray replyData;
+    QCString replyType;
+
+    client->call("kdesktop", "KBackgroundIface", "currentWallpaper(int)", 6, replyType, replyData);
+    QDataStream reply( replyData, IO_ReadOnly );
+    reply >> oldWallpaper;
+
 }
 
 void Wallpaper::paperSelected( int item )
@@ -92,6 +103,12 @@ void Wallpaper::paperSelected( int item )
   QPixmap pix( wp );
   pix_wallpaper->setPixmap( pix );
   selectedPaper = file;
+}
+
+void Wallpaper::testWallpaper()
+{
+  DCOPRef wall( "kdesktop",  "KBackgroundIface" );
+  DCOPReply reply = wall.call(  "setWallpaper", selectedPaper, 6 );
 }
 
 void Wallpaper::setWallpaper()
@@ -117,7 +134,6 @@ void Wallpaper::setWallpaper()
     // call dcop
     DCOPRef wall( "kdesktop",  "KBackgroundIface" );
     DCOPReply reply = wall.call(  "setWallpaper", selectedPaper, 6 );
-
 }
 
 void Wallpaper::checkChanged( bool dontChange )
@@ -139,5 +155,12 @@ bool Wallpaper::changeWallpaper()
     else
         return false;
 }
+
+void Wallpaper::resetWallpaper()
+{
+  DCOPRef wall( "kdesktop", "KBackgroundIface" );
+  DCOPReply reply = wall.call("setWallpaper", oldWallpaper, 6);
+}
+
 
 #include "wallpaper.moc"

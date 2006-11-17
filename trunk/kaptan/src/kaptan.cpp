@@ -66,8 +66,10 @@ void Kaptan::next()
         mouse->save();
     }
     else if ( currentPage() == wallpaper ) {
-        if ( wallpaper->changeWallpaper() )
-            wallpaper->setWallpaper();
+        if (wallpaper->changeWallpaper())
+          wallpaper->setWallpaper();
+        else
+          wallpaper->resetWallpaper();
     }
 
     QWizard::next();
