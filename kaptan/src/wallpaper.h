@@ -22,7 +22,9 @@ class Wallpaper : public WallpaperDlg
 
 public:
     Wallpaper( QWidget *parent = 0, const char* name = 0 );
+
     bool changeWallpaper();
+    void resetWallpaper();
 
 public slots:
     void setWallpaper();
@@ -30,10 +32,11 @@ public slots:
 protected slots:
     void paperSelected( int );
     void checkChanged( bool change );
+    void testWallpaper();
 
 private:
     QMap<QString, QString> papers;
-    QString selectedPaper;
+    QString selectedPaper, oldWallpaper;
     bool changePaper;
 };
 

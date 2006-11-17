@@ -136,7 +136,7 @@
         </spacer>
         <widget class="QPushButton" row="5" column="1">
             <property name="name">
-                <cstring>testWallpaper</cstring>
+                <cstring>testWallpaperButton</cstring>
             </property>
             <property name="text">
                 <string>&amp;Test Wallpaper</string>
