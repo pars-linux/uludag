@@ -49,7 +49,7 @@ def main(args):
             prj = item
             args.remove(item)
     import gui
-    # QT messes with args, so a copy of it is passed
+    # Qt messes with args, so a copy of it is passed
     gui.gui_main(args[:], prj)
 
 if __name__ == "__main__":
