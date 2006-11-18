@@ -252,6 +252,7 @@ class MainApplicationWidget(QWidget):
         self.setCursor(Qt.waitCursor)
         upgradables = pisi.api.list_upgradable()
         self.createComponentList(upgradables, True)
+        self.parent.showUpgradeAction.setEnabled(True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
         self.lastSelectedComponent = i18n("All")
@@ -752,6 +753,7 @@ class MainApplicationWidget(QWidget):
         self.resetState()
         self.state = upgrade_state
         self.parent.showUpgradeAction.setChecked(True)
+        self.parent.showUpgradeAction.setEnabled(False)
         self.processEvents()
         self.progressDialog.hideStatus(True)
         self.progressDialog.show()
