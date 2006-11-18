@@ -22,6 +22,7 @@ import os
 import sys
 import getopt
 from urlparse import urlparse
+from operator import itemgetter
 
 sys.path.append('.')
 
@@ -42,12 +43,24 @@ def usage():
 
 def processPOFile(poPath, proName = 'Noname'):
     """Returns a dictionary filled up with some information about the po file"""
-    ID = 1
-    STR = 2
+    ID, STR = range(1, 3)
 
     fileInfo = {}
 
     headerFields = ["Project-Id-Version", "POT-Creation-Date", "PO-Revision-Date", "Last-Translator", "Language-Team"]
+
+    for k in ['Untranslated', 'Translated', 'Fuzzy', 'Total', 'pU', 'pF', 'pT']:
+        fileInfo[k] = 0
+
+    fileInfo['Project-Name'] = proName
+
+    if not poPath:
+        for h in headerFields + ['File-Name', 'File-Path']:
+            fileInfo[h] = "#"
+        return fileInfo
+
+    fileInfo['File-Name'] = os.path.basename(poPath)
+    fileInfo['File-Path'] = poPath
 
     if urlparse(poPath)[0] == "http" or urlparse(poPath)[0] == "https":
         from urllib2 import urlopen
@@ -82,13 +95,6 @@ def processPOFile(poPath, proName = 'Noname'):
             fileInfo['Fuzzy'] += 1
         if (msgid and msgstr) and (not fuzzy):
             fileInfo['Translated'] += 1
-
-    fileInfo['File-Name'] = os.path.basename(poPath)
-    fileInfo['Project-Name'] = proName
-    fileInfo['File-Path'] = poPath
-
-    for k in ['Untranslated', 'Translated', 'Fuzzy', 'Total']:
-        fileInfo[k] = 0
 
     section = None
     fuzzy = 0
@@ -141,14 +147,21 @@ def processPOFile(poPath, proName = 'Noname'):
     for k in ['Untranslated', 'Translated', 'Fuzzy']:
         fileInfo['Total'] += fileInfo[k]
 
+    fileInfo['pU'] = 100 * fileInfo['Untranslated'] / fileInfo['Total']
+    fileInfo['pT'] = 100 * fileInfo['Translated'] / fileInfo['Total']
+    fileInfo['pF'] = 100 * fileInfo['Fuzzy'] / fileInfo['Total']
+
     return fileInfo
 
 
 def createHTML(files, po_lang, html_lang = 'en'):
-    body = []
+    body, dlist = [], []
 
     for f in files:
-        body.append((htmlBodyTemplate[html_lang] % processPOFile(files[f], f)))
+        dlist.append(processPOFile(files[f], f))
+
+    for d in sorted(dlist, key=itemgetter('pT'), reverse=True):
+        body.append(htmlBodyTemplate[html_lang] % (d))
 
     try:
         of = open("stats-%s.html" % po_lang, "w")

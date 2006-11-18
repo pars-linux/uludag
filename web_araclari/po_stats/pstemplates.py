@@ -54,12 +54,10 @@ htmlHeaderTemplate["en"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
             }
 
             .itd {
-                border-bottom: 1px #DDD dashed;
                 text-align: center;
             }
 
             .fitd {
-                border-bottom: 1px #DDD dashed;
             }
 
         </style>
@@ -118,7 +116,20 @@ htmlBodyTemplate["en"] = '''
     <td class="itd">%(Translated)s</td>
     <td class="itd">%(Fuzzy)s</td>
     <td class="itd">%(Untranslated)s</td>
-</tr>'''
+</tr>
+<tr>
+    <td colspan="5" style="width: 100%%; border-bottom: 1px #000 solid;">
+        <table style="width: 100%%; height: 6px; margin: 0px; padding: 0px;">
+            <tr>
+                <td style="width: %(pT)s%%; padding: 0px; margin: 0px; background-color: #62cf62;"></td>
+                <td style="width: %(pF)s%%; padding: 0px; margin: 0px; background-color: #d8ea42;"></td>
+                <td style="width: %(pU)s%%; padding: 0px; margin: 0px; background-color: #ea4242;"></td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+'''
 
 htmlFooterTemplate["en"] = '''
 </table></center>
@@ -167,12 +178,10 @@ htmlHeaderTemplate["tr"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
             }
 
             .itd {
-                border-bottom: 1px #DDD dashed;
                 text-align: center;
             }
 
             .fitd {
-                border-bottom: 1px #DDD dashed;
             }
 
         </style>
@@ -225,13 +234,27 @@ htmlHeaderTemplate["tr"] = '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Trans
 
 '''
 
-htmlBodyTemplate["tr"] = '''<tr>
+htmlBodyTemplate["tr"] = '''
+<tr>
     <td class="fitd"><a href="%(File-Path)s">%(Project-Name)s</a></td>
     <td class="itd">%(Total)s</td>
     <td class="itd">%(Translated)s</td>
     <td class="itd">%(Fuzzy)s</td>
     <td class="itd">%(Untranslated)s</td>
-</tr>'''
+</tr>
+<tr>
+    <td colspan="5" style="width: 100%%; border-bottom: 1px #000 solid;">
+        <table style="width: 100%%; height: 6px; margin: 0px; padding: 0px;">
+            <tr>
+                <td style="width: %(pT)s%%; padding: 0px; margin: 0px; background-color: #62cf62;"></td>
+                <td style="width: %(pF)s%%; padding: 0px; margin: 0px; background-color: #d8ea42;"></td>
+                <td style="width: %(pU)s%%; padding: 0px; margin: 0px; background-color: #ea4242;"></td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+'''
 
 htmlFooterTemplate["tr"] = '''
 </table></center>
