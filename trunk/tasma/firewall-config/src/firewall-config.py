@@ -113,7 +113,7 @@ class MainApplication(programbase):
         frameOutgoingLayout.setAlignment(Qt.AlignTop)
 
         # Populate checkboxes
-        for key, (rule, name) in rules.filter.iteritems():
+        for key, (list_rules, name) in rules.filter.iteritems():
             if key.startswith('in'):
                 chk = QCheckBox(mainwidget.frameIncoming, key)
                 chk.setText(name)
@@ -178,13 +178,13 @@ class MainApplication(programbase):
         if self.state == 'on':
             # Tab 1 - Incoming Connections
             for checkbox in self.incoming:
-                if rules.filter[checkbox.name()][0] in self.rules['filter']:
+                if not set(rules.filter[checkbox.name()][0]) - set(self.rules['filter']):
                     checkbox.setChecked(True)
                 else:
                     checkbox.setChecked(False)
             # Tab 2 - Incoming Connections
             for checkbox in self.outgoing:
-                if rules.filter[checkbox.name()][0] in self.rules['filter']:
+                if set(rules.filter[checkbox.name()][0]) in set(self.rules['filter']):
                     checkbox.setChecked(True)
                 else:
                     checkbox.setChecked(False)
@@ -287,12 +287,12 @@ class MainApplication(programbase):
         # Tab 1 - Incoming Connections
         for checkbox in self.incoming:
             if checkbox.isChecked():
-                now_filter.append(rules.filter[checkbox.name()][0])
+                now_filter.extend(rules.filter[checkbox.name()][0])
 
         # Tab 2 - Outgoing Connections
         for checkbox in self.outgoing:
             if checkbox.isChecked():
-                now_filter.append(rules.filter[checkbox.name()][0])
+                now_filter.extend(rules.filter[checkbox.name()][0])
 
         self.saveRules('filter', now_filter)
 
