@@ -1,4 +1,5 @@
-#include "pardus.h"
+#include <qstring.h>
+#include <pardus.h>
 #include <iostream>
 
 using namespace std;
