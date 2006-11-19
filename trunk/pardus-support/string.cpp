@@ -1,5 +1,4 @@
 #include <unicode/unistr.h>
-#include <unicode/locid.h>
 
 #include <pardus.h>
 
