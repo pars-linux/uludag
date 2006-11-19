@@ -6,12 +6,19 @@
 QString Pardus::upper(const char* value, const char* language)
 {
   if (!language)
-    language = getenv("LC_ALL");
+    language = getenv("LC_CTYPE");
 
   UnicodeString us(value);
   us = us.toUpper(Locale(language));
 
-  char charBuf[100];
+  unsigned long long len = us.length();
+
+  if (len > 1<<32 - 1)
+    len = 1<<32 - 1;
+  else
+    len = len * 8;
+
+  char charBuf[len];
   us.extract(0, us.length(), charBuf, sizeof(charBuf)-1, 0);
   charBuf[sizeof(charBuf)-1] = 0;
 
@@ -21,12 +28,19 @@ QString Pardus::upper(const char* value, const char* language)
 QString Pardus::lower(const char* value, const char* language)
 {
   if (!language)
-    language = getenv("LC_ALL");
+    language = getenv("LC_CTYPE");
 
   UnicodeString us(value);
   us = us.toLower(Locale(language));
 
-  char charBuf[100];
+  unsigned long long len = us.length();
+
+  if (len > 1<<32 - 1)
+    len = 1<<32 - 1;
+  else
+    len = len * 8;
+
+  char charBuf[len];
   us.extract(0, us.length(), charBuf, sizeof(charBuf)-1, 0);
   charBuf[sizeof(charBuf)-1] = 0;
 
