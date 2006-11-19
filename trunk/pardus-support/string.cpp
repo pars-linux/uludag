@@ -5,7 +5,7 @@
 
 QString Pardus::upper(const QString& value)
 {
-  UnicodeString us(value.ascii());
+  UnicodeString us(value.data());
   us = us.toUpper(Locale(getenv("LC_CTYPE")));
 
   unsigned long long len = us.length();
@@ -24,7 +24,7 @@ QString Pardus::upper(const QString& value)
 
 QString Pardus::lower(const QString& value)
 {
-  UnicodeString us(value.ascii());
+  UnicodeString us(value.data());
   us = us.toLower(Locale(getenv("LC_CTYPE")));
 
   unsigned long long len = us.length();
