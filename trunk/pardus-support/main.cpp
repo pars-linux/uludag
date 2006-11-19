@@ -11,7 +11,7 @@ int main()
   test2 = "TURKIYE";
 
   cout << "TÜRKİYE == " << Pardus::upper(test1) << endl;
-  cout << "türkıye == " << Pardus::lower(test2) << endl;
+  cout << "turkıye == " << Pardus::lower(test2) << endl;
 
   return 0;
 }
