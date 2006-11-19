@@ -8,8 +8,8 @@ class Pardus {
  public:
   Pardus();
 
-  static QString lower(const char* value);
-  static QString upper(const char* value);
+  static QString lower(const char* value, const char* language=NULL);
+  static QString upper(const char* value, const char* language=NULL);
 
 };
 

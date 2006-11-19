@@ -3,10 +3,13 @@
 
 #include <pardus.h>
 
-QString Pardus::upper(const char* value)
+QString Pardus::upper(const char* value, const char* language)
 {
+  if (!language)
+    language = getenv("LC_ALL");
+
   UnicodeString us(value);
-  us = us.toUpper(Locale(getenv("LC_ALL")));
+  us = us.toUpper(Locale(language));
 
   char charBuf[100];
   us.extract(0, us.length(), charBuf, sizeof(charBuf)-1, 0);
@@ -15,10 +18,13 @@ QString Pardus::upper(const char* value)
   return QString(charBuf);
 }
 
-QString Pardus::lower(const char* value)
+QString Pardus::lower(const char* value, const char* language)
 {
+  if (!language)
+    language = getenv("LC_ALL");
+
   UnicodeString us(value);
-  us = us.toLower(Locale(getenv("LC_ALL")));
+  us = us.toLower(Locale(language));
 
   char charBuf[100];
   us.extract(0, us.length(), charBuf, sizeof(charBuf)-1, 0);
