@@ -11,8 +11,8 @@ int main()
   test1 = "türkiye";
   test2 = "TURKIYE";
 
-  cout << "TÜRKİYE == " << Pardus::upper(test1) << endl;
-  cout << "turkıye == " << Pardus::lower(test2) << endl;
+  cout << "TÜRKİYE == " << (Pardus::upper(test1)).local8Bit() << endl;
+  cout << "turkıye == " << (Pardus::lower(test2)).local8Bit() << endl;
 
   return 0;
 }

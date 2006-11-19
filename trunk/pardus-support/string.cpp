@@ -5,38 +5,16 @@
 
 QString Pardus::upper(const QString& value)
 {
-  UnicodeString us(value.data());
-  us = us.toUpper(Locale(getenv("LC_CTYPE")));
+  UnicodeString us(value);
+  us = us.toUpper();
 
-  unsigned long long len = us.length();
-
-  if (len*8 > 1<<32 - 1)
-    len = 1<<32 - 1;
-  else
-    len = len*8;
-
-  char charBuf[len];
-  us.extract(0, us.length(), charBuf, sizeof(charBuf)-1, 0);
-  charBuf[sizeof(charBuf)-1] = 0;
-
-  return QString(charBuf);
+  return QString((QChar*)us.getBuffer(),us.length());
 }
 
 QString Pardus::lower(const QString& value)
 {
-  UnicodeString us(value.data());
-  us = us.toLower(Locale(getenv("LC_CTYPE")));
+  UnicodeString us(value);
+  us = us.toLower();
 
-  unsigned long long len = us.length();
-
-  if (len*8 > 1<<32 - 1)
-    len = 1<<32 - 1;
-  else
-    len = len*8;
-
-  char charBuf[len];
-  us.extract(0, us.length(), charBuf, sizeof(charBuf)-1, 0);
-  charBuf[sizeof(charBuf)-1] = 0;
-
-  return QString(charBuf);
+  return QString((QChar*)us.getBuffer(),us.length());
 }
