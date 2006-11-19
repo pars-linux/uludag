@@ -5,8 +5,13 @@ using namespace std;
 
 int main()
 {
-  cout << "TÜRKİYE == " << Pardus::upper("türkiye") << endl;
-  cout << "türkıye == " << Pardus::lower("TURKIYE") << endl;
+  QString test1, test2;
+
+  test1 = "türkiye";
+  test2 = "TURKIYE";
+
+  cout << "TÜRKİYE == " << Pardus::upper(test1) << endl;
+  cout << "türkıye == " << Pardus::lower(test2) << endl;
 
   return 0;
 }
