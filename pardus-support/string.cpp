@@ -7,7 +7,7 @@ QString Pardus::upper(const QString& value)
   UnicodeString us(value);
   us = us.toUpper();
 
-  return QString((QChar*)us.getBuffer(),us.length());
+  return QString((const QChar*)us.getBuffer(),us.length());
 }
 
 QString Pardus::lower(const QString& value)
@@ -15,5 +15,5 @@ QString Pardus::lower(const QString& value)
   UnicodeString us(value);
   us = us.toLower();
 
-  return QString((QChar*)us.getBuffer(),us.length());
+  return QString((const QChar*)us.getBuffer(),us.length());
 }
