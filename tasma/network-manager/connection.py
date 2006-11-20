@@ -11,6 +11,7 @@
 
 from qt import *
 from kdecore import i18n
+from kdeui import *
 from links import links
 import widgets
 
@@ -125,8 +126,14 @@ class Settings(QWidget):
         # Connection
         lab = QLabel(i18n("Device:"), self)
         grid.addWidget(lab, row, 0, Qt.AlignRight)
-        self.device = widgets.Edit(self)
-        grid.addWidget(self.device, row, 1)
+        hb = QHBox(self)
+        hb.setSpacing(3)
+        self.device = KActiveLabel("", hb)
+        self.devices_but = QPushButton("Select", hb)
+        self.devices_but.setEnabled(False)
+        self.devices = QPopupMenu()
+        self.devices_but.setPopup(self.devices)
+        grid.addWidget(hb, row, 1)
         row += 1
         
         if "remote" in link.modes:
@@ -155,6 +162,12 @@ class Settings(QWidget):
         
         self.dns1.setChecked(True)
         self.setValues()
+        
+        comlink.device_hook.append(self.slotDevices)
+        comlink.queryDevices(conn.script)
+    
+    def cleanup(self):
+        comlink.device_hook.remove(self.slotDevices)
     
     def initNet(self, grid, row):
         line = widgets.HLine(i18n("Network"), self)
@@ -219,6 +232,7 @@ class Settings(QWidget):
     def setValues(self):
         conn = self.conn
         self.name.edit.setText(unicode(conn.name))
+        self.device.setText(conn.devname)
         if conn.net_mode == "auto":
             self.r1.setChecked(True)
         else:
@@ -235,7 +249,7 @@ class Settings(QWidget):
         gateway = self.gateway.text()
         if self.r1.isChecked():
             mode = "auto"
-            adress = ""
+            address = ""
             netmask = ""
             gateway = ""
         else:
@@ -272,6 +286,14 @@ class Settings(QWidget):
             elif r == 3:
                 # FIXME: key
                 pass
+    
+    def slotDevices(self, devices):
+        self.devices.clear()
+        for item in devices.split("\n"):
+            uid, info = item.split(" ", 1)
+            # FIXME: all info
+            self.devices.insertItem(info)
+        self.devices_but.setEnabled(True)
     
     def slotFields(self):
         auto = self.group.selectedId()
@@ -346,42 +368,28 @@ class Window(QMainWindow):
         self.show()
     
     def slotScan(self):
+        # FIXME:
         if self.device:
             self.comar.call_package("Net.Link.scanRemote", self.link_name, [ "device", self.device ], id=6)
     
     def slotAccept(self):
         self.settings.useValues()
+        self.settings.cleanup()
         self.close(True)
     
     def slotCancel(self):
+        self.settings.cleanup()
         self.close(True)
     
     def slotComar(self, sock):
-        reply = self.comar.read_cmd()
-        if reply[1] == 32:
-            self.count -= 1
-            if self.count == 0:
-                self.comar.call_package("Net.Link.setState", self.link_name, [ "name", self.name, "state", "up" ])
-                self.close(True)
+        # remains
         if reply[0] == self.comar.RESULT:
-            if reply[1] == 1:
-                for item in reply[2].split("\n"):
-                    uid, info = item.split(" ", 1)
-                    if uid != self.device:
-                        self.w_device.insertItem(info)
-                        self.device_list[info] = uid
-            elif reply[1] == 3:
+            if reply[1] == 3:
                 self.modes = reply[2].split(",")
                 if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
                     self.auth = AuthTab(self.tab, self.modes)
                     self.tab.addTab(self.auth, i18n("Authentication"))
                     self.comar.call_package("Net.Link.getAuthentication", self.link_name, [ "name", self.name ], id=7)
-            elif reply[1] == 4:
-                name, uid, info = reply[2].split("\n")
-                self.device = uid
-                self.w_device.insertItem(info)
-                self.device_list[info] = uid
-                self.comar.call_package("Net.Link.deviceList", self.link_name, id=1)
             elif reply[1] == 6:
                 old = self.w_remote.currentText()
                 self.w_remote.clear()

@@ -12,7 +12,7 @@
 import comar
 from qt import *
 
-CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE = range(1, 6)
+CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES = range(1, 7)
 
 
 class Hook:
@@ -21,9 +21,13 @@ class Hook:
         self.delete_hook = []
         self.state_hook = []
         self.config_hook = []
+        self.device_hook = []
     
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
+    
+    def emitDevices(self, devices):
+        map(lambda x: x(devices), self.device_hook)
     
     def _emit(self, conn, func, hook):
         if conn:
@@ -135,6 +139,9 @@ class ComarInterface(Hook):
             conn.i -= 1
             if conn.i == 0:
                 self.emitNew(conn)
+        
+        if reply.id == DEVICES:
+            self.emitDevices(reply.data)
     
     def handleNotify(self, reply):
         if reply.notify == "Net.Link.connectionChanged":
@@ -192,6 +199,9 @@ class ComarInterface(Hook):
         self.com.ask_notify("Net.Link.connectionChanged")
         self.com.ask_notify("Net.Link.stateChanged")
         self.com.Net.Link.connections(id=CONNLIST)
+    
+    def queryDevices(self, script):
+        self.com.Net.Link[script].deviceList(id=DEVICES)
 
 
 comlink = ComarInterface()
