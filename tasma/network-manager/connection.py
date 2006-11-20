@@ -169,7 +169,7 @@ class Settings(QWidget):
         self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
         grid2.addWidget(self.address, 0, 1)
         self.auto_addr = QCheckBox(i18n("Custom"), box)
-        self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotAddrToggle)
+        self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotFields)
         grid2.addWidget(self.auto_addr, 0, 2)
         
         lab = QLabel(i18n("Net mask:"), box)
@@ -182,7 +182,7 @@ class Settings(QWidget):
         self.gateway = QLineEdit(box)
         grid2.addWidget(self.gateway, 2, 1)
         self.auto_gate = QCheckBox(i18n("Custom"), box)
-        self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotGateToggle)
+        self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
         grid2.addWidget(self.auto_gate, 2, 2)
         
         hb = QHBox(self)
@@ -213,12 +213,6 @@ class Settings(QWidget):
         self.auto_gate.setEnabled(auto)
     
     def slotNetToggle(self, id):
-        self.slotFields()
-    
-    def slotAddrToggle(self):
-        self.slotFields()
-    
-    def slotGateToggle(self):
         self.slotFields()
     
     def maskOK(self, mask):

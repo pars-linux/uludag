@@ -59,6 +59,7 @@ class Connection(Hook):
         self.net_addr = None
         self.net_mask = None
         self.net_gate = None
+        self.hash = self.hash(self.script, self.name)
 
 
 class Link:
@@ -77,8 +78,10 @@ class ComarInterface(Hook):
     
     def connect(self):
         self.com = comar.Link()
-        #self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
-        #self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        self.queryLinks()
+        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
+        self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        self.queryConnections()
     
     def slotComar(self, sock):
         reply = self.com.read_cmd()
@@ -98,7 +101,7 @@ class ComarInterface(Hook):
         
         if reply.id == CONNINFO:
             conn = Connection(reply.script, reply.data)
-            self.connections[Connection.hash(conn.script, conn.name)] = conn
+            self.connections[conn.hash] = conn
             script = self.com.Net.Link[conn.script]
             script.getAddress(name=conn.name, id=CONNINFO_ADDR)
             modes = self.links[conn.script].modes
@@ -191,33 +194,4 @@ class ComarInterface(Hook):
         self.com.Net.Link.connections(id=CONNLIST)
 
 
-# TEST CODE
-
-def connDeleteHook(conn):
-    print "CONN DELETE", conn.script, conn.name
-
-def newHook(conn):
-    print "NEW", conn.script, conn.name, conn.remote, conn.net_mode
-    conn.delete_hook.append(connDeleteHook)
-
-def deleteHook(conn):
-    print "DELETE", conn.script, conn.name
-
-def configHook(conn):
-    print "CONFIG", conn.script, conn.name, conn.address
-
-def stateHook(conn):
-    print "STATE", conn.script, conn.name, conn.state, conn.active
-
 comlink = ComarInterface()
-comlink.new_hook.append(newHook)
-comlink.delete_hook.append(deleteHook)
-comlink.config_hook.append(configHook)
-comlink.state_hook.append(stateHook)
-comlink.connect()
-comlink.queryLinks()
-for link in comlink.links.values():
-    print "Link:", link.script, link.name, ",".join(link.modes)
-comlink.queryConnections()
-while True:
-    comlink.slotComar(0)
