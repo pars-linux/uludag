@@ -21,24 +21,37 @@ body {
 
 html>body #head_grey {
     height: 204px;
-    background-color:#EEE;
+    background-color: #CCC;
     border:1px solid #FFF;
 }
+
+#head_grey2 {
+    height: 90px;
+    right: 4px;
+}
+
+html>body #head_grey2 {
+    height: 90px;
+    background-color: #CCC;
+    border:1px solid #FFF;
+}
+
 
 #blue,#blue2 {
     background-repeat:no-repeat;
     background-position: 12px 12px;
-    width:650px;
     float:left;
 }
 
 #blue {
     height:235px;
+    width:650px;
     background-image: url('images/head-blue.png');
 }
 
 #blue2 {
-    height:103px;
+    height:112px;
+    width:772px;
     background-image: url('images/head-blue2.png');
 }
 
@@ -72,6 +85,12 @@ input {
     height:15px;
 }
 
+#search2 {
+    margin-top:5px;
+    width:110px;
+    height:15px;
+}
+
 #login_box #buttons {
     text-align:center;
     padding:10px;
@@ -88,8 +107,11 @@ a {
 }
 
 #footnote {
-    float:left;
+    clear: both;
     width:93%;
+    background-image: url(images/tubitak-powered.png);
+    background-position: 40px 4px;
+    background-repeat: no-repeat;
     padding:5px;
     padding-top:0px;
     padding-left:30px;
@@ -97,7 +119,8 @@ a {
 
 #footnote p {
     padding-left:30px;
-    padding-top:45px;
+    padding-top:15px;
+    font-size: 60%;
 }
 
 #page, #mpage{
@@ -106,7 +129,7 @@ a {
 }
 
 #content,#fullpage{
-    float:left;
+    float: left;
     width:93%;
     padding:5px;
     padding-top:0px;
