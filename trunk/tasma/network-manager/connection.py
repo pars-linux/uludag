@@ -138,22 +138,22 @@ class Settings(QWidget):
         
         if "remote" in link.modes:
             lab = QLabel(unicode(link.remote_name), self)
-            grid.addWidget(lab, row, 0)
+            grid.addWidget(lab, row, 0, Qt.AlignRight)
             if "scan" in link.modes:
                 hb = QHBox(self)
                 hb.setSpacing(3)
-                self.remote = widgets.Edit(hb)
+                self.remote = QLineEdit(hb)
                 but = QPushButton(i18n("Scan"), hb)
                 grid.addWidget(hb, row, 1)
             else:
-                self.remote = widgets.Edit(self)
+                self.remote = QLineEdit(self)
                 grid.addWidget(self.remote, row, 1)
             row += 1
         
         # Authentication
         if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
-            lab = QLabel(i18n("Authentication:"), self)
-            grid.addWidget(lab, row, 0, Qt.AlignRight)
+            line = widgets.HLine(i18n("Authentication"), self)
+            grid.addMultiCellWidget(line, row, row, 0, 1)
             row += 1
         
         # Communication
