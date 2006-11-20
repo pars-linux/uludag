@@ -134,6 +134,7 @@ class Settings(QWidget):
             grid.addWidget(lab, row, 0)
             if "scan" in link.modes:
                 hb = QHBox(self)
+                hb.setSpacing(3)
                 self.remote = widgets.Edit(hb)
                 but = QPushButton(i18n("Scan"), hb)
                 grid.addWidget(hb, row, 1)
@@ -320,24 +321,6 @@ class Settings(QWidget):
                 mask.setText("255.255.255.0")
 
 
-class Device(QVBox):
-    def __init__(self, parent):
-        self.device = QComboBox(False, box)
-        self.device.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        g.addWidget(self.device, 0, 1)
-        
-        self.remote_label = QLabel("", box)
-        g.addWidget(self.remote_label, 1, 0)
-        hb = QHBox(box)
-        hb.setSpacing(3)
-        hb.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        self.remote = QComboBox(True, hb)
-        hb.setStretchFactor(self.remote, 4)
-        self.remote_scan = QPushButton(i18n("Scan"), hb)
-        hb.setStretchFactor(self.remote_scan, 1)
-        g.addWidget(hb, 1, 1)
-
-
 class Window(QMainWindow):
     def __init__(self, parent, conn):
         QMainWindow.__init__(self, parent)
@@ -351,7 +334,7 @@ class Window(QMainWindow):
         self.setCentralWidget(vb)
         
         link = comlink.links[conn.script]
-        Settings(vb, link, conn)
+        self.settings = Settings(vb, link, conn)
         
         hb = QHBox(vb)
         hb.setSpacing(12)
@@ -361,18 +344,13 @@ class Window(QMainWindow):
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
         self.show()
-        return
-        
-        self.device_list = {}
-        
-        self.connect(self.w_remote_scan, SIGNAL("clicked()"), self.slotScan)
     
     def slotScan(self):
         if self.device:
             self.comar.call_package("Net.Link.scanRemote", self.link_name, [ "device", self.device ], id=6)
     
     def slotAccept(self):
-        self.setData()
+        self.settings.useValues()
         self.close(True)
     
     def slotCancel(self):
@@ -394,8 +372,6 @@ class Window(QMainWindow):
                         self.device_list[info] = uid
             elif reply[1] == 3:
                 self.modes = reply[2].split(",")
-                if not "auto" in self.modes:
-                    self.basic.address.r2.setEnabled(False)
                 if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
                     self.auth = AuthTab(self.tab, self.modes)
                     self.tab.addTab(self.auth, i18n("Authentication"))
