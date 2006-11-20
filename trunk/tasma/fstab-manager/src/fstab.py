@@ -25,11 +25,11 @@ def getPartitionsOfDevice(device_path):
         if part.num >= 1:
             fs_name = ""
             if part.fs_type and part.fs_type.name != 'linux-swap':
-                return (device_path + str(part.num), {"mount_point": None,
+                return (device_path + str(part.num), {"mount_point": '',
                                                           "file_system": part.fs_type.name,
                                                           "options": '',
-                                                          "dump_freq": 0,
-                                                          "fs_pass_no": 0})
+                                                          "dump_freq": '0',
+                                                          "fs_pass_no": '0'})
                 return partition
 
     dev = parted.PedDevice.get(device_path)

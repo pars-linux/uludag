@@ -70,13 +70,19 @@ class fstabForm(mainForm):
     def __init__(self, parent=None, name=None):
         mainForm.__init__(self, parent, name)
 
+        self.Fstab = fstab.Fstab()
         self.blockDevices = fstab.getBlockDevices()
+        self.fstabPartitions = self.getPartitionsFromFstab()
 
-        #self.btn_Update.setEnabled(False)
-        #self.btn_Delete.setEnabled(False)
+        self.btn_Update.setEnabled(False)
+        self.btn_Delete.setEnabled(False)
 
+        #self.list_main.setFont( QFont( "dejavu", 10, QFont.Bold ))
+
+        self.list_main.header().hide()
         self.list_main.setRootIsDecorated(True)
         self.list_main.setMultiSelection(False)
+
         self.fillDiskList()
 
         # Initialize Comar
@@ -106,17 +112,25 @@ class fstabForm(mainForm):
         for disk in self.blockDevices:
             disks = QListViewItem(self.list_main,QString(disk))
             disks.setOpen(True)
-            for partition in self.getPartitions(disk):
+            for partition in self.getPartitionsFromSys(disk):
+                if self.fstabPartitions.has_key(partition[0]):
+                    activePartition = self.fstabPartitions.get(partition[0])
+                else:
+                    activePartition = partition[1]
+                print activePartition
                 partitions = QListViewItem(self.list_main.firstChild(),
                                            QString(partition[0]),
                                            QString('Partition %d'%count),
-                                           #QString(partition[1]['mount_point']),
-                                           QString(''),
-                                           QString(partition[1]['file_system']))
+                                           QString(activePartition['mount_point']),
+                                           #QString(''),
+                                           QString(activePartition['file_system']))
                 count+=1
 
-    def getPartitions(self,dev):
+    def getPartitionsFromSys(self,dev):
         return [info for info in fstab.getPartitionsOfDevice(dev)]
+
+    def getPartitionsFromFstab(self):
+        return self.Fstab.getFstabPartitions()
 
 class Module(KCModule):
     def __init__(self, parent, name):
