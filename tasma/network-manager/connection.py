@@ -106,8 +106,11 @@ class AuthTab(QWidget):
 
 
 class Settings(QWidget):
-    def __init__(self, parent, remote_name="lala", has_scan=True, auth_modes=None):
+    def __init__(self, parent, link, conn):
         QWidget.__init__(self, parent)
+        
+        self.link = link
+        self.conn = conn
         
         grid = QGridLayout(self, 2, 2, 6)
         row = 0
@@ -128,8 +131,8 @@ class Settings(QWidget):
         grid.addWidget(self.device, row, 1)
         row += 1
         
-        if remote_name:
-            lab = QLabel(remote_name, self)
+        if "remote" in link.modes:
+            lab = QLabel(unicode(link.remote_name), self)
             grid.addWidget(lab, row, 0)
             self.remote = widgets.Edit(self)
             grid.addWidget(self.remote, row, 1)
@@ -137,7 +140,7 @@ class Settings(QWidget):
         
         # Authentication
         
-        if auth_modes:
+        if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
             lab = QLabel(i18n("Authentication:"), self)
             grid.addWidget(lab, row, 0, Qt.AlignRight)
             row += 1
@@ -199,8 +202,18 @@ class Settings(QWidget):
         self.dns3 = QRadioButton(i18n("Custom"), hb)
         self.dns_group.insert(self.dns3, 2)
         
-        self.r1.setChecked(True)
         self.dns1.setChecked(True)
+        self.setValues(conn)
+    
+    def setValues(self, conn):
+        self.name.edit.setText(unicode(conn.name))
+        if conn.net_mode == "automatic":
+            self.r1.setChecked(True)
+        else:
+            self.r2.setChecked(True)
+            self.address.setText(conn.net_addr)
+            self.netmask.setText(conn.net_mask)
+            self.gateway.setText(conn.net_gate)
         self.slotFields()
     
     def slotFields(self):
@@ -280,8 +293,6 @@ class Device(QVBox):
 class Window(QMainWindow):
     def __init__(self, parent, conn):
         QMainWindow.__init__(self, parent)
-        self.conn = conn
-        self.link = comlink.links[conn.script]
         
         self.setCaption(i18n("Configure network connection"))
         #self.setMinimumSize(580, 380)
@@ -291,15 +302,8 @@ class Window(QMainWindow):
         vb.setSpacing(6)
         self.setCentralWidget(vb)
         
-        blah = Settings(vb)
-        self.show()
-        return
-        
-        tab = QTabWidget(vb)
-        self.tab = tab
-        
-        self.basic = BasicTab(tab)
-        tab.addTab(self.basic, i18n("Basic"))
+        link = comlink.links[conn.script]
+        Settings(vb, link, conn)
         
         hb = QHBox(vb)
         hb.setSpacing(12)
@@ -308,19 +312,13 @@ class Window(QMainWindow):
         but = QPushButton(i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
+        self.show()
+        return
+        
         self.device_list = {}
         
         self.connect(self.w_remote_scan, SIGNAL("clicked()"), self.slotScan)
-        
-        lname = links.get_info(self.link_name).remote_name
-        # what a hack! :)
-        if lname == "Phone number":
-            lname = i18n("Phone number")
-        self.w_remote_label.setText(lname)
-        self.show()
-        
-        self.w_name.setText(unicode(name))
-        
+    
     def setData(self, id=0):
         name = self.w_name.text()
         if unicode(name) != unicode(self.name):
@@ -386,16 +384,6 @@ class Window(QMainWindow):
                     if uid != self.device:
                         self.w_device.insertItem(info)
                         self.device_list[info] = uid
-            elif reply[1] == 2:
-                name, mode, addr, gate = reply[2].split("\n", 3)
-                mask = ""
-                if "\n" in gate:
-                    gate, mask = gate.split("\n", 1)
-                self.basic.address.slotSwitch(mode)
-                self.w_address.setText(addr)
-                self.w_gateway.setText(gate)
-                if mask:
-                    self.basic.address.netmask.edit.setText(mask)
             elif reply[1] == 3:
                 self.modes = reply[2].split(",")
                 if not "remote" in self.modes:
@@ -421,9 +409,6 @@ class Window(QMainWindow):
                 self.w_device.insertItem(info)
                 self.device_list[info] = uid
                 self.comar.call_package("Net.Link.deviceList", self.link_name, id=1)
-            elif reply[1] == 5:
-                name, remote = reply[2].split("\n")
-                self.w_remote.setCurrentText(remote)
             elif reply[1] == 6:
                 old = self.w_remote.currentText()
                 self.w_remote.clear()
