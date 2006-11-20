@@ -19,6 +19,7 @@ from comariface import comlink
 
 
 class AuthTab(QWidget):
+    #remains
     def __init__(self, parent, modes):
         QWidget.__init__(self, parent)
         self.modes = modes
@@ -124,6 +125,8 @@ class Settings(QWidget):
         row += 1
         
         # Connection
+        self.device_uid = self.conn.devid
+        self.device_items = []
         lab = QLabel(i18n("Device:"), self)
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         hb = QHBox(self)
@@ -132,6 +135,7 @@ class Settings(QWidget):
         self.devices_but = QPushButton("Select", hb)
         self.devices_but.setEnabled(False)
         self.devices = QPopupMenu()
+        self.connect(self.devices, SIGNAL("activated(int)"), self.slotDeviceSelect)
         self.devices_but.setPopup(self.devices)
         grid.addWidget(hb, row, 1)
         row += 1
@@ -233,6 +237,8 @@ class Settings(QWidget):
         conn = self.conn
         self.name.edit.setText(unicode(conn.name))
         self.device.setText(conn.devname)
+        if "remote" in self.link.modes:
+            self.remote.setText(conn.remote)
         if conn.net_mode == "auto":
             self.r1.setChecked(True)
         else:
@@ -261,14 +267,16 @@ class Settings(QWidget):
         
         comlink.com.Net.Link[conn.script].setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
         
+        if self.device_uid != conn.devid:
+            comlink.com.Net.Link[conn.script].setConnection(name=name, device=self.device_uid)
+        
+        if "remote" in self.link.modes:
+            remote = self.remote.text()
+            if remote != self.conn.remote:
+                comlink.com.Net.Link[conn.script].setRemote(name=name, remote=remote)
+        
         return
         #FIXME: remains
-        device = self.device_list[str(self.basic.device.device.currentText())]
-        self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ], id)
-        if "remote" in self.modes:
-            remote = self.basic.device.remote.currentText()
-            self.comar.call_package("Net.Link.setRemote", self.link_name, [
-                "name", name, "remote", remote ], id)
         if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
             r = self.auth.group.selectedId()
             if r == 0:
@@ -289,11 +297,20 @@ class Settings(QWidget):
     
     def slotDevices(self, devices):
         self.devices.clear()
+        self.device_items = []
+        id = 0
         for item in devices.split("\n"):
             uid, info = item.split(" ", 1)
-            # FIXME: all info
-            self.devices.insertItem(info)
-        self.devices_but.setEnabled(True)
+            self.device_items.append((uid, info))
+            self.devices.insertItem(info, id)
+            id += 1
+        if id > 1:
+            self.devices_but.setEnabled(True)
+    
+    def slotDeviceSelect(self, id):
+        item = self.device_items[id]
+        self.device_uid = item[0]
+        self.device.setText(item[1])
     
     def slotFields(self):
         auto = self.group.selectedId()
@@ -384,13 +401,7 @@ class Window(QMainWindow):
     def slotComar(self, sock):
         # remains
         if reply[0] == self.comar.RESULT:
-            if reply[1] == 3:
-                self.modes = reply[2].split(",")
-                if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
-                    self.auth = AuthTab(self.tab, self.modes)
-                    self.tab.addTab(self.auth, i18n("Authentication"))
-                    self.comar.call_package("Net.Link.getAuthentication", self.link_name, [ "name", self.name ], id=7)
-            elif reply[1] == 6:
+            if reply[1] == 6:
                 old = self.w_remote.currentText()
                 self.w_remote.clear()
                 self.w_remote.insertItem(old)
