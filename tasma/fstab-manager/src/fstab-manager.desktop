@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Fstab Manager
+Name[en]=Fstab Manager
+Name[tr]=Fstab Yöneticisi
+Comment=Manager for fstab file
+Comment[tr]=Fstab dosyası için yönetici
+Icon=fstab_manager
+X-KDE-ModuleType=Library
+X-KDE-Library=fstab-manager
+X-KDE-FactoryName=fstab_manager
+X-KDE-RootOnly=false
+Type=Application
+Exec=kcmshell fstab-manager
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
