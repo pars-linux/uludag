@@ -10,5 +10,5 @@ X-KDE-autostart-condition=kaptanrc:General:RunOnStart:true
 
 Name=Kaptan Desktop
 Name[tr]=Kaptan Masaüstü
-
+Hidden=true
 Categories=Qt;KDE;Core
