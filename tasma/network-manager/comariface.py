@@ -153,7 +153,7 @@ class ComarInterface(Hook):
                     self.emitConfig(conn)
             elif what == "configured":
                 type, name = name.split(" ", 1)
-                # FIXME: query them
+                # FIXME: query them: device, adress, state
         
         elif reply.notify == "Net.Link.stateChanged":
             name, state = reply.data.split("\n", 1)

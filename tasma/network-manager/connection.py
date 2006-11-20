@@ -13,7 +13,8 @@ from qt import *
 from kdecore import i18n
 from links import links
 import widgets
-import comar
+
+from comariface import comlink
 
 
 class AuthTab(QWidget):
@@ -277,10 +278,10 @@ class Device(QVBox):
 
 
 class Window(QMainWindow):
-    def __init__(self, parent, name, link_name, is_new=0):
+    def __init__(self, parent, conn):
         QMainWindow.__init__(self, parent)
-        self.name = name
-        self.link_name = link_name
+        self.conn = conn
+        self.link = comlink.links[conn.script]
         
         self.setCaption(i18n("Configure network connection"))
         #self.setMinimumSize(580, 380)
@@ -307,13 +308,6 @@ class Window(QMainWindow):
         but = QPushButton(i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
-        self.w_name = self.basic.name.edit
-        self.w_device = self.basic.device.device
-        self.w_address = self.basic.address.address.edit
-        self.w_gateway = self.basic.address.gateway.edit
-        self.w_remote = self.basic.device.remote
-        self.w_remote_label = self.basic.device.remote_label
-        self.w_remote_scan = self.basic.device.remote_scan
         self.device_list = {}
         
         self.connect(self.w_remote_scan, SIGNAL("clicked()"), self.slotScan)
@@ -327,18 +321,6 @@ class Window(QMainWindow):
         
         self.w_name.setText(unicode(name))
         
-        self.comar = comar.Link()
-        self.comar.call_package("Net.Link.modes", link_name, id=3)
-        if is_new:
-            self.device = i18n("No device")
-            self.comar.call_package("Net.Link.deviceList", link_name, id=1)
-        else:
-            self.comar.call_package("Net.Link.getAddress", link_name, [ "name", name ], id=2)
-            self.comar.call_package("Net.Link.connectionInfo", link_name, [ "name", name ], id=4)
-        
-        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
-        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
-    
     def setData(self, id=0):
         name = self.w_name.text()
         if unicode(name) != unicode(self.name):
