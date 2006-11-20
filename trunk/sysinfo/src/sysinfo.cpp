@@ -93,6 +93,9 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     QFile f( location );
     f.open( IO_ReadOnly );
     QTextStream t( &f );
+
+    infoMessage(i18n("Looking for hardware information..."));
+
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
 
@@ -105,7 +108,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     QString dummy;
 
     // disk info
-    infoMessage( i18n( "Looking for disk information..." ) );
     sysInfo += "<h2 id=\"hdds\">" + i18n( "Disk Information" ) + "</h2>";
     sysInfo += diskInfo();
 
@@ -133,7 +135,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     sysInfo += "</div><div id=\"column1\">"; // second column
 
     // OS info
-    infoMessage( i18n( "Getting OS information...." ) );
 
     // common folders
     sysInfo += "<h2 id=\"dirs\">" + i18n( "Common Folders" ) + "</h2>";
@@ -146,7 +147,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     sysInfo += "</ul>";
 
     // net info
-    infoMessage( i18n( "Looking up network status..." ) );
     int state = netInfo();
     if (state > 1) { // assume no network manager / networkstatus
       sysInfo += "<h2 id=\"net\">" + i18n( "Network Status" ) + "</h2>";
@@ -156,7 +156,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     }
 
     // CPU info
-    infoMessage( i18n( "Looking for CPU information..." ) );
     cpuInfo();
     if ( !m_info[CPU_MODEL].isNull() )
     {
@@ -169,7 +168,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     }
 
     // memory info
-    infoMessage( i18n( "Looking for memory information..." ) );
     memoryInfo();
     sysInfo += "<h2 id=\"memory\">" + i18n( "Memory Information" ) + "</h2>";
     sysInfo += "<table>";
@@ -181,15 +179,18 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     sysInfo += "</table>";
 
     // hw info
-    infoMessage(  i18n(  "Looking for hardware information..." ) );
-    sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
-    sysInfo += "<table>";
-    sysInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
-    sysInfo += "</table>";
+    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull() 
+        || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
+    {
+        sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
+        sysInfo += "<table>";
+        sysInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
+        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
+        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
+        sysInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
+        sysInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
+        sysInfo += "</table>";
+    }
 
     sysInfo += "</div>";
 
@@ -291,20 +292,19 @@ QString kio_sysinfoProtocol::diskInfo()
     {
         for ( QValueList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it )
         {
-            QString tooltip = i18n("Press the right mouse button for more options like Mount or Eject");
-
             DiskInfo di = ( *it );
+            QString tooltip = i18n( di.model );
             if ( di.mounted )
             {
-                result += QString( "<tr><td>%1 <a href=\"media:/%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr><tr><td>( %8 )</td></tr>" ).
-                          arg( icon( di.iconName ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
-                          arg( formattedUnit( di.total ) ).arg( formattedUnit( di.avail ) ).arg( tooltip ).arg( di.model );
+                result += QString( "<tr><td>%1</td><td><a href=\"media:/%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr><tr></tr>" ).
+                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
+                          arg( formattedUnit( di.total ) ).arg( formattedUnit( di.avail ) ).arg( tooltip );
             }
             else
             {
-                result += QString( "<tr><td>%1 <a href=\"media:/%2\" title=\"%6\">%3</a></td><td>%4</td><td>%5</td><td></td></tr><tr><td>( %7 )</td></tr>" ).
-                          arg( icon( di.iconName ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
-                          arg( di.total ? formattedUnit( di.total) : QString::null).arg( tooltip ).arg( di.model );
+                result += QString( "<tr><td>%1</td><td><a href=\"media:/%2\" title=\"%6\">%3</a></td><td>%4</td><td>%5</td><td></td></tr><tr></tr>" ).
+                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
+                          arg( di.total ? formattedUnit( di.total) : QString::null).arg( tooltip );
             }
         }
     }
@@ -530,7 +530,7 @@ QString kio_sysinfoProtocol::readFromFile( const QString & filename, const QStri
 QString kio_sysinfoProtocol::icon( const QString & name, int size ) const
 {
     QString path = KGlobal::iconLoader()->iconPath( name, -size );
-    return QString( "<img src=\"file:%1\" width=\"%2\" height=\"%3\" valign=\"bottom\"/>" ).arg( path ).arg( size ).arg( size );
+    return QString( "<img src=\"file:%1\" width=\"%2\" height=\"%3\" valign=\"center\"/>" ).arg( path ).arg( size ).arg( size );
 }
 
 QString kio_sysinfoProtocol::iconForDevice( const QString & name ) const
