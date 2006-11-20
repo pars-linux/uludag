@@ -134,8 +134,14 @@ class Settings(QWidget):
         if "remote" in link.modes:
             lab = QLabel(unicode(link.remote_name), self)
             grid.addWidget(lab, row, 0)
-            self.remote = widgets.Edit(self)
-            grid.addWidget(self.remote, row, 1)
+            if "scan" in link.modes:
+                hb = QHBox(self)
+                self.remote = widgets.Edit(hb)
+                but = QPushButton(i18n("Scan"), hb)
+                grid.addWidget(hb, row, 1)
+            else:
+                self.remote = widgets.Edit(self)
+                grid.addWidget(self.remote, row, 1)
             row += 1
         
         # Authentication
@@ -146,7 +152,13 @@ class Settings(QWidget):
             row += 1
         
         # Communication
+        if "net" in link.modes:
+            row = self.initNet(grid, row)
         
+        self.dns1.setChecked(True)
+        self.setValues(conn)
+    
+    def initNet(self, grid, row):
         line = widgets.HLine(i18n("Network"), self)
         grid.addMultiCellWidget(line, row, row, 0, 1)
         row += 1
@@ -204,8 +216,7 @@ class Settings(QWidget):
         self.dns3 = QRadioButton(i18n("Custom"), hb)
         self.dns_group.insert(self.dns3, 2)
         
-        self.dns1.setChecked(True)
-        self.setValues(conn)
+        return row
     
     def setValues(self, conn):
         self.name.edit.setText(unicode(conn.name))
@@ -380,23 +391,12 @@ class Window(QMainWindow):
                         self.device_list[info] = uid
             elif reply[1] == 3:
                 self.modes = reply[2].split(",")
-                if not "remote" in self.modes:
-                    self.basic.device.remote.hide()
-                    self.basic.device.remote_label.hide()
                 if not "auto" in self.modes:
                     self.basic.address.r2.setEnabled(False)
-                if "remote" in self.modes:
-                    self.comar.call_package("Net.Link.getRemote", self.link_name, [ "name", self.name ], id=5)
-                if not "scan" in self.modes:
-                    self.basic.device.remote_scan.hide()
-                
                 if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
                     self.auth = AuthTab(self.tab, self.modes)
                     self.tab.addTab(self.auth, i18n("Authentication"))
                     self.comar.call_package("Net.Link.getAuthentication", self.link_name, [ "name", self.name ], id=7)
-                
-                if not "net" in self.modes:
-                    self.basic.address.setEnabled(False)
             elif reply[1] == 4:
                 name, uid, info = reply[2].split("\n")
                 self.device = uid
