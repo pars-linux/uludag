@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005-2006, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -189,10 +189,12 @@ class Settings(QWidget):
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
         grid2.addWidget(self.auto_gate, 2, 2)
         
+        line = widgets.HLine(i18n("Name servers"), self)
+        grid.addMultiCellWidget(line, row, row, 0, 1)
+        row += 1
+        
         hb = QHBox(self)
-        grid.addWidget(hb, row, 1)
-        lab = QLabel("Name servers", self)
-        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addMultiCellWidget(hb, row, row, 0, 1)
         row += 1
         self.dns_group = QButtonGroup()
         self.dns1 = QRadioButton(i18n("Default"), hb)
@@ -262,14 +264,6 @@ class Settings(QWidget):
                 mask.setText("255.255.0.0")
             elif cl > 191 and cl < 224:
                 mask.setText("255.255.255.0")
-    
-    def FIXMEslotSwitch(self, mode):
-        if mode == "manual":
-            self.r2.setChecked(True)
-            self.slotClicked(1)
-        else:
-            self.r1.setChecked(True)
-            self.slotClicked(0)
 
 
 class Device(QVBox):
