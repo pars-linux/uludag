@@ -4,7 +4,7 @@
 
 QString Pardus::upper(const QString& value)
 {
-  UnicodeString us(FALSE, (const UChar *)value.unicode(), (int32_t)value.length());
+  UnicodeString us(FALSE /* Not NUL-terminated */, (const UChar *)value.unicode(), (int32_t)value.length());
   us = us.toUpper();
 
   return QString((const QChar*)us.getBuffer(),us.length());
@@ -12,7 +12,7 @@ QString Pardus::upper(const QString& value)
 
 QString Pardus::lower(const QString& value)
 {
-  UnicodeString us(FALSE, (const UChar *)value.unicode(), (int32_t)value.length());
+  UnicodeString us(FALSE /* Not NUL-terminated */, (const UChar *)value.unicode(), (int32_t)value.length());
   us = us.toLower();
 
   return QString((const QChar*)us.getBuffer(),us.length());
