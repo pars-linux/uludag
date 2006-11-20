@@ -1,0 +1,2 @@
+- Add charset detection via ICU
+- Maybe use dlopen for lazy loading
