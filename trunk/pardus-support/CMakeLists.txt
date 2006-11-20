@@ -8,7 +8,7 @@ find_package(Qt3 REQUIRED)
 add_definitions(${QT_DEFINITIONS})
 
 # Include directories
-include_directories(${QT_INCLUDE_DIR})
+include_directories(${PARDUS_SOURCE_DIR} ${QT_INCLUDE_DIR})
 
 # Library search path
 link_directories(${PARDUS_SOURCE_DIR})
