@@ -116,7 +116,6 @@ class Settings(QWidget):
         row = 0
         
         # Identification
-        
         lab = QLabel(i18n("Name:"), self)
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         self.name = widgets.Edit(self)
@@ -124,7 +123,6 @@ class Settings(QWidget):
         row += 1
         
         # Connection
-        
         lab = QLabel(i18n("Device:"), self)
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         self.device = widgets.Edit(self)
@@ -145,7 +143,6 @@ class Settings(QWidget):
             row += 1
         
         # Authentication
-        
         if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
             lab = QLabel(i18n("Authentication:"), self)
             grid.addWidget(lab, row, 0, Qt.AlignRight)
@@ -156,7 +153,7 @@ class Settings(QWidget):
             row = self.initNet(grid, row)
         
         self.dns1.setChecked(True)
-        self.setValues(conn)
+        self.setValues()
     
     def initNet(self, grid, row):
         line = widgets.HLine(i18n("Network"), self)
@@ -218,9 +215,10 @@ class Settings(QWidget):
         
         return row
     
-    def setValues(self, conn):
+    def setValues(self):
+        conn = self.conn
         self.name.edit.setText(unicode(conn.name))
-        if conn.net_mode == "automatic":
+        if conn.net_mode == "auto":
             self.r1.setChecked(True)
         else:
             self.r2.setChecked(True)
@@ -228,6 +226,51 @@ class Settings(QWidget):
             self.netmask.setText(conn.net_mask)
             self.gateway.setText(conn.net_gate)
         self.slotFields()
+    
+    def useValues(self):
+        name = self.name.text()
+        address = self.address.text()
+        netmask = self.netmask.text()
+        gateway = self.gateway.text()
+        if self.r1.isChecked():
+            mode = "auto"
+        else:
+            mode = "manual"
+        
+        # FIXME:
+        return
+        #remains:
+        if unicode(name) != unicode(self.name):
+            self.comar.call_package("Net.Link.deleteConnection", self.link_name, [ "name", self.name ])
+        device = self.device_list[str(self.basic.device.device.currentText())]
+        self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ], id)
+        if self.basic.address.r1.isChecked():
+            self.comar.call_package("Net.Link.setAddress", self.link_name, [
+                "name", name, "mode", "auto" ], id)
+        else:
+            self.comar.call_package("Net.Link.setAddress", self.link_name, [
+                "name", name, "mode", "manual", "address", address, "mask", netmask, "gateway", gateway ], id)
+        if "remote" in self.modes:
+            remote = self.basic.device.remote.currentText()
+            self.comar.call_package("Net.Link.setRemote", self.link_name, [
+                "name", name, "remote", remote ], id)
+        if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
+            r = self.auth.group.selectedId()
+            if r == 0:
+                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
+                    "name", name, "user", "", "password", "", "key", "" ], id)
+            elif r == 1:
+                u1 = unicode(self.auth.phrase.edit.text())
+                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
+                    "name", name, "user", "", "password", u1, "key", "" ], id)
+            elif r == 2:
+                u1 = unicode(self.auth.name.edit.text())
+                u2 = unicode(self.auth.password.edit.text())
+                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
+                    "name", name, "user", u1, "password", u2, "key", "" ], id)
+            elif r == 3:
+                # FIXME: key
+                pass
     
     def slotFields(self):
         auto = self.group.selectedId()
@@ -323,46 +366,6 @@ class Window(QMainWindow):
         self.device_list = {}
         
         self.connect(self.w_remote_scan, SIGNAL("clicked()"), self.slotScan)
-    
-    def setData(self, id=0):
-        name = self.w_name.text()
-        if unicode(name) != unicode(self.name):
-            self.comar.call_package("Net.Link.deleteConnection", self.link_name, [ "name", self.name ])
-        self.name = name
-        device = self.device_list[str(self.basic.device.device.currentText())]
-        address = self.basic.address.address.edit.text()
-        netmask = self.basic.address.netmask.edit.text()
-        gateway = self.basic.address.gateway.edit.text()
-        self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ], id)
-        if self.basic.address.r1.isChecked():
-            self.comar.call_package("Net.Link.setAddress", self.link_name, [
-                "name", name, "mode", "auto" ], id)
-        else:
-            self.comar.call_package("Net.Link.setAddress", self.link_name, [
-                "name", name, "mode", "manual", "address", address, "mask", netmask, "gateway", gateway ], id)
-        if "remote" in self.modes:
-            remote = self.basic.device.remote.currentText()
-            self.comar.call_package("Net.Link.setRemote", self.link_name, [
-                "name", name, "remote", remote ], id)
-        self.count = 3
-        if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
-            r = self.auth.group.selectedId()
-            if r == 0:
-                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
-                    "name", name, "user", "", "password", "", "key", "" ], id)
-            elif r == 1:
-                u1 = unicode(self.auth.phrase.edit.text())
-                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
-                    "name", name, "user", "", "password", u1, "key", "" ], id)
-            elif r == 2:
-                u1 = unicode(self.auth.name.edit.text())
-                u2 = unicode(self.auth.password.edit.text())
-                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
-                    "name", name, "user", u1, "password", u2, "key", "" ], id)
-            elif r == 3:
-                # FIXME: key
-                pass
-            self.count += 1
     
     def slotScan(self):
         if self.device:
