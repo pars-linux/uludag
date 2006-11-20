@@ -229,28 +229,28 @@ class Settings(QWidget):
         self.slotFields()
     
     def useValues(self):
-        name = self.name.text()
+        name = str(self.name.edit.text())
         address = self.address.text()
         netmask = self.netmask.text()
         gateway = self.gateway.text()
         if self.r1.isChecked():
             mode = "auto"
+            adress = ""
+            netmask = ""
+            gateway = ""
         else:
             mode = "manual"
         
-        # FIXME:
+        conn = self.conn
+        if conn.name != name:
+            comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
+        
+        comlink.com.Net.Link[conn.script].setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
+        
         return
-        #remains:
-        if unicode(name) != unicode(self.name):
-            self.comar.call_package("Net.Link.deleteConnection", self.link_name, [ "name", self.name ])
+        #FIXME: remains
         device = self.device_list[str(self.basic.device.device.currentText())]
         self.comar.call_package("Net.Link.setConnection", self.link_name, [ "name", name, "device", device ], id)
-        if self.basic.address.r1.isChecked():
-            self.comar.call_package("Net.Link.setAddress", self.link_name, [
-                "name", name, "mode", "auto" ], id)
-        else:
-            self.comar.call_package("Net.Link.setAddress", self.link_name, [
-                "name", name, "mode", "manual", "address", address, "mask", netmask, "gateway", gateway ], id)
         if "remote" in self.modes:
             remote = self.basic.device.remote.currentText()
             self.comar.call_package("Net.Link.setRemote", self.link_name, [
