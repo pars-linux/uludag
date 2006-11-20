@@ -67,35 +67,22 @@ class Connection(QWidget):
     def slotToggle(self, on):
         if self.ignore_signal:
             return
-        com = self.view.comlink
         dev = self.parent()
         if on:
-            com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "up" ])
+            comlink.com.Net.Link[self.conn.script].setState(name=self.conn.name, state="up")
         else:
-            com.call_package("Net.Link.setState", self.script, [ "name", self.name, "state", "down" ])
+            comlink.com.Net.Link[self.conn.script].setState(name=self.conn.name, state="down")
     
     def slotDelete(self):
         m = i18n("Should I delete the\n'%s'\nconnection?")
         if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % self.name, i18n("Delete connection?")):
-            self.view.comlink.call_package("Net.Link.deleteConnection", self.script, [ "name", self.name ])
+            comlink.com.Net.Link[self.conn.script].deleteConnection(name=self.conn.name)
     
     def slotEdit(self):
-        w = connection.Window(self.view.parent(), self.name, self.script)
+        w = connection.Window(self.view.parent(), self.conn)
     
     def updateState(self, state):
-        msg = ""
-        if "\n" in state:
-            state, msg = state.split("\n", 1)
-        if state == "on":
-            self.active = True
-        elif state == "off":
-            self.active = False
-        elif state in ("up", "connecting", "down"):
-            self.state = state
-        
-        if state == "down":
-            self.got_address = None
-        
+        # FIXME
         self.ignore_signal = True
         self.check.setChecked(self.active)
         self.ignore_signal = False
@@ -109,11 +96,11 @@ class Connection(QWidget):
         paint.fillRect(event.rect(), QBrush(cg.midlight()))
         paint.drawPixmap(20, 3, self.mypix)
         paint.drawText(53, self.myBase + 4, self.conn.name)
-        addr = self.conn.address
+        addr = self.conn.net_addr
         if not addr:
             addr = i18n("Automatic")
-            if self.conn.got_address:
-                addr += " (%s)" % self.conn.got_address
+            if self.conn.address:
+                addr += " (%s)" % self.conn.address
         paint.drawText(53, self.myHeight + self.myBase + 5, addr)
     
     def resizeEvent(self, event):
@@ -261,15 +248,14 @@ class ConnectionView(QScrollView):
         self.myResize(self.width())
     
     def remove(self, conn):
-        return
-        conn = self.find(script, name)
+        conn = self.connections.get(conn.hash, None)
         if not conn:
             return
-        dev = self.devices[conn.devid]
+        dev = self.devices[conn.conn.devid]
         conn.hide()
         dev.removeChild(conn)
         dev.connections.remove(conn)
-        del self.connections[connHash(script, name)]
+        del self.connections[conn.conn.hash]
         self.myResize(self.width())
 
 
@@ -305,6 +291,7 @@ class Widget(QVBox):
         comlink.connect()
     
     def uniqueName(self):
+        # old remains
         id = 0
         while True:
             name = unicode(i18n("Unconfigured")) + " " + str(id)
@@ -317,58 +304,13 @@ class Widget(QVBox):
         self.helpwin.show()
     
     def handleComar(self, reply):
-        if reply.command == "result":
-            if reply.id == 1:
-                if reply[2] == "":
-                    self.comar.call_package("Net.Link.deviceList", reply[3], id=5)
-                else:
-                    for name in reply[2].split("\n"):
-                        self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
-            elif reply.id == 5:
-                return
-                #FIXME
-                if reply[2] == '' or reply[3] == "ppp":
-                    return
-                devs = reply[2].split("\n")
-                for dev in devs:
-                    uid, rest = dev.split(" ", 1)
-                    name = self.uniqueName()
-                    self.comar.call_package("Net.Link.setConnection", reply[3], [ "name", name, "device", uid ])
-                    Connection(self.links, self.comar, name, reply[3])
-            elif reply.id == 42:
-                links.slotComar(reply)
-            elif reply.id > 42:
-                self.stack.slotComar(reply)
-        
-        elif reply.command == "notify":
-            if reply.notify == "Net.Link.connectionChanged":
-                mode, name = reply.data.split(" ", 1)
-                if mode == "added":
-                    self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
-                elif mode == "gotaddress":
-                    name, addr = name.split("\n", 1)
-                    conn = self.view.find(reply.script, name)
-                    if conn:
-                        conn.got_address = addr
-                        conn.update()
-                elif mode == "configured":
-                    type, name = name.split(" ", 1)
-                    if type == "device":
-                        self.comar.call_package("Net.Link.connectionInfo", reply.script, [ "name", name ], id=2)
-                    elif type == "address":
-                        self.comar.call_package("Net.Link.getAddress", reply.script, [ "name", name ], id=3)
-                    elif type == "state":
-                        self.comar.call_package("Net.Link.getState", reply.script, [ "name", name ], id=4)
-            
-            elif noti == "Net.Link.deviceChanged":
-                # FIXME
-                return
-                type, rest = data.split(" ", 1)
-                if type != "new":
-                    return
-                nettype, uid, info = rest.split(" ", 2)
-                name = self.uniqueName()
-                self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
+        pass
+        # old remains
+        #    elif noti == "Net.Link.deviceChanged":
+        #        type, rest = data.split(" ", 1)
+        #        if type != "new":
+        #        nettype, uid, info = rest.split(" ", 2)
+        #        self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
     
     def slotSettings(self):
         self.stack.hide()
