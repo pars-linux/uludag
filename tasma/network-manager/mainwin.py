@@ -74,9 +74,10 @@ class Connection(QWidget):
             comlink.com.Net.Link[self.conn.script].setState(name=self.conn.name, state="down")
     
     def slotDelete(self):
+        conn = self.conn
         m = i18n("Should I delete the\n'%s'\nconnection?")
-        if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % self.name, i18n("Delete connection?")):
-            comlink.com.Net.Link[self.conn.script].deleteConnection(name=self.conn.name)
+        if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % conn.name, i18n("Delete connection?")):
+            comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
     
     def slotEdit(self):
         w = connection.Window(self.view.parent(), self.conn)
@@ -95,7 +96,7 @@ class Connection(QWidget):
         paint = QPainter(self)
         paint.fillRect(event.rect(), QBrush(cg.midlight()))
         paint.drawPixmap(20, 3, self.mypix)
-        paint.drawText(53, self.myBase + 4, self.conn.name)
+        paint.drawText(53, self.myBase + 4, unicode(self.conn.name))
         addr = self.conn.net_addr
         if not addr:
             addr = i18n("Automatic")
