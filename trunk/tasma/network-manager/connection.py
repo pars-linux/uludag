@@ -107,11 +107,12 @@ class AuthTab(QWidget):
 
 
 class Settings(QWidget):
-    def __init__(self, parent, link, conn):
+    def __init__(self, parent, link, conn, new_conn=None):
         QWidget.__init__(self, parent)
         
         self.link = link
         self.conn = conn
+        self.new_conn = new_conn
         
         grid = QGridLayout(self, 2, 2, 6)
         row = 0
@@ -124,8 +125,6 @@ class Settings(QWidget):
         row += 1
         
         # Connection
-        self.device_uid = self.conn.devid
-        self.device_items = []
         lab = QLabel(i18n("Device:"), self)
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         hb = QHBox(self)
@@ -163,11 +162,10 @@ class Settings(QWidget):
         if "net" in link.modes:
             row = self.initNet(grid, row)
         
-        self.dns1.setChecked(True)
         self.setValues()
         
         comlink.device_hook.append(self.slotDevices)
-        comlink.queryDevices(conn.script)
+        comlink.queryDevices(link.script)
     
     def cleanup(self):
         comlink.device_hook.remove(self.slotDevices)
@@ -234,17 +232,26 @@ class Settings(QWidget):
     
     def setValues(self):
         conn = self.conn
-        self.name.edit.setText(unicode(conn.name))
-        self.device.setText(conn.devname)
-        if "remote" in self.link.modes:
-            self.remote.setText(conn.remote)
-        if conn.net_mode == "auto":
-            self.r1.setChecked(True)
+        self.device_items = []
+        if conn:
+            self.name.edit.setText(unicode(conn.name))
+            self.device.setText(conn.devname)
+            self.device_uid = self.conn.devid
+            if "remote" in self.link.modes:
+                self.remote.setText(conn.remote)
+            if conn.net_mode == "auto":
+                self.r1.setChecked(True)
+            else:
+                self.r2.setChecked(True)
+                self.address.setText(conn.net_addr)
+                self.netmask.setText(conn.net_mask)
+                self.gateway.setText(conn.net_gate)
         else:
-            self.r2.setChecked(True)
-            self.address.setText(conn.net_addr)
-            self.netmask.setText(conn.net_mask)
-            self.gateway.setText(conn.net_gate)
+            # FIXME: unique name
+            self.name.edit.setText("lala")
+            self.device_uid = self.new_conn[0]
+            self.device.setText(self.new_conn[1])
+            self.r1.setChecked(True)
         self.slotFields()
     
     def useValues(self):
@@ -261,18 +268,20 @@ class Settings(QWidget):
             mode = "manual"
         
         conn = self.conn
-        if conn.name != name:
-            comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
+        script = self.link.script
         
-        comlink.com.Net.Link[conn.script].setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
+        if conn and conn.name != name:
+            comlink.com.Net.Link[script].deleteConnection(name=conn.name)
         
-        if self.device_uid != conn.devid:
-            comlink.com.Net.Link[conn.script].setConnection(name=name, device=self.device_uid)
+        comlink.com.Net.Link[script].setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
+        
+        if conn == None or self.device_uid != conn.devid:
+            comlink.com.Net.Link[script].setConnection(name=name, device=self.device_uid)
         
         if "remote" in self.link.modes:
             remote = self.remote.text()
-            if remote != self.conn.remote:
-                comlink.com.Net.Link[conn.script].setRemote(name=name, remote=remote)
+            if conn == None or remote != self.conn.remote:
+                comlink.com.Net.Link[script].setRemote(name=name, remote=remote)
         
         return
         #FIXME: remains
@@ -295,7 +304,7 @@ class Settings(QWidget):
                 pass
     
     def slotDevices(self, script, devices):
-        if script != self.conn.script:
+        if script != self.link.script:
             return
         self.devices.clear()
         self.device_items = []
@@ -362,7 +371,7 @@ class Settings(QWidget):
 
 
 class Window(QMainWindow):
-    def __init__(self, parent, conn):
+    def __init__(self, parent, conn, link=None, new_conn=None):
         QMainWindow.__init__(self, parent)
         
         self.setCaption(i18n("Configure network connection"))
@@ -373,8 +382,9 @@ class Window(QMainWindow):
         vb.setSpacing(6)
         self.setCentralWidget(vb)
         
-        link = comlink.links[conn.script]
-        self.settings = Settings(vb, link, conn)
+        if not link:
+            link = comlink.links[conn.script]
+        self.settings = Settings(vb, link, conn, new_conn)
         
         hb = QHBox(vb)
         hb.setSpacing(12)

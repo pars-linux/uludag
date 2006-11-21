@@ -97,8 +97,7 @@ class Window(QDialog):
         item = self.links.selectedItem()
         if item:
             link = comlink.links[str(item.parent().text(2))]
-            print link.script, item.text(2)
-            #connection.Window(self.parent(), link.script, None)
+            connection.Window(self.parent(), None, link, (str(item.text(2)), str(item.text(1))))
         QDialog.accept(self)
     
     def slotSelection(self):
