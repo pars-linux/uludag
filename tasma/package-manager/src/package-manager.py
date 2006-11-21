@@ -706,11 +706,6 @@ class MainApplicationWidget(QWidget):
                        "System.Manager.cancelled"]:
             self.refreshState()
 
-    def installSingle(self):
-        app = []
-        app.append(str(self.listView.currentItem().text(0)))
-        self.command.install(app)
-
     def searchStringChanged(self):
         if (self.timer.isActive()):
             self.timer.stop()
