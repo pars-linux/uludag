@@ -18,95 +18,6 @@ from icons import getIconSet
 from comariface import comlink
 
 
-class AuthTab(QWidget):
-    #remains
-    def __init__(self, parent, modes):
-        QWidget.__init__(self, parent)
-        self.modes = modes
-        
-        g = QGridLayout(self, 5, 3, 6, 6)
-        
-        group = QButtonGroup()
-        self.group = group
-        group.setExclusive(True)
-        self.connect(group, SIGNAL("clicked(int)"), self.slotClicked)
-        
-        r1 = QRadioButton(i18n("No authentication"), self)
-        self.r1 = r1
-        g.addMultiCellWidget(r1, 0, 0, 0, 2)
-        group.insert(r1, 0)
-        
-        r2 = QRadioButton(i18n("Passphrase:"), self)
-        self.r2 = r2
-        g.addWidget(r2, 1, 0)
-        group.insert(r2, 1)
-        
-        self.phrase = widgets.Edit(self, True)
-        g.addMultiCellWidget(self.phrase, 1, 1, 1, 2)
-        
-        r3 = QRadioButton(i18n("Login"), self)
-        self.r3 = r3
-        g.addWidget(r3, 2, 0)
-        group.insert(r3, 2)
-        
-        lab1 = QLabel(i18n("Name:"), self)
-        g.addWidget(lab1, 2, 1, Qt.AlignRight)
-        
-        self.name = widgets.Edit(self)
-        g.addWidget(self.name, 2, 2)
-        
-        lab = QLabel("", self)
-        lab.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        g.addWidget(lab, 3, 0)
-        
-        lab2 = QLabel(i18n("Password:"), self)
-        g.addWidget(lab2, 3, 1, Qt.AlignRight)
-        
-        self.password = widgets.Edit(self, True)
-        g.addWidget(self.password, 3, 2)
-        
-        r4 = QRadioButton(i18n("Key"), self)
-        self.r4 = r4
-        g.addMultiCellWidget(r4, 4, 4, 0, 2)
-        group.insert(r4, 3)
-        
-        if not "passauth" in modes:
-            r2.setEnabled(False)
-        if not "loginauth" in modes:
-            r3.setEnabled(False)
-            lab1.setEnabled(False)
-            lab2.setEnabled(False)
-        if not "keyauth" in modes:
-            r4.setEnabled(False)
-        
-        self.slotSwitch(0)
-    
-    def slotClicked(self, id):
-        if id == 0:
-            self.phrase.setEnabled(False)
-            self.name.setEnabled(False)
-            self.password.setEnabled(False)
-        elif id == 1:
-            self.phrase.setEnabled(True)
-            self.name.setEnabled(False)
-            self.password.setEnabled(False)
-        elif id == 2:
-            self.phrase.setEnabled(False)
-            self.name.setEnabled(True)
-            self.password.setEnabled(True)
-    
-    def slotSwitch(self, id):
-        if id == 0:
-            self.r1.setChecked(True)
-        elif id == 1:
-            self.r2.setChecked(True)
-        elif id == 2:
-            self.r3.setChecked(True)
-        elif id == 3:
-            self.r4.setChecked(True)
-        self.slotClicked(id)
-
-
 class Settings(QWidget):
     def __init__(self, parent, link, conn, new_conn=None):
         QWidget.__init__(self, parent)
@@ -156,10 +67,21 @@ class Settings(QWidget):
             row += 1
         
         # Authentication
-        #if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
-        #    line = widgets.HLine(i18n("Authentication"), self)
-        #    grid.addMultiCellWidget(line, row, row, 0, 1)
-        #    row += 1
+        if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
+            line = widgets.HLine(i18n("Authentication"), self)
+            grid.addMultiCellWidget(line, row, row, 0, 1)
+            row += 1
+            
+            lab = QLabel(i18n("Mode:"), self)
+            grid.addWidget(lab, row, 0, Qt.AlignRight)
+            self.auth_mode = QComboBox(self)
+            grid.addWidget(self.auth_mode, row, 1)
+            row += 1
+            
+            self.auth_mode.insertItem(i18n("No authentication"))
+            self.auth_mode.insertItem(i18n("Passphrase"))
+            self.auth_mode.insertItem(i18n("Login"))
+            self.auth_mode.insertItem(i18n("Key"))
         
         # Communication
         if "net" in link.modes:
@@ -223,7 +145,7 @@ class Settings(QWidget):
             self.scan_box.insertItem(remote)
     
     def initNet(self, grid, row):
-        line = widgets.HLine(i18n("Network"), self)
+        line = widgets.HLine(i18n("Network settings"), self)
         grid.addMultiCellWidget(line, row, row, 0, 1)
         row += 1
         
@@ -446,11 +368,6 @@ class Window(QMainWindow):
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
         self.show()
-    
-    def slotScan(self):
-        # FIXME:
-        if self.device:
-            self.comar.call_package("Net.Link.scanRemote", self.link_name, [ "device", self.device ], id=6)
     
     def slotAccept(self):
         self.settings.useValues()
