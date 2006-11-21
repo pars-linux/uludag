@@ -101,10 +101,3 @@ class Links:
                 i18n("No package with COMAR network scripts are installed yet."),
                 QMessageBox.Ok, QMessageBox.NoButton)
             return
-        
-        if len(self.links) == 1:
-            connection.Window(parent, i18n("new connection"), self.links[self.links.keys()[0]], 1)
-            return
-        
-        self.w = Window(parent, self.links)
-        self.w.show()
