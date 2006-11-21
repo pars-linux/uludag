@@ -21,21 +21,6 @@ from icons import icons, getIconSet
 from comariface import comlink
 
 
-class MinButton(QPushButton):
-    def __init__(self, title, parent):
-        QPushButton.__init__(self, title, parent)
-        self.title = title
-        f = self.font()
-        f.setPointSize(f.pointSize() - 2)
-        self.setFont(f)
-        self.hide()
-    
-    def mySize(self):
-        fm = self.fontMetrics()
-        rect = fm.boundingRect(self.title)
-        return (rect.width(), rect.height())
-
-
 class Connection(QWidget):
     def __init__(self, view, conn):
         self.is_odd = 0
@@ -57,11 +42,14 @@ class Connection(QWidget):
         self.check = QCheckBox(self)
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
-        self.edit_but = MinButton(i18n("Edit"), self)
-        self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
-        self.del_but = MinButton(i18n("Delete"), self)
-        self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         view.connections[conn.hash] = self
+        
+        self.diksi = QToolButton(self)
+        self.diksi.setAutoRaise(True)
+        self.diksi.resize(24,24)
+        self.diksi.setIconSet(getIconSet("edittrash.png", KIcon.Small))
+        self.connect(self.diksi, SIGNAL("clicked()"), self.slotDelete)
+        
         self.show()
         
         self.ignore_signal = False
@@ -83,6 +71,9 @@ class Connection(QWidget):
     
     def slotEdit(self):
         w = connection.Window(self.view.parent(), self.conn)
+    
+    def mouseDoubleClickEvent(self, event):
+        self.slotEdit()
     
     def updateState(self, state):
         # FIXME
@@ -110,21 +101,8 @@ class Connection(QWidget):
     
     def resizeEvent(self, event):
         pix = event.size().width()
-        w1, h1 = self.edit_but.mySize()
-        w2, h2 = self.del_but.mySize()
-        self.edit_but.setGeometry(pix - w1 - w2 - 20 - 4, 1, w1 + 8, h1 + 8)
-        self.del_but.setGeometry(pix - w2 - 8 - 4, 1, w2 + 8, h2 + 8)
+        self.diksi.setGeometry(pix - 24 - 6, 3, 24, 24)
         return QWidget.resizeEvent(self, event)
-    
-    def enterEvent(self, event):
-        self.edit_but.show()
-        self.del_but.show()
-        return QWidget.enterEvent(self, event)
-    
-    def leaveEvent(self, event):
-        self.edit_but.hide()
-        self.del_but.hide()
-        return QWidget.leaveEvent(self, event)
     
     def sizeHint(self):
         fm = self.fontMetrics()
