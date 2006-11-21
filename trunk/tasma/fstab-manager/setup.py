@@ -64,7 +64,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/mainform.ui', 'src/fstab-manager.py','src/fstab.py',
-                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/fstab_manager.png']),
+                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/fstab_manager.png','src/Disk.png','src/DiskAdded.png','src/DiskNotAdded.png']),
                         'help'],
     executable_links = [('fstab-manager','fstab-manager.py')],
     i18n = ('po',['src']),
