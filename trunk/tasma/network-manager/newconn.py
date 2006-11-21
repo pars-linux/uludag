@@ -54,7 +54,6 @@ class Window(QDialog):
         self.setMinimumSize(340, 340)
         self.resize(340, 340)
         self.setCaption(i18n("Create a new connection"))
-        self.my_parent = parent
         vb = QVBoxLayout(self)
         vb.setSpacing(6)
         vb.setMargin(12)
@@ -63,6 +62,7 @@ class Window(QDialog):
         vb.addWidget(lab)
         
         self.links = QListView(self)
+        self.connect(self.links, SIGNAL("selectionChanged()"), self.slotSelection)
         self.links.setAllColumnsShowFocus(True)
         vb.addWidget(self.links)
         self.links.addColumn("")
@@ -82,6 +82,8 @@ class Window(QDialog):
             comlink.queryDevices(link.script)
         
         but = QPushButton(i18n("Configure the connection"), self)
+        but.setEnabled(False)
+        self.but = but
         vb.addWidget(but)
         self.connect(but, SIGNAL("clicked()"), self.accept)
         but.setDefault(True)
@@ -92,23 +94,34 @@ class Window(QDialog):
     
     def accept(self):
         comlink.device_hook.remove(self.slotDevices)
-        link = self.links.selectedItem()
-        if link:
-            connection.Window(self.my_parent, i18n("new connection"), link.link_name, 1)
+        item = self.links.selectedItem()
+        if item:
+            link = comlink.links[str(item.parent().text(2))]
+            print link.script, item.text(2)
+            #connection.Window(self.parent(), link.script, None)
         QDialog.accept(self)
+    
+    def slotSelection(self):
+        item = self.links.selectedItem()
+        self.but.setEnabled(item != None)
     
     def slotDevices(self, script, devices):
         item = self.links.firstChild()
-        # FIXME: better handling
+        parent = None
         while item:
             if item.text(2) == script:
                 parent = item
                 break
             item = item.nextSibling()
+        if not parent:
+            return
         if devices != "":
             for device in devices.split("\n"):
                 uid, info = device.split(" ", 1)
-                item = QListViewItem(parent, "", info)
+                item = QListViewItem(parent, "", info, uid)
+        else:
+            item = QListViewItem(parent, "", i18n("No suitable device found"))
+            item.setSelectable(False)
 
 
 class Links:
