@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005-2006, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -11,24 +11,16 @@
 
 from qt import *
 from kdecore import i18n
+
 import connection
-import comar
 import widgets
-
-
-class Link:
-    def __init__(self, link_name, data):
-        self.link_name = link_name
-        self.type, self.name, self.remote_name = data.split("\n", 2)
+from comariface import comlink
 
 
 class LinkItem(QListBoxItem):
     def __init__(self, box, link):
         QListBoxItem.__init__(self, box)
-        self.link_name = link.link_name
-        self.name = link.name
-        self.link_type = link.type
-        self.remote_name = link.remote_name
+        self.link = link
         
         self.f1 = QFont()
         self.f1.setBold(True)
@@ -39,7 +31,7 @@ class LinkItem(QListBoxItem):
         fm = QFontMetrics(self.f1)
         painter.setPen(Qt.black)
         painter.setFont(self.f1)
-        painter.drawText(3, 3 + fm.ascent(), unicode(self.name))
+        painter.drawText(3, 3 + fm.ascent(), unicode(self.link.name))
         #painter.drawText(32 + 9, 3 + fm.ascent(), unicode(self.name))
         #painter.drawPixmap(3, 3, self.pix)
     
@@ -56,7 +48,7 @@ class LinkItem(QListBoxItem):
 
 
 class Window(QDialog):
-    def __init__(self, parent, links):
+    def __init__(self, parent):
         QDialog.__init__(self, parent)
         self.setMinimumSize(260, 180)
         self.resize(260, 180)
@@ -71,8 +63,8 @@ class Window(QDialog):
         
         self.links = QListBox(self)
         vb.addWidget(self.links)
-        for item in links:
-            LinkItem(self.links, links[item])
+        for item in comlink.links.values():
+            LinkItem(self.links, item)
         
         but = QPushButton(i18n("Create connection"), self)
         vb.addWidget(but)
@@ -87,24 +79,6 @@ class Window(QDialog):
 
 
 class Links:
-    def __init__(self):
-        self.links = {}
-    
-    def query(self, comar):
-        self.comar = comar
-        self.comar.call("Net.Link.linkInfo", id=42)
-    
-    def slotComar(self, reply):
-        if reply[0] == self.comar.RESULT:
-            if reply[1] == 42:
-                self.links[reply[3]] = Link(reply[3], reply[2])
-    
-    def get_info(self, name):
-        if not self.links.has_key(name):
-            self.query(self.comar)
-            return Link(name, "net\nUnknown\nRemote")
-        return self.links[name]
-    
     def ask_for_create(self, parent):
         if len(self.links) == 0:
             QMessageBox.warning(parent, i18n("Install network packages!"),
@@ -118,6 +92,3 @@ class Links:
         
         self.w = Window(parent, self.links)
         self.w.show()
-
-
-links = Links()
