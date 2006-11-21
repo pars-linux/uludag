@@ -178,29 +178,41 @@ class Settings(QWidget):
     def initScan(self):
         pop = QPopupMenu()
         self.connect(pop, SIGNAL("aboutToShow()"), self.slotScan)
-        lab = QLabel("Scan results:", pop)
-        lab.setMargin(3)
-        pop.insertItem(lab)
-        box = QListBox(pop)
+        vb = QVBox(pop)
+        pop.insertItem(vb)
+        vb.setMargin(3)
+        vb.setSpacing(3)
+        lab = QLabel(i18n("Scan results:"), vb)
+        box = QListBox(vb)
+        box.connect(box, SIGNAL("selectionChanged()"), self.slotScanSelect)
+        box.connect(box, SIGNAL("selected(QListBoxItem *)"), self.slotScanDouble)
         box.setMinimumSize(240, 100)
-        pop.insertItem(box)
         self.scan_box = box
-        hb = QHBox(pop)
-        hb.setMargin(3)
+        hb = QHBox(vb)
         hb.setSpacing(6)
-        but = QPushButton(i18n("Scan again"), hb)
+        but = QPushButton(getIconSet("reload.png", KIcon.Small), i18n("Scan again"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotScan)
-        but = QPushButton(i18n("Use again"), hb)
+        but = QPushButton(getIconSet("key_enter.png", KIcon.Small), i18n("Use"), hb)
+        self.scan_use_but = but
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
-        pop.insertItem(hb)
         return pop
+    
+    def slotScanDouble(self, item):
+        self.remote.setText(item.text())
+        self.scanpop.hide()
+    
+    def slotScanSelect(self):
+        item = self.scan_box.selectedItem()
+        self.scan_use_but.setEnabled(item != None)
     
     def slotScanUse(self):
         item = self.scan_box.selectedItem()
         if item:
             self.remote.setText(item.text())
+            self.scanpop.hide()
     
     def slotScan(self):
+        self.scan_use_but.setEnabled(False)
         self.scan_box.clear()
         comlink.queryRemotes(self.link.script, self.device_uid)
     
