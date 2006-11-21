@@ -18,36 +18,6 @@ from icons import icons, getIconSet
 from comariface import comlink
 
 
-class LinkItem(QListBoxItem):
-    def __init__(self, box, link):
-        QListBoxItem.__init__(self, box)
-        self.link = link
-        
-        self.f1 = QFont()
-        self.f1.setBold(True)
-        #self.f1.setPointSize(self.f1.pointSize() + 1)
-        #self.pix = QPixmap("ether.png")
-    
-    def paint(self, painter):
-        fm = QFontMetrics(self.f1)
-        painter.setPen(Qt.black)
-        painter.setFont(self.f1)
-        painter.drawText(3, 3 + fm.ascent(), unicode(self.link.name))
-        #painter.drawText(32 + 9, 3 + fm.ascent(), unicode(self.name))
-        #painter.drawPixmap(3, 3, self.pix)
-    
-    def height(self, box):
-        fm = QFontMetrics(self.f1)
-        ts = 3 + fm.height() + 3
-        #ts = 3 + fm.height() + 3
-        #if ts < 32 + 3 + 3:
-        #    ts = 32 + 3 + 3
-        return ts
-    
-    def width(self, box):
-        return 100
-
-
 class Window(QDialog):
     def __init__(self, parent):
         QDialog.__init__(self, parent)
