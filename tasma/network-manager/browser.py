@@ -38,6 +38,8 @@ class MinButton(QPushButton):
 
 class Connection(QWidget):
     def __init__(self, view, conn):
+        self.is_odd = 0
+        
         dev = view.devices.get(conn.devid, None)
         if not dev:
             dev = Device(view, conn.devname, conn.devid)
@@ -92,9 +94,11 @@ class Connection(QWidget):
         self.update()
     
     def paintEvent(self, event):
-        cg = self.colorGroup()
         paint = QPainter(self)
-        paint.fillRect(event.rect(), QBrush(cg.midlight()))
+        col = KGlobalSettings.baseColor()
+        if self.is_odd:
+            col = KGlobalSettings.alternateBackgroundColor()
+        paint.fillRect(event.rect(), QBrush(col))
         paint.drawPixmap(20, 3, self.mypix)
         paint.drawText(53, self.myBase + 4, unicode(self.conn.name))
         addr = self.conn.net_addr
@@ -211,6 +215,7 @@ class Device(QWidget):
         childs.sort(key=lambda x: x.name)
         for item in childs:
             item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
+            item.is_odd = (i + j) % 2
             i += 1
             if i >= c:
                 i = 0
@@ -227,6 +232,7 @@ class ConnectionView(QScrollView):
         QScrollView.__init__(self, parent)
         self.devices = {}
         self.connections = {}
+        self.viewport().setPaletteBackgroundColor(KGlobalSettings.baseColor())
     
     def myResize(self, width):
         th = 0
