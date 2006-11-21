@@ -213,19 +213,22 @@ class Settings(QWidget):
             self.device_uid = self.conn.devid
             if "remote" in self.link.modes:
                 self.remote.setText(conn.remote)
-            if conn.net_mode == "auto":
-                self.r1.setChecked(True)
-            else:
-                self.r2.setChecked(True)
-                self.address.setText(conn.net_addr)
-                self.netmask.setText(conn.net_mask)
-                self.gateway.setText(conn.net_gate)
+            if "net" in self.link.modes:
+                if conn.net_mode == "auto":
+                    self.r1.setChecked(True)
+                else:
+                    self.r2.setChecked(True)
+                    self.address.setText(conn.net_addr)
+                    self.netmask.setText(conn.net_mask)
+                    self.gateway.setText(conn.net_gate)
         else:
             self.name.edit.setText(unicode(comlink.uniqueName()))
             self.device_uid = self.new_conn[0]
             self.device.setText(self.new_conn[1])
-            self.r1.setChecked(True)
-        self.slotFields()
+            if "net" in self.link.modes:
+                self.r1.setChecked(True)
+        if "net" in self.link.modes:
+            self.slotFields()
     
     def useValues(self):
         name = str(self.name.edit.text())
