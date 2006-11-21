@@ -10,11 +10,11 @@
 #
 
 from qt import *
-from kdecore import i18n
+from kdecore import *
 
 import connection
 import widgets
-from icons import icons
+from icons import icons, getIconSet
 from comariface import comlink
 
 
@@ -81,7 +81,7 @@ class Window(QDialog):
             item.setOpen(True)
             comlink.queryDevices(link.script)
         
-        but = QPushButton(i18n("Configure the connection"), self)
+        but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Configure the connection"), self)
         but.setEnabled(False)
         self.but = but
         vb.addWidget(but)

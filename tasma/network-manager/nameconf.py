@@ -13,6 +13,7 @@ from qt import *
 from kdecore import *
 import widgets
 
+from icons import getIconSet
 from comariface import comlink
 
 
@@ -45,19 +46,19 @@ class Window(QMainWindow):
         self.dns = QListBox(vb2)
         
         hb = QHBox(vb2)
-        but = QPushButton(i18n("Add"), hb)
+        but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        but = QPushButton(i18n("Remove"), hb)
+        but = QPushButton(getIconSet("remove.png", KIcon.Small), i18n("Remove"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotRemove)
         
         hb = QWidget(vb)
         lay = QHBoxLayout(hb)
-        lay.setSpacing(6)
+        lay.setSpacing(12)
         lay.addStretch(1)
-        but = QPushButton(i18n("Apply"), hb)
+        but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotApply)
         lay.addWidget(but)
-        but = QPushButton(i18n("Cancel"), hb)
+        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         lay.addWidget(but)
         

@@ -10,10 +10,11 @@
 #
 
 from qt import *
-from kdecore import i18n
+from kdecore import *
 from kdeui import *
 
 import widgets
+from icons import getIconSet
 from comariface import comlink
 
 
@@ -153,10 +154,10 @@ class Settings(QWidget):
             row += 1
         
         # Authentication
-        if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
-            line = widgets.HLine(i18n("Authentication"), self)
-            grid.addMultiCellWidget(line, row, row, 0, 1)
-            row += 1
+        #if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
+        #    line = widgets.HLine(i18n("Authentication"), self)
+        #    grid.addMultiCellWidget(line, row, row, 0, 1)
+        #    row += 1
         
         # Communication
         if "net" in link.modes:
@@ -378,7 +379,7 @@ class Window(QMainWindow):
         
         vb = QVBox(self)
         vb.setMargin(6)
-        vb.setSpacing(6)
+        vb.setSpacing(12)
         self.setCentralWidget(vb)
         
         if not link:
@@ -387,9 +388,10 @@ class Window(QMainWindow):
         
         hb = QHBox(vb)
         hb.setSpacing(12)
-        but = QPushButton(i18n("Accept"), hb)
+        lab = QLabel("", hb)
+        but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAccept)
-        but = QPushButton(i18n("Cancel"), hb)
+        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
         self.show()
