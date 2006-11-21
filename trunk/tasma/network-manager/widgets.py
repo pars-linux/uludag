@@ -35,7 +35,7 @@ class HLine(QHBox):
         
         line = QFrame(self)
         line.setFrameStyle(line.HLine | line.Sunken)
-        self.setStretchFactor(line, 1)
+        line.setFixedWidth(48)
         
         text = QLabel(" %s " % unicode(title), self)
         #self.setStretchFactor(text, 1)
