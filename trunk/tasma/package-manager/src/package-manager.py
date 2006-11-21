@@ -294,7 +294,7 @@ class MainApplicationWidget(QWidget):
         <div>
         <!-- checkbox --> %s <!-- checkbox -->
         <div class="package_title" style="%s">
-        <img src="%s" style="float:left;">
+        <img src="%s" style="float:left;" %s>
         <b>%s</b><br><span style="color:#303030">%s</span><br>
         </div>
         <div class="package_info" style="%s">
@@ -357,8 +357,10 @@ class MainApplicationWidget(QWidget):
             else:
                 checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
                            %s onclick="changeBackgroundColor(this)" name="%s"></div>""" % (titleStyle,checkState,app)
+            
+            iconSize = 'width="%dpx" height="%dpx"' % (getIconSize(), getIconSize())
 
-            result += template % (checkbox, titleStyle,iconPath,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
+            result += template % (checkbox, titleStyle,iconPath,iconSize,app,summary,style,i18n("Description: "),desc,i18n("Version: "),
                                   version,i18n("Package Size: "),size,i18n("Homepage: "),homepage,homepage)
             index += 1
 

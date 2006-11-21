@@ -31,3 +31,7 @@ def getIconPath(icon, group=KIcon.Desktop):
 
 def loadIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
+
+def getIconSize():
+    KGlobal.config().setGroup("DesktopIcons")
+    return KGlobal.config().readNumEntry("Size", 48)
