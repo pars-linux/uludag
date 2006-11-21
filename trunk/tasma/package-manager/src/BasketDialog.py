@@ -174,7 +174,7 @@ class BasketDialog(QDialog):
 
         template += '''
         <div class="package_title_disabled" style="%s">
-        <img src="%s" style="float:left;" %s>
+        <img src="%s" style="float:left;" width="%dpx" height="%dpx">
         <b>%s</b><br><span style="color:#303030">%s%s<br>%s</span><br>
         </div></div>
         <!-- package end -->
@@ -190,10 +190,10 @@ class BasketDialog(QDialog):
             size = "%.0f %s" % (tpl[0], tpl[1])
             iconPath = getIconPath(package.icon)
             summary = package.summary
-            iconSize = 'width="%dpx" height="%dpx"' % (getIconSize(), getIconSize())
+            iconSize = getIconSize()
             if checkBox:
-                result += template % (style,app,style,iconPath,iconSize,app,i18n("Size: "),size,summary)
+                result += template % (style,app,style,iconPath,iconSize,iconSize,app,i18n("Size: "),size,summary)
             else:
-                result += template % (style,iconPath,iconSize,app,i18n("Size: "),size,summary)
+                result += template % (style,iconPath,iconSize,iconSize,app,i18n("Size: "),size,summary)
 
         return result
