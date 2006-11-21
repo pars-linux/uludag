@@ -12,9 +12,8 @@
 from qt import *
 from kdecore import i18n
 from kdeui import *
-from links import links
-import widgets
 
+import widgets
 from comariface import comlink
 
 

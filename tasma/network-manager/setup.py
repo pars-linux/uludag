@@ -56,10 +56,10 @@ if "dist" in sys.argv:
 
 app_data = [
     'network-manager.py',
-    'mainwin.py',
+    'browser.py',
     'connection.py',
     'widgets.py',
-    'links.py',
+    'newconn.py',
     'icons.py',
     'stack.py',
     'images/wireless-online.png',

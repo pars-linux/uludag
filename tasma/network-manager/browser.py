@@ -12,12 +12,12 @@
 from qt import *
 from kdecore import *
 from kdeui import *
+
 import stack
 import connection
-from links import links
+import newconn
 import widgets
 from icons import icons, getIconSet
-
 from comariface import comlink
 
 
@@ -285,7 +285,6 @@ class Widget(QVBox):
         self.view = ConnectionView(self)
         
         #self.stack = stack.Window(self, self.comar)
-        #links.query(self.comar)
         
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
@@ -300,10 +299,6 @@ class Widget(QVBox):
                 return name
             id += 1
     
-    def slotHelp(self):
-        self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
-        self.helpwin.show()
-    
     def handleComar(self, reply):
         pass
         # old remains
@@ -313,9 +308,14 @@ class Widget(QVBox):
         #        nettype, uid, info = rest.split(" ", 2)
         #        self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
     
+    def slotCreate(self):
+        win = newconn.Window(self)
+        win.show()
+    
     def slotSettings(self):
         self.stack.hide()
         self.stack.show()
     
-    def slotCreate(self):
-        links.ask_for_create(self)
+    def slotHelp(self):
+        self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
+        self.helpwin.show()
