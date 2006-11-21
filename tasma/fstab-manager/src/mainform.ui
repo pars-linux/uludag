@@ -71,7 +71,7 @@
         </widget>
         <widget class="QFrame" row="2" column="0">
             <property name="name">
-                <cstring>frame6</cstring>
+                <cstring>frame_detail</cstring>
             </property>
             <property name="frameShape">
                 <enum>StyledPanel</enum>
@@ -117,26 +117,10 @@
                                 </property>
                                 <widget class="QPushButton">
                                     <property name="name">
-                                        <cstring>btn_addNew</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Add New</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton">
-                                    <property name="name">
                                         <cstring>btn_Update</cstring>
                                     </property>
                                     <property name="text">
                                         <string>Apply</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>btn_Delete</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Delete</string>
                                     </property>
                                 </widget>
                             </hbox>
@@ -190,9 +174,4 @@
     </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kurlrequester.h</includehint>
-    <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
 </UI>
