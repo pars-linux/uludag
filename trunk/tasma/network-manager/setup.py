@@ -61,7 +61,7 @@ app_data = [
     'widgets.py',
     'newconn.py',
     'icons.py',
-    'stack.py',
+    'nameconf.py',
     'images/wireless-online.png',
     'images/wireless-connecting.png',
     'images/wireless-offline.png',

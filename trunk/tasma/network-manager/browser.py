@@ -13,7 +13,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-import stack
+import nameconf
 import connection
 import newconn
 import widgets
@@ -284,7 +284,7 @@ class Widget(QVBox):
         
         self.view = ConnectionView(self)
         
-        #self.stack = stack.Window(self, self.comar)
+        self.stack = nameconf.Window(self)
         
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
