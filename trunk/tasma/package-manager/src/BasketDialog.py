@@ -7,16 +7,9 @@ from khtml import *
 
 import pisi
 import Basket
+from Icons import *
 
 (UPDATE_BASKET, APPLY_OPERATION) = (100,101)
-
-def getIconPath(name, group=KIcon.Desktop):
-    if not name:
-        name = "package"
-    return KGlobal.iconLoader().iconPath(name,group)
-
-def loadIconSet(name, group=KIcon.Toolbar):
-    return KGlobal.iconLoader().loadIconSet(name, group)
 
 class SelectEventListener(DOM.EventListener):
     def __init__(self, parent):
