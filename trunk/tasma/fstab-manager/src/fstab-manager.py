@@ -17,7 +17,7 @@ import time
 from qt import *
 from kdecore import *
 from kdeui import *
-from khtml import *
+from kfile import *
 
 # Widget
 import kdedesigner
@@ -43,14 +43,17 @@ def AboutData():
     about_data.addAuthor('Gökmen GÖKSEL', None, 'gokmen@pardus.org.tr')
     return about_data
 
-
 def loadIcon(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIcon(name, group, size)
-
 
 def loadIconSet(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIconSet(name, group, size)
 
+def asText(anarray):
+    xx=''
+    for i in anarray:
+        xx+=i+','
+    return xx.rstrip(',')
 
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
@@ -60,7 +63,6 @@ class HelpDialog(QDialog):
         self.htmlPart = KHTMLPart(self)
         self.resize(500, 300)
         self.layout.addWidget(self.htmlPart.view(), 1, 1)
-
         if os.environ['LANG'].startswith('tr_TR'):
             self.htmlPart.openURL(KURL(locate('data', 'fstab-manager/help/tr/main_help.html')))
         else:
@@ -73,21 +75,13 @@ class fstabForm(mainForm):
         self.Fstab = fstab.Fstab()
         self.blockDevices = fstab.getBlockDevices()
         self.fstabPartitions = self.getPartitionsFromFstab()
-
+        self.prettyList={}
         self.btn_Update.setEnabled(False)
         self.btn_Delete.setEnabled(False)
 
-        #self.list_main.setFont( QFont( "dejavu", 10, QFont.Bold ))
-
         self.list_main.header().hide()
-        self.list_main.setRootIsDecorated(True)
-        self.list_main.setMultiSelection(False)
-
+        self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
         self.fillDiskList()
-
-        # Initialize Comar
-        # self.comar = comar.Link()
-        # self.comar.localize(os.environ['LANG'].split('_')[0])
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
@@ -96,7 +90,19 @@ class fstabForm(mainForm):
         self.connect(self.btn_Update, SIGNAL('clicked()'), self.slotUpdate)
 
     def slotList(self):
-        pass
+        selected=self.list_main.selectedItem()
+        # I will find another way for that
+        # I know it sucks
+        selectedDisk = str(selected.parent().text(0)).split('\n')[0]
+        selectedPartition = str(selected.text()).split('\n')[0]
+
+        for xx in self.prettyList[selectedDisk]:
+            if xx['partition_name']==selectedPartition:
+                partitionInfo = xx
+
+        self.line_mountpoint.setText(partitionInfo['mount_point'])
+        self.line_opts.setText(asText(partitionInfo['options']))
+        self.label_disk.setText(selectedPartition)
 
     def slotAddNew(self):
         pass
@@ -108,23 +114,32 @@ class fstabForm(mainForm):
         pass
 
     def fillDiskList(self):
-        count=0
         for disk in self.blockDevices:
-            disks = QListViewItem(self.list_main,QString(disk))
+            disks = QListViewItem(self.list_main,QString(disk+'\nDisk Name'))
+            disks.setMultiLinesEnabled(True)
+            disks.setPixmap(0,loadIcon('Disk',size=32))
             disks.setOpen(True)
+            self.prettyList[disk]=[]
+
             for partition in self.getPartitionsFromSys(disk):
                 if self.fstabPartitions.has_key(partition[0]):
                     activePartition = self.fstabPartitions.get(partition[0])
+                    pixie = loadIcon('DiskAdded',size=32)
+                    check = QCheckListItem.On
                 else:
                     activePartition = partition[1]
-                print activePartition
-                partitions = QListViewItem(self.list_main.firstChild(),
-                                           QString(partition[0]),
-                                           QString('Partition %d'%count),
-                                           QString(activePartition['mount_point']),
-                                           #QString(''),
-                                           QString(activePartition['file_system']))
-                count+=1
+                    pixie = loadIcon('DiskNotAdded',size=32)
+                    check = QCheckListItem.Off
+
+                activePartition['partition_name']=partition[0]
+                self.prettyList[disk].append(activePartition)
+
+                partitions = QCheckListItem(disks,QString('%s\nMount Point : %s \t FileSystem Type : %s ' %
+                                                  (activePartition['partition_name'],activePartition['mount_point'],activePartition['file_system'])),
+                                                  QCheckListItem.CheckBox)
+                partitions.setState(check)
+                partitions.setMultiLinesEnabled(True)
+                partitions.setPixmap(0,pixie)
 
     def getPartitionsFromSys(self,dev):
         return [info for info in fstab.getPartitionsOfDevice(dev)]
@@ -139,11 +154,9 @@ class Module(KCModule):
         KGlobal.iconLoader().addAppDir('fstab-manager')
         self.config = KConfig('fstab-manager')
         self.aboutdata = AboutData()
-
         widget = fstabForm(self)
         toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
         toplayout.addWidget(widget)
-
     def aboutData(self):
         return self.aboutdata
 
