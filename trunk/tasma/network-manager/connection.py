@@ -147,7 +147,8 @@ class Settings(QWidget):
                 hb.setSpacing(3)
                 self.remote = QLineEdit(hb)
                 but = QPushButton(getIconSet("find.png", KIcon.Small), i18n("Scan"), hb)
-                self.connect(but, SIGNAL("clicked()"), self.slotScan)
+                self.scanpop = self.initScan()
+                but.setPopup(self.scanpop)
                 grid.addWidget(hb, row, 1)
             else:
                 self.remote = QLineEdit(self)
@@ -173,6 +174,28 @@ class Settings(QWidget):
     def cleanup(self):
         comlink.remote_hook.remove(self.slotRemotes)
         comlink.device_hook.remove(self.slotDevices)
+    
+    def initScan(self):
+        pop = QPopupMenu()
+        self.connect(pop, SIGNAL("aboutToShow()"), self.slotScan)
+        pop.insertItem(QLabel("Scan results:", pop))
+        box = QListBox(pop)
+        box.setMinimumSize(240, 100)
+        pop.insertItem(box)
+        self.scan_box = box
+        pop.insertItem(i18n("Scan again"))
+        pop.insertItem(i18n("Use remote"))
+        return pop
+    
+    def slotScan(self):
+        comlink.queryRemotes(self.link.script, self.device_uid)
+    
+    def slotRemotes(self, script, remotes):
+        if self.link.script != script:
+            return
+        self.scan_box.clear()
+        for remote in remotes.split("\n"):
+            self.scan_box.insertItem(remote)
     
     def initNet(self, grid, row):
         line = widgets.HLine(i18n("Network"), self)
@@ -371,14 +394,6 @@ class Settings(QWidget):
                 mask.setText("255.255.0.0")
             elif cl > 191 and cl < 224:
                 mask.setText("255.255.255.0")
-    
-    def slotScan(self):
-        comlink.queryRemotes(self.link.script, self.device_uid)
-    
-    def slotRemotes(self, script, remotes):
-        if self.link.script != script:
-            return
-        print remotes
 
 
 class Window(QMainWindow):
@@ -424,13 +439,6 @@ class Window(QMainWindow):
     def slotComar(self, sock):
         # remains
         if reply[0] == self.comar.RESULT:
-            if reply[1] == 6:
-                old = self.w_remote.currentText()
-                self.w_remote.clear()
-                self.w_remote.insertItem(old)
-                for item in reply[2].split("\n"):
-                    self.w_remote.insertItem(item)
-            elif reply[1] == 7:
                 name, type = reply[2].split("\n", 1)
                 if type == "none":
                     self.auth.slotSwitch(0)
