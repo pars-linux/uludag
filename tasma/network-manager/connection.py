@@ -377,20 +377,3 @@ class Window(QMainWindow):
     def slotCancel(self):
         self.settings.cleanup()
         self.close(True)
-    
-    def slotComar(self, sock):
-        # remains
-        if reply[0] == self.comar.RESULT:
-                name, type = reply[2].split("\n", 1)
-                if type == "none":
-                    self.auth.slotSwitch(0)
-                else:
-                    type, rest = type.split("\n", 1)
-                    if type == "passauth":
-                        self.auth.slotSwitch(1)
-                        self.auth.phrase.edit.setText(rest)
-                    elif type == "loginauth":
-                        user, password = rest.split("\n", 1)
-                        self.auth.slotSwitch(2)
-                        self.auth.name.edit.setText(user)
-                        self.auth.password.edit.setText(password)
