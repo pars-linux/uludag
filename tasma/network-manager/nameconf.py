@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2005-2006, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -13,11 +13,12 @@ from qt import *
 from kdecore import *
 import widgets
 
+from comariface import comlink
+
 
 class Window(QMainWindow):
-    def __init__(self, parent, comar):
+    def __init__(self, parent):
         QMainWindow.__init__(self, parent)
-        self.comar = comar
         
         self.old_host = None
         self.old_dns = None
@@ -60,8 +61,8 @@ class Window(QMainWindow):
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         lay.addWidget(but)
         
-        self.comar.call("Net.Stack.getHostNames", id=50)
-        self.comar.call("Net.Stack.getNameServers", id=51)
+        #self.comar.call("Net.Stack.getHostNames", id=50)
+        #self.comar.call("Net.Stack.getNameServers", id=51)
     
     def slotApply(self):
         host = unicode(self.host.edit.text())
