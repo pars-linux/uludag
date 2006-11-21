@@ -77,32 +77,51 @@ class fstabForm(mainForm):
         self.fstabPartitions = self.getPartitionsFromFstab()
         self.prettyList={}
         self.btn_Update.setEnabled(False)
-        self.btn_Delete.setEnabled(False)
+        self.frame_detail.hide()
 
+        # Just for block devices
+        self.knownFS=['ext3:Ext3',
+                      'ext2:Ext2',
+                      'reiserfs:ReiserFS',
+                      'xfs:XFS',
+                      'ntfs-3g:NTFS',
+                      'vfat:Fat 16/32']
+
+        self.fillFileSystems()
         self.list_main.header().hide()
         self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
         self.fillDiskList()
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
-        self.connect(self.btn_addNew, SIGNAL('clicked()'), self.slotAddNew)
-        self.connect(self.btn_Delete, SIGNAL('clicked()'), self.slotDelete)
         self.connect(self.btn_Update, SIGNAL('clicked()'), self.slotUpdate)
+        self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.fillDiskList)
 
     def slotList(self):
-        selected=self.list_main.selectedItem()
-        # I will find another way for that
-        # I know it sucks
-        selectedDisk = str(selected.parent().text(0)).split('\n')[0]
-        selectedPartition = str(selected.text()).split('\n')[0]
+        try:
+            selected=self.list_main.selectedItem()
+            # I will find another way for that
+            # I know it sucks
+            selectedDisk = str(selected.parent().text(0)).split('\n')[0]
+            selectedPartition = str(selected.text()).split('\n')[0]
 
-        for xx in self.prettyList[selectedDisk]:
-            if xx['partition_name']==selectedPartition:
-                partitionInfo = xx
+            for xx in self.prettyList[selectedDisk]:
+                if xx['partition_name']==selectedPartition:
+                    partitionInfo = xx
 
-        self.line_mountpoint.setText(partitionInfo['mount_point'])
-        self.line_opts.setText(asText(partitionInfo['options']))
-        self.label_disk.setText(selectedPartition)
+            self.line_mountpoint.setText(partitionInfo['mount_point'])
+            self.line_opts.setText(asText(partitionInfo['options']))
+            self.label_disk.setText(selectedPartition)
+            i=0
+            for xx in self.knownFS:
+                if xx.split(':')[0]==partitionInfo['file_system']:
+                    self.combo_fs.setCurrentItem(i)
+                i+=1
+            self.frame_detail.show()
+
+        except:
+            self.frame_detail.hide()
+            pass
 
     def slotAddNew(self):
         pass
@@ -114,6 +133,8 @@ class fstabForm(mainForm):
         pass
 
     def fillDiskList(self):
+        self.frame_detail.hide()
+        self.list_main.clear()
         for disk in self.blockDevices:
             disks = QListViewItem(self.list_main,QString(disk+'\nDisk Name'))
             disks.setMultiLinesEnabled(True)
@@ -140,6 +161,12 @@ class fstabForm(mainForm):
                 partitions.setState(check)
                 partitions.setMultiLinesEnabled(True)
                 partitions.setPixmap(0,pixie)
+
+    def fillFileSystems(self):
+        id=0
+        for fs in self.knownFS:
+            self.combo_fs.insertItem(fs.split(':')[1],id)
+            id+=1
 
     def getPartitionsFromSys(self,dev):
         return [info for info in fstab.getPartitionsOfDevice(dev)]

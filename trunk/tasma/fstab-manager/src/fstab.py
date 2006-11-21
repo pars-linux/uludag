@@ -25,8 +25,14 @@ def getPartitionsOfDevice(device_path):
         if part.num >= 1:
             fs_name = ""
             if part.fs_type and part.fs_type.name != 'linux-swap':
+                if part.fs_type.name == 'fat16' or part.fs_type.name == 'fat32':
+                    part_type = 'vfat'
+                elif part.fs_type.name == 'ntfs':
+                    part_type = 'ntfs-3g'
+                else:
+                    part_type = part.fs_type.name
                 return (device_path + str(part.num), {"mount_point": '',
-                                                          "file_system": part.fs_type.name,
+                                                          "file_system": part_type,
                                                           "options": '',
                                                           "dump_freq": '0',
                                                           "fs_pass_no": '0'})
@@ -199,14 +205,6 @@ class Fstab:
 
         if attr_dict.get('fs_pass_no') == None: 
             attr_dict['fs_pass_no'] = '0'
-
-        # convert fat16 and fat32 to vfat..
-        if attr_dict['file_system'] == 'fat16' or attr_dict['file_system'] == 'fat32':
-            attr_dict['file_system'] = 'vfat'
-
-        # convert ntfs to ntfs-3g
-        if attr_dict['file_system'] == 'ntfs':
-            attr_dict['file_system'] = 'ntfs-3g'
 
         if attr_dict.get('options') == None:
             attr_dict['options'] = self.defaultFileSystemOptions.get(attr_dict['file_system']) or self.defaultFileSystemOptions['defaults']
