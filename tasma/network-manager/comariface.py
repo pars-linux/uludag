@@ -13,7 +13,7 @@ import comar
 from qt import *
 from kdecore import i18n
 
-CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES, NAME_HOST, NAME_DNS = range(1, 9)
+CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 10)
 
 
 class Hook:
@@ -24,6 +24,7 @@ class Hook:
         self.config_hook = []
         self.device_hook = []
         self.name_hook = []
+        self.remote_hook = []
     
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
@@ -33,6 +34,9 @@ class Hook:
     
     def emitName(self, hostname, servers):
         map(lambda x: x(hostname, servers), self.name_hook)
+    
+    def emitRemotes(self, script, remotes):
+        map(lambda x: x(script, remotes), self.remote_hook)
     
     def _emit(self, conn, func, hook):
         if conn:
@@ -159,6 +163,9 @@ class ComarInterface(Hook):
             self.name_dns = reply.data
             if self.name_host and self.name_dns:
                 self.emitName(self.name_host, self.name_dns)
+        
+        if reply.id == REMOTES:
+            self.emitRemotes(reply.script, reply.data)
     
     def handleNotify(self, reply):
         if reply.notify == "Net.Link.connectionChanged":
@@ -224,6 +231,9 @@ class ComarInterface(Hook):
     
     def queryDevices(self, script):
         self.com.Net.Link[script].deviceList(id=DEVICES)
+    
+    def queryRemotes(self, script, devid):
+        self.com.Net.Link[script].scanRemote(device=devid, id=REMOTES)
     
     def uniqueName(self):
         base_name = str(i18n("new connection"))

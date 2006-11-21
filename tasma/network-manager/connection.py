@@ -146,7 +146,8 @@ class Settings(QWidget):
                 hb = QHBox(self)
                 hb.setSpacing(3)
                 self.remote = QLineEdit(hb)
-                but = QPushButton(i18n("Scan"), hb)
+                but = QPushButton(getIconSet("find.png", KIcon.Small), i18n("Scan"), hb)
+                self.connect(but, SIGNAL("clicked()"), self.slotScan)
                 grid.addWidget(hb, row, 1)
             else:
                 self.remote = QLineEdit(self)
@@ -166,9 +167,11 @@ class Settings(QWidget):
         self.setValues()
         
         comlink.device_hook.append(self.slotDevices)
+        comlink.remote_hook.append(self.slotRemotes)
         comlink.queryDevices(link.script)
     
     def cleanup(self):
+        comlink.remote_hook.remove(self.slotRemotes)
         comlink.device_hook.remove(self.slotDevices)
     
     def initNet(self, grid, row):
@@ -368,6 +371,14 @@ class Settings(QWidget):
                 mask.setText("255.255.0.0")
             elif cl > 191 and cl < 224:
                 mask.setText("255.255.255.0")
+    
+    def slotScan(self):
+        comlink.queryRemotes(self.link.script, self.device_uid)
+    
+    def slotRemotes(self, script, remotes):
+        if self.link.script != script:
+            return
+        print remotes
 
 
 class Window(QMainWindow):
