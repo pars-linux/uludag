@@ -26,8 +26,8 @@ class Hook:
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
     
-    def emitDevices(self, devices):
-        map(lambda x: x(devices), self.device_hook)
+    def emitDevices(self, script, devices):
+        map(lambda x: x(script, devices), self.device_hook)
     
     def _emit(self, conn, func, hook):
         if conn:
@@ -141,7 +141,7 @@ class ComarInterface(Hook):
                 self.emitNew(conn)
         
         if reply.id == DEVICES:
-            self.emitDevices(reply.data)
+            self.emitDevices(reply.script, reply.data)
     
     def handleNotify(self, reply):
         if reply.notify == "Net.Link.connectionChanged":

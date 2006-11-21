@@ -294,7 +294,9 @@ class Settings(QWidget):
                 # FIXME: key
                 pass
     
-    def slotDevices(self, devices):
+    def slotDevices(self, script, devices):
+        if script != self.conn.script:
+            return
         self.devices.clear()
         self.device_items = []
         id = 0
