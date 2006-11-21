@@ -178,22 +178,35 @@ class Settings(QWidget):
     def initScan(self):
         pop = QPopupMenu()
         self.connect(pop, SIGNAL("aboutToShow()"), self.slotScan)
-        pop.insertItem(QLabel("Scan results:", pop))
+        lab = QLabel("Scan results:", pop)
+        lab.setMargin(3)
+        pop.insertItem(lab)
         box = QListBox(pop)
         box.setMinimumSize(240, 100)
         pop.insertItem(box)
         self.scan_box = box
-        pop.insertItem(i18n("Scan again"))
-        pop.insertItem(i18n("Use remote"))
+        hb = QHBox(pop)
+        hb.setMargin(3)
+        hb.setSpacing(6)
+        but = QPushButton(i18n("Scan again"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotScan)
+        but = QPushButton(i18n("Use again"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
+        pop.insertItem(hb)
         return pop
     
+    def slotScanUse(self):
+        item = self.scan_box.selectedItem()
+        if item:
+            self.remote.setText(item.text())
+    
     def slotScan(self):
+        self.scan_box.clear()
         comlink.queryRemotes(self.link.script, self.device_uid)
     
     def slotRemotes(self, script, remotes):
         if self.link.script != script:
             return
-        self.scan_box.clear()
         for remote in remotes.split("\n"):
             self.scan_box.insertItem(remote)
     
