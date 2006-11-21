@@ -72,6 +72,9 @@ class Connection(Hook):
         self.net_addr = None
         self.net_mask = None
         self.net_gate = None
+        self.auth_mode = "none"
+        self.auth_user = None
+        self.auth_pass = None
         self.hash = self.hash(self.script, self.name)
 
 
@@ -126,7 +129,7 @@ class ComarInterface(Hook):
                 i += 1
             if "passauth" in modes or "keyauth" in modes or "loginauth" in modes:
                 script.getAuthentication(name=conn.name, id=CONNINFO_AUTH)
-                #i += 1
+                i += 1
             conn.i = i
         
         if reply.id == CONNINFO_ADDR:
@@ -139,6 +142,21 @@ class ComarInterface(Hook):
             conn.net_addr = addr
             conn.net_mask = mask
             conn.net_gate = gate
+            conn.i -= 1
+            if conn.i == 0:
+                self.emitNew(conn)
+        
+        if reply.id == CONNINFO_AUTH:
+            name, type = reply.data.split("\n", 1)
+            conn = self.getConn(reply.script, name)
+            if type == "none":
+                conn.auth_mode = "none"
+            elif type.startswith("passauth "):
+                conn.auth_mode = "passauth"
+                conn.auth_pass = type.split(" ", 1)[1]
+            elif type.startswith("loginauth "):
+                conn.auth_mode = "loginauth"
+                conn.auth_user, conn.auth_pass = type[10:].split("\n", 1)
             conn.i -= 1
             if conn.i == 0:
                 self.emitNew(conn)

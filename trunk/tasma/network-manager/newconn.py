@@ -94,6 +94,7 @@ class Window(QDialog):
 
 
 class Links:
+    # remains
     def ask_for_create(self, parent):
         if len(self.links) == 0:
             QMessageBox.warning(parent, i18n("Install network packages!"),
