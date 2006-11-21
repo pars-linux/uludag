@@ -13,7 +13,7 @@ import comar
 from qt import *
 from kdecore import i18n
 
-CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES = range(1, 7)
+CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES, NAME_HOST, NAME_DNS = range(1, 9)
 
 
 class Hook:
@@ -23,12 +23,16 @@ class Hook:
         self.state_hook = []
         self.config_hook = []
         self.device_hook = []
+        self.name_hook = []
     
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
     
     def emitDevices(self, script, devices):
         map(lambda x: x(script, devices), self.device_hook)
+    
+    def emitName(self, hostname, servers):
+        map(lambda x: x(hostname, servers), self.name_hook)
     
     def _emit(self, conn, func, hook):
         if conn:
@@ -80,6 +84,8 @@ class ComarInterface(Hook):
         self.com = None
         self.links = {}
         self.connections = {}
+        self.name_host = None
+        self.name_dns = None
     
     def connect(self):
         self.com = comar.Link()
@@ -143,6 +149,16 @@ class ComarInterface(Hook):
         
         if reply.id == DEVICES:
             self.emitDevices(reply.script, reply.data)
+        
+        if reply.id == NAME_HOST:
+            self.name_host = reply.data
+            if self.name_host and self.name_dns:
+                self.emitName(self.name_host, self.name_dns)
+        
+        if reply.id == NAME_DNS:
+            self.name_dns = reply.data
+            if self.name_host and self.name_dns:
+                self.emitName(self.name_host, self.name_dns)
     
     def handleNotify(self, reply):
         if reply.notify == "Net.Link.connectionChanged":
@@ -195,6 +211,10 @@ class ComarInterface(Hook):
             self.com.Net.Link[link.script].modes()
             reply = self.com.read_cmd()
             link.modes = reply.data.split(",")
+    
+    def queryNames(self):
+        self.com.Net.Stack.getHostNames(id=NAME_HOST)
+        self.com.Net.Stack.getNameServers(id=NAME_DNS)
     
     def queryConnections(self):
         self.com.ask_notify("Net.Link.deviceChanged")

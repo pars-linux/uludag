@@ -61,21 +61,20 @@ class Window(QMainWindow):
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         lay.addWidget(but)
         
-        #self.comar.call("Net.Stack.getHostNames", id=50)
-        #self.comar.call("Net.Stack.getNameServers", id=51)
+        comlink.name_hook.append(self.slotName)
     
     def slotApply(self):
-        host = unicode(self.host.edit.text())
+        host = str(self.host.edit.text())
         if self.old_host != host:
-            self.comar.call("Net.Stack.setHostNames", [ "hostnames", host ])
+            comlink.com.Net.Stack.setHostNames(hostnames=host)
         item = self.dns.firstItem()
         dns = []
         while item:
-            dns.append(unicode(item.text()))
+            dns.append(str(item.text()))
             item = item.next()
         dns = "\n".join(dns)
         if self.old_dns != dns:
-            self.comar.call("Net.Stack.setNameServers", [ "nameservers", dns ])
+            comlink.com.Net.Stack.setNameServers(nameservers=dns)
         self.hide()
     
     def slotCancel(self):
@@ -91,13 +90,11 @@ class Window(QMainWindow):
         if item:
             self.dns.removeItem(self.dns.index(item))
     
-    def slotComar(self, reply):
-        if reply[0] == self.comar.RESULT:
-            if reply[1] == 51:
-                self.dns.clear()
-                self.old_dns = reply[2].split("\n")
-                for item in self.old_dns:
-                    self.dns.insertItem(item)
-            elif reply[1] == 50:
-                self.old_host = reply[2]
-                self.host.edit.setText(reply[2])
+    def slotName(self, hostname, servers):
+        self.dns.clear()
+        self.old_dns = servers.split("\n")
+        for item in self.old_dns:
+            self.dns.insertItem(item)
+        
+        self.old_host = hostname
+        self.host.edit.setText(hostname)
