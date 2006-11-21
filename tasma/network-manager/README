@@ -14,7 +14,7 @@ steps to run.
 
   svn co http://svn.pardus.org.tr/uludag/trunk/comar
 
-2. Go into COMAR directory 
+2. Go into COMAR directory
 
   cd path/comar/comar
 
@@ -22,8 +22,8 @@ steps to run.
 
   scons install prefix=/
 
-4. Install COMAR's Python API 
-  
+4. Install COMAR's Python API
+
   cd ../api && python setup.py install
 
 5. Checkout network-configurator and install. Note that PyQT/PyKDE and PyKDE extensions
@@ -32,20 +32,20 @@ are needed.
   svn co http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager
   cd network-manager
   python setup.py install
- 
+
 6. Run COMAR Daemon 
 
-  comard 
+  comar
 
 7. Register needed comar scripts. For wireless communication, run 
 
   wget http://svn.pardus.org.tr/pardus/devel/system/base/wireless-tools/comar/link.py
-  hav register System.Package `pwd/link.py`
+  hav register System.Package wireless-tools link.py
 
 For ethernet communication, run
 
   wget http://svn.pardus.org.tr/pardus/devel/system/base/net-tools/comar/link.py
-  hav register System.Package `pwd/link.py`
+  hav register System.Package net-tools pwd/link.py
 
 Now you can use Network Manager hopefully without a problem. Should you need any
 help, please contact the author.
