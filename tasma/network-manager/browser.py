@@ -305,6 +305,7 @@ class Widget(QVBox):
     
     def slotSettings(self):
         self.stack.hide()
+        comlink.queryNames()
         self.stack.show()
     
     def slotHelp(self):
