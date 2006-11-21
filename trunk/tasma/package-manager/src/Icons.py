@@ -17,9 +17,17 @@ def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
 
 def getIconPath(icon, group=KIcon.Desktop):
+    packageIconPath = KGlobal.iconLoader().iconPath("package", group)
     if not icon:
-        icon = "package"
-    return KGlobal.iconLoader().iconPath(icon, group)
+        return packageIconPath
+
+    iconPath = KGlobal.iconLoader().iconPath(icon, group, True)
+    # icon metadata may exist in the package but the pixmap may not 
+    # exists on the system yet for any to be installed package.
+    if not iconPath:
+        return packageIconPath
+    else:
+        return iconPath
 
 def loadIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
