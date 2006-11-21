@@ -186,7 +186,7 @@ class Settings(QWidget):
         box = QListBox(vb)
         box.connect(box, SIGNAL("selectionChanged()"), self.slotScanSelect)
         box.connect(box, SIGNAL("selected(QListBoxItem *)"), self.slotScanDouble)
-        box.setMinimumSize(240, 100)
+        box.setMinimumSize(260, 110)
         self.scan_box = box
         hb = QHBox(vb)
         hb.setSpacing(6)
