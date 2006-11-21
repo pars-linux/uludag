@@ -290,15 +290,6 @@ class Widget(QVBox):
         comlink.delete_hook.append(self.view.remove)
         comlink.connect()
     
-    def uniqueName(self):
-        # old remains
-        id = 0
-        while True:
-            name = unicode(i18n("Unconfigured")) + " " + str(id)
-            if not self.findConn(name):
-                return name
-            id += 1
-    
     def handleComar(self, reply):
         pass
         # old remains

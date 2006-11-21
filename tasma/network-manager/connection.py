@@ -247,8 +247,7 @@ class Settings(QWidget):
                 self.netmask.setText(conn.net_mask)
                 self.gateway.setText(conn.net_gate)
         else:
-            # FIXME: unique name
-            self.name.edit.setText("lala")
+            self.name.edit.setText(unicode(comlink.uniqueName()))
             self.device_uid = self.new_conn[0]
             self.device.setText(self.new_conn[1])
             self.r1.setChecked(True)

@@ -11,6 +11,7 @@
 
 import comar
 from qt import *
+from kdecore import i18n
 
 CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES = range(1, 7)
 
@@ -152,6 +153,7 @@ class ComarInterface(Hook):
                 conn = self.getConn(reply.script, name)
                 if conn:
                     self.emitDelete(conn)
+                    del self.connections[conn.hash]
             elif what == "gotaddress":
                 name, addr = name.split("\n", 1)
                 conn = self.getConn(reply.script, name)
@@ -202,6 +204,21 @@ class ComarInterface(Hook):
     
     def queryDevices(self, script):
         self.com.Net.Link[script].deviceList(id=DEVICES)
+    
+    def uniqueName(self):
+        base_name = str(i18n("new connection"))
+        id = 2
+        name = base_name
+        while True:
+            found = False
+            for item in self.connections.values():
+                if item.name == name:
+                    found = True
+                    break
+            if not found:
+                return name
+            name = base_name + " " + str(id)
+            id += 1
 
 
 comlink = ComarInterface()
