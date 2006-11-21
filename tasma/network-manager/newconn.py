@@ -14,6 +14,7 @@ from kdecore import i18n
 
 import connection
 import widgets
+from icons import icons
 from comariface import comlink
 
 
@@ -50,32 +51,64 @@ class LinkItem(QListBoxItem):
 class Window(QDialog):
     def __init__(self, parent):
         QDialog.__init__(self, parent)
-        self.setMinimumSize(260, 180)
-        self.resize(260, 180)
-        self.setCaption(i18n("Connection types"))
+        self.setMinimumSize(340, 340)
+        self.resize(340, 340)
+        self.setCaption(i18n("Create a new connection"))
         self.my_parent = parent
         vb = QVBoxLayout(self)
         vb.setSpacing(6)
         vb.setMargin(12)
         
-        lab = QLabel(i18n("Select a connection type:"), self)
+        lab = QLabel(i18n("Select device:"), self)
         vb.addWidget(lab)
         
-        self.links = QListBox(self)
+        self.links = QListView(self)
+        self.links.setAllColumnsShowFocus(True)
         vb.addWidget(self.links)
-        for item in comlink.links.values():
-            LinkItem(self.links, item)
+        self.links.addColumn("")
+        self.links.addColumn("")
+        self.links.header().hide()
+        links = comlink.links.values()
+        links.sort(key=lambda x: x.name)
         
-        but = QPushButton(i18n("Create connection"), self)
+        comlink.device_hook.append(self.slotDevices)
+        for link in links:
+            item = QListViewItem(self.links)
+            item.setSelectable(False)
+            item.setPixmap(0, icons.get_state(link.type, "up"))
+            item.setText(1, link.name)
+            item.setText(2, link.script)
+            item.setOpen(True)
+            comlink.queryDevices(link.script)
+        
+        but = QPushButton(i18n("Configure the connection"), self)
         vb.addWidget(but)
         self.connect(but, SIGNAL("clicked()"), self.accept)
         but.setDefault(True)
     
+    def reject(self):
+        comlink.device_hook.remove(self.slotDevices)
+        QDialog.reject(self)
+    
     def accept(self):
+        comlink.device_hook.remove(self.slotDevices)
         link = self.links.selectedItem()
         if link:
             connection.Window(self.my_parent, i18n("new connection"), link.link_name, 1)
         QDialog.accept(self)
+    
+    def slotDevices(self, script, devices):
+        item = self.links.firstChild()
+        # FIXME: better handling
+        while item:
+            if item.text(2) == script:
+                parent = item
+                break
+            item = item.nextSibling()
+        if devices != "":
+            for device in devices.split("\n"):
+                uid, info = device.split(" ", 1)
+                item = QListViewItem(parent, "", info)
 
 
 class Links:
