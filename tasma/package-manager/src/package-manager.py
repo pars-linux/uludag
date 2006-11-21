@@ -32,6 +32,7 @@ import Basket
 import BasketDialog
 import Tray
 import Settings
+from Icons import *
 
 # Pisi
 import pisi
@@ -60,17 +61,6 @@ def AboutData():
     about_data.addCredit("Barış Metin",  I18N_NOOP("Speedup fixes"), None)
     about_data.addCredit(I18N_NOOP("PiSi Authors"), I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
     return about_data
-
-def loadIcon(name, group=KIcon.Desktop):
-    return KGlobal.iconLoader().loadIcon(name, group)
-
-def loadIconSet(name, group=KIcon.Toolbar):
-    return KGlobal.iconLoader().loadIconSet(name, group)
-
-def getIconPath(name, group=KIcon.Desktop):
-    if not name:
-        name = "package"
-    return KGlobal.iconLoader().iconPath(name,group)
 
 class Component:
     def __init__(self, name, packages, summary):
@@ -665,6 +655,7 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.packageNo += 1
             self.progressDialog.updatePackageInfo()
 
+            # installed does not affect progress because the real progress is the "download" in install state
             if operation != "installed":
                 self.progressDialog.updatePackageProgress()
 
