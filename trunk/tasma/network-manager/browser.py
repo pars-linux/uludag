@@ -110,8 +110,14 @@ class Connection(QWidget):
         self.diksi.setPaletteBackgroundColor(col)
         paint.fillRect(event.rect(), QBrush(col))
         paint.drawPixmap(20, 3, self.mypix)
-        paint.drawText(53, self.myBase + 4, unicode(self.conn.name))
-        paint.drawText(53, self.myHeight + self.myBase + 5, self.addressText())
+        paint.save()
+        font = paint.font()
+        font.setUnderline(True)
+        font.setPointSize(font.pointSize() + 3)
+        paint.pen().setColor(KGlobalSettings.linkColor())
+        paint.drawText(53, self.myBase + 5, unicode(self.conn.name))
+        paint.restore()
+        paint.drawText(53, self.myHeight + self.myBase + 7, self.addressText())
     
     def resizeEvent(self, event):
         w = event.size().width()
@@ -136,7 +142,7 @@ class Device(QWidget):
         QWidget.__init__(self, parent.viewport())
         self.name = name
         f = self.font()
-        f.setPointSize(f.pointSize() + 1)
+        #f.setPointSize(f.pointSize() + 3)
         self.setFont(f)
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
