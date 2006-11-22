@@ -17,7 +17,7 @@ import shutil
 
 import kdedistutils
 
-version = "1.6.0"
+version = "1.6.1"
 
 distfiles = """
     AUTHORS
@@ -63,7 +63,7 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ["src/firewall.ui", "src/firewall-config.py", "src/rules.py",
+    application_data = ["src/firewall.ui", "src/dialog.ui", "src/firewall-config.py", "src/rules.py",
                         ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["src/firewall_config.png"]),
                         ("/var/lib/iptables", ["profiles/pardus"]),
                         ],
