@@ -697,7 +697,10 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.reset()
 
         if command == "System.Manager.updateAllRepositories":
-            self.upgradeState(showInfoMsg=True)
+            if self.isHidden():
+                self.parent.tray.showPopup()
+            else:
+                self.upgradeState(showInfoMsg=True)
 
         elif command == "System.Manager.setRepositories":
             self.updateCheck()
@@ -775,8 +778,13 @@ class MainApplication(KMainWindow):
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
         self.toolBar().setIconText(KToolBar.IconTextRight)
         self.tray = Tray.Tray(self)
+
         self.connect(self.tray, SIGNAL("quitSelected()"), self.slotQuit)
         if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
+            if self.mainwidget.settings.getBoolValue(Settings.general, "UpdateCheck"):
+                interval = self.mainwidget.settings.getNumValue(Settings.general, "UpdateCheckInterval")
+                self.tray.updateInterval(interval)
+
             self.tray.show()
 
     def updateStatusBarText(self, text):
