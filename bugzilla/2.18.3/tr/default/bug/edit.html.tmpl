@@ -457,7 +457,43 @@
   [% END %]
   <br>
   <a name="add_comment"></a>
-  <textarea wrap="hard" name="comment" id="comment" rows="10" cols="80"
+
+  <!-- LIMIT COMMENT LENGTH -->
+  <script type="text/javascript">
+    MAX_LINES = 50;
+
+    function count(s1, s2) {
+        var c = 0;
+        for (var i = 0; i < s1.length; i++) {
+            if (s2 == s1.substr(i, s2.length)) {
+                c++;
+            }
+        }
+        return c;
+    }
+
+    value_last = '';
+
+    function valueInit(el) {
+        value_last = el.value;
+    }
+
+    function valueChanged(el) {
+        var c = count(el.value, '\n');
+        if (c > MAX_LINES) {
+            el.value = value_last;
+            var msg = MAX_LINES + ' satırdan uzun yorum yazamazsınız.\nÇıktıları eklenti olarak gönderin.';
+            alert(msg);
+        }
+        else {
+            value_last = el.value;
+        }
+    }
+  </script>
+  <!-- LIMIT COMMENT LENGTH -->
+
+  <textarea onkeyup="valueChanged(this);" onfocus="valueInit(this);"
+            wrap="hard" name="comment" id="comment" rows="10" cols="80"
             accesskey="y"></textarea>
   <br>
 
