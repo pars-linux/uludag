@@ -50,7 +50,7 @@ class Connection(QWidget):
         fm = self.fontMetrics()
         self.myBase = fm.ascent()
         self.myHeight = fm.height()
-        self.mypix = icons.get_state("net", conn.state)
+        self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
         self.check = QCheckBox(self)
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)

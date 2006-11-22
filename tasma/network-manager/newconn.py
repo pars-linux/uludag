@@ -32,6 +32,7 @@ class Window(QDialog):
         vb.addWidget(lab)
         
         self.links = QListView(self)
+        self.connect(self.links, SIGNAL("doubleClicked(QListViewItem *, const QPoint &, int)"), self.slotDouble)
         self.connect(self.links, SIGNAL("selectionChanged()"), self.slotSelection)
         self.links.setAllColumnsShowFocus(True)
         vb.addWidget(self.links)
@@ -69,6 +70,10 @@ class Window(QDialog):
             link = comlink.links[str(item.parent().text(2))]
             connection.Window(self.parent(), None, link, (str(item.text(2)), str(item.text(1))))
         QDialog.accept(self)
+    
+    def slotDouble(self, item, point, col):
+        self.links.setSelected(item, True)
+        self.accept()
     
     def slotSelection(self):
         item = self.links.selectedItem()
