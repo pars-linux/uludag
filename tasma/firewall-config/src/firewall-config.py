@@ -23,6 +23,7 @@ import kdedesigner
 
 # UI
 import firewall
+import dialog
 
 # COMAR
 import comar
@@ -98,6 +99,46 @@ class AdvancedRuleCheckBox(QCheckBox):
 
         self.setText(msg.replace('%s', '%s (%s)' % (ports.replace(':', '-'), protocol)))
 
+
+def checkPortFormat(ports):
+    '''Check multiport format'''
+    if ports.count(',') + ports.count('-') > 15:
+        return False
+    for port in ports.split(','):
+        grp = port.split('-')
+        if len(grp) > 2:
+            return False
+        for p in grp:
+            if not p.isdigit() or 0 > int(p) < 65535:
+                return False
+    return True
+
+class dialogRule(dialog.dialogRule):
+    def __init__(self, parent=None, name=None):
+        dialog.dialogRule.__init__(self, parent, name)
+
+        self.connect(self.pushCancel, SIGNAL('clicked()'), self, SLOT('reject()'))
+        self.connect(self.pushOK, SIGNAL('clicked()'), SLOT('accept()'))
+
+    def accept(self):
+        if checkPortFormat(str(self.linePorts.text())):
+            dialog.dialogRule.accept(self)
+        else:
+            QMessageBox.critical(self, i18n('Error'), i18n('Invalid port range.'))
+
+    def exec_loop(self):
+        if dialog.dialogRule.exec_loop(self):
+            direction = ['IN', 'OUT'][self.radioOut.isChecked()]
+            action = ['ACCEPT', 'REJECT'][self.radioReject.isChecked()]
+            protocol = self.comboProtocol.currentText().lower()
+            ports = self.linePorts.text().replace('-', ':')
+            ports = ports.replace(' ', '')
+
+            return '-A PARDUS-%s-USER -p %s -m multiport --dports %s -j %s' % (direction, protocol, ports, action)
+        else:
+            return False
+
+
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
         global standalone
@@ -142,8 +183,8 @@ class MainApplication(programbase):
         mainwidget.frameOutgoing.setColumnLayout(0, Qt.Vertical)
         frameOutgoingLayout = QVBoxLayout(mainwidget.frameOutgoing.layout())
         frameOutgoingLayout.setAlignment(Qt.AlignTop)
-        # TODO
-        mainwidget.tabWidget.setTabEnabled(mainwidget.tabOutgoing, False)
+        #
+        mainwidget.tabWidget.removePage(mainwidget.tabOutgoing)
 
         # Tab 3 - Advanced
         self.advanced = []
@@ -185,6 +226,8 @@ class MainApplication(programbase):
         self.connect(mainwidget.pushCancel, SIGNAL('clicked()'), self, SLOT('close()'))
         self.connect(mainwidget.pushOk, SIGNAL('clicked()'), self.slotOk)
         self.connect(mainwidget.pushApply, SIGNAL('clicked()'),self.slotApply)
+
+        self.connect(mainwidget.pushNewRule, SIGNAL('clicked()'),self.slotDialog)
 
         # Get FW state
         self.comar.call('Net.Filter.getProfile', id=4)
@@ -236,7 +279,7 @@ class MainApplication(programbase):
                 chk.close(True)
             self.advanced = []
             for custom_rule in set(self.rules['filter']) - set(rules_processed):
-                chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, 'advanced_%s' % len(self.advanced), custom_rule)
+                chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, rule=custom_rule)
                 chk.setChecked(True)
                 mainwidget.frameAdvancedLayout.addWidget(chk)
                 self.advanced.append(chk)
@@ -319,6 +362,16 @@ class MainApplication(programbase):
 
     def slotApply(self):
         self.saveAll()
+
+    def slotDialog(self):
+        dialog = dialogRule(mainwidget)
+        rule = dialog.exec_loop()
+        if rule:
+            chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, rule=rule)
+            chk.setChecked(True)
+            mainwidget.frameAdvancedLayout.addWidget(chk)
+            self.advanced.append(chk)
+            chk.show()
 
     def setRule(self, table, rule):
         rule = '-t %s %s' % (table, rule)
