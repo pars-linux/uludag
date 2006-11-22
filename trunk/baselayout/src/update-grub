@@ -1,0 +1,60 @@
+#!/usr/bin/python
+# Copyright © 2006 TUBITAK/UEKAE
+# Licensed under the GNU General Public License, version 2.
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+#
+# S.Çağlar Onur <caglar@pardus.org.tr>
+
+import os
+import re
+
+# Determine latest kernel
+kernel = os.readlink("/boot/latestkernel").split("kernel-")[1]
+initramfs = os.readlink("/boot/latestinitramfs").split("initramfs-")[1]
+
+# Read /etc/pardus-release for title
+f = open("/etc/pardus-release", "r")
+release = f.readline()
+f.close()
+
+# Read entire grub.conf
+f = open("/boot/grub/grub.conf", "r")
+lines = f.readlines()
+f.close()
+
+header = ""
+container = []
+section = []
+for l in lines:
+    l = l.strip()
+    # ignore emtpy lines or comments
+    if len(l) == 0 or l.startswith("#"):
+        continue
+    if l.startswith("title"):
+        if len(section) > 0:
+            container.append(section)
+        section = [l]
+        continue
+    if len(section) > 0:
+        section.append(l)
+        continue
+    else:
+        header += "%s\n" % l
+container.append(section)
+
+print header
+
+for l in container[0]:
+    if l.startswith("title"):
+        print "title %s [%s]" % (release.strip("\n"), kernel)
+    if l.startswith("kernel"):
+        print re.sub("(.*)(kernel-.*)(root=.*)", r"\1kernel-%s \3" % kernel, l)
+    if l.startswith("initrd"):
+        print re.sub("(.*)(initramfs-.*)", r"\1initramfs-%s" % initramfs, l)
+
+print
+
+for list in container:
+    for line in list:
+        print line
+    print
