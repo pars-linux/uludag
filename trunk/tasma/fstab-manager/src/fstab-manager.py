@@ -76,6 +76,7 @@ class fstabForm(mainForm):
         self.blockDevices = fstab.getBlockDevices()
         self.fstabPartitions = self.getPartitionsFromFstab()
         self.prettyList={}
+        self.list_main_items=[]
         self.btn_Update.setEnabled(False)
         self.frame_detail.hide()
 
@@ -96,40 +97,49 @@ class fstabForm(mainForm):
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
         self.connect(self.btn_Update, SIGNAL('clicked()'), self.slotUpdate)
         self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.fillDiskList)
+        self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
+        self.connect(self.line_opts, SIGNAL('textChanged(const QString&)'), self.saveSession)
+        self.connect(self.line_mountpoint, SIGNAL('textChanged(const QString&)'), self.saveSession)
+
+    def saveSession(self):
+        selected_=self.list_main.selectedItem()
+        selected =self.getDetailsOfSelected(selected_,key=True)
+        self.prettyList[selected[0]][selected[1]]['mount_point']=self.line_mountpoint.text()
+        self.prettyList[selected[0]][selected[1]]['options']=self.line_opts.text()
+
+    def getDetailsOfSelected(self,selected,key=False):
+        selectedDisk = str(selected.parent().text(0)).split('\n')[0]
+        selectedPartition = str(selected.text()).split('\n')[0]
+        x=0
+        for partition in self.prettyList[selectedDisk]:
+            if partition['partition_name']==selectedPartition:
+                if key:
+                    return selectedDisk,x
+                else:
+                    return partition
+            x+=1
 
     def slotList(self):
         try:
             selected=self.list_main.selectedItem()
-            # I will find another way for that
-            # I know it sucks
-            selectedDisk = str(selected.parent().text(0)).split('\n')[0]
-            selectedPartition = str(selected.text()).split('\n')[0]
-
-            for xx in self.prettyList[selectedDisk]:
-                if xx['partition_name']==selectedPartition:
-                    partitionInfo = xx
+            partitionInfo = self.getDetailsOfSelected(selected)
 
             self.line_mountpoint.setText(partitionInfo['mount_point'])
-            self.line_opts.setText(asText(partitionInfo['options']))
-            self.label_disk.setText(selectedPartition)
+            self.line_opts.setText(partitionInfo['options'])
+            self.label_disk.setText(partitionInfo['partition_name'])
             i=0
             for xx in self.knownFS:
                 if xx.split(':')[0]==partitionInfo['file_system']:
                     self.combo_fs.setCurrentItem(i)
                 i+=1
+            if selected.isOn():
+                self.btn_Update.setEnabled(True)
             self.frame_detail.show()
 
         except:
             self.frame_detail.hide()
-            pass
-
-    def slotAddNew(self):
-        pass
 
     def slotUpdate(self):
-        pass
-
-    def slotDelete(self):
         pass
 
     def fillDiskList(self):
@@ -153,7 +163,6 @@ class fstabForm(mainForm):
                     check = QCheckListItem.Off
 
                 activePartition['partition_name']=partition[0]
-                self.prettyList[disk].append(activePartition)
 
                 partitions = QCheckListItem(disks,QString('%s\nMount Point : %s \t FileSystem Type : %s ' %
                                                   (activePartition['partition_name'],activePartition['mount_point'],activePartition['file_system'])),
@@ -161,6 +170,21 @@ class fstabForm(mainForm):
                 partitions.setState(check)
                 partitions.setMultiLinesEnabled(True)
                 partitions.setPixmap(0,pixie)
+
+                activePartition['list_widget']=partitions
+                self.prettyList[disk].append(activePartition)
+
+                self.toggleAllPartitions()
+
+    def toggleAllPartitions(self):
+        self.frame_detail.hide()
+        for disk in self.prettyList:
+            for item in self.prettyList[disk]:
+                if item['mount_point']=='/':
+                    if self.check_allPart.isOn():
+                        item['list_widget'].setVisible(True)
+                    else:
+                        item['list_widget'].setVisible(False)
 
     def fillFileSystems(self):
         id=0
