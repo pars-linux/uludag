@@ -24,7 +24,7 @@ class Window(QMainWindow):
         self.old_host = None
         self.old_dns = None
         
-        self.setCaption(i18n("Network Settings"))
+        self.setCaption(i18n("Name Service Settings"))
         self.setMinimumSize(280, 320)
         
         vb = QVBox(self)
@@ -42,10 +42,12 @@ class Window(QMainWindow):
         widgets.HLine(i18n("Name servers"), vb)
         
         vb2 = QVBox(vb)
+        vb2.setSpacing(3)
         
         self.dns = QListBox(vb2)
         
         hb = QHBox(vb2)
+        hb.setSpacing(3)
         but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
         but = QPushButton(getIconSet("remove.png", KIcon.Small), i18n("Remove"), hb)
@@ -53,6 +55,7 @@ class Window(QMainWindow):
         
         hb = QWidget(vb)
         lay = QHBoxLayout(hb)
+        lay.setMargin(3)
         lay.setSpacing(12)
         lay.addStretch(1)
         but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
