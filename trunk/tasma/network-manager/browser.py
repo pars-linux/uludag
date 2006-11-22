@@ -47,7 +47,6 @@ class Connection(QWidget):
         self.view = view
         self.conn = conn
         
-        print self.conn.state, self.conn.message
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
         if self.conn.state in ("inaccessible", "unavailable"):
             self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, QColor(), False)
@@ -98,7 +97,6 @@ class Connection(QWidget):
         self.slotEdit()
     
     def updateState(self):
-        print self.conn.state, self.conn.message
         self.ignore_signal = True
         self.check.setChecked(self.conn.state in ("up", "connecting", "inaccessible"))
         self.ignore_signal = False
