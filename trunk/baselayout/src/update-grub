@@ -44,19 +44,21 @@ for l in lines:
         header += "%s\n" % l
 container.append(section)
 
-print header
+f = open("/boot/grub/grub.conf", "w")
+f.write(header)
 
+f.write("\n")
 for l in container[0]:
     if l.startswith("title"):
-        print "title %s [%s]" % (release.strip("\n"), kernel)
+        f.write("title %s [%s]\n" % (release.strip("\n"), kernel))
     if l.startswith("kernel"):
-        print re.sub("(.*)(kernel-.*)(root=.*)", r"\1kernel-%s \3" % kernel, l)
+        f.write(re.sub("(.*)(kernel-.*)(root=.*)", r"\1kernel-%s \3\n" % kernel, l))
     if l.startswith("initrd"):
-        print re.sub("(.*)(initramfs-.*)", r"\1initramfs-%s" % initramfs, l)
-
-print
+       f.write(re.sub("(.*)(initramfs-.*)", r"\1initramfs-%s\n" % initramfs, l))
+f.write("\n")
 
 for list in container:
     for line in list:
-        print line
-    print
+        f.write("%s\n" % line)
+    f.write("\n")
+f.close()
