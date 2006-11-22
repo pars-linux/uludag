@@ -37,7 +37,9 @@ class StateButton(QPushButton):
     def __init__(self, parent):
         QPushButton.__init__(self, parent)
         self.setToggleButton(True)
-        self.myset = QIconSet(icons.get_state("net", "up"), QIconSet.Large)
+        self.myset = QIconSet()
+        self.myset.setPixmap(KGlobal.iconLoader().loadIcon("cancel.png", KIcon.Small), QIconSet.Small, QIconSet.Normal, QIconSet.Off)
+        self.myset.setPixmap(KGlobal.iconLoader().loadIcon("apply.png", KIcon.Small), QIconSet.Small, QIconSet.Normal, QIconSet.On)
         self.setIconSet(self.myset)
         size = self.myset.iconSize(QIconSet.Small)
         self.myWidth = size.width() + 4
@@ -129,13 +131,13 @@ class Connection(QWidget):
         self.edit_but.setPaletteBackgroundColor(col)
         self.diksi.setPaletteBackgroundColor(col)
         paint.fillRect(event.rect(), QBrush(col))
-        #paint.drawPixmap(20, 3, self.mypix)
+        paint.drawPixmap(36, 3, self.mypix)
         paint.save()
         font = paint.font()
         font.setPointSize(font.pointSize() + 2)
-        paint.drawText(53, self.myBase + 5, unicode(self.conn.name))
+        paint.drawText(64, self.myBase + 5, unicode(self.conn.name))
         paint.restore()
-        paint.drawText(53, self.myHeight + self.myBase + 7, self.addressText())
+        paint.drawText(64, self.myHeight + self.myBase + 7, self.addressText())
     
     def resizeEvent(self, event):
         w = event.size().width()
@@ -149,8 +151,8 @@ class Connection(QWidget):
         fm = self.fontMetrics()
         rect = fm.boundingRect(unicode(self.conn.name))
         rect2 = fm.boundingRect(self.addressText())
-        w = max(rect.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8 + 8
-        w2 = max(rect2.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8 + 8
+        w = max(rect.width(), 80) + 8 + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8 + 8
+        w2 = max(rect2.width(), 80) + 8 + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8 + 8
         w = max(w, w2)
         h = max(rect.height() + rect2.height(), 32) + 6
         return QSize(w, h)
