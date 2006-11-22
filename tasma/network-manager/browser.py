@@ -144,6 +144,7 @@ class Connection(QWidget):
     def sizeHint(self):
         f = QFont(self.font())
         f.setPointSize(f.pointSize() + 2)
+        f.setBold(True)
         fm = QFontMetrics(f)
         fm2 = self.fontMetrics()
         rect = fm.boundingRect(unicode(self.conn.name))
