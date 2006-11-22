@@ -30,7 +30,7 @@ class Icons:
     
     def _pix(self, name):
         img = QImage(locate("data", "network-manager/" + name))
-        img = img.smoothScale(64, 64)
+        img = img.smoothScale(32, 32)
         return QPixmap(img)
     
     def load_icons(self):
