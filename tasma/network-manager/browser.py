@@ -128,16 +128,16 @@ class Connection(QWidget):
         w = event.size().width()
         h = event.size().height()
         dip = (h - self.diksi.myHeight) / 2
-        self.diksi.setGeometry(w - self.diksi.myWidth - 6, dip, self.diksi.myWidth, self.diksi.myHeight)
-        self.edit_but.setGeometry(w - self.diksi.myWidth - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
+        self.diksi.setGeometry(w - self.diksi.myWidth - 6 - 6, dip, self.diksi.myWidth, self.diksi.myHeight)
+        self.edit_but.setGeometry(w - self.diksi.myWidth - 6 - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
         return QWidget.resizeEvent(self, event)
     
     def sizeHint(self):
         fm = self.fontMetrics()
         rect = fm.boundingRect(unicode(self.conn.name))
         rect2 = fm.boundingRect(self.addressText())
-        w = max(rect.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8
-        w2 = max(rect2.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8
+        w = max(rect.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8 + 8
+        w2 = max(rect2.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8 + 8
         w = max(w, w2)
         h = max(rect.height() + rect2.height(), 32) + 6
         return QSize(w, h)
@@ -154,6 +154,7 @@ class Device(QWidget):
         self.connections = []
         parent.devices[id] = self
         self.setPaletteBackgroundColor(KGlobalSettings.baseColor())
+        self.columns = 3
     
     def myHeight(self):
         fm = QFontMetrics(self.f)
@@ -170,43 +171,10 @@ class Device(QWidget):
         paint.drawText(6, self.myBase + 3, self.name)
         paint.restore()
     
-    def heightForWidth(self, width):
-        h = self.myHeight()
-        
-        if self.connections == []:
-            return h
-        
+    def maxHint(self):
         maxw = 0
         maxh = 0
         for item in self.connections:
-            hint = item.sizeHint()
-            w2 = hint.width()
-            h2 = hint.height()
-            if w2 > maxw:
-                maxw = w2
-            if h2 > maxh:
-                maxh = h2
-        c = width / maxw
-        if c < 1:
-            c = 1
-        if c > 3:
-            c = 3
-        L = len(self.connections)
-        if L % c != 0:
-            L += c
-        h += maxh * (L / c)
-        
-        return h
-    
-    def myResize(self, aw, ah):
-        myh = self.myHeight()
-        
-        maxw = 0
-        maxh = 0
-        childs = self.connections
-        if not childs or len(childs) == 0:
-            return
-        for item in childs:
             hint = item.sizeHint()
             w = hint.width()
             h = hint.height()
@@ -214,22 +182,44 @@ class Device(QWidget):
                 maxw = w
             if h > maxh:
                 maxh = h
-        
-        i = 0
-        j = 0
-        c = aw / maxw
+        return maxw, maxh
+    
+    def columnHint(self, width):
+        if self.connections == []:
+            return 3
+        maxw, maxh = self.maxHint()
+        c = width / maxw
         if c < 1:
             c = 1
         if c > 3:
             c = 3
-        maxw = aw / c
+        return c
+    
+    def heightForWidth(self, width):
+        h = self.myHeight()
+        maxw, maxh = self.maxHint()
+        L = len(self.connections)
+        if L % self.columns != 0:
+            L += self.columns
+        return h + (L / self.columns) * maxh
+    
+    def myResize(self, aw, ah):
+        childs = self.connections
+        if not childs or len(childs) == 0:
+            return
+        
+        i = 0
+        j = 0
+        maxw = aw / self.columns
+        maxh = self.maxHint()[1]
+        myh = self.myHeight()
         childs.sort(key=lambda x: x.conn.name)
         for item in childs:
             item.is_odd = (i + j) % 2
             item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
             item.update()
             i += 1
-            if i >= c:
+            if i >= self.columns:
                 i = 0
                 j += 1
     
@@ -250,8 +240,15 @@ class ConnectionView(QScrollView):
         th = 0
         names = self.devices.keys()
         names.sort()
+        c = []
         for name in names:
             item = self.devices[name]
+            c.append(item.columnHint(width))
+        if c != []:
+            c = min(c)
+        for name in names:
+            item = self.devices[name]
+            item.columns = c
             h = item.heightForWidth(width)
             item.setGeometry(0, th, width, h)
             item.myResize(width, h)
