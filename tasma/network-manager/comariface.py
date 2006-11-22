@@ -13,7 +13,7 @@ import comar
 from qt import *
 from kdecore import i18n
 
-CONNLIST, CONNINFO, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 10)
+CONNLIST, CONNINFO, CONNINFO_STATE, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 11)
 
 
 class Hook:
@@ -122,8 +122,9 @@ class ComarInterface(Hook):
             self.connections[conn.hash] = conn
             script = self.com.Net.Link[conn.script]
             script.getAddress(name=conn.name, id=CONNINFO_ADDR)
+            script.getState(name=conn.name, id=CONNINFO_STATE)
             modes = self.links[conn.script].modes
-            i = 1
+            i = 2
             if "remote" in modes:
                 script.getRemote(name=conn.name, id=CONNINFO_REMOTE)
                 i += 1
@@ -131,6 +132,16 @@ class ComarInterface(Hook):
                 script.getAuthentication(name=conn.name, id=CONNINFO_AUTH)
                 i += 1
             conn.i = i
+        
+        if reply.id == CONNINFO_STATE:
+            name, state = reply.data.split("\n", 1)
+            conn = self.getConn(reply.script, name)
+            conn.state = state
+            if state == "up":
+                conn.active = True
+            conn.i -= 1
+            if conn.i == 0:
+                self.emitNew(conn)
         
         if reply.id == CONNINFO_ADDR:
             name, mode, addr, gate = reply.data.split("\n", 3)

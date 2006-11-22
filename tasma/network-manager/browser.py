@@ -25,7 +25,6 @@ class IconButton(QPushButton):
     def __init__(self, name, parent):
         QPushButton.__init__(self, parent)
         self.setFlat(True)
-        #self.setAutoRaise(True)
         self.myset = getIconSet(name, KIcon.Small)
         self.setIconSet(self.myset)
         size = self.myset.iconSize(QIconSet.Small)
@@ -203,7 +202,7 @@ class Device(QWidget):
         if c > 3:
             c = 3
         maxw = aw / c
-        childs.sort(key=lambda x: x.name)
+        childs.sort(key=lambda x: x.conn.name)
         for item in childs:
             item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
             item.is_odd = (i + j) % 2
