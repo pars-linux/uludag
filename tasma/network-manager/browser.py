@@ -112,9 +112,9 @@ class Connection(QWidget):
         paint.drawPixmap(20, 3, self.mypix)
         paint.save()
         font = paint.font()
-        font.setUnderline(True)
-        font.setPointSize(font.pointSize() + 3)
-        paint.pen().setColor(KGlobalSettings.linkColor())
+        #font.setUnderline(True)
+        font.setPointSize(font.pointSize() + 2)
+        #paint.pen().setColor(KGlobalSettings.linkColor())
         paint.drawText(53, self.myBase + 5, unicode(self.conn.name))
         paint.restore()
         paint.drawText(53, self.myHeight + self.myBase + 7, self.addressText())
@@ -141,26 +141,28 @@ class Device(QWidget):
     def __init__(self, parent, name, id):
         QWidget.__init__(self, parent.viewport())
         self.name = name
-        f = self.font()
-        #f.setPointSize(f.pointSize() + 3)
-        self.setFont(f)
-        fm = self.fontMetrics()
+        self.f = QFont(self.font())
+        self.f.setBold(True)
+        fm = QFontMetrics(self.f)
         self.myBase = fm.ascent()
         self.connections = []
         parent.devices[id] = self
         self.setPaletteBackgroundColor(KGlobalSettings.baseColor())
     
     def myHeight(self):
-        fm = self.fontMetrics()
+        fm = QFontMetrics(self.f)
         rect = fm.boundingRect(self.name)
-        return rect.height() + 6
+        return rect.height() + 7
     
     def paintEvent(self, event):
         cg = self.colorGroup()
         QWidget.paintEvent(self, event)
         paint = QPainter(self)
         paint.fillRect(QRect(0, 0, self.width(), self.myHeight()), QBrush(KGlobalSettings.buttonBackground(), Qt.Dense3Pattern))
+        paint.save()
+        paint.setFont(self.f)
         paint.drawText(6, self.myBase + 3, self.name)
+        paint.restore()
     
     def heightForWidth(self, width):
         h = self.myHeight()
