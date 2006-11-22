@@ -31,14 +31,19 @@ class Tray(KSystemTray):
         self.timer = QTimer()
         self.timer.connect(self.timer, SIGNAL("timeout()"), self.checkUpdate)
         self.interval = 0
+        self.lastUpgrades = []
 
     def showPopup(self):
-        nofUpgrades = len(list_upgradable())
-        if not nofUpgrades:
+        from sets import Set as set 
+
+        upgrades = list_upgradable()
+        newUpgrades = set(upgrades) - set(self.lastUpgrades)
+        self.lastUpgrades = upgrades
+        if not len(upgrades) or not newUpgrades:
             return
 
         icon = KGlobal.iconLoader().loadIcon("package-manager", KIcon.Desktop, 48)
-        message = i18n("There are <b>%1</b> updates available!").arg(nofUpgrades)
+        message = i18n("There are <b>%1</b> updates available!").arg(len(upgrades))
         self.popup = BalloonMessage(self, icon, message)
         pos = self.mapToGlobal(self.pos())
         self.popup.setAnchor(pos)
@@ -54,11 +59,13 @@ class Tray(KSystemTray):
                 self.timer.start(interval)
 
     def checkUpdate(self):
-        # if package-manager is running do not start update-repo operation, this may annoy user.
-        if not self.parent.isHidden():
+        manager = self.parent.mainwidget
+        # if package-manager is being used, do not start update-repo operation, this may annoy users.
+        # And also if a command is in progress do not try to check updates.
+        if not self.parent.isHidden() or manager.command.inProgress():
             return
 
-#       self.parent.updateCheck()
+        manager.trayUpdateCheck()
 
     # stolen from Akregator
     def updateTrayIcon(self):

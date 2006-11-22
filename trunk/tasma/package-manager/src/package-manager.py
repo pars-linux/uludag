@@ -94,6 +94,7 @@ class MainApplicationWidget(QWidget):
 
         self.componentDict = {}
         self.lastSelectedComponent = None
+        self.command = None
         self.state = install_state
         self.basket = Basket.Basket()
 
@@ -245,7 +246,6 @@ class MainApplicationWidget(QWidget):
         self.setCursor(Qt.waitCursor)
         upgradables = pisi.api.list_upgradable()
         self.createComponentList(upgradables, True)
-        self.parent.showUpgradeAction.setEnabled(True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
         self.lastSelectedComponent = i18n("All")
@@ -473,6 +473,7 @@ class MainApplicationWidget(QWidget):
         return True
 
     def takeAction(self):
+        
         # remove action
         if self.state == remove_state:
             self.command.remove(self.basket.packages)
@@ -494,7 +495,8 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.showStatus()
             self.command.updatePackage(self.basket.packages)
 
-        self.progressDialog.show()
+        if not self.parent.isHidden():
+            self.progressDialog.show()
 
     def refreshState(self, reset=True):
 
@@ -697,7 +699,8 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.reset()
 
         if command == "System.Manager.updateAllRepositories":
-            if self.isHidden():
+            self.parent.showUpgradeAction.setEnabled(True)
+            if self.parent.isHidden():
                 self.parent.tray.showPopup()
             else:
                 self.upgradeState(showInfoMsg=True)
@@ -746,6 +749,11 @@ class MainApplicationWidget(QWidget):
             self.pref = Preferences.Preferences(self)
         self.pref.show()
 
+    def show(self):
+        QWidget.show(self)
+        if self.command and self.command.inProgress():
+            self.progressDialog.show()
+
     def updateCheck(self):
         self.resetState()
         self.state = upgrade_state
@@ -756,11 +764,18 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.show()
         self.command.startUpdate()
 
+    def trayUpdateCheck(self):
+        self.parent.showUpgradeAction.setEnabled(False)
+        self.processEvents()
+        self.progressDialog.hideStatus(True)
+        self.command.startUpdate()
+
     def trayUpgradeSwitch(self):
         self.resetState()
         self.state = upgrade_state
         self.parent.showUpgradeAction.setChecked(True)
         self.upgradeState()
+        self.processEvents()
 
 class MainApplication(KMainWindow):
     def __init__(self,parent=None,name=None):

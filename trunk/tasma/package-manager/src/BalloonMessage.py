@@ -63,8 +63,8 @@ class BalloonMessage(QWidget):
         self.updateMask()
 
     def showUpdateWindow(self):
-        self.parent.parent.show()
         self.parent.parent.mainwidget.trayUpgradeSwitch()
+        self.parent.parent.show()
 
     def updateMask(self):
         mask = QRegion(10, 10, self.width() - 20, self.height() - 20)
