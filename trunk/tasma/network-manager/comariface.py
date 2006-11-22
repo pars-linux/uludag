@@ -25,6 +25,7 @@ class Hook:
         self.device_hook = []
         self.name_hook = []
         self.remote_hook = []
+        self.hotplug_hook = []
     
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
@@ -37,6 +38,9 @@ class Hook:
     
     def emitRemotes(self, script, remotes):
         map(lambda x: x(script, remotes), self.remote_hook)
+    
+    def emitHotplug(self, uid, info):
+        map(lambda x: x(uid, info), self.hotplug_hook)
     
     def _emit(self, conn, func, hook):
         if conn:
@@ -219,6 +223,12 @@ class ComarInterface(Hook):
                     conn.message = msg
                 conn.state = state
                 self.emitState(conn)
+        
+        elif reply.notify == "Net.Link.deviceChanged":
+            type, rest = reply.data.split(" ", 1)
+            if type == "new":
+                type, uid, info = rest.split(" ", 2)
+                self.emitHotplug(uid, info)
     
     def getConn(self, script, name):
         hash = Connection.hash(script, name)
