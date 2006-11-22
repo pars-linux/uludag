@@ -47,6 +47,7 @@ class Connection(QWidget):
         self.view = view
         self.conn = conn
         
+        print self.conn.state, self.conn.message
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
         self.check = QCheckBox(self)
         self.check.setChecked(self.conn.state in ("up", "connecting", "inaccessible"))
@@ -292,6 +293,11 @@ class ConnectionView(QScrollView):
         if not conn:
             return
         conn.updateState()
+    
+    def hotPlug(self, uid, info):
+        dev = Device(self, info, uid)
+        dev.show()
+        self.myResize(self.width())
 
 
 class Widget(QVBox):
@@ -323,16 +329,8 @@ class Widget(QVBox):
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
         comlink.state_hook.append(self.view.stateUpdate)
+        comlink.hotplug_hook.append(self.view.hotPlug)
         comlink.connect()
-    
-    def handleComar(self, reply):
-        pass
-        # old remains
-        #    elif noti == "Net.Link.deviceChanged":
-        #        type, rest = data.split(" ", 1)
-        #        if type != "new":
-        #        nettype, uid, info = rest.split(" ", 2)
-        #        self.comar.call_package("Net.Link.setConnection", script, [ "name", name, "device", uid ])
     
     def slotCreate(self):
         win = newconn.Window(self)
