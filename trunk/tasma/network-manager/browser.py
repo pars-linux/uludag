@@ -21,6 +21,19 @@ from icons import icons, getIconSet
 from comariface import comlink
 
 
+class IconButton(QPushButton):
+    def __init__(self, name, parent):
+        QPushButton.__init__(self, parent)
+        self.setFlat(True)
+        #self.setAutoRaise(True)
+        self.myset = getIconSet(name, KIcon.Small)
+        self.setIconSet(self.myset)
+        size = self.myset.iconSize(QIconSet.Small)
+        self.myWidth = size.width() + 4
+        self.myHeight = size.height() + 4
+        self.resize(self.myWidth, self.myHeight)
+
+
 class Connection(QWidget):
     def __init__(self, view, conn):
         self.is_odd = 0
@@ -44,10 +57,7 @@ class Connection(QWidget):
         self.check.setAutoMask(True)
         view.connections[conn.hash] = self
         
-        self.diksi = QToolButton(self)
-        self.diksi.setAutoRaise(True)
-        self.diksi.resize(24,24)
-        self.diksi.setIconSet(getIconSet("edittrash.png", KIcon.Small))
+        self.diksi = IconButton("edittrash.png", self)
         self.connect(self.diksi, SIGNAL("clicked()"), self.slotDelete)
         
         self.show()
@@ -89,6 +99,7 @@ class Connection(QWidget):
         col = KGlobalSettings.baseColor()
         if self.is_odd:
             col = KGlobalSettings.alternateBackgroundColor()
+        self.diksi.setPaletteBackgroundColor(col)
         paint.fillRect(event.rect(), QBrush(col))
         paint.drawPixmap(20, 3, self.mypix)
         paint.drawText(53, self.myBase + 4, unicode(self.conn.name))
@@ -100,8 +111,10 @@ class Connection(QWidget):
         paint.drawText(53, self.myHeight + self.myBase + 5, addr)
     
     def resizeEvent(self, event):
-        pix = event.size().width()
-        self.diksi.setGeometry(pix - 24 - 6, 3, 24, 24)
+        w = event.size().width()
+        h = event.size().height()
+        dip = (h - self.diksi.myHeight) / 2
+        self.diksi.setGeometry(w - self.diksi.myWidth - 6, dip, self.diksi.myWidth, self.diksi.myHeight)
         return QWidget.resizeEvent(self, event)
     
     def sizeHint(self):
