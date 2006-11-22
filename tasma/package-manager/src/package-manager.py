@@ -208,7 +208,6 @@ class MainApplicationWidget(QWidget):
         self.parent.showNewAction.setChecked(False)
         self.parent.showInstalledAction.setChecked(False)
         self.parent.showUpgradeAction.setChecked(False)
-        self.parent.tray.updateTrayIcon()
 
     def installState(self, reset=True):
         self.setCursor(Qt.waitCursor)
@@ -709,6 +708,8 @@ class MainApplicationWidget(QWidget):
                        "System.Manager.removePackage",
                        "System.Manager.cancelled"]:
             self.refreshState()
+
+        self.parent.tray.updateTrayIcon()
 
     def searchStringChanged(self):
         if (self.timer.isActive()):
