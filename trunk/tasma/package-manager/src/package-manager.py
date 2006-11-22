@@ -177,6 +177,9 @@ class MainApplicationWidget(QWidget):
     def lazyLoadComponentList(self):
         self.command = Commander.Commander(self)
 
+        # pisi should now be ready for tray to get upgrades info
+        self.parent.tray.updateTrayIcon()
+ 
         if self.componentsReady():
             self.installState()
         else:
