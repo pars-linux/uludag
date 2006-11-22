@@ -51,7 +51,7 @@
         replytext += "> " + text[i] + "\n"; 
     }
 
-    replytext = "(Yanıtlanan yorum #" + id + ")\n" + replytext + "\n";
+    replytext = "(Yanıtlanan Yorum #" + id + ")\n" + replytext + "\n";
 
     [% IF Param("insidergroup") && UserInGroup(Param("insidergroup")) %]
       if (document.getElementById('isprivate-'+id).checked) {
@@ -460,7 +460,7 @@
 
   <!-- LIMIT COMMENT LENGTH -->
   <script type="text/javascript">
-    MAX_LINES = 50;
+    MAX_LINES = 20;
 
     function count(s1, s2) {
         var c = 0;
