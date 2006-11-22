@@ -57,6 +57,7 @@ class Commander(QObject):
             reply = self.comar.com.read_cmd()
         except:
             if not self.wait_comar():
+                self.comar.com_lock.unlock()
                 self.parent.showErrorMessage(i18n("Can't connect to Comar daemon"))
             else:
                 self.comar = ComarIface.ComarIface(self)
@@ -66,12 +67,14 @@ class Commander(QObject):
             (notification, script, data) = (reply.notify, reply.script, reply.data)
             data = unicode(data)
             if notification == "System.Manager.error":
+                self.comar.com_lock.unlock()
                 self.parent.showErrorMessage(data)
             elif notification == "System.Manager.notify":
                 self.parent.pisiNotify(data)
             elif notification == "System.Manager.progress":
                 self.parent.displayProgress(data)
             elif notification == "System.Manager.finished":
+                self.comar.com_lock.unlock()
                 self.parent.finished(data)
             elif notification == "System.Manager.updatingRepo":
                 pass
@@ -80,22 +83,25 @@ class Commander(QObject):
         # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
         # some misbehaviour is seen, comar.log is always there to look.
         elif reply.command == "error":
+            self.comar.com_lock.unlock()
             self.parent.finished("System.Manager.cancelled")
             return
         elif reply.command == "fail":
             if reply.data == "System.Manager.cancelled":
+                self.comar.com_lock.unlock()
                 self.parent.finished(reply.data)
                 return
 
+            self.comar.com_lock.unlock()
             self.parent.finished()
             self.parent.showErrorMessage(unicode(reply.data))
-
             # if an error occured communicating with comar and components are not ready we quit
             if not pisi.context.componentdb.list_components():
                 self.parent.repoNotReady()
         else:
+            # paranoia
+            self.comar.com_lock.unlock()
             pass
-            #print 'Unhandled: ',reply
 
     def startUpdate(self):
         self.updateAllRepos()
@@ -150,3 +156,6 @@ class Commander(QObject):
 
     def checkConflicts(self, packages):
         return pisi.api.generate_conflicts(packages)
+
+    def inProgress(self):
+        return self.comar.com_lock.locked()
