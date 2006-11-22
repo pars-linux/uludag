@@ -67,9 +67,9 @@ class Connection(QWidget):
         self.edit_but = IconButton("configure.png", self)
         QToolTip.add(self.edit_but, i18n("Configure connection"))
         self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
-        self.diksi = IconButton("edittrash.png", self)
-        QToolTip.add(self.diksi, i18n("Delete connection"))
-        self.connect(self.diksi, SIGNAL("clicked()"), self.slotDelete)
+        self.del_but = IconButton("edittrash.png", self)
+        QToolTip.add(self.del_but, i18n("Delete connection"))
+        self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         
         self.show()
         
@@ -119,7 +119,7 @@ class Connection(QWidget):
         if self.is_odd:
             col = KGlobalSettings.alternateBackgroundColor()
         self.edit_but.setPaletteBackgroundColor(col)
-        self.diksi.setPaletteBackgroundColor(col)
+        self.del_but.setPaletteBackgroundColor(col)
         paint.fillRect(event.rect(), QBrush(col))
         dip = (self.height() - self.mypix.height()) / 2
         paint.drawPixmap(self.pix_start, dip, self.mypix)
@@ -139,9 +139,9 @@ class Connection(QWidget):
         h = event.size().height()
         dip = (h - self.check.height()) / 2
         self.check.move(6, dip)
-        dip = (h - self.diksi.myHeight) / 2
-        self.diksi.setGeometry(w - self.diksi.myWidth - 6 - 6, dip, self.diksi.myWidth, self.diksi.myHeight)
-        self.edit_but.setGeometry(w - self.diksi.myWidth - 6 - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
+        dip = (h - self.del_but.myHeight) / 2
+        self.del_but.setGeometry(w - self.del_but.myWidth - 6 - 6, dip, self.del_but.myWidth, self.del_but.myHeight)
+        self.edit_but.setGeometry(w - self.del_but.myWidth - 6 - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
         return QWidget.resizeEvent(self, event)
     
     def sizeHint(self):
@@ -152,8 +152,8 @@ class Connection(QWidget):
         fm2 = self.fontMetrics()
         rect = fm.boundingRect(unicode(self.conn.name))
         rect2 = fm2.boundingRect(self.addressText())
-        w = self.text_start + min(rect.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.diksi.myWidth + 6
-        w2 = self.text_start + min(rect2.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.diksi.myWidth + 6
+        w = self.text_start + min(rect.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.del_but.myWidth + 6
+        w2 = self.text_start + min(rect2.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.del_but.myWidth + 6
         w = max(w, w2)
         h = max(fm.height() + 3 + fm2.height(), 32) + 10
         return QSize(w, h)
