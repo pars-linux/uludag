@@ -57,7 +57,11 @@ class Connection(QWidget):
         self.check.setAutoMask(True)
         view.connections[conn.hash] = self
         
+        self.edit_but = IconButton("configure.png", self)
+        QToolTip.add(self.edit_but, i18n("Configure connection"))
+        self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
         self.diksi = IconButton("edittrash.png", self)
+        QToolTip.add(self.diksi, i18n("Delete connection"))
         self.connect(self.diksi, SIGNAL("clicked()"), self.slotDelete)
         
         self.show()
@@ -107,6 +111,7 @@ class Connection(QWidget):
         col = KGlobalSettings.baseColor()
         if self.is_odd:
             col = KGlobalSettings.alternateBackgroundColor()
+        self.edit_but.setPaletteBackgroundColor(col)
         self.diksi.setPaletteBackgroundColor(col)
         paint.fillRect(event.rect(), QBrush(col))
         paint.drawPixmap(20, 3, self.mypix)
@@ -124,14 +129,15 @@ class Connection(QWidget):
         h = event.size().height()
         dip = (h - self.diksi.myHeight) / 2
         self.diksi.setGeometry(w - self.diksi.myWidth - 6, dip, self.diksi.myWidth, self.diksi.myHeight)
+        self.edit_but.setGeometry(w - self.diksi.myWidth - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
         return QWidget.resizeEvent(self, event)
     
     def sizeHint(self):
         fm = self.fontMetrics()
         rect = fm.boundingRect(unicode(self.conn.name))
         rect2 = fm.boundingRect(self.addressText())
-        w = max(rect.width(), 80) + 32 + 16 + self.diksi.myWidth + 8
-        w2 = max(rect2.width(), 80) + 32 + 16 + self.diksi.myWidth + 8
+        w = max(rect.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8
+        w2 = max(rect2.width(), 80) + 32 + 16 + self.diksi.myWidth + 3 + self.edit_but.myWidth + 8
         w = max(w, w2)
         h = max(rect.height() + rect2.height(), 32) + 6
         return QSize(w, h)
