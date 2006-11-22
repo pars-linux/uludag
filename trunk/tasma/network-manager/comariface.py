@@ -140,8 +140,10 @@ class ComarInterface(Hook):
             name, state = reply.data.split("\n", 1)
             conn = self.getConn(reply.script, name)
             conn.state = state
+            conn.msg = None
             if " " in state:
                 state, msg = state.split(" ", 1)
+                conn.state = state
                 conn.message = msg
             conn.i -= 1
             if conn.i == 0:
