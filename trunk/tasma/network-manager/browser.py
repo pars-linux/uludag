@@ -33,6 +33,18 @@ class IconButton(QPushButton):
         self.resize(self.myWidth, self.myHeight)
 
 
+class StateButton(QPushButton):
+    def __init__(self, parent):
+        QPushButton.__init__(self, parent)
+        self.setToggleButton(True)
+        self.myset = QIconSet(icons.get_state("net", "up"), QIconSet.Large)
+        self.setIconSet(self.myset)
+        size = self.myset.iconSize(QIconSet.Small)
+        self.myWidth = size.width() + 4
+        self.myHeight = size.height() + 4
+        self.resize(self.myWidth, self.myHeight)
+
+
 class Connection(QWidget):
     def __init__(self, view, conn):
         self.is_odd = 0
@@ -51,10 +63,13 @@ class Connection(QWidget):
         self.myBase = fm.ascent()
         self.myHeight = fm.height()
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
-        self.check = QCheckBox(self)
-        self.check.setGeometry(3, 3, self.check.width(), self.check.height())
-        self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
-        self.check.setAutoMask(True)
+        #self.check = QCheckBox(self)
+        #self.check.setGeometry(3, 3, self.check.width(), self.check.height())
+        #self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
+        #self.check.setAutoMask(True)
+        self.buttok = StateButton(self)
+        self.buttok.setGeometry(3, 3, self.buttok.width(), self.buttok.height())
+        
         view.connections[conn.hash] = self
         
         self.edit_but = IconButton("configure.png", self)
@@ -114,12 +129,10 @@ class Connection(QWidget):
         self.edit_but.setPaletteBackgroundColor(col)
         self.diksi.setPaletteBackgroundColor(col)
         paint.fillRect(event.rect(), QBrush(col))
-        paint.drawPixmap(20, 3, self.mypix)
+        #paint.drawPixmap(20, 3, self.mypix)
         paint.save()
         font = paint.font()
-        #font.setUnderline(True)
         font.setPointSize(font.pointSize() + 2)
-        #paint.pen().setColor(KGlobalSettings.linkColor())
         paint.drawText(53, self.myBase + 5, unicode(self.conn.name))
         paint.restore()
         paint.drawText(53, self.myHeight + self.myBase + 7, self.addressText())
