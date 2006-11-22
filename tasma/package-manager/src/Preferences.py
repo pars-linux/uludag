@@ -30,6 +30,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.moveUpButton, SIGNAL("clicked()"), self.moveUp)
         self.connect(self.moveDownButton, SIGNAL("clicked()"), self.moveDown)
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
+        self.connect(self.intervalCheck, SIGNAL("toggled(bool)"), self.enableCheckInterval)
 
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
@@ -172,3 +173,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             item.setText(0, self.repoList[index])
             item.setText(1, self.parent.command.getRepoUri(str(repoName)))
             index -= 1
+
+    def enableCheckInterval(self, state):
+          self.intervalLabel.setEnabled(state)
+          self.intervalSpin.setEnabled(state)
