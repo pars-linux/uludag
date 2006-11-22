@@ -249,29 +249,7 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QCheckBox" row="0" column="0">
-                        <property name="name">
-                            <cstring>onlyGuiApp</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Show only desktop applications</string>
-                        </property>
-                        <property name="toolTip" stdset="0">
-                            <string>If checked, then pisi will only show desktop applications</string>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="1" column="0">
-                        <property name="name">
-                            <cstring>systemTray</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Enable system tray icon</string>
-                        </property>
-                        <property name="toolTip" stdset="0">
-                            <string>If checked, then pisi will only show desktop applications</string>
-                        </property>
-                    </widget>
-                    <spacer row="2" column="0">
+                    <spacer row="4" column="1">
                         <property name="name">
                             <cstring>spacer4</cstring>
                         </property>
@@ -284,7 +262,88 @@
                         <property name="sizeHint">
                             <size>
                                 <width>31</width>
-                                <height>160</height>
+                                <height>50</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
+                        <property name="name">
+                            <cstring>onlyGuiApp</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Show only desktop applications</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>If checked, then pisi will only show desktop applications</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="3">
+                        <property name="name">
+                            <cstring>intervalCheck</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Enable &amp;interval upgradable package checking</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="1" column="0" rowspan="1" colspan="3">
+                        <property name="name">
+                            <cstring>systemTray</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Enable system tray icon</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>If checked, then pisi will only show desktop applications</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="3" column="0">
+                        <property name="name">
+                            <cstring>intervalLabel</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>Check interval:</string>
+                        </property>
+                        <property name="buddy" stdset="0">
+                            <cstring>kIntNumInput3</cstring>
+                        </property>
+                    </widget>
+                    <widget class="KIntNumInput" row="3" column="1">
+                        <property name="name">
+                            <cstring>intervalSpin</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="value">
+                            <number>15</number>
+                        </property>
+                        <property name="minValue">
+                            <number>1</number>
+                        </property>
+                        <property name="maxValue">
+                            <number>10000</number>
+                        </property>
+                        <property name="suffix">
+                            <string> min</string>
+                        </property>
+                    </widget>
+                    <spacer row="3" column="2">
+                        <property name="name">
+                            <cstring>spacer5</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>241</width>
+                                <height>21</height>
                             </size>
                         </property>
                     </spacer>
@@ -447,5 +506,7 @@ This will not delete installed software or affect your system stability.</string
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
 </includehints>
 </UI>
