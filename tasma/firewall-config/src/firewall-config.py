@@ -34,7 +34,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP('Pardus Firewall Graphical User Interface')
-version = '1.6.0'
+version = '1.6.1'
 
 def AboutData():
     global version, description
@@ -66,6 +66,37 @@ if standalone:
 else:
     programbase = KCModule
 
+
+class AdvancedRuleCheckBox(QCheckBox):
+    def __init__(self, parent=None, name=None, rule=''):
+        QCheckBox.__init__(self, parent, name)
+        self.rule = rule
+
+        protocol = re.findall('-p ([a-z]+)', self.rule)[0]
+        ports = re.findall('--dports ([0-9,:]+)', self.rule)[0]
+
+        if self.rule.startswith('-A PARDUS-IN-USER'):
+            dir = 'in'
+        else:
+            dir = 'out'
+
+        if self.rule.endswith('-j ACCEPT'):
+            action = 'accept'
+        else:
+            action = 'reject'
+
+        if dir == 'in':
+            if action == 'accept':
+                msg = i18n('Accept all incoming connection through ports %s')
+            else:
+                msg = i18n('Reject all incoming connection through ports %s')
+        else:
+            if action == 'accept':
+                msg = i18n('Accept all outgoing connection through ports %s')
+            else:
+                msg = i18n('Reject all outgoing connection through ports %s')
+
+        self.setText(msg.replace('%s', '%s (%s)' % (ports.replace(':', '-'), protocol)))
 
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
@@ -106,11 +137,19 @@ class MainApplication(programbase):
         frameIncomingLayout = QVBoxLayout(mainwidget.frameIncoming.layout())
         frameIncomingLayout.setAlignment(Qt.AlignTop)
 
-        # Tab 2 - Ingoing Connections
+        # Tab 2 - Outgoing Connections
         self.outgoing = []
         mainwidget.frameOutgoing.setColumnLayout(0, Qt.Vertical)
         frameOutgoingLayout = QVBoxLayout(mainwidget.frameOutgoing.layout())
         frameOutgoingLayout.setAlignment(Qt.AlignTop)
+        # TODO
+        mainwidget.tabWidget.setTabEnabled(mainwidget.tabOutgoing, False)
+
+        # Tab 3 - Advanced
+        self.advanced = []
+        mainwidget.frameAdvanced.setColumnLayout(0, Qt.Vertical)
+        mainwidget.frameAdvancedLayout = QVBoxLayout(mainwidget.frameAdvanced.layout())
+        mainwidget.frameAdvancedLayout.setAlignment(Qt.AlignTop)
 
         # Populate checkboxes
         for key, (list_rules, name) in rules.filter.iteritems():
@@ -130,6 +169,7 @@ class MainApplication(programbase):
         mainwidget.pixmapFW.setPixmap(loadIcon('firewall_config', size=48))
         mainwidget.pixmapIncoming.setPixmap(loadIcon('server.png', size=48))
         mainwidget.pixmapOutgoing.setPixmap(loadIcon('socket.png', size=48))
+        mainwidget.pixmapAdvanced.setPixmap(loadIcon('gear.png', size=48))
 
         # COMAR
         self.comar = comar.Link()
@@ -176,23 +216,39 @@ class MainApplication(programbase):
 
     def updateRules(self):
         if self.state == 'on':
+            rules_processed = []
             # Tab 1 - Incoming Connections
             for checkbox in self.incoming:
+                rules_processed.extend(rules.filter[checkbox.name()][0])
                 if not set(rules.filter[checkbox.name()][0]) - set(self.rules['filter']):
                     checkbox.setChecked(True)
                 else:
                     checkbox.setChecked(False)
-            # Tab 2 - Incoming Connections
+            # Tab 2 - Outgoing Connections
             for checkbox in self.outgoing:
+                rules_processed.extend(rules.filter[checkbox.name()][0])
                 if set(rules.filter[checkbox.name()][0]) in set(self.rules['filter']):
                     checkbox.setChecked(True)
                 else:
                     checkbox.setChecked(False)
+            # Tab 3 - Advanced
+            for chk in self.advanced:
+                chk.close(True)
+            self.advanced = []
+            for custom_rule in set(self.rules['filter']) - set(rules_processed):
+                chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, 'advanced_%s' % len(self.advanced), custom_rule)
+                chk.setChecked(True)
+                mainwidget.frameAdvancedLayout.addWidget(chk)
+                self.advanced.append(chk)
+                chk.show()
+
             mainwidget.frameIncoming.setEnabled(True)
             mainwidget.frameOutgoing.setEnabled(True)
+            mainwidget.frameAdvanced.setEnabled(True)
         else:
             mainwidget.frameIncoming.setEnabled(False)
             mainwidget.frameOutgoing.setEnabled(False)
+            mainwidget.frameAdvanced.setEnabled(False)
 
     def emptyRules(self):
         self.rules = {
@@ -293,6 +349,11 @@ class MainApplication(programbase):
         for checkbox in self.outgoing:
             if checkbox.isChecked():
                 now_filter.extend(rules.filter[checkbox.name()][0])
+
+        # Tab 3 - Advanced
+        for checkbox in self.advanced:
+            if checkbox.isChecked():
+                now_filter.append(checkbox.rule)
 
         self.saveRules('filter', now_filter)
 
