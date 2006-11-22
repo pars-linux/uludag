@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>449</width>
+            <width>495</width>
             <height>462</height>
         </rect>
     </property>
@@ -394,7 +394,7 @@
             </widget>
             <widget class="QWidget">
                 <property name="name">
-                    <cstring>TabPage</cstring>
+                    <cstring>tabOutgoing</cstring>
                 </property>
                 <attribute name="title">
                     <string>Outgoing Connections</string>
@@ -477,6 +477,95 @@
                         </property>
                         <property name="scaledContents">
                             <bool>true</bool>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Advanced</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel" row="0" column="1">
+                        <property name="name">
+                            <cstring>textLabel3_2_2_2</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>All outgoing connections are &lt;b&gt;accepted&lt;/b&gt; by default. If you want to forbid your computer to access services on other computers, check the service name below:</string>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignVCenter</set>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>pixmapAdvanced</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>0</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>48</width>
+                                <height>48</height>
+                            </size>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QButtonGroup" row="1" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>frameAdvanced</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="paletteBackgroundColor">
+                            <color>
+                                <red>231</red>
+                                <green>231</green>
+                                <blue>255</blue>
+                            </color>
+                        </property>
+                        <property name="frameShape">
+                            <enum>StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Raised</enum>
+                        </property>
+                        <property name="title">
+                            <string></string>
                         </property>
                     </widget>
                 </grid>
