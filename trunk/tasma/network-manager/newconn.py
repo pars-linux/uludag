@@ -52,12 +52,18 @@ class Window(QDialog):
             item.setOpen(True)
             comlink.queryDevices(link.script)
         
-        but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Configure the connection"), self)
+        hb = QHBox(self)
+        hb.setSpacing(6)
+        but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Create"), hb)
         but.setEnabled(False)
-        self.but = but
-        vb.addWidget(but)
         self.connect(but, SIGNAL("clicked()"), self.accept)
         but.setDefault(True)
+        self.but = but
+        
+        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.reject)
+        
+        vb.addWidget(hb)
     
     def reject(self):
         comlink.device_hook.remove(self.slotDevices)

@@ -187,6 +187,9 @@ class Settings(QWidget):
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
         grid2.addWidget(self.auto_gate, 2, 2)
         
+        # FIXME: disabled until implemented
+        return row
+        
         line = widgets.HLine(i18n("Name servers"), self)
         grid.addMultiCellWidget(line, row, row, 0, 1)
         row += 1
