@@ -49,6 +49,8 @@ class Connection(QWidget):
         
         print self.conn.state, self.conn.message
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
+        if self.conn.state in ("inaccessible", "unavailable"):
+            self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, QColor(), False)
         self.check = QCheckBox(self)
         self.check.setChecked(self.conn.state in ("up", "connecting", "inaccessible"))
         QToolTip.add(self.check, i18n("Turn on/off connection"))
@@ -101,6 +103,8 @@ class Connection(QWidget):
         self.check.setChecked(self.conn.state in ("up", "connecting", "inaccessible"))
         self.ignore_signal = False
         self.mypix = icons.get_state(comlink.links[self.conn.script].type, self.conn.state)
+        if self.conn.state in ("inaccessible", "unavailable"):
+            self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, None, False)
         self.update()
     
     def addressText(self):
