@@ -204,8 +204,8 @@ class Device(QWidget):
         maxw = aw / c
         childs.sort(key=lambda x: x.conn.name)
         for item in childs:
-            item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
             item.is_odd = (i + j) % 2
+            item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
             i += 1
             if i >= c:
                 i = 0
