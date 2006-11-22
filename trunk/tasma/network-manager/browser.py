@@ -37,8 +37,9 @@ class StateButton(QPushButton):
     def __init__(self, parent):
         QPushButton.__init__(self, parent)
         self.setToggleButton(True)
+        self.setFlat(True)
         self.myset = QIconSet()
-        self.myset.setPixmap(KGlobal.iconLoader().loadIcon("cancel.png", KIcon.Small), QIconSet.Small, QIconSet.Normal, QIconSet.Off)
+        self.myset.setPixmap(KGlobal.iconLoader().loadIcon("fileclose.png", KIcon.Small), QIconSet.Small, QIconSet.Normal, QIconSet.Off)
         self.myset.setPixmap(KGlobal.iconLoader().loadIcon("apply.png", KIcon.Small), QIconSet.Small, QIconSet.Normal, QIconSet.On)
         self.setIconSet(self.myset)
         size = self.myset.iconSize(QIconSet.Small)
