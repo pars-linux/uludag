@@ -65,9 +65,8 @@ class Connection(Hook):
         self.script = script
         self.name, self.devid, self.devname = data.split("\n")
         self.remote = None
-        self.active = False
-        self.state = "down"
-        self.address = None
+        self.state = "unavailable"
+        self.message = None
         self.net_mode = "auto"
         self.net_addr = None
         self.net_mask = None
@@ -137,8 +136,9 @@ class ComarInterface(Hook):
             name, state = reply.data.split("\n", 1)
             conn = self.getConn(reply.script, name)
             conn.state = state
-            if state == "up":
-                conn.active = True
+            if " " in state:
+                state, msg = state.split(" ", 1)
+                conn.message = msg
             conn.i -= 1
             if conn.i == 0:
                 self.emitNew(conn)
@@ -206,12 +206,6 @@ class ComarInterface(Hook):
                 if conn:
                     self.emitDelete(conn)
                     del self.connections[conn.hash]
-            elif what == "gotaddress":
-                name, addr = name.split("\n", 1)
-                conn = self.getConn(reply.script, name)
-                if conn:
-                    conn.address = addr
-                    self.emitConfig(conn)
             elif what == "configured":
                 type, name = name.split(" ", 1)
                 # FIXME: query them: device, adress, state
@@ -220,12 +214,10 @@ class ComarInterface(Hook):
             name, state = reply.data.split("\n", 1)
             conn = self.getConn(reply.script, name)
             if conn:
-                if state == "on":
-                    conn.active = True
-                elif state == "off":
-                    conn.active = False
-                elif state in ("up", "connecting", "down"):
-                    conn.state = state
+                if " " in state:
+                    state, msg = state.split(" ", 1)
+                    conn.message = msg
+                conn.state = state
                 self.emitState(conn)
     
     def getConn(self, script, name):

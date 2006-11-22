@@ -49,6 +49,7 @@ class Connection(QWidget):
         
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
         self.check = QCheckBox(self)
+        self.check.setChecked(self.conn.state in ("up", "connecting", "inaccessible"))
         QToolTip.add(self.check, i18n("Turn on/off connection"))
         self.check.setGeometry(6, 3, 16, 16)
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
@@ -93,21 +94,20 @@ class Connection(QWidget):
     def mouseDoubleClickEvent(self, event):
         self.slotEdit()
     
-    def updateState(self, state):
-        # FIXME
+    def updateState(self):
+        print self.conn.state, self.conn.message
         self.ignore_signal = True
-        self.check.setChecked(self.active)
+        self.check.setChecked(self.conn.state in ("up", "connecting", "inaccessible"))
         self.ignore_signal = False
-        self.mypix = icons.get_state(links.get_info(self.script).type, self.state)
-        
+        self.mypix = icons.get_state(comlink.links[self.conn.script].type, self.conn.state)
         self.update()
     
     def addressText(self):
         addr = self.conn.net_addr
         if not addr:
             addr = i18n("Automatic")
-            if self.conn.address:
-                addr += " (%s)" % self.conn.address
+            if self.conn.message:
+                addr += " (%s)" % self.conn.message
         return addr
     
     def paintEvent(self, event):
@@ -286,6 +286,12 @@ class ConnectionView(QScrollView):
         dev.connections.remove(conn)
         del self.connections[conn.conn.hash]
         self.myResize(self.width())
+    
+    def stateUpdate(self, conn):
+        conn = self.connections.get(conn.hash, None)
+        if not conn:
+            return
+        conn.updateState()
 
 
 class Widget(QVBox):
@@ -316,6 +322,7 @@ class Widget(QVBox):
         
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
+        comlink.state_hook.append(self.view.stateUpdate)
         comlink.connect()
     
     def handleComar(self, reply):
