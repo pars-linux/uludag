@@ -206,6 +206,7 @@ class Device(QWidget):
         for item in childs:
             item.is_odd = (i + j) % 2
             item.setGeometry(i * maxw, myh + j * maxh, maxw, maxh)
+            item.update()
             i += 1
             if i >= c:
                 i = 0
