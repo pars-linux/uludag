@@ -40,11 +40,4 @@ filter = {
         ['-A PARDUS-IN-USER -p tcp -m multiport --dports 21 -j ACCEPT'],
         i18n('File transfer service'),
     ),
-
-    # Outgoing Connections
-    # All outgoing connections are accepted by default
-    'outMail': (
-        '-A PARDUS-OUT-USER -p tcp -m multiport --dports 25,110 -j REJECT --reject-with icmp-port-unreachable',
-        i18n('Mail services'),
-    ),
 }

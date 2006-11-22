@@ -109,7 +109,7 @@ def checkPortFormat(ports):
         if len(grp) > 2:
             return False
         for p in grp:
-            if not p.isdigit() or 0 > int(p) < 65535:
+            if not p.isdigit() or 0 > int(p) or int(p) > 65535:
                 return False
     return True
 
@@ -178,15 +178,7 @@ class MainApplication(programbase):
         frameIncomingLayout = QVBoxLayout(mainwidget.frameIncoming.layout())
         frameIncomingLayout.setAlignment(Qt.AlignTop)
 
-        # Tab 2 - Outgoing Connections
-        self.outgoing = []
-        mainwidget.frameOutgoing.setColumnLayout(0, Qt.Vertical)
-        frameOutgoingLayout = QVBoxLayout(mainwidget.frameOutgoing.layout())
-        frameOutgoingLayout.setAlignment(Qt.AlignTop)
-        #
-        mainwidget.tabWidget.removePage(mainwidget.tabOutgoing)
-
-        # Tab 3 - Advanced
+        # Tab 2 - Advanced
         self.advanced = []
         mainwidget.frameAdvanced.setColumnLayout(0, Qt.Vertical)
         mainwidget.frameAdvancedLayout = QVBoxLayout(mainwidget.frameAdvanced.layout())
@@ -199,17 +191,11 @@ class MainApplication(programbase):
                 chk.setText(name)
                 frameIncomingLayout.addWidget(chk)
                 self.incoming.append(chk)
-            elif key.startswith('out'):
-                chk = QCheckBox(mainwidget.frameOutgoing, key)
-                chk.setText(name)
-                frameOutgoingLayout.addWidget(chk)
-                self.outgoing.append(chk)
 
         # Icons
         self.setIcon(loadIcon('firewall_config', size=48))
         mainwidget.pixmapFW.setPixmap(loadIcon('firewall_config', size=48))
         mainwidget.pixmapIncoming.setPixmap(loadIcon('server.png', size=48))
-        mainwidget.pixmapOutgoing.setPixmap(loadIcon('socket.png', size=48))
         mainwidget.pixmapAdvanced.setPixmap(loadIcon('gear.png', size=48))
 
         # COMAR
@@ -267,14 +253,7 @@ class MainApplication(programbase):
                     checkbox.setChecked(True)
                 else:
                     checkbox.setChecked(False)
-            # Tab 2 - Outgoing Connections
-            for checkbox in self.outgoing:
-                rules_processed.extend(rules.filter[checkbox.name()][0])
-                if set(rules.filter[checkbox.name()][0]) in set(self.rules['filter']):
-                    checkbox.setChecked(True)
-                else:
-                    checkbox.setChecked(False)
-            # Tab 3 - Advanced
+            # Tab 2 - Advanced
             for chk in self.advanced:
                 chk.close(True)
             self.advanced = []
@@ -286,12 +265,12 @@ class MainApplication(programbase):
                 chk.show()
 
             mainwidget.frameIncoming.setEnabled(True)
-            mainwidget.frameOutgoing.setEnabled(True)
             mainwidget.frameAdvanced.setEnabled(True)
+            mainwidget.pushNewRule.setEnabled(True)
         else:
             mainwidget.frameIncoming.setEnabled(False)
-            mainwidget.frameOutgoing.setEnabled(False)
             mainwidget.frameAdvanced.setEnabled(False)
+            mainwidget.pushNewRule.setEnabled(False)
 
     def emptyRules(self):
         self.rules = {
@@ -398,12 +377,7 @@ class MainApplication(programbase):
             if checkbox.isChecked():
                 now_filter.extend(rules.filter[checkbox.name()][0])
 
-        # Tab 2 - Outgoing Connections
-        for checkbox in self.outgoing:
-            if checkbox.isChecked():
-                now_filter.extend(rules.filter[checkbox.name()][0])
-
-        # Tab 3 - Advanced
+        # Tab 2 - Advanced
         for checkbox in self.advanced:
             if checkbox.isChecked():
                 now_filter.append(checkbox.rule)
