@@ -87,13 +87,13 @@ class Fstab:
         self.allDevices = getBlockDevices()
 
         self.defaultFileSystemOptions = {}
-        self.defaultFileSystemOptions["vfat"] = ["quiet", "shortname=mixed", "dmask=007", "fmask=117", "utf8", "gid=6"]
-        self.defaultFileSystemOptions["ext3"] = ["noatime"]
-        self.defaultFileSystemOptions["ext2"] = ["noatime"]
-        self.defaultFileSystemOptions["ntfs-3g"] = ["dmask=007", "fmask=117", "locale=tr_TR.UTF-8", "gid=6"]
-        self.defaultFileSystemOptions["reiserfs"] = ["noatime"]
-        self.defaultFileSystemOptions["xfs"] = ["noatime"]
-        self.defaultFileSystemOptions["defaults"] = ["defaults"]
+        self.defaultFileSystemOptions["vfat"] = "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6"
+        self.defaultFileSystemOptions["ext3"] = "noatime"
+        self.defaultFileSystemOptions["ext2"] = "noatime"
+        self.defaultFileSystemOptions["ntfs-3g"] = "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6"
+        self.defaultFileSystemOptions["reiserfs"] = "noatime"
+        self.defaultFileSystemOptions["xfs"] = "noatime"
+        self.defaultFileSystemOptions["defaults"] = "defaults"
 
         self.update()
 
@@ -138,7 +138,7 @@ class Fstab:
             if line.split()[2] not in self.excludedFilesystems:
                 self.__fstabPartitions[line.split()[0]] = {"mount_point": line.split()[1],
                                                         "file_system": line.split()[2], 
-                                                        "options": line.split()[3].split(','), 
+                                                        "options": line.split()[3], 
                                                         "dump_freq": line. split()[4], 
                                                         "fs_pass_no": line.split()[5]}
 
