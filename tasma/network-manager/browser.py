@@ -52,6 +52,7 @@ class Connection(QWidget):
         self.myHeight = fm.height()
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
         self.check = QCheckBox(self)
+        self.check.setGeometry(3, 3, self.check.width(), self.check.height())
         self.connect(self.check, SIGNAL("toggled(bool)"), self.slotToggle)
         self.check.setAutoMask(True)
         view.connections[conn.hash] = self
@@ -93,6 +94,14 @@ class Connection(QWidget):
         
         self.update()
     
+    def addressText(self):
+        addr = self.conn.net_addr
+        if not addr:
+            addr = i18n("Automatic")
+            if self.conn.address:
+                addr += " (%s)" % self.conn.address
+        return addr
+    
     def paintEvent(self, event):
         paint = QPainter(self)
         col = KGlobalSettings.baseColor()
@@ -102,12 +111,7 @@ class Connection(QWidget):
         paint.fillRect(event.rect(), QBrush(col))
         paint.drawPixmap(20, 3, self.mypix)
         paint.drawText(53, self.myBase + 4, unicode(self.conn.name))
-        addr = self.conn.net_addr
-        if not addr:
-            addr = i18n("Automatic")
-            if self.conn.address:
-                addr += " (%s)" % self.conn.address
-        paint.drawText(53, self.myHeight + self.myBase + 5, addr)
+        paint.drawText(53, self.myHeight + self.myBase + 5, self.addressText())
     
     def resizeEvent(self, event):
         w = event.size().width()
@@ -118,9 +122,12 @@ class Connection(QWidget):
     
     def sizeHint(self):
         fm = self.fontMetrics()
-        rect = fm.boundingRect(self.conn.name)
-        w = max(rect.width(), 120) + 32 + 16 + 8
-        h = max(rect.height(), 32) + 6
+        rect = fm.boundingRect(unicode(self.conn.name))
+        rect2 = fm.boundingRect(self.addressText())
+        w = max(rect.width(), 80) + 32 + 16 + self.diksi.myWidth + 8
+        w2 = max(rect2.width(), 80) + 32 + 16 + self.diksi.myWidth + 8
+        w = max(w, w2)
+        h = max(rect.height() + rect2.height(), 32) + 6
         return QSize(w, h)
 
 
@@ -135,19 +142,19 @@ class Device(QWidget):
         self.myBase = fm.ascent()
         self.connections = []
         parent.devices[id] = self
+        self.setPaletteBackgroundColor(KGlobalSettings.baseColor())
     
     def myHeight(self):
         fm = self.fontMetrics()
         rect = fm.boundingRect(self.name)
-        return max(rect.height() + 6, 24) + 2
+        return rect.height() + 6
     
     def paintEvent(self, event):
         cg = self.colorGroup()
         QWidget.paintEvent(self, event)
         paint = QPainter(self)
-        paint.fillRect(QRect(0, 0, self.width(), self.myHeight()), QBrush(cg.mid(), Qt.Dense7Pattern))
-        paint.fillRect(QRect(0, self.myHeight(), self.width(), self.height() - self.myHeight()), QBrush(cg.midlight()))
-        paint.drawText(25, self.myBase + 5, self.name)
+        paint.fillRect(QRect(0, 0, self.width(), self.myHeight()), QBrush(KGlobalSettings.buttonBackground(), Qt.Dense3Pattern))
+        paint.drawText(6, self.myBase + 3, self.name)
     
     def heightForWidth(self, width):
         h = self.myHeight()
@@ -173,7 +180,7 @@ class Device(QWidget):
         L = len(self.connections)
         if L % c != 0:
             L += c
-        h += (maxh + 2) * (L / c)
+        h += maxh * (L / c)
         
         return h
     
