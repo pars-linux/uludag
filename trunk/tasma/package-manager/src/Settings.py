@@ -21,6 +21,10 @@ class Settings:
         self.config.writeEntry(option, value)
         self.config.sync()
 
-    def getBoolValue(self, group, option):
+    def getBoolValue(self, group, option, default=False):
         self.config.setGroup(group)
-        return self.config.readBoolEntry(option, False)
+        return self.config.readBoolEntry(option, default)
+
+    def getNumValue(self, group, option, default=0):
+        self.config.setGroup(group)
+        return self.config.readNumEntry(option, default)

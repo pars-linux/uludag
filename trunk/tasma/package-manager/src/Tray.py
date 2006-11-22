@@ -28,17 +28,40 @@ class Tray(KSystemTray):
         self.overlayIcon = self.icon.convertToImage()
         self.setPixmap(self.icon)
 
-    def showPopup(self, updates):
+        self.timer = QTimer()
+        self.timer.connect(self.timer, SIGNAL("timeout()"), self.checkUpdate)
+        self.interval = 0
+
+    def showPopup(self):
+        nofUpgrades = len(list_upgradable())
+        if not nofUpgrades:
+            return
+
         icon = KGlobal.iconLoader().loadIcon("package-manager", KIcon.Desktop, 48)
-        message = i18n("There are <b>%1</b> updates available!").arg(len(updates))
+        message = i18n("There are <b>%1</b> updates available!").arg(nofUpgrades)
         self.popup = BalloonMessage(self, icon, message)
         pos = self.mapToGlobal(self.pos())
         self.popup.setAnchor(pos)
         self.popup.show()
 
+    def updateInterval(self, min):
+        # minutes to milliseconds conversion
+        interval = min * 60 * 1000
+        if interval != self.interval:
+            self.interval = interval
+            self.timer.stop()
+            if interval:
+                self.timer.start(interval)
+
+    def checkUpdate(self):
+        # if package-manager is running do not start update-repo operation, this may annoy user.
+        if not self.parent.isHidden():
+            return
+
+#       self.parent.updateCheck()
+
     # stolen from Akregator
     def updateTrayIcon(self):
-
         nofUpgrades = len(list_upgradable())
         if not nofUpgrades:
             self.setPixmap(self.icon)

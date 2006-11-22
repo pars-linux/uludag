@@ -40,6 +40,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.updateButtons()
 
         self.onlyGuiApp.setChecked(self.parent.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp"))
+        self.intervalCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "UpdateCheck"))
+        self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval", 15))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
         self.reposChanged = False
 
@@ -147,6 +149,13 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def saveSettings(self):
         self.parent.settings.setValue(Settings.general, "ShowOnlyGuiApp", self.onlyGuiApp.isChecked())
         self.parent.settings.setValue(Settings.general, "SystemTray", self.systemTray.isChecked())
+        self.parent.settings.setValue(Settings.general, "UpdateCheck", self.intervalCheck.isChecked())
+        self.parent.settings.setValue(Settings.general, "UpdateCheckInterval", self.intervalSpin.value())
+
+        if self.intervalCheck.isChecked():
+            self.parent.parent.tray.updateInterval(self.intervalSpin.value())
+        else:
+            self.parent.parent.tray.updateInterval(0)
 
         if self.reposChanged:
             repoList = []
@@ -175,5 +184,5 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             index -= 1
 
     def enableCheckInterval(self, state):
-          self.intervalLabel.setEnabled(state)
-          self.intervalSpin.setEnabled(state)
+        self.intervalLabel.setEnabled(state)
+        self.intervalSpin.setEnabled(state)
