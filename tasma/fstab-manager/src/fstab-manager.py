@@ -101,7 +101,7 @@ class fstabForm(mainForm):
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
         self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
         self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
-        self.connect(self.combo_fs,SIGNAL('highlighted(const QString&)'),self.saveSession)
+        self.connect(self.combo_fs,SIGNAL('activated(const QString&)'),self.saveSession)
 
     def saveSession(self):
         if not self.sessionLocked:
