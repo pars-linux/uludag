@@ -18,6 +18,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 from kfile import *
+from khtml import *
 
 # Widget
 import kdedesigner
@@ -77,7 +78,6 @@ class fstabForm(mainForm):
         self.fstabPartitions = self.getPartitionsFromFstab()
         self.prettyList={}
         self.list_main_items=[]
-        self.btn_Update.setEnabled(False)
         self.frame_detail.hide()
         self.sessionLocked=True
 
@@ -96,15 +96,18 @@ class fstabForm(mainForm):
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
-        self.connect(self.btn_Update, SIGNAL('clicked()'), self.slotUpdate)
+        self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
+        self.connect(self.btn_cancel, SIGNAL('clicked()'), self.slotCancel)
+        self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
         self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.fillDiskList)
+        self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
         self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
         self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
         self.connect(self.combo_fs,SIGNAL('activated(const QString&)'),self.saveSession)
 
-    def saveSession(self):
-        if not self.sessionLocked:
+    def saveSession(self,Single=False):
+        if not self.sessionLocked or Single:
             selected_=self.list_main.selectedItem()
             selected =self.getDetailsOfSelected(selected_,key=True)
             self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
@@ -115,6 +118,15 @@ class fstabForm(mainForm):
         for fileSystem in self.knownFS:
             if fileSystem.split(':')[1]==fs:
                 return fileSystem.split(':')[0]
+
+    def getDefaultOptions(self):
+        selected_=self.list_main.selectedItem()
+        selected =self.getDetailsOfSelected(selected_,key=True)
+        self.line_opts.setText(self.getDefaultOptionsFor(self.prettyList[selected[0]][selected[1]]['file_system']))
+        self.saveSession(Single=True)
+
+    def getDefaultOptionsFor(self,type):
+        return self.Fstab.defaultFileSystemOptions[type]
 
     def getDetailsOfSelected(self,selected,key=False):
         selectedDisk = str(selected.parent().text(0)).split('\n')[0]
@@ -142,7 +154,7 @@ class fstabForm(mainForm):
                     self.combo_fs.setCurrentItem(i)
                 i+=1
             if selected.isOn():
-                self.btn_Update.setEnabled(True)
+                self.btn_update.setEnabled(True)
             self.frame_detail.show()
             self.sessionLocked=False
 
@@ -151,7 +163,12 @@ class fstabForm(mainForm):
             self.sessionLocked=True
 
     def slotUpdate(self):
-        pass
+        for disk in self.blockDevices:
+            for node in self.prettyList[disk]:
+                self.Fstab.addFstabEntry(node['partition_name'],node)
+        print self.Fstab.content
+        self.Fstab.writeContent()
+        self.__init__()
 
     def fillDiskList(self):
         self.frame_detail.hide()
@@ -207,6 +224,13 @@ class fstabForm(mainForm):
 
     def getPartitionsFromFstab(self):
         return self.Fstab.getFstabPartitions()
+
+    def slotHelp(self):
+        self.helpwin = HelpDialog(self)
+        self.helpwin.show()
+
+    def slotCancel(self):
+        sys.exit()
 
 class Module(KCModule):
     def __init__(self, parent, name):

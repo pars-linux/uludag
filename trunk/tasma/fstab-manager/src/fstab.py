@@ -137,9 +137,9 @@ class Fstab:
         for line in self.content:
             if line.split()[2] not in self.excludedFilesystems:
                 self.__fstabPartitions[line.split()[0]] = {"mount_point": line.split()[1],
-                                                        "file_system": line.split()[2], 
-                                                        "options": line.split()[3], 
-                                                        "dump_freq": line. split()[4], 
+                                                        "file_system": line.split()[2],
+                                                        "options": line.split()[3],
+                                                        "dump_freq": line. split()[4],
                                                         "fs_pass_no": line.split()[5]}
 
     def getFstabPartitions(self):
@@ -181,7 +181,7 @@ class Fstab:
             print "'partition' can not be null."
             return -1
 
-        if attr_dict.get('mount_point') == None:
+        if attr_dict.get('mount_point') == '':
             attr_dict['mount_point'] = self.defaultMountDir + '/' + os.path.basename(partition)
 
 
@@ -195,7 +195,6 @@ class Fstab:
         if err:
             print err
             return -1
-
 
         if attr_dict.get('file_system') == None:
             attr_dict['file_system'] = self.__allPartitions[partition]['file_system']
@@ -221,7 +220,7 @@ class Fstab:
         self.content.append("%-11s %-20s %-9s %-20s %s %s\n" % (partition, 
                                                          attr_dict['mount_point'], 
                                                          attr_dict['file_system'], 
-                                                         ','.join(attr_dict['options']), 
+                                                         attr_dict['options'], 
                                                          attr_dict['dump_freq'], 
                                                          attr_dict['fs_pass_no']))
         self.update()
