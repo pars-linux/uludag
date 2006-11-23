@@ -1,0 +1,21 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+:PARDUS-IN - [0:0]
+:PARDUS-IN-USER - [0:0]
+:PARDUS-OUT - [0:0]
+:PARDUS-OUT-USER - [0:0]
+-A INPUT -j PARDUS-IN 
+-A OUTPUT -j PARDUS-OUT 
+-A FORWARD -o lo -j ACCEPT 
+-A OUTPUT -o lo -j ACCEPT 
+-A PARDUS-IN -m state --state INVALID -j DROP 
+-A PARDUS-IN -i lo -j ACCEPT 
+-A PARDUS-IN -m state --state RELATED,ESTABLISHED -j ACCEPT 
+-A PARDUS-IN -j PARDUS-IN-USER 
+-A PARDUS-IN -p tcp -m multiport --dports 0:1024 -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REJECT --reject-with icmp-port-unreachable 
+-A PARDUS-IN -p udp -m multiport --dports 0:1024 -j REJECT --reject-with icmp-port-unreachable 
+-A PARDUS-IN -j REJECT --reject-with icmp-host-prohibited 
+-A PARDUS-OUT -j PARDUS-OUT-USER 
+COMMIT
