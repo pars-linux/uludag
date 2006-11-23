@@ -796,6 +796,8 @@ class MainApplication(KMainWindow):
         self.tray = Tray.Tray(self)
 
         self.connect(self.tray, SIGNAL("quitSelected()"), self.slotQuit)
+        self.connect(kapp, SIGNAL("shutDown()"), self.slotQuit)
+
         if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
             if self.mainwidget.settings.getBoolValue(Settings.general, "UpdateCheck"):
                 interval = self.mainwidget.settings.getNumValue(Settings.general, "UpdateCheckInterval")
