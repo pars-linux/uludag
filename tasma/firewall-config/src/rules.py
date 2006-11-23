@@ -33,7 +33,7 @@ filter = {
         i18n('Windows file sharing service'),
     ),
     'inIRC': (
-        ['-A PARDUS-IN-USER -p tcp -m multiport --dports 6667-6669 -j ACCEPT'],
+        ['-A PARDUS-IN-USER -p tcp -m multiport --dports 6667:6669 -j ACCEPT'],
         i18n('Internet relay chat service'),
     ),
     'inFTP': (

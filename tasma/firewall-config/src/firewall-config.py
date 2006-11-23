@@ -270,8 +270,8 @@ class MainApplication(programbase):
                 chk.setChecked(True)
                 mainwidget.frameAdvancedLayout.addWidget(chk)
                 self.advanced.append(chk)
-                self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
                 chk.show()
+                self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
 
             mainwidget.frameIncoming.setEnabled(True)
             mainwidget.frameAdvanced.setEnabled(True)
@@ -360,6 +360,9 @@ class MainApplication(programbase):
             mainwidget.frameAdvancedLayout.addWidget(chk)
             self.advanced.append(chk)
             chk.show()
+            if not standalone:
+                self.changed()
+            self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
 
     def setRule(self, table, rule):
         rule = '-t %s %s' % (table, rule)
@@ -405,7 +408,7 @@ class MainApplication(programbase):
         pass
 
     def save(self):
-        self.slotApply()
+        self.saveAll()
 
     def defaults(self):
         pass
