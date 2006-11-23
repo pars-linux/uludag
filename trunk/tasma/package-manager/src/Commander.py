@@ -59,6 +59,8 @@ class Commander(QObject):
             if not self.wait_comar():
                 self.comar.com_lock.unlock()
                 self.parent.showErrorMessage(i18n("Can't connect to Comar daemon"))
+                self.parent.resetState()
+                self.parent.refreshState()
             else:
                 self.comar = ComarIface.ComarIface(self)
             return
@@ -69,6 +71,8 @@ class Commander(QObject):
             if notification == "System.Manager.error":
                 self.comar.com_lock.unlock()
                 self.parent.showErrorMessage(data)
+                self.parent.resetState()
+                self.parent.refreshState()
             elif notification == "System.Manager.notify":
                 self.parent.pisiNotify(data)
             elif notification == "System.Manager.progress":
@@ -94,6 +98,8 @@ class Commander(QObject):
 
             self.comar.com_lock.unlock()
             self.parent.finished()
+            self.parent.resetState()
+            self.parent.refreshState()
             self.parent.showErrorMessage(unicode(reply.data))
             # if an error occured communicating with comar and components are not ready we quit
             if not pisi.context.componentdb.list_components():

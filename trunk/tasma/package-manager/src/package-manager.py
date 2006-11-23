@@ -208,6 +208,7 @@ class MainApplicationWidget(QWidget):
         self.searchLine.clear()
         self.parent.showNewAction.setChecked(False)
         self.parent.showInstalledAction.setChecked(False)
+        self.parent.showUpgradeAction.setEnabled(True)
         self.parent.showUpgradeAction.setChecked(False)
 
     def installState(self, reset=True):
@@ -694,12 +695,12 @@ class MainApplicationWidget(QWidget):
         self.basket.empty()
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
+        self.parent.showUpgradeAction.setEnabled(True)
 
         self.progressDialog.closeForced()
         self.progressDialog.reset()
 
         if command == "System.Manager.updateAllRepositories":
-            self.parent.showUpgradeAction.setEnabled(True)
             if self.parent.isHidden():
                 self.parent.tray.showPopup()
             else:
