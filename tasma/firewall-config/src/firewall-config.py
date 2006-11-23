@@ -227,7 +227,8 @@ class MainApplication(programbase):
         self.handleComar(self.comar.read_cmd())
 
     def slotChanged(self):
-        self.changed()
+        if not standalone:
+            self.changed()
 
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
