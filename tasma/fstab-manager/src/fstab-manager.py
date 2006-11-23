@@ -79,6 +79,7 @@ class fstabForm(mainForm):
         self.list_main_items=[]
         self.btn_Update.setEnabled(False)
         self.frame_detail.hide()
+        self.sessionLocked=True
 
         # Just for block devices
         self.knownFS=['ext3:Ext3',
@@ -98,14 +99,15 @@ class fstabForm(mainForm):
         self.connect(self.btn_Update, SIGNAL('clicked()'), self.slotUpdate)
         self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.fillDiskList)
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
-        self.connect(self.line_opts, SIGNAL('textChanged(const QString&)'), self.saveSession)
-        self.connect(self.line_mountpoint, SIGNAL('textChanged(const QString&)'), self.saveSession)
+        self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
+        self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
 
     def saveSession(self):
-        selected_=self.list_main.selectedItem()
-        selected =self.getDetailsOfSelected(selected_,key=True)
-        self.prettyList[selected[0]][selected[1]]['mount_point']=self.line_mountpoint.text()
-        self.prettyList[selected[0]][selected[1]]['options']=self.line_opts.text()
+        if not self.sessionLocked:
+            selected_=self.list_main.selectedItem()
+            selected =self.getDetailsOfSelected(selected_,key=True)
+            self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
+            self.prettyList[selected[0]][selected[1]]['options']=str(self.line_opts.text())
 
     def getDetailsOfSelected(self,selected,key=False):
         selectedDisk = str(selected.parent().text(0)).split('\n')[0]
@@ -135,9 +137,11 @@ class fstabForm(mainForm):
             if selected.isOn():
                 self.btn_Update.setEnabled(True)
             self.frame_detail.show()
+            self.sessionLocked=False
 
         except:
             self.frame_detail.hide()
+            self.sessionLocked=True
 
     def slotUpdate(self):
         pass
@@ -163,7 +167,6 @@ class fstabForm(mainForm):
                     check = QCheckListItem.Off
 
                 activePartition['partition_name']=partition[0]
-
                 partitions = QCheckListItem(disks,QString('%s\nMount Point : %s \t FileSystem Type : %s ' %
                                                   (activePartition['partition_name'],activePartition['mount_point'],activePartition['file_system'])),
                                                   QCheckListItem.CheckBox)
