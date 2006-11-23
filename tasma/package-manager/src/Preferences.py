@@ -31,6 +31,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.moveDownButton, SIGNAL("clicked()"), self.moveDown)
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
         self.connect(self.intervalCheck, SIGNAL("toggled(bool)"), self.enableCheckInterval)
+        self.connect(self.useCacheCheck, SIGNAL("toggled(bool)"), self.enableUseCache)
 
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
@@ -186,3 +187,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     def enableCheckInterval(self, state):
         self.intervalLabel.setEnabled(state)
         self.intervalSpin.setEnabled(state)
+
+    def enableUseCache(self, state):
+        self.useCacheLabel.setEnabled(state)
+        self.useCacheSize.setEnabled(state)
+        self.useCacheInfo.setEnabled(state)
+
