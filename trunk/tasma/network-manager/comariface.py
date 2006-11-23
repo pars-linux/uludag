@@ -81,10 +81,16 @@ class Connection(Hook):
         self.hash = self.hash(self.script, self.name)
 
 
+class AuthMode:
+    def __init__(self, mode):
+        self.id, self.type, self.name = mode.split(",", 2)
+
+
 class Link:
     def __init__(self, script, data):
         self.script = script
         self.remote_name = None
+        self.auth_modes = []
         for line in data.split("\n"):
             key, value = line.split("=", 1)
             if key == "type":
@@ -93,6 +99,9 @@ class Link:
                 self.name = value
             elif key == "modes":
                 self.modes = value.split(",")
+            elif key == "auth_modes":
+                for mode in value.split(";"):
+                    self.auth_modes.append(AuthMode(mode))
             elif key == "remote_name":
                 self.remote_name = value
 

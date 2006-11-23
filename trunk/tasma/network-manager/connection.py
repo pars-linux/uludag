@@ -67,21 +67,40 @@ class Settings(QWidget):
             row += 1
         
         # Authentication
-        if "passauth" in link.modes or "loginauth" in link.modes or "keyauth" in link.modes:
+        if "auth" in link.modes:
             line = widgets.HLine(i18n("Authentication"), self)
             grid.addMultiCellWidget(line, row, row, 0, 1)
             row += 1
             
             lab = QLabel(i18n("Mode:"), self)
             grid.addWidget(lab, row, 0, Qt.AlignRight)
-            self.auth_mode = QComboBox(self)
-            grid.addWidget(self.auth_mode, row, 1)
+            
+            grid2 = QGridLayout(grid, 2, 1, 12)
             row += 1
             
+            self.auth_mode = QComboBox(False, self)
+            self.connect(self.auth_mode, SIGNAL("activated(int)"), self.slotAuthToggle)
+            grid2.addWidget(self.auth_mode, 0, 0)
+            grid2.setColStretch(1, 2)
+            
             self.auth_mode.insertItem(i18n("No authentication"))
-            self.auth_mode.insertItem(i18n("Passphrase"))
-            self.auth_mode.insertItem(i18n("Login"))
-            self.auth_mode.insertItem(i18n("Key"))
+            flag = 0
+            for mode in link.auth_modes:
+                self.auth_mode.insertItem(mode.name)
+                if mode.type == "login":
+                    flag = 1
+            
+            self.auth_stack = QWidgetStack(self)
+            grid2.addWidget(self.auth_stack, 0, 1)
+            
+            lab = QLabel("", self)
+            self.auth_stack.addWidget(lab, 0)
+            
+            hb = QHBox(self)
+            hb.setSpacing(3)
+            QLabel(i18n("Password:"), hb)
+            QLineEdit(hb)
+            self.auth_stack.addWidget(hb, 1)
         
         # Communication
         if "net" in link.modes:
@@ -118,6 +137,9 @@ class Settings(QWidget):
         self.scan_use_but = but
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
         return pop
+    
+    def slotAuthToggle(self, i):
+        self.auth_stack.raiseWidget(i)
     
     def slotScanDouble(self, item):
         self.remote.setText(item.text())
