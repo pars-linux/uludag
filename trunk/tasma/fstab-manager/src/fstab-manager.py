@@ -101,6 +101,7 @@ class fstabForm(mainForm):
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
         self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
         self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
+        self.connect(self.combo_fs,SIGNAL('highlighted(const QString&)'),self.saveSession)
 
     def saveSession(self):
         if not self.sessionLocked:
@@ -108,6 +109,12 @@ class fstabForm(mainForm):
             selected =self.getDetailsOfSelected(selected_,key=True)
             self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
             self.prettyList[selected[0]][selected[1]]['options']=str(self.line_opts.text())
+            self.prettyList[selected[0]][selected[1]]['file_system']=self.getFsName(self.combo_fs.currentText())
+
+    def getFsName(self,fs):
+        for fileSystem in self.knownFS:
+            if fileSystem.split(':')[1]==fs:
+                return fileSystem.split(':')[0]
 
     def getDetailsOfSelected(self,selected,key=False):
         selectedDisk = str(selected.parent().text(0)).split('\n')[0]
