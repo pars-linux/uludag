@@ -84,8 +84,17 @@ class Connection(Hook):
 class Link:
     def __init__(self, script, data):
         self.script = script
-        self.type, self.name, self.remote_name = data.split("\n", 2)
-        self.modes = []
+        self.remote_name = None
+        for line in data.split("\n"):
+            key, value = line.split("=", 1)
+            if key == "type":
+                self.type = value
+            elif key == "name":
+                self.name = value
+            elif key == "modes":
+                self.modes = value.split(",")
+            elif key == "remote_name":
+                self.remote_name = value
 
 
 class ComarInterface(Hook):
@@ -99,6 +108,7 @@ class ComarInterface(Hook):
     
     def connect(self):
         self.com = comar.Link()
+        self.com.localize()
         self.queryLinks()
         self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
         self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
@@ -246,11 +256,11 @@ class ComarInterface(Hook):
             if not multiple or reply.command == "end":
                 break
             if reply.command == "result":
-                self.links[reply.script] = Link(reply.script, reply.data)
-        for link in self.links.values():
-            self.com.Net.Link[link.script].modes()
-            reply = self.com.read_cmd()
-            link.modes = reply.data.split(",")
+                try:
+                    self.links[reply.script] = Link(reply.script, reply.data)
+                except ValueError:
+                    # background compat hack
+                    pass
     
     def queryNames(self):
         self.com.Net.Stack.getHostNames(id=NAME_HOST)
