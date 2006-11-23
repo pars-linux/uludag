@@ -17,7 +17,7 @@ import shutil
 
 import kdedistutils
 
-version = "1.6.1"
+version = "1.6.2"
 
 distfiles = """
     AUTHORS
@@ -48,7 +48,7 @@ def make_dist():
             if not os.path.exists(dn):
                 os.mkdir(dn)
         shutil.copy(file_, os.path.join(distdir, file_))
-    os.popen("tar -czf %s %s" % ("firewall-config-" + version + ".tar.gz", distdir))
+    os.popen("tar -cjf %s %s" % ("firewall-config-" + version + ".tar.bz2", distdir))
     shutil.rmtree(distdir)
 
 if "dist" in sys.argv:
