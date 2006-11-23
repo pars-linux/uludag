@@ -47,7 +47,7 @@ class Window(QDialog):
             item = QListViewItem(self.links)
             item.setSelectable(False)
             item.setPixmap(0, icons.get_state(link.type, "up"))
-            item.setText(1, link.name)
+            item.setText(1, unicode(link.name))
             item.setText(2, link.script)
             item.setOpen(True)
             comlink.queryDevices(link.script)
