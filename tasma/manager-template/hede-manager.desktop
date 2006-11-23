@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Hede Manager
+Name[tr]=Hede Yöneticisi
+Comment=Sample Tasma Module
+Comment[tr]=Örnek Tasma Modülü
+X-KDE-ModuleType=Library
+X-KDE-Library=hede-manager
+X-KDE-FactoryName=hede_manager
+Type=Application
+Icon=hede_manager
+Exec=kcmshell hede-manager
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
