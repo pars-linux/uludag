@@ -35,7 +35,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP('Pardus Firewall Graphical User Interface')
-version = '1.6.1'
+version = '1.6.2'
 
 def AboutData():
     global version, description
@@ -153,8 +153,8 @@ class MainApplication(programbase):
             KGlobal.locale().insertCatalogue('firewall_config')
             # Create a configuration object.
             self.config = KConfig('firewall_config')
-            self.setButtons(0)
             self.aboutdata = AboutData()
+            self.setButtons(KCModule.Help | KCModule.Apply)
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
@@ -171,6 +171,9 @@ class MainApplication(programbase):
         self.profile = {}
         self.emptyRules()
         mainwidget.pushStatus.setEnabled(False)
+
+        if not standalone:
+            mainwidget.groupButtons.hide()
 
         # Tab 1 - Incoming Connections
         self.incoming = []
@@ -191,6 +194,7 @@ class MainApplication(programbase):
                 chk.setText(name)
                 frameIncomingLayout.addWidget(chk)
                 self.incoming.append(chk)
+                self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
 
         # Icons
         self.setIcon(loadIcon('firewall_config', size=48))
@@ -211,9 +215,9 @@ class MainApplication(programbase):
 
         self.connect(mainwidget.pushCancel, SIGNAL('clicked()'), self, SLOT('close()'))
         self.connect(mainwidget.pushOk, SIGNAL('clicked()'), self.slotOk)
-        self.connect(mainwidget.pushApply, SIGNAL('clicked()'),self.slotApply)
+        self.connect(mainwidget.pushApply, SIGNAL('clicked()'), self.slotApply)
 
-        self.connect(mainwidget.pushNewRule, SIGNAL('clicked()'),self.slotDialog)
+        self.connect(mainwidget.pushNewRule, SIGNAL('clicked()'), self.slotDialog)
 
         # Get FW state
         self.comar.call('Net.Filter.getProfile', id=4)
@@ -221,6 +225,9 @@ class MainApplication(programbase):
 
         self.comar.call('Net.Filter.getState', id=3)
         self.handleComar(self.comar.read_cmd())
+
+    def slotChanged(self):
+        self.changed()
 
     def slotComar(self, sock):
         self.handleComar(self.comar.read_cmd())
@@ -262,6 +269,7 @@ class MainApplication(programbase):
                 chk.setChecked(True)
                 mainwidget.frameAdvancedLayout.addWidget(chk)
                 self.advanced.append(chk)
+                self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
                 chk.show()
 
             mainwidget.frameIncoming.setEnabled(True)
@@ -394,20 +402,19 @@ class MainApplication(programbase):
     # KControl virtual void methods
     def load(self):
         pass
+
     def save(self):
-        pass
+        self.slotApply()
+
     def defaults(self):
         pass
+
     def sysdefaults(self):
         pass
 
     def aboutData(self):
         # Return the KAboutData object which we created during initialisation.
         return self.aboutdata
-
-    def buttons(self):
-        # Only supply a Help button. Other choices are Default and Apply.
-        return KCModule.Help
 
 # This is the entry point used when running this module outside of kcontrol.
 def main():
