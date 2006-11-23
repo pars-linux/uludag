@@ -9,6 +9,11 @@
 
 import os
 import re
+import sys
+
+if not os.path.exists("/boot/grub/grub.conf"):
+    # if there is no grub.conf then exit silently
+    sys.exit()
 
 # Determine latest kernel
 kernel = os.readlink("/boot/latestkernel").split("kernel-")[1]
