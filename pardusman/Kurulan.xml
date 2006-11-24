@@ -1,5 +1,5 @@
 <PardusmanProject type="install" size="734003200">
-    <Title>Pardus 2006-11-17</Title>
+    <Title>Pardus Sait Faik</Title>
     <WorkDir>/home/gurer/uludag/trunk/pardusman/test/</WorkDir>
     <ReleaseFiles>/home/gurer/uludag/trunk/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
@@ -16,10 +16,12 @@
         <SelectedPackage>alsa-oss</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>antiword</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>axel</SelectedPackage>
+        <SelectedPackage>basket</SelectedPackage>
         <SelectedPackage>bcm43xx-firmware</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
@@ -30,6 +32,7 @@
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
         <SelectedPackage>chromium</SelectedPackage>
+        <SelectedPackage>crack-attack</SelectedPackage>
         <SelectedPackage>crystal</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>digikam</SelectedPackage>
@@ -81,6 +84,7 @@
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
@@ -99,7 +103,6 @@
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
-        <SelectedPackage>kvpnc</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
@@ -216,11 +219,13 @@
         <Package>alsa-oss</Package>
         <Package>alsa-utils</Package>
         <Package>amarok</Package>
+        <Package>antiword</Package>
         <Package>apr</Package>
         <Package>apr-util</Package>
         <Package>apr-util1</Package>
         <Package>apr1</Package>
         <Package>arts</Package>
+        <Package>artwork</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
@@ -241,6 +246,7 @@
         <Package>axel</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
+        <Package>basket</Package>
         <Package>bc</Package>
         <Package>bcm43xx-firmware</Package>
         <Package>bind-tools</Package>
@@ -270,6 +276,9 @@
         <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
+        <Package>crack-attack</Package>
+        <Package>crack-attack-music</Package>
+        <Package>crack-attack-sounds</Package>
         <Package>cracklib</Package>
         <Package>cryptsetup-luks</Package>
         <Package>crystal</Package>
@@ -414,6 +423,7 @@
         <Package>katapult</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kde-i18n-de</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-tr</Package>
         <Package>kdeaddons</Package>
@@ -440,7 +450,6 @@
         <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>ktorrent</Package>
-        <Package>kvpnc</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lbreakout2</Package>
@@ -487,6 +496,7 @@
         <Package>libXxf86vm</Package>
         <Package>libao</Package>
         <Package>libart_lgpl</Package>
+        <Package>libassuan</Package>
         <Package>libavc1394</Package>
         <Package>libcaca</Package>
         <Package>libcap</Package>
@@ -517,6 +527,7 @@
         <Package>libieee1284</Package>
         <Package>libkexif</Package>
         <Package>libkipi</Package>
+        <Package>libksba</Package>
         <Package>liblazy</Package>
         <Package>liblbxutil</Package>
         <Package>libmad</Package>
@@ -621,6 +632,7 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
+        <Package>ntp-client</Package>
         <Package>ode</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
@@ -634,6 +646,7 @@
         <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
+        <Package>pardus-support</Package>
         <Package>parted</Package>
         <Package>patch</Package>
         <Package>pciutils</Package>
@@ -641,6 +654,7 @@
         <Package>perl</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
+        <Package>pinentry</Package>
         <Package>pisi</Package>
         <Package>pkgconfig</Package>
         <Package>poppler</Package>
@@ -725,6 +739,7 @@
         <Package>subversion</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
+        <Package>suspend</Package>
         <Package>swig</Package>
         <Package>synaptics</Package>
         <Package>sysfsutils</Package>
@@ -771,7 +786,6 @@
         <Package>vim</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
-        <Package>vpnc</Package>
         <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
