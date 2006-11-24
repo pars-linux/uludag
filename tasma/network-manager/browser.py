@@ -332,6 +332,7 @@ class Widget(QVBox):
         comlink.delete_hook.append(self.view.remove)
         comlink.state_hook.append(self.view.stateUpdate)
         comlink.hotplug_hook.append(self.view.hotPlug)
+        comlink.noconn_hook.append(self.slotCreate)
         comlink.connect()
     
     def slotCreate(self):
