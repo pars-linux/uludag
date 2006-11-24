@@ -97,11 +97,23 @@ class Settings(QWidget):
             self.auth_stack.addWidget(lab, 0)
             
             hb = QHBox(self)
-            hb.setSpacing(3)
+            hb.setSpacing(6)
             QLabel(i18n("Password:"), hb)
             self.auth_passphrase = QLineEdit(hb)
             self.auth_passphrase.setEchoMode(QLineEdit.Password)
             self.auth_stack.addWidget(hb, 1)
+            
+            if flag == 1:
+                w = QWidget(self)
+                grid3 = QGridLayout(w, 2, 2, 6)
+                grid3.addWidget(QLabel(i18n("User name:"), w), 0, 0, Qt.AlignRight)
+                self.auth_user = QLineEdit(w)
+                grid3.addWidget(self.auth_user, 0, 1)
+                grid3.addWidget(QLabel(i18n("Password:"), w), 1, 0, Qt.AlignRight)
+                self.auth_password = QLineEdit(w)
+                self.auth_password.setEchoMode(QLineEdit.Password)
+                grid3.addWidget(self.auth_password, 1, 1)
+                self.auth_stack.addWidget(w, 2)
         
         # Communication
         if "net" in link.modes:
@@ -261,8 +273,8 @@ class Settings(QWidget):
                             if mode.type == "pass":
                                 self.auth_passphrase.setText(unicode(conn.auth_pass))
                             elif mode.type == "login":
-                                # FIXME: set user and pass
-                                pass
+                                self.auth_user.setText(unicode(conn.auth_user))
+                                self.auth_password.setText(unicode(conn.auth_pass))
                             self.auth_mode.setCurrentItem(i)
                             self.slotAuthToggle(i)
                             break
@@ -315,8 +327,8 @@ class Settings(QWidget):
                     pw = unicode(self.auth_passphrase.text())
                     script_object.setAuthentication(name=name, authmode=mode.id, user="", password=pw)
                 elif mode.type == "login":
-                    u = ""
-                    pw = ""
+                    u = unicode(self.auth_user.text())
+                    pw = unicode(self.auth_password.text())
                     script_object.setAuthentication(name=name, authmode=mode.id, user=u, password=pw)
     
     def slotDevices(self, script, devices):
