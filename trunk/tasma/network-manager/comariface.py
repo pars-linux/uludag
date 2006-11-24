@@ -185,14 +185,18 @@ class ComarInterface(Hook):
         if reply.id == CONNINFO_AUTH:
             name, type = reply.data.split("\n", 1)
             conn = self.getConn(reply.script, name)
-            if type == "none":
-                conn.auth_mode = "none"
-            elif type.startswith("passauth "):
-                conn.auth_mode = "passauth"
-                conn.auth_pass = type.split(" ", 1)[1]
-            elif type.startswith("loginauth "):
-                conn.auth_mode = "loginauth"
-                conn.auth_user, conn.auth_pass = type[10:].split("\n", 1)
+            if "\n" in type:
+                type, rest = type.split("\n", 1)
+            conn.auth_mode = type
+            if type != "none":
+                link = self.links[reply.script]
+                for mode in link.auth_modes:
+                    if mode.id == type:
+                        if mode.type == "pass":
+                            conn.auth_pass = rest
+                        elif mode.type == "login":
+                            conn.auth_user, conn.auth_pass = rest.split("\n")
+                        break
             conn.i -= 1
             if conn.i == 0:
                 self.emitNew(conn)
