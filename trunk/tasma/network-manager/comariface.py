@@ -26,6 +26,10 @@ class Hook:
         self.name_hook = []
         self.remote_hook = []
         self.hotplug_hook = []
+        self.noconn_hook = []
+    
+    def emitNoConn(self):
+        map(lambda x: x(), self.noconn_hook)
     
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
@@ -129,6 +133,12 @@ class ComarInterface(Hook):
             self.handleReply(reply)
         elif reply.command == "notify":
             self.handleNotify(reply)
+        elif reply.command == "start":
+            pass
+        elif reply.command == "end":
+            if reply.id == CONNLIST:
+                if self.nr_queried == 0:
+                    self.emitNoConn()
         else:
             # FIXME: handle errors
             print reply
@@ -138,6 +148,7 @@ class ComarInterface(Hook):
             if reply.data != "":
                 for name in reply.data.split("\n"):
                     self.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
+                self.nr_queried += 1
         
         if reply.id == CONNINFO:
             conn = Connection(reply.script, reply.data)
@@ -284,6 +295,7 @@ class ComarInterface(Hook):
         self.com.ask_notify("Net.Link.connectionChanged")
         self.com.ask_notify("Net.Link.stateChanged")
         self.com.Net.Link.connections(id=CONNLIST)
+        self.nr_queried = 0
     
     def queryDevices(self, script):
         self.com.Net.Link[script].deviceList(id=DEVICES)

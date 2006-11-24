@@ -302,7 +302,7 @@ class Settings(QWidget):
             mode = "manual"
         
         conn = self.conn
-        script_object = comlink.com.Net.Link[self.conn.script]
+        script_object = comlink.com.Net.Link[self.link.script]
         
         if conn and conn.name != name:
             script_object.deleteConnection(name=conn.name)
