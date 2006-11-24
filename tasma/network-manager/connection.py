@@ -322,7 +322,7 @@ class Settings(QWidget):
             if i == 0:
                 script_object.setAuthentication(name=name, authmode="none", user="", password="")
             else:
-                mode = self.link.auth_modes[i]
+                mode = self.link.auth_modes[i-1]
                 if mode.type == "pass":
                     pw = unicode(self.auth_passphrase.text())
                     script_object.setAuthentication(name=name, authmode=mode.id, user="", password=pw)
