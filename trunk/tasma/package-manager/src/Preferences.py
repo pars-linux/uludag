@@ -42,7 +42,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         self.onlyGuiApp.setChecked(self.parent.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp"))
         self.intervalCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "UpdateCheck"))
-        self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval", 15))
+        self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
         self.reposChanged = False
 
