@@ -290,16 +290,18 @@ class Settings(QWidget):
     
     def useValues(self):
         name = str(self.name.edit.text())
-        address = self.address.text()
-        netmask = self.netmask.text()
-        gateway = self.gateway.text()
-        if self.r1.isChecked():
-            mode = "auto"
-            address = ""
-            netmask = ""
-            gateway = ""
-        else:
-            mode = "manual"
+        
+        if "net" in self.link.modes:
+            address = self.address.text()
+            netmask = self.netmask.text()
+            gateway = self.gateway.text()
+            if self.r1.isChecked():
+                mode = "auto"
+                address = ""
+                netmask = ""
+                gateway = ""
+            else:
+                mode = "manual"
         
         conn = self.conn
         script_object = comlink.com.Net.Link[self.link.script]
@@ -307,7 +309,8 @@ class Settings(QWidget):
         if conn and conn.name != name:
             script_object.deleteConnection(name=conn.name)
         
-        script_object.setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
+        if "net" in self.link.modes:
+            script_object.setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
         
         if conn == None or self.device_uid != conn.devid:
             script_object.setConnection(name=name, device=self.device_uid)

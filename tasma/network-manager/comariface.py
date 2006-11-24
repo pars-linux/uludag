@@ -154,10 +154,12 @@ class ComarInterface(Hook):
             conn = Connection(reply.script, reply.data)
             self.connections[conn.hash] = conn
             script = self.com.Net.Link[conn.script]
-            script.getAddress(name=conn.name, id=CONNINFO_ADDR)
             script.getState(name=conn.name, id=CONNINFO_STATE)
+            i = 1
             modes = self.links[conn.script].modes
-            i = 2
+            if "net" in modes:
+                script.getAddress(name=conn.name, id=CONNINFO_ADDR)
+                i += 1
             if "remote" in modes:
                 script.getRemote(name=conn.name, id=CONNINFO_REMOTE)
                 i += 1
