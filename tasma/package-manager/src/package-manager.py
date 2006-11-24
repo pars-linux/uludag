@@ -245,6 +245,21 @@ class MainApplicationWidget(QWidget):
 
     def upgradeState(self, showInfoMsg=False):
         self.setCursor(Qt.waitCursor)
+
+        # TODO:
+        # If package-manager is opened while tray is updating-repo; progress dialog is
+        # shown. And when it ends, pm switches to upgradeState but without checking
+        # operation buttons. If pm is not opened while this is done, no change state happens
+        # in pm, and when it is opened it will be seen in which state it was left.
+        #
+        # Later this background update may be done with a widget like kmail's small progress 
+        # and any operation button will be disabled when tray is caught while updating. For 
+        # now we show progress dialog and change pm state and button states manually.
+        self.parent.showUpgradeAction.setChecked(True)
+        self.parent.showNewAction.setChecked(False)
+        self.parent.showInstalledAction.setChecked(False)
+        ##
+
         upgradables = pisi.api.list_upgradable()
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
@@ -774,7 +789,6 @@ class MainApplicationWidget(QWidget):
     def trayUpgradeSwitch(self):
         self.resetState()
         self.state = upgrade_state
-        self.parent.showUpgradeAction.setChecked(True)
         self.upgradeState()
         self.processEvents()
 
