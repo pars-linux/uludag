@@ -13,7 +13,7 @@ import comar
 from qt import *
 from kdecore import i18n
 
-CONNLIST, CONNINFO, CONNINFO_STATE, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 11)
+CONNLIST, CONNINFO, CONNINFO_STATE, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, CONNINFO_DEVICE, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 12)
 
 
 class Hook:
@@ -166,6 +166,14 @@ class ComarInterface(Hook):
                 i += 1
             conn.i = i
         
+        if reply.id == CONNINFO_DEVICE:
+            name, devid, devname = reply.data.split("\n", 2)
+            conn = self.getConn(reply.script, name)
+            if conn:
+                conn.devid = devid
+                conn.devname = devname
+                # FIXME: move connection on the ui
+        
         if reply.id == CONNINFO_STATE:
             name, state = reply.data.split("\n", 1)
             conn = self.getConn(reply.script, name)
@@ -248,7 +256,14 @@ class ComarInterface(Hook):
                     del self.connections[conn.hash]
             elif what == "configured":
                 type, name = name.split(" ", 1)
-                # FIXME: query them: device, adress, state
+                if type == "device":
+                    comlink.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO_DEVICE)
+                elif type == "remote":
+                    comlink.com.Net.Link[reply.script].getRemote(name=name, id=CONNINFO_REMOTE)
+                elif type == "address":
+                    comlink.com.Net.Link[reply.script].getAddress(name=name, id=CONNINFO_ADDR)
+                elif type == "authentication":
+                    comlink.com.Net.Link[reply.script].getAuthentication(name=name, id=CONNINFO_AUTH)
         
         elif reply.notify == "Net.Link.stateChanged":
             name, state = reply.data.split("\n", 1)
