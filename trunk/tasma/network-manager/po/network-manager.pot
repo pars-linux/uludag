@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-23 00:11+0200\n"
+"POT-Creation-Date: 2006-11-24 15:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,71 +36,67 @@ msgstr ""
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:81
+#: connection.py:86
 msgid "No authentication"
 msgstr ""
 
-#: connection.py:82
-msgid "Passphrase"
+#: connection.py:101 connection.py:112
+msgid "Password:"
 msgstr ""
 
-#: connection.py:83
-msgid "Login"
+#: connection.py:109
+msgid "User name:"
 msgstr ""
 
-#: connection.py:84
-msgid "Key"
-msgstr ""
-
-#: connection.py:107
+#: connection.py:139
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:115
+#: connection.py:147
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:117
+#: connection.py:149
 msgid "Use"
 msgstr ""
 
-#: connection.py:148
+#: connection.py:188
 msgid "Network settings"
 msgstr ""
 
-#: connection.py:154
+#: connection.py:194
 msgid "Automatic query (DHCP)"
 msgstr ""
 
-#: connection.py:159
+#: connection.py:199
 msgid "Manual"
 msgstr ""
 
-#: connection.py:168
+#: connection.py:208
 msgid "Address:"
 msgstr ""
 
-#: connection.py:173 connection.py:186 connection.py:205
+#: connection.py:213 connection.py:226 connection.py:245
 msgid "Custom"
 msgstr ""
 
-#: connection.py:177
+#: connection.py:217
 msgid "Net mask:"
 msgstr ""
 
-#: connection.py:182
+#: connection.py:222
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:193 nameconf.py:42
+#: connection.py:233 nameconf.py:42
 msgid "Name servers"
 msgstr ""
 
-#: connection.py:203
+#: connection.py:243
 msgid "From query"
 msgstr ""
 
-#: connection.py:356
+#: connection.py:408
 msgid "Configure network connection"
 msgstr ""
 
@@ -112,11 +108,11 @@ msgstr ""
 msgid "Network manager module is already started!"
 msgstr ""
 
-#: comariface.py:272
+#: comariface.py:324
 msgid "new connection"
 msgstr ""
 
-#: nameconf.py:27 browser.py:317
+#: nameconf.py:27 browser.py:321
 msgid "Name Service Settings"
 msgstr ""
 
@@ -164,11 +160,11 @@ msgstr ""
 msgid "Automatic"
 msgstr ""
 
-#: browser.py:313
+#: browser.py:317
 msgid "New connection"
 msgstr ""
 
-#: browser.py:347
+#: browser.py:352
 msgid "Network Connections Help"
 msgstr ""
 
