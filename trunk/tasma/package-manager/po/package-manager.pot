@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-23 01:28+0200\n"
+"POT-Creation-Date: 2006-11-24 14:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,11 +45,11 @@ msgid "There are <b>%1</b> updates available!"
 msgstr ""
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
-#: src/package-manager.py:280
+#: src/package-manager.py:296
 msgid "Select all packages in this category"
 msgstr ""
 
-#: src/CustomEventListener.py:48 src/package-manager.py:282
+#: src/CustomEventListener.py:48 src/package-manager.py:298
 msgid "Reverse package selections"
 msgstr ""
 
@@ -143,21 +143,21 @@ msgstr ""
 msgid "Package Manager Help"
 msgstr ""
 
-#: src/Preferences.py:71
+#: src/Preferences.py:72
 msgid "Add New Repository"
 msgstr ""
 
-#: src/Preferences.py:78
+#: src/Preferences.py:79
 msgid "Edit Repository"
 msgstr ""
 
-#: src/Preferences.py:124 src/Preferences.py:140
+#: src/Preferences.py:125 src/Preferences.py:141
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
 
-#: src/Preferences.py:124 src/Preferences.py:140
+#: src/Preferences.py:125 src/Preferences.py:141
 msgid "Pisi Error"
 msgstr ""
 
@@ -201,7 +201,7 @@ msgstr ""
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/package-manager.py:52 src/package-manager.py:786
+#: src/package-manager.py:52 src/package-manager.py:801
 msgid "Package Manager"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgstr ""
 msgid "Show basket"
 msgstr ""
 
-#: src/package-manager.py:122 src/package-manager.py:222
+#: src/package-manager.py:122 src/package-manager.py:223
 msgid "Install Package(s)"
 msgstr ""
 
@@ -268,141 +268,141 @@ msgid ""
 "update."
 msgstr ""
 
-#: src/package-manager.py:238
+#: src/package-manager.py:239
 msgid "Remove Package(s)"
 msgstr ""
 
-#: src/package-manager.py:249
+#: src/package-manager.py:265
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: src/package-manager.py:251 src/package-manager.py:588
-#: src/package-manager.py:737
+#: src/package-manager.py:267 src/package-manager.py:604
+#: src/package-manager.py:753
 msgid "All"
 msgstr ""
 
-#: src/package-manager.py:255
+#: src/package-manager.py:271
 msgid "There are no updates available at this time"
 msgstr ""
 
-#: src/package-manager.py:349
+#: src/package-manager.py:365
 msgid "N\\A"
 msgstr ""
 
-#: src/package-manager.py:366
+#: src/package-manager.py:382
 msgid "Description: "
 msgstr ""
 
-#: src/package-manager.py:366
+#: src/package-manager.py:382
 msgid "Version: "
 msgstr ""
 
-#: src/package-manager.py:367
+#: src/package-manager.py:383
 msgid "Package Size: "
 msgstr ""
 
-#: src/package-manager.py:367
+#: src/package-manager.py:383
 msgid "Homepage: "
 msgstr ""
 
-#: src/package-manager.py:410
+#: src/package-manager.py:426
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: src/package-manager.py:413 src/package-manager.py:421
+#: src/package-manager.py:429 src/package-manager.py:437
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/package-manager.py:416
+#: src/package-manager.py:432
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr ""
 
-#: src/package-manager.py:418 src/package-manager.py:426
+#: src/package-manager.py:434 src/package-manager.py:442
 msgid "in your basket."
 msgstr ""
 
-#: src/package-manager.py:424
+#: src/package-manager.py:440
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr ""
 
-#: src/package-manager.py:457
+#: src/package-manager.py:473
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 
-#: src/package-manager.py:458 src/package-manager.py:468
+#: src/package-manager.py:474 src/package-manager.py:484
 msgid "Conflict Error"
 msgstr ""
 
-#: src/package-manager.py:464
+#: src/package-manager.py:480
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/package-manager.py:466
+#: src/package-manager.py:482
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/package-manager.py:467
+#: src/package-manager.py:483
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
 msgstr ""
 
-#: src/package-manager.py:580
+#: src/package-manager.py:596
 msgid "Others"
 msgstr ""
 
-#: src/package-manager.py:596
+#: src/package-manager.py:612
 msgid "Search Results"
 msgstr ""
 
-#: src/package-manager.py:617 src/package-manager.py:632
+#: src/package-manager.py:633 src/package-manager.py:648
 msgid "<b>Installing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:619 src/package-manager.py:636
+#: src/package-manager.py:635 src/package-manager.py:652
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:621 src/CommonText.py:3
+#: src/package-manager.py:637 src/CommonText.py:3
 msgid "downloading"
 msgstr ""
 
-#: src/package-manager.py:634
+#: src/package-manager.py:650
 msgid "<b>Removing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:671
+#: src/package-manager.py:687
 msgid "<b>Applying Repository Changes</b>"
 msgstr ""
 
-#: src/package-manager.py:674
+#: src/package-manager.py:690
 msgid "<b>Updating Repository</b>"
 msgstr ""
 
-#: src/package-manager.py:675
+#: src/package-manager.py:691
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: src/package-manager.py:828
+#: src/package-manager.py:845
 msgid "Show Installed Packages"
 msgstr ""
 
-#: src/package-manager.py:831
+#: src/package-manager.py:848
 msgid "Show New Packages"
 msgstr ""
 
-#: src/package-manager.py:833
+#: src/package-manager.py:850
 msgid "Show Upgradable Packages"
 msgstr ""
 
-#: src/package-manager.py:852
+#: src/package-manager.py:869
 msgid "Package to install"
 msgstr ""
 
-#: src/package-manager.py:855
+#: src/package-manager.py:872
 msgid "Package Manager is already running!"
 msgstr ""
 
