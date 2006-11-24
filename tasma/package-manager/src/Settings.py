@@ -12,6 +12,11 @@
 
 (general) = ("General")
 
+defaults = {"SystemTray":True,
+            "UpdateCheck":True,
+            "UpdateCheckInterval":60
+            }
+
 class Settings:
     def __init__(self, config):
         self.config = config
@@ -21,10 +26,18 @@ class Settings:
         self.config.writeEntry(option, value)
         self.config.sync()
 
-    def getBoolValue(self, group, option, default=False):
-        self.config.setGroup(group)
+    def getBoolValue(self, group, option):
+        default = self._initValue(group, option, False)
         return self.config.readBoolEntry(option, default)
 
-    def getNumValue(self, group, option, default=0):
-        self.config.setGroup(group)
+    def getNumValue(self, group, option):
+        default = self._initValue(group, option, 0)
         return self.config.readNumEntry(option, default)
+
+    def _initValue(self, group, option, value):
+        self.config.setGroup(group)
+
+        if defaults.has_key(option):
+            return defaults[option]
+        else:
+            return value
