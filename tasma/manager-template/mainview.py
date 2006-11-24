@@ -16,7 +16,7 @@ from kdeui import *
 from utility import *
 
 import kdedesigner
-from mainform import formMain
+from hede_manager import formMain
 
 import comar
 
