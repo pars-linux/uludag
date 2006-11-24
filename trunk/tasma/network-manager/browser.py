@@ -163,6 +163,7 @@ class Device(QWidget):
     def __init__(self, parent, name, id):
         QWidget.__init__(self, parent.viewport())
         self.name = name
+        self.devid = id
         self.f = QFont(self.font())
         self.f.setBold(True)
         fm = QFontMetrics(self.f)
@@ -288,6 +289,9 @@ class ConnectionView(QScrollView):
         dev.removeChild(conn)
         dev.connections.remove(conn)
         del self.connections[conn.conn.hash]
+        if len(dev.connections) == 0:
+            dev.hide()
+            del self.devices[dev.devid]
         self.myResize(self.width())
     
     def stateUpdate(self, conn):
