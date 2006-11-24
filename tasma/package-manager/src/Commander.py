@@ -22,12 +22,12 @@ class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
 
+        self.parent = parent
+
         try:
             self.comar = ComarIface.ComarIface(self)
         except:
             parent.showErrorMessage("Cannot connect to Comar daemon")
-
-        self.parent = parent
 
         # Init the database
         pisi.api.init(database=True, write=False)
