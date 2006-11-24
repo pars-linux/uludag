@@ -1,8 +1,8 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>mainForm</class>
+<class>formMain</class>
 <widget class="QWidget">
     <property name="name">
-        <cstring>mainForm</cstring>
+        <cstring>formMain</cstring>
     </property>
     <property name="geometry">
         <rect>
