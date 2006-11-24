@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-23 00:11+0200\n"
+"POT-Creation-Date: 2006-11-24 15:59+0200\n"
 "PO-Revision-Date: 2006-11-06 01:36+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: german <de@li.org>\n"
@@ -35,73 +35,69 @@ msgstr "Authentifikation"
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:81
+#: connection.py:86
 msgid "No authentication"
 msgstr "Keine Authentifikation"
 
-#: connection.py:82
+#: connection.py:101 connection.py:112
+msgid "Password:"
+msgstr "Passwort:"
+
+#: connection.py:109
 #, fuzzy
-msgid "Passphrase"
-msgstr "Kennwort:"
+msgid "User name:"
+msgstr "Hostname:"
 
-#: connection.py:83
-msgid "Login"
-msgstr "Anmeldung"
-
-#: connection.py:84
-msgid "Key"
-msgstr "Schlüssel"
-
-#: connection.py:107
+#: connection.py:139
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:115
+#: connection.py:147
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:117
+#: connection.py:149
 msgid "Use"
 msgstr ""
 
-#: connection.py:148
+#: connection.py:188
 #, fuzzy
 msgid "Network settings"
 msgstr "Netzwerk Einstellungen"
 
-#: connection.py:154
+#: connection.py:194
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: connection.py:159
+#: connection.py:199
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:168
+#: connection.py:208
 msgid "Address:"
 msgstr "Adresse:"
 
-#: connection.py:173 connection.py:186 connection.py:205
+#: connection.py:213 connection.py:226 connection.py:245
 msgid "Custom"
 msgstr ""
 
-#: connection.py:177
+#: connection.py:217
 msgid "Net mask:"
 msgstr "Netzmaske:"
 
-#: connection.py:182
+#: connection.py:222
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:193 nameconf.py:42
+#: connection.py:233 nameconf.py:42
 msgid "Name servers"
 msgstr "Name-Server"
 
-#: connection.py:203
+#: connection.py:243
 msgid "From query"
 msgstr ""
 
-#: connection.py:356
+#: connection.py:408
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
@@ -115,11 +111,11 @@ msgstr "Netzwerk Einstellungen"
 msgid "Network manager module is already started!"
 msgstr "Netzwerk KGA wird bereits ausgeführt!"
 
-#: comariface.py:272
+#: comariface.py:324
 msgid "new connection"
 msgstr "Neue Verbindung"
 
-#: nameconf.py:27 browser.py:317
+#: nameconf.py:27 browser.py:321
 #, fuzzy
 msgid "Name Service Settings"
 msgstr "Netzwerk Einstellungen"
@@ -174,12 +170,12 @@ msgstr "Verbindung löschen?"
 msgid "Automatic"
 msgstr ""
 
-#: browser.py:313
+#: browser.py:317
 #, fuzzy
 msgid "New connection"
 msgstr "Neue Verbindung"
 
-#: browser.py:347
+#: browser.py:352
 #, fuzzy
 msgid "Network Connections Help"
 msgstr "Netzwerkverbindungen"
@@ -211,8 +207,15 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 "Es ist noch kein Paket installiert um das Netzwerk über COMAR zu bilden."
 
-#~ msgid "Password:"
-#~ msgstr "Passwort:"
+#, fuzzy
+#~ msgid "Passphrase"
+#~ msgstr "Kennwort:"
+
+#~ msgid "Login"
+#~ msgstr "Anmeldung"
+
+#~ msgid "Key"
+#~ msgstr "Schlüssel"
 
 #~ msgid "Network:"
 #~ msgstr "Netzwerk:"

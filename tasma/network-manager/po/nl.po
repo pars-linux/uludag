@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-23 00:11+0200\n"
+"POT-Creation-Date: 2006-11-24 15:59+0200\n"
 "PO-Revision-Date: 2006-08-08 23:26+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -39,76 +39,72 @@ msgstr "Authenticatie"
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:81
+#: connection.py:86
 msgid "No authentication"
 msgstr "Geen toegang"
 
-#: connection.py:82
-#, fuzzy
-msgid "Passphrase"
+#: connection.py:101 connection.py:112
+msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: connection.py:83
-msgid "Login"
-msgstr "Gebruikersnaam"
+#: connection.py:109
+#, fuzzy
+msgid "User name:"
+msgstr "Hostnaam:"
 
-#: connection.py:84
-msgid "Key"
-msgstr "Sleutel"
-
-#: connection.py:107
+#: connection.py:139
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:115
+#: connection.py:147
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:117
+#: connection.py:149
 msgid "Use"
 msgstr ""
 
-#: connection.py:148
+#: connection.py:188
 #, fuzzy
 msgid "Network settings"
 msgstr "Netwerkinstellingen"
 
-#: connection.py:154
+#: connection.py:194
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch aanvragen (DHCP)"
 
-#: connection.py:159
+#: connection.py:199
 msgid "Manual"
 msgstr "Handmatig"
 
-#: connection.py:168
+#: connection.py:208
 msgid "Address:"
 msgstr "Adres:"
 
-#: connection.py:173 connection.py:186 connection.py:205
+#: connection.py:213 connection.py:226 connection.py:245
 msgid "Custom"
 msgstr ""
 
-#: connection.py:177
+#: connection.py:217
 msgid "Net mask:"
 msgstr "Netmask:"
 
-#: connection.py:182
+#: connection.py:222
 msgid "Gateway:"
 msgstr "Poort:"
 
 # naamservers
-#: connection.py:193 nameconf.py:42
+#: connection.py:233 nameconf.py:42
 #, fuzzy
 msgid "Name servers"
 msgstr "Nameservers"
 
-#: connection.py:203
+#: connection.py:243
 msgid "From query"
 msgstr ""
 
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:356
+#: connection.py:408
 #, fuzzy
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
@@ -123,11 +119,11 @@ msgstr "Netwerkinstellingen"
 msgid "Network manager module is already started!"
 msgstr "Netwerk KGA is al actief!"
 
-#: comariface.py:272
+#: comariface.py:324
 msgid "new connection"
 msgstr "nieuwe verbinding"
 
-#: nameconf.py:27 browser.py:317
+#: nameconf.py:27 browser.py:321
 #, fuzzy
 msgid "Name Service Settings"
 msgstr "Netwerkinstellingen"
@@ -190,12 +186,12 @@ msgstr "Verbinding verwijderen?"
 msgid "Automatic"
 msgstr ""
 
-#: browser.py:313
+#: browser.py:317
 #, fuzzy
 msgid "New connection"
 msgstr "nieuwe verbinding"
 
-#: browser.py:347
+#: browser.py:352
 #, fuzzy
 msgid "Network Connections Help"
 msgstr "Netwerkverbindingen"
@@ -229,6 +225,16 @@ msgstr "Installeer netwerkpakketten!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Er is nog geen pakket met de COMAR netwerkscripts geïnstalleerd."
 
+#, fuzzy
+#~ msgid "Passphrase"
+#~ msgstr "Wachtwoord:"
+
+#~ msgid "Login"
+#~ msgstr "Gebruikersnaam"
+
+#~ msgid "Key"
+#~ msgstr "Sleutel"
+
 #~ msgid "Unconfigured"
 #~ msgstr "Niet geconfigureerd"
 
@@ -237,9 +243,6 @@ msgstr "Er is nog geen pakket met de COMAR netwerkscripts geïnstalleerd."
 
 #~ msgid "Select a connection type:"
 #~ msgstr "Selecteer een verbindingstype:"
-
-#~ msgid "Password:"
-#~ msgstr "Wachtwoord:"
 
 #~ msgid "Network:"
 #~ msgstr "Netwerk:"
