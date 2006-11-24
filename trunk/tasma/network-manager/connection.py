@@ -99,7 +99,8 @@ class Settings(QWidget):
             hb = QHBox(self)
             hb.setSpacing(3)
             QLabel(i18n("Password:"), hb)
-            QLineEdit(hb)
+            self.auth_passphrase = QLineEdit(hb)
+            self.auth_passphrase.setEchoMode(QLineEdit.Password)
             self.auth_stack.addWidget(hb, 1)
         
         # Communication
@@ -139,7 +140,12 @@ class Settings(QWidget):
         return pop
     
     def slotAuthToggle(self, i):
-        self.auth_stack.raiseWidget(i)
+        if i == 0:
+            self.auth_stack.raiseWidget(0)
+        elif self.link.auth_modes[i-1].type == "pass":
+            self.auth_stack.raiseWidget(1)
+        elif self.link.auth_modes[i-1].type == "login":
+            self.auth_stack.raiseWidget(2)
     
     def slotScanDouble(self, item):
         self.remote.setText(item.text())
@@ -246,6 +252,21 @@ class Settings(QWidget):
                     self.address.setText(conn.net_addr)
                     self.netmask.setText(conn.net_mask)
                     self.gateway.setText(conn.net_gate)
+            if "auth" in self.link.modes:
+                self.auth_mode.setCurrentItem(0)
+                if conn.auth_mode != "none":
+                    i = 1
+                    for mode in self.link.auth_modes:
+                        if mode.id == conn.auth_mode:
+                            if mode.type == "pass":
+                                self.auth_passphrase.setText(unicode(conn.auth_pass))
+                            elif mode.type == "login":
+                                # FIXME: set user and pass
+                                pass
+                            self.auth_mode.setCurrentItem(i)
+                            self.slotAuthToggle(i)
+                            break
+                        i += 1
         else:
             self.name.edit.setText(unicode(comlink.uniqueName()))
             self.device_uid = self.new_conn[0]
@@ -269,40 +290,34 @@ class Settings(QWidget):
             mode = "manual"
         
         conn = self.conn
-        script = self.link.script
+        script_object = comlink.com.Net.Link[self.conn.script]
         
         if conn and conn.name != name:
-            comlink.com.Net.Link[script].deleteConnection(name=conn.name)
+            script_object.deleteConnection(name=conn.name)
         
-        comlink.com.Net.Link[script].setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
+        script_object.setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
         
         if conn == None or self.device_uid != conn.devid:
-            comlink.com.Net.Link[script].setConnection(name=name, device=self.device_uid)
+            script_object.setConnection(name=name, device=self.device_uid)
         
         if "remote" in self.link.modes:
             remote = self.remote.text()
             if conn == None or remote != self.conn.remote:
-                comlink.com.Net.Link[script].setRemote(name=name, remote=remote)
+                script_object.setRemote(name=name, remote=remote)
         
-        return
-        #FIXME: remains
-        if "passauth" in self.modes or "loginauth" in self.modes or "keyauth" in self.modes:
-            r = self.auth.group.selectedId()
-            if r == 0:
-                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
-                    "name", name, "user", "", "password", "", "key", "" ], id)
-            elif r == 1:
-                u1 = unicode(self.auth.phrase.edit.text())
-                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
-                    "name", name, "user", "", "password", u1, "key", "" ], id)
-            elif r == 2:
-                u1 = unicode(self.auth.name.edit.text())
-                u2 = unicode(self.auth.password.edit.text())
-                self.comar.call_package("Net.Link.setAuthentication", self.link_name, [
-                    "name", name, "user", u1, "password", u2, "key", "" ], id)
-            elif r == 3:
-                # FIXME: key
-                pass
+        if "auth" in self.link.modes:
+            i = self.auth_mode.currentItem()
+            if i == 0:
+                script_object.setAuthentication(name=name, authmode="none", user="", password="")
+            else:
+                mode = self.link.auth_modes[i]
+                if mode.type == "pass":
+                    pw = unicode(self.auth_passphrase.text())
+                    script_object.setAuthentication(name=name, authmode=mode.id, user="", password=pw)
+                elif mode.type == "login":
+                    u = ""
+                    pw = ""
+                    script_object.setAuthentication(name=name, authmode=mode.id, user=u, password=pw)
     
     def slotDevices(self, script, devices):
         if script != self.link.script:

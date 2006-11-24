@@ -150,7 +150,7 @@ class ComarInterface(Hook):
             if "remote" in modes:
                 script.getRemote(name=conn.name, id=CONNINFO_REMOTE)
                 i += 1
-            if "passauth" in modes or "keyauth" in modes or "loginauth" in modes:
+            if "auth" in modes:
                 script.getAuthentication(name=conn.name, id=CONNINFO_AUTH)
                 i += 1
             conn.i = i
