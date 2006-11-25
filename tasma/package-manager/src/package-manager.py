@@ -392,6 +392,11 @@ class MainApplicationWidget(QWidget):
 
     def setLastSelected(self):
         item = self.listView.firstChild()
+
+        # FIXME: a quick and ugly hack to see if we are in search state.
+        if item.text(0) == i18n("Search Results"):
+            return item
+
         for i in self.componentDict.keys():
             if self.componentDict[i].name == self.lastSelectedComponent:
                 item = i
