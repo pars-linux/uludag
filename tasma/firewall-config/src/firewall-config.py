@@ -191,7 +191,7 @@ class MainApplication(programbase):
         for key, (list_rules, name) in rules.filter.iteritems():
             if key.startswith('in'):
                 chk = QCheckBox(mainwidget.frameIncoming, key)
-                chk.setText(name)
+                chk.setText(i18n(name))
                 frameIncomingLayout.addWidget(chk)
                 self.incoming.append(chk)
                 self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
