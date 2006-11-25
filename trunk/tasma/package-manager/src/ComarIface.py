@@ -39,7 +39,7 @@ class ComarIface:
 
     def updateRepo(self, repo):
         self.com_lock.lock()
-        self.com.call("System.Manager.upgradeRepository", ["repository",repo])
+        self.com.call("System.Manager.updateRepository", ["repository",repo])
 
     def updateAllRepos(self):
         self.com_lock.lock()
