@@ -27,8 +27,8 @@ filter = {
     ),
     'inWFS': (
         [
-            '-A PARDUS-IN-USER -p udp -m multiport --dports 137,138 -j ACCEPT',
-            '-A PARDUS-IN-USER -p tcp -m multiport --dports 139,445 -j ACCEPT',
+            '-A PARDUS-IN-USER -p udp -m multiport --dports 137:139,445 -j ACCEPT',
+            '-A PARDUS-IN-USER -p tcp -m multiport --dports 137:139,445 -j ACCEPT',
         ],
         i18n('Windows file sharing service'),
     ),
