@@ -160,6 +160,8 @@ class MainApplicationWidget(QWidget):
         self.connect(self.basketAction,SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction,SIGNAL("clicked()"),self.takeAction)
 
+        self.command = Commander.Commander(self)
+
         self.delayTimer = QTimer(self)
         self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadComponentList)
         self.delayTimer.start(500, True)
@@ -176,8 +178,6 @@ class MainApplicationWidget(QWidget):
         self.settings = Settings.Settings(kapp.config())
 
     def lazyLoadComponentList(self):
-        self.command = Commander.Commander(self)
-
         # pisi should now be ready for tray to get upgrades info
         self.parent.tray.updateTrayIcon()
  
@@ -784,11 +784,11 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.show()
         self.command.startUpdate()
 
-    def trayUpdateCheck(self):
+    def trayUpdateCheck(self, repo = None):
         self.parent.showUpgradeAction.setEnabled(False)
         self.processEvents()
         self.progressDialog.hideStatus(True)
-        self.command.startUpdate()
+        self.command.startUpdate(repo)
 
     def trayUpgradeSwitch(self):
         self.resetState()
