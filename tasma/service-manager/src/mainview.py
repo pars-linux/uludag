@@ -61,9 +61,9 @@ class serviceItem(KListViewItem):
             if s1 == s2:
                 return 0
             elif s1 > s2:
-                return 1
-            else:
                 return -1
+            else:
+                return 1
         else:
             return QListViewItem.compare(self, other, col, asc)
 
@@ -79,6 +79,8 @@ class widgetMain(formMain):
 
         self.listServices.setSorting(1)
         self.listServices.setColumnText(0, '')
+        self.listServices.setColumnWidth(0, 22)
+        self.listServices.setColumnWidthMode(0, QListView.Manual)
 
         self.buttonStart.setIconSet(getIconSet('player_play', 32))
         self.buttonStop.setIconSet(getIconSet('player_stop', 32))
@@ -87,6 +89,10 @@ class widgetMain(formMain):
         self.radioNoAutoRun.setEnabled(False)
         self.buttonStart.setEnabled(False)
         self.buttonStop.setEnabled(False)
+
+        # Access Control
+        self.wheel = False
+        self.comar.can_access('System.Service.setState', id=10)
 
         # Populate list
         self.populateList()
@@ -134,8 +140,11 @@ class widgetMain(formMain):
                     item.setState(state)
                     if item == self.listServices.selectedItem():
                         self.updateItemStatus(item)
+            elif reply.id == 10:
+                self.wheel = True
         elif reply.command == 'denied':
-            KMessageBox.error(self, i18n('You are not allowed to do this operation.'), i18n('Access Denied'))
+            if reply.id != 10:
+                KMessageBox.error(self, i18n('You are not allowed to do this operation.'), i18n('Access Denied'))
         elif reply.command == 'error':
             KMessageBox.error(self, i18n('COMAR script execution failed.'), i18n('Script Error'))
         elif reply.command == 'fail':
@@ -185,10 +194,12 @@ class widgetMain(formMain):
             QToolTip.add(self.buttonStop, i18n('Stop'))
 
             if item.state:
-                self.buttonStop.setEnabled(True)
+                if self.wheel:
+                    self.buttonStop.setEnabled(True)
                 info.append(i18n('%s is running.').replace('%s', item.description))
             else:
-                self.buttonStart.setEnabled(True)
+                if self.wheel:
+                    self.buttonStart.setEnabled(True)
                 info.append(i18n('%s is not running.').replace('%s', item.description))
         else:
             QToolTip.add(self.buttonStart, i18n('Execute startup script'))
@@ -196,19 +207,20 @@ class widgetMain(formMain):
 
             info.append(item.description)
 
-            self.buttonStop.setEnabled(True)
-            self.buttonStart.setEnabled(True)
+            if self.wheel:
+                self.buttonStop.setEnabled(True)
+                self.buttonStart.setEnabled(True)
 
-        self.radioAutoRun.setEnabled(True)
-        self.radioAutoRun.setChecked(False)
-        self.radioNoAutoRun.setEnabled(True)
-        self.radioNoAutoRun.setChecked(False)
+        if self.wheel:
+            self.radioAutoRun.setEnabled(True)
+            self.radioAutoRun.setChecked(False)
+            self.radioNoAutoRun.setEnabled(True)
+            self.radioNoAutoRun.setChecked(False)
+
         if item.autostart:
             self.radioAutoRun.setChecked(True)
         else:
             self.radioNoAutoRun.setChecked(True)
-
-        info.append('')
 
         self.textInformation.setText(unicode('\n'.join(info)))
 
