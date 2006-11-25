@@ -16,8 +16,6 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
-import Commander
-
 from pisi.api import list_upgradable
 
 from BalloonMessage import *
