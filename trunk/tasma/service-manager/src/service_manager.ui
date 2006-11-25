@@ -118,7 +118,7 @@
                     <property name="name">
                         <cstring>layout2</cstring>
                     </property>
-                    <vbox>
+                    <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
@@ -174,7 +174,7 @@
                                 <string>Stop</string>
                             </property>
                         </widget>
-                    </vbox>
+                    </hbox>
                 </widget>
             </grid>
         </widget>
@@ -247,6 +247,9 @@
                 </size>
             </property>
             <property name="allColumnsShowFocus">
+                <bool>true</bool>
+            </property>
+            <property name="showSortIndicator">
                 <bool>true</bool>
             </property>
         </widget>
