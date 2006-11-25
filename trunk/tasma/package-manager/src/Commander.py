@@ -109,8 +109,11 @@ class Commander(QObject):
             self.comar.com_lock.unlock()
             pass
 
-    def startUpdate(self):
-        self.updateAllRepos()
+    def startUpdate(self, repo = None):
+        if repo is None:
+            self.updateAllRepos()
+        else:
+            self.updateRepo(repo)
 
     def install(self,apps):
         apps = string.join(apps,",")

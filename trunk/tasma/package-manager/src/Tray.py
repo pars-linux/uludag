@@ -16,6 +16,8 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
+import Commander
+
 from pisi.api import list_upgradable
 
 from BalloonMessage import *
@@ -32,6 +34,17 @@ class Tray(KSystemTray):
         self.timer.connect(self.timer, SIGNAL("timeout()"), self.checkUpdate)
         self.interval = 0
         self.lastUpgrades = []
+
+        self.popupMenu = KPopupMenu(self.contextMenu())
+        self.contextMenu().insertItem("Update", self.popupMenu)
+
+        for repo in self.parent.mainwidget.command.getRepoList():
+            self.popupMenu.insertItem("%s" % repo) # self.command.updateRepo
+
+        self.connect(self.popupMenu, SIGNAL("activated(int)"), self.slotUpdateRepo)
+
+    def slotUpdateRepo(self, id):
+        self.checkUpdate(self.contextMenu().text(id))
 
     def showPopup(self):
         from sets import Set as set 
@@ -58,14 +71,18 @@ class Tray(KSystemTray):
             if interval:
                 self.timer.start(interval)
 
-    def checkUpdate(self):
+    def checkUpdate(self, repo = None):
         manager = self.parent.mainwidget
         # if package-manager is being used, do not start update-repo operation, this may annoy users.
         # And also if a command is in progress do not try to check updates.
-        if not self.parent.isHidden() or manager.command.inProgress():
+        # Or if update-repo called from tray menu only check command.inProgress()
+        if repo is None:
+            if not self.parent.isHidden() or manager.command.inProgress():
+                return
+        elif manager.command.inProgress():
             return
 
-        manager.trayUpdateCheck()
+        manager.trayUpdateCheck(repo)
 
     # stolen from Akregator
     def updateTrayIcon(self):
