@@ -785,10 +785,18 @@ class MainApplicationWidget(QWidget):
         self.command.startUpdate()
 
     def trayUpdateCheck(self, repo = None):
+        # timer interval check should not be run if package-manager is not hidden.
+        if not repo and not self.parent.isHidden():
+            return
+
         self.parent.showUpgradeAction.setEnabled(False)
         self.processEvents()
         self.progressDialog.hideStatus(True)
         self.command.startUpdate(repo)
+
+        # update a specific repo command is given by the user
+        if repo and not self.parent.isHidden():
+            self.progressDialog.show()
 
     def trayUpgradeSwitch(self):
         self.resetState()
