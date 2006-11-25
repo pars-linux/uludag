@@ -285,7 +285,7 @@ void kio_sysinfoProtocol::cpuInfo()
 
 QString kio_sysinfoProtocol::diskInfo()
 {
-    QString result = "<table><tr><th>" + i18n( "Device" ) + "</th><th>" + i18n( "Filesystem" ) + "</th><th>" +
+    QString result = "<table><tr><th></th><th>" + i18n( "Device" ) + "</th><th>" + i18n( "Filesystem" ) + "</th><th>" +
                      i18n( "Total space" ) + "</th><th>" + i18n( "Available space" ) + "</th></tr>";
 
     if ( fillMediaDevices() )
