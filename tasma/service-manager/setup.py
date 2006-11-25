@@ -21,6 +21,7 @@ version = '1.1.3'
 distfiles = """
     README
     AUTHORS
+    *.py
     src/*.ui
     src/*.png
     src/*.py
