@@ -39,13 +39,12 @@ class Tray(KSystemTray):
         for repo in self.parent.mainwidget.command.getRepoList():
             self.popupMenu.insertItem("%s" % repo)
         self.popupMenu.insertSeparator()
-        self.popupMenu.insertItem(i18n("All"))
+        self.id = self.popupMenu.insertItem(i18n("All"))
 
         self.connect(self.popupMenu, SIGNAL("activated(int)"), self.slotUpdateRepo)
 
     def slotUpdateRepo(self, id):
-        entry = self.contextMenu().text(id)
-        if entry == i18n("All"):
+        if id == self.id:
             self.checkUpdate()
         else:
             self.checkUpdate(self.contextMenu().text(id))
