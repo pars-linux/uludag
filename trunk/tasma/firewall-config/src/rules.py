@@ -1,6 +1,4 @@
-from qt import *
-from kdecore import *
-from kdeui import *
+i18n = lambda x: x
 
 profile = {
     'profile': 'pardus',
