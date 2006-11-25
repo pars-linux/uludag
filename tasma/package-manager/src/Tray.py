@@ -34,10 +34,10 @@ class Tray(KSystemTray):
         self.lastUpgrades = []
 
         self.popupMenu = KPopupMenu(self.contextMenu())
-        self.contextMenu().insertItem("Update", self.popupMenu)
+        self.contextMenu().insertItem(i18n("Update"), self.popupMenu)
 
         for repo in self.parent.mainwidget.command.getRepoList():
-            self.popupMenu.insertItem("%s" % repo) # self.command.updateRepo
+            self.popupMenu.insertItem("%s" % repo)
 
         self.connect(self.popupMenu, SIGNAL("activated(int)"), self.slotUpdateRepo)
 
