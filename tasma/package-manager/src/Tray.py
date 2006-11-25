@@ -77,13 +77,8 @@ class Tray(KSystemTray):
 
     def checkUpdate(self, repo = None):
         manager = self.parent.mainwidget
-        # if package-manager is being used, do not start update-repo operation, this may annoy users.
-        # And also if a command is in progress do not try to check updates.
-        # Or if update-repo called from tray menu only check command.inProgress()
-        if repo is None:
-            if not self.parent.isHidden() or manager.command.inProgress():
-                return
-        elif manager.command.inProgress():
+        # timer check should not be run if any command is in progress
+        if manager.command.inProgress():
             return
 
         manager.trayUpdateCheck(repo)
