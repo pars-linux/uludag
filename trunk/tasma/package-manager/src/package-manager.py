@@ -242,7 +242,7 @@ class MainApplicationWidget(QWidget):
         self.updateStatusBar()
         self.setCursor(Qt.arrowCursor)
 
-    def upgradeState(self, showInfoMsg=False):
+    def upgradeState(self):
         self.setCursor(Qt.waitCursor)
 
         # TODO:
@@ -265,9 +265,6 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setIconSet(loadIconSet("reload"))
         self.lastSelectedComponent = i18n("All")
         self.setLastSelected()
-
-        if not upgradables and showInfoMsg:
-            KMessageBox.information(self,i18n("There are no updates available at this time"))
 
         self.basket.setState(self.state)
         self.updateStatusBar()
@@ -719,20 +716,20 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.closeForced()
         self.progressDialog.reset()
 
-        if command == "System.Manager.updateAllRepositories":
+        if command in ["System.Manager.updateAllRepositories",
+                       "System.Manager.updateRepository"]:
             if self.parent.isHidden():
                 self.parent.tray.showPopup()
             else:
-                self.upgradeState(showInfoMsg=True)
+                self.refreshState()
 
         elif command == "System.Manager.setRepositories":
             self.updateCheck()
 
-        elif command in ["System.Manager.updateAllRepositories",
-                       "System.Manager.updatePackage",
-                       "System.Manager.installPackage",
-                       "System.Manager.removePackage",
-                       "System.Manager.cancelled"]:
+        elif command in ["System.Manager.updatePackage",
+                         "System.Manager.installPackage",
+                         "System.Manager.removePackage",
+                         "System.Manager.cancelled"]:
             self.refreshState()
 
         self.parent.tray.updateTrayIcon()
@@ -784,9 +781,9 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.show()
         self.command.startUpdate()
 
-    def trayUpdateCheck(self, repo = None):
+    def trayUpdateCheck(self, repo = None, forced = False):
         # timer interval check should not be run if package-manager is not hidden.
-        if not repo and not self.parent.isHidden():
+        if not forced and not self.parent.isHidden():
             return
 
         self.parent.showUpgradeAction.setEnabled(False)
@@ -794,8 +791,8 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.hideStatus(True)
         self.command.startUpdate(repo)
 
-        # update a specific repo command is given by the user
-        if repo and not self.parent.isHidden():
+        # update repo command is given by the user
+        if forced and not self.parent.isHidden():
             self.progressDialog.show()
 
     def trayUpgradeSwitch(self):

@@ -45,9 +45,9 @@ class Tray(KSystemTray):
 
     def slotUpdateRepo(self, id):
         if id == self.id:
-            self.checkUpdate()
+            self.checkUpdate(forced=True)
         else:
-            self.checkUpdate(self.contextMenu().text(id))
+            self.checkUpdate(repo=self.contextMenu().text(id), forced=True)
 
     def showPopup(self):
         from sets import Set as set 
@@ -74,13 +74,13 @@ class Tray(KSystemTray):
             if interval:
                 self.timer.start(interval)
 
-    def checkUpdate(self, repo = None):
+    def checkUpdate(self, repo = None, forced = False):
         manager = self.parent.mainwidget
-        # timer check should not be run if any command is in progress
+        # timer interval check should not be run if any command is in progress
         if manager.command.inProgress():
             return
 
-        manager.trayUpdateCheck(repo)
+        manager.trayUpdateCheck(repo, forced)
 
     # stolen from Akregator
     def updateTrayIcon(self):
