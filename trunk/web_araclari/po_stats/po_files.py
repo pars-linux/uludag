@@ -15,10 +15,10 @@ po_files["tr"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk
                   "Müdür": "http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/tr.po",
                   "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/tr/kio_sysinfo.po",
                   "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/tr.po",
-                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/tr/kaptan.po"}
+                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/tr.po"}
 
 po_files["nl"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/nl.po",
-                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/nl/kaptan.po",
+                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/nl.po",
                   "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/nl.po",
                   "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/nl/kio_sysinfo.po",
                   "Müdür": "http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/nl.po",
@@ -42,4 +42,4 @@ po_files["de"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk
                   "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/de.po",
                   "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/de.po",
                   "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/de.po",
-                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/de/kaptan.po"}
+                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/de.po"}
