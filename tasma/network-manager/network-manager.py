@@ -52,7 +52,7 @@ class Module(KCModule):
         KCModule.__init__(self, parent, name)
         KGlobal.locale().insertCatalogue(mod_app)
         self.config = KConfig(mod_app)
-        self.setButtons(self.Help)
+        self.setButtons(0)
         self.aboutdata = AboutData()
         attachMainWidget(self)
     
