@@ -28,6 +28,8 @@ K_EXPORT_COMPONENT_FACTORY(kfile_pisi, PisiFactory("kfile_pisi"))
 
 PisiPlugin::PisiPlugin(QObject *parent, const char *name, const QStringList &args) : KFilePlugin(parent, name, args)
 {
+    KGlobal::locale()->insertCatalogue("tasma");
+
     KFileMimeTypeInfo* info = addMimeTypeInfo( "application/x-pisi" );
 
     KFileMimeTypeInfo::GroupInfo* group = 0L;
