@@ -1,3 +1,6 @@
+2006-11-26 İsmail Dönmez <ismail [at] pardus.org.tr>
+    * Ported to CMake
+
 2005-12-07 İsmail Dönmez <ismail [at] pardus.org.tr>
     * Kaptan 1.0
 
