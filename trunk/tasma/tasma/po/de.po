@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tasma\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-26 20:58+0200\n"
+"POT-Creation-Date: 2006-11-26 21:00+0200\n"
 "PO-Revision-Date: 2006-11-03 00:01+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: german <german@li.org>\n"
@@ -32,12 +32,12 @@ msgstr "(c) 2005, TUBITAK - UEKAE"
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
 msgstr "(c) 2005, TUBITAK - UEKAE"
 
-#: modules/tasmatv/tvconfigui.cpp:155 rc.cpp:51
+#: modules/tasmatv/tvconfigui.cpp:155 rc.cpp:48
 #, no-c-format
 msgid "28 Mhz Crystal"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:156 rc.cpp:54
+#: modules/tasmatv/tvconfigui.cpp:156 rc.cpp:51
 #, no-c-format
 msgid "35 Mhz Crystal"
 msgstr ""
@@ -50,7 +50,7 @@ msgstr "<big>Lädt...</big>"
 msgid "About Current Module"
 msgstr "Über das aktuelle Module"
 
-#: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:39
+#: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:36
 #, no-c-format
 msgid "Addons"
 msgstr ""
@@ -67,7 +67,7 @@ msgstr "Aktueller Verwalter des Programms"
 msgid "Description"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:48
+#: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:45
 #, no-c-format
 msgid "Do not use PLL"
 msgstr ""
@@ -91,13 +91,13 @@ msgid "KDE Developers"
 msgstr "Die KDE Entwickler"
 
 #: modules/tasmatv/tvconfigui.cpp:138 modules/tasmatv/tvconfigui.cpp:146
-#: rc.cpp:12 rc.cpp:27
+#: rc.cpp:9 rc.cpp:24
 #, no-c-format
 msgid "Manufacturer"
 msgstr ""
 
 #: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:147
-#: rc.cpp:9 rc.cpp:30
+#: rc.cpp:6 rc.cpp:27
 #, no-c-format
 msgid "Model"
 msgstr ""
@@ -112,7 +112,7 @@ msgstr ""
 
 #: modules/tasmatv/tvconfigui.cpp:140 modules/tasmatv/tvconfigui.cpp:142
 #: modules/tasmatv/tvconfigui.cpp:145 modules/tasmatv/tvconfigui.cpp:149
-#: rc.cpp:15 rc.cpp:18 rc.cpp:24 rc.cpp:33
+#: rc.cpp:12 rc.cpp:15 rc.cpp:21 rc.cpp:30
 #, no-c-format
 msgid "New Item"
 msgstr ""
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Pardus Configuration Center"
 msgstr "Pardus Konfigurationszentrum"
 
-#: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:45
+#: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:42
 #, no-c-format
 msgid "Phase Locked Loop (PLL)"
 msgstr ""
@@ -138,7 +138,7 @@ msgstr ""
 msgid "PiSi Package Info"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:42
+#: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:39
 #, no-c-format
 msgid "Radio Card"
 msgstr ""
@@ -166,12 +166,12 @@ msgstr ""
 "die Verwendung der Module in TASMA, können Sie die Systemvoreinstellungen "
 "optimieren."
 
-#: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:21
+#: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:18
 #, no-c-format
 msgid "Tuner"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:143 rc.cpp:6
+#: modules/tasmatv/tvconfigui.cpp:143 rc.cpp:3
 #, no-c-format
 msgid "Tv Card"
 msgstr ""
@@ -180,8 +180,7 @@ msgstr ""
 msgid "Tv card configuration module for TASMA."
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:136 rc.cpp:3
-#, no-c-format
+#: modules/tasmatv/tvconfigui.cpp:136
 msgid "TvConfigUI"
 msgstr ""
 

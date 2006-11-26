@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2006-11-26 20:58+0200\n"
+"POT-Creation-Date: 2006-11-26 21:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,66 +117,65 @@ msgstr ""
 msgid "Tv card configuration module for TASMA."
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:136 rc.cpp:3
-#, no-c-format
+#: modules/tasmatv/tvconfigui.cpp:136
 msgid "TvConfigUI"
 msgstr ""
 
 #: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:147
-#: rc.cpp:9 rc.cpp:30
+#: rc.cpp:6 rc.cpp:27
 #, no-c-format
 msgid "Model"
 msgstr ""
 
 #: modules/tasmatv/tvconfigui.cpp:138 modules/tasmatv/tvconfigui.cpp:146
-#: rc.cpp:12 rc.cpp:27
+#: rc.cpp:9 rc.cpp:24
 #, no-c-format
 msgid "Manufacturer"
 msgstr ""
 
 #: modules/tasmatv/tvconfigui.cpp:140 modules/tasmatv/tvconfigui.cpp:142
 #: modules/tasmatv/tvconfigui.cpp:145 modules/tasmatv/tvconfigui.cpp:149
-#: rc.cpp:15 rc.cpp:18 rc.cpp:24 rc.cpp:33
+#: rc.cpp:12 rc.cpp:15 rc.cpp:21 rc.cpp:30
 #, no-c-format
 msgid "New Item"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:143 rc.cpp:6
+#: modules/tasmatv/tvconfigui.cpp:143 rc.cpp:3
 #, no-c-format
 msgid "Tv Card"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:21
+#: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:18
 #, no-c-format
 msgid "Tuner"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:39
+#: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:36
 #, no-c-format
 msgid "Addons"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:42
+#: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:39
 #, no-c-format
 msgid "Radio Card"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:45
+#: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:42
 #, no-c-format
 msgid "Phase Locked Loop (PLL)"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:48
+#: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:45
 #, no-c-format
 msgid "Do not use PLL"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:155 rc.cpp:51
+#: modules/tasmatv/tvconfigui.cpp:155 rc.cpp:48
 #, no-c-format
 msgid "28 Mhz Crystal"
 msgstr ""
 
-#: modules/tasmatv/tvconfigui.cpp:156 rc.cpp:54
+#: modules/tasmatv/tvconfigui.cpp:156 rc.cpp:51
 #, no-c-format
 msgid "35 Mhz Crystal"
 msgstr ""
