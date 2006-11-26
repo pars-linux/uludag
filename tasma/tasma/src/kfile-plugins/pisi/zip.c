@@ -63,7 +63,7 @@ find_cd (zip *z)
 	if (size < 0xffff) pos = 0; else pos = size - 0xffff;
 	buf = malloc (size - pos + 1);
 	if (!buf) return 1;
-	if (fseek (f, pos, SEEK_SET) != 0) {
+	if (fseek (f, (long)pos, SEEK_SET) != 0) {
 		free (buf);
 		return 1;
 	}
@@ -102,11 +102,11 @@ list_files (zip *z)
 	unsigned char buf[46];
 	struct zipfile *zfile;
 	ulong pat, fn_size;
-	int nr = 0;
+	uint nr = 0;
 
 	pat = z->cd_offset;
 	while (nr < z->nr_files) {
-		fseek (z->f, pat + z->head_size, SEEK_SET);
+          fseek (z->f, (long)(pat + z->head_size), SEEK_SET);
 
 		if (fread (buf, 46, 1, z->f) != 1) return ZIP_EREAD;
 		if (get_long (buf) != 0x02014b50) return ZIP_BADZIP;
@@ -161,7 +161,7 @@ zip_open (const char *fname, int *err)
 		return NULL;
 	}
 
-	fseek (f, z->cd_pos, SEEK_SET);
+	fseek (f, (long)z->cd_pos, SEEK_SET);
 	if (fread (buf, 22, 1, f) != 1) {
 		zip_close (z);
 		*err = ZIP_EREAD;
@@ -223,10 +223,10 @@ seek_file (zip *z, struct zipfile *zfile)
 {
 	unsigned char buf[30];
 
-	fseek (z->f, zfile->pos + z->head_size, SEEK_SET);
+	fseek (z->f, (long)(zfile->pos + z->head_size), SEEK_SET);
 	if (fread (buf, 30, 1, z->f) != 1) return ZIP_EREAD;
 	if (get_long (buf) != 0x04034b50) return ZIP_BADZIP;
-	fseek (z->f, get_word (buf + 26) + get_word (buf + 28), SEEK_CUR);
+	fseek (z->f, (long)(get_word (buf + 26) + get_word (buf + 28)), SEEK_CUR);
 	return ZIP_OK;
 }
 
