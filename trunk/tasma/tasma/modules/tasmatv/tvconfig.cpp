@@ -9,8 +9,6 @@
   Please read the COPYING file.
 */
 
-#include <config.h>
-
 #include <ksimpleconfig.h>
 #include <qlistbox.h>
 #include <qradiobutton.h>
@@ -89,7 +87,7 @@ void TvConfig::setCard(int card_id)
     if (item) {
 	tvVendor->setCurrentItem(item);
 	tvVendorChanged();
-	
+
 	item = tvModel->findItem(card_name);
 	if (item)
 	    tvModel->setCurrentItem(item);
@@ -113,7 +111,7 @@ void TvConfig::setTuner(int tuner_id)
     if (item) {
 	tunerVendor->setCurrentItem(item);
 	tunerVendorChanged();
-	
+
 	item = tunerModel->findItem(tuner_name);
 	if (item)
 	    tunerModel->setCurrentItem(item);
@@ -124,7 +122,7 @@ void TvConfig::saveOptions()
 {
     int card, tuner, pll, radio = 0;
 
-    KSimpleConfig *config = new KSimpleConfig(QString::fromLatin1(KDE_CONFDIR "/kcmtasmatvrc"));
+    KConfig *config = new KConfig("kcmtasmatvrc");
     QFile bttv("/etc/modules.d/bttv");
 
     card = getCard();
@@ -154,7 +152,7 @@ void TvConfig::saveOptions()
 	os << "options bttv card=" << card;
 
 	if (tuner != AUTO_TUNER)
-	    os << " " << "tuner=" << tuner; 
+	    os << " " << "tuner=" << tuner;
 	if (pll)
 	    os << " " << "pll=" << pll;
 	if (radio)
@@ -169,7 +167,7 @@ void TvConfig::saveOptions()
     delete config;
 }
 
-// TODO: read dmesg for error or success 
+// TODO: read dmesg for error or success
 void TvConfig::removeModule()
 {
     //FIXME: be smart, don't cheat you lazy $%@#!*
@@ -177,16 +175,16 @@ void TvConfig::removeModule()
     system(cmd);
 }
 
-// TODO: read dmesg for error or success 
+// TODO: read dmesg for error or success
 void TvConfig::loadModule()
 {
-    QCString cmd; 
+    QCString cmd;
     int card, tuner, pll, radio = 0;
 
     card  = getCard();
     tuner = getTuner();
     pll   = pllGroup->id(pllGroup->selected());
-    
+
     if (radioCard->isChecked())
 	radio = 1;
 
@@ -195,7 +193,7 @@ void TvConfig::loadModule()
     else
 	cmd.sprintf("/sbin/modprobe bttv card=%d pll=%d radio=%d", card, pll, radio);
 
-    system(cmd);	
+    system(cmd);
 }
 
 #include "tvconfig.moc"

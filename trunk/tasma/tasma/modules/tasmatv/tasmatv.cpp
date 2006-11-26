@@ -9,12 +9,11 @@
   Please read the COPYING file.
 */
 
-#include <config.h>
-
 #include <kaboutdata.h>
 #include <kdialog.h>
 #include <kgenericfactory.h>
 #include <ksimpleconfig.h>
+
 #include <qlistbox.h>
 #include <qradiobutton.h>
 #include <qbuttongroup.h>
@@ -32,12 +31,12 @@ TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
 : KCModule(TasmaTvFactory::instance(), parent, name)
 {
     mainWidget = new TvConfig(this);
-    
+
     QVBoxLayout *v = new QVBoxLayout(this, 0, KDialog::spacingHint());
     v->addWidget(mainWidget);
 
     TasmaTvAbout = new KAboutData (  "tasmatv",  I18N_NOOP(  "TASMA Tv Card Configuration Module" ),  "0.1",
-				     I18N_NOOP("TASMA Tv Card Configuration Module" ),  
+				     I18N_NOOP("TASMA Tv Card Configuration Module" ),
 				     KAboutData::License_GPL,
 				     I18N_NOOP("(c) 2005-2006, TUBITAK - UEKAE" ) );
 
@@ -54,7 +53,7 @@ TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
 
 void TasmaTv::load()
 {
-    KSimpleConfig *config = new KSimpleConfig(QString::fromLatin1(KDE_CONFDIR "/kcmtasmatvrc"), true);
+    KConfig *config = new KConfig("kcmtasmatvrc", true);
     config->setGroup("System");
     mainWidget->selectCard(config->readNumEntry("Card"));
     mainWidget->selectTuner(config->readNumEntry("Tuner"));
