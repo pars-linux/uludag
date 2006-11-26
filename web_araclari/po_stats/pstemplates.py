@@ -139,7 +139,7 @@ htmlFooterTemplate["en"] = '''
 Information and documents on Pardus web pages can be used freely anywhere with original source credit.
 <em><br>
 <strong>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</strong></em>
-For information and suggestion(s) please write to <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+For information and suggestion(s) please write to <a href="mailto:info%20at%20pardus.org.tr">info at pardus.org.tr</a>
 </p>
 <br>
 
