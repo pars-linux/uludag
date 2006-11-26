@@ -30,3 +30,5 @@ TARGET_LINK_LIBRARIES(kaptan ${QT_AND_KDECORE_LIBS} kdeui)
 INSTALL_TARGETS(/bin kaptan)
 INSTALL_FILES(/share/applications/kde FILES kaptan.desktop)
 INSTALL_FILES(/share/apps/kaptan/pics FILES kaptan_pardus.png kaptan.png mouse_rh.png mouse_lh.png kaptan_goodbye.png)
+
+KDE3_INSTALL_ICONS(hicolor)
