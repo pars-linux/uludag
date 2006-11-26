@@ -53,7 +53,7 @@ int main(int argc, char **argv)
               const KURL url = KIO::NetAccess::mostLocalURL(target,0);
               runProgramWithURL(program, url.path());
             }
-          else // A remote URL or kioslave
+          else // A remote URL or a kioslave
             {
               const QString prefix = target.fileName().section('.',0,0)+'-';
               const QString extension = '.'+target.fileName().section('.',1,1);
