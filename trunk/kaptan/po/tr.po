@@ -146,6 +146,3 @@ msgid ""
 "Your names"
 msgstr ""
 
-#, fuzzy
-#~ msgid "pix_wallpaper"
-#~ msgstr "Duvar Kâğıdı :"
