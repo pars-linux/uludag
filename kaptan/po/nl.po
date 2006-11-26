@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-05 13:40+0200\n"
+"POT-Creation-Date: 2006-11-26 14:46+0200\n"
 "PO-Revision-Date: 2006-08-21 21:12+0300\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <en@li.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "X-Generator: KBabel 1.11\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: rc.cpp:18
+#: rc.cpp:16
 #, no-c-format
 msgid "&Test Wallpaper"
 msgstr "Achtergrond &testen"
 
-#: rc.cpp:24
+#: rc.cpp:20
 #, fuzzy, no-c-format
 msgid ""
 "<center>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "<b>Tasma</b> op te starten.</a>\n"
 "</center>"
 
-#: rc.cpp:45
+#: rc.cpp:37
 #, no-c-format
 msgid "Button Order"
 msgstr "Knopvolgorde"
@@ -46,7 +46,7 @@ msgstr "Knopvolgorde"
 msgid "Congratulations"
 msgstr "Gefeliciteerd"
 
-#: rc.cpp:15
+#: rc.cpp:13
 #, no-c-format
 msgid "Don't change desktop background!"
 msgstr "De achtergrond niet veranderen!"
@@ -60,7 +60,7 @@ msgstr ""
 "Hier kunt u een achtergrond voor uw bureaublad kiezen. Pardus voorziet u van "
 "oogstrelende achtergronden, waarvan u er één kunt selecteren."
 
-#: rc.cpp:42
+#: rc.cpp:34
 #, no-c-format
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Kaptan Desktop"
 msgstr "Kaptan Desktop"
 
-#: rc.cpp:51
+#: rc.cpp:43
 #, no-c-format
 msgid "Le&ft handed"
 msgstr "Lin&kshandig"
@@ -88,7 +88,7 @@ msgstr "Lin&kshandig"
 msgid "Mouse Setup"
 msgstr "Muis"
 
-#: rc.cpp:33
+#: rc.cpp:27
 #, fuzzy, no-c-format
 msgid ""
 "Pardus is a GNU/Linux distribution, targeting at computer literate users' "
@@ -110,12 +110,12 @@ msgstr ""
 msgid "Preview :"
 msgstr "Voorbeeld:"
 
-#: rc.cpp:48
+#: rc.cpp:40
 #, no-c-format
 msgid "Righ&t handed"
 msgstr "Rech&tshandig"
 
-#: rc.cpp:39
+#: rc.cpp:31
 #, no-c-format
 msgid ""
 "This application, called <b>Kaptan Desktop</b>, will help you with your "
@@ -139,22 +139,18 @@ msgstr "Bureaubladachtergrond"
 msgid "Welcome"
 msgstr "Welkom"
 
-#: rc.cpp:21
-#, no-c-format
-msgid "pix_goodbye"
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
 msgstr ""
 
-#: rc.cpp:36
-#, no-c-format
-msgid "pix_kaptan"
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
 msgstr ""
 
-#: rc.cpp:30
-#, no-c-format
-msgid "pix_pardus"
-msgstr ""
-
-#: rc.cpp:12
-#, fuzzy, no-c-format
-msgid "pix_wallpaper"
-msgstr "Achtergrond:"
+#, fuzzy
+#~ msgid "pix_wallpaper"
+#~ msgstr "Achtergrond:"

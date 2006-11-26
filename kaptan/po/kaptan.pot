@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2006-11-05 13:40+0200\n"
+"POT-Creation-Date: 2006-11-26 14:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,27 +51,17 @@ msgstr ""
 msgid "Preview :"
 msgstr ""
 
-#: rc.cpp:12
-#, no-c-format
-msgid "pix_wallpaper"
-msgstr ""
-
-#: rc.cpp:15
+#: rc.cpp:13
 #, no-c-format
 msgid "Don't change desktop background!"
 msgstr ""
 
-#: rc.cpp:18
+#: rc.cpp:16
 #, no-c-format
 msgid "&Test Wallpaper"
 msgstr ""
 
-#: rc.cpp:21
-#, no-c-format
-msgid "pix_goodbye"
-msgstr ""
-
-#: rc.cpp:24
+#: rc.cpp:20
 #, no-c-format
 msgid ""
 "<center>\n"
@@ -81,12 +71,7 @@ msgid ""
 "</center>"
 msgstr ""
 
-#: rc.cpp:30
-#, no-c-format
-msgid "pix_pardus"
-msgstr ""
-
-#: rc.cpp:33
+#: rc.cpp:27
 #, no-c-format
 msgid ""
 "Pardus is a GNU/Linux distribution, targeting at computer literate users' "
@@ -96,12 +81,7 @@ msgid ""
 "installation and usage of the computers."
 msgstr ""
 
-#: rc.cpp:36
-#, no-c-format
-msgid "pix_kaptan"
-msgstr ""
-
-#: rc.cpp:39
+#: rc.cpp:31
 #, no-c-format
 msgid ""
 "This application, called <b>Kaptan Desktop</b>, will help you with your "
@@ -110,7 +90,7 @@ msgid ""
 "desktop :)."
 msgstr ""
 
-#: rc.cpp:42
+#: rc.cpp:34
 #, no-c-format
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
@@ -120,17 +100,29 @@ msgid ""
 "have a tree-button mouse, the middle buttons is unaffected."
 msgstr ""
 
-#: rc.cpp:45
+#: rc.cpp:37
 #, no-c-format
 msgid "Button Order"
 msgstr ""
 
-#: rc.cpp:48
+#: rc.cpp:40
 #, no-c-format
 msgid "Righ&t handed"
 msgstr ""
 
-#: rc.cpp:51
+#: rc.cpp:43
 #, no-c-format
 msgid "Le&ft handed"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
 msgstr ""
