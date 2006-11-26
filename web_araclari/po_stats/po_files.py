@@ -2,10 +2,11 @@
 
 po_files = {}
 
-po_files["tr"] = {"Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/tr.po",
+po_files["tr"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/tr.po",
+                  "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/tr.po",
                   "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/tr.po",
                   "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/tr.po",
-                  "Firewall Config": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/tr.po",
+                  "Firewall Configurator": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/tr.po",
                   "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/tr/tasma.po",
                   "Service Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/tr.po",
                   "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/tr.po",
@@ -16,7 +17,8 @@ po_files["tr"] = {"Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasm
                   "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/tr.po",
                   "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/tr/kaptan.po"}
 
-po_files["nl"] = {"Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/nl/kaptan.po",
+po_files["nl"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/nl.po",
+                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/nl/kaptan.po",
                   "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/nl.po",
                   "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/nl/kio_sysinfo.po",
                   "Müdür": "http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/nl.po",
@@ -25,13 +27,14 @@ po_files["nl"] = {"Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/nl/
                   "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/nl.po",
                   "Service Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/nl.po",
                   "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/nl/tasma.po",
-                  "Firewall Config": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/nl.po",
+                  "Firewall Configurator": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/nl.po",
                   "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/nl.po",
                   "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/nl.po",
                   "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/nl.po"}
 
 
-po_files["de"] = {"Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/de.po",
+po_files["de"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/de.po",
+                  "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/de.po",
                   "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/de.po",
                   "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/de.po",
                   "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/de/tasma.po",
