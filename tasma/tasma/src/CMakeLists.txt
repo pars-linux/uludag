@@ -25,3 +25,4 @@ TARGET_LINK_LIBRARIES(tasma ${QT_AND_KDECORE_LIBS} kdeui kutils)
 
 INSTALL_TARGETS(/bin tasma)
 INSTALL_FILES(/share/applications/kde FILES tasma.desktop)
+INSTALL_FILES(/share/apps/tasma FILES tasmaui.rc)
