@@ -30,7 +30,7 @@ K_EXPORT_COMPONENT_FACTORY(kcm_tasmatv, TasmaTvFactory("tasmatv"))
 TasmaTv::TasmaTv( QWidget* parent, const char *name, const QStringList &)
 : KCModule(TasmaTvFactory::instance(), parent, name)
 {
-    KGlobal()->locale()->insertCatalogue("tasma");
+    KGlobal::locale()->insertCatalogue("tasma");
     mainWidget = new TvConfig(this);
 
     QVBoxLayout *v = new QVBoxLayout(this, 0, KDialog::spacingHint());
