@@ -13,7 +13,7 @@ FOREACH(_po ${PO_FILES})
   SET(_gmofile ${CMAKE_CURRENT_BINARY_DIR}/${_lang}.gmo)
   ADD_CUSTOM_COMMAND(
     OUTPUT ${_gmofile}
-    COMMAND msgmerge ARGS --quiet --update -s ${CMAKE_CURRENT_SOURCE_DIR}/${_po} ${POT_FILE}
+    COMMAND msgmerge ARGS --quiet --update --backup=none -s ${CMAKE_CURRENT_SOURCE_DIR}/${_po} ${POT_FILE}
     COMMAND msgfmt ARGS -o ${_gmofile} ${CMAKE_CURRENT_SOURCE_DIR}/${_po}
     DEPENDS ${POT_FILE} ${CMAKE_CURRENT_SOURCE_DIR}/${_po}
   )
