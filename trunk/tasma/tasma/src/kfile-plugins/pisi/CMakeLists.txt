@@ -1,0 +1,14 @@
+INCLUDE_DIRECTORIES("-I/usr/include/python2.4")
+
+SET(
+  kfile_pisi_sources
+  kfile_pisi.cpp
+  zip.c
+  )
+
+KDE3_AUTOMOC(${kfile_pisi_sources})
+
+KDE3_ADD_KPART(kfile_pisi ${kfile_pisi_sources})
+TARGET_LINK_LIBRARIES(kfile_pisi "-lkio" "-lpython2.4" "-lz" "-liksemel")
+
+INSTALL_FILES(/share/apps/konqueror/servicemenus/ FILES kfile_pisi.desktop)
