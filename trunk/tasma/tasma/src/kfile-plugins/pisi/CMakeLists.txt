@@ -12,3 +12,4 @@ KDE3_ADD_KPART(kfile_pisi ${kfile_pisi_sources})
 TARGET_LINK_LIBRARIES(kfile_pisi "-lkio" "-lpython2.4" "-lz" "-liksemel")
 
 INSTALL_FILES(/share/apps/konqueror/servicemenus/ FILES kfile_pisi.desktop)
+INSTALL_TARGETS(/lib/kde3 kfile_pisi)

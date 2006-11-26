@@ -14,23 +14,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: tmoduleview.cpp:81
+msgid "&Administrator Mode"
+msgstr "&Yönetici Modu"
+
+#: tmoduleview.cpp:69
+msgid "&Back"
+msgstr "&Geri"
+
+#: tmoduleview.cpp:78
+msgid "&Reset"
+msgstr "&Sıfırla"
+
+#: main.cpp:64
+msgid "(c) 2005, TUBITAK - UEKAE"
+msgstr "(c) 2005, TÜBİTAK - UEKAE"
+
+#: tmoduleview.cpp:143
+msgid "<big>Loading...</big>"
+msgstr "<big>Yükleniyor...</big>"
+
+#: tasmamainwin.cpp:80
+msgid "About Current Module"
+msgstr "Şimdiki Modül Hakkında"
+
 #: aboutview.cpp:68
 msgid "Configuration Center"
 msgstr "Yapılandırma Merkezi"
 
-#: aboutview.cpp:86
-msgid "Welcome to TASMA"
-msgstr "TASMA'ya Hoşgeldiniz"
-
-#: aboutview.cpp:88
-msgid ""
-"TASMA is a configuration application for Pardus Operating System. You can "
-"tweak the systems default configuration settings and by using the modules "
-"presented in TASMA. "
-msgstr ""
-"TASMA, Pardus İşletim Sistemi için bir yapılandırma arayüzüdür. TASMA "
-"içerisindeki modülleri kullanarak, sisteminizin öntanımlı yapılandırma "
-"seçeneklerini düzenleyebilirsiniz."
+#: main.cpp:65
+msgid "Current Maintainer"
+msgstr "Programın Şimdiki Yöneticisi"
 
 #: aboutview.cpp:99
 msgid ""
@@ -46,26 +60,6 @@ msgstr ""
 "gösterilecektir. Buradan bir yapılandırma modülünün simgesine tıklayarak (ya "
 "da çift tıklayarak) o modülü başlatabilirsiniz."
 
-#: main.cpp:62
-msgid "TASMA - Pardus Configuration Center"
-msgstr "TASMA - Pardus Yapılandırma Merkezi"
-
-#: main.cpp:63
-msgid "Pardus Configuration Center"
-msgstr "Pardus Yapılandırma Merkezi"
-
-#: main.cpp:64
-msgid "(c) 2005, TUBITAK - UEKAE"
-msgstr "(c) 2005, TÜBİTAK - UEKAE"
-
-#: main.cpp:65
-msgid "Current Maintainer"
-msgstr "Programın Şimdiki Yöneticisi"
-
-#: main.cpp:66
-msgid "Old Maintainer & Original Author"
-msgstr "Eski Yönetici & İlk Yazarı"
-
 #: main.cpp:67
 msgid "KDE Developers"
 msgstr "KDE Geliştiricileri"
@@ -74,22 +68,28 @@ msgstr "KDE Geliştiricileri"
 msgid "Module Developers"
 msgstr "Modül Geliştiricileri"
 
-#: tasmamainwin.cpp:80
-msgid "About Current Module"
-msgstr "Şimdiki Modül Hakkında"
+#: main.cpp:66
+msgid "Old Maintainer & Original Author"
+msgstr "Eski Yönetici & İlk Yazarı"
 
-#: tmoduleview.cpp:69
-msgid "&Back"
-msgstr "&Geri"
+#: main.cpp:63
+msgid "Pardus Configuration Center"
+msgstr "Pardus Yapılandırma Merkezi"
 
-#: tmoduleview.cpp:78
-msgid "&Reset"
-msgstr "&Sıfırla"
+#: main.cpp:62
+msgid "TASMA - Pardus Configuration Center"
+msgstr "TASMA - Pardus Yapılandırma Merkezi"
 
-#: tmoduleview.cpp:81
-msgid "&Administrator Mode"
-msgstr "&Yönetici Modu"
+#: aboutview.cpp:88
+msgid ""
+"TASMA is a configuration application for Pardus Operating System. You can "
+"tweak the systems default configuration settings and by using the modules "
+"presented in TASMA. "
+msgstr ""
+"TASMA, Pardus İşletim Sistemi için bir yapılandırma arayüzüdür. TASMA "
+"içerisindeki modülleri kullanarak, sisteminizin öntanımlı yapılandırma "
+"seçeneklerini düzenleyebilirsiniz."
 
-#: tmoduleview.cpp:143
-msgid "<big>Loading...</big>"
-msgstr "<big>Yükleniyor...</big>"
+#: aboutview.cpp:86
+msgid "Welcome to TASMA"
+msgstr "TASMA'ya Hoşgeldiniz"
