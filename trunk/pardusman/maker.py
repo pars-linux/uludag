@@ -236,7 +236,7 @@ def make_image(project):
     
     chrun("hav call User.Manager.setUser uid 0 password pardus")
     if project.media_type != "install":
-        chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,video,audio password pardus")
+        chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,pnpadmin,video,audio password pardus")
     chrun("/usr/bin/comar --stop")
     
     path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
