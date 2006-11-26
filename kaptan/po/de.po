@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
-"POT-Creation-Date: 2006-11-17 10:26+0200\n"
+"POT-Creation-Date: 2006-11-05 13:40+0200\n"
 "PO-Revision-Date: 2006-11-05 19:52+0100\n"
 "Last-Translator: m <l>\n"
 "Language-Team: german <german@li.org>\n"
@@ -13,59 +13,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/kaptan.cpp:37
-#, fuzzy
-msgid "Welcome"
-msgstr "WillkommenDlg"
-
-#: src/kaptan.cpp:41
-msgid "Mouse Setup"
-msgstr ""
-
-#: src/kaptan.cpp:45
-#, fuzzy
-msgid "Wallpaper Setup"
-msgstr "Hintergrundbild :"
-
-#: src/kaptan.cpp:49
-msgid "Congratulations"
-msgstr ""
-
-#: src/main.cpp:18
-msgid "Kaptan Desktop"
-msgstr ""
-
-#: rc.cpp:3
-#, no-c-format
-msgid ""
-"Here, you can select a wallpaper for your desktop background. Pardus "
-"provides eye candy wallpapers, you can select one of them, as you wish :)."
-msgstr ""
-"Hier können Sie ein Hintergrundbild, das auf dem Desktop angezeigt wird, "
-"auswählen.Sie können auch ein Hintergrundbild aus dem Pardus-Katalog "
-"auswählen, wenn Sie möchten ;),"
-
-#: rc.cpp:6
-#, no-c-format
-msgid "Wallpaper :"
-msgstr "Hintergrundbild :"
-
-#: rc.cpp:9
-#, no-c-format
-msgid "Preview :"
-msgstr "Vorschau :"
-
-#: rc.cpp:13
-#, no-c-format
-msgid "Don't change desktop background!"
-msgstr "Hintergrundbild nicht ändern!"
-
-#: rc.cpp:16
+#: rc.cpp:18
 #, no-c-format
 msgid "&Test Wallpaper"
 msgstr "&Test Hintergrundbild"
 
-#: rc.cpp:20
+#: rc.cpp:24
 #, no-c-format
 msgid ""
 "<center>\n"
@@ -80,7 +33,58 @@ msgstr ""
 "Sie bitte hier <b>Pardus Konfigurationszentrum</b></a>\n"
 "</center>"
 
-#: rc.cpp:27
+#: rc.cpp:45
+#, no-c-format
+msgid "Button Order"
+msgstr "Tastenordnung"
+
+#: src/kaptan.cpp:49
+msgid "Congratulations"
+msgstr ""
+
+#: rc.cpp:15
+#, no-c-format
+msgid "Don't change desktop background!"
+msgstr "Hintergrundbild nicht ändern!"
+
+#: rc.cpp:3
+#, no-c-format
+msgid ""
+"Here, you can select a wallpaper for your desktop background. Pardus "
+"provides eye candy wallpapers, you can select one of them, as you wish :)."
+msgstr ""
+"Hier können Sie ein Hintergrundbild, das auf dem Desktop angezeigt wird, "
+"auswählen.Sie können auch ein Hintergrundbild aus dem Pardus-Katalog "
+"auswählen, wenn Sie möchten ;),"
+
+#: rc.cpp:42
+#, no-c-format
+msgid ""
+"If you are left-handed, you may prefer to swap the functions of the left and "
+"right buttons on your pointing device by choosing the 'Left handed' option "
+"below. If your pointing device has more than two buttons, only those that "
+"function as the left and right buttons are affected. For example, if you "
+"have a tree-button mouse, the middle buttons is unaffected."
+msgstr ""
+"Wenn Sie linkshändig sind, können Sie die Funktionen der linken und rechten "
+"Maustaste durch das Aktivieren der Option 'Linkshändig' tauschen. Wenn Ihrer "
+"Maus mehr als zwei Tasten hat, werden nur die Rechts-Links-Funktionen "
+"ausgetauscht."
+
+#: src/main.cpp:18
+msgid "Kaptan Desktop"
+msgstr ""
+
+#: rc.cpp:51
+#, no-c-format
+msgid "Le&ft handed"
+msgstr "Links&händig"
+
+#: src/kaptan.cpp:41
+msgid "Mouse Setup"
+msgstr ""
+
+#: rc.cpp:33
 #, no-c-format
 msgid ""
 "Pardus is a GNU/Linux distribution, targeting at computer literate users' "
@@ -95,7 +99,17 @@ msgstr ""
 "erfüllen soll. Deren  Ziel ist  dem Benutzer ein autonomes und "
 "benutzerfreundliches Betriebssystem zur Verfügung zu stellen."
 
-#: rc.cpp:31
+#: rc.cpp:9
+#, no-c-format
+msgid "Preview :"
+msgstr "Vorschau :"
+
+#: rc.cpp:48
+#, no-c-format
+msgid "Righ&t handed"
+msgstr "Rechts&händig"
+
+#: rc.cpp:39
 #, no-c-format
 msgid ""
 "This application, called <b>Kaptan Desktop</b>, will help you with your "
@@ -108,44 +122,37 @@ msgstr ""
 "leisten.Mit dieser Anwendung können Sie Ihren Desktop nach Ihren eigenen "
 "Bedürfnissen anpassen :)."
 
-#: rc.cpp:34
+#: rc.cpp:6
 #, no-c-format
-msgid ""
-"If you are left-handed, you may prefer to swap the functions of the left and "
-"right buttons on your pointing device by choosing the 'Left handed' option "
-"below. If your pointing device has more than two buttons, only those that "
-"function as the left and right buttons are affected. For example, if you "
-"have a tree-button mouse, the middle buttons is unaffected."
-msgstr ""
-"Wenn Sie linkshändig sind, können Sie die Funktionen der linken und rechten "
-"Maustaste durch das Aktivieren der Option 'Linkshändig' tauschen. Wenn Ihrer "
-"Maus mehr als zwei Tasten hat, werden nur die Rechts-Links-Funktionen "
-"ausgetauscht."
+msgid "Wallpaper :"
+msgstr "Hintergrundbild :"
 
-#: rc.cpp:37
+#: src/kaptan.cpp:45
+#, fuzzy
+msgid "Wallpaper Setup"
+msgstr "Hintergrundbild :"
+
+#: src/kaptan.cpp:37
+#, fuzzy
+msgid "Welcome"
+msgstr "WillkommenDlg"
+
+#: rc.cpp:21
 #, no-c-format
-msgid "Button Order"
-msgstr "Tastenordnung"
-
-#: rc.cpp:40
-#, no-c-format
-msgid "Righ&t handed"
-msgstr "Rechts&händig"
-
-#: rc.cpp:43
-#, no-c-format
-msgid "Le&ft handed"
-msgstr "Links&händig"
-
-#: _translatorinfo.cpp:1
-msgid ""
-"_: NAME OF TRANSLATORS\n"
-"Your names"
+msgid "pix_goodbye"
 msgstr ""
 
-#: _translatorinfo.cpp:3
-msgid ""
-"_: EMAIL OF TRANSLATORS\n"
-"Your emails"
+#: rc.cpp:36
+#, no-c-format
+msgid "pix_kaptan"
 msgstr ""
 
+#: rc.cpp:30
+#, no-c-format
+msgid "pix_pardus"
+msgstr ""
+
+#: rc.cpp:12
+#, fuzzy, no-c-format
+msgid "pix_wallpaper"
+msgstr "Hintergrundbild :"
