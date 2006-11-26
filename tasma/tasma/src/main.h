@@ -18,7 +18,6 @@
 #define MAIN_H
 
 #include <kuniqueapplication.h>
-#include "config.h"
 
 class TasmaMainWin;
 
