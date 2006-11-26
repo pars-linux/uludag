@@ -13,6 +13,3 @@ Main parts of TASMA
 tasma: Main configuration GUI framework uses regular KCModule
 components.
 
-modules: Our version of kcontrol modules. The reason for us to
-maintain kcontrol modules is that, we need to entegrate them with our
-framework COMAR.
