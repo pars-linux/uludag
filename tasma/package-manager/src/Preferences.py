@@ -125,8 +125,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
 
-        item = KListViewItem(self.repoListView, self.repoListView.currentItem())
-        item.setText(0, repoName)
+        item = QListViewItem(self.repoListView, self.repoListView.currentItem())
+        item.setText(0, unicode(repoName))
         item.setText(1, repoAddress)
         self.repoListView.insertItem(item)
 
@@ -141,7 +141,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             KMessageBox.error(self,i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
             return
 
-        self.repoListView.currentItem().setText(0,newRepoName)
+        self.repoListView.currentItem().setText(0,unicode(newRepoName))
         self.repoListView.currentItem().setText(1,newRepoAddress)
 
         self.reposChanged = True
@@ -180,7 +180,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         while index >= 0:
             repoName = self.repoList[index]
             item = QListViewItem(self.repoListView,None)
-            item.setText(0, self.repoList[index])
+            item.setText(0, unicode(self.repoList[index]))
             item.setText(1, self.parent.command.getRepoUri(str(repoName)))
             index -= 1
 
