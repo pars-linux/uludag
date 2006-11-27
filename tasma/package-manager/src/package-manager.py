@@ -33,6 +33,7 @@ import BasketDialog
 import Tray
 import Settings
 from Icons import *
+import LocaleData
 
 # Pisi
 import pisi
@@ -892,6 +893,8 @@ def main():
     myapp = MainApplication()
     myapp.show()
     kapp.setMainWidget(myapp)
+
+    LocaleData.setSystemLocale()
 
     sys.exit(kapp.exec_loop())
 
