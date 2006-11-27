@@ -66,7 +66,7 @@ bool PisiPlugin::readInfo(KFileMetaInfo& info, uint)
 
     appendItem(group, "Name", iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "Name"))));
     appendItem(group, "Size", QString(iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "InstalledSize")))).toInt()/1024);
-    appendItem(group, "Description", KStringHandler::rsqueeze(iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "Description"))), 80));
+    appendItem(group, "Description", KStringHandler::rsqueeze(iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "Summary"))), 80));
 
     zip_close(pisi);
     iks_delete(x);
