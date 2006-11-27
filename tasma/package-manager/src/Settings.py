@@ -12,8 +12,8 @@
 
 (general) = ("General")
 
-defaults = {"SystemTray":True,
-            "UpdateCheck":True,
+defaults = {"SystemTray":False,
+            "UpdateCheck":False,
             "UpdateCheckInterval":60
             }
 
