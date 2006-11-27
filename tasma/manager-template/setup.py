@@ -59,7 +59,7 @@ app_data = [
     'hede-manager.py',
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['hede_manager.png']),
     'mainview.py',
-    'mainform.ui',
+    'hede_manager.ui',
     'utility.py',
     'hede-manager.desktop',
     'help'
