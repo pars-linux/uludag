@@ -27,7 +27,7 @@ filter = {
         [
             '-A PARDUS-IN-USER -p udp -m multiport --dports 137:139,445 -j ACCEPT',
             '-A PARDUS-IN-USER -p tcp -m multiport --dports 137:139,445 -j ACCEPT',
-            '-A PARDUS-IN-USER -p udp -m multiport --dports 1025:65535 -j ACCEPT',
+            '-A PARDUS-IN-USER -p udp -m multiport --sports 137:139,445 -j ACCEPT',
         ],
         i18n('Windows file sharing service'),
     ),
