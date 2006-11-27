@@ -11,6 +11,7 @@
 
 #include <kgenericfactory.h>
 #include <kstringhandler.h>
+#include <klocale.h>
 
 #include <qfile.h>
 #include <qstringlist.h>
@@ -66,7 +67,17 @@ bool PisiPlugin::readInfo(KFileMetaInfo& info, uint)
 
     appendItem(group, "Name", iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "Name"))));
     appendItem(group, "Size", QString(iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "InstalledSize")))).toInt()/1024);
-    appendItem(group, "Description", KStringHandler::rsqueeze(iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "Summary"))), 80));
+
+    QString lang,description;
+
+    lang = KGlobal::locale()->language();
+
+    description = QString::fromLocal8Bit(iks_cdata(iks_child(iks_find_with_attrib(iks_find(x, "Package"), "Summary", "xml:lang", lang))));
+
+    if (description.isEmpty())
+      description = iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "Summary")));
+
+    appendItem(group, "Description", KStringHandler::rsqueeze(description,80));
 
     zip_close(pisi);
     iks_delete(x);
