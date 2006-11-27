@@ -58,7 +58,10 @@ bool PisiPlugin::readInfo(KFileMetaInfo& info, uint)
     iks *x = zip_load_xml(pisi, "metadata.xml", &err);
 
     if (err)
-      return false;
+      {
+        zip_close(pisi);
+        return false;
+      }
 
     appendItem(group, "Name", iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "Name"))));
     appendItem(group, "Size", QString(iks_cdata(iks_child(iks_find(iks_find(x, "Package"), "InstalledSize")))).toInt()/1024);
