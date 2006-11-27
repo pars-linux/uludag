@@ -467,7 +467,7 @@ class MainApplicationWidget(QWidget):
         basketDialog.deleteLater()
 
     def conflictCheckPass(self):
-        (C, D, pkg_conflicts) = self.command.checkConflicts(self.basket.packages)
+        (C, D, pkg_conflicts) = self.command.checkConflicts(self.basket.packages + self.basket.extraPackages)
 
         conflicts_within = list(D)
         if conflicts_within:
