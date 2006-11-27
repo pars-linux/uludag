@@ -246,9 +246,14 @@ zip_load_xml (zip *z, const char *name, int *err)
 		return NULL;
 	}
 
-	seek_file (z, zfile);
+	*err = seek_file (z, zfile);
+	if (*err != ZIP_OK) return NULL;
 
 	real_buf = malloc (zfile->real_size + 1);
+	if (!real_buf) {
+		*err = ZIP_NOMEM;
+		return NULL;
+	}
 	if (zfile->zip_size < zfile->real_size) {
 		char *zip_buf;
 		z_stream zs;
@@ -256,22 +261,46 @@ zip_load_xml (zip *z, const char *name, int *err)
 		zs.zfree = NULL;
 		zs.opaque = NULL;
 		zip_buf = malloc (zfile->zip_size);
-		fread (zip_buf, zfile->zip_size, 1, z->f);
+		if (!zip_buf) {
+			*err = ZIP_NOMEM;
+			free(real_buf);
+			return NULL;
+		}
+		if (1 != fread (zip_buf, zfile->zip_size, 1, z->f)) {
+			*err = ZIP_EREAD;
+			free(zip_buf);
+			free(real_buf);
+			return NULL;
+		}
 		zs.next_in = zip_buf;
 		zs.avail_in = zfile->zip_size;
 		zs.next_out = real_buf;
 		zs.avail_out = zfile->real_size;
 		inflateInit2 (&zs, -MAX_WBITS);
-		inflate (&zs, Z_FINISH);
+		if (inflate (&zs, Z_FINISH) < 0) {
+			*err = ZIP_BADZIP;
+			free(zip_buf);
+			free(real_buf);
+			return NULL;
+		}
 		inflateEnd (&zs);
 		free (zip_buf);
 	} else {
-		fread (real_buf, zfile->real_size, 1, z->f);
+		if (1 != fread (real_buf, zfile->real_size, 1, z->f)) {
+			*err = ZIP_EREAD;
+			free(real_buf);
+			return NULL;
+		}
 	}
 
 	real_buf[zfile->real_size] = '\0';
 	prs = iks_dom_new (&x);
-	iks_parse (prs, real_buf, zfile->real_size, 1);
+	if (IKS_OK != iks_parse (prs, real_buf, zfile->real_size, 1)) {
+		*err = ZIP_BADZIP;
+		iks_parser_delete(prs);
+		free(real_buf);
+		return NULL;
+	}
 	iks_parser_delete (prs);
 	free (real_buf);
 	return x;
