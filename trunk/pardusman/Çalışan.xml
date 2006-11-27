@@ -1,8 +1,8 @@
 <PardusmanProject type="live" size="734003200">
     <Title>Pardus Live 2006-11-17</Title>
-    <WorkDir>/home/gurer/uludag/trunk/pardusman/test/</WorkDir>
-    <ReleaseFiles>/home/gurer/uludag/trunk/CD-image/</ReleaseFiles>
-    <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
+    <WorkDir>/home/caglar/pardusman/work/</WorkDir>
+    <ReleaseFiles>/home/caglar/CD-image/</ReleaseFiles>
+    <PackageSelection repo_uri="http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
@@ -192,6 +192,7 @@
         <Package>alsa-utils</Package>
         <Package>amarok</Package>
         <Package>arts</Package>
+        <Package>artwork</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
@@ -424,6 +425,7 @@
         <Package>libXxf86vm</Package>
         <Package>libao</Package>
         <Package>libart_lgpl</Package>
+        <Package>libassuan</Package>
         <Package>libavc1394</Package>
         <Package>libcaca</Package>
         <Package>libcap</Package>
@@ -452,6 +454,7 @@
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
         <Package>libkipi</Package>
+        <Package>libksba</Package>
         <Package>liblazy</Package>
         <Package>liblbxutil</Package>
         <Package>libmad</Package>
@@ -548,6 +551,7 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
+        <Package>ntp-client</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
@@ -560,12 +564,14 @@
         <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
+        <Package>pardus-support</Package>
         <Package>parted</Package>
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
+        <Package>pinentry</Package>
         <Package>pisi</Package>
         <Package>poppler</Package>
         <Package>popt</Package>
@@ -635,6 +641,7 @@
         <Package>strace</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
+        <Package>suspend</Package>
         <Package>swig</Package>
         <Package>synaptics</Package>
         <Package>sysfsutils</Package>
