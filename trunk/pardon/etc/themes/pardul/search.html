@@ -1,14 +1,14 @@
 {include file="header.html"}
 
    {if $message}<div id="warn">{$message}</div>{else}
-                <div id="head">##SEARCH_RESULTS##</div>
+                <div id="head">Arama Sonuçları</div>
                 <table class="restable">
                     <tbody>
                         <tr>
-                            <th width="30%"> ##PRODUCT_NAME_MODEL## </th>
-                            <th width="25%"> ##VENDOR_BRAND## </th>
-                            <th width="35%"> ##CATEGORY## </th>
-                            <th width="5%"> ##STATE## </th>
+                            <th width="30%"> Model </th>
+                            <th width="25%"> Marka </th>
+                            <th width="35%"> Kategori </th>
+                            <th width="5%"> Durum </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
@@ -20,12 +20,12 @@
                         {/section}
                     </tbody>
                 </table>
-                <div id="head">##ABBRIVATION##</div>
+                <div id="head">Kısaltmalar</div>
                 <table class="restable">
                 <tr>
                     <td>
-                    <img src="{$tp}/images/ok.png"> ##ABR_OK1##<br>
-                    <img src="{$tp}/images/not.png"> ##ABR_NOT1##<br>
+                    <img src="{$tp}/images/ok.png"> Bu donanımın Pardus ürünlerinden en az biri tarafından desteklendiğini gösterir.<br>
+                    <img src="{$tp}/images/not.png"> Bu donanımın Pardus ürünlerinin hiç biri tarafından desteklenmediğini gösterir.<br>
                     </td>
                 </tr>
                 </table>

@@ -2,15 +2,15 @@
 
    {if $message}<div id="warn">{$message}</div>{else}
                 <script src="lib/scripts/sort.js"></script>
-                <div id="head">##MY_HARDWARES##</div>
+                <div id="head">Gönderdiklerim</div>
                 <table class="restable">
                     <tbody>
                         <tr>
-                            <th width="30%"> ##PRODUCT_NAME_MODEL## </th>
-                            <th width="25%"> ##VENDOR_BRAND## </th>
-                            <th width="35%"> ##CATEGORY## </th>
-                            <th width="5%"> ##STATE## </th>
-                            <th width="5%"> ##APPROVE_STATE## </th>
+                            <th width="30%"> Model </th>
+                            <th width="25%"> Marka </th>
+                            <th width="35%"> Kategori </th>
+                            <th width="5%"> Durum </th>
+                            <th width="5%"> Onay </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
@@ -23,20 +23,20 @@
                         {/section}
                     </tbody>
                 </table>
-                <div id="head">##ABBRIVATION##</div>
+                <div id="head">Kısaltmalar</div>
                 <table class="restable">
                 <tr>
                     <td>
-                    <div id="head">##STATE##</div>
-                    <img src="{$tp}/images/ok.png"> ##ABR_OK1##<br>
-                    <img src="{$tp}/images/not.png"> ##ABR_NOT1##<br>
+                    <div id="head">Durum</div>
+                    <img src="{$tp}/images/ok.png"> Bu donanımın Pardus ürünlerinden en az biri tarafından desteklendiğini gösterir.<br>
+                    <img src="{$tp}/images/not.png"> Bu donanımın Pardus ürünlerinin hiç biri tarafından desteklenmediğini gösterir.<br>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                    <div id="head">##APPROVE_STATE##</div>
-                    <img src="{$tp}/images/ok.png"> ##ABR_OK2##<br>
-                    <img src="{$tp}/images/not.png"> ##ABR_NOT2##<br>
+                    <div id="head">Onay Durumu</div>
+                    <img src="{$tp}/images/ok.png"> Bu girdinizin yönetici tarafından onaylanıp sisteme eklendiğini gösterir.<br>
+                    <img src="{$tp}/images/not.png"> Bu girdinizin henüz yönetici tarafından incelenmediğini gösterir. İncelendikten sonra kabul edilmeyen girdiler silinir.<br>
                     </td>
                 </tr>
                 </table>

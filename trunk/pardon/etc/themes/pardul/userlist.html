@@ -9,15 +9,15 @@
                     }
                 </script>
                 {/literal}
-                <div id="head">##USER_LIST##</div>
+                <div id="head">Kullanıcılar</div>
                 <table class="restable">
                     <tbody>
                         <tr>
-                            <th width="20%"> ##FIRST_LAST_NAME## </th>
-                            <th width="15%"> ##USERNAME## </th>
-                            <th width="15%"> ##EMAIL## </th>
-                            <th width="5%"> ##AUTH## </th>
-                            <th width="5%"> ##DELETE## </th>
+                            <th width="20%"> Ad/Soyad </th>
+                            <th width="15%"> Kullanıcı Adı </th>
+                            <th width="15%"> E-Mail </th>
+                            <th width="5%"> Yetki </th>
+                            <th width="5%"> Sil </th>
                         </tr>
                         {section name=node loop=$sr}
                         <tr {if $smarty.section.node.index % 2} style="background:#EEE" {/if}>
@@ -34,21 +34,21 @@
                                         <option value="G" >G</option>
                                         <option value="N" >N</option>
                                     </select>
-                                </span>
+                               <!-- [<a href="?users={$sr[node].ID}&set=A">A</a>]-[<a href="?users={$sr[node].ID}&set=SA">SA</a>]-[<a href="?users={$sr[node].ID}&set=G">G</a>]-[<a href="?users={$sr[node].ID}&set=N">N</a>]-->            </span>
                             </td>
                             <td align="center"> <a href="?users={$sr[node].ID}&del"><img src="{$tp}/images/delete.png"></a> </td>
                         </tr>
                         {/section}
                     </tbody>
                 </table>
-                <div id="head">##ABBRIVATION##</div>
+                <div id="head">Kısaltmalar</div>
                 <table class="restable">
                 <tr>
                     <td>
-                    <b> A </b> ##ABR_A##<br>
-                    <b> SA </b> ##ABR_SA##<br>
-                    <b> G </b> ##ABR_G##<br>
-                    <b> N </b> ##ABR_N##<br>
+                    <b> A </b> Admin, tüm haklara sahip kullanıcı.<br>
+                    <b> SA </b> Semi-Admin, donanım gönderme hakkına sahip kullanıcı.<br>
+                    <b> G </b> Guest, misafir kullanıcı-sadece yorum ekleyebilir.<br>
+                    <b> N </b> NotActive, hesabını aktifleştirmemiş kullanıcı<br>
                     </td>
                 </tr>
                 </table>

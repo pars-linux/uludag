@@ -255,9 +255,3 @@ input.search {
 .ozvendorlist:hover {
     background-color: #222FFF;
 }
-
-div#menu {
-    float:right;
-    margin-top:-20px;
-    margin-right:3px;
-}

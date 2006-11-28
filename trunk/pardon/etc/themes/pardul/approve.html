@@ -2,7 +2,7 @@
 
    {if $message}<div id="warn">{$message}</div>{else}
                 <script src="lib/scripts/newhardware.js"></script>
-                <div id="head">##EDIT_HARDWARE##</div>
+                <div id="head">Donanım Düzenle</div>
                 <form id="frm" action="{$pardul_url}?{if $admin}queue_edit_f{else}edit_f{/if}" method="post">
                 <input type="hidden" name="userid" value="{if $admin}{$sr[0].UserID}{else}{$UserID}{/if}">
      {if $admin}<input type="hidden" name="suserid" value="{$UserID}">{/if}
@@ -11,7 +11,7 @@
                 <table class="regtable">
                     <tbody>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##VENDOR_BRAND## </td>
+                            <td><span style="color: red">[*]</span> Üretici Firma </td>
                             <td>
                                 <input type="text" name="p_vendor" id="p_vendor" value="{$sr[0].HWVendor}">
                                 <div class="dropmenu" id="dropmen">
@@ -20,11 +20,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##PRODUCT_NAME_MODEL## </td>
+                            <td><span style="color: red">[*]</span> Ürün Adı </td>
                             <td><input id="p_name" name="p_name" size="30" value="{$sr[0].HWProductName}"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##CATEGORY## </td>
+                            <td><span style="color: red">[*]</span> Kategori </td>
                             <td>
                                 <select name="p_category">
                                 {section name=node loop=$p_category}{if $p_category[node].sub}<optgroup label="{$p_category[node].CategoryName}">
@@ -35,15 +35,15 @@
                                 </select>
                         </tr>
                         <tr>
-                            <td><span style="color: green">[*]</span> ##DEVICE_NUMBER## </td>
+                            <td><span style="color: green">[*]</span> Aygıt Numarası </td>
                                 <td><input id="p_device_id" name="p_device_id" value="{$sr[0].HWDeviceID}"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: green">[*]</span> ##BUS_TYPE## </td>
+                            <td><span style="color: green">[*]</span> VeriYolu Tipi </td>
                             <td><input id="p_bus_type" name="p_bus_type" value="{$sr[0].HWBusType}"></td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> ##TEST_RESULTS## </td>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Test Sonuçları </td>
                             <td>
                                 <div class="checkbox">
                                 {section name=node loop=$p_distro}
@@ -52,9 +52,9 @@
                                 {$p_distro[node].DistVersion}
                                 </div><div style="text-align:right;">
                                 <select name="p_state[{$p_distro[node].ID}]">
-                                    <option value="F" {if $control=="F"}SELECTED{/if}>##COMPATIBLE##</option>
-                                    <option value="S" {if $control=="S"}SELECTED{/if}>##NEEDS_MANUAL_CONFIGURATION##</option>
-                                    <option value="N" {if $control=="N"}SELECTED{/if}>##NOT_COMPATIBLE##</option>
+                                    <option value="F" {if $control=="F"}SELECTED{/if}>Uyumlu</option>
+                                    <option value="S" {if $control=="S"}SELECTED{/if}>Ek işlem gerekli</option>
+                                    <option value="N" {if $control=="N"}SELECTED{/if}>Uyumlu değil</option>
                                 </select>
                                 </div>
                                 {assign var="control" value=""}
@@ -63,7 +63,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> ##ADITIONAL_DESCRIPTION## </td>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Ek Açıklama </td>
                             <td>
                                 <textarea id="p_todo" name="p_todo" rows="7">{$sr[0].ToDo}</textarea>
                             </td>
@@ -73,8 +73,8 @@
                 <table class="regtable">
                     <tr>
                         <td align="right">
-                            <input onclick="return submitform();" value="{if $admin}##ACCEPT##{else}##UPDATE##{/if}" name="register" type="submit" style="width:150px">
-                            {if $admin}<a href="?queue&del={$sr[node].ID}"><img src="{$tp}/images/remove.png">##DELETE##</a>{/if}
+                            <input onclick="return submitform();" value="{if $admin}Onayla{else}Güncelle{/if}" name="register" type="submit" style="width:150px">
+                            {if $admin}<a href="?queue&del={$sr[node].ID}"><img src="{$tp}/images/remove.png"> Sil </a>{/if}
                         </td>
                     </tr>
                 </table>

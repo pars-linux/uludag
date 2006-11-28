@@ -21,7 +21,6 @@
     ssv("p_scat",get_("x","Categories"));
     ssv("p_bustypes",get_("x","BusTypes"));
     ssv("p_category",get_categories());
-    ssv("active_lang",$_SESSION["AL"]);
 
 //  For All Users (Guest)
     foreach ($_GET as $key => $value){

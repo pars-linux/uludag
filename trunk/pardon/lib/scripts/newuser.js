@@ -14,6 +14,21 @@ function dodacheck(val) {
    }
 }
 
+function doanothercheck(form) {
+    if(form.value.search(mikExp) !== -1) {
+        alert("Kullanıcı Adı, \n\r\n\r@ $ % ^ & * # ( ) [ ] \\ { + } ` ~ = | \" \' ! ? \n\r\n\r karakterlerinden birini ya da boşluk içeremez !!\n");
+        form.select();
+        form.focus();
+        return false;
+    }
+    if (frm.username.value.length < 3)              { alert('Kullanıcı Adı en az 4 (dört) karakterden oluşmalıdır !'); frm.username.select(); frm.username.focus(); return false;}
+    if (frm.realname.value.length < 6)              { alert('Ad Soyad boş ya da eksik !');return false;}
+    if (frm.email.value.length < 8)                 { alert('E-Mail boş ya da eksik !');return false;}
+    if (frm.password.value.length <= 4)             { alert('Parola boş ya da eksik (en az 5 karakter)!');return false;}
+    if (frm.password.value !== frm.password_.value) { alert('Parola ve Parola Tekrar birbirini tutmuyor !'); return false;}
+    return true;
+}
+
 function tV(el, src) {
     var v = el.style.display == "block";
     var str = src.innerHTML;

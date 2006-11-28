@@ -2,16 +2,16 @@
                 {if $message}<div id="warn">{$message}</div>{else}
                 <div id="info">{$info}</div>
                 <script src="lib/scripts/newhardware.js"></script>
-                <div id="head">##WELCOME## ##PARDUL_TITLE##</div>
+                <div id="head">{$pardul_title} 'ne Hoşgeldiniz..</div>
                 <div>
-                    <p>&nbsp;&nbsp;##WELCOME_PAGE_TEXT1##</p>
+                    <p>&nbsp;&nbsp;Bu sayfayı kullanarak mevcut donanımlarınızın Pardus ürünleri ile uyumlu olup olmadığını kontrol edebilir, Pardus ürünlerinden herhangi birini kullandığınız donanım için ise çalışma durumu girişi yapabilirsiniz.</p>
                 </div>
-                <div id="head">##SEARCH_HARDWARE##</div>
+                <div id="head">Donanım Ara</div>
                 <form id="frm" action="{$pardul_url}?search" method="post">
                 <table class="regtable">
                     <tbody>
                         <tr>
-                            <td> ##VENDOR_BRAND##</td>
+                            <td> Üretici Firma / Marka</td>
                             <td>
                                 <input type="text" name="p_vendor" id="p_vendor">
                                 <div class="dropmenu" id="dropmen">
@@ -20,14 +20,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <td> ##PRODUCT_NAME_MODEL##</td>
+                            <td> Ürün Adı / Modeli</td>
                             <td><input id="p_name" name="p_name" size="30"></td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"> ##CATEGORY## </td>
+                            <td style="vertical-align:top;padding-top:3px;"> Kategori </td>
                             <td>
                                 <select name="p_category" SIZE=10>
-                                <option value="all_categories" SELECTED>##ALL_CATEGORIES##</option>
+                                <option value="all_categories" SELECTED>Tüm Kategoriler</option>
                                 {section name=node loop=$p_category}{if $p_category[node].sub}<optgroup label="{$p_category[node].CategoryName}">
                                     {section name=sub loop=$p_category[node].sub}   <option value="{$p_category[node].sub[sub].ID}" >{$p_category[node].sub[sub].CategoryName}</option>
                                     {/section}</optgroup>{else}
@@ -36,18 +36,18 @@
                                 </select>
                         </tr>
                         <tr>
-                            <td> ##DEVICE_NUMBER## </td>
+                            <td> Aygıt Numarası </td>
                             <td><input id="p_device_id" name="p_device_id"></td>
                         </tr>
                         <tr>
-                            <td> ##BUS_TYPE## </td>
+                            <td> VeriYolu Tipi </td>
                             <td><input id="p_bus_type" name="p_bus_type"></td>
                         </tr>
                     </tbody>
                 </table>
                 <table class="regtable">
                     <tr>
-                        <td align="right"><input value="##SEARCH_HARDWARE##" name="search" type="submit"></td>
+                        <td align="right"><input value="Donanım Ara" name="search" type="submit"></td>
                     </tr>
                 </table>
                 </form>

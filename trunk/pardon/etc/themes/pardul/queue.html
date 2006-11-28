@@ -2,16 +2,16 @@
 
    {if $message}<div id="warn">{$message}</div>{else}
                 <script src="lib/scripts/sort.js"></script>
-                <div id="head">{if $full}##FULL_LIST##{else}##QUEUE##{/if}</div>
+                <div id="head">{if $full}Tüm Liste{else}Onay Bekleyenler{/if}</div>
                 <table class="restable" id="hwlist">
                         <thead>
                             <tr>
-                            <td width="15%"> ##PRODUCT_NAME_MODEL## </td>
-                            <td width="15%"> ##VENDOR_BRAND## </td>
-                            <td width="20%"> ##SENDER## </td>
-                            <td width="20%"> ##CATEGORY## </td>
-                            <td width="5%"> ##STATE## </td>
-                            <td width="8%" alt="##ACCEPT_REJECT##">{if $full}##DELETE##{else} ##A_R##{/if} </td>
+                            <td width="15%"> Model </td>
+                            <td width="15%"> Üretici </td>
+                            <td width="20%"> Gönderen </td>
+                            <td width="20%"> Kategori </td>
+                            <td width="5%"> Durum </td>
+                            <td width="8%" alt="Onayla / Reddet">{if $full}Sil{else} O / R{/if} </td>
                             </tr>
                         </thead>
                     <tbody class="scrollingContent">
@@ -30,15 +30,15 @@
                         {/section}
                     </tbody>
                 </table>
-                <div id="head">##ABBRIVATION##</div>
+                <div id="head">Kısaltmalar</div>
                 <table class="restable">
                 <tr>
                     <td>
-                    <img src="{$tp}/images/ok.png"> ##ABR_OK1##<br>
-                    <img src="{$tp}/images/not.png"> ##ABR_NOT1##<br>
+                    <img src="{$tp}/images/ok.png"> Bu donanımın Pardus ürünlerinden en az biri tarafından desteklendiğini gösterir.<br>
+                    <img src="{$tp}/images/not.png"> Bu donanımın Pardus ürünlerinin hiç biri tarafından desteklenmediğini gösterir.<br>
                     <hr>
-                    <img src="{$tp}/images/add.png"> ##ABR_OK2##<br>
-                    <img src="{$tp}/images/remove.png"> ##ABR_NOT2##<br>
+                    <img src="{$tp}/images/add.png"> Bu kayıdın geçerli olduğunu düşünüyorsanız bu tuşu kullanarak ekleyebilirsiniz.<br>
+                    <img src="{$tp}/images/remove.png"> Bu kayıdın geçerli olmadığını düşünüyorsanız bu tuşu kullanarak silebilirsiniz.<br>
                     </td>
                 </tr>
                 </table>

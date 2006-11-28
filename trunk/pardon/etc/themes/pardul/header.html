@@ -3,10 +3,11 @@
 
     <!--
         TUBITAK UEKAE 2005-2006
+        Gökmen GÖKSEL gokmen_at_pardus.org.tr
     -->
 
     <head>
-        <title>##PARDUL_TITLE##</title>
+        <title>{$pardul_title}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="robots" content="all">
         <meta name="generator" content="{$pardul_v}">
@@ -17,10 +18,7 @@
 
     <body onload="init()">
     <center>
-    <div id="box2">
-        <div id="header"></div>
-        <div id="menu"><strong>{if $active_lang=="tr"}<a href="?setlang=en">English{else}<a href="?setlang=tr">Türkçe{/if}</a></strong></div>
-    </div>
+    <div id="box2"><div id="header"></div></div>
         <div id="box">
             {include file="leftpane.html"}
 
