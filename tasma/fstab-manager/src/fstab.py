@@ -121,6 +121,7 @@ class Fstab:
             for line in self.content:
                 f.write(line)
             f.close()
+            return True
         else:
             for line in self.content:
                 print line.rstrip("\n")
@@ -189,9 +190,10 @@ class Fstab:
         if not self.__allPartitions.get(partition):
             err.append("'%s' is not an available partition.\n" % (partition))
         if self.__fstabPartitions.get(partition):
-            err.append("'%s' is already in fstab\n" % (partition))
-        if [p for p in self.__fstabPartitions if self.__fstabPartitions[p]['mount_point'] == attr_dict['mount_point']]:
-            err.append("Mount point '%s' is already in use\n" % (attr_dict['mount_point']))
+            self.delFstabEntry(partition)
+            #err.append("'%s' is already in fstab\n" % (partition))
+        #if [p for p in self.__fstabPartitions if self.__fstabPartitions[p]['mount_point'] == attr_dict['mount_point']]:
+        #    err.append("Mount point '%s' is already in use\n" % (attr_dict['mount_point']))
         if err:
             print err
             return -1
