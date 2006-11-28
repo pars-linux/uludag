@@ -5,6 +5,7 @@ SET(
   de.po
   nl.po
   tr.po
+  es.po
   )
 
 SET(_gmofiles)
