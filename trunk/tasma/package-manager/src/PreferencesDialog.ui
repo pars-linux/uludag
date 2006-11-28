@@ -365,7 +365,7 @@
                             <cstring>groupBox2</cstring>
                         </property>
                         <property name="title">
-                            <string>Cache cleaning</string>
+                            <string>Clear Cache</string>
                         </property>
                         <grid>
                             <property name="name">
@@ -373,7 +373,7 @@
                             </property>
                             <widget class="QPushButton" row="1" column="0">
                                 <property name="name">
-                                    <cstring>cleanCacheButton</cstring>
+                                    <cstring>clearCacheButton</cstring>
                                 </property>
                                 <property name="text">
                                     <string>C&amp;lean disk cache now</string>
@@ -384,7 +384,7 @@
                                     <cstring>textLabel3</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Cleaning up the disk cache will remove all downloaded software. 
+                                    <string>Clearing the disk cache will remove all downloaded software. 
 This will not delete installed software or affect your system stability.</string>
                                 </property>
                             </widget>
