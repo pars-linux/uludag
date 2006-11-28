@@ -2,61 +2,18 @@
 
 po_files = {}
 
-po_files["tr"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/tr.po",
-                  "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/tr.po",
-                  "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/tr.po",
-                  "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/tr.po",
-                  "Firewall Configurator": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/tr.po",
-                  "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/tr.po",
-                  "Service Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/tr.po",
-                  "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/tr.po",
-                  "PiSi": "http://svn.pardus.org.tr/uludag/trunk/pisi/po/tr.po",
-                  "ÇOMAR": "http://svn.pardus.org.tr/uludag/trunk/comar/comar/po/tr.po",
-                  "Müdür": "http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/tr.po",
-                  "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/tr/kio_sysinfo.po",
-                  "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/tr.po",
-                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/tr.po"}
-
-po_files["nl"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/nl.po",
-                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/nl.po",
-                  "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/nl.po",
-                  "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/nl/kio_sysinfo.po",
-                  "Müdür": "http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/nl.po",
-                  "ÇOMAR": "http://svn.pardus.org.tr/uludag/trunk/comar/comar/po/nl.po",
-                  "PiSi": "http://svn.pardus.org.tr/uludag/trunk/pisi/po/nl.po",
-                  "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/nl.po",
-                  "Service Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/nl.po",
-                  "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/nl.po",
-                  "Firewall Configurator": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/nl.po",
-                  "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/nl.po",
-                  "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/nl.po",
-                  "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/nl.po"}
-
-
-po_files["de"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/de.po",
-                  "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/de.po",
-                  "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/de.po",
-                  "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/de.po",
-                  "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/de.po",
-                  "Service Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/de.po",
-                  "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/de.po",
-                  "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/de.po",
-                  "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/de.po",
-                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/de.po"}
-
-po_files["es"] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/es.po",
-"Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/es.po",
-                  "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/es.po",
-                  "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/es.po",
-                  "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/es.po",
-                  "Service Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/es.po",
-                  "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/es.po",
-                  "Firewall Configurator": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/es.po",
-                  "ÇOMAR": "http://svn.pardus.org.tr/uludag/trunk/comar/comar/po/es.po",
-                  "Müdür": "http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/es.po",
-                  "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/es/kio_sysinfo.po",
-                  "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/es.po",
-                  "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/es.po"}
-
-
-
+for lang in ["tr", "nl", "de", "es"]:
+    po_files[lang] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/%s.po" % lang,
+                      "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/%s.po" % lang,
+                      "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/%s.po" % lang,
+                      "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/%s.po" % lang,
+                      "Firewall Configurator": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/%s.po" % lang,
+                      "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/%s.po" % lang,
+                      "Service Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/%s.po" % lang,
+                      "User Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/%s.po" % lang,
+                      "PiSi": "http://svn.pardus.org.tr/uludag/trunk/pisi/po/%s.po" % lang,
+                      "ÇOMAR": "http://svn.pardus.org.tr/uludag/trunk/comar/comar/po/%s.po" % lang,
+                      "Müdür": "http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/%s.po" % lang,
+                      "Sysinfo": "http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/%s/kio_sysinfo.po" % lang,
+                      "YALI": "http://svn.pardus.org.tr/uludag/trunk/yali/po/%s.po" % lang,
+                      "Kaptan": "http://svn.pardus.org.tr/uludag/trunk/kaptan/po/%s.po" % lang}
