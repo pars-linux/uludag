@@ -709,6 +709,10 @@ class MainApplicationWidget(QWidget):
         pisi.api.finalize()
         pisi.api.init(write=False)
 
+        # after every operation check package cache limits
+        if command != "System.Manager.clearCache":
+            self.command.checkCacheLimits()
+
         self.basket.empty()
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)

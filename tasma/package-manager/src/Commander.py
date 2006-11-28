@@ -17,6 +17,7 @@ import pisi.context as ctx
 from kdecore import i18n
 from qt import QObject, QTimer
 import ComarIface
+import Settings
 
 class Commander(QObject):
     def __init__(self, parent):
@@ -177,3 +178,9 @@ class Commander(QObject):
         # FIXME: We can not get cache package directory from pisi if 
         # it is _removed_ (PiSi tries to create new one), so hardcoded.
         return self.comar.clearCache("/var/cache/pisi/packages", limit)
+
+    def checkCacheLimits(self):
+        if self.parent.settings.getBoolValue(Settings.general, "ClearCache"):
+            limit = self.parent.settings.getNumValue(Settings.general, "CacheLimit")
+            if limit:
+                self.clearCache(limit * 1024 * 1024)

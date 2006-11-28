@@ -429,23 +429,6 @@ This will not delete installed software or affect your system stability.</string
                                     <string>Maximum cache size:</string>
                                 </property>
                             </widget>
-                            <widget class="QLineEdit" row="1" column="1">
-                                <property name="name">
-                                    <cstring>useCacheSize</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>false</bool>
-                                </property>
-                                <property name="frameShape">
-                                    <enum>LineEditPanel</enum>
-                                </property>
-                                <property name="text">
-                                    <string>2000</string>
-                                </property>
-                                <property name="frame">
-                                    <bool>true</bool>
-                                </property>
-                            </widget>
                             <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
                                 <property name="name">
                                     <cstring>useCacheCheck</cstring>
@@ -477,6 +460,20 @@ This will not delete installed software or affect your system stability.</string
                                     <set>AlignVCenter</set>
                                 </property>
                             </widget>
+                            <widget class="KIntNumInput" row="1" column="1">
+                                <property name="name">
+                                    <cstring>useCacheSize</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="minValue">
+                                    <number>0</number>
+                                </property>
+                                <property name="maxValue">
+                                    <number>100000</number>
+                                </property>
+                            </widget>
                         </grid>
                     </widget>
                 </grid>
@@ -502,11 +499,6 @@ This will not delete installed software or affect your system stability.</string
 <includehints>
     <includehint>klistview.h</includehint>
     <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>knuminput.h</includehint>
     <includehint>knuminput.h</includehint>
 </includehints>
 </UI>
