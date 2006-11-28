@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ksysinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-01 16:28+0300\n"
+"PO-Revision-Date: 2006-11-26 14:22-0400\n"
+"Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
+"Language-Team: spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+#: sysinfo.cpp:67
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: sysinfo.cpp:69
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: sysinfo.cpp:71
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: sysinfo.cpp:107
+#: sysinfo.cpp:101
+msgid "My Computer"
+msgstr "Mi Equipo"
+
+#: sysinfo.cpp:102
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr "Carpetas, Discos rígidos, Dispositivos removibles, Información del Sistema y más ...Carpetas, Discos rígidos, Dispositivos removibles, Información del Sistema y más ..."
+
+#: sysinfo.cpp:108
+msgid "Looking for disk information..."
+msgstr "Averiguando información de disco..."
+
+#: sysinfo.cpp:109
+msgid "Disk Information"
+msgstr "Información de disco"
+
+#: sysinfo.cpp:113
+msgid "OS Information"
+msgstr "Información de Sistema Operativo"
+
+#: sysinfo.cpp:115
+msgid "OS:"
+msgstr "Sistema Operativo"
+
+#: sysinfo.cpp:116
+msgid "Current user:"
+msgstr "Usuario actual:"
+
+#: sysinfo.cpp:117
+msgid "System:"
+msgstr "Sistema:"
+
+#: sysinfo.cpp:118
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo.cpp:124
+msgid "Display Info"
+msgstr "Monitor"
+
+#: sysinfo.cpp:126
+msgid "Vendor:"
+msgstr "Vendedor:"
+
+#: sysinfo.cpp:127
+msgid "Model:"
+msgstr "Modelo:"
+
+#: sysinfo.cpp:129
+msgid "Driver:"
+msgstr "Driver:"
+
+#: sysinfo.cpp:136
+msgid "Getting OS information...."
+msgstr "Buscando información del SO...."
+
+#: sysinfo.cpp:139
+msgid "Common Folders"
+msgstr "Carpetas Comúnes"
+
+#: sysinfo.cpp:143
+msgid "My Home Folder"
+msgstr "Mi Carpeta de Inicio"
+
+# Observation: translation made as "folder of -root- user" (/root), is this ok ?  (or should it be root of the file system ??)
+#: sysinfo.cpp:144
+msgid "Root Folder"
+msgstr "Carpeta de Inicio de Root"
+
+#: sysinfo.cpp:145
+msgid "Network Folders"
+msgstr "Carpetas de Red"
+
+#: sysinfo.cpp:149
+msgid "Looking up network status..."
+msgstr "Verificando estado de red..."
+
+#: sysinfo.cpp:152
+msgid "Network Status"
+msgstr "Estado de Red"
+
+#: sysinfo.cpp:159
+msgid "Looking for CPU information..."
+msgstr "Verificando información de CPU ..."
+
+#: sysinfo.cpp:163
+msgid "CPU Information"
+msgstr "Información de CPU"
+
+#: sysinfo.cpp:165
+msgid "Processor (CPU):"
+msgstr "Procesador (CPU):"
+
+#: sysinfo.cpp:166
+msgid "Speed:"
+msgstr "Velocidad:"
+
+#: sysinfo.cpp:167
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo.cpp:172
+msgid "Looking for memory information..."
+msgstr "Averiguando información de memoria..."
+
+#: sysinfo.cpp:174
+msgid "Memory Information"
+msgstr "Información de memoria"
+
+#: sysinfo.cpp:176
+msgid "Total memory (RAM):"
+msgstr "Memoria Total (RAM):"
+
+#: sysinfo.cpp:177
+msgid "Free memory:"
+msgstr "Memoria Libre:"
+
+#: sysinfo.cpp:178
+msgid "Used Memory"
+msgstr "Memoria en uso"
+
+#: sysinfo.cpp:179
+msgid "Total swap:"
+msgstr "Swap Total:"
+
+#: sysinfo.cpp:180
+msgid "Free swap:"
+msgstr "Swap Libre:"
+
+#: sysinfo.cpp:184
+msgid "Looking for hardware information..."
+msgstr "Buscando información de hardware..."
+
+#: sysinfo.cpp:186
+msgid "Hardware Information"
+msgstr "Información de Hardware"
+
+#: sysinfo.cpp:191
+msgid "Bios Vendor:"
+msgstr "Vendedor Bios:"
+
+#: sysinfo.cpp:192
+msgid "Bios Version:"
+msgstr "Versión de Bios:"
+
+#: sysinfo.cpp:256
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 Caches)"
+
+#: sysinfo.cpp:288
+msgid "Device"
+msgstr "Dispositivo"
+
+#: sysinfo.cpp:288
+msgid "Filesystem"
+msgstr "Sistema de Archivos"
+
+#: sysinfo.cpp:289
+msgid "Total space"
+msgstr "Espacio Total"
+
+#: sysinfo.cpp:289
+msgid "Available space"
+msgstr "Espacio Disponible"
+
+#: sysinfo.cpp:295
+msgid "Press the right mouse button for more options like Mount or Eject"
+msgstr "Apriete el botón derecho del ratón para más opciones tal como Montar y Expulsar"
+
+#: sysinfo.cpp:478
+msgid "%1 (3D Support)"
+msgstr "%1 (Soporte 3D)"
+
+#: sysinfo.cpp:480
+msgid "%1 (No 3D Support)"
+msgstr "%1 (Sin Soporte 3D)"
+
+#: sysinfo.cpp:491
+msgid "Network is <strong>unreachable</strong>"
+msgstr "Red <strong>inaccesible</strong>"
+
+#: sysinfo.cpp:493
+msgid "You are <strong>offline</strong>"
+msgstr "Estás <strong>sin conexion de red</strong>"
+
+#: sysinfo.cpp:495
+msgid "Network is <strong>shutting down</strong>"
+msgstr "La red está <strong>desconectandose</strong>"
+
+#: sysinfo.cpp:497
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "<strong>Estableciendo</strong> conexión de red"
+
+#: sysinfo.cpp:499
+msgid "You are <strong>online</strong>"
+msgstr "Estás <strong>en línea</strong>"
+
+#: sysinfo.cpp:501
+msgid "Unknown network status"
+msgstr "Estado de red desconocido"
+
