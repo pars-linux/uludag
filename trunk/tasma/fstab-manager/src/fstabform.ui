@@ -246,14 +246,6 @@
                                 <string>Update</string>
                             </property>
                         </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>btn_cancel</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Cancel</string>
-                            </property>
-                        </widget>
                     </hbox>
                 </widget>
             </hbox>

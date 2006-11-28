@@ -74,13 +74,6 @@ class fstabForm(mainForm):
         mainForm.__init__(self, parent, name)
 
         self.Fstab = fstab.Fstab()
-        self.blockDevices = fstab.getBlockDevices()
-        self.fstabPartitions = self.getPartitionsFromFstab()
-        self.prettyList={}
-        self.list_main_items=[]
-        self.frame_detail.hide()
-        self.sessionLocked=True
-
         # Just for block devices
         self.knownFS=['ext3:Ext3',
                       'ext2:Ext2',
@@ -92,12 +85,11 @@ class fstabForm(mainForm):
         self.fillFileSystems()
         self.list_main.header().hide()
         self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
-        self.fillDiskList()
+        self.initialize()
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
-        self.connect(self.btn_cancel, SIGNAL('clicked()'), self.slotCancel)
         self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
         self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.fillDiskList)
         self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
@@ -106,13 +98,25 @@ class fstabForm(mainForm):
         self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
         self.connect(self.combo_fs,SIGNAL('activated(const QString&)'),self.saveSession)
 
+    def initialize(self):
+        self.blockDevices = fstab.getBlockDevices()
+        self.fstabPartitions = self.getPartitionsFromFstab()
+        self.prettyList={}
+        self.list_main_items=[]
+        self.frame_detail.hide()
+        self.sessionLocked=True
+        self.fillDiskList()
+
     def saveSession(self,Single=False):
         if not self.sessionLocked or Single:
-            selected_=self.list_main.selectedItem()
-            selected =self.getDetailsOfSelected(selected_,key=True)
-            self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
-            self.prettyList[selected[0]][selected[1]]['options']=str(self.line_opts.text())
-            self.prettyList[selected[0]][selected[1]]['file_system']=self.getFsName(self.combo_fs.currentText())
+            try:
+                selected_=self.list_main.selectedItem()
+                selected =self.getDetailsOfSelected(selected_,key=True)
+                self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
+                self.prettyList[selected[0]][selected[1]]['options']=str(self.line_opts.text())
+                self.prettyList[selected[0]][selected[1]]['file_system']=self.getFsName(self.combo_fs.currentText())
+            except:
+                pass
 
     def getFsName(self,fs):
         for fileSystem in self.knownFS:
@@ -141,6 +145,7 @@ class fstabForm(mainForm):
             x+=1
 
     def slotList(self):
+        print 'debug'
         try:
             selected=self.list_main.selectedItem()
             partitionInfo = self.getDetailsOfSelected(selected)
@@ -163,12 +168,23 @@ class fstabForm(mainForm):
             self.sessionLocked=True
 
     def slotUpdate(self):
+        self.saveSession(Single=True)
         for disk in self.blockDevices:
             for node in self.prettyList[disk]:
-                self.Fstab.addFstabEntry(node['partition_name'],node)
+                if node['list_widget'].isOn():
+                    print node['partition_name'],' added'
+                    self.Fstab.addFstabEntry(node['partition_name'],node)
+                else:
+                    print node['partition_name'],' deleted'
+                    self.Fstab.delFstabEntry(node['partition_name'])
         print self.Fstab.content
-        self.Fstab.writeContent()
-        self.__init__()
+        if (self.Fstab.writeContent()):
+            info = QMessageBox("Completed","File /etc/fstab updated !",QMessageBox.Information,QMessageBox.Ok,0,0,self)
+            info.show()
+
+        self.Fstab.update()
+        self.initialize()
+
 
     def fillDiskList(self):
         self.frame_detail.hide()
@@ -228,9 +244,6 @@ class fstabForm(mainForm):
     def slotHelp(self):
         self.helpwin = HelpDialog(self)
         self.helpwin.show()
-
-    def slotCancel(self):
-        sys.exit()
 
 class Module(KCModule):
     def __init__(self, parent, name):
