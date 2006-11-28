@@ -32,6 +32,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
         self.connect(self.intervalCheck, SIGNAL("toggled(bool)"), self.enableCheckInterval)
         self.connect(self.useCacheCheck, SIGNAL("toggled(bool)"), self.enableUseCache)
+        self.connect(self.cleanCacheButton, SIGNAL("clicked()"), self.cleanAllCached)
 
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
@@ -193,3 +194,11 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.useCacheSize.setEnabled(state)
         self.useCacheInfo.setEnabled(state)
 
+    def cleanAllCached(self):
+        if KMessageBox.Yes == KMessageBox.warningYesNo(self, 
+                                                       i18n("All the cached packages will be deleted. Are you sure? "),
+                                                       i18n("Warning"),
+                                                       KGuiItem(i18n("Delete"), "trashcan_empty"),
+                                                       KStdGuiItem.cancel()
+                                                       ):
+            self.parent.command.cleanCache(0)

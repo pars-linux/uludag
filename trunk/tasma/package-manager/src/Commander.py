@@ -172,3 +172,8 @@ class Commander(QObject):
 
     def inProgress(self):
         return self.comar.com_lock.locked()
+
+    def cleanCache(self, limit):
+        # FIXME: We can not get cache package directory from pisi if 
+        # it is _removed_ (PiSi tries to create new one), so hardcoded.
+        return self.comar.cleanCache("/var/cache/pisi/packages", limit)
