@@ -90,6 +90,10 @@ class Commander(QObject):
             self.comar.com_lock.unlock()
             self.parent.finished("System.Manager.cancelled")
             return
+        elif reply.command == "denied":
+            self.comar.com_lock.unlock()
+            self.parent.finished("System.Manager.cancelled")
+            self.parent.showErrorMessage(i18n("You do not have permission to do this operation."))
         elif reply.command == "fail":
             if reply.data == "System.Manager.cancelled":
                 self.comar.com_lock.unlock()
