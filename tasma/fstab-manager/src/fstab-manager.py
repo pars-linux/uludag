@@ -22,7 +22,7 @@ from khtml import *
 
 # Widget
 import kdedesigner
-from mainform import mainForm
+from fstabform import mainForm
 
 # COMAR
 import comar
