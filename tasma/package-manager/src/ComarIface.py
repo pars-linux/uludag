@@ -66,5 +66,8 @@ class ComarIface:
         self.com_lock.lock()
         self.com.call("System.Manager.setRepositories", ["repos",repos])
 
+    def cleanCache(self, cacheDir, limit):
+        self.com.call("System.Manager.cleanCache", ["cacheDir",cacheDir,"limit",limit])
+
     def cancel(self):
         self.com.cancel()
