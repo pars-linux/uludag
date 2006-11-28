@@ -1,60 +1,42 @@
 {include file="header.html"}
                 {if $message}<div id="warn">{$message}</div>{else}
-                {literal}
-                <script type="text/javascript">
-                    function doanothercheck(form) {
-                        if(form.value.search(mikExp) !== -1) {
-                            alert("##USERNAME## \n\r\n\r@ $ % ^ & * # ( ) [ ] \\ { + } ` ~ = | \" \' ! ? \n\r\n\r \n");form.select();form.focus();return false;
-                        }
-                        if (frm.username.value.length < 3){ 
-                            alert('##USERNAME## ##AT_LEAST_FOUR_CHARACTER##'); 
-                            frm.username.select(); frm.username.focus(); return false; }
-                        if (frm.realname.value.length < 6){ 
-                            alert('##MISSING_FIELDS## : ##FIRST_LAST_NAME##'); return false;}
-                        if (frm.email.value.length < 8) { alert('##MISSING_FIELDS## : ##EMAIL##');return false;}
-                        if (frm.password.value.length <= 4) { alert('##MISSING_FIELDS## : ##PASSWORD##');return false;}
-                        if (frm.password.value !== frm.password_.value) { alert('##PASSWORD##,##PASSWORD## ##REPEAT## ##NOT_SAME## !'); return false;}
-                        return true;
-                    }
-                </script>
-                {/literal}
                 <script src="lib/scripts/newuser.js"></script>
-                <div id="head">##NEW_USER##</div>
+                <div id="head">Yeni Kullanıcı</div>
                 <form id="frm" action="{$pardul_url}?register_f" method="post" onSubmit="return doanothercheck(frm.username);">
                 <table class="regtable">
                     <tbody>
                         <tr>
-                            <td style="vertical-align:top;"><span style="color: red">[*]</span> ##USERNAME## </td>
+                            <td style="vertical-align:top;"><span style="color: red">[*]</span> Kullanıcı adı </td>
                             <td>
                                 <input id="username" name="username" size="30" value="{$up_user}" onKeyUp="javascript:dodacheck(frm.username);">
                                 <div id="result"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##FIRST_LAST_NAME## </td>
+                            <td><span style="color: red">[*]</span> Ad Soyad </td>
                             <td><input id="realname" name="realname" value="{$up_name}"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: green">[*]</span> ##WEB_ADDRESS##</td>
+                            <td><span style="color: green">[*]</span> Web adresi</td>
                             <td><input id="web" name="web" value="{$up_web}"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##EMAIL##</td>
+                            <td><span style="color: red">[*]</span> E-mail</td>
                             <td><input id="email" name="email" value="{$up_email}"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##PASSWORD##</td>
+                            <td><span style="color: red">[*]</span> Parola</td>
                             <td><input id="password" name="password" type="password"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##PASSWORD## (##REPEAT##)</td>
+                            <td><span style="color: red">[*]</span> Parola(tekrar)</td>
                             <td><input id="password_" name="password_" type="password"></td>
                         </tr>
                     </tbody>
                 </table>
                 <table class="regtable">
                     <tr>
-                        <td align="right"><input onclick="return submitform();" value="##REGISTER##" name="register" type="submit"></td>
+                        <td align="right"><input onclick="return submitform();" value="Kayıt" name="register" type="submit"></td>
                     </tr>
                 </table>
                 </form>

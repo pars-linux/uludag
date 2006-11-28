@@ -6,17 +6,17 @@
                 <table class="regtable">
                     <tbody>
                         <tr style="background:#EEE">
-                            <td> ##VENDOR_BRAND## </td>
+                            <td> Üretici Firma </td>
                             <td>
                                 <b>{$sr[0].HWVendor}</b>
                             </td>
                         </tr>
                         <tr>
-                            <td> ##PRODUCT_NAME_MODEL## </td>
+                            <td> Ürün Adı </td>
                             <td><b>{$sr[0].HWProductName}</b></td>
                         </tr>
                         <tr style="background:#EEE">
-                            <td> ##CATEGORY## </td>
+                            <td> Kategori </td>
                             <td>
                                 {section name=node loop=$p_category}
                                     {if $p_category[node].sub}
@@ -30,15 +30,15 @@
                                 </select>
                         </tr>
                         <tr>
-                            <td> ##DEVICE_NUMBER## </td>
+                            <td> Aygıt Numarası </td>
                                 <td><b> {$sr[0].HWDeviceID} </b></td>
                         </tr>
                         <tr style="background:#EEE">
-                            <td> ##BUS_TYPE## </td>
+                            <td> VeriYolu Tipi </td>
                             <td><b> {$sr[0].HWBusType} </b></td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"> ##TEST_RESULTS## </td>
+                            <td style="vertical-align:top;padding-top:3px;"> Test Sonuçları </td>
                             <td>
                                 {section name=node loop=$p_distro}
                                     {section name=kode loop=$rs}
@@ -48,9 +48,9 @@
                                 <b>Pardus - {$p_distro[node].DistVersion}</b>
                                 </div>
                                 <div style="text-align:right;">
-                                    {if $rs[kode].HWState=="F"}##COMPATIBLE##<img src="{$tp}/images/ok.png" style="margin-left:5px;">{/if}
-                                    {if $rs[kode].HWState=="S"}##NEEDS_MANUAL_CONFIGURATION##<img src="{$tp}/images/ok.png" style="margin-left:5px;">{/if}
-                                    {if $rs[kode].HWState=="N"}##NOT_COMPATIBLE##<img src="{$tp}/images/not.png" style="margin-left:5px;">{/if}
+                                    {if $rs[kode].HWState=="F"}Uyumlu<img src="{$tp}/images/ok.png" style="margin-left:5px;">{/if}
+                                    {if $rs[kode].HWState=="S"}Ek işlem gerekli<img src="{$tp}/images/ok.png" style="margin-left:5px;">{/if}
+                                    {if $rs[kode].HWState=="N"}Uyumlu Değil<img src="{$tp}/images/not.png" style="margin-left:5px;">{/if}
                                 </div>
                                 </div>
                                 {/if}
@@ -59,7 +59,7 @@
                             </td>
                         </tr>
                         <tr style="background:#EEE">
-                            <td style="vertical-align:top;padding-top:3px;"> ##ADITIONAL_DESCRIPTION## </td>
+                            <td style="vertical-align:top;padding-top:3px;"> Ek Açıklama </td>
                             <td>
                                 <div style="width:370px;"><b>{$sr[0].ToDo}</b></div>
                             </td>
@@ -67,18 +67,18 @@
                     </tbody>
                 </table>
                 {if $cm}
-                <div id="head">##COMMENTS##</div>
+                <div id="head">Yorumlar</div>
                 <table class="regtable">
                     <tbody>
                         {section name=node loop=$cm}
                         <tr style="background:#EEE">
-                            <td style="vertical-align:top;"> ##SENDER## </td>
+                            <td style="vertical-align:top;"> Gönderen </td>
                             <td width="370px">
-                                {$cm[node].UserName} @ {$cm[node].StyledDate.hour}:{$cm[node].StyledDate.minute} .
+                                {$cm[node].UserName} saat {$cm[node].StyledDate.hour}:{$cm[node].StyledDate.minute} sularında.
                             </td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;"> ##COMMENT## </td>
+                            <td style="vertical-align:top;"> Yorum </td>
                             <td width="370px">
                                 <div style="width:370px;">{$cm[node].Comment}</div>
                             </td>
@@ -92,17 +92,17 @@
                 <input type="hidden" name="userid" value="{$UserID}">
                 <input type="hidden" name="p_id" value="{$sr[0].ID}">
                 <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="p_date">
-                <div id="head">##ADD_COMMENT##</div>
+                <div id="head">Yorum Ekle</div>
                 <table class="regtable">
                     <tbody>
                         <tr style="background:#EEE">
-                            <td style="vertical-align:top;"> ##SENDER## </td>
+                            <td style="vertical-align:top;"> Gönderen </td>
                             <td width="370px">
                                 {$UserRealName}
                             </td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;"> ##COMMENT## </td>
+                            <td style="vertical-align:top;"> Yorum </td>
                             <td width="370px">
                                 <textarea id="p_comment" name="p_comment" rows="4"></textarea>
                             </td>
@@ -111,17 +111,18 @@
                 </table>
                 <table class="regtable">
                     <tr>
-                        <td align="right"><input value="##SEND##" name="comment" type="submit"></td>
+                        <td align="right"><input value="Gönder" name="comment" type="submit"></td>
                     </tr>
                 </table>
                 </form>
                 {else}
                 <table class="regtable">
                     <tr>
-                        <td>##NEEDS_MEMBERSHIP## ##TO_REGISTER##  <a href="?register">##HERE##</a> </td>
+                        <td>Yorum eklemek için giriş yapmalısınız. Henüz üye değilseniz <a href="?register">buradan</a> üye olabilirsiniz.</td>
                     </tr>
                 </table>
                 {/if}
+                
                 {/if}
 
 {include file="footer.html"}

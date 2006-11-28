@@ -5,7 +5,7 @@
         Gökmen GÖKSEL gokmen_at_pardus.org.tr
     */
 
-    $config['pardul']['version']        = "1.0b";
-    $config['pardul']['build']          = "20061018";
+    $config['pardul']['version']        = "0.0.1";
+    $config['pardul']['build']          = "20060310";
 
 ?>

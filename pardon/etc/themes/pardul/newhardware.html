@@ -1,25 +1,15 @@
 {include file="header.html"}
 
    {if $message}<div id="warn">{$message}</div>{else}
-                {literal}
-                <script type="text/javascript">
-                    function doanothercheck(form) {
-                        if (frm.p_vendor.value.length < 3) {
-                            alert('##MISSING_FIELDS## : ##VENDOR_BRAND##'); frm.p_vendor.select(); frm.p_vendor.focus(); return false;}
-                        if (frm.p_name.value.length < 3) { alert('##MISSING_FIELDS## : ##PRODUCT_NAME_MODEL## !');return false;}
-                        return true;
-                    }
-                </script>
-                {/literal}
                 <script src="lib/scripts/newhardware.js"></script>
-                <div id="head">##ADD_NEW_HARDWARE##</div>
+                <div id="head">Yeni Donanım Ekle</div>
                 <form id="frm" action="{$pardul_url}?newhardware_f" method="post" onSubmit="return doanothercheck(frm.p_vendor);">
                 <input type="hidden" name="userid" value="{$UserID}">
                 <input type="hidden" value="{$smarty.now|date_format:"%Y%m%d%H%M"}" name="p_date">
                 <table class="regtable">
                     <tbody>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##VENDOR_BRAND## </td>
+                            <td><span style="color: red">[*]</span> Üretici Firma </td>
                             <td>
                                 <input type="text" name="p_vendor" id="p_vendor">
                                 <div class="dropmenu" id="dropmen">
@@ -28,11 +18,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##PRODUCT_NAME_MODEL## </td>
+                            <td><span style="color: red">[*]</span> Ürün Adı </td>
                             <td><input id="p_name" name="p_name" size="30" value="{$p_name}"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: red">[*]</span> ##CATEGORY## </td>
+                            <td><span style="color: red">[*]</span> Kategori </td>
                             <td>
                                 <select name="p_category">
                                 {section name=node loop=$p_category}{if $p_category[node].sub}<optgroup label="{$p_category[node].CategoryName}">
@@ -43,11 +33,11 @@
                                 </select>
                         </tr>
                         <tr>
-                            <td><span style="color: green">[*]</span> ##DEVICE_NUMBER## </td>
+                            <td><span style="color: green">[*]</span> Aygıt Numarası </td>
                             <td><input id="p_device_id" name="p_device_id" value="{$p_device_id}"></td>
                         </tr>
                         <tr>
-                            <td><span style="color: green">[*]</span> ##BUS_TYPE## </td>
+                            <td><span style="color: green">[*]</span> VeriYolu Tipi </td>
                             <td>
                                 <select id="p_bus_type" name="p_bus_type">
                                 {section name=node loop=$p_bustypes}
@@ -56,7 +46,7 @@
                                 </select>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"><span style="color: red">[*]</span> ##TEST_RESULTS## </td>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: red">[*]</span> Test Sonuçları </td>
                             <td>
                                 <div class="checkbox">
                                 {section name=node loop=$p_distro}
@@ -65,9 +55,9 @@
                                 {$p_distro[node].DistVersion}
                                 </div><div style="text-align:right;">
                                 <select name="p_state[{$p_distro[node].ID}]">
-                                    <option value="F">##COMPATIBLE##</option>
-                                    <option value="S">##NEEDS_MANUAL_CONFIGURATION##</option>
-                                    <option value="N">##NOT_COMPATIBLE##</option>
+                                    <option value="F">Uyumlu</option>
+                                    <option value="S">Ek işlem gerekli</option>
+                                    <option value="N">Uyumlu değil</option>
                                 </select>
                                 </div>
                                 {/section}
@@ -75,7 +65,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> ##ADITIONAL_DESCRIPTION## </td>
+                            <td style="vertical-align:top;padding-top:3px;"><span style="color: green">[*]</span> Ek Açıklama </td>
                             <td width="370px">
                                 <textarea id="p_todo" name="p_todo" rows="7"></textarea>
                             </td>
@@ -84,7 +74,7 @@
                 </table>
                 <table class="regtable">
                     <tr>
-                        <td align="right"><input onclick="return submitform();" value="##REGISTER##" name="register" type="submit"></td>
+                        <td align="right"><input onclick="return submitform();" value="Kayıt" name="register" type="submit"></td>
                     </tr>
                 </table>
                 </form>

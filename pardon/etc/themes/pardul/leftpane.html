@@ -1,29 +1,29 @@
 <div id="leftpane">
-            <div id="leftbox"><li><a href="{$pardul_url}">##MAIN_PAGE##</a></div>
+            <div id="leftbox"><li><a href="{$pardul_url}">Ana Sayfa</a></div>
             {if $UserState=="SA" or $UserState=="A"}
             <div id="leftbox">
-                <li><a href="{$pardul_url}?newhardware">##ADD_NEW_HARDWARE##</a>
-                <li><a href="{$pardul_url}?myhardwares">##MY_HARDWARES##</a>
+                <li><a href="{$pardul_url}?newhardware">Yeni Donanım Ekle</a>
+                <li><a href="{$pardul_url}?myhardwares">Gönderdiklerim</a>
             </div>
             {/if}
             {if $UserState=="A"}
             <div id="leftbox">
-                <li><a href="{$pardul_url}?queue">##QUEUE##</a>
-                <li><a href="{$pardul_url}?users">##USER_LIST##</a>
-                <li><a href="{$pardul_url}?hw_list">##HARDWARE_LIST##</a>
+                <li><a href="{$pardul_url}?queue">Onay Bekleyenler</a>
+                <li><a href="{$pardul_url}?users">Kullanıcı Tanımları</a>
+                <li><a href="{$pardul_url}?hw_list">Donanım Listesi</a>
             </div>
             {/if}
             <div id="leftbox">
                 {if $UserName}
-                ##WELCOME## {$UserRealName}
-                <div class="register"><a href="?quit">##EXIT##</a></div>
+                Hoşgeldiniz {$UserRealName}
+                <div class="register"><a href="?quit">Çıkış</a></div>
                 {else}
-                <div id="head">##USER_LOGIN##</div>
+                <div id="head">Kullanıcı Giriş</div>
                 <form action="{$url}?login" method="post">
-                    ##USERNAME## <input name="user" class="user" size="10">
-                    ##PASSWORD## <input name="pass" class="pass" size="10" type="password">
-                    <input value="##LOGIN##" name="login" type="submit">
-                    <div class="register"><a href="{$url}?register">##SIGN_UP##</a></div>
+                    Kullanıcı Adı : <input name="user" class="user" size="10">
+                    Parola : <input name="pass" class="pass" size="10" type="password">
+                    <input value="Giriş" name="login" type="submit">
+                    <div class="register"><a href="{$url}?register">Üye Ol</a></div>
                 </form>
                 {/if}
             </div>
