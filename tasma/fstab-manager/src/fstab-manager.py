@@ -74,6 +74,14 @@ class fstabForm(mainForm):
         mainForm.__init__(self, parent, name)
 
         self.Fstab = fstab.Fstab()
+        if os.getuid()!=0:
+            self.btn_update.setEnabled(False)
+            self.btn_autoFind.setEnabled(False)
+            self.label_warn.show()
+        else:
+            pass
+            self.label_warn.hide()
+
         # Just for block devices
         self.knownFS=['ext3:Ext3',
                       'ext2:Ext2',
@@ -91,7 +99,7 @@ class fstabForm(mainForm):
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
         self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
-        self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.fillDiskList)
+        self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.slotAutoFind)
         self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
         self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
@@ -112,9 +120,12 @@ class fstabForm(mainForm):
             try:
                 selected_=self.list_main.selectedItem()
                 selected =self.getDetailsOfSelected(selected_,key=True)
-                self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
+                # to avoid root partition changes.
+                # root partition's options can change but file_system and mount_points can not.
+                if not self.prettyList[selected[0]][selected[1]]['mount_point']=='/':
+                    self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
+                    self.prettyList[selected[0]][selected[1]]['file_system']=self.getFsName(self.combo_fs.currentText())
                 self.prettyList[selected[0]][selected[1]]['options']=str(self.line_opts.text())
-                self.prettyList[selected[0]][selected[1]]['file_system']=self.getFsName(self.combo_fs.currentText())
             except:
                 pass
 
@@ -145,7 +156,6 @@ class fstabForm(mainForm):
             x+=1
 
     def slotList(self):
-        print 'debug'
         try:
             selected=self.list_main.selectedItem()
             partitionInfo = self.getDetailsOfSelected(selected)
@@ -158,8 +168,6 @@ class fstabForm(mainForm):
                 if xx.split(':')[0]==partitionInfo['file_system']:
                     self.combo_fs.setCurrentItem(i)
                 i+=1
-            if selected.isOn():
-                self.btn_update.setEnabled(True)
             self.frame_detail.show()
             self.sessionLocked=False
 
@@ -167,24 +175,30 @@ class fstabForm(mainForm):
             self.frame_detail.hide()
             self.sessionLocked=True
 
+    def slotAutoFind(self):
+        # not ready
+        self.Fstab.delDepartedPartitions()
+        self.Fstab.addAvailablePartitions()
+        self.initialize()
+
     def slotUpdate(self):
         self.saveSession(Single=True)
         for disk in self.blockDevices:
             for node in self.prettyList[disk]:
                 if node['list_widget'].isOn():
-                    print node['partition_name'],' added'
+                    # print node['partition_name'],' added'
                     self.Fstab.addFstabEntry(node['partition_name'],node)
                 else:
-                    print node['partition_name'],' deleted'
-                    self.Fstab.delFstabEntry(node['partition_name'])
-        print self.Fstab.content
+                    # print node['partition_name'],' deleted'
+                    # warn when trying remove root partition
+                    if not node['mount_point']=='/':
+                        self.Fstab.delFstabEntry(node['partition_name'])
+
         if (self.Fstab.writeContent()):
-            info = QMessageBox("Completed","File /etc/fstab updated !",QMessageBox.Information,QMessageBox.Ok,0,0,self)
-            info.show()
+            QMessageBox("Completed","File /etc/fstab updated !",QMessageBox.Information,QMessageBox.Ok,0,0,self).show()
 
         self.Fstab.update()
         self.initialize()
-
 
     def fillDiskList(self):
         self.frame_detail.hide()
@@ -273,8 +287,8 @@ def main():
 
     win = QDialog()
     win.setCaption(i18n('Fstab Manager'))
-    win.setMinimumSize(520, 420)
-    win.resize(520, 420)
+    #win.setMinimumSize(520, 420)
+    #win.resize(520, 420)
     win.setIcon(loadIcon('fstab_manager', size=128))
     widget = fstabForm(win)
     toplayout = QVBoxLayout(win, 0, KDialog.spacingHint())
