@@ -195,6 +195,8 @@ class ComarInterface(Hook):
             if "\n" in gate:
                 gate, mask = gate.split("\n")
             conn = self.getConn(reply.script, name)
+            if not conn:
+                return
             conn.net_mode = mode
             conn.net_addr = addr
             conn.net_mask = mask
@@ -206,6 +208,8 @@ class ComarInterface(Hook):
         if reply.id == CONNINFO_AUTH:
             name, type = reply.data.split("\n", 1)
             conn = self.getConn(reply.script, name)
+            if not conn:
+                return
             if "\n" in type:
                 type, rest = type.split("\n", 1)
             conn.auth_mode = type
@@ -225,6 +229,8 @@ class ComarInterface(Hook):
         if reply.id == CONNINFO_REMOTE:
             name, remote = reply.data.split("\n")
             conn = self.getConn(reply.script, name)
+            if not conn:
+                return
             conn.remote = remote
             conn.i -= 1
             if conn.i == 0:

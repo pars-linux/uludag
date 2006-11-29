@@ -67,7 +67,7 @@ class Connection(QWidget):
         self.edit_but = IconButton("configure.png", self)
         QToolTip.add(self.edit_but, i18n("Configure connection"))
         self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
-        self.del_but = IconButton("edittrash.png", self)
+        self.del_but = IconButton("cancel.png", self)
         QToolTip.add(self.del_but, i18n("Delete connection"))
         self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         
