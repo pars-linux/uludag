@@ -33,6 +33,29 @@ class IconButton(QPushButton):
         self.resize(self.myWidth, self.myHeight)
 
 
+class ConnectionTipper(QToolTip):
+    def maybeTip(self, point):
+        conn = self.parent.conn
+        link = comlink.links[conn.script]
+        tip = "<nobr>"
+        tip += i18n("Name:")
+        tip += " <b>%s</b>" % unicode(conn.name)
+        tip += "</nobr>"
+        if "net" in link.modes:
+            tip += "<br>"
+            tip += i18n("Address:")
+            if conn.net_mode == "auto":
+                tip += " "
+                tip += i18n("Automatic")
+            else:
+                tip += " %s" % conn.net_addr
+        if "remote" in link.modes:
+            tip += "<br>"
+            tip += "%s: %s" % (link.remote_name, unicode(conn.remote))
+        
+        self.tip(self.parent.rect(), tip)
+
+
 class Connection(QWidget):
     def __init__(self, view, conn):
         self.is_odd = 0
@@ -42,6 +65,8 @@ class Connection(QWidget):
             dev = Device(view, conn.devname, conn.devid)
             dev.show()
         QWidget.__init__(self, dev)
+        self.tipper = ConnectionTipper(self)
+        self.tipper.parent = self
         dev.connections.append(self)
         
         self.view = view
