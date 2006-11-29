@@ -18,7 +18,35 @@ import packages
 def _(x):
     return x
 
-default_exclude_list = """
+default_live_exclude_list = """
+lib/rcscripts/
+usr/include/
+usr/lib/python2.4/lib-tk/
+usr/lib/python2.4/idlelib/
+usr/lib/python2.4/distutils/
+usr/lib/python2.4/bsddb/test/
+usr/lib/python2.4/lib-old/
+usr/lib/python2.4/test/
+usr/lib/klibc/include/
+usr/qt/3/include/
+usr/share/aclocal/
+usr/share/cups/
+usr/share/doc/
+usr/share/info/
+usr/share/sip/
+usr/share/man/
+var/db/pisi/
+var/lib/pisi/
+var/cache/pisi/packages/
+var/cache/pisi/archives/
+var/tmp/pisi/
+tmp/pisi-root/
+var/log/comar.log
+var/log/pisi.log
+root/.bash_history
+"""
+
+default_install_exclude_list = """
 lib/rcscripts/
 usr/include/
 usr/lib/cups/
@@ -62,7 +90,7 @@ class Project:
         self.selected_components = []
         self.selected_packages = []
         self.all_packages = []
-        self.exclude_list = default_exclude_list.split()
+        self.exclude_list = default_install_exclude_list.split()
     
     def open(self, filename):
         try:
@@ -83,6 +111,11 @@ class Project:
         self.media_size = doc.getAttribute("size")
         self.work_dir = doc.getTagData("WorkDir")
         self.release_files = doc.getTagData("ReleaseFiles")
+        
+        if self.media_type == "install":
+            self.exclude_list = default_install_exclude_list.split()
+        else:
+            self.exclude_list = default_live_exclude_list.split()
         
         paksel = doc.getTag("PackageSelection")
         if paksel:
@@ -159,13 +192,3 @@ class Project:
         if clean and os.path.exists(path):
             os.unlink(path)
         return path
-
-
-"""
-    def updateStatus(self):
-        if self.pak_selection and len(self.pak_selection[2]) > 0:
-            self.paklabel.setText(_("(%d packages, %s size, %s installed)") % 
-                (len(self.pak_selection[2]), utility.size_fmt(self.pak_size), utility.size_fmt(self.pak_inst_size)))
-        else:
-            self.paklabel.setText(_("(no packages selected yet)"))        
-"""
