@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "POT-Creation-Date: 2006-11-26 14:46+0200\n"
-"PO-Revision-Date: 2006-11-26 12:44-0400\n"
-"Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
+"PO-Revision-Date: 2006-11-28 19:46-0400\n"
+"Last-Translator: Klemens Häckel <click3d@linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -35,12 +35,8 @@ msgstr "Kaptan Desktop"
 
 #: rc.cpp:3
 #, no-c-format
-msgid ""
-"Here, you can select a wallpaper for your desktop background. Pardus "
-"provides eye candy wallpapers, you can select one of them, as you wish :)."
-msgstr ""
-"Aqui puedes elegir una imagen para el fondo de tu escritorio. Pardus viene "
-"con fondos hermosos, puedes elegir a gusto :)."
+msgid "Here, you can select a wallpaper for your desktop background. Pardus provides eye candy wallpapers, you can select one of them, as you wish :)."
+msgstr "Aqui puedes elegir una imagen para el fondo de tu escritorio. Pardus viene con fondos hermosos, puedes elegir a gusto :)."
 
 #: rc.cpp:6
 #, no-c-format
@@ -67,58 +63,28 @@ msgstr "&Probar fondo"
 msgid ""
 "<center>\n"
 "You have finished!  Now you can start using Pardus Linux<br>\n"
-"<a href=\"#tasma\">If you want to change more settings click here to start "
-"<b>Pardus Configuration Center</b></a>\n"
+"<a href=\"#tasma\">If you want to change more settings click here to start <b>Pardus Configuration Center</b></a>\n"
 "</center>"
 msgstr ""
 "<center>\n"
 "Terminaste ! Ahora puedes empezar a usar Pardus Linux<br>\n"
-"<a href=\"#tasma\">Si quieres cambiar algo más cliquée aqui para entrar "
-"al<b>Centro de Configuración de Pardus</b></a>\n"
+"<a href=\"#tasma\">Si quieres cambiar algo más cliquée aqui para entrar al<b>Centro de Configuración de Pardus</b></a>\n"
 "</center>"
 
 #: rc.cpp:27
 #, no-c-format
-msgid ""
-"Pardus is a GNU/Linux distribution, targeting at computer literate users' "
-"basic desktop needs; with acquiring the strong ideas, architecture and code "
-"of other distributions; with a custom configuration framework which has the "
-"ability to evolve into an autonomous system; for simplifying the "
-"installation and usage of the computers."
-msgstr ""
-"Pardus es una distribución GNU/Linux, destinado para las necesidades basicos "
-"de escritorio; aprovechando ideas, architectura y código de otras "
-"distribuciones ; Con una herramienta adaptada de configuración que tiene la "
-"opciónde convertirse en un producto independiente; para la simplificación de "
-"la instalación y uso de las computadoras."
+msgid "Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; with acquiring the strong ideas, architecture and code of other distributions; with a custom configuration framework which has the ability to evolve into an autonomous system; for simplifying the installation and usage of the computers."
+msgstr "Pardus es una distribución GNU/Linux, destinado para las necesidades basicos de escritorio; aprovechando ideas, architectura y código de otras distribuciones ; Con una herramienta adaptada de configuración que tiene la opciónde convertirse en un producto independiente; para la simplificación de la instalación y uso de las computadoras."
 
 #: rc.cpp:31
 #, no-c-format
-msgid ""
-"This application, called <b>Kaptan Desktop</b>, will help you with your "
-"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
-"This application will also set some default configuration for a better "
-"desktop :)."
-msgstr ""
-"Este aplicativo, llamado <b>Kaptan Desktop</b>, te ayudará con una "
-"configuración básica pero funcional para tu estación <b>Pardus</b> de manera "
-"rápida. Este aplicativo tambien modificará algunas configuraciones por "
-"defecto para un mejor escritorio :)."
+msgid "This application, called <b>Kaptan Desktop</b>, will help you with your basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. This application will also set some default configuration for a better desktop :)."
+msgstr "Este aplicativo, llamado <b>Kaptan Desktop</b>, te ayudará con una configuración básica pero funcional para tu estación <b>Pardus</b> de manera rápida. Este aplicativo tambien modificará algunas configuraciones por defecto para un mejor escritorio :)."
 
 #: rc.cpp:34
 #, no-c-format
-msgid ""
-"If you are left-handed, you may prefer to swap the functions of the left and "
-"right buttons on your pointing device by choosing the 'Left handed' option "
-"below. If your pointing device has more than two buttons, only those that "
-"function as the left and right buttons are affected. For example, if you "
-"have a tree-button mouse, the middle buttons is unaffected."
-msgstr ""
-"Si eres zurdo podrías preferir invertir las funciones de los botones de tu "
-"puntero (ratón) indicando la opción 'Zurdo' abajo.Si tu puntero tiene más de "
-"dos botones, solamente se afecta el  funcionamiento de los botones de la "
-"derecha y de la izquierda. Si por ejemplo tienes un ratón de tres botones, "
-"el botón del medio no está afectado."
+msgid "If you are left-handed, you may prefer to swap the functions of the left and right buttons on your pointing device by choosing the 'Left handed' option below. If your pointing device has more than two buttons, only those that function as the left and right buttons are affected. For example, if you have a tree-button mouse, the middle buttons is unaffected."
+msgstr "Si eres zurdo podrías preferir invertir las funciones de los botones de tu puntero (ratón) indicando la opción 'Zurdo' abajo.Si tu puntero tiene más de dos botones, solamente se afecta el  funcionamiento de los botones de la derecha y de la izquierda. Si por ejemplo tienes un ratón de tres botones, el botón del medio no está afectado."
 
 #: rc.cpp:37
 #, no-c-format
@@ -140,21 +106,23 @@ msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
 msgstr ""
+"_: Traductores\n"
+"Klemens Häckel"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
 msgstr ""
+"_: email\n"
+"click3d(at)linuxmail.org"
 
 #~ msgid "pix_wallpaper"
 #~ msgstr "pix_wallpaper"
-
 #~ msgid "pix_goodbye"
 #~ msgstr "pix_goodbye"
-
 #~ msgid "pix_pardus"
 #~ msgstr "pix_pardus"
-
 #~ msgid "pix_kaptan"
 #~ msgstr "pix_kaptan"
+
