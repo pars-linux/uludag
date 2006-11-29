@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-24 15:59+0200\n"
+"POT-Creation-Date: 2006-11-29 16:54+0200\n"
 "PO-Revision-Date: 2006-11-06 01:36+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: german <de@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: connection.py:33
+#: connection.py:33 browser.py:41
 msgid "Name:"
 msgstr "Name:"
 
@@ -73,7 +73,7 @@ msgstr "Automatisch beziehen (DHCP)"
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:208
+#: connection.py:208 browser.py:46
 msgid "Address:"
 msgstr "Adresse:"
 
@@ -97,7 +97,7 @@ msgstr "Name-Server"
 msgid "From query"
 msgstr ""
 
-#: connection.py:408
+#: connection.py:410
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
@@ -111,11 +111,11 @@ msgstr "Netzwerk Einstellungen"
 msgid "Network manager module is already started!"
 msgstr "Netzwerk KGA wird bereits ausgeführt!"
 
-#: comariface.py:324
+#: comariface.py:330
 msgid "new connection"
 msgstr "Neue Verbindung"
 
-#: nameconf.py:27 browser.py:321
+#: nameconf.py:27 browser.py:348
 #, fuzzy
 msgid "Name Service Settings"
 msgstr "Netzwerk Einstellungen"
@@ -136,22 +136,26 @@ msgstr "Name-Server hinzufügen"
 msgid "Name server:"
 msgstr "Name-Server:"
 
-#: browser.py:55
+#: browser.py:49 browser.py:138
+msgid "Automatic"
+msgstr ""
+
+#: browser.py:80
 #, fuzzy
 msgid "Turn on/off connection"
 msgstr "Neue Verbindung"
 
-#: browser.py:68
+#: browser.py:93
 #, fuzzy
 msgid "Configure connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
-#: browser.py:71
+#: browser.py:96
 #, fuzzy
 msgid "Delete connection"
 msgstr "Verbindung löschen?"
 
-#: browser.py:89
+#: browser.py:114
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -162,20 +166,16 @@ msgstr ""
 "'%s'\n"
 "Verbindung löschen?"
 
-#: browser.py:90
+#: browser.py:115
 msgid "Delete connection?"
 msgstr "Verbindung löschen?"
 
-#: browser.py:111
-msgid "Automatic"
-msgstr ""
-
-#: browser.py:317
+#: browser.py:344
 #, fuzzy
 msgid "New connection"
 msgstr "Neue Verbindung"
 
-#: browser.py:352
+#: browser.py:379
 #, fuzzy
 msgid "Network Connections Help"
 msgstr "Netzwerkverbindungen"
