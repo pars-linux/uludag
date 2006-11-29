@@ -34,7 +34,7 @@ def chroot_comar(image_dir):
     time.sleep(2)
 
 def get_exclude_list(project):
-    exc = project.exclude_list[:]
+    exc = project.exclude_list()[:]
     image_dir = project.image_dir()
     path = image_dir + "/boot"
     for name in os.listdir(path):
