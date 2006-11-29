@@ -9,6 +9,7 @@ X-KDE-ModuleType=Library
 X-KDE-Library=fstab-manager
 X-KDE-FactoryName=fstab_manager
 X-KDE-RootOnly=true
+X-Tasma-Fork=True
 Type=Application
 Exec=kcmshell fstab-manager
 Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
