@@ -305,15 +305,17 @@ class Settings(QWidget):
         
         conn = self.conn
         script_object = comlink.com.Net.Link[self.link.script]
+        flag = False
         
         if conn and conn.name != name:
             script_object.deleteConnection(name=conn.name)
+            flag = True
+        
+        if flag or conn == None or self.device_uid != conn.devid:
+            script_object.setConnection(name=name, device=self.device_uid)
         
         if "net" in self.link.modes:
             script_object.setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
-        
-        if conn == None or self.device_uid != conn.devid:
-            script_object.setConnection(name=name, device=self.device_uid)
         
         if "remote" in self.link.modes:
             remote = self.remote.text()
