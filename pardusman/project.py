@@ -168,7 +168,7 @@ class Project:
             for root, dirs, files in os.walk(path):
                 for name in files:
                     if fnmatch.fnmatch(name, exc[1]):
-                        temp.append(os.path.join(root[len(image_dir):], name))
+                        temp.append(os.path.join(root[len(image_dir)+1:], name))
         for name in temp:
             print name
         sys.exit(0)
