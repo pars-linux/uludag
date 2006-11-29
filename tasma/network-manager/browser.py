@@ -106,6 +106,8 @@ class Connection(QWidget):
         self.update()
     
     def addressText(self):
+        if self.conn.state != "up":
+            return ""
         addr = self.conn.net_addr
         if not addr:
             addr = i18n("Automatic")
