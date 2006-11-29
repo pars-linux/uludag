@@ -169,9 +169,6 @@ class Project:
                 for name in files:
                     if fnmatch.fnmatch(name, exc[1]):
                         temp.append(os.path.join(root[len(image_dir)+1:], name))
-        for name in temp:
-            print name
-        sys.exit(0)
         return temp
     
     def _get_dir(self, name, clean=False):
