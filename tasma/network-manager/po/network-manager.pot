@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-24 15:59+0200\n"
+"POT-Creation-Date: 2006-11-29 16:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: connection.py:33
+#: connection.py:33 browser.py:41
 msgid "Name:"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Manual"
 msgstr ""
 
-#: connection.py:208
+#: connection.py:208 browser.py:46
 msgid "Address:"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "From query"
 msgstr ""
 
-#: connection.py:408
+#: connection.py:410
 msgid "Configure network connection"
 msgstr ""
 
@@ -108,11 +108,11 @@ msgstr ""
 msgid "Network manager module is already started!"
 msgstr ""
 
-#: comariface.py:324
+#: comariface.py:330
 msgid "new connection"
 msgstr ""
 
-#: nameconf.py:27 browser.py:321
+#: nameconf.py:27 browser.py:348
 msgid "Name Service Settings"
 msgstr ""
 
@@ -132,19 +132,23 @@ msgstr ""
 msgid "Name server:"
 msgstr ""
 
-#: browser.py:55
+#: browser.py:49 browser.py:138
+msgid "Automatic"
+msgstr ""
+
+#: browser.py:80
 msgid "Turn on/off connection"
 msgstr ""
 
-#: browser.py:68
+#: browser.py:93
 msgid "Configure connection"
 msgstr ""
 
-#: browser.py:71
+#: browser.py:96
 msgid "Delete connection"
 msgstr ""
 
-#: browser.py:89
+#: browser.py:114
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -152,19 +156,15 @@ msgid ""
 "connection?"
 msgstr ""
 
-#: browser.py:90
+#: browser.py:115
 msgid "Delete connection?"
 msgstr ""
 
-#: browser.py:111
-msgid "Automatic"
-msgstr ""
-
-#: browser.py:317
+#: browser.py:344
 msgid "New connection"
 msgstr ""
 
-#: browser.py:352
+#: browser.py:379
 msgid "Network Connections Help"
 msgstr ""
 

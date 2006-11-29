@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-24 15:59+0200\n"
+"POT-Creation-Date: 2006-11-29 16:54+0200\n"
 "PO-Revision-Date: 2006-11-26 17:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: connection.py:33
+#: connection.py:33 browser.py:41
 msgid "Name:"
 msgstr "Nombre"
 
@@ -39,8 +39,7 @@ msgstr "Modo:"
 msgid "No authentication"
 msgstr "Sin autenticación"
 
-#: connection.py:101
-#: connection.py:112
+#: connection.py:101 connection.py:112
 msgid "Password:"
 msgstr "Contraseña:"
 
@@ -72,13 +71,11 @@ msgstr "Asignación automatica (DHCP)"
 msgid "Manual"
 msgstr "Manual"
 
-#: connection.py:208
+#: connection.py:208 browser.py:46
 msgid "Address:"
 msgstr "Dirección:"
 
-#: connection.py:213
-#: connection.py:226
-#: connection.py:245
+#: connection.py:213 connection.py:226 connection.py:245
 msgid "Custom"
 msgstr "Personalizado"
 
@@ -90,8 +87,7 @@ msgstr "Mascara de Red:"
 msgid "Gateway:"
 msgstr "Puerto de Enlace:"
 
-#: connection.py:233
-#: nameconf.py:42
+#: connection.py:233 nameconf.py:42
 msgid "Name servers"
 msgstr "Servidor de Nombres"
 
@@ -99,12 +95,11 @@ msgstr "Servidor de Nombres"
 msgid "From query"
 msgstr "From query"
 
-#: connection.py:408
+#: connection.py:410
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
-#: network-manager.py:33
-#: network-manager.py:85
+#: network-manager.py:33 network-manager.py:85
 msgid "Network Manager"
 msgstr "Administrador de Red"
 
@@ -112,12 +107,11 @@ msgstr "Administrador de Red"
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está instalado!"
 
-#: comariface.py:324
+#: comariface.py:330
 msgid "new connection"
 msgstr "conexión nueva"
 
-#: nameconf.py:27
-#: browser.py:321
+#: nameconf.py:27 browser.py:348
 msgid "Name Service Settings"
 msgstr "Parámetros del servivio de nombres"
 
@@ -137,19 +131,23 @@ msgstr "Agregar Servidor de nombre"
 msgid "Name server:"
 msgstr "Servidor de Nombre:"
 
-#: browser.py:55
+#: browser.py:49 browser.py:138
+msgid "Automatic"
+msgstr "Automático"
+
+#: browser.py:80
 msgid "Turn on/off connection"
 msgstr "Habilitar/Deshabilitar conexión"
 
-#: browser.py:68
+#: browser.py:93
 msgid "Configure connection"
 msgstr "Configurar conexión"
 
-#: browser.py:71
+#: browser.py:96
 msgid "Delete connection"
 msgstr "Eliminar conexión"
 
-#: browser.py:89
+#: browser.py:114
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -160,19 +158,15 @@ msgstr ""
 "la conexión\n"
 "'%s' ?"
 
-#: browser.py:90
+#: browser.py:115
 msgid "Delete connection?"
 msgstr "Eliminar conexión ?"
 
-#: browser.py:111
-msgid "Automatic"
-msgstr "Automático"
-
-#: browser.py:317
+#: browser.py:344
 msgid "New connection"
 msgstr "Conexión nueva"
 
-#: browser.py:352
+#: browser.py:379
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
 
@@ -199,4 +193,3 @@ msgstr "Instalar paquetes de red!"
 #: newconn.py:112
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "No se instalaron todavía paquetes con los script de red COMAR"
-
