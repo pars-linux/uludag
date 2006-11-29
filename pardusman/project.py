@@ -75,6 +75,11 @@ var/log/pisi.log
 root/.bash_history
 """
 
+default_glob_excludes = (
+    ( "usr/lib/python2.4/", "*.pyc" ),
+    ( "usr/lib/python2.4/", "*.pyo" ),
+)
+
 
 class Project:
     def __init__(self):
@@ -90,7 +95,6 @@ class Project:
         self.selected_components = []
         self.selected_packages = []
         self.all_packages = []
-        self.exclude_list = default_install_exclude_list.split()
     
     def open(self, filename):
         try:
@@ -111,11 +115,6 @@ class Project:
         self.media_size = doc.getAttribute("size")
         self.work_dir = doc.getTagData("WorkDir")
         self.release_files = doc.getTagData("ReleaseFiles")
-        
-        if self.media_type == "install":
-            self.exclude_list = default_install_exclude_list.split()
-        else:
-            self.exclude_list = default_live_exclude_list.split()
         
         paksel = doc.getTag("PackageSelection")
         if paksel:
@@ -155,6 +154,25 @@ class Project:
         f = file(filename, "w")
         f.write(data)
         f.close()
+    
+    def exclude_list(self):
+        import fnmatch
+        
+        if self.media_type == "install":
+            temp = default_install_exclude_list.split()
+        else:
+            temp = default_live_exclude_list.split()
+        image_dir = self.image_dir()
+        for exc in default_glob_excludes:
+            path = os.path.join(image_dir, exc[0])
+            for root, dirs, files in os.walk(path):
+                for name in files:
+                    if fnmatch.fnmatch(name, exc[1]):
+                        temp.append(os.path.join(exc[0], root, name))
+        for name in temp:
+            print name
+        sys.exit(0)
+        return temp
     
     def _get_dir(self, name, clean=False):
         dirname = os.path.join(self.work_dir, name)
