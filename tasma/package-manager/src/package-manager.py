@@ -458,9 +458,7 @@ class MainApplicationWidget(QWidget):
         action = basketDialog.exec_loop()
         self.processEvents()
 
-        if action == BasketDialog.UPDATE_BASKET:
-            self.updateStatusBar()
-        elif action == BasketDialog.APPLY_OPERATION:
+        if action == BasketDialog.APPLY_OPERATION:
             self.takeAction()
 
         self.updateButtons()

@@ -112,10 +112,14 @@ class BasketDialog(QDialog):
         self.connect(self.pkgHtmlPart,SIGNAL("completed()"), self.registerEventListener)
 
     def updateBasket(self):
+        self.createSelectedPackagesList()
+        self.createExtraPackagesList()
+        self.parent.updateStatusBar()
+
+    def closeEvent(self, event):
         self.pkgHtmlPart = None
         self.depHtmlPart = None
-        self.hide()
-        self.done(UPDATE_BASKET)
+        self.accept()
 
     def applyOperation(self):
         self.pkgHtmlPart = None
