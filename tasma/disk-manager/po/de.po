@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: service manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-07 21:36+0200\n"
+"POT-Creation-Date: 2006-11-30 14:50+0200\n"
 "PO-Revision-Date: 2006-11-15 20:06+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: German <german@li.org>\n"
@@ -15,116 +15,143 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/service-manager.py:55
-#: src/service-manager.py:350
-#: src/mainform.py:97
-msgid "Service Manager"
+#: src/disk-manager.py:62 src/disk-manager.py:296 src/diskform.py:132
+#, fuzzy
+msgid "Disk Manager"
 msgstr "Dienst Manager"
 
-#: src/service-manager.py:185
-msgid "You are not allowed to do this operation."
-msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
-
-#: src/service-manager.py:185
-msgid "Access Denied"
-msgstr "Zugang verweigert"
-
-#: src/service-manager.py:187
-msgid "COMAR script execution failed."
-msgstr "COMAR Skriptausführung ist fehlgeschlagen."
-
-#: src/service-manager.py:187
-msgid "Script Error"
-msgstr "Skript Fehler"
-
-#: src/service-manager.py:192
-msgid "Unable to start service."
-msgstr "Dienst kann nicht gestartet werden."
-
-#: src/service-manager.py:192
-#: src/service-manager.py:195
-msgid "Failed"
-msgstr "Fehlgeschlagen"
-
-#: src/service-manager.py:195
-msgid "Unable to stop service."
-msgstr "Dienst kann nicht angehalten werden."
-
-#: src/service-manager.py:224
-#: src/mainform.py:101
-msgid "Select a service from list."
-msgstr "Wählen Sie ein Dienst aus der Liste aus."
-
-#: src/service-manager.py:232
-#: src/mainform.py:103
-msgid "Start"
-msgstr "Start"
-
-#: src/service-manager.py:237
-#, python-format
-msgid "%s is running."
-msgstr "%s wird ausgeführt."
-
-#: src/service-manager.py:240
-#, python-format
-msgid "%s is not running."
-msgstr "%s wird nicht ausgeführt."
-
-#: src/service-manager.py:242
-msgid "Execute startup script"
-msgstr "Start-Skript ausführen"
-
-#: src/service-manager.py:243
-msgid "Execuete shutdown script"
-msgstr "Herunterfahr-Skript ausführen"
-
-#: src/service-manager.py:307
-msgid ""
-"If you stop this service, you may have problems.\n"
-"Are you sure you want to stop this service?"
+#: src/disk-manager.py:182 src/disk-manager.py:201
+msgid "Completed"
 msgstr ""
-"Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
-"Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
 
-#: src/service-manager.py:345
-msgid "Service Manager is already running!"
+#: src/disk-manager.py:182 src/disk-manager.py:201
+msgid "File /etc/fstab updated !"
+msgstr ""
+
+#: src/disk-manager.py:231
+msgid ""
+"\n"
+"Mount Point : "
+msgstr ""
+
+#: src/disk-manager.py:232
+msgid "\t FileSystem Type : "
+msgstr ""
+
+#: src/disk-manager.py:291
+#, fuzzy
+msgid "Disk Manager is already running!"
 msgstr "Dienst Manager wird bereits ausgeführt!"
 
-#: src/mainform.py:82
-#: src/mainform.py:108
-msgid "1"
-msgstr "1"
+#: src/diskform.py:92 src/diskform.py:139
+msgid "Disks"
+msgstr ""
 
-#: src/mainform.py:83
-#: src/mainform.py:109
-msgid "Service"
-msgstr "Dienst"
+#: src/diskform.py:93 src/diskform.py:140
+msgid "Partitions"
+msgstr ""
 
-#: src/mainform.py:84
-#: src/mainform.py:110
-msgid "Run on Startup"
-msgstr "Automatisch starten"
+#: src/diskform.py:133
+msgid "File System Type :"
+msgstr ""
 
-#: src/mainform.py:85
-#: src/mainform.py:111
-msgid "Package"
-msgstr "Paket"
+#: src/diskform.py:134
+msgid "Mount Point :"
+msgstr ""
 
-#: src/mainform.py:99
-msgid "Run on startup."
-msgstr "Automatisch starten"
+#: src/diskform.py:135
+msgid "Additional Options :"
+msgstr ""
 
-#: src/mainform.py:100
-msgid "Don't run on startup."
-msgstr "Nicht automatisch starten."
+#: src/diskform.py:136
+msgid "Get Default Options"
+msgstr ""
 
-#: src/mainform.py:106
-msgid "&List servers only."
-msgstr "&Liste nur die Server auf."
+#: src/diskform.py:137
+msgid "Find Disks Automatically"
+msgstr ""
 
-#: src/mainform.py:107
-msgid "Alt+L"
-msgstr "Alt+L"
+#: src/diskform.py:138
+msgid "Show System Partitions"
+msgstr ""
+
+#: src/diskform.py:141
+msgid "To update disk changes the manager must run as root"
+msgstr ""
+
+#: src/diskform.py:143
+msgid "Update"
+msgstr ""
+
+#~ msgid "You are not allowed to do this operation."
+#~ msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
+
+#~ msgid "Access Denied"
+#~ msgstr "Zugang verweigert"
+
+#~ msgid "COMAR script execution failed."
+#~ msgstr "COMAR Skriptausführung ist fehlgeschlagen."
+
+#~ msgid "Script Error"
+#~ msgstr "Skript Fehler"
+
+#~ msgid "Unable to start service."
+#~ msgstr "Dienst kann nicht gestartet werden."
+
+#~ msgid "Failed"
+#~ msgstr "Fehlgeschlagen"
+
+#~ msgid "Unable to stop service."
+#~ msgstr "Dienst kann nicht angehalten werden."
+
+#~ msgid "Select a service from list."
+#~ msgstr "Wählen Sie ein Dienst aus der Liste aus."
+
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgid "%s is running."
+#~ msgstr "%s wird ausgeführt."
+
+#~ msgid "%s is not running."
+#~ msgstr "%s wird nicht ausgeführt."
+
+#~ msgid "Execute startup script"
+#~ msgstr "Start-Skript ausführen"
+
+#~ msgid "Execuete shutdown script"
+#~ msgstr "Herunterfahr-Skript ausführen"
+
+#~ msgid ""
+#~ "If you stop this service, you may have problems.\n"
+#~ "Are you sure you want to stop this service?"
+#~ msgstr ""
+#~ "Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
+#~ "Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "Service"
+#~ msgstr "Dienst"
+
+#~ msgid "Run on Startup"
+#~ msgstr "Automatisch starten"
+
+#~ msgid "Package"
+#~ msgstr "Paket"
+
+#~ msgid "Run on startup."
+#~ msgstr "Automatisch starten"
+
+#~ msgid "Don't run on startup."
+#~ msgstr "Nicht automatisch starten."
+
+#~ msgid "&List servers only."
+#~ msgstr "&Liste nur die Server auf."
+
+#~ msgid "Alt+L"
+#~ msgstr "Alt+L"
 
 #~ msgid ""
 #~ "Unable to complete operation:\n"
@@ -132,10 +159,12 @@ msgstr "Alt+L"
 #~ msgstr ""
 #~ "Der Vorgang kann nicht abgeschlossen werden:\n"
 #~ "%s"
+
 #~ msgid "%s is paused."
 #~ msgstr "%s wurde angehalten."
+
 #~ msgid "%s is stopped."
 #~ msgstr "%s wurde gestoppt."
+
 #~ msgid "Pause"
 #~ msgstr "Pause"
-
