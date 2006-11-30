@@ -260,7 +260,6 @@ class diskForm(mainForm):
                 self.toggleAllPartitions()
 
     def toggleAllPartitions(self):
-        self.frame_detail.hide()
         for disk in self.prettyList:
             for item in self.prettyList[disk]:
                 if item['mount_point']=='/':
