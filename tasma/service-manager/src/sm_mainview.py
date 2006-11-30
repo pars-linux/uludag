@@ -13,7 +13,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-from utility import *
+from sm_utility import *
 
 import kdedesigner
 from service_manager import formMain
