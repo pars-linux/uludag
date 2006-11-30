@@ -300,6 +300,7 @@
         <Package>diffutils</Package>
         <Package>digikam</Package>
         <Package>digikamimageplugins</Package>
+        <Package>disk-manager</Package>
         <Package>disktype</Package>
         <Package>dmidecode</Package>
         <Package>dosbox</Package>
