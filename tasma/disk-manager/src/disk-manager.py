@@ -31,7 +31,7 @@ import comar
 # FSTAB
 import fstab
 
-version = '0.1'
+version = '1.0'
 
 def AboutData():
     about_data = KAboutData('disk-manager',
@@ -246,9 +246,9 @@ class diskForm(mainForm):
                     check = QCheckListItem.Off
 
                 activePartition['partition_name']=partition[0]
-                partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + 
-                                                          i18n('\nMount Point : ') + activePartition['mount_point'] + 
-                                                          i18n('\tFileSystem Type : ') + activePartition['file_system']),
+                partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + '\n' +
+                                                          i18n('Mount Point : ') + activePartition['mount_point'] + '\t' +
+                                                          i18n('File System Type : ') + activePartition['file_system']),
                                                           QCheckListItem.CheckBox)
                 partitions.setState(check)
                 partitions.setMultiLinesEnabled(True)

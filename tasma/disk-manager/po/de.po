@@ -1,24 +1,24 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: service manager\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 21:47+0200\n"
-"PO-Revision-Date: 2006-11-15 20:06+0100\n"
-"Last-Translator: Mustafa <test>\n"
-"Language-Team: German <german@li.org>\n"
+"POT-Creation-Date: 2006-11-30 22:02+0200\n"
+"PO-Revision-Date: 2006-11-30 22:00+0200\n"
+"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/disk-manager.py:78 src/disk-manager.py:315 src/diskform.py:132
-#, fuzzy
 msgid "Disk Manager"
-msgstr "Dienst Manager"
+msgstr ""
 
 #: src/disk-manager.py:200 src/disk-manager.py:219
 msgid "Completed"
@@ -29,19 +29,16 @@ msgid "File /etc/fstab updated !"
 msgstr ""
 
 #: src/disk-manager.py:250
-msgid ""
-"\n"
-"Mount Point : "
+msgid "Mount Point : "
 msgstr ""
 
 #: src/disk-manager.py:251
-msgid "\tFileSystem Type : "
+msgid "File System Type : "
 msgstr ""
 
 #: src/disk-manager.py:310
-#, fuzzy
 msgid "Disk Manager is already running!"
-msgstr "Dienst Manager wird bereits ausgeführt!"
+msgstr ""
 
 #: src/diskform.py:92 src/diskform.py:139
 msgid "Disks"
@@ -78,93 +75,3 @@ msgstr ""
 #: src/diskform.py:141
 msgid "To update disk changes the manager must run as root"
 msgstr ""
-
-#: src/diskform.py:143
-msgid "Update"
-msgstr ""
-
-#~ msgid "You are not allowed to do this operation."
-#~ msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
-
-#~ msgid "Access Denied"
-#~ msgstr "Zugang verweigert"
-
-#~ msgid "COMAR script execution failed."
-#~ msgstr "COMAR Skriptausführung ist fehlgeschlagen."
-
-#~ msgid "Script Error"
-#~ msgstr "Skript Fehler"
-
-#~ msgid "Unable to start service."
-#~ msgstr "Dienst kann nicht gestartet werden."
-
-#~ msgid "Failed"
-#~ msgstr "Fehlgeschlagen"
-
-#~ msgid "Unable to stop service."
-#~ msgstr "Dienst kann nicht angehalten werden."
-
-#~ msgid "Select a service from list."
-#~ msgstr "Wählen Sie ein Dienst aus der Liste aus."
-
-#~ msgid "Start"
-#~ msgstr "Start"
-
-#~ msgid "%s is running."
-#~ msgstr "%s wird ausgeführt."
-
-#~ msgid "%s is not running."
-#~ msgstr "%s wird nicht ausgeführt."
-
-#~ msgid "Execute startup script"
-#~ msgstr "Start-Skript ausführen"
-
-#~ msgid "Execuete shutdown script"
-#~ msgstr "Herunterfahr-Skript ausführen"
-
-#~ msgid ""
-#~ "If you stop this service, you may have problems.\n"
-#~ "Are you sure you want to stop this service?"
-#~ msgstr ""
-#~ "Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
-#~ "Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
-
-#~ msgid "1"
-#~ msgstr "1"
-
-#~ msgid "Service"
-#~ msgstr "Dienst"
-
-#~ msgid "Run on Startup"
-#~ msgstr "Automatisch starten"
-
-#~ msgid "Package"
-#~ msgstr "Paket"
-
-#~ msgid "Run on startup."
-#~ msgstr "Automatisch starten"
-
-#~ msgid "Don't run on startup."
-#~ msgstr "Nicht automatisch starten."
-
-#~ msgid "&List servers only."
-#~ msgstr "&Liste nur die Server auf."
-
-#~ msgid "Alt+L"
-#~ msgstr "Alt+L"
-
-#~ msgid ""
-#~ "Unable to complete operation:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Der Vorgang kann nicht abgeschlossen werden:\n"
-#~ "%s"
-
-#~ msgid "%s is paused."
-#~ msgstr "%s wurde angehalten."
-
-#~ msgid "%s is stopped."
-#~ msgstr "%s wurde gestoppt."
-
-#~ msgid "Pause"
-#~ msgstr "Pause"
