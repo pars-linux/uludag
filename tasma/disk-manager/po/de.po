@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 22:02+0200\n"
+"POT-Creation-Date: 2006-11-30 22:16+0200\n"
 "PO-Revision-Date: 2006-11-30 22:00+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -29,11 +29,11 @@ msgid "File /etc/fstab updated !"
 msgstr ""
 
 #: src/disk-manager.py:250
-msgid "Mount Point : "
+msgid "Mount Point"
 msgstr ""
 
 #: src/disk-manager.py:251
-msgid "File System Type : "
+msgid "File System Type"
 msgstr ""
 
 #: src/disk-manager.py:310

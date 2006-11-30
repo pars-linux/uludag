@@ -247,8 +247,8 @@ class diskForm(mainForm):
 
                 activePartition['partition_name']=partition[0]
                 partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + '\n' +
-                                                          i18n('Mount Point : ') + activePartition['mount_point'] + '\t' +
-                                                          i18n('File System Type : ') + activePartition['file_system']),
+                                                          i18n('Mount Point') +' : '+ activePartition['mount_point'] + '\t' +
+                                                          i18n('File System Type') +' : '+ activePartition['file_system']),
                                                           QCheckListItem.CheckBox)
                 partitions.setState(check)
                 partitions.setMultiLinesEnabled(True)
