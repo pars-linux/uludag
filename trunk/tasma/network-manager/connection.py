@@ -272,6 +272,14 @@ class Settings(QWidget):
                         self.netmask.setText(conn.net_mask)
                     if conn.net_gate:
                         self.gateway.setText(conn.net_gate)
+                if conn.dns_mode == "default":
+                    self.dns1.setChecked(True)
+                elif conn.dns_mode == "auto":
+                    self.dns2.setChecked(True)
+                else:
+                    self.dns3.setChecked(True)
+                    if conn.dns_server:
+                        self.dns_text.setText(conn.dns_server)
             if "auth" in self.link.modes:
                 self.auth_mode.setCurrentItem(0)
                 if conn.auth_mode != "none":
@@ -324,6 +332,15 @@ class Settings(QWidget):
         
         if "net" in self.link.modes:
             script_object.setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
+            nameserver = ""
+            if self.dns1.isChecked():
+                namemode = "default"
+            elif self.dns2.isChecked():
+                namemode = "auto"
+            elif self.dns3.isChecked():
+                namemode = "custom"
+                nameserver = self.dns_text.text()
+            script_object.setNameService(name=name, namemode=namemode, nameserver=nameserver)
         
         if "remote" in self.link.modes:
             remote = self.remote.text()

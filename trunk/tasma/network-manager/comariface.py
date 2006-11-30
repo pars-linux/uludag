@@ -84,6 +84,8 @@ class Connection(Hook):
         self.auth_mode = "none"
         self.auth_user = None
         self.auth_pass = None
+        self.dns_mode = "default"
+        self.dns_server = None
         self.parse(data)
         self.hash = self.hash(self.script, self.name)
         self.got_auth = True
@@ -108,6 +110,10 @@ class Connection(Hook):
                 self.net_mask = value
             elif key == "net_gateway":
                 self.net_gate = value
+            elif key == "namemode":
+                self.dns_mode = value
+            elif key == "nameserver":
+                self.dns_server = value
             elif key == "state":
                 if " " in value:
                     self.state, self.message = value.split(" ", 1)
