@@ -12,6 +12,7 @@
 import os
 import sys
 import time
+import dbus
 
 # KDE/QT Modules
 from qt import *
@@ -56,6 +57,21 @@ def asText(anarray):
         xx+=i+','
     return xx.rstrip(',')
 
+class DbusListener:
+    def __init__(self):
+        self.dbus = dbus.SystemBus()
+        self.hal_ = self.dbus.get_object("org.freedesktop.Hal","/org/freedesktop/Hal/Manager")
+        self.hal  = dbus.Interface(self.hal_,"org.freedesktop.Hal.Manager")
+        self.devices = self.hal.GetAllDevices()
+
+    def getDeviceInfo(self,dType,dName,rValue):
+        for device in self.devices:
+            deviceObject = self.dbus.get_object("org.freedesktop.Hal" ,device)
+            deviceProperties = deviceObject.GetAllProperties(dbus_interface="org.freedesktop.Hal.Device")
+            if deviceProperties.has_key(dType):
+                if deviceProperties[dType]==dName:
+                    return deviceProperties[rValue]
+
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
@@ -74,6 +90,8 @@ class diskForm(mainForm):
         mainForm.__init__(self, parent, name)
 
         self.Fstab = fstab.Fstab()
+        self.Dbus = DbusListener()
+
         if os.getuid()!=0:
             self.btn_update.setEnabled(False)
             self.btn_autoFind.setEnabled(False)
@@ -188,14 +206,14 @@ class diskForm(mainForm):
             for node in self.prettyList[disk]:
                 if node['list_widget'].isOn():
                     self.Fstab.addFstabEntry(node['partition_name'],node)
-                    ## print 'DEBUG: Partition %s added.' % node['partition_name']
+                    ## print 'DEBUG: Partition %s added to /etc/fstab' % node['partition_name']
                 else:
                     # warn when trying remove root partition
                     if not node['mount_point']=='/':
                         self.Fstab.delFstabEntry(node['partition_name'])
-                        ## print 'DEBUG: Partition %s deleted.' % node['partition_name']
+                        ## print 'DEBUG: Partition %s deleted from /etc/fstab' % node['partition_name']
                     else:
-                        print 'ERROR: Partition %s can not delete!!' % node['partition_name']
+                        print 'ERROR: Partition %s can not delete from /etc/fstab' % node['partition_name']
 
         if (self.Fstab.writeContent()):
             self.showInfo(i18n("Completed"),i18n("File /etc/fstab updated !"))
@@ -210,7 +228,8 @@ class diskForm(mainForm):
         self.frame_detail.hide()
         self.list_main.clear()
         for disk in self.blockDevices:
-            disks = QListViewItem(self.list_main,QString(disk+'\nDisk Name'))
+            disk_name = self.Dbus.getDeviceInfo("block.device",disk,"storage.model")
+            disks = QListViewItem(self.list_main,QString('%s\n%s' % (disk,disk_name)))
             disks.setMultiLinesEnabled(True)
             disks.setPixmap(0,loadIcon('Disk',size=32))
             disks.setOpen(True)
@@ -229,7 +248,7 @@ class diskForm(mainForm):
                 activePartition['partition_name']=partition[0]
                 partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + 
                                                           i18n('\nMount Point : ') + activePartition['mount_point'] + 
-                                                          i18n('\t FileSystem Type : ') + activePartition['file_system']),
+                                                          i18n('\tFileSystem Type : ') + activePartition['file_system']),
                                                           QCheckListItem.CheckBox)
                 partitions.setState(check)
                 partitions.setMultiLinesEnabled(True)

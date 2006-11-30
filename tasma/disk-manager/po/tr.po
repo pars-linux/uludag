@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 14:50+0200\n"
+"POT-Creation-Date: 2006-11-30 21:47+0200\n"
 "PO-Revision-Date: 2006-11-30 14:51+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:296 src/diskform.py:132
+#: src/disk-manager.py:78 src/disk-manager.py:315 src/diskform.py:132
 msgid "Disk Manager"
 msgstr "Disk Yöneticisi"
 
-#: src/disk-manager.py:182 src/disk-manager.py:201
+#: src/disk-manager.py:200 src/disk-manager.py:219
 msgid "Completed"
 msgstr "Tamamlandı"
 
-#: src/disk-manager.py:182 src/disk-manager.py:201
+#: src/disk-manager.py:200 src/disk-manager.py:219
 msgid "File /etc/fstab updated !"
 msgstr "Dosya /etc/fstab güncellendi !"
 
-#: src/disk-manager.py:231
+#: src/disk-manager.py:250
 msgid ""
 "\n"
 "Mount Point : "
@@ -37,11 +37,12 @@ msgstr ""
 "\n"
 "Bağlama Noktası : "
 
-#: src/disk-manager.py:232
-msgid "\t FileSystem Type : "
+#: src/disk-manager.py:251
+#, fuzzy
+msgid "\tFileSystem Type : "
 msgstr "\t Dosya Sistemi Tipi : "
 
-#: src/disk-manager.py:291
+#: src/disk-manager.py:310
 msgid "Disk Manager is already running!"
 msgstr "Disk Yöneticisi zaten çalışıyor!"
 
@@ -84,4 +85,3 @@ msgstr "Disk değişiklikleri için yönetici girişi yapmalısınız"
 #: src/diskform.py:143
 msgid "Update"
 msgstr "Güncelle"
-

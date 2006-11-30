@@ -188,7 +188,7 @@ class Fstab:
 
         err = []
         if not self.__allPartitions.get(partition):
-            err.append("ERROR: '%s' is not an available partition.\n" % (partition))
+            err.append("ERROR: '%s' is not an available partition." % (partition))
         if self.__fstabPartitions.get(partition):
             self.delFstabEntry(partition)
         if err:
