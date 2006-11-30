@@ -16,7 +16,7 @@ import shutil
 from distutils.core import Extension
 import kdedistutils
 
-version = '1.1.3'
+version = '1.1.4'
 
 distfiles = """
     README
@@ -59,9 +59,9 @@ if "dist" in sys.argv:
 app_data = [
     'src/service-manager.py',
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/service_manager.png']),
-    'src/mainview.py',
+    'src/sm_mainview.py',
     'src/service_manager.ui',
-    'src/utility.py',
+    'src/sm_utility.py',
     'src/service-manager.desktop',
     'help'
 ]
