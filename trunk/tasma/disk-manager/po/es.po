@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: service manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-30 21:47+0200\n"
-"PO-Revision-Date: 2006-11-15 20:06+0100\n"
-"Last-Translator: Mustafa <test>\n"
-"Language-Team: German <german@li.org>\n"
+"PO-Revision-Date: 2006-11-26 18:39-0400\n"
+"Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
+"Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: src/disk-manager.py:78 src/disk-manager.py:315 src/diskform.py:132
 #, fuzzy
 msgid "Disk Manager"
-msgstr "Dienst Manager"
+msgstr "Service Manager"
 
 #: src/disk-manager.py:200 src/disk-manager.py:219
 msgid "Completed"
@@ -41,7 +41,7 @@ msgstr ""
 #: src/disk-manager.py:310
 #, fuzzy
 msgid "Disk Manager is already running!"
-msgstr "Dienst Manager wird bereits ausgeführt!"
+msgstr "Administrador de Servicios ya se está ejecutando !"
 
 #: src/diskform.py:92 src/diskform.py:139
 msgid "Disks"
@@ -84,87 +84,71 @@ msgid "Update"
 msgstr ""
 
 #~ msgid "You are not allowed to do this operation."
-#~ msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
+#~ msgstr "No estás autorizado para esta operación."
 
 #~ msgid "Access Denied"
-#~ msgstr "Zugang verweigert"
+#~ msgstr "Acceso Denegado"
 
 #~ msgid "COMAR script execution failed."
-#~ msgstr "COMAR Skriptausführung ist fehlgeschlagen."
+#~ msgstr "Ejecución de script COMAR falló."
 
 #~ msgid "Script Error"
-#~ msgstr "Skript Fehler"
+#~ msgstr "Error de Script"
 
 #~ msgid "Unable to start service."
-#~ msgstr "Dienst kann nicht gestartet werden."
+#~ msgstr "No posible arrancar el servicio."
 
 #~ msgid "Failed"
-#~ msgstr "Fehlgeschlagen"
+#~ msgstr "Falló"
 
 #~ msgid "Unable to stop service."
-#~ msgstr "Dienst kann nicht angehalten werden."
+#~ msgstr "No posible parar el servicio."
 
 #~ msgid "Select a service from list."
-#~ msgstr "Wählen Sie ein Dienst aus der Liste aus."
+#~ msgstr "Seleccione un servicio de la lista."
 
 #~ msgid "Start"
-#~ msgstr "Start"
+#~ msgstr "Iniciar"
 
 #~ msgid "%s is running."
-#~ msgstr "%s wird ausgeführt."
+#~ msgstr "%s está ejecutandose."
 
 #~ msgid "%s is not running."
-#~ msgstr "%s wird nicht ausgeführt."
+#~ msgstr "%s no se está ejecutando."
 
 #~ msgid "Execute startup script"
-#~ msgstr "Start-Skript ausführen"
+#~ msgstr "Ejecitar script de arranque"
 
 #~ msgid "Execuete shutdown script"
-#~ msgstr "Herunterfahr-Skript ausführen"
+#~ msgstr "Ejecutar script de apagado"
 
 #~ msgid ""
 #~ "If you stop this service, you may have problems.\n"
 #~ "Are you sure you want to stop this service?"
 #~ msgstr ""
-#~ "Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
-#~ "Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
+#~ "Si paras este servicio podrías tener problemas.\n"
+#~ "Estás seguro que quieres parar este servicio ?"
 
 #~ msgid "1"
 #~ msgstr "1"
 
 #~ msgid "Service"
-#~ msgstr "Dienst"
+#~ msgstr "Servicio"
 
 #~ msgid "Run on Startup"
-#~ msgstr "Automatisch starten"
+#~ msgstr "Iniciar con el arranque del sistema"
 
 #~ msgid "Package"
-#~ msgstr "Paket"
+#~ msgstr "Paquete"
 
 #~ msgid "Run on startup."
-#~ msgstr "Automatisch starten"
+#~ msgstr "Iniciar con el arranque del sistema"
 
 #~ msgid "Don't run on startup."
-#~ msgstr "Nicht automatisch starten."
+#~ msgstr "No iniciar con el arranque del sistema"
 
 #~ msgid "&List servers only."
-#~ msgstr "&Liste nur die Server auf."
+#~ msgstr "&Listar solamente servidores."
 
 #~ msgid "Alt+L"
 #~ msgstr "Alt+L"
-
-#~ msgid ""
-#~ "Unable to complete operation:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Der Vorgang kann nicht abgeschlossen werden:\n"
-#~ "%s"
-
-#~ msgid "%s is paused."
-#~ msgstr "%s wurde angehalten."
-
-#~ msgid "%s is stopped."
-#~ msgstr "%s wurde gestoppt."
-
-#~ msgid "Pause"
-#~ msgstr "Pause"
