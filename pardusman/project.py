@@ -78,6 +78,10 @@ root/.bash_history
 default_glob_excludes = (
     ( "usr/lib/python2.4/", "*.pyc" ),
     ( "usr/lib/python2.4/", "*.pyo" ),
+    ( "usr/lib/", "*.a" ),
+    ( "usr/lib/", "*.la" ),
+    ( "lib/", "*.a" ),
+    ( "lib/", "*.la" ),
 )
 
 
