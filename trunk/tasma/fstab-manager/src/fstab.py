@@ -66,9 +66,10 @@ def getBlockDevices():
         sysfs_devs = glob.glob("/sys/block/" + dev_type)
         for sysfs_dev in sysfs_devs:
             if not int(open(sysfs_dev + "/removable").read().strip()):
-                devices.append("/dev/" + os.path.basename(sysfs_dev))
+                devlink = os.readlink(sysfs_dev + "/device")
+                if not "/usb" in devlink:
+                    devices.append("/dev/" + os.path.basename(sysfs_dev))
     return devices
-
 
 class FstabError(Exception):
     pass
@@ -115,8 +116,7 @@ class Fstab:
                 f = open(File, "w")
             except IOError:
                 # raise FstabError, "Unable to write: %s"
-                print "Unable to write: %s" % File
-                sys.exit(1)
+                print "ERROR: Unable to write : %s" % self.File
 
             for line in self.content:
                 f.write(line)
@@ -179,7 +179,7 @@ class Fstab:
         """Adds an fstab entry for 'partition', with attributes given in 'attr_dict'"""
 
         if not partition:
-            print "'partition' can not be null."
+            print "DEBUG: 'partition' can not be null."
             return -1
 
         if attr_dict.get('mount_point') == '':
@@ -188,12 +188,9 @@ class Fstab:
 
         err = []
         if not self.__allPartitions.get(partition):
-            err.append("'%s' is not an available partition.\n" % (partition))
+            err.append("ERROR: '%s' is not an available partition.\n" % (partition))
         if self.__fstabPartitions.get(partition):
             self.delFstabEntry(partition)
-            #err.append("'%s' is already in fstab\n" % (partition))
-        #if [p for p in self.__fstabPartitions if self.__fstabPartitions[p]['mount_point'] == attr_dict['mount_point']]:
-        #    err.append("Mount point '%s' is already in use\n" % (attr_dict['mount_point']))
         if err:
             print err
             return -1
@@ -215,9 +212,7 @@ class Fstab:
                 try:
                     os.mkdir(attr_dict['mount_point'])
                 except OSError:
-                    print ("Unable to create mount point: '%s' for '%s'" % (attr_dict['mount_point'], partition))
-        else:
-            pass
+                    print ("ERROR: Unable to create mount point: '%s' for '%s'" % (attr_dict['mount_point'], partition))
 
         self.content.append("%-11s %-20s %-9s %-20s %s %s\n" % (partition, 
                                                          attr_dict['mount_point'], 
@@ -229,7 +224,7 @@ class Fstab:
 
     def delFstabEntry(self, partition):
         if not self.__fstabPartitions.get(partition):
-            print("There is not any fstab record for '%s'.\n" % (partition))
+            print("ERROR: There is not any fstab record for '%s'.\n" % (partition))
             return -1
         else:
             for c in range(0, len(self.content)):

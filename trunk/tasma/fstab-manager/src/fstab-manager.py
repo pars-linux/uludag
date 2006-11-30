@@ -186,13 +186,15 @@ class fstabForm(mainForm):
         for disk in self.blockDevices:
             for node in self.prettyList[disk]:
                 if node['list_widget'].isOn():
-                    # print node['partition_name'],' added'
+                    print 'DEBUG: Partition %s added.' % node['partition_name']
                     self.Fstab.addFstabEntry(node['partition_name'],node)
                 else:
-                    # print node['partition_name'],' deleted'
                     # warn when trying remove root partition
                     if not node['mount_point']=='/':
                         self.Fstab.delFstabEntry(node['partition_name'])
+                        print 'DEBUG: Partition %s deleted.' % node['partition_name']
+                    else:
+                        print 'ERROR: Partition %s can not delete!!' % node['partition_name']
 
         if (self.Fstab.writeContent()):
             QMessageBox("Completed","File /etc/fstab updated !",QMessageBox.Information,QMessageBox.Ok,0,0,self).show()
@@ -287,8 +289,6 @@ def main():
 
     win = QDialog()
     win.setCaption(i18n('Fstab Manager'))
-    #win.setMinimumSize(520, 420)
-    #win.resize(520, 420)
     win.setIcon(loadIcon('fstab_manager', size=128))
     widget = fstabForm(win)
     toplayout = QVBoxLayout(win, 0, KDialog.spacingHint())
