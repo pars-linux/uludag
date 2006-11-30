@@ -15,8 +15,8 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-import mainview
-from utility import *
+import sm_mainview
+from sm_utility import *
 
 mod_name = 'Service Manager'
 mod_app = 'service-manager'
@@ -37,7 +37,7 @@ def AboutData():
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
-    self.mainwidget = mainview.widgetMain(self)
+    self.mainwidget = sm_mainview.widgetMain(self)
     toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
     toplayout.addWidget(self.mainwidget)
     self.aboutus = KAboutApplication(self)
