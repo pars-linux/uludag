@@ -59,7 +59,6 @@ class ConnectionTipper(QToolTip):
 class Connection(QWidget):
     def __init__(self, view, conn):
         self.is_odd = 0
-        
         dev = view.devices.get(conn.devid, None)
         if not dev:
             dev = Device(view, conn.devname, conn.devid)
@@ -327,6 +326,20 @@ class ConnectionView(QScrollView):
             return
         conn.updateState()
     
+    def configUpdate(self, conn):
+        conn = self.connections.get(conn.hash, None)
+        if not conn:
+            return
+        dev = conn.parent()
+        if dev.devid != conn.conn.devid:
+            temp = conn.conn
+            conn.hide()
+            dev.removeChild(conn)
+            dev.connections.remove(conn)
+            del self.connections[conn.conn.hash]
+            Connection(self, temp)
+            self.myResize(self.width())
+    
     def hotPlug(self, uid, info):
         dev = Device(self, info, uid)
         dev.show()
@@ -361,6 +374,7 @@ class Widget(QVBox):
         
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
+        comlink.config_hook.append(self.view.configUpdate)
         comlink.state_hook.append(self.view.stateUpdate)
         comlink.hotplug_hook.append(self.view.hotPlug)
         comlink.noconn_hook.append(self.slotCreate)

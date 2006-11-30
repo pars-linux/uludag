@@ -255,15 +255,19 @@ class Settings(QWidget):
             self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
             if "remote" in self.link.modes:
-                self.remote.setText(conn.remote)
+                if conn.remote:
+                    self.remote.setText(conn.remote)
             if "net" in self.link.modes:
                 if conn.net_mode == "auto":
                     self.r1.setChecked(True)
                 else:
                     self.r2.setChecked(True)
-                    self.address.setText(conn.net_addr)
-                    self.netmask.setText(conn.net_mask)
-                    self.gateway.setText(conn.net_gate)
+                    if conn.net_addr:
+                        self.address.setText(conn.net_addr)
+                    if conn.net_mask:
+                        self.netmask.setText(conn.net_mask)
+                    if conn.net_gate:
+                        self.gateway.setText(conn.net_gate)
             if "auth" in self.link.modes:
                 self.auth_mode.setCurrentItem(0)
                 if conn.auth_mode != "none":

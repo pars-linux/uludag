@@ -13,7 +13,7 @@ import comar
 from qt import *
 from kdecore import i18n
 
-CONNLIST, CONNINFO, CONNINFO_STATE, CONNINFO_ADDR, CONNINFO_AUTH, CONNINFO_REMOTE, CONNINFO_DEVICE, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 12)
+CONNLIST, CONNINFO, CONNINFO_AUTH, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 8)
 
 
 class Hook:
@@ -71,7 +71,9 @@ class Connection(Hook):
     def __init__(self, script, data):
         Hook.__init__(self)
         self.script = script
-        self.name, self.devid, self.devname = data.split("\n")
+        self.name = None
+        self.devid = None
+        self.devname = None
         self.remote = None
         self.state = "unavailable"
         self.message = None
@@ -82,7 +84,35 @@ class Connection(Hook):
         self.auth_mode = "none"
         self.auth_user = None
         self.auth_pass = None
+        self.parse(data)
         self.hash = self.hash(self.script, self.name)
+        self.got_auth = True
+        self.first_time = True
+    
+    def parse(self, data):
+        for line in data.split("\n"):
+            key, value = line.split("=", 1)
+            if key == "name":
+                self.name = value
+            elif key == "device_id":
+                self.devid = value
+            elif key == "device_name":
+                self.devname = value
+            elif key == "remote":
+                self.remote = value
+            elif key == "net_mode":
+                self.net_mode = value
+            elif key == "net_address":
+                self.net_addr = value
+            elif key == "net_mask":
+                self.net_mask = value
+            elif key == "net_gateway":
+                self.net_gate = value
+            elif key == "state":
+                if " " in value:
+                    self.state, self.message = value.split(" ", 1)
+                else:
+                    self.state = value
 
 
 class AuthMode:
@@ -151,58 +181,23 @@ class ComarInterface(Hook):
                 self.nr_queried += 1
         
         if reply.id == CONNINFO:
+            modes = comlink.links[reply.script].modes
             conn = Connection(reply.script, reply.data)
-            self.connections[conn.hash] = conn
-            script = self.com.Net.Link[conn.script]
-            script.getState(name=conn.name, id=CONNINFO_STATE)
-            i = 1
-            modes = self.links[conn.script].modes
-            if "net" in modes:
-                script.getAddress(name=conn.name, id=CONNINFO_ADDR)
-                i += 1
-            if "remote" in modes:
-                script.getRemote(name=conn.name, id=CONNINFO_REMOTE)
-                i += 1
-            if "auth" in modes:
-                script.getAuthentication(name=conn.name, id=CONNINFO_AUTH)
-                i += 1
-            conn.i = i
-        
-        if reply.id == CONNINFO_DEVICE:
-            name, devid, devname = reply.data.split("\n", 2)
-            conn = self.getConn(reply.script, name)
-            if conn:
-                conn.devid = devid
-                conn.devname = devname
-                # FIXME: move connection on the ui
-        
-        if reply.id == CONNINFO_STATE:
-            name, state = reply.data.split("\n", 1)
-            conn = self.getConn(reply.script, name)
-            conn.state = state
-            conn.msg = None
-            if " " in state:
-                state, msg = state.split(" ", 1)
-                conn.state = state
-                conn.message = msg
-            conn.i -= 1
-            if conn.i == 0:
-                self.emitNew(conn)
-        
-        if reply.id == CONNINFO_ADDR:
-            name, mode, addr, gate = reply.data.split("\n", 3)
-            mask = ""
-            if "\n" in gate:
-                gate, mask = gate.split("\n")
-            conn = self.getConn(reply.script, name)
-            if not conn:
+            old_conn = self.getConn(reply.script, conn.name)
+            if old_conn:
+                old_conn.parse(reply.data)
+                if "auth" in modes:
+                    comlink.com.Net.Link[old_conn.script].getAuthentication(name=old_conn.name, id=CONNINFO_AUTH)
+                    old_conn.got_auth = False
+                else:
+                    self.emitConfig(old_conn)
                 return
-            conn.net_mode = mode
-            conn.net_addr = addr
-            conn.net_mask = mask
-            conn.net_gate = gate
-            conn.i -= 1
-            if conn.i == 0:
+            self.connections[conn.hash] = conn
+            if "auth" in modes:
+                comlink.com.Net.Link[conn.script].getAuthentication(name=conn.name, id=CONNINFO_AUTH)
+                conn.got_auth = False
+            else:
+                conn.first_time = False
                 self.emitNew(conn)
         
         if reply.id == CONNINFO_AUTH:
@@ -222,19 +217,13 @@ class ComarInterface(Hook):
                         elif mode.type == "login":
                             conn.auth_user, conn.auth_pass = rest.split("\n")
                         break
-            conn.i -= 1
-            if conn.i == 0:
-                self.emitNew(conn)
-        
-        if reply.id == CONNINFO_REMOTE:
-            name, remote = reply.data.split("\n")
-            conn = self.getConn(reply.script, name)
-            if not conn:
-                return
-            conn.remote = remote
-            conn.i -= 1
-            if conn.i == 0:
-                self.emitNew(conn)
+            if not conn.got_auth:
+                conn.got_auth = True
+                if conn.first_time:
+                    conn.first_time = False
+                    self.emitNew(conn)
+                else:
+                    self.emitConfig(conn)
         
         if reply.id == DEVICES:
             self.emitDevices(reply.script, reply.data)
@@ -264,14 +253,9 @@ class ComarInterface(Hook):
                     del self.connections[conn.hash]
             elif what == "configured":
                 type, name = name.split(" ", 1)
-                if type == "device":
-                    comlink.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO_DEVICE)
-                elif type == "remote":
-                    comlink.com.Net.Link[reply.script].getRemote(name=name, id=CONNINFO_REMOTE)
-                elif type == "address":
-                    comlink.com.Net.Link[reply.script].getAddress(name=name, id=CONNINFO_ADDR)
-                elif type == "authentication":
-                    comlink.com.Net.Link[reply.script].getAuthentication(name=name, id=CONNINFO_AUTH)
+                conn = self.getConn(reply.script, name)
+                if conn:
+                    comlink.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
         
         elif reply.notify == "Net.Link.stateChanged":
             name, state = reply.data.split("\n", 1)
