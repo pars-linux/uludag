@@ -22,7 +22,7 @@ from khtml import *
 
 # Widget
 import kdedesigner
-from fstabform import mainForm
+from diskform import mainForm
 
 # COMAR
 import comar
@@ -69,7 +69,7 @@ class HelpDialog(QDialog):
         else:
             self.htmlPart.openURL(KURL(locate('data', 'disk-manager/help/en/main_help.html')))
 
-class fstabForm(mainForm):
+class diskForm(mainForm):
     def __init__(self, parent=None, name=None):
         mainForm.__init__(self, parent, name)
 
@@ -268,13 +268,13 @@ class Module(KCModule):
         KGlobal.iconLoader().addAppDir('disk-manager')
         self.config = KConfig('disk-manager')
         self.aboutdata = AboutData()
-        widget = fstabForm(self)
+        widget = diskForm(self)
         toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
         toplayout.addWidget(widget)
     def aboutData(self):
         return self.aboutdata
 
-def create_fstab_manager(parent, name):
+def create_disk_manager(parent, name):
     global kapp
     kapp = KApplication.kApplication()
     return Module(parent, name)
@@ -290,7 +290,7 @@ def main():
     win = QDialog()
     win.setCaption(i18n('Disk Manager'))
     win.setIcon(loadIcon('disk_manager', size=128))
-    widget = fstabForm(win)
+    widget = diskForm(win)
     toplayout = QVBoxLayout(win, 0, KDialog.spacingHint())
     toplayout.addWidget(widget)
 
