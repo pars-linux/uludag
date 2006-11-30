@@ -263,7 +263,7 @@
                         <cstring>btn_update</cstring>
                     </property>
                     <property name="text">
-                        <string>Update</string>
+                        <string>Save</string>
                     </property>
                 </widget>
             </hbox>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 21:47+0200\n"
+"POT-Creation-Date: 2006-11-30 22:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,13 +29,11 @@ msgid "File /etc/fstab updated !"
 msgstr ""
 
 #: src/disk-manager.py:250
-msgid ""
-"\n"
-"Mount Point : "
+msgid "Mount Point : "
 msgstr ""
 
 #: src/disk-manager.py:251
-msgid "\tFileSystem Type : "
+msgid "File System Type : "
 msgstr ""
 
 #: src/disk-manager.py:310
@@ -76,8 +74,4 @@ msgstr ""
 
 #: src/diskform.py:141
 msgid "To update disk changes the manager must run as root"
-msgstr ""
-
-#: src/diskform.py:143
-msgid "Update"
 msgstr ""

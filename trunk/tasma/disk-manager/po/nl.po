@@ -1,19 +1,19 @@
-# translation of nl.po to Nederlands
+# translation of nl.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
+# Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 21:47+0200\n"
-"PO-Revision-Date: 2006-11-03 18:01+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"POT-Creation-Date: 2006-11-30 22:02+0200\n"
+"PO-Revision-Date: 2006-11-30 22:00+0200\n"
+"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,9 +21,8 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: src/disk-manager.py:78 src/disk-manager.py:315 src/diskform.py:132
-#, fuzzy
 msgid "Disk Manager"
-msgstr "Dienstmanager"
+msgstr ""
 
 #: src/disk-manager.py:200 src/disk-manager.py:219
 msgid "Completed"
@@ -34,19 +33,16 @@ msgid "File /etc/fstab updated !"
 msgstr ""
 
 #: src/disk-manager.py:250
-msgid ""
-"\n"
-"Mount Point : "
+msgid "Mount Point : "
 msgstr ""
 
 #: src/disk-manager.py:251
-msgid "\tFileSystem Type : "
+msgid "File System Type : "
 msgstr ""
 
 #: src/disk-manager.py:310
-#, fuzzy
 msgid "Disk Manager is already running!"
-msgstr "Dienstmanager is reeds gestart!"
+msgstr ""
 
 #: src/diskform.py:92 src/diskform.py:139
 msgid "Disks"
@@ -83,74 +79,3 @@ msgstr ""
 #: src/diskform.py:141
 msgid "To update disk changes the manager must run as root"
 msgstr ""
-
-#: src/diskform.py:143
-msgid "Update"
-msgstr ""
-
-#~ msgid "You are not allowed to do this operation."
-#~ msgstr "U mag deze handeling niet verrichten."
-
-#~ msgid "Access Denied"
-#~ msgstr "Toegang geweigerd"
-
-#~ msgid "COMAR script execution failed."
-#~ msgstr "Uitvoeren van het COMAR-script is mislukt."
-
-#~ msgid "Script Error"
-#~ msgstr "Scriptfout"
-
-#~ msgid "Unable to start service."
-#~ msgstr "De dienst kan niet gestart worden."
-
-#~ msgid "Failed"
-#~ msgstr "Mislukt"
-
-#~ msgid "Unable to stop service."
-#~ msgstr "De dienst kan niet gestopt worden."
-
-#~ msgid "Select a service from list."
-#~ msgstr "Kies een dienst van de lijst."
-
-#~ msgid "Start"
-#~ msgstr "Start"
-
-#~ msgid "%s is running."
-#~ msgstr "%s is actief."
-
-#~ msgid "%s is not running."
-#~ msgstr "%s is niet actief."
-
-#~ msgid "Execute startup script"
-#~ msgstr "Voer een opstart script uit"
-
-#~ msgid "Execuete shutdown script"
-#~ msgstr "Voer een afsluit script uit"
-
-#~ msgid ""
-#~ "If you stop this service, you may have problems.\n"
-#~ "Are you sure you want to stop this service?"
-#~ msgstr ""
-#~ "Als u deze dienst stopt, kunt u in de problemen raken.\n"
-#~ "Weet u zeker dat u deze dienst wilt stoppen?"
-
-#~ msgid "1"
-#~ msgstr "1"
-
-#~ msgid "Service"
-#~ msgstr "Dienst"
-
-#~ msgid "Run on Startup"
-#~ msgstr "Bij opstarten uitvoeren"
-
-#~ msgid "Run on startup."
-#~ msgstr "Bij opstarten uitvoeren"
-
-#~ msgid "Don't run on startup."
-#~ msgstr "Niet uitvoeren bij opstarten."
-
-#~ msgid "&List servers only."
-#~ msgstr "&Lijst van alleen servers."
-
-#~ msgid "Alt+L"
-#~ msgstr "ALT+L"
