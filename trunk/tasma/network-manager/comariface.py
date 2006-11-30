@@ -252,7 +252,6 @@ class ComarInterface(Hook):
                     self.emitDelete(conn)
                     del self.connections[conn.hash]
             elif what == "configured":
-                type, name = name.split(" ", 1)
                 conn = self.getConn(reply.script, name)
                 if conn:
                     comlink.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
