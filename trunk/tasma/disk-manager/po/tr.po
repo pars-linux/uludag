@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 22:02+0200\n"
+"POT-Creation-Date: 2006-11-30 22:16+0200\n"
 "PO-Revision-Date: 2006-11-30 22:01+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -30,13 +30,12 @@ msgid "File /etc/fstab updated !"
 msgstr "Dosya /etc/fstab güncellendi !"
 
 #: src/disk-manager.py:250
-msgid "Mount Point : "
-msgstr "Bağlama Noktası : "
+msgid "Mount Point"
+msgstr "Bağlama Noktası"
 
 #: src/disk-manager.py:251
-#, fuzzy
-msgid "File System Type : "
-msgstr "Dosya Sistemi Tipi:"
+msgid "File System Type"
+msgstr "Dosya Sistemi Tipi"
 
 #: src/disk-manager.py:310
 msgid "Disk Manager is already running!"
@@ -77,6 +76,3 @@ msgstr "Sistem Bölümlerini Göster"
 #: src/diskform.py:141
 msgid "To update disk changes the manager must run as root"
 msgstr "Disk değişiklikleri için yönetici girişi yapmalısınız"
-
-#~ msgid "Update"
-#~ msgstr "Güncelle"
