@@ -176,9 +176,9 @@ class fstabForm(mainForm):
             self.sessionLocked=True
 
     def slotAutoFind(self):
-        # not ready
         self.Fstab.delDepartedPartitions()
         self.Fstab.addAvailablePartitions()
+        self.Fstab.writeContent()
         self.initialize()
 
     def slotUpdate(self):
@@ -186,13 +186,13 @@ class fstabForm(mainForm):
         for disk in self.blockDevices:
             for node in self.prettyList[disk]:
                 if node['list_widget'].isOn():
-                    print 'DEBUG: Partition %s added.' % node['partition_name']
                     self.Fstab.addFstabEntry(node['partition_name'],node)
+                    ## print 'DEBUG: Partition %s added.' % node['partition_name']
                 else:
                     # warn when trying remove root partition
                     if not node['mount_point']=='/':
                         self.Fstab.delFstabEntry(node['partition_name'])
-                        print 'DEBUG: Partition %s deleted.' % node['partition_name']
+                        ## print 'DEBUG: Partition %s deleted.' % node['partition_name']
                     else:
                         print 'ERROR: Partition %s can not delete!!' % node['partition_name']
 

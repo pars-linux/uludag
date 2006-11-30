@@ -179,7 +179,7 @@ class Fstab:
         """Adds an fstab entry for 'partition', with attributes given in 'attr_dict'"""
 
         if not partition:
-            print "DEBUG: 'partition' can not be null."
+            ## print "DEBUG: 'partition' can not be null."
             return -1
 
         if attr_dict.get('mount_point') == '':
@@ -195,16 +195,16 @@ class Fstab:
             print err
             return -1
 
-        if attr_dict.get('file_system') == None:
+        if attr_dict.get('file_system') == '':
             attr_dict['file_system'] = self.__allPartitions[partition]['file_system']
 
-        if attr_dict.get('dump_freq') == None:
+        if attr_dict.get('dump_freq') == '':
             attr_dict['dump_freq'] = '0'
 
-        if attr_dict.get('fs_pass_no') == None: 
+        if attr_dict.get('fs_pass_no') == '':
             attr_dict['fs_pass_no'] = '0'
 
-        if attr_dict.get('options') == None:
+        if attr_dict.get('options') == '':
             attr_dict['options'] = self.defaultFileSystemOptions.get(attr_dict['file_system']) or self.defaultFileSystemOptions['defaults']
 
         if not self.Debug:
