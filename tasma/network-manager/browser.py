@@ -337,6 +337,9 @@ class ConnectionView(QScrollView):
             dev.removeChild(conn)
             dev.connections.remove(conn)
             del self.connections[conn.conn.hash]
+            if len(dev.connections) == 0:
+                dev.hide()
+                del self.devices[dev.devid]
             Connection(self, temp)
             self.myResize(self.width())
     
