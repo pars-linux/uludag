@@ -178,8 +178,9 @@ class diskForm(mainForm):
     def slotAutoFind(self):
         self.Fstab.delDepartedPartitions()
         self.Fstab.addAvailablePartitions()
-        self.Fstab.writeContent()
-        self.initialize()
+        if (self.Fstab.writeContent()):
+            self.showInfo("Completed","File /etc/fstab updated !")
+            self.initialize()
 
     def slotUpdate(self):
         self.saveSession(Single=True)
@@ -197,10 +198,13 @@ class diskForm(mainForm):
                         print 'ERROR: Partition %s can not delete!!' % node['partition_name']
 
         if (self.Fstab.writeContent()):
-            QMessageBox("Completed","File /etc/fstab updated !",QMessageBox.Information,QMessageBox.Ok,0,0,self).show()
+            self.showInfo("Completed","File /etc/fstab updated !")
 
         self.Fstab.update()
         self.initialize()
+
+    def showInfo(self,title,msg):
+        QMessageBox(title,msg,QMessageBox.Information,QMessageBox.Ok,0,0,self).show()
 
     def fillDiskList(self):
         self.frame_detail.hide()
