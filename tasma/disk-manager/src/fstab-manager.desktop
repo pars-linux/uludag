@@ -1,15 +1,15 @@
 [Desktop Entry]
-Name=Fstab Manager
-Name[en]=Fstab Manager
-Name[tr]=Fstab Yöneticisi
-Comment=Manager for fstab file
-Comment[tr]=Fstab dosyası için yönetici
-Icon=fstab_manager
+Name=Disk Manager
+Name[en]=Disk Manager
+Name[tr]=Disk Yöneticisi
+Comment=A Tasma Module for disk management
+Comment[tr]=Disk yönetiminden sorumlu Tasma Modülü
+Icon=disk_manager
 X-KDE-ModuleType=Library
-X-KDE-Library=fstab-manager
-X-KDE-FactoryName=fstab_manager
+X-KDE-Library=disk-manager
+X-KDE-FactoryName=disk_manager
 X-KDE-RootOnly=true
 X-Tasma-Fork=True
 Type=Application
-Exec=kcmshell fstab-manager
+Exec=kcmshell disk-manager
 Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
