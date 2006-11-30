@@ -179,7 +179,7 @@ class diskForm(mainForm):
         self.Fstab.delDepartedPartitions()
         self.Fstab.addAvailablePartitions()
         if (self.Fstab.writeContent()):
-            self.showInfo("Completed","File /etc/fstab updated !")
+            self.showInfo(i18n("Completed"),i18n("File /etc/fstab updated !"))
             self.initialize()
 
     def slotUpdate(self):
@@ -198,7 +198,7 @@ class diskForm(mainForm):
                         print 'ERROR: Partition %s can not delete!!' % node['partition_name']
 
         if (self.Fstab.writeContent()):
-            self.showInfo("Completed","File /etc/fstab updated !")
+            self.showInfo(i18n("Completed"),i18n("File /etc/fstab updated !"))
 
         self.Fstab.update()
         self.initialize()
@@ -227,9 +227,10 @@ class diskForm(mainForm):
                     check = QCheckListItem.Off
 
                 activePartition['partition_name']=partition[0]
-                partitions = QCheckListItem(disks,QString('%s\nMount Point : %s \t FileSystem Type : %s ' %
-                                                  (activePartition['partition_name'],activePartition['mount_point'],activePartition['file_system'])),
-                                                  QCheckListItem.CheckBox)
+                partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + 
+                                                          i18n('\nMount Point : ') + activePartition['mount_point'] + 
+                                                          i18n('\t FileSystem Type : ') + activePartition['file_system']),
+                                                          QCheckListItem.CheckBox)
                 partitions.setState(check)
                 partitions.setMultiLinesEnabled(True)
                 partitions.setPixmap(0,pixie)
