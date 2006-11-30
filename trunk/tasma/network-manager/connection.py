@@ -231,9 +231,6 @@ class Settings(QWidget):
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
         grid2.addWidget(self.auto_gate, 2, 2)
         
-        # FIXME: disabled until implemented
-        return row
-        
         line = widgets.HLine(i18n("Name servers"), self)
         grid.addMultiCellWidget(line, row, row, 0, 1)
         row += 1
@@ -248,6 +245,9 @@ class Settings(QWidget):
         self.dns_group.insert(self.dns2, 1)
         self.dns3 = QRadioButton(i18n("Custom"), hb)
         self.dns_group.insert(self.dns3, 2)
+        self.connect(self.dns_group, SIGNAL("clicked(int)"), self.slotNetToggle)
+        
+        self.dns_text = QLineEdit(hb)
         
         return row
     
@@ -372,6 +372,8 @@ class Settings(QWidget):
         self.gateway.setEnabled(not auto or (auto and gate))
         self.auto_addr.setEnabled(auto)
         self.auto_gate.setEnabled(auto)
+        self.dns2.setEnabled(auto)
+        self.dns_text.setEnabled(self.dns_group.selectedId() == 2)
     
     def slotNetToggle(self, id):
         self.slotFields()
