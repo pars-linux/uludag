@@ -568,6 +568,7 @@
         <Package>libvisual-plugins</Package>
         <Package>libvorbis</Package>
         <Package>libwmf</Package>
+        <Package>libwww</Package>
         <Package>libxkbfile</Package>
         <Package>libxkbui</Package>
         <Package>libxml2</Package>
