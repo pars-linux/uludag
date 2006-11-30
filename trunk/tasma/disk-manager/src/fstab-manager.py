@@ -33,10 +33,10 @@ import fstab
 version = '0.1'
 
 def AboutData():
-    about_data = KAboutData('fstab-manager',
-                            'Fstab Manager',
+    about_data = KAboutData('disk-manager',
+                            'Disk Manager',
                             version,
-                            'Fstab Manager Interface',
+                            'Disk Manager Interface',
                             KAboutData.License_GPL,
                             '(C) 2006 UEKAE/TÜBİTAK',
                             None, None,
@@ -59,15 +59,15 @@ def asText(anarray):
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
-        self.setCaption(i18n('Fstab Manager'))
+        self.setCaption(i18n('Disk Manager'))
         self.layout = QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
         self.resize(500, 300)
         self.layout.addWidget(self.htmlPart.view(), 1, 1)
         if os.environ['LANG'].startswith('tr_TR'):
-            self.htmlPart.openURL(KURL(locate('data', 'fstab-manager/help/tr/main_help.html')))
+            self.htmlPart.openURL(KURL(locate('data', 'disk-manager/help/tr/main_help.html')))
         else:
-            self.htmlPart.openURL(KURL(locate('data', 'fstab-manager/help/en/main_help.html')))
+            self.htmlPart.openURL(KURL(locate('data', 'disk-manager/help/en/main_help.html')))
 
 class fstabForm(mainForm):
     def __init__(self, parent=None, name=None):
@@ -264,9 +264,9 @@ class fstabForm(mainForm):
 class Module(KCModule):
     def __init__(self, parent, name):
         KCModule.__init__(self, parent, name)
-        KGlobal.locale().insertCatalogue('fstab-manager')
-        KGlobal.iconLoader().addAppDir('fstab-manager')
-        self.config = KConfig('fstab-manager')
+        KGlobal.locale().insertCatalogue('disk-manager')
+        KGlobal.iconLoader().addAppDir('disk-manager')
+        self.config = KConfig('disk-manager')
         self.aboutdata = AboutData()
         widget = fstabForm(self)
         toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
@@ -283,13 +283,13 @@ def main():
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv, about_data)
     if not KUniqueApplication.start():
-        print i18n('Fstab Manager is already running!')
+        print i18n('Disk Manager is already running!')
         return
     app = KUniqueApplication(True, True, True)
 
     win = QDialog()
-    win.setCaption(i18n('Fstab Manager'))
-    win.setIcon(loadIcon('fstab_manager', size=128))
+    win.setCaption(i18n('Disk Manager'))
+    win.setIcon(loadIcon('disk_manager', size=128))
     widget = fstabForm(win)
     toplayout = QVBoxLayout(win, 0, KDialog.spacingHint())
     toplayout.addWidget(widget)

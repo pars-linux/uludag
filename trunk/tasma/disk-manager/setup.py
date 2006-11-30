@@ -33,7 +33,7 @@ distfiles = """
 """
 
 def make_dist():
-    distdir = "fstab-manager-%s" % version
+    distdir = "disk-manager-%s" % version
     list = []
     for t in distfiles.split():
         list.extend(glob.glob(t))
@@ -48,7 +48,7 @@ def make_dist():
             if not os.path.exists(dn):
                 os.mkdir(dn)
         shutil.copy(file_, os.path.join(distdir, file_))
-    os.popen("tar -cjf %s %s" % ("fstab-manager-" + version + ".tar.bz2", distdir))
+    os.popen("tar -cjf %s %s" % ("disk-manager-" + version + ".tar.bz2", distdir))
     shutil.rmtree(distdir)
 
 if "dist" in sys.argv:
@@ -56,17 +56,17 @@ if "dist" in sys.argv:
     sys.exit(0)
 
 kdedistutils.setup(
-    name="fstab-manager",
+    name="disk-manager",
     version="0.1",
     author="Gökmen GÖKSEL",
     author_email="gokmen@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/fstabform.ui', 'src/fstab-manager.py','src/fstab.py',
-                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/fstab_manager.png','src/Disk.png','src/DiskAdded.png','src/DiskNotAdded.png']),
+    application_data = ['src/fstabform.ui', 'src/disk-manager.py','src/fstab.py',
+                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/disk_manager.png','src/Disk.png','src/DiskAdded.png','src/DiskNotAdded.png']),
                         'help'],
-    executable_links = [('fstab-manager','fstab-manager.py')],
+    executable_links = [('disk-manager','disk-manager.py')],
     i18n = ('po',['src']),
-    kcontrol_modules = [ ('src/fstab-manager.desktop','src/fstab-manager.py')],
+    kcontrol_modules = [ ('src/disk-manager.desktop','src/disk-manager.py')],
     )
