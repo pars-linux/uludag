@@ -243,6 +243,7 @@
         <Package>dhcp</Package>
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
+        <Package>disk-manager</Package>
         <Package>disktype</Package>
         <Package>dmidecode</Package>
         <Package>dosbox</Package>
