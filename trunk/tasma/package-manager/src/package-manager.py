@@ -893,7 +893,9 @@ def main():
         packageToInstall = None
 
     myapp = MainApplication()
-    myapp.show()
+    if not myapp.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
+        myapp.show()
+
     kapp.setMainWidget(myapp)
 
     LocaleData.setSystemLocale()
