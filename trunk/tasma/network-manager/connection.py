@@ -33,6 +33,7 @@ class Settings(QWidget):
         lab = QLabel(i18n("Name:"), self)
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         self.name = widgets.Edit(self)
+        self.name.edit.setMaxLength(48)
         grid.addWidget(self.name, row, 1)
         row += 1
         
@@ -208,6 +209,7 @@ class Settings(QWidget):
         lab = QLabel(i18n("Address:"), box)
         grid2.addWidget(lab, 0, 0, Qt.AlignRight)
         self.address = QLineEdit(box)
+        self.address.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.address))
         self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
         grid2.addWidget(self.address, 0, 1)
         self.auto_addr = QCheckBox(i18n("Custom"), box)
@@ -217,11 +219,13 @@ class Settings(QWidget):
         lab = QLabel(i18n("Net mask:"), box)
         grid2.addWidget(lab, 1, 0, Qt.AlignRight)
         self.netmask = QLineEdit(box)
+        self.netmask.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.netmask))
         grid2.addWidget(self.netmask, 1, 1)
         
         lab = QLabel(i18n("Gateway:"), box)
         grid2.addWidget(lab, 2, 0, Qt.AlignRight)
         self.gateway = QLineEdit(box)
+        self.gateway.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.gateway))
         grid2.addWidget(self.gateway, 2, 1)
         self.auto_gate = QCheckBox(i18n("Custom"), box)
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
