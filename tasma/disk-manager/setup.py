@@ -63,7 +63,7 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/fstabform.ui', 'src/disk-manager.py','src/fstab.py',
+    application_data = ['src/diskform.ui', 'src/disk-manager.py','src/fstab.py',
                         ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/disk_manager.png','src/Disk.png','src/DiskAdded.png','src/DiskNotAdded.png']),
                         'help'],
     executable_links = [('disk-manager','disk-manager.py')],
