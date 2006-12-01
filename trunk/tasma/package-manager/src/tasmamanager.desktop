@@ -7,6 +7,6 @@ Comment[en]=PiSi Package Manager Graphical User Interface
 Comment[tr]=PiSi Paket Yöneticisi Kullanıcı Grafik Arayüzü
 Icon=package-manager
 Type=Application
-X-Tasma-Fork=True
+X-Tasma-Fork=true
 Exec=package-manager --show-mainwindow
 Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-system
