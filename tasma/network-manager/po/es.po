@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-29 16:54+0200\n"
+"POT-Creation-Date: 2006-12-01 13:23+0200\n"
 "PO-Revision-Date: 2006-11-26 17:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -19,83 +19,83 @@ msgstr ""
 msgid "Name:"
 msgstr "Nombre"
 
-#: connection.py:40
+#: connection.py:41
 msgid "Device:"
 msgstr "Dispositivo:"
 
-#: connection.py:60
+#: connection.py:61
 msgid "Scan"
 msgstr "Scan"
 
-#: connection.py:71
+#: connection.py:72
 msgid "Authentication"
 msgstr "Autenticación"
 
-#: connection.py:75
+#: connection.py:76
 msgid "Mode:"
 msgstr "Modo:"
 
-#: connection.py:86
+#: connection.py:87
 msgid "No authentication"
 msgstr "Sin autenticación"
 
-#: connection.py:101 connection.py:112
+#: connection.py:102 connection.py:113
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: connection.py:109
+#: connection.py:110
 msgid "User name:"
 msgstr "Nombre de Usuario:"
 
-#: connection.py:139
+#: connection.py:140
 msgid "Scan results:"
 msgstr "Resultado de scan:"
 
-#: connection.py:147
+#: connection.py:148
 msgid "Scan again"
 msgstr "Scanear de nuevo"
 
-#: connection.py:149
+#: connection.py:150
 msgid "Use"
 msgstr "Usar"
 
-#: connection.py:188
+#: connection.py:189
 msgid "Network settings"
 msgstr "Propiedades de Red"
 
-#: connection.py:194
+#: connection.py:195
 msgid "Automatic query (DHCP)"
 msgstr "Asignación automatica (DHCP)"
 
-#: connection.py:199
+#: connection.py:200
 msgid "Manual"
 msgstr "Manual"
 
-#: connection.py:208 browser.py:46
+#: connection.py:209 browser.py:46
 msgid "Address:"
 msgstr "Dirección:"
 
-#: connection.py:213 connection.py:226 connection.py:245
+#: connection.py:215 connection.py:230 connection.py:246
 msgid "Custom"
 msgstr "Personalizado"
 
-#: connection.py:217
+#: connection.py:219
 msgid "Net mask:"
 msgstr "Mascara de Red:"
 
-#: connection.py:222
+#: connection.py:225
 msgid "Gateway:"
 msgstr "Puerto de Enlace:"
 
-#: connection.py:233 nameconf.py:42
+#: connection.py:234 nameconf.py:42
 msgid "Name servers"
 msgstr "Servidor de Nombres"
 
-#: connection.py:243
+#: connection.py:244
 msgid "From query"
 msgstr "From query"
 
-#: connection.py:410
+#: connection.py:437
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
@@ -107,11 +107,11 @@ msgstr "Administrador de Red"
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está instalado!"
 
-#: comariface.py:330
+#: comariface.py:319
 msgid "new connection"
 msgstr "conexión nueva"
 
-#: nameconf.py:27 browser.py:348
+#: nameconf.py:27 browser.py:364
 msgid "Name Service Settings"
 msgstr "Parámetros del servivio de nombres"
 
@@ -131,23 +131,23 @@ msgstr "Agregar Servidor de nombre"
 msgid "Name server:"
 msgstr "Servidor de Nombre:"
 
-#: browser.py:49 browser.py:138
+#: browser.py:49 browser.py:137
 msgid "Automatic"
 msgstr "Automático"
 
-#: browser.py:80
+#: browser.py:79
 msgid "Turn on/off connection"
 msgstr "Habilitar/Deshabilitar conexión"
 
-#: browser.py:93
+#: browser.py:92
 msgid "Configure connection"
 msgstr "Configurar conexión"
 
-#: browser.py:96
+#: browser.py:95
 msgid "Delete connection"
 msgstr "Eliminar conexión"
 
-#: browser.py:114
+#: browser.py:113
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -158,15 +158,15 @@ msgstr ""
 "la conexión\n"
 "'%s' ?"
 
-#: browser.py:115
+#: browser.py:114
 msgid "Delete connection?"
 msgstr "Eliminar conexión ?"
 
-#: browser.py:344
+#: browser.py:360
 msgid "New connection"
 msgstr "Conexión nueva"
 
-#: browser.py:379
+#: browser.py:396
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
 
