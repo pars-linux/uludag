@@ -43,6 +43,7 @@
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
+        <SelectedPackage>glibc-locales-es</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>gspca</SelectedPackage>
@@ -293,6 +294,7 @@
         <Package>gimp</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-es</Package>
         <Package>glibc-locales-nl</Package>
         <Package>glibmm</Package>
         <Package>glut</Package>
