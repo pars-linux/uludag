@@ -301,6 +301,7 @@ class Settings(QWidget):
             self.device.setText(self.new_conn[1])
             if "net" in self.link.modes:
                 self.r1.setChecked(True)
+                self.dns1.setChecked(True)
         if "net" in self.link.modes:
             self.slotFields()
     
