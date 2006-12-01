@@ -261,7 +261,7 @@
 
     function get_comments ($id) {
         global $config;
-        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Comments WHERE HWID = '$id' ORDER by AddDate DESC";
+        $sql_word = "SELECT * FROM {$config['db']['tableprefix']}Comments WHERE HWID = '$id' ORDER by AddDate";
         $single = perform_sql($sql_word);
         if ($single) {
             foreach ($single as $key => $node) {
