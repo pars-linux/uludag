@@ -1,8 +1,8 @@
 <PardusmanProject type="install" size="734003200">
-    <Title>Pardus Sait Faik</Title>
-    <WorkDir>/home/gurer/uludag/trunk/pardusman/test/</WorkDir>
-    <ReleaseFiles>/home/gurer/uludag/trunk/CD-image/</ReleaseFiles>
-    <PackageSelection repo_uri="http://192.168.3.110/pardus-1.1/pisi-index.xml.bz2">
+    <Title>Pardus RC</Title>
+    <WorkDir>/root/pardusman/InstallCD/</WorkDir>
+    <ReleaseFiles>/root/CD-image/</ReleaseFiles>
+    <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>system.devel</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>

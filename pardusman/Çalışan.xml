@@ -1,8 +1,8 @@
 <PardusmanProject type="live" size="734003200">
-    <Title>Pardus Live 2006-11-17</Title>
-    <WorkDir>/home/caglar/pardusman/work/</WorkDir>
-    <ReleaseFiles>/home/caglar/CD-image/</ReleaseFiles>
-    <PackageSelection repo_uri="http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2">
+    <Title>Pardus Live RC</Title>
+    <WorkDir>/root/pardusman/LiveCD/</WorkDir>
+    <ReleaseFiles>/root/CD-image/</ReleaseFiles>
+    <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
