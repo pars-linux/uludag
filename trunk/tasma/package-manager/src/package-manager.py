@@ -878,7 +878,7 @@ def main():
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
-    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
+    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")), ("show-mainwindow", I18N_NOOP("Show main window on startup"))])
 
     if not KUniqueApplication.start():
         print i18n("Package Manager is already running!")
@@ -895,6 +895,9 @@ def main():
     myapp = MainApplication()
     if not myapp.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
         myapp.show()
+    else:
+        if args.isSet("show-mainwindow"):
+            myapp.show()
 
     kapp.setMainWidget(myapp)
 
