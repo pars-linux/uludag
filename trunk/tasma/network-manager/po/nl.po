@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-29 16:54+0200\n"
+"POT-Creation-Date: 2006-12-01 13:23+0200\n"
 "PO-Revision-Date: 2006-08-08 23:26+0200\n"
 "Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -23,88 +23,88 @@ msgstr ""
 msgid "Name:"
 msgstr "Naam: "
 
-#: connection.py:40
+#: connection.py:41
 msgid "Device:"
 msgstr "Apparaat"
 
-#: connection.py:60
+#: connection.py:61
 msgid "Scan"
 msgstr "Scan"
 
-#: connection.py:71
+#: connection.py:72
 msgid "Authentication"
 msgstr "Authenticatie"
 
-#: connection.py:75
+#: connection.py:76
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:86
+#: connection.py:87
 msgid "No authentication"
 msgstr "Geen toegang"
 
-#: connection.py:101 connection.py:112
+#: connection.py:102 connection.py:113
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: connection.py:109
+#: connection.py:110
 #, fuzzy
 msgid "User name:"
 msgstr "Hostnaam:"
 
-#: connection.py:139
+#: connection.py:140
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:147
+#: connection.py:148
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:149
+#: connection.py:150
 msgid "Use"
 msgstr ""
 
-#: connection.py:188
+#: connection.py:189
 #, fuzzy
 msgid "Network settings"
 msgstr "Netwerkinstellingen"
 
-#: connection.py:194
+#: connection.py:195
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch aanvragen (DHCP)"
 
-#: connection.py:199
+#: connection.py:200
 msgid "Manual"
 msgstr "Handmatig"
 
-#: connection.py:208 browser.py:46
+#: connection.py:209 browser.py:46
 msgid "Address:"
 msgstr "Adres:"
 
-#: connection.py:213 connection.py:226 connection.py:245
+#: connection.py:215 connection.py:230 connection.py:246
 msgid "Custom"
 msgstr ""
 
-#: connection.py:217
+#: connection.py:219
 msgid "Net mask:"
 msgstr "Netmask:"
 
-#: connection.py:222
+#: connection.py:225
 msgid "Gateway:"
 msgstr "Poort:"
 
 # naamservers
-#: connection.py:233 nameconf.py:42
+#: connection.py:234 nameconf.py:42
 #, fuzzy
 msgid "Name servers"
 msgstr "Nameservers"
 
-#: connection.py:243
+#: connection.py:244
 msgid "From query"
 msgstr ""
 
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:410
+#: connection.py:437
 #, fuzzy
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
@@ -119,11 +119,11 @@ msgstr "Netwerkinstellingen"
 msgid "Network manager module is already started!"
 msgstr "Netwerk KGA is al actief!"
 
-#: comariface.py:330
+#: comariface.py:319
 msgid "new connection"
 msgstr "nieuwe verbinding"
 
-#: nameconf.py:27 browser.py:348
+#: nameconf.py:27 browser.py:364
 #, fuzzy
 msgid "Name Service Settings"
 msgstr "Netwerkinstellingen"
@@ -147,22 +147,22 @@ msgstr "Voeg nameserver toe"
 msgid "Name server:"
 msgstr "Naamserver:"
 
-#: browser.py:49 browser.py:138
+#: browser.py:49 browser.py:137
 msgid "Automatic"
 msgstr ""
 
-#: browser.py:80
+#: browser.py:79
 #, fuzzy
 msgid "Turn on/off connection"
 msgstr "nieuwe verbinding"
 
 # infinitief vertalen: netwerkverbinding configureren
-#: browser.py:93
+#: browser.py:92
 #, fuzzy
 msgid "Configure connection"
 msgstr "Configureer netwerkverbinding"
 
-#: browser.py:96
+#: browser.py:95
 #, fuzzy
 msgid "Delete connection"
 msgstr "Verbinding verwijderen?"
@@ -171,7 +171,7 @@ msgstr "Verbinding verwijderen?"
 #  Wilt u de verbinding\n
 # %s\n
 # verwijderen?
-#: browser.py:114
+#: browser.py:113
 #, fuzzy, python-format
 msgid ""
 "Should I delete the\n"
@@ -182,16 +182,16 @@ msgstr ""
 "'%s\n"
 "verbinding verwijderen?"
 
-#: browser.py:115
+#: browser.py:114
 msgid "Delete connection?"
 msgstr "Verbinding verwijderen?"
 
-#: browser.py:344
+#: browser.py:360
 #, fuzzy
 msgid "New connection"
 msgstr "nieuwe verbinding"
 
-#: browser.py:379
+#: browser.py:396
 #, fuzzy
 msgid "Network Connections Help"
 msgstr "Netwerkverbindingen"

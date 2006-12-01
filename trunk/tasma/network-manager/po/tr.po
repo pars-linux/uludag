@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-29 16:54+0200\n"
+"POT-Creation-Date: 2006-12-01 13:23+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -19,83 +19,83 @@ msgstr ""
 msgid "Name:"
 msgstr "İsim:"
 
-#: connection.py:40
+#: connection.py:41
 msgid "Device:"
 msgstr "Aygıt:"
 
-#: connection.py:60
+#: connection.py:61
 msgid "Scan"
 msgstr "Tara"
 
-#: connection.py:71
+#: connection.py:72
 msgid "Authentication"
 msgstr "Kimlik doğrulama"
 
-#: connection.py:75
+#: connection.py:76
 msgid "Mode:"
 msgstr "Mod:"
 
-#: connection.py:86
+#: connection.py:87
 msgid "No authentication"
 msgstr "Doğrulama yok"
 
-#: connection.py:101 connection.py:112
+#: connection.py:102 connection.py:113
 msgid "Password:"
 msgstr "Parola:"
 
-#: connection.py:109
+#: connection.py:110
 msgid "User name:"
 msgstr "Kullanıcı adı:"
 
-#: connection.py:139
+#: connection.py:140
 msgid "Scan results:"
 msgstr "Tarama sonuçları:"
 
-#: connection.py:147
+#: connection.py:148
 msgid "Scan again"
 msgstr "Yeniden tara"
 
-#: connection.py:149
+#: connection.py:150
 msgid "Use"
 msgstr "Kullan"
 
-#: connection.py:188
+#: connection.py:189
 msgid "Network settings"
 msgstr "Ağ ayarları"
 
-#: connection.py:194
+#: connection.py:195
 msgid "Automatic query (DHCP)"
 msgstr "Otomatik ayar (DHCP)"
 
-#: connection.py:199
+#: connection.py:200
 msgid "Manual"
 msgstr "Elle ayarla"
 
-#: connection.py:208 browser.py:46
+#: connection.py:209 browser.py:46
 msgid "Address:"
 msgstr "Adres:"
 
-#: connection.py:213 connection.py:226 connection.py:245
+#: connection.py:215 connection.py:230 connection.py:246
 msgid "Custom"
 msgstr "Özel"
 
-#: connection.py:217
+#: connection.py:219
 msgid "Net mask:"
 msgstr "Ağ maskesi:"
 
-#: connection.py:222
+#: connection.py:225
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
 
-#: connection.py:233 nameconf.py:42
+#: connection.py:234 nameconf.py:42
 msgid "Name servers"
 msgstr "İsim sunucuları"
 
-#: connection.py:243
+#: connection.py:244
 msgid "From query"
 msgstr "Sorgudan"
 
-#: connection.py:410
+#: connection.py:437
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
@@ -107,11 +107,11 @@ msgstr "Ağ Yöneticisi"
 msgid "Network manager module is already started!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
-#: comariface.py:330
+#: comariface.py:319
 msgid "new connection"
 msgstr "yeni bağlantı"
 
-#: nameconf.py:27 browser.py:348
+#: nameconf.py:27 browser.py:364
 msgid "Name Service Settings"
 msgstr "İsim Servisi Ayarları"
 
@@ -131,23 +131,23 @@ msgstr "İsim Sunucusu Ekle"
 msgid "Name server:"
 msgstr "İsim sunucusu:"
 
-#: browser.py:49 browser.py:138
+#: browser.py:49 browser.py:137
 msgid "Automatic"
 msgstr "Otomatik"
 
-#: browser.py:80
+#: browser.py:79
 msgid "Turn on/off connection"
 msgstr "Bağlantıyı aç/kapa"
 
-#: browser.py:93
+#: browser.py:92
 msgid "Configure connection"
 msgstr "Bağlantıyı ayarla"
 
-#: browser.py:96
+#: browser.py:95
 msgid "Delete connection"
 msgstr "Bağlantıyı sil"
 
-#: browser.py:114
+#: browser.py:113
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -157,15 +157,15 @@ msgstr ""
 "'%s'\n"
 "bağlantısını sileyim mi?"
 
-#: browser.py:115
+#: browser.py:114
 msgid "Delete connection?"
 msgstr "Bağlantıyı sil?"
 
-#: browser.py:344
+#: browser.py:360
 msgid "New connection"
 msgstr "Yeni bağlantı"
 
-#: browser.py:379
+#: browser.py:396
 msgid "Network Connections Help"
 msgstr "Ağ Bağlantıları Yardımı"
 
