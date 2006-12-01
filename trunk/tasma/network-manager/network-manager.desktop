@@ -1,4 +1,5 @@
 [Desktop Entry]
+Encoding=UTF-8
 Name=Network Configuration
 Name[en]=Network Configuration
 Name[tr]=Ağ Yapılandırması
@@ -12,4 +13,4 @@ X-KDE-RootOnly=false
 X-Tasma-Fork=True
 Type=Application
 Exec=kcmshell network-manager
-Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-network
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-network;
