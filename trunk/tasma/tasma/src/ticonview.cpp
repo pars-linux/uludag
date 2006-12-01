@@ -87,8 +87,9 @@ void TIconView::slotItemSelected( QIconViewItem* item )
   // kdWarning() << "LU LU LU I got some apple" << endl;
   TIconViewItem *_item = static_cast<TIconViewItem*>( item );
   KSimpleConfig cfg(_item->moduleinfo()->fileName(),true);
+  cfg.setDesktopGroup();
 
-  if(cfg.readEntry("X-Tasma-Fork"))
+  if(cfg.readBoolEntry("X-Tasma-Fork"))
     {
       system(cfg.readEntry("Exec"));
       return;
