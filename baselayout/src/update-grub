@@ -56,10 +56,12 @@ f.write("\n")
 for l in container[0]:
     if l.startswith("title"):
         f.write("title %s [%s]\n" % (release.strip("\n"), kernel))
-    if l.startswith("kernel"):
+    elif l.startswith("kernel"):
         f.write(re.sub("(.*)(kernel-.*)(root=.*)", r"\1kernel-%s \3\n" % kernel, l))
-    if l.startswith("initrd"):
+    elif l.startswith("initrd"):
        f.write(re.sub("(.*)(initramfs-.*)", r"\1initramfs-%s\n" % initramfs, l))
+    else:
+        f.write("%s\n" % l)
 f.write("\n")
 
 for list in container:
