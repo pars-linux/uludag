@@ -15,8 +15,11 @@
 */
 
 #include <assert.h>
+
 #include <qstring.h>
 #include <qapplication.h>
+#include <qregexp.h>
+
 #include <kicontheme.h>
 #include <kiconloader.h>
 #include <kservicegroup.h>
@@ -27,6 +30,7 @@
 #include <ksimpleconfig.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
+#include <kprocess.h>
 
 #include "ticonview.h"
 
@@ -92,7 +96,18 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 
   if(cfg.readBoolEntry("X-Tasma-Fork"))
     {
-      system(KStandardDirs::findExe(cfg.readEntry("Exec")));
+      KProcess proc;
+      QStringList args = QStringList::split(QRegExp("\\s{1}"),cfg.readEntry("Exec"));
+
+      QStringList::ConstIterator it = args.constBegin();
+
+      while( it != args.constEnd() )
+        {
+          proc << *it;
+          ++it;
+        }
+
+      proc.start(KProcess::DontCare);
       return;
     }
 
