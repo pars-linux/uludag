@@ -9,7 +9,8 @@ X-KDE-ModuleType=Library
 X-KDE-Library=firewall-config
 X-KDE-FactoryName=firewall_config
 X-KDE-RootOnly=false
+X-Tasma-Fork=true
 Type=Application
-Exec=kcmshell firewall-config
-Categories=QT;KDE;X-KDE-settings-network;X-KDE-tasma-network
+Exec=firewall-config
+Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network;
 
