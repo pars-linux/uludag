@@ -69,6 +69,7 @@
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kde-i18n-es</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
@@ -355,6 +356,7 @@
         <Package>katapult</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kde-i18n-es</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-tr</Package>
         <Package>kdeaddons</Package>
