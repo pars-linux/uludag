@@ -56,6 +56,7 @@
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gle</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
+        <SelectedPackage>glibc-locales-es</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>grounation-xcursors</SelectedPackage>
@@ -85,6 +86,7 @@
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
         <SelectedPackage>kde-i18n-de</SelectedPackage>
+        <SelectedPackage>kde-i18n-es</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
@@ -355,6 +357,7 @@
         <Package>glib2</Package>
         <Package>glibc</Package>
         <Package>glibc-locales-de</Package>
+        <Package>glibc-locales-es</Package>
         <Package>glibc-locales-nl</Package>
         <Package>glibmm</Package>
         <Package>glut</Package>
@@ -425,6 +428,7 @@
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
         <Package>kde-i18n-de</Package>
+        <Package>kde-i18n-es</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-tr</Package>
         <Package>kdeaddons</Package>
