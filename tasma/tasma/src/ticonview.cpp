@@ -25,6 +25,7 @@
 #include <kcmoduleloader.h>
 #include <krun.h>
 #include <ksimpleconfig.h>
+#include <kstandarddirs.h>
 #include <kdebug.h>
 
 #include "ticonview.h"
@@ -91,7 +92,7 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 
   if(cfg.readBoolEntry("X-Tasma-Fork"))
     {
-      system(cfg.readEntry("Exec"));
+      system(KStandardDirs::findExe(cfg.readEntry("Exec")));
       return;
     }
 
