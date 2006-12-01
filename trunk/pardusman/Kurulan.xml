@@ -61,6 +61,7 @@
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>grounation-xcursors</SelectedPackage>
         <SelectedPackage>gspca</SelectedPackage>
+        <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>gwenview</SelectedPackage>
@@ -383,6 +384,7 @@
         <Package>gst-plugins-good</Package>
         <Package>gst-plugins-ugly</Package>
         <Package>gstreamer</Package>
+        <Package>gtk-engines</Package>
         <Package>gtk-qt-engine</Package>
         <Package>gtk2</Package>
         <Package>gtkmm</Package>
