@@ -29,8 +29,8 @@ AboutView::AboutView( QWidget *parent, const char *name )
   setPaletteBackgroundColor( KGlobalSettings::alternateBackgroundColor() );
 
   // init pixmaps
-  _tasmaLogo = new QPixmap( locate( "data", "tasma/tasma_logo.png" ) );
-  _pardusLogo = new KPixmap( locate( "data", "tasma/pardus.png" ) );
+  _tasmaLogo = new QPixmap( locate( "data", "tasma/pics/tasma_logo.png" ) );
+  _pardusLogo = new KPixmap( locate( "data", "tasma/pics/pardus.png" ) );
   KPixmapEffect::fade( *_pardusLogo, 0.80, Qt::white );
 }
 
