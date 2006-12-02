@@ -82,6 +82,8 @@ default_glob_excludes = (
     ( "usr/lib/", "*.la" ),
     ( "lib/", "*.a" ),
     ( "lib/", "*.la" ),
+    ( "var/db/comar/", "__db*" ),
+    ( "var/db/comar/", "log.*" ),
 )
 
 
