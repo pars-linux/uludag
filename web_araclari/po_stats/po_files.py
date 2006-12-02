@@ -6,6 +6,7 @@ for lang in ["tr", "nl", "de", "es"]:
     po_files[lang] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/%s.po" % lang,
                       "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/%s.po" % lang,
                       "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/%s.po" % lang,
+                      "Disk Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/disk-manager/po/%s.po" % lang,
                       "Feedback": "http://svn.pardus.org.tr/uludag/trunk/feedback/po/%s.po" % lang,
                       "Firewall Configurator": "http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/%s.po" % lang,
                       "Tasma": "http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/%s.po" % lang,
