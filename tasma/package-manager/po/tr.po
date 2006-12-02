@@ -44,7 +44,7 @@ msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
 #: src/ProgressDialog.py:98
 msgid "Now installing <b>amsn</b> package"
-msgstr "Şu anda <b>amsn</b> paketi kuruluyor"
+msgstr "<b>amsn</b> paketi kuruluyor"
 
 #: src/Tray.py:37
 msgid "Update"
@@ -196,7 +196,7 @@ msgstr "<b>İşlem iptal ediliyor...</b>"
 
 #: src/Progress.py:125 src/Progress.py:129
 msgid "Now %1 <b>%2</b> package"
-msgstr "Şu anda <b>%2</b> paketi %1"
+msgstr "<b>%2</b> paketi %1"
 
 #: src/Progress.py:139
 msgid "installed"
@@ -330,15 +330,15 @@ msgstr "Arama Sonuçları"
 
 #: src/package-manager.py:428
 msgid "Currently your basket is empty."
-msgstr "Şu anda sepetiniz boş."
+msgstr "Sepetiniz boş."
 
 #: src/package-manager.py:431 src/package-manager.py:439
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+msgstr "Sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
 #: src/package-manager.py:434
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ekstra bağımlılık "
+msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ek bağımlılık "
 
 #: src/package-manager.py:436 src/package-manager.py:444
 msgid "in your basket."
