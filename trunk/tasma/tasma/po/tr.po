@@ -31,19 +31,18 @@ msgid "(c) 2005, TUBITAK - UEKAE"
 msgstr "(c) 2005, TÜBİTAK - UEKAE"
 
 #: modules/tasmatv/tasmatv.cpp:42
-#, fuzzy
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
-msgstr "(c) 2005, TÜBİTAK - UEKAE"
+msgstr "(c) 2005-2006, TÜBİTAK - UEKAE"
 
 #: modules/tasmatv/tvconfigui.cpp:155 rc.cpp:48
 #, no-c-format
 msgid "28 Mhz Crystal"
-msgstr ""
+msgstr "28 Mhz Kristal"
 
 #: modules/tasmatv/tvconfigui.cpp:156 rc.cpp:51
 #, no-c-format
 msgid "35 Mhz Crystal"
-msgstr ""
+msgstr "35 Mhz Kristal"
 
 #: src/tmoduleview.cpp:148
 msgid "<big>Loading...</big>"
@@ -56,7 +55,7 @@ msgstr "Şimdiki Modül Hakkında"
 #: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:36
 #, no-c-format
 msgid "Addons"
-msgstr ""
+msgstr "Eklentiler"
 
 #: src/aboutview.cpp:68
 msgid "Configuration Center"
@@ -68,12 +67,12 @@ msgstr "Programın Şimdiki Yöneticisi"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:40
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:45
 #, no-c-format
 msgid "Do not use PLL"
-msgstr ""
+msgstr "PLL kullanma"
 
 #: src/aboutview.cpp:99
 msgid ""
@@ -97,13 +96,13 @@ msgstr "KDE Geliştiricileri"
 #: rc.cpp:9 rc.cpp:24
 #, no-c-format
 msgid "Manufacturer"
-msgstr ""
+msgstr "Üretici"
 
 #: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:147
 #: rc.cpp:6 rc.cpp:27
 #, no-c-format
 msgid "Model"
-msgstr ""
+msgstr "Model"
 
 #: src/main.cpp:67
 msgid "Module Developers"
@@ -111,14 +110,14 @@ msgstr "Modül Geliştiricileri"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:38
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: modules/tasmatv/tvconfigui.cpp:140 modules/tasmatv/tvconfigui.cpp:142
 #: modules/tasmatv/tvconfigui.cpp:145 modules/tasmatv/tvconfigui.cpp:149
 #: rc.cpp:12 rc.cpp:15 rc.cpp:21 rc.cpp:30
 #, no-c-format
 msgid "New Item"
-msgstr ""
+msgstr "Yeni Öğe"
 
 #: src/main.cpp:66
 msgid "Old Maintainer & Original Author"
@@ -126,7 +125,7 @@ msgstr "Eski Yönetici & İlk Yazarı"
 
 #: modules/tasmatv/cards-db.cpp:99 modules/tasmatv/tuners-db.cpp:173
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #: src/main.cpp:63
 msgid "Pardus Configuration Center"
@@ -135,29 +134,28 @@ msgstr "Pardus Yapılandırma Merkezi"
 #: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:42
 #, no-c-format
 msgid "Phase Locked Loop (PLL)"
-msgstr ""
+msgstr "Faz Kilitlemeli Döngü (PLL)"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:34
 msgid "PiSi Package Info"
-msgstr ""
+msgstr "PİSİ Paket Bilgisi"
 
 #: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:39
 #, no-c-format
 msgid "Radio Card"
-msgstr ""
+msgstr "Radyo Kartı"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:41
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: src/main.cpp:62
 msgid "TASMA - Pardus Configuration Center"
 msgstr "TASMA - Pardus Yapılandırma Merkezi"
 
 #: modules/tasmatv/tasmatv.cpp:39 modules/tasmatv/tasmatv.cpp:40
-#, fuzzy
 msgid "TASMA Tv Card Configuration Module"
-msgstr "TASMA - Pardus Yapılandırma Merkezi"
+msgstr "TASMA - TV Kartı Yapılandırma Aracı"
 
 #: src/aboutview.cpp:88
 msgid ""
@@ -172,20 +170,20 @@ msgstr ""
 #: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:18
 #, no-c-format
 msgid "Tuner"
-msgstr ""
+msgstr "Ayarlayıcı"
 
 #: modules/tasmatv/tvconfigui.cpp:143 rc.cpp:3
 #, no-c-format
 msgid "Tv Card"
-msgstr ""
+msgstr "TV Kartı"
 
 #: modules/tasmatv/tasmatv.cpp:81
 msgid "Tv card configuration module for TASMA."
-msgstr ""
+msgstr "TV kartı ayar programı"
 
 #: modules/tasmatv/tvconfigui.cpp:136
 msgid "TvConfigUI"
-msgstr ""
+msgstr "TvConfigUI"
 
 #: src/aboutview.cpp:86
 msgid "Welcome to TASMA"
@@ -195,10 +193,10 @@ msgstr "TASMA'ya Hoşgeldiniz"
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr ""
+msgstr "gorkem@pardus.org.tr"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr ""
+msgstr "Görkem Çetin"
