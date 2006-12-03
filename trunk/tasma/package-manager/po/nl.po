@@ -1,18 +1,18 @@
-# translation of package-manager.po to Dutch
+# translation of nl.po to Nederlands
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Willem Gielen <w.gielen@gmail.com>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: package-manager\n"
+"Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-01 14:17+0200\n"
-"PO-Revision-Date: 2006-08-08 23:52+0200\n"
-"Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"POT-Creation-Date: 2006-11-24 14:41+0200\n"
+"PO-Revision-Date: 2006-11-26 17:49+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,58 +23,46 @@ msgstr ""
 msgid "Progress"
 msgstr "Voortgang"
 
-#: src/ProgressDialog.py:92 src/Progress.py:80
+#: src/ProgressDialog.py:92 src/Progress.py:68
 msgid "-- / --  package"
-msgstr ""
+msgstr "-- / --  pakket"
 
-#: src/ProgressDialog.py:93 src/Progress.py:79
+#: src/ProgressDialog.py:93 src/Progress.py:67
 msgid "downloaded (total: -- )"
-msgstr ""
+msgstr "gedownload (totaal: -- )"
 
-#: src/ProgressDialog.py:94 src/Progress.py:78
+#: src/ProgressDialog.py:94 src/Progress.py:66
 msgid "--"
-msgstr ""
+msgstr "--"
 
 #: src/ProgressDialog.py:97
 msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>PiSi wordt voorbereid...</h3>"
+msgstr "<h3>Voorbereiden PiSi...</h3>"
 
 #: src/ProgressDialog.py:98
 msgid "Now installing <b>amsn</b> package"
-msgstr ""
+msgstr "Installeert nu <b>amsn</b> pakket"
 
-#: src/Tray.py:37
-#, fuzzy
-msgid "Update"
-msgstr "Beschikbare updates tonen"
-
-#: src/Tray.py:42 src/package-manager.py:267 src/package-manager.py:604
-#: src/package-manager.py:757
-msgid "All"
-msgstr ""
-
-#: src/Tray.py:62
-#, fuzzy
+#: src/Tray.py:46
 msgid "There are <b>%1</b> updates available!"
-msgstr "Er zijn momenteel geen updates beschikbaar"
+msgstr "Er zijn momenteel geen bijgewerkte bestanden beschikbaar"
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
-#: src/package-manager.py:293
+#: src/package-manager.py:296
 msgid "Select all packages in this category"
-msgstr "Alle pakketten in deze categorie selecteren"
+msgstr "Selecteer alle pakketten in deze categorie"
 
-#: src/CustomEventListener.py:48 src/package-manager.py:295
+#: src/CustomEventListener.py:48 src/package-manager.py:298
 msgid "Reverse package selections"
-msgstr ""
+msgstr "Keer pakket selectie om"
 
 #: src/BalloonMessage.py:44
-#, fuzzy
 msgid "Show Updates"
-msgstr "Beschikbare updates tonen"
+msgstr "Toon beschikbare bijgewerkte bestanden"
 
 #: src/BalloonMessage.py:45
 msgid "Ignore"
-msgstr ""
+msgstr "Negeer"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -86,371 +74,350 @@ msgstr "&Ok"
 
 #: src/RepoDialog.py:75
 msgid "Repository &Address"
-msgstr "Repository-&adres"
+msgstr "Repository &adres"
 
 #: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr ""
-"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
 msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
-msgstr ""
+msgstr "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:80
 msgid "Repository &Name"
-msgstr "Repository&naam"
+msgstr "Repository &naam"
 
 #: src/RepoDialog.py:81
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
 
-#: src/BasketDialog.py:50 src/BasketDialog.py:55
+#: src/BasketDialog.py:38 src/BasketDialog.py:43
 msgid "Basket"
-msgstr ""
+msgstr "Mandje"
 
-#: src/BasketDialog.py:63
-#, fuzzy
+#: src/BasketDialog.py:51
 msgid "Selected package(s) for removal:"
-msgstr "Te installeren pakket"
+msgstr "Geselecteerde te verwijderen pakket(ten):"
 
-#: src/BasketDialog.py:64
+#: src/BasketDialog.py:52
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
+msgstr "Keer afhankelijkheden van de geselecteerde pakket(ten) om welk ook verwijderd zullen worden:"
 
-#: src/BasketDialog.py:66
-#, fuzzy
+#: src/BasketDialog.py:54
 msgid "Selected package(s) for install:"
-msgstr "Te installeren pakket"
+msgstr "Geselecteerde te installeren pakket(ten):"
 
-#: src/BasketDialog.py:67
+#: src/BasketDialog.py:55
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr ""
+msgstr "Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook geïnstalleerd zullen worden:"
 
-#: src/BasketDialog.py:69
-#, fuzzy
+#: src/BasketDialog.py:57
 msgid "Selected package(s) for upgrade:"
-msgstr "Te installeren pakket"
+msgstr "Geselecteerde bij te werken pakket(ten):"
 
-#: src/BasketDialog.py:70
+#: src/BasketDialog.py:58
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
+msgstr "Extra afhankelijkheden van de geseleceerde pakket(ten) welk ook bijgewerkt zullen worden:"
 
-#: src/BasketDialog.py:78
+#: src/BasketDialog.py:66
 msgid "Total Size:"
-msgstr ""
+msgstr "Totale grootte:"
 
-#: src/BasketDialog.py:85
+#: src/BasketDialog.py:73
 msgid "Update Basket"
-msgstr ""
+msgstr "Werk mandje bij"
 
-#: src/BasketDialog.py:161
+#: src/BasketDialog.py:145
 msgid "Total Size: <b>%1</b>"
-msgstr ""
+msgstr "Totale grootte: <b>%1</b>"
 
-#: src/BasketDialog.py:211 src/BasketDialog.py:213
-#, fuzzy
+#: src/BasketDialog.py:195 src/BasketDialog.py:197
 msgid "Size: "
-msgstr "Pakketgrootte: "
+msgstr "Grootte: "
 
 #: src/HelpDialog.py:20
 msgid "Package Manager Help"
-msgstr "Pakketbeheer-help"
+msgstr "Pakketbeheer hulp"
 
-#: src/Preferences.py:75
+#: src/Preferences.py:72
 msgid "Add New Repository"
-msgstr "Nieuwe repository toevoegen"
+msgstr "Toevoegen nieuwe repository"
 
-#: src/Preferences.py:82
+#: src/Preferences.py:79
 msgid "Edit Repository"
-msgstr "Repository bewerken"
+msgstr "Bewerken repository"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:125 src/Preferences.py:141
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
-"<qt>Repository-adres hoort te eindigen op xml of xml.bz2. <p>Probeer het "
+"<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer "
 "opnieuw.</qt>"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:125 src/Preferences.py:141
 msgid "Pisi Error"
-msgstr "Pisi-fout"
+msgstr "Pisi fout"
 
-#: src/Preferences.py:203
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-
-#: src/Progress.py:51
-#, fuzzy
+#: src/Progress.py:39
 msgid "downloaded ( total: %1 )"
-msgstr "<b>Gedownload/totaal:<b> %1 %2 %3 %4"
+msgstr "gedownload (totaal: %1 )"
 
-#: src/Progress.py:76
+#: src/Progress.py:64
 msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>PiSi wordt voorbereid...b>"
+msgstr "<b>Voorbereiden PiSi...</b>"
 
-#: src/Progress.py:98
+#: src/Progress.py:86
 msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Handeling wordt geannuleerd...</b>"
+msgstr "<b>Annuleren handeling...</b>"
 
-#: src/Progress.py:125 src/Progress.py:129
-#, fuzzy
+#: src/Progress.py:113 src/Progress.py:117
 msgid "Now %1 <b>%2</b> package"
-msgstr "Nu %1<b>%2</b> (%3 van %4)"
+msgstr "Nu %1 <b>%2</b> pakket"
 
-#: src/Progress.py:139
+#: src/Progress.py:127
 msgid "installed"
-msgstr ""
+msgstr "geïnstalleerd"
 
-#: src/Progress.py:141
-#, fuzzy
+#: src/Progress.py:129
 msgid "removed"
-msgstr "verwijderen"
+msgstr "verwijderd"
 
-#: src/Progress.py:143
+#: src/Progress.py:131
 msgid "upgraded"
-msgstr ""
+msgstr "opgewaardeerd"
 
-#: src/Progress.py:145
-#, fuzzy
+#: src/Progress.py:133
 msgid "%1 / %2 package %3"
-msgstr "Nu %1<b>%2</b> (%3 van %4)"
+msgstr "%1 / %2 pakket %3"
 
-#: src/Commander.py:62
+#: src/Commander.py:61
 msgid "Can't connect to Comar daemon"
-msgstr "Kan geen verbinding maken met de Comar-dienst"
+msgstr "Kan geen verbinding maken met de Comar dienst"
 
-#: src/Commander.py:97
-msgid "You do not have permission to do this operation."
-msgstr ""
-
-#: src/package-manager.py:45
+#: src/package-manager.py:44
 msgid "GUI for PiSi package manager"
-msgstr "GUI voor PiSi-pakketbeheer"
+msgstr "GUI voor PiSi pakketbeheer"
 
-#: src/package-manager.py:53 src/package-manager.py:813
+#: src/package-manager.py:52 src/package-manager.py:801
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
-#: src/package-manager.py:56
+#: src/package-manager.py:55
 msgid "Developer and Current Maintainer"
-msgstr ""
+msgstr "Ontwikkelaar en huidige handhaver"
+
+#: src/package-manager.py:56
+msgid "Original Author"
+msgstr "Originele auteur"
 
 #: src/package-manager.py:57
-#, fuzzy
-msgid "Original Author"
-msgstr "PiSi-auteurs"
-
-#: src/package-manager.py:58
 msgid "CSS/JS Meister"
 msgstr "CSS/JS Meister"
 
-#: src/package-manager.py:59
+#: src/package-manager.py:58
 msgid "GUI Design & Usability"
-msgstr "GUI-ontwerp en usability"
+msgstr "GUI-ontwerp en functionaliteit"
 
-#: src/package-manager.py:60
+#: src/package-manager.py:59
 msgid "Misc. Fixes"
 msgstr "Diverse reparaties"
 
-#: src/package-manager.py:61
+#: src/package-manager.py:60
 msgid "Comar/Python Help"
 msgstr "Comar/Python hulp"
 
-#: src/package-manager.py:62
+#: src/package-manager.py:61
 msgid "Speedup fixes"
 msgstr "Versnel optimalisaties"
 
-#: src/package-manager.py:63
+#: src/package-manager.py:62
 msgid "PiSi Authors"
-msgstr "PiSi-auteurs"
+msgstr "PiSi auteurs"
 
-#: src/package-manager.py:63
+#: src/package-manager.py:62
 msgid "Authors of PiSi API"
-msgstr "Auteurs van PiSi-API"
+msgstr "Auteurs van PiSi API"
 
-#: src/package-manager.py:114
+#: src/package-manager.py:113
 msgid "Search: "
-msgstr "Zoeken:"
+msgstr "Zoeken: "
 
 # mand tonen
-#: src/package-manager.py:118
+#: src/package-manager.py:117
 msgid "Show basket"
-msgstr "Mand tonen"
+msgstr "Toon mandje"
 
-#: src/package-manager.py:123 src/package-manager.py:223
+#: src/package-manager.py:122 src/package-manager.py:223
 msgid "Install Package(s)"
-msgstr "Pakket(ten) installeren"
+msgstr "Installeer pakket(ten)"
 
-#: src/package-manager.py:144
+#: src/package-manager.py:143
 msgid "Components"
 msgstr "Componenten"
 
-#: src/package-manager.py:172
+#: src/package-manager.py:169
 msgid "Loading Package List..."
-msgstr "Pakketlijst wordt geladen..."
+msgstr "Laden pakketlijst..."
 
 #: src/package-manager.py:201
 msgid ""
 "Package repository does not have component information. Please control "
 "repository addresses and update repository. You need a network connection to "
 "update."
-msgstr ""
+msgstr "De repository heeft geen component informatie. Controleer alstublieft de repository adressen en laat de repository bijwerken. U hebt een netwerk aansluiting nodige om bij te werken. "
 
 #: src/package-manager.py:239
 msgid "Remove Package(s)"
-msgstr "Pakket(ten) verwijderen"
+msgstr "Verwijder pakket(ten)"
 
 #: src/package-manager.py:265
-#, fuzzy
 msgid "Upgrade Package(s)"
-msgstr "Geselecteerde pakketten opwaarderen"
+msgstr "Opwaarderen geselecteerde pakket(ten)"
 
-#: src/package-manager.py:362
+#: src/package-manager.py:267 src/package-manager.py:604
+#: src/package-manager.py:753
+msgid "All"
+msgstr "Alles"
+
+#: src/package-manager.py:271
+msgid "There are no updates available at this time"
+msgstr "Er zijn momenteel geen bij te werken bestanden beschikbaar"
+
+#: src/package-manager.py:365
 msgid "N\\A"
 msgstr "N\\B"
 
-#: src/package-manager.py:379
+#: src/package-manager.py:382
 msgid "Description: "
 msgstr "Beschrijving: "
 
-#: src/package-manager.py:379
+#: src/package-manager.py:382
 msgid "Version: "
 msgstr "Versie: "
 
-#: src/package-manager.py:380
+#: src/package-manager.py:383
 msgid "Package Size: "
 msgstr "Pakketgrootte: "
 
-#: src/package-manager.py:380
+#: src/package-manager.py:383
 msgid "Homepage: "
 msgstr "Homepage: "
 
-#: src/package-manager.py:395 src/package-manager.py:612
-msgid "Search Results"
-msgstr "Zoekresultaten"
-
 # mand tonen
-#: src/package-manager.py:428
-#, fuzzy
+#: src/package-manager.py:426
 msgid "Currently your basket is empty."
-msgstr "Mand tonen"
+msgstr "Momenteel is uw mandje leeg."
 
-#: src/package-manager.py:431 src/package-manager.py:439
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
+#: src/package-manager.py:429 src/package-manager.py:437
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte van <b>%2</b>"
 
-#: src/package-manager.py:434
+#: src/package-manager.py:432
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
+msgstr "met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
 
 # mand tonen
-#: src/package-manager.py:436 src/package-manager.py:444
-#, fuzzy
+#: src/package-manager.py:434 src/package-manager.py:442
 msgid "in your basket."
-msgstr "Mand tonen"
+msgstr "in uw mandje."
 
-#: src/package-manager.py:442
+#: src/package-manager.py:440
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
-msgstr ""
+msgstr "met<b>%3</b> omgekeerde afhankelijkheden met een totale grootte van <b>%4</b> "
 
 #: src/package-manager.py:473
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
+msgstr "Geselecteerde pakketten [%1] zijn in conflict met elkaar. Dezeakketten kunnen niet samen geïnstalleerd worden."
 
 #: src/package-manager.py:474 src/package-manager.py:484
 msgid "Conflict Error"
-msgstr ""
+msgstr "Conflict fout"
 
 #: src/package-manager.py:480
 msgid "The following packages conflicts:\n"
-msgstr ""
+msgstr "De volgende pakketten zijn in conflict:\n"
 
 #: src/package-manager.py:482
 msgid "%1 conflicts with: [%2]\n"
-msgstr ""
+msgstr "%1 in conflict met: [%2]\n"
 
 #: src/package-manager.py:483
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
 msgstr ""
+"\n"
+"De volgende conflicterende pakketten verwijderen?"
 
 #: src/package-manager.py:596
 msgid "Others"
-msgstr ""
+msgstr "Anderen"
+
+#: src/package-manager.py:612
+msgid "Search Results"
+msgstr "Zoekresultaten"
 
 #: src/package-manager.py:633 src/package-manager.py:648
-#, fuzzy
 msgid "<b>Installing Package(s)</b>"
-msgstr "Pakket(ten) installeren"
+msgstr "<b>Installeren pakket(ten)</b>"
 
 #: src/package-manager.py:635 src/package-manager.py:652
 msgid "<b>Upgrading Package(s)</b>"
-msgstr ""
+msgstr "<b>Opwaarderen pakket(ten)</b>"
 
-#: src/package-manager.py:637 src/CommonText.py:15
+#: src/package-manager.py:637 src/CommonText.py:3
 msgid "downloading"
 msgstr "downloaden"
 
 #: src/package-manager.py:650
-#, fuzzy
 msgid "<b>Removing Package(s)</b>"
-msgstr "Pakket(ten) verwijderen"
+msgstr "<b>Bijwerken pakket(ten)</b>"
 
 #: src/package-manager.py:687
-#, fuzzy
 msgid "<b>Applying Repository Changes</b>"
-msgstr "Repository bewerken"
+msgstr "<b>Toepassen veranderingen repository</b>"
 
 #: src/package-manager.py:690
-#, fuzzy
 msgid "<b>Updating Repository</b>"
-msgstr "Repository bewerken"
+msgstr "<b>Bijwerken repository</b>"
 
 #: src/package-manager.py:691
-#, fuzzy
 msgid "Downloading package list of %1"
-msgstr "Pakketlijst wordt geladen..."
+msgstr "Downloaden lijst met pakketten van %1"
 
-#: src/package-manager.py:857
+#: src/package-manager.py:845
 msgid "Show Installed Packages"
-msgstr "Geinstalleerde pakketten tonen"
+msgstr "Toon geïnstalleerde pakketten"
 
-#: src/package-manager.py:860
+#: src/package-manager.py:848
 msgid "Show New Packages"
-msgstr "Nieuwe pakketten tonen"
+msgstr "Toon nieuwe pakketten"
 
-#: src/package-manager.py:862
-#, fuzzy
+#: src/package-manager.py:850
 msgid "Show Upgradable Packages"
-msgstr "Nieuwe pakketten tonen"
+msgstr "Toon op te waarderen pakketten"
 
-#: src/package-manager.py:881
+#: src/package-manager.py:869
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:881
-msgid "Show main window on startup"
-msgstr ""
-
-#: src/package-manager.py:884
+#: src/package-manager.py:872
 msgid "Package Manager is already running!"
-msgstr "Pakketbeheer is reeds opgestart!"
+msgstr "Pakketbeheer is al opgestart!"
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
 msgid "Repository Name"
-msgstr "Naam repository"
+msgstr "Repository naam"
 
 #: src/PreferencesDialog.py:54 src/PreferencesDialog.py:192
 msgid "Address"
@@ -458,21 +425,19 @@ msgstr "Adres"
 
 #: src/PreferencesDialog.py:184
 msgid "PiSi Settings"
-msgstr "PiSi-instellingen"
+msgstr "PiSi instellingen"
 
 #: src/PreferencesDialog.py:186
 msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"U kunt hier de huidige softwarerepositories en corresponderende adressen zien"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "U kunt hier de huidige software repositories en corresponderende adressen zien"
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
-msgstr "&Nieuwe repository toevoegen"
+msgstr "&Toevoegen nieuwe repository"
 
 #: src/PreferencesDialog.py:195
 msgid "Click here to add a new software repository"
@@ -480,15 +445,15 @@ msgstr "Klik hier om een nieuwe softwarerepository toe te voegen"
 
 #: src/PreferencesDialog.py:196
 msgid "&Edit Repository"
-msgstr "Repository &bewerken"
+msgstr "&Bewerken repository"
 
 #: src/PreferencesDialog.py:197
 msgid "Click here to modify the name or address of a repository"
-msgstr "Klik hier om de naam of het adres van een repository te bewerken"
+msgstr "Klik hier om de naam of het adres van een repository te veranderen"
 
 #: src/PreferencesDialog.py:198
 msgid "&Remove Repository"
-msgstr "Repository &verwijderen"
+msgstr "&Verwijderen repository"
 
 #: src/PreferencesDialog.py:199
 msgid "Click here to delete a repository from the list"
@@ -496,7 +461,7 @@ msgstr "Klik hier om een repository uit de lijst te verwijderen"
 
 #: src/PreferencesDialog.py:200
 msgid "Move &Up"
-msgstr "Verplaats &omhoog"
+msgstr "&Omhoog verplaatsen"
 
 #: src/PreferencesDialog.py:201
 msgid "Click here to move the repository one level up"
@@ -504,7 +469,7 @@ msgstr "Klik hier om de repository een niveau hoger te plaatsen"
 
 #: src/PreferencesDialog.py:202
 msgid "Move &Down"
-msgstr "Verplaats om&laag"
+msgstr "Om&laag verplaatsten"
 
 #: src/PreferencesDialog.py:203
 msgid "Click here to move the repository one level down"
@@ -516,7 +481,7 @@ msgstr "&Repositories"
 
 #: src/PreferencesDialog.py:205
 msgid "&Show only desktop applications"
-msgstr "&Alleen desktop-toepassingen tonen"
+msgstr "&Toon alleen desktop-toepassingen"
 
 #: src/PreferencesDialog.py:206 src/PreferencesDialog.py:209
 msgid "If checked, then pisi will only show desktop applications"
@@ -524,36 +489,35 @@ msgstr "Indien geselecteerd, zal pisi alleen desktop-toepassingen weergeven"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &interval upgradable package checking"
-msgstr ""
+msgstr "Gebruik &interval contrôle voor op te waarderen pakketten"
 
 #: src/PreferencesDialog.py:208
 msgid "&Enable system tray icon"
-msgstr ""
+msgstr "G&ebruik systeemvak pictogram"
 
 #: src/PreferencesDialog.py:210
 msgid "Check interval:"
-msgstr ""
+msgstr "Contrôle interval:"
 
 #: src/PreferencesDialog.py:211
 msgid " min"
-msgstr ""
+msgstr " min"
 
 #: src/PreferencesDialog.py:212
 msgid "&General Settings"
-msgstr "Algemene &instellingen"
+msgstr "Al&gemene instellingen"
 
 #: src/PreferencesDialog.py:213
-msgid "Clear Cache"
-msgstr ""
+msgid "Cache cleaning"
+msgstr "Cache opruimen"
 
 #: src/PreferencesDialog.py:214
 msgid "C&lean disk cache now"
-msgstr "Schijf&cache nu opruimen"
+msgstr "Opruimen schijf&cache"
 
 #: src/PreferencesDialog.py:215
-#, fuzzy
 msgid ""
-"Clearing the disk cache will remove all downloaded software. \n"
+"Cleaning up the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
 "De schijf cache opruimen zal alle gedownloade software verwijderen. \n"
@@ -569,82 +533,42 @@ msgid "Maximum cache size:"
 msgstr "Maximum cachegrootte:"
 
 #: src/PreferencesDialog.py:219
-msgid "&Use hard disk cache for downloaded software"
-msgstr "&Hardeschijf-cache gebruiken voor gedownloade software"
+msgid "2000"
+msgstr "2000"
 
 #: src/PreferencesDialog.py:220
+msgid "&Use hard disk cache for downloaded software"
+msgstr "Gebr&uik hardeschijf-cache voor gedownloade software"
+
+#: src/PreferencesDialog.py:221
 msgid ""
 "If checked, then updates for Pardus will be automatically checked and you "
 "will be notified"
 msgstr ""
 "Indien geselecteerd, zullen updates voor Pardus automatisch geselecteerd "
-"wordenen zult u verwittigd worden."
+"worden en zult u verwittigd worden."
 
-#: src/PreferencesDialog.py:221
+#: src/PreferencesDialog.py:222
 msgid "Mb <i>(use 0 for no limit)</i>"
 msgstr "Mb <i>(gebruik 0 voor geen limiet)</i>"
 
-#: src/PreferencesDialog.py:222
+#: src/PreferencesDialog.py:223
 msgid "C&ache"
 msgstr "C&ache"
 
-#: src/CommonText.py:15
+#: src/CommonText.py:3
 msgid "extracting"
 msgstr "uitpakken"
 
-#: src/CommonText.py:15
+#: src/CommonText.py:3
 msgid "configuring"
-msgstr "instellen"
+msgstr "configureren"
 
-#: src/CommonText.py:15
+#: src/CommonText.py:3
 msgid "removing"
 msgstr "verwijderen"
 
-#: src/CommonText.py:15
+#: src/CommonText.py:3
 msgid "installing"
-msgstr ""
+msgstr "installeren"
 
-#~ msgid "There are no updates available at this time"
-#~ msgstr "Er zijn momenteel geen updates beschikbaar"
-
-#~ msgid "Cache cleaning"
-#~ msgstr "Cache opruimen"
-
-#~ msgid "2000"
-#~ msgstr "2000"
-
-#~ msgid ""
-#~ "Package repository still does not have category information.\n"
-#~ "Exiting..."
-#~ msgstr ""
-#~ "Pakketrepository heeft nog steeds geen categorie-informatie. \n"
-#~ "Gestopt..."
-
-#~ msgid "Removing these packages may break system safety. Aborting."
-#~ msgstr ""
-#~ "Het verwijderen van deze pakketten kan de systeemveiligheid in gevaar "
-#~ "brengen. Gestopt."
-
-#~ msgid "Main Coder"
-#~ msgstr "Hoofdprogrammeur"
-
-#~ msgid "<b>Downloaded/Total:</b> Unknown"
-#~ msgstr "<b>Gedownload/totaal:</b> onbekend"
-
-#~ msgid "<b>Speed:</b> Unknown"
-#~ msgstr "<b>Snelheid:</b> onbekend"
-
-#~ msgid "Currently Available Updates"
-#~ msgstr "Huidige beschikbare updates"
-
-#~ msgid "<b>Speed:</b> N/A"
-#~ msgstr "<b>Snelheid:</b> N/B"
-
-#~ msgid "<b>Downloaded/Total:</b> N/A"
-#~ msgstr "<b>Gedownload/totaal: <> N/B"
-
-#~ msgid "<b>Speed:</b> %1 %2"
-#~ msgstr "<b>Snelheid:</b> %1 %2"
-
-#~ msgid "Check for updates"
-#~ msgstr "Controleren op updates"
