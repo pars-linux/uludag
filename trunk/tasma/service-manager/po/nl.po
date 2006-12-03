@@ -5,15 +5,15 @@
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
+# Willem Gielen <w.gielen@gmail.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-07 21:36+0200\n"
-"PO-Revision-Date: 2006-11-03 18:01+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"PO-Revision-Date: 2006-11-26 15:40+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,7 +34,7 @@ msgstr "Toegang geweigerd"
 
 #: src/service-manager.py:187
 msgid "COMAR script execution failed."
-msgstr "Uitvoeren van het COMAR-script is mislukt."
+msgstr "COMAR-script uitvoeren is mislukt."
 
 #: src/service-manager.py:187
 msgid "Script Error"
@@ -104,7 +104,7 @@ msgstr "Bij opstarten uitvoeren"
 
 #: src/mainform.py:85 src/mainform.py:111
 msgid "Package"
-msgstr ""
+msgstr "Pakket"
 
 #: src/mainform.py:99
 msgid "Run on startup."
@@ -121,3 +121,4 @@ msgstr "&Lijst van alleen servers."
 #: src/mainform.py:107
 msgid "Alt+L"
 msgstr "ALT+L"
+

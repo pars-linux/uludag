@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-30 12:00+0200\n"
-"PO-Revision-Date: 2006-11-04 17:41+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"PO-Revision-Date: 2006-11-26 16:15+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +25,7 @@ msgstr "Gebruikersbeheer"
 
 #: user-manager.py:76
 msgid "User manager module is already started!"
-msgstr "Module gebruikersbeheer is al gestart!"
+msgstr "Module gebruikersbeheer is al opgestart!"
 
 #: user-manager.py:81
 msgid "User Manager"
@@ -57,12 +57,12 @@ msgstr "Voer informatie voor nieuwe groep in"
 
 #: groupedit.py:175
 msgid "Adding group..."
-msgstr "Groep wordt toegevoegd..."
+msgstr "Toevoegen groep..."
 
 #: groupedit.py:185 useredit.py:540 useredit.py:572
 #, python-format
 msgid "Operation failed, reason:<br>%s"
-msgstr "Handeling mislukt. Reden:<br>%s"
+msgstr "Handeling mislukt. reden:<br>%s"
 
 #: groupedit.py:187 useredit.py:542 useredit.py:574
 msgid "You are not allowed to do that"
@@ -70,7 +70,7 @@ msgstr "U bent hiertoe niet bevoegd"
 
 #: groupedit.py:189 useredit.py:544 useredit.py:576
 msgid "Comar script error :("
-msgstr "Fout in COMAR-script"
+msgstr "Fout in COMAR-script :("
 
 #: browser.py:97
 msgid "Show system user and groups"
@@ -102,7 +102,7 @@ msgstr "Groepen"
 
 #: browser.py:133
 msgid "User Manager Help"
-msgstr "Gebruikersbeheer help"
+msgstr "Gebruikersbeheer hulp"
 
 #: browser.py:140
 #, python-format
@@ -110,31 +110,29 @@ msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %"
-"s<br>Gebruikersnaam: %s<br>ID: %d"
+"<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %s<br>Gebruikersnaam: %s "
+"<br>ID: %d"
 
 #: browser.py:146
 msgid "Delete User"
-msgstr "Gebruiker verwijderen"
+msgstr "Verwijder gebruiker"
 
 #: browser.py:147
 msgid "Delete user and files"
-msgstr "Gebruiker en bestanden verwijderen"
+msgstr "Verwijder gebruiker en bestanden"
 
 #: browser.py:148
 msgid "Delete user"
-msgstr "Gebruiker verwijderen"
+msgstr "Verwijder gebruiker"
 
 #: browser.py:159
 #, python-format
 msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
-"s<br>ID: %d"
+msgstr "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %s<br>ID: %d"
 
 #: browser.py:165 browser.py:166
 msgid "Delete Group"
-msgstr "Groep verwijderen"
+msgstr "Verwijder groep"
 
 #: useredit.py:72
 msgid "User name:"
@@ -150,7 +148,7 @@ msgstr "Persoonlijke map:"
 
 #: useredit.py:158
 msgid "Select user's home directory"
-msgstr "Selecteer gebruiker's persoonlijke map"
+msgstr "Selecteer de persoonlijke map van de gebruiker"
 
 #: useredit.py:167
 msgid "Password:"
@@ -166,7 +164,7 @@ msgstr "Shell:"
 
 #: useredit.py:224
 msgid "Please specify an existing shell command"
-msgstr "Geef een bestaand shell-commando op"
+msgstr "Geef een bestaand shell-commando"
 
 #: useredit.py:226
 msgid "Specified shell command is not executable"
@@ -190,7 +188,7 @@ msgstr "Begin met het typen van de volledige naam van de gebruiker."
 
 #: useredit.py:378
 msgid "You should enter a password for this user."
-msgstr "U zult een wachtwoord voor deze gebruiker moeten aanmaken."
+msgstr "U zult een wachtwoord voor deze gebruiker moeten invoeren."
 
 #: useredit.py:383
 msgid "Password must be longer"
@@ -214,7 +212,7 @@ msgstr "U dient een gebruikersnaam op te geven."
 
 #: useredit.py:399
 msgid "This user name is used by another user"
-msgstr "Deze gebruikersnaam is al in gebruik"
+msgstr "Deze gebruikersnaam wordt al gebruikt"
 
 #: useredit.py:402
 msgid "You should select at least one group this user belongs to."
@@ -222,7 +220,7 @@ msgstr "U dient minstens één groep kiezen waartoe deze gebruiker behoort."
 
 #: useredit.py:433
 msgid "Edit User's Information"
-msgstr "Gebruikersinformatie bewerken"
+msgstr "Bewerk gebruikersinformatie"
 
 #: useredit.py:435
 msgid "Enter Information For New User"
@@ -242,5 +240,5 @@ msgstr "Toevoegen gebruiker..."
 
 #: useredit.py:600
 msgid "Getting user information..."
-msgstr "Gebruikersinformatie wordt opgehaald..."
+msgstr "Ophalen gebruikersinformatie..."
 
