@@ -553,7 +553,7 @@ class MainApplicationWidget(QWidget):
         componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network",
                           "applications.multimedia", "applications.games","applications.hardware",
                           "system.base","system.devel","kernel","applications.science",
-                          "programming", "system.locale", "server", "kde-i18n"]
+                          "programming", "system.locale", "server", "desktop.kde.i18n"]
 
         showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
 
