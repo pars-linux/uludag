@@ -12,6 +12,7 @@ SET(
   tasmafiletypes.desktop
   tasmafonts.desktop
   tasmafontinstaller.desktop
+  tasmagtk.desktop
   tasmaicons.desktop
   tasmakamera.desktop
   tasmakcmaccess.desktop
