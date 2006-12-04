@@ -236,6 +236,8 @@ class Device(QWidget):
             c = 1
         if c > 3:
             c = 3
+        if c > len(self.connections):
+            c = len(self.connections)
         return c
     
     def heightForWidth(self, width):
