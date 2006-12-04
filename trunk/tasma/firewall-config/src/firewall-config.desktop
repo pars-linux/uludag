@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Firewall Config
+Name[tr]=Güvenlik Duvarı Ayarları
 GenericName=Firewall Configuration
 GenericName[en]=Firewall Configuration
 GenericName[tr]=Güvenlik Duvarı Ayarları
@@ -13,4 +14,4 @@ X-KDE-RootOnly=false
 X-Tasma-Fork=true
 Type=Application
 Exec=firewall-config
-Categories=Qt;KDE;System;X-KDE-settings-network;X-KDE-tasma-network;
+Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network;
