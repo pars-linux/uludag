@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-24 15:59+0200\n"
+"POT-Creation-Date: 2006-12-04 09:33+0200\n"
 "PO-Revision-Date: 2006-12-03 16:15+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -19,107 +19,61 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: connection.py:33
+#: browser.py:41 connection.py:33
 msgid "Name:"
 msgstr "Naam:"
 
-#: connection.py:40
-msgid "Device:"
-msgstr "Apparaat:"
-
-#: connection.py:60
-msgid "Scan"
-msgstr "Scan"
-
-#: connection.py:71
-msgid "Authentication"
-msgstr "Authenticiteit"
-
-#: connection.py:75
-msgid "Mode:"
-msgstr "Modus:"
-
-#: connection.py:86
-msgid "No authentication"
-msgstr "Geen toegang"
-
-#: connection.py:101 connection.py:112
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: connection.py:109
-msgid "User name:"
-msgstr "Gebruikersnaam:"
-
-#: connection.py:139
-msgid "Scan results:"
-msgstr "Scan resultaat:"
-
-#: connection.py:147
-msgid "Scan again"
-msgstr "Scan opnieuw"
-
-#: connection.py:149
-msgid "Use"
-msgstr "Gebruik"
-
-#: connection.py:188
-msgid "Network settings"
-msgstr "Netwerkinstellingen"
-
-#: connection.py:194
-msgid "Automatic query (DHCP)"
-msgstr "Automatische aanvraag (DHCP)"
-
-#: connection.py:199
-msgid "Manual"
-msgstr "Handmatig"
-
-#: connection.py:208
+#: browser.py:46 connection.py:209
 msgid "Address:"
 msgstr "Adres:"
 
-#: connection.py:213 connection.py:226 connection.py:245
-msgid "Custom"
-msgstr "Eigen"
+#: browser.py:49 browser.py:137
+msgid "Automatic"
+msgstr "Automatisch"
 
-#: connection.py:217
-msgid "Net mask:"
-msgstr "Netmask:"
-
-#: connection.py:222
-msgid "Gateway:"
-msgstr "Gateway:"
-
-# naamservers
-#: connection.py:233 nameconf.py:42
-msgid "Name servers"
-msgstr "Naamservers"
-
-#: connection.py:243
-msgid "From query"
-msgstr "Van vraag"
+#: browser.py:79
+msgid "Turn on/off connection"
+msgstr "Schakel verbinding aan/uit"
 
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:408
-msgid "Configure network connection"
-msgstr "Configureer netwerkverbinding"
+#: browser.py:92
+msgid "Configure connection"
+msgstr "Configureer verbinding"
 
-#: network-manager.py:33 network-manager.py:85
-msgid "Network Manager"
-msgstr "Netwerkmanager"
+#: browser.py:95
+msgid "Delete connection"
+msgstr "Verbinding verwijderen"
 
-#: network-manager.py:80
-msgid "Network manager module is already started!"
-msgstr "Netwerkmanager module is al opgestart!"
+#  string anders opmaken:
+#  Wilt u de verbinding\n
+# %s\n
+# verwijderen?
+#: browser.py:113
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"Zal ik de verbinding\n"
+"'%s\n"
+"verwijderen?"
 
-#: comariface.py:324
-msgid "new connection"
-msgstr "nieuwe verbinding"
+#: browser.py:114
+msgid "Delete connection?"
+msgstr "Verbinding verwijderen?"
 
-#: nameconf.py:27 browser.py:321
+#: browser.py:362
+msgid "New connection"
+msgstr "Nieuwe verbinding"
+
+#: browser.py:366 nameconf.py:27
 msgid "Name Service Settings"
 msgstr "Naam dienst instellingen"
+
+#: browser.py:398
+msgid "Network Connections Help"
+msgstr "Netwerkverbindingen hulp"
 
 #: nameconf.py:35
 msgid "Computer"
@@ -128,6 +82,11 @@ msgstr "Computer"
 #: nameconf.py:39
 msgid "Host name:"
 msgstr "Hostnaam:"
+
+# naamservers
+#: nameconf.py:42 connection.py:234
+msgid "Name servers"
+msgstr "Naamservers"
 
 # infinitief vertalen:
 # Naamserver toevoegen
@@ -139,49 +98,95 @@ msgstr "Voeg naamserver toe"
 msgid "Name server:"
 msgstr "Naamserver:"
 
-#: browser.py:55
-msgid "Turn on/off connection"
-msgstr "Schakel verbinding aan/uit"
+#: connection.py:41
+msgid "Device:"
+msgstr "Apparaat:"
+
+#: connection.py:46
+#, fuzzy
+msgid "Select"
+msgstr "Kies apparaat:"
+
+#: connection.py:61
+msgid "Scan"
+msgstr "Scan"
+
+#: connection.py:72
+msgid "Authentication"
+msgstr "Authenticiteit"
+
+#: connection.py:76
+msgid "Mode:"
+msgstr "Modus:"
+
+#: connection.py:87
+msgid "No authentication"
+msgstr "Geen toegang"
+
+#: connection.py:102 connection.py:113
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: connection.py:110
+msgid "User name:"
+msgstr "Gebruikersnaam:"
+
+#: connection.py:140
+msgid "Scan results:"
+msgstr "Scan resultaat:"
+
+#: connection.py:148
+msgid "Scan again"
+msgstr "Scan opnieuw"
+
+#: connection.py:150
+msgid "Use"
+msgstr "Gebruik"
+
+#: connection.py:189
+msgid "Network settings"
+msgstr "Netwerkinstellingen"
+
+#: connection.py:195
+msgid "Automatic query (DHCP)"
+msgstr "Automatische aanvraag (DHCP)"
+
+#: connection.py:200
+msgid "Manual"
+msgstr "Handmatig"
+
+#: connection.py:215 connection.py:230 connection.py:246
+msgid "Custom"
+msgstr "Eigen"
+
+#: connection.py:219
+msgid "Net mask:"
+msgstr "Netmask:"
+
+#: connection.py:225
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#: connection.py:244
+msgid "From query"
+msgstr "Van vraag"
 
 # infinitief vertalen: netwerkverbinding configureren
-#: browser.py:68
-msgid "Configure connection"
-msgstr "Configureer verbinding"
+#: connection.py:438
+msgid "Configure network connection"
+msgstr "Configureer netwerkverbinding"
 
-#: browser.py:71
-msgid "Delete connection"
-msgstr "Verbinding verwijderen"
+#: network-manager.py:33 network-manager.py:85
+msgid "Network Manager"
+msgstr "Netwerkmanager"
 
-#  string anders opmaken:
-#  Wilt u de verbinding\n
-# %s\n
-# verwijderen?
-#: browser.py:89
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"Zal ik de verbinding\n"
-"'%s\n"
-"verwijderen?"
+#: network-manager.py:80
+msgid "Network manager module is already started!"
+msgstr "Netwerkmanager module is al opgestart!"
 
-#: browser.py:90
-msgid "Delete connection?"
-msgstr "Verbinding verwijderen?"
-
-#: browser.py:111
-msgid "Automatic"
-msgstr "Automatisch"
-
-#: browser.py:317
-msgid "New connection"
-msgstr "Nieuwe verbinding"
-
-#: browser.py:352
-msgid "Network Connections Help"
-msgstr "Netwerkverbindingen hulp"
+#: comariface.py:319
+msgid "new connection"
+msgstr "nieuwe verbinding"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -208,4 +213,3 @@ msgstr "Installeer netwerkpakketten!"
 #: newconn.py:112
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Er is nog geen pakket met COMAR netwerkscripts geïnstalleerd."
-
