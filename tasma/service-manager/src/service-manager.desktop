@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Service Manager
+Name[tr]=Servis Yöneticisi
 GenericName[en]=Service Management Interface
 GenericName[tr]=Servis Yönetim Arabirimi
 Icon=service_manager
