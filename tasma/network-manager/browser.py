@@ -325,11 +325,12 @@ class ConnectionView(QScrollView):
             return
         dev = self.devices[conn.conn.devid]
         conn.hide()
-        dev.removeChild(conn)
+        conn.deleteLater()
         dev.connections.remove(conn)
         del self.connections[conn.conn.hash]
         if len(dev.connections) == 0:
             dev.hide()
+            dev.deleteLater()
             del self.devices[dev.devid]
         self.myResize(self.width())
     
@@ -347,14 +348,14 @@ class ConnectionView(QScrollView):
         if dev.devid != conn.conn.devid:
             temp = conn.conn
             conn.hide()
-            dev.removeChild(conn)
+            conn.deleteLater()
             dev.connections.remove(conn)
             del self.connections[conn.conn.hash]
             if len(dev.connections) == 0:
                 dev.hide()
+                dev.deleteLater()
                 del self.devices[dev.devid]
-            Connection(self, temp)
-            self.myResize(self.width())
+            self.add(temp)
     
     def hotPlug(self, uid, info):
         dev = Device(self, info, uid)
