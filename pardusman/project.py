@@ -30,7 +30,6 @@ usr/lib/python2.4/test/
 usr/lib/klibc/include/
 usr/qt/3/include/
 usr/share/aclocal/
-usr/share/cups/
 usr/share/doc/
 usr/share/info/
 usr/share/sip/
