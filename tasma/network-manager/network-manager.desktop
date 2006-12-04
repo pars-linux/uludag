@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Network Manager
 Name[tr]=Ağ Yöneticisi
+Name[es]=Configuración de Red
 Icon=network
 X-KDE-ModuleType=Library
 X-KDE-Library=network-manager
