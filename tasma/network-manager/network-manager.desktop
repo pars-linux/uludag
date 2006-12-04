@@ -1,8 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
-Name=Network Configuration
-Name[en]=Network Configuration
-Name[tr]=Ağ Yapılandırması
+Name=Network Manager
+Name[en]=Network Manager
+Name[tr]=Network Manager
+GenericName=Network Configuration User Interface
+GenericName[tr]=Ağ Yapılandırması Arayüzü
 Comment=Network Configuration User Interface
 Comment[tr]=Ağ Yapılandırması Arayüzü
 Icon=network
@@ -13,4 +14,4 @@ X-KDE-RootOnly=false
 X-Tasma-Fork=true
 Type=Application
 Exec=network-manager
-Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-network;
+Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-network;
