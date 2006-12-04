@@ -35,7 +35,15 @@ class IconButton(QPushButton):
 
 class ConnectionTipper(QToolTip):
     def maybeTip(self, point):
-        conn = self.parent.conn
+        conn = self.parent
+        
+        rect = conn.rect()
+        rect.setWidth(rect.width() - conn.del_but.myWidth - conn.edit_but.myWidth - 6 - 6 - 4)
+        rect.setX(rect.x() + conn.pix_start)
+        if not rect.contains(point):
+            return
+        
+        conn = conn.conn
         link = comlink.links[conn.script]
         tip = "<nobr>"
         tip += i18n("Name:")
@@ -53,7 +61,7 @@ class ConnectionTipper(QToolTip):
             tip += "<br>"
             tip += "%s: %s" % (link.remote_name, unicode(conn.remote))
         
-        self.tip(self.parent.rect(), tip)
+        self.tip(rect, tip)
 
 
 class Connection(QWidget):
