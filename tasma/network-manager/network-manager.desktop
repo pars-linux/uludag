@@ -1,9 +1,6 @@
 [Desktop Entry]
 Name=Network Manager
-Name[en]=Network Manager
-Name[tr]=Ağ Ayarları
-Comment=Network Configuration User Interface
-Comment[tr]=Ağ Yapılandırması Arayüzü
+Name[tr]=Ağ Yöneticisi
 Icon=network
 X-KDE-ModuleType=Library
 X-KDE-Library=network-manager
