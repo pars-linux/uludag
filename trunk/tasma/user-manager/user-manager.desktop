@@ -1,7 +1,8 @@
 [Desktop Entry]
-Name=Add and Remove User
-Name[tr]=Kullanıcı Ekle ve Çıkart
-Name[nl]=Toevoegen en verwijderen van gebruiker
+Name=User Manager
+GenericName=Add and Remove User
+GenericName[tr]=Kullanıcı Ekle ve Çıkart
+GenericName[nl]=Toevoegen en verwijderen van gebruiker
 Comment=User Management Interface
 Comment[tr]=Kullanıcı Yönetimi Arayüzü
 Comment[nl]=Gebruikersbeheer interface
@@ -13,4 +14,4 @@ X-Tasma-Fork=true
 Type=Application
 Icon=kuser
 Exec=user-manager
-Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-system;
+Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
