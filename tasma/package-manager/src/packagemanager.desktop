@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Package Manager
-Name[en]=Add or Remove Software
-Name[tr]=Yazılım ekle ve kaldır
+GenericName[en]=Add or Remove Software
+GenericName[tr]=Yazılım ekle ve kaldır
 Name[nl]=Toevoegen of verwijderen software
 Comment=PiSi Package Manager Graphical User Interface
 Comment[en]=PiSi Package Manager Graphical User Interface
