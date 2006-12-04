@@ -50,16 +50,16 @@ class ConnectionTipper(QToolTip):
         tip += " <b>%s</b>" % unicode(conn.name)
         tip += "</nobr>"
         if "net" in link.modes:
-            tip += "<br>"
+            tip += "<br><nobr>"
             tip += i18n("Address:")
             if conn.net_mode == "auto":
                 tip += " "
                 tip += i18n("Automatic")
             else:
                 tip += " %s" % conn.net_addr
+            tip += "</nobr>"
         if "remote" in link.modes:
-            tip += "<br>"
-            tip += "%s: %s" % (link.remote_name, unicode(conn.remote))
+            tip += "<br><nobr>%s: %s</nobr>" % (link.remote_name, unicode(conn.remote))
         
         self.tip(rect, tip)
 
