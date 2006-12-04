@@ -17,7 +17,7 @@ import glob
 import shutil
 import kdedistutils
 
-version = "1.5"
+version = "1.6"
 
 distfiles = """
     README
