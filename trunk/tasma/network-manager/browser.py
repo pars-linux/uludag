@@ -141,14 +141,15 @@ class Connection(QWidget):
         self.update()
     
     def addressText(self):
-        if self.conn.state != "up":
-            return ""
-        addr = self.conn.net_addr
-        if not addr:
-            addr = i18n("Automatic")
+        text = ""
+        if self.conn.state == "up":
+            text = self.conn.net_addr
+            if not text:
+                text = self.conn.message
+        else:
             if self.conn.message:
-                addr += " (%s)" % self.conn.message
-        return addr
+                text = self.conn.message
+        return text
     
     def paintEvent(self, event):
         paint = QPainter(self)

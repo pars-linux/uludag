@@ -266,9 +266,10 @@ class ComarInterface(Hook):
             name, state = reply.data.split("\n", 1)
             conn = self.getConn(reply.script, name)
             if conn:
+                msg = None
                 if " " in state:
                     state, msg = state.split(" ", 1)
-                    conn.message = msg
+                conn.message = msg
                 conn.state = state
                 self.emitState(conn)
         
