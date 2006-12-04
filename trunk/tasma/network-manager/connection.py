@@ -43,7 +43,7 @@ class Settings(QWidget):
         hb = QHBox(self)
         hb.setSpacing(3)
         self.device = KActiveLabel("", hb)
-        self.devices_but = QPushButton("Select", hb)
+        self.devices_but = QPushButton(i18n("Select"), hb)
         self.devices_but.setEnabled(False)
         self.devices = QPopupMenu()
         self.connect(self.devices, SIGNAL("activated(int)"), self.slotDeviceSelect)
