@@ -15,4 +15,4 @@ X-Tasma-Fork=true
 Type=Application
 Icon=kuser
 Exec=user-manager
-Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-system;
