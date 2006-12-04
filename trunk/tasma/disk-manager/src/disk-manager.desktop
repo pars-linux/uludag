@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Disk Manager
+Name[tr]=Disk Yönetim Arayüzü
 GenericName=Disk Management Interface
 GenericName[tr]=Disk Yönetim Arayüzü
 Icon=disk_manager
@@ -10,4 +11,4 @@ X-KDE-RootOnly=true
 X-Tasma-Fork=true
 Type=Application
 Exec=disk-manager
-Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-system;
