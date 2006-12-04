@@ -148,7 +148,7 @@ class Connection(QWidget):
                 text = self.conn.message
         else:
             if self.conn.message:
-                text = self.conn.message
+                text = unicode(self.conn.message)
         return text
     
     def paintEvent(self, event):
