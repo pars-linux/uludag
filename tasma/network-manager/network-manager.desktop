@@ -2,6 +2,8 @@
 Name=Network Manager
 Name[en]=Network Manager
 Name[tr]=Ağ Ayarları
+GenericName=Network Configuration User Interface
+GenericName[tr]=Ağ Yapılandırması Arayüzü
 Comment=Network Configuration User Interface
 Comment[tr]=Ağ Yapılandırması Arayüzü
 Icon=network
