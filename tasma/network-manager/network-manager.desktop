@@ -1,9 +1,7 @@
 [Desktop Entry]
 Name=Network Manager
 Name[en]=Network Manager
-Name[tr]=Network Manager
-GenericName=Network Configuration User Interface
-GenericName[tr]=Ağ Yapılandırması Arayüzü
+Name[tr]=Ağ Ayarları
 Comment=Network Configuration User Interface
 Comment[tr]=Ağ Yapılandırması Arayüzü
 Icon=network
