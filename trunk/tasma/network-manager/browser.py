@@ -49,6 +49,11 @@ class ConnectionTipper(QToolTip):
         tip += i18n("Name:")
         tip += " <b>%s</b>" % unicode(conn.name)
         tip += "</nobr>"
+        if "remote" in link.modes:
+            tip += "<br><nobr>%s: %s</nobr>" % (link.remote_name, unicode(conn.remote))
+        if "auth" in link.modes:
+            if conn.auth_mode != "none":
+                tip += "<br><nobr>%s</nobr>" % unicode(i18n("Authentication"))
         if "net" in link.modes:
             tip += "<br><nobr>"
             tip += i18n("Address:")
@@ -58,8 +63,6 @@ class ConnectionTipper(QToolTip):
             else:
                 tip += " %s" % conn.net_addr
             tip += "</nobr>"
-        if "remote" in link.modes:
-            tip += "<br><nobr>%s: %s</nobr>" % (link.remote_name, unicode(conn.remote))
         
         self.tip(rect, tip)
 
