@@ -134,7 +134,7 @@ class Connection(QWidget):
         self.ignore_signal = False
         self.mypix = icons.get_state(comlink.links[self.conn.script].type, self.conn.state)
         if self.conn.state in ("inaccessible", "unavailable"):
-            self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, None, False)
+            self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, QColor(), False)
         self.update()
     
     def addressText(self):
