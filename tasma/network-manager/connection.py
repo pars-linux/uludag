@@ -241,7 +241,7 @@ class Settings(QWidget):
         self.dns_group = QButtonGroup()
         self.dns1 = QRadioButton(i18n("Default"), hb)
         self.dns_group.insert(self.dns1, 0)
-        self.dns2 = QRadioButton(i18n("From query"), hb)
+        self.dns2 = QRadioButton(i18n("Automatic"), hb)
         self.dns_group.insert(self.dns2, 1)
         self.dns3 = QRadioButton(i18n("Custom"), hb)
         self.dns_group.insert(self.dns3, 2)
