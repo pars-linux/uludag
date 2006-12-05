@@ -11,9 +11,11 @@ Exec=kcmshell privacy
 Keywords=Privacy,privacy
 Keywords[tr]=gizlilik
 Keywords[nl]=privacy
+Keywords[es]=privacidad
 
 Name=Privacy
 Name[tr]=Gizlilik
+Name[es]=Privacidad
 
 Terminal=false
 Type=Application

@@ -12,13 +12,16 @@ X-KDE-ParentApp=tasma
 Name=File Associations
 Name[tr]=Dosya İlişkileri
 Name[nl]=Bestandsassociaties
+Name[es]=Tipos de Archivos
 
 Comment=Configure file associations
 Comment[tr]=Dosya bağıntılarını yapılandır
 Comment[nl]=Hier kunt u de bestandsassociaties instellen
+Comment[es]=Asociar programas a ejecutar para tipos de archivos
 
 Keywords=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
 Keywords[tr]=Dosya Türleri,Dosya İlişkileri,Mime Türleri,Dosya Kalıpları,Dosyalar
 Keywords[nl]=bestandstypen,bestandsextensies,bestandsassociaties,mime types,bestandspatronen,extensies,bestanden
+Keywords[es]=Tipos de archivos,Asociación de archivos,Mime Types,Patrónes de Archivos,Archivos,Patrón
 
 Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop

@@ -12,13 +12,16 @@ X-KDE-ParentApp=tasma
 Name=System Notifications
 Name[tr]=Sistem Bildirimleri
 Name[nl]=Systeemnotificaties
+Name[es]=Notificaciones del Sistema
 
 Comment=System Notification Configuration
 Comment[tr]=Sistem Bildirimi Yapılandırması
 Comment[nl]=Instellingen van de systeemnotificatie
+Comment[es]=Configuración de notificaciones del sistema
 
 Keywords=System sounds,Audio,Sound,Notify,Alerts,Notification
 Keywords[tr]=Sistem sesleri,Ses,Bildir,Alarmlar,Bildirme
 Keywords[nl]=systeemgeluiden,audio,geluid,waarschuwingen,geluidssignaal,notificatie
+Keywords[es]=Sonidos del sistema,Audio,Sonido,Notificación,Alertas,Notificar
 
 Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound

@@ -13,13 +13,16 @@ X-KDE-ParentApp=tasma
 Name=Screen Saver
 Name[tr]=Ekran Koruyucusu
 Name[nl]=Schermbeveiliging
+Name[es]=Protector de Pantalla
 
 Comment=Screen Saver Settings
 Comment[tr]=Ekran Koruyucusu Ayarları
 Comment[nl]=Schermbeveiliging instellen
+Comment[es]=Configuración de Protector de Pantalla
 
 Keywords=screensavers,Priority
 Keywords[tr]=ekran koruyucular,Öncelik,ekran koruyucusu,ekran koruyucuları
 Keywords[nl]=screensavers,schermbeveiliging,prioriteit,schermvergrendeling
+Keywords[es]=protectores de pantalla,Prioridad
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

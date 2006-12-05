@@ -2,4 +2,6 @@
 Encoding=UTF-8
 Name=User Account
 Name[tr]=Kullanıcı Hesabı
+Name[es]=Cuenta de Usuario
+Name[de]=Benutzerkonto
 Icon=personal

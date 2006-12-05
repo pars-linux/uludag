@@ -12,15 +12,18 @@ X-KDE-ParentApp=tasma
 Name=Splash Screen
 Name[tr]=Açılış ekranı
 Name[nl]=Opstartscherm
+Name[es]=Pantalla de Inicio
 
 Type=Application
 
 Comment=Manager for Splash Screen Themes
 Comment[tr]=Açılış Ekran Teması Yöneticisi
 Comment[nl]=Themabeheer voor opstartschermen
+Comment[es]=Administrador de temas para pantalla inicial
 
 Keywords=splash screen,splash theme,startup
 Keywords[tr]=açılış ekranı, açılış teması, başlangıç
 Keywords[nl]=opstartscherm,splash screen
+Keywords[es]=splash screen,pantalla de inicio,tema de inicio,inicio
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

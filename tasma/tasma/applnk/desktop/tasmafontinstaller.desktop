@@ -2,10 +2,12 @@
 Name=Font Installer
 Name[tr]=Yazıtipi Kurucusu
 Name[nl]=Lettertype-installatie
+Name[es]=Instalador de Fuentes
 
 Comment=Install & preview fonts
 Comment[tr]=Yazıtiplerini kur ve önizle
 Comment[nl]=Lettertypen installeren en bekijken
+Comment[es]=Instalar & Previsuallizar Fuentes
 
 X-KDE-ModuleType=Library
 X-KDE-Library=fontinst
