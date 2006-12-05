@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-05 19:32+0200\n"
-"PO-Revision-Date: 2006-12-03 16:15+0200\n"
+"PO-Revision-Date: 2006-12-05 21:29+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -80,23 +80,20 @@ msgid "Network Connections Help"
 msgstr "Netwerkverbindingen hulp"
 
 #: connection.py:34
-#, fuzzy
 msgid "Connection name:"
-msgstr "Hostnaam:"
+msgstr "Naam verbinding:"
 
 #: connection.py:41
-#, fuzzy
 msgid "Connection"
-msgstr "Nieuwe verbinding"
+msgstr "Verbinding"
 
 #: connection.py:47
 msgid "Device:"
 msgstr "Apparaat:"
 
 #: connection.py:52
-#, fuzzy
 msgid "Select"
-msgstr "Kies apparaat:"
+msgstr "Kies"
 
 #: connection.py:66
 msgid "Scan"
@@ -220,5 +217,3 @@ msgstr "Installeer netwerkpakketten!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Er is nog geen pakket met COMAR netwerkscripts geïnstalleerd."
 
-#~ msgid "From query"
-#~ msgstr "Van vraag"
