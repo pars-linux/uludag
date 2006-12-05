@@ -5,4 +5,4 @@ Name[nl]=Pakketmanager
 Icon=package-manager
 Type=Application
 MimeType=application/x-pisi;
-Exec="package-manager --install %u"
+Exec=package-manager --install %u
