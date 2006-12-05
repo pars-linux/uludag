@@ -14,7 +14,7 @@ from kdecore import *
 from kdeui import *
 
 import widgets
-from icons import getIconSet
+from icons import getIconSet, icons
 from comariface import comlink
 
 
@@ -26,24 +26,26 @@ class Settings(QWidget):
         self.conn = conn
         self.new_conn = new_conn
         
-        grid = QGridLayout(self, 2, 2, 6)
-        row = 0
+        lay = QVBoxLayout(self, 3, 3)
         
         # Identification
-        lab = QLabel(i18n("Name:"), self)
-        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid = QGridLayout(1, 2, 6)
+        lay.addLayout(grid)
+        lab = QLabel(i18n("Connection name:"), self)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
         self.name = widgets.Edit(self)
         self.name.edit.setMaxLength(48)
-        grid.addWidget(self.name, row, 1)
-        row += 1
+        grid.addWidget(self.name, 0, 1)
         
         # Connection
         line = widgets.HLine(i18n("Connection"), self, "irkick.png")
-        grid.addMultiCellWidget(line, row, row, 0, 1)
-        row += 1
+        lay.addSpacing(6)
+        lay.addWidget(line)
+        grid = QGridLayout(2, 2)
+        lay.addLayout(grid)
         
         lab = QLabel(i18n("Device:"), self)
-        grid.addWidget(lab, row, 0, Qt.AlignRight)
+        grid.addWidget(lab, 0, 0, Qt.AlignRight)
         hb = QHBox(self)
         hb.setSpacing(3)
         self.device = KActiveLabel("", hb)
@@ -52,12 +54,11 @@ class Settings(QWidget):
         self.devices = QPopupMenu()
         self.connect(self.devices, SIGNAL("activated(int)"), self.slotDeviceSelect)
         self.devices_but.setPopup(self.devices)
-        grid.addWidget(hb, row, 1)
-        row += 1
+        grid.addWidget(hb, 0, 1)
         
         if "remote" in link.modes:
             lab = QLabel(unicode(link.remote_name), self)
-            grid.addWidget(lab, row, 0, Qt.AlignRight)
+            grid.addWidget(lab, 1, 0, Qt.AlignRight)
             if "scan" in link.modes:
                 hb = QHBox(self)
                 hb.setSpacing(3)
@@ -65,23 +66,23 @@ class Settings(QWidget):
                 but = QPushButton(getIconSet("find.png", KIcon.Small), i18n("Scan"), hb)
                 self.scanpop = self.initScan()
                 but.setPopup(self.scanpop)
-                grid.addWidget(hb, row, 1)
+                grid.addWidget(hb, 1, 1)
             else:
                 self.remote = QLineEdit(self)
-                grid.addWidget(self.remote, row, 1)
-            row += 1
+                grid.addWidget(self.remote, 1, 1)
         
         # Authentication
         if "auth" in link.modes:
             line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1.png")
-            grid.addMultiCellWidget(line, row, row, 0, 1)
-            row += 1
+            lay.addSpacing(12)
+            lay.addWidget(line)
+            grid = QGridLayout(2, 2)
+            lay.addLayout(grid)
             
             lab = QLabel(i18n("Mode:"), self)
-            grid.addWidget(lab, row, 0, Qt.AlignRight)
+            grid.addWidget(lab, 0, 0, Qt.AlignRight)
             
             grid2 = QGridLayout(grid, 2, 1, 12)
-            row += 1
             
             self.auth_mode = QComboBox(False, self)
             self.connect(self.auth_mode, SIGNAL("activated(int)"), self.slotAuthToggle)
@@ -122,7 +123,7 @@ class Settings(QWidget):
         
         # Communication
         if "net" in link.modes:
-            row = self.initNet(grid, row)
+            self.initNet(lay)
         
         self.setValues()
         
@@ -189,61 +190,59 @@ class Settings(QWidget):
         for remote in remotes.split("\n"):
             self.scan_box.insertItem(remote)
     
-    def initNet(self, grid, row):
+    def initNet(self, lay):
         line = widgets.HLine(i18n("Network settings"), self, "network.png")
-        grid.addMultiCellWidget(line, row, row, 0, 1)
-        row += 1
+        lay.addSpacing(12)
+        lay.addWidget(line)
         
-        grid2 = QGridLayout(3, 4, 6)
-        grid.addMultiCellLayout(grid2, row, row, 0, 1)
-        row += 1
-        row2 = 0
+        grid = QGridLayout(3, 4, 6)
+        lay.addLayout(grid)
+        row = 0
         
         self.group = QButtonGroup()
         self.connect(self.group, SIGNAL("clicked(int)"), self.slotNetToggle)
         self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), self)
         self.group.insert(self.r1, 1)
-        grid2.addMultiCellWidget(self.r1, row2, row2, 0, 2)
-        row2 += 1
+        grid.addMultiCellWidget(self.r1, row, row, 0, 2)
+        row += 1
         
         self.r2 = QRadioButton(i18n("Manual"), self)
-        grid2.addWidget(self.r2, row2, 0, Qt.AlignTop)
+        grid.addWidget(self.r2, row, 0, Qt.AlignTop)
         self.group.insert(self.r2, 0)
         
         lab = QLabel(i18n("Address:"), self)
-        grid2.addWidget(lab, row2, 1, Qt.AlignRight)
+        grid.addWidget(lab, row, 1, Qt.AlignRight)
         self.address = QLineEdit(self)
         self.address.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.address))
         self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
-        grid2.addWidget(self.address, row2, 2)
+        grid.addWidget(self.address, row, 2)
         self.auto_addr = QCheckBox(i18n("Custom"), self)
         self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotFields)
-        grid2.addWidget(self.auto_addr, row2, 3)
-        row2 += 1
+        grid.addWidget(self.auto_addr, row, 3)
+        row += 1
         
         lab = QLabel(i18n("Net mask:"), self)
-        grid2.addWidget(lab, row2, 1, Qt.AlignRight)
+        grid.addWidget(lab, row, 1, Qt.AlignRight)
         self.netmask = QLineEdit(self)
         self.netmask.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.netmask))
-        grid2.addWidget(self.netmask, row2, 2)
-        row2 += 1
+        grid.addWidget(self.netmask, row, 2)
+        row += 1
         
         lab = QLabel(i18n("Gateway:"), self)
-        grid2.addWidget(lab, row2, 1, Qt.AlignRight)
+        grid.addWidget(lab, row, 1, Qt.AlignRight)
         self.gateway = QLineEdit(self)
         self.gateway.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.gateway))
-        grid2.addWidget(self.gateway, row2, 2)
+        grid.addWidget(self.gateway, row, 2)
         self.auto_gate = QCheckBox(i18n("Custom"), self)
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
-        grid2.addWidget(self.auto_gate, row2, 3)
+        grid.addWidget(self.auto_gate, row, 3)
         
         line = widgets.HLine(i18n("Name servers"), self, "kaddressbook.png")
-        grid.addMultiCellWidget(line, row, row, 0, 1)
-        row += 1
+        lay.addSpacing(12)
+        lay.addWidget(line)
         
         hb = QHBox(self)
-        grid.addMultiCellWidget(hb, row, row, 0, 1)
-        row += 1
+        lay.addWidget(hb)
         self.dns_group = QButtonGroup()
         self.dns1 = QRadioButton(i18n("Default"), hb)
         self.dns_group.insert(self.dns1, 0)
@@ -254,8 +253,6 @@ class Settings(QWidget):
         self.connect(self.dns_group, SIGNAL("clicked(int)"), self.slotNetToggle)
         
         self.dns_text = QLineEdit(hb)
-        
-        return row
     
     def setValues(self):
         conn = self.conn
