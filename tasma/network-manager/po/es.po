@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-04 09:33+0200\n"
+"POT-Creation-Date: 2006-12-05 19:32+0200\n"
 "PO-Revision-Date: 2006-11-26 17:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -15,31 +15,35 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: browser.py:41 connection.py:33
+#: browser.py:49
 msgid "Name:"
 msgstr "Nombre"
 
-#: browser.py:46 connection.py:209
+#: browser.py:56 connection.py:76
+msgid "Authentication"
+msgstr "Autenticación"
+
+#: browser.py:59 connection.py:213
 msgid "Address:"
 msgstr "Dirección:"
 
-#: browser.py:49 browser.py:137
+#: browser.py:62 connection.py:249
 msgid "Automatic"
 msgstr "Automático"
 
-#: browser.py:79
+#: browser.py:90
 msgid "Turn on/off connection"
 msgstr "Habilitar/Deshabilitar conexión"
 
-#: browser.py:92
+#: browser.py:103
 msgid "Configure connection"
 msgstr "Configurar conexión"
 
-#: browser.py:95
+#: browser.py:106
 msgid "Delete connection"
 msgstr "Eliminar conexión"
 
-#: browser.py:113
+#: browser.py:124
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -50,116 +54,102 @@ msgstr ""
 "la conexión\n"
 "'%s' ?"
 
-#: browser.py:114
+#: browser.py:125
 msgid "Delete connection?"
 msgstr "Eliminar conexión ?"
 
-#: browser.py:362
+#: browser.py:379
 msgid "New connection"
 msgstr "Conexión nueva"
 
-#: browser.py:366 nameconf.py:27
+#: browser.py:384 nameconf.py:27
 msgid "Name Service Settings"
 msgstr "Parámetros del servivio de nombres"
 
-#: browser.py:398
+#: browser.py:419
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Computadora"
-
-#: nameconf.py:39
-msgid "Host name:"
+#: connection.py:34
+#, fuzzy
+msgid "Connection name:"
 msgstr "Nombre de Host:"
 
-#: nameconf.py:42 connection.py:234
-msgid "Name servers"
-msgstr "Servidor de Nombres"
-
-#: nameconf.py:88
-msgid "Add Name Server"
-msgstr "Agregar Servidor de nombre"
-
-#: nameconf.py:88
-msgid "Name server:"
-msgstr "Servidor de Nombre:"
-
 #: connection.py:41
+#, fuzzy
+msgid "Connection"
+msgstr "Conexión nueva"
+
+#: connection.py:47
 msgid "Device:"
 msgstr "Dispositivo:"
 
-#: connection.py:46
+#: connection.py:52
 #, fuzzy
 msgid "Select"
 msgstr "Seleccionar dispositivo:"
 
-#: connection.py:61
+#: connection.py:66
 msgid "Scan"
 msgstr "Scan"
 
-#: connection.py:72
-msgid "Authentication"
-msgstr "Autenticación"
-
-#: connection.py:76
+#: connection.py:82
 msgid "Mode:"
 msgstr "Modo:"
 
-#: connection.py:87
+#: connection.py:92
 msgid "No authentication"
 msgstr "Sin autenticación"
 
-#: connection.py:102 connection.py:113
+#: connection.py:107 connection.py:118
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: connection.py:110
+#: connection.py:115
 msgid "User name:"
 msgstr "Nombre de Usuario:"
 
-#: connection.py:140
+#: connection.py:145
 msgid "Scan results:"
 msgstr "Resultado de scan:"
 
-#: connection.py:148
+#: connection.py:153
 msgid "Scan again"
 msgstr "Scanear de nuevo"
 
-#: connection.py:150
+#: connection.py:155
 msgid "Use"
 msgstr "Usar"
 
-#: connection.py:189
+#: connection.py:194
 msgid "Network settings"
 msgstr "Propiedades de Red"
 
-#: connection.py:195
+#: connection.py:204
 msgid "Automatic query (DHCP)"
 msgstr "Asignación automatica (DHCP)"
 
-#: connection.py:200
+#: connection.py:209
 msgid "Manual"
 msgstr "Manual"
 
-#: connection.py:215 connection.py:230 connection.py:246
+#: connection.py:219 connection.py:236 connection.py:251
 msgid "Custom"
 msgstr "Personalizado"
 
-#: connection.py:219
+#: connection.py:224
 msgid "Net mask:"
 msgstr "Mascara de Red:"
 
-#: connection.py:225
+#: connection.py:231
 msgid "Gateway:"
 msgstr "Puerto de Enlace:"
 
-#: connection.py:244
-msgid "From query"
-msgstr "From query"
+#: connection.py:240 nameconf.py:42
+msgid "Name servers"
+msgstr "Servidor de Nombres"
 
-#: connection.py:438
+#: connection.py:441
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
@@ -171,9 +161,25 @@ msgstr "Administrador de Red"
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está instalado!"
 
-#: comariface.py:319
+#: comariface.py:320
 msgid "new connection"
 msgstr "conexión nueva"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Computadora"
+
+#: nameconf.py:39
+msgid "Host name:"
+msgstr "Nombre de Host:"
+
+#: nameconf.py:88
+msgid "Add Name Server"
+msgstr "Agregar Servidor de nombre"
+
+#: nameconf.py:88
+msgid "Name server:"
+msgstr "Servidor de Nombre:"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -198,3 +204,6 @@ msgstr "Instalar paquetes de red!"
 #: newconn.py:112
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "No se instalaron todavía paquetes con los script de red COMAR"
+
+#~ msgid "From query"
+#~ msgstr "From query"

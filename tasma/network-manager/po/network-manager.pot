@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-04 09:33+0200\n"
+"POT-Creation-Date: 2006-12-05 19:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,31 +16,35 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: browser.py:41 connection.py:33
+#: browser.py:49
 msgid "Name:"
 msgstr ""
 
-#: browser.py:46 connection.py:209
+#: browser.py:56 connection.py:76
+msgid "Authentication"
+msgstr ""
+
+#: browser.py:59 connection.py:213
 msgid "Address:"
 msgstr ""
 
-#: browser.py:49 browser.py:137
+#: browser.py:62 connection.py:249
 msgid "Automatic"
 msgstr ""
 
-#: browser.py:79
+#: browser.py:90
 msgid "Turn on/off connection"
 msgstr ""
 
-#: browser.py:92
+#: browser.py:103
 msgid "Configure connection"
 msgstr ""
 
-#: browser.py:95
+#: browser.py:106
 msgid "Delete connection"
 msgstr ""
 
-#: browser.py:113
+#: browser.py:124
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -48,115 +52,99 @@ msgid ""
 "connection?"
 msgstr ""
 
-#: browser.py:114
+#: browser.py:125
 msgid "Delete connection?"
 msgstr ""
 
-#: browser.py:362
+#: browser.py:379
 msgid "New connection"
 msgstr ""
 
-#: browser.py:366 nameconf.py:27
+#: browser.py:384 nameconf.py:27
 msgid "Name Service Settings"
 msgstr ""
 
-#: browser.py:398
+#: browser.py:419
 msgid "Network Connections Help"
 msgstr ""
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr ""
-
-#: nameconf.py:39
-msgid "Host name:"
-msgstr ""
-
-#: nameconf.py:42 connection.py:234
-msgid "Name servers"
-msgstr ""
-
-#: nameconf.py:88
-msgid "Add Name Server"
-msgstr ""
-
-#: nameconf.py:88
-msgid "Name server:"
+#: connection.py:34
+msgid "Connection name:"
 msgstr ""
 
 #: connection.py:41
+msgid "Connection"
+msgstr ""
+
+#: connection.py:47
 msgid "Device:"
 msgstr ""
 
-#: connection.py:46
+#: connection.py:52
 msgid "Select"
 msgstr ""
 
-#: connection.py:61
+#: connection.py:66
 msgid "Scan"
 msgstr ""
 
-#: connection.py:72
-msgid "Authentication"
-msgstr ""
-
-#: connection.py:76
+#: connection.py:82
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:87
+#: connection.py:92
 msgid "No authentication"
 msgstr ""
 
-#: connection.py:102 connection.py:113
+#: connection.py:107 connection.py:118
 msgid "Password:"
 msgstr ""
 
-#: connection.py:110
+#: connection.py:115
 msgid "User name:"
 msgstr ""
 
-#: connection.py:140
+#: connection.py:145
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:148
+#: connection.py:153
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:150
+#: connection.py:155
 msgid "Use"
 msgstr ""
 
-#: connection.py:189
+#: connection.py:194
 msgid "Network settings"
 msgstr ""
 
-#: connection.py:195
+#: connection.py:204
 msgid "Automatic query (DHCP)"
 msgstr ""
 
-#: connection.py:200
+#: connection.py:209
 msgid "Manual"
 msgstr ""
 
-#: connection.py:215 connection.py:230 connection.py:246
+#: connection.py:219 connection.py:236 connection.py:251
 msgid "Custom"
 msgstr ""
 
-#: connection.py:219
+#: connection.py:224
 msgid "Net mask:"
 msgstr ""
 
-#: connection.py:225
+#: connection.py:231
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:244
-msgid "From query"
+#: connection.py:240 nameconf.py:42
+msgid "Name servers"
 msgstr ""
 
-#: connection.py:438
+#: connection.py:441
 msgid "Configure network connection"
 msgstr ""
 
@@ -168,8 +156,24 @@ msgstr ""
 msgid "Network manager module is already started!"
 msgstr ""
 
-#: comariface.py:319
+#: comariface.py:320
 msgid "new connection"
+msgstr ""
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr ""
+
+#: nameconf.py:39
+msgid "Host name:"
+msgstr ""
+
+#: nameconf.py:88
+msgid "Add Name Server"
+msgstr ""
+
+#: nameconf.py:88
+msgid "Name server:"
 msgstr ""
 
 #: newconn.py:26
