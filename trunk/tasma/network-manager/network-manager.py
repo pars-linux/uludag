@@ -16,7 +16,7 @@ from kdecore import *
 from kdeui import *
 
 import browser
-from icons import icons
+from icons import icons, getIconSet
 
 def I18N_NOOP(x):
     return x
@@ -86,6 +86,7 @@ def main():
     win.setMinimumSize(520, 440)
     win.resize(520, 440)
     attachMainWidget(win)
+    win.setIcon(getIconSet("network.png").pixmap(QIconSet.Small, QIconSet.Normal))
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
 
