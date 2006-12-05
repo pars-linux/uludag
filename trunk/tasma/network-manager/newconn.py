@@ -104,11 +104,11 @@ class Window(QDialog):
             item.setSelectable(False)
 
 
-class Links:
-    # remains
-    def ask_for_create(self, parent):
-        if len(self.links) == 0:
-            QMessageBox.warning(parent, i18n("Install network packages!"),
-                i18n("No package with COMAR network scripts are installed yet."),
-                QMessageBox.Ok, QMessageBox.NoButton)
-            return
+def ask_for_new(parent):
+    if len(comlink.links) == 0:
+        QMessageBox.warning(parent, i18n("Install network packages!"),
+            i18n("No package with COMAR network scripts are installed yet."),
+            QMessageBox.Ok, QMessageBox.NoButton)
+        return
+    win = Window(parent)
+    win.show()
