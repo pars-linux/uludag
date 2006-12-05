@@ -407,8 +407,7 @@ class Widget(QVBox):
         comlink.connect()
     
     def slotCreate(self):
-        win = newconn.Window(self)
-        win.show()
+        newconn.ask_for_new(self)
     
     def slotSettings(self):
         self.stack.hide()
