@@ -494,7 +494,8 @@ class MainApplicationWidget(QWidget):
         return True
 
     def installPackage(self, package):
-        self.progressDialog.showStatus()
+        self.progressDialog.hideStatus(True)
+        self.progressDialog.updateProgressBar(100)
         self.command.install([package])
         self.progressDialog.show()
 
