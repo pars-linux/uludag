@@ -315,3 +315,7 @@ a:hover {
     color: #636;
     text-decoration: none;
 }
+
+.bz_buglist td {
+    border-bottom:1px solid #DDD;
+}
