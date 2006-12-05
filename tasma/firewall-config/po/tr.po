@@ -185,7 +185,7 @@ msgstr "Gelişmiş"
 
 #: src/dialog.py:105
 msgid "New Rule"
-msgstr ""
+msgstr "Yeni Kural"
 
 #: src/dialog.py:106
 msgid "Connections"
