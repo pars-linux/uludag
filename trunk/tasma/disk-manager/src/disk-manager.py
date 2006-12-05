@@ -13,6 +13,7 @@ import os
 import sys
 import time
 import dbus
+import grp
 
 # KDE/QT Modules
 from qt import *
@@ -31,7 +32,7 @@ import comar
 # FSTAB
 import fstab
 
-version = '1.0'
+version = '1.0.1'
 
 def AboutData():
     about_data = KAboutData('disk-manager',
@@ -89,16 +90,20 @@ class diskForm(mainForm):
     def __init__(self, parent=None, name=None):
         mainForm.__init__(self, parent, name)
 
-        self.Fstab = fstab.Fstab()
-        self.Dbus = DbusListener()
-
         if os.getuid()!=0:
             self.btn_update.setEnabled(False)
             self.btn_autoFind.setEnabled(False)
             self.label_warn.show()
+            # Check users group if s/he not in disk group
+            if not os.getgroups().__contains__(grp.getgrnam("disk")[2]):
+                QMessageBox(i18n("Error"),i18n("User not in disk group !! Exiting.."),QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
+                sys.exit()
         else:
             pass
             self.label_warn.hide()
+
+        self.Fstab = fstab.Fstab()
+        self.Dbus = DbusListener()
 
         # Just for block devices
         self.knownFS=['ext3:Ext3',

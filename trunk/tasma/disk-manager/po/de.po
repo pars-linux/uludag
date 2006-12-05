@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 22:16+0200\n"
+"POT-Creation-Date: 2006-12-05 10:50+0200\n"
 "PO-Revision-Date: 2006-11-30 22:00+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -16,27 +16,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:78 src/disk-manager.py:315 src/diskform.py:132
+#: src/disk-manager.py:79 src/disk-manager.py:319 src/diskform.py:132
 msgid "Disk Manager"
 msgstr ""
 
-#: src/disk-manager.py:200 src/disk-manager.py:219
+#: src/disk-manager.py:99
+msgid "User not in disk group !! Exiting.."
+msgstr ""
+
+#: src/disk-manager.py:205 src/disk-manager.py:224
 msgid "Completed"
 msgstr ""
 
-#: src/disk-manager.py:200 src/disk-manager.py:219
+#: src/disk-manager.py:205 src/disk-manager.py:224
 msgid "File /etc/fstab updated !"
 msgstr ""
 
-#: src/disk-manager.py:250
+#: src/disk-manager.py:255
 msgid "Mount Point"
 msgstr ""
 
-#: src/disk-manager.py:251
+#: src/disk-manager.py:256
 msgid "File System Type"
 msgstr ""
 
-#: src/disk-manager.py:310
+#: src/disk-manager.py:314
 msgid "Disk Manager is already running!"
 msgstr ""
 
