@@ -316,6 +316,6 @@ a:hover {
     text-decoration: none;
 }
 
-.bz_buglist tr {
+.bz_buglist tr>td {
     border-bottom:1px solid #DDD;
 }
