@@ -76,18 +76,16 @@ class Settings(QWidget):
             line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1.png")
             lay.addSpacing(12)
             lay.addWidget(line)
-            grid = QGridLayout(2, 2)
+            grid = QGridLayout(3, 2)
             lay.addLayout(grid)
             
             lab = QLabel(i18n("Mode:"), self)
             grid.addWidget(lab, 0, 0, Qt.AlignRight)
             
-            grid2 = QGridLayout(grid, 2, 1, 12)
-            
             self.auth_mode = QComboBox(False, self)
             self.connect(self.auth_mode, SIGNAL("activated(int)"), self.slotAuthToggle)
-            grid2.addWidget(self.auth_mode, 0, 0)
-            grid2.setColStretch(1, 2)
+            grid.addWidget(self.auth_mode, 0, 1)
+            grid.setColStretch(2, 2)
             
             self.auth_mode.insertItem(i18n("No authentication"))
             flag = 0
@@ -97,7 +95,10 @@ class Settings(QWidget):
                     flag = 1
             
             self.auth_stack = QWidgetStack(self)
-            grid2.addWidget(self.auth_stack, 0, 1)
+            if flag == 1:
+                grid.addMultiCellWidget(self.auth_stack, 0, 1, 2, 2)
+            else:
+                grid.addWidget(self.auth_stack, 0, 2)
             
             lab = QLabel("", self)
             self.auth_stack.addWidget(lab, 0)
