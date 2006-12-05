@@ -375,17 +375,22 @@ class Widget(QVBox):
         
         bar = QToolBar("lala", None, self)
         
-        but = QToolButton(getIconSet("add.png"), i18n("New connection"), "lala", self.slotCreate, bar)
+        but = QToolButton(getIconSet("add.png"), "", "lala", self.slotCreate, bar)
+        but.setTextLabel(i18n("New connection"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         
-        but = QToolButton(getIconSet("configure.png"), i18n("Name Service Settings"), "lala", self.slotSettings, bar)
+        but = QToolButton(getIconSet("configure.png"), "", "lala", self.slotSettings, bar)
+        but.setTextLabel(i18n("Name Service Settings"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         
-        bar.addSeparator()
+        lab = QToolButton(bar)
+        lab.setEnabled(False)
+        bar.setStretchableWidget(lab)
         
-        but = QToolButton(getIconSet("help.png"), i18n("Help"), "lala", self.slotHelp, bar)
+        but = QToolButton(getIconSet("help.png"), "", "lala", self.slotHelp, bar)
+        but.setTextLabel(i18n("Help"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         
