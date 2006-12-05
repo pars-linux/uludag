@@ -14,7 +14,7 @@ msgstr ""
 #: rc.cpp:16
 #, no-c-format
 msgid "&Test Wallpaper"
-msgstr "Duvar Kâğıdını Dene"
+msgstr "&Duvar Kâğıdını Dene"
 
 #: rc.cpp:20
 #, no-c-format
