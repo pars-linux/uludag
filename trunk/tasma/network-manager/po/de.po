@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-04 09:33+0200\n"
+"POT-Creation-Date: 2006-12-05 19:32+0200\n"
 "PO-Revision-Date: 2006-11-06 01:36+0100\n"
 "Last-Translator: Mustafa <test>\n"
 "Language-Team: german <de@li.org>\n"
@@ -15,34 +15,38 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: browser.py:41 connection.py:33
+#: browser.py:49
 msgid "Name:"
 msgstr "Name:"
 
-#: browser.py:46 connection.py:209
+#: browser.py:56 connection.py:76
+msgid "Authentication"
+msgstr "Authentifikation"
+
+#: browser.py:59 connection.py:213
 msgid "Address:"
 msgstr "Adresse:"
 
-#: browser.py:49 browser.py:137
+#: browser.py:62 connection.py:249
 msgid "Automatic"
 msgstr ""
 
-#: browser.py:79
+#: browser.py:90
 #, fuzzy
 msgid "Turn on/off connection"
 msgstr "Neue Verbindung"
 
-#: browser.py:92
+#: browser.py:103
 #, fuzzy
 msgid "Configure connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
-#: browser.py:95
+#: browser.py:106
 #, fuzzy
 msgid "Delete connection"
 msgstr "Verbindung löschen?"
 
-#: browser.py:113
+#: browser.py:124
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -53,121 +57,107 @@ msgstr ""
 "'%s'\n"
 "Verbindung löschen?"
 
-#: browser.py:114
+#: browser.py:125
 msgid "Delete connection?"
 msgstr "Verbindung löschen?"
 
-#: browser.py:362
+#: browser.py:379
 #, fuzzy
 msgid "New connection"
 msgstr "Neue Verbindung"
 
-#: browser.py:366 nameconf.py:27
+#: browser.py:384 nameconf.py:27
 #, fuzzy
 msgid "Name Service Settings"
 msgstr "Netzwerk Einstellungen"
 
-#: browser.py:398
+#: browser.py:419
 #, fuzzy
 msgid "Network Connections Help"
 msgstr "Netzwerkverbindungen"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Computer"
-
-#: nameconf.py:39
-msgid "Host name:"
-msgstr "Hostname:"
-
-#: nameconf.py:42 connection.py:234
-msgid "Name servers"
-msgstr "Name-Server"
-
-#: nameconf.py:88
-msgid "Add Name Server"
-msgstr "Name-Server hinzufügen"
-
-#: nameconf.py:88
-msgid "Name server:"
-msgstr "Name-Server:"
+#: connection.py:34
+#, fuzzy
+msgid "Connection name:"
+msgstr "Verbindungsarten"
 
 #: connection.py:41
+#, fuzzy
+msgid "Connection"
+msgstr "Verbinden"
+
+#: connection.py:47
 msgid "Device:"
 msgstr "Gerät:"
 
-#: connection.py:46
+#: connection.py:52
 #, fuzzy
 msgid "Select"
 msgstr "Kein Gerät"
 
-#: connection.py:61
+#: connection.py:66
 msgid "Scan"
 msgstr "Scannen"
 
-#: connection.py:72
-msgid "Authentication"
-msgstr "Authentifikation"
-
-#: connection.py:76
+#: connection.py:82
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:87
+#: connection.py:92
 msgid "No authentication"
 msgstr "Keine Authentifikation"
 
-#: connection.py:102 connection.py:113
+#: connection.py:107 connection.py:118
 msgid "Password:"
 msgstr "Passwort:"
 
-#: connection.py:110
+#: connection.py:115
 #, fuzzy
 msgid "User name:"
 msgstr "Hostname:"
 
-#: connection.py:140
+#: connection.py:145
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:148
+#: connection.py:153
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:150
+#: connection.py:155
 msgid "Use"
 msgstr ""
 
-#: connection.py:189
+#: connection.py:194
 #, fuzzy
 msgid "Network settings"
 msgstr "Netzwerk Einstellungen"
 
-#: connection.py:195
+#: connection.py:204
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: connection.py:200
+#: connection.py:209
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:215 connection.py:230 connection.py:246
+#: connection.py:219 connection.py:236 connection.py:251
 msgid "Custom"
 msgstr ""
 
-#: connection.py:219
+#: connection.py:224
 msgid "Net mask:"
 msgstr "Netzmaske:"
 
-#: connection.py:225
+#: connection.py:231
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:244
-msgid "From query"
-msgstr ""
+#: connection.py:240 nameconf.py:42
+msgid "Name servers"
+msgstr "Name-Server"
 
-#: connection.py:438
+#: connection.py:441
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
@@ -181,9 +171,25 @@ msgstr "Netzwerk Einstellungen"
 msgid "Network manager module is already started!"
 msgstr "Netzwerk KGA wird bereits ausgeführt!"
 
-#: comariface.py:319
+#: comariface.py:320
 msgid "new connection"
 msgstr "Neue Verbindung"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Computer"
+
+#: nameconf.py:39
+msgid "Host name:"
+msgstr "Hostname:"
+
+#: nameconf.py:88
+msgid "Add Name Server"
+msgstr "Name-Server hinzufügen"
+
+#: nameconf.py:88
+msgid "Name server:"
+msgstr "Name-Server:"
 
 #: newconn.py:26
 #, fuzzy
@@ -228,9 +234,6 @@ msgstr ""
 #~ msgid "Basic"
 #~ msgstr "Basis"
 
-#~ msgid "Connect"
-#~ msgstr "Verbinden"
-
 #~ msgid "Accept"
 #~ msgstr "Akzeptieren"
 
@@ -257,9 +260,6 @@ msgstr ""
 
 #~ msgid "Network connections"
 #~ msgstr "Netzwerkverbindungen"
-
-#~ msgid "Connection types"
-#~ msgstr "Verbindungsarten"
 
 #~ msgid "Select a connection type:"
 #~ msgstr "Eine Verbindungsart auswählen:"
