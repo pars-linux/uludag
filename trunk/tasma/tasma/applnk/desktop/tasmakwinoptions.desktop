@@ -12,13 +12,16 @@ X-KDE-FactoryName=kwinoptions
 Name=Window Behavior
 Name[tr]=Pencere Davranışı
 Name[nl]=Venstergedrag
+Name[es]=Comportamiento de Ventanas
 
 Comment=Configure the window behavior
 Comment[tr]=Pencere davranışlarını yapılandır
 Comment[nl]=Stel het venstergedrag in
+Comment[es]=Configuración de comportamiento de ventanas
 
 Keywords=focus,placement,window behavior,animation,raise,auto raise,windows,frame,titlebar,doubleclick
 Keywords[tr]=odak,odak davranış biçimi,pencere yerleşimi,pencere davranışı,Yerleşim davranış biçimi,animasyon,kaldır,otomatik kaldır,çerçeve,çift tıkla
 Keywords[nl]=focusbeleid,vensterplaatsing,venstergedrag,focus,window,plaatsing,plaatsingbeleid,animatie,voorgrond,vensters,frame,kader,dubbelklikken
+Keywords[es]=foco,ubicación,comportamiento de ventana,animación,activar,activar automatico,ventanas,marco,barra de título,dobleclic
 
 Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

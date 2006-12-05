@@ -13,13 +13,16 @@ X-KDE-ParentApp=tasma
 Name=Accessibility
 Name[tr]=Erişilebilirlik
 Name[nl]=Toegankelijkheid
+Name[es]=Accesabilidad
 
 Comment=Improve accessibility for disabled persons
 Comment[tr]=Görme sorunu olanlar için erişilebilirlik seçenekleri
 Comment[nl]=Verbeterde toegankelijkheid voor gebruikers met een handicap
+Comment[es]=Mejora acceso para personas con disapacidades
 
 Keywords=access,accessibility,deaf,impaired,bell,audible bell,visible bell,Keyboard,keys,sticky keys,bounce keys,slow keys,mouse navigation,num pad
 Keywords[tr]=erişim,erişilebilirlik,sağır,özürlü,zil,duyulabilir zil,görünür zil,Klavye,tuşlar,yapışkan tuşlar,zıplayan tuşlar,yavaş tuşlar,fare yönlendirmesi,num pad
 Keywords[nl]=toegang,toegankelijkheid,doof,handicap,gehandicapt,bel,signalering,zichtbare meldingen,Keyboard,toetsenbord,keys,toetsen,vastgeplakte toetsen,toetsenaanslag,muisnavigatie,num pad,numerieke klavier
+Keywords[es]=acceso,accesibilidad,sordo,discapacidado,campana,campana audible,campana visible,Teclado,teclas,teclas pegajosas,bounce keys,teclas lentas,navegación de ratón,teclas numéricas
 
 Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization

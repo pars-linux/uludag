@@ -12,9 +12,11 @@ X-KDE-ParentApp=tasma
 Name=Display
 Name[tr]=Görüntü
 Name[nl]=Beeldscherm
+Name[es]=Monitor
 
 Comment=Display Settings
 Comment[tr]=Görüntü Ayarları
 Comment[nl]=Beeldscherminstellingen
+Comment[es]=Configuración de Pantalla
 
 Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals
