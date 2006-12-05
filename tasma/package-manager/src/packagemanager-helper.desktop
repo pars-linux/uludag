@@ -4,5 +4,6 @@ Name[tr]=Paket Yöneticisi
 Name[nl]=Pakketmanager
 Icon=package-manager
 Type=Application
+StartupNotify=False
 MimeType=application/x-pisi;
 Exec=pm-installer --install %u
