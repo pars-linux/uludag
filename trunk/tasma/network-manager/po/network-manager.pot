@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-05 19:32+0200\n"
+"POT-Creation-Date: 2006-12-05 23:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Authentication"
 msgstr ""
 
-#: browser.py:59 connection.py:213
+#: browser.py:59 connection.py:214
 msgid "Address:"
 msgstr ""
 
-#: browser.py:62 connection.py:249
+#: browser.py:62 connection.py:250
 msgid "Automatic"
 msgstr ""
 
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Name Service Settings"
 msgstr ""
 
-#: browser.py:419
+#: browser.py:418
 msgid "Network Connections Help"
 msgstr ""
 
@@ -92,59 +92,59 @@ msgstr ""
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:92
+#: connection.py:90
 msgid "No authentication"
 msgstr ""
 
-#: connection.py:107 connection.py:118
+#: connection.py:108 connection.py:119
 msgid "Password:"
 msgstr ""
 
-#: connection.py:115
+#: connection.py:116
 msgid "User name:"
 msgstr ""
 
-#: connection.py:145
+#: connection.py:146
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:153
+#: connection.py:154
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:155
+#: connection.py:156
 msgid "Use"
 msgstr ""
 
-#: connection.py:194
+#: connection.py:195
 msgid "Network settings"
 msgstr ""
 
-#: connection.py:204
+#: connection.py:205
 msgid "Automatic query (DHCP)"
 msgstr ""
 
-#: connection.py:209
+#: connection.py:210
 msgid "Manual"
 msgstr ""
 
-#: connection.py:219 connection.py:236 connection.py:251
+#: connection.py:220 connection.py:237 connection.py:252
 msgid "Custom"
 msgstr ""
 
-#: connection.py:224
+#: connection.py:225
 msgid "Net mask:"
 msgstr ""
 
-#: connection.py:231
+#: connection.py:232
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:240 nameconf.py:42
+#: connection.py:241 nameconf.py:42
 msgid "Name servers"
 msgstr ""
 
-#: connection.py:441
+#: connection.py:442
 msgid "Configure network connection"
 msgstr ""
 
@@ -156,7 +156,21 @@ msgstr ""
 msgid "Network manager module is already started!"
 msgstr ""
 
-#: comariface.py:320
+#: comariface.py:162
+msgid "Waiting COMAR..."
+msgstr ""
+
+#: comariface.py:163
+msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: comariface.py:182 comariface.py:199
+msgid ""
+"Cannot connect to the COMAR! If it is not running you should start it with "
+"the 'service comar start' command in a root console."
+msgstr ""
+
+#: comariface.py:365
 msgid "new connection"
 msgstr ""
 
@@ -192,10 +206,10 @@ msgstr ""
 msgid "No suitable device found"
 msgstr ""
 
-#: newconn.py:111
+#: newconn.py:109
 msgid "Install network packages!"
 msgstr ""
 
-#: newconn.py:112
+#: newconn.py:110
 msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
