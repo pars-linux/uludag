@@ -31,7 +31,10 @@ def main():
     KCmdLineArgs.init(sys.argv, aboutdata)
     KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
 
-    kapp = KApplication()
+    if not KUniqueApplication.start():
+        sys.exit(0)
+
+    kapp = KUniqueApplication(True, True, True)
     args = KCmdLineArgs.parsedArgs()
 
     if args.isSet("install"):
