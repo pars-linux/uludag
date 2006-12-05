@@ -9,9 +9,12 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import sys
+import time
 import comar
 from qt import *
-from kdecore import i18n
+from kdecore import *
+from kdeui import *
 
 CONNLIST, CONNINFO, CONNINFO_AUTH, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 8)
 
@@ -155,16 +158,56 @@ class ComarInterface(Hook):
         self.name_host = None
         self.name_dns = None
     
-    def connect(self):
-        self.com = comar.Link()
+    def waitComar(self):
+        dia = KProgressDialog(None, "lala", i18n("Waiting COMAR..."),
+            i18n("Connection to the COMAR unexpectedly closed, trying to reconnect..."), True)
+        dia.progressBar().setTotalSteps(50)
+        dia.progressBar().setTextEnabled(False)
+        dia.show()
+        start = time.time()
+        while time.time() < start + 5:
+            try:
+                self.com = comar.Link()
+                dia.close()
+                self.setupComar(False)
+                return
+            except comar.CannotConnect:
+                pass
+            if dia.wasCancelled():
+                break
+            percent = (time.time() - start) * 10
+            dia.progressBar().setProgress(percent)
+            qApp.processEvents(100)
+        dia.close()
+        KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
+        KApplication.kApplication().quit()
+    
+    def setupComar(self, first_time=True):
         self.com.localize()
-        self.queryLinks()
+        if first_time:
+            self.queryLinks()
         self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
         self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
-        self.queryConnections()
+        self.askNotifications()
+        if first_time:
+            self.queryConnections()
+    
+    def connect(self):
+        try:
+            self.com = comar.Link()
+        except comar.CannotConnect:
+            KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
+            sys.exit(0)
+        self.setupComar()
     
     def slotComar(self, sock):
-        reply = self.com.read_cmd()
+        try:
+            reply = self.com.read_cmd()
+        except comar.LinkClosed:
+            self.notifier = None
+            self.waitComar()
+            return
+        
         if reply.command == "result":
             self.handleReply(reply)
         elif reply.command == "notify":
@@ -283,6 +326,11 @@ class ComarInterface(Hook):
         hash = Connection.hash(script, name)
         return self.connections.get(hash, None)
     
+    def askNotifications(self):
+        self.com.ask_notify("Net.Link.deviceChanged")
+        self.com.ask_notify("Net.Link.connectionChanged")
+        self.com.ask_notify("Net.Link.stateChanged")
+    
     def queryLinks(self):
         self.com.Net.Link.linkInfo()
         multiple = False
@@ -304,9 +352,6 @@ class ComarInterface(Hook):
         self.com.Net.Stack.getNameServers(id=NAME_DNS)
     
     def queryConnections(self):
-        self.com.ask_notify("Net.Link.deviceChanged")
-        self.com.ask_notify("Net.Link.connectionChanged")
-        self.com.ask_notify("Net.Link.stateChanged")
         self.com.Net.Link.connections(id=CONNLIST)
         self.nr_queried = 0
     
