@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-05 19:32+0200\n"
+"POT-Creation-Date: 2006-12-05 23:48+0200\n"
 "PO-Revision-Date: 2006-11-26 17:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -23,11 +23,11 @@ msgstr "Nombre"
 msgid "Authentication"
 msgstr "Autenticación"
 
-#: browser.py:59 connection.py:213
+#: browser.py:59 connection.py:214
 msgid "Address:"
 msgstr "Dirección:"
 
-#: browser.py:62 connection.py:249
+#: browser.py:62 connection.py:250
 msgid "Automatic"
 msgstr "Automático"
 
@@ -66,7 +66,7 @@ msgstr "Conexión nueva"
 msgid "Name Service Settings"
 msgstr "Parámetros del servivio de nombres"
 
-#: browser.py:419
+#: browser.py:418
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
 
@@ -97,59 +97,59 @@ msgstr "Scan"
 msgid "Mode:"
 msgstr "Modo:"
 
-#: connection.py:92
+#: connection.py:90
 msgid "No authentication"
 msgstr "Sin autenticación"
 
-#: connection.py:107 connection.py:118
+#: connection.py:108 connection.py:119
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: connection.py:115
+#: connection.py:116
 msgid "User name:"
 msgstr "Nombre de Usuario:"
 
-#: connection.py:145
+#: connection.py:146
 msgid "Scan results:"
 msgstr "Resultado de scan:"
 
-#: connection.py:153
+#: connection.py:154
 msgid "Scan again"
 msgstr "Scanear de nuevo"
 
-#: connection.py:155
+#: connection.py:156
 msgid "Use"
 msgstr "Usar"
 
-#: connection.py:194
+#: connection.py:195
 msgid "Network settings"
 msgstr "Propiedades de Red"
 
-#: connection.py:204
+#: connection.py:205
 msgid "Automatic query (DHCP)"
 msgstr "Asignación automatica (DHCP)"
 
-#: connection.py:209
+#: connection.py:210
 msgid "Manual"
 msgstr "Manual"
 
-#: connection.py:219 connection.py:236 connection.py:251
+#: connection.py:220 connection.py:237 connection.py:252
 msgid "Custom"
 msgstr "Personalizado"
 
-#: connection.py:224
+#: connection.py:225
 msgid "Net mask:"
 msgstr "Mascara de Red:"
 
-#: connection.py:231
+#: connection.py:232
 msgid "Gateway:"
 msgstr "Puerto de Enlace:"
 
-#: connection.py:240 nameconf.py:42
+#: connection.py:241 nameconf.py:42
 msgid "Name servers"
 msgstr "Servidor de Nombres"
 
-#: connection.py:441
+#: connection.py:442
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
@@ -161,7 +161,21 @@ msgstr "Administrador de Red"
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está instalado!"
 
-#: comariface.py:320
+#: comariface.py:162
+msgid "Waiting COMAR..."
+msgstr ""
+
+#: comariface.py:163
+msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: comariface.py:182 comariface.py:199
+msgid ""
+"Cannot connect to the COMAR! If it is not running you should start it with "
+"the 'service comar start' command in a root console."
+msgstr ""
+
+#: comariface.py:365
 msgid "new connection"
 msgstr "conexión nueva"
 
@@ -197,11 +211,11 @@ msgstr "Crear"
 msgid "No suitable device found"
 msgstr "Dispositivo no encontrado"
 
-#: newconn.py:111
+#: newconn.py:109
 msgid "Install network packages!"
 msgstr "Instalar paquetes de red!"
 
-#: newconn.py:112
+#: newconn.py:110
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "No se instalaron todavía paquetes con los script de red COMAR"
 
