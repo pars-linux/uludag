@@ -87,7 +87,7 @@ msgstr "Servis Yöneticisi zaten çalışıyor!"
 
 #: src/mainform.py:82 src/mainform.py:108
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: src/mainform.py:83 src/mainform.py:109
 msgid "Service"
