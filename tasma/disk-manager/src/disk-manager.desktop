@@ -8,7 +8,6 @@ X-KDE-ModuleType=Library
 X-KDE-Library=disk-manager
 X-KDE-FactoryName=disk_manager
 X-KDE-RootOnly=true
-X-Tasma-Fork=true
 Type=Application
 Exec=disk-manager
 Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
