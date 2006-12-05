@@ -22,6 +22,7 @@ from kdeui import *
 from kio import *
 from khtml import *
 import kdedesigner
+import PmDcop
 
 # Local imports
 import Progress
@@ -820,6 +821,7 @@ class MainApplication(KMainWindow):
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
         self.toolBar().setIconText(KToolBar.IconTextRight)
         self.tray = Tray.Tray(self)
+        self.dcop = PmDcop.PmDcop(self)
 
         self.connect(self.tray, SIGNAL("quitSelected()"), self.slotQuit)
         self.connect(kapp, SIGNAL("shutDown()"), self.slotQuit)
