@@ -190,46 +190,48 @@ class Settings(QWidget):
         grid.addMultiCellWidget(line, row, row, 0, 1)
         row += 1
         
+        grid2 = QGridLayout(3, 4, 6)
+        grid.addMultiCellLayout(grid2, row, row, 0, 1)
+        row += 1
+        row2 = 0
+        
         self.group = QButtonGroup()
         self.connect(self.group, SIGNAL("clicked(int)"), self.slotNetToggle)
         self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), self)
         self.group.insert(self.r1, 1)
-        grid.addMultiCellWidget(self.r1, row, row, 0, 1)
-        row += 1
+        grid2.addMultiCellWidget(self.r1, row2, row2, 0, 2)
+        row2 += 1
         
         self.r2 = QRadioButton(i18n("Manual"), self)
-        grid.addWidget(self.r2, row, 0, Qt.AlignTop)
+        grid2.addWidget(self.r2, row2, 0, Qt.AlignTop)
         self.group.insert(self.r2, 0)
         
-        box = QWidget(self)
-        grid.addWidget(box, row, 1)
-        grid2 = QGridLayout(box, 3, 3, 6)
-        row += 1
-        
-        lab = QLabel(i18n("Address:"), box)
-        grid2.addWidget(lab, 0, 0, Qt.AlignRight)
-        self.address = QLineEdit(box)
+        lab = QLabel(i18n("Address:"), self)
+        grid2.addWidget(lab, row2, 1, Qt.AlignRight)
+        self.address = QLineEdit(self)
         self.address.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.address))
         self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
-        grid2.addWidget(self.address, 0, 1)
-        self.auto_addr = QCheckBox(i18n("Custom"), box)
+        grid2.addWidget(self.address, row2, 2)
+        self.auto_addr = QCheckBox(i18n("Custom"), self)
         self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotFields)
-        grid2.addWidget(self.auto_addr, 0, 2)
+        grid2.addWidget(self.auto_addr, row2, 3)
+        row2 += 1
         
-        lab = QLabel(i18n("Net mask:"), box)
-        grid2.addWidget(lab, 1, 0, Qt.AlignRight)
-        self.netmask = QLineEdit(box)
+        lab = QLabel(i18n("Net mask:"), self)
+        grid2.addWidget(lab, row2, 1, Qt.AlignRight)
+        self.netmask = QLineEdit(self)
         self.netmask.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.netmask))
-        grid2.addWidget(self.netmask, 1, 1)
+        grid2.addWidget(self.netmask, row2, 2)
+        row2 += 1
         
-        lab = QLabel(i18n("Gateway:"), box)
-        grid2.addWidget(lab, 2, 0, Qt.AlignRight)
-        self.gateway = QLineEdit(box)
+        lab = QLabel(i18n("Gateway:"), self)
+        grid2.addWidget(lab, row2, 1, Qt.AlignRight)
+        self.gateway = QLineEdit(self)
         self.gateway.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.gateway))
-        grid2.addWidget(self.gateway, 2, 1)
-        self.auto_gate = QCheckBox(i18n("Custom"), box)
+        grid2.addWidget(self.gateway, row2, 2)
+        self.auto_gate = QCheckBox(i18n("Custom"), self)
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
-        grid2.addWidget(self.auto_gate, 2, 2)
+        grid2.addWidget(self.auto_gate, row2, 3)
         
         line = widgets.HLine(i18n("Name servers"), self)
         grid.addMultiCellWidget(line, row, row, 0, 1)
