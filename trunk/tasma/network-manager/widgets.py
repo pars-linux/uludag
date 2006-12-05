@@ -15,6 +15,8 @@ from qt import *
 from kdecore import *
 from khtml import *
 
+from icons import getIconSet
+
 
 class Edit(QHBox):
     def __init__(self, parent, is_password=False):
@@ -29,15 +31,19 @@ class Edit(QHBox):
 
 
 class HLine(QHBox):
-    def __init__(self, title, parent):
+    def __init__(self, title, parent, pixmap=None):
         QHBox.__init__(self, parent)
         self.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
+        self.setSpacing(6)
         
         line = QFrame(self)
         line.setFrameStyle(line.HLine | line.Sunken)
-        line.setFixedWidth(48)
+        line.setFixedWidth(24)
         
-        text = QLabel(" %s " % unicode(title), self)
+        if pixmap:
+            gfx = QLabel(self)
+            gfx.setPixmap(getIconSet(pixmap).pixmap(QIconSet.Small, QIconSet.Normal))
+        text = QLabel(unicode(title), self)
         
         line = QFrame(self)
         line.setFrameStyle(line.HLine | line.Sunken)

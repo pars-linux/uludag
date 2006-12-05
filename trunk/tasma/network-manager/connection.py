@@ -38,6 +38,10 @@ class Settings(QWidget):
         row += 1
         
         # Connection
+        line = widgets.HLine(i18n("Connection"), self, "irkick.png")
+        grid.addMultiCellWidget(line, row, row, 0, 1)
+        row += 1
+        
         lab = QLabel(i18n("Device:"), self)
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         hb = QHBox(self)
@@ -69,7 +73,7 @@ class Settings(QWidget):
         
         # Authentication
         if "auth" in link.modes:
-            line = widgets.HLine(i18n("Authentication"), self)
+            line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1.png")
             grid.addMultiCellWidget(line, row, row, 0, 1)
             row += 1
             
@@ -186,7 +190,7 @@ class Settings(QWidget):
             self.scan_box.insertItem(remote)
     
     def initNet(self, grid, row):
-        line = widgets.HLine(i18n("Network settings"), self)
+        line = widgets.HLine(i18n("Network settings"), self, "network.png")
         grid.addMultiCellWidget(line, row, row, 0, 1)
         row += 1
         
@@ -233,7 +237,7 @@ class Settings(QWidget):
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
         grid2.addWidget(self.auto_gate, row2, 3)
         
-        line = widgets.HLine(i18n("Name servers"), self)
+        line = widgets.HLine(i18n("Name servers"), self, "kaddressbook.png")
         grid.addMultiCellWidget(line, row, row, 0, 1)
         row += 1
         
