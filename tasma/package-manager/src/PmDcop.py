@@ -23,6 +23,8 @@ class PmDcop(dcopexport.DCOPExObj):
         self.addMethod ("void install(QString)", self.install)
 
     def install (self, package):
-        pass
+        manager = self.parent.mainwidget
+        if manager.command.inProgress():
+            return
 
-
+        manager.installPackage(package)
