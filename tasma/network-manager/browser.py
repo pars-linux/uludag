@@ -248,8 +248,6 @@ class Device(QWidget):
             c = 1
         if c > 3:
             c = 3
-        if c > len(self.connections):
-            c = len(self.connections)
         return c
     
     def heightForWidth(self, width):
@@ -298,11 +296,16 @@ class ConnectionView(QScrollView):
         names = self.devices.keys()
         names.sort()
         c = []
+        d = []
         for name in names:
             item = self.devices[name]
             c.append(item.columnHint(width))
+            d.append(len(item.connections))
         if c != []:
             c = min(c)
+            d = max(d)
+            if d < 3 and c > d:
+                c = d
         for name in names:
             item = self.devices[name]
             item.columns = c
@@ -310,15 +313,15 @@ class ConnectionView(QScrollView):
             item.setGeometry(0, th, width, h)
             item.myResize(width, h)
             th += h
+        self.resizeContents(width, th)
     
     def resizeEvent(self, event):
-        w = event.size().width()
-        self.myResize(w)
-        return QScrollView.resizeEvent(self, event)
+        QScrollView.resizeEvent(self, event)
+        self.myResize(self.visibleWidth())
     
     def add(self, conn):
         Connection(self, conn)
-        self.myResize(self.width())
+        self.myResize(self.contentsWidth())
     
     def remove(self, conn):
         conn = self.connections.get(conn.hash, None)
@@ -333,7 +336,7 @@ class ConnectionView(QScrollView):
             dev.hide()
             dev.deleteLater()
             del self.devices[dev.devid]
-        self.myResize(self.width())
+        self.myResize(self.contentsWidth())
     
     def stateUpdate(self, conn):
         conn = self.connections.get(conn.hash, None)
@@ -361,7 +364,7 @@ class ConnectionView(QScrollView):
     def hotPlug(self, uid, info):
         dev = Device(self, info, uid)
         dev.show()
-        self.myResize(self.width())
+        self.myResize(self.contentsWidth())
 
 
 class Widget(QVBox):
