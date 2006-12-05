@@ -185,6 +185,10 @@ class MainApplicationWidget(QWidget):
  
         if self.componentsReady():
             self.installState()
+
+            global packageToInstall
+            if packageToInstall:
+                self.installPackage(packageToInstall)
         else:
             self.updateCheck()
 
@@ -488,6 +492,11 @@ class MainApplicationWidget(QWidget):
                 return False
 
         return True
+
+    def installPackage(self, package):
+        self.progressDialog.showStatus()
+        self.command.install([package])
+        self.progressDialog.show()
 
     def takeAction(self):
         
