@@ -75,7 +75,7 @@ class Name:
         else:
             self.name = QLineEdit(w)
             lab.setBuddy(self.name)
-            self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]*"), self.name))
+            self.name.setValidator(QRegExpValidator(QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_]*"), self.name))
             self.name.connect(self.name, SIGNAL("textChanged(const QString &)"), self.slotChange)
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
@@ -380,11 +380,11 @@ class Guide(QWidget):
         if not err:
             pw = unicode(p.u_password.password.text())
             if pw != "" and len(pw) < 4:
-                err = i18n("Password must be longer")
+                err = i18n("Password must be longer.")
             
             if not err:
                 if pw == p.u_realname.text() or pw == p.u_name.text():
-                    err = i18n("Dont use your full name or user name as a password")
+                    err = i18n("Dont use your full name or user name as a password.")
         
         if not err and p.u_password.text() == None:
             err = i18n("Passwords don't match.")
@@ -392,11 +392,17 @@ class Guide(QWidget):
         if not err and p.u_id.text() == "":
             err = i18n("You must enter a user ID or use the auto selection.")
         
-        if not err and p.u_name.text() == "":
+        nick = p.u_name.text()
+        
+        if not err and nick == "":
             err = i18n("You must enter a user name.")
         
-        if not err and p.u_name.text() in p.u_name.usednames:
-            err = i18n("This user name is used by another user")
+        if not err and nick in p.u_name.usednames:
+            err = i18n("This user name is used by another user.")
+        
+        if not err:
+            if len(nick) > 0 and nick[0] >= "0" and nick[0] <= "9":
+                err = i18n("User name must not start with a number.")
         
         if not err and p.u_groups.text() == "":
             err = i18n("You should select at least one group this user belongs to.")
