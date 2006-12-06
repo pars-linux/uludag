@@ -734,10 +734,10 @@ class MainApplicationWidget(QWidget):
 
         if command in ["System.Manager.updateAllRepositories",
                        "System.Manager.updateRepository"]:
+            self.refreshState()
+
             if self.parent.isHidden():
                 self.parent.tray.showPopup()
-            else:
-                self.refreshState()
 
         elif command == "System.Manager.setRepositories":
             self.updateCheck()
