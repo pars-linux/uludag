@@ -203,7 +203,7 @@ class Device(QWidget):
         self.name = name
         self.devid = id
         self.f = QFont(self.font())
-        self.f.setBold(True)
+        self.f.setPointSize(self.f.pointSize() + 1)
         fm = QFontMetrics(self.f)
         self.myBase = fm.ascent()
         self.connections = []
