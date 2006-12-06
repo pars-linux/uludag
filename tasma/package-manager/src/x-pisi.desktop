@@ -4,6 +4,7 @@ Comment=PiSi File
 Comment[en]=PiSi File
 Comment[tr]=PiSi Dosyası
 Comment[nl]=PiSi bestand
+Comment[es]=Archivo PiSi
 MimeType=application/x-pisi
 Patterns=*.pisi
 Type=MimeType

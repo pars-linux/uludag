@@ -2,6 +2,7 @@
 Name=Package Manager
 Name[tr]=Paket Yöneticisi
 Name[nl]=Pakketmanager
+Name[es]=Administrador de Paquetes
 Icon=package-manager
 Type=Application
 StartupNotify=False
