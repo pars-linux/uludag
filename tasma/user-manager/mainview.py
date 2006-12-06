@@ -9,8 +9,12 @@
 # any later version.
 #
 
+import sys
+import time
 import comar
 from qt import *
+from kdecore import *
+from kdeui import *
 
 import browser
 import useredit
@@ -20,20 +24,60 @@ from utility import *
 
 class UserManager(QWidgetStack):
     def __init__(self, parent):
-        link = comar.Link()
-        link.localize()
-        self.link = link
-        self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
-        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        try:
+            self.link = comar.Link()
+        except comar.CannotConnect:
+            KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
+            sys.exit(0)
+        self.setupComar()
         
         QWidgetStack.__init__(self, parent)
-        self.browse = browser.BrowseStack(self, link)
-        self.user = useredit.UserStack(self, link)
-        self.useredit = useredit.UserStack(self, link, edit=True)
-        self.group = groupedit.GroupStack(self, link)
+        self.browse = browser.BrowseStack(self, self.link)
+        self.user = useredit.UserStack(self, self.link)
+        self.useredit = useredit.UserStack(self, self.link, edit=True)
+        self.group = groupedit.GroupStack(self, self.link)
+    
+    def setupComar(self):
+        self.link.localize()
+        self.notifier = QSocketNotifier(self.link.sock.fileno(), QSocketNotifier.Read)
+        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+    
+    def waitComar(self):
+        dia = KProgressDialog(None, "lala", i18n("Waiting COMAR..."),
+            i18n("Connection to the COMAR unexpectedly closed, trying to reconnect..."), True)
+        dia.progressBar().setTotalSteps(50)
+        dia.progressBar().setTextEnabled(False)
+        dia.show()
+        start = time.time()
+        while time.time() < start + 5:
+            try:
+                self.link = comar.Link()
+                dia.close()
+                self.setupComar()
+                return
+            except comar.CannotConnect:
+                pass
+            if dia.wasCancelled():
+                break
+            percent = (time.time() - start) * 10
+            dia.progressBar().setProgress(percent)
+            qApp.processEvents(100)
+        dia.close()
+        KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
+        KApplication.kApplication().quit()
     
     def slotComar(self, sock):
-        reply = self.link.read_cmd()
+        try:
+            reply = self.link.read_cmd()
+        except comar.LinkClosed:
+            self.notifier = None
+            self.waitComar()
+            self.browse.link = self.link
+            self.user.link = self.link
+            self.useredit.link = self.link
+            self.group.link = self.link
+            return
+        
         id = reply.id
         if id == 1:
             self.browse.comarUsers(reply)
