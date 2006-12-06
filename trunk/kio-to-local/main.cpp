@@ -8,7 +8,7 @@
 #include <ktempfile.h>
 
 static const char description[] = "External KIO support for non-KDE programs";
-static const char version[] = "0.5";
+static const char version[] = "0.6";
 static KCmdLineOptions options[] =
 {
     { "+program", "Program to run", 0 },
@@ -46,12 +46,11 @@ int main(int argc, char **argv)
       case 2:
         {
           const QString program = args->arg(0);
-          const KURL target = args->url(1);
+          const KURL target = KIO::NetAccess::mostLocalURL(args->url(1), NULL);
 
           if (target.isLocalFile())
             {
-              const KURL url = KIO::NetAccess::mostLocalURL(target,0);
-              runProgramWithURL(program, url.path());
+              runProgramWithURL(program, target.path());
             }
           else // A remote URL or a kioslave
             {
