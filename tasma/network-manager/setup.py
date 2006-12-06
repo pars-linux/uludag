@@ -27,6 +27,7 @@ distfiles = """
     help/*.css
     help/en/*.html
     help/tr/*.html
+    help/es/*.html
     po/*.po
     po/*.pot
 """
