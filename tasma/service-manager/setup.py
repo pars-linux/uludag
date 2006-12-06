@@ -16,7 +16,7 @@ import shutil
 from distutils.core import Extension
 import kdedistutils
 
-version = '1.1.4'
+version = '1.1.5'
 
 distfiles = """
     README
@@ -31,6 +31,7 @@ distfiles = """
     help/*.css
     help/tr/*.html
     help/en/*.html
+    help/es/*.html
 """
 
 def make_dist():
