@@ -507,7 +507,7 @@ class UserStack(QVBox):
         if self.checkAdd():
             return
         
-        dict = self.editdict
+        dict = self.editdict.copy()
         tmp = self.u_realname.text()
         if tmp == dict["realname"]:
             del dict["realname"]
@@ -527,6 +527,14 @@ class UserStack(QVBox):
         if tmpA == tmpB:
             del dict["groups"]
         else:
+            if int(dict["uid"]) == os.getuid() and not "wheel" in tmpA and "wheel" in tmpB:
+                ret = KMessageBox.warningContinueCancel(
+                    self,
+                    i18n("You are removing yourself from the 'wheel' system group, you might not use your administrator permissions after that."),
+                    i18n("Important Group Change")
+                )
+                if ret == KMessageBox.Cancel:
+                    return
             dict["groups"] = tmp
         
         if len(dict) > 1:
