@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-05 23:48+0200\n"
-"PO-Revision-Date: 2006-12-05 21:29+0200\n"
+"PO-Revision-Date: 2006-12-07 21:37+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Naam:"
 
 #: browser.py:56 connection.py:76
 msgid "Authentication"
-msgstr "Authenticiteit"
+msgstr "Identificatie"
 
 #: browser.py:59 connection.py:214
 msgid "Address:"
@@ -171,17 +171,19 @@ msgstr "Netwerkmanager module is al opgestart!"
 
 #: comariface.py:162
 msgid "Waiting COMAR..."
-msgstr ""
+msgstr "wachten COMAR..."
 
 #: comariface.py:163
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te verbinden..."
 
 #: comariface.py:182 comariface.py:199
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
 msgstr ""
+"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten starten "
+"met het commando 'service comar start' in de root console."
 
 #: comariface.py:365
 msgid "new connection"
@@ -230,3 +232,4 @@ msgstr "Installeer netwerkpakketten!"
 #: newconn.py:110
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Er is nog geen pakket met COMAR netwerkscripts geïnstalleerd."
+
