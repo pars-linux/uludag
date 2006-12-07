@@ -1,12 +1,12 @@
 /* ulusal dağıtım web sitesi stilleri */
 
-.{
-	font-family: Geneva, Arial, Helvetica, sans-serif;
+{
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
 }
 
 .arka {
-	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	background-image: url(./images/back.jpg);
 	background-repeat: repeat-x;
 	background-color: #FFFFFF;
@@ -26,8 +26,8 @@
 }
 
 .metin {
-	font-family: Geneva, Arial, Helvetica, sans-serif;
-	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
 	color: #000000;
 	font-weight: normal;
 }
@@ -42,7 +42,7 @@
 }
 
 .baslik {
-	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
 	color: #003333;
@@ -60,7 +60,7 @@ a:hover {
 }
 
 .menubar {
-	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #003333;
 	text-align: center;
@@ -100,7 +100,7 @@ a:hover {
 
 .not {
 	text-align: center;
-	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-size: 9pt;
 	color: #808080;
 	padding: 0.5em;
