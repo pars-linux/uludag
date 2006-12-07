@@ -1,22 +1,23 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of kaptnyeni.po to Deutsch
+# Copyright (C) 2006 Free Software Foundation, Inc.
 #
+# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: kaptan\n"
+"Project-Id-Version: kaptnyeni\n"
 "POT-Creation-Date: 2006-11-26 14:46+0200\n"
-"PO-Revision-Date: 2006-11-05 19:52+0100\n"
-"Last-Translator: m <l>\n"
-"Language-Team: german <german@li.org>\n"
+"PO-Revision-Date: 2006-12-05 23:45+0200\n"
+"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: rc.cpp:16
 #, no-c-format
 msgid "&Test Wallpaper"
-msgstr "&Test Hintergrundbild"
+msgstr "&Hintergrundbild testen"
 
 #: rc.cpp:20
 #, no-c-format
@@ -30,7 +31,8 @@ msgstr ""
 "<center>\n"
 "Sie sind fertig!  Jetzt können Sie mit Pardus Linux arbeiten<br>\n"
 "<a href=\"#tasma\">Wenn Sie weitere Änderungen vornehmen möchten, klicken "
-"Sie bitte hier <b>Pardus Konfigurationszentrum</b></a>\n"
+"Sie bitte hier, um auf das<b>Pardus Konfigurationszentrum</b> zu gelangen</"
+"a>\n"
 "</center>"
 
 #: rc.cpp:37
@@ -40,7 +42,7 @@ msgstr "Tastenordnung"
 
 #: src/kaptan.cpp:49
 msgid "Congratulations"
-msgstr ""
+msgstr "Gratulation"
 
 #: rc.cpp:13
 #, no-c-format
@@ -73,7 +75,7 @@ msgstr ""
 
 #: src/main.cpp:18
 msgid "Kaptan Desktop"
-msgstr ""
+msgstr "Kaptan Desktop"
 
 #: rc.cpp:43
 #, no-c-format
@@ -82,7 +84,7 @@ msgstr "Links&händig"
 
 #: src/kaptan.cpp:41
 msgid "Mouse Setup"
-msgstr ""
+msgstr "Maus Einrichtung"
 
 #: rc.cpp:27
 #, no-c-format
@@ -95,8 +97,8 @@ msgid ""
 msgstr ""
 "Pardus ist eine Entwicklung auf der Basis der GNU/Linux - Distribution , "
 "welche die Anforderungen des erfahrenen PC – Benutzers durch die Verwendung  "
-"des vorhandenen stabilen und neuen Ideen, Strukturen und Codes des Linux-BS  "
-"erfüllen soll. Deren  Ziel ist  dem Benutzer ein autonomes und "
+"der vorhandenen stabilen und neuen Ideen, Strukturen und Codes des Linux-BS "
+"erfüllen soll. Deren Ziel ist dem Benutzer ein autonomes und "
 "benutzerfreundliches Betriebssystem zur Verfügung zu stellen."
 
 #: rc.cpp:9
@@ -130,22 +132,28 @@ msgstr "Hintergrundbild :"
 #: src/kaptan.cpp:45
 #, fuzzy
 msgid "Wallpaper Setup"
-msgstr "Hintergrundbild :"
+msgstr "Hintergrundbild Einrichtung"
 
 #: src/kaptan.cpp:37
 #, fuzzy
 msgid "Welcome"
-msgstr "WillkommenDlg"
+msgstr "Willkommen"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
 msgstr ""
+"_:EMAIL VON DEN ÜBERSETZERN\n"
+"oelcerman@fussballkreis.org "
+"aytekguelen@yahoo.de"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
 msgstr ""
+"_:NAMEN VON DEN ÜBERSETZERN\n"
+"Mustafa Muhammed Ölcerman "
+"Aytekin Gülen"
 
