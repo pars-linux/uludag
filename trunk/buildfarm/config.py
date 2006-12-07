@@ -12,8 +12,8 @@
 import os
 
 #Some configuration info for other modules..
-workDir          = "/var/tmp/pisi/"
-outputDir        = "/var/tmp/pisi/buildlogs/"
+workDir          = "/var/pisi/"
+outputDir        = "/var/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
 localPspecRepo   = "%s/exampleRepo" % os.getcwd()
 logFile          = "%s/buildfarm.log" % workDir
