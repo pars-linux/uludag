@@ -105,7 +105,7 @@
             </item>
             <item>
                 <property name="text">
-                    <string>http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2</string>
+                    <string>http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2</string>
                 </property>
             </item>
             <property name="name">
