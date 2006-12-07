@@ -62,6 +62,8 @@ class Progress(ProgressDialog):
     def hideStatus(self, hidepackage=False):
         if hidepackage:
             self.packageInfo.hide()
+        else:
+            self.packageInfo.show()
 
         self.completedInfo.hide()
         self.totalInfo.hide()
