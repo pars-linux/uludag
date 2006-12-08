@@ -134,20 +134,17 @@ class Form(KWizard):
         self.setBackEnabled(self.pageGoodbyeDlg, 0)
         self.setFinishEnabled(self.pageGoodbyeDlg, 1)
 
-        # Create upload thread
-        self.thread_1 = thread_upload()
-
     def __tr(self,s,c = None):
         return qApp.translate("Feedback",s,c)
 
     def next_clicked(self):
         if self.currentPage() == self.pageUploadDlg:
-            self.thread_1.start()
+            thread_up.start()
 
     def button_retry_clicked(self):
         self.pageUploadDlg.buttonRetry.hide()
         self.pageUploadDlg.labelStatus.setText("")
-        self.thread_1.start()
+        self.thread_up.start()
         
 
 class thread_upload(QThread):
@@ -269,8 +266,11 @@ class thread_upload(QThread):
             w.pageUploadDlg.labelStatus.setText(text)
             w.pageUploadDlg.buttonRetry.show()
 
+def quit():
+    thread_up.exit()
+
 def main():
-    global w, url_upload
+    global w, url_upload, thread_up
 
     conf = ConfigParser()
     try:
@@ -287,8 +287,17 @@ def main():
         return
 
     kapp = KUniqueApplication(True, True, True)
+
+    # Kill thread on exit
+    QObject.connect(kapp, SIGNAL("aboutToQuit()"), quit)
+
+    # Attach main widget
     w = Form()
     kapp.setMainWidget(w)
+
+    # Upload thread
+    thread_up = thread_upload()
+
     sys.exit(w.exec_loop())
 
 if __name__ == "__main__":
