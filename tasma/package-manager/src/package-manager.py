@@ -189,6 +189,7 @@ class MainApplicationWidget(QWidget):
             global packageToInstall
             if packageToInstall:
                 self.installPackage(packageToInstall)
+                self.progressDialog._raise()
         else:
             self.updateCheck()
 
