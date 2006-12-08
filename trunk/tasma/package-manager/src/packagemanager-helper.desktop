@@ -7,4 +7,5 @@ Icon=package-manager
 Type=Application
 StartupNotify=False
 MimeType=application/x-pisi;
-Exec=pm-installer --install %u
+Exec=pm-install %u
+
