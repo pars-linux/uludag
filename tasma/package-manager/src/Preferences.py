@@ -45,7 +45,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.intervalCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "UpdateCheck"))
         self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
-        self.useCacheCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "ClearCache"))
+        self.useCacheCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "PackageCache"))
         self.useCacheSize.setValue(self.parent.settings.getNumValue(Settings.general, "CacheLimit"))
         self.reposChanged = False
 
@@ -155,7 +155,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.parent.settings.setValue(Settings.general, "SystemTray", self.systemTray.isChecked())
         self.parent.settings.setValue(Settings.general, "UpdateCheck", self.intervalCheck.isChecked())
         self.parent.settings.setValue(Settings.general, "UpdateCheckInterval", self.intervalSpin.value())
-        self.parent.settings.setValue(Settings.general, "ClearCache", self.useCacheCheck.isChecked())
+        self.parent.settings.setValue(Settings.general, "PackageCache", self.useCacheCheck.isChecked())
         self.parent.settings.setValue(Settings.general, "CacheLimit", self.useCacheSize.value())
 
         if self.intervalCheck.isChecked():

@@ -180,7 +180,11 @@ class Commander(QObject):
         return self.comar.clearCache("/var/cache/pisi/packages", limit)
 
     def checkCacheLimits(self):
-        if self.parent.settings.getBoolValue(Settings.general, "ClearCache"):
+        if self.parent.settings.getBoolValue(Settings.general, "PackageCache"):
             limit = self.parent.settings.getNumValue(Settings.general, "CacheLimit")
+
+            # If PackageCache is used and limit is 0. It means limitless.
             if limit:
                 self.clearCache(limit * 1024 * 1024)
+        else:
+            self.clearCache(0)

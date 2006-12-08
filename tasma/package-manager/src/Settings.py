@@ -15,7 +15,7 @@
 defaults = {"SystemTray":False,
             "UpdateCheck":False,
             "UpdateCheckInterval":60,
-            "ClearCache":False,
+            "PackageCache":False,
             "CacheLimit":0
             }
 
