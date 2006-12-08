@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-05 10:50+0200\n"
+"POT-Creation-Date: 2006-12-08 23:28+0200\n"
 "PO-Revision-Date: 2006-11-30 22:01+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -17,31 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:79 src/disk-manager.py:319 src/diskform.py:132
+#: src/disk-manager.py:94 src/disk-manager.py:362 src/diskform.py:132
 msgid "Disk Manager"
 msgstr "Disk Yöneticisi"
 
-#: src/disk-manager.py:99
+#: src/disk-manager.py:113
 msgid "User not in disk group !! Exiting.."
 msgstr "Kullanıcı disk grubunda değil !! Çıkılıyor.."
 
-#: src/disk-manager.py:205 src/disk-manager.py:224
+#: src/disk-manager.py:226 src/disk-manager.py:249
 msgid "Completed"
 msgstr "Tamamlandı"
 
-#: src/disk-manager.py:205 src/disk-manager.py:224
+#: src/disk-manager.py:226 src/disk-manager.py:249
 msgid "File /etc/fstab updated !"
 msgstr "Dosya /etc/fstab güncellendi !"
 
-#: src/disk-manager.py:255
+#: src/disk-manager.py:267
+#, python-format
+msgid "%s for %s failure !!"
+msgstr "%s işlemi %s için başarısız oldu !!"
+
+#: src/disk-manager.py:295
 msgid "Mount Point"
 msgstr "Bağlama Noktası"
 
-#: src/disk-manager.py:256
+#: src/disk-manager.py:296
 msgid "File System Type"
 msgstr "Dosya Sistemi Tipi"
 
-#: src/disk-manager.py:314
+#: src/disk-manager.py:357
 msgid "Disk Manager is already running!"
 msgstr "Disk Yöneticisi zaten çalışıyor!"
 
