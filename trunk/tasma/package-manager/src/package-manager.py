@@ -189,7 +189,8 @@ class MainApplicationWidget(QWidget):
             global packageToInstall
             if packageToInstall:
                 self.installPackage(packageToInstall)
-                self.progressDialog._raise()
+                self.progressDialog.show()
+                self.progressDialog.raiseW()
         else:
             self.updateCheck()
 
@@ -502,7 +503,7 @@ class MainApplicationWidget(QWidget):
             self.command.install([package])
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.show()
-            self.progressDialog._raise()
+            self.progressDialog.raiseW()
 
     def takeAction(self):
         
