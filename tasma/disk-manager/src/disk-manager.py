@@ -14,6 +14,7 @@ import sys
 import time
 import dbus
 import grp
+import subprocess
 
 # KDE/QT Modules
 from qt import *
@@ -143,12 +144,14 @@ class diskForm(mainForm):
             try:
                 selected_=self.list_main.selectedItem()
                 selected =self.getDetailsOfSelected(selected_,key=True)
+                inlist = self.prettyList[selected[0]][selected[1]]
+
                 # to avoid root partition changes.
                 # root partition's options can change but file_system and mount_points can not.
-                if not self.prettyList[selected[0]][selected[1]]['mount_point']=='/':
-                    self.prettyList[selected[0]][selected[1]]['mount_point']=str(self.line_mountpoint.text())
-                    self.prettyList[selected[0]][selected[1]]['file_system']=self.getFsName(self.combo_fs.currentText())
-                self.prettyList[selected[0]][selected[1]]['options']=str(self.line_opts.text())
+                if not inlist['mount_point']=='/':
+                    inlist['mount_point']=str(self.line_mountpoint.text())
+                    inlist['file_system']=self.getFsName(self.combo_fs.currentText())
+                inlist['options']=str(self.line_opts.text())
             except:
                 pass
 
@@ -204,6 +207,7 @@ class diskForm(mainForm):
         if (self.Fstab.writeContent()):
             self.showInfo(i18n("Completed"),i18n("File /etc/fstab updated !"))
             self.initialize()
+            self.doMount()
 
     def slotUpdate(self):
         self.saveSession(Single=True)
@@ -215,6 +219,7 @@ class diskForm(mainForm):
                 else:
                     # warn when trying remove root partition
                     if not node['mount_point']=='/':
+                        os.system('umount %s' % node['partition_name'])
                         self.Fstab.delFstabEntry(node['partition_name'])
                         ## print 'DEBUG: Partition %s deleted from /etc/fstab' % node['partition_name']
                     else:
@@ -225,9 +230,18 @@ class diskForm(mainForm):
 
         self.Fstab.update()
         self.initialize()
+        self.doMount()
 
-    def showInfo(self,title,msg):
-        QMessageBox(title,msg,QMessageBox.Information,QMessageBox.Ok,0,0,self).show()
+    def doMount(self):
+        for disk in self.blockDevices:
+            for partition in self.prettyList[disk]:
+                if not partition['mount_point']=='/':
+                    for action in ['umount','mount']:
+                        if not subprocess.call('%s %s' % (action,partition['partition_name']))==0:
+                            showInfo('Error','%s for %s failure!!',QMessageBox.Warning)
+
+    def showInfo(self,title,msg,type=QMessageBox.Information):
+        QMessageBox(title,msg,type,QMessageBox.Ok,0,0,self).show()
 
     def fillDiskList(self):
         self.frame_detail.hide()
@@ -265,6 +279,7 @@ class diskForm(mainForm):
                 self.toggleAllPartitions()
 
     def toggleAllPartitions(self):
+        self.frame_detail.hide()
         for disk in self.prettyList:
             for item in self.prettyList[disk]:
                 if item['mount_point']=='/':
