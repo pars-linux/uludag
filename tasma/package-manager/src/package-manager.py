@@ -501,6 +501,7 @@ class MainApplicationWidget(QWidget):
             self.command.install([package])
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.show()
+            self.progressDialog._raise()
 
     def takeAction(self):
         
