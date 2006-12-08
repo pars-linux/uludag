@@ -133,9 +133,6 @@
                             <property name="text">
                                 <string>&amp;Test Wallpaper</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+T</string>
-                            </property>
                         </widget>
                     </vbox>
                 </widget>

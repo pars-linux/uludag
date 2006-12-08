@@ -166,9 +166,6 @@
                             <property name="text">
                                 <string>&amp;Single-click to open files and folders</string>
                             </property>
-                            <property name="accel">
-                                <string>Alt+S</string>
-                            </property>
                             <property name="checked">
                                 <bool>false</bool>
                             </property>
@@ -179,9 +176,6 @@
                             </property>
                             <property name="text">
                                 <string>Dou&amp;ble-click to open files and folders (select icons on first click)</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+B</string>
                             </property>
                             <property name="checked">
                                 <bool>true</bool>
