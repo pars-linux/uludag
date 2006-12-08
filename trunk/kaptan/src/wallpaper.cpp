@@ -91,7 +91,7 @@ Wallpaper::Wallpaper( QWidget *parent, const char* name )
 void Wallpaper::paperSelected(int item)
 {
     QString file = papers[wallpaperBox->text(item)];
-    pix_wallpaper->setPixmap(QPixmap(QImage(wp)));
+    pix_wallpaper->setPixmap(QPixmap(QImage(file)));
     selectedPaper = file;
 }
 
