@@ -21,13 +21,22 @@ I18N_NOOP = lambda x: x
 CONNLIST, CONNINFO = range(2)
 
 
+class Device:
+    def __init__(self, devid, devname):
+        self.mid = -1
+        self.devid = devid
+        self.devname = devname
+        self.connections = {}
+        self.menu_name = unicode(devname)
+        if len(self.menu_name) > 25:
+            self.menu_name = self.menu_name[:22] + "..."
+
+
 class Connection:
-    @staticmethod
-    def hash(script, name):
-        return unicode("%s %s" % (script, name))
-    
     def __init__(self, script, data):
-        self.script = None
+        self.mid = -1
+        self.device = None
+        self.script = script
         self.name = None
         self.devid = None
         self.devname = None
@@ -38,7 +47,12 @@ class Connection:
         self.net_addr = None
         self.net_gateway = None
         self.parse(data)
-        self.hash = self.hash(self.script, self.name)
+        self.update()
+    
+    def update(self):
+        self.menu_name = unicode(self.name)
+        if self.message:
+            self.menu_name += " (%s)" % self.message
     
     def parse(self, data):
         for line in data.split("\n"):
@@ -66,8 +80,9 @@ class Connection:
 
 class Comlink:
     def __init__(self):
-        self.new_hook = []
-        self.connections = {}
+        self.change_hook = []
+        self.state_hook = []
+        self.devices = {}
     
     def connect(self):
         self.com = comar.Link()
@@ -76,12 +91,16 @@ class Comlink:
         self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
     
     def queryConnections(self):
+        self.com.ask_notify("Net.Link.stateChanged")
+        self.com.ask_notify("Net.Link.connectionChanged")
         self.com.Net.Link.connections(id=CONNLIST)
     
     def slotComar(self, sock):
         reply = self.com.read_cmd()
         if reply.command == "result":
             self.handleReply(reply)
+        elif reply.command == "notify":
+            self.handleNotify(reply)
         else:
             print reply
     
@@ -93,8 +112,40 @@ class Comlink:
         
         elif reply.id == CONNINFO:
             conn = Connection(reply.script, reply.data)
-            map(lambda x: x(conn), self.new_hook)
-            self.connections[conn.hash] = conn
+            dev = self.devices.get(conn.devid, None)
+            if not dev:
+                dev = Device(conn.devid, conn.devname)
+                self.devices[conn.devid] = dev
+            dev.connections[conn.name] = conn
+            conn.device = dev
+            map(lambda x: x(), self.change_hook)
+    
+    def handleNotify(self, reply):
+        if reply.notify == "Net.Link.stateChanged":
+            name, state = reply.data.split("\n", 1)
+            conn = self.getConn(reply.script, name)
+            if conn:
+                msg = None
+                if " " in state:
+                    state, msg = state.split(" ", 1)
+                conn.message = msg
+                conn.state = state
+                conn.update()
+                map(lambda x: x(conn), self.state_hook)
+    
+    def getConn(self, script, name):
+        for dev in self.devices.values():
+            for conn in dev.connections.values():
+                if conn.script == script and conn.name == name:
+                    return conn
+        return None
+    
+    def getConnById(self, mid):
+        for dev in self.devices.values():
+            for conn in dev.connections.values():
+                if conn.mid == mid:
+                    return conn
+        return None
 
 
 comlink = Comlink()
@@ -120,7 +171,7 @@ class Applet(KMainWindow):
     
     def setMenu(self, menu):
         KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, self).plug(menu)
-        KAction(i18n("Edit Connections..."), "network", KShortcut.null(), self.startManager, self).plug(menu)
+        KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, self).plug(menu)
     
     def startManager(self):
         os.system("network-manager")
@@ -135,26 +186,47 @@ class NetTray(KSystemTray):
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
-        self.devices = {}
-        self.connections = {}
-        comlink.new_hook.append(self.slotNew)
+        comlink.change_hook.append(self.slotChange)
+        comlink.state_hook.append(self.slotState)
     
-    def slotNew(self, conn):
+    def slotChange(self):
         menu = self.contextMenu()
-        dev = self.devices.get(conn.devid, None)
-        if not dev:
-            name = unicode(conn.devname)
-            if len(name) > 25:
-                name = name[:22] + "..."
-            dev = menu.insertTitle(name, -1, 0)
-            self.devices[conn.devid] = dev
-        idx = menu.insertItem(unicode(conn.name), self.slotSelect, 0, -1, menu.indexOf(dev) + 1)
-        self.connections[conn.hash] = (conn, idx)
-        if conn.state in ("up", "inaccessible"):
-            menu.setItemChecked(idx, True)
+        menu.clear()
+        menu.insertTitle("Network Applet")
+        self.parent().setMenu(menu)
+        menu.insertSeparator()
+        for action in self.actionCollection().actions():
+            action.plug(menu)
+        
+        keys = comlink.devices.keys()
+        keys.sort(reverse=True)
+        for key in keys:
+            dev = comlink.devices[key]
+            dev.mid = menu.insertTitle(dev.menu_name, -1, 0)
+            conn_keys = dev.connections.keys()
+            conn_keys.sort(reverse=True)
+            for conn_key in conn_keys:
+                conn = dev.connections[conn_key]
+                conn.mid = menu.insertItem(conn.menu_name, self.slotSelect, 0, -1, menu.indexOf(dev.mid) + 1)
+                if conn.state in ("up", "inaccessible"):
+                    menu.setItemChecked(conn.mid, True)
     
-    def slotSelect(self, id):
-        print id
+    def slotSelect(self, mid):
+        menu = self.contextMenu()
+        conn = comlink.getConnById(mid)
+        if menu.isItemChecked(mid):
+            comlink.com.Net.Link[conn.script].setState(name=conn.name, state="down")
+        else:
+            comlink.com.Net.Link[conn.script].setState(name=conn.name, state="up")
+    
+    def slotState(self, conn):
+        menu = self.contextMenu()
+        mid = conn.mid
+        if conn.state in ("up", "inaccessible"):
+            menu.setItemChecked(mid, True)
+        else:
+            menu.setItemChecked(mid, False)
+        menu.changeItem(mid, conn.menu_name)
 
 
 def main():
