@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Firewall Configuration</string>
+        <string>Firewall Manager</string>
     </property>
     <property name="whatsThis" stdset="0">
         <string></string>
