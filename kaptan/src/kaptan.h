@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2004, 2006 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -17,30 +17,33 @@
 class KLocale;
 
 class Welcome;
-class MouseSetup;
+class Mouse;
+class Style;
 class Wallpaper;
+class Network;
+class Package;
 class Goodbye;
 
-class Kaptan : public KWizard
+class Kaptan:public KWizard
 {
     Q_OBJECT
 
 public:
-    Kaptan( QWidget* parent=0, const char *name=0 );
-    ~Kaptan();
-
+    Kaptan(QWidget* parent=0, const char *name=0);
     virtual void next();
 
 public slots:
-    virtual void accept();
+    void aboutToQuit();
 
 private:
     KLocale *locale;
     Welcome *welcome;
-    MouseSetup *mouse;
+    Style *style;
+    Mouse *mouse;
     Wallpaper *wallpaper;
+    Network *network;
+    Package *package;
     Goodbye *goodbye;
-
 };
 
 #endif // KAPTAN_H

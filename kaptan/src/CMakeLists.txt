@@ -6,7 +6,10 @@ SET(
   kaptan_sources
   welcome.cpp
   mouse.cpp
+  style.cpp
   wallpaper.cpp
+  network.cpp
+  package.cpp
   goodbye.cpp
   kaptan.cpp
   main.cpp
@@ -17,8 +20,11 @@ KDE3_AUTOMOC(${kaptan_sources})
 SET(
   kaptan_ui
   welcomedlg.ui
-  mousesetupdlg.ui
+  mousedlg.ui
+  styledlg.ui
   wallpaperdlg.ui
+  networkdlg.ui
+  packagedlg.ui
   goodbyedlg.ui
   )
 
@@ -29,6 +35,6 @@ TARGET_LINK_LIBRARIES(kaptan ${QT_AND_KDECORE_LIBS} kdeui)
 
 INSTALL_TARGETS(/bin kaptan)
 INSTALL_FILES(/share/applications/kde FILES kaptan.desktop)
-INSTALL_FILES(/share/apps/kaptan/pics FILES kaptan_pardus.png kaptan.png mouse_rh.png mouse_lh.png kaptan_goodbye.png)
+INSTALL_FILES(/share/apps/kaptan/pics FILES kaptan.png mouse_rh.png mouse_lh.png kaptan_goodbye.png pisi.png)
 
 KDE3_INSTALL_ICONS(hicolor)
