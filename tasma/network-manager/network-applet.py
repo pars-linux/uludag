@@ -117,6 +117,17 @@ class Applet(KMainWindow):
     def start(self):
         comlink.connect()
         comlink.queryConnections()
+    
+    def setMenu(self, menu):
+        KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, self).plug(menu)
+        KAction(i18n("Firewall..."), "configure", KShortcut.null(), self.startFirewall, self).plug(menu)
+        menu.insertSeparator(1)
+    
+    def startManager(self):
+        os.system("network-manager")
+    
+    def startFirewall(self):
+        os.system("firewall-config")
 
 
 class NetTray(KSystemTray):
@@ -124,8 +135,7 @@ class NetTray(KSystemTray):
         KSystemTray.__init__(self, parent)
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
-        KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.slotEdit, self).plug(menu)
-        menu.insertSeparator(1)
+        parent.setMenu(menu)
         self.devices = {}
         comlink.new_hook.append(self.slotNew)
     
@@ -136,10 +146,9 @@ class NetTray(KSystemTray):
         menu = self.contextMenu()
         dev = self.devices.get(conn.devid, None)
         if not dev:
-            dev = KPopupMenu(self)
-            menu.insertItem(unicode(conn.devname), dev, -1, 1)
+            dev = menu.insertTitle(unicode(conn.devname), -1, 1)
             self.devices[conn.devid] = dev
-        dev.insertItem(unicode(conn.name), -1)
+        menu.insertItem(unicode(conn.name), -1, menu.indexOf(dev) + 1)
 
 
 def main():
