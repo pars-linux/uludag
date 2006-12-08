@@ -727,7 +727,8 @@ class MainApplicationWidget(QWidget):
         pisi.api.init(write=False)
 
         # after every operation check package cache limits
-        if command != "System.Manager.clearCache":
+        if command not in ["System.Manager.clearCache", 
+                           "System.Manager.setRepositories"]:
             self.command.checkCacheLimits()
 
         self.basket.empty()
