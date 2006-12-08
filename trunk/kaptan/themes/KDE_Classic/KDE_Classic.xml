@@ -1,0 +1,18 @@
+<!DOCTYPE ktheme>
+<ktheme version="1">
+    <kwin>
+        <PluginLib value="kwin3_crystal" />
+    </kwin>
+    <kicker>
+        <LegacyKMenu value="true" />
+        <Transparent value="false" />
+        <SizePercentage value="100" />
+        <Position value="" />
+    </kicker>
+    <widget>
+        <widgetStyle value="lipstik" />
+    </widget>
+    <color>
+        <colorScheme value="domino-milk.kcsrc" />
+    </color>
+</ktheme>
