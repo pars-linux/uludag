@@ -82,6 +82,7 @@
         <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
+        <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>kradio</SelectedPackage>
@@ -377,6 +378,7 @@
         <Package>kftpgrabber</Package>
         <Package>kio-to-local</Package>
         <Package>klibc</Package>
+        <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>kradio</Package>

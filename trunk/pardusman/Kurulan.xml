@@ -102,6 +102,7 @@
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmplayer</SelectedPackage>
+        <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
@@ -451,6 +452,7 @@
         <Package>kipi-plugins</Package>
         <Package>klibc</Package>
         <Package>kmplayer</Package>
+        <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>ktorrent</Package>
