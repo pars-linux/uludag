@@ -119,9 +119,8 @@ class Applet(KMainWindow):
         comlink.queryConnections()
     
     def setMenu(self, menu):
-        KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, self).plug(menu)
-        KAction(i18n("Firewall..."), "configure", KShortcut.null(), self.startFirewall, self).plug(menu)
-        menu.insertSeparator(1)
+        KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, self).plug(menu)
+        KAction(i18n("Edit Connections..."), "network", KShortcut.null(), self.startManager, self).plug(menu)
     
     def startManager(self):
         os.system("network-manager")
@@ -137,18 +136,25 @@ class NetTray(KSystemTray):
         menu = self.contextMenu()
         parent.setMenu(menu)
         self.devices = {}
+        self.connections = {}
         comlink.new_hook.append(self.slotNew)
-    
-    def slotEdit(self):
-        os.system("network-manager")
     
     def slotNew(self, conn):
         menu = self.contextMenu()
         dev = self.devices.get(conn.devid, None)
         if not dev:
-            dev = menu.insertTitle(unicode(conn.devname), -1, 1)
+            name = unicode(conn.devname)
+            if len(name) > 25:
+                name = name[:22] + "..."
+            dev = menu.insertTitle(name, -1, 0)
             self.devices[conn.devid] = dev
-        menu.insertItem(unicode(conn.name), -1, menu.indexOf(dev) + 1)
+        idx = menu.insertItem(unicode(conn.name), self.slotSelect, 0, -1, menu.indexOf(dev) + 1)
+        self.connections[conn.hash] = (conn, idx)
+        if conn.state in ("up", "inaccessible"):
+            menu.setItemChecked(idx, True)
+    
+    def slotSelect(self, id):
+        print id
 
 
 def main():
