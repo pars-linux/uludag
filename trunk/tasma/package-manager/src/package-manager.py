@@ -190,7 +190,8 @@ class MainApplicationWidget(QWidget):
             if packageToInstall:
                 self.installPackage(packageToInstall)
                 self.progressDialog.show()
-                self.progressDialog.raiseW()
+                # KWin forces to raise it even though the parent is hidden, QWidget does not.
+                KWin.raiseWindow(self.progressDialog.winId())
         else:
             self.updateCheck()
 
@@ -503,7 +504,8 @@ class MainApplicationWidget(QWidget):
             self.command.install([package])
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.show()
-            self.progressDialog.raiseW()
+            # KWin forces to raise it even though the parent is hidden, QWidget does not.
+            KWin.raiseWindow(self.progressDialog.winId())
 
     def takeAction(self):
         
