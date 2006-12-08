@@ -9,20 +9,28 @@
   Please read the COPYING file.
 */
 
-#ifndef GOODBYE_H
-#define GOODBYE_H
+#ifndef NETWORK_H
+#define NETWORK_H
 
-#include "goodbyedlg.h"
+#include "networkdlg.h"
 
-class Goodbye:public GoodbyeDlg
+class QXEmbed;
+class KProcess;
+
+class Network:public NetworkDlg
 {
     Q_OBJECT
 
 public:
-    Goodbye(QWidget *parent = 0, const char* name = 0);
+    Network(QWidget *parent = 0, const char* name = 0);
+    ~Network();
 
 protected slots:
-    void startTasma();
+    void killProcess();
+
+private:
+    QXEmbed *embed;
+    KProcess *proc;
 };
 
-#endif // WELCOME_H
+#endif // NETWORK_H

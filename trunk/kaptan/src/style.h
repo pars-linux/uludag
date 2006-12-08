@@ -9,29 +9,30 @@
   Please read the COPYING file.
 */
 
-#ifndef MOUSE_H
-#define MOUSE_H
+#ifndef STYLE_H
+#define STYLE_H
 
-#include <kapplication.h>
+#include <qdom.h>
 
-#include "mousedlg.h"
+#include "styledlg.h"
 
-#define RIGHT_HANDED 0
-#define LEFT_HANDED  1
-
-class Mouse:public MouseDlg
+class Style:public StyleDlg
 {
     Q_OBJECT
 
 public:
-    Mouse(QWidget *parent = 0, const char* name = 0);
-    void apply();
+    Style(QWidget *parent = 0, const char* name = 0);
+
+public slots:
+    void styleSelected(int);
 
 protected slots:
-    void setHandedness(int);
+    void testStyle();
 
 private:
-    int handed;
+    QDomDocument dom;
+    QString selectedStyle;
+    QString getProperty(QDomElement parent, const QString & tag, const QString & attr) const;
 };
 
-#endif // MOUSE_H
+#endif // STYLE_H

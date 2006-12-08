@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2004, 2006 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -16,12 +16,12 @@
 
 class QString;
 
-class Wallpaper : public WallpaperDlg
+class Wallpaper:public WallpaperDlg
 {
     Q_OBJECT
 
 public:
-    Wallpaper( QWidget *parent = 0, const char* name = 0 );
+    Wallpaper(QWidget *parent = 0, const char* name = 0);
 
     bool changeWallpaper();
     void resetWallpaper();
@@ -30,8 +30,8 @@ public slots:
     void setWallpaper();
 
 protected slots:
-    void paperSelected( int );
-    void checkChanged( bool change );
+    void paperSelected(int);
+    void optionChanged(bool);
     void testWallpaper();
 
 private:

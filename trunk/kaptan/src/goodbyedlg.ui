@@ -8,9 +8,12 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>472</width>
-            <height>321</height>
+            <width>600</width>
+            <height>480</height>
         </rect>
+    </property>
+    <property name="caption">
+        <string>GoodbyeDlg</string>
     </property>
     <grid>
         <property name="name">
@@ -35,33 +38,20 @@
                 <set>AlignCenter</set>
             </property>
         </widget>
-        <widget class="QTextBrowser" row="1" column="0">
+        <widget class="QPushButton" row="2" column="0">
             <property name="name">
-                <cstring>finishLabel</cstring>
-            </property>
-            <property name="sizePolicy">
-                <sizepolicy>
-                    <hsizetype>1</hsizetype>
-                    <vsizetype>1</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                </sizepolicy>
-            </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>238</red>
-                    <green>238</green>
-                    <blue>230</blue>
-                </color>
-            </property>
-            <property name="frameShape">
-                <enum>NoFrame</enum>
+                <cstring>tasmaButton</cstring>
             </property>
             <property name="text">
-                <string>&lt;center&gt;
-You have finished!  Now you can start using Pardus Linux&lt;br&gt;
-&lt;a href="#tasma"&gt;If you want to change more settings click here to start &lt;b&gt;Pardus Configuration Center&lt;/b&gt;&lt;/a&gt;
-&lt;/center&gt;</string>
+                <string>Start Tasma</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>goodbyeLabel</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;center&gt;You have finished!  Now you can start using Pardus Linux&lt;/center&gt;</string>
             </property>
         </widget>
     </grid>

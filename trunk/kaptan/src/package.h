@@ -9,20 +9,21 @@
   Please read the COPYING file.
 */
 
-#ifndef GOODBYE_H
-#define GOODBYE_H
+#ifndef PACKAGE_H
+#define PACKAGE_H
 
-#include "goodbyedlg.h"
+#include "packagedlg.h"
 
-class Goodbye:public GoodbyeDlg
+class Package:public PackageDlg
 {
     Q_OBJECT
-
 public:
-    Goodbye(QWidget *parent = 0, const char* name = 0);
+    Package(QWidget *parent = 0, const char* name = 0);
+    void apply();
 
 protected slots:
-    void startTasma();
+    void traySelected(bool);
+    void updateSelected(bool);
 };
 
-#endif // WELCOME_H
+#endif // PACKAGE_H

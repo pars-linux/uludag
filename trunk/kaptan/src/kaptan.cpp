@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004, TUBITAK/UEKAE
+  Copyright (c) 2004, 2006 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -17,76 +17,87 @@
 
 #include "welcome.h"
 #include "mouse.h"
+#include "style.h"
 #include "wallpaper.h"
+#include "network.h"
+#include "package.h"
 #include "goodbye.h"
 
 #include "kaptan.h"
 
-Kaptan::Kaptan( QWidget *parent, const char *name )
-    : KWizard( parent, name, true)
+Kaptan::Kaptan(QWidget *parent, const char *name)
+    : KWizard(parent, name, true)
 {
-    setCaption( kapp->caption() );
+    int i = 0;
+    setCaption(kapp->caption());
 
-    /* Kaptan sadece ilk açılışta çalışsın */
+    /* Kaptan runs only at FirstRun */
     KConfig *config = kapp->config();
     config->setGroup("General");
     config->writeEntry("RunOnStart", false);
     config->sync();
 
-    welcome = new Welcome( this );
-    addPage( welcome, i18n( "Welcome" ) );
-    setHelpEnabled( QWizard::page( 0 ), false );
+    welcome = new Welcome(this);
+    addPage(welcome, i18n("Welcome"));
+    setHelpEnabled(KWizard::page(i++), false);
 
-    mouse = new MouseSetup( this );
-    addPage( mouse, i18n( "Mouse Setup" ) );
-    setHelpEnabled( QWizard::page( 1 ), false );
+    mouse = new Mouse(this);
+    addPage(mouse, i18n("Mouse Setup"));
+    setHelpEnabled(KWizard::page(i++), false);
 
-    wallpaper = new Wallpaper( this );
-    addPage( wallpaper, i18n( "Wallpaper Setup" ) );
-    setHelpEnabled( QWizard::page( 2 ), false );
+    style = new Style(this);
+    addPage(style, i18n("Style Setup"));
+    setHelpEnabled(KWizard::page(i++), false);
 
-    goodbye = new Goodbye( this );
-    addPage( goodbye, i18n( "Congratulations" ) );
-    setHelpEnabled( QWizard::page( 3 ), false );
+    wallpaper = new Wallpaper(this);
+    addPage(wallpaper, i18n("Wallpaper Setup"));
+    setHelpEnabled(KWizard::page(i++), false);
 
-    setFinishEnabled( QWizard::page( 3 ), true );
+    network = new Network(this);
+    addPage(network, i18n("Network Setup"));
+    setHelpEnabled(KWizard::page(i++), false);
 
-    locale = new KLocale( "kaptan" );
-    locale->setLanguage( KLocale::defaultLanguage() );
+    package = new Package(this);
+    addPage(package, i18n("Package Manager"));
+    setHelpEnabled(KWizard::page(i++), false);
+
+    goodbye = new Goodbye(this);
+    addPage( goodbye, i18n("Congratulations"));
+    setHelpEnabled(KWizard::page(i), false);
+
+    setFinishEnabled(KWizard::page(i), true);
+
+    locale = new KLocale("kaptan");
+    locale->setLanguage(KLocale::defaultLanguage());
+
+    // used for garbage collecting :)
+    connect(kapp, SIGNAL(aboutToQuit()), this, SLOT(aboutToQuit()));
 }
 
-Kaptan::~Kaptan()
+void Kaptan::aboutToQuit()
 {
+    delete welcome;
+    delete mouse;
+    delete style;
+    delete wallpaper;
+    delete network;
+    delete package;
+    delete goodbye;
 }
 
 void Kaptan::next()
 {
-    if ( currentPage() == mouse ) {
+    if (currentPage() == mouse)
         mouse->apply();
-        mouse->save();
-    }
-    else if ( currentPage() == wallpaper ) {
+    else if (currentPage() == wallpaper)
         if (wallpaper->changeWallpaper())
-          wallpaper->setWallpaper();
+            wallpaper->setWallpaper();
         else
-          wallpaper->resetWallpaper();
-    }
+            wallpaper->resetWallpaper();
+    else if (currentPage() == package)
+        package->apply();
 
-    QWizard::next();
-}
-
-void Kaptan::accept()
-{
-    // KDE değişkenlerini ayarlayalım...
-    // 	- Düğmeler üzerinde simgeleri görünsün
-    // 	- Combo'lar açılırken efektli açılsın
-    KGlobal::config()->setGroup("KDE");
-    KGlobal::config()->writeEntry("ShowIconsOnPushButtons", true,true, true);
-    KGlobal::config()->writeEntry("EffectAnimateCombo", true, true, true);
-
-    KGlobal::config()->sync();
-
-    QWizard::accept();
+    KWizard::next();
 }
 
 #include "kaptan.moc"
