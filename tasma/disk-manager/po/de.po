@@ -9,50 +9,54 @@ msgid ""
 msgstr ""
 "Project-Id-Version: disk_mangr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-30 22:16+0200\n"
+"POT-Creation-Date: 2006-12-08 23:28+0200\n"
 "PO-Revision-Date: 2006-12-05 23:17+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
+"translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:78
-#: src/disk-manager.py:315
-#: src/diskform.py:132
+#: src/disk-manager.py:94 src/disk-manager.py:362 src/diskform.py:132
 msgid "Disk Manager"
 msgstr "Festplatten-Manager"
 
-#: src/disk-manager.py:200
-#: src/disk-manager.py:219
+#: src/disk-manager.py:113
+msgid "User not in disk group !! Exiting.."
+msgstr ""
+
+#: src/disk-manager.py:226 src/disk-manager.py:249
 msgid "Completed"
 msgstr "Fertiggestellt"
 
-#: src/disk-manager.py:200
-#: src/disk-manager.py:219
+#: src/disk-manager.py:226 src/disk-manager.py:249
 msgid "File /etc/fstab updated !"
 msgstr "Datei /etc/fstab aktualisiert !"
 
-#: src/disk-manager.py:250
+#: src/disk-manager.py:267
+#, python-format
+msgid "%s for %s failure !!"
+msgstr ""
+
+#: src/disk-manager.py:295
 msgid "Mount Point"
 msgstr "Mount-Punkt"
 
-#: src/disk-manager.py:251
+#: src/disk-manager.py:296
 msgid "File System Type"
 msgstr "Dateisystem-Format"
 
-#: src/disk-manager.py:310
+#: src/disk-manager.py:357
 msgid "Disk Manager is already running!"
 msgstr "Festplatten-Manager wird bereits ausgeführt!"
 
-#: src/diskform.py:92
-#: src/diskform.py:139
+#: src/diskform.py:92 src/diskform.py:139
 msgid "Disks"
 msgstr "Festplatten"
 
-#: src/diskform.py:93
-#: src/diskform.py:140
+#: src/diskform.py:93 src/diskform.py:140
 msgid "Partitions"
 msgstr "Partitionen"
 
@@ -82,5 +86,6 @@ msgstr "System-Partitionen Anzeigen"
 
 #: src/diskform.py:141
 msgid "To update disk changes the manager must run as root"
-msgstr "Um die Laufwerk-Änderungen zu aktualisieren, muss dieser Manager als root ausgeführt werden"
-
+msgstr ""
+"Um die Laufwerk-Änderungen zu aktualisieren, muss dieser Manager als root "
+"ausgeführt werden"

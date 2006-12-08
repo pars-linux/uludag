@@ -33,7 +33,7 @@ import comar
 # FSTAB
 import fstab
 
-version = '1.0.1'
+version = '1.1'
 
 def AboutData():
     about_data = KAboutData('disk-manager',
@@ -58,6 +58,20 @@ def asText(anarray):
     for i in anarray:
         xx+=i+','
     return xx.rstrip(',')
+
+def runQuiet(cmd):
+    f = file('/dev/null', 'w')
+    return subprocess.call(cmd, stdout=f, stderr=f)
+
+def getMounteds():
+    ret=[]
+    f = open('/proc/mounts','r')
+    try:
+        for line in f:
+            ret.append(line.split(' ')[0])
+    finally:
+        f.close()
+    return ret
 
 class DbusListener:
     def __init__(self):
@@ -90,7 +104,6 @@ class HelpDialog(QDialog):
 class diskForm(mainForm):
     def __init__(self, parent=None, name=None):
         mainForm.__init__(self, parent, name)
-
         if os.getuid()!=0:
             self.btn_update.setEnabled(False)
             self.btn_autoFind.setEnabled(False)
@@ -140,6 +153,11 @@ class diskForm(mainForm):
         self.fillDiskList()
 
     def saveSession(self,Single=False):
+        def letChange(list,field,newValue):
+            if not list[field]==newValue:
+                list['state']=2
+            list[field]=newValue
+
         if not self.sessionLocked or Single:
             try:
                 selected_=self.list_main.selectedItem()
@@ -149,9 +167,9 @@ class diskForm(mainForm):
                 # to avoid root partition changes.
                 # root partition's options can change but file_system and mount_points can not.
                 if not inlist['mount_point']=='/':
-                    inlist['mount_point']=str(self.line_mountpoint.text())
-                    inlist['file_system']=self.getFsName(self.combo_fs.currentText())
-                inlist['options']=str(self.line_opts.text())
+                    letChange(inlist,'mount_point',str(self.line_mountpoint.text()))
+                    letChange(inlist,'file_system',self.getFsName(self.combo_fs.currentText()))
+                letChange(inlist,'options',str(self.line_opts.text()))
             except:
                 pass
 
@@ -206,20 +224,22 @@ class diskForm(mainForm):
         self.Fstab.addAvailablePartitions()
         if (self.Fstab.writeContent()):
             self.showInfo(i18n("Completed"),i18n("File /etc/fstab updated !"))
+            self.doMount(dryRun=True)
             self.initialize()
-            self.doMount()
 
     def slotUpdate(self):
         self.saveSession(Single=True)
         for disk in self.blockDevices:
             for node in self.prettyList[disk]:
                 if node['list_widget'].isOn():
+                    if node['mount_point']=='' or node['options']=='':
+                        node['state']=1
                     self.Fstab.addFstabEntry(node['partition_name'],node)
                     ## print 'DEBUG: Partition %s added to /etc/fstab' % node['partition_name']
                 else:
                     # warn when trying remove root partition
                     if not node['mount_point']=='/':
-                        os.system('umount %s' % node['partition_name'])
+                        runQuiet(['umount',node['partition_name']])
                         self.Fstab.delFstabEntry(node['partition_name'])
                         ## print 'DEBUG: Partition %s deleted from /etc/fstab' % node['partition_name']
                     else:
@@ -228,17 +248,23 @@ class diskForm(mainForm):
         if (self.Fstab.writeContent()):
             self.showInfo(i18n("Completed"),i18n("File /etc/fstab updated !"))
 
+        self.doMount()
         self.Fstab.update()
         self.initialize()
-        self.doMount()
 
-    def doMount(self):
+    def doMount(self,dryRun=False):
+        jobs=['mount']
         for disk in self.blockDevices:
             for partition in self.prettyList[disk]:
-                if not partition['mount_point']=='/':
-                    for action in ['umount','mount']:
-                        if not subprocess.call('%s %s' % (action,partition['partition_name']))==0:
-                            showInfo('Error','%s for %s failure!!',QMessageBox.Warning)
+                if not partition['mount_point']=='/' and (partition['state'] or dryRun):
+                    # partition changes needs umount before mount
+                    if partition['state']==2:
+                        jobs=['umount','mount']
+                    for action in jobs:
+                        mounteds = getMounteds()
+                        if (action=='umount' and partition['partition_name'] in mounteds) or (action=='mount' and partition['partition_name'] not in mounteds):
+                            if not runQuiet([action,partition['partition_name']])==0:
+                                self.showInfo('Error',i18n('%s for %s failure !!' % (action,partition['partition_name'])),QMessageBox.Warning)
 
     def showInfo(self,title,msg,type=QMessageBox.Information):
         QMessageBox(title,msg,type,QMessageBox.Ok,0,0,self).show()
@@ -274,6 +300,8 @@ class diskForm(mainForm):
                 partitions.setPixmap(0,pixie)
 
                 activePartition['list_widget']=partitions
+                # state is default 0, for changes = 2, for new added partition = 1 
+                activePartition['state']=0
                 self.prettyList[disk].append(activePartition)
 
                 self.toggleAllPartitions()
