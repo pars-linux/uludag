@@ -9,6 +9,7 @@
   Please read the COPYING file.
 */
 
+#include <klocale.h>
 #include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kipc.h>
