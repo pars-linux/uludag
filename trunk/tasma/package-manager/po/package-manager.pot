@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-01 14:17+0200\n"
+"POT-Creation-Date: 2006-12-08 22:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Progress"
 msgstr ""
 
-#: src/ProgressDialog.py:92 src/Progress.py:80
+#: src/ProgressDialog.py:92 src/Progress.py:82
 msgid "-- / --  package"
 msgstr ""
 
-#: src/ProgressDialog.py:93 src/Progress.py:79
+#: src/ProgressDialog.py:93 src/Progress.py:81
 msgid "downloaded (total: -- )"
 msgstr ""
 
-#: src/ProgressDialog.py:94 src/Progress.py:78
+#: src/ProgressDialog.py:94 src/Progress.py:80
 msgid "--"
 msgstr ""
 
@@ -44,8 +44,8 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: src/Tray.py:42 src/package-manager.py:267 src/package-manager.py:604
-#: src/package-manager.py:757
+#: src/Tray.py:42 src/package-manager.py:275 src/package-manager.py:623
+#: src/package-manager.py:777
 msgid "All"
 msgstr ""
 
@@ -54,11 +54,11 @@ msgid "There are <b>%1</b> updates available!"
 msgstr ""
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
-#: src/package-manager.py:293
+#: src/package-manager.py:301
 msgid "Select all packages in this category"
 msgstr ""
 
-#: src/CustomEventListener.py:48 src/package-manager.py:295
+#: src/CustomEventListener.py:48 src/package-manager.py:303
 msgid "Reverse package selections"
 msgstr ""
 
@@ -178,31 +178,31 @@ msgstr ""
 msgid "downloaded ( total: %1 )"
 msgstr ""
 
-#: src/Progress.py:76
+#: src/Progress.py:78
 msgid "<b>Preparing PiSi...</b>"
 msgstr ""
 
-#: src/Progress.py:98
+#: src/Progress.py:100
 msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
-#: src/Progress.py:125 src/Progress.py:129
+#: src/Progress.py:127 src/Progress.py:131
 msgid "Now %1 <b>%2</b> package"
 msgstr ""
 
-#: src/Progress.py:139
+#: src/Progress.py:141
 msgid "installed"
 msgstr ""
 
-#: src/Progress.py:141
+#: src/Progress.py:143
 msgid "removed"
 msgstr ""
 
-#: src/Progress.py:143
+#: src/Progress.py:145
 msgid "upgraded"
 msgstr ""
 
-#: src/Progress.py:145
+#: src/Progress.py:147
 msgid "%1 / %2 package %3"
 msgstr ""
 
@@ -214,208 +214,213 @@ msgstr ""
 msgid "You do not have permission to do this operation."
 msgstr ""
 
-#: src/package-manager.py:45
+#: src/package-manager.py:46
 msgid "GUI for PiSi package manager"
 msgstr ""
 
-#: src/package-manager.py:53 src/package-manager.py:813
+#: src/package-manager.py:54 src/package-manager.py:833
 msgid "Package Manager"
 msgstr ""
 
-#: src/package-manager.py:56
+#: src/package-manager.py:57
 msgid "Developer and Current Maintainer"
 msgstr ""
 
-#: src/package-manager.py:57
+#: src/package-manager.py:58
 msgid "Original Author"
 msgstr ""
 
-#: src/package-manager.py:58
+#: src/package-manager.py:59
 msgid "CSS/JS Meister"
 msgstr ""
 
-#: src/package-manager.py:59
+#: src/package-manager.py:60
 msgid "GUI Design & Usability"
 msgstr ""
 
-#: src/package-manager.py:60
+#: src/package-manager.py:61
 msgid "Misc. Fixes"
 msgstr ""
 
-#: src/package-manager.py:61
+#: src/package-manager.py:62
 msgid "Comar/Python Help"
 msgstr ""
 
-#: src/package-manager.py:62
+#: src/package-manager.py:63
 msgid "Speedup fixes"
 msgstr ""
 
-#: src/package-manager.py:63
+#: src/package-manager.py:64
 msgid "PiSi Authors"
 msgstr ""
 
-#: src/package-manager.py:63
+#: src/package-manager.py:64
 msgid "Authors of PiSi API"
 msgstr ""
 
-#: src/package-manager.py:114
+#: src/package-manager.py:115
 msgid "Search: "
 msgstr ""
 
-#: src/package-manager.py:118
+#: src/package-manager.py:119
 msgid "Show basket"
 msgstr ""
 
-#: src/package-manager.py:123 src/package-manager.py:223
+#: src/package-manager.py:124 src/package-manager.py:231
 msgid "Install Package(s)"
 msgstr ""
 
-#: src/package-manager.py:144
+#: src/package-manager.py:145
 msgid "Components"
 msgstr ""
 
-#: src/package-manager.py:172
+#: src/package-manager.py:173
 msgid "Loading Package List..."
 msgstr ""
 
-#: src/package-manager.py:201
+#: src/package-manager.py:209
 msgid ""
 "Package repository does not have component information. Please control "
 "repository addresses and update repository. You need a network connection to "
 "update."
 msgstr ""
 
-#: src/package-manager.py:239
+#: src/package-manager.py:247
 msgid "Remove Package(s)"
 msgstr ""
 
-#: src/package-manager.py:265
+#: src/package-manager.py:273
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: src/package-manager.py:362
+#: src/package-manager.py:370
 msgid "N\\A"
 msgstr ""
 
-#: src/package-manager.py:379
+#: src/package-manager.py:387
 msgid "Description: "
 msgstr ""
 
-#: src/package-manager.py:379
+#: src/package-manager.py:387
 msgid "Version: "
 msgstr ""
 
-#: src/package-manager.py:380
+#: src/package-manager.py:388
 msgid "Package Size: "
 msgstr ""
 
-#: src/package-manager.py:380
+#: src/package-manager.py:388
 msgid "Homepage: "
 msgstr ""
 
-#: src/package-manager.py:395 src/package-manager.py:612
+#: src/package-manager.py:403 src/package-manager.py:631
 msgid "Search Results"
 msgstr ""
 
-#: src/package-manager.py:428
+#: src/package-manager.py:436
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: src/package-manager.py:431 src/package-manager.py:439
+#: src/package-manager.py:439 src/package-manager.py:447
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/package-manager.py:434
+#: src/package-manager.py:442
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr ""
 
-#: src/package-manager.py:436 src/package-manager.py:444
+#: src/package-manager.py:444 src/package-manager.py:452
 msgid "in your basket."
 msgstr ""
 
-#: src/package-manager.py:442
+#: src/package-manager.py:450
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr ""
 
-#: src/package-manager.py:473
+#: src/package-manager.py:481
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 
-#: src/package-manager.py:474 src/package-manager.py:484
+#: src/package-manager.py:482 src/package-manager.py:492
 msgid "Conflict Error"
 msgstr ""
 
-#: src/package-manager.py:480
+#: src/package-manager.py:488
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/package-manager.py:482
+#: src/package-manager.py:490
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/package-manager.py:483
+#: src/package-manager.py:491
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
 msgstr ""
 
-#: src/package-manager.py:596
-msgid "Others"
-msgstr ""
-
-#: src/package-manager.py:633 src/package-manager.py:648
+#: src/package-manager.py:505 src/package-manager.py:652
+#: src/package-manager.py:667
 msgid "<b>Installing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:635 src/package-manager.py:652
+#: src/package-manager.py:615
+msgid "Others"
+msgstr ""
+
+#: src/package-manager.py:654 src/package-manager.py:671
 msgid "<b>Upgrading Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:637 src/CommonText.py:15
+#: src/package-manager.py:656 src/CommonText.py:15
 msgid "downloading"
 msgstr ""
 
-#: src/package-manager.py:650
+#: src/package-manager.py:669
 msgid "<b>Removing Package(s)</b>"
 msgstr ""
 
-#: src/package-manager.py:687
+#: src/package-manager.py:706
 msgid "<b>Applying Repository Changes</b>"
 msgstr ""
 
-#: src/package-manager.py:690
+#: src/package-manager.py:709
 msgid "<b>Updating Repository</b>"
 msgstr ""
 
-#: src/package-manager.py:691
+#: src/package-manager.py:710
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: src/package-manager.py:857
+#: src/package-manager.py:878
 msgid "Show Installed Packages"
 msgstr ""
 
-#: src/package-manager.py:860
+#: src/package-manager.py:881
 msgid "Show New Packages"
 msgstr ""
 
-#: src/package-manager.py:862
+#: src/package-manager.py:883
 msgid "Show Upgradable Packages"
 msgstr ""
 
-#: src/package-manager.py:881
+#: src/package-manager.py:902
 msgid "Package to install"
 msgstr ""
 
-#: src/package-manager.py:881
+#: src/package-manager.py:902
 msgid "Show main window on startup"
 msgstr ""
 
-#: src/package-manager.py:884
+#: src/package-manager.py:905
 msgid "Package Manager is already running!"
+msgstr ""
+
+#: src/pm-install.py:32
+msgid "PiSi package to install"
 msgstr ""
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
