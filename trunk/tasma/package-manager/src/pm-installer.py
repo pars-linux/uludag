@@ -25,11 +25,15 @@ def I18N_NOOP(str):
 
 def main():
 
-    aboutdata = KAboutData("pm-installer","pm-installer","0.0.1", "package-manager command line dcop interface installer", \
+    aboutdata = KAboutData("pm-install","pm-install","0.0.1", "package-manager command line dcop interface installer", \
                                KAboutData.License_GPL, "Copyright (C) 2006 TUBITAK/UEKAE")
 
+    options = [
+        ("+package", I18N_NOOP("PiSi package to install")),
+        ]
+
     KCmdLineArgs.init(sys.argv, aboutdata)
-    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install"))])
+    KCmdLineArgs.addCmdLineOptions(options)
 
     if not KUniqueApplication.start():
         sys.exit(0)
@@ -37,8 +41,8 @@ def main():
     kapp = KUniqueApplication(True, True, True)
     args = KCmdLineArgs.parsedArgs()
 
-    if args.isSet("install"):
-        packageToInstall = str(KIO.NetAccess.mostLocalURL(KURL(args.getOption("install")), None).path())
+    if args.count():
+        packageToInstall = str(KIO.NetAccess.mostLocalURL(args.url(0), None).path())
 
         dcop = kapp.dcopClient()
         pmi = dcopext.DCOPApp("package-manager", dcop)
