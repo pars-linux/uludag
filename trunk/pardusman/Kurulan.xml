@@ -102,7 +102,6 @@
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmplayer</SelectedPackage>
-        <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
@@ -142,7 +141,6 @@
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
         <SelectedPackage>rpcalc</SelectedPackage>
-        <SelectedPackage>rsibreak</SelectedPackage>
         <SelectedPackage>rt2400</SelectedPackage>
         <SelectedPackage>rt2500</SelectedPackage>
         <SelectedPackage>rt2570</SelectedPackage>
@@ -453,7 +451,6 @@
         <Package>kipi-plugins</Package>
         <Package>klibc</Package>
         <Package>kmplayer</Package>
-        <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>ktorrent</Package>
@@ -698,7 +695,6 @@
         <Package>reiserfsprogs</Package>
         <Package>rp-pppoe</Package>
         <Package>rpcalc</Package>
-        <Package>rsibreak</Package>
         <Package>rt2400</Package>
         <Package>rt2500</Package>
         <Package>rt2570</Package>
