@@ -40,8 +40,8 @@ version = '1.6.2'
 def AboutData():
     global version, description
 
-    about_data = KAboutData('firewall-manager',
-                            'Firewal Manager',
+    about_data = KAboutData('firewall-config',
+                            'Firewal Configuration',
                             version,
                             description,
                             KAboutData.License_GPL,
@@ -147,18 +147,18 @@ class MainApplication(programbase):
 
         if standalone:
             QDialog.__init__(self,parent,name)
-            self.setCaption(i18n('Firewall Manager'))
+            self.setCaption(i18n('Firewall Configuration'))
         else:
             KCModule.__init__(self,parent,name)
-            KGlobal.locale().insertCatalogue('firewall_manager')
+            KGlobal.locale().insertCatalogue('firewall_config')
             # Create a configuration object.
-            self.config = KConfig('firewall_manager')
+            self.config = KConfig('firewall_config')
             self.aboutdata = AboutData()
             self.setButtons(KCModule.Help | KCModule.Apply)
 
         # The appdir needs to be explicitly otherwise we won't be able to
         # load our icons and images.
-        KGlobal.iconLoader().addAppDir('firewall_manager')
+        KGlobal.iconLoader().addAppDir('firewall_config')
 
         mainwidget = firewall.MainWindow(self)
         toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
@@ -197,8 +197,8 @@ class MainApplication(programbase):
                 self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
 
         # Icons
-        self.setIcon(loadIcon('firewall_manager', size=48))
-        mainwidget.pixmapFW.setPixmap(loadIcon('firewall_manager', size=48))
+        self.setIcon(loadIcon('firewall_config', size=48))
+        mainwidget.pixmapFW.setPixmap(loadIcon('firewall_config', size=48))
         mainwidget.pixmapIncoming.setPixmap(loadIcon('server.png', size=48))
         mainwidget.pixmapAdvanced.setPixmap(loadIcon('gear.png', size=48))
 
@@ -437,7 +437,7 @@ def main():
     sys.exit(myapp.exec_loop())
 
 # Factory function for KControl
-def create_firewall_manager(parent,name):
+def create_firewall_config(parent,name):
     global kapp
 
     kapp = KApplication.kApplication()

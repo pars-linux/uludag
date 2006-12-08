@@ -33,7 +33,7 @@ distfiles = """
 """
 
 def make_dist():
-    distdir = "firewall-manager-%s" % version
+    distdir = "firewall-config-%s" % version
     list = []
     for t in distfiles.split():
         list.extend(glob.glob(t))
@@ -48,7 +48,7 @@ def make_dist():
             if not os.path.exists(dn):
                 os.mkdir(dn)
         shutil.copy(file_, os.path.join(distdir, file_))
-    os.popen("tar -cjf %s %s" % ("firewall-manager-" + version + ".tar.bz2", distdir))
+    os.popen("tar -cjf %s %s" % ("firewall-config-" + version + ".tar.bz2", distdir))
     shutil.rmtree(distdir)
 
 if "dist" in sys.argv:
@@ -56,18 +56,18 @@ if "dist" in sys.argv:
     sys.exit(0)
 
 kdedistutils.setup(
-    name="firewall-manager",
+    name="firewall-config",
     version=version,
     author="Bahadır Kandemir",
     author_email="bahadir@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ["src/firewall.ui", "src/dialog.ui", "src/firewall-manager.py", "src/rules.py",
-                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["src/firewall_manager.png"]),
+    application_data = ["src/firewall.ui", "src/dialog.ui", "src/firewall-config.py", "src/rules.py",
+                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["src/firewall_config.png"]),
                         ("/var/lib/iptables", ["profiles/pardus"]),
                         ],
-    executable_links = [("firewall-manager", "firewall-manager.py")],
+    executable_links = [("firewall-config", "firewall-config.py")],
     i18n = ("po", ["src"]),
-    kcontrol_modules = [("src/firewall-manager.desktop", "src/firewall-manager.py")]
+    kcontrol_modules = [("src/firewall-config.desktop", "src/firewall-config.py")]
     )
