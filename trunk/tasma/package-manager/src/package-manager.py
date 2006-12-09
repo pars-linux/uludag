@@ -507,8 +507,49 @@ class MainApplicationWidget(QWidget):
             # KWin forces to raise it even though the parent is hidden, QWidget does not.
             KWin.raiseWindow(self.progressDialog.winId())
 
+
+    def confirmAction(self):
+
+        message = None
+        if self.state == install_state:
+            message = QString(i18n("<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>.")).arg(len(self.basket.packages))
+
+            if self.basket.extraPackages:
+                message += QString(i18n(" With the selected packages; <b>%1</b> extra dependencies are also going to be <b>installed</b>.")).arg(len(self.basket.extraPackages))
+                message += QString(i18n("<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>.")).arg(len(self.basket.packages) + len(self.basket.extraPackages))
+
+        elif self.state == upgrade_state:
+            message = i18n("<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>.").arg(len(self.basket.packages))
+
+            if self.basket.extraPackages:
+                message += i18n(" With the selected packages; <b>%1</b> extra dependencies are also going to be <b>upgraded</b>.").arg(len(self.basket.extraPackages))
+                message += i18n("<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>.").arg(len(self.basket.packages) + len(self.basket.extraPackages))
+
+        elif self.state == remove_state:
+            message = i18n("<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>.").arg(len(self.basket.packages))
+
+            if self.basket.extraPackages:
+                message += i18n(" Selected packages have reverse dependencies. Because the reverse dependencies of the selected packages needs those packages to work; by removing the selected packages; <b>%1</b> reverse dependencies are also going to be <b>removed</b>. Please check your basket and make sure those are the packages you want to remove. Accidentally removing some reverse dependencies may break the system stability.").arg(len(self.basket.extraPackages))
+
+                message += i18n("<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>.").arg(len(self.basket.packages) + len(self.basket.extraPackages))
+
+        message += i18n("<br>Do you want to continue?</qt>")
+
+        if KMessageBox.Yes == KMessageBox.warningYesNo(self, 
+                                                       message,
+                                                       i18n("Warning"),
+                                                       KGuiItem(i18n("Continue"), "ok"),
+                                                       KGuiItem(i18n("Cancel"), "no"),
+                                                       ):
+            return True
+
+        return False
+
     def takeAction(self):
-        
+
+        if not self.confirmAction():
+            return
+
         # remove action
         if self.state == remove_state:
             self.command.remove(self.basket.packages)
@@ -714,10 +755,10 @@ class MainApplicationWidget(QWidget):
             if self.progressDialog.totalPackages == 0:
                 self.progressDialog.totalPackages = len(data)
 
-    def showErrorMessage(self, message, error=i18n("General Error")):
+    def showErrorMessage(self, message, error=i18n("Error")):
         KMessageBox.error(self, message, error)
 
-    def showConfirmMessage(self, message, error=i18n("Confirm Message")):
+    def showConfirmMessage(self, message, error=i18n("Confirm")):
         return KMessageBox.questionYesNo(self, message, error)
 
     def finished(self, command=None):
