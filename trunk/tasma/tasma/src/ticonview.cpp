@@ -103,7 +103,8 @@ void TIconView::slotItemSelected( QIconViewItem* item )
 
       while( it != args.constEnd() )
         {
-          proc << *it;
+          if (!(*it).startsWith("%"))
+            proc << *it;
           ++it;
         }
 
