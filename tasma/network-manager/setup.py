@@ -57,6 +57,7 @@ if "dist" in sys.argv:
 
 app_data = [
     'network-manager.py',
+    'network-applet.py',
     'browser.py',
     'connection.py',
     'widgets.py',
@@ -85,7 +86,10 @@ kdedistutils.setup(
     min_qt_version = "3.3.0",
     license = "GPL",
     application_data = app_data,
-    executable_links = [('network-manager','network-manager.py')],
+    executable_links = [
+        ('network-manager', 'network-manager.py'),
+        ('network-applet', 'network-applet.py'),
+    ],
     i18n = ('po', ['.']),
     kcontrol_modules = [ ('network-manager.desktop','network-manager.py')],
-    )
+)
