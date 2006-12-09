@@ -15,6 +15,7 @@ import os
 
 # PyQt/PyKDE
 from kdecore import *
+from kdeui import *
 from kio import *
 
 import dcopext
@@ -42,6 +43,15 @@ def main():
     args = KCmdLineArgs.parsedArgs()
 
     if args.count():
+        
+        if KMessageBox.No == KMessageBox.warningYesNo(None, 
+                                                      i18n("You have selected a package to install. Do you want to continue?"),
+                                                      i18n("Install Package"),
+                                                      KGuiItem(i18n("Continue"), "ok"),
+                                                      KGuiItem(i18n("Cancel"), "no"),
+                                                      ):
+            sys.exit(0)
+
         packageToInstall = str(KIO.NetAccess.mostLocalURL(args.url(0), None).path())
 
         dcop = kapp.dcopClient()
