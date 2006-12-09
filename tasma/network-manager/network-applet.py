@@ -125,7 +125,6 @@ class Comlink:
                     state, msg = state.split(" ", 1)
                 conn.message = msg
                 conn.state = state
-                conn.update()
                 map(lambda x: x(conn), self.state_hook)
     
     def getConn(self, script, name):
@@ -256,7 +255,10 @@ class NetTray(KSystemTray):
             conn_keys.sort(reverse=True)
             for conn_key in conn_keys:
                 conn = dev.connections[conn_key]
-                menu.insertItem(ConnectionItem(conn), -1, menu.indexOf(dev_mid) + 1)
+                conn.mid = menu.insertItem(ConnectionItem(conn), -1, menu.indexOf(dev_mid) + 1)
+                if conn.state in ("up", "connecting", "inaccessible"):
+                    menu.setItemChecked(conn.mid, True)
+                menu.connectItem(conn.mid, self.slotSelect)
         return menu
     
     def mousePressEvent(self, event):
@@ -270,16 +272,6 @@ class NetTray(KSystemTray):
         else:
             KSystemTray.mousePressEvent(self, event)
     
-    def slotChange(self):
-            dev.mid = menu.insertTitle(dev.menu_name, -1, 0)
-            conn_keys = dev.connections.keys()
-            conn_keys.sort(reverse=True)
-            for conn_key in conn_keys:
-                conn = dev.connections[conn_key]
-                conn.mid = menu.insertItem(conn.menu_name, self.slotSelect, 0, -1, menu.indexOf(dev.mid) + 1)
-                if conn.state in ("up", "inaccessible"):
-                    menu.setItemChecked(conn.mid, True)
-    
     def slotSelect(self, mid):
         menu = self.contextMenu()
         conn = comlink.getConnById(mid)
@@ -287,15 +279,6 @@ class NetTray(KSystemTray):
             comlink.com.Net.Link[conn.script].setState(name=conn.name, state="down")
         else:
             comlink.com.Net.Link[conn.script].setState(name=conn.name, state="up")
-    
-    def slotState(self, conn):
-        menu = self.contextMenu()
-        mid = conn.mid
-        if conn.state in ("up", "inaccessible"):
-            menu.setItemChecked(mid, True)
-        else:
-            menu.setItemChecked(mid, False)
-        menu.changeItem(mid, conn.menu_name)
 
 
 def main():
