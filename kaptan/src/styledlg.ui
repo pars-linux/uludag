@@ -41,47 +41,90 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLayoutWidget" row="0" column="0">
+                <widget class="QComboBox" row="0" column="0">
                     <property name="name">
-                        <cstring>layout4</cstring>
+                        <cstring>styleBox</cstring>
                     </property>
-                    <vbox>
+                </widget>
+                <widget class="QCheckBox" row="1" column="0">
+                    <property name="name">
+                        <cstring>checkKickoff</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Use Kickoff style menu!</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="3" column="0">
+                    <property name="name">
+                        <cstring>styleButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Try this style!</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="2" column="0">
+                    <property name="name">
+                        <cstring>layout</cstring>
+                    </property>
+                    <hbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QComboBox">
+                        <spacer>
                             <property name="name">
-                                <cstring>styleBox</cstring>
+                                <cstring>spacerLeft</cstring>
                             </property>
-                        </widget>
-                        <widget class="QCheckBox">
-                            <property name="name">
-                                <cstring>checkKickoff</cstring>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
                             </property>
-                            <property name="text">
-                                <string>Use Kickoff style menu!</string>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
                             </property>
-                        </widget>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
                         <widget class="QLabel">
                             <property name="name">
                                 <cstring>pix_style</cstring>
                             </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>341</width>
+                                    <height>256</height>
+                                </size>
+                            </property>
                             <property name="text">
                                 <string></string>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
                             </property>
                             <property name="alignment">
                                 <set>AlignCenter</set>
                             </property>
                         </widget>
-                        <widget class="QPushButton">
+                        <spacer>
                             <property name="name">
-                                <cstring>styleButton</cstring>
+                                <cstring>spacerRight</cstring>
                             </property>
-                            <property name="text">
-                                <string>Try this style!</string>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
                             </property>
-                        </widget>
-                    </vbox>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </hbox>
                 </widget>
             </grid>
         </widget>
