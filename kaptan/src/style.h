@@ -28,6 +28,8 @@ public slots:
 
 protected slots:
     void testStyle();
+    void kickoffSelected();
+
 
 private:
     QDomDocument dom;
