@@ -146,6 +146,36 @@ class Comlink:
 comlink = Comlink()
 
 
+class Icons:
+    def _pix(self, name):
+        img = QImage(locate("data", "network-manager/" + name))
+        img = img.smoothScale(24, 24)
+        return QPixmap(img)
+    
+    def load_icons(self):
+        self.iconmap = {
+            "net-up": self._pix("ethernet-online.png"),
+            "net-connecting": self._pix("ethernet-connecting.png"),
+            "net-down": self._pix("ethernet-offline.png"),
+            "wifi-up": self._pix("wireless-online.png"),
+            "wifi-connecting": self._pix("wireless-connecting.png"),
+            "wifi-down": self._pix("wireless-offline.png"),
+            "dialup-up": self._pix("dialup-online.png"),
+            "dialup-connecting": self._pix("dialup-connecting.png"),
+            "dialup-down": self._pix("dialup-offline.png")
+        }
+    
+    def get_state(self, type, state):
+        if not type in ("net", "wifi", "dialup"):
+            type = "net"
+        if not state in ("up", "connecting", "down"):
+            state = "down"
+        return self.iconmap.get("%s-%s" % (type, state))
+
+
+icons = Icons()
+
+
 class Applet(KMainWindow):
     def __init__(self):
         KMainWindow.__init__(self)
@@ -180,11 +210,14 @@ class ConnectionItem(QCustomMenuItem):
     def __init__(self, conn):
         QCustomMenuItem.__init__(self)
         self.conn = conn
+        self.mypix = icons.get_state("net", conn.state)
+        self.text_start = self.mypix.width() + 6
     
     def paint(self, paint, cg, act, enabled, x, y, w, h):
         paint.setFont(self.my_font)
         fm = paint.fontMetrics()
-        paint.drawText(x, y + fm.ascent(), self.conn.menu_name)
+        paint.drawPixmap(x + 3, y + (h - self.mypix.height()) / 2, self.mypix)
+        paint.drawText(x + self.text_start, y + fm.ascent(), self.conn.menu_name)
     
     def sizeHint(self):
         fm = QFontMetrics(self.my_font)
@@ -193,7 +226,9 @@ class ConnectionItem(QCustomMenuItem):
         if self.conn.message:
             rect2 = fm.boundingRect(self.conn.message)
             tw = max(tw, rect2.width())
-            th += 3 + fm.height()
+        tw += self.text_start
+        th += 3 + fm.height()
+        th = max(th, self.mypix.height() + 6)
         return QSize(tw, th)
     
     def setFont(self, font):
@@ -276,6 +311,7 @@ def main():
     KCmdLineArgs.init(sys.argv, about)
     app = KApplication()
     KGlobal.locale().insertCatalogue("network-manager")
+    icons.load_icons()
     win = Applet()
     win.start()
     tray = NetTray(win)
