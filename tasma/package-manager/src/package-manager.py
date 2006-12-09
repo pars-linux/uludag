@@ -206,8 +206,8 @@ class MainApplicationWidget(QWidget):
         return True
 
     def repoNotReady(self):
-        KMessageBox.error(self, i18n("Package repository does not have component information. Please control repository addresses and update repository. You need a network connection to update."),
-                          i18n("Error"))
+        KMessageBox.error(self, i18n("Package-manager needs to update package database. You need a network connection to update."),
+                          i18n("Package database is empty"))
 
     def resetState(self):
         self.basket.empty()
@@ -714,10 +714,10 @@ class MainApplicationWidget(QWidget):
             if self.progressDialog.totalPackages == 0:
                 self.progressDialog.totalPackages = len(data)
 
-    def showErrorMessage(self, message, error=i18n("Error")):
+    def showErrorMessage(self, message, error=i18n("General Error")):
         KMessageBox.error(self, message, error)
 
-    def showConfirmMessage(self, message, error=i18n("Error")):
+    def showConfirmMessage(self, message, error=i18n("Confirm Message")):
         return KMessageBox.questionYesNo(self, message, error)
 
     def finished(self, command=None):
