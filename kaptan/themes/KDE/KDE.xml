@@ -7,6 +7,7 @@
         <Transparent value="true" />
         <SizePercentage value="80" />
         <Position value="2" />
+        <CustomSize value="48" />
     </kicker>
     <widget>
         <widgetStyle value="lipstik" />
