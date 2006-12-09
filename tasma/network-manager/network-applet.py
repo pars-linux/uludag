@@ -47,12 +47,7 @@ class Connection:
         self.net_addr = None
         self.net_gateway = None
         self.parse(data)
-        self.update()
-    
-    def update(self):
         self.menu_name = unicode(self.name)
-        if self.message:
-            self.menu_name += " (%s)" % self.message
     
     def parse(self, data):
         for line in data.split("\n"):
@@ -155,15 +150,6 @@ class Applet(KMainWindow):
     def __init__(self):
         KMainWindow.__init__(self)
         self.setCaption(i18n("Network Panel Applet Settings"))
-        
-        vb = QVBox(self)
-        vb.setMargin(12)
-        vb.setSpacing(6)
-        
-        self.r1 = QRadioButton(i18n("Single icon mode"), vb)
-        self.r2 = QRadioButton(i18n("Device icon mode"), vb)
-        
-        self.setCentralWidget(vb)
     
     def start(self):
         comlink.connect()
@@ -172,12 +158,46 @@ class Applet(KMainWindow):
     def setMenu(self, menu):
         KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, self).plug(menu)
         KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, self).plug(menu)
+        menu.insertSeparator(1)
+        menu.insertItem(i18n("Icon Per Device"), self.noGroup, 0, -1, 1)
+        mid = menu.insertItem(i18n("Single Icon"), self.deviceGroup, 0, -1, 1)
+        menu.setItemChecked(mid, True)
     
     def startManager(self):
         os.system("network-manager")
     
     def startFirewall(self):
         os.system("firewall-config")
+    
+    def noGroup(self, id):
+        print "no group"
+    
+    def deviceGroup(self, id):
+        print "device group"
+
+
+class ConnectionItem(QCustomMenuItem):
+    def __init__(self, conn):
+        QCustomMenuItem.__init__(self)
+        self.conn = conn
+    
+    def paint(self, paint, cg, act, enabled, x, y, w, h):
+        paint.setFont(self.my_font)
+        fm = paint.fontMetrics()
+        paint.drawText(x, y + fm.ascent(), self.conn.menu_name)
+    
+    def sizeHint(self):
+        fm = QFontMetrics(self.my_font)
+        rect = fm.boundingRect(self.conn.menu_name)
+        tw, th = rect.width(), fm.height()
+        if self.conn.message:
+            rect2 = fm.boundingRect(self.conn.message)
+            tw = max(tw, rect2.width())
+            th += 3 + fm.height()
+        return QSize(tw, th)
+    
+    def setFont(self, font):
+        self.my_font = QFont(font)
 
 
 class NetTray(KSystemTray):
@@ -186,22 +206,34 @@ class NetTray(KSystemTray):
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
-        comlink.change_hook.append(self.slotChange)
-        comlink.state_hook.append(self.slotState)
+        self.popup = None
     
-    def slotChange(self):
-        menu = self.contextMenu()
-        menu.clear()
-        menu.insertTitle("Network Applet")
-        self.parent().setMenu(menu)
-        menu.insertSeparator()
-        for action in self.actionCollection().actions():
-            action.plug(menu)
-        
+    def buildPopup(self):
+        menu = KPopupMenu()
         keys = comlink.devices.keys()
-        keys.sort(reverse=True)
+        keys.sort()
         for key in keys:
             dev = comlink.devices[key]
+            dev_mid = menu.insertTitle(dev.menu_name)
+            conn_keys = dev.connections.keys()
+            conn_keys.sort(reverse=True)
+            for conn_key in conn_keys:
+                conn = dev.connections[conn_key]
+                menu.insertItem(ConnectionItem(conn), -1, menu.indexOf(dev_mid) + 1)
+        return menu
+    
+    def mousePressEvent(self, event):
+        if event.button() == event.LeftButton:
+            if self.popup:
+                self.popup.close()
+                self.popup = None
+            else:
+                self.popup = self.buildPopup()
+                self.popup.popup(event.globalPos())
+        else:
+            KSystemTray.mousePressEvent(self, event)
+    
+    def slotChange(self):
             dev.mid = menu.insertTitle(dev.menu_name, -1, 0)
             conn_keys = dev.connections.keys()
             conn_keys.sort(reverse=True)
