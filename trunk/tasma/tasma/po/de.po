@@ -1,13 +1,13 @@
-# translation of yeni.po to Deutsch
+# translation of de.po to Deutsch
 # This file is put in the public domain.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: yeni\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-26 21:00+0200\n"
-"PO-Revision-Date: 2006-12-05 22:49+0200\n"
+"PO-Revision-Date: 2006-12-09 21:50+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
 "Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/tmoduleview.cpp:84
 msgid "&Administrator Mode"
-msgstr "&Verwalter Modus"
+msgstr "&Administrator Modus"
 
 #: src/tmoduleview.cpp:71
 msgid "&Back"
@@ -31,8 +31,6 @@ msgstr "&Zurücksetzen"
 msgid "(c) 2005, TUBITAK - UEKAE"
 msgstr "(c) 2005, TUBITAK - UEKAE"
 
-#: modules/tasmatv/tasmatv.cpp:42
-#, fuzzy
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
 msgstr "(c) 2005-2006, TUBITAK - UEKAE"
 
@@ -52,7 +50,7 @@ msgstr "<big>Lädt...</big>"
 
 #: src/tasmamainwin.cpp:80
 msgid "About Current Module"
-msgstr "Über das aktuelle Module"
+msgstr "Über das aktuelle Modul"
 
 #: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:36
 #, no-c-format
@@ -65,7 +63,7 @@ msgstr "Konfigurationszentrum"
 
 #: modules/tasmatv/tasmatv.cpp:44 src/main.cpp:65
 msgid "Current Maintainer"
-msgstr "Aktueller Verwalter des Programms"
+msgstr "Aktueller Leiter des Programms"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:40
 msgid "Description"
@@ -92,7 +90,7 @@ msgstr ""
 
 #: src/main.cpp:67
 msgid "KDE Developers"
-msgstr "Die KDE Entwickler"
+msgstr "Die KDE-Entwickler"
 
 #: modules/tasmatv/tvconfigui.cpp:138 modules/tasmatv/tvconfigui.cpp:146
 #: rc.cpp:9 rc.cpp:24
@@ -108,7 +106,7 @@ msgstr "Model"
 
 #: src/main.cpp:67
 msgid "Module Developers"
-msgstr "Die Moduleentwickler"
+msgstr "Die Modul-Entwickler"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:38
 msgid "Name"
@@ -123,7 +121,7 @@ msgstr "Neues Element"
 
 #: src/main.cpp:66
 msgid "Old Maintainer & Original Author"
-msgstr "Vorheriger Verwalter & ursprünglicher Autor"
+msgstr "Vorheriger Leiter & ursprünglicher Autor"
 
 #: modules/tasmatv/cards-db.cpp:99 modules/tasmatv/tuners-db.cpp:173
 msgid "Other"
@@ -136,7 +134,7 @@ msgstr "Pardus Konfigurationszentrum"
 #: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:42
 #, no-c-format
 msgid "Phase Locked Loop (PLL)"
-msgstr ""
+msgstr "Phasen endlose Schleife (PLL)"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:34
 msgid "PiSi Package Info"
@@ -155,10 +153,8 @@ msgstr "Grösse"
 msgid "TASMA - Pardus Configuration Center"
 msgstr "TASMA - Pardus Konfigurationszentrum"
 
-#: modules/tasmatv/tasmatv.cpp:39 modules/tasmatv/tasmatv.cpp:40
-#, fuzzy
 msgid "TASMA Tv Card Configuration Module"
-msgstr "TASMA TV-Karte Konfigurationsmodule"
+msgstr "TASMA TV-Karte Konfigurationsmodul"
 
 #: src/aboutview.cpp:88
 msgid ""
@@ -167,7 +163,7 @@ msgid ""
 "presented in TASMA. "
 msgstr ""
 "TASMA ist ein Konfigurationsprogramm für das Pardus Betriebssystem. Durch "
-"die Verwendung der Module in TASMA, können Sie die Systemvoreinstellungen "
+"die Verwendung des Moduls in TASMA, können Sie die Systemvoreinstellungen "
 "optimieren."
 
 #: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:18
@@ -182,7 +178,7 @@ msgstr "TV-Karte"
 
 #: modules/tasmatv/tasmatv.cpp:81
 msgid "Tv card configuration module for TASMA."
-msgstr "TV-Karte Konfigurationsmodule für TASMA"
+msgstr "TV-Karte Konfigurationsmodul für TASMA"
 
 #: modules/tasmatv/tvconfigui.cpp:136
 msgid "TvConfigUI"
@@ -198,7 +194,7 @@ msgid ""
 "Your emails"
 msgstr ""
 "_:EMAIL VON DEN ÜBERSETZERN\n"
-"oelcerman@fussballkreis.org "
+"oelcerman@fussballkreis.org\n"
 "aytekguelen@yahoo.de"
 
 #: _translatorinfo.cpp:1
