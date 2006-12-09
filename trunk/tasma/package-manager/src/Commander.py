@@ -69,12 +69,7 @@ class Commander(QObject):
         if reply.command == "notify":
             (notification, script, data) = (reply.notify, reply.script, reply.data)
             data = unicode(data)
-            if notification == "System.Manager.error":
-                self.comar.com_lock.unlock()
-                self.parent.showErrorMessage(data)
-                self.parent.resetState()
-                self.parent.refreshState()
-            elif notification == "System.Manager.notify":
+            if notification == "System.Manager.notify":
                 self.parent.pisiNotify(data)
             elif notification == "System.Manager.progress":
                 self.parent.displayProgress(data)
