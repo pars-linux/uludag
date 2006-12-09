@@ -49,6 +49,7 @@ Style::Style(QWidget *parent, const char* name)
 
     connect(styleButton, SIGNAL(clicked()), this, SLOT(testStyle()));
     connect(styleBox, SIGNAL(activated(int)), this, SLOT(styleSelected(int)));
+    connect(checkKickoff, SIGNAL(clicked()), this, SLOT(kickoffSelected()));
 
     emit(styleSelected(0));
 }
@@ -63,11 +64,21 @@ QString Style::getProperty(QDomElement parent, const QString & tag, const QStrin
         return QString::null;
 }
 
+void Style::kickoffSelected()
+{
+    styleSelected(styleBox->currentItem());
+}
+
 void Style::styleSelected(int item)
 {
+    QString previewPath;
     QString name = styleBox->text(item);
 
-    QString previewPath = KGlobal::dirs()->findResourceDir("themes", "/" ) + name + "/" + name + ".preview.png";
+    if (checkKickoff->isChecked())
+        previewPath = KGlobal::dirs()->findResourceDir("themes", "/" ) + name + "/" + name + "_kickoff.preview.png";
+    else
+        previewPath = KGlobal::dirs()->findResourceDir("themes", "/" ) + name + "/" + name + ".preview.png";
+
     QString xmlFile = KGlobal::dirs()->findResourceDir("themes", "/" ) + name + "/" + name + ".xml";
 
     if (QFile::exists( previewPath))
