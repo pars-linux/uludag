@@ -112,6 +112,7 @@ void Style::testStyle()
     kickerConf->writeEntry("LegacyKMenu", !checkKickoff->isChecked());
     kickerConf->writeEntry("Transparent", getProperty(Kicker, "Transparent", "value"));
     kickerConf->writeEntry("SizePercentage", getProperty(Kicker, "SizePercentage", "value"));
+    kickerConf->writeEntry("CustomSize", getProperty(Kicker, "CustomSize", "value"));
     kickerConf->writeEntry("Position", getProperty(Kicker, "Position", "value"));
     kickerConf->sync();
     delete kickerConf;
