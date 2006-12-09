@@ -218,6 +218,8 @@ class ConnectionItem(QCustomMenuItem):
         fm = paint.fontMetrics()
         paint.drawPixmap(x + 3, y + (h - self.mypix.height()) / 2, self.mypix)
         paint.drawText(x + self.text_start, y + fm.ascent(), self.conn.menu_name)
+        if self.conn.message:
+            paint.drawText(x + self.text_start, y + fm.height() + fm.ascent(), unicode(self.conn.message))
     
     def sizeHint(self):
         fm = QFontMetrics(self.my_font)
