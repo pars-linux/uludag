@@ -42,10 +42,9 @@
     text-align: left;
     }
 
-  h3 { font-size: 1em;
-    background-color: rgb(48, 48, 48);
+  h3 { font-size: 1.1em;
     color: rgb(27, 87, 177);
-    text-align: center;
+    border-bottom: 1px solid rgb(27, 87, 177)
     }
 
   hr { border-style: none none solid;
