@@ -1,18 +1,19 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of kio_sysinfo.po to Deutsch
 # This file is put in the public domain.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: ksysinfo\n"
+"Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-01 16:28+0300\n"
-"PO-Revision-Date: 2006-11-03 22:54+0100\n"
-"Last-Translator: \n"
-"Language-Team: german <german@li.org>\n"
+"PO-Revision-Date: 2006-12-11 00:19+0200\n"
+"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ksysinfopart.cpp:72
 msgid "KSysinfo"
@@ -37,15 +38,15 @@ msgstr "Mein Computer"
 
 #: sysinfo.cpp:102
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Ordner, Festplatte, Wechseldatenträger, Systeminformationen und mehr..."
+msgstr "Ordner, Festplatten, Wechseldatenträger, Systeminformation und mehr..."
 
 #: sysinfo.cpp:108
 msgid "Looking for disk information..."
-msgstr "Suche nach Diskettenlaufwerk..."
+msgstr "Es wird nach Diskettenlaufwerkinformationen gesucht..."
 
 #: sysinfo.cpp:109
 msgid "Disk Information"
-msgstr "Diskettenlaufwerk"
+msgstr "Diskettenlaufwerkinformation"
 
 #: sysinfo.cpp:113
 msgid "OS Information"
@@ -69,7 +70,7 @@ msgstr "KDE:"
 
 #: sysinfo.cpp:124
 msgid "Display Info"
-msgstr "Display Info"
+msgstr "Anzeige Info"
 
 #: sysinfo.cpp:126
 msgid "Vendor:"
@@ -85,7 +86,7 @@ msgstr "Treiber:"
 
 #: sysinfo.cpp:136
 msgid "Getting OS information...."
-msgstr "Erfassen BS - Informationen..."
+msgstr "BS - Informationen werden abgerufen..."
 
 #: sysinfo.cpp:139
 msgid "Common Folders"
@@ -105,7 +106,7 @@ msgstr "Netzwerkordner"
 
 #: sysinfo.cpp:149
 msgid "Looking up network status..."
-msgstr "Suche nach Netzwerkverbindungen..."
+msgstr "Netzwerkverbindungen werden gesucht..."
 
 #: sysinfo.cpp:152
 msgid "Network Status"
@@ -113,7 +114,7 @@ msgstr "Netzwerkstatus"
 
 #: sysinfo.cpp:159
 msgid "Looking for CPU information..."
-msgstr "Suche nach  CPU information..."
+msgstr "CPU information werden gesucht..."
 
 #: sysinfo.cpp:163
 msgid "CPU Information"
@@ -133,11 +134,11 @@ msgstr "%1 MHz"
 
 #: sysinfo.cpp:172
 msgid "Looking for memory information..."
-msgstr "Suche nach Speicher - Informationen"
+msgstr "Speicherinformationen werden gesucht..."
 
 #: sysinfo.cpp:174
 msgid "Memory Information"
-msgstr "Speicher Informationen"
+msgstr "Speicherinformationen"
 
 #: sysinfo.cpp:176
 msgid "Total memory (RAM):"
@@ -161,11 +162,11 @@ msgstr "Verfügbarer Swap:"
 
 #: sysinfo.cpp:184
 msgid "Looking for hardware information..."
-msgstr "Suche nach Hardware - Informationen..."
+msgstr "Hardware - Informationen werden gesucht..."
 
 #: sysinfo.cpp:186
 msgid "Hardware Information"
-msgstr "Hardware Information"
+msgstr "Hardware-Information"
 
 #: sysinfo.cpp:191
 msgid "Bios Vendor:"
@@ -189,11 +190,11 @@ msgstr "Dateisystem"
 
 #: sysinfo.cpp:289
 msgid "Total space"
-msgstr "Gesamtgrösse"
+msgstr "Gesamter Speicherplatz"
 
 #: sysinfo.cpp:289
 msgid "Available space"
-msgstr "Verfügbarer Speicher"
+msgstr "Verfügbarer Speicherplatz"
 
 #: sysinfo.cpp:295
 msgid "Press the right mouse button for more options like Mount or Eject"
@@ -205,7 +206,7 @@ msgstr "%1 (3D Unterstützung)"
 
 #: sysinfo.cpp:480
 msgid "%1 (No 3D Support)"
-msgstr "%1 (Kein 3D Unterstützung)"
+msgstr "%1 (Keine 3D Unterstützung)"
 
 #: sysinfo.cpp:491
 msgid "Network is <strong>unreachable</strong>"
@@ -229,5 +230,5 @@ msgstr "Sie sind <strong>online</strong>"
 
 #: sysinfo.cpp:501
 msgid "Unknown network status"
-msgstr "Unbekanntes Netzwerk"
+msgstr "Unbekannter Netzwerkstatus"
 
