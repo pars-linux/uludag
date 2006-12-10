@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Configure Display
 Name[tr]=Görüntüyü Yapılandır
+Name[de]=Anzeige konfigurieren
 Comment=Display Configuration Interface
 Comment[tr]=Görüntü Ayarları Arayüzü
+Comment[de]=Anzeigekonfiguration-Schnittstelle
 Icon=display
 X-KDE-ModuleType=Library
 X-KDE-Library=display-config
