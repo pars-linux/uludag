@@ -273,7 +273,7 @@ class ConnectionItem(QCustomMenuItem):
 
 class NetTray(KSystemTray):
     def __init__(self, parent):
-        KSystemTray.__init__(self, parent)
+        KSystemTray.__init__(self)
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
