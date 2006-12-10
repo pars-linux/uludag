@@ -214,10 +214,6 @@ icons = Icons()
 
 
 class Applet(KMainWindow):
-    def __init__(self):
-        KMainWindow.__init__(self)
-        self.setCaption(i18n("Network Panel Applet Settings"))
-    
     def start(self):
         comlink.connect()
         comlink.queryLinks()
