@@ -277,7 +277,6 @@ class Applet:
     def quit(self):
         autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))
         config = KConfig("network-appletrc")
-        #config = KApplication.kApplication().sessionConfig()
         config.setGroup("General")
         if autostart == KMessageBox.Yes:
             config.writeEntry("AutoStart", "true")
