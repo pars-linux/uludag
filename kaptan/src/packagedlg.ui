@@ -12,6 +12,9 @@
             <height>480</height>
         </rect>
     </property>
+    <property name="caption">
+        <string>PackageDlg</string>
+    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
@@ -99,7 +102,7 @@
                                         <string> hours</string>
                                     </property>
                                     <property name="buttonSymbols">
-                                        <enum>PlusMinus</enum>
+                                        <enum>UpDownArrows</enum>
                                     </property>
                                     <property name="maxValue">
                                         <number>168</number>
