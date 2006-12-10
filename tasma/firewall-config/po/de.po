@@ -1,14 +1,14 @@
-# translation of yeni.po to Deutsch
+# translation of de.po to Deutsch
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: yeni\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-22 16:41+0200\n"
-"PO-Revision-Date: 2006-12-05 23:12+0200\n"
+"PO-Revision-Date: 2006-12-10 23:45+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
 "Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
@@ -186,10 +186,8 @@ msgstr "Erweitert"
 msgid "New Rule"
 msgstr "Neue Richtlinie"
 
-#: src/dialog.py:106
-#, fuzzy
 msgid "Connections"
-msgstr "Eingehende Verbindungen"
+msgstr "Verbindungen"
 
 #: src/dialog.py:107
 msgid "Incoming"
