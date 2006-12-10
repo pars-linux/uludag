@@ -553,6 +553,7 @@ class MainApplicationWidget(QWidget):
         # remove action
         if self.state == remove_state:
             self.command.remove(self.basket.packages)
+            self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
             self.progressDialog.hideStatus()
 
         # install action
@@ -560,6 +561,7 @@ class MainApplicationWidget(QWidget):
             if not self.conflictCheckPass():
                 return
 
+            self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.showStatus()
             self.command.install(self.basket.packages)
 
@@ -568,6 +570,7 @@ class MainApplicationWidget(QWidget):
             if not self.conflictCheckPass():
                 return
 
+            self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
             self.progressDialog.showStatus()
             self.command.updatePackage(self.basket.packages)
 
@@ -704,13 +707,6 @@ class MainApplicationWidget(QWidget):
 
         # operation is now cancellable
         if operation in ["started"]:
-            if self.state == install_state:
-                self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
-            elif self.state == remove_state:
-                self.progressDialog.setCurrentOperation(i18n("<b>Removing Package(s)</b>"))
-            elif self.state == upgrade_state:
-                self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
-
             self.progressDialog.enableCancel()
 
         elif operation in ["removing"]:
@@ -842,6 +838,7 @@ class MainApplicationWidget(QWidget):
         self.parent.showUpgradeAction.setEnabled(False)
         self.processEvents()
         self.progressDialog.hideStatus(True)
+        self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
         self.progressDialog.show()
         self.command.startUpdate()
 
