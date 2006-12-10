@@ -329,7 +329,7 @@ def main():
         "bugs@pardus.org.tr"
     )
     KCmdLineArgs.init(sys.argv, about)
-    app = KApplication()
+    app = KUniqueApplication(True, True, True)
     KGlobal.locale().insertCatalogue("network-manager")
     icons.load_icons()
     win = Applet()
