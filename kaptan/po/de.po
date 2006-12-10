@@ -1,12 +1,12 @@
-# translation of kaptnyeni.po to Deutsch
+# translation of de.po to Deutsch
 # Copyright (C) 2006 Free Software Foundation, Inc.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: kaptnyeni\n"
+"Project-Id-Version: de\n"
 "POT-Creation-Date: 2006-11-26 14:46+0200\n"
-"PO-Revision-Date: 2006-12-05 23:45+0200\n"
+"PO-Revision-Date: 2006-12-11 00:07+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
 "Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgid ""
 "</center>"
 msgstr ""
 "<center>\n"
-"Sie sind fertig!  Jetzt können Sie mit Pardus Linux arbeiten<br>\n"
+"Sie sind mit dieser Anwendung fertig!  Jetzt können Sie mit Pardus Linux arbeiten<br>\n"
 "<a href=\"#tasma\">Wenn Sie weitere Änderungen vornehmen möchten, klicken "
 "Sie bitte hier, um auf das<b>Pardus Konfigurationszentrum</b> zu gelangen</"
 "a>\n"
@@ -55,8 +55,7 @@ msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish :)."
 msgstr ""
-"Hier können Sie ein Hintergrundbild, das auf dem Desktop angezeigt wird, "
-"auswählen.Sie können auch ein Hintergrundbild aus dem Pardus-Katalog "
+"Hier können Sie ein Hintergrundbild für Ihre Arbeitsfläche auswählen. Sie können eins von Pardus angebotenen Hintergrundbildern"
 "auswählen, wenn Sie möchten ;),"
 
 #: rc.cpp:34
@@ -98,7 +97,7 @@ msgstr ""
 "Pardus ist eine Entwicklung auf der Basis der GNU/Linux - Distribution , "
 "welche die Anforderungen des erfahrenen PC – Benutzers durch die Verwendung  "
 "der vorhandenen stabilen und neuen Ideen, Strukturen und Codes des Linux-BS "
-"erfüllen soll. Deren Ziel ist dem Benutzer ein autonomes und "
+"erfüllen soll. Dessen Ziel ist dem Benutzer ein autonomes und "
 "benutzerfreundliches Betriebssystem zur Verfügung zu stellen."
 
 #: rc.cpp:9
@@ -119,9 +118,9 @@ msgid ""
 "This application will also set some default configuration for a better "
 "desktop :)."
 msgstr ""
-"Die <b>Kaptan Desktop</b> Anwendung, wird Ihnen bei den einfachen aber "
+"Die <b>Kaptan Desktop</b> Anwendung wird Ihnen bei den einfachen, aber "
 "ausreichenden Einstellungen auf Ihren <b>Pardus</b> Desktop schnelle Hilfe "
-"leisten.Mit dieser Anwendung können Sie Ihren Desktop nach Ihren eigenen "
+"leisten. Mit dieser Anwendung können Sie Ihren Desktop nach Ihren eigenen "
 "Bedürfnissen anpassen :)."
 
 #: rc.cpp:6
@@ -129,13 +128,9 @@ msgstr ""
 msgid "Wallpaper :"
 msgstr "Hintergrundbild :"
 
-#: src/kaptan.cpp:45
-#, fuzzy
 msgid "Wallpaper Setup"
-msgstr "Hintergrundbild Einrichtung"
+msgstr "Hintergrundbildeinrichtung"
 
-#: src/kaptan.cpp:37
-#, fuzzy
 msgid "Welcome"
 msgstr "Willkommen"
 
@@ -145,7 +140,7 @@ msgid ""
 "Your emails"
 msgstr ""
 "_:EMAIL VON DEN ÜBERSETZERN\n"
-"oelcerman@fussballkreis.org "
+"oelcerman@fussballkreis.org\n"
 "aytekguelen@yahoo.de"
 
 #: _translatorinfo.cpp:1
@@ -154,6 +149,6 @@ msgid ""
 "Your names"
 msgstr ""
 "_:NAMEN VON DEN ÜBERSETZERN\n"
-"Mustafa Muhammed Ölcerman "
+"Mustafa Muhammed Ölcerman\n"
 "Aytekin Gülen"
 
