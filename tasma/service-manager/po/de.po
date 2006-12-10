@@ -1,25 +1,26 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of de.po to Deutsch
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: service manager\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-07 21:36+0200\n"
-"PO-Revision-Date: 2006-11-15 20:06+0100\n"
-"Last-Translator: Mustafa <test>\n"
-"Language-Team: German <german@li.org>\n"
+"PO-Revision-Date: 2006-12-10 21:25+0200\n"
+"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/service-manager.py:55
 #: src/service-manager.py:350
 #: src/mainform.py:97
 msgid "Service Manager"
-msgstr "Dienst Manager"
+msgstr "Dienst-Manager"
 
 #: src/service-manager.py:185
 msgid "You are not allowed to do this operation."
@@ -35,7 +36,7 @@ msgstr "COMAR Skriptausführung ist fehlgeschlagen."
 
 #: src/service-manager.py:187
 msgid "Script Error"
-msgstr "Skript Fehler"
+msgstr "Skriptfehler"
 
 #: src/service-manager.py:192
 msgid "Unable to start service."
@@ -63,20 +64,20 @@ msgstr "Start"
 #: src/service-manager.py:237
 #, python-format
 msgid "%s is running."
-msgstr "%s wird ausgeführt."
+msgstr "%s gestartet."
 
 #: src/service-manager.py:240
 #, python-format
 msgid "%s is not running."
-msgstr "%s wird nicht ausgeführt."
+msgstr "%s angehalten."
 
 #: src/service-manager.py:242
 msgid "Execute startup script"
-msgstr "Start-Skript ausführen"
+msgstr "Startskript ausführen"
 
 #: src/service-manager.py:243
 msgid "Execuete shutdown script"
-msgstr "Herunterfahr-Skript ausführen"
+msgstr "Herunterfahrskript ausführen"
 
 #: src/service-manager.py:307
 msgid ""
@@ -88,7 +89,7 @@ msgstr ""
 
 #: src/service-manager.py:345
 msgid "Service Manager is already running!"
-msgstr "Dienst Manager wird bereits ausgeführt!"
+msgstr "Dienst-Manager wird bereits ausgeführt!"
 
 #: src/mainform.py:82
 #: src/mainform.py:108
@@ -125,17 +126,4 @@ msgstr "&Liste nur die Server auf."
 #: src/mainform.py:107
 msgid "Alt+L"
 msgstr "Alt+L"
-
-#~ msgid ""
-#~ "Unable to complete operation:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Der Vorgang kann nicht abgeschlossen werden:\n"
-#~ "%s"
-#~ msgid "%s is paused."
-#~ msgstr "%s wurde angehalten."
-#~ msgid "%s is stopped."
-#~ msgstr "%s wurde gestoppt."
-#~ msgid "Pause"
-#~ msgstr "Pause"
 
