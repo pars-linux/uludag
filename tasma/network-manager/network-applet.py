@@ -260,9 +260,9 @@ class Applet:
         self.mode = 0
         tray = NetTray(self)
         tray.show()
-        tray.connect(tray, SIGNAL("quitSelected()"), self.app, SLOT("quit()"))
+        tray.connect(tray, SIGNAL("quitSelected()"), self.quit)
         self.trays = [tray]
-    
+
     def deviceGroup(self, id):
         if self.mode == 1:
             return
@@ -271,9 +271,19 @@ class Applet:
         for dev in comlink.devices.values():
             tray = NetTray(self, dev)
             tray.show()
-            tray.connect(tray, SIGNAL("quitSelected()"), self.app, SLOT("quit()"))
+            tray.connect(tray, SIGNAL("quitSelected()"), self.quit)
             self.trays.append(tray)
 
+    def quit(self):
+        autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))
+        config = KConfig("network-appletrc")
+        #config = KApplication.kApplication().sessionConfig()
+        config.setGroup("General")
+        if autostart == KMessageBox.Yes:
+            config.writeEntry("AutoStart", "true")
+        elif autostart == KMessageBox.No:
+            config.writeEntry("AutoStart", "false")
+        KApplication.kApplication().quit()
 
 class ConnectionItem(QCustomMenuItem):
     def __init__(self, conn):
