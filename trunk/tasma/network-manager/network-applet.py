@@ -303,7 +303,14 @@ class NetTray(KSystemTray):
                 self.popup = None
             else:
                 self.popup = self.buildPopup()
-                self.popup.popup(event.globalPos())
+                pt = self.mapToGlobal(QPoint(0, 0))
+                self.popup.popup(pt)
+                h = self.popup.height()
+                if h + 10 > pt.y():
+                    y = pt.y() + self.height()
+                else:
+                    y = pt.y() - h
+                self.popup.move(self.popup.x(), y)
         else:
             KSystemTray.mousePressEvent(self, event)
     
