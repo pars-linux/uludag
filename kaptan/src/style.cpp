@@ -114,6 +114,7 @@ void Style::testStyle()
     kickerConf->writeEntry("SizePercentage", getProperty(Kicker, "SizePercentage", "value"));
     kickerConf->writeEntry("CustomSize", getProperty(Kicker, "CustomSize", "value"));
     kickerConf->writeEntry("Position", getProperty(Kicker, "Position", "value"));
+    kickerConf->writeEntry("Alignment", getProperty(Kicker, "Alignment", "value"));
     kickerConf->sync();
     delete kickerConf;
 
@@ -144,7 +145,7 @@ void Style::testStyle()
 
     KIPC::sendMessageAll(KIPC::StyleChanged);
 
-/* FIXME:
+/*
     // color settings
     globalConf->setGroup("KDE");
     QDomElement Color = dom.elementsByTagName("color").item(0).toElement();
