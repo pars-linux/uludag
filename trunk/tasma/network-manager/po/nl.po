@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-05 23:48+0200\n"
+"POT-Creation-Date: 2006-12-10 14:07+0200\n"
 "PO-Revision-Date: 2006-12-07 21:37+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -175,15 +175,17 @@ msgstr "wachten COMAR..."
 
 #: comariface.py:163
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te verbinden..."
+msgstr ""
+"Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
+"verbinden..."
 
 #: comariface.py:182 comariface.py:199
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
 msgstr ""
-"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten starten "
-"met het commando 'service comar start' in de root console."
+"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
+"starten met het commando 'service comar start' in de root console."
 
 #: comariface.py:365
 msgid "new connection"
@@ -233,3 +235,24 @@ msgstr "Installeer netwerkpakketten!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Er is nog geen pakket met COMAR netwerkscripts geïnstalleerd."
 
+#: network-applet.py:223
+msgid "Firewall..."
+msgstr ""
+
+#: network-applet.py:224
+#, fuzzy
+msgid "Edit Connections..."
+msgstr "Verbinding"
+
+#: network-applet.py:226
+msgid "Icon Per Device"
+msgstr ""
+
+#: network-applet.py:227
+msgid "Single Icon"
+msgstr ""
+
+#: network-applet.py:322
+#, fuzzy
+msgid "Network Applet"
+msgstr "Netwerkinstellingen"

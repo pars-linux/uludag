@@ -7,98 +7,159 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-01 13:23+0200\n"
+"POT-Creation-Date: 2006-12-10 14:07+0200\n"
 "PO-Revision-Date: 2006-12-05 23:29+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
+"translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: connection.py:33 browser.py:41
+#: browser.py:49
 msgid "Name:"
 msgstr "Name:"
 
-#: connection.py:41
-msgid "Device:"
-msgstr "Gerät:"
-
-#: connection.py:61
-msgid "Scan"
-msgstr "Scannen"
-
-#: connection.py:72
+#: browser.py:56 connection.py:76
 msgid "Authentication"
 msgstr "Authentifikation"
 
-#: connection.py:76
+#: browser.py:59 connection.py:214
+msgid "Address:"
+msgstr "Adresse:"
+
+#: browser.py:62 connection.py:250
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: browser.py:90
+#, fuzzy
+msgid "Turn on/off connection"
+msgstr "Neue Verbindung"
+
+#: browser.py:103
+#, fuzzy
+msgid "Configure connection"
+msgstr "Netzwerkverbindungen konfigurieren"
+
+#: browser.py:106
+#, fuzzy
+msgid "Delete connection"
+msgstr "Verbindung löschen?"
+
+#: browser.py:124
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"Soll ich die \n"
+"'%s'\n"
+"Verbindung löschen?"
+
+#: browser.py:125
+msgid "Delete connection?"
+msgstr "Verbindung löschen?"
+
+#: browser.py:379
+#, fuzzy
+msgid "New connection"
+msgstr "Neue Verbindung"
+
+#: browser.py:384 nameconf.py:27
+#, fuzzy
+msgid "Name Service Settings"
+msgstr "Netzwerk Einstellungen"
+
+#: browser.py:418
+#, fuzzy
+msgid "Network Connections Help"
+msgstr "Netzwerkverbindungen"
+
+#: connection.py:34
+#, fuzzy
+msgid "Connection name:"
+msgstr "Hostname:"
+
+#: connection.py:41
+#, fuzzy
+msgid "Connection"
+msgstr "Neue Verbindung"
+
+#: connection.py:47
+msgid "Device:"
+msgstr "Gerät:"
+
+#: connection.py:52
+#, fuzzy
+msgid "Select"
+msgstr "Kein Gerät"
+
+#: connection.py:66
+msgid "Scan"
+msgstr "Scannen"
+
+#: connection.py:82
 msgid "Mode:"
 msgstr "Art:"
 
-#: connection.py:87
+#: connection.py:90
 msgid "No authentication"
 msgstr "Keine Authentifikation"
 
-#: connection.py:102 connection.py:113
+#: connection.py:108 connection.py:119
 msgid "Password:"
 msgstr "Passwort:"
 
-#: connection.py:110
+#: connection.py:116
 #, fuzzy
 msgid "User name:"
 msgstr "Hostname:"
 
-#: connection.py:140
+#: connection.py:146
 msgid "Scan results:"
 msgstr "Suchergebnisse:"
 
-#: connection.py:148
+#: connection.py:154
 msgid "Scan again"
 msgstr "Erneut suchen"
 
-#: connection.py:150
+#: connection.py:156
 msgid "Use"
 msgstr "Verwenden"
 
-#: connection.py:189
+#: connection.py:195
 #, fuzzy
 msgid "Network settings"
 msgstr "Netzwerk Einstellungen"
 
-#: connection.py:195
+#: connection.py:205
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: connection.py:200
+#: connection.py:210
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:209 browser.py:46
-msgid "Address:"
-msgstr "Adresse:"
-
-#: connection.py:215 connection.py:230 connection.py:246
+#: connection.py:220 connection.py:237 connection.py:252
 msgid "Custom"
 msgstr "Individual"
 
-#: connection.py:219
+#: connection.py:225
 msgid "Net mask:"
 msgstr "Netzmaske:"
 
-#: connection.py:225
+#: connection.py:232
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:234 nameconf.py:42
+#: connection.py:241 nameconf.py:42
 msgid "Name servers"
 msgstr "Name-Server"
 
-#: connection.py:244
-msgid "From query"
-msgstr "Von Anfrage"
-
-#: connection.py:437
+#: connection.py:442
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
@@ -112,14 +173,23 @@ msgstr "Netzwerk Einstellungen"
 msgid "Network manager module is already started!"
 msgstr "Netzwerk KGA wird bereits ausgeführt!"
 
-#: comariface.py:319
+#: comariface.py:162
+msgid "Waiting COMAR..."
+msgstr ""
+
+#: comariface.py:163
+msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: comariface.py:182 comariface.py:199
+msgid ""
+"Cannot connect to the COMAR! If it is not running you should start it with "
+"the 'service comar start' command in a root console."
+msgstr ""
+
+#: comariface.py:365
 msgid "new connection"
 msgstr "Neue Verbindung"
-
-#: nameconf.py:27 browser.py:364
-#, fuzzy
-msgid "Name Service Settings"
-msgstr "Netzwerk Einstellungen"
 
 #: nameconf.py:35
 msgid "Computer"
@@ -136,50 +206,6 @@ msgstr "Name-Server hinzufügen"
 #: nameconf.py:88
 msgid "Name server:"
 msgstr "Name-Server:"
-
-#: browser.py:49 browser.py:137
-msgid "Automatic"
-msgstr "Automatisch"
-
-#: browser.py:79
-#, fuzzy
-msgid "Turn on/off connection"
-msgstr "Neue Verbindung"
-
-#: browser.py:92
-#, fuzzy
-msgid "Configure connection"
-msgstr "Netzwerkverbindungen konfigurieren"
-
-#: browser.py:95
-#, fuzzy
-msgid "Delete connection"
-msgstr "Verbindung löschen?"
-
-#: browser.py:113
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"Soll ich die \n"
-"'%s'\n"
-"Verbindung löschen?"
-
-#: browser.py:114
-msgid "Delete connection?"
-msgstr "Verbindung löschen?"
-
-#: browser.py:360
-#, fuzzy
-msgid "New connection"
-msgstr "Neue Verbindung"
-
-#: browser.py:396
-#, fuzzy
-msgid "Network Connections Help"
-msgstr "Netzwerkverbindungen"
 
 #: newconn.py:26
 #, fuzzy
@@ -199,11 +225,36 @@ msgstr "Erstellen"
 msgid "No suitable device found"
 msgstr "Kein geeignetes Gerät gefunden"
 
-#: newconn.py:111
+#: newconn.py:109
 msgid "Install network packages!"
 msgstr "Netzwerk-Pakete installieren!"
 
-#: newconn.py:112
+#: newconn.py:110
 msgid "No package with COMAR network scripts are installed yet."
-msgstr "Es ist noch kein Paket installiert um das Netzwerk über COMAR zu bilden."
+msgstr ""
+"Es ist noch kein Paket installiert um das Netzwerk über COMAR zu bilden."
 
+#: network-applet.py:223
+msgid "Firewall..."
+msgstr ""
+
+#: network-applet.py:224
+#, fuzzy
+msgid "Edit Connections..."
+msgstr "Verbindung löschen?"
+
+#: network-applet.py:226
+msgid "Icon Per Device"
+msgstr ""
+
+#: network-applet.py:227
+msgid "Single Icon"
+msgstr ""
+
+#: network-applet.py:322
+#, fuzzy
+msgid "Network Applet"
+msgstr "Netzwerk Einstellungen"
+
+#~ msgid "From query"
+#~ msgstr "Von Anfrage"
