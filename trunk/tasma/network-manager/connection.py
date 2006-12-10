@@ -215,7 +215,8 @@ class Settings(QWidget):
         grid.addWidget(lab, row, 1, Qt.AlignRight)
         self.address = QLineEdit(self)
         self.address.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.address))
-        self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
+        if not self.conn:
+            self.connect(self.address, SIGNAL("textChanged(const QString &)"), self.slotAddr)
         grid.addWidget(self.address, row, 2)
         self.auto_addr = QCheckBox(i18n("Custom"), self)
         self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotFields)
