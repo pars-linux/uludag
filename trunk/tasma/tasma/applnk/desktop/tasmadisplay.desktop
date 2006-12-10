@@ -13,10 +13,12 @@ Name=Display
 Name[tr]=Görüntü
 Name[nl]=Beeldscherm
 Name[es]=Monitor
+Name[de]=Anzeige
 
 Comment=Display Settings
 Comment[tr]=Görüntü Ayarları
 Comment[nl]=Beeldscherminstellingen
 Comment[es]=Configuración de Pantalla
+Comment[de]=Anzeigeeinstellungen
 
 Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals
