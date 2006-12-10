@@ -33,6 +33,8 @@ def main():
         ("+package", I18N_NOOP("PiSi package to install")),
         ]
 
+    KLocale.setMainCatalogue("package-manager")
+
     KCmdLineArgs.init(sys.argv, aboutdata)
     KCmdLineArgs.addCmdLineOptions(options)
 
