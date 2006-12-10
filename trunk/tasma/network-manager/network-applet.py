@@ -213,19 +213,33 @@ class Icons:
 icons = Icons()
 
 
-class Applet(KMainWindow):
+class Applet:
+    def __init__(self, app):
+        self.trays = []
+        self.mode = 0
+        self.app = app
+    
     def start(self):
         comlink.connect()
         comlink.queryLinks()
         comlink.queryConnections()
+        if self.mode == 0:
+            self.mode = -1
+            self.noGroup(0)
+        else:
+            self.mode = -1
+            self.deviceGroup(0)
     
     def setMenu(self, menu):
-        KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, self).plug(menu)
-        KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, self).plug(menu)
+        KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, menu).plug(menu)
+        KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, menu).plug(menu)
         menu.insertSeparator(1)
-        menu.insertItem(i18n("Icon Per Device"), self.noGroup, 0, -1, 1)
-        mid = menu.insertItem(i18n("Single Icon"), self.deviceGroup, 0, -1, 1)
-        menu.setItemChecked(mid, True)
+        device_mid = menu.insertItem(i18n("Icon Per Device"), self.deviceGroup, 0, -1, 1)
+        single_mid = menu.insertItem(i18n("Single Icon"), self.noGroup, 0, -1, 1)
+        if self.mode == 0:
+            menu.setItemChecked(single_mid, True)
+        else:
+            menu.setItemChecked(device_mid, True)
     
     def startManager(self):
         os.system("network-manager")
@@ -233,11 +247,32 @@ class Applet(KMainWindow):
     def startFirewall(self):
         os.system("firewall-config")
     
+    def reset(self):
+        if len(self.trays) > 0:
+            for item in self.trays:
+                item.hide()
+            tray = []
+    
     def noGroup(self, id):
-        print "no group"
+        if self.mode == 0:
+            return
+        self.reset()
+        self.mode = 0
+        tray = NetTray(self)
+        tray.show()
+        tray.connect(tray, SIGNAL("quitSelected()"), self.app, SLOT("quit()"))
+        self.trays = [tray]
     
     def deviceGroup(self, id):
-        print "device group"
+        if self.mode == 1:
+            return
+        self.reset()
+        self.mode = 1
+        for dev in comlink.devices.values():
+            tray = NetTray(self, dev)
+            tray.show()
+            tray.connect(tray, SIGNAL("quitSelected()"), self.app, SLOT("quit()"))
+            self.trays.append(tray)
 
 
 class ConnectionItem(QCustomMenuItem):
@@ -272,28 +307,37 @@ class ConnectionItem(QCustomMenuItem):
 
 
 class NetTray(KSystemTray):
-    def __init__(self, parent):
+    def __init__(self, parent, dev=None):
         KSystemTray.__init__(self)
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
         self.popup = None
+        self.dev = dev
+    
+    def appendConns(self, menu, dev, idx):
+        conn_keys = dev.connections.keys()
+        conn_keys.sort(reverse=True)
+        for conn_key in conn_keys:
+            conn = dev.connections[conn_key]
+            conn.mid = menu.insertItem(ConnectionItem(conn), -1, idx)
+            if conn.state in ("up", "connecting", "inaccessible"):
+                menu.setItemChecked(conn.mid, True)
+            menu.connectItem(conn.mid, self.slotSelect)
     
     def buildPopup(self):
         menu = KPopupMenu()
+        if self.dev:
+            dev = self.dev
+            dev_mid = menu.insertTitle(dev.menu_name)
+            self.appendConns(menu, dev, menu.indexOf(dev_mid) + 1)
+            return menu
         keys = comlink.devices.keys()
         keys.sort()
         for key in keys:
             dev = comlink.devices[key]
             dev_mid = menu.insertTitle(dev.menu_name)
-            conn_keys = dev.connections.keys()
-            conn_keys.sort(reverse=True)
-            for conn_key in conn_keys:
-                conn = dev.connections[conn_key]
-                conn.mid = menu.insertItem(ConnectionItem(conn), -1, menu.indexOf(dev_mid) + 1)
-                if conn.state in ("up", "connecting", "inaccessible"):
-                    menu.setItemChecked(conn.mid, True)
-                menu.connectItem(conn.mid, self.slotSelect)
+            self.appendConns(menu, dev, menu.indexOf(dev_mid) + 1)
         return menu
     
     def mousePressEvent(self, event):
@@ -340,12 +384,8 @@ def main():
     KUniqueApplication.addCmdLineOptions()
     app = KUniqueApplication(True, True, True)
     icons.load_icons()
-    win = Applet()
-    win.start()
-    tray = NetTray(win)
-    tray.show()
-    tray.connect(tray, SIGNAL("quitSelected()"), app, SLOT("quit()"))
-    win.tray = tray
+    applet = Applet(app)
+    applet.start()
     app.exec_loop()
 
 if __name__ == "__main__":
