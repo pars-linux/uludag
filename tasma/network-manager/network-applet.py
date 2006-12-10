@@ -344,6 +344,7 @@ def main():
     win.start()
     tray = NetTray(win)
     tray.show()
+    tray.connect(tray, SIGNAL("quitSelected()"), app, SLOT("quit()"))
     win.tray = tray
     app.exec_loop()
 
