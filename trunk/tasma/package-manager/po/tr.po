@@ -126,7 +126,7 @@ msgstr "Kurulmak üzere seçilmiş paket(ler):"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr "Seçili paketlerin ayrıca kurulacak olan ekstra bağımlılıkları:"
+msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
 
 #: src/BasketDialog.py:69
 msgid "Selected package(s) for upgrade:"
@@ -136,7 +136,7 @@ msgstr "Güncellenmek üzere seçilmiş paket(ler):"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr "Seçili paketlerin ayrıca güncellenecek olan ekstra bağımlılıkları:"
+msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
 
 #: src/BasketDialog.py:78
 msgid "Total Size:"
@@ -431,9 +431,9 @@ msgid ""
 msgstr ""
 " Seçili paketlerin ters bağımlılıkları var. Ters bağımlılıklar, çalışabilmek "
 "için bu paketlere ihtiyaç duyduğundan; seçili paketler ile birlikte ayrıca "
-"<b>%1</b> ters bağımlılık da <b>kaldırılacak</b>. Lütfen sepetinizi kontrol "
+"<b>%1</b> ters bağımlılıklar da <b>kaldırılacak</b>. Lütfen sepetinizi kontrol "
 "edin ve kaldırmak istediğiniz paketlerin bu paketler olduğuna emin olun. "
-"Ters bağımlılık olarak bazı paketlerin kaldırılması sistem kararlılığını "
+"Ters bağımlı olan bazı paketlerin kaldırılması sistem kararlılığını "
 "bozabilir."
 
 #: src/package-manager.py:534
