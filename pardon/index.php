@@ -37,7 +37,6 @@
                 if (isset($_POST["username"])&&isset($_POST["realname"])&&isset($_POST["password"])&&isset($_POST["email"])) {
                     if (make_user("x",$_POST["realname"],$_POST["web"],$_POST["email"],$_POST["password"],$_POST["username"])) {
                         $id=mysql_insert_id();
-                        echo $id;
                         if (send_activation_mail($id,$_POST["username"])) ssv("message",REGISTER_OK); else ssv("message",SENDMAIL_ERROR);
                     }
                     else ssv("message",CONFLICT_ERROR);
