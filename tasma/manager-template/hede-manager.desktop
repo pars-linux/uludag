@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Hede Manager
 Name[tr]=Hede Yöneticisi
+Name[de]=Hede Manager
 GenericName=Sample Tasma Module
 GenericName[tr]=Örnek Tasma Modülü
+GenericName[de]=Muster Tasma-Modul
 X-KDE-ModuleType=Library
 X-KDE-Library=hede-manager
 X-KDE-FactoryName=hede_manager
