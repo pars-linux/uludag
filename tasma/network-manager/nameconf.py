@@ -11,6 +11,7 @@
 
 from qt import *
 from kdecore import *
+from kdeui import *
 import widgets
 
 from icons import getIconSet
@@ -85,7 +86,14 @@ class Window(QMainWindow):
         self.hide()
     
     def slotAdd(self):
-        tmp = QInputDialog.getText(i18n("Add Name Server"), i18n("Name server:"), QLineEdit.Normal, "", self)
+        tmp = KInputDialog.getText(
+            i18n("Add Name Server"),
+            i18n("Name server:"),
+            "",
+            self,
+            "lala",
+            QRegExpValidator(QRegExp("[0123456789.:]*"), self)
+        )
         if tmp[1]:
             self.dns.insertItem(tmp[0])
     
