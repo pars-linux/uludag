@@ -316,6 +316,12 @@ class NetTray(KSystemTray):
         self.dev = dev
         if dev:
             QToolTip.add(self, dev.devname)
+            state = "down"
+            for conn in dev.connections.values():
+                script = conn.script
+                if conn.state == "up":
+                    state = "up"
+            self.setPixmap(icons.get_state(script, state))
     
     def appendConns(self, menu, dev, idx):
         conn_keys = dev.connections.keys()
