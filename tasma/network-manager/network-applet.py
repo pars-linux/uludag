@@ -73,22 +73,55 @@ class Connection:
                     self.state = value
 
 
+class Link:
+    def __init__(self, script, data):
+        self.script = script
+        self.remote_name = None
+        for line in data.split("\n"):
+            key, value = line.split("=", 1)
+            if key == "type":
+                self.type = value
+            elif key == "name":
+                self.name = value
+            elif key == "modes":
+                self.modes = value.split(",")
+            elif key == "remote_name":
+                self.remote_name = value
+
+
 class Comlink:
     def __init__(self):
         self.change_hook = []
         self.state_hook = []
         self.devices = {}
+        self.links = {}
     
     def connect(self):
         self.com = comar.Link()
         self.com.localize()
-        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
-        self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
     
     def queryConnections(self):
+        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
+        self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
         self.com.ask_notify("Net.Link.stateChanged")
         self.com.ask_notify("Net.Link.connectionChanged")
         self.com.Net.Link.connections(id=CONNLIST)
+    
+    def queryLinks(self):
+        self.com.Net.Link.linkInfo()
+        multiple = False
+        while True:
+            reply = self.com.read_cmd()
+            if reply.command == "start":
+                multiple = True
+            if not multiple or reply.command == "end":
+                break
+            if reply.command == "result":
+                try:
+                    self.links[reply.script] = Link(reply.script, reply.data)
+                except ValueError:
+                    # background compat hack
+                    pass
     
     def slotComar(self, sock):
         reply = self.com.read_cmd()
@@ -164,7 +197,12 @@ class Icons:
             "dialup-down": self._pix("dialup-offline.png")
         }
     
-    def get_state(self, type, state):
+    def get_state(self, script, state):
+        link = comlink.links.get(script, None)
+        if link:
+            type = link.type
+        else:
+            type = "net"
         if not type in ("net", "wifi", "dialup"):
             type = "net"
         if not state in ("up", "connecting", "down"):
@@ -182,6 +220,7 @@ class Applet(KMainWindow):
     
     def start(self):
         comlink.connect()
+        comlink.queryLinks()
         comlink.queryConnections()
     
     def setMenu(self, menu):
@@ -209,7 +248,7 @@ class ConnectionItem(QCustomMenuItem):
     def __init__(self, conn):
         QCustomMenuItem.__init__(self)
         self.conn = conn
-        self.mypix = icons.get_state("net", conn.state)
+        self.mypix = icons.get_state(conn.script, conn.state)
         self.text_start = self.mypix.width() + 6
     
     def paint(self, paint, cg, act, enabled, x, y, w, h):
