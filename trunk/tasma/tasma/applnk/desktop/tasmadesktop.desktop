@@ -14,15 +14,18 @@ Name=Multiple Desktops
 Name[tr]=Çoklu Masaüstü
 Name[nl]=Virtuele bureaubladen
 Name[es]=Escritorios múltiples
+Name[de]=Mehrere Arbeitsflächen
 
 Comment=You can configure how many virtual desktops there are.
 Comment[tr]=Kaç görsel masaüstüne sahip olacağınızı buradan yapılandırabilirsiniz.
 Comment[nl]=U kunt hier bepalen hoeveel virtuele bureaubladen u wilt gebruiken.
 Comment[es]=Puede configurar la cantidad de escritorios virtuales.
+Comments[de]=Sie können die Anzahl der virtuellen Arbetsflächen festlegen.
 
 Keywords=desktop,desktops,number,virtual desktop
 Keywords[tr]=masaüstü,isim,masaüstü sayısı,sanal masaüstü
 Keywords[nl]=desktop,bureaublad,bureaubladen,naam van bureaublad,nummer,bureaubladtelling,virtuele bureaubladen
 Keywords[es]=escritorio,escritorios,número,escritorio virtual
+Keywords[de]=Arbeitsfläche,Arbeitsflächen,Anzahl,virtuelle Arbeitsfläche
 
 Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop
