@@ -222,19 +222,17 @@ msgid "Firewall..."
 msgstr "Güvenlik Duvarı..."
 
 #: network-applet.py:224
-#, fuzzy
 msgid "Edit Connections..."
-msgstr "Bağlantı"
+msgstr "Bağlantıları Düzenle..."
 
 #: network-applet.py:226
 msgid "Icon Per Device"
-msgstr ""
+msgstr "Her Aygıtın Kendi İkonu"
 
 #: network-applet.py:227
 msgid "Single Icon"
-msgstr ""
+msgstr "Tek İkon"
 
 #: network-applet.py:322
-#, fuzzy
 msgid "Network Applet"
-msgstr "Ağ ayarları"
+msgstr "Ağ Programcığı"
