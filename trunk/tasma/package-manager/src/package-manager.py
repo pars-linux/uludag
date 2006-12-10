@@ -612,11 +612,8 @@ class MainApplicationWidget(QWidget):
         self.listView.clear()
         self.componentDict.clear()
 
-        # Component packages will include the recursive component's packages also. So do NOT add sub components here!
-        componentNames = ["desktop.kde","desktop.gnome","desktop.freedesktop","applications.network",
-                          "applications.multimedia", "applications.games","applications.hardware",
-                          "system.base","system.devel","kernel","applications.science",
-                          "programming", "system.locale", "server", "desktop.kde.i18n"]
+        cdb = pisi.context.componentdb
+        componentNames = [cname for cname in cdb.list_components() if cdb.get_component(cname).visibleTo == 'user']
 
         showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
 
