@@ -314,6 +314,8 @@ class NetTray(KSystemTray):
         parent.setMenu(menu)
         self.popup = None
         self.dev = dev
+        if dev:
+            QToolTip.add(self, dev.devname)
     
     def appendConns(self, menu, dev, idx):
         conn_keys = dev.connections.keys()
