@@ -317,6 +317,7 @@ class NetTray(KSystemTray):
 
 
 def main():
+    KLocale.setMainCatalogue("network-manager")
     about = KAboutData(
         "network-applet",
         I18N_NOOP("Network Applet"),
@@ -331,7 +332,6 @@ def main():
     KCmdLineArgs.init(sys.argv, about)
     KUniqueApplication.addCmdLineOptions()
     app = KUniqueApplication(True, True, True)
-    KGlobal.locale().insertCatalogue("network-manager")
     icons.load_icons()
     win = Applet()
     win.start()
