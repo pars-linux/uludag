@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-05 23:48+0200\n"
+"POT-Creation-Date: 2006-12-10 14:07+0200\n"
 "PO-Revision-Date: 2006-11-26 17:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -218,6 +218,28 @@ msgstr "Instalar paquetes de red!"
 #: newconn.py:110
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "No se instalaron todavía paquetes con los script de red COMAR"
+
+#: network-applet.py:223
+msgid "Firewall..."
+msgstr ""
+
+#: network-applet.py:224
+#, fuzzy
+msgid "Edit Connections..."
+msgstr "Conexión nueva"
+
+#: network-applet.py:226
+msgid "Icon Per Device"
+msgstr ""
+
+#: network-applet.py:227
+msgid "Single Icon"
+msgstr ""
+
+#: network-applet.py:322
+#, fuzzy
+msgid "Network Applet"
+msgstr "Propiedades de Red"
 
 #~ msgid "From query"
 #~ msgstr "From query"
