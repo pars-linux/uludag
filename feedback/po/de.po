@@ -1,26 +1,27 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of de.po to Deutsch
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: feedback\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-17 10:48+0200\n"
-"PO-Revision-Date: 2006-10-31 22:22+0100\n"
-"Last-Translator: Mustafa <test>\n"
-"Language-Team: German <german@li.org>\n"
+"PO-Revision-Date: 2006-12-11 22:56+0200\n"
+"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/experiencedlg.py:142 src/feedback.py:69 src/goodbyedlg.py:232
 #: src/hardwareinfodlg.py:238 src/opiniondlg.py:58 src/personalinfodlg.py:244
 #: src/questiondlg.py:253 src/upload.py:245 src/usagedlg.py:69
 #: src/welcomedlg.py:230
 msgid "Feedback Wizard"
-msgstr "Feedback Assistent"
+msgstr "Feedback-Assistent"
 
 #: src/usagedlg.py:71
 msgid "At home"
@@ -267,10 +268,8 @@ msgid "<font color=\"#ff0000\">Failed</font><br>\n"
 msgstr "<font color=\"#ff0000\">Fehlgeschlagen</font><br>\n"
 
 #: src/feedback.py:244
-msgid ""
-"<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
-msgstr ""
-"<font color=\"#ff0000\">Keine Verbindung zur Feedbakc Datenbank.</font><br>\n"
+msgid "<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Keine Verbindung zur Feedbakc Datenbank.</font><br>\n"
 
 #: src/feedback.py:257
 msgid ""
@@ -298,18 +297,15 @@ msgstr ""
 
 #: src/feedback.py:263
 msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
-msgstr ""
-"<font color=\"#ff0000\">Die Feedback Datenbank ist offline.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Die Feedback Datenbank ist offline.</font><br>\n"
 
 #: src/feedback.py:265
 msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
-msgstr ""
-"<font color=\"#ff0000\">Sie haben bereits Ihr Feedback gesendet.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Sie haben bereits Ihr Feedback gesendet.</font><br>\n"
 
 #: src/feedback.py:267
 msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
-msgstr ""
-"<font color=\"#ff0000\">Die Feedback Datenbank ist fehlerhaft.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Die Feedback Datenbank ist fehlerhaft.</font><br>\n"
 
 #: src/feedback.py:286
 msgid "Feedback tool is already running!"
@@ -345,8 +341,3 @@ msgstr "Nehmen Sie mich in die Pardus-Verteilerliste auf"
 msgid "<b>Step 6 of 7</b>"
 msgstr "<b>Step 6 von 7</b>"
 
-#~ msgid "Alt+D"
-#~ msgstr "Alt+D"
-
-#~ msgid "Feedback"
-#~ msgstr "Feedback"
