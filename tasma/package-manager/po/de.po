@@ -8,10 +8,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-11 14:57+0200\n"
-"PO-Revision-Date: 2006-12-10 22:03+0200\n"
+"PO-Revision-Date: 2006-12-11 20:49+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
-"translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -111,8 +110,7 @@ msgstr "Zum Entfernen ausgewählte(s) Paket(e):"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
 
 #: src/BasketDialog.py:66
 msgid "Selected package(s) for install:"
@@ -122,8 +120,7 @@ msgstr "Ausgewählte(s) Paket(e) für die Installation:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
 #: src/BasketDialog.py:69
 msgid "Selected package(s) for upgrade:"
@@ -183,8 +180,7 @@ msgstr "<b>Depotänderungen werden vorgenommen</b>"
 
 #: src/Preferences.py:204
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+msgstr "Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
 #: src/Progress.py:51
 msgid "downloaded ( total: %1 )"
@@ -339,8 +335,7 @@ msgid "Currently your basket is empty."
 msgstr "Momentan ist Ihre Zwischenablage leer."
 
 #: src/package-manager.py:440 src/package-manager.py:448
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momentan enthält Ihre Zwischenablage <b>%1</b> Paket(e) mit einer  "
 "Gesamtgrösse von <b>%2</b>"
@@ -404,8 +399,7 @@ msgstr ""
 
 #: src/package-manager.py:520
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr ""
-"Sie haben insgesamt<b>%1</b> Pakete zum <b>installieren</b> ausgewählt. "
+msgstr "Sie haben insgesamt<b>%1</b> Pakete zum <b>installieren</b> ausgewählt. "
 
 #: src/package-manager.py:523
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
@@ -421,8 +415,7 @@ msgstr ""
 
 #: src/package-manager.py:527
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr ""
-"<br><br>Für insgesamt <b>%1</b> Pakete wird ein <b>Upgrade</b> durchgeführt."
+msgstr "<br><br>Für insgesamt <b>%1</b> Pakete wird ein <b>Upgrade</b> durchgeführt."
 
 #: src/package-manager.py:530
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -511,8 +504,7 @@ msgstr "Zu installierendes PiSi-Paket"
 
 #: src/pm-install.py:50
 msgid "You have selected a package to install. Do you want to continue?"
-msgstr ""
-"Sie haben ein Paket zum installieren ausgewählt. Wollen Sie fortfahren?"
+msgstr "Sie haben ein Paket zum installieren ausgewählt. Wollen Sie fortfahren?"
 
 #: src/pm-install.py:51
 msgid "Install Package"
@@ -535,10 +527,8 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
@@ -590,8 +580,7 @@ msgstr "&Nur Desktopanwendungen anzeigen"
 
 #: src/PreferencesDialog.py:206 src/PreferencesDialog.py:209
 msgid "If checked, then pisi will only show desktop applications"
-msgstr ""
-"Wenn diese Auswahl getroffen ist, wird PiSi nur Desktopanwendungen anzeigen"
+msgstr "Wenn diese Auswahl getroffen ist, wird PiSi nur Desktopanwendungen anzeigen"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &interval upgradable package checking"
@@ -643,9 +632,8 @@ msgstr "Maximale Cachegrösse:"
 msgid "&Use hard disk cache for downloaded software"
 msgstr "&Für die heruntergeladene Software den Festplatten-Cache verwenden"
 
-#: src/PreferencesDialog.py:220
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
+msgstr "Wenn es aktiviert ist, werden heruntergeladene Pakete auf dem Festplatten-Cache gelagert"
 
 #: src/PreferencesDialog.py:221
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -671,57 +659,3 @@ msgstr "wird entfernt"
 msgid "installing"
 msgstr "wird installiert"
 
-#~ msgid ""
-#~ "If checked, then updates for Pardus will be automatically checked and you "
-#~ "will be notified"
-#~ msgstr ""
-#~ "Wenn bestätigt, dann werden die Updates für Pardus automatisch "
-#~ "heruntergeladen und Sie werden benachrichtigt."
-
-#~ msgid ""
-#~ "Package repository does not have component information. Please control "
-#~ "repository addresses and update repository. You need a network connection "
-#~ "to update."
-#~ msgstr ""
-#~ "Das Paket-Depot fehlen Teilinformationen. Bitte überprüfen Sie die "
-#~ "Adresse des Depots und aktualisieren Sie das Depot. Sie brauchen für den "
-#~ "Aktualisierungsvorgang eine Internertverbindung."
-
-#~ msgid "There are no updates available at this time"
-#~ msgstr "Zur Zeit sind keine Updates verfügbar."
-
-#~ msgid "Cache cleaning"
-#~ msgstr "Cache wird geleert"
-
-#~ msgid "2000"
-#~ msgstr "2000"
-
-#~ msgid "Alt+C"
-#~ msgstr "Alt+C"
-
-#~ msgid "Main Coder"
-#~ msgstr "Hauptcodierer"
-
-#~ msgid ""
-#~ "Package repository still does not have category information.\n"
-#~ "Exiting..."
-#~ msgstr ""
-#~ "Paket-Depot hat noch keine Kategorie-Information.\n"
-#~ "Wird geschlossen..."
-
-#~ msgid "Removing these packages may break system safety. Aborting."
-#~ msgstr ""
-#~ "Durch das Entfernen dieser Pakete könnte die Systemsicherheit "
-#~ "abgeschaltet.Abbruch."
-
-#~ msgid "Fetching package (%1/%2) at %3 %4"
-#~ msgstr "Herunterladen des Paket's (%1/%2) bei %3 %4"
-
-#, fuzzy
-#~ msgid "Fetching package list at %3 %4"
-#~ msgstr "Paketliste bei %3%4 abrufen"
-
-#~ msgid "Fetching package 27 of 345 at 16.2k/s"
-#~ msgstr ""
-#~ "Herunterladen des Paket's 27 von 345 bei einer Übertragungsrate von "
-#~ "16.2KB/Sek."
