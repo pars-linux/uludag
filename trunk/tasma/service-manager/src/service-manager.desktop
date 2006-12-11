@@ -2,9 +2,11 @@
 Name=Service Manager
 Name[tr]=Servis Yöneticisi
 Name[es]=Administrador de Servicios
+Name[de]=Dienst-Manager
 GenericName[en]=Service Management Interface
 GenericName[tr]=Servis Yönetim Arabirimi
 GenericName[es]=Interfaz de Administración de Servicios
+GenericName[de]=Dienstmanagement-Schnittstelle
 Icon=service_manager
 X-KDE-ModuleType=Library
 X-KDE-Library=service-manager
