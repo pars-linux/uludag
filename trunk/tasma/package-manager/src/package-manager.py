@@ -35,6 +35,7 @@ import Tray
 import Settings
 from Icons import *
 import LocaleData
+import HelpDialog
 
 # Pisi
 import pisi
@@ -873,6 +874,7 @@ class MainApplication(KMainWindow):
 
         self.setupMenu()
         self.setupGUI(KMainWindow.ToolBar|KMainWindow.Keys|KMainWindow.StatusBar|KMainWindow.Save|KMainWindow.Create)
+        self.fixHelpMenu()
         self.toolBar().setIconText(KToolBar.IconTextRight)
         self.tray = Tray.Tray(self)
         self.dcop = PmDcop.PmDcop(self)
@@ -924,9 +926,24 @@ class MainApplication(KMainWindow):
         self.showUpgradeAction.plug(fileMenu)
         self.quitAction.plug(fileMenu)
         self.settingsAction.plug(settingsMenu)
+        self.setHelpMenuEnabled(False)
 
         self.menuBar().insertItem(i18n ("&File"), fileMenu,0,0)
         self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
+
+    def showHelp(self):
+        helpwin = HelpDialog.HelpDialog(self)
+        helpwin.show()
+
+    def fixHelpMenu(self):
+        helpMenu = self.helpMenu()
+        helpMenu.removeItem(KHelpMenu.menuHelpContents)
+        helpMenu.insertItem(i18n("Package Manager Help"),
+                            KHelpMenu.menuHelpContents,
+                            0)
+        helpMenu.setAccel(Qt.Key_F1, KHelpMenu.menuHelpContents)
+        helpMenu.connectItem(KHelpMenu.menuHelpContents, self.showHelp)
+        self.menuBar().insertItem(i18n("&Help"), helpMenu)
 
 def main():
     global kapp
