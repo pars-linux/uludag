@@ -261,7 +261,8 @@ class Settings(QWidget):
         self.device_items = []
         if conn:
             self.name.edit.setText(unicode(conn.name))
-            self.device.setText(conn.devname)
+            if conn.devname:
+                self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
             if "remote" in self.link.modes:
                 if conn.remote:
@@ -378,7 +379,7 @@ class Settings(QWidget):
             self.device_items.append((uid, info))
             self.devices.insertItem(info, id)
             id += 1
-        if id > 1:
+        if id > 1 or not self.conn.devname:
             self.devices_but.setEnabled(True)
     
     def slotDeviceSelect(self, id):

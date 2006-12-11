@@ -201,6 +201,8 @@ class Device(QWidget):
     def __init__(self, parent, name, id):
         QWidget.__init__(self, parent.viewport())
         self.name = name
+        if not self.name:
+            self.name = i18n("No device!")
         self.devid = id
         self.f = QFont(self.font())
         self.f.setPointSize(self.f.pointSize() + 1)
