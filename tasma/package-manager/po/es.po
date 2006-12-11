@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 11:19+0200\n"
+"POT-Creation-Date: 2006-12-11 14:57+0200\n"
 "PO-Revision-Date: 2006-11-28 19:53-0400\n"
 "Last-Translator: Klemens Häckel <click3d@linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -640,12 +640,8 @@ msgstr ""
 "&Usar cache en disco rígido para software descargado de los repositorios"
 
 #: src/PreferencesDialog.py:220
-msgid ""
-"If checked, then updates for Pardus will be automatically checked and you "
-"will be notified"
+msgid "If checked, downloaded packages will be hold at the hard disk cache"
 msgstr ""
-"Si marcado, se busca automaticamente actualizaciones de Pardus y se te avisa "
-"sobre ello"
 
 #: src/PreferencesDialog.py:221
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -670,6 +666,13 @@ msgstr "removiendo"
 #: src/CommonText.py:15
 msgid "installing"
 msgstr "instalando"
+
+#~ msgid ""
+#~ "If checked, then updates for Pardus will be automatically checked and you "
+#~ "will be notified"
+#~ msgstr ""
+#~ "Si marcado, se busca automaticamente actualizaciones de Pardus y se te "
+#~ "avisa sobre ello"
 
 #~ msgid ""
 #~ "Package repository does not have component information. Please control "

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 11:19+0200\n"
-"PO-Revision-Date: 2006-12-10 00:45+0200\n"
+"POT-Creation-Date: 2006-12-11 14:57+0200\n"
+"PO-Revision-Date: 2006-12-11 14:58+0200\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -339,10 +339,8 @@ msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
 #: src/package-manager.py:440 src/package-manager.py:448
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
 #: src/package-manager.py:443
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
@@ -360,8 +358,7 @@ msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ters bağımlılık "
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
-"Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
 #: src/package-manager.py:483 src/package-manager.py:493
 msgid "Conflict Error"
@@ -529,8 +526,7 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
 
 #: src/PreferencesDialog.py:194
@@ -635,12 +631,8 @@ msgid "&Use hard disk cache for downloaded software"
 msgstr "İ&ndirilen yazılımlar için sabit disk önbelleğini kullan"
 
 #: src/PreferencesDialog.py:220
-msgid ""
-"If checked, then updates for Pardus will be automatically checked and you "
-"will be notified"
-msgstr ""
-"Eğer tıklanmış ise, gerekli güncellemeler otomatik olarak kontrol edilecek "
-"ve bilgisi aktarılacak"
+msgid "If checked, downloaded packages will be hold at the hard disk cache"
+msgstr "Eğer seçili ise indirilen paketler hard disk önbelleğinde tutulacak"
 
 #: src/PreferencesDialog.py:221
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -665,3 +657,4 @@ msgstr "kaldırılıyor"
 #: src/CommonText.py:15
 msgid "installing"
 msgstr "kuruluyor"
+

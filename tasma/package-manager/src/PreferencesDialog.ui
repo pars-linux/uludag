@@ -443,7 +443,7 @@ This will not delete installed software or affect your system stability.</string
                                     <bool>false</bool>
                                 </property>
                                 <property name="toolTip" stdset="0">
-                                    <string>If checked, then updates for Pardus will be automatically checked and you will be notified</string>
+                                    <string>If checked, downloaded packages will be hold at the hard disk cache</string>
                                 </property>
                             </widget>
                             <widget class="QLabel" row="1" column="2">
