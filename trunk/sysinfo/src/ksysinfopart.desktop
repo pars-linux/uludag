@@ -1,7 +1,9 @@
 [Desktop Entry]
 Type=Service
 Comment=Sysinfo Viewer
+Comment[de]=Systeminfo-Viewer
 MimeType=application/x-sysinfo;
 Name=Sysinfo
+Name[de]=Systeminfo
 ServiceTypes=KParts/ReadOnlyPart,Browser/View
 X-KDE-Library=libksysinfopart
