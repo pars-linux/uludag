@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-10 14:07+0200\n"
+"POT-Creation-Date: 2006-12-11 11:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Address:"
 msgstr ""
 
-#: browser.py:62 connection.py:250
+#: browser.py:62 connection.py:251
 msgid "Automatic"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr ""
 msgid "New connection"
 msgstr ""
 
-#: browser.py:384 nameconf.py:27
+#: browser.py:384 nameconf.py:28
 msgid "Name Service Settings"
 msgstr ""
 
@@ -128,23 +128,23 @@ msgstr ""
 msgid "Manual"
 msgstr ""
 
-#: connection.py:220 connection.py:237 connection.py:252
+#: connection.py:221 connection.py:238 connection.py:253
 msgid "Custom"
 msgstr ""
 
-#: connection.py:225
+#: connection.py:226
 msgid "Net mask:"
 msgstr ""
 
-#: connection.py:232
+#: connection.py:233
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:241 nameconf.py:42
+#: connection.py:242 nameconf.py:43
 msgid "Name servers"
 msgstr ""
 
-#: connection.py:442
+#: connection.py:443
 msgid "Configure network connection"
 msgstr ""
 
@@ -174,19 +174,19 @@ msgstr ""
 msgid "new connection"
 msgstr ""
 
-#: nameconf.py:35
+#: nameconf.py:36
 msgid "Computer"
 msgstr ""
 
-#: nameconf.py:39
+#: nameconf.py:40
 msgid "Host name:"
 msgstr ""
 
-#: nameconf.py:88
+#: nameconf.py:90
 msgid "Add Name Server"
 msgstr ""
 
-#: nameconf.py:88
+#: nameconf.py:91
 msgid "Name server:"
 msgstr ""
 
@@ -214,22 +214,26 @@ msgstr ""
 msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 
-#: network-applet.py:223
+#: network-applet.py:234
 msgid "Firewall..."
 msgstr ""
 
-#: network-applet.py:224
+#: network-applet.py:235
 msgid "Edit Connections..."
 msgstr ""
 
-#: network-applet.py:226
+#: network-applet.py:237
 msgid "Icon Per Device"
 msgstr ""
 
-#: network-applet.py:227
+#: network-applet.py:238
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:322
+#: network-applet.py:278
+msgid "Should network-applet start automatically when you login?"
+msgstr ""
+
+#: network-applet.py:391
 msgid "Network Applet"
 msgstr ""
