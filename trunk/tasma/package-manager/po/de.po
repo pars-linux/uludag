@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 11:19+0200\n"
+"POT-Creation-Date: 2006-12-11 14:57+0200\n"
 "PO-Revision-Date: 2006-12-10 22:03+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
 "Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
@@ -644,12 +644,8 @@ msgid "&Use hard disk cache for downloaded software"
 msgstr "&Für die heruntergeladene Software den Festplatten-Cache verwenden"
 
 #: src/PreferencesDialog.py:220
-msgid ""
-"If checked, then updates for Pardus will be automatically checked and you "
-"will be notified"
+msgid "If checked, downloaded packages will be hold at the hard disk cache"
 msgstr ""
-"Wenn bestätigt, dann werden die Updates für Pardus automatisch "
-"heruntergeladen und Sie werden benachrichtigt."
 
 #: src/PreferencesDialog.py:221
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -674,6 +670,13 @@ msgstr "wird entfernt"
 #: src/CommonText.py:15
 msgid "installing"
 msgstr "wird installiert"
+
+#~ msgid ""
+#~ "If checked, then updates for Pardus will be automatically checked and you "
+#~ "will be notified"
+#~ msgstr ""
+#~ "Wenn bestätigt, dann werden die Updates für Pardus automatisch "
+#~ "heruntergeladen und Sie werden benachrichtigt."
 
 #~ msgid ""
 #~ "Package repository does not have component information. Please control "
