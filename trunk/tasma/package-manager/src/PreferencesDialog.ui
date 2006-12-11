@@ -292,9 +292,6 @@
                         <property name="text">
                             <string>&amp;Enable system tray icon</string>
                         </property>
-                        <property name="toolTip" stdset="0">
-                            <string>If checked, then pisi will only show desktop applications</string>
-                        </property>
                     </widget>
                     <widget class="QLabel" row="3" column="0">
                         <property name="name">
