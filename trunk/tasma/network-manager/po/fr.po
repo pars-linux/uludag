@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network_manager_kga\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 11:06+0200\n"
+"POT-Creation-Date: 2006-12-11 16:39+0200\n"
 "PO-Revision-Date: 2006-12-09 09:53+0200\n"
 "Last-Translator: Atilla Aktuna <aktuna@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -62,17 +62,21 @@ msgstr ""
 msgid "Delete connection?"
 msgstr "Effacer la connection?"
 
-#: browser.py:379
+#: browser.py:205
+msgid "No device!"
+msgstr ""
+
+#: browser.py:381
 #, fuzzy
 msgid "New connection"
 msgstr "Connection nouvelle"
 
-#: browser.py:384 nameconf.py:28
+#: browser.py:386 nameconf.py:28
 #, fuzzy
 msgid "Name Service Settings"
 msgstr "Préférences réseau"
 
-#: browser.py:418
+#: browser.py:420
 #, fuzzy
 msgid "Network Connections Help"
 msgstr "Connections réseaux"
@@ -157,7 +161,7 @@ msgstr "Passerelle"
 msgid "Name servers"
 msgstr "Serveurs de nom"
 
-#: connection.py:443
+#: connection.py:444
 msgid "Configure network connection"
 msgstr "Configurer la connection réseau"
 
@@ -248,11 +252,11 @@ msgstr ""
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:278
+#: network-applet.py:282
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 
-#: network-applet.py:391
+#: network-applet.py:413
 #, fuzzy
 msgid "Network Applet"
 msgstr "Préférences réseau"

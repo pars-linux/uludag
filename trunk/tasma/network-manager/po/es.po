@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 11:06+0200\n"
+"POT-Creation-Date: 2006-12-11 16:39+0200\n"
 "PO-Revision-Date: 2006-11-26 17:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -58,15 +58,19 @@ msgstr ""
 msgid "Delete connection?"
 msgstr "Eliminar conexión ?"
 
-#: browser.py:379
+#: browser.py:205
+msgid "No device!"
+msgstr ""
+
+#: browser.py:381
 msgid "New connection"
 msgstr "Conexión nueva"
 
-#: browser.py:384 nameconf.py:28
+#: browser.py:386 nameconf.py:28
 msgid "Name Service Settings"
 msgstr "Parámetros del servivio de nombres"
 
-#: browser.py:418
+#: browser.py:420
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
 
@@ -149,7 +153,7 @@ msgstr "Puerto de Enlace:"
 msgid "Name servers"
 msgstr "Servidor de Nombres"
 
-#: connection.py:443
+#: connection.py:444
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
@@ -236,11 +240,11 @@ msgstr ""
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:278
+#: network-applet.py:282
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 
-#: network-applet.py:391
+#: network-applet.py:413
 #, fuzzy
 msgid "Network Applet"
 msgstr "Propiedades de Red"
