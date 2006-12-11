@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Network Applet
 Name[tr]=Ağ Programcığı
+Name[de]=Netzwerk Applet
 Icon=network
 Type=Application
 Exec=network-applet
