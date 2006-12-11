@@ -1,1 +1,1 @@
-INSTALL_FILES(/share/apps/kaptan/themes/KDE_Classic FILES KDE_Classic.preview.png KDE_Classic_kickoff.preview.png KDE_Classic.xml)
+INSTALL_FILES(/share/apps/kaptan/themes/Classic FILES Classic.preview.png Classic_kickoff.preview.png Classic.xml)
