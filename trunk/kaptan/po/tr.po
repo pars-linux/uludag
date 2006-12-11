@@ -15,13 +15,13 @@ msgstr ""
 #: rc.cpp:66
 #, no-c-format
 msgid " hours"
-msgstr ""
+msgstr " saat"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 167
 #: rc.cpp:52
 #, no-c-format
 msgid "&Single-click to open files and folders"
-msgstr ""
+msgstr "&Tek tıklama ile dosya ve dizinleri aç"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 134
 #: rc.cpp:33
@@ -35,6 +35,7 @@ msgstr "&Duvar Kâğıdını Dene"
 msgid ""
 "<center>You have finished!  Now you can start using Pardus Linux</center>"
 msgstr ""
+"<center>Bitirdiniz! Pardus kullanmaya başlayabilirsiniz</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
 #: rc.cpp:42
@@ -46,13 +47,13 @@ msgstr "Düğme Sırası"
 #: rc.cpp:62
 #, no-c-format
 msgid "Check updates automatically for every"
-msgstr ""
+msgstr "Güncellemeleri bu sıklıkla kontrol et"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 156
 #: rc.cpp:49
 #, no-c-format
 msgid "Click behaviour"
-msgstr ""
+msgstr "Tıklama Davranışı"
 
 #: ../src/kaptan.cpp:65
 msgid "Congratulations"
@@ -68,11 +69,11 @@ msgstr "Masaüstü arkaplan resmini değiştirme"
 #: rc.cpp:55
 #, no-c-format
 msgid "Dou&ble-click to open files and folders (select icons on first click)"
-msgstr ""
+msgstr "Ç&ift tıklama ile dosya ve dizinleri aç"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 27
 #: rc.cpp:78
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a style for your desktop. Pardus provides some eye "
 "candy styles for you."
@@ -82,7 +83,7 @@ msgstr ""
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish."
@@ -97,29 +98,26 @@ msgid ""
 "Here, you can select default behaviour of package-manager, software manager "
 "for Pardus."
 msgstr ""
+"Package-manager yazılımının öntanımlı davranışlarını buradan belirleyebilirsiniz."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
 #: rc.cpp:39
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
 "right buttons on your pointing device by choosing the 'Left handed' option "
 "below. You can also select default click behaviour."
 msgstr ""
 "Sol elinizi kullanıyorsanız, farenizin sol ve sağ düğmelerinin işlevlerini "
-"'sol el' seçeneğini işaretleyerek değiştirmeyi tercih edebilirsiniz. "
-"Farenizin ikiden fazla düğmesi varsa, sadece sol ve sağ düğme işlevini "
-"görenler etkilenir. Örneğin, üç düğmeli bir fareniz varsa orta düğme "
-"etkilenmez."
+"'sol el' seçeneğini işaretleyerek değiştirmeyi tercih edebilirsiniz."
 
 #: ../src/main.cpp:18
 msgid "Kaptan Desktop"
 msgstr "Kaptan Masaüstü"
 
 #: ../src/mouse.cpp:32
-#, fuzzy
 msgid "Left handed"
-msgstr "S&ol el"
+msgstr "Sol el"
 
 #: ../src/kaptan.cpp:45
 msgid "Mouse Setup"
@@ -127,19 +125,19 @@ msgstr "Fare Ayarı"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 16
 #: rc.cpp:36
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "MouseSetupDlg"
-msgstr "Fare Ayarı"
+msgstr "MouseSetupDlg"
 
 #: ../src/kaptan.cpp:57
 msgid "Network Setup"
-msgstr ""
+msgstr "Ağ Ayarı"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
 #: rc.cpp:59 ../src/kaptan.cpp:61
 #, no-c-format
 msgid "Package Manager"
-msgstr ""
+msgstr "Paket Yöneticisi"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16
@@ -162,42 +160,40 @@ msgstr ""
 #: rc.cpp:45
 #, no-c-format
 msgid "Reverse scroll"
-msgstr ""
+msgstr "Ters kaydırma yönü"
 
 #: ../src/mouse.cpp:31
-#, fuzzy
 msgid "Right handed"
-msgstr "S&ağ el"
+msgstr "Sağ el"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 121
 #: rc.cpp:69
 #, no-c-format
 msgid "Show in system tray"
-msgstr ""
+msgstr "Sistem çekmecesine yerleş"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 43
 #: rc.cpp:4
 #, no-c-format
 msgid "Start Tasma"
-msgstr ""
+msgstr "Tasma'yı başlat"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 38
 #: rc.cpp:75 rc.cpp:81
 #, no-c-format
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
 #: ../src/kaptan.cpp:49
-#, fuzzy
 msgid "Style Setup"
-msgstr "Fare Ayarı"
+msgstr "Stil Ayarı"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 62
 #: rc.cpp:87
 #, no-c-format
 msgid "Test Style"
-msgstr ""
+msgstr "Stili Dene"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 27
 #: rc.cpp:13
@@ -217,14 +213,14 @@ msgstr ""
 #: rc.cpp:84
 #, no-c-format
 msgid "Use enhanced Kickoff style menu"
-msgstr ""
+msgstr "Gelişmiş Kickoff stili menüyü kullan"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 38
 #: rc.cpp:20 rc.cpp:26
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Wallpaper"
-msgstr "Duvar Kâğıdı :"
+msgstr "Duvar Kâğıdı"
 
 #: ../src/kaptan.cpp:53
 msgid "Wallpaper Setup"
@@ -235,20 +231,3 @@ msgstr "Duvar Kâğıdı Ayarı"
 #, no-c-format
 msgid "Welcome"
 msgstr "Hoş Geldiniz"
-
-#~ msgid ""
-#~ "<center>\n"
-#~ "You have finished!  Now you can start using Pardus Linux<br>\n"
-#~ "<a href=\"#tasma\">If you want to change more settings click here to "
-#~ "start <b>Pardus Configuration Center</b></a>\n"
-#~ "</center>"
-#~ msgstr ""
-#~ "<center>\n"
-#~ "Başarıyla bitirdiniz! Şimdi Pardus'unuzu kullanmaya "
-#~ "başlayabilirsiniz<br>\n"
-#~ "<a href=\"#tasma\">Eğer daha fazla ayarı değiştirmek isterseniz <b>Tasma</"
-#~ "b>'yı başlatmak için buraya tıklayın</a>\n"
-#~ "</center>"
-
-#~ msgid "Preview :"
-#~ msgstr "Önizleme :"
