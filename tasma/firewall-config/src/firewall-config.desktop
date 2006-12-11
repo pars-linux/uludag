@@ -1,11 +1,14 @@
 [Desktop Entry]
 Name=Firewall Config
 Name[tr]=Güvenlik Duvarı Ayarları
+Name[de]=Firewallkonfiguration
 GenericName=Firewall Configuration
 GenericName[en]=Firewall Configuration
 GenericName[tr]=Güvenlik Duvarı Ayarları
+GenericName[de]=Firewallkonfiguration
 Comment=Firewall Configuration Interface
 Comment[tr]=Güvenlik Duvarı Ayarları
+Comment[de]=Firewallkonfiguration-Schnittstelle
 Icon=firewall_config
 X-KDE-ModuleType=Library
 X-KDE-Library=firewall-config
