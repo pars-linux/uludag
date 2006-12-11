@@ -23,3 +23,21 @@ SET(_gmofiles ${_gmofiles} ${_gmofile})
 ENDFOREACH(_po ${PO_FILES})
 
 ADD_CUSTOM_TARGET(translations ALL DEPENDS ${_gmofiles})
+
+# Stuff to generate the .pot
+FILE(GLOB POT_UIFILES ../src/*.ui)
+SET(POT_SOURCES ../src/*.cpp)
+SET(POT_OUTPUT kaptan.pot)
+
+ADD_CUSTOM_COMMAND(
+    OUTPUT _${POT_OUTPUT}
+    COMMAND ${EXTRACTRC_PATH} ${POT_UIFILES} > rc.cpp
+    COMMAND ${XGETTEXT_PATH} --foreign-user -C -ci18n -ki18n -ktr2i18n -kI18N_NOOP -kI18N_NOOP2 -kaliasLocale -x "${KDE3_INCLUDE_DIR}/kde.pot" -o ${POT_OUTPUT} rc.cpp ${POT_SOURCES}
+    COMMAND rm rc.cpp
+)
+
+ADD_CUSTOM_TARGET(
+    extract_messages
+    DEPENDS _${POT_OUTPUT}
+)
+

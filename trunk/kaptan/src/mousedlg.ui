@@ -24,7 +24,7 @@
                 <cstring>mouseLabel</cstring>
             </property>
             <property name="text">
-                <string>If you are left-handed, you may prefer to swap the functions of the left and right buttons on your pointing device by choosing the 'Left handed' option below. If your pointing device has more than two buttons, only those that function as the left and right buttons are affected. For example, if you have a tree-button mouse, the middle buttons is unaffected.</string>
+                <string>If you are left-handed, you may prefer to swap the functions of the left and right buttons on your pointing device by choosing the 'Left handed' option below. You can also select default click behaviour.</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignTop</set>

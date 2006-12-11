@@ -43,6 +43,7 @@ Style::Style(QWidget *parent, const char* name)
     KGlobal::dirs()->addResourceType("themes", KStandardDirs::kde_default("data") + "kaptan/themes/");
 
     QStringList themes = KGlobal::dirs()->findAllResources("themes", "*.xml", true /*recursive*/);
+    themes.sort();
 
     for (QStringList::const_iterator it = themes.begin(); it != themes.end(); ++it)
         styleBox->insertItem(QFileInfo(*it).baseName());
@@ -51,6 +52,7 @@ Style::Style(QWidget *parent, const char* name)
     connect(styleBox, SIGNAL(activated(int)), this, SLOT(styleSelected(int)));
     connect(checkKickoff, SIGNAL(clicked()), this, SLOT(kickoffSelected()));
 
+    styleBox->setCurrentItem(0);
     emit(styleSelected(0));
 }
 
@@ -142,18 +144,9 @@ void Style::testStyle()
 
     globalConf->writeEntry("widgetStyle", getProperty(Widget, "widgetStyle", "value"));
     globalConf->sync();
+    delete globalConf;
 
     KIPC::sendMessageAll(KIPC::StyleChanged);
-
-/*
-    // color settings
-    globalConf->setGroup("KDE");
-    QDomElement Color = dom.elementsByTagName("color").item(0).toElement();
-    globalConf->writeEntry("colorScheme", getProperty(Color, "colorScheme", "value"));
-    globalConf->sync();
-    KIPC::sendMessageAll(KIPC::PaletteChanged);
-*/
-    delete globalConf;
 }
 
 #include "style.moc"

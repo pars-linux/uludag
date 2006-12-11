@@ -13,8 +13,5 @@
     <widget>
         <widgetStyle value="lipstik" />
     </widget>
-    <color>
-        <colorScheme value="DesertRed.kcsrc" />
-    </color>
 </ktheme>
 

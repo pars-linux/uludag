@@ -12,6 +12,9 @@
             <height>480</height>
         </rect>
     </property>
+    <property name="caption">
+        <string>PackageDlg</string>
+    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
@@ -79,7 +82,7 @@
                                         <bool>false</bool>
                                     </property>
                                     <property name="text">
-                                        <string>Check updates automatically</string>
+                                        <string>Check updates automatically for every</string>
                                     </property>
                                 </widget>
                                 <widget class="QSpinBox">
@@ -130,7 +133,10 @@
                 <cstring>packageLabel</cstring>
             </property>
             <property name="text">
-                <string>Package manager is a hahaheheh ahehahgah aaas</string>
+                <string>&lt;b&gt;Package-manager&lt;/b&gt; is the graphical front-end of &lt;b&gt;PiSi&lt;/b&gt;. With package-manager you can easily install new programs and upgrade your system. But also can work in the system tray and periodically checks new upgrades of the programs that are installed on your system.</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
             </property>
         </widget>
     </grid>

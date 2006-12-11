@@ -4,13 +4,14 @@
         <PluginLib value="kwin3_plastik" />
     </kwin>
     <kicker>
-        <Transparent value="false" />
-        <SizePercentage value="100" />
+        <Transparent value="true" />
+        <SizePercentage value="80" />
         <Position value="" />
-        <Alignment value="" />
-        <CustomSize value="32" />
+        <Alignment value="1" />
+        <CustomSize value="48" />
     </kicker>
     <widget>
         <widgetStyle value="lipstik" />
     </widget>
 </ktheme>
+
