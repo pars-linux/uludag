@@ -235,7 +235,7 @@ msgstr "Tek İkon"
 
 #: network-applet.py:278
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
+msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
 
 #: network-applet.py:391
 msgid "Network Applet"
