@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 11:06+0200\n"
+"POT-Creation-Date: 2006-12-11 16:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,15 +56,19 @@ msgstr ""
 msgid "Delete connection?"
 msgstr ""
 
-#: browser.py:379
+#: browser.py:205
+msgid "No device!"
+msgstr ""
+
+#: browser.py:381
 msgid "New connection"
 msgstr ""
 
-#: browser.py:384 nameconf.py:28
+#: browser.py:386 nameconf.py:28
 msgid "Name Service Settings"
 msgstr ""
 
-#: browser.py:418
+#: browser.py:420
 msgid "Network Connections Help"
 msgstr ""
 
@@ -144,7 +148,7 @@ msgstr ""
 msgid "Name servers"
 msgstr ""
 
-#: connection.py:443
+#: connection.py:444
 msgid "Configure network connection"
 msgstr ""
 
@@ -230,10 +234,10 @@ msgstr ""
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:278
+#: network-applet.py:282
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 
-#: network-applet.py:391
+#: network-applet.py:413
 msgid "Network Applet"
 msgstr ""
