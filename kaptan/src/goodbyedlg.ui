@@ -12,6 +12,9 @@
             <height>480</height>
         </rect>
     </property>
+    <property name="caption">
+        <string>GoodbyeDlg</string>
+    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
@@ -48,7 +51,7 @@
                 <cstring>goodbyeLabel</cstring>
             </property>
             <property name="text">
-                <string>&lt;center&gt;You have finished!  Now you can start using Pardus Linux&lt;/center&gt;</string>
+                <string>&lt;center&gt;You have finished!  Now you can start using &lt;b&gt;Pardus&lt;/b&gt;&lt;/center&gt;</string>
             </property>
         </widget>
     </grid>

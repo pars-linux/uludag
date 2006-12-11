@@ -24,7 +24,7 @@
                 <cstring>styleLabel</cstring>
             </property>
             <property name="text">
-                <string>Here, you can select a style for your desktop. Pardus provides some eye candy styles for you!</string>
+                <string>Here, you can select a &lt;b&gt;style &lt;/b&gt;for your desktop. &lt;b&gt;Pardus&lt;/b&gt; provides some eye candy styles for you.</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignTop</set>
@@ -51,7 +51,7 @@
                         <cstring>checkKickoff</cstring>
                     </property>
                     <property name="text">
-                        <string>Use Kickoff style menu!</string>
+                        <string>Use enhanced Kickoff style menu</string>
                     </property>
                 </widget>
                 <widget class="QPushButton" row="3" column="0">
@@ -59,7 +59,7 @@
                         <cstring>styleButton</cstring>
                     </property>
                     <property name="text">
-                        <string>Try this style!</string>
+                        <string>Test Style</string>
                     </property>
                 </widget>
                 <widget class="QLayoutWidget" row="2" column="0">

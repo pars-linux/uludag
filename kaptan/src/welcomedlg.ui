@@ -35,7 +35,7 @@
                 <cstring>pardusLabel</cstring>
             </property>
             <property name="text">
-                <string>Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; with acquiring the strong ideas, architecture and code of other distributions; with a custom configuration framework which has the ability to evolve into an autonomous system; for simplifying the installation and usage of the computers.</string>
+                <string>&lt;b&gt;Pardus &lt;/b&gt;is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; with acquiring the strong ideas, architecture and code of other distributions; with a custom configuration framework which has the ability to evolve into an autonomous system; for simplifying the installation and usage of the computers.</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignVCenter</set>

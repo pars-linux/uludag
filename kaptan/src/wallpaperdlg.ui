@@ -24,7 +24,7 @@
                 <cstring>wallpaperLabel</cstring>
             </property>
             <property name="text">
-                <string>Here, you can select a wallpaper for your desktop background. Pardus provides eye candy wallpapers, you can select one of them, as you wish :).</string>
+                <string>Here, you can select a &lt;b&gt;wallpaper&lt;/b&gt; for your desktop background. &lt;b&gt;Pardus&lt;/b&gt; provides eye candy wallpapers, you can select one of them, as you wish.</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignTop</set>

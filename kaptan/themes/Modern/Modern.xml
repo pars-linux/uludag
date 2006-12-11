@@ -13,8 +13,5 @@
     <widget>
         <widgetStyle value="polyester" />
     </widget>
-    <color>
-        <colorScheme value="PolyesterBlue.kcsrc" />
-    </color>
 </ktheme>
 
