@@ -1,6 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/comar/belgeler/"
-belge = "ComarMimarisi.lyx"
-isim = "ÇOMAR Mimarisi"
-dizin = "mimari"
-ikonlar = "../../../images"

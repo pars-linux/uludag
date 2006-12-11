@@ -1,7 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "http://svn.uludag.org.tr/uludag/trunk/doc/tr/pisi/"
-belge = "actiondoc.lyx"
-isim = "Pisi Actions API Belgesi"
-dizin = "api"
-ikonlar = "../../../images"
-
