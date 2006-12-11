@@ -8,5 +8,6 @@ MimeType=application/x-sysinfo;
 InitialPreference=9
 NoDisplay=true
 Name=System Information
+Name[de]=System-Information
 Categories=Qt;KDE;System;
 X-KDE-HasTempFileOption=true
