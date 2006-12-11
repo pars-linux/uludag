@@ -20,10 +20,12 @@ Comment=Printing system configuration (printers, jobs, classes, ...)
 Comment[tr]=Yazdırma sistemi kurulumu (yazıcılar, işler, sınıflar, ...)
 Comment[nl]=Configuratie van het afdruksysteem (printers, taken, klassen, ...)
 Comment[es]=Configuración del sistema de impresión (impresorasa, tareas de impresión, clases, ...)
+Comment[de]=Drucksystemkonfiguration (Drucker, Aufträge, Klassen, ...)
 
 Keywords=print,printer,printing management
 Keywords[tr]=yazdır,yazıcı,yazıcı yönetimi
 Keywords[nl]=print,printer,printing management,afdrukbeheer,afdrukken
 Keywords[es]=imprimir,impresora,administración de impresión
+Keywords[de]=Drucker,drucken,Druckermanagement,Druckerverwaltung
 
 Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals
