@@ -91,7 +91,6 @@ class Link:
 
 class Comlink:
     def __init__(self):
-        self.change_hook = []
         self.state_hook = []
         self.devices = {}
         self.links = {}
@@ -146,7 +145,7 @@ class Comlink:
                 self.devices[conn.devid] = dev
             dev.connections[conn.name] = conn
             conn.device = dev
-            map(lambda x: x(), self.change_hook)
+            map(lambda x: x(), self.state_hook)
     
     def handleNotify(self, reply):
         if reply.notify == "Net.Link.stateChanged":
@@ -158,7 +157,7 @@ class Comlink:
                     state, msg = state.split(" ", 1)
                 conn.message = msg
                 conn.state = state
-                map(lambda x: x(conn), self.state_hook)
+                map(lambda x: x(), self.state_hook)
     
     def getConn(self, script, name):
         for dev in self.devices.values():
@@ -218,6 +217,7 @@ class Applet:
         self.trays = []
         self.mode = 0
         self.app = app
+        comlink.state_hook.append(self.updateIcons)
     
     def start(self):
         comlink.connect()
@@ -253,6 +253,10 @@ class Applet:
                 item.hide()
             tray = []
     
+    def updateIcons(self):
+        for item in self.trays:
+            item.updateIcon()
+    
     def noGroup(self, id):
         if self.mode == 0:
             return
@@ -273,7 +277,7 @@ class Applet:
             tray.show()
             tray.connect(tray, SIGNAL("quitSelected()"), self.quit)
             self.trays.append(tray)
-
+    
     def quit(self):
         autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))
         config = KConfig("network-appletrc")
@@ -283,6 +287,7 @@ class Applet:
         elif autostart == KMessageBox.No:
             config.writeEntry("AutoStart", "false")
         KApplication.kApplication().quit()
+
 
 class ConnectionItem(QCustomMenuItem):
     def __init__(self, conn):
@@ -325,12 +330,29 @@ class NetTray(KSystemTray):
         self.dev = dev
         if dev:
             QToolTip.add(self, dev.devname)
-            state = "down"
-            for conn in dev.connections.values():
+        self.updateIcon()
+    
+    def updateIcon(self):
+        if self.dev:
+            for conn in self.dev.connections.values():
                 script = conn.script
-                if conn.state == "up":
-                    state = "up"
-            self.setPixmap(icons.get_state(script, state))
+                if conn.state == "connecting":
+                    self.setPixmap(icons.get_state(script, "connecting"))
+                    return
+                elif conn.state == "up":
+                    self.setPixmap(icons.get_state(script, "up"))
+                    return
+        else:
+            script = "net-tools"
+            for dev in comlink.devices.values():
+                for conn in dev.connections.values():
+                    if conn.state == "connecting":
+                        self.setPixmap(icons.get_state(script, "connecting"))
+                        return
+                    elif conn.state == "up":
+                        self.setPixmap(icons.get_state(script, "up"))
+                        return
+        self.setPixmap(icons.get_state(script, "down"))
     
     def appendConns(self, menu, dev, idx):
         conn_keys = dev.connections.keys()
