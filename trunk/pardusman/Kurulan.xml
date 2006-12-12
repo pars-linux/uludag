@@ -1,5 +1,5 @@
 <PardusmanProject type="install" size="734003200">
-    <Title>Pardus RC</Title>
+    <Title>Pardus 2007</Title>
     <WorkDir>/root/pardusman/InstallCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
@@ -187,6 +187,7 @@
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
+        <SelectedPackage>x11-ssh-askpass</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
         <SelectedPackage>xmoto</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
@@ -797,6 +798,7 @@
         <Package>whois</Package>
         <Package>wireless-tools</Package>
         <Package>wpa_supplicant</Package>
+        <Package>x11-ssh-askpass</Package>
         <Package>x264</Package>
         <Package>xbitmaps</Package>
         <Package>xfsprogs</Package>
