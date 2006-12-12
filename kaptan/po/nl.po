@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-11 14:32+0200\n"
-"PO-Revision-Date: 2006-12-03 15:02+0200\n"
+"PO-Revision-Date: 2006-12-12 07:31+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 #: rc.cpp:66
 #, no-c-format
 msgid " hours"
-msgstr ""
+msgstr " uren"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 167
 #: rc.cpp:52
 #, no-c-format
 msgid "&Single-click to open files and folders"
-msgstr ""
+msgstr "%Eenmaal-klikken om bestanden en mappen te openen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 134
 #: rc.cpp:33
@@ -38,9 +38,8 @@ msgstr "&Test achtergrond"
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7
 #, no-c-format
-msgid ""
-"<center>You have finished!  Now you can start using Pardus Linux</center>"
-msgstr ""
+msgid "<center>You have finished!  Now you can start using Pardus Linux</center>"
+msgstr "<center>Gereed! Vanaf nu kunt u Pardus Linux gaan gebruiken</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
 #: rc.cpp:42
@@ -52,13 +51,13 @@ msgstr "Knopvolgorde"
 #: rc.cpp:62
 #, no-c-format
 msgid "Check updates automatically for every"
-msgstr ""
+msgstr "Controleer automatisch voor bijgewerkte bestanden elke"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 156
 #: rc.cpp:49
 #, no-c-format
 msgid "Click behaviour"
-msgstr ""
+msgstr "Klik gedrag"
 
 #: ../src/kaptan.cpp:65
 msgid "Congratulations"
@@ -74,27 +73,27 @@ msgstr "De achtergrond niet veranderen!"
 #: rc.cpp:55
 #, no-c-format
 msgid "Dou&ble-click to open files and folders (select icons on first click)"
-msgstr ""
+msgstr "Du&bbel-klikken om bestanden en mappen te openen (selecteer icoon bij eerste klik)"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 27
 #: rc.cpp:78
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a style for your desktop. Pardus provides some eye "
 "candy styles for you."
 msgstr ""
-"Hier kunt u een achtergrond voor uw bureaublad kiezen. Pardus voorziet u van "
-"oogstrelende achtergronden, waarvan u er één kunt selecteren."
+"Hier kunt u een stijl voor uw bureaublad kiezen. Pardus voorziet u van "
+"oogstrelende stijlen."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a wallpaper for your desktop background. Pardus "
 "provides eye candy wallpapers, you can select one of them, as you wish."
 msgstr ""
 "Hier kunt u een achtergrond voor uw bureaublad kiezen. Pardus voorziet u van "
-"oogstrelende achtergronden, waarvan u er één kunt selecteren."
+"oogstrelende achtergronden, waarvan u, als u wilt, er één kunt selecteren."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 133
 #: rc.cpp:72
@@ -102,30 +101,26 @@ msgstr ""
 msgid ""
 "Here, you can select default behaviour of package-manager, software manager "
 "for Pardus."
-msgstr ""
+msgstr "Hier kunt u het standaardgedrag van uw pakketmanager kiezen, de softwaremanager van Padus."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
 #: rc.cpp:39
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "If you are left-handed, you may prefer to swap the functions of the left and "
 "right buttons on your pointing device by choosing the 'Left handed' option "
 "below. You can also select default click behaviour."
 msgstr ""
 "Als u linkshandig bent, dan kunt u de knoppen van uw aanwijsapparaat "
-"omwisselen met onderstaande optie. Als uw aanwijsapparaat meer dan twee "
-"knoppen heeft, dan zal dit alleen effect hebben op de linker en rechter "
-"muisknop. Bijv. als u een drieknops-muis hebt, dan verandert er niets aan de "
-"middelste muisknop."
+"omwisselen met onderstaande optie. U kunt ook het standaard klikgedrag aanpassen."
 
 #: ../src/main.cpp:18
 msgid "Kaptan Desktop"
 msgstr "Kaptan Desktop"
 
 #: ../src/mouse.cpp:32
-#, fuzzy
 msgid "Left handed"
-msgstr "Lin&kshandig"
+msgstr "Linkshandig"
 
 #: ../src/kaptan.cpp:45
 msgid "Mouse Setup"
@@ -133,19 +128,19 @@ msgstr "Muis instellen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 16
 #: rc.cpp:36
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "MouseSetupDlg"
-msgstr "Muis instellen"
+msgstr "MouseSetupDlg"
 
 #: ../src/kaptan.cpp:57
 msgid "Network Setup"
-msgstr ""
+msgstr "Netwerk instellen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
 #: rc.cpp:59 ../src/kaptan.cpp:61
 #, no-c-format
 msgid "Package Manager"
-msgstr ""
+msgstr "Pakketmanager"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16
@@ -157,53 +152,48 @@ msgid ""
 "ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
-"Pardus is een GNU/Linux distributie gricht op computergebruikers met "
-"gemiddelde  ervaring die behoefte hebben aan een eenvoudig systeem. Dit doel "
-"wordt bereikt  door de goede ideeën, architectuur en code van andere "
-"distributies te combineren  met een eigen configuratieraamwerk. Dit raamwerk "
-"heeft de potentie om te evoluëren in een autonoom systeem dat het "
-"installeren en gebruiken van computers sterk zal vereenvoudigen."
+"Pardus is een GNU/Linux distributie gricht op computergebruikers met een"
+"gemiddelde ervaring;  door de goede ideeën, architectuur en code van andere "
+"distributies te combineren met een eigen configuratieraamwerk dat de potentie heeft om te groeien tot een autonoom systeem; welk het installeren en gebruiken van computers sterk vereenvoudigd."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 85
 #: rc.cpp:45
 #, no-c-format
 msgid "Reverse scroll"
-msgstr ""
+msgstr "Scrollen omdraaien"
 
 #: ../src/mouse.cpp:31
-#, fuzzy
 msgid "Right handed"
-msgstr "Rech&tshandig"
+msgstr "Rechtshandig"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 121
 #: rc.cpp:69
 #, no-c-format
 msgid "Show in system tray"
-msgstr ""
+msgstr "Toon in systeemvak"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 43
 #: rc.cpp:4
 #, no-c-format
 msgid "Start Tasma"
-msgstr ""
+msgstr "Start Tasma"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 38
 #: rc.cpp:75 rc.cpp:81
 #, no-c-format
 msgid "Style"
-msgstr ""
+msgstr "Stijl"
 
 #: ../src/kaptan.cpp:49
-#, fuzzy
 msgid "Style Setup"
-msgstr "Muis instellen"
+msgstr "Stijl instellen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 62
 #: rc.cpp:87
 #, no-c-format
 msgid "Test Style"
-msgstr ""
+msgstr "Test stijl"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 27
 #: rc.cpp:13
@@ -222,18 +212,18 @@ msgstr ""
 #: rc.cpp:84
 #, no-c-format
 msgid "Use enhanced Kickoff style menu"
-msgstr ""
+msgstr "Gebruik verbeterd Kickoff stijl menu"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 38
 #: rc.cpp:20 rc.cpp:26
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Wallpaper"
-msgstr "Achtergrond:"
+msgstr "Achtergrond"
 
 #: ../src/kaptan.cpp:53
 msgid "Wallpaper Setup"
-msgstr "Bureaubladachtergrond instellen"
+msgstr "Achtergrond instellen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 16
 #: rc.cpp:10 ../src/kaptan.cpp:41
@@ -241,32 +231,3 @@ msgstr "Bureaubladachtergrond instellen"
 msgid "Welcome"
 msgstr "Welkom"
 
-#~ msgid ""
-#~ "<center>\n"
-#~ "You have finished!  Now you can start using Pardus Linux<br>\n"
-#~ "<a href=\"#tasma\">If you want to change more settings click here to "
-#~ "start <b>Pardus Configuration Center</b></a>\n"
-#~ "</center>"
-#~ msgstr ""
-#~ "<center>\n"
-#~ "U bent klaar! Vanaf nu kunt u Pardus Linux gaan gebruiken<br>\n"
-#~ "<a href=\"#tasma\">Als u meer instellingen wilt veranderen, start dan het "
-#~ "<b>Pardus configuratie centrum</b></a>\n"
-#~ "</center>"
-
-#~ msgid "Preview :"
-#~ msgstr "Voorbeeld:"
-
-#~ msgid ""
-#~ "_: EMAIL OF TRANSLATORS\n"
-#~ "Your emails"
-#~ msgstr ""
-#~ "_: EMAIL VAN VERTALERS\n"
-#~ "w.gielen@gmail.com"
-
-#~ msgid ""
-#~ "_: NAME OF TRANSLATORS\n"
-#~ "Your names"
-#~ msgstr ""
-#~ "_: EMAIL VAN VERTALERS\n"
-#~ "w.gielen@gmail.com"
