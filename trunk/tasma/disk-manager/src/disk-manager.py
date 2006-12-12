@@ -307,7 +307,15 @@ class diskForm(mainForm):
                 self.toggleAllPartitions()
 
     def toggleAllPartitions(self):
-        self.frame_detail.hide()
+        # just hide details when system partition selected.
+        try:
+            pi = self.list_main.selectedItem()
+            if self.getDetailsOfSelected(pi)['mount_point']=='/':
+                self.list_main.setSelected(pi,False)
+                self.frame_detail.hide()
+        except:
+            pass
+
         for disk in self.prettyList:
             for item in self.prettyList[disk]:
                 if item['mount_point']=='/':
