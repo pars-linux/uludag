@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 14:57+0200\n"
+"POT-Creation-Date: 2006-12-12 15:11+0200\n"
 "PO-Revision-Date: 2006-11-26 17:49+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -43,17 +43,17 @@ msgstr "<h3>Voorbereiden PiSi...</h3>"
 msgid "Now installing <b>amsn</b> package"
 msgstr "Installeert nu <b>amsn</b> pakket"
 
-#: src/Tray.py:37
+#: src/Tray.py:39
 #, fuzzy
 msgid "Update"
 msgstr "Toon beschikbare bijgewerkte bestanden"
 
-#: src/Tray.py:42 src/package-manager.py:276 src/package-manager.py:665
+#: src/Tray.py:44 src/package-manager.py:276 src/package-manager.py:665
 #: src/package-manager.py:812
 msgid "All"
 msgstr "Alles"
 
-#: src/Tray.py:62
+#: src/Tray.py:64
 msgid "There are <b>%1</b> updates available!"
 msgstr "Er zijn momenteel geen bijgewerkte bestanden beschikbaar"
 
@@ -159,19 +159,19 @@ msgstr "Totale grootte: <b>%1</b>"
 msgid "Size: "
 msgstr "Grootte: "
 
-#: src/HelpDialog.py:20 src/package-manager.py:941
+#: src/HelpDialog.py:27 src/package-manager.py:945
 msgid "Package Manager Help"
 msgstr "Pakketbeheer hulp"
 
-#: src/Preferences.py:75
+#: src/Preferences.py:77
 msgid "Add New Repository"
 msgstr "Toevoegen nieuwe repository"
 
-#: src/Preferences.py:82
+#: src/Preferences.py:84
 msgid "Edit Repository"
 msgstr "Bewerken repository"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:130 src/Preferences.py:146
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
@@ -179,15 +179,15 @@ msgstr ""
 "<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
 "</qt>"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:130 src/Preferences.py:146
 msgid "Pisi Error"
 msgstr "Pisi fout"
 
-#: src/Preferences.py:176 src/package-manager.py:741
+#: src/Preferences.py:178 src/package-manager.py:741
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Toepassen veranderingen repository</b>"
 
-#: src/Preferences.py:204
+#: src/Preferences.py:210
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr ""
 
@@ -223,11 +223,11 @@ msgstr "opgewaardeerd"
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 pakket %3"
 
-#: src/Commander.py:62
+#: src/Commander.py:64
 msgid "Can't connect to Comar daemon"
 msgstr "Kan geen verbinding maken met de Comar dienst"
 
-#: src/Commander.py:97
+#: src/Commander.py:99
 msgid "You do not have permission to do this operation."
 msgstr ""
 
@@ -235,7 +235,7 @@ msgstr ""
 msgid "GUI for PiSi package manager"
 msgstr "GUI voor PiSi pakketbeheer"
 
-#: src/package-manager.py:55 src/package-manager.py:869
+#: src/package-manager.py:55 src/package-manager.py:873
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
@@ -484,27 +484,27 @@ msgstr "Downloaden lijst met pakketten van %1"
 msgid "Confirm"
 msgstr ""
 
-#: src/package-manager.py:915
+#: src/package-manager.py:919
 msgid "Show Installed Packages"
 msgstr "Toon geïnstalleerde pakketten"
 
-#: src/package-manager.py:918
+#: src/package-manager.py:922
 msgid "Show New Packages"
 msgstr "Toon nieuwe pakketten"
 
-#: src/package-manager.py:920
+#: src/package-manager.py:924
 msgid "Show Upgradable Packages"
 msgstr "Toon op te waarderen pakketten"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:958
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:958
 msgid "Show main window on startup"
 msgstr ""
 
-#: src/package-manager.py:957
+#: src/package-manager.py:961
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is al opgestart!"
 
@@ -593,7 +593,7 @@ msgstr "&Repositories"
 msgid "&Show only desktop applications"
 msgstr "&Toon alleen desktop-toepassingen"
 
-#: src/PreferencesDialog.py:206 src/PreferencesDialog.py:209
+#: src/PreferencesDialog.py:206
 msgid "If checked, then pisi will only show desktop applications"
 msgstr "Indien geselecteerd, zal pisi alleen desktop-toepassingen weergeven"
 
@@ -605,27 +605,27 @@ msgstr "Gebruik &interval contrôle voor op te waarderen pakketten"
 msgid "&Enable system tray icon"
 msgstr "G&ebruik systeemvak pictogram"
 
-#: src/PreferencesDialog.py:210
+#: src/PreferencesDialog.py:209
 msgid "Check interval:"
 msgstr "Contrôle interval:"
 
-#: src/PreferencesDialog.py:211
+#: src/PreferencesDialog.py:210
 msgid " min"
 msgstr " min"
 
-#: src/PreferencesDialog.py:212
+#: src/PreferencesDialog.py:211
 msgid "&General Settings"
 msgstr "Al&gemene instellingen"
 
-#: src/PreferencesDialog.py:213
+#: src/PreferencesDialog.py:212
 msgid "Clear Cache"
 msgstr ""
 
-#: src/PreferencesDialog.py:214
+#: src/PreferencesDialog.py:213
 msgid "C&lean disk cache now"
 msgstr "Opruimen schijf&cache"
 
-#: src/PreferencesDialog.py:215
+#: src/PreferencesDialog.py:214
 #, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
@@ -635,27 +635,27 @@ msgstr ""
 "Het zal geen geinstalleerde software verwijderen of de stabiliteit van uw "
 "systeem beinvloeden."
 
-#: src/PreferencesDialog.py:217
+#: src/PreferencesDialog.py:216
 msgid "Cache usage"
 msgstr "Cachegebruik"
 
-#: src/PreferencesDialog.py:218
+#: src/PreferencesDialog.py:217
 msgid "Maximum cache size:"
 msgstr "Maximum cachegrootte:"
 
-#: src/PreferencesDialog.py:219
+#: src/PreferencesDialog.py:218
 msgid "&Use hard disk cache for downloaded software"
 msgstr "Gebr&uik hardeschijf-cache voor gedownloade software"
 
-#: src/PreferencesDialog.py:220
+#: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
 msgstr ""
 
-#: src/PreferencesDialog.py:221
+#: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
 msgstr "Mb <i>(gebruik 0 voor geen limiet)</i>"
 
-#: src/PreferencesDialog.py:222
+#: src/PreferencesDialog.py:221
 msgid "C&ache"
 msgstr "C&ache"
 
