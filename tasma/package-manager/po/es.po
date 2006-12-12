@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 15:27+0200\n"
+"POT-Creation-Date: 2006-12-12 16:20+0200\n"
 "PO-Revision-Date: 2006-11-28 19:53-0400\n"
 "Last-Translator: Klemens Häckel <click3d@linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -156,7 +156,7 @@ msgstr "Tamaño total: <b>%1</b>"
 msgid "Size: "
 msgstr "Tamaño:"
 
-#: src/HelpDialog.py:27 src/package-manager.py:942
+#: src/HelpDialog.py:28 src/package-manager.py:942
 msgid "Package Manager Help"
 msgstr "Ayuda del Administrador de Paquetes"
 
@@ -499,9 +499,8 @@ msgid "You have selected a package to install. Do you want to continue?"
 msgstr ""
 
 #: src/pm-install.py:51
-#, fuzzy
 msgid "Install Package"
-msgstr "Instalar Paquete(s)"
+msgstr "Instalar Paquete"
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
 msgid "Repository Name"
@@ -512,8 +511,8 @@ msgid "Address"
 msgstr "Dirección"
 
 #: src/PreferencesDialog.py:184
-msgid "PiSi Settings"
-msgstr "Configuración PiSi"
+msgid "Package Manager Settings"
+msgstr "Configuración Package Manager"
 
 #: src/PreferencesDialog.py:186
 msgid "F1"
@@ -654,6 +653,9 @@ msgstr "removiendo"
 #: src/CommonText.py:15
 msgid "installing"
 msgstr "instalando"
+
+#~ msgid "PiSi Settings"
+#~ msgstr "Configuración PiSi"
 
 #~ msgid "Misc. Fixes"
 #~ msgstr "Correcciones varios"
