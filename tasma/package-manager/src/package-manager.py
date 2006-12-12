@@ -936,7 +936,7 @@ class MainApplication(KMainWindow):
         self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
 
     def showHelp(self):
-        helpwin = HelpDialog.HelpDialog(self)
+        helpwin = HelpDialog.HelpDialog(self, HelpDialog.MAINAPP)
         helpwin.show()
 
     def fixHelpMenu(self):
