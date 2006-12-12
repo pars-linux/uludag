@@ -469,7 +469,7 @@ def main():
     about = KAboutData(
         "network-applet",
         I18N_NOOP("Network Applet"),
-        "0.4",
+        "0.5",
         None,
         KAboutData.License_GPL,
         "(C) 2006 UEKAE/TÜBİTAK",
