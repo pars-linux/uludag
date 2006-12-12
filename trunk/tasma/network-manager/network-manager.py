@@ -86,7 +86,7 @@ def main():
     win.setMinimumSize(500, 440)
     win.resize(620, 440)
     attachMainWidget(win)
-    win.setIcon(getIconSet("network.png").pixmap(QIconSet.Small, QIconSet.Normal))
+    win.setIcon(getIconSet("network").pixmap(QIconSet.Small, QIconSet.Normal))
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
 

@@ -54,13 +54,13 @@ class Window(QDialog):
         
         hb = QHBox(self)
         hb.setSpacing(6)
-        but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Create"), hb)
+        but = QPushButton(getIconSet("add", KIcon.Small), i18n("Create"), hb)
         but.setEnabled(False)
         self.connect(but, SIGNAL("clicked()"), self.accept)
         but.setDefault(True)
         self.but = but
         
-        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
+        but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.reject)
         
         vb.addWidget(hb)

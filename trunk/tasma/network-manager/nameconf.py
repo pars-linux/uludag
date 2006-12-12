@@ -49,9 +49,9 @@ class Window(QMainWindow):
         
         hb = QHBox(vb2)
         hb.setSpacing(3)
-        but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
+        but = QPushButton(getIconSet("add", KIcon.Small), i18n("Add"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        but = QPushButton(getIconSet("remove.png", KIcon.Small), i18n("Remove"), hb)
+        but = QPushButton(getIconSet("remove", KIcon.Small), i18n("Remove"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotRemove)
         
         hb = QWidget(vb)
@@ -59,10 +59,10 @@ class Window(QMainWindow):
         lay.setMargin(3)
         lay.setSpacing(12)
         lay.addStretch(1)
-        but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
+        but = QPushButton(getIconSet("apply", KIcon.Small), i18n("Apply"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotApply)
         lay.addWidget(but)
-        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
+        but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         lay.addWidget(but)
         
