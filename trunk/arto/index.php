@@ -142,8 +142,7 @@ include_once("globals.php");
                                 $nodes = get_something("single",$_POST['theme_id']);
                                 $temp = get_user_something($nodes[0]['user'],"UserName");
 
-                                $mail_message = "Merhaba {$temp[0]['name']} ({$temp[0]['uname']})\n\n    {$config['core']['title']} ({$config['core']['url']}) sitesine eklediğiniz \"{$nodes[0]['name']}\" isimli içerik \"{$_POST['reason']}\" nedeni ile sistemden kaldırılmıştır.\n\n İlginiz için teşekkürler.\n Uludağ Projesi";
-
+                                $mail_message = "Merhaba {$temp[0]['name']} ({$temp[0]['uname']}),\n\n    {$config['core']['title']} ({$config['core']['url']}) sitesine eklediğiniz \"{$nodes[0]['name']}\" isimli içerik uygun olmadığı ya da gösterilen hedefe ulaşılamadığından sistemden kaldırılmıştır.\nBaşka bir kaynak göstererek tekrar eklemeyi deneyebilirsiniz.\n\n İlginiz için teşekkürler.\n Pardus Projesi";
                                 sendmail($config['core']['email'],$_POST["email"],DELETED_EMAIL_SUBJECT,$mail_message,"3");
                             }
                             else set_smarty_vars("status",ERROR);
