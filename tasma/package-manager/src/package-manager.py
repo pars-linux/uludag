@@ -661,7 +661,7 @@ class MainApplicationWidget(QWidget):
             item = KListViewItem(self.listView)
             name = i18n("All")
             item.setText(0, u"%s (%s)" % (name, len(packages)))
-            item.setPixmap(0, KGlobal.iconLoader().loadIcon("browser",KIcon.Desktop,KIcon.SizeMedium))
+            item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_network",KIcon.Desktop,KIcon.SizeMedium))
             self.componentDict[item] = Component(name, packages, name)
 
     def createSearchResults(self, packages):
