@@ -30,6 +30,7 @@ body{
     border: 0px;
     vertical-align: top;
     float:left;
+    margin-right:4px;
 }
 
 .version_info {
