@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 14:57+0200\n"
+"POT-Creation-Date: 2006-12-12 15:11+0200\n"
 "PO-Revision-Date: 2006-12-11 20:49+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
+"translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,16 +41,16 @@ msgstr "<h3>PiSi wird vorbereitet...</h3>"
 msgid "Now installing <b>amsn</b> package"
 msgstr "Paket <b>amsn</b> wird nun installiert"
 
-#: src/Tray.py:37
+#: src/Tray.py:39
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: src/Tray.py:42 src/package-manager.py:276 src/package-manager.py:665
+#: src/Tray.py:44 src/package-manager.py:276 src/package-manager.py:665
 #: src/package-manager.py:812
 msgid "All"
 msgstr "Alle"
 
-#: src/Tray.py:62
+#: src/Tray.py:64
 msgid "There are <b>%1</b> updates available!"
 msgstr "Es sind <b>%1</b> Updates verfügbar!"
 
@@ -110,7 +111,8 @@ msgstr "Zum Entfernen ausgewählte(s) Paket(e):"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
+msgstr ""
+"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
 
 #: src/BasketDialog.py:66
 msgid "Selected package(s) for install:"
@@ -120,7 +122,8 @@ msgstr "Ausgewählte(s) Paket(e) für die Installation:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr ""
+"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
 #: src/BasketDialog.py:69
 msgid "Selected package(s) for upgrade:"
@@ -150,19 +153,19 @@ msgstr "Gesamtgrösse: <b>%1</b>"
 msgid "Size: "
 msgstr "Grösse:"
 
-#: src/HelpDialog.py:20 src/package-manager.py:941
+#: src/HelpDialog.py:27 src/package-manager.py:945
 msgid "Package Manager Help"
 msgstr "Paket-Manager Hilfe"
 
-#: src/Preferences.py:75
+#: src/Preferences.py:77
 msgid "Add New Repository"
 msgstr "Neues Depot hinzufügen"
 
-#: src/Preferences.py:82
+#: src/Preferences.py:84
 msgid "Edit Repository"
 msgstr "Depot bearbeiten"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:130 src/Preferences.py:146
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
@@ -170,17 +173,18 @@ msgstr ""
 "<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden.<p>Bitte erneut "
 "versuchen.</qt>"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:130 src/Preferences.py:146
 msgid "Pisi Error"
 msgstr "PiSi Fehler"
 
-#: src/Preferences.py:176 src/package-manager.py:741
+#: src/Preferences.py:178 src/package-manager.py:741
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Depotänderungen werden vorgenommen</b>"
 
-#: src/Preferences.py:204
+#: src/Preferences.py:210
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+msgstr ""
+"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
 #: src/Progress.py:51
 msgid "downloaded ( total: %1 )"
@@ -214,11 +218,11 @@ msgstr "Upgrade durchgeführt"
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 Paket %3"
 
-#: src/Commander.py:62
+#: src/Commander.py:64
 msgid "Can't connect to Comar daemon"
 msgstr "Kann nicht an Comar Daemon verbunden werden"
 
-#: src/Commander.py:97
+#: src/Commander.py:99
 msgid "You do not have permission to do this operation."
 msgstr "Sie haben nicht die Berechtigung, um diesen Vorgang auszuführen."
 
@@ -226,7 +230,7 @@ msgstr "Sie haben nicht die Berechtigung, um diesen Vorgang auszuführen."
 msgid "GUI for PiSi package manager"
 msgstr "GUI für PiSi Paket-Manager"
 
-#: src/package-manager.py:55 src/package-manager.py:869
+#: src/package-manager.py:55 src/package-manager.py:873
 msgid "Package Manager"
 msgstr "Paket-Manager"
 
@@ -335,7 +339,8 @@ msgid "Currently your basket is empty."
 msgstr "Momentan ist Ihre Zwischenablage leer."
 
 #: src/package-manager.py:440 src/package-manager.py:448
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momentan enthält Ihre Zwischenablage <b>%1</b> Paket(e) mit einer  "
 "Gesamtgrösse von <b>%2</b>"
@@ -399,7 +404,8 @@ msgstr ""
 
 #: src/package-manager.py:520
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr "Sie haben insgesamt<b>%1</b> Pakete zum <b>installieren</b> ausgewählt. "
+msgstr ""
+"Sie haben insgesamt<b>%1</b> Pakete zum <b>installieren</b> ausgewählt. "
 
 #: src/package-manager.py:523
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
@@ -415,7 +421,8 @@ msgstr ""
 
 #: src/package-manager.py:527
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>Für insgesamt <b>%1</b> Pakete wird ein <b>Upgrade</b> durchgeführt."
+msgstr ""
+"<br><br>Für insgesamt <b>%1</b> Pakete wird ein <b>Upgrade</b> durchgeführt."
 
 #: src/package-manager.py:530
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -474,27 +481,27 @@ msgstr "Paketliste wird von %1 heruntergeladen"
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: src/package-manager.py:915
+#: src/package-manager.py:919
 msgid "Show Installed Packages"
 msgstr "Installierte Pakete anzeigen"
 
-#: src/package-manager.py:918
+#: src/package-manager.py:922
 msgid "Show New Packages"
 msgstr "Neue Pakete anzeigen"
 
-#: src/package-manager.py:920
+#: src/package-manager.py:924
 msgid "Show Upgradable Packages"
 msgstr "Upgradebare Pakete anzeigen"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:958
 msgid "Package to install"
 msgstr "Zu installierendes Paket"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:958
 msgid "Show main window on startup"
 msgstr "Hauptfenster beim Starten anzeigen"
 
-#: src/package-manager.py:957
+#: src/package-manager.py:961
 msgid "Package Manager is already running!"
 msgstr "Paket-Manager wird bereits ausgeführt!"
 
@@ -504,7 +511,8 @@ msgstr "Zu installierendes PiSi-Paket"
 
 #: src/pm-install.py:50
 msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Sie haben ein Paket zum installieren ausgewählt. Wollen Sie fortfahren?"
+msgstr ""
+"Sie haben ein Paket zum installieren ausgewählt. Wollen Sie fortfahren?"
 
 #: src/pm-install.py:51
 msgid "Install Package"
@@ -527,8 +535,10 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid "You can see current software repositories and corresponding addresses here"
-msgstr "Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr ""
+"Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
@@ -578,9 +588,10 @@ msgstr "&Depots"
 msgid "&Show only desktop applications"
 msgstr "&Nur Desktopanwendungen anzeigen"
 
-#: src/PreferencesDialog.py:206 src/PreferencesDialog.py:209
+#: src/PreferencesDialog.py:206
 msgid "If checked, then pisi will only show desktop applications"
-msgstr "Wenn diese Auswahl getroffen ist, wird PiSi nur Desktopanwendungen anzeigen"
+msgstr ""
+"Wenn diese Auswahl getroffen ist, wird PiSi nur Desktopanwendungen anzeigen"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &interval upgradable package checking"
@@ -590,27 +601,27 @@ msgstr "&Intervall-Upgradebare Paket-Überprüfung aktivieren"
 msgid "&Enable system tray icon"
 msgstr "&System Tray Icon aktivieren"
 
-#: src/PreferencesDialog.py:210
+#: src/PreferencesDialog.py:209
 msgid "Check interval:"
 msgstr "Intervall Kontrolle:"
 
-#: src/PreferencesDialog.py:211
+#: src/PreferencesDialog.py:210
 msgid " min"
 msgstr "min"
 
-#: src/PreferencesDialog.py:212
+#: src/PreferencesDialog.py:211
 msgid "&General Settings"
 msgstr "&Allgemeine Einstellungen"
 
-#: src/PreferencesDialog.py:213
+#: src/PreferencesDialog.py:212
 msgid "Clear Cache"
 msgstr "Cache leeren"
 
-#: src/PreferencesDialog.py:214
+#: src/PreferencesDialog.py:213
 msgid "C&lean disk cache now"
 msgstr "F&estplatten-Cache leeren"
 
-#: src/PreferencesDialog.py:215
+#: src/PreferencesDialog.py:214
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
@@ -620,26 +631,29 @@ msgstr ""
 "dadurch nicht gelöscht und es wird auch keine Auswirkung auf die "
 "Systemstabilität haben."
 
-#: src/PreferencesDialog.py:217
+#: src/PreferencesDialog.py:216
 msgid "Cache usage"
 msgstr "Cacheverbrauch"
 
-#: src/PreferencesDialog.py:218
+#: src/PreferencesDialog.py:217
 msgid "Maximum cache size:"
 msgstr "Maximale Cachegrösse:"
 
-#: src/PreferencesDialog.py:219
+#: src/PreferencesDialog.py:218
 msgid "&Use hard disk cache for downloaded software"
 msgstr "&Für die heruntergeladene Software den Festplatten-Cache verwenden"
 
+#: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr "Wenn es aktiviert ist, werden heruntergeladene Pakete auf dem Festplatten-Cache gelagert"
+msgstr ""
+"Wenn es aktiviert ist, werden heruntergeladene Pakete auf dem Festplatten-"
+"Cache gelagert"
 
-#: src/PreferencesDialog.py:221
+#: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
 msgstr "Mb <i>(0 für unbegrenzten Limit)</i>"
 
-#: src/PreferencesDialog.py:222
+#: src/PreferencesDialog.py:221
 msgid "C&ache"
 msgstr "C&ache"
 
@@ -658,4 +672,3 @@ msgstr "wird entfernt"
 #: src/CommonText.py:15
 msgid "installing"
 msgstr "wird installiert"
-

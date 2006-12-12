@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 14:57+0200\n"
+"POT-Creation-Date: 2006-12-12 15:11+0200\n"
 "PO-Revision-Date: 2006-11-28 19:53-0400\n"
 "Last-Translator: Klemens Häckel <click3d@linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -39,17 +39,17 @@ msgstr "<h3>Preparando PiSi...</h3>"
 msgid "Now installing <b>amsn</b> package"
 msgstr "Instalando ahora paquete <b>amsn</b>"
 
-#: src/Tray.py:37
+#: src/Tray.py:39
 #, fuzzy
 msgid "Update"
 msgstr "Mostrar actualizaciones disponibles"
 
-#: src/Tray.py:42 src/package-manager.py:276 src/package-manager.py:665
+#: src/Tray.py:44 src/package-manager.py:276 src/package-manager.py:665
 #: src/package-manager.py:812
 msgid "All"
 msgstr "Todos"
 
-#: src/Tray.py:62
+#: src/Tray.py:64
 #, fuzzy
 msgid "There are <b>%1</b> updates available!"
 msgstr "No hay actualizaciones disponibles en este momento"
@@ -156,19 +156,19 @@ msgstr "Tamaño total: <b>%1</b>"
 msgid "Size: "
 msgstr "Tamaño:"
 
-#: src/HelpDialog.py:20 src/package-manager.py:941
+#: src/HelpDialog.py:27 src/package-manager.py:945
 msgid "Package Manager Help"
 msgstr "Ayuda del Administrador de Paquetes"
 
-#: src/Preferences.py:75
+#: src/Preferences.py:77
 msgid "Add New Repository"
 msgstr "Agregar Repositorio nuevo"
 
-#: src/Preferences.py:82
+#: src/Preferences.py:84
 msgid "Edit Repository"
 msgstr "Editar Repositorio"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:130 src/Preferences.py:146
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
@@ -176,15 +176,15 @@ msgstr ""
 "<qt>La dirección de repositorio debería terminar en xml o xml.bz2.<p>Favor "
 "intente de nuevo.</qt>"
 
-#: src/Preferences.py:128 src/Preferences.py:144
+#: src/Preferences.py:130 src/Preferences.py:146
 msgid "Pisi Error"
 msgstr "Pisi Error"
 
-#: src/Preferences.py:176 src/package-manager.py:741
+#: src/Preferences.py:178 src/package-manager.py:741
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Applicando Modificaciones de Repositorio</b>"
 
-#: src/Preferences.py:204
+#: src/Preferences.py:210
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr ""
 
@@ -220,11 +220,11 @@ msgstr "actualizado"
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paquete %3"
 
-#: src/Commander.py:62
+#: src/Commander.py:64
 msgid "Can't connect to Comar daemon"
 msgstr "No puedo conectar al demonio Comar"
 
-#: src/Commander.py:97
+#: src/Commander.py:99
 msgid "You do not have permission to do this operation."
 msgstr ""
 
@@ -232,7 +232,7 @@ msgstr ""
 msgid "GUI for PiSi package manager"
 msgstr "Interfaz gráfico del Administrador de paquetes PiSi"
 
-#: src/package-manager.py:55 src/package-manager.py:869
+#: src/package-manager.py:55 src/package-manager.py:873
 msgid "Package Manager"
 msgstr "Administrador de paquetes"
 
@@ -477,27 +477,27 @@ msgstr "Descargando lista de paquetes de %1"
 msgid "Confirm"
 msgstr ""
 
-#: src/package-manager.py:915
+#: src/package-manager.py:919
 msgid "Show Installed Packages"
 msgstr "Mostrar Paquetes instalados"
 
-#: src/package-manager.py:918
+#: src/package-manager.py:922
 msgid "Show New Packages"
 msgstr "Mostrar Paquetes nuevos"
 
-#: src/package-manager.py:920
+#: src/package-manager.py:924
 msgid "Show Upgradable Packages"
 msgstr "Mostrar paquetes a actualizar"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:958
 msgid "Package to install"
 msgstr "Paquete a instalar"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:958
 msgid "Show main window on startup"
 msgstr ""
 
-#: src/package-manager.py:957
+#: src/package-manager.py:961
 msgid "Package Manager is already running!"
 msgstr "Administrador de Paquetes ya está ejecutandose !"
 
@@ -585,7 +585,7 @@ msgstr "&Repositorios"
 msgid "&Show only desktop applications"
 msgstr "Mo&strar solamente aplicaciones de escritorio"
 
-#: src/PreferencesDialog.py:206 src/PreferencesDialog.py:209
+#: src/PreferencesDialog.py:206
 msgid "If checked, then pisi will only show desktop applications"
 msgstr "Si marcado, pisi solo mostrará aplicaciones de escritorio"
 
@@ -597,27 +597,27 @@ msgstr "Habilitar chequeo &periódico de paquetes a actualizar"
 msgid "&Enable system tray icon"
 msgstr "&Habilitar Icono en barra de menu"
 
-#: src/PreferencesDialog.py:210
+#: src/PreferencesDialog.py:209
 msgid "Check interval:"
 msgstr "Intervalo de Chequeo:"
 
-#: src/PreferencesDialog.py:211
+#: src/PreferencesDialog.py:210
 msgid " min"
 msgstr " min"
 
-#: src/PreferencesDialog.py:212
+#: src/PreferencesDialog.py:211
 msgid "&General Settings"
 msgstr "Configuraciones &Generales"
 
-#: src/PreferencesDialog.py:213
+#: src/PreferencesDialog.py:212
 msgid "Clear Cache"
 msgstr ""
 
-#: src/PreferencesDialog.py:214
+#: src/PreferencesDialog.py:213
 msgid "C&lean disk cache now"
 msgstr "&Vaciar cache de disco ahora"
 
-#: src/PreferencesDialog.py:215
+#: src/PreferencesDialog.py:214
 #, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
@@ -626,28 +626,28 @@ msgstr ""
 "Al vaciar el cache de disco, se eliminarán todos los software descargados. \n"
 "Esto no afectará los software instalados, ni la estabilidad del sistema."
 
-#: src/PreferencesDialog.py:217
+#: src/PreferencesDialog.py:216
 msgid "Cache usage"
 msgstr "Uso de Cache"
 
-#: src/PreferencesDialog.py:218
+#: src/PreferencesDialog.py:217
 msgid "Maximum cache size:"
 msgstr "Tamaño máximo de cache:"
 
-#: src/PreferencesDialog.py:219
+#: src/PreferencesDialog.py:218
 msgid "&Use hard disk cache for downloaded software"
 msgstr ""
 "&Usar cache en disco rígido para software descargado de los repositorios"
 
-#: src/PreferencesDialog.py:220
+#: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
 msgstr ""
 
-#: src/PreferencesDialog.py:221
+#: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
 msgstr "Mb <i>(use 0 para sin límite)</i>"
 
-#: src/PreferencesDialog.py:222
+#: src/PreferencesDialog.py:221
 msgid "C&ache"
 msgstr "C&ache"
 
