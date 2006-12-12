@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 15:27+0200\n"
+"POT-Creation-Date: 2006-12-12 16:20+0200\n"
 "PO-Revision-Date: 2006-12-11 14:58+0200\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -154,7 +154,7 @@ msgstr "Toplam Boyut: <b>%1</b>"
 msgid "Size: "
 msgstr "Boyut: "
 
-#: src/HelpDialog.py:27 src/package-manager.py:942
+#: src/HelpDialog.py:28 src/package-manager.py:942
 msgid "Package Manager Help"
 msgstr "Paket Yöneticisi Yardım"
 
@@ -509,8 +509,8 @@ msgid "Address"
 msgstr "Adres"
 
 #: src/PreferencesDialog.py:184
-msgid "PiSi Settings"
-msgstr "PiSi Ayarları"
+msgid "Package Manager Settings"
+msgstr "Paket Yöneticisi Ayarları"
 
 #: src/PreferencesDialog.py:186
 msgid "F1"
@@ -649,6 +649,9 @@ msgstr "kaldırılıyor"
 #: src/CommonText.py:15
 msgid "installing"
 msgstr "kuruluyor"
+
+#~ msgid "PiSi Settings"
+#~ msgstr "PiSi Ayarları"
 
 #~ msgid "Misc. Fixes"
 #~ msgstr "Diğer düzeltmeler"

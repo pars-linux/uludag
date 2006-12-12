@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>PiSi Settings</string>
+        <string>Package Manager Settings</string>
     </property>
     <property name="sizeGripEnabled">
         <bool>true</bool>
