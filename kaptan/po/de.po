@@ -46,7 +46,7 @@ msgstr ""
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16 ../src/welcomedlg.cpp:67
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<b>Pardus </b>is a GNU/Linux distribution, targeting at computer literate "
 "users' basic desktop needs; with acquiring the strong ideas, architecture "
@@ -54,7 +54,7 @@ msgid ""
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
-"Pardus ist eine Entwicklung auf der Basis der GNU/Linux - Distribution , "
+"<b>Pardus</b> ist eine Entwicklung auf der Basis der GNU/Linux - Distribution , "
 "welche die Anforderungen des erfahrenen PC – Benutzers durch die Verwendung  "
 "der vorhandenen stabilen und neuen Ideen, Strukturen und Codes des Linux-BS "
 "erfüllen soll. Dessen Ziel ist dem Benutzer ein autonomes und "
@@ -66,11 +66,11 @@ msgstr ""
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
 msgstr ""
-"<center>Sie sind fertig!  Sie können nun mit der Anwendung von Pardus Linux "
+"<center>Sie sind fertig!  Sie können nun mit der Anwendung von <b>Pardus</b> Linux "
 "anfangen</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
@@ -111,23 +111,23 @@ msgstr ""
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 27
 #: rc.cpp:78 ../src/styledlg.cpp:95
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"Hier können Sie ein Stil für Ihre Arbeitsfläche auswählen. Pardus bietet "
+"Hier können Sie ein Stil für Ihre Arbeitsfläche auswählen. <b>Pardus</b> bietet "
 "Ihnen einige blickfangende Stile an."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23 ../src/wallpaperdlg.cpp:95
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a <b>wallpaper</b> for your desktop background. "
 "<b>Pardus</b> provides eye candy wallpapers, you can select one of them, as "
 "you wish."
 msgstr ""
-"Hier können Sie ein Hintergrundbild für Ihre Arbeitsfläche auswählen. Pardus "
+"Hier können Sie ein Hintergrundbild für Ihre Arbeitsfläche auswählen. <b>Pardus</b> "
 "bietet Ihnen einige blickfangende Hintergrundbilder an, die Sie auswählen "
 "und verwenden können."
 
