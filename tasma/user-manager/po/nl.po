@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-06 12:04+0200\n"
+"POT-Creation-Date: 2006-12-12 13:28+0200\n"
 "PO-Revision-Date: 2006-12-07 21:45+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -24,8 +24,8 @@ msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
 msgstr ""
-"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten starten "
-"met het commando 'service comar start' in de root console."
+"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
+"starten met het commando 'service comar start' in de root console."
 
 #: mainview.py:46
 msgid "Waiting COMAR..."
@@ -33,7 +33,9 @@ msgstr "Wachten COMAR..."
 
 #: mainview.py:47
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te verbinden..."
+msgstr ""
+"Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
+"verbinden..."
 
 #: user-manager.py:30
 msgid "User Management"
@@ -143,7 +145,8 @@ msgstr "Verwijder gebruiker"
 
 #: browser.py:157
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
 "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
 "s<br>ID: %d"
@@ -257,8 +260,8 @@ msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
 msgstr ""
-"U wilt uzelf verwijderen van de 'wiel' systeemgroep, u kunt hierna mogelijk uw "
-"administrator rechten niet meer gebruiken."
+"U wilt uzelf verwijderen van de 'wiel' systeemgroep, u kunt hierna mogelijk "
+"uw administrator rechten niet meer gebruiken."
 
 #: useredit.py:534
 msgid "Important Group Change"
@@ -275,4 +278,3 @@ msgstr "Toevoegen gebruiker..."
 #: useredit.py:615
 msgid "Getting user information..."
 msgstr "Ophalen gebruikersinformatie..."
-
