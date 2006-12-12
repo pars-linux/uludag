@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config version="1.0" serial="" timestamp="">
+  <UI>
+    <Installed>1</Installed>
+    <Language>tr</Language>
+    <MailProgram>kmail</MailProgram>
+    <Pos>
+      <Height>546</Height>
+      <Width>268</Width>
+      <X>303</X>
+      <Y>178</Y>
+    </Pos>
+    <UrlHandler>firefox</UrlHandler>
+  </UI>
+</config>
