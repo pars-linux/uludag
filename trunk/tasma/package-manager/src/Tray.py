@@ -20,6 +20,8 @@ from pisi.api import list_upgradable
 
 from BalloonMessage import *
 
+ID_TRAY_INTERVAL_CHECK=30
+
 class Tray(KSystemTray):
     def __init__(self, parent=None):
         KSystemTray.__init__(self, parent)

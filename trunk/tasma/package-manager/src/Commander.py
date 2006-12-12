@@ -19,6 +19,8 @@ from qt import QObject, QTimer
 import ComarIface
 import Settings
 
+from Tray import ID_TRAY_INTERVAL_CHECK
+
 class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
@@ -105,8 +107,12 @@ class Commander(QObject):
             self.parent.finished()
             self.parent.resetState()
             self.parent.refreshState()
-            self.parent.showErrorMessage(unicode(reply.data))
-            # if an error occured communicating with comar and components are not ready we quit
+
+            # do not show any error if it is the interval check
+            if not reply.id == ID_TRAY_INTERVAL_CHECK:
+                self.parent.showErrorMessage(unicode(reply.data))
+
+            # if an error occured communicating with comar and components are not ready we should warn
             if not pisi.context.componentdb.list_components():
                 self.parent.repoNotReady()
         else:
@@ -114,9 +120,9 @@ class Commander(QObject):
             self.comar.com_lock.unlock()
             pass
 
-    def startUpdate(self, repo = None):
+    def startUpdate(self, repo = None, id=0):
         if repo is None:
-            self.updateAllRepos()
+            self.updateAllRepos(id)
         else:
             self.updateRepo(repo)
 
@@ -135,8 +141,8 @@ class Commander(QObject):
     def updateRepo(self, repo):
         self.comar.updateRepo(repo)
 
-    def updateAllRepos(self):
-        self.comar.updateAllRepos()
+    def updateAllRepos(self, id=0):
+        self.comar.updateAllRepos(id)
 
     def addRepo(self,repoName,repoAddress):
         self.comar.addRepo(repoName,repoAddress)
