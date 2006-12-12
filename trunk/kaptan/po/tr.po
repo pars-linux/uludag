@@ -38,10 +38,12 @@ msgid ""
 "But also can work in the system tray and periodically checks new upgrades of "
 "the programs that are installed on your system."
 msgstr ""
+"<b>Package-manager</b> yazılımının öntanımlı davranışlarını buradan "
+"belirleyebilirsiniz."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16 ../src/welcomedlg.cpp:67
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<b>Pardus </b>is a GNU/Linux distribution, targeting at computer literate "
 "users' basic desktop needs; with acquiring the strong ideas, architecture "
@@ -49,7 +51,7 @@ msgid ""
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
-"Pardus GNU/Linux dağıtımı, bilişim okur-yazarlığına sahip bilgisayar "
+"<b>Pardus</b> GNU/Linux dağıtımı, bilişim okur-yazarlığına sahip bilgisayar "
 "kullanıcılarının temel masaüstü ihtiyaçlarını hedefleyerek; mevcut Linux "
 "dağıtımlarının üstün taraflarını kavram, mimari ya da kod olarak kullanan; "
 "otonom sisteme evrilebilecek bir yapılandırma çerçevesi ve araçları ile "
@@ -58,14 +60,14 @@ msgstr ""
 
 #: ../src/network.cpp:42
 msgid "<big>Loading...</big>"
-msgstr ""
+msgstr "<big>Yükleniyor..</big>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
-msgstr "<center>Bitirdiniz! Pardus kullanmaya başlayabilirsiniz</center>"
+msgstr "<center>Bitirdiniz! <b>Pardus<b> kullanmaya başlayabilirsiniz</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
 #: rc.cpp:42 ../src/mousedlg.cpp:118
@@ -103,23 +105,23 @@ msgstr "Ç&ift tıklama ile dosya ve dizinleri aç"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 27
 #: rc.cpp:78 ../src/styledlg.cpp:95
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"Pardus size güzel görünümlü duvar kâğıtları sunar. Masaüstünüz için bir "
+"<b>Pardus</b> size güzel görünümlü duvar kâğıtları sunar. Masaüstünüz için bir "
 "duvar kâğıdı seçebilirsiniz. "
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23 ../src/wallpaperdlg.cpp:95
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "Here, you can select a <b>wallpaper</b> for your desktop background. "
 "<b>Pardus</b> provides eye candy wallpapers, you can select one of them, as "
 "you wish."
 msgstr ""
-"Pardus size güzel görünümlü duvar kâğıtları sunar. Masaüstünüz için bir "
+"<b>Pardus</b> size güzel görünümlü duvar kâğıtları sunar. Masaüstünüz için bir "
 "duvar kâğıdı seçebilirsiniz. "
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
