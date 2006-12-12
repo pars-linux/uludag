@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 22:22+0200\n"
+"POT-Creation-Date: 2006-12-12 11:26+0200\n"
 "PO-Revision-Date: 2006-11-26 17:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -62,7 +62,7 @@ msgstr "Eliminar conexión ?"
 msgid "No device!"
 msgstr ""
 
-#: browser.py:381
+#: browser.py:381 network-applet.py:395
 msgid "New connection"
 msgstr "Conexión nueva"
 
@@ -223,28 +223,28 @@ msgstr "Instalar paquetes de red!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "No se instalaron todavía paquetes con los script de red COMAR"
 
-#: network-applet.py:234
+#: network-applet.py:242
 msgid "Firewall..."
 msgstr ""
 
-#: network-applet.py:235
+#: network-applet.py:243
 #, fuzzy
 msgid "Edit Connections..."
 msgstr "Conexión nueva"
 
-#: network-applet.py:237
+#: network-applet.py:245
 msgid "Icon Per Device"
 msgstr ""
 
-#: network-applet.py:238
+#: network-applet.py:246
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:282
+#: network-applet.py:290
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 
-#: network-applet.py:413
+#: network-applet.py:430
 #, fuzzy
 msgid "Network Applet"
 msgstr "Propiedades de Red"
