@@ -4,6 +4,7 @@
     <ReleaseFiles>/root/CD-image</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
+        <SelectedPackage>kernel</SelectedPackage>
         <Package>acl</Package>
         <Package>attr</Package>
         <Package>baselayout</Package>
@@ -46,6 +47,7 @@
         <Package>iputils</Package>
         <Package>jpeg</Package>
         <Package>kbd</Package>
+        <Package>kernel</Package>
         <Package>klibc</Package>
         <Package>less</Package>
         <Package>lib-compat</Package>
