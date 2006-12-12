@@ -25,8 +25,8 @@ LineUpImages = false
 #LabelCoords1 = -1,620
 
 StatusCoords = -1,730
-StatusColor = 68,68,68
-LabelShadowColor = 255,255,255
+StatusColor = 255,255,255
+LabelShadowColor = 0,0,0
 
 ImageCoords1 = 335,630
 ImageCoords2 = 415,630
