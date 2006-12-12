@@ -9,17 +9,17 @@
 </item>
 
 <item type="rect">
-    <pos anchor="n" x="%50" y="%5" width="box" height="box"/>
+    <pos anchor="n" x="%50" y="%85" width="box" height="box"/>
     <box orientation="vertical" spacing="2">
         <!-- makine adı -->
         <item type="label">
             <pos anchor="n" x="%50"/>
-            <normal color="#444444" font="Sans Bold 10"/>
+            <normal color="#FFFFFF" font="Sans Bold 12"/>
             <text>%h</text>
         </item>
         <!-- saat -->
         <item type="label" id="clock">
-	        <normal color="#444444" font="Sans Bold 10"/>
+	        <normal color="#FFFFFF" font="Sans Bold 12"/>
 	        <text>%c</text>
         </item>
     </box>
@@ -41,13 +41,13 @@
 	                    <!-- kullanıcı adı sorusu -->
 				        <item type="label">
                             <pos anchor="w" y="%60"/>
-					        <normal color="#444444" font="Sans Bold 15"/>
+					        <normal color="#FFFFFF" font="Sans Bold 15"/>
 					        <stock type="username-label"/>
 				        </item>
  				        <!-- parola sorusu -->
 				        <item type="label">
                             <pos anchor="w" y="%60"/>
-					        <normal color="#444444" font="Sans Bold 15"/>
+					        <normal color="#FFFFFF" font="Sans Bold 15"/>
 					        <stock type="password-label"/>
 	        			</item>
 	                </box>
@@ -79,7 +79,7 @@
                 </item>
                 <item type="label">
                     <pos anchor="w" y="%50"/>
-                    <normal color="#444444" font="Sans Bold 15"/>
+                    <normal color="#FFFFFF" font="Sans Bold 15"/>
                     <stock type="login"/>
                 </item>
             </box>
@@ -94,7 +94,7 @@
                 </item>
                 <item type="label">
                     <pos anchor="w" y="%50"/>
-                    <normal color="#444444" font="Sans Bold 15"/>
+                    <normal color="#FFFFFF" font="Sans Bold 15"/>
                     <stock type="quit"/>
                 </item>
             </box>
@@ -113,7 +113,7 @@
 
 <!-- hata mesajı -->
 <item type="label" id="pam-error">
-    <normal color="#704025" font="Sans Bold 15"/>
+    <normal color="#FF7020" font="Sans Bold 15"/>
 	<pos anchor="n" x="%50" y="%70"/>
 </item>
 
