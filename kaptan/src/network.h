@@ -25,6 +25,8 @@ public:
     Network(QWidget *parent = 0, const char* name = 0);
     ~Network();
 
+    void embedManager();
+
 protected slots:
     void killProcess();
 

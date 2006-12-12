@@ -90,10 +90,13 @@ void Kaptan::next()
     if (currentPage() == mouse)
         mouse->apply();
     else if (currentPage() == wallpaper)
+    {
         if (wallpaper->changeWallpaper())
             wallpaper->setWallpaper();
         else
             wallpaper->resetWallpaper();
+        network->embedManager();
+    }
     else if (currentPage() == package)
         package->apply();
 

@@ -10,6 +10,7 @@
 */
 #include <qvbox.h>
 #include <qlayout.h>
+#include <qlabel.h>
 
 #include <qxembed.h>
 
@@ -28,13 +29,23 @@ Network::Network(QWidget *parent, const char* name)
     : NetworkDlg(parent, name)
 {
     embed = new QXEmbed(networkFrame);
+    proc = new KProcess(this);
+}
+
+void Network::embedManager()
+{
     embed->initialize();
 
     // FIXME: networkFrame->widht() || networkFrame->height() returns wrong value?
     embed->resize(606, 390);
 
+    QLabel *busy = new QLabel(i18n("<big>Loading...</big>"), embed);
+    busy->setAlignment(AlignCenter);
+    busy->setTextFormat(RichText);
+    busy->setGeometry(0,0, width(), height());
+    busy->show();
+
     // embed buttonless network-manager into Kaptan
-    proc = new KProcess(this);
     *proc << "kcmshell";
     *proc << "--embed-proxy";
     *proc << QString::number(embed->winId());
