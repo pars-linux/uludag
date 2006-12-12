@@ -142,6 +142,23 @@ class Comlink:
         
         elif reply.id == CONNINFO:
             conn = Connection(reply.script, reply.data)
+            old_conn = self.getConn(reply.script, conn.name)
+            if old_conn:
+                if old_conn.devid != conn.devid:
+                    dev = self.devices.get(old_conn.devid, None)
+                    if dev:
+                        del dev.connections[old_conn.name]
+                        if len(dev.connections) == 0:
+                            del self.devices[dev.devid]
+                    dev = self.devices.get(conn.devid, None)
+                    if not dev:
+                        dev = Device(conn.devid, conn.devname)
+                        self.devices[conn.devid] = dev
+                    dev.connections[conn.name] = conn
+                else:
+                    old_conn.parse(reply.data)
+                map(lambda x: x(), self.state_hook)
+                return
             dev = self.devices.get(conn.devid, None)
             if not dev:
                 dev = Device(conn.devid, conn.devname)
@@ -161,6 +178,20 @@ class Comlink:
                 conn.message = msg
                 conn.state = state
                 map(lambda x: x(), self.state_hook)
+        
+        elif reply.notify == "Net.Link.connectionChanged":
+            what, name = reply.data.split(" ", 1)
+            if what == "added" or what == "configured":
+                self.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
+            elif what == "deleted":
+                conn = self.getConn(reply.script, name)
+                if conn:
+                    dev = self.devices.get(conn.devid, None)
+                    if dev:
+                        del dev.connections[conn.name]
+                        if len(dev.connections) == 0:
+                            del self.devices[dev.devid]
+                    map(lambda x: x(), self.state_hook)
     
     def getConn(self, script, name):
         for dev in self.devices.values():
