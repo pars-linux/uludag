@@ -381,7 +381,6 @@ class NetTray(KSystemTray):
             dev_mid = menu.insertTitle(dev.menu_name)
             if len(dev.connections) > 0:
                 self.appendConns(menu, dev, menu.indexOf(dev_mid) + 1)
-            else:
                 flag = False
         else:
             keys = comlink.devices.keys()
