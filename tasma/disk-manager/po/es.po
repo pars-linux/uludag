@@ -1,13 +1,14 @@
 # translation of es.po to
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Disk Manager Interface
+# Copyright (C) 2006-2007, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the Disk-Manager package.
 #
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-08 23:28+0200\n"
+"POT-Creation-Date: 2006-12-12 09:42+0200\n"
 "PO-Revision-Date: 2006-12-02 20:22-0400\n"
 "Last-Translator: Klemens Häckel <click3d@linuxmail.org>\n"
 "Language-Team: es <es@li.org>\n"
@@ -22,7 +23,7 @@ msgstr "Administrador de Discos"
 
 #: src/disk-manager.py:113
 msgid "User not in disk group !! Exiting.."
-msgstr ""
+msgstr "User not in disk group !! Exiting.."
 
 #: src/disk-manager.py:226 src/disk-manager.py:249
 msgid "Completed"
@@ -35,7 +36,7 @@ msgstr "Archivo /etc/fstab actualizado !"
 #: src/disk-manager.py:267
 #, python-format
 msgid "%s for %s failure !!"
-msgstr ""
+msgstr "%s for %s failure !!"
 
 #: src/disk-manager.py:295
 msgid "Mount Point"
