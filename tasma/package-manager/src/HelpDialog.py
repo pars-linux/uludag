@@ -13,6 +13,7 @@ import os
 from qt import *
 from kdecore import locate, i18n, KURL
 from khtml import KHTMLPart
+from LocaleData import getKDELocale
 
 (MAINAPP, PREFERENCES) = (1, 2)
 
@@ -30,7 +31,7 @@ class HelpDialog(QDialog):
         self.resize(500,600)
         self.layout.addWidget(self.htmlPart.view(),1,1)
 
-        if os.environ['LANG'].startswith('tr_TR'):
+        if getKDELocale() == "tr":
             self.htmlPart.openURL(KURL(locate("data","package-manager/help/tr/%s" % help_files[help])))
         else:
             self.htmlPart.openURL(KURL(locate("data","package-manager/help/en/%s" % help_files[help])))
