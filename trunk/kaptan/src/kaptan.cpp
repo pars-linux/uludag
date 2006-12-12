@@ -89,6 +89,8 @@ void Kaptan::next()
 {
     if (currentPage() == mouse)
         mouse->apply();
+    else if (currentPage() == style)
+        style->testStyle();
     else if (currentPage() == wallpaper)
     {
         if (wallpaper->changeWallpaper())

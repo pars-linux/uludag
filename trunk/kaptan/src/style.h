@@ -25,9 +25,9 @@ public:
 
 public slots:
     void styleSelected(int);
+    void testStyle();
 
 protected slots:
-    void testStyle();
     void kickoffSelected();
 
 
