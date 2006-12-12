@@ -604,7 +604,7 @@ class UserStack(QVBox):
         self.u_groups.populate(groups)
         self.reset()
         self.u_name.usednames = names
-        self.u_groups.setText("users")
+        self.u_groups.setText("users,audio,pnp,removable")
         self.guide.op_end()
         self.u_realname.name.setFocus()
     
