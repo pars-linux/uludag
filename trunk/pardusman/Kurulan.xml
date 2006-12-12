@@ -52,6 +52,7 @@
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>freealut</SelectedPackage>
+        <SelectedPackage>frozen-bubble</SelectedPackage>
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gle</SelectedPackage>
@@ -105,6 +106,7 @@
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
+        <SelectedPackage>ksudoku</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
@@ -197,13 +199,16 @@
         <Package>915resolution</Package>
         <Package>DirectFB</Package>
         <Package>IO-Socket-SSL</Package>
+        <Package>Locale-gettext</Package>
         <Package>Net-SSLeay</Package>
         <Package>PolicyKit</Package>
         <Package>PyKDE</Package>
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
+        <Package>SDL-Perl</Package>
         <Package>XML-Parser</Package>
         <Package>Xaw3d</Package>
+        <Package>YAML</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>accessrunner-firmware</Package>
@@ -344,6 +349,7 @@
         <Package>foomatic-filters</Package>
         <Package>freealut</Package>
         <Package>freetype</Package>
+        <Package>frozen-bubble</Package>
         <Package>ftp</Package>
         <Package>fuse</Package>
         <Package>gawk</Package>
@@ -456,6 +462,7 @@
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
+        <Package>ksudoku</Package>
         <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
@@ -710,10 +717,13 @@
         <Package>schedutils</Package>
         <Package>scons</Package>
         <Package>screen</Package>
+        <Package>sdl-gfx</Package>
         <Package>sdl-image</Package>
         <Package>sdl-mixer</Package>
         <Package>sdl-net</Package>
+        <Package>sdl-pango</Package>
         <Package>sdl-sound</Package>
+        <Package>sdl-ttf</Package>
         <Package>sdljump</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
@@ -730,6 +740,7 @@
         <Package>slmodem</Package>
         <Package>smartdimmer</Package>
         <Package>smb4k</Package>
+        <Package>smpeg</Package>
         <Package>sox</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
