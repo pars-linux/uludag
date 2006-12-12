@@ -218,6 +218,11 @@ class Applet:
         self.mode = 0
         self.app = app
         comlink.state_hook.append(self.updateIcons)
+        app.connect(app, SIGNAL("shutDown()"), self.fixQuit)
+    
+    def fixQuit(self):
+        for item in self.trays:
+            item.deleteLater()
     
     def start(self):
         comlink.connect()
@@ -264,7 +269,7 @@ class Applet:
         self.mode = 0
         tray = NetTray(self)
         tray.show()
-        tray.connect(tray, SIGNAL("quitSelected()"), self.quit)
+        tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
         self.trays = [tray]
 
     def deviceGroup(self, id):
@@ -275,10 +280,10 @@ class Applet:
         for dev in comlink.devices.values():
             tray = NetTray(self, dev)
             tray.show()
-            tray.connect(tray, SIGNAL("quitSelected()"), self.quit)
+            tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
             self.trays.append(tray)
     
-    def quit(self):
+    def slotQuit(self):
         autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))
         config = KConfig("network-appletrc")
         config.setGroup("General")
@@ -286,7 +291,7 @@ class Applet:
             config.writeEntry("AutoStart", "true")
         elif autostart == KMessageBox.No:
             config.writeEntry("AutoStart", "false")
-        KApplication.kApplication().quit()
+        self.app.quit()
 
 
 class ConnectionItem(QCustomMenuItem):
@@ -422,6 +427,7 @@ def main():
     KCmdLineArgs.init(sys.argv, about)
     KUniqueApplication.addCmdLineOptions()
     app = KUniqueApplication(True, True, True)
+    app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     icons.load_icons()
     applet = Applet(app)
     applet.start()
