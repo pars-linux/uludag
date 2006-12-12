@@ -901,6 +901,8 @@ class MainApplication(KMainWindow):
             self.slotQuit()
 
     def slotQuit(self):
+        pisi.api.finalize()
+
         # Don't know why but without this, after exiting package-manager, crash occurs. This may be a workaround 
         # or a PyQt bug.
         self.mainwidget.deleteLater()
