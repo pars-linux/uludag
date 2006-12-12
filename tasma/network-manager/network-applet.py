@@ -304,20 +304,30 @@ class ConnectionItem(QCustomMenuItem):
         self.mypix = icons.get_state(conn.script, conn.state)
         self.text_start = self.mypix.width() + 6
     
+    def addressText(self):
+        text = ""
+        if self.conn.state == "up":
+            text = self.conn.net_addr
+            if not text:
+                text = self.conn.message
+        else:
+            if self.conn.message:
+                text = unicode(self.conn.message)
+        return text
+    
     def paint(self, paint, cg, act, enabled, x, y, w, h):
         paint.setFont(self.my_font)
         fm = paint.fontMetrics()
         paint.drawPixmap(x + 3, y + (h - self.mypix.height()) / 2, self.mypix)
         paint.drawText(x + self.text_start, y + fm.ascent(), self.conn.menu_name)
-        if self.conn.message:
-            paint.drawText(x + self.text_start, y + fm.height() + fm.ascent(), unicode(self.conn.message))
+        paint.drawText(x + self.text_start, y + fm.height() + fm.ascent(), self.addressText())
     
     def sizeHint(self):
         fm = QFontMetrics(self.my_font)
         rect = fm.boundingRect(self.conn.menu_name)
         tw, th = rect.width(), fm.height()
-        if self.conn.message:
-            rect2 = fm.boundingRect(self.conn.message)
+        if self.addressText():
+            rect2 = fm.boundingRect(self.addressText())
             tw = max(tw, rect2.width())
         tw += self.text_start
         th += 3 + fm.height()
