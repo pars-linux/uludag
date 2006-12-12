@@ -379,7 +379,7 @@ class Settings(QWidget):
             self.device_items.append((uid, info))
             self.devices.insertItem(info, id)
             id += 1
-        if id > 1 or not self.conn.devname:
+        if id > 1 or (self.conn and not self.conn.devname):
             self.devices_but.setEnabled(True)
     
     def slotDeviceSelect(self, id):
