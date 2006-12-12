@@ -115,6 +115,8 @@
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
         <SelectedPackage>ltrace</SelectedPackage>
+        <SelectedPackage>m560x</SelectedPackage>
+        <SelectedPackage>m560x-firmware</SelectedPackage>
         <SelectedPackage>macromedia-flash</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
@@ -133,7 +135,6 @@
         <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
-        <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>ppracer</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
@@ -157,8 +158,6 @@
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>sg3_utils</SelectedPackage>
         <SelectedPackage>sharutils</SelectedPackage>
-        <SelectedPackage>skype</SelectedPackage>
-        <SelectedPackage>skype-avatars</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>smartdimmer</SelectedPackage>
         <SelectedPackage>smb4k</SelectedPackage>
@@ -174,7 +173,6 @@
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>testdisk</SelectedPackage>
-        <SelectedPackage>tightvnc</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>ufraw</SelectedPackage>
@@ -190,6 +188,7 @@
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
+        <SelectedPackage>xdelta</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
         <SelectedPackage>xmoto</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
@@ -602,6 +601,8 @@
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>m4</Package>
+        <Package>m560x</Package>
+        <Package>m560x-firmware</Package>
         <Package>mDNSResponder</Package>
         <Package>macromedia-flash</Package>
         <Package>madplay</Package>
@@ -657,7 +658,6 @@
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
-        <Package>openvpn</Package>
         <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
@@ -734,8 +734,6 @@
         <Package>shared-mime-info</Package>
         <Package>sharutils</Package>
         <Package>sip</Package>
-        <Package>skype</Package>
-        <Package>skype-avatars</Package>
         <Package>slang</Package>
         <Package>slmodem</Package>
         <Package>smartdimmer</Package>
@@ -775,7 +773,6 @@
         <Package>testdisk</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
-        <Package>tightvnc</Package>
         <Package>timidity</Package>
         <Package>timidity-shompatches</Package>
         <Package>tn5250</Package>
@@ -812,6 +809,7 @@
         <Package>x11-ssh-askpass</Package>
         <Package>x264</Package>
         <Package>xbitmaps</Package>
+        <Package>xdelta</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
