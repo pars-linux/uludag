@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-06 12:04+0200\n"
+"POT-Creation-Date: 2006-12-12 13:28+0200\n"
 "PO-Revision-Date: 2006-12-09 21:28+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
+"translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +21,10 @@ msgstr ""
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
-msgstr "Konnte nicht mit COMAR verbinden! Wenn es nicht gestartet sein sollte, dann sollten Sie es mit 'service comar start' Kommando in einer root-Konsole starten."
+msgstr ""
+"Konnte nicht mit COMAR verbinden! Wenn es nicht gestartet sein sollte, dann "
+"sollten Sie es mit 'service comar start' Kommando in einer root-Konsole "
+"starten."
 
 #: mainview.py:46
 msgid "Waiting COMAR..."
@@ -28,7 +32,9 @@ msgstr "Wartend auf COMAR..."
 
 #: mainview.py:47
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "Die Verbindung zu COMAR ist unerwartet geschlossen worden, es wird versucht, erneut zu verbinden..."
+msgstr ""
+"Die Verbindung zu COMAR ist unerwartet geschlossen worden, es wird versucht, "
+"erneut zu verbinden..."
 
 #: user-manager.py:30
 msgid "User Management"
@@ -56,7 +62,8 @@ msgstr "Gruppenname:"
 
 #: groupedit.py:97
 msgid "Enter a group ID or use auto selection"
-msgstr "Geben Sie eine Gruppen-ID ein oder verwenden Sie die automatische Auswahl"
+msgstr ""
+"Geben Sie eine Gruppen-ID ein oder verwenden Sie die automatische Auswahl"
 
 #: groupedit.py:100
 msgid "Enter a group name"
@@ -138,7 +145,8 @@ msgstr "Benutzer löschen"
 
 #: browser.py:157
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
 "<big><b>Soll diese Gruppe gelöscht werden?</b></big><br><br>Gruppenname: %"
 "s<br>ID: %d"
@@ -197,17 +205,22 @@ msgstr "Hauptgruppe:"
 
 #: useredit.py:375
 msgid "Start with typing this user's full name."
-msgstr "Beginnen Sie mit der Eingabe von dem vollständigen Namen dieses Benutzer's."
+msgstr ""
+"Beginnen Sie mit der Eingabe von dem vollständigen Namen dieses Benutzer's."
 
 #: useredit.py:378
 msgid "You should enter a password for this user."
 msgstr "Sie sollten ein Passwort für diesen Benutzer eingeben."
 
+#: useredit.py:383
 msgid "Password must be longer."
 msgstr "Das Passwort muss länger sein"
 
+#: useredit.py:387
 msgid "Dont use your full name or user name as a password."
-msgstr "Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als Passwort."
+msgstr ""
+"Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als "
+"Passwort."
 
 #: useredit.py:390
 msgid "Passwords don't match."
@@ -215,12 +228,14 @@ msgstr "Passwörter stimmen nicht überein."
 
 #: useredit.py:393
 msgid "You must enter a user ID or use the auto selection."
-msgstr "Sie müssen eine Benutzer-ID eingeben oder die automatische Auswahl verwenden."
+msgstr ""
+"Sie müssen eine Benutzer-ID eingeben oder die automatische Auswahl verwenden."
 
 #: useredit.py:398
 msgid "You must enter a user name."
 msgstr "Sie müssen einen Benutzernamen eingeben."
 
+#: useredit.py:401
 msgid "This user name is used by another user."
 msgstr "Dieser Benutzername wird von einem anderen Benutzer verwendet."
 
@@ -248,7 +263,9 @@ msgstr "Alle Gruppen anzeigen"
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
-msgstr "Sie entfernen sich von der 'wheel' Systemgruppe, Sie können danach Ihre Administratorenrechte nicht mehr verwenden."
+msgstr ""
+"Sie entfernen sich von der 'wheel' Systemgruppe, Sie können danach Ihre "
+"Administratorenrechte nicht mehr verwenden."
 
 #: useredit.py:534
 msgid "Important Group Change"
@@ -265,4 +282,3 @@ msgstr "Benutzer wird hinzugefügt..."
 #: useredit.py:615
 msgid "Getting user information..."
 msgstr "Benutzerinformationen werden erfasst..."
-
