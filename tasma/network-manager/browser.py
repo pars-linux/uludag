@@ -99,10 +99,10 @@ class Connection(QWidget):
         
         view.connections[conn.hash] = self
         
-        self.edit_but = IconButton("configure.png", self)
+        self.edit_but = IconButton("configure", self)
         QToolTip.add(self.edit_but, i18n("Configure connection"))
         self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
-        self.del_but = IconButton("cancel.png", self)
+        self.del_but = IconButton("cancel", self)
         QToolTip.add(self.del_but, i18n("Delete connection"))
         self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         
@@ -377,12 +377,12 @@ class Widget(QVBox):
         
         bar = QToolBar("lala", None, self)
         
-        but = QToolButton(getIconSet("add.png"), "", "lala", self.slotCreate, bar)
+        but = QToolButton(getIconSet("add"), "", "lala", self.slotCreate, bar)
         but.setTextLabel(i18n("New connection"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         
-        but = QToolButton(getIconSet("configure.png"), "", "lala", self.slotSettings, bar)
+        but = QToolButton(getIconSet("configure"), "", "lala", self.slotSettings, bar)
         but.setTextLabel(i18n("Name Service Settings"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
@@ -391,7 +391,7 @@ class Widget(QVBox):
         lab.setEnabled(False)
         bar.setStretchableWidget(lab)
         
-        but = QToolButton(getIconSet("help.png"), "", "lala", self.slotHelp, bar)
+        but = QToolButton(getIconSet("help"), "", "lala", self.slotHelp, bar)
         but.setTextLabel(i18n("Help"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)

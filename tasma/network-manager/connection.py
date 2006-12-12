@@ -38,7 +38,7 @@ class Settings(QWidget):
         grid.addWidget(self.name, 0, 1)
         
         # Connection
-        line = widgets.HLine(i18n("Connection"), self, "irkick.png")
+        line = widgets.HLine(i18n("Connection"), self, "irkick")
         lay.addSpacing(6)
         lay.addWidget(line)
         grid = QGridLayout(2, 2)
@@ -63,7 +63,7 @@ class Settings(QWidget):
                 hb = QHBox(self)
                 hb.setSpacing(3)
                 self.remote = QLineEdit(hb)
-                but = QPushButton(getIconSet("find.png", KIcon.Small), i18n("Scan"), hb)
+                but = QPushButton(getIconSet("find", KIcon.Small), i18n("Scan"), hb)
                 self.scanpop = self.initScan()
                 but.setPopup(self.scanpop)
                 grid.addWidget(hb, 1, 1)
@@ -73,7 +73,7 @@ class Settings(QWidget):
         
         # Authentication
         if "auth" in link.modes:
-            line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1.png")
+            line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1")
             lay.addSpacing(12)
             lay.addWidget(line)
             grid = QGridLayout(3, 2)
@@ -151,9 +151,9 @@ class Settings(QWidget):
         self.scan_box = box
         hb = QHBox(vb)
         hb.setSpacing(6)
-        but = QPushButton(getIconSet("reload.png", KIcon.Small), i18n("Scan again"), hb)
+        but = QPushButton(getIconSet("reload", KIcon.Small), i18n("Scan again"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotScan)
-        but = QPushButton(getIconSet("key_enter.png", KIcon.Small), i18n("Use"), hb)
+        but = QPushButton(getIconSet("key_enter", KIcon.Small), i18n("Use"), hb)
         self.scan_use_but = but
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
         return pop
@@ -192,7 +192,7 @@ class Settings(QWidget):
             self.scan_box.insertItem(remote)
     
     def initNet(self, lay):
-        line = widgets.HLine(i18n("Network settings"), self, "network.png")
+        line = widgets.HLine(i18n("Network settings"), self, "network")
         lay.addSpacing(12)
         lay.addWidget(line)
         
@@ -239,7 +239,7 @@ class Settings(QWidget):
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
         grid.addWidget(self.auto_gate, row, 3)
         
-        line = widgets.HLine(i18n("Name servers"), self, "kaddressbook.png")
+        line = widgets.HLine(i18n("Name servers"), self, "kaddressbook")
         lay.addSpacing(12)
         lay.addWidget(line)
         
@@ -456,9 +456,9 @@ class Window(QMainWindow):
         hb = QHBox(vb)
         hb.setSpacing(12)
         lab = QLabel("", hb)
-        but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
+        but = QPushButton(getIconSet("apply", KIcon.Small), i18n("Apply"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAccept)
-        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
+        but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
         self.show()
