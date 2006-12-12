@@ -15,6 +15,7 @@ from kdeui import *
 from qt import *
 
 # Local imports
+import HelpDialog
 import PreferencesDialog
 import RepoDialog
 import Settings
@@ -33,6 +34,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.intervalCheck, SIGNAL("toggled(bool)"), self.enableCheckInterval)
         self.connect(self.useCacheCheck, SIGNAL("toggled(bool)"), self.enableUseCache)
         self.connect(self.clearCacheButton, SIGNAL("clicked()"), self.clearAllCached)
+        self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
 
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
@@ -198,6 +200,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.useCacheLabel.setEnabled(state)
         self.useCacheSize.setEnabled(state)
         self.useCacheInfo.setEnabled(state)
+
+    def showHelp(self):
+        helpwin = HelpDialog.HelpDialog(self, HelpDialog.PREFERENCES)
+        helpwin.show()
 
     def clearAllCached(self):
         if KMessageBox.Yes == KMessageBox.warningYesNo(self, 

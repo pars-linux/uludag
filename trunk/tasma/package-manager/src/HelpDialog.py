@@ -14,9 +14,16 @@ from qt import *
 from kdecore import locate, i18n, KURL
 from khtml import KHTMLPart
 
+(MAINAPP, PREFERENCES) = (1, 2)
+
+help_files = {
+    MAINAPP:"main_help.html",
+    PREFERENCES:"preferences_help.html"
+    }
+
 class HelpDialog(QDialog):
-    def __init__(self, parent=None):
-        QDialog.__init__(self,parent)
+    def __init__(self, parent, help):
+        QDialog.__init__(self, parent)
         self.setCaption(i18n("Package Manager Help"))
         self.layout = QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
@@ -24,6 +31,6 @@ class HelpDialog(QDialog):
         self.layout.addWidget(self.htmlPart.view(),1,1)
 
         if os.environ['LANG'].startswith('tr_TR'):
-            self.htmlPart.openURL(KURL(locate("data","package-manager/help/tr/main_help.html")))
+            self.htmlPart.openURL(KURL(locate("data","package-manager/help/tr/%s" % help_files[help])))
         else:
-            self.htmlPart.openURL(KURL(locate("data","package-manager/help/en/main_help.html")))
+            self.htmlPart.openURL(KURL(locate("data","package-manager/help/en/%s" % help_files[help])))
