@@ -21,7 +21,7 @@ I18N_NOOP = lambda x: x
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
-CONNLIST, CONNINFO = range(2)
+CONNLIST, CONNINFO = range(1,3)
 
 
 class Device:
@@ -416,10 +416,11 @@ class NetTray(KSystemTray):
     def slotSelect(self, mid):
         menu = self.contextMenu()
         conn = comlink.getConnById(mid)
-        if menu.isItemChecked(mid):
+        if conn.state in ("up", "connecting", "inaccessible"):
             comlink.com.Net.Link[conn.script].setState(name=conn.name, state="down")
         else:
             comlink.com.Net.Link[conn.script].setState(name=conn.name, state="up")
+        self.popup = None
 
 
 def main():
