@@ -14,9 +14,9 @@ import kdedistutils
 
 kdedistutils.setup(
     name="package-manager",
-    version="1.1_rc6",
-    author="İsmail Dönmez",
-    author_email="ismail@pardus.org.tr",
+    version="1.1",
+    author="Faik Uygur",
+    author_email="faik@pardus.org.tr",
     url="http://www.pardus.org.tr/projeler/pisi/index.html",
     min_kde_version = "3.5.2",
     min_qt_version = "3.3.5",
