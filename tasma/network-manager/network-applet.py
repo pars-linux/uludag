@@ -18,6 +18,9 @@ from kdeui import *
 
 I18N_NOOP = lambda x: x
 
+def getIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+
 CONNLIST, CONNINFO = range(2)
 
 
@@ -331,6 +334,7 @@ class NetTray(KSystemTray):
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
+        self.applet = parent
         self.popup = None
         self.dev = dev
         if dev:
@@ -371,17 +375,25 @@ class NetTray(KSystemTray):
     
     def buildPopup(self):
         menu = KPopupMenu()
+        flag = True
         if self.dev:
             dev = self.dev
             dev_mid = menu.insertTitle(dev.menu_name)
-            self.appendConns(menu, dev, menu.indexOf(dev_mid) + 1)
-            return menu
-        keys = comlink.devices.keys()
-        keys.sort()
-        for key in keys:
-            dev = comlink.devices[key]
-            dev_mid = menu.insertTitle(dev.menu_name)
-            self.appendConns(menu, dev, menu.indexOf(dev_mid) + 1)
+            if len(dev.connections) > 0:
+                self.appendConns(menu, dev, menu.indexOf(dev_mid) + 1)
+            else:
+                flag = False
+        else:
+            keys = comlink.devices.keys()
+            keys.sort()
+            for key in keys:
+                dev = comlink.devices[key]
+                dev_mid = menu.insertTitle(dev.menu_name)
+                if len(dev.connections) > 0:
+                    self.appendConns(menu, dev, menu.indexOf(dev_mid) + 1)
+                    flag = False
+        if flag:
+            menu.insertItem(getIconSet("add"), i18n("New connection"), self.applet.startManager)
         return menu
     
     def mousePressEvent(self, event):
