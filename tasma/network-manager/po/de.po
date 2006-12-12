@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 16:39+0200\n"
+"POT-Creation-Date: 2006-12-11 22:22+0200\n"
 "PO-Revision-Date: 2006-12-11 21:10+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
+"translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,12 +33,15 @@ msgstr "Adresse:"
 msgid "Automatic"
 msgstr "Automatisch"
 
+#: browser.py:90
 msgid "Turn on/off connection"
 msgstr "Verbindung de-/aktvieren"
 
+#: browser.py:103
 msgid "Configure connection"
 msgstr "Verbindung konfigurieren"
 
+#: browser.py:106
 msgid "Delete connection"
 msgstr "Verbindung löschen"
 
@@ -56,21 +60,27 @@ msgstr ""
 msgid "Delete connection?"
 msgstr "Verbindung löschen?"
 
+#: browser.py:205
 msgid "No device!"
 msgstr "Kein Gerät!"
 
+#: browser.py:381
 msgid "New connection"
 msgstr "Neue Verbindung"
 
+#: browser.py:386 nameconf.py:28
 msgid "Name Service Settings"
 msgstr "Name Service Einstellungen"
 
+#: browser.py:420
 msgid "Network Connections Help"
 msgstr "Netzwerkverbindungen Hilfe"
 
+#: connection.py:34
 msgid "Connection name:"
 msgstr "Name der Verbindung:"
 
+#: connection.py:41
 msgid "Connection"
 msgstr "Verbindung"
 
@@ -78,6 +88,7 @@ msgstr "Verbindung"
 msgid "Device:"
 msgstr "Gerät:"
 
+#: connection.py:52
 msgid "Select"
 msgstr "Auswählen"
 
@@ -97,6 +108,7 @@ msgstr "Keine Authentifikation"
 msgid "Password:"
 msgstr "Passwort:"
 
+#: connection.py:116
 msgid "User name:"
 msgstr "Benutzername:"
 
@@ -112,6 +124,7 @@ msgstr "Erneut suchen"
 msgid "Use"
 msgstr "Verwenden"
 
+#: connection.py:195
 msgid "Network settings"
 msgstr "Netzwerkeinstellungen"
 
@@ -143,22 +156,32 @@ msgstr "Name-Server"
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
+#: network-manager.py:33 network-manager.py:85
 msgid "Network Manager"
 msgstr "Netzwerk-Manager"
 
+#: network-manager.py:80
 msgid "Network manager module is already started!"
 msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
 
+#: comariface.py:162
 msgid "Waiting COMAR..."
 msgstr "Wartend auf COMAR..."
 
+#: comariface.py:163
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "Verbindung zu COMAR wurde unerwartet geschlossen, wird versucht, erneut zu verbinden"
+msgstr ""
+"Verbindung zu COMAR wurde unerwartet geschlossen, wird versucht, erneut zu "
+"verbinden"
 
+#: comariface.py:182 comariface.py:199
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
-msgstr "Kann nicht mit COMAR verbinden! Wenn es nicht gestartet worden ist, dann sollten Sie es mit dem Kommando 'service comar start' in einer Root-Konsole starten."
+msgstr ""
+"Kann nicht mit COMAR verbinden! Wenn es nicht gestartet worden ist, dann "
+"sollten Sie es mit dem Kommando 'service comar start' in einer Root-Konsole "
+"starten."
 
 #: comariface.py:365
 msgid "new connection"
@@ -180,9 +203,11 @@ msgstr "Name-Server hinzufügen"
 msgid "Name server:"
 msgstr "Name-Server:"
 
+#: newconn.py:26
 msgid "Create a new connection"
 msgstr "Eine neue Verindung erstellen"
 
+#: newconn.py:31
 msgid "Select device:"
 msgstr "Gerät auswählen:"
 
@@ -200,12 +225,14 @@ msgstr "Netzwerk-Pakete installieren!"
 
 #: newconn.py:110
 msgid "No package with COMAR network scripts are installed yet."
-msgstr "Es ist noch kein Paket installiert um das Netzwerk über COMAR zu bilden."
+msgstr ""
+"Es ist noch kein Paket installiert um das Netzwerk über COMAR zu bilden."
 
 #: network-applet.py:234
 msgid "Firewall..."
 msgstr "Firewall..."
 
+#: network-applet.py:235
 msgid "Edit Connections..."
 msgstr "Verbindungen bearbeiten..."
 
@@ -217,9 +244,11 @@ msgstr "Icon je Gerät"
 msgid "Single Icon"
 msgstr "Einzelnes Icon"
 
+#: network-applet.py:282
 msgid "Should network-applet start automatically when you login?"
-msgstr "Soll der Netzwerk Applet automatisch bei der Anmeldung gestartet werden?"
+msgstr ""
+"Soll der Netzwerk Applet automatisch bei der Anmeldung gestartet werden?"
 
+#: network-applet.py:413
 msgid "Network Applet"
 msgstr "Netzwerk Applet"
-
