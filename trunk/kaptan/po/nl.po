@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 20:44+0200\n"
-"PO-Revision-Date: 2006-12-12 07:31+0200\n"
+"PO-Revision-Date: 2006-12-13 06:57+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgid ""
 "package-manager you can easily install new programs and upgrade your system. "
 "But also can work in the system tray and periodically checks new upgrades of "
 "the programs that are installed on your system."
-msgstr ""
+msgstr "<b>Pakket-manager</b> is de grafische interface van <b>PiSi</b>. Met pakketmanager kunt u met gemak nieuwe programma's installeren en opwaarderen op uw systeem. Maar het kan ook actief zijn in het systeemvak en in periodes controleren voor op te 'waarderen programma's welk geïnstalleerd zijn op uw systeem."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16 ../src/welcomedlg.cpp:67
@@ -63,13 +63,12 @@ msgstr ""
 
 #: ../src/network.cpp:42
 msgid "<big>Loading...</big>"
-msgstr ""
+msgstr "<big>Laden...</big>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid ""
-"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
 msgstr "<center>Gereed! Vanaf nu kunt u <b>Pardus</b> Linux gaan gebruiken</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
@@ -244,9 +243,3 @@ msgstr "Achtergrond instellen"
 msgid "Welcome"
 msgstr "Welkom"
 
-#~ msgid ""
-#~ "Here, you can select default behaviour of package-manager, software "
-#~ "manager for Pardus."
-#~ msgstr ""
-#~ "Hier kunt u het standaardgedrag van uw pakketmanager kiezen, de "
-#~ "softwaremanager van Padus."
