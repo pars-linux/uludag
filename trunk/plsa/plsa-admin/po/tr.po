@@ -101,7 +101,7 @@ msgstr "DIL"
 
 #: plsa-cli:41
 msgid "open KMail compose dialog"
-msgstr ""
+msgstr "KMail e-posta penceresini aç"
 
 #: plsa-cli:53
 #, python-format
