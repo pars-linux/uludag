@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 16:20+0200\n"
-"PO-Revision-Date: 2006-11-26 17:49+0200\n"
+"PO-Revision-Date: 2006-12-13 21:20+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -44,9 +44,8 @@ msgid "Now installing <b>amsn</b> package"
 msgstr "Installeert nu <b>amsn</b> pakket"
 
 #: src/Tray.py:39
-#, fuzzy
 msgid "Update"
-msgstr "Toon beschikbare bijgewerkte bestanden"
+msgstr "Bijwerken"
 
 #: src/Tray.py:44 src/package-manager.py:273 src/package-manager.py:662
 #: src/package-manager.py:809
@@ -88,8 +87,7 @@ msgstr "Repository &adres"
 
 #: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr ""
-"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
 msgid "http://paketler.pardus.org.tr/pardus-1.1/pisi-index.xml.bz2"
@@ -189,7 +187,7 @@ msgstr "<b>Toepassen veranderingen repository</b>"
 
 #: src/Preferences.py:210
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
+msgstr "Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
 
 #: src/Progress.py:51
 msgid "downloaded ( total: %1 )"
@@ -229,7 +227,7 @@ msgstr "Kan geen verbinding maken met de Comar dienst"
 
 #: src/Commander.py:99
 msgid "You do not have permission to do this operation."
-msgstr ""
+msgstr "U heeft geen toegang voor deze handeling."
 
 #: src/package-manager.py:47
 msgid "GUI for PiSi package manager"
@@ -288,12 +286,11 @@ msgstr "Laden pakketlijst..."
 msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
-msgstr ""
+msgstr "De pakketmanager dient de pakketdatabase bij te werken. U heeft hiervoor een netwerkverbinding nodig."
 
 #: src/package-manager.py:208
-#, fuzzy
 msgid "Package database is empty"
-msgstr "Pakketbeheer hulp"
+msgstr "Pakketdatabase is leeg"
 
 #: src/package-manager.py:245
 msgid "Remove Package(s)"
@@ -333,16 +330,14 @@ msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
 #: src/package-manager.py:437 src/package-manager.py:445
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
 
 #: src/package-manager.py:440
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-"met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
+msgstr "met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
 
 # mand tonen
 #: src/package-manager.py:442 src/package-manager.py:450
@@ -390,41 +385,35 @@ msgstr "<b>Installeren pakket(ten)</b>"
 
 #: src/package-manager.py:513
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr ""
+msgstr "<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
 
 #: src/package-manager.py:516
-#, fuzzy
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
-msgstr ""
-"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
-"geïnstalleerd zullen worden:"
+msgstr "Met de geselecteerde pakketten; zullen ook <b>%1</b> extra afhankelijkheden worden <b>geïnstalleerd</b>."
 
 #: src/package-manager.py:517
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr ""
+msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>geïnstalleerd</b>."
 
 #: src/package-manager.py:520
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr ""
+msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
 
 #: src/package-manager.py:523
-#, fuzzy
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
-msgstr ""
-"Extra afhankelijkheden van de geseleceerde pakket(ten) welk ook bijgewerkt "
-"zullen worden:"
+msgstr "Met de geselecteerde pakketten; worden ook <b>%1</b> extra afhankelijkheden <b>opgewaardeerd</b>."
 
 #: src/package-manager.py:524
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr ""
+msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>opgewaardeerd</b>."
 
 #: src/package-manager.py:527
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr ""
+msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
 
 #: src/package-manager.py:530
 msgid ""
@@ -434,15 +423,15 @@ msgid ""
 "going to be <b>removed</b>. Please check your basket and make sure those are "
 "the packages you want to remove. Accidentally removing some reverse "
 "dependencies may break the system stability."
-msgstr ""
+msgstr "De selecteerde pakketten hebben omgekeerde afhankelijkheden. Omdat omgekeerde afhankelijkheden van de geselecteerde pakketten de pakketten nodig hebben om te functioneren; zullen, bij het verwijderen van de geselecteerde pakketten, <b>%1</b>  omgekeerde afhankelijkheden worden <b>verwijderd</b>. Controleer alstublieft uw mandje en verzeker u ervan dat dit de pakketten zijn die u wilt verwijderen. Per ongeluk verwijderen van sommige omgekeerde afhankelijkheden kan de systeemsstabiliteit in gevaar brengen."
 
 #: src/package-manager.py:532
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr ""
+msgstr "<br><br>In totaal zullen <b>%1</b> pakketten worden <b>verwijderd</b>."
 
 #: src/package-manager.py:534
 msgid "<br>Do you want to continue?</qt>"
-msgstr ""
+msgstr "<br>Wilt u doorgaan?</qt>"
 
 #: src/package-manager.py:554
 msgid "<b>Removing Package(s)</b>"
@@ -470,7 +459,7 @@ msgstr "Downloaden lijst met pakketten van %1"
 
 #: src/package-manager.py:752
 msgid "Confirm"
-msgstr ""
+msgstr "Bevestig"
 
 #: src/package-manager.py:916
 msgid "Show Installed Packages"
@@ -490,25 +479,23 @@ msgstr "Te installeren pakket"
 
 #: src/package-manager.py:955
 msgid "Show main window on startup"
-msgstr ""
+msgstr "Toon hoofdvenster bij opstarten"
 
 #: src/package-manager.py:958
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is al opgestart!"
 
 #: src/pm-install.py:33
-#, fuzzy
 msgid "PiSi package to install"
-msgstr "Te installeren pakket"
+msgstr "Te installeren PiSi pakket"
 
 #: src/pm-install.py:50
 msgid "You have selected a package to install. Do you want to continue?"
-msgstr ""
+msgstr "U heeft een pakket geselecteerd om te installeren. Wilt u doorgaan?"
 
 #: src/pm-install.py:51
-#, fuzzy
 msgid "Install Package"
-msgstr "Installeer pakket(ten)"
+msgstr "Installeer pakket"
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
 msgid "Repository Name"
@@ -527,8 +514,7 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr ""
 "U kunt hier de huidige software repositories en corresponderende adressen "
 "zien"
@@ -607,19 +593,18 @@ msgstr "Al&gemene instellingen"
 
 #: src/PreferencesDialog.py:212
 msgid "Clear Cache"
-msgstr ""
+msgstr "Leeg cachegeheugen"
 
 #: src/PreferencesDialog.py:213
 msgid "C&lean disk cache now"
 msgstr "Opruimen schijf&cache"
 
 #: src/PreferencesDialog.py:214
-#, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
-"De schijf cache opruimen zal alle gedownloade software verwijderen. \n"
+"Legen van schijf cache zal alle gedownloade software verwijderen. \n"
 "Het zal geen geinstalleerde software verwijderen of de stabiliteit van uw "
 "systeem beinvloeden."
 
@@ -637,7 +622,7 @@ msgstr "Gebr&uik hardeschijf-cache voor gedownloade software"
 
 #: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
+msgstr "Als geselecteerd, zullen gedownloade pakketten bewaard worden in de hardeschijf cache"
 
 #: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -663,39 +648,3 @@ msgstr "verwijderen"
 msgid "installing"
 msgstr "installeren"
 
-#~ msgid "PiSi Settings"
-#~ msgstr "PiSi instellingen"
-
-#~ msgid "Misc. Fixes"
-#~ msgstr "Diverse reparaties"
-
-#~ msgid "Comar/Python Help"
-#~ msgstr "Comar/Python hulp"
-
-#~ msgid "Speedup fixes"
-#~ msgstr "Versnel optimalisaties"
-
-#~ msgid ""
-#~ "If checked, then updates for Pardus will be automatically checked and you "
-#~ "will be notified"
-#~ msgstr ""
-#~ "Indien geselecteerd, zullen updates voor Pardus automatisch geselecteerd "
-#~ "worden en zult u verwittigd worden."
-
-#~ msgid ""
-#~ "Package repository does not have component information. Please control "
-#~ "repository addresses and update repository. You need a network connection "
-#~ "to update."
-#~ msgstr ""
-#~ "De repository heeft geen component informatie. Controleer alstublieft de "
-#~ "repository adressen en laat de repository bijwerken. U hebt een netwerk "
-#~ "aansluiting nodige om bij te werken. "
-
-#~ msgid "There are no updates available at this time"
-#~ msgstr "Er zijn momenteel geen bij te werken bestanden beschikbaar"
-
-#~ msgid "Cache cleaning"
-#~ msgstr "Cache opruimen"
-
-#~ msgid "2000"
-#~ msgstr "2000"
