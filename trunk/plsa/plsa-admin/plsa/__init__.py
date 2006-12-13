@@ -75,7 +75,7 @@ class advisory:
 
         rev = self.data["revision"]
         rev["no"] = node_rev.getAttribute("revision")
-        rev["data"] = node_rev.getTagData("Date")
+        rev["date"] = node_rev.getTagData("Date")
         rev["name"] = node_rev.getTagData("Name")
         rev["email"] = node_rev.getTagData("Email")
 
