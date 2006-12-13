@@ -25,6 +25,7 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
+        <SelectedPackage>crack-attack</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>dhcp</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
@@ -41,8 +42,10 @@
         <SelectedPackage>fnfx</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
+        <SelectedPackage>frozen-bubble</SelectedPackage>
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
+        <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
@@ -70,6 +73,7 @@
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
@@ -87,7 +91,6 @@
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>kradio</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
-        <SelectedPackage>kvpnc</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
@@ -163,6 +166,7 @@
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
         <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
+        <SelectedPackage>xmoto</SelectedPackage>
         <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
@@ -171,13 +175,16 @@
         <Package>915resolution</Package>
         <Package>DirectFB</Package>
         <Package>IO-Socket-SSL</Package>
+        <Package>Locale-gettext</Package>
         <Package>Net-SSLeay</Package>
         <Package>PolicyKit</Package>
         <Package>PyKDE</Package>
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
+        <Package>SDL-Perl</Package>
         <Package>XML-Parser</Package>
         <Package>Xaw3d</Package>
+        <Package>YAML</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>accessrunner-firmware</Package>
@@ -228,6 +235,9 @@
         <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
+        <Package>crack-attack</Package>
+        <Package>crack-attack-music</Package>
+        <Package>crack-attack-sounds</Package>
         <Package>cracklib</Package>
         <Package>cryptsetup-luks</Package>
         <Package>ctags</Package>
@@ -285,6 +295,7 @@
         <Package>foomatic-db-hpijs</Package>
         <Package>foomatic-filters</Package>
         <Package>freetype</Package>
+        <Package>frozen-bubble</Package>
         <Package>ftp</Package>
         <Package>fuse</Package>
         <Package>gawk</Package>
@@ -296,6 +307,7 @@
         <Package>gimp</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-de</Package>
         <Package>glibc-locales-es</Package>
         <Package>glibc-locales-nl</Package>
         <Package>glibmm</Package>
@@ -360,6 +372,7 @@
         <Package>katapult</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kde-i18n-de</Package>
         <Package>kde-i18n-es</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-tr</Package>
@@ -385,7 +398,6 @@
         <Package>kpowersave</Package>
         <Package>kradio</Package>
         <Package>ktorrent</Package>
-        <Package>kvpnc</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lbreakout2</Package>
@@ -515,6 +527,7 @@
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
+        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>m560x</Package>
@@ -562,6 +575,7 @@
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
         <Package>ntp-client</Package>
+        <Package>ode</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
@@ -622,9 +636,13 @@
         <Package>schedtool</Package>
         <Package>schedutils</Package>
         <Package>screen</Package>
+        <Package>sdl-gfx</Package>
+        <Package>sdl-image</Package>
         <Package>sdl-mixer</Package>
         <Package>sdl-net</Package>
+        <Package>sdl-pango</Package>
         <Package>sdl-sound</Package>
+        <Package>sdl-ttf</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
@@ -636,6 +654,7 @@
         <Package>slang</Package>
         <Package>slmodem</Package>
         <Package>smb4k</Package>
+        <Package>smpeg</Package>
         <Package>sox</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
@@ -696,7 +715,6 @@
         <Package>vim</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
-        <Package>vpnc</Package>
         <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
@@ -709,6 +727,7 @@
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
+        <Package>xmoto</Package>
         <Package>xorg-app</Package>
         <Package>xorg-data</Package>
         <Package>xorg-font</Package>
