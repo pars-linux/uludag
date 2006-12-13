@@ -420,6 +420,7 @@ application/x-oz-application			oza
 application/x-pkcs7-certreqresp			p7r
 application/x-pkcs7-crl				crl
 application/x-python-code			pyc pyo
+application/x-pisi	pisi
 application/x-quicktimeplayer			qtl
 application/x-redhat-package-manager		rpm
 application/x-rx
