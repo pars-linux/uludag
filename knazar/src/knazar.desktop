@@ -2,8 +2,10 @@
 Encoding=UTF-8
 Name=KNazar
 Name[tr_TR]=KNazar
+Name[de]=KNazar
 Exec=knazar
 Icon=knazar
 Type=Application
 Comment=Protects From Harmfull Looks!
 Comment[tr_TR]=Kem gözlerden korur!
+Comment[de]=Schützt vor bösen Blicken!
