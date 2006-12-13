@@ -13,6 +13,7 @@
         <SelectedPackage>alsa-oss</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>armagetronad</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -40,6 +41,7 @@
         <SelectedPackage>fbset</SelectedPackage>
         <SelectedPackage>feedback</SelectedPackage>
         <SelectedPackage>fnfx</SelectedPackage>
+        <SelectedPackage>foobillard</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>frozen-bubble</SelectedPackage>
@@ -48,6 +50,7 @@
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
+        <SelectedPackage>gnuchess</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>gspca</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
@@ -86,10 +89,14 @@
         <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
+        <SelectedPackage>kiki</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
+        <SelectedPackage>knights</SelectedPackage>
+        <SelectedPackage>kobodeluxe</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>kradio</SelectedPackage>
+        <SelectedPackage>ksudoku</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
@@ -97,6 +104,7 @@
         <SelectedPackage>lsof</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
+        <SelectedPackage>ltris</SelectedPackage>
         <SelectedPackage>m560x</SelectedPackage>
         <SelectedPackage>m560x-firmware</SelectedPackage>
         <SelectedPackage>macromedia-flash</SelectedPackage>
@@ -112,6 +120,7 @@
         <SelectedPackage>ndiswrapper</SelectedPackage>
         <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
+        <SelectedPackage>neverball</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
@@ -119,6 +128,7 @@
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
+        <SelectedPackage>ppracer</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
@@ -132,6 +142,7 @@
         <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>schedutils</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
+        <SelectedPackage>sdljump</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>sg3_utils</SelectedPackage>
@@ -142,6 +153,7 @@
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
+        <SelectedPackage>supertux</SelectedPackage>
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
@@ -201,6 +213,9 @@
         <Package>alsa-oss</Package>
         <Package>alsa-utils</Package>
         <Package>amarok</Package>
+        <Package>armagetronad</Package>
+        <Package>armagetronad-moviepack</Package>
+        <Package>armagetronad-moviesounds</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
         <Package>aspell</Package>
@@ -290,6 +305,7 @@
         <Package>fnfx</Package>
         <Package>font-util</Package>
         <Package>fontconfig</Package>
+        <Package>foobillard</Package>
         <Package>foomatic-db</Package>
         <Package>foomatic-db-engine</Package>
         <Package>foomatic-db-hpijs</Package>
@@ -314,6 +330,7 @@
         <Package>glut</Package>
         <Package>gmp</Package>
         <Package>gnu-gs-fonts-std</Package>
+        <Package>gnuchess</Package>
         <Package>gnupg</Package>
         <Package>gnutls</Package>
         <Package>gocr</Package>
@@ -391,12 +408,17 @@
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>kftpgrabber</Package>
+        <Package>kiki</Package>
+        <Package>kiki-extra</Package>
         <Package>kio-to-local</Package>
         <Package>klibc</Package>
         <Package>knazar</Package>
+        <Package>knights</Package>
+        <Package>kobodeluxe</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>kradio</Package>
+        <Package>ksudoku</Package>
         <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
@@ -527,6 +549,7 @@
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
+        <Package>ltris</Package>
         <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
@@ -566,6 +589,7 @@
         <Package>netcat</Package>
         <Package>netpbm</Package>
         <Package>network-manager</Package>
+        <Package>neverball</Package>
         <Package>nfs-utils</Package>
         <Package>nmap</Package>
         <Package>normalize</Package>
@@ -603,6 +627,7 @@
         <Package>portmap</Package>
         <Package>poster</Package>
         <Package>ppp</Package>
+        <Package>ppracer</Package>
         <Package>pptpclient</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
@@ -643,6 +668,7 @@
         <Package>sdl-pango</Package>
         <Package>sdl-sound</Package>
         <Package>sdl-ttf</Package>
+        <Package>sdljump</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
@@ -668,6 +694,7 @@
         <Package>strace</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
+        <Package>supertux</Package>
         <Package>suspend</Package>
         <Package>swig</Package>
         <Package>synaptics</Package>
