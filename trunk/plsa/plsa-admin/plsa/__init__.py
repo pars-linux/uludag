@@ -20,19 +20,24 @@ class advisory:
             self.tr = trans.ugettext
         except:
             raise Error, "'%s' locale not supported." % lang
+
         self.lang = lang
 
-        self.data = {"id": "",
-                     "revision": {"no": "",
-                                  "date": "",
-                                  "name": "",
-                                  "email": ""},
-                     "severity": "",
-                     "title": "",
-                     "summary": "",
-                     "description": [],
-                     "packages": [],
-                     "references": []}
+        self.data = {
+            "id": "",
+            "revision": {
+                "no": "",
+                "date": "",
+                "name": "",
+                "email": ""
+            },
+            "severity": "",
+            "title": "",
+            "summary": "",
+            "description": [],
+            "packages": [],
+            "references": []
+        }
 
     def import_xml(self, xmlfile):
         self.xml_doc = None
@@ -68,10 +73,11 @@ class advisory:
 
         self.data["id"]  = node_adv.getAttribute("id")
 
-        self.data["revision"] = {"no": node_rev.getAttribute("revision"),
-                                 "date": node_rev.getTagData("Date"),
-                                 "name": node_rev.getTagData("Name"),
-                                 "email": node_rev.getTagData("Email")}
+        rev = self.data["revision"]
+        rev["no"] = node_rev.getAttribute("revision")
+        rev["data"] = node_rev.getTagData("Date")
+        rev["name"] = node_rev.getTagData("Name")
+        rev["email"] = node_rev.getTagData("Email")
 
         self.data["severity"]  = node_adv.getTagData("Severity")
 
@@ -104,10 +110,12 @@ class advisory:
         email = _("security@pardus.org.tr")
         web = _("http://security.pardus.org.tr")
 
-        headers = [(_("ID"), self.data["id"]),
-                   (_("Date"), self.data["revision"]["date"]),
-                   (_("Revision"), self.data["revision"]["no"]),
-                   (_("Severity"), self.data["severity"])]
+        headers = [
+            (_("ID"), self.data["id"]),
+            (_("Date"), self.data["revision"]["date"]),
+            (_("Revision"), self.data["revision"]["no"]),
+            (_("Severity"), self.data["severity"])
+        ]
 
         tpl = []
 
