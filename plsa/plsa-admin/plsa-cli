@@ -2,16 +2,14 @@
 # -*- coding: utf-8 -*-
 
 # Standard Python Library
-from getpass import getpass
 from optparse import OptionParser
 import os
 import os.path
-import re
 import sys
 
 # PLSA Library
 import plsa
-import plsa.utility
+from plsa.utility import list_translations
 from plsa.mail import openComposer
 
 # piksemel
@@ -39,6 +37,8 @@ def main():
 
     parser.add_option("-l", "--language", dest="language",
                       help=_("generate advisory for locale LANG (default: %s)") % language, metavar=_("LANG"))
+    parser.add_option("-m", "--mail", dest="mail",
+                      help=_("open KMail compose dialog"), action="store_true")
 
     options, args = parser.parse_args()
 
@@ -49,7 +49,7 @@ def main():
     if not options.language:
         options.language = language
 
-    if options.language not in plsa.utility.list_translations("plsa"):
+    if options.language not in list_translations("plsa"):
         print _("'%s' locale is not supported.") % options.language
         return FAIL_LANG
 
@@ -70,10 +70,14 @@ def main():
 
     # Build advisory text
     text = adv.build_text()
-    title = "[Pardus Linux] %s" % adv.data["title"]
 
-    if not openComposer('', '', '', title, text):
-        return FAIL_MAIL
+    if options.mail:
+        title = "[Pardus Linux] %s" % adv.data["title"]
+        if not openComposer('', '', '', title, text):
+            return FAIL_MAIL
+    else:
+        print text
+
 
     return SUCCESS
 
