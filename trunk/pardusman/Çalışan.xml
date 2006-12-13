@@ -94,6 +94,8 @@
         <SelectedPackage>lsof</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
+        <SelectedPackage>m560x</SelectedPackage>
+        <SelectedPackage>m560x-firmware</SelectedPackage>
         <SelectedPackage>macromedia-flash</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
@@ -517,6 +519,8 @@
         <Package>ltmodem</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
+        <Package>m560x</Package>
+        <Package>m560x-firmware</Package>
         <Package>mDNSResponder</Package>
         <Package>macromedia-flash</Package>
         <Package>madplay</Package>
