@@ -1,0 +1,116 @@
+# translation of de.po to Deutsch
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-13 23:05+0200\n"
+"PO-Revision-Date: 2006-12-15 18:31+0200\n"
+"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: plsa/__init__.py:103
+msgid "Pardus Linux Security Advisory"
+msgstr "Pardus Linux Sicherheitberatung"
+
+#: plsa/__init__.py:104
+msgid "security@pardus.org.tr"
+msgstr "security@pardus.org.tr"
+
+#: plsa/__init__.py:105
+msgid "http://security.pardus.org.tr"
+msgstr "http://security.pardus.org.tr"
+
+#: plsa/__init__.py:107
+msgid "ID"
+msgstr "ID"
+
+#: plsa/__init__.py:108
+msgid "Date"
+msgstr "Datum"
+
+#: plsa/__init__.py:109
+msgid "Revision"
+msgstr "Revision"
+
+#: plsa/__init__.py:110
+msgid "Severity"
+msgstr "Ernsthaftigkeit"
+
+#: plsa/__init__.py:121 plsa/__init__.py:122
+msgid "Summary"
+msgstr "Zusammenfassung"
+
+#: plsa/__init__.py:128 plsa/__init__.py:129
+msgid "Description"
+msgstr "Beschreibung"
+
+#: plsa/__init__.py:135
+msgid "Affected packages:"
+msgstr "Betroffene Pakete:"
+
+#: plsa/__init__.py:138
+msgid "all versions"
+msgstr "Alle Versionen"
+
+#: plsa/__init__.py:140
+#, python-format
+msgid "all before %s"
+msgstr "Alle vor  %s"
+
+#: plsa/__init__.py:153 plsa/__init__.py:154
+msgid "Resolution"
+msgstr "Lösung"
+
+#: plsa/__init__.py:157
+#, python-format
+msgid ""
+"There are update(s) for %s. You can update them via Package Manager or with "
+"a single command from console:"
+msgstr "Es sind Updates für %s verfügbar. Sie können diese via Paket-Manager oder mit einem Kommando von der Konsole aus aktualisieren:"
+
+#: plsa/__init__.py:162
+#, python-format
+msgid ""
+"Unfortunately, there are update(s) for %s. You can remove them via Package "
+"Manager or with a single command from console:"
+msgstr "Leider sind für %s keine Updates verfügbar. Sie können diese via Paket-Manager oder mit einem Kommando von der Konsole aus entfernen."
+
+#: plsa/__init__.py:169 plsa/__init__.py:170
+msgid "References"
+msgstr "Referenzen"
+
+#: plsa-cli:39
+#, python-format
+msgid "generate advisory for locale LANG (default: %s)"
+msgstr "Beratung in der lokalen Sprache generieren ( Standard: %s)"
+
+#: plsa-cli:39
+msgid "LANG"
+msgstr "Sprache"
+
+#: plsa-cli:41
+msgid "open KMail compose dialog"
+msgstr "KMail zusammenstell-Dialog öffnen"
+
+#: plsa-cli:53
+#, python-format
+msgid "'%s' locale is not supported."
+msgstr "'%s' Lokale wird nicht unterstützt."
+
+#: plsa-cli:58
+#, python-format
+msgid "Unable to read %s."
+msgstr "%s kann nicht gelesen werden."
+
+#: plsa-cli:66
+msgid "XML file has errors:"
+msgstr "XML Datei hat Fehler:"
+
