@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>:: Pardus :: TÜBİTAK/UEKAE ::</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../../../style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="head_grey2">
+        <div id="blue2"></div>
+    </div>
+    <div id="navi">
+        <a href="../../../index.html">Ana Sayfa</a>
+      | <a href="../../../urunler/index.html">Ürünler</a>
+      | <a href="../../../projeler/index.html">Projeler</a>
+      | <a href="../../../belgeler/index.html">Belgeler</a>
+      | <a href="../../../hakkimizda.html">Hakkımızda</a>
+      | <a href="../../../iletisim.html">İletişim</a>
+      | <a href="../../../eng/index.html">English</a>
+    </div>
+    <div id="page" clas="blue2">
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_11.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_13.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+
+
+<H1 ALIGN=center>ÇOMAR Mimari Belgesi</H1>
+
+<H3 ALIGN=center>Gürer Özen (gurer @ uludag.org.tr)</H3>
+
+<H3><A NAME="htoc12">4.2</A>&nbsp;&nbsp;Aracı Programcıklar (CSL)</H3>
+Ne yazık ki basit bir tanımlama dili, görevleri uygulamalara taşımaya
+yetmemektedir. Çünkü aracının birçok durumda kendi içinde birden fazla
+işlem yapması, çeşitli kriterlere göre işi nasıl yaptıracağına karar
+vermesi, gerektiğinde uygulamayı yönetebilmek için, genel API lerin
+sağlayabileceğinin dışında fonksiyonlar kullanması gerekmektedir.
+İterasyon, karar verme, karşılaştırma, aritmetik ve string işlem yapma
+özellikleri olan bir dil gereklidir.<BR>
+<BR>
+Bu dilin seçimi özgür bırakılabilir, ancak bu durumda yapılandırma
+sisteminin bağımlılıkları artmaktadır. En önemlisi diller arası uyum,
+hata giderme işlemleri ve öğrenme süreci çok güçleşmektedir. Bu nedenle
+tek bir dil kullanılmalıdır.<BR>
+<BR>
+Genel bir programlama dilinde bulunan çoğu modül ve kitaplık (özellikle
+grafik arayüze yönelik olanlar) gerekmeyecektir. Sorun çıkmaması için
+dilde bu destekler hiç olmamalı ya da kapatılabilmelidir. İhtiyaç
+duyulacak API ler, ayar dosyalarını okuyup yazma, programları çalıştırıp
+durdurma gibi işlere yönelik olacaktır.<BR>
+<BR>
+Bu iş için en uygun dil olarak gördüğümüz Python'u temel aldık. Python
+işleticisini (VM), bizim belirlediğimiz bazı modülleri (string, re,
+config modülleri, vb...) alıp, bunun üstüne ihtiyacımız olan diğer
+fonksiyonları bir modül olarak ekleyerek CSL (Çomar Scripting Language)
+adını verdiğimiz bir alt dil oluşturduk. Nedenlerimiz:
+<UL><LI>
+PİSİ paketlerinin hazırlama ve derleme betiklerinde de Python kullanıldığı
+için paket yapıcı tek bir dil öğrenip kullanarak tam bir Pardus pakedi
+hazırlayabilecektir.
+<LI>Python VM, hız ve kaynak kullanımı olarak çok uygundur. Bir işletici
+program içinden rahatça ayarlanıp kullanılabilen bir kitaplık halindedir.
+<LI>Program yazarken sıkça karşılaşılan yapıların (design patterns) çoğu
+Python'da temel özellik olarak bulunduğu için kod temiz ve anlaşılır
+olmakta; implementasyon, mantığı gölgelememektedir.
+<LI>Minimal ve temiz sentaksı dolayısıyla kodların boyutu kısa, okunabilirliği
+yüksek olmaktadır.
+</UL>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_11.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_13.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+        <div id="footnote">
+            <p>
+               Bu web sitesinde bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir.<br />
+               Pardus markası ve logotipi TÜBİTAK'ın tescilli markasıdır. Kullanım koşulları için <a href="yasal_uyari.html">Yasal Uyarı</a> bölümünü inceleyiniz.<br /> 
+               Bilgi ve önerileriniz için <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+               <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

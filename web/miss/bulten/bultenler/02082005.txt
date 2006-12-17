@@ -1,0 +1,73 @@
+Uludağ Haftalık Bülteni - 2 Ağustos 2005
+
+<p>
+Merhaba,
+</p>
+
+<p>
+Uludağ bültenine hoşgeldiniz.
+</p>
+
+<p>
+Uludağ ekibi [1] büyümeye devam ediyor. Son olarak Eray Özkural[2], İsmail
+Dönmez[3] ve Görkem Çetin[4] de Uludağ projesine dahil oldular.
+</p>
+
+<p>
+1. <a href="http://www.uludag.org.tr/hakkimizda.html">http://www.uludag.org.tr/hakkimizda.html</a><br>
+2. <a href="http://cekirdek.uludag.org.tr/~eray/">http://cekirdek.uludag.org.tr/~eray/</a><br>
+3. <a href="http://cekirdek.uludag.org.tr/~ismail/">http://cekirdek.uludag.org.tr/~ismail/</a><br>
+4. <a href="http://www.gorkemcetin.com/">http://www.gorkemcetin.com/</a>
+</p>
+
+<p>
+Kısa bir süre önce tasarım belgesi yayınlanan[5] ve alpha sürümüne ulaşan PİSİ'nin kaynak kodları
+Uludağ Deposu[6]'nda yerini aldı[7].
+</p>
+
+<p>
+5. <a href="http://www.uludag.org.tr/projeler/pisi/pisi/pisi.html">http://www.uludag.org.tr/projeler/pisi/pisi/pisi.html</a><br>
+6. <a href="http://svn.uludag.org.tr/uludag/">http://svn.uludag.org.tr/uludag/</a><br>
+7. <a href="http://svn.uludag.org.tr/uludag/trunk/pisi/">http://svn.uludag.org.tr/uludag/trunk/pisi/</a>
+</p>
+
+<p>
+Pardus Çalışan CD 1.1'de[8] prototip sürümüne[9] yer verilmiş olan ÇOMAR'ın 
+yeni geliştirme sürümünün kaynak kodları[10] Uludağ Deposu'nda
+yayınlandı. Ayrıca güncellenmiş olan belgelerine de [11] adresinden
+ulaşılabilirsiniz.
+</p>
+
+<p>
+8. <a href="http://www.uludag.org.tr/urunler/pardus_calisan_cd_1.1.html">http://www.uludag.org.tr/urunler/pardus_calisan_cd_1.1.html</a><br>
+9. <a href="http://svn.uludag.org.tr/uludag/tags/BLACKHOLE/comar-prototip/">http://svn.uludag.org.tr/uludag/tags/BLACKHOLE/comar-prototip/</a><br>
+10. <a href="http://svn.uludag.org.tr/uludag/trunk/comar">http://svn.uludag.org.tr/uludag/trunk/comar/</a><br>
+11. <a href="http://www.uludag.org.tr/projeler/comar/">http://www.uludag.org.tr/projeler/comar/</a>
+</p>
+
+<p>
+Pardus'un Kurulum ve Kullanım Kılavuzu'nun yazılmasına başlandı ve bu
+proje için bir e-posta listesi[12] açıldı. Proje
+hakkındaki tüm bilgilere proje sayfasından[13] ulaşabilirsiniz.
+</p>
+
+<p>
+12. <a href="http://liste.uludag.org.tr/mailman/listinfo/pardus-kilavuz">http://liste.uludag.org.tr/mailman/listinfo/pardus-kilavuz</a><br>
+13. <a href="http://www.uludag.org.tr/projeler/pardus-kilavuz/">http://www.uludag.org.tr/projeler/pardus-kilavuz/</a>
+</p>
+
+<p>
+KDE Türkiye ekibi[14], Pardus'un da masaüstü ortamı olarak tercih ettiği
+KDE[15]'nin 3.4.2 sürümüne kısa bir zaman kala yoğun bir çalışma ile KDE'nin Türkçe çeviri oranını[16]
+iki haftadan az bir sürede %72'den %81'e çıkarmayı başardı. Kendilerini tebrik ediyor
+ve çalışmalarından ötürü tüm ekibe teşekkür ediyoruz.
+</p>
+
+<p>
+14. <a href="http://www.kde.org.tr">http://www.kde.org.tr</a><br>
+15. <a href="http://www.kde.org">http://www.kde.org</a><br>
+16. <a href="http://i18n.kde.org/stats/gui/trunk/toplist.php">http://i18n.kde.org/stats/gui/trunk/toplist.php</a>
+</p>
+
+<br><br>
+

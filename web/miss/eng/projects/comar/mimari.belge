@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+depo = "https://svn.uludag.org.tr/uludag/trunk/COMAR/"
+belge = "VCTD.lyx"
+isim = "ÇOMAR Mimarisi"
+dizin = "mimari"
+ikonlar = "../../../images"
+sablon = "../belge.tmpl"

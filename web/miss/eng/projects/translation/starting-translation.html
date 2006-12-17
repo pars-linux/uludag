@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>:: Pardus :: TÜBİTAK/UEKAE ::</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../../../style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="head_grey2">
+        <div id="blue2"></div>
+    </div>
+    <div id="navi">
+        <a href="../../index.html">Home</a>
+      | <a href="../../info.html">About</a>
+      | <a href="../../projects/index.html">Projects</a>
+      | <a href="../../documents/index.html">Documents</a>
+      | <a href="../../products/index.html">Products</a>
+      | <a href="../../contact.html">Contact Us</a>
+      | <a href="../../press/index.html">Press</a>
+      | <a href="../../../index.html">Türkçe</a>
+    </div>
+    <div id="page" clas="blue2">
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="metin">
+
+<p>
+<img src="../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> Translating Pardus </span>
+</p>
+
+<p class="icmetin">
+
+A language translation consists of translation of many modules which we call "po files". The po files can be translated by Kbabel (under Linux)
+or <a href=http://www.poedit.org/>Poedit (under Windows)</a>. Kbabel can be installed from Pardus repository under the name "kdesdk". 
+
+<p>
+<img src="../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> First priority</span>
+</p>
+
+
+<p class="icmetin">
+The 'first priority' items below are considered as the major sources
+which should be translated at least <b>80%</b> for a language to be available
+with Pardus.
+
+<ul>
+<li>Localization of installer (YALI) including the user interface and help files (<a href=http://svn.pardus.org.tr/uludag/trunk/yali/po/yali.pot>language file</a>)
+
+<li>Localization of help and user interface files of the following Pardus software:
+<ul>
+  <li> Network manager (<a href=http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/network-manager.pot>language file</a>)
+  <li> Package manager (<a href=http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/package-manager.pot>language file</a>)
+  <li> Feedback (<a href=http://svn.pardus.org.tr/uludag/trunk/feedback/po/feedback.pot>language file</a>)
+  <li> Firewall configurator (<a href=http://svn.pardus.org.tr/uludag/trunk/tasma/firewall-config/po/firewall-config.pot>language file</a>)
+  <Li> Tasma (<a href=http://svn.pardus.org.tr/uludag/trunk/tasma/tasma/po/tasma.pot>language file</a>)
+  <li> Service manager (<a href=http://svn.pardus.org.tr/uludag/trunk/tasma/service-manager/po/service-manager.pot>language file</a>)
+  <li> User manager (<a href=http://svn.pardus.org.tr/uludag/trunk/tasma/user-manager/po/user-manager.pot>language file</a>)
+</ul>
+<li> Localization of Mudur, the init system of Pardus (<a href=http://svn.pardus.org.tr/uludag/trunk/comar/mudur/po/mudur.pot>language file</a>)
+<li> Localization of ÇOMAR, the configuration manager (<a href=http://svn.pardus.org.tr/uludag/trunk/comar/comar/po/comar.pot>language file</a>)
+<li> Localization of sysinfo, system information center (<a href=http://svn.pardus.org.tr/uludag/trunk/sysinfo/po/kio_sysinfo.pot>language file</a>)
+<li> Localization of Kaptan, first-run application (<a href=http://svn.pardus.org.tr/uludag/trunk/kaptan/po/kaptan.pot>language file</a>)
+</ul>
+
+<p>
+Pardus uses <a href=http://www.kde.org.tr>KDE</a> for the primary desktop of own. For this reason, the 
+<a href=http://i18n.kde.org/stats/gui/trunk/toplist.php>translation percent of your language</a> for KDE should be over <b>80%</b> in order to be supported for Pardus.
+
+<p>
+<img src="../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> Second priority</span>
+</p>
+
+<p class="icmetin">
+These are second priority items. Note that you don't have to translate them, however doing so is a big plus. 
+
+<ul>
+<li> Release notes: Each Pardus release has its own <a href=http://svn.pardus.org.tr/uludag/trunk/CD-image>release notes</a>  which is published on the internet and put on the CD.
+<li> Summary/description localization of specification files. You can see the status of this translation under the label "Package descriptions" in <a href=stats/>statistics</a>
+page.
+</ul>
+
+<p>
+<img src="../../images/bullet6.png" alt="nokta" align="top"><span class="baslik"> Applying for translation</span>
+</p>
+
+
+<p class="icmetin">
+<ul>
+<li>Sign up for a developer account, as <a href=http://www.pardus.org.tr/eng/belgeler/developer/new_developer.html#htoc14>mentioned here</a>.
+To commit a translation, you need to know <a href=http://www.pardus.org.tr/eng/belgeler/developer/new_developer.html#htoc26>how to use a Subversion system</a>.
+<li>After you get a developer account from Pardus admins, request for a mailing list from <a href=mailto:admins@pardus.org.tr>admins@pardus.org.tr</a>. Your language
+mailing list is in the form of pardus-translation-XX where XX is the ISO code of your language (i.e nl for Dutch, it for Italian etc).
+<li>Translate the language po files to your language and commit them in the respective repository. Currently, all of the po files mentioned above are in <a
+href=http://svn.pardus.org.tr/viewcvs/trunk/?root=%22uludag%22>Uludag repository</a>. 
+<li>While committing, modify the name of the language file which resembles your language (i.e for German translation for the Feedback application,
+put it as feedback/po/de.po in Subversion).
+<li>Use the <a href=stats/>statistics</a> to have a brief overview of the status of your language periodically.
+</ul>
+
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+        <div id="footnote">
+            <p>
+              Information and documents on Pardus web pages can be used freely anywhere with original source credit.<br />
+              For information and suggestion(s) please write to <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi_at_pardus.org.tr</a><br />
+              <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
+           </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

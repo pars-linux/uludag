@@ -1,0 +1,94 @@
+Uludağ Haftalık Bülteni - 10 Haziran 2005
+
+<p>
+Merhaba,
+</p>
+
+<p> Uludağ bültenine hoşgeldiniz.</p>
+
+<p>Uludağ Projesi'nin ilk çalışanlarından Ayşe Genç ve Zerrin Çakmakkaya proje
+ekibinden ayrılırken, Eray Özkural ve Zemberek[1] projesinin geliştiricilerinden
+Mehmet D. Akın proje ekibine katıldılar. Çekirdek geliştiricilerin son hali [2]
+adresindeki gibi oldu.</p>
+
+<p>
+01. <a
+href="https://zemberek.dev.java.net">https://zemberek.dev.java.net/</a><br>
+02. <a
+href="http://www.uludag.org.tr/hakkimizda.html">http://www.uludag.org.tr/hakkimizda.html</a><br><br>
+</p>
+
+<p>Pardus Donanım Uyumluluğu Listesi (PARDUL) projesinin sorumluluğunu Faruk
+Eskicioğlu'nun ardından Tolga Korkunçkaya[3] devraldı. [4] adresinden test
+sayfasına, [5] adresinden de kaynak kodlarına ulaşabilrsiniz.</p>
+
+<p>
+03. <a href="http://blog.korkunckaya.net/">http://blog.korkunckaya.net/</a><br>
+04. <a href="http://pardul.uludag.org.tr/">http://pardul.uludag.org.tr/</a><br><br>
+05. <a
+href="http://svn.uludag.org.tr/uludag/trunk/pardul/">http://svn.uludag.org.tr/uludag/trunk/pardul/</a>
+</p>
+
+<p>UluBot[6]'un da kullandığı ve [7] adresinden de bir örneğine ulaşabileceğiniz XML
+yapısındaki sözlük dosyalarının düzenlenmesi, içinde kelime aranması gibi
+işlevleri kullanıcıya sunan bir uygulama olan Gözlük[8]'ün sorumluluğunu Kaya
+Oğuz aldı. Kaynak kodlarına [9] adresinden ulaşabilirsiniz.</p>
+
+<p>
+06. <a
+href="http://svn.uludag.org.tr/uludag/trunk/ulubot/">http://svn.uludag.org.tr/uludag/trunk/ulubot/</a><br>
+07. <a
+href="http://svn.uludag.org.tr/uludag/trunk/ulubot/sozluk/s%c3%b6zl%c3%bck.xml">http://svn.uludag.org.tr/uludag/trunk/ulubot/sozluk/sözlük.xml</a><br>
+08. <a
+href="http://kalite.uludag.org.tr/images/gozluk.png">http://kalite.uludag.org.tr/images/gozluk.png</a><br>
+09. <a
+href="http://svn.uludag.org.tr/uludag/trunk/gozluk/">http://svn.uludag.org.tr/uludag/trunk/gozluk/</a><br><br>
+</p>
+
+<p>Kalite Projesi[10]'nin e-posta listesi[11]'ndeki tartışmanın[12] ardından projenin subversion
+depolarında[13] yeniden yapılanmaya gidildi. Bu bağlamda Uludag Deposu'ndaki
+tags klasörü[14] altına,<br><br>
+
+ * BLACKHOLE: Tümü ile yeniden yapılanmaya girmiş ve eski kodları
+kullanılmayacak olan yazılımların tutulduğu,<br>
+ * RELEASE: Yazılımların sürüm numaraları ile etiketlenmiş hallerinin
+tutulduğu,<br>
+ * RESTRUCTURED: Geliştirilmesi bir nedenle durdurulmuş, geliştirici
+bulunduğu taktirde gelişiminin faydalı olacağı düşünülen yazılımların tutulduğu,<br><br>
+dizinleri eklendi.</p>
+
+<p>
+10. <a href="http://kalite.uludag.org.tr">http://kalite.uludag.org.tr/</a><br>
+11. <a
+href="http://liste.uludag.org.tr/mailman/listinfo/kalite">http://liste.uludag.org.tr/mailman/listinfo/kalite</a><br>
+12. <a
+href="http://liste.uludag.org.tr/kalite/2005-May/thread.html#350">http://liste.uludag.org.tr/kalite/2005-May/thread.html#350</a><br>
+13. <a href="http://svn.uludag.org.tr">http://svn.uludag.org.tr/</a><br>
+14. <a
+href="http://svn.uludag.org.tr/uludag/tags/">http://svn.uludag.org.tr/uludag/tags/</a><br><br>
+</p>
+
+<p>Son katılımların ardından Uludağ deposuna yazma hakkı olan geliştiricilerin
+listesinin son hali [15] adresindeki gibi oldu.</p>
+
+<p>
+15. <a
+href="http://www.uludag.org.tr/gelistiriciler.html">http://www.uludag.org.tr/gelistiriciler.html</a><br><br>
+</p>
+
+<p>Geliştiricilerin bilgisayarlarına kurarak denemeleri ve buldukları hataları
+bildirlmeleri için hazırlanan Pardus Kök Dosya sistemlerinin 0.0.6 numaralı
+son sürümü[16] FTP sunucumuzda[17]
+yerini aldı. Bu sürüm için geliştirilen basit bir kurulum yardımcı uygulaması ve
+kurulum belgesi ne de [18] ve [19] adreslerinden ulaşabilirsiniz.</p>
+
+<p>
+16. <a
+href="ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/">ftp://ftp.uludag.org.tr/pub/pardus/rootfs/0.0.6/</a> <br>
+17. <a href="ftp://ftp.uludag.org.tr/">ftp://ftp.uludag.org.tr/</a><br>
+18. <a
+href="http://cekirdek.uludag.org.tr/~meren/temp/rootfs.sh">http://cekirdek.uludag.org.tr/~meren/temp/rootfs.sh</a><br>
+19. <a
+href="http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/">http://cekirdek.uludag.org.tr/~meren/root_fs_kurulum/</a><br><br>
+</p>
+
