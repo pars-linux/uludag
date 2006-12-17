@@ -1,0 +1,5 @@
+# -*- coding: utf-8 -*-
+depo = "https://svn.uludag.org.tr/uludag/trunk/doc/eng/"
+belge = "kalite.lyx"
+isim = "Nasıl Yardım Ederim (Kalite)"
+dizin = "kalite"

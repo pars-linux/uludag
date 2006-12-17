@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>:: Pardus :: TÜBİTAK/UEKAE ::</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../../style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="head_grey2">
+        <div id="blue2"></div>
+    </div>
+    <div id="navi">
+        <a href="../../index.html">Ana Sayfa</a>
+      | <a href="../../urunler/index.html">Ürünler</a>
+      | <a href="../../projeler/index.html">Projeler</a>
+      | <a href="../../belgeler/index.html">Belgeler</a>
+      | <a href="../../hakkimizda.html">Hakkımızda</a>
+      | <a href="../../iletisim.html">İletişim</a>
+      | <a href="../../eng/index.html">English</a>
+    </div>
+    <div id="page" clas="blue2">
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_32.html'><img src='../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_34.html'><img src='../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+
+
+<H1 ALIGN=center>Yeni Geliştirici Kılavuzu</H1>
+
+<H3 ALIGN=center>Barış Metin &lt;baris@uludag.org.tr&gt;, A. Murat Eren &lt;meren@uludag.org.tr&gt;</H3>
+<BLOCKQUOTE><B>Özet: </B>
+Bu belge yeni bir geliştiricinin Uludağ projesi geliştirme sürecine
+dahil olmak için bilmesi ve yapması gerekenleri tarif etmektedir.<BR>
+<BR>
+
+<H3><A NAME="htoc38">6.11</A>&nbsp;&nbsp;Başka hangi komutlar var?</H3>
+Subversion'ı subversion komutlarını öğrenmek için de çalıştırabilirsiniz.
+``<B>svn help</B>'' size kullanabileceğiniz komutların bir listesini
+verirken, ``<B>svn help komut_adi</B>'' size <EM>komut_adi</EM>
+ile ilgili ayrıntılı bilgi döndürür.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+$&nbsp;svn&nbsp;help<BR>
+<BR>
+usage:&nbsp;svn&nbsp;&lt;subcommand&gt;&nbsp;[options]&nbsp;[args]<BR>
+<BR>
+Type&nbsp;"svn&nbsp;help&nbsp;&lt;subcommand&gt;"&nbsp;for&nbsp;help&nbsp;on&nbsp;a&nbsp;specific&nbsp;subcommand.<BR>
+<BR>
+Most&nbsp;subcommands&nbsp;take&nbsp;file&nbsp;and/or&nbsp;directory&nbsp;arguments,&nbsp;recursing<BR>
+<BR>
+on&nbsp;the&nbsp;directories.&nbsp;If&nbsp;no&nbsp;arguments&nbsp;are&nbsp;supplied&nbsp;to&nbsp;such&nbsp;a<BR>
+<BR>
+command,&nbsp;it&nbsp;will&nbsp;recurse&nbsp;on&nbsp;the&nbsp;current&nbsp;directory&nbsp;(inclusive)&nbsp;by<BR>
+<BR>
+default.<BR>
+<BR>
+Available&nbsp;subcommands:<BR>
+<BR>
+add<BR>
+<BR>
+blame&nbsp;(praise,&nbsp;annotate,&nbsp;ann)<BR>
+<BR>
+cat<BR>
+<BR>
+checkout&nbsp;(co)<BR>
+<BR>
+cleanup<BR>
+<BR>
+commit&nbsp;(ci)<BR>
+<BR>
+copy&nbsp;(cp)<BR>
+<BR>
+delete&nbsp;(del,&nbsp;remove,&nbsp;rm)<BR>
+<BR>
+diff&nbsp;(di)<BR>
+<BR>
+export<BR>
+<BR>
+help&nbsp;(?,&nbsp;h)<BR>
+<BR>
+import<BR>
+<BR>
+info<BR>
+<BR>
+list&nbsp;(ls)<BR>
+<BR>
+log<BR>
+<BR>
+merge<BR>
+<BR>
+mkdir<BR>
+<BR>
+move&nbsp;(mv,&nbsp;rename,&nbsp;ren)<BR>
+<BR>
+propdel&nbsp;(pdel,&nbsp;pd)<BR>
+<BR>
+propedit&nbsp;(pedit,&nbsp;pe)<BR>
+<BR>
+propget&nbsp;(pget,&nbsp;pg)<BR>
+<BR>
+proplist&nbsp;(plist,&nbsp;pl)<BR>
+<BR>
+propset&nbsp;(pset,&nbsp;ps)<BR>
+<BR>
+resolved<BR>
+<BR>
+revert<BR>
+<BR>
+status&nbsp;(stat,&nbsp;st)<BR>
+<BR>
+switch&nbsp;(sw)<BR>
+<BR>
+update&nbsp;(up)<BR>
+<BR>
+Subversion&nbsp;is&nbsp;a&nbsp;tool&nbsp;for&nbsp;version&nbsp;control.<BR>
+<BR>
+For&nbsp;additional&nbsp;information,&nbsp;see&nbsp;http://subversion.tigris.org/</TT></DL></DIV>
+
+Bir Subversion komutu ile ilgili ayrıntılı bilgi almak için;
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+<B>$&nbsp;svn&nbsp;help&nbsp;add&nbsp;</B><BR>
+<BR>
+add:&nbsp;Put&nbsp;files&nbsp;and&nbsp;directories&nbsp;under&nbsp;version&nbsp;control,&nbsp;scheduling&nbsp;them&nbsp;for<BR>
+<BR>
+addition&nbsp;to&nbsp;repository.&nbsp;&nbsp;They&nbsp;will&nbsp;be&nbsp;added&nbsp;in&nbsp;next&nbsp;commit.&nbsp;usage:&nbsp;add&nbsp;PATH...<BR>
+<BR>
+Valid&nbsp;options:&nbsp;&nbsp;<BR>
+<BR>
+--targets&nbsp;arg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;pass&nbsp;contents&nbsp;of&nbsp;file&nbsp;ARG&nbsp;as&nbsp;additional&nbsp;args&nbsp;&nbsp;<BR>
+<BR>
+-N&nbsp;[--non-recursive]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;operate&nbsp;on&nbsp;single&nbsp;directory&nbsp;only&nbsp;&nbsp;<BR>
+<BR>
+-q&nbsp;[--quiet]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;print&nbsp;as&nbsp;little&nbsp;as&nbsp;possible&nbsp;&nbsp;<BR>
+<BR>
+--config-dir&nbsp;arg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;read&nbsp;user&nbsp;configuration&nbsp;files&nbsp;from&nbsp;directory&nbsp;ARG&nbsp;&nbsp;<BR>
+<BR>
+--force&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;force&nbsp;operation&nbsp;to&nbsp;run&nbsp;&nbsp;<BR>
+<BR>
+--auto-props&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;enable&nbsp;automatic&nbsp;properties&nbsp;&nbsp;<BR>
+<BR>
+--no-auto-props&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;disable&nbsp;automatic&nbsp;properties
+</TT></DL></DIV>
+komutları kullanılabilir veya <A HREF="http://subversion.tigris.org/project_faq.html"><TT>http://subversion.tigris.org/project_faq.html</TT></A>
+adresinden Sıklıkla Sorulan Soruları yada <A HREF="http://svnbook.red-bean.com"><TT>http://svnbook.red-bean.com</TT></A>
+adresinden Subversion kitabı okunabilir.<BR>
+<BR>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_32.html'><img src='../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_34.html'><img src='../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+        <div id="footnote">
+            <p>
+               Bu web sitesinde bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir.<br />
+               Pardus markası ve logotipi TÜBİTAK'ın tescilli markasıdır. Kullanım koşulları için <a href="yasal_uyari.html">Yasal Uyarı</a> bölümünü inceleyiniz.<br /> 
+               Bilgi ve önerileriniz için <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+               <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

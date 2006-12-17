@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>:: Pardus :: TÜBİTAK/UEKAE ::</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../../../style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="head_grey2">
+        <div id="blue2"></div>
+    </div>
+    <div id="navi">
+        <a href="../../../index.html">Ana Sayfa</a>
+      | <a href="../../../urunler/index.html">Ürünler</a>
+      | <a href="../../../projeler/index.html">Projeler</a>
+      | <a href="../../../belgeler/index.html">Belgeler</a>
+      | <a href="../../../hakkimizda.html">Hakkımızda</a>
+      | <a href="../../../iletisim.html">İletişim</a>
+      | <a href="../../../eng/index.html">English</a>
+    </div>
+    <div id="page" clas="blue2">
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_21.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_23.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+
+
+<H1 ALIGN=center>Uluslararasılaştırma</H1>
+
+
+<H4><A NAME="htoc22">3.3.4</A>&nbsp;&nbsp;Özel durumlar</H4>
+Programların yeni sürümleriyle birlikte içerdikleri iletiler de değişmektedir.
+Bazı yeni iletiler eklenirken, bazıları değişmekte, bazıları ise çıkarılmaktadır.
+gettext sistemi .po dosyalarını güncellerken yeni eklenen iletilerin
+çevirilerini boş bırakmaktadır, bunlar çevirmen tarafından doldurulur.<BR>
+<BR>
+Çıkarılan iletiler,
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#&nbsp;msgid&nbsp;"/File/_Close"<BR>
+<BR>
+#&nbsp;msgstr&nbsp;"/Dosya/Kapa_t"
+</TT></DL></DIV>
+biçimine gelir. Bunları dosyadan çıkarabilirsiniz.<BR>
+<BR>
+Değişen iletiler ya da gettext sisteminin düzgün çevrildiğine karar
+veremediği iletiler ise fuzzy olarak işaretlenir:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#:&nbsp;src/main.c:70<BR>
+<BR>
+#,&nbsp;fuzzy<BR>
+<BR>
+msgid&nbsp;"I&nbsp;don't&nbsp;have&nbsp;eny&nbsp;easter&nbsp;eggs...&nbsp;or&nbsp;do&nbsp;I?"<BR>
+<BR>
+msgstr&nbsp;"Hiç&nbsp;sürprizim&nbsp;yok...&nbsp;yoksa&nbsp;var&nbsp;m??"
+</TT></DL></DIV>
+Burda özgün iletideki 'any' kelimesi 'eny' olarak değiştirildiğinde,
+gettext .po dosyalarında sorun olabileceğini belirtmek için iletinin
+çevirisini
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#,&nbsp;fuzzy
+</TT></DL></DIV>
+satırı ile işaretlemiş. Bu durumda çevirmen çeviriyi kontrol eder.
+Gerekirse düzeltip fuzzy bayrağını kaldırır.<BR>
+<BR>
+C programlarında karşılaşılabilecek bir başka özel çeviri durumu ise
+format stringleridir. Bunlar C tarafından basılacak çıktıyı şekle
+sokmak için kullanılır. Bir örnek:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#:&nbsp;src/file.c:167<BR>
+<BR>
+#,&nbsp;c-format<BR>
+<BR>
+msgid&nbsp;"cannot&nbsp;open&nbsp;file&nbsp;%s"<BR>
+<BR>
+msgstr&nbsp;"%s&nbsp;dosyası&nbsp;açılamadı"
+</TT></DL></DIV>
+Burdaki c-format bayrağı, gettext sistemi tarafından otomatik olarak
+konur ve iletinin bir format stringi olduğunu söyler. İletinin format
+stringine benzemesi ama olmaması durumunda no-c-format bayrağı ile
+de karşılaşabilirsiniz. Format stringleri içindeki %s %d gibi %
+ile başlayan deyimler iletinin içind o yere başka bir değerin konacağını
+gösterir. Örnekte programın basacağı ileti örneğin "cannot
+open file resim.jpg" ya da Türkçe etkin iken "resim.jpg
+dosyası açılamadı" olacaktır.<BR>
+<BR>
+Bu iletilerde % ifadelerini (%s: metin, %d: tamsayı, %f: sayı,
+%c: karakter, vs) korumalısınız. Aksi durumda program hatalı çalışacak
+ya da çakılacaktır. Dil yapısından dolayı yerlerini değiştirmeniz
+gereken durumlarda aşağıdaki gibi kullanın:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#:&nbsp;src/data.c:1203<BR>
+<BR>
+#,&nbsp;c-format<BR>
+<BR>
+msgid&nbsp;"%d&nbsp;of&nbsp;%d&nbsp;files&nbsp;processed"<BR>
+<BR>
+msgstr&nbsp;"%2$d&nbsp;dosyadan&nbsp;%1$d&nbsp;adet&nbsp;dosya&nbsp;işlendi"
+</TT></DL></DIV>
+Burada özgün iletide ikinci sırada olan toplam dosya adedini başa
+almak için '%' ile 'd' (ya da hangi tür değer basılıyorsa onun harfi)
+arasına SIRANO ve '$' koyarak iletiyi programı bozmadan değiştirmiş
+olduk. <BR>
+<BR>
+<table class='navbar'><tbody><tr><td class='navbut'><a href='node_21.html'><img src='../../../images/nav_back.png' border=0> Önceki sayfa</a></td><td class='navbut'><a href='index.html'><img src='../../../images/nav_home.png' border=0> Başlangıç</a></td><td class='navbut'><a href='node_23.html'><img src='../../../images/nav_forward.png' border=0> Sonraki sayfa</a></td></tr></tbody></table>
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+        <div id="footnote">
+            <p>
+               Bu web sitesinde bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir.<br />
+               Pardus markası ve logotipi TÜBİTAK'ın tescilli markasıdır. Kullanım koşulları için <a href="yasal_uyari.html">Yasal Uyarı</a> bölümünü inceleyiniz.<br /> 
+               Bilgi ve önerileriniz için <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+               <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

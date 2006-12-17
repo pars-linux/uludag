@@ -1,0 +1,5 @@
+# -*- coding: utf-8 -*-
+depo = "https://svn.uludag.org.tr/uludag/trunk/doc/tr/"
+belge = "bilisim_okur-yazari.lyx"
+isim = "Bilişim Okur Yazarı"
+dizin = "okuryazar"
