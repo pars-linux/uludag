@@ -21,7 +21,6 @@ body {
 
 html>body #head_grey {
     height: 204px;
-    background-color: #CCC;
     border:1px solid #FFF;
 }
 
@@ -132,6 +131,16 @@ a {
 }
 
 #fullpage {
+    position:relative;
+}
+
+#content,#mainpage{
+    float: left;
+    width:100%;
+    padding-top:-25px;
+}
+
+#mainpage {
     position:relative;
 }
 
