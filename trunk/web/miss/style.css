@@ -15,12 +15,12 @@ body {
 }
 
 #head_grey {
-    height: 204px;
+    height: 190px;
     right: 4px;
 }
 
 html>body #head_grey {
-    height: 204px;
+    height: 200px;
     border:1px solid #FFF;
 }
 
@@ -40,7 +40,7 @@ html>body #head_grey2 {
 }
 
 #blue {
-    height:235px;
+    height:185px;
     width:650px;
     background-image: url('images/head-blue.png');
 }
