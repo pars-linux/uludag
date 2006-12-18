@@ -2,8 +2,8 @@ body {
     background-image:url(images/body_back.gif);
     background-repeat:repeat-x;
     margin-top:10px;
-    font-size:12px;
-    font-family: Tahoma, Sans-Serif;
+    font-size:11px;
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
 }
 
 #container {
@@ -59,7 +59,7 @@ html>body #head_grey2 {
 }
 
 h2,.baslik {
-    font-family: "DejaVu Sans Condensed", Arial, Sans, Helvetica;
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
     font-size:18px;
     font-weight:bold;
     color:#156FA5;
