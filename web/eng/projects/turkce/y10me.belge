@@ -1,9 +1,0 @@
-# -*- coding: utf-8 -*-
-depo = "https://svn.uludag.org.tr/uludag/trunk/doc/eng/yerellestirme_gruplari/"
-belge = "yerellestirme.lyx"
-dosyalar = [ "logo/belgelerlogo.png", "logo/debianlogo.png", "logo/fedoralogo.png", "logo/gnomelogo.png", "logo/gnulogo.jpg", "logo/kdelogo.jpg", "logo/mandrake.png", "logo/postgresql.png" ]
-isim = "Yerelleştirme Çalışmaları"
-dizin = "y10me"
-ikonlar = "../../../images"
-sablon = "../belge.tmpl"
-tamir = 0
