@@ -2,6 +2,9 @@ body {
     background-image:url(images/body_back.gif);
     background-repeat:repeat-x;
     margin-top:10px;
+}
+
+$metin {
     font-size:11px;
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
 }
