@@ -22,30 +22,26 @@ html>body #head_grey {
 }
 
 #head_grey2 {
-    height: 90px;
-    right: 4px;
+    height: 163px;
+    margin: 0px;
 }
 
 html>body #head_grey2 {
-    height: 40px;
-    border:1px solid #FFF;
+    height: 163px;
 }
 
 #blue,#blue2 {
-    background-repeat:no-repeat;
     float:left;
 }
 
 #blue {
     height:230px;
     width:740px;
-    background-image: url('images/head-blue.png');
 }
 
 #blue2 {
     height:82px;
     width:772px;
-    background-image: url('images/header.png');
 }
 
 .metin {
