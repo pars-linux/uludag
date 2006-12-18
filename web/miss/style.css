@@ -4,11 +4,6 @@ body {
     margin-top:10px;
 }
 
-$metin {
-    font-size:11px;
-    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
-}
-
 #container {
     width:742px;
     background-color:#FFF;
@@ -18,13 +13,12 @@ $metin {
 }
 
 #head_grey {
-    height: 190px;
-    right: 4px;
+    height: 230px;
+    margin: 0px;
 }
 
 html>body #head_grey {
-    height: 200px;
-    border:1px solid #FFF;
+    height: 230px;
 }
 
 #head_grey2 {
@@ -43,8 +37,8 @@ html>body #head_grey2 {
 }
 
 #blue {
-    height:185px;
-    width:650px;
+    height:230px;
+    width:740px;
     background-image: url('images/head-blue.png');
 }
 
@@ -52,6 +46,11 @@ html>body #head_grey2 {
     height:82px;
     width:772px;
     background-image: url('images/header.png');
+}
+
+.metin {
+    font-size:11px;
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
 }
 
 #quick_download {
@@ -199,7 +198,6 @@ html>body li {
 #navi {
     clear:both;
     padding-left:10px;
-    !background-color:#CCC;
     z-index:100;
     position:relative;
     padding-top:3px;
@@ -207,6 +205,7 @@ html>body li {
     border-bottom:1px solid #CCC;
     border-top:1px solid #CCC;
     margin-bottom:10px;
+    font-size:12px;
 }
 
 #main_navi {
