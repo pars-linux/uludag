@@ -15,7 +15,7 @@
 		<area shape="rect" href="../belgeler/kurulum_nasil.html" coords="596,115,721,144" >
 		<area shape="rect" href="../indir.html" coords="596,26,721,105" >
 		</map>
-		<img src="../images/header.png" usemap="#header_map" width="740" height="163" border="0">
+		<img src="../images/header.png" usemap="#header_map" width="740" height="163">
         </div>
     </div>
     <div id="navi">
@@ -53,37 +53,37 @@
 
 <tr>
 <td align="left" class="metin"><b>Yeni Geliştirici Kılavuzu</b> (25/02/2005)</td>
-<td class="menubar"><a href="./gelistirici.html">HTML</a></td>
-<td class="menubar"><a href="./gelistirici.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (105 KB)</a></td>
+<td class="menubar"><a href="gelistirici.html">HTML</a></td>
+<td class="menubar"><a href="gelistirici.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (105 KB)</a></td>
 </tr>
 
 <tr>
 <td align="left" class="metin"><b>Grafik Arayüz Tasarım Kılavuzu</b> (22/06/2006)</td>
-<td class="menubar"><a href="./kga_tasarim_kilavuzu.html">HTML</a></td>
-<td class="menubar"><a href="./kga_tasarim_kilavuzu.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (60 KB)</a></td>
+<td class="menubar"><a href="kga_tasarim_kilavuzu.html">HTML</a></td>
+<td class="menubar"><a href="kga_tasarim_kilavuzu.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (60 KB)</a></td>
 </tr>
 
 <tr>
 <td align="left" class="metin"><b>Proje Ana Sözleşmesi</b> (25/02/2005)</td>
-<td class="menubar"><a href="./sozlesme.html">HTML</a></td>
-<td class="menubar"><a href="./sozlesme.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (9 KB)</a></td>
+<td class="menubar"><a href="sozlesme.html">HTML</a></td>
+<td class="menubar"><a href="sozlesme.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (9 KB)</a></td>
 </tr>
 
 <tr>
 <td align="left" class="metin"><b>Bilişim Okur Yazarı</b> (04/11/2004)</td>
-<td class="menubar"><a href="./okuryazar.html">HTML</a></td>
-<td class="menubar"><a href="./okuryazar.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (11 KB)</a></td>
+<td class="menubar"><a href="okuryazar.html">HTML</a></td>
+<td class="menubar"><a href="okuryazar.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (11 KB)</a></td>
 </tr>
 
 <tr>
 <td align="left" class="metin"><b>Temel Masaüstü İhtiyaçları</b> (04/11/2004)</td>
-<td class="menubar"><a href="./masaustu.html">HTML</a></td>
-<td class="menubar"><a href="./masaustu.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (17 KB)</a></td>
+<td class="menubar"><a href="masaustu.html">HTML</a></td>
+<td class="menubar"><a href="masaustu.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (17 KB)</a></td>
 </tr>
 
 <tr>
 <td align="left" class="metin"><b>Neden LyX?</b> (25/02/2005)</td>
-<td class="menubar"><a href="./nedenlyx.html">HTML</a></td>
+<td class="menubar"><a href="nedenlyx.html">HTML</a></td>
 <td class="menubar"><a href="./nedenlyx.pdf"><img src=../images/icon-pdf.gif align=middle border=0> PDF (19 KB)</a></td>
 </tr>
 
