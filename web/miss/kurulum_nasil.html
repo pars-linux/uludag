@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>:: Pardus :: TÜBİTAK/UEKAE ::</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="head_grey2">
+        <div id="blue2">
+		<map name="header_map">
+		<area shape="rect" href="index.html" coords="24,24,143,101" >
+		<area shape="rect" href="belgeler/kurulum_nasil.html" coords="596,115,721,144" >
+		<area shape="rect" href="indir.html" coords="596,26,721,105" >
+		</map>
+		<img src="images/header.png" usemap="#header_map" width="740" height="163" border="0">
+        </div>
+    </div>
+    <div id="navi">
+        <a href="index.html">Ana Sayfa</a>
+      | <a href="urunler/index.html">Ürünler</a>
+      | <a href="projeler/index.html">Projeler</a>
+      | <a href="belgeler/index.html">Belgeler</a>
+      | <a href="hakkimizda.html">Hakkımızda</a>
+      | <a href="basin/index.html">Basın Odası</a>
+      | <a href="iletisim.html">İletişim</a>
+      | <a href="eng/index.html">English</a>
+    </div>
+    <div id="page" class="blue2">
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+
+<h1>Pardus 2007 Kurulum Yardım Belgesi</h1>
+
+<h2>Başlamadan önce...</h2>
+
+İnternetten indirdiğiniz Pardus-Kurulan-2007.iso adlı dosya CD'lerde sıkça kullanılan bir dosya sistemi olan ISO biçimindedir. Eğer CD'yi yazacağınız sistemde bu dosya bir arşiv dosyası olarak görünürse bile bu dosyayı açmaMAnız gerekmektedir.
+<p>
+Bu dosyayı kullanarak Kurulum CD'sini oluşturmak için lütfen   http://www.pardus-wiki.org/index.php/NASIL:ISO_Yazilir adresindeki belgeyi okuyun.
+<p>
+CD'nizi hazırladıktan sonra, bilgisayarınızın CD'den başlatılabilecek şekilde ayarlanması gerekmektedir. Bunu BIOS ayarlarınızda başlangıç sıralamasında CDROM sürücüsünü sabit diskinizden önceki bir sıraya koyarak yapabilirsiniz. (Detaylı bilgiyi bilgisayarınızın/anakartınızın kullanım kılavuzlarında bulabilirsiniz)
+<p>
+Bilgisayarınız CD'den başladıktan sonra karşınıza önyükleyici ekranı gelecektir. Kurulum işlemleri için seçenekleri ve kurulumu yapmak istediğiniz dili bu aşamada belirleyebilir, Bellek Testi'ni kullanarak bilgisayarınızın fiziksel hafızasında (RAM) bir sorun olup olmadığını kontrol edebilirsiniz. Eğer Pardus 2007 seçeneği ile sorun yaşarsanız Standart Ekran Modu ya da Minimum Ayarlar seçenekleriyle denemenizi öneririz. Bu kısıtlamalar kurulum başarıyla tamamlandıktan sonra sistemi kullanmanızı etkilemez.
+<p>
+Hazırlık aşamasının sonraki adımında Pardus'un dağıtıldığı Genel Kamu Lisansı'nı onaylamanız gerekiyor. Aynı ekranda bu lisansın tüm metnini okuyabilirsiniz.
+<p>
+Sonraki adımda CD içindeki dosyaların bütünlük ve doğrulukları, kurulum yapılmadan önce kontrol edilebilir. Böylece sorunlu bir CD ile zaman kaybetmeyebilirsiniz.
+<p>
+CD bütünlüğü de kontrol edildiğinde sıra klavye haritanızı belirlemeye gelir. Alttaki küçük kutucukta harf ve rakamların doğru ayarlanıp ayarlanmadığını kontrol edebilirsiniz.
+<h2>
+Disk Bölümlendirme
+</h2>
+Hazırlık ekranının son bölümünde sabit diskinizin Pardus tarafından nasıl yapılandırılacağına dair fikirleriniz sorulur. Eğer sabit diskinizin tamamını Pardus 2007 ile kullanmayı düşünüyorsanız burada "otomatik bölümlendirme" seçebilirsiniz. Farklı disk bölümleri içeren bir yapıda, özel bir alana kurmayı planlıyorsanız mutlaka "diskimi kendim bölümlendireceğim" seçeneğini kullanmalısınız.
+<p>
+Bölümlendirme ekranında disk büyüklüğünü değiştirebilir, yeni bölümler yaratabilir ya da var olan bölümleri birleştirmek gibi işlemleri yapabilirsiniz.
+<p>
+En az 3500 MB büyüklükte bir disk bölümünü Sistem Kurulumu olarak seçmeniz gerekmektedir. Bunun dışında sistemi kullananların kişisel bilgi/belgelerini saklayabilecekleri Ev dizini için de ayrı bir disk bölümü atayabilirsiniz.
+<p>
+Disk bölümlerinin yapılandırılmasıyla hazırlık aşaması tamamlanmış olur.
+<p>
+Paketler sisteme kurulduktan sonra sıra Temel yapılandırmaya gelir. İlk belirlemeniz gereken sistemin yönetici parolasıdır. Bu parola, sistemde her zaman ve root kullanıcı ismiyle var olması gereken süper kullanıcının parolasıdır. Sisteminizi kullanırken belirli konularda yetkilendirme istendiğinde bu parolayı kulllanacaksınız. Unutmayacağınız bir parola seçin!
+<p>
+Arkasından gündelik kullanımda kullanabileceğiniz bir kullanıcı oluşturun. Unutmayın root kullanıcısı sistemin grafik ortamına giriş yapamaz. Burada en az bir kullanıcı daha tanımlamanız gerekmektedir.
+<p>
+Son adım sistem yükleyicisi (grub) kurulumudur. Bu yükleyici Pardus'un yüklenmesi için gereklidir ve sisteminizde bulunan diğer işletim sistemlerinin yüklenmesinden sorumlu olarak da çalışabilir. Eğer birden fazla işletim sistemi kullanıyor ve bunlar arasındaki tercihleri Pardus'un yükleyicisi ile yapmak istiyorsanız ilk seçenek size uygun olacaktır. Disk başına (MBR) yazılan yükleyici bilgisayardaki tüm işletim sistemlerini açabilmeye programlıdır. Eğer hali hazırda bir yükleyici kurulu ve çalışıyor, Pardus yükleyicisi sadece kendisinden sorumlu olarak çalışacaksa PArdus disk bölümünün başına yazmanız yeterli olur. Eğer hangisini seçmeniz gerektiğini bilmiyorsanız, ilk seçeneği tercih edin...
+<p>
+Sisteminiz bu işlemler sonucunda başarıyla kuruldu. CD'yi çıkarın ve bilgisayarınızı yeniden başlatın... 
+<p>
+İyi günlerde kullanmanızı dileriz...
+
+
+
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+        <div id="footnote">
+            <p>
+               Bu web sitesinde bulunan bilgi ve belgelerin, kaynak gösterilmek koşulu ile kullanılması serbesttir.<br />
+               Pardus markası ve logotipi TÜBİTAK'ın tescilli markasıdır. Kullanım koşulları için <a href="/yasal_uyari.html">Yasal Uyarı</a> bölümünü inceleyiniz.<br /> 
+               Bilgi ve önerileriniz için <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi at pardus.org.tr</a>
+               <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
