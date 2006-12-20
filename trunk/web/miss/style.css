@@ -45,6 +45,12 @@ html>body #head_grey2 {
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
 }
 
+.caption {
+    font-size:11px;
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
+    text-align: center;
+}
+
 h2,.baslik {
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
     font-size:18px;
