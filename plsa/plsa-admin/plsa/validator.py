@@ -142,9 +142,7 @@ class validate_plsa:
         self.check(node, {})
         self.check_attr(
             node, {
-                 #"versionTo": (self.optional_once),
-                 #"versionFrom": (self.optional_once),
-                 "fixedAt": (self.optional_once)
+                 "fixedAt": (self.once)
             }
         )
 

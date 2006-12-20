@@ -8,7 +8,6 @@
         <Packages>
             <Package fixedAt="5.1.4-6">mod_php</Package>
             <Package fixedAt="5.1.4-4">php-cli</Package>
-            <Package>php-x</Package>
         </Packages>
         <Description xml:lang="en">
             <p>abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc</p>

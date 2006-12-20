@@ -150,13 +150,7 @@ class advisory:
         tpl.append("")
         tpl.append("")
 
-        up = []
-        remove = []
-        for package, version in self.data["packages"]:
-            if version:
-                up.append(package)
-            else:
-                remove.append(package)
+        up = [p[0] for p in self.data["packages"]]
 
         tpl.append(_("Resolution"))
         tpl.append("=" * len(_("Resolution")))
@@ -166,12 +160,6 @@ class advisory:
             tpl.append("")
             tpl.append("    pisi up %s" % " ".join(up))
             tpl.append("")
-        if remove:
-            tpl.append(wwrap(_("Unfortunately, there are update(s) for %s. You can remove them via Package Manager or with a single command from console:") % ", ".join(remove)))
-            tpl.append("")
-            tpl.append("    pisi remove %s" % " ".join(remove))
-            tpl.append("")
-        tpl.append("")
 
         if self.data["references"]:
             tpl.append(_("References"))
