@@ -23,14 +23,13 @@ locales = {
     }
 
 def getKDELocale():
-    KGlobal.config().setGroup("Locale")
-    return KGlobal.config().readEntry("Language", "tr")
+    return str(KGlobal.locale().language())
 
 # package-manager uses KDE locale info, pisi.api uses system locale info. We need 
 # to map KDE locale info to system locale info to make dynamic KDE system language 
 # changes from Tasma visible to package-manager.
 def setSystemLocale():
-    kdeLocale = str(getKDELocale()).split(":")[0]
+    kdeLocale = getKDELocale()
 
     if locales.has_key(kdeLocale):
         systemlocale = locales[kdeLocale]
