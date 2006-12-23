@@ -164,6 +164,7 @@ class advisory:
         if self.data["references"]:
             tpl.append(_("References"))
             tpl.append("=" * len(_("References")))
+            tpl.append("")
             for ref in self.data["references"]:
               tpl.append("  * %s" % ref)
             tpl.append("")
