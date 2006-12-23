@@ -72,7 +72,7 @@ def main():
     text = adv.build_text()
 
     if options.mail:
-        title = "[PLSA] %s" % adv.data["title"]
+        title = "[PLSA-%s] %s" % (adv.data["id"],adv.data["title"])
         if not openComposer('', '', '', title, text):
             return FAIL_MAIL
     else:
