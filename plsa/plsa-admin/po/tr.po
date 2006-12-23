@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PLSA 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-13 23:05+0200\n"
+"POT-Creation-Date: 2006-12-24 00:10+0200\n"
 "PO-Revision-Date: 2006-09-13 12:06+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -15,60 +15,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plsa/__init__.py:103
-msgid "Pardus Linux Security Advisory"
+#: plsa/__init__.py:110
+#, fuzzy, python-format
+msgid "Pardus Linux Security Advisory %s-%s"
 msgstr "Pardus Linux Güvenlik Bildirisi"
 
-#: plsa/__init__.py:104
+#: plsa/__init__.py:111
 msgid "security@pardus.org.tr"
 msgstr "guvenlik@pardus.org.tr"
 
-#: plsa/__init__.py:105
+#: plsa/__init__.py:112
 msgid "http://security.pardus.org.tr"
 msgstr "http://guvenlik.pardus.org.tr"
 
-#: plsa/__init__.py:107
-msgid "ID"
-msgstr "No"
-
-#: plsa/__init__.py:108
+#: plsa/__init__.py:115
 msgid "Date"
 msgstr "Tarih"
 
-#: plsa/__init__.py:109
+#: plsa/__init__.py:116
 msgid "Revision"
 msgstr "Sürüm"
 
-#: plsa/__init__.py:110
+#: plsa/__init__.py:117
 msgid "Severity"
 msgstr "Önem"
 
-#: plsa/__init__.py:121 plsa/__init__.py:122
+#: plsa/__init__.py:129 plsa/__init__.py:130
 msgid "Summary"
 msgstr "Özet"
 
-#: plsa/__init__.py:128 plsa/__init__.py:129
+#: plsa/__init__.py:136 plsa/__init__.py:137
 msgid "Description"
 msgstr "Açıklama"
 
-#: plsa/__init__.py:135
+#: plsa/__init__.py:143
 msgid "Affected packages:"
 msgstr "Etkilenen paketler:"
 
-#: plsa/__init__.py:138
+#: plsa/__init__.py:146
 msgid "all versions"
 msgstr "tüm sürümler"
 
-#: plsa/__init__.py:140
+#: plsa/__init__.py:148
 #, python-format
 msgid "all before %s"
 msgstr "%s öncesi tüm sürümler"
 
-#: plsa/__init__.py:153 plsa/__init__.py:154
+#: plsa/__init__.py:155 plsa/__init__.py:156
 msgid "Resolution"
 msgstr "Çözüm"
 
-#: plsa/__init__.py:157
+#: plsa/__init__.py:159
 #, python-format
 msgid ""
 "There are update(s) for %s. You can update them via Package Manager or with "
@@ -77,42 +74,34 @@ msgstr ""
 "%s için güncelleme mevcut. Paket Yöneticisi'ni kullanarak ya da komut "
 "satırında tek komut ile güncelleme yapabilirsiniz:"
 
-#: plsa/__init__.py:162
-#, python-format
-msgid ""
-"Unfortunately, there are update(s) for %s. You can remove them via Package "
-"Manager or with a single command from console:"
-msgstr ""
-"Ne yazık ki %s için güncelleme yok. Paket Yöneticisi'ni kullanarak ya da "
-"komut satırında tek komut ile sistemden kaldırabilirsiniz:"
-
-#: plsa/__init__.py:169 plsa/__init__.py:170
+#: plsa/__init__.py:165 plsa/__init__.py:166
 msgid "References"
 msgstr "Referenslar"
 
-#: plsa-cli:39
+#: plsa-cli:40
 #, python-format
 msgid "generate advisory for locale LANG (default: %s)"
 msgstr "bildiriyi DIL dilinde oluştur (varsayılan: %s)"
 
-#: plsa-cli:39
+#: plsa-cli:40
 msgid "LANG"
 msgstr "DIL"
 
-#: plsa-cli:41
+#: plsa-cli:42
 msgid "open KMail compose dialog"
 msgstr "KMail e-posta penceresini aç"
 
-#: plsa-cli:53
+#: plsa-cli:54
 #, python-format
 msgid "'%s' locale is not supported."
 msgstr "'%s' yereli desteklenmemektedir."
 
-#: plsa-cli:58
+#: plsa-cli:59
 #, python-format
 msgid "Unable to read %s."
 msgstr "%s dosyası okunamadı."
 
-#: plsa-cli:66
+#: plsa-cli:67
 msgid "XML file has errors:"
 msgstr "XML dosyası hatalı:"
+
