@@ -6,6 +6,7 @@ class Error(Exception):
 import gettext
 import os
 import os.path
+import datetime
 
 import piksemel
 
@@ -106,7 +107,7 @@ class advisory:
         _ = self.tr
 
         # TODO: Get these values from user
-        title = _("Pardus Linux Security Advisory")
+        title = _("Pardus Linux Security Advisory %s-%s" % (datetime.date.today().year,self.data["id"]))
         email = _("security@pardus.org.tr")
         web = _("http://security.pardus.org.tr")
 
@@ -119,11 +120,11 @@ class advisory:
 
         tpl = []
 
-        tpl.append("-" * 72)
+        tpl.append("-" * 85)
         tpl.append(justify("%s  %s" % (title, email), "  ", 72))
-        tpl.append("-" * 72)
+        tpl.append("-" * 85)
         tpl.extend(calign(headers))
-        tpl.append("-" * 72)
+        tpl.append("-" * 85)
         tpl.append("")
 
         tpl.append(_("Summary"))
@@ -168,6 +169,6 @@ class advisory:
               tpl.append("  * %s" % ref)
             tpl.append("")
 
-        tpl.append("-" * 72)
+        tpl.append("-" * 85)
 
         return "\n".join(tpl)
