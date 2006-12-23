@@ -112,7 +112,6 @@ class advisory:
         web = _("http://security.pardus.org.tr")
 
         headers = [
-            (_("ID"), self.data["id"]),
             (_("Date"), self.data["revision"]["date"]),
             (_("Revision"), self.data["revision"]["no"]),
             (_("Severity"), self.data["severity"])
