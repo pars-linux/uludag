@@ -1,0 +1,35 @@
+<PLSA>
+    <Advisory id="2">
+        <Title xml:lang="en">Firefox multiple vulnerabilities</Title>
+        <Summary xml:lang="en">Multiple vulnerabilities exists in Firefox that could lead to malicious code execution.</Summary>
+        <Severity>5</Severity>
+        <Packages>
+            <Package fixedAt="2.0.0.1-44">firefox</Package>
+        </Packages>
+        <Description xml:lang="en">
+            <p>Several flaws were found in the way Firefox processes certain malformed JavaScript code. A malicious web page
+              could cause the execution of JavaScript code in such a way that could cause Firefox to crash or execute arbitrary
+              code as the user running Firefox. (CVE-2006-6498, CVE-2006-6501, CVE-2006-6502, CVE-2006-6503, CVE-2006-6504)</p>
+            <p>Several flaws were found in the way Firefox renders web
+              pages. A malicious web page could cause the browser to crash
+              or possibly execute arbitrary code as the user running
+              Firefox. (CVE-2006-6497)</p>
+        </Description>
+        <References>
+            <Reference>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6498</Reference>
+            <Reference>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6501</Reference>
+            <Reference>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6502</Reference>
+            <Reference>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6503</Reference>
+            <Reference>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6504</Reference>
+            <Reference>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6497</Reference>
+        </References>
+    </Advisory>
+    <History>
+        <Update revision="1">
+            <Date>2006-12-23</Date>
+            <Comment>Initial public announcement</Comment>
+            <Name>İsmail Dönmez</Name>
+            <Email>ismail@pardus.org.tr</Email>
+        </Update>
+    </History>
+</PLSA>
