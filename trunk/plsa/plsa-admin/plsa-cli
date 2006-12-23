@@ -6,6 +6,7 @@ from optparse import OptionParser
 import os
 import os.path
 import sys
+import datetime
 
 # PLSA Library
 import plsa
@@ -72,7 +73,7 @@ def main():
     text = adv.build_text()
 
     if options.mail:
-        title = "[PLSA-%s] %s" % (adv.data["id"],adv.data["title"])
+        title = "[PLSA-%s-%s] %s" % (datetime.date.today().year,adv.data["id"],adv.data["title"])
         if not openComposer('', '', '', title, text):
             return FAIL_MAIL
     else:
