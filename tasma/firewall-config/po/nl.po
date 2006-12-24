@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-22 16:41+0200\n"
-"PO-Revision-Date: 2006-12-03 14:51+0200\n"
+"PO-Revision-Date: 2006-12-24 07:50+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Pardus firewall grafische gebruikersinterface"
 
 #: src/firewall-config.py:53
 msgid "GUI Design & Usability"
-msgstr "Gebruikersinterface Ontwerp en gebruikersgemak"
+msgstr "Gebruikersinterface ontwerp & gebruikersgemak"
 
 #: src/firewall-config.py:54
 msgid "Help with IPTables"
@@ -48,7 +48,7 @@ msgstr "Keur alle inkomende verbindingen af door poorten %s"
 #: src/firewall-config.py:96
 #, python-format
 msgid "Accept all outgoing connection through ports %s"
-msgstr "Accepteer alle uigaande verbindingen door poorten %s"
+msgstr "Accepteer alle uitgaande verbindingen door poorten %s"
 
 #: src/firewall-config.py:98
 #, python-format
@@ -69,7 +69,7 @@ msgstr "&Stop firewall"
 
 #: src/firewall-config.py:232
 msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr "<b><font size='+1'>Firewall is aan</font></b>"
+msgstr "<b><font size='+1'>Firewall is actief</font></b>"
 
 #: src/firewall-config.py:234
 msgid ""
