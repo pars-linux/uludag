@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 16:20+0200\n"
-"PO-Revision-Date: 2006-12-13 21:20+0200\n"
+"PO-Revision-Date: 2006-12-25 23:12+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgstr "Keer pakket selectie om"
 
 #: src/BalloonMessage.py:44
 msgid "Show Updates"
-msgstr "Toon beschikbare bijgewerkte bestanden"
+msgstr "Toon bijgewerkte pakketten"
 
 #: src/BalloonMessage.py:45
 msgid "Ignore"
@@ -75,7 +75,7 @@ msgstr "Negeer"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
-msgstr "Repositorydialoog"
+msgstr "Repository dialoog"
 
 #: src/RepoDialog.py:73
 msgid "&Ok"
@@ -138,7 +138,7 @@ msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
-"Extra afhankelijkheden van de geseleceerde pakket(ten) welk ook bijgewerkt "
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt "
 "zullen worden:"
 
 #: src/BasketDialog.py:78
@@ -227,11 +227,11 @@ msgstr "Kan geen verbinding maken met de Comar dienst"
 
 #: src/Commander.py:99
 msgid "You do not have permission to do this operation."
-msgstr "U heeft geen toegang voor deze handeling."
+msgstr "U heeft geen toestemming voor deze handeling."
 
 #: src/package-manager.py:47
 msgid "GUI for PiSi package manager"
-msgstr "GUI voor PiSi pakketbeheer"
+msgstr "Grafische gebruikersinterface voor PiSi pakketbeheer"
 
 #: src/package-manager.py:55 src/package-manager.py:870
 msgid "Package Manager"
@@ -251,7 +251,7 @@ msgstr "CSS/JS Meister"
 
 #: src/package-manager.py:61
 msgid "GUI Design & Usability"
-msgstr "GUI-ontwerp en functionaliteit"
+msgstr "Ontwerp en functionaliteit grafische gebruikersinterface"
 
 #: src/package-manager.py:62
 msgid "PiSi Authors"
@@ -286,7 +286,7 @@ msgstr "Laden pakketlijst..."
 msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
-msgstr "De pakketmanager dient de pakketdatabase bij te werken. U heeft hiervoor een netwerkverbinding nodig."
+msgstr "Pakketbeheer dient de pakketdatabase bij te werken. U heeft hiervoor een netwerkverbinding nodig."
 
 #: src/package-manager.py:208
 msgid "Package database is empty"
@@ -355,7 +355,7 @@ msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
-"Geselecteerde pakketten [%1] zijn in conflict met elkaar. Dezeakketten "
+"Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten "
 "kunnen niet samen geïnstalleerd worden."
 
 #: src/package-manager.py:480 src/package-manager.py:490
@@ -376,7 +376,7 @@ msgid ""
 "Remove the following conflicting packages?"
 msgstr ""
 "\n"
-"De volgende conflicterende pakketten verwijderen?"
+"Verwijder de volgende conflicterende pakketten?"
 
 #: src/package-manager.py:503 src/package-manager.py:562
 #: src/package-manager.py:691
@@ -423,7 +423,7 @@ msgid ""
 "going to be <b>removed</b>. Please check your basket and make sure those are "
 "the packages you want to remove. Accidentally removing some reverse "
 "dependencies may break the system stability."
-msgstr "De selecteerde pakketten hebben omgekeerde afhankelijkheden. Omdat omgekeerde afhankelijkheden van de geselecteerde pakketten de pakketten nodig hebben om te functioneren; zullen, bij het verwijderen van de geselecteerde pakketten, <b>%1</b>  omgekeerde afhankelijkheden worden <b>verwijderd</b>. Controleer alstublieft uw mandje en verzeker u ervan dat dit de pakketten zijn die u wilt verwijderen. Per ongeluk verwijderen van sommige omgekeerde afhankelijkheden kan de systeemsstabiliteit in gevaar brengen."
+msgstr "De selecteerde pakketten hebben omgekeerde afhankelijkheden. Omdat omgekeerde afhankelijkheden van de geselecteerde pakketten de pakketten nodig hebben om te functioneren; zullen, bij het verwijderen van de geselecteerde pakketten, <b>%1</b> omgekeerde afhankelijkheden worden <b>verwijderd</b>. Controleer alstublieft uw mandje en verzeker u ervan dat dit de pakketten zijn die u wilt verwijderen. Per ongeluk verwijderen van sommige omgekeerde afhankelijkheden kan de systeemsstabiliteit in gevaar brengen."
 
 #: src/package-manager.py:532
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
@@ -565,11 +565,11 @@ msgstr "&Repositories"
 
 #: src/PreferencesDialog.py:205
 msgid "&Show only desktop applications"
-msgstr "&Toon alleen desktop-toepassingen"
+msgstr "&Toon alleen desktop toepassingen"
 
 #: src/PreferencesDialog.py:206
 msgid "If checked, then pisi will only show desktop applications"
-msgstr "Indien geselecteerd, zal pisi alleen desktop-toepassingen weergeven"
+msgstr "Indien geselecteerd, zal pisi alleen desktop toepassingen weergeven"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &interval upgradable package checking"
@@ -606,7 +606,7 @@ msgid ""
 msgstr ""
 "Legen van schijf cache zal alle gedownloade software verwijderen. \n"
 "Het zal geen geinstalleerde software verwijderen of de stabiliteit van uw "
-"systeem beinvloeden."
+"systeem beïnvloeden."
 
 #: src/PreferencesDialog.py:216
 msgid "Cache usage"
