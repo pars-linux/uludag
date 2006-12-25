@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 09:42+0200\n"
-"PO-Revision-Date: 2006-12-05 21:31+0200\n"
+"PO-Revision-Date: 2006-12-25 23:16+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: src/disk-manager.py:94 src/disk-manager.py:362 src/diskform.py:132
 msgid "Disk Manager"
-msgstr "Schijfmanager"
+msgstr "Schijfbeheer"
 
 #: src/disk-manager.py:113
 msgid "User not in disk group !! Exiting.."
@@ -41,7 +41,7 @@ msgstr "Bestand /etc/fstab bijgewerkt !"
 #: src/disk-manager.py:267
 #, python-format
 msgid "%s for %s failure !!"
-msgstr "%s for %s failure !!"
+msgstr "%s voor %s mislukt !!"
 
 #: src/disk-manager.py:295
 msgid "Mount Point"
@@ -53,7 +53,7 @@ msgstr "Bestandssysteem type"
 
 #: src/disk-manager.py:357
 msgid "Disk Manager is already running!"
-msgstr "Schijfmanager is al actief!"
+msgstr "Schijfbeheer is al actief!"
 
 #: src/diskform.py:92 src/diskform.py:139
 msgid "Disks"
@@ -89,4 +89,5 @@ msgstr "Toon systeempartities"
 
 #: src/diskform.py:141
 msgid "To update disk changes the manager must run as root"
-msgstr "Om schijf veranderingen bij te werken zal de manager actief moeten zijn als root"
+msgstr "Om schijf veranderingen bij te werken zal de schijfbeheer actief moeten zijn als root"
+
