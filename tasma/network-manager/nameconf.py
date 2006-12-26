@@ -18,31 +18,35 @@ from icons import getIconSet
 from comariface import comlink
 
 
-class Window(QMainWindow):
+class Window(QDialog):
     def __init__(self, parent):
-        QMainWindow.__init__(self, parent)
+        QDialog.__init__(self, parent)
         
         self.old_host = None
         self.old_dns = None
         
         self.setCaption(i18n("Name Service Settings"))
-        self.setMinimumSize(280, 320)
+        self.resize(260, 290)
         
-        vb = QVBox(self)
-        vb.setMargin(6)
+        vb = QVBoxLayout(self)
+        vb.setMargin(12)
         vb.setSpacing(6)
-        self.setCentralWidget(vb)
         
-        widgets.HLine(i18n("Computer"), vb)
+        line = widgets.HLine(i18n("Computer"), self)
+        vb.addWidget(line)
         
-        hb = QHBox(vb)
+        hb = QHBox(self)
+        vb.addWidget(hb)
         hb.setSpacing(6)
         QLabel(i18n("Host name:"), hb)
-        self.host = widgets.Edit(hb)
+        self.host = QLineEdit(hb)
         
-        widgets.HLine(i18n("Name servers"), vb)
+        vb.addSpacing(6)
+        line = widgets.HLine(i18n("Name servers"), self)
+        vb.addWidget(line)
         
-        vb2 = QVBox(vb)
+        vb2 = QVBox(self)
+        vb.addWidget(vb2)
         vb2.setSpacing(3)
         
         self.dns = QListBox(vb2)
@@ -54,22 +58,24 @@ class Window(QMainWindow):
         but = QPushButton(getIconSet("remove", KIcon.Small), i18n("Remove"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotRemove)
         
-        hb = QWidget(vb)
+        hb = QWidget(self)
+        vb.addSpacing(6)
+        vb.addWidget(hb)
         lay = QHBoxLayout(hb)
         lay.setMargin(3)
         lay.setSpacing(12)
         lay.addStretch(1)
         but = QPushButton(getIconSet("apply", KIcon.Small), i18n("Apply"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotApply)
+        self.connect(but, SIGNAL("clicked()"), self.accept)
         lay.addWidget(but)
         but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotCancel)
+        self.connect(but, SIGNAL("clicked()"), self.reject)
         lay.addWidget(but)
         
         comlink.name_hook.append(self.slotName)
     
-    def slotApply(self):
-        host = str(self.host.edit.text())
+    def accept(self):
+        host = str(self.host.text())
         if self.old_host != host:
             comlink.com.Net.Stack.setHostNames(hostnames=host)
         item = self.dns.firstItem()
@@ -80,10 +86,10 @@ class Window(QMainWindow):
         dns = "\n".join(dns)
         if self.old_dns != dns:
             comlink.com.Net.Stack.setNameServers(nameservers=dns)
-        self.hide()
+        QDialog.accept(self)
     
-    def slotCancel(self):
-        self.hide()
+    def reject(self):
+        QDialog.reject(self)
     
     def slotAdd(self):
         tmp = KInputDialog.getText(
@@ -109,4 +115,4 @@ class Window(QMainWindow):
             self.dns.insertItem(item)
         
         self.old_host = hostname
-        self.host.edit.setText(hostname)
+        self.host.setText(hostname)
