@@ -40,7 +40,7 @@ from goodbyedlg import GoodbyeDlg
 from simplejson import dumps as json_encode
 
 # Version
-version = "1.0.5"
+version = "1.0.6"
 
 def AboutData():
     global version
