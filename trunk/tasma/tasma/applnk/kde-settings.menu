@@ -25,7 +25,7 @@
 		</Include>
 	</Menu>
 	<Menu>
-		<Name>Görümün ve Temalar</Name>
+		<Name>Görünüm ve Temalar</Name>
 		<Directory>tasma-looknfeel.directory</Directory>
 		<Include>
 			<Category>X-KDE-tasma-looknfeel</Category>
