@@ -1,0 +1,194 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ExperienceDlg</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>ExperienceDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>287</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>experiencebuttonGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>110</y>
+                <width>400</width>
+                <height>140</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string></string>
+        </property>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionFour</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>110</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Experienced system administrator</string>
+            </property>
+            <property name="buttonGroupId">
+                <number>3</number>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionOne</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>New user</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+            <property name="buttonGroupId">
+                <number>1</number>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionTwo</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>50</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Home/office productivity user</string>
+            </property>
+            <property name="buttonGroupId">
+                <number>0</number>
+            </property>
+        </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>questionThree</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>80</y>
+                    <width>318</width>
+                    <height>19</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Experienced user</string>
+            </property>
+            <property name="buttonGroupId">
+                <number>4</number>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>experienceLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>60</y>
+                <width>420</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;What is your experience level?&lt;/h2&gt;</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stepLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>100</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>77</red>
+                <green>77</green>
+                <blue>77</blue>
+            </color>
+        </property>
+        <property name="frameShape">
+            <enum>NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Plain</enum>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Step 1 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>experiencePixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="812">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff61000002f349444154388da59341681c650085bfd98e38a38b9d0d4166a5948cb4e0ac0d74828abbd443168ab245b4d90ac62a82012f4d0f4adb4bed4189285a0f4a56ab664569d283c92642dd11ad9d05831b6861b762930924b80b8233e0921d4a4886e6afbf87683d8907dfe91d1e8ff7e03df89f50fe26d29dc8d1db7d8576bc93ad1c080f04206210593685870e7405b75251f415c7c73e51eebd5faa00d29bcca0a6bf67beae63d8707d0c92362cd7600bbcb88213832b62722ad46dfb89dc9cab01efab002483a736173c5d3f3c066d0f428b4d15f4a7270984473e0ca95eab537cf4344b491fe37c896a507af61f033fead1fb8760a10c610cc365f4eb551ad3a3582b3e15234df1d509bc8bef6136eb649e3c4a3c5dee9152fed5bf34f3f1c6998294bf6d4859ff5aca2f7e948bc70b72ed802927f76b7271bf26c7f721e59545f98b3b23170f98f2dd7d5a28a554120044b3295df4c15b4740b5a87c748874b381176f775e00b268543f3d89459ad93024a76a496a538904c0d969f79e13e73f24c0a074ea08ad75f0f60e5078ac40ddb418193e866f9aa4e65d1a2b2e00de7aa4b32b7fe776028131a882d7092838438451845673b9b0e2935e6d51bee4628521ad3d0e03569e58802348b0ec261300032a3b6b0282159fa56497e7fa6c7cd364e4e010f66755cc768be0e12c476d9beafc1459a02680b9f2dd09807a1cdf35a8421886e48c0c031f4c70e28d0ae58b17d02ed5491d1ea258f260978dfecd2c3501832a4cfdecab3b00c61fea2fce85e1ee4115aede68916e5ca1635b646f0abe5b6bf3f8c8db545f7f9e3b7eba8adb09e10f41276988d12f97c61200991746de7c694fdfada60a76bb85b719d13a354ab33745f1e031cebe9c27f37b97a9551f278e41d578ede4f839f6a63bb7bfb0f1c3cc21bdb970a6b5da78c48a22c50b029c38c65d8f71c4f68c0bbd26a193fb353f7cfa1c0fa4df517aee13b70d00a494b0c5835cabbc88997b86657737869dc077bb58856f319ccfe9d72f2b8a22fef3a6f2e68622a54cca1b6b869472c7bfe9fe044da651b2535113110000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
