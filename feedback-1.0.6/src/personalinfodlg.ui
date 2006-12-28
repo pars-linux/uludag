@@ -1,0 +1,166 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>PersonalInfoDlg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>PersonalInfoDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>619</width>
+            <height>287</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Feedback Wizard</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>171</x>
+                <y>61</y>
+                <width>428</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>&lt;h2&gt;Your personal information (optional)&lt;/h2&gt;
+You can submit your e-mail address for inclusion in our low traffic
+announces.</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoLabel_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>180</x>
+                <y>150</y>
+                <width>48</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string>E-mail:</string>
+        </property>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>190</x>
+                <y>200</y>
+                <width>400</width>
+                <height>60</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>CheckBoxAnnounce</cstring>
+                </property>
+                <property name="text">
+                    <string>Add me to your Pardus announce list</string>
+                </property>
+                <property name="accel">
+                    <string></string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </vbox>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>stepLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>100</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>77</red>
+                <green>77</green>
+                <blue>77</blue>
+            </color>
+        </property>
+        <property name="text">
+            <string>&lt;b&gt;Step 6 of 7&lt;/b&gt;</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>hardwareInfoPixmap</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>lineEmail</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>245</x>
+                <y>150</y>
+                <width>300</width>
+                <height>22</height>
+            </rect>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2077">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af4000007e4494441545885e59761685bd715c77fea94eea9ad1bb984a1800b72e6801d14b03317acccdbe29095cc2925b1e987cacb4ae58551aba10b760bc1c946e71a166c3342a58d0e3b5b376b834c76b7d44e4b8b5c9acd8a71622764d8e9924edad2a284d0496e62a4d7e42dff7d78cf6e9ca8ebf6691f76e17138f73eeef99ffff9df73df83fff7e12a3529e91ee0ebbc1eaba3aa6515a762b031042763b0b11d4e0e404d3b9c8a417508a662106887d3310800a74da875fc5a98ffb0f2e30dbde36fba1e74fdfd7301e85c723ddee011fe38f055821117a763506fd89bd647e06c0c6a0d388b1d64c9ff77eb7993ccdfce172b17ccc31c8cfec0f5a575374b02d0a5391f54fe89a9812f53dd06eff4c3c63627f3109cfc295487616ac00e32e5643a65679a3a6db2b9360ca78e00306e15d9e18e40d96f6077142e8e0a23f832e1d6e75c2e57090057f513de7ee9fb2c5ca6b8b880c734299a261eabe8f8505ccce3b90919d3a412839469b2d98271cb6487054396493b10b34c226e83986512066216743d1224e35f6b55aee97fc4f5dcbab300f7dc56771753b15dac6f01d3c413ec846f85f1ec1d07a31c4f2062cfdff48005955f3b00951bd8dc1167f6e1b5ec701bc42d9376b7c11010711b8cd7d411f97996334f7410711bf49f3a496545de9d9a6add554a78f7299e2d160e87a5c361299b960a92669392249d4848b139158e0fda7ea1609ba5f5ab59a920cd1dee94f68755989d9424cd0c74daf650a772d5281a30a4ddc15f9402b046af745a9a98942686ed4d9f6f928606a5e79b9d2092d2920e86a481a0928d3ea9d1a744bd577aac4633fb43f6fa0d49b3394503860a0143c3dbfc92a468834fb96a94d85993588abb5c02aee7cb308baee2c91854344366162c289e8e81db80eb79b080c514bc7786cbbe16b60223a6492b30f461864d6f8c127bdc053fcb905f4c11c6246699b4191e8a1767092f2e10b3a075b1b85ad25d0c6cd4a1f02d1d4f4a075bec8c2712d22b41693a295d92f462583a97d3e4369fb4ddafb106afd4e0d570ad21d57b351830a45a4383f55e49d2d8d34dd2f61ae9c29c746c463d55285b85861b7da724ad6c013a976c546fe856e160b3b4bf598543611bc4b59c2429773064d772bb5f3ad4b13278adb11c3c1a4085009adc1ffa542b37a4be6a3b784f1552a3ff2fba96fbc2ca12f8b73e8465ba3c751d6016f1ac390f6fc7a1ac1c7ed54ff99914f3bb36b0c902de1875540f6d8eeadbdd3847cee08805756f8cc2c559f078883fbe8176b0df036298f753567e0703a3d16f6b4f5063dbfc52ad573d7ea43d2d2a5c4a2b5b65a8db8ffaaa0d5bc5f55e251abc36ed4b0c38365a6d33d0578df44cb37435ab5cc0508f937db71f151a7c798df67d71258058a2a3b302a5fd68c9ead8b07474469d152817f02ab1b34e3a9196de4ad8aaaef74ab586669cf26856523ca9b19d352ad41a36084989dd4dcbf467ab50346098caea4100f7128091b77b1f8cb8ed8e6538b67f4b1bf1ef6dc67043efc20291b367e80aadc37043e8994e5a164cba4c93fe059391d0269acf9f27669a009c77e8cebc3e44eb9ab5bc642d9509bc26f7e6df1bbf0fb8f62903db6a7e7c17034707a5f8a4ee9cefac409acd2efbd106dfb2ca0b0127f343410d6eb1cf7fe2c9a0b20efd59bf6d754deb57887008ca97325f6282cc7966175344709801869cf591be5670e69b3f5a20feeb67312de85d34e9f2f9197fcfa0dd32219fa7f962c6de0f18b0a0dd82cb6ff697add4c0f6e86fefcc34b1bb592a68d9efa936a481269b815793b6167292de4aa850efb3e75f4928bac52f9dc84a2f764892bafd25183c3af68d150cc4ccfed5cb1a7032dbfae7142c5ec6e7f512b3e0c0de2cf129bbc6fd2fb7c1375ba11cb8dc4cef952b4480f907ae10b6a0ff854de08e90796d08ac3b980532479e355632d0e07bb764ad27d276172c383d3e9593f6b648034d8a6eab91aeca66269e54f219a7839eb38dd273d26383a53554efddb19201cb5c75a7060c37747d671df9c7d772792c06abb03fb91ef032f2ce15f2ef6748bddc4ec46d30f2fb036cdd3702c5226c848917da38f0e857e83afb5dee3c5d61208ec94a0686c6464b21cdd5fb3479302c6de9939e0f49179ccc1afd1ade1994e60beaa9f54a47271d3dcc69707b9d743821ed6d51da6fdcc540b71fe9929a5600284c279fce05bceaacb05fe8ac40d92a43892783eaf663d3bba5c606539072a9a4b4bf433d01af74412aa4d3d2405a89dd4dd2de16451bfdca06bc1a7eac6e79bf65faf734e75428ac5ec980e4993bdc7d61a9edde8eb8afd62b35fa95dc1752aed6a7be807ddbe978429a97fd9cc83aa7604cd146bfd41b2c59fb42834f4a8dfde8aeebd801d1981ee8b8a67aaffaaaed7ebedc3e1b7cd2d34dcbe07a0286b4a759c97d21e989a615cc695fc8f62b9ce08e55a35fb96383ef4af2dc1dfd53104d7a6bf07d1d4b4a3b6ba42d3efbeadddea7e1fadbaf5cbbe3e56e03d9e3b76d5fc0b02fb00a94f61b76473c3e63697aec77921eba3dde67fd98ace662aa95f59b9fe2b5fe063ec8dc5bfce80a9e4593fc629e72d324733d4fa505a94593cd96c98889fd656499b45b10f71ab43db2957c30f88ff227bafec007f3bfe4e10d2997cbf5cfcfccbe041097a41acdab47525a1383b79493747c504ae7a457bba5e93969202c1d4b4afb9b6d1befb921694217669e92e4fd8f037e0e9855921ed5b9e4ab92feaae9b14fecc694906ee896a6131f4b9ad6fce40f25559514598951b2049f03046ee26615f7739d72ca70739d0265e4814f5c2ed7adff76cfffe9f8177a901bd6644b65290000000049454e44ae426082</data>
+    </image>
+</images>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

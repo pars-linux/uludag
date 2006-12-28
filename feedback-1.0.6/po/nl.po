@@ -1,0 +1,354 @@
+# translation of Feedback Tool.po to Dutch
+# Pardus Feedback Tool
+# Copyright (C) 2005 TUBITAK/UEKAE
+#
+# Bahadır Kandemir <bahadir@haftalik.net>, 2005.
+# Willem Gielen <w.gielen@gmail.com>, 2006.
+# Rinse de Vries <rinsedevries@kde.nl>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: Feedback Tool\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-17 10:48+0200\n"
+"PO-Revision-Date: 2006-08-18 23:18+0200\n"
+"Last-Translator: Rinse de Vries <rinsedevries@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/experiencedlg.py:142 src/feedback.py:69 src/goodbyedlg.py:232
+#: src/hardwareinfodlg.py:238 src/opiniondlg.py:58 src/personalinfodlg.py:244
+#: src/questiondlg.py:253 src/upload.py:245 src/usagedlg.py:69
+#: src/welcomedlg.py:230
+msgid "Feedback Wizard"
+msgstr "Feedback-assistent"
+
+#: src/usagedlg.py:71
+msgid "At home"
+msgstr "Thuis"
+
+#: src/usagedlg.py:72
+msgid "At work"
+msgstr "Op het werk"
+
+#: src/usagedlg.py:73
+msgid "At school"
+msgstr "Op school"
+
+#: src/purposedlg.py:92 src/usagedlg.py:74
+msgid "<p align=\"right\">(You can click on multiple items)</p>"
+msgstr "<p align=\"right\">(Meerdere opties zijn mogelijk)</p>"
+
+#: src/usagedlg.py:75
+msgid "<b>Step 3 of 7</b>"
+msgstr "<b>Stap 3 van 7</b>"
+
+#: src/usagedlg.py:76
+msgid "<h2>Where do you use Pardus?</h2>"
+msgstr "<h2>Waar gebruikt u Pardus?</h2>"
+
+#: src/questiondlg.py:255
+msgid "Very satisfying. Pardus fulfils my requirements"
+msgstr "Erg tevreden. Pardus voldoet aan mijn verwachtingen"
+
+#: src/questiondlg.py:256
+msgid "Good, however it lacks some capabilities"
+msgstr "Goed, toch mis ik bepaalde functies"
+
+#: src/questiondlg.py:257
+msgid "It does not meet my requirements"
+msgstr "Het voldoet niet aan mijn verwachtingen"
+
+#: src/questiondlg.py:258
+msgid "<h2>How does Pardus fit your needs?</h2>"
+msgstr "<h2>Voldoet Pardus aan uw verwachtingen?</h2>"
+
+#: src/questiondlg.py:259
+msgid "<b>Step 4 of 7</b>"
+msgstr "<b>Stap 4 van 7</b>"
+
+#: src/hardwareinfodlg.py:239
+msgid "&Do not send my computer's hardware information"
+msgstr "&Verstuur geen informatie over mijn hardware."
+
+#: src/hardwareinfodlg.py:240
+msgid "<b>Step 7 of 7</b>"
+msgstr "<b>Stap 7 van 7</b>"
+
+#: src/hardwareinfodlg.py:241
+msgid ""
+"<h2>Computer information</h2>\n"
+"<p>\n"
+"Pardus Hardware CollectInfo Wizard will now gather information from\n"
+"your hardware, including CPU, memory and network cards. This \n"
+"information will be sent to Pardus Development Center, in order to\n"
+"build more stable and secure Pardus. You will need an internet\n"
+"access for this operation to complete. \n"
+"\n"
+"<b>Note that we will not collect any of your personal documents.</b>"
+msgstr ""
+"<h2>Computerinformatie</h2>\n"
+"<p>\n"
+"De assistent zal nu informatie verzamelen over\n"
+"uw hardware, inclusief CPU, geheugen en netwerkkaarten. Deze\n"
+"informatie zal naar het Pardus-ontwikkelingscentrum worden verstuurd \n"
+"om een nog veiliger en stabieler Pardus te kunnen maken. U heeft hier wel "
+"een \n"
+"internetverbinding voor nodig.\n"
+"\n"
+"<b>Er zullen geen persoonlijke gegevens worden verstuurd.</b>"
+
+#: src/opiniondlg.py:59
+msgid "<h2>Your opinions about Pardus?</h2>"
+msgstr "<h2>Uw mening over Pardus?</h2>"
+
+#: src/opiniondlg.py:60
+msgid ""
+"(Ease of installation and use, capability of software,\n"
+"general quality, adoptability, suitability to requirements, etc)"
+msgstr ""
+"(Eenvoud qua installatie en gebruik, capaciteiten van de software,\n"
+"algehele kwaliteit, toepasbaarheid, tegemoetkoming aan de vereisten, etc)"
+
+#: src/opiniondlg.py:62
+msgid "<b>Step 5 of 7</b>"
+msgstr "<b>Stap 5 van 7</b>"
+
+#: src/experiencedlg.py:144
+msgid "Experienced system administrator"
+msgstr "Ervaren systeembeheerder"
+
+#: src/experiencedlg.py:145
+msgid "New user"
+msgstr "Nieuwe gebruiker"
+
+#: src/experiencedlg.py:146
+msgid "Home/office productivity user"
+msgstr "Thuis/kantoorgebruiker"
+
+#: src/experiencedlg.py:147
+msgid "Experienced user"
+msgstr "Ervaren gebruiker"
+
+#: src/experiencedlg.py:148
+msgid "<h2>What is your experience level?</h2>"
+msgstr "<h2>Wat is uw ervaringsniveau?</h2>"
+
+#: src/experiencedlg.py:149
+msgid "<b>Step 1 of 7</b>"
+msgstr "<b>Stap 1 van 7</b>"
+
+#: src/goodbyedlg.py:233
+msgid ""
+"<h2>Thank you</h2>\n"
+"We have collected all necessary information in order to send \n"
+"to Pardus developers.\n"
+"<p>\n"
+"Thank you for your support to Pardus operating system."
+msgstr ""
+"<h2>Dank u</h2>\n"
+"We hebben alle gegevens voor de Pardus-ontwikkelaars\n"
+"verzameld.\n"
+"<P>\n"
+"Dank u voor uw hulp aan het Pardus-besturingssysteem."
+
+#: src/welcomedlg.py:231
+msgid ""
+"<h2>Welcome to Pardus</h2>\n"
+"\n"
+"With this small wizard, you can send your messages to Pardus \n"
+"developers and help Pardus be the best Linux in the world.\n"
+"\n"
+"<p>\n"
+"The information you will give here will accelerate Pardus development. \n"
+"Please click on \"Forward\" button for the next step.\n"
+"<p>"
+msgstr ""
+"<h2>Welkom bij Pardus</h2>\n"
+"\n"
+"Met deze kleine assistent kunt u berichten versturen naar de \n"
+"Pardus-ontwikkelaars en meehelpen om van Pardus de beste Linux in de wereld "
+"te maken.\n"
+"\n"
+"<p>\n"
+"De informatie die u verstrekt zal de ontwikkeling van Pardus doen "
+"versnellen. \n"
+"Klik op de knop \"Verder\" voor de volgende stap. <p>"
+
+#: src/purposedlg.py:84
+msgid "Feedback wizard"
+msgstr "Feedbackassistent"
+
+#: src/purposedlg.py:86
+msgid "Daily use"
+msgstr "Dagelijks gebruik"
+
+#: src/purposedlg.py:87
+msgid "It's my hobby"
+msgstr "Het is mijn hobby"
+
+#: src/purposedlg.py:88
+msgid "For internet access"
+msgstr "Voor internet"
+
+#: src/purposedlg.py:89
+msgid "For business"
+msgstr "Zakelijk"
+
+#: src/purposedlg.py:90
+msgid "Entertainment purposes"
+msgstr "Amusement"
+
+#: src/purposedlg.py:91
+msgid "Educational purposes"
+msgstr "Onderwijs"
+
+#: src/purposedlg.py:93
+msgid "<h2>Why do you use Pardus?</h2>"
+msgstr "<h2>Waarvoor gebruikt u Pardus?</h2>"
+
+#: src/purposedlg.py:94
+msgid "<b>Step 2 of 7</b>"
+msgstr "<b>Stap 2 van 7</b>"
+
+#: src/feedback.py:77
+msgid "Welcome"
+msgstr "Welkom"
+
+#: src/feedback.py:80
+msgid "Experience"
+msgstr "Ervaring"
+
+#: src/feedback.py:83
+msgid "Purpose"
+msgstr "Doel"
+
+#: src/feedback.py:86
+msgid "Usage"
+msgstr "Gebruik"
+
+#: src/feedback.py:89
+msgid "Questions"
+msgstr "Vragen"
+
+#: src/feedback.py:92
+msgid "Opinions"
+msgstr "Meningen"
+
+#: src/feedback.py:95
+msgid "Personal Info"
+msgstr "Persoonlijke informatie"
+
+#: src/feedback.py:98
+msgid "Hardware Info"
+msgstr "Hardware-informatie"
+
+#: src/feedback.py:101
+msgid "Uploading"
+msgstr "Uploaden"
+
+#: src/feedback.py:104
+msgid "Goodbye!"
+msgstr "Tot ziens!"
+
+#: src/feedback.py:166
+msgid "Collecting hardware information..."
+msgstr "Verzamelt hardware-informatie..."
+
+#: src/feedback.py:176 src/feedback.py:250
+msgid "<font color=\"#008800\">Done</font><br>\n"
+msgstr "<font color=\"#008800\">Gereed</font><br>\n"
+
+#: src/feedback.py:180
+msgid "Uploading data..."
+msgstr "Gegevens verzenden..."
+
+#: src/feedback.py:243 src/feedback.py:254
+msgid "<font color=\"#ff0000\">Failed</font><br>\n"
+msgstr "<font color=\"#ff0000\">Mislukt</font><br>\n"
+
+#: src/feedback.py:244
+msgid ""
+"<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Kan geen verbinding maken met de feedback-database.."
+"</font><br>\n"
+
+#: src/feedback.py:257
+msgid ""
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</"
+"font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Er is een probleem met de feedback. De gegevens zijn "
+"corrupt geraakt.</font><br>\n"
+
+#: src/feedback.py:259
+msgid ""
+"<font color=\"#ff0000\">Server does not support this version. Please update "
+"feedback tool.</font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">De server ondersteunt deze versie niet. Update het "
+"Feedbackprogramma.</font><br>\n"
+
+#: src/feedback.py:261
+msgid ""
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</"
+"font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Er is een probleem met de feedback. De gegevens "
+"ontbreken.</font><br>\n"
+
+#: src/feedback.py:263
+msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Feedback-database is offline.</font><br>\n"
+
+#: src/feedback.py:265
+msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
+msgstr "<font color=\"#ff0000\">U heeft al feedback verstuurd.</font><br>\n"
+
+#: src/feedback.py:267
+msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Feedback-database bevat fouten</font><br>\n"
+
+#: src/feedback.py:286
+msgid "Feedback tool is already running!"
+msgstr "Feedbackprogramma is reeds opgestart"
+
+#: src/upload.py:246
+msgid "<h2>Upload</h2>"
+msgstr "<h2>Verzenden</h2>"
+
+#: src/upload.py:247
+msgid "Retry"
+msgstr "Opnieuw"
+
+#: src/personalinfodlg.py:245
+msgid ""
+"<h2>Your personal information (optional)</h2>\n"
+"You can submit your e-mail address for inclusion in our low traffic\n"
+"announces."
+msgstr ""
+"<h2>Uw persoonlijke gegevens (optioneel)</h2>\n"
+"U kunt uw e-mail adres doorgeven voor onze nieuwsbrief."
+
+#: src/personalinfodlg.py:248
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#: src/personalinfodlg.py:249
+msgid "Add me to your Pardus announce list"
+msgstr "Voeg me aan de Pardus-nieuwsbrief toe"
+
+#: src/personalinfodlg.py:251
+msgid "<b>Step 6 of 7</b>"
+msgstr "<b>Stap 6 van 7</b>"
+
+#~ msgid "Alt+D"
+#~ msgstr "Alt+D"
+
+#~ msgid "Feedback"
+#~ msgstr "Feedback"
