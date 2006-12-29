@@ -1,0 +1,486 @@
+#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass article
+\language english
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Python in Pardus
+\end_layout
+
+\begin_layout Author
+Gürer Özen
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+what is pardus
+\end_layout
+
+\begin_layout Standard
+aims, manpower, turkish free software community
+\end_layout
+
+\begin_layout Standard
+choice of python, our learning process
+\end_layout
+
+\begin_layout Section
+Package Management
+\end_layout
+
+\begin_layout Standard
+Package management is the key part of a software distribution.
+ Users expect it to work robustly and automatically.
+ Packagers want to package their software without going through complex
+ build procedures.
+ Developers want to quickly deploy their patches to the users.
+ Distribution maintainers want automated tools for validating, analysing
+ and building the software collection.
+ Finally third parties want to embed and extend core distribution into their
+ own specialized releases.
+\end_layout
+
+\begin_layout Standard
+Our custom package management system PiSi is designed to meet those requirements.
+ Here we are going to discuss involment of the Python.
+ You can find more information about general design in the PiSi article
+\begin_inset LatexCommand \cite{key-18}
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Package Specification
+\end_layout
+
+\begin_layout Standard
+Package is a collection of files and some meta information about what is
+ the contained software, how is it going to be installed, and what are its
+ requirements (dependencies).
+ A binary package is usually build from a specification which describes
+ the original source, added patches by the distribution, and build instructions.
+ We keep those specifications inside a subversion repo, one directory per
+ package, neatly organized in the component directories.
+\end_layout
+
+\begin_layout Standard
+Since specification contains both data (like software name, its homepage,
+ version, description, license, location of the original source, list of
+ the patches, etc) and programs (build instructions, install instructions,
+ remove instructions, etc), we decided to keep those separate.
+ That way, parsing and using data becomes really easy.
+\end_layout
+
+\begin_layout Standard
+Avoiding new ad-hoc formats, and keeping everything simple as it can be,
+ we decided to put data into an XML file.
+ Data is very structured, and some items (like description) have translated
+ versions as well, so everything fits nicely in the XML format.
+\end_layout
+
+\begin_layout Standard
+Deciding about programs was harder.
+ Ideally all programs (build, install, remove scripts) should be written
+ in same language.
+ Packager only has to know one language, and maintainance becomes a lot
+ easier.
+\end_layout
+
+\begin_layout Standard
+Traditionally build scripts were shell scripts.
+ Shell is ideal for simple tasks requiring batch run of a series of commands.
+ Unfortunately there are cases where you need conditional operations, do
+ string processing, and iterate an operation over a series of data.
+ In those cases shell syntax becomes awkward, debugging and maintainance
+ costs go higher.
+\end_layout
+
+\begin_layout Standard
+In simplest case of build operation (configure; make), there isn't much
+ difference between alternative languages.
+ But when cases get more complex, you'll definitely want a language with
+ rich set of datatypes, native support for strings, clean and concise syntax,
+ and a standart library with a wide range of useful functions.
+ This language shouldn't have a steep learning curve, and shouldn't look
+ too different from shell scripts or shouldn't require a complete paradigm
+ change for system admins and packagers (like some pure functional languages).
+\end_layout
+
+\begin_layout Standard
+We decided that Python succesfully meets these requirements, and is the
+ best choice for package scripts.
+\end_layout
+
+\begin_layout Subsection*
+Build Scripts
+\end_layout
+
+\begin_layout Standard
+After coding a proof of concept package manager, we started making packages.
+ In a six months of time, with a six people, we managed to make packages
+ of base system (kernel, drivers, glibc, gcc, gnu tools), desktop (xorg,
+ KDE), and applications (Gimp, TeTeX, K3B, mplayer, OpenOffice.org, etc).
+ There were a total of 600 packages which are bootstrapped and build on
+ a Pardus system.
+ Now a year after, we have 1227 packages in our official repository
+\begin_inset LatexCommand \cite{key-19}
+
+\end_inset
+
+, and 698 packages in an extra contribution repository
+\begin_inset LatexCommand \cite{key-20}
+
+\end_inset
+
+, made by 25 developers.
+\end_layout
+
+\begin_layout Standard
+In the official repository, there are 32641 lines (where 8044 of them are
+ comment lines) of Python code for packages.
+ Script for one of the simple packages, gparted, is given below:
+\end_layout
+
+\begin_layout LyX-Code
+#!/usr/bin/python
+\end_layout
+
+\begin_layout LyX-Code
+# -*- coding: utf-8 -*-
+\end_layout
+
+\begin_layout LyX-Code
+#
+\end_layout
+
+\begin_layout LyX-Code
+# Copyright 2005, 2006 TUBITAK/UEKAE
+\end_layout
+
+\begin_layout LyX-Code
+# Licensed under the GNU General Public License, version 2.
+\end_layout
+
+\begin_layout LyX-Code
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+from pisi.actionsapi import autotools
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def setup():
+\end_layout
+
+\begin_layout LyX-Code
+    autotools.configure()
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def build():
+\end_layout
+
+\begin_layout LyX-Code
+    autotools.make()
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def install():
+\end_layout
+
+\begin_layout LyX-Code
+    autotools.install() 
+\end_layout
+
+\begin_layout Standard
+As you see, there isn't much in this script, everything is handled by the
+ autotools module.
+ A generic utility module and a few such build system modules (for autotools,
+ scons, cmake, perl and python extensions) are provided by package manager
+ (in the pisi.actionsapi package).
+ Stages of the build process are represented by three Python functions.
+\end_layout
+
+\begin_layout Standard
+Here is another slightly complex example function from the LyX package:
+\end_layout
+
+\begin_layout LyX-Code
+def setup():
+\end_layout
+
+\begin_layout LyX-Code
+    viewers = { 'PDF': 'kpdf',
+\end_layout
+
+\begin_layout LyX-Code
+                'PS': 'kghostview',
+\end_layout
+
+\begin_layout LyX-Code
+                'DVI': 'kdvi',
+\end_layout
+
+\begin_layout LyX-Code
+                'HTML': 'konqueror' }
+\end_layout
+
+\begin_layout LyX-Code
+    for k in viewers:
+\end_layout
+
+\begin_layout LyX-Code
+        shelltools.export(k + '_VIEWER', viewers[k])
+\end_layout
+
+\begin_layout LyX-Code
+    autotools.configure("--with-frontend=qt")
+\end_layout
+
+\begin_layout Standard
+As you see, some defaults are modified via environment variables before
+ configuring.
+\end_layout
+
+\begin_layout Standard
+There aren't many complex build scripts.
+ Most of the logic and error checking is handled by provided utility modules
+ (ActionsAPI).
+ Scripts requiring complex operations and interactions are managed by our
+ configuration management system Comar.
+ PiSi merely passes those scripts to the Comar.
+ Examples of them are given in the system configuration section of this
+ article.
+\end_layout
+
+\begin_layout Subsection*
+Package Manager
+\end_layout
+
+\begin_layout Standard
+PiSi itself
+\begin_inset LatexCommand \cite{key-21}
+
+\end_inset
+
+ is written in Python too.
+ This is a huge deviation from other well known package management software
+ (Redhat's rpm or Debian's dpkg which are both written in C).
+\end_layout
+
+\begin_layout Standard
+PiSi architecture is quite different from traditional designs.
+ Every functionality, related to the package management like installing,
+ building, fetching, dependency solving, repository management, validating
+ is included in the core.
+ On the other hand, package configuration (like calling ldconfig, modifying
+ global configuration files, etc) is delegated to Comar.
+\end_layout
+
+\begin_layout Standard
+why python is best (algoritms, data types, std lib= urllib, sha1, zipfile,
+ vb)
+\end_layout
+
+\begin_layout Standard
+pros/cons to C/C++
+\end_layout
+
+\begin_layout Standard
+how many lines? compare to others
+\end_layout
+
+\begin_layout Subsection*
+User Interfaces
+\end_layout
+
+\begin_layout Standard
+package-manager
+\end_layout
+
+\begin_layout Standard
+pardusman
+\end_layout
+
+\begin_layout Section
+System Configuration
+\end_layout
+
+\begin_layout Standard
+comar
+\end_layout
+
+\begin_layout Standard
+init system
+\end_layout
+
+\begin_layout Standard
+hardware probing
+\end_layout
+
+\begin_layout Standard
+network
+\end_layout
+
+\begin_layout Standard
+package install/remove
+\end_layout
+
+\begin_layout Section
+Desktop Applications
+\end_layout
+
+\begin_layout Standard
+yali
+\end_layout
+
+\begin_layout Standard
+kcontrol modules
+\end_layout
+
+\begin_layout Section
+Scripts
+\end_layout
+
+\begin_layout Standard
+buildfarm?
+\end_layout
+
+\begin_layout Standard
+repostats
+\end_layout
+
+\begin_layout Standard
+ismail.py
+\end_layout
+
+\begin_layout Standard
+ivir zivir
+\end_layout
+
+\begin_layout Section
+Custom Modules
+\end_layout
+
+\begin_layout Standard
+piksemel
+\end_layout
+
+\begin_layout Standard
+catbox
+\end_layout
+
+\begin_layout Standard
+pyaspects
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+evaluation of python:
+\end_layout
+
+\begin_layout Standard
+-rapid development
+\end_layout
+
+\begin_layout Standard
+-speed
+\end_layout
+
+\begin_layout Standard
+-i18n
+\end_layout
+
+\begin_layout Standard
+-learning curve (for developers, and outside packagers)
+\end_layout
+
+\begin_layout Standard
+-standart library
+\end_layout
+
+\begin_layout Standard
+encountered bugs and our involment
+\end_layout
+
+\begin_layout Standard
+final word
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-18}
+Pisi makalesi
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-19}
+Official package repository
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-20}
+Contrib package repository
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-21}
+Pisi kodlari
+\end_layout
+
+\end_body
+\end_document
