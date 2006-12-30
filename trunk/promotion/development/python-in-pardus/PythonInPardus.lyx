@@ -46,7 +46,7 @@ what is pardus
 \end_layout
 
 \begin_layout Standard
-aims, manpower, turkish free software community
+some background: aims, manpower, turkish free software community
 \end_layout
 
 \begin_layout Standard
@@ -306,12 +306,7 @@ Package Manager
 \end_layout
 
 \begin_layout Standard
-PiSi itself
-\begin_inset LatexCommand \cite{key-21}
-
-\end_inset
-
- is written in Python too.
+PiSi itself is written in Python too.
  This is a huge deviation from other well known package management software
  (Redhat's rpm or Debian's dpkg which are both written in C).
 \end_layout
@@ -320,22 +315,155 @@ PiSi itself
 PiSi architecture is quite different from traditional designs.
  Every functionality, related to the package management like installing,
  building, fetching, dependency solving, repository management, validating
- is included in the core.
+ is included in the core (compare with dpkg, apt-get or rpm, urpmi separation).
+ PiSi can work with both binary repositories, and source packages like Gentoo's
+ portage.
  On the other hand, package configuration (like calling ldconfig, modifying
  global configuration files, etc) is delegated to Comar.
 \end_layout
 
 \begin_layout Standard
-why python is best (algoritms, data types, std lib= urllib, sha1, zipfile,
- vb)
+PiSi source
+\begin_inset LatexCommand \cite{key-21}
+
+\end_inset
+
+ is 14245 lines of Python code distributed in 72 modules in 6 packages.
+ Command line driver (pisi command) is just a simple frontend to all those
+ modules.
+ They can also be used together or partially by other programs.
+ There are also a few more scripts, and a comprehensive test suite containing
+ both unit tests, and full scenario tests.
 \end_layout
 
 \begin_layout Standard
-pros/cons to C/C++
+An example senario (scenarios/bug3481scen.py in PiSi source) is like this:
+\end_layout
+
+\begin_layout LyX-Code
+from pisi.scenarioapi.scenario import *
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+HASHALOT="hashalot"
+\end_layout
+
+\begin_layout LyX-Code
+COREUTILS="coreutils"
+\end_layout
+
+\begin_layout LyX-Code
+GLIBC="glibc"
+\end_layout
+
+\begin_layout LyX-Code
+UTIL_LINUX="util-linux"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+let_repo_had(HASHALOT, with_partof("system.base"))
+\end_layout
+
+\begin_layout LyX-Code
+let_repo_had(COREUTILS, with_partof("system.base"))
+\end_layout
+
+\begin_layout LyX-Code
+let_repo_had(GLIBC, with_partof("system.base"))
+\end_layout
+
+\begin_layout LyX-Code
+let_repo_had(UTIL_LINUX, with_partof("system.base"))
+\end_layout
+
+\begin_layout LyX-Code
+let_pisi_had(COREUTILS, HASHALOT, GLIBC, UTIL_LINUX)
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def run():
+\end_layout
+
+\begin_layout LyX-Code
+    repo_version_bumped(GLIBC)
+\end_layout
+
+\begin_layout LyX-Code
+    repo_version_bumped(UTIL_LINUX)
+\end_layout
+
+\begin_layout LyX-Code
+    repo_version_bumped(COREUTILS, with_added_conflicts(HASHALOT))
+\end_layout
+
+\begin_layout LyX-Code
+    repo_updated_index()
+\end_layout
+
+\begin_layout LyX-Code
+    pisi_upgraded() 
 \end_layout
 
 \begin_layout Standard
-how many lines? compare to others
+It is as readable as pseudo code, yet it works too.
+\end_layout
+
+\begin_layout Standard
+A package management software deals a lot with sets, lists, and dependency
+ graphs.
+ Python has former two natively, and implementing latter is very simple
+ with available primitives.
+ Object oriented nature of Python, with module and package concepts, kept
+ the code very modular and good structured.
+ We have used functional operators (map, filter, reduce) and list comprehensions
+ a lot.
+ Even metaclasses are used in a few places.
+\end_layout
+
+\begin_layout Standard
+An other reason to choose Python was its standart library.
+ Although some parts of it (xml modules) are extremely slow and hard to
+ use, and some parts (os, shutil, zipfile) needs a few wrappers to get it
+ right, we have used quite a number of standart modules (like cPickle, re,
+ unittest, subprocess, getopt, gettext, zlib, bz2, tarfile, urllib2, urlparse,
+ sha).
+ More information about our problems with the standart library can be found
+ in problems section of this article.
+ But all in all, they helped greatly by allowing us to reuse already tested
+ components instead of writing everything from scratch.
+\end_layout
+
+\begin_layout Standard
+We have only encountered a speed problem with XML parsing, which we solved
+ by first migrating to 4suite parser, then our custom module.
+ Currently there is a slowness only within certain database operations,
+ but that is mostly caused by suboptimal use of BerkeleyDB, and will be
+ fixed in the next major release.
+ Most of the PiSi work is bounded by disc IO, and heavy calculation parts
+ like dependency solving work really fast, if carefully coded by using as
+ much as builtin functions of the Python.
+\end_layout
+
+\begin_layout Standard
+A reason to code in C is that you can statically compile everything into
+ an executable, and run that even if every library in the system is broken.
+ That is a trade-off, we decided to make.
+ Currently PiSi depends on a minimal Python (with its library, and a few
+ of modules), BerkeleyDB, piksemel (our XML python module) and glibc.
+ Since those packages are required for operation, PiSi takes extra care
+ while updating them.
 \end_layout
 
 \begin_layout Subsection*
@@ -423,6 +551,25 @@ pyaspects
 \end_layout
 
 \begin_layout Section
+Problems
+\end_layout
+
+\begin_layout Standard
+https://sourceforge.net/tracker/?func=detail&aid=1507247&group_id=5470&atid=30547
+0
+\end_layout
+
+\begin_layout Standard
+https://sourceforge.net/tracker/index.php?func=detail&aid=1513206&group_id=5470&at
+id=305470
+\end_layout
+
+\begin_layout Standard
+https://sourceforge.net/tracker/index.php?func=detail&aid=1509889&group_id=5470&at
+id=305470
+\end_layout
+
+\begin_layout Section
 Conclusion
 \end_layout
 
@@ -451,7 +598,7 @@ evaluation of python:
 \end_layout
 
 \begin_layout Standard
-encountered bugs and our involment
+-bugs
 \end_layout
 
 \begin_layout Standard
