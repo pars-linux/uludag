@@ -337,7 +337,8 @@ PiSi source
 \end_layout
 
 \begin_layout Standard
-An example senario (scenarios/bug3481scen.py in PiSi source) is like this:
+An example test senario (scenarios/bug3481scen.py in PiSi source) is like
+ this:
 \end_layout
 
 \begin_layout LyX-Code
@@ -460,8 +461,9 @@ We have only encountered a speed problem with XML parsing, which we solved
 A reason to code in C is that you can statically compile everything into
  an executable, and run that even if every library in the system is broken.
  That is a trade-off, we decided to make.
- Currently PiSi depends on a minimal Python (with its library, and a few
- of modules), BerkeleyDB, piksemel (our XML python module) and glibc.
+ Currently PiSi depends on a minimal Python installation (with its library,
+ and a few of modules), BerkeleyDB, piksemel (our XML python module) and
+ glibc.
  Since those packages are required for operation, PiSi takes extra care
  while updating them.
 \end_layout
@@ -471,11 +473,48 @@ User Interfaces
 \end_layout
 
 \begin_layout Standard
-package-manager
+Main desktop environment of the Pardus is KDE.
+ Python bindings
+\begin_inset LatexCommand \cite{key-22}
+
+\end_inset
+
+ of the KDE are highly maintained and very comprehensive.
+ Every component of the desktop, be it an application, a control center
+ module, an IO handler module, or a panel applet, can be written in Python.
+ Similarly you can use almost any component like khtml from Python.
 \end_layout
 
 \begin_layout Standard
-pardusman
+Graphical user interface of the PiSi is 2558 lines of Python code.
+ This includes both a control center module, and a panel applet for regularly
+ checking repositories and showing available updates.
+\end_layout
+
+\begin_layout Standard
+(burada package-manager ekran görüntüsü)
+\end_layout
+
+\begin_layout Standard
+Another application using PiSi is Pardusman, a tool for making release media.
+ You can select packages from a binary repository and easily make a live
+ or install CD with a few clicks.
+ It is 1481 lines of Python code.
+\end_layout
+
+\begin_layout Standard
+(burada pardusman ekran görüntüsü)
+\end_layout
+
+\begin_layout Standard
+As you see, PiSi user interfaces are very short, yet quite capable programs.
+ Coding in Python saves quite a bit of boiler plate code when compared to
+ C++.
+ Subclassing a window is just a 
+\family typewriter
+class MyWindow(QMainWindow)
+\family default
+ line for example.
 \end_layout
 
 \begin_layout Section
@@ -483,27 +522,87 @@ System Configuration
 \end_layout
 
 \begin_layout Standard
-comar
+Configuring software and hardware is the most boring task, a user can do
+ with a computer.
+ Installing a program can require setting up some system variables.
+ If you want to connect to the Internet, you have to set up some options
+ of the network interface device, maybe even run some programs to handle
+ the connection.
+ Your hardware needs some kernel modules loaded, and some programs run to
+ start operating.
+ You may need to edit your xorg.conf file to be able to use native resolution
+ of your LCD.
 \end_layout
 
 \begin_layout Standard
-init system
+Hopefully most of these tasks can be automated, and other can be greatly
+ simplified.
 \end_layout
 
 \begin_layout Standard
-hardware probing
+Our configuration framework Comar is designed to do that.
+ Explaining all the details needs a separate article.
+ We are going to layout only the general architecture here.
+ So, basically,
+\end_layout
+
+\begin_layout Itemize
+Configuration tasks are defined in a system model, grouped by classes which
+ contain related tasks.
+\end_layout
+
+\begin_layout Itemize
+Each software package can carry small configuration scripts for these classes.
+\end_layout
+
+\begin_layout Itemize
+A class can be provided by different packages, also a package can provide
+ different classes.
+\end_layout
+
+\begin_layout Itemize
+When you call a configuration task, configuration script drives the package
+ to do this job, by modifying its configuration file, sending signals, calling
+ commands or using whatever mechanism is necessary.
+\end_layout
+
+\begin_layout Itemize
+You can ask a task from a specific package, anyone who can do that job,
+ or everyone providing that class.
+\end_layout
+
+\begin_layout Itemize
+There is a daemon who keeps registered classes, listens for configuration
+ calls, and runs the scripts.
+\end_layout
+
+\begin_layout Itemize
+This daemon handles access control, so you can delegate some configuration
+ permissions to normal users.
 \end_layout
 
 \begin_layout Standard
-network
+(buraya basit bir sema koy)
 \end_layout
 
-\begin_layout Standard
-package install/remove
+\begin_layout Subsection*
+Boot Subsystem
+\end_layout
+
+\begin_layout Subsection*
+Hardware Probing
+\end_layout
+
+\begin_layout Subsection*
+Network Subsystem
+\end_layout
+
+\begin_layout Subsection*
+Package Configuration
 \end_layout
 
 \begin_layout Section
-Desktop Applications
+Applications and Scripts
 \end_layout
 
 \begin_layout Standard
@@ -512,10 +611,6 @@ yali
 
 \begin_layout Standard
 kcontrol modules
-\end_layout
-
-\begin_layout Section
-Scripts
 \end_layout
 
 \begin_layout Standard
@@ -567,6 +662,19 @@ id=305470
 \begin_layout Standard
 https://sourceforge.net/tracker/index.php?func=detail&aid=1509889&group_id=5470&at
 id=305470
+\end_layout
+
+\begin_layout Standard
+https://sourceforge.net/tracker/?func=detail&atid=105470&aid=1336623&group_id=547
+0
+\end_layout
+
+\begin_layout Standard
+http://tinyurl.com/y4bwf5
+\end_layout
+
+\begin_layout Standard
+http://tinyurl.com/twkns
 \end_layout
 
 \begin_layout Section
@@ -627,6 +735,12 @@ Contrib package repository
 
 \bibitem {key-21}
 Pisi kodlari
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-22}
+PyQt PyKDE
 \end_layout
 
 \end_body
