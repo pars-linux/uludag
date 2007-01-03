@@ -1,0 +1,859 @@
+#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 245
+\begin_document
+\begin_header
+\textclass article
+\language english
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes true
+\end_header
+
+\begin_body
+
+\begin_layout Title
+PiSi: One Step Further With Pardus
+\end_layout
+
+\begin_layout Author
+
+\lang turkish
+Faik Uygur
+\end_layout
+
+\begin_layout Abstract
+With thousands of packages to maintain, the most important part of any distribut
+ion is indeed its package management system.
+ PiSi is the package manager of Pardus written from scratch in Python.
+ By writing another package manager, our purpose was not to reinvent the
+ wheel but to create a new kind of wheel that takes the distinctive ideas
+ from the existing ones and easy integration and maintanence in mind.
+\newline
+
+\end_layout
+
+\begin_layout Abstract
+You may download and try Pardus 2007 stable release to see PiSi in action
+ from ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2007
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+PiSi (Packages Installed Succesfully, as intended) is the package manager
+ of Pardus.
+ It is the tool that is used to build, install, upgrade or remove the software
+ packages of the distribution.
+\end_layout
+
+\begin_layout Standard
+Python is the choice of Pardus in all of the distribution's core components
+ for its simplicity, flexibility and easing the maintenance advantages.
+ YALI (Yet Another Linux Installer), the simple, fast and the pretty installer
+ of Pardus ; COMAR (COnfiguration MAnageR) the package configurator and
+ the central package services' bus; Package Manager (the graphical frontend
+ of PiSi); Pardusman, the automatic Live or Install Pardus distribution
+ CD/DVD creator that only needs for the packages to be selected; Buildfarm,
+ the software that creates the binary repositories from the corresponding
+ source repositories; all use PiSi internally.
+ 
+\end_layout
+
+\begin_layout Standard
+Before deciding to write a new package system, we considered using the existing
+ ones.
+ 3 years ago when the Pardus project was started, rpm has had many problems.
+ 
+\begin_inset LatexCommand \cite{key-68}
+
+\end_inset
+
+ One of the bigger problems was also not having one upstream to work with.
+ Today, it is still a work in progress.
+\begin_inset LatexCommand \cite{key-69}
+
+\end_inset
+
+As for dpkg, in spite of it is much more problemless state than rpm and
+ having a better upstream, we had found its code hard to work on.
+ It has had been developed nearly 10 years and very few projects manage
+ to keep its codebase clean for that many years.
+ As it was stated in a discussion made years ago, its code has had become
+ brittle.
+\begin_inset LatexCommand \cite{key-70}
+
+\end_inset
+
+Also as they seem to be different in their nature the mechanism behind them
+ and the ways are the same that were not satisfying us.
+ We wanted something different.
+ The closest one in our minds was the Gentoo's portage tool.
+ PiSi has many features inspired from portage.
+ So at the end we decided to design PiSi with all the advantages of the
+ ones over each other and write it in Python.
+ As all the other components of the distribution were going to be written
+ in Python, it would also be much easier to integrate to those parts and
+ the prototyping phase would be much much faster.
+ 
+\end_layout
+
+\begin_layout Standard
+After having a prototype to work with, the development of PiSi went parallel
+ with the development of the packages of the distribution.
+ After a 6 months of work, with 10 people, we had created 600 packages and
+ so the first stable release of Pardus.
+ Now after a year from our first stable release, with 25 developers, we
+ have a total of 1223 packages in the stable branch of Pardus 2007 and 698
+ packages in our contrib repository made.
+ 
+\end_layout
+
+\begin_layout Section
+Why PiSi?
+\end_layout
+
+\begin_layout Standard
+To answer that question we first need to define what a package is and what
+ needs to be done for a package to be build, deployed and maintained by
+ a distribution.
+ For a package system, every phase of a package's existence from its maintainer'
+s hands to the distribution users' machines have problems that need to be
+ solved.
+ There exists many package systems that solve these problems in some different
+ ways.
+ What makes PiSi great lies in the simplicity and the efficiency of the
+ solutions it provides.
+\end_layout
+
+\begin_layout Subsection*
+Package
+\end_layout
+
+\begin_layout Standard
+There are two kinds of packages for PiSi: source and binary.
+ 
+\end_layout
+
+\begin_layout Standard
+A binary package consists of a collection of files and meta data.
+ The meta data holds the detailed information (homepage, packager, version,
+ runtime dependencies, exc..) about the software.
+ The collection of files may be executables, libraries or other data files
+ that together make up the software itself.
+ PiSi binary packages have .pisi extensions and are actually zip archives.
+ The files other than the meta data within the zip archive are compressed
+ with another compression algorithm detailed later.
+ Binary packages exist in PiSi binary repositories.
+\end_layout
+
+\begin_layout Standard
+A source package consists of a setup, build and compilation script called
+ actions.py that holds the instructions to create the binary package; a meta
+ information file called pspec.xml that contains the other necessary informations
+ (build/runtime dependencies, conflicts, source archive path, exc...) to create
+ a binary package.
+ Source packages exist in PiSi source repositories.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Simplicity
+\end_layout
+
+\begin_layout Standard
+The most obvious part of PiSi is its simplicity.
+ From the command line utility pisi-cli to its package building mechanism,
+ it is very easy to grasp and use.
+ It is so simple that when the first PiSi source code was revealed with
+ some example source packages.
+ It only took twenty-minutes for someone to contribute a new package to
+ Pardus.
+ And there were no documentation about the building system whatsoever.
+ The xml based source packaging system is so intuitive and easy to grasp
+ that it almost needs no documentation.
+ 
+\end_layout
+
+\begin_layout Standard
+Actually this was intentionally made that way.
+ When you look at the current package managers, you can see that the variety
+ of the tools for managing and the various package building helper tools,
+ create an unnecessarily complicated system.
+\end_layout
+
+\begin_layout Standard
+The first complication comes from the different tools that combined make
+ the desired package management possible.
+ The so called native package managers (dpkg, rpm, etc.) does the house keeping
+ jobs and above them there exists many other wrapper tools (apt, dselect,
+ urpmi, yum, aptrpm, etc.) for mainly handling the dependency resolution,
+ package selection and installation issues.
+\end_layout
+
+\begin_layout Standard
+But the main complication and difficulty comes from the various build helper
+ tools, the ad-hoc source specification formats and the build scripts.
+ The learning curve is steep for the new developers.
+\end_layout
+
+\begin_layout Standard
+PiSi architecture is quite different from traditional designs.
+ Every functionality, related to package management like installing, building,
+ dependency solving, fetching, validating, repository management is in the
+ core of PiSi.
+ PiSi can work with both binary and source repositories or individual packages
+ as in Gentoo's portage.
+ On the other hand, package configuration (calling ldconfig, modifying global
+ configuration files, etc.) is delegated to COMAR.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Traditional Build Systems
+\end_layout
+
+\begin_layout Standard
+Traditionally, build scripts of packages are shell scripts.
+ We think the shell is ideal for simple tasks, like batch run of a series
+ of commands with maybe some conditionals but nothing more.
+ The shell scripting is awkward, shell is not enough by itself and needs
+ many other helper tools with their own syntax and usage, debugging and
+ maintainence costs are high.
+\end_layout
+
+\begin_layout Standard
+When it comes to a complex task like building a package, you need conditional
+ operations, string manipulations, iteration over series of data, and many
+ other operations where you can all get from higher scripting languages
+ also with additional advantages.
+ For those reasons we have choosen Python.
+\end_layout
+
+\begin_layout Subsection*
+Build System of PiSi
+\end_layout
+
+\begin_layout Subsubsection*
+Overview
+\end_layout
+
+\begin_layout Standard
+PiSi build system consists of a meta information file called pspec.xml and
+ the actual build script file called actions.py.
+ These are the main files to build a package.
+ There can be other optional files like patches, postinstall scripts and
+ COMAR service or management scripts.
+ 
+\end_layout
+
+\begin_layout Standard
+Following is a sample source package from the current stable branch of Pardus:
+\end_layout
+
+\begin_layout Standard
+openssh
+\newline
+ |-- actions.py
+\newline
+ |-- comar
+\newline
+ | `-- service.py
+\newline
+ |-- files
+\newline
+ | |-- openssh-4.3_p1-ch
+root.patch
+\newline
+ | |-- scp-resume.sh
+\newline
+ | `-- sshd.pam
+\newline
+ `-- pspec.xml
+\end_layout
+
+\begin_layout Standard
+pspec.xml and actions.py files are in the root directory of the package.
+ files directory is optional and may contain the patches or additional files
+ to the package.
+ comar directory is also optional.
+ It may contain a package.py file that has a postInstall script, a service.py
+ file to be registered to COMAR daemon or a management script to be registered
+ to COMAR daemon that with it, the package exports its functionally to the
+ rest of the system.
+ COMAR needs an article of its own so we will not focus to COMAR related
+ parts.
+\end_layout
+
+\begin_layout Subsubsection*
+Build Scripts
+\end_layout
+
+\begin_layout Standard
+PiSi build scripts are divided to three phases: setup, build and install.
+ setup is the configuration phase prior to build.
+ build phase is the actual compilation phase.
+ And the install phase is where the build output is installed to the destination
+ system.
+ Depending to the package setup and build phases may be optional.
+\end_layout
+
+\begin_layout Standard
+Most of the build systems that comes with source archives of packages roughly
+ needs these steps to install the software but they differ from each other.
+ So what PiSi does is to provide an underlying and unified framework for
+ the known build systems and make the packagers' lives easier.
+ This framework is called ActionsAPI and is included with PiSi package as
+ an independent module.
+ The actions.py scripts use this module to build packages.
+\end_layout
+
+\begin_layout Standard
+Following is the actions.py script of memtest86 package as an example:
+\end_layout
+
+\begin_layout LyX-Code
+#!/usr/bin/python 
+\end_layout
+
+\begin_layout LyX-Code
+# -*- coding: utf-8 -*- 
+\end_layout
+
+\begin_layout LyX-Code
+# 
+\end_layout
+
+\begin_layout LyX-Code
+# Copyright 2005, 2006 TUBITAK/UEKAE # Licensed under the GNU General Public
+ License, version 2.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+from pisi.actionsapi import autotools 
+\end_layout
+
+\begin_layout LyX-Code
+from pisi.actionsapi import pisitools 
+\end_layout
+
+\begin_layout LyX-Code
+from pisi.actionsapi import get
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+WorkDir = "%s+-%s" % (get.srcNAME(), get.srcVERSION())
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def setup():
+\end_layout
+
+\begin_layout LyX-Code
+    pisitools.dosed("config.h", "#define SERIAL_CONSOLE_DEFAULT 0", "#define
+ SERIAL_CONSOLE_DEFAULT 1")
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def build():
+\end_layout
+
+\begin_layout LyX-Code
+    autotools.make()
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def install():
+\end_layout
+
+\begin_layout LyX-Code
+    pisitools.insinto("/boot", "memtest.bin")
+\end_layout
+
+\begin_layout LyX-Code
+    pisitools.dodoc("FAQ", "README*") 
+\end_layout
+
+\begin_layout Subsubsection*
+Package Specifications
+\end_layout
+
+\begin_layout Standard
+Build scripts are not enough to create a package.
+ There are some other necessary infos used in the build phase and also some
+ meta data that will be placed in the output package.
+ We decided to separate the meta data from the build scripts and placed
+ them into a file called pspec.xml.
+ Pspec.xml holds build related infos like runtime and buildtime dependencies
+ of a package, path and sha1sum of the source archive, patches to be applied
+ and other meta data infos like packager information, description, summary,
+ homepage of the software project and changelog info of the package, etc.
+ We decided to put the data into a XML file instead of using an ad-hoc text
+ format.
+\end_layout
+
+\begin_layout Standard
+Following is some parts of the pspec.xml file of memtest86 package as an
+ example:
+\end_layout
+
+\begin_layout LyX-Code
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+\end_layout
+
+\begin_layout LyX-Code
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+\end_layout
+
+\begin_layout LyX-Code
+<PISI>
+\end_layout
+
+\begin_layout LyX-Code
+    <Source>
+\end_layout
+
+\begin_layout LyX-Code
+        <Name>memtest86</Name>
+\end_layout
+
+\begin_layout LyX-Code
+        <Homepage>http://www.memtest.org/</Homepage>
+\end_layout
+
+\begin_layout LyX-Code
+[...]
+\end_layout
+
+\begin_layout LyX-Code
+        <License>GPL-2</License>
+\end_layout
+
+\begin_layout LyX-Code
+        <IsA>app:console</IsA>
+\end_layout
+
+\begin_layout LyX-Code
+        <Summary>Memory tester</Summary>
+\end_layout
+
+\begin_layout LyX-Code
+[...]
+\end_layout
+
+\begin_layout LyX-Code
+        <Archive sha1sum="f9c27f813cc9ada7efe98e6dc587ab6d2c496ba1" type="targz"
+>http://www.memtest.org/download/1.65/memtest86+-1.65.tar.gz</Archive>
+\end_layout
+
+\begin_layout LyX-Code
+    </Source>
+\end_layout
+
+\begin_layout LyX-Code
+    <Package>
+\end_layout
+
+\begin_layout LyX-Code
+        <Name>memtest86</Name>
+\end_layout
+
+\begin_layout LyX-Code
+        <Files>
+\end_layout
+
+\begin_layout LyX-Code
+            <Path fileType="executable">/boot</Path>
+\end_layout
+
+\begin_layout LyX-Code
+            <Path fileType="doc">/usr/share/doc</Path>
+\end_layout
+
+\begin_layout LyX-Code
+        </Files>
+\end_layout
+
+\begin_layout LyX-Code
+    </Package>
+\end_layout
+
+\begin_layout LyX-Code
+[...]
+\end_layout
+
+\begin_layout LyX-Code
+</PISI>
+\end_layout
+
+\begin_layout Standard
+It is possible to create more than one binary package from a source package
+ by defining more <Package/> tags into a pspec.xml file.
+\end_layout
+
+\begin_layout Section
+What PiSi Brings
+\end_layout
+
+\begin_layout Subsubsection*
+Dependency Resolver
+\end_layout
+
+\begin_layout Standard
+As in all advanced package systems, PiSi has its own dependency resolver.
+ It is based on a topological sort algoritm.
+ It is kept as simple as possible to be able to work as fast and efficent
+ as possible.
+ It currently allows for the build system to provide the dependent and conflicti
+ng packages with relative versioning informations.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Scenarios
+\end_layout
+
+\begin_layout Standard
+One of the difficult parts of developing a package system is to reproduce
+ the reported bugs to figure out what went wrong.
+ But it is not always easy to reproduce the problems.
+ Or sometimes you figure out a possible scenario that resulted as the reported
+ bug, but you have to make sure that it is that case.
+ And to make sure you fixed it, you have to have a way to reproduce the
+ bug easily to test your fixes.
+ PiSi ScenarioAPI is just for that purpose.
+ By using the ScenarioAPI you write scenario scripts that ends as the bug
+ reports informed.
+ So by writing scenario scripts, you have easily reproducable cases.
+\end_layout
+
+\begin_layout Standard
+Following is a sample scenario script taken from the PiSi trunk:
+\end_layout
+
+\begin_layout LyX-Code
+from pisi.scenarioapi.scenario import *
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+XORG = "xorg"
+\end_layout
+
+\begin_layout LyX-Code
+QT = "qt"
+\end_layout
+
+\begin_layout LyX-Code
+XORG_SERVER = "xorg-server"
+\end_layout
+
+\begin_layout LyX-Code
+XORG_VIDEO = "xorg-video"
+\end_layout
+
+\begin_layout LyX-Code
+XORG_FONT = "xorg-font"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+let_repo_had(XORG)
+\end_layout
+
+\begin_layout LyX-Code
+let_repo_had(QT, with_dependencies(XORG))
+\end_layout
+
+\begin_layout LyX-Code
+let_pisi_had(XORG, QT)
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def run():
+\end_layout
+
+\begin_layout LyX-Code
+    repo_added_package(XORG_VIDEO, with_conflicts(XORG))
+\end_layout
+
+\begin_layout LyX-Code
+    repo_added_package(XORG_FONT, with_conflicts(XORG))
+\end_layout
+
+\begin_layout LyX-Code
+    repo_added_package(XORG_SERVER, with_conflicts(XORG), with_dependencies(XORG
+_VIDEO, XORG_FONT))
+\end_layout
+
+\begin_layout LyX-Code
+    repo_version_bumped(QT, with_removed_dependencies(XORG), with_added_dependen
+cies(XORG_SERVER))
+\end_layout
+
+\begin_layout LyX-Code
+    repo_updated_index()
+\end_layout
+
+\begin_layout LyX-Code
+    pisi_upgraded() 
+\end_layout
+
+\begin_layout Subsubsection*
+Source and Binary Repositories
+\end_layout
+
+\begin_layout Standard
+PiSi supports both source and binary repositories.
+ 
+\end_layout
+
+\begin_layout Standard
+The source packages of Pardus are kept and developed at our svn repositories.
+ Svn repositories are also used as source repositories by PiSi.
+ 
+\end_layout
+
+\begin_layout Standard
+The binary packages are kept at our binary repositores.
+ When new package releases are available, the Buildfarm creates binary packages
+ out of the source repository and moves them to the corresponding binary
+ repositories.
+ 
+\end_layout
+
+\begin_layout Standard
+The source and binary repositories are represented by index files named
+ pisi-index.xml.
+ They are created by PiSi's command line interface.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Building and Emerging of Packages
+\end_layout
+
+\begin_layout Standard
+With remote source repositories it is possible to build a package by only
+ giving its name.
+ 
+\end_layout
+
+\begin_layout Standard
+Here is an example to build a package that exists in a source repository:
+\end_layout
+
+\begin_layout LyX-Code
+# pisi build kiki
+\end_layout
+
+\begin_layout Standard
+It is also possible to build a package by providing the remote url of the
+ spec file without having any source repository added to PiSi database.
+ 
+\end_layout
+
+\begin_layout Standard
+Here is an example to build the same package by providing its url:
+\end_layout
+
+\begin_layout LyX-Code
+# pisi build http://svn.pardus.org.tr/pardus/devel/applications/games/kiki/pspec.xml
+\end_layout
+
+\begin_layout Standard
+The building process tries to install all the buildtime dependencies of
+ the package by looking at the spec file.
+\end_layout
+
+\begin_layout Standard
+One other feature of PiSi is its ability to emerge source packages from
+ the source repositories.
+ By emerging, PiSi automatically downloads the buildtime and runtime dependencie
+s of the package.
+ If it does not exist in any binary repository, it tries to emerge that
+ package from source repositories.
+\end_layout
+
+\begin_layout Standard
+Here is an example to emerge a package:
+\end_layout
+
+\begin_layout LyX-Code
+# pisi emerge kiki 
+\end_layout
+
+\begin_layout Subsubsection*
+LZMA Compressed Packages
+\end_layout
+
+\begin_layout Standard
+LZMA, short for Lempel-Ziv-Markov chain-Algorithm, is a data compression
+ algorithm.
+ We decided to use LZMA compression in our package format for its greater
+ compression ratio than gzip and bzip2.
+ It is about %30 better than gzip and %15 better than bzip2.
+ 
+\begin_inset LatexCommand \cite{key-71}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The package format is a zip archive.
+ It makes it possible to reach the metadata files of the package faster
+ by using standard tools.
+ Under the zip archive, there exists install.tar.lzma file that contains the
+ actual files of the package to be extracted to the system.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Non-Root Installations
+\end_layout
+
+\begin_layout Standard
+PiSi package comes with a COMAR management script manager.py that is registered
+ to COMAR's database when the PiSi's own package is installed.
+ By using this script's services over COMAR, it is possible to do root privilege
+d package operations.
+ Package-Manager, the PiSi frontend use these services to install, remove,
+ upgrade packages or add/remove new repositories to PiSi database.
+ The authentication is done by the COMAR daemon.
+ With COMAR providing these services, it is also possible to remotely manage
+ the package system of the machine.
+\end_layout
+
+\begin_layout Subsubsection*
+i18n Support
+\end_layout
+
+\begin_layout Standard
+The xml spec file format makes it possible to provide translations of the
+ description and summary of the packages to other languages.
+ We are aware of the problem that just updating a translation itself would
+ need a release increase and therefore a pakcage update.
+ i18n support is important so we will try to balance that problem by waiting
+ the next release of the package with an actual update need.
+ We are planning to create a delta pisi package format in the future that
+ can also help with this problem.
+ We decided to keep all the related info in the corresponding packages for
+ its ease of maintanence purposes.
+\end_layout
+
+\begin_layout Section
+Near Future
+\end_layout
+
+\begin_layout Standard
+One of the important things PiSi lacks right now is package signing and
+ validation.
+ We are currently working on this and expect to have an implementation soon.
+\end_layout
+
+\begin_layout Standard
+One other feature we are going to work on is the delta pisi package format.
+ We decided not to use a binary diff tool like xdelta.
+ LZMA does its job well on the compression part so we are working on the
+ possibility of creating packages only with the effected or changed files.
+\end_layout
+
+\begin_layout Standard
+Because of the suboptimal usage of Berkeley DB, PiSi shows slowness in some
+ certain database operations.
+ This is also planned to be fixed in the next major release.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+One of the main goals of PiSi is easy development and maintainence of the
+ packages.
+ We think that in such a short time created that many packages and so far
+ without problems it established one of its design goals.
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-68}
+http://distrowatch.com/dwres.php?resource=article-rpm
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-69}
+http://www.redhat.com/archives/fedora-announce-list/2006-December/msg00003.html
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-70}
+http://lists.debian.org/debian-devel/1999/05/msg01250.html
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-71}
+http://tukaani.org/lzma/
+\end_layout
+
+\end_body
+\end_document
