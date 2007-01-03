@@ -1,0 +1,131 @@
+body {
+    background-image: url(resim/zemin.gif);
+    background-repeat: repeat-x;
+    margin-top: 10px;
+}
+
+#container {
+    width: 900px;
+    background-color: #FFF;
+    margin: 0 auto;
+    padding: 1px;
+    border: 2px solid #DDD;
+}
+
+#head_grey {
+    height: 163px;
+    margin: 0px;
+}
+
+#blue {
+    width: 900px;
+    height: 163px;
+}
+
+.metin, .jmetin {
+    font-size: 11px;
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
+}
+
+.jmetin {
+   text-align: justify
+}
+
+h2,.baslik {
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
+    font-size: 18px;
+    font-weight: bold;
+    color: #156FA5;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #156FA5;
+}
+
+#footnote {
+    clear: both;
+    width: 99%;
+    height: 91px;
+    padding: 5px;
+    padding-top: 0px;
+    padding-left: 10px;
+}
+
+#footnote p {
+    padding-left: 80px;
+    padding-top: 4px;
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
+    font-size: 70%;
+}
+
+#page {
+    clear: both;
+    position: relative;
+}
+
+#fullpage{
+    width: 93%;
+    padding-top: 0px;
+}
+
+#mainpage{
+    width: 99%;
+    padding-top: -25px;
+}
+
+.blue p,#modules ul {
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+/*IE*/
+li {
+     list-style-image: url('resim/bullet-blue.png');
+     margin-right: 5px;
+}
+
+/*Others*/
+html>body li {
+    background-image: url('resim/bullet-blue.png');
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+    vertical-align: top;
+    padding-left: 20px;
+    list-style: none;
+}
+
+
+.blue #modules li {
+    border-bottom: 1px solid #98C2DC;
+    padding-bottom: 4px;
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+#modules ul {
+    padding-left: 0px;
+}
+
+#modules {
+    float: right;
+    width: 260px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #EEE
+}
+
+#navi {
+    clear: both;
+    padding-left: 10px;
+    z-index: 100;
+    position: relative;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    margin-bottom: 10px;
+    font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
+    font-size: 12px;
+}
