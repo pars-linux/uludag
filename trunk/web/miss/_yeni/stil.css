@@ -49,7 +49,7 @@ a {
     width: 99%;
     height: 91px;
     padding: 5px;
-    padding-top: 0px;
+    padding-top: 20px;
     padding-left: 10px;
 }
 
@@ -57,7 +57,7 @@ a {
     padding-left: 80px;
     padding-top: 4px;
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
-    font-size: 70%;
+    font-size: 60%;
 }
 
 #page {
