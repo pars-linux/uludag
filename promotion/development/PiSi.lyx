@@ -328,25 +328,27 @@ Most of the build systems that comes with source archives of packages roughly
 \end_layout
 
 \begin_layout Standard
-Following is the actions.py script of memtest86 package as an example:
+Following is the actions.py script of joe package as an example:
 \end_layout
 
 \begin_layout LyX-Code
-#!/usr/bin/python 
+#!/usr/bin/python
 \end_layout
 
 \begin_layout LyX-Code
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 \end_layout
 
 \begin_layout LyX-Code
-# 
+#
 \end_layout
 
 \begin_layout LyX-Code
-# Copyright 2005, 2006 TUBITAK/UEKAE # Licensed under the GNU General Public
- License, version 2.
- 
+# Copyright 2006 TUBITAK/UEKAE
+\end_layout
+
+\begin_layout LyX-Code
+# Licensed under the GNU General Public License, version 2.
 \end_layout
 
 \begin_layout LyX-Code
@@ -358,23 +360,7 @@ Following is the actions.py script of memtest86 package as an example:
 \end_layout
 
 \begin_layout LyX-Code
-from pisi.actionsapi import autotools 
-\end_layout
-
-\begin_layout LyX-Code
-from pisi.actionsapi import pisitools 
-\end_layout
-
-\begin_layout LyX-Code
-from pisi.actionsapi import get
-\end_layout
-
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
-WorkDir = "%s+-%s" % (get.srcNAME(), get.srcVERSION())
+from pisi.actionsapi import autotools
 \end_layout
 
 \begin_layout LyX-Code
@@ -386,8 +372,7 @@ def setup():
 \end_layout
 
 \begin_layout LyX-Code
-    pisitools.dosed("config.h", "#define SERIAL_CONSOLE_DEFAULT 0", "#define
- SERIAL_CONSOLE_DEFAULT 1")
+    autotools.configure()
 \end_layout
 
 \begin_layout LyX-Code
@@ -411,11 +396,11 @@ def install():
 \end_layout
 
 \begin_layout LyX-Code
-    pisitools.insinto("/boot", "memtest.bin")
+    autotools.install()
 \end_layout
 
 \begin_layout LyX-Code
-    pisitools.dodoc("FAQ", "README*") 
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -437,12 +422,11 @@ Build scripts are not enough to create a package.
 \end_layout
 
 \begin_layout Standard
-Following is some parts of the pspec.xml file of memtest86 package as an
- example:
+Following is some parts of the pspec.xml file of joe package as an example:
 \end_layout
 
 \begin_layout LyX-Code
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" ?>
 \end_layout
 
 \begin_layout LyX-Code
@@ -458,11 +442,11 @@ Following is some parts of the pspec.xml file of memtest86 package as an
 \end_layout
 
 \begin_layout LyX-Code
-        <Name>memtest86</Name>
+        <Name>joe</Name>
 \end_layout
 
 \begin_layout LyX-Code
-        <Homepage>http://www.memtest.org/</Homepage>
+        <Homepage>http://sourceforge.net/projects/joe-editor</Homepage>
 \end_layout
 
 \begin_layout LyX-Code
@@ -478,16 +462,33 @@ Following is some parts of the pspec.xml file of memtest86 package as an
 \end_layout
 
 \begin_layout LyX-Code
-        <Summary>Memory tester</Summary>
+        <Summary>Joe text editor.</Summary>
 \end_layout
 
 \begin_layout LyX-Code
-[...]
+        <Summary xml:lang="tr">Joe metin düzenleyicisi</Summary>
 \end_layout
 
 \begin_layout LyX-Code
-        <Archive sha1sum="f9c27f813cc9ada7efe98e6dc587ab6d2c496ba1" type="targz"
->http://www.memtest.org/download/1.65/memtest86+-1.65.tar.gz</Archive>
+        <Description>Joe is a small text editor with sytax highlighting.</Descrip
+tion>
+\end_layout
+
+\begin_layout LyX-Code
+        <Archive sha1sum="aeee6bb71ed1e9b9c9a2a64d8e078a06245957e5" type="targz"
+>http://easynews.dl.sourceforge.net/sourceforge/joe-editor/joe-3.5.tar.gz</Archive>
+\end_layout
+
+\begin_layout LyX-Code
+        <BuildDependencies>
+\end_layout
+
+\begin_layout LyX-Code
+            <Dependency>ncurses</Dependency>
+\end_layout
+
+\begin_layout LyX-Code
+        </BuildDependencies>
 \end_layout
 
 \begin_layout LyX-Code
@@ -495,11 +496,27 @@ Following is some parts of the pspec.xml file of memtest86 package as an
 \end_layout
 
 \begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
     <Package>
 \end_layout
 
 \begin_layout LyX-Code
-        <Name>memtest86</Name>
+        <Name>joe</Name>
+\end_layout
+
+\begin_layout LyX-Code
+        <RuntimeDependencies>
+\end_layout
+
+\begin_layout LyX-Code
+            <Dependency>ncurses</Dependency>
+\end_layout
+
+\begin_layout LyX-Code
+        </RuntimeDependencies>
 \end_layout
 
 \begin_layout LyX-Code
@@ -507,11 +524,15 @@ Following is some parts of the pspec.xml file of memtest86 package as an
 \end_layout
 
 \begin_layout LyX-Code
-            <Path fileType="executable">/boot</Path>
+            <Path fileType="executable">/usr/bin</Path>
 \end_layout
 
 \begin_layout LyX-Code
-            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="config">/etc</Path>
+\end_layout
+
+\begin_layout LyX-Code
+            <Path fileType="man">/usr/share/man</Path>
 \end_layout
 
 \begin_layout LyX-Code
