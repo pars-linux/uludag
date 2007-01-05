@@ -94,6 +94,7 @@ class validate_plsa:
                  "Summary": (self.one_or_more, self.validate_title),
                  "Description": (self.one_or_more, self.validate_description),
                  "Severity": (self.once, self.validate_severity),
+                 "Type": (self.once, self.validate_type),
                  "Packages": (self.once, self.validate_packages),
                  "References": (self.optional_once, self.validate_references)
             }
@@ -129,6 +130,13 @@ class validate_plsa:
 
         if node.firstChild().type() == piksemel.DATA and not node.firstChild().data().isdigit():
             self.error(node, "wrong severity number")
+
+    def validate_type(self, node):
+        self.check(node, {})
+        self.check_attr(node, {})
+
+        if node.firstChild().type() == piksemel.DATA and not node.firstChild().data() in ["Local","Remote"]:
+            self.error(node, "Wrong vulnerability type")
 
     def validate_packages(self, node):
         self.check(
