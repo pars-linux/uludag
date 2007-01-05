@@ -231,11 +231,11 @@ msgstr "Bağlantıları Düzenle..."
 
 #: network-applet.py:245
 msgid "Icon Per Device"
-msgstr "Her Aygıtın Kendi İkonu"
+msgstr "Her Aygıtın Kendi Simgesi"
 
 #: network-applet.py:246
 msgid "Single Icon"
-msgstr "Tek İkon"
+msgstr "Tek Simge"
 
 #: network-applet.py:290
 msgid "Should network-applet start automatically when you login?"
