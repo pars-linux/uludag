@@ -146,7 +146,7 @@ s hands to the distribution users' machines have problems that need to be
 \end_layout
 
 \begin_layout Subsection*
-Package
+What is a Package?
 \end_layout
 
 \begin_layout Standard
@@ -155,23 +155,33 @@ There are two kinds of packages for PiSi: source and binary.
 \end_layout
 
 \begin_layout Standard
-A binary package consists of a collection of files and meta data.
- The meta data holds the detailed information (homepage, packager, version,
- runtime dependencies, exc..) about the software.
+A binary package is a container that consists of a collection of files and
+ meta data.
+ The meta data holds detailed information about the package, like homepage,
+ version and runtime dependencies of the contained software, packager info,
+ exc.
  The collection of files may be executables, libraries or other data files
- that together make up the software itself.
- PiSi binary packages have .pisi extensions and are actually zip archives.
- The files other than the meta data within the zip archive are compressed
- with another compression algorithm detailed later.
+ that are all parts of the contained software.
+ PiSi binary packages have 
+\begin_inset Quotes erd
+\end_inset
+
+.pisi
+\begin_inset Quotes erd
+\end_inset
+
+ extensions and are actually zip archives.
+ The files other than the meta data are compressed with another compression
+ algorithm within the zip archive that is detailed later.
  Binary packages exist in PiSi binary repositories.
 \end_layout
 
 \begin_layout Standard
-A source package consists of a setup, build and compilation script called
- actions.py that holds the instructions to create the binary package; a meta
- information file called pspec.xml that contains the other necessary informations
- (build/runtime dependencies, conflicts, source archive path, exc...) to create
- a binary package.
+A source package minimally consists of an actions.py file that contains the
+ setup, build and install instructions to create a binary package and a
+ pspec.xml file that contains the other necessary informations, like build
+ and runtime dependencies, conflicts, url or path of the source archive,
+ exc.
  Source packages exist in PiSi source repositories.
  
 \end_layout
