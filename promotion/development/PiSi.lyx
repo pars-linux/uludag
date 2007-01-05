@@ -569,7 +569,7 @@ It is possible to create more than one binary package from a source package
 What PiSi Brings
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 Dependency Resolver
 \end_layout
 
@@ -588,7 +588,7 @@ ng packages with relative versioning informations.
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 Scenarios
 \end_layout
 
@@ -688,7 +688,7 @@ cies(XORG_SERVER))
     pisi_upgraded() 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 Source and Binary Repositories
 \end_layout
 
@@ -718,7 +718,7 @@ The source and binary repositories are represented by index files named
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 Building and Emerging of Packages
 \end_layout
 
@@ -772,7 +772,7 @@ Here is an example to emerge a package:
 # pisi emerge kiki 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 LZMA Compressed Packages
 \end_layout
 
@@ -799,7 +799,7 @@ The package format is a zip archive.
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 Non-Root Installations
 \end_layout
 
@@ -815,7 +815,7 @@ d package operations.
  the package system of the machine.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 i18n Support
 \end_layout
 
