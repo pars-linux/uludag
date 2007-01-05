@@ -33,6 +33,7 @@ class advisory:
                 "email": ""
             },
             "severity": "",
+            "type": "",
             "title": "",
             "summary": "",
             "description": [],
@@ -81,6 +82,7 @@ class advisory:
         rev["email"] = node_rev.getTagData("Email")
 
         self.data["severity"]  = node_adv.getTagData("Severity")
+        self.data["type"]  = node_adv.getTagData("Type")
 
         self.data["title"]  = get_localized_data(node_adv, "Title", self.lang).strip()
         self.data["summary"]  = get_localized_data(node_adv, "Summary", self.lang).strip()
@@ -114,7 +116,8 @@ class advisory:
         headers = [
             (_("Date"), self.data["revision"]["date"]),
             (_("Revision"), self.data["revision"]["no"]),
-            (_("Severity"), self.data["severity"])
+            (_("Severity"), self.data["severity"]),
+            (_("Type"), self.data["type"])
         ]
 
         tpl = []
