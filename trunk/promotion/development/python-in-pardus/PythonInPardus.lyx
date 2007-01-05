@@ -458,8 +458,9 @@ We have only encountered a speed problem with XML parsing, which we solved
 \end_layout
 
 \begin_layout Standard
-A reason to code in C is that you can statically compile everything into
- an executable, and run that even if every library in the system is broken.
+A reason to code in C could be that you can statically compile everything
+ into an executable, and run that even if every library in the system is
+ broken.
  That is a trade-off, we decided to make.
  Currently PiSi depends on a minimal Python installation (with its library,
  and a few of modules), BerkeleyDB, piksemel (our XML python module) and
@@ -585,6 +586,75 @@ This daemon handles access control, so you can delegate some configuration
 (buraya basit bir sema koy)
 \end_layout
 
+\begin_layout Standard
+This architecture has quite a number of advantages.
+ What we are interested here is that the actual logic of the configuration
+ tasks are carried within package scripts.
+ That way, packages are well encapsulated, different versions can have different
+ ways of doing same tasks.
+\end_layout
+
+\begin_layout Standard
+Theorically these scripts could be in any language.
+ But there are many practical problems with that.
+ Maintainance becomes harder with a big repository with scripts written
+ in all sorts of languages.
+ Function calling and parameter passing needs to be implemented for all
+ those languages.
+\end_layout
+
+\begin_layout Standard
+Since we already used Python in build scripts, also using it in configuration
+ scripts came up as a natural choice.
+ Several advantages are,
+\end_layout
+
+\begin_layout Itemize
+Packagers need to know only one language,
+\end_layout
+
+\begin_layout Itemize
+Comprehensive standart library with a wide range of extensions is available
+ to use in scripts,
+\end_layout
+
+\begin_layout Itemize
+Every feature of the Python is accessible and controllable from the Python
+ C library,
+\end_layout
+
+\begin_layout Itemize
+Scripts can be called by all users.
+ They must have permission to make the call beforehand, but since script
+ itself runs with a higher privilege, an interpreted language with garbage
+ collection is very helpful against buffer overflow type attacks caused
+ by malformed parameters from users.
+\end_layout
+
+\begin_layout Standard
+Comar daemon
+\begin_inset LatexCommand \cite{key-23}
+
+\end_inset
+
+ listens configuration requests and, if user has permission to do that,
+ forks a job process for each call.
+ This job process loads up package script and run it.
+ That way configuration operations can run in parallel, and self contained.
+\end_layout
+
+\begin_layout Standard
+We first tried to write this daemon in Python too, but changed to C later.
+ Reason is that daemon is very small (6216 lines of C code) and very low
+ level, there isn't much to gain from Python.
+ Since Python interpreter is not even initialized in main process, resource
+ usage is very low when there isn't a configuration job is running.
+\end_layout
+
+\begin_layout Standard
+(comar api anlat)
+\end_layout
+
 \begin_layout Subsection*
 Boot Subsystem
 \end_layout
@@ -677,6 +747,16 @@ http://tinyurl.com/y4bwf5
 http://tinyurl.com/twkns
 \end_layout
 
+\begin_layout Standard
+https://sourceforge.net/tracker/index.php?func=detail&aid=1056231&group_id=5470&at
+id=305470
+\end_layout
+
+\begin_layout Standard
+https://sourceforge.net/tracker/index.php?func=detail&aid=1454485&group_id=5470&at
+id=305470
+\end_layout
+
 \begin_layout Section
 Conclusion
 \end_layout
@@ -741,6 +821,12 @@ Pisi kodlari
 
 \bibitem {key-22}
 PyQt PyKDE
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-23}
+Comar daemon kodu
 \end_layout
 
 \end_body
