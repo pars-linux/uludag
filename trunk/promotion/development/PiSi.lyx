@@ -195,10 +195,9 @@ The most obvious part of PiSi is its simplicity.
  From the command line utility pisi-cli to its package building mechanism,
  it is very easy to grasp and use.
  It is so simple that when the first PiSi source code was revealed with
- some example source packages.
- It only took twenty-minutes for someone to contribute a new package to
- Pardus.
- And there were no documentation about the building system whatsoever.
+ some example source packages, it only took twenty-minutes for someone to
+ contribute a new package to Pardus.
+ And there were no documentation about the build system whatsoever.
  The xml based source packaging system is so intuitive and easy to grasp
  that it almost needs no documentation.
  
