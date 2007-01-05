@@ -575,9 +575,14 @@ Dependency Resolver
 
 \begin_layout Standard
 As in all advanced package systems, PiSi has its own dependency resolver.
- It is based on a topological sort algoritm.
- It is kept as simple as possible to be able to work as fast and efficent
- as possible.
+ Different from dpkg and rpm, it is designed to be within PiSi and not done
+ with a wrapper tool.
+ It is based on a topological sort algorithm.
+\begin_inset LatexCommand \cite{key-72}
+
+\end_inset
+
+ Kept as simple as possible to be able to work as fast and efficent as possible.
  It currently allows for the build system to provide the dependent and conflicti
 ng packages with relative versioning informations.
  
@@ -883,6 +888,12 @@ http://lists.debian.org/debian-devel/1999/05/msg01250.html
 
 \bibitem {key-71}
 http://tukaani.org/lzma/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-72}
+http://en.wikipedia.org/wiki/Topological_sort
 \end_layout
 
 \end_body
