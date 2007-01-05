@@ -815,8 +815,8 @@ One other feature we are going to work on is the delta pisi package format.
 \end_layout
 
 \begin_layout Standard
-Because of the suboptimal usage of Berkeley DB, PiSi shows slowness in some
- certain database operations.
+There are suboptimal usages of Berkeley DB.
+ PiSi should have been faster in some certain database operations.
  This is also planned to be fixed in the next major release.
 \end_layout
 
