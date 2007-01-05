@@ -69,7 +69,7 @@ def index(req, data=""):
               "submitdate": time.strftime('%Y-%m-%d %H:%M'),
               "experience": data.get("experience", "0"),
               "purpose": data.get("purpose", "0"),
-              "use_where": data.get("usage", "0"),
+              "use_where": data.get("use_where", "0"),
               "question": data.get("question", ""),
               "opinion": data.get("opinion", ""),
               "email": data.get("email", ""),
