@@ -65,16 +65,19 @@ class Bocek(BocekForm):
 
     def buildReport(self):
         self.output=""
-        logs = self.getCheckedLogs()
+        checkedLogs = self.getCheckedLogs()
         # self.output ="From : %s (%s) at %s\n"%(lineEmail.text(),getIp,time)
         self.output+="Summary : %s \n" % self.lineSummary.text()
         self.output+="Details : %s \n" % self.lineDetails.text()
         self.output+="\nAdditional Files : \n%s\n"%("*"*40)
-        #FIX
-        for log in logs:
-            self.output+="\n========» %s «========\n" % logs
-            self.output+=self.getStaticOutput(logs)
-            self.output+="\n"#+("="*40)+"\n"
+        for logs in checkedLogs:
+            for log in logs:
+                self.output+="\n========» %s «========\n" % log
+                if logs[log]==1:
+                    self.output+=self.getStaticOutput(log)
+                elif logs[log]==2:
+                    self.output+=self.getCommandOutput(log)
+                self.output+="\n"#+("="*40)+"\n"
         print self.writeReport()
 
     def writeReport(self):
@@ -92,7 +95,8 @@ class Bocek(BocekForm):
         return arrayToStr(lines)
 
     def getCommandOutput(self,cmd):
-        return subprocess.call(cmd)
+        a = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return arrayToStr(a.communicate())
 
     def getCheckedLogs(self):
         ret=[]
