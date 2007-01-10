@@ -14,6 +14,7 @@ import sys
 import time
 import consts
 import subprocess
+import mail
 
 # GUI
 from gui import *
@@ -32,12 +33,6 @@ def AboutData():
                             'gokmen@pardus.org.tr')
     about_data.addAuthor('Gökmen GÖKSEL', None, 'gokmen@pardus.org.tr')
     return about_data
-
-def arrayToStr(ar):
-    ret=''
-    for line in ar:
-        ret+=line
-    return ret
 
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
@@ -58,6 +53,7 @@ class Bocek(BocekForm):
         self.connect(self.buttonSave, SIGNAL('clicked()'), self.buildReport)
         self.connect(self.buttonHelp, SIGNAL('clicked()'), self.slotHelp)
         self.connect(guiApp, SIGNAL("shutDown()"), self.slotQuit)
+        os.environ["LC_ALL"] = "C"
 
     def slotQuit(self):
         self.deleteLater()
@@ -77,8 +73,16 @@ class Bocek(BocekForm):
                     self.output+=self.getStaticOutput(log)
                 elif logs[log]==2:
                     self.output+=self.getCommandOutput(log)
-                self.output+="\n"#+("="*40)+"\n"
-        print self.writeReport()
+                self.output+="\n"
+        self.lastReportFile = self.writeReport()
+        if mail.send_mail(str(self.lineEmail.text()),
+                          ["gokmen@pardus.org.tr"],
+                          str(self.lineSummary.text()),
+                          str(self.lineDetails.text()),
+                          [self.lastReportFile]):
+            print "Message sent."
+        else:
+            print "Error on message sending"
 
     def writeReport(self):
         now = time.localtime()
@@ -89,14 +93,11 @@ class Bocek(BocekForm):
         return filename
 
     def getStaticOutput(self,filename):
-        link = file(filename,'r')
-        lines = link.readlines()
-        link.close()
-        return arrayToStr(lines)
+        return file(filename,'r').read()
 
     def getCommandOutput(self,cmd):
         a = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        return arrayToStr(a.communicate())
+        return "".join(a.communicate())
 
     def getCheckedLogs(self):
         ret=[]
