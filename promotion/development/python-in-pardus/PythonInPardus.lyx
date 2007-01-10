@@ -631,7 +631,7 @@ Scripts can be called by all users.
  by malformed parameters from users.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Comar daemon
 \begin_inset LatexCommand \cite{key-23}
 
@@ -652,15 +652,110 @@ We first tried to write this daemon in Python too, but changed to C later.
 \end_layout
 
 \begin_layout Standard
-(comar api anlat)
+There are some common operations among the Comar scripts which are not covered
+ by the standard library.
+ These functions and a binding class for making Comar calls is included
+ in a Python package.
+ Here is an example using that Python binding:
+\end_layout
+
+\begin_layout LyX-Code
+import comar
+\end_layout
+
+\begin_layout LyX-Code
+link = comar.Link()
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+# Set some address parameters of a network connection
+\end_layout
+
+\begin_layout LyX-Code
+link.Net.Link.setAddress(name="Home Network", address="192.168.3.165", gateway="192.168.
+3.1")
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+# Query all system services
+\end_layout
+
+\begin_layout LyX-Code
+link.System.Service.info()
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+# Read a result from the query
+\end_layout
+
+\begin_layout LyX-Code
+reply = link.read_cmd()
+\end_layout
+
+\begin_layout LyX-Code
+print reply.script, reply.data
+\end_layout
+
+\begin_layout Standard
+These calls and their results are transferred to and from the Comar via
+ a Unix socket internally.
+\end_layout
+
+\begin_layout Standard
+In the current release of Pardus, package installation, system startup,
+ display configuration, network and firewall configuration, user management,
+ time and settings are all carried to the Comar.
+ Scripts and graphical user interfaces are coded and running.
+ More subsystems like power management and storage management are in progress.
+ A few examples of current usage is given below.
 \end_layout
 
 \begin_layout Subsection*
 Boot Subsystem
 \end_layout
 
-\begin_layout Subsection*
-Hardware Probing
+\begin_layout Standard
+There is a separate article
+\begin_inset LatexCommand \cite{key-24}
+
+\end_inset
+
+ on our boot subsystem (called Mudur, means director in Turkish).
+ We are going to give a summary of Python related features here.
+\end_layout
+
+\begin_layout Standard
+System is made of a single Python script which handles basic initialization
+ (starting udev, mounting filesystems, etc), and a System.Service Comar class
+ with methods like start, stop, info, etc.
+ Services are controlled by their Comar scripts.
+ There are also a few tools (update-modules, update-environment, etc) rewritten
+ in Python.
+ Another Python agent deals with loading kernel modules and firmware for
+ hardware, for both coldplugging and hotplugging.
+\end_layout
+
+\begin_layout Standard
+In total of 2345 lines, Mudur makes Pardus, one of the fastest (in most
+ configurations KDM login screen comes in 15-20 seconds) booting operating
+ systems, with a highly maintainable, completely and easily localizable
+ boot subsystem.
+\end_layout
+
+\begin_layout Standard
+(service manager ekran görüntüsü)
 \end_layout
 
 \begin_layout Subsection*
@@ -827,6 +922,12 @@ PyQt PyKDE
 
 \bibitem {key-23}
 Comar daemon kodu
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-24}
+Mudur makalesi
 \end_layout
 
 \end_body
