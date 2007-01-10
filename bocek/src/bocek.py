@@ -54,7 +54,8 @@ class Bocek(BocekForm):
         self.connect(self.buttonSend, SIGNAL('clicked()'), self.sendReport)
         self.connect(self.buttonHelp, SIGNAL('clicked()'), self.slotHelp)
         self.connect(guiApp, SIGNAL("shutDown()"), self.slotQuit)
-        os.environ["LC_ALL"] = "C"
+        os.environ['LC_ALL'] = 'C'
+        self.lastReportFile=''
 
     def slotQuit(self):
         self.deleteLater()
@@ -62,6 +63,7 @@ class Bocek(BocekForm):
 
     def buildReport(self):
         self.output=""
+        self.labelStatus.setText("Please wait while collecting informations ..")
         checkedLogs = self.getCheckedLogs()
         # self.output ="From : %s (%s) at %s\n"%(lineEmail.text(),getIp,time)
         self.output+="Summary : %s \n" % self.lineSummary.text()
@@ -75,7 +77,6 @@ class Bocek(BocekForm):
         for logs in checkedLogs:
             for log in logs:
                 self.output+="\n========» %s «========\n" % log
-                self.labelStatus.setText("%s is getting.." % log)
                 if logs[log]==1:
                     self.output+=self.getStaticOutput(log)
                 elif logs[log]==2:
@@ -87,6 +88,8 @@ class Bocek(BocekForm):
         self.lastReportFile = self.writeReport()
 
     def sendReport(self):
+        if not self.lastReportFile:
+            self.buildReport()
         if mail.send_mail(str(self.lineEmail.text()),
                           ["gokmen@pardus.org.tr"],
                           str(self.lineSummary.text()),

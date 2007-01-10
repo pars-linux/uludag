@@ -1,10 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2007, TUBITAK/UEKAE
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version. Please read the COPYING file.
+
 # consts. 1:is static file, 2:is command output
 
-standartLogs= {#"/var/log/comar.log"         :1,
-               "/var/log/user.log"          :1,
-               "/var/log/Xorg.0.log"        :1,
+standartLogs= {"/usr/bin/uname -a"          :2,
                "/bin/dmesg"                 :2,
-               "/usr/bin/uname -a"          :2}
+               "/var/log/Xorg.0.log"        :1}
 hardwareInfo= {"/bin/mount"                 :2,
                "/sbin/ifconfig -a"          :2,
                "/usr/sbin/iwconfig"         :2,
@@ -27,6 +35,6 @@ configFiles = {"/boot/grub/grub.conf"       :1,
                "/etc/mudur/language"        :1,
                "/etc/mudur/locale"          :1,
                "/etc/mudur/keymap"          :1}
-packageInfo = {"/usr/bin/pisi li -l"        :2,
+packageInfo = {"/usr/bin/pisi li -i"        :2,
                "/usr/bin/pisi lr"           :2,
-               "/usr/bin/pisi lu -l"        :2}
+               "/usr/bin/pisi lu -i"        :2}
