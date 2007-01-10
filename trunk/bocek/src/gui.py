@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'gui.ui'
 #
-# Created: Prş Oca 11 13:36:44 2007
+# Created: Cum Oca 12 00:04:38 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -10,8 +10,8 @@
 
 from qt import *
 from kdecore import *
-from kfile import *
 from kdeui import *
+from kfile import *
 
 image0_data = \
     "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a\x00\x00\x00\x0d" \
@@ -598,9 +598,9 @@ image3_data = \
     "\x1d\xfe\x05\x38\xb3\x18\x9a\xe6\x8f\xea\x11\x00" \
     "\x00\x00\x00\x49\x45\x4e\x44\xae\x42\x60\x82"
 
-class BocekForm(KDialog):
+class BocekForm(QDialog):
     def __init__(self,parent = None,name = None,modal = 0,fl = 0):
-        KDialog.__init__(self,parent,name,modal,fl)
+        QDialog.__init__(self,parent,name,modal,fl)
 
         self.image0 = QPixmap()
         self.image0.loadFromData(image0_data,"PNG")
@@ -741,9 +741,19 @@ class BocekForm(KDialog):
 
         BocekFormLayout.addLayout(layout7,6,0)
 
+        self.progressBar = KProgress(self,"progressBar")
+        self.progressBar.setEnabled(1)
+        self.progressBar.setFrameShadow(KProgress.Plain)
+        self.progressBar.setCenterIndicator(1)
+        self.progressBar.setIndicatorFollowsStyle(1)
+        self.progressBar.setPercentageVisible(1)
+        self.progressBar.hide()
+
+        BocekFormLayout.addWidget(self.progressBar,5,0)
+
         self.languageChange()
 
-        self.resize(QSize(509,410).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(509,425).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.connect(self.checkBoxAll,SIGNAL("toggled(bool)"),self.checkBoxStandartLogs.setChecked)
