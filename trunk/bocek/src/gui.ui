@@ -1,0 +1,488 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>BocekForm</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>BocekForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>509</width>
+            <height>410</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Bocek</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>labelBugSummary</cstring>
+            </property>
+            <property name="text">
+                <string>Summary :</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="1" column="0">
+            <property name="name">
+                <cstring>lineSummary</cstring>
+            </property>
+        </widget>
+        <widget class="QTextEdit" row="3" column="0">
+            <property name="name">
+                <cstring>lineDetails</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                <cstring>labelBugDetails</cstring>
+            </property>
+            <property name="text">
+                <string>Details :</string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="4" column="0">
+            <property name="name">
+                <cstring>layout3</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QButtonGroup">
+                    <property name="name">
+                        <cstring>panelLogs</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>189</width>
+                            <height>151</height>
+                        </size>
+                    </property>
+                    <property name="title">
+                        <string>System Information</string>
+                    </property>
+                    <widget class="Line">
+                        <property name="name">
+                            <cstring>line1</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>9</x>
+                                <y>36</y>
+                                <width>171</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="frameShape">
+                            <enum>HLine</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Plain</enum>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBoxAll</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>11</x>
+                                <y>20</y>
+                                <width>150</width>
+                                <height>19</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>All (Recommended)</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                        <property name="tristate">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBoxStandartLogs</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>50</y>
+                                <width>161</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Standard Logs</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBoxHardware</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>70</y>
+                                <width>161</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Hardware Information</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBoxConfig</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>90</y>
+                                <width>161</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Config Files</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBoxPackages</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>110</y>
+                                <width>161</width>
+                                <height>21</height>
+                            </rect>
+                        </property>
+                        <property name="text">
+                            <string>Package Informations</string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QButtonGroup">
+                    <property name="name">
+                        <cstring>panelUserInfo</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>0</width>
+                            <height>151</height>
+                        </size>
+                    </property>
+                    <property name="title">
+                        <string>Additional Information</string>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="2">
+                            <property name="name">
+                                <cstring>layout9</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>labelEmail</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>E-mail :</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLineEdit">
+                                    <property name="name">
+                                        <cstring>lineEmail</cstring>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="KPushButton" row="4" column="0" rowspan="1" colspan="2">
+                            <property name="name">
+                                <cstring>buttonTakScr</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Take New Screenshot</string>
+                            </property>
+                            <property name="iconSet">
+                                <iconset>image0</iconset>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+                            <property name="name">
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Screenshot :</string>
+                            </property>
+                        </widget>
+                        <widget class="KURLRequester" row="3" column="0" rowspan="1" colspan="2">
+                            <property name="name">
+                                <cstring>picturePath</cstring>
+                            </property>
+                            <property name="filter">
+                                <string>image/png image/jpeg</string>
+                            </property>
+                        </widget>
+                        <widget class="Line" row="1" column="0">
+                            <property name="name">
+                                <cstring>line1_3</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="frameShape">
+                                <enum>HLine</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Plain</enum>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="6" column="0">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout4</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>buttonHelp</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                            <property name="iconSet">
+                                <iconset>image1</iconset>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>labelStatus</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout6</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>buttonSave</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>Save Report</string>
+                            </property>
+                            <property name="iconSet">
+                                <iconset>image2</iconset>
+                            </property>
+                        </widget>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>buttonSend</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>Send Report</string>
+                            </property>
+                            <property name="iconSet">
+                                <iconset>image3</iconset>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="2562">89504e470d0a1a0a0000000d49484452000000300000003008060000005702f987000009c9494441546881ed97596c5cd779c77fe7dc3bf7ce9d19ce0cf745944529a436578b0b29911b387d28e202e98214e98bfb9200595e52a0addbbe340f7d4e0b346dd197d4690bc4098aa04081bc3448ebd8899bda8e9d48b66489a42cca2235dc447248ce0ce76ee79eaf0fc3d5920d3b409fca3f707017dc73cef73fdfff5b2e1ce2108738c4210e718843fcff85daff70fa99af80f698faf7ef73ee0f7edf03f99dccca0940f6cf518accd1fac5d1c746dffcd9ab6fa094e297411aa56cbe7a1fb407411e4460ed855f8ec0f92f3f0b5040f853a5184724e82a169e3e736cb4e238ce8109ebcd16d373f39356e4f59df722fb39ee5bfc3de4b69f64fbd60ad8edf9a1c9ecbb56ec55e0ad9e52617d732be4e6bffcfd8725f027a4263bd65d2afdf8cae327c7f29e4fa554606c6800ad15221d2f68a5a41d27726f7159401c476ba3b5164769ad14ce8e37444444b099586bad2811718db562adc58a286b4541675111c1988ccdad2d59aa6f6c2dd7376e6c45d1f320df134bddcd69ae3ff7b78f24e0eede89c266b6da550c4a17c64f50c8fb48e758c5759cace0795929c84b31ef13789efaf573a771b483a3154aa91d1959a5944a8dc16499dd718c1541446cce758c15b1a9c974628c89d3d48992d44649aaa234d57192ea561415e696579ebc76fbeee5bb0b4b9f8d92f42fda5bf12fce7de9596e7ceb6f3e8000028ab2efba81e73a59c1f74cb910d86ab14029c86b3f97731dadb5d64ab9da39a00b1121cd329452cc2c2cf1ed1fbe44338cb4de279f2ccbb872f694f3b94f3d49d1f7514af969964994249265d62a85a0944d52634e8d8ef0c4f871f5d3eb93bff1d29b379edf44be1aa5e94b17bef4c7bcf5ad839ed825a0148848a5a7dce55c383196960b8193739ddcb6cc9488a094a21c04ac6d36997db0d259c07138393a829773099384abb767b8395be389932770b763474498bc779f1fbc7e8d4f5fba80528ac9b91a0bab7515a7468988d65a532e049c181e948f8d0c716ca0cffecad8d16c6274f8d43fffc70bffb0bad978c60ad77ff5cb7fced5e7fefa6102220a50a54ab1902b17f28e5660b2ec005b476b3cd7a5d16ef3eee232a0f0722e63830354fd02ed282631869e7289a3037dbbf39456ac375bcc3f58e3b55bb7a9375bf454ba38363c40def3d04a9165966618726baea6aedf9de5cad993ced1813ee7e94b17a8379a67bff3c2cb7f1925c9e7b5ce5afb6dd27bbb084aa962ce75746232e2d490a486d464982c2331863049485243c1f719e8ae32d85da1bf5226e73a84494a94a474a4df4933bb433ab9378c63561a4dce8f8f317e649872a180e7bab88e83efe5e8af9439ffb1631c1dece34757af3379ef3e26b37cfad2451e1f3bfa1911f98c8870fe8bcf1ef4c0c52f7c0d4b1ba528ba8ea3526310046b853b0b4b880883dd55aaa522f3f5753cd7e1d4d1911de6b4a28830491001632d619c10c6318ed6bb64526378faf2137ce2cc044a29440405c4c69065162fd7212222f4572b78aecb6b53ef90f73dfaab159e3a7f363f395b7ba6d10ebf1ff85e7c8080f242b0a050be528ac418ac08d65a6ed716a9adae1125091323435c397b8aae207f20efef2475ad3523bd3d6459c62bd7277709a459c6f1a1413e79ee74276301ad30e2b5c9db4ccdd6089384de7217974f4f70f6d8285a6b2aa5226343035c7de72e9f3a7f9689d16106bb2b971b5bed31254c1f2060c576d4a4704584d818acb59da02d0674b5039aed901fbd798377971ef0bbbf7699eeaed2238bd7c9c746f8a3cffd365b518c52a095666aaec6706f0f7e2e8715a11545fcdb8fff87998565067baa548a4556379b7cefc59ff29b972ff2c973670038d2d7436d6595a5f50dcac50283ddd5fe9985a5d328d925a03b27a8514a502857803835bb3150f47d72ae4bb91850f07da66b0bfce0f56b34db118931bbdfee0c93598a41c01b5377a8adac31dcd783efe518eeedc66e67b23726df616661998b13c7b9747a9c8be3c7b938719c23fdbdbc78ed064bf57594ea64b86aa9446da58eb5425721f0b4d2a3008f7ff1cff6496847cd0a65ad2549d3ce662802dfc7d18a521050cce769473153f7e7193f32cc9963a38ff4421427d49b2d0a799f663b244e0d79cfebc8c91826e7e619e8a930dadfcbf1a14104c15d7308e384a5fa3a330bcb1ce9eb4580ae20cf627d83c4984eb154f82290d36a9f84002d204296669d0c64b70dcbb90eae76c87b1d129b5b5b6c453193b335c686061ed9c829adf9ec539fc0d19a2849b156d8296a596689939442e0e33ace4e9b82a314aea371b4268c766314adf576064c09e304841628fcedf8daf6c04e184a969a8cd87436ddf60a85bc47338ce92a746414c609f56693661892f7723cc209a0c0da0c6333ac588ccd7071f0722e7dd5320bab6bacb7b63a2494a2d10e698511496a18eca9ee2e13a7294a413b8aa8379ba115b907f0b36f7e7d1f010d746a569c984e3edf9186528a529067a3d5a698f72906791aed3626cb8892743725be1f94ea90696c8504be87529a8f9f9ee0bbffb5c0edfbf3b4a308d771688511776a8b0cf776337e6478375eea8d1681eff3606393958dc63cc8346a6f3f0df0d637bfc1f6cb304e0c719a9218b31da4295a3b385aa3b5a6ab10e0e73cf29e871539f0ed23479a510a0266971f8074da8a89d1617eebc94bac375afc627a869f4fcd70636696eeae12bff7d4158a791f807614b3b2d9a018e4999aadb1d1da7a5921b57df6bfb795204cd2d4c649aaf7f7f10a2815f2ac6e362905798a799fbe6a196b2db1b5ef7bfa3be82a1698a92db254df60a8b71b808f9f99e0f8f000771797694731fdd50a27460629fafeaea06fddbb4f2ee7b2b9d5e6edbb73eba931dff1725ea6f51e837dcd9c2042234e4d966699d65a1f30c2cbe5c8b90e519cd2552830d2db83f910c6efa0bfbbc2eb53eff0d4b9b374973b3564a05a61b07b4fef76e7a703989a9ba7b6bac66343fdbcfaf6342b1b9bcf6badfe1b05d7fe71af23ddb3524090cdc418b39381a4d3c7ef6abcbbab44662d433d554a85e0a16f3e68948b05aae5122f5fbfc9dd8525b2ed42b9d32f750eb1d32ffd7cfa0e53b57946fa7b79ebce3da6676b3fccacfdba56da5c7fee1b070ec63df024345363e22cb381eb380fa548d771383ad8c7fe3effa3fc0ff794bbc87b1e3767ef73677e89c1ee0ae56201576be23465add162b5d1c0cbe5e82d9779e3d66d999e9bffcf384dff5029b590530f7b7c2f063a978d24355b26cbaa79e53d32bb38ef91d6474531f0393e32443b8a596d36995fab6345d0dbad7adef7595cad737b6ebebebad9f8b6b5f257c062b9ad78e55f1ffeaddcf38002c7d18d5618355ebb397dc4cfe5f668fd9f4001b25b43326b6dab1d461badad5ab31dfe2435d977b556afa0486ffed3dfbdef2afb24a4701da79ea4e9d76ebd3bf798081f3e423f3a2c0f9d8eb445b82fc8b4562c0a2a7bfb030c3fc4210e7188431ce210873804fc2fb975344505c40cf70000000049454e44ae426082</data>
+    </image>
+    <image name="image1">
+        <data format="PNG" length="1231">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af400000496494441545885ed964d6c545514c77fe7ce675b288536b4b4f259ab801f11128cc4184362d0c4048971e3c6c49818f72e1461859a6830ba56e3c2b03126182192982031013f02b2a890b61421500a9496564adb9979f3ee978b376d673a6f0a638c6e3cc95bbd7beff9ddf3ff9ff31efc1fff7148cd37dbde80a24ed2b16253a629bb31a154b69e83ad7385e24c618091f141b219c3994feb0078ee2d2886cbd6aeeb78fba9cdeb5eede96c6b4b2713aa1e80d05837787d7cec64ffe52f862fdf3c4043668aef3fbc3b4062d75eec91e3d2f5caeefdaf3fbb6dcf8e47362452b1b90529dbedbdaf5aa18de3d8ef17cde7c77edb7ff3e03bef265fd88739fc5e65be2a808d4fe33adbd7ef7c7cd38197b63fdc2a2258e7b0ce973d30990b189d9c61623acf74214489a04455ac1584d56dcbd4f53fa7ba06ed9ac3aa213de5064f56e44b56dd4b80c6ecdaaed6e60eeb1d3ab455371bb93d4d3693e481d56da4128a7c51d33734c6d26c9a658d9556512274ad68eea429bb4690e18567550320885269ef5185a2c1395741970f429249c5eeed9bc9a4e6b7af6f5fcea19ffb482845a24c1ba504e7bc42a9549ce3aa0066431b4b21d43837afad084ccce4d9727f27995492b13b339c1fbec5b69efb58d9b2849625592673051a3369f0f300dada9afd56132034964251e37c398050080db3a63c776594a3a707e96a6da67b552b4a847ca091b26c4a84d054cb5813c013c186b115108aa199bd1cd63a04b0a535ce7b0aa14129a9ac8071d48ac52588a940511b82d0001084066de70f77ce13841a25c22c8188a08d8dae55dda97100d1aad058f2a1c62dd82422fcd07b9181e131ae8edd41097390b3151091b95c4a20b4754830bb3392c05448100144ef7a2f8dd0944dd3b2a48196a6a8f5acf314421d69382701a50adc2b4029b4b1e48bba6ac279efd1cef1e2930fb1a5bb93867492a66c1a631de3777255869b9540fe912e000aa1e199adddecdcda0344ba17b5e1c7b397e91b1a239d4c60ca7c117541bd26943200ca018442a859d7be1c80f3d76ef1d589b34ce5026e4c4c9352d128ae3c4ae62488f1607c1b4249825053ae8008047adef9e7aedce4d4c0308de9144a296c8cd9448806515d1500b47504a1c12fe0b6d6f1f589b3f40f8d72e68feb8848e4f21a49846812d6faf15804c012e8ca0a40a4f9d0d8241353796ecf14f09e52dfc78708a54114bf2616408824084253d105ce7bda972f65dfcb3be8ee58c1e90bd7f8e8d049724158f3862282f93bdf823809b4b13cb171355bbb3b01d8f1e806befdb59f5ffa87a8f5c324a5b36ac5a27360a104c63aa60a459cf7281172c590f1a91c456d30b606804467d5eb81501beb164ae081ef4e0dd0d6dcc8631b5671bcf712bd976ee09c4753c3842268ebac87300e2266147b9cf757026d4632c944b72c30d8ede9021f7ff313a984421b8792d2356b84f79e409b1bcefbab7166adae9b80cfe587026d0e16b4310b47b188a044b0ce479fddbb24cf874607da7c49df856b71832876b7dab517e77d73269178339b4ebe964e2456c6c22e1e2e347634d0e6b3a2b19f282533eec8fbf70600c0f37bc0fb844aa81ea5d48340a64e80c03a37e8adbd8888e5e807756eff3ffea5f80bed0d9d5a510731240000000049454e44ae426082</data>
+    </image>
+    <image name="image2">
+        <data format="PNG" length="1499">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af4000005a2494441545885ed964b6c1d571980bf7fe6cccc7df91d52bb76dcd2b869020acf50ca0e90e8a2125050176c119558207551095129dd2051f15800128b0a044b56b48baa824a284265d38a2e48d204354479d88d6dfcf67ddf3b33e79c9fc5759cde7a5c4b5d42ffe599ff75beff71063e92ff7791c2d3cf7d1ffaa9617a729e243eb6afa74a1c474c8d5711798fa9422090440611c1abd2e9676c353aea3abd4dd6b6ee90942c177f7744024ffd1a3a6b90db8f9d7c70fafcdcb1d16f8d9465ac9244fb7aa3950a4f3ef6294ab11932cd9de33f3b4dac73245184007ff8eb9bead5d497b75b2fdd5e5cfb29b1d9e6b59f0fd90d7931d916f6caadf081c7cf9d7ffaf173cf34bb3d19af2af78d571011c220200862be7cf6e3544bf190a3cd469bdfdfb841bbd761a236ca135ff8346fbc33c66865726cac5a79f6c5d7def2cb2ffffdb9f09bcf7bf7ca4ff6ed8261200a27ef7fe08ba74e3c69c240fe76f9e64049024c10121b436cc2a2a2ed61efd24b7b74d33e5e15ef950b976e508e2279f4e1b96ff399853974d86e98a308c4d1e458b534b6b2d5c47b250a43e228243286721ca3844851e72878af80222283da0a58e759dd69325e2d4d10990945df3d3c818191e4ce89578331217164a896124a714c64421a9d1cd503563855da7d4bab97e3e8b3b851c73aa192c4f4324b669df9c423f38f4cd44aeeda777edc6e2faedef161e80a1210acf500446140b594305aa9e0bc6775bb4ebb670fe2f7cae5db6b046185fb2612626358dad8e6996f7c1555210884d7dfbe5e3b3953fb6d394edcc3f78fb7f3cf9ff9d51f7ff8fc6f8612b87bb1dc3954213621e524a69b66ac6cefb2d96810484cbdd323b36e1ff766a3c395db6b343b2967cf1c67a49c50ab8cf0c9f9694c18609de7f5b7af06bd7e737c6662964e2f9d7a70faf80fe6bffbf4ab070900b9f5801288b0bedb64a36ed96d77e8a729fdbccd8b7fbe4020820eca4cab67f194e9a639b57289b15a1991007d4fc779eff13a20dbeea5a4991d19ad2423c525706e8f8870e1d2126100d639bcf7a82a9ed63d5c0299f53c343d4d2589a9954b6c355a642ea0d54d316180f34a2929532b8fa0aa983020b38edc3a2926e03caa305e29e1fce01e7108144f20a1589c539cf75cbcb9c24eab4537b5fc6b7195bb23935b87576565bb4e2083b2e4ce174e01b975284a644246e38853b3c718ab960a838bc04eabc7cdb51d7aa9e7f2ad3a260c80807a3b3ba06f1d245142ee1cd6b9820410acf3b0d7848f9e9ae3b1d3f3c5b30f04222c6f37b9b5bec358a5c4974ecf3333395aac2cb0516ff3c63b4b34bae90710700e054a71c4ecd42822835193822c3c838d97e58e998911ce9c384eb5140f35e03dd7c264adccf5952d369b5dac2d24b03705aac426240806418b82df1325776eb0a665b0968bb506e78931e4d6913bfffeb76090e75d0291098f08bce75807492791410e79e1f7bd8b104721b973e4853db0b7bf95c12614110a681e906e9ab1d9ecd0ee679830400b2888089dfe3d3def550f29814314922824388a8042258950857e66f9e78d1592c8dcbdcbfe1f870c54c972479a5b9a9d74b79fdbfa218bc8d3cb729add9434b78848e18df6e2333952e16b9f5de0c2a51b2c6dd6f7bfa5b9a5d9ed130401ce7927221b8148d64db3c6ea6eeb97fad6b5a522026a9dd7ad569746376569bd4e1219ca71f48120ce2dccb130334537cd01e8a639b7d67678f3dabb38eff9f7ca566b75bbf13d54afe035a5dbdbe2f489e11e100554b7dbfdac6e8260fcdcc22cbd2ce7eae21a6150d0af07e0c93e6ae73d6395125f39fb10ffb87e87ccba2d84ab2632cbf69517f66d0ebe8669bed4ee672f5fbcbdfaacf55e8e8f5639740b1d25aaac37da5c595af7ad7efa12bd7459472ac349bfdf26f8fa79149d8a4df8a352649e8ac270fcc3451f48eedc4e3fb77fcaacfb8520bbfed51786be175fed89e7c06b8809664564f250bda34555751be7571171fce5671fd2cd47f2bf2cff055257d82ccb2544b70000000049454e44ae426082</data>
+    </image>
+    <image name="image3">
+        <data format="PNG" length="1655">89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af40000063e494441545885ed965b6c5c470186bfd93dbbebbddfbcdef52db693b8696e751ab74082a01142544815a4028a104288079ae401a920a0202454b505212294b41255084fbcb548480815b5540491978220490d0e8913ecf8b2ceae77bd67cfdecf9eebf0e0c4a963230514091ef2bfcc7999ffffe79f997f0e3cc003fc8f21ee279994f2f6673ff041409152feb550ad2ff6c5a3f87dcafd94db88d4f004524a0cd37ad4b5ad77f5fcaca52f5eb31dcbfc9b94f2882be5fb0daee3bf4f60f819a8aac27b68329ac9268733f1d0dea1def8e44fbefad427870a7fdadf39ff32423828fb9e25f9f1af5c168af225600a40883bb2f798890247be0dc5bcb7e7a19154361ddb9e89871fe94f4527877a6313a3d9c4f6b16c3235964b2a23e908cdb7df2439d2400907a85e79957a28b12ffe91cf9d16822f038b77316f01cf28b80bf0f889407c2497ed4b44c6fb12914707d2fb268733f1bd63d9e4b6b16c223a9c897b32f130e11e3f5e8f404af0fbfdf80626e82cfc9178cc4b72a7a4f2971fd38a659e881e3872123821a5546fa7b09ec5ee63a7f108e1eb18e658a8c7b73797881c1c48c70e8ef4251e1ecb2573a3d94470301d13a968901ebf824708d6f6756dbe0490129fa2e0b70cd437be479877080f46b0db26ea8d14b1a3afbaa19d8ffc14781ed08510ef3370fc3486691f7c62ffe82f9f9cdcb96d5b26e1cba522c4433df8152f0890ae64f331da62c314054f5d457bfd1b241253f46442989a4e75659cd4e75f3102fd23df074e02d2b33e4b4a5aba598d8514ef071eeaf7ed1fcbd21b0ba1783d38aec4bd07f1dba7fc9fcb05ea4a88d4d197a857c6b01a06fe449078f21ab5b74e061c433f01ec005837208072beb252505b33d797cbcce40be886890084d82c24a5c49512c775b11d07d3b2312c9b956a8d96de2514f0e31bda816fd76769e6bb0004333da0bd875d577b81dc060308c16bdf79a65b6b9b53c9489c5424ccb5e522cb6a15c77171370859740c93b6dea5d9d1697474ea9d0e5ab3c562b9c268b68f602080b1388335f33ad16d41003a651dd28fe38bf796810280f7b6feea85b729a42768748ce481edfd4f3f363eec4d84c354ea4d962b2aeead15eba649d734d14debd668a21b16866951d46af4c6a28ce5b2c8ea0adaaf9e279999c39fe8c1d074eada5e524fbfd855e2a91f026fc15dd7b06bda549bfa951b2b9a6ad94e2ee0f3b16b68806ab3c55cb184ed38c4c2213c42e0b82e8eebe2ba1247ba744d1381607cb01fa137517ffd12b1c834817418bb69502bf493fccc8b8ebf6fe835e0cc5ae8e2ee1e109456aaf9859236d7ee9ab9483000403a1a211e0eb154aeb0505e454a895f51d6527125b6eba09b16871e1e271408a0fdfe2c41fb0f8486a3b85d8bea7c88d0932f504b8e9d0b778c97037ea51bb8f52e78361a90c873279bf94afdefe57a7bbd325d29f17a3c6cefefe343bbc64947a3a8cd16abf506ab8d06d5669b9dfd5932f128d271b057fe4130ed45da36d559e839fc5ddc1d8ff1a337ce19b1e12fb4771f3bb5aeb8310121f8f0377f8661d9179656eb727c202d1c79a7bb5d57120cf899d83ec2606f8ae58a8ae3ba0ca492e49209a404e9f1109cf834d5f39711d8f80f1c2776e853744c8b6830b027f6b103d980cf97dfd2c0d533cfb1e7f8699aba313dbfa2d5dcfd32b9d19f404a8910824c2c4a261ebb7d2fd73bc2b66da2939f2038b20fc330698533fcf9fa32378aaab150ae99e9582801726b036b5c9282da989f2f694bba69277bfc7787b4d6f98835618f10088fc07125ba61516974b8a936e462a5d1ceaf366ece152e5d595aad5f2a69ad4bba695d8d860279c7bd53695b3e46ce9bbfad2e1dde73596d7626867a63b8ee5a19895b0684076cc7a5a99b946a2d96ca35e74649ab2d94b4c5fc6a7dba506d5e2c69ada992da98edcc2e5538fa358bb31f053a9bb4361b9082a75ef8ba5b509b170b6ae38ba3d9240e2ea6ed506b7729569b2c943473bea455164ab5d9e54a7daaa8352f966bede972a5be604d5faf9348b95cfef91dce2bbfd86a9d5b1bb87af639bc275ec1b49da94b73c5b64788f06cb1da992f6985c5726de6a6da78afa4b52e966aedab95a27a93f3efb4490c42ed77774896ffadde266cf947b4fbd8295c576653b1d0b7bc42acacd45a97ca5af37a63a1580e5e3863ea620028debbca7f6ce0d95338a68551adb3f89b1f00878177ef8be0033cc0ff1dfe0538b3189ae68fea110000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxStandartLogs</receiver>
+        <slot>setChecked(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxHardware</receiver>
+        <slot>setChecked(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxConfig</receiver>
+        <slot>setChecked(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxPackages</receiver>
+        <slot>setChecked(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxStandartLogs</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxHardware</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxConfig</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxConfig</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxPackages</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kurlrequester.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+</includehints>
+</UI>

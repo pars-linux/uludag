@@ -1,0 +1,91 @@
+Böcek
+---------------------------------------------------------
+Bugzilla için grafiksel kullanıcı arabirimi.
+
+Çalışma süreci :
+=========================================================
+Kullanıcı tarafından gönderilen veriler geçiş öncesi bir 
+veritabanında toplanır. Ekleme işlemi için PHP ile bir a-
+rabirim kullanılabilir. Veriler MySQL üzerinde tutulur. 
+Her kayıt sonrası sadece Geliştiricilerin üye olabildiği
+Böcek Mail Listesine detaylar gönderilir. Hata kaydının
+geçerli olması durumnda çözüm süreci için herhangi bir 
+geliştirici gönderilen e-posta daki link ile kayıdı Par-
+dus Bugzillasına geçirebilir. Bugzilla ya geçiş sonrasın-
+da eski süreç işler.
+
+Kullanıcıdan otomatik alınacak olası bilgiler :
+=========================================================
+- Yapılandırma Dosyaları
+    - /boot/grub/grub.conf
+    - /etc/fstab
+    - /etc/X11/xorg.conf
+    - /etc/conf.d/915resolution
+    - /etc/conf.d/local.start   (never trust the user)
+    - /etc/resolv.conf
+    - /etc/conf.d/mudur
+    - /etc/mudur/*
+
+- Kayıt Dosyaları
+    - /var/log/pisi.log
+    - /var/log/comar.log *
+    - /var/log/user.log
+    - /var/log/Xorg.0.log
+    - /var/log/xlog
+    - /proc/cpuinfo
+
+- Durum Çıktıları
+    - /bin/dmesg
+    - /bin/mount
+    - /sbin/ifconfig -a
+    - /usr/sbin/iwconfig
+    - /usr/sbin/lspci
+    - /usr/sbin/lspci -n
+    - /usr/sbin/lsusb
+    - /usr/bin/lsscsi -v
+    - /sbin/fdisk -l
+    - /usr/bin/df -h
+    - /bin/service
+    - /usr/bin/uname -a
+    - /usr/bin/free /usr/sbin/lspci
+    - /usr/sbin/lspci -n
+    - /usr/sbin/lsusb
+    - /usr/bin/lsscsi -v
+    - /sbin/fdisk -l
+    - /usr/bin/df -h
+    - /bin/service
+    - /usr/bin/uname -a
+    - /usr/bin/free
+
+* root hakkı gerektiren çıktılar
+
+Not: Bu komutların hepsinin LC_ALL=C de çalışması gerekiyor.
+
+Not: Çıktılar içerisinde Password/pass gibi ifadeler i-
+çeren satırlar kullanıcı güvenliği için değiştirilerek
+eklenecek.
+
+Görsel :
+=========================================================
+Grafiksel arabirimin genel görünümü:
+
+    ---------------------------------
+    | Hata Başlığı :_______________ |
+    |                               |
+    | Hata Özeti   :_______________ |
+    | _____________________________ |
+    | _____________________________ |
+    |                               |
+    | Ek Dosyalar  :                |
+    |           [ ] Donanım Raporu  | -> Detaylı olabilir
+    |           [ ] Ekran Görüntüsü |
+    |                               |
+    | E-Posta      :_______________ |
+    |                               |
+    | [ ] Durumdan Haberdar Et      |
+    |                               |
+    |                      [Gönder] |
+    ---------------------------------
+
+
+
