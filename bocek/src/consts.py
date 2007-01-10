@@ -14,7 +14,7 @@ hardwareInfo= {"/bin/mount"                 :2,
                "/usr/bin/lsscsi -v"         :2,
                "/sbin/fdisk -l"             :2,
                "/usr/bin/df -h"             :2,
-               "/bin/service"               :2,
+               "/bin/service -N"            :2,
                "/sbin/muavin.py --debug"    :2,
                "/usr/bin/free"              :2}
 configFiles = {"/boot/grub/grub.conf"       :1,
