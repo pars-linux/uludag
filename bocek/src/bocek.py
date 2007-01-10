@@ -51,6 +51,7 @@ class Bocek(BocekForm):
     def __init__(self, parent=None, name=None):
         BocekForm.__init__(self, parent, name)
         self.connect(self.buttonSave, SIGNAL('clicked()'), self.buildReport)
+        self.connect(self.buttonSend, SIGNAL('clicked()'), self.sendReport)
         self.connect(self.buttonHelp, SIGNAL('clicked()'), self.slotHelp)
         self.connect(guiApp, SIGNAL("shutDown()"), self.slotQuit)
         os.environ["LC_ALL"] = "C"
@@ -66,15 +67,26 @@ class Bocek(BocekForm):
         self.output+="Summary : %s \n" % self.lineSummary.text()
         self.output+="Details : %s \n" % self.lineDetails.text()
         self.output+="\nAdditional Files : \n%s\n"%("*"*40)
+        self.progressBar.show()
+        size=0
+        for logs in checkedLogs:
+            size+=len(logs)
+        per = 100 / size
         for logs in checkedLogs:
             for log in logs:
                 self.output+="\n========» %s «========\n" % log
+                self.labelStatus.setText("%s is getting.." % log)
                 if logs[log]==1:
                     self.output+=self.getStaticOutput(log)
                 elif logs[log]==2:
                     self.output+=self.getCommandOutput(log)
                 self.output+="\n"
+                self.progressBar.setProgress(self.progressBar.progress()+per)
+                self.progressBar.update()
+        self.progressBar.setProgress(100)
         self.lastReportFile = self.writeReport()
+
+    def sendReport(self):
         if mail.send_mail(str(self.lineEmail.text()),
                           ["gokmen@pardus.org.tr"],
                           str(self.lineSummary.text()),

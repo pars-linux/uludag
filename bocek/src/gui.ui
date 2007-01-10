@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>509</width>
-            <height>410</height>
+            <height>425</height>
         </rect>
     </property>
     <property name="caption">
@@ -403,6 +403,26 @@
                 </widget>
             </hbox>
         </widget>
+        <widget class="KProgress" row="5" column="0">
+            <property name="name">
+                <cstring>progressBar</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="centerIndicator">
+                <bool>true</bool>
+            </property>
+            <property name="indicatorFollowsStyle">
+                <bool>true</bool>
+            </property>
+            <property name="percentageVisible">
+                <bool>true</bool>
+            </property>
+        </widget>
     </grid>
 </widget>
 <images>
@@ -484,5 +504,6 @@
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
+    <includehint>kprogress.h</includehint>
 </includehints>
 </UI>
