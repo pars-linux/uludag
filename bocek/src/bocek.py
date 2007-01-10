@@ -33,6 +33,12 @@ def AboutData():
     about_data.addAuthor('Gökmen GÖKSEL', None, 'gokmen@pardus.org.tr')
     return about_data
 
+def arrayToStr(ar):
+    ret=''
+    for line in ar:
+        ret+=line
+    return ret
+
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
@@ -58,7 +64,18 @@ class Bocek(BocekForm):
         guiApp.quit()
 
     def buildReport(self):
-        pass
+        self.output=""
+        logs = self.getCheckedLogs()
+        # self.output ="From : %s (%s) at %s\n"%(lineEmail.text(),getIp,time)
+        self.output+="Summary : %s \n" % self.lineSummary.text()
+        self.output+="Details : %s \n" % self.lineDetails.text()
+        self.output+="\nAdditional Files : \n%s\n"%("*"*40)
+        #FIX
+        for log in logs:
+            self.output+="\n========» %s «========\n" % logs
+            self.output+=self.getStaticOutput(logs)
+            self.output+="\n"#+("="*40)+"\n"
+        print self.writeReport()
 
     def writeReport(self):
         now = time.localtime()
@@ -70,15 +87,24 @@ class Bocek(BocekForm):
 
     def getStaticOutput(self,filename):
         link = file(filename,'r')
-        ret = ''
         lines = link.readlines()
-        for line in lines:
-            ret+=line
         link.close()
-        return ret
+        return arrayToStr(lines)
 
     def getCommandOutput(self,cmd):
         return subprocess.call(cmd)
+
+    def getCheckedLogs(self):
+        ret=[]
+        if self.checkBoxPackages.isChecked():
+            ret.append(consts.packageInfo)
+        if self.checkBoxConfig.isChecked():
+            ret.append(consts.configFiles)
+        if self.checkBoxHardware.isChecked():
+            ret.append(consts.hardwareInfo)
+        if self.checkBoxStandartLogs.isChecked():
+            ret.append(consts.standartLogs)
+        return ret
 
     def slotHelp(self):
         self.helpwin = HelpDialog(self)

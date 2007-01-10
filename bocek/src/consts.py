@@ -3,7 +3,6 @@
 standartLogs= {"/var/log/comar.log"         :1,
                "/var/log/user.log"          :1,
                "/var/log/Xorg.0.log"        :1,
-               "/var/log/xlog"              :1,
                "/bin/dmesg"                 :2,
                "/usr/bin/uname -a"          :2}
 hardwareInfo= {"/bin/mount"                 :2,
