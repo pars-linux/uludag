@@ -1,6 +1,6 @@
-# consts. 1:is static file, 2:is executable
+# consts. 1:is static file, 2:is command output
 
-standartLogs= {"/var/log/comar.log"         :1,
+standartLogs= {#"/var/log/comar.log"         :1,
                "/var/log/user.log"          :1,
                "/var/log/Xorg.0.log"        :1,
                "/bin/dmesg"                 :2,

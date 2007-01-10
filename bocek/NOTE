@@ -47,14 +47,6 @@ Kullanıcıdan otomatik alınacak olası bilgiler :
     - /usr/bin/df -h
     - /bin/service
     - /usr/bin/uname -a
-    - /usr/bin/free /usr/sbin/lspci
-    - /usr/sbin/lspci -n
-    - /usr/sbin/lsusb
-    - /usr/bin/lsscsi -v
-    - /sbin/fdisk -l
-    - /usr/bin/df -h
-    - /bin/service
-    - /usr/bin/uname -a
     - /usr/bin/free
 
 * root hakkı gerektiren çıktılar
