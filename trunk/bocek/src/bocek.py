@@ -53,6 +53,7 @@ class Bocek(BocekForm):
         self.connect(self.buttonSave, SIGNAL('clicked()'), self.buildReport)
         self.connect(self.buttonSend, SIGNAL('clicked()'), self.sendReport)
         self.connect(self.buttonHelp, SIGNAL('clicked()'), self.slotHelp)
+        self.connect(self.buttonTakScr, SIGNAL('clicked()'), self.takeScreen)
         self.connect(guiApp, SIGNAL("shutDown()"), self.slotQuit)
         os.environ['LC_ALL'] = 'C'
         self.lastReportFile=''
@@ -90,14 +91,22 @@ class Bocek(BocekForm):
     def sendReport(self):
         if not self.lastReportFile:
             self.buildReport()
+        files = [self.lastReportFile]
+        picPath = str(self.picturePath.lineEdit().text())
+        if not picPath=="":
+            if os.path.exists(picPath):
+                if os.stat(picPath)[6] < (consts.pictureMaxSize * 1000):
+                    files.append(picPath)
         if mail.send_mail(str(self.lineEmail.text()),
                           ["gokmen@pardus.org.tr"],
                           str(self.lineSummary.text()),
                           str(self.lineDetails.text()),
-                          [self.lastReportFile]):
+                          files):
             print "Message sent."
         else:
             print "Error on message sending"
+
+        self.lastReportFile=""
 
     def writeReport(self):
         now = time.localtime()
@@ -106,6 +115,13 @@ class Bocek(BocekForm):
         link.writelines(self.output)
         link.close()
         return filename
+
+    def takeScreen(self):
+        now = time.localtime()
+        filename = '/tmp/BugScreenShot.%s-%s-%s.png' % (now[2],now[3],now[4])
+        if os.system("import -window root -colors 8 +dither %s" % filename) == 0:
+            print "screenshot saved."
+            self.picturePath.lineEdit().setText(filename)
 
     def getStaticOutput(self,filename):
         try:
