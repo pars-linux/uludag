@@ -63,7 +63,7 @@ class Bocek(BocekForm):
         guiApp.quit()
 
     def buildReport(self):
-        if self.checkNeeds():
+        if (self.checkNeeds()) and (len(self.getCheckedLogs())>0):
             self.setCursor(Qt.waitCursor)
             self.output=""
             ## FIXME ProgressBar Support
@@ -91,6 +91,8 @@ class Bocek(BocekForm):
             self.lastReportFile = self.writeReport()
             self.updateInfo("Report saved as %s "%self.lastReportFile)
             self.setCursor(Qt.arrowCursor)
+        elif not len(self.getCheckedLogs())>0:
+            self.showInfo("Nothing to save")
 
     def updateInfo(self,msg):
         self.labelStatus.setText(msg)
@@ -104,15 +106,17 @@ class Bocek(BocekForm):
     def sendReport(self):
         if self.checkNeeds():
             self.setCursor(Qt.waitCursor)
-            self.updateInfo("Bug report is sending .. Please wait..")
-            if not self.lastReportFile:
+            files=[]
+            if (not self.lastReportFile) and (len(self.getCheckedLogs())>0):
                 self.buildReport()
-            files = [self.lastReportFile]
             picPath = str(self.picturePath.lineEdit().text())
             if not picPath=="":
                 if os.path.exists(picPath):
                     if os.stat(picPath)[6] < (consts.pictureMaxSize * 1000):
                         files.append(picPath)
+            if not self.lastReportFile=="":
+                files.append(self.lastReportFile)
+            self.updateInfo("Bug report is sending .. Please wait..")
             if mail.send_mail(str(self.lineEmail.text()),
                               ["gokmen@pardus.org.tr"],
                               str(self.lineSummary.text()),
