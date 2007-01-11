@@ -256,7 +256,7 @@ class widgetMain(formMain):
 
     def slotOff(self):
         item = self.listServices.selectedItem()
-        if item.type != 'server' and not self.confirmStop():
+        if item.type != 'server' and not self.confirmOff():
             self.radioAutoRun.setChecked(True)
             self.radioNoAutoRun.setChecked(False)
             return
@@ -264,4 +264,8 @@ class widgetMain(formMain):
 
     def confirmStop(self):
         msg = i18n('If you stop this service, you may have problems.\nAre you sure you want to stop this service?')
+        return KMessageBox.warningYesNo(self, msg, i18n('Warning')) != 4
+
+    def confirmOff(self):
+        msg = i18n('If you disable this service, you may have problems.\nAre you sure you want to do this?')
         return KMessageBox.warningYesNo(self, msg, i18n('Warning')) != 4
