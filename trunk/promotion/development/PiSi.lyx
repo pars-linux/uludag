@@ -932,6 +932,22 @@ The xml spec file format makes it possible to provide translations of the
  can also help with this problem.
  We decided to keep all the related info in the corresponding packages for
  its ease of maintanence purposes.
+ The description and summary informations of the packages are exported to
+ a standard pot file from the repository and accommodated to our Pardus
+ translation statistics page.
+\begin_inset LatexCommand \cite{key-75}
+
+\end_inset
+
+ The translated po files then are merged with the corresponding source packages
+ in the repository.
+ These operations are done with our repository translation scripts.
+ 
+\begin_inset LatexCommand \cite{key-76}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1008,6 +1024,18 @@ http://svn.pardus.org.tr/pardus/2007/
 
 \bibitem {key-74}
 http://paketler.pardus.org.tr/pardus-2007/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-75}
+http://www.pardus.org.tr/eng/projects/translation/stats/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-76}
+http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/
 \end_layout
 
 \end_body
