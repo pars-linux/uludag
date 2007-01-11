@@ -67,19 +67,6 @@ PiSi (Packages Installed Succesfully, as intended) is the package manager
 \end_layout
 
 \begin_layout Standard
-Python is the choice of Pardus in all of the distribution's core components
- for its simplicity, flexibility and easing the maintenance advantages.
- YALI (Yet Another Linux Installer), the simple, fast and the pretty installer
- of Pardus ; COMAR (COnfiguration MAnageR) the package configurator and
- the central package services' bus; Package Manager (the graphical frontend
- of PiSi); Pardusman, the automatic Live or Install Pardus distribution
- CD/DVD creator that only needs for the packages to be selected; Buildfarm,
- the software that creates the binary repositories from the corresponding
- source repositories; all use PiSi internally.
- 
-\end_layout
-
-\begin_layout Standard
 Before deciding to write a new package system, we considered using the existing
  ones.
  3 years ago when the Pardus project was started, rpm has had many problems.
@@ -230,15 +217,14 @@ PiSi architecture is quite different from traditional designs.
  Every functionality, related to package management like installing, building,
  dependency solving, fetching, validating, repository management is in the
  core of PiSi.
- PiSi can work with both binary and source repositories or individual packages
- as in Gentoo's portage.
- On the other hand, package configuration (calling ldconfig, modifying global
- configuration files, etc.) is delegated to COMAR.
- 
-\end_layout
-
-\begin_layout Subsection*
-Traditional Build Systems
+ On the other hand, package configuration is clearly separated from package
+ management and is delegated to COMAR.
+ The configuration system is not limited with preremove or postinstall scripts;
+ it is a much more advanced system that makes all the installed packages
+ to be configured in a unique way by using the same COMAR API.
+ A package may provide a configuration service script to be used as a configurat
+ion interface for itself.
+ Configuration of packages can be done remotely or locally.
 \end_layout
 
 \begin_layout Standard
@@ -256,6 +242,19 @@ When it comes to a complex task like building a package, you need conditional
  other operations where you can all get from higher scripting languages
  also with additional advantages.
  For those reasons we have choosen Python.
+\end_layout
+
+\begin_layout Standard
+Python is the choice of Pardus in all of the distribution's core components
+ for its simplicity, flexibility and easing the maintenance advantages.
+ YALI (Yet Another Linux Installer), the simple, fast and the pretty installer
+ of Pardus ; COMAR (COnfiguration MAnageR) the package configurator and
+ the central package services' bus; Package Manager (the graphical frontend
+ of PiSi); Pardusman, the automatic Live or Install Pardus distribution
+ CD/DVD creator that only needs for the packages to be selected; Buildfarm,
+ the software that creates the binary repositories from the corresponding
+ source repositories; all use PiSi internally.
+ 
 \end_layout
 
 \begin_layout Subsection*
