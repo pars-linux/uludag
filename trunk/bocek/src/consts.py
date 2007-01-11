@@ -25,6 +25,7 @@ hardwareInfo= {"/bin/mount"                 :2,
                "/usr/bin/df -h"             :2,
                "/bin/service -N"            :2,
                "/sbin/muavin.py --debug"    :2,
+               "/proc/asound/cards"         :1,
                "/usr/bin/free"              :2}
 configFiles = {"/boot/grub/grub.conf"       :1,
                "/etc/fstab"                 :1,

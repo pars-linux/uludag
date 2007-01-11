@@ -64,6 +64,7 @@ class Bocek(BocekForm):
 
     def buildReport(self):
         if self.checkNeeds():
+            self.setCursor(Qt.waitCursor)
             self.output=""
             ## FIXME ProgressBar Support
             self.updateInfo("Please wait while collecting informations ..")
@@ -71,7 +72,7 @@ class Bocek(BocekForm):
             self.output+="Summary : %s \n" % self.lineSummary.text()
             self.output+="Details : %s \n" % self.lineDetails.text()
             self.output+="\nAdditional Files : \n%s\n"%("*"*40)
-            # self.progressBar.show()
+            self.progressBar.show()
             size=0
             for logs in checkedLogs:
                 size+=len(logs)
@@ -79,21 +80,31 @@ class Bocek(BocekForm):
             for logs in checkedLogs:
                 for log in logs:
                     self.output+="\n========» %s «========\n" % log
+                    self.updateInfo("Now getting : %s"%log)
                     if logs[log]==1:
                         self.output+=self.getStaticOutput(log)
                     elif logs[log]==2:
                         self.output+=self.getCommandOutput(log)
                     self.output+="\n"
-                    # self.progressBar.setProgress(self.progressBar.progress()+per)
-                    # self.progressBar.update()
-            # self.progressBar.setProgress(100)
+                    self.updateProgress(per)
+            self.progressBar.setProgress(100)
             self.lastReportFile = self.writeReport()
+            self.updateInfo("Report saved as %s "%self.lastReportFile)
+            self.setCursor(Qt.arrowCursor)
 
     def updateInfo(self,msg):
         self.labelStatus.setText(msg)
+        guiApp.processEvents(QEventLoop.ExcludeUserInput)
+
+    def updateProgress(self,percent):
+        self.progressBar.setProgress(self.progressBar.progress()+percent)
+        self.progressBar.update()
+        guiApp.processEvents(QEventLoop.ExcludeUserInput)
 
     def sendReport(self):
         if self.checkNeeds():
+            self.setCursor(Qt.waitCursor)
+            self.updateInfo("Bug report is sending .. Please wait..")
             if not self.lastReportFile:
                 self.buildReport()
             files = [self.lastReportFile]
@@ -103,15 +114,18 @@ class Bocek(BocekForm):
                     if os.stat(picPath)[6] < (consts.pictureMaxSize * 1000):
                         files.append(picPath)
             if mail.send_mail(str(self.lineEmail.text()),
-                              ["faik@pardus.org.tr"],
+                              ["gokmen@pardus.org.tr"],
                               str(self.lineSummary.text()),
                               str(self.lineDetails.text()),
                               files):
                 self.showInfo("Bug reported sucessfully")
+                self.updateInfo("Bug reported sucessfully")
             else:
                 self.showError("Error on message sending")
+                self.updateInfo("Error on message sending")
 
             self.lastReportFile=""
+        self.setCursor(Qt.arrowCursor)
 
     def writeReport(self):
         now = time.localtime()
@@ -122,11 +136,13 @@ class Bocek(BocekForm):
         return filename
 
     def takeScreen(self):
+        self.updateInfo("Taking screenshot...")
         now = time.localtime()
         filename = '/tmp/BugScreenShot.%s-%s-%s.png' % (now[2],now[3],now[4])
         if os.system("import -window root -colors 8 +dither %s" % filename) == 0:
             self.showInfo("Screenshot saved")
             self.picturePath.lineEdit().setText(filename)
+            self.updateInfo("Screenshot saved as %s"%filename)
 
     def checkNeeds(self):
         if (self.lineSummary.text()=="") or (self.lineDetails.text()==""):
