@@ -561,7 +561,7 @@ tion>
 
 \begin_layout Standard
 It is possible to create more than one binary package from a source package
- by defining more <Package/> tags into a pspec.xml file.
+ by defining more <Package> tags into a pspec.xml file.
 \end_layout
 
 \begin_layout Section
@@ -574,8 +574,8 @@ Dependency Resolver
 
 \begin_layout Standard
 As in all advanced package systems, PiSi has its own dependency resolver.
- Different from dpkg and rpm, it is designed to be within PiSi and not done
- with a wrapper tool.
+ It is designed to be within PiSi from the beginning and so different from
+ dpkg and rpm, not done with wrapper tools.
  It is based on a topological sort algorithm.
 \begin_inset LatexCommand \cite{key-72}
 
