@@ -112,7 +112,7 @@ class Bocek(BocekForm):
             picPath = str(self.picturePath.lineEdit().text())
             if not picPath=="":
                 if os.path.exists(picPath):
-                    if os.stat(picPath)[6] < (consts.pictureMaxSize * 1000):
+                    if os.stat(picPath).st_size < (consts.pictureMaxSize * 1000):
                         files.append(picPath)
             if not self.lastReportFile=="":
                 files.append(self.lastReportFile)
