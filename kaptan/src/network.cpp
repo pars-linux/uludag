@@ -30,34 +30,38 @@ Network::Network(QWidget *parent, const char* name)
 {
     embed = new QXEmbed(networkFrame);
     proc = new KProcess(this);
+    running = false;
 }
 
 void Network::embedManager()
 {
-    embed->initialize();
-
-    // FIXME: networkFrame->widht() || networkFrame->height() returns wrong value?
-    embed->resize(606, 390);
-
-    QLabel *busy = new QLabel(i18n("<big>Loading...</big>"), embed);
-    busy->setAlignment(AlignCenter);
-    busy->setTextFormat(RichText);
-    busy->setGeometry(0,0, width(), height());
-    busy->show();
-
-    // embed buttonless network-manager into Kaptan
-    *proc << "kcmshell";
-    *proc << "--embed-proxy";
-    *proc << QString::number(embed->winId());
-    *proc << "network-manager";
-
-    // if process exits kill kcmshell
-    connect(proc, SIGNAL(processExited(KProcess*)), this, SLOT(killProcess()));
-
-    if (!proc->start(KProcess::NotifyOnExit))
+    if ( ! running )
     {
-        delete proc;
-        proc = 0L;
+        embed->initialize();
+
+        // FIXME: networkFrame->widht() || networkFrame->height() returns wrong value?
+        embed->resize(606, 390);
+
+        QLabel *busy = new QLabel(i18n("<big>Loading...</big>"), embed);
+        busy->setAlignment(AlignCenter);
+        busy->setTextFormat(RichText);
+        busy->setGeometry(0,0, width(), height());
+        busy->show();
+
+        // embed buttonless network-manager into Kaptan
+        *proc << "kcmshell";
+        *proc << "--embed-proxy";
+        *proc << QString::number(embed->winId());
+        *proc << "network-manager";
+
+        // if process exits kill kcmshell
+        connect(proc, SIGNAL(processExited(KProcess*)), this, SLOT(killProcess()));
+        running = true;
+        if (!proc->start(KProcess::NotifyOnExit))
+        {
+            delete proc;
+            proc = 0L;
+        }
     }
 }
 
@@ -70,6 +74,8 @@ void Network::killProcess()
 {
     if (embed && embed->embeddedWinId())
         XKillClient(qt_xdisplay(), embed->embeddedWinId());
+
+    running = false;
 
     delete embed;
     embed = 0;

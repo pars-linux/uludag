@@ -33,6 +33,7 @@ protected slots:
 private:
     QXEmbed *embed;
     KProcess *proc;
+    bool running;
 };
 
 #endif // NETWORK_H
