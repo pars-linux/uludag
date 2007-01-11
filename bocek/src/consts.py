@@ -39,3 +39,5 @@ configFiles = {"/boot/grub/grub.conf"       :1,
 packageInfo = {"/usr/bin/pisi li -i"        :2,
                "/usr/bin/pisi lr"           :2,
                "/usr/bin/pisi lu -i"        :2}
+# Kb
+pictureMaxSize = 400
