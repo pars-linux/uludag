@@ -854,11 +854,51 @@ LZMA, short for Lempel-Ziv-Markov chain-Algorithm, is a data compression
 
 \begin_layout Standard
 The package format is a zip archive.
- It makes it possible to reach the metadata files of the package faster
- by using standard tools.
+ This makes it possible to reach the metadata and COMAR related files of
+ the package faster by using the standard tools.
  Under the zip archive, there exists install.tar.lzma file that contains the
  actual files of the package to be extracted to the system.
- 
+ A sample pisi package contents are as following:
+\end_layout
+
+\begin_layout LyX-Code
+Archive:
+\end_layout
+
+\begin_layout LyX-Code
+ /var/cache/pisi/packages/openssh-4.5_p1-13-10.pisi
+\end_layout
+
+\begin_layout LyX-Code
+  Length     Date   Time    Name
+\end_layout
+
+\begin_layout LyX-Code
+ --------    ----   ----    ----
+\end_layout
+
+\begin_layout LyX-Code
+     1357  10-22-06 21:16   comar/service.py
+\end_layout
+
+\begin_layout LyX-Code
+     6824  11-10-06 11:59   metadata.xml
+\end_layout
+
+\begin_layout LyX-Code
+     7803  11-10-06 11:59   files.xml
+\end_layout
+
+\begin_layout LyX-Code
+   388881  11-10-06 11:59   install.tar.lzma
+\end_layout
+
+\begin_layout LyX-Code
+ --------                   -------    404865                   4 files
+\end_layout
+
+\begin_layout LyX-Code
+
 \end_layout
 
 \begin_layout Subsection*
