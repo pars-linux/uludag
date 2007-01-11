@@ -63,50 +63,55 @@ class Bocek(BocekForm):
         guiApp.quit()
 
     def buildReport(self):
-        self.output=""
-        self.labelStatus.setText("Please wait while collecting informations ..")
-        checkedLogs = self.getCheckedLogs()
-        # self.output ="From : %s (%s) at %s\n"%(lineEmail.text(),getIp,time)
-        self.output+="Summary : %s \n" % self.lineSummary.text()
-        self.output+="Details : %s \n" % self.lineDetails.text()
-        self.output+="\nAdditional Files : \n%s\n"%("*"*40)
-        self.progressBar.show()
-        size=0
-        for logs in checkedLogs:
-            size+=len(logs)
-        per = 100 / size
-        for logs in checkedLogs:
-            for log in logs:
-                self.output+="\n========» %s «========\n" % log
-                if logs[log]==1:
-                    self.output+=self.getStaticOutput(log)
-                elif logs[log]==2:
-                    self.output+=self.getCommandOutput(log)
-                self.output+="\n"
-                self.progressBar.setProgress(self.progressBar.progress()+per)
-                self.progressBar.update()
-        self.progressBar.setProgress(100)
-        self.lastReportFile = self.writeReport()
+        if self.checkNeeds():
+            self.output=""
+            ## FIXME ProgressBar Support
+            self.updateInfo("Please wait while collecting informations ..")
+            checkedLogs = self.getCheckedLogs()
+            self.output+="Summary : %s \n" % self.lineSummary.text()
+            self.output+="Details : %s \n" % self.lineDetails.text()
+            self.output+="\nAdditional Files : \n%s\n"%("*"*40)
+            # self.progressBar.show()
+            size=0
+            for logs in checkedLogs:
+                size+=len(logs)
+            per = 100 / size
+            for logs in checkedLogs:
+                for log in logs:
+                    self.output+="\n========» %s «========\n" % log
+                    if logs[log]==1:
+                        self.output+=self.getStaticOutput(log)
+                    elif logs[log]==2:
+                        self.output+=self.getCommandOutput(log)
+                    self.output+="\n"
+                    # self.progressBar.setProgress(self.progressBar.progress()+per)
+                    # self.progressBar.update()
+            # self.progressBar.setProgress(100)
+            self.lastReportFile = self.writeReport()
+
+    def updateInfo(self,msg):
+        self.labelStatus.setText(msg)
 
     def sendReport(self):
-        if not self.lastReportFile:
-            self.buildReport()
-        files = [self.lastReportFile]
-        picPath = str(self.picturePath.lineEdit().text())
-        if not picPath=="":
-            if os.path.exists(picPath):
-                if os.stat(picPath)[6] < (consts.pictureMaxSize * 1000):
-                    files.append(picPath)
-        if mail.send_mail(str(self.lineEmail.text()),
-                          ["gokmen@pardus.org.tr"],
-                          str(self.lineSummary.text()),
-                          str(self.lineDetails.text()),
-                          files):
-            print "Message sent."
-        else:
-            print "Error on message sending"
+        if self.checkNeeds():
+            if not self.lastReportFile:
+                self.buildReport()
+            files = [self.lastReportFile]
+            picPath = str(self.picturePath.lineEdit().text())
+            if not picPath=="":
+                if os.path.exists(picPath):
+                    if os.stat(picPath)[6] < (consts.pictureMaxSize * 1000):
+                        files.append(picPath)
+            if mail.send_mail(str(self.lineEmail.text()),
+                              ["faik@pardus.org.tr"],
+                              str(self.lineSummary.text()),
+                              str(self.lineDetails.text()),
+                              files):
+                self.showInfo("Bug reported sucessfully")
+            else:
+                self.showError("Error on message sending")
 
-        self.lastReportFile=""
+            self.lastReportFile=""
 
     def writeReport(self):
         now = time.localtime()
@@ -120,8 +125,20 @@ class Bocek(BocekForm):
         now = time.localtime()
         filename = '/tmp/BugScreenShot.%s-%s-%s.png' % (now[2],now[3],now[4])
         if os.system("import -window root -colors 8 +dither %s" % filename) == 0:
-            print "screenshot saved."
+            self.showInfo("Screenshot saved")
             self.picturePath.lineEdit().setText(filename)
+
+    def checkNeeds(self):
+        if (self.lineSummary.text()=="") or (self.lineDetails.text()==""):
+            self.showError("Bug reports must have Summary and Details")
+            return False
+        return True
+
+    def showError(self,msg):
+        KMessageBox.sorry(self,msg,"Error")
+
+    def showInfo(self,msg):
+        KMessageBox.information(self,msg,"Info")
 
     def getStaticOutput(self,filename):
         try:
