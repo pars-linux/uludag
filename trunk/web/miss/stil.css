@@ -7,7 +7,7 @@ body {
 #container {
     width: 900px;
     background-color: #FFF;
-    margin: 0 auto;
+    margin: 0px auto;
     padding: 1px;
     border: 2px solid #DDD;
 }
@@ -49,7 +49,7 @@ a {
     width: 99%;
     height: 91px;
     padding: 5px;
-    padding-top: 20px;
+    padding-top: 0px;
     padding-left: 10px;
 }
 
@@ -57,7 +57,7 @@ a {
     padding-left: 80px;
     padding-top: 4px;
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
-    font-size: 60%;
+    font-size: 70%;
 }
 
 #page {
@@ -73,11 +73,6 @@ a {
 #mainpage{
     width: 99%;
     padding-top: -25px;
-}
-
-.blue p,#modules ul {
-    margin-top: 2px;
-    padding-top: 2px;
 }
 
 /*IE*/
@@ -97,25 +92,6 @@ html>body li {
 }
 
 
-.blue #modules li {
-    border-bottom: 1px solid #98C2DC;
-    padding-bottom: 4px;
-    margin-top: 6px;
-    font-size: 11px;
-}
-
-#modules ul {
-    padding-left: 0px;
-}
-
-#modules {
-    float: right;
-    width: 260px;
-    padding-right: 10px;
-    padding-left: 10px;
-    background-color: #EEE
-}
-
 #navi {
     clear: both;
     padding-left: 10px;
@@ -128,4 +104,62 @@ html>body li {
     margin-bottom: 10px;
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
     font-size: 12px;
+}
+
+/* Yeni CSS */
+
+#mansetler {
+    float:left;
+    min-height:300px;
+    height:300px;
+    margin:0;
+    width:574px;
+}
+
+.manset {
+    padding-left:7px;
+}
+
+.manset h2 {
+    margin:0;
+    font-size:17px;
+}
+
+#haberler {
+    float:right;
+    background-image: url('resim/sagsutun_zemin.png');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    margin:0;
+    width:306px;
+    position:relative;
+}
+
+.haber {
+    float:left;
+    padding:5px;
+    margin:0;
+}
+
+.haber h2 {
+    padding-left:15px;
+    background-image: url('resim/isaret-mavi.png');
+    background-repeat: no-repeat;
+    background-position: 0px 7px;
+    vertical-align: bottom;
+    margin:0;
+}
+
+.haber ul {
+    padding-left:10px;
+    margin-bottom:0;
+}
+
+.haber li {
+    padding-left:15px;
+    margin-top:3px;
+    background-image: url('resim/isaret5.png');
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+    vertical-align: top;
 }
