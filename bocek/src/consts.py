@@ -12,6 +12,7 @@
 
 standartLogs= {"/usr/bin/uname -a"          :2,
                "/bin/dmesg"                 :2,
+               "/var/log/xlog"              :1,
                "/var/log/Xorg.0.log"        :1}
 hardwareInfo= {"/bin/mount"                 :2,
                "/sbin/ifconfig -a"          :2,

@@ -108,7 +108,11 @@ class Bocek(BocekForm):
         return filename
 
     def getStaticOutput(self,filename):
-        return file(filename,'r').read()
+        try:
+            ret=file(filename,'r').read()
+        except:
+            ret="»ERR» FILE NOT FOUND !!\n"
+        return ret
 
     def getCommandOutput(self,cmd):
         a = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
