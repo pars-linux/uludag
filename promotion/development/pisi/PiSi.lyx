@@ -42,7 +42,7 @@ Faik Uygur
 \begin_layout Abstract
 With thousands of packages to maintain, the most important part of any distribut
 ion is indeed its package management system.
- PiSi is the package manager of Pardus written from scratch in Python.
+ PiSi is the package manager of Pardus, written from scratch in Python.
  By writing another package manager, our purpose was not to reinvent the
  wheel but to create a new kind of wheel that takes the distinctive ideas
  from the existing ones with also easy integration and maintanence in mind.
@@ -107,8 +107,12 @@ interactive package installation
 
 \end_inset
 
-Also as they seem to be different in their nature the mechanism behind them
- and the ways are the same that were not satisfying us.
+
+\end_layout
+
+\begin_layout Standard
+Also as they seem to be different in their nature, the mechanism behind
+ them and the ways are the same that were not satisfying us.
  We wanted something different.
  
 \end_layout
@@ -240,7 +244,7 @@ PiSi architecture is quite different from traditional designs.
  dependency solving, fetching, validating, repository management is in the
  core of PiSi.
  On the other hand, package configuration is clearly separated from package
- management and is delegated to COMAR.
+ management system and is delegated to COMAR.
  The configuration system is not limited with preremove or postinstall scripts;
  it is a much more advanced system that makes all the installed packages
  to be configured in a unique way by using the same COMAR API.
@@ -270,12 +274,29 @@ When it comes to a complex task like building a package, you need conditional
 Python is the choice of Pardus in all of the distribution's core components
  for its simplicity, flexibility and easing the maintenance advantages.
  YALI (Yet Another Linux Installer), the simple, fast and the pretty installer
- of Pardus ; COMAR (COnfiguration MAnageR) the package configurator and
- the central package services' bus; Package Manager (the graphical frontend
- of PiSi); Pardusman, the automatic Live or Install Pardus distribution
- CD/DVD creator that only needs for the packages to be selected; Buildfarm,
- the software that creates the binary repositories from the corresponding
- source repositories; all use PiSi internally.
+ of Pardus 
+\begin_inset LatexCommand \cite{key-79}
+
+\end_inset
+
+; Package Manager (the graphical frontend of PiSi) 
+\begin_inset LatexCommand \cite{key-80}
+
+\end_inset
+
+; Pardusman, the automatic Live or Install Pardus distribution CD/DVD creator
+ that only needs for the packages to be selected 
+\begin_inset LatexCommand \cite{key-81}
+
+\end_inset
+
+; Buildfarm, the software that creates the binary repositories from the
+ corresponding source repositories 
+\begin_inset LatexCommand \cite{key-82}
+
+\end_inset
+
+; all use PiSi internally.
  
 \end_layout
 
@@ -326,11 +347,11 @@ pspec.xml and actions.py files are in the root directory of the package.
  files directory is optional and may contain the patches or additional files
  to the package.
  comar directory is also optional.
- It may contain a package.py file that has a postInstall script, a service.py
- file to be registered to COMAR daemon or a management script to be registered
- to COMAR daemon that with it, the package exports its functionally to the
- rest of the system.
- COMAR needs an article of its own so we will not focus to COMAR related
+ It may contain a package.py file that is a postInstall/preRemove operations
+ script, a service.py file if the package provides a system service or a
+ management script that exports the package's functionalities to the rest
+ of the system; all to be registered to COMAR daemon.
+ COMAR needs an article of its own so we will not focus on the COMAR related
  parts.
 \end_layout
 
@@ -339,17 +360,22 @@ Build Scripts
 \end_layout
 
 \begin_layout Standard
-PiSi build scripts are divided to three phases: setup, build and install.
+PiSi build scripts are divided into three phases: setup, build and install.
  setup is the configuration phase prior to build.
- build phase is the actual compilation phase.
+ Build phase is the actual compilation phase.
  And the install phase is where the build output is installed to the destination
  system.
- Depending to the package setup and build phases may be optional.
+ Depending to the package, setup and build phases may be optional.
 \end_layout
 
 \begin_layout Standard
-Most of the build systems that comes with source archives of packages roughly
- needs these steps to install the software but they differ from each other.
+Most of the build automation software systems 
+\begin_inset LatexCommand \cite{key-87}
+
+\end_inset
+
+ that are used by the source archives of the packages, roughly need these
+ steps to install the software but they differ from each other.
  So what PiSi does is to provide an underlying and unified framework for
  the known build systems and make the packagers' lives easier.
  This framework is called ActionsAPI and is included with PiSi package as
@@ -439,14 +465,15 @@ Package Specifications
 
 \begin_layout Standard
 Build scripts are not enough to create a package.
- There are some other necessary infos used in the build phase and also some
- meta data that will be placed in the output package.
+ There are some other necessary informations used in the build phase and
+ also some meta data that is needed to be placed in the output package.
  We decided to separate the meta data from the build scripts and placed
  them into a file called pspec.xml.
- Pspec.xml holds build related infos like runtime and buildtime dependencies
- of a package, path and sha1sum of the source archive, patches to be applied
- and other meta data infos like packager information, description, summary,
- homepage of the software project and changelog info of the package, etc.
+ Pspec.xml holds build related informations like runtime and buildtime dependenci
+es of a package, path and sha1sum of the source archive, patches to be applied
+ and other meta data informations like packager information, description,
+ summary, homepage of the software project and changelog info of the package,
+ etc.
  We decided to put the data into a XML file instead of using an ad-hoc text
  format.
 \end_layout
@@ -823,13 +850,15 @@ The source packages are extracted and compiled under /var/pisi directory.
 \begin_layout Standard
 The great thing is that you don't need a source repository to work with
  the source packages.
- It is possible to build a package by providing only the remote url of the
- spec file without having any source repository added to PiSi database.
+ It is possible to build a package by providing only the local path or the
+ remote url of a spec file without having any source repository added to
+ PiSi database.
  
 \end_layout
 
 \begin_layout Standard
-Here is an example to build the same package by providing only its url:
+Here is an example to build the same package by providing only its remote
+ url:
 \end_layout
 
 \begin_layout LyX-Code
@@ -879,8 +908,8 @@ LZMA, short for Lempel-Ziv-Markov chain-Algorithm, is a data compression
 
 \begin_layout Standard
 The package format is a zip archive.
- This makes it possible to reach the metadata and COMAR related files of
- the package faster by using the standard tools.
+ This makes it possible to reach the metadata and COMAR files of the package
+ faster by using the standard tools.
  Under the zip archive, there exists install.tar.lzma file that contains the
  actual files of the package to be extracted to the system.
  A sample pisi package contents are as following:
@@ -938,8 +967,8 @@ d package operations.
  Package-Manager, the PiSi frontend uses these services to install, remove,
  upgrade packages or add/remove new repositories to PiSi database.
  The authorization is done by the COMAR daemon.
- By extending these services, it is also possible to remotely manage the
- package system of any machine.
+ By extending these services, it will also be possible to remotely manage
+ the package system of any machine.
 \end_layout
 
 \begin_layout Standard
@@ -1002,7 +1031,7 @@ One of the important things PiSi lacks right now is package signing and
 One other feature we are going to work on is the delta pisi package format.
  We decided not to use a binary diff tool like xdelta.
  LZMA does its job well on the compression part so we are working on the
- possibility of creating packages only with the effected or changed files.
+ possibility of creating packages only with the affected or changed files.
 \end_layout
 
 \begin_layout Standard
@@ -1111,6 +1140,36 @@ http://subterfugue.org/
 
 \bibitem {key-78}
 http://svn.pardus.org.tr/uludag/trunk/catbox/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-79}
+http://www.pardus.org.tr/eng/projects/yali/index.html
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-80}
+http://www.pardus.org.tr/eng/projects/package-manager/index.html
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-81}
+http://svn.pardus.org.tr/uludag/trunk/pardusman/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-82}
+http://svn.pardus.org.tr/uludag/trunk/buildfarm/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-87}
+http://en.wikipedia.org/wiki/Build_Automation
 \end_layout
 
 \end_body
