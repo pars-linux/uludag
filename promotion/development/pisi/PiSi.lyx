@@ -87,7 +87,7 @@ Before deciding to write a new package system, we considered using the existing
 \begin_layout Standard
 As for DPKG, in spite of it is much more problemless state than RPM and
  having a better upstream, we had found its architecture hard to work on.
- It is too much work to prapare a package for DPKG and some decisions like
+ It is too much work to prepare a package for DPKG and some decisions like
  
 \begin_inset Quotes eld
 \end_inset
@@ -110,8 +110,9 @@ Also as they seem to be different in their nature the mechanism behind them
 \end_layout
 
 \begin_layout Standard
-The package manager in our mind should ease the package creation for package
- developers and should pave the way for working with binary packages.
+The package manager in our mind should ease the package creation task for
+ the package developers and should pave the way for working with binary
+ packages.
  For the former Gentoo's portage had some good ideas.
  So at the end we decided to design PiSi with all the advantages of the
  ones over each other and write it in Python.
