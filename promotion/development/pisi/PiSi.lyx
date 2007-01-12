@@ -85,10 +85,10 @@ Before deciding to write a new package system, we considered using the existing
 \end_layout
 
 \begin_layout Standard
-As for DPKG, in spite of it is much more problemless state than RPM and
- having a better upstream, we had found its architecture hard to work on.
- It is too much work to prepare a package for DPKG and some decisions like
- 
+As for DPKG, in spite of its much more problemless state than RPM and having
+ a better upstream, we had found its architecture hard to work on.
+ Package preparation is cumbersome and complicated.
+ Also some decisions like 
 \begin_inset Quotes eld
 \end_inset
 
@@ -97,6 +97,10 @@ interactive package installation
 \end_inset
 
  wasn't the ideas we would support for our distribution.
+ The installation of any package should just be done without confusing the
+ user with the configuration internals of any package.
+ The user should only select and install the package.
+ Configuration should not be the job of a package system.
  Moreover, as it was stated in a discussion made years ago, its code has
  had become brittle.
 \begin_inset LatexCommand \cite{key-70}
@@ -113,7 +117,7 @@ Also as they seem to be different in their nature the mechanism behind them
 The package manager in our mind should ease the package creation task for
  the package developers and should pave the way for working with binary
  packages.
- For the former Gentoo's portage had some good ideas.
+ For the former, Gentoo's portage had some good ideas.
  So at the end we decided to design PiSi with all the advantages of the
  ones over each other and write it in Python.
  As all the other components of the distribution were going to be written
@@ -1007,6 +1011,31 @@ There are suboptimal usages of Berkeley DB.
  This is also planned to be fixed in the next major release.
 \end_layout
 
+\begin_layout Standard
+A sandbox support for PiSi is also planned.
+ There are two ways to sandbox a build script within user context: Overriding
+ glibc functions with LD_PRELOAD or intercepting system calls with ptrace.
+ We decided to go with the ptrace, cause former makes it cumbersome to pass
+ Python variables between builder and build scripts.
+ We considered Subterfugue
+\begin_inset LatexCommand \cite{key-77}
+
+\end_inset
+
+, but although it is extremely flexible with the Python system call hooks,
+ it isn't fast enough for production use in a build farm.
+ Thus we wrote catbox
+\begin_inset LatexCommand \cite{key-78}
+
+\end_inset
+
+, a small sandboxing module for PiSi.
+ It is completely written in C, and designed to do just the required features
+ for package management.
+ Not all features are completed yet, but basic sandboxing works and will
+ be incorparated with PiSi in the future.
+\end_layout
+
 \begin_layout Section
 Conclusion
 \end_layout
@@ -1070,6 +1099,18 @@ http://www.pardus.org.tr/eng/projects/translation/stats/
 
 \bibitem {key-76}
 http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-77}
+http://subterfugue.org/
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-78}
+http://svn.pardus.org.tr/uludag/trunk/catbox/
 \end_layout
 
 \end_body
