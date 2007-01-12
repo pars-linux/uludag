@@ -118,7 +118,7 @@ class Bocek(BocekForm):
                 files.append(self.lastReportFile)
             self.updateInfo("Bug report is sending .. Please wait..")
             if mail.send_mail(str(self.lineEmail.text()),
-                              ["gokmen@pardus.org.tr"],
+                              ["bocek@pardus.org.tr"],
                               str(self.lineSummary.text()),
                               str(self.lineDetails.text()),
                               files):
