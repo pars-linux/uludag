@@ -69,7 +69,7 @@ PiSi (Packages Installed Succesfully, as intended) is the package manager
 \begin_layout Standard
 Before deciding to write a new package system, we considered using the existing
  ones.
- 3 years ago when the Pardus project was started, rpm has had many problems.
+ 3 years ago when the Pardus project was started, RPM has had many problems.
  
 \begin_inset LatexCommand \cite{key-68}
 
@@ -81,12 +81,24 @@ Before deciding to write a new package system, we considered using the existing
 
 \end_inset
 
-As for dpkg, in spite of it is much more problemless state than rpm and
- having a better upstream, we had found its code hard to work on.
- It has had been developed nearly 10 years and very few projects manage
- to keep its codebase clean for that many years.
- As it was stated in a discussion made years ago, its code has had become
- brittle.
+
+\end_layout
+
+\begin_layout Standard
+As for DPKG, in spite of it is much more problemless state than RPM and
+ having a better upstream, we had found its architecture hard to work on.
+ It is too much work to prapare a package for DPKG and some decisions like
+ 
+\begin_inset Quotes eld
+\end_inset
+
+interactive package installation
+\begin_inset Quotes erd
+\end_inset
+
+ wasn't the ideas we would support for our distribution.
+ Moreover, as it was stated in a discussion made years ago, its code has
+ had become brittle.
 \begin_inset LatexCommand \cite{key-70}
 
 \end_inset
@@ -94,8 +106,13 @@ As for dpkg, in spite of it is much more problemless state than rpm and
 Also as they seem to be different in their nature the mechanism behind them
  and the ways are the same that were not satisfying us.
  We wanted something different.
- The closest one in our minds was the Gentoo's portage tool.
- PiSi has many features inspired from portage.
+ 
+\end_layout
+
+\begin_layout Standard
+The package manager in our mind should ease the package creation for package
+ developers and should pave the way for working with binary packages.
+ For the former Gentoo's portage had some good ideas.
  So at the end we decided to design PiSi with all the advantages of the
  ones over each other and write it in Python.
  As all the other components of the distribution were going to be written
@@ -200,7 +217,7 @@ Actually this was intentionally made that way.
 \begin_layout Standard
 The first complication comes from the different tools that combined make
  the desired package management possible.
- The so called native package managers (dpkg, rpm, etc.) does the house keeping
+ The so called native package managers (DPKG, RPM, etc.) does the house keeping
  jobs and above them there exists many other wrapper tools (apt, dselect,
  urpmi, yum, aptrpm, etc.) for mainly handling the dependency resolution,
  package selection and installation issues.
@@ -575,7 +592,7 @@ Dependency Resolver
 \begin_layout Standard
 As in all advanced package systems, PiSi has its own dependency resolver.
  It is designed to be within PiSi from the beginning and so different from
- dpkg and rpm, not done with wrapper tools.
+ DPKG and RPM, not done with wrapper tools.
  It is based on a topological sort algorithm.
 \begin_inset LatexCommand \cite{key-72}
 
@@ -927,7 +944,6 @@ Below is a screenshot from the PiSi frontend, Package-Manager.
 \begin_layout Standard
 \begin_inset Graphics
 	filename package-manager.png
-	rotateOrigin center
 
 \end_inset
 
