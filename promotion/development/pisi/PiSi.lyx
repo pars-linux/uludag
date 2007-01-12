@@ -921,6 +921,10 @@ d package operations.
 \end_layout
 
 \begin_layout Standard
+Below is a screenshot from the PiSi frontend, Package-Manager.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Graphics
 	filename package-manager.png
 	rotateOrigin center
