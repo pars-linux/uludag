@@ -45,7 +45,7 @@ ion is indeed its package management system.
  PiSi is the package manager of Pardus written from scratch in Python.
  By writing another package manager, our purpose was not to reinvent the
  wheel but to create a new kind of wheel that takes the distinctive ideas
- from the existing ones and easy integration and maintanence in mind.
+ from the existing ones with also easy integration and maintanence in mind.
 \newline
 
 \end_layout
@@ -719,11 +719,11 @@ s.
 \end_layout
 
 \begin_layout Standard
-The source and binary repositories are represented by an their index files
+The source and binary repositories are represented by their index files
  named pisi-index.xml.
  Both created by PiSi's index command executed from the root of the repository.
  The index command creates a pisi-index.xml file out of that repository tree.
- Adding new repositories to PiSi is as simple as:
+ Adding and using new repositories to PiSi is as simple as:
 \end_layout
 
 \begin_layout LyX-Code
@@ -742,15 +742,15 @@ Building and Emerging of Packages
 \begin_layout Standard
 In the example above, we have added a source repository named pardus-2007-source
 s.
- The given repository name is arbitrary.
+ The given repository names are arbitrary.
 \end_layout
 
 \begin_layout Standard
 After adding a source repository we have many options to work with the source
  packages.
- First of all since we have all the source package informations from a repositor
-y, we can simply build any package by giving the name of the package as
- in:
+ First of all, since we have all the source package informations from a
+ repository, we can simply build any package by giving only the name of
+ the package as in:
 \end_layout
 
 \begin_layout LyX-Code
@@ -759,24 +759,24 @@ y, we can simply build any package by giving the name of the package as
 
 \begin_layout Standard
 The build command will fetch the original source archive, the patches provided
- by the source package, additional files and comar scripts to a temporary
+ by the source package, additional files and COMAR scripts to a temporary
  location.
- If there are missing build dependencies, to satisfy, PiSi will try to install
+ If there are missing build dependencies to satisfy, PiSi will try to install
  them.
- After building the binary kiki-x-y-z.pisi package will be ready.
+ After building, the binary kiki-x-y-z.pisi package will be created.
 \end_layout
 
 \begin_layout Standard
 The build process is divided into multiple steps.
  For example, you may not want to build the binary package but just to see
  the source code of the software provided with that package.
- Or you want to work on that code and try multiple builds until you are
- finished and then continue to other steps of the binary package creation
+ Or you may want to work on that code and try multiple builds until you
+ are finished and then continue to other steps of the binary package creation
  operation.
  The build command steps are: fetch, unpack, setup, build, install, package.
- Fetch step just, fetches the source tarball of the package.
+ Fetch step just fetches the source tarball of the package.
  Unpack step extracts the archive and then applies any existing patches.
- setup, build and install are the actual building steps.
+ Setup, build and install are the actual building steps.
  The last step, package, is the one that creates the binary 
 \begin_inset Quotes erd
 \end_inset
@@ -800,9 +800,9 @@ The source packages are extracted and compiled under /var/pisi directory.
 
 \begin_layout Standard
 The great thing is that you don't need a source repository to work with
- source packages.
- It is possible to build a package by providing the remote url of the spec
- file without having any source repository added to PiSi database.
+ the source packages.
+ It is possible to build a package by providing only the remote url of the
+ spec file without having any source repository added to PiSi database.
  
 \end_layout
 
@@ -821,9 +821,12 @@ One other feature of PiSi is its ability to emerge source packages from
 s of the package.
  If they do not exist in any binary repository, PiSi also tries to emerge
  those missing dependencies from the source repositories.
- Because a source repository is represented by the index file and building
- a package by its remote url is possible, for emerging a source package,
- PiSi does not need all the source repository packages to be downloaded.
+ Because a source repository is represented by the index file that also
+ contains all the dependency informations and building a package by its
+ remote url is possible, for emerging a source package, PiSi does not need
+ all the source repository packages to be downloaded.
+ You only need to add the source repository of the packages to PiSi database
+ to emerge.
 \end_layout
 
 \begin_layout Standard
@@ -925,7 +928,7 @@ i18n Support
 The xml spec file format makes it possible to provide translations of the
  description and summary of the packages to other languages.
  We are aware of the problem that just updating a translation itself would
- need a release increase and therefore a pakcage update.
+ need a release increase and therefore a package update.
  i18n support is important so we will try to balance that problem by waiting
  the next release of the package with an actual update need.
  We are planning to create a delta pisi package format in the future that
