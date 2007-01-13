@@ -116,17 +116,17 @@ class Bocek(BocekForm):
                         files.append(picPath)
             if not self.lastReportFile=="":
                 files.append(self.lastReportFile)
-            self.updateInfo("Bug report is sending .. Please wait..")
+            self.updateInfo("Sending bug report... Please wait.")
             if mail.send_mail(str(self.lineEmail.text()),
                               ["bocek@pardus.org.tr"],
                               str(self.lineSummary.text()),
                               str(self.lineDetails.text()),
                               files):
-                self.showInfo("Bug reported sucessfully")
-                self.updateInfo("Bug reported sucessfully")
+                self.showInfo("Your bug is reported successfully")
+                self.updateInfo("Your bug is reported successfully")
             else:
-                self.showError("Error on message sending")
-                self.updateInfo("Error on message sending")
+                self.showError("Error on sending the bug report")
+                self.updateInfo("Error on sending the bug report")
 
             self.lastReportFile=""
         self.setCursor(Qt.arrowCursor)
