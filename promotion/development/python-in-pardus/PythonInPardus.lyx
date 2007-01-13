@@ -799,14 +799,40 @@ Custom Modules
 \end_layout
 
 \begin_layout Standard
+In the process of Pardus development, we have encountered some common problems,
+ and wrote some generic modules to deal with them.
+\end_layout
+
+\begin_layout Subsection*
 piksemel
 \end_layout
 
 \begin_layout Standard
-catbox
+Unfortunately XML module of the standard Python library is too slow for
+ serious usage.
+ Parsing the package content information of the TeTeX PiSi package (a 2.137.893
+ bytes XML file), for example, takes almost two seconds on a 1.66 GHz dual
+ core Intel processor.
+ Another problem is the API is cumbersome to use, and quite un-Pythonic.
 \end_layout
 
 \begin_layout Standard
+We first switched to 4suite package, and gained quite a bit of speed.
+ Then wrote our own module based on iksemel [sayfasina link ver] library.
+ It is very small (designed mainly for embedded systems), and much faster
+ than other parsers.
+ Python API we add around it is designed to be easy to use and more Pythonic.
+\end_layout
+
+\begin_layout Standard
+(örnekler burada)
+\end_layout
+
+\begin_layout Subsection*
+catbox
+\end_layout
+
+\begin_layout Subsection*
 pyaspects
 \end_layout
 
