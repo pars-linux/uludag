@@ -34,6 +34,8 @@ __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
 def buildPackages():
+    sys.excepthook = handle_exception
+
     qmgr = qmanager.QueueManager()
     queue = copy.copy(qmgr.getWorkQueue())
 
@@ -93,12 +95,15 @@ def buildPackages():
 
     logger.raw(_("QUEUE"))
     logger.info(_("Wait Queue: %s") % (qmgr.getWaitQueue()))
-    if qmgr.waitQueue:
-        mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(qmgr.waitQueue))
+    if qmgr.getWaitQueue():
+        mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(qmgr.getWaitQueue()))
+        return qmgr.getWaitQueue()
     else:
         mailer.info(_("Queue finished without a problem!..."))
-    logger.raw()
+    return True
 
+def buildIndex():
+    pass
     # logger.raw()
     # logger.info(_("Generating PiSi Index..."))
 
@@ -180,20 +185,6 @@ def removeBinaryPackageFromWorkDir(package):
     remove = os.remove
     remove(join(config.workDir, package))
 
-def create_directories():
-    directories = [config.workDir,
-                   config.binaryPath,
-                   config.localPspecRepo,
-                   config.outputDir]
-
-    for dir in directories:
-        if dir and not os.path.isdir(dir):
-            try:
-                os.makedirs(dir)
-            except OSError:
-                raise _("Directory '%s' cannot be created, permission problem?") % dir
-
-
 def handle_exception(exception, value, tb):
     s = cStringIO.StringIO()
     traceback.print_tb(tb, file = s)
@@ -205,7 +196,4 @@ def handle_exception(exception, value, tb):
 
 
 if __name__ == "__main__":
-    sys.excepthook = handle_exception
-    create_directories()
-
     buildPackages()
