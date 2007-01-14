@@ -76,6 +76,7 @@ class RepositoryManager:
             if f.close():
                 logger.error("SVN'de bir sorun var :(")
                 raise RepoError("SVN'de bir sorun var:\n %s" % (out))
+                # FIXME: sys.exit is fatal for server
                 sys.exit(-1)
             os.chdir(oldwd)
             return out

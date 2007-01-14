@@ -36,12 +36,14 @@ class DependencyResolver:
         for pspec in self.pspeclist: self.rdepmap[pspec] = self.__getRuntimeDependencies__(pspec)
         for pspec in self.pspeclist: self.namemap[pspec] = self.__getPackageNames__(pspec)
 
+    # FIXME: http://bugs.pardus.org.tr/show_bug.cgi?id=3854
     def __getBuildDependencies__(self, pspec):
         specFile = pisi.specfile.SpecFile()
         try:
             specFile.read(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
+            # FIXME: sys.exit is fatal for server
             sys.exit(-1)
 
         deps = []
@@ -50,11 +52,13 @@ class DependencyResolver:
 
         return deps
 
+    # FIXME: http://bugs.pardus.org.tr/show_bug.cgi?id=3854
     def __getRuntimeDependencies__(self, pspec):
         try:
             specFile = pisi.specfile.SpecFile(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
+            # FIXME: sys.exit is fatal for server
             sys.exit(-1)
 
         deps = []
@@ -69,6 +73,7 @@ class DependencyResolver:
             specFile = pisi.specfile.SpecFile(pspec)
         except:
             logger.error("%s'de sorun var :(" % pspec)
+            # FIXME: sys.exit is fatal for server
             sys.exit(-1)
 
         try:
@@ -106,5 +111,3 @@ class DependencyResolver:
 
         os.chdir(self.oldwd)
         return self.pspeclist
-
-
