@@ -42,10 +42,6 @@ def buildPackages():
         #  FIXME: sys.exit is fatal for server
         sys.exit(1)
 
-    # FIXME: Use fcntl.flock
-    f = open("/var/run/buildfarm", 'w')
-    f.close()
-
     logger.raw(_("QUEUE"))
     logger.info(_("Work Queue: %s") % (qmgr.getWorkQueue()))
     sortedQueue = qmgr.getWorkQueue()[:]
@@ -120,8 +116,6 @@ def buildPackages():
 
     # os.chdir(current)
 
-    # FIXME: Use fcntl.funlock
-    os.unlink("/var/run/buildfarm")
     return True
 
 def movePackages(newBinaryPackages, oldBinaryPackages):

@@ -24,6 +24,7 @@ print "WaitQueue: %s" % server.getWaitQueue()
 print "Remove A from WorkQueue: %s" % server.removeFromWorkQueue("a/pspec.xml")
 print "Append B to WaitQueue: %s" % server.appendToWaitQueue("b/pspec.xml")
 print "Append A to WorkQueue: %s" % server.appendToWorkQueue("a/pspec.xml")
+print "Transfer A to WaitQueue: %s" % server.transferToWorkQueue("a/pspec.xml")
 
 print "WorkQueue: %s" % server.getWorkQueue()
 print "WaitQueue: %s" % server.getWaitQueue()
