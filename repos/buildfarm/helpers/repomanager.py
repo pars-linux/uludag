@@ -30,27 +30,6 @@ class RepositoryManager:
     def __init__(self):
         self.keys = {"U": self.__MODIFIED__, "A": self.__ADDED__, "D": self.__REMOVED__, "ALL": self.__ALL__}
 
-        def update():
-            oldwd = os.getcwd()
-            os.chdir(config.localPspecRepo)
-            logger.info("Yerel pspec deposu güncelleniyor: '%s'" % (config.localPspecRepo))
-            f = os.popen("svn up")
-
-            out = [o.split() for o in f.readlines()]
-            if f.close():
-                logger.error("SVN'de bir sorun var :(")
-                raise RepoError("SVN'de bir sorun var:\n %s" % (out))
-                sys.exit(-1)
-            os.chdir(oldwd)
-            return out
-
-        self.output = update()
-        if self.__getRevision__():
-            logger.info("Depo güncellendi (%d satır çıktı): Revizyon '%d'" % (len(self.output), self.__getRevision__()))
-        else:
-            logger.error("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
-            raise RepoError("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
-
     def __getChanges__(self, type="ALL", filter='', exclude=Exclude):
         data = self.keys.get(type)()
         if not len(exclude):
@@ -89,11 +68,33 @@ class RepositoryManager:
         return self.__MODIFIED__() + self.__REMOVED__() + self.__ADDED__()
 
     def updateRepository(self):
-        updatedpspecfiles = r.getChanges(type = "U", filter="pspec.xml")
-        newpspecfiles     = r.getChanges(type = "A", filter="pspec.xml")
+        def update():
+            oldwd = os.getcwd()
+            os.chdir(config.localPspecRepo)
+            logger.info("Yerel pspec deposu güncelleniyor: '%s'" % (config.localPspecRepo))
+            f = os.popen("svn up")
+
+            out = [o.split() for o in f.readlines()]
+            if f.close():
+                logger.error("SVN'de bir sorun var :(")
+                raise RepoError("SVN'de bir sorun var:\n %s" % (out))
+                sys.exit(-1)
+            os.chdir(oldwd)
+            return out
+
+        self.output = update()
+        if self.__getRevision__():
+            logger.info("Depo güncellendi (%d satır çıktı): Revizyon '%d'" % (len(self.output), self.__getRevision__()))
+        else:
+            logger.error("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
+            raise RepoError("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
+
+        updatedpspecfiles = self.__getChanges__(type = "U", filter="pspec.xml")
+        newpspecfiles     = self.__getChanges__(type = "A", filter="pspec.xml")
 
         if len(updatedpspecfiles + newpspecfiles):
             queue = open(os.path.join(config.workDir, "workQueue"), "a")
             for pspec in updatedpspecfiles + newpspecfiles:
                 queue.write("%s\n" % pspec)
             queue.close()
+        return True
