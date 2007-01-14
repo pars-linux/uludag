@@ -32,9 +32,9 @@ class DependencyResolver:
 
         self.bdepmap, self.rdepmap, self.namemap, self.pspeccount = {}, {}, {}, len(self.pspeclist)
 
-        for pspec in self.pspeclist: self.bdepmap[pspec] = self.__getBuildDependencies(pspec)
-        for pspec in self.pspeclist: self.rdepmap[pspec] = self.__getRuntimeDependencies(pspec)
-        for pspec in self.pspeclist: self.namemap[pspec] = self.__getPackageNames(pspec)
+        for pspec in self.pspeclist: self.bdepmap[pspec] = self.__getBuildDependencies__(pspec)
+        for pspec in self.pspeclist: self.rdepmap[pspec] = self.__getRuntimeDependencies__(pspec)
+        for pspec in self.pspeclist: self.namemap[pspec] = self.__getPackageNames__(pspec)
 
     def resolvDeps(self):
         while not (self.buildDepResolver() and self.runtimeDepResolver()): pass
@@ -42,7 +42,7 @@ class DependencyResolver:
         os.chdir(self.oldwd)
         return self.pspeclist
 
-    def __getBuildDependencies(self, pspec):
+    def __getBuildDependencies__(self, pspec):
         specFile = pisi.specfile.SpecFile()
         try:
             specFile.read(pspec)
@@ -56,7 +56,7 @@ class DependencyResolver:
 
         return deps
 
-    def __getRuntimeDependencies(self, pspec):
+    def __getRuntimeDependencies__(self, pspec):
         try:
             specFile = pisi.specfile.SpecFile(pspec)
         except:
@@ -70,7 +70,7 @@ class DependencyResolver:
 
         return deps
 
-    def __getPackageNames(self, pspec):
+    def __getPackageNames__(self, pspec):
         try:
             specFile = pisi.specfile.SpecFile(pspec)
         except:
