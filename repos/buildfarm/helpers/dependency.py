@@ -101,7 +101,7 @@ class DependencyResolver:
                         clean = False
         return clean
 
-    def resolvDeps(self):
+    def resolvDependencies(self):
         while not (self.__buildtimeDepResolver__() and self.__runtimeDepResolver__()): pass
 
         os.chdir(self.oldwd)

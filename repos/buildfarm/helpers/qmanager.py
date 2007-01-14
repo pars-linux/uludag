@@ -29,9 +29,9 @@ class QueueManager:
             self.workQueue += self.waitQueue
             self.waitQueue = []
         else:
-            self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDeps()
+            self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDependencies()
 
-        self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDeps()
+        self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDependencies()
 
     def __del__(self):
         self.__serialize__(self.waitQueue, "waitQueue")
