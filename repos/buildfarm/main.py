@@ -100,22 +100,22 @@ def buildPackages():
         mailer.info(_("Queue finished without a problem!..."))
     logger.raw()
 
-    logger.raw()
-    logger.info(_("Generating PiSi Index..."))
+    # logger.raw()
+    # logger.info(_("Generating PiSi Index..."))
 
-    current = os.getcwd()
-    os.chdir(config.binaryPath)
-    os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
-    logger.info(_("PiSi Index generated..."))
+    # current = os.getcwd()
+    # os.chdir(config.binaryPath)
+    # os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
+    # logger.info(_("PiSi Index generated..."))
 
     #FIXME: will be enableb after some internal tests
     #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
 
     # Check packages containing binaries and libraries broken by any package update
-    os.system("/usr/bin/revdep-rebuild --force")
+    # os.system("/usr/bin/revdep-rebuild --force")
     # FIXME: if there is any broken package,  mail /root/.revdep-rebuild.4_names file
 
-    os.chdir(current)
+    # os.chdir(current)
 
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
