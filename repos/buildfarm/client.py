@@ -4,15 +4,18 @@ import xmlrpclib
 
 server = xmlrpclib.Server('http://localhost:8000')
 
-print server.system.listMethods()
+print "Provided Methotds: %s" % server.system.listMethods()
 
-print server.updateRepository()
+print "Update repository: %s" % server.updateRepository()
 
-print server.getWorkQueue()
-print server.getWaitQueue()
+print "WorkQueue: %s" % server.getWorkQueue()
+print "WaitQueue: %s" % server.getWaitQueue()
 
-#print server.removeFromWorkQueue("a/pspec.xml")
-#
-#print server.appendToWaitQueue("b/pspec.xml")
-#
-#print server.buildPackages()
+print "Remove A from WorkQueue: %s" % server.removeFromWorkQueue("a/pspec.xml")
+print "Append b to WaitQueue: %s" % server.appendToWaitQueue("b/pspec.xml")
+print "Append A to WorkQueue: %s" % server.appendToWorkQueue("a/pspec.xml")
+
+print "WorkQueue: %s" % server.getWorkQueue()
+print "WaitQueue: %s" % server.getWaitQueue()
+
+print server.buildPackages()

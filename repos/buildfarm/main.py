@@ -121,6 +121,7 @@ def buildPackages():
 
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
+    return True
 
 def movePackages(newBinaryPackages, oldBinaryPackages):
     # sanitaze input
