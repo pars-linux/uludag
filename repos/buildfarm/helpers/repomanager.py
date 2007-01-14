@@ -27,10 +27,8 @@ class RepoError(Exception):
 
 
 class RepositoryManager:
-    def __init__(self):
-        self.keys = {"U": self.__MODIFIED__, "A": self.__ADDED__, "D": self.__REMOVED__, "ALL": self.__ALL__}
-
     def __getChanges__(self, type="ALL", filter='', exclude=Exclude):
+        self.keys = {"U": self.__MODIFIED__, "A": self.__ADDED__, "D": self.__REMOVED__, "ALL": self.__ALL__}
         data = self.keys.get(type)()
         if not len(exclude):
             return [x for x in data if find(x, filter) > -1]

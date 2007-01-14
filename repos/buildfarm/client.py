@@ -6,8 +6,7 @@ server = xmlrpclib.Server('http://localhost:8000')
 
 print server.system.listMethods()
 
-#print server.updateRepository()
-#
+print server.updateRepository()
 
 print server.getWorkQueue()
 print server.getWaitQueue()
