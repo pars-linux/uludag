@@ -19,7 +19,6 @@ from string import find
 """ BuildFarm Modules """
 import config
 import logger
-import qmanager
 
 Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
 
@@ -89,14 +88,14 @@ class RepositoryManager:
     def ALL(self, filter='', exclude=[]):
         return self.MODIFIED() + self.REMOVED() + self.ADDED()
 
-if __name__ == "__main__":
-    r = RepositoryManager()
-
-    updatedpspecfiles = r.getChanges(type = "U", filter="pspec.xml")
-    newpspecfiles     = r.getChanges(type = "A", filter="pspec.xml")
-
-    if len(updatedpspecfiles + newpspecfiles):
-        queue = open(os.path.join(config.workDir, "workQueue"), "a")
-        for pspec in updatedpspecfiles + newpspecfiles:
-            queue.write("%s\n" % pspec)
-        queue.close()
+#if __name__ == "__main__":
+#    r = RepositoryManager()
+#
+#    updatedpspecfiles = r.getChanges(type = "U", filter="pspec.xml")
+#    newpspecfiles     = r.getChanges(type = "A", filter="pspec.xml")
+#
+#    if len(updatedpspecfiles + newpspecfiles):
+#        queue = open(os.path.join(config.workDir, "workQueue"), "a")
+#        for pspec in updatedpspecfiles + newpspecfiles:
+#            queue.write("%s\n" % pspec)
+#        queue.close()
