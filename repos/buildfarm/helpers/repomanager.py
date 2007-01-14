@@ -28,7 +28,7 @@ class RepoError(Exception):
 
 class RepositoryManager:
     def __init__(self):
-        self.keys = {"U": self.MODIFIED, "A": self.ADDED, "D": self.REMOVED, "ALL": self.ALL}
+        self.keys = {"U": self.__MODIFIED__, "A": self.__ADDED__, "D": self.__REMOVED__, "ALL": self.__ALL__}
 
         def update():
             oldwd = os.getcwd()
@@ -45,13 +45,13 @@ class RepositoryManager:
             return out
 
         self.output = update()
-        if self.getRevision():
-            logger.info("Depo güncellendi (%d satır çıktı): Revizyon '%d'" % (len(self.output), self.getRevision()))
+        if self.__getRevision__():
+            logger.info("Depo güncellendi (%d satır çıktı): Revizyon '%d'" % (len(self.output), self.__getRevision__()))
         else:
             logger.error("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
             raise RepoError("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
 
-    def getChanges(self, type="ALL", filter='', exclude=Exclude):
+    def __getChanges__(self, type="ALL", filter='', exclude=Exclude):
         data = self.keys.get(type)()
         if not len(exclude):
             return [x for x in data if find(x, filter) > -1]
@@ -61,41 +61,39 @@ class RepositoryManager:
                 rval = [t for t in [x for x in rval if find(x, filter) > -1] if find(t, exclude[i]) == -1]
             return rval
 
-    def getRevision(self):
+    def __getRevision__(self):
         o = self.output[len(self.output) - 1]
         for i in range(0, len(o)):
             if o[i] == "revision":
                 return int(o[i+1].strip("."))
 
-    def MODIFIED(self):
+    def __MODIFIED__(self):
         data=[]
         for d in self.output:
             if d[0] == "U": data.append(d[1])
         return data
 
-    def ADDED(self):
+    def __ADDED__(self):
         data=[]
         for d in self.output:
             if d[0] == "A": data.append(d[1])
         return data
 
-    def REMOVED(self):
+    def __REMOVED__(self):
         data=[]
         for d in self.output:
             if d[0] == "D": data.append(d[1])
         return data
 
-    def ALL(self, filter='', exclude=[]):
-        return self.MODIFIED() + self.REMOVED() + self.ADDED()
+    def __ALL__(self, filter='', exclude=[]):
+        return self.__MODIFIED__() + self.__REMOVED__() + self.__ADDED__()
 
-#if __name__ == "__main__":
-#    r = RepositoryManager()
-#
-#    updatedpspecfiles = r.getChanges(type = "U", filter="pspec.xml")
-#    newpspecfiles     = r.getChanges(type = "A", filter="pspec.xml")
-#
-#    if len(updatedpspecfiles + newpspecfiles):
-#        queue = open(os.path.join(config.workDir, "workQueue"), "a")
-#        for pspec in updatedpspecfiles + newpspecfiles:
-#            queue.write("%s\n" % pspec)
-#        queue.close()
+    def updateRepository(self):
+        updatedpspecfiles = r.getChanges(type = "U", filter="pspec.xml")
+        newpspecfiles     = r.getChanges(type = "A", filter="pspec.xml")
+
+        if len(updatedpspecfiles + newpspecfiles):
+            queue = open(os.path.join(config.workDir, "workQueue"), "a")
+            for pspec in updatedpspecfiles + newpspecfiles:
+                queue.write("%s\n" % pspec)
+            queue.close()
