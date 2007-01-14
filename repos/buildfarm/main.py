@@ -39,6 +39,7 @@ def buildPackages():
 
     if len(queue) == 0:
         logger.info(_("Work Queue is empty..."))
+        #  FIXME: sys.exit is fatal for server
         sys.exit(1)
 
     # FIXME: Use fcntl.flock
