@@ -26,7 +26,7 @@ class DependencyResolver:
         self.oldwd = os.getcwd()
         os.chdir(config.localPspecRepo)
 
-        # work queue and wait queue may contain same pspecs. 
+        # work queue and wait queue may contain same pspecs,
         # be sure that every pspec is unique in the pspeclist.
         self.pspeclist = [pspec for pspec in set(pspeclist)]
 
@@ -35,12 +35,6 @@ class DependencyResolver:
         for pspec in self.pspeclist: self.bdepmap[pspec] = self.__getBuildDependencies__(pspec)
         for pspec in self.pspeclist: self.rdepmap[pspec] = self.__getRuntimeDependencies__(pspec)
         for pspec in self.pspeclist: self.namemap[pspec] = self.__getPackageNames__(pspec)
-
-    def resolvDeps(self):
-        while not (self.buildDepResolver() and self.runtimeDepResolver()): pass
-
-        os.chdir(self.oldwd)
-        return self.pspeclist
 
     def __getBuildDependencies__(self, pspec):
         specFile = pisi.specfile.SpecFile()
@@ -82,7 +76,7 @@ class DependencyResolver:
         except:
             return [""]
 
-    def runtimeDepResolver(self):
+    def __runtimeDepResolver__(self):
         """arranges the order of the pspec's in the pspeclist to satisfy runtime deps"""
         clean = True
         for i in range(0, self.pspeccount):
@@ -95,7 +89,7 @@ class DependencyResolver:
         return clean
 
 
-    def buildDepResolver(self):
+    def __buildtimeDepResolver__(self):
         """arranges the order of the pspec's in the pspeclist to satisfy build deps"""
         clean = True
         for i in range(0, self.pspeccount):
@@ -106,3 +100,11 @@ class DependencyResolver:
                         self.pspeclist.insert(j+1, self.pspeclist.pop(i))
                         clean = False
         return clean
+
+    def resolvDeps(self):
+        while not (self.__buildtimeDepResolver__() and self.__runtimeDepResolver__()): pass
+
+        os.chdir(self.oldwd)
+        return self.pspeclist
+
+
