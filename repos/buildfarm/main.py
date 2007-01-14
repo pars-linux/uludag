@@ -23,7 +23,7 @@ import exceptions
 import config
 import logger
 import mailer
-import qmanager
+from helpers import qmanager
 import pisiinterface
 
 """ Gettext Support """
