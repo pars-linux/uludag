@@ -40,9 +40,8 @@ def buildPackages():
     queue = copy.copy(qmgr.getWorkQueue())
 
     if len(queue) == 0:
-        logger.info(_("Work Queue is empty..."))
-        #  FIXME: sys.exit is fatal for server
-        sys.exit(1)
+        logger.info(_("Both Wait and Work Queues are empty..."))
+        return True
 
     logger.raw(_("QUEUE"))
     logger.info(_("Work Queue: %s") % (qmgr.getWorkQueue()))
@@ -103,24 +102,24 @@ def buildPackages():
     return True
 
 def buildIndex():
-    pass
-    # logger.raw()
-    # logger.info(_("Generating PiSi Index..."))
+    logger.raw()
+    logger.info(_("Generating PiSi Index..."))
 
-    # current = os.getcwd()
-    # os.chdir(config.binaryPath)
-    # os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
-    # logger.info(_("PiSi Index generated..."))
+    current = os.getcwd()
+    os.chdir(config.binaryPath)
+    os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
+    logger.info(_("PiSi Index generated..."))
 
-    #FIXME: will be enableb after some internal tests
+    #FIXME: will be enabled after some internal tests
     #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
 
     # Check packages containing binaries and libraries broken by any package update
-    # os.system("/usr/bin/revdep-rebuild --force")
+    os.system("/usr/bin/revdep-rebuild --force")
     # FIXME: if there is any broken package,  mail /root/.revdep-rebuild.4_names file
 
-    # os.chdir(current)
+    os.chdir(current)
 
+    # FIXME: handle indexing errors
     return True
 
 def movePackages(newBinaryPackages, oldBinaryPackages):
@@ -197,3 +196,4 @@ def handle_exception(exception, value, tb):
 
 if __name__ == "__main__":
     buildPackages()
+    buildIndex()
