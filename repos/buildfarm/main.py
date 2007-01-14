@@ -35,7 +35,7 @@ _  =  __trans.ugettext
 
 def buildPackages():
     qmgr = qmanager.QueueManager()
-    queue = copy.copy(qmgr.workQueue)
+    queue = copy.copy(qmgr.getWorkQueue())
 
     if len(queue) == 0:
         logger.info(_("Work Queue is empty..."))
@@ -46,8 +46,8 @@ def buildPackages():
     f.close()
 
     logger.raw(_("QUEUE"))
-    logger.info(_("Work Queue: %s") % (qmgr.workQueue))
-    sortedQueue = qmgr.workQueue[:]
+    logger.info(_("Work Queue: %s") % (qmgr.getWorkQueue()))
+    sortedQueue = qmgr.getWorkQueue()[:]
     sortedQueue.sort()
     mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
     logger.raw()
@@ -95,7 +95,7 @@ def buildPackages():
             pisi.finalize()
 
     logger.raw(_("QUEUE"))
-    logger.info(_("Wait Queue: %s") % (qmgr.waitQueue))
+    logger.info(_("Wait Queue: %s") % (qmgr.getWaitQueue()))
     if qmgr.waitQueue:
         mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(qmgr.waitQueue))
     else:
