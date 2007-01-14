@@ -9,13 +9,12 @@
 # (at your option) any later version.
 #
 # Please read the COPYING file.
-import os
 
 #Some configuration info for other modules..
 workDir          = "/var/pisi/"
 outputDir        = "/var/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
-localPspecRepo   = "%s/exampleRepo" % os.getcwd()
+localPspecRepo   = "./exampleRepo"
 logFile          = "%s/buildfarm.log" % workDir
 
 #information for mailer module.

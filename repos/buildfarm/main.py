@@ -24,7 +24,7 @@ import config
 import logger
 import mailer
 from helpers import qmanager
-import pisiinterface
+from helpers import pisiinterface
 
 """ Gettext Support """
 import gettext
