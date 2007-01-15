@@ -12,7 +12,7 @@
 
 import xmlrpclib
 
-server = xmlrpclib.Server('http://localhost:8000')
+server = xmlrpclib.Server('https://localhost:443')
 
 print "Provided Methods: %s\n" % server.system.listMethods()
 
@@ -29,4 +29,4 @@ print "Transfer A to WaitQueue: %s" % server.transferToWorkQueue("system/base/gz
 print "WorkQueue: %s" % server.getWorkQueue()
 print "WaitQueue: %s" % server.getWaitQueue()
 
-print server.buildPackages()
+#print server.buildPackages()
