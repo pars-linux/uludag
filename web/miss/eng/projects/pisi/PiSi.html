@@ -291,12 +291,12 @@ Following is the actions.py script of joe package as an example:
 #<BR>
 #&nbsp;Copyright&nbsp;2006&nbsp;TUBITAK/UEKAE<BR>
 #&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2.<BR>
-#&nbsp;See&nbsp;the&nbsp;file&nbsp;http://www.gnu.org/copyleft/gpl.txt.<BR>
-from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools<BR>
+#&nbsp;See&nbsp;the&nbsp;file&nbsp;http://www.gnu.org/copyleft/gpl.txt.<BR><BR>
+from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools<BR><BR>
 def&nbsp;setup():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;autotools.configure()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.configure()<BR><BR>
 def&nbsp;build():<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;autotools.make()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.make()<BR><BR>
 def&nbsp;install():<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;autotools.install()</TT></DL></DIV>
 <!--TOC subsubsection Package Specifications-->
@@ -333,7 +333,10 @@ Following is the pspec.xml file of joe source package as an example:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Summary&gt;Joe&nbsp;text&nbsp;editor.&lt;/Summary&gt;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Summary&nbsp;xml:lang="tr"&gt;Joe&nbsp;metin&nbsp;dzenleyicisi&lt;/Summary&gt;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Description&gt;Joe&nbsp;is&nbsp;a&nbsp;small&nbsp;text&nbsp;editor&nbsp;with&nbsp;sytax&nbsp;highlighting.&lt;/Description&gt;<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Archive&nbsp;sha1sum="aeee6bb71ed1e9b9c9a2a64d8e078a06245957e5"&nbsp;type="targz"&gt;http://easynews.dl.sourceforge.net/sourceforge/joe-editor/joe-3.5.tar.gz&lt;/Archive&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Archive&nbsp;sha1sum="aeee6bb71ed1e9b9c9a2a64d8e078a06245957e5"&nbsp;type="targz"&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://easynews.dl.sourceforge.net/sourceforge/joe-editor/joe-3.5.tar.gz
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Archive&gt;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;BuildDependencies&gt;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&gt;ncurses&lt;/Dependency&gt;<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/BuildDependencies&gt;<BR>
