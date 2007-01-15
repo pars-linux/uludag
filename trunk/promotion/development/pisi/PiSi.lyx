@@ -760,6 +760,16 @@ One of the difficult parts of developing a package system is to reproduce
 \end_layout
 
 \begin_layout Standard
+ScenarioAPI uses PiSi's ability of working with a destination directory.
+ Every command may take an optional -D parameter that points to a destination
+ directory that resembles a chroot system for PiSi.
+ The directory may be an empty one.
+ When PiSi sees there is no database environment in the directory, it creates
+ one to work with.
+ So the scenario scripts run in an isolated space.
+\end_layout
+
+\begin_layout Standard
 Following is a sample scenario script taken from the PiSi trunk that tests
  when the conflicting packages removal happens.
  According to the bug report, removal happens before any package is fetched.
