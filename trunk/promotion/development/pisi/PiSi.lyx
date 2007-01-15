@@ -85,8 +85,8 @@ Before deciding to write a new package system, we considered using the existing
 \end_layout
 
 \begin_layout Standard
-As for DPKG, despite its having less problems than RPM and having a single
- upstream, we had found its architecture hard to work with.
+As for DPKG, despite the fact that it had a much better state than RPM and
+ having a single upstream, we had found its architecture hard to work on.
  Package preparation is cumbersome and complicated.
  Also some decisions like 
 \begin_inset Quotes eld
@@ -99,15 +99,16 @@ interactive package installation
  wasn't the ideas we would support for our distribution.
  The installation of any package should just be done without confusing the
  user with the configuration internals of any package.
- The user should only select and install the package.
- Configuration should not be the job of a package system.
+ The user should only choose and install the package.
+ Configuration should not be a job for a package system.
  Moreover, as it was stated in a discussion made years ago, its code has
  had become brittle.
 \begin_inset LatexCommand \cite{key-70}
 
 \end_inset
 
-
+So we could be wasting our time fixing what we had broken while trying to
+ add a new feature on it.
 \end_layout
 
 \begin_layout Standard
@@ -419,7 +420,8 @@ Length Date Time Name
 \end_layout
 
 \begin_layout Standard
-metadata.xml and files.xml files are in the root directory of the binary package.
+Automatically generated metadata.xml and files.xml files are in the root directory
+ of the binary package.
  metadata.xml file holds the meta data information related to binary package
  that are extracted from pspec.xml file.
  files.xml file holds detailed information about all the files that are contained
@@ -554,7 +556,7 @@ es of a package, path and sha1sum of the source archive, patches to be applied
 \end_layout
 
 \begin_layout Standard
-Following is some parts of the pspec.xml file of joe package as an example:
+Following is the pspec.xml file of joe source package as an example:
 \end_layout
 
 \begin_layout LyX-Code
@@ -804,9 +806,9 @@ isa
 \end_layout
 
 \begin_layout Standard
-Most of the time the directory hierarchy of the source package is also gives
+Most of the time the directory hierarchy of the source package also gives
  us the component of the package, except for some rare corner cases.
- On the other hand category of the package is explicitly defined in the
+ On the other hand, category of the package is explicitly defined in the
  pspec.xml file with an <IsA> tag.
  
 \end_layout
@@ -897,10 +899,12 @@ As in all advanced package systems, PiSi has its own dependency resolver.
 
 \end_inset
 
- Kept as simple as possible to be able to work as fast and efficent as possible.
+ Kept as simple as possible to be able to work as fast and efficient as
+ possible.
+ It is adequate for our needs and we do not plan to create a beast out of
+ it.
  It currently allows for the build system to provide the dependent and conflicti
 ng packages with relative versioning informations.
- 
 \end_layout
 
 \begin_layout Subsection*
@@ -916,9 +920,11 @@ One of the difficult parts of developing a package system is to reproduce
  And to make sure you fixed it, you have to have a way to reproduce the
  bug easily to test your fixes.
  PiSi ScenarioAPI is just for that purpose.
- By using the ScenarioAPI you write scenario scripts that ends as the bug
- reports informed.
+ By using the ScenarioAPI you write scenario scripts that ends as the bugs
+ reported.
  So by writing scenario scripts, you have easily reproducable cases.
+ You can add many packages as you like for the test cases.
+ The packages will automatically be created on runtime of the script.
 \end_layout
 
 \begin_layout Standard
@@ -929,11 +935,12 @@ ScenarioAPI uses PiSi's ability of working with a different system root.
  When PiSi sees there is no database environment in the directory, it creates
  one to work with.
  So the scenario scripts run in an isolated space.
+ Image creation tools also uses this feature.
 \end_layout
 
 \begin_layout Standard
 Following is a sample scenario script taken from the PiSi trunk that tests
- when the conflicting packages removal happens.
+ when the conflicting package removals happen.
  According to the bug report, removal happens before any package is fetched.
  But it should be done after fetching all the packages and before starting
  to upgrade to the fetched packages.
@@ -1129,8 +1136,8 @@ The source packages are extracted and compiled under /var/pisi directory.
 \end_layout
 
 \begin_layout Standard
-The great thing is that you don't need a source repository to work with
- the source packages.
+The good thing is that you don't need a source repository to work with the
+ source packages.
  It is possible to build a package by providing only the local path or the
  remote url of a spec file without having any source repository added to
  PiSi database.
@@ -1153,12 +1160,11 @@ One other feature of PiSi is its ability to emerge source packages from
 s of the package.
  If they do not exist in any binary repository, PiSi also tries to emerge
  those missing dependencies from the source repositories.
+ PiSi does not need the whole source repository to be checked out or downloaded.
  Because a source repository is represented by the index file that also
  contains all the dependency informations and building a package by its
- remote url is possible, for emerging a source package, PiSi does not need
- all the source repository packages to be downloaded.
- You only need to add the source repository of the packages to PiSi database
- to emerge.
+ remote url is possible, for emerging a package, you only need to add the
+ source repository of the package to PiSi database.
 \end_layout
 
 \begin_layout Standard
