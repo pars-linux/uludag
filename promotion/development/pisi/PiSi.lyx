@@ -734,6 +734,110 @@ One other virtue of using XML format is that it is possible to easily divide
  packages by defining more <Package> tags into a pspec.xml file.
 \end_layout
 
+\begin_layout Subsubsection*
+Components and Categories
+\end_layout
+
+\begin_layout Standard
+PiSi defines two relations to identify a package: Components and Categories.
+ We can say a x package is part of y component and that x package belongs
+ to z category.
+ With components we have a 
+\begin_inset Quotes eld
+\end_inset
+
+partof
+\begin_inset Quotes erd
+\end_inset
+
+ relation and with categories we have an 
+\begin_inset Quotes eld
+\end_inset
+
+isa
+\begin_inset Quotes erd
+\end_inset
+
+ relation.
+\end_layout
+
+\begin_layout Standard
+Most of the time the directory hierarchy of the source package is also gives
+ us the component of the package, except for some rare corner cases.
+ On the other hand category of the package is explicitly defined in the
+ pspec.xml file with an <IsA> tag.
+ 
+\end_layout
+
+\begin_layout Standard
+We can use the previous given example, joe package to show these relations.
+ Source package joe is under applications/editors/joe directory in our source
+ repository.
+ 
+\begin_inset LatexCommand \cite{key-88}
+
+\end_inset
+
+There we can see that the component of the joe package is 
+\begin_inset Quotes eld
+\end_inset
+
+applications.editors
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The category of the package is defined in the pspec.xml as 
+\begin_inset Quotes eld
+\end_inset
+
+app:console
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can use the components to create a minimal system with all the packages
+ under those components installed.
+ A component is an installable entity for PiSi.
+ You can install the 
+\begin_inset Quotes eld
+\end_inset
+
+system.base
+\begin_inset Quotes erd
+\end_inset
+
+ component to have a minimal base system and the 
+\begin_inset Quotes eld
+\end_inset
+
+desktop.kde.base
+\begin_inset Quotes erd
+\end_inset
+
+ component to have a minimal desktop environment.
+\end_layout
+
+\begin_layout Standard
+Currently the category info is used by Package Manager
+\begin_inset LatexCommand \cite{key-80}
+
+\end_inset
+
+ that has an option to show only the packages that belong to 
+\begin_inset Quotes eld
+\end_inset
+
+app:gui
+\begin_inset Quotes erd
+\end_inset
+
+ category.
+\end_layout
+
 \begin_layout Section
 What PiSi Brings
 \end_layout
@@ -1317,6 +1421,12 @@ http://svn.pardus.org.tr/uludag/trunk/buildfarm/
 
 \bibitem {key-87}
 http://en.wikipedia.org/wiki/Build_Automation
+\end_layout
+
+\begin_layout Bibliography
+
+\bibitem {key-88}
+http://svn.pardus.org.tr/pardus/2007/applications/editors/joe/
 \end_layout
 
 \end_body
