@@ -1061,7 +1061,19 @@ Archive:
 \end_layout
 
 \begin_layout Subsection*
-Graphical User Interface
+Non-Root Installations
+\end_layout
+
+\begin_layout Standard
+PiSi package comes with a COMAR management script manager.py that is registered
+ to COMAR's database when the PiSi's own package is installed.
+ By using this script's services over COMAR, it is possible to do root privilege
+d package operations.
+ Package-Manager, the PiSi frontend uses these services to install, remove,
+ upgrade packages or add/remove new repositories to PiSi database.
+ The authorization is done by the COMAR daemon.
+ By extending these services, it will also be possible to remotely manage
+ the package system of any machine.
 \end_layout
 
 \begin_layout Standard
@@ -1075,18 +1087,6 @@ Below is a screenshot from the PiSi frontend, Package-Manager.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-PiSi package comes with a COMAR management script manager.py that is registered
- to COMAR's database when the PiSi's own package is installed.
- By using this script's services over COMAR, it is possible to do root privilege
-d package operations.
- Package-Manager, the PiSi frontend uses these services to install, remove,
- upgrade packages or add/remove new repositories to PiSi database.
- The authorization is done by the COMAR daemon.
- By extending these services, it will also be possible to remotely manage
- the package system of any machine.
 \end_layout
 
 \begin_layout Subsection*
