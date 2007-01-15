@@ -196,7 +196,6 @@ A source package minimally consists of an actions.py file that contains the
  and runtime dependencies, conflicts, url or path of the source archive,
  exc.
  Source packages exist in PiSi source repositories.
- 
 \end_layout
 
 \begin_layout Subsection*
@@ -493,6 +492,9 @@ es of a package, path and sha1sum of the source archive, patches to be applied
  etc.
  We decided to put the data into a XML file instead of using an ad-hoc text
  format.
+ This makes it easier to process and to write independent tools for various
+ purposes.
+ It is also much more structured and readable.
 \end_layout
 
 \begin_layout Standard
@@ -714,8 +716,8 @@ tion>
 \end_layout
 
 \begin_layout Standard
-It is possible to create more than one binary package from a source package
- by defining more <Package> tags into a pspec.xml file.
+One other virtue of using XML format is that it is possible to easily divide
+ packages by defining more <Package> tags into a pspec.xml file.
 \end_layout
 
 \begin_layout Section
