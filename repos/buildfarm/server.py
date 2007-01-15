@@ -59,8 +59,7 @@ class SecureXMLRpcRequestHandler(SimpleXMLRPCServer.SimpleXMLRPCRequestHandler):
             # SimpleXMLRPCDispatcher. To maintain backwards compatibility,
             # check to see if a subclass implements _dispatch and dispatch
             # using that method if present.
-            response = self.server._marshaled_dispatch
-                (
+            response = self.server._marshaled_dispatch(
                     data, getattr(self, "_dispatch", None)
                 )
         except: 
