@@ -204,7 +204,7 @@ Simple by Design
 
 \begin_layout Standard
 The most obvious part of PiSi is its simplicity.
- From the command line utility pisi-cli to its package building mechanism,
+ From its svn like console interface pisi-cli to its package building mechanism,
  it is very easy to grasp and use.
  It is so simple that when the first PiSi source code was revealed with
  some example source packages, it only took twenty-minutes for someone to
