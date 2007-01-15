@@ -1031,7 +1031,7 @@ LZMA, short for Lempel-Ziv-Markov chain-Algorithm, is a data compression
 \begin_layout Standard
 To give a more concrete example: Pardus 1.0 stable release was using gzip
  compression in PiSi packages.
- With all our affords to put all the necessary packages to satisfy the needs
+ With all our efforts to put all the necessary packages to satisfy the needs
  of a desktop user, we were only able to put a total of 335 packages.
  But now in Pardus 2007, by using LZMA compression within PiSi package format,
  there comes 641 packages with the installation CD.
