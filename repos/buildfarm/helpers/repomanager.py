@@ -96,4 +96,4 @@ class RepositoryManager:
             for pspec in updatedpspecfiles + newpspecfiles:
                 queue.write("%s\n" % pspec)
             queue.close()
-        return True
+        return updatedpspecfiles + newpspecfiles

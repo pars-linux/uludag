@@ -34,7 +34,7 @@ Provided Methods:
 
 * updateRepository
     Updates local pspec repository
-    returns True on success, False otherwise
+    returns a list
 
 * buildPackages
     Build all packages in work and wait Queues

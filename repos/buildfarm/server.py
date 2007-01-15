@@ -59,9 +59,7 @@ class SecureXMLRpcRequestHandler(SimpleXMLRPCServer.SimpleXMLRPCRequestHandler):
             # SimpleXMLRPCDispatcher. To maintain backwards compatibility,
             # check to see if a subclass implements _dispatch and dispatch
             # using that method if present.
-            response = self.server._marshaled_dispatch(
-                    data, getattr(self, "_dispatch", None)
-                )
+            response = self.server._marshaled_dispatch(data, getattr(self, "_dispatch", None))
         except: 
             # This should only happen if the module is buggy
             # internal error, report as HTTP server error
@@ -90,8 +88,10 @@ server.register_introspection_functions()
 # export CombinedServerClass
 server.register_instance(CombinedServerClass())
 
-# export buildPackages
+# export buildPackages, buildIndex
+# FIXME: run these on another thread and return to client ASAP
 server.register_function(main.buildPackages)
+server.register_function(main.buildIndex)
 
 # enter main loop
 server.serve_forever()
