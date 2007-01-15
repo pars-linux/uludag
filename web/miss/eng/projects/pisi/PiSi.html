@@ -216,23 +216,29 @@ files like patches and COMAR scripts. <BR>
 Following is a sample source package from the current stable branch
 of Pardus:
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-openssh<BR>
+openssh
 <BR>
-&nbsp;|__&nbsp;comar<BR>
+&nbsp;|__&nbsp;comar
 <BR>
-&nbsp;|&nbsp;__&nbsp;service.py<BR>
+&nbsp;|&nbsp;|__&nbsp;service.py
 <BR>
-&nbsp;|__&nbsp;files<BR>
+&nbsp;|
 <BR>
-&nbsp;|&nbsp;|__&nbsp;openssh-4.3_p1-chroot.patch<BR>
+&nbsp;|__&nbsp;files
 <BR>
-&nbsp;|&nbsp;|__&nbsp;scp-resume.sh<BR>
+&nbsp;|&nbsp;|__&nbsp;openssh-4.3_p1-chroot.patch
 <BR>
-&nbsp;|&nbsp;__&nbsp;sshd.pam<BR>
+&nbsp;|&nbsp;|__&nbsp;scp-resume.sh
 <BR>
-&nbsp;|__&nbsp;actions.py<BR>
+&nbsp;|&nbsp;|__&nbsp;sshd.pam
 <BR>
-&nbsp;__&nbsp;pspec.xml
+&nbsp;|
+<BR>
+&nbsp;|__&nbsp;actions.py
+<BR>
+&nbsp;|
+<BR>
+&nbsp;|__&nbsp;pspec.xml<BR>
 </TT></DL></DIV>
 pspec.xml and actions.py files are in the root directory of the package.
 files directory is optional and may contain the patches or additional
