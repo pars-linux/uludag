@@ -300,6 +300,19 @@ Python is the choice of Pardus in all of the distribution's core components
  Python and PiSi api.
 \end_layout
 
+\begin_layout Standard
+Below is a screenshot from Pardusman:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pardusman.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 Build System of PiSi
 \end_layout
