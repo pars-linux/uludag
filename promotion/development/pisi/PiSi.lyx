@@ -1363,10 +1363,22 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-One of the main goals of PiSi is easy development and maintainence of the
- packages.
- We think that in such a short time created that many packages and so far
- without problems it established one of its design goals.
+One of the design goals of PiSi was easy development and maintainence of
+ the packages.
+ We think that PiSi had reached that goal in its early releases that made
+ us possible to create that many packages in such a short time with so far
+ no problems.
+ 
+\end_layout
+
+\begin_layout Standard
+Pardus tries to stand out with its new and brave approaches in the problematic
+ areas of Linux distributions.
+ With PiSi and COMAR architecture we created a system that now stands on
+ its feets.
+ The next step is to evolve the system with so many things that are possible
+ to do with the provided infrastructure and to gain new developers by capturing
+ their attention with what we see in Pardus.
 \end_layout
 
 \begin_layout Bibliography
