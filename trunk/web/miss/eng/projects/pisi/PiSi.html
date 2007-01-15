@@ -40,12 +40,12 @@
 <H5 ALIGN=center>&lt;faik at pardus.org.tr&gt;</H5>
 
 <BLOCKQUOTE><B>Abstract: </B>
-With thousands of packages to maintain, the most important part of
+With thousands of packages to maintain, most important part of
 any distribution is indeed its package management system. PiSi is
 the package manager of Pardus, written from scratch in Python. By
 writing another package manager, our purpose was not to reinvent the
-wheel but to create a new kind of wheel that takes the distinctive
-ideas from the existing ones with also easy integration and maintanence
+wheel but to create a new kind of wheel that takes distinctive
+ideas from existing ones with also easy integration and maintanence
 in mind.<BR><BR>
 You may download and try Pardus 2007 stable release to see PiSi in
 action from <a href="ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2007">ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2007</a>
@@ -55,12 +55,12 @@ action from <a href="ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2007">ftp://ftp.
 <H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Introduction</H2><!--SEC END -->
 
 PiSi (Packages Installed Succesfully, as intended) is the package
-manager of Pardus. It is the tool that is used to build, install,
-upgrade or remove the software packages of the distribution.<BR>
+manager of Pardus. It is a tool used to build, install,
+upgrade or remove software packages of Pardus Linux distribution.<BR>
 <BR>
 Before deciding to write a new package system, we considered using
 the existing ones. Three years ago when the Pardus project was started,
-RPM has had many problems. [<A HREF="#key-68">1</A>] One of the bigger problems
+RPM had many problems. [<A HREF="#key-68">1</A>] One of the bigger problems
 was also not having one upstream to work with. Today, it is still
 a work in progress.[<A HREF="#key-69">2</A>]<BR>
 <BR>
@@ -70,12 +70,12 @@ to work on. Package preparation is cumbersome and complicated. Also
 some decisions like ``interactive package installation'' wasn't
 the ideas we would support for our distribution. The installation
 of any package should just be done without confusing the user with
-the configuration internals of any package. The user should only choose
+configuration internals of any package. The user should only choose
 and install the package. Configuration should not be a job for a package
 system. Moreover, as it was stated in a discussion made years ago,
-its code has had become brittle.[<A HREF="#key-70">3</A>]<BR>
+its code had become brittle.[<A HREF="#key-70">3</A>]<BR>
 <BR>
-Also as they seem to be different in their nature, the mechanism behind
+Also as they seem to be different in their nature, mechanism behind
 them and the ways are the same that were not satisfying us. We wanted
 something different. <BR>
 <BR>
@@ -83,9 +83,9 @@ The package manager in our mind should ease the package creation task
 for the package developers and should pave the way for working with
 binary packages. For the former, Gentoo's portage had some good ideas.
 So at the end we decided to design PiSi with all the advantages of
-the ones over each other and write it in Python. As all the other
+the ones over each other and write it in Python. As all other
 components of the distribution were going to be written in Python,
-it would also be much easier to integrate to those parts and the prototyping
+it would also be much easier to integrate to those parts and prototyping
 phase would be much much faster. <BR>
 <BR>
 After having a prototype to work with, the development of PiSi went
@@ -93,19 +93,19 @@ parallel with the development of the packages of the distribution.
 After a 6 months of work, with 10 people, we had created 600 packages
 and so the first stable release of Pardus. Now after a year from our
 first stable release, with 25 developers, we have a total of 1223
-packages in the stable branch of Pardus 2007 and 698 packages in our
-contrib repository made. <BR>
+packages in stable branch of Pardus 2007 and 698 packages in our
+contrib repository. <BR>
 <BR>
 <!--TOC section Why PiSi?-->
 
 <H2><A NAME="htoc2">2</A>&nbsp;&nbsp;Why PiSi?</H2><!--SEC END -->
 
-To answer that question we first need to define what a package is
+To answer that question, we first need to define what a package is
 and what needs to be done for a package to be build, deployed and
 maintained by a distribution. For a package system, every phase of
 a package's existence from its maintainer's hands to the distribution
 users' machines have problems that need to be solved. There exists
-many package systems that solve these problems in some different ways.
+many package systems that solve these problems in different ways.
 What makes PiSi great lies in the simplicity and the efficiency of
 the solutions it provides.<BR>
 <BR>
@@ -137,11 +137,11 @@ source archive, etc. Source packages exist in PiSi source repositories.<BR>
 
 The most obvious part of PiSi is its simplicity. From its svn like
 console interface pisi-cli to its package building mechanism, it is
-very easy to grasp and use. It is so simple that when the first PiSi
+very easy to grasp the inner workings and use effectively. It is so simple that when the first PiSi
 source code was revealed with some example source packages, it only
 took twenty-minutes for someone to contribute a new package to Pardus.
 And there were no documentation about the build system whatsoever.
-The xml based source packaging system is so intuitive and easy to
+Xml based source packaging system is so intuitive and easy to
 grasp that it almost needs no documentation. <BR>
 <BR>
 Actually this was intentionally made that way. When you look at the
