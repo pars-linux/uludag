@@ -1034,6 +1034,9 @@ To give a more concrete example: Pardus 1.0 stable release was using gzip
  of a desktop user, we were only able to put a total of 335 packages.
  But now in Pardus 2007, by using LZMA compression within PiSi package format,
  there comes 641 packages with the installation CD.
+ When all the packages that are in Pardus 1.0 CD are extracted to the destination
+ system, it takes 1.891 GB of disk space and that is 3.043 GB of disk space
+ for Pardus 2007.
 \end_layout
 
 \begin_layout Standard
