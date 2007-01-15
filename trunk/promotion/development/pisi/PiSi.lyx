@@ -69,7 +69,7 @@ PiSi (Packages Installed Succesfully, as intended) is the package manager
 \begin_layout Standard
 Before deciding to write a new package system, we considered using the existing
  ones.
- 3 years ago when the Pardus project was started, RPM has had many problems.
+ Three years ago when the Pardus project was started, RPM has had many problems.
  
 \begin_inset LatexCommand \cite{key-68}
 
@@ -85,8 +85,8 @@ Before deciding to write a new package system, we considered using the existing
 \end_layout
 
 \begin_layout Standard
-As for DPKG, in spite of its much more problemless state than RPM and having
- a better upstream, we had found its architecture hard to work on.
+As for DPKG, despite its having less problems than RPM and having a single
+ upstream, we had found its architecture hard to work with.
  Package preparation is cumbersome and complicated.
  Also some decisions like 
 \begin_inset Quotes eld
@@ -312,8 +312,7 @@ Overview
 PiSi build system consists of a meta information file called pspec.xml and
  the actual build script file called actions.py.
  These are the main files to build a package.
- There can be other optional files like patches, postinstall scripts and
- COMAR service or management scripts.
+ There can be other optional files like patches and COMAR scripts.
  
 \end_layout
 
@@ -321,36 +320,54 @@ PiSi build system consists of a meta information file called pspec.xml and
 Following is a sample source package from the current stable branch of Pardus:
 \end_layout
 
-\begin_layout Standard
+\begin_layout LyX-Code
 openssh
-\newline
- |-- actions.py
-\newline
- |-- comar
-\newline
- | `-- service.py
-\newline
- |-- files
-\newline
- | |-- openssh-4.3_p1-ch
-root.patch
-\newline
- | |-- scp-resume.sh
-\newline
- | `-- sshd.pam
-\newline
- `-- pspec.xml
+\end_layout
+
+\begin_layout LyX-Code
+ |__ comar
+\end_layout
+
+\begin_layout LyX-Code
+ | 
+\backslash
+__ service.py
+\end_layout
+
+\begin_layout LyX-Code
+ |__ files
+\end_layout
+
+\begin_layout LyX-Code
+ | |__ openssh-4.3_p1-chroot.patch
+\end_layout
+
+\begin_layout LyX-Code
+ | |__ scp-resume.sh
+\end_layout
+
+\begin_layout LyX-Code
+ | 
+\backslash
+__ sshd.pam
+\end_layout
+
+\begin_layout LyX-Code
+ |__ actions.py
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\backslash
+__ pspec.xml
 \end_layout
 
 \begin_layout Standard
 pspec.xml and actions.py files are in the root directory of the package.
  files directory is optional and may contain the patches or additional files
  to the package.
- comar directory is also optional.
- It may contain a package.py file that is a postInstall/preRemove operations
- script, a service.py file if the package provides a system service or a
- management script that exports the package's functionalities to the rest
- of the system; all to be registered to COMAR daemon.
+ Another optional directory, comar, contains COMAR scripts for integrating
+ package with the rest of the system; all to be registered to COMAR daemon.
  COMAR needs an article of its own so we will not focus on the COMAR related
  parts.
 \end_layout
@@ -507,7 +524,23 @@ Following is some parts of the pspec.xml file of joe package as an example:
 \end_layout
 
 \begin_layout LyX-Code
-[...]
+        <Packager>
+\end_layout
+
+\begin_layout LyX-Code
+            <Name>
+\lang turkish
+Ýsmail Dönmez
+\lang english
+</Name>
+\end_layout
+
+\begin_layout LyX-Code
+            <Email>ismail@pardus.org.tr</Email>
+\end_layout
+
+\begin_layout LyX-Code
+        </Packager>
 \end_layout
 
 \begin_layout LyX-Code
@@ -565,11 +598,11 @@ tion>
 \end_layout
 
 \begin_layout LyX-Code
-        <RuntimeDependencies>
+        <RuntimeDependencies> 
 \end_layout
 
 \begin_layout LyX-Code
-            <Dependency>ncurses</Dependency>
+           <Dependency>ncurses</Dependency>
 \end_layout
 
 \begin_layout LyX-Code
@@ -601,11 +634,83 @@ tion>
 \end_layout
 
 \begin_layout LyX-Code
-[...]
+
 \end_layout
 
 \begin_layout LyX-Code
-</PISI>
+    <History>
+\end_layout
+
+\begin_layout LyX-Code
+        <Update release="2">
+\end_layout
+
+\begin_layout LyX-Code
+            <Date>2006-11-10</Date>
+\end_layout
+
+\begin_layout LyX-Code
+            <Version>3.5</Version>
+\end_layout
+
+\begin_layout LyX-Code
+            <Comment>Stable update</Comment>
+\end_layout
+
+\begin_layout LyX-Code
+            <Name>
+\lang turkish
+Ýsmail Dönmez
+\lang english
+</Name>
+\end_layout
+
+\begin_layout LyX-Code
+            <Email>ismail@pardus.org.tr</Email>
+\end_layout
+
+\begin_layout LyX-Code
+        </Update>
+\end_layout
+
+\begin_layout LyX-Code
+        <Update release="1">
+\end_layout
+
+\begin_layout LyX-Code
+            <Date>2006-01-08</Date>
+\end_layout
+
+\begin_layout LyX-Code
+            <Version>3.3</Version>
+\end_layout
+
+\begin_layout LyX-Code
+            <Comment>First release.</Comment>
+\end_layout
+
+\begin_layout LyX-Code
+            <Name>
+\lang turkish
+Ýsmail Dönmez
+\lang english
+</Name>
+\end_layout
+
+\begin_layout LyX-Code
+            <Email>ismail@pardus.org.tr</Email>
+\end_layout
+
+\begin_layout LyX-Code
+        </Update>
+\end_layout
+
+\begin_layout LyX-Code
+    </History>
+\end_layout
+
+\begin_layout LyX-Code
+</PISI> 
 \end_layout
 
 \begin_layout Standard
@@ -956,19 +1061,7 @@ Archive:
 \end_layout
 
 \begin_layout Subsection*
-Non-Root Installations
-\end_layout
-
-\begin_layout Standard
-PiSi package comes with a COMAR management script manager.py that is registered
- to COMAR's database when the PiSi's own package is installed.
- By using this script's services over COMAR, it is possible to do root privilege
-d package operations.
- Package-Manager, the PiSi frontend uses these services to install, remove,
- upgrade packages or add/remove new repositories to PiSi database.
- The authorization is done by the COMAR daemon.
- By extending these services, it will also be possible to remotely manage
- the package system of any machine.
+Graphical User Interface
 \end_layout
 
 \begin_layout Standard
@@ -982,6 +1075,18 @@ Below is a screenshot from the PiSi frontend, Package-Manager.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+PiSi package comes with a COMAR management script manager.py that is registered
+ to COMAR's database when the PiSi's own package is installed.
+ By using this script's services over COMAR, it is possible to do root privilege
+d package operations.
+ Package-Manager, the PiSi frontend uses these services to install, remove,
+ upgrade packages or add/remove new repositories to PiSi database.
+ The authorization is done by the COMAR daemon.
+ By extending these services, it will also be possible to remotely manage
+ the package system of any machine.
 \end_layout
 
 \begin_layout Subsection*
