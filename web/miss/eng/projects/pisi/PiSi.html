@@ -157,8 +157,8 @@ yum, aptrpm, etc.) for mainly handling the dependency resolution,
 package selection and installation issues.<BR>
 <BR>
 But the main complication and difficulty comes from the various build
-helper tools, the ad-hoc source specification formats and the build
-scripts. The learning curve is steep for the new developers.<BR>
+helper tools, ad-hoc source specification formats and build
+scripts. The learning curve is steep for new developers.<BR>
 <BR>
 PiSi architecture is quite different from traditional designs. Every
 functionality, related to package management like installing, building,
@@ -173,17 +173,17 @@ as a configuration interface for itself. Configuration of packages
 can be done remotely or locally.<BR>
 <BR>
 Traditionally, build scripts of packages are shell scripts. We think
-the shell is ideal for simple tasks, like batch run of a series of
-commands with maybe some conditionals but nothing more. The shell
-scripting is awkward, shell is not enough by itself and needs many
-other helper tools with their own syntax and usage, debugging and
+shell is ideal for simple tasks, like batch run of a series of
+commands with maybe some conditionals but nothing more. Shell
+scripting is awkward. It needs many other additional 
+helper tools with their own syntax. Moreoever, usage, debugging and
 maintainence costs are high.<BR>
 <BR>
 When it comes to a complex task like building a package, you need
 conditional operations, string manipulations, iteration over series
 of data, and many other operations where you can all get from higher
 scripting languages also with additional advantages. For those reasons
-we have choosen Python.<BR>
+we have chosen Python.<BR>
 <BR>
 Python is the choice of Pardus in all of the distribution's core components
 for its simplicity, flexibility and easing the maintenance advantages.
@@ -482,7 +482,7 @@ The binary packages are kept at our binary repositories. [<A HREF="#key-74">12</
 When new package releases are committed; the Buildfarm creates binary
 packages from source repositories and moves them to the corresponding
 binary repositories. Buildfarm package queue is managed manually by
-the repository administrators.<BR>
+repository administrators.<BR>
 <BR>
 The source and binary repositories are represented by their index
 files named pisi-index.xml. Both created by PiSi's index command executed
@@ -514,7 +514,7 @@ satisfy, PiSi will try to install them. After building, the binary
 kiki-x-y-z.pisi package will be created.<BR>
 <BR>
 The build process is divided into multiple steps. For example, you
-may not want to build the binary package but just to see the source
+may not want to build binary package but just to see the source
 code of the software provided with that package. Or you may want to
 work on that code and try multiple builds until you are finished and
 then continue to other steps of the binary package creation operation.
@@ -594,15 +594,15 @@ Archive:<BR>
 <H3>Non-Root Installations</H3><!--SEC END -->
 
 PiSi package comes with a COMAR management script manager.py that
-is registered to COMAR's database when the PiSi's own package is installed.
+is registered to COMAR's database when PiSi's own package is installed.
 By using this script's services over COMAR, it is possible to do root
-privileged package operations. Package-Manager, the PiSi frontend
+privileged package operations. Package Manager, the PiSi frontend
 uses these services to install, remove, upgrade packages or add/remove
 new repositories to PiSi database. The authorization is done by the
 COMAR daemon. By extending these services, it will also be possible
 to remotely manage the package system of any machine.<BR>
 <BR>
-Below is a screenshot from the PiSi frontend, Package-Manager.<BR>
+Below is a screenshot from the PiSi frontend, Package Manager.<BR>
 <BR>
 <IMG ALIGN=CENTER SRC="package-manager.png"><BR>
 <BR>
@@ -619,9 +619,9 @@ the next release of the package with an actual update need. We are
 planning to create a delta pisi package format in the future that
 can also help with this problem. We decided to keep all the related
 info in the corresponding packages for its ease of maintanence purposes.
-The description and summary informations of the packages are exported
+Description and summary tags of the packages are exported
 to a standard pot file from the repository and accommodated to our
-Pardus translation statistics page.[<A HREF="#key-75">14</A>] The translated po
+Pardus translation statistics page.[<A HREF="#key-75">14</A>] Translated po
 files then are merged with the corresponding source packages in the
 repository. These operations are done with our repository translation
 scripts. [<A HREF="#key-76">15</A>]<BR>
@@ -634,10 +634,10 @@ One of the important things PiSi lacks right now is package signing
 and validation. We are currently working on this and expect to have
 an implementation soon.<BR>
 <BR>
-One other feature we are going to work on is the delta pisi package
+One other feature we are going to work on is delta pisi package
 format. We decided not to use a binary diff tool like xdelta. LZMA
-does its job well on the compression part so we are working on the
-possibility of creating packages only with the affected or changed
+does its job well on compression part so we are working on the
+possibility of creating packages only with affected or changed
 files.<BR>
 <BR>
 There are suboptimal usages of Berkeley DB. PiSi should have been
@@ -652,7 +652,7 @@ variables between builder and build scripts. We considered Subterfugue[<A HREF="
 but although it is extremely flexible with the Python system call
 hooks, it isn't fast enough for production use in a build farm. Thus
 we wrote catbox[<A HREF="#key-78">17</A>], a small sandboxing module for PiSi.
-It is completely written in C, and designed to do just the required
+It is completely written in C, and designed to do just required
 features for package management. Not all features are completed yet,
 but basic sandboxing works and will be incorparated with PiSi in the
 future.<BR>
