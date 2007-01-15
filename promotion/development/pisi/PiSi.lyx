@@ -760,7 +760,11 @@ One of the difficult parts of developing a package system is to reproduce
 \end_layout
 
 \begin_layout Standard
-Following is a sample scenario script taken from the PiSi trunk:
+Following is a sample scenario script taken from the PiSi trunk that tests
+ when the conflicting packages removal happens.
+ According to the bug report, removal happens before any package is fetched.
+ But it should be done after fetching all the packages and before starting
+ to upgrade to the fetched packages.
 \end_layout
 
 \begin_layout LyX-Code
