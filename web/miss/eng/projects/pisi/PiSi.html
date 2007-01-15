@@ -1,0 +1,704 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>:: Pardus :: TÜBİTAK/UEKAE ::</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../../../style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="head_grey2">
+        <div id="blue2">
+		<map name="header_map">
+		<area shape="rect" href="../../index.html" coords="24,24,143,101" >
+		<area shape="rect" href="../../documents/HOWTO_install.html" coords="596,115,721,144" >
+		<area shape="rect" href="../../download.html" coords="596,26,721,105" >
+		</map>
+		<img src="../../images/header.png" usemap="#header_map" width="740" height="163" border="0">
+        </div>
+    </div>
+    <div id="navi">
+        <a href="../../index.html">Home</a>
+      | <a href="../../info.html">About</a>
+      | <a href="../../projects/index.html">Projects</a>
+      | <a href="../../documents/index.html">Documents</a>
+      | <a href="../../products/index.html">Products</a>
+      | <a href="../../contact.html">Contact Us</a>
+      | <a href="../../press/index.html">Press</a>
+      | <a href="../../../index.html">Türkçe</a>
+    </div>
+    <div id="page" class="blue2">
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+
+<H1 ALIGN=center>PiSi: One Step Further With Pardus</H1>
+
+<H3 ALIGN=center>Faik Uygur</H3>
+
+<BLOCKQUOTE><B>Abstract: </B>
+With thousands of packages to maintain, the most important part of
+any distribution is indeed its package management system. PiSi is
+the package manager of Pardus, written from scratch in Python. By
+writing another package manager, our purpose was not to reinvent the
+wheel but to create a new kind of wheel that takes the distinctive
+ideas from the existing ones with also easy integration and maintanence
+in mind.<BR>
+You may download and try Pardus 2007 stable release to see PiSi in
+action from <a href="ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2007">ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2007</a>
+</BLOCKQUOTE>
+<!--TOC section Introduction-->
+
+<H2><A NAME="htoc1">1</A>&nbsp;&nbsp;Introduction</H2><!--SEC END -->
+
+PiSi (Packages Installed Succesfully, as intended) is the package
+manager of Pardus. It is the tool that is used to build, install,
+upgrade or remove the software packages of the distribution.<BR>
+<BR>
+Before deciding to write a new package system, we considered using
+the existing ones. Three years ago when the Pardus project was started,
+RPM has had many problems. [<A HREF="#key-68">1</A>] One of the bigger problems
+was also not having one upstream to work with. Today, it is still
+a work in progress.[<A HREF="#key-69">2</A>]<BR>
+<BR>
+As for DPKG, despite the fact that it had a much better state than
+RPM and having a single upstream, we had found its architecture hard
+to work on. Package preparation is cumbersome and complicated. Also
+some decisions like ``interactive package installation'' wasn't
+the ideas we would support for our distribution. The installation
+of any package should just be done without confusing the user with
+the configuration internals of any package. The user should only choose
+and install the package. Configuration should not be a job for a package
+system. Moreover, as it was stated in a discussion made years ago,
+its code has had become brittle.[<A HREF="#key-70">3</A>]So we could be wasting
+our time fixing what we had broken while trying to add a new feature
+on it.<BR>
+<BR>
+Also as they seem to be different in their nature, the mechanism behind
+them and the ways are the same that were not satisfying us. We wanted
+something different. <BR>
+<BR>
+The package manager in our mind should ease the package creation task
+for the package developers and should pave the way for working with
+binary packages. For the former, Gentoo's portage had some good ideas.
+So at the end we decided to design PiSi with all the advantages of
+the ones over each other and write it in Python. As all the other
+components of the distribution were going to be written in Python,
+it would also be much easier to integrate to those parts and the prototyping
+phase would be much much faster. <BR>
+<BR>
+After having a prototype to work with, the development of PiSi went
+parallel with the development of the packages of the distribution.
+After a 6 months of work, with 10 people, we had created 600 packages
+and so the first stable release of Pardus. Now after a year from our
+first stable release, with 25 developers, we have a total of 1223
+packages in the stable branch of Pardus 2007 and 698 packages in our
+contrib repository made. <BR>
+<BR>
+<!--TOC section Why PiSi?-->
+
+<H2><A NAME="htoc2">2</A>&nbsp;&nbsp;Why PiSi?</H2><!--SEC END -->
+
+To answer that question we first need to define what a package is
+and what needs to be done for a package to be build, deployed and
+maintained by a distribution. For a package system, every phase of
+a package's existence from its maintainer's hands to the distribution
+users' machines have problems that need to be solved. There exists
+many package systems that solve these problems in some different ways.
+What makes PiSi great lies in the simplicity and the efficiency of
+the solutions it provides.<BR>
+<BR>
+<!--TOC subsection What is a Package?-->
+
+<H3>What is a Package?</H3><!--SEC END -->
+
+There are two kinds of packages for PiSi: source and binary. <BR>
+<BR>
+A binary package is a container that consists of a collection of files
+and meta data. The meta data holds detailed information about the
+package, like homepage, version and runtime dependencies of the contained
+software, packager info, exc. The collection of files may be executables,
+libraries or other data files that are all parts of the contained
+software. PiSi binary packages have ''.pisi'' extensions and are
+actually zip archives. The files other than the meta data are compressed
+with another compression algorithm within the zip archive that is
+detailed later. Binary packages exist in PiSi binary repositories.<BR>
+<BR>
+A source package minimally consists of an actions.py file that contains
+the setup, build and install instructions to create a binary package
+and a pspec.xml file that contains the other necessary informations,
+like build and runtime dependencies, conflicts, url or path of the
+source archive, exc. Source packages exist in PiSi source repositories.<BR>
+<BR>
+<!--TOC subsection Simple by Design-->
+
+<H3>Simple by Design</H3><!--SEC END -->
+
+The most obvious part of PiSi is its simplicity. From its svn like
+console interface pisi-cli to its package building mechanism, it is
+very easy to grasp and use. It is so simple that when the first PiSi
+source code was revealed with some example source packages, it only
+took twenty-minutes for someone to contribute a new package to Pardus.
+And there were no documentation about the build system whatsoever.
+The xml based source packaging system is so intuitive and easy to
+grasp that it almost needs no documentation. <BR>
+<BR>
+Actually this was intentionally made that way. When you look at the
+current package managers, you can see that the variety of the tools
+for managing and the various package building helper tools, create
+an unnecessarily complicated system.<BR>
+<BR>
+The first complication comes from the different tools that combined
+make the desired package management possible. The so called native
+package managers (DPKG, RPM, etc.) does the house keeping jobs and
+above them there exists many other wrapper tools (apt, dselect, urpmi,
+yum, aptrpm, etc.) for mainly handling the dependency resolution,
+package selection and installation issues.<BR>
+<BR>
+But the main complication and difficulty comes from the various build
+helper tools, the ad-hoc source specification formats and the build
+scripts. The learning curve is steep for the new developers.<BR>
+<BR>
+PiSi architecture is quite different from traditional designs. Every
+functionality, related to package management like installing, building,
+dependency solving, fetching, validating, repository management is
+in the core of PiSi. On the other hand, package configuration is clearly
+separated from package management system and is delegated to COMAR.
+The configuration system is not limited with preremove or postinstall
+scripts; it is a much more advanced system that makes all the installed
+packages to be configured in a unique way by using the same COMAR
+API. A package may provide a configuration service script to be used
+as a configuration interface for itself. Configuration of packages
+can be done remotely or locally.<BR>
+<BR>
+Traditionally, build scripts of packages are shell scripts. We think
+the shell is ideal for simple tasks, like batch run of a series of
+commands with maybe some conditionals but nothing more. The shell
+scripting is awkward, shell is not enough by itself and needs many
+other helper tools with their own syntax and usage, debugging and
+maintainence costs are high.<BR>
+<BR>
+When it comes to a complex task like building a package, you need
+conditional operations, string manipulations, iteration over series
+of data, and many other operations where you can all get from higher
+scripting languages also with additional advantages. For those reasons
+we have choosen Python.<BR>
+<BR>
+Python is the choice of Pardus in all of the distribution's core components
+for its simplicity, flexibility and easing the maintenance advantages.
+YALI (Yet Another Linux Installer), the simple, fast and the pretty
+installer of Pardus [<A HREF="#key-79">4</A>]; Package Manager (the graphical
+frontend of PiSi) [<A HREF="#key-80">5</A>]; Pardusman, the automatic Live or
+Install Pardus distribution CD/DVD creator that only needs for the
+packages to be selected [<A HREF="#key-81">6</A>]; Buildfarm, the software that
+creates the binary repositories from the corresponding source repositories
+[<A HREF="#key-82">7</A>]; all use PiSi internally. A complicated system like
+buildfarm is written in a 1-2 weeks of time with Python and PiSi api.<BR>
+<BR>
+Below is a screenshot from Pardusman:<BR>
+<BR>
+<IMG SRC="pardusman.png"><BR>
+<BR>
+<!--TOC subsection Build System of PiSi-->
+
+<H3>Build System of PiSi</H3><!--SEC END -->
+
+<!--TOC subsubsection Overview-->
+
+<H4>Overview</H4><!--SEC END -->
+
+PiSi build system consists of a meta information file called pspec.xml
+and the actual build script file called actions.py. These are the
+main files to build a binary package. There can be other optional
+files like patches and COMAR scripts. <BR>
+<BR>
+Following is a sample source package from the current stable branch
+of Pardus:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+openssh<BR>
+<BR>
+&nbsp;|__&nbsp;comar<BR>
+<BR>
+&nbsp;|&nbsp;__&nbsp;service.py<BR>
+<BR>
+&nbsp;|__&nbsp;files<BR>
+<BR>
+&nbsp;|&nbsp;|__&nbsp;openssh-4.3_p1-chroot.patch<BR>
+<BR>
+&nbsp;|&nbsp;|__&nbsp;scp-resume.sh<BR>
+<BR>
+&nbsp;|&nbsp;__&nbsp;sshd.pam<BR>
+<BR>
+&nbsp;|__&nbsp;actions.py<BR>
+<BR>
+&nbsp;__&nbsp;pspec.xml
+</TT></DL></DIV>
+pspec.xml and actions.py files are in the root directory of the package.
+files directory is optional and may contain the patches or additional
+files to the package. Another optional directory, comar, contains
+COMAR scripts for integrating package with the rest of the system;
+all to be registered to COMAR daemon. COMAR needs an article of its
+own so we will not focus on the COMAR related parts.<BR>
+<BR>
+Following is the content of a sample binary package from the current
+stable branch of Pardus:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+Archive:&nbsp;joe-3.5-2-2.pisi<BR>
+Length&nbsp;Date&nbsp;Time&nbsp;Name<BR>
+--------&nbsp;----&nbsp;----&nbsp;----&nbsp;<BR>
+2047&nbsp;11-10-06&nbsp;02:41&nbsp;metadata.xml<BR>
+11465&nbsp;11-10-06&nbsp;02:41&nbsp;files.xml<BR>
+263332&nbsp;11-10-06&nbsp;02:41&nbsp;install.tar.lzma<BR>
+--------&nbsp;-------&nbsp;276844&nbsp;3&nbsp;files
+</TT></DL></DIV>
+Automatically generated metadata.xml and files.xml files are in the
+root directory of the binary package. metadata.xml file holds the
+meta data information related to binary package that are extracted
+from pspec.xml file. files.xml file holds detailed information about
+all the files that are contained in the install.tar.lzma like hash,
+type, size, user, group and mode informations of the files.<BR>
+<BR>
+<!--TOC subsubsection Build Scripts-->
+
+<H4>Build Scripts</H4><!--SEC END -->
+
+PiSi build scripts are divided into three phases: setup, build and
+install. setup is the configuration phase prior to build. Build phase
+is the actual compilation phase. And the install phase is where the
+build output is installed to the destination system. Depending to
+the package, setup and build phases may be optional.<BR>
+<BR>
+Most of the build automation software systems [<A HREF="#key-87">8</A>] that
+are used by the source archives of the packages, roughly need these
+steps to install the software but they differ from each other. So
+what PiSi does is to provide an underlying and unified framework for
+the known build systems and make the packagers' lives easier. This
+framework is called ActionsAPI and is included with PiSi package as
+an independent module. The actions.py scripts use this module to build
+packages.<BR>
+<BR>
+Following is the actions.py script of joe package as an example:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#!/usr/bin/python<BR>
+#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<BR>
+#<BR>
+#&nbsp;Copyright&nbsp;2006&nbsp;TUBITAK/UEKAE<BR>
+#&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2.<BR>
+#&nbsp;See&nbsp;the&nbsp;file&nbsp;http://www.gnu.org/copyleft/gpl.txt.<BR>
+from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools<BR>
+def&nbsp;setup():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.configure()<BR>
+def&nbsp;build():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.make()<BR>
+def&nbsp;install():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.install()</TT></DL></DIV>
+<!--TOC subsubsection Package Specifications-->
+
+<H4>Package Specifications</H4><!--SEC END -->
+
+Build scripts are not enough to create a package. There are some other
+necessary informations used in the build phase and also some meta
+data that is needed to be placed in the output package. We decided
+to separate the meta data from the build scripts and placed them into
+a file called pspec.xml. Pspec.xml holds build related informations
+like runtime and buildtime dependencies of a package, path and sha1sum
+of the source archive, patches to be applied and other meta data informations
+like packager information, description, summary, homepage of the software
+project and changelog info of the package, etc. We decided to put
+the data into a XML file instead of using an ad-hoc text format. This
+makes it easier to process and to write independent tools for various
+purposes. It is also much more structured and readable.<BR>
+<BR>
+Following is the pspec.xml file of joe source package as an example:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+&lt;?xml&nbsp;version="1.0"&nbsp;?&gt;<BR>
+&lt;!DOCTYPE&nbsp;PISI&nbsp;SYSTEM&nbsp;"http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd"&gt;<BR>
+&lt;PISI&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Source&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;joe&lt;/Name&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Homepage&gt;http://sourceforge.net/projects/joe-editor&lt;/Homepage&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Packager&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;İsmail&nbsp;Dönmez&lt;/Name&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;ismail@pardus.org.tr&lt;/Email&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Packager&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;License&gt;GPL-2&lt;/License&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;IsA&gt;app:console&lt;/IsA&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Summary&gt;Joe&nbsp;text&nbsp;editor.&lt;/Summary&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Summary&nbsp;xml:lang="tr"&gt;Joe&nbsp;metin&nbsp;dzenleyicisi&lt;/Summary&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Description&gt;Joe&nbsp;is&nbsp;a&nbsp;small&nbsp;text&nbsp;editor&nbsp;with&nbsp;sytax&nbsp;highlighting.&lt;/Description&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Archive&nbsp;sha1sum="aeee6bb71ed1e9b9c9a2a64d8e078a06245957e5"&nbsp;type="targz"&gt;http://easynews.dl.sourceforge.net/sourceforge/joe-editor/joe-3.5.tar.gz&lt;/Archive&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;BuildDependencies&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&gt;ncurses&lt;/Dependency&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/BuildDependencies&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Source&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;Package&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;joe&lt;/Name&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;RuntimeDependencies&gt;&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Dependency&gt;ncurses&lt;/Dependency&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/RuntimeDependencies&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Files&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="executable"&gt;/usr/bin&lt;/Path&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="config"&gt;/etc&lt;/Path&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Path&nbsp;fileType="man"&gt;/usr/share/man&lt;/Path&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Files&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Package&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;History&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&nbsp;release="2"&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;2006-11-10&lt;/Date&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;3.5&lt;/Version&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Comment&gt;Stable&nbsp;update&lt;/Comment&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;İsmail&nbsp;Dönmez&lt;/Name&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;ismail@pardus.org.tr&lt;/Email&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Update&nbsp;release="1"&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;2006-01-08&lt;/Date&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Version&gt;3.3&lt;/Version&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Comment&gt;First&nbsp;release.&lt;/Comment&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;İsmail&nbsp;Dönmez&lt;/Name&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Email&gt;ismail@pardus.org.tr&lt;/Email&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Update&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/History&gt;<BR>
+&lt;/PISI&gt;&nbsp;
+</TT></DL></DIV>
+One other virtue of using XML format is that it is possible to easily
+divide packages by defining more Package
+tags into a pspec.xml file.<BR>
+<BR>
+<!--TOC subsubsection Components and Categories-->
+
+<H4>Components and Categories</H4><!--SEC END -->
+
+PiSi defines two relations to identify a package: Components and Categories.
+We can say a x package is part of y component and that x package belongs
+to z category. With components we have a ``partof'' relation and
+with categories we have an ``isa'' relation.<BR>
+<BR>
+Most of the time the directory hierarchy of the source package also
+gives us the component of the package, except for some rare corner
+cases. On the other hand, category of the package is explicitly defined
+in the pspec.xml file with an IsA tag. <BR>
+<BR>
+We can use the previous given example, joe package to show these relations.
+Source package joe is under applications/editors/joe directory in
+our source repository. [<A HREF="#key-88">9</A>]There we can see that the component
+of the joe package is ``applications.editors''. The category of
+the package is defined in the pspec.xml as ``app:console''.<BR>
+<BR>
+We can use the components to create a minimal system with all the
+packages under those components installed. A component is an installable
+entity for PiSi. You can install the ``system.base'' component
+to have a minimal base system and the ``desktop.kde.base'' component
+to have a minimal desktop environment.<BR>
+<BR>
+Currently the category info is used by Package Manager[<A HREF="#key-80">5</A>]
+that has an option to show only the packages that belong to ``app:gui''
+category.<BR>
+<BR>
+<!--TOC section What PiSi Brings-->
+
+<H2><A NAME="htoc3">3</A>&nbsp;&nbsp;What PiSi Brings</H2><!--SEC END -->
+
+<!--TOC subsection Dependency Resolver-->
+
+<H3>Dependency Resolver</H3><!--SEC END -->
+
+As in all advanced package systems, PiSi has its own dependency resolver.
+It is designed to be within PiSi from the beginning and so different
+from DPKG and RPM, not done with wrapper tools. It is based on a topological
+sort algorithm.[<A HREF="#key-72">10</A>] Kept as simple as possible to be able
+to work as fast and efficient as possible. It is adequate for our
+needs and we do not plan to create a beast out of it. It currently
+allows for the build system to provide the dependent and conflicting
+packages with relative versioning informations.<BR>
+<BR>
+<!--TOC subsection Scenarios-->
+
+<H3>Scenarios</H3><!--SEC END -->
+
+One of the difficult parts of developing a package system is to reproduce
+the reported bugs to figure out what went wrong. But it is not always
+easy to reproduce the problems. Or sometimes you figure out a possible
+scenario that resulted as the reported bug, but you have to make sure
+that it is that case. And to make sure you fixed it, you have to have
+a way to reproduce the bug easily to test your fixes. PiSi ScenarioAPI
+is just for that purpose. By using the ScenarioAPI you write scenario
+scripts that ends as the bugs reported. So by writing scenario scripts,
+you have easily reproducable cases. You can add many packages as you
+like for the test cases. The packages will automatically be created
+on runtime of the script.<BR>
+<BR>
+ScenarioAPI uses PiSi's ability of working with a different system
+root. Every command may take an optional -D parameter that points
+to a destination directory that resembles a chroot system for PiSi.
+The directory may be an empty one. When PiSi sees there is no database
+environment in the directory, it creates one to work with. So the
+scenario scripts run in an isolated space. Image creation tools also
+uses this feature.<BR>
+<BR>
+Following is a sample scenario script taken from the PiSi trunk that
+tests when the conflicting package removals happen. According to the
+bug report, removal happens before any package is fetched. But it
+should be done after fetching all the packages and before starting
+to upgrade to the fetched packages.
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+from&nbsp;pisi.scenarioapi.scenario&nbsp;import&nbsp;*<BR>
+XORG&nbsp;=&nbsp;"xorg"<BR>
+QT&nbsp;=&nbsp;"qt"<BR>
+XORG_SERVER&nbsp;=&nbsp;"xorg-server"<BR>
+XORG_VIDEO&nbsp;=&nbsp;"xorg-video"<BR>
+XORG_FONT&nbsp;=&nbsp;"xorg-font"<BR>
+let_repo_had(XORG)<BR>
+let_repo_had(QT,&nbsp;with_dependencies(XORG))<BR>
+let_pisi_had(XORG,&nbsp;QT)<BR>
+def&nbsp;run():<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_added_package(XORG_VIDEO,&nbsp;with_conflicts(XORG))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_added_package(XORG_FONT,&nbsp;with_conflicts(XORG))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_added_package(XORG_SERVER,&nbsp;with_conflicts(XORG),&nbsp;with_dependencies(XORG_VIDEO,&nbsp;XORG_FONT))
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_version_bumped(QT,&nbsp;with_removed_dependencies(XORG),&nbsp;with_added_dependencies(XORG_SERVER))<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_updated_index()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;pisi_upgraded()&nbsp;
+</TT></DL></DIV>
+<!--TOC subsection Source and Binary Repositories-->
+
+<H3>Source and Binary Repositories</H3><!--SEC END -->
+
+PiSi supports both source and binary repositories. <BR>
+<BR>
+The source packages of Pardus are developed at our svn repositories.[<A HREF="#key-73">11</A>]
+The svn repositories are also used as source repositories.<BR>
+<BR>
+The binary packages are kept at our binary repositories. [<A HREF="#key-74">12</A>]
+When new package releases are committed; the Buildfarm creates binary
+packages from source repositories and moves them to the corresponding
+binary repositories. Buildfarm package queue is managed manually by
+the repository administrators.<BR>
+<BR>
+The source and binary repositories are represented by their index
+files named pisi-index.xml. Both created by PiSi's index command executed
+from the root of the repository. The index command creates a pisi-index.xml
+file out of that repository tree. Adding and using new repositories
+to PiSi is as simple as:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+pisi&nbsp;add-repo&nbsp;contrib&nbsp;http://paketler.pardus.org.tr/contrib/pisi-index.xml.bz2<BR>
+pisi&nbsp;add-repo&nbsp;pardus-2007-sources&nbsp;http://svn.pardus.org.tr/pardus/2007/pisi-index.xml.bz2
+</TT></DL></DIV>
+<!--TOC subsection Building and Emerging of Packages-->
+
+<H3>Building and Emerging of Packages</H3><!--SEC END -->
+
+In the example above, we have added a source repository named pardus-2007-sources.
+The given repository names are arbitrary.<BR>
+<BR>
+After adding a source repository we have many options to work with
+the source packages. First of all, since we have all the source package
+informations from a repository, we can simply build any package by
+giving only the name of the package as in:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#&nbsp;pisi&nbsp;build&nbsp;kiki
+</TT></DL></DIV>
+The build command will fetch the original source archive, the patches
+provided by the source package, additional files and COMAR scripts
+to a temporary location. If there are missing build dependencies to
+satisfy, PiSi will try to install them. After building, the binary
+kiki-x-y-z.pisi package will be created.<BR>
+<BR>
+The build process is divided into multiple steps. For example, you
+may not want to build the binary package but just to see the source
+code of the software provided with that package. Or you may want to
+work on that code and try multiple builds until you are finished and
+then continue to other steps of the binary package creation operation.
+The build command steps are: fetch, unpack, setup, build, install,
+package. Fetch step just fetches the source tarball of the package.
+Unpack step extracts the archive and then applies any existing patches.
+Setup, build and install are the actual building steps. The last step,
+package, is the one that creates the binary ''.pisi'' package. As
+an example to unpack a package, you do:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#&nbsp;pisi&nbsp;build&nbsp;--unpack&nbsp;kiki
+</TT></DL></DIV>
+The source packages are extracted and compiled under /var/pisi directory.
+The output binary package will be written to the current working directory.<BR>
+<BR>
+The good thing is that you don't need a source repository to work
+with the source packages. It is possible to build a package by providing
+only the local path or the remote url of a spec file without having
+any source repository added to PiSi database. <BR>
+<BR>
+Here is an example to build the same package by providing only its
+remote url:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#&nbsp;pisi&nbsp;build&nbsp;http://svn.pardus.org.tr/pardus/devel/applications/games/kiki/pspec.xml
+</TT></DL></DIV>
+One other feature of PiSi is its ability to emerge source packages
+from the source repositories. By emerging, PiSi automatically downloads
+the buildtime and runtime dependencies of the package. If they do
+not exist in any binary repository, PiSi also tries to emerge those
+missing dependencies from the source repositories. PiSi does not need
+the whole source repository to be checked out or downloaded. Because
+a source repository is represented by the index file that also contains
+all the dependency informations and building a package by its remote
+url is possible, for emerging a package, you only need to add the
+source repository of the package to PiSi database.<BR>
+<BR>
+Here is an example to emerge a package:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#&nbsp;pisi&nbsp;emerge&nbsp;kiki
+</TT></DL></DIV>
+<!--TOC subsection LZMA Compressed Packages-->
+
+<H3>LZMA Compressed Packages</H3><!--SEC END -->
+
+LZMA, short for Lempel-Ziv-Markov chain-Algorithm, is a data compression
+algorithm. We decided to use LZMA compression in our package format
+for its greater compression ratio than gzip and bzip2. It is about
+%30 better than gzip and %15 better than bzip2. [<A HREF="#key-71">13</A>]<BR>
+<BR>
+To give a more concrete example: Pardus 1.0 stable release was using
+gzip compression in PiSi packages. With all our efforts to put all
+the necessary packages to satisfy the needs of a desktop user, we
+were only able to put a total of 335 packages. But now in Pardus 2007,
+by using LZMA compression within PiSi package format, there comes
+641 packages with the installation CD. When all the packages that
+are in Pardus 1.0 CD are extracted to the destination system, it takes
+1.891 GB of disk space and that is 3.043 GB of disk space for Pardus
+2007.<BR>
+<BR>
+The package format is a zip archive. This makes it possible to reach
+the metadata and COMAR files of the package faster by using the standard
+tools. Under the zip archive, there exists install.tar.lzma file that
+contains the actual files of the package to be extracted to the system.
+A sample pisi package content is as following:
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+Archive:<BR>
+&nbsp;/var/cache/pisi/packages/openssh-4.5_p1-13-10.pisi<BR>
+&nbsp;&nbsp;Length&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;Time&nbsp;&nbsp;&nbsp;&nbsp;Name<BR>
+&nbsp;--------&nbsp;&nbsp;&nbsp;&nbsp;----&nbsp;&nbsp;&nbsp;----&nbsp;&nbsp;&nbsp;&nbsp;----<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1357&nbsp;&nbsp;10-22-06&nbsp;21:16&nbsp;&nbsp;&nbsp;comar/service.py<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6824&nbsp;&nbsp;11-10-06&nbsp;11:59&nbsp;&nbsp;&nbsp;metadata.xml<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7803&nbsp;&nbsp;11-10-06&nbsp;11:59&nbsp;&nbsp;&nbsp;files.xml<BR>
+&nbsp;&nbsp;&nbsp;388881&nbsp;&nbsp;11-10-06&nbsp;11:59&nbsp;&nbsp;&nbsp;install.tar.lzma<BR>
+&nbsp;--------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-------&nbsp;&nbsp;&nbsp;&nbsp;404865&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;files</TT></DL></DIV>
+<!--TOC subsection Non-Root Installations-->
+
+<H3>Non-Root Installations</H3><!--SEC END -->
+
+PiSi package comes with a COMAR management script manager.py that
+is registered to COMAR's database when the PiSi's own package is installed.
+By using this script's services over COMAR, it is possible to do root
+privileged package operations. Package-Manager, the PiSi frontend
+uses these services to install, remove, upgrade packages or add/remove
+new repositories to PiSi database. The authorization is done by the
+COMAR daemon. By extending these services, it will also be possible
+to remotely manage the package system of any machine.<BR>
+<BR>
+Below is a screenshot from the PiSi frontend, Package-Manager.<BR>
+<BR>
+<IMG SRC="package-manager.png"><BR>
+<BR>
+<!--TOC subsection i18n Support-->
+
+<H3>i18n Support</H3><!--SEC END -->
+
+The xml spec file format makes it possible to provide translations
+of the description and summary of the packages to other languages.
+We are aware of the problem that just updating a translation itself
+would need a release increase and therefore a package update. i18n
+support is important so we will try to balance that problem by waiting
+the next release of the package with an actual update need. We are
+planning to create a delta pisi package format in the future that
+can also help with this problem. We decided to keep all the related
+info in the corresponding packages for its ease of maintanence purposes.
+The description and summary informations of the packages are exported
+to a standard pot file from the repository and accommodated to our
+Pardus translation statistics page.[<A HREF="#key-75">14</A>] The translated po
+files then are merged with the corresponding source packages in the
+repository. These operations are done with our repository translation
+scripts. [<A HREF="#key-76">15</A>]<BR>
+<BR>
+<!--TOC section Near Future-->
+
+<H2><A NAME="htoc4">4</A>&nbsp;&nbsp;Near Future</H2><!--SEC END -->
+
+One of the important things PiSi lacks right now is package signing
+and validation. We are currently working on this and expect to have
+an implementation soon.<BR>
+<BR>
+One other feature we are going to work on is the delta pisi package
+format. We decided not to use a binary diff tool like xdelta. LZMA
+does its job well on the compression part so we are working on the
+possibility of creating packages only with the affected or changed
+files.<BR>
+<BR>
+There are suboptimal usages of Berkeley DB. PiSi should have been
+faster in some certain database operations. This is also planned to
+be fixed in the next major release.<BR>
+<BR>
+A sandbox support for PiSi is also planned. There are two ways to
+sandbox a build script within user context: Overriding glibc functions
+with LD_PRELOAD or intercepting system calls with ptrace. We decided
+to go with the ptrace, cause former makes it cumbersome to pass Python
+variables between builder and build scripts. We considered Subterfugue[<A HREF="#key-77">16</A>],
+but although it is extremely flexible with the Python system call
+hooks, it isn't fast enough for production use in a build farm. Thus
+we wrote catbox[<A HREF="#key-78">17</A>], a small sandboxing module for PiSi.
+It is completely written in C, and designed to do just the required
+features for package management. Not all features are completed yet,
+but basic sandboxing works and will be incorparated with PiSi in the
+future.<BR>
+<BR>
+<!--TOC section Conclusion-->
+
+<H2><A NAME="htoc5">5</A>&nbsp;&nbsp;Conclusion</H2><!--SEC END -->
+
+One of the design goals of PiSi was easy development and maintainence
+of the packages. We think that PiSi had reached that goal in its early
+releases that made us possible to create that many packages in such
+a short time with so far no problems. <BR>
+<BR>
+Pardus tries to stand out with its new and brave approaches in the
+problematic areas of Linux distributions. With PiSi and COMAR architecture
+we created a system that now stands on its feets. The next step is
+to evolve the system with so many things that are possible to do with
+the provided infrastructure and to gain new developers by capturing
+their attention with what we see in Pardus.<BR>
+<BR>
+<!--TOC section References-->
+
+<H2>References</H2><!--SEC END -->
+<DL COMPACT=compact><DT>
+<A NAME="key-68">1<FONT COLOR=purple></FONT></A><DD>http://distrowatch.com/dwres.php?resource=article-rpm<BR>
+<DT><A NAME="key-69"><FONT COLOR=purple>2</FONT></A><DD>http://www.redhat.com/archives/fedora-announce-list/2006-December/msg00003.html<BR>
+<DT><A NAME="key-70"><FONT COLOR=purple>3</FONT></A><DD>http://lists.debian.org/debian-devel/1999/05/msg01250.html<BR>
+<DT><A NAME="key-79"><FONT COLOR=purple>4</FONT></A><DD>http://www.pardus.org.tr/eng/projects/yali/index.html<BR>
+<DT><A NAME="key-80"><FONT COLOR=purple>5</FONT></A><DD>http://www.pardus.org.tr/eng/projects/package-manager/index.html<BR>
+<DT><A NAME="key-81"><FONT COLOR=purple>6</FONT></A><DD>http://svn.pardus.org.tr/uludag/trunk/pardusman/<BR>
+<DT><A NAME="key-82"><FONT COLOR=purple>7</FONT></A><DD>http://svn.pardus.org.tr/uludag/trunk/buildfarm/<BR>
+<DT><A NAME="key-87"><FONT COLOR=purple>8</FONT></A><DD>http://en.wikipedia.org/wiki/Build_Automation<BR>
+<DT><A NAME="key-88"><FONT COLOR=purple>9</FONT></A><DD>http://svn.pardus.org.tr/pardus/2007/applications/editors/joe/
+<DT><A NAME="key-72"><FONT COLOR=purple>10</FONT></A><DD>http://en.wikipedia.org/wiki/Topological_sort<BR>
+<DT><A NAME="key-73"><FONT COLOR=purple>11</FONT></A><DD>http://svn.pardus.org.tr/pardus/2007/<BR>
+<DT><A NAME="key-74"><FONT COLOR=purple>12</FONT></A><DD>http://paketler.pardus.org.tr/pardus-2007/<BR>
+<DT><A NAME="key-71"><FONT COLOR=purple>13</FONT></A><DD>http://tukaani.org/lzma/<BR>
+<DT><A NAME="key-75"><FONT COLOR=purple>14</FONT></A><DD>http://www.pardus.org.tr/eng/projects/translation/stats/<BR>
+<DT><A NAME="key-76"><FONT COLOR=purple>15</FONT></A><DD>http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/<BR>
+<DT><A NAME="key-77"><FONT COLOR=purple>16</FONT></A><DD>http://subterfugue.org/<BR>
+<DT><A NAME="key-78"><FONT COLOR=purple>17</FONT></A><DD>http://svn.pardus.org.tr/uludag/trunk/catbox/<BR>
+</DL>
+
+
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+        <div id="footnote">
+            <p>
+              Information and documents on Pardus web pages can be used freely anywhere with original source credit.<br />
+              For information and suggestion(s) please write to <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi_at_pardus.org.tr</a><br />
+              <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
+           </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
