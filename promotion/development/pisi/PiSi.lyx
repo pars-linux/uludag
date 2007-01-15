@@ -296,7 +296,8 @@ Python is the choice of Pardus in all of the distribution's core components
 \end_inset
 
 ; all use PiSi internally.
- 
+ A complicated system like buildfarm is written in a 1-2 weeks of time with
+ Python and PiSi api.
 \end_layout
 
 \begin_layout Subsection*
