@@ -451,15 +451,15 @@ bug report, removal happens before any package is fetched. But it
 should be done after fetching all the packages and before starting
 to upgrade to the fetched packages.
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
-from&nbsp;pisi.scenarioapi.scenario&nbsp;import&nbsp;*<BR>
+from&nbsp;pisi.scenarioapi.scenario&nbsp;import&nbsp;*<BR><BR>
 XORG&nbsp;=&nbsp;"xorg"<BR>
 QT&nbsp;=&nbsp;"qt"<BR>
 XORG_SERVER&nbsp;=&nbsp;"xorg-server"<BR>
 XORG_VIDEO&nbsp;=&nbsp;"xorg-video"<BR>
-XORG_FONT&nbsp;=&nbsp;"xorg-font"<BR>
+XORG_FONT&nbsp;=&nbsp;"xorg-font"<BR><BR>
 let_repo_had(XORG)<BR>
 let_repo_had(QT,&nbsp;with_dependencies(XORG))<BR>
-let_pisi_had(XORG,&nbsp;QT)<BR>
+let_pisi_had(XORG,&nbsp;QT)<BR><BR>
 def&nbsp;run():<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;repo_added_package(XORG_VIDEO,&nbsp;with_conflicts(XORG))<BR>
 &nbsp;&nbsp;&nbsp;&nbsp;repo_added_package(XORG_FONT,&nbsp;with_conflicts(XORG))<BR>
