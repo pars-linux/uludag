@@ -324,7 +324,7 @@ Overview
 \begin_layout Standard
 PiSi build system consists of a meta information file called pspec.xml and
  the actual build script file called actions.py.
- These are the main files to build a package.
+ These are the main files to build a binary package.
  There can be other optional files like patches and COMAR scripts.
  
 \end_layout
@@ -383,6 +383,48 @@ pspec.xml and actions.py files are in the root directory of the package.
  package with the rest of the system; all to be registered to COMAR daemon.
  COMAR needs an article of its own so we will not focus on the COMAR related
  parts.
+\end_layout
+
+\begin_layout Standard
+Following is the content of a sample binary package from the current stable
+ branch of Pardus:
+\end_layout
+
+\begin_layout LyX-Code
+Archive: joe-3.5-2-2.pisi
+\end_layout
+
+\begin_layout LyX-Code
+Length Date Time Name
+\end_layout
+
+\begin_layout LyX-Code
+-------- ---- ---- ---- 
+\end_layout
+
+\begin_layout LyX-Code
+2047 11-10-06 02:41 metadata.xml
+\end_layout
+
+\begin_layout LyX-Code
+11465 11-10-06 02:41 files.xml
+\end_layout
+
+\begin_layout LyX-Code
+263332 11-10-06 02:41 install.tar.lzma
+\end_layout
+
+\begin_layout LyX-Code
+-------- ------- 276844 3 files
+\end_layout
+
+\begin_layout Standard
+metadata.xml and files.xml files are in the root directory of the binary package.
+ metadata.xml file holds the meta data information related to binary package
+ that are extracted from pspec.xml file.
+ files.xml file holds detailed information about all the files that are contained
+ in the install.tar.lzma like hash, type, size, user, group and mode informations
+ of the files.
 \end_layout
 
 \begin_layout Subsubsection*
