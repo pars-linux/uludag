@@ -66,10 +66,35 @@ function set_assign_to() {
         }
     }
 }
+
+    // LIMIT COMMENT LENGTH
+    MAX_LINES = 50;
+
+    function count(s1, s2) {
+        var c = 0;
+        for (var i = 0; i < s1.length; i++) {
+            if (s2 == s1.substr(i, s2.length)) {
+                c++;
+            }
+        }
+        return c;
+    }
+    
+    function checkCommentLength() {
+        var el = document.getElementById('comment');
+        if (count(el.value, '\n') > MAX_LINES) {
+            var msg = MAX_LINES + ' satırdan uzun yorum yazamazsınız.\nKomut çıktılarını eklenti olarak gönderin.';
+            alert(msg);
+            return false;
+        }
+        return true;
+    }
+    // LIMIT COMMENT LENGTH
+
 -->
 </script>
 
-<form name="Create" id="Create" method="post" action="post_bug.cgi">
+<form name="Create" id="Create" method="post" action="post_bug.cgi" onsubmit="return checkCommentLength();">
 <input type="hidden" name="product" value="[% product FILTER html %]">
 
 <table cellspacing="2" cellpadding="0" border="0">
@@ -233,7 +258,7 @@ function set_assign_to() {
 
   <tr><td align="right" valign="top"><strong>Açıklama:</strong></td>
     <td colspan="3">
-      <textarea wrap="hard" name="comment" rows="10" cols="80">
+      <textarea wrap="hard" id="comment" name="comment" rows="10" cols="80">
         [% comment FILTER html %]</textarea>
       <br>
     </td>
