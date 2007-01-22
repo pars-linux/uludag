@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -11,6 +11,7 @@
 
 import os
 import sys
+import time
 import comar
 from qt import *
 from kdecore import *
@@ -99,14 +100,26 @@ class Comlink:
         self.links = {}
     
     def connect(self):
-        self.com = comar.Link()
-        self.com.localize()
+        start = time.time()
+        while time.time() < start + 5:
+            try:
+                self.com = comar.Link()
+                self.com.localize()
+                return True
+            except comar.CannotConnect:
+                pass
+        KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
+        KApplication.kApplication().quit()
+        return False
     
-    def queryConnections(self):
+    def setupComar(self):
         self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
         self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
         self.com.ask_notify("Net.Link.stateChanged")
         self.com.ask_notify("Net.Link.connectionChanged")
+    
+    def queryConnections(self):
+        self.setupComar()
         self.com.Net.Link.connections(id=CONNLIST)
     
     def queryLinks(self):
@@ -126,7 +139,13 @@ class Comlink:
                     pass
     
     def slotComar(self, sock):
-        reply = self.com.read_cmd()
+        try:
+            reply = self.com.read_cmd()
+        except comar.LinkClosed:
+            self.notifier = None
+            if self.connect():
+                self.setupComar()
+            return
         if reply.command == "result":
             self.handleReply(reply)
         elif reply.command == "notify":
@@ -259,7 +278,8 @@ class Applet:
             item.deleteLater()
     
     def start(self):
-        comlink.connect()
+        if not comlink.connect():
+            return
         comlink.queryLinks()
         comlink.queryConnections()
         if self.mode == 0:
