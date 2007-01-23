@@ -53,10 +53,20 @@ class Window(QDialog):
         
         hb = QHBox(vb2)
         hb.setSpacing(3)
+        but = QPushButton(getIconSet("up", KIcon.Small), i18n("Up"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotUp)
+        self.b1 = but
+        but = QPushButton(getIconSet("down", KIcon.Small), i18n("Down"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotDown)
+        self.b2 = but
         but = QPushButton(getIconSet("add", KIcon.Small), i18n("Add"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotAdd)
         but = QPushButton(getIconSet("remove", KIcon.Small), i18n("Remove"), hb)
         self.connect(but, SIGNAL("clicked()"), self.slotRemove)
+        self.b3 = but
+        
+        self.connect(self.dns, SIGNAL("selectionChanged()"), self.slotSelection)
+        self.slotSelection()
         
         hb = QWidget(self)
         vb.addSpacing(6)
@@ -91,6 +101,34 @@ class Window(QDialog):
     def reject(self):
         QDialog.reject(self)
     
+    def slotSelection(self):
+        item = self.dns.selectedItem()
+        self.b1.setEnabled(item != None and item.prev() != None)
+        self.b2.setEnabled(item != None and item.next() != None)
+        self.b3.setEnabled(item != None)
+    
+    def slotUp(self):
+        item = self.dns.selectedItem()
+        prev = item.prev()
+        if item and prev:
+            pprev = prev.prev()
+            self.dns.takeItem(item)
+            if pprev:
+                self.dns.insertItem(item, pprev)
+            else:
+                self.dns.insertItem(item, 0)
+            self.dns.setCurrentItem(item)
+            self.slotSelection()
+    
+    def slotDown(self):
+        item = self.dns.selectedItem()
+        next = item.next()
+        if item and next:
+            self.dns.takeItem(item)
+            self.dns.insertItem(item, next)
+            self.dns.setCurrentItem(item)
+            self.slotSelection()
+    
     def slotAdd(self):
         tmp = KInputDialog.getText(
             i18n("Add Name Server"),
@@ -102,11 +140,13 @@ class Window(QDialog):
         )
         if tmp[1]:
             self.dns.insertItem(tmp[0])
+            self.slotSelection()
     
     def slotRemove(self):
         item = self.dns.selectedItem()
         if item:
             self.dns.removeItem(self.dns.index(item))
+            self.slotSelection()
     
     def slotName(self, hostname, servers):
         self.dns.clear()
