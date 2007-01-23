@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network_manager_kga\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 11:26+0200\n"
+"POT-Creation-Date: 2007-01-23 20:04+0200\n"
 "PO-Revision-Date: 2006-12-09 09:53+0200\n"
 "Last-Translator: Atilla Aktuna <aktuna@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -66,7 +66,7 @@ msgstr "Effacer la connection?"
 msgid "No device!"
 msgstr ""
 
-#: browser.py:381 network-applet.py:395
+#: browser.py:381 network-applet.py:456
 #, fuzzy
 msgid "New connection"
 msgstr "Connection nouvelle"
@@ -157,7 +157,7 @@ msgstr "Masque de réseau"
 msgid "Gateway:"
 msgstr "Passerelle"
 
-#: connection.py:242 nameconf.py:43
+#: connection.py:242 nameconf.py:45
 msgid "Name servers"
 msgstr "Serveurs de nom"
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 
-#: comariface.py:182 comariface.py:199
+#: comariface.py:182 comariface.py:199 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -193,19 +193,27 @@ msgstr ""
 msgid "new connection"
 msgstr "Connection nouvelle"
 
-#: nameconf.py:36
+#: nameconf.py:35
 msgid "Computer"
 msgstr "L'ordinateur"
 
-#: nameconf.py:40
+#: nameconf.py:41
 msgid "Host name:"
 msgstr "Nom d'hôte"
 
-#: nameconf.py:90
+#: nameconf.py:56
+msgid "Up"
+msgstr ""
+
+#: nameconf.py:59
+msgid "Down"
+msgstr ""
+
+#: nameconf.py:134
 msgid "Add Name Server"
 msgstr "Ajouter un serveur de nom"
 
-#: nameconf.py:91
+#: nameconf.py:135
 msgid "Name server:"
 msgstr "Serveur de nom"
 
@@ -235,28 +243,28 @@ msgstr "Installation des pacquets de réseau"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Pas de paquets installé avec script de réseau COMAR"
 
-#: network-applet.py:242
+#: network-applet.py:293
 msgid "Firewall..."
 msgstr ""
 
-#: network-applet.py:243
+#: network-applet.py:294
 #, fuzzy
 msgid "Edit Connections..."
 msgstr "Connections réseaux"
 
-#: network-applet.py:245
+#: network-applet.py:296
 msgid "Icon Per Device"
 msgstr ""
 
-#: network-applet.py:246
+#: network-applet.py:297
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:290
+#: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 
-#: network-applet.py:430
+#: network-applet.py:491
 #, fuzzy
 msgid "Network Applet"
 msgstr "Préférences réseau"

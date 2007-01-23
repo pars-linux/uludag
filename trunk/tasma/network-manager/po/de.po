@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 11:26+0200\n"
+"POT-Creation-Date: 2007-01-23 20:04+0200\n"
 "PO-Revision-Date: 2006-12-11 21:10+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
 "Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
@@ -64,7 +64,7 @@ msgstr "Verbindung löschen?"
 msgid "No device!"
 msgstr "Kein Gerät!"
 
-#: browser.py:381 network-applet.py:395
+#: browser.py:381 network-applet.py:456
 msgid "New connection"
 msgstr "Neue Verbindung"
 
@@ -148,7 +148,7 @@ msgstr "Netzmaske:"
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:242 nameconf.py:43
+#: connection.py:242 nameconf.py:45
 msgid "Name servers"
 msgstr "Name-Server"
 
@@ -174,7 +174,7 @@ msgstr ""
 "Verbindung zu COMAR wurde unerwartet geschlossen, wird versucht, erneut zu "
 "verbinden"
 
-#: comariface.py:182 comariface.py:199
+#: comariface.py:182 comariface.py:199 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -187,19 +187,27 @@ msgstr ""
 msgid "new connection"
 msgstr "Neue Verbindung"
 
-#: nameconf.py:36
+#: nameconf.py:35
 msgid "Computer"
 msgstr "Computer"
 
-#: nameconf.py:40
+#: nameconf.py:41
 msgid "Host name:"
 msgstr "Hostname:"
 
-#: nameconf.py:90
+#: nameconf.py:56
+msgid "Up"
+msgstr ""
+
+#: nameconf.py:59
+msgid "Down"
+msgstr ""
+
+#: nameconf.py:134
 msgid "Add Name Server"
 msgstr "Name-Server hinzufügen"
 
-#: nameconf.py:91
+#: nameconf.py:135
 msgid "Name server:"
 msgstr "Name-Server:"
 
@@ -228,27 +236,27 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 "Es ist noch kein Paket installiert um das Netzwerk über COMAR zu bilden."
 
-#: network-applet.py:242
+#: network-applet.py:293
 msgid "Firewall..."
 msgstr "Firewall..."
 
-#: network-applet.py:243
+#: network-applet.py:294
 msgid "Edit Connections..."
 msgstr "Verbindungen bearbeiten..."
 
-#: network-applet.py:245
+#: network-applet.py:296
 msgid "Icon Per Device"
 msgstr "Icon je Gerät"
 
-#: network-applet.py:246
+#: network-applet.py:297
 msgid "Single Icon"
 msgstr "Einzelnes Icon"
 
-#: network-applet.py:290
+#: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 "Soll der Netzwerk Applet automatisch bei der Anmeldung gestartet werden?"
 
-#: network-applet.py:430
+#: network-applet.py:491
 msgid "Network Applet"
 msgstr "Netzwerk Applet"
