@@ -136,24 +136,14 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
 
     unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
     newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
-    oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
 
     logger.info(_("*** New binary package(s): %s") % newPackages)
-    logger.info(_("*** Old binary package(s): %s") % oldPackages)
     logger.info(_("*** Unchanged binary package(s): %s") % unchangedPackages)
 
     exists = os.path.exists
     join   = os.path.join
     remove = os.remove
     copy   = shutil.copy
-
-    def moveOldPackage(package):
-        logger.info(_("*** Old package '%s' is processing") % (package))
-        if exists(join(config.binaryPath, package)):
-            remove(join(config.binaryPath, package))
-
-        if exists(join(config.workDir, package)):
-            remove(join(config.workDir, package))
 
     def moveNewPackage(package):
         logger.info(_("*** New package '%s' is processing") % (package))
@@ -170,10 +160,6 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     for package in newPackages:
         if package:
             moveNewPackage(package)
-
-    for package in oldPackages:
-        if package:
-            moveOldPackage(package)
 
     for package in unchangedPackages:
         if package:
