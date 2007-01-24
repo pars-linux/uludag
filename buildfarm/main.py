@@ -34,6 +34,7 @@ _  =  __trans.ugettext
 def buildPackages():
     qmgr = qmanager.QueueManager()
     queue = copy.copy(qmgr.workQueue)
+    packageList = []
 
     if len(queue) == 0:
         logger.info(_("Work Queue is empty..."))
@@ -89,15 +90,16 @@ def buildPackages():
                 else:
                     qmgr.removeFromWorkQueue(pspec)
                     movePackages(newBinaryPackages, oldBinaryPackages)
+                    packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
         finally:
             pisi.finalize()
 
     logger.raw(_("QUEUE"))
     logger.info(_("Wait Queue: %s") % (qmgr.waitQueue))
     if qmgr.waitQueue:
-        mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(qmgr.waitQueue))
+        mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n now in repository") % ("\n".join(qmgr.waitQueue, "\n".join(packageList))))
     else:
-        mailer.info(_("Queue finished without a problem!..."))
+        mailer.info(_("Queue finished without a problem!...\n\n\nNew binary packages are;\n\n%s\n now in repository...") % "\n".join(packageList))
     logger.raw()
 
     logger.raw()
