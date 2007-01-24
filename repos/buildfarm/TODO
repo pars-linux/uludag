@@ -1,3 +1,6 @@
-* refactor a bit
-* A Django Web GUI which supports XML/RPC for client access
+* Authentication framework
+* Refactor everything
+* Finalize API
+* Implement full functional client
+* Manage Xen domains
 * Montly Report tool?
