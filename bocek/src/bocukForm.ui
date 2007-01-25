@@ -38,25 +38,6 @@
                 <string>&lt;b&gt;&lt;font size="+3"&gt;Welcome to the Bocek&lt;/font&gt;&lt;/b&gt;</string>
             </property>
         </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel3</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>24</x>
-                    <y>57</y>
-                    <width>570</width>
-                    <height>61</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>With using Bocek you can send bug reports to the Pardus's Bug System(bugzilla.pardus.org.tr) easily. You must have an account on system, if you don't you can create a new one easily with bocek. Please folloe the instructions.</string>
-            </property>
-            <property name="textFormat">
-                <enum>RichText</enum>
-            </property>
-        </widget>
         <widget class="QButtonGroup">
             <property name="name">
                 <cstring>buttonGroup2</cstring>
@@ -70,7 +51,7 @@
                 </rect>
             </property>
             <property name="title">
-                <string>Choose User Type</string>
+                <string>Choose a User Type</string>
             </property>
             <widget class="QLineEdit">
                 <property name="name">
@@ -187,22 +168,6 @@
                     <enum>Password</enum>
                 </property>
             </widget>
-            <widget class="QRadioButton">
-                <property name="name">
-                    <cstring>radioButton2</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>34</x>
-                        <y>157</y>
-                        <width>461</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>New User</string>
-                </property>
-            </widget>
             <widget class="QLabel">
                 <property name="name">
                     <cstring>textLabel4_3</cstring>
@@ -260,6 +225,41 @@
                     <enum>RichText</enum>
                 </property>
             </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioButton2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>34</x>
+                        <y>157</y>
+                        <width>461</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>New User</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>24</x>
+                    <y>57</y>
+                    <width>570</width>
+                    <height>61</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>With using Bocek you can send bug reports to the Pardus's Bug System(&lt;b&gt;bugs.pardus.org.tr&lt;/b&gt;) easily. You must have an account on system, if you don't you can create a new one easily with bocek. Please folloe the instructions.</string>
+            </property>
+            <property name="textFormat">
+                <enum>RichText</enum>
+            </property>
         </widget>
     </widget>
     <widget class="QWidget">
@@ -269,6 +269,150 @@
         <attribute name="title">
             <string>Define the Bug</string>
         </attribute>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>buttonGroup2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>570</width>
+                    <height>390</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>Choose an Action</string>
+            </property>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>textEdit1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>230</y>
+                        <width>370</width>
+                        <height>131</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineEdit9</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>150</y>
+                        <width>371</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel3_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>55</x>
+                        <y>150</y>
+                        <width>91</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Summary :</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel1</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>55</x>
+                        <y>69</y>
+                        <width>101</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Select the Bug :</string>
+                </property>
+            </widget>
+            <widget class="QComboBox">
+                <property name="name">
+                    <cstring>comboBox1</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>70</y>
+                        <width>370</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioButton5</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>34</x>
+                        <y>37</y>
+                        <width>290</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Old Bug (to add new comment)</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>55</x>
+                        <y>230</y>
+                        <width>101</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Description :</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioButton6</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>34</x>
+                        <y>117</y>
+                        <width>211</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>New Bug</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </widget>
     </widget>
     <widget class="QWidget">
         <property name="name">
@@ -326,6 +470,30 @@
         <sender>radioButton2</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel4_2_2</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton5</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel1</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton5</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>comboBox1</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton6</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel3_2</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton6</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>lineEdit9</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
