@@ -87,7 +87,6 @@
 <!ATTLIST COMAR script CDATA #IMPLIED>
 
 <!ELEMENT Conflicts (Package)+>
-<!ELEMENT Conflicts (Package)>
 <!ATTLIST Package versionFrom CDATA #IMPLIED>
 <!ATTLIST Package versionTo CDATA #IMPLIED>
 <!ATTLIST Package version CDATA #IMPLIED>
