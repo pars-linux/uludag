@@ -17,7 +17,7 @@
                                         <div align="center">
                                             <form action="index.php" method="get">
                                                 <b>Anahtar Kelimeler : </b>
-                                                <input class="search" size="50" name="keywords" type="text" value="{$results->searchQuery}">
+                                                <input class="search" size="50" name="keywords" type="text" value="{$results.searchQuery}">
                                                 <input name="submit" value="Sonuçları Göster" type="submit">
                                             </form>
                                         </div>
@@ -33,15 +33,15 @@
 </div>
 <div align="center">
 <div class="content" style="margin-top: 20px; text-align: right;">
-<strong>{$results->searchQuery}</strong> sorgulamasında <strong>{$results->estimatedTotalResultsCount}</strong> adet sonuç bulundu, gösterilen aralık <strong>{$results->startIndex} - {$results->endIndex}.</strong> Süre: <strong>{$results->searchTime}</strong>sn
+<strong>{$results.searchQuery}</strong> sorgulamasında <strong>{$results.estimatedTotalResultsCount}</strong> adet sonuç bulundu, gösterilen aralık <strong>{$results.startIndex} - {$results.endIndex}.</strong> Süre: <strong>{$results.searchTime}</strong>sn
 </div>
 <div class="content" style="margin-top: 20px;">
-{section name=result loop=$results->resultElements}<br>
-<strong>{$results->resultElements[result]->count}.</strong> <a href="{$results->resultElements[result]->URL}" target="_blank">{$results->resultElements[result]->title}</a><br>
-{$results->resultElements[result]->snippet} <strong>{$results->resultElements[result]->cachedSize}</strong><br>
+{section name=result loop=$results.resultElements}<br>
+<strong>{$results.resultElements[result].count}.</strong> <a href="{$results.resultElements[result].URL}" target="_blank">{$results.resultElements[result].title}</a><br>
+{$results.resultElements[result].snippet} <strong>{$results.resultElements[result].cachedSize}</strong><br>
 <br>
 {/section}
 <br>
-{pager rowcount=$results->estimatedTotalResultsCount limit=10 show=page txt_first=""}
+{pager rowcount=$results.estimatedTotalResultsCount limit=10 show=page txt_first=""}
 </div>
 {include file="footer.html"}
