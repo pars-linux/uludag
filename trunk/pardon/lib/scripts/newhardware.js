@@ -3,7 +3,7 @@
 //  Gökmen GÖKSEL gokmen_at_pardus.org.tr
 
 function doanothercheck(form) {
-    if (frm.p_vendor.value.length < 3)              { alert('Üretici kısmı boş bırakılamaz !'); frm.p_vendor.select(); frm.p_vendor.focus(); return false;}
+    if (frm.p_vendor.value.length < 2)              { alert('Üretici kısmı boş bırakılamaz !'); frm.p_vendor.select(); frm.p_vendor.focus(); return false;}
     if (frm.p_name.value.length < 3)                { alert('Ürün Adı boş bırakılamaz !');return false;}
     return true;
 }
