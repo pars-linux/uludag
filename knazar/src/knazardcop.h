@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by TUBITAK/UEKAE                                   *
+ *   Copyright (C) 2005, 2007 by TUBITAK/UEKAE                                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -29,6 +29,7 @@ k_dcop:
     virtual void protect_from_harmfull_looks() = 0;
     virtual void release_the_protection() = 0;
     virtual void send_nazar() = 0;
+    virtual bool is_protecting() = 0;
 };
 
 #endif
