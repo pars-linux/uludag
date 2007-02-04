@@ -1,23 +1,24 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of es.po to spanish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: network manager\n"
+"Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-23 20:04+0200\n"
-"PO-Revision-Date: 2006-11-26 17:25-0400\n"
-"Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
+"PO-Revision-Date: 2007-02-04 14:39+0200\n"
+"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: browser.py:49
 msgid "Name:"
-msgstr "Nombre"
+msgstr "Nombre:"
 
 #: browser.py:56 connection.py:76
 msgid "Authentication"
@@ -60,7 +61,7 @@ msgstr "Eliminar conexión ?"
 
 #: browser.py:205
 msgid "No device!"
-msgstr ""
+msgstr "No hay dispositivo !"
 
 #: browser.py:381 network-applet.py:456
 msgid "New connection"
@@ -68,34 +69,31 @@ msgstr "Conexión nueva"
 
 #: browser.py:386 nameconf.py:28
 msgid "Name Service Settings"
-msgstr "Parámetros del servivio de nombres"
+msgstr "Parámetros del servicio de nombres"
 
 #: browser.py:420
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
 
 #: connection.py:34
-#, fuzzy
 msgid "Connection name:"
-msgstr "Nombre de Host:"
+msgstr "Nombre de conexión:"
 
 #: connection.py:41
-#, fuzzy
 msgid "Connection"
-msgstr "Conexión nueva"
+msgstr "Conexión"
 
 #: connection.py:47
 msgid "Device:"
 msgstr "Dispositivo:"
 
 #: connection.py:52
-#, fuzzy
 msgid "Select"
-msgstr "Seleccionar dispositivo:"
+msgstr "Seleccionar"
 
 #: connection.py:66
 msgid "Scan"
-msgstr "Scan"
+msgstr "Buscar"
 
 #: connection.py:82
 msgid "Mode:"
@@ -119,7 +117,7 @@ msgstr "Resultado de scan:"
 
 #: connection.py:154
 msgid "Scan again"
-msgstr "Scanear de nuevo"
+msgstr "Buscar de nuevo"
 
 #: connection.py:156
 msgid "Use"
@@ -163,25 +161,25 @@ msgstr "Administrador de Red"
 
 #: network-manager.py:80
 msgid "Network manager module is already started!"
-msgstr "Módulo de administración de Red ya está instalado!"
+msgstr "Módulo de administración de Red ya está iniciado!"
 
 #: comariface.py:162
 msgid "Waiting COMAR..."
-msgstr ""
+msgstr "Esperando COMAR..."
 
 #: comariface.py:163
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "Conexión con COMAR cerrada inesperadamente, intentando reconectar..."
 
 #: comariface.py:182 comariface.py:199 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
-msgstr ""
+msgstr "No posible conectar con COMAR! Si no se está ejecutando lo debería iniciar con el comando 'service comar start' desde una consola de root."
 
 #: comariface.py:365
 msgid "new connection"
-msgstr "conexión nueva"
+msgstr "nueva conexión"
 
 #: nameconf.py:35
 msgid "Computer"
@@ -193,11 +191,11 @@ msgstr "Nombre de Host:"
 
 #: nameconf.py:56
 msgid "Up"
-msgstr ""
+msgstr "Activo"
 
 #: nameconf.py:59
 msgid "Down"
-msgstr ""
+msgstr "Inactivo"
 
 #: nameconf.py:134
 msgid "Add Name Server"
@@ -233,29 +231,25 @@ msgstr "No se instalaron todavía paquetes con los script de red COMAR"
 
 #: network-applet.py:293
 msgid "Firewall..."
-msgstr ""
+msgstr "Cortafuegos..."
 
 #: network-applet.py:294
-#, fuzzy
 msgid "Edit Connections..."
-msgstr "Conexión nueva"
+msgstr "Editar conexiones..."
 
 #: network-applet.py:296
 msgid "Icon Per Device"
-msgstr ""
+msgstr "Ícono por dispositivo"
 
 #: network-applet.py:297
 msgid "Single Icon"
-msgstr ""
+msgstr "Ícono único"
 
 #: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
+msgstr "Debería network-applet iniciarse al iniciar sesión ?"
 
 #: network-applet.py:491
-#, fuzzy
 msgid "Network Applet"
-msgstr "Propiedades de Red"
+msgstr "Applet de Red"
 
-#~ msgid "From query"
-#~ msgstr "From query"
