@@ -137,6 +137,14 @@ html>body li {
 }
 
 
+#dikey {
+    float:right;
+    margin:0;
+    width:306px;
+    position:relative;
+    z-index: 0;
+}
+
 #haberler {
     float:right;
     background-image: url('resim/sagsutun_zemin.png');
