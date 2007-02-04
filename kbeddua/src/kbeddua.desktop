@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KBeddua
+Name[tr_TR]=KBeddua
+Name[de]=KBeddua
+Exec=kbeddua
+Icon=kbeddua
+Type=Application
+Comment=Attacks your computer!
