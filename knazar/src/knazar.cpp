@@ -30,6 +30,8 @@
 #include <kapp.h>
 #include <kiconeffect.h>
 #include <kwin.h>
+#include <kprocess.h>
+
 
 #include <qimage.h>
 #include <qtooltip.h>
@@ -47,8 +49,8 @@ knazar::knazar()
 	// Initialize and Register KNazar DCOP Interface so any KDE program can make Nazar easily
 	if ( !kapp->dcopClient()->isRegistered() )
 	{
-        	kapp->dcopClient()->registerAs( "knazar" );
-	        kapp->dcopClient()->setDefaultObject( objId() );
+		kapp->dcopClient()->registerAs( "knazar" );
+		kapp->dcopClient()->setDefaultObject( objId() );
 	}
 
 
@@ -72,7 +74,7 @@ void knazar::protect_from_harmfull_looks()
 	if ( !is_protecting() )
 	{
 		KMessageBox::information( 0, i18n( "KNazar is starting to protect your Pardus Linux from harmfull looks..." ));
-			    
+
 		setPixmap( trayIcon );
 		protection_working = true;
 		QToolTip::add( this, i18n( "knazar - No Harmfull look allowed!" ));
@@ -123,16 +125,12 @@ void knazar::send_nazar()
 
 bool knazar::is_protecting()
 {
-
-	if (protection_working == true)
-		return true;
-	else
-		return false;
+	return protection_working;
 }
 
 void knazar::about()
 {
 	KMessageBox::information( 0, i18n( "KNazar is a usefull part of the Pardus Linux" ));
-}		
+}
 
 #include "knazar.moc"
