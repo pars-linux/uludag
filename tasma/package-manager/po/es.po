@@ -1,19 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of es.po to spanish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: package manager\n"
+"Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 16:20+0200\n"
-"PO-Revision-Date: 2006-11-28 19:53-0400\n"
-"Last-Translator: Klemens Häckel <click3d@linuxmail.org>\n"
+"PO-Revision-Date: 2007-02-04 14:28+0200\n"
+"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/ProgressDialog.py:91
 msgid "Progress"
@@ -40,9 +41,8 @@ msgid "Now installing <b>amsn</b> package"
 msgstr "Instalando ahora paquete <b>amsn</b>"
 
 #: src/Tray.py:39
-#, fuzzy
 msgid "Update"
-msgstr "Mostrar actualizaciones disponibles"
+msgstr "Actualizar"
 
 #: src/Tray.py:44 src/package-manager.py:273 src/package-manager.py:662
 #: src/package-manager.py:809
@@ -50,9 +50,8 @@ msgid "All"
 msgstr "Todos"
 
 #: src/Tray.py:64
-#, fuzzy
 msgid "There are <b>%1</b> updates available!"
-msgstr "No hay actualizaciones disponibles en este momento"
+msgstr "Hay <b>%1</b> actualizaciones disponibles!"
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
 #: src/package-manager.py:299
@@ -62,12 +61,11 @@ msgstr "Selecccionar todos los paquetes de esta categoría"
 # translated like "undo", is it ok ?
 #: src/CustomEventListener.py:48 src/package-manager.py:301
 msgid "Reverse package selections"
-msgstr "Deshacer selscción de paquetes"
+msgstr "Deshacer selección de paquetes"
 
 #: src/BalloonMessage.py:44
-#, fuzzy
 msgid "Show Updates"
-msgstr "Mostrar actualizaciones disponibles"
+msgstr "Mostrar Actualizaciones"
 
 #: src/BalloonMessage.py:45
 msgid "Ignore"
@@ -83,7 +81,7 @@ msgstr "&Ok"
 
 #: src/RepoDialog.py:75
 msgid "Repository &Address"
-msgstr "&Dirección de Repositorio"
+msgstr "&Dirección URL de Repositorio"
 
 #: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
@@ -113,8 +111,7 @@ msgstr "Paquetes seleccionados para remover:"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Deshacer dependencias de paquetes seleccionados que tambien se removerán:"
+msgstr "Dependencias reversas de paquetes seleccionados que tambien se removerán:"
 
 #: src/BasketDialog.py:66
 msgid "Selected package(s) for install:"
@@ -125,7 +122,7 @@ msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
 msgstr ""
-"Dependencias adicionales de los paquetes seleccionados que se instalarán "
+"Dependencias adicionales requeridos de los paquetes seleccionados que se instalarán "
 "también:"
 
 #: src/BasketDialog.py:69
@@ -137,7 +134,7 @@ msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
-"Dependencias adicionales de los paquetes seleccionados que se actualizarán "
+"Dependencias adicionales requeridos de los paquetes seleccionados que se actualizarán "
 "también:"
 
 #: src/BasketDialog.py:78
@@ -186,7 +183,7 @@ msgstr "<b>Applicando Modificaciones de Repositorio</b>"
 
 #: src/Preferences.py:210
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
+msgstr "Se eliminarán todos los paquetes guardadas del cache. Está seguro ?"
 
 #: src/Progress.py:51
 msgid "downloaded ( total: %1 )"
@@ -226,7 +223,7 @@ msgstr "No puedo conectar al demonio Comar"
 
 #: src/Commander.py:99
 msgid "You do not have permission to do this operation."
-msgstr ""
+msgstr "No tiene permisos suficientes para esta operación."
 
 #: src/package-manager.py:47
 msgid "GUI for PiSi package manager"
@@ -262,7 +259,7 @@ msgstr "Autores del PiSi API"
 
 #: src/package-manager.py:113
 msgid "Search: "
-msgstr "Buscar:"
+msgstr "Buscar: "
 
 #: src/package-manager.py:117
 msgid "Show basket"
@@ -284,12 +281,11 @@ msgstr "Cargando lista de Paquetes..."
 msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
-msgstr ""
+msgstr "Package-manager necesita actualizar la base de datos de los paquetes. Se necesita una conexión de internet para esta operación."
 
 #: src/package-manager.py:208
-#, fuzzy
 msgid "Package database is empty"
-msgstr "Ayuda del Administrador de Paquetes"
+msgstr "La base de datos de paquetes está vacía."
 
 #: src/package-manager.py:245
 msgid "Remove Package(s)"
@@ -305,11 +301,11 @@ msgstr "N\\A"
 
 #: src/package-manager.py:385
 msgid "Description: "
-msgstr "Descripción:"
+msgstr "Descripción: "
 
 #: src/package-manager.py:385
 msgid "Version: "
-msgstr "Versión:"
+msgstr "Versión: "
 
 #: src/package-manager.py:386
 msgid "Package Size: "
@@ -317,27 +313,25 @@ msgstr "Tamaño de Paquete: "
 
 #: src/package-manager.py:386
 msgid "Homepage: "
-msgstr "Página web:"
+msgstr "Página web: "
 
 #: src/package-manager.py:401 src/package-manager.py:670
 msgid "Search Results"
-msgstr "Resultados de Busqueda"
+msgstr "Resultados de la Busqueda"
 
 #: src/package-manager.py:434
 msgid "Currently your basket is empty."
 msgstr "El carrito está vacío."
 
 #: src/package-manager.py:437 src/package-manager.py:445
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente hay <b>%1</b> paquetes seleccionados con un tamaño total de <b>%"
 "2</b>"
 
 #: src/package-manager.py:440
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-"con <b>%3</b> dependencias adicionales con un tamaño total de <b>%4</b>"
+msgstr "con <b>%3</b> dependencias adicionales requeridos con un tamaño total de <b>%4</b>"
 
 #: src/package-manager.py:442 src/package-manager.py:450
 msgid "in your basket."
@@ -347,14 +341,13 @@ msgstr "en el carrito."
 #  if different, i am not sure what "reverse" means here (i haven't seen it running..)
 #: src/package-manager.py:448
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
-msgstr "con <b>%3</b> deshacer dependencias con un tamaño total de <b>%4</b>"
+msgstr "con <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
 
 #: src/package-manager.py:479
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
-"Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
+msgstr "Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
 
 #: src/package-manager.py:480 src/package-manager.py:490
 msgid "Conflict Error"
@@ -383,41 +376,35 @@ msgstr "<b>Instalando Paquete(s)</b>"
 
 #: src/package-manager.py:513
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr ""
+msgstr "<qt><b>%1</b> paquetes seleccionados para <b>instalar</b>."
 
 #: src/package-manager.py:516
-#, fuzzy
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
-msgstr ""
-"Dependencias adicionales de los paquetes seleccionados que se instalarán "
-"también:"
+msgstr " Con los paquetes seleccionados, también <b>%1</b> dependencias adicionales requeridos se <b>instalarán</b>."
 
 #: src/package-manager.py:517
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr ""
+msgstr "<br><br>Total <b>%1</b> paquetes se <b>instalarán</b>."
 
 #: src/package-manager.py:520
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr ""
+msgstr "<qt><b>%1</b> paquetes seleccionados para <b>actualizar</b>."
 
 #: src/package-manager.py:523
-#, fuzzy
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
-msgstr ""
-"Dependencias adicionales de los paquetes seleccionados que se actualizarán "
-"también:"
+msgstr "Con los paquetes seleccionados, también <b>%1</b> dependencias adicionales requeridos se <b>actualizarán</b>."
 
 #: src/package-manager.py:524
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr ""
+msgstr "<br><br>Total <b>%1</b> paquetes se <b>actualizarán</b>."
 
 #: src/package-manager.py:527
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr ""
+msgstr "<qt><b>%1</b> paquetes seleccionados para <b>remover</b>."
 
 #: src/package-manager.py:530
 msgid ""
@@ -427,15 +414,15 @@ msgid ""
 "going to be <b>removed</b>. Please check your basket and make sure those are "
 "the packages you want to remove. Accidentally removing some reverse "
 "dependencies may break the system stability."
-msgstr ""
+msgstr " Los paquetes seleccionados tienen dependencias reversas. Estas dependencias reversas necesitan los paquetes seleccionados para su funcionamiento. Al remover los paquetes seleccionados tambien se <b>removerán %1</b> dependencias reversas. Favor verifique el carrito y asegurese que realmente contiene los paquetes que desea remover. Remover accidentalmente algunas dependencias reversas importantes puede perjudicar gravemente la estabilidad del sistema."
 
 #: src/package-manager.py:532
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr ""
+msgstr "<br><br>Total <b>%1</b> paquetes se <b>removerán</b>."
 
 #: src/package-manager.py:534
 msgid "<br>Do you want to continue?</qt>"
-msgstr ""
+msgstr "<br>Desea continuar ?</qt>"
 
 #: src/package-manager.py:554
 msgid "<b>Removing Package(s)</b>"
@@ -463,7 +450,7 @@ msgstr "Descargando lista de paquetes de %1"
 
 #: src/package-manager.py:752
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmación"
 
 #: src/package-manager.py:916
 msgid "Show Installed Packages"
@@ -483,20 +470,19 @@ msgstr "Paquete a instalar"
 
 #: src/package-manager.py:955
 msgid "Show main window on startup"
-msgstr ""
+msgstr "Mostrar pantalla principal durante el arranque"
 
 #: src/package-manager.py:958
 msgid "Package Manager is already running!"
 msgstr "Administrador de Paquetes ya está ejecutandose !"
 
 #: src/pm-install.py:33
-#, fuzzy
 msgid "PiSi package to install"
-msgstr "Paquete a instalar"
+msgstr "Paquete PiSi a instalar"
 
 #: src/pm-install.py:50
 msgid "You have selected a package to install. Do you want to continue?"
-msgstr ""
+msgstr "Seleccionó un paquete para instalar. Quiere continuar ?"
 
 #: src/pm-install.py:51
 msgid "Install Package"
@@ -519,10 +505,8 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Aqui puedes ver los repositorios actuales de software con sus direcciones"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Aqui se puede ver los repositorios actuales de software con sus direcciones"
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
@@ -598,14 +582,13 @@ msgstr "Configuraciones &Generales"
 
 #: src/PreferencesDialog.py:212
 msgid "Clear Cache"
-msgstr ""
+msgstr "Vaciar cache"
 
 #: src/PreferencesDialog.py:213
 msgid "C&lean disk cache now"
 msgstr "&Vaciar cache de disco ahora"
 
 #: src/PreferencesDialog.py:214
-#, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
@@ -623,16 +606,15 @@ msgstr "Tamaño máximo de cache:"
 
 #: src/PreferencesDialog.py:218
 msgid "&Use hard disk cache for downloaded software"
-msgstr ""
-"&Usar cache en disco rígido para software descargado de los repositorios"
+msgstr "&Usar cache en disco rígido para software descargado"
 
 #: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
+msgstr "Si marcado, se conservarán los archivos descargados en el cache del disco"
 
 #: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
-msgstr "Mb <i>(use 0 para sin límite)</i>"
+msgstr "Mb <i>(use 0 para indicar sin límite)</i>"
 
 #: src/PreferencesDialog.py:221
 msgid "C&ache"
@@ -654,42 +636,3 @@ msgstr "removiendo"
 msgid "installing"
 msgstr "instalando"
 
-#~ msgid "PiSi Settings"
-#~ msgstr "Configuración PiSi"
-
-#~ msgid "Misc. Fixes"
-#~ msgstr "Correcciones varios"
-
-#~ msgid "Comar/Python Help"
-#~ msgstr "Ayuda Comar/Python"
-
-#~ msgid "Speedup fixes"
-#~ msgstr "Optimizaciones de velocidad"
-
-#~ msgid ""
-#~ "If checked, then updates for Pardus will be automatically checked and you "
-#~ "will be notified"
-#~ msgstr ""
-#~ "Si marcado, se busca automaticamente actualizaciones de Pardus y se te "
-#~ "avisa sobre ello"
-
-#~ msgid ""
-#~ "Package repository does not have component information. Please control "
-#~ "repository addresses and update repository. You need a network connection "
-#~ "to update."
-#~ msgstr ""
-#~ "Repositorio de paquetes no contiene informaciones sobre componentes. "
-#~ "Favor verifique las direccies de los repositorios y actualice "
-#~ "repositorio. Se necesita una conexión internet para actualizar."
-
-#~ msgid "There are no updates available at this time"
-#~ msgstr "No hay actualizaciones disponibles en este momento"
-
-#~ msgid "Cache cleaning"
-#~ msgstr "Vaciar Cache"
-
-#~ msgid "2000"
-#~ msgstr "2000"
-
-#~ msgid "Alt+C"
-#~ msgstr "Alt+C"

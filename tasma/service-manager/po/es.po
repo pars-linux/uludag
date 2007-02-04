@@ -1,29 +1,30 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of es.po to spanish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: service manager\n"
+"Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-07 21:36+0200\n"
-"PO-Revision-Date: 2006-11-26 18:39-0400\n"
-"Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
+"PO-Revision-Date: 2007-02-04 13:47+0200\n"
+"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/service-manager.py:55
 #: src/service-manager.py:350
 #: src/mainform.py:97
 msgid "Service Manager"
-msgstr "Service Manager"
+msgstr "Administrador de Servicios"
 
 #: src/service-manager.py:185
 msgid "You are not allowed to do this operation."
-msgstr "No estás autorizado para esta operación."
+msgstr "No está autorizado para esta operación."
 
 #: src/service-manager.py:185
 msgid "Access Denied"
@@ -39,7 +40,7 @@ msgstr "Error de Script"
 
 #: src/service-manager.py:192
 msgid "Unable to start service."
-msgstr "No posible arrancar el servicio."
+msgstr "No posible iniciar el servicio."
 
 #: src/service-manager.py:192
 #: src/service-manager.py:195
@@ -83,8 +84,8 @@ msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
 msgstr ""
-"Si paras este servicio podrías tener problemas.\n"
-"Estás seguro que quieres parar este servicio ?"
+"Si para este servicio podría tener problemas.\n"
+"Está seguro que quiere parar este servicio ?"
 
 #: src/service-manager.py:345
 msgid "Service Manager is already running!"
