@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by TUBITAK/UEKAE                                   *
+ *   Copyright (C) 2005, 2007 by TUBITAK/UEKAE                                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -66,14 +66,10 @@ knazar::knazar()
 	QToolTip::add( this, i18n( "knazar - No Harmfull look allowed!" ));
 }
 
-knazar::~knazar()
-{
-}
-
 // Slots
 void knazar::protect_from_harmfull_looks()
 {
-	if ( protection_working == false )
+	if ( !is_protecting() )
 	{
 		KMessageBox::information( 0, i18n( "KNazar is starting to protect your Pardus Linux from harmfull looks..." ));
 			    
@@ -86,7 +82,7 @@ void knazar::protect_from_harmfull_looks()
 void knazar::release_the_protection()
 {
 
-	if ( protection_working == true )
+	if ( is_protecting() )
 	{
 		KMessageBox::sorry( 0, i18n( "KNazar is stoping to protect your Pardus Linux from harmfull looks..." ));
 
@@ -106,7 +102,7 @@ void knazar::send_nazar()
 {
 	++number_of_attacks;
 
-	if ( protection_working == true )
+	if ( is_protecting() )
 	{
 		++defated_attacks;
 		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar Received and eliminated successfuly</b></nobr><br><nobr></nobr></qt>" ), QString::null );
@@ -123,6 +119,15 @@ void knazar::send_nazar()
 					.arg( number_of_attacks)
 					.arg( defated_attacks )
 					.arg( number_of_attacks - defated_attacks ));
+}
+
+bool knazar::is_protecting()
+{
+
+	if (protection_working == true)
+		return true;
+	else
+		return false;
 }
 
 void knazar::about()

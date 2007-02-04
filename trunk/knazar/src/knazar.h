@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by TUBITAK/UEKAE                                   *
+ *   Copyright (C) 2005, 2007 by TUBITAK/UEKAE                                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,7 +17,6 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-
 #ifndef _KNAZAR_H_
 #define _KNAZAR_H_
 
@@ -32,10 +31,10 @@ class knazar : public KSystemTray, virtual public DCOPNazarIface
 	Q_OBJECT
 public:
 	knazar();
-	virtual ~knazar();
 public slots:
 	void protect_from_harmfull_looks();
 	void release_the_protection();
+	bool is_protecting();
 	void send_nazar();
 	void about();
 private:
@@ -45,4 +44,4 @@ private:
 	KNazarBalloon * balloon;
 };
 
-#endif // _KNAZAR_H_
+#endif

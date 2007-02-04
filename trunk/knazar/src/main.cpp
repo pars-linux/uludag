@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005 by TUBITAK/UEKAE                                   *
+ *   Copyright (C) 2005, 2007 by TUBITAK/UEKAE                                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,7 +17,6 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-
 #include "knazar.h"
 
 #include <kuniqueapplication.h>
@@ -27,7 +26,7 @@
 
 static const char description[] = I18N_NOOP("KDE Nazar Application");
 
-static const char version[] = "0.1";
+static const char version[] = "0.2";
 
 static KCmdLineOptions options[] =
 {
@@ -37,8 +36,8 @@ static KCmdLineOptions options[] =
 int main(int argc, char **argv)
 {
 	KAboutData about("knazar", I18N_NOOP("knazar"), version, description,
-	KAboutData::License_GPL, "(C) 2005 TUBITAK/UEKAE", 0, 0, "bilgi@uludag.org.tr");
-	about.addAuthor( "S.Çağlar Onur", 0, "caglar@uludag.org.tr" );
+	KAboutData::License_GPL, "(C) 2005, 2007 TUBITAK/UEKAE", 0, 0, "bilgi@pardus.org.tr");
+	about.addAuthor( "S.Çağlar Onur", 0, "caglar@pardus.org.tr" );
 
 	KCmdLineArgs::init(argc, argv, &about);
 	KCmdLineArgs::addCmdLineOptions( options );
