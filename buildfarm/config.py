@@ -13,10 +13,10 @@ import os
 
 #Some configuration info for other modules..
 workDir          = "/var/pisi/"
-outputDir        = "/var/pisi/buildlogs/"
+outputDir        = "/var/cache/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
 localPspecRepo   = "%s/exampleRepo" % os.getcwd()
-logFile          = "%s/buildfarm.log" % workDir
+logFile          = "/var/cache/pisi/buildfarm.log"
 
 #information for mailer module.
 mailFrom         = "buildfarm@pardus.org.tr"
