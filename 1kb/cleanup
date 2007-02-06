@@ -1,0 +1,2 @@
+find ./ -iname "*~" | xargs rm -fv
+find ./tmp/ -iname "%*" | xargs rm -fv

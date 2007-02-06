@@ -1,0 +1,22 @@
+                {if !$Session}
+                <div id="minibox2">
+                <form action="?login" method="post">
+                    <div id="login">
+                        <label for="user">
+                            <img src="template/images/kullanici.png" />
+                            <br />
+                        </label>
+                        <input type="text" id="user" name="user" class="textinput" />
+                        <br />
+                        <label for="pass">
+                            <img src="template/images/parola.png" />
+                            <br />
+                        </label>
+                        <input type="password" id="pass" name="pass" class="textinput" />
+                        <input type="submit" value="giriş" class="buttonSubmit" />
+                        </form>
+                    </div>
+                </div>
+                {else}
+                Hoşgeldiniz {$Session.uname},<a href="?quit"> Çıkış</a>
+                {/if}
