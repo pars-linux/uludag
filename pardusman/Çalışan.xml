@@ -1,5 +1,5 @@
 <PardusmanProject type="live" size="734003200">
-    <Title>Pardus Live 2007</Title>
+    <Title>Pardus Live 2007.1</Title>
     <WorkDir>/root/pardusman/LiveCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
@@ -105,8 +105,6 @@
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
         <SelectedPackage>ltris</SelectedPackage>
-        <SelectedPackage>m560x</SelectedPackage>
-        <SelectedPackage>m560x-firmware</SelectedPackage>
         <SelectedPackage>macromedia-flash</SelectedPackage>
         <SelectedPackage>madwifi-ng</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
@@ -132,7 +130,6 @@
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
-        <SelectedPackage>rar</SelectedPackage>
         <SelectedPackage>rpcalc</SelectedPackage>
         <SelectedPackage>rt2400</SelectedPackage>
         <SelectedPackage>rt2500</SelectedPackage>
@@ -288,6 +285,7 @@
         <Package>esound</Package>
         <Package>essential</Package>
         <Package>ethtool</Package>
+        <Package>exiv2</Package>
         <Package>expat</Package>
         <Package>faac</Package>
         <Package>faad2</Package>
@@ -407,6 +405,7 @@
         <Package>kdeutils</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
+        <Package>kernel-headers</Package>
         <Package>kftpgrabber</Package>
         <Package>kiki</Package>
         <Package>kiki-extra</Package>
@@ -464,6 +463,7 @@
         <Package>libXxf86dga</Package>
         <Package>libXxf86misc</Package>
         <Package>libXxf86vm</Package>
+        <Package>libaio</Package>
         <Package>libao</Package>
         <Package>libart_lgpl</Package>
         <Package>libassuan</Package>
@@ -540,7 +540,6 @@
         <Package>libxml2</Package>
         <Package>libxslt</Package>
         <Package>linux-atm</Package>
-        <Package>linux-headers</Package>
         <Package>lipstik</Package>
         <Package>lirc</Package>
         <Package>lirc-drivers</Package>
@@ -553,8 +552,6 @@
         <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
-        <Package>m560x</Package>
-        <Package>m560x-firmware</Package>
         <Package>mDNSResponder</Package>
         <Package>macromedia-flash</Package>
         <Package>madplay</Package>
@@ -617,10 +614,12 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
+        <Package>physfs</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
         <Package>pinentry</Package>
         <Package>pisi</Package>
+        <Package>pm-utils</Package>
         <Package>poppler</Package>
         <Package>popt</Package>
         <Package>portaudio</Package>
@@ -644,7 +643,6 @@
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
-        <Package>rar</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
@@ -691,6 +689,7 @@
         <Package>squashfs-tools</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
+        <Package>stlport</Package>
         <Package>strace</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
