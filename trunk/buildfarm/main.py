@@ -71,6 +71,7 @@ def buildPackages():
             )
         logger.raw()
 
+        # This is here because farm captures the build output
         pisi.init(stdout = build_output, stderr = build_output)
         try:
             try:
