@@ -32,9 +32,6 @@ __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
 def buildPackages():
-    pisi = pisiinterface.PisiApi(config.workDir)
-    pisi.init(stdout=None, stderr=None)
-
     qmgr = qmanager.QueueManager()
     queue = copy.copy(qmgr.workQueue)
     packageList = []
@@ -54,10 +51,6 @@ def buildPackages():
     mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
     logger.raw()
 
-    # FIXME: Need to find some way to remove this init/finalize
-    # mambo-jambo...
-    pisi.finalize()
-
     for pspec in queue:
         packagename = os.path.basename(os.path.dirname(pspec))
         build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
@@ -72,6 +65,7 @@ def buildPackages():
         logger.raw()
 
         # This is here because farm captures the build output
+        pisi = pisiinterface.PisiApi(config.workDir)
         pisi.init(stdout = build_output, stderr = build_output)
         try:
             try:
