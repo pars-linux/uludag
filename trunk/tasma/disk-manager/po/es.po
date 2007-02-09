@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 09:42+0200\n"
+"POT-Creation-Date: 2007-02-09 15:33+0200\n"
 "PO-Revision-Date: 2007-02-04 14:47+0200\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -19,39 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:94 src/disk-manager.py:362 src/diskform.py:132
-msgid "Disk Manager"
-msgstr "Administrador de Discos"
-
-#: src/disk-manager.py:113
-msgid "User not in disk group !! Exiting.."
-msgstr "Usuario no en grupo disk !! Saliendo.."
-
-#: src/disk-manager.py:226 src/disk-manager.py:249
-msgid "Completed"
-msgstr "Completado"
-
-#: src/disk-manager.py:226 src/disk-manager.py:249
-msgid "File /etc/fstab updated !"
-msgstr "Archivo /etc/fstab actualizado !"
-
-#: src/disk-manager.py:267
-#, python-format
-msgid "%s for %s failure !!"
-msgstr "%s de %s fallado !!"
-
-#: src/disk-manager.py:295
-msgid "Mount Point"
-msgstr "Punto de Montaje"
-
-#: src/disk-manager.py:296
-msgid "File System Type"
-msgstr "Tipo de Sistema de Archivos"
-
-#: src/disk-manager.py:357
-msgid "Disk Manager is already running!"
-msgstr "Administrador de Discos ya se está ejecutando"
-
 #: src/diskform.py:92 src/diskform.py:139
 msgid "Disks"
 msgstr "Discos"
@@ -59,6 +26,10 @@ msgstr "Discos"
 #: src/diskform.py:93 src/diskform.py:140
 msgid "Partitions"
 msgstr "Particiones"
+
+#: src/diskform.py:132 src/disk-manager.py:94 src/disk-manager.py:379
+msgid "Disk Manager"
+msgstr "Administrador de Discos"
 
 #: src/diskform.py:133
 msgid "File System Type :"
@@ -87,5 +58,35 @@ msgstr "Mostrar Particiones del Sistema"
 # i translated as if "to apply changes"..
 #: src/diskform.py:141
 msgid "To update disk changes the manager must run as root"
-msgstr "Para aplicar los cambios se debe ejecutar el administrador de discos como root"
+msgstr ""
+"Para aplicar los cambios se debe ejecutar el administrador de discos como "
+"root"
 
+#: src/disk-manager.py:126
+msgid "User not in disk group !"
+msgstr "Usuario no en grupo disk !"
+
+#: src/disk-manager.py:227 src/disk-manager.py:250
+msgid "Completed"
+msgstr "Completado"
+
+#: src/disk-manager.py:227 src/disk-manager.py:250
+msgid "File /etc/fstab updated !"
+msgstr "Archivo /etc/fstab actualizado !"
+
+#: src/disk-manager.py:268
+#, python-format
+msgid "%s for %s failure !!"
+msgstr "%s de %s fallado !!"
+
+#: src/disk-manager.py:296
+msgid "Mount Point"
+msgstr "Punto de Montaje"
+
+#: src/disk-manager.py:297
+msgid "File System Type"
+msgstr "Tipo de Sistema de Archivos"
+
+#: src/disk-manager.py:374
+msgid "Disk Manager is already running!"
+msgstr "Administrador de Discos ya se está ejecutando"

@@ -104,20 +104,6 @@ class HelpDialog(QDialog):
 class diskForm(mainForm):
     def __init__(self, parent=None, name=None):
         mainForm.__init__(self, parent, name)
-        if os.getuid()!=0:
-            self.btn_update.setEnabled(False)
-            self.btn_autoFind.setEnabled(False)
-            self.label_warn.show()
-            # Check users group if s/he not in disk group
-            if not os.getgroups().__contains__(grp.getgrnam("disk")[2]):
-                QMessageBox(i18n("Error"),i18n("User not in disk group !! Exiting.."),QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
-                sys.exit()
-        else:
-            pass
-            self.label_warn.hide()
-
-        self.Fstab = fstab.Fstab()
-        self.Dbus = DbusListener()
 
         # Just for block devices
         self.knownFS=['ext3:Ext3',
@@ -127,10 +113,25 @@ class diskForm(mainForm):
                       'ntfs-3g:NTFS',
                       'vfat:Fat 16/32']
 
-        self.fillFileSystems()
-        self.list_main.header().hide()
-        self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
-        self.initialize()
+        # Check user is root or not
+        if os.getuid()!=0:
+            self.btn_update.setEnabled(False)
+            self.btn_autoFind.setEnabled(False)
+            self.label_warn.show()
+        else:
+            self.label_warn.hide()
+
+        # Check users group if s/he not in disk group
+        if not os.getgroups().__contains__(grp.getgrnam("disk")[2]):
+            QMessageBox(i18n("Error"),i18n("User not in disk group !"),QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
+            self.disableAll()
+        else:
+            self.Fstab = fstab.Fstab()
+            self.Dbus = DbusListener()
+            self.fillFileSystems()
+            self.list_main.header().hide()
+            self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
+            self.initialize()
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
@@ -339,6 +340,14 @@ class diskForm(mainForm):
     def slotHelp(self):
         self.helpwin = HelpDialog(self)
         self.helpwin.show()
+
+    def disableAll(self):
+        self.frame_detail.setEnabled(False)
+        self.check_allPart.setEnabled(False)
+        self.btn_autoFind.setEnabled(False)
+        self.btn_update.setEnabled(False)
+        self.btn_help.setEnabled(False)
+        self.list_main.setEnabled(False)
 
 class Module(KCModule):
     def __init__(self, parent, name):
