@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-g -Wall
 
-UNZ_OBJS = zipir.o /usr/lib/libz.a
+UNZ_OBJS = zipir.o -lz
 TARGETS = zipir
 
 .c.o:
