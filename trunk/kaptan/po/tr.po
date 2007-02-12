@@ -110,8 +110,8 @@ msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"<b>Pardus</b> size güzel görünümlü duvar kâğıtları sunar. Masaüstünüz için bir "
-"duvar kâğıdı seçebilirsiniz. "
+"Pardus kullanırken farklı stillerden faydalanabilir, paneli "
+"konumlandıracağınız yeri tanımlayabilirsiniz."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23 ../src/wallpaperdlg.cpp:95
