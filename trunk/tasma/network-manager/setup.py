@@ -24,6 +24,7 @@ distfiles = """
     *.py
     *.desktop
     images/*.png
+    images/*.xpm
     help/*.css
     help/en/*.html
     help/tr/*.html
@@ -76,6 +77,11 @@ app_data = [
     'images/dialup-online.png',
     'images/dialup-connecting.png',
     'images/dialup-offline.png',
+    'images/signal_0.xpm',
+    'images/signal_1.xpm',
+    'images/signal_2.xpm',
+    'images/signal_3.xpm',
+    'images/signal_4.xpm',
     'help'
 ]
 
