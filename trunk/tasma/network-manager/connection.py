@@ -202,7 +202,7 @@ class Settings(QWidget):
         elif signal >= 60:
             num = 3
         
-        iconSet = getIconSet(locate("data", "network_manager/signal_%d.xpm" % num), KIcon.Small)
+        iconSet = getIconSet(locate("data", "network-manager/signal_%d.xpm" % num), KIcon.Small)
         return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
     
     def slotRemotes(self, script, remotes):
