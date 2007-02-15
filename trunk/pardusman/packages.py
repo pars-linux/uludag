@@ -28,6 +28,9 @@ class Console:
 
 def fetch_uri(base_uri, cache_dir, filename, console=None):
     # Dont cache for local repos
+    if base_uri.startswith("file://"):
+        return os.path.join(base_uri[7:], filename)
+
     # Check that local file isnt older or has missing parts
     path = os.path.join(cache_dir, filename)
     if not os.path.exists(path):
@@ -162,7 +165,7 @@ class Repository:
             p = self.packages[name]
             con = Console()
             cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, con)
-            os.link(cached, os.path.join(path, os.path.basename(cached)))
+            os.symlink(cached, os.path.join(path, os.path.basename(cached)))
         index = self.make_index(package_list)
         import bz2
         data = bz2.compress(index)
