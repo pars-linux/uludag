@@ -209,17 +209,15 @@ class Settings(QWidget):
         if self.link.script != script:
             return
         self.view.clear()
-        for remote in remotes.split("\n"):
-            # Convert to dict
-            params = remote.split("\t")
-            wifi = {}
-            for param in params:
-                try:
-                    key, value = param.split('=')
+        if not remotes=="":
+            for remote in remotes.split("\n"):
+                # Convert to dict
+                params = remote.split("\t")
+                wifi = {}
+                for param in params:
+                    key, value = param.split('=',1)
                     wifi[key] = value
-                except:
-                    pass
-            if len(wifi)>0:
+
                 signal = int(wifi["signal"])
 
                 if wifi["remote"] == "":
