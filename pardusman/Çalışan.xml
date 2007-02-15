@@ -271,6 +271,7 @@
         <Package>diffutils</Package>
         <Package>disk-manager</Package>
         <Package>disktype</Package>
+        <Package>dmapi</Package>
         <Package>dmidecode</Package>
         <Package>dosbox</Package>
         <Package>dosfstools</Package>
@@ -341,6 +342,7 @@
         <Package>groff</Package>
         <Package>groff-utf8</Package>
         <Package>grub</Package>
+        <Package>gsm</Package>
         <Package>gspca</Package>
         <Package>gst-plugins-base</Package>
         <Package>gst-plugins-good</Package>
@@ -503,6 +505,7 @@
         <Package>libmatroska</Package>
         <Package>libmikmod</Package>
         <Package>libmng</Package>
+        <Package>libmodplug</Package>
         <Package>libmovtar</Package>
         <Package>libmp4v2</Package>
         <Package>libmpcdec</Package>
