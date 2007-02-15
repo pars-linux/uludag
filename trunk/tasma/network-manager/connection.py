@@ -214,21 +214,24 @@ class Settings(QWidget):
             params = remote.split("\t")
             wifi = {}
             for param in params:
-                key, value = param.split('=')
-                wifi[key] = value
-            
-            signal = int(wifi["signal"])
-            
-            if wifi["remote"] == "":
-                wifi["remote"] = "<hidden>"
-            
-            item = QListViewItem(self.view, "", "", wifi["remote"], wifi["mac"])
-            
-            if wifi["encryption"] == "on":
-                item.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
-            
-            item.setPixmap(1, self.signalIcon(signal))
-    
+                try:
+                    key, value = param.split('=')
+                    wifi[key] = value
+                except:
+                    pass
+            if len(wifi)>0:
+                signal = int(wifi["signal"])
+
+                if wifi["remote"] == "":
+                    wifi["remote"] = "<hidden>"
+
+                item = QListViewItem(self.view, "", "", wifi["remote"], wifi["mac"])
+
+                if wifi["encryption"] == "on":
+                    item.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
+
+                item.setPixmap(1, self.signalIcon(signal))
+
     def initNet(self, lay):
         line = widgets.HLine(i18n("Network settings"), self, "network")
         lay.addSpacing(12)
