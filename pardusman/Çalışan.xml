@@ -2,7 +2,7 @@
     <Title>Pardus Live 2007.1</Title>
     <WorkDir>/root/pardusman/LiveCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
-    <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
