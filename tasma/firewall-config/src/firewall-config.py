@@ -204,34 +204,31 @@ class MainApplication(programbase):
 
         # COMAR
         self.comar = comar.Link()
+        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
+        self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
 
         # COMAR - Notify List
         self.comar.ask_notify('Net.Filter.changed', id=1)
-        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
+
+        # Access Control
+        self.wheel = False
+        self.comar.can_access('System.Service.setState', id=10)
 
         # Signals
-        self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
         self.connect(mainwidget.pushStatus, SIGNAL('clicked()'), self.slotStatus)
-
         self.connect(mainwidget.pushCancel, SIGNAL('clicked()'), self, SLOT('close()'))
         self.connect(mainwidget.pushOk, SIGNAL('clicked()'), self.slotOk)
         self.connect(mainwidget.pushApply, SIGNAL('clicked()'), self.slotApply)
-
         self.connect(mainwidget.pushNewRule, SIGNAL('clicked()'), self.slotDialog)
 
         # Get FW state
         self.comar.call('Net.Filter.getProfile', id=4)
-        self.handleComar(self.comar.read_cmd())
 
         self.comar.call('Net.Filter.getState', id=3)
-        self.handleComar(self.comar.read_cmd())
 
     def slotChanged(self):
         if not standalone:
             self.changed()
-
-    def slotComar(self, sock):
-        self.handleComar(self.comar.read_cmd())
 
     def setState(self, state):
         self.state = state
@@ -243,7 +240,6 @@ class MainApplication(programbase):
 
             # Load FW rules
             self.comar.call('Net.Filter.getRules', id=2)
-            self.handleComar(self.comar.read_cmd())
         else:
             mainwidget.pushStatus.setText(i18n('&Start Firewall'))
             mainwidget.textStatus.setText(i18n('<b><font size=\'+1\'>Firewall is not running</font></b>'))
@@ -289,7 +285,9 @@ class MainApplication(programbase):
             'raw': []
         }
 
-    def handleComar(self, reply):
+
+    def slotComar(self, sock):
+        reply = self.comar.read_cmd()
         if reply.command == 'notify':
             # State changed
             info = reply.data.split('\n')
@@ -328,6 +326,8 @@ class MainApplication(programbase):
                     'save_nat': info[3],
                     'save_raw': info[4],
                 }
+            elif reply.id == 10:
+                self.wheel = True
         elif reply.command == 'fail':
             if reply.id == 5:
                 mainwidget.pushStatus.setEnabled(True)
@@ -337,12 +337,9 @@ class MainApplication(programbase):
         mainwidget.pushStatus.setEnabled(False)
         if self.state == 'on':
             self.comar.call('Net.Filter.setState', {'state': 'off'}, id=5)
-            self.handleComar(self.comar.read_cmd())
         else:
             self.comar.call('Net.Filter.setProfile', rules.profile, id=6)
-            self.handleComar(self.comar.read_cmd())
             self.comar.call('Net.Filter.setState', {'state': 'on'}, id=5)
-            self.handleComar(self.comar.read_cmd())
 
     def slotOk(self):
         self.saveAll()
@@ -367,7 +364,6 @@ class MainApplication(programbase):
     def setRule(self, table, rule):
         rule = '-t %s %s' % (table, rule)
         self.comar.call('Net.Filter.setRule', {'rule': rule}, id=10)
-        self.handleComar(self.comar.read_cmd())
 
     def saveRules(self, table, now):
         s1 = set(self.rules[table])
