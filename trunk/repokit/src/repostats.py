@@ -547,9 +547,9 @@ def usage():
     printu("  -t, --test-only:    %s" % _("Dont generate the web site.\n"))
     sys.exit(0)
 
-if __name__ == "__main__":
+def main(args):
     try:
-        opts, args = getopt.gnu_getopt(sys.argv[1:], "ht", ["help", "test-only"])
+        opts, args = getopt.gnu_getopt(args, "ht", ["help", "test-only"])
     except:
         usage()
     
@@ -589,3 +589,6 @@ if __name__ == "__main__":
             p.report_html()
         for p in sources.values():
             p.report_html()
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
