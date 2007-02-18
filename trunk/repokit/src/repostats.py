@@ -41,10 +41,10 @@ html_header = """
 </div>
 
 <div class='menu'>
-<a href='%(root)sindex.html'>Genel Bilgiler</a>
- | <a href='%(root)ssources.html'>Kaynak Paketler</a>
- | <a href='%(root)sbinaries.html'>İkili Paketler</a>
- | <a href='%(root)spackagers.html'>Paketçiler</a>
+<a href='%(root)sindex.html'>%(menu1)s</a>
+ | <a href='%(root)ssources.html'>%(menu2)s</a>
+ | <a href='%(root)sbinaries.html'>%(menu3)s</a>
+ | <a href='%(root)spackagers.html'>%(menu4)s</a>
 </div>
 
 <h1 align='center'>%(title)s</h1>
@@ -130,6 +130,10 @@ def write_html(filename, title, content):
         "title": title,
         "content": content,
         "root": root,
+        "menu1": _("Information"),
+        "menu2": _("Source Packages"),
+        "menu3": _("Binary Packages"),
+        "menu4": _("Packagers")
     }
     f.write(html_header % dict)
     f.close()
@@ -306,7 +310,7 @@ class Source:
         ptch = map(lambda x: "<a href='%s/files/%s'>%s</a>" % (self.uri,
             x.filename, x.filename), source.patches)
         
-        titles = "Sürüm", "Sürüm Tarihi", "Versiyon", "Güncelleyen", "Açıklama"
+        titles = _("Release"), _("Release date"), _("Version"), _("Updater"), _("Comment")
         hist = make_table(histdata, titles)
         
         html = """
