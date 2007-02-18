@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
-# Willem Gielen <w.gielen@gmail.com>, 2006.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 16:20+0200\n"
-"PO-Revision-Date: 2006-12-25 23:12+0200\n"
+"PO-Revision-Date: 2007-02-18 03:11+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "Alles"
 
 #: src/Tray.py:64
 msgid "There are <b>%1</b> updates available!"
-msgstr "Er zijn momenteel geen bijgewerkte bestanden beschikbaar"
+msgstr "Er zijn <b>%1</b> bijgewerkte pakketten beschikbaar!"
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
 #: src/package-manager.py:299
@@ -63,7 +63,7 @@ msgstr "Selecteer alle pakketten in deze categorie"
 
 #: src/CustomEventListener.py:48 src/package-manager.py:301
 msgid "Reverse package selections"
-msgstr "Keer pakket selectie om"
+msgstr "Keer pakketselectie om"
 
 #: src/BalloonMessage.py:44
 msgid "Show Updates"
@@ -298,7 +298,7 @@ msgstr "Verwijder pakket(ten)"
 
 #: src/package-manager.py:271
 msgid "Upgrade Package(s)"
-msgstr "Opwaarderen geselecteerde pakket(ten)"
+msgstr "Opwaarderen pakket(ten)"
 
 #: src/package-manager.py:368
 msgid "N\\A"
@@ -605,7 +605,7 @@ msgid ""
 "This will not delete installed software or affect your system stability."
 msgstr ""
 "Legen van schijf cache zal alle gedownloade software verwijderen. \n"
-"Het zal geen geinstalleerde software verwijderen of de stabiliteit van uw "
+"Het zal geen geÏnstalleerde software verwijderen of de stabiliteit van uw "
 "systeem beïnvloeden."
 
 #: src/PreferencesDialog.py:216
