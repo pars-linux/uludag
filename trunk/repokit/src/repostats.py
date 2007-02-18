@@ -382,22 +382,22 @@ class Packager:
             x[0], x[0], x[1], x[2]), ), self.updates)
         
         html = """
-            <p>Paketçi: %s (%s)</p>
-        """ % (self.name, mangle_email(self.email))
+            <p>%s: %s (%s)</p>
+        """ % (_("Packager"), self.name, mangle_email(self.email))
         
         html += """
             <div class='statstat'>
-            <h3>Sahip olduğu paketler:</h3><p>
+            <h3>%s</h3><p>
             %s
             </p></div>
-        """ % make_table(srcs)
+        """ % (_("Maintained packages:"), make_table(srcs))
         
         html += """
             <div class='statstat'>
-            <h3>Yaptığı güncellemeler:</h3><p>
+            <h3>%s</h3><p>
             %s
             </p></div>
-        """ % make_table(upds)
+        """ % (_("Package updates:"), make_table(upds))
         
         write_html("paksite/packager/%s.html" % self.name, self.name, html)
 
