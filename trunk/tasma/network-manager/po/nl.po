@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the net-kga package.
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
-# Willem Gielen <w.gielen@gmail.com>, 2006.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-23 20:04+0200\n"
-"PO-Revision-Date: 2006-12-13 20:27+0200\n"
+"PO-Revision-Date: 2007-02-18 03:05+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgstr "Netwerkmanager module is al opgestart!"
 
 #: comariface.py:162
 msgid "Waiting COMAR..."
-msgstr "wachten COMAR..."
+msgstr "Wachten COMAR..."
 
 #: comariface.py:163
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
@@ -205,11 +205,11 @@ msgstr "Hostnaam:"
 
 #: nameconf.py:56
 msgid "Up"
-msgstr ""
+msgstr "Omhoog"
 
 #: nameconf.py:59
 msgid "Down"
-msgstr ""
+msgstr "Omlaag"
 
 # infinitief vertalen:
 # Naamserver toevoegen
@@ -270,3 +270,4 @@ msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Netwerk-applet"
+
