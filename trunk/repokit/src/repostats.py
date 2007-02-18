@@ -97,24 +97,13 @@ a:hover {
 }
 """
 
-# default html templates (now obsolete)
-
-def_repo_sizes_html = u"""
-<h3>Boyutlar</h3>
-<p>Toplam kurulu boyut %(total)s</p>
-<p>Dosya tiplerine göre liste:</p>
-<table><tbody>
-%(sizes)s
-</table></tbody>
-"""
-
 
 def svn_uri(path):
     # init
     core.apr_initialize()
     pool = core.svn_pool_create(None)
     core.svn_config_ensure(None, pool)
-    # get commit date
+    # get repo uri
     uri = client.svn_client_url_from_path(path, pool)
     # cleanup
     core.svn_pool_destroy(pool)
@@ -367,11 +356,6 @@ class Packager:
             name = spec.source.packager.name
             email = spec.source.packager.email
         if packagers.has_key(name):
-            if email != packagers[name].email:
-                e = _("Developer '%s <%s>' has another mail address '%s' in source package '%s'") % (
-                    name, packagers[name].email, email, spec.source.name)
-                packagers[name].errors.append(e)
-                errors.append(e)
             if update:
                 packagers[name].updates.append((spec.source.name, update.release, update.comment))
             else:
