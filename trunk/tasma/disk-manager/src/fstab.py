@@ -83,6 +83,12 @@ class Fstab:
         else:
             self.content = []
 
+        # basic syntax check of the content
+        try:
+            assert([x for x in self.content if len(x.split()) != 6] == [])
+        except:
+            raise FstabError, "Syntax of the fstab file doesn't seem to be correct"
+
         self.defaultMountDir = "/mnt"
         self.excludedFilesystems = ["proc", "tmpfs", "swap"]
         self.allDevices = getBlockDevices()
