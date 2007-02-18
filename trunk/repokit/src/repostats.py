@@ -16,7 +16,7 @@ import re
 import getopt
 
 import gettext
-__trans = gettext.translation('pisi', fallback=True)
+__trans = gettext.translation('repokit', fallback=True)
 _ = __trans.ugettext
 
 from svn import core, client
