@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-18 22:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/repostats.py:133 src/repostats.py:516
+msgid "Information"
+msgstr ""
+
+#: src/repostats.py:134 src/repostats.py:535
+msgid "Source Packages"
+msgstr ""
+
+#: src/repostats.py:135 src/repostats.py:540
+msgid "Binary Packages"
+msgstr ""
+
+#: src/repostats.py:136
+msgid "Packagers"
+msgstr ""
+
+#: src/repostats.py:219
+#, python-format
+msgid ""
+"Duplicate binary packages:\n"
+"%s\n"
+"%s\n"
+msgstr ""
+
+#: src/repostats.py:278
+msgid "Source package"
+msgstr ""
+
+#: src/repostats.py:280
+msgid "Build dependencies"
+msgstr ""
+
+#: src/repostats.py:282
+msgid "Runtime dependencies"
+msgstr ""
+
+#: src/repostats.py:284
+msgid "Required by (for building)"
+msgstr ""
+
+#: src/repostats.py:286
+msgid "Required by (for runtime)"
+msgstr ""
+
+#: src/repostats.py:297
+#, python-format
+msgid ""
+"Duplicate source packages:\n"
+"%s\n"
+"%s\n"
+msgstr ""
+
+#: src/repostats.py:316
+msgid "Release"
+msgstr ""
+
+#: src/repostats.py:316
+msgid "Release date"
+msgstr ""
+
+#: src/repostats.py:316 src/repostats.py:530
+msgid "Version"
+msgstr ""
+
+#: src/repostats.py:316
+msgid "Updater"
+msgstr ""
+
+#: src/repostats.py:316
+msgid "Comment"
+msgstr ""
+
+#: src/repostats.py:342
+msgid "License"
+msgstr ""
+
+#: src/repostats.py:344
+msgid "Actions"
+msgstr ""
+
+#: src/repostats.py:346
+msgid "Build files"
+msgstr ""
+
+#: src/repostats.py:348
+msgid "Bug reports"
+msgstr ""
+
+#: src/repostats.py:349
+msgid "Binary packages"
+msgstr ""
+
+#: src/repostats.py:351
+msgid "Release history"
+msgstr ""
+
+#: src/repostats.py:353
+msgid "Patches"
+msgstr ""
+
+#: src/repostats.py:391 src/repostats.py:519
+msgid "Packager"
+msgstr ""
+
+#: src/repostats.py:398
+msgid "Maintained packages:"
+msgstr ""
+
+#: src/repostats.py:405
+msgid "Package updates:"
+msgstr ""
+
+#: src/repostats.py:456
+#, python-format
+msgid ""
+"Cannot parse '%s':\n"
+"%s\n"
+msgstr ""
+
+#: src/repostats.py:491
+msgid "Number of source packages"
+msgstr ""
+
+#: src/repostats.py:492
+msgid "Number of binary packages"
+msgstr ""
+
+#: src/repostats.py:493
+msgid "Number of patches"
+msgstr ""
+
+#: src/repostats.py:494
+msgid "Number of packagers"
+msgstr ""
+
+#: src/repostats.py:504
+msgid "Most patched:"
+msgstr ""
+
+#: src/repostats.py:513
+msgid "Longest build scripts:"
+msgstr ""
+
+#: src/repostats.py:520
+msgid "Package count"
+msgstr ""
+
+#: src/repostats.py:525
+msgid "Packagers (by package count)"
+msgstr ""
+
+#: src/repostats.py:528
+msgid "Packagers (by name)"
+msgstr ""
+
+#: src/repostats.py:530
+msgid "Package name"
+msgstr ""
+
+#: src/repostats.py:530
+msgid "Summary"
+msgstr ""
+
+#: src/repostats.py:546
+msgid "Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"
+msgstr ""
+
+#: src/repostats.py:547
+msgid "Dont generate the web site.\n"
+msgstr ""
+
+#: src/repostats.py:568
+msgid "Scanning source repository...\n"
+msgstr ""
+
+#: src/repostats.py:572
+msgid "Scanning binary packages...\n"
+msgstr ""
