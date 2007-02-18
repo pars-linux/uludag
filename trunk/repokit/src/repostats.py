@@ -499,52 +499,56 @@ class Repository:
     
     def report_html(self):
         table = (
-            ("Kaynak paket sayısı", self.nr_sources),
-            ("İkili paket sayısı", self.nr_packages),
-            ("Yama sayısı", self.nr_patches),
-            ("Paketçi sayısı", len(self.people.list)),
+            (_("Number of source packages"), self.nr_sources),
+            (_("Number of binary packages"), self.nr_packages),
+            (_("Number of patches"), self.nr_patches),
+            (_("Number of packagers"), len(self.people.list)),
         )
         html = make_table(table)
         
         html += """
             <div class='statstat'>
-            <h3>En fazla yamalanmış beş kaynak paket:</h3><p>
+            <h3>%s</h3><p>
             %s
             </p></div>
-        """ % make_table(map(lambda x: (make_url(x[0], "./source/"), x[1]), self.mostpatched.get_list(5)))
-        
+        """ % (
+            _("Most patched:"),
+            make_table(map(lambda x: (make_url(x[0], "./source/"), x[1]), self.mostpatched.get_list(5)))
+        )
         html += """
             <div class='statstat'>
-            <h3>En uzun inşa betikli beş kaynak paket:</h3><p>
+            <h3>%s</h3><p>
             %s
             </p></div>
-        """ % make_table(map(lambda x: (make_url(x[0], "./source/"), x[1]), self.longpy.get_list(5)))
-        
-        write_html("paksite/index.html", "Genel Bilgiler", html)
+        """ % (
+            _("Longest build scripts:"),
+            make_table(map(lambda x: (make_url(x[0], "./source/"), x[1]), self.longpy.get_list(5)))
+        )
+        write_html("paksite/index.html", _("Information"), html)
         
         titles = (
-            "<a href='packagers_by_name.html'>Paketçi</a>",
-            "<a href='packagers.html'>Paket sayısı</a>"
+            "<a href='packagers_by_name.html'>%s</a>" % _("Packager"),
+            "<a href='packagers.html'>%s</a>" % _("Package count")
         )
         
         people = self.people.get_list()
         people = map(lambda x: ("<a href='./packager/%s.html'>%s</a>" % (x[0], x[0]), x[1]), people)
-        write_html("paksite/packagers.html", "Paketçiler (paket sayısına göre)", make_table(people, titles))
+        write_html("paksite/packagers.html", _("Packagers (by package count)"), make_table(people, titles))
         
         people.sort(key=lambda x: x[0])
-        write_html("paksite/packagers_by_name.html", "Paketçiler (isme göre)", make_table(people, titles))
+        write_html("paksite/packagers_by_name.html", _("Packagers (by name)"), make_table(people, titles))
         
-        titles = "Paket adı", "Versiyon", "Açıklama"
+        titles = _("Package name"), _("Version"), _("Summary")
         
         srclist = map(lambda x: (make_url(x.name, "source/"), x.spec.getSourceVersion(), x.spec.source.summary), sources.values())
         srclist.sort(key=lambda x: x[0])
         html = make_table(srclist, titles)
-        write_html("paksite/sources.html", "Kaynak Paketler", html)
+        write_html("paksite/sources.html", _("Source Packages"), html)
         
         binlist = map(lambda x: (make_url(x.name, "binary/"), x.source.spec.getSourceVersion(), x.source.spec.source.summary), packages.values())
         binlist.sort(key=lambda x: x[0])
         html = make_table(binlist, titles)
-        write_html("paksite/binaries.html", "İkili Paketler", html)
+        write_html("paksite/binaries.html", _("Binary Packages"), html)
 
 
 # command line driver
