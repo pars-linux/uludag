@@ -257,30 +257,33 @@ class Package:
         rrDeps = map(lambda x: "<a href='./%s.html'>%s</a>" % (x, x), self.revRuntimeDeps)
         
         html = """
-            <h1>İkili paket: %s</h1>
-            <h2>Kaynak versiyon %s, depo sürümü %s</h2>
+            <h3>%s <em>%s</em></h3>
             
-            <h3>Kaynak paket: %s</h3>
+            <p>%s: %s</p>
             
-            <h3>Derlemek için gerekenler:</h3>
+            <h3>%s</h3>
             <p>%s</p>
             
-            <h3>Çalıştırmak için gerekenler:</h3>
+            <h3>%s</h3>
             <p>%s</p>
             
-            <h3>Bağımlı paketler (derlenmek için):</h3>
+            <h3>%s</h3>
             <p>%s</p>
             
-            <h3>Bağımlı paketler (çalışmak için):</h3>
+            <h3>%s</h3>
             <p>%s</p>
         """ % (
             self.name,
             self.source.spec.getSourceVersion(),
-            self.source.spec.getSourceRelease(),
+            _("Source package"),
             make_url(source.name, "../source/"),
+            _("Build dependencies"),
             ", ".join(bDeps),
+            _("Runtime dependencies"),
             ", ".join(rDeps),
+            _("Required by (for building)"),
             ", ".join(rbDeps),
+            _("Required by (for runtime)"),
             ", ".join(rrDeps),
         )
         
@@ -314,37 +317,40 @@ class Source:
         hist = make_table(histdata, titles)
         
         html = """
-            <h1>Kaynak paket: %s</h1>
-            <h2>Kaynak versiyon %s, depo sürümü %s</h2>
-            <h3><a href='%s'>%s</a></h3>
-            <h3>Açıklama</h3>
+            <h3>%s <em>%s</em></h3>
             <p>%s</p>
-            <h3>Lisanslar:</h3>
-            <p>%s</p>
-            <h3>İşlemler:</h3>
-            <p><a href="%s">Paket dosyalarına bak</a></p>
-            <p><a href="http://bugs.pardus.org.tr/buglist.cgi?product=Paketler&component=%s&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED">Hata kayıtlarına bak</a></p>
+            <p><a href='%s'>%s</a></p>
+            <p>%s: %s</p>
+            <h3>%s</h3>
+            <p><a href="%s">%s</a></p>
+            <p><a href="http://bugs.pardus.org.tr/buglist.cgi?product=Paketler&component=%s&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED">%s</a></p>
             
-            <h3>Bu kaynaktan derlenen ikili paketler:</h3>
+            <h3>%s</h3>
             <p>%s</p>
             
-            <h3>Tarihçe</h3>
+            <h3>%s</h3>
             %s
             
-            <h3>Yamalar</h3>
+            <h3>%s</h3>
             %s
         """ % (
             self.name,
             self.spec.getSourceVersion(),
-            self.spec.getSourceRelease(),
-            source.homepage,
-            source.homepage,
             source.summary,
+            source.homepage,
+            source.homepage,
+            _("License"),
             ", ".join(source.license),
+            _("Actions"),
             self.uri,
+            _("Build files"),
             self.name,
+            _("Bug reports"),
+            _("Binary packages"),
             "<br>".join(paks),
+            _("Release history"),
             "".join(hist),
+            _("Patches"),
             "<br>".join(ptch),
         )
         
