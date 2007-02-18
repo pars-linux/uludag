@@ -355,23 +355,18 @@ class Packager:
         else:
             name = spec.source.packager.name
             email = spec.source.packager.email
-        if packagers.has_key(name):
-            if update:
-                packagers[name].updates.append((spec.source.name, update.release, update.comment))
-            else:
-                packagers[name].sources.append(spec.source.name)
-        else:
-            packagers[name] = self
+        
+        if not packagers.has_key(name):
+            self.sources = []
+            self.updates = []
             self.name = name
             self.email = email
-            if update:
-                self.sources = []
-                self.updates = [(spec.source.name, update.release, update.comment)]
-            else:
-                self.sources = [spec.source.name]
-                self.updates = []
-            self.errors = []
-        if not update:
+            packagers[name] = self
+        
+        if update:
+            packagers[name].updates.append((spec.source.name, update.release, update.comment))
+        else:
+            packagers[name].sources.append(spec.source.name)
             for update in spec.history:
                 Packager(spec, update)
     
