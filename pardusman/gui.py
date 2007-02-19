@@ -155,11 +155,16 @@ class ProjectWindow(KMainWindow):
         lab = QLabel(_("Media size:"), box)
         grid.addWidget(lab, 5, 0, Qt.AlignRight)
         self.media_size = QComboBox(False, box)
-        self.media_size.insertItem(getIconPixmap("cdrom_unmount"), _("CD (700 MB)"), 0)
-        self.media_size.insertItem(getIconPixmap("dvd_unmount"), _("DVD (4.2 GB)"), 1)
-        self.media_size.insertItem(getIconPixmap("usbpendrive_unmount"), _("FlashDisk (1 GB)"), 2)
-        self.media_size.insertItem(getIconPixmap("hdd_unmount"), _("Custom size"), 3)
         grid.addWidget(self.media_size, 5, 1)
+        
+        self.media = [
+            (700, _("CD (700 MB)"), "cdrom_unmount"),
+            (4300, _("DVD (4.2 GB)"), "dvd_unmount"),
+            (1024, _("FlashDisk (1 GB)"), "usbpendrive_unmount"),
+            (0, _("Custom size"), "hdd_unmount"),
+        ]
+        for size, label, icon in self.media:
+            self.media_size.insertItem(getIconPixmap(icon), label)
         
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
@@ -179,6 +184,18 @@ class ProjectWindow(KMainWindow):
         self.project2ui()
         
         self.progress = Progress(self)
+    
+    def getMediaSize(self):
+        return self.media[self.media_size.currentItem()][0] * 1024 * 1024
+    
+    def setMediaSize(self, size):
+        index = 0
+        for mediasize, label, icon in self.media:
+            if int(size) == mediasize * 1024 * 1024:
+                self.media_size.setCurrentItem(index)
+                return
+            index += 1
+        self.media_size.setCurrentItem(len(self.media) - 1)
     
     def selectFiles(self):
         path = QFileDialog.getExistingDirectory(
@@ -213,7 +230,8 @@ class ProjectWindow(KMainWindow):
             self.project.all_packages = allpaks
     
     def browse(self):
-        self.ui2project()
+        if not self.ui2project():
+            return
         repo = self.project.get_repo(self.progress)
         self.toolbar.setEnabled(False)
         w = browser.Browser(
@@ -221,12 +239,20 @@ class ProjectWindow(KMainWindow):
             repo,
             self.browseResult,
             self.project.selected_components,
-            self.project.selected_packages
+            self.project.selected_packages,
+            self.getMediaSize()
         )
         w.show()
     
     def make(self):
-        self.ui2project()
+        if not self.ui2project():
+            return
+        if not os.path.exists(self.project.work_dir):
+            self.console.error(_("Project directory does not exist."))
+            return
+        if not os.path.exists(self.project.release_files):
+            self.console.error(_("Release files directory does not exist."))
+            return
         f = tempfile.NamedTemporaryFile()
         self.project.save(f.name)
         ppath = sys.argv[0]
@@ -240,19 +266,37 @@ class ProjectWindow(KMainWindow):
         tmp = unicode(self.title.text())
         if tmp:
             self.project.title = tmp
+        else:
+            self.project.title = None
+            self.console.error(_("Project title not given."))
+            return
         tmp = unicode(self.release_files.text())
         if tmp:
             self.project.release_files = tmp
+        else:
+            self.project.release_files = None
+            self.console.error(_("Release files directory not given."))
+            return
         tmp = unicode(self.work_dir.text())
         if tmp:
             self.project.work_dir = tmp
+        else:
+            self.project.work_dir = None
+            self.console.error(_("Project directory not given."))
+            return
         tmp = unicode(self.repo_uri.text())
         if tmp:
             self.project.repo_uri = tmp
+        else:
+            self.project.repo_uri = None
+            self.console.error(_("Repository address not given."))
+            return
         if self.media_type.selectedId() == 0:
             self.project.media_type = "install"
         else:
             self.project.media_type = "live"
+        self.project.media_size = self.getMediaSize()
+        return True
     
     def project2ui(self):
         if self.project.title:
@@ -279,6 +323,7 @@ class ProjectWindow(KMainWindow):
             self.media_type.setButton(0)
         else:
             self.media_type.setButton(1)
+        self.setMediaSize(self.project.media_size)
     
     def updateCaption(self):
         if self.project_file:
@@ -303,7 +348,8 @@ class ProjectWindow(KMainWindow):
     
     def saveProject(self):
         if self.project_file:
-            self.ui2project()
+            if not self.ui2project():
+                return
             self.project.save(self.project_file)
             self.console.state("Saved.")
         else:
@@ -314,7 +360,8 @@ class ProjectWindow(KMainWindow):
         name = unicode(name)
         if name == "":
             return
-        self.ui2project()
+        if not self.ui2project():
+            return
         self.project.save(name)
         self.project_file = name
         self.updateCaption()
