@@ -88,7 +88,8 @@ a {
 }
 
 #fullpage{
-    width:93%;
+    padding-left:14px;
+    margin-right:8px;
     padding-top:0px;
 }
 
