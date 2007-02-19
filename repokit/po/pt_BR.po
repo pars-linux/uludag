@@ -1,16 +1,16 @@
-# Translation of repokit.po to Brazillian Portuguese
+# Translation of pt_BR.po to Brazillian Portuguese
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Pedro Leite <pedro.leite@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: repokit\n"
+"Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-18 22:07+0200\n"
-"PO-Revision-Date: 2007-02-18 17:41-0300\n"
+"PO-Revision-Date: 2007-02-18 21:02-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
-"Language-Team: Brazillian Portuguese\n"
+"Language-Team: Brazillian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,19 +18,19 @@ msgstr ""
 
 #: src/repostats.py:133 src/repostats.py:516
 msgid "Information"
-msgstr ""
+msgstr "Informação"
 
 #: src/repostats.py:134 src/repostats.py:535
 msgid "Source Packages"
-msgstr ""
+msgstr "Pacotes Fonte"
 
 #: src/repostats.py:135 src/repostats.py:540
 msgid "Binary Packages"
-msgstr ""
+msgstr "Pacotes Binários"
 
 #: src/repostats.py:136
 msgid "Packagers"
-msgstr ""
+msgstr "Empacotadores"
 
 #: src/repostats.py:219
 #, python-format
@@ -39,26 +39,29 @@ msgid ""
 "%s\n"
 "%s\n"
 msgstr ""
+"Pacotes binários duplicados:\n"
+"%s\n"
+"%s\n"
 
 #: src/repostats.py:278
 msgid "Source package"
-msgstr ""
+msgstr "Pacote fonte"
 
 #: src/repostats.py:280
 msgid "Build dependencies"
-msgstr ""
+msgstr "Dependências de compilação"
 
 #: src/repostats.py:282
 msgid "Runtime dependencies"
-msgstr ""
+msgstr "Dependências de execução"
 
 #: src/repostats.py:284
 msgid "Required by (for building)"
-msgstr ""
+msgstr "Requerido por (para compilação)"
 
 #: src/repostats.py:286
 msgid "Required by (for runtime)"
-msgstr ""
+msgstr "Requerido por (para execução)"
 
 #: src/repostats.py:297
 #, python-format
@@ -67,66 +70,69 @@ msgid ""
 "%s\n"
 "%s\n"
 msgstr ""
+"Pacotes fonte duplicados:\n"
+"%s\n"
+"%s\n"
 
 #: src/repostats.py:316
 msgid "Release"
-msgstr ""
+msgstr "Release"
 
 #: src/repostats.py:316
 msgid "Release date"
-msgstr ""
+msgstr "Data de release"
 
 #: src/repostats.py:316 src/repostats.py:530
 msgid "Version"
-msgstr ""
+msgstr "Versão"
 
 #: src/repostats.py:316
 msgid "Updater"
-msgstr ""
+msgstr "Atualizador"
 
 #: src/repostats.py:316
 msgid "Comment"
-msgstr ""
+msgstr "Comentário"
 
 #: src/repostats.py:342
 msgid "License"
-msgstr ""
+msgstr "Licença"
 
 #: src/repostats.py:344
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: src/repostats.py:346
 msgid "Build files"
-msgstr ""
+msgstr "Arquivos de compilação"
 
 #: src/repostats.py:348
 msgid "Bug reports"
-msgstr ""
+msgstr "Relatórios de bugs"
 
 #: src/repostats.py:349
 msgid "Binary packages"
-msgstr ""
+msgstr "Pacotes binários"
 
 #: src/repostats.py:351
 msgid "Release history"
-msgstr ""
+msgstr "Histórico de Release"
 
 #: src/repostats.py:353
 msgid "Patches"
-msgstr ""
+msgstr "Patches"
 
 #: src/repostats.py:391 src/repostats.py:519
 msgid "Packager"
-msgstr ""
+msgstr "Empacotador"
 
 #: src/repostats.py:398
 msgid "Maintained packages:"
-msgstr ""
+msgstr "Pacotes mantidos:"
 
 #: src/repostats.py:405
 msgid "Package updates:"
-msgstr ""
+msgstr "Atualizações de pacotes:"
 
 #: src/repostats.py:456
 #, python-format
@@ -134,22 +140,24 @@ msgid ""
 "Cannot parse '%s':\n"
 "%s\n"
 msgstr ""
+"Não é possível analisar '%s':\n"
+"%s\n"
 
 #: src/repostats.py:491
 msgid "Number of source packages"
-msgstr ""
+msgstr "Número de pacotes fonte"
 
 #: src/repostats.py:492
 msgid "Number of binary packages"
-msgstr ""
+msgstr "Número de pacotes fontes"
 
 #: src/repostats.py:493
 msgid "Number of patches"
-msgstr ""
+msgstr "Número de patches"
 
 #: src/repostats.py:494
 msgid "Number of packagers"
-msgstr ""
+msgstr "Números de empacotadores"
 
 #: src/repostats.py:504
 msgid "Most patched:"
@@ -157,41 +165,41 @@ msgstr ""
 
 #: src/repostats.py:513
 msgid "Longest build scripts:"
-msgstr ""
+msgstr "Maiores scripts de compilação:"
 
 #: src/repostats.py:520
 msgid "Package count"
-msgstr ""
+msgstr "Quantidade de pacotes"
 
 #: src/repostats.py:525
 msgid "Packagers (by package count)"
-msgstr ""
+msgstr "Empacotadores (por quantidade de pacotes)"
 
 #: src/repostats.py:528
 msgid "Packagers (by name)"
-msgstr ""
+msgstr "Empacoteadores (pelo nome)"
 
 #: src/repostats.py:530
 msgid "Package name"
-msgstr ""
+msgstr "Nome do pacote"
 
 #: src/repostats.py:530
 msgid "Summary"
-msgstr ""
+msgstr "Resumo"
 
 #: src/repostats.py:546
 msgid "Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"
-msgstr ""
+msgstr "Uso: repostats.py [OPÇÕES] caminho-do-repositório-de-fontes [caminho-do-repositório-de-binários]\n"
 
 #: src/repostats.py:547
 msgid "Dont generate the web site.\n"
-msgstr ""
+msgstr "Não gerar este web site.\n"
 
 #: src/repostats.py:568
 msgid "Scanning source repository...\n"
-msgstr ""
+msgstr "Examinando repositório de fontes...\n"
 
 #: src/repostats.py:572
 msgid "Scanning binary packages...\n"
-msgstr ""
+msgstr "Examinando pacotes binários...\n"
 
