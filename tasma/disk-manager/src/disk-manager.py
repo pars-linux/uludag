@@ -126,12 +126,19 @@ class diskForm(mainForm):
             QMessageBox(i18n("Error"),i18n("User not in disk group !"),QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
             self.disableAll()
         else:
-            self.Fstab = fstab.Fstab()
-            self.Dbus = DbusListener()
-            self.fillFileSystems()
-            self.list_main.header().hide()
-            self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
-            self.initialize()
+            try:
+                self.Fstab = fstab.Fstab()
+                self.Dbus = DbusListener()
+                self.fillFileSystems()
+                self.list_main.header().hide()
+                self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
+                self.initialize()
+            except:
+                self.label_warn.setText(i18n("File /etc/fstab is not correct, please fix it manually."))
+                self.label_warn.show()
+                QMessageBox(i18n("Error"),i18n("File /etc/fstab is not correct, please fix it manually."),
+                                          QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
+                self.disableAll()
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
@@ -265,7 +272,7 @@ class diskForm(mainForm):
                         mounteds = getMounteds()
                         if (action=='umount' and partition['partition_name'] in mounteds) or (action=='mount' and partition['partition_name'] not in mounteds):
                             if not runQuiet([action,partition['partition_name']])==0:
-                                self.showInfo('Error',i18n('%s for %s failure !!' % (action,partition['partition_name'])),QMessageBox.Warning)
+                                self.showInfo(i18n("Error"),i18n("%s for %s failure !!" % (action,partition['partition_name'])),QMessageBox.Warning)
 
     def showInfo(self,title,msg,type=QMessageBox.Information):
         QMessageBox(title,msg,type,QMessageBox.Ok,0,0,self).show()
