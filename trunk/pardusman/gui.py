@@ -158,13 +158,13 @@ class ProjectWindow(KMainWindow):
         grid.addWidget(self.media_size, 5, 1)
         
         self.media = [
-            (700, _("CD (700 MB)"), "cdrom_unmount"),
-            (4300, _("DVD (4.2 GB)"), "dvd_unmount"),
-            (1024, _("FlashDisk (1 GB)"), "usbpendrive_unmount"),
-            (0, _("Custom size"), "hdd_unmount"),
+            ("cd", 700, _("CD (700 MB)"), "cdrom_unmount"),
+            ("dvd", 4300, _("DVD (4.2 GB)"), "dvd_unmount"),
+            ("flashdisk", 1024, _("FlashDisk (1 GB)"), "usbpendrive_unmount"),
+            ("custom", 0, _("Custom size"), "hdd_unmount"),
         ]
-        for size, label, icon in self.media:
-            self.media_size.insertItem(getIconPixmap(icon), label)
+        for mediatype, size, label, icon in self.media:
+            x = self.media_size.insertItem(getIconPixmap(icon), label)
         
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
@@ -185,17 +185,20 @@ class ProjectWindow(KMainWindow):
         
         self.progress = Progress(self)
     
-    def getMediaSize(self):
-        return self.media[self.media_size.currentItem()][0] * 1024 * 1024
+    def getMedia(self):
+        return self.media[self.media_size.currentItem()][0]
     
-    def setMediaSize(self, size):
+    def setMedia(self, mtype):
         index = 0
-        for mediasize, label, icon in self.media:
-            if int(size) == mediasize * 1024 * 1024:
+        for mediatype, mediasize, label, icon in self.media:
+            if mediatype == mtype:
                 self.media_size.setCurrentItem(index)
                 return
             index += 1
         self.media_size.setCurrentItem(len(self.media) - 1)
+    
+    def getMediaSize(self):
+        return self.media[self.media_size.currentItem()][1] * 1024 * 1024
     
     def selectFiles(self):
         path = QFileDialog.getExistingDirectory(
@@ -295,7 +298,7 @@ class ProjectWindow(KMainWindow):
             self.project.media_type = "install"
         else:
             self.project.media_type = "live"
-        self.project.media_size = self.getMediaSize()
+        self.project.media_size = self.getMedia()
         return True
     
     def project2ui(self):
@@ -323,7 +326,7 @@ class ProjectWindow(KMainWindow):
             self.media_type.setButton(0)
         else:
             self.media_type.setButton(1)
-        self.setMediaSize(self.project.media_size)
+        self.setMedia(self.project.media_size)
     
     def updateCaption(self):
         if self.project_file:
