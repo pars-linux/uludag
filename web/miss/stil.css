@@ -46,15 +46,21 @@ a {
 
 #footnote {
     clear: both;
-    width: 99%;
-    height: 91px;
-    padding: 5px;
-    padding-top: 0px;
-    padding-left: 10px;
+    width: 100%;
+    height: 80px;
+    margin-top:20px;
+    padding-top:10px;
+    border-top:1px dotted #DDD;
+}
+
+#footnote img {
+    padding-right:15px;
+    margin-right:15px;
+    padding-left:10px;
+    border-right:1px solid #DDD;
 }
 
 #footnote p {
-    padding-left: 80px;
     padding-top: 4px;
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
     font-size: 70%;
@@ -68,6 +74,7 @@ a {
 #fullpage{
     width: 93%;
     padding-top: 0px;
+    padding-left:14px;
 }
 
 #mainpage{
