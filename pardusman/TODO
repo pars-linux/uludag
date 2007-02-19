@@ -1,3 +1,4 @@
 + Show size for selected media (browser)
-+ Save media size to XML (gui / project)
+- Save media type to XML (gui / project)
 + Show friendly error messages (gui / packages)
+- Check for pisi-index updates
