@@ -499,6 +499,7 @@ class MainApplicationWidget(QWidget):
         self.progressDialog.updateProgressBar(100)
 
         if not self.command.inProgress():
+            self.progressDialog.totalPackages = 1
             self.command.install([package])
             self.progressDialog.setCurrentOperation(i18n("<b>Installing Package(s)</b>"))
             self.progressDialog.show()
@@ -547,6 +548,8 @@ class MainApplicationWidget(QWidget):
 
         if not self.confirmAction():
             return
+
+        self.progressDialog.totalPackages = len(self.basket.packages + self.basket.extraPackages)
 
         # remove action
         if self.state == remove_state:
@@ -740,11 +743,6 @@ class MainApplicationWidget(QWidget):
         elif operation in ["updatingrepo"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
             self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
-
-        else: # pisi.ui.packagetogo
-            # pisi sends unnecessary remove order notify in the middle of install, upgrade, remove
-            if self.progressDialog.totalPackages == 0:
-                self.progressDialog.totalPackages = len(data)
 
     def showErrorMessage(self, message, error=i18n("Error")):
         KMessageBox.error(self, message, error)
