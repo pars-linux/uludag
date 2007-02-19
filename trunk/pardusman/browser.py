@@ -194,9 +194,11 @@ class SizeLabel(QLabel):
 
 
 class BrowserWidget(QVBox):
-    def __init__(self, parent, repo):
+    def __init__(self, parent, repo, mediasize):
         QVBox.__init__(self, parent)
         self.setSpacing(3)
+
+        self.mediasize = mediasize
         
         info = KActiveLabel(self)
         info.setSizePolicy(QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum))
@@ -299,7 +301,8 @@ class BrowserWidget(QVBox):
         if self.nr_paks == 0:
             self.label.setText(_("No packages selected."))
         else:
-            self.label.percent = min(100 * self.total_zip / (700 * 1024 * 1024), 100)
+            if self.mediasize != 0:
+                self.label.percent = min(100 * self.total_zip / self.mediasize, 100)
             self.label.setText(
                 _("%d packages selected, %s bytes archive size, %s bytes installed size.") %
                 (self.nr_paks, size_fmt(self.total_zip), size_fmt(self.total)))
@@ -318,13 +321,13 @@ class BrowserWidget(QVBox):
 
 
 class Browser(QDialog):
-    def __init__(self, parent, repo, callback, components, packages):
+    def __init__(self, parent, repo, callback, components, packages, mediasize):
         QDialog.__init__(self, parent)
         self.setCaption(repo.base_uri)
         self.setIcon(getIconPixmap("package"))
         self.callback = callback
         vb = QVBoxLayout(self, 6)
-        self.browser = BrowserWidget(self, repo)
+        self.browser = BrowserWidget(self, repo, mediasize)
         self.browser.setMinimumSize(620, 420)
         vb.addWidget(self.browser)
         but = QPushButton(_("Use selected packages"), self)

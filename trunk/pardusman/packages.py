@@ -126,7 +126,11 @@ class Repository:
             data = bz2.decompress(data)
             doc = piksemel.parseString(data)
         else:
-            doc = piksemel.parse(path)
+            try:
+                doc = piksemel.parse(path)
+            except OSError:
+                print "PiSi-Index '%s' does not exists!" % path
+                sys.exit()
         self.distribution = doc.getTag('Distribution')
         for tag in doc.tags('Package'):
             p = Package(tag)
