@@ -147,13 +147,13 @@ def make_repos(project):
     
     repo = project.get_repo()
     repo_dir = project.image_repo_dir(clean=True)
-    if project.media_type == "install":
+    if project.type == "install":
         imagedeps = repo.full_deps("yali")
     else:
         imagedeps = project.all_packages
     repo.make_local_repo(repo_dir, imagedeps)
     
-    if project.media_type == "install":
+    if project.type == "install":
         print "Preparing installation repository..."
         
         repo_dir = project.install_repo_dir(clean=True)
@@ -173,7 +173,7 @@ def check_repo_files(project):
     print "Checking image repo..."
     repo = project.get_repo()
     repo_dir = project.image_repo_dir()
-    if project.media_type == "install":
+    if project.type == "install":
         imagedeps = repo.full_deps("yali")
     else:
         imagedeps = project.all_packages
@@ -186,7 +186,7 @@ def check_repo_files(project):
         check_file(repo_dir, pak.uri, pak.sha1sum)
     sys.stdout.write("\n")
     
-    if project.media_type == "install":
+    if project.type == "install":
         repo_dir = project.install_repo_dir()
         i = 0
         for name in project.all_packages:
@@ -210,7 +210,7 @@ def make_image(project):
     image_dir = project.image_dir(clean=True)
     
     run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
-    if project.media_type == "install":
+    if project.type == "install":
         run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
     else:
         install_packages(project)
@@ -235,7 +235,7 @@ def make_image(project):
     chrun("/usr/bin/pisi configure-pending")
     
     chrun("hav call User.Manager.setUser uid 0 password pardus")
-    if project.media_type != "install":
+    if project.type != "install":
         chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,pnpadmin,video,audio password pardus")
     chrun("/usr/bin/comar --stop")
     
@@ -246,7 +246,7 @@ def make_image(project):
     
     file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
     
-    if project.media_type != "install":
+    if project.type != "install":
         setup_live_kdm(project)
     
     run('umount %s/proc' % image_dir)
@@ -272,7 +272,7 @@ def make_iso(project):
     
     setup_grub(project)
     
-    if project.media_type == "install":
+    if project.type == "install":
         run('ln -s "%s" "%s"' % (project.install_repo_dir(), os.path.join(iso_dir, "repo")))
     
     run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
@@ -282,7 +282,7 @@ def make_iso(project):
 
 def make(project):
     make_image(project)
-    if project.media_type == "install":
+    if project.type == "install":
         make_install_repo(project)
     make_iso(project)
     print "ISO is ready!"

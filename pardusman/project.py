@@ -98,8 +98,8 @@ class Project:
         self.work_dir = None
         self.release_files = None
         self.repo_uri = None
-        self.media_type = "install"
-        self.media_size = 700 * 1024 * 1024
+        self.type = "install"
+        self.media = "cd"
         self.selected_components = []
         self.selected_packages = []
         self.all_packages = []
@@ -119,8 +119,8 @@ class Project:
         self.reset()
         
         self.title = doc.getTagData("Title")
-        self.media_type = doc.getAttribute("type")
-        self.media_size = doc.getAttribute("size")
+        self.type = doc.getAttribute("type")
+        self.media = doc.getAttribute("media")
         self.work_dir = doc.getTagData("WorkDir")
         self.release_files = doc.getTagData("ReleaseFiles")
         
@@ -138,8 +138,8 @@ class Project:
     
     def save(self, filename):
         doc = piksemel.newDocument("PardusmanProject")
-        doc.setAttribute("type", self.media_type)
-        doc.setAttribute("size", str(self.media_size))
+        doc.setAttribute("type", self.type)
+        doc.setAttribute("media", str(self.media))
         if self.title:
             doc.insertTag("Title").insertData(self.title)
         if self.work_dir:
@@ -166,7 +166,7 @@ class Project:
     def exclude_list(self):
         import fnmatch
         
-        if self.media_type == "install":
+        if self.type == "install":
             temp = default_install_exclude_list.split()
         else:
             temp = default_live_exclude_list.split()

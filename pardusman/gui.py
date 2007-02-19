@@ -145,26 +145,26 @@ class ProjectWindow(KMainWindow):
         self.connect(but, SIGNAL("clicked()"), self.selectFiles)
         grid.addWidget(hb2, 3, 1)
         
-        lab = QLabel(_("Media type:"), box)
+        lab = QLabel(_("Type:"), box)
         grid.addWidget(lab, 4, 0, Qt.AlignRight)
-        self.media_type = QHButtonGroup(box)
-        QRadioButton(_("Installation"), self.media_type)
-        QRadioButton(_("Live system"), self.media_type)
-        grid.addWidget(self.media_type, 4, 1)
+        self.project_type = QHButtonGroup(box)
+        QRadioButton(_("Installation"), self.project_type)
+        QRadioButton(_("Live system"), self.project_type)
+        grid.addWidget(self.project_type, 4, 1)
         
-        lab = QLabel(_("Media size:"), box)
+        lab = QLabel(_("Media:"), box)
         grid.addWidget(lab, 5, 0, Qt.AlignRight)
-        self.media_size = QComboBox(False, box)
-        grid.addWidget(self.media_size, 5, 1)
+        self.project_media = QComboBox(False, box)
+        grid.addWidget(self.project_media, 5, 1)
         
-        self.media = [
+        self.media_types = [
             ("cd", 700, _("CD (700 MB)"), "cdrom_unmount"),
             ("dvd", 4300, _("DVD (4.2 GB)"), "dvd_unmount"),
             ("flashdisk", 1024, _("FlashDisk (1 GB)"), "usbpendrive_unmount"),
             ("custom", 0, _("Custom size"), "hdd_unmount"),
         ]
-        for mediatype, size, label, icon in self.media:
-            x = self.media_size.insertItem(getIconPixmap(icon), label)
+        for media_type, media_size, label, icon in self.media_types:
+            x = self.project_media.insertItem(getIconPixmap(icon), label)
         
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
@@ -186,19 +186,19 @@ class ProjectWindow(KMainWindow):
         self.progress = Progress(self)
     
     def getMedia(self):
-        return self.media[self.media_size.currentItem()][0]
+        return self.media_types[self.project_media.currentItem()][0]
     
     def setMedia(self, mtype):
         index = 0
-        for mediatype, mediasize, label, icon in self.media:
-            if mediatype == mtype:
-                self.media_size.setCurrentItem(index)
+        for media_type, media_size, label, icon in self.media_types:
+            if media_type == mtype:
+                self.project_media.setCurrentItem(index)
                 return
             index += 1
-        self.media_size.setCurrentItem(len(self.media) - 1)
+        self.project_media.setCurrentItem(len(self.media_types) - 1)
     
     def getMediaSize(self):
-        return self.media[self.media_size.currentItem()][1] * 1024 * 1024
+        return self.media_types[self.project_media.currentItem()][1] * 1024 * 1024
     
     def selectFiles(self):
         path = QFileDialog.getExistingDirectory(
@@ -294,11 +294,11 @@ class ProjectWindow(KMainWindow):
             self.project.repo_uri = None
             self.console.error(_("Repository address not given."))
             return
-        if self.media_type.selectedId() == 0:
-            self.project.media_type = "install"
+        if self.project_type.selectedId() == 0:
+            self.project.type = "install"
         else:
-            self.project.media_type = "live"
-        self.project.media_size = self.getMedia()
+            self.project.type = "live"
+        self.project.media = self.getMedia()
         return True
     
     def project2ui(self):
@@ -322,11 +322,11 @@ class ProjectWindow(KMainWindow):
         else:
             tmp = ""
         self.repo_uri.setText(tmp)
-        if self.project.media_type == "install":
-            self.media_type.setButton(0)
+        if self.project.type == "install":
+            self.project_type.setButton(0)
         else:
-            self.media_type.setButton(1)
-        self.setMedia(self.project.media_size)
+            self.project_type.setButton(1)
+        self.setMedia(self.project.media)
     
     def updateCaption(self):
         if self.project_file:
