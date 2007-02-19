@@ -1,4 +1,4 @@
-<PardusmanProject type="install" size="cd">
+<PardusmanProject type="install" media="cd">
     <Title>Pardus 2007.1</Title>
     <WorkDir>/root/pardusman/InstallCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
