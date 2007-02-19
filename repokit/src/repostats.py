@@ -14,6 +14,8 @@ import os
 import codecs
 import re
 import getopt
+import glob
+import zipfile
 
 import gettext
 __trans = gettext.translation('repokit', fallback=True)
@@ -21,13 +23,14 @@ _ = __trans.ugettext
 
 from svn import core, client
 
+import piksemel
+
 sys.path.append('.')
 import pisi.specfile
 import pisi.uri
-import pisi.package
 import pisi.metadata
-import pisi.files
 from pisi.cli import printu
+from pisi.util import filter_latest_packages
 
 # Main HTML template
 
@@ -226,6 +229,7 @@ class Package:
         self.revBuildDeps = []
         self.revRuntimeDeps = []
         self.installedSize = 0
+        self.size = 0
     
     def markDeps(self):
         # mark reverse build dependencies
@@ -256,8 +260,17 @@ class Package:
         rbDeps = map(lambda x: "<a href='./%s.html'>%s</a>" % (x, x), self.revBuildDeps)
         rrDeps = map(lambda x: "<a href='./%s.html'>%s</a>" % (x, x), self.revRuntimeDeps)
         
+        sizehtml = ""
+        if self.size > 0:
+            sizehtml = "<p>%s: %s<br>%s: %s</p>" % (
+                _("Package size"), self.size,
+                _("Installed size"), self.installedSize,
+            )
+        
         html = """
             <h3>%s <em>%s</em></h3>
+            
+            %s
             
             <p>%s: %s</p>
             
@@ -275,6 +288,7 @@ class Package:
         """ % (
             self.name,
             self.source.spec.getSourceVersion(),
+            sizehtml,
             _("Source package"),
             make_url(source.name, "../source/"),
             _("Build dependencies"),
@@ -419,6 +433,7 @@ class Repository:
         self.longpy = Histogram()
         self.cscripts = Histogram()
         self.total_installed_size = 0
+        self.total_size = 0
         self.installed_sizes = {}
     
     def processPspec(self, path, spec):
@@ -460,31 +475,37 @@ class Repository:
             p.markDeps()
     
     def processPisi(self, path):
-        p = pisi.package.Package(path)
-        p.extract_files(["metadata.xml", "files.xml"], ".")
-        md = pisi.metadata.MetaData()
-        md.read("metadata.xml")
-        self.total_installed_size += md.package.installedSize
-        if packages.has_key(md.package.name):
-            # FIXME: check version/release match too?
-            packages[md.package.name].installed_size = md.package.installedSize
-        else:
-            printu("Binary package '%s' has no source package in repository %s\n" % (path, self.path))
-        fd = pisi.files.Files()
-        fd.read("files.xml")
-        for f in fd.list:
-            if self.installed_sizes.has_key(f.type):
-                # Emtpy directories and symlinks has None size
-                if not f.size is None:
-                    self.installed_sizes[f.type] += int(f.size)
+        zip = zipfile.ZipFile(path, "r")
+        
+        size = os.stat(path).st_size
+        self.total_size += size
+        
+        doc = piksemel.parseString(zip.read("metadata.xml"))
+        p = doc.getTag("Package")
+        name = p.getTagData("Name")
+        inst_size = int(p.getTagData("InstalledSize"))
+        self.total_installed_size += inst_size
+        
+        doc = piksemel.parseString(zip.read("files.xml"))
+        for item in doc.tags("File"):
+            tname = item.getTagData("Type")
+            sz = item.getTagData("Size")
+            if self.installed_sizes.has_key(tname):
+                self.installed_sizes[tname] += int(sz)
             else:
-                self.installed_sizes[f.type] = int(f.size)
+                self.installed_sizes[tname] = int(sz)
+        
+        pak = packages.get(name, None)
+        if not pak:
+            return
+        
+        pak.size = size
+        pak.installedSize = inst_size
     
     def scan_bins(self, binpath):
-        for root, dirs, files in os.walk(binpath):
-            for fn in files:
-                if fn.endswith(".pisi"):
-                    self.processPisi(os.path.join(root, fn))
+        binpaks = filter_latest_packages(glob.glob(binpath + "/*.pisi"))
+        for pak in binpaks:
+            self.processPisi(pak)
     
     def report_html(self):
         table = (
@@ -493,6 +514,12 @@ class Repository:
             (_("Number of patches"), self.nr_patches),
             (_("Number of packagers"), len(self.people.list)),
         )
+        if self.total_installed_size > 0:
+            table += (
+                (_("Archived size of packages"), self.total_size),
+                (_("Installed size of packages"), self.total_installed_size),
+            )
+        
         html = make_table(table)
         
         html += """
@@ -504,6 +531,7 @@ class Repository:
             _("Most patched:"),
             make_table(map(lambda x: (make_url(x[0], "./source/"), x[1]), self.mostpatched.get_list(5)))
         )
+        
         html += """
             <div class='statstat'>
             <h3>%s</h3><p>
@@ -513,6 +541,17 @@ class Repository:
             _("Longest build scripts:"),
             make_table(map(lambda x: (make_url(x[0], "./source/"), x[1]), self.longpy.get_list(5)))
         )
+        
+        if self.total_installed_size > 0:
+            html += """
+                <h3>%s</h3><p>
+                %s
+                </p></div>
+            """ % (
+                _("Total file sizes by file type:"),
+                make_table(self.installed_sizes.items())
+            )
+        
         write_html("paksite/index.html", _("Information"), html)
         
         titles = (
