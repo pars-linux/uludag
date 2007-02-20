@@ -113,8 +113,7 @@ def svn_uri(path):
     core.apr_terminate()
     return uri
 
-
-def find_pspecs(folder):
+def find_pisi_specs(folder):
     paks = []
     for root, dirs, files in os.walk(folder):
         if "pspec.xml" in files:
@@ -123,23 +122,6 @@ def find_pspecs(folder):
         if ".svn" in dirs:
             dirs.remove(".svn")
     return paks
-
-def write_html(filename, title, content):
-    f = codecs.open(filename, "w", "utf-8")
-    root = "./"
-    if len(filename.split("/")) > 2:
-        root = "../"
-    dict = {
-        "title": title,
-        "content": content,
-        "root": root,
-        "menu1": _("Information"),
-        "menu2": _("Source Packages"),
-        "menu3": _("Binary Packages"),
-        "menu4": _("Packagers")
-    }
-    f.write(html_header % dict)
-    f.close()
 
 def make_table(elements, titles=None):
     def make_row(element):
@@ -166,6 +148,42 @@ def make_url(name, path="./"):
 
 def mangle_email(email):
     return re.sub("@", " [at] ", email)
+
+
+class HTML:
+    def __init__(self, destdir):
+        self.dest = destdir
+        name = self.path("stil.css")
+        codecs.open(name, "w", "utf-8").write(css_template)
+    
+    def path(self, filename):
+        name = os.path.join(self.dest, filename)
+        path = os.path.dirname(name)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        return name
+    
+    def write(self, filename, title, content):
+        name = self.path(filename)
+        
+        # Find path to top level index.html
+        root = "./"
+        if "/" in filename:
+            root = "../" * (len(filename.split("/")) - 1)
+        
+        dict = {
+            "title": title,
+            "content": content,
+            "root": root,
+            "menu1": _("Information"),
+            "menu2": _("Source Packages"),
+            "menu3": _("Binary Packages"),
+            "menu4": _("Packagers")
+        }
+        
+        f = codecs.open(name, "w", "utf-8")
+        f.write(html_header % dict)
+        f.close()
 
 
 class Histogram:
@@ -251,7 +269,7 @@ class Package:
                     Missing(p)
                 missing[p].revRuntimeDeps.append(self.name)
     
-    def report_html(self):
+    def report_html(self, html):
         source = self.source.spec.source
         bDeps = map(lambda x: "<a href='./%s.html'>%s</a>" % (x, x),
             (map(lambda x: x.package, source.buildDependencies)))
@@ -267,7 +285,7 @@ class Package:
                 _("Installed size"), self.installedSize,
             )
         
-        html = """
+        data = """
             <h3>%s <em>%s</em></h3>
             
             %s
@@ -301,7 +319,7 @@ class Package:
             ", ".join(rrDeps),
         )
         
-        write_html("paksite/binary/%s.html" % self.name, self.name, html)
+        html.write("binary/%s.html" % self.name, self.name, data)
 
 
 class Source:
@@ -319,7 +337,7 @@ class Source:
         for p in spec.packages:
             Package(self, p)
     
-    def report_html(self):
+    def report_html(self, html):
         source = self.spec.source
         paks = map(lambda x: "<a href='../binary/%s.html'>%s</a>" % (x, x),
             (map(lambda x: x.name, self.spec.packages)))
@@ -330,7 +348,7 @@ class Source:
         titles = _("Release"), _("Release date"), _("Version"), _("Updater"), _("Comment")
         hist = make_table(histdata, titles)
         
-        html = """
+        data = """
             <h3>%s <em>%s</em></h3>
             <p>%s</p>
             <p><a href='%s'>%s</a></p>
@@ -368,7 +386,7 @@ class Source:
             "<br>".join(ptch),
         )
         
-        write_html("paksite/source/%s.html" % self.name, self.name, html)
+        html.write("source/%s.html" % self.name, self.name, data)
 
 
 class Packager:
@@ -394,31 +412,31 @@ class Packager:
             for update in spec.history:
                 Packager(spec, update)
     
-    def report_html(self):
+    def report_html(self, html):
         srcs = map(lambda x: ("<a href='../source/%s.html'>%s</a>" % (x, x), ), self.sources)
         srcs.sort()
         upds = map(lambda x: (u"<b><a href='../source/%s.html'>%s</a> (%s)</b><br>%s<br>" % (
             x[0], x[0], x[1], x[2]), ), self.updates)
         
-        html = """
+        data = """
             <p>%s: %s (%s)</p>
         """ % (_("Packager"), self.name, mangle_email(self.email))
         
-        html += """
+        data += """
             <div class='statstat'>
             <h3>%s</h3><p>
             %s
             </p></div>
         """ % (_("Maintained packages:"), make_table(srcs))
         
-        html += """
+        data += """
             <div class='statstat'>
             <h3>%s</h3><p>
             %s
             </p></div>
         """ % (_("Package updates:"), make_table(upds))
         
-        write_html("paksite/packager/%s.html" % self.name, self.name, html)
+        html.write("packager/%s.html" % self.name, self.name, data)
 
 
 class Repository:
@@ -463,7 +481,7 @@ class Repository:
             pass
     
     def scan(self):
-        for pak in find_pspecs(self.path):
+        for pak in find_pisi_specs(self.path):
             spec = pisi.specfile.SpecFile()
             try:
                 spec.read(os.path.join(pak, "pspec.xml"))
@@ -511,7 +529,7 @@ class Repository:
         for pak in binpaks:
             self.processPisi(pak)
     
-    def report_html(self):
+    def report_html(self, html):
         table = (
             (_("Number of source packages"), self.nr_sources),
             (_("Number of binary packages"), self.nr_packages),
@@ -524,9 +542,9 @@ class Repository:
                 (_("Installed size of packages"), self.total_installed_size),
             )
         
-        html = make_table(table)
+        data = make_table(table)
         
-        html += """
+        data += """
             <div class='statstat'>
             <h3>%s</h3><p>
             %s
@@ -536,7 +554,7 @@ class Repository:
             make_table(map(lambda x: (make_url(x[0], "./source/"), x[1]), self.mostpatched.get_list(5)))
         )
         
-        html += """
+        data += """
             <div class='statstat'>
             <h3>%s</h3><p>
             %s
@@ -547,7 +565,7 @@ class Repository:
         )
         
         if self.total_installed_size > 0:
-            html += """
+            data += """
                 <h3>%s</h3><p>
                 %s
                 </p></div>
@@ -556,7 +574,7 @@ class Repository:
                 make_table(self.installed_sizes.items())
             )
         
-        write_html("paksite/index.html", _("Information"), html)
+        html.write("index.html", _("Information"), data)
         
         titles = (
             "<a href='packagers_by_name.html'>%s</a>" % _("Packager"),
@@ -565,34 +583,35 @@ class Repository:
         
         people = self.people.get_list()
         people = map(lambda x: ("<a href='./packager/%s.html'>%s</a>" % (x[0], x[0]), x[1]), people)
-        write_html("paksite/packagers.html", _("Packagers (by package count)"), make_table(people, titles))
+        html.write("packagers.html", _("Packagers (by package count)"), make_table(people, titles))
         
         people.sort(key=lambda x: x[0])
-        write_html("paksite/packagers_by_name.html", _("Packagers (by name)"), make_table(people, titles))
+        html.write("packagers_by_name.html", _("Packagers (by name)"), make_table(people, titles))
         
         titles = _("Package name"), _("Version"), _("Summary")
         
         srclist = map(lambda x: (make_url(x.name, "source/"), x.spec.getSourceVersion(), x.spec.source.summary), sources.values())
         srclist.sort(key=lambda x: x[0])
-        html = make_table(srclist, titles)
-        write_html("paksite/sources.html", _("Source Packages"), html)
+        data = make_table(srclist, titles)
+        html.write("sources.html", _("Source Packages"), data)
         
         binlist = map(lambda x: (make_url(x.name, "binary/"), x.source.spec.getSourceVersion(), x.source.spec.source.summary), packages.values())
         binlist.sort(key=lambda x: x[0])
-        html = make_table(binlist, titles)
-        write_html("paksite/binaries.html", _("Binary Packages"), html)
+        data = make_table(binlist, titles)
+        html.write("binaries.html", _("Binary Packages"), data)
 
 
 # command line driver
 
 def usage():
     printu(_("Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"))
-    printu("  -t, --test-only:    %s" % _("Dont generate the web site.\n"))
+    printu("  -o, --output <dir>  %s\n" % _("HTML output directory."))
+    printu("  -t, --test-only     %s\n" % _("Dont generate the web site."))
     sys.exit(0)
 
 def main(args):
     try:
-        opts, args = getopt.gnu_getopt(args, "ht", ["help", "test-only"])
+        opts, args = getopt.gnu_getopt(args, "ho:t", ["help", "output=", "test-only"])
     except:
         usage()
     
@@ -600,10 +619,13 @@ def main(args):
         usage()
     
     do_web = True
+    destdir = "paksite"
     
     for o, v in opts:
         if o in ("-h", "--help"):
             usage()
+        if o in ("-o", "--output"):
+            destdir = v
         if o in ("-t", "--test-only"):
             do_web = False
     
@@ -616,22 +638,15 @@ def main(args):
         repo.scan_bins(args[1])
     
     if do_web:
-        if not os.path.exists("paksite/packager"):
-            os.makedirs("paksite/packager")
-        if not os.path.exists("paksite/binary"):
-            os.makedirs("paksite/binary")
-        if not os.path.exists("paksite/source"):
-            os.makedirs("paksite/source")
+        html = HTML(destdir)
         
-        file("paksite/stil.css", "w").write(css_template)
-        
-        repo.report_html()
+        repo.report_html(html)
         for p in packagers.values():
-            p.report_html()
+            p.report_html(html)
         for p in packages.values():
-            p.report_html()
+            p.report_html(html)
         for p in sources.values():
-            p.report_html()
+            p.report_html(html)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
