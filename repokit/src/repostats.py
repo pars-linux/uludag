@@ -490,10 +490,14 @@ class Repository:
         for item in doc.tags("File"):
             tname = item.getTagData("Type")
             sz = item.getTagData("Size")
+            try:
+                sz = int(sz)
+            except:
+                sz = 0
             if self.installed_sizes.has_key(tname):
-                self.installed_sizes[tname] += int(sz)
+                self.installed_sizes[tname] += sz
             else:
-                self.installed_sizes[tname] = int(sz)
+                self.installed_sizes[tname] = sz
         
         pak = packages.get(name, None)
         if not pak:
