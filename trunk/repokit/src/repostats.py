@@ -603,50 +603,50 @@ class Repository:
 
 # command line driver
 
+def make_report(destdir, source_repo, binary_repo=None):
+    repo = Repository(source_repo)
+    printu(_("Scanning source repository...\n"))
+    repo.scan()
+    
+    if binary_repo:
+        printu(_("Scanning binary packages...\n"))
+        repo.scan_bins(binary_repo)
+    
+    html = HTML(destdir)
+    
+    repo.report_html(html)
+    for p in packagers.values():
+        p.report_html(html)
+    for p in packages.values():
+        p.report_html(html)
+    for p in sources.values():
+        p.report_html(html)
+
 def usage():
     printu(_("Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"))
     printu("  -o, --output <dir>  %s\n" % _("HTML output directory."))
-    printu("  -t, --test-only     %s\n" % _("Dont generate the web site."))
     sys.exit(0)
 
 def main(args):
     try:
-        opts, args = getopt.gnu_getopt(args, "ho:t", ["help", "output=", "test-only"])
+        opts, args = getopt.gnu_getopt(args, "ho:", ["help", "output="])
     except:
         usage()
     
     if args == []:
         usage()
     
-    do_web = True
     destdir = "paksite"
-    
     for o, v in opts:
         if o in ("-h", "--help"):
             usage()
         if o in ("-o", "--output"):
             destdir = v
-        if o in ("-t", "--test-only"):
-            do_web = False
-    
-    repo = Repository(args[0])
-    printu(_("Scanning source repository...\n"))
-    repo.scan()
     
     if len(args) > 1:
-        printu(_("Scanning binary packages...\n"))
-        repo.scan_bins(args[1])
-    
-    if do_web:
-        html = HTML(destdir)
-        
-        repo.report_html(html)
-        for p in packagers.values():
-            p.report_html(html)
-        for p in packages.values():
-            p.report_html(html)
-        for p in sources.values():
-            p.report_html(html)
+        make_report(destdir, args[0], args[1])
+    else:
+        make_report(destdir, args[0])
 
 if __name__ == "__main__":
     main(sys.argv[1:])
