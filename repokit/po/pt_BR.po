@@ -8,10 +8,9 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-19 21:51+0200\n"
-"PO-Revision-Date: 2007-02-18 21:02-0300\n"
+"PO-Revision-Date: 2007-02-19 20:12-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
-"Language-Team: Brazillian Portuguese <http://liste.uludag.org.tr/mailman/"
-"listinfo/pardus-translation-ptbr>\n"
+"Language-Team: Brazillian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,13 +44,12 @@ msgstr ""
 "%s\n"
 
 #: src/repostats.py:266
-#, fuzzy
 msgid "Package size"
-msgstr "Empacotadores"
+msgstr "Tamanho do pacote"
 
 #: src/repostats.py:267
 msgid "Installed size"
-msgstr ""
+msgstr "Tamanho instalado"
 
 #: src/repostats.py:292
 msgid "Source package"
@@ -130,7 +128,7 @@ msgstr "Histórico de Release"
 
 #: src/repostats.py:367
 msgid "Patches"
-msgstr "Patches"
+msgstr "Correções"
 
 #: src/repostats.py:405 src/repostats.py:558
 msgid "Packager"
@@ -163,7 +161,7 @@ msgstr "Número de pacotes fontes"
 
 #: src/repostats.py:514
 msgid "Number of patches"
-msgstr "Número de patches"
+msgstr "Número de correções"
 
 #: src/repostats.py:515
 msgid "Number of packagers"
@@ -171,16 +169,15 @@ msgstr "Números de empacotadores"
 
 #: src/repostats.py:519
 msgid "Archived size of packages"
-msgstr ""
+msgstr "Tamanho arquivado dos pacotes"
 
 #: src/repostats.py:520
-#, fuzzy
 msgid "Installed size of packages"
-msgstr "Pacotes mantidos:"
+msgstr "Tamanho instalado dos pacotes:"
 
 #: src/repostats.py:531
 msgid "Most patched:"
-msgstr ""
+msgstr "Mais corrigidos:"
 
 #: src/repostats.py:541
 msgid "Longest build scripts:"
@@ -188,7 +185,7 @@ msgstr "Maiores scripts de compilação:"
 
 #: src/repostats.py:551
 msgid "Total file sizes by file type:"
-msgstr ""
+msgstr "Tamanho total dos arquivos por tipo de arquivo:"
 
 #: src/repostats.py:559
 msgid "Package count"
@@ -227,3 +224,4 @@ msgstr "Examinando repositório de fontes...\n"
 #: src/repostats.py:611
 msgid "Scanning binary packages...\n"
 msgstr "Examinando pacotes binários...\n"
+
