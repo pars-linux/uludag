@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-05 16:50+0200\n"
-"PO-Revision-Date: 2007-02-18 20:35-0300\n"
+"PO-Revision-Date: 2007-02-19 17:04-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazillian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: plsa/__init__.py:112
 #, python-format
 msgid "Pardus Linux Security Advisory %s-%s"
-msgstr ""
+msgstr "Notificação de Segurança Pardus Linux %s-%s"
 
 #: plsa/__init__.py:113
 msgid "security@pardus.org.tr"
@@ -84,7 +84,7 @@ msgstr "Referências"
 #: plsa-cli:40
 #, python-format
 msgid "generate advisory for locale LANG (default: %s)"
-msgstr ""
+msgstr "gerar notificação para a localização LANG (padrão: %s)"
 
 #: plsa-cli:40
 msgid "LANG"
