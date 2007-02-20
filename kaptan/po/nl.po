@@ -1,14 +1,14 @@
 # translation of nl.po to Nederlands
 # This file is put in the public domain.
 #
-# Willem Gielen <w.gielen@gmail.com>, 2006.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 20:44+0200\n"
-"PO-Revision-Date: 2006-12-25 22:43+0200\n"
+"PO-Revision-Date: 2007-02-20 21:39+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -57,8 +57,8 @@ msgid ""
 msgstr ""
 "<b>Pardus</b> is een GNU/Linux distributie gericht op computergebruikers met gemiddelde ervaring. Door goede ideeën, architectuur en code van "
 "andere distributies te combineren met een eigen configuratieraamwerk, met "
-"potentie om door te groeien tot een autonoom systeem, zal zal het het installeren "
-"en gebruiken van computers sterk vereenvoudigen."
+"potentie om door te groeien tot een autonoom systeem, zal het installeren "
+"en gebruiken van computers sterk worden vereenvoudigen."
 
 #: ../src/network.cpp:42
 msgid "<big>Loading...</big>"
@@ -113,7 +113,7 @@ msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"Hier kunt u een <b>stijl</b> voor uw bureaublad kiezen. <b>Pardus</b> voorziet u van "
+"Hier kunt u een <b>stijl</b> voor uw bureaublad kiezen. <b>Pardus</b> voorziet u van enkele"
 "oogstrelende stijlen."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
@@ -125,7 +125,7 @@ msgid ""
 "you wish."
 msgstr ""
 "Hier kunt u een <b>achtergrond</b> voor uw bureaublad kiezen. <b>Pardus</b> voorziet u van "
-"oogstrelende achtergronden, waarvan u, als u wilt, er één kunt selecteren."
+"oogstrelende achtergronden, u kunt er één kiezen, als u wilt."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
 #: rc.cpp:39 ../src/mousedlg.cpp:117
@@ -135,8 +135,7 @@ msgid ""
 "right buttons on your pointing device by choosing the 'Left handed' option "
 "below. You can also select default click behaviour."
 msgstr ""
-"Als u linkshandig bent, dan kunt u de knoppen van uw aanwijsapparaat "
-"omwisselen met onderstaande optie. U kunt ook het standaard klikgedrag "
+"Als u linkshandig bent, kunt u de knoppen van uw aanwijsapparaat omwisselen met onderstaande optie. U kunt ook het standaard klikgedrag "
 "aanpassen."
 
 #: ../src/main.cpp:18
