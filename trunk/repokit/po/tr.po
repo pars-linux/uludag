@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: repokit 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-19 21:51+0200\n"
+"POT-Creation-Date: 2007-02-20 20:48+0200\n"
 "PO-Revision-Date: 2007-02-18 22:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -15,23 +15,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/repostats.py:136 src/repostats.py:555
+#: src/repostats.py:178 src/repostats.py:577
 msgid "Information"
 msgstr "Genel Bilgiler"
 
-#: src/repostats.py:137 src/repostats.py:574
+#: src/repostats.py:179 src/repostats.py:596
 msgid "Source Packages"
 msgstr "Kaynak Paketler"
 
-#: src/repostats.py:138 src/repostats.py:579
+#: src/repostats.py:180 src/repostats.py:601
 msgid "Binary Packages"
 msgstr "İkili Paketler"
 
-#: src/repostats.py:139
+#: src/repostats.py:181
 msgid "Packagers"
 msgstr "Paketçiler"
 
-#: src/repostats.py:222
+#: src/repostats.py:240
 #, python-format
 msgid ""
 "Duplicate binary packages:\n"
@@ -39,35 +39,35 @@ msgid ""
 "%s\n"
 msgstr ""
 
-#: src/repostats.py:266
+#: src/repostats.py:284
 msgid "Package size"
 msgstr "Paket boyutu"
 
-#: src/repostats.py:267
+#: src/repostats.py:285
 msgid "Installed size"
 msgstr "Kurulu boyut"
 
-#: src/repostats.py:292
+#: src/repostats.py:310
 msgid "Source package"
 msgstr "Kaynak paket"
 
-#: src/repostats.py:294
+#: src/repostats.py:312
 msgid "Build dependencies"
 msgstr "İnşa bağımlılıkları"
 
-#: src/repostats.py:296
+#: src/repostats.py:314
 msgid "Runtime dependencies"
 msgstr "Çalışma bağımlılıkları"
 
-#: src/repostats.py:298
+#: src/repostats.py:316
 msgid "Required by (for building)"
 msgstr "İsteyenler (derlenmek için)"
 
-#: src/repostats.py:300
+#: src/repostats.py:318
 msgid "Required by (for runtime)"
 msgstr "İsteyenler (çalışmak için)"
 
-#: src/repostats.py:311
+#: src/repostats.py:329
 #, python-format
 msgid ""
 "Duplicate source packages:\n"
@@ -75,141 +75,141 @@ msgid ""
 "%s\n"
 msgstr ""
 
-#: src/repostats.py:330
+#: src/repostats.py:348
 msgid "Release"
 msgstr "Sürüm"
 
-#: src/repostats.py:330
+#: src/repostats.py:348
 msgid "Release date"
 msgstr "Sürüm tarihi"
 
-#: src/repostats.py:330 src/repostats.py:569
+#: src/repostats.py:348 src/repostats.py:591
 msgid "Version"
 msgstr "Versiyon"
 
-#: src/repostats.py:330
+#: src/repostats.py:348
 msgid "Updater"
 msgstr "Güncelleyen"
 
-#: src/repostats.py:330
+#: src/repostats.py:348
 msgid "Comment"
 msgstr "Açıklama"
 
-#: src/repostats.py:356
+#: src/repostats.py:374
 msgid "License"
 msgstr "Lisans"
 
-#: src/repostats.py:358
+#: src/repostats.py:376
 msgid "Actions"
 msgstr "Eylemler"
 
-#: src/repostats.py:360
+#: src/repostats.py:378
 msgid "Build files"
 msgstr "İnşa dosyaları"
 
-#: src/repostats.py:362
+#: src/repostats.py:380
 msgid "Bug reports"
 msgstr "Hata raporları"
 
-#: src/repostats.py:363
+#: src/repostats.py:381
 msgid "Binary packages"
 msgstr "İkili paketler"
 
-#: src/repostats.py:365
+#: src/repostats.py:383
 msgid "Release history"
 msgstr "Sürüm tarihçesi"
 
-#: src/repostats.py:367
+#: src/repostats.py:385
 msgid "Patches"
 msgstr "Yamalar"
 
-#: src/repostats.py:405 src/repostats.py:558
+#: src/repostats.py:423 src/repostats.py:580
 msgid "Packager"
 msgstr "Paketçi"
 
-#: src/repostats.py:412
+#: src/repostats.py:430
 msgid "Maintained packages:"
 msgstr "Sorumlusu olduğu paketler:"
 
-#: src/repostats.py:419
+#: src/repostats.py:437
 msgid "Package updates:"
 msgstr "Paket güncellemeleri:"
 
-#: src/repostats.py:471
+#: src/repostats.py:489
 #, python-format
 msgid ""
 "Cannot parse '%s':\n"
 "%s\n"
 msgstr ""
 
-#: src/repostats.py:512
+#: src/repostats.py:534
 msgid "Number of source packages"
 msgstr "Kaynak paket sayısı"
 
-#: src/repostats.py:513
+#: src/repostats.py:535
 msgid "Number of binary packages"
 msgstr "İkili paket sayısı"
 
-#: src/repostats.py:514
+#: src/repostats.py:536
 msgid "Number of patches"
 msgstr "Yama sayısı"
 
-#: src/repostats.py:515
+#: src/repostats.py:537
 msgid "Number of packagers"
 msgstr "Paketçi sayısı"
 
-#: src/repostats.py:519
+#: src/repostats.py:541
 msgid "Archived size of packages"
 msgstr "Paketlerin arşivli boyutu"
 
-#: src/repostats.py:520
+#: src/repostats.py:542
 msgid "Installed size of packages"
 msgstr "Paketlerin kurulu boyutu"
 
-#: src/repostats.py:531
+#: src/repostats.py:553
 msgid "Most patched:"
 msgstr "En fazla yamalanan:"
 
-#: src/repostats.py:541
+#: src/repostats.py:563
 msgid "Longest build scripts:"
 msgstr "En uzun inşa betiği:"
 
-#: src/repostats.py:551
+#: src/repostats.py:573
 msgid "Total file sizes by file type:"
 msgstr "Tipine göre toplam dosya boyutları:"
 
-#: src/repostats.py:559
+#: src/repostats.py:581
 msgid "Package count"
 msgstr "Paket sayısı"
 
-#: src/repostats.py:564
+#: src/repostats.py:586
 msgid "Packagers (by package count)"
 msgstr "Paketçiler (paket sayısına göre)"
 
-#: src/repostats.py:567
+#: src/repostats.py:589
 msgid "Packagers (by name)"
 msgstr "Paketçiler (ada göre)"
 
-#: src/repostats.py:569
+#: src/repostats.py:591
 msgid "Package name"
 msgstr "Paketçi adı"
 
-#: src/repostats.py:569
+#: src/repostats.py:591
 msgid "Summary"
 msgstr "Özet"
 
-#: src/repostats.py:585
-msgid "Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"
-msgstr ""
-
-#: src/repostats.py:586
-msgid "Dont generate the web site.\n"
-msgstr ""
-
-#: src/repostats.py:607
+#: src/repostats.py:608
 msgid "Scanning source repository...\n"
 msgstr ""
 
-#: src/repostats.py:611
+#: src/repostats.py:612
 msgid "Scanning binary packages...\n"
+msgstr ""
+
+#: src/repostats.py:626
+msgid "Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"
+msgstr ""
+
+#: src/repostats.py:627
+msgid "HTML output directory."
 msgstr ""
