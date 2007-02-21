@@ -15,11 +15,12 @@ import kdedistutils
 version = "1.0.0"
 
 distfiles = """
-    *.py
-    *.png
+    src/*.py
+    src/*.png
     po/*.po
     po/*.pot
-    *.xml
+    projects/*.xml
+    projects/release/*.xml
     AUTHORS
     COPYING
     README
@@ -56,9 +57,9 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ["browser.py", "gui.py", "maker.py", "packages.py",
-                        "project.py", "utility.py", "logo.png", "pardusman.py"
+    application_data = ["src/browser.py", "src/gui.py", "src/maker.py", "src/packages.py",
+                        "src/project.py", "src/utility.py", "src/logo.png", "src/pardusman.py"
                         ],
     executable_links = [("pardusman", "pardusman.py")],
-    i18n = ("po", ["."]),
+    i18n = ("po", ["src/"]),
     )
