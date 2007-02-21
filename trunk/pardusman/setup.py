@@ -19,7 +19,10 @@ distfiles = """
     *.png
     po/*.po
     po/*.pot
-    *.xml
+    *.xml,
+    AUTHORS,
+    COPYING
+    README
 """
 
 def make_dist():
