@@ -169,6 +169,9 @@ class ProjectWindow(KMainWindow):
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
         QLabel(" ", bar)
+        but = QToolButton(getIconSet("reload"), _("Update Repo"), "lala", self.update, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
         but = QToolButton(getIconSet("package"), _("Select packages"), "lala", self.browse, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
@@ -231,6 +234,9 @@ class ProjectWindow(KMainWindow):
             self.project.selected_components = comps
             self.project.selected_packages = paks
             self.project.all_packages = allpaks
+    
+    def update(self):
+        self.project.get_repo(self.progress, update_repo=True)
     
     def browse(self):
         if not self.ui2project():

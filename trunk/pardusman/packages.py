@@ -26,14 +26,14 @@ class Console:
         sys.stdout.write("\n")
 
 
-def fetch_uri(base_uri, cache_dir, filename, console=None):
+def fetch_uri(base_uri, cache_dir, filename, console=None, update_repo=False):
     # Dont cache for local repos
-    if base_uri.startswith("file://"):
+    if base_uri.startswith("file://") and not filename.startswith("pisi-index.xml"):
         return os.path.join(base_uri[7:], filename)
 
     # Check that local file isnt older or has missing parts
     path = os.path.join(cache_dir, filename)
-    if not os.path.exists(path):
+    if not os.path.exists(path) or (update_repo and filename.startswith("pisi-index.xml")):
         if console:
             console.started("Fetching '%s'..." % filename)
         conn = urllib2.urlopen(os.path.join(base_uri, filename))
@@ -118,8 +118,8 @@ class Repository:
         self.components = {}
         self.distribution = None
     
-    def parse_index(self, console=None):
-        path = fetch_uri(self.base_uri, self.cache_dir, self.index_name, console)
+    def parse_index(self, console=None, update_repo=False):
+        path = fetch_uri(self.base_uri, self.cache_dir, self.index_name, console, update_repo)
         if path.endswith(".bz2"):
             import bz2
             data = file(path).read()
