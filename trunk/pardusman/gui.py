@@ -244,6 +244,7 @@ class ProjectWindow(KMainWindow):
         if not os.path.exists(self.project.release_files):
             self.console.error(_("Release files directory does not exist."))
             return
+        return True
     
     def update(self):
         if not self.checkSettings():
