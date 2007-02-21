@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pardusman\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-21 11:57+0200\n"
+"POT-Creation-Date: 2007-02-21 14:01+0200\n"
 "PO-Revision-Date: 2007-02-21 11:57+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -86,7 +86,15 @@ msgstr "%d paket seçildi, sıkıştırılmış olarak %s byte, kurulu olarak %s
 msgid "Use selected packages"
 msgstr "Seçilenleri Kullan"
 
-#: gui.py:98
+#: gui.py:80
+msgid "&Open"
+msgstr "&Aç"
+
+#: gui.py:82
+msgid "Save &as..."
+msgstr "&Farklı kaydet..."
+
+#: gui.py:97
 msgid ""
 "Pardusman says:\n"
 "\n"
@@ -95,22 +103,23 @@ msgid ""
 msgstr ""
 "Pardusman der ki:\n"
 "\n"
-"  Topla, tüfekle beklerim. Tankla, helikopterle, ağır sanayi hamlenizle falan...\n"
+"  Topla, tüfekle beklerim. Tankla, helikopterle, ağır sanayi hamlenizle "
+"falan...\n"
 " "
 
-#: gui.py:104
+#: gui.py:103
 msgid "Title:"
 msgstr "Başlık:"
 
-#: gui.py:109
+#: gui.py:108
 msgid "Title of distribution media, used in grub menu."
 msgstr "Grub menüsünde kullanılacak başlık"
 
-#: gui.py:113
+#: gui.py:112
 msgid "Work folder:"
 msgstr "Çalışma dizini:"
 
-#: gui.py:120
+#: gui.py:119
 msgid ""
 "This folder holds local repository cache\n"
 "and temporary files generated during the\n"
@@ -120,22 +129,22 @@ msgstr ""
 "yerel kopyalarının ve geçici dosyaların\n"
 "oluşturulduğu yerdir."
 
-#: gui.py:126
+#: gui.py:125
 msgid "Repository:"
 msgstr "Paket deposu:"
 
-#: gui.py:131
+#: gui.py:130
 msgid ""
 "PiSi package repository of the distribution.\n"
 "Must be a URL pointing to the repository index\n"
 "file (i.e. pisi-index.xml.bz2)."
 msgstr ""
 
-#: gui.py:135
+#: gui.py:134
 msgid "Release files:"
 msgstr "Sürüm dosyaları:"
 
-#: gui.py:142
+#: gui.py:141
 msgid ""
 "Content of this folder is copied\n"
 "onto the root folder of CD."
@@ -143,98 +152,115 @@ msgstr ""
 "Bu dizindeki dosyalar, CD'nin kök\n"
 "dizinine kopyalanır."
 
-#: gui.py:148
+#: gui.py:147
 msgid "Type:"
 msgstr "Tür:"
 
-#: gui.py:151
+#: gui.py:150
 msgid "Installation"
 msgstr "Kurulum"
 
-#: gui.py:152
+#: gui.py:151
 msgid "Live system"
 msgstr "Çalışan sistem"
 
-#: gui.py:155
+#: gui.py:154
 msgid "Media:"
 msgstr "Ortam:"
 
-#: gui.py:161
+#: gui.py:160
 msgid "CD (700 MB)"
 msgstr "CD (700 MB)"
 
-#: gui.py:162
+#: gui.py:161
 msgid "DVD (4.2 GB)"
 msgstr "DVD (4.2 GB)"
 
-#: gui.py:163
+#: gui.py:162
 msgid "FlashDisk (1 GB)"
 msgstr "FlashDisk (1 GB)"
 
-#: gui.py:164
+#: gui.py:163
 msgid "Custom size"
 msgstr "Diğer"
 
-#: gui.py:172
+#: gui.py:171
 msgid "Update Repo"
 msgstr "Güncelle"
 
-#: gui.py:175
+#: gui.py:174
 msgid "Select packages"
 msgstr "Paket seç"
 
-#: gui.py:178
+#: gui.py:177
 msgid "Make ISO"
 msgstr "ISO oluştur"
 
-#: gui.py:211
+#: gui.py:210
 msgid "Select release files folder"
 msgstr "Sürüm dosyaları dizinini belirtin"
 
-#: gui.py:222
+#: gui.py:221
 msgid "Select folder for temporary files and cache"
 msgstr "Geçici dosya ve önbellek için dizin seçin"
 
-#: gui.py:260
+#: gui.py:241
 msgid "Project directory does not exist."
 msgstr "Proje dizini mevcut değil."
 
-#: gui.py:263
+#: gui.py:244
 msgid "Release files directory does not exist."
 msgstr "Sürüm dosyaları dizini mevcut değil."
 
-#: gui.py:280
+#: gui.py:285
 msgid "Project title not given."
 msgstr "Proje başlığı belirtilmemiş."
 
-#: gui.py:287
+#: gui.py:292
 msgid "Release files directory not given."
 msgstr "Sürüm dosyaları dizini belirtilmemiş."
 
-#: gui.py:294
+#: gui.py:299
 msgid "Project directory not given."
 msgstr "Proje dizini belirtilmemiş."
 
-#: gui.py:301
+#: gui.py:306
 msgid "Repository address not given."
 msgstr "Depo adresi belirtilmemiş."
 
-#: gui.py:339
+#: gui.py:344
 #, python-format
 msgid "%s - Pardusman"
 msgstr "%s - Pardusman"
 
-#: gui.py:341
+#: gui.py:346
 msgid "New project - Pardusman"
 msgstr "Yeni proje - Pardusman"
 
-#: gui.py:345
+#: gui.py:350
 msgid "Select a project..."
 msgstr "Proje seçin..."
 
+#: gui.py:361
+msgid "Project '%s' opened."
+msgstr "Proje '%s' açıldı."
+
 #: gui.py:368
+msgid "Saved."
+msgstr "Kayıt edildi."
+
+#: gui.py:373
 msgid "Save project as..."
 msgstr "Projeyi farklı kaydet.."
+
+#: gui.py:382
+#, python-format
+msgid "Project saved as '%s'."
+msgstr "Proje '%s' olarak kayıt edildi."
+
+#: gui.py:386
+msgid "Pardus distribution media maker"
+msgstr ""
 
 #: project.py:112
 #, python-format
