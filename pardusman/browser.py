@@ -14,9 +14,10 @@ from utility import *
 from qt import *
 from kdeui import *
 
-# no i18n yet
-def _(x):
-    return x
+# i18n
+import gettext
+__trans = gettext.translation("pardusman", fallback=True)
+_ = __trans.ugettext
 
 
 class DetailWindow(QDialog):
