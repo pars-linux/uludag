@@ -189,10 +189,10 @@ class Project:
             os.makedirs(dirname)
         return dirname
     
-    def get_repo(self, console=None):
+    def get_repo(self, console=None, update_repo=False):
         cache_dir = self._get_dir("repo_cache")
         repo = packages.Repository(self.repo_uri, cache_dir)
-        repo.parse_index(console)
+        repo.parse_index(console, update_repo)
         return repo
     
     def image_repo_dir(self, clean=False):
