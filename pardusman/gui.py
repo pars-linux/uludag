@@ -22,9 +22,9 @@ from utility import *
 import project
 import browser
 
-# no i18n yet
+# i18n
 def _(x):
-    return x
+    return unicode(i18n(x))
 
 
 class Console(KTextEdit):
@@ -72,17 +72,17 @@ class ProjectWindow(KMainWindow):
         self.setMinimumSize(560, 440)
         self.project_file = None
         self.updateCaption()
-        pman = QPixmap("logo.png")
+        pman = QPixmap(locate("data", "pardusman/logo.png"))
         self.setIcon(pman)
         
         mb = self.menuBar()
         file_ = QPopupMenu(self)
-        mb.insertItem("&File", file_)
-        file_.insertItem("&Open", self.openProject, self.CTRL + self.Key_O)
-        file_.insertItem("&Save", self.saveProject, self.CTRL + self.Key_S)
-        file_.insertItem("Save &as...", self.saveAsProject, self.CTRL + self.SHIFT + self.Key_S)
+        mb.insertItem(_("&File"), file_)
+        file_.insertItem(_("&Open"), self.openProject, self.CTRL + self.Key_O)
+        file_.insertItem(_("&Save"), self.saveProject, self.CTRL + self.Key_S)
+        file_.insertItem(_("Save &as..."), self.saveAsProject, self.CTRL + self.SHIFT + self.Key_S)
         file_.insertSeparator()
-        file_.insertItem("&Quit", self.quit, self.CTRL + self.Key_Q)
+        file_.insertItem(_("&Quit"), self.quit, self.CTRL + self.Key_Q)
         
         vb = QVBox(self)
         vb.setSpacing(6)
@@ -235,11 +235,23 @@ class ProjectWindow(KMainWindow):
             self.project.selected_packages = paks
             self.project.all_packages = allpaks
     
+    def checkSettings(self):
+        if not self.ui2project():
+            return
+        if not os.path.exists(self.project.work_dir):
+            self.console.error(_("Project directory does not exist."))
+            return
+        if not os.path.exists(self.project.release_files):
+            self.console.error(_("Release files directory does not exist."))
+            return
+    
     def update(self):
+        if not self.checkSettings():
+            return
         self.project.get_repo(self.progress, update_repo=True)
     
     def browse(self):
-        if not self.ui2project():
+        if not self.checkSettings():
             return
         repo = self.project.get_repo(self.progress)
         self.toolbar.setEnabled(False)
@@ -254,13 +266,7 @@ class ProjectWindow(KMainWindow):
         w.show()
     
     def make(self):
-        if not self.ui2project():
-            return
-        if not os.path.exists(self.project.work_dir):
-            self.console.error(_("Project directory does not exist."))
-            return
-        if not os.path.exists(self.project.release_files):
-            self.console.error(_("Release files directory does not exist."))
+        if not self.checkSettings():
             return
         f = tempfile.NamedTemporaryFile()
         self.project.save(f.name)
@@ -353,14 +359,14 @@ class ProjectWindow(KMainWindow):
         self.project_file = name
         self.project2ui()
         self.updateCaption()
-        self.console.state("Project '%s' opened." % name)
+        self.console.state(_("Project '%s' opened.") % name)
     
     def saveProject(self):
         if self.project_file:
             if not self.ui2project():
                 return
             self.project.save(self.project_file)
-            self.console.state("Saved.")
+            self.console.state(_("Saved."))
         else:
             self.saveAsProject()
     
@@ -374,7 +380,7 @@ class ProjectWindow(KMainWindow):
         self.project.save(name)
         self.project_file = name
         self.updateCaption()
-        self.console.state("Project saved as '%s'." % name)
+        self.console.state(_("Project saved as '%s'.") % name)
 
 
 def gui_main(args, project_file):
@@ -387,6 +393,10 @@ def gui_main(args, project_file):
         description,
         KAboutData.License_GPL
     )
+
+    about.addCredit("Gürer Özen", None, "gurer@pardus.org.tr")
+    about.addAuthor("Bahadır Kandemir", None, "bahadir@pardus.org.tr")
+
     KCmdLineArgs.init(args, about)
     app = KApplication()
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
