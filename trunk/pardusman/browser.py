@@ -15,10 +15,8 @@ from qt import *
 from kdeui import *
 
 # i18n
-import gettext
-__trans = gettext.translation("pardusman", fallback=True)
-_ = __trans.ugettext
-
+def _(x):
+    return unicode(i18n(x))
 
 class DetailWindow(QDialog):
     def __init__(self, parent, package):
