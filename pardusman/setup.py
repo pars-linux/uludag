@@ -19,8 +19,8 @@ distfiles = """
     *.png
     po/*.po
     po/*.pot
-    *.xml,
-    AUTHORS,
+    *.xml
+    AUTHORS
     COPYING
     README
 """
