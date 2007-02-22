@@ -15,18 +15,19 @@ import time
 import consts
 import subprocess
 import mail
+import bugzilla
 
 # GUI
 from gui import *
 from khtml import *
 
-version = '0.1'
+version = '0.2'
 
 def AboutData():
     about_data = KAboutData('bocek',
                             'Bocek',
                             version,
-                            'Bocek Bug Repoert Interface',
+                            'Bocek Bug Report Interface',
                             KAboutData.License_GPL,
                             '(C) 2007 UEKAE/TÜBİTAK',
                             None, None,
@@ -53,11 +54,11 @@ class Bocek(BocekForm):
         self.connect(self.buttonSave, SIGNAL('clicked()'), self.buildReport)
         self.connect(self.buttonSend, SIGNAL('clicked()'), self.sendReport)
         self.connect(self.buttonHelp, SIGNAL('clicked()'), self.slotHelp)
-        self.connect(self.buttonTakScr, SIGNAL('clicked()'), self.takeScreen)
         self.connect(guiApp, SIGNAL("shutDown()"), self.slotQuit)
         os.environ['LC_ALL'] = 'C'
         self.lastReportFile=''
-
+        self.bugzilla = bugzilla.bugzilla()
+        
     def slotQuit(self):
         self.deleteLater()
         guiApp.quit()
@@ -66,7 +67,6 @@ class Bocek(BocekForm):
         if (self.checkNeeds()) and (len(self.getCheckedLogs())>0):
             self.setCursor(Qt.waitCursor)
             self.output=""
-            ## FIXME ProgressBar Support
             self.updateInfo("Please wait while collecting informations ..")
             checkedLogs = self.getCheckedLogs()
             self.output+="Summary : %s \n" % self.lineSummary.text()
@@ -109,24 +109,23 @@ class Bocek(BocekForm):
             files=[]
             if (not self.lastReportFile) and (len(self.getCheckedLogs())>0):
                 self.buildReport()
+            """
             picPath = str(self.picturePath.lineEdit().text())
             if not picPath=="":
                 if os.path.exists(picPath):
                     if os.stat(picPath).st_size < (consts.pictureMaxSize * 1000):
                         files.append(picPath)
+            """
             if not self.lastReportFile=="":
                 files.append(self.lastReportFile)
             self.updateInfo("Sending bug report... Please wait.")
-            if mail.send_mail(str(self.lineEmail.text()),
-                              ["bocek@pardus.org.tr"],
-                              str(self.lineSummary.text()),
-                              str(self.lineDetails.text()),
-                              files):
-                self.showInfo("Your bug is reported successfully")
-                self.updateInfo("Your bug is reported successfully")
-            else:
-                self.showError("Error on sending the bug report")
-                self.updateInfo("Error on sending the bug report")
+            # we will use bugzilla instead of mail way..
+            result = self.bugzilla.sendBug(str(self.lineEmail.text()),
+                                           str(self.linePassword.text()),
+                                           str(self.lineSummary.text()),
+                                           str(self.lineDetails.text()))
+            self.showInfo(result)
+            self.updateInfo(result)
 
             self.lastReportFile=""
         self.setCursor(Qt.arrowCursor)
