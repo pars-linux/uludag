@@ -18,7 +18,7 @@ import mail
 import bugzilla
 
 # GUI
-from gui import *
+from newGui import *
 from khtml import *
 
 version = '0.2'
@@ -51,9 +51,11 @@ class HelpDialog(QDialog):
 class Bocek(BocekForm):
     def __init__(self, parent=None, name=None):
         BocekForm.__init__(self, parent, name)
+        """
         self.connect(self.buttonSave, SIGNAL('clicked()'), self.buildReport)
         self.connect(self.buttonSend, SIGNAL('clicked()'), self.sendReport)
-        self.connect(self.buttonHelp, SIGNAL('clicked()'), self.slotHelp)
+        """
+        self.connect(self.helpButton(), SIGNAL('clicked()'), self.slotHelp)
         self.connect(guiApp, SIGNAL("shutDown()"), self.slotQuit)
         os.environ['LC_ALL'] = 'C'
         self.lastReportFile=''

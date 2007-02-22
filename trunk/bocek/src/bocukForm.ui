@@ -1,16 +1,42 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>BocukForm</class>
+<class>BocekForm</class>
 <widget class="QWizard">
     <property name="name">
-        <cstring>BocukForm</cstring>
+        <cstring>BocekForm</cstring>
     </property>
     <property name="geometry">
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>620</width>
-            <height>502</height>
+            <width>621</width>
+            <height>503</height>
         </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>0</hsizetype>
+            <vsizetype>0</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>621</width>
+            <height>503</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>621</width>
+            <height>503</height>
+        </size>
+    </property>
+    <property name="baseSize">
+        <size>
+            <width>621</width>
+            <height>503</height>
+        </size>
     </property>
     <property name="caption">
         <string>Bocek</string>
@@ -22,6 +48,41 @@
         <attribute name="title">
             <string>Welcome</string>
         </attribute>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>24</x>
+                    <y>17</y>
+                    <width>570</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;&lt;font size="+3"&gt;Welcome to the Bocek&lt;/font&gt;&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>24</x>
+                    <y>57</y>
+                    <width>570</width>
+                    <height>61</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>With using Bocek you can send bug reports to the Pardus Bug System(&lt;b&gt;bugs.pardus.org.tr&lt;/b&gt;) easily. You must have an account on system, if you don't you can create a new one easily with bocek. Please follow the instructions.</string>
+            </property>
+            <property name="textFormat">
+                <enum>RichText</enum>
+            </property>
+        </widget>
         <widget class="QButtonGroup">
             <property name="name">
                 <cstring>buttonGroup2</cstring>
@@ -98,6 +159,95 @@
                     <string>User Name :</string>
                 </property>
             </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>remindCheck</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>370</x>
+                        <y>97</y>
+                        <width>191</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Remember my password</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>email</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>173</y>
+                        <width>220</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel4_3</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>54</x>
+                        <y>172</y>
+                        <width>81</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>E-mail :</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel4_2_2</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>54</x>
+                        <y>216</y>
+                        <width>81</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Password :</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>pass_new</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>216</y>
+                        <width>221</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="echoMode">
+                    <enum>Password</enum>
+                </property>
+            </widget>
             <widget class="QRadioButton">
                 <property name="name">
                     <cstring>radio</cstring>
@@ -117,98 +267,6 @@
                     <bool>true</bool>
                 </property>
             </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>email</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>190</y>
-                        <width>220</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-            </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>pass_new</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>217</y>
-                        <width>221</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="echoMode">
-                    <enum>Password</enum>
-                </property>
-            </widget>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel4_3</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>54</x>
-                        <y>189</y>
-                        <width>81</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>E-mail :</string>
-                </property>
-            </widget>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel4_2_2</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>54</x>
-                        <y>217</y>
-                        <width>81</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Password :</string>
-                </property>
-            </widget>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel6</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>370</x>
-                        <y>190</y>
-                        <width>191</width>
-                        <height>30</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>A confirmation mail you will receive</string>
-                </property>
-                <property name="textFormat">
-                    <enum>RichText</enum>
-                </property>
-            </widget>
             <widget class="QRadioButton">
                 <property name="name">
                     <cstring>radioButton2</cstring>
@@ -216,7 +274,7 @@
                 <property name="geometry">
                     <rect>
                         <x>34</x>
-                        <y>157</y>
+                        <y>140</y>
                         <width>461</width>
                         <height>21</height>
                     </rect>
@@ -225,41 +283,35 @@
                     <string>New User</string>
                 </property>
             </widget>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel3</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>24</x>
-                    <y>57</y>
-                    <width>570</width>
-                    <height>61</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>With using Bocek you can send bug reports to the Pardus Bug System(&lt;b&gt;bugs.pardus.org.tr&lt;/b&gt;) easily. You must have an account on system, if you don't you can create a new one easily with bocek. Please folloe the instructions.</string>
-            </property>
-            <property name="textFormat">
-                <enum>RichText</enum>
-            </property>
-        </widget>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>24</x>
-                    <y>17</y>
-                    <width>570</width>
-                    <height>41</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>&lt;b&gt;&lt;font size="+3"&gt;Welcome to the Bocek&lt;/font&gt;&lt;/b&gt;</string>
-            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel6</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>194</y>
+                        <width>360</width>
+                        <height>19</height>
+                    </rect>
+                </property>
+                <property name="paletteForegroundColor">
+                    <color>
+                        <red>38</red>
+                        <green>145</green>
+                        <blue>24</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>You will get a confirmation mail, use correct e-mail address</string>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+            </widget>
         </widget>
     </widget>
     <widget class="QWidget">
@@ -284,19 +336,6 @@
             <property name="title">
                 <string>Choose an Action</string>
             </property>
-            <widget class="QTextEdit">
-                <property name="name">
-                    <cstring>textEdit1</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>160</x>
-                        <y>230</y>
-                        <width>370</width>
-                        <height>131</height>
-                    </rect>
-                </property>
-            </widget>
             <widget class="QLineEdit">
                 <property name="name">
                     <cstring>lineEdit9</cstring>
@@ -363,38 +402,6 @@
             </widget>
             <widget class="QRadioButton">
                 <property name="name">
-                    <cstring>radioButton5</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>34</x>
-                        <y>37</y>
-                        <width>290</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Old Bug (to add new comment)</string>
-                </property>
-            </widget>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel2_2</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>55</x>
-                        <y>230</y>
-                        <width>101</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Description :</string>
-                </property>
-            </widget>
-            <widget class="QRadioButton">
-                <property name="name">
                     <cstring>radioButton6</cstring>
                 </property>
                 <property name="geometry">
@@ -412,6 +419,51 @@
                     <bool>true</bool>
                 </property>
             </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel2_2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>55</x>
+                        <y>180</y>
+                        <width>101</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Description :</string>
+                </property>
+            </widget>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>textEdit1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>180</y>
+                        <width>370</width>
+                        <height>190</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioButton5</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>34</x>
+                        <y>37</y>
+                        <width>500</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Old Bug (to add new comment or attachments)</string>
+                </property>
+            </widget>
         </widget>
     </widget>
     <widget class="QWidget">
@@ -421,67 +473,452 @@
         <attribute name="title">
             <string>Additional Files</string>
         </attribute>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>buttonGroup2_2_2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>10</y>
+                    <width>570</width>
+                    <height>390</height>
+                </rect>
+            </property>
+            <property name="title">
+                <string>Add System Logs or Screenshots</string>
+            </property>
+            <widget class="KPushButton">
+                <property name="name">
+                    <cstring>buttonTakeScreen</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>398</x>
+                        <y>290</y>
+                        <width>140</width>
+                        <height>31</height>
+                    </rect>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>0</hsizetype>
+                        <vsizetype>0</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>Take Screenshot</string>
+                </property>
+                <property name="iconSet">
+                    <iconset>image0</iconset>
+                </property>
+            </widget>
+            <widget class="KProgress">
+                <property name="name">
+                    <cstring>progressBar</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>350</y>
+                        <width>510</width>
+                        <height>23</height>
+                    </rect>
+                </property>
+                <property name="frameShadow">
+                    <enum>Plain</enum>
+                </property>
+                <property name="centerIndicator">
+                    <bool>true</bool>
+                </property>
+                <property name="indicatorFollowsStyle">
+                    <bool>true</bool>
+                </property>
+                <property name="percentageVisible">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>labelStatus</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>326</y>
+                        <width>510</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>&lt;b&gt;Status : &lt;/b&gt;</string>
+                </property>
+            </widget>
+            <widget class="QButtonGroup">
+                <property name="name">
+                    <cstring>panelLogs</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>70</y>
+                        <width>510</width>
+                        <height>210</height>
+                    </rect>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>0</hsizetype>
+                        <vsizetype>0</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                    <size>
+                        <width>189</width>
+                        <height>140</height>
+                    </size>
+                </property>
+                <property name="title">
+                    <string>System Information</string>
+                </property>
+                <widget class="Line">
+                    <property name="name">
+                        <cstring>line1</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>39</y>
+                            <width>488</width>
+                            <height>16</height>
+                        </rect>
+                    </property>
+                    <property name="frameShape">
+                        <enum>HLine</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Plain</enum>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2_3</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>30</x>
+                            <y>72</y>
+                            <width>460</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Recommends for all type of bugs.</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2_3_2</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>30</x>
+                            <y>110</y>
+                            <width>460</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Especially for hardware based problems developer needs them.</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2_3_2_2</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>30</x>
+                            <y>145</y>
+                            <width>460</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>If you modified your config files developer will needs them to see changes.</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2_3_2_2_2</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>30</x>
+                            <y>181</y>
+                            <width>460</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>If you think your problem depends on a package you must add these logs.</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>checkBoxAll</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>21</y>
+                            <width>488</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>All (Recommended)</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                    <property name="tristate">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>checkBoxHardware</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>92</y>
+                            <width>488</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Hardware Information</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>checkBoxConfig</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>128</y>
+                            <width>488</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Config Files</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>checkBoxPackages</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>164</y>
+                            <width>488</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Package Informations</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>checkBoxStandartLogs</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>56</y>
+                            <width>488</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Standard Logs</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>addLogCheck</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>30</y>
+                        <width>530</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>I want to add some attachments to the bug</string>
+                </property>
+            </widget>
+        </widget>
     </widget>
 </widget>
+<images>
+    <image name="image0">
+        <data format="PNG" length="276">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000000db49444154388ded943d4ec3401046dfac8d1281084daa94b941e8d3710e5f8db3b8a08cb8829b941491a2c85e7b6728121b23af650ad2f9499f34fba3a79d621666ee8db4c5e71b98b25dacd8bb044101bb2556f7f654b12a900b14bbfcea4b5bf1e31a9a92fde695f7e5139807eae9480d65891dcf64a950b4be4e9c3c8036c8e20596cf0815e06fe9d71e4800f7d3afd5e004715dffd7e3df58245377220cc5ffc42c9ec57f114b245377227493173c688355276c30bafdf16e86eb32a06a5888892f5f604a7e3c903947fc031af99054311ff89091d7cfdc876f9b2f7137ec4e14840000000049454e44ae426082</data>
+    </image>
+</images>
 <connections>
     <connection>
-        <sender>radio</sender>
+        <sender>addLogCheck</sender>
         <signal>toggled(bool)</signal>
-        <receiver>username</receiver>
+        <receiver>progressBar</receiver>
         <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>addLogCheck</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>labelStatus</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>addLogCheck</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>buttonTakeScreen</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>addLogCheck</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>panelLogs</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxPackages</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxConfig</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxHardware</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxStandartLogs</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxPackages</receiver>
+        <slot>setChecked(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxConfig</receiver>
+        <slot>setChecked(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxHardware</receiver>
+        <slot>setChecked(bool)</slot>
+    </connection>
+    <connection>
+        <sender>checkBoxAll</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBoxStandartLogs</receiver>
+        <slot>setChecked(bool)</slot>
     </connection>
     <connection>
         <sender>radio</sender>
         <signal>toggled(bool)</signal>
-        <receiver>pass_old</receiver>
+        <receiver>remindCheck</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
         <sender>radioButton2</sender>
         <signal>toggled(bool)</signal>
-        <receiver>email</receiver>
+        <receiver>textLabel6</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton2</sender>
+        <sender>radioButton6</sender>
         <signal>toggled(bool)</signal>
-        <receiver>pass_new</receiver>
-        <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-        <sender>radio</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>textLabel4</receiver>
-        <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-        <sender>radio</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>textLabel4_2</receiver>
-        <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-        <sender>radioButton2</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>textLabel4_3</receiver>
-        <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-        <sender>radioButton2</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>textLabel4_2_2</receiver>
-        <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-        <sender>radioButton5</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>textLabel1</receiver>
-        <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-        <sender>radioButton5</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>comboBox1</receiver>
+        <receiver>lineEdit9</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
@@ -491,11 +928,69 @@
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton6</sender>
+        <sender>radioButton5</sender>
         <signal>toggled(bool)</signal>
-        <receiver>lineEdit9</receiver>
+        <receiver>comboBox1</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton5</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel1</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton2</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel4_2_2</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton2</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel4_3</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radio</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel4_2</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radio</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel4</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton2</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>pass_new</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton2</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>email</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radio</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>pass_old</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radio</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>username</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
 <layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kprogress.h</includehint>
+</includehints>
 </UI>
