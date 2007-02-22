@@ -9,7 +9,6 @@
 # option) any later version. Please read the COPYING file.
 
 # consts. 1:is static file, 2:is command output
-
 standartLogs= {"/usr/bin/uname -a"          :2,
                "/bin/dmesg"                 :2,
                "/var/log/xlog"              :1,
