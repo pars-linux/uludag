@@ -42,3 +42,21 @@ packageInfo = {"/usr/bin/pisi li -i"        :2,
                "/usr/bin/pisi lu -i"        :2}
 # Kb
 pictureMaxSize = 400
+
+# Bugzilla
+bugzilla    = {"server"                     :"bugs.pardus.org.tr",
+               "login"                      :"/query.cgi",
+               "bugAdd"                     :"/post_bug.cgi",
+               "logout"                     :"/relogin.cgi",
+               "product"                    :"BocekBUGS",
+               "component"                  :"2007",
+               "version"                    :"unspecified",
+               "platform"                   :"x86",
+               "priority"                   :"P3",
+               "op_sys"                     :"Linux",
+               "severity"                   :"normal",
+               "bug_file_loc"               :"http://"}
+
+
+# Bugzilla Const Sentences
+bugzillaMsg = {"errorOnLogin"               :"The username or password you entered is not valid."}

@@ -22,22 +22,6 @@
         <attribute name="title">
             <string>Welcome</string>
         </attribute>
-        <widget class="QLabel">
-            <property name="name">
-                <cstring>textLabel2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>24</x>
-                    <y>17</y>
-                    <width>500</width>
-                    <height>41</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>&lt;b&gt;&lt;font size="+3"&gt;Welcome to the Bocek&lt;/font&gt;&lt;/b&gt;</string>
-            </property>
-        </widget>
         <widget class="QButtonGroup">
             <property name="name">
                 <cstring>buttonGroup2</cstring>
@@ -255,10 +239,26 @@
                 </rect>
             </property>
             <property name="text">
-                <string>With using Bocek you can send bug reports to the Pardus's Bug System(&lt;b&gt;bugs.pardus.org.tr&lt;/b&gt;) easily. You must have an account on system, if you don't you can create a new one easily with bocek. Please folloe the instructions.</string>
+                <string>With using Bocek you can send bug reports to the Pardus Bug System(&lt;b&gt;bugs.pardus.org.tr&lt;/b&gt;) easily. You must have an account on system, if you don't you can create a new one easily with bocek. Please folloe the instructions.</string>
             </property>
             <property name="textFormat">
                 <enum>RichText</enum>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>24</x>
+                    <y>17</y>
+                    <width>570</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;&lt;font size="+3"&gt;Welcome to the Bocek&lt;/font&gt;&lt;/b&gt;</string>
             </property>
         </widget>
     </widget>
