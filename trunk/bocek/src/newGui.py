@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'bocukForm.ui'
 #
-# Created: Prş Şub 22 15:48:54 2007
+# Created: Cts Şub 24 00:08:35 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -64,60 +64,63 @@ class BocekForm(QWizard):
         self.buttonGroup2 = QButtonGroup(self.WizardPage,"buttonGroup2")
         self.buttonGroup2.setGeometry(QRect(20,130,570,270))
 
-        self.pass_old = QLineEdit(self.buttonGroup2,"pass_old")
-        self.pass_old.setGeometry(QRect(140,97,221,21))
-        self.pass_old.setEchoMode(QLineEdit.Password)
-
         self.textLabel4_2 = QLabel(self.buttonGroup2,"textLabel4_2")
         self.textLabel4_2.setGeometry(QRect(54,97,81,21))
-
-        self.username = QLineEdit(self.buttonGroup2,"username")
-        self.username.setGeometry(QRect(140,70,220,21))
 
         self.textLabel4 = QLabel(self.buttonGroup2,"textLabel4")
         self.textLabel4.setGeometry(QRect(54,69,81,21))
 
-        self.remindCheck = QCheckBox(self.buttonGroup2,"remindCheck")
-        self.remindCheck.setGeometry(QRect(370,97,191,21))
-
-        self.email = QLineEdit(self.buttonGroup2,"email")
-        self.email.setEnabled(0)
-        self.email.setGeometry(QRect(140,173,220,21))
-
         self.textLabel4_3 = QLabel(self.buttonGroup2,"textLabel4_3")
         self.textLabel4_3.setEnabled(0)
         self.textLabel4_3.setGeometry(QRect(54,172,81,21))
-
-        self.textLabel4_2_2 = QLabel(self.buttonGroup2,"textLabel4_2_2")
-        self.textLabel4_2_2.setEnabled(0)
-        self.textLabel4_2_2.setGeometry(QRect(54,216,81,21))
-
-        self.pass_new = QLineEdit(self.buttonGroup2,"pass_new")
-        self.pass_new.setEnabled(0)
-        self.pass_new.setGeometry(QRect(140,216,221,21))
-        self.pass_new.setEchoMode(QLineEdit.Password)
-
-        self.radio = QRadioButton(self.buttonGroup2,"radio")
-        self.radio.setGeometry(QRect(34,37,460,21))
-        self.radio.setChecked(1)
-
-        self.radioButton2 = QRadioButton(self.buttonGroup2,"radioButton2")
-        self.radioButton2.setGeometry(QRect(34,140,461,21))
 
         self.textLabel6 = QLabel(self.buttonGroup2,"textLabel6")
         self.textLabel6.setEnabled(0)
         self.textLabel6.setGeometry(QRect(140,194,360,19))
         self.textLabel6.setPaletteForegroundColor(QColor(38,145,24))
         self.textLabel6.setTextFormat(QLabel.RichText)
+
+        self.radioLogin = QRadioButton(self.buttonGroup2,"radioLogin")
+        self.radioLogin.setGeometry(QRect(34,37,460,21))
+        self.radioLogin.setChecked(1)
+
+        self.loginUsername = QLineEdit(self.buttonGroup2,"loginUsername")
+        self.loginUsername.setGeometry(QRect(140,70,220,21))
+
+        self.rememberPass = QCheckBox(self.buttonGroup2,"rememberPass")
+        self.rememberPass.setGeometry(QRect(370,97,191,21))
+
+        self.newEmail = QLineEdit(self.buttonGroup2,"newEmail")
+        self.newEmail.setEnabled(0)
+        self.newEmail.setGeometry(QRect(140,173,220,21))
+
+        self.loginPassword = QLineEdit(self.buttonGroup2,"loginPassword")
+        self.loginPassword.setGeometry(QRect(140,97,221,21))
+        self.loginPassword.setEchoMode(QLineEdit.Password)
+
+        self.textLabel4_2_2 = QLabel(self.buttonGroup2,"textLabel4_2_2")
+        self.textLabel4_2_2.setEnabled(0)
+        self.textLabel4_2_2.setGeometry(QRect(54,221,81,21))
+
+        self.newPassword = QLineEdit(self.buttonGroup2,"newPassword")
+        self.newPassword.setEnabled(0)
+        self.newPassword.setGeometry(QRect(140,221,221,21))
+        self.newPassword.setEchoMode(QLineEdit.Password)
+
+        self.buttonRegister = KPushButton(self.buttonGroup2,"buttonRegister")
+        self.buttonRegister.setEnabled(0)
+        self.buttonRegister.setGeometry(QRect(370,221,90,20))
+        self.buttonRegister.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Fixed,0,0,self.buttonRegister.sizePolicy().hasHeightForWidth()))
+        self.buttonRegister.setIconSet(QIconSet(self.image0))
+
+        self.radioNew = QRadioButton(self.buttonGroup2,"radioNew")
+        self.radioNew.setGeometry(QRect(34,140,461,21))
         self.addPage(self.WizardPage,QString(""))
 
         self.WizardPage_2 = QWidget(self,"WizardPage_2")
 
         self.buttonGroup2_2 = QButtonGroup(self.WizardPage_2,"buttonGroup2_2")
         self.buttonGroup2_2.setGeometry(QRect(20,10,570,390))
-
-        self.lineEdit9 = QLineEdit(self.buttonGroup2_2,"lineEdit9")
-        self.lineEdit9.setGeometry(QRect(160,150,371,21))
 
         self.textLabel3_2 = QLabel(self.buttonGroup2_2,"textLabel3_2")
         self.textLabel3_2.setGeometry(QRect(55,150,91,21))
@@ -126,22 +129,25 @@ class BocekForm(QWizard):
         self.textLabel1.setEnabled(0)
         self.textLabel1.setGeometry(QRect(55,69,101,21))
 
-        self.comboBox1 = QComboBox(0,self.buttonGroup2_2,"comboBox1")
-        self.comboBox1.setEnabled(0)
-        self.comboBox1.setGeometry(QRect(160,70,370,20))
-
-        self.radioButton6 = QRadioButton(self.buttonGroup2_2,"radioButton6")
-        self.radioButton6.setGeometry(QRect(34,117,211,21))
-        self.radioButton6.setChecked(1)
-
         self.textLabel2_2 = QLabel(self.buttonGroup2_2,"textLabel2_2")
         self.textLabel2_2.setGeometry(QRect(55,180,101,21))
 
-        self.textEdit1 = QTextEdit(self.buttonGroup2_2,"textEdit1")
-        self.textEdit1.setGeometry(QRect(160,180,370,190))
+        self.radioOldBug = QRadioButton(self.buttonGroup2_2,"radioOldBug")
+        self.radioOldBug.setGeometry(QRect(34,37,500,21))
 
-        self.radioButton5 = QRadioButton(self.buttonGroup2_2,"radioButton5")
-        self.radioButton5.setGeometry(QRect(34,37,500,21))
+        self.comboOldBug = QComboBox(0,self.buttonGroup2_2,"comboOldBug")
+        self.comboOldBug.setEnabled(0)
+        self.comboOldBug.setGeometry(QRect(160,70,370,20))
+
+        self.radioNewBug = QRadioButton(self.buttonGroup2_2,"radioNewBug")
+        self.radioNewBug.setGeometry(QRect(34,117,211,21))
+        self.radioNewBug.setChecked(1)
+
+        self.lineSummaryNewBug = QLineEdit(self.buttonGroup2_2,"lineSummaryNewBug")
+        self.lineSummaryNewBug.setGeometry(QRect(160,150,371,21))
+
+        self.textDescNewBug = QTextEdit(self.buttonGroup2_2,"textDescNewBug")
+        self.textDescNewBug.setGeometry(QRect(160,180,370,190))
         self.addPage(self.WizardPage_2,QString(""))
 
         self.WizardPage_3 = QWidget(self,"WizardPage_3")
@@ -149,23 +155,12 @@ class BocekForm(QWizard):
         self.buttonGroup2_2_2 = QButtonGroup(self.WizardPage_3,"buttonGroup2_2_2")
         self.buttonGroup2_2_2.setGeometry(QRect(20,10,570,390))
 
-        self.buttonTakeScreen = KPushButton(self.buttonGroup2_2_2,"buttonTakeScreen")
-        self.buttonTakeScreen.setEnabled(0)
-        self.buttonTakeScreen.setGeometry(QRect(398,290,140,31))
-        self.buttonTakeScreen.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Fixed,0,0,self.buttonTakeScreen.sizePolicy().hasHeightForWidth()))
-        self.buttonTakeScreen.setIconSet(QIconSet(self.image0))
-
-        self.progressBar = KProgress(self.buttonGroup2_2_2,"progressBar")
-        self.progressBar.setEnabled(0)
-        self.progressBar.setGeometry(QRect(30,350,510,23))
-        self.progressBar.setFrameShadow(KProgress.Plain)
-        self.progressBar.setCenterIndicator(1)
-        self.progressBar.setIndicatorFollowsStyle(1)
-        self.progressBar.setPercentageVisible(1)
-
         self.labelStatus = QLabel(self.buttonGroup2_2_2,"labelStatus")
         self.labelStatus.setEnabled(0)
         self.labelStatus.setGeometry(QRect(30,326,510,21))
+
+        self.addLogCheck = QCheckBox(self.buttonGroup2_2_2,"addLogCheck")
+        self.addLogCheck.setGeometry(QRect(20,30,530,21))
 
         self.panelLogs = QButtonGroup(self.buttonGroup2_2_2,"panelLogs")
         self.panelLogs.setEnabled(0)
@@ -200,6 +195,11 @@ class BocekForm(QWizard):
         self.checkBoxAll.setChecked(1)
         self.checkBoxAll.setTristate(0)
 
+        self.checkBoxStandartLogs = QCheckBox(self.panelLogs,"checkBoxStandartLogs")
+        self.checkBoxStandartLogs.setEnabled(0)
+        self.checkBoxStandartLogs.setGeometry(QRect(11,56,488,20))
+        self.checkBoxStandartLogs.setChecked(1)
+
         self.checkBoxHardware = QCheckBox(self.panelLogs,"checkBoxHardware")
         self.checkBoxHardware.setEnabled(0)
         self.checkBoxHardware.setGeometry(QRect(11,92,488,20))
@@ -215,13 +215,19 @@ class BocekForm(QWizard):
         self.checkBoxPackages.setGeometry(QRect(11,164,488,20))
         self.checkBoxPackages.setChecked(1)
 
-        self.checkBoxStandartLogs = QCheckBox(self.panelLogs,"checkBoxStandartLogs")
-        self.checkBoxStandartLogs.setEnabled(0)
-        self.checkBoxStandartLogs.setGeometry(QRect(11,56,488,20))
-        self.checkBoxStandartLogs.setChecked(1)
+        self.progressBar = KProgress(self.buttonGroup2_2_2,"progressBar")
+        self.progressBar.setEnabled(0)
+        self.progressBar.setGeometry(QRect(30,350,510,23))
+        self.progressBar.setFrameShadow(KProgress.Plain)
+        self.progressBar.setCenterIndicator(1)
+        self.progressBar.setIndicatorFollowsStyle(1)
+        self.progressBar.setPercentageVisible(1)
 
-        self.addLogCheck = QCheckBox(self.buttonGroup2_2_2,"addLogCheck")
-        self.addLogCheck.setGeometry(QRect(20,30,530,21))
+        self.buttonTakeScreen = KPushButton(self.buttonGroup2_2_2,"buttonTakeScreen")
+        self.buttonTakeScreen.setEnabled(0)
+        self.buttonTakeScreen.setGeometry(QRect(398,290,140,31))
+        self.buttonTakeScreen.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Fixed,0,0,self.buttonTakeScreen.sizePolicy().hasHeightForWidth()))
+        self.buttonTakeScreen.setIconSet(QIconSet(self.image0))
         self.addPage(self.WizardPage_3,QString(""))
 
         self.languageChange()
@@ -241,20 +247,21 @@ class BocekForm(QWizard):
         self.connect(self.checkBoxAll,SIGNAL("toggled(bool)"),self.checkBoxConfig.setChecked)
         self.connect(self.checkBoxAll,SIGNAL("toggled(bool)"),self.checkBoxHardware.setChecked)
         self.connect(self.checkBoxAll,SIGNAL("toggled(bool)"),self.checkBoxStandartLogs.setChecked)
-        self.connect(self.radio,SIGNAL("toggled(bool)"),self.remindCheck.setEnabled)
-        self.connect(self.radioButton2,SIGNAL("toggled(bool)"),self.textLabel6.setEnabled)
-        self.connect(self.radioButton6,SIGNAL("toggled(bool)"),self.lineEdit9.setEnabled)
-        self.connect(self.radioButton6,SIGNAL("toggled(bool)"),self.textLabel3_2.setEnabled)
-        self.connect(self.radioButton5,SIGNAL("toggled(bool)"),self.comboBox1.setEnabled)
-        self.connect(self.radioButton5,SIGNAL("toggled(bool)"),self.textLabel1.setEnabled)
-        self.connect(self.radioButton2,SIGNAL("toggled(bool)"),self.textLabel4_2_2.setEnabled)
-        self.connect(self.radioButton2,SIGNAL("toggled(bool)"),self.textLabel4_3.setEnabled)
-        self.connect(self.radio,SIGNAL("toggled(bool)"),self.textLabel4_2.setEnabled)
-        self.connect(self.radio,SIGNAL("toggled(bool)"),self.textLabel4.setEnabled)
-        self.connect(self.radioButton2,SIGNAL("toggled(bool)"),self.pass_new.setEnabled)
-        self.connect(self.radioButton2,SIGNAL("toggled(bool)"),self.email.setEnabled)
-        self.connect(self.radio,SIGNAL("toggled(bool)"),self.pass_old.setEnabled)
-        self.connect(self.radio,SIGNAL("toggled(bool)"),self.username.setEnabled)
+        self.connect(self.radioLogin,SIGNAL("toggled(bool)"),self.rememberPass.setEnabled)
+        self.connect(self.radioNew,SIGNAL("toggled(bool)"),self.textLabel6.setEnabled)
+        self.connect(self.radioNewBug,SIGNAL("toggled(bool)"),self.lineSummaryNewBug.setEnabled)
+        self.connect(self.radioNewBug,SIGNAL("toggled(bool)"),self.textLabel3_2.setEnabled)
+        self.connect(self.radioOldBug,SIGNAL("toggled(bool)"),self.comboOldBug.setEnabled)
+        self.connect(self.radioOldBug,SIGNAL("toggled(bool)"),self.textLabel1.setEnabled)
+        self.connect(self.radioNew,SIGNAL("toggled(bool)"),self.textLabel4_2_2.setEnabled)
+        self.connect(self.radioNew,SIGNAL("toggled(bool)"),self.textLabel4_3.setEnabled)
+        self.connect(self.radioLogin,SIGNAL("toggled(bool)"),self.textLabel4_2.setEnabled)
+        self.connect(self.radioLogin,SIGNAL("toggled(bool)"),self.textLabel4.setEnabled)
+        self.connect(self.radioNew,SIGNAL("toggled(bool)"),self.newPassword.setEnabled)
+        self.connect(self.radioNew,SIGNAL("toggled(bool)"),self.newEmail.setEnabled)
+        self.connect(self.radioLogin,SIGNAL("toggled(bool)"),self.loginPassword.setEnabled)
+        self.connect(self.radioLogin,SIGNAL("toggled(bool)"),self.loginUsername.setEnabled)
+        self.connect(self.radioNew,SIGNAL("toggled(bool)"),self.buttonRegister.setEnabled)
 
 
     def languageChange(self):
@@ -264,34 +271,35 @@ class BocekForm(QWizard):
         self.buttonGroup2.setTitle(self.__tr("Choose a User Type"))
         self.textLabel4_2.setText(self.__tr("Password :"))
         self.textLabel4.setText(self.__tr("User Name :"))
-        self.remindCheck.setText(self.__tr("Remember my password"))
         self.textLabel4_3.setText(self.__tr("E-mail :"))
-        self.textLabel4_2_2.setText(self.__tr("Password :"))
-        self.radio.setText(self.__tr("Existing User"))
-        self.radioButton2.setText(self.__tr("New User"))
         self.textLabel6.setText(self.__tr("You will get a confirmation mail, use correct e-mail address"))
+        self.radioLogin.setText(self.__tr("Existing User"))
+        self.rememberPass.setText(self.__tr("Remember my password"))
+        self.textLabel4_2_2.setText(self.__tr("Password :"))
+        self.buttonRegister.setText(self.__tr("Register"))
+        self.radioNew.setText(self.__tr("New User"))
         self.setTitle(self.WizardPage,self.__tr("Welcome"))
         self.buttonGroup2_2.setTitle(self.__tr("Choose an Action"))
         self.textLabel3_2.setText(self.__tr("Summary :"))
         self.textLabel1.setText(self.__tr("Select the Bug :"))
-        self.radioButton6.setText(self.__tr("New Bug"))
         self.textLabel2_2.setText(self.__tr("Description :"))
-        self.radioButton5.setText(self.__tr("Old Bug (to add new comment or attachments)"))
+        self.radioOldBug.setText(self.__tr("Old Bug (to add new comment or attachments)"))
+        self.radioNewBug.setText(self.__tr("New Bug"))
         self.setTitle(self.WizardPage_2,self.__tr("Define the Bug"))
         self.buttonGroup2_2_2.setTitle(self.__tr("Add System Logs or Screenshots"))
-        self.buttonTakeScreen.setText(self.__tr("Take Screenshot"))
         self.labelStatus.setText(self.__tr("<b>Status : </b>"))
+        self.addLogCheck.setText(self.__tr("I want to add some attachments to the bug"))
         self.panelLogs.setTitle(self.__tr("System Information"))
         self.textLabel2_3.setText(self.__tr("Recommends for all type of bugs."))
         self.textLabel2_3_2.setText(self.__tr("Especially for hardware based problems developer needs them."))
         self.textLabel2_3_2_2.setText(self.__tr("If you modified your config files developer will needs them to see changes."))
         self.textLabel2_3_2_2_2.setText(self.__tr("If you think your problem depends on a package you must add these logs."))
         self.checkBoxAll.setText(self.__tr("All (Recommended)"))
+        self.checkBoxStandartLogs.setText(self.__tr("Standard Logs"))
         self.checkBoxHardware.setText(self.__tr("Hardware Information"))
         self.checkBoxConfig.setText(self.__tr("Config Files"))
         self.checkBoxPackages.setText(self.__tr("Package Informations"))
-        self.checkBoxStandartLogs.setText(self.__tr("Standard Logs"))
-        self.addLogCheck.setText(self.__tr("I want to add some attachments to the bug"))
+        self.buttonTakeScreen.setText(self.__tr("Take Screenshot"))
         self.setTitle(self.WizardPage_3,self.__tr("Additional Files"))
 
 
