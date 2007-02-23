@@ -60,7 +60,13 @@ class Bocek(BocekForm):
         os.environ['LC_ALL'] = 'C'
         self.lastReportFile=''
         self.bugzilla = bugzilla.bugzilla()
-        
+        self.connect(self.nextButton(), SIGNAL('clicked()'), self.stepByStep)
+        #self.setNextEnabled(self.WizardPage,False)
+
+    def stepByStep(self):
+        if self.currentPage() == self.WizardPage:
+            pass
+
     def slotQuit(self):
         self.deleteLater()
         guiApp.quit()

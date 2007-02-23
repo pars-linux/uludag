@@ -1,5 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>BocekForm</class>
+<author>Gokmen GOKSEL</author>
 <widget class="QWizard">
     <property name="name">
         <cstring>BocekForm</cstring>
@@ -98,22 +99,6 @@
             <property name="title">
                 <string>Choose a User Type</string>
             </property>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>pass_old</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>97</y>
-                        <width>221</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="echoMode">
-                    <enum>Password</enum>
-                </property>
-            </widget>
             <widget class="QLabel">
                 <property name="name">
                     <cstring>textLabel4_2</cstring>
@@ -130,19 +115,6 @@
                     <string>Password :</string>
                 </property>
             </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>username</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>70</y>
-                        <width>220</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-            </widget>
             <widget class="QLabel">
                 <property name="name">
                     <cstring>textLabel4</cstring>
@@ -157,38 +129,6 @@
                 </property>
                 <property name="text">
                     <string>User Name :</string>
-                </property>
-            </widget>
-            <widget class="QCheckBox">
-                <property name="name">
-                    <cstring>remindCheck</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>370</x>
-                        <y>97</y>
-                        <width>191</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Remember my password</string>
-                </property>
-            </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>email</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>173</y>
-                        <width>220</width>
-                        <height>21</height>
-                    </rect>
                 </property>
             </widget>
             <widget class="QLabel">
@@ -208,79 +148,6 @@
                 </property>
                 <property name="text">
                     <string>E-mail :</string>
-                </property>
-            </widget>
-            <widget class="QLabel">
-                <property name="name">
-                    <cstring>textLabel4_2_2</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>54</x>
-                        <y>216</y>
-                        <width>81</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Password :</string>
-                </property>
-            </widget>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>pass_new</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>140</x>
-                        <y>216</y>
-                        <width>221</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="echoMode">
-                    <enum>Password</enum>
-                </property>
-            </widget>
-            <widget class="QRadioButton">
-                <property name="name">
-                    <cstring>radio</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>34</x>
-                        <y>37</y>
-                        <width>460</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Existing User</string>
-                </property>
-                <property name="checked">
-                    <bool>true</bool>
-                </property>
-            </widget>
-            <widget class="QRadioButton">
-                <property name="name">
-                    <cstring>radioButton2</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>34</x>
-                        <y>140</y>
-                        <width>461</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>New User</string>
                 </property>
             </widget>
             <widget class="QLabel">
@@ -312,6 +179,170 @@
                     <enum>RichText</enum>
                 </property>
             </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioLogin</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>34</x>
+                        <y>37</y>
+                        <width>460</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Existing User</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>loginUsername</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>70</y>
+                        <width>220</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>rememberPass</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>370</x>
+                        <y>97</y>
+                        <width>191</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Remember my password</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>newEmail</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>173</y>
+                        <width>220</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>loginPassword</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>97</y>
+                        <width>221</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="echoMode">
+                    <enum>Password</enum>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>textLabel4_2_2</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>54</x>
+                        <y>221</y>
+                        <width>81</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Password :</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>newPassword</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>140</x>
+                        <y>221</y>
+                        <width>221</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="echoMode">
+                    <enum>Password</enum>
+                </property>
+            </widget>
+            <widget class="KPushButton">
+                <property name="name">
+                    <cstring>buttonRegister</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>370</x>
+                        <y>221</y>
+                        <width>90</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>0</hsizetype>
+                        <vsizetype>0</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="text">
+                    <string>Register</string>
+                </property>
+                <property name="iconSet">
+                    <iconset>image0</iconset>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioNew</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>34</x>
+                        <y>140</y>
+                        <width>461</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>New User</string>
+                </property>
+            </widget>
         </widget>
     </widget>
     <widget class="QWidget">
@@ -336,19 +367,6 @@
             <property name="title">
                 <string>Choose an Action</string>
             </property>
-            <widget class="QLineEdit">
-                <property name="name">
-                    <cstring>lineEdit9</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>160</x>
-                        <y>150</y>
-                        <width>371</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-            </widget>
             <widget class="QLabel">
                 <property name="name">
                     <cstring>textLabel3_2</cstring>
@@ -384,41 +402,6 @@
                     <string>Select the Bug :</string>
                 </property>
             </widget>
-            <widget class="QComboBox">
-                <property name="name">
-                    <cstring>comboBox1</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>160</x>
-                        <y>70</y>
-                        <width>370</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-            </widget>
-            <widget class="QRadioButton">
-                <property name="name">
-                    <cstring>radioButton6</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>34</x>
-                        <y>117</y>
-                        <width>211</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>New Bug</string>
-                </property>
-                <property name="checked">
-                    <bool>true</bool>
-                </property>
-            </widget>
             <widget class="QLabel">
                 <property name="name">
                     <cstring>textLabel2_2</cstring>
@@ -435,22 +418,9 @@
                     <string>Description :</string>
                 </property>
             </widget>
-            <widget class="QTextEdit">
-                <property name="name">
-                    <cstring>textEdit1</cstring>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>160</x>
-                        <y>180</y>
-                        <width>370</width>
-                        <height>190</height>
-                    </rect>
-                </property>
-            </widget>
             <widget class="QRadioButton">
                 <property name="name">
-                    <cstring>radioButton5</cstring>
+                    <cstring>radioOldBug</cstring>
                 </property>
                 <property name="geometry">
                     <rect>
@@ -462,6 +432,67 @@
                 </property>
                 <property name="text">
                     <string>Old Bug (to add new comment or attachments)</string>
+                </property>
+            </widget>
+            <widget class="QComboBox">
+                <property name="name">
+                    <cstring>comboOldBug</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>70</y>
+                        <width>370</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>radioNewBug</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>34</x>
+                        <y>117</y>
+                        <width>211</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>New Bug</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>lineSummaryNewBug</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>150</y>
+                        <width>371</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>textDescNewBug</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>160</x>
+                        <y>180</y>
+                        <width>370</width>
+                        <height>190</height>
+                    </rect>
                 </property>
             </widget>
         </widget>
@@ -488,64 +519,6 @@
             <property name="title">
                 <string>Add System Logs or Screenshots</string>
             </property>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>buttonTakeScreen</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>398</x>
-                        <y>290</y>
-                        <width>140</width>
-                        <height>31</height>
-                    </rect>
-                </property>
-                <property name="sizePolicy">
-                    <sizepolicy>
-                        <hsizetype>0</hsizetype>
-                        <vsizetype>0</vsizetype>
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                    </sizepolicy>
-                </property>
-                <property name="text">
-                    <string>Take Screenshot</string>
-                </property>
-                <property name="iconSet">
-                    <iconset>image0</iconset>
-                </property>
-            </widget>
-            <widget class="KProgress">
-                <property name="name">
-                    <cstring>progressBar</cstring>
-                </property>
-                <property name="enabled">
-                    <bool>false</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>30</x>
-                        <y>350</y>
-                        <width>510</width>
-                        <height>23</height>
-                    </rect>
-                </property>
-                <property name="frameShadow">
-                    <enum>Plain</enum>
-                </property>
-                <property name="centerIndicator">
-                    <bool>true</bool>
-                </property>
-                <property name="indicatorFollowsStyle">
-                    <bool>true</bool>
-                </property>
-                <property name="percentageVisible">
-                    <bool>true</bool>
-                </property>
-            </widget>
             <widget class="QLabel">
                 <property name="name">
                     <cstring>labelStatus</cstring>
@@ -563,6 +536,22 @@
                 </property>
                 <property name="text">
                     <string>&lt;b&gt;Status : &lt;/b&gt;</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>addLogCheck</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>30</y>
+                        <width>530</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>I want to add some attachments to the bug</string>
                 </property>
             </widget>
             <widget class="QButtonGroup">
@@ -719,6 +708,28 @@
                 </widget>
                 <widget class="QCheckBox">
                     <property name="name">
+                        <cstring>checkBoxStandartLogs</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>56</y>
+                            <width>488</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Standard Logs</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
                         <cstring>checkBoxHardware</cstring>
                     </property>
                     <property name="enabled">
@@ -783,43 +794,63 @@
                         <bool>true</bool>
                     </property>
                 </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>checkBoxStandartLogs</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>11</x>
-                            <y>56</y>
-                            <width>488</width>
-                            <height>20</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>Standard Logs</string>
-                    </property>
-                    <property name="checked">
-                        <bool>true</bool>
-                    </property>
-                </widget>
             </widget>
-            <widget class="QCheckBox">
+            <widget class="KProgress">
                 <property name="name">
-                    <cstring>addLogCheck</cstring>
+                    <cstring>progressBar</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
                 </property>
                 <property name="geometry">
                     <rect>
-                        <x>20</x>
-                        <y>30</y>
-                        <width>530</width>
-                        <height>21</height>
+                        <x>30</x>
+                        <y>350</y>
+                        <width>510</width>
+                        <height>23</height>
                     </rect>
                 </property>
+                <property name="frameShadow">
+                    <enum>Plain</enum>
+                </property>
+                <property name="centerIndicator">
+                    <bool>true</bool>
+                </property>
+                <property name="indicatorFollowsStyle">
+                    <bool>true</bool>
+                </property>
+                <property name="percentageVisible">
+                    <bool>true</bool>
+                </property>
+            </widget>
+            <widget class="KPushButton">
+                <property name="name">
+                    <cstring>buttonTakeScreen</cstring>
+                </property>
+                <property name="enabled">
+                    <bool>false</bool>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>398</x>
+                        <y>290</y>
+                        <width>140</width>
+                        <height>31</height>
+                    </rect>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>0</hsizetype>
+                        <vsizetype>0</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
                 <property name="text">
-                    <string>I want to add some attachments to the bug</string>
+                    <string>Take Screenshot</string>
+                </property>
+                <property name="iconSet">
+                    <iconset>image0</iconset>
                 </property>
             </widget>
         </widget>
@@ -904,87 +935,93 @@
         <slot>setChecked(bool)</slot>
     </connection>
     <connection>
-        <sender>radio</sender>
+        <sender>radioLogin</sender>
         <signal>toggled(bool)</signal>
-        <receiver>remindCheck</receiver>
+        <receiver>rememberPass</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton2</sender>
+        <sender>radioNew</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel6</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton6</sender>
+        <sender>radioNewBug</sender>
         <signal>toggled(bool)</signal>
-        <receiver>lineEdit9</receiver>
+        <receiver>lineSummaryNewBug</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton6</sender>
+        <sender>radioNewBug</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel3_2</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton5</sender>
+        <sender>radioOldBug</sender>
         <signal>toggled(bool)</signal>
-        <receiver>comboBox1</receiver>
+        <receiver>comboOldBug</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton5</sender>
+        <sender>radioOldBug</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel1</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton2</sender>
+        <sender>radioNew</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel4_2_2</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton2</sender>
+        <sender>radioNew</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel4_3</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radio</sender>
+        <sender>radioLogin</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel4_2</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radio</sender>
+        <sender>radioLogin</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel4</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton2</sender>
+        <sender>radioNew</sender>
         <signal>toggled(bool)</signal>
-        <receiver>pass_new</receiver>
+        <receiver>newPassword</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton2</sender>
+        <sender>radioNew</sender>
         <signal>toggled(bool)</signal>
-        <receiver>email</receiver>
+        <receiver>newEmail</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radio</sender>
+        <sender>radioLogin</sender>
         <signal>toggled(bool)</signal>
-        <receiver>pass_old</receiver>
+        <receiver>loginPassword</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radio</sender>
+        <sender>radioLogin</sender>
         <signal>toggled(bool)</signal>
-        <receiver>username</receiver>
+        <receiver>loginUsername</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioNew</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>buttonRegister</receiver>
         <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
@@ -992,5 +1029,6 @@
 <includehints>
     <includehint>kpushbutton.h</includehint>
     <includehint>kprogress.h</includehint>
+    <includehint>kpushbutton.h</includehint>
 </includehints>
 </UI>
