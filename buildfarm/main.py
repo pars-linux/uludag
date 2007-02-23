@@ -90,6 +90,7 @@ def buildPackages():
                     removeBinaryPackageFromWorkDir(p)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
+                    pisi.delta(oldBinaryPackages, newBinaryPackages)
                     movePackages(newBinaryPackages, oldBinaryPackages)
                     packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
         finally:
