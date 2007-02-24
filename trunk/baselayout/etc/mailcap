@@ -132,6 +132,14 @@ application/vnd.oasis.opendocument.image; oodraw '%s'; -n "$DISPLAY" ; nametempl
 application/vnd.oasis.opendocument.graphics-template; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.otg
 application/vnd.oasis.opendocument.graphics; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.odg
 
+# OpenOffice 1.0
+application/vnd.sun.xml.calc; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.sxc
+application/vnd.sun.xml.calc.template; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.stc
+application/vnd.sun.xml.writer; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.sxw
+application/vnd.sun.xml.writer.template; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.stw
+application/vnd.sun.xml.impress; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.sxi
+application/vnd.sun.xml.impress.template; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.sti
+
 # Image files
 image/tiff; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.tiff
 image/jpeg; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.jpeg
