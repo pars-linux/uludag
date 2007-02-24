@@ -6,22 +6,27 @@ application/x-tar; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.tar
 
 # Powerpoint
 application/x-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
-vnd.ms-pps; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.pps
 application/mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
 application/x-mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
+application/vnd.x-mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
 application/ms-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
+application/vnd.ms-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
+application/vnd.ms-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.pot
+application/vnd.ms-pps; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.pps
 
 # MS Word
 application/doc; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
 application/msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
 application/x-msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
 application/ms-word; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
+application/vnd.x-ms-word; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
 
 # MS Access
 application/mdb; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
 application/x-mdb; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
 application/msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
 application/x-msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
+application/vnd.x-msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
 application/ms-access; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
 
 # MS Excel
@@ -33,11 +38,17 @@ application/x-xls; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
 application/xls; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
 application/x-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
 application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xla
+application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlc
+application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlm
+application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlt
+application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlw
 
 # PDF and PS
 application/pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
 application/x-pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
 application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps
+application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ai
 application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps.gz
 application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.eps
 
