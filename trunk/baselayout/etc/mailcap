@@ -3,6 +3,7 @@ application/x-pisi; pm-install '%s'; -n "$DISPLAY" ; nametemplate=%s.pisi
 application/x-gzip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.gz
 application/x-zip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.zip
 application/x-tar; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.tar
+application/x-bzip2; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.bz2
 
 # Powerpoint
 application/x-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
@@ -20,6 +21,10 @@ application/msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
 application/x-msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
 application/ms-word; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
 application/vnd.x-ms-word; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
+application/dot; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
+application/x-dot; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
+application/x-msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
+application/msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
 
 # MS Access
 application/mdb; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
@@ -44,18 +49,74 @@ application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlm
 application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlt
 application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlw
 
-# PDF and PS
+# PDF and PS & DVI
 application/pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
 application/x-pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
 application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps
 application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ai
 application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps.gz
 application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.eps
+application/x-dvi; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.dvi
 
-# Multimedia
+# Audio URL
 audio/x-mpegurl; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.m3u
 audio/mpegurl; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.m3u
 audio/scpls; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.pls
+
+# MPEG
+video/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+video/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+video/x-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+video/mpeg2; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+application/x-pn-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+video/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+video/x-mpeg2a; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+audio/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+audio/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+image/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
+
+video/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+video/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+video/x-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+video/mpeg2; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+application/x-pn-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+video/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+video/x-mpeg2a; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+audio/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+audio/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+image/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
+
+# AVI
+video/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+video/msvideo; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+video/x-msvideo; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+image/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+video/xmpg2; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+application/x-troff-msvideo; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+audio/aiff; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+audio/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
+
+# WMV
+video/x-ms-wmv; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wmv
+
+# MOV
+video/quicktime; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
+video/x-quicktime; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
+image/mov; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
+audio/aiff; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
+audio/x-midi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
+audio/x-wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
+video/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
+
+# OGG
+audio/x-ogg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.ogg
+application/x-ogg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.ogg
+
+# WAV
+audio/wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
+audio/x-wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
+audio/wave; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
+audio/x-pn-wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
 
 # Java Web Start
 application/x-java-jnlp-file; javaws '%s'; -n "$DISPLAY" ; nametemplate=%s.jnlp
@@ -76,6 +137,33 @@ image/tiff; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.tiff
 image/jpeg; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.jpeg
 image/jpeg; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.jpg
 image/gif; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.gif
+image/bmp; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.bmp
+image/png; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.png
+image/svg+xml; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.svg
+
+# PSD
+image/photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
+image/x-photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
+image/psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
+application/photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
+application/psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
+zz-application/zz-winassoc-psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
+
+# Text
+text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
+application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
+text/anytext; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
+widetext/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
+widetext/paragraph; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
+
+text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
+application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
+text/anytext; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
+widetext/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
+widetext/paragraph; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
+
+text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
+application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
 
 # Rest
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.po
