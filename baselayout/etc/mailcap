@@ -1,0 +1,70 @@
+# Compressed Archives
+application/x-pisi; pm-install '%s'; -n "$DISPLAY" ; nametemplate=%s.pisi
+application/x-gzip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.gz
+application/x-zip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.zip
+application/x-tar; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.tar
+
+# Powerpoint
+application/x-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
+vnd.ms-pps; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.pps
+application/mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
+application/x-mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
+application/ms-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
+
+# MS Word
+application/doc; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
+application/msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
+application/x-msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
+application/ms-word; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
+
+# MS Access
+application/mdb; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
+application/x-mdb; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
+application/msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
+application/x-msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
+application/ms-access; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
+
+# MS Excel
+application/msexcel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/x-ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/x-msexcel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/x-xls; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/xls; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/x-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
+
+# PDF and PS
+application/pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
+application/x-pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
+application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps
+application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps.gz
+application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.eps
+
+# Multimedia
+audio/x-mpegurl; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.m3u
+audio/mpegurl; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.m3u
+audio/scpls; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.pls
+
+# Java Web Start
+application/x-java-jnlp-file; javaws '%s'; -n "$DISPLAY" ; nametemplate=%s.jnlp
+
+# OpenDocument stuff
+application/vnd.oasis.opendocument.text-template; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.ott
+application/vnd.oasis.opendocument.text; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.odt
+application/vnd.oasis.opendocument.spreadsheet-template; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.ots
+application/vnd.oasis.opendocument.spreadsheet; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.ods
+application/vnd.oasis.opendocument.presentation-template; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.otp
+application/vnd.oasis.opendocument.presentation; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.odp
+application/vnd.oasis.opendocument.image; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.odi
+application/vnd.oasis.opendocument.graphics-template; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.otg
+application/vnd.oasis.opendocument.graphics; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.odg
+
+# Image files
+image/tiff; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.tiff
+image/jpeg; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.jpeg
+image/jpeg; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.jpg
+image/gif; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.gif
+
+# Rest
+text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.po
