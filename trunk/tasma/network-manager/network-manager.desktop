@@ -3,6 +3,7 @@ Name=Network Manager
 Name[tr]=Ağ Yöneticisi
 Name[es]=Configuración de Red
 Name[de]=Netzwerk-Manager
+Name[pt_BR]=Gerenciador da Rede
 Icon=network
 X-KDE-ModuleType=Library
 X-KDE-Library=network-manager
