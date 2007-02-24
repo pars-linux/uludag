@@ -203,6 +203,7 @@ import sys
 import os
 import pisi.version
 import time
+import string
 
 
 class Packager(AutoPiksemel):
@@ -355,6 +356,14 @@ class Package(AutoPiksemel):
     history               =     optional_tag("History", contains=one_or_more_tag("Update", class_=Update))
     
     def validate(self, doc, errors):
+        valid_name_chars = string.ascii_letters + string.digits + "_-+"
+        for c in self.name:
+            if not c in valid_name_chars:
+                piksError(doc, errors, "package name '%s' has invalid char '%s'" % (self.name, c))
+        for part in self.name.split("-")[1:]:
+            if part[0] in string.digits:
+                piksError(doc, errors, "package name '%s' has a number after '-'" % self.name)
+        
         for additional in self.additionals:
             filename = additional.target
             flag = False
