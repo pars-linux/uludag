@@ -168,3 +168,4 @@ application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
 
 # Rest
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.po
+text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.pot
