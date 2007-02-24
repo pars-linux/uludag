@@ -155,20 +155,13 @@ image/x-photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
 image/psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
 application/photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
 application/psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
-zz-application/zz-winassoc-psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
 
 # Text
 text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
 application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
-text/anytext; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
-widetext/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
-widetext/paragraph; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
 
 text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
 application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
-text/anytext; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
-widetext/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
-widetext/paragraph; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
 
 text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
 application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
