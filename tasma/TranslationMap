@@ -31,14 +31,20 @@ translate Keywords tags too.
 Menu and user interface messages for Pardus package manager.
 
 ==> network-manager/network-manager.desktop
+==> network-manager/network-applet.desktop
 ==> network-manager/po/network-manager.pot
 
 Menu and user interface messages for Pardus network manager.
 
-==> service-manager/service-manager.desktop
+==> service-manager/src/service-manager.desktop
 ==> service-manager/po/service-manager.pot
 
 Menu and user interface messages for Pardus service manager.
+
+==> disk-manager/src/disk-manager.desktop
+==> disk-manager/po/disk-manager.pot
+
+Menu and user interface messages for Pardus disk manager.
 
 ==> user-manager/po/user-manager.pot
 ==> user-manager/user-manager.desktop
