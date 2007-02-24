@@ -20,6 +20,8 @@ Name[fr]=Styles et Polices GTK
 Comment[fr]=Détermine le style et les polices utilisés par les applications GTK
 Name[tr]=GTK Stil ve Yazıtipleri
 Comment[tr]=GTK uygulamalarının stil ve yazıtiplerini KDE görünümlü yapar
+Name[pt_BR]=Estilos e Fontes GTK
+Comment[pt_BR]=Controlar os estilos e fontes usados por aplicações GTK
 
 Type=Application
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
