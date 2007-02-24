@@ -62,6 +62,7 @@ Menu and user interface messages for Pardus TV-Card configurator.
 ==> network-manager/help/
 ==> user-manager/help/
 ==> service-manager/help/
+==> disk-manager/help
 
 These modules also have an online help facility. If you finished
 other translation jobs, and have free time, you can add a new folder
