@@ -15,12 +15,11 @@ import kdedistutils
 version = "1.0.0"
 
 distfiles = """
+    setup.py
     src/*.py
     src/*.png
     po/*.po
     po/*.pot
-    projects/*.xml
-    projects/release/*.xml
     AUTHORS
     COPYING
     README
