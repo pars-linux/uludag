@@ -1,12 +1,3 @@
-GNU GENERAL PUBLIC LICENSE
-Versie 2, Juni 1991
-
-Copyright (C) 1989, 1991 
-Free Software Foundation, Inc
-59 Temple Place, 
-Suite 330, Boston 
-MA  02111-1307  USA
-
 English disclaimer 
 This is an unofficial translation of the GNU General 
 Public License into Dutch. It was not published by the Free Software
@@ -22,6 +13,15 @@ Foundation, de condities van software onder de GPL hieronder zijn niet
 rechtsgeldig. Enkel de originele Engelse tekst van de GNU GPL bevat geldige
 richtlijnen. Daarentegen hopen we dat deze vertaling de Nederlandstaligen helpt
 om de GNU GPL beter te begrijpen.
+
+GNU GENERAL PUBLIC LICENSE
+Versie 2, Juni 1991
+
+Copyright (C) 1989, 1991 
+Free Software Foundation, Inc
+59 Temple Place, 
+Suite 330, Boston 
+MA  02111-1307  USA
 
 Het is aan iedereen toegestaan deze licentie te kopieren of te verspreiden, echter aanpassen in niet toegestaan.
 
