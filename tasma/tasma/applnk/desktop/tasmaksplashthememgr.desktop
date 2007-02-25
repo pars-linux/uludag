@@ -14,6 +14,7 @@ Name[tr]=Açılış ekranı
 Name[nl]=Opstartscherm
 Name[es]=Pantalla de Inicio
 Name[de]=Startbildschirm
+Name[pt_BR]=Tela de Inicialização
 
 Type=Application
 
@@ -22,11 +23,13 @@ Comment[tr]=Açılış Ekran Teması Yöneticisi
 Comment[nl]=Themabeheer voor opstartschermen
 Comment[es]=Administrador de temas para pantalla inicial
 Comment[de]=Start-Themen-Manager
+Comment[pt_BR]=Gerenciador para Temas da Tela de Inicialização
 
 Keywords=splash screen,splash theme,startup
 Keywords[tr]=açılış ekranı, açılış teması, başlangıç
 Keywords[nl]=opstartscherm,splash screen
 Keywords[es]=splash screen,pantalla de inicio,tema de inicio,inicio
 Keywords[de]=Startbildschirm,Start-Thema,Start
+Keywords[pt_BR]=tela de inicialização,tema da tela de entrada,inicialização
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
