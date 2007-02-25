@@ -1,0 +1,282 @@
+# translation of nl.po to Nederlands
+# Pardusman
+# Copyright (C) 2007 TÜBİTAK/UEKAE
+# This file is distributed under the same license as the Pardusman package.
+#
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2007.
+# Willem Gielen <w.gielen@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-21 14:01+0200\n"
+"PO-Revision-Date: 2007-02-25 21:04+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: browser.py:36
+msgid "Version:"
+msgstr "Versie:"
+
+#: browser.py:38
+#, python-format
+msgid "%s, release %s, build %s"
+msgstr "%s, release %s, bouw %s"
+
+#: browser.py:41
+msgid "Component:"
+msgstr "Component:"
+
+#: browser.py:46
+msgid "Homepage:"
+msgstr "Homepage:"
+
+#: browser.py:54
+msgid "Summary:"
+msgstr "Samenvatting:"
+
+#: browser.py:61
+msgid "Description:"
+msgstr "Beschrijving:"
+
+#: browser.py:73
+msgid "Depends on:"
+msgstr "Afhankelijk van:"
+
+#: browser.py:78
+msgid "Depended by:"
+msgstr "Afhankelijkheid door:"
+
+#: browser.py:206
+#, python-format
+msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
+msgstr "Totaal van %d pakketten, %s bytes gecomprimeerd, %s bytes geïnstalleerd."
+
+#: browser.py:215
+msgid "Component"
+msgstr "Component"
+
+#: browser.py:226
+msgid "Search:"
+msgstr "Zoek:"
+
+#: browser.py:230
+msgid "Package"
+msgstr "Pakket"
+
+#: browser.py:231
+msgid "Archive Size"
+msgstr "Archiefgrootte"
+
+#: browser.py:232
+msgid "Installed Size"
+msgstr "Geïnstalleerde grootte"
+
+#: browser.py:303
+msgid "No packages selected."
+msgstr "Geen pakketten geïnstalleerd."
+
+#: browser.py:308
+#, python-format
+msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
+msgstr "%d pakketten geselecteerd, %s bytes archiefgrootte, %s bytes geïnstalleerde grootte."
+
+#: browser.py:334
+msgid "Use selected packages"
+msgstr "Gebruik geselecteerde pakketten"
+
+#: gui.py:80
+msgid "&Open"
+msgstr "&Open"
+
+#: gui.py:82
+msgid "Save &as..."
+msgstr "Opslaan &als..."
+
+#: gui.py:97
+msgid ""
+"Pardusman says:\n"
+"\n"
+"  Teh winnars dont use teh drugs!  \n"
+" "
+msgstr ""
+"Pardusman zegt:\n"
+"\n"
+"  De winnaars gebruiken niet van de drugs!  \n"
+" "
+
+#: gui.py:103
+msgid "Title:"
+msgstr "Titel:"
+
+#: gui.py:108
+msgid "Title of distribution media, used in grub menu."
+msgstr "Titel van distributie medium, gebruikt in het grub menu."
+
+#: gui.py:112
+msgid "Work folder:"
+msgstr "Werkmap:"
+
+#: gui.py:119
+msgid ""
+"This folder holds local repository cache\n"
+"and temporary files generated during the\n"
+"ISO making process."
+msgstr ""
+"Deze map bevat de lokale repository cache\n"
+"en tijdelijke bestanden welk gegenereerd zijn\n"
+" tijdens het maken van de ISO."
+
+#: gui.py:125
+msgid "Repository:"
+msgstr "Repository:"
+
+#: gui.py:130
+msgid ""
+"PiSi package repository of the distribution.\n"
+"Must be a URL pointing to the repository index\n"
+"file (i.e. pisi-index.xml.bz2)."
+msgstr ""
+"Pisi pakket repository van de distributie.\n"
+"Moet een URL zijn welk verwijst naar het repository\n"
+"index bestand (bijv. pisi-index.xml.bz2)."
+
+#: gui.py:134
+msgid "Release files:"
+msgstr "Release bestanden:"
+
+#: gui.py:141
+msgid ""
+"Content of this folder is copied\n"
+"onto the root folder of CD."
+msgstr ""
+"Inhoud van deze map is gekopieerd\n"
+"naar de root map van de CD."
+
+#: gui.py:147
+msgid "Type:"
+msgstr "Type:"
+
+#: gui.py:150
+msgid "Installation"
+msgstr "Installatie"
+
+#: gui.py:151
+msgid "Live system"
+msgstr "Live systeem"
+
+#: gui.py:154
+msgid "Media:"
+msgstr "Medium:"
+
+#: gui.py:160
+msgid "CD (700 MB)"
+msgstr "CD (700 MB)"
+
+#: gui.py:161
+msgid "DVD (4.2 GB)"
+msgstr "DVD (4.2 GB)"
+
+#: gui.py:162
+msgid "FlashDisk (1 GB)"
+msgstr "FlashDisk (1 GB)"
+
+#: gui.py:163
+msgid "Custom size"
+msgstr "Aangepaste grootte"
+
+#: gui.py:171
+msgid "Update Repo"
+msgstr "Update repo"
+
+#: gui.py:174
+msgid "Select packages"
+msgstr "Selecteer pakketten"
+
+#: gui.py:177
+msgid "Make ISO"
+msgstr "Maak ISO"
+
+#: gui.py:210
+msgid "Select release files folder"
+msgstr "Selecteer release bestanden map"
+
+#: gui.py:221
+msgid "Select folder for temporary files and cache"
+msgstr "Selecteer map voor tijdelijke bestanden en cache"
+
+#: gui.py:241
+msgid "Project directory does not exist."
+msgstr "Project directory bestaat niet."
+
+#: gui.py:244
+msgid "Release files directory does not exist."
+msgstr "Release bestanden bestaan niet."
+
+#: gui.py:285
+msgid "Project title not given."
+msgstr "Geen titel aan project gegeven."
+
+#: gui.py:292
+msgid "Release files directory not given."
+msgstr "Release bestanden map niet opgegeven."
+
+#: gui.py:299
+msgid "Project directory not given."
+msgstr "Project directory niet opgegeven."
+
+#: gui.py:306
+msgid "Repository address not given."
+msgstr "Repository adres niet opgegeven."
+
+#: gui.py:344
+#, python-format
+msgid "%s - Pardusman"
+msgstr "%s - Pardusman"
+
+#: gui.py:346
+msgid "New project - Pardusman"
+msgstr "Nieuw project - Pardusman"
+
+#: gui.py:350
+msgid "Select a project..."
+msgstr "Selecteer een project..."
+
+#: gui.py:361
+msgid "Project '%s' opened."
+msgstr "Project '%s' geopend."
+
+#: gui.py:368
+msgid "Saved."
+msgstr "Opgeslagen."
+
+#: gui.py:373
+msgid "Save project as..."
+msgstr "Project opslaan als.."
+
+#: gui.py:382
+#, python-format
+msgid "Project saved as '%s'."
+msgstr "Project opgeslagen als '%s'."
+
+#: gui.py:386
+msgid "Pardus distribution media maker"
+msgstr "Pardus distributie media maker"
+
+#: project.py:112
+#, python-format
+msgid "Project file '%s' does not exists!"
+msgstr "Project bestand '%s' bestaat niet!"
+
+#: project.py:115
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr "Geen Pardusman project bestand, ongeldige xml!"
+
+#: project.py:117
+msgid "Not a Pardusman project file"
+msgstr "Geen Pardusman project bestand"
+
