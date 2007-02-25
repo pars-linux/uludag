@@ -53,11 +53,6 @@ Menu and user interface messages for Pardus user manager.
 Note that group descriptions are taken from Çomar, and you
 have to translate them in there instead of this module.
 
-==> tasma/modules/tasmatv/po/tasmatv.pot
-==> tasma/modules/tasmatv/tasmatv.desktop
-
-Menu and user interface messages for Pardus TV-Card configurator.
-
 ==> package-manager/help/
 ==> network-manager/help/
 ==> user-manager/help/
