@@ -13,14 +13,17 @@ import urllib
 import consts
 import sys
 
-def debug(msg):
-    if "--enable-debug" in sys.argv:
-        print msg
-
 class bugzilla:
     def __init__(self):
         self.headers = {"Content-type": "application/x-www-form-urlencoded",
                         "Accept": "text/plain"}
+        self.logs=True
+
+    def logger(self,msg):
+        if self.logs:
+            for line in msg.split("\n"):
+                print "DEBUG : %s" % line
+
     def atomicSender(self,page,parameters):
         try:
             connection = httplib.HTTPConnection("%s:80" % consts.bugzilla["server"])
@@ -51,8 +54,8 @@ class bugzilla:
         response = self.atomicSender("bugAdd",params)
         if response.reason=="OK":
             responseData = response.read()
+            self.logger(responseData)
             if responseData.find(consts.bugzillaMsg["errorOnLogin"])==-1:
-                debug(responseData)
                 return "Bug added successfully."
             return "Login failed. Check your e-mail and password."
         else:
