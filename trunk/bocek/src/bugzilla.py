@@ -11,11 +11,27 @@
 import httplib
 import urllib
 import consts
+import sys
+
+def debug(msg):
+    if "--enable-debug" in sys.argv:
+        print msg
 
 class bugzilla:
     def __init__(self):
         self.headers = {"Content-type": "application/x-www-form-urlencoded",
                         "Accept": "text/plain"}
+    def atomicSender(self,page,parameters):
+        try:
+            connection = httplib.HTTPConnection("%s:80" % consts.bugzilla["server"])
+            connection.request("POST", consts.bugzilla[page], parameters, self.headers)
+        except httplib.HTTPConnection:
+            return False
+        return connection.getresponse()
+
+    def checkAuth(self,email,password):
+        params = urllib.urlencode({'Bugzilla_login'     : email,
+                                   'Bugzilla_password'  : password})
 
     def sendBug(self,email,password,summary,details):
         params = urllib.urlencode({'Bugzilla_login'     : email,
@@ -31,18 +47,13 @@ class bugzilla:
                                    'op_sys'             : consts.bugzilla['op_sys'],
                                    'bug_severity'       : consts.bugzilla['severity'],
                                    'bug_file_loc'       : consts.bugzilla['bug_file_loc']})
-        try:
-            connection = httplib.HTTPConnection("%s:80" % consts.bugzilla["server"])
-            connection.request("POST", consts.bugzilla["bugAdd"], params, self.headers)
-        except httplib.HTTPConnection:
-            return "Connection error for server, please check your network configuration."
         
-        response = connection.getresponse()
+        response = self.atomicSender("bugAdd",params)
         if response.reason=="OK":
             responseData = response.read()
             if responseData.find(consts.bugzillaMsg["errorOnLogin"])==-1:
-                print responseData
+                debug(responseData)
                 return "Bug added successfully."
             return "Login failed. Check your e-mail and password."
         else:
-            return "Connection error for bugzilla, please check your network configuration."
+            return "Connection error for server, please check your network configuration."
