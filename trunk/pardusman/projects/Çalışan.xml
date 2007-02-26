@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Live 2007.1</Title>
+    <Title>Pardus Live 2007.1 Beta</Title>
     <WorkDir>/root/pardusman/LiveCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -271,6 +271,7 @@
         <Package>diffutils</Package>
         <Package>disk-manager</Package>
         <Package>disktype</Package>
+        <Package>djvu</Package>
         <Package>dmapi</Package>
         <Package>dmidecode</Package>
         <Package>dosbox</Package>
