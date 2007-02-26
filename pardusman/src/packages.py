@@ -14,6 +14,8 @@ import sys
 import urllib2
 import piksemel
 
+from utility import xterm_title
+
 class Console:
     def started(self, title):
         print title
@@ -161,11 +163,14 @@ class Repository:
         return doc.toPrettyString()
     
     def make_local_repo(self, path, package_list):
+        index = 0
         for name in package_list:
             p = self.packages[name]
+            xterm_title("Fetching: %s - %s of %s" % (name, index, len(package_list)))
             con = Console()
             cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, con)
             os.symlink(cached, os.path.join(path, os.path.basename(cached)))
+            index += 1
         index = self.make_index(package_list)
         import bz2
         data = bz2.compress(index)

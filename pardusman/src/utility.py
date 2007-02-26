@@ -9,6 +9,8 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import os
+import sys
 from kdecore import *
 from qt import *
 
@@ -31,3 +33,13 @@ def size_fmt(size):
     parts.reverse()
     tmp = ".".join(parts)
     return tmp.lstrip("0")
+
+def xterm_title(message):
+    """Set message as console window title."""
+    if os.environ.has_key("TERM") and sys.stderr.isatty():
+        terminalType = os.environ["TERM"]
+        for term in ["xterm", "Eterm", "aterm", "rxvt", "screen", "kterm", "rxvt-unicode"]:
+            if terminalType.startswith(term):
+                sys.stderr.write("\x1b]2;"+str(message)+"\x07")
+                sys.stderr.flush()
+                break

@@ -17,6 +17,8 @@ import stat
 import sys
 import time
 
+from utility import xterm_title
+
 #
 # Utilities
 #
@@ -48,6 +50,8 @@ def get_exclude_list(project):
 
 def generate_grub_conf(project, kernel, initramfs):
     print "Generating grub.conf files..."
+    xterm_title("Generating grub.conf files")
+    
     image_dir = project.image_dir()
     iso_dir = project.iso_dir()
     
@@ -144,6 +148,7 @@ def squash_image(project):
 
 def make_repos(project):
     print "Preparing image repo..."
+    xterm_title("Preparing image repo")
     
     try:
         repo = project.get_repo()
@@ -155,6 +160,7 @@ def make_repos(project):
         repo.make_local_repo(repo_dir, imagedeps)
         
         if project.type == "install":
+            xterm_title("Preparing installination repo")
             print "Preparing installation repository..."
             
             repo_dir = project.install_repo_dir(clean=True)
@@ -175,6 +181,8 @@ def check_file(repo_dir, name, hash):
 
 def check_repo_files(project):
     print "Checking image repo..."
+    xterm_title("Checking image repo")
+
     try:
         repo = project.get_repo()
         repo_dir = project.image_repo_dir()
@@ -207,6 +215,7 @@ def check_repo_files(project):
 
 def make_image(project):
     print "Preparing install image..."
+    xterm_title("Preparing install image")
    
     try:
         repo = project.get_repo()
@@ -266,6 +275,7 @@ def make_image(project):
 
 def make_iso(project):
     print "Preparing ISO..."
+    xterm_title("Preparing ISO")
     
     try:
         iso_dir = project.iso_dir(clean=True)
@@ -303,3 +313,4 @@ def make(project):
         make_install_repo(project)
     make_iso(project)
     print "ISO is ready!"
+    xterm_title("ISO is ready")
