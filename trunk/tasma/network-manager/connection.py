@@ -82,6 +82,7 @@ class Scanner(QPopupMenu):
         self.view.addColumn("")
         self.view.addColumn("")
         self.view.addColumn("")
+        self.view.setColumnAlignment(3, Qt.AlignRight)
         self.view.setResizeMode(QListView.LastColumn)
         self.view.setAllColumnsShowFocus(True)
         self.view.setShowToolTips(True)
