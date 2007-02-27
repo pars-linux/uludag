@@ -18,10 +18,99 @@ from icons import getIconSet, icons
 from comariface import comlink
 
 
+class Scanner(QPopupMenu):
+    def __init__(self, parent):
+        QPopupMenu.__init__(self)
+        self.parent = parent
+        self.connect(self, SIGNAL("aboutToShow()"), self.slotScan)
+        vb = QVBox(self)
+        self.insertItem(vb)
+        vb.setMargin(3)
+        vb.setSpacing(3)
+        lab = QLabel(i18n("Scan results:"), vb)
+        self.view = QListView(vb)
+        self.view.connect(self.view, SIGNAL("selectionChanged()"), self.slotScanSelect)
+        self.view.connect(self.view, SIGNAL("doubleClicked(QListViewItem *)"), self.slotScanDouble)
+        self.view.setMinimumSize(300, 120)
+        self.view.addColumn("")
+        self.view.addColumn("")
+        self.view.addColumn("")
+        self.view.addColumn("")
+        self.view.setResizeMode(QListView.LastColumn)
+        self.view.setAllColumnsShowFocus(True)
+        self.view.setShowToolTips(True)
+        self.view.header().hide()
+        hb = QHBox(vb)
+        hb.setSpacing(6)
+        but = QPushButton(getIconSet("reload", KIcon.Small), i18n("Scan again"), hb)
+        self.connect(but, SIGNAL("clicked()"), self.slotScan)
+        but = QPushButton(getIconSet("key_enter", KIcon.Small), i18n("Use"), hb)
+        self.scan_use_but = but
+        self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
+    
+    def slotScanDouble(self, item):
+        self.parent.remote.setText(item.text(2))
+        self.hide()
+    
+    def slotScanSelect(self):
+        item = self.view.selectedItem()
+        self.scan_use_but.setEnabled(item != None)
+    
+    def slotScanUse(self):
+        item = self.view.selectedItem()
+        if item:
+            self.slotScanDouble(item)
+    
+    def slotScan(self):
+        self.scan_use_but.setEnabled(False)
+        self.view.clear()
+        comlink.queryRemotes(self.parent.link.script, self.parent.device_uid)
+    
+    def signalIcon(self, signal):
+        # FIXME: make this more pythonic
+        num = 4
+        if signal >= 80 or signal == 0:
+            num = 0
+        elif signal >= 78:
+            num = 1
+        elif signal >= 75:
+            num = 2
+        elif signal >= 60:
+            num = 3
+        
+        iconSet = getIconSet(locate("data", "network-manager/signal_%d.xpm" % num), KIcon.Small)
+        return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
+    
+    def slotRemotes(self, script, remotes):
+        if self.parent.link.script != script:
+            return
+        if not remotes=="":
+            for remote in remotes.split("\n"):
+                # Convert to dict
+                params = remote.split("\t")
+                wifi = {}
+                for param in params:
+                    key, value = param.split('=',1)
+                    wifi[key] = value
+
+                signal = int(wifi["signal"])
+
+                if wifi["remote"] == "":
+                    wifi["remote"] = "<hidden>"
+
+                item = QListViewItem(self.view, "", "", wifi["remote"], wifi["mac"])
+
+                if wifi["encryption"] != "none":
+                    item.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
+
+                item.setPixmap(1, self.signalIcon(signal))
+
+
 class Settings(QWidget):
     def __init__(self, parent, link, conn, new_conn=None):
         QWidget.__init__(self, parent)
         
+        self.scanpop = None
         self.link = link
         self.conn = conn
         self.new_conn = new_conn
@@ -64,7 +153,8 @@ class Settings(QWidget):
                 hb.setSpacing(3)
                 self.remote = QLineEdit(hb)
                 but = QPushButton(getIconSet("find", KIcon.Small), i18n("Scan"), hb)
-                self.scanpop = self.initScan()
+                self.scanpop = Scanner(self)
+                comlink.remote_hook.append(self.scanpop.slotRemotes)
                 but.setPopup(self.scanpop)
                 grid.addWidget(hb, 1, 1)
             else:
@@ -129,41 +219,12 @@ class Settings(QWidget):
         self.setValues()
         
         comlink.device_hook.append(self.slotDevices)
-        comlink.remote_hook.append(self.slotRemotes)
         comlink.queryDevices(link.script)
     
     def cleanup(self):
-        comlink.remote_hook.remove(self.slotRemotes)
+        if self.scanpop:
+            comlink.remote_hook.remove(self.scanpop.slotRemotes)
         comlink.device_hook.remove(self.slotDevices)
-    
-    def initScan(self):
-        pop = QPopupMenu()
-        self.connect(pop, SIGNAL("aboutToShow()"), self.slotScan)
-        vb = QVBox(pop)
-        pop.insertItem(vb)
-        vb.setMargin(3)
-        vb.setSpacing(3)
-        lab = QLabel(i18n("Scan results:"), vb)
-        self.view = QListView(vb)
-        self.view.connect(self.view, SIGNAL("selectionChanged()"), self.slotScanSelect)
-        self.view.connect(self.view, SIGNAL("doubleClicked(QListViewItem *)"), self.slotScanDouble)
-        self.view.setMinimumSize(300, 120)
-        self.view.addColumn("")
-        self.view.addColumn("")
-        self.view.addColumn("")
-        self.view.addColumn("")
-        self.view.setResizeMode(QListView.LastColumn)
-        self.view.setAllColumnsShowFocus(True)
-        self.view.setShowToolTips(True)
-        self.view.header().hide()
-        hb = QHBox(vb)
-        hb.setSpacing(6)
-        but = QPushButton(getIconSet("reload", KIcon.Small), i18n("Scan again"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotScan)
-        but = QPushButton(getIconSet("key_enter", KIcon.Small), i18n("Use"), hb)
-        self.scan_use_but = but
-        self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
-        return pop
     
     def slotAuthToggle(self, i):
         if i == 0:
@@ -173,63 +234,6 @@ class Settings(QWidget):
         elif self.link.auth_modes[i-1].type == "login":
             self.auth_stack.raiseWidget(2)
     
-    def slotScanDouble(self, item):
-        self.remote.setText(item.text(2))
-        self.scanpop.hide()
-    
-    def slotScanSelect(self):
-        item = self.view.selectedItem()
-        self.scan_use_but.setEnabled(item != None)
-    
-    def slotScanUse(self):
-        item = self.view.selectedItem()
-        if item:
-            self.slotScanDouble(item)
-    
-    def slotScan(self):
-        self.scan_use_but.setEnabled(False)
-        comlink.queryRemotes(self.link.script, self.device_uid)
-    
-    def signalIcon(self, signal):
-        # FIXME: make this more pythonic
-        num = 4
-        if signal >= 80 or signal == 0:
-            num = 0
-        elif signal >= 78:
-            num = 1
-        elif signal >= 75:
-            num = 2
-        elif signal >= 60:
-            num = 3
-        
-        iconSet = getIconSet(locate("data", "network-manager/signal_%d.xpm" % num), KIcon.Small)
-        return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
-    
-    def slotRemotes(self, script, remotes):
-        if self.link.script != script:
-            return
-        self.view.clear()
-        if not remotes=="":
-            for remote in remotes.split("\n"):
-                # Convert to dict
-                params = remote.split("\t")
-                wifi = {}
-                for param in params:
-                    key, value = param.split('=',1)
-                    wifi[key] = value
-
-                signal = int(wifi["signal"])
-
-                if wifi["remote"] == "":
-                    wifi["remote"] = "<hidden>"
-
-                item = QListViewItem(self.view, "", "", wifi["remote"], wifi["mac"])
-
-                if wifi["encryption"] == "on":
-                    item.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
-
-                item.setPixmap(1, self.signalIcon(signal))
-
     def initNet(self, lay):
         line = widgets.HLine(i18n("Network settings"), self, "network")
         lay.addSpacing(12)
