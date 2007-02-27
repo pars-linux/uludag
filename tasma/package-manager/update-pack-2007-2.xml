@@ -1,0 +1,29 @@
+<PISI>
+    <Update>
+        <Name>Asla pes etme</Name>
+        <Summary>Sıkı bir update oldu, hede sorunu çok başımızı ağrıttı.</Summary>
+        <Date>2007-02-30</Date>
+     <Update>
+     <Package>
+         <Name>mplayer</Name>
+         <Date>2007-02-18</Date>
+         <Version>0.0_20070217</Version>
+         <Release>54</Release>
+         <Type>Bug</Type>
+         <UpdateSummary>
+             Flv ileri geri nanesi artık çalışıyor.
+         </UpdateSummary>
+     </Package>
+     <Package>
+         <PlsaId>33</PlsaId>
+         <Name>freeciv</Name>
+         <Date>2007-02-19</Date>
+         <Version>2.0.9-3-3</Version>
+         <Release>3</Release>
+         <Type>Security</Type>
+         <UpdateSummary>
+             Freeciv'in güvenlik açığı.
+         </UpdateSummary>
+     </Package>
+ </PISI>
+ 
