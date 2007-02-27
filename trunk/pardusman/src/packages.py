@@ -147,7 +147,7 @@ class Repository:
                     print "Error: package %s depends on non existing package %s" % (p.name, name2)
             if self.components.has_key(p.component):
                 self.components[p.component].packages.append(p.name)
-        from graph import Digraph, CycleException
+        from pisi.graph import Digraph, CycleException
         dep_graph = Digraph()
         for name in self.packages:
             p = self.packages[name]
