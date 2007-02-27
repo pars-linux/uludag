@@ -983,7 +983,7 @@ if test -z "$kde_x_includes" || test "x$kde_x_includes" = xNONE; then
   X_INCLUDES="-I$x_includes"
 fi
 
-if test -z "$kde_x_libraries" || test "x$kde_x_libraries" = xNONE; then
+if test -z "$kde_x_libraries" || test "x$kde_x_libraries" = xNONE || test "x$kde_x_libraries" = "/usr/lib"; then
   X_LDFLAGS=""
   x_libraries="/usr/lib"; dnl better than nothing :-
  else
@@ -3198,7 +3198,7 @@ AC_DEFUN([AC_CHECK_COMPILERS],
         case $host in
           *-*-linux-gnu)	
             CFLAGS="-std=iso9899:1990 -W -Wall -Wchar-subscripts -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE $CFLAGS"
-            CXXFLAGS="-ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion -Wchar-subscripts $CXXFLAGS"
+            CXXFLAGS="-ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wchar-subscripts $CXXFLAGS"
             KDE_CHECK_COMPILER_FLAG(Wmissing-format-attribute, [CXXFLAGS="$CXXFLAGS -Wformat-security -Wmissing-format-attribute"])
             KDE_CHECK_C_COMPILER_FLAG(Wmissing-format-attribute, [CFLAGS="$CFLAGS -Wformat-security -Wmissing-format-attribute"])
           ;;
@@ -4624,12 +4624,14 @@ fi
 
 AC_DEFUN([KDE_CHECK_PYTHON],
 [
-  KDE_CHECK_PYTHON_INTERN("2.4",
-   [KDE_CHECK_PYTHON_INTERN("2.3", 
-     [KDE_CHECK_PYTHON_INTERN("2.2", 
-       [KDE_CHECK_PYTHON_INTERN("2.1", 
-         [KDE_CHECK_PYTHON_INTERN("2.0", 
-           [KDE_CHECK_PYTHON_INTERN($1, $2) ])
+  KDE_CHECK_PYTHON_INTERN("2.5",
+    [KDE_CHECK_PYTHON_INTERN("2.4",
+     [KDE_CHECK_PYTHON_INTERN("2.3", 
+       [KDE_CHECK_PYTHON_INTERN("2.2", 
+         [KDE_CHECK_PYTHON_INTERN("2.1", 
+           [KDE_CHECK_PYTHON_INTERN("2.0", 
+             [KDE_CHECK_PYTHON_INTERN($1, $2) ])
+           ])
          ])
        ])
      ])
