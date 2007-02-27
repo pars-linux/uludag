@@ -147,11 +147,18 @@ class Repository:
                     print "Error: package %s depends on non existing package %s" % (p.name, name2)
             if self.components.has_key(p.component):
                 self.components[p.component].packages.append(p.name)
+        from graph import Digraph, CycleException
+        dep_graph = Digraph()
         for name in self.packages:
             p = self.packages[name]
             for dep in p.depends:
-                if dep in p.revdeps:
-                    print "Error: cyclic dependency between %s and %s" % (name, dep)
+                dep_graph.add_edge(name, dep)
+        try:
+            dep_graph.dfs()
+        except CycleException, c:
+            print "Error: Cyclic dependency detected: %s" % " -> ".join(c.cycle)
+            sys.exit(1)
+            
     
     def make_index(self, package_list):
         doc = piksemel.newDocument("PISI")
