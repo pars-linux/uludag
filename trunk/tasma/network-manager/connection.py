@@ -18,6 +18,52 @@ from icons import getIconSet, icons
 from comariface import comlink
 
 
+class ScanItem(QListViewItem):
+    def __init__(self, parent, data):
+        QListViewItem.__init__(self, parent)
+        info = {}
+        for param in data.split("\t"):
+            key, value = param.split("=", 1)
+            info[key] = value
+        
+        enc = info.get("encryption", "none")
+        if enc != "none":
+            self.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
+        self.enc = enc
+        
+        qual = info.get("signal", "0")
+        try:
+            qual = int(qual)
+        except:
+            qual = 0
+        self.setPixmap(1, self.signalIcon(qual))
+        
+        remote = info["remote"]
+        if remote == "<hidden>" or remote == "":
+            remote = i18n("<hidden>")
+        self.remote = remote
+        self.setText(2, remote)
+        
+        mac = info.get("mac", None)
+        if mac:
+            self.setText(3, mac)
+    
+    def signalIcon(self, signal):
+        # FIXME: make this more pythonic
+        num = 4
+        if signal >= 80 or signal == 0:
+            num = 0
+        elif signal >= 78:
+            num = 1
+        elif signal >= 75:
+            num = 2
+        elif signal >= 60:
+            num = 3
+        
+        iconSet = getIconSet(locate("data", "network-manager/signal_%d.xpm" % num), KIcon.Small)
+        return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
+
+
 class Scanner(QPopupMenu):
     def __init__(self, parent):
         QPopupMenu.__init__(self)
@@ -49,7 +95,18 @@ class Scanner(QPopupMenu):
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
     
     def slotScanDouble(self, item):
-        self.parent.remote.setText(item.text(2))
+        parent = self.parent
+        parent.remote.setText(item.remote)
+        if item.enc == "none":
+            i = 0
+        else:
+            i = 1
+            for mode in parent.link.auth_modes:
+                if mode.id == item.enc:
+                    break
+                i += 1
+        parent.auth_mode.setCurrentItem(i)
+        parent.slotAuthToggle(i)
         self.hide()
     
     def slotScanSelect(self):
@@ -66,44 +123,12 @@ class Scanner(QPopupMenu):
         self.view.clear()
         comlink.queryRemotes(self.parent.link.script, self.parent.device_uid)
     
-    def signalIcon(self, signal):
-        # FIXME: make this more pythonic
-        num = 4
-        if signal >= 80 or signal == 0:
-            num = 0
-        elif signal >= 78:
-            num = 1
-        elif signal >= 75:
-            num = 2
-        elif signal >= 60:
-            num = 3
-        
-        iconSet = getIconSet(locate("data", "network-manager/signal_%d.xpm" % num), KIcon.Small)
-        return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
-    
     def slotRemotes(self, script, remotes):
         if self.parent.link.script != script:
             return
-        if not remotes=="":
+        if not remotes == "":
             for remote in remotes.split("\n"):
-                # Convert to dict
-                params = remote.split("\t")
-                wifi = {}
-                for param in params:
-                    key, value = param.split('=',1)
-                    wifi[key] = value
-
-                signal = int(wifi["signal"])
-
-                if wifi["remote"] == "":
-                    wifi["remote"] = "<hidden>"
-
-                item = QListViewItem(self.view, "", "", wifi["remote"], wifi["mac"])
-
-                if wifi["encryption"] != "none":
-                    item.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
-
-                item.setPixmap(1, self.signalIcon(signal))
+                ScanItem(self.view, remote)
 
 
 class Settings(QWidget):
