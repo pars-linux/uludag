@@ -43,3 +43,19 @@ def xterm_title(message):
                 sys.stderr.write("\x1b]2;"+str(message)+"\x07")
                 sys.stderr.flush()
                 break
+
+def waitBus(unix_name, timeout=5, wait=0.1, stream=True):
+    import socket
+    import time
+    if stream:
+        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    else:
+        sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
+    while timeout > 0:
+        try:
+            sock.connect(unix_name)
+            return True
+        except:
+            timeout -= wait
+        time.sleep(wait)
+    return False
