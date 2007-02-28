@@ -31,7 +31,7 @@ class ScanItem(QListViewItem):
             self.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
         self.enc = enc
         
-        qual = info.get("signal", "0")
+        qual = info.get("quality", "0")
         try:
             qual = int(qual)
         except:
@@ -50,15 +50,15 @@ class ScanItem(QListViewItem):
     
     def signalIcon(self, signal):
         # FIXME: make this more pythonic
-        num = 4
-        if signal >= 80 or signal == 0:
-            num = 0
-        elif signal >= 78:
-            num = 1
-        elif signal >= 75:
-            num = 2
+        num = 0
+        if signal >= 80:
+            num = 4
         elif signal >= 60:
             num = 3
+        elif signal >= 40:
+            num = 2
+        elif signal >= 20:
+            num = 1
         
         iconSet = getIconSet(locate("data", "network-manager/signal_%d.xpm" % num), KIcon.Small)
         return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
