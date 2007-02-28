@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2007.1 Beta</Title>
+    <Title>Pardus 2007.1 RC</Title>
     <WorkDir>/root/pardusman/InstallCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -59,9 +59,11 @@
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
+        <SelectedPackage>glibc-locales-pt</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>grounation-xcursors</SelectedPackage>
         <SelectedPackage>gspca</SelectedPackage>
+        <SelectedPackage>gst-ffmpeg</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
@@ -90,6 +92,7 @@
         <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
+        <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
@@ -294,6 +297,9 @@
         <Package>db3</Package>
         <Package>db4</Package>
         <Package>dbus</Package>
+        <Package>dbus-glib</Package>
+        <Package>dbus-python</Package>
+        <Package>dbus-qt3</Package>
         <Package>dcraw</Package>
         <Package>ddcxinfos</Package>
         <Package>debianutils</Package>
@@ -364,6 +370,7 @@
         <Package>glibc-locales-de</Package>
         <Package>glibc-locales-es</Package>
         <Package>glibc-locales-nl</Package>
+        <Package>glibc-locales-pt</Package>
         <Package>glibmm</Package>
         <Package>glut</Package>
         <Package>gmp</Package>
@@ -385,6 +392,7 @@
         <Package>gsl</Package>
         <Package>gsm</Package>
         <Package>gspca</Package>
+        <Package>gst-ffmpeg</Package>
         <Package>gst-plugins-base</Package>
         <Package>gst-plugins-good</Package>
         <Package>gst-plugins-ugly</Package>
@@ -437,6 +445,7 @@
         <Package>kde-i18n-de</Package>
         <Package>kde-i18n-es</Package>
         <Package>kde-i18n-nl</Package>
+        <Package>kde-i18n-pt_BR</Package>
         <Package>kde-i18n-tr</Package>
         <Package>kdeaddons</Package>
         <Package>kdeartwork-emoticons</Package>
@@ -691,7 +700,6 @@
         <Package>pygobject</Package>
         <Package>pygtk</Package>
         <Package>pyparted</Package>
-        <Package>pyrex</Package>
         <Package>python</Package>
         <Package>python-bsddb3</Package>
         <Package>python-fchksum</Package>
