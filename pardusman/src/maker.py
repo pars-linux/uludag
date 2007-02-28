@@ -17,7 +17,7 @@ import stat
 import sys
 import time
 
-from utility import xterm_title
+from utility import xterm_title, waitBus
 
 #
 # Utilities
@@ -32,8 +32,7 @@ def chroot_comar(image_dir):
         os.chroot(image_dir)
         subprocess.call(["/usr/bin/comar"])
         sys.exit(0)
-    #FIXME: lame, properly wait comar socket (inside chroot) here
-    time.sleep(2)
+    waitBus("%s/var/run/comar.socket" % image_dir)
 
 def get_exclude_list(project):
     exc = project.exclude_list()[:]
@@ -257,6 +256,9 @@ def make_image(project):
             chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,pnpadmin,video,audio password pardus")
         chrun("/usr/bin/comar --stop")
         
+        chrun("/sbin/update-modules")
+        chrun("/sbin/depmod -a %s-%s" % (repo.packages["kernel"].version, repo.packages["kernel"].release))
+        
         path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
         path2 = os.path.join(image_dir, "etc/inittab")
         os.unlink(path2)
@@ -264,7 +266,7 @@ def make_image(project):
         
         file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
         
-        if project.type != "install":
+        if project.type != "install" and "kdebase" in project.all_packages:
             setup_live_kdm(project)
         
         run('umount %s/proc' % image_dir)
