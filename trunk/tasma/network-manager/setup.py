@@ -17,7 +17,7 @@ import glob
 import shutil
 import kdedistutils
 
-version = "1.11"
+version = "1.12"
 
 distfiles = """
     README
@@ -29,6 +29,7 @@ distfiles = """
     help/en/*.html
     help/tr/*.html
     help/es/*.html
+    help/pt_BR/*.html
     po/*.po
     po/*.pot
 """
