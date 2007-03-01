@@ -26,10 +26,7 @@ distfiles = """
     images/*.png
     images/*.xpm
     help/*.css
-    help/en/*.html
-    help/tr/*.html
-    help/es/*.html
-    help/pt_BR/*.html
+    help/*/*.html
     po/*.po
     po/*.pot
 """
