@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-27 14:25+0200\n"
-"PO-Revision-Date: 2007-02-18 03:05+0200\n"
+"PO-Revision-Date: 2007-03-01 21:12+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,7 @@ msgstr "Naamserver:"
 
 #: connection.py:43
 msgid "<hidden>"
-msgstr ""
+msgstr "<verborgen>"
 
 #: connection.py:76
 msgid "Scan results:"
@@ -156,7 +156,7 @@ msgstr "Modus:"
 
 #: connection.py:205
 msgid "No authentication"
-msgstr "Geen toegang"
+msgstr "Geen identificatie"
 
 #: connection.py:223 connection.py:234
 msgid "Password:"
@@ -249,7 +249,7 @@ msgstr "Installeer netwerkpakketten!"
 # Comar-netwerkscripts
 #: newconn.py:119
 msgid "No package with COMAR network scripts are installed yet."
-msgstr "Er is nog geen pakket met COMAR netwerkscripts geïnstalleerd."
+msgstr "Geen pakket met COMAR netwerkscripts is geïnstalleerd."
 
 #: network-applet.py:293
 msgid "Firewall..."
@@ -274,3 +274,4 @@ msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Netwerk-applet"
+
