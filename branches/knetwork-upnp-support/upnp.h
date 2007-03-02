@@ -1,3 +1,5 @@
+// Original work belongs to Ivor Hewitt
+
 #include <qobject.h>
 #include <qnetwork.h>
 #include <qhttp.h>

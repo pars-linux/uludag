@@ -1,6 +1,7 @@
 //
 // Trivial UPnP controller
-// 
+//
+// Original work belongs to Ivor Hewitt
 
 #include <qsocketdevice.h>
 #include <qurl.h>
