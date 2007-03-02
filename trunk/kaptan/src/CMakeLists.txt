@@ -31,7 +31,7 @@ SET(
 KDE3_ADD_UI_FILES(kaptan_sources ${kaptan_ui})
 
 KDE3_ADD_EXECUTABLE(kaptan ${kaptan_sources})
-TARGET_LINK_LIBRARIES(kaptan ${QT_AND_KDECORE_LIBS} kdeui)
+TARGET_LINK_LIBRARIES(kaptan ${QT_QT_LIBRARY} kdecore kdeui)
 
 INSTALL_TARGETS(/bin kaptan)
 INSTALL_FILES(/share/applications/kde FILES kaptan.desktop)
