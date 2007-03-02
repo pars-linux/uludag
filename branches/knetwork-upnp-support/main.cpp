@@ -34,7 +34,7 @@ void MainThread::run()
      * Helper function to locate a suitable NAT service to use
      */
     UPnPWANService *srv;
-    while ( !(srv = upnp.GetService("NAT")))
+    while ( !(srv = upnp.getNATService()) )
     {
         cout << "Waiting" << endl;
         sleep(1);
@@ -46,7 +46,7 @@ void MainThread::run()
          * Get our IP address
          */
         QString ip;
-        if (srv->GetExternalIPAddress(ip))
+        if (srv->getExternalIPAddress(ip))
         {
             cout << ip << endl;
         }

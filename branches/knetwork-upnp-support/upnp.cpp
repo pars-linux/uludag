@@ -109,7 +109,7 @@ cout << "requestFinished." << endl;
             QDomNode n = nl.item(i);
             QDomElement e = n.toElement();
 
-            Service *srv = ServiceFactory::Create(this, e);
+            Service *srv = ServiceFactory::create(this, e);
             if (srv)
             {
                 m_services.append(srv);
@@ -189,7 +189,7 @@ cout << "GetExternal" << endl;
     QString request(doc.toString());
 
     QString response;
-    ret = m_dev->Command( m_serviceType, "GetExternalIPAddress", m_controlURL, request, response );
+    ret = m_dev->command( m_serviceType, "GetExternalIPAddress", m_controlURL, request, response );
 
     cout << "Ret: " << ret << "Resp: " << response << endl;
 /*response*/
@@ -255,7 +255,7 @@ bool UPnPWANService::addPortMapping( const QString& remotehost, unsigned int ext
     QString request(doc.toString());
 
     QString response;
-    ret = m_dev->Command(m_serviceType, "AddPortMapping", m_controlURL, request, response);
+    ret = m_dev->command(m_serviceType, "AddPortMapping", m_controlURL, request, response);
 
 cout << response << endl;
 
@@ -290,7 +290,7 @@ bool UPnPWANService::deletePortMapping( const QString& remotehost, int external_
     QString request(doc.toString());
 
     QString response;
-    ret = m_dev->Command(m_serviceType, "DeletePortMapping", m_controlURL, request, response);
+    ret = m_dev->command(m_serviceType, "DeletePortMapping", m_controlURL, request, response);
 
 cout << response << endl;
 
@@ -334,19 +334,19 @@ UPnPWANService* UPnP::getNATService()
 
                 QString ret;
                 /* is it connected */
-                if (!wsrv->GetStatusInfo(ret) || ret != "Connected")
+                if (!wsrv->getStatusInfo(ret) || ret != "Connected")
                 {
                     cout << "not connected" << endl;
                     continue;
                 }
                 /* is NAT enabled */
-                if (!wsrv->GetNATStatus(ret) || ret != "Enabled")
+                if (!wsrv->getNATStatus(ret) || ret != "Enabled")
                 {
                     cout << "not enabled" << endl;
                     continue;
                 }
                 /* does it have an ip address */
-                if (!wsrv->GetExternalIPAddress(ret) || ret=="")
+                if (!wsrv->getExternalIPAddress(ret) || ret=="")
                 {
                     cout << "no ip" << endl;
                     continue;
