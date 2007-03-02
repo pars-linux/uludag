@@ -17,7 +17,7 @@
 using namespace std;
 
 
-Service *ServiceFactory::Create( const Device* dev, const QDomElement &el )
+Service *ServiceFactory::create( const Device* dev, const QDomElement &el )
 {
     QString serviceType;
     QString serviceName;
@@ -121,7 +121,7 @@ cout << "requestFinished." << endl;
 /*
  * blocking http request.
  */
-bool Device::Command( const QString &service, const QString &command, const QString &url_path, const QString &content, QString &response ) const
+bool Device::command( const QString &service, const QString &command, const QString &url_path, const QString &content, QString &response ) const
 {
     QHttp cmd_http;
     cmd_http.setHost(m_url.host(), m_url.port());
@@ -173,7 +173,7 @@ Service::~Service()
 UPnPWANService::~UPnPWANService()
 {}
 
-bool UPnPWANService::GetExternalIPAddress( QString &ip )
+bool UPnPWANService::getExternalIPAddress( QString &ip )
 {
     bool ret=false;
 cout << "GetExternal" << endl;
@@ -204,7 +204,7 @@ cout << "GetExternal" << endl;
     return ret;
 }
 
-bool UPnPWANService::AddPortMapping( const QString& remotehost, unsigned int external_port,
+bool UPnPWANService::addPortMapping( const QString& remotehost, unsigned int external_port,
                      const QString& protocol, unsigned int internal_port,
                      const QString& localclient,
                      const QString& comment, int duration )
@@ -262,7 +262,7 @@ cout << response << endl;
     return ret;
 }
 
-bool UPnPWANService::DeletePortMapping( const QString& remotehost, int external_port, const QString &protocol )
+bool UPnPWANService::deletePortMapping( const QString& remotehost, int external_port, const QString &protocol )
 {
     bool ret=false;
 
@@ -426,8 +426,3 @@ cout << "Notification url: " << url.host() << " port " << url.port() << " path "
         }
     }
 }
-
-
-
-
-
