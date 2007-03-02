@@ -35,7 +35,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP('Pardus Firewall Graphical User Interface')
-version = '1.6.2'
+version = '1.6.3'
 
 def AboutData():
     global version, description
@@ -201,6 +201,7 @@ class MainApplication(programbase):
         mainwidget.pixmapFW.setPixmap(loadIcon('firewall_config', size=48))
         mainwidget.pixmapIncoming.setPixmap(loadIcon('server.png', size=48))
         mainwidget.pixmapAdvanced.setPixmap(loadIcon('gear.png', size=48))
+        mainwidget.pushNewRule.setPixmap(loadIcon('add.png', size=32))
 
         # COMAR
         self.comar = comar.Link()
