@@ -21,7 +21,7 @@ SET(
 KDE3_AUTOMOC(${tasma_sources})
 
 KDE3_ADD_EXECUTABLE(tasma ${tasma_sources})
-TARGET_LINK_LIBRARIES(tasma ${QT_AND_KDECORE_LIBS} kdeui kutils)
+TARGET_LINK_LIBRARIES(tasma ${QT_QT_LIBRARY} kdecore kdeui kutils)
 
 INSTALL_TARGETS(/bin tasma)
 INSTALL_FILES(/share/applications/kde FILES tasma.desktop)
