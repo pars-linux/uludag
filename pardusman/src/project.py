@@ -211,7 +211,7 @@ class Project:
         return self._get_dir("iso", clean)
     
     def iso_file(self, clean=True):
-        path = os.path.join(self.work_dir, "pardus.iso")
+        path = os.path.join(self.work_dir, "%s.iso" % self.title.replace(" ", "_"))
         if clean and os.path.exists(path):
             os.unlink(path)
         return path
