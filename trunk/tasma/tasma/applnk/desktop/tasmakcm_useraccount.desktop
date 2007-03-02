@@ -25,6 +25,6 @@ Comment[tr]=Parola, isim ve e-posta gibi kullanıcı bilgisi
 Comment[nl]=Gebruikerinformatie zoals wachtwoord, naam en e-mailadres
 Comment[es]=Información de usuario: contraseña, nombre, email, etc.
 Comment[de]=Benutzerinformationen wie Passwort, Name und E-Mail
-Comment[pt_BR]=Informação do usuário, tal qual senha, nome e email
+Comment[pt_BR]=Informações do usuário: senha, nome, email, etc.
 
 Categories=QT;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount

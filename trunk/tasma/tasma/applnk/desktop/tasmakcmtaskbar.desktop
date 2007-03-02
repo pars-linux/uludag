@@ -29,6 +29,6 @@ Keywords[tr]=kicker,panel,kpanel,görev çubuğu,başlangıç çubuğu,yükleme 
 Keywords[nl]=kicker,panel,paneel,kpanel,takenbalk,startbalk,launchbar,startmenu,vensters,taakbalk
 Keywords[es]=kicker,panel,kpanel,barra de tareas,barra de inicio,launchbar,ventanas
 Keywords[de]=Kicker,Leiste,KPanel,Taskleiste,Startleiste,Startleiste,Fenster
-Keywords[pt_BR]=kicker,painel,kpanel,barra de tarefas,barra de início,launchbar,janelas
+Keywords[pt_BR]=kicker,painel,kpanel,barra de tarefas,barra de início,barra de lançamento,janelas
 
 Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

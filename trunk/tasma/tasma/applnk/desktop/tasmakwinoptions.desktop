@@ -14,7 +14,7 @@ Name[tr]=Pencere Davranışı
 Name[nl]=Venstergedrag
 Name[es]=Comportamiento de Ventanas
 Name[de]=Fensterverhalten
-Name[pt_BR]=Comportamento de Janelas
+Name[pt_BR]=Comportamento da Janelas
 
 Comment=Configure the window behavior
 Comment[tr]=Pencere davranışlarını yapılandır
@@ -28,6 +28,6 @@ Keywords[tr]=odak,odak davranış biçimi,pencere yerleşimi,pencere davranış�
 Keywords[nl]=focusbeleid,vensterplaatsing,venstergedrag,focus,window,plaatsing,plaatsingbeleid,animatie,voorgrond,vensters,frame,kader,dubbelklikken
 Keywords[es]=foco,ubicación,comportamiento de ventana,animación,activar,activar automatico,ventanas,marco,barra de título,dobleclic
 Keywords[de]=Fokus,Platzierung,Fensterverhalten,Animation,heben,automatisch heben,Fenster,Rahmen,Titelleiste,Doppelklick
-Keywords[pt_BR]=foco,colocação,comportamento de janela,animação,elevar,auto-elevar,janelas,quadro,barra de título,clique duplo
+Keywords[pt_BR]=foco,posicionamento,comportamento de janela,animação,elevar,auto-elevar,janelas,quadro,barra de título,clique duplo
 
 Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop
