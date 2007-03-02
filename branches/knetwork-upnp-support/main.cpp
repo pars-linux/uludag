@@ -51,7 +51,7 @@ void MainThread::run()
             cout << ip << endl;
         }
 
-/*        if (srv->AddPortMapping( "", 8010,
+        if (srv->addPortMapping( "", 8010,
                                  "TCP", 8010,
                                  "192.168.0.32",
                                  "test tunnel", 0 ))
@@ -59,10 +59,10 @@ void MainThread::run()
             cout << "New port mapping created." << endl;
         }
 
-        if (srv->DeletePortMapping( "", 8010, "TCP"))
+        if (srv->deletePortMapping( "", 8010, "TCP"))
         {
             cout << "Port mapping deleted." << endl;
-            }*/
+        }
     }
 
 }
