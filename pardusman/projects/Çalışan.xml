@@ -26,7 +26,6 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
-        <SelectedPackage>crack-attack</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>dhcp</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
@@ -95,7 +94,6 @@
         <SelectedPackage>kiki</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>knights</SelectedPackage>
-        <SelectedPackage>kobodeluxe</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>kradio</SelectedPackage>
@@ -149,7 +147,6 @@
         <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
-        <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
@@ -178,7 +175,6 @@
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
         <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
-        <SelectedPackage>xmoto</SelectedPackage>
         <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
@@ -250,9 +246,6 @@
         <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
-        <Package>crack-attack</Package>
-        <Package>crack-attack-music</Package>
-        <Package>crack-attack-sounds</Package>
         <Package>cracklib</Package>
         <Package>cryptsetup-luks</Package>
         <Package>ctags</Package>
@@ -425,7 +418,6 @@
         <Package>klibc</Package>
         <Package>knazar</Package>
         <Package>knights</Package>
-        <Package>kobodeluxe</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>kradio</Package>
@@ -562,7 +554,6 @@
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
         <Package>ltris</Package>
-        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>mDNSResponder</Package>
@@ -609,7 +600,6 @@
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
         <Package>ntp-client</Package>
-        <Package>ode</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
@@ -698,7 +688,6 @@
         <Package>splash-theme</Package>
         <Package>splashutils</Package>
         <Package>splashutils-misc</Package>
-        <Package>squashfs-tools</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
         <Package>stlport</Package>
@@ -765,7 +754,6 @@
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
-        <Package>xmoto</Package>
         <Package>xorg-app</Package>
         <Package>xorg-data</Package>
         <Package>xorg-font</Package>
