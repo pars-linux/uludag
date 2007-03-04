@@ -24,6 +24,7 @@ def do_operation(project_file, op):
     start = time.time()
     
     if op == "make" or op == "make-repo":
+        prj.get_repo(update_repo=True)
         maker.make_repos(prj)
     if op == "check-repo":
         maker.check_repo_files(prj)
