@@ -16,10 +16,11 @@
 #ifndef ZSCONN_H
 #define ZSCONN_H
 
+#include <dbus/dbus-glib.h>
 #include "zstring.h"
 
-using namespace std;
 
+using namespace std;
 
 class ZSConn
 {
@@ -30,11 +31,13 @@ public:
     ZString checkString( const string& str, int offset ) const;
 
 private:
-    int _conn;
-
+    DBusGConnection *connection;
+    DBusGProxy *proxy;
+    
     enum Z_CHECK_RESULT spellCheck( const string& str ) const;
     vector<string> getSuggestions (const string& str ) const;
     string recvResult() const;
+    
 };
 
 #endif
