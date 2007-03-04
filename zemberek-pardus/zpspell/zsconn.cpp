@@ -10,47 +10,31 @@
 */
 
 #include <iostream>
-#include <sstream>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <netdb.h>
+#include <glib.h>
 
 #include "zsconn.h"
 
-#define HOST "localhost"
-#define ZPORT 10444
-
-
 ZSConn::ZSConn()
 {
-    struct hostent *he;
-    struct sockaddr_in saddr;
+    GError *gerror = 0;
+    g_type_init();
 
-    if ( ( he = (struct hostent *)gethostbyname(HOST) ) == NULL ) {
-	perror( "gethostbyname()" );
+    connection = dbus_g_bus_get(DBUS_BUS_SYSTEM, &gerror);
+    if (!connection)
+    {
+	g_error_free(gerror);
+	perror("dbus_g_bus_get()");
     }
-
-    if ( ( _conn = socket(AF_INET, SOCK_STREAM, 0) ) == -1 ) {
-	perror( "socket()" );
-    }
-
-    saddr.sin_family = AF_INET;
-    saddr.sin_port = htons( (uint16_t)ZPORT );
-    saddr.sin_addr = *( (struct in_addr *)he->h_addr );
-    memset( &(saddr.sin_zero), '\0', 8 );
-
-    if ( connect(_conn, (struct sockaddr *)&saddr, sizeof(struct sockaddr)) == -1) {
-        perror("connect()");
-    }
+    proxy = dbus_g_proxy_new_for_name(connection,
+				      "net.zemberekserver.server.dbus",
+				      "/net/zemberekserver/server/dbus/ZemberekDbus",
+				      "net.zemberekserver.server.dbus.ZemberekDbusInterface");
 }
 
 ZSConn::~ZSConn()
 {
-    if ( _conn ) {
-        shutdown( _conn, SHUT_RDWR );
-        close( _conn );
-    }
+    if (proxy)
+	g_object_unref(proxy);
 }
 
 
@@ -86,97 +70,41 @@ ZString ZSConn::checkString( const string& str, int offset ) const
 
 enum Z_CHECK_RESULT ZSConn::spellCheck( const string& str ) const
 {
-    stringstream strstream;
-    strstream << str.length()+2 << " * " << str;
-    string checkStr = strstream.str();
-    if ( send(_conn, checkStr.c_str(), checkStr.length(), 0) == -1) {
-        perror("send()");
+    gboolean result;
+    GError *gerror = 0;
+
+    if (!dbus_g_proxy_call(proxy, "kelimeDenetle", &gerror,
+			   G_TYPE_STRING, str.c_str() ,G_TYPE_INVALID,
+			   G_TYPE_BOOLEAN, &result, G_TYPE_INVALID))
+    {
+    	g_error_free(gerror);
+    	return Z_UNKNOWN;
     }
 
-    switch ( recvResult()[0] ) {
-    case '*':
-        return Z_TRUE;
-        break;
-    case '#':
-        return Z_FALSE;
-        break;
-    default:
-        return Z_UNKNOWN;
-        break;
-    }
+    if (result)
+	return Z_TRUE;
+    else
+	return Z_FALSE;
 }
 
 vector<string> ZSConn::getSuggestions(const string& str ) const
 {
-    stringstream strstream;
-    strstream << str.length()+2 << " & " << str;
-    string checkStr = strstream.str();
-    if ( send( _conn, checkStr.c_str(), checkStr.length(), 0 ) == -1 ) {
-        perror( "send()" );
-    }
-
+    char** suggs;
+    GError* gerror = 0;
     vector<string> suggestions;
-    string result = recvResult();
 
-    if ( result[0] != '&' ) {
-        return suggestions;
+    if (!dbus_g_proxy_call(proxy, "oner", &gerror,
+			   G_TYPE_STRING, str.c_str(), G_TYPE_INVALID,
+			   G_TYPE_STRV, &suggs, G_TYPE_INVALID))
+    {
+    	g_error_free(gerror);
+    	perror("getSuggestions()");
     }
-
-    string::iterator it = result.begin();
-    string::iterator end = result.end();
-    bool start = false;
-    string tmp;
-    for ( ; it != end; ++it ) {
-        if ( *it == '(' ) {
-            start = true;
-            continue;
-        }
-
-        if ( !start ) continue;
-
-
-        if ( *it == ',' ) {
-            suggestions.push_back( tmp );
-            tmp.erase();
-            continue;
-        } else if ( *it == ')' ) {
-            suggestions.push_back( tmp );
-            break;
-        }
-
-        tmp += *it;
-    }
+    
+    int suggs_len = g_strv_length(suggs);
+    for (int i = 0; i < suggs_len; ++i)
+	suggestions.push_back(string(suggs[i]));
 
     return suggestions;
 }
 
-
-string ZSConn::recvResult() const
-{
-    int numbytes = 0;
-    string buf("");
-
-    int size = 0;
-    while (true) {
-        char s;
-        numbytes = recv (_conn, &s, 1, 0);
-
-        // ' ' boşluk karakteri hiç gelmezse???
-        if (s == ' ') {
-            char *endptr;
-            size = strtol (buf.c_str() , &endptr, 0);
-            buf.erase();
-            break;
-        }
-
-        buf += s;
-    }
-    char *ret = new char[size+1];
-    numbytes = recv (_conn, ret, size, 0);
-    ret[numbytes]='\0';
-
-    string result = ret;
-    delete ret;
-
-    return result;
-}
