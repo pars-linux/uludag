@@ -1,0 +1,3 @@
+zpspell is the command line interface for zemberek-server. It
+simulates the ispell interface for being compatible with programs
+using ispell interactive mode.

@@ -1,0 +1,6 @@
+2007-03-05  Barış Metin  <baris@pardus.org.tr>
+
+        * Remove autotools support and use CMake instead.
+
+        * zpspell uses DBUS to connect zemberek-server now.
+
