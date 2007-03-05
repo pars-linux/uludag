@@ -45,6 +45,7 @@ def AboutData():
                             None, None,
                             'gokmen@pardus.org.tr')
     about_data.addAuthor('Gökmen GÖKSEL', None, 'gokmen@pardus.org.tr')
+
     return about_data
 
 def loadIcon(name, group=KIcon.Desktop, size=16):
@@ -126,19 +127,20 @@ class diskForm(mainForm):
             QMessageBox(i18n("Error"),i18n("User not in disk group !"),QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
             self.disableAll()
         else:
-            try:
+            #try:
+            if 1:
                 self.Fstab = fstab.Fstab()
                 self.Dbus = DbusListener()
                 self.fillFileSystems()
                 self.list_main.header().hide()
                 self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
                 self.initialize()
-            except:
+            """except:
                 self.label_warn.setText(i18n("File /etc/fstab is not correct, please fix it manually."))
                 self.label_warn.show()
                 QMessageBox(i18n("Error"),i18n("File /etc/fstab is not correct, please fix it manually."),
                                           QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
-                self.disableAll()
+                self.disableAll()"""
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
@@ -287,10 +289,15 @@ class diskForm(mainForm):
             disks.setPixmap(0,loadIcon('Disk',size=32))
             disks.setOpen(True)
             self.prettyList[disk]=[]
-
+            
             for partition in self.getPartitionsFromSys(disk):
-                if self.fstabPartitions.has_key(partition[0]):
-                    activePartition = self.fstabPartitions.get(partition[0])
+                moodi = partition[0]
+                if partition[0] in self.Fstab.Label:
+                    if self.fstabPartitions.has_key("LABEL=%s" % self.Fstab.Label[partition[0]]):
+                        moodi = "LABEL=%s" % self.Fstab.Label[partition[0]]
+                
+                if self.fstabPartitions.has_key(moodi):
+                    activePartition = self.fstabPartitions.get(moodi)
                     pixie = loadIcon('DiskAdded',size=32)
                     check = QCheckListItem.On
                 else:
@@ -298,7 +305,10 @@ class diskForm(mainForm):
                     pixie = loadIcon('DiskNotAdded',size=32)
                     check = QCheckListItem.Off
 
-                activePartition['partition_name']=partition[0]
+
+                activePartition['partition_name']=moodi
+                if moodi.startswith("LABEL"):
+                    activePartition['partition_name']=moodi[6:]
                 partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + '\n' +
                                                           i18n('Mount Point') +' : '+ activePartition['mount_point'] + '\t' +
                                                           i18n('File System Type') +' : '+ activePartition['file_system']),
