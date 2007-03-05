@@ -237,7 +237,7 @@ class ProjectWindow(KMainWindow):
     def checkSettings(self):
         if not self.ui2project():
             return
-        if not os.path.exists(self.project.release_files):
+        if self.project.release_files and not os.path.exists(self.project.release_files):
             self.console.error(_("Release files directory does not exist."))
             return
         return True
@@ -288,8 +288,6 @@ class ProjectWindow(KMainWindow):
             self.project.release_files = tmp
         else:
             self.project.release_files = None
-            self.console.error(_("Release files directory not given."))
-            return
         tmp = unicode(self.work_dir.text())
         if tmp:
             self.project.work_dir = tmp
