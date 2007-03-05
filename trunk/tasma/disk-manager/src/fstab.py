@@ -124,8 +124,9 @@ class Fstab:
                 self.__allPartitions[p].update(self.__fstabPartitions[p])
 
     def maplabels(self):
-        for f in os.listdir("/dev/disk/by-label/"):
-            self.Label[getBlocknameByLabel(f)] = f
+        if os.path.exists("/dev/disk/by-label"):
+            for f in os.listdir("/dev/disk/by-label/"):
+                self.Label[getBlocknameByLabel(f)] = f
 
     def writeContent(self, File = None):
         if not self.Debug:
@@ -212,7 +213,8 @@ class Fstab:
 
         err = []
         if not self.__allPartitions.get(partition):
-            err.append("ERROR: '%s' is not an available partition." % (partition))
+            if partition not in self.Label.values():
+                err.append("ERROR: '%s' is not an available partition." % (partition))
         if self.__fstabPartitions.get(partition):
             self.delFstabEntry(partition)
         if err:
