@@ -48,6 +48,7 @@
         <Package>jpeg</Package>
         <Package>kbd</Package>
         <Package>kernel</Package>
+        <Package>kernel-headers</Package>
         <Package>klibc</Package>
         <Package>less</Package>
         <Package>lib-compat</Package>
@@ -57,7 +58,6 @@
         <Package>libperl</Package>
         <Package>libpng</Package>
         <Package>libusb</Package>
-        <Package>linux-headers</Package>
         <Package>lzma</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
