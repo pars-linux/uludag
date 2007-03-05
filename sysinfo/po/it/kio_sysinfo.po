@@ -1,232 +1,234 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of kio_sysinfo.po to italiano
 # This file is put in the public domain.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Andrea Decorte <adecorte@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-01 16:28+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2007-03-05 09:24+0200\n"
+"Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
+"Language-Team: italiano\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ksysinfopart.cpp:72
 msgid "KSysinfo"
-msgstr ""
+msgstr "KSysinfo"
 
 #: sysinfo.cpp:67
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: sysinfo.cpp:69
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: sysinfo.cpp:71
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: sysinfo.cpp:107 sysinfo.cpp:101
 msgid "My Computer"
-msgstr ""
+msgstr "Il mio computer"
 
 #: sysinfo.cpp:102
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
+msgstr "Cartelle, dischi rigidi, dispositivi rimovibili, informazioni sul sistema e altro..."
 
 #: sysinfo.cpp:108
 msgid "Looking for disk information..."
-msgstr ""
+msgstr "Recupero delle informazioni sul disco..."
 
 #: sysinfo.cpp:109
 msgid "Disk Information"
-msgstr ""
+msgstr "Informazioni sul disco"
 
 #: sysinfo.cpp:113
 msgid "OS Information"
-msgstr ""
+msgstr "Informazioni sul sistema operativo"
 
 #: sysinfo.cpp:115
 msgid "OS:"
-msgstr ""
+msgstr "SO:"
 
 #: sysinfo.cpp:116
 msgid "Current user:"
-msgstr ""
+msgstr "Utente corrente:"
 
 #: sysinfo.cpp:117
 msgid "System:"
-msgstr ""
+msgstr "Sistema:"
 
 #: sysinfo.cpp:118
 msgid "KDE:"
-msgstr ""
+msgstr "KDE:"
 
 #: sysinfo.cpp:124
 msgid "Display Info"
-msgstr ""
+msgstr "Informazioni sulla scheda video"
 
 #: sysinfo.cpp:126
 msgid "Vendor:"
-msgstr ""
+msgstr "Produttore:"
 
 #: sysinfo.cpp:127
 msgid "Model:"
-msgstr ""
+msgstr "Modello:"
 
 #: sysinfo.cpp:129
 msgid "Driver:"
-msgstr ""
+msgstr "Driver:"
 
 #: sysinfo.cpp:136
 msgid "Getting OS information...."
-msgstr ""
+msgstr "Recupero delle informazioni sul sistema operativo...."
 
 #: sysinfo.cpp:139
 msgid "Common Folders"
-msgstr ""
+msgstr "Cartelle di frequente utilizzo"
 
 #: sysinfo.cpp:143
 msgid "My Home Folder"
-msgstr ""
+msgstr "Cartella Home"
 
 #: sysinfo.cpp:144
 msgid "Root Folder"
-msgstr ""
+msgstr "Cartella di root"
 
 #: sysinfo.cpp:145
 msgid "Network Folders"
-msgstr ""
+msgstr "Cartelle di rete"
 
 #: sysinfo.cpp:149
 msgid "Looking up network status..."
-msgstr ""
+msgstr "Analisi dello stato della rete..."
 
 #: sysinfo.cpp:152
 msgid "Network Status"
-msgstr ""
+msgstr "Stato della rete"
 
 #: sysinfo.cpp:159
 msgid "Looking for CPU information..."
-msgstr ""
+msgstr "Recupero delle informazioni sulla CPU..."
 
 #: sysinfo.cpp:163
 msgid "CPU Information"
-msgstr ""
+msgstr "Informazioni sulla CPU"
 
 #: sysinfo.cpp:165
 msgid "Processor (CPU):"
-msgstr ""
+msgstr "Processore (CPU):"
 
 #: sysinfo.cpp:166
 msgid "Speed:"
-msgstr ""
+msgstr "Frequenza:"
 
 #: sysinfo.cpp:167
 msgid "%1 MHz"
-msgstr ""
+msgstr "%1 MHz"
 
 #: sysinfo.cpp:172
 msgid "Looking for memory information..."
-msgstr ""
+msgstr "Recupero delle informazioni sulla memoria..."
 
 #: sysinfo.cpp:174
 msgid "Memory Information"
-msgstr ""
+msgstr "Informazioni sulla memoria"
 
 #: sysinfo.cpp:176
 msgid "Total memory (RAM):"
-msgstr ""
+msgstr "Memoria RAM totale:"
 
 #: sysinfo.cpp:177
 msgid "Free memory:"
-msgstr ""
+msgstr "Memoria libera:"
 
 #: sysinfo.cpp:178
 msgid "Used Memory"
-msgstr ""
+msgstr "Memoria in uso"
 
 #: sysinfo.cpp:179
 msgid "Total swap:"
-msgstr ""
+msgstr "Swap totale:"
 
 #: sysinfo.cpp:180
 msgid "Free swap:"
-msgstr ""
+msgstr "Swap libero:"
 
 #: sysinfo.cpp:184
 msgid "Looking for hardware information..."
-msgstr ""
+msgstr "Recupero delle informazioni sull'hardware..."
 
 #: sysinfo.cpp:186
 msgid "Hardware Information"
-msgstr ""
+msgstr "Informazioni sull'hardware"
 
 #: sysinfo.cpp:191
 msgid "Bios Vendor:"
-msgstr ""
+msgstr "Fornitore BIOS:"
 
 #: sysinfo.cpp:192
 msgid "Bios Version:"
-msgstr ""
+msgstr "Versione BIOS:"
 
 #: sysinfo.cpp:256
 msgid "%1 (+ %2 Caches)"
-msgstr ""
+msgstr "%1 (+ %2 cache)"
 
 #: sysinfo.cpp:288
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #: sysinfo.cpp:288
 msgid "Filesystem"
-msgstr ""
+msgstr "Filesystem"
 
 #: sysinfo.cpp:289
 msgid "Total space"
-msgstr ""
+msgstr "Spazio totale"
 
 #: sysinfo.cpp:289
 msgid "Available space"
-msgstr ""
+msgstr "Spazio disponibile"
 
 #: sysinfo.cpp:295
 msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr ""
+msgstr "Premi il pulsante destro del mouse per avere ulteriori opzioni come il montaggio o la rimozione"
 
 #: sysinfo.cpp:478
 msgid "%1 (3D Support)"
-msgstr ""
+msgstr "%1 (con supporto 3D)"
 
 #: sysinfo.cpp:480
 msgid "%1 (No 3D Support)"
-msgstr ""
+msgstr "%1 (senza supporto 3D)"
 
 #: sysinfo.cpp:491
 msgid "Network is <strong>unreachable</strong>"
-msgstr ""
+msgstr "La rete <strong>non è raggiungibile</strong>"
 
 #: sysinfo.cpp:493
 msgid "You are <strong>offline</strong>"
-msgstr ""
+msgstr "<strong>Non sei connesso</strong>"
 
 #: sysinfo.cpp:495
 msgid "Network is <strong>shutting down</strong>"
-msgstr ""
+msgstr "La rete è <strong>in fase di chiusura</strong>"
 
 #: sysinfo.cpp:497
 msgid "<strong>Establishing</strong> connection to the network"
-msgstr ""
+msgstr "Connessione alla rete <strong>in corso</strong>"
 
 #: sysinfo.cpp:499
 msgid "You are <strong>online</strong>"
-msgstr ""
+msgstr "<strong>Sei connesso</strong>"
 
 #: sysinfo.cpp:501
 msgid "Unknown network status"
-msgstr ""
+msgstr "Stato della rete sconosciuto"
+
