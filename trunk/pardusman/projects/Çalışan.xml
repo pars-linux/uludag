@@ -26,6 +26,7 @@
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
+        <SelectedPackage>crack-attack</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>dhcp</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
@@ -131,6 +132,7 @@
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
+        <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>rpcalc</SelectedPackage>
         <SelectedPackage>rt2400</SelectedPackage>
         <SelectedPackage>rt2500</SelectedPackage>
@@ -150,7 +152,6 @@
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
-        <SelectedPackage>supertux</SelectedPackage>
         <SelectedPackage>synaptics</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
@@ -175,6 +176,7 @@
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
         <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
+        <SelectedPackage>xmoto</SelectedPackage>
         <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
