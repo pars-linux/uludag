@@ -176,7 +176,6 @@
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
         <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
-        <SelectedPackage>xmoto</SelectedPackage>
         <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
@@ -248,6 +247,9 @@
         <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
+        <Package>crack-attack</Package>
+        <Package>crack-attack-music</Package>
+        <Package>crack-attack-sounds</Package>
         <Package>cracklib</Package>
         <Package>cryptsetup-luks</Package>
         <Package>ctags</Package>
@@ -556,6 +558,7 @@
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
         <Package>ltris</Package>
+        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>mDNSResponder</Package>
@@ -602,6 +605,7 @@
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
         <Package>ntp-client</Package>
+        <Package>ode</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
@@ -619,7 +623,6 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
-        <Package>physfs</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
         <Package>pinentry</Package>
@@ -647,6 +650,7 @@
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
+        <Package>rdate</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
@@ -696,7 +700,6 @@
         <Package>strace</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
-        <Package>supertux</Package>
         <Package>suspend</Package>
         <Package>swig</Package>
         <Package>synaptics</Package>
@@ -756,6 +759,7 @@
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
+        <Package>xmoto</Package>
         <Package>xorg-app</Package>
         <Package>xorg-data</Package>
         <Package>xorg-font</Package>
