@@ -18,6 +18,13 @@ import parted
 class DeviceError(Exception):
     pass
 
+def getBlocknameByLabel(_f):
+    f = os.path.join("/dev/disk/by-label/%s" % _f)
+    if os.path.islink(f):
+        return "/dev/%s" % os.readlink(f)[6:]
+    else:
+        return None
+
 def getPartitionsOfDevice(device_path):
     """Returns all partitions of a given device but swap partition"""
     def getPartitionInfo(part):
@@ -82,6 +89,7 @@ class Fstab:
             self.content = self.__emergeContent()
         else:
             self.content = []
+        self.Label = {}
 
         # basic syntax check of the content
         try:
@@ -102,6 +110,7 @@ class Fstab:
         self.defaultFileSystemOptions["xfs"] = "noatime"
         self.defaultFileSystemOptions["defaults"] = "defaults"
 
+        self.maplabels()
         self.update()
 
     def update(self):
@@ -113,6 +122,10 @@ class Fstab:
         for p in self.__fstabPartitions.keys():
             if self.__allPartitions.get(p):
                 self.__allPartitions[p].update(self.__fstabPartitions[p])
+
+    def maplabels(self):
+        for f in os.listdir("/dev/disk/by-label/"):
+            self.Label[getBlocknameByLabel(f)] = f
 
     def writeContent(self, File = None):
         if not self.Debug:
@@ -137,7 +150,7 @@ class Fstab:
 
     def __emergeAllPartitions(self):
         for dev in self.allDevices:
-            for info in [info for info in getPartitionsOfDevice(dev)]:
+            for info in getPartitionsOfDevice(dev):
                 self.__allPartitions[info[0]] = info[1]
 
     def __emergeFstabPartitions(self):
@@ -155,7 +168,11 @@ class Fstab:
     def getAvailablePartitions(self):
         ap = {}
         for p in set(self.__allPartitions) - set(self.__fstabPartitions):
-            ap[p] = copy.deepcopy(self.__allPartitions[p])
+            if p in self.Label:
+                if not "LABEL=%s" % self.Label[p] in self.__fstabPartitions:
+                    ap[p] = copy.deepcopy(self.__allPartitions[p])
+            else:
+                ap[p] = copy.deepcopy(self.__allPartitions[p])
         return ap
 
     def addAvailablePartitions(self):
@@ -169,7 +186,8 @@ class Fstab:
         they do not exist anymore"""
         dp = {}
         for p in set(self.__fstabPartitions) - set(self.__allPartitions):
-            dp[p] = copy.deepcopy(self.__fstabPartitions[p])
+            if not (p.startswith("LABEL=") and getBlocknameByLabel(p[6:]) in self.__allPartitions):
+                dp[p] = copy.deepcopy(self.__fstabPartitions[p])
         return dp
 
     def delDepartedPartitions(self):
