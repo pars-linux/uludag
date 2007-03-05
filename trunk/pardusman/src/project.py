@@ -193,7 +193,25 @@ class Project:
         cache_dir = self._get_dir("repo_cache")
         repo = packages.Repository(self.repo_uri, cache_dir)
         repo.parse_index(console, update_repo)
+        self.find_all_packages(repo)
         return repo
+    
+    def find_all_packages(self, repo):
+        packages = []
+        def collect(name):
+            p = repo.packages[name]
+            if name in packages:
+                return
+            packages.append(name)
+            for dep in p.depends:
+                collect(dep)
+        for component in self.selected_components:
+            for package in repo.components[component].packages:
+                collect(package)
+        for package in self.selected_packages:
+            collect(package)
+        packages.sort()
+        self.all_packages = packages
     
     def image_repo_dir(self, clean=False):
         return self._get_dir("image_repo", clean)

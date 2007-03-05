@@ -228,12 +228,11 @@ class ProjectWindow(KMainWindow):
     def quit(self):
         KApplication.kApplication().closeAllWindows()
     
-    def browseResult(self, comps, paks, allpaks):
+    def browseResult(self, comps, paks):
         self.toolbar.setEnabled(True)
         if comps != None:
             self.project.selected_components = comps
             self.project.selected_packages = paks
-            self.project.all_packages = allpaks
     
     def checkSettings(self):
         if not self.ui2project():
@@ -266,6 +265,7 @@ class ProjectWindow(KMainWindow):
     def make(self):
         if not self.checkSettings():
             return
+        repo = self.project.get_repo(self.progress)
         f = tempfile.NamedTemporaryFile()
         self.project.save(f.name)
         ppath = sys.argv[0]
