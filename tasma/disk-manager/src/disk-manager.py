@@ -127,20 +127,19 @@ class diskForm(mainForm):
             QMessageBox(i18n("Error"),i18n("User not in disk group !"),QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
             self.disableAll()
         else:
-            #try:
-            if 1:
+            try:
                 self.Fstab = fstab.Fstab()
                 self.Dbus = DbusListener()
                 self.fillFileSystems()
                 self.list_main.header().hide()
                 self.diskIcon.setPixmap(loadIcon('hdd_unmount',size=64))
                 self.initialize()
-            """except:
+            except:
                 self.label_warn.setText(i18n("File /etc/fstab is not correct, please fix it manually."))
                 self.label_warn.show()
                 QMessageBox(i18n("Error"),i18n("File /etc/fstab is not correct, please fix it manually."),
                                           QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
-                self.disableAll()"""
+                self.disableAll()
 
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)

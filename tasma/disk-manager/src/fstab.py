@@ -213,8 +213,8 @@ class Fstab:
 
         err = []
         if not self.__allPartitions.get(partition):
-            if partition not in self.Label.values():
-                err.append("ERROR: '%s' is not an available partition." % (partition))
+            #if partition not in self.Label.values():
+            err.append("ERROR: '%s' is not an available partition." % (partition))
         if self.__fstabPartitions.get(partition):
             self.delFstabEntry(partition)
         if err:
@@ -240,12 +240,13 @@ class Fstab:
                 except OSError:
                     print ("ERROR: Unable to create mount point: '%s' for '%s'" % (attr_dict['mount_point'], partition))
 
-        self.content.append("%-11s %-20s %-9s %-20s %s %s\n" % (partition, 
+        self.content.append("%-20s %-16s %-9s %-20s %s %s\n" % (partition, 
                                                          attr_dict['mount_point'], 
                                                          attr_dict['file_system'], 
                                                          attr_dict['options'], 
                                                          attr_dict['dump_freq'], 
                                                          attr_dict['fs_pass_no']))
+
         self.update()
 
     def delFstabEntry(self, partition):
