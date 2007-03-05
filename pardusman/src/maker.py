@@ -290,10 +290,11 @@ def make_iso(project):
         def copy(src, dest):
             run('cp "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
         
-        path = project.release_files
-        for name in os.listdir(path):
-            if name != ".svn":
-                copy(os.path.join(path, name), name)
+        if project.release_files:
+            path = project.release_files
+            for name in os.listdir(path):
+                if name != ".svn":
+                    copy(os.path.join(path, name), name)
         
         setup_grub(project)
         
