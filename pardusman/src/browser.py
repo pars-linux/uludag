@@ -268,16 +268,14 @@ class BrowserWidget(QVBox):
             item = item.nextSibling()
         
         selpaks = []
-        allpaks = []
         item = self.list.firstChild()
         while item:
             if item.mark > 0:
                 if item.isOn():
                     selpaks.append(item.pak.name)
-                allpaks.append(item.pak.name)
             item = item.nextSibling()
         
-        return (comps, selpaks, allpaks)
+        return (comps, selpaks)
     
     def set_selection(self, components, packages):
         for name in components:
@@ -336,10 +334,10 @@ class Browser(QDialog):
         self.browser.list.setFocus()
     
     def accept(self):
-        comps, sel, all = self.browser.get_selection()
-        self.callback(comps, sel, all)
+        comps, sel = self.browser.get_selection()
+        self.callback(comps, sel)
         QDialog.accept(self)
     
     def reject(self):
-        self.callback(None, None, None)
+        self.callback(None, None)
         QDialog.reject(self)
