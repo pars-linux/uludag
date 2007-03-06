@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-21 14:01+0200\n"
-"PO-Revision-Date: 2007-02-28 23:14-0300\n"
+"PO-Revision-Date: 2007-03-06 10:48-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
@@ -18,82 +18,82 @@ msgstr ""
 
 #: browser.py:36
 msgid "Version:"
-msgstr ""
+msgstr "Versão: "
 
 #: browser.py:38
 #, python-format
 msgid "%s, release %s, build %s"
-msgstr ""
+msgstr "%s, release %s, build %s"
 
 #: browser.py:41
 msgid "Component:"
-msgstr ""
+msgstr "Componente:"
 
 #: browser.py:46
 msgid "Homepage:"
-msgstr ""
+msgstr "Homepage:"
 
 #: browser.py:54
 msgid "Summary:"
-msgstr ""
+msgstr "Resumo:"
 
 #: browser.py:61
 msgid "Description:"
-msgstr ""
+msgstr "Descrição:"
 
 #: browser.py:73
 msgid "Depends on:"
-msgstr ""
+msgstr "Depende de:"
 
 #: browser.py:78
 msgid "Depended by:"
-msgstr ""
+msgstr "É dependido por:"
 
 #: browser.py:206
 #, python-format
 msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
-msgstr ""
+msgstr "Total de %d pacotes, %s bytes comprimidos, %s bytes instalados."
 
 #: browser.py:215
 msgid "Component"
-msgstr ""
+msgstr "Componente"
 
 #: browser.py:226
 msgid "Search:"
-msgstr ""
+msgstr "Pesquisar:"
 
 #: browser.py:230
 msgid "Package"
-msgstr ""
+msgstr "Pacote"
 
 #: browser.py:231
 msgid "Archive Size"
-msgstr ""
+msgstr "Tamanho do Arquivo"
 
 #: browser.py:232
 msgid "Installed Size"
-msgstr ""
+msgstr "Tamanho Instalado"
 
 #: browser.py:303
 msgid "No packages selected."
-msgstr ""
+msgstr "Nenhum pacote selecionado."
 
 #: browser.py:308
 #, python-format
 msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
-msgstr ""
+msgstr "%d pacotes selecionados, %s bytes de tamanho de arquivo, %s bytes de tamanho instalado."
 
 #: browser.py:334
 msgid "Use selected packages"
-msgstr ""
+msgstr "Usar pacotes selecionados"
 
 #: gui.py:80
 msgid "&Open"
-msgstr ""
+msgstr "&Abrir"
 
 #: gui.py:82
 msgid "Save &as..."
-msgstr ""
+msgstr "Salvar &como..."
 
 #: gui.py:97
 msgid ""
@@ -102,18 +102,22 @@ msgid ""
 "  Teh winnars dont use teh drugs!  \n"
 " "
 msgstr ""
+"Pardusman diz:\n"
+"\n"
+" Vencedores não usam drogas!  \n"
+" "
 
 #: gui.py:103
 msgid "Title:"
-msgstr ""
+msgstr "Título:"
 
 #: gui.py:108
 msgid "Title of distribution media, used in grub menu."
-msgstr ""
+msgstr "Título da mídia de distribuição, usado no menu do grub."
 
 #: gui.py:112
 msgid "Work folder:"
-msgstr ""
+msgstr "Diretório de trabalho:"
 
 #: gui.py:119
 msgid ""
@@ -121,10 +125,13 @@ msgid ""
 "and temporary files generated during the\n"
 "ISO making process."
 msgstr ""
+"Este diretório abriga uma cache local do repositório\n"
+"e arquivos temporários gerados durante o\n"
+"processo de criação da ISO."
 
 #: gui.py:125
 msgid "Repository:"
-msgstr ""
+msgstr "Repositório:"
 
 #: gui.py:130
 msgid ""
@@ -132,138 +139,143 @@ msgid ""
 "Must be a URL pointing to the repository index\n"
 "file (i.e. pisi-index.xml.bz2)."
 msgstr ""
+"Repositório de pacotes PiSi da distribuição.\n"
+"Deve ser uma URL apontando para o arquivo index\n"
+"do repositório (i.e. pisi-index.xml.bz2)."
 
 #: gui.py:134
 msgid "Release files:"
-msgstr ""
+msgstr "Arquivos release:"
 
 #: gui.py:141
 msgid ""
 "Content of this folder is copied\n"
 "onto the root folder of CD."
 msgstr ""
+"Conteúdo deste diretório foi copiado\n"
+"no diretório raiz do CD."
 
 #: gui.py:147
 msgid "Type:"
-msgstr ""
+msgstr "Tipo:"
 
 #: gui.py:150
 msgid "Installation"
-msgstr ""
+msgstr "Instalação"
 
 #: gui.py:151
 msgid "Live system"
-msgstr ""
+msgstr "Sistema Live"
 
 #: gui.py:154
 msgid "Media:"
-msgstr ""
+msgstr "Mídia:"
 
 #: gui.py:160
 msgid "CD (700 MB)"
-msgstr ""
+msgstr "CD (700 MB)"
 
 #: gui.py:161
 msgid "DVD (4.2 GB)"
-msgstr ""
+msgstr "DVD (4.2 GB)"
 
 #: gui.py:162
 msgid "FlashDisk (1 GB)"
-msgstr ""
+msgstr "FlashDisk (1 GB)"
 
 #: gui.py:163
 msgid "Custom size"
-msgstr ""
+msgstr "Tamanho personalizado"
 
 #: gui.py:171
 msgid "Update Repo"
-msgstr ""
+msgstr "Atualizar Repositório"
 
 #: gui.py:174
 msgid "Select packages"
-msgstr ""
+msgstr "Selecionar pacotes"
 
 #: gui.py:177
 msgid "Make ISO"
-msgstr ""
+msgstr "Criar ISO"
 
 #: gui.py:210
 msgid "Select release files folder"
-msgstr ""
+msgstr "Selecionar diretório de arquivos release"
 
 #: gui.py:221
 msgid "Select folder for temporary files and cache"
-msgstr ""
+msgstr "Selecionar diretório para arquivos temporários e cache"
 
 #: gui.py:241
 msgid "Project directory does not exist."
-msgstr ""
+msgstr "Diretório do projeto não existe."
 
 #: gui.py:244
 msgid "Release files directory does not exist."
-msgstr ""
+msgstr "Diretório dos arquivos release não existe."
 
 #: gui.py:285
 msgid "Project title not given."
-msgstr ""
+msgstr "Título do projeto não fornecido."
 
 #: gui.py:292
 msgid "Release files directory not given."
-msgstr ""
+msgstr "Diretório dos arquivos release não fornecido."
 
 #: gui.py:299
 msgid "Project directory not given."
-msgstr ""
+msgstr "Diretório do projeto não fornecido."
 
 #: gui.py:306
 msgid "Repository address not given."
-msgstr ""
+msgstr "Endereço do repositório não fornecido."
 
 #: gui.py:344
 #, python-format
 msgid "%s - Pardusman"
-msgstr ""
+msgstr "%s - Pardusman"
 
 #: gui.py:346
 msgid "New project - Pardusman"
-msgstr ""
+msgstr "Novo projeto - Pardusman"
 
 #: gui.py:350
 msgid "Select a project..."
-msgstr ""
+msgstr "Selecionar um projeto..."
 
 #: gui.py:361
 #, python-format
 msgid "Project '%s' opened."
-msgstr ""
+msgstr "Projeto '%s' aberto."
 
 #: gui.py:368
 msgid "Saved."
-msgstr ""
+msgstr "Salvo."
 
 #: gui.py:373
 msgid "Save project as..."
-msgstr ""
+msgstr "Salvar projeto como..."
 
 #: gui.py:382
 #, python-format
 msgid "Project saved as '%s'."
-msgstr ""
+msgstr "Projeto salvo como '%s'."
 
 #: gui.py:386
 msgid "Pardus distribution media maker"
-msgstr ""
+msgstr "Criador de mída de distribuição Pardus"
 
 #: project.py:112
 #, python-format
 msgid "Project file '%s' does not exists!"
-msgstr ""
+msgstr "Arquivo de projeto '%s' não existe!"
 
 #: project.py:115
 msgid "Not a Pardusman project file, invalid xml!"
-msgstr ""
+msgstr "Não é um arquivo de projeto Pardusman, xml inválido!"
 
 #: project.py:117
 msgid "Not a Pardusman project file"
-msgstr ""
+msgstr "Não é um arquivo de projeto Pardusman"
 
