@@ -17,13 +17,13 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#ifndef KTSOAP_H
-#define KTSOAP_H
+#ifndef SOAP_H
+#define SOAP_H
 
 #include <qvaluelist.h>
 #include <qstring.h>
 
-namespace kt
+namespace KNetworkX
 {
 
 	/**
@@ -32,7 +32,7 @@ namespace kt
 	class SOAP
 	{
 	public:
-		
+
 		/**
 		 * Create a simple UPnP SOAP command without parameters.
 		 * @param action The name of the action
@@ -40,7 +40,7 @@ namespace kt
 		 * @return The command
 		 */
 		static QString createCommand(const QString & action,const QString & service);
-		
+
 		struct Arg
 		{
 			QString element;

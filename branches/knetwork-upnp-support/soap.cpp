@@ -19,7 +19,7 @@
  ***************************************************************************/
 #include "soap.h"
 
-namespace kt 
+namespace KNetworkX
 {
 
 	QString SOAP::createCommand(const QString & action,const QString & service)
@@ -30,23 +30,23 @@ namespace kt
 				"<m:%1 xmlns:m=\"%2\"/>"
 				"</SOAP-ENV:Body></SOAP-ENV:Envelope>"
 				"\r\n").arg(action).arg(service);
-		
+
 		return comm;
 	}
-	
+
 	QString SOAP::createCommand(const QString & action,const QString & service,const QValueList<Arg> & args)
 	{
 		QString comm = QString("<?xml version=\"1.0\"?>\r\n"
 				"<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
 				"<SOAP-ENV:Body>"
 				"<m:%1 xmlns:m=\"%2\">").arg(action).arg(service);
-		
+
 		for (QValueList<Arg>::const_iterator i = args.begin();i != args.end();i++)
 		{
 			const Arg & a = *i;
 			comm += "<" + a.element + ">" + a.value + "</" + a.element + ">";
 		}
-		
+
 		comm += QString("</m:%1></SOAP-ENV:Body></SOAP-ENV:Envelope>\r\n").arg(action);
 		return comm;
 	}

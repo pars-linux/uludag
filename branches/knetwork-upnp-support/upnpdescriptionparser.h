@@ -17,16 +17,16 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
  ***************************************************************************/
-#ifndef KTUPNPDESCRIPTIONPARSER_H
-#define KTUPNPDESCRIPTIONPARSER_H
+#ifndef UPNPDESCRIPTIONPARSER_H
+#define UPNPDESCRIPTIONPARSER_H
 
-namespace kt
+namespace KNetworkX
 {
 	class UPnPRouter;
 
 	/**
 	 * @author Joris Guisson
-	 * 
+	 *
 	 * Parses the xml description of a router.
 	*/
 	class UPnPDescriptionParser
@@ -36,8 +36,8 @@ namespace kt
 		virtual ~UPnPDescriptionParser();
 
 		/**
-		 * Parse the xml description. 
-		 * @param file File it is located in 
+		 * Parse the xml description.
+		 * @param file File it is located in
 		 * @param router The router off the xml description
 		 * @return true upon success
 		 */

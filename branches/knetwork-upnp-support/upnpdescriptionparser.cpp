@@ -19,17 +19,15 @@
  ***************************************************************************/
 #include <qxml.h>
 #include <qvaluestack.h>
-#include <util/fileops.h>
-#include <util/log.h>
-#include <torrent/globals.h>
+//#include <util/fileops.h>
+//#include <util/log.h>
+//#include <torrent/globals.h>
 #include "upnprouter.h"
 #include "upnpdescriptionparser.h"
 
-using namespace bt;
-
-namespace kt
+namespace KNetworkX
 {
-	
+
 	class XMLContentHandler : public QXmlDefaultHandler
 	{
 		enum Status
@@ -52,7 +50,7 @@ namespace kt
 		                  const QXmlAttributes & atts);
 		bool endElement(const QString & , const QString & localName, const QString &  );
 		bool characters(const QString & ch);
-		
+
 		bool interestingDeviceField(const QString & name);
 		bool interestingServiceField(const QString & name);
 	};
@@ -80,7 +78,7 @@ namespace kt
 			reader.setContentHandler(&chandler);
 			ret = reader.parse(&input,false);
 		}
-		
+
 		if (!ret)
 		{
 			Out(SYS_PNP|LOG_IMPORTANT) << "Error parsing XML" << endl;
@@ -90,8 +88,8 @@ namespace kt
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////
-	
-	
+
+
 	XMLContentHandler::XMLContentHandler(UPnPRouter* router) : router(router)
 	{}
 
@@ -110,14 +108,14 @@ namespace kt
 		status_stack.pop();
 		return true;
 	}
-	
+
 	bool XMLContentHandler::interestingDeviceField(const QString & name)
 	{
 		return name == "friendlyName" || name == "manufacturer" || name == "modelDescription" ||
 				name == "modelName" || name == "modelNumber";
 	}
 
-	
+
 	bool XMLContentHandler::interestingServiceField(const QString & name)
 	{
 		return name == "serviceType" || name == "serviceId" || name == "SCPDURL" ||
