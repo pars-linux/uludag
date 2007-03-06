@@ -10,8 +10,8 @@ class UPnP
   UPnP();
   ~UPnP();
 
-  void addPortMapping(QString ip, unsigned int port);
-  void removePortMapping(unsigned int port);
+  void addPortRedirection(QString ip, unsigned int port);
+  void removePortRedirection(unsigned int port);
   bool isBehindNat();
 
  private:

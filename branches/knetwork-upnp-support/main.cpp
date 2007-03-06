@@ -4,9 +4,9 @@
 int main()
 {
   UPnP nat;
-  nat.addPortMapping("192.168.1.2",22);
+  nat.addPortRedirection("192.168.1.2",22);
   sleep(15);
-  nat.removePortMapping(22);
+  nat.removePortRedirection(22);
 
   return 0;
 }

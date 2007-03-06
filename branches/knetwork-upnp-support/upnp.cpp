@@ -62,12 +62,12 @@ bool UPnP::isBehindNat()
     return true;
 }
 
-void UPnP::addPortMapping(QString addr, unsigned int port)
+void UPnP::addPortRedirection(QString addr, unsigned int port)
 {
   char port_str[16];
   int result;
 
-  cout << "UPnP::addPortMapping "<< addr << "," << port << endl;
+  cout << "UPnP::addPortRedirection "<< addr << "," << port << endl;
 
   snprintf(port_str,15,"%d", port);
   result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, port_str, port_str, addr.latin1(), 0, "TCP");
@@ -76,11 +76,11 @@ void UPnP::addPortMapping(QString addr, unsigned int port)
     cout << "AddPortMapping failed" << endl;
 }
 
-void UPnP::removePortMapping(unsigned int port)
+void UPnP::removePortRedirection(unsigned int port)
 {
   char port_str[16];
 
-  cout << "UPnP::removePortMapping " << port << endl;
+  cout << "UPnP::removePortRedirection " << port << endl;
 
   snprintf(port_str, 15, "%d", port);
   UPNP_DeletePortMapping(urls.controlURL, data.servicetype, port_str, "TCP");
