@@ -4,6 +4,8 @@
 #include <miniupnpc/miniupnpc.h>
 #include <qstring.h>
 
+namespace KNetwork {
+
 class UPnP
 {
  public:
@@ -18,5 +20,7 @@ class UPnP
   struct UPNPUrls urls;
   struct IGDdatas data;
 };
+
+}
 
 #endif

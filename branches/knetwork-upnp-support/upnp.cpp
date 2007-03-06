@@ -8,6 +8,8 @@ using namespace std;
 
 #include "upnp.h"
 
+namespace KNetwork {
+
 UPnP::UPnP()
 {
   struct UPNPDev * devlist;
@@ -84,4 +86,6 @@ void UPnP::removePortRedirection(unsigned int port)
 
   snprintf(port_str, 15, "%d", port);
   UPNP_DeletePortMapping(urls.controlURL, data.servicetype, port_str, "TCP");
+}
+
 }

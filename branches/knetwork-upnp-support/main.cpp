@@ -1,6 +1,8 @@
 #include <unistd.h>
 #include "upnp.h"
 
+using namespace KNetwork;
+
 int main()
 {
   UPnP nat;
