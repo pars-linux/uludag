@@ -24,6 +24,7 @@ UPnP::UPnP()
   if (devlist)
     {
       dev = devlist;
+
       while (dev)
         {
           if (strstr (dev->st, "InternetGatewayDevice"))
@@ -50,18 +51,23 @@ UPnP::~UPnP()
 {
 }
 
+bool UPnP::isBehindNat()
+{
+  struct UPNPDev * devlist;
+  devlist = upnpDiscover(2000);
+
+  if (!devlist)
+    return false;
+  else
+    return true;
+}
+
 void UPnP::addPortMapping(QString addr, unsigned int port)
 {
   char port_str[16];
   int result;
 
   cout << "UPnP::addPortMapping "<< addr << "," << port << endl;
-
-  if(urls.controlURL[0] == '\0')
-    {
-      cout << "TB : the init was not done !" << endl;
-      return;
-    }
 
   snprintf(port_str,15,"%d", port);
   result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, port_str, port_str, addr.latin1(), 0, "TCP");
@@ -70,7 +76,7 @@ void UPnP::addPortMapping(QString addr, unsigned int port)
     cout << "AddPortMapping failed" << endl;
 }
 
-void UPnP::removePortMapping(int port)
+void UPnP::removePortMapping(unsigned int port)
 {
   char port_str[16];
 

@@ -11,7 +11,8 @@ class UPnP
   ~UPnP();
 
   void addPortMapping(QString ip, unsigned int port);
-  void removePortMapping(int port);
+  void removePortMapping(unsigned int port);
+  bool isBehindNat();
 
  private:
   struct UPNPUrls urls;
