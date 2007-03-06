@@ -1,8 +1,12 @@
 # Compressed Archives
 application/x-pisi; pm-install '%s'; -n "$DISPLAY" ; nametemplate=%s.pisi
+application/gzip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.gz
 application/x-gzip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.gz
+application/zip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.zip
 application/x-zip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.zip
+application/tar; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.tar
 application/x-tar; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.tar
+application/bzip2; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.bz2
 application/x-bzip2; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.bz2
 
 # Powerpoint
