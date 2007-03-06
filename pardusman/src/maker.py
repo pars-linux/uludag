@@ -23,9 +23,12 @@ from utility import xterm_title, waitBus
 # Utilities
 #
 
-def run(cmd):
+def run(cmd, ignore_error=False):
     print cmd
-    os.system(cmd)
+    ret = os.system(cmd)
+    if ret and not ignore_error:
+        print "%s returned %s" % (cmd, ret)
+        sys.exit(1)
 
 def chroot_comar(image_dir):
     if os.fork() == 0:
@@ -222,8 +225,8 @@ def make_image(project):
         image_file = project.image_file()
         
         image_dir = project.image_dir()
-        run('umount %s/proc' % image_dir)
-        run('umount %s/sys' % image_dir)
+        run('umount %s/proc' % image_dir, ignore_error=True)
+        run('umount %s/sys' % image_dir, ignore_error=True)
         image_dir = project.image_dir(clean=True)
         
         run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
