@@ -170,6 +170,9 @@ application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
 text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
 application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
 
+text/x-patch; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.patch
+text/x-patch; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.diff
+
 # Rest
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.po
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.pot
