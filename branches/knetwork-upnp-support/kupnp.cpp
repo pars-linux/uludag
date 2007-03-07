@@ -25,7 +25,7 @@ namespace KNetwork {
     memset(&urls, 0, sizeof(struct UPNPUrls));
     memset(&data, 0, sizeof(struct IGDdatas));
 
-    devlist = upnpDiscover(2000);
+    devlist = upnpDiscover(500);
     if (devlist)
       {
         dev = devlist;
@@ -59,7 +59,7 @@ namespace KNetwork {
   bool KUpnp::isBehindNat()
   {
     struct UPNPDev * devlist;
-    devlist = upnpDiscover(2000);
+    devlist = upnpDiscover(500);
 
     if (!devlist)
       return false;
