@@ -67,17 +67,17 @@ bool KUpnp::isBehindNat()
     return true;
 }
 
-void KUpnp::addPortRedirection(unsigned int port)
+int KUpnp::addPortRedirection(unsigned int port)
 {
-  addPortMapping("", 0, port);
+  return addPortMapping("", 0, port);
 }
 
-void KUpnp::addPortRedirection(QString addr, unsigned int port)
+int  KUpnp::addPortRedirection(QString addr, unsigned int port)
 {
-  addPortMapping(addr, 0, port);
+  return addPortMapping(addr, 0, port);
 }
 
-void KUpnp::addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort)
+int KUpnp::addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort)
 {
   char externalPort_str[16], internalPort_str[16];
   int result;
@@ -103,7 +103,12 @@ void KUpnp::addPortMapping(QString addr, unsigned int externalPort, unsigned int
   result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, externalPort_str, internalPort_str, addr.latin1(), 0, "TCP");
 
   if(!result)
-    kdDebug() << "AddPortMapping failed" << endl;
+    {
+      kdDebug() << "AddPortMapping failed" << endl;
+      return -1;
+    }
+
+  return 0;
 }
 
 void KUpnp::removePortMapping(unsigned int port)

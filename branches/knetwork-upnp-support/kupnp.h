@@ -12,11 +12,11 @@ class KUpnp
   ~KUpnp();
 
 
-  void addPortMapping(unsigned int externalPort, unsigned int internalPort);
-  void addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort);
+  int addPortMapping(unsigned int externalPort, unsigned int internalPort);
+  int addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort);
 
-  void addPortRedirection(unsigned int port);
-  void addPortRedirection(QString addr, unsigned int port);
+  int addPortRedirection(unsigned int port);
+  int addPortRedirection(QString addr, unsigned int port);
 
   void removePortMapping(unsigned int port);
 
