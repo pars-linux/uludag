@@ -79,10 +79,10 @@ int  KUpnp::addPortRedirection(QString addr, unsigned int port)
 
 int KUpnp::addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort)
 {
-  char externalPort_str[16], internalPort_str[16];
   int result;
+  QCString extPort, intPort;
   KStreamSocket socket;
-  QString modem, modem_port;
+  QCString modem, modem_port;
 
   if (externalPort == 0)
     externalPort = internalPort;
@@ -97,10 +97,10 @@ int KUpnp::addPortMapping(QString addr, unsigned int externalPort, unsigned int 
       addr = socket.localAddress().nodeName();
     }
 
-  snprintf(externalPort_str, 15, "%d", externalPort);
-  snprintf(internalPort_str, 15, "%d", internalPort);
+  extPort.setNum(externalPort);
+  intPort.setNum(internalPort);
 
-  result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, externalPort_str, internalPort_str, addr.latin1(), 0, "TCP");
+  result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, extPort, intPort, addr.latin1(), 0, "TCP");
 
   if(!result)
     {
@@ -113,12 +113,12 @@ int KUpnp::addPortMapping(QString addr, unsigned int externalPort, unsigned int 
 
 void KUpnp::removePortMapping(unsigned int port)
 {
-  char port_str[16];
+  QCString portNumber;
+  portNumber.setNum(port);
 
-  kdDebug() << "KUpnp::removePortRedirection " << port << endl;
+  kdDebug() << "KUpnp::removePortRedirection " << portNumber << endl;
 
-  sprintf(port_str, "%d", port);
-  UPNP_DeletePortMapping(urls.controlURL, data.servicetype, port_str, "TCP");
+  UPNP_DeletePortMapping(urls.controlURL, data.servicetype, portNumber, "TCP");
 }
 
 }

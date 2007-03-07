@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
@@ -15,6 +16,8 @@ main(int argc, char *argv[])
 
     KUpnp nat;
     nat.addPortRedirection(22);
+    sleep(10);
+    nat.removePortMapping(22);
 
     return 0;
 }
