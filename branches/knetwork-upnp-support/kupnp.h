@@ -5,27 +5,27 @@
 
 namespace KNetwork {
 
-class KUpnp
-{
- public:
-  KUpnp();
-  ~KUpnp();
+  class KUpnp
+  {
+  public:
+    KUpnp();
+    ~KUpnp();
 
 
-  int addPortMapping(unsigned int externalPort, unsigned int internalPort);
-  int addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort);
+    int addPortMapping(unsigned int externalPort, unsigned int internalPort);
+    int addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort);
 
-  int addPortRedirection(unsigned int port);
-  int addPortRedirection(QString addr, unsigned int port);
+    int addPortRedirection(unsigned int port);
+    int addPortRedirection(QString addr, unsigned int port);
 
-  void removePortMapping(unsigned int port);
+    void removePortMapping(unsigned int port);
 
-  static bool isBehindNat();
+    static bool isBehindNat();
 
- private:
-  struct UPNPUrls urls;
-  struct IGDdatas data;
-};
+  private:
+    struct UPNPUrls urls;
+    struct IGDdatas data;
+  };
 
 }
 
