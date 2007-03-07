@@ -11,14 +11,15 @@ namespace KNetwork {
     KUpnp();
     ~KUpnp();
 
-
     int addPortMapping(unsigned int externalPort, unsigned int internalPort);
-    int addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort);
+    int addPortMapping(QCString addr, unsigned int externalPort, unsigned int internalPort);
 
     int addPortRedirection(unsigned int port);
-    int addPortRedirection(QString addr, unsigned int port);
+    int addPortRedirection(QCString addr, unsigned int port);
 
     void removePortMapping(unsigned int port);
+
+    QCString getExternalIpAddress();
 
     static bool isBehindNat();
 

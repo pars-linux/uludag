@@ -4,7 +4,7 @@
 #include <miniupnpc/upnpcommands.h>
 
 #include <cstdlib>
-#include <qstring.h>
+#include <qcstring.h>
 #include <qstringlist.h>
 #include <kdebug.h>
 
@@ -72,12 +72,12 @@ namespace KNetwork {
     return addPortMapping("", 0, port);
   }
 
-  int  KUpnp::addPortRedirection(QString addr, unsigned int port)
+  int  KUpnp::addPortRedirection(QCString addr, unsigned int port)
   {
     return addPortMapping(addr, 0, port);
   }
 
-  int KUpnp::addPortMapping(QString addr, unsigned int externalPort, unsigned int internalPort)
+  int KUpnp::addPortMapping(QCString addr, unsigned int externalPort, unsigned int internalPort)
   {
     int result;
     QCString extPort, intPort;
@@ -100,7 +100,7 @@ namespace KNetwork {
     extPort.setNum(externalPort);
     intPort.setNum(internalPort);
 
-    result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, extPort, intPort, addr.latin1(), 0, "TCP");
+    result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, extPort, intPort, addr.data(), 0, "TCP");
 
     if(!result)
       {
@@ -119,6 +119,15 @@ namespace KNetwork {
     kdDebug() << "KUpnp::removePortRedirection " << portNumber << endl;
 
     UPNP_DeletePortMapping(urls.controlURL, data.servicetype, portNumber, "TCP");
+  }
+
+  QCString KUpnp::getExternalIpAddress()
+  {
+    char address[16+1];
+
+    UPNP_GetExternalIPAddress(urls.controlURL, data.servicetype, address);
+
+    return address;
   }
 
 }
