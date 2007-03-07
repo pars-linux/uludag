@@ -3,10 +3,9 @@
 % preamble
 \usepackage[utf8]{inputenc}
 \usepackage[turkish]{babel}
-\usepackage{multicol}
 
 \title{Pardus}
-\author{T. Barış Metin, A. Murat Eren, Gürer Özen, Ekin Meroğlu}
+\author{Ekin Meroğlu, ekin@pardus.org.tr}
 \institute{
   Ulusal Dağıtım Projesi \\
   Ulusal Elektronik ve Kriptoloji Enstitüsü\\
@@ -17,13 +16,14 @@
 %images
 \pgfdeclareimage[width=5cm]{pardus-logo}{pardus-logo}
 \pgfdeclareimage[height=3cm]{ok}{ok}
-\pgfdeclareimage[height=4.5cm]{ekip}{ekip}
 \pgfdeclareimage[height=4.5cm]{yollar}{yollar}
-\pgfdeclareimage[width=4cm]{sanci}{sanci}
 \pgfdeclareimage[height=4.5cm]{zemberek}{zemberek}
 \pgfdeclareimage[width=4cm]{pisi}{pisi}
 \pgfdeclareimage[width=4cm]{farkli}{farkli}
 \pgfdeclareimage[height=4cm]{yali}{yali}
+\pgfdeclareimage[height=4cm]{pardusman}{pardusman}
+\pgfdeclareimage[height=4cm]{kaptan}{kaptan}
+\pgfdeclareimage[height=4cm]{tasma}{tasma}
 \pgfdeclareimage[height=3cm]{hedef}{hedef}
 \pgfdeclareimage[width=5cm]{wantyou}{wantyou}
 
@@ -33,17 +33,7 @@
 \frame{\titlepage}
 
 
-% contents
-\frame{
-%  \addtocontents{toc}{\protect\begin{multicols}{2}}
-  \frametitle{İçerik}
-  \tableofcontents
-}
-
-
 \section{Tarihçe}
-
-\frame<beamer>{\tableofcontents[current]}
 
 \subsection{Neden?}
 \frame{
@@ -171,8 +161,15 @@
   \frametitle{Nereden Başlasak?}
 
    \center{\pgfuseimage{yollar}}
-
-   \only<1>{
+    \only<1>{
+    \begin{itemize}
+    \item Özgür yazılım üretim süreci ile,
+    \item Bir özgür yazılım ekosistemi kurmak ve
+    \item Bilgi birikimi oluşturmak.
+    \item Bu süreçte ürünümüzü ortaya çıkarmak
+    \end{itemize}
+   }
+   \only<2>{
     \begin{itemize}
     \item Dağıtım \emph{"amorf"} bir yapı
     \item Doğru sorunları bulmak
@@ -180,18 +177,17 @@
     \item Mevcut bilgi birikimini doğru kullanabilmek
     \end{itemize}
    }
-   \only<2>{
+   \only<3>{
     \begin{itemize}
     \item Önce, kısa bir süre için ikiye ayrıldık
 	\begin{itemize}
 	\item Harcıalem Dağıtım
 	\item Dürtücü Teknolojiler
 	\end{itemize}
-    \item Hep bir aradaydık, \emph{"birleştirmek"} zor olmadı
     \item Olabildiğince çok kaynağı \emph{"dışarıdan"} kullandık
     \end{itemize}
    }
-   \only<3>{
+   \only<4>{
     \begin{itemize}
     \item Pardus 1.0 sonrası en temel sorunlara odaklandık
 	\begin{itemize}
@@ -201,14 +197,13 @@
 	\end{itemize}
     \end{itemize}
    }
-   \only<4>{
+   \only<5>{
     \begin{itemize}
-    \item Yeni projeler
+    \item Yeni projelere giriştik
 	\begin{itemize}
-	\item MÜDÜR
-	\item Daha çok görevde ÇOMAR  
+	\item MÜDÜR, daha çok görevde ÇOMAR  
         \end{itemize}
-    \item Yeni teknolojiler
+    \item Yeni teknolojileri araştırdık.
         \begin{itemize}
 	\item Güncel masaüstü teknolojileri entegre (hal, dbus, ntfs-3g...) 
         \end{itemize}
@@ -233,11 +228,8 @@
     \end{itemize}
 }
 
-
 % ikinci bölüm: pardus çözümleri
 \section{Pardus Çözümleri}
-
-\frame<beamer>{\tableofcontents[current]}
 
 \subsection{Yerel çözümler}
 \frame{
@@ -262,7 +254,9 @@
 \frame{
   \frametitle{İmla denetimi}
    \begin{itemize}
-   \item Masaüstünde, her uygulamada Türkçe imla denetimi.
+   \item Masaüstünde, her uygulamada Türkçe imla denetimi
+   \item Türkçe yazabilmek, yazılanı okuyabilmek
+   \item ı-I, i-İ harflerinin dönüşümleri yüzünden uygulama hatalarına takılmak
    \item Artık hayal değil ;)
    \end{itemize}
 
@@ -298,6 +292,7 @@
      \begin{itemize}
      \item Standartlara uygun, basit paket tanımları
      \item Genişletilebilir üzerine kolayca yeni uygulamalar eklenebilir bir sistem
+     \item Geliştiriciler zamanlarını paket \emph{yapmaya} değil, paket sorunlarını \emph{sorunlarını} çözmeye harcamalı
      \end{itemize}
    \end{itemize}
   }
@@ -309,10 +304,16 @@
    \item Paketler bileşen ve kategoriler ile düzenleniyor
    \item Python ile yazılmış
    \item İkili paketler ZIP arşivi içinde LZMA sıkıştırması ile \emph{çok küçük}
-   \item Hızlı, basit, mantıklı
+   
    \end{itemize}
   }
-
+   \only<4>{
+   \begin{itemize}
+    \item Hızlı, basit, mantıklı
+    \item Paket yapmak, paket bakımı yapmak çok kolay
+    \item Benzerlerinden kat ve kat daha ufak bir kod, fazlaca özellik
+   \end{itemize}
+  }
   \end{column}
 
   \begin{column}{4cm}
@@ -363,6 +364,7 @@
       \begin{itemize}
        \item Sunucu yönetimi
        \item Uzaktan yönetim
+       \item Güç Yönetimi
       \end{itemize}
     \end{itemize}
    }
@@ -378,24 +380,82 @@
 \subsection{YALI}
 \frame{
   \frametitle{YALI}
+   \center{\pgfuseimage{yali}}
    \begin{itemize}
    \item Genel geçer bir çözüm
-   \item Zorunluluk
-   \item İyileştirmeler olabilir
+   \item Sade, basit : görev temelli, insan odaklı
+   \item PiSi ve Çomar altyapısı
+   \item Ufak ve hızlı 
    \item \emph{Herkes için kolay ve hızlı bir kurulum deneyimi} 
    \end{itemize}
+}
 
-   \center{\pgfuseimage{yali}}
+\subsection{Kaptan -Tasma}
+\frame{
+    \frametitle{Kaptan}
+        \center{\pgfuseimage{kaptan}}
+        \begin{itemize}
+            \item Kullanıcının ilk gördüğü uygulama
+            \item Kullanıcının masaüstü görüntüsünü, ağ ayarlarını, paket yöneticisi ile ilgili ayarları yaptığı uygulama
+            \item Basit, sade ve amaca yönelik
+        \end{itemize}
+}
 
+\frame{
+    \frametitle{TASMA}
+        \center{\pgfuseimage{tasma}}
+        \begin{itemize}
+            \item Kullanıcının sisteme dair ayarları değiştirebildiği uygulama
+            \item Bir kısmını KDE araçları diğer kısmını Pardus yapılandırma araçları oluşturuyor
+            \item Basit, sade ve amaca yönelik
+        \end{itemize}
+}
+
+\subsection{Sürüm : Pardus 2007}
+\frame{
+    \frametitle{2007 Yenilikleri : Kullanıcının Hayatını Kolaylaştıralım}
+        \begin{itemize}
+            \item 70 dil desteği (Türkçe, İngilizce, Almanca, Hollandaca ve İspanyolca kurulum)
+            \item AppArmor güvenlik yazılımı
+            \item Gelişmiş donanım tanıma sistemi (Müdür)
+            \item Gelişmiş güç yönetimi (Suspend/Hibernate v.b.)
+            \item Gelişmiş X yapılandırma aracı (Zorg)
+            \item Güncel paketler/teknolojiler [bkz: AIGLX :)]
+            \item Masaüstü arama yazılımları (Beagle/Kerry)
+            \item Ntfs-3g ile NTFS disklere yazma desteği
+            \item Onlarca yeni oyun (Çok güzeller :P)
+            \item Suse'nin gelişmiş Kickoff menüsü
+            \item Xen, Qemu ve VirtualBox gibi sanal makina yazılımları
+        \end{itemize}
+}
+
+\frame{
+    \frametitle{Sürüm Sonrası : Biraz da istatistik}
+        \begin{itemize}
+            \item Pardus 2007 çıktıktan sonraki bir ayda : 
+            \begin{itemize}
+            	\item 207.617 kişi web sayfalarımızı gezdi
+		\item 30.009 kişi Google'dan pardus diye aratarak,
+	        \item 812 kişi ise “pardüs” diye aratarak bize gelmiş
+            \end{itemize}	
+            \item Yine bu zaman aralığında : 
+            \begin{itemize}
+            	\item Pardus sunucularından 80.000 üzerinde
+	    	\item ÇOMÜ yansıdan 13.166
+	    	\item Ulakbim yansıdan 6.540
+	    	\item BitTorrent aracılığıyla 1.300 kişi Pardus 2007'yi indirdi.
+	    	\item Chip dergisi 55.000, PC Magazine 30.000, PC Net 35.000 adet dağıttı, EMO üyelerine 10.000 adet Pardus 2007 hediye etti.
+		\item Bir ayda 32.369 kişi PiSi aracılığıyla sunucularımızdan yazılım güncelledi
+	    \end{itemize}
+        \end{itemize}
 }
 %% 3. bölüm: Pardus Geliştirme Süreci
 \section{Geliştirme Süreci}
 
-\frame<beamer>{\tableofcontents[current]}
-
 \subsection{Topluluk ile Geliştirmek}
 \frame{
   \frametitle{Sanal Ofis : www.pardus.org.tr}
+   \only<1>{
    \begin{itemize}
    \item E-posta listeleri.\\ \emph{http://liste.pardus.org.tr}
        \begin{itemize}
@@ -408,6 +468,16 @@
        \item Hem Pardus projeleri hem paketler deposundaki paketler için hata takip sistemi
        \item Kullanıcı için daha ağrısız bir hata bildirme uygulaması yolda..
        \item Yeni paket, iyileştirme ve yerelleştirme istekleri de bu sistemde.
+       \end{itemize}      
+   \end{itemize}
+   }
+   \only<2>{
+   \begin{itemize}
+   \item Wiki \\ \emph{http://tr.pardus-wiki.org}
+       \begin{itemize}
+       \item Tüm Pardus belgeleri Wiki'de. 
+       \item Tüm geliştirici ve katkıcılar belgelerini wiki'de geliştiriyor  
+       \item Ortak bir bilgi birikimi ilk amaç.
        \end{itemize}
    \item Topluluk projeleri, topluluk portalı.
        \begin{itemize}
@@ -415,6 +485,7 @@
        \item Yakın gelecekte hizmete girecek.
        \end{itemize}
    \end{itemize}
+   }
 }
 
 \subsection{Kaynak Paketler}
@@ -441,13 +512,15 @@
 
 \subsection{İkili Paketler}
 \frame{
-  \frametitle{Anında sonuç : Derleme Çiftliği, İkili Paket Depoları}
+  \frametitle{Anında Sonuç : Derleme Çiftliği, İkili Paket Depoları}
+   \only<1>{
    \begin{itemize}
    \item İkili paket oluşturma : Otomatik ve çabuk, hatasız.
        \begin{itemize}
        \item Şu anda \emph{2007} deposu
        \item Yakın gelecekte \emph{devel} ve \emph{contrib} depoları 
        \end{itemize}
+   \item SVN ile entegre, benzerlerinden çok çok kısa bir Python uygulaması.
    \item Yüksek işlemci gücü, otomatize süreç, geliştiriciye anında ikili paket. 
    \item İkili paket depoları 
        \begin{itemize}
@@ -456,10 +529,46 @@
        \end{itemize}
    \end{itemize}
     }
+   \only<2>{
+    \begin{itemize}
+    \item Pardus-2007 kararlı depo,
+	\begin{itemize}
+    	\item Şu an için resmi depoda 1322 kaynak paket,
+    	\item bu paketlerden üretilmiş 1538 ikili paket içeriyor.	
+	\end{itemize}
+    \item Büyük oranda katkıcıların bakımını yaptığı contrib deposu,
+    	\begin{itemize}
+    	\item Şu anda depoda 456 kaynak paket,	
+    	\item bu paketlerden üretilmiş 473 ikili paket içeriyor.	
+	\end{itemize}
+    \item Tüm depo ve paketçi bilgileri için \\
+    \emph{http://paketler.pardus.org.tr/}
+    \end{itemize}
+    }
+   }
+
+\subsection{Son Ürün : Sürüm}
+\frame{
+  \frametitle{Anında Ürün : Pardusman ile Çok Kolay !}
+   \begin{columns}
+
+   \begin{column}{6cm}
+   \begin{itemize}
+   \item Sürüm oluşturma / yayınlama sürecini büyük oranda kısaltıyor 
+   \item SVN, PiSi ve ÇOMAR altyapısı ile amaca yönelik dağıtım sürümleri hazırlıyor.
+   \item Hem Kurulan CD, hem Çalışan CD : isterseniz çalışan USB disk, isterseniz Çalışan DVD !
+   \item Zamanımızı CD hazırlayarak değil, test ederek kullanıyoruz.
+   \end{itemize}
+   \end{column}
+
+   \begin{column}{4cm}
+    \pgfuseimage{pardusman}
+   \end{column}
+
+  \end{columns}  
+}
 
 \section{Ne Yapabilirim?}
-
-\frame<beamer>{\tableofcontents[current]}
 
 \subsection{Herkese Açık}
 \frame{
@@ -513,9 +622,9 @@
 \frame{
   \frametitle{Pardus'u test etmek istiyorum}
    \begin{itemize}
-   \item Hata takip sistemine üye ol ve kullanmayı öğrenin
+   \item Hata takip sistemine üye olun ve kullanmayı öğrenin
    \item Yayınlanan test sürümlerinden haberdar olmak için tartışma listelerini takip edin
-   \item Pardus test paket deposunu kullan, hataları bildirin
+   \item Pardus test paket deposunu kullanın, hataları bildirin
    \end{itemize}
 }
 
@@ -524,7 +633,7 @@
    \begin{itemize}
    \item Yerelleştirme gruplarına katılın
    \item Pardus "Türkçe" listesine üye olun
-   \item Test ederek sistemdeki yerelleştirme sorunlarını bul, raporlayın/düzeltin
+   \item Test ederek sistemdeki yerelleştirme sorunlarını bulun, raporlayın/düzeltin
    \end{itemize}
 }
 
@@ -561,9 +670,9 @@
   \frametitle{Projemi Pardus'a eklemek istiyorum}
   \begin{itemize}
   \item Tartışma listelerine üye olun
-  \item Projeni tanıt ve nasıl faydalı olabileceğini anlatın 
+  \item Projenizi tanıtın ve nasıl faydalı olabileceğini anlatın 
   \item Hem kullanıcıları hem de geliştiricleri ikna edin
-  \item Kolay gelsin.
+  \item Kolay gelsin :-P
   \end{itemize}
 
 }
@@ -576,17 +685,13 @@
     \Huge{\alert{Sorular, Öneriler, Sohbet}} \newline
   \end{centering}
 
-  \begin{block}{İLETİŞİM}
-    \begin{itemize}
-    \item E-Posta: bilgi@pardus.org.tr
-    \item Web: http://www.pardus.org.tr
-    \end{itemize}
-  \end{block}
+    \begin{block}{İLETİŞİM}
+            \begin{itemize}
+                \item E-Posta: bilgi@pardus.org.tr
+                \item Web: http://www.pardus.org.tr
+                \item E-Posta Listeleri: http://liste.uludag.org.tr/mailman/listinfo
+                \item SVN Depoları: http://svn.pardus.org.tr/
+            \end{itemize}
+        \end{block}
 }
-%\addtocontents{toc}{\protect\end{multicols}}
 \end{document}
-
-
-
-
-
