@@ -16,7 +16,6 @@ import os
 
 import pisi.api
 import pisi.fetcher
-from pisi.delta import create_delta_package
 
 """ BuildFarm Modules """
 import config
@@ -61,9 +60,6 @@ class PisiApi:
         self.__oldBinaryPackages += __oldBinaryPackages
 
         return (self.__newBinaryPackages, self.__oldBinaryPackages)
-
-    def delta(self, oldPackage, newPackage):
-        create_delta_package(oldPackage, newPackage)
 
     def install(self, p):
         a = []
