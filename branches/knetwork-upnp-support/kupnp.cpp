@@ -67,17 +67,17 @@ namespace KNetwork {
       return true;
   }
 
-  int KUpnp::addPortRedirection(unsigned int port)
+  int KUpnp::addPortRedirection(unsigned int port, const char* protocol)
   {
-    return addPortMapping("", 0, port);
+    return addPortMapping("", 0, port, protocol);
   }
 
-  int  KUpnp::addPortRedirection(QCString addr, unsigned int port)
+  int  KUpnp::addPortRedirection(QCString addr, unsigned int port, const char* protocol)
   {
-    return addPortMapping(addr, 0, port);
+    return addPortMapping(addr, 0, port, protocol);
   }
 
-  int KUpnp::addPortMapping(QCString addr, unsigned int externalPort, unsigned int internalPort)
+  int KUpnp::addPortMapping(QCString addr, unsigned int externalPort, unsigned int internalPort, const char* protocol)
   {
     int result;
     QCString extPort, intPort;
@@ -100,7 +100,7 @@ namespace KNetwork {
     extPort.setNum(externalPort);
     intPort.setNum(internalPort);
 
-    result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, extPort, intPort, addr.data(), 0, "TCP");
+    result = UPNP_AddPortMapping(urls.controlURL, data.servicetype, extPort, intPort, addr.data(), 0, protocol);
 
     if(!result)
       {
@@ -111,14 +111,14 @@ namespace KNetwork {
     return 0;
   }
 
-  void KUpnp::removePortMapping(unsigned int port)
+  void KUpnp::removePortMapping(unsigned int port, const char* protocol)
   {
     QCString portNumber;
     portNumber.setNum(port);
 
     kdDebug() << "KUpnp::removePortRedirection " << portNumber << endl;
 
-    UPNP_DeletePortMapping(urls.controlURL, data.servicetype, portNumber, "TCP");
+    UPNP_DeletePortMapping(urls.controlURL, data.servicetype, portNumber, protocol);
   }
 
   QCString KUpnp::getExternalIpAddress()
