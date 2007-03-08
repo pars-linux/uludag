@@ -806,10 +806,8 @@ class MainApplicationWidget(QWidget):
         for key in self.componentDict.keys():
             if self.componentDict[key].name == i18n("All"):
                 continue
-            for package in self.componentDict[key].packages:
-                if query in package:
-                    packages.append(package)
-
+            packages.extend(pisi.api.search_in_packages(unicode(query).split(),
+                                                        self.componentDict[key].packages))
         return packages
 
     def showPreferences(self):
