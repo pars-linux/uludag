@@ -259,6 +259,10 @@ class Fstab:
         self.update()
 
     def delFstabEntry(self, partition):
+        # We have to add LABEL to partition if not exists
+        if not partition.startswith("/dev/") and not partition.startswith("LABEL="):
+            partition = "LABEL=%s" % partition
+
         if not self.__fstabPartitions.get(partition):
             print("ERROR: There is not any fstab record for '%s'.\n" % (partition))
             return -1
