@@ -265,7 +265,7 @@ class ProjectWindow(KMainWindow):
     def make(self):
         if not self.checkSettings():
             return
-        repo = self.project.get_repo()
+        repo = self.project.get_repo(self.progress)
         f = tempfile.NamedTemporaryFile()
         self.project.save(f.name)
         ppath = sys.argv[0]
