@@ -60,7 +60,7 @@ class ScanItem(QListViewItem):
         elif signal >= 20:
             num = 1
         
-        iconSet = getIconSet(locate("data", "network-manager/signal_%d.xpm" % num), KIcon.Small)
+        iconSet = getIconSet(locate("data", "network-manager/signal_%d.png" % num), KIcon.Small)
         return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
 
 
