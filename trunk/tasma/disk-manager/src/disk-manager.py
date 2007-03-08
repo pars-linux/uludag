@@ -291,13 +291,13 @@ class diskForm(mainForm):
             self.prettyList[disk]=[]
 
             for partition in self.getPartitionsFromSys(disk):
-                moodi = partition[0]
+                tempPartition = partition[0]
                 if partition[0] in self.Fstab.Label:
                     if self.fstabPartitions.has_key("LABEL=%s" % self.Fstab.Label[partition[0]]):
-                        moodi = "LABEL=%s" % self.Fstab.Label[partition[0]]
+                        tempPartition = "LABEL=%s" % self.Fstab.Label[partition[0]]
 
-                if self.fstabPartitions.has_key(moodi):
-                    activePartition = self.fstabPartitions.get(moodi)
+                if self.fstabPartitions.has_key(tempPartition):
+                    activePartition = self.fstabPartitions.get(tempPartition)
                     pixie = loadIcon('DiskAdded',size=32)
                     check = QCheckListItem.On
                 else:
@@ -306,9 +306,9 @@ class diskForm(mainForm):
                     check = QCheckListItem.Off
 
 
-                activePartition['partition_name']=moodi
-                if moodi.startswith("LABEL="):
-                    activePartition['partition_name']=moodi[6:]
+                activePartition['partition_name']=tempPartition
+                if tempPartition.startswith("LABEL="):
+                    activePartition['partition_name']=tempPartition[6:]
                 partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + '\n' +
                                                           i18n('Mount Point') +' : '+ activePartition['mount_point'] + '\t' +
                                                           i18n('File System Type') +' : '+ activePartition['file_system']),
