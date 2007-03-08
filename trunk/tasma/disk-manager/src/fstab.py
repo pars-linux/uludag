@@ -210,13 +210,22 @@ class Fstab:
         if attr_dict.get('mount_point') == '':
             attr_dict['mount_point'] = self.defaultMountDir + '/' + os.path.basename(partition)
 
+        ## print "FSTAB:",partition
+        ## print "FSTAB:",self.Label.values()
 
         err = []
-        if not self.__allPartitions.get(partition):
-            #if partition not in self.Label.values():
+        if not self.__allPartitions.get(partition) and partition not in self.Label.values():
             err.append("ERROR: '%s' is not an available partition." % (partition))
+
+        ## print "FSTAB:",self.__fstabPartitions
+
+        # We have to add LABEL to partition if not exists
+        if not partition.startswith("/dev/") and not partition.startswith("LABEL="):
+            partition = "LABEL=%s" % partition
+
         if self.__fstabPartitions.get(partition):
             self.delFstabEntry(partition)
+
         if err:
             print err
             return -1

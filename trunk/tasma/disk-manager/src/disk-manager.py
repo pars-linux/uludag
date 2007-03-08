@@ -243,8 +243,9 @@ class diskForm(mainForm):
                 if node['list_widget'].isOn():
                     if node['mount_point']=='' or node['options']=='':
                         node['state']=1
+                    ## print 'DEBUG: now working on %s '%node['partition_name']
                     self.Fstab.addFstabEntry(node['partition_name'],node)
-                    ## print 'DEBUG: Partition %s added to /etc/fstab' % node['partition_name']
+                    ## print 'DEBUG: Partition %s added to /etc/fstab' % node['partition_name']
                 else:
                     # warn when trying remove root partition
                     if not node['mount_point']=='/':
@@ -256,7 +257,7 @@ class diskForm(mainForm):
 
         if (self.Fstab.writeContent()):
             self.showInfo(i18n("Completed"),i18n("File /etc/fstab updated !"))
-
+            
         self.doMount()
         self.Fstab.update()
         self.initialize()
@@ -288,13 +289,13 @@ class diskForm(mainForm):
             disks.setPixmap(0,loadIcon('Disk',size=32))
             disks.setOpen(True)
             self.prettyList[disk]=[]
-            
+
             for partition in self.getPartitionsFromSys(disk):
                 moodi = partition[0]
                 if partition[0] in self.Fstab.Label:
                     if self.fstabPartitions.has_key("LABEL=%s" % self.Fstab.Label[partition[0]]):
                         moodi = "LABEL=%s" % self.Fstab.Label[partition[0]]
-                
+
                 if self.fstabPartitions.has_key(moodi):
                     activePartition = self.fstabPartitions.get(moodi)
                     pixie = loadIcon('DiskAdded',size=32)
@@ -306,7 +307,7 @@ class diskForm(mainForm):
 
 
                 activePartition['partition_name']=moodi
-                if moodi.startswith("LABEL"):
+                if moodi.startswith("LABEL="):
                     activePartition['partition_name']=moodi[6:]
                 partitions = QCheckListItem(disks,QString(activePartition['partition_name'] + '\n' +
                                                           i18n('Mount Point') +' : '+ activePartition['mount_point'] + '\t' +
