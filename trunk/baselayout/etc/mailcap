@@ -176,3 +176,6 @@ text/x-patch; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.diff
 # Rest
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.po
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.pot
+
+# Bittorrent
+application/x-bittorrent; ktorrent '%s'; -n "$DISPLAY" ; nametemplate=%s.torrent
