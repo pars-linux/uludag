@@ -3,8 +3,11 @@
 
 include "/usr/share/themes/Qt/gtk-2.0/gtkrc"
 
-style "default" {}
-
-widget_class "*" style "default"
+style "user-font"
+{
+	font_name="DejaVu Sans 10"
+}
+widget_class "*" style "user-font"
 
 gtk-theme-name="Qt"
+gtk-font-name="DejaVu Sans 10"
