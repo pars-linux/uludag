@@ -146,7 +146,7 @@ msgstr "Controlla automaticamenti gli aggiornamenti ogni"
 #: rc.cpp:66 ../src/packagedlg.cpp:104
 #, no-c-format
 msgid " hours"
-msgstr "ore"
+msgstr " ore"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 121
 #: rc.cpp:69 ../src/packagedlg.cpp:105

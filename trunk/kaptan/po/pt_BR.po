@@ -147,7 +147,7 @@ msgstr "Checar atualizações automaticamente a cada"
 #: rc.cpp:66 ../src/packagedlg.cpp:104
 #, no-c-format
 msgid " hours"
-msgstr "horas"
+msgstr " horas"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 121
 #: rc.cpp:69 ../src/packagedlg.cpp:105
