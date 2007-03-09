@@ -26,6 +26,7 @@ namespace KNetwork {
   private:
     struct UPNPUrls urls;
     struct IGDdatas data;
+    static struct UPNPDev * devlist;
   };
 
 }

@@ -13,9 +13,10 @@
 
 namespace KNetwork {
 
+  struct UPNPDev* KUpnp::devlist = NULL;
+
   KUpnp::KUpnp()
   {
-    struct UPNPDev * devlist;
     struct UPNPDev * dev;
     char * descXML;
     int descXMLsize = 0;
@@ -25,7 +26,9 @@ namespace KNetwork {
     memset(&urls, 0, sizeof(struct UPNPUrls));
     memset(&data, 0, sizeof(struct IGDdatas));
 
-    devlist = upnpDiscover(500);
+    if(!devlist) // It might already be initialized in ::isBehindNat()
+      devlist = upnpDiscover(500);
+
     if (devlist)
       {
         dev = devlist;
@@ -58,7 +61,6 @@ namespace KNetwork {
 
   bool KUpnp::isBehindNat()
   {
-    struct UPNPDev * devlist;
     devlist = upnpDiscover(500);
 
     if (!devlist)
