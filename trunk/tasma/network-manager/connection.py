@@ -17,34 +17,46 @@ import widgets
 from icons import getIconSet, icons
 from comariface import comlink
 
+class WirelessTipper(QToolTip):
+    def maybeTip(self, point):
+        item = self.list.itemAt(point)
+        if item:
+            self.tip(self.list.itemRect(item),
+                "<nobr>%s: %s</nobr><br><nobr>%s: %s</nobr><br><nobr>%s: %s</nobr>" %
+                    (
+                    i18n("Channel"), item.info["channel"],
+                    i18n("Mode"), item.info["mode"],
+                    i18n("Protocol"), item.info["protocol"]
+                    )
+            )
 
 class ScanItem(QListViewItem):
     def __init__(self, parent, data):
         QListViewItem.__init__(self, parent)
-        info = {}
+        self.info = {}
         for param in data.split("\t"):
             key, value = param.split("=", 1)
-            info[key] = value
+            self.info[key] = value
         
-        enc = info.get("encryption", "none")
+        enc = self.info.get("encryption", "none")
         if enc != "none":
             self.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
         self.enc = enc
         
-        qual = info.get("quality", "0")
+        qual = self.info.get("quality", "0")
         try:
             qual = int(qual)
         except:
             qual = 0
         self.setPixmap(1, self.signalIcon(qual))
         
-        remote = info["remote"]
+        remote = self.info["remote"]
         if remote == "<hidden>" or remote == "":
             remote = i18n("<hidden>")
         self.remote = remote
         self.setText(2, remote)
         
-        mac = info.get("mac", None)
+        mac = self.info.get("mac", None)
         if mac:
             self.setText(3, mac)
     
@@ -87,6 +99,8 @@ class Scanner(QPopupMenu):
         self.view.setAllColumnsShowFocus(True)
         self.view.setShowToolTips(True)
         self.view.header().hide()
+        self.package_tipper = WirelessTipper(self.view.viewport())
+        self.package_tipper.list = self.view
         hb = QHBox(vb)
         hb.setSpacing(6)
         but = QPushButton(getIconSet("reload", KIcon.Small), i18n("Scan again"), hb)
@@ -121,12 +135,12 @@ class Scanner(QPopupMenu):
     
     def slotScan(self):
         self.scan_use_but.setEnabled(False)
-        self.view.clear()
         comlink.queryRemotes(self.parent.link.script, self.parent.device_uid)
     
     def slotRemotes(self, script, remotes):
         if self.parent.link.script != script:
             return
+        self.view.clear()
         if not remotes == "":
             for remote in remotes.split("\n"):
                 ScanItem(self.view, remote)
