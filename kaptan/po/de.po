@@ -19,7 +19,7 @@ msgstr ""
 #: rc.cpp:66 ../src/packagedlg.cpp:104
 #, no-c-format
 msgid " hours"
-msgstr "Zeit"
+msgstr " Zeit"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 167
 #: rc.cpp:52 ../src/mousedlg.cpp:122
