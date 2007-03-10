@@ -1,58 +1,58 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of fr.po to French
+# Copyright (C) 2007 Free Software Foundation, Inc.
 #
-#, fuzzy
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: fr\n"
 "POT-Creation-Date: 2006-11-26 21:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2007-03-10 14:34+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:34
 msgid "PiSi Package Info"
-msgstr ""
+msgstr "Information du Paquet PiSi"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:38
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:40
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:41
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 #: src/tmoduleview.cpp:71
 msgid "&Back"
-msgstr ""
+msgstr "R&etour"
 
 #: src/tmoduleview.cpp:81
 msgid "&Reset"
-msgstr ""
+msgstr "&Remise à zéro"
 
 #: src/tmoduleview.cpp:84
 msgid "&Administrator Mode"
-msgstr ""
+msgstr "Mode &Administrateur"
 
 #: src/tmoduleview.cpp:148
 msgid "<big>Loading...</big>"
-msgstr ""
+msgstr "<big>Chargement en cours...</big>"
 
 #: src/aboutview.cpp:68
 msgid "Configuration Center"
-msgstr ""
+msgstr "Centre de Configuration"
 
 #: src/aboutview.cpp:86
 msgid "Welcome to TASMA"
-msgstr ""
+msgstr "Bienvenue sur TASMA"
 
 #: src/aboutview.cpp:88
 msgid ""
@@ -60,6 +60,9 @@ msgid ""
 "tweak the systems default configuration settings and by using the modules "
 "presented in TASMA. "
 msgstr ""
+"TASMA est une application de configuration du Système d'Exploitation Pardus. "
+"Vous pouver bricoler les configurations par défaut du système en utilisant les "
+"différents modules de TASMA."
 
 #: src/aboutview.cpp:99
 msgid ""
@@ -68,126 +71,132 @@ msgid ""
 "a category its contents will be shown as icons in the right panel. You can "
 "start a configuration module by clicking (or double clicking) its icon."
 msgstr ""
+"Pour une meilleure lisibilité, les modules sont regroupés par catégories. Vous "
+"pouvez activer une catégorie en la sélectionnant sur le panneau à gauche. "
+"Une fois activée, le contenu de la catégorie s'affiche sur le panneau droit. Vous "
+"pouvez lancer un module de configuration en cliquant (ou double-cliquant) sur "
+"son icône."
 
 #: src/main.cpp:62
 msgid "TASMA - Pardus Configuration Center"
-msgstr ""
+msgstr "TASMA - Le Centre de Configuration de Pardus"
 
 #: src/main.cpp:63
 msgid "Pardus Configuration Center"
-msgstr ""
+msgstr "Centre de Configuration de Pardus"
 
 #: src/main.cpp:64
 msgid "(c) 2005, TUBITAK - UEKAE"
-msgstr ""
+msgstr "(c) 2005, TUBITAK - UEKAE"
 
 #: modules/tasmatv/tasmatv.cpp:44 src/main.cpp:65
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Responsable actuel"
 
 #: src/main.cpp:66
 msgid "Old Maintainer & Original Author"
-msgstr ""
+msgstr "Auteur originel et précédemment responsable"
 
 #: src/main.cpp:67
 msgid "KDE Developers"
-msgstr ""
+msgstr "Développeurs KDE"
 
 #: src/main.cpp:67
 msgid "Module Developers"
-msgstr ""
+msgstr "Développeurs de Modules"
 
 #: src/tasmamainwin.cpp:80
 msgid "About Current Module"
-msgstr ""
+msgstr "À propos du module courant"
 
 #: modules/tasmatv/cards-db.cpp:99 modules/tasmatv/tuners-db.cpp:173
 msgid "Other"
-msgstr ""
+msgstr "Autre"
 
 #: modules/tasmatv/tasmatv.cpp:39 modules/tasmatv/tasmatv.cpp:40
 msgid "TASMA Tv Card Configuration Module"
-msgstr ""
+msgstr "Module de Configuration de Carte Tv TASMA"
 
 #: modules/tasmatv/tasmatv.cpp:42
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
-msgstr ""
+msgstr "(c) 2005-2006, TUBITAK - UEKAE"
 
 #: modules/tasmatv/tasmatv.cpp:81
 msgid "Tv card configuration module for TASMA."
-msgstr ""
+msgstr "Module de configuration de cartes tv pour TASMA."
 
 #: modules/tasmatv/tvconfigui.cpp:136
 msgid "TvConfigUI"
-msgstr ""
+msgstr "TvConfigUI"
 
 #: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:147
 #: rc.cpp:6 rc.cpp:27
 #, no-c-format
 msgid "Model"
-msgstr ""
+msgstr "Modèle"
 
 #: modules/tasmatv/tvconfigui.cpp:138 modules/tasmatv/tvconfigui.cpp:146
 #: rc.cpp:9 rc.cpp:24
 #, no-c-format
 msgid "Manufacturer"
-msgstr ""
+msgstr "Fabricant"
 
 #: modules/tasmatv/tvconfigui.cpp:140 modules/tasmatv/tvconfigui.cpp:142
 #: modules/tasmatv/tvconfigui.cpp:145 modules/tasmatv/tvconfigui.cpp:149
 #: rc.cpp:12 rc.cpp:15 rc.cpp:21 rc.cpp:30
 #, no-c-format
 msgid "New Item"
-msgstr ""
+msgstr "Nouvel élément"
 
 #: modules/tasmatv/tvconfigui.cpp:143 rc.cpp:3
 #, no-c-format
 msgid "Tv Card"
-msgstr ""
+msgstr "Carte Tv"
 
 #: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:18
 #, no-c-format
 msgid "Tuner"
-msgstr ""
+msgstr "Tuner"
 
 #: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:36
 #, no-c-format
 msgid "Addons"
-msgstr ""
+msgstr "Ajouts"
 
 #: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:39
 #, no-c-format
 msgid "Radio Card"
-msgstr ""
+msgstr "Carte Radio"
 
 #: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:42
 #, no-c-format
 msgid "Phase Locked Loop (PLL)"
-msgstr ""
+msgstr "Phase Locked Loop (PLL)"
 
 #: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:45
 #, no-c-format
 msgid "Do not use PLL"
-msgstr ""
+msgstr "Ne pas utilser le PLL"
 
 #: modules/tasmatv/tvconfigui.cpp:155 rc.cpp:48
 #, no-c-format
 msgid "28 Mhz Crystal"
-msgstr ""
+msgstr "28 Mhz Crystal"
 
 #: modules/tasmatv/tvconfigui.cpp:156 rc.cpp:51
 #, no-c-format
 msgid "35 Mhz Crystal"
-msgstr ""
+msgstr "35 Mhz Crystal"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr ""
+msgstr "Amine Chadly"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr ""
+msgstr "amine.chadly@gmail.com"
+
