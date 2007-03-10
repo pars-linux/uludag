@@ -15,6 +15,7 @@ Name[nl]=Bestandsassociaties
 Name[es]=Tipos de Archivos
 Name[de]=Dateiassoziationen
 Name[pt_BR]=Associações de arquivos
+Name[fr]=Association de fichiers
 
 Comment=Configure file associations
 Comment[tr]=Dosya bağıntılarını yapılandır
@@ -22,6 +23,7 @@ Comment[nl]=Hier kunt u de bestandsassociaties instellen
 Comment[es]=Asociar programas a ejecutar para tipos de archivos
 Comment[de]=Dateiassoziationen konfigurieren
 Comment[pt_BR]=Configurar associações de arquivos
+Comment[fr]=Configurer les associations de fichier
 
 Keywords=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
 Keywords[tr]=Dosya Türleri,Dosya İlişkileri,Mime Türleri,Dosya Kalıpları,Dosyalar
@@ -29,5 +31,6 @@ Keywords[nl]=bestandstypen,bestandsextensies,bestandsassociaties,mime types,best
 Keywords[es]=Tipos de archivos,Asociación de archivos,Mime Types,Patrónes de Archivos,Archivos,Patrón
 Keywords[de]=Dateiarten,Dateiassoziationen,MIME-Typen,Dateimuster,Dateien,Muster
 Keywords[pt_BR]=Tipos de Arquivos,Associações de Arquivos,MIME-Types,Padrões de Arquivos,Arquivos,Padrão
+Keywords[fr]=Type de fichiers,Association de fichiers,Types Mime,Patrons de fichier,Fichier,Patron
 
 Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop
