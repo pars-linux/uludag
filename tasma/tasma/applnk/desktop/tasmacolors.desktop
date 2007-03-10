@@ -16,6 +16,7 @@ Name[nl]=Kleuren
 Name[es]=Colores
 Name[de]=Farben
 Name[pt_BR]=Cores
+Name[fr]=Couleurs
 
 Comment=Color settings
 Comment[tr]=Renk ayarları
@@ -23,6 +24,7 @@ Comment[nl]=Kleuren instellen
 Comment[es]=Configuración de Colores
 Comment[de]=Farbeinstellungen
 Comment[pt_BR]=Configurações de cor
+Comment[fr]=Configuration des couleurs
 
 Keywords=colors,colours,scheme,contrast,Widget colors,Color Scheme
 Keywords[tr]=renkler,şema,kontrast,Renk Tablosu
@@ -30,5 +32,6 @@ Keywords[nl]=kleuren,kleur,schema,contrast,widgetkleuren,kleurenschema
 Keywords[es]=colores,esquema,contraste,Widget colors,Esquema de colores
 Keywords[de]=Farben,Farben,Schema,Kontrast,Widget Farben,Farbschema
 Keywords[pt_BR]=cor,cores,esquema,contraste,cores dos Widgets,Esquema de Cores
+Keywords[fr]=couleurs,coloris,schema,contrast,couleurs des Widgets, schéma de couleur
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

@@ -22,6 +22,7 @@ Comment[tr]=KDE Simgelerini Özelleştirir
 Comment[nl]=KDE-pictogrammen aanpassen
 Comment[de]=KDE-Symbole anpassen
 Comment[pt_BR]=Customizar Ícones do KDE
+Comment[fr]=Personnaliser les icônes de KDE
 
 Keywords=icons,effects,size,hicolor,locolor
 Keywords[tr]=simgeler,efektler,boyut,yüksek renk,düşük renk
@@ -29,5 +30,6 @@ Keywords[nl]=iconen,pictogrammen,effecten,grootte,afmeting,formaat,kleuren
 Keywords[es]=íconos,efectos,tamaño,hicolor,locolor
 Keywords[de]=Symbole,Effekte,Grösse,hohe Farbtiefe,niedrige Farbtiefe
 Keywords[pt_BR]=ícones,efeitos,tamanho,hicolor,locolor
+Keywords[fr]=icônes,effets,taille,couleurs hautes,couleurs basses
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

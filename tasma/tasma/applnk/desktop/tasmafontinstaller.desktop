@@ -5,6 +5,7 @@ Name[nl]=Lettertype-installatie
 Name[es]=Instalador de Fuentes
 Name[de]=Schriftart-Installation
 Name[pt_BR]=Instalador de Fontes
+Name[fr]=Installeur de Fontes
 
 Comment=Install & preview fonts
 Comment[tr]=Yazıtiplerini kur ve önizle
@@ -12,6 +13,7 @@ Comment[nl]=Lettertypen installeren en bekijken
 Comment[es]=Instalar & Previsuallizar Fuentes
 Comment[de]=Schriftarten installieren & Vorschau anzeigen
 Comment[pt_BR]=Instalar & pré-visualizar fontes
+Comment[fr]=Installer & prévisualiser des fontes
 
 X-KDE-ModuleType=Library
 X-KDE-Library=fontinst
