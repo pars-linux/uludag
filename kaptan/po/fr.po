@@ -1,38 +1,37 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of fr.po to French
 # This file is put in the public domain.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 20:44+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2007-03-10 16:49+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 43
 #: rc.cpp:4 ../src/goodbyedlg.cpp:66
 #, no-c-format
 msgid "Start Tasma"
-msgstr ""
+msgstr "Lancer Tasma"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid ""
-"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
-msgstr ""
+msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgstr "<center>Vous avez terminé !  Vous pouvez maintenant commencer à utiliser <b>Pardus</b></center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 16
 #: rc.cpp:10 ../src/kaptan.cpp:41 ../src/welcomedlg.cpp:65
 #, no-c-format
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenue"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 27
 #: rc.cpp:13 ../src/welcomedlg.cpp:66
@@ -43,6 +42,11 @@ msgid ""
 "This application will also set some default configuration for a better "
 "desktop :)."
 msgstr ""
+"Cette application, appelée <b>Kaptan Desktop</b>, va vous aider à "
+"configurer rapidement de manière rudimentaire mais suffisante votre "
+"bureau <b>Pardus</b>. "
+"Cette application va également établir quelques paramètres par défaut "
+"de manière à obtenir un meilleur bureau :)."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16 ../src/welcomedlg.cpp:67
@@ -54,13 +58,19 @@ msgid ""
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
+"<b>Pardus </b> est une distribution GNU/Linux ciblant les besoins "
+"bureautiques de base d'utilisateurs à leur aise en informatique; en "
+"s'inspirant d'idées fortes, d'architectures et de code d'autres distribution; "
+"avec une ossature (framework) de configuration gardant la possibilité "
+"d'évoluer en système autonome; pour simplifier l'installation et l'utilisation "
+"des ordinateurs."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 38
 #: rc.cpp:20 rc.cpp:26 ../src/wallpaperdlg.cpp:94 ../src/wallpaperdlg.cpp:96
 #, no-c-format
 msgid "Wallpaper"
-msgstr ""
+msgstr "Fond d'écran"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23 ../src/wallpaperdlg.cpp:95
@@ -70,24 +80,27 @@ msgid ""
 "<b>Pardus</b> provides eye candy wallpapers, you can select one of them, as "
 "you wish."
 msgstr ""
+"Ici, vous pouvez sélectionner un <b>fond d'écran</b> pour votre bureau. "
+"<b>Pardus</b> propose des fonds d'écran séduisants, vous pouvez "
+"sélectionner celui qui vous convient."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 62
 #: rc.cpp:29 ../src/wallpaperdlg.cpp:97
 #, no-c-format
 msgid "Don't change desktop background!"
-msgstr ""
+msgstr "Ne pas changer le fond d'écran !"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 134
 #: rc.cpp:33 ../src/wallpaperdlg.cpp:99
 #, no-c-format
 msgid "&Test Wallpaper"
-msgstr ""
+msgstr "&Tester le fond d'écran"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 16
 #: rc.cpp:36 ../src/mousedlg.cpp:116
 #, no-c-format
 msgid "MouseSetupDlg"
-msgstr ""
+msgstr "Dialogue de configuration de la souris"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
 #: rc.cpp:39 ../src/mousedlg.cpp:117
@@ -97,60 +110,63 @@ msgid ""
 "right buttons on your pointing device by choosing the 'Left handed' option "
 "below. You can also select default click behaviour."
 msgstr ""
+"Si vous êtes gaucher, vous préférez peut-être échanger les comportements "
+"des boutons droits et gauches de votre souris en choisissant l'option 'Gaucher' "
+"ci-dessous. Vous pouvez également sélectionner le comportement de clic par défaut."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
 #: rc.cpp:42 ../src/mousedlg.cpp:118
 #, no-c-format
 msgid "Button Order"
-msgstr ""
+msgstr "Ordre des bouttons"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 85
 #: rc.cpp:45 ../src/mousedlg.cpp:119
 #, no-c-format
 msgid "Reverse scroll"
-msgstr ""
+msgstr "Défilement inverse"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 156
 #: rc.cpp:49 ../src/mousedlg.cpp:121
 #, no-c-format
 msgid "Click behaviour"
-msgstr ""
+msgstr "Comportement du clic"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 167
 #: rc.cpp:52 ../src/mousedlg.cpp:122
 #, no-c-format
 msgid "&Single-click to open files and folders"
-msgstr ""
+msgstr "Ouvrir les fichiers et les répertoires sur un &Simple clic"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 178
 #: rc.cpp:55 ../src/mousedlg.cpp:123
 #, no-c-format
 msgid "Dou&ble-click to open files and folders (select icons on first click)"
-msgstr ""
+msgstr "Ouvrir les fichiers et les répertoires sur Dou&ble-clic (sélectionner les icônes au premier clic)"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
 #: rc.cpp:59 ../src/kaptan.cpp:61 ../src/packagedlg.cpp:101
 #, no-c-format
 msgid "Package Manager"
-msgstr ""
+msgstr "Gestionnaire de paquets"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 82
 #: rc.cpp:62 ../src/packagedlg.cpp:102
 #, no-c-format
 msgid "Check updates automatically for every"
-msgstr ""
+msgstr "Vérifier automatiquement les mises à jour toutes les"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 99
 #: rc.cpp:66 ../src/packagedlg.cpp:104
 #, no-c-format
 msgid " hours"
-msgstr ""
+msgstr "heures"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 121
 #: rc.cpp:69 ../src/packagedlg.cpp:105
 #, no-c-format
 msgid "Show in system tray"
-msgstr ""
+msgstr "Montrer dans la boite à icônes"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 133
 #: rc.cpp:72 ../src/packagedlg.cpp:106
@@ -161,13 +177,19 @@ msgid ""
 "But also can work in the system tray and periodically checks new upgrades of "
 "the programs that are installed on your system."
 msgstr ""
+"<b>Package-manager</b> est l'interface graphique de <b>PiSi</b>. Il vous "
+"permet d'installer de nouveaux programmes et de mettre à jour votre système "
+"très facilement. "
+"Package-manager peu également s'éxécuter dans la boîte à icônes et vérifier "
+"périodiquement la présense de mises à jour pour les programmes installés "
+"sur votre système."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 38
 #: rc.cpp:75 rc.cpp:81 ../src/styledlg.cpp:94 ../src/styledlg.cpp:96
 #, no-c-format
 msgid "Style"
-msgstr ""
+msgstr "Style"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 27
 #: rc.cpp:78 ../src/styledlg.cpp:95
@@ -176,51 +198,54 @@ msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
+"Ici, vous pouvez sélectionne un <b>style</b> pour votre bureau.<b>Pardus</b> "
+"vous propose quelques style séduisants."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 54
 #: rc.cpp:84 ../src/styledlg.cpp:97
 #, no-c-format
 msgid "Use enhanced Kickoff style menu"
-msgstr ""
+msgstr "Utiliser style de menu Kickoff amélioré"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 62
 #: rc.cpp:87 ../src/styledlg.cpp:98
 #, no-c-format
 msgid "Test Style"
-msgstr ""
+msgstr "Tester le Style"
 
 #: ../src/kaptan.cpp:45
 msgid "Mouse Setup"
-msgstr ""
+msgstr "Configuration de la Souris"
 
 #: ../src/kaptan.cpp:49
 msgid "Style Setup"
-msgstr ""
+msgstr "Configuration du Style"
 
 #: ../src/kaptan.cpp:53
 msgid "Wallpaper Setup"
-msgstr ""
+msgstr "Configuration du Fond d'écran"
 
 #: ../src/kaptan.cpp:57
 msgid "Network Setup"
-msgstr ""
+msgstr "Configuration du réseau"
 
 #: ../src/kaptan.cpp:65
 msgid "Congratulations"
-msgstr ""
+msgstr "Félicitations"
 
 #: ../src/main.cpp:18
 msgid "Kaptan Desktop"
-msgstr ""
+msgstr "Kaptan Desktop"
 
 #: ../src/mouse.cpp:31
 msgid "Right handed"
-msgstr ""
+msgstr "Droitier"
 
 #: ../src/mouse.cpp:32
 msgid "Left handed"
-msgstr ""
+msgstr "Gaucher"
 
 #: ../src/network.cpp:42
 msgid "<big>Loading...</big>"
-msgstr ""
+msgstr "<big>Chargement en cours...</big>"
+
