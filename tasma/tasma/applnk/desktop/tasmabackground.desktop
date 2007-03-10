@@ -16,6 +16,7 @@ Name[nl]=Achtergrond
 Name[es]=Fondo
 Name[de]=Hintergrund
 Name[pt_BR]=Fundo
+Name[fr]=Fond d'écran
 
 Comment=Change the background settings
 Comment[tr]=Arkaplan ayarlarını değiştirir
@@ -23,6 +24,7 @@ Comment[nl]=Achtergrondinstellingen wijzigen
 Comment[es]=Configuración de fondo de escritorio
 Comment[de]=Hintergrundeinstellungen änden
 Comment[pt_BR]=Mudar as configurações do fundo
+Comment[fr]=Changer la configuration du fond d'écran
 
 Keywords=background,desktops,colors,colours,images,wallpapers,blending,balance,cache,multiple wallpapers,pixmap
 Keywords[tr]=artalan,masaüstü,renkler,renkler,resimler,duvar kağıtları,karıştırma,denge,ön bellek,çoklu duvar kağıtları,pixmap
@@ -30,4 +32,5 @@ Keywords[nl]=achtergrond,desktops,bureaubladen,kleur,kleuren,afbeeldingen,behang
 Keywords[es]=fondo,escritorios,color,colores,imagenes,imagenes de fondo,blending,balance,cache,fondos multiples,pixmap
 Keywords[de]=Hintergrund,Arbeitsflächen,Farben,Farben,Bilder,Hintergrundbilder,Vermischung,Balance,Cache,multiple Hintergrundbilder,Pixelgrafik
 Keywords[pt_BR]=fundo,áreas de trabalho,cor,cores,imagens,papéis de parede,blending,balanço,cache,papéis de parede múltiplos,pixmap
+Keywords[fr]=fond d'écran,bureaux,couleurs,coloris,images,papiers-peints,blending,balance,cache,papiers-peints multiples,pixmap
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
