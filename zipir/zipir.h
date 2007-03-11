@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2005, TUBITAK/UEKAE
+  Copyright (c) 2005-2007 TUBITAK/UEKAE
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -42,23 +42,29 @@ enum {
         ZIP_NOMULTI,
         ZIP_EOPEN,
         ZIP_EREAD,
+        ZIP_EWRITE,
         ZIP_NOFILE
 };
 
+enum {
+        AC_READ = 0,
+        AC_APPEND
+};
+
 struct zipfile {
-	struct zipfile *next;
-	char *name;
-	ulong os_made_by;
-	ulong crc;
+    struct zipfile *next;
+    char *name;
+    ulong os_made_by;
+    ulong crc;
         ulong zip_size;
         ulong real_size;
-	ulong pos;
-	long mtime;
-	long atime;
-	long ctime;
-	uid_t uid;
-	gid_t gid;
-	ulong xattr;
+    ulong pos;
+    long mtime;
+    long atime;
+    long ctime;
+    uid_t uid;
+    gid_t gid;
+    ulong xattr;
 };
 
 struct zip_struct {
@@ -76,7 +82,7 @@ typedef struct zip_struct zip;
 
 char *zip_error (int err);
 
-zip *zip_open (const char *fname, int *err);
+zip *zip_open (const char *fname, int *err, int action);
 void zip_close (zip *z);
 
 unsigned long zip_get_size (zip *z, const char *name);
