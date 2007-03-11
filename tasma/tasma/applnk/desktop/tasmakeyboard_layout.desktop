@@ -17,6 +17,7 @@ Name[nl]=Toetsenbordindeling
 Name[es]=Distribución de Teclado
 Name[de]=Tastaturbelegung
 Name[pt_BR]=Layout do Teclado
+Name[fr]=Disposition des touches du clavier
 
 Comment=Keyboard Layout
 Comment[tr]=Klavye Düzeni
@@ -24,6 +25,7 @@ Comment[nl]=Toetsenbordindeling
 Comment[es]=Distribución de Teclado
 Comment[de]=Tastaturbelegung
 Comment[pt_BR]=Layout do Teclado
+Comment[fr]=Disposition des touches du clavier
 
 Keywords=Keyboard,Layout,International
 Keywords[tr]=Klavye,Yerleşim,Düzen,Uluslararası
@@ -31,5 +33,6 @@ Keywords[nl]=keyboard,toetsenbord,keyboard layout,toetsenbordindeling,input devi
 Keywords[es]=Teclado,Layout,Internacional
 Keywords[de]=Tastatur,Belegung,International
 Keywords[pt_BR]=Teclado,Layout,Internacional
+Keywords[fr]=Clavier,Disposition,International
 
 Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-peripherals

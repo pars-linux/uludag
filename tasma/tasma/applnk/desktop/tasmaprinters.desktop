@@ -16,6 +16,7 @@ Name[tr]=Yazıcılar
 Name[es]=Impresoras
 Name[de]=Drucker
 Name[pt_BR]=Impressoras
+Name[fr]=Imprimantes
 
 Comment=Printing system configuration (printers, jobs, classes, ...)
 Comment[tr]=Yazdırma sistemi kurulumu (yazıcılar, işler, sınıflar, ...)
@@ -23,6 +24,7 @@ Comment[nl]=Configuratie van het afdruksysteem (printers, taken, klassen, ...)
 Comment[es]=Configuración del sistema de impresión (impresorasa, tareas de impresión, clases, ...)
 Comment[de]=Drucksystemkonfiguration (Drucker, Aufträge, Klassen, ...)
 Comment[pt_BR]=Configuração do sitema de impressão (impressoras, trabalhos, classes, ...)
+Comment[fr]=Configuration du système d'impression (imprimantes, travaux, classes, ...)
 
 Keywords=print,printer,printing management
 Keywords[tr]=yazdır,yazıcı,yazıcı yönetimi
@@ -30,5 +32,6 @@ Keywords[nl]=print,printer,printing management,afdrukbeheer,afdrukken
 Keywords[es]=imprimir,impresora,administración de impresión
 Keywords[de]=Drucker,drucken,Druckermanagement,Druckerverwaltung
 Keywords[pt_BR]=imprimir,impressora,gerenciamento de impressão
+Keywords[fr]=imprimer,imprimante,gestion d'impression
 
 Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals

@@ -31,6 +31,6 @@ Keywords[nl]=systeemgeluiden,audio,geluid,waarschuwingen,geluidssignaal,notifica
 Keywords[es]=Sonidos del sistema,Audio,Sonido,Notificación,Alertas,Notificar
 Keywords[de]=System-Sounds,Audio,Sound,Melden,Alarmsignale,Meldung,
 Keywords[pt_BR]=Sons do sistema,Áudio,Som,Notificar,Alertas,Notificação
-Keywords[fr]=Son système,Audion,Son,Notifier,Alertes,Notification
+Keywords[fr]=Sons système,Audio,Son,Notifier,Alertes,Notification
 
 Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound

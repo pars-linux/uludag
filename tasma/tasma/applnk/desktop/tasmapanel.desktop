@@ -15,6 +15,7 @@ Name[nl]=Panelen
 Name[es]=Paneles
 Name[de]=Leisten
 Name[pt_BR]=Painéis
+Name[fr]=Panneaux
 
 Comment=Configure the arrangement of the panel
 Comment[tr]=Panelin konumunu buradan yapılandırabilirsiniz
@@ -22,6 +23,7 @@ Comment[nl]=U kunt hier de opmaak van het paneel instellen
 Comment[es]=Configuración del panes
 Comment[de]=Platzierung der Leiste konfigurieren
 Comment[pt_BR]=Configurar o ajuste do painel
+Comment[fr]=Configurer l'arrangement du panneau
 
 Keywords=kicker,panel,kpanel,taskbar,startbar,launchbar,location,size,auto hide,hide,buttons,animation,background,themes,menu cache,cache,hidden,K-Menu,bookmarks,recent documents,quickbrowser,browser menu,menu,icons,tiles,applets,startup,highlight,handles,zooming icons
 Keywords[tr]=kicker,panel,kpanel,görev çubuğu,başlangıç çubuğu,başlat çubuğu,konum,boyut,Uç birim uygulaması,otomatik gizle,gizle,tuşlar,animasyon,artalan,temalar,menü ön belleği,ön bellek,gizli,K-Menu,yer imleri,en son kullanılan belgeler,hızlı gözatıcı,göz atıcı menüsü,menü,simgeler,karo,programcıklar,Başlangıç,belirt,tutamaçlar,büyüyen simgeler,güvenilen programcıklar,güvenlik düzeyi
@@ -29,5 +31,6 @@ Keywords[nl]=kicker,paneel,kpanel,taakbalk,takenbalk,startbalk,startmenu,applica
 Keywords[es]=kicker,panel,kpanel,barra de tareas,barra de inicio,barra de accesos,ubicación,tamaño,ocultar automaticamente,ocultar,botónes,animación,fondo,temas,cache de menu,cache,oculto,K-Menu,marcadores,documentos recientes,navegador rápido,menu de navegador,menu,iconos,tiles,applets,inicio,highlight,handles,aumentar iconos
 Keywords[de]=Kicker,Leiste,KPanel,Taskleiste,Startleiste,Lage,Grösse,automatisch ausblenden,ausblenden,Tasten,Animation,Hintergrund,Themen,Menü-Cache,ausgeblendet,versteckt,K-Menü,Lesezeichen,zuletzt verwendete Dokumente,Quickbrowser,Browsermenü,Menü,Icons,Kacheln,Applets,Autostart,Highlight,Verwaltungen,Icons zoomen
 Keywords[pt_BR]=kicker,painel,kpanel,barra de tarefas,barra de início,barra de lançamento,local,tamanho,auto-esconder,esconder,botões,animação,fundo,temas,cache do menu,cache,escondido,K-Menu,marcadores,documentos recentes,navegador rápido,menu de navegação,menu,ícones,telhas,applets,inicialização,highlight,handles,aumentar ícones
+Keywords[fr]=kicker,panneau,kpanel,barre des tâches,barre de démarrage,barre de lancement,localisation,taille,masquer automatiquement,masquer,bouttons,animation,fond,thèmes,cache du menu,cache,masqué,K-Menu,signets,documents récents,navigateur rapide,navigateur de menu,menu,icônes,titres,applets,démarrage,higlight,handles,zoom sur icônes
 
 Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

@@ -16,6 +16,7 @@ Name[nl]=Sneltoetsen
 Name[es]=Teclas de Acceso rápido
 Name[de]=Tastenkombinationen
 Name[pt_BR]=Atalhos de Teclado
+Name[fr]=Raccourcis Clavier
 
 Comment=Configuration of keybindings
 Comment[tr]=Tuş bağıntılarının yapılandırılması
@@ -23,6 +24,7 @@ Comment[nl]=Instellingen voor sneltoetsen
 Comment[es]=Configuración de teclas rápidas
 Comment[de]=Konfiguration der Tastenkombinationen
 Comment[pt_BR]=Configuração das teclas de atalho
+Comment[fr]=Configuration des raccourcis clavier
 
 Keywords=Keys,Global key bindings,Key scheme,Key bindings,shortcuts,application shortcuts
 Keywords[tr]=tuşlar,Küresel Tuş bağlantıları,Tuş planı,tuş bağlamaları,kısayollar,uygulama kısayolları
@@ -30,5 +32,6 @@ Keywords[nl]=keys,toetsen,toetsenindeling,toetsenbindingen,key bindings,sneltoet
 Keywords[es]=Teclas,Global key bindings,Esquema de teclas,Key bindings,accesos rápidos,accesos rápidos a programas
 Keywords[de]=Tasten,Globale Tastenkombinationen,Tastenschema,Tastenkombinationen,Verknüpfungen,Anwendungkürzeln
 Keywords[pt_BR]=Teclas,Teclas de atalho globais,Esquema de teclas,Teclas de atalho,atalhos,atalhos de aplicação
+Keywords[fr]=Touches,Raccourcis claviers généraux,Raccourcis claviers,Schéma du clavier,raccourcis,raccourcis d'applications
 
 Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-peripherals
