@@ -15,6 +15,7 @@ Name[nl]=Opstartscherm
 Name[es]=Pantalla de Inicio
 Name[de]=Startbildschirm
 Name[pt_BR]=Tela de Entrada
+Name[fr]=Page de garde
 
 Type=Application
 
@@ -24,6 +25,7 @@ Comment[nl]=Themabeheer voor opstartschermen
 Comment[es]=Administrador de temas para pantalla inicial
 Comment[de]=Start-Themen-Manager
 Comment[pt_BR]=Gerenciador para Temas de Tela de Entrada
+Comment[fr]=Gestionnaire pour thèmes de pages de garde
 
 Keywords=splash screen,splash theme,startup
 Keywords[tr]=açılış ekranı, açılış teması, başlangıç
@@ -31,5 +33,6 @@ Keywords[nl]=opstartscherm,splash screen
 Keywords[es]=splash screen,pantalla de inicio,tema de inicio,inicio
 Keywords[de]=Startbildschirm,Start-Thema,Start
 Keywords[pt_BR]=tela de entrada,tema da tela de entrada,inicialização
+Keywords[fr]=page de garde,thème de page de garde,démarrage
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

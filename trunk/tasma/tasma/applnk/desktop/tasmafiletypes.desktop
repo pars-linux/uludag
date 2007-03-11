@@ -15,7 +15,7 @@ Name[nl]=Bestandsassociaties
 Name[es]=Tipos de Archivos
 Name[de]=Dateiassoziationen
 Name[pt_BR]=Associações de arquivos
-Name[fr]=Association de fichiers
+Name[fr]=Types de fichiers
 
 Comment=Configure file associations
 Comment[tr]=Dosya bağıntılarını yapılandır
@@ -23,7 +23,7 @@ Comment[nl]=Hier kunt u de bestandsassociaties instellen
 Comment[es]=Asociar programas a ejecutar para tipos de archivos
 Comment[de]=Dateiassoziationen konfigurieren
 Comment[pt_BR]=Configurar associações de arquivos
-Comment[fr]=Configurer les associations de fichier
+Comment[fr]=Configurer les types de fichiers
 
 Keywords=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
 Keywords[tr]=Dosya Türleri,Dosya İlişkileri,Mime Türleri,Dosya Kalıpları,Dosyalar
