@@ -17,6 +17,7 @@ Name[es]=Barra de Tareas
 Name[de]=Taskleiste
 Name[pt_BR]=Barra de Tarefas
 Name[fr]=Barre des tâches
+Name[it]=Barra delle applicazioni
 
 Comment=Configure the panel taskbar
 Comment[tr]=Panel görev çubuğunu yapılandır
@@ -25,6 +26,7 @@ Comment[es]=Configuración de barra de tareas del panel
 Comment[de]=Taskleiste konfigurieren
 Comment[pt_BR]=Configurar o painel da barra de tarefas
 Comment[fr]=Configurer la barre des tâches du panneau de configuration
+Comment[it]=Configurazione della barra delle applicazioni del pannello
 
 Keywords=kicker,panel,kpanel,taskbar,startbar,launchbar,windows
 Keywords[tr]=kicker,panel,kpanel,görev çubuğu,başlangıç çubuğu,yükleme çubuğu,pencere,pencereler
@@ -33,5 +35,6 @@ Keywords[es]=kicker,panel,kpanel,barra de tareas,barra de inicio,launchbar,venta
 Keywords[de]=Kicker,Leiste,KPanel,Taskleiste,Startleiste,Startleiste,Fenster
 Keywords[pt_BR]=kicker,painel,kpanel,barra de tarefas,barra de início,barra de lançamento,janelas
 Keywords[fr]=kicker,panneau,kpanel,barre des tâches,barre de démarrage,barre de lancement,fenêtres
+Keywords[it]=kicker,panello,kpanel,barra delle applicazioni,barra di avvio,launchbar,finestre
 
 Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

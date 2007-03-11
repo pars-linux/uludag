@@ -17,6 +17,7 @@ Name[es]=Escritorios múltiples
 Name[de]=Mehrere Arbeitsflächen
 Name[pt_BR]=Áreas de Trabalho Múltiplas
 Name[fr]=Bureaux multiples
+Name[it]=Desktop multipli
 
 Comment=You can configure how many virtual desktops there are.
 Comment[tr]=Kaç görsel masaüstüne sahip olacağınızı buradan yapılandırabilirsiniz.
@@ -25,6 +26,7 @@ Comment[es]=Puede configurar la cantidad de escritorios virtuales.
 Comment[de]=Sie können die Anzahl der virtuellen Arbetsflächen festlegen.
 Comment[pt_BR]=Você pode configurar a quantidade existente de áreas de trabalho virtuais.
 Comment[fr]=Vous pouvez configurer le nombre de bureaux virtuels.
+Comment[it]=Potete configurare il numero di desktop virtuali.
 
 Keywords=desktop,desktops,number,virtual desktop
 Keywords[tr]=masaüstü,isim,masaüstü sayısı,sanal masaüstü
@@ -33,5 +35,6 @@ Keywords[es]=escritorio,escritorios,número,escritorio virtual
 Keywords[de]=Arbeitsfläche,Arbeitsflächen,Anzahl,virtuelle Arbeitsfläche
 Keywords[pt_BR]=área de trabalho,áreas de trabalho,número,área de trabalho virtual
 Keywords[fr]=bureau,bureaux,nombre,bureau virtuel
+Keywords[it]=desktop,numero,desktop virtuale
 
 Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop

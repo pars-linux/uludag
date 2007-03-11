@@ -15,6 +15,7 @@ Name[es]=Criptografía
 Name[de]=Verschlüsselung
 Name[pt_BR]=Criptografia
 Name[fr]=Cryptographie
+Name[it]=Crittografia
 
 Comment=Configure SSL, manage certificates, and other cryptography settings
 Comment[tr]=SSL,sertifika,sertifika ayarları,diğer şifreleme ayarları
@@ -22,7 +23,8 @@ Comment[nl]=Hier kunt u SSL, certificatenbeheer en andere cryptografische instel
 Comment[es]=Configurar SSL, administrar certificados y otros parámetros de criptografía
 Comment[de]=SSL konfigurieren, Zertifikate verwalten, und andere Kryptografie-Einstellungen
 Comment[pt_BR]=Configurar SSL, gerenciar certificados e outras configurações de criptografia
-Comment[pt_BR]=Configurer SSL, Gérer les certificats et autres configurations liées à la cryptographie
+Comment[fr]=Configurer SSL, Gérer les certificats et autres configurations liées à la cryptographie
+Comment[it]=Configutare SSL, gestire i certificati e altre impostazioni di crittografia
 
 Keywords=Crypto,Krypto,Cryptography,encryption,SSL,https,certificates,ciphers,TLS,secure,security
 Keywords[tr]=Şifre,şifreleme,şifrebilim,SSL,https,sertifika,TLS,güvenlik,güvenli
@@ -31,5 +33,6 @@ Keywords[es]=crypto,krypto,criptografía,encriptación,ssl,https,certificados,ci
 Keywords[de]=Verschlüsselung,Verschlüsselung,Kryptografie,Versclüsselung,SSL,https,Zertifikate,verschlüsseln,TLS,sicher,Sicherheit
 Keywords[pt_BR]=crypto,krypto,criptografia,encriptação,SSL,https,certificados,cifras,TLS,segure,segurança
 Keywords[fr]=crypto,krypto,cryptographie,encryption,SSL,https,certificats,chiffreurs,TLS,sécuriser,sécurité
+Keywords[it]==crypto,critto,crittografia,ciframento,SSL,https,certificati,cifre,TLS,sicuro,sicurezza
 
 Categories=Qt;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount

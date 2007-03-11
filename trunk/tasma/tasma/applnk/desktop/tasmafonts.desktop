@@ -17,6 +17,7 @@ Name[es]=Fuentes
 Name[de]=Schriftarten
 Name[pt_BR]=Fontes
 Name[fr]=Fontes
+Name[it]=Caratteri
 
 Comment=Font settings
 Comment[tr]=Yazıtipi ayarları
@@ -25,6 +26,7 @@ Comment[es]=Configuración de Fuentes
 Comment[de]=Schriftarteinstellungen
 Comment[pt_BR]=Configurações de fontes
 Comment[fr]=Configuration des Fontes
+Comment[it]=Configurazione dei caratteri
 
 Keywords=fonts,font size,styles,charsets,character sets,panel,kicker,control panel,desktops,FileManager,Toolbars,Menu,Window Title,Title
 Keywords[tr]=yazıtipleri,yazı boyutu,stil,karakter kümesi,panel,kicker,denetim masası,masaüstü,masaüstleri,Araç Çubuğu,Menü,Pencere Başlığı,Başlık
@@ -33,5 +35,6 @@ Keywords[es]=fuentes,tamaño de fuentes,estilos,juegos de caracteres,panel,kicke
 Keywords[de]=Schriftarten,Schriftgrad,Stile,Zeichenkodierung,Leiste,Kicker,Kontrollleiste,Arbeitsflächen,DateiManager,Symbolleiste,Menü,Fenstertitel,Titel
 Keywords[pt_BR]=fontes,tamanho de fontes,estilos,conjunto de caracteres,painel,kicker,painel de controle,áreas de trabalho,Gerenciador de Arquivos,Barras de Ferramentas,Menu,Título da Janela,Título
 Keywords[fr]=fontes,taille de fonte,styles,jeux de caractères,panneau,kicker,panneau de configuration,bureaux,Gestionnaire de fichier,Barre d'outils,Menu,Titre de fenêtre,Titre
+Keywords[it]=caratteri,dimensione dei caratteri,stili,set di caratteri,pannello,kicker,pannello di controllo,desktop,File manager,Barre degli strumenti,Menu,Titolo della finestra,Titolo
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
