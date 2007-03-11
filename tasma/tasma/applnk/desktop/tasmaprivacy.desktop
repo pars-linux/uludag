@@ -8,6 +8,7 @@ Comment[nl]=Privacy - een configuratiemodule waarmee u ongewenste sporen die geb
 Comment[de]=Privatsphäre - ein KControl Modul zum säubern der unerwünschten Spuren auf dem System
 Comment[pt_BR]=Privacidade - um módulo do kcontrol para limpar rastros indesejáveis que o usuário deixa no sistema
 Comment[fr]=Vie privée - un module kcontrol permettant de nettoyer toutes les traces indésirables lorsque l'utilisateur quitte le système
+Comment[it]=Privacy - un modulo kcontrol che permette di pulire le tracce indesiderate che un utente lascia sul sistema
 
 Exec=kcmshell privacy
 
@@ -18,6 +19,7 @@ Keywords[es]=privacidad
 Keywords[de]=Privatsphäre
 Keywords[pt_BR]=Privacidade,privacidade
 Keywords[fr]=Vie privée, vie privée
+Keywords[it]=Privacy,privacy
 
 Name=Privacy
 Name[tr]=Gizlilik
@@ -25,6 +27,7 @@ Name[es]=Privacidad
 Name[de]=Privatsphäre
 Name[pt_BR]=Privacidade
 Name[fr]=Vie privée
+Name[it]=Privacy
 
 Terminal=false
 Type=Application

@@ -16,6 +16,7 @@ Name[es]=Decoraciones de Ventanas
 Name[de]=Fensterdekoration
 Name[pt_BR]=Decorações das Janelas
 Name[fr]=Décorations des fenêtres
+Name[it]=Decorazione delle finestre
 
 Comment=Configure the look and feel of window titles
 Comment[tr]=Pencere başlıklarını görünümlerini yapılandır
@@ -23,7 +24,8 @@ Comment[nl]=Hier kunt u het uiterlijk en gedrag van venstertitels instellen
 Comment[es]=Configuración de look & feel de los títulos de las ventanas
 Comment[de]=Die äussere Erscheinung und Titeln von Fenstern konfigurieren
 Comment[pt_BR]=Configurar o visual dos títulos das janelas
-Comment[ffr]=Configurer le rendu visuel des titres de fenêtres
+Comment[fr]=Configurer le rendu visuel des titres de fenêtres
+Comment[it]=Configurazione del look & feel dei titoli delle finestre
 
 Keywords=kwin,window,manager,border,style,theme,look,feel,layout,button,handle,edge,kwm,decoration
 Keywords[tr]=kwin,pencere,yönetici,kenar,stil,tema,görünüş,doku,yerleşim,düğme,tutamaç,kenar,kwm,dekorasyon
@@ -32,5 +34,6 @@ Keywords[es]=kwin,ventana,administrador,borde,estilo,tema,look,feel,layout,botó
 Keywords[de]=KWin,Fenster,Manager,Rahmen,Stil,Thema,Aussehen,Titel,Layout,Schaltfläche,Griff,Rand,KWm,Dekoration
 Keywords[pt_BR]=kwin,janela,gerenciador,borda,estilo,tema,visual,layout,botão,handle,canto,kwm,decoração
 Keywords[fr]=kwin,fenêtre,gestionnaire,bord,style,thème,rendu visuel,impressions,disposition,boutton,prise en main,bord,kwm,décoration
+Keywords[it]=kwin,finestra,gestore,bordo,stile,tema,aspetto,impressione,feel,disposizione,layout,pulsante,handle,bordo,kwm,decorazione
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
