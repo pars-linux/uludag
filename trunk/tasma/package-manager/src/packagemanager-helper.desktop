@@ -5,6 +5,7 @@ Name[nl]=Pakketmanager
 Name[es]=Administrador de Paquetes
 Name[de]=Paket-Manager
 Name[pt_BR]=Gerenciador de Pacotes
+Name[fr]=Gestionnaire de Paquets
 Icon=package-manager
 Type=Application
 StartupNotify=False
