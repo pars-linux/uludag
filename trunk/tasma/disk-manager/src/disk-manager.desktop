@@ -2,9 +2,11 @@
 Name=Disk Manager
 Name[tr]=Disk Yönetim Arayüzü
 Name[de]=Festplatten-Manager
+Name[fr]=Gestionnaire de Disque
 GenericName=Disk Management Interface
 GenericName[tr]=Disk Yönetim Arayüzü
 GenericName[de]=Festplatten-Manager-Schnittstelle
+GenericName[fr]=Interface de Gestion de Disque
 Icon=disk_manager
 X-KDE-ModuleType=Library
 X-KDE-Library=disk-manager
