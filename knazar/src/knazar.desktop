@@ -3,6 +3,7 @@ Encoding=UTF-8
 Name=KNazar
 Name[tr_TR]=KNazar
 Name[de]=KNazar
+Name[pt_BR]=KNazar
 Exec=knazar
 Icon=knazar
 Type=Application
