@@ -112,6 +112,9 @@ audio/x-midi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
 audio/x-wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
 video/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
 
+# MP4
+video/mp4; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mp4
+
 # OGG
 audio/x-ogg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.ogg
 application/x-ogg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.ogg
