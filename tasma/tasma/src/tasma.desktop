@@ -7,7 +7,9 @@ DocPath=tasma/index.html
 X-KDE-StartupNotify=true
 
 Name=Tasma
+Name[pt_BR]=Tasma
 GenericName=Pardus Configuration Center
 GenericName[tr]=Pardus Yapılandırma Merkezi
+GenericName[pt_BR]=Centro de Configuração Pardus
 
 Categories=Qt;KDE;Core

@@ -3,6 +3,7 @@ Encoding=UTF-8
 Name=KBeddua
 Name[tr_TR]=KBeddua
 Name[de]=KBeddua
+Name[pt_BR]=KBeddua
 Exec=kbeddua
 Icon=kbeddua
 Type=Application

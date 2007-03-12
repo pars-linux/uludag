@@ -3,12 +3,15 @@ Name=Feedback
 Name[en]=Feedback
 Name[tr]=Geribildirim
 Name[de]=Feedback
-Comment=Comment[en]=Pardus Feedback Tool
+Name[pt_BR]=Feedback
+Comment=Pardus Feedback Tool
 Comment[tr]=Pardus Geribildirim Aracı
 Comment[de]=Pardus Feedbacktool
+Comment[pt_BR]=Ferramenta de Feedback Pardus
 GenericName[en]=Pardus Feedback Tool
 GenericName[tr]=Pardus Geribildirim Aracı
 GenericName[de]=Pardus Feedbacktool
+GenericName[pt_BR]=Ferramenta de Feedback Pardus
 Icon=feedback
 Type=Application
 Exec=feedback

@@ -9,5 +9,6 @@ InitialPreference=9
 NoDisplay=true
 Name=System Information
 Name[de]=System-Information
+Name[pt_BR]=Informação do Sistema
 Categories=Qt;KDE;System;
 X-KDE-HasTempFileOption=true
