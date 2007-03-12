@@ -10,7 +10,6 @@ GenericName[tr]=Servis Yönetim Arabirimi
 GenericName[es]=Interfaz de Administración de Servicios
 GenericName[de]=Dienstmanagement-Schnittstelle
 GenericName[pt_BR]=Interface de Gerenciamento de Serviços
-GenericName[pt_BR]=Interface de Gestion de Services
 Icon=service_manager
 X-KDE-ModuleType=Library
 X-KDE-Library=service-manager

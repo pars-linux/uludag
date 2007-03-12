@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Comment=Sysinfo
+Comment[pt_BR]=Informações do Sistema
 Type=MimeType
 MimeType=application/x-sysinfo
 X-KDE-AutoEmbed=true
