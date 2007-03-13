@@ -177,6 +177,17 @@ application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
 text/x-patch; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.patch
 text/x-patch; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.diff
 
+text/x-c++src; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.cpp
+text/x-c++src; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.cxx
+text/x-c++src; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.cc
+text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.hpp
+text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.hxx
+text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.hh
+text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.h++
+text/x-csrc"; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.c
+text/x-chdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.h
+text/x-java; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.java
+
 # Po files
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.po
 text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.pot
