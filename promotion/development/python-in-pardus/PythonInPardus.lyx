@@ -33,6 +33,7 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "Bar Metin" 
 \author "Gürer Özen" 
 \end_header
 
@@ -1015,6 +1016,30 @@ status open
 
 \begin_layout Subsection*
 catbox
+\end_layout
+
+\begin_layout Subsection*
+pyaspects
+\end_layout
+
+\begin_layout Standard
+Like all others Pardus installation program uses a wizard based installation
+ rutine, changing screens back and forth.
+ We wanted to use the advanteges of aspect-oriented programming methodology
+ to deal with the cross-cutting concerns in these screen switchings.
+ That is how PyAspects started its life first as a packge in YALI and became
+ a separeate module later on.
+ Basically PyAspects is a collection of modules to ease aspect-oriented
+ programming in Python language.
+\end_layout
+
+\begin_layout Subsection*
+pardus-python
+\end_layout
+
+\begin_layout Standard
+Python modules for Pardus provides functions for common task, with the aim
+ of easing development.
 \end_layout
 
 \begin_layout Section
