@@ -1,17 +1,25 @@
-#LyX 1.4.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 245
+#LyX 1.5.0beta1 created this file. For more info see http://www.lyx.org/
+\lyxformat 262
 \begin_document
 \begin_header
 \textclass article
 \language english
 \inputencoding auto
-\fontscheme default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \paperfontsize default
 \spacing single
 \papersize default
 \use_geometry false
 \use_amsmath 1
+\use_esint 0
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
@@ -25,6 +33,7 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "GÃ¼rer Ã–zen" 
 \end_header
 
 \begin_body
@@ -34,7 +43,7 @@ Python in Pardus
 \end_layout
 
 \begin_layout Author
-Gürer Özen
+GÃ¼rer Ã–zen
 \end_layout
 
 \begin_layout Section
@@ -42,15 +51,32 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-what is pardus
+Python is a dynamic object-oriented programming language that can be used
+ for many kinds of software development.
+ At least, that it what its homepage says.
+ It is actually used by a range of companies from Google to Firaxis Games
+\begin_inset LatexCommand cite
+key "key-6"
+
+\end_inset
+
+ in many different areas.
+ Some Linux distributions use it for developing their tools, mostly user
+ interfaces.
 \end_layout
 
 \begin_layout Standard
-some background: aims, manpower, turkish free software community
+It is used almost everywhere in Pardus.
+ From startup system to user interfaces.
+ This wasn't intentional.
+ We started using Python in a few places for rapid development, and then
+ it spreaded to other areas.
+ Also most of the core developers learned Python after joining the project.
 \end_layout
 
 \begin_layout Standard
-choice of python, our learning process
+In this report, we are giving a summary of our Python experience, how it
+ is used in Pardus GNU/Linux distribution, and what sort of problems encountered.
 \end_layout
 
 \begin_layout Section
@@ -73,7 +99,8 @@ Package management is the key part of a software distribution.
 Our custom package management system PiSi is designed to meet those requirements.
  Here we are going to discuss involment of the Python.
  You can find more information about general design in the PiSi article
-\begin_inset LatexCommand \cite{key-18}
+\begin_inset LatexCommand cite
+key "key-5"
 
 \end_inset
 
@@ -154,12 +181,14 @@ After coding a proof of concept package manager, we started making packages.
  There were a total of 600 packages which are bootstrapped and build on
  a Pardus system.
  Now a year after, we have 1227 packages in our official repository
-\begin_inset LatexCommand \cite{key-19}
+\begin_inset LatexCommand cite
+key "key-19"
 
 \end_inset
 
 , and 698 packages in an extra contribution repository
-\begin_inset LatexCommand \cite{key-20}
+\begin_inset LatexCommand cite
+key "key-20"
 
 \end_inset
 
@@ -324,7 +353,8 @@ PiSi architecture is quite different from traditional designs.
 
 \begin_layout Standard
 PiSi source
-\begin_inset LatexCommand \cite{key-21}
+\begin_inset LatexCommand cite
+key "key-21"
 
 \end_inset
 
@@ -476,7 +506,8 @@ User Interfaces
 \begin_layout Standard
 Main desktop environment of the Pardus is KDE.
  Python bindings
-\begin_inset LatexCommand \cite{key-22}
+\begin_inset LatexCommand cite
+key "key-22"
 
 \end_inset
 
@@ -493,7 +524,16 @@ Graphical user interface of the PiSi is 2558 lines of Python code.
 \end_layout
 
 \begin_layout Standard
-(burada package-manager ekran görüntüsü)
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+package-manager ekran gÃ¶rÃ¼ntÃ¼sÃ¼
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -504,7 +544,16 @@ Another application using PiSi is Pardusman, a tool for making release media.
 \end_layout
 
 \begin_layout Standard
-(burada pardusman ekran görüntüsü)
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+pardusman ekran gÃ¶rÃ¼ntÃ¼sÃ¼
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -583,10 +632,6 @@ This daemon handles access control, so you can delegate some configuration
 \end_layout
 
 \begin_layout Standard
-(buraya basit bir sema koy)
-\end_layout
-
-\begin_layout Standard
 This architecture has quite a number of advantages.
  What we are interested here is that the actual logic of the configuration
  tasks are carried within package scripts.
@@ -633,7 +678,8 @@ Scripts can be called by all users.
 
 \begin_layout Itemize
 Comar daemon
-\begin_inset LatexCommand \cite{key-23}
+\begin_inset LatexCommand cite
+key "key-23"
 
 \end_inset
 
@@ -728,7 +774,8 @@ Boot Subsystem
 
 \begin_layout Standard
 There is a separate article
-\begin_inset LatexCommand \cite{key-24}
+\begin_inset LatexCommand cite
+key "key-24"
 
 \end_inset
 
@@ -755,15 +802,114 @@ In total of 2345 lines, Mudur makes Pardus, one of the fastest (in most
 \end_layout
 
 \begin_layout Standard
-(service manager ekran görüntüsü)
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+servis yÃ¶neticisi ekran gÃ¶rÃ¼ntÃ¼sÃ¼
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
 Network Subsystem
 \end_layout
 
+\begin_layout Standard
+Basic class of the network system is Net.Link which defines a way (ethernet
+ cable, wireless, ppp, vpn, etc) to connect a network.
+ For an example, link.py script
+\begin_inset LatexCommand cite
+key "key-7"
+
+\end_inset
+
+ from wireless-tools package implements wireless connection with manual
+ or automatic network configuration, WEP and WPA encryption, scanning, automatic
+ detection of devices, and other basic functionality in 489 lines of Python
+ code.
+\end_layout
+
+\begin_layout Standard
+This is because most of the actual functionality is already implemented
+ by tools like iwconfig, iwlist, dhcpcd, wpa_supplicant, etc.
+ We just need to configure and use them according to user's wishes.
+ This is very easy with Python, you can just import dbus, and for example
+ talk to the WPA service with a few lines, unlike a C or shell based implementat
+ion.
+\end_layout
+
+\begin_layout Standard
+User interfaces can use this link providers in a highly generic way without
+ caring about implementation details, since this is done over the Comar
+ service, fine grained access permissions can be given to users.
+\end_layout
+
+\begin_layout Standard
+There are other classes for firewall and name service configuration.
+\end_layout
+
+\begin_layout Standard
+Graphical user interface itself is 2450 lines of Python code, including
+ a panel applet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+network manager scrshot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
-Package Configuration
+Other Examples
+\end_layout
+
+\begin_layout Standard
+Naturally package configuration is done with Comar too.
+ Each package can provide a setup script with postInstall and preRemove
+ methods.
+ Additionally some packages would register their scripts on another class
+ for operating on other packages' install and removal.
+ That way, you can write scripts for operating on special kind of packages
+ or files, like fonts, kernel modules, libraries, etc.
+ Packages can inspect and register their plugins without providing each
+ one with a script.
+\end_layout
+
+\begin_layout Standard
+User management is another aspect handled by Comar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+user manager scrshot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We are developing an enterprise management system for controlling a network
+ of computers.
+ It is going to take global configuration policies from an LDAP server,
+ and apply to the local system with Comar framework.
+ Thus Comar will slowly cover all areas of the system configuration in the
+ future.
 \end_layout
 
 \begin_layout Section
@@ -771,27 +917,57 @@ Applications and Scripts
 \end_layout
 
 \begin_layout Standard
-yali
+Our installation program YALI
+\begin_inset LatexCommand cite
+key "key-8"
+
+\end_inset
+
+ is composed of 7521 line of Python code.
+ Although it basically uses PiSi and Comar for installation, there are many
+ hardware related modules, like a partition manager which contributes to
+ the size.
+ GUI code is also a bit big, beacuse installation environment only has Qt
+ widgets running on a bare X Window server.
 \end_layout
 
 \begin_layout Standard
-kcontrol modules
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+yalÄ± scrshot
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-buildfarm?
+There is a KControl replacement we wrote, which uses both KDE control center
+ modules, and our control center modules written in Python.
 \end_layout
 
 \begin_layout Standard
-repostats
+Our buildfarm software
+\begin_inset LatexCommand cite
+key "key-9"
+
+\end_inset
+
+ is 878 lines of Python.
+ Checks out package descriptions from subversion repository, finds new releases,
+ builds them, builds the other packages requiring recompile, sends packaged
+ binaries to the file server.
+ We are looking for a web based interface for the build farm, probably based
+ on Django.
 \end_layout
 
 \begin_layout Standard
-ismail.py
-\end_layout
-
-\begin_layout Standard
-ivir zivir
+There several small scripts, validating the integrity of package repositories,
+ generating web pages for packages, and countless smaller scripts for doing
+ one time jobs written.
 \end_layout
 
 \begin_layout Section
@@ -825,15 +1001,20 @@ We first switched to 4suite package, and gained quite a bit of speed.
 \end_layout
 
 \begin_layout Standard
-(örnekler burada)
+\begin_inset Note Note
+status open
+
+\begin_layout Standard
+Ã¶rnekler
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
 catbox
-\end_layout
-
-\begin_layout Subsection*
-pyaspects
 \end_layout
 
 \begin_layout Section
@@ -915,45 +1096,179 @@ final word
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-6"
 
-\bibitem {key-18}
-Pisi makalesi
+\end_inset
+
+Quotes about Python, 
+\begin_inset LatexCommand url
+name "http://www.python.org/Quotes.html"
+target "http://www.python.org/Quotes.html"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-5"
 
-\bibitem {key-19}
-Official package repository
+\end_inset
+
+Pisi article, 
+\begin_inset LatexCommand url
+name "http://www.pardus.org.tr/eng/projects/pisi/PiSi.html"
+target "http://www.pardus.org.tr/eng/projects/pisi/PiSi.html"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-19"
 
-\bibitem {key-20}
-Contrib package repository
+\end_inset
+
+Official package repository, 
+\begin_inset LatexCommand url
+name "http://svn.pardus.org.tr/pardus/devel/"
+target "http://svn.pardus.org.tr/pardus/devel/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-20"
 
-\bibitem {key-21}
-Pisi kodlari
+\end_inset
+
+Contrib package repository, 
+\begin_inset LatexCommand url
+name "http://svn.pardus.org.tr/contrib/"
+target "http://svn.pardus.org.tr/contrib/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-21"
 
-\bibitem {key-22}
-PyQt PyKDE
+\end_inset
+
+Pisi source, 
+\begin_inset LatexCommand url
+name "http://svn.pardus.org.tr/uludag/trunk/pisi/"
+target "http://svn.pardus.org.tr/uludag/trunk/pisi/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-22"
 
-\bibitem {key-23}
-Comar daemon kodu
+\end_inset
+
+PyQt and PyKDE, 
+\begin_inset LatexCommand url
+name "http://www.riverbankcomputing.co.uk/pyqt/"
+target "http://www.riverbankcomputing.co.uk/pyqt/"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-23"
 
-\bibitem {key-24}
-Mudur makalesi
+\end_inset
+
+Comar system service, 
+\begin_inset LatexCommand url
+name "http://svn.pardus.org.tr/uludag/trunk/comar/comar/"
+target "http://svn.pardus.org.tr/uludag/trunk/comar/comar/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-24"
+
+\end_inset
+
+Mudur article, 
+\begin_inset LatexCommand url
+name "http://www.pardus.org.tr/eng/projeler/comar/SpeedingUpLinuxWithPardus.html"
+target "http://www.pardus.org.tr/eng/projeler/comar/SpeedingUpLinuxWithPardus.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+Wireless script, 
+\begin_inset LatexCommand url
+name "http://svn.pardus.org.tr/pardus/2007/system/base/wireless-tools/comar/link.py"
+target "http://svn.pardus.org.tr/pardus/2007/system/base/wireless-tools/comar/link.py"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-8"
+
+\end_inset
+
+Pardus installer, 
+\begin_inset LatexCommand url
+name "http://svn.pardus.org.tr/uludag/trunk/yali/"
+target "http://svn.pardus.org.tr/uludag/trunk/yali/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-9"
+
+\end_inset
+
+Pardus build farm software, 
+\begin_inset LatexCommand url
+name "http://svn.pardus.org.tr/uludag/trunk/buildfarm/"
+target "http://svn.pardus.org.tr/uludag/trunk/buildfarm/"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
