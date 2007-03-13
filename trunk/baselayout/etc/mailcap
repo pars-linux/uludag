@@ -1,196 +1,97 @@
-# Compressed Archives
-application/x-pisi; pm-install '%s'; -n "$DISPLAY" ; nametemplate=%s.pisi
-application/gzip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.gz
-application/x-gzip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.gz
-application/zip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.zip
-application/x-zip; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.zip
-application/tar; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.tar
-application/x-tar; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.tar
-application/bzip2; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.bz2
-application/x-bzip2; ark '%s'; -n "$DISPLAY" ; nametemplate=%s.bz2
+# /etc/mailcap file for Pardus
+# Copyright 2007 TUBITAK/UEKAE
+#
+# Released under GPL v2
+
+application/x-pisi; pm-install '%s'; -n "$DISPLAY"
+application/gzip; ark '%s'; -n "$DISPLAY"
+application/x-gzip; ark '%s'; -n "$DISPLAY"
+application/zip; ark '%s'; -n "$DISPLAY"
+application/x-zip; ark '%s'; -n "$DISPLAY"
+application/tar; ark '%s'; -n "$DISPLAY"
+application/x-tar; ark '%s'; -n "$DISPLAY"
+application/bzip2; ark '%s'; -n "$DISPLAY"
+application/x-bzip2; ark '%s'; -n "$DISPLAY"
 
 # Powerpoint
-application/x-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
-application/mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
-application/x-mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
-application/vnd.x-mspowerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
-application/ms-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
-application/vnd.ms-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.ppt
-application/vnd.ms-powerpoint; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.pot
-application/vnd.ms-pps; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.pps
+application/x-powerpoint; ooimpress '%s'; -n "$DISPLAY"
+application/mspowerpoint; ooimpress '%s'; -n "$DISPLAY"
+application/x-mspowerpoint; ooimpress '%s'; -n "$DISPLAY"
+application/vnd.x-mspowerpoint; ooimpress '%s'; -n "$DISPLAY"
+application/ms-powerpoint; ooimpress '%s'; -n "$DISPLAY"
+application/vnd.ms-powerpoint; ooimpress '%s'; -n "$DISPLAY"
+application/vnd.ms-pps; ooimpress '%s'; -n "$DISPLAY"
 
 # MS Word
-application/doc; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
-application/msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
-application/x-msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
-application/ms-word; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
-application/vnd.x-ms-word; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.doc
-application/dot; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
-application/x-dot; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
-application/x-msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
-application/msword; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.dot
+application/doc; oowriter '%s'; -n "$DISPLAY"
+application/msword; oowriter '%s'; -n "$DISPLAY"
+application/x-msword; oowriter '%s'; -n "$DISPLAY"
+application/ms-word; oowriter '%s'; -n "$DISPLAY"
+application/vnd.x-ms-word; oowriter '%s'; -n "$DISPLAY"
+application/dot; oowriter '%s'; -n "$DISPLAY"
+application/x-dot; oowriter '%s'; -n "$DISPLAY"
+application/x-msword; oowriter '%s'; -n "$DISPLAY"
+application/msword; oowriter '%s'; -n "$DISPLAY"
 
 # MS Access
-application/mdb; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
-application/x-mdb; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
-application/msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
-application/x-msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
-application/vnd.x-msaccess; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
-application/ms-access; oobase '%s'; -n "$DISPLAY" ; nametemplate=%s.mdb
+application/mdb; oobase '%s'; -n "$DISPLAY"
+application/x-mdb; oobase '%s'; -n "$DISPLAY"
+application/msaccess; oobase '%s'; -n "$DISPLAY"
+application/x-msaccess; oobase '%s'; -n "$DISPLAY"
+application/vnd.x-msaccess; oobase '%s'; -n "$DISPLAY"
+application/ms-access; oobase '%s'; -n "$DISPLAY"
 
 # MS Excel
-application/msexcel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/x-ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/x-msexcel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/x-xls; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/xls; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/x-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xls
-application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xla
-application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlc
-application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlm
-application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlt
-application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.xlw
+application/msexcel; oocalc '%s'; -n "$DISPLAY"
+application/ms-excel; oocalc '%s'; -n "$DISPLAY"
+application/x-ms-excel; oocalc '%s'; -n "$DISPLAY"
+application/x-xls; oocalc '%s'; -n "$DISPLAY"
+application/xls; oocalc '%s'; -n "$DISPLAY"
+application/x-excel; oocalc '%s'; -n "$DISPLAY"
+application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY"
 
 # PDF and PS & DVI
-application/pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
-application/x-pdf; kpdf '%s'; -n "$DISPLAY" ; nametemplate=%s.pdf
-application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps
-application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ai
-application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.ps.gz
-application/postscript; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.eps
-application/x-dvi; ghostview '%s'; -n "$DISPLAY" ; nametemplate=%s.dvi
+application/pdf; kpdf '%s'; -n "$DISPLAY"
+application/x-pdf; kpdf '%s'; -n "$DISPLAY"
+application/postscript; ghostview '%s'; -n "$DISPLAY"
+application/x-dvi; ghostview '%s'; -n "$DISPLAY"
 
-# Audio URL
-audio/x-mpegurl; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.m3u
-audio/mpegurl; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.m3u
-audio/scpls; amarok '%s'; -n "$DISPLAY" ; nametemplate=%s.pls
-
-# MPEG
-video/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-video/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-video/x-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-video/mpeg2; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-application/x-pn-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-video/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-video/x-mpeg2a; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-audio/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-audio/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-image/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpeg
-
-video/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-video/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-video/x-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-video/mpeg2; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-application/x-pn-mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-video/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-video/x-mpeg2a; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-audio/mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-audio/x-mpeg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-image/mpg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mpg
-
-# AVI
-video/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-video/msvideo; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-video/x-msvideo; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-image/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-video/xmpg2; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-application/x-troff-msvideo; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-audio/aiff; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-audio/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.avi
-
-# WMV
-video/x-ms-wmv; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wmv
-
-# MOV
-video/quicktime; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
-video/x-quicktime; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
-image/mov; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
-audio/aiff; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
-audio/x-midi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
-audio/x-wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
-video/avi; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mov
-
-# MP4
-video/mp4; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mp4
-audio/mp4; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.mp4
-
-# OGG
-audio/x-ogg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.ogg
-application/x-ogg; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.ogg
-
-# WAV
-audio/wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
-audio/x-wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
-audio/wave; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
-audio/x-pn-wav; kaffeine '%s'; -n "$DISPLAY" ; nametemplate=%s.wav
+# Multimedia
+audio/*; amarok '%s'; -n "$DISPLAY"
+video/*; kaffeine '%s'; -n "$DISPLAY"
 
 # Java Web Start
-application/x-java-jnlp-file; javaws '%s'; -n "$DISPLAY" ; nametemplate=%s.jnlp
+application/x-java-jnlp-file; javaws '%s'; -n "$DISPLAY"
 
 # OpenDocument stuff
-application/vnd.oasis.opendocument.text-template; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.ott
-application/vnd.oasis.opendocument.text; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.odt
-application/vnd.oasis.opendocument.spreadsheet-template; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.ots
-application/vnd.oasis.opendocument.spreadsheet; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.ods
-application/vnd.oasis.opendocument.presentation-template; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.otp
-application/vnd.oasis.opendocument.presentation; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.odp
-application/vnd.oasis.opendocument.image; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.odi
-application/vnd.oasis.opendocument.graphics-template; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.otg
-application/vnd.oasis.opendocument.graphics; oodraw '%s'; -n "$DISPLAY" ; nametemplate=%s.odg
+application/vnd.oasis.opendocument.text-template; oowriter '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.text; oowriter '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.spreadsheet-template; oocalc '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.spreadsheet; oocalc '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.presentation-template; ooimpress '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.presentation; ooimpress '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.image; oodraw '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.graphics-template; oodraw '%s'; -n "$DISPLAY"
+application/vnd.oasis.opendocument.graphics; oodraw '%s'; -n "$DISPLAY"
 
 # OpenOffice 1.0
-application/vnd.sun.xml.calc; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.sxc
-application/vnd.sun.xml.calc.template; oocalc '%s'; -n "$DISPLAY" ; nametemplate=%s.stc
-application/vnd.sun.xml.writer; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.sxw
-application/vnd.sun.xml.writer.template; oowriter '%s'; -n "$DISPLAY" ; nametemplate=%s.stw
-application/vnd.sun.xml.impress; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.sxi
-application/vnd.sun.xml.impress.template; ooimpress '%s'; -n "$DISPLAY" ; nametemplate=%s.sti
+application/vnd.sun.xml.calc; oocalc '%s'; -n "$DISPLAY"
+application/vnd.sun.xml.calc.template; oocalc '%s'; -n "$DISPLAY"
+application/vnd.sun.xml.writer; oowriter '%s'; -n "$DISPLAY"
+application/vnd.sun.xml.writer.template; oowriter '%s'; -n "$DISPLAY"
+application/vnd.sun.xml.impress; ooimpress '%s'; -n "$DISPLAY"
+application/vnd.sun.xml.impress.template; ooimpress '%s'; -n "$DISPLAY"
 
 # Image files
-image/tiff; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.tiff
-image/jpeg; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.jpeg
-image/jpeg; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.jpg
-image/gif; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.gif
-image/bmp; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.bmp
-image/png; gwenview '%s'; -n "$DISPLAY" ; nametemplate=%s.png
-image/svg+xml; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.svg
-
-# PSD
-image/photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
-image/x-photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
-image/psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
-application/photoshop; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
-application/psd; gimp '%s'; -n "$DISPLAY" ; nametemplate=%s.psd
+image/*; gwenview '%s'; -n "$DISPLAY"
 
 # Text
-text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
-application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.txt
-
-text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
-application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.text
-
-text/plain; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
-application/txt; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.log
-
-text/x-patch; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.patch
-text/x-patch; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.diff
-
-text/x-c++src; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.cpp
-text/x-c++src; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.cxx
-text/x-c++src; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.cc
-text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.hpp
-text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.hxx
-text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.hh
-text/x-c++hdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.h++
-text/x-csrc"; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.c
-text/x-chdr; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.h
-text/x-java; kwrite '%s'; -n "$DISPLAY" ; nametemplate=%s.java
+text/*; kwrite '%s'; -n "$DISPLAY"
+application/txt; kwrite '%s'; -n "$DISPLAY"
 
 # Po files
-text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.po
-text/x-pofile; kbabel '%s'; -n "$DISPLAY" ; nametemplate=%s.pot
+text/x-pofile; kbabel '%s'; -n "$DISPLAY"
 
 # Bittorrent
-application/x-bittorrent; ktorrent '%s'; -n "$DISPLAY" ; nametemplate=%s.torrent
+application/x-bittorrent; ktorrent '%s'; -n "$DISPLAY"
+
