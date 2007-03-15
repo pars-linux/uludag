@@ -33,8 +33,8 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
-\author "Bar Metin" 
 \author "Gürer Özen" 
+\author "Bar Metin" 
 \end_header
 
 \begin_body
@@ -1018,6 +1018,22 @@ status open
 catbox
 \end_layout
 
+\begin_layout Standard
+Sandbox is a mechanism which provides a tighly-controlled set of resources
+ for guest programs to run in.
+ They are used in build systems for, constraining packages to the temporary
+ build directory, keeping track of permission changes thus allowing non-root
+ builds, and other similar purposes.
+\end_layout
+
+\begin_layout Standard
+There are two feasible ways to build such a sandbox.
+ Intercepting glibc function calls with LD_PRELOAD, or Linux system calls
+ with ptrace.
+ Former way makes it difficult to implement interaction between PiSi and
+ build script (both are Python programs).
+\end_layout
+
 \begin_layout Subsection*
 pyaspects
 \end_layout
@@ -1025,10 +1041,10 @@ pyaspects
 \begin_layout Standard
 Like all others Pardus installation program uses a wizard based installation
  rutine, changing screens back and forth.
- We wanted to use the advanteges of aspect-oriented programming methodology
+ We wanted to use the adventages of aspect-oriented programming methodology
  to deal with the cross-cutting concerns in these screen switchings.
- That is how PyAspects started its life first as a packge in YALI and became
- a separeate module later on.
+ That is how PyAspects started its life first as a package in YALI and became
+ a separate module later on.
  Basically PyAspects is a collection of modules to ease aspect-oriented
  programming in Python language.
 \end_layout
@@ -1047,41 +1063,44 @@ Problems
 \end_layout
 
 \begin_layout Standard
-https://sourceforge.net/tracker/?func=detail&aid=1507247&group_id=5470&atid=30547
-0
+We have encountered several problems with some parts of the standard library.
+ Since we deal with all sorts of weird tar archives during the build, corner
+ case errors in tarfile module emerged quickly
+\begin_inset LatexCommand cite
+key "key-1"
+
+\end_inset
+
+.
+ Another related problem is in zipfile module.
+ Since there is no way to incrementally extract files from zip archives
+ (pisi packages are zip archives), extracting big files (like install.tar.lzma
+ of OpenOffice.org) causes too much memory usage.
+ We fixed that with a hacky insertion of another read() variant into the
+ ZipFile class.
 \end_layout
 
 \begin_layout Standard
-https://sourceforge.net/tracker/index.php?func=detail&aid=1513206&group_id=5470&at
-id=305470
+As said before, performance and usage problems of xml.dom API forced us to
+ use a custom parser module for those operations.
 \end_layout
 
 \begin_layout Standard
-https://sourceforge.net/tracker/index.php?func=detail&aid=1509889&group_id=5470&at
-id=305470
+There are also many smaller errors encountered during the development, which
+ a few of them
+\begin_inset LatexCommand cite
+key "key-2"
+
+\end_inset
+
+ reported/patched by us, and others fixed by other parties along the Python
+ development process.
 \end_layout
 
 \begin_layout Standard
-https://sourceforge.net/tracker/?func=detail&atid=105470&aid=1336623&group_id=547
-0
-\end_layout
-
-\begin_layout Standard
-http://tinyurl.com/y4bwf5
-\end_layout
-
-\begin_layout Standard
-http://tinyurl.com/twkns
-\end_layout
-
-\begin_layout Standard
-https://sourceforge.net/tracker/index.php?func=detail&aid=1056231&group_id=5470&at
-id=305470
-\end_layout
-
-\begin_layout Standard
-https://sourceforge.net/tracker/index.php?func=detail&aid=1454485&group_id=5470&at
-id=305470
+Python's insistence of using the ASCII encoding caused some annoyance, since
+ we use UTF8 everywhere, and out main locale (tr_TR.UTF8) have some characters
+ outside of ISO Latin 1.
 \end_layout
 
 \begin_layout Section
@@ -1128,7 +1147,6 @@ key "key-6"
 
 Quotes about Python, 
 \begin_inset LatexCommand url
-name "http://www.python.org/Quotes.html"
 target "http://www.python.org/Quotes.html"
 
 \end_inset
@@ -1144,7 +1162,6 @@ key "key-5"
 
 Pisi article, 
 \begin_inset LatexCommand url
-name "http://www.pardus.org.tr/eng/projects/pisi/PiSi.html"
 target "http://www.pardus.org.tr/eng/projects/pisi/PiSi.html"
 
 \end_inset
@@ -1160,7 +1177,6 @@ key "key-19"
 
 Official package repository, 
 \begin_inset LatexCommand url
-name "http://svn.pardus.org.tr/pardus/devel/"
 target "http://svn.pardus.org.tr/pardus/devel/"
 
 \end_inset
@@ -1176,7 +1192,6 @@ key "key-20"
 
 Contrib package repository, 
 \begin_inset LatexCommand url
-name "http://svn.pardus.org.tr/contrib/"
 target "http://svn.pardus.org.tr/contrib/"
 
 \end_inset
@@ -1192,7 +1207,6 @@ key "key-21"
 
 Pisi source, 
 \begin_inset LatexCommand url
-name "http://svn.pardus.org.tr/uludag/trunk/pisi/"
 target "http://svn.pardus.org.tr/uludag/trunk/pisi/"
 
 \end_inset
@@ -1208,7 +1222,6 @@ key "key-22"
 
 PyQt and PyKDE, 
 \begin_inset LatexCommand url
-name "http://www.riverbankcomputing.co.uk/pyqt/"
 target "http://www.riverbankcomputing.co.uk/pyqt/"
 
 \end_inset
@@ -1224,7 +1237,6 @@ key "key-23"
 
 Comar system service, 
 \begin_inset LatexCommand url
-name "http://svn.pardus.org.tr/uludag/trunk/comar/comar/"
 target "http://svn.pardus.org.tr/uludag/trunk/comar/comar/"
 
 \end_inset
@@ -1240,7 +1252,6 @@ key "key-24"
 
 Mudur article, 
 \begin_inset LatexCommand url
-name "http://www.pardus.org.tr/eng/projeler/comar/SpeedingUpLinuxWithPardus.html"
 target "http://www.pardus.org.tr/eng/projeler/comar/SpeedingUpLinuxWithPardus.html"
 
 \end_inset
@@ -1256,7 +1267,6 @@ key "key-7"
 
 Wireless script, 
 \begin_inset LatexCommand url
-name "http://svn.pardus.org.tr/pardus/2007/system/base/wireless-tools/comar/link.py"
 target "http://svn.pardus.org.tr/pardus/2007/system/base/wireless-tools/comar/link.py"
 
 \end_inset
@@ -1272,7 +1282,6 @@ key "key-8"
 
 Pardus installer, 
 \begin_inset LatexCommand url
-name "http://svn.pardus.org.tr/uludag/trunk/yali/"
 target "http://svn.pardus.org.tr/uludag/trunk/yali/"
 
 \end_inset
@@ -1288,8 +1297,67 @@ key "key-9"
 
 Pardus build farm software, 
 \begin_inset LatexCommand url
-name "http://svn.pardus.org.tr/uludag/trunk/buildfarm/"
 target "http://svn.pardus.org.tr/uludag/trunk/buildfarm/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Python tarfile errors, 
+\begin_inset LatexCommand url
+target "https://sourceforge.net/tracker/?func=detail&aid=1507247&group_id=5470&atid=305470"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand url
+target "https://sourceforge.net/tracker/index.php?func=detail&aid=1509889&group_id=5470&atid=305470"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand url
+target "https://sourceforge.net/tracker/?func=detail&atid=105470&aid=1336623&group_id=5470"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Misc Python bugs, 
+\begin_inset LatexCommand url
+target "http://sourceforge.net/tracker/index.php?func=detail&aid=1337756&group_id=5470&atid=305470"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand url
+target "https://sourceforge.net/tracker/index.php?func=detail&aid=1513206&group_id=5470&atid=305470"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand url
+target "https://sourceforge.net/tracker/index.php?func=detail&aid=1056231&group_id=5470&atid=305470"
+
+\end_inset
+
+, 
+\begin_inset LatexCommand url
+target "https://sourceforge.net/tracker/index.php?func=detail&aid=1454485&group_id=5470&atid=305470"
 
 \end_inset
 
