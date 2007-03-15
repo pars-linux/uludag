@@ -72,7 +72,7 @@ It is used almost everywhere in Pardus.
  This wasn't intentional.
  We started using Python in a few places for rapid development, and then
  it spreaded to other areas.
- Also most of the core developers learned Python after joining the project.
+ Also most of the core developers learned Python, after joining the project.
 \end_layout
 
 \begin_layout Standard
@@ -117,9 +117,9 @@ Package is a collection of files and some meta information about what is
  the contained software, how is it going to be installed, and what are its
  requirements (dependencies).
  A binary package is usually build from a specification which describes
- the original source, added patches by the distribution, and build instructions.
- We keep those specifications inside a subversion repo, one directory per
- package, neatly organized in the component directories.
+ the original source, patches added by the distribution, and build instructions.
+ We keep those specifications inside a subversion repository, one directory
+ per package, neatly organized in the component directories.
 \end_layout
 
 \begin_layout Standard
@@ -127,7 +127,7 @@ Since specification contains both data (like software name, its homepage,
  version, description, license, location of the original source, list of
  the patches, etc) and programs (build instructions, install instructions,
  remove instructions, etc), we decided to keep those separate.
- That way, parsing and using data becomes really easy.
+ That way, parsing and using the data becomes really easy.
 \end_layout
 
 \begin_layout Standard
@@ -1174,8 +1174,8 @@ key "key-2"
 
 \end_inset
 
- reported/patched by us, and others fixed by other parties along the Python
- development process.
+ reported/patched by us, and others got fixed by other parties along the
+ normal Python development process.
 \end_layout
 
 \begin_layout Standard
@@ -1184,40 +1184,49 @@ Python's insistence of using the ASCII encoding caused some annoyance, since
  outside of ISO Latin 1.
 \end_layout
 
+\begin_layout Standard
+We have started with 2.3 release, and moved on to 2.4 before Pardus 2007.
+ Now we are getting ready for the Python 2.5 series.
+ API/ABI breaking changes caused some minor work, but they are generally
+ well documented, so never got out of control.
+\end_layout
+
 \begin_layout Section
 Conclusion
 \end_layout
 
 \begin_layout Standard
-evaluation of python:
+We have created a whole new distribution with custom package and configuration
+ management tools from scratch in almost two years.
+ We didn't have the know-how of making a distribution when we started, so
+ development time can be considered very fast.
 \end_layout
 
 \begin_layout Standard
--rapid development
+Once we finished the design processes, we quickly build prototypes of the
+ tools and started using them.
+ We even made a few throwaway versions the examine some design decisions.
+ Rapid development nature and quick refactoring capabilities of the Python
+ helped us greatly.
 \end_layout
 
 \begin_layout Standard
--speed
+Core developers learned it in a few days, outside developers/packagers,
+ even the users are very quick to learn our tools.
+ Learning curve of the Python is very smooth.
+ You can start using it like basic, then move on to next levels by learning
+ the object oriented and functional paradigms.
 \end_layout
 
 \begin_layout Standard
--i18n
+Even with the problems mentioned in the above chapters, standard library
+ is great, and many important environments like Qt and KDE have excellent
+ Python bindings.
 \end_layout
 
 \begin_layout Standard
--learning curve (for developers, and outside packagers)
-\end_layout
-
-\begin_layout Standard
--standart library
-\end_layout
-
-\begin_layout Standard
--bugs
-\end_layout
-
-\begin_layout Standard
-final word
+We are not only happy with our choice, but looking forward to use high level
+ languages in more places.
 \end_layout
 
 \begin_layout Bibliography
