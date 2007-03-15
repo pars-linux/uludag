@@ -51,7 +51,6 @@ usr/include/
 usr/lib/cups/
 usr/lib/python2.4/lib-tk/
 usr/lib/python2.4/idlelib/
-usr/lib/python2.4/distutils/
 usr/lib/python2.4/bsddb/test/
 usr/lib/python2.4/lib-old/
 usr/lib/python2.4/test/
