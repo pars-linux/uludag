@@ -465,6 +465,28 @@ A package management software deals a lot with sets, lists, and dependency
 \end_layout
 
 \begin_layout Standard
+Here is an example from the diff package (they are for updating a package
+ with minimal network data transfer) generating code:
+\end_layout
+
+\begin_layout LyX-Code
+files_all = set(map(lambda x:(x.path, x.hash), files.list))
+\end_layout
+
+\begin_layout LyX-Code
+files_old = set(map(lambda x:(x.path, x.hash), oldfiles.list))
+\end_layout
+
+\begin_layout LyX-Code
+files_delta = files_all - files_old
+\end_layout
+
+\begin_layout Standard
+From two file lists of the old and new packages, changed file list is extracted
+ with maximum simplicity and clarity.
+\end_layout
+
+\begin_layout Standard
 An other reason to choose Python was its standart library.
  Although some parts of it (xml modules) are extremely slow and hard to
  use, and some parts (os, shutil, zipfile) needs a few wrappers to get it
@@ -905,6 +927,27 @@ user manager scrshot
 \end_layout
 
 \begin_layout Standard
+Pardus is able to detect native panel size for most of the LCD monitors,
+ and has a very good Xorg autoconfiguration system
+\begin_inset LatexCommand cite
+key "key-15"
+
+\end_inset
+
+ called 
+\begin_inset Quotes eld
+\end_inset
+
+zorg
+\begin_inset Quotes erd
+\end_inset
+
+.
+ A task-based user interface for controlling important aspects, and especially
+ multimonitor situations is under development.
+\end_layout
+
+\begin_layout Standard
 We are developing an enterprise management system for controlling a network
  of computers.
  It is going to take global configuration policies from an LDAP server,
@@ -977,7 +1020,13 @@ Custom Modules
 
 \begin_layout Standard
 In the process of Pardus development, we have encountered some common problems,
- and wrote some generic modules to deal with them.
+ and wrote some generic modules
+\begin_inset LatexCommand cite
+key "key-10"
+
+\end_inset
+
+ to deal with them.
 \end_layout
 
 \begin_layout Subsection*
@@ -995,23 +1044,50 @@ Unfortunately XML module of the standard Python library is too slow for
 
 \begin_layout Standard
 We first switched to 4suite package, and gained quite a bit of speed.
- Then wrote our own module based on iksemel [sayfasina link ver] library.
+ Then wrote our own module based on iksemel library.
  It is very small (designed mainly for embedded systems), and much faster
  than other parsers.
  Python API we add around it is designed to be easy to use and more Pythonic.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-örnekler
+Simple parsing example:
 \end_layout
 
-\end_inset
+\begin_layout LyX-Code
+doc = piksemel.parse("files.xml")
+\end_layout
 
+\begin_layout LyX-Code
+for fileinfo in doc.tags("File"):
+\end_layout
 
+\begin_layout LyX-Code
+    print fileinfo.getTagData("Name"), fileinfo.getAttribute("size"), "bytes"
+\end_layout
+
+\begin_layout Standard
+Simple tree building example:
+\end_layout
+
+\begin_layout LyX-Code
+doc = piksemel.new("PiSi")
+\end_layout
+
+\begin_layout LyX-Code
+source = doc.insertTag("Source")
+\end_layout
+
+\begin_layout LyX-Code
+source.insertTag("Name").insertData("glibc")
+\end_layout
+
+\begin_layout LyX-Code
+source.setAttribute("note", "test")
+\end_layout
+
+\begin_layout LyX-Code
+print doc.toString()
 \end_layout
 
 \begin_layout Subsection*
@@ -1034,6 +1110,20 @@ There are two feasible ways to build such a sandbox.
  build script (both are Python programs).
 \end_layout
 
+\begin_layout Standard
+There is already a good ptrace sandbox framework for Python, called Subterfugue.
+ Apart from a small C binding for ptrace call, it is completely written
+ in Python.
+ Unfortunately dealing with each system call with Python is quite slow for
+ a build farm.
+ There are over a thousand packages, and some of them like OpenOffice.org
+ or kdebase takes a huge time to compile even on high end computers.
+\end_layout
+
+\begin_layout Standard
+Thus we wrote catbox, a small sandboxing C module for PiSi.
+\end_layout
+
 \begin_layout Subsection*
 pyaspects
 \end_layout
@@ -1047,15 +1137,6 @@ Like all others Pardus installation program uses a wizard based installation
  a separate module later on.
  Basically PyAspects is a collection of modules to ease aspect-oriented
  programming in Python language.
-\end_layout
-
-\begin_layout Subsection*
-pardus-python
-\end_layout
-
-\begin_layout Standard
-Python modules for Pardus provides functions for common task, with the aim
- of easing development.
 \end_layout
 
 \begin_layout Section
@@ -1099,7 +1180,7 @@ key "key-2"
 
 \begin_layout Standard
 Python's insistence of using the ASCII encoding caused some annoyance, since
- we use UTF8 everywhere, and out main locale (tr_TR.UTF8) have some characters
+ we use UTF8 everywhere, and our main locale (tr_TR.UTF8) have some characters
  outside of ISO Latin 1.
 \end_layout
 
@@ -1276,6 +1357,21 @@ target "http://svn.pardus.org.tr/pardus/2007/system/base/wireless-tools/comar/li
 
 \begin_layout Bibliography
 \begin_inset LatexCommand bibitem
+key "key-15"
+
+\end_inset
+
+Zorg, display autodetection system, 
+\begin_inset LatexCommand url
+target "http://svn.pardus.org.tr/uludag/trunk/comar/zorg/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
 key "key-8"
 
 \end_inset
@@ -1298,6 +1394,21 @@ key "key-9"
 Pardus build farm software, 
 \begin_inset LatexCommand url
 target "http://svn.pardus.org.tr/uludag/trunk/buildfarm/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset LatexCommand bibitem
+key "key-10"
+
+\end_inset
+
+Pardus python modules, 
+\begin_inset LatexCommand url
+target "http://svn.pardus.org.tr/uludag/trunk/python-modules/"
 
 \end_inset
 
