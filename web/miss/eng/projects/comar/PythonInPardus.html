@@ -1,0 +1,552 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>:: Pardus :: TÜBİTAK/UEKAE ::</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../../../style.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../images/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="head_grey2">
+        <div id="blue2">
+		<map name="header_map">
+		<area shape="rect" href="../../index.html" coords="24,24,143,101" >
+		<area shape="rect" href="../../documents/HOWTO_install.html" coords="596,115,721,144" >
+		<area shape="rect" href="../../download.html" coords="596,26,721,105" >
+		</map>
+		<img src="../../images/header.png" usemap="#header_map" width="740" height="163" border="0">
+        </div>
+    </div>
+    <div id="navi">
+        <a href="../../index.html">Home</a>
+      | <a href="../../info.html">About</a>
+      | <a href="../../projects/index.html">Projects</a>
+      | <a href="../../documents/index.html">Documents</a>
+      | <a href="../../products/index.html">Products</a>
+      | <a href="../../contact.html">Contact Us</a>
+      | <a href="../../press/index.html">Press</a>
+      | <a href="../../../index.html">Türkçe</a>
+    </div>
+    <div id="page" class="blue2">
+        <div id="fullpage">
+<!-- SAYFA İÇERİK BAŞI -->
+<div class="belge">
+<!--HEVEA command line is: hevea -fix PythonInPardus.tex -->
+<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Python in Pardus</H1><H3 CLASS="titlerest">A.Murat Eren, Gürer Özen, Barış Metin</H3></TD></TR>
+</TABLE><!--TOC section Introduction-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A> Introduction</H2><!--SEC END --><P>Python is a dynamic object-oriented programming language that can
+be used for many kinds of software development. At least, that it
+what its homepage says. It is actually used by a range of companies
+from Google to Firaxis Games[<A HREF="#key-6"><CITE>1</CITE></A>] in many different areas.
+Some Linux distributions use it for developing their tools, mostly
+user interfaces.</P><P>It is used almost everywhere in Pardus. From startup system to user
+interfaces. This wasn't intentional. We started using Python in a
+few places for rapid development, and then it spread to other areas.
+Also most of the core developers learned Python, after joining the
+project.</P><P>In this report, we are giving a summary of our Python experience,
+how it is used in Pardus GNU/Linux distribution, and what sort of
+problems encountered.</P><!--TOC section Package Management-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A> Package Management</H2><!--SEC END --><P>Package management is the key part of a software distribution. Users
+expect it to work robustly and automatically. Packagers want to package
+their software without going through complex build procedures. Developers
+want to quickly deploy their patches to the users. Distribution maintainers
+want automated tools for validating, analyzing and building the software
+collection. Finally third parties want to embed and extend core distribution
+into their own specialized releases.</P><P>Our custom package management system PiSi is designed to meet those
+requirements. Here we are going to discuss involvement of the Python.
+You can find more information about general design in the PiSi article[<A HREF="#key-5"><CITE>2</CITE></A>].</P><!--TOC subsection Package Specification-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Package Specification</H3><!--SEC END --><P>Package is a collection of files and some meta information about what
+the contained software is, how it is going to be installed, and what
+it's requirements are (dependencies). A binary package is usually
+build from a specification which describes the original source, patches
+added by the distribution, and build instructions. We keep those specifications
+inside a subversion repository, one directory per package, neatly
+organized in the component directories.</P><P>Since specification contains both data (like software name, its homepage,
+version, description, license, location of the original source, list
+of the patches, etc) and programs (build instructions, install instructions,
+remove instructions, etc), we decided to keep those separate. That
+way, parsing and using the data becomes really easy.</P><P>Avoiding new ad-hoc formats, and keeping everything simple as it can
+be, we decided to put data into an XML file. Data is very structured,
+and some items (like description) have translated versions as well,
+so everything fits nicely in the XML format.</P><P>Deciding about programs was harder. Ideally all programs (build, install,
+remove scripts) should be written in same language. Packager only
+has to know one language, and maintenance becomes a lot easier.</P><P>Traditionally build scripts were shell scripts. Shell is ideal for
+simple tasks requiring batch run of a series of commands. Unfortunately
+there are cases where you need conditional operations, do string processing,
+and iterate an operation over a series of data. In those cases shell
+syntax becomes awkward, debugging and maintenance costs go higher.</P><P>In simplest case of build operation (configure; make), there isn't
+much difference between alternative languages. But when cases get
+more complex, you'll definitely want a language with rich set of datatypes,
+native support for strings, clean and concise syntax, and a standart
+library with a wide range of useful functions. This language shouldn't
+have a steep learning curve, and shouldn't look too different from
+shell scripts or shouldn't require a complete paradigm change for
+system admins and packagers (like some pure functional languages).</P><P>We decided that Python successfully meets these requirements, and
+is the best choice for package scripts.</P><!--TOC subsection Build Scripts-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Build Scripts</H3><!--SEC END --><P>After coding a proof of concept package manager, we started making
+packages. In a six months of time, with a six people, we managed to
+make packages of base system (kernel, drivers, glibc, gcc, gnu tools),
+desktop (xorg, KDE), and applications (Gimp, TeT<sub>E</sub>X, K3B, mplayer,
+OpenOffice.org, etc). There were a total of 600 packages which are
+bootstrapped and build on a Pardus system. Now a year after, we have
+1227 packages in our official repository[<A HREF="#key-19"><CITE>3</CITE></A>], and 698 packages
+in an extra contribution repository[<A HREF="#key-20"><CITE>4</CITE></A>], made by 25 developers.</P><P>In the official repository, there are 32641 lines (where 8044 of them
+are comment lines) of Python code for packages. Script for one of
+the simple packages, gparted, is given below:</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+#!/usr/bin/python&nbsp;<BR>
+#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-&nbsp;<BR>
+#&nbsp;<BR>
+#&nbsp;Copyright&nbsp;2005,&nbsp;2006&nbsp;TUBITAK/UEKAE&nbsp;<BR>
+#&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;version&nbsp;2.&nbsp;<BR>
+#&nbsp;See&nbsp;the&nbsp;file&nbsp;http://www.gnu.org/copyleft/gpl.txt.&nbsp;<BR>
+&nbsp;<BR>
+from&nbsp;pisi.actionsapi&nbsp;import&nbsp;autotools&nbsp;<BR>
+&nbsp;<BR>
+def&nbsp;setup():&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.configure()&nbsp;<BR>
+&nbsp;<BR>
+def&nbsp;build():&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.make()&nbsp;<BR>
+&nbsp;<BR>
+def&nbsp;install():&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.install()&nbsp;
+</TT></DL></DIV>
+
+
+<P>
+As you see, there isn't much in this script, everything is handled
+by the autotools module. A generic utility module and a few such build
+system modules (for autotools, scons, cmake, perl and python extensions)
+are provided by package manager (in the pisi.actionsapi package).
+Stages of the build process are represented by three Python functions.</P><P>Here is another slightly complex example function from the LyX
+package:</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+def&nbsp;setup():&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;viewers&nbsp;=&nbsp;{&nbsp;'PDF':&nbsp;'kpdf',&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'PS':&nbsp;'kghostview',&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'DVI':&nbsp;'kdvi',&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'HTML':&nbsp;'konqueror'&nbsp;}&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;k&nbsp;in&nbsp;viewers:&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shelltools.export(k&nbsp;+&nbsp;'_VIEWER',&nbsp;viewers[k])&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;autotools.configure("--with-frontend=qt")
+</TT></DL></DIV>
+
+<P>
+As you see, some defaults are modified via environment variables before
+configuring.</P><P>There aren't many complex build scripts. Most of the logic and error
+checking is handled by provided utility modules (ActionsAPI). Scripts
+requiring complex operations and interactions are managed by our configuration
+management system Comar. PiSi merely passes those scripts to the Comar.
+Examples of them are given in the system configuration section of
+this article.</P><!--TOC subsection Package Manager-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Package Manager</H3><!--SEC END --><P>PiSi itself is written in Python too. This is a huge deviation from
+other well known package management software (Redhat's rpm or Debian's
+dpkg which are both written in C).</P><P>PiSi architecture is quite different from traditional designs. Every
+functionality, related to the package management like installing,
+building, fetching, dependency solving, repository management, validating
+is included in the core (compare with dpkg, apt-get or rpm, urpmi
+separation). PiSi can work with both binary repositories, and source
+packages like Gentoo's portage. On the other hand, package configuration
+(like calling ldconfig, modifying global configuration files, etc)
+is delegated to Comar.</P><P>PiSi source[<A HREF="#key-21"><CITE>5</CITE></A>] is 14245 lines of Python code distributed
+in 72 modules in 6 packages. Command line driver (pisi command) is
+just a simple front-end to all those modules. They can also be used
+together or partially by other programs. There are also a few more
+scripts, and a comprehensive test suite containing both unit tests,
+and full scenario tests.</P><P>An example test scenario (scenarios/bug3481scen.py in PiSi source)
+is like this:</P>
+
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+from&nbsp;pisi.scenarioapi.scenario&nbsp;import&nbsp;*<BR>
+<BR>
+HASHALOT="hashalot"&nbsp;<BR>
+COREUTILS="coreutils"&nbsp;<BR>
+GLIBC="glibc"&nbsp;<BR>
+UTIL_LINUX="util-linux"&nbsp;<BR>
+&nbsp;<BR>
+let_repo_had(HASHALOT,&nbsp;with_partof("system.base"))&nbsp;<BR>
+let_repo_had(COREUTILS,&nbsp;with_partof("system.base"))&nbsp;<BR>
+let_repo_had(GLIBC,&nbsp;with_partof("system.base"))&nbsp;<BR>
+let_repo_had(UTIL_LINUX,&nbsp;with_partof("system.base"))&nbsp;<BR>
+let_pisi_had(COREUTILS,&nbsp;HASHALOT,&nbsp;GLIBC,&nbsp;UTIL_LINUX)&nbsp;<BR>
+&nbsp;<BR>
+def&nbsp;run():&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_version_bumped(GLIBC)&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_version_bumped(UTIL_LINUX)&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_version_bumped(COREUTILS,&nbsp;with_added_conflicts(HASHALOT))&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;repo_updated_index()&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;pisi_upgraded()&nbsp;
+</TT></DL></DIV>
+
+
+<P>
+It is as readable as pseudo code, yet it works too.</P><P>A package management software deals a lot with sets, lists, and dependency
+graphs. Python has former two natively, and implementing latter is
+very simple with available primitives. Object oriented nature of Python,
+with module and package concepts, kept the code very modular and good
+structured. We have used functional operators (map, filter, reduce)
+and list comprehensions a lot. Even metaclasses are used in a few
+places.</P><P>Here is an example from the diff package (they are for updating a
+package with minimal network data transfer) generating code:</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+files_all&nbsp;=&nbsp;set(map(lambda&nbsp;x:(x.path,&nbsp;x.hash),&nbsp;files.list))&nbsp;<BR>
+files_old&nbsp;=&nbsp;set(map(lambda&nbsp;x:(x.path,&nbsp;x.hash),&nbsp;oldfiles.list))&nbsp;<BR>
+files_delta&nbsp;=&nbsp;files_all&nbsp;-&nbsp;files_old
+</TT></DL></DIV>
+
+
+<P>
+From two file lists of the old and new packages, changed file list
+is extracted with maximum simplicity and clarity.</P><P>An other reason to choose Python was its standard library. Although
+some parts of it (xml modules) are extremely slow and hard to use,
+and some parts (os, shutil, zipfile) needs a few wrappers to get it
+right, we have used quite a number of standart modules (like cPickle,
+re, unittest, subprocess, getopt, gettext, zlib, bz2, tarfile, urllib2,
+urlparse, sha). More information about our problems with the standard
+library can be found in problems section of this article. But all
+in all, they helped greatly by allowing us to reuse already tested
+components instead of writing everything from scratch.</P><P>We have only encountered a speed problem with XML parsing, which we
+solved by first migrating to 4suite parser, then our custom module.
+Currently there is a slowness only within certain database operations,
+but that is mostly caused by suboptimal use of BerkeleyDB, and will
+be fixed in the next major release. Most of the PiSi work is bounded
+by disc IO, and heavy calculation parts like dependency solving work
+really fast, if carefully coded by using as much as built-in functions
+of the Python.</P><P>A reason to code in C could be that you can statically compile everything
+into an executable, and run that even if every library in the system
+is broken. That is a trade-off, we decided to make. Currently PiSi
+depends on a minimal Python installation (with its library, and a
+few of modules), BerkeleyDB, piksemel (our XML python module) and
+glibc. Since those packages are required for operation, PiSi takes
+extra care while updating them.</P><!--TOC subsection User Interfaces-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->User Interfaces</H3><!--SEC END --><P>Main desktop environment of the Pardus is KDE. Python bindings[<A HREF="#key-22"><CITE>6</CITE></A>]
+of the KDE are highly maintained and very comprehensive. Every component
+of the desktop, be it an application, a control center module, an
+IO handler module, or a panel applet, can be written in Python. Similarly
+you can use almost any component like khtml from Python.</P><P>Graphical user interface of the PiSi is 2558 lines of Python code.
+This includes both a control center module, and a panel applet for
+regularly checking repositories and showing available updates.</P><P>Another application using PiSi is Pardusman, a tool for making release
+media. You can select packages from a binary repository and easily
+make a live or install CD with a few clicks. It is 1481 lines of Python
+code.</P><P>As you see, PiSi user interfaces are very short, yet quite capable
+programs. Coding in Python saves quite a bit of boiler plate code
+when compared to C++. Subclassing a window is just a <TT>class
+MyWindow(QMainWindow)</TT> line for example.</P><!--TOC section System Configuration-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A> System Configuration</H2><!--SEC END --><P>Configuring software and hardware is the most boring task, a user
+can do with a computer. Installing a program can require setting up
+some system variables. If you want to connect to the Internet, you
+have to set up some options of the network interface device, maybe
+even run some programs to handle the connection. Your hardware needs
+some kernel modules loaded, and some programs run to start operating.
+You may need to edit your xorg.conf file to be able to use native
+resolution of your LCD.</P><P>Hopefully most of these tasks can be automated, and other can be greatly
+simplified.</P><P>Our configuration framework Comar is designed to do that. Explaining
+all the details needs a separate article. We are going to layout only
+the general architecture here. So, basically,</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Configuration tasks are defined in a system model, grouped by classes
+which contain related tasks.
+</LI><LI CLASS="li-itemize">Each software package can carry small configuration scripts for these
+classes.
+</LI><LI CLASS="li-itemize">A class can be provided by different packages, also a package can
+provide different classes.
+</LI><LI CLASS="li-itemize">When you call a configuration task, configuration script drives the
+package to do this job, by modifying its configuration file, sending
+signals, calling commands or using whatever mechanism is necessary.
+</LI><LI CLASS="li-itemize">You can ask a task from a specific package, anyone who can do that
+job, or everyone providing that class.
+</LI><LI CLASS="li-itemize">There is a daemon who keeps registered classes, listens for configuration
+calls, and runs the scripts.
+</LI><LI CLASS="li-itemize">This daemon handles access control, so you can delegate some configuration
+permissions to normal users.
+</LI></UL><P>
+This architecture has quite a number of advantages. What we are interested
+here is that the actual logic of the configuration tasks are carried
+within package scripts. That way, packages are well encapsulated,
+different versions can have different ways of doing same tasks.</P><P>Theoretically these scripts could be in any language. But there are
+many practical problems with that. Maintenance becomes harder with
+a big repository with scripts written in all sorts of languages. Function
+calling and parameter passing needs to be implemented for all those
+languages.</P><P>Since we already used Python in build scripts, also using it in configuration
+scripts came up as a natural choice. Several advantages are,</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+Packagers need to know only one language,
+</LI><LI CLASS="li-itemize">Comprehensive standard library with a wide range of extensions is
+available to use in scripts,
+</LI><LI CLASS="li-itemize">Every feature of the Python is accessible and controllable from the
+Python C library,
+</LI><LI CLASS="li-itemize">Scripts can be called by all users. They must have permission to make
+the call beforehand, but since script itself runs with a higher privilege,
+an interpreted language with garbage collection is very helpful against
+buffer overflow type attacks caused by malformed parameters from users.
+</LI><LI CLASS="li-itemize">Comar daemon[<A HREF="#key-23"><CITE>7</CITE></A>] listens configuration requests and, if
+user has permission to do that, forks a job process for each call.
+This job process loads up package script and run it. That way configuration
+operations can run in parallel, and self contained.
+</LI></UL><P>
+We first tried to write this daemon in Python too, but changed to
+C later. Reason is that daemon is very small (6216 lines of C code)
+and very low level, there isn't much to gain from Python. Since Python
+interpreter is not even initialized in main process, resource usage
+is very low when there isn't a configuration job is running.</P><P>There are some common operations among the Comar scripts which are
+not covered by the standard library. These functions and a binding
+class for making Comar calls is included in a Python package. Here
+is an example using that Python binding:</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+import&nbsp;comar&nbsp;<BR>
+link&nbsp;=&nbsp;comar.Link()&nbsp;<BR>
+&nbsp;<BR>
+#&nbsp;Set&nbsp;some&nbsp;address&nbsp;parameters&nbsp;of&nbsp;a&nbsp;network&nbsp;connection&nbsp;<BR>
+link.Net.Link.setAddress(name="Home&nbsp;Network",&nbsp;address="192.168.3.165",&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gateway="192.168.3.1")&nbsp;<BR>
+&nbsp;<BR>
+#&nbsp;Query&nbsp;all&nbsp;system&nbsp;services&nbsp;<BR>
+link.System.Service.info()&nbsp;<BR>
+&nbsp;<BR>
+#&nbsp;Read&nbsp;a&nbsp;result&nbsp;from&nbsp;the&nbsp;query&nbsp;<BR>
+reply&nbsp;=&nbsp;link.read_cmd()&nbsp;<BR>
+print&nbsp;reply.script,&nbsp;reply.data
+</TT></DL></DIV>
+
+
+<P>
+These calls and their results are transferred to and from the Comar
+via a Unix socket internally.</P><P>In the current release of Pardus, package installation, system startup,
+display configuration, network and firewall configuration, user management,
+time and settings are all carried to the Comar. Scripts and graphical
+user interfaces are coded and running. More subsystems like power
+management and storage management are in progress. A few examples
+of current usage is given below.</P><!--TOC subsection Boot Subsystem-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Boot Subsystem</H3><!--SEC END --><P>There is a separate article[<A HREF="#key-24"><CITE>8</CITE></A>] on our boot subsystem (called
+Mudur, means director in Turkish). We are going to give a summary
+of Python related features here.</P><P>System is made of a single Python script which handles basic initialization
+(starting udev, mounting filesystems, etc), and a System.Service Comar
+class with methods like start, stop, info, etc. Services are controlled
+by their Comar scripts. There are also a few tools (update-modules,
+update-environment, etc) rewritten in Python. Another Python agent
+deals with loading kernel modules and firmware for hardware, for both
+coldplugging and hotplugging.</P><P>In total of 2345 lines, Mudur makes Pardus, one of the fastest (in
+most configurations KDM login screen comes in 15-20 seconds) booting
+operating systems, with a highly maintainable, completely and easily
+localizable boot subsystem.</P><!--TOC subsection Network Subsystem-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Network Subsystem</H3><!--SEC END --><P>Basic class of the network system is Net.Link which defines a way
+(ethernet cable, wireless, ppp, vpn, etc) to connect a network. For
+an example, link.py script[<A HREF="#key-7"><CITE>9</CITE></A>] from wireless-tools package
+implements wireless connection with manual or automatic network configuration,
+WEP and WPA encryption, scanning, automatic detection of devices,
+and other basic functionality in 489 lines of Python code.</P><P>This is because most of the actual functionality is already implemented
+by tools like iwconfig, iwlist, dhcpcd, wpa_supplicant, etc. We just
+need to configure and use them according to user's wishes. This is
+very easy with Python, you can just import dbus, and for example talk
+to the WPA service with a few lines, unlike a C or shell based implementation.</P><P>User interfaces can use this link providers in a highly generic way
+without caring about implementation details, since this is done over
+the Comar service, fine grained access permissions can be given to
+users.</P><P>There are other classes for firewall and name service configuration.</P><P>Graphical user interface itself is 2450 lines of Python code, including
+a panel applet.</P><!--TOC subsection Other Examples-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Other Examples</H3><!--SEC END --><P>Naturally package configuration is done with Comar too. Each package
+can provide a setup script with postInstall and preRemove methods.
+Additionally some packages would register their scripts on another
+class for operating on other packages' install and removal. That way,
+you can write scripts for operating on special kind of packages or
+files, like fonts, kernel modules, libraries, etc. Packages can inspect
+and register their plugins without providing each one with a script.</P><P>User management is another aspect handled by Comar.</P><P>Pardus is able to detect native panel size for most of the LCD monitors,
+and has a very good Xorg auto-configuration system[<A HREF="#key-15"><CITE>10</CITE></A>] called
+&#X201C;zorg&#X201D;. A task-based user interface for controlling important
+aspects, and especially multi-monitor situations is under development.</P><P>We are developing an enterprise management system for controlling
+a network of computers. It is going to take global configuration policies
+from an LDAP server, and apply to the local system with Comar framework.
+Thus Comar will slowly cover all areas of the system configuration
+in the future.</P><!--TOC section Applications and Scripts-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A> Applications and Scripts</H2><!--SEC END --><P>Our installation program YALI[<A HREF="#key-8"><CITE>11</CITE></A>] is composed of 7521 line
+of Python code. Although it basically uses PiSi and Comar for installation,
+there are many hardware related modules, like a partition manager
+which contributes to the size. GUI code is also a bit big, because
+installation environment only has Qt widgets running on a bare X Window
+server.</P><P>There is a KControl replacement we wrote, which uses both KDE control
+center modules, and our control center modules written in Python.</P><P>Our buildfarm software[<A HREF="#key-9"><CITE>12</CITE></A>] is 878 lines of Python. Checks
+out package descriptions from subversion repository, finds new releases,
+builds them, builds the other packages requiring recompile, sends
+packaged binaries to the file server. We are looking for a web based
+interface for the build farm, probably based on Django.</P><P>There several small scripts, validating the integrity of package repositories,
+generating web pages for packages, and countless smaller scripts for
+doing one time jobs written.</P><!--TOC section Custom Modules-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A> Custom Modules</H2><!--SEC END --><P>In the process of Pardus development, we have encountered some common
+problems, and wrote some generic modules[<A HREF="#key-10"><CITE>13</CITE></A>] to deal with
+them.</P><!--TOC subsection piksemel-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->piksemel</H3><!--SEC END --><P>Unfortunately XML module of the standard Python library is too slow
+for serious usage. Parsing the package content information of the
+TeT<sub>E</sub>X PiSi package (a 2.137.893 bytes XML file), for example, takes
+almost two seconds on a 1.66 GHz dual core Intel processor. Another
+problem is the API is cumbersome to use, and quite un-Pythonic.</P><P>We first switched to 4suite package, and gained quite a bit of speed.
+Then wrote our own module based on iksemel library. It is very small
+(designed mainly for embedded systems), and much faster than other
+parsers. Python API we add around it is designed to be easy to use
+and more Pythonic.</P><P>Simple parsing example:</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+doc&nbsp;=&nbsp;piksemel.parse("files.xml")&nbsp;<BR>
+for&nbsp;fileinfo&nbsp;in&nbsp;doc.tags("File"):&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;fileinfo.getTagData("Name"),&nbsp;fileinfo.getAttribute("size"),&nbsp;"bytes"
+</TT></DL></DIV>
+
+<P>
+Simple tree building example:</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+doc&nbsp;=&nbsp;piksemel.new("PiSi")&nbsp;<BR>
+source&nbsp;=&nbsp;doc.insertTag("Source")&nbsp;<BR>
+source.insertTag("Name").insertData("glibc")&nbsp;<BR>
+source.setAttribute("note",&nbsp;"test")&nbsp;<BR>
+print&nbsp;doc.toString()
+</TT></DL></DIV>
+
+
+<!--TOC subsection catbox-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->catbox</H3><!--SEC END --><P>Sandbox is a mechanism which provides a tightly-controlled set of
+resources for guest programs to run in. They are used in build systems
+for, constraining packages to the temporary build directory, keeping
+track of permission changes thus allowing non-root builds, and other
+similar purposes.</P><P>There are two feasible ways to build such a sandbox. Intercepting
+glibc function calls with LD_PRELOAD, or Linux system calls with
+ptrace. Former way makes it difficult to implement interaction between
+PiSi and build script (both are Python programs).</P><P>There is already a good ptrace sandbox framework for Python, called
+Subterfugue. Apart from a small C binding for ptrace call, it is completely
+written in Python. Unfortunately dealing with each system call with
+Python is quite slow for a build farm. There are over a thousand packages,
+and some of them like OpenOffice.org or kdebase takes a huge time
+to compile even on high end computers.</P><P>Thus we wrote catbox, a small sandboxing C module for PiSi.</P><!--TOC subsection pyaspects-->
+<H3 CLASS="subsection"><!--SEC ANCHOR -->pyaspects</H3><!--SEC END --><P>Like all others Pardus installation program uses a wizard based installation
+routine, changing screens back and forth. We wanted to use the advantages
+of aspect-oriented programming methodology to deal with the cross-cutting
+concerns in these screen switchings. That is how PyAspects started
+its life first as a package in YALI and became a separate module later
+on. Basically PyAspects is a collection of modules to ease aspect-oriented
+programming in Python language.</P><P>Simple weaver:</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+from&nbsp;pyaspects.debuggeraspect&nbsp;import&nbsp;DebuggerAspect&nbsp;<BR>
+from&nbsp;pyaspects.weaver&nbsp;import&nbsp;*&nbsp;<BR>
+d&nbsp;=&nbsp;DebuggerAspect()&nbsp;<BR>
+class&nbsp;C:&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;hello(self):&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"Hello&nbsp;there!"&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;hola(self,&nbsp;name):&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"Hola&nbsp;coma&nbsp;estas&nbsp;%s?"&nbsp;%&nbsp;name&nbsp;<BR>
+&gt;&nbsp;&gt;&nbsp;&gt;&nbsp;c&nbsp;=&nbsp;C()&nbsp;<BR>
+&gt;&nbsp;&gt;&nbsp;&gt;&nbsp;c.hello()&nbsp;<BR>
+Entering&nbsp;function:&nbsp;hello&nbsp;(args:&nbsp;()&nbsp;--&nbsp;kwargs:&nbsp;{})&nbsp;<BR>
+Hello&nbsp;there!&nbsp;<BR>
+Left&nbsp;function:&nbsp;hello&nbsp;(args:&nbsp;()&nbsp;--&nbsp;kwargs:&nbsp;{})&nbsp;<BR>
+&gt;&nbsp;&gt;&nbsp;&gt;&nbsp;c.hola("Pardus")&nbsp;<BR>
+Entering&nbsp;function:&nbsp;hola&nbsp;(args:&nbsp;('Pardus',)&nbsp;--&nbsp;kwargs:&nbsp;{})&nbsp;<BR>
+Hola&nbsp;coma&nbsp;estas&nbsp;Pardus?&nbsp;<BR>
+Left&nbsp;function:&nbsp;hola&nbsp;(args:&nbsp;('Pardus',)&nbsp;--&nbsp;kwargs:&nbsp;{})
+</TT></DL></DIV>
+
+
+<P>
+Creating a new aspect (from YALI):</P>
+
+<DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
+from&nbsp;pyaspects.meta&nbsp;import&nbsp;MetaAspect&nbsp;<BR>
+##&nbsp;<BR>
+#&nbsp;Disables&nbsp;navigation&nbsp;buttons&nbsp;before&nbsp;method.&nbsp;<BR>
+class&nbsp;DisableNavButtonsAspect:&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;__metaclass__&nbsp;=&nbsp;MetaAspect&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;"disableNavButtons"&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;before(self,&nbsp;wobj,&nbsp;data,&nbsp;*args,&nbsp;**kwargs):&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.screens.disableNext()&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ctx.screens.disablePrev()&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;after(self,&nbsp;wobj,&nbsp;data,&nbsp;*args,&nbsp;**kwargs):&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass&nbsp;
+</TT></DL></DIV>
+
+
+<!--TOC section Problems-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A> Problems</H2><!--SEC END --><P>We have encountered several problems with some parts of the standard
+library. Since we deal with all sorts of weird tar archives during
+the build, corner case errors in tarfile module emerged quickly[<A HREF="#key-1"><CITE>14</CITE></A>].
+Another related problem is in zipfile module. Since there is no way
+to incrementally extract files from zip archives (pisi packages are
+zip archives), extracting big files (like install.tar.lzma of OpenOffice.org)
+causes too much memory usage. We fixed that with a hacky insertion
+of another read() variant into the ZipFile class.</P><P>As said before, performance and usage problems of xml.dom API forced
+us to use a custom parser module for those operations.</P><P>There are also many smaller errors encountered during the development,
+which a few of them[<A HREF="#key-2"><CITE>15</CITE></A>] reported/patched by us, and others
+got fixed by other parties along the normal Python development process.</P><P>Python's insistence of using the ASCII encoding caused some annoyance,
+since we use UTF8 everywhere, and our main locale (tr_TR.UTF8) have
+some characters outside of ISO Latin 1.</P><P>We have started with 2.3 release, and moved on to 2.4 before Pardus
+2007. Now we are getting ready for the Python 2.5 series. API/ABI
+breaking changes caused some minor work, but they are generally well
+documented, so never got out of control.</P><!--TOC section Conclusion-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A> Conclusion</H2><!--SEC END --><P>We have created a whole new distribution with custom package and configuration
+management tools from scratch in almost two years. We didn't have
+the know-how of making a distribution when we started, so development
+time can be considered very fast.</P><P>Once we finished the design processes, we quickly build prototypes
+of the tools and started using them. We even made a few throwaway
+versions the examine some design decisions. Rapid development nature
+and quick refactoring capabilities of the Python helped us greatly.</P><P>Core developers learned it in a few days, outside developers/packagers,
+even the users are very quick to learn our tools. Learning curve of
+the Python is very smooth. You can start using it like basic, then
+move on to next levels by learning the object oriented and functional
+paradigms.</P><P>Even with the problems mentioned in the above chapters, standard library
+is great, and many important environments like Qt and KDE have excellent
+Python bindings.</P><P>We are not only happy with our choice, but looking forward to use
+high level languages in more places.</P><!--TOC section References-->
+<H2 CLASS="section"><!--SEC ANCHOR -->References</H2><!--SEC END --><DL CLASS="thebibliography"><DT CLASS="dt-thebibliography">
+
+<A NAME="key-6"><FONT COLOR=purple>[1]</FONT></A></DT><DD CLASS="dd-thebibliography">Quotes about Python, <TT><a href="http://www.python.org/Quotes.html">http://www.python.org/Quotes.html</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-5"><FONT COLOR=purple>[2]</FONT></A></DT><DD CLASS="dd-thebibliography">Pisi article, <TT><a href="http://www.pardus.org.tr/eng/projects/pisi/PiSi.html">http://www.pardus.org.tr/eng/projects/pisi/PiSi.html</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-19"><FONT COLOR=purple>[3]</FONT></A></DT><DD CLASS="dd-thebibliography">Official package repository, <TT><a href="http://svn.pardus.org.tr/pardus/devel/">http://svn.pardus.org.tr/pardus/devel/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-20"><FONT COLOR=purple>[4]</FONT></A></DT><DD CLASS="dd-thebibliography">Contrib package repository, <TT><a href="http://svn.pardus.org.tr/contrib/">http://svn.pardus.org.tr/contrib/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-21"><FONT COLOR=purple>[5]</FONT></A></DT><DD CLASS="dd-thebibliography">Pisi source, <TT><a href="http://svn.pardus.org.tr/uludag/trunk/pisi/">http://svn.pardus.org.tr/uludag/trunk/pisi/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-22"><FONT COLOR=purple>[6]</FONT></A></DT><DD CLASS="dd-thebibliography">PyQt and PyKDE, <TT><a href="http://www.riverbankcomputing.co.uk/pyqt/">http://www.riverbankcomputing.co.uk/pyqt/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-23"><FONT COLOR=purple>[7]</FONT></A></DT><DD CLASS="dd-thebibliography">Comar system service, <TT><a href="http://svn.pardus.org.tr/uludag/trunk/comar/comar/">http://svn.pardus.org.tr/uludag/trunk/comar/comar/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-24"><FONT COLOR=purple>[8]</FONT></A></DT><DD CLASS="dd-thebibliography">Mudur article, <TT><a href="http://www.pardus.org.tr/eng/projeler/comar/SpeedingUpLinuxWithPardus.html">http://www.pardus.org.tr/eng/projeler/comar/SpeedingUpLinuxWithPardus.html</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-7"><FONT COLOR=purple>[9]</FONT></A></DT><DD CLASS="dd-thebibliography">Wireless script, <TT><a href="http://svn.pardus.org.tr/pardus/2007/system/base/wireless-tools/comar/link.py">http://svn.pardus.org.tr/pardus/2007/system/base/wireless-tools/comar/link.py</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-15"><FONT COLOR=purple>[10]</FONT></A></DT><DD CLASS="dd-thebibliography">Zorg, display auto-detection system, <TT><a href="http://svn.pardus.org.tr/uludag/trunk/comar/zorg/">http://svn.pardus.org.tr/uludag/trunk/comar/zorg/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-8"><FONT COLOR=purple>[11]</FONT></A></DT><DD CLASS="dd-thebibliography">Pardus installer, <TT><a href="http://svn.pardus.org.tr/uludag/trunk/yali/">http://svn.pardus.org.tr/uludag/trunk/yali/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-9"><FONT COLOR=purple>[12]</FONT></A></DT><DD CLASS="dd-thebibliography">Pardus build farm software, <TT><a href="http://svn.pardus.org.tr/uludag/trunk/buildfarm/">http://svn.pardus.org.tr/uludag/trunk/buildfarm/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-10"><FONT COLOR=purple>[13]</FONT></A></DT><DD CLASS="dd-thebibliography">Pardus python modules, <TT><a href="http://svn.pardus.org.tr/uludag/trunk/python-modules/">http://svn.pardus.org.tr/uludag/trunk/python-modules/</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-1"><FONT COLOR=purple>[14]</FONT></A></DT><DD CLASS="dd-thebibliography">Python tarfile errors, <TT><a href="https://sourceforge.net/tracker/?func=detail&amp;aid=1507247&amp;group_id=5470&amp;atid=305470">bug1</A></TT>,
+<TT><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1509889&amp;group_id=5470&amp;atid=305470">bug2</A></TT>,
+<TT><a href="https://sourceforge.net/tracker/?func=detail&amp;atid=105470&amp;aid=1336623&amp;group_id=5470">bug3</A></TT></DD><DT CLASS="dt-thebibliography">
+
+<A NAME="key-2"><FONT COLOR=purple>[15]</FONT></A></DT><DD CLASS="dd-thebibliography">Misc Python bugs, <TT><a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1337756&amp;group_id=5470&amp;atid=305470">bug1</A></TT>,
+<TT><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1513206&amp;group_id=5470&amp;atid=305470">bug2</A></TT>,
+<TT><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1056231&amp;group_id=5470&amp;atid=305470">bug3</A></TT>,
+<TT><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1454485&amp;group_id=5470&amp;atid=305470">bug4</A></TT>
+</DD></DL><!--CUT END -->
+
+</div>
+<!-- SAYFA İÇERİK SONU -->
+        </div>
+        <div id="footnote">
+            <p>
+              Information and documents on Pardus web pages can be used freely anywhere with original source credit.<br />
+              For information and suggestion(s) please write to <a href="mailto:bilgi%20at%20pardus.org.tr">bilgi_at_pardus.org.tr</a><br />
+              <em>TÜBİTAK - UEKAE, PK.74 41470, Gebze / Kocaeli.</em>
+           </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
