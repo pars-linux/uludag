@@ -33,9 +33,9 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "Bar Metin" 
 \author "A. Murat Eren" 
 \author "Gürer Özen" 
-\author "Bar Metin" 
 \end_header
 
 \begin_body
@@ -1137,6 +1137,126 @@ Like all others Pardus installation program uses a wizard based installation
  a separate module later on.
  Basically PyAspects is a collection of modules to ease aspect-oriented
  programming in Python language.
+\end_layout
+
+\begin_layout Standard
+Simple weaver:
+\end_layout
+
+\begin_layout LyX-Code
+from pyaspects.debuggeraspect import DebuggerAspect
+\end_layout
+
+\begin_layout LyX-Code
+from pyaspects.weaver import *
+\end_layout
+
+\begin_layout LyX-Code
+d = DebuggerAspect()
+\end_layout
+
+\begin_layout LyX-Code
+class C:
+\end_layout
+
+\begin_layout LyX-Code
+    def hello(self):
+\end_layout
+
+\begin_layout LyX-Code
+        print "Hello there!"
+\end_layout
+
+\begin_layout LyX-Code
+    def hola(self, name):
+\end_layout
+
+\begin_layout LyX-Code
+        print "Hola coma estas %s?" % name
+\end_layout
+
+\begin_layout LyX-Code
+>>> c = C()
+\end_layout
+
+\begin_layout LyX-Code
+>>> c.hello()
+\end_layout
+
+\begin_layout LyX-Code
+Entering function: hello (args: () -- kwargs: {})
+\end_layout
+
+\begin_layout LyX-Code
+Hello there!
+\end_layout
+
+\begin_layout LyX-Code
+Left function: hello (args: () -- kwargs: {})
+\end_layout
+
+\begin_layout LyX-Code
+>>> c.hola("Pardus")
+\end_layout
+
+\begin_layout LyX-Code
+Entering function: hola (args: ('Pardus',) -- kwargs: {})
+\end_layout
+
+\begin_layout LyX-Code
+Hola coma estas Pardus?
+\end_layout
+
+\begin_layout LyX-Code
+Left function: hola (args: ('Pardus',) -- kwargs: {})
+\end_layout
+
+\begin_layout Standard
+Creating a new aspect (from YALI):
+\end_layout
+
+\begin_layout LyX-Code
+from pyaspects.meta import MetaAspect
+\end_layout
+
+\begin_layout LyX-Code
+##
+\end_layout
+
+\begin_layout LyX-Code
+# Disables navigation buttons before method.
+\end_layout
+
+\begin_layout LyX-Code
+class DisableNavButtonsAspect:
+\end_layout
+
+\begin_layout LyX-Code
+    __metaclass__ = MetaAspect
+\end_layout
+
+\begin_layout LyX-Code
+    name = "disableNavButtons"
+\end_layout
+
+\begin_layout LyX-Code
+    def before(self, wobj, data, *args, **kwargs):
+\end_layout
+
+\begin_layout LyX-Code
+        ctx.screens.disableNext()
+\end_layout
+
+\begin_layout LyX-Code
+        ctx.screens.disablePrev()
+\end_layout
+
+\begin_layout LyX-Code
+    def after(self, wobj, data, *args, **kwargs):
+\end_layout
+
+\begin_layout LyX-Code
+        pass 
 \end_layout
 
 \begin_layout Section
