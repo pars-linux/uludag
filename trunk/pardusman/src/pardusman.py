@@ -52,7 +52,7 @@ def usage(app):
     print "  make       : Make all!"
 
 def main(args):
-    if len(args) >= 2 and args[1] in ["help", "-h", "--help"]:
+    if len(args) == 2 and args[1] in ["help", "-h", "--help"]:
         usage(args[0])
         return
     if len(args) == 3:
