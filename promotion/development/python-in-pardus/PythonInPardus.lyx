@@ -33,9 +33,9 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "Gürer Özen" 
 \author "Bar Metin" 
 \author "A. Murat Eren" 
-\author "Gürer Özen" 
 \end_header
 
 \begin_body
@@ -45,7 +45,7 @@ Python in Pardus
 \end_layout
 
 \begin_layout Author
-Gürer Özen
+A.Murat Eren, Gürer Özen, Barış Metin
 \end_layout
 
 \begin_layout Section
