@@ -204,69 +204,41 @@ In the official repository, there are 32641 lines (where 8044 of them are
 
 \begin_layout LyX-Code
 #!/usr/bin/python
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 # -*- coding: utf-8 -*-
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 #
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 # Copyright 2005, 2006 TUBITAK/UEKAE
-\end_layout
+\newline
+#
+ Licensed under the GNU General Public License, version 2.
+\newline
+# See the file
+ http://www.gnu.org/copyleft/gpl.txt.
+\newline
 
-\begin_layout LyX-Code
-# Licensed under the GNU General Public License, version 2.
-\end_layout
-
-\begin_layout LyX-Code
-# See the file http://www.gnu.org/copyleft/gpl.txt.
-\end_layout
-
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 from pisi.actionsapi import autotools
-\end_layout
+\newline
 
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
-def setup():
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+def
+ setup():
+\newline
     autotools.configure()
-\end_layout
+\newline
 
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 def build():
-\end_layout
-
-\begin_layout LyX-Code
+\newline
     autotools.make()
-\end_layout
+\newline
 
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 def install():
-\end_layout
+\newline
 
-\begin_layout LyX-Code
     autotools.install() 
 \end_layout
 
@@ -285,34 +257,23 @@ Here is another slightly complex example function from the LyX package:
 
 \begin_layout LyX-Code
 def setup():
-\end_layout
-
-\begin_layout LyX-Code
+\newline
     viewers = { 'PDF': 'kpdf',
-\end_layout
-
-\begin_layout LyX-Code
+\newline
                 'PS': 'kghostview',
-\end_layout
+\newline
 
-\begin_layout LyX-Code
                 'DVI': 'kdvi',
-\end_layout
-
-\begin_layout LyX-Code
+\newline
                 'HTML': 'konqueror' }
-\end_layout
-
-\begin_layout LyX-Code
-    for k in viewers:
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+    for
+ k in viewers:
+\newline
         shelltools.export(k + '_VIEWER', viewers[k])
-\end_layout
-
-\begin_layout LyX-Code
-    autotools.configure("--with-frontend=qt")
+\newline
+    autotools.co
+nfigure("--with-frontend=qt")
 \end_layout
 
 \begin_layout Standard
@@ -382,69 +343,43 @@ from pisi.scenarioapi.scenario import *
 
 \begin_layout LyX-Code
 HASHALOT="hashalot"
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 COREUTILS="coreutils"
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 GLIBC="glibc"
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 UTIL_LINUX="util-linux"
-\end_layout
+\newline
 
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
-let_repo_had(HASHALOT, with_partof("system.base"))
-\end_layout
-
-\begin_layout LyX-Code
-let_repo_had(COREUTILS, with_partof("system.base"))
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+let_
+repo_had(HASHALOT, with_partof("system.base"))
+\newline
+let_repo_had(COREUTILS, with_partof
+("system.base"))
+\newline
 let_repo_had(GLIBC, with_partof("system.base"))
-\end_layout
+\newline
+let_repo_had(UTIL_L
+INUX, with_partof("system.base"))
+\newline
+let_pisi_had(COREUTILS, HASHALOT, GLIBC,
+ UTIL_LINUX)
+\newline
 
-\begin_layout LyX-Code
-let_repo_had(UTIL_LINUX, with_partof("system.base"))
-\end_layout
-
-\begin_layout LyX-Code
-let_pisi_had(COREUTILS, HASHALOT, GLIBC, UTIL_LINUX)
-\end_layout
-
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 def run():
-\end_layout
-
-\begin_layout LyX-Code
+\newline
     repo_version_bumped(GLIBC)
-\end_layout
-
-\begin_layout LyX-Code
-    repo_version_bumped(UTIL_LINUX)
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+    repo_version_bumped(UTIL
+_LINUX)
+\newline
     repo_version_bumped(COREUTILS, with_added_conflicts(HASHALOT))
-\end_layout
+\newline
 
-\begin_layout LyX-Code
     repo_updated_index()
-\end_layout
-
-\begin_layout LyX-Code
+\newline
     pisi_upgraded() 
 \end_layout
 
@@ -471,13 +406,10 @@ Here is an example from the diff package (they are for updating a package
 
 \begin_layout LyX-Code
 files_all = set(map(lambda x:(x.path, x.hash), files.list))
-\end_layout
-
-\begin_layout LyX-Code
-files_old = set(map(lambda x:(x.path, x.hash), oldfiles.list))
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+files_old = set(map(lamb
+da x:(x.path, x.hash), oldfiles.list))
+\newline
 files_delta = files_all - files_old
 \end_layout
 
@@ -730,51 +662,34 @@ There are some common operations among the Comar scripts which are not covered
 
 \begin_layout LyX-Code
 import comar
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 link = comar.Link()
-\end_layout
+\newline
 
-\begin_layout LyX-Code
+\newline
+# Set some address parameters of a network
+ connection
+\newline
+link.Net.Link.setAddress(name="Home Network", address="192.168.3.165",
+\newline
 
-\end_layout
+                        gateway="192.168.3.1")
+\newline
 
-\begin_layout LyX-Code
-# Set some address parameters of a network connection
-\end_layout
-
-\begin_layout LyX-Code
-link.Net.Link.setAddress(name="Home Network", address="192.168.3.165", gateway="192.168.
-3.1")
-\end_layout
-
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 # Query all system services
-\end_layout
+\newline
+link.System.
+Service.info()
+\newline
 
-\begin_layout LyX-Code
-link.System.Service.info()
-\end_layout
-
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 # Read a result from the query
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 reply = link.read_cmd()
-\end_layout
-
-\begin_layout LyX-Code
-print reply.script, reply.data
+\newline
+print reply.scri
+pt, reply.data
 \end_layout
 
 \begin_layout Standard
@@ -1056,14 +971,11 @@ Simple parsing example:
 
 \begin_layout LyX-Code
 doc = piksemel.parse("files.xml")
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 for fileinfo in doc.tags("File"):
-\end_layout
-
-\begin_layout LyX-Code
-    print fileinfo.getTagData("Name"), fileinfo.getAttribute("size"), "bytes"
+\newline
+    print
+ fileinfo.getTagData("Name"), fileinfo.getAttribute("size"), "bytes"
 \end_layout
 
 \begin_layout Standard
@@ -1072,21 +984,14 @@ Simple tree building example:
 
 \begin_layout LyX-Code
 doc = piksemel.new("PiSi")
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 source = doc.insertTag("Source")
-\end_layout
-
-\begin_layout LyX-Code
-source.insertTag("Name").insertData("glibc")
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+source.insertTag("Name").i
+nsertData("glibc")
+\newline
 source.setAttribute("note", "test")
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 print doc.toString()
 \end_layout
 
@@ -1145,70 +1050,44 @@ Simple weaver:
 
 \begin_layout LyX-Code
 from pyaspects.debuggeraspect import DebuggerAspect
-\end_layout
-
-\begin_layout LyX-Code
-from pyaspects.weaver import *
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+from pyaspects.weaver import
+ *
+\newline
 d = DebuggerAspect()
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 class C:
-\end_layout
-
-\begin_layout LyX-Code
+\newline
     def hello(self):
-\end_layout
-
-\begin_layout LyX-Code
+\newline
         print "Hello there!"
-\end_layout
+\newline
 
-\begin_layout LyX-Code
     def hola(self, name):
-\end_layout
-
-\begin_layout LyX-Code
+\newline
         print "Hola coma estas %s?" % name
-\end_layout
-
-\begin_layout LyX-Code
->>> c = C()
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+>>> c
+ = C()
+\newline
 >>> c.hello()
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 Entering function: hello (args: () -- kwargs: {})
-\end_layout
-
-\begin_layout LyX-Code
-Hello there!
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+Hello
+ there!
+\newline
 Left function: hello (args: () -- kwargs: {})
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 >>> c.hola("Pardus")
-\end_layout
-
-\begin_layout LyX-Code
-Entering function: hola (args: ('Pardus',) -- kwargs: {})
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+Entering
+ function: hola (args: ('Pardus',) -- kwargs: {})
+\newline
 Hola coma estas Pardus?
-\end_layout
-
-\begin_layout LyX-Code
-Left function: hola (args: ('Pardus',) -- kwargs: {})
+\newline
+Left
+ function: hola (args: ('Pardus',) -- kwargs: {})
 \end_layout
 
 \begin_layout Standard
@@ -1217,45 +1096,29 @@ Creating a new aspect (from YALI):
 
 \begin_layout LyX-Code
 from pyaspects.meta import MetaAspect
-\end_layout
-
-\begin_layout LyX-Code
+\newline
 ##
-\end_layout
-
-\begin_layout LyX-Code
-# Disables navigation buttons before method.
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+# Disables navigation buttons before
+ method.
+\newline
 class DisableNavButtonsAspect:
-\end_layout
-
-\begin_layout LyX-Code
+\newline
     __metaclass__ = MetaAspect
-\end_layout
-
-\begin_layout LyX-Code
-    name = "disableNavButtons"
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+    name
+ = "disableNavButtons"
+\newline
     def before(self, wobj, data, *args, **kwargs):
-\end_layout
+\newline
 
-\begin_layout LyX-Code
         ctx.screens.disableNext()
-\end_layout
-
-\begin_layout LyX-Code
+\newline
         ctx.screens.disablePrev()
-\end_layout
-
-\begin_layout LyX-Code
-    def after(self, wobj, data, *args, **kwargs):
-\end_layout
-
-\begin_layout LyX-Code
+\newline
+    def after(self
+, wobj, data, *args, **kwargs):
+\newline
         pass 
 \end_layout
 
