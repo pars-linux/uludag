@@ -33,6 +33,7 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "A. Murat Eren" 
 \author "Gürer Özen" 
 \author "Bar Metin" 
 \end_header
@@ -71,7 +72,7 @@ It is used almost everywhere in Pardus.
  From startup system to user interfaces.
  This wasn't intentional.
  We started using Python in a few places for rapid development, and then
- it spreaded to other areas.
+ it spread to other areas.
  Also most of the core developers learned Python, after joining the project.
 \end_layout
 
@@ -90,7 +91,7 @@ Package management is the key part of a software distribution.
  Packagers want to package their software without going through complex
  build procedures.
  Developers want to quickly deploy their patches to the users.
- Distribution maintainers want automated tools for validating, analysing
+ Distribution maintainers want automated tools for validating, analyzing
  and building the software collection.
  Finally third parties want to embed and extend core distribution into their
  own specialized releases.
@@ -98,7 +99,7 @@ Package management is the key part of a software distribution.
 
 \begin_layout Standard
 Our custom package management system PiSi is designed to meet those requirements.
- Here we are going to discuss involment of the Python.
+ Here we are going to discuss involvement of the Python.
  You can find more information about general design in the PiSi article
 \begin_inset LatexCommand cite
 key "key-5"
@@ -113,9 +114,9 @@ Package Specification
 \end_layout
 
 \begin_layout Standard
-Package is a collection of files and some meta information about what is
- the contained software, how is it going to be installed, and what are its
- requirements (dependencies).
+Package is a collection of files and some meta information about what the
+ contained software is, how it is going to be installed, and what it's requireme
+nts are (dependencies).
  A binary package is usually build from a specification which describes
  the original source, patches added by the distribution, and build instructions.
  We keep those specifications inside a subversion repository, one directory
@@ -141,8 +142,7 @@ Avoiding new ad-hoc formats, and keeping everything simple as it can be,
 Deciding about programs was harder.
  Ideally all programs (build, install, remove scripts) should be written
  in same language.
- Packager only has to know one language, and maintainance becomes a lot
- easier.
+ Packager only has to know one language, and maintenance becomes a lot easier.
 \end_layout
 
 \begin_layout Standard
@@ -150,7 +150,7 @@ Traditionally build scripts were shell scripts.
  Shell is ideal for simple tasks requiring batch run of a series of commands.
  Unfortunately there are cases where you need conditional operations, do
  string processing, and iterate an operation over a series of data.
- In those cases shell syntax becomes awkward, debugging and maintainance
+ In those cases shell syntax becomes awkward, debugging and maintenance
  costs go higher.
 \end_layout
 
@@ -166,7 +166,7 @@ In simplest case of build operation (configure; make), there isn't much
 \end_layout
 
 \begin_layout Standard
-We decided that Python succesfully meets these requirements, and is the
+We decided that Python successfully meets these requirements, and is the
  best choice for package scripts.
 \end_layout
 
@@ -360,7 +360,7 @@ key "key-21"
 \end_inset
 
  is 14245 lines of Python code distributed in 72 modules in 6 packages.
- Command line driver (pisi command) is just a simple frontend to all those
+ Command line driver (pisi command) is just a simple front-end to all those
  modules.
  They can also be used together or partially by other programs.
  There are also a few more scripts, and a comprehensive test suite containing
@@ -368,7 +368,7 @@ key "key-21"
 \end_layout
 
 \begin_layout Standard
-An example test senario (scenarios/bug3481scen.py in PiSi source) is like
+An example test scenario (scenarios/bug3481scen.py in PiSi source) is like
  this:
 \end_layout
 
@@ -487,13 +487,13 @@ From two file lists of the old and new packages, changed file list is extracted
 \end_layout
 
 \begin_layout Standard
-An other reason to choose Python was its standart library.
+An other reason to choose Python was its standard library.
  Although some parts of it (xml modules) are extremely slow and hard to
  use, and some parts (os, shutil, zipfile) needs a few wrappers to get it
  right, we have used quite a number of standart modules (like cPickle, re,
  unittest, subprocess, getopt, gettext, zlib, bz2, tarfile, urllib2, urlparse,
  sha).
- More information about our problems with the standart library can be found
+ More information about our problems with the standard library can be found
  in problems section of this article.
  But all in all, they helped greatly by allowing us to reuse already tested
  components instead of writing everything from scratch.
@@ -507,7 +507,7 @@ We have only encountered a speed problem with XML parsing, which we solved
  fixed in the next major release.
  Most of the PiSi work is bounded by disc IO, and heavy calculation parts
  like dependency solving work really fast, if carefully coded by using as
- much as builtin functions of the Python.
+ much as built-in functions of the Python.
 \end_layout
 
 \begin_layout Standard
@@ -663,10 +663,10 @@ This architecture has quite a number of advantages.
 \end_layout
 
 \begin_layout Standard
-Theorically these scripts could be in any language.
+Theoretically these scripts could be in any language.
  But there are many practical problems with that.
- Maintainance becomes harder with a big repository with scripts written
- in all sorts of languages.
+ Maintenance becomes harder with a big repository with scripts written in
+ all sorts of languages.
  Function calling and parameter passing needs to be implemented for all
  those languages.
 \end_layout
@@ -682,7 +682,7 @@ Packagers need to know only one language,
 \end_layout
 
 \begin_layout Itemize
-Comprehensive standart library with a wide range of extensions is available
+Comprehensive standard library with a wide range of extensions is available
  to use in scripts,
 \end_layout
 
@@ -928,7 +928,7 @@ user manager scrshot
 
 \begin_layout Standard
 Pardus is able to detect native panel size for most of the LCD monitors,
- and has a very good Xorg autoconfiguration system
+ and has a very good Xorg auto-configuration system
 \begin_inset LatexCommand cite
 key "key-15"
 
@@ -944,7 +944,7 @@ zorg
 
 .
  A task-based user interface for controlling important aspects, and especially
- multimonitor situations is under development.
+ multi-monitor situations is under development.
 \end_layout
 
 \begin_layout Standard
@@ -971,7 +971,7 @@ key "key-8"
  Although it basically uses PiSi and Comar for installation, there are many
  hardware related modules, like a partition manager which contributes to
  the size.
- GUI code is also a bit big, beacuse installation environment only has Qt
+ GUI code is also a bit big, because installation environment only has Qt
  widgets running on a bare X Window server.
 \end_layout
 
@@ -1095,7 +1095,7 @@ catbox
 \end_layout
 
 \begin_layout Standard
-Sandbox is a mechanism which provides a tighly-controlled set of resources
+Sandbox is a mechanism which provides a tightly-controlled set of resources
  for guest programs to run in.
  They are used in build systems for, constraining packages to the temporary
  build directory, keeping track of permission changes thus allowing non-root
@@ -1130,8 +1130,8 @@ pyaspects
 
 \begin_layout Standard
 Like all others Pardus installation program uses a wizard based installation
- rutine, changing screens back and forth.
- We wanted to use the adventages of aspect-oriented programming methodology
+ routine, changing screens back and forth.
+ We wanted to use the advantages of aspect-oriented programming methodology
  to deal with the cross-cutting concerns in these screen switchings.
  That is how PyAspects started its life first as a package in YALI and became
  a separate module later on.
@@ -1370,7 +1370,7 @@ key "key-15"
 
 \end_inset
 
-Zorg, display autodetection system, 
+Zorg, display auto-detection system, 
 \begin_inset LatexCommand url
 target "http://svn.pardus.org.tr/uludag/trunk/comar/zorg/"
 
