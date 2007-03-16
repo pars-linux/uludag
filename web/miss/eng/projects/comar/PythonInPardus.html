@@ -33,8 +33,8 @@
 <!-- SAYFA İÇERİK BAŞI -->
 <div class="belge">
 <!--HEVEA command line is: hevea -fix PythonInPardus.tex -->
-<!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Python in Pardus</H1><H3 CLASS="titlerest">A.Murat Eren, Gürer Özen, Barış Metin</H3></TD></TR>
-</TABLE><!--TOC section Introduction-->
+<!--CUT DEF section 1 --><H1>Python in Pardus</H1><H3>A.Murat Eren, Barış Metin, Gürer Özen</H3>
+<!--TOC section Introduction-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A> Introduction</H2><!--SEC END --><P>Python is a dynamic object-oriented programming language that can
 be used for many kinds of software development. At least, that it
 what its homepage says. It is actually used by a range of companies
@@ -231,7 +231,10 @@ of the desktop, be it an application, a control center module, an
 IO handler module, or a panel applet, can be written in Python. Similarly
 you can use almost any component like khtml from Python.</P><P>Graphical user interface of the PiSi is 2558 lines of Python code.
 This includes both a control center module, and a panel applet for
-regularly checking repositories and showing available updates.</P><P>Another application using PiSi is Pardusman, a tool for making release
+regularly checking repositories and showing available updates.</P>
+<img src="http://www.pardus.org.tr/eng/projects/pisi/package-manager.png" alt="pisi user interface">
+
+<P>Another application using PiSi is Pardusman, a tool for making release
 media. You can select packages from a binary repository and easily
 make a live or install CD with a few clicks. It is 1481 lines of Python
 code.</P><P>As you see, PiSi user interfaces are very short, yet quite capable
@@ -354,7 +357,12 @@ Additionally some packages would register their scripts on another
 class for operating on other packages' install and removal. That way,
 you can write scripts for operating on special kind of packages or
 files, like fonts, kernel modules, libraries, etc. Packages can inspect
-and register their plugins without providing each one with a script.</P><P>User management is another aspect handled by Comar.</P><P>Pardus is able to detect native panel size for most of the LCD monitors,
+and register their plugins without providing each one with a script.</P>
+
+<P>User management is another aspect handled by Comar.</P>
+<img src="http://www.pardus.org.tr/eng/images/user-manager-en-1.png" alt="user manager">
+
+<P>Pardus is able to detect native panel size for most of the LCD monitors,
 and has a very good Xorg auto-configuration system[<A HREF="#key-15"><CITE>10</CITE></A>] called
 &#X201C;zorg&#X201D;. A task-based user interface for controlling important
 aspects, and especially multi-monitor situations is under development.</P><P>We are developing an enterprise management system for controlling
@@ -367,7 +375,9 @@ of Python code. Although it basically uses PiSi and Comar for installation,
 there are many hardware related modules, like a partition manager
 which contributes to the size. GUI code is also a bit big, because
 installation environment only has Qt widgets running on a bare X Window
-server.</P><P>There is a KControl replacement we wrote, which uses both KDE control
+server.</P>
+<img src="http://www.pardus.org.tr/eng/images/yali-en-4.jpg" alt="pardus installer">
+<P>There is a KControl replacement we wrote, which uses both KDE control
 center modules, and our control center modules written in Python.</P><P>Our buildfarm software[<A HREF="#key-9"><CITE>12</CITE></A>] is 878 lines of Python. Checks
 out package descriptions from subversion repository, finds new releases,
 builds them, builds the other packages requiring recompile, sends
