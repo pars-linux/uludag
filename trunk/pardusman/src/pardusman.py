@@ -40,7 +40,21 @@ def do_operation(project_file, op):
     end = time.time()
     print "Total time is", end - start, "seconds."
 
+def usage(app):
+    print "Usage: %s [command] path/to/project.xml" % app
+    print
+    print "Commands:"
+    print "  make-repo  : Make local repos"
+    print "  check-repo : Check repo files"
+    print "  make-live  : Install image & make squasfs"
+    print "  pack-live  : Make squasfs"
+    print "  make-iso   : Make ISO"
+    print "  make       : Make all!"
+
 def main(args):
+    if len(args) == 2 and args[1] in ["help", "-h", "--help"]:
+        usage(args[0])
+        return
     if len(args) == 3:
         do_operation(args[2], args[1])
         return
