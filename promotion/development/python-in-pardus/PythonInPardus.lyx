@@ -33,9 +33,9 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "A. Murat Eren" 
 \author "Gürer Özen" 
 \author "Bar Metin" 
-\author "A. Murat Eren" 
 \end_header
 
 \begin_body
@@ -740,12 +740,8 @@ In total of 2345 lines, Mudur makes Pardus, one of the fastest (in most
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Standard
-servis yöneticisi ekran görüntüsü
-\end_layout
+\begin_inset Graphics
+	filename service-manager.png
 
 \end_inset
 
