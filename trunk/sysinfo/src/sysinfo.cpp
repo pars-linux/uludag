@@ -294,16 +294,18 @@ QString kio_sysinfoProtocol::diskInfo()
         {
             DiskInfo di = ( *it );
             QString tooltip = i18n( di.model );
+            QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
+
             if ( di.mounted )
             {
                 result += QString( "<tr><td>%1</td><td><a href=\"media:/%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr><tr></tr>" ).
-                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
+                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( label ).arg( di.fsType ).
                           arg( formattedUnit( di.total ) ).arg( formattedUnit( di.avail ) ).arg( tooltip );
             }
             else
             {
                 result += QString( "<tr><td>%1</td><td><a href=\"media:/%2\" title=\"%6\">%3</a></td><td>%4</td><td>%5</td><td></td></tr><tr></tr>" ).
-                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( di.label ).arg( di.fsType ).
+                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( label ).arg( di.fsType ).
                           arg( di.total ? formattedUnit( di.total) : QString::null).arg( tooltip );
             }
         }
