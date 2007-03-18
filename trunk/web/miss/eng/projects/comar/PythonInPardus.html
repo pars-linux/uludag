@@ -336,10 +336,11 @@ class with methods like start, stop, info, etc. Services are controlled
 by their Comar scripts. There are also a few tools (update-modules,
 update-environment, etc) rewritten in Python. Another Python agent
 deals with loading kernel modules and firmware for hardware, for both
-coldplugging and hotplugging.</P><P>In total of 2345 lines, Mudur makes Pardus, one of the fastest (in
-most configurations KDM login screen comes in 15-20 seconds) booting
+coldplugging and hotplugging.</P><P>
+In total of 2345 lines, Mudur makes Pardus one of the fastest booting
 operating systems, with a highly maintainable, completely and easily
-localizable boot subsystem.</P>
+localizable boot subsystem. Now in most configurations, KDM login screen
+comes in 15-20 seconds.</P>
 
 <img src="./sm.png" alt="service manager">
 
@@ -351,7 +352,7 @@ implements wireless connection with manual or automatic network configuration,
 WEP and WPA encryption, scanning, automatic detection of devices,
 and other basic functionality in 489 lines of Python code.</P><P>This is because most of the actual functionality is already implemented
 by tools like iwconfig, iwlist, dhcpcd, wpa_supplicant, etc. We just
-need to configure and use them according to user's wishes. This is
+needed to configure and use them according to user's wishes. This is
 very easy with Python, you can just import dbus, and for example talk
 to the WPA service with a few lines, unlike a C or shell based implementation.</P><P>User interfaces can use this link providers in a highly generic way
 without caring about implementation details, since this is done over
@@ -402,13 +403,13 @@ problems, and wrote some generic modules[<A HREF="#key-10"><CITE>13</CITE></A>] 
 them.</P><!--TOC subsection piksemel-->
 <H3 CLASS="subsection"><!--SEC ANCHOR -->piksemel</H3><!--SEC END --><P>Unfortunately XML module of the standard Python library is too slow
 for serious usage. Parsing the package content information of the
-TeT<sub>E</sub>X PiSi package (a 2.137.893 bytes XML file), for example, takes
+TeT<sub>E</sub>X PiSi package (a 2.137.893 byte XML file), for example, takes
 almost two seconds on a 1.66 GHz dual core Intel processor. Another
 problem is the API is cumbersome to use, and quite un-Pythonic.</P><P>We first switched to 4suite package, and gained quite a bit of speed.
 Then wrote our own module based on iksemel library. It is very small
-(designed mainly for embedded systems), and much faster than other
-parsers. Python API we add around it is designed to be easy to use
-and more Pythonic.</P><P>Simple parsing example:</P>
+(designed mainly for embedded systems) and much faster than other
+parsers. We have added a Python API around it, which is designed to be easy to use
+and more Pythonic.</P><P>Here is a simple parsing example:</P>
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 doc&nbsp;=&nbsp;piksemel.parse("files.xml")&nbsp;<BR>
@@ -417,7 +418,7 @@ for&nbsp;fileinfo&nbsp;in&nbsp;doc.tags("File"):&nbsp;<BR>
 </TT></DL></DIV>
 
 <P>
-Simple tree building example:</P>
+And you will see a simple tree building example below:</P>
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 doc&nbsp;=&nbsp;piksemel.new("PiSi")&nbsp;<BR>
@@ -472,7 +473,7 @@ Left&nbsp;function:&nbsp;hola&nbsp;(args:&nbsp;('Pardus',)&nbsp;--&nbsp;kwargs:&
 
 
 <P>
-Creating a new aspect (from YALI):</P>
+Creating a new aspect (from YALI, Pardus installer):</P>
 
 <DIV ALIGN=left><DL COMPACT=compact><DT><DD><TT>
 from&nbsp;pyaspects.meta&nbsp;import&nbsp;MetaAspect&nbsp;<BR>
@@ -514,9 +515,9 @@ of the tools and started using them. We even made a few throwaway
 versions the examine some design decisions. Rapid development nature
 and quick refactoring capabilities of the Python helped us greatly.</P><P>Core developers learned it in a few days, outside developers/packagers,
 even the users are very quick to learn our tools. Learning curve of
-the Python is very smooth. You can start using it like basic, then
-move on to next levels by learning the object oriented and functional
-paradigms.</P><P>Even with the problems mentioned in the above chapters, standard library
+the Python is very smooth. You can start using it like Basic, then
+move on to next levels by learning object oriented and functional
+programming paradigms.</P><P>Even with the problems mentioned in the above chapters, standard library
 is great, and many important environments like Qt and KDE have excellent
 Python bindings.</P><P>We are not only happy with our choice, but looking forward to use
 high level languages in more places.</P><!--TOC section References-->
