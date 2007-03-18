@@ -81,20 +81,20 @@ and iterate an operation over a series of data. In those cases shell
 syntax becomes awkward, debugging and maintenance costs go higher.</P><P>In simplest case of build operation (configure; make), there isn't
 much difference between alternative languages. But when cases get
 more complex, you'll definitely want a language with rich set of datatypes,
-native support for strings, clean and concise syntax, and a standart
+native support for strings, clean and concise syntax and a standart
 library with a wide range of useful functions. This language shouldn't
 have a steep learning curve, and shouldn't look too different from
 shell scripts or shouldn't require a complete paradigm change for
-system admins and packagers (like some pure functional languages).</P><P>We decided that Python successfully meets these requirements, and
+system admins and packagers (like some pure functional languages).</P><P>We concluded that Python successfully meets these requirements, and
 is the best choice for package scripts.</P><!--TOC subsection Build Scripts-->
-<H3 CLASS="subsection"><!--SEC ANCHOR -->Build Scripts</H3><!--SEC END --><P>After coding a proof of concept package manager, we started making
-packages. In a six months of time, with a six people, we managed to
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Build Scripts</H3><!--SEC END --><P>After implementing a proof of concept for package manager, we started making
+packages. In a six months of time, with six developers, we managed to
 make packages of base system (kernel, drivers, glibc, gcc, gnu tools),
-desktop (xorg, KDE), and applications (Gimp, TeT<sub>E</sub>X, K3B, mplayer,
+desktop (xorg, KDE), and applications (Gimp, TeT<sub>E</sub>X, K3b, mplayer,
 OpenOffice.org, etc). There were a total of 600 packages which are
 bootstrapped and build on a Pardus system. Now a year after, we have
-1227 packages in our official repository[<A HREF="#key-19"><CITE>3</CITE></A>], and 698 packages
-in an extra contribution repository[<A HREF="#key-20"><CITE>4</CITE></A>], made by 25 developers.</P><P>In the official repository, there are 32641 lines (where 8044 of them
+1227 packages in our official repository[<A HREF="#key-19"><CITE>3</CITE></A>] and 698 packages
+in an extra contribution repository[<A HREF="#key-20"><CITE>4</CITE></A>], built by circa 25 developers.</P><P>In the official repository, there are 32641 lines (where 8044 of them
 are comment lines) of Python code for packages. Script for one of
 the simple packages, gparted, is given below:</P>
 
@@ -120,7 +120,7 @@ def&nbsp;install():&nbsp;<BR>
 
 
 <P>
-As you see, there isn't much in this script, everything is handled
+As you see, there isn't much information in this script, everything is handled
 by the autotools module. A generic utility module and a few such build
 system modules (for autotools, scons, cmake, perl and python extensions)
 are provided by package manager (in the pisi.actionsapi package).
@@ -143,11 +143,11 @@ As you see, some defaults are modified via environment variables before
 configuring.</P><P>There aren't many complex build scripts. Most of the logic and error
 checking is handled by provided utility modules (ActionsAPI). Scripts
 requiring complex operations and interactions are managed by our configuration
-management system Comar. PiSi merely passes those scripts to the Comar.
+management system called Comar. PiSi merely passes those scripts to Comar.
 Examples of them are given in the system configuration section of
 this article.</P><!--TOC subsection Package Manager-->
 <H3 CLASS="subsection"><!--SEC ANCHOR -->Package Manager</H3><!--SEC END --><P>PiSi itself is written in Python too. This is a huge deviation from
-other well known package management software (Redhat's rpm or Debian's
+other well known package management software (Red Hat's RPM or Debian's
 dpkg which are both written in C).</P><P>PiSi architecture is quite different from traditional designs. Every
 functionality, related to the package management like installing,
 building, fetching, dependency solving, repository management, validating
