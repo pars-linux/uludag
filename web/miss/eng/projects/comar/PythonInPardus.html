@@ -57,18 +57,18 @@ want to quickly deploy their patches to the users. Distribution maintainers
 want automated tools for validating, analyzing and building the software
 collection. Finally third parties want to embed and extend core distribution
 into their own specialized releases.</P><P>Our custom package management system PiSi is designed to meet those
-requirements. Here we are going to discuss involvement of the Python.
+requirements.
 You can find more information about general design in the PiSi article[<A HREF="#key-5"><CITE>2</CITE></A>].</P><!--TOC subsection Package Specification-->
 <H3 CLASS="subsection"><!--SEC ANCHOR -->Package Specification</H3><!--SEC END --><P>Package is a collection of files and some meta information about what
-the contained software is, how it is going to be installed, and what
-it's requirements are (dependencies). A binary package is usually
+software the corresponding package includes, how it is going to be installed, and 
+its dependencies. A binary package is usually
 build from a specification which describes the original source, patches
-added by the distribution, and build instructions. We keep those specifications
-inside a subversion repository, one directory per package, neatly
-organized in the component directories.</P><P>Since specification contains both data (like software name, its homepage,
+added by the distribution and build instructions. We keep those specifications
+inside a Subversion repository, one directory per package, neatly
+organized in component directories.</P><P>Since specification contains both data (like software name, homepage,
 version, description, license, location of the original source, list
 of the patches, etc) and programs (build instructions, install instructions,
-remove instructions, etc), we decided to keep those separate. That
+remove instructions, etc), we decided to keep this information in a seperate fashion. That
 way, parsing and using the data becomes really easy.</P><P>Avoiding new ad-hoc formats, and keeping everything simple as it can
 be, we decided to put data into an XML file. Data is very structured,
 and some items (like description) have translated versions as well,
