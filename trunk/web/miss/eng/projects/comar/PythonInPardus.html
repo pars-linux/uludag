@@ -189,11 +189,11 @@ def&nbsp;run():&nbsp;<BR>
 
 <P>
 It is as readable as pseudo code, yet it works too.</P><P>A package management software deals a lot with sets, lists, and dependency
-graphs. Python has former two natively, and implementing latter is
+graphs. Python has former two in a native way, and implementing latter is
 very simple with available primitives. Object oriented nature of Python,
-with module and package concepts, kept the code very modular and good
-structured. We have used functional operators (map, filter, reduce)
-and list comprehensions a lot. Even metaclasses are used in a few
+with module and package concepts, kept the code very modular and 
+well structured. We have extensively used functional operators (map, filter, reduce)
+and list comprehensions, even metaclasses are used in a few
 places.</P><P>Here is an example from the diff package (they are for updating a
 package with minimal network data transfer) generating code:</P>
 
@@ -205,9 +205,9 @@ files_delta&nbsp;=&nbsp;files_all&nbsp;-&nbsp;files_old
 
 
 <P>
-From two file lists of the old and new packages, changed file list
+From two file lists of the old and new packages, modified file list
 is extracted with maximum simplicity and clarity.</P><P>An other reason to choose Python was its standard library. Although
-some parts of it (xml modules) are extremely slow and hard to use,
+some parts of it (XML modules) are extremely slow and hard to use,
 and some parts (os, shutil, zipfile) needs a few wrappers to get it
 right, we have used quite a number of standart modules (like cPickle,
 re, unittest, subprocess, getopt, gettext, zlib, bz2, tarfile, urllib2,
@@ -219,11 +219,11 @@ solved by first migrating to 4suite parser, then our custom module.
 Currently there is a slowness only within certain database operations,
 but that is mostly caused by suboptimal use of BerkeleyDB, and will
 be fixed in the next major release. Most of the PiSi work is bounded
-by disc IO, and heavy calculation parts like dependency solving work
+by disc IO and heavy calculation parts like dependency solving work
 really fast, if carefully coded by using as much as built-in functions
-of the Python.</P><P>A reason to code in C could be that you can statically compile everything
+of Python.</P><P>A reason to code in C could be that you can statically compile everything
 into an executable, and run that even if every library in the system
-is broken. That is a trade-off, we decided to make. Currently PiSi
+is broken. That is a tradeoff, we decided to face. Currently PiSi
 depends on a minimal Python installation (with its library, and a
 few of modules), BerkeleyDB, piksemel (our XML python module) and
 glibc. Since those packages are required for operation, PiSi takes
