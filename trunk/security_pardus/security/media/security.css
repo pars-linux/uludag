@@ -1,0 +1,42 @@
+* {
+    font-size: 11px;
+    font-family: Tahoma, Sans-Serif;
+}
+
+body {
+    margin: 0px;
+    background-image: url(/media/HeadTile.png);
+    background-repeat:repeat-x;
+    background-color: #FFF;
+}
+
+#header {
+    background-image: url(/media/HeadLogo.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    height: 119px;
+}
+#menu {
+    font-weight:bold;
+    font-size: 10px;
+    padding-top: 100px;
+    padding-left: 200px;
+}
+
+#content {
+    margin: 10px;
+}
+
+li {
+    list-style-image: url('/media/BulletCyan.png');
+}
+
+a {
+    color: #F55400;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #444;
+    background-color:#EEE;
+}

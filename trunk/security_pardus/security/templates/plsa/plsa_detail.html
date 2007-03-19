@@ -1,0 +1,42 @@
+{% load i18n %}
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>[PLSA {{ object.plsa_id|escape }}] {{ object.title|escape }}</h2>
+    <ul>
+        <li><strong>{%trans "Severity" %}:</strong> {{ object.severity|escape }}</li>
+        <li><strong>{%trans "Type" %}:</strong> {{ object.type|escape }}</li>
+        <li><strong>{%trans "Release Date" %}:</strong> {{ object.release_date|escape }}</li>
+    </ul>
+
+    <h3>{% trans "Summary" %}</h3>
+    {{ object.summary|escape }}
+
+    <h3>{% trans "Description" %}</h3>
+    {{ object.description|escape|linebreaks }}
+
+    <h3>{% trans "Packages" %}</h3>
+    <ul>
+        {% for package in object.get_packages %}
+            <li>{{ package }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>{% trans "References" %}</h3>
+    <ul>
+        {% for reference in object.get_references %}
+            <li><a href="{{ reference }}">{{ reference }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block menu %}
+    <a href="/{{ lang }}/">{% trans "Homepage" %}</a>
+    {% for year in year_list %}
+        | <a href="/{{ lang }}/{{ year }}/">{{ year }}</a>
+    {% endfor %}
+    {% for language in language_list %}
+        | <a href="/{{ language.code }}">{{ language.name }}</a>
+    {% endfor %}
+{% endblock %}
