@@ -1,0 +1,172 @@
+# PLSA
+# Copyright (C) 2007, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the PLSA package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-19 00:04+0200\n"
+"PO-Revision-Date: 2007-03-16 19:59+0200\n"
+"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/404.html:4 templates/404.html.py:7
+msgid "Page not found"
+msgstr "Sayfa bulunamadı"
+
+#: templates/404.html:8
+msgid "The page you requested was not found."
+msgstr "İstediğiniz sayfa bulunamadı."
+
+#: templates/base.html:10
+msgid "security.pardus.org.tr"
+msgstr "guvenlik.pardus.org.tr"
+
+#: templates/500.html:4 templates/500.html.py:7
+msgid "Page unavailable"
+msgstr "Sayfaya servis dışı"
+
+#: templates/500.html:8
+msgid "The page you requested is currently unavailable."
+msgstr "Ulaşmak istediğiniz sayfa şu an servis dışı."
+
+#: templates/500.html:9
+msgid "Please try again later."
+msgstr "Lütfen daha sonra tekrar deneyin."
+
+#: templates/plsa/plsa_archive.html:6
+msgid "Latest Advisories"
+msgstr "Son Bildiriler"
+
+#: templates/plsa/plsa_archive.html:15
+#: templates/plsa/plsa_archive_year.html:15 templates/plsa/plsa_detail.html:35
+msgid "Homepage"
+msgstr "Anasayfa"
+
+#: templates/plsa/plsa_archive_year.html:6
+#, python-format
+msgid "Advisories of %(year)s"
+msgstr "%(year)s Bildirileri"
+
+#: templates/plsa/plsa_detail.html:8 plsa/models.py:29 plsa/models.py:66
+msgid "Severity"
+msgstr "Önem"
+
+#: templates/plsa/plsa_detail.html:9 plsa/models.py:28 plsa/models.py:67
+msgid "Type"
+msgstr "Tür"
+
+#: templates/plsa/plsa_detail.html:10 plsa/models.py:22
+msgid "Release Date"
+msgstr "Yayınlama Tarihi"
+
+#: templates/plsa/plsa_detail.html:13 plsa/models.py:33 plsa/models.py:79
+#: plsa/models.py:80
+msgid "Summary"
+msgstr "Özet"
+
+#: templates/plsa/plsa_detail.html:16 plsa/models.py:35 plsa/models.py:86
+#: plsa/models.py:87
+msgid "Description"
+msgstr "Açıklama"
+
+#: templates/plsa/plsa_detail.html:19 plsa/models.py:37
+msgid "Packages"
+msgstr "Paketler"
+
+#: templates/plsa/plsa_detail.html:26 plsa/models.py:38 plsa/models.py:116
+#: plsa/models.py:117
+msgid "References"
+msgstr "Referanslar"
+
+#: plsa/views.py:67 plsa/views.py:69
+msgid "Pardus Linux Security Advisories"
+msgstr "Pardus Linux Güvenlik Bildirileri"
+
+#: plsa/models.py:6
+msgid "Code"
+msgstr "Kod"
+
+#: plsa/models.py:7 plsa/models.py:13 plsa/models.py:24
+msgid "Language"
+msgstr "Dil"
+
+#: plsa/models.py:14
+msgid "Languages"
+msgstr "Diller"
+
+#: plsa/models.py:20
+msgid "Publish"
+msgstr "Yayınla"
+
+#: plsa/models.py:26
+msgid "PLSA ID"
+msgstr "PLSA ID"
+
+#: plsa/models.py:31
+msgid "Title"
+msgstr "Başlık"
+
+#: plsa/models.py:37
+msgid "one package per row (put a whitespace between package name and version)"
+msgstr "her satırda bir paket (paket adı ve sürümünü boşluk ile ayırın)"
+
+#: plsa/models.py:38
+msgid "one link per row"
+msgstr "her satırda bir adres"
+
+#: plsa/models.py:40
+msgid "Fixed in SVN"
+msgstr "SVN'de düzeltildi"
+
+#: plsa/models.py:60
+#, python-format
+msgid "Pardus Linux Security Advisory %s"
+msgstr "Pardus Linux Güvenlik Bildirisi %s"
+
+#: plsa/models.py:61
+msgid "security@pardus.org.tr"
+msgstr "guvenlik@pardus.org.tr"
+
+#: plsa/models.py:62
+msgid "http://security.pardus.org.tr"
+msgstr "http://guvenlik.pardus.org.tr"
+
+#: plsa/models.py:65
+msgid "Date"
+msgstr "Tarih"
+
+#: plsa/models.py:95
+msgid "Affected packages:"
+msgstr "Etkilenen paketler:"
+
+#: plsa/models.py:99
+#, python-format
+msgid "all before %s"
+msgstr "%s öncesi tüm sürümler"
+
+#: plsa/models.py:106 plsa/models.py:107
+msgid "Resolution"
+msgstr "Çözüm"
+
+#: plsa/models.py:110
+#, python-format
+msgid ""
+"There are update(s) for %s. You can update them via Package Manager or with "
+"a single command from console:"
+msgstr ""
+"%s için güncelleme mevcut. Paket Yöneticisi'ni kullanarak, ya da konsolda "
+"tek komut ile güncelleme yapabilirsiniz:"
+
+#: plsa/models.py:128
+msgid "Advisory"
+msgstr "Bildiri"
+
+#: plsa/models.py:129
+msgid "Advisories"
+msgstr "Bildiriler"
