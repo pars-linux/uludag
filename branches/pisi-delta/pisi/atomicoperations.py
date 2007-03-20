@@ -348,13 +348,13 @@ class Install(AtomicOperation):
                     # there may be left over config files
                     check_config_changed(file)
 
+        if self.package_fname.endswith(ctx.const.delta_package_suffix):
+            relocate_files()
+
         self.package.extract_install(ctx.config.dest_dir())
 
         if config_changed:
             rename_configs()
-
-        if self.package_fname.endswith(ctx.const.delta_package_suffix):
-            relocate_files()
 
         if self.reinstall:
             clean_leftovers()
