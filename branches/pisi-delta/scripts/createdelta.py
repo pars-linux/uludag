@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
         if not old_pkg == new_pkg:
         # skip if same 
-            if not os.path.exists("%s-%s-%s.delta.pisi" % (name, str(mi[pkg].release), str(ma[pkg].release))):
+            if not os.path.exists("%s-%s-%s.delta.pisi" % (name, str(mi[pkg].build), str(ma[pkg].build))):
             # skip if delta exists
-                print "%s --> Min: %s Max: %s \n %s-%s-%s.delta.pisi" % (pkg, old_pkg, new_pkg, name, str(mi[pkg].release), str(ma[pkg].release))
+                print "%s --> Min: %s Max: %s \n %s-%s-%s.delta.pisi" % (pkg, old_pkg, new_pkg, name, str(mi[pkg].build), str(ma[pkg].build))
                 create_delta_package(old_pkg, new_pkg)

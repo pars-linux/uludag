@@ -69,7 +69,7 @@ class Install(AtomicOperation):
             # Package is installed. This is an upgrade. Check delta.
             if ctx.installdb.is_installed(pkg.name):
                 (version, release, build) = ctx.installdb.get_version(pkg.name)
-                delta = pkg.get_delta(releaseFrom=release)
+                delta = pkg.get_delta(buildFrom=build)
 
             # If delta exists than use the delta uri.
             if delta:
