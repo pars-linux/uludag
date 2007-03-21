@@ -17,7 +17,7 @@ def findPciCards():
                     vendorId = value(sysDir, _dev, "vendor")
                     if vendorId in nvidia_vendor_ids:
                         deviceId = value(sysDir, _dev, "device")
-                        pci_ids.append(deviceId.upper())
+                        pci_ids.append(deviceId)
             except:
                 pass
     return pci_ids
