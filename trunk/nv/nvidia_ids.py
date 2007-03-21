@@ -1,3 +1,5 @@
+# Taken from http://us.download.nvidia.com/XFree86/Linux-x86/1.0-9755/README/appendix-a.html
+
 nvidia_dict_3 = {} # nvidia-new
 nvidia_dict_2 = {} # nvidia
 nvidia_dict_1 = {} # nvidia-old
