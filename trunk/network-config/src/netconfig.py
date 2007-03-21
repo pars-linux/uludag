@@ -203,11 +203,10 @@ def menuConnectionCommon(data):
                                address=data.get("net_address", None),
                                mask=data.get("net_mask", None),
                                gateway=data.get("net_gateway", None),
-                               remote=data["remote"],
-                               auth_mode=data["auth_mode"],
-                               auth_value=data["auth_password"])
+                               remote=data.get("remote", None),
+                               auth_mode=data.get("auth_mode", None),
+                               auth_value=data.get("auth_password", None))
             return True
-            break
 
 def menuEditConnection(script, name):
     connInfo = link.getConnectionInfo(script, name)
