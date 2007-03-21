@@ -23,9 +23,9 @@ class PLSA(models.Model):
 
     language = models.ForeignKey("Language", verbose_name=_("Language"))
 
-    plsa_id = models.CharField(_("PLSA ID"), maxlength=10)
+    plsa_id = models.CharField(_("PLSA ID"), maxlength=10, help_text=_("YEAR-NO"))
 
-    type = models.CharField(_("Type"), maxlength=10, default="Local")
+    type = models.CharField(_("Type"), maxlength=10, default="Local", help_text=_("Local or Remote"))
     severity = models.IntegerField(_("Severity"), default=1)
 
     title = models.CharField(_("Title"), maxlength=120)
@@ -37,7 +37,7 @@ class PLSA(models.Model):
     packages = models.TextField(_("Packages"), help_text=_("one package per row (put a whitespace between package name and version)"))
     references = models.TextField(_("References"), help_text=_("one link per row"))
 
-    fixed = models.BooleanField(_("Fixed in SVN"))
+    fixed = models.BooleanField(_("Ready to publish"))
 
     def __str__(self):
         return "[PLSA-%s] - %s" % (self.plsa_id, self.title)
@@ -134,3 +134,19 @@ class PLSA(models.Model):
         list_filter = ("language", "publish", "fixed")
         save_as = True
         save_on_top = True
+        fields = (
+            (None, {
+                "fields": (("publish", "release_date"),
+                           "fixed",
+                           "language",
+                           "plsa_id",
+                           "type",
+                           "severity",
+                           "title",
+                           "summary",
+                           "description",
+                           "packages",
+                           "references")
+            }),
+        )
+
