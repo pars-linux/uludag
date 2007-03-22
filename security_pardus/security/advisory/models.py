@@ -1,6 +1,5 @@
 from django.db import models
-
-from security.plsa.utils import *
+from security.advisory.utils import *
 
 class Language(models.Model):
     code = models.CharField(_("Code"), maxlength=5)
@@ -10,33 +9,25 @@ class Language(models.Model):
         return self.name
 
     class Meta:
+        db_table = "plsa_language"
         verbose_name = _("Language")
         verbose_name_plural = _("Languages")
 
     class Admin:
         pass
 
-class PLSA(models.Model):
+class Advisory(models.Model):
     publish = models.BooleanField(_("Publish"))
-
     release_date = models.DateField(_("Release Date"), blank=True, null=True)
-
     language = models.ForeignKey("Language", verbose_name=_("Language"))
-
     plsa_id = models.CharField(_("PLSA ID"), maxlength=10, help_text=_("YEAR-NO"))
-
     type = models.CharField(_("Type"), maxlength=10, default="Local", help_text=_("Local or Remote"))
     severity = models.IntegerField(_("Severity"), default=1)
-
     title = models.CharField(_("Title"), maxlength=120)
-
     summary = models.TextField(_("Summary"))
-
     description = models.TextField(_("Description"))
-
     packages = models.TextField(_("Packages"), help_text=_("one package per row (put a whitespace between package name and version)"))
     references = models.TextField(_("References"), help_text=_("one link per row"))
-
     fixed = models.BooleanField(_("Ready to publish"))
 
     def __str__(self):
@@ -51,7 +42,7 @@ class PLSA(models.Model):
     def get_references(self):
         return self.references.split("\n")
 
-    def toString(self):
+    def toPrettyString(self):
         import datetime
 
         from django.utils.translation import gettext_lazy
@@ -125,6 +116,7 @@ class PLSA(models.Model):
         return "\n".join(tpl)
 
     class Meta:
+        db_table = "plsa_plsa"
         verbose_name = _("Advisory")
         verbose_name_plural = _("Advisories")
         ordering = ["-id"]
