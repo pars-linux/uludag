@@ -1,0 +1,22 @@
+{% load i18n %}
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{% blocktrans %}Advisories of {{ year }}{% endblocktrans %}</h2>
+    <ul>
+    {% for advisory in advisories %}
+        <li><a href="/{{ advisories.language.code }}/{{ advisory.plsa_id|escape }}/">[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block menu %}
+    <a href="/{{ language }}/">{% trans "Homepage" %}</a>
+    {% for year in years %}
+        | <a href="/{{ language }}/{{ year }}/">{{ year }}</a>
+    {% endfor %}
+    {% for lang in other_languages %}
+        | <a href="/{{ lang.code }}">{{ lang.name }}</a>
+    {% endfor %}
+{% endblock %}
