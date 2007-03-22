@@ -2,7 +2,7 @@
 
 po_files = {}
 
-for lang in ["tr", "nl", "de", "es", "pt_BR", "it","fr"]:
+for lang in ["tr", "nl", "de", "es", "pt_BR", "it","fr","ca"]:
     po_files[lang] = {"Package Descriptions": "http://svn.pardus.org.tr/uludag/trunk/repository-scripts/pspec-translations/%s.po" % lang,
                       "Network Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/network-manager/po/%s.po" % lang,
                       "Package Manager": "http://svn.pardus.org.tr/uludag/trunk/tasma/package-manager/po/%s.po" % lang,
