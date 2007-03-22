@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-22 16:32+0200\n"
+"POT-Creation-Date: 2007-03-22 20:42+0200\n"
 "PO-Revision-Date: 2007-03-16 19:59+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -67,6 +67,11 @@ msgstr "Açıklama"
 msgid "Packages"
 msgstr "Paketler"
 
+#: templates/advisory/advisory_details.html:22
+#, python-format
+msgid "all before %(version)s"
+msgstr "%(version)s öncesi tüm sürümler"
+
 #: templates/advisory/advisory_details.html:26 advisory/models.py:30
 #: advisory/models.py:107 advisory/models.py:108
 msgid "References"
@@ -77,6 +82,10 @@ msgstr "Referanslar"
 #: templates/advisory/index_language.html:15
 msgid "Homepage"
 msgstr "Anasayfa"
+
+#: templates/advisory/advisory_details.html:42
+msgid "Printer Friendly Page"
+msgstr "Yazıcı Dostu Sayfa"
 
 #: templates/advisory/archive_year.html:6
 #, python-format
