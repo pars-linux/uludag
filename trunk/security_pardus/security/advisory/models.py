@@ -37,7 +37,7 @@ class Advisory(models.Model):
         return "[%s] [PLSA %s] %s" % (self.language.code, self.plsa_id, self.title)
 
     def get_packages(self):
-        return self.packages.split("\n")
+        return [x.split() for x in self.packages.split("\n")]
 
     def get_references(self):
         return self.references.split("\n")
