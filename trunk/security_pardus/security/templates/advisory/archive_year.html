@@ -6,7 +6,7 @@
     <h2>{% blocktrans %}Advisories of {{ year }}{% endblocktrans %}</h2>
     <ul>
     {% for advisory in advisories %}
-        <li><a href="/{{ advisories.language.code }}/{{ advisory.plsa_id|escape }}/">[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</a></li>
+        <li><a href="/{{ advisory.language.code }}/{{ advisory.plsa_id|escape }}/">[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</a></li>
     {% endfor %}
     </ul>
 {% endblock %}
