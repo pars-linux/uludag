@@ -18,7 +18,7 @@ class Language(models.Model):
 
 class Advisory(models.Model):
     publish = models.BooleanField(_("Publish"))
-    release_date = models.DateField(_("Release Date"), blank=True, null=True)
+    release_date = models.DateField(_("Last Update"), auto_now=True)
     language = models.ForeignKey("Language", verbose_name=_("Language"))
     plsa_id = models.CharField(_("PLSA ID"), maxlength=10, help_text=_("YEAR-NO"))
     type = models.CharField(_("Type"), maxlength=10, default="Local", help_text=_("Local or Remote"))
@@ -128,7 +128,7 @@ class Advisory(models.Model):
         save_on_top = True
         fields = (
             (None, {
-                "fields": (("publish", "release_date"),
+                "fields": ("publish",
                            "fixed",
                            "language",
                            "plsa_id",
