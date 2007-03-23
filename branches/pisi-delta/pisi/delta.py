@@ -102,8 +102,8 @@ def find_delta(oldfiles, newfiles):
     for file in newfiles.list:
         hashto_files.setdefault(file.hash, []).append(file)
 
-    files_new = set(map(lambda x:x.hash, new_files))
-    files_old = set(map(lambda x:x.hash, old_files))
+    files_new = set(map(lambda x:x.hash, newfiles.list))
+    files_old = set(map(lambda x:x.hash, oldfiles.list))
     files_delta = files_new - files_old
 
     deltas = []
