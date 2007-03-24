@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-01 16:28+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr ""
+
+#: sysinfo.cpp:67
+msgid "%1 GB"
+msgstr ""
+
+#: sysinfo.cpp:69
+msgid "%1 MB"
+msgstr ""
+
+#: sysinfo.cpp:71
+msgid "%1 KB"
+msgstr ""
+
+#: sysinfo.cpp:107 sysinfo.cpp:101
+msgid "My Computer"
+msgstr ""
+
+#: sysinfo.cpp:102
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+
+#: sysinfo.cpp:108
+msgid "Looking for disk information..."
+msgstr ""
+
+#: sysinfo.cpp:109
+msgid "Disk Information"
+msgstr ""
+
+#: sysinfo.cpp:113
+msgid "OS Information"
+msgstr ""
+
+#: sysinfo.cpp:115
+msgid "OS:"
+msgstr ""
+
+#: sysinfo.cpp:116
+msgid "Current user:"
+msgstr ""
+
+#: sysinfo.cpp:117
+msgid "System:"
+msgstr ""
+
+#: sysinfo.cpp:118
+msgid "KDE:"
+msgstr ""
+
+#: sysinfo.cpp:124
+msgid "Display Info"
+msgstr ""
+
+#: sysinfo.cpp:126
+msgid "Vendor:"
+msgstr ""
+
+#: sysinfo.cpp:127
+msgid "Model:"
+msgstr ""
+
+#: sysinfo.cpp:129
+msgid "Driver:"
+msgstr ""
+
+#: sysinfo.cpp:136
+msgid "Getting OS information...."
+msgstr ""
+
+#: sysinfo.cpp:139
+msgid "Common Folders"
+msgstr ""
+
+#: sysinfo.cpp:143
+msgid "My Home Folder"
+msgstr ""
+
+#: sysinfo.cpp:144
+msgid "Root Folder"
+msgstr ""
+
+#: sysinfo.cpp:145
+msgid "Network Folders"
+msgstr ""
+
+#: sysinfo.cpp:149
+msgid "Looking up network status..."
+msgstr ""
+
+#: sysinfo.cpp:152
+msgid "Network Status"
+msgstr ""
+
+#: sysinfo.cpp:159
+msgid "Looking for CPU information..."
+msgstr ""
+
+#: sysinfo.cpp:163
+msgid "CPU Information"
+msgstr ""
+
+#: sysinfo.cpp:165
+msgid "Processor (CPU):"
+msgstr ""
+
+#: sysinfo.cpp:166
+msgid "Speed:"
+msgstr ""
+
+#: sysinfo.cpp:167
+msgid "%1 MHz"
+msgstr ""
+
+#: sysinfo.cpp:172
+msgid "Looking for memory information..."
+msgstr ""
+
+#: sysinfo.cpp:174
+msgid "Memory Information"
+msgstr ""
+
+#: sysinfo.cpp:176
+msgid "Total memory (RAM):"
+msgstr ""
+
+#: sysinfo.cpp:177
+msgid "Free memory:"
+msgstr ""
+
+#: sysinfo.cpp:178
+msgid "Used Memory"
+msgstr ""
+
+#: sysinfo.cpp:179
+msgid "Total swap:"
+msgstr ""
+
+#: sysinfo.cpp:180
+msgid "Free swap:"
+msgstr ""
+
+#: sysinfo.cpp:184
+msgid "Looking for hardware information..."
+msgstr ""
+
+#: sysinfo.cpp:186
+msgid "Hardware Information"
+msgstr ""
+
+#: sysinfo.cpp:191
+msgid "Bios Vendor:"
+msgstr ""
+
+#: sysinfo.cpp:192
+msgid "Bios Version:"
+msgstr ""
+
+#: sysinfo.cpp:256
+msgid "%1 (+ %2 Caches)"
+msgstr ""
+
+#: sysinfo.cpp:288
+msgid "Device"
+msgstr ""
+
+#: sysinfo.cpp:288
+msgid "Filesystem"
+msgstr ""
+
+#: sysinfo.cpp:289
+msgid "Total space"
+msgstr ""
+
+#: sysinfo.cpp:289
+msgid "Available space"
+msgstr ""
+
+#: sysinfo.cpp:295
+msgid "Press the right mouse button for more options like Mount or Eject"
+msgstr ""
+
+#: sysinfo.cpp:478
+msgid "%1 (3D Support)"
+msgstr ""
+
+#: sysinfo.cpp:480
+msgid "%1 (No 3D Support)"
+msgstr ""
+
+#: sysinfo.cpp:491
+msgid "Network is <strong>unreachable</strong>"
+msgstr ""
+
+#: sysinfo.cpp:493
+msgid "You are <strong>offline</strong>"
+msgstr ""
+
+#: sysinfo.cpp:495
+msgid "Network is <strong>shutting down</strong>"
+msgstr ""
+
+#: sysinfo.cpp:497
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr ""
+
+#: sysinfo.cpp:499
+msgid "You are <strong>online</strong>"
+msgstr ""
+
+#: sysinfo.cpp:501
+msgid "Unknown network status"
+msgstr ""
