@@ -12,5 +12,5 @@ LDFLAGS = -Wl,-Bdirect -Wl,-hashvals -Wl,-zdynsort
 
 # for 2008
 # LDFLAGS = -Wl,-O1 -Wl,--hash-style=both -Wl,-z relro"
-# CFLAGS = -march=i686 -mtune=generic -O2 -pipe -fomit-frame-pointer -g3 -ggdb
-# CXXFLAGS = -march=i686 -mtune=generic -O2 -pipe -fomit-frame-pointer -g3 -ggdb
+# CFLAGS = -march=i686 -mtune=generic -O2 -pipe -fomit-frame-pointer
+# CXXFLAGS = -march=i686 -mtune=generic -O2 -pipe -fomit-frame-pointer
