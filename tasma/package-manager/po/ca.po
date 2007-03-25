@@ -556,7 +556,7 @@ msgstr "Si està marcat, aleshores PiSi només mostrarà les utilitats per a l'e
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &interval upgradable package checking"
-msgstr "Habilita &l'interval per a veure quins paquets hi ha a actualitzar"
+msgstr "Habilita &la comprovació periòdica d'actualitzacions"
 
 #: src/PreferencesDialog.py:208
 msgid "&Enable system tray icon"
