@@ -275,8 +275,32 @@ def testDatabaseSingleTransaction2(iter):
     #dbInfo.close()
     dbHistory.close()
     pisi.api.finalize()
+    
+def testfilesdbnew():
+    import pisi.db.filesdb as filesdb
+    import pisi.files
+    
+    file = pisi.files.FileInfo()
+    file.path='lala'
+    files = pisi.files.Files()
+    files.list.append(file)
+    
+    filesdb = filesdb.FilesDB()
+    filesdb.destroy()
+    filesdb.create()
+    filesdb.add_files('hede', files)
+    (f, packagename) = filesdb.get_file('lala')
+    print packagename
+    x = filesdb.get_file('jaja')
+    print x
+    print filesdb.has_file('lala')
+    print filesdb.has_file('lolo')
+    filesdb.remove_files(files)
+    print filesdb.has_file('lala')
+    filesdb.destroy()
 
 if __name__ == "__main__":
     sys.excepthook = handle_exception
     #testDatabaseRead(10)
-    testDatabaseSingleTransaction2(20)
+    #testDatabaseSingleTransaction2(20)
+    testfilesdbnew()

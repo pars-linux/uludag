@@ -10,59 +10,109 @@
 # Please read the COPYING file.
 #
 
-import pisi.db.lockeddbshelve as shelve
+import pisi
 import pisi.files
+import pisi.oo
+import pisi.db.sql as sql
+import pysqlite2
+ 
 
-class FilesDB(shelve.LockedDBShelf):
+class FilesDB(object):
     '''
         FilesDB provides db access operations for Files objects (files.Files)  
     '''
     def __init__(self):
-        shelve.LockedDBShelf.__init__(self, 'files')
-
+        __metaclass__ = pisi.oo.Singleton
+        self.connection = sql.get_connection()
+        self.cursor = self.connection.cursor()
+        self.create()
+        self.total = 0
+        self.totalsize = 0
+    
+    def create(self):
+        self.cursor.execute(
+                    'CREATE TABLE IF NOT EXISTS files \
+                    (path TEXT PRIMARY KEY, packagename VARCHAR(50))'
+                    )
+        self.connection.commit()
+        
+    def destroy(self):
+        self.cursor.execute('DROP TABLE IF EXISTS files ')
+        self.connection.commit()
+    
     def add_files(self, pkg_name, files, txn = None):
-        def proc(txn):
-            for x in files.list:
-                path = x.path
-                del x.path # don't store redundant attribute in db
-                self.put(path, (pkg_name, x), txn)
-                x.path = path # store it back in
-        self.txn_proc(proc, txn)
+        for file in files.list:
+            self.total += 1
+            self.totalsize += len(file.path)
+            print "Total files:", self.total , "Total size:" , self.totalsize
+            st = 'insert into files (path , packagename) values (?, ?)'
+            try:
+                self.cursor.execute(st, (file.path, pkg_name))
+            except:
+                pass #collision..
+        self.connection.commit()
 
     def remove_files(self, files, txn = None):
-        def proc(txn):
-            for x in files.list:
-                if self.has_key(x.path):
-                    self.delete(x.path, txn)
-        self.txn_proc(proc, txn)
-
+        for file in files.list:
+            st = 'delete from files where path = ?'
+            self.cursor.execute(st, (file.path,))
+        self.connection.commit()
+    
     def has_file(self, path, txn = None):
-        return self.has_key(str(path), txn)
-
+        st = 'select path from files where path= ?'
+        self.cursor.execute(st, (path,))
+        if self.cursor.fetchone() != None:
+            return True
+        return False
+            
     def get_file(self, path, txn = None):
-        path = str(path)
-        def proc(txn):
-            if not self.has_key(path, txn):
-                return None
-            else:
-                (name, fileinfo) = self.get(path, txn)
-                fileinfo.path = path
-                return (name, fileinfo)
-        return self.txn_proc(proc, txn)
-
-    def match_files(self, glob):
-        # NB: avoid using, this reads the entire db
-        import fnmatch
-        glob = str(glob)
-        infos = []
-        for key in self.keys():
-            if fnmatch.fnmatch(key, glob):
-
-                # FIXME: Why should we assign path attribute manually
-                # in fileinfo? This is also done in get_file(), seems
-                # like a dirty workaround... - baris
-                name = self[key][0]
-                fileinfo = self[key][1]
-                fileinfo.path = key
-                infos.append((name, fileinfo))
-        return infos
+        st = 'select * from files where path = ?'
+        self.cursor.execute(st, (path,))
+        row = self.cursor.fetchone()
+        if row != None:
+            fileinfo = pisi.files.FileInfo()
+            fileinfo.path = row[0]
+            return (fileinfo, row[1])
+        return None
+    
+    def close(self):
+        if self.cursor != None:
+            self.cursor.close()
+        if self.connection != None:
+            self.connection.close()
+    
+    
+#===============================================================================
+#    def __init__(self):
+#        shelve.LockedDBShelf.__init__(self, 'files')
+# 
+#    def add_files(self, pkg_name, files, txn = None):
+#        def proc(txn):
+#            for x in files.list:
+#                path = x.path
+#                del x.path # don't store redundant attribute in db
+#                self.put(path, (pkg_name, x), txn)
+#                x.path = path # store it back in
+#        self.txn_proc(proc, txn)
+# 
+#    def remove_files(self, files, txn = None):
+#        def proc(txn):
+#            for x in files.list:
+#                if self.has_key(x.path):
+#                    self.delete(x.path, txn)
+#        self.txn_proc(proc, txn)
+# 
+#    def has_file(self, path, txn = None):
+#        return self.has_key(str(path), txn)
+# 
+#    def get_file(self, path, txn = None):
+#        path = str(path)
+#        def proc(txn):
+#            if not self.has_key(path, txn):
+#                return None
+#            else:
+#                (name, fileinfo) = self.get(path, txn)
+#                fileinfo.path = path
+#                return (name, fileinfo)
+#        return self.txn_proc(proc, txn)
+#===============================================================================
