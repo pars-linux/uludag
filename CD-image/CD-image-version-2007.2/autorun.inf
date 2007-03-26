@@ -1,3 +1,4 @@
-[autorun]
-open=autorun.bat
-icon=cdrom.ico
+[Autorun]
+ICON=cdrom.ico
+OPEN=releasenotes-tr.html
+ShellExecute=releasenotes-tr.html
