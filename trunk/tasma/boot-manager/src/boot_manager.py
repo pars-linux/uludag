@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'boot_manager.ui'
 #
-# Created: Pzt Mar 19 13:31:33 2007
+# Created: Sal Mar 27 09:15:21 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
@@ -31,11 +31,13 @@ class formMain(QWidget):
 
         self.listEntries = KListView(self,"listEntries")
         self.listEntries.addColumn(i18n("Label"))
+        self.listEntries.setFullWidth(1)
 
         formMainLayout.addWidget(self.listEntries,0,0)
 
         self.listCommands = KListView(self,"listCommands")
         self.listCommands.addColumn(i18n("Command"))
+        self.listCommands.setFullWidth(1)
 
         formMainLayout.addWidget(self.listCommands,1,0)
 
@@ -43,6 +45,7 @@ class formMain(QWidget):
         self.listOptions.addColumn(i18n("Option"))
         self.listOptions.addColumn(i18n("Value"))
         self.listOptions.setMaximumSize(QSize(200,32767))
+        self.listOptions.setFullWidth(1)
 
         formMainLayout.addMultiCellWidget(self.listOptions,0,1,1,1)
 
