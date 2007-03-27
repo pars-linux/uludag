@@ -48,6 +48,17 @@ if "dist" in sys.argv:
     make_dist()
     sys.exit(0)
 
+class Install(install):
+    def finalize_options(self):
+        # NOTE: for Pardus distribution
+        if os.path.exists("/etc/pardus-release"):
+            self.install_platlib = '$base/lib/pardus'
+            self.install_purelib = '$base/lib/pardus'
+        install.finalize_options(self)
+    
+    def run(self):
+        install.run(self)
+
 
 setup(
     name = 'iptables',
@@ -55,4 +66,7 @@ setup(
     description = 'IPTables configuration module',
     license = 'GNU GPL2',
     py_modules=['iptables'],
+    cmdclass = {
+        'install' : Install
+    }
 )
