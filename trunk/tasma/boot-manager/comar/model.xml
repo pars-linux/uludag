@@ -1,45 +1,25 @@
 <?xml version="1.0" ?>
-
 <comarModel>
-
-<group name="System">
-
-    <class name="Boot">
-        <method name="listOptions"/>
-        <method name="getOption">
-            <argument>key</argument>
-        </method>
-        <method name="setOption">
-            <argument>key</argument>
-            <argument>value</argument>
-        </method>
-
-        <method name="listEntries"/>
-        <method name="getEntry">
-            <argument>index</argument>
-        </method>
-
-        <method name="addKernel">
-            <argument>release</argument>
-        </method>
-        <method name="addEntry">
-            <argument>index</argument>
-            <argument>title</argument>
-            <argument>commands</argument>
-        </method>
-        <method name="updateEntry">
-            <argument>index</argument>
-            <argument>title</argument>
-            <argument>commands</argument>
-        </method>
-
-        <method name="removeEntry">
-            <argument>index</argument>
-        </method>
-
-        <notify name="changed"/>
-    </class>
-
-</group>
-
+    <group name="System">
+        <class name="Boot">
+            <method name="listOptions" access="guest"/>
+            <method name="getOption" access="guest">
+                <argument>key</argument>
+            </method>
+            <method name="setOption">
+                <argument>key</argument>
+                <argument>value</argument>
+            </method>
+            <method name="listEntries" access="guest"/>
+            <method name="getEntry" access="guest">
+                <argument>index</argument>
+            </method>
+            <method name="updateGrub">
+                <argument>new_kernel</argument>
+                <argument>max_entries</argument>
+                <argument>make_default</argument>
+            </method>
+            <notify name="changed" access="guest"/>
+        </class>
+    </group>
 </comarModel>
