@@ -18,32 +18,43 @@ from utility import *
 import comar
 
 class Entry(QListBoxItem):
-    def __init__(self, parent, title, description=""):
+    def __init__(self, parent, title, description="", os_type="Unknown", checked=False):
         QListBoxItem.__init__(self, parent)
         self.title = title
         self.description = description
+        self.checked = checked
+        self.os_type = os_type
         self.f1 = QFont()
         self.f2 = QFont()
         self.f1.setBold(True)
         self.f1.setPointSize(self.f1.pointSize() + 1)
-        #self.pix = QPixmap(locate("data", "net_kga/net-down.png"))
-        self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/48x48/apps/penguin.png")
+        self.setOs(os_type)
+    
+    def setOs(self, os_type):
+        self.os_type = os_type
+        if self.os_type == "Linux":
+            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/penguin.png")
+        elif self.os_type == "Windows":
+            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/wabi.png")
+        else:
+            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/akregator_empty.png")
     
     def paint(self, painter):
+        icon_size = 32
         fm = QFontMetrics(self.f1)
         fm2 = QFontMetrics(self.f2)
         painter.setPen(Qt.black)
+        if self.checked:
+            painter.setPen(Qt.red)
         painter.setFont(self.f1)
-        painter.drawText(48 + 3, 10 + fm.ascent(), self.title)
+        painter.drawText(icon_size + 6, 8 + fm.ascent(), self.title)
         painter.setFont(self.f2)
         painter.setPen(Qt.gray)
-        painter.drawText(48 + 3, 10 + fm.height() + 3 + fm2.ascent(), self.description)
-        painter.drawPixmap(3, 3, self.pix)
+        painter.drawText(icon_size + 6, 8 + fm.height() + 4 + fm2.ascent(), self.description)
+        painter.drawPixmap(4, (44 - icon_size) / 2, self.pix)
     
     def height(self, box):
-        fm = QFontMetrics(self.f1)
-        fm2 = QFontMetrics(self.f2)
-        return 3 + fm.height() + 3 + fm2.height() + 3 + fm2.height() + 3
+        return 44
     
     def width(self, box):
         return 100
@@ -62,24 +73,41 @@ class widgetMain(QWidget):
         self.listEntries = QListBox(self)
         layout.addWidget(self.listEntries, 0, 0)
         
+        self.default = -1
+        
         self.link.ask_notify('System.Boot.changed', id=1)
         self.link.call('System.Boot.listEntries', id=2)
+        self.link.call('System.Boot.listOptions', id=3)
     
     def slotComar(self, sock):
         reply = self.link.read_cmd()
         if reply.command == 'notify':
+            self.default = -1
             self.link.call('System.Boot.listEntries', id=2)
+            self.link.call('System.Boot.listOptions', id=3)
         elif reply.command == 'result':
             if reply.id == 2: # listEntries
                 self.listEntries.clear()
                 index = 0
                 for entry in reply.data.split('\n'):
-                    item = Entry(self.listEntries, entry)
+                    item = Entry(self.listEntries, entry, checked=index==self.default)
                     self.link.call('System.Boot.getEntry', {'index': index}, id=4)
                     item.entry_index = index
                     index += 1
+            elif reply.id == 3: # listOptions
+                index = 0
+                for option in reply.data.split('\n'):
+                    key, value = option.split()
+                    if key == "default":
+                        index = int(value)
+                self.default = index
+                item = self.listEntries.item(index)
+                if item:
+                    item.checked = True
+                    self.listEntries.updateItem(index)
             elif reply.id == 4: # getEntry
                 index = None
+                os_type = "Unknown"
                 root = ""
                 for cmd in reply.data.split("\n\n"):
                     key, options, value = cmd.split("\n")
@@ -89,11 +117,18 @@ class widgetMain(QWidget):
                         value = ""
                     if key == "index":
                         index = int(value)
-                    if key == "kernel" and value.startswith("("):
-                        root = value.split(")")[0] + ")"
+                    elif key == "kernel":
+                        if "root" in value:
+                            os_type = "Linux"
+                        if value.startswith("("):
+                            root = value.split(")")[0] + ")"
                     elif key == "root":
                         root = value
-                if root:
-                    item = self.listEntries.item(index)
-                    item.description = grubDeviceName(root)
-                    self.listEntries.updateItem(index)
+                    elif key == "rootnoverify":
+                        root = value
+                    elif key == "makeactive":
+                        os_type = "Windows"
+                item = self.listEntries.item(index)
+                item.description = grubDeviceName(root)
+                item.setOs(os_type)
+                self.listEntries.updateItem(index)

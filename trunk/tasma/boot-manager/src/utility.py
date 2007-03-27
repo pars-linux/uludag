@@ -42,4 +42,6 @@ class HelpDialog(QDialog):
 
 def grubDeviceName(dev):
     disk, part = dev[3:-1].split(",")
+    disk = int(disk) + 1
+    part = int(part) + 1
     return i18n("Disk %1, Partition %2").arg(disk).arg(part)
