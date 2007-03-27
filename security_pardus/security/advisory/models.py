@@ -1,6 +1,10 @@
 from django.db import models
 from security.advisory.utils import *
 
+# i18n
+from django.utils.translation import gettext_lazy
+_ = lambda x: unicode(gettext_lazy(x))
+
 class Language(models.Model):
     code = models.CharField(_("Code"), maxlength=5)
     name = models.CharField(_("Language"), maxlength=20)
@@ -16,12 +20,17 @@ class Language(models.Model):
     class Admin:
         pass
 
+ADVISORY_TYPES = (
+    ("Local", _("Local")),
+    ("Remote", _("Remote")),
+)
+
 class Advisory(models.Model):
     publish = models.BooleanField(_("Publish"))
     release_date = models.DateField(_("Last Update"), auto_now=True)
     language = models.ForeignKey("Language", verbose_name=_("Language"))
     plsa_id = models.CharField(_("PLSA ID"), maxlength=10, help_text=_("YEAR-NO"))
-    type = models.CharField(_("Type"), maxlength=10, default="Local", help_text=_("Local or Remote"))
+    type = models.CharField(_("Type"), maxlength=10, choices=ADVISORY_TYPES)
     severity = models.IntegerField(_("Severity"), default=1)
     title = models.CharField(_("Title"), maxlength=120)
     summary = models.TextField(_("Summary"))
@@ -44,9 +53,6 @@ class Advisory(models.Model):
 
     def toPrettyString(self):
         import datetime
-
-        from django.utils.translation import gettext_lazy
-        _ = lambda x: unicode(gettext_lazy(x))
 
         title = _("Pardus Linux Security Advisory %s") % self.plsa_id
         email = _("security@pardus.org.tr")
