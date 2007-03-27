@@ -87,6 +87,7 @@ def listEntries():
 def getEntry(index):
     entry = gc.getEntry(int(index))
     ret = []
+    ret.append("index\n \n%s" % index)
     ret.append("title\n \n%s" % entry.title)
     for command in entry.commands:
         if not command.options:
