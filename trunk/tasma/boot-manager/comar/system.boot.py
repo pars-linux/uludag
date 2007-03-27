@@ -67,7 +67,7 @@ def getRoot():
 # System.Boot
 
 GRUB_CONF = "/boot/grub/grub.conf"
-gc = grub.grubConf()
+gc = grubConf()
 gc.parseConf(GRUB_CONF)
 
 def listOptions():
