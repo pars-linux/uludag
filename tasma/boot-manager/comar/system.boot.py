@@ -1,26 +1,51 @@
-def rootDevice():
-    """Returns root device address."""
-    root = ""
-    for i in [i.split() for i in open("/etc/mtab", "r").read().split("\n")]:
-        if i[1] == "/":
-            root = i[0].split("/")[-1]
-            break
-    return root
+from grub import *
 
-def toGrubDevice(dev):
-    """Converts /dev address to grub address."""
-    return "(%s%s,%s)" % (dev[0:2], ord(dev[2]) - 97, int(dev[3:]) - 1)
+def parseVersion(version):
+    """Parses a kernel filename and returns kernel version and suffix. Returns False on failure."""
+    import re
+    try:
+        k_version, x, x, k_suffix = re.findall("kernel-(([0-9\.]+)-([0-9]+))(-.*)?", version)[0]
+    except IndexError:
+        return False
+    return k_version, k_suffix
 
-def bootParams():
-    """Gets boot parameters from cmdline."""
+def isPardusEntry(entry, root, suffix="", version=None):
+    """Returns if entry is a Pardus kernel on specified root device."""
+    commands = entry.listCommands()
+    if "kernel" not in commands:
+        return False
+    kernel = entry.getCommand("kernel").value.split()[0]
+    
+    if "root" in commands:
+        k_root = entry.getCommand("root").value
+    if kernel.startswith("("):
+        k_root = kernel.split(")")[0] + ")"
+    if not k_root or k_root != root:
+        return False
+    
+    try:
+        k_version, k_suffix = parseVersion(kernel)
+    except TypeError:
+        return False
+    
+    if k_suffix == suffix:
+        if version:
+            if k_version == version:
+                return True
+        else:
+            return True
+    
+    return False
+
+def bootParameters(root):
     s = []
-    for i in [x for x in open("/proc/cmdline", "r").read().split() if not x.startswith("cdroot") if not x.startswith("init=")]:
+    for i in [x for x in open("/proc/cmdline", "r").read().split() if not x.startswith("init=") and not x.startswith("xorg=")]:
         if i.startswith("root="):
-            s.append("root=/dev/%s" % rootDevice())
+            s.append("root=%s" % root)
         elif i.startswith("mudur="):
             mudur = "mudur="
             for p in i[len("mudur="):].split(','):
-                if p == "livecd": continue
+                if p == "livecd" or p == "livedisk": continue
                 mudur += p
             if not len(mudur) == len("mudur="):
                 s.append(mudur)
@@ -28,185 +53,90 @@ def bootParams():
             s.append(i)
     return " ".join(s).strip()
 
-def parseGrubConfig(filename):
-    """Parses given Grub configuration file and returns options and entries."""
-    lines = [i.strip() for i in file(filename) if not i.startswith("#") and i.strip()]
+def grubDevice(dev):
+    dev = dev.split("/")[2]
+    return "(hd%s,%s)" % (ord(dev[2:3]) - ord("a"), int(dev[3:]) - 1)
 
-    options = {}
-    entries = []
-    entry = []
+def getRoot():
+    import os
+    for mount in os.popen("/bin/mount").readlines():
+        mount_items = mount.split()
+        if mount_items[2] == "/":
+            return mount_items[0]
 
-    for i in lines:
-        if i.find(" ") == -1:
-            label = i
-            data = ""
-        else:
-            label = i[0:i.find(" ")].rstrip(" =")
-            data = i[i.find(" ") + 1:].lstrip(" =")
+# System.Boot
 
-        if label == "title":
-            if entry:
-                entries.append(entry)
-                entry = []
-            entry.append("title %s" % data)
-        elif not entry:
-            options[label] = data
-        elif entry:
-            if data:
-                entry.append("%s %s" % (label, data))
-            else:
-                entry.append("%s" % label)
-
-    if entry:
-        entries.append(entry)
-
-    return options, entries
-
-def saveGrubConfig(filename, opts={}, entries=[]):
-    """Produces Grub configuration from given options and entries."""
-    s = ""
-
-    for label, data in opts.iteritems():
-        if data:
-            s += "%s %s\n" % (label, data)
-        else:
-            s += "%s\n" % label
-
-    s += "\n"
-
-    for entry in entries:
-        s += "\n".join(entry)
-        s += "\n\n"
-
-    f = file(filename, "w")
-    f.write(s)
-    f.close()
-
-grubconf = "/boot/grub/grub.test.conf"
+GRUB_CONF = "/boot/grub/grub.conf"
+gc = grub.grubConf()
+gc.parseConf(GRUB_CONF)
 
 def listOptions():
-    """Returns list of options."""
-    options, entries = parseGrubConfig(grubconf)
-    return "\n".join(options.keys())
+    return "\n".join(gc.getAllOptions())
 
 def getOption(key):
-    """Returns value of an option."""
-    options, entries = parseGrubConfig(grubconf)
-    if key in options:
-        return "%s\n%s" % (key, options[key])
+    return gc.getOption(key)
 
-def setOption(key, value=None):
-    """Sets or unsets an option."""
-    options, entries = parseGrubConfig(grubconf)
-
-    if value:
-        options[key] = value
-    else:
-        del options[key]
-
-    saveGrubConfig(grubconf, options, entries)
-
-    if value:
-        notify("System.Boot.changed", "option_changed %s" % key)
-    else:
-        notify("System.Boot.changed", "option_removed %s" % key)
+def setOption(key, value):
+    gc.setOption(key, value)
+    gc.write(GRUB_CONF)
+    notify("System.Boot.changed", "")
 
 def listEntries():
-    """Returns list of entries."""
-    options, entries = parseGrubConfig(grubconf)
-
-    return "\n".join([i[0][6:] for i in entries])
+    return "\n".join(gc.listEntries())
 
 def getEntry(index):
-    """Returns details of an entry."""
-    index = int(index)
-    options, entries = parseGrubConfig(grubconf)
+    entry = gc.getEntry(int(index))
+    ret = []
+    ret.append("title\n \n%s" % entry.title)
+    for command in entry.commands:
+        if not command.options:
+            command.options = " "
+        if not command.value:
+            command.value = " "
+        ret.append("%s\n%s\n%s" % (command.key, command.options, command.value))
+    return "\n\n".join(ret)
 
-    if index < len(entries):
-        entries[index].insert(0, str(index))
-        return "\n".join(entries[index])
+def updateGrub(new_kernel, max_entries=3, make_default=True):
+    new_version, new_suffix = parseVersion("kernel-%s" % new_kernel)
+    root_dev = getRoot()
+    root_grub = grubDevice(root_dev)
+    
+    entries = filter(lambda x: isPardusEntry(x, root_grub, new_suffix), gc.entries)
+    
+    action = None
+    if not len(entries):
+        action = "append"
     else:
-        fail("No such entry")
-
-def addEntry(title, commands, index=-1):
-    """Adds new entry"""
-    index = int(index)
-    options, entries = parseGrubConfig(grubconf)
-
-    entry = ["title %s" % title]
-    entry += commands.split("\n")
-
-    if entry in entries:
-        fail("Duplicate entry.")
-        return
-
-    if index == -1:
-        entries.append(entry)
-        index = len(entries) - 1
-    else:
-        entries.insert(index, entry)
-
-    saveGrubConfig(grubconf, options, entries)
-
-    notify("System.Boot.changed", "entry_added %s" % index)
-    return index
-
-def updateEntry(index, title="", commands=""):
-    """Adds new entry"""
-    index = int(index)
-    options, entries = parseGrubConfig(grubconf)
-
-    if index < len(entries):
-        if title:
-            entry = ["title %s" % title]
+        kernels = {}
+        for entry in entries:
+            kernel = entry.getCommand("kernel").value.split()[0]
+            kernels[parseVersion(kernel)[0]] = entry
+        if new_version in kernels:
+            entry = kernels[new_version]
+            if make_default:
+                gc.setOption("default", gc.indexOf(entry))
         else:
-            entry = [entries[index][0]]
-
-        if commands:
-            entry += commands.split("\n")
+            action = "insert"
+    
+    if action:
+        release = open("/etc/pardus-release", "r").readline().strip()
+        title = "%s [%s%s]" % (release, new_version, new_suffix)
+        if action == "append":
+            index = -1
         else:
-            entry += entries[index][1:]
-
-        entries[index] = entry
-        saveGrubConfig(grubconf, options, entries)
-
-        notify("System.Boot.changed", "entry_changed %s" % index)
-    else:
-        fail("No such entry.")
-
-def addKernel(release):
-    """Adds new kernel."""
-    options, entries = parseGrubConfig(grubconf)
-
-    root = rootDevice()
-    root_g = toGrubDevice(root)
-
-    try:
-        name = open("/etc/pardus-release", "r").read().strip()
-    except:
-        name = "Linux"
-
-    title = "%s (kernel-%s)" % (name, release)
-
-    entry = ["title %s " % title,
-             "kernel %s/boot/kernel-%s %s" % (root_g, release, bootParams()),
-             "root %s" % root_g,
-             "initrd /boot/initramfs-%s" % release]
-    entries.append(entry)
-    index = len(entries) - 1
-
-    saveGrubConfig(grubconf, options, entries)
-    notify("System.Boot.changed", "entry_added %s" % index)
-    return entries.index(entry)
-
-def removeEntry(index):
-    """Removes entry at index."""
-    index = int(index)
-    options, entries = parseGrubConfig(grubconf)
-
-    if index < len(entries):
-        del entries[index]
-        saveGrubConfig(grubconf, options, entries)
-        notify("System.Boot.changed", "entry_removed %s" % index)
-    else:
-        fail("No such entry")
+            index = gc.indexOf(entries[0])
+        new_entry = grubEntry(title)
+        new_entry.setCommand("root", root_grub)
+        new_entry.setCommand("kernel", "/boot/kernel-%s%s %s" % (new_version, new_suffix, bootParameters(root_dev)))
+        new_entry.setCommand("initrd", "/boot/initrmfs-%s%s" % (new_version, new_suffix))
+        gc.addEntry(new_entry, index)
+        
+        if max_entries > 0:
+            for x in entries[max_entries - 1:]:
+                gc.removeEntry(x)
+        
+        if make_default:
+            gc.setOption("default", gc.indexOf(new_entry))
+    
+    gc.write(GRUB_CONF)
+    notify("System.Boot.changed", "")
