@@ -97,7 +97,9 @@ def getEntry(index):
         ret.append("%s\n%s\n%s" % (command.key, command.options, command.value))
     return "\n\n".join(ret)
 
-def updateGrub(new_kernel, max_entries=3, make_default=True):
+def updateGrub(new_kernel, max_entries=3, make_default="on"):
+    max_entries = int(max_entries)
+    
     new_version, new_suffix = parseVersion("kernel-%s" % new_kernel)
     root_dev = getRoot()
     root_grub = grubDevice(root_dev)
@@ -113,8 +115,8 @@ def updateGrub(new_kernel, max_entries=3, make_default=True):
             kernel = entry.getCommand("kernel").value.split()[0]
             kernels[parseVersion(kernel)[0]] = entry
         if new_version in kernels:
-            entry = kernels[new_version]
-            if make_default:
+            if make_default == "on":
+                entry = kernels[new_version]
                 gc.setOption("default", gc.indexOf(entry))
         else:
             action = "insert"
@@ -136,7 +138,7 @@ def updateGrub(new_kernel, max_entries=3, make_default=True):
             for x in entries[max_entries - 1:]:
                 gc.removeEntry(x)
         
-        if make_default:
+        if make_default == "on":
             gc.setOption("default", gc.indexOf(new_entry))
     
     gc.write(GRUB_CONF)
