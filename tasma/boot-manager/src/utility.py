@@ -39,3 +39,7 @@ class HelpDialog(QDialog):
         if not os.path.exists(url):
             url = locate('data', '%s/help/en/main_help.html' % name)
         self.htmlPart.openURL(KURL(url))
+
+def grubDeviceName(dev):
+    disk, part = dev[3:-1].split(",")
+    return i18n("Disk %1, Partition %2").arg(disk).arg(part)

@@ -15,76 +15,85 @@ from kdeui import *
 
 from utility import *
 
-import kdedesigner
-from boot_manager import formMain
-
 import comar
 
-class widgetMain(formMain):
+class Entry(QListBoxItem):
+    def __init__(self, parent, title, description=""):
+        QListBoxItem.__init__(self, parent)
+        self.title = title
+        self.description = description
+        self.f1 = QFont()
+        self.f2 = QFont()
+        self.f1.setBold(True)
+        self.f1.setPointSize(self.f1.pointSize() + 1)
+        #self.pix = QPixmap(locate("data", "net_kga/net-down.png"))
+        self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/48x48/apps/penguin.png")
+    
+    def paint(self, painter):
+        fm = QFontMetrics(self.f1)
+        fm2 = QFontMetrics(self.f2)
+        painter.setPen(Qt.black)
+        painter.setFont(self.f1)
+        painter.drawText(48 + 3, 10 + fm.ascent(), self.title)
+        painter.setFont(self.f2)
+        painter.setPen(Qt.gray)
+        painter.drawText(48 + 3, 10 + fm.height() + 3 + fm2.ascent(), self.description)
+        painter.drawPixmap(3, 3, self.pix)
+    
+    def height(self, box):
+        fm = QFontMetrics(self.f1)
+        fm2 = QFontMetrics(self.f2)
+        return 3 + fm.height() + 3 + fm2.height() + 3 + fm2.height() + 3
+    
+    def width(self, box):
+        return 100
+
+class widgetMain(QWidget):
     def __init__(self, parent):
+        QWidget.__init__(self, parent)
+        
         link = comar.Link()
         link.localize()
         self.link = link
         self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
-
-        formMain.__init__(self, parent)
-        self.listEntries.setSorting(-1)
-        self.listOptions.setSorting(-1)
-        self.listCommands.setSorting(-1)
-
+        
+        layout = QGridLayout(self, 1, 1, 11, 6, "formMainLayout")
+        self.listEntries = QListBox(self)
+        layout.addWidget(self.listEntries, 0, 0)
+        
         self.link.ask_notify('System.Boot.changed', id=1)
-        self.link.call('System.Boot.listOptions', id=2)
-        self.link.call('System.Boot.listEntries', id=3)
-
-        self.connect(self.listEntries, SIGNAL('currentChanged(QListViewItem *)'), self.slotClickEntries)
-
+        self.link.call('System.Boot.listEntries', id=2)
+    
     def slotComar(self, sock):
         reply = self.link.read_cmd()
         if reply.command == 'notify':
-            self.link.call('System.Boot.listOptions', id=2)
-            self.link.call('System.Boot.listEntries', id=3)
-        else:
-            if reply.id == 2: # listOptions
-                self.listOptions.clear()
-                item = None
-                for option in reply.data.split('\n'):
-                    key, value = option.split()
-                    if item:
-                        item = KListViewItem(self.listOptions, item)
-                    else:
-                        item = KListViewItem(self.listOptions)
-                    item.setText(0, key)
-                    item.setText(1, unicode(value))
-            elif reply.id == 3: # listEntries
+            self.link.call('System.Boot.listEntries', id=2)
+        elif reply.command == 'result':
+            if reply.id == 2: # listEntries
                 self.listEntries.clear()
-                self.listCommands.clear()
                 index = 0
-                item = None
                 for entry in reply.data.split('\n'):
-                    if item:
-                        item = KListViewItem(self.listEntries, item)
-                    else:
-                        item = KListViewItem(self.listEntries)
-                    item.setText(0, unicode(entry))
+                    item = Entry(self.listEntries, entry)
+                    self.link.call('System.Boot.getEntry', {'index': index}, id=4)
                     item.entry_index = index
                     index += 1
             elif reply.id == 4: # getEntry
-                self.listCommands.clear()
-                item = None
+                index = None
+                root = ""
                 for cmd in reply.data.split("\n\n"):
                     key, options, value = cmd.split("\n")
                     if options == " ":
                         options = ""
                     if value == " ":
                         value = ""
-                    if item:
-                        item = KListViewItem(self.listCommands, item)
-                    else:
-                        item = KListViewItem(self.listCommands)
-                    item.setText(0, "%s (%s) = %s" % (key, options, unicode(value)))
-
-    def slotClickEntries(self, item):
-        if not item:
-            return
-        self.link.call('System.Boot.getEntry', {'index': item.entry_index}, id=4)
+                    if key == "index":
+                        index = int(value)
+                    if key == "kernel" and value.startswith("("):
+                        root = value.split(")")[0] + ")"
+                    elif key == "root":
+                        root = value
+                if root:
+                    item = self.listEntries.item(index)
+                    item.description = grubDeviceName(root)
+                    self.listEntries.updateItem(index)
