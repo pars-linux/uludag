@@ -46,11 +46,13 @@ def index_language(request, lang_code):
                                                                "other_languages": other_languages})
 
 def index(request):
+    """
     languages = [x.code for x in Language.objects.all()]
     for lang in request.META["HTTP_ACCEPT_LANGUAGE"].split(","):
         lang = lang.split("-")[0]
         if lang in languages:
             return HttpResponseRedirect("/%s/" % lang)
+    """
     return HttpResponseRedirect("/en/")
 
 def feed(request, lang_code):
