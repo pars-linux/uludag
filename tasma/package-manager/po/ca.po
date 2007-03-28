@@ -150,7 +150,7 @@ msgstr "Grandària: "
 
 #: src/HelpDialog.py:28 src/package-manager.py:942
 msgid "Package Manager Help"
-msgstr "Ajut per a l'arranjador de programari"
+msgstr "Ajut per al gestor de programari"
 
 #: src/Preferences.py:77
 msgid "Add New Repository"
@@ -220,11 +220,11 @@ msgstr "Ho sent. No tens permís per a realitzar l'operació."
 
 #: src/package-manager.py:47
 msgid "GUI for PiSi package manager"
-msgstr "Interfície gràfica de l'arranjador de paquets PiSi"
+msgstr "Interfície gràfica del gestor de paquets PiSi"
 
 #: src/package-manager.py:55 src/package-manager.py:870
 msgid "Package Manager"
-msgstr "Arranjador de programari"
+msgstr "Gestor de programari"
 
 #: src/package-manager.py:58
 msgid "Developer and Current Maintainer"
@@ -274,7 +274,7 @@ msgstr "Lectura de la llista de programari..."
 msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
-msgstr "S'escau fer una actualització de la base de dades de l'arranjador del programari . Per a això, necessites una connexió de xarxa."
+msgstr "S'escau fer una actualització de la base de dades del gestor del programari. Per a això, necessites una connexió de xarxa."
 
 #: src/package-manager.py:208
 msgid "Package database is empty"
@@ -468,7 +468,7 @@ msgstr "Mostra la finestra principal en engegar"
 
 #: src/package-manager.py:958
 msgid "Package Manager is already running!"
-msgstr "Ho sent. L'arranjador de programari ja està en marxa."
+msgstr "Ho sent. El gestor del programari ja està en marxa."
 
 #: src/pm-install.py:33
 msgid "PiSi package to install"
@@ -492,7 +492,7 @@ msgstr "Adreça"
 
 #: src/PreferencesDialog.py:184
 msgid "Package Manager Settings"
-msgstr "Ajusts de l'arranjador de programari"
+msgstr "Ajusts del gestor del programari"
 
 #: src/PreferencesDialog.py:186
 msgid "F1"
