@@ -1,0 +1,32 @@
+Package Manager TODO
+--------------------
+
+* Integrate security advisories
+
+  We have a security team that keeps track of the security problems the packages and write detailed
+  informations about the problems as Pardus Linux Security Advisories. 
+  
+  http://security.pardus.org.tr
+ 
+* Integrate update informations
+
+  We push updates to the repository time to time. When they are pushed, we write a detailed report
+  about the updates that are readable by non-developers (end-users). We have a mechanism in
+  pspec.xml that holds a history field holding the release related informations. But most of the
+  time the informations there, are for developers only like a summary of buffer overflow bug and 
+  how it was fixed or a simple "version bumped" line that are surely not targeted for the end-users. 
+
+  We decided to write and keep end-user targeted details of each Update Pack in a separate place. 
+  So following are the reasons not to hold these informations in pspec.xml.
+
+  - Comments in pspec.xml contains developer-to-developer information.
+
+  - Translations are possible for Update Pack details. We decided pspec.xml is not the place 
+    for keeping translation informations.
+
+  - Pardus test repositories sometimes sees more than one release of a package. And when the package
+    is pushed to stable repository, Update Pack detail of the package holds the summary of these 
+    changes.
+      
+  It is not an easy job to write update details by one person. After deciding the xml format of update
+  packs, we should write scripts to create most of the xml file easing the job of the writers.
