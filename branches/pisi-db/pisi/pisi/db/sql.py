@@ -69,12 +69,12 @@ def create_all_tables(cursor):
     cursor.execute('CREATE TABLE IF NOT EXISTS files (id INTEGER PRIMARY KEY,\
                     path TEXT, packagename VARCHAR(50))'
                     )
-    
-def get_connection():
-    #if connection == None:
-    #    connection = sqlite.connect('pisi.db')
-    #return connection
-    return sqlite.connect('pisi.db') 
 
-#def get_cursor():
-#    return get_connection().cursor()
+# Connection Singleton.    
+connection = None
+
+def get_connection():
+    global connection
+    if connection == None:
+        connection = sqlite.connect('/var/db/pisi/pisi.db')
+    return connection

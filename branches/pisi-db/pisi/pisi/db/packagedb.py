@@ -30,7 +30,8 @@ import pisi.util as util
 import pisi.context as ctx
 import pisi.oo
 import pisi.db.itembyrepodb as itembyrepodb
-
+import pisi.db.sql as sql
+import pysqlite2 
 
 class Error(pisi.Error):
     pass
@@ -49,16 +50,28 @@ class PackageDB(object):
         self.d = itembyrepodb.ItemByRepoDB('package')
         self.dbHistory = itembyrepodb.ItemByRepoDB('package_history')
         self.dr = itembyrepodb.ItemByRepoDB('revdep')
+        self.connection = sql.get_connection()
+        self.cursor = self.connection.cursor()
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS history (id INTEGER PRIMARY KEY, \
+            repository VARCHAR(15), packagename VARCHAR(15), release VARCHAR(10), type VARCHAR(10), \
+            date VARCHAR(15), version VARCHAR(20), \
+            comment VARCHAR (250), name VARCHAR(20), \
+            email VARCHAR(25))'
+            )
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS packageinfo (id INTEGER PRIMARY KEY, \
+         repository TEXT, packagename TEXT, lang TEXT, summary TEXT, description TEXT)')
 
     def close(self):
         self.d.close()
         self.dbHistory.close()
         self.dr.close()
+        #self.cursor.close()
 
     def destroy(self):
         self.d.destroy()
         self.dbHistory.destroy()
         self.dr.destroy()
+        #self.cursor.execute('DROP TABLE IF EXISTS history ')
         
     def clear(self, txn = None):
         self.d.clear()
@@ -106,7 +119,12 @@ class PackageDB(object):
         name = str(package_info.name)
 
         def proc(txn):
-            self.dbHistory.add_item(name, package_info.history, repo, txn)
+            #self.dbHistory.add_item(name, package_info.history, repo, txn)
+            updates = []
+            for update in package_info.history:
+                updates.append((repo, name, update.release, update.type, update.date, update.version, update.comment, update.name, update.email))
+            self.cursor.executemany('INSERT INTO history VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ? )' , updates)
+                
             package_info.history = None
             self.d.add_item(name, package_info, repo, txn)
             for dep in package_info.runtimeDependencies():

@@ -44,10 +44,11 @@ class FilesDB(object):
         for file in files.list:
             self.total += 1
             self.totalsize += len(file.path)
-            print "Total files:", self.total , "Total size:" , self.totalsize
+            #print "Total files:", self.total , "Total size:" , self.totalsize
             st = 'insert into files (path , packagename) values (?, ?)'
             try:
-                self.cursor.execute(st, (file.path, pkg_name))
+                #self.cursor.execute(st, (file.path, pkg_name))
+                pass
             except:
                 pass #collision..
         self.connection.commit()
