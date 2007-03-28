@@ -40,6 +40,17 @@ class HelpDialog(QDialog):
             url = locate('data', '%s/help/en/main_help.html' % name)
         self.htmlPart.openURL(KURL(url))
 
+def getRoot():
+    import os
+    for mount in os.popen("/bin/mount").readlines():
+        mount_items = mount.split()
+        if mount_items[2] == "/":
+            return mount_items[0]
+
+def grubDevice(dev):
+    dev = dev.split("/")[2]
+    return "(hd%s,%s)" % (ord(dev[2:3]) - ord("a"), int(dev[3:]) - 1)
+
 def grubDeviceName(dev):
     disk, part = dev[3:-1].split(",")
     disk = int(disk) + 1

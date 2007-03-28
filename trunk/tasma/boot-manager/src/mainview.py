@@ -14,50 +14,9 @@ from kdecore import *
 from kdeui import *
 
 from utility import *
+from ui_elements import *
 
 import comar
-
-class Entry(QListBoxItem):
-    def __init__(self, parent, title, description="", os_type="Unknown", checked=False):
-        QListBoxItem.__init__(self, parent)
-        self.title = title
-        self.description = description
-        self.checked = checked
-        self.os_type = os_type
-        self.f1 = QFont()
-        self.f2 = QFont()
-        self.f1.setBold(True)
-        self.f1.setPointSize(self.f1.pointSize() + 1)
-        self.setOs(os_type)
-    
-    def setOs(self, os_type):
-        self.os_type = os_type
-        if self.os_type == "Linux":
-            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/penguin.png")
-        elif self.os_type == "Windows":
-            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/wabi.png")
-        else:
-            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/akregator_empty.png")
-    
-    def paint(self, painter):
-        icon_size = 32
-        fm = QFontMetrics(self.f1)
-        fm2 = QFontMetrics(self.f2)
-        painter.setPen(Qt.black)
-        if self.checked:
-            painter.setPen(Qt.red)
-        painter.setFont(self.f1)
-        painter.drawText(icon_size + 6, 8 + fm.ascent(), self.title)
-        painter.setFont(self.f2)
-        painter.setPen(Qt.gray)
-        painter.drawText(icon_size + 6, 8 + fm.height() + 4 + fm2.ascent(), self.description)
-        painter.drawPixmap(4, (44 - icon_size) / 2, self.pix)
-    
-    def height(self, box):
-        return 44
-    
-    def width(self, box):
-        return 100
 
 class widgetMain(QWidget):
     def __init__(self, parent):
@@ -90,9 +49,8 @@ class widgetMain(QWidget):
                 self.listEntries.clear()
                 index = 0
                 for entry in reply.data.split('\n'):
-                    item = Entry(self.listEntries, entry, checked=index==self.default)
+                    item = Entry(self.listEntries, entry, checked=index==self.default, index=index)
                     self.link.call('System.Boot.getEntry', {'index': index}, id=4)
-                    item.entry_index = index
                     index += 1
             elif reply.id == 3: # listOptions
                 index = 0
@@ -130,5 +88,7 @@ class widgetMain(QWidget):
                         os_type = "Windows"
                 item = self.listEntries.item(index)
                 item.description = grubDeviceName(root)
+                if os_type == "Linux" and root == grubDevice(getRoot()):
+                    os_type = "Pardus"
                 item.setOs(os_type)
                 self.listEntries.updateItem(index)
