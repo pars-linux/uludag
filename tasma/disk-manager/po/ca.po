@@ -30,7 +30,7 @@ msgstr "Particions"
 #: src/disk-manager.py:94
 #: src/disk-manager.py:379
 msgid "Disk Manager"
-msgstr "Arranjador de disc"
+msgstr "Gestor de disc"
 
 #: src/diskform.py:133
 msgid "File System Type :"
@@ -89,5 +89,5 @@ msgstr "Tipus de fitxer de sistema"
 
 #: src/disk-manager.py:374
 msgid "Disk Manager is already running!"
-msgstr "Ho sent, l'arranjador de disc ja està en funcionament"
+msgstr "Ho sent, el gestor de discs ja està en funcionament"
 
