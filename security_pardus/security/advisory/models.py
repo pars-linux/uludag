@@ -17,9 +17,6 @@ class Language(models.Model):
         verbose_name = _("Language")
         verbose_name_plural = _("Languages")
 
-    class Admin:
-        pass
-
 ADVISORY_TYPES = (
     ("Local", _("Local")),
     ("Remote", _("Remote")),
@@ -41,9 +38,6 @@ class Advisory(models.Model):
 
     def __str__(self):
         return "[PLSA-%s] - %s" % (self.plsa_id, self.title)
-
-    def plsaId(self):
-        return "[%s] [PLSA %s] %s" % (self.language.code, self.plsa_id, self.title)
 
     def get_packages(self):
         return [x.split() for x in self.packages.split("\n")]
@@ -128,7 +122,9 @@ class Advisory(models.Model):
         ordering = ["-id"]
 
     class Admin:
-        list_display = ("plsaId", "publish", "fixed", "release_date", "language")
+        list_display = ("plsa_id", "title", "publish", "fixed", "release_date", "language")
+        list_display_links = ("plsa_id", "title")
+        search_fields = ("title", "summary", "packages", "references")
         list_filter = ("language", "publish", "fixed")
         save_as = True
         save_on_top = True
