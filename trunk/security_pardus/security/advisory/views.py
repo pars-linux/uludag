@@ -66,7 +66,7 @@ def feed(request, lang_code):
                          language=lang_code)
 
     for adv in advisories:
-        rss.add_item(title=adv.title,
+        rss.add_item(title="[PLSA %s] %s" % (adv.plsa_id, adv.title),
                      link="http://%s/%s/%s/" % (site.domain, lang_code, adv.plsa_id),
                      description=adv.summary,
                      pubdate=adv.release_date,
