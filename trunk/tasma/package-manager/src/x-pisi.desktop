@@ -8,6 +8,7 @@ Comment[es]=Archivo PiSi
 Comment[de]=PiSi Datei
 Comment[pt_BR]=Arquivo PiSi
 Comment[fr]=Fichier PiSi
+Comment[it]=File PiSi
 MimeType=application/x-pisi
 Patterns=*.pisi
 Type=MimeType
