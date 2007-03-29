@@ -1,4 +1,4 @@
-# translation of it.po to italiano
+# translation of it.po to Italian
 # This file is put in the public domain.
 #
 # Andrea Decorte <adecorte@gmail.com>, 2007.
@@ -7,9 +7,9 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 20:44+0200\n"
-"PO-Revision-Date: 2007-03-07 17:37+0200\n"
+"PO-Revision-Date: 2007-03-29 11:50+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
-"Language-Team: italiano\n"
+"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -140,7 +140,7 @@ msgstr "Gestore dei pacchetti"
 #: rc.cpp:62 ../src/packagedlg.cpp:102
 #, no-c-format
 msgid "Check updates automatically for every"
-msgstr "Controlla automaticamenti gli aggiornamenti ogni"
+msgstr "Controlla automaticamente gli aggiornamenti ogni"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 99
 #: rc.cpp:66 ../src/packagedlg.cpp:104
