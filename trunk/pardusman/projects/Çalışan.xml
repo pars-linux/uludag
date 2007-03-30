@@ -208,6 +208,7 @@
         <Package>alsa-firmware</Package>
         <Package>alsa-lib</Package>
         <Package>alsa-oss</Package>
+        <Package>alsa-tools</Package>
         <Package>alsa-utils</Package>
         <Package>amarok</Package>
         <Package>armagetronad</Package>
@@ -317,6 +318,7 @@
         <Package>frozen-bubble</Package>
         <Package>ftp</Package>
         <Package>fuse</Package>
+        <Package>fxload</Package>
         <Package>gawk</Package>
         <Package>gd</Package>
         <Package>gdbm</Package>
@@ -498,6 +500,7 @@
         <Package>libgpg-error</Package>
         <Package>libgphoto2</Package>
         <Package>libgpod</Package>
+        <Package>libgsf</Package>
         <Package>libid3tag</Package>
         <Package>libidn</Package>
         <Package>libiec61883</Package>
@@ -543,6 +546,7 @@
         <Package>libvisual-plugins</Package>
         <Package>libvorbis</Package>
         <Package>libwmf</Package>
+        <Package>libwpd</Package>
         <Package>libwww</Package>
         <Package>libxkbfile</Package>
         <Package>libxkbui</Package>
@@ -558,7 +562,6 @@
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
         <Package>ltris</Package>
-        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>mDNSResponder</Package>
@@ -605,7 +608,6 @@
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
         <Package>ntp-client</Package>
-        <Package>ode</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
@@ -759,7 +761,6 @@
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
-        <Package>xmoto</Package>
         <Package>xorg-app</Package>
         <Package>xorg-data</Package>
         <Package>xorg-font</Package>
