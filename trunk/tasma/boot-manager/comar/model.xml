@@ -14,8 +14,11 @@
             <method name="getEntry" access="guest">
                 <argument>index</argument>
             </method>
-            <method name="updateGrub">
-                <argument>new_kernel</argument>
+            <method name="removeEntry">
+                <argument>index</argument>
+            </method>
+            <method name="upgradeKernel">
+                <argument>version</argument>
                 <argument>max_entries</argument>
                 <argument>make_default</argument>
             </method>

@@ -64,28 +64,67 @@ def getRoot():
         if mount_items[2] == "/":
             return mount_items[0]
 
+class grubConfLock:
+    def __init__(self, _file, write=False, timeout=-1):
+        from comar.utility import FileLock
+        self.file = _file
+        self.write = write
+        self.lock = FileLock("%s.lock" % _file)
+        self.lock.lock(write, timeout)
+        self.config = grubConf()
+        self.config.parseConf(_file)
+
+    def release(self, save=True):
+        if save and self.write:
+            self.config.write(self.file)
+        self.lock.unlock()
+
 # System.Boot
 
 GRUB_CONF = "/boot/grub/grub.conf"
-gc = grubConf()
-gc.parseConf(GRUB_CONF)
 
 def listOptions():
-    return "\n".join(gc.getAllOptions())
+    try:
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+    except IOError:
+        fail("Timeout")
+    options = "\n".join(grub.config.getAllOptions())
+    grub.release()
+    return options
 
 def getOption(key):
-    return gc.getOption(key)
+    try:
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+    except IOError:
+        fail("Timeout")
+    option = grub.config.getOption(key)
+    grub.release()
+    return option
 
 def setOption(key, value):
-    gc.setOption(key, value)
-    gc.write(GRUB_CONF)
+    try:
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=3.0)
+    except IOError:
+        fail("Timeout")
+    grub.config.setOption(key, value)
+    grub.release()
     notify("System.Boot.changed", "")
 
 def listEntries():
-    return "\n".join(gc.listEntries())
+    try:
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+    except IOError:
+        fail("Timeout")
+    entries = "\n".join(grub.config.listEntries())
+    grub.release()
+    return entries
 
 def getEntry(index):
-    entry = gc.getEntry(int(index))
+    try:
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+    except IOError:
+        fail("Timeout")
+    entry = grub.config.getEntry(int(index))
     ret = []
     ret.append("index\n \n%s" % index)
     ret.append("title\n \n%s" % entry.title)
@@ -95,16 +134,22 @@ def getEntry(index):
         if not command.value:
             command.value = " "
         ret.append("%s\n%s\n%s" % (command.key, command.options, command.value))
+    grub.release()
     return "\n\n".join(ret)
 
-def updateGrub(new_kernel, max_entries=3, make_default="on"):
+def upgradeKernel(version, max_entries=3, make_default="on"):
+    try:
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=3.0)
+    except IOError:
+        fail("Timeout")
+        
     max_entries = int(max_entries)
     
-    new_version, new_suffix = parseVersion("kernel-%s" % new_kernel)
+    new_version, new_suffix = parseVersion("kernel-%s" % version)
     root_dev = getRoot()
     root_grub = grubDevice(root_dev)
     
-    entries = filter(lambda x: isPardusEntry(x, root_grub, new_suffix), gc.entries)
+    entries = filter(lambda x: isPardusEntry(x, root_grub, new_suffix), grub.config.entries)
     
     action = None
     if not len(entries):
@@ -117,29 +162,35 @@ def updateGrub(new_kernel, max_entries=3, make_default="on"):
         if new_version in kernels:
             if make_default == "on":
                 entry = kernels[new_version]
-                gc.setOption("default", gc.indexOf(entry))
+                grub.config.setOption("default", grub.config.indexOf(entry))
         else:
             action = "insert"
     
     if action:
         release = open("/etc/pardus-release", "r").readline().strip()
         title = "%s [%s%s]" % (release, new_version, new_suffix)
-        if action == "append":
-            index = -1
-        else:
-            index = gc.indexOf(entries[0])
+        
         new_entry = grubEntry(title)
         new_entry.setCommand("root", root_grub)
-        new_entry.setCommand("kernel", "/boot/kernel-%s%s %s" % (new_version, new_suffix, bootParameters(root_dev)))
+        
+        if action == "append":
+            index = -1
+            boot_parameters = bootParameters(root_dev)
+        else:
+            index = grub.config.indexOf(entries[0])
+            kernel = entries[0].getCommand("kernel").value
+            boot_parameters = kernel.split(" ", 1)[1]
+        
+        new_entry.setCommand("kernel", "/boot/kernel-%s%s %s" % (new_version, new_suffix, boot_parameters))
         new_entry.setCommand("initrd", "/boot/initrmfs-%s%s" % (new_version, new_suffix))
-        gc.addEntry(new_entry, index)
+        grub.config.addEntry(new_entry, index)
         
         if max_entries > 0:
             for x in entries[max_entries - 1:]:
-                gc.removeEntry(x)
+                grub.config.removeEntry(x)
         
         if make_default == "on":
-            gc.setOption("default", gc.indexOf(new_entry))
+            grub.config.setOption("default", grub.config.indexOf(new_entry))
     
-    gc.write(GRUB_CONF)
+    grub.release()
     notify("System.Boot.changed", "")
