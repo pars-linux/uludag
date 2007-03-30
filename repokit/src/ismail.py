@@ -404,6 +404,14 @@ class SpecFile(AutoPiksemel):
             prev_date = prev_date[0] * 10000 + prev_date[1] * 100 + prev_date[2]
         if prev != 1:
             piksError(doc.getTag("History"), errors, "missing release numbers")
+        
+        for pak in self.packages:
+            deps = map(lambda x: x.package, self.source.build_deps)
+            if pak.name in deps:
+                piksError(doc, errors, "package name '%s' is in source '%s' build dependencies" % (pak.name, self.source.name))
+            deps = map(lambda x: x.package, pak.packageDependencies)
+            if pak.name in deps:
+                piksError(doc, errors, "package name '%s' is in self dependencies" % pak.name)
 
 
 def all_pspecs(path):
