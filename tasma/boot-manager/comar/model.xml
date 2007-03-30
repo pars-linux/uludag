@@ -17,7 +17,7 @@
             <method name="removeEntry">
                 <argument>index</argument>
             </method>
-            <method name="upgradeKernel">
+            <method name="updateKernelEntry">
                 <argument>version</argument>
                 <argument>max_entries</argument>
                 <argument>make_default</argument>

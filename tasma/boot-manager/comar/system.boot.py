@@ -137,7 +137,7 @@ def getEntry(index):
     grub.release()
     return "\n\n".join(ret)
 
-def upgradeKernel(version, max_entries=3, make_default="on"):
+def updateKernelEntry(version, max_entries=3, make_default="on"):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=3.0)
     except IOError:
