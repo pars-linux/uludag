@@ -14,6 +14,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kpushbutton.h>
+#include <qcombobox.h>
 
 #include "welcome.h"
 #include "mouse.h"
@@ -89,8 +90,11 @@ void Kaptan::next()
 {
     if (currentPage() == mouse)
         mouse->apply();
-    else if (currentPage() == style)
-        style->testStyle();
+    else if (currentPage() == style){
+        if (style->testedStyle != style->styleBox->currentItem()){
+            style->testStyle();
+        }
+    }
     else if (currentPage() == wallpaper)
     {
         if (wallpaper->changeWallpaper())
