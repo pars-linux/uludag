@@ -22,6 +22,7 @@ class Style:public StyleDlg
 
 public:
     Style(QWidget *parent = 0, const char* name = 0);
+    int testedStyle;
 
 public slots:
     void styleSelected(int);

@@ -146,6 +146,8 @@ void Style::testStyle()
     globalConf->sync();
     delete globalConf;
 
+    testedStyle= styleBox->currentItem();
+
     KIPC::sendMessageAll(KIPC::StyleChanged);
 }
 
