@@ -203,7 +203,7 @@ class widgetMain(formMain):
                 info.append(i18n('%s is not running.').replace('%s', item.description))
         else:
             QToolTip.add(self.buttonStart, i18n('Execute startup script'))
-            QToolTip.add(self.buttonStop, i18n('Execuete shutdown script'))
+            QToolTip.add(self.buttonStop, i18n('Execute shutdown script'))
 
             info.append(item.description)
 
