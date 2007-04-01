@@ -209,7 +209,7 @@ msgid "Password must be longer."
 msgstr "Le mot de passe est trop court."
 
 #: useredit.py:387
-msgid "Dont use your full name or user name as a password."
+msgid "Don't use your full name or user name as a password."
 msgstr "Ne pas utiliser le nom complet ou le nom d'utilisateur comme mot de passe."
 
 #: useredit.py:390

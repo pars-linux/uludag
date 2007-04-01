@@ -211,7 +211,7 @@ msgid "Password must be longer."
 msgstr "Senha deve ser maior."
 
 #: useredit.py:387
-msgid "Dont use your full name or user name as a password."
+msgid "Don't use your full name or user name as a password."
 msgstr "Não use seu come completo ou nome de usuário como senha."
 
 #: useredit.py:390
