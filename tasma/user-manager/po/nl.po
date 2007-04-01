@@ -216,7 +216,7 @@ msgid "Password must be longer."
 msgstr "Wachtwoord moet langer zijn."
 
 #: useredit.py:387
-msgid "Dont use your full name or user name as a password."
+msgid "Don't use your full name or user name as a password."
 msgstr "Gebruik niet uw eigen naam of gebruikersnaam als wachtwoord."
 
 #: useredit.py:390
