@@ -231,7 +231,7 @@ msgstr "Instal·la els paquets relatius a la xarxa"
 
 #: newconn.py:119
 msgid "No package with COMAR network scripts are installed yet."
-msgstr "No hi ha cap paquet instal·lat amb scripts de xarxa relatius a COMAR"
+msgstr "No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
 
 #: network-applet.py:293
 msgid "Firewall..."
