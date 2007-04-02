@@ -384,7 +384,7 @@ class Guide(QWidget):
             
             if not err:
                 if pw == p.u_realname.text() or pw == p.u_name.text():
-                    err = i18n("Dont use your full name or user name as a password.")
+                    err = i18n("Don't use your full name or user name as a password.")
         
         if not err and p.u_password.text() == None:
             err = i18n("Passwords don't match.")
