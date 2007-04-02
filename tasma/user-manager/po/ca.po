@@ -18,7 +18,6 @@ msgstr ""
 # S'ha de traduir Service comar start?
 #: mainview.py:30
 #: mainview.py:66
-#, fuzzy
 msgid "Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."
 msgstr "Ho sent. No es pot connectar amb el COMAR. En cas que no estigués activat, engegueu-lo amb l'ordre 'service comar start' en una consola amb mode arrel."
 
@@ -254,7 +253,6 @@ msgid "Show all groups"
 msgstr "Mostra tots els grups"
 
 #: useredit.py:533
-#, fuzzy
 msgid "You are removing yourself from the 'wheel' system group, you might not use your administrator permissions after that."
 msgstr "Us esteu esborrant del grup de sistema 'wheel', després no podreu utilitzar els vostres permissos com a administrador."
 
