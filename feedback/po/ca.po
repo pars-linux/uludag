@@ -1,76 +1,82 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation Pardus-Feedback to catalan Copyright (C) 2007 Free Software Foundation, Inc.
+# Jaume Villalba <javs@tinet.cat>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Feedback - Pardus\n"
 "POT-Creation-Date: 2006-11-17 10:48+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2007-04-01 23:19+0100\n"
+"Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
+"Language-Team: catalan Pardus-translation-ca@uludag.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: src/experiencedlg.py:142 src/feedback.py:69 src/goodbyedlg.py:232
-#: src/hardwareinfodlg.py:238 src/opiniondlg.py:58 src/personalinfodlg.py:244
-#: src/questiondlg.py:253 src/upload.py:245 src/usagedlg.py:69
+#: src/experiencedlg.py:142
+#: src/feedback.py:69
+#: src/goodbyedlg.py:232
+#: src/hardwareinfodlg.py:238
+#: src/opiniondlg.py:58
+#: src/personalinfodlg.py:244
+#: src/questiondlg.py:253
+#: src/upload.py:245
+#: src/usagedlg.py:69
 #: src/welcomedlg.py:230
 msgid "Feedback Wizard"
-msgstr ""
+msgstr "Assistent de l'avaluaciÃ³"
 
 #: src/usagedlg.py:71
 msgid "At home"
-msgstr ""
+msgstr "A casa"
 
 #: src/usagedlg.py:72
 msgid "At work"
-msgstr ""
+msgstr "A la feina"
 
 #: src/usagedlg.py:73
 msgid "At school"
-msgstr ""
+msgstr "A l'escola"
 
-#: src/purposedlg.py:92 src/usagedlg.py:74
+#: src/purposedlg.py:92
+#: src/usagedlg.py:74
 msgid "<p align=\"right\">(You can click on multiple items)</p>"
-msgstr ""
+msgstr "<p align=\"right\">(poder triar mÃ©s d'una opciÃ³)</p>"
 
 #: src/usagedlg.py:75
 msgid "<b>Step 3 of 7</b>"
-msgstr ""
+msgstr "<b>Pas 3 de 7</b>"
 
 #: src/usagedlg.py:76
 msgid "<h2>Where do you use Pardus?</h2>"
-msgstr ""
+msgstr "<h2>On utilitzeu el Pardus?</h2>"
 
 #: src/questiondlg.py:255
 msgid "Very satisfying. Pardus fulfils my requirements"
-msgstr ""
+msgstr "Perfecte. Pardus satisfÃ  les meues necessitats"
 
 #: src/questiondlg.py:256
 msgid "Good, however it lacks some capabilities"
-msgstr ""
+msgstr "Bo, tot i axÃ­ trobe a faltar algunes coses"
 
 #: src/questiondlg.py:257
 msgid "It does not meet my requirements"
-msgstr ""
+msgstr "No satisfÃ  les meues necessitats"
 
 #: src/questiondlg.py:258
 msgid "<h2>How does Pardus fit your needs?</h2>"
-msgstr ""
+msgstr "<h2>Com satisfÃ  Pardus les vostres necessitats?</h2>"
 
 #: src/questiondlg.py:259
 msgid "<b>Step 4 of 7</b>"
-msgstr ""
+msgstr "<b>Pas 4 de 7</b>"
 
 #: src/hardwareinfodlg.py:239
 msgid "&Do not send my computer's hardware information"
-msgstr ""
+msgstr "&No envies informaciÃ³ sobre el meu maquinari"
 
 #: src/hardwareinfodlg.py:240
 msgid "<b>Step 7 of 7</b>"
-msgstr ""
+msgstr "<b>Pas 7 de 7</b>"
 
 #: src/hardwareinfodlg.py:241
 msgid ""
@@ -84,44 +90,55 @@ msgid ""
 "\n"
 "<b>Note that we will not collect any of your personal documents.</b>"
 msgstr ""
+"<h2>InformaciÃ³ sobre l'ordinador</h2>\n"
+"<p>\n"
+"Ara, l'assistent de recollida d'informaciÃ³ sobre el maquinari de Pardus recopilarÃ  informaciÃ³ sobre\n"
+"el vostre maquinari, incloent-hi CPU, memÃ²ria i targetes de xarxa.\n"
+"Aquesta informaciÃ³ s'enviarÃ  al centre de desenvolupament de Pardus,\n"
+"per a poder construir un Pardus mÃ©s estable i segur. Per a poder completar\n"
+"aquesta operaciÃ³ necessitareu accÃšs a l'internet.\n"
+"\n"
+"<b>Volem remarcar que no recollirem cap informaciÃ³ personal.</b>"
 
 #: src/opiniondlg.py:59
 msgid "<h2>Your opinions about Pardus?</h2>"
-msgstr ""
+msgstr "<h2>Quines Ã©s la vostra opiniÃ³ sobre Pardus?</h2>"
 
 #: src/opiniondlg.py:60
 msgid ""
 "(Ease of installation and use, capability of software,\n"
 "general quality, adoptability, suitability to requirements, etc)"
 msgstr ""
+"(Facilitat d'instalÂ·laciÃ³ i utilitzaciÃ³, capacitat del programari,\n"
+"qualitat general, facilitat d'adopciÃ³, idoneÃ¯tat per a satisfer les necessitats, etc...)"
 
 #: src/opiniondlg.py:62
 msgid "<b>Step 5 of 7</b>"
-msgstr ""
+msgstr "<b>Pas 5 de 7</b>"
 
 #: src/experiencedlg.py:144
 msgid "Experienced system administrator"
-msgstr ""
+msgstr "Administrador de sistema amb experiÃšncia"
 
 #: src/experiencedlg.py:145
 msgid "New user"
-msgstr ""
+msgstr "Nou usuari"
 
 #: src/experiencedlg.py:146
 msgid "Home/office productivity user"
-msgstr ""
+msgstr "Usuari normal o professional"
 
 #: src/experiencedlg.py:147
 msgid "Experienced user"
-msgstr ""
+msgstr "Usuari amb experiÃšncia"
 
 #: src/experiencedlg.py:148
 msgid "<h2>What is your experience level?</h2>"
-msgstr ""
+msgstr "<h2>Quin Ã©s el vostre nivell d'experiÃšncia?</h2>"
 
 #: src/experiencedlg.py:149
 msgid "<b>Step 1 of 7</b>"
-msgstr ""
+msgstr "<b>Pas 1 de 7</b>"
 
 #: src/goodbyedlg.py:233
 msgid ""
@@ -131,6 +148,11 @@ msgid ""
 "<p>\n"
 "Thank you for your support to Pardus operating system."
 msgstr ""
+"<h2>Moltes grÃ cies</h2>\n"
+"Hem recollit tota la informaciÃ³ necessÃ ria per a poder-la enviar\n"
+"als desenvolupadors de Pardus.\n"
+"<p>\n"
+"GrÃ cies pel vostre suport al sistema operatiu Pardus."
 
 #: src/welcomedlg.py:231
 msgid ""
@@ -144,145 +166,149 @@ msgid ""
 "Please click on \"Forward\" button for the next step.\n"
 "<p>"
 msgstr ""
+"<h2>Us donem la benvinguda a Pardus</h2>\n"
+"\n"
+"Amb aquest senzill assistent podeu enviar els vostres missatges als\n"
+"desenvolupadors i aixÃ­ contribuir a que Pardus siga el millor sistema operatiu GNU/Linux del mÃ³n.\n"
+"\n"
+"<p>\n"
+"La informaciÃ³ que donareu acÃ­ accelerarÃ  el desenvolupament de Pardus. \n"
+"Si us plau, piqueu sobre el botÃ³ \"Endavant\" per a continuar amb el pas segÃŒent.\n"
+"<p>"
 
 #: src/purposedlg.py:84
 msgid "Feedback wizard"
-msgstr ""
+msgstr "Assistent de l'avaluaciÃ³"
 
 #: src/purposedlg.py:86
 msgid "Daily use"
-msgstr ""
+msgstr "Ãs diari"
 
 #: src/purposedlg.py:87
 msgid "It's my hobby"
-msgstr ""
+msgstr "Ãs una aficiÃ³"
 
 #: src/purposedlg.py:88
 msgid "For internet access"
-msgstr ""
+msgstr "Per connectar-me a l'internet"
 
 #: src/purposedlg.py:89
 msgid "For business"
-msgstr ""
+msgstr "Per feina"
 
 #: src/purposedlg.py:90
 msgid "Entertainment purposes"
-msgstr ""
+msgstr "Finalitats d'esbarjo"
 
 #: src/purposedlg.py:91
 msgid "Educational purposes"
-msgstr ""
+msgstr "Finalitats educatives"
 
 #: src/purposedlg.py:93
 msgid "<h2>Why do you use Pardus?</h2>"
-msgstr ""
+msgstr "<h2>Per quÃš feu servir el Pardus?</h2>"
 
 #: src/purposedlg.py:94
 msgid "<b>Step 2 of 7</b>"
-msgstr ""
+msgstr "<b>Pas 2 de 7</b>"
 
 #: src/feedback.py:77
 msgid "Welcome"
-msgstr ""
+msgstr "Us donem la benvinguda"
 
 #: src/feedback.py:80
 msgid "Experience"
-msgstr ""
+msgstr "ExperiÃšncia"
 
 #: src/feedback.py:83
 msgid "Purpose"
-msgstr ""
+msgstr "Finalitat"
 
 #: src/feedback.py:86
 msgid "Usage"
-msgstr ""
+msgstr "Ãs"
 
 #: src/feedback.py:89
 msgid "Questions"
-msgstr ""
+msgstr "Preguntes"
 
 #: src/feedback.py:92
 msgid "Opinions"
-msgstr ""
+msgstr "Opinions"
 
 #: src/feedback.py:95
 msgid "Personal Info"
-msgstr ""
+msgstr "InformaciÃ³ personal"
 
 #: src/feedback.py:98
 msgid "Hardware Info"
-msgstr ""
+msgstr "InformaciÃ³ sobre el maquinari"
 
 #: src/feedback.py:101
 msgid "Uploading"
-msgstr ""
+msgstr "S'estÃ  enviant"
 
 #: src/feedback.py:104
 msgid "Goodbye!"
-msgstr ""
+msgstr "Que vagi bÃ©!"
 
 #: src/feedback.py:166
 msgid "Collecting hardware information..."
-msgstr ""
+msgstr "S'estÃ  recollint informaciÃ³ sobre el maquinari..."
 
-#: src/feedback.py:176 src/feedback.py:250
+#: src/feedback.py:176
+#: src/feedback.py:250
 msgid "<font color=\"#008800\">Done</font><br>\n"
-msgstr ""
+msgstr "<font color=\"#008800\">Fet</font><br>\n"
 
 #: src/feedback.py:180
 msgid "Uploading data..."
-msgstr ""
+msgstr "S'estan enviant les dades"
 
-#: src/feedback.py:243 src/feedback.py:254
+#: src/feedback.py:243
+#: src/feedback.py:254
 msgid "<font color=\"#ff0000\">Failed</font><br>\n"
-msgstr ""
+msgstr "<font color=\"#ff0000\">Ha fallat</font><br>\n"
 
 #: src/feedback.py:244
-msgid ""
-"<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
-msgstr ""
+msgid "<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
+msgstr "<font color=\"#ff0000\">No s'ha pogut connectar amb la base de dades d'avaluaciÃ³.</font><br>\n"
 
 #: src/feedback.py:257
-msgid ""
-"<font color=\"#ff0000\">Feedback seems to be broken. Data is "
-"corrupted.</font><br>\n"
-msgstr ""
+msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Sembla que l'avaluaciÃ³ no estÃ  bÃ©. Les dades estan corruptes.</font><br>\n"
 
 #: src/feedback.py:259
-msgid ""
-"<font color=\"#ff0000\">Server does not support this version. Please update "
-"feedback tool.</font><br>\n"
-msgstr ""
+msgid "<font color=\"#ff0000\">Server does not support this version. Please update feedback tool.</font><br>\n"
+msgstr "<font color=\"#ff0000\">El servidor no suporta aquesta versiÃ³. Si us plau, actualitzeu l'eina d'avaluaciÃ³.</font><br>\n"
 
 #: src/feedback.py:261
-msgid ""
-"<font color=\"#ff0000\">Feedback seems to be broken. Data is "
-"missing.</font><br>\n"
-msgstr ""
+msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Sembla que l'avaluaciÃ³ no estÃ  bÃ©. Hi falten dades.</font><br>\n"
 
 #: src/feedback.py:263
 msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
-msgstr ""
+msgstr "<font color=\"#ff0000\">La base de dades de l'avaluaciÃ³ no estÃ  connectada a la xarxa.</font><br>\n"
 
 #: src/feedback.py:265
 msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
-msgstr ""
+msgstr "<font color=\"#ff0000\">Ja heu enviat l'avaluaciÃ³.</font><br>\n"
 
 #: src/feedback.py:267
 msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
-msgstr ""
+msgstr "<font color=\"#ff0000\">La base de dades de l'avaluaciÃ³ contÃ© errors.</font><br>\n"
 
 #: src/feedback.py:286
 msgid "Feedback tool is already running!"
-msgstr ""
+msgstr "Ho sent. L'eina d'avaluaciÃ³ ja estÃ  en marxa"
 
 #: src/upload.py:246
 msgid "<h2>Upload</h2>"
-msgstr ""
+msgstr "<h2>Enviament</h2>"
 
 #: src/upload.py:247
 msgid "Retry"
-msgstr ""
+msgstr "Torna a intentar-ho"
 
 #: src/personalinfodlg.py:245
 msgid ""
@@ -290,15 +316,18 @@ msgid ""
 "You can submit your e-mail address for inclusion in our low traffic\n"
 "announces."
 msgstr ""
+"<h2>La vostra informaciÃ³ personal (optatiu)</h2>\n"
+"Podeu escriure la vostra adreÃ§a de correu electrÃ²nic per a subscriure-vos a la nostra llista d'anuncis, que us enviarÃ  informaciÃ³ molt de quan en quan."
 
 #: src/personalinfodlg.py:248
 msgid "E-mail:"
-msgstr ""
+msgstr "Correu electrÃ²nic:"
 
 #: src/personalinfodlg.py:249
 msgid "Add me to your Pardus announce list"
-msgstr ""
+msgstr "Afegiu-me a la vostra llista d'anuncis de Pardus"
 
 #: src/personalinfodlg.py:251
 msgid "<b>Step 6 of 7</b>"
-msgstr ""
+msgstr "<b>Pas 6 de 7</b>"
+
