@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# klemens <click3d at linuxmail org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-07 21:36+0200\n"
-"PO-Revision-Date: 2007-02-04 13:47+0200\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"PO-Revision-Date: 2007-04-01 19:01-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +65,7 @@ msgstr "Iniciar"
 #: src/service-manager.py:237
 #, python-format
 msgid "%s is running."
-msgstr "%s está ejecutandose."
+msgstr "%s se está ejecutando."
 
 #: src/service-manager.py:240
 #, python-format
@@ -73,7 +74,7 @@ msgstr "%s no se está ejecutando."
 
 #: src/service-manager.py:242
 msgid "Execute startup script"
-msgstr "Ejecitar script de arranque"
+msgstr "Ejecutar script de arranque"
 
 #: src/service-manager.py:243
 msgid "Execuete shutdown script"
@@ -113,11 +114,11 @@ msgstr "Paquete"
 
 #: src/mainform.py:99
 msgid "Run on startup."
-msgstr "Iniciar con el arranque del sistema"
+msgstr "Iniciar con el arranque del sistema."
 
 #: src/mainform.py:100
 msgid "Don't run on startup."
-msgstr "No iniciar con el arranque del sistema"
+msgstr "No iniciar con el arranque del sistema."
 
 #: src/mainform.py:106
 msgid "&List servers only."
