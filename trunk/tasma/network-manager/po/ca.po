@@ -1,48 +1,49 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of network-manager.po to Catala
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Pau Amaro-Seoane <pau@ippimail.com>, 2007.
+# Pau Amaro-Seoane <pau@aei.mpg.de>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-27 14:25+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2007-04-02 17:31+0200\n"
+"Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
+"Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: browser.py:49
 msgid "Name:"
-msgstr ""
+msgstr "Nom:"
 
 #: browser.py:56 connection.py:191
 msgid "Authentication"
-msgstr ""
+msgstr "Autenticació"
 
 #: browser.py:59 connection.py:282
 msgid "Address:"
-msgstr ""
+msgstr "Adreça:"
 
 #: browser.py:62 connection.py:319
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtic"
 
 #: browser.py:90
 msgid "Turn on/off connection"
-msgstr ""
+msgstr "Connecta / Desconnecta"
 
 #: browser.py:103
 msgid "Configure connection"
-msgstr ""
+msgstr "Configura la connexió"
 
 #: browser.py:106
 msgid "Delete connection"
-msgstr ""
+msgstr "Esborra la connexió"
 
 #: browser.py:124
 #, python-format
@@ -51,205 +52,208 @@ msgid ""
 "'%s'\n"
 "connection?"
 msgstr ""
+"Que vols que esborre la\n"
+"connexió '%s'?"
 
 #: browser.py:125
 msgid "Delete connection?"
-msgstr ""
+msgstr "Esborre la connexió?"
 
 #: browser.py:205
 msgid "No device!"
-msgstr ""
+msgstr "Ho sent. No hi ha cap dispositiu"
 
 #: browser.py:381 network-applet.py:456
 msgid "New connection"
-msgstr ""
+msgstr "Nova connexió"
 
 #: browser.py:386 nameconf.py:28
 msgid "Name Service Settings"
-msgstr ""
+msgstr "Nom dels arranjaments del servei (DNS)"
 
 #: browser.py:420
 msgid "Network Connections Help"
-msgstr ""
+msgstr "Ajut per a la connexió de la xarxa"
 
 #: nameconf.py:35
 msgid "Computer"
-msgstr ""
+msgstr "Ordinador"
 
 #: nameconf.py:41
 msgid "Host name:"
-msgstr ""
+msgstr "Nom de l'ordinador amfitrió:"
 
 #: nameconf.py:45 connection.py:310
 msgid "Name servers"
-msgstr ""
+msgstr "Nom dels servidors"
 
 #: nameconf.py:56
 msgid "Up"
-msgstr ""
+msgstr "Obert"
 
 #: nameconf.py:59
 msgid "Down"
-msgstr ""
+msgstr "Tancat"
 
 #: nameconf.py:134
 msgid "Add Name Server"
-msgstr ""
+msgstr "Afegeix un nom de servidor"
 
 #: nameconf.py:135
 msgid "Name server:"
-msgstr ""
+msgstr "Nom del servidor:"
 
 #: connection.py:43
 msgid "<hidden>"
-msgstr ""
+msgstr "<amagat>"
 
 #: connection.py:76
 msgid "Scan results:"
-msgstr ""
+msgstr "Resultats de l'exploració:"
 
 #: connection.py:91
 msgid "Scan again"
-msgstr ""
+msgstr "Explora una altra vegada"
 
 #: connection.py:93
 msgid "Use"
-msgstr ""
+msgstr "Fés-la servir"
 
 #: connection.py:148
 msgid "Connection name:"
-msgstr ""
+msgstr "Nom de la connexió:"
 
 #: connection.py:155
 msgid "Connection"
-msgstr ""
+msgstr "Connexió"
 
 #: connection.py:161
 msgid "Device:"
-msgstr ""
+msgstr "Dispositiu:"
 
 #: connection.py:166
 msgid "Select"
-msgstr ""
+msgstr "Seleciona"
 
 #: connection.py:180
 msgid "Scan"
-msgstr ""
+msgstr "Explora"
 
 #: connection.py:197
 msgid "Mode:"
-msgstr ""
+msgstr "Mode:"
 
 #: connection.py:205
 msgid "No authentication"
-msgstr ""
+msgstr "Sense autenticació"
 
 #: connection.py:223 connection.py:234
 msgid "Password:"
-msgstr ""
+msgstr "Mot de pas:"
 
 #: connection.py:231
 msgid "User name:"
-msgstr ""
+msgstr "Nom d'usuari:"
 
 #: connection.py:263
 msgid "Network settings"
-msgstr ""
+msgstr "Arranjaments de la xarxa"
 
 #: connection.py:273
 msgid "Automatic query (DHCP)"
-msgstr ""
+msgstr "Protocol dinàmic (DHCP)"
 
 #: connection.py:278
 msgid "Manual"
-msgstr ""
+msgstr "Personalitzat"
 
 #: connection.py:289 connection.py:306 connection.py:321
 msgid "Custom"
-msgstr ""
+msgstr "A mida"
 
 #: connection.py:294
 msgid "Net mask:"
-msgstr ""
+msgstr "Màscara de xarxa:"
 
 #: connection.py:301
 msgid "Gateway:"
-msgstr ""
+msgstr "Portal d'enllaç:"
 
 #: connection.py:512
 msgid "Configure network connection"
-msgstr ""
+msgstr "Configura la connexió de la xarxa"
 
 #: network-manager.py:33 network-manager.py:85
 msgid "Network Manager"
-msgstr ""
+msgstr "Arranjador de la xarxa"
 
 #: network-manager.py:80
 msgid "Network manager module is already started!"
-msgstr ""
+msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
 
 #: comariface.py:162
 msgid "Waiting COMAR..."
-msgstr ""
+msgstr "Cal esperar el servei de COMAR..."
 
 #: comariface.py:163
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "La connexió a COMAR s'ha tallat sense inesperadament. Mirem de reconnectar..."
 
 #: comariface.py:182 comariface.py:199 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
-msgstr ""
+msgstr "No em puc connectar a COMAR. Si no està en marxa, l'hauríeu de tornar a engear amb el comandament 'service comar start' com a arrel d'ençà d'una terminal"
 
 #: comariface.py:365
 msgid "new connection"
-msgstr ""
+msgstr "nova connexió"
 
 #: newconn.py:26
 msgid "Create a new connection"
-msgstr ""
+msgstr "Crea una nova connexió"
 
 #: newconn.py:31
 msgid "Select device:"
-msgstr ""
+msgstr "Tria un dispositiu:"
 
 #: newconn.py:58
 msgid "Create"
-msgstr ""
+msgstr "Crea"
 
 #: newconn.py:112
 msgid "No suitable device found"
-msgstr ""
+msgstr "No hi ha cap dispositiu adequat"
 
 #: newconn.py:118
 msgid "Install network packages!"
-msgstr ""
+msgstr "Instal·la els paquets relatius a la xarxa"
 
 #: newconn.py:119
 msgid "No package with COMAR network scripts are installed yet."
-msgstr ""
+msgstr "No hi ha cap paquet instal·lat amb scripts de xarxa relatius a COMAR"
 
 #: network-applet.py:293
 msgid "Firewall..."
-msgstr ""
+msgstr "Tallafocs..."
 
 #: network-applet.py:294
 msgid "Edit Connections..."
-msgstr ""
+msgstr "Edita les connexions..."
 
 #: network-applet.py:296
 msgid "Icon Per Device"
-msgstr ""
+msgstr "Icona per dispositiu"
 
 #: network-applet.py:297
 msgid "Single Icon"
-msgstr ""
+msgstr "Icona simple"
 
 #: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
+msgstr "Que vols que el programa de gestió de xarxa s'engegue automàticament en entrar al sistema?"
 
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr ""
+
