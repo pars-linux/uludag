@@ -1,5 +1,5 @@
 /*
-** Copyright (c) 2006, TUBITAK/UEKAE
+** Copyright (c) 2006-2007, TUBITAK/UEKAE
 **
 ** This program is free software; you can redistribute it and/or modify it
 ** under the terms of the GNU General Public License as published by the
@@ -80,26 +80,19 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	static char *kwlist[] = {
 		"function",
-        "ret_object",
 		"writable_paths",
-		"logger",
 		NULL
 	};
- 	PyObject *ret;
+	PyObject *ret;
 	PyObject *paths = NULL;
 	struct trace_context ctx;
 
 	memset(&ctx, 0, sizeof(struct trace_context));
-	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "OO|OO", kwlist, &ctx.func, &ctx.ret_object, &paths, &ctx.log_func))
+	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|O", kwlist, &ctx.func, &paths))
 		return NULL;
 
 	if (PyCallable_Check(ctx.func) == 0) {
 		PyErr_SetString(PyExc_TypeError, "First argument should be a callable function");
-		return NULL;
-	}
-
-	if (ctx.log_func != Py_None && !PyCallable_Check(ctx.log_func)) {
-		PyErr_SetString(PyExc_TypeError, "Logger should be a callable function");
 		return NULL;
 	}
 
@@ -108,25 +101,28 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 		if (!ctx.pathlist) return NULL;
 	}
 
+	catbox_retval_init(&ctx);
+
+	// setup is complete, run sandbox
 	ret = do_run(&ctx);
+
 	if (ctx.pathlist) {
 		free_pathlist(ctx.pathlist);
 	}
 
- 	return ret;
+	return ret;
 }
 
-
 static PyMethodDef methods[] = {
-    { "run", (PyCFunction) catbox_run, METH_VARARGS | METH_KEYWORDS,
-      "Run given function in a sandbox."},
+	{ "run", (PyCFunction) catbox_run, METH_VARARGS | METH_KEYWORDS,
+	  "Run given function in a sandbox."},
 	{ NULL, NULL, 0, NULL }
 };
 
 PyMODINIT_FUNC
-initcatbox_int(void)
+initcatbox(void)
 {
 	PyObject *m;
 
-	m = Py_InitModule("catbox_int", methods);
+	m = Py_InitModule("catbox", methods);
 }

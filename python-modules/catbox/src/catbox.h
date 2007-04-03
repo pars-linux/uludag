@@ -1,5 +1,5 @@
 /*
-** Copyright (c) 2006, TUBITAK/UEKAE
+** Copyright (c) 2006-2007, TUBITAK/UEKAE
 **
 ** This program is free software; you can redistribute it and/or modify it
 ** under the terms of the GNU General Public License as published by the
@@ -21,15 +21,13 @@ struct traced_child {
 	int need_setup;
 	int in_syscall;
 	unsigned long orig_eax;
-    unsigned int  ret;   
+    unsigned int  ret;
 };
-
 
 struct trace_context {
 	PyObject *func;
+	PyObject *retval;
 	char **pathlist;
-	PyObject *log_func;
-    PyObject *ret_object;
 	unsigned int nr_children;
 	struct traced_child children[512];
 };
@@ -41,3 +39,7 @@ char **make_pathlist(PyObject *paths);
 int before_syscall(struct trace_context *ctx, pid_t pid, int syscall);
 
 PyObject *core_trace_loop(struct trace_context *ctx, pid_t pid);
+
+int catbox_retval_init(struct trace_context *ctx);
+void catbox_retval_set_exit_code(struct trace_context *ctx, int retcode);
+void catbox_retval_add_violation(struct trace_context *ctx, const char *operation, const char *path);

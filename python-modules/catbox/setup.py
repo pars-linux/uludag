@@ -65,13 +65,13 @@ source = [
     'src/core.c',
     'src/syscall.c',
     'src/paths.c',
+    'src/retval.c',
 ]
 
 setup(
     name='catbox',
     version=version,
-    ext_modules=[Extension('catbox_int', source)],
-    py_modules = ['catbox.catbox'],
+    ext_modules=[Extension('catbox', source)],
     cmdclass = {
         'install' : Install
     }

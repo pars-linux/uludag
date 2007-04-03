@@ -1,5 +1,5 @@
 /*
-** Copyright (c) 2006, TUBITAK/UEKAE
+** Copyright (c) 2006-2007, TUBITAK/UEKAE
 **
 ** This program is free software; you can redistribute it and/or modify it
 ** under the terms of the GNU General Public License as published by the
@@ -46,21 +46,7 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 	arg = ptrace(PTRACE_PEEKUSER, pid, argno * 4, 0);
 	path = get_str(pid, arg);
 	if (!path_writable(ctx->pathlist, pid, path)) {
-		if (ctx->log_func != Py_None) {
-			PyObject *args;
-			PyObject *list;
-			PyObject *a = PyString_FromString(name);
-			PyObject *b = PyString_FromString(path);
-			args = PyTuple_New(2);
-			PyTuple_SetItem(args, 0, PyString_FromString("denied"));
-			list = PyList_New(2);
-			PyList_SetItem(list, 0, a);
-			PyList_SetItem(list, 1, b);
-			//PyObject_SetAttrString(list, "operation", a);
-			//PyObject_SetAttrString(list, "path", b);
-			PyTuple_SetItem(args, 1, list);
-			PyObject_Call(ctx->log_func, args, NULL);
-		}
+		catbox_retval_add_violation(ctx, name, path);
 		return 0;
 	}
 
@@ -157,8 +143,8 @@ found:
         const char* path = get_str(pid, regs.ebx);
         uid_t uid = (uid_t)regs.ecx;
         gid_t gid = (gid_t)regs.edx;
-        PyObject* dict = PyObject_GetAttrString( ctx->ret_object, "ownerships" );
-        PyDict_SetItem( dict, PyString_FromString(path), PyTuple_Pack( 2, PyInt_FromLong(uid), PyInt_FromLong(gid)) );
+//        PyObject* dict = PyObject_GetAttrString( ctx->ret_object, "ownerships" );
+//        PyDict_SetItem( dict, PyString_FromString(path), PyTuple_Pack( 2, PyInt_FromLong(uid), PyInt_FromLong(gid)) );
         return 1;
     }
     if(flags & TRAP_xxMOD) {
@@ -166,8 +152,8 @@ found:
         ptrace(PTRACE_GETREGS, pid, 0, &regs);
         const char* path = get_str(pid, regs.ebx);
         mode_t mode = (mode_t)regs.ecx;
-        PyObject* dict = PyObject_GetAttrString( ctx->ret_object, "modes" );
-        PyDict_SetItem( dict, PyString_FromString(path), PyInt_FromLong(mode) );
+//        PyObject* dict = PyObject_GetAttrString( ctx->ret_object, "modes" );
+//        PyDict_SetItem( dict, PyString_FromString(path), PyInt_FromLong(mode) );
         return 1;
     }
     if(flags & TRAP_xxID) {

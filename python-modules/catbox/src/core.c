@@ -1,5 +1,5 @@
 /*
-** Copyright (c) 2006, TUBITAK/UEKAE
+** Copyright (c) 2006-2007, TUBITAK/UEKAE
 **
 ** This program is free software; you can redistribute it and/or modify it
 ** under the terms of the GNU General Public License as published by the
@@ -219,5 +219,6 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 		}
 	}
 
- 	return PyInt_FromLong(retcode);
+	catbox_retval_set_exit_code(ctx, retcode);
+	return ctx->retval;
 }
