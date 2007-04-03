@@ -145,16 +145,20 @@ class widgetMain(formMain):
         elif reply.command == 'denied':
             if reply.id != 10:
                 KMessageBox.error(self, i18n('You are not allowed to do this operation.'), i18n('Access Denied'))
+                item = self.listServices.selectedItem()
+                self.updateItemStatus(item)
         elif reply.command == 'error':
             KMessageBox.error(self, i18n('COMAR script execution failed.'), i18n('Script Error'))
+            item = self.listServices.selectedItem()
+            self.updateItemStatus(item)
         elif reply.command == 'fail':
             if reply.id in [3, 4]: # System.Service.{start,stop}
                 state = reply.id == 3
                 if state:
-                    KMessageBox.error(self, i18n('Unable to start service.'), i18n('Failed'))
+                    KMessageBox.error(self, reply.data, i18n('Unable to start service'))
                     self.buttonStart.setEnabled(1)
                 else:
-                    KMessageBox.error(self, i18n('Unable to stop service.'), i18n('Failed'))
+                    KMessageBox.error(self, reply.data, i18n('Unable to stop service'))
                     self.buttonStop.setEnabled(1)
 
     def populateList(self):
