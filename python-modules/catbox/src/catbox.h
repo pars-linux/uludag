@@ -21,7 +21,6 @@ struct traced_child {
 	int need_setup;
 	int in_syscall;
 	unsigned long orig_eax;
-    unsigned int  ret;
 };
 
 struct trace_context {

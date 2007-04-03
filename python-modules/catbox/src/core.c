@@ -116,7 +116,6 @@ handle_syscall(struct trace_context *ctx, struct traced_child *kid)
 
     int ret = before_syscall(ctx, kid->pid, syscall);
     if (ret != 0) {
-        kid->ret = ret;
         kid->orig_eax = u_in.orig_eax;
         ptrace(PTRACE_POKEUSER, kid->pid, 44, 0xbadca11); //prevent it by changing syscall
     }
@@ -133,12 +132,7 @@ handle_syscall_return(pid_t pid, struct traced_child *kid)
     syscall = u_in.orig_eax;
     if (syscall == 0xbadca11) {
         ptrace(PTRACE_POKEUSER, pid, 44, kid->orig_eax); //restore the syscall
-        if( kid->ret < 0 )
             ptrace(PTRACE_POKEUSER, pid, 24, -EACCES); //EACCES error
-        else if( kid->ret == 2)
-            ptrace(PTRACE_POKEUSER, pid, 4 * EAX, 0); //return 0 for u/gid
-        else
-            ptrace(PTRACE_POKEUSER, pid, 24, 0); //fail silently
     }
 
     ptrace(PTRACE_SYSCALL, pid, 0, 0);
