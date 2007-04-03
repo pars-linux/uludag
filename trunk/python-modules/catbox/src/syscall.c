@@ -137,7 +137,7 @@ found:
 
     //below we only trap changes to owner/mode within the fishbowl. 
     // The rest are taken care of in the above blocks
-    if(flags & TRAP_xxOWN) {
+    if(0 & TRAP_xxOWN) {
         struct user_regs_struct regs;
         ptrace(PTRACE_GETREGS, pid, 0, &regs);
         const char* path = get_str(pid, regs.ebx);
@@ -147,7 +147,7 @@ found:
 //        PyDict_SetItem( dict, PyString_FromString(path), PyTuple_Pack( 2, PyInt_FromLong(uid), PyInt_FromLong(gid)) );
         return 1;
     }
-    if(flags & TRAP_xxMOD) {
+    if(0 & TRAP_xxMOD) {
         struct user_regs_struct regs;
         ptrace(PTRACE_GETREGS, pid, 0, &regs);
         const char* path = get_str(pid, regs.ebx);
@@ -156,7 +156,7 @@ found:
 //        PyDict_SetItem( dict, PyString_FromString(path), PyInt_FromLong(mode) );
         return 1;
     }
-    if(flags & TRAP_xxID) {
+    if(0 & TRAP_xxID) {
         return 2;
     }
 	return 0;

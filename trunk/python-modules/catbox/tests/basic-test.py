@@ -2,7 +2,7 @@
 
 import sys
 import os
-import catbox.catbox as catbox
+import catbox
 
 def tryRead(path):
     try:
@@ -22,7 +22,7 @@ def tryWrite(path, legal=True):
             return 0
         print "Sandbox error: cannot write '%s': %s" % (path, e)
         return 1
-    
+
     if not legal:
         print "Sandbox violation: wrote '%s'" % path
         return 1
@@ -38,9 +38,7 @@ def test():
     # Try to write to valid places
     ret += tryWrite("catboxtest.txt")
     sys.exit(ret)
-    
-def logger(event, data):
-    print event, data
 
-ret = catbox.run(test, writable_paths=[os.getcwd()], logger=logger)
-sys.exit(ret.ret)
+ret = catbox.run(test, writable_paths=[os.getcwd()])
+sys.exit(ret.code)
+
