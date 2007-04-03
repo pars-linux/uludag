@@ -97,6 +97,11 @@ class widgetMain(formMain):
         # Populate list
         self.populateList()
 
+        # Configuration file
+        self.config = self.parent().config
+        if self.config.readEntry("servers_only") == "off":
+            self.checkServersOnly.setChecked(False)
+
         # Notify list
         self.comar.ask_notify('System.Service.changed', id=1)
 
@@ -229,6 +234,10 @@ class widgetMain(formMain):
         self.textInformation.setText(unicode('\n'.join(info)))
 
     def slotListServers(self):
+        if self.checkServersOnly.isChecked():
+            self.config.writeEntry("servers_only", "on")
+        else:
+            self.config.writeEntry("servers_only", "off")
         item = self.listServices.firstChild()
         while item:
             item.setVisible(not self.checkServersOnly.isChecked() or item.type == 'server')

@@ -20,7 +20,7 @@ from sm_utility import *
 
 mod_name = 'Service Manager'
 mod_app = 'service-manager'
-mod_version = '1.1.6'
+mod_version = '1.2.0'
 
 def AboutData():
     return KAboutData(
@@ -78,6 +78,7 @@ def main():
 
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
+    win.config = KConfig(mod_app)
     win.setCaption(i18n('Service Manager'))
     win.setMinimumSize(620, 420)
     win.resize(620, 420)
