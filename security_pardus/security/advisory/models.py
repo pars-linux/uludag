@@ -122,8 +122,8 @@ class Advisory(models.Model):
         ordering = ["-id"]
 
     class Admin:
-        list_display = ("plsa_id", "title", "publish", "fixed", "release_date", "language")
-        list_display_links = ("plsa_id", "title")
+        list_display = ("id", "plsa_id", "title", "publish", "fixed", "release_date", "language")
+        list_display_links = ("id", "plsa_id", "title")
         search_fields = ("title", "summary", "packages", "references")
         list_filter = ("language", "publish", "fixed")
         save_as = True
