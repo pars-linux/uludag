@@ -200,7 +200,7 @@ class Builder:
             self.sandboxed()
         else:
             import catbox
-            ret = catbox.run(self.sandboxed, ["/var/pisi", "/tmp", "/dev/tty", "/dev/null"])
+            ret = catbox.run(self.sandboxed, [self.pkg_dir(), "/tmp", "/dev/tty", "/dev/null"])
             if ret.violations != []:
                 ctx.ui.error(_("Sandbox violation:") + "\n" + "\n".join(map(str, ret.violations)))
 
