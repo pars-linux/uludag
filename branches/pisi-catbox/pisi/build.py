@@ -196,11 +196,11 @@ class Builder:
         # apply the patches and prepare a source directory for build.
         self.apply_patches()
 
-        if ctx.get_option('sandbox'):
+        if ctx.get_option('ignore_sandbox'):
+            self.sandboxed()
+        else:
             import catbox
             catbox.run(self.sandboxed, ["/var/pisi", "/tmp", "/dev/tty", "/dev/null"])
-        else:
-            self.sandboxed()
 
         # after all, we are ready to build/prepare the packages
         return self.build_packages()

@@ -453,7 +453,7 @@ to be downloaded from a repository containing sources.
                                default=False, help=_("Do not install build dependencies, fail if a build dependency is present"))
         group.add_option("-F", "--package-format", action="store", default='1.1',
                                help=_("PiSi binary package formats: '1.0', '1.1' (default)"))
-        self.parser.add_option("", "--sandbox", action="store_true", default=False,
+        self.parser.add_option("", "--ignore-sandbox", action="store_true", default=False,
                                 help=_("Constrain build process inside the build folder"))
 
     def add_steps_options(self):
