@@ -43,12 +43,18 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 	unsigned long arg;
 	char *path;
 	char *path_copy;
+	int len;
 	int ret;
 
 	arg = ptrace(PTRACE_PEEKUSER, pid, argno * 4, 0);
 	path = get_str(pid, arg);
 	path_copy = strdup(path);
+	len = strlen(path);
+	if (path[len-1] == '/') {
+		path[len-1] = '\0';
+	}
 	ret = path_writable(ctx->pathlist, pid, path, dont_follow);
+printf("ZORT: op %s path [%s] ret %d\n", name, path, ret);
 	if (ret == 0) {
 		catbox_retval_add_violation(ctx, name, path_copy);
 		free(path_copy);
@@ -144,7 +150,7 @@ found:
 		if (!path_arg_writable(ctx, pid, 1, name, flags & DONT_FOLLOW))
 			return -1;
 	}
-
+return 0;
     //below we only trap changes to owner/mode within the fishbowl. 
     // The rest are taken care of in the above blocks
     if(0 & TRAP_xxOWN) {
