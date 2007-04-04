@@ -40,10 +40,10 @@ class Advisory(models.Model):
         return "[PLSA-%s] - %s" % (self.plsa_id, self.title)
 
     def get_packages(self):
-        return [x.split() for x in self.packages.split("\n")]
+        return [x.split() for x in self.packages.split("\n") if x.strip()]
 
     def get_references(self):
-        return self.references.split("\n")
+        return [x.strip() for x in self.references.split("\n") if x.strip()]
 
     def toPrettyString(self):
         import datetime
@@ -85,14 +85,13 @@ class Advisory(models.Model):
 
         tpl.append(_("Affected packages:"))
         tpl.append("")
-        for package in self.packages.split("\n"):
-            name, version = package.split()
+        for package, version in self.get_packages():
             msg = _("all before %s") % version
-            tpl.append("    %s, %s" % (name, msg))
+            tpl.append("    %s, %s" % (package, msg))
         tpl.append("")
         tpl.append("")
 
-        up = [p.split()[0] for p in self.packages.split("\n")]
+        up = [p[0] for p in self.get_packages()]
 
         tpl.append(_("Resolution"))
         tpl.append("=" * len(_("Resolution")))
@@ -107,7 +106,7 @@ class Advisory(models.Model):
             tpl.append(_("References"))
             tpl.append("=" * len(_("References")))
             tpl.append("")
-            for ref in self.references.split("\n"):
+            for ref in self.get_references():
               tpl.append("  * %s" % ref)
             tpl.append("")
 
