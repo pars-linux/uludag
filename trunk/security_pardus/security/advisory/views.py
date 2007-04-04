@@ -18,7 +18,7 @@ def advisory_details(request, lang_code, plsa_id):
 
 def advisory_text(request, lang_code, plsa_id):
     translation.activate(lang_code)
-    advisory = get_object_or_404(Advisory, publish=True, language__code=lang_code, plsa_id=plsa_id)
+    advisory = get_object_or_404(Advisory, language__code=lang_code, plsa_id=plsa_id)
 
     return render_to_response("advisory/advisory_text.html", {"advisory": advisory})
 
@@ -57,7 +57,7 @@ def index(request):
 
 def feed(request, lang_code):
     translation.activate(lang_code)
-    advisories = Advisory.objects.filter(publish=True, language__code=lang_code)[:15]
+    advisories = Advisory.objects.filter(publish=True, language__code=lang_code)[:25]
     site = Site.objects.get_current()
 
     rss = Rss201rev2Feed(title=unicode(_("Pardus Linux Security Advisories")),
