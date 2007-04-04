@@ -196,7 +196,7 @@ class Builder:
         # apply the patches and prepare a source directory for build.
         self.apply_patches()
 
-        if ctx.get_option('use_catbox'):
+        if ctx.get_option('sandbox'):
             import catbox
             catbox.run(self.sandboxed, ["/var/pisi", "/tmp", "/dev/tty", "/dev/null"])
         else:
