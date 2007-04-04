@@ -116,7 +116,6 @@ handle_syscall(struct trace_context *ctx, struct traced_child *kid)
     int ret = before_syscall(ctx, kid->pid, syscall);
     if (ret != 0) {
         kid->orig_eax = u_in.orig_eax;
-if (kid->orig_eax == __NR_mkdir) printf("mkdir trapped %d pid\n", kid->pid);
         ptrace(PTRACE_POKEUSER, kid->pid, 44, 0xbadca11); //prevent it by changing syscall
     }
     ptrace(PTRACE_SYSCALL, kid->pid, 0, 0);
@@ -132,9 +131,7 @@ handle_syscall_return(pid_t pid, struct traced_child *kid)
     syscall = u_in.orig_eax;
     if (syscall == 0xbadca11) {
         ptrace(PTRACE_POKEUSER, pid, 44, kid->orig_eax); //restore the syscall
-printf("trapped call return %d %x\n", kid->orig_eax, syscall);
 if (kid->orig_eax == __NR_mkdir) {
-puts("mkdir return");
             ptrace(PTRACE_POKEUSER, pid, 24, 0); //EACCES error
 } else {
             ptrace(PTRACE_POKEUSER, pid, 24, -EACCES); //EACCES error
