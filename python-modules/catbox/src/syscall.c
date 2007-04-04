@@ -42,15 +42,19 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 {
 	unsigned long arg;
 	char *path;
+	char *path_copy;
 	int ret;
 
 	arg = ptrace(PTRACE_PEEKUSER, pid, argno * 4, 0);
 	path = get_str(pid, arg);
+	path_copy = strdup(path);
 	ret = path_writable(ctx->pathlist, pid, path, dont_follow);
 	if (ret == 0) {
-		catbox_retval_add_violation(ctx, name, path);
+		catbox_retval_add_violation(ctx, name, path_copy);
+		free(path_copy);
 		return 0;
 	}
+	free(path_copy);
 
 	return 1;
 }
@@ -81,7 +85,7 @@ static struct syscall_def {
 	{ __NR_truncate64, "truncate64", CHECK_PATH },
 	{ __NR_unlink,     "unlink",     CHECK_PATH | DONT_FOLLOW },
 	{ __NR_link,       "link",       CHECK_PATH | CHECK_PATH2 },
-	{ __NR_symlink,    "symlink",    CHECK_PATH2 },
+	{ __NR_symlink,    "symlink",    CHECK_PATH2 | DONT_FOLLOW },
 	{ __NR_rename,     "rename",     CHECK_PATH | CHECK_PATH2 },
 	{ __NR_mknod,      "mknod",      CHECK_PATH },
 	{ __NR_chmod,      "chmod",      CHECK_PATH | TRAP_xxMOD },
