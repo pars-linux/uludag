@@ -109,7 +109,7 @@ def checkPortFormat(ports):
         if len(grp) > 2:
             return False
         for p in grp:
-            if not p.isdigit() or 0 > int(p) or int(p) > 65535:
+            if not p.isdigit() or p.startswith("0") or 0 > int(p) or int(p) > 65535:
                 return False
     return True
 
