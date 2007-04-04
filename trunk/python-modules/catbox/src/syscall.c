@@ -54,7 +54,6 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 		path[len-1] = '\0';
 	}
 	ret = path_writable(ctx->pathlist, pid, path, dont_follow);
-printf("ZORT: op %s path [%s] ret %d\n", name, path, ret);
 	if (ret == 0) {
 		catbox_retval_add_violation(ctx, name, path_copy);
 		free(path_copy);
