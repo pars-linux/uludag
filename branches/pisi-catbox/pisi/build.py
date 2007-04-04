@@ -200,7 +200,9 @@ class Builder:
             self.sandboxed()
         else:
             import catbox
-            catbox.run(self.sandboxed, ["/var/pisi", "/tmp", "/dev/tty", "/dev/null"])
+            ret = catbox.run(self.sandboxed, ["/var/pisi", "/tmp", "/dev/tty", "/dev/null"])
+            if ret.violations != []:
+                ctx.ui.error(_("Sandbox violation:") + "\n" + "\n".join(map(str, ret.violations)))
 
         # after all, we are ready to build/prepare the packages
         return self.build_packages()
