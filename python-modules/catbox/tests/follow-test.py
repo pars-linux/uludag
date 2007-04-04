@@ -10,13 +10,18 @@ bad_path = "catboxtest2.link"
 def good_op():
     os.lchown(good_path, os.getuid(), os.getgid())
     os.unlink(good_path)
+    os.symlink("/etc/passwd", good_path)
 
 def bad_op():
     try:
         file(bad_path, "w").write("hello world\n")
     except:
         pass
-    os.chown(bad_path, os.getuid(), os.getgid())
+    try:
+        os.chown(bad_path, os.getuid(), os.getgid())
+    except:
+        pass
+    os.symlink("/etc/passwd", "/tmp/catboxtest.link")
 
 def mklink(dest, source):
     if os.path.exists(source):
@@ -32,4 +37,4 @@ assert(ret.violations == [])
 
 ret = catbox.run(bad_op, writable_paths=[os.getcwd()])
 assert(ret.code == 1)
-assert(map(lambda x: x[0], ret.violations) == ["open", "chown32"])
+assert(map(lambda x: x[0], ret.violations) == ["open", "chown32", "symlink"])

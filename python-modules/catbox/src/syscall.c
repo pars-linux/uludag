@@ -79,7 +79,7 @@ static struct syscall_def {
 	{ __NR_truncate64, "truncate64", CHECK_PATH },
 	{ __NR_unlink,     "unlink",     CHECK_PATH | DONT_FOLLOW },
 	{ __NR_link,       "link",       CHECK_PATH | CHECK_PATH2 },
-	{ __NR_symlink,    "symlink",    CHECK_PATH | CHECK_PATH2 },
+	{ __NR_symlink,    "symlink",    CHECK_PATH2 },
 	{ __NR_rename,     "rename",     CHECK_PATH | CHECK_PATH2 },
 	{ __NR_mknod,      "mknod",      CHECK_PATH },
 	{ __NR_chmod,      "chmod",      CHECK_PATH | TRAP_xxMOD },
