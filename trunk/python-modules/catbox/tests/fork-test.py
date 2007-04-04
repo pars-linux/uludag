@@ -1,11 +1,8 @@
 #!/usr/bin/python
 
 import os
-import catbox.catbox as catbox
+import catbox
 import sys
-
-def logger(event, data):
-    print event, data
 
 def tryWrite(who, path="/tmp/catboxtest.txt"):
     try:
@@ -40,4 +37,5 @@ def test():
         tryWrite("parent")
     tryWrite("parent")
 
-catbox.run(test, writable_paths=[os.getcwd()], logger=logger)
+ret = catbox.run(test, writable_paths=[os.getcwd()])
+assert(len(ret.violations) == 106)
