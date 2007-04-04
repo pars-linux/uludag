@@ -42,10 +42,12 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 {
 	unsigned long arg;
 	char *path;
+	int ret;
 
 	arg = ptrace(PTRACE_PEEKUSER, pid, argno * 4, 0);
 	path = get_str(pid, arg);
-	if (!path_writable(ctx->pathlist, pid, path, dont_follow)) {
+	ret = path_writable(ctx->pathlist, pid, path, dont_follow);
+	if (ret == 0) {
 		catbox_retval_add_violation(ctx, name, path);
 		return 0;
 	}
