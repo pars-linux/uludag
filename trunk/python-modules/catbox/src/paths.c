@@ -54,6 +54,7 @@ path_writable(char **pathlist, pid_t pid, char *path, int dont_follow)
 
 	if (!dont_follow) {
 		canonical = realpath(path, NULL);
+		if (errno == ENAMETOOLONG) return -1;
 	}
 	if (!canonical) {
 		if (errno == ENOENT || dont_follow) {
