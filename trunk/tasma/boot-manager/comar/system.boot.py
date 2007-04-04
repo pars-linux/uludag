@@ -82,10 +82,11 @@ class grubConfLock:
 # System.Boot
 
 GRUB_CONF = "/boot/grub/grub.conf"
+TIMEOUT = 3.0
 
 def listOptions():
     try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
     options = "\n".join(grub.config.getAllOptions())
@@ -94,7 +95,7 @@ def listOptions():
 
 def getOption(key):
     try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
     option = grub.config.getOption(key)
@@ -103,16 +104,20 @@ def getOption(key):
 
 def setOption(key, value):
     try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=3.0)
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
-    grub.config.setOption(key, value)
+    if value:
+        grub.config.setOption(key, value)
+    else:
+        grub.config.unsetOption(key)
     grub.release()
-    notify("System.Boot.changed", "")
+    notify("System.Boot.changed", "option")
+    return "%s %s" % (key, value)
 
 def listEntries():
     try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
     entries = "\n".join(grub.config.listEntries())
@@ -121,7 +126,7 @@ def listEntries():
 
 def getEntry(index):
     try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=3.0)
+        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
     entry = grub.config.getEntry(int(index))
@@ -137,12 +142,43 @@ def getEntry(index):
     grub.release()
     return "\n\n".join(ret)
 
-def updateKernelEntry(version, max_entries=3, make_default="on"):
+def removeEntry(index):
     try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=3.0)
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
-        
+    index = int(index)
+    grub.config.removeEntry(grub.config.entries[index])
+    default_index = int(grub.config.options.get("default", 0))
+    if default_index == index and default_index > 0:
+        grub.config.setOption("default", default_index - 1)
+    grub.release()
+    notify("System.Boot.changed", "entry")
+
+def addEntry(title, commands):
+    try:
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+    except IOError:
+        fail("Timeout")
+    new_entry = grubEntry(title)
+    for command in commands.split("\n\n"):
+        key, opts, value = command.split("\n")
+        if opts == " ":
+            opts = []
+        else:
+            opts = opts.split()
+        new_entry.setCommand(key, value, opts)
+    grub.config.addEntry(new_entry)
+    index = grub.config.indexOf(new_entry)
+    grub.release()
+    notify("System.Boot.changed", "entry")
+
+def updateKernelEntry(version, max_entries=3, make_default="on"):
+    try:
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+    except IOError:
+        fail("Timeout")
+    
     max_entries = int(max_entries)
     
     new_version, new_suffix = parseVersion("kernel-%s" % version)
@@ -151,6 +187,10 @@ def updateKernelEntry(version, max_entries=3, make_default="on"):
     
     entries = filter(lambda x: isPardusEntry(x, root_grub, new_suffix), grub.config.entries)
     
+    default_index = grub.config.options.get("default", 0)
+    default_entry = grub.config.entries[int(default_index)]
+    
+    updated_index = None
     action = None
     if not len(entries):
         action = "append"
@@ -162,7 +202,8 @@ def updateKernelEntry(version, max_entries=3, make_default="on"):
         if new_version in kernels:
             if make_default == "on":
                 entry = kernels[new_version]
-                grub.config.setOption("default", grub.config.indexOf(entry))
+                updated_index = grub.config.indexOf(entry)
+                grub.config.setOption("default", updated_index)
         else:
             action = "insert"
     
@@ -190,7 +231,10 @@ def updateKernelEntry(version, max_entries=3, make_default="on"):
                 grub.config.removeEntry(x)
         
         if make_default == "on":
-            grub.config.setOption("default", grub.config.indexOf(new_entry))
+            updated_index = grub.config.indexOf(new_entry)
+        else:
+            updated_index = grub.config.indexOf(default_entry)
+        grub.config.setOption("default", updated_index)
     
     grub.release()
-    notify("System.Boot.changed", "")
+    notify("System.Boot.changed", "entry")
