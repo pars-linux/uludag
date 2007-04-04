@@ -4,18 +4,24 @@ import os
 import sys
 import catbox
 
-path = "catboxtest.link"
+def good_op():
+    os.unlink("catboxtest.link")
 
-def test():
-    os.unlink(path)
+def bad_op():
+    file("catboxtest2.link", "w").write("hello world\n")
 
-if os.path.exists(path):
-    os.unlink(path)
+def mklink(dest, source):
+    if os.path.exists(source):
+        os.unlink(source)
+    os.symlink(dest, source)
 
-os.symlink("/var", "catboxtest.link")
-ret = catbox.run(test, writable_paths=[os.getcwd()])
-if ret.code:
-    print "Sandbox error: cannot remove '%s'" % path
+mklink("/var", "catboxtest.link")
+mklink("/tmp/hede", "catboxtest2.link")
 
-sys.exit(ret.code)
+ret = catbox.run(good_op, writable_paths=[os.getcwd()])
+assert(ret.code == 0)
+assert(ret.violations == [])
 
+ret = catbox.run(bad_op, writable_paths=[os.getcwd()])
+assert(ret.code == 1)
+assert(len(ret.violations) == 1)

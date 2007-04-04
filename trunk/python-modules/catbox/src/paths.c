@@ -31,7 +31,7 @@ get_cwd(pid_t pid)
 }
 
 int
-path_writable(char **pathlist, pid_t pid, char *path)
+path_writable(char **pathlist, pid_t pid, char *path, int dont_follow)
 {
 	// FIXME: spaghetti code ahead
 	char *canonical = NULL;
@@ -52,9 +52,11 @@ path_writable(char **pathlist, pid_t pid, char *path)
 		path = tmp;
 	}
 
-	canonical = realpath(path, NULL);
+	if (!dont_follow) {
+		canonical = realpath(path, NULL);
+	}
 	if (!canonical) {
-		if (errno == ENOENT) {
+		if (errno == ENOENT || dont_follow) {
 			char *t;
 			t = strrchr(path, '/');
 			if (t && t[1] != '\0') {

@@ -38,14 +38,14 @@ get_str(pid_t pid, unsigned long ptr)
 }
 
 static int
-path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *name)
+path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *name, int dont_follow)
 {
 	unsigned long arg;
 	char *path;
 
 	arg = ptrace(PTRACE_PEEKUSER, pid, argno * 4, 0);
 	path = get_str(pid, arg);
-	if (!path_writable(ctx->pathlist, pid, path)) {
+	if (!path_writable(ctx->pathlist, pid, path, dont_follow)) {
 		catbox_retval_add_violation(ctx, name, path);
 		return 0;
 	}
@@ -55,6 +55,10 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 
 #define CHECK_PATH 1
 #define CHECK_PATH2 2
+#define LOG_OWNER 4
+#define LOG_MODE 8
+#define FAKE_ID 16
+#define DONT_FOLLOW 32
 
 // TRAP_xxxxx check for remode operations
 // xxown(): get the real uid/gid, store path and replace with process uid/gid
@@ -66,37 +70,37 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 
 static struct syscall_def {
 	int no;
-	unsigned int flags;
 	const char *name;
+	unsigned int flags;
 } system_calls[] = {
-	{ __NR_open,       CHECK_PATH, "open" },
-	{ __NR_creat,      CHECK_PATH, "creat" },
-	{ __NR_truncate,   CHECK_PATH, "truncate" },
-	{ __NR_truncate64, CHECK_PATH, "truncate64" },
-	{ __NR_unlink,     CHECK_PATH, "unlink" },
-	{ __NR_link,       CHECK_PATH | CHECK_PATH2, "link" },
-	{ __NR_symlink,    CHECK_PATH | CHECK_PATH2, "symlink" },
-	{ __NR_rename,     CHECK_PATH | CHECK_PATH2, "rename" },
-	{ __NR_mknod,      CHECK_PATH, "mknod" },
-	{ __NR_chmod,      CHECK_PATH | TRAP_xxMOD, "chmod" },
-	{ __NR_lchown,     CHECK_PATH | TRAP_xxOWN, "lchown" },
-	{ __NR_chown,      CHECK_PATH | TRAP_xxOWN, "chown" },
-	{ __NR_lchown32,   CHECK_PATH | TRAP_xxOWN, "lchown32" },
-	{ __NR_chown32,    CHECK_PATH | TRAP_xxOWN, "chown32" },
-	{ __NR_mkdir,      CHECK_PATH, "mkdir" },
-	{ __NR_rmdir,      CHECK_PATH, "rmdir" },
-	{ __NR_mount,      CHECK_PATH, "mount" },
-	{ __NR_umount,     CHECK_PATH, "umount" },
-	{ __NR_utime,      CHECK_PATH, "utime" },
-    { __NR_getuid,     TRAP_xxID, "getuid" },
-    { __NR_getuid32,   TRAP_xxID, "getuid32" },
-    { __NR_geteuid,    TRAP_xxID, "geteuid" },
-    { __NR_geteuid32,  TRAP_xxID, "geteuid32" },
-    { __NR_getgid,     TRAP_xxID, "getgid" },
-    { __NR_getgid32,   TRAP_xxID, "getgid32" },
-    { __NR_getegid,    TRAP_xxID, "getegid" },
-    { __NR_getegid32,  TRAP_xxID, "getegid32" },
-	{ 0, 0, NULL }
+	{ __NR_open,       "open",       CHECK_PATH },
+	{ __NR_creat,      "creat",      CHECK_PATH },
+	{ __NR_truncate,   "truncate",   CHECK_PATH },
+	{ __NR_truncate64, "truncate64", CHECK_PATH },
+	{ __NR_unlink,     "unlink",     CHECK_PATH | DONT_FOLLOW },
+	{ __NR_link,       "link",       CHECK_PATH | CHECK_PATH2 },
+	{ __NR_symlink,    "symlink",    CHECK_PATH | CHECK_PATH2 },
+	{ __NR_rename,     "rename",     CHECK_PATH | CHECK_PATH2 },
+	{ __NR_mknod,      "mknod",      CHECK_PATH },
+	{ __NR_chmod,      "chmod",      CHECK_PATH | TRAP_xxMOD },
+	{ __NR_lchown,     "lchown",     CHECK_PATH | TRAP_xxOWN },
+	{ __NR_chown,      "chown",      CHECK_PATH | TRAP_xxOWN },
+	{ __NR_lchown32,   "lchown32",   CHECK_PATH | TRAP_xxOWN },
+	{ __NR_chown32,    "chown32",    CHECK_PATH | TRAP_xxOWN },
+	{ __NR_mkdir,      "mkdir",      CHECK_PATH },
+	{ __NR_rmdir,      "rmdir",      CHECK_PATH },
+	{ __NR_mount,      "mount",      CHECK_PATH },
+	{ __NR_umount,     "umount",     CHECK_PATH },
+	{ __NR_utime,      "utime",      CHECK_PATH },
+	{ __NR_getuid,     "getuid",     TRAP_xxID },
+	{ __NR_getuid32,   "getuid32",   TRAP_xxID },
+	{ __NR_geteuid,    "geteuid",    TRAP_xxID },
+	{ __NR_geteuid32,  "geteuid32",  TRAP_xxID },
+	{ __NR_getgid,     "getgid",     TRAP_xxID },
+	{ __NR_getgid32,   "getgid32",   TRAP_xxID },
+	{ __NR_getegid,    "getegid",    TRAP_xxID },
+	{ __NR_getegid32,  "getegid32",  TRAP_xxID },
+	{ 0, NULL, 0 }
 };
 
 int
@@ -110,7 +114,7 @@ before_syscall(struct trace_context *ctx, pid_t pid, int syscall)
 		// open(path, flags, mode)
 		flags = ptrace(PTRACE_PEEKUSER, pid, 4, 0);
 		if (flags & O_WRONLY || flags & O_RDWR) {
-			if (!path_arg_writable(ctx, pid, 0, "open"))
+			if (!path_arg_writable(ctx, pid, 0, "open", 0))
 				return -1;
 		}
 		return 0;
@@ -126,12 +130,12 @@ found:
 	name = system_calls[i].name;
 
 	if (flags & CHECK_PATH) {
-		if (!path_arg_writable(ctx, pid, 0, name))
+		if (!path_arg_writable(ctx, pid, 0, name, flags & DONT_FOLLOW))
 			return -1;
 	}
 
 	if (flags & CHECK_PATH2) {
-		if (!path_arg_writable(ctx, pid, 1, name))
+		if (!path_arg_writable(ctx, pid, 1, name, flags & DONT_FOLLOW))
 			return -1;
 	}
 
