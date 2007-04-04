@@ -200,19 +200,18 @@ class Builder:
             self.sandboxed()
         else:
             import catbox
-            ret = catbox.run(self.sandboxed, [self.pkg_dir(), "/tmp", "/dev/tty", "/dev/null"])
+            ret = catbox.run(self.sandboxed, [self.pkg_dir(), "/tmp", "/dev/tty", "/proc", "/dev/null"])
             if ret.violations != []:
                 ctx.ui.error(_("Sandbox violation:") + "\n" + "\n".join(map(str, ret.violations)))
 
-        # after all, we are ready to build/prepare the packages
-        return self.build_packages()
-    
-    def sandboxed(self):
         self.run_setup_action()
         self.run_build_action()
         if ctx.get_option('debug') and not ctx.get_option('ignore_check'):
             self.run_check_action()
         self.run_install_action()
+
+        # after all, we are ready to build/prepare the packages
+        return self.build_packages()
 
     def set_environment_vars(self):
         """Sets the environment variables for actions API to use"""
@@ -424,9 +423,14 @@ class Builder:
         curDir = os.getcwd()
         os.chdir(self.srcDir)
 
-
         if func in self.actionLocals:
-            self.actionLocals[func]()
+            if ctx.get_option('ignore_sandbox'):
+                self.actionLocals[func]()
+            else:
+                import catbox
+                ret = catbox.run(self.actionLocals[func], [self.pkg_dir(), "/tmp", "/dev/tty", "/proc", "/dev/null"])
+                if ret.violations != []:
+                    ctx.ui.error(_("Sandbox violation:") + "\n" + "\n".join(map(str, ret.violations)))
         else:
             if mandatory:
                 Error, _("unable to call function from actions: %s") %func
