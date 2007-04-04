@@ -132,7 +132,7 @@ handle_syscall_return(pid_t pid, struct traced_child *kid)
     if (syscall == 0xbadca11) {
         ptrace(PTRACE_POKEUSER, pid, 44, kid->orig_eax); //restore the syscall
 if (kid->orig_eax == __NR_mkdir) {
-            ptrace(PTRACE_POKEUSER, pid, 24, 0); //EACCES error
+            ptrace(PTRACE_POKEUSER, pid, 24, -EEXIST); //EACCES error
 } else {
             ptrace(PTRACE_POKEUSER, pid, 24, -EACCES); //EACCES error
 }
