@@ -4,11 +4,18 @@
 
 {% block content %}
     <h2>{% blocktrans %}Advisories of {{ year }}{% endblocktrans %}</h2>
-    <ul>
-    {% for advisory in advisories %}
-        <li><a href="/{{ advisory.language.code }}/{{ advisory.plsa_id|escape }}/">[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</a></li>
-    {% endfor %}
-    </ul>
+    <table>
+        <tr class="row0">
+            <th>{% trans "Release Date" %}</th>
+            <th>{% trans "Advisory" %}</th>
+        </tr>
+        {% for advisory in advisories %}
+        <tr class="{% cycle row1,row2 %}">
+            <td>{{ advisory.release_date|escape }}</td>
+            <td><a href="/{{ advisory.language.code }}/{{ advisory.plsa_id|escape }}/">[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
 
 {% block menu %}
