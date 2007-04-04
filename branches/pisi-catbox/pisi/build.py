@@ -196,14 +196,6 @@ class Builder:
         # apply the patches and prepare a source directory for build.
         self.apply_patches()
 
-        if ctx.get_option('ignore_sandbox'):
-            self.sandboxed()
-        else:
-            import catbox
-            ret = catbox.run(self.sandboxed, [self.pkg_dir(), "/tmp", "/dev/tty", "/proc", "/dev/null"])
-            if ret.violations != []:
-                ctx.ui.error(_("Sandbox violation:") + "\n" + "\n".join(map(str, ret.violations)))
-
         self.run_setup_action()
         self.run_build_action()
         if ctx.get_option('debug') and not ctx.get_option('ignore_check'):
