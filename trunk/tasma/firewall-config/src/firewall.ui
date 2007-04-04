@@ -40,13 +40,6 @@
                     <height>0</height>
                 </size>
             </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>231</red>
-                    <green>231</green>
-                    <blue>255</blue>
-                </color>
-            </property>
             <property name="frameShape">
                 <enum>StyledPanel</enum>
             </property>
@@ -60,118 +53,141 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLabel" row="1" column="2" rowspan="1" colspan="2">
+                <widget class="QLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>textStatus2</cstring>
+                        <cstring>layout4</cstring>
                     </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                        <size>
-                            <width>0</width>
-                            <height>0</height>
-                        </size>
-                    </property>
-                    <property name="maximumSize">
-                        <size>
-                            <width>32767</width>
-                            <height>75</height>
-                        </size>
-                    </property>
-                    <property name="text">
-                        <string>Click here to stop the firewall and allow all incoming connections.</string>
-                    </property>
-                    <property name="alignment">
-                        <set>WordBreak|AlignVCenter|AlignLeft</set>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="1" column="1">
-                    <property name="name">
-                        <cstring>pushStatus</cstring>
-                    </property>
-                    <property name="maximumSize">
-                        <size>
-                            <width>180</width>
-                            <height>32767</height>
-                        </size>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Stop</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+S</string>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0" rowspan="2" colspan="1">
-                    <property name="name">
-                        <cstring>pixmapFW</cstring>
-                    </property>
-                    <property name="maximumSize">
-                        <size>
-                            <width>48</width>
-                            <height>48</height>
-                        </size>
-                    </property>
-                    <property name="margin">
-                        <number>5</number>
-                    </property>
-                    <property name="scaledContents">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="1" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>textStatus</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>5</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                        <size>
-                            <width>0</width>
-                            <height>0</height>
-                        </size>
-                    </property>
-                    <property name="maximumSize">
-                        <size>
-                            <width>32767</width>
-                            <height>50</height>
-                        </size>
-                    </property>
-                    <property name="paletteForegroundColor">
-                        <color>
-                            <red>41</red>
-                            <green>182</green>
-                            <blue>31</blue>
-                        </color>
-                    </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>231</red>
-                            <green>231</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="backgroundOrigin">
-                        <enum>WidgetOrigin</enum>
-                    </property>
-                    <property name="text">
-                        <string>&lt;b&gt;&lt;font size="+1"&gt;Firewall is running&lt;/font&gt;&lt;/b&gt;</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignVCenter|AlignLeft</set>
-                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>pixmapFW</cstring>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>48</width>
+                                    <height>48</height>
+                                </size>
+                            </property>
+                            <property name="margin">
+                                <number>5</number>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout3</cstring>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>textStatus</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>5</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>0</width>
+                                            <height>0</height>
+                                        </size>
+                                    </property>
+                                    <property name="maximumSize">
+                                        <size>
+                                            <width>32767</width>
+                                            <height>50</height>
+                                        </size>
+                                    </property>
+                                    <property name="paletteForegroundColor">
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="backgroundOrigin">
+                                        <enum>WidgetOrigin</enum>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;b&gt;&lt;font size="+1"&gt;Firewall is running&lt;/font&gt;&lt;/b&gt;</string>
+                                    </property>
+                                    <property name="alignment">
+                                        <set>AlignVCenter|AlignLeft</set>
+                                    </property>
+                                </widget>
+                                <widget class="QLayoutWidget">
+                                    <property name="name">
+                                        <cstring>layout2</cstring>
+                                    </property>
+                                    <hbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <widget class="QPushButton">
+                                            <property name="name">
+                                                <cstring>pushStatus</cstring>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>180</width>
+                                                    <height>32767</height>
+                                                </size>
+                                            </property>
+                                            <property name="text">
+                                                <string>&amp;Stop</string>
+                                            </property>
+                                            <property name="accel">
+                                                <string>Alt+S</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QLabel">
+                                            <property name="name">
+                                                <cstring>textStatus2</cstring>
+                                            </property>
+                                            <property name="sizePolicy">
+                                                <sizepolicy>
+                                                    <hsizetype>5</hsizetype>
+                                                    <vsizetype>0</vsizetype>
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>0</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>32767</width>
+                                                    <height>75</height>
+                                                </size>
+                                            </property>
+                                            <property name="text">
+                                                <string>Click here to stop the firewall and allow all incoming connections.</string>
+                                            </property>
+                                            <property name="alignment">
+                                                <set>WordBreak|AlignVCenter|AlignLeft</set>
+                                            </property>
+                                        </widget>
+                                    </hbox>
+                                </widget>
+                            </vbox>
+                        </widget>
+                    </hbox>
                 </widget>
             </grid>
         </widget>
@@ -243,8 +259,8 @@
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>231</red>
-                                <green>231</green>
+                                <red>255</red>
+                                <green>255</green>
                                 <blue>255</blue>
                             </color>
                         </property>
@@ -252,7 +268,7 @@
                             <enum>StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                            <enum>Raised</enum>
+                            <enum>Sunken</enum>
                         </property>
                         <property name="title">
                             <string></string>
@@ -357,8 +373,8 @@
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>231</red>
-                                <green>231</green>
+                                <red>255</red>
+                                <green>255</green>
                                 <blue>255</blue>
                             </color>
                         </property>
@@ -366,7 +382,7 @@
                             <enum>StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                            <enum>Raised</enum>
+                            <enum>Sunken</enum>
                         </property>
                         <property name="title">
                             <string></string>
