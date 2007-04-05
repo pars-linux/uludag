@@ -96,7 +96,7 @@ do_rem:
 
 
 
-PyObject *
+static PyObject *
 core_trace_loop(struct trace_context *ctx, pid_t pid)
 {
 	int status;
@@ -155,4 +155,63 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 
 	catbox_retval_set_exit_code(ctx, retcode);
 	return ctx->retval;
+}
+
+int got_sig = 0;
+
+static void sigusr1(int dummy) {
+	got_sig = 1;
+}
+
+PyObject *
+catbox_core_run(struct trace_context *ctx)
+{
+	void (*oldsig)(int);
+	pid_t pid;
+
+	got_sig = 0;
+	oldsig = signal(SIGUSR1, sigusr1);
+
+	pid = fork();
+	if (pid == (pid_t) -1) {
+		PyErr_SetString(PyExc_RuntimeError, "fork failed");
+		return NULL;
+	}
+
+	if (pid == 0) {
+		// child process
+		PyObject *ret;
+		ptrace(PTRACE_TRACEME, 0, 0, 0);
+		kill(getppid(), SIGUSR1); //send a signal to parent
+		while (!got_sig) ; //wait for confirmation
+
+		ret = PyObject_Call(ctx->func, PyTuple_New(0), NULL); //run the callable
+        
+		if (!ret) { //handle exception
+			PyObject *e;
+			PyObject *val;
+			PyObject *tb;
+			PyErr_Fetch(&e, &val, &tb);
+			if (PyErr_GivenExceptionMatches(e, PyExc_SystemExit)) {
+				// extract exit code
+				if (PyInt_Check(val))
+					exit(PyInt_AsLong(val));
+				else
+					exit(2);
+			}
+			// error
+			exit(1);
+		}
+		exit(0);
+	}
+
+	// parent process
+	while (!got_sig) ; //wait for the signal from child
+	kill(pid, SIGUSR1); //send a confirmation
+	waitpid(pid, NULL, 0); // ??
+
+	setup_kid(pid);
+	ptrace(PTRACE_SYSCALL, pid, 0, (void *) SIGUSR1);
+
+	return core_trace_loop(ctx, pid);
 }
