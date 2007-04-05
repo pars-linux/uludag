@@ -45,6 +45,19 @@ canonical_path(pid_t pid, char *path, int dont_follow)
 		path[len-1] = '\0';
 	}
 
+	// Special case for very special /proc/self symlink
+	// This link resolves to the /proc/1234 (pid number)
+	// since we are parent process, we get a diffent view
+	// of filesystem if we let realpath to resolve this.
+	if (strncmp(path, "/proc/self", 10) == 0) {
+		char *tmp;
+		tmp = malloc(strlen(path) + 20);
+		if (!tmp) return NULL;
+		sprintf(tmp, "/proc/%d/%s", pid, path + 10);
+		pwd = tmp;
+		path = tmp;
+	}
+
 	// prepend current dir to the relative paths
 	if (path[0] != '/') {
 		char *tmp;
@@ -65,7 +78,7 @@ canonical_path(pid_t pid, char *path, int dont_follow)
 		}
 	}
 	if (!canonical) {
-		if (errno == ENOENT || dont_follow) {
+		if (dont_follow || errno == ENOENT) {
 			char *t;
 			t = strrchr(path, '/');
 			if (t && t[1] != '\0') {
