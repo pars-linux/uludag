@@ -1,0 +1,11 @@
+* write a test for /proc/self case
+* revive speed-test.py
+* fix the unnecessary mkdir -p /var/pisi/.. violation messages
+* implement action=log/deny/stop argument, write a test case
+* implement logger=(myfunc) argument, write a test case
+* reactivate chown/chmod log code
+* allow optional logging of read accesses
+* cleanup canonical_path() function more
+* document internals
+* anything else? :)
+
