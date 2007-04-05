@@ -4,6 +4,8 @@ import sys
 import os
 import catbox
 
+normal_count = None
+
 def testMaxPath():
     count = 1
     while True:
@@ -15,13 +17,15 @@ def testMaxPath():
             os.rmdir(name)
         except OSError, e:
             if e.errno == 36:
-                print "max name", count
+                if normal_count != None and count != normal_count:
+                    print "Expected count %d, calculated %d" % (normal_count, count)
+                    sys.exit(1)
                 return count
             print e
             raise
         count += 1
 
-testMaxPath()
+normal_count = testMaxPath()
 
 ret = catbox.run(testMaxPath, [os.getcwd()])
 assert(ret.code == 0)
