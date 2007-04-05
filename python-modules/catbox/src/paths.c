@@ -30,31 +30,39 @@ get_cwd(pid_t pid)
 	return buf2;
 }
 
-int
-path_writable(char **pathlist, pid_t pid, char *path, int dont_follow)
+char *
+canonical_path(pid_t pid, char *path, int dont_follow)
 {
 	// FIXME: spaghetti code ahead
 	char *canonical = NULL;
 	char *pwd = NULL;
-	int ret = 0;
-	int i;
+	size_t len;
 	int flag = 0;
 
-	if (!pathlist) return 0;
+	len = strlen(path);
+	// strip last character if it is a dir separator
+	if (path[len-1] == '/') {
+		path[len-1] = '\0';
+	}
 
+	// prepend current dir to the relative paths
 	if (path[0] != '/') {
 		char *tmp;
 		pwd = get_cwd(pid);
-		if (!pwd) return 0;
+		if (!pwd) return NULL;
 		tmp = malloc(strlen(path) + 2 + strlen(pwd));
-		if (!tmp) return 0;
+		if (!tmp) return NULL;
 		sprintf(tmp, "%s/%s", pwd, path);
 		path = tmp;
 	}
 
+	// resolve symlinks in the path
 	if (!dont_follow) {
 		canonical = realpath(path, NULL);
-		if (errno == ENAMETOOLONG) return -1;
+		if (!canonical && errno == ENAMETOOLONG) {
+			if (pwd) free(path);
+			return NULL;
+		}
 	}
 	if (!canonical) {
 		if (errno == ENOENT || dont_follow) {
@@ -65,27 +73,37 @@ path_writable(char **pathlist, pid_t pid, char *path, int dont_follow)
 				*t = '\0';
 				flag = 1;
 				canonical = realpath(path, NULL);
-				if (!canonical) {
-					goto out;
-				}
-				goto turka;
 			}
-		}
-		goto out;
-	}
-turka:
-	for (i = 0; pathlist[i]; i++) {
-		size_t size = strlen(pathlist[i]);
-		if (flag == 1 && pathlist[i][size-1] == '/') --size;
-		if (strncmp(pathlist[i], canonical, size) == 0) {
-			ret = 1;
-			goto out;
 		}
 	}
 
-out:
-	if (canonical) free(canonical);
 	if (pwd) free(path);
+
+	return canonical;
+}
+
+int
+path_writable(char **pathlist, pid_t pid, char *path, int dont_follow)
+{
+	char *canonical = NULL;
+	int ret = 0;
+	int i;
+
+	if (!pathlist) return 0;
+
+	canonical = canonical_path(pid, path, dont_follow);
+	if (!canonical) return -1;
+
+	for (i = 0; pathlist[i]; i++) {
+		size_t size = strlen(pathlist[i]);
+		//if (flag == 1 && pathlist[i][size-1] == '/') --size;
+		if (strncmp(pathlist[i], canonical, size) == 0) {
+			ret = 1;
+			break;
+		}
+	}
+
+	if (canonical) free(canonical);
 
 	return ret;
 }
