@@ -12,6 +12,7 @@ def testMaxPath():
             if os.path.exists(name):
                 os.rmdir(name)
             os.mkdir(name)
+            os.rmdir(name)
         except OSError, e:
             if e.errno == 36:
                 print "max name", count
