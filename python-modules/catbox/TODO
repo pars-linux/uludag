@@ -7,5 +7,7 @@
 * allow optional logging of read accesses
 * cleanup canonical_path() function more
 * document internals
+* export canonical_path() to the python, and write test cases
+* document api and usage with examples
 * anything else? :)
 
