@@ -36,8 +36,6 @@ int path_writable(char **pathlist, pid_t pid, char *path, int dont_follow);
 void free_pathlist(char **pathlist);
 char **make_pathlist(PyObject *paths);
 
-int before_syscall(struct trace_context *ctx, pid_t pid, int syscall);
-
 PyObject *core_trace_loop(struct trace_context *ctx, pid_t pid);
 
 int catbox_retval_init(struct trace_context *ctx);
