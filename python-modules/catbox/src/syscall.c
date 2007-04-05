@@ -70,9 +70,10 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 #define LOG_MODE 8
 #define FAKE_ID 16
 #define DONT_FOLLOW 32
+#define NET_CALL 64
 
 // TRAP_xxxxx check for remode operations
-// xxown(): get the real uid/gid, store path and replace with process uid/gid
+// xxown(): get the real uid/gid, store path
 // xxmod(): get the real mode
 // xxid(): return uid=0, gid=0
 #define TRAP_xxOWN 4
@@ -111,6 +112,7 @@ static struct syscall_def {
 	{ __NR_getgid32,   "getgid32",   TRAP_xxID },
 	{ __NR_getegid,    "getegid",    TRAP_xxID },
 	{ __NR_getegid32,  "getegid32",  TRAP_xxID },
+	{ __NR_socketcall, "socketcall", NET_CALL },
 	{ 0, NULL, 0 }
 };
 
@@ -149,6 +151,12 @@ found:
 		if (!path_arg_writable(ctx, pid, 1, name, flags & DONT_FOLLOW))
 			return -1;
 	}
+
+	if (flags & NET_CALL && !ctx->network_allowed) {
+		catbox_retval_add_violation(ctx, "socketcall", "");
+		return -1;
+	}
+
 return 0;
     //below we only trap changes to owner/mode within the fishbowl. 
     // The rest are taken care of in the above blocks

@@ -27,6 +27,7 @@ struct trace_context {
 	PyObject *func;
 	PyObject *retval;
 	char **pathlist;
+	int network_allowed;
 	unsigned int nr_children;
 	struct traced_child children[512];
 };

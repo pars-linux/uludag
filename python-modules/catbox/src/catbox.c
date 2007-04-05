@@ -81,14 +81,16 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 	static char *kwlist[] = {
 		"function",
 		"writable_paths",
+		"network",
 		NULL
 	};
 	PyObject *ret;
 	PyObject *paths = NULL;
+	PyObject *net = NULL;
 	struct trace_context ctx;
 
 	memset(&ctx, 0, sizeof(struct trace_context));
-	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|O", kwlist, &ctx.func, &paths))
+	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|OO", kwlist, &ctx.func, &paths, &net))
 		return NULL;
 
 	if (PyCallable_Check(ctx.func) == 0) {
@@ -100,6 +102,11 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 		ctx.pathlist = make_pathlist(paths);
 		if (!ctx.pathlist) return NULL;
 	}
+
+	if (net == NULL || PyObject_IsTrue(net))
+		ctx.network_allowed = 1;
+	else
+		ctx.network_allowed = 0;
 
 	catbox_retval_init(&ctx);
 
