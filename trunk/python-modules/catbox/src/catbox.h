@@ -36,10 +36,10 @@ int path_writable(char **pathlist, pid_t pid, char *path, int dont_follow);
 void free_pathlist(char **pathlist);
 char **make_pathlist(PyObject *paths);
 
-PyObject *core_trace_loop(struct trace_context *ctx, pid_t pid);
-
 int catbox_retval_init(struct trace_context *ctx);
 void catbox_retval_set_exit_code(struct trace_context *ctx, int retcode);
 void catbox_retval_add_violation(struct trace_context *ctx, const char *operation, const char *path);
+
+PyObject *catbox_core_run(struct trace_context *ctx);
 
 void catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid);
