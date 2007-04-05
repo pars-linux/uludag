@@ -64,21 +64,13 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 	return 1;
 }
 
-#define CHECK_PATH 1
-#define CHECK_PATH2 2
-#define LOG_OWNER 4
-#define LOG_MODE 8
-#define FAKE_ID 16
-#define DONT_FOLLOW 32
-#define NET_CALL 64
-
-// TRAP_xxxxx check for remode operations
-// xxown(): get the real uid/gid, store path
-// xxmod(): get the real mode
-// xxid(): return uid=0, gid=0
-#define TRAP_xxOWN 4
-#define TRAP_xxMOD 8
-#define TRAP_xxID  16
+#define CHECK_PATH 1    // First argument should be a valid path
+#define CHECK_PATH2 2   // Second argument should be a valid path
+#define DONT_FOLLOW 4   // Don't follow last symlink in the path while checking
+#define LOG_OWNER 8     // Don't do the chown operation but log the new owner
+#define LOG_MODE 16     // Don't do the chmod operation but log the new mode
+#define FAKE_ID 32      // Fake builder identity as root
+#define NET_CALL 64     // System call depends on network allowed flag
 
 static struct syscall_def {
 	int no;
@@ -94,24 +86,24 @@ static struct syscall_def {
 	{ __NR_symlink,    "symlink",    CHECK_PATH2 | DONT_FOLLOW },
 	{ __NR_rename,     "rename",     CHECK_PATH | CHECK_PATH2 },
 	{ __NR_mknod,      "mknod",      CHECK_PATH },
-	{ __NR_chmod,      "chmod",      CHECK_PATH | TRAP_xxMOD },
-	{ __NR_lchown,     "lchown",     CHECK_PATH | TRAP_xxOWN | DONT_FOLLOW },
-	{ __NR_chown,      "chown",      CHECK_PATH | TRAP_xxOWN },
-	{ __NR_lchown32,   "lchown32",   CHECK_PATH | TRAP_xxOWN | DONT_FOLLOW },
-	{ __NR_chown32,    "chown32",    CHECK_PATH | TRAP_xxOWN },
+	{ __NR_chmod,      "chmod",      CHECK_PATH | LOG_MODE },
+	{ __NR_lchown,     "lchown",     CHECK_PATH | LOG_MODE | DONT_FOLLOW },
+	{ __NR_chown,      "chown",      CHECK_PATH | LOG_OWNER },
+	{ __NR_lchown32,   "lchown32",   CHECK_PATH | LOG_OWNER | DONT_FOLLOW },
+	{ __NR_chown32,    "chown32",    CHECK_PATH | LOG_OWNER },
 	{ __NR_mkdir,      "mkdir",      CHECK_PATH },
 	{ __NR_rmdir,      "rmdir",      CHECK_PATH },
 	{ __NR_mount,      "mount",      CHECK_PATH },
 	{ __NR_umount,     "umount",     CHECK_PATH },
 	{ __NR_utime,      "utime",      CHECK_PATH },
-	{ __NR_getuid,     "getuid",     TRAP_xxID },
-	{ __NR_getuid32,   "getuid32",   TRAP_xxID },
-	{ __NR_geteuid,    "geteuid",    TRAP_xxID },
-	{ __NR_geteuid32,  "geteuid32",  TRAP_xxID },
-	{ __NR_getgid,     "getgid",     TRAP_xxID },
-	{ __NR_getgid32,   "getgid32",   TRAP_xxID },
-	{ __NR_getegid,    "getegid",    TRAP_xxID },
-	{ __NR_getegid32,  "getegid32",  TRAP_xxID },
+	{ __NR_getuid,     "getuid",     FAKE_ID },
+	{ __NR_getuid32,   "getuid32",   FAKE_ID },
+	{ __NR_geteuid,    "geteuid",    FAKE_ID },
+	{ __NR_geteuid32,  "geteuid32",  FAKE_ID },
+	{ __NR_getgid,     "getgid",     FAKE_ID },
+	{ __NR_getgid32,   "getgid32",   FAKE_ID },
+	{ __NR_getegid,    "getegid",    FAKE_ID },
+	{ __NR_getegid32,  "getegid32",  FAKE_ID },
 	{ __NR_socketcall, "socketcall", NET_CALL },
 	{ 0, NULL, 0 }
 };
@@ -160,7 +152,7 @@ found:
 return 0;
     //below we only trap changes to owner/mode within the fishbowl. 
     // The rest are taken care of in the above blocks
-    if(0 & TRAP_xxOWN) {
+    if(0 & LOG_OWNER) {
         struct user_regs_struct regs;
         ptrace(PTRACE_GETREGS, pid, 0, &regs);
         const char* path = get_str(pid, regs.ebx);
@@ -170,7 +162,7 @@ return 0;
 //        PyDict_SetItem( dict, PyString_FromString(path), PyTuple_Pack( 2, PyInt_FromLong(uid), PyInt_FromLong(gid)) );
         return 1;
     }
-    if(0 & TRAP_xxMOD) {
+    if(0 & LOG_MODE) {
         struct user_regs_struct regs;
         ptrace(PTRACE_GETREGS, pid, 0, &regs);
         const char* path = get_str(pid, regs.ebx);
@@ -179,8 +171,56 @@ return 0;
 //        PyDict_SetItem( dict, PyString_FromString(path), PyInt_FromLong(mode) );
         return 1;
     }
-    if(0 & TRAP_xxID) {
+    if(0 & FAKE_ID) {
         return 2;
     }
 	return 0;
+}
+
+static void
+handle_syscall(struct trace_context *ctx, struct traced_child *kid)
+{
+    int syscall;
+    struct user_regs_struct u_in;
+
+    ptrace(PTRACE_GETREGS, kid->pid, 0, &u_in);
+    syscall = u_in.orig_eax;
+    int ret = before_syscall(ctx, kid->pid, syscall);
+    if (ret != 0) {
+        kid->orig_eax = u_in.orig_eax;
+        ptrace(PTRACE_POKEUSER, kid->pid, 44, 0xbadca11); //prevent it by changing syscall
+    }
+    ptrace(PTRACE_SYSCALL, kid->pid, 0, 0);
+}
+
+static void
+handle_syscall_return(pid_t pid, struct traced_child *kid)
+{
+    int syscall;
+    struct user_regs_struct u_in;
+
+    ptrace(PTRACE_GETREGS, pid, 0, &u_in);
+    syscall = u_in.orig_eax;
+    if (syscall == 0xbadca11) {
+        ptrace(PTRACE_POKEUSER, pid, 44, kid->orig_eax); //restore the syscall
+if (kid->orig_eax == __NR_mkdir) {
+            ptrace(PTRACE_POKEUSER, pid, 24, -EEXIST); //EACCES error
+} else {
+            ptrace(PTRACE_POKEUSER, pid, 24, -EACCES); //EACCES error
+}
+    }
+
+    ptrace(PTRACE_SYSCALL, pid, 0, 0);
+}
+
+void
+catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid)
+{
+	if (kid->in_syscall) {
+		handle_syscall_return(kid->pid, kid);
+		kid->in_syscall = 0;
+	} else {
+		handle_syscall(ctx, kid);
+		kid->in_syscall = 1;
+	}
 }

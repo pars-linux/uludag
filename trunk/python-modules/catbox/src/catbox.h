@@ -43,3 +43,5 @@ PyObject *core_trace_loop(struct trace_context *ctx, pid_t pid);
 int catbox_retval_init(struct trace_context *ctx);
 void catbox_retval_set_exit_code(struct trace_context *ctx, int retcode);
 void catbox_retval_add_violation(struct trace_context *ctx, const char *operation, const char *path);
+
+void catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid);
