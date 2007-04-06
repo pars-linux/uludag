@@ -11,8 +11,6 @@
 
 import string
 import pisi
-import pisi.api
-import pisi.context as ctx
 
 from kdecore import i18n
 from qt import QObject, QTimer
@@ -43,8 +41,8 @@ class Commander(QObject):
         while timeout > 0:
             self.parent.processEvents()
             try:
-                if ctx.comar_sockname:
-                    sock.connect(ctx.comar_sockname)
+                if pisi.api.ctx.comar_sockname:
+                    sock.connect(pisi.api.ctx.comar_sockname)
                     return True
                 else:
                     self.comar.notifier.setEnabled(True)
