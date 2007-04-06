@@ -145,6 +145,8 @@ class Builder:
         self.specuri = specuri
         spec = SpecFile()
         spec.read(specuri, ctx.config.tmp_dir())
+        diruri = dirname(specuri.get_uri())
+        spec.read_translations(join(diruri, "translations.xml"))
         self.spec = spec
 
     # directory accessor functions

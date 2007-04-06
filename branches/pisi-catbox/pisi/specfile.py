@@ -21,7 +21,8 @@ __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
 # standard python modules
-from os.path import basename
+import os
+import piksemel
 
 # pisi modules
 from pisi.pxml.xmlfile import XmlFile
@@ -132,7 +133,7 @@ class Archive:
     a_sha1sum =[ autoxml.String, autoxml.mandatory ]
 
     def decode_hook(self, node, errs, where):
-        self.name = basename(self.uri)
+        self.name = os.path.basename(self.uri)
 
     def __str__(self):
         s = _('URI: %s, type: %s, sha1sum: %s') % (self.uri, self.type, self.sha1sum)
@@ -240,3 +241,21 @@ class SpecFile(XmlFile):
         #http://liste.pardus.org.tr/gelistirici/2006-September/002332.html
         self.source.description = autoxml.LocalText("Description")
         self.source.description["en"] = self.source.summary["en"]
+
+    def _set_i18n(self, tag, inst):
+        for summary in tag.tags("Summary"):
+            inst.summary[summary.getAttribute("xml:lang")] = summary.firstChild().data()
+        for desc in tag.tags("Description"):
+            inst.description[desc.getAttribute("xml:lang")] = desc.firstChild().data()
+
+    def read_translations(self, path):
+        if not os.path.exists(path):
+            return
+        doc = piksemel.parse(path)
+
+        self._set_i18n(doc.getTag("Source"), self.source)
+        for pak in doc.tags("Package"):
+            for inst in self.packages:
+                if inst.name == pak.getTagData("Name"):
+                    break
+            self._set_i18n(pak, inst)
