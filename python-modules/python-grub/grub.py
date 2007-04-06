@@ -56,7 +56,7 @@ class grubConf:
     """Grub configuration class."""
     
     def __init__(self):
-        self.options = []
+        self.options = {}
         self.entries = []
         self.header = []
     
