@@ -751,9 +751,14 @@ class MainApplicationWidget(QWidget):
         return KMessageBox.questionYesNo(self, message, error)
 
     def finished(self, command=None):
-
-        # this is pisi's lack of db locking mechanism usage fault.
+ 
         pisi.api.finalize()
+
+        # when pisi db version is upgraded, reload is needed before init
+        packages = self.basket.packages + self.basket.extraPackages
+        if command == "System.Manager.updatePackage" and "pisi" in packages:
+            reload(pisi)
+
         pisi.api.init(write=False)
 
         # after every operation check package cache limits
