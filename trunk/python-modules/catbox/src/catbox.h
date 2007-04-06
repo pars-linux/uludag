@@ -33,7 +33,7 @@ struct trace_context {
 	struct traced_child children[512];
 };
 
-int path_writable(char **pathlist, pid_t pid, char *path, int dont_follow);
+int path_writable(char **pathlist, pid_t pid, char *path, int dont_follow, int mkdir_case);
 void free_pathlist(char **pathlist);
 char **make_pathlist(PyObject *paths);
 

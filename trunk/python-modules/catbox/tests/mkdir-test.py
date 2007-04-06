@@ -21,7 +21,6 @@ def test():
             sys.exit(0)
         raise
 
-ret = catbox.run(test)
+ret = catbox.run(test, ["/var/pisi/test-1.2"])
 assert(ret.code == 0)
-# FIXME: currently this is logged as violation
-#assert(ret.violations == [])
+assert(ret.violations == [])

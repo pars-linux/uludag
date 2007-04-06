@@ -96,7 +96,7 @@ canonical_path(pid_t pid, char *path, int dont_follow)
 }
 
 int
-path_writable(char **pathlist, pid_t pid, char *path, int dont_follow)
+path_writable(char **pathlist, pid_t pid, char *path, int dont_follow, int mkdir_case)
 {
 	char *canonical = NULL;
 	int ret = 0;
@@ -112,6 +112,9 @@ path_writable(char **pathlist, pid_t pid, char *path, int dont_follow)
 		//if (flag == 1 && pathlist[i][size-1] == '/') --size;
 		if (strncmp(pathlist[i], canonical, size) == 0) {
 			ret = 1;
+			break;
+		} else if (mkdir_case && strncmp(pathlist[i], canonical, strlen(canonical)) == 0) {
+			ret = -2;
 			break;
 		}
 	}

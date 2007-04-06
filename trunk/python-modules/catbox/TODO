@@ -1,4 +1,3 @@
-* fix the unnecessary mkdir -p /var/pisi/.. violation messages
 * implement action=log/deny/stop argument, write a test case
 * implement logger=(myfunc) argument, write a test case
 * reactivate chown/chmod log code
