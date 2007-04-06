@@ -66,14 +66,16 @@ def getRoot():
 
 class grubConfLock:
     def __init__(self, _file, write=False, timeout=-1):
+        import os.path
         from comar.utility import FileLock
         self.file = _file
         self.write = write
         self.lock = FileLock("%s.lock" % _file)
         self.lock.lock(write, timeout)
         self.config = grubConf()
-        self.config.parseConf(_file)
-
+        if os.path.exists(_file):
+            self.config.parseConf(_file)
+    
     def release(self, save=True):
         if save and self.write:
             self.config.write(self.file)
