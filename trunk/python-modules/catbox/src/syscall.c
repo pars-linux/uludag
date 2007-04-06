@@ -14,56 +14,7 @@
 #include <fcntl.h>
 #include <linux/user.h>
 
-
-static char *
-get_str(pid_t pid, unsigned long ptr)
-{
-	// FIXME: lame function
-	char buf1[512];
-	static char buf2[5120];
-	int i = 0;
-	int f;
-
-	sprintf(buf1, "/proc/%ld/mem", pid);
-	f = open(buf1, O_RDONLY);
-	lseek(f, ptr, 0);
-	while (1) {
-		read(f, buf2+i, 1);
-		if (buf2[i] == '\0')
-			break;
-		i++;
-	}
-	close(f);
-	return buf2;
-}
-
-static int
-path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *name, int dont_follow)
-{
-	unsigned long arg;
-	char *path;
-	char *path_copy;
-	int len;
-	int ret;
-
-	arg = ptrace(PTRACE_PEEKUSER, pid, argno * 4, 0);
-	path = get_str(pid, arg);
-	path_copy = strdup(path);
-	len = strlen(path);
-	if (path[len-1] == '/') {
-		path[len-1] = '\0';
-	}
-	ret = path_writable(ctx->pathlist, pid, path, dont_follow);
-	if (ret == 0) {
-		catbox_retval_add_violation(ctx, name, path_copy);
-		free(path_copy);
-		return 0;
-	}
-	free(path_copy);
-
-	return 1;
-}
-
+// System call dispatch flags
 #define CHECK_PATH 1    // First argument should be a valid path
 #define CHECK_PATH2 2   // Second argument should be a valid path
 #define DONT_FOLLOW 4   // Don't follow last symlink in the path while checking
@@ -72,6 +23,7 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, int argno, const char *n
 #define FAKE_ID 32      // Fake builder identity as root
 #define NET_CALL 64     // System call depends on network allowed flag
 
+// System call dispatch table
 static struct syscall_def {
 	int no;
 	const char *name;
@@ -108,19 +60,69 @@ static struct syscall_def {
 	{ 0, NULL, 0 }
 };
 
+static char *
+get_str(pid_t pid, unsigned long ptr)
+{
+	// FIXME: lame function
+	char buf1[512];
+	static char buf2[5120];
+	int i = 0;
+	int f;
+
+	sprintf(buf1, "/proc/%ld/mem", pid);
+	f = open(buf1, O_RDONLY);
+	lseek(f, ptr, 0);
+	while (1) {
+		read(f, buf2+i, 1);
+		if (buf2[i] == '\0')
+			break;
+		i++;
+	}
+	close(f);
+	return buf2;
+}
+
+static int
+path_arg_writable(struct trace_context *ctx, pid_t pid, char *path, const char *name, int dont_follow)
+{
+	char *path_copy;
+	int ret;
+
+	path_copy = strdup(path);
+	ret = path_writable(ctx->pathlist, pid, path, dont_follow);
+	if (ret == 0) {
+		catbox_retval_add_violation(ctx, name, path_copy);
+		free(path_copy);
+		if (strcmp("mkdir", name) == 0) {
+			return -EEXIST;
+		} else {
+			return -EACCES;
+		}
+	}
+	free(path_copy);
+
+	return 0;
+}
+
 static int
 handle_syscall(struct trace_context *ctx, pid_t pid, int syscall)
 {
 	int i;
+	int ret;
+	unsigned long arg;
+	char *path;
 	unsigned int flags;
 	const char *name;
+
 	// exception, we have to check access mode for open
 	if (syscall == __NR_open) {
 		// open(path, flags, mode)
+		arg = ptrace(PTRACE_PEEKUSER, pid, 0, 0);
+		path = get_str(pid, arg);
 		flags = ptrace(PTRACE_PEEKUSER, pid, 4, 0);
 		if (flags & O_WRONLY || flags & O_RDWR) {
-			if (!path_arg_writable(ctx, pid, 0, "open", 0))
-				return -1;
+			ret = path_arg_writable(ctx, pid, path, "open", 0);
+			if (ret) return ret;
 		}
 		return 0;
 	}
@@ -135,18 +137,22 @@ found:
 	name = system_calls[i].name;
 
 	if (flags & CHECK_PATH) {
-		if (!path_arg_writable(ctx, pid, 0, name, flags & DONT_FOLLOW))
-			return -1;
+		arg = ptrace(PTRACE_PEEKUSER, pid, 0, 0);
+		path = get_str(pid, arg);
+		ret = path_arg_writable(ctx, pid, path, name, flags & DONT_FOLLOW);
+		if (ret) return ret;
 	}
 
 	if (flags & CHECK_PATH2) {
-		if (!path_arg_writable(ctx, pid, 1, name, flags & DONT_FOLLOW))
-			return -1;
+		arg = ptrace(PTRACE_PEEKUSER, pid, 4, 0);
+		path = get_str(pid, arg);
+		ret = path_arg_writable(ctx, pid, path, name, flags & DONT_FOLLOW);
+		if (ret) return ret;
 	}
 
 	if (flags & NET_CALL && !ctx->network_allowed) {
 		catbox_retval_add_violation(ctx, name, "");
-		return -1;
+		return -EACCES;
 	}
 
 return 0;
@@ -197,11 +203,7 @@ catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid)
 	} else {
 		int ret = handle_syscall(ctx, pid, syscall);
 		if (ret != 0) {
-			if (syscall == __NR_mkdir) {
-				kid->error_code = -EEXIST;
-			} else {
-				kid->error_code = -EACCES;
-			}
+			kid->error_code = ret;
 			kid->orig_eax = regs.orig_eax;
 			ptrace(PTRACE_POKEUSER, pid, 44, 0xbadca11);
 		}
