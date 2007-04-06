@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <signal.h>
 
+/* per process tracking data */
 struct traced_child {
 	pid_t pid;
 	int proc_mem_fd;
@@ -24,6 +25,7 @@ struct traced_child {
 	int error_code;
 };
 
+/* general tracking data */
 struct trace_context {
 	PyObject *func;
 	PyObject *retval;

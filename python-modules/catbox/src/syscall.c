@@ -15,13 +15,14 @@
 #include <linux/user.h>
 
 // System call dispatch flags
-#define CHECK_PATH 1    // First argument should be a valid path
-#define CHECK_PATH2 2   // Second argument should be a valid path
-#define DONT_FOLLOW 4   // Don't follow last symlink in the path while checking
-#define LOG_OWNER 8     // Don't do the chown operation but log the new owner
-#define LOG_MODE 16     // Don't do the chmod operation but log the new mode
-#define FAKE_ID 32      // Fake builder identity as root
-#define NET_CALL 64     // System call depends on network allowed flag
+#define CHECK_PATH    1  // First argument should be a valid path
+#define CHECK_PATH2   2  // Second argument should be a valid path
+#define DONT_FOLLOW   4  // Don't follow last symlink in the path while checking
+#define OPEN_MODE     8  // Check the Write mode of open flags
+#define LOG_OWNER    16  // Don't do the chown operation but log the new owner
+#define LOG_MODE     32  // Don't do the chmod operation but log the new mode
+#define FAKE_ID      64  // Fake builder identity as root
+#define NET_CALL    128  // System call depends on network allowed flag
 
 // System call dispatch table
 static struct syscall_def {
@@ -29,7 +30,7 @@ static struct syscall_def {
 	const char *name;
 	unsigned int flags;
 } system_calls[] = {
-	{ __NR_open,       "open",       CHECK_PATH },
+	{ __NR_open,       "open",       CHECK_PATH | OPEN_MODE },
 	{ __NR_creat,      "creat",      CHECK_PATH },
 	{ __NR_truncate,   "truncate",   CHECK_PATH },
 	{ __NR_truncate64, "truncate64", CHECK_PATH },
@@ -76,7 +77,8 @@ get_str(pid_t pid, unsigned long ptr)
 		read(f, buf2+i, 1);
 		if (buf2[i] == '\0')
 			break;
-		i++;
+		i++;			// syscall is faked, 
+
 	}
 	close(f);
 	return buf2;
@@ -117,19 +119,6 @@ handle_syscall(struct trace_context *ctx, pid_t pid, int syscall)
 	unsigned int flags;
 	const char *name;
 
-	// exception, we have to check access mode for open
-	if (syscall == __NR_open) {
-		// open(path, flags, mode)
-		arg = ptrace(PTRACE_PEEKUSER, pid, 0, 0);
-		path = get_str(pid, arg);
-		flags = ptrace(PTRACE_PEEKUSER, pid, 4, 0);
-		if (flags & O_WRONLY || flags & O_RDWR) {
-			ret = path_arg_writable(ctx, pid, path, "open", 0);
-			if (ret) return ret;
-		}
-		return 0;
-	}
-
 	for (i = 0; system_calls[i].name; i++) {
 		if (system_calls[i].no == syscall)
 			goto found;
@@ -142,6 +131,10 @@ found:
 	if (flags & CHECK_PATH) {
 		arg = ptrace(PTRACE_PEEKUSER, pid, 0, 0);
 		path = get_str(pid, arg);
+		if (flags & OPEN_MODE) {
+			flags = ptrace(PTRACE_PEEKUSER, pid, 4, 0);
+			if (!(flags & O_WRONLY || flags & O_RDWR)) return 0;
+		}
 		ret = path_arg_writable(ctx, pid, path, name, flags & DONT_FOLLOW);
 		if (ret) return ret;
 	}
@@ -198,12 +191,14 @@ catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid)
 	syscall = regs.orig_eax;
 
 	if (kid->in_syscall) {
+		// returning from syscall
 		if (syscall == 0xbadca11) {
 			ptrace(PTRACE_POKEUSER, pid, 44, kid->orig_eax);
 			ptrace(PTRACE_POKEUSER, pid, 24, kid->error_code);
 		}
 		kid->in_syscall = 0;
 	} else {
+		// entering syscall
 		int ret = handle_syscall(ctx, pid, syscall);
 		if (ret != 0) {
 			kid->error_code = ret;
@@ -213,5 +208,6 @@ catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid)
 		kid->in_syscall = 1;
 	}
 
+	// continue tracing
 	ptrace(PTRACE_SYSCALL, pid, 0, 0);
 }
