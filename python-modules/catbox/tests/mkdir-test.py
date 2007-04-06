@@ -21,6 +21,13 @@ def test():
             sys.exit(0)
         raise
 
+def bad_test():
+    os.mkdir("/home")
+
 ret = catbox.run(test, ["/var/pisi/test-1.2"])
 assert(ret.code == 0)
 assert(ret.violations == [])
+
+ret = catbox.run(bad_test, ["/var/pisi/test-1.2"])
+assert(ret.code == 1)
+assert(ret.violations == [("mkdir", "/home")])
