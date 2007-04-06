@@ -145,7 +145,7 @@ found:
 	}
 
 	if (flags & NET_CALL && !ctx->network_allowed) {
-		catbox_retval_add_violation(ctx, "socketcall", "");
+		catbox_retval_add_violation(ctx, name, "");
 		return -1;
 	}
 
@@ -191,16 +191,17 @@ catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid)
 	if (kid->in_syscall) {
 		if (syscall == 0xbadca11) {
 			ptrace(PTRACE_POKEUSER, pid, 44, kid->orig_eax);
-			if (kid->orig_eax == __NR_mkdir) {
-				ptrace(PTRACE_POKEUSER, pid, 24, -EEXIST);
-			} else {
-				ptrace(PTRACE_POKEUSER, pid, 24, -EACCES);
-			}
+			ptrace(PTRACE_POKEUSER, pid, 24, kid->error_code);
 		}
 		kid->in_syscall = 0;
 	} else {
 		int ret = handle_syscall(ctx, pid, syscall);
 		if (ret != 0) {
+			if (syscall == __NR_mkdir) {
+				kid->error_code = -EEXIST;
+			} else {
+				kid->error_code = -EACCES;
+			}
 			kid->orig_eax = regs.orig_eax;
 			ptrace(PTRACE_POKEUSER, pid, 44, 0xbadca11);
 		}
