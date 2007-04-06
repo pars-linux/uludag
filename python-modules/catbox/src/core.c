@@ -29,7 +29,7 @@
 /*
     Setup the catbox kid with the right options
 */
-int
+static int
 setup_kid(pid_t pid)
 {
 	int e;
@@ -157,7 +157,7 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 	return ctx->retval;
 }
 
-int got_sig = 0;
+static int got_sig = 0;
 
 static void sigusr1(int dummy) {
 	got_sig = 1;

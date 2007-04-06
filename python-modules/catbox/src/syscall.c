@@ -77,8 +77,7 @@ get_str(pid_t pid, unsigned long ptr)
 		read(f, buf2+i, 1);
 		if (buf2[i] == '\0')
 			break;
-		i++;			// syscall is faked, 
-
+		i++;
 	}
 	close(f);
 	return buf2;
@@ -98,12 +97,12 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, char *path, const char *
 		catbox_retval_add_violation(ctx, name, path_copy);
 		free(path_copy);
 		return -EACCES;
-	} else if (ret == -2) {
-		free(path_copy);
-		return -EEXIST;
 	} else if (ret == -1) {
 		free(path_copy);
 		return -ENAMETOOLONG;
+	} else if (ret == -2) {
+		free(path_copy);
+		return -EEXIST;
 	}
 	free(path_copy);
 	return 0;
