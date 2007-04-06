@@ -1,4 +1,3 @@
-* write a test for /proc/self case
 * revive speed-test.py
 * fix the unnecessary mkdir -p /var/pisi/.. violation messages
 * implement action=log/deny/stop argument, write a test case
