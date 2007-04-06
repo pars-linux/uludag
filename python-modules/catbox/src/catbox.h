@@ -21,6 +21,7 @@ struct traced_child {
 	int need_setup;
 	int in_syscall;
 	unsigned long orig_eax;
+	int error_code;
 };
 
 struct trace_context {
