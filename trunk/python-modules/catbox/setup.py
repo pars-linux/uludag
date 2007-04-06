@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -17,13 +17,13 @@ import subprocess
 from distutils.core import setup, Extension
 from distutils.command.install import install
 
-version='0.1'
+version='0.5'
 
 distfiles = """
     setup.py
     OKUBENİ
+    README
     src/*.c
-    src/*.py
     src/*.h
     tests/*.py
 """
