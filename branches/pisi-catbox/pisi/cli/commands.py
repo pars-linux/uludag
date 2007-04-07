@@ -455,6 +455,8 @@ to be downloaded from a repository containing sources.
                                help=_("PiSi binary package formats: '1.0', '1.1' (default)"))
         self.parser.add_option("", "--ignore-sandbox", action="store_true", default=False,
                                 help=_("Constrain build process inside the build folder"))
+        group.add_option("--use-quilt", action="store_true",
+                     default=False, help=_("Use quilt patch management system instead of GNU patch"))
 
     def add_steps_options(self):
         group = OptionGroup(self.parser, _("build steps"))
