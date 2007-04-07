@@ -26,7 +26,7 @@ class Tray(KSystemTray):
     def __init__(self, parent=None):
         KSystemTray.__init__(self, parent)
         self.parent = parent
-        self.icon = KGlobal.iconLoader().loadIcon("package-manager", KIcon.Desktop, 24)
+        self.icon = self.loadIcon("package-manager")
         self.overlayIcon = self.icon.convertToImage()
         self.setPixmap(self.icon)
 
