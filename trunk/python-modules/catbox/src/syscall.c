@@ -192,21 +192,27 @@ catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid)
 	if (kid->in_syscall) {
 		// returning from syscall
 		if (syscall == 0xbadca11) {
+			// restore real call number, and return our error code
 			ptrace(PTRACE_POKEUSER, pid, 44, kid->orig_eax);
 			ptrace(PTRACE_POKEUSER, pid, 24, kid->error_code);
 		}
 		kid->in_syscall = 0;
 	} else {
 		// entering syscall
+
+		// skip extra sigtrap from execve call
+		if (syscall == __NR_execve) goto out;
+
 		int ret = handle_syscall(ctx, pid, syscall);
 		if (ret != 0) {
 			kid->error_code = ret;
 			kid->orig_eax = regs.orig_eax;
+			// prevent the call by giving an invalid call number
 			ptrace(PTRACE_POKEUSER, pid, 44, 0xbadca11);
 		}
 		kid->in_syscall = 1;
 	}
-
+out:
 	// continue tracing
 	ptrace(PTRACE_SYSCALL, pid, 0, 0);
 }
