@@ -422,7 +422,9 @@ class Builder:
                 self.actionLocals[func]()
             else:
                 import catbox
-                valid_dirs = [self.pkg_dir(), "/tmp", "/var/tmp", "/dev/tty", "/proc", "/dev/null"]
+                # stupid autoconf family needs /usr/lib/conftest* and /usr/lib/cf* for some conftest,
+                # http://sources.gentoo.org/viewcvs.py/portage/trunk/sandbox/files/sandbox/sandbox.c also permits these
+                valid_dirs = [self.pkg_dir(), "/tmp/", "/var/tmp/", "/dev/tty", "/dev/pts/", "/dev/null", "/proc/", "/usr/lib/conftest", "/usr/lib/cf"]
                 if ctx.config.values.build.buildhelper == "ccache":
                     valid_dirs.append("%s/.ccache" % os.environ["HOME"])
                 ret = catbox.run(self.actionLocals[func], valid_dirs)
