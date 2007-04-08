@@ -3,16 +3,25 @@
 import os
 import sys
 import catbox
-import thread
+import threading
 
 def test():
-    file("lala", "w").write("hello world\n")
+    try:
+        file("lala", "w").write("hello world\n")
+    except IOError, e:
+        if e.errno != 13:
+            raise
 
 def main():
-    thread.start_new_thread(test, tuple())
-    thread.start_new_thread(test, tuple())
-    thread.start_new_thread(test, tuple())
+    a = threading.Thread(target=test)
+    b = threading.Thread(target=test)
+    a.start()
+    b.start()
     test()
+    a.join()
+    test()
+    b.join()
 
 ret = catbox.run(main)
-print ret.code, ret.violations
+assert(ret.code == 0)
+assert(len(filter(lambda x: x == ("open", "lala"), ret.violations)) == 4)
