@@ -35,7 +35,7 @@ setup_kid(pid_t pid)
 	int e;
     //trace clones, forks, vforks (i.e., all kids)
 	e = ptrace(PTRACE_SETOPTIONS, pid, 0,
-		PTRACE_O_TRACECLONE |PTRACE_O_TRACEFORK | PTRACE_O_TRACEVFORK);
+		PTRACE_O_TRACESYSGOOD | PTRACE_O_TRACECLONE |PTRACE_O_TRACEFORK | PTRACE_O_TRACEVFORK);
 	if (e != 0)
 	printf("ptrace opts error %s\n",strerror(errno));
 }
@@ -100,56 +100,62 @@ static PyObject *
 core_trace_loop(struct trace_context *ctx, pid_t pid)
 {
 	int status;
+	unsigned int event;
 	long retcode = 0;
 	struct traced_child *kid;
 
-	ctx->nr_children = 0;
+	// First one is the process we are tracing
 	add_child(ctx, pid);
-	ctx->children[0].need_setup = 0; //first child doesnt need setup
+	// and it is already set up
+	ctx->children[0].need_setup = 0;
 
 	while (ctx->nr_children) {
-		pid = wait(&status); //wait for a syscall
+		pid = wait(&status);
 		if (pid == (pid_t) -1) return NULL;
-		kid = find_child(ctx, pid); //find the child that did it
-		if (!kid) {
-			puts("borkbork");
-			continue;
-		}
-		if (WIFEXITED(status)) {
-			if (kid == &ctx->children[0]) { //if it is our first child
-				// keep ret value
-				retcode = WEXITSTATUS(status);
-			}
-			rem_child(ctx, pid);
-		}
-		// FIXME: handle WIFSIGNALLED here
+		kid = find_child(ctx, pid);
+		if (!kid) { puts("borkbork"); continue; }
 
-		if (WIFSTOPPED(status)) { //kid stopped for some reason
-			if (WSTOPSIG(status) == SIGSTOP && kid->need_setup) { //kid needs setup
+		if (WIFSTOPPED(status)) {
+			int stopsig = WSTOPSIG(status);
+			if (stopsig == SIGSTOP && kid->need_setup) {
 				setup_kid(pid);
 				kid->need_setup = 0;
-				ptrace(PTRACE_SYSCALL, pid, 0, 0); //trace syscalls in new kid
-
-            //trap an event: syscall, or (clone, fork, vfork)
-			} else if (WSTOPSIG(status) == SIGTRAP) {
-				unsigned int event;
+				ptrace(PTRACE_SYSCALL, pid, 0, 0);
+				continue;
+			}
+			if (stopsig & SIGTRAP) {
+				if (stopsig == (SIGTRAP | 0x80)) {
+					catbox_syscall_handle(ctx, kid);
+					continue;
+				}
 				event = (status >> 16) & 0xffff;
 				if (event == PTRACE_EVENT_FORK
-					|| event == PTRACE_EVENT_CLONE
-					|| event == PTRACE_EVENT_VFORK) {
+				    || event == PTRACE_EVENT_VFORK
+				    || event == PTRACE_EVENT_CLONE) {
 					pid_t kpid;
 					int e;
 					e = ptrace(PTRACE_GETEVENTMSG, pid, 0, &kpid); //get the new kid's pid
 					if (e != 0) printf("geteventmsg %s\n", strerror(e));
 					add_child(ctx, kpid);  //add the new kid (setup will be done later)
-				    ptrace(PTRACE_SYSCALL, pid, 0, (void*) WSTOPSIG(status)); //continue till exit
-
-				} else { //trap the syscall
-					catbox_syscall_handle(ctx, kid);
 				}
-			} else {
-				ptrace(PTRACE_SYSCALL, pid, 0, (void*) WSTOPSIG(status));
+				if (kid->in_execve) {
+					kid->in_execve = 0;
+					ptrace(PTRACE_SYSCALL, pid, 0, 0);
+					continue;
+				}
 			}
+			ptrace(PTRACE_SYSCALL, pid, 0, (void*) stopsig);
+		} else if (WIFEXITED(status)) {
+			if (kid == &ctx->children[0]) { //if it is our first child
+				// keep ret value
+				retcode = WEXITSTATUS(status);
+			}
+			rem_child(ctx, pid);
+		} else if (WIFSIGNALED(status)) {
+printf("xxxxxxxxxSignal %x pid %d\n", status, pid);
+			ptrace(PTRACE_SYSCALL, pid, 0, (void*) WTERMSIG(status));
+		} else {
+printf("xxxxxxxxxSignal %x pid %d\n", status, pid);
 		}
 	}
 
