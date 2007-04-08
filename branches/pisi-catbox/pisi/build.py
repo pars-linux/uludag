@@ -422,7 +422,10 @@ class Builder:
                 self.actionLocals[func]()
             else:
                 import catbox
-                ret = catbox.run(self.actionLocals[func], [self.pkg_dir(), "/tmp", "/var/tmp", "/dev/tty", "/proc", "/dev/null"])
+                valid_dirs = [self.pkg_dir(), "/tmp", "/var/tmp", "/dev/tty", "/proc", "/dev/null"]
+                if ctx.config.values.build.buildhelper == "ccache":
+                    valid_dirs.append("/%s/.ccache" % os.environ["HOME"])
+                ret = catbox.run(self.actionLocals[func], valid_dirs)
                 if ret.violations != []:
                     ctx.ui.error(_("Sandbox violation:") + "\n" + "\n".join(map(str, ret.violations)))
         else:
