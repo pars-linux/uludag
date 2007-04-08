@@ -31,6 +31,7 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 	struct trace_context ctx;
 
 	memset(&ctx, 0, sizeof(struct trace_context));
+
 	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|OO", kwlist, &ctx.func, &paths, &net))
 		return NULL;
 

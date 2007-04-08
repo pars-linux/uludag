@@ -21,6 +21,7 @@ struct traced_child {
 	int proc_mem_fd;
 	int need_setup;
 	int in_syscall;
+	int in_execve;
 	unsigned long orig_eax;
 	int error_code;
 };

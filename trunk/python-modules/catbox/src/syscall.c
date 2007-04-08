@@ -201,7 +201,10 @@ catbox_syscall_handle(struct trace_context *ctx, struct traced_child *kid)
 		// entering syscall
 
 		// skip extra sigtrap from execve call
-		if (syscall == __NR_execve) goto out;
+		if (syscall == __NR_execve) {
+			kid->in_execve = 1;
+			goto out;
+		}
 
 		int ret = handle_syscall(ctx, pid, syscall);
 		if (ret != 0) {
