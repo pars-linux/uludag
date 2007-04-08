@@ -18,14 +18,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
-
-
-
-
-
-
-
-
 /*
     Setup the catbox kid with the right options
 */
@@ -39,11 +31,6 @@ setup_kid(pid_t pid)
 	if (e != 0)
 	printf("ptrace opts error %s\n",strerror(errno));
 }
-
-
-
-
-
 
 
 
@@ -110,7 +97,7 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 	ctx->children[0].need_setup = 0;
 
 	while (ctx->nr_children) {
-		pid = wait(&status);
+		pid = waitpid(-1, &status, __WALL);
 		if (pid == (pid_t) -1) return NULL;
 		kid = find_child(ctx, pid);
 		if (!kid) { puts("borkbork"); continue; }
@@ -137,6 +124,8 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 					e = ptrace(PTRACE_GETEVENTMSG, pid, 0, &kpid); //get the new kid's pid
 					if (e != 0) printf("geteventmsg %s\n", strerror(e));
 					add_child(ctx, kpid);  //add the new kid (setup will be done later)
+			ptrace(PTRACE_SYSCALL, pid, 0, 0);
+continue;
 				}
 				if (kid->in_execve) {
 					kid->in_execve = 0;
