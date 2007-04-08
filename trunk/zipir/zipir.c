@@ -159,7 +159,7 @@ zip_open (const char *fname, int *err, int action)
     FILE *f;
 
     if (action == AC_APPEND){
-        f = fopen (fname, "a+b");
+        f = fopen (fname, "r+b");
     } else {
         f = fopen (fname, "rb");
     }
