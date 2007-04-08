@@ -1,4 +1,3 @@
-* fix signal handling problems in python configure
 * check that dir exists for mkdir EEXIST case, write complete test
 * implement action=log/deny/stop argument, write a test case
 * implement logger=(myfunc) argument, write a test case
