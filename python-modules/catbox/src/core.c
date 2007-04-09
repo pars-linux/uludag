@@ -18,18 +18,21 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/*
-    Setup the catbox kid with the right options
-*/
 static int
-setup_kid(pid_t pid)
+setup_kid(struct traced_child *kid)
 {
 	int e;
-    //trace clones, forks, vforks (i.e., all kids)
-	e = ptrace(PTRACE_SETOPTIONS, pid, 0,
-		PTRACE_O_TRACESYSGOOD | PTRACE_O_TRACECLONE |PTRACE_O_TRACEFORK | PTRACE_O_TRACEVFORK);
-	if (e != 0)
-	printf("ptrace opts error %s\n",strerror(errno));
+
+	// We want to trace all sub children, and want special notify
+	// to distinguish between normal sigtrap and syscall sigtrap.
+	e = ptrace(PTRACE_SETOPTIONS, kid->pid, 0,
+		PTRACE_O_TRACESYSGOOD
+		| PTRACE_O_TRACECLONE
+		| PTRACE_O_TRACEFORK
+		| PTRACE_O_TRACEVFORK
+	);
+	if (e != 0) printf("ptrace opts error %s\n",strerror(errno));
+	kid->need_setup = 0;
 }
 
 
@@ -91,11 +94,6 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 	long retcode = 0;
 	struct traced_child *kid;
 
-	// First one is the process we are tracing
-	add_child(ctx, pid);
-	// and it is already set up
-	ctx->children[0].need_setup = 0;
-
 	while (ctx->nr_children) {
 		pid = waitpid(-1, &status, __WALL);
 		if (pid == (pid_t) -1) return NULL;
@@ -103,15 +101,18 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 		if (!kid) { puts("borkbork"); continue; }
 
 		if (WIFSTOPPED(status)) {
+			// 1. reason: Execution of child stopped by a signal
 			int stopsig = WSTOPSIG(status);
 			if (stopsig == SIGSTOP && kid->need_setup) {
-				setup_kid(pid);
-				kid->need_setup = 0;
+				// 1.1. reason: Child is born and ready for tracing
+				setup_kid(kid);
 				ptrace(PTRACE_SYSCALL, pid, 0, 0);
 				continue;
 			}
 			if (stopsig & SIGTRAP) {
+				// 1.2. reason: We got a signal from ptrace
 				if (stopsig == (SIGTRAP | 0x80)) {
+					// 1.2.1. reason: Child made a system call
 					catbox_syscall_handle(ctx, kid);
 					continue;
 				}
@@ -119,32 +120,40 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 				if (event == PTRACE_EVENT_FORK
 				    || event == PTRACE_EVENT_VFORK
 				    || event == PTRACE_EVENT_CLONE) {
+					// 1.2.2. reason: Child made a fork
 					pid_t kpid;
 					int e;
 					e = ptrace(PTRACE_GETEVENTMSG, pid, 0, &kpid); //get the new kid's pid
 					if (e != 0) printf("geteventmsg %s\n", strerror(e));
 					add_child(ctx, kpid);  //add the new kid (setup will be done later)
-			ptrace(PTRACE_SYSCALL, pid, 0, 0);
-continue;
+					ptrace(PTRACE_SYSCALL, pid, 0, 0);
+					continue;
 				}
 				if (kid->in_execve) {
+					// 1.2.3. reason: Spurious sigtrap after execve call
 					kid->in_execve = 0;
 					ptrace(PTRACE_SYSCALL, pid, 0, 0);
 					continue;
 				}
 			}
+			// 1.3. reason: Genuine signal directed to the child itself
+			// so we deliver it to him
 			ptrace(PTRACE_SYSCALL, pid, 0, (void*) stopsig);
 		} else if (WIFEXITED(status)) {
+			// 2. reason: Child is exited normally
 			if (kid == &ctx->children[0]) { //if it is our first child
 				// keep ret value
 				retcode = WEXITSTATUS(status);
 			}
 			rem_child(ctx, pid);
-		} else if (WIFSIGNALED(status)) {
-printf("xxxxxxxxxSignal %x pid %d\n", status, pid);
-			ptrace(PTRACE_SYSCALL, pid, 0, (void*) WTERMSIG(status));
 		} else {
-printf("xxxxxxxxxSignal %x pid %d\n", status, pid);
+			if (WIFSIGNALED(status)) {
+				// 3. reason: Child is terminated by a signal
+				ptrace(PTRACE_SYSCALL, pid, 0, (void*) WTERMSIG(status));
+			} else {
+				// This shouldn't happen
+				printf("xxxxxxxxxSignal %x pid %d\n", status, pid);
+			}
 		}
 	}
 
@@ -205,7 +214,8 @@ catbox_core_run(struct trace_context *ctx)
 	kill(pid, SIGUSR1); //send a confirmation
 	waitpid(pid, NULL, 0); // ??
 
-	setup_kid(pid);
+	add_child(ctx, pid);
+	setup_kid(&ctx->children[0]);
 	ptrace(PTRACE_SYSCALL, pid, 0, (void *) SIGUSR1);
 
 	return core_trace_loop(ctx, pid);
