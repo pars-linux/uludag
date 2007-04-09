@@ -61,7 +61,7 @@ def getRoot():
     import os
     for mount in os.popen("/bin/mount").readlines():
         mount_items = mount.split()
-        if mount_items[2] == "/":
+        if mount_items[0].startswith("/dev") and mount_items[2] == "/":
             return mount_items[0]
 
 class grubConfLock:
@@ -189,8 +189,10 @@ def updateKernelEntry(version, max_entries=3, make_default="on"):
     
     entries = filter(lambda x: isPardusEntry(x, root_grub, new_suffix), grub.config.entries)
     
-    default_index = grub.config.options.get("default", 0)
-    default_entry = grub.config.entries[int(default_index)]
+    default_index = int(grub.config.options.get("default", 0))
+    default_entry = None
+    if len(grub.config.entries):
+        default_entry = grub.config.entries[default_index]
     
     updated_index = None
     action = None
@@ -234,8 +236,10 @@ def updateKernelEntry(version, max_entries=3, make_default="on"):
         
         if make_default == "on":
             updated_index = grub.config.indexOf(new_entry)
-        else:
+        elif default_entry in grub.config.entries:
             updated_index = grub.config.indexOf(default_entry)
+        else:
+            updated_index = 0
         grub.config.setOption("default", updated_index)
     
     grub.release()
