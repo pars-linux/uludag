@@ -70,7 +70,8 @@ class grubConfLock:
         from comar.utility import FileLock
         self.file = _file
         self.write = write
-        self.lock = FileLock("%s.lock" % _file)
+        lockfile = "%s/.%s.lock" % (os.path.dirname(_file), os.path.basename(_file))
+        self.lock = FileLock(lockfile)
         self.lock.lock(write, timeout)
         self.config = grubConf()
         if os.path.exists(_file):
