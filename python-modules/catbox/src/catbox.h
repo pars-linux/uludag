@@ -29,6 +29,7 @@ struct traced_child {
 /* general tracking data */
 struct trace_context {
 	PyObject *func;
+	PyObject *logger;
 	PyObject *retval;
 	char **pathlist;
 	int network_allowed;
