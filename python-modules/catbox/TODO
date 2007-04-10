@@ -1,3 +1,4 @@
+* log and violation should return both given path and resolved path
 * check that dir exists for mkdir EEXIST case, write complete test
 * implement action=log/deny/stop argument, write a test case
 * reactivate chown/chmod log code
