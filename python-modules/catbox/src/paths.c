@@ -31,13 +31,12 @@ get_cwd(pid_t pid)
 }
 
 char *
-canonical_path(pid_t pid, char *path, int dont_follow)
+catbox_paths_canonical(pid_t pid, char *path, int dont_follow)
 {
 	// FIXME: spaghetti code ahead
 	char *canonical = NULL;
 	char *pwd = NULL;
 	size_t len;
-	int flag = 0;
 
 	len = strlen(path);
 	// strip last character if it is a dir separator
@@ -84,7 +83,6 @@ canonical_path(pid_t pid, char *path, int dont_follow)
 			if (t && t[1] != '\0') {
 				++t;
 				*t = '\0';
-				flag = 1;
 				canonical = realpath(path, NULL);
 			}
 		}
@@ -101,15 +99,16 @@ path_writable(char **pathlist, pid_t pid, char *path, int dont_follow, int mkdir
 	char *canonical = NULL;
 	int ret = 0;
 	int i;
+	int flag;
 
 	if (!pathlist) return 0;
 
-	canonical = canonical_path(pid, path, dont_follow);
+	canonical = catbox_paths_canonical(pid, path, dont_follow);
 	if (!canonical) return -1;
 
 	for (i = 0; pathlist[i]; i++) {
 		size_t size = strlen(pathlist[i]);
-		//if (flag == 1 && pathlist[i][size-1] == '/') --size;
+		if (pathlist[i][size-1] == '/' && strlen(canonical) == (size - 1)) --size;
 		if (strncmp(pathlist[i], canonical, size) == 0) {
 			ret = 1;
 			break;
