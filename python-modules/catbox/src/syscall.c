@@ -86,25 +86,19 @@ get_str(pid_t pid, unsigned long ptr)
 static int
 path_arg_writable(struct trace_context *ctx, pid_t pid, char *path, const char *name, int dont_follow)
 {
-	char *path_copy;
 	int ret;
 	int mkdir_case;
 
 	mkdir_case = strcmp("mkdir", name) == 0;
-	path_copy = strdup(path);
 	ret = path_writable(ctx->pathlist, pid, path, dont_follow, mkdir_case);
 	if (ret == 0) {
-		catbox_retval_add_violation(ctx, name, path_copy);
-		free(path_copy);
+		catbox_retval_add_violation(ctx, name, path);
 		return -EACCES;
 	} else if (ret == -1) {
-		free(path_copy);
 		return -ENAMETOOLONG;
 	} else if (ret == -2) {
-		free(path_copy);
 		return -EEXIST;
 	}
-	free(path_copy);
 	return 0;
 }
 
