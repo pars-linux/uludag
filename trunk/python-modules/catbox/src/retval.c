@@ -103,4 +103,8 @@ catbox_retval_add_violation(struct trace_context *ctx, const char *operation, co
 	PyTuple_SetItem(item, 0, PyString_FromString(operation));
 	PyTuple_SetItem(item, 1, PyString_FromString(path));
 	PyList_Append(ret->violations, item);
+
+	if (ctx->logger) {
+		PyObject_Call(ctx->logger, item, NULL);
+	}
 }
