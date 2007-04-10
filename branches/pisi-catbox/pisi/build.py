@@ -407,6 +407,9 @@ class Builder:
 
         return util.join_path(self.pkg_work_dir(), workdir)
 
+    def log_sandbox_violation(self, operation, path):
+        ctx.ui.error(_("Sandbox violation: %s (%s)") % (operation, path))
+
     def run_action_function(self, func, mandatory=False):
         """Calls the corresponding function in actions.py.
 
@@ -427,9 +430,9 @@ class Builder:
                 valid_dirs = [self.pkg_dir(), "/tmp/", "/var/tmp/", "/dev/tty", "/dev/pts/", "/dev/null", "/proc/", "/usr/lib/conftest", "/usr/lib/cf"]
                 if ctx.config.values.build.buildhelper == "ccache":
                     valid_dirs.append("%s/.ccache" % os.environ["HOME"])
-                ret = catbox.run(self.actionLocals[func], valid_dirs)
+                ret = catbox.run(self.actionLocals[func], valid_dirs, logger=self.log_sandbox_violation)
                 if ret.violations != []:
-                    ctx.ui.error(_("Sandbox violation:") + "\n" + "\n".join(map(str, ret.violations)))
+                    ctx.ui.error(_("Sandbox violations!"))
         else:
             if mandatory:
                 Error, _("unable to call function from actions: %s") %func
