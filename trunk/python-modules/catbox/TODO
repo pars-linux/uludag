@@ -3,9 +3,8 @@
 * implement action=log/deny/stop argument, write a test case
 * reactivate chown/chmod log code
 * allow optional logging of read accesses
-* cleanup canonical_path() function more
+* cleanup canonical_path() function more, write test cases
 * document internals
-* export canonical_path() to the python, and write test cases
 * document api and usage with examples
 * anything else? :)
 

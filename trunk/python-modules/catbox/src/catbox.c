@@ -68,9 +68,45 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 	return ret;
 }
 
+static PyObject *
+catbox_canonical(PyObject *self, PyObject *args, PyObject *kwargs)
+{
+	static char *kwlist[] = {
+		"path",
+		"follow",
+		"pid",
+		NULL
+	};
+	char *path;
+	char *canonical;
+	PyObject *follow = NULL;
+	int dont_follow = 0;
+	pid_t pid = -1;
+	PyObject *ret;
+
+	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "s|Oi", kwlist, &path, &follow, &pid))
+		return NULL;
+
+	if (follow && !PyObject_IsTrue(follow))
+		dont_follow = 1;
+
+	if (pid == -1)
+		pid = getpid();
+
+	canonical = catbox_paths_canonical(pid, path, dont_follow);
+	if (!canonical) {
+		return NULL;
+	}
+
+	ret = PyString_FromString(canonical);
+	return ret;
+}
+
 static PyMethodDef methods[] = {
 	{ "run", (PyCFunction) catbox_run, METH_VARARGS | METH_KEYWORDS,
 	  "Run given function in a sandbox."},
+	{ "canonical", (PyCFunction) catbox_canonical, METH_VARARGS | METH_KEYWORDS,
+	  "Resolve and simplify given path."},
 	{ NULL, NULL, 0, NULL }
 };
 
