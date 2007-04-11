@@ -28,7 +28,7 @@
 
 <ul id="useful-links">
   <li id="links-actions">
-    <div class="label">Actions: </div>
+    <div class="label">İşlemler: </div>
       [% PROCESS "global/common-links.html.tmpl" btn_id = "find_bottom" %]
   </li>
 
@@ -42,19 +42,19 @@
 
     [% print_pipe = 0 %]
     <li id="links-edit">
-      <div class="label">Edit: </div>
+      <div class="label">Düzenle: </div>
       <ul class="links">
         [% IF user.groups.tweakparams %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editparams.cgi">Parameters</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editparams.cgi">Parametreler</a></li>
           [% print_pipe = 1 %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editsettings.cgi">User Preferences</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editsettings.cgi">Kullanıcı Tercihleri</a></li>
         [% END %]
         [% IF user.groups.editcomponents %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="sanitycheck.cgi">Sanity Check</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="sanitycheck.cgi">Tutarlılık Kontrolü</a></li>
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.editusers || user.can_bless %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editusers.cgi">Users</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editusers.cgi">Kullanıcılar</a></li>
           [% print_pipe = 1 %]
         [% END %]
         [% IF Param('useclassification') && user.groups.editclassifications %]
@@ -62,11 +62,11 @@
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.editcomponents || user.get_products_by_permission("editcomponents").size %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editproducts.cgi">Products</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editproducts.cgi">Ürünler</a></li>
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.editcomponents %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editflagtypes.cgi">Flags</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editflagtypes.cgi">Bayraklar</a></li>
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.admin %]
@@ -75,11 +75,11 @@
           <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editvalues.cgi">Field Values</a></li>
         [% END %]
         [% IF user.groups.creategroups %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editgroups.cgi">Groups</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editgroups.cgi">Gruplar</a></li>
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.editkeywords %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editkeywords.cgi">Keywords</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editkeywords.cgi">Anahtar Kelimeler</a></li>
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.bz_canusewhines %]
@@ -98,12 +98,12 @@
     [% print_pipe = 0 %]
     <li id="links-saved">
       <div class="label">
-        Saved Searches:
+        Kaydedilmiş Aramalar:
       </div>
       <ul class="links">
         [% IF user.showmybugslink %]
           [% filtered_username = user.login FILTER url_quote %]
-          <li><a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">My [% terms.Bugs %]</a></li>
+          <li><a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Üzerimdeki [% terms.Bugs %]</a></li>
           [% print_pipe = 1 %]
         [% END %]
 
