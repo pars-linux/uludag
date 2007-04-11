@@ -27,60 +27,59 @@ To: [% emailaddress %]
 Subject: [% PROCESS subject %]
 X-Bugzilla-Type: admin
 
-A request was cancelled from [% remoteaddress %].
+Yapılan istek [% remoteaddress %] tarafından kabul edilmedi.
 
-If you did not request this, it could be either an honest
-mistake or someone attempting to break into your [% terms.Bugzilla %] account.
+Eğer bu isteği siz yapmadıysanız büyük ihtimal ile [% terms.Bugzilla %] hesabınızı 
+izinsiz olarak kullanmak için yapılmış beyhude bir girişimdi.
 
-Take a look at the information below and forward this email
-to [% maintainer %] if you suspect foul play.
+Lütfen aşağıdaki bilgileri kontrol ettikten sonra bu isteğin başkası tarafından 
+yapıldığına emin olduktan sonra bu e-postayı [% maintainer %] adresine gönderin.
 
-            Token: [% token %]
-       Token Type: [% tokentype %]
-             User: [% emailaddress %]
-       Issue Date: [% issuedate %]
-       Event Data: [% eventdata %]
-Cancelled Because: [% PROCESS cancelactionmessage %]
+            İstek: [% token %]
+       İstek Tipi: [% tokentype %]
+        Kullanıcı: [% emailaddress %]
+   Hareket Tarihi: [% issuedate %]
+             Veri: [% eventdata %]
+Vazgeçilme Sebebi: [% PROCESS cancelactionmessage %]
 
 [% BLOCK subject %]
   [% IF tokentype == 'new_account' %]
-    User account creation request cancelled
+    Kullanıcı hesabı yaratma isteğinden vazgeçildi
   [% ELSIF tokentype == 'password' %]
-    Password change request cancelled
+    Parola değiştirme isteğinden vazgeçildi
   [% ELSIF tokentype == 'emailnew' OR tokentype == 'emailold' %]
-    Email change request cancelled
+    e-posta değiştirme isteğinden vazgeçildi
   [% ELSE %]
-    [% tokentype %] token cancelled
+    [% tokentype %] isteğinden vazgeçildi
   [% END %]
 [% END %]
 
 [% BLOCK cancelactionmessage %]
   [% IF    cancelaction == 'account_exists' %]
-    Account [% email %] already exists.
+    [% email %] isimli hesap zaten mevcut.
 
   [% ELSIF cancelaction == 'email_change_cancelled' %]
-    The request to change the email address for
-    the [% old_email %] account to [% new_email %] has
-    been cancelled.
+    Hesabınızla ilişik durumda olan eski e-posta adresinizi
+    [% old_email %] yeni e-posta adresiniz [% new_email %] ile 
+    değiştirme isteğinden vazgeçildi.
 
   [% ELSIF cancelaction == 'email_change_cancelled_reinstated' %]
-    The request to change the email address for your account
-    to [% new_email %] has been cancelled. Your old account
-    settings have been reinstated.
+    Hesabınızla ilişik durumda olan e-posta adresinizi 
+    [% new_email %] ile değiştirme isteğinden vazgeçildi. Eski 
+    hesap tercihleriniz korunuyor.
 
   [% ELSIF cancelaction == 'emailold_change_cancelled' %]
-    The request to change the email address for your account
-    to [% new_email %] has been cancelled.
+    Hesabınızla ilişik durumda olan e-posta adresinizi 
+    [% new_email %] ile değiştirme isteğinden vazgeçildi.
 
   [% ELSIF cancelaction == 'password_change_cancelled' %]
-    You have requested cancellation.
+    İsteğinizden vazgeçmeyi istediniz.
 
   [% ELSIF cancelaction == 'account_creation_cancelled' %]
-    The creation of the user account [% emailaddress %]
-    has been cancelled.
+    [% emailaddress %] isimli hesabı oluşturmaktan vazgeçildi.
 
   [% ELSIF cancelaction == 'user_logged_in' %]
-    You have logged in.
+    Giriş yaptınız.
 
   [% ELSIF cancelaction == 'wrong_token_for_changing_passwd' %]
     You have tried to use the token to change the password.
