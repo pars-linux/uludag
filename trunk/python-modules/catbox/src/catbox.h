@@ -44,7 +44,7 @@ char **make_pathlist(PyObject *paths);
 
 int catbox_retval_init(struct trace_context *ctx);
 void catbox_retval_set_exit_code(struct trace_context *ctx, int retcode);
-void catbox_retval_add_violation(struct trace_context *ctx, const char *operation, const char *path);
+void catbox_retval_add_violation(struct trace_context *ctx, const char *operation, const char *path, const char *canonical);
 
 PyObject *catbox_core_run(struct trace_context *ctx);
 

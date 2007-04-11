@@ -24,4 +24,5 @@ def main():
 
 ret = catbox.run(main)
 assert(ret.code == 0)
-assert(len(filter(lambda x: x == ("open", "lala"), ret.violations)) == 4)
+canonical = os.path.realpath(os.getcwd())
+assert(len(filter(lambda x: x == ("open", "lala", canonical), ret.violations)) == 4)
