@@ -30,8 +30,8 @@
 
 
 [% PROCESS global/header.html.tmpl
-   title = "$terms.Bugzilla Main Page"
-   header = "Main Page" 
+   title = "$terms.Bugzilla Ana Sayfası"
+   header = "Ana Sayfa" 
    header_addl_info = "version $constants.BUGZILLA_VERSION"
    style_urls = [ 'skins/standard/index.css' ]
    onload = 'document.forms[\'f\'].quicksearch.focus();'
@@ -50,7 +50,7 @@ function addSidebar() {
   }
   else
   {
-    var rv = window.confirm ("Your browser does not support the sidebar extension.  " + "Would you like to upgrade now?");
+    var rv = window.confirm ("Tarayıcınız kenar çubuğu eklentisini desteklemiyor.  " + "Şimdi sürüm yükseltmek ister misiniz?");
     if (rv)
       document.location.href = "http://www.mozilla.org/";
   }
@@ -95,9 +95,9 @@ function addSidebar() {
 <div id="page-index">
   <div class="intro"></div>
 
-  <p>[% terms.Bugzilla %]'ya hoşgeldiniz. To see what's new in this version
-    of [% terms.Bugzilla %], see the 
-    <a href="page.cgi?id=release-notes.html">release notes</a>!
+  <p>[% terms.Bugzilla %]'ya hoşgeldiniz. Bu [% terms.Bugzilla %] sürümüde yeni özelliklerin neler
+    olduğunu görmek için,
+    <a href="page.cgi?id=release-notes.html">sürüm notları</a> belgesine göz atabilirsiniz!
     You may also want to read the 
     <a href="[% Param('docs_urlbase') FILTER html %]using.html">
     [%- terms.Bugzilla %] User's Guide</a> to find out more about 
@@ -105,26 +105,26 @@ function addSidebar() {
 
   <p>Most common actions:</p>
   <ul>
-    <li id="query"><a href="query.cgi">Search existing [% terms.bug %] reports</a></li>
-    <li id="enter-bug"><a href="enter_bug.cgi">Enter a new [% terms.bug %] report</a></li>
+    <li id="query"><a href="query.cgi">Mevcut [% terms.bug %] raporları arasında arama</a></li>
+    <li id="enter-bug"><a href="enter_bug.cgi">Yeni bir [% terms.bug %] raporu girişi</a></li>
     <li id="report"><a href="report.cgi">Summary reports and charts</a></li>
 [% IF user.id %]
-    <li id="userprefs"><a href="userprefs.cgi">Change password or user preferences</a></li>
+    <li id="userprefs"><a href="userprefs.cgi">Parola ya da kullanıcı tercihlerini değiştirme</a></li>
   [% IF user.authorizer.can_logout %]
-    <li id="logout"><a href="relogin.cgi">Log out [% user.login FILTER html %]</a></li>
+    <li id="logout"><a href="relogin.cgi">Çıkış [% user.login FILTER html %]</a></li>
   [% END %]
 [% ELSIF user.authorizer.can_login %]
   </ul>
     [% PROCESS "account/auth/login-small.html.tmpl" %]
   <ul>
   [% IF Param('createemailregexp') && user.authorizer.user_can_create_account %]
-    <li id="account"><a href="createaccount.cgi">Open a new [% terms.Bugzilla %] account</a></li>
+    <li id="account"><a href="createaccount.cgi">Yeni [% terms.Bugzilla %] hesabı açın</a></li>
   [% END %]
 [% END %]
-    <li id="sidebar"><a href="javascript:addSidebar()">Add to Sidebar</a> (requires a Mozilla browser like Mozilla Firefox)</li>
+    <li id="sidebar"><a href="javascript:addSidebar()">Kenar çubuğuna ekle</a> (Firefox gerektirir)</li>
     <li id="quick_search_plugin">
-      <a href="javascript:window.external.AddSearchProvider('[% Param('urlbase') %]search_plugin.cgi')">Install
-      the Quick Search plugin</a> (requires Firefox 2 or Internet Explorer 7)
+      <a href="javascript:window.external.AddSearchProvider('[% Param('urlbase') %]search_plugin.cgi')">Hızlı arama eklentisini
+      kur</a> (Firefox 2 ya da Internet Explorer 7 gerektirir)
     </li>
 
 
@@ -138,10 +138,10 @@ function addSidebar() {
                   { alert('Please enter one or more search terms first.');
                     return false; } return true;">
   <div>
-    <p>Enter [% terms.abug %] # or some search terms:</p>
+    <p>[% terms.abug %] numarasını ya da arama kriterini giriniz:</p>
     <input id="quicksearch" type="text" name="quicksearch">
-    <input id="find" type="submit" value="Find">
-    <a href="page.cgi?id=quicksearch.html">[Help]</a>
+    <input id="find" type="submit" value="Göster">
+    <a href="page.cgi?id=quicksearch.html">[Yardım]</a>
   </div>
   </form>
 
