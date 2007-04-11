@@ -103,7 +103,7 @@ function addSidebar() {
     [%- terms.Bugzilla %] User's Guide</a> to find out more about 
     [%+ terms.Bugzilla %] and how to use it.</p>
 
-  <p>Most common actions:</p>
+  <p>En sık kullanılan işlemler:</p>
   <ul>
     <li id="query"><a href="query.cgi">Mevcut [% terms.bug %] raporları arasında arama</a></li>
     <li id="enter-bug"><a href="enter_bug.cgi">Yeni bir [% terms.bug %] raporu girişi</a></li>
@@ -135,7 +135,7 @@ function addSidebar() {
 
   <form id="f" name="f" action="buglist.cgi" method="get"
         onsubmit="if (this.quicksearch.value == '')
-                  { alert('Please enter one or more search terms first.');
+                  { alert('Arama yapmadan önce lütfen bir ya da daha fazla arama kriteri girin.');
                     return false; } return true;">
   <div>
     <p>[% terms.abug %] numarasını ya da arama kriterini giriniz:</p>
