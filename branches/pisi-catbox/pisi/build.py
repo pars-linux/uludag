@@ -407,8 +407,8 @@ class Builder:
 
         return util.join_path(self.pkg_work_dir(), workdir)
 
-    def log_sandbox_violation(self, operation, path):
-        ctx.ui.error(_("Sandbox violation: %s (%s)") % (operation, path))
+    def log_sandbox_violation(self, operation, path, canonical_path):
+        ctx.ui.error(_("Sandbox violation: %s (%s -> %s)") % (operation, path, canonical_path))
 
     def run_action_function(self, func, mandatory=False):
         """Calls the corresponding function in actions.py.
