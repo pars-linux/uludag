@@ -22,21 +22,19 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl 
-  title = "Find a Specific " _ terms.Bug
+  title = "Belirli Bir " _ terms.Bug _ " Bul"
 %]
 
 [% WRAPPER search/tabs.html.tmpl %]
 
 <p>
-Find a specific [% terms.bug %] by entering words that describe it.  
-[% terms.Bugzilla %] will search [% terms.bug %] descriptions and comments
-for those words and return a list of matching [% terms.bugs %] sorted
-by relevance.
+Belirli bir [% terms.bug %]yı açıklayıcı kelimeler girerek bulabilirsiniz. 
+[% terms.Bugzilla %] [% terms.bug %] açıklamaları ve yorumlar içinde girdiğiniz
+kelimeleri tarayacak ve sonucu size ilişkisel bir liste olarak sunacaktır.
 </p>
 
 <p>
-For example, if the [% terms.bug %] you are looking for is a browser crash when you go to a secure web site with an embedded Flash animation, you might search
-for "crash secure SSL flash".
+Örneğin, aradığınız [% terms.bug %] güvenli web sitelerinde gösterilen Flash animasyonlarının tarayıcıyı çökertmesi ile ilgiliyse, kelimeleri "güvenli SSL flash çökme" gibi girebilirsiniz.
 </p>
 
 <form name="queryform" method="get" action="buglist.cgi">
@@ -46,7 +44,7 @@ for "crash secure SSL flash".
 <table>
   <tr>
     <td align="right" valign="baseline">
-      <b><label for="bug_status">Status:</label></b>
+      <b><label for="bug_status">Durum:</label></b>
     </td>
     <td>
       <select name="bug_status" id="bug_status">
@@ -64,7 +62,7 @@ for "crash secure SSL flash".
   </tr>
   <tr>
     <td align="right" valign="baseline">
-      <b><label for="product">Product:</label></b>
+      <b><label for="product">Ürün:</label></b>
     </td>
     <td>
       <select name="product" id="product">
@@ -95,7 +93,7 @@ for "crash secure SSL flash".
   </tr>
   <tr>
     <td align="right" valign="baseline">
-      <b><label for="content">Words:</label></b>
+      <b><label for="content">Kelimeler:</label></b>
     </td>
     <td>
       <input name="content" size="40" id="content"
@@ -109,7 +107,7 @@ for "crash secure SSL flash".
   <tr>
     <td></td>
     <td>
-      <input type="submit" id="search" value="Search">
+      <input type="submit" id="search" value="Arama">
     </td>
   </tr>
 </table>
