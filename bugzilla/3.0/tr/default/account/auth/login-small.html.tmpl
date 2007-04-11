@@ -36,12 +36,12 @@
 <form name="login" action="[% script_name FILTER html %]" method="POST">
   <table id="login-small">
     <tr>
-      <th align="right"><label for="Bugzilla_login">Login:</label></th>
+      <th align="right"><label for="Bugzilla_login">Kullanıcı Adı:</label></th>
       <td><input size="20" id="Bugzilla_login" name="Bugzilla_login">
           [% Param('emailsuffix') FILTER html %]</td>
     </tr>
     <tr>
-      <th align="right"><label for="Bugzilla_password">Password:</label></th>
+      <th align="right"><label for="Bugzilla_password">Parola:</label></th>
       <td>
         <input type="password" size="20" id="Bugzilla_password" name="Bugzilla_password">
       </td>
@@ -54,7 +54,7 @@
         <td>
           <input type="checkbox" id="Bugzilla_remember" name="Bugzilla_remember" value="on"
                  [% "checked" IF Param('rememberlogin') == "defaulton" %]>
-          <label for="Bugzilla_remember">Remember my Login</label>
+          <label for="Bugzilla_remember">Beni hatırla</label>
         </td>
       </tr>
     [% END %]
@@ -65,8 +65,8 @@
         <td>
           <input type="checkbox" id="Bugzilla_restrictlogin" name="Bugzilla_restrictlogin"
                  checked="checked">
-          <label for="Bugzilla_restrictlogin">Restrict this session to this IP address
-          (using this option improves security)</label>
+          <label for="Bugzilla_restrictlogin">Bu oturumu bu IP adresi ile sınırlandır
+          (bu seçeneği kullanmak güvenliği arttırır)</label>
         </td>
       </tr>
     [% END %]
@@ -79,7 +79,7 @@
         # verification method #%]
 
       [% IF user.authorizer.can_change_password %]
-        <td>[ <a href="index.cgi?GoAheadAndLogIn=1#forgot">Forgot my Password</a> ]</td>
+        <td>[ <a href="index.cgi?GoAheadAndLogIn=1#forgot">Parolamı unuttum</a> ]</td>
       [% END %]
     </tr>
   </table>
