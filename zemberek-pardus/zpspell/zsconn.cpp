@@ -22,19 +22,19 @@ ZSConn::ZSConn()
     connection = dbus_g_bus_get(DBUS_BUS_SYSTEM, &gerror);
     if (!connection)
     {
-	g_error_free(gerror);
-	perror("dbus_g_bus_get()");
+        g_error_free(gerror);
+        perror("dbus_g_bus_get()");
     }
     proxy = dbus_g_proxy_new_for_name(connection,
-				      "net.zemberekserver.server.dbus",
-				      "/net/zemberekserver/server/dbus/ZemberekDbus",
-				      "net.zemberekserver.server.dbus.ZemberekDbusInterface");
+                                      "net.zemberekserver.server.dbus",
+                                      "/net/zemberekserver/server/dbus/ZemberekDbus",
+                                      "net.zemberekserver.server.dbus.ZemberekDbusInterface");
 }
 
 ZSConn::~ZSConn()
 {
     if (proxy)
-	g_object_unref(proxy);
+        g_object_unref(proxy);
 }
 
 
@@ -74,17 +74,17 @@ enum Z_CHECK_RESULT ZSConn::spellCheck( const string& str ) const
     GError *gerror = 0;
 
     if (!dbus_g_proxy_call(proxy, "kelimeDenetle", &gerror,
-			   G_TYPE_STRING, str.c_str() ,G_TYPE_INVALID,
-			   G_TYPE_BOOLEAN, &result, G_TYPE_INVALID))
+                           G_TYPE_STRING, str.c_str() ,G_TYPE_INVALID,
+                           G_TYPE_BOOLEAN, &result, G_TYPE_INVALID))
     {
-    	g_error_free(gerror);
-    	return Z_UNKNOWN;
+        g_error_free(gerror);
+        return Z_UNKNOWN;
     }
 
     if (result)
-	return Z_TRUE;
+        return Z_TRUE;
     else
-	return Z_FALSE;
+        return Z_FALSE;
 }
 
 vector<string> ZSConn::getSuggestions(const string& str ) const
@@ -94,16 +94,16 @@ vector<string> ZSConn::getSuggestions(const string& str ) const
     vector<string> suggestions;
 
     if (!dbus_g_proxy_call(proxy, "oner", &gerror,
-			   G_TYPE_STRING, str.c_str(), G_TYPE_INVALID,
-			   G_TYPE_STRV, &suggs, G_TYPE_INVALID))
+                           G_TYPE_STRING, str.c_str(), G_TYPE_INVALID,
+                           G_TYPE_STRV, &suggs, G_TYPE_INVALID))
     {
-    	g_error_free(gerror);
-    	perror("getSuggestions()");
+        g_error_free(gerror);
+        perror("getSuggestions()");
     }
     
     int suggs_len = g_strv_length(suggs);
     for (int i = 0; i < suggs_len; ++i)
-	suggestions.push_back(string(suggs[i]));
+        suggestions.push_back(string(suggs[i]));
 
     return suggestions;
 }
