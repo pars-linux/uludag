@@ -17,7 +17,7 @@ import subprocess
 from distutils.core import setup, Extension
 from distutils.command.install import install
 
-version='0.5'
+version='0.8'
 
 distfiles = """
     setup.py
