@@ -111,33 +111,22 @@ catbox_paths_canonical(pid_t pid, char *path, int dont_follow)
 }
 
 int
-path_writable(char **pathlist, pid_t pid, char *path, int dont_follow, int mkdir_case)
+path_writable(char **pathlist, const char *canonical, int mkdir_case)
 {
-	char *canonical = NULL;
-	int ret = 0;
 	int i;
-	int flag;
 
 	if (!pathlist) return 0;
-
-	canonical = catbox_paths_canonical(pid, path, dont_follow);
-	if (!canonical) return -1;
 
 	for (i = 0; pathlist[i]; i++) {
 		size_t size = strlen(pathlist[i]);
 		if (pathlist[i][size-1] == '/' && strlen(canonical) == (size - 1)) --size;
 		if (strncmp(pathlist[i], canonical, size) == 0) {
-			ret = 1;
-			break;
+			return 1;
 		} else if (mkdir_case && strncmp(pathlist[i], canonical, strlen(canonical)) == 0) {
-			ret = -2;
-			break;
+			return -1;
 		}
 	}
-
-	if (canonical) free(canonical);
-
-	return ret;
+	return 0;
 }
 
 void

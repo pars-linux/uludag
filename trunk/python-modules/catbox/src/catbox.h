@@ -38,7 +38,7 @@ struct trace_context {
 };
 
 char *catbox_paths_canonical(pid_t pid, char *path, int dont_follow);
-int path_writable(char **pathlist, pid_t pid, char *path, int dont_follow, int mkdir_case);
+int path_writable(char **pathlist, const char *path, int mkdir_case);
 void free_pathlist(char **pathlist);
 char **make_pathlist(PyObject *paths);
 
