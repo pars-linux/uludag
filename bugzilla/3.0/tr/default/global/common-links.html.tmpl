@@ -58,7 +58,7 @@
     <li>
       <span class="separator">| </span>
       [% IF user.authorizer.can_logout %]
-        <a href="relogin.cgi">Çıkış&nbsp;</a>
+        <a href="relogin.cgi">Çıkış</a>
       [% ELSE %]
         Logged&nbsp;in&nbsp;as
       [% END %]
@@ -99,7 +99,7 @@
         [% script_name = script_name _ "?GoAheadAndLogIn=1" %]
       [% END %]
         
-      <li><span class="separator">| </span><a href="[% script_name FILTER html %]">Log&nbsp;In</a></li>
+      <li><span class="separator">| </span><a href="[% script_name FILTER html %]">Giriş</a></li>
     [% END %]
   [% END %]
 </ul>
