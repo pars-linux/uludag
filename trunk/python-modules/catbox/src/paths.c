@@ -98,9 +98,18 @@ catbox_paths_canonical(pid_t pid, char *path, int dont_follow)
 			char *t;
 			t = strrchr(path, '/');
 			if (t && t[1] != '\0') {
-				++t;
 				*t = '\0';
 				canonical = realpath(path, NULL);
+				if (canonical) {
+					char *tmp;
+					++t;
+					tmp = malloc(strlen(canonical) + 2 + strlen(t));
+					if (tmp) {
+						sprintf(tmp, "%s/%s", canonical, t);
+						free(canonical);
+						canonical = tmp;
+					}
+				}
 			}
 		}
 	}

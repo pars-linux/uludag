@@ -29,7 +29,7 @@ assert(ret.code == 1)
 assert(len(ret.violations) == 1)
 assert(ret.violations[0][0] == "open")
 
-ret = catbox.run(bad_write2, writable_paths=[os.getcwd()])
+ret = catbox.run(bad_write2, writable_paths=[os.getcwd() + "/"])
 assert(ret.code == 1)
 assert(len(ret.violations) == 1)
 assert(ret.violations[0][0] == "open")
