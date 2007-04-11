@@ -43,7 +43,7 @@ static int checkAndPrint( ZSConn& zemberek, const string str, int offset )
             zstr.suggestionString() << endl;
         break;
     default:
-    	return -1;
+        return -1;
         break;
     }
 
@@ -76,7 +76,7 @@ static int z_interactive_mode( ZSConn& zemberek )
 
         string str( "" );
         while ( *t ) {
-            if ( *t == ' ' || *t == '\t' ) {
+            if ( *t == ' ' || *t == '\t' || *t == ':' ) {
                 if ( !(str.empty()) ) {
                     ret = checkAndPrint( zemberek, str, offset );
                 }
@@ -102,7 +102,7 @@ static int z_interactive_mode( ZSConn& zemberek )
             ret = checkAndPrint( zemberek, str, offset );
         }
 
-	if ( ret == 0 ) cout << endl;
+        if ( ret == 0 ) cout << endl;
     }
 
     return 0;
@@ -119,8 +119,8 @@ int main( int argc, char** argv )
             aflag = true;
             break;
         default:
-  	    break;
-	    //            cerr << "Bilinmeyen parametre: " << optopt << endl;
+            break;
+            //            cerr << "Bilinmeyen parametre: " << optopt << endl;
         }
     }
 
