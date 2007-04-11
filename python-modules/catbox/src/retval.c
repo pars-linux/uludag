@@ -94,14 +94,15 @@ catbox_retval_set_exit_code(struct trace_context *ctx, int retcode)
 }
 
 void
-catbox_retval_add_violation(struct trace_context *ctx, const char *operation, const char *path)
+catbox_retval_add_violation(struct trace_context *ctx, const char *operation, const char *path, const char *canonical)
 {
 	RetVal *ret = (RetVal *) ctx->retval;
 	PyObject *item;
 
-	item = PyTuple_New(2);
+	item = PyTuple_New(3);
 	PyTuple_SetItem(item, 0, PyString_FromString(operation));
 	PyTuple_SetItem(item, 1, PyString_FromString(path));
+	PyTuple_SetItem(item, 2, PyString_FromString(canonical));
 	PyList_Append(ret->violations, item);
 
 	if (ctx->logger) {

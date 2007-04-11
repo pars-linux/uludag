@@ -30,4 +30,4 @@ assert(ret.violations == [])
 
 ret = catbox.run(bad_test, ["/var/pisi/test-1.2"])
 assert(ret.code == 1)
-assert(ret.violations == [("mkdir", "/home")])
+assert(ret.violations == [("mkdir", "/home", "/home")])

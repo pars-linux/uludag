@@ -96,7 +96,7 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, char *path, const char *
 		mkdir_case = strcmp("mkdir", name) == 0;
 		ret = path_writable(ctx->pathlist, canonical, mkdir_case);
 		if (ret == 0) {
-			catbox_retval_add_violation(ctx, name, path);
+			catbox_retval_add_violation(ctx, name, path, canonical);
 			err = -EACCES;
 		} else if (ret == -1) {
 			err = -EEXIST;
@@ -147,7 +147,7 @@ found:
 	}
 
 	if (flags & NET_CALL && !ctx->network_allowed) {
-		catbox_retval_add_violation(ctx, name, "");
+		catbox_retval_add_violation(ctx, name, "", "");
 		return -EACCES;
 	}
 
