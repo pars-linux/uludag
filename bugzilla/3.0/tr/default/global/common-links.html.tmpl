@@ -23,9 +23,9 @@
 [% DEFAULT btn_id = "find" %]
 
 <ul class="links">
-  <li><a href="./">Home</a></li>
-  <li><span class="separator">| </span><a href="enter_bug.cgi">New</a></li>
-  <li><span class="separator">| </span><a href="query.cgi">Search</a></li>
+  <li><a href="./">Ana Sayfa</a></li>
+  <li><span class="separator">| </span><a href="enter_bug.cgi">Yeni</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">Arama</a></li>
 
   <li class="form">
     <span class="separator">| </span>
@@ -37,35 +37,35 @@
     <input class="btn" type="submit" value="Find" id="[% btn_id FILTER html %]">
     [%-# Work around FF bug: keep this on one line %]</form></li>
 
-  <li><span class="separator">| </span><a href="report.cgi">Reports</a></li>
+  <li><span class="separator">| </span><a href="report.cgi">Raporlar</a></li>
 
   <li>
     <span class="separator">| </span>
     [% IF user.id %]
       <a href="request.cgi?requester=[% user.login FILTER url_quote %]&amp;requestee=
-               [% user.login FILTER url_quote %]&amp;do_union=1&amp;group=type">My Requests</a>
+               [% user.login FILTER url_quote %]&amp;do_union=1&amp;group=type">Benim Taleplerim</a>
     [% ELSE %]
-      <a href="request.cgi">Requests</a>
+      <a href="request.cgi">Talepler</a>
     [% END %]
   [%-# Work around FF bug: keep this on one line %]</li>
 
   [% IF user.id && Param('usevotes') %]
-    <li><span class="separator">| </span><a href="votes.cgi?action=show_user">My&nbsp;Votes</a></li>
+    <li><span class="separator">| </span><a href="votes.cgi?action=show_user">Benim&nbsp;Oylarım</a></li>
   [% END %]
 
   [% IF user.login %]
-    <li><span class="separator">| </span><a href="userprefs.cgi">Preferences</a></li>
+    <li><span class="separator">| </span><a href="userprefs.cgi">Tercihler</a></li>
     <li>
       <span class="separator">| </span>
       [% IF user.authorizer.can_logout %]
-        <a href="relogin.cgi">Log&nbsp;out</a>
+        <a href="relogin.cgi">Çıkış&nbsp;</a>
       [% ELSE %]
         Logged&nbsp;in&nbsp;as
       [% END %]
       [% IF sudoer %]
         [%+ sudoer.login FILTER html %] (<b>impersonating
         [%+ user.login FILTER html %]</b>
-        <a href="relogin.cgi?action=end-sudo">end session</a>)
+        <a href="relogin.cgi?action=end-sudo">otorumu bitir</a>)
       [% ELSE %]
         [%+ user.login FILTER html %]
       [% END %]
@@ -73,7 +73,7 @@
   [% ELSE %]
     [% IF Param('createemailregexp')
           && user.authorizer.user_can_create_account %]
-      <li><span class="separator">| </span><a href="createaccount.cgi">New&nbsp;Account</a></li>
+      <li><span class="separator">| </span><a href="createaccount.cgi">Yeni&nbsp;Hesap</a></li>
     [% END %]
     [% IF user.authorizer.can_login %]
       [%# Use the current script name. If an empty name is returned,
