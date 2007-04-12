@@ -1,3 +1,7 @@
+2007-04-12  Barış Metin  <baris@pardus.org.tr>
+
+        * main.cpp: handle ':' as a word terminator like '\t' and ' '.
+
 2007-03-05  Barış Metin  <baris@pardus.org.tr>
 
         * Remove autotools support and use CMake instead.
