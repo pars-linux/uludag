@@ -53,7 +53,7 @@ static int checkAndPrint( ZSConn& zemberek, const string str, int offset )
 /* Ispell style interactive mode */
 static int z_interactive_mode( ZSConn& zemberek )
 {
-    cout << desc << VERSION << endl;
+    cout << desc << VERSION_STRING << endl;
 
     while ( true ) {
         char buf[BUFSIZ];

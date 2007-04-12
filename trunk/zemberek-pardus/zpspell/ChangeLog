@@ -1,5 +1,9 @@
 2007-04-12  Barış Metin  <baris@pardus.org.tr>
 
+        * Release version 0.4.1
+
+        * config.h.cmake: introduce VERSION_STRING and use it in main.cpp
+
         * main.cpp: handle ':' as a word terminator like '\t' and ' '.
 
 2007-03-05  Barış Metin  <baris@pardus.org.tr>
