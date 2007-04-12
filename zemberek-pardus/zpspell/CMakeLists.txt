@@ -2,7 +2,7 @@
 project(zpspell)
 
 # variables for project
-set(VERSION 0.4)
+set(VERSION 0.4.1)
 
 add_executable(zpspell zsconn.cpp
                        zstring.cpp
