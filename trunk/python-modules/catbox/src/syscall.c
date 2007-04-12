@@ -103,7 +103,12 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, char *path, const char *
 		}
 		free(canonical);
 	} else {
-		err = -ENAMETOOLONG;
+		if (errno == ENAMETOOLONG)
+			err = -ENAMETOOLONG;
+		else if (errno == ENOENT)
+			err = -ENOENT;
+		else
+			err = -EACCES;
 	}
 
 	return err;
