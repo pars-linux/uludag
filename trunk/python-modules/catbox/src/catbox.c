@@ -16,6 +16,33 @@
 #include <linux/user.h>
 #include <linux/unistd.h>
 
+static char doc_catbox[] = "Simple and fast sandboxing module.";
+static char doc_run[] = "Run given function in a sandbox.\n"
+"\n"
+"    function: Python callable, will run inside the sandbox as a child\n"
+"              process. It can read all Python variables, but can't modify\n"
+"              caller's values.\n"
+"    writable_paths: A list of allowed paths.\n"
+"    network: Give a false value for disabling network communication.\n"
+"    logger: Another callable, will be called with operation, path, resolved path\n"
+"            arguments for each sandbox violation.\n"
+"\n"
+"    Everything except function are optional. Return value is an object\n"
+"    with two attributes:\n"
+"\n"
+"    code: Exit code of the child process.\n"
+"    violations: List of violation records.";
+static char doc_canonical[] = "Resolve and simplify given path.\n"
+"\n"
+"    path: Path string.\n"
+"    follow: Boolean, should we follow latest part of the path if it is\n"
+"            a symlink, default is no.\n"
+"    pid: Resolve path in the context of the process with given pid.\n"
+"         Relative paths and /proc/self are resolved for that process.\n"
+"\n"
+"    Everything except path are optional. Return value is the resolved\n"
+"    path string.";
+
 static PyObject *
 catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 {
@@ -103,10 +130,8 @@ catbox_canonical(PyObject *self, PyObject *args, PyObject *kwargs)
 }
 
 static PyMethodDef methods[] = {
-	{ "run", (PyCFunction) catbox_run, METH_VARARGS | METH_KEYWORDS,
-	  "Run given function in a sandbox."},
-	{ "canonical", (PyCFunction) catbox_canonical, METH_VARARGS | METH_KEYWORDS,
-	  "Resolve and simplify given path."},
+	{ "run", (PyCFunction) catbox_run, METH_VARARGS | METH_KEYWORDS, doc_run },
+	{ "canonical", (PyCFunction) catbox_canonical, METH_VARARGS | METH_KEYWORDS, doc_canonical },
 	{ NULL, NULL, 0, NULL }
 };
 
@@ -115,5 +140,5 @@ initcatbox(void)
 {
 	PyObject *m;
 
-	m = Py_InitModule("catbox", methods);
+	m = Py_InitModule3("catbox", methods, doc_catbox);
 }
