@@ -35,14 +35,6 @@ setup_kid(struct traced_child *kid)
 	kid->need_setup = 0;
 }
 
-
-
-/*------------------------------------------------------*/
-
-/*
-    child management
-*/
-
 static void
 add_child(struct trace_context *ctx, pid_t pid)
 {
@@ -80,11 +72,6 @@ do_rem:
 	ctx->nr_children -= 1;
 	ctx->children[i] = ctx->children[ctx->nr_children];
 }
-
-/*------------------------------------------------------*/
-
-
-
 
 static PyObject *
 core_trace_loop(struct trace_context *ctx, pid_t pid)
@@ -161,6 +148,7 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 	return ctx->retval;
 }
 
+// Syncronization value, it has two copies in parent and child's memory spaces
 static int got_sig = 0;
 
 static void sigusr1(int dummy) {
@@ -183,36 +171,46 @@ catbox_core_run(struct trace_context *ctx)
 	}
 
 	if (pid == 0) {
-		// child process
+		// child process comes to life
 		PyObject *ret;
-		ptrace(PTRACE_TRACEME, 0, 0, 0);
-		kill(getppid(), SIGUSR1); //send a signal to parent
-		while (!got_sig) ; //wait for confirmation
 
-		ret = PyObject_Call(ctx->func, PyTuple_New(0), NULL); //run the callable
-        
-		if (!ret) { //handle exception
+		// set up tracing mode
+		ptrace(PTRACE_TRACEME, 0, 0, 0);
+		// tell the parent we are ready
+		kill(getppid(), SIGUSR1);
+		// wait until parent tells us to continue
+		while (!got_sig);
+
+		// let the callable do its job
+		ret = PyObject_Call(ctx->func, PyTuple_New(0), NULL);
+
+		if (!ret) {
 			PyObject *e;
 			PyObject *val;
 			PyObject *tb;
 			PyErr_Fetch(&e, &val, &tb);
 			if (PyErr_GivenExceptionMatches(e, PyExc_SystemExit)) {
-				// extract exit code
 				if (PyInt_Check(val))
+					// Callable exits by sys.exit(n)
 					exit(PyInt_AsLong(val));
 				else
+					// Callable exits by sys.exit()
 					exit(2);
 			}
-			// error
+			// Callable exits by unhandled exception
 			exit(1);
 		}
+		// Callable exits by returning from function normally
 		exit(0);
 	}
 
-	// parent process
-	while (!got_sig) ; //wait for the signal from child
-	kill(pid, SIGUSR1); //send a confirmation
-	waitpid(pid, NULL, 0); // ??
+	// parent process continues
+
+	// wait until child set ups tracing mode, and sends a signal
+	while (!got_sig);
+	// tell the kid that it can start given callable now
+	kill(pid, SIGUSR1);
+	waitpid(pid, NULL, 0);
 
 	add_child(ctx, pid);
 	setup_kid(&ctx->children[0]);
