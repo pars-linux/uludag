@@ -17,22 +17,33 @@
 
 /* per process tracking data */
 struct traced_child {
+	/* process id of the traced kid */
 	pid_t pid;
-	int proc_mem_fd;
+	/* we will get a stop signal from kid and will setup tracing flags */
 	int need_setup;
+	/* kid is in syscall */
 	int in_syscall;
+	/* kid called execve, and we'll get spurious sigtrap in next wait */
 	int in_execve;
+	/* original syscall number when a syscall is faked */
 	unsigned long orig_eax;
+	/* faked syscall will fail with this error code */
 	int error_code;
 };
 
 /* general tracking data */
 struct trace_context {
+	/* main callable */
 	PyObject *func;
+	/* violation logger function */
 	PyObject *logger;
+	/* this object keeps everything to be returned to the caller */
 	PyObject *retval;
+	/* allowed path list */
 	char **pathlist;
+	/* is network connection allowed */
 	int network_allowed;
+	/* traced callable and everything it forks */
 	unsigned int nr_children;
 	struct traced_child children[512];
 };
