@@ -430,6 +430,10 @@ class Builder:
                 valid_dirs = [self.pkg_dir(), "/tmp/", "/var/tmp/", "/dev/tty", "/dev/pts/", "/dev/pty", "/dev/null", "/proc/", "/usr/lib/conftest", "/usr/lib/cf"]
                 if ctx.config.values.build.buildhelper == "ccache":
                     valid_dirs.append("%s/.ccache" % os.environ["HOME"])
+                # every qt/KDE application check these
+                valid_dirs.append("%s/.qt/.qt_plugins_3.3rc.lock" % os.environ["HOME"])
+                valid_dirs.append("/usr/qt/3/etc/settings/.qt_plugins_3.3rc.lock")
+
                 ret = catbox.run(self.actionLocals[func], valid_dirs, logger=self.log_sandbox_violation)
                 if ret.violations != []:
                     ctx.ui.error(_("Sandbox violations!"))
