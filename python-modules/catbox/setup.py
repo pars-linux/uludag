@@ -71,7 +71,7 @@ source = [
 setup(
     name='catbox',
     version=version,
-    ext_modules=[Extension('catbox', source)],
+    ext_modules=[Extension('catbox', source, extra_compile_args=["-Wall", "-fomit-frame-pointer"])],
     cmdclass = {
         'install' : Install
     }

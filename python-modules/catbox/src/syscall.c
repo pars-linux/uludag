@@ -70,7 +70,7 @@ get_str(pid_t pid, unsigned long ptr)
 	int i = 0;
 	int f;
 
-	sprintf(buf1, "/proc/%ld/mem", pid);
+	sprintf(buf1, "/proc/%d/mem", pid);
 	f = open(buf1, O_RDONLY);
 	lseek(f, ptr, 0);
 	while (1) {
