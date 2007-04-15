@@ -149,7 +149,7 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 }
 
 // Syncronization value, it has two copies in parent and child's memory spaces
-static int got_sig = 0;
+static int volatile got_sig = 0;
 
 static void sigusr1(int dummy) {
 	got_sig = 1;
