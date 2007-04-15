@@ -1,14 +1,17 @@
 # translation of es.po to spanish
+# translation of es.po to
 # Copyright (C) 2007 Free Software Foundation, Inc.
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# Christian Faure <christian.faurebouvard@laposte.net>, 2007.
+# klemens <click3d at linuxmail org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 20:44+0200\n"
-"PO-Revision-Date: 2007-02-04 09:41+0200\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"PO-Revision-Date: 2007-04-15 09:27-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +28,7 @@ msgstr " horas"
 #: rc.cpp:52 ../src/mousedlg.cpp:122
 #, no-c-format
 msgid "&Single-click to open files and folders"
-msgstr "Clic &simple para abrir archivos y carpetas"
+msgstr "un clic para abrir archivo&s y carpetas"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 134
 #: rc.cpp:33 ../src/wallpaperdlg.cpp:99
@@ -55,9 +58,9 @@ msgid ""
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
-"<b>Pardus </b> es una distribución GNU/Linux, destinado para las necesidades basicos "
-"de escritorio; aprovechando ideas, architectura y código de otras "
-"distribuciones ; Con una herramienta de configuración adaptada que tiene la "
+"<b>Pardus </b> es una distribución GNU/Linux, destinada a necesidades básicas "
+"de escritorio; aprovechando ideas, arquitectura y código de otras "
+"distribuciones; Con una herramienta de configuración adaptada que tiene la "
 "opción de convertirse en un producto independiente; para la simplificación de "
 "la instalación y uso de las computadoras."
 
@@ -69,7 +72,7 @@ msgstr "<big>Cargando...</big>"
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
 #, no-c-format
 msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
-msgstr "<center>Terminado !  Ahora puede empezar a usar <b>Pardus</b></center>"
+msgstr "<center>Terminado!  Ahora puede empezar a usar <b>Pardus</b></center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
 #: rc.cpp:42 ../src/mousedlg.cpp:118
@@ -91,13 +94,13 @@ msgstr "Comportamiento de Clic"
 
 #: ../src/kaptan.cpp:65
 msgid "Congratulations"
-msgstr "Felicitaciones"
+msgstr "Felicidades"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 62
 #: rc.cpp:29 ../src/wallpaperdlg.cpp:97
 #, no-c-format
 msgid "Don't change desktop background!"
-msgstr "No cambiar el fondo de escritorio !"
+msgstr "No cambiar el fondo de escritorio!"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 178
 #: rc.cpp:55 ../src/mousedlg.cpp:123
@@ -111,7 +114,7 @@ msgstr "Haga do&ble -clic para abrir archivos y carpetas (primero seleccione con
 msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
-msgstr "Aqui puedes elegir un <b>estilo </b>para el escritorio. <b>Pardus</b> trae algunos estilos lindos para usar."
+msgstr "Aqui puede elegir un <b>estilo </b>para el escritorio. <b>Pardus</b> le trae algunos estilos bellos para su uso."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23 ../src/wallpaperdlg.cpp:95
@@ -121,7 +124,7 @@ msgid ""
 "<b>Pardus</b> provides eye candy wallpapers, you can select one of them, as "
 "you wish."
 msgstr ""
-"Aqui puedes elegir una <b>imagen de fondo</b> de escritorio. "
+"Aqui puede elegir una <b>imagen de fondo</b> de escritorio. "
 "<b>Pardus</b> viene con fondos hermosos para elegir."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
@@ -132,8 +135,8 @@ msgid ""
 "right buttons on your pointing device by choosing the 'Left handed' option "
 "below. You can also select default click behaviour."
 msgstr ""
-"Si eres zurdo podría preferir invertir las funciones de los botones del "
-"puntero (ratón) indicando la opción 'Zurdo' abajo. Tambien se puede establecer el comportamiento por defecto."
+"Si es zurdo podría preferir invertir las funciones de los botones del "
+"puntero (ratón) indicando la opción 'Zurdo' abajo. También se puede establecer el comportamiento por defecto para los botones."
 
 #: ../src/main.cpp:18
 msgid "Kaptan Desktop"
@@ -141,11 +144,11 @@ msgstr "Kaptan Desktop"
 
 #: ../src/mouse.cpp:32
 msgid "Left handed"
-msgstr "&Zurdo"
+msgstr "Zurdo"
 
 #: ../src/kaptan.cpp:45
 msgid "Mouse Setup"
-msgstr "Configuración de Ratón"
+msgstr "Configuración del Ratón"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 16
 #: rc.cpp:36 ../src/mousedlg.cpp:116
@@ -167,11 +170,11 @@ msgstr "Administrador de Paquetes"
 #: rc.cpp:45 ../src/mousedlg.cpp:119
 #, no-c-format
 msgid "Reverse scroll"
-msgstr "Deslizar inverso"
+msgstr "Desplazamiento invertido"
 
 #: ../src/mouse.cpp:31
 msgid "Right handed"
-msgstr "&Normal"
+msgstr "Diestro"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 121
 #: rc.cpp:69 ../src/packagedlg.cpp:105
@@ -211,16 +214,16 @@ msgid ""
 "This application will also set some default configuration for a better "
 "desktop :)."
 msgstr ""
-"Este aplicativo, llamado <b>Kaptan Desktop</b>, te ayudará con una "
-"configuración básica pero funcional para tu estación <b>Pardus</b> de manera "
-"rápida. Este aplicativo tambien modificará algunas configuraciones por "
+"Este aplicativo, llamado <b>Kaptan Desktop</b>, le ayudará realizar una "
+"configuración básica pero funcional para su estación de trabajo <b>Pardus</b> de manera "
+"rápida. Este aplicativo tambien aplicará algunas configuraciones por "
 "defecto para un mejor escritorio :)."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 54
 #: rc.cpp:84 ../src/styledlg.cpp:97
 #, no-c-format
 msgid "Use enhanced Kickoff style menu"
-msgstr "Usar estilo Kick-off mejorado"
+msgstr "Usar menu mejorado de estilo Kick-off"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 38
