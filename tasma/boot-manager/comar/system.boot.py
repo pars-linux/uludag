@@ -176,6 +176,40 @@ def addEntry(title, commands):
     grub.release()
     notify("System.Boot.changed", "entry")
 
+def renameEntry(index, title):
+    try:
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+    except IOError:
+        fail("Timeout")
+    index = int(index)
+    if index < len(grub.config.entries):
+        entry = grub.config.getEntry(index)
+        entry.title = title
+        grub.release()
+        notify("System.Boot.changed", "entry")
+    else:
+        fail("No such entry")
+
+def updateEntry(index, commands):
+    try:
+        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+    except IOError:
+        fail("Timeout")
+    index = int(index)
+    if index < len(grub.config.entries):
+        entry = grub.config.getEntry(index)
+        for command in commands.split("\n\n"):
+            key, opts, value = command.split("\n")
+            if opts == " ":
+                opts = []
+            else:
+                opts = opts.split()
+            entry.setCommand(key, value, opts)
+        grub.release()
+        notify("System.Boot.changed", "entry")
+    else:
+        fail("No such entry")
+
 def updateKernelEntry(version, max_entries=3, make_default="on"):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
