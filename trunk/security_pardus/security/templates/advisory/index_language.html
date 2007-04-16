@@ -3,12 +3,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>{% trans "Latest Advisories" %}</h2>
-    <ul>
     {% for advisory in advisories %}
-        <li><a href="/{{ advisory.language.code }}/{{ advisory.plsa_id|escape }}/">[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</a></li>
+        <h2>
+            <a href="/{{ advisory.language.code }}/{{ advisory.plsa_id|escape }}/">[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</a>
+        </h2>
+        <div class="advisory_summary">
+            {{ advisory.summary }}
+        </div>
+        <div class="advisory_packages">
+            <strong>{% trans "Affected Packages:" %}</strong> {{ advisory.get_package_names|join:", " }}
+        </div>
     {% endfor %}
-    </ul>
 {% endblock %}
 
 {% block menu %}

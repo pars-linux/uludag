@@ -58,3 +58,12 @@ code {
     padding: 5px;
     font-family: Dejavu Mono, Monospace
 }
+
+.advisory_packages {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 10px;
+}
+.advisory_packages strong {
+    font-size: 10px;
+}
