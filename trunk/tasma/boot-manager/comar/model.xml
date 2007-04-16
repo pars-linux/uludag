@@ -21,6 +21,14 @@
             <method name="removeEntry">
                 <argument>index</argument>
             </method>
+            <method name="renameEntry">
+                <argument>index</argument>
+                <argument>title</argument>
+            </method>
+            <method name="updateEntry">
+                <argument>index</argument>
+                <argument>commands</argument>
+            </method>
             <method name="updateKernelEntry">
                 <argument>version</argument>
                 <argument>max_entries</argument>
