@@ -42,6 +42,9 @@ class Advisory(models.Model):
     def get_packages(self):
         return [x.split() for x in self.packages.split("\n") if x.strip()]
 
+    def get_package_names(self):
+        return [x.split()[0] for x in self.packages.split("\n") if x.strip()]
+
     def get_references(self):
         return [x.strip() for x in self.references.split("\n") if x.strip()]
 

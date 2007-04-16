@@ -49,3 +49,12 @@ a:hover {
 }
 .row2 {
 }
+
+pre {
+    margin: 20px;
+}
+code {
+    border: 1px dashed #aaa;
+    padding: 5px;
+    font-family: Dejavu Mono, Monospace
+}
