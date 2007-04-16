@@ -16,6 +16,12 @@
     <h3>{% trans "Description" %}</h3>
     {{ advisory.description|escape|linebreaks }}
 
+    <h3>{% trans "Resolution" %}</h3>
+    <p>
+        {% blocktrans with advisory.get_package_names|join:", " as packages %}There are update(s) for {{ packages }}. You can update them via Package Manager or with a single command from console:{% endblocktrans %}
+    </p>
+    <pre><code>pisi up {{ advisory.get_package_names|join:" " }}</code></pre>
+
     <h3>{% trans "Packages" %}</h3>
     <ul>
         {% for package in advisory.get_packages %}
