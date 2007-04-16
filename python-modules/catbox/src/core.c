@@ -18,7 +18,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
-static int
+static void
 setup_kid(struct traced_child *kid)
 {
 	int e;
