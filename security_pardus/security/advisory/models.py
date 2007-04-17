@@ -1,4 +1,5 @@
 from django.db import models
+from django.core import validators
 from security.advisory.utils import *
 
 # i18n
@@ -22,17 +23,33 @@ ADVISORY_TYPES = (
     ("Remote", _("Remote")),
 )
 
+def isValidPackageList(field_data, all_data):
+    try:
+        for package in field_data.split("\n"):
+            if package.strip():
+                year, no = package.split()
+    except ValueError:
+        raise validators.ValidationError(_("Package name and version must be seperated with a whitespace."))
+
+def isValidAdvisoryID(field_data, all_data):
+    import re
+    if not re.match("[0-9]{4}-[0-9]+", field_data):
+        raise validators.ValidationError(_("Advisory ID must be in YEAR-NO format."))
+    
+    if "language" in all_data and Advisory.objects.filter(language=all_data["language"], plsa_id=field_data):
+        raise validators.ValidationError(_("Advisory ID already exists for that language."))
+
 class Advisory(models.Model):
     publish = models.BooleanField(_("Publish"))
     release_date = models.DateField(_("Last Update"), auto_now=True)
     language = models.ForeignKey("Language", verbose_name=_("Language"))
-    plsa_id = models.CharField(_("PLSA ID"), maxlength=10, help_text=_("YEAR-NO"))
+    plsa_id = models.CharField(_("PLSA ID"), validator_list=[isValidAdvisoryID], maxlength=10, help_text=_("YEAR-NO"))
     type = models.CharField(_("Type"), maxlength=10, choices=ADVISORY_TYPES)
     severity = models.IntegerField(_("Severity"), default=1)
     title = models.CharField(_("Title"), maxlength=120)
     summary = models.TextField(_("Summary"))
     description = models.TextField(_("Description"))
-    packages = models.TextField(_("Packages"), help_text=_("one package per row (put a whitespace between package name and version)"))
+    packages = models.TextField(_("Packages"), validator_list=[isValidPackageList], help_text=_("one package per row (put a whitespace between package name and version)"))
     references = models.TextField(_("References"), help_text=_("one link per row"))
     fixed = models.BooleanField(_("Ready to publish"))
 

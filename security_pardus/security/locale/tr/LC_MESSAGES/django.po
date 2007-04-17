@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-28 02:25+0300\n"
+"POT-Creation-Date: 2007-04-17 03:19+0300\n"
 "PO-Revision-Date: 2007-03-16 19:59+0200\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
@@ -39,51 +39,66 @@ msgstr "İstediğiniz sayfa bulunamadı."
 msgid "security.pardus.org.tr"
 msgstr "guvenlik.pardus.org.tr"
 
-#: templates/advisory/advisory_details.html:8 advisory/models.py:34
-#: advisory/models.py:63
+#: templates/advisory/advisory_details.html:8 advisory/models.py:48
+#: advisory/models.py:77
 msgid "Severity"
 msgstr "Önem"
 
-#: templates/advisory/advisory_details.html:9 advisory/models.py:33
-#: advisory/models.py:64
+#: templates/advisory/advisory_details.html:9 advisory/models.py:47
+#: advisory/models.py:78
 msgid "Type"
 msgstr "Tür"
 
 #: templates/advisory/advisory_details.html:10
+#: templates/advisory/archive_year.html:9
 msgid "Release Date"
 msgstr "Yayınlama Tarihi"
 
-#: templates/advisory/advisory_details.html:13 advisory/models.py:36
-#: advisory/models.py:76 advisory/models.py:77
+#: templates/advisory/advisory_details.html:13 advisory/models.py:50
+#: advisory/models.py:90 advisory/models.py:91
 msgid "Summary"
 msgstr "Özet"
 
-#: templates/advisory/advisory_details.html:16 advisory/models.py:37
-#: advisory/models.py:83 advisory/models.py:84
+#: templates/advisory/advisory_details.html:16 advisory/models.py:51
+#: advisory/models.py:97 advisory/models.py:98
 msgid "Description"
 msgstr "Açıklama"
 
-#: templates/advisory/advisory_details.html:19 advisory/models.py:38
+#: templates/advisory/advisory_details.html:19 advisory/models.py:116
+#: advisory/models.py:117
+msgid "Resolution"
+msgstr "Çözüm"
+
+#: templates/advisory/advisory_details.html:21
+#, python-format
+msgid ""
+"There are update(s) for %(packages)s. You can update them via Package "
+"Manager or with a single command from console:"
+msgstr ""
+"%(packages)s için güncelleme mevcut. Paket Yöneticisi'ni kullanarak, ya da konsolda "
+"tek komut ile güncelleme yapabilirsiniz:"
+
+#: templates/advisory/advisory_details.html:25 advisory/models.py:52
 msgid "Packages"
 msgstr "Paketler"
 
-#: templates/advisory/advisory_details.html:22
+#: templates/advisory/advisory_details.html:28
 #, python-format
 msgid "all before %(version)s"
 msgstr "%(version)s öncesi tüm sürümler"
 
-#: templates/advisory/advisory_details.html:26 advisory/models.py:39
-#: advisory/models.py:113 advisory/models.py:114
+#: templates/advisory/advisory_details.html:32 advisory/models.py:53
+#: advisory/models.py:126 advisory/models.py:127
 msgid "References"
 msgstr "Referanslar"
 
-#: templates/advisory/advisory_details.html:35
-#: templates/advisory/archive_year.html:15
-#: templates/advisory/index_language.html:15
+#: templates/advisory/advisory_details.html:41
+#: templates/advisory/archive_year.html:22
+#: templates/advisory/index_language.html:20
 msgid "Homepage"
 msgstr "Anasayfa"
 
-#: templates/advisory/advisory_details.html:39
+#: templates/advisory/advisory_details.html:45
 msgid "Printer Friendly Page"
 msgstr "Yazıcı Dostu Sayfa"
 
@@ -92,97 +107,109 @@ msgstr "Yazıcı Dostu Sayfa"
 msgid "Advisories of %(year)s"
 msgstr "%(year)s Bildirileri"
 
-#: templates/advisory/index_language.html:6
-msgid "Latest Advisories"
-msgstr "Son Bildiriler"
+#: templates/advisory/archive_year.html:10 advisory/models.py:139
+msgid "Advisory"
+msgstr "Bildiri"
+
+#: templates/advisory/index_language.html:14
+msgid "Affected Packages:"
+msgstr "Etkilenen paketler:"
 
 #: advisory/views.py:63 advisory/views.py:65
 msgid "Pardus Linux Security Advisories"
 msgstr "Pardus Linux Güvenlik Bildirileri"
 
-#: advisory/models.py:9
+#: advisory/models.py:10
 msgid "Code"
 msgstr "Kod"
 
-#: advisory/models.py:10 advisory/models.py:17 advisory/models.py:31
+#: advisory/models.py:11 advisory/models.py:18 advisory/models.py:45
 msgid "Language"
 msgstr "Dil"
 
-#: advisory/models.py:18
+#: advisory/models.py:19
 msgid "Languages"
 msgstr "Diller"
 
-#: advisory/models.py:24
+#: advisory/models.py:22
 msgid "Local"
 msgstr "Yerel"
 
-#: advisory/models.py:25
+#: advisory/models.py:23
 msgid "Remote"
 msgstr "Uzaktan"
 
-#: advisory/models.py:29
+#: advisory/models.py:32
+msgid "Package name and version must be seperated with a whitespace."
+msgstr "Paket adı ve sürümü boşluk ile ayrılmalı."
+
+#: advisory/models.py:37
+msgid "Advisory ID must be in YEAR-NO format."
+msgstr "Bildiri numarası YIL-NO formatında olmalı."
+
+#: advisory/models.py:40
+msgid "Advisory ID already exists for that language."
+msgstr "Bildiri numarası bu dildeki başka bir bildiride kullanılmış."
+
+#: advisory/models.py:43
 msgid "Publish"
 msgstr "Yayınla"
 
-#: advisory/models.py:30
+#: advisory/models.py:44
 msgid "Last Update"
 msgstr "Son Güncelleme"
 
-#: advisory/models.py:32
+#: advisory/models.py:46
 msgid "PLSA ID"
 msgstr "PLSA ID"
 
-#: advisory/models.py:32
+#: advisory/models.py:46
 msgid "YEAR-NO"
 msgstr "YIL-NUMARA"
 
-#: advisory/models.py:35
+#: advisory/models.py:49
 msgid "Title"
 msgstr "Başlık"
 
-#: advisory/models.py:38
+#: advisory/models.py:52
 msgid "one package per row (put a whitespace between package name and version)"
 msgstr "her satırda bir paket (paket adı ve sürümünü boşluk ile ayırın)"
 
-#: advisory/models.py:39
+#: advisory/models.py:53
 msgid "one link per row"
 msgstr "her satırda bir adres"
 
-#: advisory/models.py:40
+#: advisory/models.py:54
 msgid "Ready to publish"
 msgstr "Yayınlanmaya hazır"
 
-#: advisory/models.py:57
+#: advisory/models.py:71
 #, python-format
 msgid "Pardus Linux Security Advisory %s"
 msgstr "Pardus Linux Güvenlik Bildirisi %s"
 
-#: advisory/models.py:58
+#: advisory/models.py:72
 msgid "security@pardus.org.tr"
 msgstr "guvenlik@pardus.org.tr"
 
-#: advisory/models.py:59
+#: advisory/models.py:73
 msgid "http://security.pardus.org.tr"
 msgstr "http://guvenlik.pardus.org.tr"
 
-#: advisory/models.py:62
+#: advisory/models.py:76
 msgid "Date"
 msgstr "Tarih"
 
-#: advisory/models.py:92
+#: advisory/models.py:106
 msgid "Affected packages:"
 msgstr "Etkilenen paketler:"
 
-#: advisory/models.py:96
+#: advisory/models.py:109
 #, python-format
 msgid "all before %s"
 msgstr "%s öncesi tüm sürümler"
 
-#: advisory/models.py:103 advisory/models.py:104
-msgid "Resolution"
-msgstr "Çözüm"
-
-#: advisory/models.py:107
+#: advisory/models.py:120
 #, python-format
 msgid ""
 "There are update(s) for %s. You can update them via Package Manager or with "
@@ -191,13 +218,6 @@ msgstr ""
 "%s için güncelleme mevcut. Paket Yöneticisi'ni kullanarak, ya da konsolda "
 "tek komut ile güncelleme yapabilirsiniz:"
 
-#: advisory/models.py:126
-msgid "Advisory"
-msgstr "Bildiri"
-
-#: advisory/models.py:127
+#: advisory/models.py:140
 msgid "Advisories"
 msgstr "Bildiriler"
-
-#~ msgid "Local or Remote"
-#~ msgstr "Yerel veya Uzaktan"
