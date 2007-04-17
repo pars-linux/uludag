@@ -35,9 +35,8 @@ def isValidAdvisoryID(field_data, all_data):
     import re
     if not re.match("[0-9]{4}-[0-9]+", field_data):
         raise validators.ValidationError(_("Advisory ID must be in YEAR-NO format."))
-    
-    if "language" in all_data and Advisory.objects.filter(language=all_data["language"], plsa_id=field_data):
-        raise validators.ValidationError(_("Advisory ID already exists for that language."))
+    #if "language" in all_data and Advisory.objects.filter(language=all_data["language"], plsa_id=field_data):
+    #    raise validators.ValidationError(_("Advisory ID already exists for that language."))
 
 class Advisory(models.Model):
     publish = models.BooleanField(_("Publish"))
