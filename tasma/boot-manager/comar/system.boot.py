@@ -86,6 +86,7 @@ class grubConfLock:
 
 GRUB_CONF = "/boot/grub/grub.conf"
 TIMEOUT = 3.0
+MAX_ENTRIES = 3
 
 def listOptions():
     try:
@@ -210,24 +211,27 @@ def updateEntry(index, commands):
     else:
         fail("No such entry")
 
-def updateKernelEntry(version, max_entries=3, make_default="on"):
+def updateKernelEntry(version):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
     
-    max_entries = int(max_entries)
-    
     new_version, new_suffix = parseVersion("kernel-%s" % version)
     root_dev = getRoot()
     root_grub = grubDevice(root_dev)
     
-    entries = filter(lambda x: isPardusEntry(x, root_grub, new_suffix), grub.config.entries)
+    entries = []
+    for x in grub.config.entries:
+        if isPardusEntry(x, root_grub, new_suffix):
+            entries.append(x)
     
     default_index = int(grub.config.options.get("default", 0))
     default_entry = None
     if len(grub.config.entries):
         default_entry = grub.config.entries[default_index]
+    
+    make_default = isPardusEntry(default_entry, root_grub, new_suffix)
     
     updated_index = None
     action = None
@@ -239,7 +243,7 @@ def updateKernelEntry(version, max_entries=3, make_default="on"):
             kernel = entry.getCommand("kernel").value.split()[0]
             kernels[parseVersion(kernel)[0]] = entry
         if new_version in kernels:
-            if make_default == "on":
+            if make_default:
                 entry = kernels[new_version]
                 updated_index = grub.config.indexOf(entry)
                 grub.config.setOption("default", updated_index)
@@ -265,11 +269,11 @@ def updateKernelEntry(version, max_entries=3, make_default="on"):
         new_entry.setCommand("initrd", "/boot/initrmfs-%s%s" % (new_version, new_suffix))
         grub.config.addEntry(new_entry, index)
         
-        if max_entries > 0:
-            for x in entries[max_entries - 1:]:
+        if MAX_ENTRIES > 0:
+            for x in entries[MAX_ENTRIES - 1:]:
                 grub.config.removeEntry(x)
         
-        if make_default == "on":
+        if make_default:
             updated_index = grub.config.indexOf(new_entry)
         elif default_entry in grub.config.entries:
             updated_index = grub.config.indexOf(default_entry)

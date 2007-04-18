@@ -31,8 +31,6 @@
             </method>
             <method name="updateKernelEntry">
                 <argument>version</argument>
-                <argument>max_entries</argument>
-                <argument>make_default</argument>
             </method>
             <notify name="changed" access="guest"/>
         </class>
