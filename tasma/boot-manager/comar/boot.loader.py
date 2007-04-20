@@ -82,7 +82,7 @@ class grubConfLock:
             self.config.write(self.file)
         self.lock.unlock()
 
-# System.Boot
+# Boot.Loader
 
 GRUB_CONF = "/boot/grub/grub.conf"
 TIMEOUT = 3.0
@@ -116,7 +116,7 @@ def setOption(key, value):
     else:
         grub.config.unsetOption(key)
     grub.release()
-    notify("System.Boot.changed", "option")
+    notify("Boot.Loader.changed", "option")
     return "%s %s" % (key, value)
 
 def listEntries():
@@ -157,7 +157,7 @@ def removeEntry(index):
     if default_index == index and default_index > 0:
         grub.config.setOption("default", default_index - 1)
     grub.release()
-    notify("System.Boot.changed", "entry")
+    notify("Boot.Loader.changed", "entry")
 
 def addEntry(title, commands):
     try:
@@ -175,7 +175,7 @@ def addEntry(title, commands):
     grub.config.addEntry(new_entry)
     index = grub.config.indexOf(new_entry)
     grub.release()
-    notify("System.Boot.changed", "entry")
+    notify("Boot.Loader.changed", "entry")
 
 def updateEntry(index, title, commands):
     try:
@@ -194,7 +194,7 @@ def updateEntry(index, title, commands):
                 opts = opts.split()
             entry.setCommand(key, value, opts)
         grub.release()
-        notify("System.Boot.changed", "entry")
+        notify("Boot.Loader.changed", "entry")
     else:
         fail("No such entry")
 
@@ -269,4 +269,4 @@ def updateKernelEntry(version):
         grub.config.setOption("default", updated_index)
     
     grub.release()
-    notify("System.Boot.changed", "entry")
+    notify("Boot.Loader.changed", "entry")
