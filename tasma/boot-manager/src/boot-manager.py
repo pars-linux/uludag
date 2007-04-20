@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -18,7 +18,7 @@ from kdeui import *
 import mainview
 from utility import *
 
-mod_name = 'Boot Manager'
+mod_name = 'Bootloader Manager'
 mod_app = 'boot-manager'
 mod_version = '0.1'
 
@@ -27,9 +27,9 @@ def AboutData():
         mod_app,
         mod_name,
         mod_version,
-        I18N_NOOP('Boot Manager'),
+        I18N_NOOP('Bootloader Manager'),
         KAboutData.License_GPL,
-        '(C) 2005-2007 UEKAE/TÜBİTAK',
+        '(C) 2006-2007 UEKAE/TÜBİTAK',
         None,
         None,
         'bugs@pardus.org.tr'
@@ -73,14 +73,13 @@ def main():
     KUniqueApplication.addCmdLineOptions()
 
     if not KUniqueApplication.start():
-        print i18n('Boot Manager is already started!')
+        print i18n('Bootloader Manager is already started!')
         return
 
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
-    win.setCaption(i18n('Boot Manager'))
-    win.setMinimumSize(620, 420)
-    win.resize(620, 420)
+    win.setCaption(i18n('Bootloader Manager'))
+    win.resize(QSize(500, 400).expandedTo(win.minimumSizeHint()))
     attachMainWidget(win)
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
