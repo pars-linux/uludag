@@ -56,3 +56,33 @@ def grubDeviceName(dev):
     disk = int(disk) + 1
     part = int(part) + 1
     return i18n("Disk %1, Partition %2").arg(disk).arg(part)
+
+def parseGrubCommand(command_str):
+    index = None
+    title = ""
+    commands = {}
+    for cmd in command_str.split("\n\n"):
+        key, options, value = cmd.split("\n")
+        if options == " ":
+            options = ""
+        if value == " ":
+            value = ""
+        if key == "index":
+            index = int(value)
+        elif key == "title":
+            title = value
+        else:
+            commands[key] = [options, value]
+    return index, title, commands
+
+def formatGrubCommand(command_dict):
+    commands = []
+    for key in command_dict:
+        opts = " "
+        value = " "
+        if command_dict[key][0]:
+            opts = command_dict[key][0]
+        if command_dict[key][1]:
+            value = command_dict[key][1]
+        commands.append("%s\n%s\n%s" % (key, opts, value))
+    return "\n\n".join(commands)

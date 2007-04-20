@@ -1,7 +1,7 @@
-Boot Manager
+Bootloader Manager
 ============
 
-Boot Manager is boot loader editor of Pardus Linux
+Bootloader Manager is boot loader editor of Pardus Linux
 
 
 Requirements
@@ -13,8 +13,6 @@ Requirements
 Installing & Running
 --------------------
 
-1. Add comar/model.xml to /etc/comar/model.xml
-2. Restart COMAR
-3. Edit comar/system.boot.py and set GRUB_CONF
-4. Run: hav register System.Boot grub comar/system.boot.py
-5. Run: ./boot-manager.py
+1. Build and install COMAR from svn
+2. Run: hav register Boot.Loader grub comar/boot.loader.py
+3. Run: ./boot-manager.py
