@@ -177,7 +177,7 @@ def addEntry(title, commands):
     grub.release()
     notify("System.Boot.changed", "entry")
 
-def renameEntry(index, title):
+def updateEntry(index, title, commands):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
@@ -186,19 +186,6 @@ def renameEntry(index, title):
     if index < len(grub.config.entries):
         entry = grub.config.getEntry(index)
         entry.title = title
-        grub.release()
-        notify("System.Boot.changed", "entry")
-    else:
-        fail("No such entry")
-
-def updateEntry(index, commands):
-    try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
-    except IOError:
-        fail("Timeout")
-    index = int(index)
-    if index < len(grub.config.entries):
-        entry = grub.config.getEntry(index)
         for command in commands.split("\n\n"):
             key, opts, value = command.split("\n")
             if opts == " ":
