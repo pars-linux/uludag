@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <comarModel>
-    <group name="System">
-        <class name="Boot">
+    <group name="Boot">
+        <class name="Loader">
             <method name="listOptions" access="guest"/>
             <method name="getOption" access="guest">
                 <argument>key</argument>
@@ -21,12 +21,9 @@
             <method name="removeEntry">
                 <argument>index</argument>
             </method>
-            <method name="renameEntry">
-                <argument>index</argument>
-                <argument>title</argument>
-            </method>
             <method name="updateEntry">
                 <argument>index</argument>
+                <argument>title</argument>
                 <argument>commands</argument>
             </method>
             <method name="updateKernelEntry">
