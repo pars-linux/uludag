@@ -84,3 +84,25 @@ def formatGrubCommand(command_lst):
             value = " "
         commands.append("%s\n%s\n%s" % (key, opts, value))
     return "\n\n".join(commands)
+
+def getEntryDetails(commands):
+    os_type = "Unknown"
+    hidden = False
+    for key, opts, value in commands:
+        if key == "root":
+            root = value
+        elif key == "rootnoverify" and not hidden:
+            root = value
+        elif key == "hide":
+            root = value
+            hidden = True
+        elif key == "kernel":
+            if value.startswith("("):
+                root = value.split(")")[0] + ")"
+            if "root" in value:
+                os_type = "Linux"
+        elif key == "makeactive":
+            os_type = "Windows"
+    if os_type == "Linux" and root == grubDevice(getRoot()):
+        os_type = "Pardus"
+    return root, os_type

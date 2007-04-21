@@ -37,6 +37,7 @@ class IconBox(QWidget):
         else:
             self.layout.addItem(item)
 
+
 class Entry(QListBoxItem):
     def __init__(self, parent, title, description="", os_type="Unknown", checked=False, index=None):
         QListBoxItem.__init__(self, parent)
