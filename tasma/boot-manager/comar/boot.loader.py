@@ -124,9 +124,20 @@ def listEntries():
         grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
-    entries = "\n".join(grub.config.listEntries())
+    entries = []
+    for index, entry in enumerate(grub.config.entries):
+        tmp = []
+        tmp.append("index\n \n%s" % index)
+        tmp.append("title\n \n%s" % entry.title)
+        for command in entry.commands:
+            if not command.options:
+                command.options = " "
+            if not command.value:
+                command.value = " "
+            tmp.append("%s\n%s\n%s" % (command.key, command.options, command.value))
+        entries.append("\n\n".join(tmp))
     grub.release()
-    return entries
+    return "\n\n\n".join(entries)
 
 def getEntry(index):
     try:
