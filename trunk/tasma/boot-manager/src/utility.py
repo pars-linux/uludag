@@ -60,7 +60,7 @@ def grubDeviceName(dev):
 def parseGrubCommand(command_str):
     index = None
     title = ""
-    commands = {}
+    commands = []
     for cmd in command_str.split("\n\n"):
         key, options, value = cmd.split("\n")
         if options == " ":
@@ -72,17 +72,15 @@ def parseGrubCommand(command_str):
         elif key == "title":
             title = value
         else:
-            commands[key] = [options, value]
+            commands.append([key, options, value])
     return index, title, commands
 
-def formatGrubCommand(command_dict):
+def formatGrubCommand(command_lst):
     commands = []
-    for key in command_dict:
-        opts = " "
-        value = " "
-        if command_dict[key][0]:
-            opts = command_dict[key][0]
-        if command_dict[key][1]:
-            value = command_dict[key][1]
+    for key, opts, value in command_lst:
+        if not opts:
+            opts = " "
+        if not value:
+            value = " "
         commands.append("%s\n%s\n%s" % (key, opts, value))
     return "\n\n".join(commands)
