@@ -18,8 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_NOTIFY, BOOT_ENTRIES, BOOT_OPTIONS, BOOT_ENTRY_LIST, \
-BOOT_ENTRY_DIALOG, BOOT_SET_ENTRY  = xrange(1, 7)
+BOOT_NOTIFY, BOOT_ENTRIES, BOOT_OPTIONS = xrange(1, 4)
 
 class dialogEditEntry(QDialog):
     def __init__(self, parent, title, commands):
@@ -64,17 +63,14 @@ class dialogEditEntry(QDialog):
         else:
             QDialog.reject(self)
 
-class widgetMain(QWidget):
-    def __init__(self, parent):
+class widgetEntryList(QWidget):
+    def __init__(self, parent, comar_link):
         QWidget.__init__(self, parent)
+        self.parent = parent
         
-        link = comar.Link()
-        link.localize()
-        self.link = link
-        self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
-        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        self.link = comar_link
         
-        layout = QGridLayout(self, 1, 1, 11, 6, "formMainLayout")
+        layout = QGridLayout(self, 1, 1, 11, 6)
         
         self.listEntries = QListBox(self)
         layout.addWidget(self.listEntries, 0, 0)
@@ -96,12 +92,6 @@ class widgetMain(QWidget):
         self.iconBox.addWidget(spacer)
         layout.addWidget(self.iconBox, 1, 0)
         
-        self.default = -1
-        
-        self.link.ask_notify("Boot.Loader.changed", id=BOOT_NOTIFY)
-        self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-        self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
-        
         self.connect(self.listEntries, SIGNAL("doubleClicked(QListBoxItem*)"), self.slotEditEntry)
         self.connect(self.listEntries, SIGNAL("selectionChanged(QListBoxItem*)"), self.slotClickEntry)
         self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEditEntry)
@@ -117,9 +107,53 @@ class widgetMain(QWidget):
     def slotEditEntry(self):
         item = self.listEntries.selectedItem()
         if item:
-            self.listEntries.setEnabled(False)
-            self.link.call("Boot.Loader.getEntry", {"index": item.entry_index}, id=BOOT_ENTRY_DIALOG)
+            self.parent.stack.raiseWidget(1)
+
+class widgetEditEntry(QWidget):
+    def __init__(self, parent, comar_link):
+        QWidget.__init__(self, parent)
+        self.parent = parent
+        
+        self.link = comar_link
+        
+        layout = QGridLayout(self, 1, 1, 11, 6)
+        
+        self.pushExit = QPushButton(self)
+        self.pushExit.setText(i18n("Exit"))
+        layout.addWidget(self.pushExit, 0, 0)
+        
+        self.connect(self.pushExit, SIGNAL("clicked()"), self.slotExit)
     
+    def slotExit(self):
+        self.parent.stack.raiseWidget(0)
+
+class widgetMain(QWidget):
+    def __init__(self, parent):
+        QWidget.__init__(self, parent)
+        
+        link = comar.Link()
+        link.localize()
+        self.link = link
+        self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
+        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        
+        layout = QGridLayout(self, 1, 1, 0, 0, "formMainLayout")
+        self.stack = QWidgetStack(self)
+        layout.addWidget(self.stack, 0, 0)
+        
+        self.widgetEntries = widgetEntryList(self, self.link)
+        self.stack.addWidget(self.widgetEntries)
+        
+        self.widgetEditEntry = widgetEditEntry(self, self.link)
+        self.stack.addWidget(self.widgetEditEntry)
+        
+        self.default = -1
+        self.entries = []
+        
+        self.link.ask_notify("Boot.Loader.changed", id=BOOT_NOTIFY)
+        self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
+        self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
+
     def slotComar(self, sock):
         reply = self.link.read_cmd()
         if reply.command == "notify":
@@ -128,13 +162,14 @@ class widgetMain(QWidget):
             self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
         elif reply.command == "result":
             if reply.id == BOOT_ENTRIES:
-                self.listEntries.clear()
-                self.slotClickEntry()
-                index = 0
-                for entry in reply.data.split("\n"):
-                    item = Entry(self.listEntries, entry, checked=index==self.default, index=index)
-                    self.link.call("Boot.Loader.getEntry", {"index": index}, id=BOOT_ENTRY_LIST)
-                    index += 1
+                self.widgetEntries.listEntries.clear()
+                self.widgetEntries.slotClickEntry()
+                self.entries = []
+                for entry in reply.data.split("\n\n\n"):
+                    index, title, commands = parseGrubCommand(entry)
+                    root, os_type = getEntryDetails(commands)
+                    self.entries.append([index, title, commands])
+                    item = Entry(self.widgetEntries.listEntries, title, grubDeviceName(root), os_type, index==self.default, index)
             elif reply.id == BOOT_OPTIONS:
                 index = 0
                 for option in reply.data.split("\n"):
@@ -142,41 +177,9 @@ class widgetMain(QWidget):
                     if key == "default":
                         index = int(value)
                 self.default = index
-                item = self.listEntries.item(index)
-                if item:
-                    item.checked = True
-                    self.listEntries.updateItem(index)
-            elif reply.id == BOOT_ENTRY_LIST:
-                index, title, commands = parseGrubCommand(reply.data)
-                os_type = "Unknown"
-                for key, opts, value in commands:
-                    if key.startswith("root"):
-                        root = value
-                    if key == "kernel":
-                        if value.startswith("("):
-                            root = value.split(")")[0] + ")"
-                        if "root" in value:
-                            os_type = "Linux"
-                    elif key == "makeactive":
-                        os_type = "Windows"
-                if os_type == "Linux" and root == grubDevice(getRoot()):
-                    os_type = "Pardus"
-                item = self.listEntries.item(index)
-                item.description = grubDeviceName(root)
-                item.setOs(os_type)
-                self.listEntries.updateItem(index)
-            elif reply.id == BOOT_ENTRY_DIALOG:
-                index, title, commands = parseGrubCommand(reply.data)
-                dialog = dialogEditEntry(self, title, commands)
-                if dialog.exec_loop():
-                    title = dialog.title
-                    commands = formatGrubCommand(dialog.commands)
-                    self.link.call("Boot.Loader.updateEntry", {"index": index, "title": title, "commands": commands}, id=BOOT_SET_ENTRY)
-                else:
-                    self.listEntries.setEnabled(True)
-            elif reply.id == BOOT_SET_ENTRY:
-                self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-                self.listEntries.setEnabled(True)
+                #item = self.listEntries.item(index)
+                #if item:
+                #    item.checked = True
+                #    self.listEntries.updateItem(index)
         elif reply.command == "fail":
             KMessageBox.error(self, "%s failed: %s" % (reply.id, reply.data), i18n("Failed"))
-            self.listEntries.setEnabled(True)
