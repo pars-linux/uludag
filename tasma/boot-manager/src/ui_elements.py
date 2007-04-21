@@ -12,6 +12,31 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
+def getIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+
+class IconButton(QPushButton):
+    def __init__(self, parent, label, icon_name):
+        QPushButton.__init__(self, parent)
+        self.setFlat(True)
+        self.myset = getIconSet(icon_name, KIcon.MainToolbar)
+        self.setIconSet(self.myset)
+        size = self.myset.iconSize(QIconSet.Large)
+        self.myWidth = size.width() + 4
+        self.myHeight = size.height() + 4
+        self.resize(self.myWidth, self.myHeight)
+
+class IconBox(QWidget):
+    def __init__(self, parent):
+        QWidget.__init__(self, parent)
+        self.layout = QHBoxLayout(self, 0, 6, "layout")
+    
+    def addWidget(self, item):
+        if isinstance(item, QWidget):
+            self.layout.addWidget(item)
+        else:
+            self.layout.addItem(item)
+
 class Entry(QListBoxItem):
     def __init__(self, parent, title, description="", os_type="Unknown", checked=False, index=None):
         QListBoxItem.__init__(self, parent)
