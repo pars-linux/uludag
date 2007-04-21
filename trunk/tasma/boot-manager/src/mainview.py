@@ -20,49 +20,6 @@ import comar
 
 BOOT_NOTIFY, BOOT_ENTRIES, BOOT_OPTIONS = xrange(1, 4)
 
-class dialogEditEntry(QDialog):
-    def __init__(self, parent, title, commands):
-        QDialog.__init__(self, parent)
-        
-        self.title = title
-        self.commands = commands
-        
-        layout = QGridLayout(self, 1, 1, 11, 6, "formMainLayout")
-        
-        self.labelTitle = QLabel(self)
-        self.labelTitle.setText(i18n("<b>Title</b>"))
-        self.labelTitle.setMaximumSize(QSize(100, 32767))
-        layout.addWidget(self.labelTitle, 0, 0)
-        
-        self.editTitle = QLineEdit(self)
-        self.editTitle.setText(title)
-        layout.addMultiCellWidget(self.editTitle, 0, 0, 1, 4)
-        
-        self.buttonOK = QPushButton(self)
-        self.buttonOK.setText(i18n("OK"))
-        self.buttonOK.setDefault(True)
-        layout.addWidget(self.buttonOK, 1, 3)
-        
-        self.buttonCancel = QPushButton(self)
-        self.buttonCancel.setText(i18n("Cancel"))
-        layout.addWidget(self.buttonCancel, 1, 4)
-        
-        self.connect(self.buttonOK, SIGNAL("clicked()"), self.accept)
-        self.connect(self.buttonCancel, SIGNAL("clicked()"), self.reject)
-        
-        self.resize(QSize(350, 100).expandedTo(self.minimumSizeHint()))
-        self.clearWState(Qt.WState_Polished)
-    
-    def modified(self):
-        return self.editTitle.isModified()
-    
-    def accept(self):
-        if self.modified():
-            self.title = unicode(self.editTitle.text())
-            QDialog.accept(self)
-        else:
-            QDialog.reject(self)
-
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
         QWidget.__init__(self, parent)
@@ -107,7 +64,9 @@ class widgetEntryList(QWidget):
     def slotEditEntry(self):
         item = self.listEntries.selectedItem()
         if item:
-            self.parent.stack.raiseWidget(1)
+            entry = self.parent.entries[item.entry_index]
+            self.parent.widgetEditEntry.editEntry(*entry)
+
 
 class widgetEditEntry(QWidget):
     def __init__(self, parent, comar_link):
@@ -123,8 +82,34 @@ class widgetEditEntry(QWidget):
         layout.addWidget(self.pushExit, 0, 0)
         
         self.connect(self.pushExit, SIGNAL("clicked()"), self.slotExit)
+        
+        self.resetEntry()
+    
+    def editEntry(self, index, title, commands):
+        self.index = index
+        self.title = title
+        self.commands = commands
+        self.pushExit.setText("Editing '%s' (%s). Click to exit." % (title, index))
+        self.parent.stack.raiseWidget(1)
+    
+    def updateEntryIndex(self, index=None):
+        if self.parent.stack.visibleWidget() != self:
+            return
+        if index:
+            self.index = index
+            self.pushExit.setText("Editing '%s' (%s). Click to exit." % (self.title, index))
+        else:
+            # Entry removed by another application
+            KMessageBox.error(self, i18n("Entry removed! Closing edit dialog."), i18n("Failed"))
+            self.slotExit()
+    
+    def resetEntry(self):
+        self.index = None
+        self.title = None
+        self.commands = None
     
     def slotExit(self):
+        self.resetEntry()
         self.parent.stack.raiseWidget(0)
 
 class widgetMain(QWidget):
@@ -170,6 +155,14 @@ class widgetMain(QWidget):
                     root, os_type = getEntryDetails(commands)
                     self.entries.append([index, title, commands])
                     item = Entry(self.widgetEntries.listEntries, title, grubDeviceName(root), os_type, index==self.default, index)
+                if self.widgetEditEntry.index:
+                    # Edit dialog is in use, lookup entry in list and get (new) index of entry.
+                    for index, title, commands in self.entries:
+                        if title == self.widgetEditEntry.title and commands == self.widgetEditEntry.commands:
+                            self.widgetEditEntry.updateEntryIndex(index)
+                            return
+                    # If entry isn't in the list, it's removed or updated by another application.
+                    self.widgetEditEntry.updateEntryIndex(None)
             elif reply.id == BOOT_OPTIONS:
                 index = 0
                 for option in reply.data.split("\n"):
