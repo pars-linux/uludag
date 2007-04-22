@@ -1,17 +1,18 @@
-# translation of es.po to spanish
+# translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
+# Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 16:20+0200\n"
-"PO-Revision-Date: 2007-04-01 21:41-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-04-09 00:04-0400\n"
+"Last-Translator: Christian Faure <christian.faurebouvard@laposte.net>\n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -183,6 +184,7 @@ msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Aplicando Modificaciones de Repositorio</b>"
 
 #: src/Preferences.py:210
+# ...guardados en el cache...
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Se eliminarán todos los paquetes guardadas del cache. Está seguro ?"
 
@@ -297,6 +299,8 @@ msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquete(s)"
 
 #: src/package-manager.py:368
+# No disponible
+# No Disp.
 msgid "N\\A"
 msgstr "N\\A"
 
@@ -329,6 +333,7 @@ msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of s
 msgstr "Actualmente están seleccionados <b>%1</b> paquetes con un tamaño total de <b>%2</b>"
 
 #: src/package-manager.py:440
+# ...requeridas...
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr " y <b>%3</b> dependencias requeridos con un tamaño de <b>%4</b> adicional"
 
@@ -339,6 +344,26 @@ msgstr " en el carrito."
 # should this be the same as src/package-manager.py:416 ??
 #  if different, i am not sure what "reverse" means here (i haven't seen it running..)
 #: src/package-manager.py:448
+
+# A requiere B
+# C requiere B
+
+# implica 
+# A depende de B
+# C depende de B
+
+# luego
+# B es requerido por A
+# B es requerido por C
+# a B lo requieren 2 paquetes
+
+# entonces
+# de B dependen 2 paquetes
+# B es requerido por 2 paquetes
+
+# me parece que sería así:
+
+# requeridos por %3 paquetes con un tamaño total de %4
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr "y <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
 
@@ -378,12 +403,17 @@ msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>instalar</b>."
 
 #: src/package-manager.py:516
+#  Con los paquetes seleccionados, también se instalarán <b>%1</b> paquetes adicionales requeridos.
+
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
 msgstr " Con los paquetes seleccionados, también <b>%1</b> dependencias adicionales requeridos se <b>instalarán</b>."
 
 #: src/package-manager.py:517
+# "Total:"..
+# o
+# "un total de"....
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
 msgstr "<br><br>Total <b>%1</b> paquetes se <b>instalarán</b>."
 
@@ -392,6 +422,8 @@ msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>actualizar</b>."
 
 #: src/package-manager.py:523
+# Con los paquetes seleccionados, también se actualizarán <b>%1</b> paquetes adicionales requeridos.
+
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
@@ -406,6 +438,7 @@ msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>remover</b>."
 
 #: src/package-manager.py:530
+# Los paquetes seleccionados son requeridos por otros. Al remover los paquetes seleccionados tambien se <b>removerán %1</b> paquetes dependendientes. Favor verifique el carrito y asegurese que realmente contiene los paquetes que desea remover. Remover accidentalmente algunos paquetes requeridos puede perjudicar gravemente la estabilidad del sistema.
 msgid ""
 " Selected packages have reverse dependencies. Because the reverse "
 "dependencies of the selected packages needs those packages to work; by "
@@ -512,6 +545,7 @@ msgid "&Add New Repository"
 msgstr "&Agregar Nuevo Repositorio"
 
 #: src/PreferencesDialog.py:195
+# Pinche/Presione
 msgid "Click here to add a new software repository"
 msgstr "Pinche aquí para agregar un nuevo repositorio de software"
 
@@ -540,6 +574,7 @@ msgid "Click here to move the repository one level up"
 msgstr "Pinche aquí para mover al repositorio una posición hacia arriba"
 
 #: src/PreferencesDialog.py:202
+
 msgid "Move &Down"
 msgstr "Mover A&bajo"
 

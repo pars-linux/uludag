@@ -1,16 +1,17 @@
-# translation of es.po to spanish
+# translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 13:28+0200\n"
-"PO-Revision-Date: 2007-02-04 13:05+0200\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-04-08 23:30-0400\n"
+"Last-Translator: Christian Faure <christian.faurebouvard@laposte.net>\n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,6 +73,8 @@ msgstr "Agregando grupo..."
 
 #: groupedit.py:185 useredit.py:554 useredit.py:586
 #, python-format
+# La operación falló, a causa de:...
+
 msgid "Operation failed, reason:<br>%s"
 msgstr "Operación falló, por causa de: <br>%s"
 
@@ -156,10 +159,12 @@ msgid "Full name:"
 msgstr "Nombre completo:"
 
 #: useredit.py:126
+# Carpeta personal (home)
 msgid "Home:"
 msgstr "Carpeta home:"
 
 #: useredit.py:158
+# "home" por "personal (home)"
 msgid "Select user's home directory"
 msgstr "Seleccione la carpeta home del usuario"
 
@@ -172,14 +177,18 @@ msgid "Confirm password:"
 msgstr "Confirmar contraseña:"
 
 #: useredit.py:202
+# Intérprete de comados (shell)
 msgid "Shell:"
 msgstr "Shell:"
 
 #: useredit.py:224
+# Favor ingresar comando
+
 msgid "Please specify an existing shell command"
 msgstr "Favor indique un comando shell"
 
 #: useredit.py:226
+# El comando indicado no es ejecutable
 msgid "Specified shell command is not executable"
 msgstr "El comando shell indicado no es ejecutable"
 

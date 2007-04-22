@@ -1,17 +1,18 @@
-# translation of es.po to spanish
+# translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
+# Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-03 11:59+0300\n"
-"PO-Revision-Date: 2007-04-01 19:01-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-04-08 23:35-0400\n"
+"Last-Translator: Christian Faure <christian.faurebouvard@laposte.net>\n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -77,6 +78,7 @@ msgid "Execute shutdown script"
 msgstr "Ejecutar script de apagado"
 
 #: src/sm_mainview.py:279
+# "parar" por "detener"
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
@@ -101,6 +103,7 @@ msgid "Service"
 msgstr "Servicio"
 
 #: src/service_manager.py:87 src/service_manager.py:115
+# Iniciar durante el arranque del sistema
 msgid "Run on Startup"
 msgstr "Iniciar con el arranque del sistema"
 
@@ -123,3 +126,4 @@ msgstr "&Listar solamente servidores."
 #: src/service_manager.py:112
 msgid "Alt+L"
 msgstr "Alt+L"
+
