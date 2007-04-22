@@ -144,8 +144,7 @@ class widgetMain(QWidget):
         self.default = -1
         self.entries = []
         
-        self.link.ask_notify("Boot.Loader.progress")
-        self.link.ask_notify("Boot.Loader.finished")
+        self.link.ask_notify("Boot.Loader.changed")
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
         self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
 
@@ -153,17 +152,14 @@ class widgetMain(QWidget):
         reply = self.link.read_cmd()
         if reply.command == "notify":
             self.widgetEntries.listEntries.setEnabled(False)
-            if reply.notify == "Boot.Loader.finished":
-                if reply.data == "entry":
-                    self.default = -1
-                    self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-                    self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
-                    if self.widgetEditEntry.index != None:
-                        KMessageBox.information(self, i18n("Entry list changed by another application."), i18n("Warning"))
-                        self.widgetEditEntry.slotExit()
-            elif reply.notify == "Boot.Loader.progress":
-                if reply.data == "entry":
-                    self.widgetEntries.slotClickEntry()
+            self.widgetEntries.slotClickEntry()
+            if reply.data == "entry":
+                self.default = -1
+                self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
+                self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
+                if self.widgetEditEntry.index != None:
+                    KMessageBox.information(self, i18n("Entry list changed by another application."), i18n("Warning"))
+                    self.widgetEditEntry.slotExit()
         elif reply.command == "result":
             if reply.id == BOOT_ENTRIES:
                 self.widgetEntries.listEntries.clear()
