@@ -55,7 +55,7 @@ class widgetEntryList(QWidget):
         self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEditEntry)
     
     def slotClickEntry(self, item=None):
-        if item and not self.parent.update:
+        if item:
             self.pushEdit.setEnabled(True)
             self.pushDelete.setEnabled(True)
         else:
@@ -143,7 +143,6 @@ class widgetMain(QWidget):
         
         self.default = -1
         self.entries = []
-        self.update = False
         
         self.link.ask_notify("Boot.Loader.progress")
         self.link.ask_notify("Boot.Loader.finished")
@@ -159,13 +158,11 @@ class widgetMain(QWidget):
                     self.default = -1
                     self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
                     self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
-                    self.update = False
                     if self.widgetEditEntry.index != None:
                         KMessageBox.information(self, i18n("Entry list changed by another application."), i18n("Warning"))
                         self.widgetEditEntry.slotExit()
             elif reply.notify == "Boot.Loader.progress":
                 if reply.data == "entry":
-                    self.update = True
                     self.widgetEntries.slotClickEntry()
         elif reply.command == "result":
             if reply.id == BOOT_ENTRIES:
