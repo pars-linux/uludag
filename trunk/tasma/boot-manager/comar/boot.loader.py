@@ -111,12 +111,13 @@ def setOption(key, value):
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
+    notify("Boot.Loader.progress", "option")
     if value:
         grub.config.setOption(key, value)
     else:
         grub.config.unsetOption(key)
     grub.release()
-    notify("Boot.Loader.changed", "option")
+    notify("Boot.Loader.finished", "option")
     return "%s %s" % (key, value)
 
 def listEntries():
@@ -162,19 +163,21 @@ def removeEntry(index):
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
+    notify("Boot.Loader.progress", "entry")
     index = int(index)
     grub.config.removeEntry(grub.config.entries[index])
     default_index = int(grub.config.options.get("default", 0))
     if default_index == index and default_index > 0:
         grub.config.setOption("default", default_index - 1)
     grub.release()
-    notify("Boot.Loader.changed", "entry")
+    notify("Boot.Loader.finished", "entry")
 
 def addEntry(title, commands):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
+    notify("Boot.Loader.progress", "entry")
     new_entry = grubEntry(title)
     for command in commands.split("\n\n"):
         key, opts, value = command.split("\n")
@@ -186,7 +189,7 @@ def addEntry(title, commands):
     grub.config.addEntry(new_entry)
     index = grub.config.indexOf(new_entry)
     grub.release()
-    notify("Boot.Loader.changed", "entry")
+    notify("Boot.Loader.finished", "entry")
 
 def updateEntry(index, title, commands):
     try:
@@ -195,6 +198,7 @@ def updateEntry(index, title, commands):
         fail("Timeout")
     index = int(index)
     if index < len(grub.config.entries):
+        notify("Boot.Loader.progress", "entry")
         entry = grub.config.getEntry(index)
         entry.title = title
         for command in commands.split("\n\n"):
@@ -205,7 +209,7 @@ def updateEntry(index, title, commands):
                 opts = opts.split()
             entry.setCommand(key, value, opts)
         grub.release()
-        notify("Boot.Loader.changed", "entry")
+        notify("Boot.Loader.finished", "entry")
     else:
         fail("No such entry")
 
@@ -214,6 +218,8 @@ def updateKernelEntry(version):
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
+    
+    notify("Boot.Loader.progress", "entry")
     
     new_version, new_suffix = parseVersion("kernel-%s" % version)
     root_dev = getRoot()
@@ -280,4 +286,4 @@ def updateKernelEntry(version):
         grub.config.setOption("default", updated_index)
     
     grub.release()
-    notify("Boot.Loader.changed", "entry")
+    notify("Boot.Loader.finished", "entry")
