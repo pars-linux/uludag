@@ -41,6 +41,8 @@ class IconBox(QWidget):
 class Entry(QListBoxItem):
     def __init__(self, parent, title, description="", os_type="Unknown", checked=False, index=None):
         QListBoxItem.__init__(self, parent)
+        self.parent = parent
+        
         self.title = title
         self.description = description
         self.checked = checked
@@ -79,14 +81,18 @@ class Entry(QListBoxItem):
         fm = QFontMetrics(self.fontTitle)
         fm2 = QFontMetrics(self.fontDesc)
         
-        if self.isSelected():
+        if not self.parent.isEnabled():
+            painter.setPen(KGlobalSettings.inactiveTextColor())
+        elif self.isSelected():
             painter.setPen(KGlobalSettings.activeTextColor())
         else:
             painter.setPen(KGlobalSettings.textColor())
         painter.setFont(self.fontTitle)
         painter.drawText(2 * self.padding + self.icon.width(), self.padding + fm.ascent(), self.title)
         
-        if self.isSelected():
+        if not self.parent.isEnabled():
+            painter.setPen(KGlobalSettings.inactiveTextColor())
+        elif self.isSelected():
             painter.setPen(KGlobalSettings.activeTextColor())
         else:
             painter.setPen(QColor(100, 100, 100))
