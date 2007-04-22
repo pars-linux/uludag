@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_NOTIFY, BOOT_ENTRIES, BOOT_OPTIONS = xrange(1, 4)
+BOOT_ENTRIES, BOOT_OPTIONS = xrange(1, 3)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -51,15 +51,19 @@ class widgetEntryList(QWidget):
         
         self.connect(self.listEntries, SIGNAL("doubleClicked(QListBoxItem*)"), self.slotEditEntry)
         self.connect(self.listEntries, SIGNAL("selectionChanged(QListBoxItem*)"), self.slotClickEntry)
+        self.connect(self.pushAdd, SIGNAL("clicked()"), self.slotAddEntry)
         self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEditEntry)
     
     def slotClickEntry(self, item=None):
-        if item:
+        if item and not self.parent.update:
             self.pushEdit.setEnabled(True)
             self.pushDelete.setEnabled(True)
         else:
             self.pushEdit.setEnabled(False)
             self.pushDelete.setEnabled(False)
+    
+    def slotAddEntry(self):
+        self.parent.widgetEditEntry.newEntry()
     
     def slotEditEntry(self):
         item = self.listEntries.selectedItem()
@@ -84,6 +88,11 @@ class widgetEditEntry(QWidget):
         self.connect(self.pushExit, SIGNAL("clicked()"), self.slotExit)
         
         self.resetEntry()
+    
+    def newEntry(self):
+        self.resetEntry()
+        self.pushExit.setText("New Entry")
+        self.parent.stack.raiseWidget(1)
     
     def editEntry(self, index, title, commands):
         self.index = index
@@ -134,17 +143,30 @@ class widgetMain(QWidget):
         
         self.default = -1
         self.entries = []
+        self.update = False
         
-        self.link.ask_notify("Boot.Loader.changed", id=BOOT_NOTIFY)
+        self.link.ask_notify("Boot.Loader.progress")
+        self.link.ask_notify("Boot.Loader.finished")
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
         self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
 
     def slotComar(self, sock):
         reply = self.link.read_cmd()
         if reply.command == "notify":
-            self.default = -1
-            self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-            self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
+            self.widgetEntries.listEntries.setEnabled(False)
+            if reply.notify == "Boot.Loader.finished":
+                if reply.data == "entry":
+                    self.default = -1
+                    self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
+                    self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
+                    self.update = False
+                    if self.widgetEditEntry.index != None:
+                        KMessageBox.information(self, i18n("Entry list changed by another application."), i18n("Warning"))
+                        self.widgetEditEntry.slotExit()
+            elif reply.notify == "Boot.Loader.progress":
+                if reply.data == "entry":
+                    self.update = True
+                    self.widgetEntries.slotClickEntry()
         elif reply.command == "result":
             if reply.id == BOOT_ENTRIES:
                 self.widgetEntries.listEntries.clear()
@@ -155,14 +177,7 @@ class widgetMain(QWidget):
                     root, os_type = getEntryDetails(commands)
                     self.entries.append([index, title, commands])
                     item = Entry(self.widgetEntries.listEntries, title, grubDeviceName(root), os_type, index==self.default, index)
-                if self.widgetEditEntry.index:
-                    # Edit dialog is in use, lookup entry in list and get (new) index of entry.
-                    for index, title, commands in self.entries:
-                        if title == self.widgetEditEntry.title and commands == self.widgetEditEntry.commands:
-                            self.widgetEditEntry.updateEntryIndex(index)
-                            return
-                    # If entry isn't in the list, it's removed or updated by another application.
-                    self.widgetEditEntry.updateEntryIndex(None)
+                self.widgetEntries.listEntries.setEnabled(True)
             elif reply.id == BOOT_OPTIONS:
                 index = 0
                 for option in reply.data.split("\n"):
