@@ -2,7 +2,7 @@
 Name=Package Manager
 Name[en]=Add, Update or Remove Programs
 Name[tr]=Program Ekle, Güncelle veya Kaldır
-Name[nl]=Toevoegen, bijwerken of verwijderen programma's
+Name[nl]=PiSi pakketbeheer
 Name[es]=Agregar, Actualizar o Remover Programas
 Name[de]=Programme hinzufügen, aktualisieren oder entfernen
 Name[pt_BR]=Adicionar, Atualizar ou Remover Programas
@@ -11,7 +11,7 @@ Name[it]=Aggiunta, aggiornamento o rimozione di programmi
 Comment=PiSi Package Manager Graphical User Interface
 Comment[en]=PiSi Package Manager Graphical User Interface
 Comment[tr]=PiSi Paket Yöneticisi Kullanıcı Grafik Arayüzü
-Comment[nl]=PiSi pakketmanager grafische gebruikersinterface
+Comment[nl]=PiSi pakketbeheer grafische gebruikersinterface
 Comment[es]=Interfaz gráfico de Administrador de Paquetes PiSi
 Comment[de]=PiSi Paket-Manager grafische Benutzoberfläche
 Comment[pt_BR]=Interface Gráfica do Usuário do Gerenciador de Pacotes PiSi
