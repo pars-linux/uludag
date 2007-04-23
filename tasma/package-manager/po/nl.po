@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 16:20+0200\n"
-"PO-Revision-Date: 2007-03-01 21:34+0200\n"
+"PO-Revision-Date: 2007-04-23 23:03+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -223,7 +223,7 @@ msgstr "%1 / %2 pakket %3"
 
 #: src/Commander.py:64
 msgid "Can't connect to Comar daemon"
-msgstr "Kan geen verbinding maken met Comar"
+msgstr "Kan geen verbinding maken met Comar daemon"
 
 #: src/Commander.py:99
 msgid "You do not have permission to do this operation."
@@ -405,7 +405,7 @@ msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
-msgstr "Met de geselecteerde pakketten; worden ook <b>%1</b> extra afhankelijkheden <b>opgewaardeerd</b>."
+msgstr " Met de geselecteerde pakketten; worden ook <b>%1</b> extra afhankelijkheden <b>opgewaardeerd</b>."
 
 #: src/package-manager.py:524
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
