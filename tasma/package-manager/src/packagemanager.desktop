@@ -2,13 +2,14 @@
 Name=Package Manager
 Name[tr]=Paket Yöneticisi
 Name[es]=Administrador de Paquetes
-Name[nl]=Toevoegen of verwijderen software
+Name[nl]=Pakketbeheer
 Name[de]=Paket-Manager
 Name[pt_BR]=Gerenciador de Pacotes
 Name[fr]=Gestionnaire de Paquets
 Name[it]=Gestore di Pacchetti
 GenericName[en]=Add or Remove Software
 GenericName[tr]=Yazılım ekle ve kaldır
+GenericName[nl]=Toevoegen of verwijderen software
 GenericName[de]=Anwendung hinzufügen oder entfernen
 GenericName[pt_BR]=Adicionar ou Remover Software
 GenericName[fr]=Ajouter ou Supprimer un Logiciel
