@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-12-12 13:28+0200\n"
-"PO-Revision-Date: 2007-03-16 21:10+0200\n"
+"PO-Revision-Date: 2007-04-24 10:50+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -33,15 +33,15 @@ msgstr "Connessione a COMAR chiusa inaspettatamente, tentativo di riconnessione 
 
 #: user-manager.py:30
 msgid "User Management"
-msgstr "Amministrazione degli utenti"
+msgstr "Gestione degli utenti"
 
 #: user-manager.py:76
 msgid "User manager module is already started!"
-msgstr "Il modulo di amministrazione degli utenti è già in esecuzione!"
+msgstr "Il modulo di gestione degli utenti è già in esecuzione!"
 
 #: user-manager.py:81
 msgid "User Manager"
-msgstr "Amministratore degli utenti"
+msgstr "Gestore degli utenti"
 
 #: groupedit.py:22 useredit.py:25
 msgid "ID:"
@@ -122,7 +122,7 @@ msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Desideri veramente eliminare questo utente?</b></big><br><br>Name: %s<br>Nome utente: %"
+"<big><b>Desideri veramente eliminare questo utente?</b></big><br><br>Nome: %s<br>Nome utente: %"
 "s<br>ID: %d"
 
 #: browser.py:144
