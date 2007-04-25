@@ -47,62 +47,8 @@ def getRoot():
         if mount_items[2] == "/":
             return mount_items[0]
 
-def grubDevice(dev):
+def deviceDescription(dev):
     dev = dev.split("/")[2]
-    return "(hd%s,%s)" % (ord(dev[2:3]) - ord("a"), int(dev[3:]) - 1)
-
-def grubDeviceName(dev):
-    disk, part = dev[3:-1].split(",")
-    disk = int(disk) + 1
-    part = int(part) + 1
+    disk = ord(dev[2:3]) - ord("a") + 1
+    part = int(dev[3:])
     return i18n("Disk %1, Partition %2").arg(disk).arg(part)
-
-def parseGrubCommand(command_str):
-    index = None
-    title = ""
-    commands = []
-    for cmd in command_str.split("\n\n"):
-        key, options, value = cmd.split("\n")
-        if options == " ":
-            options = ""
-        if value == " ":
-            value = ""
-        if key == "index":
-            index = int(value)
-        elif key == "title":
-            title = value
-        else:
-            commands.append([key, options, value])
-    return index, title, commands
-
-def formatGrubCommand(command_lst):
-    commands = []
-    for key, opts, value in command_lst:
-        if not opts:
-            opts = " "
-        if not value:
-            value = " "
-        commands.append("%s\n%s\n%s" % (key, opts, value))
-    return "\n\n".join(commands)
-
-def getEntryDetails(commands):
-    os_type = "Unknown"
-    hidden = False
-    for key, opts, value in commands:
-        if key == "root":
-            root = value
-        elif key == "rootnoverify" and not hidden:
-            root = value
-        elif key == "hide":
-            root = value
-            hidden = True
-        elif key == "kernel":
-            if value.startswith("("):
-                root = value.split(")")[0] + ")"
-            if "root" in value:
-                os_type = "Linux"
-        elif key == "makeactive":
-            os_type = "Windows"
-    if os_type == "Linux" and root == grubDevice(getRoot()):
-        os_type = "Pardus"
-    return root, os_type

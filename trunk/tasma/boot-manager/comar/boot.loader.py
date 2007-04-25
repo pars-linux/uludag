@@ -57,6 +57,11 @@ def grubDevice(dev):
     dev = dev.split("/")[2]
     return "(hd%s,%s)" % (ord(dev[2:3]) - ord("a"), int(dev[3:]) - 1)
 
+def linuxDevice(dev):
+    dev = dev[:-1].split("(hd")[1]
+    disk, part = dev.split(",")
+    return "/dev/hd%s%s" % (chr(97 + int(disk)), int(part) + 1)
+
 def getRoot():
     import os
     for mount in os.popen("/bin/mount").readlines():
@@ -82,9 +87,44 @@ class grubConfLock:
             self.config.write(self.file)
         self.lock.unlock()
 
-# Boot.Loader
+def importGrubEntry(entry):
+    os_entry = {
+        "os_type": "other",
+        "title": entry.title,
+    }
+    hidden = False
+    for command in entry.commands:
+        key = command.key
+        value = command.value
+        if key == "root":
+            os_entry["root"] = linuxDevice(value)
+        elif key == "rootnoverify" and not hidden:
+            os_entry["root"] = linuxDevice(value)
+        elif key == "hide":
+            os_entry["root"] = linuxDevice(value)
+            hidden = True
+        elif key == "initrd":
+            os_entry["initrd"] = value
+        elif key == "kernel":
+            try:
+                kernel, options = value.split(" ", 1)
+                os_entry["kernel"] = kernel
+                os_entry["options"] = options
+                if "root=" in options:
+                    os_entry["os_type"] = "linux"
+            except ValueError:
+                os_entry["kernel"] = value
+        elif key in ["chainloader", "makeactive"]:
+            os_entry["os_type"] = "windows"
+    lst = []
+    for k, v in os_entry.iteritems():
+        lst.append("%s %s" % (k, v))
+    return lst
 
+
+# Boot.Loader
 GRUB_CONF = "/boot/grub/grub.conf"
+GRUB_CONF = "/home/bahadir/repos/uludag/trunk/tasma/boot-manager/comar/grub.conf"
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
 
@@ -126,18 +166,11 @@ def listEntries():
         fail("Timeout")
     entries = []
     for index, entry in enumerate(grub.config.entries):
-        tmp = []
-        tmp.append("index\n \n%s" % index)
-        tmp.append("title\n \n%s" % entry.title)
-        for command in entry.commands:
-            if not command.options:
-                command.options = " "
-            if not command.value:
-                command.value = " "
-            tmp.append("%s\n%s\n%s" % (command.key, command.options, command.value))
-        entries.append("\n\n".join(tmp))
+        os_entry = importGrubEntry(entry)
+        os_entry.insert(0, "index %s" % index)
+        entries.append("\n".join(os_entry))
     grub.release()
-    return "\n\n\n".join(entries)
+    return "\n\n".join(entries)
 
 def getEntry(index):
     try:
@@ -145,17 +178,9 @@ def getEntry(index):
     except IOError:
         fail("Timeout")
     entry = grub.config.getEntry(int(index))
-    ret = []
-    ret.append("index\n \n%s" % index)
-    ret.append("title\n \n%s" % entry.title)
-    for command in entry.commands:
-        if not command.options:
-            command.options = " "
-        if not command.value:
-            command.value = " "
-        ret.append("%s\n%s\n%s" % (command.key, command.options, command.value))
+    os_entry = importGrubEntry(entry)
     grub.release()
-    return "\n\n".join(ret)
+    return "\n".join(os_entry)
 
 def removeEntry(index):
     try:
@@ -170,25 +195,28 @@ def removeEntry(index):
     grub.release()
     notify("Boot.Loader.changed", "entry")
 
-def addEntry(title, commands):
+def addEntry(title, os_type, root, kernel=None, initrd=None, options=None):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
-    new_entry = grubEntry(title)
-    for command in commands.split("\n\n"):
-        key, opts, value = command.split("\n")
-        if opts == " ":
-            opts = []
-        else:
-            opts = opts.split()
-        new_entry.setCommand(key, value, opts)
-    grub.config.addEntry(new_entry)
-    index = grub.config.indexOf(new_entry)
+    entry = grubEntry(title)
+    if os_type == "windows":
+        entry.setCommand("rootnoverify", grubDevice(root))
+        entry.setCommand("makeactive", "")
+        entry.setCommand("chainloader", "+1")
+    else:
+        entry.setCommand("root", grubDevice(root))
+    if kernel:
+        entry.setCommand("kernel", "%s %s" % (kernel, options))
+    if initrd:
+        entry.setCommand("initrd", initrd)
+    grub.config.addEntry(entry)
+    index = grub.config.indexOf(entry)
     grub.release()
     notify("Boot.Loader.changed", "entry")
 
-def updateEntry(index, title, commands):
+def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=None):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
@@ -197,13 +225,16 @@ def updateEntry(index, title, commands):
     if index < len(grub.config.entries):
         entry = grub.config.getEntry(index)
         entry.title = title
-        for command in commands.split("\n\n"):
-            key, opts, value = command.split("\n")
-            if opts == " ":
-                opts = []
-            else:
-                opts = opts.split()
-            entry.setCommand(key, value, opts)
+        if os_type == "windows":
+            entry.setCommand("rootnoverify", grubDevice(root))
+            entry.setCommand("makeactive", "")
+            entry.setCommand("chainloader", "+1")
+        else:
+            entry.setCommand("root", grubDevice(root))
+        if kernel:
+            entry.setCommand("kernel", "%s %s" % (kernel, options))
+        if initrd:
+            entry.setCommand("initrd", initrd)
         grub.release()
         notify("Boot.Loader.changed", "entry")
     else:

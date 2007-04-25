@@ -61,11 +61,11 @@ class Entry(QListBoxItem):
     
     def setOs(self, os_type):
         self.os_type = os_type
-        if self.os_type == "Pardus":
+        if self.os_type == "pardus":
             self.icon = QPixmap("pardus.png")
-        elif self.os_type == "Linux":
+        elif self.os_type == "linux":
             self.icon = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/penguin.png")
-        elif self.os_type == "Windows":
+        elif self.os_type == "windows":
             self.icon = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/wabi.png")
         else:
             self.icon = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/akregator_empty.png")
