@@ -69,7 +69,7 @@ class widgetEntryList(QWidget):
         item = self.listEntries.selectedItem()
         if item:
             entry = self.parent.entries[item.entry_index]
-            self.parent.widgetEditEntry.editEntry(*entry)
+            self.parent.widgetEditEntry.editEntry(entry)
 
 
 class widgetEditEntry(QWidget):
@@ -94,11 +94,10 @@ class widgetEditEntry(QWidget):
         self.pushExit.setText("New Entry")
         self.parent.stack.raiseWidget(1)
     
-    def editEntry(self, index, title, commands):
-        self.index = index
-        self.title = title
-        self.commands = commands
-        self.pushExit.setText("Editing '%s' (%s). Click to exit." % (title, index))
+    def editEntry(self, entry):
+        self.index = int(entry["index"])
+        self.title = entry["title"]
+        self.pushExit.setText("Editing '%s' (%s). Click to exit." % (self.title, self.index))
         self.parent.stack.raiseWidget(1)
     
     def updateEntryIndex(self, index=None):
@@ -115,7 +114,6 @@ class widgetEditEntry(QWidget):
     def resetEntry(self):
         self.index = None
         self.title = None
-        self.commands = None
     
     def slotExit(self):
         self.resetEntry()
@@ -165,12 +163,15 @@ class widgetMain(QWidget):
                 self.widgetEntries.listEntries.clear()
                 self.widgetEntries.slotClickEntry()
                 self.entries = []
-                for entry in reply.data.split("\n\n\n"):
-                    index, title, commands = parseGrubCommand(entry)
-                    root, os_type = getEntryDetails(commands)
-                    self.entries.append([index, title, commands])
-                    item = Entry(self.widgetEntries.listEntries, title, grubDeviceName(root), os_type, index==self.default, index)
+                for entry in reply.data.split("\n\n"):
+                    entry = dict([x.split(" ", 1) for x in entry.split("\n")])
+                    index = int(entry["index"])
+                    if entry["os_type"] == "linux" and getRoot() == entry["root"]:
+                        entry["os_type"] = "pardus"
+                    self.entries.append(entry)
+                    item = Entry(self.widgetEntries.listEntries, entry["title"], deviceDescription(entry["root"]), entry["os_type"], index==self.default, index)
                 self.widgetEntries.listEntries.setEnabled(True)
+
             elif reply.id == BOOT_OPTIONS:
                 index = 0
                 for option in reply.data.split("\n"):
