@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-19 10:50+0200\n"
-"PO-Revision-Date: 2007-03-07 19:56+0200\n"
+"PO-Revision-Date: 2007-04-25 14:51+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Tipo filesystem :"
 
 #: src/diskform.py:134
 msgid "Mount Point :"
-msgstr "Punto montaggio :"
+msgstr "Punto di montaggio :"
 
 #: src/diskform.py:135
 msgid "Additional Options :"
@@ -43,7 +43,7 @@ msgstr "Opzioni aggiuntive :"
 
 #: src/diskform.py:136
 msgid "Get Default Options"
-msgstr "Recupera opzioni predefinite"
+msgstr "Ripristina opzioni predefinite"
 
 #: src/diskform.py:137
 msgid "Find Disks Automatically"
@@ -71,7 +71,6 @@ msgstr "File /etc/fstab aggiornato!"
 
 #: src/disk-manager.py:268
 #, python-format
-#, fuzzy
 msgid "%s for %s failure !!"
 msgstr "%s per %s fallito !!"
 
