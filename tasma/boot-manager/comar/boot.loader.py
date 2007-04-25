@@ -124,33 +124,37 @@ def importGrubEntry(entry):
 
 # Boot.Loader
 GRUB_CONF = "/boot/grub/grub.conf"
-GRUB_CONF = "/home/bahadir/repos/uludag/trunk/tasma/boot-manager/comar/grub.conf"
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
+OPTIONS = ["default", "timeout", "splash"]
 
 def listOptions():
-    try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
-    except IOError:
-        fail("Timeout")
-    options = "\n".join(grub.config.getAllOptions())
-    grub.release()
-    return options
+    return "\n".join(OPTIONS)
 
 def getOption(key):
     try:
         grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
-    option = grub.config.getOption(key)
-    grub.release()
-    return option
+    if key in OPTIONS:
+        if key == "splash"
+            option = grub.config.getOption(key, "")
+        else:
+            option = grub.config.getOption(key, "0")
+        grub.release()
+        return option
+    else:
+        grub.release()
+        fail("No such option")
 
 def setOption(key, value):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
+    if key not in OPTIONS:
+        grub.release()
+        fail("No such option")
     if value:
         grub.config.setOption(key, value)
     else:
