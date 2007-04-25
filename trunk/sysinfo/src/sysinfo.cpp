@@ -60,15 +60,15 @@
 using namespace KIO;
 #define BR "<br>"
 
-static QString formattedUnit( unsigned long long value )
+static QString formattedUnit( unsigned long long value, int post=1)
 {
-    if (value > (1024 * 1024))
-        if (value > (1024 * 1024 * 1024))
-            return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(value / (1024 * 1024 * 1024.0), 2));
+    if (value > (1000 * 1000))
+        if (value > (1000 * 1000 * 1000))
+            return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(value / (1000 * 1000 * (post == 0 ? 1000 : 1000.0)), post));
         else
-            return i18n("%1 MB").arg(KGlobal::locale()->formatNumber(value / (1024 * 1024.0), 2));
+            return i18n("%1 MB").arg(KGlobal::locale()->formatNumber(value / (1000 * (post == 0 ? 1000 : 1000.0)), post));
     else
-        return i18n("%1 KB").arg(KGlobal::locale()->formatNumber(value / 1024.0, 2));
+        return i18n("%1 KB").arg(KGlobal::locale()->formatNumber(value / (post == 0 ? 1000 : 1000.0), post));
 }
 
 kio_sysinfoProtocol::kio_sysinfoProtocol( const QCString & pool_socket, const QCString & app_socket )
@@ -104,35 +104,8 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     content = content.arg( i18n( "My Computer" ) ); // <h1>
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
-    QString sysInfo = "<div id=\"column2\">"; // table with 2 cols
+    QString sysInfo = "<div id=\"column\">"; // table with 2 cols
     QString dummy;
-
-    // disk info
-    sysInfo += "<h2 id=\"hdds\">" + i18n( "Disk Information" ) + "</h2>";
-    sysInfo += diskInfo();
-
-    osInfo();
-    sysInfo += "<h2 id=\"sysinfo\">" +i18n( "OS Information" ) + "</h2>";
-    sysInfo += "<table>";
-    sysInfo += "<tr><td>" + i18n( "OS:" ) + "</td><td>" + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Current user:" ) + "</td><td>" + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "System:" ) +  "</td><td>" + m_info[OS_SYSTEM] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "KDE:" ) + "</td><td>" + KDE::versionString() + "</td></tr>";
-    sysInfo += "</table>";
-
-    // OpenGL info
-    if ( glInfo() )
-    {
-        sysInfo += "<h2 id=\"display\">" + i18n( "Display Info" ) + "</h2>";
-        sysInfo += "<table>";
-        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[GFX_VENDOR] +  "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[GFX_MODEL] + "</td></tr>";
-	if (!m_info[GFX_DRIVER].isNull())
-	  sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
-        sysInfo += "</table>";
-    }
-
-    sysInfo += "</div><div id=\"column1\">"; // second column
 
     // OS info
 
@@ -189,6 +162,34 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
         sysInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
         sysInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
+        sysInfo += "</table>";
+    }
+
+    sysInfo += "</div><div id=\"column2\">"; // second column
+
+    // disk info
+    sysInfo += "<h2 id=\"hdds\">" + i18n( "Disk Information" ) + "</h2>";
+    sysInfo += diskInfo();
+
+    // Os info
+    osInfo();
+    sysInfo += "<h2 id=\"sysinfo\">" +i18n( "OS Information" ) + "</h2>";
+    sysInfo += "<table>";
+    sysInfo += "<tr><td>" + i18n( "OS:" ) + "</td><td>" + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "Current user:" ) + "</td><td>" + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "System:" ) +  "</td><td>" + m_info[OS_SYSTEM] + "</td></tr>";
+    sysInfo += "<tr><td>" + i18n( "KDE:" ) + "</td><td>" + KDE::versionString() + "</td></tr>";
+    sysInfo += "</table>";
+
+    // OpenGL info
+    if ( glInfo() )
+    {
+        sysInfo += "<h2 id=\"display\">" + i18n( "Display Info" ) + "</h2>";
+        sysInfo += "<table>";
+        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[GFX_VENDOR] +  "</td></tr>";
+        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[GFX_MODEL] + "</td></tr>";
+	if (!m_info[GFX_DRIVER].isNull())
+	  sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
         sysInfo += "</table>";
     }
 
@@ -285,8 +286,9 @@ void kio_sysinfoProtocol::cpuInfo()
 
 QString kio_sysinfoProtocol::diskInfo()
 {
-    QString result = "<table><tr><th></th><th>" + i18n( "Device" ) + "</th><th>" + i18n( "Filesystem" ) + "</th><th>" +
-                     i18n( "Total space" ) + "</th><th>" + i18n( "Available space" ) + "</th></tr>";
+    //QString result = "<table><tr><th></th><th>" + i18n( "Device" ) + "</th><th>" + i18n( "Filesystem" ) + "</th><th>" +
+                       // i18n( "Total space" ) + "</th><th>" + i18n( "Available space" ) + "</th></tr>";
+    QString result = "<table>";
 
     if ( fillMediaDevices() )
     {
@@ -296,18 +298,14 @@ QString kio_sysinfoProtocol::diskInfo()
             QString tooltip = i18n( di.model );
             QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
 
-            if ( di.mounted )
-            {
-                result += QString( "<tr><td>%1</td><td><a href=\"media:/%2\" title=\"%7\">%3</a></td><td>%4</td><td>%5</td><td>%6</td></tr><tr></tr>" ).
-                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( label ).arg( di.fsType ).
-                          arg( formattedUnit( di.total ) ).arg( formattedUnit( di.avail ) ).arg( tooltip );
-            }
-            else
-            {
-                result += QString( "<tr><td>%1</td><td><a href=\"media:/%2\" title=\"%6\">%3</a></td><td>%4</td><td>%5</td><td></td></tr><tr></tr>" ).
-                          arg( icon( di.iconName, 32 ) ).arg( di.name ).arg( label ).arg( di.fsType ).
-                          arg( di.total ? formattedUnit( di.total) : QString::null).arg( tooltip );
-            }
+            unsigned long long usage = di.total - di.avail;
+            unsigned long long percent = usage / ( di.total / 100 );
+
+            result += QString( "<tr><td>%1</td><td width=\"100%\"><table width=\"100%\"><tr><td>"
+                                   "<a href=\"media:/%2\" title=\"%8\">%3</a> [%4] [%7]</td></tr>"
+                                   "<tr><td width=\"100%\" class=\"bar\"><div style=\"width: %5%\">%6&nbsp</div></td></tr></table></td><tr></tr>" ).
+                          arg( icon( di.iconName, 48 ) ).arg( di.name ).arg( label ).arg( di.fsType ).arg(di.mounted ? percent : 0).
+                          arg( di.mounted ? formattedUnit( usage ) : QString::null ).arg( formattedUnit( di.total,0 ) ).arg( tooltip );
         }
     }
     result += "</table>";

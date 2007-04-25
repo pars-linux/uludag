@@ -34,13 +34,14 @@ div#container1 {
 	
 }
 
-div#column1 {
-	width: 50%;
+div#column {
+	width: 47%;
+    float:left;
 }
 
 div#column2 {
-	margin-left: 20px;
-	float: right;
+    float:left;
+	width: 52%;
 }
 
 h2 {
@@ -156,12 +157,25 @@ h2#launch+ul {
 
 h2#hdds+table {
 	margin-left: 4px;
-	padding-left: 50px;
-	background-image: url("images/hdds.png");
-	background-repeat: no-repeat;
 }
 
 table td:first-child {
 	color: #888;
 }
 
+.bar {
+    background-color: #DDDDDD;
+    text-align: right;
+    border-left: solid 1px #CCCCCC;
+}
+
+.bar div {
+    border-top: solid 2px #0077DD;
+    background-color: #004080;
+    border-bottom: solid 2px #002266;
+    text-align: right;
+    color: white;
+    float: left;
+    padding-top: 0;
+    height:1em;
+}
