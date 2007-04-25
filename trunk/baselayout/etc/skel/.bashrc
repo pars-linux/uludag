@@ -41,6 +41,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 alias svn="colorsvn"
+alias scp-resume="rsync --compress-level=3 --partial --progress --rsh=ssh"
 
 # Change the window title of X terminals 
 case $TERM in
