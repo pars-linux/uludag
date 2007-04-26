@@ -151,9 +151,9 @@ class grubConf:
         """Unsets an option."""
         del self.options[key]
     
-    def getOption(self, key):
+    def getOption(self, key, default=""):
         """Returns value of an option."""
-        return self.options.get(key, "")
+        return self.options.get(key, default)
     
     def getAllOptions(self):
         """Returns all options."""
