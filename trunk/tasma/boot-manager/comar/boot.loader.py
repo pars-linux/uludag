@@ -131,6 +131,17 @@ GRUB_CONF = "/boot/grub/grub.conf"
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
 OPTIONS = ["default", "timeout", "splash"]
+SYSTEMS = {
+    "linux": "root,kernel,initrd,options",
+    "windows": "root",
+    "other": "root,kernel,initrd,options",
+}
+
+def listSystems():
+    sys_list = []
+    for key, values in SYSTEMS.iteritems():
+        sys_list.append("%s %s" % (key, values))
+    return "\n".join(sys_list)
 
 def listOptions():
     return "\n".join(OPTIONS)
