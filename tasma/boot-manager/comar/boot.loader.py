@@ -114,6 +114,10 @@ def importGrubEntry(entry):
                     os_entry["os_type"] = "linux"
             except ValueError:
                 os_entry["kernel"] = value
+            if os_entry["kernel"].startswith("("):
+                root, kernel = os_entry["kernel"].split(")", 1)
+                os_entry["root"] = linuxDevice(root + ")")
+                os_entry["kernel"] = kernel
         elif key in ["chainloader", "makeactive"]:
             os_entry["os_type"] = "windows"
     lst = []
@@ -137,12 +141,12 @@ def getOption(key):
     except IOError:
         fail("Timeout")
     if key in OPTIONS:
-        if key == "splash"
-            option = grub.config.getOption(key, "")
+        if key == "splash":
+            value = grub.config.getOption(key, "")
         else:
-            option = grub.config.getOption(key, "0")
+            value = grub.config.getOption(key, "0")
         grub.release()
-        return option
+        return "%s %s" % (key, value)
     else:
         grub.release()
         fail("No such option")
