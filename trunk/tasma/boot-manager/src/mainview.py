@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_ENTRIES, BOOT_OPTIONS = xrange(1, 3)
+BOOT_ENTRIES, BOOT_OPTIONS, BOOT_OPTION_VALUES = xrange(1, 4)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -141,6 +141,7 @@ class widgetMain(QWidget):
         
         self.default = -1
         self.entries = []
+        self.options = {}
         
         self.link.ask_notify("Boot.Loader.changed")
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
@@ -173,12 +174,12 @@ class widgetMain(QWidget):
                 self.widgetEntries.listEntries.setEnabled(True)
 
             elif reply.id == BOOT_OPTIONS:
-                index = 0
                 for option in reply.data.split("\n"):
-                    key, value = option.split()
-                    if key == "default":
-                        index = int(value)
-                self.default = index
+                    self.link.call("Boot.Loader.getOption", {"key": option}, id=BOOT_OPTION_VALUES)
+            elif reply.id == BOOT_OPTION_VALUES:
+                key, value = reply.data.split(" ", 1)
+                if key == "default":
+                    self.default = int(value)
                 #item = self.listEntries.item(index)
                 #if item:
                 #    item.checked = True
