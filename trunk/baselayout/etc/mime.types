@@ -2,7 +2,7 @@
 #
 #  MIME-TYPES and the extensions that represent them
 #
-#  This file is which is based on debian's "mime-support".
+#  This file is based on debian's "mime-support".
 #
 #  The reason that all types are managed by the mime-support package instead
 #  allowing individual packages to install types in much the same way as they
