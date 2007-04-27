@@ -37,9 +37,8 @@ class IconBox(QWidget):
         else:
             self.layout.addItem(item)
 
-
 class Entry(QListBoxItem):
-    def __init__(self, parent, title, description="", os_type="Unknown", checked=False, index=None):
+    def __init__(self, parent, title, description="", os_type="Unknown", pardus=False, checked=False, index=None):
         QListBoxItem.__init__(self, parent)
         self.parent = parent
         
@@ -47,6 +46,7 @@ class Entry(QListBoxItem):
         self.description = description
         self.checked = checked
         self.os_type = os_type
+        self.pardus = pardus
         self.entry_index = index
         
         self.setCustomHighlighting(True)
@@ -61,7 +61,7 @@ class Entry(QListBoxItem):
     
     def setOs(self, os_type):
         self.os_type = os_type
-        if self.os_type == "pardus":
+        if self.pardus:
             self.icon = QPixmap("pardus.png")
         elif self.os_type == "linux":
             self.icon = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/penguin.png")

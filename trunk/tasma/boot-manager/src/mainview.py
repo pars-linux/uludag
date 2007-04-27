@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_ENTRIES, BOOT_OPTIONS, BOOT_OPTION_VALUES = xrange(1, 4)
+BOOT_ENTRIES, BOOT_OPTIONS, BOOT_SYSTEMS, BOOT_OPTION_VALUES = xrange(1, 5)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -76,44 +76,145 @@ class widgetEditEntry(QWidget):
     def __init__(self, parent, comar_link):
         QWidget.__init__(self, parent)
         self.parent = parent
+        self.systems = self.parent.systems
         
         self.link = comar_link
+        self.fields = {}
         
         layout = QGridLayout(self, 1, 1, 11, 6)
         
-        self.pushExit = QPushButton(self)
-        self.pushExit.setText(i18n("Exit"))
-        layout.addWidget(self.pushExit, 0, 0)
+        self.labelTitle = QLabel(self)
+        self.labelTitle.setText(i18n("Title"))
+        layout.addWidget(self.labelTitle, 0, 0)
         
-        self.connect(self.pushExit, SIGNAL("clicked()"), self.slotExit)
+        self.editTitle = QLineEdit(self)
+        layout.addMultiCellWidget(self.editTitle, 0, 0, 1, 2)
+        
+        self.labelSystem = QLabel(self)
+        self.labelSystem.setText(i18n("System"))
+        layout.addWidget(self.labelSystem, 1, 0)
+        
+        self.listSystem = QComboBox(self)
+        layout.addWidget(self.listSystem, 1, 1)
+        
+        spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
+        layout.addItem(spacer, 1, 2)
+        
+        self.labelRoot = QLabel(self)
+        self.labelRoot.setText(i18n("Root"))
+        layout.addWidget(self.labelRoot, 2, 0)
+        
+        self.editRoot = QLineEdit(self)
+        layout.addMultiCellWidget(self.editRoot, 2, 2, 1, 2)
+        
+        self.fields["root"] = (self.labelRoot, self.editRoot)
+        
+        self.labelKernel = QLabel(self)
+        self.labelKernel.setText(i18n("Kernel"))
+        layout.addWidget(self.labelKernel, 3, 0)
+        
+        self.editKernel = QLineEdit(self)
+        layout.addMultiCellWidget(self.editKernel, 3, 3, 1, 2)
+        
+        self.fields["kernel"] = (self.labelKernel, self.editKernel)
+        
+        self.labelOptions = QLabel(self)
+        self.labelOptions.setText(i18n("Kernel Options"))
+        layout.addWidget(self.labelOptions, 4, 0)
+        
+        self.editOptions = QLineEdit(self)
+        layout.addMultiCellWidget(self.editOptions, 4, 4, 1, 2)
+        
+        self.fields["options"] = (self.labelOptions, self.editOptions)
+        
+        self.labelInitrd = QLabel(self)
+        self.labelInitrd.setText(i18n("Init Ramdrive"))
+        layout.addWidget(self.labelInitrd, 5, 0)
+        
+        self.editInitrd = QLineEdit(self)
+        layout.addMultiCellWidget(self.editInitrd, 5, 5, 1, 2)
+        
+        self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
+        
+        spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
+        layout.addMultiCell(spacer, 6, 6, 0, 1)
+        
+        self.buttonOK = QPushButton(self)
+        self.buttonOK.setText(i18n("Save"))
+        layout.addWidget(self.buttonOK, 7, 0)
+        
+        self.buttonCancel = QPushButton(self)
+        self.buttonCancel.setText(i18n("Cancel"))
+        layout.addWidget(self.buttonCancel, 7, 1)
+        
+        self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
+        self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
+        self.connect(self.buttonCancel, SIGNAL("clicked()"), self.slotExit)
         
         self.resetEntry()
     
     def newEntry(self):
         self.resetEntry()
-        self.pushExit.setText("New Entry")
-        self.parent.stack.raiseWidget(1)
     
     def editEntry(self, entry):
-        self.index = int(entry["index"])
-        self.title = entry["title"]
-        self.pushExit.setText("Editing '%s' (%s). Click to exit." % (self.title, self.index))
+        self.resetEntry()
+        self.entry = entry
+        
+        self.editTitle.setText(unicode(entry["title"]))
+        self.listSystem.setCurrentText(entry["os_type"])
+        
+        for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
+            if label in entry:
+                widgetEdit.setText(unicode(entry[label]))
+        
+        self.slotSystem(entry["os_type"])
         self.parent.stack.raiseWidget(1)
     
-    def updateEntryIndex(self, index=None):
-        if self.parent.stack.visibleWidget() != self:
-            return
-        if index:
-            self.index = index
-            self.pushExit.setText("Editing '%s' (%s). Click to exit." % (self.title, index))
-        else:
-            # Entry removed by another application
-            KMessageBox.error(self, i18n("Entry removed! Closing edit dialog."), i18n("Failed"))
-            self.slotExit()
-    
     def resetEntry(self):
-        self.index = None
-        self.title = None
+        self.entry = None
+        systems = self.parent.systems.keys()
+        systems.sort()
+        
+        self.editTitle.setText("")
+        
+        self.listSystem.clear()
+        if systems:
+            for system in systems:
+                self.listSystem.insertItem(system)
+            self.slotSystem(systems[0])
+        
+        for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
+            widgetEdit.setText("")
+        
+        self.parent.stack.raiseWidget(1)
+    
+    def slotSystem(self, name):
+        systems = self.parent.systems
+        fields = systems[str(name)]
+        for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
+            if label in fields:
+                widgetLabel.show()
+                widgetEdit.show()
+            else:
+                widgetLabel.hide()
+                widgetEdit.hide()
+    
+    def slotSave(self):
+        args = {
+            "os_type": str(self.listSystem.currentText()),
+            "title": unicode(self.editTitle.text()),
+            "root": str(self.editRoot.text()),
+            "kernel": str(self.editKernel.text()),
+            "options": unicode(self.editOptions.text()),
+            "initrd": str(self.editInitrd.text()),
+        }
+        if self.entry:
+            method = "Boot.Loader.updateEntry"
+            args["index"] = self.entry["index"]
+        else:
+            method = "Boot.Loader.addEntry"
+        self.link.call(method, args)
+        self.slotExit()
     
     def slotExit(self):
         self.resetEntry()
@@ -129,7 +230,12 @@ class widgetMain(QWidget):
         self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
         
-        layout = QGridLayout(self, 1, 1, 0, 0, "formMainLayout")
+        self.default = -1
+        self.entries = []
+        self.options = {}
+        self.systems = {}
+        
+        layout = QGridLayout(self, 1, 1, 0, 0)
         self.stack = QWidgetStack(self)
         layout.addWidget(self.stack, 0, 0)
         
@@ -139,13 +245,10 @@ class widgetMain(QWidget):
         self.widgetEditEntry = widgetEditEntry(self, self.link)
         self.stack.addWidget(self.widgetEditEntry)
         
-        self.default = -1
-        self.entries = []
-        self.options = {}
-        
         self.link.ask_notify("Boot.Loader.changed")
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
         self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
+        self.link.call("Boot.Loader.listSystems", id=BOOT_SYSTEMS)
 
     def slotComar(self, sock):
         reply = self.link.read_cmd()
@@ -156,7 +259,7 @@ class widgetMain(QWidget):
                 self.default = -1
                 self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
                 self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
-                if self.widgetEditEntry.index != None:
+                if self.widgetEditEntry.entry:
                     KMessageBox.information(self, i18n("Entry list changed by another application."), i18n("Warning"))
                     self.widgetEditEntry.slotExit()
         elif reply.command == "result":
@@ -167,12 +270,15 @@ class widgetMain(QWidget):
                 for entry in reply.data.split("\n\n"):
                     entry = dict([x.split(" ", 1) for x in entry.split("\n")])
                     index = int(entry["index"])
-                    if entry["os_type"] == "linux" and getRoot() == entry["root"]:
-                        entry["os_type"] = "pardus"
+                    pardus = entry["os_type"] == "linux" and getRoot() == entry["root"]
                     self.entries.append(entry)
-                    item = Entry(self.widgetEntries.listEntries, entry["title"], deviceDescription(entry["root"]), entry["os_type"], index==self.default, index)
+                    item = Entry(self.widgetEntries.listEntries, unicode(entry["title"]), deviceDescription(entry["root"]), entry["os_type"], pardus, index==self.default, index)
                 self.widgetEntries.listEntries.setEnabled(True)
-
+            elif reply.id == BOOT_SYSTEMS:
+                self.systems = {}
+                for system in reply.data.split("\n"):
+                    label, fields = system.split(" ", 1)
+                    self.systems[label] = fields.split(",")
             elif reply.id == BOOT_OPTIONS:
                 for option in reply.data.split("\n"):
                     self.link.call("Boot.Loader.getOption", {"key": option}, id=BOOT_OPTION_VALUES)
