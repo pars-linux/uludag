@@ -198,6 +198,28 @@ catbox_core_run(struct trace_context *ctx)
 					exit(2);
 			}
 			// Callable exits by unhandled exception
+			// So let child print error and value to stderr
+			PyErr_Display( e,val,tb );
+			/*
+			 * FIXME: In a perfect world following works better
+			 * but pisi.api.cleanup didn't like what i want - caglar
+			PySys_SetObject("last_type", e);
+			PySys_SetObject("last_value", val);
+			PySys_SetObject("last_traceback", tb);
+			PyObject *hook = PySys_GetObject("excepthook");
+			if (hook) {
+				PyObject *args = PyTuple_Pack(3, e, val, tb);
+				PyObject *result = PyEval_CallObject(hook, args);
+				
+				// excepthook is a borrowed reference 
+				Py_XDECREF(result);
+				Py_XDECREF(args);
+				Py_XDECREF(tb);
+				Py_XDECREF(val);
+				Py_XDECREF(e);
+				PyErr_Clear();
+			}
+			*/
 			exit(1);
 		}
 		// Callable exits by returning from function normally
