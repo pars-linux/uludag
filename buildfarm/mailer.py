@@ -36,10 +36,9 @@ def send(message, pspec = "", type = ""):
                        word),
                       message.split(" "))
 
-
-    if not config.smtpUser or not config.smtpPassword:
-        logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
-        return
+    if useSmtpAuth and (not config.smtpUser or not config.smtpPassword):
+            logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
+            return
 
     recipientsName, recipientsEmail = [], []
     if pspec:
@@ -73,7 +72,7 @@ def send(message, pspec = "", type = ""):
         logger.error("E-posta gönderimi gerçekleştirilemedi: Sunucuda oturum açılamadı (%s)." % config.smtpServer)
         return
 
-    if config.smtpPassword:
+    if useSmtpAuth and config.smtpPassword:
         try:
             session.login(config.smtpUser, config.smtpPassword)
         except smtplib.SMTPAuthenticationError:

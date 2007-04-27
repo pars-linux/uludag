@@ -22,5 +22,6 @@ logFile          = "/var/cache/pisi/buildfarm.log"
 mailFrom         = "buildfarm@pardus.org.tr"
 ccList           = []
 smtpServer       = "mail.pardus.org.tr"
+useSmtpAuth      = False
 smtpUser         = ""
 smtpPassword     = ""
