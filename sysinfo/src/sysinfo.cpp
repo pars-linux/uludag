@@ -250,17 +250,17 @@ void kio_sysinfoProtocol::memoryInfo()
     {
         const int mem_unit = info.mem_unit;
 
-        m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit );
+        m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit ,0);
         unsigned long int totalFree = calculateFreeRam() * 1024;
         kdDebug() << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit << endl;
         if ( totalFree > info.freeram * info.mem_unit || true )
             m_info[MEM_FREERAM] = i18n("%1 (+ %2 Caches)").arg(formattedUnit( info.freeram * mem_unit ))
-                                  .arg( formattedUnit( totalFree - info.freeram * mem_unit ));
+                                  .arg( formattedUnit( totalFree - info.freeram * mem_unit ,0));
         else
             m_info[MEM_FREERAM] = formattedUnit( info.freeram * mem_unit );
 
-        m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit );
-        m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit );
+        m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit ,0);
+        m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit ,0);
 
         m_info[SYSTEM_UPTIME] = convertSeconds( info.uptime );
     }
@@ -286,10 +286,7 @@ void kio_sysinfoProtocol::cpuInfo()
 
 QString kio_sysinfoProtocol::diskInfo()
 {
-    //QString result = "<table><tr><th></th><th>" + i18n( "Device" ) + "</th><th>" + i18n( "Filesystem" ) + "</th><th>" +
-                       // i18n( "Total space" ) + "</th><th>" + i18n( "Available space" ) + "</th></tr>";
     QString result = "<table>";
-
     if ( fillMediaDevices() )
     {
         for ( QValueList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it )
@@ -302,10 +299,10 @@ QString kio_sysinfoProtocol::diskInfo()
             unsigned long long percent = usage / ( di.total / 100 );
 
             result += QString( "<tr><td>%1</td><td width=\"100%\"><table width=\"100%\"><tr><td>"
-                                   "<a href=\"media:/%2\" title=\"%8\">%3</a> [%4] [%7]</td></tr>"
-                                   "<tr><td width=\"100%\" class=\"bar\"><div style=\"width: %5%\">%6&nbsp</div></td></tr></table></td><tr></tr>" ).
+                               "<a href=\"media:/%2\" title=\"%8\">%3</a> [%4] [%7]</td></tr>"
+                               "<tr><td width=\"90%\" class=\"bar\"><div style=\"width: %5%\">%6&nbsp</div></td></tr></table></td><tr></tr>" ).
                           arg( icon( di.iconName, 48 ) ).arg( di.name ).arg( label ).arg( di.fsType ).arg(di.mounted ? percent : 0).
-                          arg( di.mounted ? formattedUnit( usage ) : QString::null ).arg( formattedUnit( di.total,0 ) ).arg( tooltip );
+                          arg( di.mounted ? formattedUnit( usage ) : QString::null ).arg( formattedUnit( di.total,0 ) ).arg( tooltip+" "+di.deviceNode );
         }
     }
     result += "</table>";
