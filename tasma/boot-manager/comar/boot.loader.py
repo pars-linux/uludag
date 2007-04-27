@@ -62,6 +62,13 @@ def linuxDevice(dev):
     disk, part = dev.split(",")
     return "/dev/hd%s%s" % (chr(97 + int(disk)), int(part) + 1)
 
+def getRoot():
+    import os
+    for mount in os.popen("/bin/mount").readlines():
+        mount_items = mount.split()
+        if mount_items[0].startswith("/dev") and mount_items[2] == "/":
+            return mount_items[0]
+
 class grubConfLock:
     def __init__(self, _file, write=False, timeout=-1):
         import os.path
@@ -252,13 +259,15 @@ def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=N
     else:
         fail("No such entry")
 
-def updateKernelEntry(root, version):
+def updateKernelEntry(version, root=None):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail("Timeout")
     
     new_version, new_suffix = parseVersion("kernel-%s" % version)
+    if not root:
+        root = getRoot()
     root_grub = grubDevice(root)
     
     entries = []
