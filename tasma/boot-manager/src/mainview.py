@@ -53,6 +53,7 @@ class widgetEntryList(QWidget):
         self.connect(self.listEntries, SIGNAL("selectionChanged(QListBoxItem*)"), self.slotClickEntry)
         self.connect(self.pushAdd, SIGNAL("clicked()"), self.slotAddEntry)
         self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEditEntry)
+        self.connect(self.pushDelete, SIGNAL("clicked()"), self.slotDeleteEntry)
     
     def slotClickEntry(self, item=None):
         if item:
@@ -70,6 +71,16 @@ class widgetEntryList(QWidget):
         if item:
             entry = self.parent.entries[item.entry_index]
             self.parent.widgetEditEntry.editEntry(entry)
+    
+    def slotDeleteEntry(self):
+        item = self.listEntries.selectedItem()
+        if item:
+            confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Remove Entry"))
+            if confirm == KMessageBox.Yes:
+                args = {
+                    "index": item.entry_index,
+                }
+                self.link.call("Boot.Loader.removeEntry", args)
 
 
 class widgetEditEntry(QWidget):
