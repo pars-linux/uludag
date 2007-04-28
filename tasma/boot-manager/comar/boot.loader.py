@@ -220,15 +220,20 @@ def addEntry(title, os_type, root, kernel=None, initrd=None, options=None):
     except IOError:
         fail("Timeout")
     entry = grubEntry(title)
+    if os_type not in SYSTEMS:
+        os_type = "other"
     if os_type == "windows":
         entry.setCommand("rootnoverify", grubDevice(root))
         entry.setCommand("makeactive", "")
         entry.setCommand("chainloader", "+1")
     else:
         entry.setCommand("root", grubDevice(root))
-    if kernel:
-        entry.setCommand("kernel", "%s %s" % (kernel, options))
-    if initrd:
+    if kernel and "kernel" in SYSTEMS[os_type]:
+        if options and "options" in SYSTEMS[os_type]:
+            entry.setCommand("kernel", "%s %s" % (kernel, options))
+        else:
+            entry.setCommand("kernel", kernel)
+    if initrd and "initrd" in SYSTEMS[os_type]:
         entry.setCommand("initrd", initrd)
     grub.config.addEntry(entry)
     index = grub.config.indexOf(entry)
@@ -244,15 +249,20 @@ def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=N
     if index < len(grub.config.entries):
         entry = grub.config.getEntry(index)
         entry.title = title
+        if os_type not in SYSTEMS:
+            os_type = "other"
         if os_type == "windows":
             entry.setCommand("rootnoverify", grubDevice(root))
             entry.setCommand("makeactive", "")
             entry.setCommand("chainloader", "+1")
         else:
             entry.setCommand("root", grubDevice(root))
-        if kernel:
-            entry.setCommand("kernel", "%s %s" % (kernel, options))
-        if initrd:
+        if kernel and "kernel" in SYSTEMS[os_type]:
+            if options and "options" in SYSTEMS[os_type]:
+                entry.setCommand("kernel", "%s %s" % (kernel, options))
+            else:
+                entry.setCommand("kernel", kernel)
+        if initrd and "initrd" in SYSTEMS[os_type]:
             entry.setCommand("initrd", initrd)
         grub.release()
         notify("Boot.Loader.changed", "entry")
