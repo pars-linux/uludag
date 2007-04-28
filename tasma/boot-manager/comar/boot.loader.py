@@ -207,12 +207,15 @@ def removeEntry(index):
     except IOError:
         fail("Timeout")
     index = int(index)
-    grub.config.removeEntry(grub.config.entries[index])
-    default_index = int(grub.config.options.get("default", 0))
-    if default_index == index and default_index > 0:
-        grub.config.setOption("default", default_index - 1)
-    grub.release()
-    notify("Boot.Loader.changed", "entry")
+    if 0 <= index < len(grub.config.entries):
+        grub.config.removeEntry(grub.config.entries[index])
+        default_index = int(grub.config.options.get("default", 0))
+        if default_index == index and default_index > 0:
+            grub.config.setOption("default", default_index - 1)
+        grub.release()
+        notify("Boot.Loader.changed", "entry")
+    else:
+        fail("No such entry")
 
 def addEntry(title, os_type, root, kernel=None, initrd=None, options=None):
     try:
@@ -246,7 +249,7 @@ def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=N
     except IOError:
         fail("Timeout")
     index = int(index)
-    if index < len(grub.config.entries):
+    if 0 <= index < len(grub.config.entries):
         entry = grub.config.getEntry(index)
         entry.title = title
         if os_type not in SYSTEMS:
