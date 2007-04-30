@@ -1,0 +1,80 @@
+# Bootloader Manager.
+# Copyright (C) 2007, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: boot-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-04-30 09:49+0300\n"
+"PO-Revision-Date: 2007-04-30 09:26+0300\n"
+"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
+"Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/boot-manager.py:30 src/boot-manager.py:81
+msgid "Bootloader Manager"
+msgstr "Önyükleyici Yöneticisi"
+
+#: src/boot-manager.py:76
+msgid "Bootloader Manager is already started!"
+msgstr "Önyükleyici Yöneticisi zaten çalışıyor!"
+
+#: src/mainview.py:38
+msgid "Add new entry"
+msgstr "Yeni ekle"
+
+#: src/mainview.py:42
+msgid "Edit entry"
+msgstr ""
+
+#: src/mainview.py:47
+msgid "Delete entry"
+msgstr ""
+
+#: src/mainview.py:81
+msgid "Are you sure you want to remove this entry?"
+msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
+
+#: src/mainview.py:81
+msgid "Delete Entry"
+msgstr "Kaydı Sil"
+
+#: src/mainview.py:101
+msgid "Title"
+msgstr "Başlık"
+
+#: src/mainview.py:108
+msgid "System"
+msgstr "Sistem"
+
+#: src/mainview.py:118
+msgid "Root"
+msgstr "Kök Sürücü"
+
+#: src/mainview.py:127
+msgid "Kernel"
+msgstr "Çekirdek"
+
+#: src/mainview.py:136
+msgid "Kernel Options"
+msgstr "Çekirdek Seçenekleri"
+
+#: src/mainview.py:145
+msgid "Init Ramdrive"
+msgstr "Init Ramdrive"
+
+#: src/mainview.py:277
+msgid "Bootloader configuration changed by another application."
+msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
+
+#: src/mainview.py:308
+msgid "Failed"
+msgstr "Başarısız"
+
+#: src/utility.py:54
+msgid "Disk %1, Partition %2"
+msgstr "Disk %1, Bölüm %2"
