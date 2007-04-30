@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_ENTRIES, BOOT_OPTIONS, BOOT_SYSTEMS, BOOT_OPTION_VALUES = xrange(1, 5)
+BOOT_ACCESS, BOOT_ENTRIES, BOOT_OPTIONS, BOOT_SYSTEMS, BOOT_OPTION_VALUES = xrange(1, 6)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -30,18 +30,23 @@ class widgetEntryList(QWidget):
         layout = QGridLayout(self, 1, 1, 11, 6)
         
         self.listEntries = QListBox(self)
+        self.listEntries.setEnabled(False)
         layout.addWidget(self.listEntries, 0, 0)
         
         self.iconBox = IconBox(self)
         
         self.pushAdd = IconButton(self.iconBox, i18n("Add"), "edit_add")
+        QToolTip.add(self.pushAdd, i18n("Add new entry"))
+        self.pushAdd.setEnabled(False)
         self.iconBox.addWidget(self.pushAdd)
         
         self.pushEdit = IconButton(self.iconBox, i18n("Edit"), "edit")
+        QToolTip.add(self.pushEdit, i18n("Edit entry"))
         self.pushEdit.setEnabled(False)
         self.iconBox.addWidget(self.pushEdit)
         
         self.pushDelete = IconButton(self.iconBox, i18n("Delete"), "editdelete")
+        QToolTip.add(self.pushDelete, i18n("Delete entry"))
         self.pushDelete.setEnabled(False)
         self.iconBox.addWidget(self.pushDelete)
         
@@ -55,8 +60,13 @@ class widgetEntryList(QWidget):
         self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEditEntry)
         self.connect(self.pushDelete, SIGNAL("clicked()"), self.slotDeleteEntry)
     
+    def init(self):
+        if self.parent.can_access:
+            self.listEntries.setEnabled(True)
+            self.pushAdd.setEnabled(True)
+    
     def slotClickEntry(self, item=None):
-        if item:
+        if item and self.parent.can_access:
             self.pushEdit.setEnabled(True)
             self.pushDelete.setEnabled(True)
         else:
@@ -67,6 +77,8 @@ class widgetEntryList(QWidget):
         self.parent.widgetEditEntry.newEntry()
     
     def slotEditEntry(self):
+        if not self.parent.can_access:
+            return
         item = self.listEntries.selectedItem()
         if item:
             entry = self.parent.entries[item.entry_index]
@@ -75,7 +87,7 @@ class widgetEntryList(QWidget):
     def slotDeleteEntry(self):
         item = self.listEntries.selectedItem()
         if item:
-            confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Remove Entry"))
+            confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
             if confirm == KMessageBox.Yes:
                 args = {
                     "index": item.entry_index,
@@ -245,6 +257,7 @@ class widgetMain(QWidget):
         self.entries = []
         self.options = {}
         self.systems = {}
+        self.can_access = False
         
         layout = QGridLayout(self, 1, 1, 0, 0)
         self.stack = QWidgetStack(self)
@@ -257,6 +270,7 @@ class widgetMain(QWidget):
         self.stack.addWidget(self.widgetEditEntry)
         
         self.link.ask_notify("Boot.Loader.changed")
+        self.link.can_access("Boot.Loader.updateEntry", id=BOOT_ACCESS)
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
         self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
         self.link.call("Boot.Loader.listSystems", id=BOOT_SYSTEMS)
@@ -271,10 +285,13 @@ class widgetMain(QWidget):
                 self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
                 self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
                 if self.widgetEditEntry.entry:
-                    KMessageBox.information(self, i18n("Entry list changed by another application."), i18n("Warning"))
+                    KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
                     self.widgetEditEntry.slotExit()
         elif reply.command == "result":
-            if reply.id == BOOT_ENTRIES:
+            if reply.id == BOOT_ACCESS:
+                self.can_access = True
+                self.widgetEntries.init()
+            elif reply.id == BOOT_ENTRIES:
                 self.widgetEntries.listEntries.clear()
                 self.widgetEntries.slotClickEntry()
                 self.entries = []

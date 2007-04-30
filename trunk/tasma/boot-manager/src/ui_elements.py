@@ -62,13 +62,13 @@ class Entry(QListBoxItem):
     def setOs(self, os_type):
         self.os_type = os_type
         if self.pardus:
-            self.icon = QPixmap("pardus.png")
+            self.icon = QPixmap(locate("data", "boot-manager/pardus.png"))
         elif self.os_type == "linux":
-            self.icon = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/penguin.png")
+            self.icon = QPixmap(locate("data", "boot-manager/linux.png"))
         elif self.os_type == "windows":
-            self.icon = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/wabi.png")
+            self.icon = QPixmap(locate("data", "boot-manager/windows.png"))
         else:
-            self.icon = QPixmap("/usr/share/icons/Tulliana-2.0/32x32/apps/akregator_empty.png")
+            self.icon = QPixmap(locate("data", "boot-manager/other.png"))
     
     def paint(self, painter):
         color = KGlobalSettings.baseColor()
