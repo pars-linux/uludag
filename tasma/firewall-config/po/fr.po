@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-22 16:41+0200\n"
+"POT-Creation-Date: 2007-04-30 12:15+0300\n"
 "PO-Revision-Date: 2007-03-10 14:54+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -56,19 +56,19 @@ msgstr "Rejeter toutes les connections sortantes via les ports %s"
 msgid "Invalid port range."
 msgstr "Interval de ports invalide."
 
-#: src/firewall-config.py:150 src/firewall.py:229
+#: src/firewall-config.py:150 src/firewall.py:188
 msgid "Firewall Configuration"
 msgstr "Configuration du Pare-feu"
 
-#: src/firewall-config.py:231
+#: src/firewall-config.py:237
 msgid "&Stop Firewall"
 msgstr "&Arrêter le Pare-Feu"
 
-#: src/firewall-config.py:232
+#: src/firewall-config.py:238
 msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Le Pare-feu est en cours d'exécution</font></b>"
 
-#: src/firewall-config.py:234
+#: src/firewall-config.py:240
 msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
@@ -76,87 +76,69 @@ msgstr ""
 "Cliquer ici pour arrêter le pare-feu et autoriser toutes connections "
 "entrantes et sortantes."
 
-#: src/firewall-config.py:240
+#: src/firewall-config.py:245
 msgid "&Start Firewall"
 msgstr "&Démarrer le Pare-feu"
 
-#: src/firewall-config.py:241
+#: src/firewall-config.py:246
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Le Pare-feu est à l'arrêt</font></b>"
 
-#: src/firewall-config.py:243
+#: src/firewall-config.py:248
 msgid ""
 "Click here to start the firewall and allow connections only to specified "
 "services."
 msgstr ""
-"Cliquer ici pour démarrer le pare-feu et n'autoriser que les connections "
-"aux services spécifiés."
+"Cliquer ici pour démarrer le pare-feu et n'autoriser que les connections aux "
+"services spécifiés."
 
-#: src/firewall-config.py:420
+#: src/firewall-config.py:431
 msgid "Pardus Firewall Interface is already running!"
 msgstr "L'interface du Pare-feu Pardus est déjà en cours d'exécution !"
 
-#: src/rules.py:18
+#: src/rules.py:16
 msgid "Mail services"
 msgstr "Services de courrier"
 
-#: src/rules.py:22
+#: src/rules.py:20
 msgid "Web services"
 msgstr "Services web"
 
-#: src/rules.py:26
+#: src/rules.py:24
 msgid "Remote login service"
 msgstr "Service de connection système à distance"
 
-#: src/rules.py:33
+#: src/rules.py:32
 msgid "Windows file sharing service"
 msgstr "Service de partage de fichier Windows"
 
-#: src/rules.py:37
+#: src/rules.py:36
 msgid "Internet relay chat service"
 msgstr "Service de discution en temps réel sur internet (IRC)"
 
-#: src/rules.py:41
+#: src/rules.py:40
 msgid "File transfer service"
 msgstr "Service de transfert de fichier"
 
-#: src/firewall.py:232
-msgid "Alt+H"
-msgstr "Alt+H"
-
-#: src/firewall.py:234
-msgid "Alt+A"
-msgstr "Alt+A"
-
-#: src/firewall.py:235
-msgid "&Ok"
-msgstr "&Ok"
-
-#: src/firewall.py:236
-msgid "Alt+O"
-msgstr "Alt+O"
-
-#: src/firewall.py:238
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#: src/firewall.py:240
-msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr "Cliquer ici pour arrêter le pare-feu et autoriser toutes les connections entrantes."
-
-#: src/firewall.py:241
-msgid "&Stop"
-msgstr "&Arrêter"
-
-#: src/firewall.py:242
-msgid "Alt+S"
-msgstr "Alt+S"
-
-#: src/firewall.py:243
+#: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Le Pare-feu est en cours d'exécution</font></b>"
 
-#: src/firewall.py:245
+#: src/firewall.py:192
+msgid "&Stop"
+msgstr "&Arrêter"
+
+#: src/firewall.py:193
+msgid "Alt+S"
+msgstr "Alt+S"
+
+#: src/firewall.py:194
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr ""
+"Cliquer ici pour arrêter le pare-feu et autoriser toutes les connections "
+"entrantes."
+
+#: src/firewall.py:196
 msgid ""
 "All incoming connections are <b>rejected</b> by default. If you want to "
 "allow other computers to access services on this computer, check the service "
@@ -166,22 +148,42 @@ msgstr ""
 "voulez autoriser d'autres ordinateurs à accéder aux services de ce poste, "
 "veuillez activer le service ci-dessous :"
 
-#: src/firewall.py:246
+#: src/firewall.py:197
 msgid "Incoming Connections"
 msgstr "Connections entrantes"
 
-#: src/firewall.py:247
+#: src/firewall.py:198
 msgid ""
 "In this tab, you can create your own firewall rules. Use '+' button to "
 "create rules, and uncheck rules from list to remove them."
 msgstr ""
-"Dans cet onglet, vous pouvez créer vos propres règles de pare-feu. "
-"Utiliser le bonton '+' pour créer des règles. Pour supprimer une règle "
-"il suffit de la désactiver dans la liste."
+"Dans cet onglet, vous pouvez créer vos propres règles de pare-feu. Utiliser "
+"le bonton '+' pour créer des règles. Pour supprimer une règle il suffit de "
+"la désactiver dans la liste."
 
-#: src/firewall.py:250
+#: src/firewall.py:201
 msgid "Advanced"
 msgstr "Avancé"
+
+#: src/firewall.py:204
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: src/firewall.py:206
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: src/firewall.py:207
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/firewall.py:208
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: src/firewall.py:210
+msgid "Alt+C"
+msgstr "Alt+C"
 
 #: src/dialog.py:105
 msgid "New Rule"
@@ -226,4 +228,3 @@ msgstr "Accepter"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rejeter"
-
