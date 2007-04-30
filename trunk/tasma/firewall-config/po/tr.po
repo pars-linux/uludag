@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-22 16:41+0200\n"
+"POT-Creation-Date: 2007-04-30 12:15+0300\n"
 "PO-Revision-Date: 2006-04-27 13:04+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -55,19 +55,19 @@ msgstr "%s portlarına yapılan bağlantılara izin verme"
 msgid "Invalid port range."
 msgstr "Geçersiz port aralığı."
 
-#: src/firewall-config.py:150 src/firewall.py:229
+#: src/firewall-config.py:150 src/firewall.py:188
 msgid "Firewall Configuration"
 msgstr "Güvenlik Duvarı Ayarları"
 
-#: src/firewall-config.py:231
+#: src/firewall-config.py:237
 msgid "&Stop Firewall"
 msgstr "Güvenlik &Duvarını Durdur"
 
-#: src/firewall-config.py:232
+#: src/firewall-config.py:238
 msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Güvenlik Duvarı Çalışıyor</font></b>"
 
-#: src/firewall-config.py:234
+#: src/firewall-config.py:240
 msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
@@ -75,15 +75,15 @@ msgstr ""
 "Güvenlik duvarını durdurmak ve gelen/giden tüm bağlantılara izin vermek için "
 "tıklayın."
 
-#: src/firewall-config.py:240
+#: src/firewall-config.py:245
 msgid "&Start Firewall"
 msgstr "Güvenlik &Duvarını Başlat"
 
-#: src/firewall-config.py:241
+#: src/firewall-config.py:246
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Güvenlik Duvarı Çalışmıyor</font></b>"
 
-#: src/firewall-config.py:243
+#: src/firewall-config.py:248
 msgid ""
 "Click here to start the firewall and allow connections only to specified "
 "services."
@@ -91,73 +91,53 @@ msgstr ""
 "Güvenlik duvarını başlatmak ve belirlenen servislere erişime izin vermek "
 "için tıklayın."
 
-#: src/firewall-config.py:420
+#: src/firewall-config.py:431
 msgid "Pardus Firewall Interface is already running!"
 msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor!"
 
-#: src/rules.py:18
+#: src/rules.py:16
 msgid "Mail services"
 msgstr "E-posta servisleri"
 
-#: src/rules.py:22
+#: src/rules.py:20
 msgid "Web services"
 msgstr "Web servisleri"
 
-#: src/rules.py:26
+#: src/rules.py:24
 msgid "Remote login service"
 msgstr "Uzaktan erişim servisi"
 
-#: src/rules.py:33
+#: src/rules.py:32
 msgid "Windows file sharing service"
 msgstr "Windows dosya paylaşım servisi"
 
-#: src/rules.py:37
+#: src/rules.py:36
 msgid "Internet relay chat service"
 msgstr "Sohbet servisi (IRC)"
 
-#: src/rules.py:41
+#: src/rules.py:40
 msgid "File transfer service"
 msgstr "Dosya transfer servisi"
 
-#: src/firewall.py:232
-msgid "Alt+H"
-msgstr "Alt+K"
+#: src/firewall.py:191
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışıyor</font></b>"
 
-#: src/firewall.py:234
-msgid "Alt+A"
-msgstr "Alt+E"
+#: src/firewall.py:192
+msgid "&Stop"
+msgstr "&Durdur"
 
-#: src/firewall.py:235
-msgid "&Ok"
-msgstr "&Tamam"
+#: src/firewall.py:193
+msgid "Alt+S"
+msgstr "Alt+D"
 
-#: src/firewall.py:236
-msgid "Alt+O"
-msgstr "Alt+T"
-
-#: src/firewall.py:238
-msgid "Alt+C"
-msgstr "Alt+İ"
-
-#: src/firewall.py:240
+#: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr ""
 "Güvenlik duvarını durdurmak ve gelen bağlantılara izin vermek için buraya "
 "tıklayın"
 
-#: src/firewall.py:241
-msgid "&Stop"
-msgstr "&Durdur"
-
-#: src/firewall.py:242
-msgid "Alt+S"
-msgstr "Alt+D"
-
-#: src/firewall.py:243
-msgid "<b><font size=\"+1\">Firewall is running</font></b>"
-msgstr "<b><font size=\"+1\">Güvenlik Duvarı Çalışıyor</font></b>"
-
-#: src/firewall.py:245
+#: src/firewall.py:196
 msgid ""
 "All incoming connections are <b>rejected</b> by default. If you want to "
 "allow other computers to access services on this computer, check the service "
@@ -167,11 +147,11 @@ msgstr ""
 "bilgisayarların, bu bilgisayardaki servislere erişmesine izin vermek "
 "istiyorsanız, aşağıdan servisi işaretleyin:"
 
-#: src/firewall.py:246
+#: src/firewall.py:197
 msgid "Incoming Connections"
 msgstr "Gelen Bağlantılar"
 
-#: src/firewall.py:247
+#: src/firewall.py:198
 msgid ""
 "In this tab, you can create your own firewall rules. Use '+' button to "
 "create rules, and uncheck rules from list to remove them."
@@ -179,9 +159,29 @@ msgstr ""
 "Bu sekmede, kendi kuralınızı oluşturabilirsiniz. Kural oluşturmak için '+' "
 "düğmesini kullanın, kural silmek için kutucuklardaki işareti kaldırın."
 
-#: src/firewall.py:250
+#: src/firewall.py:201
 msgid "Advanced"
 msgstr "Gelişmiş"
+
+#: src/firewall.py:204
+msgid "Alt+H"
+msgstr "Alt+K"
+
+#: src/firewall.py:206
+msgid "Alt+A"
+msgstr "Alt+E"
+
+#: src/firewall.py:207
+msgid "&Ok"
+msgstr "&Tamam"
+
+#: src/firewall.py:208
+msgid "Alt+O"
+msgstr "Alt+T"
+
+#: src/firewall.py:210
+msgid "Alt+C"
+msgstr "Alt+İ"
 
 #: src/dialog.py:105
 msgid "New Rule"

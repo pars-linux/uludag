@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-22 16:41+0200\n"
+"POT-Creation-Date: 2007-04-30 12:15+0300\n"
 "PO-Revision-Date: 2007-04-09 00:20-0400\n"
 "Last-Translator: Christian Faure <christian.faurebouvard@laposte.net>\n"
 "Language-Team:  <es@li.org>\n"
@@ -57,120 +57,140 @@ msgstr "Rechazar todas conexiones salientes por puerto %s"
 msgid "Invalid port range."
 msgstr "Rango de Puertos inválido"
 
-#: src/firewall-config.py:150
-#: src/firewall.py:229
+#: src/firewall-config.py:150 src/firewall.py:188
 msgid "Firewall Configuration"
 msgstr "Configuración de Cortafuegos"
 
-#: src/firewall-config.py:231
+#: src/firewall-config.py:237
 msgid "&Stop Firewall"
 msgstr "&Parar Cortafuegos"
 
-#: src/firewall-config.py:232
+#: src/firewall-config.py:238
 msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Cortafuegos está activo</font></b>"
 
-#: src/firewall-config.py:234
-msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
-msgstr "Pinche aquí para desactivar el cortafuegos y permitir toda clase de conexiones entrantes y salientes."
-
 #: src/firewall-config.py:240
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+"Pinche aquí para desactivar el cortafuegos y permitir toda clase de "
+"conexiones entrantes y salientes."
+
+#: src/firewall-config.py:245
 msgid "&Start Firewall"
 msgstr "&Iniciar Cortafuegos"
 
-#: src/firewall-config.py:241
+#: src/firewall-config.py:246
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Cortafuegos está desactivado</font></b>"
 
-#: src/firewall-config.py:243
-msgid "Click here to start the firewall and allow connections only to specified services."
-msgstr "Pinche aquí para activar el cortafuegos y permitir conexiones solamente a servicios especificados."
+#: src/firewall-config.py:248
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+"Pinche aquí para activar el cortafuegos y permitir conexiones solamente a "
+"servicios especificados."
 
-#: src/firewall-config.py:420
+#: src/firewall-config.py:431
 msgid "Pardus Firewall Interface is already running!"
-msgstr "Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
+msgstr ""
+"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
-#: src/rules.py:18
+#: src/rules.py:16
 msgid "Mail services"
 msgstr "Servicios de correo"
 
-#: src/rules.py:22
+#: src/rules.py:20
 # (http)
 # (https)
 msgid "Web services"
 msgstr "Servicios de web"
 
-#: src/rules.py:26
+#: src/rules.py:24
 # ... de acseso remoto (rsh)...
 msgid "Remote login service"
 msgstr "Servicios de login remoto"
 
-#: src/rules.py:33
+#: src/rules.py:32
 # ...con windows (samba)
 msgid "Windows file sharing service"
 msgstr "Servicios de archivos compartidos de Windows"
 
-#: src/rules.py:37
+#: src/rules.py:36
 # (IRC)
 msgid "Internet relay chat service"
 msgstr "Servicios de Internet relay chat"
 
-#: src/rules.py:41
+#: src/rules.py:40
 msgid "File transfer service"
 msgstr "Servicios de transferencia de archivos FTP"
 
-#: src/firewall.py:232
-msgid "Alt+H"
-msgstr "Alt+H"
-
-#: src/firewall.py:234
-msgid "Alt+A"
-msgstr "Alt+A"
-
-#: src/firewall.py:235
-msgid "&Ok"
-msgstr "&Ok"
-
-#: src/firewall.py:236
-msgid "Alt+O"
-msgstr "Alt+O"
-
-#: src/firewall.py:238
-msgid "Alt+C"
-msgstr "Alt+C"
-
-# shouldn't it be as above: "allow all incoming AND OUTGOING connections." ??
-#: src/firewall.py:240
-msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr "Pinche aquí para desactivar el cortafuegos y permitir todas conexiones entrantes."
-
-#: src/firewall.py:241
-msgid "&Stop"
-msgstr "&Parar"
-
-#: src/firewall.py:242
-msgid "Alt+S"
-msgstr "Alt+S"
-
-#: src/firewall.py:243
+#: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr "<b><font size=\"+1\">Cortafuegos está activado</font></b>"
 
-#: src/firewall.py:245
-msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
-msgstr "Todas conexiones entrantes <b>se rechazan</b> por defecto. Si quiere permitir que otras computadoras puedan acceder a servicios corriendo localmente aquí, marque el servicio abajo:"
+#: src/firewall.py:192
+msgid "&Stop"
+msgstr "&Parar"
 
-#: src/firewall.py:246
+#: src/firewall.py:193
+msgid "Alt+S"
+msgstr "Alt+S"
+
+# shouldn't it be as above: "allow all incoming AND OUTGOING connections." ??
+#: src/firewall.py:194
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr ""
+"Pinche aquí para desactivar el cortafuegos y permitir todas conexiones "
+"entrantes."
+
+#: src/firewall.py:196
+msgid ""
+"All incoming connections are <b>rejected</b> by default. If you want to "
+"allow other computers to access services on this computer, check the service "
+"below:"
+msgstr ""
+"Todas conexiones entrantes <b>se rechazan</b> por defecto. Si quiere "
+"permitir que otras computadoras puedan acceder a servicios corriendo "
+"localmente aquí, marque el servicio abajo:"
+
+#: src/firewall.py:197
 msgid "Incoming Connections"
 msgstr "Conexiones entrantes"
 
-#: src/firewall.py:247
-msgid "In this tab, you can create your own firewall rules. Use '+' button to create rules, and uncheck rules from list to remove them."
-msgstr "En esta pestaña puede crear sus propias reglas de cortafuegos. Use el botón '+' para crear reglas, y desmarque reglas de la lista para removerlas."
+#: src/firewall.py:198
+msgid ""
+"In this tab, you can create your own firewall rules. Use '+' button to "
+"create rules, and uncheck rules from list to remove them."
+msgstr ""
+"En esta pestaña puede crear sus propias reglas de cortafuegos. Use el botón "
+"'+' para crear reglas, y desmarque reglas de la lista para removerlas."
 
-#: src/firewall.py:250
+#: src/firewall.py:201
 msgid "Advanced"
 msgstr "Avanzado"
+
+#: src/firewall.py:204
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: src/firewall.py:206
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: src/firewall.py:207
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/firewall.py:208
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: src/firewall.py:210
+msgid "Alt+C"
+msgstr "Alt+C"
 
 #: src/dialog.py:105
 msgid "New Rule"
@@ -215,4 +235,3 @@ msgstr "Aceptar"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rechazar"
-
