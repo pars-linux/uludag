@@ -83,6 +83,8 @@ class Entry(QListBoxItem):
         
         if not self.parent.isEnabled():
             painter.setPen(KGlobalSettings.inactiveTextColor())
+        elif self.checked:
+            painter.setPen(QColor(255, 0, 0))
         elif self.isSelected():
             painter.setPen(KGlobalSettings.activeTextColor())
         else:
