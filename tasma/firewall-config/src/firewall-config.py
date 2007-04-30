@@ -329,6 +329,9 @@ class MainApplication(programbase):
                 }
             elif reply.id == 10:
                 self.wheel = True
+                mainwidget.frameIncoming.setEnabled(True)
+                mainwidget.frameAdvanced.setEnabled(True)
+                mainwidget.pushNewRule.setEnabled(True)
         elif reply.command == 'fail':
             if reply.id == 5:
                 mainwidget.pushStatus.setEnabled(True)
