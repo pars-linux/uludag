@@ -249,6 +249,9 @@
                         <property name="name">
                             <cstring>frameIncoming</cstring>
                         </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
                         <property name="sizePolicy">
                             <sizepolicy>
                                 <hsizetype>5</hsizetype>
@@ -363,6 +366,9 @@
                         <property name="name">
                             <cstring>frameAdvanced</cstring>
                         </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
                         <property name="sizePolicy">
                             <sizepolicy>
                                 <hsizetype>5</hsizetype>
@@ -391,6 +397,9 @@
                     <widget class="KPushButton" row="1" column="2">
                         <property name="name">
                             <cstring>pushNewRule</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
                         </property>
                         <property name="minimumSize">
                             <size>
