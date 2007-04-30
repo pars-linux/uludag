@@ -314,9 +314,9 @@ class widgetMain(QWidget):
                 key, value = reply.data.split(" ", 1)
                 if key == "default":
                     self.default = int(value)
-                #item = self.listEntries.item(index)
-                #if item:
-                #    item.checked = True
-                #    self.listEntries.updateItem(index)
+                    item = self.widgetEntries.listEntries.item(self.default)
+                    if item:
+                        item.checked = True
+                        self.widgetEntries.listEntries.updateItem(self.default)
         elif reply.command == "fail":
             KMessageBox.error(self, "%s failed: %s" % (reply.id, reply.data), i18n("Failed"))
