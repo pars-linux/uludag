@@ -435,6 +435,8 @@ class Builder:
                 valid_dirs.append("/usr/qt/3/etc/settings/.qt_plugins_3.3rc.lock")
 
                 ret = catbox.run(self.actionLocals[func], valid_dirs, logger=self.log_sandbox_violation)
+                if ret.code == 1:
+                    raise RuntimeError
                 if ret.violations != []:
                     ctx.ui.error(_("Sandbox violations!"))
         else:
