@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 09:49+0300\n"
+"POT-Creation-Date: 2007-05-01 17:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,58 +24,58 @@ msgstr ""
 msgid "Bootloader Manager is already started!"
 msgstr ""
 
-#: src/mainview.py:38
-msgid "Add new entry"
+#: src/mainview.py:35
+msgid "New Entry"
 msgstr ""
 
-#: src/mainview.py:42
-msgid "Edit entry"
-msgstr ""
-
-#: src/mainview.py:47
-msgid "Delete entry"
-msgstr ""
-
-#: src/mainview.py:81
-msgid "Are you sure you want to remove this entry?"
-msgstr ""
-
-#: src/mainview.py:81
-msgid "Delete Entry"
-msgstr ""
-
-#: src/mainview.py:101
+#: src/mainview.py:75
 msgid "Title"
 msgstr ""
 
-#: src/mainview.py:108
+#: src/mainview.py:82
 msgid "System"
 msgstr ""
 
-#: src/mainview.py:118
+#: src/mainview.py:92
 msgid "Root"
 msgstr ""
 
-#: src/mainview.py:127
+#: src/mainview.py:101
 msgid "Kernel"
 msgstr ""
 
-#: src/mainview.py:136
+#: src/mainview.py:110
 msgid "Kernel Options"
 msgstr ""
 
-#: src/mainview.py:145
+#: src/mainview.py:119
 msgid "Init Ramdrive"
 msgstr ""
 
-#: src/mainview.py:277
+#: src/mainview.py:162
+msgid "Are you sure you want to remove this entry?"
+msgstr ""
+
+#: src/mainview.py:162
+msgid "Delete Entry"
+msgstr ""
+
+#: src/mainview.py:260
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 
-#: src/mainview.py:308
+#: src/mainview.py:293
 msgid "Failed"
 msgstr ""
 
 #: src/utility.py:54
 msgid "Disk %1, Partition %2"
+msgstr ""
+
+#: src/ui_elements.py:83
+msgid "Edit entry"
+msgstr ""
+
+#: src/ui_elements.py:87
+msgid "Delete entry"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 09:49+0300\n"
+"POT-Creation-Date: 2007-05-01 17:40+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -23,58 +23,58 @@ msgstr "Önyükleyici Yöneticisi"
 msgid "Bootloader Manager is already started!"
 msgstr "Önyükleyici Yöneticisi zaten çalışıyor!"
 
-#: src/mainview.py:38
-msgid "Add new entry"
+#: src/mainview.py:35
+msgid "New Entry"
 msgstr "Yeni ekle"
 
-#: src/mainview.py:42
-msgid "Edit entry"
-msgstr ""
-
-#: src/mainview.py:47
-msgid "Delete entry"
-msgstr ""
-
-#: src/mainview.py:81
-msgid "Are you sure you want to remove this entry?"
-msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
-
-#: src/mainview.py:81
-msgid "Delete Entry"
-msgstr "Kaydı Sil"
-
-#: src/mainview.py:101
+#: src/mainview.py:75
 msgid "Title"
 msgstr "Başlık"
 
-#: src/mainview.py:108
+#: src/mainview.py:82
 msgid "System"
 msgstr "Sistem"
 
-#: src/mainview.py:118
+#: src/mainview.py:92
 msgid "Root"
 msgstr "Kök Sürücü"
 
-#: src/mainview.py:127
+#: src/mainview.py:101
 msgid "Kernel"
 msgstr "Çekirdek"
 
-#: src/mainview.py:136
+#: src/mainview.py:110
 msgid "Kernel Options"
 msgstr "Çekirdek Seçenekleri"
 
-#: src/mainview.py:145
+#: src/mainview.py:119
 msgid "Init Ramdrive"
 msgstr "Init Ramdrive"
 
-#: src/mainview.py:277
+#: src/mainview.py:162
+msgid "Are you sure you want to remove this entry?"
+msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
+
+#: src/mainview.py:162
+msgid "Delete Entry"
+msgstr "Kaydı Sil"
+
+#: src/mainview.py:260
 msgid "Bootloader configuration changed by another application."
 msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
 
-#: src/mainview.py:308
+#: src/mainview.py:293
 msgid "Failed"
 msgstr "Başarısız"
 
 #: src/utility.py:54
 msgid "Disk %1, Partition %2"
 msgstr "Disk %1, Bölüm %2"
+
+#: src/ui_elements.py:83
+msgid "Edit entry"
+msgstr "Kaydı düzenle"
+
+#: src/ui_elements.py:87
+msgid "Delete entry"
+msgstr "Kaydı sil"
