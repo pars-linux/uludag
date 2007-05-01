@@ -27,73 +27,38 @@ class widgetEntryList(QWidget):
         
         self.link = comar_link
         
-        layout = QGridLayout(self, 1, 1, 11, 6)
+        layout = QGridLayout(self, 1, 1, 6, 6)
+
+        bar = QToolBar("main", None, self)
         
-        self.listEntries = QListBox(self)
+        but = QToolButton(getIconSet("add"), "", "main", self.slotAddEntry, bar)
+        but.setTextLabel(i18n("New Entry"), False)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+        
+        lab = QToolButton(bar)
+        lab.setEnabled(False)
+        bar.setStretchableWidget(lab)
+        
+        but = QToolButton(getIconSet("help"), "", "main", self.slotHelp, bar)
+        but.setTextLabel(i18n("Help"), False)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+        layout.addWidget(bar, 0, 0)
+        
+        self.listEntries = EntryView(self)
         self.listEntries.setEnabled(False)
-        layout.addWidget(self.listEntries, 0, 0)
+        layout.addWidget(self.listEntries, 1, 0)
         
-        self.iconBox = IconBox(self)
-        
-        self.pushAdd = IconButton(self.iconBox, i18n("Add"), "edit_add")
-        QToolTip.add(self.pushAdd, i18n("Add new entry"))
-        self.pushAdd.setEnabled(False)
-        self.iconBox.addWidget(self.pushAdd)
-        
-        self.pushEdit = IconButton(self.iconBox, i18n("Edit"), "edit")
-        QToolTip.add(self.pushEdit, i18n("Edit entry"))
-        self.pushEdit.setEnabled(False)
-        self.iconBox.addWidget(self.pushEdit)
-        
-        self.pushDelete = IconButton(self.iconBox, i18n("Delete"), "editdelete")
-        QToolTip.add(self.pushDelete, i18n("Delete entry"))
-        self.pushDelete.setEnabled(False)
-        self.iconBox.addWidget(self.pushDelete)
-        
-        spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
-        self.iconBox.addWidget(spacer)
-        layout.addWidget(self.iconBox, 1, 0)
-        
-        self.connect(self.listEntries, SIGNAL("doubleClicked(QListBoxItem*)"), self.slotEditEntry)
-        self.connect(self.listEntries, SIGNAL("selectionChanged(QListBoxItem*)"), self.slotClickEntry)
-        self.connect(self.pushAdd, SIGNAL("clicked()"), self.slotAddEntry)
-        self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEditEntry)
-        self.connect(self.pushDelete, SIGNAL("clicked()"), self.slotDeleteEntry)
-    
     def init(self):
         if self.parent.can_access:
             self.listEntries.setEnabled(True)
-            self.pushAdd.setEnabled(True)
-    
-    def slotClickEntry(self, item=None):
-        if item and self.parent.can_access:
-            self.pushEdit.setEnabled(True)
-            self.pushDelete.setEnabled(True)
-        else:
-            self.pushEdit.setEnabled(False)
-            self.pushDelete.setEnabled(False)
     
     def slotAddEntry(self):
         self.parent.widgetEditEntry.newEntry()
     
-    def slotEditEntry(self):
-        if not self.parent.can_access:
-            return
-        item = self.listEntries.selectedItem()
-        if item:
-            entry = self.parent.entries[item.entry_index]
-            self.parent.widgetEditEntry.editEntry(entry)
-    
-    def slotDeleteEntry(self):
-        item = self.listEntries.selectedItem()
-        if item:
-            confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
-            if confirm == KMessageBox.Yes:
-                args = {
-                    "index": item.entry_index,
-                }
-                self.link.call("Boot.Loader.removeEntry", args)
-
+    def slotHelp(self):
+        pass
 
 class widgetEditEntry(QWidget):
     def __init__(self, parent, comar_link):
@@ -193,6 +158,14 @@ class widgetEditEntry(QWidget):
         self.slotSystem(entry["os_type"])
         self.parent.stack.raiseWidget(1)
     
+    def deleteEntry(self, index):
+        confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
+        if confirm == KMessageBox.Yes:
+            args = {
+                "index": index,
+            }
+            self.link.call("Boot.Loader.removeEntry", args)
+    
     def resetEntry(self):
         self.entry = None
         systems = self.parent.systems.keys()
@@ -279,28 +252,26 @@ class widgetMain(QWidget):
         reply = self.link.read_cmd()
         if reply.command == "notify":
             self.widgetEntries.listEntries.setEnabled(False)
-            self.widgetEntries.slotClickEntry()
             if reply.data == "entry":
                 self.default = -1
                 self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
                 self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
                 if self.widgetEditEntry.entry:
                     KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
-                    self.widgetEditEntry.slotExit()
+                    idgetEditEntry.slotExit()
         elif reply.command == "result":
             if reply.id == BOOT_ACCESS:
                 self.can_access = True
                 self.widgetEntries.init()
             elif reply.id == BOOT_ENTRIES:
                 self.widgetEntries.listEntries.clear()
-                self.widgetEntries.slotClickEntry()
                 self.entries = []
                 for entry in reply.data.split("\n\n"):
                     entry = dict([x.split(" ", 1) for x in entry.split("\n")])
                     index = int(entry["index"])
                     pardus = entry["os_type"] == "linux" and getRoot() == entry["root"]
                     self.entries.append(entry)
-                    item = Entry(self.widgetEntries.listEntries, unicode(entry["title"]), deviceDescription(entry["root"]), entry["os_type"], pardus, index==self.default, index)
+                    item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), deviceDescription(entry["root"]), index==self.default, pardus, entry)
                 self.widgetEntries.listEntries.setEnabled(True)
             elif reply.id == BOOT_SYSTEMS:
                 self.systems = {}
@@ -314,9 +285,9 @@ class widgetMain(QWidget):
                 key, value = reply.data.split(" ", 1)
                 if key == "default":
                     self.default = int(value)
-                    item = self.widgetEntries.listEntries.item(self.default)
-                    if item:
-                        item.checked = True
-                        self.widgetEntries.listEntries.updateItem(self.default)
+                    #item = self.widgetEntries.listEntries.item(self.default)
+                    #if item:
+                    #    item.checked = True
+                    #    self.widgetEntries.listEntries.updateItem(self.default)
         elif reply.command == "fail":
             KMessageBox.error(self, "%s failed: %s" % (reply.id, reply.data), i18n("Failed"))

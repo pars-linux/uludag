@@ -16,92 +16,126 @@ def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
 class IconButton(QPushButton):
-    def __init__(self, parent, label, icon_name):
+    def __init__(self, parent, icon_name):
         QPushButton.__init__(self, parent)
         self.setFlat(True)
-        self.myset = getIconSet(icon_name, KIcon.MainToolbar)
+        self.myset = getIconSet(icon_name, KIcon.Small)
         self.setIconSet(self.myset)
-        size = self.myset.iconSize(QIconSet.Large)
+        size = self.myset.iconSize(QIconSet.Small)
         self.myWidth = size.width() + 4
         self.myHeight = size.height() + 4
         self.resize(self.myWidth, self.myHeight)
 
-class IconBox(QWidget):
+class EntryView(QScrollView):
     def __init__(self, parent):
-        QWidget.__init__(self, parent)
-        self.layout = QHBoxLayout(self, 0, 6, "layout")
+        QScrollView.__init__(self, parent)
+        self.viewport().setPaletteBackgroundColor(KGlobalSettings.baseColor())
+        self.entries = []
     
-    def addWidget(self, item):
-        if isinstance(item, QWidget):
-            self.layout.addWidget(item)
-        else:
-            self.layout.addItem(item)
+    def clear(self):
+        for e in self.entries:
+            e.hide()
+        self.entries = []
+    
+    def add(self, editWidget, index, title, description, default, pardus, os_data):
+        e = Entry(self.viewport(), editWidget, index, title, description, default, pardus, os_data)
+        self.entries.append(e)
+        self.myResize(self.contentsWidth())
+        return e
+    
+    def resizeEvent(self, event):
+        QScrollView.resizeEvent(self, event)
+        self.myResize(self.visibleWidth())
+    
+    def myResize(self, width):
+        mw = 0
+        th = 0
+        for e in self.entries:
+            h = e.sizeHint().height()
+            mw = max(mw, e.sizeHint().width())
+            e.setGeometry(0, th, width, h)
+            th += h
+        self.setMinimumSize(QSize(mw, 0))
+        self.resizeContents(width, th)
 
-class Entry(QListBoxItem):
-    def __init__(self, parent, title, description="", os_type="Unknown", pardus=False, checked=False, index=None):
-        QListBoxItem.__init__(self, parent)
-        self.parent = parent
+class Entry(QWidget):
+    def __init__(self, parent, editWidget, index, title, description, default, pardus, os_data):
+        QWidget.__init__(self, parent)
+        self.editWidget = editWidget
         
+        self.index = index
         self.title = title
         self.description = description
-        self.checked = checked
-        self.os_type = os_type
+        self.default = default
         self.pardus = pardus
-        self.entry_index = index
+        self.os_data = os_data
         
-        self.setCustomHighlighting(True)
-        self.setOs(os_type)
-        
-        self.fontTitle = QFont()
-        self.fontTitle.setBold(True)
-        self.fontTitle.setPointSize(self.fontTitle.pointSize() + 1)
-        self.fontDesc = QFont()
-        
-        self.padding = 6
-    
-    def setOs(self, os_type):
-        self.os_type = os_type
         if self.pardus:
-            self.icon = QPixmap(locate("data", "boot-manager/pardus.png"))
-        elif self.os_type == "linux":
-            self.icon = QPixmap(locate("data", "boot-manager/linux.png"))
-        elif self.os_type == "windows":
-            self.icon = QPixmap(locate("data", "boot-manager/windows.png"))
+            os_type = "pardus"
         else:
-            self.icon = QPixmap(locate("data", "boot-manager/other.png"))
+            os_type = os_data["os_type"]
+        
+        self.icon = QImage(locate("data", "boot-manager/%s.png" % os_type))
+        self.icon.smoothScale(32, 32)
+        self.icon = QPixmap(self.icon)
+        
+        self.pushEdit = IconButton(self, "configure")
+        QToolTip.add(self.pushEdit, i18n("Edit entry"))
+        self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEdit)
+        
+        self.pushDelete = IconButton(self, "cancel")
+        QToolTip.add(self.pushDelete, i18n("Delete entry"))
+        self.connect(self.pushDelete, SIGNAL("clicked()"), self.slotDelete)
+        
+        self.show()
     
-    def paint(self, painter):
-        color = KGlobalSettings.baseColor()
-        if self.isSelected():
-            color = KGlobalSettings.highlightColor()
-        elif self.entry_index % 2:
-            color = KGlobalSettings.alternateBackgroundColor()
-        painter.fillRect(0, 0, 32000, 44, QBrush(color, Qt.SolidPattern))
-        
-        fm = QFontMetrics(self.fontTitle)
-        fm2 = QFontMetrics(self.fontDesc)
-        
-        if not self.parent.isEnabled():
-            painter.setPen(KGlobalSettings.inactiveTextColor())
-        elif self.checked:
-            painter.setPen(QColor(255, 0, 0))
-        elif self.isSelected():
-            painter.setPen(KGlobalSettings.activeTextColor())
-        else:
-            painter.setPen(KGlobalSettings.textColor())
-        painter.setFont(self.fontTitle)
-        painter.drawText(2 * self.padding + self.icon.width(), self.padding + fm.ascent(), self.title)
-        
-        if not self.parent.isEnabled():
-            painter.setPen(KGlobalSettings.inactiveTextColor())
-        elif self.isSelected():
-            painter.setPen(KGlobalSettings.activeTextColor())
-        else:
-            painter.setPen(QColor(100, 100, 100))
-        painter.setFont(self.fontDesc)
-        painter.drawText(2 * self.padding + self.icon.width(), self.padding + fm.height() + 4 + fm2.ascent(), self.description)
-        
-        painter.drawPixmap(self.padding, self.padding, self.icon)
+    def slotEdit(self):
+        self.editWidget.editEntry(self.os_data)
     
-    def height(self, box):
-        return self.icon.height() + 2 * self.padding
+    def slotDelete(self):
+        self.editWidget.deleteEntry(self.index)
+    
+    def paintEvent(self, event):
+        paint = QPainter(self)
+        col = KGlobalSettings.baseColor()
+        paint.fillRect(event.rect(), QBrush(col))
+        self.pushEdit.setPaletteBackgroundColor(col)
+        self.pushDelete.setPaletteBackgroundColor(col)
+        
+        dip = (self.height() - self.icon.height()) / 2
+        paint.drawPixmap(6, dip, self.icon)
+        
+        font = paint.font()
+        font.setPointSize(font.pointSize() + 1)
+        font.setBold(True)
+        fm = QFontMetrics(font)
+        paint.drawText(6 + self.icon.width() + 6, fm.ascent() + 5, unicode(self.title))
+        
+        fark = fm.height()
+        font.setPointSize(font.pointSize() - 2)
+        fm = self.fontMetrics()
+        paint.drawText(6 + self.icon.width() + 6, 5 + fark + 3 + fm.ascent(), unicode(self.description))
+        
+    def resizeEvent(self, event):
+        w = event.size().width()
+        h = event.size().height()
+        self.pushEdit.setGeometry(w - self.pushEdit.myWidth - 6 - 6 - self.pushEdit.myWidth - 3, 6, self.pushEdit.myWidth, self.pushEdit.myHeight)
+        self.pushDelete.setGeometry(w - self.pushDelete.myWidth - 6 - 6, 6, self.pushDelete.myWidth, self.pushDelete.myHeight)
+        return QWidget.resizeEvent(self, event)
+    
+    def sizeHint(self):
+        f = QFont(self.font())
+        f.setPointSize(f.pointSize() + 1)
+        f.setBold(True)
+        fm = QFontMetrics(f)
+        rect = fm.boundingRect(unicode(self.title))
+        w = 6 + self.icon.width() + 6 + rect.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
+        
+        f.setPointSize(f.pointSize() - 2)
+        fm2 = self.fontMetrics()
+        rect2 = fm2.boundingRect(unicode(self.description))
+        w2 = 6 + self.icon.width() + 6 + rect2.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
+        
+        w = max(w, w2)
+        h = max(fm.height() + 3 + fm2.height(), 32) + 10
+        return QSize(w, h)
