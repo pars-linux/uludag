@@ -332,7 +332,7 @@ class AutoPiksemel:
             if cdata and len(tags) > 0:
                 raise TypeError("Class %s defined both CharacterData() and Tag()s" % self.__class__)
             defs = (cdata, attrs, tags)
-            self.__class__.__autoPiksDefs = defs
+            setattr(self.__class__, "__autoPiksDefs", defs)
         return defs
     
     def __autoPiksParse(self, ctx, doc):
