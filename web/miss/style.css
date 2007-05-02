@@ -67,7 +67,7 @@ a {
 #footnote {
     clear: both;
     width:99%;
-    background-image: url(images/tubitak-powered.png);
+    background-image: url('images/tubitak-powered.png');
     background-position: 65px 4px;
     background-repeat: no-repeat;
     padding:5px;
@@ -83,8 +83,8 @@ a {
 }
 
 #page {
-    clear:both;
-    position:relative;
+    clear: both;
+    position: relative;
 }
 
 #fullpage{
