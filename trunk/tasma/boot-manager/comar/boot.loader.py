@@ -187,6 +187,8 @@ def listEntries():
     for index, entry in enumerate(grub.config.entries):
         os_entry = importGrubEntry(entry)
         os_entry.insert(0, "index %s" % index)
+        if int(grub.config.getOption("default", 0)) == index:
+            os_entry.insert(0, "default True")
         entries.append("\n".join(os_entry))
     grub.release()
     return "\n\n".join(entries)
@@ -217,7 +219,7 @@ def removeEntry(index):
     else:
         fail("No such entry")
 
-def addEntry(title, os_type, root, kernel=None, initrd=None, options=None):
+def addEntry(title, os_type, root, kernel=None, initrd=None, options=None, default="no"):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
@@ -240,10 +242,12 @@ def addEntry(title, os_type, root, kernel=None, initrd=None, options=None):
         entry.setCommand("initrd", initrd)
     grub.config.addEntry(entry)
     index = grub.config.indexOf(entry)
+    if default == "yes":
+        grub.config.setOption("default", index)
     grub.release()
     notify("Boot.Loader.changed", "entry")
 
-def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=None):
+def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=None, default="no"):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
@@ -267,6 +271,10 @@ def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=N
                 entry.setCommand("kernel", kernel)
         if initrd and "initrd" in SYSTEMS[os_type]:
             entry.setCommand("initrd", initrd)
+        if default == "yes":
+            grub.config.setOption("default", index)
+        elif grub.config.getOption("default", "0") == str(index):
+            grub.config.setOption("default", "0")
         grub.release()
         notify("Boot.Loader.changed", "entry")
     else:

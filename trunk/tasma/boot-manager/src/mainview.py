@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_ACCESS, BOOT_ENTRIES, BOOT_OPTIONS, BOOT_SYSTEMS, BOOT_OPTION_VALUES = xrange(1, 6)
+BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS = xrange(1, 4)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -124,8 +124,12 @@ class widgetEditEntry(QWidget):
         
         self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
         
+        self.checkDefault = QCheckBox(self)
+        self.checkDefault.setText(unicode("Default boot entry"))
+        layout.addMultiCellWidget(self.checkDefault, 6, 6, 0, 1)
+        
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
-        layout.addMultiCell(spacer, 6, 6, 0, 1)
+        layout.addMultiCell(spacer, 7, 7, 0, 1)
         
         self.buttonOK = QPushButton(self)
         self.buttonOK.setText(i18n("Save"))
@@ -155,12 +159,16 @@ class widgetEditEntry(QWidget):
             if label in entry:
                 widgetEdit.setText(unicode(entry[label]))
         
+        if "default" in entry:
+            self.checkDefault.setChecked(True)
+        
         self.slotSystem(entry["os_type"])
         self.parent.stack.raiseWidget(1)
     
     def deleteEntry(self, index):
         confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
         if confirm == KMessageBox.Yes:
+            self.parent.widgetEntries.listEntries.setEnabled(False)
             args = {
                 "index": index,
             }
@@ -181,6 +189,8 @@ class widgetEditEntry(QWidget):
         
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             widgetEdit.setText("")
+
+        self.checkDefault.setChecked(False)
         
         self.parent.stack.raiseWidget(1)
     
@@ -196,6 +206,10 @@ class widgetEditEntry(QWidget):
                 widgetEdit.hide()
     
     def slotSave(self):
+        self.parent.widgetEntries.listEntries.setEnabled(False)
+        default = "no"
+        if self.checkDefault.isChecked():
+            default = "yes"
         args = {
             "os_type": str(self.listSystem.currentText()),
             "title": unicode(self.editTitle.text()),
@@ -203,6 +217,7 @@ class widgetEditEntry(QWidget):
             "kernel": str(self.editKernel.text()),
             "options": unicode(self.editOptions.text()),
             "initrd": str(self.editInitrd.text()),
+            "default": default,
         }
         if self.entry:
             method = "Boot.Loader.updateEntry"
@@ -245,7 +260,6 @@ class widgetMain(QWidget):
         self.link.ask_notify("Boot.Loader.changed")
         self.link.can_access("Boot.Loader.updateEntry", id=BOOT_ACCESS)
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-        self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
         self.link.call("Boot.Loader.listSystems", id=BOOT_SYSTEMS)
 
     def slotComar(self, sock):
@@ -255,7 +269,6 @@ class widgetMain(QWidget):
             if reply.data == "entry":
                 self.default = -1
                 self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-                self.link.call("Boot.Loader.listOptions", id=BOOT_OPTIONS)
                 if self.widgetEditEntry.entry:
                     KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
                     idgetEditEntry.slotExit()
@@ -271,23 +284,12 @@ class widgetMain(QWidget):
                     index = int(entry["index"])
                     pardus = entry["os_type"] == "linux" and getRoot() == entry["root"]
                     self.entries.append(entry)
-                    item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), deviceDescription(entry["root"]), index==self.default, pardus, entry)
+                    item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), deviceDescription(entry["root"]),  pardus, entry)
                 self.widgetEntries.listEntries.setEnabled(True)
             elif reply.id == BOOT_SYSTEMS:
                 self.systems = {}
                 for system in reply.data.split("\n"):
                     label, fields = system.split(" ", 1)
                     self.systems[label] = fields.split(",")
-            elif reply.id == BOOT_OPTIONS:
-                for option in reply.data.split("\n"):
-                    self.link.call("Boot.Loader.getOption", {"key": option}, id=BOOT_OPTION_VALUES)
-            elif reply.id == BOOT_OPTION_VALUES:
-                key, value = reply.data.split(" ", 1)
-                if key == "default":
-                    self.default = int(value)
-                    #item = self.widgetEntries.listEntries.item(self.default)
-                    #if item:
-                    #    item.checked = True
-                    #    self.widgetEntries.listEntries.updateItem(self.default)
         elif reply.command == "fail":
             KMessageBox.error(self, "%s failed: %s" % (reply.id, reply.data), i18n("Failed"))
