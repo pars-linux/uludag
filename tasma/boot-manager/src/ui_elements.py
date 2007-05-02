@@ -37,8 +37,8 @@ class EntryView(QScrollView):
             e.hide()
         self.entries = []
     
-    def add(self, editWidget, index, title, description, default, pardus, os_data):
-        e = Entry(self.viewport(), editWidget, index, title, description, default, pardus, os_data)
+    def add(self, editWidget, index, title, description, pardus, os_data):
+        e = Entry(self.viewport(), editWidget, index, title, description, pardus, os_data)
         self.entries.append(e)
         self.myResize(self.contentsWidth())
         return e
@@ -59,14 +59,13 @@ class EntryView(QScrollView):
         self.resizeContents(width, th)
 
 class Entry(QWidget):
-    def __init__(self, parent, editWidget, index, title, description, default, pardus, os_data):
+    def __init__(self, parent, editWidget, index, title, description, pardus, os_data):
         QWidget.__init__(self, parent)
         self.editWidget = editWidget
         
         self.index = index
         self.title = title
         self.description = description
-        self.default = default
         self.pardus = pardus
         self.os_data = os_data
         
@@ -108,11 +107,14 @@ class Entry(QWidget):
         font = paint.font()
         font.setPointSize(font.pointSize() + 1)
         font.setBold(True)
+        if "default" in self.os_data:
+            font.setUnderline(True)
         fm = QFontMetrics(font)
         paint.drawText(6 + self.icon.width() + 6, fm.ascent() + 5, unicode(self.title))
         
         fark = fm.height()
         font.setPointSize(font.pointSize() - 2)
+        font.setUnderline(False)
         fm = self.fontMetrics()
         paint.drawText(6 + self.icon.width() + 6, 5 + fark + 3 + fm.ascent(), unicode(self.description))
         
