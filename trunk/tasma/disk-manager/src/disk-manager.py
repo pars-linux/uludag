@@ -269,7 +269,7 @@ class diskForm(mainForm):
                 if not partition['mount_point']=='/' and (partition['state'] or dryRun):
                     # partition changes needs umount before mount
                     if partition['state']==2:
-                        jobs=['umount','mount']
+                        jobs.insert(0,'umount')
                     for action in jobs:
                         mounteds = getMounteds()
                         if (action=='umount' and partition['partition_name'] in mounteds) or (action=='mount' and partition['partition_name'] not in mounteds):
@@ -359,12 +359,14 @@ class diskForm(mainForm):
         self.helpwin.show()
 
     def disableAll(self):
-        self.frame_detail.setEnabled(False)
-        self.check_allPart.setEnabled(False)
-        self.btn_autoFind.setEnabled(False)
-        self.btn_update.setEnabled(False)
-        self.btn_help.setEnabled(False)
-        self.list_main.setEnabled(False)
+        objects = (self.frame_detail,
+                   self.check_allPart,
+                   self.btn_autoFind,
+                   self.btn_update,
+                   self.btn_help,
+                   self.list_main)
+        for object in objects:
+            object.setEnabled(False)
 
 class Module(KCModule):
     def __init__(self, parent, name):
