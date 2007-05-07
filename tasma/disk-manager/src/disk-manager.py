@@ -54,12 +54,6 @@ def loadIcon(name, group=KIcon.Desktop, size=16):
 def loadIconSet(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIconSet(name, group, size)
 
-def asText(anarray):
-    xx=''
-    for i in anarray:
-        xx+=i+','
-    return xx.rstrip(',')
-
 def runQuiet(cmd):
     f = file('/dev/null', 'w')
     return subprocess.call(cmd, stdout=f, stderr=f)
