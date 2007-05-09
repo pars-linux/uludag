@@ -131,10 +131,18 @@ GRUB_CONF = "/boot/grub/grub.conf"
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
 OPTIONS = ["default", "timeout", "splash"]
+
+LABEL_OTHER= {
+    "en": "Other",
+    "tr": "Diğer",
+    "fr": "Autre",
+    "it": "Altro",
+    "de": "Anderes",
+}
 SYSTEMS = {
-    "linux": "root,kernel,initrd,options",
-    "windows": "root",
-    "other": "root,kernel,initrd,options",
+    "linux": "Linux,root,kernel,initrd,options",
+    "windows": "Windows,root",
+    "other": "%s,root,kernel,initrd,options" % _(LABEL_OTHER),
 }
 
 def listSystems():
