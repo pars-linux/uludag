@@ -305,6 +305,8 @@ def updateKernelEntry(version, root=None):
             entries.append(x)
     
     default_index = int(grub.config.options.get("default", 0))
+    if default_index >= len(grub.config.entries):
+        default_index = 0
     default_entry = None
     if len(grub.config.entries):
         default_entry = grub.config.entries[default_index]
