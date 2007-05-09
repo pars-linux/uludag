@@ -76,6 +76,7 @@ class widgetEditEntry(QWidget):
         layout.addWidget(self.labelTitle, 0, 0)
         
         self.editTitle = QLineEdit(self)
+        self.labelTitle.setMinimumSize(120, 10)
         layout.addMultiCellWidget(self.editTitle, 0, 0, 1, 2)
         
         self.labelSystem = QLabel(self)
@@ -125,19 +126,25 @@ class widgetEditEntry(QWidget):
         self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
         
         self.checkDefault = QCheckBox(self)
-        self.checkDefault.setText(unicode("Default boot entry"))
+        self.checkDefault.setText(i18n("Default boot entry"))
         layout.addMultiCellWidget(self.checkDefault, 6, 6, 0, 1)
         
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
         layout.addMultiCell(spacer, 7, 7, 0, 1)
         
+        layout_buttons = QHBoxLayout(layout)
+        spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
+        layout_buttons.addItem(spacer)
+        
         self.buttonOK = QPushButton(self)
         self.buttonOK.setText(i18n("Save"))
-        layout.addWidget(self.buttonOK, 7, 0)
+        layout_buttons.addWidget(self.buttonOK)
         
         self.buttonCancel = QPushButton(self)
         self.buttonCancel.setText(i18n("Cancel"))
-        layout.addWidget(self.buttonCancel, 7, 1)
+        layout_buttons.addWidget(self.buttonCancel)
+        
+        layout.addMultiCell(layout_buttons, 8, 8, 1, 2)
         
         self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
@@ -151,9 +158,12 @@ class widgetEditEntry(QWidget):
     def editEntry(self, entry):
         self.resetEntry()
         self.entry = entry
+        systems = self.parent.systems
         
         self.editTitle.setText(unicode(entry["title"]))
-        self.listSystem.setCurrentText(entry["os_type"])
+        
+        self.listSystem.setCurrentText(unicode(systems[entry["os_type"]][0]))
+        self.slotSystem(unicode(systems[entry["os_type"]][0]))
         
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             if label in entry:
@@ -162,7 +172,6 @@ class widgetEditEntry(QWidget):
         if "default" in entry:
             self.checkDefault.setChecked(True)
         
-        self.slotSystem(entry["os_type"])
         self.parent.stack.raiseWidget(1)
     
     def deleteEntry(self, index):
@@ -176,16 +185,25 @@ class widgetEditEntry(QWidget):
     
     def resetEntry(self):
         self.entry = None
-        systems = self.parent.systems.keys()
-        systems.sort()
+        systems = self.parent.systems
         
         self.editTitle.setText("")
         
         self.listSystem.clear()
         if systems:
-            for system in systems:
-                self.listSystem.insertItem(system)
-            self.slotSystem(systems[0])
+            keys = systems.keys()
+            other = False
+            if "other" in keys:
+                other = True
+                keys.remove("other")
+            keys.sort()
+            for name in keys:
+                label = unicode(systems[name][0])
+                self.listSystem.insertItem(label)
+            if other:
+                label = unicode(systems["other"][0])
+                self.listSystem.insertItem(label)
+            self.slotSystem("Linux")
         
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             widgetEdit.setText("")
@@ -194,9 +212,11 @@ class widgetEditEntry(QWidget):
         
         self.parent.stack.raiseWidget(1)
     
-    def slotSystem(self, name):
+    def slotSystem(self, label):
         systems = self.parent.systems
-        fields = systems[str(name)]
+        for name, (sys_label, fields) in systems.iteritems():
+            if unicode(sys_label) == label:
+                break
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             if label in fields:
                 widgetLabel.show()
@@ -210,8 +230,13 @@ class widgetEditEntry(QWidget):
         default = "no"
         if self.checkDefault.isChecked():
             default = "yes"
+        systems = self.parent.systems
+        for name, (sys_label, fields) in systems.iteritems():
+            if unicode(sys_label) == unicode(self.listSystem.currentText()):
+                os_type = name
+                break
         args = {
-            "os_type": str(self.listSystem.currentText()),
+            "os_type": os_type,
             "title": unicode(self.editTitle.text()),
             "root": str(self.editRoot.text()),
             "kernel": str(self.editKernel.text()),
@@ -289,7 +314,8 @@ class widgetMain(QWidget):
             elif reply.id == BOOT_SYSTEMS:
                 self.systems = {}
                 for system in reply.data.split("\n"):
-                    label, fields = system.split(" ", 1)
-                    self.systems[label] = fields.split(",")
+                    name, value = system.split(" ", 1)
+                    label, fields = value.split(",", 1)
+                    self.systems[name] = (label, fields.split(","))
         elif reply.command == "fail":
             KMessageBox.error(self, "%s failed: %s" % (reply.id, reply.data), i18n("Failed"))
