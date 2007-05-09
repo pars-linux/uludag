@@ -218,7 +218,7 @@ class MainApplicationWidget(QWidget):
         self.parent.showUpgradeAction.setChecked(False)
 
     def installState(self, reset=True):
-        self.setCursor(Qt.waitCursor)
+        kapp.setOverrideCursor(Qt.waitCursor)
         if reset:
             self.resetState()
         self.parent.showNewAction.setChecked(True)
@@ -231,10 +231,10 @@ class MainApplicationWidget(QWidget):
         self.basket.setState(self.state)
         self.setLastSelected()
         self.updateStatusBar()
-        self.setCursor(Qt.arrowCursor)
+        kapp.restoreOverrideCursor()
 
     def removeState(self, reset=True):
-        self.setCursor(Qt.waitCursor)
+        kapp.setOverrideCursor(Qt.waitCursor)
         if reset:
             self.resetState()
         self.parent.showInstalledAction.setChecked(True)
@@ -247,10 +247,10 @@ class MainApplicationWidget(QWidget):
         self.basket.setState(self.state)
         self.setLastSelected()
         self.updateStatusBar()
-        self.setCursor(Qt.arrowCursor)
+        kapp.restoreOverrideCursor()
 
     def upgradeState(self):
-        self.setCursor(Qt.waitCursor)
+        kapp.setOverrideCursor(Qt.waitCursor)
 
         # TODO:
         # If package-manager is opened while tray is updating-repo; progress dialog is
@@ -275,7 +275,7 @@ class MainApplicationWidget(QWidget):
 
         self.basket.setState(self.state)
         self.updateStatusBar()
-        self.setCursor(Qt.arrowCursor)
+        kapp.restoreOverrideCursor()
 
     def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -287,7 +287,7 @@ class MainApplicationWidget(QWidget):
         if not part:
             part = self.htmlPart
 
-        self.setCursor(Qt.waitCursor)
+        kapp.setOverrideCursor(Qt.waitCursor)
         part.view().setContentsPos(0, 0)
         part.begin()
         part.write(head)
@@ -307,7 +307,7 @@ class MainApplicationWidget(QWidget):
         </script></body></html>
         ''')
         part.end()
-        self.setCursor(Qt.arrowCursor)
+        kapp.restoreOverrideCursor()
 
     def createHTMLForPackages(self,packages):
         result = ''
@@ -410,14 +410,14 @@ class MainApplicationWidget(QWidget):
         return item
 
     def refreshComponentList(self, item):
-        self.setCursor(Qt.waitCursor)
+        kapp.setOverrideCursor(Qt.waitCursor)
         try:
             self.createHTML(self.componentDict[item].packages)
             self.lastSelectedComponent = self.componentDict[item].name
         # initialization and search state listview items are not components
         except KeyError:
             pass
-        self.setCursor(Qt.arrowCursor)
+        kapp.restoreOverrideCursor()
 
     def updateStatusBar(self):
         def humanReadableSize(size):
@@ -426,9 +426,9 @@ class MainApplicationWidget(QWidget):
                 return "0 B"
             return "%.1f %s" % (tpl[0], tpl[1])
 
-        self.setCursor(Qt.waitCursor)
+        kapp.setOverrideCursor(Qt.waitCursor)
         self.basket.update()
-        self.setCursor(Qt.arrowCursor)
+        kapp.restoreOverrideCursor()
 
         if not self.basket.packages:
             text = i18n("Currently your basket is empty.")
