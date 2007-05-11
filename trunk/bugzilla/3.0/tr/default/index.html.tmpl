@@ -62,32 +62,30 @@ function addSidebar() {
   <div id="new_release">
     [% IF release.data %]
       [% IF release.deprecated %]
-        <p>[% terms.Bugzilla %] [%+ release.deprecated FILTER html %] is no longer
-        supported. You are highly encouraged to upgrade in order to keep your
-        system secure.</p>
+        <p>[% terms.Bugzilla %] [%+ release.deprecated FILTER html %] artık desteklenmiyor.
+        Sisteminizi güvenli tutmak için sürüm yükseltmeniz tavsiye edilir.</p>
       [% END %]
 
-      <p>A new [% terms.Bugzilla %] version ([% release.data.latest_ver FILTER html %])
-      is available at
-      <a href="[% release.data.url FILTER html %]">[% release.data.url FILTER html %]</a>.<br>
-      Release date: [% release.data.date FILTER html %]</p>
+      <p><a href="[% release.data.url FILTER html %]">[% release.data.url FILTER html %]</a> adresinde
+      yeni bir [% terms.Bugzilla %] sürümü ([% release.data.latest_ver FILTER html %]) var.<br>
+      Sürüm tarihi: [% release.data.date FILTER html %]</p>
 
-      <p class="notice">This message is only shown to logged in users with admin privs.
-      You can configure this notification from the
-      <a href="editparams.cgi?section=core#upgrade_notification">Parameters</a> page.</p>
+      <p class="notice">Bu mesaj sadece yönetici haklarına sahip olan oturum açmış kullanıcılara gösterilir.
+      Bu bilgilendirme mesajının görüntülenip görüntülenmeyeceğini
+      <a href="editparams.cgi?section=core#upgrade_notification">Parametreler</a> sayfasında değiştirebilirsiniz.</p>
     [% ELSIF release.error == "no_update" %]
-      <p>The local XML file '[% release.xml_file FILTER html %]' cannot be updated.
-      Please make sure the web server can edit this file.</p>
+      <p>Yerel XML dosyası '[% release.xml_file FILTER html %]' güncellenemiyor.
+      Lütfen sanalyöre sunucunuzun bu dosyaya yazma hakkı olup olmadığını kontrol edin.</p>
     [% ELSIF release.error == "no_access" %]
-      <p>The local XML file '[% release.xml_file FILTER html %]' cannot be read.
-      Please make sure this file exists and has the correct rights set on it.</p>
+      <p>Yerel XML dosyası '[% release.xml_file FILTER html %]' okunamıyor.
+      Lütfen bu dosyanın varolup olmadığını ve erişim haklarının doğru yapılandırılmış olup olmadığıını kontrol edin.</p>
     [% ELSIF release.error == "corrupted" %]
-      <p>The local XML file '[% release.xml_file FILTER html %]' has an invalid XML format.
-      Please delete it and try accessing this page again.</p>
+      <p>Yerel XML dosyası '[% release.xml_file FILTER html %]' geçersiz bir XML yapısına sahip.
+      Lütfen dosyayı silip bu sayfayı tekrar açmayı deneyin.</p>
     [% ELSIF release.error == "unknown_parameter" %]
-      <p>'[% Param("upgrade_notification") FILTER html %]' is not a valid notification
-      parameter. Please check this parameter in the
-      <a href="editparams.cgi?section=core#upgrade_notification">Parameters</a> page.</p>
+      <p>'[% Param("upgrade_notification") FILTER html %]' geçerli bir bilgilendirme parametresi değil.
+      Lütfen bu parametreyi
+      <a href="editparams.cgi?section=core#upgrade_notification">Parametreler</a> sayfasından kontrol edin.</p>
     [% END %]
   </div>
 [% END %]
@@ -95,7 +93,7 @@ function addSidebar() {
 <div id="page-index">
   <div class="intro"></div>
 
-  <p>[% terms.Bugzilla %]'ya hoşgeldiniz. Bu [% terms.Bugzilla %] sürümüde yeni özelliklerin neler
+  <p>[% terms.Bugzilla %]'ya hoşgeldiniz. Bu [% terms.Bugzilla %] sürümünde yeni özelliklerin neler
     olduğunu görmek için,
     <a href="page.cgi?id=release-notes.html">sürüm notları</a> belgesine göz atabilirsiniz!
     Ayrıca
@@ -107,7 +105,7 @@ function addSidebar() {
   <ul>
     <li id="query"><a href="query.cgi">Mevcut [% terms.bug %] raporları arasında arama</a></li>
     <li id="enter-bug"><a href="enter_bug.cgi">Yeni bir [% terms.bug %] raporu girişi</a></li>
-    <li id="report"><a href="report.cgi">Summary reports and charts</a></li>
+    <li id="report"><a href="report.cgi">Özet raporları ve tabloları</a></li>
 [% IF user.id %]
     <li id="userprefs"><a href="userprefs.cgi">Parola ya da kullanıcı tercihlerini değiştirme</a></li>
   [% IF user.authorizer.can_logout %]
