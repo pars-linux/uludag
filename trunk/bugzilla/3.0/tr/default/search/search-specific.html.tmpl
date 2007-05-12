@@ -107,7 +107,11 @@ kelimeleri tarayacak ve sonucu size ilişkisel bir liste olarak sunacaktır.
   <tr>
     <td></td>
     <td>
-      <input type="submit" id="search" value="Arama">
+      <input type="submit" id="search" value="Arama"
+             onclick="if (this.form.content.value == '')
+                      {alert('The Words field cannot be empty. You have to ' +
+                             'enter at least one word in your search criteria.');
+                       return false;} return true;">
     </td>
   </tr>
 </table>
