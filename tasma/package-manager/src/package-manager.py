@@ -73,9 +73,9 @@ class Component:
 
 class ComponentTipper(QToolTip):
     def __init__(self, parent):
-        super(ComponentTipper, self).__init__(parent.listView.viewport())
+        super(ComponentTipper, self).__init__(parent.componentsList.viewport())
         self.components = parent.componentDict
-        self.list = parent.listView
+        self.list = parent.componentsList
         self.setWakeUpDelay(500)
 
     def maybeTip(self, point):
@@ -127,8 +127,8 @@ class MainApplicationWidget(QWidget):
 
         self.htmlPart = KHTMLPart(self.rightLayout)
 
-        self.listView = KListView(self.leftLayout)
-        self.listView.setFullWidth(True)
+        self.componentsList = KListView(self.leftLayout)
+        self.componentsList.setFullWidth(True)
 
         # Read javascript
         js = file(str(locate("data","package-manager/animation.js"))).read()
@@ -140,7 +140,7 @@ class MainApplicationWidget(QWidget):
         cssFile = file(str(locate("data","package-manager/layout.css"))).read()
         self.css = cssFile
 
-        self.listView.addColumn(i18n("Components"))
+        self.componentsList.addColumn(i18n("Components"))
 
         self.leftLayout.setMargin(2)
         self.rightLayout.setMargin(2)
@@ -152,7 +152,7 @@ class MainApplicationWidget(QWidget):
         self.layout.setColStretch(1,2)
         self.layout.setColStretch(2,6)
 
-        self.connect(self.listView,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
+        self.connect(self.componentsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
         self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
         self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
@@ -167,9 +167,9 @@ class MainApplicationWidget(QWidget):
         self.delayTimer.start(500, True)
 
         # inform user for the delay...
-        item = KListViewItem(self.listView)
+        item = KListViewItem(self.componentsList)
         item.setText(0,i18n("Loading Package List..."))
-        self.listView.setSelected(self.listView.firstChild(),True)
+        self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
         self.tipper = ComponentTipper(self)
         self.htmlPart.view().setFocus()
@@ -395,7 +395,7 @@ class MainApplicationWidget(QWidget):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def setLastSelected(self):
-        item = self.listView.firstChild()
+        item = self.componentsList.firstChild()
 
         # FIXME: a quick and ugly hack to see if we are in search state.
         if item.text(0) == i18n("Search Results"):
@@ -406,7 +406,7 @@ class MainApplicationWidget(QWidget):
                 item = i
                 break
 
-        self.listView.setSelected(item, True)
+        self.componentsList.setSelected(item, True)
         return item
 
     def refreshComponentList(self, item):
@@ -593,13 +593,13 @@ class MainApplicationWidget(QWidget):
             self.upgradeState()
 
     def updateComponentList(self):
-        item = self.listView.currentItem()
+        item = self.componentsList.currentItem()
         component = self.componentDict[item]
         if component.packages:
             item.setText(0,u"%s (%s)" % (component.name, len(component.packages)))
         else:
-            self.listView.takeItem(item)
-            self.listView.setSelected(self.listView.firstChild(),True)
+            self.componentsList.takeItem(item)
+            self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
     def createComponentList(self, packages, allComponent=False):
 
@@ -610,7 +610,7 @@ class MainApplicationWidget(QWidget):
                 return "app:gui" in pisi.context.packagedb.get_package(package).isA
 
         # Components
-        self.listView.clear()
+        self.componentsList.clear()
         self.componentDict.clear()
 
         cdb = pisi.context.componentdb
@@ -633,7 +633,7 @@ class MainApplicationWidget(QWidget):
                     component_packages = filter(appGuiFilter, component_packages)
 
             if len(component_packages):
-                item = KListViewItem(self.listView)
+                item = KListViewItem(self.componentsList)
                 if component.localName:
                     name = component.localName
                 else:
@@ -653,7 +653,7 @@ class MainApplicationWidget(QWidget):
         if self.state != upgrade_state and showOnlyGuiApp:
             rest_packages = filter(appGuiFilter, rest_packages)
         if rest_packages:
-            item = KListViewItem(self.listView)
+            item = KListViewItem(self.componentsList)
             name = i18n("Others")
             item.setText(0, u"%s (%s)" % (name, len(rest_packages)))
             item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_applications",KIcon.Desktop,KIcon.SizeMedium))
@@ -661,19 +661,19 @@ class MainApplicationWidget(QWidget):
 
         # All of the component's packages
         if allComponent:
-            item = KListViewItem(self.listView)
+            item = KListViewItem(self.componentsList)
             name = i18n("All")
             item.setText(0, u"%s (%s)" % (name, len(packages)))
             item.setPixmap(0, KGlobal.iconLoader().loadIcon("package_network",KIcon.Desktop,KIcon.SizeMedium))
             self.componentDict[item] = Component(name, packages, name)
 
     def createSearchResults(self, packages):
-        self.listView.clear()
-        item = KListViewItem(self.listView)
+        self.componentsList.clear()
+        item = KListViewItem(self.componentsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
         self.createHTML(packages)
-        self.listView.setSelected(self.listView.firstChild(),True)
+        self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
     def displayProgress(self, data):
         data = data.split(",")
