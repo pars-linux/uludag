@@ -73,12 +73,17 @@ function addSidebar() {
       <p class="notice">Bu mesaj sadece yönetici haklarına sahip olan oturum açmış kullanıcılara gösterilir.
       Bu bilgilendirme mesajının görüntülenip görüntülenmeyeceğini
       <a href="editparams.cgi?section=core#upgrade_notification">Parametreler</a> sayfasında değiştirebilirsiniz.</p>
+     [% ELSIF release.error == "missing_package" %]
+       <p>Missing package '[% release.package FILTER html %]'. This package is required to
+       <a href="editparams.cgi?section=core#upgrade_notification">notify you about new releases</a>.</p>
+     [% ELSIF release.error == "cannot_download" %]
+       <p>The local XML file '[% release.xml_file FILTER html %]' cannot be created.
+       Please make sure the web server can write in this directory.</p>
     [% ELSIF release.error == "no_update" %]
       <p>Yerel XML dosyası '[% release.xml_file FILTER html %]' güncellenemiyor.
       Lütfen sanalyöre sunucunuzun bu dosyaya yazma hakkı olup olmadığını kontrol edin.</p>
     [% ELSIF release.error == "no_access" %]
       <p>Yerel XML dosyası '[% release.xml_file FILTER html %]' okunamıyor.
-      Lütfen bu dosyanın varolup olmadığını ve erişim haklarının doğru yapılandırılmış olup olmadığıını kontrol edin.</p>
     [% ELSIF release.error == "corrupted" %]
       <p>Yerel XML dosyası '[% release.xml_file FILTER html %]' geçersiz bir XML yapısına sahip.
       Lütfen dosyayı silip bu sayfayı tekrar açmayı deneyin.</p>
