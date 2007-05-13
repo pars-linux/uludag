@@ -129,7 +129,7 @@ def importGrubEntry(entry):
 
 
 # Boot.Loader
-GRUB_CONF = "/home/bahadir/repos/uludag/trunk/tasma/boot-manager/comar/grub.conf"
+GRUB_CONF = "/boot/grub/grub.conf"
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
 OPTIONS = ["default", "timeout", "splash"]
