@@ -38,7 +38,10 @@ class grubEntry:
         """Returns command object. If only_last is False, returns a list of commands named 'key'."""
         commands = filter(lambda x: x.key == key, self.commands)
         if only_last:
-            return commands[-1]
+            try:
+                return commands[-1]
+            except IndexError:
+                return None
         return commands
     
     def unsetCommand(self, key):
@@ -59,6 +62,7 @@ class grubConf:
         self.options = {}
         self.entries = []
         self.header = []
+        self.index = 0
     
     def setHeader(self, header):
         """Sets grub.conf header"""
@@ -119,6 +123,15 @@ class grubConf:
         if entry:
             self.entries.append(entry)
 
+        # remember the saved-index value
+        import os.path
+        default = os.path.join(os.path.dirname(filename), "default")
+        if os.path.exists(default):
+            self.index = int(file(default).read().split("\0")[0])
+
+    def getSavedIndex(self):
+        return self.index
+
     def __str__(self):
         conf = []
         if self.header:
@@ -130,7 +143,10 @@ class grubConf:
                 line = "%s %s" % (key, value)
                 conf.append(line)
             conf.append("")
-        for entry in self.entries:
+        for index, entry in enumerate(self.entries):
+            # fix the savedefault index
+            if entry.getCommand("savedefault"):
+                entry.setCommand("savedefault", str(index))
             conf.append(str(entry))
             conf.append("")
         return "\n".join(conf)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-09 16:15+0300\n"
+"POT-Creation-Date: 2007-05-13 14:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,47 +28,55 @@ msgstr ""
 msgid "New Entry"
 msgstr ""
 
-#: src/mainview.py:75
+#: src/mainview.py:54
+msgid "Remember last booted entry."
+msgstr ""
+
+#: src/mainview.py:87
 msgid "Title"
 msgstr ""
 
-#: src/mainview.py:83
+#: src/mainview.py:95
 msgid "System"
 msgstr ""
 
-#: src/mainview.py:93
+#: src/mainview.py:105
 msgid "Root"
 msgstr ""
 
-#: src/mainview.py:102
+#: src/mainview.py:114
 msgid "Kernel"
 msgstr ""
 
-#: src/mainview.py:111
+#: src/mainview.py:123
 msgid "Kernel Options"
 msgstr ""
 
-#: src/mainview.py:120
+#: src/mainview.py:132
 msgid "Init Ramdrive"
 msgstr ""
 
-#: src/mainview.py:129
+#: src/mainview.py:141
 msgid "Default boot entry"
 msgstr ""
 
-#: src/mainview.py:178
+#: src/mainview.py:145
+msgid "Save this entry as default after a successfull boot."
+msgstr ""
+
+#: src/mainview.py:212
 msgid "Are you sure you want to remove this entry?"
 msgstr ""
 
-#: src/mainview.py:178
+#: src/mainview.py:212
 msgid "Delete Entry"
 msgstr ""
 
-#: src/mainview.py:298
+#: src/mainview.py:336
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 
-#: src/mainview.py:321
+#: src/mainview.py:366
 msgid "Failed"
 msgstr ""
 

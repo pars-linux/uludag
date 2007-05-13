@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS = xrange(1, 4)
+BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_OPTION = xrange(1, 6)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -50,9 +50,21 @@ class widgetEntryList(QWidget):
         self.listEntries.setEnabled(False)
         layout.addWidget(self.listEntries, 1, 0)
         
+        self.checkSaved = QCheckBox(self)
+        self.checkSaved.setText(i18n("Remember last booted entry."))
+        layout.addWidget(self.checkSaved, 2, 0)
+        
+        self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
+        
     def init(self):
         if self.parent.can_access:
             self.listEntries.setEnabled(True)
+    
+    def slotCheckSaved(self):
+        if self.checkSaved.isChecked():
+            self.link.call("Boot.Loader.setOption", {"key": "default", "value": "saved"})
+        else:
+            self.link.call("Boot.Loader.setOption", {"key": "default", "value": "0"})
     
     def slotAddEntry(self):
         self.parent.widgetEditEntry.newEntry()
@@ -129,8 +141,12 @@ class widgetEditEntry(QWidget):
         self.checkDefault.setText(i18n("Default boot entry"))
         layout.addMultiCellWidget(self.checkDefault, 6, 6, 0, 1)
         
+        self.checkSaved = QCheckBox(self)
+        self.checkSaved.setText(i18n("Save this entry as default after a successfull boot."))
+        layout.addMultiCellWidget(self.checkSaved, 7, 7, 0, 1)
+        
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
-        layout.addMultiCell(spacer, 7, 7, 0, 1)
+        layout.addMultiCell(spacer, 8, 8, 0, 1)
         
         layout_buttons = QHBoxLayout(layout)
         spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
@@ -149,8 +165,13 @@ class widgetEditEntry(QWidget):
         self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
         self.connect(self.buttonCancel, SIGNAL("clicked()"), self.slotExit)
+        self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
         
         self.resetEntry()
+    
+    def slotCheckSaved(self):
+        if not self.parent.widgetEntries.checkSaved.isChecked():
+            self.checkDefault.setEnabled(not self.checkSaved.isChecked())
     
     def newEntry(self):
         self.resetEntry()
@@ -159,6 +180,9 @@ class widgetEditEntry(QWidget):
         self.resetEntry()
         self.entry = entry
         systems = self.parent.systems
+        
+        self.checkDefault.setChecked(False)
+        self.checkSaved.setChecked(False)
         
         self.editTitle.setText(unicode(entry["title"]))
         
@@ -169,8 +193,18 @@ class widgetEditEntry(QWidget):
             if label in entry:
                 widgetEdit.setText(unicode(entry[label]))
         
-        if "default" in entry:
-            self.checkDefault.setChecked(True)
+        if self.parent.widgetEntries.checkSaved.isChecked():
+            self.checkDefault.setEnabled(False)
+            if "default" in entry and entry["default"] == "saved":
+                self.checkSaved.setChecked(True)
+        else:
+            self.checkDefault.setEnabled(True)
+            if "default" in entry:
+                if entry["default"] != "saved":
+                    self.checkDefault.setChecked(True)
+                else:
+                    self.checkSaved.setChecked(True)
+        self.slotCheckSaved()
         
         self.parent.stack.raiseWidget(1)
     
@@ -228,7 +262,9 @@ class widgetEditEntry(QWidget):
     def slotSave(self):
         self.parent.widgetEntries.listEntries.setEnabled(False)
         default = "no"
-        if self.checkDefault.isChecked():
+        if self.checkSaved.isChecked():
+            default = "saved"
+        elif self.checkDefault.isChecked():
             default = "yes"
         systems = self.parent.systems
         for name, (sys_label, fields) in systems.iteritems():
@@ -250,6 +286,8 @@ class widgetEditEntry(QWidget):
         else:
             method = "Boot.Loader.addEntry"
         self.link.call(method, args)
+        if default == "saved":
+            self.parent.widgetEntries.checkSaved.setChecked(True)
         self.slotExit()
     
     def slotExit(self):
@@ -266,7 +304,7 @@ class widgetMain(QWidget):
         self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
         
-        self.default = -1
+        self.default = 0
         self.entries = []
         self.options = {}
         self.systems = {}
@@ -284,6 +322,7 @@ class widgetMain(QWidget):
         
         self.link.ask_notify("Boot.Loader.changed")
         self.link.can_access("Boot.Loader.updateEntry", id=BOOT_ACCESS)
+        self.link.call("Boot.Loader.getOption", {"key": "default"}, id=BOOT_OPTIONS)
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
         self.link.call("Boot.Loader.listSystems", id=BOOT_SYSTEMS)
 
@@ -291,12 +330,11 @@ class widgetMain(QWidget):
         reply = self.link.read_cmd()
         if reply.command == "notify":
             self.widgetEntries.listEntries.setEnabled(False)
-            if reply.data == "entry":
-                self.default = -1
+            if reply.data in ["entry", "option"]:
                 self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
                 if self.widgetEditEntry.entry:
                     KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
-                    idgetEditEntry.slotExit()
+                    widgetEditEntry.slotExit()
         elif reply.command == "result":
             if reply.id == BOOT_ACCESS:
                 self.can_access = True
@@ -317,5 +355,10 @@ class widgetMain(QWidget):
                     name, value = system.split(" ", 1)
                     label, fields = value.split(",", 1)
                     self.systems[name] = (label, fields.split(","))
+            elif reply.id == BOOT_OPTIONS:
+                key, value = reply.data.split(" ", 1)
+                self.default = value
+                if self.default == "saved":
+                    self.widgetEntries.checkSaved.setChecked(True)
         elif reply.command == "fail":
             KMessageBox.error(self, "%s failed: %s" % (reply.id, reply.data), i18n("Failed"))
