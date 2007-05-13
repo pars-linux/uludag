@@ -301,11 +301,6 @@ class MainApplicationWidget(QWidget):
             part.write('''<font size="-2"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></font>''')
 
         part.write(self.createHTMLForPackages(packages))
-        part.write('''
-        <script type="text/javascript">
-        initShowHideDivs();
-        </script></body></html>
-        ''')
         part.end()
         self.setCursor(Qt.arrowCursor)
 
@@ -315,12 +310,12 @@ class MainApplicationWidget(QWidget):
         <!-- package start -->
         <div>
         <!-- checkbox --> %s <!-- checkbox -->
-        <div class="package_title" style="%s">
+        <div class="package_title" style="%s" id="package_t%d" onclick="showHideContent(this)">
         <img src="%s" style="float:left;" width="%dpx" height="%dpx">
         <b>%s</b><br><span style="color:#303030">%s</span><br>
         </div>
-        <div class="package_info" style="%s">
-        <div style="margin-left:25px;">
+        <div class="package_info" style="%s" id="package_i%d">
+        <div style="margin-left:25px;" class="package_info_content" id="package_ic%d">
         <p><b>%s</b>
         %s<br>
         <b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b><a href=\"%s\">%s</a>
@@ -373,15 +368,16 @@ class MainApplicationWidget(QWidget):
             else:
                 checkState = ""
 
+            curindex = index+1
             if self.state == remove_state and app in unremovable_packages:
-                checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
-                           disabled %s name="%s"></div>""" % (titleStyle,checkState,app)
+                checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
+                           disabled %s name="%s id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
             else:
-                checkbox = """<div class="checkboks" style="%s"><input type="checkbox" \
-                           %s onclick="changeBackgroundColor(this)" name="%s"></div>""" % (titleStyle,checkState,app)
+                checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
+                           %s onclick="changeBackgroundColor(this)" name="%s" id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
             
             iconSize = getIconSize()
-            result += template % (checkbox, titleStyle,iconPath,iconSize,iconSize,app,summary,style,
+            result += template % (checkbox, titleStyle,curindex,iconPath,iconSize,iconSize,app,summary,style,curindex,curindex,
                                   i18n("Description: "),desc,i18n("Version: "),
                                   version,i18n("Package Size: "),size,i18n("Homepage: "),
                                   homepage,homepage)
