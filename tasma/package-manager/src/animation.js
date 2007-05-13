@@ -5,8 +5,8 @@ var objectIdToSlideDown = false;
 var pisi_activeId = false;
 var pisi_renk = false;
 
-function showHideContent(){
-	var numericId = this.id.replace(/[^0-9]/g,'');
+function showHideContent(item){
+	var numericId = item.id.replace(/[^0-9]/g,'');
 	var answerDiv = document.getElementById('package_i' + numericId);
 	if(!answerDiv.style.display || answerDiv.style.display=='none'){
 		if(pisi_activeId &&  pisi_activeId!=numericId){
@@ -54,38 +54,6 @@ function slideContent(inputId,direction){
 			}
 		}else{
 			pisi_activeId = inputId;
-		}
-	}
-}
-
-function initShowHideDivs(){
-        var divsColl   = document.getElementsByTagName('DIV');
-        var inputsColl = document.getElementsByTagName('INPUT');
-        var divs       = new Array();
-        var inputs     = new Array();
-        for (pos = 0; pos < divsColl.length; ++pos)   divs.push  (divsColl[pos]);
-        for (pos = 0; pos < inputsColl.length; ++pos) inputs.push(inputsColl[pos]);
-	var divCounter = 1;
-	for(var no=0;no<divs.length;no++){
-		if(divs[no].className=='package_title'){
-			divs[no].onclick = showHideContent;
-			divs[no].id = 'package_t'+divCounter;
-                        divs[no-1].id = 'checkboks_t'+divCounter;
-                        inputs[divCounter-1].id = 'checkboks'+divCounter;
-			
-			var answer = divs[no].nextSibling;
-			while(answer && answer.tagName!='DIV'){
-				answer = answer.nextSibling;
-			}
-			
-			answer.id = 'package_i'+divCounter;
-			
-			contentDiv = answer.getElementsByTagName('DIV')[0];
-			contentDiv.style.top = 0 - contentDiv.offsetHeight + 'px';
-			contentDiv.className='package_info_content';
-			contentDiv.id = 'package_ic' + divCounter;
-			answer.style.display='none';
-			divCounter++;
 		}
 	}
 }
