@@ -120,6 +120,8 @@ def importGrubEntry(entry):
                 os_entry["kernel"] = kernel
         elif key in ["chainloader", "makeactive"]:
             os_entry["os_type"] = "windows"
+        elif key == "savedefault":
+            os_entry["default"] = "saved"
     lst = []
     for k, v in os_entry.iteritems():
         lst.append("%s %s" % (k, v))
@@ -127,7 +129,7 @@ def importGrubEntry(entry):
 
 
 # Boot.Loader
-GRUB_CONF = "/boot/grub/grub.conf"
+GRUB_CONF = "/home/bahadir/repos/uludag/trunk/tasma/boot-manager/comar/grub.conf"
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
 OPTIONS = ["default", "timeout", "splash"]
@@ -182,6 +184,9 @@ def setOption(key, value):
         grub.config.setOption(key, value)
     else:
         grub.config.unsetOption(key)
+    if key == "default" and value != "saved":
+        for index, entry in enumerate(grub.config.entries):
+            entry.unsetCommand("savedefault")
     grub.release()
     notify("Boot.Loader.changed", "option")
     return "%s %s" % (key, value)
@@ -195,8 +200,9 @@ def listEntries():
     for index, entry in enumerate(grub.config.entries):
         os_entry = importGrubEntry(entry)
         os_entry.insert(0, "index %s" % index)
-        if int(grub.config.getOption("default", 0)) == index:
-            os_entry.insert(0, "default True")
+        if not entry.getCommand("savedefault"):
+            if grub.config.getOption("default", 0) != "saved" and int(grub.config.getOption("default", 0)) == index:
+                os_entry.insert(0, "default True")
         entries.append("\n".join(os_entry))
     grub.release()
     return "\n\n".join(entries)
@@ -252,6 +258,9 @@ def addEntry(title, os_type, root, kernel=None, initrd=None, options=None, defau
     index = grub.config.indexOf(entry)
     if default == "yes":
         grub.config.setOption("default", index)
+    elif default == "saved":
+        entry.setCommand("savedefault", "")
+        grub.config.setOption("default", "saved")
     grub.release()
     notify("Boot.Loader.changed", "entry")
 
@@ -281,8 +290,15 @@ def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=N
             entry.setCommand("initrd", initrd)
         if default == "yes":
             grub.config.setOption("default", index)
-        elif grub.config.getOption("default", "0") == str(index):
-            grub.config.setOption("default", "0")
+            entry.unsetCommand("savedefault")
+        elif default == "saved":
+            entry.setCommand("savedefault", "")
+            grub.config.setOption("default", "saved")
+        else:
+            entry.unsetCommand("savedefault")
+            default_index = grub.config.getOption("default", "0")
+            if default_index != "saved" and default_index == str(index):
+                grub.config.setOption("default", "0")
         grub.release()
         notify("Boot.Loader.changed", "entry")
     else:
@@ -304,7 +320,11 @@ def updateKernelEntry(version, root=None):
         if isPardusEntry(x, root_grub, new_suffix):
             entries.append(x)
     
-    default_index = int(grub.config.options.get("default", 0))
+    default = grub.config.options.get("default", 0)
+    if default == "saved":
+        default_index = grub.config.getSavedIndex()
+    else:
+        default_index = int(grub.config.options.get("default", 0))
     if default_index >= len(grub.config.entries):
         default_index = 0
     default_entry = None
@@ -326,7 +346,6 @@ def updateKernelEntry(version, root=None):
             if make_default:
                 entry = kernels[new_version]
                 updated_index = grub.config.indexOf(entry)
-                grub.config.setOption("default", updated_index)
         else:
             action = "insert"
     
@@ -341,6 +360,8 @@ def updateKernelEntry(version, root=None):
             index = -1
             boot_parameters = bootParameters(root)
         else:
+            if entries[0].getCommand("savedefault"):
+                new_entry.setCommand("savedefault", "")
             index = grub.config.indexOf(entries[0])
             kernel = entries[0].getCommand("kernel").value
             boot_parameters = kernel.split(" ", 1)[1]
@@ -359,7 +380,8 @@ def updateKernelEntry(version, root=None):
             updated_index = grub.config.indexOf(default_entry)
         else:
             updated_index = 0
-        grub.config.setOption("default", updated_index)
+        if default != "saved":
+            grub.config.setOption("default", updated_index)
     
     grub.release()
     notify("Boot.Loader.changed", "entry")

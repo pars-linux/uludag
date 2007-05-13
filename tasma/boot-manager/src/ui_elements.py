@@ -107,7 +107,7 @@ class Entry(QWidget):
         font = paint.font()
         font.setPointSize(font.pointSize() + 1)
         font.setBold(True)
-        if "default" in self.os_data:
+        if "default" in self.os_data and self.os_data["default"] != "saved":
             font.setUnderline(True)
         fm = QFontMetrics(font)
         paint.drawText(6 + self.icon.width() + 6, fm.ascent() + 5, unicode(self.title))
