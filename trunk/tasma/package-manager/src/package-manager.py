@@ -746,6 +746,14 @@ class MainApplicationWidget(QWidget):
     def showConfirmMessage(self, message, error=i18n("Confirm")):
         return KMessageBox.questionYesNo(self, message, error)
 
+    def reloadPisi(self):
+        for module in sys.modules.keys():
+            if module.startswith("pisi."):
+                """removal from sys.modules forces reload via import"""
+                del sys.modules[module]
+
+        reload(pisi)
+
     def finished(self, command=None):
  
         pisi.api.finalize()
@@ -753,8 +761,8 @@ class MainApplicationWidget(QWidget):
         # when pisi db version is upgraded, reload is needed before init
         packages = self.basket.packages + self.basket.extraPackages
         if command == "System.Manager.updatePackage" and "pisi" in packages:
-            reload(pisi)
-
+            self.reloadPisi()
+        
         pisi.api.init(write=False)
 
         # after every operation check package cache limits
