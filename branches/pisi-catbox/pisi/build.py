@@ -142,9 +142,9 @@ class Builder:
             specuri = pisi.uri.URI(os.path.realpath(specuri.get_uri()))  # FIXME: doesn't work for file://
         self.specuri = specuri
         spec = pisi.specfile.SpecFile()
-        spec.read(specuri, ctx.config.tmp_dir())
-        diruri = dirname(specuri.get_uri())
-        spec.read_translations(join(diruri, "translations.xml"))
+        spec.read(self.specuri, ctx.config.tmp_dir())
+        diruri = dirname(self.specuri.get_uri())
+        spec.read_translations(pisi.util.join_path(diruri, "translations.xml"))
         self.spec = spec
 
     # directory accessor functions
