@@ -143,7 +143,7 @@ class Builder:
         self.specuri = specuri
         spec = pisi.specfile.SpecFile()
         spec.read(self.specuri, ctx.config.tmp_dir())
-        diruri = dirname(self.specuri.get_uri())
+        diruri = os.path.dirname(self.specuri.get_uri())
         spec.read_translations(pisi.util.join_path(diruri, "translations.xml"))
         self.spec = spec
 
