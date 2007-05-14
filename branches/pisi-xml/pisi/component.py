@@ -16,71 +16,60 @@ _ = __trans.ugettext
 
 import pisi
 import pisi.context as ctx
-import pisi.pxml.xmlfile as xmlfile
-import pisi.pxml.autoxml as autoxml
+import autoxml
 import pisi.lockeddbshelve as shelve
 import pisi.itembyrepodb
 
 class Error(pisi.Error):
     pass
 
-__metaclass__ = autoxml.autoxml
 
-class Obsolete:
-
-    __metaclass__ = autoxml.autoxml
-
-    s_Package = [autoxml.String, autoxml.mandatory]
+class Obsolete(autoxml.AutoXML):
+    package = autoxml.Tag("Package")
 
     def __str__(self):
         return self.package
 
-class Distribution(xmlfile.XmlFile):
 
-    __metaclass__ = autoxml.autoxml
+class Distribution(autoxml.AutoXML):
+    sourceName = autoxml.Tag("SourceName")
+    description = autoxml.TagLocalized("Description")
+    version = autoxml.Tag("Version", autoxml.optional)
+    dependencies = autoxml.TagCollection("Dependencies", "Distribution", autoxml.optional)
+    binaryName = autoxml.Tag("BinaryName", autoxml.optional)
+    architecture = autoxml.Tag("Architecture", autoxml.optional)
+    
+    obsolotes = autoxml.TagCollection("Obsoletes", "Package", Obsolete, autoxml.optional)
 
-    tag = "PISI"
 
-    t_SourceName = [autoxml.Text, autoxml.mandatory] # name of distribution (source)
-    t_Description = [autoxml.LocalText, autoxml.mandatory]
-    t_Version = [autoxml.Text, autoxml.optional]
-    t_Type =  [autoxml.Text, autoxml.mandatory]
-    t_Dependencies = [ [autoxml.Text], autoxml.optional, "Dependencies/Distribution"]
-
-    t_BinaryName = [autoxml.Text, autoxml.optional] # name of repository (binary distro)
-    t_Architecture = [autoxml.Text, autoxml.optional] # architecture identifier
-
-    t_Obsoletes = [ [Obsolete], autoxml.optional, "Obsoletes/Package"]
-
-class Component(xmlfile.XmlFile):
+class Component(autoxml.AutoXML):
     "representation for component declarations"
 
-    __metaclass__ = autoxml.autoxml
-
-    tag = "PISI"
-
-    t_Name = [autoxml.String, autoxml.mandatory]     # fully qualified name
+    name = autoxml.Tag("Name")     # fully qualified name
 
     # component name in other languages, for instance in Turkish
     # LocalName for system.base could be sistem.taban or "Taban Sistem",
     # this could be useful for GUIs
 
-    t_LocalName = [autoxml.LocalText, autoxml.mandatory]
+    localName = autoxml.TagLocalized("LocalName")
 
     # Information about the component
-    t_Summary = [autoxml.LocalText, autoxml.mandatory]
-    t_Description = [autoxml.LocalText, autoxml.mandatory]
-    t_Icon = [ autoxml.String, autoxml.optional]
-    t_VisibleTo = [autoxml.String, autoxml.optional]
+    summary = autoxml.TagLocalized("Summary")
+    description = autoxml.TagLocalized("Description")
+    icon = autoxml.Tag("Icon", autoxml.optional)
+    visibleTo = autoxml.Tag("VisibleTo", autoxml.optional)
 
     # Dependencies to other components
-    t_Dependencies = [ [autoxml.String], autoxml.optional, "Dependencies/Component"]
+    dependencies = autoxml.TagCollection("Dependencies", "Component", autoxml.optional)
 
     # the parts of this component.
     # to be filled by the component database, thus it is optional.
-    t_Packages = [ [autoxml.String], autoxml.optional, "Parts/Package"]
+    
+    # FIXME: autoxml!!!!!!!!!!
+    #t_Packages = [ [autoxml.String], autoxml.optional, "Parts/Package"]
 
-    t_Sources = [ [autoxml.String], autoxml.optional, "Parts/Source"]
+    #t_Sources = [ [autoxml.String], autoxml.optional, "Parts/Source"]
+
 
 class ComponentDB(object):
     """a database of components"""

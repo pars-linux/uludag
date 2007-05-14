@@ -14,23 +14,24 @@
 during the build process of a package and used in installation.'''
 
 
-import pisi.pxml.autoxml as autoxml
+import autoxml
 import pisi.lockeddbshelve as shelve
 
 
-class FileInfo:
+class FileInfo(autoxml.AutoXML):
     """File holds the information for a File node/tag in files.xml"""
 
-    __metaclass__ = autoxml.autoxml
+    path = autoxml.Tag("Path")
+    type = autoxml.Tag("Type")
+    size = autoxml.Tag("Size", autoxml.optional)
+    uid = autoxml.Tag("Uid", autoxml.optional)
+    gid = autoxml.Tag("Gid", autoxml.optional)
+    mode = autoxml.Tag("Mode", autoxml.optional)
+    hash = autoxml.Tag("SHA1Sum", autoxml.optional)
+    permanent = autoxml.Tag("Permanent", autoxml.optional)
 
-    t_Path = [ autoxml.String, autoxml.mandatory ]
-    t_Type = [ autoxml.String, autoxml.mandatory ]
-    t_Size = [ autoxml.Long, autoxml.optional ]
-    t_Uid = [ autoxml.String, autoxml.optional ]
-    t_Gid = [ autoxml.String, autoxml.optional ]
-    t_Mode = [ autoxml.String, autoxml.optional ]
-    t_Hash = [ autoxml.String, autoxml.optional, "SHA1Sum" ]
-    t_Permanent = [ autoxml.String, autoxml.optional ]
+    def validate(self, ctx):
+        self.size = long(self.size)
 
     def __str__(self):
         s = "/%s, type: %s, size: %s, sha1sum: %s" %  (self.path, self.type,
@@ -38,13 +39,8 @@ class FileInfo:
         return s
 
 
-class Files(autoxml.xmlfile.XmlFile):
-
-    __metaclass__ = autoxml.autoxml
-
-    tag = "Files"
-
-    t_List = [ [FileInfo], autoxml.optional, "File"]
+class Files(autoxml.AutoXML):
+    list = autoxml.Tag("File", autoxml.optional, autoxml.multiple, FileInfo)
 
     def append(self, fileinfo):
         self.list.append(fileinfo)

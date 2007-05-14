@@ -23,40 +23,38 @@ _ = __trans.ugettext
 
 import pisi.context as ctx
 import pisi.specfile as specfile
-import pisi.pxml.xmlfile as xmlfile
-import pisi.pxml.autoxml as autoxml
+import autoxml
 import pisi.util as util
 
-class Delta:
-    __metaclass__ = autoxml.autoxml
+
+class Delta(autoxml.AutoXML):
+    buildFrom = autoxml.Attribute("buildFrom", autoxml.optional)
+    packageURI = autoxml.Tag("PackageURI", autoxml.optional)
+    packageSize = autoxml.Tag("PackageSize", autoxml.optional)
+    packageHash = autoxml.Tag("SHA1Sum", autoxml.optional)
     
-    t_PackageURI = [ autoxml.String, autoxml.optional]
-    t_PackageSize = [ autoxml.Long, autoxml.optional]
-    t_PackageHash = [ autoxml.String, autoxml.optional, "SHA1Sum" ]
-    a_buildFrom = [autoxml.String, autoxml.optional]
+    def validate(self, ctx):
+        self.packageSize = long(self.packageSize)
 
-class Source:
-    __metaclass__ = autoxml.autoxml
 
-    t_Name = [autoxml.String, autoxml.mandatory]
-    t_Homepage = [autoxml.String, autoxml.optional]
-    t_Packager = [specfile.Packager, autoxml.mandatory]
+class Source(autoxml.AutoXML):
+    name = autoxml.Tag("Name")
+    homepage = autoxml.Tag("Homepage", autoxml.optional)
+    packager = autoxml.Tag("Packager", specfile.Packager)
+
 
 class Package(specfile.Package):
-    __metaclass__ = autoxml.autoxml
-
-    t_Build = [ autoxml.Integer, autoxml.optional]
-    t_Distribution = [ autoxml.String, autoxml.mandatory]
-    t_DistributionRelease = [ autoxml.String, autoxml.mandatory]
-    t_Architecture = [ autoxml.String, autoxml.mandatory]
-    t_InstalledSize = [ autoxml.Long, autoxml.mandatory]
-    t_PackageSize = [ autoxml.Long, autoxml.optional]
-    t_PackageHash = [ autoxml.String, autoxml.optional, "SHA1Sum" ]
-    t_PackageURI = [ autoxml.String, autoxml.optional]
-    t_DeltaPackages = [ [Delta], autoxml.optional]
-    t_PackageFormat = [ autoxml.String, autoxml.optional]
-
-    t_Source = [ Source, autoxml.optional]
+    build = autoxml.Tag("Build", autoxml.optional)
+    distribution = autoxml.Tag("Distribution")
+    distributionRelease = autoxml.Tag("DistributionRelease")
+    architecture = autoxml.Tag("Architecture")
+    installedSize = autoxml.Tag("InstalledSize")
+    packageSize = autoxml.Tag("PackageSize", autoxml.optional)
+    packageHash = autoxml.Tag("SHA1Sum", autoxml.optional)
+    packageURI = autoxml.Tag("PackageURI", autoxml.optional)
+    deltaPackages = autoxml.Tag("DeltaPackages", autoxml.optional)
+    packageFormat = autoxml.Tag("PackageFormat", autoxml.optional)
+    source = autoxml.Tag("Source", autoxml.optional, Source)
 
     def get_delta(self, buildFrom):
         for delta in self.deltaPackages:
@@ -65,7 +63,11 @@ class Package(specfile.Package):
         else:
             return None
 
-    def decode_hook(self, node, errs, where):
+    def validate(self, ctx):
+        self.build = int(self.build)
+        self.installedSize = long(self.installedSize)
+        self.packageSize = long(self.packageSize)
+        
         self.version = self.history[0].version
         self.release = self.history[0].release
 
@@ -77,16 +79,13 @@ class Package(specfile.Package):
             (self.architecture, self.installedSize)
         return s
 
-class MetaData(xmlfile.XmlFile):
+
+class MetaData((autoxml.AutoXML)):
     """Package metadata. Metadata is composed of Specfile and various
     other information. A metadata has two parts, Source and Package."""
-
-    __metaclass__ = autoxml.autoxml
-
-    tag = "PISI"
-
-    t_Source = [ Source, autoxml.mandatory]
-    t_Package = [ Package, autoxml.mandatory]
+    
+    source = autoxml.Tag("Source", Source)
+    package = autoxml.Tag("Package", Package)
     #t_History = [ [Update], autoxml.mandatory]
 
     def from_spec(self, src, pkg, history):

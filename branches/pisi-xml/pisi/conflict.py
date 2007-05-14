@@ -18,20 +18,17 @@ _ = __trans.ugettext
 
 import pisi.context as ctx
 import pisi.version
-import pisi.pxml.autoxml as autoxml
+import autoxml
 import pisi.itembyrepodb
 
 class Conflict:
-
-    __metaclass__ = autoxml.autoxml
-
-    s_Package = [autoxml.String, autoxml.mandatory]
-    a_version = [autoxml.String, autoxml.optional]
-    a_versionFrom = [autoxml.String, autoxml.optional]
-    a_versionTo = [autoxml.String, autoxml.optional]
-    a_release = [autoxml.String, autoxml.optional]
-    a_releaseFrom = [autoxml.String, autoxml.optional]
-    a_releaseTo = [autoxml.String, autoxml.optional]
+    package     = autoxml.CharacterData()
+    version     = autoxml.Attribute("version", autoxml.optional)
+    versionFrom = autoxml.Attribute("versionFrom", autoxml.optional)
+    versionTo   = autoxml.Attribute("versionTo", autoxml.optional)
+    release     = autoxml.Attribute("release", autoxml.optional)
+    releaseFrom = autoxml.Attribute("releaseFrom", autoxml.optional)
+    releaseTo   = autoxml.Attribute("releaseTo", autoxml.optional)
 
     def __str__(self):
         s = self.package

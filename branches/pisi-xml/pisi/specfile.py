@@ -24,8 +24,7 @@ _ = __trans.ugettext
 import os.path
 
 # pisi modules
-import pisi.pxml.xmlfile as xmlfile
-import pisi.pxml.autoxml as autoxml
+import autoxml
 import pisi.context as ctx
 import pisi.dependency
 import pisi.conflict
@@ -36,25 +35,21 @@ import pisi.util as util
 class Error(pisi.Error):
     pass
 
-__metaclass__ = autoxml.autoxml
-
-class Packager:
-
-    t_Name = [autoxml.Text, autoxml.mandatory]
-    t_Email = [autoxml.String, autoxml.mandatory]
+class Packager(autoxml.AutoXML):
+    name  = autoxml.Tag("Name")
+    email = autoxml.Tag("Email")
 
     def __str__(self):
         s = "%s <%s>" % (self.name, self.email)
         return s
 
 
-class AdditionalFile:
-
-    s_Filename = [autoxml.String, autoxml.mandatory]
-    a_target = [autoxml.String, autoxml.mandatory]
-    a_permission = [autoxml.String, autoxml.optional]
-    a_owner = [autoxml.String, autoxml.optional]
-    a_group = [autoxml.String, autoxml.optional]
+class AdditionalFile(autoxml.AutoXML):
+    filename   = autoxml.CharacterData()
+    target     = autoxml.Attribute("target")
+    owner      = autoxml.Attribute("owner", autoxml.optional)
+    group      = autoxml.Attribute("group", autoxml.optional)
+    permission = autoxml.Attribute("permission", autoxml.optional)
 
     def __str__(self):
         s = "%s -> %s " % (self.filename, self.target)
@@ -62,16 +57,17 @@ class AdditionalFile:
             s += '(%s)' % self.permission
         return s
 
-class Patch:
-
-    s_Filename = [autoxml.String, autoxml.mandatory]
-    a_compressionType = [autoxml.String, autoxml.optional]
-    a_level = [autoxml.Integer, autoxml.optional]
-
-    #FIXME: what's the cleanest way to give a default value for reading level?
-    #def decode_hook(self, node, errs, where):
-    #    if self.level == None:
-    #        self.level = 0
+class Patch(autoxml.AutoXML):
+    filename    = autoxml.CharacterData()
+    compression = autoxml.Attribute("compressionType", autoxml.optional)
+    level       = autoxml.Attribute("level", autoxml.optional)
+    target      = autoxml.Attribute("target", autoxml.optional)
+    
+    def validate(self, ctx):
+        if self.level:
+            self.level = int(self.level)
+        else:
+            self.level = 0
 
     def __str__(self):
         s = self.filename
@@ -82,15 +78,14 @@ class Patch:
         return s
 
 
-class Update:
-
-    a_release = [autoxml.String, autoxml.mandatory]
-    a_type = [autoxml.String, autoxml.optional]
-    t_Date = [autoxml.String, autoxml.mandatory]
-    t_Version = [autoxml.String, autoxml.mandatory]
-    t_Comment = [autoxml.String, autoxml.optional]
-    t_Name = [autoxml.Text, autoxml.optional]
-    t_Email = [autoxml.String, autoxml.optional]
+class Update(autoxml.AutoXML):
+    release = autoxml.Attribute("release")
+    type    = autoxml.Attribute("type", autoxml.optional, ("security", "bug"))
+    date    = autoxml.Tag("Date")
+    version = autoxml.Tag("Version")
+    name    = autoxml.Tag("Name")
+    email   = autoxml.Tag("Email")
+    comment = autoxml.Tag("Comment")
 
     def __str__(self):
         s = self.date
@@ -101,11 +96,21 @@ class Update:
         return s
 
 
-class Path:
-
-    s_Path = [autoxml.String, autoxml.mandatory]
-    a_fileType =  [autoxml.String, autoxml.optional]
-    a_permanent =  [autoxml.String, autoxml.optional]
+class Path(autoxml.AutoXML):
+    filetypes = (
+        "executable",
+        "library",
+        "data",
+        "config",
+        "doc",
+        "man",
+        "info",
+        "localedata",
+        "header",
+    )
+    path      = autoxml.CharacterData()
+    filetype  = autoxml.Attribute("fileType", filetypes)
+    permanent = autoxml.Attribute("permanent", autoxml.optional, ("true", "false"))
 
     def __str__(self):
         s = self.path
@@ -113,10 +118,9 @@ class Path:
         return s
 
 
-class ComarProvide:
-
-    s_om = [autoxml.String, autoxml.mandatory]
-    a_script = [autoxml.String, autoxml.mandatory]
+class ComarProvide(autoxml.AutoXML):
+    om     = autoxml.CharacterData()
+    script = autoxml.Attribute("script")
 
     def __str__(self):
         # FIXME: descriptive enough?
@@ -124,13 +128,12 @@ class ComarProvide:
         s += ' (' + self.om + ')'
         return s
 
-class Archive:
+class Archive(autoxml.AutoXML):
+    uri     = autoxml.CharacterData()
+    type    = autoxml.Attribute("type")
+    sha1sum = autoxml.Attribute("sha1sum")
 
-    s_uri = [ autoxml.String, autoxml.mandatory ]
-    a_type =[ autoxml.String, autoxml.mandatory ]
-    a_sha1sum =[ autoxml.String, autoxml.mandatory ]
-
-    def decode_hook(self, node, errs, where):
+    def validate(self, ctx):
         self.name = os.path.basename(self.uri)
 
     def __str__(self):
@@ -138,42 +141,45 @@ class Archive:
         return s
 
 
-class Source:
+class Source(autoxml.AutoXML):
+    name        = autoxml.Tag("Name")
+    homepage    = autoxml.Tag("Homepage")
+    packager    = autoxml.Tag("Packager", Packager)
+    summary     = autoxml.TagLocalized("Summary")
+    description = autoxml.TagLocalized("Description", autoxml.optional)
+    isa         = autoxml.Tag("IsA", autoxml.optional, autoxml.multiple)
+    partOf      = autoxml.Tag("PartOf", autoxml.optional)
+    icon        = autoxml.Tag("Icon", autoxml.optional)
+    license     = autoxml.Tag("License", autoxml.multiple)
+    archive     = autoxml.Tag("Archive", Archive)
+    patches     = autoxml.TagCollection("Patches", "Patch", Patch, autoxml.optional)
+    build_deps  = autoxml.TagCollection("BuildDependencies","Dependency", pisi.dependency.Dependency, autoxml.optional)
+    # Following are found in the index, not in pspecs
+    version     = autoxml.Tag("Version", autoxml.optional)
+    release     = autoxml.Tag("Release", autoxml.optional)
+    sourceURI   = autoxml.Tag("SourceURI", autoxml.optional)
 
-    t_Name = [autoxml.String, autoxml.mandatory]
-    t_Homepage = [autoxml.String, autoxml.optional]
-    t_Packager = [Packager, autoxml.mandatory]
-    t_License = [ [autoxml.String], autoxml.mandatory]
-    t_IsA = [ [autoxml.String], autoxml.optional]
-    t_PartOf = [autoxml.String, autoxml.optional]
-    t_Summary = [autoxml.LocalText, autoxml.mandatory]
-    t_Description = [autoxml.LocalText, autoxml.optional]
-    t_Icon = [ autoxml.String, autoxml.optional]
-    t_Archive = [Archive, autoxml.mandatory ]
-    t_BuildDependencies = [ [pisi.dependency.Dependency], autoxml.optional]
-    t_Patches = [ [Patch], autoxml.optional]
-    t_Version = [ autoxml.String, autoxml.optional]
-    t_Release = [ autoxml.String, autoxml.optional]
-    t_SourceURI = [ autoxml.String, autoxml.optional ] # used in index
+
+class RuntimeDeps(autoxml.AutoXML):
+    packages   = autoxml.Tag("Dependency", pisi.dependency.Dependency, autoxml.optional, autoxml.multiple)
+    components = autoxml.Tag("Component", pisi.component.Component, autoxml.optional, autoxml.multiple)
 
 
-class Package:
-
-    t_Name = [ autoxml.String, autoxml.mandatory ]
-    t_Summary = [ autoxml.LocalText, autoxml.optional ]
-    t_Description = [ autoxml.LocalText, autoxml.optional ]
-    t_IsA = [ [autoxml.String], autoxml.optional]
-    t_PartOf = [autoxml.String, autoxml.optional]
-    t_License = [ [autoxml.String], autoxml.optional]
-    t_Icon = [ autoxml.String, autoxml.optional]
-    t_PackageDependencies = [ [pisi.dependency.Dependency], autoxml.optional, "RuntimeDependencies/Dependency"]
-    t_ComponentDependencies = [ [autoxml.String], autoxml.optional, "RuntimeDependencies/Component"]
-    t_Files = [ [Path], autoxml.optional]
-    t_Conflicts = [ [pisi.conflict.Conflict], autoxml.optional, "Conflicts/Package"]
-    t_ProvidesComar = [ [ComarProvide], autoxml.optional, "Provides/COMAR"]
-    #t_RequiresComar = [ [autoxml.String], autoxml.mandatory, "Requires/COMAR"]
-    t_AdditionalFiles = [ [AdditionalFile], autoxml.optional]
-    t_History = [ [Update], autoxml.optional]
+class Package(autoxml.AutoXML):
+    name           = autoxml.Tag("Name")
+    summary        = autoxml.TagLocalized("Summary", autoxml.optional)
+    description    = autoxml.TagLocalized("Description", autoxml.optional)
+    isa            = autoxml.Tag("IsA", autoxml.optional, autoxml.multiple)
+    partof         = autoxml.Tag("PartOf", autoxml.optional)
+    icon           = autoxml.Tag("Icon", autoxml.optional)
+    license        = autoxml.Tag("License", autoxml.optional, autoxml.multiple)
+    runtime_deps   = autoxml.Tag("RuntimeDependencies", RuntimeDeps, autoxml.optional)
+    files          = autoxml.TagCollection("Files", "Path", Path)
+    conflicts      = autoxml.TagCollection("Conflicts", "Package", autoxml.optional)
+    provides       = autoxml.TagCollection("Provides", "COMAR", ComarProvide, autoxml.optional)
+    additionals    = autoxml.TagCollection("AdditionalFiles",
+                                   "AdditionalFile", AdditionalFile, autoxml.optional)
+    history        = autoxml.TagCollection("History", "Update", Update, autoxml.optional)
 
     # FIXME: needed in build process, to distinguish dynamically generated debug packages.
     # find a better way to do this.
@@ -218,15 +224,13 @@ class Package:
         return s + '\n'
 
 
-class SpecFile(xmlfile.XmlFile):
-    __metaclass__ = autoxml.autoxml #needed when we specify a superclass
-
-    tag = "PISI"
-
-    t_Source = [ Source, autoxml.mandatory]
-    t_Packages = [ [Package], autoxml.mandatory, "Package"]
-    t_History = [ [Update], autoxml.mandatory]
-    t_Components = [ [component.Component], autoxml.optional, "Component"]
+class SpecFile(autoxml.AutoXML):
+    source   = autoxml.Tag("Source", Source)
+    packages = autoxml.Tag("Package", Package, autoxml.multiple)
+    history  = autoxml.TagCollection("History", "Update", Update)
+    
+    # FIXME: autoxml!!!!!!!!!!
+    #t_Components = [ [component.Component], autoxml.optional, "Component"]
 
     def getSourceVersion(self):
         return self.history[0].version

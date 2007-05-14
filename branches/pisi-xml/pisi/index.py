@@ -19,6 +19,8 @@ import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
+import autoxml
+
 import pisi
 import pisi.context as ctx
 import pisi.specfile as specfile
@@ -27,25 +29,19 @@ import pisi.packagedb as packagedb
 import pisi.sourcedb as sourcedb
 import pisi.util as util
 import pisi.package
-import pisi.pxml.xmlfile as xmlfile
 import pisi.file
-import pisi.pxml.autoxml as autoxml
 import pisi.component as component
 import pisi.specfile as specfile
 
 class Error(pisi.Error):
     pass
 
-class Index(xmlfile.XmlFile):
-    __metaclass__ = autoxml.autoxml
-
-    tag = "PISI"
-
-    t_Distribution = [ component.Distribution, autoxml.optional ]
-    t_Specs = [ [specfile.SpecFile], autoxml.optional, "SpecFile"]
-    t_Packages = [ [metadata.Package], autoxml.optional, "Package"]
+class Index(autoxml.AutoXML):
+    distribution = autoxml.Tag("Distribution", component.Distribution, autoxml.optional)
+    specs = autoxml.Tag("SpecFile", specfile.SpecFile, autoxml.multiple, autoxml.optional)
+    packages = autoxml.Tag("Package", metadata.Package, autoxml.multiple, autoxml.optional)
+    components = autoxml.Tag("Component", component.Component, autoxml.multiple, autoxml.optional)
     #t_Metadatas = [ [metadata.MetaData], autoxml.optional, "MetaData"]
-    t_Components = [ [component.Component], autoxml.optional, "Component"]
 
     def name(self):
         return self.distribution.name + self.distribution.repositoryname
