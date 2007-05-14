@@ -92,7 +92,7 @@ class Entry(QWidget):
         self.editWidget.editEntry(self.os_data)
     
     def slotDelete(self):
-        self.editWidget.deleteEntry(self.index)
+        self.editWidget.deleteEntry(self.index, self.title)
     
     def paintEvent(self, event):
         paint = QPainter(self)
