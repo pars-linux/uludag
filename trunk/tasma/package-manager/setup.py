@@ -26,7 +26,7 @@ kdedistutils.setup(
                         'src/RepoDialog.ui','src/HelpDialog.py','src/ComarIface.py','help', 'src/CustomEventListener.py',
                         'src/Basket.py','src/animation.js','src/layout.css','src/package-managerui.rc',
                         'src/Tray.py','src/BalloonMessage.py', 'src/BasketDialog.py', 'src/Settings.py',
-                        'src/Icons.py', 'src/LocaleData.py', 'src/PmDcop.py', 'src/pm-install.py',
+                        'src/Icons.py', 'src/LocaleData.py', 'src/PmDcop.py', 'src/pm-install.py', 'src/PackageCache.py',
                         ("/usr/kde/3.5/share/applications/kde/",["src/packagemanager.desktop"]),
                         ("/usr/kde/3.5/share/applnk/.hidden/",["src/packagemanager-helper.desktop"]),
                         ("/usr/kde/3.5/share/icons/hicolor/128x128/apps",["src/package-manager.png"]),
