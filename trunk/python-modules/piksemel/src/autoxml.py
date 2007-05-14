@@ -81,7 +81,7 @@ class Tag:
                 self.is_optional = True
             elif arg == multiple:
                 self.is_multiple = True
-            elif issubclass(arg, AutoPiksemel):
+            elif issubclass(arg, Base):
                 self.sub = arg
             else:
                 raise TypeError("Unknown argument '%s'" % arg)
@@ -147,7 +147,7 @@ class TagCollection:
         for arg in args:
             if arg == optional:
                 self.is_optional = True
-            elif issubclass(arg, AutoPiksemel):
+            elif issubclass(arg, Base):
                 self.sub = arg
             else:
                 raise TypeError("Unknown argument '%s'" % arg)
@@ -289,7 +289,7 @@ class AutoPiksemelContext:
         setattr(self.inst, varname, value)
 
 
-class AutoPiksemel:
+class Base:
     """Automatic XML <-> Class attributes converter with validation."""
     def __init__(self, root_tag=None, path=None, xmlstring=None):
         self.root_tag = root_tag
