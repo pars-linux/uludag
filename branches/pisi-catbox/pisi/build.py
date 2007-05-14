@@ -13,7 +13,6 @@
 
 # python standard library
 import os
-import sys
 import glob
 import copy
 import stat
@@ -441,7 +440,7 @@ class Builder:
                     ctx.ui.error(_("Sandbox violations!"))
         else:
             if mandatory:
-                Error, _("unable to call function from actions: %s") %func
+                raise Error(_("unable to call function from actions: %s") % func)
         
         os.chdir(curDir)
         return True
@@ -585,7 +584,7 @@ class Builder:
         except KeyError:
             pisi.util.strip_directory(install_dir)
 
-    def gen_metadata_xml(self, package, build_no=None):
+    def gen_metadata_xml(self, package):
         """Generate the metadata.xml file for build source.
 
         metadata.xml is composed of the information from specfile plus
@@ -688,15 +687,15 @@ class Builder:
                     ctx.ui.warning('Package file %s may be corrupt. Skipping.' % old_package_fn)
 
         for root, dirs, files in os.walk(ctx.config.compiled_packages_dir()):
-            for file in files:
-                locate_old_package(pisi.util.join_path(root,file))
+            for f in files:
+                locate_old_package(pisi.util.join_path(root,f))
 
         outdir=ctx.get_option('output_dir')
         if not outdir:
             outdir = '.'
-        for file in [pisi.util.join_path(outdir,entry) for entry in os.listdir(outdir)]:
-            if os.path.isfile(file):
-                locate_old_package(file)
+        for f in [pisi.util.join_path(outdir,entry) for entry in os.listdir(outdir)]:
+            if os.path.isfile(f):
+                locate_old_package(f)
 
         if not found:
             return (1, None)
