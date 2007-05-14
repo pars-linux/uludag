@@ -16,6 +16,7 @@
 
 static iksparser *j_parser;
 static iksid *j_user;
+static int authorized;
 
 static void
 on_log (void *ptr, const char *data, size_t size, int is_incoming)
@@ -31,13 +32,41 @@ on_stream (void *ptr, int type, iks *node)
 
 	switch (type) {
 		case IKS_NODE_START:
-			x = iks_make_auth (j_user, prefs.pass, iks_find_attrib (node, "id"));
+			/* x = iks_make_auth (j_user, prefs.pass, iks_find_attrib (node, "id"));
 			iks_insert_attrib (x, "id", "auth");
 			iks_send (j_parser, x);
-			iks_delete (x);
+			iks_delete (x); */
 			break;
 
 		case IKS_NODE_NORMAL:
+			if (strcmp("stream:features", iks_name(node)) == 0) {
+				if (authorized) {
+					int features;
+					features = iks_stream_features(node);
+					if (features & IKS_STREAM_BIND) {
+						x = iks_make_resource_bind(j_user);
+						iks_send(j_parser, x);
+						iks_delete(x);
+					}
+					if (features & IKS_STREAM_SESSION) {
+						x = iks_make_session();
+						iks_insert_attrib(x, "id", "auth");
+						iks_send(j_parser, x);
+						iks_delete(x);
+					}
+				} else {
+					iks_start_sasl(j_parser, IKS_SASL_DIGEST_MD5, j_user->user, prefs.pass);
+				}
+				break;
+			} else if (strcmp("failure", iks_name(node)) == 0) {
+				log_event ("Hata: SASL başarısız!");
+				return IKS_HOOK;
+			} else if (strcmp("success", iks_name(node)) == 0) {
+				authorized = 1;
+				iks_send_header(j_parser, j_user->server);
+				break;
+			}
+		
 			pak = iks_packet (node);
 			if (pak->type == IKS_PAK_MESSAGE) {
 				// process incoming messages
@@ -92,6 +121,8 @@ jabber_connect (void)
 	}
 	log_event ("Bağlanmayı deniyorum (%s)", j_user->full);
 	iks_set_log_hook (j_parser, (iksLogHook *) on_log);
+
+	authorized = 0;
 
 	e = iks_connect_tcp (j_parser, j_user->server, IKS_JABBER_PORT);
 	switch (e) {
