@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-13 14:36+0300\n"
+"POT-Creation-Date: 2007-05-14 09:48+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -52,30 +52,26 @@ msgid "Kernel Options"
 msgstr "Çekirdek Seçenekleri"
 
 #: src/mainview.py:132
-msgid "Init Ramdrive"
-msgstr "Init Ramdrive"
+msgid "Initial Ramdisk"
+msgstr ""
 
 #: src/mainview.py:141
-msgid "Default boot entry"
+msgid "Set as default boot entry."
 msgstr "Öntanımlı açılış kaydı olarak ata."
 
-#: src/mainview.py:145
-msgid "Save this entry as default after a successfull boot."
-msgstr "Başarılı bir açılış sonrası bı kaydı varsayılan olarak ata."
-
-#: src/mainview.py:212
+#: src/mainview.py:200
 msgid "Are you sure you want to remove this entry?"
 msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
 
-#: src/mainview.py:212
+#: src/mainview.py:200
 msgid "Delete Entry"
 msgstr "Kaydı Sil"
 
-#: src/mainview.py:336
+#: src/mainview.py:322
 msgid "Bootloader configuration changed by another application."
 msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
 
-#: src/mainview.py:366
+#: src/mainview.py:350
 msgid "Failed"
 msgstr "Başarısız"
 

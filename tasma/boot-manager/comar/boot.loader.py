@@ -184,9 +184,12 @@ def setOption(key, value):
         grub.config.setOption(key, value)
     else:
         grub.config.unsetOption(key)
-    if key == "default" and value != "saved":
+    if key == "default":
         for index, entry in enumerate(grub.config.entries):
-            entry.unsetCommand("savedefault")
+            if value == "saved":
+                entry.setCommand("savedefault", "")
+            else:
+                entry.unsetCommand("savedefault")
     grub.release()
     notify("Boot.Loader.changed", "option")
     return "%s %s" % (key, value)
