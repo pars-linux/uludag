@@ -129,7 +129,7 @@ class widgetEditEntry(QWidget):
         self.fields["options"] = (self.labelOptions, self.editOptions)
         
         self.labelInitrd = QLabel(self)
-        self.labelInitrd.setText(i18n("Init Ramdrive"))
+        self.labelInitrd.setText(i18n("Initial Ramdisk"))
         layout.addWidget(self.labelInitrd, 5, 0)
         
         self.editInitrd = QLineEdit(self)
@@ -138,12 +138,8 @@ class widgetEditEntry(QWidget):
         self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
         
         self.checkDefault = QCheckBox(self)
-        self.checkDefault.setText(i18n("Default boot entry"))
+        self.checkDefault.setText(i18n("Set as default boot entry."))
         layout.addMultiCellWidget(self.checkDefault, 6, 6, 0, 1)
-        
-        self.checkSaved = QCheckBox(self)
-        self.checkSaved.setText(i18n("Save this entry as default after a successfull boot."))
-        layout.addMultiCellWidget(self.checkSaved, 7, 7, 0, 1)
         
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
         layout.addMultiCell(spacer, 8, 8, 0, 1)
@@ -165,13 +161,14 @@ class widgetEditEntry(QWidget):
         self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
         self.connect(self.buttonCancel, SIGNAL("clicked()"), self.slotExit)
-        self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
         
         self.resetEntry()
     
     def slotCheckSaved(self):
-        if not self.parent.widgetEntries.checkSaved.isChecked():
-            self.checkDefault.setEnabled(not self.checkSaved.isChecked())
+        if self.parent.widgetEntries.checkSaved.isChecked():
+            self.checkDefault.hide()
+        else:
+            self.checkDefault.show()
     
     def newEntry(self):
         self.resetEntry()
@@ -182,7 +179,6 @@ class widgetEditEntry(QWidget):
         systems = self.parent.systems
         
         self.checkDefault.setChecked(False)
-        self.checkSaved.setChecked(False)
         
         self.editTitle.setText(unicode(entry["title"]))
         
@@ -193,18 +189,10 @@ class widgetEditEntry(QWidget):
             if label in entry:
                 widgetEdit.setText(unicode(entry[label]))
         
-        if self.parent.widgetEntries.checkSaved.isChecked():
-            self.checkDefault.setEnabled(False)
-            if "default" in entry and entry["default"] == "saved":
-                self.checkSaved.setChecked(True)
-        else:
-            self.checkDefault.setEnabled(True)
-            if "default" in entry:
-                if entry["default"] != "saved":
-                    self.checkDefault.setChecked(True)
-                else:
-                    self.checkSaved.setChecked(True)
         self.slotCheckSaved()
+        
+        if "default" in entry and entry["default"] != "saved":
+            self.checkDefault.setChecked(True)
         
         self.parent.stack.raiseWidget(1)
     
@@ -262,7 +250,7 @@ class widgetEditEntry(QWidget):
     def slotSave(self):
         self.parent.widgetEntries.listEntries.setEnabled(False)
         default = "no"
-        if self.checkSaved.isChecked():
+        if self.parent.widgetEntries.checkSaved.isChecked():
             default = "saved"
         elif self.checkDefault.isChecked():
             default = "yes"
@@ -286,8 +274,6 @@ class widgetEditEntry(QWidget):
         else:
             method = "Boot.Loader.addEntry"
         self.link.call(method, args)
-        if default == "saved":
-            self.parent.widgetEntries.checkSaved.setChecked(True)
         self.slotExit()
     
     def slotExit(self):
