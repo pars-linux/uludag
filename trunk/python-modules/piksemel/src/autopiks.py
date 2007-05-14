@@ -102,7 +102,7 @@ class Tag:
                 c = self.sub()
                 old_inst = ctx.inst
                 ctx.inst = c
-                c._AutoPiksemel__autoPiksParse(ctx, tag)
+                c._autoPiksParse(ctx, tag)
                 ctx.inst = old_inst
                 vals.append(c)
             else:
@@ -173,7 +173,7 @@ class TagCollection:
                 c = self.sub()
                 old_inst = ctx.inst
                 ctx.inst = c
-                c._AutoPiksemel__autoPiksParse(ctx, tag)
+                c._autoPiksParse(ctx, tag)
                 ctx.inst = old_inst
                 vals.append(c)
             else:
@@ -306,14 +306,14 @@ class AutoPiksemel:
                 raise InvalidDocument(err)
             ctx = AutoPiksemelContext(self)
             ctx.doc = doc
-            self.__autoPiksParse(ctx, doc)
+            self._autoPiksParse(ctx, doc)
             if len(ctx.errors) > 0:
                 raise InvalidDocument("\n".join(ctx.errors))
     
-    def __autoPiksScan(self):
+    def _autoPiksScan(self):
         """Scan XML<->Class mappings and return indexed objects."""
         # Generated data is cached as a Class variable
-        defs = getattr(self.__class__, "__autoPiksDefs", None)
+        defs = getattr(self.__class__, "_autoPiksDefs", None)
         if not defs:
             members = inspect.getmembers(self.__class__)
             cdata = None
@@ -332,12 +332,12 @@ class AutoPiksemel:
             if cdata and len(tags) > 0:
                 raise TypeError("Class %s defined both CharacterData() and Tag()s" % self.__class__)
             defs = (cdata, attrs, tags)
-            setattr(self.__class__, "__autoPiksDefs", defs)
+            self.__class__._autoPiksDefs = defs
         return defs
     
-    def __autoPiksParse(self, ctx, doc):
+    def _autoPiksParse(self, ctx, doc):
         """Convert XML data to class attributes."""
-        cdata, attrs, tags = self.__autoPiksScan()
+        cdata, attrs, tags = self._autoPiksScan()
         # Check character data
         if cdata:
             cdata.parse(ctx, doc)
@@ -367,7 +367,7 @@ class AutoPiksemel:
             self.toString(doc)
             return doc.toPrettyString()
         
-        cdata, attrs, tags = self.__autoPiksScan()
+        cdata, attrs, tags = self._autoPiksScan()
         attrs = attrs.values()
         attrs.sort(key=lambda x: x.varname)
         tags = tags.values()
