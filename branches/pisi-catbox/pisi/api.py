@@ -90,6 +90,20 @@ def init(database = True, write = True,
         ctx.stderr = stderr
 
     # FIXME: something is wrong here... see __init__.py also. Why do we import pisi.api in __init__.py
+#Sistem Hatası: Program Sonlandırıldı.
+#exceptions.UnboundLocalError: local variable 'pisi' referenced before assignment
+#Genel yardım için lütfen 'pisi help' komutunu kullanınız.
+#Geri-iz:
+#  File "/usr/bin/pisi", line 89, in ?
+#    cli.run_command()
+#  File "/usr/lib/pardus/pisi/cli/pisicli.py", line 111, in run_command
+#    self.command.run()
+#  File "/usr/lib/pardus/pisi/cli/commands.py", line 1194, in run
+#    pisi.api.rebuild_db(ctx.get_option('files'))
+#  File "/usr/lib/pardus/pisi/api.py", line 539, in rebuild_db
+#    init(database=True, options=options, ui=ui, comar=comar)
+#  File "/usr/lib/pardus/pisi/api.py", line 93
+    import pisi
     ctx.config = pisi.config.Config(options)
 
     if signal_handling:

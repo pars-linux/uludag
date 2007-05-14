@@ -540,7 +540,33 @@ class Remove(AtomicOperation):
     def remove_db(self, txn):
         ctx.installdb.remove(self.package_name, txn)
         ctx.filesdb.remove_files(self.files, txn)
-        ctx.packagedb.remove_tracking_package(self.package_name, txn)
+#'PackageDB' object has no attribute 'remove_tracking_package'
+
+#Traceback (most recent call last))
+#  File "/usr/bin/pisi", line 89, in ?
+#    cli.run_command()
+#  File "/usr/lib/pardus/pisi/cli/pisicli.py", line 111, in run_command
+#    self.command.run()
+#  File "/usr/lib/pardus/pisi/cli/commands.py", line 676, in run
+#    pisi.api.install(packages, ctx.get_option('reinstall'))
+#  File "/usr/lib/pardus/pisi/api.py", line 558, in install
+#    return pisi.operations.install(*args, **kw)
+#  File "/usr/lib/pardus/pisi/operations.py", line 81, in install
+#    return install_pkg_files(packages)
+#  File "/usr/lib/pardus/pisi/operations.py", line 203, in install_pkg_files
+#    atomicoperations.install_single_file(dfn[x])
+#  File "/usr/lib/pardus/pisi/atomicoperations.py", line 433, in install_single_file
+#    Install(pkg_location).install(not upgrade)
+#  File "/usr/lib/pardus/pisi/atomicoperations.py", line 127, in install
+#    self.update_databases(txn)
+#  File "/usr/lib/pardus/pisi/atomicoperations.py", line 401, in update_databases
+#    self.remove_old.remove_db(txn)
+#  File "/usr/lib/pardus/pisi/atomicoperations.py", line 543, in remove_db
+#    ctx.packagedb.remove_tracking_package(self.package_name, txn)
+#AttributeError: 'PackageDB' object has no attribute 'remove_tracking_package'
+#Parçalama arızası
+        import pisi.packagedb
+        pisi.packagedb.remove_tracking_package(self.package_name, txn)
 
 
 def remove_single(package_name):
