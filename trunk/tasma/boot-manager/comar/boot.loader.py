@@ -1,4 +1,34 @@
-from grub import *
+from grub import grubEntry, grubConf
+
+# l10n
+
+LABEL_OTHER = {
+    "en": "Other",
+    "tr": "Diğer",
+}
+
+FAIL_TIMEOUT = {
+    "en": "Request timed out.",
+    "tr": "Talep zaman aşımına uğradı.",
+}
+
+FAIL_NOENTRY = {
+    "en": "No such entry.",
+    "tr": "Böyle bir kayıt bulunmuyor.",
+}
+
+# Grub parser configuration
+
+GRUB_CONF = "/boot/grub/grub.conf"
+
+TIMEOUT = 3.0
+MAX_ENTRIES = 3
+SYSTEMS = {
+    "linux": "Linux,root,kernel,initrd,options",
+    "windows": "Windows,root",
+    "other": "%s,root,kernel,initrd,options" % _(LABEL_OTHER),
+}
+
 
 def parseVersion(version):
     """Parses a kernel filename and returns kernel version and suffix. Returns False on failure."""
@@ -129,23 +159,6 @@ def importGrubEntry(entry):
 
 
 # Boot.Loader
-GRUB_CONF = "/boot/grub/grub.conf"
-TIMEOUT = 3.0
-MAX_ENTRIES = 3
-OPTIONS = ["default", "timeout", "splash"]
-
-LABEL_OTHER= {
-    "en": "Other",
-    "tr": "Diğer",
-    "fr": "Autre",
-    "it": "Altro",
-    "de": "Anderes",
-}
-SYSTEMS = {
-    "linux": "Linux,root,kernel,initrd,options",
-    "windows": "Windows,root",
-    "other": "%s,root,kernel,initrd,options" % _(LABEL_OTHER),
-}
 
 def listSystems():
     sys_list = []
@@ -153,95 +166,83 @@ def listSystems():
         sys_list.append("%s %s" % (key, values))
     return "\n".join(sys_list)
 
-def listOptions():
-    return "\n".join(OPTIONS)
-
-def getOption(key):
+def getOptions():
     try:
         grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
-        fail("Timeout")
-    if key in OPTIONS:
-        if key == "splash":
-            value = grub.config.getOption(key, "")
-        else:
-            value = grub.config.getOption(key, "0")
-        grub.release()
-        return "%s %s" % (key, value)
-    else:
-        grub.release()
-        fail("No such option")
+        fail(FAIL_TIMEOUT)
+    options = [
+        "default %s" % grub.config.getOption("default", "0"),
+        "timeout %s" % grub.config.getOption("timeout", "0"),
+    ]
+    if "password" in grub.config.options:
+        options.append("password yes")
+    grub.release()
+    return "\n".join(options)
 
-def setOption(key, value):
+def setOptions(default=None, timeout=None, password=None):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
-        fail("Timeout")
-    if key not in OPTIONS:
-        grub.release()
-        fail("No such option")
-    if value:
-        grub.config.setOption(key, value)
-    else:
-        grub.config.unsetOption(key)
-    if key == "default":
+        fail(FAIL_TIMEOUT)
+    if default != None:
+        grub.config.setOption("default", default)
         for index, entry in enumerate(grub.config.entries):
-            if value == "saved":
+            if default == "saved":
                 entry.setCommand("savedefault", "")
             else:
                 entry.unsetCommand("savedefault")
+    if timeout != None:
+        grub.config.setOption("timeout", timeout)
+    if password != None:
+        grub.config.setOption("password", md5crypt(password))
     grub.release()
     notify("Boot.Loader.changed", "option")
-    return "%s %s" % (key, value)
 
 def listEntries():
     try:
         grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
-        fail("Timeout")
+        fail(FAIL_TIMEOUT)
     entries = []
     for index, entry in enumerate(grub.config.entries):
         os_entry = importGrubEntry(entry)
         os_entry.insert(0, "index %s" % index)
         if not entry.getCommand("savedefault"):
-            if grub.config.getOption("default", 0) != "saved" and int(grub.config.getOption("default", 0)) == index:
-                os_entry.insert(0, "default True")
+            default_index = grub.config.getOption("default", "0")
+            if default_index != "saved" and int(default_index) == index:
+                os_entry.insert(0, "default yes")
         entries.append("\n".join(os_entry))
     grub.release()
     return "\n\n".join(entries)
 
-def getEntry(index):
-    try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
-    except IOError:
-        fail("Timeout")
-    entry = grub.config.getEntry(int(index))
-    os_entry = importGrubEntry(entry)
-    grub.release()
-    return "\n".join(os_entry)
-
-def removeEntry(index):
+def removeEntry(index, title):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
-        fail("Timeout")
+        fail(FAIL_TIMEOUT)
     index = int(index)
     if 0 <= index < len(grub.config.entries):
-        grub.config.removeEntry(grub.config.entries[index])
-        default_index = int(grub.config.options.get("default", 0))
-        if default_index == index and default_index > 0:
-            grub.config.setOption("default", default_index - 1)
+        entry = grub.config.entries[index]
+        if entry.title != title:
+            fail(FAIL_NOENTRY)
+        grub.config.removeEntry(entry)
+        default_index = grub.config.options.get("default", "0")
+        if default_index == index:
+            grub.config.setOption("default", "0")
         grub.release()
         notify("Boot.Loader.changed", "entry")
     else:
-        fail("No such entry")
+        fail(FAIL_NOENTRY)
 
-def addEntry(title, os_type, root, kernel=None, initrd=None, options=None, default="no"):
+def setEntry(title, os_type, root, kernel=None, initrd=None, options=None, default="no", index=None):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
-        fail("Timeout")
+        fail(FAIL_TIMEOUT)
+    
     entry = grubEntry(title)
+    
     if os_type not in SYSTEMS:
         os_type = "other"
     if os_type == "windows":
@@ -257,61 +258,31 @@ def addEntry(title, os_type, root, kernel=None, initrd=None, options=None, defau
             entry.setCommand("kernel", kernel)
     if initrd and "initrd" in SYSTEMS[os_type]:
         entry.setCommand("initrd", initrd)
-    grub.config.addEntry(entry)
-    index = grub.config.indexOf(entry)
+    
+    if index == None:
+        grub.config.addEntry(entry)
+    else:
+        index = int(index)
+        grub.config.entries[index] = entry
+    
     if default == "yes":
         grub.config.setOption("default", index)
     elif default == "saved":
-        entry.setCommand("savedefault", "")
         grub.config.setOption("default", "saved")
+        for index, entry in enumerate(grub.config.entries):
+            entry.setCommand("savedefault", "")
+    elif default == "no" and index != None:
+        default_index = grub.config.getOption("default", "0")
+        if default_index != "saved" and int(default_index) == index:
+            grub.config.setOption("default", "0")
     grub.release()
     notify("Boot.Loader.changed", "entry")
-
-def updateEntry(index, title, os_type, root, kernel=None, initrd=None, options=None, default="no"):
-    try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
-    except IOError:
-        fail("Timeout")
-    index = int(index)
-    if 0 <= index < len(grub.config.entries):
-        entry = grub.config.getEntry(index)
-        entry.title = title
-        if os_type not in SYSTEMS:
-            os_type = "other"
-        if os_type == "windows":
-            entry.setCommand("rootnoverify", grubDevice(root))
-            entry.setCommand("makeactive", "")
-            entry.setCommand("chainloader", "+1")
-        else:
-            entry.setCommand("root", grubDevice(root))
-        if kernel and "kernel" in SYSTEMS[os_type]:
-            if options and "options" in SYSTEMS[os_type]:
-                entry.setCommand("kernel", "%s %s" % (kernel, options))
-            else:
-                entry.setCommand("kernel", kernel)
-        if initrd and "initrd" in SYSTEMS[os_type]:
-            entry.setCommand("initrd", initrd)
-        if default == "yes":
-            grub.config.setOption("default", index)
-            entry.unsetCommand("savedefault")
-        elif default == "saved":
-            entry.setCommand("savedefault", "")
-            grub.config.setOption("default", "saved")
-        else:
-            entry.unsetCommand("savedefault")
-            default_index = grub.config.getOption("default", "0")
-            if default_index != "saved" and default_index == str(index):
-                grub.config.setOption("default", "0")
-        grub.release()
-        notify("Boot.Loader.changed", "entry")
-    else:
-        fail("No such entry")
 
 def updateKernelEntry(version, root=None):
     try:
         grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
-        fail("Timeout")
+        fail(FAIL_TIMEOUT)
     
     new_version, new_suffix = parseVersion("kernel-%s" % version)
     if not root:
