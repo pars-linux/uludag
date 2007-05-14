@@ -72,7 +72,7 @@ def multisplit(str, chars):
     """Split str with any of the chars."""
     l = [str]
     for c in chars:
-        l = concat(map(lambda x:x.split(c)), l)
+        l = concat(map(lambda x:x.split(c), l))
     return l
 
 def same(l):
