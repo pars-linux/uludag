@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-13 21:07+0300\n"
+"POT-Creation-Date: 2007-05-14 22:33+0300\n"
 "PO-Revision-Date: 2007-05-13 21:01+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -45,8 +45,7 @@ msgstr "Instal·lació del paquet <b>amsn</b>"
 msgid "Update"
 msgstr "Actualització"
 
-#: src/Tray.py:44 src/package-manager.py:273 src/package-manager.py:661
-#: src/package-manager.py:808
+#: src/Tray.py:44 src/package-manager.py:277 src/package-manager.py:673
 msgid "All"
 msgstr "Tot"
 
@@ -55,11 +54,11 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Hi ha <b>%1</b> actualitzacions disponibles!"
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
-#: src/package-manager.py:299
+#: src/package-manager.py:303
 msgid "Select all packages in this category"
 msgstr "Selecciona tots els paquets d'aquesta categoria"
 
-#: src/CustomEventListener.py:48 src/package-manager.py:301
+#: src/CustomEventListener.py:48 src/package-manager.py:305
 msgid "Reverse package selections"
 msgstr "Inverteix les seleccions de paquets"
 
@@ -152,7 +151,7 @@ msgstr "Grandària total: <b>%1</b>"
 msgid "Size: "
 msgstr "Grandària: "
 
-#: src/HelpDialog.py:28 src/package-manager.py:941
+#: src/HelpDialog.py:28 src/package-manager.py:952
 msgid "Package Manager Help"
 msgstr "Ajut per al gestor de programari"
 
@@ -176,7 +175,7 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Error de Pisi"
 
-#: src/Preferences.py:178 src/package-manager.py:737
+#: src/Preferences.py:178 src/package-manager.py:749
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Els canvis del repositori s'estan efectuant</b>"
 
@@ -224,59 +223,59 @@ msgstr "No puc connectar-me al dimoni Comar"
 msgid "You do not have permission to do this operation."
 msgstr "Ho sent. No tens permís per a realitzar l'operació."
 
-#: src/package-manager.py:47
+#: src/package-manager.py:48
 msgid "GUI for PiSi package manager"
 msgstr "Interfície gràfica del gestor de paquets PiSi"
 
-#: src/package-manager.py:55 src/package-manager.py:867
+#: src/package-manager.py:56 src/package-manager.py:878
 msgid "Package Manager"
 msgstr "Gestor de programari"
 
-#: src/package-manager.py:58
+#: src/package-manager.py:59
 msgid "Developer and Current Maintainer"
 msgstr "Desenvolupador i encarregat actual"
 
-#: src/package-manager.py:59
+#: src/package-manager.py:60
 msgid "Original Author"
 msgstr "Autor original"
 
-#: src/package-manager.py:60
+#: src/package-manager.py:61
 msgid "CSS/JS Meister"
 msgstr "Mestre CSS/JS"
 
-#: src/package-manager.py:61
+#: src/package-manager.py:62
 msgid "GUI Design & Usability"
 msgstr "Disseny d'interfície gràfica i usabilitat"
 
-#: src/package-manager.py:62
+#: src/package-manager.py:63
 msgid "PiSi Authors"
 msgstr "Autors del PiSi"
 
-#: src/package-manager.py:62
+#: src/package-manager.py:63
 msgid "Authors of PiSi API"
 msgstr "Autors de l'API del PiSi"
 
-#: src/package-manager.py:113
+#: src/package-manager.py:115
 msgid "Search: "
 msgstr "Cerca:"
 
-#: src/package-manager.py:117
+#: src/package-manager.py:119
 msgid "Show basket"
 msgstr "Què hi ha al cistell?"
 
-#: src/package-manager.py:122 src/package-manager.py:229
+#: src/package-manager.py:124 src/package-manager.py:232
 msgid "Install Package(s)"
 msgstr "Instal·la el(s) paquet(s)"
 
-#: src/package-manager.py:143
+#: src/package-manager.py:145
 msgid "Components"
 msgstr "Components"
 
-#: src/package-manager.py:171
+#: src/package-manager.py:173
 msgid "Loading Package List..."
 msgstr "Lectura de la llista de programari..."
 
-#: src/package-manager.py:207
+#: src/package-manager.py:209
 msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
@@ -284,68 +283,68 @@ msgstr ""
 "S'escau fer una actualització de la base de dades del gestor del programari. "
 "Per a això, necessites una connexió de xarxa."
 
-#: src/package-manager.py:208
+#: src/package-manager.py:210
 msgid "Package database is empty"
 msgstr "La base de dades del programari està buida"
 
-#: src/package-manager.py:245
+#: src/package-manager.py:248
 msgid "Remove Package(s)"
 msgstr "Esborra el(s) paquet(s)"
 
-#: src/package-manager.py:271
+#: src/package-manager.py:275
 msgid "Upgrade Package(s)"
 msgstr "Actualitza el(s) paquet(s)"
 
-#: src/package-manager.py:363
+#: src/package-manager.py:367
 msgid "N\\A"
 msgstr "N\\A"
 
-#: src/package-manager.py:381
+#: src/package-manager.py:385
 msgid "Description: "
 msgstr "Descripció:"
 
-#: src/package-manager.py:381
+#: src/package-manager.py:385
 msgid "Version: "
 msgstr "Versió:"
 
-#: src/package-manager.py:382
+#: src/package-manager.py:386
 msgid "Package Size: "
 msgstr "Grandària del paquet:"
 
-#: src/package-manager.py:382
+#: src/package-manager.py:386
 msgid "Homepage: "
 msgstr "Plana principal:"
 
-#: src/package-manager.py:397 src/package-manager.py:669
+#: src/package-manager.py:401 src/package-manager.py:681
 msgid "Search Results"
 msgstr "Resultats de la cerca"
 
-#: src/package-manager.py:430
+#: src/package-manager.py:434
 msgid "Currently your basket is empty."
 msgstr "A hores d'ara el teu cistell està buit."
 
-#: src/package-manager.py:433 src/package-manager.py:441
+#: src/package-manager.py:437 src/package-manager.py:445
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Ara tens <b>%1</b> paquet(s) seleccionat(s) amb una grandària total de <b>%"
 "2</b>"
 
-#: src/package-manager.py:436
+#: src/package-manager.py:440
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr ""
 "amb <b>%3</b> dependències addicionals amb una grandària total de <b>%4</b>"
 
-#: src/package-manager.py:438 src/package-manager.py:446
+#: src/package-manager.py:442 src/package-manager.py:450
 msgid "in your basket."
 msgstr "al teu cistell."
 
-#: src/package-manager.py:444
+#: src/package-manager.py:448
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr ""
 "amb <b>%3</b> dependències invertides amb un total de<b>%4</b> de grandària "
 
-#: src/package-manager.py:475
+#: src/package-manager.py:479
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
@@ -353,19 +352,19 @@ msgstr ""
 "Els paquets seleccionats [%1] estan en conflicte. Els paquets no poden "
 "instal·lar-se ensems."
 
-#: src/package-manager.py:476 src/package-manager.py:486
+#: src/package-manager.py:480 src/package-manager.py:490
 msgid "Conflict Error"
 msgstr "Error (conflicte)"
 
-#: src/package-manager.py:482
+#: src/package-manager.py:486
 msgid "The following packages conflicts:\n"
 msgstr "Els següents paquets estan en conflicte:\n"
 
-#: src/package-manager.py:484
+#: src/package-manager.py:488
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 està en conflicte amb: [%2]\n"
 
-#: src/package-manager.py:485
+#: src/package-manager.py:489
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
@@ -373,16 +372,16 @@ msgstr ""
 "\n"
 "Esborre els següents paquets en conflicte?"
 
-#: src/package-manager.py:500 src/package-manager.py:561
-#: src/package-manager.py:690
+#: src/package-manager.py:504 src/package-manager.py:565
+#: src/package-manager.py:702
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Instal·lació del(s) paquet(s)</b>"
 
-#: src/package-manager.py:510
+#: src/package-manager.py:514
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
 msgstr "<qt>Has seleccionat <b>%1</b> paquet(s) per a <b>instal·lar</b>."
 
-#: src/package-manager.py:513
+#: src/package-manager.py:517
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
@@ -390,15 +389,15 @@ msgstr ""
 "Els paquets seleccionats requereixen també la instal·lació de <b>%1</b> "
 "dependències addicionals."
 
-#: src/package-manager.py:514
+#: src/package-manager.py:518
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
 msgstr "<br><br>Vaig a <b>instal·lar</b> un total de <b>%1</b> paquets."
 
-#: src/package-manager.py:517
+#: src/package-manager.py:521
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
 msgstr "<qt>Has seleccionat <b>%1</b> paquet(s) per a <b>actualitzar</b>."
 
-#: src/package-manager.py:520
+#: src/package-manager.py:524
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
@@ -406,15 +405,15 @@ msgstr ""
 "Amb els paquets seleccionats, <b>%1</b> dependències addicionals també "
 "<b>s'actualizaran</b>."
 
-#: src/package-manager.py:521
+#: src/package-manager.py:525
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
 msgstr "<br><br>Un total de <b>%1</b> paquets <b>s'actualitzaran</b>."
 
-#: src/package-manager.py:524
+#: src/package-manager.py:528
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
 msgstr "<qt>Has seleccionat <b>%1</b> paquet(s) per a <b>esborrar</b>."
 
-#: src/package-manager.py:527
+#: src/package-manager.py:531
 msgid ""
 " Selected packages have reverse dependencies. Because the reverse "
 "dependencies of the selected packages needs those packages to work; by "
@@ -430,63 +429,63 @@ msgstr ""
 "els paquets que vols esborrar. Si esborres dependències inverses potser que "
 "tingues problemes després amb l'estabilitat del sistema."
 
-#: src/package-manager.py:529
+#: src/package-manager.py:533
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
 msgstr "<br><br>Un total de <b>%1</b> paquets <b>s'esborraran</b>."
 
-#: src/package-manager.py:531
+#: src/package-manager.py:535
 msgid "<br>Do you want to continue?</qt>"
 msgstr "<br>Que vols continuar?</qt>"
 
-#: src/package-manager.py:553
+#: src/package-manager.py:557
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Esborrem el(s) paquet(s)</b>"
 
-#: src/package-manager.py:570 src/package-manager.py:692
+#: src/package-manager.py:574 src/package-manager.py:704
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Actualitzem el(s) paquet(s)</b>"
 
-#: src/package-manager.py:653
+#: src/package-manager.py:665
 msgid "Others"
 msgstr "D'altres"
 
-#: src/package-manager.py:694 src/CommonText.py:15
+#: src/package-manager.py:706 src/CommonText.py:15
 msgid "downloading"
 msgstr "estic descarregant"
 
-#: src/package-manager.py:740 src/package-manager.py:833
+#: src/package-manager.py:752 src/package-manager.py:844
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Actualizació del repositori</b>"
 
-#: src/package-manager.py:741
+#: src/package-manager.py:753
 msgid "Downloading package list of %1"
 msgstr "Estic descarregant la llista de paquets de %1"
 
-#: src/package-manager.py:746
+#: src/package-manager.py:758
 msgid "Confirm"
 msgstr "Confirma"
 
-#: src/package-manager.py:915
+#: src/package-manager.py:926
 msgid "Show Installed Packages"
 msgstr "Mostra els paquets instal·lats"
 
-#: src/package-manager.py:918
+#: src/package-manager.py:929
 msgid "Show New Packages"
 msgstr "Mostra els paquets nous"
 
-#: src/package-manager.py:920
+#: src/package-manager.py:931
 msgid "Show Upgradable Packages"
 msgstr "Mostra els paquets per què hi haja actualitzacions"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:965
 msgid "Package to install"
 msgstr "Paquets a instal·lar"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:965
 msgid "Show main window on startup"
 msgstr "Mostra la finestra principal en engegar"
 
-#: src/package-manager.py:957
+#: src/package-manager.py:968
 msgid "Package Manager is already running!"
 msgstr "Ho sent. El gestor del programari ja està en marxa."
 
@@ -578,7 +577,8 @@ msgstr ""
 "l'escriptori"
 
 #: src/PreferencesDialog.py:207
-msgid "Enable &interval upgradable package checking"
+#, fuzzy
+msgid "Enable &periodic update check"
 msgstr "Habilita &la comprovació periòdica d'actualitzacions"
 
 #: src/PreferencesDialog.py:208

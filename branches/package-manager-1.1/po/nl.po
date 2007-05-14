@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-13 21:07+0300\n"
+"POT-Creation-Date: 2007-05-14 22:33+0300\n"
 "PO-Revision-Date: 2007-05-13 21:06+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -48,8 +48,7 @@ msgstr "Installeert nu <b>amsn</b> pakket"
 msgid "Update"
 msgstr "Update"
 
-#: src/Tray.py:44 src/package-manager.py:273 src/package-manager.py:661
-#: src/package-manager.py:808
+#: src/Tray.py:44 src/package-manager.py:277 src/package-manager.py:673
 msgid "All"
 msgstr "Alles"
 
@@ -58,11 +57,11 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Er zijn <b>%1</b> updates beschikbaar!"
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
-#: src/package-manager.py:299
+#: src/package-manager.py:303
 msgid "Select all packages in this category"
 msgstr "Selecteer alle pakketten in deze categorie"
 
-#: src/CustomEventListener.py:48 src/package-manager.py:301
+#: src/CustomEventListener.py:48 src/package-manager.py:305
 msgid "Reverse package selections"
 msgstr "Keer pakketselectie om"
 
@@ -159,7 +158,7 @@ msgstr "Totale grootte: <b>%1</b>"
 msgid "Size: "
 msgstr "Grootte: "
 
-#: src/HelpDialog.py:28 src/package-manager.py:941
+#: src/HelpDialog.py:28 src/package-manager.py:952
 msgid "Package Manager Help"
 msgstr "Pakketbeheer hulp"
 
@@ -183,7 +182,7 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Pisi fout"
 
-#: src/Preferences.py:178 src/package-manager.py:737
+#: src/Preferences.py:178 src/package-manager.py:749
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Toepassen veranderingen repository</b>"
 
@@ -232,60 +231,60 @@ msgstr "Kan geen verbinding maken met Comar daemon"
 msgid "You do not have permission to do this operation."
 msgstr "U heeft geen toestemming voor deze handeling."
 
-#: src/package-manager.py:47
+#: src/package-manager.py:48
 msgid "GUI for PiSi package manager"
 msgstr "Grafische gebruikersinterface voor PiSi pakketbeheer"
 
-#: src/package-manager.py:55 src/package-manager.py:867
+#: src/package-manager.py:56 src/package-manager.py:878
 msgid "Package Manager"
 msgstr "Pakketbeheer"
 
-#: src/package-manager.py:58
+#: src/package-manager.py:59
 msgid "Developer and Current Maintainer"
 msgstr "Ontwikkelaar en huidige handhaver"
 
-#: src/package-manager.py:59
+#: src/package-manager.py:60
 msgid "Original Author"
 msgstr "Originele auteur"
 
-#: src/package-manager.py:60
+#: src/package-manager.py:61
 msgid "CSS/JS Meister"
 msgstr "CSS/JS Meister"
 
-#: src/package-manager.py:61
+#: src/package-manager.py:62
 msgid "GUI Design & Usability"
 msgstr "Ontwerp en functionaliteit grafische gebruikersinterface"
 
-#: src/package-manager.py:62
+#: src/package-manager.py:63
 msgid "PiSi Authors"
 msgstr "PiSi auteurs"
 
-#: src/package-manager.py:62
+#: src/package-manager.py:63
 msgid "Authors of PiSi API"
 msgstr "Auteurs van PiSi API"
 
-#: src/package-manager.py:113
+#: src/package-manager.py:115
 msgid "Search: "
 msgstr "Zoek: "
 
 # mand tonen
-#: src/package-manager.py:117
+#: src/package-manager.py:119
 msgid "Show basket"
 msgstr "Toon mandje"
 
-#: src/package-manager.py:122 src/package-manager.py:229
+#: src/package-manager.py:124 src/package-manager.py:232
 msgid "Install Package(s)"
 msgstr "Installeer pakket(ten)"
 
-#: src/package-manager.py:143
+#: src/package-manager.py:145
 msgid "Components"
 msgstr "Componenten"
 
-#: src/package-manager.py:171
+#: src/package-manager.py:173
 msgid "Loading Package List..."
 msgstr "Laden pakketlijst..."
 
-#: src/package-manager.py:207
+#: src/package-manager.py:209
 msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
@@ -293,71 +292,71 @@ msgstr ""
 "Pakketbeheer dient de pakketdatabase bij te werken. U heeft hiervoor een "
 "netwerkverbinding nodig."
 
-#: src/package-manager.py:208
+#: src/package-manager.py:210
 msgid "Package database is empty"
 msgstr "Pakketdatabase is leeg"
 
-#: src/package-manager.py:245
+#: src/package-manager.py:248
 msgid "Remove Package(s)"
 msgstr "Verwijder pakket(ten)"
 
-#: src/package-manager.py:271
+#: src/package-manager.py:275
 msgid "Upgrade Package(s)"
 msgstr "Opwaarderen pakket(ten)"
 
-#: src/package-manager.py:363
+#: src/package-manager.py:367
 msgid "N\\A"
 msgstr "N\\B"
 
-#: src/package-manager.py:381
+#: src/package-manager.py:385
 msgid "Description: "
 msgstr "Beschrijving: "
 
-#: src/package-manager.py:381
+#: src/package-manager.py:385
 msgid "Version: "
 msgstr "Versie: "
 
-#: src/package-manager.py:382
+#: src/package-manager.py:386
 msgid "Package Size: "
 msgstr "Pakketgrootte: "
 
-#: src/package-manager.py:382
+#: src/package-manager.py:386
 msgid "Homepage: "
 msgstr "Homepage: "
 
-#: src/package-manager.py:397 src/package-manager.py:669
+#: src/package-manager.py:401 src/package-manager.py:681
 msgid "Search Results"
 msgstr "Zoekresultaten"
 
 # mand tonen
-#: src/package-manager.py:430
+#: src/package-manager.py:434
 msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
-#: src/package-manager.py:433 src/package-manager.py:441
+#: src/package-manager.py:437 src/package-manager.py:445
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
 
-#: src/package-manager.py:436
+#: src/package-manager.py:440
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr ""
 "met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
 
 # mand tonen
-#: src/package-manager.py:438 src/package-manager.py:446
+#: src/package-manager.py:442 src/package-manager.py:450
 msgid "in your basket."
 msgstr "in uw mandje."
 
-#: src/package-manager.py:444
+#: src/package-manager.py:448
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr ""
 "met<b>%3</b> omgekeerde afhankelijkheden met een totale grootte van <b>%4</"
 "b> "
 
-#: src/package-manager.py:475
+#: src/package-manager.py:479
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
@@ -365,19 +364,19 @@ msgstr ""
 "Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten "
 "kunnen niet samen geïnstalleerd worden."
 
-#: src/package-manager.py:476 src/package-manager.py:486
+#: src/package-manager.py:480 src/package-manager.py:490
 msgid "Conflict Error"
 msgstr "Conflict fout"
 
-#: src/package-manager.py:482
+#: src/package-manager.py:486
 msgid "The following packages conflicts:\n"
 msgstr "De volgende pakketten zijn in conflict:\n"
 
-#: src/package-manager.py:484
+#: src/package-manager.py:488
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 in conflict met: [%2]\n"
 
-#: src/package-manager.py:485
+#: src/package-manager.py:489
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
@@ -385,17 +384,17 @@ msgstr ""
 "\n"
 "Verwijder de volgende conflicterende pakketten?"
 
-#: src/package-manager.py:500 src/package-manager.py:561
-#: src/package-manager.py:690
+#: src/package-manager.py:504 src/package-manager.py:565
+#: src/package-manager.py:702
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Installeren pakket(ten)</b>"
 
-#: src/package-manager.py:510
+#: src/package-manager.py:514
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
 msgstr ""
 "<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
 
-#: src/package-manager.py:513
+#: src/package-manager.py:517
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
@@ -403,16 +402,16 @@ msgstr ""
 "Met de geselecteerde pakketten; zullen ook <b>%1</b> extra afhankelijkheden "
 "worden <b>geïnstalleerd</b>."
 
-#: src/package-manager.py:514
+#: src/package-manager.py:518
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
 msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>geïnstalleerd</b>."
 
-#: src/package-manager.py:517
+#: src/package-manager.py:521
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
 msgstr ""
 "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
 
-#: src/package-manager.py:520
+#: src/package-manager.py:524
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
@@ -420,16 +419,16 @@ msgstr ""
 " Met de geselecteerde pakketten; worden ook <b>%1</b> extra afhankelijkheden "
 "<b>opgewaardeerd</b>."
 
-#: src/package-manager.py:521
+#: src/package-manager.py:525
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
 msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>opgewaardeerd</b>."
 
-#: src/package-manager.py:524
+#: src/package-manager.py:528
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
 msgstr ""
 "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
 
-#: src/package-manager.py:527
+#: src/package-manager.py:531
 msgid ""
 " Selected packages have reverse dependencies. Because the reverse "
 "dependencies of the selected packages needs those packages to work; by "
@@ -447,63 +446,63 @@ msgstr ""
 "sommige omgekeerde afhankelijkheden kan de systeemsstabiliteit in gevaar "
 "brengen."
 
-#: src/package-manager.py:529
+#: src/package-manager.py:533
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
 msgstr "<br><br>In totaal zullen <b>%1</b> pakketten worden <b>verwijderd</b>."
 
-#: src/package-manager.py:531
+#: src/package-manager.py:535
 msgid "<br>Do you want to continue?</qt>"
 msgstr "<br>Wilt u doorgaan?</qt>"
 
-#: src/package-manager.py:553
+#: src/package-manager.py:557
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Bijwerken pakket(ten)</b>"
 
-#: src/package-manager.py:570 src/package-manager.py:692
+#: src/package-manager.py:574 src/package-manager.py:704
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Opwaarderen pakket(ten)</b>"
 
-#: src/package-manager.py:653
+#: src/package-manager.py:665
 msgid "Others"
 msgstr "Anderen"
 
-#: src/package-manager.py:694 src/CommonText.py:15
+#: src/package-manager.py:706 src/CommonText.py:15
 msgid "downloading"
 msgstr "downloaden"
 
-#: src/package-manager.py:740 src/package-manager.py:833
+#: src/package-manager.py:752 src/package-manager.py:844
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Updaten repository</b>"
 
-#: src/package-manager.py:741
+#: src/package-manager.py:753
 msgid "Downloading package list of %1"
 msgstr "Downloaden pakketlijst van %1"
 
-#: src/package-manager.py:746
+#: src/package-manager.py:758
 msgid "Confirm"
 msgstr "Bevestig"
 
-#: src/package-manager.py:915
+#: src/package-manager.py:926
 msgid "Show Installed Packages"
 msgstr "Toon geïnstalleerde pakketten"
 
-#: src/package-manager.py:918
+#: src/package-manager.py:929
 msgid "Show New Packages"
 msgstr "Toon nieuwe pakketten"
 
-#: src/package-manager.py:920
+#: src/package-manager.py:931
 msgid "Show Upgradable Packages"
 msgstr "Toon op te waarderen pakketten"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:965
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:965
 msgid "Show main window on startup"
 msgstr "Toon hoofdvenster bij opstarten"
 
-#: src/package-manager.py:957
+#: src/package-manager.py:968
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is al opgestart!"
 
@@ -595,7 +594,8 @@ msgid "If checked, then pisi will only show desktop applications"
 msgstr "Indien geselecteerd, zal pisi alleen desktop toepassingen weergeven"
 
 #: src/PreferencesDialog.py:207
-msgid "Enable &interval upgradable package checking"
+#, fuzzy
+msgid "Enable &periodic update check"
 msgstr "Gebruik &interval contrôle voor op te waarderen pakketten"
 
 #: src/PreferencesDialog.py:208

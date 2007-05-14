@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-13 21:07+0300\n"
+"POT-Creation-Date: 2007-05-14 22:33+0300\n"
 "PO-Revision-Date: 2007-05-13 21:02+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -45,8 +45,7 @@ msgstr "Installation du packet <b>amsn</b>"
 msgid "Update"
 msgstr "Mise à jour"
 
-#: src/Tray.py:44 src/package-manager.py:273 src/package-manager.py:661
-#: src/package-manager.py:808
+#: src/Tray.py:44 src/package-manager.py:277 src/package-manager.py:673
 msgid "All"
 msgstr "Tout"
 
@@ -55,11 +54,11 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
-#: src/package-manager.py:299
+#: src/package-manager.py:303
 msgid "Select all packages in this category"
 msgstr "Selectionner tous les paquets de cette catégorie"
 
-#: src/CustomEventListener.py:48 src/package-manager.py:301
+#: src/CustomEventListener.py:48 src/package-manager.py:305
 msgid "Reverse package selections"
 msgstr "Sélection inverse des paquets"
 
@@ -155,7 +154,7 @@ msgstr "Taille Cumulée : <b>%1</b>"
 msgid "Size: "
 msgstr "Taille: "
 
-#: src/HelpDialog.py:28 src/package-manager.py:941
+#: src/HelpDialog.py:28 src/package-manager.py:952
 msgid "Package Manager Help"
 msgstr "Aide du Gestionnaire de Paquets"
 
@@ -179,7 +178,7 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Erreur de Pisi"
 
-#: src/Preferences.py:178 src/package-manager.py:737
+#: src/Preferences.py:178 src/package-manager.py:749
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Application des Changements du Dépôt</b>"
 
@@ -229,59 +228,59 @@ msgid "You do not have permission to do this operation."
 msgstr ""
 "Vous n'avez pas les droits suffisants permettant de réaliser cette opération."
 
-#: src/package-manager.py:47
+#: src/package-manager.py:48
 msgid "GUI for PiSi package manager"
 msgstr "IHM du gestionnaire de paquet PiSi"
 
-#: src/package-manager.py:55 src/package-manager.py:867
+#: src/package-manager.py:56 src/package-manager.py:878
 msgid "Package Manager"
 msgstr "Gestionnaire de Paquets"
 
-#: src/package-manager.py:58
+#: src/package-manager.py:59
 msgid "Developer and Current Maintainer"
 msgstr "Developpeur et responsable de la maintenant actuel"
 
-#: src/package-manager.py:59
+#: src/package-manager.py:60
 msgid "Original Author"
 msgstr "Auteur d'origine"
 
-#: src/package-manager.py:60
+#: src/package-manager.py:61
 msgid "CSS/JS Meister"
 msgstr "CSS/JS maître"
 
-#: src/package-manager.py:61
+#: src/package-manager.py:62
 msgid "GUI Design & Usability"
 msgstr "Conception d'IHM et ergonomie"
 
-#: src/package-manager.py:62
+#: src/package-manager.py:63
 msgid "PiSi Authors"
 msgstr "Auteurs de PiSi"
 
-#: src/package-manager.py:62
+#: src/package-manager.py:63
 msgid "Authors of PiSi API"
 msgstr "Auteurs de l'interface de programmation (API) PiSi"
 
-#: src/package-manager.py:113
+#: src/package-manager.py:115
 msgid "Search: "
 msgstr "Recherche : "
 
-#: src/package-manager.py:117
+#: src/package-manager.py:119
 msgid "Show basket"
 msgstr "Montrer le Panier"
 
-#: src/package-manager.py:122 src/package-manager.py:229
+#: src/package-manager.py:124 src/package-manager.py:232
 msgid "Install Package(s)"
 msgstr "Installer le(s) paquet(s)"
 
-#: src/package-manager.py:143
+#: src/package-manager.py:145
 msgid "Components"
 msgstr "Composants"
 
-#: src/package-manager.py:171
+#: src/package-manager.py:173
 msgid "Loading Package List..."
 msgstr "Chargement de la Liste de Paquets..."
 
-#: src/package-manager.py:207
+#: src/package-manager.py:209
 msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
@@ -290,67 +289,67 @@ msgstr ""
 "données des paquets. Une connection au réseau est nécessaire pour faire la "
 "mise à jour."
 
-#: src/package-manager.py:208
+#: src/package-manager.py:210
 msgid "Package database is empty"
 msgstr "La base de données des paquets est vide"
 
-#: src/package-manager.py:245
+#: src/package-manager.py:248
 msgid "Remove Package(s)"
 msgstr "Supprimer les paquet(s)"
 
-#: src/package-manager.py:271
+#: src/package-manager.py:275
 msgid "Upgrade Package(s)"
 msgstr "Mettre à jour le(s) Paquet(s)"
 
-#: src/package-manager.py:363
+#: src/package-manager.py:367
 msgid "N\\A"
 msgstr "N\\D"
 
-#: src/package-manager.py:381
+#: src/package-manager.py:385
 msgid "Description: "
 msgstr "Description : "
 
-#: src/package-manager.py:381
+#: src/package-manager.py:385
 msgid "Version: "
 msgstr "Version : "
 
-#: src/package-manager.py:382
+#: src/package-manager.py:386
 msgid "Package Size: "
 msgstr "Taille du Paquet : "
 
-#: src/package-manager.py:382
+#: src/package-manager.py:386
 msgid "Homepage: "
 msgstr "Site web : "
 
-#: src/package-manager.py:397 src/package-manager.py:669
+#: src/package-manager.py:401 src/package-manager.py:681
 msgid "Search Results"
 msgstr "Résultats de la recherche : "
 
-#: src/package-manager.py:430
+#: src/package-manager.py:434
 msgid "Currently your basket is empty."
 msgstr "Votre panier est actuellement vide."
 
-#: src/package-manager.py:433 src/package-manager.py:441
+#: src/package-manager.py:437 src/package-manager.py:445
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille "
 "cumulée de <b>%2</b>"
 
-#: src/package-manager.py:436
+#: src/package-manager.py:440
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr ""
 "avec <b>%3</b> dépendances supplémentaires de taille cumulée de <b>%4</b>"
 
-#: src/package-manager.py:438 src/package-manager.py:446
+#: src/package-manager.py:442 src/package-manager.py:450
 msgid "in your basket."
 msgstr "dans votre panier."
 
-#: src/package-manager.py:444
+#: src/package-manager.py:448
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr "avec <b>%3</b> dépendances inversées de taille cumulée <b>%4</b> "
 
-#: src/package-manager.py:475
+#: src/package-manager.py:479
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
@@ -358,19 +357,19 @@ msgstr ""
 "Les paquets sélectionnés [%1] sont en conflit. Ces paquets ne peuvent pas "
 "être installés ensemble."
 
-#: src/package-manager.py:476 src/package-manager.py:486
+#: src/package-manager.py:480 src/package-manager.py:490
 msgid "Conflict Error"
 msgstr "Erreur due à un conflit"
 
-#: src/package-manager.py:482
+#: src/package-manager.py:486
 msgid "The following packages conflicts:\n"
 msgstr "Les paquets suivants sont en conflit : \n"
 
-#: src/package-manager.py:484
+#: src/package-manager.py:488
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 est en conflit avec [%2]\n"
 
-#: src/package-manager.py:485
+#: src/package-manager.py:489
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
@@ -378,16 +377,16 @@ msgstr ""
 "\n"
 "Supprimer les paquets en conflits suivants ?"
 
-#: src/package-manager.py:500 src/package-manager.py:561
-#: src/package-manager.py:690
+#: src/package-manager.py:504 src/package-manager.py:565
+#: src/package-manager.py:702
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Installer  le(s( paquet(s)</b>"
 
-#: src/package-manager.py:510
+#: src/package-manager.py:514
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
 msgstr "<qt>Vous avez sélectionné <b>%1</b> paque(s) à <b>installer</b>."
 
-#: src/package-manager.py:513
+#: src/package-manager.py:517
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
@@ -395,15 +394,15 @@ msgstr ""
 "En plus des paquets sélectionnés; les dépendances supplémentaires <b>%1</b> "
 "vont également être <b>installées</b>."
 
-#: src/package-manager.py:514
+#: src/package-manager.py:518
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
 msgstr "<br><br>Au final, <b>%1</b> paquets vont être <b>installés</b>."
 
-#: src/package-manager.py:517
+#: src/package-manager.py:521
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
 msgstr "<qt>Vous avez sélectionné <b>%1</b> paquet(s) à <b>mettre à jour</b>."
 
-#: src/package-manager.py:520
+#: src/package-manager.py:524
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
@@ -411,15 +410,15 @@ msgstr ""
 "En plus des paquets sélectionnés; <b>%1</b> dépendance supplémentaires vont "
 "également être <b>mise(s) à jour</b>."
 
-#: src/package-manager.py:521
+#: src/package-manager.py:525
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
 msgstr "<br><br>Au final <b>%1</b> paquets vont être <b>mis à jour</b>."
 
-#: src/package-manager.py:524
+#: src/package-manager.py:528
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
 msgstr "<qt>Vous avez sélectionné <b>%1</b> paquet(s) à <b>supprimer</b>."
 
-#: src/package-manager.py:527
+#: src/package-manager.py:531
 msgid ""
 " Selected packages have reverse dependencies. Because the reverse "
 "dependencies of the selected packages needs those packages to work; by "
@@ -435,63 +434,63 @@ msgstr ""
 "réélement ceux que vous vouler supprimer. La suppression accidentelle d'une "
 "dépendance inversée pourrait compromettre la stabilité du système."
 
-#: src/package-manager.py:529
+#: src/package-manager.py:533
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
 msgstr "<br><br>Au total, <b>%1</b> paquets vont être <b>supprimés</b>."
 
-#: src/package-manager.py:531
+#: src/package-manager.py:535
 msgid "<br>Do you want to continue?</qt>"
 msgstr "<br>Voulez-vous continuer ?</qt>"
 
-#: src/package-manager.py:553
+#: src/package-manager.py:557
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Suppression du/des paquet(s)</b>"
 
-#: src/package-manager.py:570 src/package-manager.py:692
+#: src/package-manager.py:574 src/package-manager.py:704
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Mise à jour du/des paquet(s)</b>"
 
-#: src/package-manager.py:653
+#: src/package-manager.py:665
 msgid "Others"
 msgstr "Autres"
 
-#: src/package-manager.py:694 src/CommonText.py:15
+#: src/package-manager.py:706 src/CommonText.py:15
 msgid "downloading"
 msgstr "téléchargement"
 
-#: src/package-manager.py:740 src/package-manager.py:833
+#: src/package-manager.py:752 src/package-manager.py:844
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Mise à jour du dépôt</b>"
 
-#: src/package-manager.py:741
+#: src/package-manager.py:753
 msgid "Downloading package list of %1"
 msgstr "Téléchargement de la liste des paquets de %1"
 
-#: src/package-manager.py:746
+#: src/package-manager.py:758
 msgid "Confirm"
 msgstr "Confirmer"
 
-#: src/package-manager.py:915
+#: src/package-manager.py:926
 msgid "Show Installed Packages"
 msgstr "Lister les paquets intallés"
 
-#: src/package-manager.py:918
+#: src/package-manager.py:929
 msgid "Show New Packages"
 msgstr "Lister les nouveaux paquets"
 
-#: src/package-manager.py:920
+#: src/package-manager.py:931
 msgid "Show Upgradable Packages"
 msgstr "Lister les paquets dont une mise à jour est disponible"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:965
 msgid "Package to install"
 msgstr "Paquet à intaller"
 
-#: src/package-manager.py:954
+#: src/package-manager.py:965
 msgid "Show main window on startup"
 msgstr "Afficher la fenêtre principale au démarrage"
 
-#: src/package-manager.py:957
+#: src/package-manager.py:968
 msgid "Package Manager is already running!"
 msgstr "Le gestionnaire de paquet et déjà en cours d'exécution !"
 
@@ -585,7 +584,8 @@ msgstr ""
 "est cochée"
 
 #: src/PreferencesDialog.py:207
-msgid "Enable &interval upgradable package checking"
+#, fuzzy
+msgid "Enable &periodic update check"
 msgstr "Activer la vérification de présence de mises à jour périodique"
 
 #: src/PreferencesDialog.py:208
