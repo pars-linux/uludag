@@ -816,14 +816,8 @@ class MainApplicationWidget(QWidget):
     def searchPackage(self):
         query = unicode(self.searchLine.text())
         if query:
-            import time
-            start = time.time()
             result = self.packageCache.searchInPackages(query.split())
-            finish = time.time()
-            print finish - start
             self.createSearchResults(result)
-            finish = time.time()
-            print finish - start
         else:
             self.timer.stop()
             self.refreshState(reset=False)
