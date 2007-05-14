@@ -36,6 +36,7 @@ import Settings
 from Icons import *
 import LocaleData
 import HelpDialog
+import PackageCache
 
 # Pisi
 import pisi
@@ -97,6 +98,7 @@ class MainApplicationWidget(QWidget):
         self.command = None
         self.state = install_state
         self.basket = Basket.Basket()
+        self.packageCache = PackageCache.PackageCache()
 
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
@@ -212,6 +214,7 @@ class MainApplicationWidget(QWidget):
         self.basketAction.setEnabled(False)
         self.operateAction.setEnabled(False)
         self.searchLine.clear()
+        self.packageCache.clearCache()
         self.parent.showNewAction.setChecked(False)
         self.parent.showInstalledAction.setChecked(False)
         self.parent.showUpgradeAction.setEnabled(True)
@@ -266,6 +269,7 @@ class MainApplicationWidget(QWidget):
         self.parent.showInstalledAction.setChecked(False)
         ##
 
+        self.packageCache.clearCache()
         upgradables = pisi.api.list_upgradable()
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
@@ -599,15 +603,23 @@ class MainApplicationWidget(QWidget):
 
     def createComponentList(self, packages, allComponent=False):
 
-        def appGuiFilter(package):
+        def appGuiFilter(pkg_name):
             if self.state == remove_state:
-                return "app:gui" in pisi.context.packagedb.get_package(package, pisi.itembyrepodb.installed).isA
+                package = pisi.context.packagedb.get_package(pkg_name, pisi.itembyrepodb.installed)
+                return "app:gui" in package.isA
             elif self.state == install_state:
-                return "app:gui" in pisi.context.packagedb.get_package(package).isA
+                package = pisi.context.packagedb.get_package(pkg_name)
+                return "app:gui" in package.isA
 
         # Components
         self.listView.clear()
         self.componentDict.clear()
+
+        if self.packageCache.isEmpty() and packages:
+            if self.state == remove_state:
+                self.packageCache.populateCache(packages, pisi.itembyrepodb.installed)
+            else:
+                self.packageCache.populateCache(packages, None)
 
         cdb = pisi.context.componentdb
         componentNames = [cname for cname in cdb.list_components() if cdb.get_component(cname).visibleTo == 'user']
@@ -799,25 +811,22 @@ class MainApplicationWidget(QWidget):
     def searchStringChanged(self):
         if (self.timer.isActive()):
             self.timer.stop()
-        self.timer.start(300, True)
+        self.timer.start(500, True)
 
     def searchPackage(self):
-        query = self.searchLine.text()
-        if not query.isEmpty():
-            result = self.searchPackageName(query)
+        query = unicode(self.searchLine.text())
+        if query:
+            import time
+            start = time.time()
+            result = self.packageCache.searchInPackages(query.split())
+            finish = time.time()
+            print finish - start
             self.createSearchResults(result)
+            finish = time.time()
+            print finish - start
         else:
             self.timer.stop()
             self.refreshState(reset=False)
-
-    def searchPackageName(self, query):
-        packages = []
-        for key in self.componentDict.keys():
-            if self.componentDict[key].name == i18n("All"):
-                continue
-            packages.extend(pisi.api.search_in_packages(unicode(query).split(),
-                                                        self.componentDict[key].packages))
-        return packages
 
     def showPreferences(self):
         try:
