@@ -28,7 +28,7 @@
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% INCLUDE global/header.html.tmpl title = "$terms.Bug Writing Guidelines" %]
+[% INCLUDE global/header.html.tmpl title = "$terms.Bug Yazma Kılavuzu" %]
 
 <h3>İçindekiler</h3>
 <ul>
@@ -36,7 +36,7 @@
 <li><a href="#useful">[% terms.aBug %] Raporunu Faydalı Yapan Nedir?</a></li>
 <li><a href="#before">Başlamadan Önce...</a></li>
 <li><a href="#reporting">Yeni Bir [% terms.Bug %] Raporlamak</a></li>
-<li><a href="#more">İyi [% terms.Bugs %] Oluşturmak İçin Daha Fazla Bilgi</a></li>
+<li><a href="#more">İyi [% terms.Bugs %] Raporlamak İçin Daha Fazla Bilgi</a></li>
 </ul>
 
 <h3><a name="why">Bu Belgeyi Niçin Okumalısınız</a></h3>
@@ -191,7 +191,7 @@ Hatayı 12.05.2007 tarihinde oluşturdum.
 </blockquote>
 <hr>
 
-<h3><a name="more">İyi [% terms.Bugs %] Oluşturmak İçin Daha Fazla Bilgi</a></h3>
+<h3><a name="more">İyi [% terms.Bugs %] Raporlamak İçin Daha Fazla Bilgi</a></h3>
 
 <blockquote>
   <p><b><a name="tips"></a> 1. Faydalı [% terms.Bug %] 
@@ -207,13 +207,8 @@ Hatayı 12.05.2007 tarihinde oluşturdum.
     at your funny [% terms.bug %] title at 3:00 AM when they can't remember how 
     to find your [% terms.bug %].</p>
 
-    <p><b>One [% terms.bug %] per report.</b> Completely different people 
-    typically fix, verify, and prioritize different [% terms.bugs %]. If you 
-    mix a handful of [% terms.bugs %] into a single report, the right people 
-    probably won't discover your [% terms.bugs %] in a timely fashion, if at 
-    all. Certain [% terms.bugs %] are also more important than others. It's 
-    impossible to prioritize [% terms.abug %] report when
-    it contains four different issues, all of differing importance.</p>
+    <p><b>Her raporda yalnızca bir [% terms.bug %] anlatılmalı.</b> [% terms.bugs %] bir çok farklı geliştirici tarafından incelenip  doğrulanıyor, düzeltiliyor yada önceliği belirleniyor. Eğer birkaç [% terms.bug %]yı aynı rapora sıkıştırırsanız, muhtemelen [% terms.bug %] uygun şekilde incelenemeyecek ve çözülemeyecektir. Bazı [% terms.bugs %] diğerlerine göre daha önemlidir. Ancak bir [% terms.bug %] raporunun içinde farklı önem derecelerine sahip birkaç [% terms.bug %] anlatılırsa, bu derecelendirme mümkün olmaz.
+    </p>
 
     <p><b>No [% terms.bug %] is too trivial to report.</b> Unless you're 
     reading the source code, you can't see actual software [% terms.bugs %], 
@@ -234,21 +229,19 @@ Hatayı 12.05.2007 tarihinde oluşturdum.
 
     <p><b>[% terms.bug %] raporları çoğunlukla özete göre aranır.</b>Nasıl Google'da web sitelerini arıyorsanız, diğer insanlar da [% terms.bug %] raporunuza ulaşmak için arama yapacaklardır. Açıklayıcı [% terms.bug %] özetleri anahtar kelime açısından zengindir ve dolayısıyla bulunması kolaydır.</p>
 
-    <p>For example, you'll find [% terms.abug %] titled "<tt>Dragging icons 
-    from List View to gnome-terminal doesn't paste path</tt>" if you search on
-    "List", "terminal", or "path". Those search keywords wouldn't have
-    found [% terms.abug %] titled "<tt>Dragging icons doesn't paste</tt>".</p>
+    <p>Örneğin 'VirtualBox', 'komut' veya 'esnek' anahtar kelimelerini kullanarak <tt>VirtualBox komut satırında esnek boyutlu sanal disk oluşturmama izin vermiyor.</tt> özetine ulaşabilirken <tt>Disk oluşturma sorunu</tt> özetine ulaşamazsınız. 
+    </p>
 
     <p>Kendinize şunu sorun, "Yalnızca bu özeti okuyan insanlar raporladığım [% terms.bug %]yı anlayabilirler mi?" Eğer öyleyse başardınız demektir.</p>
 
-    <p><b>Bu tür başlıklar kullanmayın:</b></p>
+    <p><b>Asla bu tür başlıklar kullanmayın:</b></p>
 
     <ol>
       <li>"Kuramıyorum" - Neden kuramıyorsunuz? Kurmaya çalıştığınızda ne oluyor, ne ile karşılaşıyorsunuz?</li>
 
-      <li>"Bazı Performans Sorunları Var" - ...peki ama bu sorunlar ne yapınca ortaya çıkıyor?</li>
+      <li>"Bazı Performans Sorunları Var" - ...peki ama bu sorunlar ne yapınca, neden sonra ortaya çıkıyor?</li>
 
-      <li>"Geri Dön Tuşu çalışmıyor" - Her zaman? Genelde?</li>
+      <li>"Geri Dön Tuşu çalışmıyor" - Ne zaman? Her zaman? Genelde?</li>
     </ol>
 
     <p><b>İyi [% terms.bug %] başlıkları:</b></p>
