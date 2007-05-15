@@ -1,5 +1,3 @@
-from grub import grubEntry, grubConf
-
 # l10n
 
 LABEL_OTHER = {
@@ -23,12 +21,233 @@ GRUB_CONF = "/boot/grub/grub.conf"
 
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
+
+# Supported operating systems and required fields for them
+
 SYSTEMS = {
     "linux": "Linux,root,kernel,initrd,options",
     "windows": "Windows,root",
     "other": "%s,root,kernel,initrd,options" % _(LABEL_OTHER),
 }
 
+# Grub parser
+
+class grubCommand:
+    """Grub menu command"""
+    
+    def __init__(self, key, options=[], value=""):
+        self.key = key
+        self.options = options
+        self.value = value
+    
+    def __str__(self):
+        if self.options:
+            return "%s %s %s" % (self.key, " ".join(self.options), self.value)
+        else:
+            return "%s %s" % (self.key, self.value)
+
+class grubEntry:
+    """Grub menu entry"""
+    
+    def __init__(self, title):
+        self.title = title
+        self.commands = []
+    
+    def copy(self):
+        """Returns a copy of entry."""
+        import copy
+        return copy.deepcopy(self)
+    
+    def listCommands(self):
+        """Returns list of commands used in entry"""
+        return map(lambda x: x.key, self.commands)
+    
+    def setCommand(self, key, value, opts=[], append=False):
+        """Adds a new command to entry. Optional append argument allows addition of multiple commands like 'map'."""
+        if not append:
+            self.unsetCommand(key)
+        self.commands.append(grubCommand(key, opts, value))
+    
+    def getCommand(self, key, only_last=True):
+        """Returns command object. If only_last is False, returns a list of commands named 'key'."""
+        commands = filter(lambda x: x.key == key, self.commands)
+        if only_last:
+            try:
+                return commands[-1]
+            except IndexError:
+                return None
+        return commands
+    
+    def unsetCommand(self, key):
+        """Removes 'key' from commands."""
+        self.commands = filter(lambda x: x.key != key, self.commands)
+    
+    def __str__(self):
+        conf = []
+        conf.append("title %s" % self.title)
+        for command in self.commands:
+            conf.append(str(command))
+        return "\n".join(conf)
+
+class grubConf:
+    """Grub configuration class."""
+    
+    def __init__(self):
+        self.options = {}
+        self.entries = []
+        self.header = []
+        self.index = 0
+    
+    def setHeader(self, header):
+        """Sets grub.conf header"""
+        self.header = header.split("\n")
+    
+    def __parseLine__(self, line):
+        """Parses single grub.conf line and returns a tupple of key, value and options."""
+        line = line.strip()
+        try:
+            key, data = line.split(" ", 1)
+        except ValueError:
+            key = line
+            data = ""
+        
+        key = key.strip(" =")
+        data = data.strip(" =")
+        
+        options = []
+        values = []
+        
+        option = True
+        for x in data.split():
+            if option and x.startswith("--"):
+                options.append(x)
+            else:
+                values.append(x)
+                option = False
+        
+        return key, " ".join(values), options
+
+    def parseConf(self, filename):
+        """Parses a grub.conf file"""
+        self.options = {}
+        self.entries = []
+        
+        option = True
+        entry = None
+        
+        for line in file(filename):
+            if not line.strip():
+                continue
+            key, value, opts = self.__parseLine__(line)
+            
+            if key == "title":
+                option = False
+                if entry:
+                    self.entries.append(entry)
+                    entry = None
+            
+            if option:
+                self.options[key] = value
+            else:
+                if key == "title":
+                    entry = grubEntry(value)
+                else:
+                    entry.setCommand(key, value, opts, append=True)
+        
+        if entry:
+            self.entries.append(entry)
+        
+        import os.path
+        default = os.path.join(os.path.dirname(filename), "default")
+        if os.path.exists(default):
+            self.index = int(file(default).read().split("\0")[0])
+    
+    def getSavedIndex(self):
+        """Return last booted entry index."""
+        return self.index
+    
+    def __str__(self):
+        conf = []
+        if self.header:
+            for h in self.header:
+                conf.append("# %s" % h)
+            conf.append("")
+        if self.options:
+            for key, value in self.options.iteritems():
+                line = "%s %s" % (key, value)
+                conf.append(line)
+            conf.append("")
+        for index, entry in enumerate(self.entries):
+            if entry.getCommand("savedefault"):
+                entry.setCommand("savedefault", str(index))
+            conf.append(str(entry))
+            conf.append("")
+        return "\n".join(conf)
+    
+    def write(self, filename):
+        """Writes grub configuration to file."""
+        file(filename, "w").write(str(self))
+    
+    def listOptions(self):
+        """Returns list of options."""
+        return self.options.keys()
+    
+    def setOption(self, key, value):
+        """Sets an option."""
+        self.options[key] = value
+    
+    def unsetOption(self, key):
+        """Unsets an option."""
+        del self.options[key]
+    
+    def getOption(self, key, default=""):
+        """Returns value of an option."""
+        return self.options.get(key, default)
+    
+    def getAllOptions(self):
+        """Returns all options."""
+        return ["%s %s" % (key, value) for key, value in self.options.items()]
+    
+    def listEntries(self):
+        """Returns a list of entries."""
+        return map(lambda x: x.title, self.entries)
+    
+    def addEntry(self, entry, index=-1):
+        """Adds an entry object."""
+        if index == -1:
+            self.entries.append(entry)
+        else:
+            self.entries.insert(index, entry)
+    
+    def getEntry(self, index):
+        """Returns an entry object."""
+        return self.entries[index]
+    
+    def indexOf(self, entry):
+        """Returns index of an entry object."""
+        return self.entries.index(entry)
+    
+    def removeEntry(self, entry):
+        """Removes an entry object."""
+        self.entries.remove(entry)
+
+class grubParser:
+    def __init__(self, _file, write=False, timeout=-1):
+        import os.path
+        from comar.utility import FileLock
+        self.file = _file
+        self.write = write
+        lockfile = "%s/.%s.lock" % (os.path.dirname(_file), os.path.basename(_file))
+        self.lock = FileLock(lockfile)
+        self.lock.lock(write, timeout)
+        self.config = grubConf()
+        if os.path.exists(_file):
+            self.config.parseConf(_file)
+    
+    def release(self, save=True):
+        if save and self.write:
+            self.config.write(self.file)
+        self.lock.unlock()
 
 def parseVersion(version):
     """Parses a kernel filename and returns kernel version and suffix. Returns False on failure."""
@@ -99,24 +318,6 @@ def getRoot():
         if mount_items[0].startswith("/dev") and mount_items[2] == "/":
             return mount_items[0]
 
-class grubConfLock:
-    def __init__(self, _file, write=False, timeout=-1):
-        import os.path
-        from comar.utility import FileLock
-        self.file = _file
-        self.write = write
-        lockfile = "%s/.%s.lock" % (os.path.dirname(_file), os.path.basename(_file))
-        self.lock = FileLock(lockfile)
-        self.lock.lock(write, timeout)
-        self.config = grubConf()
-        if os.path.exists(_file):
-            self.config.parseConf(_file)
-    
-    def release(self, save=True):
-        if save and self.write:
-            self.config.write(self.file)
-        self.lock.unlock()
-
 def importGrubEntry(entry):
     os_entry = {
         "os_type": "other",
@@ -158,7 +359,7 @@ def importGrubEntry(entry):
     return lst
 
 
-# Boot.Loader
+# Boot.Loader methods
 
 def listSystems():
     sys_list = []
@@ -168,7 +369,7 @@ def listSystems():
 
 def getOptions():
     try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
+        grub = grubParser(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail(FAIL_TIMEOUT)
     options = [
@@ -182,7 +383,7 @@ def getOptions():
 
 def setOptions(default=None, timeout=None, password=None):
     try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail(FAIL_TIMEOUT)
     if default != None:
@@ -201,7 +402,7 @@ def setOptions(default=None, timeout=None, password=None):
 
 def listEntries():
     try:
-        grub = grubConfLock(GRUB_CONF, write=False, timeout=TIMEOUT)
+        grub = grubParser(GRUB_CONF, write=False, timeout=TIMEOUT)
     except IOError:
         fail(FAIL_TIMEOUT)
     entries = []
@@ -218,7 +419,7 @@ def listEntries():
 
 def removeEntry(index, title):
     try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail(FAIL_TIMEOUT)
     index = int(index)
@@ -237,7 +438,7 @@ def removeEntry(index, title):
 
 def setEntry(title, os_type, root, kernel=None, initrd=None, options=None, default="no", index=None):
     try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail(FAIL_TIMEOUT)
     
@@ -280,7 +481,7 @@ def setEntry(title, os_type, root, kernel=None, initrd=None, options=None, defau
 
 def updateKernelEntry(version, root=None):
     try:
-        grub = grubConfLock(GRUB_CONF, write=True, timeout=TIMEOUT)
+        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
         fail(FAIL_TIMEOUT)
     
