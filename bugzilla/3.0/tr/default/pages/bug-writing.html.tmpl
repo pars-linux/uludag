@@ -30,241 +30,172 @@
 
 [% INCLUDE global/header.html.tmpl title = "$terms.Bug Writing Guidelines" %]
 
-<h3>Contents</h3>
+<h3>İçindekiler</h3>
 <ul>
-<li><a href="#why">Why You Should Read This</a></li>
-<li><a href="#useful">What Makes [% terms.aBug %] Report Useful?</a></li>
-<li><a href="#before">Before You Start...</a></li>
-<li><a href="#reporting">Reporting a New [% terms.Bug %]</a></li>
-<li><a href="#more">More Information on Writing Good [% terms.Bugs %]</a></li>
+<li><a href="#why">Bu Belgeyi Niçin Okumalısınız</a></li>
+<li><a href="#useful">[% terms.aBug %] Raporunu Faydalı Yapan Nedir?</a></li>
+<li><a href="#before">Başlamadan Önce...</a></li>
+<li><a href="#reporting">Yeni Bir [% terms.Bug %] Raporlamak</a></li>
+<li><a href="#more">İyi [% terms.Bugs %] Oluşturmak İçin Daha Fazla Bilgi</a></li>
 </ul>
 
-<h3><a name="why">Why You Should Read This</a></h3>
+<h3><a name="why">Bu Belgeyi Niçin Okumalısınız</a></h3>
 
 <blockquote>
-  <p>Simply put, the more effectively you report [% terms.abug %], the more
-  likely an engineer will actually fix it. This tutorial teaches novice and
-  intermediate [% terms.bug %] reporters how to write effective 
-  [% terms.bug %] reports.</p>
+  <p>Şöyle düşünün, ne kadar etkili [% terms.abug %] raporlarsanız, o hatanın geliştiriciler için çözülmesi o kadar cazip olur. Bu belge [% terms.bug %] raporlamaya yeni başlayan veya [% terms.bug %] raporlamak hakkında orta seviyede bilgisi olan kullanıcılara nasıl etkili [% terms.bug %] raporlanması gerektiğini anlatır.</p>
 </blockquote>
 
-<h3><a name="useful">What Makes [% terms.aBug %] Report Useful?</a></h3>
+<h3><a name="useful">[% terms.aBug %] Raporunu Faydalı Yapan Nedir?</a></h3>
 
 <blockquote>
-  <p>Useful [% terms.bug %] reports get [% terms.bugs %] fixed. 
-  A useful [% terms.bug %] report has two qualities:</p>
+  <p>Faydalı [% terms.bug %] raporu, çözülen [% terms.bug %] raporudur.
+     Faydalı bir [% terms.bug %] raporunun iki niteliği vardır:</p>
 
   <ul>
-    <li><b>It's Reproducible.</b> Engineers usually prefer to fix [% terms.bugs %]
-    they can actually see. If an engineer can't reproduce the [% terms.bug %],
-    it'll probably be stamped "[% get_resolution("WORKSFORME") FILTER html %]" or
-    "[% get_resolution("INVALID") FILTER html %]".<br>
+    <li><b>Tekrar edilebilirlik.</b> Geliştiriciler tekrarlayabildikleri [% terms.bugs %]ı çözmeyi tercih ederler. Eğer bir geliştirici raporlanan [% terms.bug %]yı tekrar edemiyorsa "[% get_resolution("WORKSFORME") FILTER html %]" yada "[% get_resolution("INVALID") FILTER html %]" olarak işaretleyebilir.<br>
     <br>
     </li>
 
-    <li><b>It's Specific.</b> The quicker an engineer isolates the 
-    [% terms.bug %] to a specific area, the more likely it'll be fixed. (If the
-    engineer must decipher your [% terms.bug %], 
-    he or she will waste time cursing you instead.)<br>
+    <li><b>Özgünlük.</b> Bir [% terms.bug %]nın olası kaynağı ne kadar belirli ve özgün bir alan icinde tarif edilirse, geliştiricinin çözüm için harcayacağı zaman o kadar azalır. (Raporladığınız [% terms.bug %]yı anlamak geliştirici için şifre çözmeye benzerse, sorunu çözmek için harcayacağı zamanı hakkınızda kötü şeyler söyleyerek geçirebilir.)<br>
         </li>
   </ul>
 
 </blockquote>
 
-<h3><a name="before">Before You Start...</a></h3>
+<h3><a name="before">Başlamadan Önce...</a></h3>
 
 <ol>
-  <li>Before you enter your [% terms.bug %], use [% terms.Bugzilla %]'s 
-  <a href="query.cgi?format=specific">search page</a> to determine whether
-  your [% terms.bug %] is known.</li>
+  <li>Herhangi bir [% terms.bug %] raporlamadan önce, [% terms.Bugzilla %]'nın 
+  <a href="query.cgi?format=specific">Arama</a> özelliğini kullanarak,[% terms.bug %]nın baskaları tarafından daha önce raporlanmadığına emin olun.</li>
 
-  <li>Reproduce your [% terms.bug %] using a recent build. 
-  Engineers tend to be most interested in problems affecting the code base 
-  on which they're actively working. The [% terms.bug %] you're 
-  reporting may already be fixed.</li>
+  <li>[% terms.bug %]yı güncel sürümü kullanarak tekrar etmeye çalışın. Raporlamak istediğiniz [% terms.bug %], geliştiricilerin üzerinde çalıştıkları son sürümde çözülmüş olabilir.</li>
 </ol>
 
 <blockquote>
-Can't find your [% terms.bug %] in [% terms.Bugzilla %]? And you can reproduce
-it in a recent build? Let's report it.
+[% terms.bug %]yı [% terms.Bugzilla %]'da arayıp bulamadıysanız ve güncel sürümle tekrar edebiliyorsanız, yeni bir hata raporu oluşturabilirsiniz demektir.
 </blockquote>
 
-<h3><a name="reporting">Reporting a New [% terms.Bug %]</a></h3>
+<h3><a name="reporting">Yeni Bir [% terms.Bug %] Raporlamak</a></h3>
 
 <ol>
- <li>From [% terms.Bugzilla %]'s main page, choose 
- "<a href="enter_bug.cgi">Enter a new [% terms.bug %]</a>".</li>
+ <li>[% terms.Bugzilla %] anasayfasında bulunan
+ "<a href="enter_bug.cgi">Yeni bir [% terms.bug %] raporu girişi</a>" bağlantısına tıklayın.</li>
 
- <li>Select the product in which you've found [% terms.abug %].</li>
+ <li>[% terms.abug %]sını bulduğunuz ürünü seçin.</li>
 
- <li>Log into [% terms.Bugzilla %].</li>
+ <li>[% terms.Bugzilla %]'ya kullanıcı girişi yapın.</li>
 
- <li>Fill out the form. Here's what it all means:</li>
+ <li>Aşağıda ayrıntıları verilen formu doldurun:</li>
 
 </ol>
 
 
-  <p><b>Where did you find the [% terms.bug %]?</b></p>
+  <p><b>[% terms.bug %]yı nerede buldunuz?</b></p>
 
   <blockquote>
-    <p><b>Product:</b> In which product did you find it?<br>
-     You just specified this on the last page, so you can't edit it
-    here.</p>
+    <p><b>Ürün(Product):</b> Hangi ürün içinde buldunuz?<br>
+     Zaten bir önceki sayfada seçtiğiniz ürün bilgilerini gösterir.</p>
 
-    <p><b>Version:</b> In which product version did you find 
-          it?<br>
-     (If applicable)</p>
+    <p><b>Sürüm(Version):</b> Hatasını bulduğunuz ürünün sürüm bilgileri?<br>
+     (Mevcutsa)</p>
 
-    <p><b>Component:</b> In which component does it 
-          exist?<br>
-    [% terms.Bugzilla %] requires that you select a component to enter 
-    [% terms.abug %]. (Click the Component link to see a description of each 
-        component.)</p>
+    <p><b>Bileşen(Component):</b> Hata hangi bileşeni ilgilendiriyor?<br>
+    [% terms.Bugzilla %]'da [% terms.abug %] raporlamak için mutlaka bir bileşen seçmeniz gerekir.
+    . (Bileşenlere ait açıklayıcı bilgilere ulaşmak için 'Bileşen' bağlantısına tıklayın.)</p>
 
-    <p><b>OS:</b> On which operating system (OS) did you find 
-          it?
-    (e.g. Linux, Windows XP, Mac OS X.)<br>
-    If the [% terms.bug %] happens on all operating systems, choose "All". 
-    Otherwise, select the OS, or "Other" if your OS isn't listed.</p>
+    <p><b>İşletim Sistemi(OS):</b> Hatayı hangi işletim sistemi altında buldunuz.
+    (Bu bilgi hata raporlama sistemin Pardus'a uyarlanmasından sonra önemini yitirmiştir.)</p>
   </blockquote>
 
-  <p><b>How important is the [% terms.bug %]?</b></p>
+  <p><b>[% terms.bug %] ne kadar önemli?</b></p>
 
   <blockquote>
-    <p><b>Severity:</b> How damaging is it?<br>
-     The default is 'normal' severity. (Click on the Severity link to see
-     a description of each severity rating.<br>
+    <p><b>Önem(Severity):</b> Hata ne kadar zararlı.<br> Öntanımlı önem değeri 'normal' olarak belirlenmiştir. ('Önem' bağlantısına tıklayarak her değer için açıklayıcı bilgilere ulaşabilirsiniz.)<br>
     </p>
   </blockquote>
 
-  <p><b>Who will be following up on the [% terms.bug %]?</b></p>
+  <p><b>[% terms.bug %] ile kim ilgilenecek?</b></p>
 
   <blockquote>
-    <p><b>Assigned To:</b> Which engineer should be responsible for fixing
-    it?<br>
-    [% terms.Bugzilla %] automatically assigns the [% terms.bug %] to a
-    default engineer upon submitting [% terms.abug %] report. If you'd prefer
-    to directly assign the [% terms.bug %] to someone else, enter the person's
-    e-mail address. (To see the list of default engineers for each
-    component, click the Component link.)</p>
+    <p><b>Atanmış(Assigned to):</b> Bildirdiğiniz hatanın hangi geliştiricinin sorumluluğunda olduğunu gösterir.<br>
+    [% terms.Bugzilla %] kayıt sırasında [% terms.bug %]yı otomatik olarak öntanımlı  geliştiriciye atar. Eğer [% terms.bug %]yı başka birine atamak isterseniz, atayacağınız kişini e-posta adresini yazın. (Hangi bileşenin, öntanımlı olarak hangi geliştiriciye ait olduğunu öğrenmek için 'Bileşen' bağlantısına tıklayın.)</p>
 
-    <p><b>Cc:</b> Who else should receive e-mail updates on changes to this 
-    [% terms.bug %]?<br>
-    List the e-mail addresses of other people who should receive
-    an update whenever the [% terms.bug %] report changes. Enter as many e-mail 
-    addresses as you'd like, separating them by spaces or 
-    commas. Important: You can only enter people who have 
-    [% terms.Bugzilla %] accounts.</p>
+    <p><b>Cc:</b> Bu [% terms.bug %] raporu üzerinde yapılacak değişikler başka bir kimseye bildirilmeli mi?<br>[% terms.bug %] raporu üzerinde yapılacak değişikliklerin gönderileceği e-posta listesidir. İstediğiniz sayıda e-posta adresi ekleyebilirsiniz, ancak her birini bir boşluk yada virgül ile ayırmalısınız. Önemli: Yalnızca [% terms.Bugzilla %] hesabı olan kullanıcıların e-posta adreslerini yazabilirsiniz.</p>
   </blockquote>
 
-  <p><b>What else can you tell the engineer about the [% terms.bug %]?</b></p>
+  <p><b>[% terms.bug %] hakkında geliştiriciye ne söyleyebilirsin?</b></p>
 
   <blockquote>
-    <p><b>Summary:</b> How would you describe the [% terms.bug %], in 
-    approximately 60 or fewer characters?<br>
-     A good summary should <b>quickly and uniquely identify [% terms.abug %]
-    report</b>. If an engineer can't identify your
-    [% terms.bug %] by its summary, it may be ignored when skimming through a
-    10-page list.<br>
+    <p><b>Özet(Summary):</b> Bir [% terms.bug %]yı yaklaşık 60 yada daha az karakter kullanarak nasıl anlatabilirsiniz?<br>İyi bir özet <b>[% terms.abug %]yı hızlı ve eşsiz bir şekilde tanımlamalıdır</b>. Bir geliştirici raporladığınız [% terms.bug %]yı özetinden tanıyamazsa sayfalar dolusu bir liste içinde ararken gözden kaçırabilir.<br>
+    <br>"<tt>Dosya kopyalama iptal edilince Konqueror çöküyor</tt>" faydali bir özet örneğidir. "<tt>Uygulama çöküyor</tt>" ya da "<tt>Kopyalama sorunu</tt>" kötü özetlere birer örnektir.<br>
     <br>
-     A useful summary is "<tt>Cancelling a File Copy dialog crashes Nautilus</tt>".
-     Examples of bad summaries would be "<tt>Software crashes</tt>" or "<tt>copy problem</tt>".<br>
-    <br>
-     <b>Description:</b><br>
-     Provide a detailed problem report. [% terms.aBug %]'s recipients usually
-     expect the following information:</p>
+     <b>Açıklama(Description):</b><br>
+Ayrıntılı bir raporlama sağlar. [% terms.aBug %]nın alıcısı büyük olasılıkla şu bilgileri talep edecektir:</p>
 
     <blockquote>
-      <p><b>Overview Description:</b> More detailed restatement of
-      summary.</p>
+      <p><b>Yüzeysel açıklama:</b> Özetin daha genişletilmiş ve açıklayıcı şekli.</p>
 
       <blockquote>
 <pre>
-Drag-selecting any page crashes Mac builds in NSGetFactory
+NTFS formatlı bir diske büyük boyutlu dosyalar kopyalanırken, grafik arayüz kullanılarak kopyalama iptal edilirse çöküş gerçekleşiyor. Yarım kalan dosya silinmiyor.
 </pre>
       </blockquote>
 
-      <p><b>Steps to Reproduce:</b> Minimized, easy-to-follow steps that
-      will trigger the [% terms.bug %]. Include any special setup steps.</p>
+      <p><b>Tekrarlama adımları:</b> [% terms.bug %]yı tekrar oluşturmak için yapılması gereken şeyleri sırayla anlatın.</p>
 
       <blockquote>
 <pre>
-1) View any web page. (I used the default sample page, resource:/res/samples/test0.html)
+1) Ext3 dosya formatına sahip bir disk bölümünden 300mb veya daha fazla boyuta sahip bir dosya kopyalanır ve NTFS formatlı bir disk bölümüne yapıştırılır.
 
-2) Drag-select the page. (Specifically, while holding down 
-the mouse button, drag the mouse pointer downwards from any 
-point in the browser's content region to the bottom of the 
-browser's content region.)
+2) Bir süre geçtikten sonra (ben %10'a kadar gelmesini bekliyorum) İptal düğmesine basın ve biray bekleyin.
 </pre>
       </blockquote>
 
-      <p><b>Actual Results:</b> What the application did after performing
-      the above steps.</p>
+      <p><b>Sonuç:</b> Yukarıdaki adımları uyguladıktan sonra uygulama ne tepki veriyor?</p>
 
       <blockquote>
 <pre>
-The application crashed.
+Uygulama çöküyor.(Kioslave uygulaması çöktü ve 11 (SIGSEGV) sinyali gönderdi)
 </pre>
       </blockquote>
 
-      <p><b>Expected Results:</b> What the application should have done,
-      were the [% terms.bug %] not present.</p>
+      <p><b>Beklenen Sonuç:</b> Bu adımlardan sonra uygulamanın [% terms.bug %]yı oluşturmak yerine nasıl tepki vermesi gerekirdi?</p>
 
       <blockquote>
 <pre>
-The window should scroll downwards. Scrolled content should be selected. 
-(Or, at least, the application should not crash.)
+Kopyalama işleminin durdurulması, kopyalanan kısmın silinmesi gerekirdi.
+(Ya da en azından uygulama çökmemeliydi.)
 </pre>
       </blockquote>
 
-      <p><b>Build Date &amp; Platform:</b> Date and platform of the build
-      in which you first encountered the [% terms.bug %].</p>
+      <p><b>Oluşturma tarihi:</b> [% terms.bug %]yı oluşturduğunuz tarih.</p>
 
       <blockquote>
 <pre>
-Build 2006-08-10 on Mac OS 10.4.3
+Hatayı 12.05.2007 tarihinde oluşturdum.
 </pre>
       </blockquote>
 
-      <p><b>Additional Builds and Platforms:</b> Whether or not 
-      the [% terms.bug %] takes place on other platforms (or browsers, 
-      if applicable).</p>
-
-      <blockquote>
-<pre>
-- Doesn't Occur On Build 2006-08-10 on Windows XP Home (Service Pack 2)
-</pre>
-      </blockquote>
-
-      <p><b>Additional Information:</b> Any other debugging information.
-      For crashing [% terms.bugs %]:</p>
+      <p><b>Ek bilgiler:</b> Hatanın tespiti için yararlı olabilecek diğer bilgiler.</p>
 
       <ul>
-        <li><b>Windows:</b> Note the type of the crash, and the module that the
-        application crashed in (e.g. access violation in apprunner.exe).</li>
-
-        <li><b>Mac OS X:</b> Attach the "Crash Reporter" log that appears upon crash.
-        Only include the section directly below the crashing thread, usually titled
-        "Thread 0 Crashed". Please do not paste the entire log!</li>
-
+        <li><b>Not:</b> Bu sorunla contrib deposundaki x paketini kurduktan sonra karşılaşmaya başladım. İlgisi olabilir mi acaba?</li>
       </ul>
 
     </blockquote>
 
-  <p>You're done!<br>
+  <p>İşlem tamam!<br>
+  <br>Yazdıklarınızı herhangi bir yanlışlığa karşı ikinci kez kontrol ettikten sonra, "Gönder"(Commit) düğmesine tıklayın. Ardından [% terms.bug %] raporunuz [% terms.Bugzilla %] veritabanına eklenecektir.
   <br>
-   After double-checking your entries for any possible errors, press the
-  "Commit" button. Your [% terms.bug %] report will now be in 
-  the [% terms.Bugzilla %] database.<br>
   </p>
 </blockquote>
 <hr>
 
-<h3><a name="more">More Information on Writing Good [% terms.Bugs %]</a></h3>
+<h3><a name="more">İyi [% terms.Bugs %] Oluşturmak İçin Daha Fazla Bilgi</a></h3>
 
 <blockquote>
-  <p><b><a name="tips"></a> 1. General Tips for a Useful [% terms.Bug %] 
-     Report</b></p>
+  <p><b><a name="tips"></a> 1. Faydalı [% terms.Bug %] 
+     raporları için genel tavsiyeler</b></p>
 
   <blockquote>
     <p><b>Use an explicit structure, so your [% terms.bug %] reports are easy
@@ -293,53 +224,41 @@ Build 2006-08-10 on Mac OS 10.4.3
     </p>
   </blockquote>
 
-  <p><b><a name="summary"></a>2. How and Why to Write Good [% terms.Bug %]
-  Summaries</b></p>
+  <p><b><a name="summary"></a>2. Neden ve Nasıl iyi [% terms.Bug %]
+  özeti yazmalı</b></p>
 
   <blockquote>
-    <p><b>You want to make a good first impression on the [% terms.bug %]
-    recipient.</b> Just like a New York Times headline guides readers
-    towards a relevant article from dozens of choices, will 
-    your [% terms.bug %] summary suggest that your [% terms.bug %] report is 
-    worth reading from dozens or hundreds of choices?</p>
+    <p><b>[% terms.bug %] ile ilgilenecek olan geliştirici üzerinde iyi bir etki bırakmalısınız.</b> Raporladığınız [% terms.bug %]ya ait özet bir gazetenin manşetinde yer alsaydı,okuyucuların oylarıyla en iyinin belirlendiği, düzinelerce aday manşet arasından en iyi manşet olarak seçilebilir miydi?</p>
 
-    <p>Conversely, a vague [% terms.bug %] summary like <tt>install 
-    problem</tt> forces anyone reviewing installation [% terms.bugs %] to waste 
-    time opening up your [% terms.bug %] to determine whether it matters.</p>
+    <p><tt>Kurulum sorunu</tt> gibi anlaşılmaz bir [% terms.bug %] özeti, benzer sorunlar arasında inceleme yapan biri için hiç birşey ifade etmez. Sorunu tam olarak anlayabilmek için [% terms.bug %] raporunu açıp okumak zorunda kalır ve bu da oldukça fazla zaman kaybına neden olur. </p>
 
-    <p><b>Your [% terms.bug %] will often be searched by its summary.</b> Just 
-    as you'd find web pages with Google by searching with keywords, so will other
-    people locate your [% terms.bugs %]. Descriptive [% terms.bug %] summaries are
-    naturally keyword-rich and easier to find.</p>
+    <p><b>[% terms.bug %] raporları çoğunlukla özete göre aranır.</b>Nasıl Google'da web sitelerini arıyorsanız, diğer insanlar da [% terms.bug %] raporunuza ulaşmak için arama yapacaklardır. Açıklayıcı [% terms.bug %] özetleri anahtar kelime açısından zengindir ve dolayısıyla bulunması kolaydır.</p>
 
     <p>For example, you'll find [% terms.abug %] titled "<tt>Dragging icons 
     from List View to gnome-terminal doesn't paste path</tt>" if you search on
     "List", "terminal", or "path". Those search keywords wouldn't have
     found [% terms.abug %] titled "<tt>Dragging icons doesn't paste</tt>".</p>
 
-    <p>Ask yourself, "Would someone understand my [% terms.bug %] from just 
-    this summary?" If so, you've succeeded.</p>
+    <p>Kendinize şunu sorun, "Yalnızca bu özeti okuyan insanlar raporladığım [% terms.bug %]yı anlayabilirler mi?" Eğer öyleyse başardınız demektir.</p>
 
-    <p><b>Don't write titles like these:</b></p>
+    <p><b>Bu tür başlıklar kullanmayın:</b></p>
 
     <ol>
-      <li>"Can't install" - Why can't you install? What happens when you
-      try to install?</li>
+      <li>"Kuramıyorum" - Neden kuramıyorsunuz? Kurmaya çalıştığınızda ne oluyor, ne ile karşılaşıyorsunuz?</li>
 
-      <li>"Severe Performance Problems" - ...and they occur when you do
-      what?</li>
+      <li>"Bazı Performans Sorunları Var" - ...peki ama bu sorunlar ne yapınca ortaya çıkıyor?</li>
 
-      <li>"back button does not work" - Ever? At all?</li>
+      <li>"Geri Dön Tuşu çalışmıyor" - Her zaman? Genelde?</li>
     </ol>
 
-    <p><b>Good [% terms.bug %] titles:</b></p>
+    <p><b>İyi [% terms.bug %] başlıkları:</b></p>
 
     <ol>
-      <li>"Save button disabled after failed post attempt" -
-      Explains the problem and context.</li>
+      <li>"Başarısız posta gönderimi sonrası Kaydet tuşu çalışmıyor." -
+      Sorun ve sebebini açıklıyor.</li>
 
-      <li>"Enter &amp; Escape have no effect in 'Upload Photos' dialog" -
-      Also explains the problem and context.</li>
+      <li>"'Resim Yükleme' penceresinde &amp; kaçışını kullanmanın bir etkisi olmuyor." -
+      Aynı şekilde sorun ve sebebini açıklıyor.</li>
     </ol>
   </blockquote>
 </blockquote>
