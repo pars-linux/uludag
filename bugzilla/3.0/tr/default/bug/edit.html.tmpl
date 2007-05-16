@@ -673,8 +673,12 @@
         <b>Reporter</b>:
       </td>
       <td>
+      [% IF user.login %]
         <a href="mailto:[% bug.reporter.email FILTER html %]">
           [% bug.reporter.identity FILTER html %]</a>
+      [% ELSE %]
+        [% bug.reporter.name %]
+      [% END %]
       </td>
     </tr>
 
@@ -683,8 +687,12 @@
         <b><a href="page.cgi?id=fields.html#assigned_to">Assigned&nbsp;To</a></b>:
       </td>
       <td>
+        [% IF user.login %]
         <a href="mailto:[% bug.assigned_to.email FILTER html %]">
            [% bug.assigned_to.identity FILTER html %]</a>
+        [% ELSE %]
+            [% bug.assigned_to.name %]
+        [% END %]
       </td>
     </tr>
 
@@ -737,7 +745,8 @@
     [% END %]
 
     <tr>
-      [% IF bug.cc %]
+      [% IF user.login %]
+        [% IF bug.cc %]
         <td align="right" valign="top">
           <label for="cc"><b>CC</b></label>:
         </td>
@@ -754,9 +763,12 @@
             <br>
           [% END %]
         </td>
-      [% ELSE %]
+        [% ELSE %]
         <td colspan="2"><input type="hidden" name="cc" value=""></td>
-      [% END %]
+        [% END %]
+       [% ELSE %]
+        <td colspan="2">Please login to see CC list</td>
+       [% END %]
     </tr>
   </table>
 [% END %]
