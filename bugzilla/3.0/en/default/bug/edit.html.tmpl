@@ -677,7 +677,7 @@
         <a href="mailto:[% bug.reporter.email FILTER html %]">
           [% bug.reporter.identity FILTER html %]</a>
       [% ELSE %]
-        [% bug.reporter.name %]
+          [% bug.reporter.name %]
       [% END %]
       </td>
     </tr>
@@ -691,7 +691,7 @@
         <a href="mailto:[% bug.assigned_to.email FILTER html %]">
            [% bug.assigned_to.identity FILTER html %]</a>
         [% ELSE %]
-            [% bug.assigned_to.name %]
+           [% bug.assigned_to.name %]
         [% END %]
       </td>
     </tr>
@@ -766,9 +766,9 @@
         [% ELSE %]
         <td colspan="2"><input type="hidden" name="cc" value=""></td>
         [% END %]
-       [% ELSE %]
+      [% ELSE %]
         <td colspan="2">Please login to see CC list</td>
-       [% END %]
+      [% END %]
     </tr>
   </table>
 [% END %]
