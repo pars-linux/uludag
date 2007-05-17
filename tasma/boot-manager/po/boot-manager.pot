@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-14 09:48+0300\n"
+"POT-Creation-Date: 2007-05-17 09:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgid "Kernel"
 msgstr ""
 
 #: src/mainview.py:123
-msgid "Kernel Options"
+msgid "Kernel Parameters"
 msgstr ""
 
 #: src/mainview.py:132
@@ -60,19 +60,19 @@ msgstr ""
 msgid "Set as default boot entry."
 msgstr ""
 
-#: src/mainview.py:200
+#: src/mainview.py:197
 msgid "Are you sure you want to remove this entry?"
 msgstr ""
 
-#: src/mainview.py:200
+#: src/mainview.py:197
 msgid "Delete Entry"
 msgstr ""
 
-#: src/mainview.py:322
+#: src/mainview.py:316
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 
-#: src/mainview.py:350
+#: src/mainview.py:345
 msgid "Failed"
 msgstr ""
 

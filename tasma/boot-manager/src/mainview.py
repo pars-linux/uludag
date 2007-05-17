@@ -120,7 +120,7 @@ class widgetEditEntry(QWidget):
         self.fields["kernel"] = (self.labelKernel, self.editKernel)
         
         self.labelOptions = QLabel(self)
-        self.labelOptions.setText(i18n("Kernel Options"))
+        self.labelOptions.setText(i18n("Kernel Parameters"))
         layout.addWidget(self.labelOptions, 4, 0)
         
         self.editOptions = QLineEdit(self)
