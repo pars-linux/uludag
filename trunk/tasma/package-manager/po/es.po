@@ -1,3 +1,4 @@
+# translation of es.po to spanish
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -11,9 +12,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-13 21:11+0300\n"
-"PO-Revision-Date: 2007-05-13 21:14+0300\n"
-"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2007-05-16 20:35-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
+"Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,10 +62,9 @@ msgstr "Hay <b>%1</b> actualizaciones disponibles!"
 msgid "Select all packages in this category"
 msgstr "Selecccionar todos los paquetes de esta categoría"
 
-# translated like "uncheck all", i think it does this, doen't it ?
 #: src/CustomEventListener.py:48 src/package-manager.py:301
 msgid "Reverse package selections"
-msgstr "Desmarcar todos los paquetes"
+msgstr "Invertir las marcas de selección de paquetes"
 
 #: src/BalloonMessage.py:44
 msgid "Show Updates"
@@ -162,7 +162,7 @@ msgstr "Ayuda del Administrador de Paquetes"
 
 #: src/Preferences.py:77
 msgid "Add New Repository"
-msgstr "Agregar Repositorio nuevo"
+msgstr "Agregar Repositorio"
 
 #: src/Preferences.py:84
 msgid "Edit Repository"
@@ -340,7 +340,7 @@ msgstr ""
 # ...requeridas...
 #: src/package-manager.py:436
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr " y <b>%3</b> dependencias requeridos con un tamaño de <b>%4</b> adicional"
+msgstr " y <b>%3</b> dependencias requeridos con un tamaño adicional de <b>%4</b>"
 
 #: src/package-manager.py:438 src/package-manager.py:446
 msgid "in your basket."
@@ -555,7 +555,7 @@ msgstr "&Agregar Nuevo Repositorio"
 # Pinche/Presione
 #: src/PreferencesDialog.py:195
 msgid "Click here to add a new software repository"
-msgstr "Pinche aquí para agregar un nuevo repositorio de software"
+msgstr "Presione aquí para agregar un nuevo repositorio de software"
 
 #: src/PreferencesDialog.py:196
 msgid "&Edit Repository"
@@ -563,7 +563,7 @@ msgstr "&Editar Repositorio"
 
 #: src/PreferencesDialog.py:197
 msgid "Click here to modify the name or address of a repository"
-msgstr "Pinche aquí para modificar el nombre o la dirección de un repositorio"
+msgstr "Presione aquí para modificar el nombre o la dirección de un repositorio"
 
 #: src/PreferencesDialog.py:198
 msgid "&Remove Repository"
@@ -571,7 +571,7 @@ msgstr "&Remover Repositorio"
 
 #: src/PreferencesDialog.py:199
 msgid "Click here to delete a repository from the list"
-msgstr "Pinche aquí para eliminar un repositorio de la lista"
+msgstr "Presione aquí para eliminar un repositorio de la lista"
 
 #: src/PreferencesDialog.py:200
 msgid "Move &Up"
@@ -579,7 +579,7 @@ msgstr "Mover &Arriba"
 
 #: src/PreferencesDialog.py:201
 msgid "Click here to move the repository one level up"
-msgstr "Pinche aquí para mover al repositorio una posición hacia arriba"
+msgstr "Presione aquí para mover al repositorio una posición hacia arriba"
 
 #: src/PreferencesDialog.py:202
 msgid "Move &Down"
@@ -587,7 +587,7 @@ msgstr "Mover A&bajo"
 
 #: src/PreferencesDialog.py:203
 msgid "Click here to move the repository one level down"
-msgstr "Pinche aquí para mover al repositorio una posición hacia abajo"
+msgstr "Presione aquí para mover al repositorio una posición hacia abajo"
 
 #: src/PreferencesDialog.py:204
 msgid "&Repositories"

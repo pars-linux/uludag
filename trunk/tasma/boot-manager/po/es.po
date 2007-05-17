@@ -1,0 +1,83 @@
+# translation of fr.po to spanish
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
+# klemens <click3d at linuxmail org>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-05-01 17:40+0300\n"
+"PO-Revision-Date: 2007-05-13 08:51-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
+"Language-Team: spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/boot-manager.py:30 src/boot-manager.py:81
+msgid "Bootloader Manager"
+msgstr "Administrador de Arranque"
+
+#: src/boot-manager.py:76
+msgid "Bootloader Manager is already started!"
+msgstr "El administrador del cargador de arranque ya se está ejecutando !"
+
+#: src/mainview.py:35
+msgid "New Entry"
+msgstr "Nueva entrada"
+
+#: src/mainview.py:75
+msgid "Title"
+msgstr "Título"
+
+#: src/mainview.py:82
+msgid "System"
+msgstr "Sistema"
+
+#: src/mainview.py:92
+msgid "Root"
+msgstr "Root (Raíz del sistema)"
+
+#: src/mainview.py:101
+msgid "Kernel"
+msgstr "Núcleo"
+
+#: src/mainview.py:110
+msgid "Kernel Options"
+msgstr "Opciones de núcleo"
+
+#: src/mainview.py:119
+msgid "Init Ramdrive"
+msgstr "Init Ramdrive"
+
+#: src/mainview.py:162
+msgid "Are you sure you want to remove this entry?"
+msgstr "Está seguro que desea remover esta entrada ?"
+
+#: src/mainview.py:162
+msgid "Delete Entry"
+msgstr "Eliminar Entrada"
+
+#: src/mainview.py:260
+msgid "Bootloader configuration changed by another application."
+msgstr "La configuración de arranque fue modificada por otro programa."
+
+#: src/mainview.py:293
+msgid "Failed"
+msgstr "Falló"
+
+#: src/utility.py:54
+msgid "Disk %1, Partition %2"
+msgstr "Disco %1, Partición %2"
+
+#: src/ui_elements.py:83
+msgid "Edit entry"
+msgstr "Editar entrada"
+
+#: src/ui_elements.py:87
+msgid "Delete entry"
+msgstr "Eliminar entrada"
+
