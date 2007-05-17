@@ -17,7 +17,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
-  #                 Frédéric Buclin <LpSolit@gmail.com>
+  #                 FrÃ©dÃ©ric Buclin <LpSolit@gmail.com>
   #%]
 
 [%# INTERFACE:
@@ -27,16 +27,15 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% title = BLOCK %]
-  Request for new user account '[% login FILTER html %]' submitted
+  Yeni kullanıcı hesabı '[% login FILTER html %]' için istem kaydedildi 
 [% END %]
 
 [% PROCESS global/header.html.tmpl title = title %]
 
 <p>
-  To confirm the creation of the user account <tt>[% login FILTER html %]</tt>,
-  use the URL given in the email you will receive. If you take no action in the
-  next [% constants.MAX_TOKEN_AGE FILTER html %] days, this request will
-  automatically be canceled.
+  Yeni kullanıcı <tt>[% login FILTER html %]</tt>'nın hesabının oluşturulmasını 
+  onaylamak için alacağınız e-postadaki URL'yi kullanın. Sonraki [% constants.MAX_TOKEN_AGE FILTER html %]
+  gün içinde hiç bir şey yapmazsanız isteğiniz otomatik olarak iptal edilecektir.
 </p>
 
 [% PROCESS global/footer.html.tmpl %] 
