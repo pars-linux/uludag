@@ -624,16 +624,6 @@ def is_package_name(fn, package_name = None):
             return True
     return False
 
-def env_update():
-    import pisi.environment
-    ctx.ui.info(_('Updating environment...'))
-
-    env_dir = join_path(ctx.config.dest_dir(), "/etc/env.d")
-    if not os.path.exists(env_dir):
-        os.makedirs(env_dir, 0755)
-
-    pisi.environment.update_environment(ctx.config.dest_dir())
-
 def parse_package_name(package_name):
     """Separate package name and version string.
     
