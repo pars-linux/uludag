@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-01 17:40+0300\n"
+"POT-Creation-Date: 2007-05-17 09:24+0300\n"
 "PO-Revision-Date: 2007-05-07 08:44+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -28,43 +28,54 @@ msgstr "Le gestionnaire de bootloader (chargeur de démarrage) est déjà lancé
 msgid "New Entry"
 msgstr "Nouvelle entrée"
 
-#: src/mainview.py:75
+#: src/mainview.py:54
+msgid "Remember last booted entry."
+msgstr ""
+
+#: src/mainview.py:87
 msgid "Title"
 msgstr "Titre"
 
-#: src/mainview.py:82
+#: src/mainview.py:95
 msgid "System"
 msgstr "Système"
 
-#: src/mainview.py:92
+#: src/mainview.py:105
 msgid "Root"
 msgstr "Root (Racine)"
 
-#: src/mainview.py:101
+#: src/mainview.py:114
 msgid "Kernel"
 msgstr "Noyau"
 
-#: src/mainview.py:110
-msgid "Kernel Options"
-msgstr "Options du noyau"
+#: src/mainview.py:123
+msgid "Kernel Parameters"
+msgstr ""
 
-#: src/mainview.py:119
-msgid "Init Ramdrive"
+#: src/mainview.py:132
+#, fuzzy
+msgid "Initial Ramdisk"
 msgstr "Init Ramdrive (Initialisation Ramdrive)"
 
-#: src/mainview.py:162
+#: src/mainview.py:141
+msgid "Set as default boot entry."
+msgstr ""
+
+#: src/mainview.py:197
 msgid "Are you sure you want to remove this entry?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette entrée ?"
 
-#: src/mainview.py:162
+#: src/mainview.py:197
 msgid "Delete Entry"
 msgstr "Supprimer l'entrée"
 
-#: src/mainview.py:260
+#: src/mainview.py:316
 msgid "Bootloader configuration changed by another application."
-msgstr "Configuration du booloader (chargeur de démarrage) changé par une autre application."
+msgstr ""
+"Configuration du booloader (chargeur de démarrage) changé par une autre "
+"application."
 
-#: src/mainview.py:293
+#: src/mainview.py:345
 msgid "Failed"
 msgstr "Echec"
 
@@ -72,11 +83,13 @@ msgstr "Echec"
 msgid "Disk %1, Partition %2"
 msgstr "Disque %1, Partition %2"
 
-#: src/ui_elements.py:83
+#: src/ui_elements.py:82
 msgid "Edit entry"
 msgstr "Éditer l'entrée"
 
-#: src/ui_elements.py:87
+#: src/ui_elements.py:86
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
 
+#~ msgid "Kernel Options"
+#~ msgstr "Options du noyau"
