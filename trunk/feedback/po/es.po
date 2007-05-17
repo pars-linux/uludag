@@ -1,17 +1,18 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of es.po to spanish
+# Copyright (C) 2007 Free Software Foundation, Inc.
 #
+# klemens <click3d at linuxmail org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: feedback\n"
+"Project-Id-Version: es\n"
 "POT-Creation-Date: 2006-11-17 10:48+0200\n"
-"PO-Revision-Date: 2006-11-26 12:36-0400\n"
-"Last-Translator: Klemens Häckel <click3d(.a)linuxmail.org>\n"
+"PO-Revision-Date: 2007-05-16 20:16-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/experiencedlg.py:142
 #: src/feedback.py:69
@@ -41,7 +42,7 @@ msgstr "En el colegio"
 #: src/purposedlg.py:92
 #: src/usagedlg.py:74
 msgid "<p align=\"right\">(You can click on multiple items)</p>"
-msgstr "<p align=\"right\">(Puedes seleccionar varios itemes)</p>"
+msgstr "<p align=\"right\">(Puede seleccionar varios itemes)</p>"
 
 #: src/usagedlg.py:75
 msgid "<b>Step 3 of 7</b>"
@@ -49,7 +50,7 @@ msgstr "<b>Paso 3 de 7</b>"
 
 #: src/usagedlg.py:76
 msgid "<h2>Where do you use Pardus?</h2>"
-msgstr "<h2>Donde estás usando Pardus ?</h2>"
+msgstr "<h2>Donde está usando Pardus ?</h2>"
 
 #: src/questiondlg.py:255
 msgid "Very satisfying. Pardus fulfils my requirements"
@@ -94,16 +95,16 @@ msgstr ""
 "<h2>Información de la Computadora</h2>\n"
 "<p>\n"
 "Pardus Hardware Collect Info Wizard recaudará ahora informaciones\n"
-"sobre tu hardware, incluyendo CPU, memoria y tarjetas de red. Esta \n"
+"sobre el hardware, incluyendo CPU, memoria y tarjetas de red. Esta \n"
 "información se enviará al centro de desarrollo de Pardus para\n"
 "elaborar las proximas versiones de Pardus mas estables y mas seguros. \n"
 "Se necesita una conexión a internet para concluir esta operación. \n"
 "\n"
-"<b>No se enviará información ninguna sobre sus documentos personales.</b>"
+"<b>No se enviará información sobre sus documentos personales.</b>"
 
 #: src/opiniondlg.py:59
 msgid "<h2>Your opinions about Pardus?</h2>"
-msgstr "<h2>Tu opinión sobre Pardus ?</h2>"
+msgstr "<h2>Su opinión sobre Pardus ?</h2>"
 
 #: src/opiniondlg.py:60
 msgid ""
@@ -135,7 +136,7 @@ msgstr "Usuario avanzado"
 
 #: src/experiencedlg.py:148
 msgid "<h2>What is your experience level?</h2>"
-msgstr "<h2>Cual es tu nivel de experiencia ?</h2>"
+msgstr "<h2>Cual es su nivel de experiencia ?</h2>"
 
 #: src/experiencedlg.py:149
 msgid "<b>Step 1 of 7</b>"
@@ -169,12 +170,12 @@ msgid ""
 msgstr ""
 "<h2>Bienvenido a Pardus</h2>\n"
 "\n"
-"Con este pequeño asistente puedes enviar tus mensajes a los \n"
+"Con este pequeño asistente puede enviar mensajes a los \n"
 "desarolladores de Pardus y ayudar a hacer a Pardus el mejor Linux del mundo.\n"
 "\n"
 "<p>\n"
-"La información que vas a dar aquí va a acelerar el desarollo de Pardus. \n"
-"Favor cliquear el botón \"Siguiente\" para el próximo paso.\n"
+"La información que transmite mediante esta herramienta va a acelerar el desarollo de Pardus. \n"
+"Favor presionar el botón \"Siguiente\" para el próximo paso.\n"
 "<p>"
 
 #: src/purposedlg.py:84
@@ -208,7 +209,7 @@ msgstr "Para estudiar"
 # shouldn't it be: "What do You use Pardus for" (ne-icin) ?
 #: src/purposedlg.py:93
 msgid "<h2>Why do you use Pardus?</h2>"
-msgstr "<h2>Para que estás usando Pardus ?</h2>"
+msgstr "<h2>Para que está usando Pardus ?</h2>"
 
 #: src/purposedlg.py:94
 msgid "<b>Step 2 of 7</b>"
@@ -278,7 +279,7 @@ msgstr "<font color=\"#ff0000\">No posible conectar a base de datos de feedback.
 
 #: src/feedback.py:257
 msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</font><br>\n"
-msgstr "<font color=\"#ff0000\">Feedback parece interrumpido.Datos corruptos.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Feedback parece interrumpido. Datos están corruptos.</font><br>\n"
 
 #: src/feedback.py:259
 msgid "<font color=\"#ff0000\">Server does not support this version. Please update feedback tool.</font><br>\n"
@@ -286,7 +287,7 @@ msgstr "<font color=\"#ff0000\">Servidor no soporta esta versión. Favor actuali
 
 #: src/feedback.py:261
 msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</font><br>\n"
-msgstr "<font color=\"#ff0000\">Feedback parece interrumpido.Datos faltantes.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Feedback parece interrumpido. Datos faltantes.</font><br>\n"
 
 #: src/feedback.py:263
 msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
@@ -294,11 +295,11 @@ msgstr "<font color=\"#ff0000\">Base de datos de Feedback está fuera de linea.<
 
 #: src/feedback.py:265
 msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
-msgstr "<font color=\"#ff0000\">Ya enviaste anteriormente tu feedback.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Ya se envió anteriormente el feedback.</font><br>\n"
 
 #: src/feedback.py:267
 msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
-msgstr "<font color=\"#ff0000\">Base de datos de Feedback tiene erores.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Base de datos de Feedback tiene errores.</font><br>\n"
 
 #: src/feedback.py:286
 msgid "Feedback tool is already running!"
@@ -306,7 +307,7 @@ msgstr "Feedback tool ya se está ejecutando !"
 
 #: src/upload.py:246
 msgid "<h2>Upload</h2>"
-msgstr "<h2>Envio</h2>"
+msgstr "<h2>Envío</h2>"
 
 #: src/upload.py:247
 msgid "Retry"
@@ -318,8 +319,8 @@ msgid ""
 "You can submit your e-mail address for inclusion in our low traffic\n"
 "announces."
 msgstr ""
-"<h2>Tu information personal (opcional)</h2>\n"
-"Puedes incluir tu dirección e-mail en nuestra lista de noticias."
+"<h2>Information personal (opcional)</h2>\n"
+"Puede incluir su dirección e-mail en nuestra lista de noticias."
 
 #: src/personalinfodlg.py:248
 msgid "E-mail:"
