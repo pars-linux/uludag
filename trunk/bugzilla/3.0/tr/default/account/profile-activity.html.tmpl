@@ -36,12 +36,12 @@
   #%]
 
 [% title = BLOCK %]
-  View User Account Log for '[% otheruser.login FILTER html %]'
+  '[% otheruser.login FILTER html %]' için Kullanıcı Hesabı kayıtlarını incele
 [% END %]
 
 
 [% PROCESS global/header.html.tmpl
-  title = title
+  başlık = title
 %]
 
 [% PROCESS admin/users/listselectvars.html.tmpl
@@ -50,36 +50,36 @@
 
 [% columns =
   [{name               => 'who'
-    heading            => 'Who'
+    heading            => 'Kim'
    }
    {name               => 'activity_when'
-    heading            => 'When'
+    heading            => 'Ne zaman'
    }
    {name               => 'what'
-    heading            => 'What'
+    heading            => 'Ne'
    }
    {name               => 'removed'
-    heading            => 'Removed'
+    heading            => 'Silindi'
    }
    {name               => 'added'
-    heading            => 'Added'
+    heading            => 'Eklendi'
    }
   ]
 %]
 
 [% PROCESS admin/table.html.tmpl
-  columns = columns
-  data    = profile_changes
+  sütunlar = columns
+  veriler  = profile_changes
 %]
 
 <p><a href="editusers.cgi?action=edit&amp;userid=
   [%- otheruser.id FILTER url_quote %]"
-  title="Edit user '[% otheruser.login FILTER html %]'">Edit this user</a> or
-  <a title="Search For Users" href="editusers.cgi">find other accounts</a>
+  title="'[% otheruser.login FILTER html %]' kullanıcısında değişiklik yap">Bu kullanıcıda değişiklik yap</a> veya
+  <a title="Kullanıcılarda Ara" href="editusers.cgi">diğer hesaplada ara</a>
   [% IF listselectionvalues.matchtype != 'exact' %]
-    or go <a title="Return to the user list"
-       href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">back
-    to the user list</a>
+    or go <a title="Kullanıcı listesine geri dön"
+       href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">kullanıcı
+    listesine geri dön</a>
   [% END %]
 </p>
 
