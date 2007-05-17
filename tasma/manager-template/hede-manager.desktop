@@ -2,11 +2,13 @@
 Name=Hede Manager
 Name[tr]=Hede Yöneticisi
 Name[de]=Hede Manager
+Name[es]=Administrador Muestra
 Name[pt_BR]=Gerenciador do Hede
 GenericName=Sample Tasma Module
 GenericName[tr]=Örnek Tasma Modülü
 GenericName[de]=Muster Tasma-Modul
 GenericName[pt_BR]=Módulo Tasma de Amostra
+GenericName[es]=Módulo Tasma de Muestra
 X-KDE-ModuleType=Library
 X-KDE-Library=hede-manager
 X-KDE-FactoryName=hede_manager
