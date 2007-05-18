@@ -149,7 +149,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.repoListView.currentItem().setText(0,newRepoName)
         self.repoListView.currentItem().setText(1,newRepoAddress)
 
-        self.reposChanged = True
+        if self.oldRepoAddress != newRepoAddress or self.oldRepoName != newRepoName:
+            self.reposChanged = True
+
         self.repo.close()
 
     def saveSettings(self):
