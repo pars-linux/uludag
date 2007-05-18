@@ -35,6 +35,8 @@ struct traced_child {
 struct trace_context {
 	/* main callable */
 	PyObject *func;
+	/* arguments to callable */
+	PyObject *func_args;
 	/* violation logger function */
 	PyObject *logger;
 	/* this object keeps everything to be returned to the caller */
