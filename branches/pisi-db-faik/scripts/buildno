@@ -1,0 +1,2 @@
+#!/bin/bash
+pisi li -i | grep None
