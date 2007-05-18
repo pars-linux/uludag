@@ -41,7 +41,7 @@
 
 
 [% PROCESS global/header.html.tmpl
-  başlık = title
+  title = title
 %]
 
 [% PROCESS admin/users/listselectvars.html.tmpl
@@ -68,8 +68,8 @@
 %]
 
 [% PROCESS admin/table.html.tmpl
-  sütunlar = columns
-  veriler  = profile_changes
+  columns = columns
+  data  = profile_changes
 %]
 
 <p><a href="editusers.cgi?action=edit&amp;userid=
