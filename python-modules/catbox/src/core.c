@@ -175,6 +175,7 @@ catbox_core_run(struct trace_context *ctx)
 	if (pid == 0) {
 		// child process comes to life
 		PyObject *ret;
+		PyObject *args;
 
 		// set up tracing mode
 		ptrace(PTRACE_TRACEME, 0, 0, 0);
@@ -184,7 +185,9 @@ catbox_core_run(struct trace_context *ctx)
 		while (!got_sig);
 
 		// let the callable do its job
-		ret = PyObject_Call(ctx->func, PyTuple_New(0), NULL);
+		args = ctx->func_args;
+		if (!args) args = PyTuple_New(0);
+		ret = PyObject_Call(ctx->func, args, NULL);
 
 		if (!ret) {
 			PyObject *e;

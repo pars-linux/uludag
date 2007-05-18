@@ -51,6 +51,7 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 		"writable_paths",
 		"network",
 		"logger",
+		"args",
 		NULL
 	};
 	PyObject *ret;
@@ -60,8 +61,9 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 
 	memset(&ctx, 0, sizeof(struct trace_context));
 
-	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|OOO", kwlist, &ctx.func, &paths, &net, &ctx.logger))
-		return NULL;
+	if (!PyArg_ParseTupleAndKeywords(args, kwargs, "O|OOOO",
+		kwlist, &ctx.func, &paths, &net, &ctx.logger, &ctx.func_args))
+			return NULL;
 
 	if (PyCallable_Check(ctx.func) == 0) {
 		PyErr_SetString(PyExc_TypeError, "First argument should be a callable function");
