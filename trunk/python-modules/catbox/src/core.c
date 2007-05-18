@@ -137,6 +137,8 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 			if (WIFSIGNALED(status)) {
 				// 3. reason: Child is terminated by a signal
 				ptrace(PTRACE_SYSCALL, pid, 0, (void*) WTERMSIG(status));
+				retcode = 1;
+				rem_child(ctx, pid);
 			} else {
 				// This shouldn't happen
 				printf("xxxxxxxxxSignal %x pid %d\n", status, pid);
