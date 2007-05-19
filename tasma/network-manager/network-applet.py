@@ -360,7 +360,7 @@ class ConnectionItem(QCustomMenuItem):
         if self.conn.state == "up":
             text = self.conn.net_addr
             if not text:
-                text = self.conn.message
+                text = unicode(self.conn.message)
         else:
             if self.conn.message:
                 text = unicode(self.conn.message)
