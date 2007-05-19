@@ -1,4 +1,4 @@
 [Autorun]
 ICON=cdrom.ico
-OPEN=releasenotes-tr.html
-ShellExecute=releasenotes-tr.html
+OPEN=index.html
+ShellExecute=index.html
