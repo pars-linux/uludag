@@ -107,7 +107,7 @@ class Fstab:
         self.defaultFileSystemOptions["ext2"] = "noatime"
         self.defaultFileSystemOptions["ntfs-3g"] = "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6"
         self.defaultFileSystemOptions["reiserfs"] = "noatime"
-        self.defaultFileSystemOptions["xfs"] = "noatime,nobarrier"
+        self.defaultFileSystemOptions["xfs"] = "noatime"
         self.defaultFileSystemOptions["defaults"] = "defaults"
 
         self.maplabels()
