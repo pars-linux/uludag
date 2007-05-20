@@ -39,12 +39,12 @@
                    "component_id"         => "Bileşen Numarası",
                    "component"            => "Bileşen",
                    "creation_ts"          => "$terms.Bug Oluşturma zamanı",
-                   "deadline"             => "Deadline",
-                   "delta_ts"             => "Changed",
+                   "deadline"             => "Son Teslim Tarihi",
+                   "delta_ts"             => "Değişti",
                    "dependson"            => "Bağımlı olduğu",
-                   "dup_id"               => "Duplicate",
+                   "dup_id"               => "Aynısı",
                    "estimated_time"       => "Orig. Est.",
-                   "everconfirmed"        => "Ever confirmed?",
+                   "everconfirmed"        => "Hiç Onaylandı?",
                    "groupset"             => "Groupset",
                    "keywords"             => "Anahtar Kelimeler",
                    "newcc"                => "CC",
@@ -55,7 +55,7 @@
                    "product_id"           => "Ürün Numarası",
                    "product"              => "Ürün",
                    "qa_contact"           => "Kalite Sorumlusu",
-                   "remaining_time"       => "Saat Kaldo",
+                   "remaining_time"       => "Saat Kaldı",
                    "rep_platform"         => "Donanım",
                    "reporter"             => "Raporlayan",
                    "reporter_accessible"  => "Raporlayan erişilebilir mi?",
@@ -65,7 +65,7 @@
                    "short_desc"           => "Özet",
                    "status_whiteboard"    => "Beyaz Tahta",
                    "target_milestone"     => "Hedef Mihenktaşı",
-                   "version"              => "Versiyon",
+                   "version"              => "Sürüm",
                    "votes"                => "Oylar",
                    "work_time"            => "Saat Çalışıldı"} %]
 
@@ -80,23 +80,23 @@
      IF !field_descs.${bz_field.name}.defined %]
 [% END %]
 
-[% field_types = { ${constants.FIELD_TYPE_UNKNOWN}       => "Unknown Type",
-                   ${constants.FIELD_TYPE_FREETEXT}      => "Free Text",
-                   ${constants.FIELD_TYPE_SINGLE_SELECT} => "Drop Down" } %]
+[% field_types = { ${constants.FIELD_TYPE_UNKNOWN}       => "Belirsiz Tip",
+                   ${constants.FIELD_TYPE_FREETEXT}      => "Serbest Metin",
+                   ${constants.FIELD_TYPE_SINGLE_SELECT} => "Açılan" } %]
 
-[% status_descs = { "UNCONFIRMED" => "UNCONFIRMED",
+[% status_descs = { "UNCONFIRMED" => "ONAYLANMADI",
                     "NEW"         => "YENİ",
-                    "ASSIGNED"    => "ATANMIŞ",
-                    "REOPENED"    => "TEKRAR AÇILMIŞ",
-                    "RESOLVED"    => "ÇÖZÜLMÜŞ",
-                    "VERIFIED"    => "ONAYLANMIŞ",
-                    "CLOSED"      => "KAPATILMIŞ" } %]
+                    "ASSIGNED"    => "ATANDI",
+                    "REOPENED"    => "TEKRAR AÇILDI",
+                    "RESOLVED"    => "KARAR VERİLDİ",
+                    "VERIFIED"    => "ONAYLANDI",
+                    "CLOSED"      => "KAPATILDI" } %]
 
-[% resolution_descs = { "FIXED"      => "ÇÖZÜLDÜ",
+[% resolution_descs = { "FIXED"      => "DÜZELTİLDİ",
                         "INVALID"    => "GEÇERSİZ",
-                        "WONTFIX"    => "ÇÖZÜLMEYECEK",
-                        "DUPLICATE"  => "DUPLICATE",
-                        "WORKSFORME" => "EVDE ÇALIŞIYOR",
+                        "WONTFIX"    => "REDDEDİLDİ",
+                        "DUPLICATE"  => "AYNISI",
+                        "WORKSFORME" => "BENDE ÇALIŞIYOR",
                         "MOVED"      => "TAŞINDI",
                         "---"        => "---",
                         " "          => " " } %]

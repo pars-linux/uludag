@@ -42,16 +42,16 @@
 <h3><a name="why">Bu Belgeyi Niçin Okumalısınız</a></h3>
 
 <blockquote>
-  <p>Şöyle düşünün, ne kadar etkili [% terms.abug %] raporlarsanız, o hatanın geliştiriciler için çözülmesi o kadar cazip olur. Bu belge [% terms.bug %] raporlamaya yeni başlayan veya [% terms.bug %] raporlamak hakkında orta seviyede bilgisi olan kullanıcılara nasıl etkili [% terms.bug %] raporlanması gerektiğini anlatır.</p>
+  <p>Şöyle düşünün, ne kadar etkili [% terms.abug %] raporlarsanız, o hatanın geliştiriciler için düzeltilmesi o kadar cazip olur. Bu belge [% terms.bug %] raporlamaya yeni başlayan veya [% terms.bug %] raporlamak hakkında orta seviyede bilgisi olan kullanıcılara nasıl etkili [% terms.bug %] raporlanması gerektiğini anlatır.</p>
 </blockquote>
 
 <h3><a name="useful">Bir [% terms.Bug %] Raporunu Faydalı Yapan Nedir?</a></h3>
 
 <blockquote>
-  <p>Faydalı bir [% terms.bug %] raporu kolay çözülür. Faydalı bir [% terms.bug %] raporunun iki niteliği vardır:</p>
+  <p>Faydalı bir [% terms.bug %] raporu kolay düzeltilir. Faydalı bir [% terms.bug %] raporunun iki niteliği vardır:</p>
 
   <ul>
-    <li><b>Tekrar edilebilirlik.</b> Geliştiriciler tekrarlayabildikleri [% terms.bugs %]ı çözmeyi tercih ederler. Eğer bir geliştirici raporlanan [% terms.bug %]yı tekrar edemiyorsa "[% get_resolution("WORKSFORME") FILTER html %]" yada "[% get_resolution("INVALID") FILTER html %]" olarak işaretleyebilir.<br>
+    <li><b>Tekrar edilebilirlik.</b> Geliştiriciler tekrarlayabildikleri [% terms.bugs %]ı düzeltmeyi tercih ederler. Eğer bir geliştirici raporlanan [% terms.bug %]yı tekrar edemiyorsa "[% get_resolution("WORKSFORME") FILTER html %]" yada "[% get_resolution("INVALID") FILTER html %]" olarak işaretleyebilir.<br>
     <br>
     </li>
 
@@ -67,7 +67,7 @@
   <li>Herhangi bir [% terms.bug %] raporlamadan önce, [% terms.Bugzilla %]'nın 
   <a href="query.cgi?format=specific">Arama</a> özelliğini kullanarak,[% terms.bug %]nın başkaları tarafından daha önce raporlanmadığına emin olun.</li>
 
-  <li>[% terms.Bug %]yı güncel sürümü kullanarak tekrar etmeye çalışın. Raporlamak istediğiniz [% terms.bug %], geliştiricilerin üzerinde çalıştıkları son sürümde çözülmüş olabilir.</li>
+  <li>[% terms.Bug %]yı güncel sürümü kullanarak tekrar etmeye çalışın. Raporlamak istediğiniz [% terms.bug %], geliştiricilerin üzerinde çalıştıkları son sürümde düzeltilmiş olabilir.</li>
 </ol>
 
 <blockquote>
@@ -89,7 +89,7 @@
 </ol>
 
 
-  <p><b>[% terms.bug %]yı nerede buldunuz?</b></p>
+  <p><b>[% terms.Bug %]yı nerede buldunuz?</b></p>
 
   <blockquote>
     <p><b>Ürün(Product):</b> Hangi ürün içinde buldunuz?<br>
@@ -196,24 +196,14 @@ Hatayı 12.05.2007 tarihinde oluşturdum.
      raporları için genel tavsiyeler</b></p>
 
   <blockquote>
-    <p><b>Use an explicit structure, so your [% terms.bug %] reports are easy
-    to skim.</b> [% terms.Bug %] report users often need immediate access to 
-    specific sections of your [% terms.bug %]. Follow the structure 
-    recommended above.</p>
+    <p><b>[% terms.Bug %] raporlarken oldukca belirgin bir yapı kullanın ki, anlaşılması ve takibi kolay olsun.</b> [% terms.Bug %] raporlarını takip eden kişiler çoğunlukla [% terms.bug %]nın belli bir kısmına ihtiyaç duyarlar. Bu nedenle lütfen yukarıda tavsiye edilen rapor yapısını kullanın.</p>
 
-    <p><b>Avoid cuteness if it costs clarity.</b> Nobody will be laughing
-    at your funny [% terms.bug %] title at 3:00 AM when they can't remember how 
-    to find your [% terms.bug %].</p>
+    <p><b>Eğer anlaşırlığı ve açıklığı engelleyecekse esprili [% terms.bug %] raporlarmaktan kaçının.</b> Çünkü gecenin üçünde raporladığınız [% terms.bug %]yı arayan ve yazdığınız o esprili [% terms.bug %] özetini hatırlayamadığı için bulamayan kimse, buna kesinlikle gülmeyecektir.</p>
 
-    <p><b>Her raporda yalnızca bir [% terms.bug %] anlatılmalı.</b> [% terms.bugs %] bir çok farklı geliştirici tarafından incelenip  doğrulanıyor, düzeltiliyor yada önceliği belirleniyor. Eğer birkaç [% terms.bug %]yı aynı rapora sıkıştırırsanız, muhtemelen [% terms.bug %] uygun şekilde incelenemeyecek ve çözülemeyecektir. Bazı [% terms.bugs %] diğerlerine göre daha önemlidir. Ancak bir [% terms.bug %] raporunun içinde farklı önem derecelerine sahip birkaç [% terms.bug %] anlatılırsa, bu derecelendirme mümkün olmaz.
+    <p><b>Her raporda yalnızca bir [% terms.bug %] anlatın.</b> [% terms.bugs %] bir çok farklı geliştirici tarafından incelenip  doğrulanıyor, düzeltiliyor yada önceliği belirleniyor. Eğer birkaç [% terms.bug %]yı aynı rapora sıkıştırırsanız, muhtemelen [% terms.bug %] uygun şekilde incelenemeyecek ve düzeltilemeyecektir. Bazı [% terms.bugs %] diğerlerine göre daha önemlidir. Ancak bir [% terms.bug %] raporunun içinde farklı önem derecelerine sahip birkaç [% terms.bug %] anlatılırsa, bu derecelendirme doğal olarak mümkün olmaz.
     </p>
 
-    <p><b>No [% terms.bug %] is too trivial to report.</b> Unless you're 
-    reading the source code, you can't see actual software [% terms.bugs %], 
-    like a dangling pointer -- you'll see their visible manifestations, such 
-    as the segfault when the application finally crashes. Severe software 
-    problems can manifest themselves in superficially trivial ways. File them
-    anyway.<br>
+    <p><b>Hiç bir [% terms.bug %] raprolanmayacak kadar önemsiz değildir.</b> Kaynak kodu okumadıkça, asıl yazılım [% terms.bugs %]ını göremezsiniz. Örneğin karşılıksız bir işaretçinin 'parçalama arızası' gibi belirtilerini ancak uygulama göçtükten sonra farkedebilirsiniz. Önemli yazılım sorunları kendilerini çok basitmiş gibi göstererek ortaya çıkabilirler. Bu tür basit görünümlü hataları raporlamaktan çekinmeyin.<br>
     </p>
   </blockquote>
 
