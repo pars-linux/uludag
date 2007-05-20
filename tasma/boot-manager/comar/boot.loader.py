@@ -535,14 +535,16 @@ def updateKernelEntry(version, root=None):
             index = -1
             boot_parameters = bootParameters(root)
         else:
-            if entries[0].getCommand("savedefault"):
-                new_entry.setCommand("savedefault", "")
             index = grub.config.indexOf(entries[0])
             kernel = entries[0].getCommand("kernel").value
             boot_parameters = kernel.split(" ", 1)[1]
         
         new_entry.setCommand("kernel", "/boot/kernel-%s%s %s" % (new_version, new_suffix, boot_parameters))
         new_entry.setCommand("initrd", "/boot/initrmfs-%s%s" % (new_version, new_suffix))
+        
+        if grub.config.getOption("default", "0") == "saved":
+            new_entry.setCommand("savedefault", "")
+        
         grub.config.addEntry(new_entry, index)
         
         if MAX_ENTRIES > 0:
