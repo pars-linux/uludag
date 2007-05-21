@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS = xrange(1, 5)
+BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY = xrange(1, 6)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -79,6 +79,7 @@ class widgetEditEntry(QWidget):
         self.systems = self.parent.systems
         
         self.link = comar_link
+        self.saved = False
         self.fields = {}
         
         layout = QGridLayout(self, 1, 1, 11, 6)
@@ -250,31 +251,39 @@ class widgetEditEntry(QWidget):
                 widgetLabel.hide()
                 widgetEdit.hide()
     
+    def showError(self, message):
+        KMessageBox.information(self, message, i18n("Error"))
+    
     def slotSave(self):
-        self.parent.widgetEntries.listEntries.setEnabled(False)
         default = "no"
         if self.parent.widgetEntries.checkSaved.isChecked():
             default = "saved"
         elif self.checkDefault.isChecked():
             default = "yes"
+        
         systems = self.parent.systems
+        os_type = "other"
         for name, (sys_label, fields) in systems.iteritems():
             if unicode(sys_label) == unicode(self.listSystem.currentText()):
                 os_type = name
                 break
+        
         args = {
             "os_type": os_type,
             "title": unicode(self.editTitle.text()),
-            "root": str(self.editRoot.text()),
-            "kernel": str(self.editKernel.text()),
-            "options": unicode(self.editOptions.text()),
-            "initrd": str(self.editInitrd.text()),
             "default": default,
         }
+        
+        for label in self.fields:
+            if label in systems[os_type][1]:
+                value = unicode(self.fields[label][1].text())
+                args[label] = value
+        
         if self.entry:
             args["index"] = self.entry["index"]
-        self.link.call("Boot.Loader.setEntry", args)
-        self.slotExit()
+        
+        self.saved = True
+        self.link.call("Boot.Loader.setEntry", args, id=BOOT_SET_ENTRY)
     
     def slotExit(self):
         self.resetEntry()
@@ -324,9 +333,9 @@ class widgetMain(QWidget):
             self.widgetEntries.listEntries.setEnabled(False)
             if reply.data in ["entry", "option"]:
                 self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-                if self.widgetEditEntry.entry:
+                if self.widgetEditEntry.entry and not self.widgetEditEntry.saved:
                     KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
-                    widgetEditEntry.slotExit()
+                    self.widgetEditEntry.slotExit()
         elif reply.command == "result":
             if reply.id == BOOT_ACCESS:
                 self.can_access = True
@@ -353,5 +362,13 @@ class widgetMain(QWidget):
                     self.options[key] = value
                 if self.options["default"] == "saved":
                     self.widgetEntries.checkSaved.setChecked(True)
+            elif reply.id == BOOT_SET_ENTRY:
+                self.widgetEditEntry.saved = False
+                self.widgetEntries.listEntries.setEnabled(False)
+                self.widgetEditEntry.slotExit()
         elif reply.command == "fail":
-            KMessageBox.error(self, "%s failed: %s" % (reply.id, reply.data), i18n("Failed"))
+            if reply.id == BOOT_SET_ENTRY:
+                self.widgetEditEntry.saved = False
+                KMessageBox.error(self, unicode(reply.data), i18n("Failed"))
+            else:
+                KMessageBox.error(self, "%s failed: %s" % (reply.id, unicode(reply.data)), i18n("Failed"))
