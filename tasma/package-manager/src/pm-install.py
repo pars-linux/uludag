@@ -54,7 +54,7 @@ def main():
                                                       ):
             sys.exit(0)
 
-        packageToInstall = str(KIO.NetAccess.mostLocalURL(args.url(0), None).path())
+        packageToInstall = KIO.NetAccess.mostLocalURL(args.url(0), None).path()
 
         dcop = kapp.dcopClient()
         pmi = dcopext.DCOPApp("package-manager", dcop)
