@@ -84,15 +84,17 @@ class widgetEditEntry(QWidget):
         layout = QGridLayout(self, 1, 1, 11, 6)
         
         self.labelTitle = QLabel(self)
-        self.labelTitle.setText(i18n("Title"))
+        self.labelTitle.setText(i18n("Title:"))
+        self.labelTitle.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
         layout.addWidget(self.labelTitle, 0, 0)
         
         self.editTitle = QLineEdit(self)
-        self.labelTitle.setMinimumSize(120, 10)
+        self.labelTitle.setMinimumSize(90, 10)
         layout.addMultiCellWidget(self.editTitle, 0, 0, 1, 2)
         
         self.labelSystem = QLabel(self)
-        self.labelSystem.setText(i18n("System"))
+        self.labelSystem.setText(i18n("System:"))
+        self.labelSystem.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
         layout.addWidget(self.labelSystem, 1, 0)
         
         self.listSystem = QComboBox(self)
@@ -102,7 +104,8 @@ class widgetEditEntry(QWidget):
         layout.addItem(spacer, 1, 2)
         
         self.labelRoot = QLabel(self)
-        self.labelRoot.setText(i18n("Root"))
+        self.labelRoot.setText(i18n("Root:"))
+        self.labelRoot.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
         layout.addWidget(self.labelRoot, 2, 0)
         
         self.editRoot = QLineEdit(self)
@@ -111,7 +114,8 @@ class widgetEditEntry(QWidget):
         self.fields["root"] = (self.labelRoot, self.editRoot)
         
         self.labelKernel = QLabel(self)
-        self.labelKernel.setText(i18n("Kernel"))
+        self.labelKernel.setText(i18n("Kernel:"))
+        self.labelKernel.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
         layout.addWidget(self.labelKernel, 3, 0)
         
         self.editKernel = QLineEdit(self)
@@ -120,7 +124,8 @@ class widgetEditEntry(QWidget):
         self.fields["kernel"] = (self.labelKernel, self.editKernel)
         
         self.labelOptions = QLabel(self)
-        self.labelOptions.setText(i18n("Kernel Parameters"))
+        self.labelOptions.setText(i18n("Kernel Parameters:"))
+        self.labelOptions.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
         layout.addWidget(self.labelOptions, 4, 0)
         
         self.editOptions = QLineEdit(self)
@@ -129,7 +134,8 @@ class widgetEditEntry(QWidget):
         self.fields["options"] = (self.labelOptions, self.editOptions)
         
         self.labelInitrd = QLabel(self)
-        self.labelInitrd.setText(i18n("Initial Ramdisk"))
+        self.labelInitrd.setText(i18n("Initial Ramdisk:"))
+        self.labelInitrd.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
         layout.addWidget(self.labelInitrd, 5, 0)
         
         self.editInitrd = QLineEdit(self)
@@ -139,7 +145,7 @@ class widgetEditEntry(QWidget):
         
         self.checkDefault = QCheckBox(self)
         self.checkDefault.setText(i18n("Set as default boot entry."))
-        layout.addMultiCellWidget(self.checkDefault, 6, 6, 0, 1)
+        layout.addMultiCellWidget(self.checkDefault, 6, 6, 1, 2)
         
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
         layout.addMultiCell(spacer, 8, 8, 0, 1)
@@ -156,7 +162,7 @@ class widgetEditEntry(QWidget):
         self.buttonCancel.setText(i18n("Cancel"))
         layout_buttons.addWidget(self.buttonCancel)
         
-        layout.addMultiCell(layout_buttons, 8, 8, 1, 2)
+        layout.addMultiCell(layout_buttons, 9, 9, 1, 2)
         
         self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
@@ -166,6 +172,7 @@ class widgetEditEntry(QWidget):
     
     def newEntry(self):
         self.resetEntry()
+        self.parent.showScreen("EditEntry")
     
     def editEntry(self, entry):
         self.resetEntry()
@@ -191,7 +198,7 @@ class widgetEditEntry(QWidget):
         if "default" in entry and entry["default"] != "saved":
             self.checkDefault.setChecked(True)
         
-        self.parent.stack.raiseWidget(1)
+        self.parent.showScreen("EditEntry")
     
     def deleteEntry(self, index, title):
         confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
@@ -227,10 +234,8 @@ class widgetEditEntry(QWidget):
         
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             widgetEdit.setText("")
-
-        self.checkDefault.setChecked(False)
         
-        self.parent.stack.raiseWidget(1)
+        self.checkDefault.setChecked(False)
     
     def slotSystem(self, label):
         systems = self.parent.systems
@@ -273,7 +278,7 @@ class widgetEditEntry(QWidget):
     
     def slotExit(self):
         self.resetEntry()
-        self.parent.stack.raiseWidget(0)
+        self.parent.showScreen("Entries")
 
 class widgetMain(QWidget):
     def __init__(self, parent):
@@ -288,6 +293,7 @@ class widgetMain(QWidget):
         self.entries = []
         self.options = {}
         self.systems = {}
+        self.screens = []
         self.can_access = False
         
         layout = QGridLayout(self, 1, 1, 0, 0)
@@ -296,16 +302,22 @@ class widgetMain(QWidget):
         
         self.widgetEntries = widgetEntryList(self, self.link)
         self.stack.addWidget(self.widgetEntries)
+        self.screens.append("Entries")
         
         self.widgetEditEntry = widgetEditEntry(self, self.link)
         self.stack.addWidget(self.widgetEditEntry)
+        self.screens.append("EditEntry")
         
         self.link.ask_notify("Boot.Loader.changed")
         self.link.can_access("Boot.Loader.setEntry", id=BOOT_ACCESS)
         self.link.call("Boot.Loader.getOptions", id=BOOT_OPTIONS)
         self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
         self.link.call("Boot.Loader.listSystems", id=BOOT_SYSTEMS)
-
+    
+    def showScreen(self, label):
+        screen = self.screens.index(label)
+        self.stack.raiseWidget(screen)
+    
     def slotComar(self, sock):
         reply = self.link.read_cmd()
         if reply.command == "notify":
