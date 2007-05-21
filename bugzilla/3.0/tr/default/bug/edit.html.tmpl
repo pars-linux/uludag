@@ -142,13 +142,13 @@
     <tr>
       <td valign="top">
         <fieldset>
-          <legend>Details</legend>
+          <legend>Detaylar</legend>
           <table>
 
             [%# *** Summary *** %]
             <tr>
               <td align="right">
-                <label for="short_desc" accesskey="s"><b><u>S</u>ummary</b></label>:
+                <label for="short_desc" accesskey="ö"><b><u>Ö</u>zet</b></label>:
               </td>
               [% PROCESS input inputname => "short_desc" size => "60" colspan => 2
                                maxlength => 255 %]
@@ -191,7 +191,7 @@
             [% IF Param('usestatuswhiteboard') %]
               <tr>
                 <td align="right">
-                  <label for="status_whiteboard" accesskey="w"><b><u>W</u>hiteboard</b></label>:
+                  <label for="status_whiteboard" accesskey="b"><b><u>B</u>eyaz Tahta</b></label>:
                 </td>
                 [% PROCESS input inputname => "status_whiteboard" size => "60" colspan => 2 %]
               </tr>
@@ -200,8 +200,8 @@
             [% IF use_keywords %]
               <tr>
                 <td align="right">
-                  <label for="keywords" accesskey="k">
-                    <b><a href="describekeywords.cgi"><u>K</u>eywords</a></b></label>:
+                  <label for="keywords" accesskey="a">
+                    <b><a href="describekeywords.cgi"><u>A</u>nahtar Kelimeler</a></b></label>:
                 </td>
                 [% PROCESS input inputname => "keywords" size => 60 colspan => 2
                                  value => bug.keywords.join(', ') %]
@@ -226,24 +226,22 @@
 
             <tr>
               [% PROCESS dependencies
-                         dep = { title => "Depends&nbsp;on", fieldname => "dependson" } %]
+                         dep = { title => "Bağımlılığı", fieldname => "dependson" } %]
             </tr>
 
             <tr>
               [% PROCESS dependencies accesskey = "b"
-                         dep = { title => "<u>B</u>locks", fieldname => "blocked" } %]
+                         dep = { title => "<u>B</u>lokladığı", fieldname => "blocked" } %]
             </tr>
 
             <tr>
               <th>&nbsp;</th>
 
               <td colspan="2">
-                <a href="showdependencytree.cgi?id=[% bug.bug_id %]&amp;hide_resolved=1">Show
-                   dependency tree</a>
+                <a href="showdependencytree.cgi?id=[% bug.bug_id %]&amp;hide_resolved=1">Bağımlılık Ağacını Göster</a>
 
                 [% IF Param('webdotbase') %]
-                  - <a href="showdependencygraph.cgi?id=[% bug.bug_id %]">Show
-                       dependency graph</a>
+                  - <a href="showdependencygraph.cgi?id=[% bug.bug_id %]">Bağımlılık Grafiğini Göster</a>
                 [% END %]
               </td>
             </tr>
@@ -254,7 +252,7 @@
       <td valign="top">
         [%# *** Reporter, owner and QA contact *** %]
         <fieldset>
-          <legend>People</legend>
+          <legend>Kişi</legend>
           [% PROCESS section_people %]
         </fieldset>
 
@@ -268,7 +266,7 @@
         [% END %]
         [% IF show_bug_flags %]
           <fieldset>
-            <legend>Flags</legend>
+            <legend>İşaretler</legend>
             <table cellspacing="1" cellpadding="1">
               <tr>
                 <td colspan="2" valign="top">
@@ -303,25 +301,25 @@
     <table cellspacing="0" cellpadding="4" border="1">
       <tr>
         <th align="center" bgcolor="#cccccc">
-          <label for="estimated_time">Orig. Est.</label>
+          <label for="estimated_time">Orj. Hesap.</label>
         </th>
         <th align="center" bgcolor="#cccccc">
-          Current Est.
+          Şu anki Hes.
         </th>
         <th align="center" bgcolor="#cccccc">
-          <label for="work_time">Hours Worked</label>
+          <label for="work_time">Saat Çalışıldı</label>
         </th>
         <th align="center" bgcolor="#cccccc">
-          <label for="remaining_time">Hours Left</label>
+          <label for="remaining_time">Saat Kaldı</label>
         </th>
         <th align="center" bgcolor="#cccccc">
-          %Complete
+          Tamamlanma %'si
         </th>
         <th align="center" bgcolor="#cccccc">
-          Gain
+          Kazanç
         </th>
         <th align="center" bgcolor="#cccccc">
-          <label for="deadline">Deadline</label>
+          <label for="deadline">Son Teslim</label>
         </th>
       </tr>
       <tr>
@@ -363,8 +361,7 @@
       <tr>
         <td colspan="7" align="right">
           <a href="summarize_time.cgi?id=[% bug.bug_id %]&amp;do_depends=1">
-          Summarize time (including time for [% terms.bugs %]
-          blocking this [% terms.bug %])</a>
+          Zamanı özetle (bu [% terms.bug %]yı bloklayan [% terms.bugs %] dahil)</a>
         </td>
       </tr>
     </table>
@@ -387,12 +384,12 @@
     <tr>
       <td>
         [% IF user.id %]
-          <label for="comment" accesskey="c"><b>Additional <u>C</u>omments</b></label>:
+          <label for="comment" accesskey="y"><b><u>Y</u>orumlar</b></label>:
           [% IF Param("insidergroup") && user.in_group(Param("insidergroup")) %]
             <input type="checkbox" name="commentprivacy" value="1"
                    id="newcommentprivacy"
                    onClick="updateCommentTagControl(this, form)">
-            <label for="newcommentprivacy">Private</label>
+            <label for="newcommentprivacy">Özel</label>
           [% END %]
           <br>
           <a name="add_comment"></a>
@@ -417,15 +414,12 @@
                    IF user.settings.state_addselfcc.value == 'always'
                       || (!has_role
                           && user.settings.state_addselfcc.value == 'cc_unless_role') %]>
-            <label for="addselfcc">Add [% user.identity FILTER html %] to CC list</label>
+            <label for="addselfcc">CC listesine ekle: [% user.identity FILTER html %]</label>
           [% END %]
         [% ELSE %]
           <fieldset>
-            <legend>Note</legend>
-            <p>
-              You need to
-              <a href="show_bug.cgi?id=[% bug.bug_id %]&amp;GoAheadAndLogIn=1">log in</a>
-              before you can comment on or make changes to this [% terms.bug %].
+            <legend>Not</legend>
+            <p>Bu [% terms.bug %]ya yorum eklemek yada üzerinde değişiklik yapmak için <a href="show_bug.cgi?id=[% bug.bug_id %]&amp;GoAheadAndLogIn=1">giriş</a> yapmalısınız.
             </p>
           </fieldset>
         [% END %]
@@ -433,12 +427,12 @@
 
       <td valign="top">
         <fieldset>
-          <legend>Related actions</legend>
+          <legend>İlgili İşlemler</legend>
           <ul>
-            <li><a href="show_activity.cgi?id=[% bug.bug_id %]">View [% terms.Bug %] Activity</a></li>
-            <li><a href="show_bug.cgi?format=multiple&amp;id=[% bug.bug_id %]">Format For Printing</a></li>
+            <li><a href="show_activity.cgi?id=[% bug.bug_id %]">[% terms.Bug %] Etkinliğini Göster</a></li>
+            <li><a href="show_bug.cgi?format=multiple&amp;id=[% bug.bug_id %]">Yazıcı İçin Biçimlendir</a></li>
             <li><a href="show_bug.cgi?ctype=xml&amp;id=[% bug.bug_id %]">XML</a></li>
-            <li><a href="enter_bug.cgi?cloned_bug_id=[% bug.bug_id %]">Clone This [% terms.Bug %]</a></li>
+            <li><a href="enter_bug.cgi?cloned_bug_id=[% bug.bug_id %]">Bu [% terms.Bug %]yı Klonla</a></li>
           </ul>
 
           [% IF bug.use_votes %]
@@ -473,10 +467,10 @@
         [% IF NOT emitted_description %]
           [% emitted_description = 1 %]
           <br>
-          <b>Only users in all of the selected groups can view this [% terms.bug %]:</b>
+          <b>Bu [% terms.bug %]yı yalnızca seçili gruplarda yer alan kullanıcılar görebilir:</b>
           <br>
           <font size="-1">
-            (Unchecking all boxes makes this a more public [% terms.bug %].)
+            (Kutucuklardaki işaretleri kaldırmak bu [% terms.bug %]yı daha da fazla kişiye açar.)
           </font>
           <br>
           <br>
@@ -518,11 +512,11 @@
         <input type="checkbox" value="1"
                name="reporter_accessible" id="reporter_accessible"
                [% " checked" IF bug.reporter_accessible %]>
-        <label for="reporter_accessible">Reporter</label>
+        <label for="reporter_accessible">Raporlayan</label>
         <input type="checkbox" value="1"
                name="cclist_accessible" id="cclist_accessible"
                [% " checked" IF bug.cclist_accessible %]>
-        <label for="cclist_accessible">CC List</label>
+        <label for="cclist_accessible">CC Listesi</label>
       </p>
     [% END %]
   [% END %]
@@ -572,28 +566,28 @@
 
     <tr>
       <td align="right">
-        <label for="product" accesskey="p"><b><u>P</u>roduct</b></label>:
+        <label for="product" accesskey="ü"><b><u>Ü</u>rün</b></label>:
       </td>
       [% PROCESS select selname => "product" %]
     </tr>
 
     <tr>
       <td align="right">
-        <label for="component" accesskey="m"><b><a href="describecomponents.cgi?product=[% bug.product FILTER url_quote %]">Co<u>m</u>ponent</a></b></label>:
+        <label for="component" accesskey="b"><b><a href="describecomponents.cgi?product=[% bug.product FILTER url_quote %]"><u>B</u>ileşen</a></b></label>:
       </td>
       [% PROCESS select selname => "component" %]
     </tr>
 
     <tr>
       <td align="right">
-        <b><a href="page.cgi?id=fields.html#status">Status</a></b>:
+        <b><a href="page.cgi?id=fields.html#status">Durum</a></b>:
       </td>
       <td>[% status_descs.${bug.bug_status} FILTER html %]</td>
     </tr>
 
     <tr>
       <td align="right">
-        <b><a href="page.cgi?id=fields.html#resolution">Resolution</a></b>:
+        <b><a href="page.cgi?id=fields.html#resolution">Çözüm</a></b>:
       </td>
       <td>
         [% get_resolution(bug.resolution) FILTER html %]
@@ -613,35 +607,35 @@
   <table cellspacing="1" cellpadding="1">
     <tr>
       <td align="right">
-        <label for="rep_platform" accesskey="h"><b><u>H</u>ardware</b></label>:
+        <label for="rep_platform" accesskey="d"><b><u>D</u>onanım</b></label>:
       </td>
       [% PROCESS select selname => "rep_platform" %]
     </tr>
 
     <tr>
       <td align="right">
-        <label for="op_sys" accesskey="o"><b><u>O</u>S</b></label>:
+        <label for="op_sys" accesskey="i"><b><u>İ</u>şletim Sistemi</b></label>:
       </td>
       [% PROCESS select selname => "op_sys" %]
     </tr>
 
     <tr>
       <td align="right">
-        <label for="version"><b>Version</b></label>:
+        <label for="version"><b>Sürüm</b></label>:
       </td>
       [% PROCESS select selname => "version" %]
     </tr>
 
     <tr>
       <td align="right">
-        <label for="priority" accesskey="i"><b><a href="page.cgi?id=fields.html#priority">Pr<u>i</u>ority</a></b></label>:
+        <label for="priority" accesskey="c"><b><a href="page.cgi?id=fields.html#priority">Ö<u>n</u>celik</a></b></label>:
       </td>
       [% PROCESS select selname => "priority" %]
     </tr>
 
     <tr>
       <td align="right">
-        <label for="bug_severity"><b><a href="page.cgi?id=fields.html#bug_severity">Severity</a></b></label>:
+        <label for="bug_severity"><b><a href="page.cgi?id=fields.html#bug_severity">Önem</a></b></label>:
       </td>
       [% PROCESS select selname = "bug_severity" %]
     </tr>
@@ -653,7 +647,7 @@
             [% IF bug.milestoneurl %]
               <a href="[% bug.milestoneurl FILTER html %]">
             [% END %]
-            Target Milestone[% "</a>" IF bug.milestoneurl %]
+            Hedef Minenk Taşı[% "</a>" IF bug.milestoneurl %]
           [%%]</b></label>:
         </td>
         [% PROCESS select selname = "target_milestone" %]
@@ -670,7 +664,7 @@
   <table cellpadding="1" cellspacing="1">
     <tr>
       <td align="right">
-        <b>Reporter</b>:
+        <b>Reporlayan</b>:
       </td>
       <td>
       [% IF user.login %]
@@ -684,7 +678,7 @@
 
     <tr>
       <td align="right">
-        <b><a href="page.cgi?id=fields.html#assigned_to">Assigned&nbsp;To</a></b>:
+        <b><a href="page.cgi?id=fields.html#assigned_to">Atandı</a></b>:
       </td>
       <td>
         [% IF user.login %]
@@ -699,7 +693,7 @@
     [% IF Param('useqacontact') %]
     <tr>
       <td align="right">
-        <label for="qa_contact" accesskey="q"><b><u>Q</u>A Contact</b></label>:
+        <label for="qa_contact" accesskey="q"><b><u>Q</u>A Kontağı</b></label>:
       </td>
       <td colspan="7">
         [% IF bug.check_can_change_field("qa_contact", 0, 1) %]
@@ -730,7 +724,7 @@
     [% IF user.id %]
       <tr>
         <td align="right" valign="top">
-          <label for="newcc" accesskey="a"><b><u>A</u>dd&nbsp;CC</b></label>:
+          <label for="newcc" accesskey="k"><b>CC&nbsp;E<u>k</u>le</b></label>:
         </td>
         <td>
            [% INCLUDE global/userselect.html.tmpl
@@ -759,7 +753,7 @@
           [% IF user.id %]
             <br>
             <input type="checkbox" id="removecc" name="removecc">
-            [%%]<label for="removecc">Remove selected CCs</label>
+            [%%]<label for="removecc">Seçili CC'leri sil</label>
             <br>
           [% END %]
         </td>
@@ -767,7 +761,7 @@
         <td colspan="2"><input type="hidden" name="cc" value=""></td>
         [% END %]
       [% ELSE %]
-        <td colspan="2">Please login to see CC list</td>
+        <td colspan="2">CC listesini görmek için lütfen giriş yapınız.</td>
       [% END %]
     </tr>
   </table>
