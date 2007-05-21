@@ -188,7 +188,7 @@ class MainApplicationWidget(QWidget):
 
             global packageToInstall
             if packageToInstall:
-                self.installPackage(packageToInstall)
+                self.installPackage(unicode(packageToInstall))
                 self.progressDialog.show()
                 # KWin forces to raise it even though the parent is hidden, QWidget does not.
                 KWin.raiseWindow(self.progressDialog.winId())
@@ -972,7 +972,7 @@ def main():
 
     args = KCmdLineArgs.parsedArgs()
     if args.isSet("install"):
-        packageToInstall = str(KIO.NetAccess.mostLocalURL(KURL(args.getOption("install")), None).path())
+        packageToInstall = args.getOption("install")
     else:
         packageToInstall = None
 
