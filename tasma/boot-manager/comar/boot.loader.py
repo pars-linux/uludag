@@ -1,19 +1,29 @@
 # l10n
 
-LABEL_OTHER = {
+LABEL_OTHER = _({
     "en": "Other",
     "tr": "Diğer",
-}
+})
 
-FAIL_TIMEOUT = {
+FAIL_TIMEOUT = _({
     "en": "Request timed out.",
     "tr": "Talep zaman aşımına uğradı.",
-}
+})
 
-FAIL_NOENTRY = {
+FAIL_NOTITLE = _({
+    "en": "Title must be given.",
+    "tr": "Başlık belirtilmeli.",
+})
+
+FAIL_NOENTRY = _({
     "en": "No such entry.",
     "tr": "Böyle bir kayıt bulunmuyor.",
-}
+})
+
+FAIL_NODEVICE = _({
+    "en": "No such device.",
+    "tr": "Böyle bir aygıt bulunmuyor.",
+})
 
 # Grub parser configuration
 
@@ -27,7 +37,7 @@ MAX_ENTRIES = 3
 SYSTEMS = {
     "linux": "Linux,root,kernel,initrd,options",
     "windows": "Windows,root",
-    "other": "%s,root,kernel,initrd,options" % _(LABEL_OTHER),
+    "other": "%s,root,kernel,initrd,options" % LABEL_OTHER,
 }
 
 # Grub parser
@@ -303,13 +313,20 @@ def bootParameters(root):
     return " ".join(s).strip()
 
 def grubDevice(dev):
-    dev = dev.split("/")[2]
-    return "(hd%s,%s)" % (ord(dev[2:3]) - ord("a"), int(dev[3:]) - 1)
+    for device in file("/boot/grub/device.map"):
+        grub_dev, linux_dev = device.strip().split("\t")
+        if dev.startswith(linux_dev):
+            part = int(dev.replace(linux_dev, "")) - 1
+            return grub_dev.replace(")", ",%s)" % part)
 
 def linuxDevice(dev):
-    dev = dev[:-1].split("(hd")[1]
-    disk, part = dev.split(",")
-    return "/dev/hd%s%s" % (chr(97 + int(disk)), int(part) + 1)
+    dev, part = dev.split(",")
+    dev = "%s)" % dev
+    part = int(part.replace(")", "")) + 1
+    for device in file("/boot/grub/device.map"):
+        grub_dev, linux_dev = device.strip().split("\t")
+        if dev == grub_dev:
+            return "%s%s" % (linux_dev, part)
 
 def getRoot():
     import os
@@ -442,16 +459,23 @@ def setEntry(title, os_type, root, kernel=None, initrd=None, options=None, defau
     except IOError:
         fail(FAIL_TIMEOUT)
     
+    if not len(title):
+        fail(FAIL_NOTITLE)
+    
+    grub_device = grubDevice(root)
+    if not grub_device:
+        fail(FAIL_NODEVICE)
+    
     entry = grubEntry(title)
     
     if os_type not in SYSTEMS:
         os_type = "other"
     if os_type == "windows":
-        entry.setCommand("rootnoverify", grubDevice(root))
+        entry.setCommand("rootnoverify", grub_device)
         entry.setCommand("makeactive", "")
         entry.setCommand("chainloader", "+1")
     else:
-        entry.setCommand("root", grubDevice(root))
+        entry.setCommand("root", grub_device)
     if kernel and "kernel" in SYSTEMS[os_type]:
         if options and "options" in SYSTEMS[os_type]:
             entry.setCommand("kernel", "%s %s" % (kernel, options))
@@ -489,6 +513,8 @@ def updateKernelEntry(version, root=None):
     if not root:
         root = getRoot()
     root_grub = grubDevice(root)
+    if not root_grub:
+        fail(FAIL_NODEVICE)
     
     entries = []
     for x in grub.config.entries:
