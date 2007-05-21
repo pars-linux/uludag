@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-17 09:24+0300\n"
+"POT-Creation-Date: 2007-05-21 14:08+0300\n"
 "PO-Revision-Date: 2007-05-07 08:44+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -33,49 +33,48 @@ msgid "Remember last booted entry."
 msgstr ""
 
 #: src/mainview.py:87
-msgid "Title"
-msgstr "Titre"
+msgid "Title:"
+msgstr "Titre:"
 
-#: src/mainview.py:95
-msgid "System"
-msgstr "Système"
+#: src/mainview.py:96
+msgid "System:"
+msgstr "Système:"
 
-#: src/mainview.py:105
-msgid "Root"
-msgstr "Root (Racine)"
+#: src/mainview.py:107
+msgid "Root:"
+msgstr "Root (Racine):"
 
-#: src/mainview.py:114
-msgid "Kernel"
-msgstr "Noyau"
+#: src/mainview.py:117
+msgid "Kernel:"
+msgstr "Noyau:"
 
-#: src/mainview.py:123
-msgid "Kernel Parameters"
+#: src/mainview.py:127
+msgid "Kernel Parameters:"
 msgstr ""
 
-#: src/mainview.py:132
-#, fuzzy
-msgid "Initial Ramdisk"
-msgstr "Init Ramdrive (Initialisation Ramdrive)"
+#: src/mainview.py:137
+msgid "Initial Ramdisk:"
+msgstr "Init Ramdrive (Initialisation Ramdrive):"
 
-#: src/mainview.py:141
+#: src/mainview.py:147
 msgid "Set as default boot entry."
 msgstr ""
 
-#: src/mainview.py:197
+#: src/mainview.py:204
 msgid "Are you sure you want to remove this entry?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette entrée ?"
 
-#: src/mainview.py:197
+#: src/mainview.py:204
 msgid "Delete Entry"
 msgstr "Supprimer l'entrée"
 
-#: src/mainview.py:316
+#: src/mainview.py:328
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 "Configuration du booloader (chargeur de démarrage) changé par une autre "
 "application."
 
-#: src/mainview.py:345
+#: src/mainview.py:357
 msgid "Failed"
 msgstr "Echec"
 
@@ -91,5 +90,5 @@ msgstr "Éditer l'entrée"
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
 
-#~ msgid "Kernel Options"
-#~ msgstr "Options du noyau"
+#~ msgid "Title"
+#~ msgstr "Titre"
