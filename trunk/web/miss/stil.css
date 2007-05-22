@@ -137,7 +137,7 @@ html>body li {
 #manset p {
     font-size: 14px;
     font-family: Tahoma, "DejaVu Sans Condensed", Arial, Sans, Helvetica;
-    text-align: justify;
+    text-align: left;
     padding-right: 8px;
     line-height: 24px;
 }
