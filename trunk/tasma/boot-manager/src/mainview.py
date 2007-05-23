@@ -44,6 +44,7 @@ class widgetEntryList(QWidget):
         but.setTextLabel(i18n("Help"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+        but.hide()
         layout.addWidget(bar, 0, 0)
         
         self.listEntries = EntryView(self)
