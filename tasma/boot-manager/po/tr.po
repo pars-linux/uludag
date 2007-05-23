@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-21 14:08+0300\n"
+"POT-Creation-Date: 2007-05-23 19:35+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -31,47 +31,47 @@ msgstr "Yeni ekle"
 msgid "Remember last booted entry."
 msgstr "Son açılan kaydı, bir sonraki açılışta hatırla."
 
-#: src/mainview.py:87
+#: src/mainview.py:88
 msgid "Title:"
 msgstr "Başlık:"
 
-#: src/mainview.py:96
+#: src/mainview.py:97
 msgid "System:"
 msgstr "Sistem:"
 
-#: src/mainview.py:107
+#: src/mainview.py:108
 msgid "Root:"
 msgstr "Kök Sürücü:"
 
-#: src/mainview.py:117
+#: src/mainview.py:118
 msgid "Kernel:"
 msgstr "Çekirdek:"
 
-#: src/mainview.py:127
+#: src/mainview.py:128
 msgid "Kernel Parameters:"
 msgstr "Çekirdek Parametreleri:"
 
-#: src/mainview.py:137
+#: src/mainview.py:138
 msgid "Initial Ramdisk:"
-msgstr ""
+msgstr "Önyükleme Dosyası (Initrd):"
 
-#: src/mainview.py:147
+#: src/mainview.py:148
 msgid "Set as default boot entry."
 msgstr "Öntanımlı açılış kaydı olarak ata."
 
-#: src/mainview.py:204
+#: src/mainview.py:205
 msgid "Are you sure you want to remove this entry?"
 msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
 
-#: src/mainview.py:204
+#: src/mainview.py:205
 msgid "Delete Entry"
 msgstr "Kaydı Sil"
 
-#: src/mainview.py:328
+#: src/mainview.py:337
 msgid "Bootloader configuration changed by another application."
 msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
 
-#: src/mainview.py:357
+#: src/mainview.py:372 src/mainview.py:374
 msgid "Failed"
 msgstr "Başarısız"
 
@@ -86,9 +86,3 @@ msgstr "Kaydı düzenle"
 #: src/ui_elements.py:86
 msgid "Delete entry"
 msgstr "Kaydı sil"
-
-#~ msgid "Modules"
-#~ msgstr "Modüller"
-
-#~ msgid "Title"
-#~ msgstr "Başlık"

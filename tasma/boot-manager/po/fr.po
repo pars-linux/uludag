@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-21 14:08+0300\n"
+"POT-Creation-Date: 2007-05-23 19:35+0300\n"
 "PO-Revision-Date: 2007-05-07 08:44+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -32,49 +32,49 @@ msgstr "Nouvelle entrée"
 msgid "Remember last booted entry."
 msgstr ""
 
-#: src/mainview.py:87
+#: src/mainview.py:88
 msgid "Title:"
 msgstr "Titre:"
 
-#: src/mainview.py:96
+#: src/mainview.py:97
 msgid "System:"
 msgstr "Système:"
 
-#: src/mainview.py:107
+#: src/mainview.py:108
 msgid "Root:"
 msgstr "Root (Racine):"
 
-#: src/mainview.py:117
+#: src/mainview.py:118
 msgid "Kernel:"
 msgstr "Noyau:"
 
-#: src/mainview.py:127
+#: src/mainview.py:128
 msgid "Kernel Parameters:"
 msgstr ""
 
-#: src/mainview.py:137
+#: src/mainview.py:138
 msgid "Initial Ramdisk:"
 msgstr "Init Ramdrive (Initialisation Ramdrive):"
 
-#: src/mainview.py:147
+#: src/mainview.py:148
 msgid "Set as default boot entry."
 msgstr ""
 
-#: src/mainview.py:204
+#: src/mainview.py:205
 msgid "Are you sure you want to remove this entry?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette entrée ?"
 
-#: src/mainview.py:204
+#: src/mainview.py:205
 msgid "Delete Entry"
 msgstr "Supprimer l'entrée"
 
-#: src/mainview.py:328
+#: src/mainview.py:337
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 "Configuration du booloader (chargeur de démarrage) changé par une autre "
 "application."
 
-#: src/mainview.py:357
+#: src/mainview.py:372 src/mainview.py:374
 msgid "Failed"
 msgstr "Echec"
 
@@ -89,6 +89,3 @@ msgstr "Éditer l'entrée"
 #: src/ui_elements.py:86
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
-
-#~ msgid "Title"
-#~ msgstr "Titre"
