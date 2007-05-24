@@ -171,7 +171,7 @@ document.write('<input type="button" value="Tüm İletileri Etkisizleştir" oncl
       </th>
     [% END %]
   </tr>
-
+  
   [% FOREACH event = events %]  
     [% count = loop.count() %]
     <tr class="bz_row_[% count % 2 == 1 ? "odd" : "even" %]">
@@ -205,7 +205,7 @@ document.write('<input type="button" value="Tüm İletileri Etkisizleştir" oncl
       &nbsp;
     </td>
     <td width="40%">
-      <b>but not when (overrides above):</b>
+      <b>fakat şu durumda istemiyorum (yukarıdakilerden daha önceliklidir):</b>
     </td>
   </tr>
 
@@ -255,18 +255,18 @@ document.write('<input type="button" value="Tüm İletileri Etkisizleştir" oncl
 
 [% IF Param('supportwatchers') %]
 <hr>
-<b>User Watching</b>
+<b>Kullanıcı Takibi</b>
 
 <p>
-If you watch a user, it is as if you are standing in their shoes for the 
-purposes of getting email. Email is sent or not according to <u>your</u>
-preferences for <u>their</u> relationship to the [% terms.bug %] 
-(e.g. Assignee).
+Bir kullanıcıyı izliyorsanız, bu e-posta almak için onun ayakkabıları içinde  
+beklemek gibidir. E-posta <u>sizin</u>, [% terms.bug %]'ya <u>onların</u> 
+ilişkisiyle (ör: Atanan) ilgili tercihlerinize göre gönderilir ya da  
+gönderilmez.
 </p>
 
 <p>
 [% IF watchedusers.size %]
-You are watching everyone in the following list:
+Aşağıdaki listedeki herkesi izliyorsunuz:
   </p>
   <p>
     <select id="watched_by_you" name="watched_by_you" multiple="multiple" size="5">
@@ -275,23 +275,23 @@ You are watching everyone in the following list:
         [% END %]
     </select> <br />
     <input type="checkbox" id="remove_watched_users" name="remove_watched_users">
-    <label for="remove_watched_users">Remove selected users from my watch list</label>
+    <label for="remove_watched_users">Seçili kullanıcıyı izleme listemden çıkar</label>
 [% ELSE %]
-You are currently not watching any users.
+Şu anda hiçbir kullanıcıyı izlemiyorsunuz.
 [% END %]
 </p>
 
-<p><a name="new_watched_by_you" id="new_watched_by_you">Add users to my watch list (comma separated list)</a>:
+<p><a name="new_watched_by_you" id="new_watched_by_you">Bu kullanıcıları izleme listeme ekle (virgülle ayrılmış liste)</a>:
   <input size="60" name="new_watchedusers" value="">
 </p>            
 
-<p><a name="watching_you" id="watching_you">Users watching you</a>:<br>
+<p><a name="watching_you" id="watching_you">Sizi izleyen kullanıcılar</a>:<br>
   [% IF watchers.size %]
     [% FOREACH watcher = watchers %]
       [% watcher FILTER html %] <br>
     [% END %]
   [% ELSE %]
-    <i>No one</i>
+    <i>Kimse</i>
   [% END %]
 </p>
 
