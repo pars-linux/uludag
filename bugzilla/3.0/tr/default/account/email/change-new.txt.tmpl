@@ -22,9 +22,9 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% expiration_ts = token_ts + (max_token_age * 86400) %]
-Kimden: [% Param('mailfrom') %]
-Kime: [% emailaddress %]
-Konu: [% terms.Bugzilla %] E-posta adresi degistirme isteği
+From: [% Param('mailfrom') %]
+To: [% emailaddress %]
+Subject: [% terms.Bugzilla %] E-posta adresi degistirme isteği
 X-Bugzilla-Type: admin
 
 [%+ terms.Bugzilla %]'ya [% oldemailaddress %] hesabının e-posta adresinin
