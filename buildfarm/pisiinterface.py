@@ -34,6 +34,8 @@ class PisiApi:
         self.options.output_dir = outputDir
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
+        # FIXME: Band-aid for a while...
+        self.options.ignore_sandbox = True
 
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
