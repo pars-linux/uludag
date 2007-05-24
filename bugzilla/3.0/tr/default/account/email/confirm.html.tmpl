@@ -23,11 +23,11 @@
   # token: string. The token to be used in this address change.
   #%]
   
-[% title = "Confirm Change Email" %]
+[% title = "E-posta Değişikliğini Onayla" %]
 [% PROCESS global/header.html.tmpl %]
 
 <p>
-  To change your email address, please enter the old email address:
+  E-posta adresinizi değiştirmek için, lütfen eski e-posta adresinizi girin:
 </p>
 
 <form method="post" action="token.cgi">
@@ -35,7 +35,7 @@
   <input type="hidden" name="a" value="chgem">
   <table>
     <tr>
-      <th align="right">Old Email Address:</th>
+      <th align="right">Eski e-posta adresi:</th>
       <td><input type="text" name="email" size="36"></td>
     </tr>
     <tr>
