@@ -196,5 +196,5 @@ class Commander(QObject):
             # If PackageCache is used and limit is 0. It means limitless.
             if limit and int(limit) != 0:
                 self.clearCache(int(limit) * 1024 * 1024)
-        else:
+        else cache == "False":
             self.clearCache(0)
