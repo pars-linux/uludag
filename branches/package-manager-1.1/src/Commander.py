@@ -183,12 +183,18 @@ class Commander(QObject):
         # it is _removed_ (PiSi tries to create new one), so hardcoded.
         return self.comar.clearCache("/var/cache/pisi/packages", limit)
 
-    def checkCacheLimits(self):
-        if self.parent.settings.getBoolValue(Settings.general, "PackageCache"):
-            limit = self.parent.settings.getNumValue(Settings.general, "CacheLimit")
+    def setCache(self, enabled, limit):
+        self.comar.setCache(enabled, limit)
 
+    def checkCacheLimits(self):
+        config = pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
+
+        cache = config.get("general", "package_cache")
+        if cache == "True":
+            limit = config.get("general", "package_cache_limit")
+            
             # If PackageCache is used and limit is 0. It means limitless.
-            if limit:
-                self.clearCache(limit * 1024 * 1024)
+            if limit and int(limit) != 0:
+                self.clearCache(int(limit) * 1024 * 1024)
         else:
             self.clearCache(0)

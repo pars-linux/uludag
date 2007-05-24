@@ -15,8 +15,6 @@
 defaults = {"SystemTray":False,
             "UpdateCheck":False,
             "UpdateCheckInterval":60,
-            "PackageCache":False,
-            "CacheLimit":0
             }
 
 class Settings:

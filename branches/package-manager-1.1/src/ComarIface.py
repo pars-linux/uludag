@@ -69,5 +69,8 @@ class ComarIface:
     def clearCache(self, cacheDir, limit):
         self.com.call("System.Manager.clearCache", ["cacheDir",cacheDir,"limit",limit])
 
+    def setCache(self, enabled=None, limit=None):
+        self.com.call("System.Manager.setCache", ["enabled",enabled,"limit",limit])
+
     def cancel(self):
         self.com.cancel()

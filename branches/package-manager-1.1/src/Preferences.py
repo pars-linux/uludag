@@ -20,6 +20,8 @@ import PreferencesDialog
 import RepoDialog
 import Settings
 
+import pisi
+
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
         PreferencesDialog.PreferencesDialog.__init__(self, parent)
@@ -47,9 +49,26 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.intervalCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "UpdateCheck"))
         self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
-        self.useCacheCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "PackageCache"))
-        self.useCacheSize.setValue(self.parent.settings.getNumValue(Settings.general, "CacheLimit"))
+        self.getCacheSettings()
         self.reposChanged = False
+
+    def setCacheSettings(self, useCache, cacheLimit):
+        self.parent.command.setCache(useCache, cacheLimit)
+    
+    # Cache settings are system wide and taken from pisi.conf
+    def getCacheSettings(self):
+        config = pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
+
+        cache = config.get("general", "package_cache")
+        cache_limit = config.get("general", "package_cache_limit")
+        
+        if cache_limit:
+            cache_limit = int(cache_limit)
+        else:
+            cache_limit = 0
+        
+        self.useCacheCheck.setChecked(cache == "True")
+        self.useCacheSize.setValue(cache_limit)
 
     def updateButtons(self):
         if self.repoListView.childCount() > 1:
@@ -159,8 +178,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.parent.settings.setValue(Settings.general, "SystemTray", self.systemTray.isChecked())
         self.parent.settings.setValue(Settings.general, "UpdateCheck", self.intervalCheck.isChecked())
         self.parent.settings.setValue(Settings.general, "UpdateCheckInterval", self.intervalSpin.value())
-        self.parent.settings.setValue(Settings.general, "PackageCache", self.useCacheCheck.isChecked())
-        self.parent.settings.setValue(Settings.general, "CacheLimit", self.useCacheSize.value())
+        self.setCacheSettings(self.useCacheCheck.isChecked(), self.useCacheSize.value())
 
         if self.intervalCheck.isChecked():
             self.parent.parent.tray.updateInterval(self.intervalSpin.value())
