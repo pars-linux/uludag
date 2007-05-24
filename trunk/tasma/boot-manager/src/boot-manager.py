@@ -23,7 +23,7 @@ mod_app = 'boot-manager'
 mod_version = '0.1'
 
 def AboutData():
-    return KAboutData(
+    about_data = KAboutData(
         mod_app,
         mod_name,
         mod_version,
@@ -34,6 +34,9 @@ def AboutData():
         None,
         'bugs@pardus.org.tr'
     )
+    about_data.addAuthor("Bahadır Kandemir", I18N_NOOP("Developer and Current Maintainer"), "bahadir@pardus.org.tr")
+    about_data.addAuthor("Fred Gansevles", I18N_NOOP("Contributions to Boot.Loader model."), "fred@gansevles.net")
+    return about_data
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
