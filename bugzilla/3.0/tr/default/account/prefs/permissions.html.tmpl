@@ -36,7 +36,7 @@
   <tr>
     <td>
       [% IF has_bits.size %]
-        You have the following permission [% terms.bits %] set on your account:
+        Hesabınız aşağıdaki izin [% terms.bits %]ine sahip:
         <table align="center">
           [% FOREACH bit_description = has_bits %]
             <tr>
@@ -51,8 +51,8 @@
           [% IF products && products.size %]
             <br>
             <p>
-              You also have local '[% privs FILTER html %]' privileges
-              for the following products:
+              Aynı zamanda aşağıdaki ürünler için yerel '[% privs FILTER html %]'
+              ayrıcalıklarına da sahipsiniz:
             </p>
             <p>
               [% FOREACH product = products %]
@@ -63,17 +63,17 @@
         [% END %]
 
       [% ELSE %]
-        There are no permission [% terms.bits %] set on your account.
+        Hesabınızın hiçbir izin [% terms.bits %]i yok.
       [% END %]
 
       [% IF user.groups.editusers %]
         <br>
-        You have editusers privileges.  You can turn on and off
-        all permissions for all users.
+        Kullanıcıları düzenleme ayrıcalığınız var.  Tüm kullanıcıların tüm
+        izinlerini açıp kapayabilirsiniz.
       [% ELSIF set_bits.size %]
         <br>
-        And you can turn on or off the following [% terms.bits %] for
-        <a href="editusers.cgi">other users</a>:
+        Ve<a href="editusers.cgi">diğer kullanıcıların </a> aşağıdaki [% terms.bits %]'lerini
+        açıp kapayabilirsiniz:
           <table align="center">
           [% FOREACH bit_description = set_bits %]
             <tr>
@@ -86,8 +86,8 @@
 
       [% IF user.groups.bz_sudoers %]
         <br>
-        You are a member of the <b>bz_sudoers</b> group, so you can 
-        <a href="relogin.cgi?action=prepare-sudo">impersonate someone else</a>.
+        Siz <b>bz_sudoers</b> grubunun bir üyesisiniz, bu yüzden  
+        <a href="relogin.cgi?action=prepare-sudo">başka birini taklit edebilirsiniz</a>.
       [% END %]
     </td>
   </tr>
