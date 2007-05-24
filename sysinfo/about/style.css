@@ -177,5 +177,6 @@ table td:first-child {
     color: white;
     float: left;
     padding-top: 0;
+    padding-bottom: 3px;
     height:1em;
 }

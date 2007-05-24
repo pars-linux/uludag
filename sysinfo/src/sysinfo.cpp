@@ -188,8 +188,8 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         sysInfo += "<table>";
         sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[GFX_VENDOR] +  "</td></tr>";
         sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[GFX_MODEL] + "</td></tr>";
-	if (!m_info[GFX_DRIVER].isNull())
-	  sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
+        if (!m_info[GFX_DRIVER].isNull())
+            sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
         sysInfo += "</table>";
     }
 
@@ -295,14 +295,38 @@ QString kio_sysinfoProtocol::diskInfo()
             QString tooltip = i18n( di.model );
             QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
 
-            unsigned long long usage = di.total - di.avail;
-            unsigned long long percent = usage / ( di.total / 100 );
+            unsigned long long usage,percent,peer;
+            usage = di.total - di.avail;
+            peer = di.total / 100;
 
-            result += QString( "<tr><td>%1</td><td width=\"100%\"><table width=\"100%\"><tr><td>"
-                               "<a href=\"media:/%2\" title=\"%8\">%3</a> [%4] [%7]</td></tr>"
-                               "<tr><td width=\"90%\" class=\"bar\"><div style=\"width: %5%\">%6&nbsp</div></td></tr></table></td><tr></tr>" ).
-                          arg( icon( di.iconName, 48 ) ).arg( di.name ).arg( label ).arg( di.fsType ).arg(di.mounted ? percent : 0).
-                          arg( di.mounted ? formattedUnit( usage ) : QString::null ).arg( formattedUnit( di.total,0 ) ).arg( tooltip+" "+di.deviceNode );
+            peer == 0 ? percent = 0 : percent = usage / peer;
+
+            result += QString( "<tr>"
+                               "    <td>%1</td>"
+                               "    <td width=\"100%\">"
+                               "        <table width=\"100%\">"
+                               "            <tr>"
+                               "                <td>"
+                               "                    <a href=\"media:/%2\" title=\"%3\">%4</a> [%5] [%6]"
+                               "                </td>"
+                               "            </tr>"
+                               "            <tr>"
+                               "                <td width=\"90%\" class=\"bar\">"
+                               "                    <div style=\"width: %7%\">%8&nbsp</div>"
+                               "                </td>"
+                               "            </tr>"
+                               "        </table>"
+                               "    </td>"
+                               "</tr>"
+                               "<tr></tr>" ).
+                                arg( icon( di.iconName, 48 ) ).
+                                arg( di.name ).
+                                arg( tooltip+" "+di.deviceNode ).
+                                arg( label ).
+                                arg( di.fsType ).
+                                arg( formattedUnit( di.total,0 ) ).
+                                arg( di.mounted ? percent : 0).
+                                arg( di.mounted ? formattedUnit( usage ) : QString::null );
         }
     }
     result += "</table>";
