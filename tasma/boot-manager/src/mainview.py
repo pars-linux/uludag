@@ -349,7 +349,7 @@ class widgetMain(QWidget):
                     index = int(entry["index"])
                     pardus = entry["os_type"] == "linux" and getRoot() == entry["root"]
                     self.entries.append(entry)
-                    item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), deviceDescription(entry["root"]),  pardus, entry)
+                    item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), entry["root"],  pardus, entry)
                 self.widgetEntries.listEntries.setEnabled(True)
             elif reply.id == BOOT_SYSTEMS:
                 self.systems = {}
