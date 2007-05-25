@@ -1,3 +1,6 @@
+import os
+import os.path
+
 # l10n
 
 LABEL_OTHER = _({
@@ -36,6 +39,7 @@ MAX_ENTRIES = 3
 
 SYSTEMS = {
     "linux": "Linux,root,kernel,initrd,options",
+    "xen": "Xen,root,kernel,initrd,options",
     "windows": "Windows,root",
     "other": "%s,root,kernel,initrd,options" % LABEL_OTHER,
 }
@@ -62,11 +66,6 @@ class grubEntry:
     def __init__(self, title):
         self.title = title
         self.commands = []
-    
-    def copy(self):
-        """Returns a copy of entry."""
-        import copy
-        return copy.deepcopy(self)
     
     def listCommands(self):
         """Returns list of commands used in entry"""
@@ -167,7 +166,6 @@ class grubConf:
         if entry:
             self.entries.append(entry)
         
-        import os.path
         default = os.path.join(os.path.dirname(filename), "default")
         if os.path.exists(default):
             self.index = int(file(default).read().split("\0")[0])
@@ -243,7 +241,6 @@ class grubConf:
 
 class grubParser:
     def __init__(self, _file, write=False, timeout=-1):
-        import os.path
         from comar.utility import FileLock
         self.file = _file
         self.write = write
@@ -259,42 +256,18 @@ class grubParser:
             self.config.write(self.file)
         self.lock.unlock()
 
+
+class ParseError(Exception):
+    pass
+
 def parseVersion(version):
-    """Parses a kernel filename and returns kernel version and suffix. Returns False on failure."""
+    """Parses a kernel filename and returns kernel version and suffix. Raises ParseError"""
     import re
     try:
         k_version, x, x, k_suffix = re.findall("kernel-(([0-9\.]+)-([0-9]+))(-.*)?", version)[0]
     except IndexError:
-        return False
+        raise ParseError
     return k_version, k_suffix
-
-def isPardusEntry(entry, root, suffix="", version=None):
-    """Returns if entry is a Pardus kernel on specified root device."""
-    commands = entry.listCommands()
-    if "kernel" not in commands:
-        return False
-    kernel = entry.getCommand("kernel").value.split()[0]
-    
-    if "root" in commands:
-        k_root = entry.getCommand("root").value
-    if kernel.startswith("("):
-        k_root = kernel.split(")")[0] + ")"
-    if not k_root or k_root != root:
-        return False
-    
-    try:
-        k_version, k_suffix = parseVersion(kernel)
-    except TypeError:
-        return False
-    
-    if k_suffix == suffix:
-        if version:
-            if k_version == version:
-                return True
-        else:
-            return True
-    
-    return False
 
 def bootParameters(root):
     s = []
@@ -313,7 +286,8 @@ def bootParameters(root):
     return " ".join(s).strip()
 
 def grubDevice(dev):
-    for device in file("/boot/grub/device.map"):
+    device_map = os.path.join(os.path.dirname(GRUB_CONF), "device.map")
+    for device in file(device_map):
         grub_dev, linux_dev = device.strip().split("\t")
         if dev.startswith(linux_dev):
             part = dev.replace(linux_dev, "")
@@ -324,10 +298,11 @@ def grubDevice(dev):
             return grub_dev.replace(")", ",%s)" % part)
 
 def linuxDevice(dev):
+    device_map = os.path.join(os.path.dirname(GRUB_CONF), "device.map")
     dev, part = dev.split(",")
     dev = "%s)" % dev
     part = int(part.replace(")", "")) + 1
-    for device in file("/boot/grub/device.map"):
+    for device in file(device_map):
         grub_dev, linux_dev = device.strip().split("\t")
         if dev == grub_dev:
             if linux_dev[-1].isdigit():
@@ -335,13 +310,83 @@ def linuxDevice(dev):
             return "%s%s" % (linux_dev, part)
 
 def getRoot():
-    import os
     for mount in os.popen("/bin/mount").readlines():
         mount_items = mount.split()
         if mount_items[0].startswith("/dev") and mount_items[2] == "/":
             return mount_items[0]
 
-def importGrubEntry(entry):
+def md5crypt(password):
+    import random
+    import md5
+    des_salt = list('./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
+    salt, magic = str(random.random())[-8:], '$1$'
+    
+    ctx = md5.new(password)
+    ctx.update(magic)
+    ctx.update(salt)
+    
+    ctx1 = md5.new(password)
+    ctx1.update(salt)
+    ctx1.update(password)
+    
+    final = ctx1.digest()
+    
+    for i in range(len(password), 0 , -16):
+        if i > 16:
+            ctx.update(final)
+        else:
+            ctx.update(final[:i])
+    
+    i = len(password)
+    
+    while i:
+        if i & 1:
+            ctx.update('\0')
+        else:
+            ctx.update(password[:1])
+        i = i >> 1
+    final = ctx.digest()
+    
+    for i in range(1000):
+        ctx1 = md5.new()
+        if i & 1:
+            ctx1.update(password)
+        else:
+            ctx1.update(final)
+        if i % 3: ctx1.update(salt)
+        if i % 7: ctx1.update(password)
+        if i & 1:
+            ctx1.update(final)
+        else:
+            ctx1.update(password)
+        final = ctx1.digest()
+    
+    def _to64(v, n):
+        r = ''
+        while (n-1 >= 0):
+            r = r + des_salt[v & 0x3F]
+            v = v >> 6
+            n = n - 1
+        return r
+    
+    rv = magic + salt + '$'
+    final = map(ord, final)
+    l = (final[0] << 16) + (final[6] << 8) + final[12]
+    rv = rv + _to64(l, 4)
+    l = (final[1] << 16) + (final[7] << 8) + final[13]
+    rv = rv + _to64(l, 4)
+    l = (final[2] << 16) + (final[8] << 8) + final[14]
+    rv = rv + _to64(l, 4)
+    l = (final[3] << 16) + (final[9] << 8) + final[15]
+    rv = rv + _to64(l, 4)
+    l = (final[4] << 16) + (final[10] << 8) + final[5]
+    rv = rv + _to64(l, 4)
+    l = final[11]
+    rv = rv + _to64(l, 2)
+    
+    return rv
+
+def parseGrubEntry(entry):
     os_entry = {
         "os_type": "other",
         "title": entry.title,
@@ -372,15 +417,60 @@ def importGrubEntry(entry):
                 root, kernel = os_entry["kernel"].split(")", 1)
                 os_entry["root"] = linuxDevice(root + ")")
                 os_entry["kernel"] = kernel
+            if os_entry["kernel"] == "/boot/xen.gz":
+                os_entry["os_type"] = "xen"
         elif key in ["chainloader", "makeactive"]:
             os_entry["os_type"] = "windows"
         elif key == "savedefault":
             os_entry["default"] = "saved"
-    lst = []
-    for k, v in os_entry.iteritems():
-        lst.append("%s %s" % (k, v))
-    return lst
+        elif key == "module" and os_entry["os_type"] == "xen":
+            if value.startswith("("):
+                value = value.split(")", 1)[1]
+            if value.startswith("/boot/kernel"):
+                if " " in value:
+                    os_entry["kernel"], os_entry["options"] = value.split(" ", 1)
+                else:
+                    os_entry["kernel"] = value
+            elif value.startswith("/boot/init"):
+                os_entry["initrd"] = value
+    return os_entry
 
+def makeGrubEntry(title, os_type, root, kernel=None, initrd=None, options=None):
+    grub_device = grubDevice(root)
+    if not grub_device:
+        fail(FAIL_NODEVICE)
+    
+    entry = grubEntry(title)
+    
+    if os_type not in SYSTEMS:
+        os_type = "other"
+    if os_type == "windows":
+        entry.setCommand("rootnoverify", grub_device)
+        entry.setCommand("makeactive", "")
+        entry.setCommand("chainloader", "+1")
+        # FIXME
+        if not grub_device.startswith("(hd0"):
+            pass
+    else:
+        entry.setCommand("root", grub_device)
+    if os_type == "xen":
+        entry.setCommand("kernel", "/boot/xen.gz")
+        if kernel and "kernel" in SYSTEMS[os_type]:
+            if options and "options" in SYSTEMS[os_type]:
+                entry.setCommand("module", "%s %s" % (kernel, options))
+            else:
+                entry.setCommand("module", kernel)
+        if initrd and "initrd" in SYSTEMS[os_type]:
+            entry.setCommand("module", initrd, append=True)
+    else:
+        if kernel and "kernel" in SYSTEMS[os_type]:
+            if options and "options" in SYSTEMS[os_type]:
+                entry.setCommand("kernel", "%s %s" % (kernel, options))
+            else:
+                entry.setCommand("kernel", kernel)
+        if initrd and "initrd" in SYSTEMS[os_type]:
+            entry.setCommand("initrd", initrd)
+    return entry
 
 # Boot.Loader methods
 
@@ -419,7 +509,7 @@ def setOptions(default=None, timeout=None, password=None):
     if timeout != None:
         grub.config.setOption("timeout", timeout)
     if password != None:
-        grub.config.setOption("password", md5crypt(password))
+        grub.config.setOption("password", "--md5 %s" % md5crypt(password))
     grub.release()
     notify("Boot.Loader.changed", "option")
 
@@ -430,7 +520,9 @@ def listEntries():
         fail(FAIL_TIMEOUT)
     entries = []
     for index, entry in enumerate(grub.config.entries):
-        os_entry = importGrubEntry(entry)
+        os_entry = []
+        for k, v in parseGrubEntry(entry).iteritems():
+            os_entry.append("%s %s" % (k, v))
         os_entry.insert(0, "index %s" % index)
         if not entry.getCommand("savedefault"):
             default_index = grub.config.getOption("default", "0")
@@ -468,27 +560,7 @@ def setEntry(title, os_type, root, kernel=None, initrd=None, options=None, defau
     if not len(title):
         fail(FAIL_NOTITLE)
     
-    grub_device = grubDevice(root)
-    if not grub_device:
-        fail(FAIL_NODEVICE)
-    
-    entry = grubEntry(title)
-    
-    if os_type not in SYSTEMS:
-        os_type = "other"
-    if os_type == "windows":
-        entry.setCommand("rootnoverify", grub_device)
-        entry.setCommand("makeactive", "")
-        entry.setCommand("chainloader", "+1")
-    else:
-        entry.setCommand("root", grub_device)
-    if kernel and "kernel" in SYSTEMS[os_type]:
-        if options and "options" in SYSTEMS[os_type]:
-            entry.setCommand("kernel", "%s %s" % (kernel, options))
-        else:
-            entry.setCommand("kernel", kernel)
-    if initrd and "initrd" in SYSTEMS[os_type]:
-        entry.setCommand("initrd", initrd)
+    entry = makeGrubEntry(title, os_type, root, kernel, initrd, options)
     
     if index == None:
         grub.config.addEntry(entry)
@@ -523,9 +595,19 @@ def updateKernelEntry(version, root=None):
         fail(FAIL_NODEVICE)
     
     entries = []
+    versions = {}
     for x in grub.config.entries:
-        if isPardusEntry(x, root_grub, new_suffix):
-            entries.append(x)
+        entry = parseGrubEntry(x)
+        if entry["root"] == root:
+            if entry["os_type"] in ["linux", "xen"]:
+                kernel = entry["kernel"].split("/")[-1]
+                try:
+                    k_version, k_suffix = parseVersion(kernel)
+                except ParseError:
+                    continue
+                if k_suffix == new_suffix:
+                    versions[k_version] = x
+                    entries.append(x)
     
     default = grub.config.options.get("default", 0)
     if default == "saved":
@@ -538,21 +620,18 @@ def updateKernelEntry(version, root=None):
     if len(grub.config.entries):
         default_entry = grub.config.entries[default_index]
     
-    make_default = isPardusEntry(default_entry, root_grub, new_suffix)
+    make_default = False
+    if default_entry in entries:
+        make_default = True
     
     updated_index = None
     action = None
     if not len(entries):
         action = "append"
     else:
-        kernels = {}
-        for entry in entries:
-            kernel = entry.getCommand("kernel").value.split()[0]
-            kernels[parseVersion(kernel)[0]] = entry
-        if new_version in kernels:
+        if new_version in versions:
             if make_default:
-                entry = kernels[new_version]
-                updated_index = grub.config.indexOf(entry)
+                updated_index = grub.config.indexOf(versions[new_version])
         else:
             action = "insert"
     
@@ -560,19 +639,20 @@ def updateKernelEntry(version, root=None):
         release = open("/etc/pardus-release", "r").readline().strip()
         title = "%s [%s%s]" % (release, new_version, new_suffix)
         
-        new_entry = grubEntry(title)
-        new_entry.setCommand("root", root_grub)
+        os_type = "linux"
+        if new_suffix == "-dom0":
+            os_type = "xen"
         
         if action == "append":
             index = -1
             boot_parameters = bootParameters(root)
         else:
             index = grub.config.indexOf(entries[0])
-            kernel = entries[0].getCommand("kernel").value
-            boot_parameters = kernel.split(" ", 1)[1]
+            boot_parameters = parseGrubEntry(entries[0])["options"]
         
-        new_entry.setCommand("kernel", "/boot/kernel-%s%s %s" % (new_version, new_suffix, boot_parameters))
-        new_entry.setCommand("initrd", "/boot/initrmfs-%s%s" % (new_version, new_suffix))
+        kernel = "/boot/kernel-%s%s" % (new_version, new_suffix)
+        initrd = "/boot/initrmfs-%s%s" % (new_version, new_suffix)
+        new_entry = makeGrubEntry(title, os_type, root, kernel, initrd, boot_parameters)
         
         if grub.config.getOption("default", "0") == "saved":
             new_entry.setCommand("savedefault", "")
