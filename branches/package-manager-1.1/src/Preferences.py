@@ -67,7 +67,13 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         else:
             cache_limit = 0
         
-        self.useCacheCheck.setChecked(cache == "True")
+        # If pisi.conf does not have it yet, default is use package cache
+        if not cache or cache == "True":
+            enableCache = True
+        else:
+            enableCache = False
+        
+        self.useCacheCheck.setChecked(enableCache)
         self.useCacheSize.setValue(cache_limit)
 
     def updateButtons(self):
