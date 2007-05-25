@@ -46,9 +46,3 @@ def getRoot():
         mount_items = mount.split()
         if mount_items[2] == "/":
             return mount_items[0]
-
-def deviceDescription(dev):
-    dev = dev.split("/")[2]
-    disk = ord(dev[2:3]) - ord("a") + 1
-    part = int(dev[3:])
-    return i18n("Disk %1, Partition %2").arg(disk).arg(part)

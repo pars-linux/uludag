@@ -12,6 +12,8 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
+import os.path
+
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
@@ -73,6 +75,9 @@ class Entry(QWidget):
             os_type = "pardus"
         else:
             os_type = os_data["os_type"]
+        
+        if not os.path.exists(locate("data", "boot-manager/%s.png" % os_type)):
+            os_type = "other"
         
         self.icon = QImage(locate("data", "boot-manager/%s.png" % os_type))
         self.icon.smoothScale(32, 32)
