@@ -316,7 +316,11 @@ def grubDevice(dev):
     for device in file("/boot/grub/device.map"):
         grub_dev, linux_dev = device.strip().split("\t")
         if dev.startswith(linux_dev):
-            part = int(dev.replace(linux_dev, "")) - 1
+            part = dev.replace(linux_dev, "")
+            if part.startswith("p"):
+                part = int(part[1:]) - 1
+            else:
+                part = int(part) - 1
             return grub_dev.replace(")", ",%s)" % part)
 
 def linuxDevice(dev):
@@ -326,6 +330,8 @@ def linuxDevice(dev):
     for device in file("/boot/grub/device.map"):
         grub_dev, linux_dev = device.strip().split("\t")
         if dev == grub_dev:
+            if linux_dev[-1].isdigit():
+                part = "p%s" % part
             return "%s%s" % (linux_dev, part)
 
 def getRoot():
