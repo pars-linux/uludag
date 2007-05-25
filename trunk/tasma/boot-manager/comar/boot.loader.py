@@ -168,7 +168,10 @@ class grubConf:
         
         default = os.path.join(os.path.dirname(filename), "default")
         if os.path.exists(default):
-            self.index = int(file(default).read().split("\0")[0])
+            try:
+                self.index = int(self.index = file(default).read().split("\0")[0])
+            except ValueError:
+                self.index = 0
     
     def getSavedIndex(self):
         """Return last booted entry index."""
