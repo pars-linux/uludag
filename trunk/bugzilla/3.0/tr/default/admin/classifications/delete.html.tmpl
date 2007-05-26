@@ -20,12 +20,12 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Classification deleted"
+  title = "Sınıflama silindi"
 %]
 
-Classification [% classification.name FILTER html %] deleted.<br>
+[% classification.name FILTER html %] sınıflaması silindi.<br>
 
-<p>Back to the <a href="./">main [% terms.bugs %] page</a>
-or <a href="editclassifications.cgi"> edit</a> more classifications.
+<p> <a href="./">[% terms.Bugs %] ana sayfasına</a> geri dönün 
+veya diğer sınıflamaları <a href="editclassifications.cgi"> düzenleyin</a>.
 
 [% PROCESS global/footer.html.tmpl %] 
