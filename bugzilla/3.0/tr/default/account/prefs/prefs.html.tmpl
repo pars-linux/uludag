@@ -38,20 +38,20 @@
 
 [% filtered_login = user.login FILTER html %]
 [% PROCESS global/header.html.tmpl
-   title = "User Preferences"
+   title = "Kullanıcı Seçenekleri"
    subheader = filtered_login
    style_urls = ['skins/standard/admin.css']
  %]
 
-[% tabs = [{ name => "settings", label => "General Preferences",
+[% tabs = [{ name => "settings", label => "Genel Seçenekler",
               link => "userprefs.cgi?tab=settings", saveable => "1" },
-            { name => "email", label => "Email Preferences", 
+            { name => "email", label => "E-posta Seçenekleri", 
               link => "userprefs.cgi?tab=email", saveable => "1" },
-            { name => "saved-searches", label => "Saved Searches", 
+            { name => "saved-searches", label => "Kaydedilmiş Aramalar", 
               link => "userprefs.cgi?tab=saved-searches", saveable => "1" },
-            { name => "account", label => "Name and Password",
+            { name => "account", label => "İsim ve Parola",
               link => "userprefs.cgi?tab=account", saveable => "1" },
-            { name => "permissions", label => "Permissions", 
+            { name => "permissions", label => "İzinler", 
               link => "userprefs.cgi?tab=permissions", saveable => "0" } ] %]
 
 [% FOREACH tab IN tabs %]
@@ -68,12 +68,12 @@
 
 [% IF changes_saved %]
   <div id="message">
-    The changes to your [% current_tab.label FILTER lower %] have been saved.
+    [% current_tab.label FILTER lower %] değişiklikleriniz kaydedildi..
 
     [% IF email_changes_saved %]
       <p>
-        An email has been sent to both old and new email
-        addresses to confirm the change of email address.
+        E-posta adresi değişikliğini doğrulamak için hem eski,
+        hem de yani e-posta adresinize birer e-posta gönderildi.
       </p>
     [% END %]
   </div>
@@ -97,7 +97,7 @@
         <tr>
           <td width="150">&nbsp;</td>
           <td>
-            <input type="submit" id="update" value="Submit Changes">
+            <input type="submit" id="update" value="Değişiklikleri Gönder">
           </td>
         </tr>
       </table>
