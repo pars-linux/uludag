@@ -20,13 +20,13 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Adding new classification"
+  title = "Yeni sınıflama ekleniyor"
 %]
 
-OK, done.
+İşlem tamamlandı.
 
-<p>Back to the <a href="./">main [% terms.bugs %] page</a>,
-<a href="editproducts.cgi?action=add&amp;classification=[% classification FILTER url_quote %]">add</a> products to this new classification, 
-or <a href="editclassifications.cgi"> edit</a> more classifications.
+<p><a href="./">[% terms.Bugs %] ana sayfasına</a> geri dönün,
+bu yeni sınıflamaya ürünler<a href="editproducts.cgi?action=add&amp;classification=[% classification FILTER url_quote %]"> ekleyin</a>, 
+veya diğer sınıflamaları<a href="editclassifications.cgi"> düzenleyin</a>.
 
 [% PROCESS global/footer.html.tmpl %] 
