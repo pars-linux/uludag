@@ -20,46 +20,46 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Delete classification"
+  title = "Sınıflamayı sil"
 %]
 
 <table border=1 cellpadding=4 cellspacing=0>
 <tr bgcolor="#6666ff">
-  <th valign="top" align="left">Part</th>
-  <th valign="top" align="left">Value</th>
+  <th valign="top" align="left">Bölüm</th>
+  <th valign="top" align="left">Değer</th>
 
 </tr><tr>
-  <td valign="top">Classification:</td>
+  <td valign="top">Sınıflama:</td>
   <td valign="top">[% classification.name FILTER html %]</td>
 
 </tr><tr>
-  <td valign="top">Description:</td>
+  <td valign="top">Tanım:</td>
   <td valign="top">
     [% IF classification.description %]
       [% classification.description FILTER html_light %]
     [% ELSE %]
-      <font color="red">description missing</font>
+      <font color="red">Tanımlama eksik</font>
     [% END %]
   </td>
 
 </tr><tr>
-  <td valign="top">Sortkey:</td>
+  <td valign="top">Sıralama anahtarı:</td>
   <td valign="top">[% classification.sortkey FILTER html %]</td>
 
 </tr>
 </table>
 
-<h2>Confirmation</h2>
+<h2>Onay</h2>
 
-<p>Do you really want to delete this classification?</p>
+<p>Bu sınıflamayı gerçekten silmek istiyor musunuz?</p>
 <form method=post action="editclassifications.cgi">
-  <input type=submit value="Yes, delete">
+  <input type=submit value="Evet, sil">
   <input type=hidden name="action" value="delete">
   <input type=hidden name="classification" value="[% classification.name FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">
 </form>
 
-<p>Back to the <a href="./">main [% terms.bugs %] page</a>
-or <a href="editclassifications.cgi"> edit</a> more classifications.</p>
+<p> <a href="./">[% terms.Bugs %] ana sayfasına</a> geri dönün 
+veya diğer sınıflamaları<a href="editclassifications.cgi"> düzenleyin</a>.</p> 
 
 [% PROCESS global/footer.html.tmpl %] 
