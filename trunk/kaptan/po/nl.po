@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 20:44+0200\n"
+"POT-Creation-Date: 2007-05-26 03:25+0300\n"
 "PO-Revision-Date: 2007-02-20 21:39+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -43,7 +43,12 @@ msgid ""
 "package-manager you can easily install new programs and upgrade your system. "
 "But also can work in the system tray and periodically checks new upgrades of "
 "the programs that are installed on your system."
-msgstr "<b>Pakketbeheer</b> is de grafische interface van <b>PiSi</b>. Met pakketbeheer kunt u met gemak nieuwe programma's installeren en opwaarderen op uw systeem. Maar het kan ook actief zijn in het systeemvak en periodiek controleren voor op te waarderen pakketten welk op uw systeem geïnstalleerd zijn."
+msgstr ""
+"<b>Pakketbeheer</b> is de grafische interface van <b>PiSi</b>. Met "
+"pakketbeheer kunt u met gemak nieuwe programma's installeren en opwaarderen "
+"op uw systeem. Maar het kan ook actief zijn in het systeemvak en periodiek "
+"controleren voor op te waarderen pakketten welk op uw systeem geïnstalleerd "
+"zijn."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16 ../src/welcomedlg.cpp:67
@@ -55,19 +60,21 @@ msgid ""
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
-"<b>Pardus</b> is een GNU/Linux distributie gericht op computergebruikers met gemiddelde ervaring. Door goede ideeën, architectuur en code van "
-"andere distributies te combineren met een eigen configuratieraamwerk, met "
-"potentie om door te groeien tot een autonoom systeem, zal het installeren "
-"en gebruiken van computers sterk worden vereenvoudigen."
+"<b>Pardus</b> is een GNU/Linux distributie gericht op computergebruikers met "
+"gemiddelde ervaring. Door goede ideeën, architectuur en code van andere "
+"distributies te combineren met een eigen configuratieraamwerk, met potentie "
+"om door te groeien tot een autonoom systeem, zal het installeren en "
+"gebruiken van computers sterk worden vereenvoudigen."
 
-#: ../src/network.cpp:42
+#: ../src/network.cpp:45
 msgid "<big>Loading...</big>"
 msgstr "<big>Laden...</big>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgid ""
+"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
 msgstr "<center>Gereed! Vanaf nu kunt u <b>Pardus</b> gaan gebruiken</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
@@ -88,7 +95,7 @@ msgstr "Controleer automatisch voor bijgewerkte bestanden elke"
 msgid "Click behaviour"
 msgstr "Klik gedrag"
 
-#: ../src/kaptan.cpp:65
+#: ../src/kaptan.cpp:78
 msgid "Congratulations"
 msgstr "Gefeliciteerd"
 
@@ -113,8 +120,8 @@ msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"Hier kunt u een <b>stijl</b> voor uw bureaublad kiezen. <b>Pardus</b> voorziet u van enkele"
-"oogstrelende stijlen."
+"Hier kunt u een <b>stijl</b> voor uw bureaublad kiezen. <b>Pardus</b> "
+"voorziet u van enkeleoogstrelende stijlen."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23 ../src/wallpaperdlg.cpp:95
@@ -124,8 +131,8 @@ msgid ""
 "<b>Pardus</b> provides eye candy wallpapers, you can select one of them, as "
 "you wish."
 msgstr ""
-"Hier kunt u een <b>achtergrond</b> voor uw bureaublad kiezen. <b>Pardus</b> voorziet u van "
-"oogstrelende achtergronden, u kunt er één kiezen, als u wilt."
+"Hier kunt u een <b>achtergrond</b> voor uw bureaublad kiezen. <b>Pardus</b> "
+"voorziet u van oogstrelende achtergronden, u kunt er één kiezen, als u wilt."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
 #: rc.cpp:39 ../src/mousedlg.cpp:117
@@ -135,8 +142,8 @@ msgid ""
 "right buttons on your pointing device by choosing the 'Left handed' option "
 "below. You can also select default click behaviour."
 msgstr ""
-"Als u linkshandig bent, kunt u de knoppen van uw aanwijsapparaat omwisselen met onderstaande optie. U kunt ook het standaard klikgedrag "
-"aanpassen."
+"Als u linkshandig bent, kunt u de knoppen van uw aanwijsapparaat omwisselen "
+"met onderstaande optie. U kunt ook het standaard klikgedrag aanpassen."
 
 #: ../src/main.cpp:18
 msgid "Kaptan Desktop"
@@ -146,7 +153,7 @@ msgstr "Kaptan Desktop"
 msgid "Left handed"
 msgstr "Linkshandig"
 
-#: ../src/kaptan.cpp:45
+#: ../src/kaptan.cpp:46
 msgid "Mouse Setup"
 msgstr "Muis instellen"
 
@@ -156,12 +163,12 @@ msgstr "Muis instellen"
 msgid "MouseSetupDlg"
 msgstr "MouseSetupDlg"
 
-#: ../src/kaptan.cpp:57
+#: ../src/kaptan.cpp:61
 msgid "Network Setup"
 msgstr "Netwerk instellen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
-#: rc.cpp:59 ../src/kaptan.cpp:61 ../src/packagedlg.cpp:101
+#: rc.cpp:59 ../src/kaptan.cpp:71 ../src/packagedlg.cpp:101
 #, no-c-format
 msgid "Package Manager"
 msgstr "Pakketbeheer"
@@ -195,7 +202,7 @@ msgstr "Start Tasma"
 msgid "Style"
 msgstr "Stijl"
 
-#: ../src/kaptan.cpp:49
+#: ../src/kaptan.cpp:50
 msgid "Style Setup"
 msgstr "Stijl instellen"
 
@@ -231,13 +238,12 @@ msgstr "Gebruik verbeterd Kickoff stijl menu"
 msgid "Wallpaper"
 msgstr "Achtergrond"
 
-#: ../src/kaptan.cpp:53
+#: ../src/kaptan.cpp:54
 msgid "Wallpaper Setup"
 msgstr "Achtergrond instellen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 16
-#: rc.cpp:10 ../src/kaptan.cpp:41 ../src/welcomedlg.cpp:65
+#: rc.cpp:10 ../src/kaptan.cpp:42 ../src/welcomedlg.cpp:65
 #, no-c-format
 msgid "Welcome"
 msgstr "Welkom"
-
