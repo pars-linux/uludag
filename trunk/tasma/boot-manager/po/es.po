@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-23 19:35+0300\n"
+"POT-Creation-Date: 2007-05-26 03:17+0300\n"
 "PO-Revision-Date: 2007-05-21 19:41-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -17,11 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/boot-manager.py:30 src/boot-manager.py:81
+#: src/boot-manager.py:30 src/boot-manager.py:84
 msgid "Bootloader Manager"
 msgstr "Administrador de Arranque"
 
-#: src/boot-manager.py:76
+#: src/boot-manager.py:37
+msgid "Developer and Current Maintainer"
+msgstr ""
+
+#: src/boot-manager.py:38
+msgid "Contributions to Boot.Loader model."
+msgstr ""
+
+#: src/boot-manager.py:79
 msgid "Bootloader Manager is already started!"
 msgstr "El administrador del cargador de arranque ya se está ejecutando !"
 
@@ -29,62 +37,69 @@ msgstr "El administrador del cargador de arranque ya se está ejecutando !"
 msgid "New Entry"
 msgstr "Nueva entrada"
 
-#: src/mainview.py:54
+#: src/mainview.py:55
 msgid "Remember last booted entry."
 msgstr "Recordar la elección del ultimo arranque"
 
-#: src/mainview.py:88
+#: src/mainview.py:97
 msgid "Title:"
 msgstr "Título:"
 
-#: src/mainview.py:97
+#: src/mainview.py:106
 msgid "System:"
 msgstr "Sistema:"
 
-#: src/mainview.py:108
+#: src/mainview.py:117
 msgid "Root:"
 msgstr "Root (Raíz del sistema):"
 
-#: src/mainview.py:118
+#: src/mainview.py:127
 msgid "Kernel:"
 msgstr "Núcleo (kernel):"
 
-#: src/mainview.py:128
+#: src/mainview.py:137
 msgid "Kernel Parameters:"
 msgstr "Parámetros del Kernel:"
 
-#: src/mainview.py:138
+#: src/mainview.py:147
 msgid "Initial Ramdisk:"
 msgstr "Disco RAM inicial:"
 
-#: src/mainview.py:148
+#: src/mainview.py:157
 msgid "Set as default boot entry."
 msgstr "Establecer como elección por defecto"
 
-#: src/mainview.py:205
+#: src/mainview.py:214
 msgid "Are you sure you want to remove this entry?"
 msgstr "Está seguro que desea remover esta entrada ?"
 
-#: src/mainview.py:205
+#: src/mainview.py:214
 msgid "Delete Entry"
 msgstr "Eliminar Entrada"
 
-#: src/mainview.py:337
+#: src/mainview.py:346
 msgid "Bootloader configuration changed by another application."
 msgstr "La configuración de arranque fue modificada por otro programa."
 
-#: src/mainview.py:372 src/mainview.py:374
+#: src/mainview.py:381 src/mainview.py:383
 msgid "Failed"
 msgstr "Falló"
 
-#: src/utility.py:54
-msgid "Disk %1, Partition %2"
-msgstr "Disco %1, Partición %2"
+#: src/mainview.py:388
+msgid "You are not allowed to edit boot loader settings."
+msgstr ""
 
-#: src/ui_elements.py:82
+#: src/mainview.py:388
+msgid "Access Denied"
+msgstr ""
+
+#: src/ui_elements.py:90
 msgid "Edit entry"
 msgstr "Editar entrada"
 
-#: src/ui_elements.py:86
+#: src/ui_elements.py:94
 msgid "Delete entry"
 msgstr "Eliminar entrada"
+
+#~ msgid "Disk %1, Partition %2"
+#~ msgstr "Disco %1, Partición %2"
