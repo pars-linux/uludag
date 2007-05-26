@@ -20,7 +20,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Sınıflamayı sil"
+  title = "Sınıflandırmayı sil"
 %]
 
 <table border=1 cellpadding=4 cellspacing=0>
@@ -29,7 +29,7 @@
   <th valign="top" align="left">Değer</th>
 
 </tr><tr>
-  <td valign="top">Sınıflama:</td>
+  <td valign="top">Sınıflandırma:</td>
   <td valign="top">[% classification.name FILTER html %]</td>
 
 </tr><tr>
@@ -51,7 +51,7 @@
 
 <h2>Onay</h2>
 
-<p>Bu sınıflamayı gerçekten silmek istiyor musunuz?</p>
+<p>Bu sınıflandırmayı gerçekten silmek istiyor musunuz?</p>
 <form method=post action="editclassifications.cgi">
   <input type=submit value="Evet, sil">
   <input type=hidden name="action" value="delete">
@@ -60,6 +60,6 @@
 </form>
 
 <p> <a href="./">[% terms.Bugs %] ana sayfasına</a> geri dönün 
-veya diğer sınıflamaları<a href="editclassifications.cgi"> düzenleyin</a>.</p> 
+veya diğer sınıflandırmaları<a href="editclassifications.cgi"> düzenleyin</a>.</p> 
 
 [% PROCESS global/footer.html.tmpl %] 
