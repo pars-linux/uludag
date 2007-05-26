@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 20:44+0200\n"
+"POT-Creation-Date: 2007-05-26 03:25+0300\n"
 "PO-Revision-Date: 2006-12-12 21:53+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
+"translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,10 +43,11 @@ msgid ""
 "But also can work in the system tray and periodically checks new upgrades of "
 "the programs that are installed on your system."
 msgstr ""
-"<b>Paket-Manager</b> ist ein grafisches Front-End von<b>PiSi</b>. Mit "
-"Paket-Manager können Sie spielend neue Programme installieren und Ihr System upgraden. "
-"Es kann aber auch im Systemabschnitt arbeiten und in regelmässigen Abständen auf neue "
-"Upgrades für die auf Ihr System installierten Programme überprüfen."
+"<b>Paket-Manager</b> ist ein grafisches Front-End von<b>PiSi</b>. Mit Paket-"
+"Manager können Sie spielend neue Programme installieren und Ihr System "
+"upgraden. Es kann aber auch im Systemabschnitt arbeiten und in regelmässigen "
+"Abständen auf neue Upgrades für die auf Ihr System installierten Programme "
+"überprüfen."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 38
 #: rc.cpp:16 ../src/welcomedlg.cpp:67
@@ -57,23 +59,24 @@ msgid ""
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
-"<b>Pardus</b> ist eine Entwicklung auf der Basis der GNU/Linux - Distribution , "
-"welche die Anforderungen des erfahrenen PC – Benutzers durch die Verwendung  "
-"der vorhandenen stabilen und neuen Ideen, Strukturen und Codes des Linux-BS "
-"erfüllen soll. Dessen Ziel ist dem Benutzer ein autonomes und "
-"benutzerfreundliches Betriebssystem zur Verfügung zu stellen."
+"<b>Pardus</b> ist eine Entwicklung auf der Basis der GNU/Linux - "
+"Distribution , welche die Anforderungen des erfahrenen PC – Benutzers durch "
+"die Verwendung  der vorhandenen stabilen und neuen Ideen, Strukturen und "
+"Codes des Linux-BS erfüllen soll. Dessen Ziel ist dem Benutzer ein autonomes "
+"und benutzerfreundliches Betriebssystem zur Verfügung zu stellen."
 
-#: ../src/network.cpp:42
+#: ../src/network.cpp:45
 msgid "<big>Loading...</big>"
 msgstr "<big>Am Laden...</big>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgid ""
+"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
 msgstr ""
-"<center>Sie sind fertig!  Sie können nun mit der Anwendung von <b>Pardus</b> Linux "
-"anfangen</center>"
+"<center>Sie sind fertig!  Sie können nun mit der Anwendung von <b>Pardus</b> "
+"Linux anfangen</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
 #: rc.cpp:42 ../src/mousedlg.cpp:118
@@ -93,7 +96,7 @@ msgstr "Updates automatisch für alle überprüfen"
 msgid "Click behaviour"
 msgstr "Klick-Verhaltensweise"
 
-#: ../src/kaptan.cpp:65
+#: ../src/kaptan.cpp:78
 msgid "Congratulations"
 msgstr "Gratulation"
 
@@ -118,8 +121,8 @@ msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"Hier können Sie ein Stil für Ihre Arbeitsfläche auswählen. <b>Pardus</b> bietet "
-"Ihnen einige blickfangende Stile an."
+"Hier können Sie ein Stil für Ihre Arbeitsfläche auswählen. <b>Pardus</b> "
+"bietet Ihnen einige blickfangende Stile an."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
 #: rc.cpp:23 ../src/wallpaperdlg.cpp:95
@@ -129,9 +132,9 @@ msgid ""
 "<b>Pardus</b> provides eye candy wallpapers, you can select one of them, as "
 "you wish."
 msgstr ""
-"Hier können Sie ein Hintergrundbild für Ihre Arbeitsfläche auswählen. <b>Pardus</b> "
-"bietet Ihnen einige blickfangende Hintergrundbilder an, die Sie auswählen "
-"und verwenden können."
+"Hier können Sie ein Hintergrundbild für Ihre Arbeitsfläche auswählen. "
+"<b>Pardus</b> bietet Ihnen einige blickfangende Hintergrundbilder an, die "
+"Sie auswählen und verwenden können."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 27
 #: rc.cpp:39 ../src/mousedlg.cpp:117
@@ -154,7 +157,7 @@ msgstr "Kaptan Desktop"
 msgid "Left handed"
 msgstr "Linkshändig"
 
-#: ../src/kaptan.cpp:45
+#: ../src/kaptan.cpp:46
 msgid "Mouse Setup"
 msgstr "Mauskonfiguration"
 
@@ -164,12 +167,12 @@ msgstr "Mauskonfiguration"
 msgid "MouseSetupDlg"
 msgstr "MauskonfigurationDlg"
 
-#: ../src/kaptan.cpp:57
+#: ../src/kaptan.cpp:61
 msgid "Network Setup"
 msgstr "Netzwerkkonfiguration"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
-#: rc.cpp:59 ../src/kaptan.cpp:61 ../src/packagedlg.cpp:101
+#: rc.cpp:59 ../src/kaptan.cpp:71 ../src/packagedlg.cpp:101
 #, no-c-format
 msgid "Package Manager"
 msgstr "Paket-Manager"
@@ -203,7 +206,7 @@ msgstr "Tasma starten"
 msgid "Style"
 msgstr "Stil"
 
-#: ../src/kaptan.cpp:49
+#: ../src/kaptan.cpp:50
 msgid "Style Setup"
 msgstr "Stilkonfiguration"
 
@@ -240,13 +243,12 @@ msgstr "Erweitertes Kickoff-Stilmenü verwenden"
 msgid "Wallpaper"
 msgstr "Hintergrundbild"
 
-#: ../src/kaptan.cpp:53
+#: ../src/kaptan.cpp:54
 msgid "Wallpaper Setup"
 msgstr "Hintergrundbildkonfiguration"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 16
-#: rc.cpp:10 ../src/kaptan.cpp:41 ../src/welcomedlg.cpp:65
+#: rc.cpp:10 ../src/kaptan.cpp:42 ../src/welcomedlg.cpp:65
 #, no-c-format
 msgid "Welcome"
 msgstr "Willkommen"
-

@@ -54,13 +54,21 @@ Kaptan::Kaptan(QWidget *parent, const char *name)
     addPage(wallpaper, i18n("Wallpaper Setup"));
     setHelpEnabled(KWizard::page(i++), false);
 
-    network = new Network(this);
-    addPage(network, i18n("Network Setup"));
-    setHelpEnabled(KWizard::page(i++), false);
+    networkEnabled = checkComarACL("Net.Link.setConnection")
+    if (networkEnabled)
+    {
+        network = new Network(this);
+        addPage(network, i18n("Network Setup"));
+        setHelpEnabled(KWizard::page(i++), false);
+    }
 
-    package = new Package(this);
-    addPage(package, i18n("Package Manager"));
-    setHelpEnabled(KWizard::page(i++), false);
+    packageEnabled = checkComarACL("PackageHandler.setupPackage")
+    if (packageEnabled)
+    {
+        package = new Package(this);
+        addPage(package, i18n("Package Manager"));
+        setHelpEnabled(KWizard::page(i++), false);
+    }
 
     goodbye = new Goodbye(this);
     addPage( goodbye, i18n("Congratulations"));
@@ -75,14 +83,30 @@ Kaptan::Kaptan(QWidget *parent, const char *name)
     connect(kapp, SIGNAL(aboutToQuit()), this, SLOT(aboutToQuit()));
 }
 
+bool Kaptan::checkComarACL(QString methodName)
+{
+    int cmd;
+    unsigned int id;
+    char *ret;
+
+    comarConnection = comar_connect();
+    comar_send(comarConnection, 0, COMAR_CHECKACL, methodName.ascii(), NULL);
+    comar_wait(comarConnection, -1);
+    comar_read(comarConnection, &cmd, &id, &ret);
+    comar_disconnect(comarConnection);
+    return (cmd != COMAR_DENIED);
+}
+
 void Kaptan::aboutToQuit()
 {
     delete welcome;
     delete mouse;
     delete style;
     delete wallpaper;
-    delete network;
-    delete package;
+    if (networkEnabled)
+        delete network;
+    if (packageEnabled)
+        delete package;
     delete goodbye;
 }
 
@@ -101,7 +125,8 @@ void Kaptan::next()
             wallpaper->setWallpaper();
         else
             wallpaper->resetWallpaper();
-        network->embedManager();
+        if (networkEnabled)
+            network->embedManager();
     }
     else if (currentPage() == package)
         package->apply();

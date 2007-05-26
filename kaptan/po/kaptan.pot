@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 20:44+0200\n"
+"POT-Creation-Date: 2007-05-26 03:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 16
-#: rc.cpp:10 ../src/kaptan.cpp:41 ../src/welcomedlg.cpp:65
+#: rc.cpp:10 ../src/kaptan.cpp:42 ../src/welcomedlg.cpp:65
 #, no-c-format
 msgid "Welcome"
 msgstr ""
@@ -129,7 +129,7 @@ msgid "Dou&ble-click to open files and folders (select icons on first click)"
 msgstr ""
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
-#: rc.cpp:59 ../src/kaptan.cpp:61 ../src/packagedlg.cpp:101
+#: rc.cpp:59 ../src/kaptan.cpp:71 ../src/packagedlg.cpp:101
 #, no-c-format
 msgid "Package Manager"
 msgstr ""
@@ -189,23 +189,23 @@ msgstr ""
 msgid "Test Style"
 msgstr ""
 
-#: ../src/kaptan.cpp:45
+#: ../src/kaptan.cpp:46
 msgid "Mouse Setup"
 msgstr ""
 
-#: ../src/kaptan.cpp:49
+#: ../src/kaptan.cpp:50
 msgid "Style Setup"
 msgstr ""
 
-#: ../src/kaptan.cpp:53
+#: ../src/kaptan.cpp:54
 msgid "Wallpaper Setup"
 msgstr ""
 
-#: ../src/kaptan.cpp:57
+#: ../src/kaptan.cpp:61
 msgid "Network Setup"
 msgstr ""
 
-#: ../src/kaptan.cpp:65
+#: ../src/kaptan.cpp:78
 msgid "Congratulations"
 msgstr ""
 
@@ -221,6 +221,6 @@ msgstr ""
 msgid "Left handed"
 msgstr ""
 
-#: ../src/network.cpp:42
+#: ../src/network.cpp:45
 msgid "<big>Loading...</big>"
 msgstr ""

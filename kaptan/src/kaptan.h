@@ -13,6 +13,7 @@
 #define KAPTAN_H
 
 #include <kwizard.h>
+#include <comar.h>
 
 class KLocale;
 
@@ -32,6 +33,9 @@ public:
     Kaptan(QWidget* parent=0, const char *name=0);
     virtual void next();
 
+protected:
+    bool checkComarACL(QString methodName);
+
 public slots:
     void aboutToQuit();
 
@@ -44,6 +48,10 @@ private:
     Network *network;
     Package *package;
     Goodbye *goodbye;
+    // COMAR stuff
+    comar_t *comarConnection;
+    bool networkEnabled;
+    bool packageEnabled;
 };
 
 #endif // KAPTAN_H
