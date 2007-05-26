@@ -58,7 +58,10 @@ class EntryView(QScrollView):
             e.setGeometry(0, th, width, h)
             th += h
         self.setMinimumSize(QSize(mw, 0))
-        self.resizeContents(width, th)
+        if th > self.height():
+            self.resizeContents(width - 12, th)
+        else:
+            self.resizeContents(width, th)
 
 class Entry(QWidget):
     def __init__(self, parent, editWidget, index, title, description, pardus, os_data):
