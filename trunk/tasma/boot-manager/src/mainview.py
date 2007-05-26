@@ -28,7 +28,7 @@ class widgetEntryList(QWidget):
         self.link = comar_link
         
         layout = QGridLayout(self, 1, 1, 6, 6)
-
+        
         bar = QToolBar("main", None, self)
         
         but = QToolButton(getIconSet("add"), "", "main", self.slotAddEntry, bar)
@@ -46,9 +46,9 @@ class widgetEntryList(QWidget):
         but.setTextPosition(but.BesideIcon)
         but.hide()
         layout.addWidget(bar, 0, 0)
+        self.toolbar = bar
         
         self.listEntries = EntryView(self)
-        self.listEntries.setEnabled(False)
         layout.addWidget(self.listEntries, 1, 0)
         
         self.checkSaved = QCheckBox(self)
@@ -57,9 +57,17 @@ class widgetEntryList(QWidget):
         
         self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
         
+        self.init()
+        
     def init(self):
         if self.parent.can_access:
-            self.listEntries.setEnabled(True)
+            self.toolbar.setEnabled(True)
+            self.listEntries.viewport().setEnabled(True)
+            self.checkSaved.setEnabled(True)
+        else:
+            self.toolbar.setEnabled(False)
+            self.listEntries.viewport().setEnabled(False)
+            self.checkSaved.setEnabled(False)
     
     def slotCheckSaved(self):
         if self.checkSaved.isChecked():
@@ -373,3 +381,8 @@ class widgetMain(QWidget):
                 KMessageBox.error(self, unicode(reply.data), i18n("Failed"))
             else:
                 KMessageBox.error(self, "%s failed: %s" % (reply.id, unicode(reply.data)), i18n("Failed"))
+        elif reply.command == "denied":
+            if reply.id == BOOT_ACCESS:
+                self.can_access = False
+                self.widgetEntries.init()
+                KMessageBox.error(self, i18n("You are not allowed to edit boot loader settings."), i18n("Access Denied"))
